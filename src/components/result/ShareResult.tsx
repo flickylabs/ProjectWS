@@ -75,6 +75,8 @@ const RELATION_LABELS: Record<string, string> = {
   partnership: '동업', family: '가족', tenant_landlord: '세입자', friend: '친구',
 }
 
+RELATION_LABELS.headline = '헤드라인'
+
 function getRating(total: number): string {
   if (total >= 90) return '전설적인 재판관'
   if (total >= 75) return '현명한 재판관'

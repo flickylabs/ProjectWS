@@ -19,6 +19,7 @@ import Emoji from '../common/Emoji'
 import { getDisputeV2, getActiveLayer, getBeatRuntimeState, hasStructureV2 } from '../../engine/v2DataLoader'
 import { getMisconceptionState } from '../../engine/misconceptionEngine'
 import { normalizeCaseKey } from '../../utils/caseHelpers'
+import CombinationLabPanel from './CombinationLabPanel'
 
 type DisputeStatus = 'unopened' | 'contested' | 'cracked' | 'resolved'
 
@@ -155,6 +156,8 @@ export default function DisputeBoard({ onClose, onSelectDispute }: {
             </div>
           </div>
         )}
+
+        {caseData.combinationLab ? <CombinationLabPanel /> : null}
 
         {/* 쟁점 카드 목록 */}
         <div className="flex-1 overflow-y-auto scrollbar-hide space-y-2">

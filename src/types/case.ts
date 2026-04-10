@@ -22,11 +22,60 @@ export interface LieConfig {
   transitions: { from: LieState; to: LieState; trigger: string }[]
 }
 
-export type EvidenceType = 'bank' | 'chat' | 'cctv' | 'contract' | 'testimony' | 'log' | 'device' | 'sns'
+export type EvidenceType =
+  | 'bank'
+  | 'financial_record'
+  | 'receipt'
+  | 'chat'
+  | 'contract'
+  | 'estimate'
+  | 'document'
+  | 'institutional_note'
+  | 'medical_record'
+  | 'testimony'
+  | 'cctv'
+  | 'photo'
+  | 'photo_video'
+  | 'video'
+  | 'dashcam'
+  | 'log'
+  | 'platform_log'
+  | 'cloud_log'
+  | 'device_log'
+  | 'record'
+  | 'delivery_record'
+  | 'repair_record'
+  | 'email'
+  | 'audio'
+  | 'forensic_report'
+  | 'device'
+  | 'sns'
 export type Reliability = 'hard' | 'soft'
 export type Completeness = 'original' | 'edited' | 'partial' | 'context_missing'
 export type Provenance = 'self_possessed' | 'third_party' | 'anonymous' | 'institutional'
 export type Legitimacy = 'lawful' | 'privacy_concern' | 'unlawful'
+
+export interface EvidenceMediaAsset {
+  imageUrl: string
+  thumbnailUrl?: string
+  posterUrl?: string
+  width?: number
+  height?: number
+  alt?: string
+  caption?: string
+}
+
+export interface EvidenceViewerMedia {
+  imageUrl?: string
+  thumbnailUrl?: string
+  posterUrl?: string
+  width?: number
+  height?: number
+  alt?: string
+  caption?: string
+  frameImages?: EvidenceMediaAsset[]
+  screenshotImages?: EvidenceMediaAsset[]
+}
 
 export interface EvidenceNode {
   id: string
@@ -36,6 +85,52 @@ export interface EvidenceNode {
   surfaceName?: string
   /** 조사 전 표면 설명 (진실을 숨긴 버전) */
   surfaceDescription?: string
+  /** PC 증거 뷰어용 메타 정보 */
+  meta?: {
+    trustLevel: 'high' | 'mid' | 'low'
+    trustLabel: string
+    source: 'a' | 'b' | 'org' | 'third'
+    sourceLabel: string
+    legality: 'ok' | 'sus' | 'unlawful'
+    legalLabel: string
+    stage: number
+    stageLabel?: string
+    sourceNote?: string
+    redactions?: string[]
+  }
+  /** PC 증거 뷰어 상세 데이터 */
+  viewerData?: {
+    meta?: Record<string, unknown>
+    media?: EvidenceViewerMedia
+    bank?: unknown
+    financial_record?: unknown
+    receipt?: unknown
+    chat?: unknown
+    contract?: unknown
+    estimate?: unknown
+    document?: unknown
+    institutional_note?: unknown
+    medical_record?: unknown
+    testimony?: unknown
+    cctv?: unknown
+    photo?: unknown
+    photo_video?: unknown
+    video?: unknown
+    dashcam?: unknown
+    log?: unknown
+    platform_log?: unknown
+    cloud_log?: unknown
+    device_log?: unknown
+    record?: unknown
+    delivery_record?: unknown
+    repair_record?: unknown
+    email?: unknown
+    audio?: unknown
+    forensic_report?: unknown
+    device?: unknown
+    sns?: unknown
+    [key: string]: unknown
+  }
   type: EvidenceType
   reliability: Reliability
   completeness: Completeness
@@ -86,6 +181,116 @@ export interface EvidenceCombination {
   requires: string[]
   upgradesTo: Reliability
   proves: string[]
+}
+
+export type CombinationLabNodeType =
+  | 'evidence'
+  | 'note'
+  | 'derived_note'
+  | 'derived_evidence'
+  | 'question'
+  | 'statement'
+  | 'dispute'
+  | 'witness_angle'
+  | 'mediation_hint'
+
+export type CombinationLabResultKind =
+  | 'unlock_evidence'
+  | 'unlock_note'
+  | 'unlock_question'
+  | 'unlock_statement'
+  | 'unlock_dispute'
+  | 'unlock_witness_angle'
+  | 'unlock_interjection'
+  | 'unlock_mediation_hint'
+  | 'upgrade_question'
+  | 'upgrade_evidence'
+  | 'upgrade_dispute'
+  | 'reframe_question'
+  | 'reframe_evidence'
+  | 'reframe_dispute'
+  | 'split_dispute'
+  | 'merge_disputes'
+  | 'elevate_reliability'
+  | 'expand_context'
+  | 'narrow_scope'
+  | 'shift_legality_weight'
+  | 'shift_responsibility_weight'
+
+export interface CombinationLabNode {
+  id: string
+  type: CombinationLabNodeType
+  label: string
+  sourceRef?: string
+  linkedDisputeIds?: string[]
+  linkedEvidenceIds?: string[]
+  linkedQuestionIds?: string[]
+  visibility: 'base' | 'hidden' | 'derived'
+}
+
+export interface CombinationLabEffect {
+  kind: CombinationLabResultKind
+  targetId?: string
+  unlockNodeId?: string
+  upgradeFromId?: string
+  upgradeToId?: string
+  reframeFromId?: string
+  reframeToId?: string
+  splitFromId?: string
+  splitIntoIds?: string[]
+  mergeFromIds?: string[]
+  mergeToId?: string
+  evidenceUpgrade?: {
+    evidenceId: string
+    toReliability?: Reliability
+    toCompleteness?: Completeness
+    addContextTags?: string[]
+  }
+  disputeUpgrade?: {
+    disputeId: string
+    weight?: 'high' | 'medium' | 'low'
+    ambiguity?: 'none' | 'low' | 'high'
+    legitimacyIssue?: boolean
+  }
+  questionUpgrade?: {
+    questionId: string
+    tier?: 'advanced' | 'pressure' | 'closing'
+  }
+}
+
+export interface CombinationLabOutput {
+  id: string
+  label: string
+  summary: string
+  nodeType: CombinationLabNodeType
+  effects: CombinationLabEffect[]
+  judgeHint?: string
+  noteText?: string
+  questionPrompts?: { id: string; text: string; tier?: 'advanced' | 'pressure' | 'closing' }[]
+  statementEntries?: { id: string; text: string; targetParty?: 'a' | 'b' | 'both' }[]
+  witnessAngles?: { id: string; text: string }[]
+  mediationHints?: { id: string; text: string }[]
+  evidenceNode?: EvidenceNode
+  disputeNodes?: Dispute[]
+}
+
+export interface CombinationLabRecipe {
+  id: string
+  inputs: string[]
+  cost: number
+  hidden?: boolean
+  repeatable?: boolean
+  failHint?: string
+  discoveryText: string
+  outputId: string
+}
+
+export interface CombinationLabConfig {
+  analysisPointsBase: number
+  analysisPointRefundOnFirstHidden?: number
+  nodes: CombinationLabNode[]
+  outputs: CombinationLabOutput[]
+  recipes: CombinationLabRecipe[]
 }
 
 export interface Dispute {
@@ -150,4 +355,6 @@ export interface CaseData {
   baseEvidenceIds?: [string, string, string]
   /** 금전 관련 쟁점 IDs — 비금전 사건 금전 오염 방지 */
   monetaryDisputeIds?: string[]
+  /** 조합 실험실 V2/V2.1 확장 데이터 */
+  combinationLab?: CombinationLabConfig
 }

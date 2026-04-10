@@ -25,6 +25,15 @@ const CHAPTERS = [
   { id: 'friend', label: '친구', icon: '🫂', type: 'friend', color: '#ec4899', bg: 'from-pink-950/30' },
 ]
 
+CHAPTERS.push({
+  id: 'headline',
+  label: '헤드라인',
+  icon: '📰',
+  type: 'headline',
+  color: '#f97316',
+  bg: 'from-orange-950/30',
+})
+
 function loadProgress(): CaseProgress {
   try { return JSON.parse(localStorage.getItem('solomon-case-progress') || '{}') } catch { return {} }
 }

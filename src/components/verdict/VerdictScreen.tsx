@@ -10,6 +10,7 @@ import { playGavel } from '../../engine/soundEngine'
 import { checkAndGrantRewards } from '../../engine/rewardEngine'
 import { deriveCaseProfile, applyDriftUpdate } from '../../engine/judgeProfileEngine'
 import { loadDriftState, saveDriftState } from '../../data/leaderboard'
+import { normalizeCaseKey } from '../../utils/caseHelpers'
 import FactChecklist from './FactChecklist'
 import ResponsibilitySlider from './ResponsibilitySlider'
 import SolutionPicker from './SolutionPicker'
@@ -17,6 +18,38 @@ import EvidenceLegality from './EvidenceLegality'
 import Emoji from '../common/Emoji'
 
 type VerdictStep = 'fact' | 'responsibility' | 'solution' | 'legality' | 'confirm'
+
+export const CAMPAIGN_STAGE_MAP: Record<string, number> = {
+  neighbor: 1,
+  spouse: 2,
+  boss_employee: 3,
+  workplace: 3,
+  partnership: 4,
+  family: 5,
+  tenant_landlord: 6,
+  tenant: 6,
+  friend: 7,
+  headline: 7,
+  online: 8,
+  professional: 9,
+  civic: 10,
+  public_system: 10,
+  medical_education: 9,
+}
+
+export function getCampaignStageKey(caseId: string, relationshipType: string): string {
+  const normalizedCaseKey = normalizeCaseKey(caseId)
+
+  if (normalizedCaseKey.startsWith('professional-')) return 'professional'
+  if (normalizedCaseKey.startsWith('civic-')) return 'civic'
+  if (normalizedCaseKey.startsWith('online-')) return 'online'
+  if (normalizedCaseKey.startsWith('friend-')) return 'friend'
+  if (normalizedCaseKey.startsWith('headline-')) return 'headline'
+  if (normalizedCaseKey.startsWith('workplace-')) return 'boss_employee'
+  if (normalizedCaseKey.startsWith('tenant-')) return 'tenant_landlord'
+
+  return relationshipType
+}
 
 const STEPS: { id: VerdictStep; label: string; icon: string }[] = [
   { id: 'fact', label: '사실 인정', icon: '①' },
@@ -195,11 +228,8 @@ export default function VerdictScreen() {
       caseTelemetry,
     })
     // 캠페인 Stage 진행 (관계 유형으로 매칭)
-    const stageMap: Record<string, number> = {
-      neighbor: 1, spouse: 2, boss_employee: 3,
-      partnership: 4, family: 5, tenant_landlord: 6,
-    }
-    const stage = stageMap[caseData.duo.relationshipType]
+    const stageKey = getCampaignStageKey(caseData.caseId, caseData.meta?.relationshipType ?? caseData.duo.relationshipType)
+    const stage = CAMPAIGN_STAGE_MAP[stageKey]
     if (stage) completeStage(stage, score.total)
     // 보상 체크 및 지급 (verdictScore가 store에 저장된 직후 호출)
     checkAndGrantRewards()

@@ -59,6 +59,8 @@ export interface DiscoverySlice {
   deactivateDispute: (disputeId: string) => void
   /** 발현 대기 이벤트 설정 */
   setPendingEmergence: (event: DiscoveryState['pendingEmergence']) => void
+  /** 조합 실험실 등에서 파생 쟁점 visibility를 주입 */
+  upsertDisputeVisibility: (entry: DisputeVisibilityEntry) => void
 
   // ── 감정 실수 ──
   addEmotionalSlip: (slip: EmotionalSlipEvent) => void
@@ -199,6 +201,18 @@ export const createDiscoverySlice: StateCreator<DiscoverySlice, [], [], Discover
   setPendingEmergence: (event) => {
     set((prev) => ({
       discovery: { ...prev.discovery, pendingEmergence: event },
+    }))
+  },
+
+  upsertDisputeVisibility: (entry) => {
+    set((prev) => ({
+      discovery: {
+        ...prev.discovery,
+        disputeVisibility: {
+          ...prev.discovery.disputeVisibility,
+          [entry.disputeId]: entry,
+        },
+      },
     }))
   },
 

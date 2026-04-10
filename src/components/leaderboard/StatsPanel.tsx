@@ -7,6 +7,8 @@ const RELATION_LABELS: Record<string, string> = {
   partnership: '동업', family: '가족', tenant_landlord: '세입자', friend: '친구',
 }
 
+RELATION_LABELS.headline = '헤드라인'
+
 const CATEGORY_LABELS: Record<string, string> = {
   insight: '통찰', authority: '권위', wisdom: '지혜', total: '종합',
 }

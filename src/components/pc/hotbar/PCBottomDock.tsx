@@ -1,446 +1,406 @@
-import { useState, useEffect, useCallback, useMemo } from 'react'
-import { useStore, useGameStore } from '../../../store/useGameStore'
-import Emoji from '../../common/Emoji'
-import type { EmotionalPhase, LieState, PartyId, QuestionType } from '../../../types'
-import { computeEffectiveness } from '../../../engine/questionEffectEngine'
-
-// ── Constants ──
-
-const EMOTION_KO: Record<EmotionalPhase, string> = {
-  defensive: '경계', confident: '자신감', shaken: '동요', angry: '격앙', resigned: '체념',
-}
-
-const LIE_STATES: LieState[] = ['S0', 'S1', 'S2', 'S3', 'S4', 'S5']
+import { useEffect, useMemo, useState } from 'react'
+import { GamePhase, type EmotionalPhase, type PartyId, type QuestionType } from '../../../types'
+import { useActionDispatch } from '../../../hooks/useActionDispatch'
+import { useGameStore, useStore } from '../../../store/useGameStore'
+import { openPcInteractionPanel } from '../layout/PCInteractionPanel'
+import PCSvgIcon from '../icons/PCSvgIcon'
+import { getPcFaceSymbolId } from '../icons/pcIconUtils'
 
 type HotbarPage = 'interrogation' | 'evidence' | 'special'
 
 interface HotbarSlot {
-  key: number           // 1~6
-  icon: string          // emoji char
-  name: string
-  action: (() => void) | null
-  locked: boolean
-  effectiveness?: 'strong' | 'normal' | 'weak'
+  key: number
+  iconId: string
+  label: string
+  effect?: 'strong' | 'normal' | 'weak'
+  locked?: boolean
+  onClick?: () => void
 }
 
-// ── Page definitions ──
-
-function buildInterrogationSlots(
-  targetParty: PartyId,
-  lieState: LieState,
-  emotionPhase: EmotionalPhase,
-  archetype: string,
-  meters: { contradictionTokens: number; trustWindow: number },
-  onQuestionType: (qt: QuestionType) => void,
-  onFreeQuestion: () => void,
-): HotbarSlot[] {
-  const emotionTier = emotionPhaseToTier(emotionPhase)
-
-  const factEff = computeEffectiveness('fact_pursuit', lieState, emotionTier, archetype, meters.contradictionTokens, meters.trustWindow)
-  const motiveEff = computeEffectiveness('motive_search', lieState, emotionTier, archetype, meters.contradictionTokens, meters.trustWindow)
-  const empathyEff = computeEffectiveness('empathy_approach', lieState, emotionTier, archetype, meters.contradictionTokens, meters.trustWindow)
-
-  return [
-    { key: 1, icon: '🔍', name: '사실 추궁', locked: false, effectiveness: factEff.level, action: () => onQuestionType('fact_pursuit') },
-    { key: 2, icon: '💡', name: '동기 탐색', locked: false, effectiveness: motiveEff.level, action: () => onQuestionType('motive_search') },
-    { key: 3, icon: '🤝', name: '공감 접근', locked: false, effectiveness: empathyEff.level, action: () => onQuestionType('empathy_approach') },
-    { key: 4, icon: '💬', name: '자유질문', locked: false, action: onFreeQuestion },
-    { key: 5, icon: '🔒', name: '—', locked: true, action: null },
-    { key: 6, icon: '🔒', name: '—', locked: true, action: null },
-  ]
+const EMOTION_LABELS: Record<EmotionalPhase, string> = {
+  defensive: '\uACBD\uACC4',
+  confident: '\uC790\uC2E0\uAC10',
+  shaken: '\uB3D9\uC694',
+  angry: '\uACA9\uC559',
+  resigned: '\uCCB4\uB150',
 }
-
-function buildEvidenceSlots(): HotbarSlot[] {
-  return [
-    { key: 1, icon: '📄', name: '증거 제시', locked: false, action: null },
-    { key: 2, icon: '🔬', name: '증거 조사', locked: false, action: null },
-    { key: 3, icon: '📎', name: '증거 조합', locked: false, action: null },
-    { key: 4, icon: '🗂️', name: '증거 목록', locked: false, action: null },
-    { key: 5, icon: '🔒', name: '—', locked: true, action: null },
-    { key: 6, icon: '🔒', name: '—', locked: true, action: null },
-  ]
-}
-
-function buildSpecialSlots(): HotbarSlot[] {
-  return [
-    { key: 1, icon: '⚡', name: '즉답 요구', locked: false, action: null },
-    { key: 2, icon: '👂', name: '회피 판독', locked: false, action: null },
-    { key: 3, icon: '🛡️', name: '비공개 보호', locked: false, action: null },
-    { key: 4, icon: '👥', name: '증인 소환', locked: false, action: null },
-    { key: 5, icon: '✋', name: '분리 심문', locked: false, action: null },
-    { key: 6, icon: '🔒', name: '—', locked: true, action: null },
-  ]
-}
-
-// ── Main Component ──
 
 export default function PCBottomDock() {
+  const dispatch = useActionDispatch()
   const caseData = useStore((s) => s.caseData)
+  const currentPhase = useStore((s) => s.currentPhase)
+  const pcTargetParty = useStore((s) => s.pcTargetParty)
+  const setPcTargetParty = useStore((s) => s.setPcTargetParty)
+  const lastFocusedDisputeId = useStore((s) => s.lastFocusedDisputeId)
+  const setDisputeBoardAction = useStore((s) => s.setDisputeBoardAction)
+  const evidenceDefinitions = useStore((s) => s.evidenceDefinitions)
+  const evidenceStates = useStore((s) => s.evidenceStates)
+  const questionMeters = useStore((s) => s.questionMeters)
   const agentA = useStore((s) => s.agentA)
   const agentB = useStore((s) => s.agentB)
-  const archetypeA = useStore((s) => s.archetypeA)
-  const archetypeB = useStore((s) => s.archetypeB)
-  const questionMeters = useStore((s) => s.questionMeters)
+
   const [activePage, setActivePage] = useState<HotbarPage>('interrogation')
-  const [targetParty, setTargetParty] = useState<PartyId>('a')
   const [freeQuestionOpen, setFreeQuestionOpen] = useState(false)
   const [freeQuestionText, setFreeQuestionText] = useState('')
 
-  // Derived
-  const targetAgent = targetParty === 'a' ? agentA : agentB
-  const targetArchetype = targetParty === 'a' ? archetypeA : archetypeB
-  const targetProfile = targetParty === 'a' ? caseData?.duo.partyA : caseData?.duo.partyB
-  const targetMeters = questionMeters[targetParty]
+  const activeDisputeId = lastFocusedDisputeId ?? caseData?.disputes[0]?.id ?? ''
+  const activeDisputeName =
+    caseData?.disputes.find((dispute) => dispute.id === activeDisputeId)?.name
+    ?? '\uD604\uC7AC \uC7C1\uC810 \uC5C6\uC74C'
 
-  // Overall lie state for target
-  const overallLieState = useMemo((): LieState => {
-    const entries = Object.values(targetAgent.lieStateMap)
-    if (entries.length === 0) return 'S0'
-    const ranks = entries.map((e) => LIE_STATES.indexOf(e.currentState))
-    return LIE_STATES[Math.max(...ranks)]
-  }, [targetAgent.lieStateMap])
+  const canUseInterrogation =
+    currentPhase === GamePhase.Phase3_Interrogation
+    || currentPhase === GamePhase.Phase4_Evidence
+    || currentPhase === GamePhase.Phase5_ReExamination
+  const canUseEvidence =
+    currentPhase === GamePhase.Phase4_Evidence || currentPhase === GamePhase.Phase5_ReExamination
+  const canUseSpecial = currentPhase === GamePhase.Phase5_ReExamination
 
-  const lieProgress = useMemo(() => {
-    return (LIE_STATES.indexOf(overallLieState) / (LIE_STATES.length - 1)) * 100
-  }, [overallLieState])
-
-  // Handler: dispatch a question type using the first available dispute
-  // Opens ActionPanel's question tab for the target party.
-  // The specific question type (qt) is shown as effectiveness hints on the hotbar;
-  // the actual question type + dispute selection happens in ActionPanel's QuestionSelector.
-  const handleQuestionType = useCallback((_qt: QuestionType) => {
-    if (!caseData) return
-    const disputes = caseData.disputes
-    if (disputes.length === 0) return
-    // Route through ActionPanel via disputeBoardAction signal
-    useGameStore.getState().setDisputeBoardAction({ disputeId: disputes[0].id, party: targetParty })
-  }, [caseData, targetParty])
-
-  // Build slots
-  const slots = useMemo(() => {
-    switch (activePage) {
-      case 'interrogation':
-        return buildInterrogationSlots(
-          targetParty, overallLieState, targetAgent.emotionalState.phase,
-          targetArchetype, targetMeters, handleQuestionType,
-          () => setFreeQuestionOpen(true),
-        )
-      case 'evidence':
-        return buildEvidenceSlots()
-      case 'special':
-        return buildSpecialSlots()
-    }
-  }, [activePage, targetParty, overallLieState, targetAgent.emotionalState.phase, targetArchetype, targetMeters, handleQuestionType])
-
-  // Keyboard handling
   useEffect(() => {
-    const handler = (e: KeyboardEvent) => {
-      // F1~F3 page switch
-      if (e.key === 'F1') { e.preventDefault(); setActivePage('interrogation'); return }
-      if (e.key === 'F2') { e.preventDefault(); setActivePage('evidence'); return }
-      if (e.key === 'F3') { e.preventDefault(); setActivePage('special'); return }
-
-      // 1~6 slot activation
-      const num = parseInt(e.key)
-      if (num >= 1 && num <= 6) {
-        e.preventDefault()
-        const slot = slots[num - 1]
-        if (slot && !slot.locked && slot.action) {
-          slot.action()
-        }
-        return
-      }
-
-      // Tab: cycle pages
-      if (e.key === 'Tab' && !e.ctrlKey && !e.altKey) {
-        e.preventDefault()
-        setActivePage((prev) => {
-          if (prev === 'interrogation') return 'evidence'
-          if (prev === 'evidence') return 'special'
-          return 'interrogation'
-        })
-        return
-      }
-
-      // Esc: close free question
-      if (e.key === 'Escape') {
-        setFreeQuestionOpen(false)
-        return
-      }
+    if (activePage === 'special' && !canUseSpecial) {
+      setActivePage(canUseEvidence ? 'evidence' : 'interrogation')
+      return
     }
 
-    window.addEventListener('keydown', handler)
-    return () => window.removeEventListener('keydown', handler)
-  }, [slots])
+    if (activePage === 'evidence' && !canUseEvidence) {
+      setActivePage('interrogation')
+    }
+  }, [activePage, canUseEvidence, canUseSpecial])
 
-  const handleFreeQuestionSend = useCallback(async () => {
-    if (!freeQuestionText.trim() || !caseData) return
-    const text = freeQuestionText.trim()
+  const runQuestion = (questionType: QuestionType) => {
+    if (!caseData || !activeDisputeId) {
+      return
+    }
+
+    dispatch({
+      type: 'question',
+      questionType,
+      target: pcTargetParty,
+      disputeId: activeDisputeId,
+    })
+  }
+
+  const openEvidenceSelection = () => {
+    if (!caseData || !activeDisputeId) {
+      return
+    }
+
+    openPcInteractionPanel({
+      title: '\uC99D\uAC70 \uC81C\uC2DC',
+      subtitle: activeDisputeName,
+      tone: 'gold',
+      body: '\uD604\uC7AC \uB300\uC0C1\uACFC \uD604\uC7AC \uC7C1\uC810\uC744 \uAE30\uC900\uC73C\uB85C \uC81C\uC2DC \uAC00\uB2A5\uD55C \uC99D\uAC70\uB97C \uACE0\uB985\uB2C8\uB2E4.',
+      actions: [
+        {
+          kind: 'open_evidence_selection',
+          label: `${pcTargetParty === 'a' ? caseData.duo.partyA.name : caseData.duo.partyB.name}\uC5D0\uAC8C \uC81C\uC2DC`,
+          party: pcTargetParty,
+          disputeId: activeDisputeId,
+        },
+      ],
+    })
+  }
+
+  const openEvidenceViewer = () => {
+    const unlockedEvidence =
+      evidenceDefinitions.find(
+        (evidence) => evidenceStates[evidence.id]?.unlocked && evidence.proves.includes(activeDisputeId),
+      )
+      ?? evidenceDefinitions.find((evidence) => evidenceStates[evidence.id]?.unlocked)
+
+    if (!unlockedEvidence) {
+      return
+    }
+
+    useGameStore.getState().setPendingEvidenceView(unlockedEvidence.id)
+  }
+
+  const openSpecialPrompt = (
+    kind: 'immediate_answer' | 'objection' | 'separation' | 'confidential_protection' | 'advance_phase',
+  ) => {
+    const actionLabels: Record<typeof kind, string> = {
+      immediate_answer: '\uC989\uB2F5 \uC694\uAD6C',
+      objection: '\uC774\uC758 \uC81C\uAE30',
+      separation: '\uBD84\uB9AC \uC2EC\uBB38',
+      confidential_protection: '\uBE44\uACF5\uAC1C \uBCF4\uD638',
+      advance_phase: '\uB2E8\uACC4 \uC9C4\uD589',
+    }
+
+    openPcInteractionPanel({
+      title: actionLabels[kind],
+      subtitle: activeDisputeName,
+      tone: kind === 'advance_phase' ? 'green' : 'gold',
+      body: `${actionLabels[kind]}\uB97C \uC2E4\uD589\uD569\uB2C8\uB2E4.`,
+      actions: [
+        {
+          kind: 'run_special',
+          label: `${actionLabels[kind]} \uC2E4\uD589`,
+          party: pcTargetParty,
+          disputeId: activeDisputeId,
+          specialAction: kind,
+        },
+      ],
+    })
+  }
+
+  const handleFreeQuestionSend = () => {
+    if (!caseData || !activeDisputeId || !freeQuestionText.trim()) {
+      return
+    }
+
+    setDisputeBoardAction({ disputeId: activeDisputeId, party: pcTargetParty })
     setFreeQuestionText('')
     setFreeQuestionOpen(false)
-    // Route through ActionPanel by signaling the disputeBoardAction
-    // This opens the question tab where the player can use free question
-    useGameStore.getState().setDisputeBoardAction({
-      disputeId: caseData.disputes[0]?.id ?? '',
-      party: targetParty,
-    })
-  }, [freeQuestionText, caseData, targetParty])
+  }
 
-  if (!caseData) return null
+  const slots = useMemo<HotbarSlot[]>(() => {
+    if (activePage === 'interrogation') {
+      const contradiction = questionMeters[pcTargetParty].contradictionTokens
+      return [
+        {
+          key: 1,
+          iconId: 'i-gavel',
+          label: '\uC0AC\uC2E4 \uCD94\uAD81',
+          effect: contradiction >= 2 ? 'strong' : 'normal',
+          onClick: () => runQuestion('fact_pursuit'),
+        },
+        {
+          key: 2,
+          iconId: 'i-eye',
+          label: '\uB3D9\uAE30 \uD0D0\uC0C9',
+          effect: 'normal',
+          onClick: () => runQuestion('motive_search'),
+        },
+        {
+          key: 3,
+          iconId: 'i-heart',
+          label: '\uACF5\uAC10 \uC811\uADFC',
+          effect: 'weak',
+          onClick: () => runQuestion('empathy_approach'),
+        },
+        { key: 4, iconId: 'i-chat', label: '\uC790\uC720 \uC9C8\uBB38', onClick: () => setFreeQuestionOpen(true) },
+        { key: 5, iconId: 'i-lock', label: '\uBE48 \uC2AC\uB86F', locked: true },
+        { key: 6, iconId: 'i-plus', label: '\uBE48 \uC2AC\uB86F', locked: true },
+      ]
+    }
 
-  const partyA = caseData.duo.partyA
-  const partyB = caseData.duo.partyB
+    if (activePage === 'evidence') {
+      return [
+        { key: 1, iconId: 'i-doc', label: '\uC99D\uAC70 \uC81C\uC2DC', onClick: openEvidenceSelection },
+        { key: 2, iconId: 'i-eye', label: '\uC99D\uAC70 \uC5F4\uB78C', onClick: openEvidenceViewer },
+        {
+          key: 3,
+          iconId: 'i-ledger',
+          label: '\uC7C1\uC810 \uC774\uB3D9',
+          onClick: () =>
+            openPcInteractionPanel({
+              title: '\uC7C1\uC810 \uC774\uB3D9',
+              subtitle: activeDisputeName,
+              tone: 'blue',
+              body: '\uB2E4\uB978 \uC7C1\uC810\uC73C\uB85C \uC774\uB3D9\uD560 \uC218 \uC788\uC2B5\uB2C8\uB2E4.',
+              actions: [{ kind: 'open_dispute_picker', label: '\uC7C1\uC810 \uBAA9\uB85D \uBCF4\uAE30', disputeId: activeDisputeId }],
+            }),
+        },
+        { key: 4, iconId: 'i-bolt', label: '\uB2E8\uACC4 \uC9C4\uD589', onClick: () => openSpecialPrompt('advance_phase') },
+        { key: 5, iconId: 'i-lock', label: '\uBE48 \uC2AC\uB86F', locked: true },
+        { key: 6, iconId: 'i-plus', label: '\uBE48 \uC2AC\uB86F', locked: true },
+      ]
+    }
+
+    return [
+      { key: 1, iconId: 'i-bolt', label: '\uC989\uB2F5 \uC694\uAD6C', onClick: () => openSpecialPrompt('immediate_answer') },
+      { key: 2, iconId: 'i-conflict', label: '\uC774\uC758 \uC81C\uAE30', onClick: () => openSpecialPrompt('objection') },
+      { key: 3, iconId: 'i-hand', label: '\uBD84\uB9AC \uC2EC\uBB38', onClick: () => openSpecialPrompt('separation') },
+      { key: 4, iconId: 'i-shield', label: '\uBE44\uACF5\uAC1C \uBCF4\uD638', onClick: () => openSpecialPrompt('confidential_protection') },
+      { key: 5, iconId: 'i-bulb', label: '\uB2E8\uACC4 \uC9C4\uD589', onClick: () => openSpecialPrompt('advance_phase') },
+      { key: 6, iconId: 'i-lock', label: '\uBE48 \uC2AC\uB86F', locked: true },
+    ]
+  }, [activeDisputeId, activeDisputeName, activePage, caseData, evidenceDefinitions, evidenceStates, pcTargetParty, questionMeters])
+
+  useEffect(() => {
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'F1' && canUseInterrogation) {
+        event.preventDefault()
+        setActivePage('interrogation')
+      }
+      if (event.key === 'F2' && canUseEvidence) {
+        event.preventDefault()
+        setActivePage('evidence')
+      }
+      if (event.key === 'F3' && canUseSpecial) {
+        event.preventDefault()
+        setActivePage('special')
+      }
+
+      const numeric = Number(event.key)
+      if (numeric >= 1 && numeric <= 6) {
+        const slot = slots[numeric - 1]
+        if (slot && !slot.locked && slot.onClick) {
+          event.preventDefault()
+          slot.onClick()
+        }
+      }
+
+      if (event.key === 'Escape') {
+        setFreeQuestionOpen(false)
+      }
+    }
+
+    window.addEventListener('keydown', onKeyDown)
+    return () => window.removeEventListener('keydown', onKeyDown)
+  }, [canUseEvidence, canUseInterrogation, canUseSpecial, slots])
+
+  if (!caseData) {
+    return null
+  }
 
   return (
-    <div
-      className="shrink-0 flex flex-col"
-      style={{
-        background: 'var(--pc-p1)',
-        borderTop: '1px solid rgba(212,162,78,0.15)',
-      }}
-    >
-      {/* Free question input */}
-      {freeQuestionOpen && (
-        <div className="flex items-center gap-3 px-6 py-3" style={{ borderBottom: '1px solid rgba(255,255,255,0.04)' }}>
-          <span className="text-xs font-medium shrink-0" style={{ color: 'var(--pc-gold-light)' }}>
-            자유질문
-          </span>
-          <input
-            type="text"
-            value={freeQuestionText}
-            onChange={(e) => setFreeQuestionText(e.target.value)}
-            onKeyDown={(e) => { if (e.key === 'Enter') handleFreeQuestionSend(); if (e.key === 'Escape') setFreeQuestionOpen(false) }}
-            placeholder="질문을 입력하세요..."
-            autoFocus
-            className="flex-1 px-3 py-2 rounded-lg text-sm outline-none"
-            style={{
-              background: 'var(--pc-p4)',
-              border: '1px solid rgba(212,162,78,0.2)',
-              color: '#dcdce0',
-            }}
-          />
-          <button
-            onClick={handleFreeQuestionSend}
-            className="px-4 py-2 rounded-lg text-sm font-medium transition-all"
-            style={{
-              background: 'rgba(212,162,78,0.15)',
-              border: '1px solid rgba(212,162,78,0.3)',
-              color: 'var(--pc-gold-light)',
-            }}
-          >
-            전송
-          </button>
-          <button
-            onClick={() => setFreeQuestionOpen(false)}
-            className="text-xs px-2 py-1"
-            style={{ color: '#4e4e5c' }}
-          >
-            Esc
-          </button>
+    <div className="bottom pc-play-dock">
+      {freeQuestionOpen ? (
+        <div className="pc-dock-free-question">
+          <div className="pc-dock-free-question__shell">
+            <div className="pc-dock-free-question__title">{'\uC790\uC720 \uC9C8\uBB38 \uC785\uB825'}</div>
+            <div className="pc-dock-free-question__subtitle">{activeDisputeName}</div>
+            <div className="pc-dock-free-question__row">
+              <input
+                className="input-field"
+                onChange={(event) => setFreeQuestionText(event.target.value)}
+                onKeyDown={(event) => {
+                  if (event.key === 'Enter') {
+                    handleFreeQuestionSend()
+                  }
+                  if (event.key === 'Escape') {
+                    setFreeQuestionOpen(false)
+                  }
+                }}
+                placeholder={'\uC9C8\uBB38 \uB0B4\uC6A9\uC744 \uC785\uB825\uD558\uC138\uC694'}
+                value={freeQuestionText}
+              />
+              <button className="input-send" onClick={handleFreeQuestionSend} type="button">
+                {'\uC804\uC1A1'}
+              </button>
+            </div>
+          </div>
         </div>
-      )}
+      ) : null}
 
-      {/* Main dock row */}
-      <div className="flex items-center gap-4 px-4 py-3">
-        {/* Character A card */}
+      <div className="hbar pc-play-hbar">
         <CharacterCard
-          name={partyA.name}
+          name={caseData.duo.partyA.name}
           emotion={agentA.emotionalState.phase}
-          lieProgress={(() => {
-            const entries = Object.values(agentA.lieStateMap)
-            if (entries.length === 0) return 0
-            const ranks = entries.map((e) => LIE_STATES.indexOf(e.currentState))
-            return (Math.max(...ranks) / (LIE_STATES.length - 1)) * 100
-          })()}
-          isTarget={targetParty === 'a'}
-          onClick={() => setTargetParty('a')}
+          faceId={getPcFaceSymbolId('a', caseData.duo.partyA, agentA.emotionalState.phase)}
+          isActive={pcTargetParty === 'a'}
+          side="a"
+          onClick={() => setPcTargetParty('a')}
         />
 
-        {/* Hotbar center */}
-        <div className="flex-1 flex flex-col items-center gap-2">
-          {/* Slots */}
-          <div className="flex gap-2">
-            {slots.map((slot) => (
-              <HotbarSlotButton
-                key={slot.key}
-                slot={slot}
-                onClick={() => {
-                  if (!slot.locked && slot.action) slot.action()
-                }}
-              />
-            ))}
-          </div>
+        <div className="hb-center hb-center--compact">
+          <div className="hotbar hotbar--compact">
+            <div className="hotbar-topbar">
+              <div className="hotbar-modes">
+                <button
+                  className={`hotbar-mode${activePage === 'interrogation' ? ' is-active' : ''}`}
+                  onClick={() => setActivePage('interrogation')}
+                  type="button"
+                >
+                  <kbd>F1</kbd>
+                  <span>{'\uC2EC\uBB38'}</span>
+                </button>
+                <button
+                  className={`hotbar-mode${activePage === 'evidence' ? ' is-active' : ''}`}
+                  disabled={!canUseEvidence}
+                  onClick={() => setActivePage('evidence')}
+                  type="button"
+                >
+                  <kbd>F2</kbd>
+                  <span>{'\uC99D\uAC70'}</span>
+                </button>
+                <button
+                  className={`hotbar-mode${activePage === 'special' ? ' is-active' : ''}`}
+                  disabled={!canUseSpecial}
+                  onClick={() => setActivePage('special')}
+                  type="button"
+                >
+                  <kbd>F3</kbd>
+                  <span>{'\uD2B9\uC218'}</span>
+                </button>
+              </div>
 
-          {/* Page tabs */}
-          <div className="flex gap-1">
-            {([
-              { key: 'interrogation' as HotbarPage, label: 'F1 심문', fKey: 'F1' },
-              { key: 'evidence' as HotbarPage, label: 'F2 증거', fKey: 'F2' },
-              { key: 'special' as HotbarPage, label: 'F3 특수', fKey: 'F3' },
-            ]).map((tab) => (
-              <button
-                key={tab.key}
-                onClick={() => setActivePage(tab.key)}
-                className="px-3 py-1 rounded text-xs font-medium transition-all"
-                style={{
-                  background: activePage === tab.key ? 'rgba(212,162,78,0.12)' : 'transparent',
-                  border: activePage === tab.key ? '1px solid rgba(212,162,78,0.3)' : '1px solid transparent',
-                  color: activePage === tab.key ? 'var(--pc-gold-light)' : '#4e4e5c',
-                }}
-              >
-                {tab.label}
-              </button>
-            ))}
+              <div className="hotbar-help">
+                <span><kbd>1~6</kbd> {'\uC2AC\uB86F \uC2E4\uD589'}</span>
+                <span className="hotbar-help__sep">/</span>
+                <span><kbd>ESC</kbd> {'\uC785\uB825 \uB2EB\uAE30'}</span>
+              </div>
+            </div>
+
+            <div className="hotbar-slots">
+              {slots.map((slot) => (
+                <button
+                  className={`slot${slot.locked ? ' slot-locked' : ''}`}
+                  disabled={slot.locked}
+                  key={slot.key}
+                  onClick={slot.onClick}
+                  title={slot.label}
+                  type="button"
+                >
+                  <span className="slot-key">{slot.key}</span>
+                  <span className="slot-ico">
+                    <PCSvgIcon id={slot.iconId} size={26} />
+                  </span>
+                  <span className="slot-nm">{slot.label}</span>
+                  {slot.effect ? (
+                    <span
+                      className={`slot-eff ${
+                        slot.effect === 'strong' ? 'ef-s' : slot.effect === 'weak' ? 'ef-w' : 'ef-n'
+                      }`}
+                    />
+                  ) : null}
+                </button>
+              ))}
+            </div>
           </div>
         </div>
 
-        {/* Character B card */}
         <CharacterCard
-          name={partyB.name}
+          name={caseData.duo.partyB.name}
           emotion={agentB.emotionalState.phase}
-          lieProgress={(() => {
-            const entries = Object.values(agentB.lieStateMap)
-            if (entries.length === 0) return 0
-            const ranks = entries.map((e) => LIE_STATES.indexOf(e.currentState))
-            return (Math.max(...ranks) / (LIE_STATES.length - 1)) * 100
-          })()}
-          isTarget={targetParty === 'b'}
-          onClick={() => setTargetParty('b')}
+          faceId={getPcFaceSymbolId('b', caseData.duo.partyB, agentB.emotionalState.phase)}
+          isActive={pcTargetParty === 'b'}
+          side="b"
+          onClick={() => setPcTargetParty('b')}
         />
       </div>
     </div>
   )
 }
 
-// ── Sub-components ──
-
-function CharacterCard({ name, emotion, lieProgress, isTarget, onClick }: {
+function CharacterCard({
+  name,
+  emotion,
+  faceId,
+  isActive,
+  onClick,
+  side,
+}: {
   name: string
   emotion: EmotionalPhase
-  lieProgress: number
-  isTarget: boolean
+  faceId: string
+  isActive: boolean
   onClick: () => void
+  side: PartyId
 }) {
   return (
-    <button
-      onClick={onClick}
-      className="flex flex-col items-center gap-1.5 px-4 py-2.5 rounded-xl transition-all shrink-0"
-      style={{
-        width: 120,
-        background: isTarget ? 'rgba(212,162,78,0.08)' : 'var(--pc-p4)',
-        border: isTarget ? '2px solid var(--pc-gold)' : '2px solid transparent',
-        boxShadow: isTarget ? '0 0 12px rgba(212,162,78,0.15)' : 'none',
-      }}
-    >
-      <div className="flex items-center gap-1.5">
-        <Emoji char="👤" size={16} />
-        <span
-          className="text-sm font-semibold truncate"
-          style={{ color: isTarget ? 'var(--pc-gold-light)' : '#b0b0ba', maxWidth: 72 }}
-        >
-          {name}
+    <button className={`char char-${side}${isActive ? ' spk' : ''}`} onClick={onClick} type="button">
+      <div className="char-face">
+        <PCSvgIcon id={faceId} size={52} />
+      </div>
+      <div className="char-info">
+        <span className="char-nm">{name}</span>
+        <span className={`char-emo ${emotion === 'angry' ? 'ce-sh' : 'ce-cf'}`}>{EMOTION_LABELS[emotion]}</span>
+        <span className="char-hp">
+          <span className="char-hp-f" />
         </span>
       </div>
-      <span
-        className="text-xs font-medium"
-        style={{ color: emotionColor(emotion) }}
-      >
-        {EMOTION_KO[emotion]}
-      </span>
-      {/* HP bar (lie progress) */}
-      <div className="w-full h-1.5 rounded-full overflow-hidden" style={{ background: 'rgba(255,255,255,0.06)' }}>
-        <div
-          className="h-full rounded-full transition-all duration-700"
-          style={{
-            width: `${lieProgress}%`,
-            background: lieProgress > 60
-              ? 'var(--pc-red)'
-              : lieProgress > 30
-                ? 'var(--pc-gold)'
-                : 'var(--pc-blue)',
-          }}
-        />
-      </div>
     </button>
   )
-}
-
-function HotbarSlotButton({ slot, onClick }: { slot: HotbarSlot; onClick: () => void }) {
-  const effDot = slot.effectiveness
-    ? { strong: 'var(--pc-gold)', normal: '#4e4e5c', weak: 'var(--pc-red)' }[slot.effectiveness]
-    : null
-
-  return (
-    <button
-      onClick={onClick}
-      disabled={slot.locked}
-      className="relative flex flex-col items-center justify-center rounded-xl transition-all group"
-      style={{
-        width: 72,
-        height: 64,
-        background: slot.locked ? 'var(--pc-p4)' : 'rgba(255,255,255,0.03)',
-        border: slot.locked ? '1px solid rgba(255,255,255,0.04)' : '1px solid rgba(255,255,255,0.06)',
-        cursor: slot.locked ? 'not-allowed' : 'pointer',
-        opacity: slot.locked ? 0.4 : 1,
-      }}
-      title={slot.locked ? '잠김' : slot.name}
-    >
-      {/* Key number */}
-      <span
-        className="absolute top-1 left-1.5 text-xs font-mono"
-        style={{ color: '#3a3a44', fontSize: 10 }}
-      >
-        {slot.key}
-      </span>
-
-      {/* Locked overlay */}
-      {slot.locked && (
-        <div
-          className="absolute inset-0 rounded-xl"
-          style={{
-            background: 'repeating-linear-gradient(-45deg, transparent, transparent 4px, rgba(255,255,255,0.02) 4px, rgba(255,255,255,0.02) 8px)',
-          }}
-        />
-      )}
-
-      {/* Icon */}
-      <Emoji char={slot.icon} size={20} />
-
-      {/* Name */}
-      <span className="text-xs mt-1 truncate max-w-[60px]" style={{ color: slot.locked ? '#3a3a44' : '#8b8b9a', fontSize: 10 }}>
-        {slot.name}
-      </span>
-
-      {/* Effectiveness dot */}
-      {effDot && !slot.locked && (
-        <div
-          className="absolute top-1 right-1.5 w-2 h-2 rounded-full"
-          style={{ background: effDot, boxShadow: `0 0 4px ${effDot}` }}
-          title={slot.effectiveness === 'strong' ? '효과적' : slot.effectiveness === 'weak' ? '비효율적' : '보통'}
-        />
-      )}
-    </button>
-  )
-}
-
-// ── Utils ──
-
-function emotionPhaseToTier(phase: EmotionalPhase): 'calm' | 'agitated' | 'explosive' | 'shutdown' {
-  switch (phase) {
-    case 'defensive': return 'calm'
-    case 'confident': return 'calm'
-    case 'shaken': return 'agitated'
-    case 'angry': return 'explosive'
-    case 'resigned': return 'shutdown'
-  }
-}
-
-function emotionColor(phase: EmotionalPhase): string {
-  switch (phase) {
-    case 'defensive': return '#8b8b9a'
-    case 'confident': return 'var(--pc-blue)'
-    case 'shaken': return 'var(--pc-gold)'
-    case 'angry': return 'var(--pc-red)'
-    case 'resigned': return '#6e6e7a'
-  }
 }

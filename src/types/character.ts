@@ -32,6 +32,7 @@ export interface CharacterProfile {
   sensitivePoints: string[]
   verbalTells: VerbalTell[]
   callTerms?: CallTerms
+  pcFaceType?: 'man' | 'woman'
 }
 
 export type LedgerCategory = 'confirmed' | 'distorted' | 'silenced'
@@ -111,6 +112,7 @@ export type RelationshipType =
   | 'tenant_landlord'
   | 'tenant'
   | 'friend'
+  | 'headline'
 
 export interface DuoSeed {
   duoId: string

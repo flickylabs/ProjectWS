@@ -1,0 +1,758 @@
+[
+  {
+    "caseId": "family-01",
+    "category": "family",
+    "caseJson": "src/data/cases/generated/family-01.json",
+    "scriptedText": null,
+    "v3GameLoop": "docs/ref/리뉴얼참고/gpt-batch-v2/round-04/family-01-v3-game-loop-data.json",
+    "dossierJson": null,
+    "evidenceJson": null
+  },
+  {
+    "caseId": "family-02",
+    "category": "family",
+    "caseJson": "src/data/cases/generated/family-02.json",
+    "scriptedText": null,
+    "v3GameLoop": "docs/ref/리뉴얼참고/gpt-batch/family-02/family-02-v3-game-loop-data.json",
+    "dossierJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-02-spouse09-family04/dossier-family-02.json",
+    "evidenceJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-02-spouse09-family04/evidence-family-02.json"
+  },
+  {
+    "caseId": "family-03",
+    "category": "family",
+    "caseJson": "src/data/cases/generated/family-03.json",
+    "scriptedText": null,
+    "v3GameLoop": "docs/ref/리뉴얼참고/gpt-batch/family-03/family-03-v3-game-loop-data.json",
+    "dossierJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-02-spouse09-family04/dossier-family-03.json",
+    "evidenceJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-02-spouse09-family04/evidence-family-03.json"
+  },
+  {
+    "caseId": "family-04",
+    "category": "family",
+    "caseJson": "src/data/cases/generated/family-04.json",
+    "scriptedText": null,
+    "v3GameLoop": "docs/ref/리뉴얼참고/gpt-batch/family-04/family-04-v3-game-loop-data.json",
+    "dossierJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-02-spouse09-family04/dossier-family-04.json",
+    "evidenceJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-02-spouse09-family04/evidence-family-04.json"
+  },
+  {
+    "caseId": "family-05",
+    "category": "family",
+    "caseJson": "src/data/cases/generated/family-05.json",
+    "scriptedText": null,
+    "v3GameLoop": "docs/ref/리뉴얼참고/gpt-batch/family-05/family-05-v3-game-loop-data.json",
+    "dossierJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-03-family05-11/dossier-family-05.json",
+    "evidenceJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-03-family05-11/evidence-family-05.json"
+  },
+  {
+    "caseId": "family-06",
+    "category": "family",
+    "caseJson": "src/data/cases/generated/family-06.json",
+    "scriptedText": null,
+    "v3GameLoop": "docs/ref/리뉴얼참고/gpt-batch/family-06/family-06-v3-game-loop-data.json",
+    "dossierJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-03-family05-11/dossier-family-06.json",
+    "evidenceJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-03-family05-11/evidence-family-06.json"
+  },
+  {
+    "caseId": "family-07",
+    "category": "family",
+    "caseJson": "src/data/cases/generated/family-07.json",
+    "scriptedText": null,
+    "v3GameLoop": "docs/ref/리뉴얼참고/gpt-batch/family-07/family-07-v3-game-loop-data.json",
+    "dossierJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-03-family05-11/dossier-family-07.json",
+    "evidenceJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-03-family05-11/evidence-family-07.json"
+  },
+  {
+    "caseId": "family-08",
+    "category": "family",
+    "caseJson": "src/data/cases/generated/family-08.json",
+    "scriptedText": null,
+    "v3GameLoop": "docs/ref/리뉴얼참고/gpt-batch/family-08/family-08-v3-game-loop-data.json",
+    "dossierJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-03-family05-11/dossier-family-08.json",
+    "evidenceJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-03-family05-11/evidence-family-08.json"
+  },
+  {
+    "caseId": "family-09",
+    "category": "family",
+    "caseJson": "src/data/cases/generated/family-09.json",
+    "scriptedText": null,
+    "v3GameLoop": "docs/ref/리뉴얼참고/gpt-batch/family-09/family-09-v3-game-loop-data.json",
+    "dossierJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-03-family05-11/dossier-family-09.json",
+    "evidenceJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-03-family05-11/evidence-family-09.json"
+  },
+  {
+    "caseId": "family-10",
+    "category": "family",
+    "caseJson": "src/data/cases/generated/family-10.json",
+    "scriptedText": null,
+    "v3GameLoop": "docs/ref/리뉴얼참고/gpt-batch/family-10/family-10-v3-game-loop-data.json",
+    "dossierJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-03-family05-11/dossier-family-10.json",
+    "evidenceJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-03-family05-11/evidence-family-10.json"
+  },
+  {
+    "caseId": "family-11",
+    "category": "family",
+    "caseJson": "src/data/cases/generated/family-11.json",
+    "scriptedText": null,
+    "v3GameLoop": "docs/ref/리뉴얼참고/gpt-batch/family-11/family-11-v3-game-loop-data.json",
+    "dossierJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-03-family05-11/dossier-family-11.json",
+    "evidenceJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-03-family05-11/evidence-family-11.json"
+  },
+  {
+    "caseId": "family-12",
+    "category": "family",
+    "caseJson": "src/data/cases/generated/family-12.json",
+    "scriptedText": null,
+    "v3GameLoop": "docs/ref/리뉴얼참고/gpt-batch/family-12/family-12-v3-game-loop-data.json",
+    "dossierJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-04-family12-friend07/dossier-family-12.json",
+    "evidenceJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-04-family12-friend07/evidence-family-12.json"
+  },
+  {
+    "caseId": "friend-01",
+    "category": "friend",
+    "caseJson": "src/data/cases/generated/friend-01.json",
+    "scriptedText": null,
+    "v3GameLoop": "docs/ref/리뉴얼참고/gpt-batch/friend-01/friend-01-v3-game-loop-data.json",
+    "dossierJson": null,
+    "evidenceJson": null
+  },
+  {
+    "caseId": "friend-02",
+    "category": "friend",
+    "caseJson": "src/data/cases/generated/friend-02.json",
+    "scriptedText": null,
+    "v3GameLoop": "docs/ref/리뉴얼참고/gpt-batch/friend-02/friend-02-v3-game-loop-data.json",
+    "dossierJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-04-family12-friend07/dossier-friend-02.json",
+    "evidenceJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-04-family12-friend07/evidence-friend-02.json"
+  },
+  {
+    "caseId": "friend-03",
+    "category": "friend",
+    "caseJson": "src/data/cases/generated/friend-03.json",
+    "scriptedText": null,
+    "v3GameLoop": "docs/ref/리뉴얼참고/gpt-batch/friend-03/friend-03-v3-game-loop-data.json",
+    "dossierJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-04-family12-friend07/dossier-friend-03.json",
+    "evidenceJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-04-family12-friend07/evidence-friend-03.json"
+  },
+  {
+    "caseId": "friend-04",
+    "category": "friend",
+    "caseJson": "src/data/cases/generated/friend-04.json",
+    "scriptedText": null,
+    "v3GameLoop": "docs/ref/리뉴얼참고/gpt-batch/friend-04/friend-04-v3-game-loop-data.json",
+    "dossierJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-04-family12-friend07/dossier-friend-04.json",
+    "evidenceJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-04-family12-friend07/evidence-friend-04.json"
+  },
+  {
+    "caseId": "friend-05",
+    "category": "friend",
+    "caseJson": "src/data/cases/generated/friend-05.json",
+    "scriptedText": null,
+    "v3GameLoop": "docs/ref/리뉴얼참고/gpt-batch/friend-05/friend-05-v3-game-loop-data.json",
+    "dossierJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-04-family12-friend07/dossier-friend-05.json",
+    "evidenceJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-04-family12-friend07/evidence-friend-05.json"
+  },
+  {
+    "caseId": "friend-06",
+    "category": "friend",
+    "caseJson": "src/data/cases/generated/friend-06.json",
+    "scriptedText": null,
+    "v3GameLoop": "docs/ref/리뉴얼참고/gpt-batch/friend-06/friend-06-v3-game-loop-data.json",
+    "dossierJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-04-family12-friend07/dossier-friend-06.json",
+    "evidenceJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-04-family12-friend07/evidence-friend-06.json"
+  },
+  {
+    "caseId": "friend-07",
+    "category": "friend",
+    "caseJson": "src/data/cases/generated/friend-07.json",
+    "scriptedText": null,
+    "v3GameLoop": "docs/ref/리뉴얼참고/gpt-batch/friend-07/friend-07-v3-game-loop-data.json",
+    "dossierJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-04-family12-friend07/dossier-friend-07.json",
+    "evidenceJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-04-family12-friend07/evidence-friend-07.json"
+  },
+  {
+    "caseId": "friend-08",
+    "category": "friend",
+    "caseJson": "src/data/cases/generated/friend-08.json",
+    "scriptedText": null,
+    "v3GameLoop": "docs/ref/리뉴얼참고/gpt-batch/friend-08/friend-08-v3-game-loop-data.json",
+    "dossierJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-05-friend08-neighbor03/dossier-friend-08.json",
+    "evidenceJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-05-friend08-neighbor03/evidence-friend-08.json"
+  },
+  {
+    "caseId": "friend-09",
+    "category": "friend",
+    "caseJson": "src/data/cases/generated/friend-09.json",
+    "scriptedText": null,
+    "v3GameLoop": "docs/ref/리뉴얼참고/gpt-batch/friend-09/friend-09-v3-game-loop-data.json",
+    "dossierJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-05-friend08-neighbor03/dossier-friend-09.json",
+    "evidenceJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-05-friend08-neighbor03/evidence-friend-09.json"
+  },
+  {
+    "caseId": "friend-10",
+    "category": "friend",
+    "caseJson": "src/data/cases/generated/friend-10.json",
+    "scriptedText": null,
+    "v3GameLoop": "docs/ref/리뉴얼참고/gpt-batch/friend-10/friend-10-v3-game-loop-data.json",
+    "dossierJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-05-friend08-neighbor03/dossier-friend-10.json",
+    "evidenceJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-05-friend08-neighbor03/evidence-friend-10.json"
+  },
+  {
+    "caseId": "friend-11",
+    "category": "friend",
+    "caseJson": "src/data/cases/generated/friend-11.json",
+    "scriptedText": null,
+    "v3GameLoop": "docs/ref/리뉴얼참고/gpt-batch/friend-11/friend-11-v3-game-loop-data.json",
+    "dossierJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-05-friend08-neighbor03/dossier-friend-11.json",
+    "evidenceJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-05-friend08-neighbor03/evidence-friend-11.json"
+  },
+  {
+    "caseId": "friend-12",
+    "category": "friend",
+    "caseJson": "src/data/cases/generated/friend-12.json",
+    "scriptedText": null,
+    "v3GameLoop": "docs/ref/리뉴얼참고/gpt-batch/friend-12/friend-12-v3-game-loop-data.json",
+    "dossierJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-05-friend08-neighbor03/dossier-friend-12.json",
+    "evidenceJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-05-friend08-neighbor03/evidence-friend-12.json"
+  },
+  {
+    "caseId": "neighbor-01",
+    "category": "neighbor",
+    "caseJson": "src/data/cases/generated/neighbor-01.json",
+    "scriptedText": null,
+    "v3GameLoop": "docs/ref/리뉴얼참고/gpt-batch/neighbor-01/neighbor-01-v3-game-loop-data.json",
+    "dossierJson": null,
+    "evidenceJson": null
+  },
+  {
+    "caseId": "neighbor-02",
+    "category": "neighbor",
+    "caseJson": "src/data/cases/generated/neighbor-02.json",
+    "scriptedText": null,
+    "v3GameLoop": "docs/ref/리뉴얼참고/gpt-batch/neighbor-02/neighbor-02-v3-game-loop-data.json",
+    "dossierJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-05-friend08-neighbor03/dossier-neighbor-02.json",
+    "evidenceJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-05-friend08-neighbor03/evidence-neighbor-02.json"
+  },
+  {
+    "caseId": "neighbor-03",
+    "category": "neighbor",
+    "caseJson": "src/data/cases/generated/neighbor-03.json",
+    "scriptedText": null,
+    "v3GameLoop": "docs/ref/리뉴얼참고/gpt-batch/neighbor-03/neighbor-03-v3-game-loop-data.json",
+    "dossierJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-05-friend08-neighbor03/dossier-neighbor-03.json",
+    "evidenceJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-05-friend08-neighbor03/evidence-neighbor-03.json"
+  },
+  {
+    "caseId": "neighbor-04",
+    "category": "neighbor",
+    "caseJson": "src/data/cases/generated/neighbor-04.json",
+    "scriptedText": null,
+    "v3GameLoop": "docs/ref/리뉴얼참고/gpt-batch/neighbor-04/neighbor-04-v3-game-loop-data.json",
+    "dossierJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-06-neighbor04-10/dossier-neighbor-04.json",
+    "evidenceJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-06-neighbor04-10/evidence-neighbor-04.json"
+  },
+  {
+    "caseId": "neighbor-05",
+    "category": "neighbor",
+    "caseJson": "src/data/cases/generated/neighbor-05.json",
+    "scriptedText": null,
+    "v3GameLoop": "docs/ref/리뉴얼참고/gpt-batch/neighbor-05/neighbor-05-v3-game-loop-data.json",
+    "dossierJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-06-neighbor04-10/dossier-neighbor-05.json",
+    "evidenceJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-06-neighbor04-10/evidence-neighbor-05.json"
+  },
+  {
+    "caseId": "neighbor-06",
+    "category": "neighbor",
+    "caseJson": "src/data/cases/generated/neighbor-06.json",
+    "scriptedText": null,
+    "v3GameLoop": "docs/ref/리뉴얼참고/gpt-batch/neighbor-06/neighbor-06-v3-game-loop-data.json",
+    "dossierJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-06-neighbor04-10/dossier-neighbor-06.json",
+    "evidenceJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-06-neighbor04-10/evidence-neighbor-06.json"
+  },
+  {
+    "caseId": "neighbor-07",
+    "category": "neighbor",
+    "caseJson": "src/data/cases/generated/neighbor-07.json",
+    "scriptedText": null,
+    "v3GameLoop": "docs/ref/리뉴얼참고/gpt-batch/neighbor-07/neighbor-07-v3-game-loop-data.json",
+    "dossierJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-06-neighbor04-10/dossier-neighbor-07.json",
+    "evidenceJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-06-neighbor04-10/evidence-neighbor-07.json"
+  },
+  {
+    "caseId": "neighbor-08",
+    "category": "neighbor",
+    "caseJson": "src/data/cases/generated/neighbor-08.json",
+    "scriptedText": null,
+    "v3GameLoop": "docs/ref/리뉴얼참고/gpt-batch/neighbor-08/neighbor-08-v3-game-loop-data.json",
+    "dossierJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-06-neighbor04-10/dossier-neighbor-08.json",
+    "evidenceJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-06-neighbor04-10/evidence-neighbor-08.json"
+  },
+  {
+    "caseId": "neighbor-09",
+    "category": "neighbor",
+    "caseJson": "src/data/cases/generated/neighbor-09.json",
+    "scriptedText": null,
+    "v3GameLoop": "docs/ref/리뉴얼참고/gpt-batch/neighbor-09/neighbor-09-v3-game-loop-data.json",
+    "dossierJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-06-neighbor04-10/dossier-neighbor-09.json",
+    "evidenceJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-06-neighbor04-10/evidence-neighbor-09.json"
+  },
+  {
+    "caseId": "neighbor-10",
+    "category": "neighbor",
+    "caseJson": "src/data/cases/generated/neighbor-10.json",
+    "scriptedText": null,
+    "v3GameLoop": "docs/ref/리뉴얼참고/gpt-batch/neighbor-10/neighbor-10-v3-game-loop-data.json",
+    "dossierJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-06-neighbor04-10/dossier-neighbor-10.json",
+    "evidenceJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-06-neighbor04-10/evidence-neighbor-10.json"
+  },
+  {
+    "caseId": "neighbor-11",
+    "category": "neighbor",
+    "caseJson": "src/data/cases/generated/neighbor-11.json",
+    "scriptedText": null,
+    "v3GameLoop": "docs/ref/리뉴얼참고/gpt-batch/neighbor-11/neighbor-11-v3-game-loop-data.json",
+    "dossierJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-07-neighbor11-partner06/dossier-neighbor-11.json",
+    "evidenceJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-07-neighbor11-partner06/evidence-neighbor-11.json"
+  },
+  {
+    "caseId": "neighbor-12",
+    "category": "neighbor",
+    "caseJson": "src/data/cases/generated/neighbor-12.json",
+    "scriptedText": null,
+    "v3GameLoop": "docs/ref/리뉴얼참고/gpt-batch/neighbor-12/neighbor-12-v3-game-loop-data.json",
+    "dossierJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-07-neighbor11-partner06/dossier-neighbor-12.json",
+    "evidenceJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-07-neighbor11-partner06/evidence-neighbor-12.json"
+  },
+  {
+    "caseId": "partnership-01",
+    "category": "partnership",
+    "caseJson": "src/data/cases/generated/partnership-01.json",
+    "scriptedText": null,
+    "v3GameLoop": "docs/ref/리뉴얼참고/gpt-batch/partnership-01/partnership-01-v3-game-loop-data.json",
+    "dossierJson": null,
+    "evidenceJson": null
+  },
+  {
+    "caseId": "partnership-02",
+    "category": "partnership",
+    "caseJson": "src/data/cases/generated/partnership-02.json",
+    "scriptedText": null,
+    "v3GameLoop": "docs/ref/리뉴얼참고/gpt-batch/partnership-02/partnership-02-v3-game-loop-data.json",
+    "dossierJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-07-neighbor11-partner06/dossier-partnership-02.json",
+    "evidenceJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-07-neighbor11-partner06/evidence-partnership-02.json"
+  },
+  {
+    "caseId": "partnership-03",
+    "category": "partnership",
+    "caseJson": "src/data/cases/generated/partnership-03.json",
+    "scriptedText": null,
+    "v3GameLoop": "docs/ref/리뉴얼참고/gpt-batch/partnership-03/partnership-03-v3-game-loop-data.json",
+    "dossierJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-07-neighbor11-partner06/dossier-partnership-03.json",
+    "evidenceJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-07-neighbor11-partner06/evidence-partnership-03.json"
+  },
+  {
+    "caseId": "partnership-04",
+    "category": "partnership",
+    "caseJson": "src/data/cases/generated/partnership-04.json",
+    "scriptedText": null,
+    "v3GameLoop": "docs/ref/리뉴얼참고/gpt-batch/partnership-04/partnership-04-v3-game-loop-data.json",
+    "dossierJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-07-neighbor11-partner06/dossier-partnership-04.json",
+    "evidenceJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-07-neighbor11-partner06/evidence-partnership-04.json"
+  },
+  {
+    "caseId": "partnership-05",
+    "category": "partnership",
+    "caseJson": "src/data/cases/generated/partnership-05.json",
+    "scriptedText": null,
+    "v3GameLoop": "docs/ref/리뉴얼참고/gpt-batch/partnership-05/partnership-05-v3-game-loop-data.json",
+    "dossierJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-07-neighbor11-partner06/dossier-partnership-05.json",
+    "evidenceJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-07-neighbor11-partner06/evidence-partnership-05.json"
+  },
+  {
+    "caseId": "partnership-06",
+    "category": "partnership",
+    "caseJson": "src/data/cases/generated/partnership-06.json",
+    "scriptedText": null,
+    "v3GameLoop": "docs/ref/리뉴얼참고/gpt-batch/partnership-06/partnership-06-v3-game-loop-data.json",
+    "dossierJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-07-neighbor11-partner06/dossier-partnership-06.json",
+    "evidenceJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-07-neighbor11-partner06/evidence-partnership-06.json"
+  },
+  {
+    "caseId": "partnership-07",
+    "category": "partnership",
+    "caseJson": "src/data/cases/generated/partnership-07.json",
+    "scriptedText": null,
+    "v3GameLoop": "docs/ref/리뉴얼참고/gpt-batch/partnership-07/partnership-07-v3-game-loop-data.json",
+    "dossierJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-08-partner07-tenant02/dossier-partnership-07.json",
+    "evidenceJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-08-partner07-tenant02/evidence-partnership-07.json"
+  },
+  {
+    "caseId": "partnership-08",
+    "category": "partnership",
+    "caseJson": "src/data/cases/generated/partnership-08.json",
+    "scriptedText": null,
+    "v3GameLoop": "docs/ref/리뉴얼참고/gpt-batch/partnership-08/partnership-08-v3-game-loop-data.json",
+    "dossierJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-08-partner07-tenant02/dossier-partnership-08.json",
+    "evidenceJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-08-partner07-tenant02/evidence-partnership-08.json"
+  },
+  {
+    "caseId": "partnership-09",
+    "category": "partnership",
+    "caseJson": "src/data/cases/generated/partnership-09.json",
+    "scriptedText": null,
+    "v3GameLoop": "docs/ref/리뉴얼참고/gpt-batch/partnership-09/partnership-09-v3-game-loop-data.json",
+    "dossierJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-08-partner07-tenant02/dossier-partnership-09.json",
+    "evidenceJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-08-partner07-tenant02/evidence-partnership-09.json"
+  },
+  {
+    "caseId": "partnership-10",
+    "category": "partnership",
+    "caseJson": "src/data/cases/generated/partnership-10.json",
+    "scriptedText": null,
+    "v3GameLoop": "docs/ref/리뉴얼참고/gpt-batch/partnership-10/partnership-10-v3-game-loop-data.json",
+    "dossierJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-08-partner07-tenant02/dossier-partnership-10.json",
+    "evidenceJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-08-partner07-tenant02/evidence-partnership-10.json"
+  },
+  {
+    "caseId": "partnership-11",
+    "category": "partnership",
+    "caseJson": "src/data/cases/generated/partnership-11.json",
+    "scriptedText": null,
+    "v3GameLoop": "docs/ref/리뉴얼참고/gpt-batch/partnership-11/partnership-11-v3-game-loop-data.json",
+    "dossierJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-08-partner07-tenant02/dossier-partnership-11.json",
+    "evidenceJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-08-partner07-tenant02/evidence-partnership-11.json"
+  },
+  {
+    "caseId": "partnership-12",
+    "category": "partnership",
+    "caseJson": "src/data/cases/generated/partnership-12.json",
+    "scriptedText": null,
+    "v3GameLoop": "docs/ref/리뉴얼참고/gpt-batch/partnership-12/partnership-12-v3-game-loop-data.json",
+    "dossierJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-08-partner07-tenant02/dossier-partnership-12.json",
+    "evidenceJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-08-partner07-tenant02/evidence-partnership-12.json"
+  },
+  {
+    "caseId": "spouse-01",
+    "category": "spouse",
+    "caseJson": "src/data/cases/generated/spouse-01.json",
+    "scriptedText": "src/data/scriptedText/spouse-01.json",
+    "v3GameLoop": "docs/ref/리뉴얼참고/gpt-batch-v2/round-01/spouse-01-v3-game-loop-data.json",
+    "dossierJson": null,
+    "evidenceJson": null
+  },
+  {
+    "caseId": "spouse-02",
+    "category": "spouse",
+    "caseJson": "src/data/cases/generated/spouse-02.json",
+    "scriptedText": null,
+    "v3GameLoop": "docs/ref/리뉴얼참고/gpt-batch/spouse-02/spouse-02-v3-game-loop-data.json",
+    "dossierJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-01-spouse-02-08/dossier-spouse-02.json",
+    "evidenceJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-01-spouse-02-08/evidence-spouse-02.json"
+  },
+  {
+    "caseId": "spouse-03",
+    "category": "spouse",
+    "caseJson": "src/data/cases/generated/spouse-03.json",
+    "scriptedText": null,
+    "v3GameLoop": "docs/ref/리뉴얼참고/gpt-batch/spouse-03/spouse-03-v3-game-loop-data.json",
+    "dossierJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-01-spouse-02-08/dossier-spouse-03.json",
+    "evidenceJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-01-spouse-02-08/evidence-spouse-03.json"
+  },
+  {
+    "caseId": "spouse-04",
+    "category": "spouse",
+    "caseJson": "src/data/cases/generated/spouse-04.json",
+    "scriptedText": null,
+    "v3GameLoop": "docs/ref/리뉴얼참고/gpt-batch/spouse-04/spouse-04-v3-game-loop-data.json",
+    "dossierJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-01-spouse-02-08/dossier-spouse-04.json",
+    "evidenceJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-01-spouse-02-08/evidence-spouse-04.json"
+  },
+  {
+    "caseId": "spouse-05",
+    "category": "spouse",
+    "caseJson": "src/data/cases/generated/spouse-05.json",
+    "scriptedText": null,
+    "v3GameLoop": "docs/ref/리뉴얼참고/gpt-batch/spouse-05/spouse-05-v3-game-loop-data.json",
+    "dossierJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-01-spouse-02-08/dossier-spouse-05.json",
+    "evidenceJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-01-spouse-02-08/evidence-spouse-05.json"
+  },
+  {
+    "caseId": "spouse-06",
+    "category": "spouse",
+    "caseJson": "src/data/cases/generated/spouse-06.json",
+    "scriptedText": null,
+    "v3GameLoop": "docs/ref/리뉴얼참고/gpt-batch/spouse-06/spouse-06-v3-game-loop-data.json",
+    "dossierJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-01-spouse-02-08/dossier-spouse-06.json",
+    "evidenceJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-01-spouse-02-08/evidence-spouse-06.json"
+  },
+  {
+    "caseId": "spouse-07",
+    "category": "spouse",
+    "caseJson": "src/data/cases/generated/spouse-07.json",
+    "scriptedText": null,
+    "v3GameLoop": "docs/ref/리뉴얼참고/gpt-batch/spouse-07/spouse-07-v3-game-loop-data.json",
+    "dossierJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-01-spouse-02-08/dossier-spouse-07.json",
+    "evidenceJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-01-spouse-02-08/evidence-spouse-07.json"
+  },
+  {
+    "caseId": "spouse-08",
+    "category": "spouse",
+    "caseJson": "src/data/cases/generated/spouse-08.json",
+    "scriptedText": null,
+    "v3GameLoop": "docs/ref/리뉴얼참고/gpt-batch/spouse-08/spouse-08-v3-game-loop-data.json",
+    "dossierJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-01-spouse-02-08/dossier-spouse-08.json",
+    "evidenceJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-01-spouse-02-08/evidence-spouse-08.json"
+  },
+  {
+    "caseId": "spouse-09",
+    "category": "spouse",
+    "caseJson": "src/data/cases/generated/spouse-09.json",
+    "scriptedText": null,
+    "v3GameLoop": "docs/ref/리뉴얼참고/gpt-batch/spouse-09/spouse-09-v3-game-loop-data.json",
+    "dossierJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-02-spouse09-family04/dossier-spouse-09.json",
+    "evidenceJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-02-spouse09-family04/evidence-spouse-09.json"
+  },
+  {
+    "caseId": "spouse-10",
+    "category": "spouse",
+    "caseJson": "src/data/cases/generated/spouse-10.json",
+    "scriptedText": null,
+    "v3GameLoop": "docs/ref/리뉴얼참고/gpt-batch/spouse-10/spouse-10-v3-game-loop-data.json",
+    "dossierJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-02-spouse09-family04/dossier-spouse-10.json",
+    "evidenceJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-02-spouse09-family04/evidence-spouse-10.json"
+  },
+  {
+    "caseId": "spouse-11",
+    "category": "spouse",
+    "caseJson": "src/data/cases/generated/spouse-11.json",
+    "scriptedText": null,
+    "v3GameLoop": "docs/ref/리뉴얼참고/gpt-batch/spouse-11/spouse-11-v3-game-loop-data.json",
+    "dossierJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-02-spouse09-family04/dossier-spouse-11.json",
+    "evidenceJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-02-spouse09-family04/evidence-spouse-11.json"
+  },
+  {
+    "caseId": "spouse-12",
+    "category": "spouse",
+    "caseJson": "src/data/cases/generated/spouse-12.json",
+    "scriptedText": null,
+    "v3GameLoop": "docs/ref/리뉴얼참고/gpt-batch/spouse-12/spouse-12-v3-game-loop-data.json",
+    "dossierJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-02-spouse09-family04/dossier-spouse-12.json",
+    "evidenceJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-02-spouse09-family04/evidence-spouse-12.json"
+  },
+  {
+    "caseId": "tenant-01",
+    "category": "tenant",
+    "caseJson": "src/data/cases/generated/tenant-01.json",
+    "scriptedText": null,
+    "v3GameLoop": "docs/ref/리뉴얼참고/gpt-batch/tenant-01/tenant-01-v3-game-loop-data.json",
+    "dossierJson": null,
+    "evidenceJson": null
+  },
+  {
+    "caseId": "tenant-02",
+    "category": "tenant",
+    "caseJson": "src/data/cases/generated/tenant-02.json",
+    "scriptedText": null,
+    "v3GameLoop": "docs/ref/리뉴얼참고/gpt-batch/tenant-02/tenant-02-v3-game-loop-data.json",
+    "dossierJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-08-partner07-tenant02/dossier-tenant-02.json",
+    "evidenceJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-08-partner07-tenant02/evidence-tenant-02.json"
+  },
+  {
+    "caseId": "tenant-03",
+    "category": "tenant",
+    "caseJson": "src/data/cases/generated/tenant-03.json",
+    "scriptedText": null,
+    "v3GameLoop": "docs/ref/리뉴얼참고/gpt-batch/tenant-03/tenant-03-v3-game-loop-data.json",
+    "dossierJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-09-tenant03-09/dossier-tenant-03.json",
+    "evidenceJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-09-tenant03-09/evidence-tenant-03.json"
+  },
+  {
+    "caseId": "tenant-04",
+    "category": "tenant",
+    "caseJson": "src/data/cases/generated/tenant-04.json",
+    "scriptedText": null,
+    "v3GameLoop": "docs/ref/리뉴얼참고/gpt-batch/tenant-04/tenant-04-v3-game-loop-data.json",
+    "dossierJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-09-tenant03-09/dossier-tenant-04.json",
+    "evidenceJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-09-tenant03-09/evidence-tenant-04.json"
+  },
+  {
+    "caseId": "tenant-05",
+    "category": "tenant",
+    "caseJson": "src/data/cases/generated/tenant-05.json",
+    "scriptedText": null,
+    "v3GameLoop": "docs/ref/리뉴얼참고/gpt-batch/tenant-05/tenant-05-v3-game-loop-data.json",
+    "dossierJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-09-tenant03-09/dossier-tenant-05.json",
+    "evidenceJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-09-tenant03-09/evidence-tenant-05.json"
+  },
+  {
+    "caseId": "tenant-06",
+    "category": "tenant",
+    "caseJson": "src/data/cases/generated/tenant-06.json",
+    "scriptedText": null,
+    "v3GameLoop": "docs/ref/리뉴얼참고/gpt-batch/tenant-06/tenant-06-v3-game-loop-data.json",
+    "dossierJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-09-tenant03-09/dossier-tenant-06.json",
+    "evidenceJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-09-tenant03-09/evidence-tenant-06.json"
+  },
+  {
+    "caseId": "tenant-07",
+    "category": "tenant",
+    "caseJson": "src/data/cases/generated/tenant-07.json",
+    "scriptedText": null,
+    "v3GameLoop": "docs/ref/리뉴얼참고/gpt-batch/tenant-07/tenant-07-v3-game-loop-data.json",
+    "dossierJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-09-tenant03-09/dossier-tenant-07.json",
+    "evidenceJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-09-tenant03-09/evidence-tenant-07.json"
+  },
+  {
+    "caseId": "tenant-08",
+    "category": "tenant",
+    "caseJson": "src/data/cases/generated/tenant-08.json",
+    "scriptedText": null,
+    "v3GameLoop": "docs/ref/리뉴얼참고/gpt-batch/tenant-08/tenant-08-v3-game-loop-data.json",
+    "dossierJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-09-tenant03-09/dossier-tenant-08.json",
+    "evidenceJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-09-tenant03-09/evidence-tenant-08.json"
+  },
+  {
+    "caseId": "tenant-09",
+    "category": "tenant",
+    "caseJson": "src/data/cases/generated/tenant-09.json",
+    "scriptedText": null,
+    "v3GameLoop": "docs/ref/리뉴얼참고/gpt-batch/tenant-09/tenant-09-v3-game-loop-data.json",
+    "dossierJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-09-tenant03-09/dossier-tenant-09.json",
+    "evidenceJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-09-tenant03-09/evidence-tenant-09.json"
+  },
+  {
+    "caseId": "tenant-10",
+    "category": "tenant",
+    "caseJson": "src/data/cases/generated/tenant-10.json",
+    "scriptedText": null,
+    "v3GameLoop": "docs/ref/리뉴얼참고/gpt-batch/tenant-10/tenant-10-v3-game-loop-data.json",
+    "dossierJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-10-tenant10-workplace05/dossier-tenant-10.json",
+    "evidenceJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-10-tenant10-workplace05/evidence-tenant-10.json"
+  },
+  {
+    "caseId": "tenant-11",
+    "category": "tenant",
+    "caseJson": "src/data/cases/generated/tenant-11.json",
+    "scriptedText": null,
+    "v3GameLoop": "docs/ref/리뉴얼참고/gpt-batch/tenant-11/tenant-11-v3-game-loop-data.json",
+    "dossierJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-10-tenant10-workplace05/dossier-tenant-11.json",
+    "evidenceJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-10-tenant10-workplace05/evidence-tenant-11.json"
+  },
+  {
+    "caseId": "tenant-12",
+    "category": "tenant",
+    "caseJson": "src/data/cases/generated/tenant-12.json",
+    "scriptedText": null,
+    "v3GameLoop": "docs/ref/리뉴얼참고/gpt-batch/tenant-12/tenant-12-v3-game-loop-data.json",
+    "dossierJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-10-tenant10-workplace05/dossier-tenant-12.json",
+    "evidenceJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-10-tenant10-workplace05/evidence-tenant-12.json"
+  },
+  {
+    "caseId": "workplace-01",
+    "category": "workplace",
+    "caseJson": "src/data/cases/generated/workplace-01.json",
+    "scriptedText": null,
+    "v3GameLoop": "docs/ref/리뉴얼참고/gpt-batch/workplace-01/workplace-01-v3-game-loop-data.json",
+    "dossierJson": null,
+    "evidenceJson": null
+  },
+  {
+    "caseId": "workplace-02",
+    "category": "workplace",
+    "caseJson": "src/data/cases/generated/workplace-02.json",
+    "scriptedText": null,
+    "v3GameLoop": "docs/ref/리뉴얼참고/gpt-batch/workplace-02/workplace-02-v3-game-loop-data.json",
+    "dossierJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-10-tenant10-workplace05/dossier-workplace-02.json",
+    "evidenceJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-10-tenant10-workplace05/evidence-workplace-02.json"
+  },
+  {
+    "caseId": "workplace-03",
+    "category": "workplace",
+    "caseJson": "src/data/cases/generated/workplace-03.json",
+    "scriptedText": null,
+    "v3GameLoop": "docs/ref/리뉴얼참고/gpt-batch/workplace-03/workplace-03-v3-game-loop-data.json",
+    "dossierJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-10-tenant10-workplace05/dossier-workplace-03.json",
+    "evidenceJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-10-tenant10-workplace05/evidence-workplace-03.json"
+  },
+  {
+    "caseId": "workplace-04",
+    "category": "workplace",
+    "caseJson": "src/data/cases/generated/workplace-04.json",
+    "scriptedText": null,
+    "v3GameLoop": "docs/ref/리뉴얼참고/gpt-batch/workplace-04/workplace-04-v3-game-loop-data.json",
+    "dossierJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-10-tenant10-workplace05/dossier-workplace-04.json",
+    "evidenceJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-10-tenant10-workplace05/evidence-workplace-04.json"
+  },
+  {
+    "caseId": "workplace-05",
+    "category": "workplace",
+    "caseJson": "src/data/cases/generated/workplace-05.json",
+    "scriptedText": null,
+    "v3GameLoop": "docs/ref/리뉴얼참고/gpt-batch/workplace-05/workplace-05-v3-game-loop-data.json",
+    "dossierJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-10-tenant10-workplace05/dossier-workplace-05.json",
+    "evidenceJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-10-tenant10-workplace05/evidence-workplace-05.json"
+  },
+  {
+    "caseId": "workplace-06",
+    "category": "workplace",
+    "caseJson": "src/data/cases/generated/workplace-06.json",
+    "scriptedText": null,
+    "v3GameLoop": "docs/ref/리뉴얼참고/gpt-batch/workplace-06/workplace-06-v3-game-loop-data.json",
+    "dossierJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-11-workplace06-12/dossier-workplace-06.json",
+    "evidenceJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-11-workplace06-12/evidence-workplace-06.json"
+  },
+  {
+    "caseId": "workplace-07",
+    "category": "workplace",
+    "caseJson": "src/data/cases/generated/workplace-07.json",
+    "scriptedText": null,
+    "v3GameLoop": "docs/ref/리뉴얼참고/gpt-batch/workplace-07/workplace-07-v3-game-loop-data.json",
+    "dossierJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-11-workplace06-12/dossier-workplace-07.json",
+    "evidenceJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-11-workplace06-12/evidence-workplace-07.json"
+  },
+  {
+    "caseId": "workplace-08",
+    "category": "workplace",
+    "caseJson": "src/data/cases/generated/workplace-08.json",
+    "scriptedText": null,
+    "v3GameLoop": "docs/ref/리뉴얼참고/gpt-batch/workplace-08/workplace-08-v3-game-loop-data.json",
+    "dossierJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-11-workplace06-12/dossier-workplace-08.json",
+    "evidenceJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-11-workplace06-12/evidence-workplace-08.json"
+  },
+  {
+    "caseId": "workplace-09",
+    "category": "workplace",
+    "caseJson": "src/data/cases/generated/workplace-09.json",
+    "scriptedText": null,
+    "v3GameLoop": "docs/ref/리뉴얼참고/gpt-batch/workplace-09/workplace-09-v3-game-loop-data.json",
+    "dossierJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-11-workplace06-12/dossier-workplace-09.json",
+    "evidenceJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-11-workplace06-12/evidence-workplace-09.json"
+  },
+  {
+    "caseId": "workplace-10",
+    "category": "workplace",
+    "caseJson": "src/data/cases/generated/workplace-10.json",
+    "scriptedText": null,
+    "v3GameLoop": "docs/ref/리뉴얼참고/gpt-batch/workplace-10/workplace-10-v3-game-loop-data.json",
+    "dossierJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-11-workplace06-12/dossier-workplace-10.json",
+    "evidenceJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-11-workplace06-12/evidence-workplace-10.json"
+  },
+  {
+    "caseId": "workplace-11",
+    "category": "workplace",
+    "caseJson": "src/data/cases/generated/workplace-11.json",
+    "scriptedText": null,
+    "v3GameLoop": "docs/ref/리뉴얼참고/gpt-batch/workplace-11/workplace-11-v3-game-loop-data.json",
+    "dossierJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-11-workplace06-12/dossier-workplace-11.json",
+    "evidenceJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-11-workplace06-12/evidence-workplace-11.json"
+  },
+  {
+    "caseId": "workplace-12",
+    "category": "workplace",
+    "caseJson": "src/data/cases/generated/workplace-12.json",
+    "scriptedText": null,
+    "v3GameLoop": "docs/ref/리뉴얼참고/gpt-batch/workplace-12/workplace-12-v3-game-loop-data.json",
+    "dossierJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-11-workplace06-12/dossier-workplace-12.json",
+    "evidenceJson": "docs/ref/리뉴얼참고/thread-packages/thread-B/gpt-pro-sessions/batch-11-workplace06-12/evidence-workplace-12.json"
+  }
+]

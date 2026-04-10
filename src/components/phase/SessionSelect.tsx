@@ -24,6 +24,16 @@ interface SessionProgress {
   stars: number
 }
 
+SESSIONS.push({
+  id: 'headline',
+  label: '헤드라인',
+  icon: '📰',
+  type: 'headline',
+  desc: '공개 여론전과 평판 붕괴가 얽힌 특집 사건',
+  color: '#f97316',
+  bg: 'from-orange-950/40 to-gray-900',
+})
+
 function loadProgress(): Record<string, { bestScore: number; stars: number }> {
   try { return JSON.parse(localStorage.getItem('solomon-case-progress') || '{}') } catch { return {} }
 }

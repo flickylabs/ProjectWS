@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react'
 import { useGameStore, useStore } from '../../store/useGameStore'
 import { GamePhase } from '../../types'
-import type { DialogueEntry } from '../../types'
+import type { CaseData, DialogueEntry } from '../../types'
 import { isLLMMode } from '../../hooks/useActionDispatch'
-import { generatePhase1Dialogues, generatePhase2Dialogues } from '../../engine/llmPhaseDialogue'
+import { generatePhase2Dialogues } from '../../engine/llmPhaseDialogue'
+import { loadPhase2Script } from '../../data/dialogues/phaseScriptLoader'
 import { stopBgm } from '../../engine/soundEngine'
 import Emoji from '../common/Emoji'
 
@@ -34,6 +35,16 @@ export function resetPrefetch() {
   prefetchStarted = false
 }
 
+export function beginCasePrefetch(caseData: CaseData | null | undefined) {
+  if (!caseData || prefetchStarted || !isLLMMode()) return
+  if (loadPhase2Script(caseData.caseId)) return
+  prefetchStarted = true
+
+  generatePhase2Dialogues(caseData)
+    .then(r => { prefetchedPhase2 = r })
+    .catch(() => { /* 실패해도 폴백 사용 */ })
+}
+
 export default function Phase0_CaseIntro() {
   const caseData = useStore((s) => s.caseData)
   const advancePhase = useStore((s) => s.advancePhase)
@@ -45,13 +56,7 @@ export default function Phase0_CaseIntro() {
 
   // AI 사전 로딩 — 첫 스텝부터 백그라운드 시작
   useEffect(() => {
-    if (!caseData || prefetchStarted || !isLLMMode()) return
-    prefetchStarted = true
-
-    // Phase2 AI prefetch — 백그라운드 (유저 대기 없음)
-    generatePhase2Dialogues(caseData)
-      .then(r => { prefetchedPhase2 = r })
-      .catch(() => { /* 실패해도 폴백 사용 */ })
+    beginCasePrefetch(caseData)
   }, [caseData])
 
   if (!caseData) return null
@@ -337,6 +342,7 @@ function PersonCard({ name, age, occupation, trait, emoji, color, side }: {
 }
 
 function getRelationLabel(type: string) {
+  if (type === 'headline') return '헤드라인'
   const map: Record<string, string> = {
     spouse: '부부', neighbor: '이웃', boss_employee: '직장', partnership: '동업',
     family: '가족', tenant_landlord: '세입자-집주인', friend: '친구',

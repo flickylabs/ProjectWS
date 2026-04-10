@@ -1,520 +1,582 @@
-import { useState, useCallback, useMemo } from 'react'
-import { useStore } from '../../../store/useGameStore'
-import Emoji from '../../common/Emoji'
-import type { LieState, EmotionalPhase, DialogueEntry } from '../../../types'
-import { getTellHint } from '../../../engine/archetypeHintEngine'
-
-// ── Constants ──
+import { useCallback, useEffect, useMemo, useState, type DragEvent, type ReactNode } from 'react'
+import {
+  GamePhase,
+  type CombinationLabNode,
+  type CombinationLabOutput,
+  type CombinationLabRecipe,
+  type EmotionalPhase,
+  type LieState,
+} from '../../../types'
+import { useGameStore, useStore } from '../../../store/useGameStore'
+import PCSvgIcon from '../icons/PCSvgIcon'
+import { getPcFaceSymbolId } from '../icons/pcIconUtils'
+import { getPcArchetypeLabel, getPcTellDescription, getPcTellLabel } from '../pcUiLabels'
+import { HOTBAR_DRAG_TYPE } from '../hotbar/pcHotbarConfig'
+import { openPcInteractionPanel } from '../layout/PCInteractionPanel'
+import { PC_ADD_COMBINATION_NOTE_EVENT, type PcCombinationPanelEventDetail, type PcPinnedNote } from './PCImportantNotesSection'
 
 const LIE_STATES: LieState[] = ['S0', 'S1', 'S2', 'S3', 'S4', 'S5']
-const LIE_STATE_LABELS: Record<LieState, string> = {
-  S0: '완전 부정', S1: '일부 인정', S2: '핑계', S3: '책임 전가', S4: '감정적', S5: '자백',
-}
 
 const EMOTION_LABELS: Record<EmotionalPhase, string> = {
-  defensive: '경계', confident: '자신감', shaken: '동요', angry: '격앙', resigned: '체념',
+  defensive: '\uACBD\uACC4',
+  confident: '\uC790\uC2E0\uAC10',
+  shaken: '\uB3D9\uC694',
+  angry: '\uACA9\uC559',
+  resigned: '\uCCB4\uB150',
 }
-
-const EMOTION_PHASES: EmotionalPhase[] = ['defensive', 'confident', 'shaken', 'angry', 'resigned']
-
-const ARCHETYPE_LABELS: Record<string, string> = {
-  avoidant: '회피형', confrontational: '대립형', victim_cosplay: '피해자 행세',
-  cold_logic: '냉정 논리', affect_flattening: '감정 무뎌짐', premature_summary: '성급한 정리',
-}
-
-// ── Pinned Note ──
-
-interface PinnedNote {
-  id: string
-  dialogueId: string
-  turn: number
-  text: string
-  speaker: string
-  order: number
-}
-
-// ── Comparison Tray ──
-
-interface ComparisonSlot {
-  note: PinnedNote | null
-}
-
-// ── Component ──
 
 export default function PCRightPanel() {
   const caseData = useStore((s) => s.caseData)
+  const currentPhase = useStore((s) => s.currentPhase)
+  const pcTargetParty = useStore((s) => s.pcTargetParty)
+  const setPcTargetParty = useStore((s) => s.setPcTargetParty)
+  const lastFocusedDisputeId = useStore((s) => s.lastFocusedDisputeId)
+  const questionMeters = useStore((s) => s.questionMeters)
+  const evidenceStates = useStore((s) => s.evidenceStates)
   const agentA = useStore((s) => s.agentA)
   const agentB = useStore((s) => s.agentB)
   const archetypeA = useStore((s) => s.archetypeA)
   const archetypeB = useStore((s) => s.archetypeB)
-  const dialogueLog = useStore((s) => s.dialogueLog)
-  const questionMeters = useStore((s) => s.questionMeters)
+  const combinationLabRuntime = useStore((s) => s.combinationLabRuntime)
+  const pcSummaryUnlocked = useStore((s) => s.pcSummaryUnlocked)
+  const globalSkillPoints = useStore((s) => s.globalSkillPoints)
 
-  // Local state: current target, pinned notes, comparison tray, timeline collapse
-  const [targetParty, setTargetParty] = useState<'a' | 'b'>('a')
-  const [pinnedNotes, setPinnedNotes] = useState<PinnedNote[]>([])
-  const [comparisonSlots, setComparisonSlots] = useState<[ComparisonSlot, ComparisonSlot]>([
-    { note: null }, { note: null },
-  ])
-  const [timelineOpen, setTimelineOpen] = useState(false)
-  const [highlightedDialogueId, setHighlightedDialogueId] = useState<string | null>(null)
-  const [dragIdx, setDragIdx] = useState<number | null>(null)
-
-  // Derived: target agent state
-  const agent = targetParty === 'a' ? agentA : agentB
-  const archetype = targetParty === 'a' ? archetypeA : archetypeB
-  const profile = targetParty === 'a' ? caseData?.duo.partyA : caseData?.duo.partyB
-  const meters = questionMeters[targetParty]
-
-  // Lie state: pick highest/representative state from lieStateMap
-  const lieStates = useMemo(() => {
-    return Object.entries(agent.lieStateMap).map(([disputeId, entry]) => ({
-      disputeId,
-      state: entry.currentState,
-    }))
-  }, [agent.lieStateMap])
-
-  const overallLieState = useMemo(() => {
-    if (lieStates.length === 0) return 'S0' as LieState
-    const ranks = lieStates.map((ls) => LIE_STATES.indexOf(ls.state))
-    const maxRank = Math.max(...ranks)
-    return LIE_STATES[maxRank]
-  }, [lieStates])
-
-  const overallLieRank = LIE_STATES.indexOf(overallLieState)
-
-  // Tell hint
-  const tellHint = useMemo(() => {
-    const tells = profile?.verbalTells
-    if (!tells || tells.length === 0) return null
-    return getTellHint(tells[0].type)
-  }, [profile])
-
-  // Pin/unpin
-  const togglePin = useCallback((entry: DialogueEntry) => {
-    setPinnedNotes((prev) => {
-      const exists = prev.find((n) => n.dialogueId === entry.id)
-      if (exists) return prev.filter((n) => n.dialogueId !== entry.id)
-      return [...prev, {
-        id: `pin-${entry.id}`,
-        dialogueId: entry.id,
-        turn: entry.turn,
-        text: entry.text,
-        speaker: entry.speaker,
-        order: prev.length,
-      }]
-    })
-  }, [])
-
-  const isPinned = useCallback((id: string) => {
-    return pinnedNotes.some((n) => n.dialogueId === id)
-  }, [pinnedNotes])
-
-  // Add to comparison tray (Shift+click)
-  const addToComparison = useCallback((note: PinnedNote) => {
-    setComparisonSlots((prev) => {
-      if (!prev[0].note) return [{ note }, prev[1]]
-      if (!prev[1].note) return [prev[0], { note }]
-      return prev // both full
-    })
-  }, [])
-
-  const clearComparisonSlot = useCallback((idx: 0 | 1) => {
-    setComparisonSlots((prev) => {
-      const next = [...prev] as [ComparisonSlot, ComparisonSlot]
-      next[idx] = { note: null }
-      return next
-    })
-  }, [])
-
-  // Drag reorder
-  const handleDragStart = useCallback((idx: number) => {
-    setDragIdx(idx)
-  }, [])
-
-  const handleDragOver = useCallback((e: React.DragEvent, idx: number) => {
-    e.preventDefault()
-    if (dragIdx === null || dragIdx === idx) return
-    setPinnedNotes((prev) => {
-      const next = [...prev]
-      const [moved] = next.splice(dragIdx, 1)
-      next.splice(idx, 0, moved)
-      return next
-    })
-    setDragIdx(idx)
-  }, [dragIdx])
-
-  const handleDragEnd = useCallback(() => {
-    setDragIdx(null)
-  }, [])
-
-  // Important dialogue entries (system-flagged or from agents with contradictions)
-  const importantEntries = useMemo(() => {
-    return dialogueLog.filter((entry) =>
-      !entry.isHidden && (
-        entry.contradictionMeta ||
-        entry.behaviorHint ||
-        (entry.speaker === 'a' || entry.speaker === 'b')
-      ),
-    ).slice(-30) // last 30
-  }, [dialogueLog])
-
-  // Timeline events from dialogueLog
-  const timelineEvents = useMemo(() => {
-    return dialogueLog
-      .filter((e) => !e.isHidden && e.speaker === 'system')
-      .map((e) => ({
-        id: e.id,
-        turn: e.turn,
-        text: e.text,
-        revealed: true,
-      }))
-  }, [dialogueLog])
+  const [comboSlots, setComboSlots] = useState<[string | null, string | null]>([null, null])
 
   if (!caseData) {
-    return (
-      <div className="flex flex-col h-full">
-        <PanelSection icon="👤" title="대상">
-          <p className="text-sm" style={{ color: '#4e4e5c' }}>사건을 선택해 주세요</p>
-        </PanelSection>
-      </div>
-    )
+    return null
   }
 
+  const store = useGameStore.getState()
+  const targetProfile = pcTargetParty === 'a' ? caseData.duo.partyA : caseData.duo.partyB
+  const targetAgent = pcTargetParty === 'a' ? agentA : agentB
+  const targetArchetype = pcTargetParty === 'a' ? archetypeA : archetypeB
+  const targetMeters = questionMeters[pcTargetParty]
+  const activeDispute =
+    caseData.disputes.find((dispute) => dispute.id === lastFocusedDisputeId) ?? caseData.disputes[0] ?? null
+  const activeLieState = activeDispute ? targetAgent.lieStateMap[activeDispute.id]?.currentState ?? 'S0' : 'S0'
+  const activeLieIndex = LIE_STATES.indexOf(activeLieState)
+  const tellType = targetProfile.verbalTells[0]?.type ?? ''
+  const faceId = getPcFaceSymbolId(pcTargetParty, targetProfile, targetAgent.emotionalState.phase)
+  const trustStateLabel = getTrustStateLabel(targetAgent.trustState.trustTowardJudge)
+  const showCombination =
+    Boolean(combinationLabRuntime.config)
+    && (
+      currentPhase === GamePhase.Phase3_Interrogation
+      || currentPhase === GamePhase.Phase4_Evidence
+      || currentPhase === GamePhase.Phase5_ReExamination
+    )
+
+  const availableNodes = useMemo(() => {
+    const config = combinationLabRuntime.config
+    if (!config) {
+      return [] as CombinationLabNode[]
+    }
+
+    return config.nodes.filter((node) => {
+      if (node.type === 'evidence' || node.type === 'derived_evidence') {
+        return Boolean(evidenceStates[node.id]?.unlocked)
+      }
+      return combinationLabRuntime.discoveredNodeIds.includes(node.id)
+    })
+  }, [combinationLabRuntime.config, combinationLabRuntime.discoveredNodeIds, evidenceStates])
+
+  const comboNodeA = comboSlots[0] ? availableNodes.find((node) => node.id === comboSlots[0]) ?? null : null
+  const comboNodeB = comboSlots[1] ? availableNodes.find((node) => node.id === comboSlots[1]) ?? null : null
+  const comboReady = Boolean(comboNodeA && comboNodeB)
+
+  const matchingRecipe = useMemo(() => {
+    const config = combinationLabRuntime.config
+    if (!config || !comboSlots[0] || !comboSlots[1]) {
+      return null as CombinationLabRecipe | null
+    }
+
+    return config.recipes.find((recipe) => sameInputs(recipe.inputs, comboSlots.filter(Boolean) as string[])) ?? null
+  }, [combinationLabRuntime.config, comboSlots])
+
+  const matchingOutput = useMemo(() => {
+    const config = combinationLabRuntime.config
+    if (!config || !matchingRecipe) {
+      return null as CombinationLabOutput | null
+    }
+
+    return config.outputs.find((output) => output.id === matchingRecipe.outputId) ?? null
+  }, [combinationLabRuntime.config, matchingRecipe])
+
+  const tellDescription = getPcTellDescription(tellType)
+  const currentHint = tellDescription
+    || (
+      activeDispute
+        ? `${activeDispute.name} \uC7C1\uC810\uC5D0\uC11C \uD55C \uBC88 \uB354 \uC9C8\uBB38\uD558\uBA74 \uB4DC\uB7EC\uB0A0 \uBC18\uC751 \uC815\uBCF4\uC785\uB2C8\uB2E4.`
+        : '\uD604\uC7AC \uAD00\uCC30 \uC911\uC778 \uBC18\uC751 \uC815\uBCF4\uAC00 \uC5C6\uC2B5\uB2C8\uB2E4.'
+    )
+
+  const queueNode = useCallback((nodeId: string) => {
+    setComboSlots((current) => {
+      if (current.includes(nodeId)) {
+        return current
+      }
+      if (!current[0]) {
+        return [nodeId, current[1]]
+      }
+      if (!current[1]) {
+        return [current[0], nodeId]
+      }
+      return [current[1], nodeId]
+    })
+  }, [])
+
+  const clearComboSlots = useCallback(() => {
+    setComboSlots([null, null])
+  }, [])
+
+  const resolveEvidenceNodeId = useCallback((evidenceId: string) => {
+    return (
+      availableNodes.find((node) => {
+        if (node.type !== 'evidence' && node.type !== 'derived_evidence') {
+          return false
+        }
+        return node.id === evidenceId || node.sourceRef === evidenceId || node.linkedEvidenceIds?.includes(evidenceId)
+      })?.id ?? null
+    )
+  }, [availableNodes])
+
+  const resolveNoteNodeId = useCallback((note: PcPinnedNote) => {
+    const noteNodes = availableNodes.filter((node) => node.type === 'note' || node.type === 'derived_note')
+    if (noteNodes.length === 0) {
+      return null
+    }
+
+    const normalizedText = normalizeNodeText(note.text)
+    const byText = noteNodes.find((node) => {
+      const label = normalizeNodeText(node.label)
+      return label.length > 0 && (normalizedText.includes(label) || label.includes(normalizedText))
+    })
+    if (byText) {
+      return byText.id
+    }
+
+    const relatedDisputeIds = new Set(note.relatedDisputes)
+    const byDispute = noteNodes.find((node) => node.linkedDisputeIds?.some((disputeId) => relatedDisputeIds.has(disputeId)))
+    return byDispute?.id ?? noteNodes[0]?.id ?? null
+  }, [availableNodes])
+
+  const handleCombinationEvent = useCallback((detail: PcCombinationPanelEventDetail) => {
+    const nodeId = detail.evidenceId
+      ? resolveEvidenceNodeId(detail.evidenceId)
+      : detail.note
+        ? resolveNoteNodeId(detail.note)
+        : null
+
+    if (nodeId) {
+      queueNode(nodeId)
+    }
+  }, [queueNode, resolveEvidenceNodeId, resolveNoteNodeId])
+
+  useEffect(() => {
+    const handleEvent = (event: Event) => {
+      const customEvent = event as CustomEvent<PcCombinationPanelEventDetail>
+      handleCombinationEvent(customEvent.detail)
+    }
+
+    window.addEventListener(PC_ADD_COMBINATION_NOTE_EVENT, handleEvent)
+    return () => window.removeEventListener(PC_ADD_COMBINATION_NOTE_EVENT, handleEvent)
+  }, [handleCombinationEvent])
+
+  const handleCombinationDrop = useCallback((event: DragEvent<HTMLElement>) => {
+    event.preventDefault()
+    const raw = event.dataTransfer.getData(HOTBAR_DRAG_TYPE)
+    if (!raw) {
+      return
+    }
+
+    try {
+      const payload = JSON.parse(raw) as { kind?: string; evidenceId?: string; note?: PcPinnedNote }
+      handleCombinationEvent({
+        evidenceId: payload.kind === 'evidence' ? payload.evidenceId : undefined,
+        note: payload.kind === 'note' ? payload.note : undefined,
+      })
+    } catch {
+      // ignore invalid drag payload
+    }
+  }, [handleCombinationEvent])
+
+  const handleCombinationAttempt = useCallback(() => {
+    if (!comboReady) {
+      return
+    }
+
+    if (!matchingRecipe || !matchingOutput) {
+      openPcInteractionPanel({
+        title: '\uC870\uD569 \uC2E4\uD328',
+        subtitle: '\uD604\uC7AC \uC870\uD569 \uACB0\uACFC \uC5C6\uC74C',
+        tone: 'red',
+        variant: 'feature',
+        body: '\uC774 \uC870\uD569\uC73C\uB85C\uB294 \uC544\uC9C1 \uC0C8\uB85C\uC6B4 \uB2E8\uC11C\uAC00 \uB4DC\uB7EC\uB098\uC9C0 \uC54A\uC2B5\uB2C8\uB2E4. \uB2E4\uB978 \uC99D\uAC70\uB098 \uC911\uC694 \uBC1C\uC5B8 \uB178\uD2B8\uB97C \uC62C\uB824 \uBCF4\uC138\uC694.',
+      })
+      clearComboSlots()
+      return
+    }
+
+    if (!store.canRunCombinationRecipe(matchingRecipe.id)) {
+      openPcInteractionPanel({
+        title: '\uC870\uD569 \uBD88\uAC00',
+        subtitle: '\uBD84\uC11D \uD3EC\uC778\uD2B8 \uBD80\uC871 \uB610\uB294 \uC7A0\uAE08 \uC0C1\uD0DC',
+        tone: 'red',
+        variant: 'feature',
+        body: matchingRecipe.failHint ?? '\uC9C0\uAE08\uC740 \uC774 \uC870\uD569\uC744 \uC2DC\uB3C4\uD560 \uC218 \uC5C6\uC2B5\uB2C8\uB2E4.',
+      })
+      clearComboSlots()
+      return
+    }
+
+    const result = store.runCombinationRecipe(matchingRecipe.id)
+    if (!result.ok) {
+      openPcInteractionPanel({
+        title: '\uC870\uD569 \uC2E4\uD328',
+        subtitle: '\uACB0\uACFC \uC0DD\uC131 \uC2E4\uD328',
+        tone: 'red',
+        variant: 'feature',
+        body: '\uC870\uD569 \uACB0\uACFC\uB97C \uC0DD\uC131\uD558\uC9C0 \uBABB\uD588\uC2B5\uB2C8\uB2E4. \uC7A0\uC2DC \uD6C4 \uB2E4\uC2DC \uC2DC\uB3C4\uD574 \uC8FC\uC138\uC694.',
+      })
+      clearComboSlots()
+      return
+    }
+
+    store.addDialogue({
+      speaker: 'system',
+      text: `\uC870\uD569 \uACB0\uACFC: ${matchingOutput.label}\n${matchingOutput.summary}`,
+      relatedDisputes: matchingOutput.effects
+        .flatMap((effect) => [
+          effect.targetId,
+          effect.upgradeFromId,
+          effect.upgradeToId,
+          effect.reframeFromId,
+          effect.reframeToId,
+          effect.splitFromId,
+          ...(effect.splitIntoIds ?? []),
+          ...(effect.mergeFromIds ?? []),
+          effect.mergeToId,
+          effect.disputeUpgrade?.disputeId,
+        ])
+        .filter((value): value is string => Boolean(value)),
+      turn: store.turnCount,
+    })
+
+    const effectTags = matchingOutput.effects.slice(0, 4).map((effect) => getResultKindLabel(effect.kind))
+    openPcInteractionPanel({
+      title: matchingOutput.label,
+      subtitle: '\uC870\uD569 \uC131\uACF5',
+      tone: 'gold',
+      variant: 'feature',
+      body: matchingOutput.summary,
+      tags: effectTags,
+      actions: matchingOutput.effects
+        .map((effect) => effect.targetId ?? effect.unlockNodeId ?? effect.disputeUpgrade?.disputeId)
+        .filter((value): value is string => Boolean(value))
+        .slice(0, 1)
+        .map((disputeId) => ({ kind: 'focus_dispute' as const, label: '\uAD00\uB828 \uC7C1\uC810 \uBCF4\uAE30', disputeId })),
+    })
+
+    clearComboSlots()
+  }, [clearComboSlots, comboReady, matchingOutput, matchingRecipe, store])
+
+  const openCombinationInfo = useCallback(() => {
+    const availableRecipes = store.getAvailableCombinationRecipes()
+    const lines = availableRecipes.length > 0
+      ? availableRecipes.slice(0, 6).map((recipe, index) => {
+          const output = combinationLabRuntime.config?.outputs.find((item) => item.id === recipe.outputId)
+          return `${index + 1}. ${output?.label ?? recipe.id} · \uBE44\uC6A9 ${recipe.cost}`
+        })
+      : ['\uC9C0\uAE08\uC740 \uD655\uC778 \uAC00\uB2A5\uD55C \uC870\uD569\uC774 \uC5C6\uC2B5\uB2C8\uB2E4.']
+
+    openPcInteractionPanel({
+      title: '\uC870\uD569 \uC2A4\uD0AC',
+      subtitle: '\uBD84\uC11D \uD3EC\uC778\uD2B8 \uAE30\uBC18 \uC870\uD569',
+      tone: 'blue',
+      body: [
+        `\uAC00\uC6A9 \uBD84\uC11D \uD3EC\uC778\uD2B8: ${combinationLabRuntime.analysisPoints}`,
+        '',
+        '\uC99D\uAC70\uC640 \uC911\uC694 \uBC1C\uC5B8 \uB178\uD2B8\uB97C \uC870\uD569\uD558\uBA74 \uC0C8\uB85C\uC6B4 \uC7C1\uC810, \uC0C8\uB85C\uC6B4 \uBC1C\uC5B8, \uAE30\uC874 \uC99D\uAC70 \uAC15\uD654 \uAC19\uC740 \uACB0\uACFC\uB97C \uC5BB\uC744 \uC218 \uC788\uC2B5\uB2C8\uB2E4.',
+        '',
+        '\uD604\uC7AC \uD655\uC778 \uAC00\uB2A5\uD55C \uC870\uD569',
+        ...lines,
+      ].join('\n'),
+    })
+  }, [combinationLabRuntime.analysisPoints, combinationLabRuntime.config?.outputs, store])
+
+  const openSummaryPanel = useCallback(() => {
+    openPcInteractionPanel({
+      title: pcSummaryUnlocked ? '\uC694\uC57D \uC2E4\uD589' : '\uC694\uC57D \uC2A4\uD0AC',
+      subtitle: pcSummaryUnlocked ? '\uC99D\uC2DC \uC0AC\uAC74 \uC694\uC57D \uD655\uC778' : '\uC2A4\uD0AC \uD3EC\uC778\uD2B8 3\uAC1C \uD544\uC694',
+      tone: 'gold',
+      variant: 'feature',
+      body: pcSummaryUnlocked
+        ? '\uD604\uC7AC \uC0AC\uAC74\uC758 \uBC1C\uB2EC \uC7C1\uC810, \uC5F4\uB9B0 \uC99D\uAC70, \uC9C4\uD589 \uC0C1\uD0DC\uB97C \uD55C \uBC88\uC5D0 \uC815\uB9AC\uD574\uC11C \uBCF4\uC5EC\uC90D\uB2C8\uB2E4.'
+        : [
+            '\uC694\uC57D \uC2A4\uD0AC\uC744 \uD574\uAE08\uD558\uBA74 \uC774\uD6C4\uC5D0\uB294 \uD604\uC7AC \uC0AC\uAC74\uC758 \uC9C4\uD589 \uD750\uB984\uC744 \uD55C \uBC88\uC5D0 \uC815\uB9AC\uD574 \uBCFC \uC218 \uC788\uC2B5\uB2C8\uB2E4.',
+            '',
+            `\uBCF4\uC720 \uC2A4\uD0AC \uD3EC\uC778\uD2B8: ${globalSkillPoints}`,
+            '\uC0AC\uC6A9 \uBE44\uC6A9: 3',
+          ].join('\n'),
+      actions: [
+        {
+          kind: pcSummaryUnlocked ? 'open_summary' : 'unlock_summary',
+          label: pcSummaryUnlocked ? '\uC694\uC57D \uC2E4\uD589' : '\uC694\uC57D \uD574\uAE08',
+        },
+      ],
+    })
+  }, [globalSkillPoints, pcSummaryUnlocked])
+
   return (
-    <div className="flex flex-col h-full overflow-y-auto">
-      {/* ── Section 1: 심문 대상 ── */}
-      <PanelSection icon="👤" title="심문 대상">
-        {/* Target toggle */}
-        <div className="flex gap-2 mb-4">
-          {(['a', 'b'] as const).map((party) => {
-            const p = party === 'a' ? caseData.duo.partyA : caseData.duo.partyB
-            const isActive = targetParty === party
-            return (
-              <button
-                key={party}
-                onClick={() => setTargetParty(party)}
-                className="flex-1 px-3 py-2 rounded-lg text-sm font-medium transition-all"
-                style={{
-                  background: isActive ? 'rgba(212,162,78,0.12)' : 'var(--pc-p4)',
-                  border: isActive ? '1px solid rgba(212,162,78,0.4)' : '1px solid transparent',
-                  color: isActive ? 'var(--pc-gold-light)' : '#8b8b9a',
-                }}
-              >
-                {p.name}
-              </button>
-            )
-          })}
+    <div className="pc-play-right">
+      <section className="sec pc-target-block">
+        <div className="sec-h">
+          <PCSvgIcon id="i-person" size={14} />
+          <span>{'\uD604\uC7AC \uB300\uC0C1'}</span>
+          <span className="sub">{targetProfile.name}</span>
         </div>
 
-        {/* Profile info */}
-        {profile && (
-          <div className="flex flex-col gap-2 mb-4">
-            <div className="flex items-baseline gap-2">
-              <span className="text-base font-semibold" style={{ color: '#dcdce0' }}>{profile.name}</span>
-              <span className="text-xs" style={{ color: '#4e4e5c' }}>{profile.age}세 / {profile.occupation}</span>
-            </div>
-            <div className="flex flex-wrap gap-1.5">
-              <Tag color="var(--pc-gold)">{ARCHETYPE_LABELS[archetype] ?? archetype}</Tag>
-              {profile.verbalTells?.[0] && (
-                <Tag color="var(--pc-blue)">{profile.verbalTells[0].type.replace(/_/g, ' ')}</Tag>
-              )}
-            </div>
-            {tellHint && (
-              <p className="text-xs mt-1" style={{ color: '#6e6e7a', lineHeight: '1.5' }}>
-                <Emoji char="💡" size={12} /> {tellHint}
-              </p>
-            )}
+        <div className={`pc-target-shell pc-right-card party-${pcTargetParty}`}>
+          <div className="pc-target-tabs">
+            <button
+              className={`pc-target-tab${pcTargetParty === 'a' ? ' is-active' : ''}`}
+              onClick={() => setPcTargetParty('a')}
+              type="button"
+            >
+              {caseData.duo.partyA.name}
+            </button>
+            <button
+              className={`pc-target-tab${pcTargetParty === 'b' ? ' is-active' : ''}`}
+              onClick={() => setPcTargetParty('b')}
+              type="button"
+            >
+              {caseData.duo.partyB.name}
+            </button>
           </div>
-        )}
 
-        {/* Lie State Step Bar */}
-        <div className="mb-4">
-          <div className="flex items-center gap-1.5 mb-2">
-            <span className="text-xs font-medium" style={{ color: '#4e4e5c' }}>거짓말 상태</span>
-            <span className="text-xs font-semibold" style={{ color: 'var(--pc-gold)' }}>
-              {overallLieState} — {LIE_STATE_LABELS[overallLieState]}
-            </span>
+          <div className="target pc-target-profile">
+            <div className="tgt-face">
+              <PCSvgIcon id={faceId} size={72} />
+            </div>
+
+            <div className="pc-target-copy__main">
+              <div className="tgt-meta">{`${targetProfile.age}\uC138 \u00B7 ${targetProfile.occupation}`}</div>
+              <div className="tgt-tags">
+                <span className="tag tag-arch">{getPcArchetypeLabel(targetArchetype)}</span>
+                <span className="tag tag-tell" title={tellDescription}>
+                  {getPcTellLabel(tellType)}
+                </span>
+              </div>
+            </div>
+
+            <p className="pc-target-hint">{currentHint}</p>
           </div>
-          <div className="flex gap-1">
-            {LIE_STATES.map((state, idx) => {
-              const rank = LIE_STATES.indexOf(state)
-              const isPassed = rank < overallLieRank
-              const isCurrent = rank === overallLieRank
-              const isLocked = rank > overallLieRank
+
+          <div className="lie-bar">
+            {LIE_STATES.map((state, index) => {
+              let className = 'lie-s ls-lock'
+              if (index < activeLieIndex) {
+                className = 'lie-s ls-done'
+              }
+              if (index === activeLieIndex) {
+                className = 'lie-s ls-now'
+              }
+
               return (
-                <div
-                  key={state}
-                  className="flex-1 relative group"
-                  title={`${state}: ${LIE_STATE_LABELS[state]}`}
-                >
-                  <div
-                    className="h-2.5 rounded-sm transition-all"
-                    style={{
-                      background: isPassed
-                        ? 'var(--pc-gold)'
-                        : isCurrent
-                          ? 'linear-gradient(90deg, var(--pc-gold), rgba(212,162,78,0.5))'
-                          : 'var(--pc-p4)',
-                      opacity: isLocked ? 0.3 : 1,
-                      boxShadow: isCurrent ? '0 0 6px rgba(212,162,78,0.3)' : 'none',
-                    }}
-                  />
-                  <span
-                    className="block text-center mt-1"
-                    style={{
-                      fontSize: 9,
-                      color: isCurrent ? 'var(--pc-gold-light)' : '#4e4e5c',
-                      fontWeight: isCurrent ? 600 : 400,
-                    }}
-                  >
-                    {state}
-                  </span>
+                <div className={className} key={state}>
+                  {state}
                 </div>
               )
             })}
           </div>
-        </div>
 
-        {/* Emotion Gauge */}
-        <div>
-          <div className="flex items-center gap-1.5 mb-2">
-            <span className="text-xs font-medium" style={{ color: '#4e4e5c' }}>감정 상태</span>
-            <span className="text-xs font-semibold" style={{ color: emotionColor(agent.emotionalState.phase) }}>
-              {EMOTION_LABELS[agent.emotionalState.phase]}
-            </span>
+          <div className="pc-target-state-row">
+            <span>{'\uC2E0\uB8B0 \uC0C1\uD0DC'}</span>
+            <strong>{trustStateLabel}</strong>
           </div>
-          <div className="h-2 rounded-full overflow-hidden" style={{ background: 'var(--pc-p4)' }}>
-            <div
-              className="h-full rounded-full transition-all duration-700"
-              style={{
-                width: `${agent.emotionalState.internalValue}%`,
-                background: `linear-gradient(90deg, ${emotionColor(agent.emotionalState.phase)}88, ${emotionColor(agent.emotionalState.phase)})`,
-              }}
+
+          <div className="sec-h pc-target-meter-title">
+            <PCSvgIcon id="i-drop" size={14} />
+            <span>{'\uB300\uC0C1 \uBBF8\uD130'}</span>
+            <span className="sub">{EMOTION_LABELS[targetAgent.emotionalState.phase]}</span>
+          </div>
+
+          <div className="meter-group pc-target-meters">
+            <MeterRow
+              icon={<PCSvgIcon id="i-drop" size={15} />}
+              label={'\uB204\uC124'}
+              valueText={`${targetMeters.leakMeter}%`}
+              width={targetMeters.leakMeter}
+              tone="gold"
+            />
+            <MeterRow
+              icon={<PCSvgIcon id="i-conflict" size={15} />}
+              label={'\uBAA8\uC21C'}
+              valueText={`${targetMeters.contradictionTokens}/5`}
+              width={(targetMeters.contradictionTokens / 5) * 100}
+              tone="red"
             />
           </div>
-          <div className="flex justify-between mt-1">
-            {EMOTION_PHASES.map((phase) => (
-              <span
-                key={phase}
-                style={{
-                  fontSize: 9,
-                  color: agent.emotionalState.phase === phase ? emotionColor(phase) : '#3a3a44',
-                  fontWeight: agent.emotionalState.phase === phase ? 600 : 400,
-                }}
-              >
-                {EMOTION_LABELS[phase]}
-              </span>
-            ))}
-          </div>
         </div>
-      </PanelSection>
+      </section>
 
-      {/* ── Section 2: 핵심 발언 노트 ── */}
-      <PanelSection icon="📌" title="핵심 발언 노트" count={pinnedNotes.length}>
-        {pinnedNotes.length === 0 && importantEntries.length === 0 && (
-          <p className="text-sm" style={{ color: '#4e4e5c' }}>심문 중 중요한 발언을 핀으로 고정하세요</p>
-        )}
-
-        {/* Pinned notes */}
-        {pinnedNotes.map((note, idx) => (
+      {showCombination ? (
+        <section className="sec pc-right-block">
           <div
-            key={note.id}
-            className="flex items-start gap-2 px-2 py-2 rounded-lg mb-1.5 cursor-pointer group"
-            style={{ background: 'rgba(212,162,78,0.06)', border: '1px solid rgba(212,162,78,0.12)' }}
-            draggable
-            onDragStart={() => handleDragStart(idx)}
-            onDragOver={(e) => handleDragOver(e, idx)}
-            onDragEnd={handleDragEnd}
-            onMouseEnter={() => setHighlightedDialogueId(note.dialogueId)}
-            onMouseLeave={() => setHighlightedDialogueId(null)}
-            onClick={(e) => {
-              if (e.shiftKey) addToComparison(note)
-              else togglePin({ id: note.dialogueId, speaker: note.speaker as 'a' | 'b', text: note.text, turn: note.turn, relatedDisputes: [] })
-            }}
+            className="pc-skill-card pc-combination-card pc-right-card"
+            onDragOver={(event) => event.preventDefault()}
+            onDrop={handleCombinationDrop}
           >
-            <span className="text-xs shrink-0 mt-0.5 tabular-nums" style={{ color: '#4e4e5c' }}>T{note.turn}</span>
-            <p className="text-xs flex-1 line-clamp-2" style={{ color: '#b0b0ba' }}>{note.text}</p>
-            <button
-              className="shrink-0 opacity-0 group-hover:opacity-100 transition-opacity"
-              title="핀 해제"
-            >
-              <Emoji char="📌" size={12} />
-            </button>
-          </div>
-        ))}
-
-        {/* Recent important entries (unpinned) */}
-        {importantEntries.slice(-8).map((entry) => {
-          if (isPinned(entry.id)) return null
-          return (
-            <div
-              key={entry.id}
-              className="flex items-start gap-2 px-2 py-1.5 rounded mb-1 cursor-pointer group hover:bg-white/[0.02]"
-              onMouseEnter={() => setHighlightedDialogueId(entry.id)}
-              onMouseLeave={() => setHighlightedDialogueId(null)}
-              onClick={(e) => {
-                if (e.shiftKey) {
-                  const note: PinnedNote = {
-                    id: `pin-${entry.id}`, dialogueId: entry.id,
-                    turn: entry.turn, text: entry.text, speaker: entry.speaker, order: pinnedNotes.length,
-                  }
-                  addToComparison(note)
-                } else {
-                  togglePin(entry)
-                }
-              }}
-            >
-              <span className="text-xs shrink-0 mt-0.5 tabular-nums" style={{ color: '#3a3a44' }}>T{entry.turn}</span>
-              <p className="text-xs flex-1 line-clamp-2" style={{ color: '#6e6e7a' }}>{entry.text}</p>
-              {entry.contradictionMeta && (
-                <span className="shrink-0" title="모순 감지"><Emoji char="⚠️" size={11} /></span>
-              )}
-              <button
-                className="shrink-0 opacity-0 group-hover:opacity-100 transition-opacity"
-                title="핀 고정"
-              >
-                <Emoji char="📍" size={11} />
+            <div className="pc-skill-card__topline">
+              <div className="pc-skill-card__eyebrow">{'\uC870\uD569 \uC2A4\uD0AC'}</div>
+              <button className="pc-skill-card__info-button" onClick={openCombinationInfo} type="button">
+                !
               </button>
             </div>
-          )
-        })}
-      </PanelSection>
 
-      {/* ── Section 3: 비교 트레이 ── */}
-      <PanelSection icon="⚖️" title="비교 트레이">
-        <div className="flex gap-2 mb-2">
-          {comparisonSlots.map((slot, idx) => (
-            <div
-              key={idx}
-              className="flex-1 rounded-lg p-2 min-h-[48px] relative"
-              style={{
-                background: slot.note ? 'rgba(212,162,78,0.06)' : 'var(--pc-p4)',
-                border: slot.note ? '1px solid rgba(212,162,78,0.15)' : '1px dashed rgba(255,255,255,0.06)',
-              }}
-            >
-              {slot.note ? (
-                <>
-                  <p className="text-xs line-clamp-2" style={{ color: '#b0b0ba' }}>{slot.note.text}</p>
-                  <button
-                    className="absolute top-1 right-1 text-xs"
-                    style={{ color: '#4e4e5c' }}
-                    onClick={() => clearComparisonSlot(idx as 0 | 1)}
-                    title="비우기"
-                  >
-                    <Emoji char="❌" size={10} />
-                  </button>
-                </>
+            <div className="pc-combination-card__hero">
+              {comboReady ? (
+                <button className="pc-combination-card__attempt" onClick={handleCombinationAttempt} type="button">
+                  <span className="pc-combination-card__attempt-icon">
+                    <PCSvgIcon id="i-bolt" size={28} />
+                  </span>
+                  <span>{'\uC870\uD569 \uC2DC\uB3C4'}</span>
+                </button>
               ) : (
-                <p className="text-xs text-center" style={{ color: '#3a3a44' }}>
-                  슬롯 {idx === 0 ? 'A' : 'B'}
-                </p>
+                <>
+                  <p className="pc-skill-card__copy">{'\uC99D\uAC70, \uBC1C\uC5B8 \uB178\uD2B8 \uB4F1\uC744 \uB04C\uC5B4\uC640 \uC870\uD569\uD574\uBCF4\uC138\uC694.'}</p>
+                  <p className="pc-skill-card__copy is-hint">{'\uB4DC\uB798\uADF8 \uC564 \uB4DC\uB86D \uB610\uB294 Shift + \uD074\uB9AD'}</p>
+                  <div className="pc-combination-card__focus">
+                    <span>{'\uD604\uC7AC \uC7C1\uC810'}</span>
+                    <strong>{activeDispute?.name ?? '\uC544\uC9C1 \uC120\uD0DD\uB41C \uC7C1\uC810 \uC5C6\uC74C'}</strong>
+                  </div>
+                </>
               )}
             </div>
-          ))}
-        </div>
-        {comparisonSlots[0].note && comparisonSlots[1].note && (
-          <button
-            className="w-full py-2 rounded-lg text-sm font-medium transition-all"
-            style={{
-              background: 'rgba(212,162,78,0.12)',
-              border: '1px solid rgba(212,162,78,0.3)',
-              color: 'var(--pc-gold-light)',
-            }}
-          >
-            비교하기
-          </button>
-        )}
-      </PanelSection>
 
-      {/* ── Section 4: 사건 타임라인 (collapsible) ── */}
-      <div className="px-6 py-4" style={{ borderBottom: '1px solid rgba(255,255,255,0.03)' }}>
-        <button
-          className="flex items-center gap-2 w-full text-left"
-          onClick={() => setTimelineOpen(!timelineOpen)}
-        >
-          <Emoji char="⏱️" size={14} />
-          <span className="text-xs font-semibold tracking-widest uppercase" style={{ color: '#4e4e5c' }}>
-            타임라인
-          </span>
-          <span
-            className="text-xs ml-auto transition-transform"
-            style={{ color: '#4e4e5c', transform: timelineOpen ? 'rotate(90deg)' : 'rotate(0deg)' }}
-          >
-            ▶
-          </span>
-        </button>
-
-        {timelineOpen && (
-          <div className="mt-3 pl-3 border-l-2" style={{ borderColor: 'rgba(255,255,255,0.06)' }}>
-            {timelineEvents.length === 0 && (
-              <p className="text-xs" style={{ color: '#3a3a44' }}>아직 밝혀진 사건이 없습니다</p>
-            )}
-            {timelineEvents.map((evt) => (
-              <div key={evt.id} className="flex items-start gap-2 mb-2.5">
-                <div
-                  className="w-2 h-2 rounded-full mt-1 shrink-0"
-                  style={{ background: evt.revealed ? 'var(--pc-gold)' : 'var(--pc-p4)' }}
-                />
-                <div>
-                  <span className="text-xs tabular-nums" style={{ color: '#4e4e5c' }}>T{evt.turn}</span>
-                  <p className="text-xs" style={{ color: evt.revealed ? '#8b8b9a' : '#3a3a44' }}>
-                    {evt.revealed ? evt.text : '???'}
-                  </p>
-                </div>
-              </div>
-            ))}
+            <div className="pc-combination-card__slots">
+              <CombinationSlot
+                label="A"
+                node={comboNodeA}
+                onClear={() => setComboSlots((current) => [null, current[1]])}
+              />
+              <CombinationSlot
+                label="B"
+                node={comboNodeB}
+                onClear={() => setComboSlots((current) => [current[0], null])}
+              />
+            </div>
           </div>
-        )}
-      </div>
+        </section>
+      ) : null}
+
+      <section className="sec pc-right-block">
+        <div className="pc-skill-card pc-summary-card pc-right-card">
+          <div className="pc-skill-card__eyebrow">{'\uC694\uC57D \uC2A4\uD0AC'}</div>
+          <button className="pc-summary-button" onClick={openSummaryPanel} type="button">
+            <span className="pc-summary-button__left">
+              {!pcSummaryUnlocked ? <PCSvgIcon id="i-lock" size={16} /> : null}
+            </span>
+            <span className="pc-summary-button__text">{'\uC694\uC57D \uC2E4\uD589'}</span>
+            <span className="pc-summary-button__right">
+              {pcSummaryUnlocked ? null : (
+                <>
+                  <PCSvgIcon id="i-bolt" size={16} />
+                  <b>x3</b>
+                </>
+              )}
+            </span>
+          </button>
+        </div>
+      </section>
     </div>
   )
 }
 
-// ── Sub-components ──
-
-function PanelSection({ icon, title, count, children }: {
-  icon: string; title: string; count?: number; children: React.ReactNode
+function MeterRow({
+  icon,
+  label,
+  valueText,
+  width,
+  tone,
+}: {
+  icon: ReactNode
+  label: string
+  valueText: string
+  width: number
+  tone: 'blue' | 'red' | 'gold'
 }) {
   return (
-    <div className="px-6 py-5" style={{ borderBottom: '1px solid rgba(255,255,255,0.03)' }}>
-      <div className="flex items-center gap-2 mb-4">
-        <Emoji char={icon} size={14} />
-        <span className="text-xs font-semibold tracking-widest uppercase" style={{ color: '#4e4e5c' }}>
-          {title}
-        </span>
-        {count !== undefined && (
-          <span className="text-xs font-medium px-2 py-0.5 rounded-full" style={{ background: 'var(--pc-p4)', color: '#8b8b9a' }}>
-            {count}
-          </span>
-        )}
+    <div className="meter pc-target-meter">
+      <span className="pc-target-meter__icon">{icon}</span>
+      <span className="pc-target-meter__label">{label}</span>
+      <div className="meter-track">
+        <div className={`meter-fill mf-${tone}`} style={{ width: `${Math.max(0, Math.min(width, 100))}%` }} />
       </div>
-      {children}
+      <span className="meter-val">{valueText}</span>
     </div>
   )
 }
 
-function Tag({ color, children }: { color: string; children: React.ReactNode }) {
+function CombinationSlot({
+  label,
+  node,
+  onClear,
+}: {
+  label: 'A' | 'B'
+  node: CombinationLabNode | null
+  onClear: () => void
+}) {
   return (
-    <span
-      className="text-xs px-2 py-0.5 rounded-full font-medium"
-      style={{
-        background: `${color}15`,
-        border: `1px solid ${color}30`,
-        color,
-      }}
+    <button
+      className={`pc-combination-slot${node ? ' is-filled' : ''}`}
+      onClick={node ? onClear : undefined}
+      title={node?.label ?? `${label} \uC2AC\uB86F`}
+      type="button"
     >
-      {children}
-    </span>
+      <span className="pc-combination-slot__label">{label}</span>
+      <span className="pc-combination-slot__text">{node ? '\uB2E8\uC11C \uC900\uBE44' : '\uBE44\uC5B4 \uC788\uC74C'}</span>
+    </button>
   )
 }
 
-function emotionColor(phase: EmotionalPhase): string {
-  switch (phase) {
-    case 'defensive': return '#8b8b9a'
-    case 'confident': return 'var(--pc-blue)'
-    case 'shaken': return 'var(--pc-gold)'
-    case 'angry': return 'var(--pc-red)'
-    case 'resigned': return '#6e6e7a'
+function normalizeInputs(ids: string[]): string[] {
+  return [...ids].sort()
+}
+
+function sameInputs(a: string[], b: string[]): boolean {
+  const left = normalizeInputs(a)
+  const right = normalizeInputs(b)
+  return left.length === right.length && left.every((value, index) => value === right[index])
+}
+
+function normalizeNodeText(text: string | undefined): string {
+  return (text ?? '').toLowerCase().replace(/\s+/g, '')
+}
+
+function getTrustStateLabel(value: number): string {
+  if (value >= 70) {
+    return '\uC2E0\uB8B0'
   }
+  if (value >= 40) {
+    return '\uACBD\uACC4'
+  }
+  return '\uC758\uC2EC'
+}
+
+function getResultKindLabel(kind: string): string {
+  const labels: Record<string, string> = {
+    unlock_evidence: '\uC0C8 \uC99D\uAC70',
+    unlock_note: '\uC0C8 \uBC1C\uC5B8',
+    unlock_question: '\uC0C8 \uC9C8\uBB38',
+    unlock_dispute: '\uC0C8 \uC7C1\uC810',
+    unlock_statement: '\uC9C4\uC220 \uD574\uAE08',
+    upgrade_evidence: '\uC99D\uAC70 \uAC15\uD654',
+    upgrade_dispute: '\uC7C1\uC810 \uAC15\uD654',
+    reframe_evidence: '\uC99D\uAC70 \uC7AC\uAD6C\uC131',
+    reframe_dispute: '\uC7C1\uC810 \uC7AC\uAD6C\uC131',
+    elevate_reliability: '\uC2E0\uB8B0\uB3C4 \uC0C1\uC2B9',
+  }
+  return labels[kind] ?? kind
 }

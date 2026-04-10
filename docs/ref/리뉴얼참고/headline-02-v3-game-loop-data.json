@@ -1,0 +1,1059 @@
+{
+  "caseId": "headline-02",
+  "dossierCards": [
+    {
+      "id": "dossier-1",
+      "name": "셀카 단서의 실제 위험도",
+      "description": "셀카 원본과 팬 커뮤니티 추적 글을 묶어 단서 하나가 어떻게 실제 위치 추적으로 증폭됐는지 따져보는 카드입니다.",
+      "evidenceIds": [
+        "e-1",
+        "e-6"
+      ],
+      "relatedDisputes": [
+        "d-1",
+        "d-3"
+      ],
+      "subjectParty": "both",
+      "challenges": [
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dossier-1.a.q1",
+              "text": "이 셀카가 숙소 단서가 될 수 있다는 점을 정말 전혀 예상하지 못하셨습니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "headline02:a:d-1:S2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.a.q2",
+              "text": "누가 새는지 확인하려 했더라도 왜 하필 원본 이미지 단서를 다시 건넸는지 설명해 주십시오.",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "headline02:a:d-3:S3:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.a.q3",
+              "text": "공포가 실제였더라도 차단보다 추적을 먼저 택한 책임은 인정하십니까?",
+              "attackVector": "responsibility",
+              "onSuccess": {
+                "blockVector": "responsibility",
+                "revealAtom": "headline02:a:d-3:S4:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        },
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dossier-1.b.q1",
+              "text": "셀카 단서만 탓하시기 전에, 그 단서가 실제 동선 정보와 결합된 경로부터 설명하셔야 하지 않겠습니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "headline02:b:d-1:S2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.b.q2",
+              "text": "A의 직접 접촉을 알게 된 뒤에도 팬사이트 응대를 멈추지 않은 이유는 무엇입니까?",
+              "attackVector": "motive",
+              "onSuccess": {
+                "blockVector": "motive",
+                "revealAtom": "headline02:b:d-2:S3:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.b.q3",
+              "text": "결국 이 사건은 A의 실수만이 아니라 B의 구조 책임까지 겹친 결과라는 점을 부인하십니까?",
+              "attackVector": "responsibility",
+              "onSuccess": {
+                "blockVector": "responsibility",
+                "revealAtom": "headline02:b:d-1:S4:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dossier-2",
+      "name": "팬사이트 거래의 선",
+      "description": "매니저 DM과 추적 게시물을 함께 놓고 현장 조율 관행과 위험한 비공개 정보 거래의 선을 분리해 보는 카드입니다.",
+      "evidenceIds": [
+        "e-3",
+        "e-6"
+      ],
+      "relatedDisputes": [
+        "d-1",
+        "d-2"
+      ],
+      "subjectParty": "both",
+      "challenges": [
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dossier-2.a.q1",
+              "text": "매니저의 팬사이트 거래를 의심했다면 왜 처음부터 정식 문제 제기를 하지 않았습니까?",
+              "attackVector": "motive",
+              "onSuccess": {
+                "blockVector": "motive",
+                "revealAtom": "headline02:a:d-1:S3:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.a.q2",
+              "text": "A가 느낀 불신이 실제 구조 문제를 본 것인지, 뒤늦은 정당화인지 구분해 주십시오.",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "headline02:a:d-1:S4:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.a.q3",
+              "text": "팬사이트 거래를 알고도 개인 확인을 먼저 택한 판단은 결과적으로 사건을 키운 것 아닙니까?",
+              "attackVector": "responsibility",
+              "onSuccess": {
+                "blockVector": "responsibility",
+                "revealAtom": "headline02:a:d-3:S5:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        },
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dossier-2.b.q1",
+              "text": "직접 주소를 주지 않았다는 말로 비공개 동선 힌트 제공까지 지울 수 있다고 보십니까?",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "headline02:b:d-2:S2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.b.q2",
+              "text": "운영자 쪽 여론 관리와 현장 통제 도움을 대가로 본 적은 없었다고 단언하실 수 있습니까?",
+              "attackVector": "motive",
+              "onSuccess": {
+                "blockVector": "motive",
+                "revealAtom": "headline02:b:d-2:S4:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.b.q3",
+              "text": "관행이라는 표현으로도 금지선을 넘은 거래 구조까지 감출 수는 없다는 점을 인정하십니까?",
+              "attackVector": "responsibility",
+              "onSuccess": {
+                "blockVector": "responsibility",
+                "revealAtom": "headline02:b:d-2:S5:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dossier-3",
+      "name": "비공개 계정 접촉의 성격",
+      "description": "셀카 원본과 버너 계정 대화를 묶어 자기방어와 위험한 역이용의 경계를 확인하는 카드입니다.",
+      "evidenceIds": [
+        "e-1",
+        "e-4"
+      ],
+      "relatedDisputes": [
+        "d-3"
+      ],
+      "subjectParty": "both",
+      "challenges": [
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dossier-3.a.q1",
+              "text": "가족 사진 삭제를 요구한 뒤에도 같은 계정과 접촉을 이어간 이유는 무엇입니까?",
+              "attackVector": "timeline",
+              "onSuccess": {
+                "blockVector": "timeline",
+                "revealAtom": "headline02:a:d-3:S2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.a.q2",
+              "text": "삭제 요구가 진짜 목적이었다면 왜 셀카 원본 일부를 다시 보냈는지 설명해 주십시오.",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "headline02:a:d-3:S3:1",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.a.q3",
+              "text": "직접 접촉이 사생에게 통한다는 신호를 줬다는 점은 더는 부인하기 어렵지 않습니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "headline02:a:d-3:S4:1",
+                "lieAdvance": true
+              }
+            }
+          ]
+        },
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dossier-3.b.q1",
+              "text": "A의 직접 접촉을 들이밀더라도 B가 만든 유출 구조 책임까지 함께 보셔야 하는 것 아닙니까?",
+              "attackVector": "responsibility",
+              "onSuccess": {
+                "blockVector": "responsibility",
+                "revealAtom": "headline02:b:d-1:S3:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.b.q2",
+              "text": "A의 공포를 알고도 그 사실을 축소 보고와 책임 전가 카드로 사용한 것 아닙니까?",
+              "attackVector": "motive",
+              "onSuccess": {
+                "blockVector": "motive",
+                "revealAtom": "headline02:b:d-4:S3:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.b.q3",
+              "text": "피해자성은 인정하면서도 직접 접촉 책임만 전면에 세운 대응이 정당했다고 보십니까?",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "headline02:b:d-4:S4:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dossier-4",
+      "name": "축소 보고와 공식 대응",
+      "description": "기관 기록과 내부 메모를 나란히 놓고 보호를 위한 비공개 수습과 컴백 우선 은폐를 구분해 보는 카드입니다.",
+      "evidenceIds": [
+        "e-2",
+        "e-5"
+      ],
+      "relatedDisputes": [
+        "d-4"
+      ],
+      "subjectParty": "both",
+      "challenges": [
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dossier-4.a.q1",
+              "text": "초기 몇 시간 동안 조용히 처리해 달라고 한 요청이 있었다는 점은 인정하십니까?",
+              "attackVector": "timeline",
+              "onSuccess": {
+                "blockVector": "timeline",
+                "revealAtom": "headline02:a:d-4:S2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-4.a.q2",
+              "text": "그 요청이 있었다 해도 공식 대응 지연이 위험을 키웠다는 점은 부인하지 않으시겠지요?",
+              "attackVector": "responsibility",
+              "onSuccess": {
+                "blockVector": "responsibility",
+                "revealAtom": "headline02:a:d-4:S4:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-4.a.q3",
+              "text": "활동과 여론을 걱정한 개인 사정이 공적 대응 지연의 면죄부가 될 수는 없다는 데 동의하십니까?",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "headline02:a:d-4:S5:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        },
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dossier-4.b.q1",
+              "text": "원본 보고서의 숙소 특정 시도 문구를 뺀 이유가 정말 보호뿐이었다고 하실 겁니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "headline02:b:d-4:S2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-4.b.q2",
+              "text": "보호 논리 뒤에서 컴백 일정과 본인 책임이 함께 계산된 것 아니냐는 질문에 답해 주십시오.",
+              "attackVector": "motive",
+              "onSuccess": {
+                "blockVector": "motive",
+                "revealAtom": "headline02:b:d-4:S4:1",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-4.b.q3",
+              "text": "결국 축소 보고가 피해자 보호보다 자기 보전과 일정 보전을 더 앞세운 대응이었다는 점을 인정하십니까?",
+              "attackVector": "responsibility",
+              "onSuccess": {
+                "blockVector": "responsibility",
+                "revealAtom": "headline02:b:d-4:S5:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "stateUnlockAtoms": {
+    "a": {
+      "d-1": {
+        "S2": [
+          {
+            "id": "headline02:a:d-1:S2:0",
+            "factText": "셀카 단서의 실제 위험도 카드에서 A측 숨기던 축이 한 단계 더 드러났습니다",
+            "tags": [
+              "headline",
+              "d-1",
+              "dossier-1",
+              "idx-0"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "summary": {
+                "default": "셀카 단서의 실제 위험도 카드에서 숨기던 축이 더 드러났습니다"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame",
+              "confess"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "headline02:a:d-1:S3:0",
+            "factText": "팬사이트 거래의 선 카드에서 A측 숨기던 축이 한 단계 더 드러났습니다",
+            "tags": [
+              "headline",
+              "d-1",
+              "dossier-2",
+              "idx-0"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "summary": {
+                "default": "팬사이트 거래의 선 카드에서 숨기던 축이 더 드러났습니다"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame",
+              "confess"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "headline02:a:d-1:S4:0",
+            "factText": "팬사이트 거래의 선 카드에서 A측 숨기던 축이 한 단계 더 드러났습니다",
+            "tags": [
+              "headline",
+              "d-1",
+              "dossier-2",
+              "idx-0"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "summary": {
+                "default": "팬사이트 거래의 선 카드에서 숨기던 축이 더 드러났습니다"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame",
+              "confess"
+            ]
+          }
+        ]
+      },
+      "d-2": {},
+      "d-3": {
+        "S3": [
+          {
+            "id": "headline02:a:d-3:S3:0",
+            "factText": "셀카 단서의 실제 위험도 카드에서 A측 숨기던 축이 한 단계 더 드러났습니다",
+            "tags": [
+              "headline",
+              "d-3",
+              "dossier-1",
+              "idx-0"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "summary": {
+                "default": "셀카 단서의 실제 위험도 카드에서 숨기던 축이 더 드러났습니다"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame",
+              "confess"
+            ]
+          },
+          {
+            "id": "headline02:a:d-3:S3:1",
+            "factText": "비공개 계정 접촉의 성격 카드에서 A측 숨기던 축이 한 단계 더 드러났습니다",
+            "tags": [
+              "headline",
+              "d-3",
+              "dossier-3",
+              "idx-1"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "summary": {
+                "default": "비공개 계정 접촉의 성격 카드에서 숨기던 축이 더 드러났습니다"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame",
+              "confess"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "headline02:a:d-3:S4:0",
+            "factText": "셀카 단서의 실제 위험도 카드에서 A측 숨기던 축이 한 단계 더 드러났습니다",
+            "tags": [
+              "headline",
+              "d-3",
+              "dossier-1",
+              "idx-0"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "summary": {
+                "default": "셀카 단서의 실제 위험도 카드에서 숨기던 축이 더 드러났습니다"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame",
+              "confess"
+            ]
+          },
+          {
+            "id": "headline02:a:d-3:S4:1",
+            "factText": "비공개 계정 접촉의 성격 카드에서 A측 숨기던 축이 한 단계 더 드러났습니다",
+            "tags": [
+              "headline",
+              "d-3",
+              "dossier-3",
+              "idx-1"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "summary": {
+                "default": "비공개 계정 접촉의 성격 카드에서 숨기던 축이 더 드러났습니다"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame",
+              "confess"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "headline02:a:d-3:S5:0",
+            "factText": "팬사이트 거래의 선 카드에서 A측 숨기던 축이 한 단계 더 드러났습니다",
+            "tags": [
+              "headline",
+              "d-3",
+              "dossier-2",
+              "idx-0"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "summary": {
+                "default": "팬사이트 거래의 선 카드에서 숨기던 축이 더 드러났습니다"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame",
+              "confess"
+            ]
+          }
+        ],
+        "S2": [
+          {
+            "id": "headline02:a:d-3:S2:0",
+            "factText": "비공개 계정 접촉의 성격 카드에서 A측 숨기던 축이 한 단계 더 드러났습니다",
+            "tags": [
+              "headline",
+              "d-3",
+              "dossier-3",
+              "idx-0"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "summary": {
+                "default": "비공개 계정 접촉의 성격 카드에서 숨기던 축이 더 드러났습니다"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame",
+              "confess"
+            ]
+          }
+        ]
+      },
+      "d-4": {
+        "S2": [
+          {
+            "id": "headline02:a:d-4:S2:0",
+            "factText": "축소 보고와 공식 대응 카드에서 A측 숨기던 축이 한 단계 더 드러났습니다",
+            "tags": [
+              "headline",
+              "d-4",
+              "dossier-4",
+              "idx-0"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "summary": {
+                "default": "축소 보고와 공식 대응 카드에서 숨기던 축이 더 드러났습니다"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame",
+              "confess"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "headline02:a:d-4:S4:0",
+            "factText": "축소 보고와 공식 대응 카드에서 A측 숨기던 축이 한 단계 더 드러났습니다",
+            "tags": [
+              "headline",
+              "d-4",
+              "dossier-4",
+              "idx-0"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "summary": {
+                "default": "축소 보고와 공식 대응 카드에서 숨기던 축이 더 드러났습니다"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame",
+              "confess"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "headline02:a:d-4:S5:0",
+            "factText": "축소 보고와 공식 대응 카드에서 A측 숨기던 축이 한 단계 더 드러났습니다",
+            "tags": [
+              "headline",
+              "d-4",
+              "dossier-4",
+              "idx-0"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "summary": {
+                "default": "축소 보고와 공식 대응 카드에서 숨기던 축이 더 드러났습니다"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame",
+              "confess"
+            ]
+          }
+        ]
+      }
+    },
+    "b": {
+      "d-1": {
+        "S2": [
+          {
+            "id": "headline02:b:d-1:S2:0",
+            "factText": "셀카 단서의 실제 위험도 카드에서 B측 숨기던 축이 한 단계 더 드러났습니다",
+            "tags": [
+              "headline",
+              "d-1",
+              "dossier-1",
+              "idx-0"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "summary": {
+                "default": "셀카 단서의 실제 위험도 카드에서 숨기던 축이 더 드러났습니다"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame",
+              "confess"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "headline02:b:d-1:S4:0",
+            "factText": "셀카 단서의 실제 위험도 카드에서 B측 숨기던 축이 한 단계 더 드러났습니다",
+            "tags": [
+              "headline",
+              "d-1",
+              "dossier-1",
+              "idx-0"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "summary": {
+                "default": "셀카 단서의 실제 위험도 카드에서 숨기던 축이 더 드러났습니다"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame",
+              "confess"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "headline02:b:d-1:S3:0",
+            "factText": "비공개 계정 접촉의 성격 카드에서 B측 숨기던 축이 한 단계 더 드러났습니다",
+            "tags": [
+              "headline",
+              "d-1",
+              "dossier-3",
+              "idx-0"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "summary": {
+                "default": "비공개 계정 접촉의 성격 카드에서 숨기던 축이 더 드러났습니다"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame",
+              "confess"
+            ]
+          }
+        ]
+      },
+      "d-2": {
+        "S3": [
+          {
+            "id": "headline02:b:d-2:S3:0",
+            "factText": "셀카 단서의 실제 위험도 카드에서 B측 숨기던 축이 한 단계 더 드러났습니다",
+            "tags": [
+              "headline",
+              "d-2",
+              "dossier-1",
+              "idx-0"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "summary": {
+                "default": "셀카 단서의 실제 위험도 카드에서 숨기던 축이 더 드러났습니다"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame",
+              "confess"
+            ]
+          }
+        ],
+        "S2": [
+          {
+            "id": "headline02:b:d-2:S2:0",
+            "factText": "팬사이트 거래의 선 카드에서 B측 숨기던 축이 한 단계 더 드러났습니다",
+            "tags": [
+              "headline",
+              "d-2",
+              "dossier-2",
+              "idx-0"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "summary": {
+                "default": "팬사이트 거래의 선 카드에서 숨기던 축이 더 드러났습니다"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame",
+              "confess"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "headline02:b:d-2:S4:0",
+            "factText": "팬사이트 거래의 선 카드에서 B측 숨기던 축이 한 단계 더 드러났습니다",
+            "tags": [
+              "headline",
+              "d-2",
+              "dossier-2",
+              "idx-0"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "summary": {
+                "default": "팬사이트 거래의 선 카드에서 숨기던 축이 더 드러났습니다"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame",
+              "confess"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "headline02:b:d-2:S5:0",
+            "factText": "팬사이트 거래의 선 카드에서 B측 숨기던 축이 한 단계 더 드러났습니다",
+            "tags": [
+              "headline",
+              "d-2",
+              "dossier-2",
+              "idx-0"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "summary": {
+                "default": "팬사이트 거래의 선 카드에서 숨기던 축이 더 드러났습니다"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame",
+              "confess"
+            ]
+          }
+        ]
+      },
+      "d-3": {},
+      "d-4": {
+        "S3": [
+          {
+            "id": "headline02:b:d-4:S3:0",
+            "factText": "비공개 계정 접촉의 성격 카드에서 B측 숨기던 축이 한 단계 더 드러났습니다",
+            "tags": [
+              "headline",
+              "d-4",
+              "dossier-3",
+              "idx-0"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "summary": {
+                "default": "비공개 계정 접촉의 성격 카드에서 숨기던 축이 더 드러났습니다"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame",
+              "confess"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "headline02:b:d-4:S4:0",
+            "factText": "비공개 계정 접촉의 성격 카드에서 B측 숨기던 축이 한 단계 더 드러났습니다",
+            "tags": [
+              "headline",
+              "d-4",
+              "dossier-3",
+              "idx-0"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "summary": {
+                "default": "비공개 계정 접촉의 성격 카드에서 숨기던 축이 더 드러났습니다"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame",
+              "confess"
+            ]
+          },
+          {
+            "id": "headline02:b:d-4:S4:1",
+            "factText": "축소 보고와 공식 대응 카드에서 B측 숨기던 축이 한 단계 더 드러났습니다",
+            "tags": [
+              "headline",
+              "d-4",
+              "dossier-4",
+              "idx-1"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "summary": {
+                "default": "축소 보고와 공식 대응 카드에서 숨기던 축이 더 드러났습니다"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame",
+              "confess"
+            ]
+          }
+        ],
+        "S2": [
+          {
+            "id": "headline02:b:d-4:S2:0",
+            "factText": "축소 보고와 공식 대응 카드에서 B측 숨기던 축이 한 단계 더 드러났습니다",
+            "tags": [
+              "headline",
+              "d-4",
+              "dossier-4",
+              "idx-0"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "summary": {
+                "default": "축소 보고와 공식 대응 카드에서 숨기던 축이 더 드러났습니다"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame",
+              "confess"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "headline02:b:d-4:S5:0",
+            "factText": "축소 보고와 공식 대응 카드에서 B측 숨기던 축이 한 단계 더 드러났습니다",
+            "tags": [
+              "headline",
+              "d-4",
+              "dossier-4",
+              "idx-0"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "summary": {
+                "default": "축소 보고와 공식 대응 카드에서 숨기던 축이 더 드러났습니다"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame",
+              "confess"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "events": {
+    "contradictions": [
+      {
+        "id": "headline-02-contradiction-1",
+        "statementA": "윤아는 보호를 위해서만 잠깐 확인했다고 말합니다.",
+        "statementB": "버너 계정 기록에는 반복된 접촉과 이미지 재전송 흔적이 남아 있습니다.",
+        "options": {
+          "point_out": {
+            "label": "반복 접촉을 짚는다",
+            "effect": "A의 자기방어 논리가 좁아집니다."
+          },
+          "let_go": {
+            "label": "나중으로 미룬다",
+            "effect": "더 큰 구조 책임 축을 먼저 노릴 수 있습니다."
+          }
+        },
+        "npcReaction": "A는 공포와 확인 목적을 먼저 붙들며 세부 접촉 횟수는 흐리려 합니다."
+      },
+      {
+        "id": "headline-02-contradiction-2",
+        "statementA": "태현은 현장 혼선을 줄이기 위한 최소 조율이었다고 말합니다.",
+        "statementB": "팬사이트 DM과 커뮤니티 추적 글은 비공개 동선 힌트가 반복 제공된 흐름을 보여 줍니다.",
+        "options": {
+          "point_out": {
+            "label": "비공개 힌트를 짚는다",
+            "effect": "B의 관행 방어가 약해집니다."
+          },
+          "let_go": {
+            "label": "축소 보고를 먼저 본다",
+            "effect": "사후 은폐 축을 더 크게 흔들 수 있습니다."
+          }
+        },
+        "npcReaction": "B는 주소를 직접 준 적 없다는 표현 뒤에 계속 숨으려 합니다."
+      }
+    ],
+    "interjections": [
+      {
+        "id": "headline-02-interjection-1",
+        "interruptor": "a",
+        "interjectionLine": "제가 무서워서 확인한 걸 왜 그 팬사이트 거래랑 같은 무게로 보세요.",
+        "options": {
+          "allow": {
+            "label": "계속 말하게 둔다",
+            "effect": "A의 피해 감정이 더 강하게 드러납니다."
+          },
+          "block": {
+            "label": "지금은 끊는다",
+            "effect": "직접 접촉 사실선으로 복귀합니다."
+          }
+        }
+      },
+      {
+        "id": "headline-02-interjection-2",
+        "interruptor": "b",
+        "interjectionLine": "본인이 먼저 계정에 들어간 걸 빼면 이 사건이 이렇게 커졌겠습니까.",
+        "options": {
+          "allow": {
+            "label": "받아친다",
+            "effect": "B가 책임 전가 쪽으로 더 노출됩니다."
+          },
+          "block": {
+            "label": "구조 책임으로 돌린다",
+            "effect": "팬사이트 거래 축이 선명해집니다."
+          }
+        }
+      }
+    ],
+    "emotionalOutbursts": [
+      {
+        "id": "headline-02-outburst-1",
+        "party": "a",
+        "outburstLine": "문 앞 인기척이 들린 밤을 겪고도 제가 계산부터 했다는 식으로 말하면 못 버팁니다.",
+        "options": {
+          "press": {
+            "label": "직접 접촉 책임을 짚는다",
+            "effect": "피해 감정 뒤의 행동 책임이 드러날 수 있습니다."
+          },
+          "calm": {
+            "label": "공포 사실을 먼저 고정한다",
+            "effect": "피해자 보호 축으로 잠시 이동합니다."
+          }
+        }
+      },
+      {
+        "id": "headline-02-outburst-2",
+        "party": "b",
+        "outburstLine": "현장을 안 겪어보면 팬 운영자하고 선을 어디서 끊는지 그렇게 쉽게 말 못 합니다.",
+        "options": {
+          "press": {
+            "label": "관행 방어를 무너뜨린다",
+            "effect": "비공식 거래가 더 선명해집니다."
+          },
+          "calm": {
+            "label": "공식 대응 지연으로 다시 묶는다",
+            "effect": "축소 보고 책임 축으로 복귀합니다."
+          }
+        }
+      }
+    ]
+  },
+  "transitionBeats": [
+    {
+      "id": "tb-headline02-a-d1-s1-s2",
+      "caseId": "headline-02",
+      "party": "a",
+      "disputeId": "d-1",
+      "fromState": "S1",
+      "toState": "S2",
+      "primaryBeatType": "evidence_hit",
+      "line": "셀카 원본과 추적 글이 한 줄로 엮이자 윤아는 단순 공포 호소에서 벗어나 직접 단서를 던진 사실을 더는 피하기 어려워집니다.",
+      "behaviorHint": "호흡을 가다듬은 뒤 대답 길이가 갑자기 짧아집니다."
+    },
+    {
+      "id": "tb-headline02-a-d3-s4-s5",
+      "caseId": "headline-02",
+      "party": "a",
+      "disputeId": "d-3",
+      "fromState": "S4",
+      "toState": "S5",
+      "primaryBeatType": "confession",
+      "line": "윤아는 차단보다 추적을 먼저 택한 판단이 결국 위험을 키웠다는 점까지 낮은 목소리로 인정합니다.",
+      "behaviorHint": "끝 문장에서 감정이 먼저 흔들리고 그 뒤에 문장이 따라옵니다."
+    },
+    {
+      "id": "tb-headline02-b-d2-s1-s2",
+      "caseId": "headline-02",
+      "party": "b",
+      "disputeId": "d-2",
+      "fromState": "S1",
+      "toState": "S2",
+      "primaryBeatType": "evidence_hit",
+      "line": "팬사이트 DM과 추적 게시물이 겹치자 태현은 관행이라는 말만으로는 설명이 부족하다는 것을 느끼고 답을 더 좁혀 갑니다.",
+      "behaviorHint": "숫자와 시점을 과하게 정확히 읊으며 시간을 벌려 합니다."
+    },
+    {
+      "id": "tb-headline02-b-d4-s4-s5",
+      "caseId": "headline-02",
+      "party": "b",
+      "disputeId": "d-4",
+      "fromState": "S4",
+      "toState": "S5",
+      "primaryBeatType": "confession",
+      "line": "태현은 보호 논리 뒤에 일정 보전과 자기 책임 축소가 함께 있었다는 점을 결국 인정하는 쪽으로 밀려납니다.",
+      "behaviorHint": "처음엔 절차어를 쓰려다가 마지막 문장에서 개인 주어가 튀어나옵니다."
+    }
+  ]
+}

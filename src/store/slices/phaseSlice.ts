@@ -3,6 +3,7 @@ import { GamePhase } from '../../types'
 import type { VerdictMode } from '../../types'
 import { PHASE_ORDER } from '../../utils/constants'
 import { checkVerdictEligible, checkForcedVerdict } from '../../engine/readinessEngine'
+import { normalizeCaseKey } from '../../utils/caseHelpers'
 
 export interface PhaseSlice {
   currentPhase: GamePhase
@@ -52,8 +53,7 @@ export const createPhaseSlice: StateCreator<PhaseSlice, [], [], PhaseSlice> = (s
     if (nextPhase === GamePhase.Phase3_Interrogation) {
       const fullState = get() as any
       if (fullState.applyPhase3Bridge && fullState.caseData) {
-        const caseId = fullState.caseData.caseId
-          ?.replace(/^case-/, '') // "case-spouse-01" → "spouse-01"
+        const caseId = normalizeCaseKey(fullState.caseData)
         if (caseId) fullState.applyPhase3Bridge(caseId)
       }
     }

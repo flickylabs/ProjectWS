@@ -1,0 +1,462 @@
+{
+  "caseId": "family-v2-01",
+  "dossierCards": [
+    {
+      "id": "dc-1",
+      "name": "유서를 고친 건 맞는데, 왜 자기 몫을 더 많이 가져가는 쪽이 아니라 덜 가져가는 쪽으로 바꿨습니까?",
+      "description": "d-2가 S3 이상일 때 열리는 카드다. 조작의 존재를 넘어 조작의 방향과 진짜 동기를 강제로 묻는다.",
+      "evidenceIds": [
+        "e-5"
+      ],
+      "relatedDisputes": [
+        "d-2",
+        "d-4"
+      ],
+      "subjectParty": "b",
+      "challenges": [
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dc-1.b.q1",
+              "text": "유서를 고친 건 맞는데, 왜 자기 몫을 더 많이 가져가는 쪽이 아니라 덜 가져가는 쪽으로 바꿨습니까?",
+              "lockedHint": "원본 유서까지 열린 뒤에야 조작의 방향을 정면으로 묻는 질문이 보입니다.",
+              "attackVector": "context",
+              "requiredLieState": "S3",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "family-v2-01:b:d-2:S4:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dc-1.b.q2",
+              "text": "그렇게까지 해서라도 형 몫을 남겨야 했던 이유가, 돈보다 더 큰 비밀 때문이었습니까?",
+              "lockedHint": "조작 방향의 인정 뒤에야 진짜 이유를 묻는 질문이 열립니다.",
+              "attackVector": "responsibility",
+              "requiredLieState": "S4",
+              "onSuccess": {
+                "blockVector": "responsibility",
+                "revealAtom": "family-v2-01:b:d-2:S5:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dc-2",
+      "name": "형이 평생 어머니 돈인 줄 알았던 그 돈, 사실은 당신 돈이었습니까?",
+      "description": "d-3이 S2 이상일 때 열리는 카드다. 20년 송금의 출처와, 그 돈을 왜 어머니 이름 뒤에 숨겼는지를 정면으로 추궁한다.",
+      "evidenceIds": [
+        "e-6"
+      ],
+      "relatedDisputes": [
+        "d-3",
+        "d-5"
+      ],
+      "subjectParty": "b",
+      "challenges": [
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dc-2.b.q1",
+              "text": "형이 평생 어머니 돈인 줄 알았던 그 돈, 사실은 당신 돈이었습니까?",
+              "lockedHint": "20년 송금 흐름이 열린 뒤에야 돈의 출처를 직접 묻는 질문이 보입니다.",
+              "attackVector": "authenticity",
+              "requiredLieState": "S2",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "family-v2-01:b:d-3:S3:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dc-2.b.q2",
+              "text": "그 돈이 형을 살리기 위한 돈이었다면, 왜 20년 동안 형 앞에선 어머니 돈처럼 놔뒀습니까?",
+              "lockedHint": "지원 사실을 인정한 뒤에야 숨김의 책임을 묻는 질문이 열립니다.",
+              "attackVector": "responsibility",
+              "requiredLieState": "S3",
+              "onSuccess": {
+                "blockVector": "responsibility",
+                "revealAtom": "family-v2-01:b:d-3:S4:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dc-3",
+      "name": "60대 40으로 바꾸지 않았다면, 형이 무엇을 잃게 됐습니까?",
+      "description": "d-4가 S3 이상일 때 열리는 카드다. 출생 비밀과 집안 붕괴 공포를 직접 꺼내며, 보호 명분이 왜 유서 조작으로 갔는지를 묻는다.",
+      "evidenceIds": [
+        "e-7"
+      ],
+      "relatedDisputes": [
+        "d-4",
+        "d-5"
+      ],
+      "subjectParty": "b",
+      "challenges": [
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dc-3.b.q1",
+              "text": "60대 40으로 바꾸지 않았다면, 형이 무엇을 잃게 됐습니까?",
+              "lockedHint": "일기장 문맥이 열린 뒤에야 형이 잃을 것을 직접 묻는 질문이 보입니다.",
+              "attackVector": "context",
+              "requiredLieState": "S3",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "family-v2-01:b:d-4:S4:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dc-3.b.q2",
+              "text": "형이 잃게 될 것이 상속액이 아니라 자리와 출생 비밀이었다면, 어머니 뜻까지 바꿀 권리가 있었다고 생각합니까?",
+              "lockedHint": "비밀의 성격을 인정한 뒤에야 조작 책임을 끝까지 묻는 질문이 열립니다.",
+              "attackVector": "responsibility",
+              "requiredLieState": "S4",
+              "onSuccess": {
+                "blockVector": "responsibility",
+                "revealAtom": "family-v2-01:b:d-4:S5:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "stateUnlockAtoms": {
+    "a": {
+      "d-1": {},
+      "d-2": {},
+      "d-3": {},
+      "d-4": {},
+      "d-5": {}
+    },
+    "b": {
+      "d-1": {},
+      "d-2": {
+        "S4": [
+          {
+            "id": "family-v2-01:b:d-2:S4:0",
+            "factText": "윤정후는 유서 조작의 방향이 자기 몫을 늘리는 쪽이 아니라 형 몫을 조금이라도 남기는 쪽이었다고 인정한다.",
+            "tags": [
+              "thread-g",
+              "family-v2-01",
+              "d-2",
+              "dc-1"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "summary": {
+                "default": "윤정후는 유서 조작의 방향이 자기 몫을 늘리는 쪽이 아니라 형 몫을 조금이라도 남기는 쪽이었다고 인정한다."
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame",
+              "confess"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "family-v2-01:b:d-2:S5:0",
+            "factText": "윤정후는 90대 10이 그대로 나오면 형의 출생 비밀과 집안 기반이 한꺼번에 무너질까 봐 60대 40으로 바꿨다고 털어놓는다.",
+            "tags": [
+              "thread-g",
+              "family-v2-01",
+              "d-2",
+              "dc-1"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "summary": {
+                "default": "윤정후는 90대 10이 그대로 나오면 형의 출생 비밀과 집안 기반이 한꺼번에 무너질까 봐 60대 40으로 바꿨다고 털어놓는다."
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame",
+              "confess"
+            ]
+          }
+        ]
+      },
+      "d-3": {
+        "S3": [
+          {
+            "id": "family-v2-01:b:d-3:S3:0",
+            "factText": "윤정후는 20년 생활비와 공장 부도 직전의 큰 돈 상당수가 자기 돈이었다고 인정한다.",
+            "tags": [
+              "thread-g",
+              "family-v2-01",
+              "d-3",
+              "dc-2"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "summary": {
+                "default": "윤정후는 20년 생활비와 공장 부도 직전의 큰 돈 상당수가 자기 돈이었다고 인정한다."
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame",
+              "confess"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "family-v2-01:b:d-3:S4:0",
+            "factText": "윤정후는 그 돈을 어머니 이름으로 흘려보낸 이유가 형 자존심과 집안 균열을 동시에 막으려는 선택이었다고 말한다.",
+            "tags": [
+              "thread-g",
+              "family-v2-01",
+              "d-3",
+              "dc-2"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "summary": {
+                "default": "윤정후는 그 돈을 어머니 이름으로 흘려보낸 이유가 형 자존심과 집안 균열을 동시에 막으려는 선택이었다고 말한다."
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame",
+              "confess"
+            ]
+          }
+        ]
+      },
+      "d-4": {
+        "S4": [
+          {
+            "id": "family-v2-01:b:d-4:S4:0",
+            "factText": "윤정후는 형이 잃게 될 것이 상속액보다 먼저 집안 자리와 출생 비밀이라고 믿었다고 인정한다.",
+            "tags": [
+              "thread-g",
+              "family-v2-01",
+              "d-4",
+              "dc-3"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "summary": {
+                "default": "윤정후는 형이 잃게 될 것이 상속액보다 먼저 집안 자리와 출생 비밀이라고 믿었다고 인정한다."
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame",
+              "confess"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "family-v2-01:b:d-4:S5:0",
+            "factText": "윤정후는 그 공포 때문에 유서까지 손댔고, 그 선택 자체가 잘못이었다는 점도 받아들인다고 말한다.",
+            "tags": [
+              "thread-g",
+              "family-v2-01",
+              "d-4",
+              "dc-3"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "summary": {
+                "default": "윤정후는 그 공포 때문에 유서까지 손댔고, 그 선택 자체가 잘못이었다는 점도 받아들인다고 말한다."
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame",
+              "confess"
+            ]
+          }
+        ]
+      },
+      "d-5": {}
+    }
+  },
+  "events": {
+    "contradictions": [
+      {
+        "id": "family-v2-01-contradiction-1",
+        "statementA": "윤태성은 말년 방문기록과 유서 사본이 함께 붙는 순간, 동생이 어머니를 이용한 그림 말고는 설명이 없었다고 말한다.",
+        "statementB": "윤정후는 같은 방문이 어머니와 집안을 동시에 붙들기 위한 돌봄 흐름이었다고 말한다.",
+        "options": {
+          "point_out": {
+            "label": "방문의 성격을 정면으로 짚는다",
+            "effect": "이용과 돌봄이라는 두 해석이 같은 기록 위에서 충돌한다."
+          },
+          "let_go": {
+            "label": "문서 쪽으로 먼저 간다",
+            "effect": "방문 해석을 잠시 남겨 두고 유서 조작의 방향부터 확인하게 된다."
+          }
+        },
+        "npcReaction": "두 사람 모두 같은 말년 장면을 전혀 다른 도덕 언어로 설명하고 있었다는 점이 드러난다."
+      },
+      {
+        "id": "family-v2-01-contradiction-2",
+        "statementA": "윤태성은 60대 40이 동생의 탐욕이라고 확신했다.",
+        "statementB": "윤정후는 오히려 자기 몫을 줄여 형 자리를 남기려 했다고 주장한다.",
+        "options": {
+          "point_out": {
+            "label": "조작 방향을 부딪친다",
+            "effect": "사건의 중심 질문이 탐욕인지, 보호의 왜곡인지로 바뀐다."
+          },
+          "let_go": {
+            "label": "돈의 출처부터 확인한다",
+            "effect": "유서보다 오래된 20년 송금 흐름이 먼저 핵심으로 올라온다."
+          }
+        },
+        "npcReaction": "같은 조작 행위를 두고도 동기가 정반대로 설명되자, 상속 분쟁의 방향 자체가 흔들린다."
+      }
+    ],
+    "interjections": [
+      {
+        "id": "family-v2-01-interjection-a",
+        "interruptor": "a",
+        "interjectionLine": "윤태성은 어머니를 모신 사람은 자신인데 왜 동생이 늘 뒤에서 결정권을 쥐고 있었냐며 언성을 높인다.",
+        "options": {
+          "allow": {
+            "label": "분노를 더 말하게 둔다",
+            "effect": "A가 상속과 돌봄을 같은 권리로 묶고 있었다는 구조가 더 선명해진다."
+          },
+          "block": {
+            "label": "기록으로 되돌린다",
+            "effect": "감정 대신 방문기록과 유서 흐름으로 다시 시선을 돌린다."
+          }
+        }
+      },
+      {
+        "id": "family-v2-01-interjection-b",
+        "interruptor": "b",
+        "interjectionLine": "윤정후는 형이 아무것도 모르고 쉽게 말한다고 받아치려다가도, 끝 문장에서만 목소리를 낮춘다.",
+        "options": {
+          "allow": {
+            "label": "계속 말하게 둔다",
+            "effect": "B가 오래 눌러 둔 비밀과 체념의 층이 조금 더 드러난다."
+          },
+          "block": {
+            "label": "유서 조작 책임으로 고정한다",
+            "effect": "보호 서사와 별개로 넘은 선의 책임을 다시 전면에 둔다."
+          }
+        }
+      }
+    ],
+    "emotionalOutbursts": [
+      {
+        "id": "family-v2-01-outburst-a",
+        "party": "a",
+        "outburstLine": "윤태성은 평생 자기 몫과 어머니 뜻을 믿고 버텨 왔는데, 돈 출처와 출생 얘기까지 흔들리자 처음으로 말을 잇지 못한다.",
+        "options": {
+          "press": {
+            "label": "돈 출처를 끝까지 묻는다",
+            "effect": "A가 동생을 이해하지 못한 채 명분만 붙들고 있었다는 점이 더 선명해진다."
+          },
+          "calm": {
+            "label": "출생 얘기를 천천히 받게 한다",
+            "effect": "정체성 충격을 드러내면서도 장면을 무너지지 않게 붙든다."
+          }
+        }
+      },
+      {
+        "id": "family-v2-01-outburst-b",
+        "party": "b",
+        "outburstLine": "윤정후는 형이 무너질까 봐 숨긴 것이 결국 더 크게 무너뜨린 셈이 됐다는 말을 겨우 끊어 내며 인정한다.",
+        "options": {
+          "press": {
+            "label": "유서 조작 책임을 더 묻는다",
+            "effect": "보호 명분과 불법 조작의 경계가 분명해진다."
+          },
+          "calm": {
+            "label": "왜 그렇게까지 떠안았는지 듣는다",
+            "effect": "동생이 돈과 비밀을 같이 짊어진 구조가 더 또렷해진다."
+          }
+        }
+      }
+    ]
+  },
+  "transitionBeats": [
+    {
+      "id": "family-v2-01-beat-b-d1-s2-s3",
+      "caseId": "family-v2-01",
+      "party": "b",
+      "disputeId": "d-1",
+      "fromState": "S2",
+      "toState": "S3",
+      "primaryBeatType": "partial",
+      "line": "윤정후는 자주 간 건 맞지만 어머니를 밀어붙이려 간 건 아니었다고, 처음으로 방문 목적을 분리해 말한다.",
+      "behaviorHint": "감정을 죽인 채 단문으로만 대답하다가, 목적 얘기에서만 문장이 길어진다."
+    },
+    {
+      "id": "family-v2-01-beat-b-d2-s2-s3",
+      "caseId": "family-v2-01",
+      "party": "b",
+      "disputeId": "d-2",
+      "fromState": "S2",
+      "toState": "S3",
+      "primaryBeatType": "confession",
+      "line": "윤정후는 최종본에 손댄 건 자기라고 인정하지만, 그 인정조차 감정을 거의 싣지 못한 채 툭 떨어뜨린다.",
+      "behaviorHint": "조작 사실을 말하는 목소리는 평평하지만, 시선은 끝내 형 쪽을 피한다."
+    },
+    {
+      "id": "family-v2-01-beat-b-d2-s3-s4",
+      "caseId": "family-v2-01",
+      "party": "b",
+      "disputeId": "d-2",
+      "fromState": "S3",
+      "toState": "S4",
+      "primaryBeatType": "counter_shift",
+      "line": "윤정후는 늘리려던 게 아니라 줄이려던 거였다고 말하며, 사건의 방향 자체를 뒤집는다.",
+      "behaviorHint": "숫자를 말하는 순간에만 목소리가 분명해지고, 그 뒤 설명은 다시 낮아진다."
+    },
+    {
+      "id": "family-v2-01-beat-b-d3-s2-s3",
+      "caseId": "family-v2-01",
+      "party": "b",
+      "disputeId": "d-3",
+      "fromState": "S2",
+      "toState": "S3",
+      "primaryBeatType": "confession",
+      "line": "윤정후는 어머니 이름으로 들어간 생활비와 공장 돈이 자기 돈이었다는 사실을 더는 부정하지 못한다.",
+      "behaviorHint": "금액과 기간을 말할 때만 호흡이 짧아지고 어깨가 굳는다."
+    },
+    {
+      "id": "family-v2-01-beat-b-d4-s3-s4",
+      "caseId": "family-v2-01",
+      "party": "b",
+      "disputeId": "d-4",
+      "fromState": "S3",
+      "toState": "S4",
+      "primaryBeatType": "confession",
+      "line": "윤정후는 형이 잃게 될 것이 돈만이 아니라는 걸 오래전부터 알고 있었다고, 출생 비밀의 무게를 처음 꺼낸다.",
+      "behaviorHint": "문장 사이 간격이 길어지고, 끝 단어만 겨우 눌러 말한다."
+    },
+    {
+      "id": "family-v2-01-beat-a-d5-s2-s3",
+      "caseId": "family-v2-01",
+      "party": "a",
+      "disputeId": "d-5",
+      "fromState": "S2",
+      "toState": "S3",
+      "primaryBeatType": "counter_shift",
+      "line": "윤태성은 동생이 어머니를 이용했다고만 몰아붙였지만, 돈의 출처가 드러나자 자기 오해 가능성을 처음으로 입에 올린다.",
+      "behaviorHint": "반박부터 하던 리듬이 깨지고, 자기 문장을 스스로 다시 고친다."
+    }
+  ]
+}

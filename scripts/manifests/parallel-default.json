@@ -1,0 +1,9 @@
+{
+  "name": "default_parallel_batch",
+  "autoDiscoverRunners": true,
+  "cases": [
+    "headline-01",
+    "headline-02",
+    "spouse-11"
+  ]
+}

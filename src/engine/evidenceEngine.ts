@@ -14,12 +14,25 @@ export interface EvidenceRuntimeState {
 
 export function createInitialEvidenceStates(
   evidence: EvidenceNode[],
+  baseEvidenceIds?: string[],
 ): Record<string, EvidenceRuntimeState> {
   const map: Record<string, EvidenceRuntimeState> = {}
+  const preferredBaseIds = new Set(baseEvidenceIds ?? [])
+  const fallbackBaseIds = preferredBaseIds.size > 0
+    ? null
+    : new Set(
+        evidence
+          .filter((item) => item.requires.length === 0 && !item.requiredLieState)
+          .slice(0, 3)
+          .map((item) => item.id),
+      )
+
   for (const e of evidence) {
     map[e.id] = {
       id: e.id,
-      unlocked: e.requires.length === 0,
+      unlocked: preferredBaseIds.size > 0
+        ? preferredBaseIds.has(e.id)
+        : fallbackBaseIds?.has(e.id) ?? false,
       presented: false,
       presentedTo: [],
       investigatedActions: [],
@@ -45,6 +58,7 @@ export function checkUnlocks(
   for (const e of evidence) {
     const state = updated[e.id]
     if (!state || state.unlocked) continue
+    if (e.requires.length === 0 && !e.requiredLieState) continue
 
     // 선행 증거 조건
     const allRequirementsMet = e.requires.every((reqId) => {
@@ -207,7 +221,9 @@ export function computeSurfacedEvidence(
 
   // 1. 기본 3장: 해금 여부와 무관하게 항상 표면
   for (const id of baseEvidenceIds.slice(0, 3)) {
-    surfacedIds.push(id)
+    if (evidenceStates[id]?.unlocked) {
+      surfacedIds.push(id)
+    }
   }
 
   // 2. 현재 쟁점 관련 1장: proves에 currentDisputeId가 포함된 해금된 증거 중

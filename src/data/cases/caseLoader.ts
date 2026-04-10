@@ -6,17 +6,26 @@ import type { CaseData, LieConfig } from '../../types'
 
 // Vite의 glob import로 모든 JSON을 lazy 로드 가능하게 등록
 const caseModules = import.meta.glob('./generated/*.json', { eager: true }) as Record<string, { default: any }>
+const scriptedModules = import.meta.glob('../scriptedText/*.json', { eager: false })
 
 // 정제 완료 목록
 import refinedManifest from './refined/manifest.json'
 const REFINED_SET = new Set((refinedManifest as { refined: string[] }).refined)
+const EXCLUDED_CASE_KEYS = new Set(['neighbor-new-10', 'civic-new-07'])
+const SCRIPTED_SET = new Set(
+  Object.keys(scriptedModules)
+    .map((modulePath) => modulePath.split('/').pop()?.replace('.json', '') ?? '')
+    .filter((caseKey) => !!caseKey && !EXCLUDED_CASE_KEYS.has(caseKey)),
+)
 
 // 즉시 로드 — 정제 완료된 케이스만 (개발 중에는 USE_REFINED_ONLY를 false로)
 const USE_REFINED_ONLY = true
 const RAW_CASES = Object.entries(caseModules)
   .filter(([path]) => {
-    if (!USE_REFINED_ONLY) return true
     const fileName = path.split('/').pop()?.replace('.json', '') ?? ''
+    if (EXCLUDED_CASE_KEYS.has(fileName)) return false
+    if (!SCRIPTED_SET.has(fileName)) return false
+    if (!USE_REFINED_ONLY) return true
     return REFINED_SET.has(fileName)
   })
   .map(([, m]) => m.default)
@@ -260,6 +269,7 @@ function normalizeCaseData(raw: any): CaseData {
 
   return {
     caseId: raw.caseId,
+    meta: raw.meta,
     duo,
     context: raw.context ?? { contextType: 'general', description: '', emotionalPressure: 5, affects: 'both', triggerAmplifier: '' },
     disputes: raw.disputes ?? [],
@@ -271,6 +281,8 @@ function normalizeCaseData(raw: any): CaseData {
     solutions: raw.solutions ?? {},
     activeLedgerEntries: raw.activeLedgerEntries ?? [],
     activeThirdParties: raw.activeThirdParties ?? [],
+    baseEvidenceIds: raw.baseEvidenceIds,
+    monetaryDisputeIds: raw.monetaryDisputeIds ?? [],
   }
 }
 
@@ -288,9 +300,11 @@ function normalizeArchetype(a: string): 'avoidant' | 'confrontational' | 'victim
   return (map[a] ?? 'avoidant') as any
 }
 
-function normalizeDigitalHabit(d: string): 'sns_active' | 'messenger_main' | 'minimal' {
+function normalizeDigitalHabit(d: string): 'sns_active' | 'messenger_main' | 'minimal' | 'banking_app_heavy' {
+  if (d === 'banking_app_heavy') return 'banking_app_heavy'
   if (d?.includes('sns') || d?.includes('multiple') || d?.includes('close_friends') || d?.includes('shared_calendar')) return 'sns_active'
-  if (d?.includes('messenger') || d?.includes('banking') || d?.includes('calendar') || d?.includes('card') || d?.includes('household') || d?.includes('voice') || d?.includes('work_chat') || d?.includes('admin')) return 'messenger_main'
+  if (d?.includes('banking') || d?.includes('card') || d?.includes('household')) return 'banking_app_heavy'
+  if (d?.includes('messenger') || d?.includes('calendar') || d?.includes('voice') || d?.includes('work_chat') || d?.includes('admin')) return 'messenger_main'
   return 'minimal'
 }
 

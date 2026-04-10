@@ -25,7 +25,7 @@ export default function EvidenceBoard() {
   useEffect(() => {
     if (evidenceDefinitions.length === 0 && caseData?.evidence && caseData.evidence.length > 0) {
       console.warn('[EvidenceBoard] evidenceDefinitions 비어있음 — caseData에서 복구')
-      useGameStore.getState().initEvidence(caseData.evidence, caseData.evidenceCombinations ?? [])
+      useGameStore.getState().initEvidence(caseData.evidence, caseData.evidenceCombinations ?? [], caseData.baseEvidenceIds)
     }
   }, [evidenceDefinitions.length, caseData])
 

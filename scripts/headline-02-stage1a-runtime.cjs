@@ -1,0 +1,956 @@
+#!/usr/bin/env node
+const fs = require('fs')
+const path = require('path')
+
+const ROOT = path.join(__dirname, '..')
+const OUT_PATH = path.join(ROOT, 'src', 'data', 'cases', 'generated', 'headline-02.json')
+
+function writeJson(targetPath, value) {
+  fs.mkdirSync(path.dirname(targetPath), { recursive: true })
+  fs.writeFileSync(targetPath, `${JSON.stringify(value, null, 2)}\n`, 'utf8')
+}
+
+const runtimeCase = {
+  caseId: 'case-headline-02',
+  meta: {
+    relationshipType: 'headline',
+    conflictSeed: 'CS-H2',
+    variableModules: ['VM-H2'],
+    twistModule: 'TW-H-02',
+    difficulty: 'hard',
+    anchorTruth:
+      '윤아가 보낸 셀카 원본에는 숙소 단서가 일부 담겨 있었고, 태현은 팬사이트 운영자에게 비공개 동선 힌트를 흘려왔다. 윤아는 누가 새는지 확인하려 사생 계정에 직접 접근했고, 태현은 사건 직후 보안 보고를 늦추며 컴백 일정부터 지키려 했다.',
+    emotionalBait:
+      '엘리베이터 벽면이 비친 셀카, 숙소 앞에서 찍힌 밴 사진, 새벽 경호 호출 기록, 팬사이트 운영자의 친근한 DM이 연달아 나오며 누구라도 먼저 한쪽을 배신자로 단정하게 만든다.',
+    resolutionDilemma:
+      '실제 스토킹 피해를 가장 먼저 보호해야 하는가, 아니면 피해자 쪽의 위험한 대응과 내부 유출 책임을 더 명확히 공개해야 하는가? 매니저 개인의 잘못으로 볼지, 팬서비스와 팬덤 경제를 방치한 구조 책임까지 열어야 하는가?',
+  },
+  duo: {
+    duoId: 'duo-case-headline-02',
+    relationshipType: 'headline',
+    partyA: {
+      id: 'a',
+      name: '서윤아',
+      age: 27,
+      occupation: '걸그룹 메인보컬',
+      incomeBracket: 'high',
+      archetype: 'affect_flattening',
+      speechStyle:
+        '훈련된 차분함을 유지하려 하고, 감정을 들키지 않으려 문장을 짧게 자른다. 하지만 자신이 정말 겁먹었다는 지점이 나오면 갑자기 디테일이 많아지고, 자신의 행동이 왜 불가피했는지 정리하듯 설명한다.',
+      pride: 7,
+      fear: '관심을 즐기다 사고를 키운 사람, 팀을 위험에 빠뜨린 멤버처럼 보이는 것',
+      riskAppetite: 5,
+      digitalHabit: 'sns_active',
+      dailyRoutine:
+        '연습실과 방송국, 숙소를 오가는 반복된 이동 속에서 팬 반응과 커뮤니티 여론을 수시로 본다. 개인 계정은 닫혀 있지만 비공개 모니터링 계정으로 팬 커뮤니티 흐름을 체크한다.',
+      sensitivePoints: ['사생팬 공포', '자기관리 실패 프레임', '팀 활동에 피해 주는 사람처럼 보이는 것'],
+      verbalTells: [
+        {
+          type: 'trained_calm',
+          trigger: 'lying',
+          pattern: '불리한 질문이 오면 감정을 먼저 평평하게 누르고, 짧은 단정문으로 자신이 통제 가능한 부분만 남기려 한다.',
+        },
+        {
+          type: 'selective_precision',
+          trigger: 'defensive',
+          pattern: '겁먹었던 장면을 말할 때는 시간과 위치를 이상할 만큼 정확히 말하지만, 자신이 먼저 한 행동은 잠깐, 한 번 같은 흐린 말로 줄인다.',
+        },
+        {
+          type: 'image_shield',
+          trigger: 'cornered',
+          pattern: '자기 행동을 묻는 질문을 받으면 팀에 피해를 줄 수 없었다, 팬들 분위기가 더 커질까 봐처럼 더 큰 이미지를 방패로 세운다.',
+        },
+      ],
+      callTerms: {
+        toPartner: '매니저님',
+        toJudge: '저 매니저',
+        angry: '조태현 씨',
+      },
+    },
+    partyB: {
+      id: 'b',
+      name: '조태현',
+      age: 38,
+      occupation: '로드 매니저',
+      incomeBracket: 'mid',
+      archetype: 'cold_logic',
+      speechStyle:
+        '동선, 차량 배차, 경호 절차, 현장 판단 같은 운영 논리로 자신을 방어한다. 하지만 몰리면 업계 현실과 멤버 관리 부담을 들며, 개인 일탈이 아니라 어쩔 수 없는 현장 대응이었다고 몰아간다.',
+      pride: 8,
+      fear: '아티스트를 팔아 팬과 거래한 매니저, 보안 사고를 덮은 사람으로 낙인찍히는 것',
+      riskAppetite: 6,
+      digitalHabit: 'messenger_main',
+      dailyRoutine:
+        '새벽 차량 배차와 촬영장 동선 확인, 현장 케어, 팬사이트 응대, 스태프 공지를 모두 메신저와 통화로 처리한다. 문제가 생기면 공식 보고보다 먼저 현장 수습과 여론 차단을 우선한다.',
+      sensitivePoints: ['직업적 신뢰', '아티스트 보호 실패', '외부에 내부 관행이 드러나는 것'],
+      verbalTells: [
+        {
+          type: 'process_shield',
+          trigger: 'lying',
+          pattern: '자신의 판단을 묻는 질문에도 원래 현장은, 보안팀 프로토콜상 같은 절차어로 주체를 흐린다.',
+        },
+        {
+          type: 'blame_redirect',
+          trigger: 'cornered',
+          pattern: '불리해질수록 곧바로 먼저 연락한 건 윤아 씨 아닙니까처럼 상대의 더 위험해 보이는 행동으로 축을 튼다.',
+        },
+        {
+          type: 'industry_fatalism',
+          trigger: 'defensive',
+          pattern: '팬서비스와 정보 통제를 묻는 질문에 이 바닥 원래 다 그렇다는 식으로 구조를 핑계 삼아 개인 책임을 희석한다.',
+        },
+      ],
+      callTerms: {
+        toPartner: '윤아 씨',
+        toJudge: '서윤아 씨',
+        angry: '서윤아 씨',
+      },
+    },
+    relationshipLedger: [
+      {
+        id: 'ledger-1',
+        category: 'confirmed',
+        description:
+          '윤아는 작년 말에도 팬 계정에 사적인 질문이 섞인 메시지가 오는 것을 겪었고, 그때 태현은 강하게 신고하지 말고 현장 대응으로 넘기자고 했다.',
+        isReal: true,
+        whoRemembersAccurately: 'both',
+        whoDistorts: 'none',
+        distortionDirection: '',
+        currentlyResolved: 'surface_only',
+        emotionalResidue: 'strong',
+        connectionToCurrent: 'direct',
+      },
+      {
+        id: 'ledger-2',
+        category: 'distorted',
+        description:
+          '태현은 팬사이트 운영자 몇 명과 비공식적으로 동선 힌트를 주고받아 현장 혼선을 줄여 왔지만, 본인은 늘 안전관리 차원이었다고 기억하고 있다.',
+        isReal: true,
+        whoRemembersAccurately: 'both',
+        whoDistorts: 'b',
+        distortionDirection: 'B는 비공개 힌트 제공을 단순 현장 정리 수준으로 축소한다.',
+        currentlyResolved: 'unresolved',
+        emotionalResidue: 'mild',
+        connectionToCurrent: 'direct',
+      },
+      {
+        id: 'ledger-3',
+        category: 'silenced',
+        description:
+          '사건 직후 보안업체 1차 보고서에는 숙소 특정 시도와 반복 계정 추적 정황이 들어 있었지만, 태현은 축약본만 내부에 돌렸고 윤아도 처음엔 공개 신고를 망설였다.',
+        isReal: true,
+        whoRemembersAccurately: 'both',
+        whoDistorts: 'both',
+        distortionDirection: 'A는 공개 신고 지연을 축소하고, B는 축소 보고의 무게를 줄여 말한다.',
+        currentlyResolved: 'surface_only',
+        emotionalResidue: 'strong',
+        connectionToCurrent: 'direct',
+      },
+    ],
+    socialGraph: [
+      {
+        id: 'tp-1',
+        slot: 'institutional',
+        name: '한소정',
+        relationTo: 'both',
+        knowledgeScope: '새벽 경호 호출 경위, 출입기록 보존 상태, 최초 보고서와 수정 요구 과정을 안다.',
+        witnessedDirectly: true,
+        bias: 'neutral',
+        distortionRisk: 'accurate',
+        surfaceKnowledge: '새벽 호출과 출입기록, 초기 보안 보고 흐름을 안다.',
+        relatedDisputeIds: ['d-1', 'd-4'],
+        witnessProfile: {
+          age: 42,
+          occupation: '숙소 건물 보안팀장',
+          relationToA: '숙소 보안 담당자로 여러 차례 마주쳤다.',
+          relationToB: '출입 승인과 보안 연락을 주고받아 왔다.',
+          sentimentToA: 10,
+          sentimentToB: 0,
+          speechStyle: '감정보다 기록과 호출 시점을 우선하며, 수정 요청이 있었는지 여부를 분리해 말한다.',
+          addressJudge: '재판관님',
+          addressA: '서윤아 씨',
+          addressB: '조태현 씨',
+        },
+      },
+      {
+        id: 'tp-2',
+        slot: 'acquaintance_1',
+        name: '최은별',
+        relationTo: 'b',
+        knowledgeScope: '태현과 주고받은 힌트 수준, 현장 배려 요구, 팬 커뮤니티 내부 정보 교환 구조를 안다.',
+        witnessedDirectly: true,
+        bias: 'pro_self',
+        distortionRisk: 'strategic',
+        surfaceKnowledge: '팬사이트와 현장 관리 사이의 비공식 소통 범위를 안다.',
+        relatedDisputeIds: ['d-1', 'd-2'],
+        witnessProfile: {
+          age: 31,
+          occupation: '대형 팬사이트 운영자',
+          relationToA: '오래 팬 활동을 해 온 운영자라 얼굴과 동선을 잘 안다.',
+          relationToB: '현장 조율과 입장 타이밍 관련 연락을 비공식적으로 받아 왔다.',
+          sentimentToA: 25,
+          sentimentToB: 15,
+          speechStyle: '자신이 사생과 다르다는 선을 끝까지 지키려 하며, 거래라는 표현을 극도로 피한다.',
+          addressJudge: '재판관님',
+          addressA: '윤아 님',
+          addressB: '태현 팀장님',
+        },
+      },
+      {
+        id: 'tp-3',
+        slot: 'acquaintance_2',
+        name: '박유림',
+        relationTo: 'a',
+        knowledgeScope: '윤아가 사건 직후 얼마나 불안정했는지, 태현이 회사 보고보다 컴백 스케줄을 먼저 챙긴 정황을 안다.',
+        witnessedDirectly: true,
+        bias: 'pro_a',
+        distortionRisk: 'unconscious',
+        surfaceKnowledge: '사건 직후 윤아의 상태와 팀 내부 분위기를 안다.',
+        relatedDisputeIds: ['d-3', 'd-4'],
+        witnessProfile: {
+          age: 35,
+          occupation: '헤어팀 실장',
+          relationToA: '수년간 스케줄을 함께해 온 가까운 현장 스태프다.',
+          relationToB: '매니저를 통해 일정과 대기 장소를 공유받는다.',
+          sentimentToA: 40,
+          sentimentToB: -10,
+          speechStyle: '윤아를 보호하려는 마음이 강해 감정 표현이 먼저 나오지만, 본 장면은 비교적 또렷하게 기억한다.',
+          addressJudge: '재판관님',
+          addressA: '윤아야',
+          addressB: '태현 씨',
+        },
+      },
+    ],
+  },
+  context: {
+    contextType: 'celebrity_security_breach',
+    description:
+      '새벽 1시경 숙소 외부에서 특정 멤버를 부르는 음성이 녹음되고, 같은 날 팬 커뮤니티에 올라온 셀카 배경과 차량 이동 시간이 맞물리며 내부 유출 의혹이 폭발했다. 컴백을 앞둔 팀이라 공식 신고와 언론 대응, 활동 지속 여부가 한꺼번에 얽혀 있다.',
+    emotionalPressure: 9,
+    affects: 'both',
+    triggerAmplifier:
+      '윤아는 실제 공포를 겪었지만 자신이 먼저 건드린 흔적이 드러날까 두렵고, 태현은 현장 수습 명목으로 써온 팬사이트 거래가 드러나면 커리어가 끝난다. 그래서 둘 다 지금 말하면 더 큰 일이 난다는 논리로 핵심을 늦게 꺼낸다.',
+    caseNumber: 'E-HD-0002',
+    caseName: '숙소 앞 셀카',
+  },
+  disputes: [
+    {
+      id: 'd-1',
+      name: '셀카 유출과 동선 노출의 결합',
+      truth: true,
+      truthDescription:
+        '태현은 팬사이트 운영자에게 차량 변경 시간과 출입 동선 힌트를 흘려왔고, 윤아는 누가 새는지 확인하려 비공개 계정으로 셀카를 보내며 미끼를 던졌다. 숙소 접근은 어느 한쪽 단독이 아니라, 두 신호가 합쳐지며 가능해졌다.',
+      quadrant: 'shared_misconception',
+      requiredEvidence: ['e-1', 'e-2', 'e-3', 'e-6'],
+      correctResponsibility: { a: 35, b: 65 },
+      ambiguity: 'high',
+      weight: 'high',
+      mediationLink: '보호조치',
+      legitimacyIssue: true,
+      judgmentStatement: '실제 접근 위험을 만든 핵심 구조 책임은 B 쪽이 더 크지만, A 역시 위험한 직접 접촉으로 추적 가능성을 키웠다.',
+    },
+    {
+      id: 'd-2',
+      name: '팬사이트와의 비공개 정보 거래',
+      truth: true,
+      truthDescription:
+        '태현은 정확한 주소를 직접 준 것은 아니지만, 차량 변경 창구, 비공개 이동 시간, 대기 장소 범위를 반복적으로 흘렸다. 대가가 직접 현금은 아니더라도, 우호적 여론과 현장 통제를 얻기 위한 위험한 거래였다.',
+      quadrant: 'b_only',
+      requiredEvidence: ['e-2', 'e-3', 'e-6'],
+      correctResponsibility: { a: 10, b: 90 },
+      ambiguity: 'high',
+      weight: 'high',
+      mediationLink: '직무책임',
+      legitimacyIssue: true,
+      judgmentStatement: 'B의 팬사이트 응대는 단순 관행을 넘는 비공개 정보 거래에 가깝다.',
+    },
+    {
+      id: 'd-3',
+      name: '사생 계정과의 직접 접촉',
+      truth: true,
+      truthDescription:
+        '윤아는 비공개 모니터링 계정으로 문제의 팬 계정에 두 차례 반응했고, 그중 한 장의 셀카에는 숙소 엘리베이터 벽면과 층별 장식이 비쳤다. 의도는 유출 경로 확인이었지만 결과적으로 상대에게 통한다는 신호를 줬다.',
+      quadrant: 'a_only',
+      requiredEvidence: ['e-1', 'e-4', 'e-6'],
+      correctResponsibility: { a: 80, b: 20 },
+      ambiguity: 'high',
+      weight: 'high',
+      mediationLink: '활동조정',
+      legitimacyIssue: false,
+      judgmentStatement: 'A의 직접 접촉은 공포에서 비롯됐더라도 결과적으로 위험을 키운 무모한 대응이다.',
+    },
+    {
+      id: 'd-4',
+      name: '보안 사고 축소 보고와 지연 대응',
+      truth: true,
+      truthDescription:
+        '윤아는 처음 몇 시간 동안은 조용히 처리해 달라고 했지만, 태현은 그 요청을 빌미로 보안업체 보고를 수정·축약하고 경찰 및 회사 정식 보고를 48시간 가까이 미뤘다. 보호 논리가 일부 있었어도, 실제론 컴백 일정과 자기 책임을 우선한 면이 더 컸다.',
+      quadrant: 'both_know',
+      requiredEvidence: ['e-2', 'e-5'],
+      correctResponsibility: { a: 30, b: 70 },
+      ambiguity: 'high',
+      weight: 'high',
+      mediationLink: '공개범위',
+      legitimacyIssue: true,
+      judgmentStatement: '피해자 보호 논리가 일부 있었더라도, 축소 보고와 지연 대응의 주된 책임은 B에게 있다.',
+    },
+  ],
+  evidence: [
+    {
+      id: 'e-1',
+      name: '셀카 원본 파일과 반사면 확대 캡처',
+      description:
+        '윤아의 비공개 셀카 원본과 반사면 확대 캡처다. 직접 좌표를 준 것은 아니지만 엘리베이터 벽면과 층별 장식이 숙소 단서로 읽힐 정도로 남아 있다.',
+      surfaceName: '비공개 셀카 원본',
+      surfaceDescription: '유출된 셀카의 원본과 확대 분석 캡처다.',
+      type: 'device',
+      reliability: 'hard',
+      completeness: 'original',
+      provenance: 'self_possessed',
+      legitimacy: 'lawful',
+      proves: ['d-1', 'd-3'],
+      isTrap: false,
+      requires: [],
+      investigationResults: {
+        extract_reflection:
+          '반사면 확대에서 엘리베이터 벽면 패턴과 층별 장식이 겹쳐 보인다. 단독으로는 좌표가 되지 않지만 숙소 범위를 크게 줄일 단서다.',
+        trace_upload:
+          '원본 파일은 비공개 저장 계정에서 한 차례 외부 전송된 흔적이 있고, 전송 시점은 문제의 팬 계정 접촉 직전과 맞닿는다.',
+        compare_crop:
+          '커뮤니티에 퍼진 버전은 원본 일부가 잘렸지만, 핵심 단서가 되는 반사면 구간은 그대로 남아 있다.',
+      },
+      subjectParty: 'a',
+      investigationStages: [
+        {
+          stage: 0,
+          revealKey: 'extract_reflection',
+          question: {
+            text: '이 셀카에 숙소 단서가 들어 있다는 점은 촬영 당시 전혀 인지하지 못하셨습니까?',
+            attackVector: 'authenticity',
+          },
+        },
+        {
+          stage: 1,
+          revealKey: 'trace_upload',
+          question: {
+            text: '비공개 계정을 통해 이 원본 일부가 외부로 나간 경위부터 설명해 주십시오.',
+            attackVector: 'context',
+          },
+        },
+        {
+          stage: 2,
+          revealKey: 'compare_crop',
+          question: {
+            text: '차단보다 추적을 먼저 택한 판단이 왜 안전보다 앞섰는지 말씀해 주시겠습니까?',
+            attackVector: 'motive',
+          },
+        },
+      ],
+      meta: {
+        trustLevel: 'mid',
+        trustLabel: '보통',
+        source: 'a',
+        sourceLabel: 'A측',
+        legality: 'ok',
+        legalLabel: '적법',
+        stage: 1,
+        stageLabel: '초기 공개',
+        sourceNote: '원본 파일과 반사면 확대 분석본',
+        redactions: ['파일 해시 일부', '개인 계정 식별자'],
+      },
+      viewerData: {
+        device: {
+          ownerName: '서윤아 비공개 저장 계정',
+          sections: [
+            {
+              title: '원본 프레임',
+              id: 'raw',
+              items: [
+                { text: '엘리베이터 벽면 패턴과 층별 장식 일부가 반사면에 남아 있음', suspicious: true },
+                { text: '얼굴과 의상은 자연스럽지만 배경 통제가 되지 않음', suspicious: false },
+                { text: '전송 시각이 팬 계정 접촉 시점과 가깝게 붙어 있음', suspicious: true },
+              ],
+            },
+            {
+              title: '확대 분석',
+              id: 'zoom',
+              items: [
+                { text: '숙소 층수를 좁힐 수 있는 장식 패턴 확인', suspicious: true },
+                { text: '창문 각도만으로는 단독 특정이 어려움', suspicious: false },
+                { text: '다른 단서와 결합될 때만 위험도가 급격히 커짐', suspicious: true },
+              ],
+            },
+          ],
+        },
+      },
+      partyContext: {
+        a: {
+          questionAngle: '원본 이미지의 위험도를 알고도 왜 외부 접촉을 이어 갔는지',
+          implication: '자기방어라고 주장하지만 직접 접촉 책임이 생긴다.',
+        },
+        b: {
+          questionAngle: 'A의 부주의를 지적하더라도 내부 유출 책임이 사라지는지',
+          implication: 'A의 실수가 있어도 B의 구조 책임과 분리해 봐야 한다.',
+        },
+      },
+    },
+    {
+      id: 'e-2',
+      name: '로비 CCTV, 차량 게이트 로그, 새벽 경호 호출 기록',
+      description:
+        '사생 추정 인물이 실제로 숙소 외곽 접근을 시도한 시간대와 차량 이동 시간이 맞아떨어지는 자료다. 단순 우연 방문이 아니라 귀가 패턴을 알고 움직인 정황이 보인다.',
+      surfaceName: '새벽 보안 호출 기록',
+      surfaceDescription: '숙소 주변 접근 시도와 경호 호출 시점을 정리한 자료다.',
+      type: 'cctv',
+      reliability: 'hard',
+      completeness: 'original',
+      provenance: 'institutional',
+      legitimacy: 'lawful',
+      proves: ['d-1', 'd-2', 'd-4'],
+      isTrap: false,
+      requires: [],
+      investigationResults: {
+        match_timeline:
+          '차량 귀가 직후 외곽 접근 시도가 발생했고, 팬 커뮤니티에 귀가 시간 추정 글이 올라온 시점과 거의 겹친다.',
+        confirm_access:
+          '일반 투숙객 동선과 어긋나는 접근 시도가 같은 층 인근에서 포착됐다. 단순 우연 방문으로 보기 어렵다.',
+        check_delay:
+          '경호 호출은 즉시 있었지만 공식 사고 분류와 내부 보고는 수 시간 이상 늦어졌다.',
+      },
+      subjectParty: 'both',
+      investigationStages: [
+        {
+          stage: 0,
+          revealKey: 'match_timeline',
+          question: {
+            text: '귀가 시간 추정 글과 실제 접근 시도가 이 정도로 맞아떨어진 이유를 어떻게 설명하시겠습니까?',
+            attackVector: 'timeline',
+          },
+        },
+        {
+          stage: 1,
+          revealKey: 'confirm_access',
+          question: {
+            text: '단순 팬 소란으로 축소하기 어려운 접근 시도였다는 점은 인정하십니까?',
+            attackVector: 'authenticity',
+          },
+        },
+        {
+          stage: 2,
+          revealKey: 'check_delay',
+          question: {
+            text: '즉시 호출이 있었는데도 공식 보고가 늦어진 책임은 누가 져야 합니까?',
+            attackVector: 'responsibility',
+          },
+        },
+      ],
+      meta: {
+        trustLevel: 'high',
+        trustLabel: '높음',
+        source: 'org',
+        sourceLabel: '기관',
+        legality: 'ok',
+        legalLabel: '적법',
+        stage: 1,
+        stageLabel: '초기 공개',
+        sourceNote: '건물 CCTV와 게이트 시스템 로그, 경호 호출 기록 대조',
+        redactions: ['차량 번호 뒷자리', '경호 인력 실명'],
+      },
+      viewerData: {
+        cctv: [
+          { time: '00:58', pct: 0, label: '귀가 차량 진입', desc: '차량 게이트 진입 로그와 숙소 도착 시점이 맞물린다.', suspicious: false },
+          { time: '01:04', pct: 28, label: '외곽 대기', desc: '일반 투숙객 동선과 다른 인물이 외곽에서 머문다.', suspicious: true },
+          { time: '01:11', pct: 56, label: '층 인근 접근', desc: '엘리베이터 동선과 맞물리는 접근 시도가 확인된다.', suspicious: true },
+          { time: '01:13', pct: 72, label: '경호 호출', desc: '현장 대응은 즉시 이뤄졌지만 공식 분류는 지연됐다.', suspicious: true },
+          { time: '01:18', pct: 100, label: '이탈', desc: '대상 인물이 급히 이탈한다.', suspicious: false },
+        ],
+      },
+      partyContext: {
+        a: {
+          questionAngle: '체감 공포를 사실선으로 고정해 주는 기관 기록인지',
+          implication: 'A의 공포가 과장이 아니라는 점을 뒷받침한다.',
+        },
+        b: {
+          questionAngle: '현장 수습이 있었다 해도 공식 대응 지연을 정당화할 수 있는지',
+          implication: 'B의 축소 보고 책임으로 이어질 수 있다.',
+        },
+      },
+    },
+    {
+      id: 'e-3',
+      name: '매니저-팬사이트 운영자 DM과 대기 동선 메모',
+      description:
+        '팬사이트 운영자와 현장 혼선을 줄이기 위한 소통처럼 보이지만, 비공개 이동 시간과 차량 교체 타이밍, 대기 위치 범위를 반복적으로 흘린 흔적이 남아 있다.',
+      surfaceName: '팬사이트 조율 DM',
+      surfaceDescription: '현장 혼선 방지용 안내처럼 보이는 대화 기록이다.',
+      type: 'chat',
+      reliability: 'hard',
+      completeness: 'edited',
+      provenance: 'third_party',
+      legitimacy: 'privacy_concern',
+      proves: ['d-1', 'd-2'],
+      isTrap: false,
+      requires: [],
+      investigationResults: {
+        decode_hints:
+          '정확한 주소는 없지만 차량 교체 시간, 대기 범위, 귀가 창구 등 비공개 정보가 암호처럼 반복된다.',
+        map_pattern:
+          '운영자에게만 반복 제공된 힌트가 팬 커뮤니티 추적 글과 높은 상관을 보인다.',
+        compare_benefit:
+          '같은 운영자는 이후 현장 통제 협조와 우호적 게시물로 보답하는 흐름을 남겼다.',
+      },
+      subjectParty: 'b',
+      investigationStages: [
+        {
+          stage: 0,
+          revealKey: 'decode_hints',
+          question: {
+            text: '이 정도 비공개 힌트를 단순 현장 조율이라고 부를 수 있다고 보십니까?',
+            attackVector: 'legality',
+          },
+        },
+        {
+          stage: 1,
+          revealKey: 'map_pattern',
+          question: {
+            text: '반복된 힌트 제공이 사생 추적 구조로 이어질 수 있다는 점을 몰랐다고 하실 겁니까?',
+            attackVector: 'motive',
+          },
+        },
+        {
+          stage: 2,
+          revealKey: 'compare_benefit',
+          question: {
+            text: '호의와 여론 관리를 얻는 대가로 정보를 준 것 아니냐는 지적에 답해 주십시오.',
+            attackVector: 'responsibility',
+          },
+        },
+      ],
+      meta: {
+        trustLevel: 'mid',
+        trustLabel: '보통',
+        source: 'third',
+        sourceLabel: '제3자',
+        legality: 'sus',
+        legalLabel: '의심',
+        stage: 2,
+        stageLabel: '정밀 추적',
+        sourceNote: '팬사이트 운영자 제시본과 내부 대조 메모',
+        redactions: ['운영자 닉네임 일부', '비공개 채널 링크'],
+      },
+      viewerData: {
+        chat: {
+          header: '비공개 DM 로그 — 매니저 ↔ 팬사이트 운영자',
+          messages: [
+            { side: 'left', sender: '조태현', text: '오늘은 정문 말고 뒤 라인 보시는 게 나을 겁니다.' },
+            { side: 'right', sender: '운영자', text: '귀가 시간은 평소보다 늦나요?' },
+            { side: 'left', sender: '조태현', text: '차량 바뀌는 타이밍만 놓치지 마세요.' },
+            { type: 'deleted', text: '삭제된 메시지 2건' },
+            { side: 'right', sender: '운영자', text: '오늘 사진은 우리가 선 정리할게요.' },
+            { side: 'left', sender: '조태현', text: '선 넘는 계정은 제가 따로 정리해 보겠습니다.' },
+          ],
+        },
+      },
+      partyContext: {
+        a: {
+          questionAngle: 'A가 느낀 배신감과 내부 유출 의심이 근거를 갖는지',
+          implication: 'B의 구조 책임을 강하게 뒷받침한다.',
+        },
+        b: {
+          questionAngle: '비공식 조율과 위험한 정보 거래의 선이 어디서 무너졌는지',
+          implication: '단순 관행 주장만으로는 방어하기 어려워진다.',
+        },
+      },
+    },
+    {
+      id: 'e-4',
+      name: '비공개 모니터링 계정 대화와 로그인 기록',
+      description:
+        '문제의 팬 계정과 오간 짧은 대화와 로그인 기록이다. 윤아가 누가 새는지 확인하려 직접 반응했고, 차단보다 추적을 먼저 택한 정황이 남아 있다.',
+      surfaceName: '문제 계정 확인 대화',
+      surfaceDescription: '문제 팬 계정과 오간 짧은 대화 캡처다.',
+      type: 'chat',
+      reliability: 'hard',
+      completeness: 'partial',
+      provenance: 'self_possessed',
+      legitimacy: 'lawful',
+      proves: ['d-3', 'd-4'],
+      isTrap: false,
+      requires: [],
+      investigationResults: {
+        count_contacts: '동일 계정과 두 차례 이상 직접 반응한 기록이 남아 있다. 단순 1회 확인을 넘는다.',
+        link_photo: '삭제 요청과 위치 확인 질문 사이에 셀카 원본 일부 전송 흔적이 끼어 있다.',
+        delay_report: '대화 직후 즉시 보안팀 신고가 들어간 것이 아니라, 내부 공유와 삭제 요청이 먼저 이어졌다.',
+      },
+      subjectParty: 'a',
+      investigationStages: [
+        {
+          stage: 0,
+          revealKey: 'count_contacts',
+          question: {
+            text: '한 번 떠본 수준이었다는 설명과 달리 접촉이 반복된 이유를 설명해 주십시오.',
+            attackVector: 'timeline',
+          },
+        },
+        {
+          stage: 1,
+          revealKey: 'link_photo',
+          question: {
+            text: '삭제 요청을 넘어서 왜 이미지 단서를 다시 보냈는지 말씀해 주시겠습니까?',
+            attackVector: 'motive',
+          },
+        },
+        {
+          stage: 2,
+          revealKey: 'delay_report',
+          question: {
+            text: '직접 접촉 뒤에도 신고보다 추적을 먼저 택한 판단을 지금도 방어하실 겁니까?',
+            attackVector: 'responsibility',
+          },
+        },
+      ],
+      meta: {
+        trustLevel: 'mid',
+        trustLabel: '보통',
+        source: 'a',
+        sourceLabel: 'A측',
+        legality: 'ok',
+        legalLabel: '적법',
+        stage: 2,
+        stageLabel: '정밀 추적',
+        sourceNote: '버너 계정 대화 내역과 로그인 기록',
+        redactions: ['계정 아이디', '대화 상대 프로필 이미지'],
+      },
+      viewerData: {
+        chat: {
+          header: '비공개 모니터링 계정 대화',
+          messages: [
+            { side: 'right', sender: '모니터링 계정', text: '이 사진 어디서 난 건지 아세요?' },
+            { side: 'left', sender: '문제 계정', text: '그렇게 무서울 거면 직접 보내지 말았어야죠.' },
+            { side: 'right', sender: '모니터링 계정', text: '가족 사진은 내리세요. 그건 선 넘었어요.' },
+            { side: 'left', sender: '문제 계정', text: '어느 층인지 맞히면 다 내릴게요.' },
+            { type: 'deleted', text: '삭제된 메시지 1건' },
+            { side: 'right', sender: '모니터링 계정', text: '그만하라는 뜻이었어요.' },
+          ],
+        },
+      },
+      partyContext: {
+        a: {
+          questionAngle: '공포와 자기방어가 있었더라도 직접 접촉 책임을 어떻게 볼지',
+          implication: 'A의 피해자성만으로 접히지 않는 개인 책임이 생긴다.',
+        },
+        b: {
+          questionAngle: 'A의 직접 접촉을 근거로 B의 구조 책임을 덮을 수 있는지',
+          implication: 'B가 책임 전가 카드로 쓰기 쉬운 증거다.',
+        },
+      },
+    },
+    {
+      id: 'e-5',
+      name: '보안업체 1차 보고서와 수정된 회사 내부 메모',
+      description:
+        '원본 보안 보고서와 축약된 내부 메모를 나란히 놓은 자료다. 원본에는 숙소 특정 시도와 반복 계정 추적 정황이 있었지만, 수정본에서는 단순 팬 소란 수준으로 축소됐다.',
+      surfaceName: '보안 사고 내부 메모',
+      surfaceDescription: '보안 사고에 대한 초기 메모와 내부 공유본이다.',
+      type: 'contract',
+      reliability: 'hard',
+      completeness: 'edited',
+      provenance: 'institutional',
+      legitimacy: 'lawful',
+      proves: ['d-4'],
+      isTrap: false,
+      requires: [],
+      investigationResults: {
+        compare_versions:
+          '원본 보고서에는 숙소 특정 시도와 반복 계정 추적 정황이 명시됐지만, 내부 메모에서는 단순 외곽 소란으로 축소됐다.',
+        check_author:
+          '축약 메모 작성자는 태현이며, 보안업체는 표현 수위 조정 요청이 있었다고 남겼다.',
+        link_schedule:
+          '축소 보고 시점과 컴백 일정 유지 결정이 거의 동시에 이어진다.',
+      },
+      subjectParty: 'b',
+      investigationStages: [
+        {
+          stage: 0,
+          revealKey: 'compare_versions',
+          question: {
+            text: '왜 최초 보고서의 핵심 위험 문구가 내부 공유본에서 빠졌는지 설명해 주십시오.',
+            attackVector: 'authenticity',
+          },
+        },
+        {
+          stage: 1,
+          revealKey: 'check_author',
+          question: {
+            text: '표현 수위 조정 요청이 보호 목적이었다는 주장에 어떤 근거가 있습니까?',
+            attackVector: 'motive',
+          },
+        },
+        {
+          stage: 2,
+          revealKey: 'link_schedule',
+          question: {
+            text: '컴백 일정 유지와 본인 책임 회피가 우선된 것 아니냐는 의심에 답하십시오.',
+            attackVector: 'responsibility',
+          },
+        },
+      ],
+      meta: {
+        trustLevel: 'high',
+        trustLabel: '높음',
+        source: 'org',
+        sourceLabel: '기관',
+        legality: 'ok',
+        legalLabel: '적법',
+        stage: 2,
+        stageLabel: '정밀 추적',
+        sourceNote: '보안업체 원본 보고서와 회사 내부 공유본 대조',
+        redactions: ['보안 인력 연락처', '건물 상세 배치도'],
+      },
+      viewerData: {
+        contract: {
+          title: '보안 사고 보고서 비교',
+          subtitle: '원본 보고서 vs 내부 축약 메모',
+          rows: [
+            { date: '원본', content: '숙소 특정 시도 및 반복 계정 추적 정황 명시', amount: '', missing: false },
+            { date: '원본', content: '즉시 수사 협조 권고', amount: '', missing: false },
+            { date: '축약본', content: '외곽 팬 소란 수준으로 표현 조정', amount: '', missing: false },
+            { date: '축약본', content: '컴백 일정 고려, 외부 공유 보류', amount: '', missing: false },
+            { date: '비고', content: '표현 수위 조정 요청 기록', amount: '', missing: false },
+          ],
+          signature: '작성: 조태현 / 보안업체 확인 메모 첨부',
+        },
+      },
+      partyContext: {
+        a: {
+          questionAngle: 'A가 느낀 구조적 방치와 불신이 실제였는지',
+          implication: 'B와 회사의 축소 대응을 고정하는 증거다.',
+        },
+        b: {
+          questionAngle: '보호와 은폐를 어떻게 구분할지',
+          implication: 'B의 대응 논리가 가장 직접적으로 흔들린다.',
+        },
+      },
+    },
+    {
+      id: 'e-6',
+      name: '팬 커뮤니티 게시물 타임라인과 조합 게시 캡처',
+      description:
+        '셀카 단서, 밴 사진, 팬사이트 힌트를 조합해 귀가 시간표를 추정한 글 모음이다. 한쪽의 단일 실수라기보다 내부 힌트와 당사자 접촉이 팬덤 추적 구조 안에서 결합된 흐름이 보인다.',
+      surfaceName: '팬 커뮤니티 추적 글',
+      surfaceDescription: '팬 커뮤니티에 올라온 귀가 추정 글과 조합 게시물이다.',
+      type: 'sns',
+      reliability: 'soft',
+      completeness: 'context_missing',
+      provenance: 'third_party',
+      legitimacy: 'privacy_concern',
+      proves: ['d-1', 'd-2', 'd-3'],
+      isTrap: true,
+      requires: ['e-1', 'e-3'],
+      investigationResults: {
+        chain_posts:
+          '셀카 반사면, 밴 사진, 대기 힌트가 시간차를 두고 결합되며 귀가 추정표가 완성된다.',
+        identify_boost:
+          '운영자 급 계정이 단서를 한 번 정리한 뒤 일반 팬 계정들이 퍼나르며 규모가 커졌다.',
+        spot_gap:
+          '단일 글만 보면 과장처럼 보이지만, 여러 글을 엮으면 내부 정보와 직접 접촉 신호가 동시에 섞여 있다.',
+      },
+      subjectParty: 'both',
+      investigationStages: [
+        {
+          stage: 0,
+          revealKey: 'chain_posts',
+          question: {
+            text: '이 추적 글은 어떤 단서들이 결합될 때만 성립하는지 먼저 설명해 주십시오.',
+            attackVector: 'context',
+          },
+        },
+        {
+          stage: 1,
+          revealKey: 'identify_boost',
+          question: {
+            text: '팬 운영자 힌트와 직접 접촉 신호가 함께 작동했다는 점을 부인하실 수 있습니까?',
+            attackVector: 'authenticity',
+          },
+        },
+        {
+          stage: 2,
+          revealKey: 'spot_gap',
+          question: {
+            text: '한쪽 실수만으로 설명할 수 없다는 구조적 결론을 받아들이십니까?',
+            attackVector: 'responsibility',
+          },
+        },
+      ],
+      meta: {
+        trustLevel: 'low',
+        trustLabel: '낮음',
+        source: 'third',
+        sourceLabel: '제3자',
+        legality: 'sus',
+        legalLabel: '의심',
+        stage: 1,
+        stageLabel: '초기 공개',
+        sourceNote: '팬 커뮤니티 캡처와 시계열 정리본',
+        redactions: ['계정 닉네임 일부', '실시간 채널 링크'],
+      },
+      viewerData: {
+        sns: {
+          username: 'fan_trace_archive',
+          handle: '@fan_trace_archive',
+          date: '2026.04.07',
+          privacy: '비공개 커뮤니티 유출본',
+          text: '반사면 장식 + 밴 진입 시간 + 대기 힌트 조합하면 오늘 귀가 라인이 여기로 맞습니다.',
+          hashtags: ['#귀가추정', '#비공개동선', '#셀카단서'],
+          likes: 438,
+          comments: [
+            { name: 'trace_01', text: '운영자 힌트 뜬 뒤 시간표가 거의 고정됐네요.' },
+            { name: 'bluehall', text: '저 사진 원본 보낸 쪽도 따로 있는 것 같아요.' },
+          ],
+          warnings: ['위치 추적과 사생활 침해 위험', '운영자 단서와 직접 접촉 신호가 섞인 게시물'],
+        },
+      },
+      partyContext: {
+        a: {
+          questionAngle: '단일 실수로 환원할 수 없는 팬덤 추적 구조가 있었는지',
+          implication: 'A의 실수와 별개로 구조 책임이 있다는 점을 보여 준다.',
+        },
+        b: {
+          questionAngle: '비공식 힌트 제공이 실제로 추적 생태계 안에서 어떻게 작동했는지',
+          implication: 'B의 관행 주장을 반박하는 결합 증거다.',
+        },
+      },
+    },
+  ],
+  evidenceCombinations: [
+    {
+      requires: ['e-1', 'e-4'],
+      upgradesTo: 'hard',
+      proves: ['d-3'],
+    },
+    {
+      requires: ['e-3', 'e-6'],
+      upgradesTo: 'hard',
+      proves: ['d-2'],
+    },
+  ],
+  truthTable: [
+    {
+      id: 't-1',
+      fact: '숙소 접근 위험은 셀카 단서와 내부 동선 힌트가 결합되며 커졌다.',
+      isTrue: true,
+      weight: 10,
+      quadrant: 'shared_misconception',
+    },
+    {
+      id: 't-2',
+      fact: '조태현은 팬사이트 운영자에게 비공개 동선 힌트를 반복적으로 흘려왔다.',
+      isTrue: true,
+      weight: 10,
+      quadrant: 'b_only',
+    },
+    {
+      id: 't-3',
+      fact: '서윤아는 사생 계정과 직접 접촉하며 추적 가능성을 키웠다.',
+      isTrue: true,
+      weight: 9,
+      quadrant: 'a_only',
+    },
+    {
+      id: 't-4',
+      fact: '사건 직후 보안 보고가 축소됐고 공식 대응은 컴백 일정 때문에 지연됐다.',
+      isTrue: true,
+      weight: 10,
+      quadrant: 'both_know',
+    },
+  ],
+  lieConfigA: [
+    {
+      disputeId: 'd-1',
+      lieType: 'LT-2',
+      lieIntensity: 'L2',
+      lieMotive: 'face_saving',
+      initialState: 'S0',
+      collapseViaTrust: false,
+      transitions: [
+        { from: 'S0', to: 'S1', trigger: 'direct_question' },
+        { from: 'S1', to: 'S2', trigger: 'hard_evidence' },
+        { from: 'S2', to: 'S3', trigger: 'motive_question' },
+        { from: 'S3', to: 'S5', trigger: 'responsibility_question' },
+      ],
+    },
+    {
+      disputeId: 'd-3',
+      lieType: 'LT-6',
+      lieIntensity: 'L3',
+      lieMotive: 'self_protection',
+      initialState: 'S0',
+      collapseViaTrust: false,
+      transitions: [
+        { from: 'S0', to: 'S1', trigger: 'direct_question' },
+        { from: 'S1', to: 'S2', trigger: 'hard_evidence' },
+        { from: 'S2', to: 'S4', trigger: 'empathy_question' },
+        { from: 'S4', to: 'S5', trigger: 'responsibility_question' },
+      ],
+    },
+  ],
+  lieConfigB: [
+    {
+      disputeId: 'd-2',
+      lieType: 'LT-1',
+      lieIntensity: 'L2',
+      lieMotive: 'career_preservation',
+      initialState: 'S0',
+      collapseViaTrust: false,
+      transitions: [
+        { from: 'S0', to: 'S1', trigger: 'direct_question' },
+        { from: 'S1', to: 'S2', trigger: 'hard_evidence' },
+        { from: 'S2', to: 'S3', trigger: 'timeline_question' },
+        { from: 'S3', to: 'S5', trigger: 'responsibility_question' },
+      ],
+    },
+    {
+      disputeId: 'd-4',
+      lieType: 'LT-3',
+      lieIntensity: 'L3',
+      lieMotive: 'relationship_maintenance',
+      initialState: 'S0',
+      collapseViaTrust: false,
+      transitions: [
+        { from: 'S0', to: 'S1', trigger: 'direct_question' },
+        { from: 'S1', to: 'S2', trigger: 'hard_evidence' },
+        { from: 'S2', to: 'S4', trigger: 'emotion_threshold' },
+        { from: 'S4', to: 'S5', trigger: 'provenance_question' },
+      ],
+    },
+  ],
+  solutions: {
+    보호조치: [
+      '즉시 접근금지 및 수사 협조 절차를 밟고, 숙소·차량·출입 동선을 전면 교체한다.',
+      '팬 커뮤니티 내 2차 유포물을 수거하고, 당사자와 스태프 전원에게 비공개 정보 보안 교육을 재실시한다.',
+      '향후 사생 대응은 개인 판단이 아니라 보안팀과 법무팀 공동 프로토콜로만 처리한다.',
+    ],
+    직무책임: [
+      '매니저의 비공개 정보 거래와 축소 보고 책임을 분리 징계하고, 팬사이트 응대 권한을 즉시 회수한다.',
+      '아티스트의 비공개 계정 직접 접촉에 대해서도 경고 및 보호 코칭을 병행한다.',
+      '회사 차원의 팬서비스 관행과 현장 정보 관리 기준을 문서화해 재발 방지 조치를 공개한다.',
+    ],
+    공개범위: [
+      '실제 스토킹 위험과 내부 유출 구조는 인정하되, 당사자의 세부 동선과 사적 접촉 로그는 비공개로 보호한다.',
+      '공식 입장문에는 축소 보고 사실과 보호조치만 밝히고, 개인 셀카 원본과 가족 관련 정보는 공개하지 않는다.',
+      '팀 컴백 일정은 조정하되, 사건을 홍보나 동정 프레임으로 소비하지 않겠다는 원칙을 명시한다.',
+    ],
+    활동조정: [
+      '윤아는 일정 기간 공개 팬 접점과 라이브 노출을 줄이고 심리 지원을 받으며, 팀은 일부 스케줄을 재배치한다.',
+      '태현은 현장 배차 업무에서 즉시 배제하고, 외부 소통 창구를 다른 인력으로 교체한다.',
+      '사생 대응 비용과 보호 인력 증원을 회사가 우선 부담하고, 현장 운영보다 안전을 우선하는 기준으로 일정을 재정렬한다.',
+    ],
+  },
+  activeLedgerEntries: ['ledger-1', 'ledger-2', 'ledger-3'],
+  activeThirdParties: ['tp-1', 'tp-2', 'tp-3'],
+  baseEvidenceIds: ['e-1', 'e-2', 'e-5'],
+  monetaryDisputeIds: [],
+}
+
+writeJson(OUT_PATH, runtimeCase)
+process.stdout.write(`[headline-02] wrote ${path.relative(ROOT, OUT_PATH)}\n`)

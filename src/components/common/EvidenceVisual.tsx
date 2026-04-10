@@ -14,7 +14,7 @@ interface EvidenceVisualProps {
 // 유형별 SVG 매핑
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-const EVIDENCE_SVG_MAP: Record<EvidenceType, string> = {
+const EVIDENCE_SVG_MAP: Partial<Record<EvidenceType, string>> = {
   bank:      '/evidence/bank_statement.svg',
   chat:      '/evidence/chat_messenger.svg',
   cctv:      '/evidence/cctv_capture.svg',
@@ -29,7 +29,7 @@ const EVIDENCE_SVG_MAP: Record<EvidenceType, string> = {
 // 유형별 색상 팔레트 (테두리/텍스트용)
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-const TYPE_COLORS: Record<EvidenceType, { bg: string; fg: string; accent: string; border: string }> = {
+const TYPE_COLORS: Partial<Record<EvidenceType, { bg: string; fg: string; accent: string; border: string }>> = {
   bank:      { bg: '#0a2e1a', fg: '#86efac', accent: '#22c55e', border: '#166534' },
   chat:      { bg: '#0c1e3a', fg: '#93c5fd', accent: '#3b82f6', border: '#1e40af' },
   cctv:      { bg: '#1a1a1a', fg: '#a1a1aa', accent: '#71717a', border: '#3f3f46' },
@@ -40,10 +40,14 @@ const TYPE_COLORS: Record<EvidenceType, { bg: string; fg: string; accent: string
   sns:       { bg: '#2a0e1e', fg: '#f9a8d4', accent: '#ec4899', border: '#9d174d' },
 }
 
-const TYPE_LABELS: Record<EvidenceType, string> = {
+const TYPE_LABELS: Partial<Record<EvidenceType, string>> = {
   bank: '금융 기록', chat: '메시지', cctv: '영상 기록', contract: '계약서',
   testimony: '진술서', log: '기록물', device: '디지털 기기', sns: 'SNS',
 }
+
+const DEFAULT_TYPE_COLORS = { bg: '#12141a', fg: '#dcdce0', accent: '#8b8b9a', border: '#3f4756' }
+const DEFAULT_TYPE_LABEL = '증거'
+const DEFAULT_TYPE_SVG = '/evidence/log_record.svg'
 
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 // 크기별 설정
@@ -64,7 +68,9 @@ export default function EvidenceVisual({
 }: EvidenceVisualProps) {
   const config = SIZE_CONFIG[size]
   const { w, h } = config
-  const c = TYPE_COLORS[type]
+  const c = TYPE_COLORS[type] ?? DEFAULT_TYPE_COLORS
+  const typeLabel = TYPE_LABELS[type] ?? DEFAULT_TYPE_LABEL
+  const typeSvg = EVIDENCE_SVG_MAP[type] ?? DEFAULT_TYPE_SVG
 
   const isHard = reliability === 'hard'
   const isSoft = reliability === 'soft'
@@ -103,8 +109,8 @@ export default function EvidenceVisual({
     >
       {/* SVG 이미지 */}
       <img
-        src={EVIDENCE_SVG_MAP[type]}
-        alt={TYPE_LABELS[type]}
+        src={typeSvg}
+        alt={typeLabel}
         width={w}
         height={h}
         draggable={false}
@@ -188,11 +194,11 @@ export default function EvidenceVisual({
             color: c.fg,
             opacity: 0.6,
             fontSize: Math.max(config.fontSize, 6),
-            fontWeight: 'bold',
-            pointerEvents: 'none',
-          }}
-        >
-          {TYPE_LABELS[type]}
+          fontWeight: 'bold',
+          pointerEvents: 'none',
+        }}
+      >
+          {typeLabel}
         </div>
       )}
 

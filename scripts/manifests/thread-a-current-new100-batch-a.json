@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-04-08T23:55:16.301Z",
+  "cases": [
+    "civic-new-01",
+    "civic-new-02",
+    "civic-new-03",
+    "civic-new-04",
+    "civic-new-05",
+    "civic-new-06",
+    "civic-new-08",
+    "civic-new-09",
+    "civic-new-10",
+    "civic-new-11",
+    "family-new-01",
+    "family-new-02",
+    "family-new-03",
+    "family-new-04",
+    "family-new-05",
+    "family-new-06",
+    "family-new-07",
+    "family-new-08",
+    "family-new-09",
+    "family-new-10",
+    "friend-new-01",
+    "friend-new-02",
+    "friend-new-03",
+    "friend-new-04",
+    "friend-new-05"
+  ]
+}

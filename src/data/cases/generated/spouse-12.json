@@ -155,7 +155,11 @@
           "addressB": "재우씨"
         },
         "addressA": "세아",
-        "addressB": "재우"
+        "addressB": "재우",
+        "relatedDisputeIds": [
+          "d-2",
+          "d-5"
+        ]
       },
       {
         "id": "tp-2",
@@ -179,7 +183,12 @@
           "addressB": "재우씨"
         },
         "addressA": "세아씨",
-        "addressB": "재우씨"
+        "addressB": "재우씨",
+        "relatedDisputeIds": [
+          "d-1",
+          "d-3",
+          "d-4"
+        ]
       },
       {
         "id": "tp-3",
@@ -203,7 +212,11 @@
           "addressB": "최재우씨"
         },
         "addressA": "세아씨",
-        "addressB": "재우씨"
+        "addressB": "재우씨",
+        "relatedDisputeIds": [
+          "d-3",
+          "d-4"
+        ]
       }
     ],
     "relationshipType": "spouse"
@@ -259,8 +272,8 @@
     },
     {
       "id": "d-3",
-      "name": "익명 계정 — 한유진인가 박하린인가",
-      "truth": false,
+      "name": "익명 계정과 위조본 제작의 주체",
+      "truth": true,
       "truthDescription": "세아와 재우 모두 한유진을 의심했지만, 계정 복구 메일은 박하린 예비 주소, 게시 시각 직전 와이파이에는 박하린 기기가 접속. 동기와 실행자가 다를 수 있다.",
       "quadrant": "shared_misconception",
       "requiredEvidence": [
@@ -272,14 +285,14 @@
         "b": 60
       },
       "ambiguity": "low",
-      "weight": "medium",
+      "weight": "high",
       "mediationLink": "증거검증",
       "legitimacyIssue": true,
       "judgmentStatement": "계정 복구 메일은 박하린 것이다."
     },
     {
       "id": "d-4",
-      "name": "결정적 증거는 2026년 위조본",
+      "name": "결정적 캡처는 2026년 위조본인가",
       "truth": true,
       "truthDescription": "방명록 배경은 2008년 스킨, 문자 말풍선은 2024년 복원앱 템플릿. 시간대와 출처가 다른 두 소스를 2026년에 합성한 위조본. 세아를 소문 유포자로 단정할 근거가 없다.",
       "quadrant": "neither_knows",
@@ -322,15 +335,17 @@
   "evidence": [
     {
       "id": "e-1",
-      "name": "재우의 전달 로그와 운영진 단톡 원문",
-      "description": "재우가 세아 확인 9분 전에 세 채널로 보낸 캡처와 메시지 원문. 아마 세아가 맞다는 단정형 표현 반복. 위조 가능성 언급 없음.",
-      "type": "chat",
+      "name": "익명 계정 업로드 캡처",
+      "description": "동창회 직후 익명 계정에 올라온 캡처 묶음과 게시 시간 기록이다.",
+      "type": "sns",
       "reliability": "hard",
       "completeness": "original",
       "provenance": "mixed",
       "legitimacy": "lawful",
       "proves": [
-        "d-1"
+        "d-1",
+        "d-3",
+        "d-4"
       ],
       "isTrap": false,
       "requires": [],
@@ -343,46 +358,108 @@
         "question_acquisition": "각 채널 대화 참여자의 동의 하에 백업이 제출됐고, 발신자(재우) 기기에서도 교차 확인됐으므로 취득 절차상 문제없다."
       },
       "subjectParty": "b",
-      "surfaceName": "전달 로그와 단톡 원문",
-      "surfaceDescription": "여러 채널로 전송된 캡처와 메시지 원문 기록이다. 전달 시각과 표현이 남아 있다.",
+      "surfaceName": "익명 계정 업로드 캡처",
+      "surfaceDescription": "동창회 직후 익명 계정에 올라온 캡처 묶음과 게시 시간 기록이다.",
+      "meta": {
+        "name": "익명 계정 업로드 캡처",
+        "type": "sns",
+        "viewerType": "sns",
+        "trustLevel": "mid",
+        "trustLabel": "보통",
+        "source": "b",
+        "sourceLabel": "B측",
+        "legality": "ok",
+        "legalLabel": "적법",
+        "stage": 1,
+        "stageLabel": "초기 공개",
+        "sourceNote": "mixed / original",
+        "redactions": []
+      },
+      "viewerData": {
+        "meta": {
+          "name": "익명 계정 업로드 캡처",
+          "type": "sns",
+          "viewerType": "sns",
+          "trustLevel": "mid",
+          "trustLabel": "보통",
+          "source": "b",
+          "sourceLabel": "B측",
+          "legality": "ok",
+          "legalLabel": "적법",
+          "stage": 1,
+          "stageLabel": "초기 공개",
+          "sourceNote": "mixed / original",
+          "redactions": []
+        },
+        "sns": {
+          "username": "익명 계정 업로드 캡처",
+          "handle": "@evidence",
+          "date": "기록",
+          "privacy": "제한 공개",
+          "text": "동창회 직후 익명 계정에 올라온 캡처 묶음과 게시 시간 기록이다.",
+          "hashtags": [],
+          "likes": 0,
+          "comments": [],
+          "warnings": []
+        },
+        "media": {
+          "imageUrl": "data:image/svg+xml;charset=UTF-8,%0A%20%20%20%20%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%221080%22%20height%3D%221350%22%20viewBox%3D%220%200%201080%201350%22%3E%0A%20%20%20%20%20%20%3Crect%20width%3D%221080%22%20height%3D%221350%22%20rx%3D%2228%22%20fill%3D%22%23f8fafc%22%20%2F%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%2242%22%20y%3D%2242%22%20width%3D%22996%22%20height%3D%221266%22%20rx%3D%2222%22%20fill%3D%22%23ffffff%22%20stroke%3D%22%23e2e8f0%22%20%2F%3E%0A%20%20%20%20%20%20%3Ccircle%20cx%3D%22118%22%20cy%3D%22118%22%20r%3D%2234%22%20fill%3D%22%23f472b6%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22176%22%20y%3D%22112%22%20font-size%3D%2224%22%20font-weight%3D%22800%22%20fill%3D%22%23111827%22%3E%EC%9D%B5%EB%AA%85%20%EA%B3%84%EC%A0%95%20%EC%97%85%EB%A1%9C%EB%93%9C%20%EC%BA%A1%EC%B2%98%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22176%22%20y%3D%22142%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%2364748b%22%3E%23e-1%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22962%22%20y%3D%22112%22%20font-size%3D%2216%22%20font-weight%3D%22700%22%20fill%3D%22%23f472b6%22%20text-anchor%3D%22end%22%3ESNS%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22962%22%20y%3D%22142%22%20font-size%3D%2216%22%20font-weight%3D%22600%22%20fill%3D%22%2364748b%22%20text-anchor%3D%22end%22%3Ee-1%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2284%22%20y%3D%22236%22%20font-size%3D%2224%22%20font-weight%3D%22700%22%20fill%3D%22%23111827%22%3E%EB%8F%99%EC%B0%BD%ED%9A%8C%20%EC%A7%81%ED%9B%84%20%EC%9D%B5%EB%AA%85%20%EA%B3%84%EC%A0%95%EC%97%90%20%EC%98%AC%EB%9D%BC%EC%98%A8%20%EC%BA%A1%EC%B2%98%20%EB%AC%B6%EC%9D%8C%EA%B3%BC%20%EA%B2%8C%EC%8B%9C%20%EC%8B%9C%EA%B0%84%20%EA%B8%B0%EB%A1%9D%EC%9D%B4%EB%8B%A4.%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%2284%22%20y%3D%22470%22%20width%3D%22912%22%20height%3D%22360%22%20rx%3D%2220%22%20fill%3D%22%23fdf2f8%22%20stroke%3D%22%23fbcfe8%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22110%22%20y%3D%22548%22%20font-size%3D%2222%22%20font-weight%3D%22800%22%20fill%3D%22%23db2777%22%3E%23d-1%20%23d-3%20%23d-4%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22110%22%20y%3D%22884%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%2364748b%22%3ECOMMENTS%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%3Ctext%20x%3D%22150%22%20y%3D%22980%22%20font-size%3D%2218%22%20font-weight%3D%22800%22%20fill%3D%22%23111827%22%3Erequest_original%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22150%22%20y%3D%221008%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%23334155%22%3E%EB%8F%99%EC%B0%BD%ED%9A%8C%20%EC%9A%B4%EC%98%81%EC%A7%84%20%EB%8B%A8%ED%86%A1%20%EC%84%9C%EB%B2%84%20%EB%B0%B1%EC%97%85%2C%20%EA%B0%80%EC%A1%B1%20%EB%8B%A8%ED%86%A1%20%EC%9B%90%EB%AC%B8%2C%20%EC%9E%AC%EC%9A%B0%20%ED%9C%B4%EB%8C%80%ED%8F%B0%EC%9D%98%20%EB%A9%94%EC%8B%9C%EC%A7%80%20%EC%A0%84%EB%8B%AC%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Ctext%20x%3D%22150%22%20y%3D%221072%22%20font-size%3D%2218%22%20font-weight%3D%22800%22%20fill%3D%22%23111827%22%3Echeck_metadata%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22150%22%20y%3D%221100%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%23334155%22%3E%EC%B2%AB%20%EC%99%B8%EB%B6%80%20%EC%A0%84%EB%8B%AC%3A%20%EC%84%B8%EC%95%84%20%ED%99%95%EC%9D%B8%20%EB%AC%B8%EC%9E%90%209%EB%B6%84%20%EC%A0%84.%20%EC%9A%B4%EC%98%81%EC%A7%84%E2%86%92%EA%B0%80%EC%A1%B1%E2%86%92%EC%A7%81%EC%9E%A5%20%EC%88%9C%EC%84%9C.%209%EB%B6%84%20%EC%8B%9C%EC%B0%A8%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%3C%2Fsvg%3E%0A%20%20",
+          "thumbnailUrl": "data:image/svg+xml;charset=UTF-8,%0A%20%20%20%20%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%221080%22%20height%3D%221350%22%20viewBox%3D%220%200%201080%201350%22%3E%0A%20%20%20%20%20%20%3Crect%20width%3D%221080%22%20height%3D%221350%22%20rx%3D%2228%22%20fill%3D%22%23f8fafc%22%20%2F%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%2242%22%20y%3D%2242%22%20width%3D%22996%22%20height%3D%221266%22%20rx%3D%2222%22%20fill%3D%22%23ffffff%22%20stroke%3D%22%23e2e8f0%22%20%2F%3E%0A%20%20%20%20%20%20%3Ccircle%20cx%3D%22118%22%20cy%3D%22118%22%20r%3D%2234%22%20fill%3D%22%23f472b6%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22176%22%20y%3D%22112%22%20font-size%3D%2224%22%20font-weight%3D%22800%22%20fill%3D%22%23111827%22%3E%EC%9D%B5%EB%AA%85%20%EA%B3%84%EC%A0%95%20%EC%97%85%EB%A1%9C%EB%93%9C%20%EC%BA%A1%EC%B2%98%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22176%22%20y%3D%22142%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%2364748b%22%3E%23e-1%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22962%22%20y%3D%22112%22%20font-size%3D%2216%22%20font-weight%3D%22700%22%20fill%3D%22%23f472b6%22%20text-anchor%3D%22end%22%3ESNS%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22962%22%20y%3D%22142%22%20font-size%3D%2216%22%20font-weight%3D%22600%22%20fill%3D%22%2364748b%22%20text-anchor%3D%22end%22%3Ee-1%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2284%22%20y%3D%22236%22%20font-size%3D%2224%22%20font-weight%3D%22700%22%20fill%3D%22%23111827%22%3E%EB%8F%99%EC%B0%BD%ED%9A%8C%20%EC%A7%81%ED%9B%84%20%EC%9D%B5%EB%AA%85%20%EA%B3%84%EC%A0%95%EC%97%90%20%EC%98%AC%EB%9D%BC%EC%98%A8%20%EC%BA%A1%EC%B2%98%20%EB%AC%B6%EC%9D%8C%EA%B3%BC%20%EA%B2%8C%EC%8B%9C%20%EC%8B%9C%EA%B0%84%20%EA%B8%B0%EB%A1%9D%EC%9D%B4%EB%8B%A4.%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%2284%22%20y%3D%22470%22%20width%3D%22912%22%20height%3D%22360%22%20rx%3D%2220%22%20fill%3D%22%23fdf2f8%22%20stroke%3D%22%23fbcfe8%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22110%22%20y%3D%22548%22%20font-size%3D%2222%22%20font-weight%3D%22800%22%20fill%3D%22%23db2777%22%3E%23d-1%20%23d-3%20%23d-4%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22110%22%20y%3D%22884%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%2364748b%22%3ECOMMENTS%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%3Ctext%20x%3D%22150%22%20y%3D%22980%22%20font-size%3D%2218%22%20font-weight%3D%22800%22%20fill%3D%22%23111827%22%3Erequest_original%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22150%22%20y%3D%221008%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%23334155%22%3E%EB%8F%99%EC%B0%BD%ED%9A%8C%20%EC%9A%B4%EC%98%81%EC%A7%84%20%EB%8B%A8%ED%86%A1%20%EC%84%9C%EB%B2%84%20%EB%B0%B1%EC%97%85%2C%20%EA%B0%80%EC%A1%B1%20%EB%8B%A8%ED%86%A1%20%EC%9B%90%EB%AC%B8%2C%20%EC%9E%AC%EC%9A%B0%20%ED%9C%B4%EB%8C%80%ED%8F%B0%EC%9D%98%20%EB%A9%94%EC%8B%9C%EC%A7%80%20%EC%A0%84%EB%8B%AC%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Ctext%20x%3D%22150%22%20y%3D%221072%22%20font-size%3D%2218%22%20font-weight%3D%22800%22%20fill%3D%22%23111827%22%3Echeck_metadata%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22150%22%20y%3D%221100%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%23334155%22%3E%EC%B2%AB%20%EC%99%B8%EB%B6%80%20%EC%A0%84%EB%8B%AC%3A%20%EC%84%B8%EC%95%84%20%ED%99%95%EC%9D%B8%20%EB%AC%B8%EC%9E%90%209%EB%B6%84%20%EC%A0%84.%20%EC%9A%B4%EC%98%81%EC%A7%84%E2%86%92%EA%B0%80%EC%A1%B1%E2%86%92%EC%A7%81%EC%9E%A5%20%EC%88%9C%EC%84%9C.%209%EB%B6%84%20%EC%8B%9C%EC%B0%A8%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%3C%2Fsvg%3E%0A%20%20",
+          "posterUrl": "data:image/svg+xml;charset=UTF-8,%0A%20%20%20%20%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%221080%22%20height%3D%221350%22%20viewBox%3D%220%200%201080%201350%22%3E%0A%20%20%20%20%20%20%3Crect%20width%3D%221080%22%20height%3D%221350%22%20rx%3D%2228%22%20fill%3D%22%23f8fafc%22%20%2F%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%2242%22%20y%3D%2242%22%20width%3D%22996%22%20height%3D%221266%22%20rx%3D%2222%22%20fill%3D%22%23ffffff%22%20stroke%3D%22%23e2e8f0%22%20%2F%3E%0A%20%20%20%20%20%20%3Ccircle%20cx%3D%22118%22%20cy%3D%22118%22%20r%3D%2234%22%20fill%3D%22%23f472b6%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22176%22%20y%3D%22112%22%20font-size%3D%2224%22%20font-weight%3D%22800%22%20fill%3D%22%23111827%22%3E%EC%9D%B5%EB%AA%85%20%EA%B3%84%EC%A0%95%20%EC%97%85%EB%A1%9C%EB%93%9C%20%EC%BA%A1%EC%B2%98%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22176%22%20y%3D%22142%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%2364748b%22%3E%23e-1%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22962%22%20y%3D%22112%22%20font-size%3D%2216%22%20font-weight%3D%22700%22%20fill%3D%22%23f472b6%22%20text-anchor%3D%22end%22%3ESNS%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22962%22%20y%3D%22142%22%20font-size%3D%2216%22%20font-weight%3D%22600%22%20fill%3D%22%2364748b%22%20text-anchor%3D%22end%22%3Ee-1%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2284%22%20y%3D%22236%22%20font-size%3D%2224%22%20font-weight%3D%22700%22%20fill%3D%22%23111827%22%3E%EB%8F%99%EC%B0%BD%ED%9A%8C%20%EC%A7%81%ED%9B%84%20%EC%9D%B5%EB%AA%85%20%EA%B3%84%EC%A0%95%EC%97%90%20%EC%98%AC%EB%9D%BC%EC%98%A8%20%EC%BA%A1%EC%B2%98%20%EB%AC%B6%EC%9D%8C%EA%B3%BC%20%EA%B2%8C%EC%8B%9C%20%EC%8B%9C%EA%B0%84%20%EA%B8%B0%EB%A1%9D%EC%9D%B4%EB%8B%A4.%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%2284%22%20y%3D%22470%22%20width%3D%22912%22%20height%3D%22360%22%20rx%3D%2220%22%20fill%3D%22%23fdf2f8%22%20stroke%3D%22%23fbcfe8%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22110%22%20y%3D%22548%22%20font-size%3D%2222%22%20font-weight%3D%22800%22%20fill%3D%22%23db2777%22%3E%23d-1%20%23d-3%20%23d-4%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22110%22%20y%3D%22884%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%2364748b%22%3ECOMMENTS%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%3Ctext%20x%3D%22150%22%20y%3D%22980%22%20font-size%3D%2218%22%20font-weight%3D%22800%22%20fill%3D%22%23111827%22%3Erequest_original%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22150%22%20y%3D%221008%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%23334155%22%3E%EB%8F%99%EC%B0%BD%ED%9A%8C%20%EC%9A%B4%EC%98%81%EC%A7%84%20%EB%8B%A8%ED%86%A1%20%EC%84%9C%EB%B2%84%20%EB%B0%B1%EC%97%85%2C%20%EA%B0%80%EC%A1%B1%20%EB%8B%A8%ED%86%A1%20%EC%9B%90%EB%AC%B8%2C%20%EC%9E%AC%EC%9A%B0%20%ED%9C%B4%EB%8C%80%ED%8F%B0%EC%9D%98%20%EB%A9%94%EC%8B%9C%EC%A7%80%20%EC%A0%84%EB%8B%AC%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Ctext%20x%3D%22150%22%20y%3D%221072%22%20font-size%3D%2218%22%20font-weight%3D%22800%22%20fill%3D%22%23111827%22%3Echeck_metadata%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22150%22%20y%3D%221100%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%23334155%22%3E%EC%B2%AB%20%EC%99%B8%EB%B6%80%20%EC%A0%84%EB%8B%AC%3A%20%EC%84%B8%EC%95%84%20%ED%99%95%EC%9D%B8%20%EB%AC%B8%EC%9E%90%209%EB%B6%84%20%EC%A0%84.%20%EC%9A%B4%EC%98%81%EC%A7%84%E2%86%92%EA%B0%80%EC%A1%B1%E2%86%92%EC%A7%81%EC%9E%A5%20%EC%88%9C%EC%84%9C.%209%EB%B6%84%20%EC%8B%9C%EC%B0%A8%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%3C%2Fsvg%3E%0A%20%20",
+          "width": 1080,
+          "height": 1350,
+          "alt": "익명 계정 업로드 캡처 social evidence",
+          "caption": "익명 계정 업로드 캡처 social post preview"
+        }
+      },
       "investigationStages": [
         {
           "stage": 0,
           "revealKey": "request_original",
           "question": {
-            "text": "이 전달 로그와 단톡 원문에 대해 설명하십시오.",
-            "attackVector": "context"
+            "text": "재판관님, 익명 계정 업로드 캡처의 원본과 취득 경위를 먼저 확인해 주시겠습니까?",
+            "attackVector": "authenticity"
           }
         },
         {
           "stage": 1,
-          "revealKey": "check_metadata",
+          "revealKey": "restore_context",
           "question": {
-            "text": "확인 답 9분 전 세 채널로 보낸 이유를 설명하십시오.",
-            "attackVector": "timeline"
+            "text": "재판관님, 익명 계정 업로드 캡처이 d-1, d-3, d-4와 어떻게 이어지는지 빠진 맥락까지 설명해 주시겠습니까?",
+            "attackVector": "context"
           }
         },
         {
           "stage": 2,
-          "revealKey": "restore_context",
+          "revealKey": "check_responsibility",
           "question": {
-            "text": "세 채널 모두 같은 단정 표현을 쓴 이유를 설명하십시오.",
-            "attackVector": "context"
+            "text": "재판관님, 익명 계정 업로드 캡처이 누구의 관리 책임을 더 무겁게 가리키는지 분리해 주십시오.",
+            "attackVector": "responsibility"
           }
         }
-      ]
+      ],
+      "partyContext": {
+        "a": {
+          "questionAngle": "A측 관점에서 이 자료가 가리키는 책임과 경위를 설명해 주십시오.",
+          "implication": "동창회 직후 익명 계정에 올라온 캡처 묶음과 게시 시간 기록이다."
+        },
+        "b": {
+          "questionAngle": "B측 관점에서 이 자료가 가리키는 책임과 경위를 설명해 주십시오.",
+          "implication": "동창회 직후 익명 계정에 올라온 캡처 묶음과 게시 시간 기록이다."
+        }
+      }
     },
     {
       "id": "e-2",
-      "name": "세아의 옛 백업 복원 로그와 삭제 표시된 메시지",
-      "description": "세아의 백업 복원 이력과 폴더 이동 로그. 게시물 확산 2시간 후 모진 메시지를 별도 폴더로 옮겼고 재우 공유 파일에서 빠져 있다. 원문 조작은 없다.",
-      "type": "cloud_log",
+      "name": "동창회 참석 명단",
+      "description": "행사 등록 명단, 좌석 배치, 와이파이 접속 사용자 표가 포함된 동창회 자료다.",
+      "type": "contract",
       "reliability": "hard",
       "completeness": "original",
       "provenance": "platform",
       "legitimacy": "lawful",
       "proves": [
-        "d-2",
+        "d-3",
         "d-5"
       ],
       "isTrap": false,
@@ -396,49 +473,112 @@
         "question_acquisition": "세아 본인 계정의 클라우드 복원 로그이므로, 본인 제출 자료로서 취득 절차상 문제없다."
       },
       "subjectParty": "a",
-      "surfaceName": "백업 복원 로그와 메시지 기록",
-      "surfaceDescription": "과거 백업에서 복원된 로그와 메시지 기록이다. 정리 과정의 이동 이력이 함께 있다.",
+      "surfaceName": "동창회 참석 명단",
+      "surfaceDescription": "행사 등록 명단, 좌석 배치, 와이파이 접속 사용자 표가 포함된 동창회 자료다.",
+      "meta": {
+        "name": "동창회 참석 명단",
+        "type": "contract",
+        "viewerType": "contract",
+        "trustLevel": "mid",
+        "trustLabel": "보통",
+        "source": "a",
+        "sourceLabel": "A측",
+        "legality": "ok",
+        "legalLabel": "적법",
+        "stage": 2,
+        "stageLabel": "중간 공개",
+        "sourceNote": "platform / original",
+        "redactions": []
+      },
+      "viewerData": {
+        "meta": {
+          "name": "동창회 참석 명단",
+          "type": "contract",
+          "viewerType": "contract",
+          "trustLevel": "mid",
+          "trustLabel": "보통",
+          "source": "a",
+          "sourceLabel": "A측",
+          "legality": "ok",
+          "legalLabel": "적법",
+          "stage": 2,
+          "stageLabel": "중간 공개",
+          "sourceNote": "platform / original",
+          "redactions": []
+        },
+        "contract": {
+          "title": "동창회 참석 명단",
+          "subtitle": "문서 요약",
+          "rows": [
+            {
+              "date": "기록",
+              "content": "행사 등록 명단, 좌석 배치, 와이파이 접속 사용자 표가 포함된 동창회 자료다.",
+              "amount": "-",
+              "missing": false
+            }
+          ],
+          "signature": "원본 대조 필요"
+        },
+        "media": {
+          "imageUrl": "data:image/svg+xml;charset=UTF-8,%0A%20%20%20%20%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%221280%22%20height%3D%22960%22%20viewBox%3D%220%200%201280%20960%22%3E%0A%20%20%20%20%20%20%3Crect%20width%3D%221280%22%20height%3D%22960%22%20rx%3D%2224%22%20fill%3D%22%23e5e7eb%22%20%2F%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%2240%22%20y%3D%2240%22%20width%3D%221200%22%20height%3D%22880%22%20rx%3D%2218%22%20fill%3D%22%23fcfcfd%22%20stroke%3D%22%23cbd5e1%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2270%22%20y%3D%2294%22%20font-size%3D%2216%22%20font-weight%3D%22800%22%20fill%3D%22%237c3aed%22%3ECONTRACT%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2270%22%20y%3D%22136%22%20font-size%3D%2234%22%20font-weight%3D%22800%22%20fill%3D%22%230f172a%22%3E%EB%8F%99%EC%B0%BD%ED%9A%8C%20%EC%B0%B8%EC%84%9D%20%EB%AA%85%EB%8B%A8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2270%22%20y%3D%22174%22%20font-size%3D%2219%22%20font-weight%3D%22600%22%20fill%3D%22%2364748b%22%3E%ED%96%89%EC%82%AC%20%EB%93%B1%EB%A1%9D%20%EB%AA%85%EB%8B%A8%2C%20%EC%A2%8C%EC%84%9D%20%EB%B0%B0%EC%B9%98%2C%20%EC%99%80%EC%9D%B4%ED%8C%8C%EC%9D%B4%20%EC%A0%91%EC%86%8D%20%EC%82%AC%EC%9A%A9%EC%9E%90%20%ED%91%9C%EA%B0%80%20%ED%8F%AC%ED%95%A8%EB%90%9C%20%EB%8F%99%EC%B0%BD%ED%9A%8C%20%EC%9E%90%EB%A3%8C%EB%8B%A4.%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2270%22%20y1%3D%22198%22%20x2%3D%221210%22%20y2%3D%22198%22%20stroke%3D%22%23dbe4ee%22%20%2F%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2266%22%20y%3D%22208%22%20width%3D%221148%22%20height%3D%2280%22%20rx%3D%2216%22%20fill%3D%22rgba(15%2C23%2C42%2C0.04)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2294%22%20y%3D%22246%22%20font-size%3D%2219%22%20font-weight%3D%22700%22%20fill%3D%22%23334155%22%3Erequest_original%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22284%22%20y%3D%22234%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%230f172a%22%3E%ED%81%B4%EB%9D%BC%EC%9A%B0%EB%93%9C%20%EB%B0%B1%EC%97%85%20%EB%B3%B5%EC%9B%90%20%EC%9D%B4%EB%A0%A5%2C%20%ED%8F%B4%EB%8D%94%20%EC%9D%B4%EB%8F%99%20%EA%B8%B0%EB%A1%9D%2C%20%EC%88%A8%EA%B9%80%20%EB%A9%94%EC%8B%9C%EC%A7%80%3C%2Ftext%3E%3Ctext%20x%3D%22284%22%20y%3D%22258%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%230f172a%22%3E%EB%A9%94%ED%83%80%EB%8D%B0%EC%9D%B4%ED%84%B0(%EB%B0%9C%EC%8B%A0%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221162%22%20y%3D%22246%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%23475569%22%20text-anchor%3D%22end%22%3E%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2266%22%20y%3D%22310%22%20width%3D%221148%22%20height%3D%2280%22%20rx%3D%2216%22%20fill%3D%22rgba(15%2C23%2C42%2C0.04)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2294%22%20y%3D%22348%22%20font-size%3D%2219%22%20font-weight%3D%22700%22%20fill%3D%22%23334155%22%3Echeck_metadata%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22284%22%20y%3D%22336%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%230f172a%22%3E%EB%AA%A8%EC%A7%84%20%EB%A9%94%EC%8B%9C%EC%A7%80%20%ED%8F%B4%EB%8D%94%20%EC%9D%B4%EB%8F%99%3A%20%EA%B2%8C%EC%8B%9C%EB%AC%BC%20%ED%99%95%EC%82%B0%202%EC%8B%9C%EA%B0%84%20%ED%9B%84.%20%EC%9E%AC%EC%9A%B0%20%EA%B3%B5%EC%9C%A0%3C%2Ftext%3E%3Ctext%20x%3D%22284%22%20y%3D%22360%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%230f172a%22%3E%ED%8C%8C%EC%9D%BC%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221162%22%20y%3D%22348%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%23475569%22%20text-anchor%3D%22end%22%3E%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2266%22%20y%3D%22412%22%20width%3D%221148%22%20height%3D%2280%22%20rx%3D%2216%22%20fill%3D%22rgba(15%2C23%2C42%2C0.04)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2294%22%20y%3D%22450%22%20font-size%3D%2219%22%20font-weight%3D%22700%22%20fill%3D%22%23334155%22%3Erestore_context%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22284%22%20y%3D%22438%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%230f172a%22%3E%EC%84%B8%EC%95%84%EC%9D%98%20%EC%9D%98%EB%8F%84%EB%8A%94%20%EC%9D%B5%EB%AA%85%20%EA%B3%84%EC%A0%95%EC%9D%B4%20%EC%9E%90%EA%B8%B0%EA%B0%80%20%EC%95%84%EB%8B%98%EC%9D%84%20%EC%9E%85%EC%A6%9D%ED%95%98%EB%8A%94%20%EA%B2%83.%20%EB%AA%A8%EC%A7%84%3C%2Ftext%3E%3Ctext%20x%3D%22284%22%20y%3D%22462%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%230f172a%22%3E%EB%A9%94%EC%8B%9C%EC%A7%80%EB%8A%94%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221162%22%20y%3D%22450%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%23475569%22%20text-anchor%3D%22end%22%3E%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2266%22%20y%3D%22514%22%20width%3D%221148%22%20height%3D%2280%22%20rx%3D%2216%22%20fill%3D%22rgba(15%2C23%2C42%2C0.04)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2294%22%20y%3D%22552%22%20font-size%3D%2219%22%20font-weight%3D%22700%22%20fill%3D%22%23334155%22%3Everify_source%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22284%22%20y%3D%22540%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%230f172a%22%3E%ED%81%B4%EB%9D%BC%EC%9A%B0%EB%93%9C%20%EC%84%9C%EB%B2%84%20%EB%B3%B5%EC%9B%90%C2%B7%EC%9D%B4%EB%8F%99%20%EC%9D%B4%EB%A0%A5%EA%B3%BC%20%EC%84%B8%EC%95%84%20%EB%85%B8%ED%8A%B8%EB%B6%81%EC%9D%98%20%EB%8F%99%EA%B8%B0%ED%99%94%3C%2Ftext%3E%3Ctext%20x%3D%22284%22%20y%3D%22564%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%230f172a%22%3E%ED%83%80%EC%9E%84%EC%8A%A4%ED%83%AC%ED%94%84%EA%B0%80%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221162%22%20y%3D%22552%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%23475569%22%20text-anchor%3D%22end%22%3E%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2266%22%20y%3D%22616%22%20width%3D%221148%22%20height%3D%2280%22%20rx%3D%2216%22%20fill%3D%22rgba(15%2C23%2C42%2C0.04)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2294%22%20y%3D%22654%22%20font-size%3D%2219%22%20font-weight%3D%22700%22%20fill%3D%22%23334155%22%3Echeck_edits%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22284%22%20y%3D%22642%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%230f172a%22%3E%EC%88%A8%EA%B8%B4%20%EB%A9%94%EC%8B%9C%EC%A7%80%20%EC%9B%90%EB%AC%B8%EC%97%90%20%EC%A1%B0%EC%9E%91%20%EC%97%86%EB%8B%A4.%20%ED%85%8D%EC%8A%A4%ED%8A%B8%EB%A5%BC%20%EB%B0%94%EA%BE%BC%20%EA%B2%8C%20%EC%95%84%EB%8B%88%EB%9D%BC%3C%2Ftext%3E%3Ctext%20x%3D%22284%22%20y%3D%22666%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%230f172a%22%3E%EB%B3%B4%EC%97%AC%EC%A3%BC%EB%8A%94%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221162%22%20y%3D%22654%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%23475569%22%20text-anchor%3D%22end%22%3E%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Ctext%20x%3D%2270%22%20y%3D%22894%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%23475569%22%3E%EC%B6%9C%EC%B2%98%20%EB%A9%94%EB%AA%A8%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%3C%2Fsvg%3E%0A%20%20",
+          "thumbnailUrl": "data:image/svg+xml;charset=UTF-8,%0A%20%20%20%20%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%221280%22%20height%3D%22960%22%20viewBox%3D%220%200%201280%20960%22%3E%0A%20%20%20%20%20%20%3Crect%20width%3D%221280%22%20height%3D%22960%22%20rx%3D%2224%22%20fill%3D%22%23e5e7eb%22%20%2F%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%2240%22%20y%3D%2240%22%20width%3D%221200%22%20height%3D%22880%22%20rx%3D%2218%22%20fill%3D%22%23fcfcfd%22%20stroke%3D%22%23cbd5e1%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2270%22%20y%3D%2294%22%20font-size%3D%2216%22%20font-weight%3D%22800%22%20fill%3D%22%237c3aed%22%3ECONTRACT%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2270%22%20y%3D%22136%22%20font-size%3D%2234%22%20font-weight%3D%22800%22%20fill%3D%22%230f172a%22%3E%EB%8F%99%EC%B0%BD%ED%9A%8C%20%EC%B0%B8%EC%84%9D%20%EB%AA%85%EB%8B%A8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2270%22%20y%3D%22174%22%20font-size%3D%2219%22%20font-weight%3D%22600%22%20fill%3D%22%2364748b%22%3E%ED%96%89%EC%82%AC%20%EB%93%B1%EB%A1%9D%20%EB%AA%85%EB%8B%A8%2C%20%EC%A2%8C%EC%84%9D%20%EB%B0%B0%EC%B9%98%2C%20%EC%99%80%EC%9D%B4%ED%8C%8C%EC%9D%B4%20%EC%A0%91%EC%86%8D%20%EC%82%AC%EC%9A%A9%EC%9E%90%20%ED%91%9C%EA%B0%80%20%ED%8F%AC%ED%95%A8%EB%90%9C%20%EB%8F%99%EC%B0%BD%ED%9A%8C%20%EC%9E%90%EB%A3%8C%EB%8B%A4.%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2270%22%20y1%3D%22198%22%20x2%3D%221210%22%20y2%3D%22198%22%20stroke%3D%22%23dbe4ee%22%20%2F%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2266%22%20y%3D%22208%22%20width%3D%221148%22%20height%3D%2280%22%20rx%3D%2216%22%20fill%3D%22rgba(15%2C23%2C42%2C0.04)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2294%22%20y%3D%22246%22%20font-size%3D%2219%22%20font-weight%3D%22700%22%20fill%3D%22%23334155%22%3Erequest_original%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22284%22%20y%3D%22234%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%230f172a%22%3E%ED%81%B4%EB%9D%BC%EC%9A%B0%EB%93%9C%20%EB%B0%B1%EC%97%85%20%EB%B3%B5%EC%9B%90%20%EC%9D%B4%EB%A0%A5%2C%20%ED%8F%B4%EB%8D%94%20%EC%9D%B4%EB%8F%99%20%EA%B8%B0%EB%A1%9D%2C%20%EC%88%A8%EA%B9%80%20%EB%A9%94%EC%8B%9C%EC%A7%80%3C%2Ftext%3E%3Ctext%20x%3D%22284%22%20y%3D%22258%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%230f172a%22%3E%EB%A9%94%ED%83%80%EB%8D%B0%EC%9D%B4%ED%84%B0(%EB%B0%9C%EC%8B%A0%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221162%22%20y%3D%22246%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%23475569%22%20text-anchor%3D%22end%22%3E%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2266%22%20y%3D%22310%22%20width%3D%221148%22%20height%3D%2280%22%20rx%3D%2216%22%20fill%3D%22rgba(15%2C23%2C42%2C0.04)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2294%22%20y%3D%22348%22%20font-size%3D%2219%22%20font-weight%3D%22700%22%20fill%3D%22%23334155%22%3Echeck_metadata%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22284%22%20y%3D%22336%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%230f172a%22%3E%EB%AA%A8%EC%A7%84%20%EB%A9%94%EC%8B%9C%EC%A7%80%20%ED%8F%B4%EB%8D%94%20%EC%9D%B4%EB%8F%99%3A%20%EA%B2%8C%EC%8B%9C%EB%AC%BC%20%ED%99%95%EC%82%B0%202%EC%8B%9C%EA%B0%84%20%ED%9B%84.%20%EC%9E%AC%EC%9A%B0%20%EA%B3%B5%EC%9C%A0%3C%2Ftext%3E%3Ctext%20x%3D%22284%22%20y%3D%22360%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%230f172a%22%3E%ED%8C%8C%EC%9D%BC%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221162%22%20y%3D%22348%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%23475569%22%20text-anchor%3D%22end%22%3E%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2266%22%20y%3D%22412%22%20width%3D%221148%22%20height%3D%2280%22%20rx%3D%2216%22%20fill%3D%22rgba(15%2C23%2C42%2C0.04)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2294%22%20y%3D%22450%22%20font-size%3D%2219%22%20font-weight%3D%22700%22%20fill%3D%22%23334155%22%3Erestore_context%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22284%22%20y%3D%22438%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%230f172a%22%3E%EC%84%B8%EC%95%84%EC%9D%98%20%EC%9D%98%EB%8F%84%EB%8A%94%20%EC%9D%B5%EB%AA%85%20%EA%B3%84%EC%A0%95%EC%9D%B4%20%EC%9E%90%EA%B8%B0%EA%B0%80%20%EC%95%84%EB%8B%98%EC%9D%84%20%EC%9E%85%EC%A6%9D%ED%95%98%EB%8A%94%20%EA%B2%83.%20%EB%AA%A8%EC%A7%84%3C%2Ftext%3E%3Ctext%20x%3D%22284%22%20y%3D%22462%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%230f172a%22%3E%EB%A9%94%EC%8B%9C%EC%A7%80%EB%8A%94%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221162%22%20y%3D%22450%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%23475569%22%20text-anchor%3D%22end%22%3E%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2266%22%20y%3D%22514%22%20width%3D%221148%22%20height%3D%2280%22%20rx%3D%2216%22%20fill%3D%22rgba(15%2C23%2C42%2C0.04)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2294%22%20y%3D%22552%22%20font-size%3D%2219%22%20font-weight%3D%22700%22%20fill%3D%22%23334155%22%3Everify_source%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22284%22%20y%3D%22540%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%230f172a%22%3E%ED%81%B4%EB%9D%BC%EC%9A%B0%EB%93%9C%20%EC%84%9C%EB%B2%84%20%EB%B3%B5%EC%9B%90%C2%B7%EC%9D%B4%EB%8F%99%20%EC%9D%B4%EB%A0%A5%EA%B3%BC%20%EC%84%B8%EC%95%84%20%EB%85%B8%ED%8A%B8%EB%B6%81%EC%9D%98%20%EB%8F%99%EA%B8%B0%ED%99%94%3C%2Ftext%3E%3Ctext%20x%3D%22284%22%20y%3D%22564%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%230f172a%22%3E%ED%83%80%EC%9E%84%EC%8A%A4%ED%83%AC%ED%94%84%EA%B0%80%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221162%22%20y%3D%22552%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%23475569%22%20text-anchor%3D%22end%22%3E%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2266%22%20y%3D%22616%22%20width%3D%221148%22%20height%3D%2280%22%20rx%3D%2216%22%20fill%3D%22rgba(15%2C23%2C42%2C0.04)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2294%22%20y%3D%22654%22%20font-size%3D%2219%22%20font-weight%3D%22700%22%20fill%3D%22%23334155%22%3Echeck_edits%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22284%22%20y%3D%22642%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%230f172a%22%3E%EC%88%A8%EA%B8%B4%20%EB%A9%94%EC%8B%9C%EC%A7%80%20%EC%9B%90%EB%AC%B8%EC%97%90%20%EC%A1%B0%EC%9E%91%20%EC%97%86%EB%8B%A4.%20%ED%85%8D%EC%8A%A4%ED%8A%B8%EB%A5%BC%20%EB%B0%94%EA%BE%BC%20%EA%B2%8C%20%EC%95%84%EB%8B%88%EB%9D%BC%3C%2Ftext%3E%3Ctext%20x%3D%22284%22%20y%3D%22666%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%230f172a%22%3E%EB%B3%B4%EC%97%AC%EC%A3%BC%EB%8A%94%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221162%22%20y%3D%22654%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%23475569%22%20text-anchor%3D%22end%22%3E%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Ctext%20x%3D%2270%22%20y%3D%22894%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%23475569%22%3E%EC%B6%9C%EC%B2%98%20%EB%A9%94%EB%AA%A8%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%3C%2Fsvg%3E%0A%20%20",
+          "posterUrl": "data:image/svg+xml;charset=UTF-8,%0A%20%20%20%20%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%221280%22%20height%3D%22960%22%20viewBox%3D%220%200%201280%20960%22%3E%0A%20%20%20%20%20%20%3Crect%20width%3D%221280%22%20height%3D%22960%22%20rx%3D%2224%22%20fill%3D%22%23e5e7eb%22%20%2F%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%2240%22%20y%3D%2240%22%20width%3D%221200%22%20height%3D%22880%22%20rx%3D%2218%22%20fill%3D%22%23fcfcfd%22%20stroke%3D%22%23cbd5e1%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2270%22%20y%3D%2294%22%20font-size%3D%2216%22%20font-weight%3D%22800%22%20fill%3D%22%237c3aed%22%3ECONTRACT%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2270%22%20y%3D%22136%22%20font-size%3D%2234%22%20font-weight%3D%22800%22%20fill%3D%22%230f172a%22%3E%EB%8F%99%EC%B0%BD%ED%9A%8C%20%EC%B0%B8%EC%84%9D%20%EB%AA%85%EB%8B%A8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2270%22%20y%3D%22174%22%20font-size%3D%2219%22%20font-weight%3D%22600%22%20fill%3D%22%2364748b%22%3E%ED%96%89%EC%82%AC%20%EB%93%B1%EB%A1%9D%20%EB%AA%85%EB%8B%A8%2C%20%EC%A2%8C%EC%84%9D%20%EB%B0%B0%EC%B9%98%2C%20%EC%99%80%EC%9D%B4%ED%8C%8C%EC%9D%B4%20%EC%A0%91%EC%86%8D%20%EC%82%AC%EC%9A%A9%EC%9E%90%20%ED%91%9C%EA%B0%80%20%ED%8F%AC%ED%95%A8%EB%90%9C%20%EB%8F%99%EC%B0%BD%ED%9A%8C%20%EC%9E%90%EB%A3%8C%EB%8B%A4.%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2270%22%20y1%3D%22198%22%20x2%3D%221210%22%20y2%3D%22198%22%20stroke%3D%22%23dbe4ee%22%20%2F%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2266%22%20y%3D%22208%22%20width%3D%221148%22%20height%3D%2280%22%20rx%3D%2216%22%20fill%3D%22rgba(15%2C23%2C42%2C0.04)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2294%22%20y%3D%22246%22%20font-size%3D%2219%22%20font-weight%3D%22700%22%20fill%3D%22%23334155%22%3Erequest_original%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22284%22%20y%3D%22234%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%230f172a%22%3E%ED%81%B4%EB%9D%BC%EC%9A%B0%EB%93%9C%20%EB%B0%B1%EC%97%85%20%EB%B3%B5%EC%9B%90%20%EC%9D%B4%EB%A0%A5%2C%20%ED%8F%B4%EB%8D%94%20%EC%9D%B4%EB%8F%99%20%EA%B8%B0%EB%A1%9D%2C%20%EC%88%A8%EA%B9%80%20%EB%A9%94%EC%8B%9C%EC%A7%80%3C%2Ftext%3E%3Ctext%20x%3D%22284%22%20y%3D%22258%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%230f172a%22%3E%EB%A9%94%ED%83%80%EB%8D%B0%EC%9D%B4%ED%84%B0(%EB%B0%9C%EC%8B%A0%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221162%22%20y%3D%22246%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%23475569%22%20text-anchor%3D%22end%22%3E%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2266%22%20y%3D%22310%22%20width%3D%221148%22%20height%3D%2280%22%20rx%3D%2216%22%20fill%3D%22rgba(15%2C23%2C42%2C0.04)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2294%22%20y%3D%22348%22%20font-size%3D%2219%22%20font-weight%3D%22700%22%20fill%3D%22%23334155%22%3Echeck_metadata%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22284%22%20y%3D%22336%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%230f172a%22%3E%EB%AA%A8%EC%A7%84%20%EB%A9%94%EC%8B%9C%EC%A7%80%20%ED%8F%B4%EB%8D%94%20%EC%9D%B4%EB%8F%99%3A%20%EA%B2%8C%EC%8B%9C%EB%AC%BC%20%ED%99%95%EC%82%B0%202%EC%8B%9C%EA%B0%84%20%ED%9B%84.%20%EC%9E%AC%EC%9A%B0%20%EA%B3%B5%EC%9C%A0%3C%2Ftext%3E%3Ctext%20x%3D%22284%22%20y%3D%22360%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%230f172a%22%3E%ED%8C%8C%EC%9D%BC%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221162%22%20y%3D%22348%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%23475569%22%20text-anchor%3D%22end%22%3E%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2266%22%20y%3D%22412%22%20width%3D%221148%22%20height%3D%2280%22%20rx%3D%2216%22%20fill%3D%22rgba(15%2C23%2C42%2C0.04)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2294%22%20y%3D%22450%22%20font-size%3D%2219%22%20font-weight%3D%22700%22%20fill%3D%22%23334155%22%3Erestore_context%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22284%22%20y%3D%22438%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%230f172a%22%3E%EC%84%B8%EC%95%84%EC%9D%98%20%EC%9D%98%EB%8F%84%EB%8A%94%20%EC%9D%B5%EB%AA%85%20%EA%B3%84%EC%A0%95%EC%9D%B4%20%EC%9E%90%EA%B8%B0%EA%B0%80%20%EC%95%84%EB%8B%98%EC%9D%84%20%EC%9E%85%EC%A6%9D%ED%95%98%EB%8A%94%20%EA%B2%83.%20%EB%AA%A8%EC%A7%84%3C%2Ftext%3E%3Ctext%20x%3D%22284%22%20y%3D%22462%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%230f172a%22%3E%EB%A9%94%EC%8B%9C%EC%A7%80%EB%8A%94%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221162%22%20y%3D%22450%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%23475569%22%20text-anchor%3D%22end%22%3E%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2266%22%20y%3D%22514%22%20width%3D%221148%22%20height%3D%2280%22%20rx%3D%2216%22%20fill%3D%22rgba(15%2C23%2C42%2C0.04)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2294%22%20y%3D%22552%22%20font-size%3D%2219%22%20font-weight%3D%22700%22%20fill%3D%22%23334155%22%3Everify_source%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22284%22%20y%3D%22540%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%230f172a%22%3E%ED%81%B4%EB%9D%BC%EC%9A%B0%EB%93%9C%20%EC%84%9C%EB%B2%84%20%EB%B3%B5%EC%9B%90%C2%B7%EC%9D%B4%EB%8F%99%20%EC%9D%B4%EB%A0%A5%EA%B3%BC%20%EC%84%B8%EC%95%84%20%EB%85%B8%ED%8A%B8%EB%B6%81%EC%9D%98%20%EB%8F%99%EA%B8%B0%ED%99%94%3C%2Ftext%3E%3Ctext%20x%3D%22284%22%20y%3D%22564%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%230f172a%22%3E%ED%83%80%EC%9E%84%EC%8A%A4%ED%83%AC%ED%94%84%EA%B0%80%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221162%22%20y%3D%22552%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%23475569%22%20text-anchor%3D%22end%22%3E%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2266%22%20y%3D%22616%22%20width%3D%221148%22%20height%3D%2280%22%20rx%3D%2216%22%20fill%3D%22rgba(15%2C23%2C42%2C0.04)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2294%22%20y%3D%22654%22%20font-size%3D%2219%22%20font-weight%3D%22700%22%20fill%3D%22%23334155%22%3Echeck_edits%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22284%22%20y%3D%22642%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%230f172a%22%3E%EC%88%A8%EA%B8%B4%20%EB%A9%94%EC%8B%9C%EC%A7%80%20%EC%9B%90%EB%AC%B8%EC%97%90%20%EC%A1%B0%EC%9E%91%20%EC%97%86%EB%8B%A4.%20%ED%85%8D%EC%8A%A4%ED%8A%B8%EB%A5%BC%20%EB%B0%94%EA%BE%BC%20%EA%B2%8C%20%EC%95%84%EB%8B%88%EB%9D%BC%3C%2Ftext%3E%3Ctext%20x%3D%22284%22%20y%3D%22666%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%230f172a%22%3E%EB%B3%B4%EC%97%AC%EC%A3%BC%EB%8A%94%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221162%22%20y%3D%22654%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%23475569%22%20text-anchor%3D%22end%22%3E%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Ctext%20x%3D%2270%22%20y%3D%22894%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%23475569%22%3E%EC%B6%9C%EC%B2%98%20%EB%A9%94%EB%AA%A8%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%3C%2Fsvg%3E%0A%20%20",
+          "width": 1280,
+          "height": 960,
+          "alt": "동창회 참석 명단 document evidence",
+          "caption": "동창회 참석 명단 document preview"
+        }
+      },
       "investigationStages": [
         {
           "stage": 0,
           "revealKey": "request_original",
           "question": {
-            "text": "이 복원 로그와 이동 기록의 존재를 인정하십니까?",
-            "attackVector": "context"
+            "text": "재판관님, 동창회 참석 명단의 원본과 취득 경위를 먼저 확인해 주시겠습니까?",
+            "attackVector": "authenticity"
           }
         },
         {
           "stage": 1,
-          "revealKey": "check_metadata",
+          "revealKey": "restore_context",
           "question": {
-            "text": "확산 2시간 뒤 일부 대화를 옮긴 이유를 설명하십시오.",
-            "attackVector": "timeline"
+            "text": "재판관님, 동창회 참석 명단이 d-3, d-5와 어떻게 이어지는지 빠진 맥락까지 설명해 주시겠습니까?",
+            "attackVector": "context"
           }
         },
         {
           "stage": 2,
-          "revealKey": "restore_context",
+          "revealKey": "check_responsibility",
           "question": {
-            "text": "공유 파일에서 일부 대화를 제외한 기준을 설명하십시오.",
-            "attackVector": "authenticity"
+            "text": "재판관님, 동창회 참석 명단이 누구의 관리 책임을 더 무겁게 가리키는지 분리해 주십시오.",
+            "attackVector": "responsibility"
           }
         }
-      ]
+      ],
+      "partyContext": {
+        "a": {
+          "questionAngle": "A측 관점에서 이 자료가 가리키는 책임과 경위를 설명해 주십시오.",
+          "implication": "행사 등록 명단, 좌석 배치, 와이파이 접속 사용자 표가 포함된 동창회 자료다."
+        },
+        "b": {
+          "questionAngle": "B측 관점에서 이 자료가 가리키는 책임과 경위를 설명해 주십시오.",
+          "implication": "행사 등록 명단, 좌석 배치, 와이파이 접속 사용자 표가 포함된 동창회 자료다."
+        }
+      }
     },
     {
       "id": "e-3",
-      "name": "익명 SNS 게시물 캡처와 오래된 문자 이미지",
-      "description": "세아 닉네임이 찍힌 방명록과 피처폰 문자 이미지가 합쳐진 익명 게시물 캡처. 해상도·폰트가 다른 소스가 섞여 있어 단독 증거력이 약하다.",
-      "type": "social_post",
+      "name": "사우 채널 전달 로그 3종",
+      "description": "재우가 캡처를 각 채널로 전달한 시간표와 대상 목록을 묶은 로그다.",
+      "type": "log",
       "reliability": "soft",
       "completeness": "cropped",
       "provenance": "third_party",
       "legitimacy": "privacy_concern",
       "proves": [
-        "d-3",
-        "d-4"
+        "d-1"
       ],
-      "isTrap": true,
+      "isTrap": false,
       "requires": [],
       "investigationResults": {
         "request_original": "원본 게시물은 이미 비활성화된 계정에서 삭제됐고, 여러 명이 저장한 캡처와 리포스트 이미지만 남아 있다. 게시물 전문이 아닌 부분 캡처들이다.",
@@ -449,45 +589,116 @@
         "question_acquisition": "세아 명예를 훼손하는 SNS 캡처가 외부 채널로 유통됐고 재우가 추가 전파. 사생활·명예 침해 소지."
       },
       "subjectParty": "b",
-      "surfaceName": "익명 게시물 캡처와 옛 이미지 묶음",
-      "surfaceDescription": "익명으로 올라온 게시물 캡처다. 서로 다른 이미지가 함께 묶여 있어 검증이 필요하다.",
+      "surfaceName": "사우 채널 전달 로그 3종",
+      "surfaceDescription": "재우가 캡처를 각 채널로 전달한 시간표와 대상 목록을 묶은 로그다.",
+      "meta": {
+        "name": "사우 채널 전달 로그 3종",
+        "type": "log",
+        "viewerType": "log",
+        "trustLevel": "mid",
+        "trustLabel": "보통",
+        "source": "b",
+        "sourceLabel": "B측",
+        "legality": "sus",
+        "legalLabel": "소명 필요",
+        "stage": 3,
+        "stageLabel": "핵심 공개",
+        "sourceNote": "third_party / cropped",
+        "redactions": [
+          "개인정보 일부 마스킹",
+          "앞뒤 맥락 일부 누락"
+        ]
+      },
+      "viewerData": {
+        "meta": {
+          "name": "사우 채널 전달 로그 3종",
+          "type": "log",
+          "viewerType": "log",
+          "trustLevel": "mid",
+          "trustLabel": "보통",
+          "source": "b",
+          "sourceLabel": "B측",
+          "legality": "sus",
+          "legalLabel": "소명 필요",
+          "stage": 3,
+          "stageLabel": "핵심 공개",
+          "sourceNote": "third_party / cropped",
+          "redactions": [
+            "개인정보 일부 마스킹",
+            "앞뒤 맥락 일부 누락"
+          ]
+        },
+        "log": {
+          "rows": [
+            {
+              "date": "기록",
+              "type": "in",
+              "typeLabel": "기록",
+              "target": "사우 채널 전달 로그 3종",
+              "duration": "-",
+              "suspicious": false
+            }
+          ],
+          "note": "재우가 캡처를 각 채널로 전달한 시간표와 대상 목록을 묶은 로그다."
+        },
+        "media": {
+          "imageUrl": "data:image/svg+xml;charset=UTF-8,%0A%20%20%20%20%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%221280%22%20height%3D%22900%22%20viewBox%3D%220%200%201280%20900%22%3E%0A%20%20%20%20%20%20%3Crect%20width%3D%221280%22%20height%3D%22900%22%20rx%3D%2224%22%20fill%3D%22%230f172a%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2254%22%20y%3D%2274%22%20font-size%3D%2216%22%20font-weight%3D%22800%22%20fill%3D%22%2322c55e%22%3ELOG%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2254%22%20y%3D%22120%22%20font-size%3D%2234%22%20font-weight%3D%22800%22%20fill%3D%22%23f8fafc%22%3E%EC%82%AC%EC%9A%B0%20%EC%B1%84%EB%84%90%20%EC%A0%84%EB%8B%AC%20%EB%A1%9C%EA%B7%B8%203%EC%A2%85%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2254%22%20y%3D%22158%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%2394a3b8%22%3E%EC%9E%AC%EC%9A%B0%EA%B0%80%20%EC%BA%A1%EC%B2%98%EB%A5%BC%20%EA%B0%81%20%EC%B1%84%EB%84%90%EB%A1%9C%20%EC%A0%84%EB%8B%AC%ED%95%9C%20%EC%8B%9C%EA%B0%84%ED%91%9C%EC%99%80%20%EB%8C%80%EC%83%81%20%EB%AA%A9%EB%A1%9D%EC%9D%84%20%EB%AC%B6%EC%9D%80%20%EB%A1%9C%EA%B7%B8%EB%8B%A4.%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2254%22%20y%3D%22166%22%20width%3D%221172%22%20height%3D%2268%22%20rx%3D%2214%22%20fill%3D%22rgba(245%2C158%2C11%2C0.12)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2278%22%20y%3D%22200%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%23cbd5e1%22%3E1%EC%B0%A8%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22286%22%20y%3D%22200%22%20font-size%3D%2218%22%20font-weight%3D%22800%22%20fill%3D%22%23fbbf24%22%3E%EC%9B%90%EB%B3%B8%20%EC%9A%94%EC%B2%AD%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22444%22%20y%3D%22200%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%EC%9B%90%EB%B3%B8%20%EA%B2%8C%EC%8B%9C%EB%AC%BC%EC%9D%80%20%EC%9D%B4%EB%AF%B8%20%EB%B9%84%ED%99%9C%EC%84%B1%ED%99%94%EB%90%9C%20%EA%B3%84%EC%A0%95%EC%97%90%EC%84%9C%20%EC%82%AD%EC%A0%9C%EB%90%90%EA%B3%A0%2C%20%EC%97%AC%EB%9F%AC%20%EB%AA%85%EC%9D%B4%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221160%22%20y%3D%22200%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%2394a3b8%22%20text-anchor%3D%22end%22%3E%EA%B2%80%ED%86%A0%20%ED%95%84%EC%9A%94%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2254%22%20y%3D%22254%22%20width%3D%221172%22%20height%3D%2268%22%20rx%3D%2214%22%20fill%3D%22rgba(255%2C255%2C255%2C0.03)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2278%22%20y%3D%22288%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%23cbd5e1%22%3E2%EC%B0%A8%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22286%22%20y%3D%22288%22%20font-size%3D%2218%22%20font-weight%3D%22800%22%20fill%3D%22%2386efac%22%3E%EB%A9%94%ED%83%80%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22444%22%20y%3D%22288%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%EC%BA%A1%EC%B2%98%20%EC%A0%80%EC%9E%A5%3A%20%EB%8F%99%EC%B0%BD%ED%9A%8C%20%EB%8B%A4%EC%9D%8C%20%EB%82%A0%20%EC%83%88%EB%B2%BD.%20%EC%83%81%EB%8B%A8%20%EA%B3%84%EC%A0%95%20%EC%83%9D%EC%84%B1%EC%9D%BC%EA%B3%BC%20%ED%95%98%EB%8B%A8%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221160%22%20y%3D%22288%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%2394a3b8%22%20text-anchor%3D%22end%22%3E%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2254%22%20y%3D%22342%22%20width%3D%221172%22%20height%3D%2268%22%20rx%3D%2214%22%20fill%3D%22rgba(255%2C255%2C255%2C0.03)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2278%22%20y%3D%22376%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%23cbd5e1%22%3E3%EC%B0%A8%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22286%22%20y%3D%22376%22%20font-size%3D%2218%22%20font-weight%3D%22800%22%20fill%3D%22%2386efac%22%3E%EB%A7%A5%EB%9D%BD%20%EB%B3%B5%EC%9B%90%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22444%22%20y%3D%22376%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%EB%B0%A9%EB%AA%85%EB%A1%9D%EC%9D%80%20%ED%95%B4%EC%83%81%EB%8F%84%20%EB%82%AE%EA%B3%A0%202000%EB%85%84%EB%8C%80%20%EC%8A%A4%ED%82%A8%2C%20%EB%AC%B8%EC%9E%90%20%EB%A7%90%ED%92%8D%EC%84%A0%EC%9D%80%20%ED%95%B4%EC%83%81%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221160%22%20y%3D%22376%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%2394a3b8%22%20text-anchor%3D%22end%22%3E%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2254%22%20y%3D%22430%22%20width%3D%221172%22%20height%3D%2268%22%20rx%3D%2214%22%20fill%3D%22rgba(255%2C255%2C255%2C0.03)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2278%22%20y%3D%22464%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%23cbd5e1%22%3E4%EC%B0%A8%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22286%22%20y%3D%22464%22%20font-size%3D%2218%22%20font-weight%3D%22800%22%20fill%3D%22%2386efac%22%3Everify%20sour%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22444%22%20y%3D%22464%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%EC%B0%B8%EC%84%9D%EC%9E%90%205%EB%AA%85%20%EC%9D%B4%EC%83%81%20%EA%B8%B0%EA%B8%B0%EC%97%90%EC%84%9C%20%EB%8F%99%EC%9D%BC%20%EC%BA%A1%EC%B2%98%20%ED%99%95%EC%9D%B8.%20%EA%B2%8C%EC%8B%9C%EB%AC%BC%20%EC%A1%B4%EC%9E%AC%EB%8A%94%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221160%22%20y%3D%22464%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%2394a3b8%22%20text-anchor%3D%22end%22%3E%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2254%22%20y%3D%22518%22%20width%3D%221172%22%20height%3D%2268%22%20rx%3D%2214%22%20fill%3D%22rgba(245%2C158%2C11%2C0.12)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2278%22%20y%3D%22552%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%23cbd5e1%22%3E5%EC%B0%A8%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22286%22%20y%3D%22552%22%20font-size%3D%2218%22%20font-weight%3D%22800%22%20fill%3D%22%23fbbf24%22%3E%ED%8E%B8%EC%A7%91%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22444%22%20y%3D%22552%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%EB%B0%B0%EA%B2%BD%20%EB%A0%88%EC%9D%B4%EC%96%B4%20%ED%95%B4%EC%83%81%EB%8F%84%20%EB%B6%88%EC%9D%BC%EC%B9%98%EC%99%80%20%EC%9E%AC%EC%95%95%EC%B6%95%20%ED%9D%94%EC%A0%81%20%EA%B4%80%EC%B0%B0.%20%EB%91%90%20%EC%9D%B4%EB%AF%B8%EC%A7%80%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221160%22%20y%3D%22552%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%2394a3b8%22%20text-anchor%3D%22end%22%3E%EA%B2%80%ED%86%A0%20%ED%95%84%EC%9A%94%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2254%22%20y%3D%22606%22%20width%3D%221172%22%20height%3D%2268%22%20rx%3D%2214%22%20fill%3D%22rgba(255%2C255%2C255%2C0.03)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2278%22%20y%3D%22640%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%23cbd5e1%22%3E6%EC%B0%A8%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22286%22%20y%3D%22640%22%20font-size%3D%2218%22%20font-weight%3D%22800%22%20fill%3D%22%2386efac%22%3Equestion%20ac%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22444%22%20y%3D%22640%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%EC%84%B8%EC%95%84%20%EB%AA%85%EC%98%88%EB%A5%BC%20%ED%9B%BC%EC%86%90%ED%95%98%EB%8A%94%20SNS%20%EC%BA%A1%EC%B2%98%EA%B0%80%20%EC%99%B8%EB%B6%80%20%EC%B1%84%EB%84%90%EB%A1%9C%20%EC%9C%A0%ED%86%B5%EB%90%90%EA%B3%A0%20%EC%9E%AC%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221160%22%20y%3D%22640%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%2394a3b8%22%20text-anchor%3D%22end%22%3E%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%3C%2Fsvg%3E%0A%20%20",
+          "thumbnailUrl": "data:image/svg+xml;charset=UTF-8,%0A%20%20%20%20%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%221280%22%20height%3D%22900%22%20viewBox%3D%220%200%201280%20900%22%3E%0A%20%20%20%20%20%20%3Crect%20width%3D%221280%22%20height%3D%22900%22%20rx%3D%2224%22%20fill%3D%22%230f172a%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2254%22%20y%3D%2274%22%20font-size%3D%2216%22%20font-weight%3D%22800%22%20fill%3D%22%2322c55e%22%3ELOG%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2254%22%20y%3D%22120%22%20font-size%3D%2234%22%20font-weight%3D%22800%22%20fill%3D%22%23f8fafc%22%3E%EC%82%AC%EC%9A%B0%20%EC%B1%84%EB%84%90%20%EC%A0%84%EB%8B%AC%20%EB%A1%9C%EA%B7%B8%203%EC%A2%85%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2254%22%20y%3D%22158%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%2394a3b8%22%3E%EC%9E%AC%EC%9A%B0%EA%B0%80%20%EC%BA%A1%EC%B2%98%EB%A5%BC%20%EA%B0%81%20%EC%B1%84%EB%84%90%EB%A1%9C%20%EC%A0%84%EB%8B%AC%ED%95%9C%20%EC%8B%9C%EA%B0%84%ED%91%9C%EC%99%80%20%EB%8C%80%EC%83%81%20%EB%AA%A9%EB%A1%9D%EC%9D%84%20%EB%AC%B6%EC%9D%80%20%EB%A1%9C%EA%B7%B8%EB%8B%A4.%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2254%22%20y%3D%22166%22%20width%3D%221172%22%20height%3D%2268%22%20rx%3D%2214%22%20fill%3D%22rgba(245%2C158%2C11%2C0.12)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2278%22%20y%3D%22200%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%23cbd5e1%22%3E1%EC%B0%A8%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22286%22%20y%3D%22200%22%20font-size%3D%2218%22%20font-weight%3D%22800%22%20fill%3D%22%23fbbf24%22%3E%EC%9B%90%EB%B3%B8%20%EC%9A%94%EC%B2%AD%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22444%22%20y%3D%22200%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%EC%9B%90%EB%B3%B8%20%EA%B2%8C%EC%8B%9C%EB%AC%BC%EC%9D%80%20%EC%9D%B4%EB%AF%B8%20%EB%B9%84%ED%99%9C%EC%84%B1%ED%99%94%EB%90%9C%20%EA%B3%84%EC%A0%95%EC%97%90%EC%84%9C%20%EC%82%AD%EC%A0%9C%EB%90%90%EA%B3%A0%2C%20%EC%97%AC%EB%9F%AC%20%EB%AA%85%EC%9D%B4%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221160%22%20y%3D%22200%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%2394a3b8%22%20text-anchor%3D%22end%22%3E%EA%B2%80%ED%86%A0%20%ED%95%84%EC%9A%94%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2254%22%20y%3D%22254%22%20width%3D%221172%22%20height%3D%2268%22%20rx%3D%2214%22%20fill%3D%22rgba(255%2C255%2C255%2C0.03)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2278%22%20y%3D%22288%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%23cbd5e1%22%3E2%EC%B0%A8%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22286%22%20y%3D%22288%22%20font-size%3D%2218%22%20font-weight%3D%22800%22%20fill%3D%22%2386efac%22%3E%EB%A9%94%ED%83%80%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22444%22%20y%3D%22288%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%EC%BA%A1%EC%B2%98%20%EC%A0%80%EC%9E%A5%3A%20%EB%8F%99%EC%B0%BD%ED%9A%8C%20%EB%8B%A4%EC%9D%8C%20%EB%82%A0%20%EC%83%88%EB%B2%BD.%20%EC%83%81%EB%8B%A8%20%EA%B3%84%EC%A0%95%20%EC%83%9D%EC%84%B1%EC%9D%BC%EA%B3%BC%20%ED%95%98%EB%8B%A8%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221160%22%20y%3D%22288%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%2394a3b8%22%20text-anchor%3D%22end%22%3E%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2254%22%20y%3D%22342%22%20width%3D%221172%22%20height%3D%2268%22%20rx%3D%2214%22%20fill%3D%22rgba(255%2C255%2C255%2C0.03)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2278%22%20y%3D%22376%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%23cbd5e1%22%3E3%EC%B0%A8%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22286%22%20y%3D%22376%22%20font-size%3D%2218%22%20font-weight%3D%22800%22%20fill%3D%22%2386efac%22%3E%EB%A7%A5%EB%9D%BD%20%EB%B3%B5%EC%9B%90%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22444%22%20y%3D%22376%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%EB%B0%A9%EB%AA%85%EB%A1%9D%EC%9D%80%20%ED%95%B4%EC%83%81%EB%8F%84%20%EB%82%AE%EA%B3%A0%202000%EB%85%84%EB%8C%80%20%EC%8A%A4%ED%82%A8%2C%20%EB%AC%B8%EC%9E%90%20%EB%A7%90%ED%92%8D%EC%84%A0%EC%9D%80%20%ED%95%B4%EC%83%81%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221160%22%20y%3D%22376%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%2394a3b8%22%20text-anchor%3D%22end%22%3E%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2254%22%20y%3D%22430%22%20width%3D%221172%22%20height%3D%2268%22%20rx%3D%2214%22%20fill%3D%22rgba(255%2C255%2C255%2C0.03)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2278%22%20y%3D%22464%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%23cbd5e1%22%3E4%EC%B0%A8%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22286%22%20y%3D%22464%22%20font-size%3D%2218%22%20font-weight%3D%22800%22%20fill%3D%22%2386efac%22%3Everify%20sour%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22444%22%20y%3D%22464%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%EC%B0%B8%EC%84%9D%EC%9E%90%205%EB%AA%85%20%EC%9D%B4%EC%83%81%20%EA%B8%B0%EA%B8%B0%EC%97%90%EC%84%9C%20%EB%8F%99%EC%9D%BC%20%EC%BA%A1%EC%B2%98%20%ED%99%95%EC%9D%B8.%20%EA%B2%8C%EC%8B%9C%EB%AC%BC%20%EC%A1%B4%EC%9E%AC%EB%8A%94%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221160%22%20y%3D%22464%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%2394a3b8%22%20text-anchor%3D%22end%22%3E%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2254%22%20y%3D%22518%22%20width%3D%221172%22%20height%3D%2268%22%20rx%3D%2214%22%20fill%3D%22rgba(245%2C158%2C11%2C0.12)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2278%22%20y%3D%22552%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%23cbd5e1%22%3E5%EC%B0%A8%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22286%22%20y%3D%22552%22%20font-size%3D%2218%22%20font-weight%3D%22800%22%20fill%3D%22%23fbbf24%22%3E%ED%8E%B8%EC%A7%91%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22444%22%20y%3D%22552%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%EB%B0%B0%EA%B2%BD%20%EB%A0%88%EC%9D%B4%EC%96%B4%20%ED%95%B4%EC%83%81%EB%8F%84%20%EB%B6%88%EC%9D%BC%EC%B9%98%EC%99%80%20%EC%9E%AC%EC%95%95%EC%B6%95%20%ED%9D%94%EC%A0%81%20%EA%B4%80%EC%B0%B0.%20%EB%91%90%20%EC%9D%B4%EB%AF%B8%EC%A7%80%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221160%22%20y%3D%22552%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%2394a3b8%22%20text-anchor%3D%22end%22%3E%EA%B2%80%ED%86%A0%20%ED%95%84%EC%9A%94%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2254%22%20y%3D%22606%22%20width%3D%221172%22%20height%3D%2268%22%20rx%3D%2214%22%20fill%3D%22rgba(255%2C255%2C255%2C0.03)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2278%22%20y%3D%22640%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%23cbd5e1%22%3E6%EC%B0%A8%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22286%22%20y%3D%22640%22%20font-size%3D%2218%22%20font-weight%3D%22800%22%20fill%3D%22%2386efac%22%3Equestion%20ac%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22444%22%20y%3D%22640%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%EC%84%B8%EC%95%84%20%EB%AA%85%EC%98%88%EB%A5%BC%20%ED%9B%BC%EC%86%90%ED%95%98%EB%8A%94%20SNS%20%EC%BA%A1%EC%B2%98%EA%B0%80%20%EC%99%B8%EB%B6%80%20%EC%B1%84%EB%84%90%EB%A1%9C%20%EC%9C%A0%ED%86%B5%EB%90%90%EA%B3%A0%20%EC%9E%AC%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221160%22%20y%3D%22640%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%2394a3b8%22%20text-anchor%3D%22end%22%3E%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%3C%2Fsvg%3E%0A%20%20",
+          "posterUrl": "data:image/svg+xml;charset=UTF-8,%0A%20%20%20%20%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%221280%22%20height%3D%22900%22%20viewBox%3D%220%200%201280%20900%22%3E%0A%20%20%20%20%20%20%3Crect%20width%3D%221280%22%20height%3D%22900%22%20rx%3D%2224%22%20fill%3D%22%230f172a%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2254%22%20y%3D%2274%22%20font-size%3D%2216%22%20font-weight%3D%22800%22%20fill%3D%22%2322c55e%22%3ELOG%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2254%22%20y%3D%22120%22%20font-size%3D%2234%22%20font-weight%3D%22800%22%20fill%3D%22%23f8fafc%22%3E%EC%82%AC%EC%9A%B0%20%EC%B1%84%EB%84%90%20%EC%A0%84%EB%8B%AC%20%EB%A1%9C%EA%B7%B8%203%EC%A2%85%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2254%22%20y%3D%22158%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%2394a3b8%22%3E%EC%9E%AC%EC%9A%B0%EA%B0%80%20%EC%BA%A1%EC%B2%98%EB%A5%BC%20%EA%B0%81%20%EC%B1%84%EB%84%90%EB%A1%9C%20%EC%A0%84%EB%8B%AC%ED%95%9C%20%EC%8B%9C%EA%B0%84%ED%91%9C%EC%99%80%20%EB%8C%80%EC%83%81%20%EB%AA%A9%EB%A1%9D%EC%9D%84%20%EB%AC%B6%EC%9D%80%20%EB%A1%9C%EA%B7%B8%EB%8B%A4.%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2254%22%20y%3D%22166%22%20width%3D%221172%22%20height%3D%2268%22%20rx%3D%2214%22%20fill%3D%22rgba(245%2C158%2C11%2C0.12)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2278%22%20y%3D%22200%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%23cbd5e1%22%3E1%EC%B0%A8%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22286%22%20y%3D%22200%22%20font-size%3D%2218%22%20font-weight%3D%22800%22%20fill%3D%22%23fbbf24%22%3E%EC%9B%90%EB%B3%B8%20%EC%9A%94%EC%B2%AD%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22444%22%20y%3D%22200%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%EC%9B%90%EB%B3%B8%20%EA%B2%8C%EC%8B%9C%EB%AC%BC%EC%9D%80%20%EC%9D%B4%EB%AF%B8%20%EB%B9%84%ED%99%9C%EC%84%B1%ED%99%94%EB%90%9C%20%EA%B3%84%EC%A0%95%EC%97%90%EC%84%9C%20%EC%82%AD%EC%A0%9C%EB%90%90%EA%B3%A0%2C%20%EC%97%AC%EB%9F%AC%20%EB%AA%85%EC%9D%B4%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221160%22%20y%3D%22200%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%2394a3b8%22%20text-anchor%3D%22end%22%3E%EA%B2%80%ED%86%A0%20%ED%95%84%EC%9A%94%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2254%22%20y%3D%22254%22%20width%3D%221172%22%20height%3D%2268%22%20rx%3D%2214%22%20fill%3D%22rgba(255%2C255%2C255%2C0.03)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2278%22%20y%3D%22288%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%23cbd5e1%22%3E2%EC%B0%A8%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22286%22%20y%3D%22288%22%20font-size%3D%2218%22%20font-weight%3D%22800%22%20fill%3D%22%2386efac%22%3E%EB%A9%94%ED%83%80%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22444%22%20y%3D%22288%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%EC%BA%A1%EC%B2%98%20%EC%A0%80%EC%9E%A5%3A%20%EB%8F%99%EC%B0%BD%ED%9A%8C%20%EB%8B%A4%EC%9D%8C%20%EB%82%A0%20%EC%83%88%EB%B2%BD.%20%EC%83%81%EB%8B%A8%20%EA%B3%84%EC%A0%95%20%EC%83%9D%EC%84%B1%EC%9D%BC%EA%B3%BC%20%ED%95%98%EB%8B%A8%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221160%22%20y%3D%22288%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%2394a3b8%22%20text-anchor%3D%22end%22%3E%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2254%22%20y%3D%22342%22%20width%3D%221172%22%20height%3D%2268%22%20rx%3D%2214%22%20fill%3D%22rgba(255%2C255%2C255%2C0.03)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2278%22%20y%3D%22376%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%23cbd5e1%22%3E3%EC%B0%A8%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22286%22%20y%3D%22376%22%20font-size%3D%2218%22%20font-weight%3D%22800%22%20fill%3D%22%2386efac%22%3E%EB%A7%A5%EB%9D%BD%20%EB%B3%B5%EC%9B%90%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22444%22%20y%3D%22376%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%EB%B0%A9%EB%AA%85%EB%A1%9D%EC%9D%80%20%ED%95%B4%EC%83%81%EB%8F%84%20%EB%82%AE%EA%B3%A0%202000%EB%85%84%EB%8C%80%20%EC%8A%A4%ED%82%A8%2C%20%EB%AC%B8%EC%9E%90%20%EB%A7%90%ED%92%8D%EC%84%A0%EC%9D%80%20%ED%95%B4%EC%83%81%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221160%22%20y%3D%22376%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%2394a3b8%22%20text-anchor%3D%22end%22%3E%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2254%22%20y%3D%22430%22%20width%3D%221172%22%20height%3D%2268%22%20rx%3D%2214%22%20fill%3D%22rgba(255%2C255%2C255%2C0.03)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2278%22%20y%3D%22464%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%23cbd5e1%22%3E4%EC%B0%A8%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22286%22%20y%3D%22464%22%20font-size%3D%2218%22%20font-weight%3D%22800%22%20fill%3D%22%2386efac%22%3Everify%20sour%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22444%22%20y%3D%22464%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%EC%B0%B8%EC%84%9D%EC%9E%90%205%EB%AA%85%20%EC%9D%B4%EC%83%81%20%EA%B8%B0%EA%B8%B0%EC%97%90%EC%84%9C%20%EB%8F%99%EC%9D%BC%20%EC%BA%A1%EC%B2%98%20%ED%99%95%EC%9D%B8.%20%EA%B2%8C%EC%8B%9C%EB%AC%BC%20%EC%A1%B4%EC%9E%AC%EB%8A%94%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221160%22%20y%3D%22464%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%2394a3b8%22%20text-anchor%3D%22end%22%3E%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2254%22%20y%3D%22518%22%20width%3D%221172%22%20height%3D%2268%22%20rx%3D%2214%22%20fill%3D%22rgba(245%2C158%2C11%2C0.12)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2278%22%20y%3D%22552%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%23cbd5e1%22%3E5%EC%B0%A8%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22286%22%20y%3D%22552%22%20font-size%3D%2218%22%20font-weight%3D%22800%22%20fill%3D%22%23fbbf24%22%3E%ED%8E%B8%EC%A7%91%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22444%22%20y%3D%22552%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%EB%B0%B0%EA%B2%BD%20%EB%A0%88%EC%9D%B4%EC%96%B4%20%ED%95%B4%EC%83%81%EB%8F%84%20%EB%B6%88%EC%9D%BC%EC%B9%98%EC%99%80%20%EC%9E%AC%EC%95%95%EC%B6%95%20%ED%9D%94%EC%A0%81%20%EA%B4%80%EC%B0%B0.%20%EB%91%90%20%EC%9D%B4%EB%AF%B8%EC%A7%80%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221160%22%20y%3D%22552%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%2394a3b8%22%20text-anchor%3D%22end%22%3E%EA%B2%80%ED%86%A0%20%ED%95%84%EC%9A%94%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2254%22%20y%3D%22606%22%20width%3D%221172%22%20height%3D%2268%22%20rx%3D%2214%22%20fill%3D%22rgba(255%2C255%2C255%2C0.03)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2278%22%20y%3D%22640%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%23cbd5e1%22%3E6%EC%B0%A8%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22286%22%20y%3D%22640%22%20font-size%3D%2218%22%20font-weight%3D%22800%22%20fill%3D%22%2386efac%22%3Equestion%20ac%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22444%22%20y%3D%22640%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%EC%84%B8%EC%95%84%20%EB%AA%85%EC%98%88%EB%A5%BC%20%ED%9B%BC%EC%86%90%ED%95%98%EB%8A%94%20SNS%20%EC%BA%A1%EC%B2%98%EA%B0%80%20%EC%99%B8%EB%B6%80%20%EC%B1%84%EB%84%90%EB%A1%9C%20%EC%9C%A0%ED%86%B5%EB%90%90%EA%B3%A0%20%EC%9E%AC%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221160%22%20y%3D%22640%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%2394a3b8%22%20text-anchor%3D%22end%22%3E%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%3C%2Fsvg%3E%0A%20%20",
+          "width": 1280,
+          "height": 900,
+          "alt": "사우 채널 전달 로그 3종 log evidence",
+          "caption": "사우 채널 전달 로그 3종 log preview"
+        }
+      },
       "investigationStages": [
         {
           "stage": 0,
           "revealKey": "request_original",
           "question": {
-            "text": "이 게시물 캡처 묶음을 제출한 이유를 설명하십시오.",
-            "attackVector": "context"
+            "text": "재판관님, 사우 채널 전달 로그 3종의 원본과 취득 경위를 먼저 확인해 주시겠습니까?",
+            "attackVector": "authenticity"
           }
         },
         {
           "stage": 1,
-          "revealKey": "check_metadata",
+          "revealKey": "restore_context",
           "question": {
-            "text": "계정 정보와 댓글 구간이 잘린 채 저장된 이유를 설명하십시오.",
-            "attackVector": "authenticity"
+            "text": "재판관님, 사우 채널 전달 로그 3종이 d-1와 어떻게 이어지는지 빠진 맥락까지 설명해 주시겠습니까?",
+            "attackVector": "context"
           }
         },
         {
           "stage": 2,
-          "revealKey": "check_edits",
+          "revealKey": "check_motive",
           "question": {
-            "text": "서로 다른 해상도 자료가 한 이미지에 묶인 이유를 설명하십시오.",
-            "attackVector": "authenticity"
+            "text": "재판관님, 사우 채널 전달 로그 3종이 드러내는 동기와 계산된 선택을 구분해 주십시오.",
+            "attackVector": "motive"
           }
         }
-      ]
+      ],
+      "partyContext": {
+        "a": {
+          "questionAngle": "A측 관점에서 이 자료가 가리키는 책임과 경위를 설명해 주십시오.",
+          "implication": "재우가 캡처를 각 채널로 전달한 시간표와 대상 목록을 묶은 로그다."
+        },
+        "b": {
+          "questionAngle": "B측 관점에서 이 자료가 가리키는 책임과 경위를 설명해 주십시오.",
+          "implication": "재우가 캡처를 각 채널로 전달한 시간표와 대상 목록을 묶은 로그다."
+        }
+      }
     },
     {
       "id": "e-4",
-      "name": "플랫폼 포렌식 보고서와 이미지 레이어 해시 대조표",
-      "description": "포렌식 보고서와 레이어 해시 대조표. 배경은 2008년 스킨, 말풍선은 2024년 템플릿. 합성 지점이 명확하다. 합성자 특정은 e-5 교차 필요.",
-      "type": "institutional_note",
+      "name": "세아 백업 로드 흔적",
+      "description": "세아 백업 드라이브와 복원앱 사용 흔적이 남은 로그다.",
+      "type": "log",
       "reliability": "hard",
       "completeness": "original",
       "provenance": "institutional",
       "legitimacy": "lawful",
       "proves": [
+        "d-2",
         "d-4"
       ],
       "isTrap": false,
@@ -503,41 +714,105 @@
         "question_acquisition": "세아 측의 플랫폼 신고 접수 후, 정식 조사 절차를 거쳐 포렌식 보고서가 발급됐다. 적법한 절차로 확보된 자료다."
       },
       "subjectParty": "b",
-      "surfaceName": "분석 보고서와 대조표",
-      "surfaceDescription": "이미지 차이를 기술적으로 비교한 분석 보고서와 대조표다. 원본성을 검토한 흔적이 담겨 있다.",
-      "requiredLieState": "S3",
+      "surfaceName": "세아 백업 로드 흔적",
+      "surfaceDescription": "세아 백업 드라이브와 복원앱 사용 흔적이 남은 로그다.",
+      "requiredLieState": "S1",
+      "meta": {
+        "name": "세아 백업 로드 흔적",
+        "type": "log",
+        "viewerType": "log",
+        "trustLevel": "mid",
+        "trustLabel": "보통",
+        "source": "org",
+        "sourceLabel": "기관",
+        "legality": "ok",
+        "legalLabel": "적법",
+        "stage": 4,
+        "stageLabel": "핵심 공개",
+        "sourceNote": "institutional / original",
+        "redactions": []
+      },
+      "viewerData": {
+        "meta": {
+          "name": "세아 백업 로드 흔적",
+          "type": "log",
+          "viewerType": "log",
+          "trustLevel": "mid",
+          "trustLabel": "보통",
+          "source": "org",
+          "sourceLabel": "기관",
+          "legality": "ok",
+          "legalLabel": "적법",
+          "stage": 4,
+          "stageLabel": "핵심 공개",
+          "sourceNote": "institutional / original",
+          "redactions": []
+        },
+        "log": {
+          "rows": [
+            {
+              "date": "기록",
+              "type": "in",
+              "typeLabel": "기록",
+              "target": "세아 백업 로드 흔적",
+              "duration": "-",
+              "suspicious": false
+            }
+          ],
+          "note": "세아 백업 드라이브와 복원앱 사용 흔적이 남은 로그다."
+        },
+        "media": {
+          "imageUrl": "data:image/svg+xml;charset=UTF-8,%0A%20%20%20%20%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%221280%22%20height%3D%22900%22%20viewBox%3D%220%200%201280%20900%22%3E%0A%20%20%20%20%20%20%3Crect%20width%3D%221280%22%20height%3D%22900%22%20rx%3D%2224%22%20fill%3D%22%230f172a%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2254%22%20y%3D%2274%22%20font-size%3D%2216%22%20font-weight%3D%22800%22%20fill%3D%22%2322c55e%22%3ELOG%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2254%22%20y%3D%22120%22%20font-size%3D%2234%22%20font-weight%3D%22800%22%20fill%3D%22%23f8fafc%22%3E%EC%84%B8%EC%95%84%20%EB%B0%B1%EC%97%85%20%EB%A1%9C%EB%93%9C%20%ED%9D%94%EC%A0%81%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2254%22%20y%3D%22158%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%2394a3b8%22%3E%EC%84%B8%EC%95%84%20%EB%B0%B1%EC%97%85%20%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B8%8C%EC%99%80%20%EB%B3%B5%EC%9B%90%EC%95%B1%20%EC%82%AC%EC%9A%A9%20%ED%9D%94%EC%A0%81%EC%9D%B4%20%EB%82%A8%EC%9D%80%20%EB%A1%9C%EA%B7%B8%EB%8B%A4.%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2254%22%20y%3D%22166%22%20width%3D%221172%22%20height%3D%2268%22%20rx%3D%2214%22%20fill%3D%22rgba(255%2C255%2C255%2C0.03)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2278%22%20y%3D%22200%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%23cbd5e1%22%3E1%EC%B0%A8%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22286%22%20y%3D%22200%22%20font-size%3D%2218%22%20font-weight%3D%22800%22%20fill%3D%22%2386efac%22%3E%EC%9B%90%EB%B3%B8%20%EC%9A%94%EC%B2%AD%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22444%22%20y%3D%22200%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%ED%94%8C%EB%9E%AB%ED%8F%BC%20%EB%8C%80%EC%9D%91%ED%8C%80%20%ED%8F%AC%EB%A0%8C%EC%8B%9D%20%EB%B3%B4%EA%B3%A0%EC%84%9C%2C%20%EC%9D%B4%EB%AF%B8%EC%A7%80%20%EB%A0%88%EC%9D%B4%EC%96%B4%EB%B3%84%20%ED%95%B4%EC%8B%9C%EA%B0%92%20%EB%8C%80%EC%A1%B0%ED%91%9C%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221160%22%20y%3D%22200%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%2394a3b8%22%20text-anchor%3D%22end%22%3E%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2254%22%20y%3D%22254%22%20width%3D%221172%22%20height%3D%2268%22%20rx%3D%2214%22%20fill%3D%22rgba(255%2C255%2C255%2C0.03)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2278%22%20y%3D%22288%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%23cbd5e1%22%3E2%EC%B0%A8%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22286%22%20y%3D%22288%22%20font-size%3D%2218%22%20font-weight%3D%22800%22%20fill%3D%22%2386efac%22%3E%EB%A9%94%ED%83%80%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22444%22%20y%3D%22288%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%EB%B0%A9%EB%AA%85%EB%A1%9D%3A%202008%EB%85%84%20%EC%8A%A4%ED%82%A8%20%ED%95%B4%EC%8B%9C%2094%25%20%EC%9D%BC%EC%B9%98.%20%EB%A7%90%ED%92%8D%EC%84%A0%3A%20202%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221160%22%20y%3D%22288%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%2394a3b8%22%20text-anchor%3D%22end%22%3E%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2254%22%20y%3D%22342%22%20width%3D%221172%22%20height%3D%2268%22%20rx%3D%2214%22%20fill%3D%22rgba(255%2C255%2C255%2C0.03)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2278%22%20y%3D%22376%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%23cbd5e1%22%3E3%EC%B0%A8%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22286%22%20y%3D%22376%22%20font-size%3D%2218%22%20font-weight%3D%22800%22%20fill%3D%22%2386efac%22%3E%EB%A7%A5%EB%9D%BD%20%EB%B3%B5%EC%9B%90%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22444%22%20y%3D%22376%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E2006%EB%85%84%20%EC%9B%90%EB%B3%B8%EC%B2%98%EB%9F%BC%20%EB%B3%B4%EC%98%80%EC%A7%80%EB%A7%8C%20%EC%8B%A4%EC%A0%9C%EB%A1%9C%EB%8A%94%202008%EB%85%84%20%EC%8A%A4%ED%82%A8%EA%B3%BC%2020%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221160%22%20y%3D%22376%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%2394a3b8%22%20text-anchor%3D%22end%22%3E%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2254%22%20y%3D%22430%22%20width%3D%221172%22%20height%3D%2268%22%20rx%3D%2214%22%20fill%3D%22rgba(255%2C255%2C255%2C0.03)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2278%22%20y%3D%22464%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%23cbd5e1%22%3E4%EC%B0%A8%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22286%22%20y%3D%22464%22%20font-size%3D%2218%22%20font-weight%3D%22800%22%20fill%3D%22%2386efac%22%3Everify%20sour%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22444%22%20y%3D%22464%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%ED%94%8C%EB%9E%AB%ED%8F%BC%20%EB%8C%80%EC%9D%91%ED%8C%80%20%EB%82%B4%EB%B6%80%20%EA%B2%80%EC%A6%9D%20%EA%B2%B0%EA%B3%BC%EC%99%80%20%EC%99%B8%EB%B6%80%20%EC%9D%98%EB%A2%B0%20%EC%9D%B4%EB%AF%B8%EC%A7%80%20%ED%8F%AC%EB%A0%8C%EC%8B%9D%20%EC%9E%90%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221160%22%20y%3D%22464%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%2394a3b8%22%20text-anchor%3D%22end%22%3E%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2254%22%20y%3D%22518%22%20width%3D%221172%22%20height%3D%2268%22%20rx%3D%2214%22%20fill%3D%22rgba(255%2C255%2C255%2C0.03)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2278%22%20y%3D%22552%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%23cbd5e1%22%3E5%EC%B0%A8%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22286%22%20y%3D%22552%22%20font-size%3D%2218%22%20font-weight%3D%22800%22%20fill%3D%22%2386efac%22%3E%ED%8E%B8%EC%A7%91%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22444%22%20y%3D%22552%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%EB%B0%A9%EB%AA%85%EB%A1%9D%EA%B3%BC%20%EB%AC%B8%EC%9E%90%20%EC%9D%B4%EB%AF%B8%EC%A7%80%20%EC%82%AC%EC%9D%B4%20%ED%95%A9%EC%84%B1%20%EA%B2%BD%EA%B3%84%EC%84%A0%2C%20%EC%A0%80%EC%9E%A5%20%EC%9E%AC%EC%95%95%EC%B6%95%20%EC%8B%9C%20%EB%B0%9C%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221160%22%20y%3D%22552%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%2394a3b8%22%20text-anchor%3D%22end%22%3E%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2254%22%20y%3D%22606%22%20width%3D%221172%22%20height%3D%2268%22%20rx%3D%2214%22%20fill%3D%22rgba(255%2C255%2C255%2C0.03)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2278%22%20y%3D%22640%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%23cbd5e1%22%3E6%EC%B0%A8%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22286%22%20y%3D%22640%22%20font-size%3D%2218%22%20font-weight%3D%22800%22%20fill%3D%22%2386efac%22%3Equestion%20ac%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22444%22%20y%3D%22640%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%EC%84%B8%EC%95%84%20%EC%B8%A1%EC%9D%98%20%ED%94%8C%EB%9E%AB%ED%8F%BC%20%EC%8B%A0%EA%B3%A0%20%EC%A0%91%EC%88%98%20%ED%9B%84%2C%20%EC%A0%95%EC%8B%9D%20%EC%A1%B0%EC%82%AC%20%EC%A0%88%EC%B0%A8%EB%A5%BC%20%EA%B1%B0%EC%B3%90%20%ED%8F%AC%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221160%22%20y%3D%22640%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%2394a3b8%22%20text-anchor%3D%22end%22%3E%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%3C%2Fsvg%3E%0A%20%20",
+          "thumbnailUrl": "data:image/svg+xml;charset=UTF-8,%0A%20%20%20%20%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%221280%22%20height%3D%22900%22%20viewBox%3D%220%200%201280%20900%22%3E%0A%20%20%20%20%20%20%3Crect%20width%3D%221280%22%20height%3D%22900%22%20rx%3D%2224%22%20fill%3D%22%230f172a%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2254%22%20y%3D%2274%22%20font-size%3D%2216%22%20font-weight%3D%22800%22%20fill%3D%22%2322c55e%22%3ELOG%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2254%22%20y%3D%22120%22%20font-size%3D%2234%22%20font-weight%3D%22800%22%20fill%3D%22%23f8fafc%22%3E%EC%84%B8%EC%95%84%20%EB%B0%B1%EC%97%85%20%EB%A1%9C%EB%93%9C%20%ED%9D%94%EC%A0%81%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2254%22%20y%3D%22158%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%2394a3b8%22%3E%EC%84%B8%EC%95%84%20%EB%B0%B1%EC%97%85%20%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B8%8C%EC%99%80%20%EB%B3%B5%EC%9B%90%EC%95%B1%20%EC%82%AC%EC%9A%A9%20%ED%9D%94%EC%A0%81%EC%9D%B4%20%EB%82%A8%EC%9D%80%20%EB%A1%9C%EA%B7%B8%EB%8B%A4.%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2254%22%20y%3D%22166%22%20width%3D%221172%22%20height%3D%2268%22%20rx%3D%2214%22%20fill%3D%22rgba(255%2C255%2C255%2C0.03)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2278%22%20y%3D%22200%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%23cbd5e1%22%3E1%EC%B0%A8%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22286%22%20y%3D%22200%22%20font-size%3D%2218%22%20font-weight%3D%22800%22%20fill%3D%22%2386efac%22%3E%EC%9B%90%EB%B3%B8%20%EC%9A%94%EC%B2%AD%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22444%22%20y%3D%22200%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%ED%94%8C%EB%9E%AB%ED%8F%BC%20%EB%8C%80%EC%9D%91%ED%8C%80%20%ED%8F%AC%EB%A0%8C%EC%8B%9D%20%EB%B3%B4%EA%B3%A0%EC%84%9C%2C%20%EC%9D%B4%EB%AF%B8%EC%A7%80%20%EB%A0%88%EC%9D%B4%EC%96%B4%EB%B3%84%20%ED%95%B4%EC%8B%9C%EA%B0%92%20%EB%8C%80%EC%A1%B0%ED%91%9C%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221160%22%20y%3D%22200%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%2394a3b8%22%20text-anchor%3D%22end%22%3E%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2254%22%20y%3D%22254%22%20width%3D%221172%22%20height%3D%2268%22%20rx%3D%2214%22%20fill%3D%22rgba(255%2C255%2C255%2C0.03)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2278%22%20y%3D%22288%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%23cbd5e1%22%3E2%EC%B0%A8%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22286%22%20y%3D%22288%22%20font-size%3D%2218%22%20font-weight%3D%22800%22%20fill%3D%22%2386efac%22%3E%EB%A9%94%ED%83%80%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22444%22%20y%3D%22288%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%EB%B0%A9%EB%AA%85%EB%A1%9D%3A%202008%EB%85%84%20%EC%8A%A4%ED%82%A8%20%ED%95%B4%EC%8B%9C%2094%25%20%EC%9D%BC%EC%B9%98.%20%EB%A7%90%ED%92%8D%EC%84%A0%3A%20202%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221160%22%20y%3D%22288%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%2394a3b8%22%20text-anchor%3D%22end%22%3E%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2254%22%20y%3D%22342%22%20width%3D%221172%22%20height%3D%2268%22%20rx%3D%2214%22%20fill%3D%22rgba(255%2C255%2C255%2C0.03)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2278%22%20y%3D%22376%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%23cbd5e1%22%3E3%EC%B0%A8%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22286%22%20y%3D%22376%22%20font-size%3D%2218%22%20font-weight%3D%22800%22%20fill%3D%22%2386efac%22%3E%EB%A7%A5%EB%9D%BD%20%EB%B3%B5%EC%9B%90%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22444%22%20y%3D%22376%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E2006%EB%85%84%20%EC%9B%90%EB%B3%B8%EC%B2%98%EB%9F%BC%20%EB%B3%B4%EC%98%80%EC%A7%80%EB%A7%8C%20%EC%8B%A4%EC%A0%9C%EB%A1%9C%EB%8A%94%202008%EB%85%84%20%EC%8A%A4%ED%82%A8%EA%B3%BC%2020%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221160%22%20y%3D%22376%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%2394a3b8%22%20text-anchor%3D%22end%22%3E%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2254%22%20y%3D%22430%22%20width%3D%221172%22%20height%3D%2268%22%20rx%3D%2214%22%20fill%3D%22rgba(255%2C255%2C255%2C0.03)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2278%22%20y%3D%22464%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%23cbd5e1%22%3E4%EC%B0%A8%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22286%22%20y%3D%22464%22%20font-size%3D%2218%22%20font-weight%3D%22800%22%20fill%3D%22%2386efac%22%3Everify%20sour%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22444%22%20y%3D%22464%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%ED%94%8C%EB%9E%AB%ED%8F%BC%20%EB%8C%80%EC%9D%91%ED%8C%80%20%EB%82%B4%EB%B6%80%20%EA%B2%80%EC%A6%9D%20%EA%B2%B0%EA%B3%BC%EC%99%80%20%EC%99%B8%EB%B6%80%20%EC%9D%98%EB%A2%B0%20%EC%9D%B4%EB%AF%B8%EC%A7%80%20%ED%8F%AC%EB%A0%8C%EC%8B%9D%20%EC%9E%90%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221160%22%20y%3D%22464%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%2394a3b8%22%20text-anchor%3D%22end%22%3E%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2254%22%20y%3D%22518%22%20width%3D%221172%22%20height%3D%2268%22%20rx%3D%2214%22%20fill%3D%22rgba(255%2C255%2C255%2C0.03)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2278%22%20y%3D%22552%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%23cbd5e1%22%3E5%EC%B0%A8%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22286%22%20y%3D%22552%22%20font-size%3D%2218%22%20font-weight%3D%22800%22%20fill%3D%22%2386efac%22%3E%ED%8E%B8%EC%A7%91%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22444%22%20y%3D%22552%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%EB%B0%A9%EB%AA%85%EB%A1%9D%EA%B3%BC%20%EB%AC%B8%EC%9E%90%20%EC%9D%B4%EB%AF%B8%EC%A7%80%20%EC%82%AC%EC%9D%B4%20%ED%95%A9%EC%84%B1%20%EA%B2%BD%EA%B3%84%EC%84%A0%2C%20%EC%A0%80%EC%9E%A5%20%EC%9E%AC%EC%95%95%EC%B6%95%20%EC%8B%9C%20%EB%B0%9C%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221160%22%20y%3D%22552%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%2394a3b8%22%20text-anchor%3D%22end%22%3E%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2254%22%20y%3D%22606%22%20width%3D%221172%22%20height%3D%2268%22%20rx%3D%2214%22%20fill%3D%22rgba(255%2C255%2C255%2C0.03)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2278%22%20y%3D%22640%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%23cbd5e1%22%3E6%EC%B0%A8%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22286%22%20y%3D%22640%22%20font-size%3D%2218%22%20font-weight%3D%22800%22%20fill%3D%22%2386efac%22%3Equestion%20ac%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22444%22%20y%3D%22640%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%EC%84%B8%EC%95%84%20%EC%B8%A1%EC%9D%98%20%ED%94%8C%EB%9E%AB%ED%8F%BC%20%EC%8B%A0%EA%B3%A0%20%EC%A0%91%EC%88%98%20%ED%9B%84%2C%20%EC%A0%95%EC%8B%9D%20%EC%A1%B0%EC%82%AC%20%EC%A0%88%EC%B0%A8%EB%A5%BC%20%EA%B1%B0%EC%B3%90%20%ED%8F%AC%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221160%22%20y%3D%22640%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%2394a3b8%22%20text-anchor%3D%22end%22%3E%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%3C%2Fsvg%3E%0A%20%20",
+          "posterUrl": "data:image/svg+xml;charset=UTF-8,%0A%20%20%20%20%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%221280%22%20height%3D%22900%22%20viewBox%3D%220%200%201280%20900%22%3E%0A%20%20%20%20%20%20%3Crect%20width%3D%221280%22%20height%3D%22900%22%20rx%3D%2224%22%20fill%3D%22%230f172a%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2254%22%20y%3D%2274%22%20font-size%3D%2216%22%20font-weight%3D%22800%22%20fill%3D%22%2322c55e%22%3ELOG%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2254%22%20y%3D%22120%22%20font-size%3D%2234%22%20font-weight%3D%22800%22%20fill%3D%22%23f8fafc%22%3E%EC%84%B8%EC%95%84%20%EB%B0%B1%EC%97%85%20%EB%A1%9C%EB%93%9C%20%ED%9D%94%EC%A0%81%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2254%22%20y%3D%22158%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%2394a3b8%22%3E%EC%84%B8%EC%95%84%20%EB%B0%B1%EC%97%85%20%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B8%8C%EC%99%80%20%EB%B3%B5%EC%9B%90%EC%95%B1%20%EC%82%AC%EC%9A%A9%20%ED%9D%94%EC%A0%81%EC%9D%B4%20%EB%82%A8%EC%9D%80%20%EB%A1%9C%EA%B7%B8%EB%8B%A4.%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2254%22%20y%3D%22166%22%20width%3D%221172%22%20height%3D%2268%22%20rx%3D%2214%22%20fill%3D%22rgba(255%2C255%2C255%2C0.03)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2278%22%20y%3D%22200%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%23cbd5e1%22%3E1%EC%B0%A8%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22286%22%20y%3D%22200%22%20font-size%3D%2218%22%20font-weight%3D%22800%22%20fill%3D%22%2386efac%22%3E%EC%9B%90%EB%B3%B8%20%EC%9A%94%EC%B2%AD%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22444%22%20y%3D%22200%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%ED%94%8C%EB%9E%AB%ED%8F%BC%20%EB%8C%80%EC%9D%91%ED%8C%80%20%ED%8F%AC%EB%A0%8C%EC%8B%9D%20%EB%B3%B4%EA%B3%A0%EC%84%9C%2C%20%EC%9D%B4%EB%AF%B8%EC%A7%80%20%EB%A0%88%EC%9D%B4%EC%96%B4%EB%B3%84%20%ED%95%B4%EC%8B%9C%EA%B0%92%20%EB%8C%80%EC%A1%B0%ED%91%9C%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221160%22%20y%3D%22200%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%2394a3b8%22%20text-anchor%3D%22end%22%3E%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2254%22%20y%3D%22254%22%20width%3D%221172%22%20height%3D%2268%22%20rx%3D%2214%22%20fill%3D%22rgba(255%2C255%2C255%2C0.03)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2278%22%20y%3D%22288%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%23cbd5e1%22%3E2%EC%B0%A8%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22286%22%20y%3D%22288%22%20font-size%3D%2218%22%20font-weight%3D%22800%22%20fill%3D%22%2386efac%22%3E%EB%A9%94%ED%83%80%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22444%22%20y%3D%22288%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%EB%B0%A9%EB%AA%85%EB%A1%9D%3A%202008%EB%85%84%20%EC%8A%A4%ED%82%A8%20%ED%95%B4%EC%8B%9C%2094%25%20%EC%9D%BC%EC%B9%98.%20%EB%A7%90%ED%92%8D%EC%84%A0%3A%20202%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221160%22%20y%3D%22288%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%2394a3b8%22%20text-anchor%3D%22end%22%3E%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2254%22%20y%3D%22342%22%20width%3D%221172%22%20height%3D%2268%22%20rx%3D%2214%22%20fill%3D%22rgba(255%2C255%2C255%2C0.03)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2278%22%20y%3D%22376%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%23cbd5e1%22%3E3%EC%B0%A8%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22286%22%20y%3D%22376%22%20font-size%3D%2218%22%20font-weight%3D%22800%22%20fill%3D%22%2386efac%22%3E%EB%A7%A5%EB%9D%BD%20%EB%B3%B5%EC%9B%90%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22444%22%20y%3D%22376%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E2006%EB%85%84%20%EC%9B%90%EB%B3%B8%EC%B2%98%EB%9F%BC%20%EB%B3%B4%EC%98%80%EC%A7%80%EB%A7%8C%20%EC%8B%A4%EC%A0%9C%EB%A1%9C%EB%8A%94%202008%EB%85%84%20%EC%8A%A4%ED%82%A8%EA%B3%BC%2020%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221160%22%20y%3D%22376%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%2394a3b8%22%20text-anchor%3D%22end%22%3E%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2254%22%20y%3D%22430%22%20width%3D%221172%22%20height%3D%2268%22%20rx%3D%2214%22%20fill%3D%22rgba(255%2C255%2C255%2C0.03)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2278%22%20y%3D%22464%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%23cbd5e1%22%3E4%EC%B0%A8%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22286%22%20y%3D%22464%22%20font-size%3D%2218%22%20font-weight%3D%22800%22%20fill%3D%22%2386efac%22%3Everify%20sour%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22444%22%20y%3D%22464%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%ED%94%8C%EB%9E%AB%ED%8F%BC%20%EB%8C%80%EC%9D%91%ED%8C%80%20%EB%82%B4%EB%B6%80%20%EA%B2%80%EC%A6%9D%20%EA%B2%B0%EA%B3%BC%EC%99%80%20%EC%99%B8%EB%B6%80%20%EC%9D%98%EB%A2%B0%20%EC%9D%B4%EB%AF%B8%EC%A7%80%20%ED%8F%AC%EB%A0%8C%EC%8B%9D%20%EC%9E%90%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221160%22%20y%3D%22464%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%2394a3b8%22%20text-anchor%3D%22end%22%3E%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2254%22%20y%3D%22518%22%20width%3D%221172%22%20height%3D%2268%22%20rx%3D%2214%22%20fill%3D%22rgba(255%2C255%2C255%2C0.03)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2278%22%20y%3D%22552%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%23cbd5e1%22%3E5%EC%B0%A8%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22286%22%20y%3D%22552%22%20font-size%3D%2218%22%20font-weight%3D%22800%22%20fill%3D%22%2386efac%22%3E%ED%8E%B8%EC%A7%91%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22444%22%20y%3D%22552%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%EB%B0%A9%EB%AA%85%EB%A1%9D%EA%B3%BC%20%EB%AC%B8%EC%9E%90%20%EC%9D%B4%EB%AF%B8%EC%A7%80%20%EC%82%AC%EC%9D%B4%20%ED%95%A9%EC%84%B1%20%EA%B2%BD%EA%B3%84%EC%84%A0%2C%20%EC%A0%80%EC%9E%A5%20%EC%9E%AC%EC%95%95%EC%B6%95%20%EC%8B%9C%20%EB%B0%9C%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221160%22%20y%3D%22552%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%2394a3b8%22%20text-anchor%3D%22end%22%3E%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2254%22%20y%3D%22606%22%20width%3D%221172%22%20height%3D%2268%22%20rx%3D%2214%22%20fill%3D%22rgba(255%2C255%2C255%2C0.03)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2278%22%20y%3D%22640%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%23cbd5e1%22%3E6%EC%B0%A8%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22286%22%20y%3D%22640%22%20font-size%3D%2218%22%20font-weight%3D%22800%22%20fill%3D%22%2386efac%22%3Equestion%20ac%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22444%22%20y%3D%22640%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%EC%84%B8%EC%95%84%20%EC%B8%A1%EC%9D%98%20%ED%94%8C%EB%9E%AB%ED%8F%BC%20%EC%8B%A0%EA%B3%A0%20%EC%A0%91%EC%88%98%20%ED%9B%84%2C%20%EC%A0%95%EC%8B%9D%20%EC%A1%B0%EC%82%AC%20%EC%A0%88%EC%B0%A8%EB%A5%BC%20%EA%B1%B0%EC%B3%90%20%ED%8F%AC%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221160%22%20y%3D%22640%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%2394a3b8%22%20text-anchor%3D%22end%22%3E%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%3C%2Fsvg%3E%0A%20%20",
+          "width": 1280,
+          "height": 900,
+          "alt": "세아 백업 로드 흔적 log evidence",
+          "caption": "세아 백업 로드 흔적 log preview"
+        }
+      },
       "investigationStages": [
         {
           "stage": 0,
           "revealKey": "request_original",
           "question": {
-            "text": "이 포렌식 보고서와 대조표에 대해 설명하십시오.",
-            "attackVector": "context"
+            "text": "재판관님, 세아 백업 로드 흔적의 원본과 취득 경위를 먼저 확인해 주시겠습니까?",
+            "attackVector": "authenticity"
           }
         },
         {
           "stage": 1,
-          "revealKey": "check_metadata",
+          "revealKey": "restore_context",
           "question": {
-            "text": "서로 다른 시기 템플릿이 함께 검출된 이유를 설명하십시오.",
-            "attackVector": "authenticity"
+            "text": "재판관님, 세아 백업 로드 흔적이 d-2, d-4와 어떻게 이어지는지 빠진 맥락까지 설명해 주시겠습니까?",
+            "attackVector": "context"
           }
         },
         {
           "stage": 2,
-          "revealKey": "check_edits",
+          "revealKey": "check_responsibility",
           "question": {
-            "text": "레이어 경계와 재압축 흔적이 함께 나온 이유를 설명하십시오.",
-            "attackVector": "authenticity"
+            "text": "재판관님, 세아 백업 로드 흔적이 누구의 관리 책임을 더 무겁게 가리키는지 분리해 주십시오.",
+            "attackVector": "responsibility"
           }
         }
-      ]
+      ],
+      "partyContext": {
+        "a": {
+          "questionAngle": "A측 관점에서 이 자료가 가리키는 책임과 경위를 설명해 주십시오.",
+          "implication": "세아 백업 드라이브와 복원앱 사용 흔적이 남은 로그다."
+        },
+        "b": {
+          "questionAngle": "B측 관점에서 이 자료가 가리키는 책임과 경위를 설명해 주십시오.",
+          "implication": "세아 백업 드라이브와 복원앱 사용 흔적이 남은 로그다."
+        }
+      }
     },
     {
       "id": "e-5",
-      "name": "버너계정 복구 메일과 동창회장 와이파이 접속기록",
-      "description": "익명 계정 복구 메일이 박하린 예비 주소와 연결, 게시 직전 와이파이에 박하린 기기 접속. 12시간 내 계정 생성~게시가 집중. 단독 행동 여부는 미확정.",
-      "type": "platform_log",
+      "name": "이미지 레이어 보고서",
+      "description": "문자 이미지와 방명록 캡처의 합성 흔적을 분석한 이미지 레이어 보고서다.",
+      "type": "log",
       "reliability": "hard",
       "completeness": "original",
       "provenance": "mixed",
@@ -547,7 +822,9 @@
         "d-4"
       ],
       "isTrap": false,
-      "requires": [],
+      "requires": [
+        "e-1"
+      ],
       "investigationResults": {
         "request_original": "플랫폼 익명 계정의 복구 이메일 연결 기록, 동창회장 와이파이 접속 로그(MAC 주소·시각), 20주년 동창회 준비위원 명단이 함께 제출됐다.",
         "check_metadata": "계정 생성~게시 예약: 동창회 후 12시간 내 집중. 같은 시간대 박하린 기기 MAC 접속 확인. 사전 계획을 시사하는 짧은 창.",
@@ -557,40 +834,105 @@
         "question_acquisition": "행사장 입장 시 네트워크 이용 동의 고지가 이뤄졌고, 플랫폼 신고 절차에 따라 최소 필요 범위 내에서 계정·접속 기록이 제공됐다."
       },
       "subjectParty": "b",
-      "surfaceName": "계정 관련 메일과 접속 기록",
-      "surfaceDescription": "계정 관련 메일과 행사장 접속 기록이다. 생성과 접속 시점을 대조할 수 있다.",
+      "surfaceName": "이미지 레이어 보고서",
+      "surfaceDescription": "문자 이미지와 방명록 캡처의 합성 흔적을 분석한 이미지 레이어 보고서다.",
+      "requiredLieState": "S2",
+      "meta": {
+        "name": "이미지 레이어 보고서",
+        "type": "log",
+        "viewerType": "log",
+        "trustLevel": "mid",
+        "trustLabel": "보통",
+        "source": "b",
+        "sourceLabel": "B측",
+        "legality": "ok",
+        "legalLabel": "적법",
+        "stage": 5,
+        "stageLabel": "핵심 공개",
+        "sourceNote": "mixed / original",
+        "redactions": []
+      },
+      "viewerData": {
+        "meta": {
+          "name": "이미지 레이어 보고서",
+          "type": "log",
+          "viewerType": "log",
+          "trustLevel": "mid",
+          "trustLabel": "보통",
+          "source": "b",
+          "sourceLabel": "B측",
+          "legality": "ok",
+          "legalLabel": "적법",
+          "stage": 5,
+          "stageLabel": "핵심 공개",
+          "sourceNote": "mixed / original",
+          "redactions": []
+        },
+        "log": {
+          "rows": [
+            {
+              "date": "기록",
+              "type": "in",
+              "typeLabel": "기록",
+              "target": "이미지 레이어 보고서",
+              "duration": "-",
+              "suspicious": false
+            }
+          ],
+          "note": "문자 이미지와 방명록 캡처의 합성 흔적을 분석한 이미지 레이어 보고서다."
+        },
+        "media": {
+          "imageUrl": "data:image/svg+xml;charset=UTF-8,%0A%20%20%20%20%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%221280%22%20height%3D%22900%22%20viewBox%3D%220%200%201280%20900%22%3E%0A%20%20%20%20%20%20%3Crect%20width%3D%221280%22%20height%3D%22900%22%20rx%3D%2224%22%20fill%3D%22%230f172a%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2254%22%20y%3D%2274%22%20font-size%3D%2216%22%20font-weight%3D%22800%22%20fill%3D%22%2322c55e%22%3ELOG%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2254%22%20y%3D%22120%22%20font-size%3D%2234%22%20font-weight%3D%22800%22%20fill%3D%22%23f8fafc%22%3E%EC%9D%B4%EB%AF%B8%EC%A7%80%20%EB%A0%88%EC%9D%B4%EC%96%B4%20%EB%B3%B4%EA%B3%A0%EC%84%9C%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2254%22%20y%3D%22158%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%2394a3b8%22%3E%EB%AC%B8%EC%9E%90%20%EC%9D%B4%EB%AF%B8%EC%A7%80%EC%99%80%20%EB%B0%A9%EB%AA%85%EB%A1%9D%20%EC%BA%A1%EC%B2%98%EC%9D%98%20%ED%95%A9%EC%84%B1%20%ED%9D%94%EC%A0%81%EC%9D%84%20%EB%B6%84%EC%84%9D%ED%95%9C%20%EC%9D%B4%EB%AF%B8%EC%A7%80%20%EB%A0%88%EC%9D%B4%EC%96%B4%20%EB%B3%B4%EA%B3%A0%EC%84%9C%EB%8B%A4.%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2254%22%20y%3D%22166%22%20width%3D%221172%22%20height%3D%2268%22%20rx%3D%2214%22%20fill%3D%22rgba(245%2C158%2C11%2C0.12)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2278%22%20y%3D%22200%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%23cbd5e1%22%3E1%EC%B0%A8%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22286%22%20y%3D%22200%22%20font-size%3D%2218%22%20font-weight%3D%22800%22%20fill%3D%22%23fbbf24%22%3E%EC%9B%90%EB%B3%B8%20%EC%9A%94%EC%B2%AD%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22444%22%20y%3D%22200%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%ED%94%8C%EB%9E%AB%ED%8F%BC%20%EC%9D%B5%EB%AA%85%20%EA%B3%84%EC%A0%95%EC%9D%98%20%EB%B3%B5%EA%B5%AC%20%EC%9D%B4%EB%A9%94%EC%9D%BC%20%EC%97%B0%EA%B2%B0%20%EA%B8%B0%EB%A1%9D%2C%20%EB%8F%99%EC%B0%BD%ED%9A%8C%EC%9E%A5%20%EC%99%80%EC%9D%B4%ED%8C%8C%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221160%22%20y%3D%22200%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%2394a3b8%22%20text-anchor%3D%22end%22%3E%EA%B2%80%ED%86%A0%20%ED%95%84%EC%9A%94%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2254%22%20y%3D%22254%22%20width%3D%221172%22%20height%3D%2268%22%20rx%3D%2214%22%20fill%3D%22rgba(255%2C255%2C255%2C0.03)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2278%22%20y%3D%22288%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%23cbd5e1%22%3E2%EC%B0%A8%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22286%22%20y%3D%22288%22%20font-size%3D%2218%22%20font-weight%3D%22800%22%20fill%3D%22%2386efac%22%3E%EB%A9%94%ED%83%80%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22444%22%20y%3D%22288%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%EA%B3%84%EC%A0%95%20%EC%83%9D%EC%84%B1~%EA%B2%8C%EC%8B%9C%20%EC%98%88%EC%95%BD%3A%20%EB%8F%99%EC%B0%BD%ED%9A%8C%20%ED%9B%84%2012%EC%8B%9C%EA%B0%84%20%EB%82%B4%20%EC%A7%91%EC%A4%91.%20%EA%B0%99%EC%9D%80%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221160%22%20y%3D%22288%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%2394a3b8%22%20text-anchor%3D%22end%22%3E%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2254%22%20y%3D%22342%22%20width%3D%221172%22%20height%3D%2268%22%20rx%3D%2214%22%20fill%3D%22rgba(245%2C158%2C11%2C0.12)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2278%22%20y%3D%22376%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%23cbd5e1%22%3E3%EC%B0%A8%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22286%22%20y%3D%22376%22%20font-size%3D%2218%22%20font-weight%3D%22800%22%20fill%3D%22%23fbbf24%22%3E%EB%A7%A5%EB%9D%BD%20%EB%B3%B5%EC%9B%90%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22444%22%20y%3D%22376%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%ED%95%9C%EC%9C%A0%EC%A7%84%20%EC%AA%BD%20%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC%EC%97%90%EB%8A%94%20%EC%A0%91%EC%86%8D%20%ED%9D%94%EC%A0%81%20%EC%97%86%EB%8B%A4.%20%EA%B3%84%EC%A0%95%20%EB%B3%B5%EA%B5%AC%20%EB%A9%94%EC%9D%BC%EA%B3%BC%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221160%22%20y%3D%22376%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%2394a3b8%22%20text-anchor%3D%22end%22%3E%EA%B2%80%ED%86%A0%20%ED%95%84%EC%9A%94%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2254%22%20y%3D%22430%22%20width%3D%221172%22%20height%3D%2268%22%20rx%3D%2214%22%20fill%3D%22rgba(245%2C158%2C11%2C0.12)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2278%22%20y%3D%22464%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%23cbd5e1%22%3E4%EC%B0%A8%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22286%22%20y%3D%22464%22%20font-size%3D%2218%22%20font-weight%3D%22800%22%20fill%3D%22%23fbbf24%22%3Everify%20sour%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22444%22%20y%3D%22464%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%ED%94%8C%EB%9E%AB%ED%8F%BC%20%EA%B3%84%EC%A0%95%20%EB%B3%B5%EA%B5%AC%20%EA%B8%B0%EB%A1%9D%EC%9D%98%20IP%C2%B7%EC%8B%9C%EA%B0%81%EA%B3%BC%20%ED%96%89%EC%82%AC%EC%9E%A5%20%EC%99%80%EC%9D%B4%ED%8C%8C%EC%9D%B4%20%EB%A1%9C%EA%B7%B8%EC%9D%98%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221160%22%20y%3D%22464%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%2394a3b8%22%20text-anchor%3D%22end%22%3E%EA%B2%80%ED%86%A0%20%ED%95%84%EC%9A%94%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2254%22%20y%3D%22518%22%20width%3D%221172%22%20height%3D%2268%22%20rx%3D%2214%22%20fill%3D%22rgba(245%2C158%2C11%2C0.12)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2278%22%20y%3D%22552%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%23cbd5e1%22%3E5%EC%B0%A8%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22286%22%20y%3D%22552%22%20font-size%3D%2218%22%20font-weight%3D%22800%22%20fill%3D%22%23fbbf24%22%3E%ED%8E%B8%EC%A7%91%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22444%22%20y%3D%22552%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%ED%94%8C%EB%9E%AB%ED%8F%BC%20%EC%84%9C%EB%B2%84%20%EA%B8%B0%EB%A1%9D%EA%B3%BC%20%ED%96%89%EC%82%AC%EC%9E%A5%20%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC%20%EA%B4%80%EB%A6%AC%20%EC%8B%9C%EC%8A%A4%ED%85%9C%EC%97%90%EC%84%9C%20%EC%A7%81%EC%A0%91%20%EC%B6%94%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221160%22%20y%3D%22552%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%2394a3b8%22%20text-anchor%3D%22end%22%3E%EA%B2%80%ED%86%A0%20%ED%95%84%EC%9A%94%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2254%22%20y%3D%22606%22%20width%3D%221172%22%20height%3D%2268%22%20rx%3D%2214%22%20fill%3D%22rgba(255%2C255%2C255%2C0.03)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2278%22%20y%3D%22640%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%23cbd5e1%22%3E6%EC%B0%A8%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22286%22%20y%3D%22640%22%20font-size%3D%2218%22%20font-weight%3D%22800%22%20fill%3D%22%2386efac%22%3Equestion%20ac%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22444%22%20y%3D%22640%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%ED%96%89%EC%82%AC%EC%9E%A5%20%EC%9E%85%EC%9E%A5%20%EC%8B%9C%20%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC%20%EC%9D%B4%EC%9A%A9%20%EB%8F%99%EC%9D%98%20%EA%B3%A0%EC%A7%80%EA%B0%80%20%EC%9D%B4%EB%A4%84%EC%A1%8C%EA%B3%A0%2C%20%ED%94%8C%EB%9E%AB%ED%8F%BC%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221160%22%20y%3D%22640%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%2394a3b8%22%20text-anchor%3D%22end%22%3E%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%3C%2Fsvg%3E%0A%20%20",
+          "thumbnailUrl": "data:image/svg+xml;charset=UTF-8,%0A%20%20%20%20%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%221280%22%20height%3D%22900%22%20viewBox%3D%220%200%201280%20900%22%3E%0A%20%20%20%20%20%20%3Crect%20width%3D%221280%22%20height%3D%22900%22%20rx%3D%2224%22%20fill%3D%22%230f172a%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2254%22%20y%3D%2274%22%20font-size%3D%2216%22%20font-weight%3D%22800%22%20fill%3D%22%2322c55e%22%3ELOG%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2254%22%20y%3D%22120%22%20font-size%3D%2234%22%20font-weight%3D%22800%22%20fill%3D%22%23f8fafc%22%3E%EC%9D%B4%EB%AF%B8%EC%A7%80%20%EB%A0%88%EC%9D%B4%EC%96%B4%20%EB%B3%B4%EA%B3%A0%EC%84%9C%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2254%22%20y%3D%22158%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%2394a3b8%22%3E%EB%AC%B8%EC%9E%90%20%EC%9D%B4%EB%AF%B8%EC%A7%80%EC%99%80%20%EB%B0%A9%EB%AA%85%EB%A1%9D%20%EC%BA%A1%EC%B2%98%EC%9D%98%20%ED%95%A9%EC%84%B1%20%ED%9D%94%EC%A0%81%EC%9D%84%20%EB%B6%84%EC%84%9D%ED%95%9C%20%EC%9D%B4%EB%AF%B8%EC%A7%80%20%EB%A0%88%EC%9D%B4%EC%96%B4%20%EB%B3%B4%EA%B3%A0%EC%84%9C%EB%8B%A4.%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2254%22%20y%3D%22166%22%20width%3D%221172%22%20height%3D%2268%22%20rx%3D%2214%22%20fill%3D%22rgba(245%2C158%2C11%2C0.12)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2278%22%20y%3D%22200%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%23cbd5e1%22%3E1%EC%B0%A8%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22286%22%20y%3D%22200%22%20font-size%3D%2218%22%20font-weight%3D%22800%22%20fill%3D%22%23fbbf24%22%3E%EC%9B%90%EB%B3%B8%20%EC%9A%94%EC%B2%AD%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22444%22%20y%3D%22200%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%ED%94%8C%EB%9E%AB%ED%8F%BC%20%EC%9D%B5%EB%AA%85%20%EA%B3%84%EC%A0%95%EC%9D%98%20%EB%B3%B5%EA%B5%AC%20%EC%9D%B4%EB%A9%94%EC%9D%BC%20%EC%97%B0%EA%B2%B0%20%EA%B8%B0%EB%A1%9D%2C%20%EB%8F%99%EC%B0%BD%ED%9A%8C%EC%9E%A5%20%EC%99%80%EC%9D%B4%ED%8C%8C%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221160%22%20y%3D%22200%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%2394a3b8%22%20text-anchor%3D%22end%22%3E%EA%B2%80%ED%86%A0%20%ED%95%84%EC%9A%94%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2254%22%20y%3D%22254%22%20width%3D%221172%22%20height%3D%2268%22%20rx%3D%2214%22%20fill%3D%22rgba(255%2C255%2C255%2C0.03)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2278%22%20y%3D%22288%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%23cbd5e1%22%3E2%EC%B0%A8%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22286%22%20y%3D%22288%22%20font-size%3D%2218%22%20font-weight%3D%22800%22%20fill%3D%22%2386efac%22%3E%EB%A9%94%ED%83%80%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22444%22%20y%3D%22288%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%EA%B3%84%EC%A0%95%20%EC%83%9D%EC%84%B1~%EA%B2%8C%EC%8B%9C%20%EC%98%88%EC%95%BD%3A%20%EB%8F%99%EC%B0%BD%ED%9A%8C%20%ED%9B%84%2012%EC%8B%9C%EA%B0%84%20%EB%82%B4%20%EC%A7%91%EC%A4%91.%20%EA%B0%99%EC%9D%80%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221160%22%20y%3D%22288%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%2394a3b8%22%20text-anchor%3D%22end%22%3E%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2254%22%20y%3D%22342%22%20width%3D%221172%22%20height%3D%2268%22%20rx%3D%2214%22%20fill%3D%22rgba(245%2C158%2C11%2C0.12)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2278%22%20y%3D%22376%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%23cbd5e1%22%3E3%EC%B0%A8%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22286%22%20y%3D%22376%22%20font-size%3D%2218%22%20font-weight%3D%22800%22%20fill%3D%22%23fbbf24%22%3E%EB%A7%A5%EB%9D%BD%20%EB%B3%B5%EC%9B%90%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22444%22%20y%3D%22376%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%ED%95%9C%EC%9C%A0%EC%A7%84%20%EC%AA%BD%20%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC%EC%97%90%EB%8A%94%20%EC%A0%91%EC%86%8D%20%ED%9D%94%EC%A0%81%20%EC%97%86%EB%8B%A4.%20%EA%B3%84%EC%A0%95%20%EB%B3%B5%EA%B5%AC%20%EB%A9%94%EC%9D%BC%EA%B3%BC%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221160%22%20y%3D%22376%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%2394a3b8%22%20text-anchor%3D%22end%22%3E%EA%B2%80%ED%86%A0%20%ED%95%84%EC%9A%94%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2254%22%20y%3D%22430%22%20width%3D%221172%22%20height%3D%2268%22%20rx%3D%2214%22%20fill%3D%22rgba(245%2C158%2C11%2C0.12)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2278%22%20y%3D%22464%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%23cbd5e1%22%3E4%EC%B0%A8%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22286%22%20y%3D%22464%22%20font-size%3D%2218%22%20font-weight%3D%22800%22%20fill%3D%22%23fbbf24%22%3Everify%20sour%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22444%22%20y%3D%22464%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%ED%94%8C%EB%9E%AB%ED%8F%BC%20%EA%B3%84%EC%A0%95%20%EB%B3%B5%EA%B5%AC%20%EA%B8%B0%EB%A1%9D%EC%9D%98%20IP%C2%B7%EC%8B%9C%EA%B0%81%EA%B3%BC%20%ED%96%89%EC%82%AC%EC%9E%A5%20%EC%99%80%EC%9D%B4%ED%8C%8C%EC%9D%B4%20%EB%A1%9C%EA%B7%B8%EC%9D%98%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221160%22%20y%3D%22464%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%2394a3b8%22%20text-anchor%3D%22end%22%3E%EA%B2%80%ED%86%A0%20%ED%95%84%EC%9A%94%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2254%22%20y%3D%22518%22%20width%3D%221172%22%20height%3D%2268%22%20rx%3D%2214%22%20fill%3D%22rgba(245%2C158%2C11%2C0.12)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2278%22%20y%3D%22552%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%23cbd5e1%22%3E5%EC%B0%A8%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22286%22%20y%3D%22552%22%20font-size%3D%2218%22%20font-weight%3D%22800%22%20fill%3D%22%23fbbf24%22%3E%ED%8E%B8%EC%A7%91%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22444%22%20y%3D%22552%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%ED%94%8C%EB%9E%AB%ED%8F%BC%20%EC%84%9C%EB%B2%84%20%EA%B8%B0%EB%A1%9D%EA%B3%BC%20%ED%96%89%EC%82%AC%EC%9E%A5%20%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC%20%EA%B4%80%EB%A6%AC%20%EC%8B%9C%EC%8A%A4%ED%85%9C%EC%97%90%EC%84%9C%20%EC%A7%81%EC%A0%91%20%EC%B6%94%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221160%22%20y%3D%22552%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%2394a3b8%22%20text-anchor%3D%22end%22%3E%EA%B2%80%ED%86%A0%20%ED%95%84%EC%9A%94%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2254%22%20y%3D%22606%22%20width%3D%221172%22%20height%3D%2268%22%20rx%3D%2214%22%20fill%3D%22rgba(255%2C255%2C255%2C0.03)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2278%22%20y%3D%22640%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%23cbd5e1%22%3E6%EC%B0%A8%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22286%22%20y%3D%22640%22%20font-size%3D%2218%22%20font-weight%3D%22800%22%20fill%3D%22%2386efac%22%3Equestion%20ac%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22444%22%20y%3D%22640%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%ED%96%89%EC%82%AC%EC%9E%A5%20%EC%9E%85%EC%9E%A5%20%EC%8B%9C%20%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC%20%EC%9D%B4%EC%9A%A9%20%EB%8F%99%EC%9D%98%20%EA%B3%A0%EC%A7%80%EA%B0%80%20%EC%9D%B4%EB%A4%84%EC%A1%8C%EA%B3%A0%2C%20%ED%94%8C%EB%9E%AB%ED%8F%BC%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221160%22%20y%3D%22640%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%2394a3b8%22%20text-anchor%3D%22end%22%3E%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%3C%2Fsvg%3E%0A%20%20",
+          "posterUrl": "data:image/svg+xml;charset=UTF-8,%0A%20%20%20%20%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%221280%22%20height%3D%22900%22%20viewBox%3D%220%200%201280%20900%22%3E%0A%20%20%20%20%20%20%3Crect%20width%3D%221280%22%20height%3D%22900%22%20rx%3D%2224%22%20fill%3D%22%230f172a%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2254%22%20y%3D%2274%22%20font-size%3D%2216%22%20font-weight%3D%22800%22%20fill%3D%22%2322c55e%22%3ELOG%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2254%22%20y%3D%22120%22%20font-size%3D%2234%22%20font-weight%3D%22800%22%20fill%3D%22%23f8fafc%22%3E%EC%9D%B4%EB%AF%B8%EC%A7%80%20%EB%A0%88%EC%9D%B4%EC%96%B4%20%EB%B3%B4%EA%B3%A0%EC%84%9C%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2254%22%20y%3D%22158%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%2394a3b8%22%3E%EB%AC%B8%EC%9E%90%20%EC%9D%B4%EB%AF%B8%EC%A7%80%EC%99%80%20%EB%B0%A9%EB%AA%85%EB%A1%9D%20%EC%BA%A1%EC%B2%98%EC%9D%98%20%ED%95%A9%EC%84%B1%20%ED%9D%94%EC%A0%81%EC%9D%84%20%EB%B6%84%EC%84%9D%ED%95%9C%20%EC%9D%B4%EB%AF%B8%EC%A7%80%20%EB%A0%88%EC%9D%B4%EC%96%B4%20%EB%B3%B4%EA%B3%A0%EC%84%9C%EB%8B%A4.%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2254%22%20y%3D%22166%22%20width%3D%221172%22%20height%3D%2268%22%20rx%3D%2214%22%20fill%3D%22rgba(245%2C158%2C11%2C0.12)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2278%22%20y%3D%22200%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%23cbd5e1%22%3E1%EC%B0%A8%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22286%22%20y%3D%22200%22%20font-size%3D%2218%22%20font-weight%3D%22800%22%20fill%3D%22%23fbbf24%22%3E%EC%9B%90%EB%B3%B8%20%EC%9A%94%EC%B2%AD%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22444%22%20y%3D%22200%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%ED%94%8C%EB%9E%AB%ED%8F%BC%20%EC%9D%B5%EB%AA%85%20%EA%B3%84%EC%A0%95%EC%9D%98%20%EB%B3%B5%EA%B5%AC%20%EC%9D%B4%EB%A9%94%EC%9D%BC%20%EC%97%B0%EA%B2%B0%20%EA%B8%B0%EB%A1%9D%2C%20%EB%8F%99%EC%B0%BD%ED%9A%8C%EC%9E%A5%20%EC%99%80%EC%9D%B4%ED%8C%8C%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221160%22%20y%3D%22200%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%2394a3b8%22%20text-anchor%3D%22end%22%3E%EA%B2%80%ED%86%A0%20%ED%95%84%EC%9A%94%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2254%22%20y%3D%22254%22%20width%3D%221172%22%20height%3D%2268%22%20rx%3D%2214%22%20fill%3D%22rgba(255%2C255%2C255%2C0.03)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2278%22%20y%3D%22288%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%23cbd5e1%22%3E2%EC%B0%A8%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22286%22%20y%3D%22288%22%20font-size%3D%2218%22%20font-weight%3D%22800%22%20fill%3D%22%2386efac%22%3E%EB%A9%94%ED%83%80%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22444%22%20y%3D%22288%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%EA%B3%84%EC%A0%95%20%EC%83%9D%EC%84%B1~%EA%B2%8C%EC%8B%9C%20%EC%98%88%EC%95%BD%3A%20%EB%8F%99%EC%B0%BD%ED%9A%8C%20%ED%9B%84%2012%EC%8B%9C%EA%B0%84%20%EB%82%B4%20%EC%A7%91%EC%A4%91.%20%EA%B0%99%EC%9D%80%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221160%22%20y%3D%22288%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%2394a3b8%22%20text-anchor%3D%22end%22%3E%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2254%22%20y%3D%22342%22%20width%3D%221172%22%20height%3D%2268%22%20rx%3D%2214%22%20fill%3D%22rgba(245%2C158%2C11%2C0.12)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2278%22%20y%3D%22376%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%23cbd5e1%22%3E3%EC%B0%A8%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22286%22%20y%3D%22376%22%20font-size%3D%2218%22%20font-weight%3D%22800%22%20fill%3D%22%23fbbf24%22%3E%EB%A7%A5%EB%9D%BD%20%EB%B3%B5%EC%9B%90%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22444%22%20y%3D%22376%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%ED%95%9C%EC%9C%A0%EC%A7%84%20%EC%AA%BD%20%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC%EC%97%90%EB%8A%94%20%EC%A0%91%EC%86%8D%20%ED%9D%94%EC%A0%81%20%EC%97%86%EB%8B%A4.%20%EA%B3%84%EC%A0%95%20%EB%B3%B5%EA%B5%AC%20%EB%A9%94%EC%9D%BC%EA%B3%BC%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221160%22%20y%3D%22376%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%2394a3b8%22%20text-anchor%3D%22end%22%3E%EA%B2%80%ED%86%A0%20%ED%95%84%EC%9A%94%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2254%22%20y%3D%22430%22%20width%3D%221172%22%20height%3D%2268%22%20rx%3D%2214%22%20fill%3D%22rgba(245%2C158%2C11%2C0.12)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2278%22%20y%3D%22464%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%23cbd5e1%22%3E4%EC%B0%A8%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22286%22%20y%3D%22464%22%20font-size%3D%2218%22%20font-weight%3D%22800%22%20fill%3D%22%23fbbf24%22%3Everify%20sour%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22444%22%20y%3D%22464%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%ED%94%8C%EB%9E%AB%ED%8F%BC%20%EA%B3%84%EC%A0%95%20%EB%B3%B5%EA%B5%AC%20%EA%B8%B0%EB%A1%9D%EC%9D%98%20IP%C2%B7%EC%8B%9C%EA%B0%81%EA%B3%BC%20%ED%96%89%EC%82%AC%EC%9E%A5%20%EC%99%80%EC%9D%B4%ED%8C%8C%EC%9D%B4%20%EB%A1%9C%EA%B7%B8%EC%9D%98%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221160%22%20y%3D%22464%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%2394a3b8%22%20text-anchor%3D%22end%22%3E%EA%B2%80%ED%86%A0%20%ED%95%84%EC%9A%94%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2254%22%20y%3D%22518%22%20width%3D%221172%22%20height%3D%2268%22%20rx%3D%2214%22%20fill%3D%22rgba(245%2C158%2C11%2C0.12)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2278%22%20y%3D%22552%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%23cbd5e1%22%3E5%EC%B0%A8%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22286%22%20y%3D%22552%22%20font-size%3D%2218%22%20font-weight%3D%22800%22%20fill%3D%22%23fbbf24%22%3E%ED%8E%B8%EC%A7%91%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22444%22%20y%3D%22552%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%ED%94%8C%EB%9E%AB%ED%8F%BC%20%EC%84%9C%EB%B2%84%20%EA%B8%B0%EB%A1%9D%EA%B3%BC%20%ED%96%89%EC%82%AC%EC%9E%A5%20%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC%20%EA%B4%80%EB%A6%AC%20%EC%8B%9C%EC%8A%A4%ED%85%9C%EC%97%90%EC%84%9C%20%EC%A7%81%EC%A0%91%20%EC%B6%94%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221160%22%20y%3D%22552%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%2394a3b8%22%20text-anchor%3D%22end%22%3E%EA%B2%80%ED%86%A0%20%ED%95%84%EC%9A%94%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2254%22%20y%3D%22606%22%20width%3D%221172%22%20height%3D%2268%22%20rx%3D%2214%22%20fill%3D%22rgba(255%2C255%2C255%2C0.03)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2278%22%20y%3D%22640%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%23cbd5e1%22%3E6%EC%B0%A8%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22286%22%20y%3D%22640%22%20font-size%3D%2218%22%20font-weight%3D%22800%22%20fill%3D%22%2386efac%22%3Equestion%20ac%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22444%22%20y%3D%22640%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%ED%96%89%EC%82%AC%EC%9E%A5%20%EC%9E%85%EC%9E%A5%20%EC%8B%9C%20%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC%20%EC%9D%B4%EC%9A%A9%20%EB%8F%99%EC%9D%98%20%EA%B3%A0%EC%A7%80%EA%B0%80%20%EC%9D%B4%EB%A4%84%EC%A1%8C%EA%B3%A0%2C%20%ED%94%8C%EB%9E%AB%ED%8F%BC%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221160%22%20y%3D%22640%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%2394a3b8%22%20text-anchor%3D%22end%22%3E%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%3C%2Fsvg%3E%0A%20%20",
+          "width": 1280,
+          "height": 900,
+          "alt": "이미지 레이어 보고서 log evidence",
+          "caption": "이미지 레이어 보고서 log preview"
+        }
+      },
       "investigationStages": [
         {
           "stage": 0,
           "revealKey": "request_original",
           "question": {
-            "text": "이 복구 기록과 접속 로그의 존재를 인정하십니까?",
-            "attackVector": "context"
+            "text": "재판관님, 이미지 레이어 보고서의 원본과 취득 경위를 먼저 확인해 주시겠습니까?",
+            "attackVector": "authenticity"
           }
         },
         {
           "stage": 1,
-          "revealKey": "check_metadata",
+          "revealKey": "restore_context",
           "question": {
-            "text": "계정 생성과 게시 준비가 12시간 안에 몰린 이유를 설명하십시오.",
-            "attackVector": "timeline"
+            "text": "재판관님, 이미지 레이어 보고서이 d-3, d-4와 어떻게 이어지는지 빠진 맥락까지 설명해 주시겠습니까?",
+            "attackVector": "context"
           }
         },
         {
           "stage": 2,
-          "revealKey": "restore_context",
+          "revealKey": "check_responsibility",
           "question": {
-            "text": "복구 수단과 현장 접속이 한쪽에 모인 이유를 설명하십시오.",
-            "attackVector": "identity"
+            "text": "재판관님, 이미지 레이어 보고서이 누구의 관리 책임을 더 무겁게 가리키는지 분리해 주십시오.",
+            "attackVector": "responsibility"
           }
         }
-      ]
+      ],
+      "partyContext": {
+        "a": {
+          "questionAngle": "A측 관점에서 이 자료가 가리키는 책임과 경위를 설명해 주십시오.",
+          "implication": "문자 이미지와 방명록 캡처의 합성 흔적을 분석한 이미지 레이어 보고서다."
+        },
+        "b": {
+          "questionAngle": "B측 관점에서 이 자료가 가리키는 책임과 경위를 설명해 주십시오.",
+          "implication": "문자 이미지와 방명록 캡처의 합성 흔적을 분석한 이미지 레이어 보고서다."
+        }
+      }
     },
     {
       "id": "e-6",
-      "name": "2006년 원본 메일 묶음과 생활지도실 메모",
-      "description": "2006년 원본 메일(모진 메시지 포함)과 생활지도실 메모. 세아의 상처 준 사실은 입증하지만 익명 소문 발신자는 2006년에도 불명이었다.",
-      "type": "document",
+      "name": "2006년 메모와 동창 진술",
+      "description": "생활지도실 메모, 당시 메일 일부, 동창 진술을 묶은 과거 기록이다.",
+      "type": "contract",
       "reliability": "hard",
       "completeness": "original",
       "provenance": "mixed",
@@ -600,7 +942,9 @@
         "d-5"
       ],
       "isTrap": false,
-      "requires": [],
+      "requires": [
+        "e-4"
+      ],
       "investigationResults": {
         "request_original": "2006년 세아↔한유진 원본 메일 묶음, 학교 생활지도실 메모 사본(익명 소문 조사 결과), 당시 학급 운영진 간 공유된 메일이 함께 제출됐다.",
         "check_metadata": "모진 메시지: 다툼 직후 발신. 익명 소문 시작: 약 2주 후. 시간 순서상 소문 유포 목적 메시지가 아니었다.",
@@ -610,45 +954,250 @@
         "question_acquisition": "세아·한유진 동의, 학교 열람 허가 범위 내에서 확인. 20년 전 기록이지만 관계자 동의와 학교 승인을 거쳤다."
       },
       "subjectParty": "a",
-      "surfaceName": "오래된 메일 묶음과 학교 메모",
-      "surfaceDescription": "과거에 주고받은 메일 원본과 학교 관련 메모다. 오래된 사건의 원본 기록이 보존되어 있다.",
+      "surfaceName": "2006년 메모와 동창 진술",
+      "surfaceDescription": "생활지도실 메모, 당시 메일 일부, 동창 진술을 묶은 과거 기록이다.",
+      "requiredLieState": "S2",
+      "meta": {
+        "name": "2006년 메모와 동창 진술",
+        "type": "contract",
+        "viewerType": "contract",
+        "trustLevel": "mid",
+        "trustLabel": "보통",
+        "source": "a",
+        "sourceLabel": "A측",
+        "legality": "ok",
+        "legalLabel": "적법",
+        "stage": 6,
+        "stageLabel": "핵심 공개",
+        "sourceNote": "mixed / original",
+        "redactions": []
+      },
+      "viewerData": {
+        "meta": {
+          "name": "2006년 메모와 동창 진술",
+          "type": "contract",
+          "viewerType": "contract",
+          "trustLevel": "mid",
+          "trustLabel": "보통",
+          "source": "a",
+          "sourceLabel": "A측",
+          "legality": "ok",
+          "legalLabel": "적법",
+          "stage": 6,
+          "stageLabel": "핵심 공개",
+          "sourceNote": "mixed / original",
+          "redactions": []
+        },
+        "contract": {
+          "title": "2006년 메모와 동창 진술",
+          "subtitle": "문서 요약",
+          "rows": [
+            {
+              "date": "기록",
+              "content": "생활지도실 메모, 당시 메일 일부, 동창 진술을 묶은 과거 기록이다.",
+              "amount": "-",
+              "missing": false
+            }
+          ],
+          "signature": "원본 대조 필요"
+        },
+        "media": {
+          "imageUrl": "data:image/svg+xml;charset=UTF-8,%0A%20%20%20%20%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%221280%22%20height%3D%22960%22%20viewBox%3D%220%200%201280%20960%22%3E%0A%20%20%20%20%20%20%3Crect%20width%3D%221280%22%20height%3D%22960%22%20rx%3D%2224%22%20fill%3D%22%23e5e7eb%22%20%2F%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%2240%22%20y%3D%2240%22%20width%3D%221200%22%20height%3D%22880%22%20rx%3D%2218%22%20fill%3D%22%23fcfcfd%22%20stroke%3D%22%23cbd5e1%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2270%22%20y%3D%2294%22%20font-size%3D%2216%22%20font-weight%3D%22800%22%20fill%3D%22%237c3aed%22%3ECONTRACT%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2270%22%20y%3D%22136%22%20font-size%3D%2234%22%20font-weight%3D%22800%22%20fill%3D%22%230f172a%22%3E2006%EB%85%84%20%EB%A9%94%EB%AA%A8%EC%99%80%20%EB%8F%99%EC%B0%BD%20%EC%A7%84%EC%88%A0%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2270%22%20y%3D%22174%22%20font-size%3D%2219%22%20font-weight%3D%22600%22%20fill%3D%22%2364748b%22%3E%EC%83%9D%ED%99%9C%EC%A7%80%EB%8F%84%EC%8B%A4%20%EB%A9%94%EB%AA%A8%2C%20%EB%8B%B9%EC%8B%9C%20%EB%A9%94%EC%9D%BC%20%EC%9D%BC%EB%B6%80%2C%20%EB%8F%99%EC%B0%BD%20%EC%A7%84%EC%88%A0%EC%9D%84%20%EB%AC%B6%EC%9D%80%20%EA%B3%BC%EA%B1%B0%20%EA%B8%B0%EB%A1%9D%EC%9D%B4%EB%8B%A4.%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2270%22%20y1%3D%22198%22%20x2%3D%221210%22%20y2%3D%22198%22%20stroke%3D%22%23dbe4ee%22%20%2F%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2266%22%20y%3D%22208%22%20width%3D%221148%22%20height%3D%2280%22%20rx%3D%2216%22%20fill%3D%22rgba(15%2C23%2C42%2C0.04)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2294%22%20y%3D%22246%22%20font-size%3D%2219%22%20font-weight%3D%22700%22%20fill%3D%22%23334155%22%3Erequest_original%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22284%22%20y%3D%22234%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%230f172a%22%3E2006%EB%85%84%20%EC%84%B8%EC%95%84%E2%86%94%ED%95%9C%EC%9C%A0%EC%A7%84%20%EC%9B%90%EB%B3%B8%20%EB%A9%94%EC%9D%BC%20%EB%AC%B6%EC%9D%8C%2C%20%ED%95%99%EA%B5%90%20%EC%83%9D%ED%99%9C%EC%A7%80%EB%8F%84%EC%8B%A4%20%EB%A9%94%EB%AA%A8%3C%2Ftext%3E%3Ctext%20x%3D%22284%22%20y%3D%22258%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%230f172a%22%3E%EC%82%AC%EB%B3%B8(%EC%9D%B5%EB%AA%85%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221162%22%20y%3D%22246%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%23475569%22%20text-anchor%3D%22end%22%3E%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2266%22%20y%3D%22310%22%20width%3D%221148%22%20height%3D%2280%22%20rx%3D%2216%22%20fill%3D%22rgba(15%2C23%2C42%2C0.04)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2294%22%20y%3D%22348%22%20font-size%3D%2219%22%20font-weight%3D%22700%22%20fill%3D%22%23334155%22%3Echeck_metadata%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22284%22%20y%3D%22336%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%230f172a%22%3E%EB%AA%A8%EC%A7%84%20%EB%A9%94%EC%8B%9C%EC%A7%80%3A%20%EB%8B%A4%ED%88%BC%20%EC%A7%81%ED%9B%84%20%EB%B0%9C%EC%8B%A0.%20%EC%9D%B5%EB%AA%85%20%EC%86%8C%EB%AC%B8%20%EC%8B%9C%EC%9E%91%3A%20%EC%95%BD%202%EC%A3%BC%3C%2Ftext%3E%3Ctext%20x%3D%22284%22%20y%3D%22360%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%230f172a%22%3E%ED%9B%84.%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221162%22%20y%3D%22348%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%23475569%22%20text-anchor%3D%22end%22%3E%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2266%22%20y%3D%22412%22%20width%3D%221148%22%20height%3D%2280%22%20rx%3D%2216%22%20fill%3D%22rgba(15%2C23%2C42%2C0.04)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2294%22%20y%3D%22450%22%20font-size%3D%2219%22%20font-weight%3D%22700%22%20fill%3D%22%23334155%22%3Erestore_context%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22284%22%20y%3D%22438%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%230f172a%22%3E%EC%84%B8%EC%95%84%EA%B0%80%20%EB%AA%A8%EC%A7%84%20%EB%A9%94%EC%8B%9C%EC%A7%80%EB%A1%9C%20%EC%83%81%EC%B2%98%EB%A5%BC%20%EC%A4%80%20%EA%B2%83%EC%9D%80%20%EC%82%AC%EC%8B%A4.%20%EA%B7%B8%EB%9F%AC%EB%82%98%20%EC%83%9D%ED%99%9C%EC%A7%80%EB%8F%84%EC%8B%A4%3C%2Ftext%3E%3Ctext%20x%3D%22284%22%20y%3D%22462%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%230f172a%22%3E%EB%A9%94%EB%AA%A8%EC%97%90%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221162%22%20y%3D%22450%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%23475569%22%20text-anchor%3D%22end%22%3E%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2266%22%20y%3D%22514%22%20width%3D%221148%22%20height%3D%2280%22%20rx%3D%2216%22%20fill%3D%22rgba(15%2C23%2C42%2C0.04)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2294%22%20y%3D%22552%22%20font-size%3D%2219%22%20font-weight%3D%22700%22%20fill%3D%22%23334155%22%3Everify_source%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22284%22%20y%3D%22540%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%230f172a%22%3E%ED%95%99%EA%B5%90%20%EB%B3%B4%EC%A1%B4%20%EB%AC%B8%EC%84%9C(%EC%83%9D%ED%99%9C%EC%A7%80%EB%8F%84%EC%8B%A4%20%EB%A9%94%EB%AA%A8)%EC%9D%98%20%EB%82%A0%EC%A7%9C%EC%99%80%20%EC%84%B8%EC%95%84%C2%B7%ED%95%9C%EC%9C%A0%EC%A7%84%20%EA%B0%9C%EC%9D%B8%3C%2Ftext%3E%3Ctext%20x%3D%22284%22%20y%3D%22564%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%230f172a%22%3E%EC%9D%B4%EB%A9%94%EC%9D%BC%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221162%22%20y%3D%22552%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%23475569%22%20text-anchor%3D%22end%22%3E%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2266%22%20y%3D%22616%22%20width%3D%221148%22%20height%3D%2280%22%20rx%3D%2216%22%20fill%3D%22rgba(15%2C23%2C42%2C0.04)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2294%22%20y%3D%22654%22%20font-size%3D%2219%22%20font-weight%3D%22700%22%20fill%3D%22%23334155%22%3Echeck_edits%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22284%22%20y%3D%22642%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%230f172a%22%3E%EC%83%9D%ED%99%9C%EC%A7%80%EB%8F%84%EC%8B%A4%20%EB%A9%94%EB%AA%A8%EB%8A%94%20%EC%A2%85%EC%9D%B4%20%EC%9B%90%EB%B3%B8%EC%9D%98%20%EC%8A%A4%EC%BA%94%EB%B3%B8%EC%9C%BC%EB%A1%9C%2C%20%EB%B0%9D%EA%B8%B0%C2%B7%EB%8C%80%EB%B9%84%20%EB%B3%B4%EC%A0%95%20%EC%99%B8%3C%2Ftext%3E%3Ctext%20x%3D%22284%22%20y%3D%22666%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%230f172a%22%3E%EC%9B%90%EB%AC%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221162%22%20y%3D%22654%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%23475569%22%20text-anchor%3D%22end%22%3E%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Ctext%20x%3D%2270%22%20y%3D%22894%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%23475569%22%3E%EC%B6%9C%EC%B2%98%20%EB%A9%94%EB%AA%A8%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%3C%2Fsvg%3E%0A%20%20",
+          "thumbnailUrl": "data:image/svg+xml;charset=UTF-8,%0A%20%20%20%20%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%221280%22%20height%3D%22960%22%20viewBox%3D%220%200%201280%20960%22%3E%0A%20%20%20%20%20%20%3Crect%20width%3D%221280%22%20height%3D%22960%22%20rx%3D%2224%22%20fill%3D%22%23e5e7eb%22%20%2F%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%2240%22%20y%3D%2240%22%20width%3D%221200%22%20height%3D%22880%22%20rx%3D%2218%22%20fill%3D%22%23fcfcfd%22%20stroke%3D%22%23cbd5e1%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2270%22%20y%3D%2294%22%20font-size%3D%2216%22%20font-weight%3D%22800%22%20fill%3D%22%237c3aed%22%3ECONTRACT%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2270%22%20y%3D%22136%22%20font-size%3D%2234%22%20font-weight%3D%22800%22%20fill%3D%22%230f172a%22%3E2006%EB%85%84%20%EB%A9%94%EB%AA%A8%EC%99%80%20%EB%8F%99%EC%B0%BD%20%EC%A7%84%EC%88%A0%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2270%22%20y%3D%22174%22%20font-size%3D%2219%22%20font-weight%3D%22600%22%20fill%3D%22%2364748b%22%3E%EC%83%9D%ED%99%9C%EC%A7%80%EB%8F%84%EC%8B%A4%20%EB%A9%94%EB%AA%A8%2C%20%EB%8B%B9%EC%8B%9C%20%EB%A9%94%EC%9D%BC%20%EC%9D%BC%EB%B6%80%2C%20%EB%8F%99%EC%B0%BD%20%EC%A7%84%EC%88%A0%EC%9D%84%20%EB%AC%B6%EC%9D%80%20%EA%B3%BC%EA%B1%B0%20%EA%B8%B0%EB%A1%9D%EC%9D%B4%EB%8B%A4.%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2270%22%20y1%3D%22198%22%20x2%3D%221210%22%20y2%3D%22198%22%20stroke%3D%22%23dbe4ee%22%20%2F%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2266%22%20y%3D%22208%22%20width%3D%221148%22%20height%3D%2280%22%20rx%3D%2216%22%20fill%3D%22rgba(15%2C23%2C42%2C0.04)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2294%22%20y%3D%22246%22%20font-size%3D%2219%22%20font-weight%3D%22700%22%20fill%3D%22%23334155%22%3Erequest_original%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22284%22%20y%3D%22234%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%230f172a%22%3E2006%EB%85%84%20%EC%84%B8%EC%95%84%E2%86%94%ED%95%9C%EC%9C%A0%EC%A7%84%20%EC%9B%90%EB%B3%B8%20%EB%A9%94%EC%9D%BC%20%EB%AC%B6%EC%9D%8C%2C%20%ED%95%99%EA%B5%90%20%EC%83%9D%ED%99%9C%EC%A7%80%EB%8F%84%EC%8B%A4%20%EB%A9%94%EB%AA%A8%3C%2Ftext%3E%3Ctext%20x%3D%22284%22%20y%3D%22258%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%230f172a%22%3E%EC%82%AC%EB%B3%B8(%EC%9D%B5%EB%AA%85%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221162%22%20y%3D%22246%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%23475569%22%20text-anchor%3D%22end%22%3E%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2266%22%20y%3D%22310%22%20width%3D%221148%22%20height%3D%2280%22%20rx%3D%2216%22%20fill%3D%22rgba(15%2C23%2C42%2C0.04)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2294%22%20y%3D%22348%22%20font-size%3D%2219%22%20font-weight%3D%22700%22%20fill%3D%22%23334155%22%3Echeck_metadata%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22284%22%20y%3D%22336%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%230f172a%22%3E%EB%AA%A8%EC%A7%84%20%EB%A9%94%EC%8B%9C%EC%A7%80%3A%20%EB%8B%A4%ED%88%BC%20%EC%A7%81%ED%9B%84%20%EB%B0%9C%EC%8B%A0.%20%EC%9D%B5%EB%AA%85%20%EC%86%8C%EB%AC%B8%20%EC%8B%9C%EC%9E%91%3A%20%EC%95%BD%202%EC%A3%BC%3C%2Ftext%3E%3Ctext%20x%3D%22284%22%20y%3D%22360%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%230f172a%22%3E%ED%9B%84.%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221162%22%20y%3D%22348%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%23475569%22%20text-anchor%3D%22end%22%3E%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2266%22%20y%3D%22412%22%20width%3D%221148%22%20height%3D%2280%22%20rx%3D%2216%22%20fill%3D%22rgba(15%2C23%2C42%2C0.04)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2294%22%20y%3D%22450%22%20font-size%3D%2219%22%20font-weight%3D%22700%22%20fill%3D%22%23334155%22%3Erestore_context%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22284%22%20y%3D%22438%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%230f172a%22%3E%EC%84%B8%EC%95%84%EA%B0%80%20%EB%AA%A8%EC%A7%84%20%EB%A9%94%EC%8B%9C%EC%A7%80%EB%A1%9C%20%EC%83%81%EC%B2%98%EB%A5%BC%20%EC%A4%80%20%EA%B2%83%EC%9D%80%20%EC%82%AC%EC%8B%A4.%20%EA%B7%B8%EB%9F%AC%EB%82%98%20%EC%83%9D%ED%99%9C%EC%A7%80%EB%8F%84%EC%8B%A4%3C%2Ftext%3E%3Ctext%20x%3D%22284%22%20y%3D%22462%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%230f172a%22%3E%EB%A9%94%EB%AA%A8%EC%97%90%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221162%22%20y%3D%22450%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%23475569%22%20text-anchor%3D%22end%22%3E%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2266%22%20y%3D%22514%22%20width%3D%221148%22%20height%3D%2280%22%20rx%3D%2216%22%20fill%3D%22rgba(15%2C23%2C42%2C0.04)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2294%22%20y%3D%22552%22%20font-size%3D%2219%22%20font-weight%3D%22700%22%20fill%3D%22%23334155%22%3Everify_source%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22284%22%20y%3D%22540%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%230f172a%22%3E%ED%95%99%EA%B5%90%20%EB%B3%B4%EC%A1%B4%20%EB%AC%B8%EC%84%9C(%EC%83%9D%ED%99%9C%EC%A7%80%EB%8F%84%EC%8B%A4%20%EB%A9%94%EB%AA%A8)%EC%9D%98%20%EB%82%A0%EC%A7%9C%EC%99%80%20%EC%84%B8%EC%95%84%C2%B7%ED%95%9C%EC%9C%A0%EC%A7%84%20%EA%B0%9C%EC%9D%B8%3C%2Ftext%3E%3Ctext%20x%3D%22284%22%20y%3D%22564%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%230f172a%22%3E%EC%9D%B4%EB%A9%94%EC%9D%BC%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221162%22%20y%3D%22552%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%23475569%22%20text-anchor%3D%22end%22%3E%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2266%22%20y%3D%22616%22%20width%3D%221148%22%20height%3D%2280%22%20rx%3D%2216%22%20fill%3D%22rgba(15%2C23%2C42%2C0.04)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2294%22%20y%3D%22654%22%20font-size%3D%2219%22%20font-weight%3D%22700%22%20fill%3D%22%23334155%22%3Echeck_edits%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22284%22%20y%3D%22642%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%230f172a%22%3E%EC%83%9D%ED%99%9C%EC%A7%80%EB%8F%84%EC%8B%A4%20%EB%A9%94%EB%AA%A8%EB%8A%94%20%EC%A2%85%EC%9D%B4%20%EC%9B%90%EB%B3%B8%EC%9D%98%20%EC%8A%A4%EC%BA%94%EB%B3%B8%EC%9C%BC%EB%A1%9C%2C%20%EB%B0%9D%EA%B8%B0%C2%B7%EB%8C%80%EB%B9%84%20%EB%B3%B4%EC%A0%95%20%EC%99%B8%3C%2Ftext%3E%3Ctext%20x%3D%22284%22%20y%3D%22666%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%230f172a%22%3E%EC%9B%90%EB%AC%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221162%22%20y%3D%22654%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%23475569%22%20text-anchor%3D%22end%22%3E%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Ctext%20x%3D%2270%22%20y%3D%22894%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%23475569%22%3E%EC%B6%9C%EC%B2%98%20%EB%A9%94%EB%AA%A8%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%3C%2Fsvg%3E%0A%20%20",
+          "posterUrl": "data:image/svg+xml;charset=UTF-8,%0A%20%20%20%20%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%221280%22%20height%3D%22960%22%20viewBox%3D%220%200%201280%20960%22%3E%0A%20%20%20%20%20%20%3Crect%20width%3D%221280%22%20height%3D%22960%22%20rx%3D%2224%22%20fill%3D%22%23e5e7eb%22%20%2F%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%2240%22%20y%3D%2240%22%20width%3D%221200%22%20height%3D%22880%22%20rx%3D%2218%22%20fill%3D%22%23fcfcfd%22%20stroke%3D%22%23cbd5e1%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2270%22%20y%3D%2294%22%20font-size%3D%2216%22%20font-weight%3D%22800%22%20fill%3D%22%237c3aed%22%3ECONTRACT%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2270%22%20y%3D%22136%22%20font-size%3D%2234%22%20font-weight%3D%22800%22%20fill%3D%22%230f172a%22%3E2006%EB%85%84%20%EB%A9%94%EB%AA%A8%EC%99%80%20%EB%8F%99%EC%B0%BD%20%EC%A7%84%EC%88%A0%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2270%22%20y%3D%22174%22%20font-size%3D%2219%22%20font-weight%3D%22600%22%20fill%3D%22%2364748b%22%3E%EC%83%9D%ED%99%9C%EC%A7%80%EB%8F%84%EC%8B%A4%20%EB%A9%94%EB%AA%A8%2C%20%EB%8B%B9%EC%8B%9C%20%EB%A9%94%EC%9D%BC%20%EC%9D%BC%EB%B6%80%2C%20%EB%8F%99%EC%B0%BD%20%EC%A7%84%EC%88%A0%EC%9D%84%20%EB%AC%B6%EC%9D%80%20%EA%B3%BC%EA%B1%B0%20%EA%B8%B0%EB%A1%9D%EC%9D%B4%EB%8B%A4.%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2270%22%20y1%3D%22198%22%20x2%3D%221210%22%20y2%3D%22198%22%20stroke%3D%22%23dbe4ee%22%20%2F%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2266%22%20y%3D%22208%22%20width%3D%221148%22%20height%3D%2280%22%20rx%3D%2216%22%20fill%3D%22rgba(15%2C23%2C42%2C0.04)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2294%22%20y%3D%22246%22%20font-size%3D%2219%22%20font-weight%3D%22700%22%20fill%3D%22%23334155%22%3Erequest_original%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22284%22%20y%3D%22234%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%230f172a%22%3E2006%EB%85%84%20%EC%84%B8%EC%95%84%E2%86%94%ED%95%9C%EC%9C%A0%EC%A7%84%20%EC%9B%90%EB%B3%B8%20%EB%A9%94%EC%9D%BC%20%EB%AC%B6%EC%9D%8C%2C%20%ED%95%99%EA%B5%90%20%EC%83%9D%ED%99%9C%EC%A7%80%EB%8F%84%EC%8B%A4%20%EB%A9%94%EB%AA%A8%3C%2Ftext%3E%3Ctext%20x%3D%22284%22%20y%3D%22258%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%230f172a%22%3E%EC%82%AC%EB%B3%B8(%EC%9D%B5%EB%AA%85%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221162%22%20y%3D%22246%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%23475569%22%20text-anchor%3D%22end%22%3E%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2266%22%20y%3D%22310%22%20width%3D%221148%22%20height%3D%2280%22%20rx%3D%2216%22%20fill%3D%22rgba(15%2C23%2C42%2C0.04)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2294%22%20y%3D%22348%22%20font-size%3D%2219%22%20font-weight%3D%22700%22%20fill%3D%22%23334155%22%3Echeck_metadata%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22284%22%20y%3D%22336%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%230f172a%22%3E%EB%AA%A8%EC%A7%84%20%EB%A9%94%EC%8B%9C%EC%A7%80%3A%20%EB%8B%A4%ED%88%BC%20%EC%A7%81%ED%9B%84%20%EB%B0%9C%EC%8B%A0.%20%EC%9D%B5%EB%AA%85%20%EC%86%8C%EB%AC%B8%20%EC%8B%9C%EC%9E%91%3A%20%EC%95%BD%202%EC%A3%BC%3C%2Ftext%3E%3Ctext%20x%3D%22284%22%20y%3D%22360%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%230f172a%22%3E%ED%9B%84.%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221162%22%20y%3D%22348%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%23475569%22%20text-anchor%3D%22end%22%3E%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2266%22%20y%3D%22412%22%20width%3D%221148%22%20height%3D%2280%22%20rx%3D%2216%22%20fill%3D%22rgba(15%2C23%2C42%2C0.04)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2294%22%20y%3D%22450%22%20font-size%3D%2219%22%20font-weight%3D%22700%22%20fill%3D%22%23334155%22%3Erestore_context%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22284%22%20y%3D%22438%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%230f172a%22%3E%EC%84%B8%EC%95%84%EA%B0%80%20%EB%AA%A8%EC%A7%84%20%EB%A9%94%EC%8B%9C%EC%A7%80%EB%A1%9C%20%EC%83%81%EC%B2%98%EB%A5%BC%20%EC%A4%80%20%EA%B2%83%EC%9D%80%20%EC%82%AC%EC%8B%A4.%20%EA%B7%B8%EB%9F%AC%EB%82%98%20%EC%83%9D%ED%99%9C%EC%A7%80%EB%8F%84%EC%8B%A4%3C%2Ftext%3E%3Ctext%20x%3D%22284%22%20y%3D%22462%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%230f172a%22%3E%EB%A9%94%EB%AA%A8%EC%97%90%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221162%22%20y%3D%22450%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%23475569%22%20text-anchor%3D%22end%22%3E%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2266%22%20y%3D%22514%22%20width%3D%221148%22%20height%3D%2280%22%20rx%3D%2216%22%20fill%3D%22rgba(15%2C23%2C42%2C0.04)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2294%22%20y%3D%22552%22%20font-size%3D%2219%22%20font-weight%3D%22700%22%20fill%3D%22%23334155%22%3Everify_source%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22284%22%20y%3D%22540%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%230f172a%22%3E%ED%95%99%EA%B5%90%20%EB%B3%B4%EC%A1%B4%20%EB%AC%B8%EC%84%9C(%EC%83%9D%ED%99%9C%EC%A7%80%EB%8F%84%EC%8B%A4%20%EB%A9%94%EB%AA%A8)%EC%9D%98%20%EB%82%A0%EC%A7%9C%EC%99%80%20%EC%84%B8%EC%95%84%C2%B7%ED%95%9C%EC%9C%A0%EC%A7%84%20%EA%B0%9C%EC%9D%B8%3C%2Ftext%3E%3Ctext%20x%3D%22284%22%20y%3D%22564%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%230f172a%22%3E%EC%9D%B4%EB%A9%94%EC%9D%BC%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221162%22%20y%3D%22552%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%23475569%22%20text-anchor%3D%22end%22%3E%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2266%22%20y%3D%22616%22%20width%3D%221148%22%20height%3D%2280%22%20rx%3D%2216%22%20fill%3D%22rgba(15%2C23%2C42%2C0.04)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2294%22%20y%3D%22654%22%20font-size%3D%2219%22%20font-weight%3D%22700%22%20fill%3D%22%23334155%22%3Echeck_edits%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22284%22%20y%3D%22642%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%230f172a%22%3E%EC%83%9D%ED%99%9C%EC%A7%80%EB%8F%84%EC%8B%A4%20%EB%A9%94%EB%AA%A8%EB%8A%94%20%EC%A2%85%EC%9D%B4%20%EC%9B%90%EB%B3%B8%EC%9D%98%20%EC%8A%A4%EC%BA%94%EB%B3%B8%EC%9C%BC%EB%A1%9C%2C%20%EB%B0%9D%EA%B8%B0%C2%B7%EB%8C%80%EB%B9%84%20%EB%B3%B4%EC%A0%95%20%EC%99%B8%3C%2Ftext%3E%3Ctext%20x%3D%22284%22%20y%3D%22666%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%230f172a%22%3E%EC%9B%90%EB%AC%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221162%22%20y%3D%22654%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%23475569%22%20text-anchor%3D%22end%22%3E%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Ctext%20x%3D%2270%22%20y%3D%22894%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%23475569%22%3E%EC%B6%9C%EC%B2%98%20%EB%A9%94%EB%AA%A8%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%3C%2Fsvg%3E%0A%20%20",
+          "width": 1280,
+          "height": 960,
+          "alt": "2006년 메모와 동창 진술 document evidence",
+          "caption": "2006년 메모와 동창 진술 document preview"
+        }
+      },
       "investigationStages": [
         {
           "stage": 0,
           "revealKey": "request_original",
           "question": {
-            "text": "이 옛 메일 묶음과 메모 사본에 대해 설명하십시오.",
-            "attackVector": "context"
+            "text": "재판관님, 2006년 메모와 동창 진술의 원본과 취득 경위를 먼저 확인해 주시겠습니까?",
+            "attackVector": "authenticity"
           }
         },
         {
           "stage": 1,
-          "revealKey": "check_metadata",
+          "revealKey": "restore_context",
           "question": {
-            "text": "두 기록 사이에 2주가량 간격이 벌어진 이유를 설명하십시오.",
-            "attackVector": "timeline"
+            "text": "재판관님, 2006년 메모와 동창 진술이 d-2, d-5와 어떻게 이어지는지 빠진 맥락까지 설명해 주시겠습니까?",
+            "attackVector": "context"
           }
         },
         {
           "stage": 2,
-          "revealKey": "restore_context",
+          "revealKey": "check_responsibility",
           "question": {
-            "text": "과거의 거친 표현과 익명 게시 주체를 묶은 이유를 설명하십시오.",
-            "attackVector": "context"
+            "text": "재판관님, 2006년 메모와 동창 진술이 누구의 관리 책임을 더 무겁게 가리키는지 분리해 주십시오.",
+            "attackVector": "responsibility"
           }
         }
-      ]
+      ],
+      "partyContext": {
+        "a": {
+          "questionAngle": "A측 관점에서 이 자료가 가리키는 책임과 경위를 설명해 주십시오.",
+          "implication": "생활지도실 메모, 당시 메일 일부, 동창 진술을 묶은 과거 기록이다."
+        },
+        "b": {
+          "questionAngle": "B측 관점에서 이 자료가 가리키는 책임과 경위를 설명해 주십시오.",
+          "implication": "생활지도실 메모, 당시 메일 일부, 동창 진술을 묶은 과거 기록이다."
+        }
+      }
+    },
+    {
+      "id": "e-7",
+      "name": "위조 작업 DM",
+      "description": "캡처를 더 사실처럼 보이게 손보자는 DM과 템플릿 지시가 담긴 자료다.",
+      "surfaceName": "위조 작업 DM",
+      "surfaceDescription": "캡처를 더 사실처럼 보이게 손보자는 DM과 템플릿 지시가 담긴 자료다.",
+      "type": "chat",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "institutional",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-3",
+        "d-4"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-5"
+      ],
+      "subjectParty": "both",
+      "investigationResults": {
+        "request_original": "위조 작업 DM 원본 제출 경위와 보관 위치가 함께 확인됐다.",
+        "check_metadata": "위조 작업 DM의 핵심 시점과 작성 흔적이 남아 있다.",
+        "restore_context": "위조 작업 DM 전후 맥락을 복원하면 표면 설명과 다른 구조가 드러난다.",
+        "verify_source": "위조 작업 DM의 출처와 전달 경로가 대조 가능한 형태로 남아 있다.",
+        "check_edits": "위조 작업 DM에서 삭제·편집 또는 누락 여부를 추가 확인해야 한다.",
+        "question_acquisition": "위조 작업 DM 취득 경위와 사용 범위를 함께 따져야 한다."
+      },
+      "requiredLieState": "S4",
+      "meta": {
+        "name": "위조 작업 DM",
+        "type": "chat",
+        "viewerType": "chat",
+        "trustLevel": "mid",
+        "trustLabel": "보통",
+        "source": "org",
+        "sourceLabel": "기관",
+        "legality": "ok",
+        "legalLabel": "적법",
+        "stage": 7,
+        "stageLabel": "핵심 공개",
+        "sourceNote": "institutional / original",
+        "redactions": []
+      },
+      "viewerData": {
+        "meta": {
+          "name": "위조 작업 DM",
+          "type": "chat",
+          "viewerType": "chat",
+          "trustLevel": "mid",
+          "trustLabel": "보통",
+          "source": "org",
+          "sourceLabel": "기관",
+          "legality": "ok",
+          "legalLabel": "적법",
+          "stage": 7,
+          "stageLabel": "핵심 공개",
+          "sourceNote": "institutional / original",
+          "redactions": []
+        },
+        "chat": {
+          "header": "위조 작업 DM 기록",
+          "messages": [
+            {
+              "side": "left",
+              "sender": "기록",
+              "text": "캡처를 더 사실처럼 보이게 손보자는 DM과 템플릿 지시가 담긴 자료다."
+            }
+          ]
+        },
+        "media": {
+          "imageUrl": "data:image/svg+xml;charset=UTF-8,%0A%20%20%20%20%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%221080%22%20height%3D%221600%22%20viewBox%3D%220%200%201080%201600%22%3E%0A%20%20%20%20%20%20%3Crect%20width%3D%221080%22%20height%3D%221600%22%20rx%3D%2240%22%20fill%3D%22%230b1220%22%20%2F%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%2224%22%20y%3D%2224%22%20width%3D%221032%22%20height%3D%221552%22%20rx%3D%2234%22%20fill%3D%22%23111827%22%20stroke%3D%22rgba(255%2C255%2C255%2C0.08)%22%20%2F%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%2254%22%20y%3D%2254%22%20width%3D%22972%22%20height%3D%2278%22%20rx%3D%2222%22%20fill%3D%22rgba(255%2C255%2C255%2C0.06)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2282%22%20y%3D%22102%22%20font-size%3D%2218%22%20font-weight%3D%22800%22%20fill%3D%22%2334d399%22%3ECHAT%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2282%22%20y%3D%22132%22%20font-size%3D%2228%22%20font-weight%3D%22800%22%20fill%3D%22%23f8fafc%22%3E%EC%9C%84%EC%A1%B0%20%EC%9E%91%EC%97%85%20DM%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%3Ctext%20x%3D%2254%22%20y%3D%22180%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%2394a3b8%22%3E%EA%B8%B0%EB%A1%9D%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22684%22%20y%3D%22180%22%20font-size%3D%2215%22%20font-weight%3D%22600%22%20fill%3D%22%2364748b%22%20text-anchor%3D%22end%22%3ET01%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%2254%22%20y%3D%22198%22%20width%3D%22640%22%20height%3D%22130%22%20rx%3D%2228%22%20fill%3D%22%231f2937%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2278%22%20y%3D%22236%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%EC%9C%84%EC%A1%B0%20%EC%9E%91%EC%97%85%20DM%20%EC%9B%90%EB%B3%B8%20%EC%A0%9C%EC%B6%9C%20%EA%B2%BD%EC%9C%84%EC%99%80%20%EB%B3%B4%EA%B4%80%20%EC%9C%84%EC%B9%98%EA%B0%80%3C%2Ftext%3E%3Ctext%20x%3D%2278%22%20y%3D%22262%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%ED%95%A8%EA%BB%98%20%ED%99%95%EC%9D%B8%EB%90%90%EB%8B%A4.%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%0A%20%20%20%20%20%20%3Ctext%20x%3D%22386%22%20y%3D%22386%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%2394a3b8%22%3E%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221016%22%20y%3D%22386%22%20font-size%3D%2215%22%20font-weight%3D%22600%22%20fill%3D%22%2364748b%22%20text-anchor%3D%22end%22%3ET02%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%22386%22%20y%3D%22404%22%20width%3D%22640%22%20height%3D%22130%22%20rx%3D%2228%22%20fill%3D%22%2334d399%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22410%22%20y%3D%22442%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23052e16%22%3E%EC%9C%84%EC%A1%B0%20%EC%9E%91%EC%97%85%20DM%EC%9D%98%20%ED%95%B5%EC%8B%AC%20%EC%8B%9C%EC%A0%90%EA%B3%BC%20%EC%9E%91%EC%84%B1%20%ED%9D%94%EC%A0%81%EC%9D%B4%20%EB%82%A8%EC%95%84%3C%2Ftext%3E%3Ctext%20x%3D%22410%22%20y%3D%22468%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23052e16%22%3E%EC%9E%88%EB%8B%A4.%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%0A%20%20%20%20%20%20%3Ctext%20x%3D%2254%22%20y%3D%22592%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%2394a3b8%22%3E%EA%B8%B0%EB%A1%9D%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22684%22%20y%3D%22592%22%20font-size%3D%2215%22%20font-weight%3D%22600%22%20fill%3D%22%2364748b%22%20text-anchor%3D%22end%22%3ET03%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%2254%22%20y%3D%22610%22%20width%3D%22640%22%20height%3D%22130%22%20rx%3D%2228%22%20fill%3D%22%231f2937%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2278%22%20y%3D%22648%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%EC%9C%84%EC%A1%B0%20%EC%9E%91%EC%97%85%20DM%20%EC%A0%84%ED%9B%84%20%EB%A7%A5%EB%9D%BD%EC%9D%84%20%EB%B3%B5%EC%9B%90%ED%95%98%EB%A9%B4%20%ED%91%9C%EB%A9%B4%3C%2Ftext%3E%3Ctext%20x%3D%2278%22%20y%3D%22674%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%EC%84%A4%EB%AA%85%EA%B3%BC%20%EB%8B%A4%EB%A5%B8%20%EA%B5%AC%EC%A1%B0%EA%B0%80%20%EB%93%9C%EB%9F%AC%EB%82%9C%EB%8B%A4.%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%0A%20%20%20%20%20%20%3Ctext%20x%3D%22386%22%20y%3D%22798%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%2394a3b8%22%3E%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221016%22%20y%3D%22798%22%20font-size%3D%2215%22%20font-weight%3D%22600%22%20fill%3D%22%2364748b%22%20text-anchor%3D%22end%22%3ET04%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%22386%22%20y%3D%22816%22%20width%3D%22640%22%20height%3D%22130%22%20rx%3D%2228%22%20fill%3D%22%2334d399%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22410%22%20y%3D%22854%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23052e16%22%3E%EC%9C%84%EC%A1%B0%20%EC%9E%91%EC%97%85%20DM%EC%9D%98%20%EC%B6%9C%EC%B2%98%EC%99%80%20%EC%A0%84%EB%8B%AC%20%EA%B2%BD%EB%A1%9C%EA%B0%80%20%EB%8C%80%EC%A1%B0%3C%2Ftext%3E%3Ctext%20x%3D%22410%22%20y%3D%22880%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23052e16%22%3E%EA%B0%80%EB%8A%A5%ED%95%9C%20%ED%98%95%ED%83%9C%EB%A1%9C%20%EB%82%A8%EC%95%84%20%EC%9E%88%EB%8B%A4.%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%0A%20%20%20%20%20%20%3Ctext%20x%3D%2254%22%20y%3D%221004%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%2394a3b8%22%3E%EA%B8%B0%EB%A1%9D%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22684%22%20y%3D%221004%22%20font-size%3D%2215%22%20font-weight%3D%22600%22%20fill%3D%22%2364748b%22%20text-anchor%3D%22end%22%3ET05%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%2254%22%20y%3D%221022%22%20width%3D%22640%22%20height%3D%22130%22%20rx%3D%2228%22%20fill%3D%22%231f2937%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2278%22%20y%3D%221060%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%EC%9C%84%EC%A1%B0%20%EC%9E%91%EC%97%85%20DM%EC%97%90%EC%84%9C%20%EC%82%AD%EC%A0%9C%C2%B7%ED%8E%B8%EC%A7%91%20%EB%98%90%EB%8A%94%20%EB%88%84%EB%9D%BD%20%EC%97%AC%EB%B6%80%EB%A5%BC%3C%2Ftext%3E%3Ctext%20x%3D%2278%22%20y%3D%221086%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%EC%B6%94%EA%B0%80%20%ED%99%95%EC%9D%B8%ED%95%B4%EC%95%BC%20%ED%95%9C%EB%8B%A4.%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%0A%20%20%20%20%20%20%3Ctext%20x%3D%22386%22%20y%3D%221210%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%2394a3b8%22%3E%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221016%22%20y%3D%221210%22%20font-size%3D%2215%22%20font-weight%3D%22600%22%20fill%3D%22%2364748b%22%20text-anchor%3D%22end%22%3ET06%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%22386%22%20y%3D%221228%22%20width%3D%22640%22%20height%3D%22130%22%20rx%3D%2228%22%20fill%3D%22%2334d399%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22410%22%20y%3D%221266%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23052e16%22%3E%EC%9C%84%EC%A1%B0%20%EC%9E%91%EC%97%85%20DM%20%EC%B7%A8%EB%93%9D%20%EA%B2%BD%EC%9C%84%EC%99%80%20%EC%82%AC%EC%9A%A9%20%EB%B2%94%EC%9C%84%EB%A5%BC%20%ED%95%A8%EA%BB%98%3C%2Ftext%3E%3Ctext%20x%3D%22410%22%20y%3D%221292%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23052e16%22%3E%EB%94%B0%EC%A0%B8%EC%95%BC%20%ED%95%9C%EB%8B%A4.%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%0A%20%20%20%20%3C%2Fsvg%3E%0A%20%20",
+          "thumbnailUrl": "data:image/svg+xml;charset=UTF-8,%0A%20%20%20%20%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%221080%22%20height%3D%221600%22%20viewBox%3D%220%200%201080%201600%22%3E%0A%20%20%20%20%20%20%3Crect%20width%3D%221080%22%20height%3D%221600%22%20rx%3D%2240%22%20fill%3D%22%230b1220%22%20%2F%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%2224%22%20y%3D%2224%22%20width%3D%221032%22%20height%3D%221552%22%20rx%3D%2234%22%20fill%3D%22%23111827%22%20stroke%3D%22rgba(255%2C255%2C255%2C0.08)%22%20%2F%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%2254%22%20y%3D%2254%22%20width%3D%22972%22%20height%3D%2278%22%20rx%3D%2222%22%20fill%3D%22rgba(255%2C255%2C255%2C0.06)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2282%22%20y%3D%22102%22%20font-size%3D%2218%22%20font-weight%3D%22800%22%20fill%3D%22%2334d399%22%3ECHAT%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2282%22%20y%3D%22132%22%20font-size%3D%2228%22%20font-weight%3D%22800%22%20fill%3D%22%23f8fafc%22%3E%EC%9C%84%EC%A1%B0%20%EC%9E%91%EC%97%85%20DM%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%3Ctext%20x%3D%2254%22%20y%3D%22180%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%2394a3b8%22%3E%EA%B8%B0%EB%A1%9D%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22684%22%20y%3D%22180%22%20font-size%3D%2215%22%20font-weight%3D%22600%22%20fill%3D%22%2364748b%22%20text-anchor%3D%22end%22%3ET01%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%2254%22%20y%3D%22198%22%20width%3D%22640%22%20height%3D%22130%22%20rx%3D%2228%22%20fill%3D%22%231f2937%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2278%22%20y%3D%22236%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%EC%9C%84%EC%A1%B0%20%EC%9E%91%EC%97%85%20DM%20%EC%9B%90%EB%B3%B8%20%EC%A0%9C%EC%B6%9C%20%EA%B2%BD%EC%9C%84%EC%99%80%20%EB%B3%B4%EA%B4%80%20%EC%9C%84%EC%B9%98%EA%B0%80%3C%2Ftext%3E%3Ctext%20x%3D%2278%22%20y%3D%22262%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%ED%95%A8%EA%BB%98%20%ED%99%95%EC%9D%B8%EB%90%90%EB%8B%A4.%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%0A%20%20%20%20%20%20%3Ctext%20x%3D%22386%22%20y%3D%22386%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%2394a3b8%22%3E%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221016%22%20y%3D%22386%22%20font-size%3D%2215%22%20font-weight%3D%22600%22%20fill%3D%22%2364748b%22%20text-anchor%3D%22end%22%3ET02%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%22386%22%20y%3D%22404%22%20width%3D%22640%22%20height%3D%22130%22%20rx%3D%2228%22%20fill%3D%22%2334d399%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22410%22%20y%3D%22442%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23052e16%22%3E%EC%9C%84%EC%A1%B0%20%EC%9E%91%EC%97%85%20DM%EC%9D%98%20%ED%95%B5%EC%8B%AC%20%EC%8B%9C%EC%A0%90%EA%B3%BC%20%EC%9E%91%EC%84%B1%20%ED%9D%94%EC%A0%81%EC%9D%B4%20%EB%82%A8%EC%95%84%3C%2Ftext%3E%3Ctext%20x%3D%22410%22%20y%3D%22468%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23052e16%22%3E%EC%9E%88%EB%8B%A4.%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%0A%20%20%20%20%20%20%3Ctext%20x%3D%2254%22%20y%3D%22592%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%2394a3b8%22%3E%EA%B8%B0%EB%A1%9D%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22684%22%20y%3D%22592%22%20font-size%3D%2215%22%20font-weight%3D%22600%22%20fill%3D%22%2364748b%22%20text-anchor%3D%22end%22%3ET03%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%2254%22%20y%3D%22610%22%20width%3D%22640%22%20height%3D%22130%22%20rx%3D%2228%22%20fill%3D%22%231f2937%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2278%22%20y%3D%22648%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%EC%9C%84%EC%A1%B0%20%EC%9E%91%EC%97%85%20DM%20%EC%A0%84%ED%9B%84%20%EB%A7%A5%EB%9D%BD%EC%9D%84%20%EB%B3%B5%EC%9B%90%ED%95%98%EB%A9%B4%20%ED%91%9C%EB%A9%B4%3C%2Ftext%3E%3Ctext%20x%3D%2278%22%20y%3D%22674%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%EC%84%A4%EB%AA%85%EA%B3%BC%20%EB%8B%A4%EB%A5%B8%20%EA%B5%AC%EC%A1%B0%EA%B0%80%20%EB%93%9C%EB%9F%AC%EB%82%9C%EB%8B%A4.%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%0A%20%20%20%20%20%20%3Ctext%20x%3D%22386%22%20y%3D%22798%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%2394a3b8%22%3E%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221016%22%20y%3D%22798%22%20font-size%3D%2215%22%20font-weight%3D%22600%22%20fill%3D%22%2364748b%22%20text-anchor%3D%22end%22%3ET04%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%22386%22%20y%3D%22816%22%20width%3D%22640%22%20height%3D%22130%22%20rx%3D%2228%22%20fill%3D%22%2334d399%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22410%22%20y%3D%22854%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23052e16%22%3E%EC%9C%84%EC%A1%B0%20%EC%9E%91%EC%97%85%20DM%EC%9D%98%20%EC%B6%9C%EC%B2%98%EC%99%80%20%EC%A0%84%EB%8B%AC%20%EA%B2%BD%EB%A1%9C%EA%B0%80%20%EB%8C%80%EC%A1%B0%3C%2Ftext%3E%3Ctext%20x%3D%22410%22%20y%3D%22880%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23052e16%22%3E%EA%B0%80%EB%8A%A5%ED%95%9C%20%ED%98%95%ED%83%9C%EB%A1%9C%20%EB%82%A8%EC%95%84%20%EC%9E%88%EB%8B%A4.%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%0A%20%20%20%20%20%20%3Ctext%20x%3D%2254%22%20y%3D%221004%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%2394a3b8%22%3E%EA%B8%B0%EB%A1%9D%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22684%22%20y%3D%221004%22%20font-size%3D%2215%22%20font-weight%3D%22600%22%20fill%3D%22%2364748b%22%20text-anchor%3D%22end%22%3ET05%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%2254%22%20y%3D%221022%22%20width%3D%22640%22%20height%3D%22130%22%20rx%3D%2228%22%20fill%3D%22%231f2937%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2278%22%20y%3D%221060%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%EC%9C%84%EC%A1%B0%20%EC%9E%91%EC%97%85%20DM%EC%97%90%EC%84%9C%20%EC%82%AD%EC%A0%9C%C2%B7%ED%8E%B8%EC%A7%91%20%EB%98%90%EB%8A%94%20%EB%88%84%EB%9D%BD%20%EC%97%AC%EB%B6%80%EB%A5%BC%3C%2Ftext%3E%3Ctext%20x%3D%2278%22%20y%3D%221086%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%EC%B6%94%EA%B0%80%20%ED%99%95%EC%9D%B8%ED%95%B4%EC%95%BC%20%ED%95%9C%EB%8B%A4.%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%0A%20%20%20%20%20%20%3Ctext%20x%3D%22386%22%20y%3D%221210%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%2394a3b8%22%3E%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221016%22%20y%3D%221210%22%20font-size%3D%2215%22%20font-weight%3D%22600%22%20fill%3D%22%2364748b%22%20text-anchor%3D%22end%22%3ET06%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%22386%22%20y%3D%221228%22%20width%3D%22640%22%20height%3D%22130%22%20rx%3D%2228%22%20fill%3D%22%2334d399%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22410%22%20y%3D%221266%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23052e16%22%3E%EC%9C%84%EC%A1%B0%20%EC%9E%91%EC%97%85%20DM%20%EC%B7%A8%EB%93%9D%20%EA%B2%BD%EC%9C%84%EC%99%80%20%EC%82%AC%EC%9A%A9%20%EB%B2%94%EC%9C%84%EB%A5%BC%20%ED%95%A8%EA%BB%98%3C%2Ftext%3E%3Ctext%20x%3D%22410%22%20y%3D%221292%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23052e16%22%3E%EB%94%B0%EC%A0%B8%EC%95%BC%20%ED%95%9C%EB%8B%A4.%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%0A%20%20%20%20%3C%2Fsvg%3E%0A%20%20",
+          "posterUrl": "data:image/svg+xml;charset=UTF-8,%0A%20%20%20%20%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%221080%22%20height%3D%221600%22%20viewBox%3D%220%200%201080%201600%22%3E%0A%20%20%20%20%20%20%3Crect%20width%3D%221080%22%20height%3D%221600%22%20rx%3D%2240%22%20fill%3D%22%230b1220%22%20%2F%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%2224%22%20y%3D%2224%22%20width%3D%221032%22%20height%3D%221552%22%20rx%3D%2234%22%20fill%3D%22%23111827%22%20stroke%3D%22rgba(255%2C255%2C255%2C0.08)%22%20%2F%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%2254%22%20y%3D%2254%22%20width%3D%22972%22%20height%3D%2278%22%20rx%3D%2222%22%20fill%3D%22rgba(255%2C255%2C255%2C0.06)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2282%22%20y%3D%22102%22%20font-size%3D%2218%22%20font-weight%3D%22800%22%20fill%3D%22%2334d399%22%3ECHAT%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2282%22%20y%3D%22132%22%20font-size%3D%2228%22%20font-weight%3D%22800%22%20fill%3D%22%23f8fafc%22%3E%EC%9C%84%EC%A1%B0%20%EC%9E%91%EC%97%85%20DM%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%3Ctext%20x%3D%2254%22%20y%3D%22180%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%2394a3b8%22%3E%EA%B8%B0%EB%A1%9D%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22684%22%20y%3D%22180%22%20font-size%3D%2215%22%20font-weight%3D%22600%22%20fill%3D%22%2364748b%22%20text-anchor%3D%22end%22%3ET01%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%2254%22%20y%3D%22198%22%20width%3D%22640%22%20height%3D%22130%22%20rx%3D%2228%22%20fill%3D%22%231f2937%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2278%22%20y%3D%22236%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%EC%9C%84%EC%A1%B0%20%EC%9E%91%EC%97%85%20DM%20%EC%9B%90%EB%B3%B8%20%EC%A0%9C%EC%B6%9C%20%EA%B2%BD%EC%9C%84%EC%99%80%20%EB%B3%B4%EA%B4%80%20%EC%9C%84%EC%B9%98%EA%B0%80%3C%2Ftext%3E%3Ctext%20x%3D%2278%22%20y%3D%22262%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%ED%95%A8%EA%BB%98%20%ED%99%95%EC%9D%B8%EB%90%90%EB%8B%A4.%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%0A%20%20%20%20%20%20%3Ctext%20x%3D%22386%22%20y%3D%22386%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%2394a3b8%22%3E%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221016%22%20y%3D%22386%22%20font-size%3D%2215%22%20font-weight%3D%22600%22%20fill%3D%22%2364748b%22%20text-anchor%3D%22end%22%3ET02%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%22386%22%20y%3D%22404%22%20width%3D%22640%22%20height%3D%22130%22%20rx%3D%2228%22%20fill%3D%22%2334d399%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22410%22%20y%3D%22442%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23052e16%22%3E%EC%9C%84%EC%A1%B0%20%EC%9E%91%EC%97%85%20DM%EC%9D%98%20%ED%95%B5%EC%8B%AC%20%EC%8B%9C%EC%A0%90%EA%B3%BC%20%EC%9E%91%EC%84%B1%20%ED%9D%94%EC%A0%81%EC%9D%B4%20%EB%82%A8%EC%95%84%3C%2Ftext%3E%3Ctext%20x%3D%22410%22%20y%3D%22468%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23052e16%22%3E%EC%9E%88%EB%8B%A4.%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%0A%20%20%20%20%20%20%3Ctext%20x%3D%2254%22%20y%3D%22592%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%2394a3b8%22%3E%EA%B8%B0%EB%A1%9D%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22684%22%20y%3D%22592%22%20font-size%3D%2215%22%20font-weight%3D%22600%22%20fill%3D%22%2364748b%22%20text-anchor%3D%22end%22%3ET03%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%2254%22%20y%3D%22610%22%20width%3D%22640%22%20height%3D%22130%22%20rx%3D%2228%22%20fill%3D%22%231f2937%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2278%22%20y%3D%22648%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%EC%9C%84%EC%A1%B0%20%EC%9E%91%EC%97%85%20DM%20%EC%A0%84%ED%9B%84%20%EB%A7%A5%EB%9D%BD%EC%9D%84%20%EB%B3%B5%EC%9B%90%ED%95%98%EB%A9%B4%20%ED%91%9C%EB%A9%B4%3C%2Ftext%3E%3Ctext%20x%3D%2278%22%20y%3D%22674%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%EC%84%A4%EB%AA%85%EA%B3%BC%20%EB%8B%A4%EB%A5%B8%20%EA%B5%AC%EC%A1%B0%EA%B0%80%20%EB%93%9C%EB%9F%AC%EB%82%9C%EB%8B%A4.%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%0A%20%20%20%20%20%20%3Ctext%20x%3D%22386%22%20y%3D%22798%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%2394a3b8%22%3E%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221016%22%20y%3D%22798%22%20font-size%3D%2215%22%20font-weight%3D%22600%22%20fill%3D%22%2364748b%22%20text-anchor%3D%22end%22%3ET04%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%22386%22%20y%3D%22816%22%20width%3D%22640%22%20height%3D%22130%22%20rx%3D%2228%22%20fill%3D%22%2334d399%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22410%22%20y%3D%22854%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23052e16%22%3E%EC%9C%84%EC%A1%B0%20%EC%9E%91%EC%97%85%20DM%EC%9D%98%20%EC%B6%9C%EC%B2%98%EC%99%80%20%EC%A0%84%EB%8B%AC%20%EA%B2%BD%EB%A1%9C%EA%B0%80%20%EB%8C%80%EC%A1%B0%3C%2Ftext%3E%3Ctext%20x%3D%22410%22%20y%3D%22880%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23052e16%22%3E%EA%B0%80%EB%8A%A5%ED%95%9C%20%ED%98%95%ED%83%9C%EB%A1%9C%20%EB%82%A8%EC%95%84%20%EC%9E%88%EB%8B%A4.%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%0A%20%20%20%20%20%20%3Ctext%20x%3D%2254%22%20y%3D%221004%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%2394a3b8%22%3E%EA%B8%B0%EB%A1%9D%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22684%22%20y%3D%221004%22%20font-size%3D%2215%22%20font-weight%3D%22600%22%20fill%3D%22%2364748b%22%20text-anchor%3D%22end%22%3ET05%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%2254%22%20y%3D%221022%22%20width%3D%22640%22%20height%3D%22130%22%20rx%3D%2228%22%20fill%3D%22%231f2937%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2278%22%20y%3D%221060%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%EC%9C%84%EC%A1%B0%20%EC%9E%91%EC%97%85%20DM%EC%97%90%EC%84%9C%20%EC%82%AD%EC%A0%9C%C2%B7%ED%8E%B8%EC%A7%91%20%EB%98%90%EB%8A%94%20%EB%88%84%EB%9D%BD%20%EC%97%AC%EB%B6%80%EB%A5%BC%3C%2Ftext%3E%3Ctext%20x%3D%2278%22%20y%3D%221086%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%EC%B6%94%EA%B0%80%20%ED%99%95%EC%9D%B8%ED%95%B4%EC%95%BC%20%ED%95%9C%EB%8B%A4.%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%0A%20%20%20%20%20%20%3Ctext%20x%3D%22386%22%20y%3D%221210%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%2394a3b8%22%3E%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221016%22%20y%3D%221210%22%20font-size%3D%2215%22%20font-weight%3D%22600%22%20fill%3D%22%2364748b%22%20text-anchor%3D%22end%22%3ET06%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%22386%22%20y%3D%221228%22%20width%3D%22640%22%20height%3D%22130%22%20rx%3D%2228%22%20fill%3D%22%2334d399%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22410%22%20y%3D%221266%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23052e16%22%3E%EC%9C%84%EC%A1%B0%20%EC%9E%91%EC%97%85%20DM%20%EC%B7%A8%EB%93%9D%20%EA%B2%BD%EC%9C%84%EC%99%80%20%EC%82%AC%EC%9A%A9%20%EB%B2%94%EC%9C%84%EB%A5%BC%20%ED%95%A8%EA%BB%98%3C%2Ftext%3E%3Ctext%20x%3D%22410%22%20y%3D%221292%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23052e16%22%3E%EB%94%B0%EC%A0%B8%EC%95%BC%20%ED%95%9C%EB%8B%A4.%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%0A%20%20%20%20%3C%2Fsvg%3E%0A%20%20",
+          "width": 1080,
+          "height": 1600,
+          "alt": "위조 작업 DM chat evidence",
+          "caption": "위조 작업 DM conversation preview"
+        }
+      },
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "재판관님, 위조 작업 DM의 원본과 취득 경위를 먼저 확인해 주시겠습니까?",
+            "attackVector": "authenticity"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "재판관님, 위조 작업 DM이 d-3, d-4와 어떻게 이어지는지 빠진 맥락까지 설명해 주시겠습니까?",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "check_responsibility",
+          "question": {
+            "text": "재판관님, 위조 작업 DM이 누구의 관리 책임을 더 무겁게 가리키는지 분리해 주십시오.",
+            "attackVector": "responsibility"
+          }
+        }
+      ],
+      "partyContext": {
+        "a": {
+          "questionAngle": "A측 관점에서 이 자료가 가리키는 책임과 경위를 설명해 주십시오.",
+          "implication": "캡처를 더 사실처럼 보이게 손보자는 DM과 템플릿 지시가 담긴 자료다."
+        },
+        "b": {
+          "questionAngle": "B측 관점에서 이 자료가 가리키는 책임과 경위를 설명해 주십시오.",
+          "implication": "캡처를 더 사실처럼 보이게 손보자는 DM과 템플릿 지시가 담긴 자료다."
+        }
+      }
     }
   ],
   "evidenceCombinations": [
     {
       "requires": [
-        "e-3",
-        "e-4"
+        "e-1",
+        "e-5"
       ],
       "upgradesTo": "hard",
       "proves": [
+        "d-3",
         "d-4"
+      ]
+    },
+    {
+      "requires": [
+        "e-4",
+        "e-6"
+      ],
+      "upgradesTo": "hard",
+      "proves": [
+        "d-2",
+        "d-5"
+      ]
+    },
+    {
+      "requires": [
+        "e-3",
+        "e-7"
+      ],
+      "upgradesTo": "hard",
+      "proves": [
+        "d-1",
+        "d-3"
       ]
     }
   ],
@@ -706,7 +1255,7 @@
         {
           "from": "S1",
           "to": "S2",
-          "trigger": "e-2_presented"
+          "trigger": "hard_evidence"
         },
         {
           "from": "S2",
@@ -736,7 +1285,7 @@
         {
           "from": "S1",
           "to": "S2",
-          "trigger": "e-6_presented"
+          "trigger": "hard_evidence"
         },
         {
           "from": "S2",
@@ -773,7 +1322,7 @@
         {
           "from": "S1",
           "to": "S2",
-          "trigger": "e-1_presented"
+          "trigger": "hard_evidence"
         },
         {
           "from": "S2",
@@ -803,7 +1352,7 @@
         {
           "from": "S1",
           "to": "S2",
-          "trigger": "e-3_presented"
+          "trigger": "hard_evidence"
         },
         {
           "from": "S2",
@@ -833,7 +1382,7 @@
         {
           "from": "S1",
           "to": "S2",
-          "trigger": "e-4_presented"
+          "trigger": "hard_evidence"
         },
         {
           "from": "S2",
@@ -882,5 +1431,30 @@
   "activeThirdParties": [
     "tp-2",
     "tp-3"
-  ]
+  ],
+  "baseEvidenceIds": [
+    "e-1",
+    "e-2",
+    "e-3"
+  ],
+  "generatedAt": "2026-04-08T23:37:07.398Z",
+  "pipelineNotes": [
+    "Core6 redesign applied for spouse-12 from Thread-E phase2 design.",
+    "Core6 redesign applied for spouse-12 from Thread-E phase2 design.",
+    "Core6 redesign applied for spouse-12 from Thread-E phase2 design.",
+    "Core6 redesign applied for spouse-12 from Thread-E phase2 design.",
+    "Core6 redesign applied for spouse-12 from Thread-E phase2 design.",
+    "Core6 redesign applied for spouse-12 from Thread-E phase2 design.",
+    "Core6 redesign applied for spouse-12 from Thread-E phase2 design.",
+    "Core6 redesign applied for spouse-12 from Thread-E phase2 design.",
+    "Core6 redesign applied for spouse-12 from Thread-E phase2 design.",
+    "Core6 redesign applied for spouse-12 from Thread-E phase2 design.",
+    "Core6 redesign applied for spouse-12 from Thread-E phase2 design.",
+    "Core6 redesign applied for spouse-12 from Thread-E phase2 design.",
+    "Core6 redesign applied for spouse-12 from Thread-E phase2 design.",
+    "Core6 redesign applied for spouse-12 from Thread-E phase2 design.",
+    "Core6 redesign applied for spouse-12 from Thread-E phase2 design.",
+    "Core6 redesign applied for spouse-12 from Thread-E phase2 design."
+  ],
+  "monetaryDisputeIds": []
 }

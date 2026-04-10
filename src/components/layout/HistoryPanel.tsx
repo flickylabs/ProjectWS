@@ -54,6 +54,8 @@ const RELATION_LABELS: Record<string, string> = {
   partnership: '동업', family: '가족', tenant_landlord: '세입자', friend: '친구',
 }
 
+RELATION_LABELS.headline = '헤드라인'
+
 export default function HistoryPanel({ onClose }: Props) {
   const [history, setHistory] = useState<ExtendedHistoryEntry[]>([])
   const [selectedIdx, setSelectedIdx] = useState<number | null>(null)

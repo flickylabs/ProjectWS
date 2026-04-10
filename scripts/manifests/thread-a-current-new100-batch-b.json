@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-04-08T23:55:16.303Z",
+  "cases": [
+    "friend-new-06",
+    "friend-new-07",
+    "friend-new-08",
+    "friend-new-09",
+    "friend-new-10",
+    "neighbor-new-01",
+    "neighbor-new-02",
+    "neighbor-new-03",
+    "neighbor-new-04",
+    "neighbor-new-05",
+    "neighbor-new-06",
+    "neighbor-new-07",
+    "neighbor-new-08",
+    "neighbor-new-09",
+    "neighbor-new-11",
+    "online-new-01",
+    "online-new-02",
+    "online-new-03",
+    "online-new-04",
+    "online-new-05",
+    "online-new-06",
+    "online-new-07",
+    "online-new-08",
+    "online-new-09",
+    "online-new-10"
+  ]
+}

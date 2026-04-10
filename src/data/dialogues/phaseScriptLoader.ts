@@ -3,6 +3,7 @@
  * import.meta.glob 대신 명시적 import로 안정적 로드.
  */
 import type { DialogueEntry } from '../../types'
+import { normalizeCaseKey } from '../../utils/caseHelpers'
 
 interface PhaseScript {
   caseId: string
@@ -37,7 +38,7 @@ function buildIndex(mods: Record<string, unknown>): Map<string, PhaseScript> {
   for (const [_path, mod] of Object.entries(mods)) {
     const script = extractScript(mod)
     if (script) {
-      map.set(script.caseId, script)
+      map.set(normalizeCaseKey(script.caseId), script)
     }
   }
   return map
@@ -60,7 +61,7 @@ if (phase1Index.size === 0) {
 
 /** Phase 1 스크립트 로드 */
 export function loadPhase1Script(caseId: string): Omit<DialogueEntry, 'id'>[] | null {
-  const script = phase1Index.get(caseId)
+  const script = phase1Index.get(normalizeCaseKey(caseId))
   if (!script) {
     console.warn(`[ScriptLoader] Phase 1 not found: ${caseId}. Available: ${[...phase1Index.keys()].slice(0, 3).join(', ')}...`)
     return null
@@ -76,7 +77,7 @@ export function loadPhase1Script(caseId: string): Omit<DialogueEntry, 'id'>[] | 
 
 /** Phase 2 스크립트 로드 */
 export function loadPhase2Script(caseId: string): Omit<DialogueEntry, 'id'>[] | null {
-  const script = phase2Index.get(caseId)
+  const script = phase2Index.get(normalizeCaseKey(caseId))
   if (!script) return null
   return script.dialogues.map((d) => ({
     speaker: d.speaker as DialogueEntry['speaker'],

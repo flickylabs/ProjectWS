@@ -1156,7 +1156,7 @@ export function enforceHonorifics(text: string): string {
 /* ── NPC 텍스트 공통 후처리 파이프라인 ── */
 
 const MONETARY_DISPUTE_RE = /송금|이체|금액|원\b|만원|돈|비용|계좌|환급|보증금|월세|정산|예치|납부|수당|급여|계약금|위약금|배상금|합의금|채무|대출|융자|임대료/
-const KOREAN_AMOUNT_RE = /(?:\d[\d,.]*\s*(?:천|백|십)?만?\s*원|[일이삼사오육칠팔구십백천]+만?\s*원)/
+const KOREAN_AMOUNT_RE = /(?<![가-힣A-Za-z0-9])(?:\d[\d,.]*\s*(?:천|백|십)?만?\s*원|[일이삼사오육칠팔구십백천]+(?:\s*(?:천|백|십|만))?\s*원)(?![가-힣A-Za-z0-9])/u
 
 function hasMonetaryDisputeDetail(dispute?: CaseData['disputes'][number] | null): boolean {
   if (!dispute) return false
@@ -1338,7 +1338,7 @@ export function postProcessNpcText(rawText: string, ctx: PostProcessContext = {}
   // 6. S5 금액 검증 경고 로그
   if (ctx.lieState === 'S5' && ctx.requireConcreteAmount) {
     // 한국어 수량 표현 포함: "280만원", "1천8백만원", "삼백만원", "60만원", "1,800만원" 등
-    const KOREAN_AMOUNT_RE = /(?:\d[\d,.]*\s*(?:천|백|십)?만?\s*원|[일이삼사오육칠팔구십백천]+만?\s*원)/
+    const KOREAN_AMOUNT_RE = /(?<![가-힣A-Za-z0-9])(?:\d[\d,.]*\s*(?:천|백|십)?만?\s*원|[일이삼사오육칠팔구십백천]+(?:\s*(?:천|백|십|만))?\s*원)(?![가-힣A-Za-z0-9])/u
     const hasConcreteAmount = KOREAN_AMOUNT_RE.test(text)
     if (!hasConcreteAmount) {
       console.warn(`[S5Guard] S5 응답에 구체적 금액 없음 — speaker=${ctx.speaker}`)
@@ -1826,9 +1826,12 @@ function tryScriptedDialoguePath(
     )
   } else if (action.type === 'evidence_present' && 'evidenceId' in action) {
     const ev = caseData.evidence.find(e => e.id === action.evidenceId)
-    const subjectRole = ev?.subjectParty === target ? 'self'
-      : ev?.subjectParty === 'both' ? 'both'
-      : 'other'
+    const subjectParty = ev?.subjectParty ?? 'both'
+    const subjectRole = subjectParty === target
+      ? 'self'
+      : subjectParty === 'both'
+        ? ev?.provenance === 'institutional' ? 'institutional' : 'both'
+        : ev?.provenance === 'institutional' ? 'institutional' : 'other'
     scripted = getScriptedEvidencePresent(
       caseId, target, action.evidenceId, lieEntry.currentState, subjectRole,
     )
@@ -1904,7 +1907,7 @@ async function tryBlueprintPath(
   if (!lieEntry) return null
 
   // ClaimPolicy 조회 — 없으면 기존 경로로 폴백
-  const caseKey = caseData.caseId?.replace(/^case-/, '') ?? ''
+  const caseKey = normalizeCaseKey(caseData)
   const claimPolicy = getClaimPolicy(caseKey, target, disputeId, lieEntry.currentState)
   if (!claimPolicy) return null
   console.log(`[Blueprint] ${caseKey}/${target}/${disputeId}/${lieEntry.currentState} — blueprint 경로 활성`)

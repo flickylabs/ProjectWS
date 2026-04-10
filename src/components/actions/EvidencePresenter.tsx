@@ -74,7 +74,7 @@ export default function EvidencePresenter({ target, onPresent, onConfront, onWit
   useEffect(() => {
     if (evidenceDefinitions.length === 0 && caseData?.evidence && caseData.evidence.length > 0) {
       console.warn('[EvidencePresenter] evidenceDefinitions 비어있음 — caseData에서 복구')
-      useGameStore.getState().initEvidence(caseData.evidence, caseData.evidenceCombinations ?? [])
+      useGameStore.getState().initEvidence(caseData.evidence, caseData.evidenceCombinations ?? [], caseData.baseEvidenceIds)
     }
   }, [evidenceDefinitions.length, caseData])
 
@@ -87,9 +87,9 @@ export default function EvidencePresenter({ target, onPresent, onConfront, onWit
     const unlockedIds = evidenceDefinitions
       .filter(e => evidenceStates[e.id]?.unlocked)
       .map(e => e.id)
-    const baseEvidenceIds = unlockedIds.slice(0, 3)
+    const baseEvidenceIds = caseData?.baseEvidenceIds ?? unlockedIds.slice(0, 3)
     return computeSurfacedEvidence(evidenceStates, evidenceDefinitions, lastFocusedDisputeId, baseEvidenceIds)
-  }, [evidenceStates, evidenceDefinitions, lastFocusedDisputeId, storeSurfacedIds, storeDimmedIds, storeReinforcements])
+  }, [caseData?.baseEvidenceIds, evidenceStates, evidenceDefinitions, lastFocusedDisputeId, storeSurfacedIds, storeDimmedIds, storeReinforcements])
 
   // 표면화 결과가 로컬에서 계산되었으면 스토어에 동기화
   useEffect(() => {

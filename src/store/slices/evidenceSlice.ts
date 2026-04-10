@@ -16,7 +16,7 @@ export interface EvidenceSlice {
   evidenceCombinations: EvidenceCombination[]
   triggeredCombinations: string[]
 
-  initEvidence: (evidence: EvidenceNode[], combinations: EvidenceCombination[]) => void
+  initEvidence: (evidence: EvidenceNode[], combinations: EvidenceCombination[], baseEvidenceIds?: string[]) => void
   presentEvidence: (evidenceId: string, target: 'a' | 'b') => string[]
   investigateEvidence: (evidenceId: string, subAction: string) => string | null
   markEvidenceConfidential: (evidenceId: string) => void
@@ -30,6 +30,8 @@ export interface EvidenceSlice {
   isUnlocked: (evidenceId: string) => boolean
   isPresented: (evidenceId: string) => boolean
   getUnlockedEvidence: () => EvidenceNode[]
+  addDerivedEvidence: (node: EvidenceNode, unlock?: boolean) => void
+  patchEvidenceDefinition: (evidenceId: string, patch: Partial<EvidenceNode>) => void
 }
 
 export const createEvidenceSlice: StateCreator<EvidenceSlice, [], [], EvidenceSlice> = (set, get) => ({
@@ -42,12 +44,16 @@ export const createEvidenceSlice: StateCreator<EvidenceSlice, [], [], EvidenceSl
   dimmedEvidenceIds: [],
   evidenceReinforcements: {},
 
-  initEvidence: (evidence, combinations) => {
+  initEvidence: (evidence, combinations, baseEvidenceIds) => {
     set({
       evidenceDefinitions: evidence,
       evidenceCombinations: combinations,
-      evidenceStates: createInitialEvidenceStates(evidence),
+      evidenceStates: createInitialEvidenceStates(evidence, baseEvidenceIds),
       triggeredCombinations: [],
+      recommendedEvidenceIds: [],
+      surfacedEvidenceIds: [],
+      dimmedEvidenceIds: [],
+      evidenceReinforcements: {},
     })
   },
 
@@ -157,5 +163,34 @@ export const createEvidenceSlice: StateCreator<EvidenceSlice, [], [], EvidenceSl
   getUnlockedEvidence: () => {
     const { evidenceStates, evidenceDefinitions } = get()
     return evidenceDefinitions.filter((e) => evidenceStates[e.id]?.unlocked)
+  },
+
+  addDerivedEvidence: (node, unlock = true) => {
+    const { evidenceDefinitions, evidenceStates } = get()
+    if (evidenceDefinitions.some((item) => item.id === node.id)) {
+      return
+    }
+
+    set({
+      evidenceDefinitions: [...evidenceDefinitions, node],
+      evidenceStates: {
+        ...evidenceStates,
+        [node.id]: {
+          id: node.id,
+          unlocked: unlock,
+          presented: false,
+          presentedTo: [],
+          investigatedActions: [],
+        },
+      },
+    })
+  },
+
+  patchEvidenceDefinition: (evidenceId, patch) => {
+    const { evidenceDefinitions } = get()
+    const next = evidenceDefinitions.map((item) =>
+      item.id === evidenceId ? { ...item, ...patch } : item,
+    )
+    set({ evidenceDefinitions: next })
   },
 })

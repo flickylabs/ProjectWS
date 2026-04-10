@@ -20,6 +20,8 @@ const RELATION_LABELS: Record<string, string> = {
   partnership: '동업자',
 }
 
+RELATION_LABELS.headline = '헤드라인'
+
 export function getRelationLabel(relType: string): string {
   return RELATION_LABELS[relType] ?? relType
 }

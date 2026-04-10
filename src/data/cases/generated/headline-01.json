@@ -1,0 +1,2159 @@
+{
+  "caseId": "case-headline-01",
+  "meta": {
+    "relationshipType": "headline",
+    "conflictSeed": "CS-H1",
+    "variableModules": [
+      "VM-H1"
+    ],
+    "twistModule": "TW-H-01",
+    "difficulty": "hard",
+    "anchorTruth": "리뷰 영상의 핵심 장면은 사실이지만, 강민호는 무상 협조와 사후 회복 패키지를 반복적으로 압박해 왔고, 정태성은 실제 위생 위반과 조직적 보복, 부분 신상 유포를 저질렀다.",
+    "emotionalBait": "천만 조회 영상, 재방문을 핑계로 한 무상 협조 DM, 구청 위생 시정 메일, 점주 단체방의 신상 공유, 평점 폭락 로그가 한꺼번에 겹치면서 둘 다 피해자이면서 가해자인 구도가 드러난다.",
+    "resolutionDilemma": "실제 위생 위반을 더 무겁게 볼지, 영향력을 이용한 이익 추출과 보복성 신상 유포를 더 무겁게 볼지 갈린다. 진실을 모두 공개하면 둘 다 무너지지만, 덮으면 같은 방식의 재발을 막기 어렵다."
+  },
+  "duo": {
+    "duoId": "duo-case-headline-01",
+    "relationshipType": "headline",
+    "partyA": {
+      "id": "a",
+      "name": "강민호",
+      "age": 34,
+      "occupation": "푸드 리뷰 크리에이터",
+      "incomeBracket": "high",
+      "archetype": "victim_cosplay",
+      "speechStyle": "처음에는 소비자 보호와 공익을 내세우지만, 궁지에 몰리면 업주가 먼저 자신을 이용하려 했다는 식으로 피해자 프레임을 강화한다.",
+      "pride": 8,
+      "fear": "공짜 협찬이나 사후 거래를 노리는 리뷰어라는 낙인이 찍혀 광고와 채널 신뢰를 동시에 잃는 것",
+      "riskAppetite": 7,
+      "digitalHabit": "sns_active",
+      "dailyRoutine": "점심 전 제보를 정리하고, 오후에는 매장 촬영과 짧은 라이브를 돌린다. 저녁에는 업로드 직후 반응과 평점 추이를 실시간으로 확인한다.",
+      "sensitivePoints": [
+        "협찬 리뷰 의심",
+        "무상 제공 요구",
+        "공익을 가장한 거래 제안"
+      ],
+      "verbalTells": [
+        {
+          "type": "moral_framing",
+          "trigger": "lying",
+          "pattern": "구체적인 행위를 묻는 질문을 받으면 먼저 소비자 보호와 공익을 강조해 자신의 행동을 도덕적 의무처럼 포장한다."
+        },
+        {
+          "type": "injury_emphasis",
+          "trigger": "hurt",
+          "pattern": "불리한 정황이 나오면 사실관계보다 자신이 받은 협박, 공포, 악플 피해를 길게 말해 논점을 옮긴다."
+        },
+        {
+          "type": "soft_extortion_language",
+          "trigger": "defensive",
+          "pattern": "무상 제공이나 거래 제안을 직접 요구하지 않고 협조, 회복, 재검증 같은 단어로 돌려 말한다."
+        }
+      ],
+      "callTerms": {
+        "toPartner": "정 사장님",
+        "toJudge": "저 업주",
+        "angry": "정태성 씨"
+      }
+    },
+    "partyB": {
+      "id": "b",
+      "name": "정태성",
+      "age": 46,
+      "occupation": "양식 다이닝 오너셰프",
+      "incomeBracket": "mid",
+      "archetype": "cold_logic",
+      "speechStyle": "숫자와 영업 자료를 앞세워 말하지만, 몰리면 리뷰어의 조회수 장사와 인격을 공격하는 쪽으로 급격히 선회한다.",
+      "pride": 9,
+      "fear": "한 번의 바이럴 영상으로 업장과 가족 생계가 동시에 무너지고, 자신이 비열한 업주로 굳어지는 것",
+      "riskAppetite": 6,
+      "digitalHabit": "messenger_main",
+      "dailyRoutine": "오전엔 식재 검수와 재고 정리를 하고, 점심 장사 이후엔 예약 취소와 리뷰 반응을 확인한다. 영업 마감 후에는 점주 단체방과 배달앱 수치를 챙긴다.",
+      "sensitivePoints": [
+        "위생 불량",
+        "악플 동원",
+        "신상 노출"
+      ],
+      "verbalTells": [
+        {
+          "type": "process_shield",
+          "trigger": "lying",
+          "pattern": "문제를 인정하기보다 매뉴얼, 바쁜 시간대, 직원 실수 같은 운영 언어로 책임을 분산한다."
+        },
+        {
+          "type": "counter_motive",
+          "trigger": "cornered",
+          "pattern": "자신의 위반을 묻는 순간 곧바로 상대가 조회수와 돈을 노렸다는 동기 공격으로 맞받아친다."
+        },
+        {
+          "type": "precision_spike",
+          "trigger": "defensive",
+          "pattern": "분노가 올라올수록 숫자와 시간, 매출 감소를 과하게 정확하게 말한다."
+        }
+      ],
+      "callTerms": {
+        "toPartner": "강민호 씨",
+        "toJudge": "저 리뷰어",
+        "angry": "강민호"
+      }
+    },
+    "relationshipLedger": [
+      {
+        "id": "ledger-1",
+        "category": "confirmed",
+        "description": "강민호는 사건 두 달 전 비공개 방문에서 메뉴 협찬과 재방문 촬영 협조를 넌지시 요구했고, 정태성은 그때부터 리뷰어가 장사 수단을 찾는다고 의심해 왔다.",
+        "isReal": true,
+        "whoRemembersAccurately": "both",
+        "whoDistorts": "none",
+        "distortionDirection": "",
+        "currentlyResolved": "surface_only",
+        "emotionalResidue": "strong",
+        "connectionToCurrent": "direct"
+      },
+      {
+        "id": "ledger-2",
+        "category": "distorted",
+        "description": "정태성은 작년에도 위생 시정 권고를 받은 적이 있지만, 본인은 단발성 행정 지적이었다고 기억하고 직원들은 반복된 문제였다고 말한다.",
+        "isReal": true,
+        "whoRemembersAccurately": "both",
+        "whoDistorts": "b",
+        "distortionDirection": "B는 반복 문제를 일시적 실수로 축소한다.",
+        "currentlyResolved": "unresolved",
+        "emotionalResidue": "mild",
+        "connectionToCurrent": "direct"
+      },
+      {
+        "id": "ledger-3",
+        "category": "silenced",
+        "description": "영상 공개 직후 점주 단체방에서 리뷰어 차량 번호와 촬영 동선이 오갔지만, 정태성은 그 선을 넘었다는 사실을 지금까지 공개적으로 인정하지 않았다.",
+        "isReal": true,
+        "whoRemembersAccurately": "b",
+        "whoDistorts": "b",
+        "distortionDirection": "B는 단순 방어 자료 공유였다고 주장한다.",
+        "currentlyResolved": "surface_only",
+        "emotionalResidue": "strong",
+        "connectionToCurrent": "direct"
+      }
+    ],
+    "socialGraph": [
+      {
+        "id": "tp-1",
+        "slot": "acquaintance_1",
+        "name": "김서우",
+        "relationTo": "b",
+        "knowledgeScope": "촬영 당일 주방과 홀의 분위기, 사장의 분노, 영상 공개 후 직원들에게 내려온 대응 지시를 알고 있다.",
+        "witnessedDirectly": true,
+        "bias": "self_interest",
+        "distortionRisk": "strategic",
+        "witnessProfile": {
+          "age": 28,
+          "occupation": "홀 매니저",
+          "relationToA": "가게에 와서 촬영한 손님 정도로 알고 있다.",
+          "relationToB": "현재 사장 밑에서 근무 중이다.",
+          "sentimentToA": -15,
+          "sentimentToB": 35,
+          "speechStyle": "자신의 책임이 불똥 튀지 않게 하려는 태도가 강하고, 직접 본 사실과 들은 사실을 섞어 말한다.",
+          "addressJudge": "재판관님",
+          "addressA": "강민호 씨",
+          "addressB": "사장님"
+        },
+        "surfaceKnowledge": "촬영 당일 매장 대응과 공개 이후의 직원 단체방 분위기를 안다."
+      },
+      {
+        "id": "tp-2",
+        "slot": "institutional",
+        "name": "박정아",
+        "relationTo": "both",
+        "knowledgeScope": "보건소 위생 시정 기록, 재점검 결과, 즉시 영업정지 사안인지 여부를 기록으로 설명할 수 있다.",
+        "witnessedDirectly": true,
+        "bias": "neutral",
+        "distortionRisk": "accurate",
+        "witnessProfile": {
+          "age": 41,
+          "occupation": "구청 위생지도 담당자",
+          "relationToA": "민원 제기인 중 한 명으로 기록되어 있다.",
+          "relationToB": "위생 점검 대상 업주다.",
+          "sentimentToA": 0,
+          "sentimentToB": 0,
+          "speechStyle": "감정보다 행정 기록과 시점, 조치 수위를 정확히 구분해 말한다.",
+          "addressJudge": "재판관님",
+          "addressA": "강민호 씨",
+          "addressB": "정태성 씨"
+        },
+        "surfaceKnowledge": "영상보다 행정 기록으로 확인되는 위생 문제의 범위를 안다."
+      },
+      {
+        "id": "tp-3",
+        "slot": "acquaintance_2",
+        "name": "서혜림",
+        "relationTo": "a",
+        "knowledgeScope": "강민호가 과거에도 재촬영 협조와 사후 패키지 제안을 묶어 썼다는 점, MCN이 이를 어떻게 상품화했는지 알고 있다.",
+        "witnessedDirectly": true,
+        "bias": "anti_a",
+        "distortionRisk": "strategic",
+        "witnessProfile": {
+          "age": 33,
+          "occupation": "전 MCN PD",
+          "relationToA": "이전 소속사에서 함께 일했다.",
+          "relationToB": "직접적인 인연은 없다.",
+          "sentimentToA": -40,
+          "sentimentToB": 0,
+          "speechStyle": "업계 용어를 쓰며 차갑게 말하고, A의 습관을 폭로하는 데 거리낌이 없다.",
+          "addressJudge": "재판관님",
+          "addressA": "강민호 씨",
+          "addressB": "정태성 씨"
+        },
+        "surfaceKnowledge": "리뷰어의 사후 거래 패턴과 내부 견적 구조를 안다."
+      }
+    ]
+  },
+  "context": {
+    "contextType": "viral_reputation_crisis",
+    "description": "강민호가 올린 '이 집, 다시는 가지 마세요' 영상이 18시간 만에 천만 조회를 넘기면서 정태성의 레스토랑은 예약 취소와 평점 폭락을 동시에 맞았다. 그런데 영상 공개 전 강민호가 보낸 무상 협조 DM, 공개 후 회복 패키지 견적서, 점주 단체방의 신상 공유 정황이 함께 드러나면서 사건은 단순 소비자 고발에서 공개 여론전으로 번졌다.",
+    "emotionalPressure": 9,
+    "affects": "both",
+    "triggerAmplifier": "A는 자신이 협박과 보복의 피해자라고 주장하고, B는 자신이 조회수 장사의 희생양이라고 주장한다. 그러나 영상의 핵심 장면, 반복된 위생 지적, 무상 협조 요구, 신상 유포가 모두 진짜라서 어느 한쪽만 선의라고 보기 어렵다.",
+    "caseNumber": "E-HD-0001",
+    "caseName": "천만 조회의 저녁"
+  },
+  "disputes": [
+    {
+      "id": "d-1",
+      "name": "폭로 영상의 공익성과 편집",
+      "truth": true,
+      "truthDescription": "영상의 핵심 위생 장면은 실제 촬영본이 맞지만, 강민호는 서비스 복구 시도와 재촬영 제안을 의도적으로 덜어내며 매장의 악의와 위기감을 더 크게 보이도록 편집했다.",
+      "quadrant": "both_know",
+      "requiredEvidence": [
+        "e-1",
+        "e-6"
+      ],
+      "correctResponsibility": {
+        "a": 70,
+        "b": 30
+      },
+      "ambiguity": "high",
+      "weight": "high",
+      "mediationLink": "공개정정",
+      "legitimacyIssue": false,
+      "judgmentStatement": "영상 자체는 사실을 담았지만, 편집과 공개 방식에 A의 책임이 크다."
+    },
+    {
+      "id": "d-2",
+      "name": "실제 위생 위반의 정도",
+      "truth": true,
+      "truthDescription": "정태성의 매장은 일회성 실수가 아니라 반복된 위생 관리 실패가 있었고, 특히 재료 보관과 교차오염 방지 항목에서 시정 권고를 누적해서 받았다. 다만 즉시 영업정지 수준의 중대 사고는 아니었다.",
+      "quadrant": "b_only",
+      "requiredEvidence": [
+        "e-2",
+        "e-3"
+      ],
+      "correctResponsibility": {
+        "a": 20,
+        "b": 80
+      },
+      "ambiguity": "low",
+      "weight": "high",
+      "mediationLink": "영업개선",
+      "legitimacyIssue": false,
+      "judgmentStatement": "실제 위생 위반은 존재했고, B의 책임이 중하다."
+    },
+    {
+      "id": "d-3",
+      "name": "무상 협조 요구와 회복 패키지 제안",
+      "truth": true,
+      "truthDescription": "강민호는 촬영 전부터 메뉴 협조와 재방문 촬영 지원을 기대하게 만드는 문구를 보냈고, 영상 공개 뒤에는 MCN을 통해 평판 회복 패키지와 브랜딩 재촬영 견적을 연결했다. 직접적인 협박 문구는 없지만 영향력을 이용한 이익 추출 패턴은 분명하다.",
+      "quadrant": "a_only",
+      "requiredEvidence": [
+        "e-4"
+      ],
+      "correctResponsibility": {
+        "a": 75,
+        "b": 25
+      },
+      "ambiguity": "high",
+      "weight": "high",
+      "mediationLink": "평판피해",
+      "legitimacyIssue": false,
+      "judgmentStatement": "A는 공익 리뷰의 외피 아래 영향력을 이용해 이익을 추출했다."
+    },
+    {
+      "id": "d-4",
+      "name": "점주 측의 보복성 신상 유포",
+      "truth": true,
+      "truthDescription": "정태성은 점주 단체방과 커뮤니티를 통해 강민호의 차량 번호, 촬영 동선, 후기 계정 공유를 유도했고 일부 게시물은 삭제 후 복구되었다. 단순 반박을 넘어선 보복성 신상 유포와 집단 행동이었다.",
+      "quadrant": "b_only",
+      "requiredEvidence": [
+        "e-5",
+        "e-6"
+      ],
+      "correctResponsibility": {
+        "a": 15,
+        "b": 85
+      },
+      "ambiguity": "low",
+      "weight": "high",
+      "mediationLink": "개인정보보호",
+      "legitimacyIssue": true,
+      "judgmentStatement": "B는 반박을 넘어 보복성 신상 유포에 가담했다."
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e-1",
+      "name": "원본 촬영본과 최종 업로드본 비교",
+      "description": "강민호의 원본 촬영본과 최종 업로드 영상을 프레임 단위로 비교한 자료다. 문제 장면은 실제지만, 복구 시도와 실랑이 전후 맥락이 상당 부분 덜어져 있다.",
+      "surfaceName": "리뷰 영상 원본 비교본",
+      "surfaceDescription": "업로드 영상과 원본 촬영본의 차이를 비교한 자료다.",
+      "type": "device",
+      "reliability": "hard",
+      "completeness": "edited",
+      "provenance": "third_party",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-1"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "원본 파일 길이는 27분 14초, 업로드본은 11분 08초다. 핵심 위생 장면은 그대로 남아 있지만, 촬영 직후의 추가 설명과 재확인 구간이 빠져 있다.",
+        "restore_context": "원본에는 정태성이 일부 재료를 즉시 폐기하고 조리 도구를 교체하는 장면, 강민호가 같은 메뉴를 다시 찍자고 말하는 대목이 이어진다.",
+        "check_edits": "업로드본은 위생 장면 앞뒤의 맥락을 잘라낸 반면, 긴장감이 가장 높아지는 표정과 자막은 반복 사용했다."
+      },
+      "subjectParty": "a",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "최종 영상과 원본 촬영본의 길이와 구성이 왜 이렇게 다른지 설명해 주시겠습니까?",
+            "attackVector": "authenticity"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "문제 장면 뒤에 이어진 복구 시도와 재촬영 제안을 왜 영상에서 덜어냈습니까?",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "check_edits",
+          "question": {
+            "text": "공익 제보라면 긴장감이 가장 높은 컷만 반복 배치한 편집 의도를 설명해 주십시오.",
+            "attackVector": "motive"
+          }
+        }
+      ],
+      "meta": {
+        "name": "리뷰 영상 원본 비교본",
+        "type": "device",
+        "viewerType": "device",
+        "trustLevel": "mid",
+        "trustLabel": "보통",
+        "source": "third",
+        "sourceLabel": "제3자",
+        "legality": "ok",
+        "legalLabel": "적법",
+        "stage": 1,
+        "stageLabel": "초기 공개",
+        "sourceNote": "원본 파일 비교본과 편집 이력 대조 자료",
+        "redactions": [
+          "편집 이력 검토 필요",
+          "촬영 협조 직원 실명",
+          "매장 내부 얼굴 일부"
+        ]
+      },
+      "viewerData": {
+        "device": {
+          "ownerName": "편집 비교 패널",
+          "sections": [
+            {
+              "title": "원본 촬영본",
+              "id": "raw",
+              "items": [
+                {
+                  "text": "18:42 문제 장면 포착, 바닥 정리 미흡 구간 유지",
+                  "suspicious": true
+                },
+                {
+                  "text": "18:43 직원이 복구를 시도하며 카메라 밖 대화 발생",
+                  "suspicious": false
+                },
+                {
+                  "text": "18:44 실랑이 직전 주방 정리 장면 존재",
+                  "suspicious": false
+                }
+              ]
+            },
+            {
+              "title": "최종 업로드본",
+              "id": "edited",
+              "items": [
+                {
+                  "text": "복구 시도 직전부터 컷 시작, 긴박감이 바로 올라감",
+                  "suspicious": true
+                },
+                {
+                  "text": "실랑이 전후 맥락 삭제, 위기 장면만 압축됨",
+                  "suspicious": true
+                },
+                {
+                  "text": "썸네일과 자막이 공포감을 더 강하게 유도함",
+                  "suspicious": true
+                }
+              ]
+            },
+            {
+              "title": "비교 메모",
+              "id": "notes",
+              "items": [
+                {
+                  "text": "문제 장면 자체는 실재함",
+                  "suspicious": false
+                },
+                {
+                  "text": "다만 편집 강도가 의도 해석에 직접 영향을 줌",
+                  "suspicious": true
+                }
+              ]
+            }
+          ]
+        },
+        "meta": {
+          "name": "리뷰 영상 원본 비교본",
+          "type": "device",
+          "viewerType": "device",
+          "trustLevel": "mid",
+          "trustLabel": "보통",
+          "source": "third",
+          "sourceLabel": "제3자",
+          "legality": "ok",
+          "legalLabel": "적법",
+          "stage": 1,
+          "stageLabel": "초기 공개",
+          "sourceNote": "원본 파일 비교본과 편집 이력 대조 자료",
+          "redactions": [
+            "편집 이력 검토 필요",
+            "촬영 협조 직원 실명",
+            "매장 내부 얼굴 일부"
+          ]
+        },
+        "media": {
+          "imageUrl": "data:image/svg+xml;charset=UTF-8,%0A%20%20%20%20%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22900%22%20height%3D%221600%22%20viewBox%3D%220%200%20900%201600%22%3E%0A%20%20%20%20%20%20%3Crect%20width%3D%22900%22%20height%3D%221600%22%20rx%3D%2248%22%20fill%3D%22%23020617%22%20%2F%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%2244%22%20y%3D%2244%22%20width%3D%22812%22%20height%3D%221512%22%20rx%3D%2242%22%20fill%3D%22%23111827%22%20%2F%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%22334%22%20y%3D%2266%22%20width%3D%22232%22%20height%3D%2228%22%20rx%3D%2214%22%20fill%3D%22rgba(255%2C255%2C255%2C0.08)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2296%22%20y%3D%22132%22%20font-size%3D%2218%22%20font-weight%3D%22800%22%20fill%3D%22%237dd3fc%22%3EDEVICE%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2296%22%20y%3D%22166%22%20font-size%3D%2228%22%20font-weight%3D%22800%22%20fill%3D%22%23f8fafc%22%3E%EB%A6%AC%EB%B7%B0%20%EC%98%81%EC%83%81%20%EC%9B%90%EB%B3%B8%20%EB%B9%84%EA%B5%90%EB%B3%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2296%22%20y%3D%22188%22%20width%3D%22708%22%20height%3D%22292%22%20rx%3D%2226%22%20fill%3D%22%230f172a%22%20stroke%3D%22rgba(255%2C255%2C255%2C0.06)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22132%22%20y%3D%22230%22%20font-size%3D%2224%22%20font-weight%3D%22800%22%20fill%3D%22%237dd3fc%22%3E%ED%95%B5%EC%8B%AC%20%EC%9A%94%EC%95%BD%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%3Ctext%20x%3D%22132%22%20y%3D%22260%22%20font-size%3D%2222%22%20font-weight%3D%22600%22%20fill%3D%22%23e5e7eb%22%3E%EC%97%85%EB%A1%9C%EB%93%9C%20%EC%98%81%EC%83%81%EA%B3%BC%20%EC%9B%90%EB%B3%B8%20%EC%B4%AC%EC%98%81%EB%B3%B8%EC%9D%98%20%EC%B0%A8%EC%9D%B4%EB%A5%BC%20%EB%B9%84%EA%B5%90%ED%95%9C%20%EC%9E%90%EB%A3%8C%EB%8B%A4.%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2296%22%20y%3D%22548%22%20width%3D%22708%22%20height%3D%22292%22%20rx%3D%2226%22%20fill%3D%22%230f172a%22%20stroke%3D%22rgba(255%2C255%2C255%2C0.06)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22132%22%20y%3D%22590%22%20font-size%3D%2224%22%20font-weight%3D%22800%22%20fill%3D%22%237dd3fc%22%3E%ED%99%95%EC%9D%B8%20%ED%95%AD%EB%AA%A9%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%3Ctext%20x%3D%22132%22%20y%3D%22620%22%20font-size%3D%2222%22%20font-weight%3D%22600%22%20fill%3D%22%23e5e7eb%22%3E%EC%9B%90%EB%B3%B8%20%EC%9A%94%EC%B2%AD%20%7C%20%EC%9B%90%EB%B3%B8%20%ED%8C%8C%EC%9D%BC%20%EA%B8%B8%EC%9D%B4%EB%8A%94%2027%EB%B6%84%2014%EC%B4%88%2C%20%EC%97%85%EB%A1%9C%EB%93%9C%EB%B3%B8%EC%9D%80%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%3Ctext%20x%3D%22132%22%20y%3D%22692%22%20font-size%3D%2222%22%20font-weight%3D%22600%22%20fill%3D%22%23e5e7eb%22%3E%EB%A7%A5%EB%9D%BD%20%EB%B3%B5%EC%9B%90%20%7C%20%EC%9B%90%EB%B3%B8%EC%97%90%EB%8A%94%20%EC%A0%95%ED%83%9C%EC%84%B1%EC%9D%B4%20%EC%9D%BC%EB%B6%80%20%EC%9E%AC%EB%A3%8C%EB%A5%BC%20%EC%A6%89%EC%8B%9C%20%ED%8F%90%EA%B8%B0%ED%95%98%EA%B3%A0%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%3Ctext%20x%3D%22132%22%20y%3D%22764%22%20font-size%3D%2222%22%20font-weight%3D%22600%22%20fill%3D%22%23e5e7eb%22%3E%ED%8E%B8%EC%A7%91%20%ED%99%95%EC%9D%B8%20%7C%20%EC%97%85%EB%A1%9C%EB%93%9C%EB%B3%B8%EC%9D%80%20%EC%9C%84%EC%83%9D%20%EC%9E%A5%EB%A9%B4%20%EC%95%9E%EB%92%A4%EC%9D%98%20%EB%A7%A5%EB%9D%BD%EC%9D%84%20%EC%9E%98%EB%9D%BC%EB%82%B8%20%EB%B0%98%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2296%22%20y%3D%22908%22%20width%3D%22708%22%20height%3D%22292%22%20rx%3D%2226%22%20fill%3D%22%230f172a%22%20stroke%3D%22rgba(255%2C255%2C255%2C0.06)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22132%22%20y%3D%22950%22%20font-size%3D%2224%22%20font-weight%3D%22800%22%20fill%3D%22%237dd3fc%22%3E%EC%A3%BC%EC%9D%98%20%EC%A7%80%EC%A0%90%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%3Ctext%20x%3D%22132%22%20y%3D%22980%22%20font-size%3D%2222%22%20font-weight%3D%22600%22%20fill%3D%22%23e5e7eb%22%3E%ED%91%9C%EC%8B%9C%EB%90%9C%20%EC%9D%B4%EC%83%81%20%EC%A7%95%ED%9B%84%EB%8A%94%20%EC%97%86%EC%A7%80%EB%A7%8C%20%EC%84%B8%EB%B6%80%20%ED%95%AD%EB%AA%A9%20%ED%99%95%EC%9D%B8%EC%9D%B4%20%ED%95%84%EC%9A%94%ED%95%98%EB%8B%A4.%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%0A%20%20%20%20%3C%2Fsvg%3E%0A%20%20",
+          "thumbnailUrl": "data:image/svg+xml;charset=UTF-8,%0A%20%20%20%20%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22900%22%20height%3D%221600%22%20viewBox%3D%220%200%20900%201600%22%3E%0A%20%20%20%20%20%20%3Crect%20width%3D%22900%22%20height%3D%221600%22%20rx%3D%2248%22%20fill%3D%22%23020617%22%20%2F%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%2244%22%20y%3D%2244%22%20width%3D%22812%22%20height%3D%221512%22%20rx%3D%2242%22%20fill%3D%22%23111827%22%20%2F%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%22334%22%20y%3D%2266%22%20width%3D%22232%22%20height%3D%2228%22%20rx%3D%2214%22%20fill%3D%22rgba(255%2C255%2C255%2C0.08)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2296%22%20y%3D%22132%22%20font-size%3D%2218%22%20font-weight%3D%22800%22%20fill%3D%22%237dd3fc%22%3EDEVICE%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2296%22%20y%3D%22166%22%20font-size%3D%2228%22%20font-weight%3D%22800%22%20fill%3D%22%23f8fafc%22%3E%EB%A6%AC%EB%B7%B0%20%EC%98%81%EC%83%81%20%EC%9B%90%EB%B3%B8%20%EB%B9%84%EA%B5%90%EB%B3%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2296%22%20y%3D%22188%22%20width%3D%22708%22%20height%3D%22292%22%20rx%3D%2226%22%20fill%3D%22%230f172a%22%20stroke%3D%22rgba(255%2C255%2C255%2C0.06)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22132%22%20y%3D%22230%22%20font-size%3D%2224%22%20font-weight%3D%22800%22%20fill%3D%22%237dd3fc%22%3E%ED%95%B5%EC%8B%AC%20%EC%9A%94%EC%95%BD%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%3Ctext%20x%3D%22132%22%20y%3D%22260%22%20font-size%3D%2222%22%20font-weight%3D%22600%22%20fill%3D%22%23e5e7eb%22%3E%EC%97%85%EB%A1%9C%EB%93%9C%20%EC%98%81%EC%83%81%EA%B3%BC%20%EC%9B%90%EB%B3%B8%20%EC%B4%AC%EC%98%81%EB%B3%B8%EC%9D%98%20%EC%B0%A8%EC%9D%B4%EB%A5%BC%20%EB%B9%84%EA%B5%90%ED%95%9C%20%EC%9E%90%EB%A3%8C%EB%8B%A4.%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2296%22%20y%3D%22548%22%20width%3D%22708%22%20height%3D%22292%22%20rx%3D%2226%22%20fill%3D%22%230f172a%22%20stroke%3D%22rgba(255%2C255%2C255%2C0.06)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22132%22%20y%3D%22590%22%20font-size%3D%2224%22%20font-weight%3D%22800%22%20fill%3D%22%237dd3fc%22%3E%ED%99%95%EC%9D%B8%20%ED%95%AD%EB%AA%A9%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%3Ctext%20x%3D%22132%22%20y%3D%22620%22%20font-size%3D%2222%22%20font-weight%3D%22600%22%20fill%3D%22%23e5e7eb%22%3E%EC%9B%90%EB%B3%B8%20%EC%9A%94%EC%B2%AD%20%7C%20%EC%9B%90%EB%B3%B8%20%ED%8C%8C%EC%9D%BC%20%EA%B8%B8%EC%9D%B4%EB%8A%94%2027%EB%B6%84%2014%EC%B4%88%2C%20%EC%97%85%EB%A1%9C%EB%93%9C%EB%B3%B8%EC%9D%80%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%3Ctext%20x%3D%22132%22%20y%3D%22692%22%20font-size%3D%2222%22%20font-weight%3D%22600%22%20fill%3D%22%23e5e7eb%22%3E%EB%A7%A5%EB%9D%BD%20%EB%B3%B5%EC%9B%90%20%7C%20%EC%9B%90%EB%B3%B8%EC%97%90%EB%8A%94%20%EC%A0%95%ED%83%9C%EC%84%B1%EC%9D%B4%20%EC%9D%BC%EB%B6%80%20%EC%9E%AC%EB%A3%8C%EB%A5%BC%20%EC%A6%89%EC%8B%9C%20%ED%8F%90%EA%B8%B0%ED%95%98%EA%B3%A0%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%3Ctext%20x%3D%22132%22%20y%3D%22764%22%20font-size%3D%2222%22%20font-weight%3D%22600%22%20fill%3D%22%23e5e7eb%22%3E%ED%8E%B8%EC%A7%91%20%ED%99%95%EC%9D%B8%20%7C%20%EC%97%85%EB%A1%9C%EB%93%9C%EB%B3%B8%EC%9D%80%20%EC%9C%84%EC%83%9D%20%EC%9E%A5%EB%A9%B4%20%EC%95%9E%EB%92%A4%EC%9D%98%20%EB%A7%A5%EB%9D%BD%EC%9D%84%20%EC%9E%98%EB%9D%BC%EB%82%B8%20%EB%B0%98%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2296%22%20y%3D%22908%22%20width%3D%22708%22%20height%3D%22292%22%20rx%3D%2226%22%20fill%3D%22%230f172a%22%20stroke%3D%22rgba(255%2C255%2C255%2C0.06)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22132%22%20y%3D%22950%22%20font-size%3D%2224%22%20font-weight%3D%22800%22%20fill%3D%22%237dd3fc%22%3E%EC%A3%BC%EC%9D%98%20%EC%A7%80%EC%A0%90%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%3Ctext%20x%3D%22132%22%20y%3D%22980%22%20font-size%3D%2222%22%20font-weight%3D%22600%22%20fill%3D%22%23e5e7eb%22%3E%ED%91%9C%EC%8B%9C%EB%90%9C%20%EC%9D%B4%EC%83%81%20%EC%A7%95%ED%9B%84%EB%8A%94%20%EC%97%86%EC%A7%80%EB%A7%8C%20%EC%84%B8%EB%B6%80%20%ED%95%AD%EB%AA%A9%20%ED%99%95%EC%9D%B8%EC%9D%B4%20%ED%95%84%EC%9A%94%ED%95%98%EB%8B%A4.%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%0A%20%20%20%20%3C%2Fsvg%3E%0A%20%20",
+          "posterUrl": "data:image/svg+xml;charset=UTF-8,%0A%20%20%20%20%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22900%22%20height%3D%221600%22%20viewBox%3D%220%200%20900%201600%22%3E%0A%20%20%20%20%20%20%3Crect%20width%3D%22900%22%20height%3D%221600%22%20rx%3D%2248%22%20fill%3D%22%23020617%22%20%2F%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%2244%22%20y%3D%2244%22%20width%3D%22812%22%20height%3D%221512%22%20rx%3D%2242%22%20fill%3D%22%23111827%22%20%2F%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%22334%22%20y%3D%2266%22%20width%3D%22232%22%20height%3D%2228%22%20rx%3D%2214%22%20fill%3D%22rgba(255%2C255%2C255%2C0.08)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2296%22%20y%3D%22132%22%20font-size%3D%2218%22%20font-weight%3D%22800%22%20fill%3D%22%237dd3fc%22%3EDEVICE%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2296%22%20y%3D%22166%22%20font-size%3D%2228%22%20font-weight%3D%22800%22%20fill%3D%22%23f8fafc%22%3E%EB%A6%AC%EB%B7%B0%20%EC%98%81%EC%83%81%20%EC%9B%90%EB%B3%B8%20%EB%B9%84%EA%B5%90%EB%B3%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2296%22%20y%3D%22188%22%20width%3D%22708%22%20height%3D%22292%22%20rx%3D%2226%22%20fill%3D%22%230f172a%22%20stroke%3D%22rgba(255%2C255%2C255%2C0.06)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22132%22%20y%3D%22230%22%20font-size%3D%2224%22%20font-weight%3D%22800%22%20fill%3D%22%237dd3fc%22%3E%ED%95%B5%EC%8B%AC%20%EC%9A%94%EC%95%BD%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%3Ctext%20x%3D%22132%22%20y%3D%22260%22%20font-size%3D%2222%22%20font-weight%3D%22600%22%20fill%3D%22%23e5e7eb%22%3E%EC%97%85%EB%A1%9C%EB%93%9C%20%EC%98%81%EC%83%81%EA%B3%BC%20%EC%9B%90%EB%B3%B8%20%EC%B4%AC%EC%98%81%EB%B3%B8%EC%9D%98%20%EC%B0%A8%EC%9D%B4%EB%A5%BC%20%EB%B9%84%EA%B5%90%ED%95%9C%20%EC%9E%90%EB%A3%8C%EB%8B%A4.%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2296%22%20y%3D%22548%22%20width%3D%22708%22%20height%3D%22292%22%20rx%3D%2226%22%20fill%3D%22%230f172a%22%20stroke%3D%22rgba(255%2C255%2C255%2C0.06)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22132%22%20y%3D%22590%22%20font-size%3D%2224%22%20font-weight%3D%22800%22%20fill%3D%22%237dd3fc%22%3E%ED%99%95%EC%9D%B8%20%ED%95%AD%EB%AA%A9%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%3Ctext%20x%3D%22132%22%20y%3D%22620%22%20font-size%3D%2222%22%20font-weight%3D%22600%22%20fill%3D%22%23e5e7eb%22%3E%EC%9B%90%EB%B3%B8%20%EC%9A%94%EC%B2%AD%20%7C%20%EC%9B%90%EB%B3%B8%20%ED%8C%8C%EC%9D%BC%20%EA%B8%B8%EC%9D%B4%EB%8A%94%2027%EB%B6%84%2014%EC%B4%88%2C%20%EC%97%85%EB%A1%9C%EB%93%9C%EB%B3%B8%EC%9D%80%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%3Ctext%20x%3D%22132%22%20y%3D%22692%22%20font-size%3D%2222%22%20font-weight%3D%22600%22%20fill%3D%22%23e5e7eb%22%3E%EB%A7%A5%EB%9D%BD%20%EB%B3%B5%EC%9B%90%20%7C%20%EC%9B%90%EB%B3%B8%EC%97%90%EB%8A%94%20%EC%A0%95%ED%83%9C%EC%84%B1%EC%9D%B4%20%EC%9D%BC%EB%B6%80%20%EC%9E%AC%EB%A3%8C%EB%A5%BC%20%EC%A6%89%EC%8B%9C%20%ED%8F%90%EA%B8%B0%ED%95%98%EA%B3%A0%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%3Ctext%20x%3D%22132%22%20y%3D%22764%22%20font-size%3D%2222%22%20font-weight%3D%22600%22%20fill%3D%22%23e5e7eb%22%3E%ED%8E%B8%EC%A7%91%20%ED%99%95%EC%9D%B8%20%7C%20%EC%97%85%EB%A1%9C%EB%93%9C%EB%B3%B8%EC%9D%80%20%EC%9C%84%EC%83%9D%20%EC%9E%A5%EB%A9%B4%20%EC%95%9E%EB%92%A4%EC%9D%98%20%EB%A7%A5%EB%9D%BD%EC%9D%84%20%EC%9E%98%EB%9D%BC%EB%82%B8%20%EB%B0%98%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2296%22%20y%3D%22908%22%20width%3D%22708%22%20height%3D%22292%22%20rx%3D%2226%22%20fill%3D%22%230f172a%22%20stroke%3D%22rgba(255%2C255%2C255%2C0.06)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22132%22%20y%3D%22950%22%20font-size%3D%2224%22%20font-weight%3D%22800%22%20fill%3D%22%237dd3fc%22%3E%EC%A3%BC%EC%9D%98%20%EC%A7%80%EC%A0%90%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%3Ctext%20x%3D%22132%22%20y%3D%22980%22%20font-size%3D%2222%22%20font-weight%3D%22600%22%20fill%3D%22%23e5e7eb%22%3E%ED%91%9C%EC%8B%9C%EB%90%9C%20%EC%9D%B4%EC%83%81%20%EC%A7%95%ED%9B%84%EB%8A%94%20%EC%97%86%EC%A7%80%EB%A7%8C%20%EC%84%B8%EB%B6%80%20%ED%95%AD%EB%AA%A9%20%ED%99%95%EC%9D%B8%EC%9D%B4%20%ED%95%84%EC%9A%94%ED%95%98%EB%8B%A4.%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%0A%20%20%20%20%3C%2Fsvg%3E%0A%20%20",
+          "width": 900,
+          "height": 1600,
+          "alt": "리뷰 영상 원본 비교본 device evidence",
+          "caption": "리뷰 영상 원본 비교본 device shell",
+          "screenshotImages": [
+            {
+              "imageUrl": "data:image/svg+xml;charset=UTF-8,%0A%20%20%20%20%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22900%22%20height%3D%221600%22%20viewBox%3D%220%200%20900%201600%22%3E%0A%20%20%20%20%20%20%3Crect%20width%3D%22900%22%20height%3D%221600%22%20rx%3D%2248%22%20fill%3D%22%23020617%22%20%2F%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%2244%22%20y%3D%2244%22%20width%3D%22812%22%20height%3D%221512%22%20rx%3D%2242%22%20fill%3D%22%23111827%22%20%2F%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%22334%22%20y%3D%2266%22%20width%3D%22232%22%20height%3D%2228%22%20rx%3D%2214%22%20fill%3D%22rgba(255%2C255%2C255%2C0.08)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2296%22%20y%3D%22132%22%20font-size%3D%2218%22%20font-weight%3D%22800%22%20fill%3D%22%237dd3fc%22%3ESCREEN%201%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2296%22%20y%3D%22166%22%20font-size%3D%2228%22%20font-weight%3D%22800%22%20fill%3D%22%23f8fafc%22%3E%ED%95%B5%EC%8B%AC%20%EC%9A%94%EC%95%BD%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2296%22%20y%3D%22188%22%20width%3D%22708%22%20height%3D%22292%22%20rx%3D%2226%22%20fill%3D%22%230f172a%22%20stroke%3D%22rgba(255%2C255%2C255%2C0.06)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22132%22%20y%3D%22230%22%20font-size%3D%2224%22%20font-weight%3D%22800%22%20fill%3D%22%237dd3fc%22%3E%ED%95%B5%EC%8B%AC%20%EC%9A%94%EC%95%BD%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%3Ctext%20x%3D%22132%22%20y%3D%22260%22%20font-size%3D%2222%22%20font-weight%3D%22600%22%20fill%3D%22%23e5e7eb%22%3E%EC%97%85%EB%A1%9C%EB%93%9C%20%EC%98%81%EC%83%81%EA%B3%BC%20%EC%9B%90%EB%B3%B8%20%EC%B4%AC%EC%98%81%EB%B3%B8%EC%9D%98%20%EC%B0%A8%EC%9D%B4%EB%A5%BC%20%EB%B9%84%EA%B5%90%ED%95%9C%20%EC%9E%90%EB%A3%8C%EB%8B%A4.%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%0A%20%20%20%20%3C%2Fsvg%3E%0A%20%20",
+              "thumbnailUrl": "data:image/svg+xml;charset=UTF-8,%0A%20%20%20%20%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22900%22%20height%3D%221600%22%20viewBox%3D%220%200%20900%201600%22%3E%0A%20%20%20%20%20%20%3Crect%20width%3D%22900%22%20height%3D%221600%22%20rx%3D%2248%22%20fill%3D%22%23020617%22%20%2F%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%2244%22%20y%3D%2244%22%20width%3D%22812%22%20height%3D%221512%22%20rx%3D%2242%22%20fill%3D%22%23111827%22%20%2F%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%22334%22%20y%3D%2266%22%20width%3D%22232%22%20height%3D%2228%22%20rx%3D%2214%22%20fill%3D%22rgba(255%2C255%2C255%2C0.08)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2296%22%20y%3D%22132%22%20font-size%3D%2218%22%20font-weight%3D%22800%22%20fill%3D%22%237dd3fc%22%3ESCREEN%201%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2296%22%20y%3D%22166%22%20font-size%3D%2228%22%20font-weight%3D%22800%22%20fill%3D%22%23f8fafc%22%3E%ED%95%B5%EC%8B%AC%20%EC%9A%94%EC%95%BD%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2296%22%20y%3D%22188%22%20width%3D%22708%22%20height%3D%22292%22%20rx%3D%2226%22%20fill%3D%22%230f172a%22%20stroke%3D%22rgba(255%2C255%2C255%2C0.06)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22132%22%20y%3D%22230%22%20font-size%3D%2224%22%20font-weight%3D%22800%22%20fill%3D%22%237dd3fc%22%3E%ED%95%B5%EC%8B%AC%20%EC%9A%94%EC%95%BD%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%3Ctext%20x%3D%22132%22%20y%3D%22260%22%20font-size%3D%2222%22%20font-weight%3D%22600%22%20fill%3D%22%23e5e7eb%22%3E%EC%97%85%EB%A1%9C%EB%93%9C%20%EC%98%81%EC%83%81%EA%B3%BC%20%EC%9B%90%EB%B3%B8%20%EC%B4%AC%EC%98%81%EB%B3%B8%EC%9D%98%20%EC%B0%A8%EC%9D%B4%EB%A5%BC%20%EB%B9%84%EA%B5%90%ED%95%9C%20%EC%9E%90%EB%A3%8C%EB%8B%A4.%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%0A%20%20%20%20%3C%2Fsvg%3E%0A%20%20",
+              "posterUrl": "data:image/svg+xml;charset=UTF-8,%0A%20%20%20%20%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22900%22%20height%3D%221600%22%20viewBox%3D%220%200%20900%201600%22%3E%0A%20%20%20%20%20%20%3Crect%20width%3D%22900%22%20height%3D%221600%22%20rx%3D%2248%22%20fill%3D%22%23020617%22%20%2F%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%2244%22%20y%3D%2244%22%20width%3D%22812%22%20height%3D%221512%22%20rx%3D%2242%22%20fill%3D%22%23111827%22%20%2F%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%22334%22%20y%3D%2266%22%20width%3D%22232%22%20height%3D%2228%22%20rx%3D%2214%22%20fill%3D%22rgba(255%2C255%2C255%2C0.08)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2296%22%20y%3D%22132%22%20font-size%3D%2218%22%20font-weight%3D%22800%22%20fill%3D%22%237dd3fc%22%3ESCREEN%201%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2296%22%20y%3D%22166%22%20font-size%3D%2228%22%20font-weight%3D%22800%22%20fill%3D%22%23f8fafc%22%3E%ED%95%B5%EC%8B%AC%20%EC%9A%94%EC%95%BD%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2296%22%20y%3D%22188%22%20width%3D%22708%22%20height%3D%22292%22%20rx%3D%2226%22%20fill%3D%22%230f172a%22%20stroke%3D%22rgba(255%2C255%2C255%2C0.06)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22132%22%20y%3D%22230%22%20font-size%3D%2224%22%20font-weight%3D%22800%22%20fill%3D%22%237dd3fc%22%3E%ED%95%B5%EC%8B%AC%20%EC%9A%94%EC%95%BD%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%3Ctext%20x%3D%22132%22%20y%3D%22260%22%20font-size%3D%2222%22%20font-weight%3D%22600%22%20fill%3D%22%23e5e7eb%22%3E%EC%97%85%EB%A1%9C%EB%93%9C%20%EC%98%81%EC%83%81%EA%B3%BC%20%EC%9B%90%EB%B3%B8%20%EC%B4%AC%EC%98%81%EB%B3%B8%EC%9D%98%20%EC%B0%A8%EC%9D%B4%EB%A5%BC%20%EB%B9%84%EA%B5%90%ED%95%9C%20%EC%9E%90%EB%A3%8C%EB%8B%A4.%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%0A%20%20%20%20%3C%2Fsvg%3E%0A%20%20",
+              "width": 900,
+              "height": 1600,
+              "alt": "리뷰 영상 원본 비교본 screen 1",
+              "caption": "핵심 요약"
+            },
+            {
+              "imageUrl": "data:image/svg+xml;charset=UTF-8,%0A%20%20%20%20%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22900%22%20height%3D%221600%22%20viewBox%3D%220%200%20900%201600%22%3E%0A%20%20%20%20%20%20%3Crect%20width%3D%22900%22%20height%3D%221600%22%20rx%3D%2248%22%20fill%3D%22%23020617%22%20%2F%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%2244%22%20y%3D%2244%22%20width%3D%22812%22%20height%3D%221512%22%20rx%3D%2242%22%20fill%3D%22%23111827%22%20%2F%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%22334%22%20y%3D%2266%22%20width%3D%22232%22%20height%3D%2228%22%20rx%3D%2214%22%20fill%3D%22rgba(255%2C255%2C255%2C0.08)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2296%22%20y%3D%22132%22%20font-size%3D%2218%22%20font-weight%3D%22800%22%20fill%3D%22%237dd3fc%22%3ESCREEN%202%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2296%22%20y%3D%22166%22%20font-size%3D%2228%22%20font-weight%3D%22800%22%20fill%3D%22%23f8fafc%22%3E%ED%99%95%EC%9D%B8%20%ED%95%AD%EB%AA%A9%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2296%22%20y%3D%22188%22%20width%3D%22708%22%20height%3D%22292%22%20rx%3D%2226%22%20fill%3D%22%230f172a%22%20stroke%3D%22rgba(255%2C255%2C255%2C0.06)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22132%22%20y%3D%22230%22%20font-size%3D%2224%22%20font-weight%3D%22800%22%20fill%3D%22%237dd3fc%22%3E%ED%99%95%EC%9D%B8%20%ED%95%AD%EB%AA%A9%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%3Ctext%20x%3D%22132%22%20y%3D%22260%22%20font-size%3D%2222%22%20font-weight%3D%22600%22%20fill%3D%22%23e5e7eb%22%3E%EC%9B%90%EB%B3%B8%20%EC%9A%94%EC%B2%AD%20%7C%20%EC%9B%90%EB%B3%B8%20%ED%8C%8C%EC%9D%BC%20%EA%B8%B8%EC%9D%B4%EB%8A%94%2027%EB%B6%84%2014%EC%B4%88%2C%20%EC%97%85%EB%A1%9C%EB%93%9C%EB%B3%B8%EC%9D%80%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%3Ctext%20x%3D%22132%22%20y%3D%22332%22%20font-size%3D%2222%22%20font-weight%3D%22600%22%20fill%3D%22%23e5e7eb%22%3E%EB%A7%A5%EB%9D%BD%20%EB%B3%B5%EC%9B%90%20%7C%20%EC%9B%90%EB%B3%B8%EC%97%90%EB%8A%94%20%EC%A0%95%ED%83%9C%EC%84%B1%EC%9D%B4%20%EC%9D%BC%EB%B6%80%20%EC%9E%AC%EB%A3%8C%EB%A5%BC%20%EC%A6%89%EC%8B%9C%20%ED%8F%90%EA%B8%B0%ED%95%98%EA%B3%A0%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%3Ctext%20x%3D%22132%22%20y%3D%22404%22%20font-size%3D%2222%22%20font-weight%3D%22600%22%20fill%3D%22%23e5e7eb%22%3E%ED%8E%B8%EC%A7%91%20%ED%99%95%EC%9D%B8%20%7C%20%EC%97%85%EB%A1%9C%EB%93%9C%EB%B3%B8%EC%9D%80%20%EC%9C%84%EC%83%9D%20%EC%9E%A5%EB%A9%B4%20%EC%95%9E%EB%92%A4%EC%9D%98%20%EB%A7%A5%EB%9D%BD%EC%9D%84%20%EC%9E%98%EB%9D%BC%EB%82%B8%20%EB%B0%98%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%0A%20%20%20%20%3C%2Fsvg%3E%0A%20%20",
+              "thumbnailUrl": "data:image/svg+xml;charset=UTF-8,%0A%20%20%20%20%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22900%22%20height%3D%221600%22%20viewBox%3D%220%200%20900%201600%22%3E%0A%20%20%20%20%20%20%3Crect%20width%3D%22900%22%20height%3D%221600%22%20rx%3D%2248%22%20fill%3D%22%23020617%22%20%2F%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%2244%22%20y%3D%2244%22%20width%3D%22812%22%20height%3D%221512%22%20rx%3D%2242%22%20fill%3D%22%23111827%22%20%2F%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%22334%22%20y%3D%2266%22%20width%3D%22232%22%20height%3D%2228%22%20rx%3D%2214%22%20fill%3D%22rgba(255%2C255%2C255%2C0.08)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2296%22%20y%3D%22132%22%20font-size%3D%2218%22%20font-weight%3D%22800%22%20fill%3D%22%237dd3fc%22%3ESCREEN%202%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2296%22%20y%3D%22166%22%20font-size%3D%2228%22%20font-weight%3D%22800%22%20fill%3D%22%23f8fafc%22%3E%ED%99%95%EC%9D%B8%20%ED%95%AD%EB%AA%A9%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2296%22%20y%3D%22188%22%20width%3D%22708%22%20height%3D%22292%22%20rx%3D%2226%22%20fill%3D%22%230f172a%22%20stroke%3D%22rgba(255%2C255%2C255%2C0.06)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22132%22%20y%3D%22230%22%20font-size%3D%2224%22%20font-weight%3D%22800%22%20fill%3D%22%237dd3fc%22%3E%ED%99%95%EC%9D%B8%20%ED%95%AD%EB%AA%A9%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%3Ctext%20x%3D%22132%22%20y%3D%22260%22%20font-size%3D%2222%22%20font-weight%3D%22600%22%20fill%3D%22%23e5e7eb%22%3E%EC%9B%90%EB%B3%B8%20%EC%9A%94%EC%B2%AD%20%7C%20%EC%9B%90%EB%B3%B8%20%ED%8C%8C%EC%9D%BC%20%EA%B8%B8%EC%9D%B4%EB%8A%94%2027%EB%B6%84%2014%EC%B4%88%2C%20%EC%97%85%EB%A1%9C%EB%93%9C%EB%B3%B8%EC%9D%80%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%3Ctext%20x%3D%22132%22%20y%3D%22332%22%20font-size%3D%2222%22%20font-weight%3D%22600%22%20fill%3D%22%23e5e7eb%22%3E%EB%A7%A5%EB%9D%BD%20%EB%B3%B5%EC%9B%90%20%7C%20%EC%9B%90%EB%B3%B8%EC%97%90%EB%8A%94%20%EC%A0%95%ED%83%9C%EC%84%B1%EC%9D%B4%20%EC%9D%BC%EB%B6%80%20%EC%9E%AC%EB%A3%8C%EB%A5%BC%20%EC%A6%89%EC%8B%9C%20%ED%8F%90%EA%B8%B0%ED%95%98%EA%B3%A0%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%3Ctext%20x%3D%22132%22%20y%3D%22404%22%20font-size%3D%2222%22%20font-weight%3D%22600%22%20fill%3D%22%23e5e7eb%22%3E%ED%8E%B8%EC%A7%91%20%ED%99%95%EC%9D%B8%20%7C%20%EC%97%85%EB%A1%9C%EB%93%9C%EB%B3%B8%EC%9D%80%20%EC%9C%84%EC%83%9D%20%EC%9E%A5%EB%A9%B4%20%EC%95%9E%EB%92%A4%EC%9D%98%20%EB%A7%A5%EB%9D%BD%EC%9D%84%20%EC%9E%98%EB%9D%BC%EB%82%B8%20%EB%B0%98%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%0A%20%20%20%20%3C%2Fsvg%3E%0A%20%20",
+              "posterUrl": "data:image/svg+xml;charset=UTF-8,%0A%20%20%20%20%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22900%22%20height%3D%221600%22%20viewBox%3D%220%200%20900%201600%22%3E%0A%20%20%20%20%20%20%3Crect%20width%3D%22900%22%20height%3D%221600%22%20rx%3D%2248%22%20fill%3D%22%23020617%22%20%2F%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%2244%22%20y%3D%2244%22%20width%3D%22812%22%20height%3D%221512%22%20rx%3D%2242%22%20fill%3D%22%23111827%22%20%2F%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%22334%22%20y%3D%2266%22%20width%3D%22232%22%20height%3D%2228%22%20rx%3D%2214%22%20fill%3D%22rgba(255%2C255%2C255%2C0.08)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2296%22%20y%3D%22132%22%20font-size%3D%2218%22%20font-weight%3D%22800%22%20fill%3D%22%237dd3fc%22%3ESCREEN%202%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2296%22%20y%3D%22166%22%20font-size%3D%2228%22%20font-weight%3D%22800%22%20fill%3D%22%23f8fafc%22%3E%ED%99%95%EC%9D%B8%20%ED%95%AD%EB%AA%A9%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2296%22%20y%3D%22188%22%20width%3D%22708%22%20height%3D%22292%22%20rx%3D%2226%22%20fill%3D%22%230f172a%22%20stroke%3D%22rgba(255%2C255%2C255%2C0.06)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22132%22%20y%3D%22230%22%20font-size%3D%2224%22%20font-weight%3D%22800%22%20fill%3D%22%237dd3fc%22%3E%ED%99%95%EC%9D%B8%20%ED%95%AD%EB%AA%A9%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%3Ctext%20x%3D%22132%22%20y%3D%22260%22%20font-size%3D%2222%22%20font-weight%3D%22600%22%20fill%3D%22%23e5e7eb%22%3E%EC%9B%90%EB%B3%B8%20%EC%9A%94%EC%B2%AD%20%7C%20%EC%9B%90%EB%B3%B8%20%ED%8C%8C%EC%9D%BC%20%EA%B8%B8%EC%9D%B4%EB%8A%94%2027%EB%B6%84%2014%EC%B4%88%2C%20%EC%97%85%EB%A1%9C%EB%93%9C%EB%B3%B8%EC%9D%80%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%3Ctext%20x%3D%22132%22%20y%3D%22332%22%20font-size%3D%2222%22%20font-weight%3D%22600%22%20fill%3D%22%23e5e7eb%22%3E%EB%A7%A5%EB%9D%BD%20%EB%B3%B5%EC%9B%90%20%7C%20%EC%9B%90%EB%B3%B8%EC%97%90%EB%8A%94%20%EC%A0%95%ED%83%9C%EC%84%B1%EC%9D%B4%20%EC%9D%BC%EB%B6%80%20%EC%9E%AC%EB%A3%8C%EB%A5%BC%20%EC%A6%89%EC%8B%9C%20%ED%8F%90%EA%B8%B0%ED%95%98%EA%B3%A0%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%3Ctext%20x%3D%22132%22%20y%3D%22404%22%20font-size%3D%2222%22%20font-weight%3D%22600%22%20fill%3D%22%23e5e7eb%22%3E%ED%8E%B8%EC%A7%91%20%ED%99%95%EC%9D%B8%20%7C%20%EC%97%85%EB%A1%9C%EB%93%9C%EB%B3%B8%EC%9D%80%20%EC%9C%84%EC%83%9D%20%EC%9E%A5%EB%A9%B4%20%EC%95%9E%EB%92%A4%EC%9D%98%20%EB%A7%A5%EB%9D%BD%EC%9D%84%20%EC%9E%98%EB%9D%BC%EB%82%B8%20%EB%B0%98%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%0A%20%20%20%20%3C%2Fsvg%3E%0A%20%20",
+              "width": 900,
+              "height": 1600,
+              "alt": "리뷰 영상 원본 비교본 screen 2",
+              "caption": "확인 항목"
+            },
+            {
+              "imageUrl": "data:image/svg+xml;charset=UTF-8,%0A%20%20%20%20%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22900%22%20height%3D%221600%22%20viewBox%3D%220%200%20900%201600%22%3E%0A%20%20%20%20%20%20%3Crect%20width%3D%22900%22%20height%3D%221600%22%20rx%3D%2248%22%20fill%3D%22%23020617%22%20%2F%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%2244%22%20y%3D%2244%22%20width%3D%22812%22%20height%3D%221512%22%20rx%3D%2242%22%20fill%3D%22%23111827%22%20%2F%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%22334%22%20y%3D%2266%22%20width%3D%22232%22%20height%3D%2228%22%20rx%3D%2214%22%20fill%3D%22rgba(255%2C255%2C255%2C0.08)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2296%22%20y%3D%22132%22%20font-size%3D%2218%22%20font-weight%3D%22800%22%20fill%3D%22%237dd3fc%22%3ESCREEN%203%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2296%22%20y%3D%22166%22%20font-size%3D%2228%22%20font-weight%3D%22800%22%20fill%3D%22%23f8fafc%22%3E%EC%A3%BC%EC%9D%98%20%EC%A7%80%EC%A0%90%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2296%22%20y%3D%22188%22%20width%3D%22708%22%20height%3D%22292%22%20rx%3D%2226%22%20fill%3D%22%230f172a%22%20stroke%3D%22rgba(255%2C255%2C255%2C0.06)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22132%22%20y%3D%22230%22%20font-size%3D%2224%22%20font-weight%3D%22800%22%20fill%3D%22%237dd3fc%22%3E%EC%A3%BC%EC%9D%98%20%EC%A7%80%EC%A0%90%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%3Ctext%20x%3D%22132%22%20y%3D%22260%22%20font-size%3D%2222%22%20font-weight%3D%22600%22%20fill%3D%22%23e5e7eb%22%3E%ED%91%9C%EC%8B%9C%EB%90%9C%20%EC%9D%B4%EC%83%81%20%EC%A7%95%ED%9B%84%EB%8A%94%20%EC%97%86%EC%A7%80%EB%A7%8C%20%EC%84%B8%EB%B6%80%20%ED%95%AD%EB%AA%A9%20%ED%99%95%EC%9D%B8%EC%9D%B4%20%ED%95%84%EC%9A%94%ED%95%98%EB%8B%A4.%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%0A%20%20%20%20%3C%2Fsvg%3E%0A%20%20",
+              "thumbnailUrl": "data:image/svg+xml;charset=UTF-8,%0A%20%20%20%20%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22900%22%20height%3D%221600%22%20viewBox%3D%220%200%20900%201600%22%3E%0A%20%20%20%20%20%20%3Crect%20width%3D%22900%22%20height%3D%221600%22%20rx%3D%2248%22%20fill%3D%22%23020617%22%20%2F%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%2244%22%20y%3D%2244%22%20width%3D%22812%22%20height%3D%221512%22%20rx%3D%2242%22%20fill%3D%22%23111827%22%20%2F%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%22334%22%20y%3D%2266%22%20width%3D%22232%22%20height%3D%2228%22%20rx%3D%2214%22%20fill%3D%22rgba(255%2C255%2C255%2C0.08)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2296%22%20y%3D%22132%22%20font-size%3D%2218%22%20font-weight%3D%22800%22%20fill%3D%22%237dd3fc%22%3ESCREEN%203%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2296%22%20y%3D%22166%22%20font-size%3D%2228%22%20font-weight%3D%22800%22%20fill%3D%22%23f8fafc%22%3E%EC%A3%BC%EC%9D%98%20%EC%A7%80%EC%A0%90%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2296%22%20y%3D%22188%22%20width%3D%22708%22%20height%3D%22292%22%20rx%3D%2226%22%20fill%3D%22%230f172a%22%20stroke%3D%22rgba(255%2C255%2C255%2C0.06)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22132%22%20y%3D%22230%22%20font-size%3D%2224%22%20font-weight%3D%22800%22%20fill%3D%22%237dd3fc%22%3E%EC%A3%BC%EC%9D%98%20%EC%A7%80%EC%A0%90%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%3Ctext%20x%3D%22132%22%20y%3D%22260%22%20font-size%3D%2222%22%20font-weight%3D%22600%22%20fill%3D%22%23e5e7eb%22%3E%ED%91%9C%EC%8B%9C%EB%90%9C%20%EC%9D%B4%EC%83%81%20%EC%A7%95%ED%9B%84%EB%8A%94%20%EC%97%86%EC%A7%80%EB%A7%8C%20%EC%84%B8%EB%B6%80%20%ED%95%AD%EB%AA%A9%20%ED%99%95%EC%9D%B8%EC%9D%B4%20%ED%95%84%EC%9A%94%ED%95%98%EB%8B%A4.%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%0A%20%20%20%20%3C%2Fsvg%3E%0A%20%20",
+              "posterUrl": "data:image/svg+xml;charset=UTF-8,%0A%20%20%20%20%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22900%22%20height%3D%221600%22%20viewBox%3D%220%200%20900%201600%22%3E%0A%20%20%20%20%20%20%3Crect%20width%3D%22900%22%20height%3D%221600%22%20rx%3D%2248%22%20fill%3D%22%23020617%22%20%2F%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%2244%22%20y%3D%2244%22%20width%3D%22812%22%20height%3D%221512%22%20rx%3D%2242%22%20fill%3D%22%23111827%22%20%2F%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%22334%22%20y%3D%2266%22%20width%3D%22232%22%20height%3D%2228%22%20rx%3D%2214%22%20fill%3D%22rgba(255%2C255%2C255%2C0.08)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2296%22%20y%3D%22132%22%20font-size%3D%2218%22%20font-weight%3D%22800%22%20fill%3D%22%237dd3fc%22%3ESCREEN%203%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2296%22%20y%3D%22166%22%20font-size%3D%2228%22%20font-weight%3D%22800%22%20fill%3D%22%23f8fafc%22%3E%EC%A3%BC%EC%9D%98%20%EC%A7%80%EC%A0%90%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2296%22%20y%3D%22188%22%20width%3D%22708%22%20height%3D%22292%22%20rx%3D%2226%22%20fill%3D%22%230f172a%22%20stroke%3D%22rgba(255%2C255%2C255%2C0.06)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22132%22%20y%3D%22230%22%20font-size%3D%2224%22%20font-weight%3D%22800%22%20fill%3D%22%237dd3fc%22%3E%EC%A3%BC%EC%9D%98%20%EC%A7%80%EC%A0%90%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%3Ctext%20x%3D%22132%22%20y%3D%22260%22%20font-size%3D%2222%22%20font-weight%3D%22600%22%20fill%3D%22%23e5e7eb%22%3E%ED%91%9C%EC%8B%9C%EB%90%9C%20%EC%9D%B4%EC%83%81%20%EC%A7%95%ED%9B%84%EB%8A%94%20%EC%97%86%EC%A7%80%EB%A7%8C%20%EC%84%B8%EB%B6%80%20%ED%95%AD%EB%AA%A9%20%ED%99%95%EC%9D%B8%EC%9D%B4%20%ED%95%84%EC%9A%94%ED%95%98%EB%8B%A4.%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%0A%20%20%20%20%3C%2Fsvg%3E%0A%20%20",
+              "width": 900,
+              "height": 1600,
+              "alt": "리뷰 영상 원본 비교본 screen 3",
+              "caption": "주의 지점"
+            }
+          ]
+        }
+      },
+      "partyContext": {
+        "a": {
+          "questionAngle": "A측 관점에서 이 자료가 가리키는 책임과 경위를 설명해 주십시오.",
+          "implication": "강민호의 원본 촬영본과 최종 업로드 영상을 프레임 단위로 비교한 자료다. 문제 장면은 실제지만, 복구 시도와 실랑이 전후 맥락이…"
+        },
+        "b": {
+          "questionAngle": "B측 관점에서 이 자료가 가리키는 책임과 경위를 설명해 주십시오.",
+          "implication": "강민호의 원본 촬영본과 최종 업로드 영상을 프레임 단위로 비교한 자료다. 문제 장면은 실제지만, 복구 시도와 실랑이 전후 맥락이…"
+        }
+      }
+    },
+    {
+      "id": "e-2",
+      "name": "주방 CCTV와 위생 체크 사진",
+      "description": "촬영 당일 주방 CCTV와 직원이 남긴 체크 사진이다. 냉장 보관 온도 이탈, 조리 도구 교차 사용, 식재 관리 소홀 장면이 확인된다.",
+      "surfaceName": "촬영 당일 주방 기록",
+      "surfaceDescription": "촬영 당일 주방 내부 상태를 보여주는 CCTV와 사진 자료다.",
+      "type": "cctv",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "institutional",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-2"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-3"
+      ],
+      "investigationResults": {
+        "request_original": "점심 피크 시간 직전 보관 용기 뚜껑 미폐쇄, 도마 교체 지연, 재료 표기 누락이 분 단위로 기록돼 있다.",
+        "restore_context": "문제 장면 뒤 일부 도구 교체와 정리 시도는 있었지만, 그 전까지 누적된 관리 공백 자체는 지워지지 않는다.",
+        "check_edits": "사장이 주장한 '딱 한 번의 실수'와 달리 비슷한 관리 누락이 40분 안에 세 차례 반복된다."
+      },
+      "subjectParty": "b",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "촬영 당일 주방 관리가 정상적이었다는 주장을 유지하십니까?",
+            "attackVector": "evidence"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "즉시 정리한 장면이 있다는 것과 애초의 위반이 없었다는 것은 다릅니다. 그 차이를 설명해 주십시오.",
+            "attackVector": "responsibility"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "check_edits",
+          "question": {
+            "text": "한 번의 실수라고 했는데, 같은 날 반복된 누락이 세 차례 확인됩니다. 어떻게 받아들여야 합니까?",
+            "attackVector": "timeline"
+          }
+        }
+      ],
+      "meta": {
+        "name": "촬영 당일 주방 기록",
+        "type": "cctv",
+        "viewerType": "cctv",
+        "trustLevel": "high",
+        "trustLabel": "높음",
+        "source": "org",
+        "sourceLabel": "기관",
+        "legality": "ok",
+        "legalLabel": "적법",
+        "stage": 1,
+        "stageLabel": "공식 기록",
+        "sourceNote": "현장 CCTV와 위생 체크 사진 원본 대조",
+        "redactions": [
+          "직원 얼굴 일부"
+        ]
+      },
+      "viewerData": {
+        "cctv": [
+          {
+            "time": "18:41",
+            "pct": 0,
+            "label": "입장",
+            "desc": "촬영팀 입장 직후 주방 전경이 포착됩니다.",
+            "suspicious": false
+          },
+          {
+            "time": "18:42",
+            "pct": 28,
+            "label": "냉장",
+            "desc": "냉장 보관 온도 이탈 구간이 화면에 남습니다.",
+            "suspicious": true
+          },
+          {
+            "time": "18:43",
+            "pct": 57,
+            "label": "교차 사용",
+            "desc": "조리 도구 교차 사용 장면이 확인됩니다.",
+            "suspicious": true
+          },
+          {
+            "time": "18:44",
+            "pct": 82,
+            "label": "정리 시도",
+            "desc": "직원이 뒤늦게 정리와 교체를 시도합니다.",
+            "suspicious": false
+          }
+        ],
+        "meta": {
+          "name": "촬영 당일 주방 기록",
+          "type": "cctv",
+          "viewerType": "cctv",
+          "trustLevel": "high",
+          "trustLabel": "높음",
+          "source": "org",
+          "sourceLabel": "기관",
+          "legality": "ok",
+          "legalLabel": "적법",
+          "stage": 1,
+          "stageLabel": "공식 기록",
+          "sourceNote": "현장 CCTV와 위생 체크 사진 원본 대조",
+          "redactions": [
+            "직원 얼굴 일부"
+          ]
+        },
+        "media": {
+          "imageUrl": "data:image/svg+xml;charset=UTF-8,%0A%20%20%20%20%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%221280%22%20height%3D%22720%22%20viewBox%3D%220%200%201280%20720%22%3E%0A%20%20%20%20%20%20%3Crect%20width%3D%221280%22%20height%3D%22720%22%20rx%3D%2224%22%20fill%3D%22%23020617%22%20%2F%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%2232%22%20y%3D%2232%22%20width%3D%221216%22%20height%3D%22656%22%20rx%3D%2218%22%20fill%3D%22%23111827%22%20stroke%3D%22%23334155%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2262%22%20y%3D%2276%22%20font-size%3D%2218%22%20font-weight%3D%22800%22%20fill%3D%22%23f87171%22%3EREC%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22150%22%20y%3D%2276%22%20font-size%3D%2216%22%20font-weight%3D%22700%22%20fill%3D%22%2394a3b8%22%3Eframe%201%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221090%22%20y%3D%2276%22%20font-size%3D%2216%22%20font-weight%3D%22700%22%20fill%3D%22%238fb2ff%22%20text-anchor%3D%22end%22%3ECCTV%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%2288%22%20y%3D%22142%22%20width%3D%221104%22%20height%3D%22370%22%20rx%3D%2216%22%20fill%3D%22%230f172a%22%20%2F%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%22284%22%20y%3D%22228%22%20width%3D%22420%22%20height%3D%22160%22%20rx%3D%2218%22%20fill%3D%22rgba(255%2C255%2C255%2C0.04)%22%20stroke%3D%22%23f59e0b%22%20stroke-width%3D%224%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2288%22%20y%3D%22564%22%20font-size%3D%2228%22%20font-weight%3D%22800%22%20fill%3D%22%23f8fafc%22%3E%EC%B4%AC%EC%98%81%20%EB%8B%B9%EC%9D%BC%20%EC%A3%BC%EB%B0%A9%20%EA%B8%B0%EB%A1%9D%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2288%22%20y%3D%22600%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23cbd5e1%22%3Erequest_ori%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2288%22%20y%3D%22632%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%2394a3b8%22%3E%EC%A0%90%EC%8B%AC%20%ED%94%BC%ED%81%AC%20%EC%8B%9C%EA%B0%84%20%EC%A7%81%EC%A0%84%20%EB%B3%B4%EA%B4%80%20%EC%9A%A9%EA%B8%B0%20%EB%9A%9C%EA%BB%91%20%EB%AF%B8%ED%8F%90%EC%87%84%2C%20%EB%8F%84%EB%A7%88%20%EA%B5%90%EC%B2%B4%20%EC%A7%80%EC%97%B0%2C%20%EC%9E%AC%EB%A3%8C%20%ED%91%9C%EA%B8%B0%20%EB%88%84%EB%9D%BD%EC%9D%B4%20%EB%B6%84%20%EB%8B%A8%EC%9C%84%EB%A1%9C%20%EA%B8%B0%EB%A1%9D%EB%8F%BC%20%EC%9E%88%EB%8B%A4.%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2288%22%20y1%3D%22640%22%20x2%3D%221192%22%20y2%3D%22640%22%20stroke%3D%22rgba(255%2C255%2C255%2C0.12)%22%20%2F%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%3Ccircle%20cx%3D%22144%22%20cy%3D%22640%22%20r%3D%2214%22%20fill%3D%22%23f59e0b%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22144%22%20y%3D%22674%22%20font-size%3D%2216%22%20font-weight%3D%22700%22%20fill%3D%22%23cbd5e1%22%20text-anchor%3D%22middle%22%3Eframe%201%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Ccircle%20cx%3D%22394%22%20cy%3D%22640%22%20r%3D%2214%22%20fill%3D%22%2360a5fa%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22394%22%20y%3D%22674%22%20font-size%3D%2216%22%20font-weight%3D%22700%22%20fill%3D%22%23cbd5e1%22%20text-anchor%3D%22middle%22%3Eframe%202%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Ccircle%20cx%3D%22644%22%20cy%3D%22640%22%20r%3D%2214%22%20fill%3D%22%23f59e0b%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22644%22%20y%3D%22674%22%20font-size%3D%2216%22%20font-weight%3D%22700%22%20fill%3D%22%23cbd5e1%22%20text-anchor%3D%22middle%22%3Eframe%203%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%3C%2Fsvg%3E%0A%20%20",
+          "thumbnailUrl": "data:image/svg+xml;charset=UTF-8,%0A%20%20%20%20%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%221280%22%20height%3D%22720%22%20viewBox%3D%220%200%201280%20720%22%3E%0A%20%20%20%20%20%20%3Crect%20width%3D%221280%22%20height%3D%22720%22%20rx%3D%2224%22%20fill%3D%22%23020617%22%20%2F%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%2232%22%20y%3D%2232%22%20width%3D%221216%22%20height%3D%22656%22%20rx%3D%2218%22%20fill%3D%22%23111827%22%20stroke%3D%22%23334155%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2262%22%20y%3D%2276%22%20font-size%3D%2218%22%20font-weight%3D%22800%22%20fill%3D%22%23f87171%22%3EREC%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22150%22%20y%3D%2276%22%20font-size%3D%2216%22%20font-weight%3D%22700%22%20fill%3D%22%2394a3b8%22%3Eframe%201%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221090%22%20y%3D%2276%22%20font-size%3D%2216%22%20font-weight%3D%22700%22%20fill%3D%22%238fb2ff%22%20text-anchor%3D%22end%22%3ECCTV%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%2288%22%20y%3D%22142%22%20width%3D%221104%22%20height%3D%22370%22%20rx%3D%2216%22%20fill%3D%22%230f172a%22%20%2F%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%22284%22%20y%3D%22228%22%20width%3D%22420%22%20height%3D%22160%22%20rx%3D%2218%22%20fill%3D%22rgba(255%2C255%2C255%2C0.04)%22%20stroke%3D%22%23f59e0b%22%20stroke-width%3D%224%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2288%22%20y%3D%22564%22%20font-size%3D%2228%22%20font-weight%3D%22800%22%20fill%3D%22%23f8fafc%22%3E%EC%B4%AC%EC%98%81%20%EB%8B%B9%EC%9D%BC%20%EC%A3%BC%EB%B0%A9%20%EA%B8%B0%EB%A1%9D%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2288%22%20y%3D%22600%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23cbd5e1%22%3Erequest_ori%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2288%22%20y%3D%22632%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%2394a3b8%22%3E%EC%A0%90%EC%8B%AC%20%ED%94%BC%ED%81%AC%20%EC%8B%9C%EA%B0%84%20%EC%A7%81%EC%A0%84%20%EB%B3%B4%EA%B4%80%20%EC%9A%A9%EA%B8%B0%20%EB%9A%9C%EA%BB%91%20%EB%AF%B8%ED%8F%90%EC%87%84%2C%20%EB%8F%84%EB%A7%88%20%EA%B5%90%EC%B2%B4%20%EC%A7%80%EC%97%B0%2C%20%EC%9E%AC%EB%A3%8C%20%ED%91%9C%EA%B8%B0%20%EB%88%84%EB%9D%BD%EC%9D%B4%20%EB%B6%84%20%EB%8B%A8%EC%9C%84%EB%A1%9C%20%EA%B8%B0%EB%A1%9D%EB%8F%BC%20%EC%9E%88%EB%8B%A4.%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2288%22%20y1%3D%22640%22%20x2%3D%221192%22%20y2%3D%22640%22%20stroke%3D%22rgba(255%2C255%2C255%2C0.12)%22%20%2F%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%3Ccircle%20cx%3D%22144%22%20cy%3D%22640%22%20r%3D%2214%22%20fill%3D%22%23f59e0b%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22144%22%20y%3D%22674%22%20font-size%3D%2216%22%20font-weight%3D%22700%22%20fill%3D%22%23cbd5e1%22%20text-anchor%3D%22middle%22%3Eframe%201%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Ccircle%20cx%3D%22394%22%20cy%3D%22640%22%20r%3D%2214%22%20fill%3D%22%2360a5fa%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22394%22%20y%3D%22674%22%20font-size%3D%2216%22%20font-weight%3D%22700%22%20fill%3D%22%23cbd5e1%22%20text-anchor%3D%22middle%22%3Eframe%202%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Ccircle%20cx%3D%22644%22%20cy%3D%22640%22%20r%3D%2214%22%20fill%3D%22%23f59e0b%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22644%22%20y%3D%22674%22%20font-size%3D%2216%22%20font-weight%3D%22700%22%20fill%3D%22%23cbd5e1%22%20text-anchor%3D%22middle%22%3Eframe%203%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%3C%2Fsvg%3E%0A%20%20",
+          "posterUrl": "data:image/svg+xml;charset=UTF-8,%0A%20%20%20%20%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%221280%22%20height%3D%22720%22%20viewBox%3D%220%200%201280%20720%22%3E%0A%20%20%20%20%20%20%3Crect%20width%3D%221280%22%20height%3D%22720%22%20rx%3D%2224%22%20fill%3D%22%23020617%22%20%2F%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%2232%22%20y%3D%2232%22%20width%3D%221216%22%20height%3D%22656%22%20rx%3D%2218%22%20fill%3D%22%23111827%22%20stroke%3D%22%23334155%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2262%22%20y%3D%2276%22%20font-size%3D%2218%22%20font-weight%3D%22800%22%20fill%3D%22%23f87171%22%3EREC%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22150%22%20y%3D%2276%22%20font-size%3D%2216%22%20font-weight%3D%22700%22%20fill%3D%22%2394a3b8%22%3Eframe%201%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221090%22%20y%3D%2276%22%20font-size%3D%2216%22%20font-weight%3D%22700%22%20fill%3D%22%238fb2ff%22%20text-anchor%3D%22end%22%3ECCTV%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%2288%22%20y%3D%22142%22%20width%3D%221104%22%20height%3D%22370%22%20rx%3D%2216%22%20fill%3D%22%230f172a%22%20%2F%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%22284%22%20y%3D%22228%22%20width%3D%22420%22%20height%3D%22160%22%20rx%3D%2218%22%20fill%3D%22rgba(255%2C255%2C255%2C0.04)%22%20stroke%3D%22%23f59e0b%22%20stroke-width%3D%224%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2288%22%20y%3D%22564%22%20font-size%3D%2228%22%20font-weight%3D%22800%22%20fill%3D%22%23f8fafc%22%3E%EC%B4%AC%EC%98%81%20%EB%8B%B9%EC%9D%BC%20%EC%A3%BC%EB%B0%A9%20%EA%B8%B0%EB%A1%9D%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2288%22%20y%3D%22600%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23cbd5e1%22%3Erequest_ori%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2288%22%20y%3D%22632%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%2394a3b8%22%3E%EC%A0%90%EC%8B%AC%20%ED%94%BC%ED%81%AC%20%EC%8B%9C%EA%B0%84%20%EC%A7%81%EC%A0%84%20%EB%B3%B4%EA%B4%80%20%EC%9A%A9%EA%B8%B0%20%EB%9A%9C%EA%BB%91%20%EB%AF%B8%ED%8F%90%EC%87%84%2C%20%EB%8F%84%EB%A7%88%20%EA%B5%90%EC%B2%B4%20%EC%A7%80%EC%97%B0%2C%20%EC%9E%AC%EB%A3%8C%20%ED%91%9C%EA%B8%B0%20%EB%88%84%EB%9D%BD%EC%9D%B4%20%EB%B6%84%20%EB%8B%A8%EC%9C%84%EB%A1%9C%20%EA%B8%B0%EB%A1%9D%EB%8F%BC%20%EC%9E%88%EB%8B%A4.%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2288%22%20y1%3D%22640%22%20x2%3D%221192%22%20y2%3D%22640%22%20stroke%3D%22rgba(255%2C255%2C255%2C0.12)%22%20%2F%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%3Ccircle%20cx%3D%22144%22%20cy%3D%22640%22%20r%3D%2214%22%20fill%3D%22%23f59e0b%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22144%22%20y%3D%22674%22%20font-size%3D%2216%22%20font-weight%3D%22700%22%20fill%3D%22%23cbd5e1%22%20text-anchor%3D%22middle%22%3Eframe%201%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Ccircle%20cx%3D%22394%22%20cy%3D%22640%22%20r%3D%2214%22%20fill%3D%22%2360a5fa%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22394%22%20y%3D%22674%22%20font-size%3D%2216%22%20font-weight%3D%22700%22%20fill%3D%22%23cbd5e1%22%20text-anchor%3D%22middle%22%3Eframe%202%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Ccircle%20cx%3D%22644%22%20cy%3D%22640%22%20r%3D%2214%22%20fill%3D%22%23f59e0b%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22644%22%20y%3D%22674%22%20font-size%3D%2216%22%20font-weight%3D%22700%22%20fill%3D%22%23cbd5e1%22%20text-anchor%3D%22middle%22%3Eframe%203%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%3C%2Fsvg%3E%0A%20%20",
+          "width": 1280,
+          "height": 720,
+          "alt": "촬영 당일 주방 기록 cctv evidence",
+          "caption": "촬영 당일 주방 기록 frame preview",
+          "frameImages": [
+            {
+              "imageUrl": "data:image/svg+xml;charset=UTF-8,%0A%20%20%20%20%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%221280%22%20height%3D%22720%22%20viewBox%3D%220%200%201280%20720%22%3E%0A%20%20%20%20%20%20%3Crect%20width%3D%221280%22%20height%3D%22720%22%20rx%3D%2224%22%20fill%3D%22%23020617%22%20%2F%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%2232%22%20y%3D%2232%22%20width%3D%221216%22%20height%3D%22656%22%20rx%3D%2218%22%20fill%3D%22%23111827%22%20stroke%3D%22%23334155%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2262%22%20y%3D%2276%22%20font-size%3D%2218%22%20font-weight%3D%22800%22%20fill%3D%22%23f87171%22%3EREC%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22150%22%20y%3D%2276%22%20font-size%3D%2216%22%20font-weight%3D%22700%22%20fill%3D%22%2394a3b8%22%3Eframe%201%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221090%22%20y%3D%2276%22%20font-size%3D%2216%22%20font-weight%3D%22700%22%20fill%3D%22%238fb2ff%22%20text-anchor%3D%22end%22%3ECCTV%201%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%2288%22%20y%3D%22142%22%20width%3D%221104%22%20height%3D%22370%22%20rx%3D%2216%22%20fill%3D%22%230f172a%22%20%2F%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%22284%22%20y%3D%22228%22%20width%3D%22420%22%20height%3D%22160%22%20rx%3D%2218%22%20fill%3D%22rgba(255%2C255%2C255%2C0.04)%22%20stroke%3D%22%23f59e0b%22%20stroke-width%3D%224%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2288%22%20y%3D%22564%22%20font-size%3D%2228%22%20font-weight%3D%22800%22%20fill%3D%22%23f8fafc%22%3E%EC%B4%AC%EC%98%81%20%EB%8B%B9%EC%9D%BC%20%EC%A3%BC%EB%B0%A9%20%EA%B8%B0%EB%A1%9D%201%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2288%22%20y%3D%22600%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23cbd5e1%22%3Erequest_ori%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2288%22%20y%3D%22632%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%2394a3b8%22%3E%EC%A0%90%EC%8B%AC%20%ED%94%BC%ED%81%AC%20%EC%8B%9C%EA%B0%84%20%EC%A7%81%EC%A0%84%20%EB%B3%B4%EA%B4%80%20%EC%9A%A9%EA%B8%B0%20%EB%9A%9C%EA%BB%91%20%EB%AF%B8%ED%8F%90%EC%87%84%2C%20%EB%8F%84%EB%A7%88%20%EA%B5%90%EC%B2%B4%20%EC%A7%80%EC%97%B0%2C%20%EC%9E%AC%EB%A3%8C%20%ED%91%9C%EA%B8%B0%20%EB%88%84%EB%9D%BD%EC%9D%B4%20%EB%B6%84%20%EB%8B%A8%EC%9C%84%EB%A1%9C%20%EA%B8%B0%EB%A1%9D%EB%8F%BC%20%EC%9E%88%EB%8B%A4.%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2288%22%20y1%3D%22640%22%20x2%3D%221192%22%20y2%3D%22640%22%20stroke%3D%22rgba(255%2C255%2C255%2C0.12)%22%20%2F%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%3Ccircle%20cx%3D%22144%22%20cy%3D%22640%22%20r%3D%2214%22%20fill%3D%22%23f59e0b%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22144%22%20y%3D%22674%22%20font-size%3D%2216%22%20font-weight%3D%22700%22%20fill%3D%22%23cbd5e1%22%20text-anchor%3D%22middle%22%3Eframe%201%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%3C%2Fsvg%3E%0A%20%20",
+              "thumbnailUrl": "data:image/svg+xml;charset=UTF-8,%0A%20%20%20%20%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%221280%22%20height%3D%22720%22%20viewBox%3D%220%200%201280%20720%22%3E%0A%20%20%20%20%20%20%3Crect%20width%3D%221280%22%20height%3D%22720%22%20rx%3D%2224%22%20fill%3D%22%23020617%22%20%2F%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%2232%22%20y%3D%2232%22%20width%3D%221216%22%20height%3D%22656%22%20rx%3D%2218%22%20fill%3D%22%23111827%22%20stroke%3D%22%23334155%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2262%22%20y%3D%2276%22%20font-size%3D%2218%22%20font-weight%3D%22800%22%20fill%3D%22%23f87171%22%3EREC%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22150%22%20y%3D%2276%22%20font-size%3D%2216%22%20font-weight%3D%22700%22%20fill%3D%22%2394a3b8%22%3Eframe%201%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221090%22%20y%3D%2276%22%20font-size%3D%2216%22%20font-weight%3D%22700%22%20fill%3D%22%238fb2ff%22%20text-anchor%3D%22end%22%3ECCTV%201%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%2288%22%20y%3D%22142%22%20width%3D%221104%22%20height%3D%22370%22%20rx%3D%2216%22%20fill%3D%22%230f172a%22%20%2F%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%22284%22%20y%3D%22228%22%20width%3D%22420%22%20height%3D%22160%22%20rx%3D%2218%22%20fill%3D%22rgba(255%2C255%2C255%2C0.04)%22%20stroke%3D%22%23f59e0b%22%20stroke-width%3D%224%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2288%22%20y%3D%22564%22%20font-size%3D%2228%22%20font-weight%3D%22800%22%20fill%3D%22%23f8fafc%22%3E%EC%B4%AC%EC%98%81%20%EB%8B%B9%EC%9D%BC%20%EC%A3%BC%EB%B0%A9%20%EA%B8%B0%EB%A1%9D%201%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2288%22%20y%3D%22600%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23cbd5e1%22%3Erequest_ori%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2288%22%20y%3D%22632%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%2394a3b8%22%3E%EC%A0%90%EC%8B%AC%20%ED%94%BC%ED%81%AC%20%EC%8B%9C%EA%B0%84%20%EC%A7%81%EC%A0%84%20%EB%B3%B4%EA%B4%80%20%EC%9A%A9%EA%B8%B0%20%EB%9A%9C%EA%BB%91%20%EB%AF%B8%ED%8F%90%EC%87%84%2C%20%EB%8F%84%EB%A7%88%20%EA%B5%90%EC%B2%B4%20%EC%A7%80%EC%97%B0%2C%20%EC%9E%AC%EB%A3%8C%20%ED%91%9C%EA%B8%B0%20%EB%88%84%EB%9D%BD%EC%9D%B4%20%EB%B6%84%20%EB%8B%A8%EC%9C%84%EB%A1%9C%20%EA%B8%B0%EB%A1%9D%EB%8F%BC%20%EC%9E%88%EB%8B%A4.%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2288%22%20y1%3D%22640%22%20x2%3D%221192%22%20y2%3D%22640%22%20stroke%3D%22rgba(255%2C255%2C255%2C0.12)%22%20%2F%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%3Ccircle%20cx%3D%22144%22%20cy%3D%22640%22%20r%3D%2214%22%20fill%3D%22%23f59e0b%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22144%22%20y%3D%22674%22%20font-size%3D%2216%22%20font-weight%3D%22700%22%20fill%3D%22%23cbd5e1%22%20text-anchor%3D%22middle%22%3Eframe%201%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%3C%2Fsvg%3E%0A%20%20",
+              "posterUrl": "data:image/svg+xml;charset=UTF-8,%0A%20%20%20%20%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%221280%22%20height%3D%22720%22%20viewBox%3D%220%200%201280%20720%22%3E%0A%20%20%20%20%20%20%3Crect%20width%3D%221280%22%20height%3D%22720%22%20rx%3D%2224%22%20fill%3D%22%23020617%22%20%2F%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%2232%22%20y%3D%2232%22%20width%3D%221216%22%20height%3D%22656%22%20rx%3D%2218%22%20fill%3D%22%23111827%22%20stroke%3D%22%23334155%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2262%22%20y%3D%2276%22%20font-size%3D%2218%22%20font-weight%3D%22800%22%20fill%3D%22%23f87171%22%3EREC%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22150%22%20y%3D%2276%22%20font-size%3D%2216%22%20font-weight%3D%22700%22%20fill%3D%22%2394a3b8%22%3Eframe%201%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221090%22%20y%3D%2276%22%20font-size%3D%2216%22%20font-weight%3D%22700%22%20fill%3D%22%238fb2ff%22%20text-anchor%3D%22end%22%3ECCTV%201%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%2288%22%20y%3D%22142%22%20width%3D%221104%22%20height%3D%22370%22%20rx%3D%2216%22%20fill%3D%22%230f172a%22%20%2F%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%22284%22%20y%3D%22228%22%20width%3D%22420%22%20height%3D%22160%22%20rx%3D%2218%22%20fill%3D%22rgba(255%2C255%2C255%2C0.04)%22%20stroke%3D%22%23f59e0b%22%20stroke-width%3D%224%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2288%22%20y%3D%22564%22%20font-size%3D%2228%22%20font-weight%3D%22800%22%20fill%3D%22%23f8fafc%22%3E%EC%B4%AC%EC%98%81%20%EB%8B%B9%EC%9D%BC%20%EC%A3%BC%EB%B0%A9%20%EA%B8%B0%EB%A1%9D%201%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2288%22%20y%3D%22600%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23cbd5e1%22%3Erequest_ori%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2288%22%20y%3D%22632%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%2394a3b8%22%3E%EC%A0%90%EC%8B%AC%20%ED%94%BC%ED%81%AC%20%EC%8B%9C%EA%B0%84%20%EC%A7%81%EC%A0%84%20%EB%B3%B4%EA%B4%80%20%EC%9A%A9%EA%B8%B0%20%EB%9A%9C%EA%BB%91%20%EB%AF%B8%ED%8F%90%EC%87%84%2C%20%EB%8F%84%EB%A7%88%20%EA%B5%90%EC%B2%B4%20%EC%A7%80%EC%97%B0%2C%20%EC%9E%AC%EB%A3%8C%20%ED%91%9C%EA%B8%B0%20%EB%88%84%EB%9D%BD%EC%9D%B4%20%EB%B6%84%20%EB%8B%A8%EC%9C%84%EB%A1%9C%20%EA%B8%B0%EB%A1%9D%EB%8F%BC%20%EC%9E%88%EB%8B%A4.%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2288%22%20y1%3D%22640%22%20x2%3D%221192%22%20y2%3D%22640%22%20stroke%3D%22rgba(255%2C255%2C255%2C0.12)%22%20%2F%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%3Ccircle%20cx%3D%22144%22%20cy%3D%22640%22%20r%3D%2214%22%20fill%3D%22%23f59e0b%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22144%22%20y%3D%22674%22%20font-size%3D%2216%22%20font-weight%3D%22700%22%20fill%3D%22%23cbd5e1%22%20text-anchor%3D%22middle%22%3Eframe%201%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%3C%2Fsvg%3E%0A%20%20",
+              "width": 1280,
+              "height": 720,
+              "alt": "촬영 당일 주방 기록 frame 1",
+              "caption": "frame 1 request_ori…"
+            },
+            {
+              "imageUrl": "data:image/svg+xml;charset=UTF-8,%0A%20%20%20%20%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%221280%22%20height%3D%22720%22%20viewBox%3D%220%200%201280%20720%22%3E%0A%20%20%20%20%20%20%3Crect%20width%3D%221280%22%20height%3D%22720%22%20rx%3D%2224%22%20fill%3D%22%23020617%22%20%2F%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%2232%22%20y%3D%2232%22%20width%3D%221216%22%20height%3D%22656%22%20rx%3D%2218%22%20fill%3D%22%23111827%22%20stroke%3D%22%23334155%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2262%22%20y%3D%2276%22%20font-size%3D%2218%22%20font-weight%3D%22800%22%20fill%3D%22%23f87171%22%3EREC%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22150%22%20y%3D%2276%22%20font-size%3D%2216%22%20font-weight%3D%22700%22%20fill%3D%22%2394a3b8%22%3Eframe%202%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221090%22%20y%3D%2276%22%20font-size%3D%2216%22%20font-weight%3D%22700%22%20fill%3D%22%238fb2ff%22%20text-anchor%3D%22end%22%3ECCTV%202%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%2288%22%20y%3D%22142%22%20width%3D%221104%22%20height%3D%22370%22%20rx%3D%2216%22%20fill%3D%22%230f172a%22%20%2F%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%22284%22%20y%3D%22228%22%20width%3D%22420%22%20height%3D%22160%22%20rx%3D%2218%22%20fill%3D%22rgba(255%2C255%2C255%2C0.04)%22%20stroke%3D%22%2360a5fa%22%20stroke-width%3D%224%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2288%22%20y%3D%22564%22%20font-size%3D%2228%22%20font-weight%3D%22800%22%20fill%3D%22%23f8fafc%22%3E%EC%B4%AC%EC%98%81%20%EB%8B%B9%EC%9D%BC%20%EC%A3%BC%EB%B0%A9%20%EA%B8%B0%EB%A1%9D%202%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2288%22%20y%3D%22600%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23cbd5e1%22%3Erestore_con%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2288%22%20y%3D%22632%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%2394a3b8%22%3E%EB%AC%B8%EC%A0%9C%20%EC%9E%A5%EB%A9%B4%20%EB%92%A4%20%EC%9D%BC%EB%B6%80%20%EB%8F%84%EA%B5%AC%20%EA%B5%90%EC%B2%B4%EC%99%80%20%EC%A0%95%EB%A6%AC%20%EC%8B%9C%EB%8F%84%EB%8A%94%20%EC%9E%88%EC%97%88%EC%A7%80%EB%A7%8C%2C%20%EA%B7%B8%20%EC%A0%84%EA%B9%8C%EC%A7%80%20%EB%88%84%EC%A0%81%EB%90%9C%20%EA%B4%80%EB%A6%AC%20%EA%B3%B5%EB%B0%B1%20%EC%9E%90%EC%B2%B4%EB%8A%94%20%EC%A7%80%EC%9B%8C%EC%A7%80%EC%A7%80%20%EC%95%8A%EB%8A%94%EB%8B%A4.%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2288%22%20y1%3D%22640%22%20x2%3D%221192%22%20y2%3D%22640%22%20stroke%3D%22rgba(255%2C255%2C255%2C0.12)%22%20%2F%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%3Ccircle%20cx%3D%22144%22%20cy%3D%22640%22%20r%3D%2214%22%20fill%3D%22%2360a5fa%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22144%22%20y%3D%22674%22%20font-size%3D%2216%22%20font-weight%3D%22700%22%20fill%3D%22%23cbd5e1%22%20text-anchor%3D%22middle%22%3Eframe%202%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%3C%2Fsvg%3E%0A%20%20",
+              "thumbnailUrl": "data:image/svg+xml;charset=UTF-8,%0A%20%20%20%20%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%221280%22%20height%3D%22720%22%20viewBox%3D%220%200%201280%20720%22%3E%0A%20%20%20%20%20%20%3Crect%20width%3D%221280%22%20height%3D%22720%22%20rx%3D%2224%22%20fill%3D%22%23020617%22%20%2F%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%2232%22%20y%3D%2232%22%20width%3D%221216%22%20height%3D%22656%22%20rx%3D%2218%22%20fill%3D%22%23111827%22%20stroke%3D%22%23334155%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2262%22%20y%3D%2276%22%20font-size%3D%2218%22%20font-weight%3D%22800%22%20fill%3D%22%23f87171%22%3EREC%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22150%22%20y%3D%2276%22%20font-size%3D%2216%22%20font-weight%3D%22700%22%20fill%3D%22%2394a3b8%22%3Eframe%202%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221090%22%20y%3D%2276%22%20font-size%3D%2216%22%20font-weight%3D%22700%22%20fill%3D%22%238fb2ff%22%20text-anchor%3D%22end%22%3ECCTV%202%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%2288%22%20y%3D%22142%22%20width%3D%221104%22%20height%3D%22370%22%20rx%3D%2216%22%20fill%3D%22%230f172a%22%20%2F%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%22284%22%20y%3D%22228%22%20width%3D%22420%22%20height%3D%22160%22%20rx%3D%2218%22%20fill%3D%22rgba(255%2C255%2C255%2C0.04)%22%20stroke%3D%22%2360a5fa%22%20stroke-width%3D%224%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2288%22%20y%3D%22564%22%20font-size%3D%2228%22%20font-weight%3D%22800%22%20fill%3D%22%23f8fafc%22%3E%EC%B4%AC%EC%98%81%20%EB%8B%B9%EC%9D%BC%20%EC%A3%BC%EB%B0%A9%20%EA%B8%B0%EB%A1%9D%202%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2288%22%20y%3D%22600%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23cbd5e1%22%3Erestore_con%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2288%22%20y%3D%22632%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%2394a3b8%22%3E%EB%AC%B8%EC%A0%9C%20%EC%9E%A5%EB%A9%B4%20%EB%92%A4%20%EC%9D%BC%EB%B6%80%20%EB%8F%84%EA%B5%AC%20%EA%B5%90%EC%B2%B4%EC%99%80%20%EC%A0%95%EB%A6%AC%20%EC%8B%9C%EB%8F%84%EB%8A%94%20%EC%9E%88%EC%97%88%EC%A7%80%EB%A7%8C%2C%20%EA%B7%B8%20%EC%A0%84%EA%B9%8C%EC%A7%80%20%EB%88%84%EC%A0%81%EB%90%9C%20%EA%B4%80%EB%A6%AC%20%EA%B3%B5%EB%B0%B1%20%EC%9E%90%EC%B2%B4%EB%8A%94%20%EC%A7%80%EC%9B%8C%EC%A7%80%EC%A7%80%20%EC%95%8A%EB%8A%94%EB%8B%A4.%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2288%22%20y1%3D%22640%22%20x2%3D%221192%22%20y2%3D%22640%22%20stroke%3D%22rgba(255%2C255%2C255%2C0.12)%22%20%2F%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%3Ccircle%20cx%3D%22144%22%20cy%3D%22640%22%20r%3D%2214%22%20fill%3D%22%2360a5fa%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22144%22%20y%3D%22674%22%20font-size%3D%2216%22%20font-weight%3D%22700%22%20fill%3D%22%23cbd5e1%22%20text-anchor%3D%22middle%22%3Eframe%202%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%3C%2Fsvg%3E%0A%20%20",
+              "posterUrl": "data:image/svg+xml;charset=UTF-8,%0A%20%20%20%20%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%221280%22%20height%3D%22720%22%20viewBox%3D%220%200%201280%20720%22%3E%0A%20%20%20%20%20%20%3Crect%20width%3D%221280%22%20height%3D%22720%22%20rx%3D%2224%22%20fill%3D%22%23020617%22%20%2F%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%2232%22%20y%3D%2232%22%20width%3D%221216%22%20height%3D%22656%22%20rx%3D%2218%22%20fill%3D%22%23111827%22%20stroke%3D%22%23334155%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2262%22%20y%3D%2276%22%20font-size%3D%2218%22%20font-weight%3D%22800%22%20fill%3D%22%23f87171%22%3EREC%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22150%22%20y%3D%2276%22%20font-size%3D%2216%22%20font-weight%3D%22700%22%20fill%3D%22%2394a3b8%22%3Eframe%202%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221090%22%20y%3D%2276%22%20font-size%3D%2216%22%20font-weight%3D%22700%22%20fill%3D%22%238fb2ff%22%20text-anchor%3D%22end%22%3ECCTV%202%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%2288%22%20y%3D%22142%22%20width%3D%221104%22%20height%3D%22370%22%20rx%3D%2216%22%20fill%3D%22%230f172a%22%20%2F%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%22284%22%20y%3D%22228%22%20width%3D%22420%22%20height%3D%22160%22%20rx%3D%2218%22%20fill%3D%22rgba(255%2C255%2C255%2C0.04)%22%20stroke%3D%22%2360a5fa%22%20stroke-width%3D%224%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2288%22%20y%3D%22564%22%20font-size%3D%2228%22%20font-weight%3D%22800%22%20fill%3D%22%23f8fafc%22%3E%EC%B4%AC%EC%98%81%20%EB%8B%B9%EC%9D%BC%20%EC%A3%BC%EB%B0%A9%20%EA%B8%B0%EB%A1%9D%202%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2288%22%20y%3D%22600%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23cbd5e1%22%3Erestore_con%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2288%22%20y%3D%22632%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%2394a3b8%22%3E%EB%AC%B8%EC%A0%9C%20%EC%9E%A5%EB%A9%B4%20%EB%92%A4%20%EC%9D%BC%EB%B6%80%20%EB%8F%84%EA%B5%AC%20%EA%B5%90%EC%B2%B4%EC%99%80%20%EC%A0%95%EB%A6%AC%20%EC%8B%9C%EB%8F%84%EB%8A%94%20%EC%9E%88%EC%97%88%EC%A7%80%EB%A7%8C%2C%20%EA%B7%B8%20%EC%A0%84%EA%B9%8C%EC%A7%80%20%EB%88%84%EC%A0%81%EB%90%9C%20%EA%B4%80%EB%A6%AC%20%EA%B3%B5%EB%B0%B1%20%EC%9E%90%EC%B2%B4%EB%8A%94%20%EC%A7%80%EC%9B%8C%EC%A7%80%EC%A7%80%20%EC%95%8A%EB%8A%94%EB%8B%A4.%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2288%22%20y1%3D%22640%22%20x2%3D%221192%22%20y2%3D%22640%22%20stroke%3D%22rgba(255%2C255%2C255%2C0.12)%22%20%2F%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%3Ccircle%20cx%3D%22144%22%20cy%3D%22640%22%20r%3D%2214%22%20fill%3D%22%2360a5fa%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22144%22%20y%3D%22674%22%20font-size%3D%2216%22%20font-weight%3D%22700%22%20fill%3D%22%23cbd5e1%22%20text-anchor%3D%22middle%22%3Eframe%202%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%3C%2Fsvg%3E%0A%20%20",
+              "width": 1280,
+              "height": 720,
+              "alt": "촬영 당일 주방 기록 frame 2",
+              "caption": "frame 2 restore_con…"
+            },
+            {
+              "imageUrl": "data:image/svg+xml;charset=UTF-8,%0A%20%20%20%20%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%221280%22%20height%3D%22720%22%20viewBox%3D%220%200%201280%20720%22%3E%0A%20%20%20%20%20%20%3Crect%20width%3D%221280%22%20height%3D%22720%22%20rx%3D%2224%22%20fill%3D%22%23020617%22%20%2F%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%2232%22%20y%3D%2232%22%20width%3D%221216%22%20height%3D%22656%22%20rx%3D%2218%22%20fill%3D%22%23111827%22%20stroke%3D%22%23334155%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2262%22%20y%3D%2276%22%20font-size%3D%2218%22%20font-weight%3D%22800%22%20fill%3D%22%23f87171%22%3EREC%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22150%22%20y%3D%2276%22%20font-size%3D%2216%22%20font-weight%3D%22700%22%20fill%3D%22%2394a3b8%22%3Eframe%203%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221090%22%20y%3D%2276%22%20font-size%3D%2216%22%20font-weight%3D%22700%22%20fill%3D%22%238fb2ff%22%20text-anchor%3D%22end%22%3ECCTV%203%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%2288%22%20y%3D%22142%22%20width%3D%221104%22%20height%3D%22370%22%20rx%3D%2216%22%20fill%3D%22%230f172a%22%20%2F%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%22284%22%20y%3D%22228%22%20width%3D%22420%22%20height%3D%22160%22%20rx%3D%2218%22%20fill%3D%22rgba(255%2C255%2C255%2C0.04)%22%20stroke%3D%22%23f59e0b%22%20stroke-width%3D%224%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2288%22%20y%3D%22564%22%20font-size%3D%2228%22%20font-weight%3D%22800%22%20fill%3D%22%23f8fafc%22%3E%EC%B4%AC%EC%98%81%20%EB%8B%B9%EC%9D%BC%20%EC%A3%BC%EB%B0%A9%20%EA%B8%B0%EB%A1%9D%203%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2288%22%20y%3D%22600%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23cbd5e1%22%3Echeck_edits%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2288%22%20y%3D%22632%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%2394a3b8%22%3E%EC%82%AC%EC%9E%A5%EC%9D%B4%20%EC%A3%BC%EC%9E%A5%ED%95%9C%20%26%2339%3B%EB%94%B1%20%ED%95%9C%20%EB%B2%88%EC%9D%98%20%EC%8B%A4%EC%88%98%26%2339%3B%EC%99%80%20%EB%8B%AC%EB%A6%AC%20%EB%B9%84%EC%8A%B7%ED%95%9C%20%EA%B4%80%EB%A6%AC%20%EB%88%84%EB%9D%BD%EC%9D%B4%2040%EB%B6%84%20%EC%95%88%EC%97%90%20%EC%84%B8%20%EC%B0%A8%EB%A1%80%20%EB%B0%98%EB%B3%B5%EB%90%9C%EB%8B%A4.%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2288%22%20y1%3D%22640%22%20x2%3D%221192%22%20y2%3D%22640%22%20stroke%3D%22rgba(255%2C255%2C255%2C0.12)%22%20%2F%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%3Ccircle%20cx%3D%22144%22%20cy%3D%22640%22%20r%3D%2214%22%20fill%3D%22%23f59e0b%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22144%22%20y%3D%22674%22%20font-size%3D%2216%22%20font-weight%3D%22700%22%20fill%3D%22%23cbd5e1%22%20text-anchor%3D%22middle%22%3Eframe%203%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%3C%2Fsvg%3E%0A%20%20",
+              "thumbnailUrl": "data:image/svg+xml;charset=UTF-8,%0A%20%20%20%20%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%221280%22%20height%3D%22720%22%20viewBox%3D%220%200%201280%20720%22%3E%0A%20%20%20%20%20%20%3Crect%20width%3D%221280%22%20height%3D%22720%22%20rx%3D%2224%22%20fill%3D%22%23020617%22%20%2F%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%2232%22%20y%3D%2232%22%20width%3D%221216%22%20height%3D%22656%22%20rx%3D%2218%22%20fill%3D%22%23111827%22%20stroke%3D%22%23334155%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2262%22%20y%3D%2276%22%20font-size%3D%2218%22%20font-weight%3D%22800%22%20fill%3D%22%23f87171%22%3EREC%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22150%22%20y%3D%2276%22%20font-size%3D%2216%22%20font-weight%3D%22700%22%20fill%3D%22%2394a3b8%22%3Eframe%203%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221090%22%20y%3D%2276%22%20font-size%3D%2216%22%20font-weight%3D%22700%22%20fill%3D%22%238fb2ff%22%20text-anchor%3D%22end%22%3ECCTV%203%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%2288%22%20y%3D%22142%22%20width%3D%221104%22%20height%3D%22370%22%20rx%3D%2216%22%20fill%3D%22%230f172a%22%20%2F%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%22284%22%20y%3D%22228%22%20width%3D%22420%22%20height%3D%22160%22%20rx%3D%2218%22%20fill%3D%22rgba(255%2C255%2C255%2C0.04)%22%20stroke%3D%22%23f59e0b%22%20stroke-width%3D%224%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2288%22%20y%3D%22564%22%20font-size%3D%2228%22%20font-weight%3D%22800%22%20fill%3D%22%23f8fafc%22%3E%EC%B4%AC%EC%98%81%20%EB%8B%B9%EC%9D%BC%20%EC%A3%BC%EB%B0%A9%20%EA%B8%B0%EB%A1%9D%203%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2288%22%20y%3D%22600%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23cbd5e1%22%3Echeck_edits%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2288%22%20y%3D%22632%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%2394a3b8%22%3E%EC%82%AC%EC%9E%A5%EC%9D%B4%20%EC%A3%BC%EC%9E%A5%ED%95%9C%20%26%2339%3B%EB%94%B1%20%ED%95%9C%20%EB%B2%88%EC%9D%98%20%EC%8B%A4%EC%88%98%26%2339%3B%EC%99%80%20%EB%8B%AC%EB%A6%AC%20%EB%B9%84%EC%8A%B7%ED%95%9C%20%EA%B4%80%EB%A6%AC%20%EB%88%84%EB%9D%BD%EC%9D%B4%2040%EB%B6%84%20%EC%95%88%EC%97%90%20%EC%84%B8%20%EC%B0%A8%EB%A1%80%20%EB%B0%98%EB%B3%B5%EB%90%9C%EB%8B%A4.%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2288%22%20y1%3D%22640%22%20x2%3D%221192%22%20y2%3D%22640%22%20stroke%3D%22rgba(255%2C255%2C255%2C0.12)%22%20%2F%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%3Ccircle%20cx%3D%22144%22%20cy%3D%22640%22%20r%3D%2214%22%20fill%3D%22%23f59e0b%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22144%22%20y%3D%22674%22%20font-size%3D%2216%22%20font-weight%3D%22700%22%20fill%3D%22%23cbd5e1%22%20text-anchor%3D%22middle%22%3Eframe%203%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%3C%2Fsvg%3E%0A%20%20",
+              "posterUrl": "data:image/svg+xml;charset=UTF-8,%0A%20%20%20%20%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%221280%22%20height%3D%22720%22%20viewBox%3D%220%200%201280%20720%22%3E%0A%20%20%20%20%20%20%3Crect%20width%3D%221280%22%20height%3D%22720%22%20rx%3D%2224%22%20fill%3D%22%23020617%22%20%2F%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%2232%22%20y%3D%2232%22%20width%3D%221216%22%20height%3D%22656%22%20rx%3D%2218%22%20fill%3D%22%23111827%22%20stroke%3D%22%23334155%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2262%22%20y%3D%2276%22%20font-size%3D%2218%22%20font-weight%3D%22800%22%20fill%3D%22%23f87171%22%3EREC%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22150%22%20y%3D%2276%22%20font-size%3D%2216%22%20font-weight%3D%22700%22%20fill%3D%22%2394a3b8%22%3Eframe%203%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221090%22%20y%3D%2276%22%20font-size%3D%2216%22%20font-weight%3D%22700%22%20fill%3D%22%238fb2ff%22%20text-anchor%3D%22end%22%3ECCTV%203%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%2288%22%20y%3D%22142%22%20width%3D%221104%22%20height%3D%22370%22%20rx%3D%2216%22%20fill%3D%22%230f172a%22%20%2F%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%22284%22%20y%3D%22228%22%20width%3D%22420%22%20height%3D%22160%22%20rx%3D%2218%22%20fill%3D%22rgba(255%2C255%2C255%2C0.04)%22%20stroke%3D%22%23f59e0b%22%20stroke-width%3D%224%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2288%22%20y%3D%22564%22%20font-size%3D%2228%22%20font-weight%3D%22800%22%20fill%3D%22%23f8fafc%22%3E%EC%B4%AC%EC%98%81%20%EB%8B%B9%EC%9D%BC%20%EC%A3%BC%EB%B0%A9%20%EA%B8%B0%EB%A1%9D%203%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2288%22%20y%3D%22600%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23cbd5e1%22%3Echeck_edits%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2288%22%20y%3D%22632%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%2394a3b8%22%3E%EC%82%AC%EC%9E%A5%EC%9D%B4%20%EC%A3%BC%EC%9E%A5%ED%95%9C%20%26%2339%3B%EB%94%B1%20%ED%95%9C%20%EB%B2%88%EC%9D%98%20%EC%8B%A4%EC%88%98%26%2339%3B%EC%99%80%20%EB%8B%AC%EB%A6%AC%20%EB%B9%84%EC%8A%B7%ED%95%9C%20%EA%B4%80%EB%A6%AC%20%EB%88%84%EB%9D%BD%EC%9D%B4%2040%EB%B6%84%20%EC%95%88%EC%97%90%20%EC%84%B8%20%EC%B0%A8%EB%A1%80%20%EB%B0%98%EB%B3%B5%EB%90%9C%EB%8B%A4.%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2288%22%20y1%3D%22640%22%20x2%3D%221192%22%20y2%3D%22640%22%20stroke%3D%22rgba(255%2C255%2C255%2C0.12)%22%20%2F%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%3Ccircle%20cx%3D%22144%22%20cy%3D%22640%22%20r%3D%2214%22%20fill%3D%22%23f59e0b%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22144%22%20y%3D%22674%22%20font-size%3D%2216%22%20font-weight%3D%22700%22%20fill%3D%22%23cbd5e1%22%20text-anchor%3D%22middle%22%3Eframe%203%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%3C%2Fsvg%3E%0A%20%20",
+              "width": 1280,
+              "height": 720,
+              "alt": "촬영 당일 주방 기록 frame 3",
+              "caption": "frame 3 check_edits"
+            }
+          ]
+        }
+      },
+      "requiredLieState": "S1",
+      "partyContext": {
+        "a": {
+          "questionAngle": "A측 관점에서 이 자료가 가리키는 책임과 경위를 설명해 주십시오.",
+          "implication": "촬영 당일 주방 CCTV와 직원이 남긴 체크 사진이다. 냉장 보관 온도 이탈, 조리 도구 교차 사용, 식재 관리 소홀 장면이 확…"
+        },
+        "b": {
+          "questionAngle": "B측 관점에서 이 자료가 가리키는 책임과 경위를 설명해 주십시오.",
+          "implication": "촬영 당일 주방 CCTV와 직원이 남긴 체크 사진이다. 냉장 보관 온도 이탈, 조리 도구 교차 사용, 식재 관리 소홀 장면이 확…"
+        }
+      }
+    },
+    {
+      "id": "e-3",
+      "name": "구청 위생 시정 메일과 재점검 기록",
+      "description": "영상 공개 전후의 위생 시정 메일과 재점검 보고서다. 즉시 영업정지는 아니지만, 반복 지적이 누적된 상태였음이 드러난다.",
+      "surfaceName": "구청 위생 시정 기록",
+      "surfaceDescription": "행정기관이 보낸 위생 시정 메일과 재점검 기록이다.",
+      "type": "log",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "institutional",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-2"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "최근 8개월 동안 동일 업장에서 두 차례 시정 권고와 한 차례 재점검 요구가 있었다.",
+        "restore_context": "모든 위반이 치명적 수준은 아니었지만, 냉장 온도와 교차오염 방지 항목은 반복 항목으로 분류돼 있다.",
+        "check_edits": "정태성이 말한 '일회성 민원'과 달리 행정 기록상 누적 관리 실패가 확인된다."
+      },
+      "subjectParty": "b",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이번 논란 이전에도 위생 지적을 받은 적이 없었다는 입장을 유지하십니까?",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "즉시 영업정지는 아니었다고 해서 반복 지적 자체가 사라지는 것은 아닙니다. 어떻게 구분하십니까?",
+            "attackVector": "rule"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "check_edits",
+          "question": {
+            "text": "행정 기록과 사장님의 설명 중 무엇이 사실에 더 가깝다고 봐야 합니까?",
+            "attackVector": "authenticity"
+          }
+        }
+      ],
+      "meta": {
+        "name": "구청 위생 시정 기록",
+        "type": "log",
+        "viewerType": "log",
+        "trustLevel": "high",
+        "trustLabel": "높음",
+        "source": "org",
+        "sourceLabel": "기관",
+        "legality": "ok",
+        "legalLabel": "적법",
+        "stage": 2,
+        "stageLabel": "재점검",
+        "sourceNote": "구청 위생과 시정 메일 및 재점검 보고서 묶음",
+        "redactions": [
+          "담당 공무원 직통 연락처"
+        ]
+      },
+      "viewerData": {
+        "log": {
+          "rows": [
+            {
+              "date": "04/03 10:12",
+              "type": "out",
+              "typeLabel": "시정",
+              "target": "정태성 업소",
+              "duration": "메일 1건",
+              "suspicious": true
+            },
+            {
+              "date": "04/03 10:18",
+              "type": "in",
+              "typeLabel": "회신",
+              "target": "업소 측 확인",
+              "duration": "회신 1건",
+              "suspicious": false
+            },
+            {
+              "date": "04/05 15:40",
+              "type": "out",
+              "typeLabel": "재점검",
+              "target": "현장 방문",
+              "duration": "보고서 4p",
+              "suspicious": true
+            },
+            {
+              "date": "04/05 16:05",
+              "type": "miss",
+              "typeLabel": "미이행",
+              "target": "온도 관리",
+              "duration": "개선 미흡",
+              "suspicious": true
+            },
+            {
+              "date": "04/07 11:00",
+              "type": "out",
+              "typeLabel": "안내",
+              "target": "추가 시정 요구",
+              "duration": "메일 1건",
+              "suspicious": false
+            }
+          ],
+          "note": "즉시 영업정지 사안은 아니지만 반복 지적과 재점검 이력이 누적돼 있습니다."
+        },
+        "meta": {
+          "name": "구청 위생 시정 기록",
+          "type": "log",
+          "viewerType": "log",
+          "trustLevel": "high",
+          "trustLabel": "높음",
+          "source": "org",
+          "sourceLabel": "기관",
+          "legality": "ok",
+          "legalLabel": "적법",
+          "stage": 2,
+          "stageLabel": "재점검",
+          "sourceNote": "구청 위생과 시정 메일 및 재점검 보고서 묶음",
+          "redactions": [
+            "담당 공무원 직통 연락처"
+          ]
+        },
+        "media": {
+          "imageUrl": "data:image/svg+xml;charset=UTF-8,%0A%20%20%20%20%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%221280%22%20height%3D%22900%22%20viewBox%3D%220%200%201280%20900%22%3E%0A%20%20%20%20%20%20%3Crect%20width%3D%221280%22%20height%3D%22900%22%20rx%3D%2224%22%20fill%3D%22%230f172a%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2254%22%20y%3D%2274%22%20font-size%3D%2216%22%20font-weight%3D%22800%22%20fill%3D%22%2322c55e%22%3ELOG%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2254%22%20y%3D%22120%22%20font-size%3D%2234%22%20font-weight%3D%22800%22%20fill%3D%22%23f8fafc%22%3E%EA%B5%AC%EC%B2%AD%20%EC%9C%84%EC%83%9D%20%EC%8B%9C%EC%A0%95%20%EA%B8%B0%EB%A1%9D%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2254%22%20y%3D%22158%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%2394a3b8%22%3E%ED%96%89%EC%A0%95%EA%B8%B0%EA%B4%80%EC%9D%B4%20%EB%B3%B4%EB%82%B8%20%EC%9C%84%EC%83%9D%20%EC%8B%9C%EC%A0%95%20%EB%A9%94%EC%9D%BC%EA%B3%BC%20%EC%9E%AC%EC%A0%90%EA%B2%80%20%EA%B8%B0%EB%A1%9D%EC%9D%B4%EB%8B%A4.%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2254%22%20y%3D%22166%22%20width%3D%221172%22%20height%3D%2268%22%20rx%3D%2214%22%20fill%3D%22rgba(255%2C255%2C255%2C0.03)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2278%22%20y%3D%22200%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%23cbd5e1%22%3E1%EC%B0%A8%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22286%22%20y%3D%22200%22%20font-size%3D%2218%22%20font-weight%3D%22800%22%20fill%3D%22%2386efac%22%3E%EC%9B%90%EB%B3%B8%20%EC%9A%94%EC%B2%AD%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22444%22%20y%3D%22200%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%EC%B5%9C%EA%B7%BC%208%EA%B0%9C%EC%9B%94%20%EB%8F%99%EC%95%88%20%EB%8F%99%EC%9D%BC%20%EC%97%85%EC%9E%A5%EC%97%90%EC%84%9C%20%EB%91%90%20%EC%B0%A8%EB%A1%80%20%EC%8B%9C%EC%A0%95%20%EA%B6%8C%EA%B3%A0%EC%99%80%20%ED%95%9C%20%EC%B0%A8%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221160%22%20y%3D%22200%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%2394a3b8%22%20text-anchor%3D%22end%22%3E%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2254%22%20y%3D%22254%22%20width%3D%221172%22%20height%3D%2268%22%20rx%3D%2214%22%20fill%3D%22rgba(245%2C158%2C11%2C0.12)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2278%22%20y%3D%22288%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%23cbd5e1%22%3E2%EC%B0%A8%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22286%22%20y%3D%22288%22%20font-size%3D%2218%22%20font-weight%3D%22800%22%20fill%3D%22%23fbbf24%22%3E%EB%A7%A5%EB%9D%BD%20%EB%B3%B5%EC%9B%90%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22444%22%20y%3D%22288%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%EB%AA%A8%EB%93%A0%20%EC%9C%84%EB%B0%98%EC%9D%B4%20%EC%B9%98%EB%AA%85%EC%A0%81%20%EC%88%98%EC%A4%80%EC%9D%80%20%EC%95%84%EB%8B%88%EC%97%88%EC%A7%80%EB%A7%8C%2C%20%EB%83%89%EC%9E%A5%20%EC%98%A8%EB%8F%84%EC%99%80%20%EA%B5%90%EC%B0%A8%EC%98%A4%EC%97%BC%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221160%22%20y%3D%22288%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%2394a3b8%22%20text-anchor%3D%22end%22%3E%EA%B2%80%ED%86%A0%20%ED%95%84%EC%9A%94%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2254%22%20y%3D%22342%22%20width%3D%221172%22%20height%3D%2268%22%20rx%3D%2214%22%20fill%3D%22rgba(255%2C255%2C255%2C0.03)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2278%22%20y%3D%22376%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%23cbd5e1%22%3E3%EC%B0%A8%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22286%22%20y%3D%22376%22%20font-size%3D%2218%22%20font-weight%3D%22800%22%20fill%3D%22%2386efac%22%3E%ED%8E%B8%EC%A7%91%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22444%22%20y%3D%22376%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%EC%A0%95%ED%83%9C%EC%84%B1%EC%9D%B4%20%EB%A7%90%ED%95%9C%20%26%2339%3B%EC%9D%BC%ED%9A%8C%EC%84%B1%20%EB%AF%BC%EC%9B%90%26%2339%3B%EA%B3%BC%20%EB%8B%AC%EB%A6%AC%20%ED%96%89%EC%A0%95%20%EA%B8%B0%EB%A1%9D%EC%83%81%20%EB%88%84%EC%A0%81%20%EA%B4%80%EB%A6%AC%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221160%22%20y%3D%22376%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%2394a3b8%22%20text-anchor%3D%22end%22%3E%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%3C%2Fsvg%3E%0A%20%20",
+          "thumbnailUrl": "data:image/svg+xml;charset=UTF-8,%0A%20%20%20%20%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%221280%22%20height%3D%22900%22%20viewBox%3D%220%200%201280%20900%22%3E%0A%20%20%20%20%20%20%3Crect%20width%3D%221280%22%20height%3D%22900%22%20rx%3D%2224%22%20fill%3D%22%230f172a%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2254%22%20y%3D%2274%22%20font-size%3D%2216%22%20font-weight%3D%22800%22%20fill%3D%22%2322c55e%22%3ELOG%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2254%22%20y%3D%22120%22%20font-size%3D%2234%22%20font-weight%3D%22800%22%20fill%3D%22%23f8fafc%22%3E%EA%B5%AC%EC%B2%AD%20%EC%9C%84%EC%83%9D%20%EC%8B%9C%EC%A0%95%20%EA%B8%B0%EB%A1%9D%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2254%22%20y%3D%22158%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%2394a3b8%22%3E%ED%96%89%EC%A0%95%EA%B8%B0%EA%B4%80%EC%9D%B4%20%EB%B3%B4%EB%82%B8%20%EC%9C%84%EC%83%9D%20%EC%8B%9C%EC%A0%95%20%EB%A9%94%EC%9D%BC%EA%B3%BC%20%EC%9E%AC%EC%A0%90%EA%B2%80%20%EA%B8%B0%EB%A1%9D%EC%9D%B4%EB%8B%A4.%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2254%22%20y%3D%22166%22%20width%3D%221172%22%20height%3D%2268%22%20rx%3D%2214%22%20fill%3D%22rgba(255%2C255%2C255%2C0.03)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2278%22%20y%3D%22200%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%23cbd5e1%22%3E1%EC%B0%A8%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22286%22%20y%3D%22200%22%20font-size%3D%2218%22%20font-weight%3D%22800%22%20fill%3D%22%2386efac%22%3E%EC%9B%90%EB%B3%B8%20%EC%9A%94%EC%B2%AD%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22444%22%20y%3D%22200%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%EC%B5%9C%EA%B7%BC%208%EA%B0%9C%EC%9B%94%20%EB%8F%99%EC%95%88%20%EB%8F%99%EC%9D%BC%20%EC%97%85%EC%9E%A5%EC%97%90%EC%84%9C%20%EB%91%90%20%EC%B0%A8%EB%A1%80%20%EC%8B%9C%EC%A0%95%20%EA%B6%8C%EA%B3%A0%EC%99%80%20%ED%95%9C%20%EC%B0%A8%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221160%22%20y%3D%22200%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%2394a3b8%22%20text-anchor%3D%22end%22%3E%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2254%22%20y%3D%22254%22%20width%3D%221172%22%20height%3D%2268%22%20rx%3D%2214%22%20fill%3D%22rgba(245%2C158%2C11%2C0.12)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2278%22%20y%3D%22288%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%23cbd5e1%22%3E2%EC%B0%A8%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22286%22%20y%3D%22288%22%20font-size%3D%2218%22%20font-weight%3D%22800%22%20fill%3D%22%23fbbf24%22%3E%EB%A7%A5%EB%9D%BD%20%EB%B3%B5%EC%9B%90%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22444%22%20y%3D%22288%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%EB%AA%A8%EB%93%A0%20%EC%9C%84%EB%B0%98%EC%9D%B4%20%EC%B9%98%EB%AA%85%EC%A0%81%20%EC%88%98%EC%A4%80%EC%9D%80%20%EC%95%84%EB%8B%88%EC%97%88%EC%A7%80%EB%A7%8C%2C%20%EB%83%89%EC%9E%A5%20%EC%98%A8%EB%8F%84%EC%99%80%20%EA%B5%90%EC%B0%A8%EC%98%A4%EC%97%BC%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221160%22%20y%3D%22288%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%2394a3b8%22%20text-anchor%3D%22end%22%3E%EA%B2%80%ED%86%A0%20%ED%95%84%EC%9A%94%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2254%22%20y%3D%22342%22%20width%3D%221172%22%20height%3D%2268%22%20rx%3D%2214%22%20fill%3D%22rgba(255%2C255%2C255%2C0.03)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2278%22%20y%3D%22376%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%23cbd5e1%22%3E3%EC%B0%A8%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22286%22%20y%3D%22376%22%20font-size%3D%2218%22%20font-weight%3D%22800%22%20fill%3D%22%2386efac%22%3E%ED%8E%B8%EC%A7%91%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22444%22%20y%3D%22376%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%EC%A0%95%ED%83%9C%EC%84%B1%EC%9D%B4%20%EB%A7%90%ED%95%9C%20%26%2339%3B%EC%9D%BC%ED%9A%8C%EC%84%B1%20%EB%AF%BC%EC%9B%90%26%2339%3B%EA%B3%BC%20%EB%8B%AC%EB%A6%AC%20%ED%96%89%EC%A0%95%20%EA%B8%B0%EB%A1%9D%EC%83%81%20%EB%88%84%EC%A0%81%20%EA%B4%80%EB%A6%AC%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221160%22%20y%3D%22376%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%2394a3b8%22%20text-anchor%3D%22end%22%3E%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%3C%2Fsvg%3E%0A%20%20",
+          "posterUrl": "data:image/svg+xml;charset=UTF-8,%0A%20%20%20%20%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%221280%22%20height%3D%22900%22%20viewBox%3D%220%200%201280%20900%22%3E%0A%20%20%20%20%20%20%3Crect%20width%3D%221280%22%20height%3D%22900%22%20rx%3D%2224%22%20fill%3D%22%230f172a%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2254%22%20y%3D%2274%22%20font-size%3D%2216%22%20font-weight%3D%22800%22%20fill%3D%22%2322c55e%22%3ELOG%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2254%22%20y%3D%22120%22%20font-size%3D%2234%22%20font-weight%3D%22800%22%20fill%3D%22%23f8fafc%22%3E%EA%B5%AC%EC%B2%AD%20%EC%9C%84%EC%83%9D%20%EC%8B%9C%EC%A0%95%20%EA%B8%B0%EB%A1%9D%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2254%22%20y%3D%22158%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%2394a3b8%22%3E%ED%96%89%EC%A0%95%EA%B8%B0%EA%B4%80%EC%9D%B4%20%EB%B3%B4%EB%82%B8%20%EC%9C%84%EC%83%9D%20%EC%8B%9C%EC%A0%95%20%EB%A9%94%EC%9D%BC%EA%B3%BC%20%EC%9E%AC%EC%A0%90%EA%B2%80%20%EA%B8%B0%EB%A1%9D%EC%9D%B4%EB%8B%A4.%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2254%22%20y%3D%22166%22%20width%3D%221172%22%20height%3D%2268%22%20rx%3D%2214%22%20fill%3D%22rgba(255%2C255%2C255%2C0.03)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2278%22%20y%3D%22200%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%23cbd5e1%22%3E1%EC%B0%A8%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22286%22%20y%3D%22200%22%20font-size%3D%2218%22%20font-weight%3D%22800%22%20fill%3D%22%2386efac%22%3E%EC%9B%90%EB%B3%B8%20%EC%9A%94%EC%B2%AD%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22444%22%20y%3D%22200%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%EC%B5%9C%EA%B7%BC%208%EA%B0%9C%EC%9B%94%20%EB%8F%99%EC%95%88%20%EB%8F%99%EC%9D%BC%20%EC%97%85%EC%9E%A5%EC%97%90%EC%84%9C%20%EB%91%90%20%EC%B0%A8%EB%A1%80%20%EC%8B%9C%EC%A0%95%20%EA%B6%8C%EA%B3%A0%EC%99%80%20%ED%95%9C%20%EC%B0%A8%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221160%22%20y%3D%22200%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%2394a3b8%22%20text-anchor%3D%22end%22%3E%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2254%22%20y%3D%22254%22%20width%3D%221172%22%20height%3D%2268%22%20rx%3D%2214%22%20fill%3D%22rgba(245%2C158%2C11%2C0.12)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2278%22%20y%3D%22288%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%23cbd5e1%22%3E2%EC%B0%A8%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22286%22%20y%3D%22288%22%20font-size%3D%2218%22%20font-weight%3D%22800%22%20fill%3D%22%23fbbf24%22%3E%EB%A7%A5%EB%9D%BD%20%EB%B3%B5%EC%9B%90%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22444%22%20y%3D%22288%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%EB%AA%A8%EB%93%A0%20%EC%9C%84%EB%B0%98%EC%9D%B4%20%EC%B9%98%EB%AA%85%EC%A0%81%20%EC%88%98%EC%A4%80%EC%9D%80%20%EC%95%84%EB%8B%88%EC%97%88%EC%A7%80%EB%A7%8C%2C%20%EB%83%89%EC%9E%A5%20%EC%98%A8%EB%8F%84%EC%99%80%20%EA%B5%90%EC%B0%A8%EC%98%A4%EC%97%BC%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221160%22%20y%3D%22288%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%2394a3b8%22%20text-anchor%3D%22end%22%3E%EA%B2%80%ED%86%A0%20%ED%95%84%EC%9A%94%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2254%22%20y%3D%22342%22%20width%3D%221172%22%20height%3D%2268%22%20rx%3D%2214%22%20fill%3D%22rgba(255%2C255%2C255%2C0.03)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2278%22%20y%3D%22376%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%23cbd5e1%22%3E3%EC%B0%A8%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22286%22%20y%3D%22376%22%20font-size%3D%2218%22%20font-weight%3D%22800%22%20fill%3D%22%2386efac%22%3E%ED%8E%B8%EC%A7%91%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22444%22%20y%3D%22376%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%EC%A0%95%ED%83%9C%EC%84%B1%EC%9D%B4%20%EB%A7%90%ED%95%9C%20%26%2339%3B%EC%9D%BC%ED%9A%8C%EC%84%B1%20%EB%AF%BC%EC%9B%90%26%2339%3B%EA%B3%BC%20%EB%8B%AC%EB%A6%AC%20%ED%96%89%EC%A0%95%20%EA%B8%B0%EB%A1%9D%EC%83%81%20%EB%88%84%EC%A0%81%20%EA%B4%80%EB%A6%AC%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221160%22%20y%3D%22376%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%2394a3b8%22%20text-anchor%3D%22end%22%3E%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%3C%2Fsvg%3E%0A%20%20",
+          "width": 1280,
+          "height": 900,
+          "alt": "구청 위생 시정 기록 log evidence",
+          "caption": "구청 위생 시정 기록 log preview"
+        }
+      },
+      "partyContext": {
+        "a": {
+          "questionAngle": "A측 관점에서 이 자료가 가리키는 책임과 경위를 설명해 주십시오.",
+          "implication": "영상 공개 전후의 위생 시정 메일과 재점검 보고서다. 즉시 영업정지는 아니지만, 반복 지적이 누적된 상태였음이 드러난다."
+        },
+        "b": {
+          "questionAngle": "B측 관점에서 이 자료가 가리키는 책임과 경위를 설명해 주십시오.",
+          "implication": "영상 공개 전후의 위생 시정 메일과 재점검 보고서다. 즉시 영업정지는 아니지만, 반복 지적이 누적된 상태였음이 드러난다."
+        }
+      }
+    },
+    {
+      "id": "e-4",
+      "name": "사전 협조 DM과 사후 회복 패키지 견적",
+      "description": "촬영 전 강민호가 보낸 '메뉴 협조' DM과 영상 공개 뒤 MCN이 전달한 회복 패키지 견적서가 묶여 있다. 문구 자체는 직접 협박이 아니지만, 영향력을 이용한 거래 제안이 앞뒤로 이어진다.",
+      "surfaceName": "협조 요청 DM과 견적서",
+      "surfaceDescription": "촬영 전후 오간 DM과 외부 견적 자료다.",
+      "type": "chat",
+      "reliability": "soft",
+      "completeness": "original",
+      "provenance": "third_party",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-3"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-1"
+      ],
+      "investigationResults": {
+        "request_original": "사전 DM에는 '재방문 검증에 맞는 메뉴 협조가 가능하면 좋겠다'는 표현이 있고, 사후 견적서에는 평판 회복 패키지와 재촬영 옵션이 함께 적혀 있다.",
+        "restore_context": "강민호는 직접 돈을 요구하지 않았지만, 공개 직후 MCN 제안을 연결하며 자신의 영향력이 회복 도구가 될 수 있다는 점을 분명히 했다.",
+        "check_edits": "서혜림 진술과 내부 견적 양식이 맞물리며, 유사한 회복 패키지 제안이 다른 업장에도 반복됐던 패턴이 확인된다."
+      },
+      "subjectParty": "a",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "촬영 전 메뉴 협조와 재방문 검증을 함께 언급한 이유가 무엇입니까?",
+            "attackVector": "motive"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "영상 공개 직후 회복 패키지 견적을 연결한 것은 공익 제보와 어떤 관계입니까?",
+            "attackVector": "beneficiary"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "check_edits",
+          "question": {
+            "text": "직접 협박은 아니더라도 영향력을 이용한 거래 제안이라는 지적을 부정하십니까?",
+            "attackVector": "responsibility"
+          }
+        }
+      ],
+      "meta": {
+        "name": "협조 요청 DM과 견적서",
+        "type": "chat",
+        "viewerType": "chat",
+        "trustLevel": "mid",
+        "trustLabel": "보통",
+        "source": "third",
+        "sourceLabel": "제3자",
+        "legality": "ok",
+        "legalLabel": "적법",
+        "stage": 2,
+        "stageLabel": "연결 제안",
+        "sourceNote": "촬영 전 DM과 공개 후 MCN 견적서 연결 캡처",
+        "redactions": [
+          "실무자 이메일",
+          "브랜드명 일부"
+        ]
+      },
+      "viewerData": {
+        "chat": {
+          "header": "메뉴 협조 DM + 회복 패키지 전달 이력",
+          "messages": [
+            {
+              "side": "left",
+              "sender": "강민호",
+              "text": "사장님, 촬영 전에 시그니처 메뉴와 운영 흐름을 협조해 주시면 좋겠습니다."
+            },
+            {
+              "side": "right",
+              "sender": "정태성",
+              "text": "협조는 가능하지만 무상 제공 전제는 곤란합니다."
+            },
+            {
+              "side": "left",
+              "sender": "강민호",
+              "text": "공식 협찬은 아니고, 촬영 동선이 매끄러우면 결과가 좋아질 수 있습니다."
+            },
+            {
+              "type": "read",
+              "text": "영상 공개 후 1일 경과"
+            },
+            {
+              "side": "left",
+              "sender": "MCN 실무",
+              "text": "브랜드 회복 패키지 제안서를 전달드립니다. 검색어 관리와 후기 복구를 포함합니다."
+            },
+            {
+              "side": "right",
+              "sender": "정태성",
+              "text": "촬영 전 협조 요청과 지금 제안이 따로라고 보기 어렵습니다."
+            }
+          ]
+        },
+        "meta": {
+          "name": "협조 요청 DM과 견적서",
+          "type": "chat",
+          "viewerType": "chat",
+          "trustLevel": "mid",
+          "trustLabel": "보통",
+          "source": "third",
+          "sourceLabel": "제3자",
+          "legality": "ok",
+          "legalLabel": "적법",
+          "stage": 2,
+          "stageLabel": "연결 제안",
+          "sourceNote": "촬영 전 DM과 공개 후 MCN 견적서 연결 캡처",
+          "redactions": [
+            "실무자 이메일",
+            "브랜드명 일부"
+          ]
+        },
+        "media": {
+          "imageUrl": "data:image/svg+xml;charset=UTF-8,%0A%20%20%20%20%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%221080%22%20height%3D%221600%22%20viewBox%3D%220%200%201080%201600%22%3E%0A%20%20%20%20%20%20%3Crect%20width%3D%221080%22%20height%3D%221600%22%20rx%3D%2240%22%20fill%3D%22%230b1220%22%20%2F%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%2224%22%20y%3D%2224%22%20width%3D%221032%22%20height%3D%221552%22%20rx%3D%2234%22%20fill%3D%22%23111827%22%20stroke%3D%22rgba(255%2C255%2C255%2C0.08)%22%20%2F%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%2254%22%20y%3D%2254%22%20width%3D%22972%22%20height%3D%2278%22%20rx%3D%2222%22%20fill%3D%22rgba(255%2C255%2C255%2C0.06)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2282%22%20y%3D%22102%22%20font-size%3D%2218%22%20font-weight%3D%22800%22%20fill%3D%22%2334d399%22%3ECHAT%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2282%22%20y%3D%22132%22%20font-size%3D%2228%22%20font-weight%3D%22800%22%20fill%3D%22%23f8fafc%22%3E%ED%98%91%EC%A1%B0%20%EC%9A%94%EC%B2%AD%20DM%EA%B3%BC%20%EA%B2%AC%EC%A0%81%EC%84%9C%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%3Ctext%20x%3D%2254%22%20y%3D%22180%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%2394a3b8%22%3E%EA%B8%B0%EB%A1%9D%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22684%22%20y%3D%22180%22%20font-size%3D%2215%22%20font-weight%3D%22600%22%20fill%3D%22%2364748b%22%20text-anchor%3D%22end%22%3ET01%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%2254%22%20y%3D%22198%22%20width%3D%22640%22%20height%3D%22158%22%20rx%3D%2228%22%20fill%3D%22%231f2937%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2278%22%20y%3D%22236%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%EC%82%AC%EC%A0%84%20DM%EC%97%90%EB%8A%94%20%26%2339%3B%EC%9E%AC%EB%B0%A9%EB%AC%B8%20%EA%B2%80%EC%A6%9D%EC%97%90%20%EB%A7%9E%EB%8A%94%20%EB%A9%94%EB%89%B4%20%ED%98%91%EC%A1%B0%EA%B0%80%3C%2Ftext%3E%3Ctext%20x%3D%2278%22%20y%3D%22262%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%EA%B0%80%EB%8A%A5%ED%95%98%EB%A9%B4%20%EC%A2%8B%EA%B2%A0%EB%8B%A4%26%2339%3B%EB%8A%94%20%ED%91%9C%ED%98%84%EC%9D%B4%20%EC%9E%88%EA%B3%A0%2C%20%EC%82%AC%ED%9B%84%3C%2Ftext%3E%3Ctext%20x%3D%2278%22%20y%3D%22288%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%EA%B2%AC%EC%A0%81%EC%84%9C%EC%97%90%EB%8A%94%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%0A%20%20%20%20%20%20%3Ctext%20x%3D%22386%22%20y%3D%22414%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%2394a3b8%22%3E%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221016%22%20y%3D%22414%22%20font-size%3D%2215%22%20font-weight%3D%22600%22%20fill%3D%22%2364748b%22%20text-anchor%3D%22end%22%3ET02%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%22386%22%20y%3D%22432%22%20width%3D%22640%22%20height%3D%22158%22%20rx%3D%2228%22%20fill%3D%22%2334d399%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22410%22%20y%3D%22470%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23052e16%22%3E%EA%B0%95%EB%AF%BC%ED%98%B8%EB%8A%94%20%EC%A7%81%EC%A0%91%20%EB%8F%88%EC%9D%84%20%EC%9A%94%EA%B5%AC%ED%95%98%EC%A7%80%20%EC%95%8A%EC%95%98%EC%A7%80%EB%A7%8C%2C%20%EA%B3%B5%EA%B0%9C%3C%2Ftext%3E%3Ctext%20x%3D%22410%22%20y%3D%22496%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23052e16%22%3E%EC%A7%81%ED%9B%84%20MCN%20%EC%A0%9C%EC%95%88%EC%9D%84%20%EC%97%B0%EA%B2%B0%ED%95%98%EB%A9%B0%20%EC%9E%90%EC%8B%A0%EC%9D%98%20%EC%98%81%ED%96%A5%EB%A0%A5%EC%9D%B4%3C%2Ftext%3E%3Ctext%20x%3D%22410%22%20y%3D%22522%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23052e16%22%3E%ED%9A%8C%EB%B3%B5%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%0A%20%20%20%20%20%20%3Ctext%20x%3D%2254%22%20y%3D%22648%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%2394a3b8%22%3E%EA%B8%B0%EB%A1%9D%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22684%22%20y%3D%22648%22%20font-size%3D%2215%22%20font-weight%3D%22600%22%20fill%3D%22%2364748b%22%20text-anchor%3D%22end%22%3ET03%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%2254%22%20y%3D%22666%22%20width%3D%22640%22%20height%3D%22158%22%20rx%3D%2228%22%20fill%3D%22%231f2937%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2278%22%20y%3D%22704%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%EC%84%9C%ED%98%9C%EB%A6%BC%20%EC%A7%84%EC%88%A0%EA%B3%BC%20%EB%82%B4%EB%B6%80%20%EA%B2%AC%EC%A0%81%20%EC%96%91%EC%8B%9D%EC%9D%B4%20%EB%A7%9E%EB%AC%BC%EB%A6%AC%EB%A9%B0%2C%3C%2Ftext%3E%3Ctext%20x%3D%2278%22%20y%3D%22730%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%EC%9C%A0%EC%82%AC%ED%95%9C%20%ED%9A%8C%EB%B3%B5%20%ED%8C%A8%ED%82%A4%EC%A7%80%20%EC%A0%9C%EC%95%88%EC%9D%B4%20%EB%8B%A4%EB%A5%B8%20%EC%97%85%EC%9E%A5%EC%97%90%EB%8F%84%3C%2Ftext%3E%3Ctext%20x%3D%2278%22%20y%3D%22756%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%EB%B0%98%EB%B3%B5%EB%90%90%EB%8D%98%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%0A%20%20%20%20%3C%2Fsvg%3E%0A%20%20",
+          "thumbnailUrl": "data:image/svg+xml;charset=UTF-8,%0A%20%20%20%20%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%221080%22%20height%3D%221600%22%20viewBox%3D%220%200%201080%201600%22%3E%0A%20%20%20%20%20%20%3Crect%20width%3D%221080%22%20height%3D%221600%22%20rx%3D%2240%22%20fill%3D%22%230b1220%22%20%2F%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%2224%22%20y%3D%2224%22%20width%3D%221032%22%20height%3D%221552%22%20rx%3D%2234%22%20fill%3D%22%23111827%22%20stroke%3D%22rgba(255%2C255%2C255%2C0.08)%22%20%2F%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%2254%22%20y%3D%2254%22%20width%3D%22972%22%20height%3D%2278%22%20rx%3D%2222%22%20fill%3D%22rgba(255%2C255%2C255%2C0.06)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2282%22%20y%3D%22102%22%20font-size%3D%2218%22%20font-weight%3D%22800%22%20fill%3D%22%2334d399%22%3ECHAT%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2282%22%20y%3D%22132%22%20font-size%3D%2228%22%20font-weight%3D%22800%22%20fill%3D%22%23f8fafc%22%3E%ED%98%91%EC%A1%B0%20%EC%9A%94%EC%B2%AD%20DM%EA%B3%BC%20%EA%B2%AC%EC%A0%81%EC%84%9C%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%3Ctext%20x%3D%2254%22%20y%3D%22180%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%2394a3b8%22%3E%EA%B8%B0%EB%A1%9D%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22684%22%20y%3D%22180%22%20font-size%3D%2215%22%20font-weight%3D%22600%22%20fill%3D%22%2364748b%22%20text-anchor%3D%22end%22%3ET01%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%2254%22%20y%3D%22198%22%20width%3D%22640%22%20height%3D%22158%22%20rx%3D%2228%22%20fill%3D%22%231f2937%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2278%22%20y%3D%22236%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%EC%82%AC%EC%A0%84%20DM%EC%97%90%EB%8A%94%20%26%2339%3B%EC%9E%AC%EB%B0%A9%EB%AC%B8%20%EA%B2%80%EC%A6%9D%EC%97%90%20%EB%A7%9E%EB%8A%94%20%EB%A9%94%EB%89%B4%20%ED%98%91%EC%A1%B0%EA%B0%80%3C%2Ftext%3E%3Ctext%20x%3D%2278%22%20y%3D%22262%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%EA%B0%80%EB%8A%A5%ED%95%98%EB%A9%B4%20%EC%A2%8B%EA%B2%A0%EB%8B%A4%26%2339%3B%EB%8A%94%20%ED%91%9C%ED%98%84%EC%9D%B4%20%EC%9E%88%EA%B3%A0%2C%20%EC%82%AC%ED%9B%84%3C%2Ftext%3E%3Ctext%20x%3D%2278%22%20y%3D%22288%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%EA%B2%AC%EC%A0%81%EC%84%9C%EC%97%90%EB%8A%94%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%0A%20%20%20%20%20%20%3Ctext%20x%3D%22386%22%20y%3D%22414%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%2394a3b8%22%3E%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221016%22%20y%3D%22414%22%20font-size%3D%2215%22%20font-weight%3D%22600%22%20fill%3D%22%2364748b%22%20text-anchor%3D%22end%22%3ET02%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%22386%22%20y%3D%22432%22%20width%3D%22640%22%20height%3D%22158%22%20rx%3D%2228%22%20fill%3D%22%2334d399%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22410%22%20y%3D%22470%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23052e16%22%3E%EA%B0%95%EB%AF%BC%ED%98%B8%EB%8A%94%20%EC%A7%81%EC%A0%91%20%EB%8F%88%EC%9D%84%20%EC%9A%94%EA%B5%AC%ED%95%98%EC%A7%80%20%EC%95%8A%EC%95%98%EC%A7%80%EB%A7%8C%2C%20%EA%B3%B5%EA%B0%9C%3C%2Ftext%3E%3Ctext%20x%3D%22410%22%20y%3D%22496%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23052e16%22%3E%EC%A7%81%ED%9B%84%20MCN%20%EC%A0%9C%EC%95%88%EC%9D%84%20%EC%97%B0%EA%B2%B0%ED%95%98%EB%A9%B0%20%EC%9E%90%EC%8B%A0%EC%9D%98%20%EC%98%81%ED%96%A5%EB%A0%A5%EC%9D%B4%3C%2Ftext%3E%3Ctext%20x%3D%22410%22%20y%3D%22522%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23052e16%22%3E%ED%9A%8C%EB%B3%B5%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%0A%20%20%20%20%20%20%3Ctext%20x%3D%2254%22%20y%3D%22648%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%2394a3b8%22%3E%EA%B8%B0%EB%A1%9D%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22684%22%20y%3D%22648%22%20font-size%3D%2215%22%20font-weight%3D%22600%22%20fill%3D%22%2364748b%22%20text-anchor%3D%22end%22%3ET03%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%2254%22%20y%3D%22666%22%20width%3D%22640%22%20height%3D%22158%22%20rx%3D%2228%22%20fill%3D%22%231f2937%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2278%22%20y%3D%22704%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%EC%84%9C%ED%98%9C%EB%A6%BC%20%EC%A7%84%EC%88%A0%EA%B3%BC%20%EB%82%B4%EB%B6%80%20%EA%B2%AC%EC%A0%81%20%EC%96%91%EC%8B%9D%EC%9D%B4%20%EB%A7%9E%EB%AC%BC%EB%A6%AC%EB%A9%B0%2C%3C%2Ftext%3E%3Ctext%20x%3D%2278%22%20y%3D%22730%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%EC%9C%A0%EC%82%AC%ED%95%9C%20%ED%9A%8C%EB%B3%B5%20%ED%8C%A8%ED%82%A4%EC%A7%80%20%EC%A0%9C%EC%95%88%EC%9D%B4%20%EB%8B%A4%EB%A5%B8%20%EC%97%85%EC%9E%A5%EC%97%90%EB%8F%84%3C%2Ftext%3E%3Ctext%20x%3D%2278%22%20y%3D%22756%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%EB%B0%98%EB%B3%B5%EB%90%90%EB%8D%98%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%0A%20%20%20%20%3C%2Fsvg%3E%0A%20%20",
+          "posterUrl": "data:image/svg+xml;charset=UTF-8,%0A%20%20%20%20%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%221080%22%20height%3D%221600%22%20viewBox%3D%220%200%201080%201600%22%3E%0A%20%20%20%20%20%20%3Crect%20width%3D%221080%22%20height%3D%221600%22%20rx%3D%2240%22%20fill%3D%22%230b1220%22%20%2F%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%2224%22%20y%3D%2224%22%20width%3D%221032%22%20height%3D%221552%22%20rx%3D%2234%22%20fill%3D%22%23111827%22%20stroke%3D%22rgba(255%2C255%2C255%2C0.08)%22%20%2F%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%2254%22%20y%3D%2254%22%20width%3D%22972%22%20height%3D%2278%22%20rx%3D%2222%22%20fill%3D%22rgba(255%2C255%2C255%2C0.06)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2282%22%20y%3D%22102%22%20font-size%3D%2218%22%20font-weight%3D%22800%22%20fill%3D%22%2334d399%22%3ECHAT%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2282%22%20y%3D%22132%22%20font-size%3D%2228%22%20font-weight%3D%22800%22%20fill%3D%22%23f8fafc%22%3E%ED%98%91%EC%A1%B0%20%EC%9A%94%EC%B2%AD%20DM%EA%B3%BC%20%EA%B2%AC%EC%A0%81%EC%84%9C%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%3Ctext%20x%3D%2254%22%20y%3D%22180%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%2394a3b8%22%3E%EA%B8%B0%EB%A1%9D%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22684%22%20y%3D%22180%22%20font-size%3D%2215%22%20font-weight%3D%22600%22%20fill%3D%22%2364748b%22%20text-anchor%3D%22end%22%3ET01%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%2254%22%20y%3D%22198%22%20width%3D%22640%22%20height%3D%22158%22%20rx%3D%2228%22%20fill%3D%22%231f2937%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2278%22%20y%3D%22236%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%EC%82%AC%EC%A0%84%20DM%EC%97%90%EB%8A%94%20%26%2339%3B%EC%9E%AC%EB%B0%A9%EB%AC%B8%20%EA%B2%80%EC%A6%9D%EC%97%90%20%EB%A7%9E%EB%8A%94%20%EB%A9%94%EB%89%B4%20%ED%98%91%EC%A1%B0%EA%B0%80%3C%2Ftext%3E%3Ctext%20x%3D%2278%22%20y%3D%22262%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%EA%B0%80%EB%8A%A5%ED%95%98%EB%A9%B4%20%EC%A2%8B%EA%B2%A0%EB%8B%A4%26%2339%3B%EB%8A%94%20%ED%91%9C%ED%98%84%EC%9D%B4%20%EC%9E%88%EA%B3%A0%2C%20%EC%82%AC%ED%9B%84%3C%2Ftext%3E%3Ctext%20x%3D%2278%22%20y%3D%22288%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%EA%B2%AC%EC%A0%81%EC%84%9C%EC%97%90%EB%8A%94%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%0A%20%20%20%20%20%20%3Ctext%20x%3D%22386%22%20y%3D%22414%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%2394a3b8%22%3E%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221016%22%20y%3D%22414%22%20font-size%3D%2215%22%20font-weight%3D%22600%22%20fill%3D%22%2364748b%22%20text-anchor%3D%22end%22%3ET02%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%22386%22%20y%3D%22432%22%20width%3D%22640%22%20height%3D%22158%22%20rx%3D%2228%22%20fill%3D%22%2334d399%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22410%22%20y%3D%22470%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23052e16%22%3E%EA%B0%95%EB%AF%BC%ED%98%B8%EB%8A%94%20%EC%A7%81%EC%A0%91%20%EB%8F%88%EC%9D%84%20%EC%9A%94%EA%B5%AC%ED%95%98%EC%A7%80%20%EC%95%8A%EC%95%98%EC%A7%80%EB%A7%8C%2C%20%EA%B3%B5%EA%B0%9C%3C%2Ftext%3E%3Ctext%20x%3D%22410%22%20y%3D%22496%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23052e16%22%3E%EC%A7%81%ED%9B%84%20MCN%20%EC%A0%9C%EC%95%88%EC%9D%84%20%EC%97%B0%EA%B2%B0%ED%95%98%EB%A9%B0%20%EC%9E%90%EC%8B%A0%EC%9D%98%20%EC%98%81%ED%96%A5%EB%A0%A5%EC%9D%B4%3C%2Ftext%3E%3Ctext%20x%3D%22410%22%20y%3D%22522%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23052e16%22%3E%ED%9A%8C%EB%B3%B5%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%0A%20%20%20%20%20%20%3Ctext%20x%3D%2254%22%20y%3D%22648%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%2394a3b8%22%3E%EA%B8%B0%EB%A1%9D%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22684%22%20y%3D%22648%22%20font-size%3D%2215%22%20font-weight%3D%22600%22%20fill%3D%22%2364748b%22%20text-anchor%3D%22end%22%3ET03%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%2254%22%20y%3D%22666%22%20width%3D%22640%22%20height%3D%22158%22%20rx%3D%2228%22%20fill%3D%22%231f2937%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2278%22%20y%3D%22704%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%EC%84%9C%ED%98%9C%EB%A6%BC%20%EC%A7%84%EC%88%A0%EA%B3%BC%20%EB%82%B4%EB%B6%80%20%EA%B2%AC%EC%A0%81%20%EC%96%91%EC%8B%9D%EC%9D%B4%20%EB%A7%9E%EB%AC%BC%EB%A6%AC%EB%A9%B0%2C%3C%2Ftext%3E%3Ctext%20x%3D%2278%22%20y%3D%22730%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%EC%9C%A0%EC%82%AC%ED%95%9C%20%ED%9A%8C%EB%B3%B5%20%ED%8C%A8%ED%82%A4%EC%A7%80%20%EC%A0%9C%EC%95%88%EC%9D%B4%20%EB%8B%A4%EB%A5%B8%20%EC%97%85%EC%9E%A5%EC%97%90%EB%8F%84%3C%2Ftext%3E%3Ctext%20x%3D%2278%22%20y%3D%22756%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%EB%B0%98%EB%B3%B5%EB%90%90%EB%8D%98%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%0A%20%20%20%20%3C%2Fsvg%3E%0A%20%20",
+          "width": 1080,
+          "height": 1600,
+          "alt": "협조 요청 DM과 견적서 chat evidence",
+          "caption": "협조 요청 DM과 견적서 conversation preview"
+        }
+      },
+      "requiredLieState": "S2",
+      "partyContext": {
+        "a": {
+          "questionAngle": "A측 관점에서 이 자료가 가리키는 책임과 경위를 설명해 주십시오.",
+          "implication": "촬영 전 강민호가 보낸 '메뉴 협조' DM과 영상 공개 뒤 MCN이 전달한 회복 패키지 견적서가 묶여 있다. 문구 자체는 직접…"
+        },
+        "b": {
+          "questionAngle": "B측 관점에서 이 자료가 가리키는 책임과 경위를 설명해 주십시오.",
+          "implication": "촬영 전 강민호가 보낸 '메뉴 협조' DM과 영상 공개 뒤 MCN이 전달한 회복 패키지 견적서가 묶여 있다. 문구 자체는 직접…"
+        }
+      }
+    },
+    {
+      "id": "e-5",
+      "name": "점주 단체방 공유 캡처와 삭제 복구본",
+      "description": "정태성이 포함된 점주 단체방 대화와 삭제 뒤 복구된 게시물 캡처다. 리뷰어 차량 번호, 촬영 동선, 신고 방법 공유가 포함돼 있다.",
+      "surfaceName": "점주 단체방 공유 캡처",
+      "surfaceDescription": "점주 단체방과 커뮤니티에 올라온 공유 게시물 복구본이다.",
+      "type": "chat",
+      "reliability": "hard",
+      "completeness": "partial",
+      "provenance": "third_party",
+      "legitimacy": "privacy_concern",
+      "proves": [
+        "d-4"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "정태성 계정이 '이 사람 동선 아는 분?'이라는 질문과 함께 차량 번호가 보이는 캡처를 올린 흔적이 복구됐다.",
+        "restore_context": "이어진 대화에는 후기 계정 신고, 악플 유도, CCTV 화면 일부 공유 제안까지 포함돼 있어 단순 반박용 자료 공유를 넘는다.",
+        "check_edits": "정태성은 게시물이 금방 삭제됐다고 주장하지만, 삭제 전 이미 여러 커뮤니티로 퍼진 시점이 로그상 확인된다."
+      },
+      "subjectParty": "b",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "점주 단체방에서 리뷰어의 동선과 차량 정보를 공유한 사실을 부인하십니까?",
+            "attackVector": "privacy"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "후기 계정 신고와 악플 유도까지 이어진 대화를 단순 반박이라고 보십니까?",
+            "attackVector": "harm"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "check_edits",
+          "question": {
+            "text": "삭제가 빨랐다는 주장은 퍼진 뒤였다는 로그와 모순됩니다. 어느 쪽이 맞습니까?",
+            "attackVector": "timeline"
+          }
+        }
+      ],
+      "meta": {
+        "name": "점주 단체방 공유 캡처",
+        "type": "chat",
+        "viewerType": "chat",
+        "trustLevel": "mid",
+        "trustLabel": "보통",
+        "source": "third",
+        "sourceLabel": "제3자",
+        "legality": "sus",
+        "legalLabel": "주의",
+        "stage": 2,
+        "stageLabel": "삭제 복구",
+        "sourceNote": "점주 단체방 캡처와 삭제 뒤 복구된 로그",
+        "redactions": [
+          "개인정보 일부 마스킹",
+          "앞뒤 맥락 일부 누락",
+          "차량 번호 일부",
+          "점주 닉네임 일부"
+        ]
+      },
+      "viewerData": {
+        "chat": {
+          "header": "점주 단체방 공유 캡처 복구본",
+          "messages": [
+            {
+              "side": "left",
+              "sender": "정태성",
+              "text": "저 사람 차량 번호는 이겁니다. 오늘 동선도 대충 보입니다."
+            },
+            {
+              "side": "left",
+              "sender": "점주A",
+              "text": "신고 넣으려면 플랫폼이랑 세무 쪽도 같이 봐야겠네요."
+            },
+            {
+              "type": "deleted",
+              "text": "삭제된 게시물 2건 복구됨"
+            },
+            {
+              "side": "left",
+              "sender": "정태성",
+              "text": "영상 때문에 예약이 무너졌습니다. 그냥 두면 안 됩니다."
+            },
+            {
+              "side": "right",
+              "sender": "점주B",
+              "text": "반박은 하더라도 번호랑 동선 공유는 선 넘는 것 아닙니까."
+            }
+          ]
+        },
+        "meta": {
+          "name": "점주 단체방 공유 캡처",
+          "type": "chat",
+          "viewerType": "chat",
+          "trustLevel": "mid",
+          "trustLabel": "보통",
+          "source": "third",
+          "sourceLabel": "제3자",
+          "legality": "sus",
+          "legalLabel": "주의",
+          "stage": 2,
+          "stageLabel": "삭제 복구",
+          "sourceNote": "점주 단체방 캡처와 삭제 뒤 복구된 로그",
+          "redactions": [
+            "개인정보 일부 마스킹",
+            "앞뒤 맥락 일부 누락",
+            "차량 번호 일부",
+            "점주 닉네임 일부"
+          ]
+        },
+        "media": {
+          "imageUrl": "data:image/svg+xml;charset=UTF-8,%0A%20%20%20%20%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%221080%22%20height%3D%221600%22%20viewBox%3D%220%200%201080%201600%22%3E%0A%20%20%20%20%20%20%3Crect%20width%3D%221080%22%20height%3D%221600%22%20rx%3D%2240%22%20fill%3D%22%230b1220%22%20%2F%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%2224%22%20y%3D%2224%22%20width%3D%221032%22%20height%3D%221552%22%20rx%3D%2234%22%20fill%3D%22%23111827%22%20stroke%3D%22rgba(255%2C255%2C255%2C0.08)%22%20%2F%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%2254%22%20y%3D%2254%22%20width%3D%22972%22%20height%3D%2278%22%20rx%3D%2222%22%20fill%3D%22rgba(255%2C255%2C255%2C0.06)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2282%22%20y%3D%22102%22%20font-size%3D%2218%22%20font-weight%3D%22800%22%20fill%3D%22%2334d399%22%3ECHAT%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2282%22%20y%3D%22132%22%20font-size%3D%2228%22%20font-weight%3D%22800%22%20fill%3D%22%23f8fafc%22%3E%EC%A0%90%EC%A3%BC%20%EB%8B%A8%EC%B2%B4%EB%B0%A9%20%EA%B3%B5%EC%9C%A0%20%EC%BA%A1%EC%B2%98%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%3Ctext%20x%3D%2254%22%20y%3D%22180%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%2394a3b8%22%3E%EA%B8%B0%EB%A1%9D%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22684%22%20y%3D%22180%22%20font-size%3D%2215%22%20font-weight%3D%22600%22%20fill%3D%22%2364748b%22%20text-anchor%3D%22end%22%3ET01%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%2254%22%20y%3D%22198%22%20width%3D%22640%22%20height%3D%22158%22%20rx%3D%2228%22%20fill%3D%22%231f2937%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2278%22%20y%3D%22236%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%EC%A0%95%ED%83%9C%EC%84%B1%20%EA%B3%84%EC%A0%95%EC%9D%B4%20%26%2339%3B%EC%9D%B4%20%EC%82%AC%EB%9E%8C%20%EB%8F%99%EC%84%A0%20%EC%95%84%EB%8A%94%20%EB%B6%84%3F%26%2339%3B%EC%9D%B4%EB%9D%BC%EB%8A%94%3C%2Ftext%3E%3Ctext%20x%3D%2278%22%20y%3D%22262%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%EC%A7%88%EB%AC%B8%EA%B3%BC%20%ED%95%A8%EA%BB%98%20%EC%B0%A8%EB%9F%89%20%EB%B2%88%ED%98%B8%EA%B0%80%20%EB%B3%B4%EC%9D%B4%EB%8A%94%20%EC%BA%A1%EC%B2%98%EB%A5%BC%20%EC%98%AC%EB%A6%B0%3C%2Ftext%3E%3Ctext%20x%3D%2278%22%20y%3D%22288%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%ED%9D%94%EC%A0%81%EC%9D%B4%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%0A%20%20%20%20%20%20%3Ctext%20x%3D%22386%22%20y%3D%22414%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%2394a3b8%22%3E%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221016%22%20y%3D%22414%22%20font-size%3D%2215%22%20font-weight%3D%22600%22%20fill%3D%22%2364748b%22%20text-anchor%3D%22end%22%3ET02%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%22386%22%20y%3D%22432%22%20width%3D%22640%22%20height%3D%22158%22%20rx%3D%2228%22%20fill%3D%22%2334d399%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22410%22%20y%3D%22470%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23052e16%22%3E%EC%9D%B4%EC%96%B4%EC%A7%84%20%EB%8C%80%ED%99%94%EC%97%90%EB%8A%94%20%ED%9B%84%EA%B8%B0%20%EA%B3%84%EC%A0%95%20%EC%8B%A0%EA%B3%A0%2C%20%EC%95%85%ED%94%8C%20%EC%9C%A0%EB%8F%84%2C%3C%2Ftext%3E%3Ctext%20x%3D%22410%22%20y%3D%22496%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23052e16%22%3ECCTV%20%ED%99%94%EB%A9%B4%20%EC%9D%BC%EB%B6%80%20%EA%B3%B5%EC%9C%A0%20%EC%A0%9C%EC%95%88%EA%B9%8C%EC%A7%80%20%ED%8F%AC%ED%95%A8%EB%8F%BC%20%EC%9E%88%EC%96%B4%3C%2Ftext%3E%3Ctext%20x%3D%22410%22%20y%3D%22522%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23052e16%22%3E%EB%8B%A8%EC%88%9C%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%0A%20%20%20%20%20%20%3Ctext%20x%3D%2254%22%20y%3D%22648%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%2394a3b8%22%3E%EA%B8%B0%EB%A1%9D%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22684%22%20y%3D%22648%22%20font-size%3D%2215%22%20font-weight%3D%22600%22%20fill%3D%22%2364748b%22%20text-anchor%3D%22end%22%3ET03%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%2254%22%20y%3D%22666%22%20width%3D%22640%22%20height%3D%22158%22%20rx%3D%2228%22%20fill%3D%22%231f2937%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2278%22%20y%3D%22704%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%EC%A0%95%ED%83%9C%EC%84%B1%EC%9D%80%20%EA%B2%8C%EC%8B%9C%EB%AC%BC%EC%9D%B4%20%EA%B8%88%EB%B0%A9%20%EC%82%AD%EC%A0%9C%EB%90%90%EB%8B%A4%EA%B3%A0%20%EC%A3%BC%EC%9E%A5%ED%95%98%EC%A7%80%EB%A7%8C%2C%3C%2Ftext%3E%3Ctext%20x%3D%2278%22%20y%3D%22730%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%EC%82%AD%EC%A0%9C%20%EC%A0%84%20%EC%9D%B4%EB%AF%B8%20%EC%97%AC%EB%9F%AC%20%EC%BB%A4%EB%AE%A4%EB%8B%88%ED%8B%B0%EB%A1%9C%20%ED%8D%BC%EC%A7%84%20%EC%8B%9C%EC%A0%90%EC%9D%B4%3C%2Ftext%3E%3Ctext%20x%3D%2278%22%20y%3D%22756%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%EB%A1%9C%EA%B7%B8%EC%83%81%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%0A%20%20%20%20%3C%2Fsvg%3E%0A%20%20",
+          "thumbnailUrl": "data:image/svg+xml;charset=UTF-8,%0A%20%20%20%20%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%221080%22%20height%3D%221600%22%20viewBox%3D%220%200%201080%201600%22%3E%0A%20%20%20%20%20%20%3Crect%20width%3D%221080%22%20height%3D%221600%22%20rx%3D%2240%22%20fill%3D%22%230b1220%22%20%2F%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%2224%22%20y%3D%2224%22%20width%3D%221032%22%20height%3D%221552%22%20rx%3D%2234%22%20fill%3D%22%23111827%22%20stroke%3D%22rgba(255%2C255%2C255%2C0.08)%22%20%2F%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%2254%22%20y%3D%2254%22%20width%3D%22972%22%20height%3D%2278%22%20rx%3D%2222%22%20fill%3D%22rgba(255%2C255%2C255%2C0.06)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2282%22%20y%3D%22102%22%20font-size%3D%2218%22%20font-weight%3D%22800%22%20fill%3D%22%2334d399%22%3ECHAT%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2282%22%20y%3D%22132%22%20font-size%3D%2228%22%20font-weight%3D%22800%22%20fill%3D%22%23f8fafc%22%3E%EC%A0%90%EC%A3%BC%20%EB%8B%A8%EC%B2%B4%EB%B0%A9%20%EA%B3%B5%EC%9C%A0%20%EC%BA%A1%EC%B2%98%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%3Ctext%20x%3D%2254%22%20y%3D%22180%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%2394a3b8%22%3E%EA%B8%B0%EB%A1%9D%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22684%22%20y%3D%22180%22%20font-size%3D%2215%22%20font-weight%3D%22600%22%20fill%3D%22%2364748b%22%20text-anchor%3D%22end%22%3ET01%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%2254%22%20y%3D%22198%22%20width%3D%22640%22%20height%3D%22158%22%20rx%3D%2228%22%20fill%3D%22%231f2937%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2278%22%20y%3D%22236%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%EC%A0%95%ED%83%9C%EC%84%B1%20%EA%B3%84%EC%A0%95%EC%9D%B4%20%26%2339%3B%EC%9D%B4%20%EC%82%AC%EB%9E%8C%20%EB%8F%99%EC%84%A0%20%EC%95%84%EB%8A%94%20%EB%B6%84%3F%26%2339%3B%EC%9D%B4%EB%9D%BC%EB%8A%94%3C%2Ftext%3E%3Ctext%20x%3D%2278%22%20y%3D%22262%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%EC%A7%88%EB%AC%B8%EA%B3%BC%20%ED%95%A8%EA%BB%98%20%EC%B0%A8%EB%9F%89%20%EB%B2%88%ED%98%B8%EA%B0%80%20%EB%B3%B4%EC%9D%B4%EB%8A%94%20%EC%BA%A1%EC%B2%98%EB%A5%BC%20%EC%98%AC%EB%A6%B0%3C%2Ftext%3E%3Ctext%20x%3D%2278%22%20y%3D%22288%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%ED%9D%94%EC%A0%81%EC%9D%B4%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%0A%20%20%20%20%20%20%3Ctext%20x%3D%22386%22%20y%3D%22414%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%2394a3b8%22%3E%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221016%22%20y%3D%22414%22%20font-size%3D%2215%22%20font-weight%3D%22600%22%20fill%3D%22%2364748b%22%20text-anchor%3D%22end%22%3ET02%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%22386%22%20y%3D%22432%22%20width%3D%22640%22%20height%3D%22158%22%20rx%3D%2228%22%20fill%3D%22%2334d399%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22410%22%20y%3D%22470%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23052e16%22%3E%EC%9D%B4%EC%96%B4%EC%A7%84%20%EB%8C%80%ED%99%94%EC%97%90%EB%8A%94%20%ED%9B%84%EA%B8%B0%20%EA%B3%84%EC%A0%95%20%EC%8B%A0%EA%B3%A0%2C%20%EC%95%85%ED%94%8C%20%EC%9C%A0%EB%8F%84%2C%3C%2Ftext%3E%3Ctext%20x%3D%22410%22%20y%3D%22496%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23052e16%22%3ECCTV%20%ED%99%94%EB%A9%B4%20%EC%9D%BC%EB%B6%80%20%EA%B3%B5%EC%9C%A0%20%EC%A0%9C%EC%95%88%EA%B9%8C%EC%A7%80%20%ED%8F%AC%ED%95%A8%EB%8F%BC%20%EC%9E%88%EC%96%B4%3C%2Ftext%3E%3Ctext%20x%3D%22410%22%20y%3D%22522%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23052e16%22%3E%EB%8B%A8%EC%88%9C%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%0A%20%20%20%20%20%20%3Ctext%20x%3D%2254%22%20y%3D%22648%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%2394a3b8%22%3E%EA%B8%B0%EB%A1%9D%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22684%22%20y%3D%22648%22%20font-size%3D%2215%22%20font-weight%3D%22600%22%20fill%3D%22%2364748b%22%20text-anchor%3D%22end%22%3ET03%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%2254%22%20y%3D%22666%22%20width%3D%22640%22%20height%3D%22158%22%20rx%3D%2228%22%20fill%3D%22%231f2937%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2278%22%20y%3D%22704%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%EC%A0%95%ED%83%9C%EC%84%B1%EC%9D%80%20%EA%B2%8C%EC%8B%9C%EB%AC%BC%EC%9D%B4%20%EA%B8%88%EB%B0%A9%20%EC%82%AD%EC%A0%9C%EB%90%90%EB%8B%A4%EA%B3%A0%20%EC%A3%BC%EC%9E%A5%ED%95%98%EC%A7%80%EB%A7%8C%2C%3C%2Ftext%3E%3Ctext%20x%3D%2278%22%20y%3D%22730%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%EC%82%AD%EC%A0%9C%20%EC%A0%84%20%EC%9D%B4%EB%AF%B8%20%EC%97%AC%EB%9F%AC%20%EC%BB%A4%EB%AE%A4%EB%8B%88%ED%8B%B0%EB%A1%9C%20%ED%8D%BC%EC%A7%84%20%EC%8B%9C%EC%A0%90%EC%9D%B4%3C%2Ftext%3E%3Ctext%20x%3D%2278%22%20y%3D%22756%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%EB%A1%9C%EA%B7%B8%EC%83%81%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%0A%20%20%20%20%3C%2Fsvg%3E%0A%20%20",
+          "posterUrl": "data:image/svg+xml;charset=UTF-8,%0A%20%20%20%20%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%221080%22%20height%3D%221600%22%20viewBox%3D%220%200%201080%201600%22%3E%0A%20%20%20%20%20%20%3Crect%20width%3D%221080%22%20height%3D%221600%22%20rx%3D%2240%22%20fill%3D%22%230b1220%22%20%2F%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%2224%22%20y%3D%2224%22%20width%3D%221032%22%20height%3D%221552%22%20rx%3D%2234%22%20fill%3D%22%23111827%22%20stroke%3D%22rgba(255%2C255%2C255%2C0.08)%22%20%2F%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%2254%22%20y%3D%2254%22%20width%3D%22972%22%20height%3D%2278%22%20rx%3D%2222%22%20fill%3D%22rgba(255%2C255%2C255%2C0.06)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2282%22%20y%3D%22102%22%20font-size%3D%2218%22%20font-weight%3D%22800%22%20fill%3D%22%2334d399%22%3ECHAT%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2282%22%20y%3D%22132%22%20font-size%3D%2228%22%20font-weight%3D%22800%22%20fill%3D%22%23f8fafc%22%3E%EC%A0%90%EC%A3%BC%20%EB%8B%A8%EC%B2%B4%EB%B0%A9%20%EA%B3%B5%EC%9C%A0%20%EC%BA%A1%EC%B2%98%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%3Ctext%20x%3D%2254%22%20y%3D%22180%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%2394a3b8%22%3E%EA%B8%B0%EB%A1%9D%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22684%22%20y%3D%22180%22%20font-size%3D%2215%22%20font-weight%3D%22600%22%20fill%3D%22%2364748b%22%20text-anchor%3D%22end%22%3ET01%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%2254%22%20y%3D%22198%22%20width%3D%22640%22%20height%3D%22158%22%20rx%3D%2228%22%20fill%3D%22%231f2937%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2278%22%20y%3D%22236%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%EC%A0%95%ED%83%9C%EC%84%B1%20%EA%B3%84%EC%A0%95%EC%9D%B4%20%26%2339%3B%EC%9D%B4%20%EC%82%AC%EB%9E%8C%20%EB%8F%99%EC%84%A0%20%EC%95%84%EB%8A%94%20%EB%B6%84%3F%26%2339%3B%EC%9D%B4%EB%9D%BC%EB%8A%94%3C%2Ftext%3E%3Ctext%20x%3D%2278%22%20y%3D%22262%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%EC%A7%88%EB%AC%B8%EA%B3%BC%20%ED%95%A8%EA%BB%98%20%EC%B0%A8%EB%9F%89%20%EB%B2%88%ED%98%B8%EA%B0%80%20%EB%B3%B4%EC%9D%B4%EB%8A%94%20%EC%BA%A1%EC%B2%98%EB%A5%BC%20%EC%98%AC%EB%A6%B0%3C%2Ftext%3E%3Ctext%20x%3D%2278%22%20y%3D%22288%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%ED%9D%94%EC%A0%81%EC%9D%B4%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%0A%20%20%20%20%20%20%3Ctext%20x%3D%22386%22%20y%3D%22414%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%2394a3b8%22%3E%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221016%22%20y%3D%22414%22%20font-size%3D%2215%22%20font-weight%3D%22600%22%20fill%3D%22%2364748b%22%20text-anchor%3D%22end%22%3ET02%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%22386%22%20y%3D%22432%22%20width%3D%22640%22%20height%3D%22158%22%20rx%3D%2228%22%20fill%3D%22%2334d399%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22410%22%20y%3D%22470%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23052e16%22%3E%EC%9D%B4%EC%96%B4%EC%A7%84%20%EB%8C%80%ED%99%94%EC%97%90%EB%8A%94%20%ED%9B%84%EA%B8%B0%20%EA%B3%84%EC%A0%95%20%EC%8B%A0%EA%B3%A0%2C%20%EC%95%85%ED%94%8C%20%EC%9C%A0%EB%8F%84%2C%3C%2Ftext%3E%3Ctext%20x%3D%22410%22%20y%3D%22496%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23052e16%22%3ECCTV%20%ED%99%94%EB%A9%B4%20%EC%9D%BC%EB%B6%80%20%EA%B3%B5%EC%9C%A0%20%EC%A0%9C%EC%95%88%EA%B9%8C%EC%A7%80%20%ED%8F%AC%ED%95%A8%EB%8F%BC%20%EC%9E%88%EC%96%B4%3C%2Ftext%3E%3Ctext%20x%3D%22410%22%20y%3D%22522%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23052e16%22%3E%EB%8B%A8%EC%88%9C%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%0A%20%20%20%20%20%20%3Ctext%20x%3D%2254%22%20y%3D%22648%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%2394a3b8%22%3E%EA%B8%B0%EB%A1%9D%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22684%22%20y%3D%22648%22%20font-size%3D%2215%22%20font-weight%3D%22600%22%20fill%3D%22%2364748b%22%20text-anchor%3D%22end%22%3ET03%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%2254%22%20y%3D%22666%22%20width%3D%22640%22%20height%3D%22158%22%20rx%3D%2228%22%20fill%3D%22%231f2937%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2278%22%20y%3D%22704%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%EC%A0%95%ED%83%9C%EC%84%B1%EC%9D%80%20%EA%B2%8C%EC%8B%9C%EB%AC%BC%EC%9D%B4%20%EA%B8%88%EB%B0%A9%20%EC%82%AD%EC%A0%9C%EB%90%90%EB%8B%A4%EA%B3%A0%20%EC%A3%BC%EC%9E%A5%ED%95%98%EC%A7%80%EB%A7%8C%2C%3C%2Ftext%3E%3Ctext%20x%3D%2278%22%20y%3D%22730%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%EC%82%AD%EC%A0%9C%20%EC%A0%84%20%EC%9D%B4%EB%AF%B8%20%EC%97%AC%EB%9F%AC%20%EC%BB%A4%EB%AE%A4%EB%8B%88%ED%8B%B0%EB%A1%9C%20%ED%8D%BC%EC%A7%84%20%EC%8B%9C%EC%A0%90%EC%9D%B4%3C%2Ftext%3E%3Ctext%20x%3D%2278%22%20y%3D%22756%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%EB%A1%9C%EA%B7%B8%EC%83%81%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%0A%20%20%20%20%3C%2Fsvg%3E%0A%20%20",
+          "width": 1080,
+          "height": 1600,
+          "alt": "점주 단체방 공유 캡처 chat evidence",
+          "caption": "점주 단체방 공유 캡처 conversation preview"
+        }
+      },
+      "partyContext": {
+        "a": {
+          "questionAngle": "A측 관점에서 이 자료가 가리키는 책임과 경위를 설명해 주십시오.",
+          "implication": "정태성이 포함된 점주 단체방 대화와 삭제 뒤 복구된 게시물 캡처다. 리뷰어 차량 번호, 촬영 동선, 신고 방법 공유가 포함돼 있…"
+        },
+        "b": {
+          "questionAngle": "B측 관점에서 이 자료가 가리키는 책임과 경위를 설명해 주십시오.",
+          "implication": "정태성이 포함된 점주 단체방 대화와 삭제 뒤 복구된 게시물 캡처다. 리뷰어 차량 번호, 촬영 동선, 신고 방법 공유가 포함돼 있…"
+        }
+      }
+    },
+    {
+      "id": "e-6",
+      "name": "평점 하락 타임라인과 플랫폼 확산 로그",
+      "description": "영상 업로드 뒤 평점 하락, 예약 취소, 커뮤니티 확산 시간을 묶은 플랫폼 로그다. A의 영상 공개와 B 측 반격 게시물이 차례로 증폭을 키운다.",
+      "surfaceName": "플랫폼 확산 타임라인",
+      "surfaceDescription": "영상 공개 이후 평점과 게시물 확산 흐름을 보여주는 로그다.",
+      "type": "sns",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "institutional",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-1",
+        "d-4"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-2",
+        "e-5"
+      ],
+      "investigationResults": {
+        "request_original": "영상 업로드 직후 6시간 동안 평점이 급락했고, 정태성 계정이 관련 커뮤니티 링크를 공유한 시점 이후 리뷰어 신상 관련 검색량이 다시 급등했다.",
+        "restore_context": "1차 확산은 A의 영상이, 2차 확산은 B 측의 역폭로와 단체방 행동이 밀어 올린 구조다.",
+        "check_edits": "일부 악성 리뷰는 비고객 계정이었지만, 예약 취소와 평점 하락의 출발점은 실제 영상 공개였다."
+      },
+      "subjectParty": "both",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "평점 하락과 신상 노출 확산이 각각 언제부터 시작됐는지 알고 계십니까?",
+            "attackVector": "timeline"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "영상 공개와 역폭로 중 어떤 쪽이 확산을 더 크게 밀어 올렸는지 부인하실 수 있습니까?",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "check_edits",
+          "question": {
+            "text": "둘 다 확산 구조에 관여했다는 점을 인정한다면, 각자의 책임선을 어디에 그어야 합니까?",
+            "attackVector": "responsibility"
+          }
+        }
+      ],
+      "meta": {
+        "name": "플랫폼 확산 타임라인",
+        "type": "sns",
+        "viewerType": "sns",
+        "trustLevel": "high",
+        "trustLabel": "높음",
+        "source": "org",
+        "sourceLabel": "기관",
+        "legality": "ok",
+        "legalLabel": "적법",
+        "stage": 3,
+        "stageLabel": "확산 추적",
+        "sourceNote": "플랫폼 평점 하락 및 재게시 확산 시간대 로그",
+        "redactions": [
+          "개별 리뷰어 계정 일부"
+        ]
+      },
+      "viewerData": {
+        "sns": {
+          "username": "플랫폼 확산 추적",
+          "handle": "@review-trace",
+          "date": "2026.04.08",
+          "privacy": "내부 수집 로그",
+          "text": "영상 공개 후 평점 하락, 예약 취소, 커뮤니티 재게시가 4시간 안에 연쇄적으로 겹쳤습니다.",
+          "hashtags": [
+            "#평점하락",
+            "#재게시확산",
+            "#예약취소"
+          ],
+          "likes": 0,
+          "comments": [
+            {
+              "name": "플랫폼",
+              "text": "19:10 평점 4.6 → 3.9"
+            },
+            {
+              "name": "커뮤니티",
+              "text": "19:34 반박 게시 링크 재공유 시작"
+            },
+            {
+              "name": "예약시스템",
+              "text": "20:05 취소율 급증 감지"
+            }
+          ],
+          "warnings": [
+            "영상 공개 직후와 점주 측 반격 직후에 확산 속도가 각각 한 번씩 급등했습니다.",
+            "한쪽 행위만으로 설명되지 않고, A 공개와 B 반격이 순차적으로 파장을 키웠습니다."
+          ]
+        },
+        "meta": {
+          "name": "플랫폼 확산 타임라인",
+          "type": "sns",
+          "viewerType": "sns",
+          "trustLevel": "high",
+          "trustLabel": "높음",
+          "source": "org",
+          "sourceLabel": "기관",
+          "legality": "ok",
+          "legalLabel": "적법",
+          "stage": 3,
+          "stageLabel": "확산 추적",
+          "sourceNote": "플랫폼 평점 하락 및 재게시 확산 시간대 로그",
+          "redactions": [
+            "개별 리뷰어 계정 일부"
+          ]
+        },
+        "media": {
+          "imageUrl": "data:image/svg+xml;charset=UTF-8,%0A%20%20%20%20%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%221080%22%20height%3D%221350%22%20viewBox%3D%220%200%201080%201350%22%3E%0A%20%20%20%20%20%20%3Crect%20width%3D%221080%22%20height%3D%221350%22%20rx%3D%2228%22%20fill%3D%22%23f8fafc%22%20%2F%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%2242%22%20y%3D%2242%22%20width%3D%22996%22%20height%3D%221266%22%20rx%3D%2222%22%20fill%3D%22%23ffffff%22%20stroke%3D%22%23e2e8f0%22%20%2F%3E%0A%20%20%20%20%20%20%3Ccircle%20cx%3D%22118%22%20cy%3D%22118%22%20r%3D%2234%22%20fill%3D%22%23f472b6%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22176%22%20y%3D%22112%22%20font-size%3D%2224%22%20font-weight%3D%22800%22%20fill%3D%22%23111827%22%3E%ED%94%8C%EB%9E%AB%ED%8F%BC%20%ED%99%95%EC%82%B0%20%ED%83%80%EC%9E%84%EB%9D%BC%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22176%22%20y%3D%22142%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%2364748b%22%3E%23e-6%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22962%22%20y%3D%22112%22%20font-size%3D%2216%22%20font-weight%3D%22700%22%20fill%3D%22%23f472b6%22%20text-anchor%3D%22end%22%3ESNS%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22962%22%20y%3D%22142%22%20font-size%3D%2216%22%20font-weight%3D%22600%22%20fill%3D%22%2364748b%22%20text-anchor%3D%22end%22%3Ee-6%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2284%22%20y%3D%22236%22%20font-size%3D%2224%22%20font-weight%3D%22700%22%20fill%3D%22%23111827%22%3E%EC%98%81%EC%83%81%20%EA%B3%B5%EA%B0%9C%20%EC%9D%B4%ED%9B%84%20%ED%8F%89%EC%A0%90%EA%B3%BC%20%EA%B2%8C%EC%8B%9C%EB%AC%BC%20%ED%99%95%EC%82%B0%20%ED%9D%90%EB%A6%84%EC%9D%84%20%EB%B3%B4%EC%97%AC%EC%A3%BC%EB%8A%94%20%EB%A1%9C%EA%B7%B8%EB%8B%A4.%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%2284%22%20y%3D%22470%22%20width%3D%22912%22%20height%3D%22360%22%20rx%3D%2220%22%20fill%3D%22%23fdf2f8%22%20stroke%3D%22%23fbcfe8%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22110%22%20y%3D%22548%22%20font-size%3D%2222%22%20font-weight%3D%22800%22%20fill%3D%22%23db2777%22%3E%23d-1%20%23d-4%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22110%22%20y%3D%22884%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%2364748b%22%3ECOMMENTS%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%3Ctext%20x%3D%22150%22%20y%3D%22980%22%20font-size%3D%2218%22%20font-weight%3D%22800%22%20fill%3D%22%23111827%22%3Erequest_original%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22150%22%20y%3D%221008%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%23334155%22%3E%EC%98%81%EC%83%81%20%EC%97%85%EB%A1%9C%EB%93%9C%20%EC%A7%81%ED%9B%84%206%EC%8B%9C%EA%B0%84%20%EB%8F%99%EC%95%88%20%ED%8F%89%EC%A0%90%EC%9D%B4%20%EA%B8%89%EB%9D%BD%ED%96%88%EA%B3%A0%2C%20%EC%A0%95%ED%83%9C%EC%84%B1%20%EA%B3%84%EC%A0%95%EC%9D%B4%20%EA%B4%80%EB%A0%A8%20%EC%BB%A4%EB%AE%A4%EB%8B%88%ED%8B%B0%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Ctext%20x%3D%22150%22%20y%3D%221072%22%20font-size%3D%2218%22%20font-weight%3D%22800%22%20fill%3D%22%23111827%22%3Erestore_context%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22150%22%20y%3D%221100%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%23334155%22%3E1%EC%B0%A8%20%ED%99%95%EC%82%B0%EC%9D%80%20A%EC%9D%98%20%EC%98%81%EC%83%81%EC%9D%B4%2C%202%EC%B0%A8%20%ED%99%95%EC%82%B0%EC%9D%80%20B%20%EC%B8%A1%EC%9D%98%20%EC%97%AD%ED%8F%AD%EB%A1%9C%EC%99%80%20%EB%8B%A8%EC%B2%B4%EB%B0%A9%20%ED%96%89%EB%8F%99%EC%9D%B4%20%EB%B0%80%EC%96%B4%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%3C%2Fsvg%3E%0A%20%20",
+          "thumbnailUrl": "data:image/svg+xml;charset=UTF-8,%0A%20%20%20%20%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%221080%22%20height%3D%221350%22%20viewBox%3D%220%200%201080%201350%22%3E%0A%20%20%20%20%20%20%3Crect%20width%3D%221080%22%20height%3D%221350%22%20rx%3D%2228%22%20fill%3D%22%23f8fafc%22%20%2F%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%2242%22%20y%3D%2242%22%20width%3D%22996%22%20height%3D%221266%22%20rx%3D%2222%22%20fill%3D%22%23ffffff%22%20stroke%3D%22%23e2e8f0%22%20%2F%3E%0A%20%20%20%20%20%20%3Ccircle%20cx%3D%22118%22%20cy%3D%22118%22%20r%3D%2234%22%20fill%3D%22%23f472b6%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22176%22%20y%3D%22112%22%20font-size%3D%2224%22%20font-weight%3D%22800%22%20fill%3D%22%23111827%22%3E%ED%94%8C%EB%9E%AB%ED%8F%BC%20%ED%99%95%EC%82%B0%20%ED%83%80%EC%9E%84%EB%9D%BC%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22176%22%20y%3D%22142%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%2364748b%22%3E%23e-6%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22962%22%20y%3D%22112%22%20font-size%3D%2216%22%20font-weight%3D%22700%22%20fill%3D%22%23f472b6%22%20text-anchor%3D%22end%22%3ESNS%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22962%22%20y%3D%22142%22%20font-size%3D%2216%22%20font-weight%3D%22600%22%20fill%3D%22%2364748b%22%20text-anchor%3D%22end%22%3Ee-6%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2284%22%20y%3D%22236%22%20font-size%3D%2224%22%20font-weight%3D%22700%22%20fill%3D%22%23111827%22%3E%EC%98%81%EC%83%81%20%EA%B3%B5%EA%B0%9C%20%EC%9D%B4%ED%9B%84%20%ED%8F%89%EC%A0%90%EA%B3%BC%20%EA%B2%8C%EC%8B%9C%EB%AC%BC%20%ED%99%95%EC%82%B0%20%ED%9D%90%EB%A6%84%EC%9D%84%20%EB%B3%B4%EC%97%AC%EC%A3%BC%EB%8A%94%20%EB%A1%9C%EA%B7%B8%EB%8B%A4.%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%2284%22%20y%3D%22470%22%20width%3D%22912%22%20height%3D%22360%22%20rx%3D%2220%22%20fill%3D%22%23fdf2f8%22%20stroke%3D%22%23fbcfe8%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22110%22%20y%3D%22548%22%20font-size%3D%2222%22%20font-weight%3D%22800%22%20fill%3D%22%23db2777%22%3E%23d-1%20%23d-4%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22110%22%20y%3D%22884%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%2364748b%22%3ECOMMENTS%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%3Ctext%20x%3D%22150%22%20y%3D%22980%22%20font-size%3D%2218%22%20font-weight%3D%22800%22%20fill%3D%22%23111827%22%3Erequest_original%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22150%22%20y%3D%221008%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%23334155%22%3E%EC%98%81%EC%83%81%20%EC%97%85%EB%A1%9C%EB%93%9C%20%EC%A7%81%ED%9B%84%206%EC%8B%9C%EA%B0%84%20%EB%8F%99%EC%95%88%20%ED%8F%89%EC%A0%90%EC%9D%B4%20%EA%B8%89%EB%9D%BD%ED%96%88%EA%B3%A0%2C%20%EC%A0%95%ED%83%9C%EC%84%B1%20%EA%B3%84%EC%A0%95%EC%9D%B4%20%EA%B4%80%EB%A0%A8%20%EC%BB%A4%EB%AE%A4%EB%8B%88%ED%8B%B0%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Ctext%20x%3D%22150%22%20y%3D%221072%22%20font-size%3D%2218%22%20font-weight%3D%22800%22%20fill%3D%22%23111827%22%3Erestore_context%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22150%22%20y%3D%221100%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%23334155%22%3E1%EC%B0%A8%20%ED%99%95%EC%82%B0%EC%9D%80%20A%EC%9D%98%20%EC%98%81%EC%83%81%EC%9D%B4%2C%202%EC%B0%A8%20%ED%99%95%EC%82%B0%EC%9D%80%20B%20%EC%B8%A1%EC%9D%98%20%EC%97%AD%ED%8F%AD%EB%A1%9C%EC%99%80%20%EB%8B%A8%EC%B2%B4%EB%B0%A9%20%ED%96%89%EB%8F%99%EC%9D%B4%20%EB%B0%80%EC%96%B4%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%3C%2Fsvg%3E%0A%20%20",
+          "posterUrl": "data:image/svg+xml;charset=UTF-8,%0A%20%20%20%20%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%221080%22%20height%3D%221350%22%20viewBox%3D%220%200%201080%201350%22%3E%0A%20%20%20%20%20%20%3Crect%20width%3D%221080%22%20height%3D%221350%22%20rx%3D%2228%22%20fill%3D%22%23f8fafc%22%20%2F%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%2242%22%20y%3D%2242%22%20width%3D%22996%22%20height%3D%221266%22%20rx%3D%2222%22%20fill%3D%22%23ffffff%22%20stroke%3D%22%23e2e8f0%22%20%2F%3E%0A%20%20%20%20%20%20%3Ccircle%20cx%3D%22118%22%20cy%3D%22118%22%20r%3D%2234%22%20fill%3D%22%23f472b6%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22176%22%20y%3D%22112%22%20font-size%3D%2224%22%20font-weight%3D%22800%22%20fill%3D%22%23111827%22%3E%ED%94%8C%EB%9E%AB%ED%8F%BC%20%ED%99%95%EC%82%B0%20%ED%83%80%EC%9E%84%EB%9D%BC%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22176%22%20y%3D%22142%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%2364748b%22%3E%23e-6%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22962%22%20y%3D%22112%22%20font-size%3D%2216%22%20font-weight%3D%22700%22%20fill%3D%22%23f472b6%22%20text-anchor%3D%22end%22%3ESNS%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22962%22%20y%3D%22142%22%20font-size%3D%2216%22%20font-weight%3D%22600%22%20fill%3D%22%2364748b%22%20text-anchor%3D%22end%22%3Ee-6%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2284%22%20y%3D%22236%22%20font-size%3D%2224%22%20font-weight%3D%22700%22%20fill%3D%22%23111827%22%3E%EC%98%81%EC%83%81%20%EA%B3%B5%EA%B0%9C%20%EC%9D%B4%ED%9B%84%20%ED%8F%89%EC%A0%90%EA%B3%BC%20%EA%B2%8C%EC%8B%9C%EB%AC%BC%20%ED%99%95%EC%82%B0%20%ED%9D%90%EB%A6%84%EC%9D%84%20%EB%B3%B4%EC%97%AC%EC%A3%BC%EB%8A%94%20%EB%A1%9C%EA%B7%B8%EB%8B%A4.%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%2284%22%20y%3D%22470%22%20width%3D%22912%22%20height%3D%22360%22%20rx%3D%2220%22%20fill%3D%22%23fdf2f8%22%20stroke%3D%22%23fbcfe8%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22110%22%20y%3D%22548%22%20font-size%3D%2222%22%20font-weight%3D%22800%22%20fill%3D%22%23db2777%22%3E%23d-1%20%23d-4%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22110%22%20y%3D%22884%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%2364748b%22%3ECOMMENTS%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%3Ctext%20x%3D%22150%22%20y%3D%22980%22%20font-size%3D%2218%22%20font-weight%3D%22800%22%20fill%3D%22%23111827%22%3Erequest_original%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22150%22%20y%3D%221008%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%23334155%22%3E%EC%98%81%EC%83%81%20%EC%97%85%EB%A1%9C%EB%93%9C%20%EC%A7%81%ED%9B%84%206%EC%8B%9C%EA%B0%84%20%EB%8F%99%EC%95%88%20%ED%8F%89%EC%A0%90%EC%9D%B4%20%EA%B8%89%EB%9D%BD%ED%96%88%EA%B3%A0%2C%20%EC%A0%95%ED%83%9C%EC%84%B1%20%EA%B3%84%EC%A0%95%EC%9D%B4%20%EA%B4%80%EB%A0%A8%20%EC%BB%A4%EB%AE%A4%EB%8B%88%ED%8B%B0%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Ctext%20x%3D%22150%22%20y%3D%221072%22%20font-size%3D%2218%22%20font-weight%3D%22800%22%20fill%3D%22%23111827%22%3Erestore_context%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22150%22%20y%3D%221100%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%23334155%22%3E1%EC%B0%A8%20%ED%99%95%EC%82%B0%EC%9D%80%20A%EC%9D%98%20%EC%98%81%EC%83%81%EC%9D%B4%2C%202%EC%B0%A8%20%ED%99%95%EC%82%B0%EC%9D%80%20B%20%EC%B8%A1%EC%9D%98%20%EC%97%AD%ED%8F%AD%EB%A1%9C%EC%99%80%20%EB%8B%A8%EC%B2%B4%EB%B0%A9%20%ED%96%89%EB%8F%99%EC%9D%B4%20%EB%B0%80%EC%96%B4%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%3C%2Fsvg%3E%0A%20%20",
+          "width": 1080,
+          "height": 1350,
+          "alt": "플랫폼 확산 타임라인 social evidence",
+          "caption": "플랫폼 확산 타임라인 social post preview"
+        }
+      },
+      "requiredLieState": "S2",
+      "partyContext": {
+        "a": {
+          "questionAngle": "A측 관점에서 이 자료가 가리키는 책임과 경위를 설명해 주십시오.",
+          "implication": "영상 업로드 뒤 평점 하락, 예약 취소, 커뮤니티 확산 시간을 묶은 플랫폼 로그다. A의 영상 공개와 B 측 반격 게시물이 차례…"
+        },
+        "b": {
+          "questionAngle": "B측 관점에서 이 자료가 가리키는 책임과 경위를 설명해 주십시오.",
+          "implication": "영상 업로드 뒤 평점 하락, 예약 취소, 커뮤니티 확산 시간을 묶은 플랫폼 로그다. A의 영상 공개와 B 측 반격 게시물이 차례…"
+        }
+      }
+    }
+  ],
+  "evidenceCombinations": [
+    {
+      "requires": [
+        "e-1",
+        "e-2"
+      ],
+      "upgradesTo": "hard",
+      "proves": [
+        "d-1",
+        "d-2"
+      ]
+    },
+    {
+      "requires": [
+        "e-3",
+        "e-4"
+      ],
+      "upgradesTo": "hard",
+      "proves": [
+        "d-2",
+        "d-3"
+      ]
+    },
+    {
+      "requires": [
+        "e-5",
+        "e-6"
+      ],
+      "upgradesTo": "hard",
+      "proves": [
+        "d-3",
+        "d-4"
+      ]
+    }
+  ],
+  "truthTable": [
+    {
+      "id": "t-1",
+      "fact": "리뷰 영상의 핵심 위생 장면은 진짜지만, 전후 맥락이 상당 부분 편집됐다.",
+      "isTrue": true,
+      "weight": 10,
+      "quadrant": "both_know"
+    },
+    {
+      "id": "t-2",
+      "fact": "정태성의 매장에는 반복된 위생 관리 실패가 있었다.",
+      "isTrue": true,
+      "weight": 10,
+      "quadrant": "b_only"
+    },
+    {
+      "id": "t-3",
+      "fact": "강민호는 촬영 전후로 영향력을 이용한 무상 협조 및 회복 패키지 제안을 연결했다.",
+      "isTrue": true,
+      "weight": 9,
+      "quadrant": "a_only"
+    },
+    {
+      "id": "t-4",
+      "fact": "정태성은 점주 단체방과 커뮤니티를 통해 리뷰어 신상과 동선을 퍼뜨리는 보복에 가담했다.",
+      "isTrue": true,
+      "weight": 10,
+      "quadrant": "b_only"
+    }
+  ],
+  "lieConfigA": [
+    {
+      "disputeId": "d-1",
+      "lieType": "LT-2",
+      "lieIntensity": "L2",
+      "lieMotive": "face_saving",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "direct_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "hard_evidence"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "motive_question"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "responsibility_question"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "lieType": "LT-6",
+      "lieIntensity": "L3",
+      "lieMotive": "career_preservation",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "direct_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "hard_evidence"
+        },
+        {
+          "from": "S2",
+          "to": "S4",
+          "trigger": "empathy_question"
+        },
+        {
+          "from": "S4",
+          "to": "S5",
+          "trigger": "responsibility_question"
+        }
+      ]
+    }
+  ],
+  "lieConfigB": [
+    {
+      "disputeId": "d-2",
+      "lieType": "LT-1",
+      "lieIntensity": "L2",
+      "lieMotive": "self_protection",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "direct_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "hard_evidence"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "timeline_question"
+        },
+        {
+          "from": "S3",
+          "to": "S5",
+          "trigger": "responsibility_question"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "lieType": "LT-3",
+      "lieIntensity": "L3",
+      "lieMotive": "revenge",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "direct_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "hard_evidence"
+        },
+        {
+          "from": "S2",
+          "to": "S4",
+          "trigger": "emotion_threshold"
+        },
+        {
+          "from": "S4",
+          "to": "S5",
+          "trigger": "provenance_question"
+        }
+      ]
+    }
+  ],
+  "solutions": {
+    "공개정정": [
+      "강민호는 원본과 업로드본의 차이를 명시한 정정문을 올리고, 정태성은 영상에서 사실로 확인된 위생 위반을 별도 공지로 인정한다.",
+      "영상은 유지하되 편집된 구간과 제외된 맥락을 설명하는 부연 공지를 함께 게재한다.",
+      "양측은 사실관계 요약문만 공동 제출하고 상호 비방 게시물은 모두 내린다."
+    ],
+    "영업개선": [
+      "정태성은 외부 위생 컨설팅과 30일 재점검 결과를 공개하고 문제가 된 메뉴 판매를 일시 중단한다.",
+      "반복 위반 항목을 중심으로 직원 교육과 재료 관리 로그를 의무화한다.",
+      "예약 재개 전까지 위생 개선 조치와 고객 공지 절차를 문서화한다."
+    ],
+    "평판피해": [
+      "강민호는 무상 협조 요구와 회복 패키지 연결 경위를 공개하고, 정태성은 그 사실을 위생 위반 은폐의 방패로 쓰지 않겠다고 약속한다.",
+      "A는 향후 협조 요청과 상업 제안을 분리한 운영 원칙을 공지하고, 기존 유사 제안 내역을 정리한다.",
+      "MCN을 포함한 사후 거래 경로를 중단하고, 이번 사건 관련 이해충돌 관계를 공개한다."
+    ],
+    "개인정보보호": [
+      "정태성은 신상 유포 게시물과 차량 번호 캡처, 커뮤니티 공유 링크를 모두 삭제하고 2차 확산 차단 요청에 협조한다.",
+      "점주 단체방과 커뮤니티에서 진행된 신고 동원과 악플 요청을 중단하고, 재발 방지 공지를 게시한다.",
+      "양측 모두 상대의 동선과 개인 정보를 활용한 추가 압박을 하지 않는 보호 합의를 체결한다."
+    ]
+  },
+  "activeLedgerEntries": [
+    "ledger-1",
+    "ledger-2",
+    "ledger-3"
+  ],
+  "activeThirdParties": [
+    "tp-1",
+    "tp-2",
+    "tp-3"
+  ],
+  "baseEvidenceIds": [
+    "e-1",
+    "e-3",
+    "e-5"
+  ],
+  "monetaryDisputeIds": [],
+  "combinationLab": {
+    "analysisPointsBase": 8,
+    "analysisPointRefundOnFirstHidden": 1,
+    "nodes": [
+      {
+        "id": "e-1",
+        "type": "evidence",
+        "label": "?? ???? ?? ???? ??",
+        "sourceRef": "e-1",
+        "linkedDisputeIds": [
+          "d-1"
+        ],
+        "linkedEvidenceIds": [
+          "e-1"
+        ],
+        "visibility": "base"
+      },
+      {
+        "id": "e-2",
+        "type": "evidence",
+        "label": "?? CCTV? ?? ?? ??",
+        "sourceRef": "e-2",
+        "linkedDisputeIds": [
+          "d-2"
+        ],
+        "linkedEvidenceIds": [
+          "e-2"
+        ],
+        "visibility": "base"
+      },
+      {
+        "id": "e-3",
+        "type": "evidence",
+        "label": "?? ?? ?? ??? ??? ??",
+        "sourceRef": "e-3",
+        "linkedDisputeIds": [
+          "d-2"
+        ],
+        "linkedEvidenceIds": [
+          "e-3"
+        ],
+        "visibility": "base"
+      },
+      {
+        "id": "e-4",
+        "type": "evidence",
+        "label": "?? ?? DM? ?? ?? ??? ??",
+        "sourceRef": "e-4",
+        "linkedDisputeIds": [
+          "d-3"
+        ],
+        "linkedEvidenceIds": [
+          "e-4"
+        ],
+        "visibility": "base"
+      },
+      {
+        "id": "e-5",
+        "type": "evidence",
+        "label": "?? ??? ?? ??? ?? ???",
+        "sourceRef": "e-5",
+        "linkedDisputeIds": [
+          "d-4"
+        ],
+        "linkedEvidenceIds": [
+          "e-5"
+        ],
+        "visibility": "base"
+      },
+      {
+        "id": "e-6",
+        "type": "evidence",
+        "label": "?? ?? ????? ??? ?? ??",
+        "sourceRef": "e-6",
+        "linkedDisputeIds": [
+          "d-1",
+          "d-4"
+        ],
+        "linkedEvidenceIds": [
+          "e-6"
+        ],
+        "visibility": "base"
+      },
+      {
+        "id": "n-1",
+        "type": "note",
+        "label": "?? ??? ?? ??? ???? ??",
+        "linkedDisputeIds": [
+          "d-1"
+        ],
+        "visibility": "base"
+      },
+      {
+        "id": "n-2",
+        "type": "note",
+        "label": "?? ?? ??? ???? ??",
+        "linkedDisputeIds": [
+          "d-3"
+        ],
+        "visibility": "base"
+      },
+      {
+        "id": "n-3",
+        "type": "note",
+        "label": "?? ?? ?? ??? ??? ??",
+        "linkedDisputeIds": [
+          "d-4"
+        ],
+        "visibility": "base"
+      },
+      {
+        "id": "n-4",
+        "type": "note",
+        "label": "?? ?? ??? ???? ??? ????? ??",
+        "linkedDisputeIds": [
+          "d-1",
+          "d-2"
+        ],
+        "visibility": "base"
+      },
+      {
+        "id": "n-5",
+        "type": "note",
+        "label": "??? ??? ??? ?????? ??",
+        "linkedDisputeIds": [
+          "d-4"
+        ],
+        "visibility": "base"
+      },
+      {
+        "id": "n-6",
+        "type": "note",
+        "label": "??? ??? ?? ?????? ??",
+        "linkedDisputeIds": [
+          "d-4"
+        ],
+        "visibility": "base"
+      },
+      {
+        "id": "n-7",
+        "type": "derived_note",
+        "label": "?? ?? ?? ?? ??? ??",
+        "linkedDisputeIds": [
+          "d-2"
+        ],
+        "visibility": "hidden"
+      },
+      {
+        "id": "n-8",
+        "type": "derived_note",
+        "label": "??? ?? ?? ??",
+        "linkedDisputeIds": [
+          "d-1",
+          "d-3"
+        ],
+        "visibility": "hidden"
+      },
+      {
+        "id": "n-9",
+        "type": "derived_note",
+        "label": "?? ?? ?? ??",
+        "linkedDisputeIds": [
+          "d-4"
+        ],
+        "visibility": "hidden"
+      },
+      {
+        "id": "n-10",
+        "type": "derived_note",
+        "label": "?? ?? ??",
+        "linkedDisputeIds": [
+          "d-1"
+        ],
+        "visibility": "hidden"
+      },
+      {
+        "id": "n-11",
+        "type": "derived_note",
+        "label": "?? ?? ?? ??? ??",
+        "linkedDisputeIds": [
+          "d-2"
+        ],
+        "visibility": "hidden"
+      },
+      {
+        "id": "n-12",
+        "type": "derived_note",
+        "label": "?? ?? ?? ??",
+        "linkedDisputeIds": [
+          "d-3",
+          "d-4"
+        ],
+        "visibility": "hidden"
+      },
+      {
+        "id": "q-public-interest-advanced",
+        "type": "question",
+        "label": "??? ?? ??",
+        "linkedDisputeIds": [
+          "d-1",
+          "d-3"
+        ],
+        "visibility": "hidden"
+      },
+      {
+        "id": "q-spread-advanced",
+        "type": "question",
+        "label": "?? ?? ?? ??",
+        "linkedDisputeIds": [
+          "d-4"
+        ],
+        "visibility": "hidden"
+      },
+      {
+        "id": "s-1",
+        "type": "statement",
+        "label": "??? ??? ?? ? ??",
+        "linkedDisputeIds": [
+          "d-3"
+        ],
+        "visibility": "hidden"
+      },
+      {
+        "id": "wa-1",
+        "type": "witness_angle",
+        "label": "??? ?? ?? ?? ??",
+        "linkedDisputeIds": [
+          "d-4"
+        ],
+        "visibility": "hidden"
+      },
+      {
+        "id": "d-1a",
+        "type": "dispute",
+        "label": "??? ??? ???",
+        "linkedDisputeIds": [
+          "d-1a"
+        ],
+        "visibility": "hidden"
+      },
+      {
+        "id": "d-1b",
+        "type": "dispute",
+        "label": "?? ??? ??",
+        "linkedDisputeIds": [
+          "d-1b"
+        ],
+        "visibility": "hidden"
+      },
+      {
+        "id": "d-meta-1",
+        "type": "dispute",
+        "label": "??? ??? ?? ??? ???",
+        "linkedDisputeIds": [
+          "d-meta-1"
+        ],
+        "visibility": "hidden"
+      }
+    ],
+    "outputs": [
+      {
+        "id": "o-1",
+        "label": "?? ???? ??? ??? ????",
+        "summary": "?? ????? ??? ??? ??? ??? ???. ? ??? ?? ?? ??? ??? ?? ?? ? ??? ?? ??? ???.",
+        "nodeType": "derived_note",
+        "noteText": "???? ?? ?? ?? ???, ?? ?? ?? ? ??? ??? ??? ??? ????.",
+        "effects": [
+          {
+            "kind": "unlock_note",
+            "unlockNodeId": "n-8"
+          },
+          {
+            "kind": "reframe_dispute",
+            "targetId": "d-1",
+            "reframeFromId": "d-1",
+            "reframeToId": "d-3"
+          },
+          {
+            "kind": "upgrade_dispute",
+            "disputeUpgrade": {
+              "disputeId": "d-3",
+              "weight": "high",
+              "ambiguity": "low",
+              "legitimacyIssue": true
+            }
+          }
+        ],
+        "judgeHint": "???? ???? ?? ??? ????? ???? ? ??? ??."
+      },
+      {
+        "id": "o-2",
+        "label": "?? ?? ?? ?? ???",
+        "summary": "?? ??? ?? ??? ??? ??? ??? ?? ?? ??? ?? ???? ??? ????.",
+        "nodeType": "derived_note",
+        "noteText": "?? ??? ?????, ??? ??? ?? ??? ??? ???.",
+        "effects": [
+          {
+            "kind": "unlock_note",
+            "unlockNodeId": "n-7"
+          },
+          {
+            "kind": "upgrade_evidence",
+            "evidenceUpgrade": {
+              "evidenceId": "e-2",
+              "toReliability": "hard"
+            }
+          }
+        ]
+      },
+      {
+        "id": "o-3",
+        "label": "?? ??? ?? ???? ??",
+        "summary": "?? ?? ??? ?? ?? ??? ????. ??? ?? ??? ?? ?? ?? ?? ??? ?? ??.",
+        "nodeType": "derived_note",
+        "noteText": "??? ??? ?? ??? ??? ?? ?? ??? ?? ?? ???.",
+        "effects": [
+          {
+            "kind": "unlock_note",
+            "unlockNodeId": "n-9"
+          },
+          {
+            "kind": "upgrade_dispute",
+            "disputeUpgrade": {
+              "disputeId": "d-4",
+              "weight": "high",
+              "ambiguity": "low",
+              "legitimacyIssue": true
+            }
+          }
+        ]
+      },
+      {
+        "id": "o-4",
+        "label": "??? ?? ?? ???",
+        "summary": "?? ?? ??? ??? ??? ??? ???? ??? ??? ????.",
+        "nodeType": "question",
+        "questionPrompts": [
+          {
+            "id": "q-public-interest-advanced",
+            "text": "?? ?????? ? ?? ??? ??? ????, ?? ??? ?? ???? ???????",
+            "tier": "advanced"
+          }
+        ],
+        "effects": [
+          {
+            "kind": "unlock_question",
+            "unlockNodeId": "q-public-interest-advanced"
+          },
+          {
+            "kind": "upgrade_question",
+            "targetId": "q-public-interest-advanced",
+            "questionUpgrade": {
+              "questionId": "q-public-interest-advanced",
+              "tier": "advanced"
+            }
+          }
+        ]
+      },
+      {
+        "id": "o-5",
+        "label": "??? ??? ?? ? ?? ??",
+        "summary": "?? ?? ??? ???? ?? ???? ???. ?? ??? ?????? ?? ??? ???? ??? ????.",
+        "nodeType": "statement",
+        "statementEntries": [
+          {
+            "id": "s-1",
+            "text": "??? ??? ?? ???, ?? ???? ?? ??? ?????.",
+            "targetParty": "a"
+          }
+        ],
+        "effects": [
+          {
+            "kind": "unlock_statement",
+            "unlockNodeId": "s-1"
+          }
+        ]
+      },
+      {
+        "id": "o-6",
+        "label": "?? ?? ??",
+        "summary": "?? ??? ????? ??? ?? ??? ??? ??? ??? ???? ???? ??.",
+        "nodeType": "derived_note",
+        "noteText": "??? ?? ??? ??? ?? ??? ? ??.",
+        "effects": [
+          {
+            "kind": "unlock_note",
+            "unlockNodeId": "n-10"
+          },
+          {
+            "kind": "reframe_evidence",
+            "targetId": "e-1"
+          }
+        ]
+      },
+      {
+        "id": "o-7",
+        "label": "??? ?? ?? ?? ??",
+        "summary": "?? ?? ??? ????, ?? ??? ?????? ?? ?? ??? ???.",
+        "nodeType": "witness_angle",
+        "witnessAngles": [
+          {
+            "id": "wa-1",
+            "text": "?? ?? ??? ????, ?? ??? ?????"
+          }
+        ],
+        "effects": [
+          {
+            "kind": "unlock_witness_angle",
+            "unlockNodeId": "wa-1"
+          }
+        ]
+      },
+      {
+        "id": "o-8",
+        "label": "??? ?? ?? ?? ???",
+        "summary": "??? ?? ?????? ??? ?? ?? ??? ?? ????.",
+        "nodeType": "question",
+        "questionPrompts": [
+          {
+            "id": "q-spread-advanced",
+            "text": "??? ??? ? ????, ? ?? ??? ???? ??? ?? ?? ??? ?????",
+            "tier": "advanced"
+          }
+        ],
+        "effects": [
+          {
+            "kind": "unlock_question",
+            "unlockNodeId": "q-spread-advanced"
+          },
+          {
+            "kind": "upgrade_question",
+            "targetId": "q-spread-advanced",
+            "questionUpgrade": {
+              "questionId": "q-spread-advanced",
+              "tier": "advanced"
+            }
+          }
+        ]
+      },
+      {
+        "id": "o-9",
+        "label": "??? vs ??? ?? ??",
+        "summary": "? ??? ??? ???? ?? ???. ?? ??? ???? ?? ??? ??? ??? ???? ??.",
+        "nodeType": "dispute",
+        "disputeNodes": [
+          {
+            "id": "d-1a",
+            "name": "??? ??? ???",
+            "truth": true,
+            "truthDescription": "?? ?? ??? ???? ?? ?????, ??? ??? ???? ?? ??.",
+            "quadrant": "shared_misconception",
+            "requiredEvidence": [
+              "e-1",
+              "e-4"
+            ],
+            "correctResponsibility": {
+              "a": 60,
+              "b": 40
+            },
+            "ambiguity": "high",
+            "weight": "high",
+            "mediationLink": "public_interest_scope",
+            "legitimacyIssue": false
+          },
+          {
+            "id": "d-1b",
+            "name": "?? ??? ??",
+            "truth": true,
+            "truthDescription": "?? ??? ????? ?? ??? ??? ??? ????.",
+            "quadrant": "both_know",
+            "requiredEvidence": [
+              "e-1"
+            ],
+            "correctResponsibility": {
+              "a": 80,
+              "b": 20
+            },
+            "ambiguity": "low",
+            "weight": "high",
+            "mediationLink": "editing_scope",
+            "legitimacyIssue": false
+          }
+        ],
+        "effects": [
+          {
+            "kind": "split_dispute",
+            "splitFromId": "d-1",
+            "splitIntoIds": [
+              "d-1a",
+              "d-1b"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "o-10",
+        "label": "?? ?? ?? ??",
+        "summary": "??? ??? ??, ?? ?? ??? ??? ??. ?? ??? ? ???? ??? ?? ?? ??? ???.",
+        "nodeType": "derived_note",
+        "noteText": "??? ??? ?? ???? ?? ??? ??? ??.",
+        "effects": [
+          {
+            "kind": "unlock_note",
+            "unlockNodeId": "n-12"
+          },
+          {
+            "kind": "reframe_dispute",
+            "targetId": "d-3",
+            "reframeFromId": "d-3",
+            "reframeToId": "d-4"
+          }
+        ]
+      },
+      {
+        "id": "o-11",
+        "label": "?? ?? ?? ???",
+        "summary": "??? ????? ?? ??? ??? ?? ??? ???. ??? ??? ??? ??? ??? ??? ???.",
+        "nodeType": "derived_note",
+        "noteText": "?? ???? ?? ???? ????? ??? ??.",
+        "effects": [
+          {
+            "kind": "unlock_note",
+            "unlockNodeId": "n-11"
+          },
+          {
+            "kind": "upgrade_dispute",
+            "disputeUpgrade": {
+              "disputeId": "d-2",
+              "ambiguity": "low",
+              "weight": "high",
+              "legitimacyIssue": false
+            }
+          }
+        ]
+      },
+      {
+        "id": "o-12",
+        "label": "??? ??? ?? ??? ???",
+        "summary": "?? ?? ? ??, ?? ? ?? ??, ?? ? ?? ??? ???? ????. ??? ??? ?? ??? ??? ??? ???.",
+        "nodeType": "dispute",
+        "disputeNodes": [
+          {
+            "id": "d-meta-1",
+            "name": "??? ??? ?? ??? ???",
+            "truth": true,
+            "truthDescription": "??? ??? ?? ??? ??? ??? ??? ?? ??? ??? ????? ???.",
+            "quadrant": "neither_knows",
+            "requiredEvidence": [
+              "e-4",
+              "e-5",
+              "e-6"
+            ],
+            "correctResponsibility": {
+              "a": 55,
+              "b": 45
+            },
+            "ambiguity": "high",
+            "weight": "high",
+            "mediationLink": "retaliatory_cycle",
+            "legitimacyIssue": true
+          }
+        ],
+        "effects": [
+          {
+            "kind": "merge_disputes",
+            "mergeFromIds": [
+              "d-3",
+              "d-4"
+            ],
+            "mergeToId": "d-meta-1"
+          }
+        ],
+        "judgeHint": "?? ??? ??? ???? ??? ??? ?? ??? ????."
+      }
+    ],
+    "recipes": [
+      {
+        "id": "r-1",
+        "inputs": [
+          "e-1",
+          "e-4"
+        ],
+        "cost": 2,
+        "discoveryText": "?? ????? ??? ??? ??? ??? ???.",
+        "outputId": "o-1"
+      },
+      {
+        "id": "r-2",
+        "inputs": [
+          "e-2",
+          "e-3"
+        ],
+        "cost": 1,
+        "discoveryText": "?? ??? ?? ??? ??? ??? ??? ?? ?? ??? ???.",
+        "outputId": "o-2"
+      },
+      {
+        "id": "r-3",
+        "inputs": [
+          "e-5",
+          "e-6"
+        ],
+        "cost": 1,
+        "discoveryText": "?? ??? ?? ??? ??? ?? ??? ????.",
+        "outputId": "o-3"
+      },
+      {
+        "id": "r-4",
+        "inputs": [
+          "n-1",
+          "e-4"
+        ],
+        "cost": 2,
+        "discoveryText": "?? ?? ??? ??? ??? ????.",
+        "outputId": "o-4"
+      },
+      {
+        "id": "r-5",
+        "inputs": [
+          "n-2",
+          "e-4"
+        ],
+        "cost": 2,
+        "discoveryText": "?? ?? ?? ??? DM ??? ???? ???.",
+        "outputId": "o-5"
+      },
+      {
+        "id": "r-6",
+        "inputs": [
+          "n-4",
+          "e-1"
+        ],
+        "cost": 2,
+        "discoveryText": "?? ??? ???? ?? ??? ??? ???.",
+        "outputId": "o-6"
+      },
+      {
+        "id": "r-7",
+        "inputs": [
+          "n-5",
+          "e-5"
+        ],
+        "cost": 1,
+        "discoveryText": "??? ??? ?? ?? ????? ?? ?? ??? ???.",
+        "outputId": "o-7"
+      },
+      {
+        "id": "r-8",
+        "inputs": [
+          "n-6",
+          "e-6"
+        ],
+        "cost": 2,
+        "discoveryText": "?? ??? ??? ?? ??? ??? ????.",
+        "outputId": "o-8"
+      },
+      {
+        "id": "r-9",
+        "inputs": [
+          "e-1",
+          "e-6"
+        ],
+        "cost": 2,
+        "discoveryText": "???? ???? ??? ???? ?? ???.",
+        "outputId": "o-9"
+      },
+      {
+        "id": "r-10",
+        "inputs": [
+          "e-4",
+          "n-3"
+        ],
+        "cost": 2,
+        "discoveryText": "??? ??? ??? ??? ??? ??? ???? ???.",
+        "outputId": "o-10"
+      },
+      {
+        "id": "r-11",
+        "inputs": [
+          "n-7",
+          "n-4"
+        ],
+        "cost": 2,
+        "discoveryText": "?? ?? ??? ?? ??? ?? ?? ??? ?????.",
+        "outputId": "o-11"
+      },
+      {
+        "id": "r-12",
+        "inputs": [
+          "n-8",
+          "n-9",
+          "n-6"
+        ],
+        "cost": 3,
+        "hidden": true,
+        "discoveryText": "??? ??? ?? ??? ??? ????? ???? ???.",
+        "outputId": "o-12",
+        "failHint": "???? ?? ??? ????? ?? ????."
+      }
+    ]
+  }
+}

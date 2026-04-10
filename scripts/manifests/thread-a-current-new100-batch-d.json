@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-04-08T23:55:16.305Z",
+  "cases": [
+    "spouse-new-06",
+    "spouse-new-07",
+    "spouse-new-08",
+    "spouse-new-09",
+    "spouse-new-10",
+    "tenant-new-01",
+    "tenant-new-02",
+    "tenant-new-03",
+    "tenant-new-04",
+    "tenant-new-05",
+    "tenant-new-06",
+    "tenant-new-07",
+    "tenant-new-08",
+    "tenant-new-09",
+    "tenant-new-10",
+    "workplace-new-01",
+    "workplace-new-02",
+    "workplace-new-03",
+    "workplace-new-04",
+    "workplace-new-05",
+    "workplace-new-06",
+    "workplace-new-07",
+    "workplace-new-08",
+    "workplace-new-09",
+    "workplace-new-10"
+  ]
+}

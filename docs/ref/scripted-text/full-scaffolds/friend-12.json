@@ -1,0 +1,3051 @@
+{
+  "schemaVersion": 1,
+  "caseId": "friend-12",
+  "generatedAt": "2026-04-07T11:48:29.076Z",
+  "notes": [
+    "Scaffold only.",
+    "interrogation, evidence_present, dossier entries are key-complete but text-empty.",
+    "witness, aftermath, system_message were copied from deterministic drafts."
+  ],
+  "coverage": {
+    "interrogation": {
+      "parties": [
+        "a",
+        "b"
+      ],
+      "disputes": [
+        "d-1",
+        "d-2",
+        "d-3",
+        "d-4",
+        "d-5"
+      ],
+      "lieStates": [
+        "S0",
+        "S1",
+        "S2",
+        "S3",
+        "S4",
+        "S5"
+      ],
+      "questionTypes": [
+        "fact_pursuit",
+        "motive_search",
+        "empathy_approach"
+      ],
+      "variantsPerKey": 5
+    },
+    "evidence_present": {
+      "parties": [
+        "a",
+        "b"
+      ],
+      "evidenceIds": [
+        "e-1",
+        "e-2",
+        "e-3",
+        "e-4",
+        "e-5",
+        "e-6"
+      ],
+      "lieBands": [
+        "early",
+        "mid",
+        "late"
+      ],
+      "variantsPerKey": 5
+    },
+    "dossier": {
+      "parties": [
+        "a",
+        "b"
+      ],
+      "questionIds": [
+        "dossier-1.a.q1",
+        "dossier-1.a.q2",
+        "dossier-1.a.q3",
+        "dossier-1.b.q1",
+        "dossier-1.b.q2",
+        "dossier-1.b.q3",
+        "dossier-2.a.q1",
+        "dossier-2.a.q2",
+        "dossier-2.a.q3",
+        "dossier-2.b.q1",
+        "dossier-2.b.q2",
+        "dossier-2.b.q3",
+        "dossier-3.a.q1",
+        "dossier-3.a.q2",
+        "dossier-3.a.q3",
+        "dossier-3.b.q1",
+        "dossier-3.b.q2",
+        "dossier-3.b.q3"
+      ],
+      "lieBands": [
+        "early",
+        "mid",
+        "late"
+      ],
+      "variantsPerKey": 3
+    },
+    "witness": {
+      "witnessIds": [
+        "tp-1",
+        "tp-2",
+        "tp-3"
+      ],
+      "depths": [
+        "vague",
+        "partial",
+        "full"
+      ],
+      "variantsPerKey": 3
+    },
+    "aftermath": {
+      "resultClasses": [
+        "a_primary_fault",
+        "b_primary_fault",
+        "shared_fault",
+        "trust_rebuild",
+        "procedural_caution"
+      ],
+      "variantsPerKey": 2
+    },
+    "system_message": {
+      "keys": [
+        {
+          "context": "interrogation",
+          "eventType": "repeat_warning"
+        },
+        {
+          "context": "evidence",
+          "eventType": "new_unlock"
+        },
+        {
+          "context": "evidence",
+          "eventType": "trap_notice"
+        },
+        {
+          "context": "dossier",
+          "eventType": "challenge_cleared"
+        },
+        {
+          "context": "witness",
+          "eventType": "credibility_shift"
+        },
+        {
+          "context": "verdict",
+          "eventType": "profile_update"
+        }
+      ],
+      "variantsPerKey": 2
+    }
+  },
+  "channels": {
+    "interrogation": {
+      "entries": [
+        {
+          "key": "a|d-1|S0|fact_pursuit",
+          "party": "a",
+          "disputeId": "d-1",
+          "lieState": "S0",
+          "questionType": "fact_pursuit",
+          "variants": []
+        },
+        {
+          "key": "a|d-1|S0|motive_search",
+          "party": "a",
+          "disputeId": "d-1",
+          "lieState": "S0",
+          "questionType": "motive_search",
+          "variants": []
+        },
+        {
+          "key": "a|d-1|S0|empathy_approach",
+          "party": "a",
+          "disputeId": "d-1",
+          "lieState": "S0",
+          "questionType": "empathy_approach",
+          "variants": []
+        },
+        {
+          "key": "a|d-1|S1|fact_pursuit",
+          "party": "a",
+          "disputeId": "d-1",
+          "lieState": "S1",
+          "questionType": "fact_pursuit",
+          "variants": []
+        },
+        {
+          "key": "a|d-1|S1|motive_search",
+          "party": "a",
+          "disputeId": "d-1",
+          "lieState": "S1",
+          "questionType": "motive_search",
+          "variants": []
+        },
+        {
+          "key": "a|d-1|S1|empathy_approach",
+          "party": "a",
+          "disputeId": "d-1",
+          "lieState": "S1",
+          "questionType": "empathy_approach",
+          "variants": []
+        },
+        {
+          "key": "a|d-1|S2|fact_pursuit",
+          "party": "a",
+          "disputeId": "d-1",
+          "lieState": "S2",
+          "questionType": "fact_pursuit",
+          "variants": []
+        },
+        {
+          "key": "a|d-1|S2|motive_search",
+          "party": "a",
+          "disputeId": "d-1",
+          "lieState": "S2",
+          "questionType": "motive_search",
+          "variants": []
+        },
+        {
+          "key": "a|d-1|S2|empathy_approach",
+          "party": "a",
+          "disputeId": "d-1",
+          "lieState": "S2",
+          "questionType": "empathy_approach",
+          "variants": []
+        },
+        {
+          "key": "a|d-1|S3|fact_pursuit",
+          "party": "a",
+          "disputeId": "d-1",
+          "lieState": "S3",
+          "questionType": "fact_pursuit",
+          "variants": []
+        },
+        {
+          "key": "a|d-1|S3|motive_search",
+          "party": "a",
+          "disputeId": "d-1",
+          "lieState": "S3",
+          "questionType": "motive_search",
+          "variants": []
+        },
+        {
+          "key": "a|d-1|S3|empathy_approach",
+          "party": "a",
+          "disputeId": "d-1",
+          "lieState": "S3",
+          "questionType": "empathy_approach",
+          "variants": []
+        },
+        {
+          "key": "a|d-1|S4|fact_pursuit",
+          "party": "a",
+          "disputeId": "d-1",
+          "lieState": "S4",
+          "questionType": "fact_pursuit",
+          "variants": []
+        },
+        {
+          "key": "a|d-1|S4|motive_search",
+          "party": "a",
+          "disputeId": "d-1",
+          "lieState": "S4",
+          "questionType": "motive_search",
+          "variants": []
+        },
+        {
+          "key": "a|d-1|S4|empathy_approach",
+          "party": "a",
+          "disputeId": "d-1",
+          "lieState": "S4",
+          "questionType": "empathy_approach",
+          "variants": []
+        },
+        {
+          "key": "a|d-1|S5|fact_pursuit",
+          "party": "a",
+          "disputeId": "d-1",
+          "lieState": "S5",
+          "questionType": "fact_pursuit",
+          "variants": []
+        },
+        {
+          "key": "a|d-1|S5|motive_search",
+          "party": "a",
+          "disputeId": "d-1",
+          "lieState": "S5",
+          "questionType": "motive_search",
+          "variants": []
+        },
+        {
+          "key": "a|d-1|S5|empathy_approach",
+          "party": "a",
+          "disputeId": "d-1",
+          "lieState": "S5",
+          "questionType": "empathy_approach",
+          "variants": []
+        },
+        {
+          "key": "a|d-2|S0|fact_pursuit",
+          "party": "a",
+          "disputeId": "d-2",
+          "lieState": "S0",
+          "questionType": "fact_pursuit",
+          "variants": []
+        },
+        {
+          "key": "a|d-2|S0|motive_search",
+          "party": "a",
+          "disputeId": "d-2",
+          "lieState": "S0",
+          "questionType": "motive_search",
+          "variants": []
+        },
+        {
+          "key": "a|d-2|S0|empathy_approach",
+          "party": "a",
+          "disputeId": "d-2",
+          "lieState": "S0",
+          "questionType": "empathy_approach",
+          "variants": []
+        },
+        {
+          "key": "a|d-2|S1|fact_pursuit",
+          "party": "a",
+          "disputeId": "d-2",
+          "lieState": "S1",
+          "questionType": "fact_pursuit",
+          "variants": []
+        },
+        {
+          "key": "a|d-2|S1|motive_search",
+          "party": "a",
+          "disputeId": "d-2",
+          "lieState": "S1",
+          "questionType": "motive_search",
+          "variants": []
+        },
+        {
+          "key": "a|d-2|S1|empathy_approach",
+          "party": "a",
+          "disputeId": "d-2",
+          "lieState": "S1",
+          "questionType": "empathy_approach",
+          "variants": []
+        },
+        {
+          "key": "a|d-2|S2|fact_pursuit",
+          "party": "a",
+          "disputeId": "d-2",
+          "lieState": "S2",
+          "questionType": "fact_pursuit",
+          "variants": []
+        },
+        {
+          "key": "a|d-2|S2|motive_search",
+          "party": "a",
+          "disputeId": "d-2",
+          "lieState": "S2",
+          "questionType": "motive_search",
+          "variants": []
+        },
+        {
+          "key": "a|d-2|S2|empathy_approach",
+          "party": "a",
+          "disputeId": "d-2",
+          "lieState": "S2",
+          "questionType": "empathy_approach",
+          "variants": []
+        },
+        {
+          "key": "a|d-2|S3|fact_pursuit",
+          "party": "a",
+          "disputeId": "d-2",
+          "lieState": "S3",
+          "questionType": "fact_pursuit",
+          "variants": []
+        },
+        {
+          "key": "a|d-2|S3|motive_search",
+          "party": "a",
+          "disputeId": "d-2",
+          "lieState": "S3",
+          "questionType": "motive_search",
+          "variants": []
+        },
+        {
+          "key": "a|d-2|S3|empathy_approach",
+          "party": "a",
+          "disputeId": "d-2",
+          "lieState": "S3",
+          "questionType": "empathy_approach",
+          "variants": []
+        },
+        {
+          "key": "a|d-2|S4|fact_pursuit",
+          "party": "a",
+          "disputeId": "d-2",
+          "lieState": "S4",
+          "questionType": "fact_pursuit",
+          "variants": []
+        },
+        {
+          "key": "a|d-2|S4|motive_search",
+          "party": "a",
+          "disputeId": "d-2",
+          "lieState": "S4",
+          "questionType": "motive_search",
+          "variants": []
+        },
+        {
+          "key": "a|d-2|S4|empathy_approach",
+          "party": "a",
+          "disputeId": "d-2",
+          "lieState": "S4",
+          "questionType": "empathy_approach",
+          "variants": []
+        },
+        {
+          "key": "a|d-2|S5|fact_pursuit",
+          "party": "a",
+          "disputeId": "d-2",
+          "lieState": "S5",
+          "questionType": "fact_pursuit",
+          "variants": []
+        },
+        {
+          "key": "a|d-2|S5|motive_search",
+          "party": "a",
+          "disputeId": "d-2",
+          "lieState": "S5",
+          "questionType": "motive_search",
+          "variants": []
+        },
+        {
+          "key": "a|d-2|S5|empathy_approach",
+          "party": "a",
+          "disputeId": "d-2",
+          "lieState": "S5",
+          "questionType": "empathy_approach",
+          "variants": []
+        },
+        {
+          "key": "a|d-3|S0|fact_pursuit",
+          "party": "a",
+          "disputeId": "d-3",
+          "lieState": "S0",
+          "questionType": "fact_pursuit",
+          "variants": []
+        },
+        {
+          "key": "a|d-3|S0|motive_search",
+          "party": "a",
+          "disputeId": "d-3",
+          "lieState": "S0",
+          "questionType": "motive_search",
+          "variants": []
+        },
+        {
+          "key": "a|d-3|S0|empathy_approach",
+          "party": "a",
+          "disputeId": "d-3",
+          "lieState": "S0",
+          "questionType": "empathy_approach",
+          "variants": []
+        },
+        {
+          "key": "a|d-3|S1|fact_pursuit",
+          "party": "a",
+          "disputeId": "d-3",
+          "lieState": "S1",
+          "questionType": "fact_pursuit",
+          "variants": []
+        },
+        {
+          "key": "a|d-3|S1|motive_search",
+          "party": "a",
+          "disputeId": "d-3",
+          "lieState": "S1",
+          "questionType": "motive_search",
+          "variants": []
+        },
+        {
+          "key": "a|d-3|S1|empathy_approach",
+          "party": "a",
+          "disputeId": "d-3",
+          "lieState": "S1",
+          "questionType": "empathy_approach",
+          "variants": []
+        },
+        {
+          "key": "a|d-3|S2|fact_pursuit",
+          "party": "a",
+          "disputeId": "d-3",
+          "lieState": "S2",
+          "questionType": "fact_pursuit",
+          "variants": []
+        },
+        {
+          "key": "a|d-3|S2|motive_search",
+          "party": "a",
+          "disputeId": "d-3",
+          "lieState": "S2",
+          "questionType": "motive_search",
+          "variants": []
+        },
+        {
+          "key": "a|d-3|S2|empathy_approach",
+          "party": "a",
+          "disputeId": "d-3",
+          "lieState": "S2",
+          "questionType": "empathy_approach",
+          "variants": []
+        },
+        {
+          "key": "a|d-3|S3|fact_pursuit",
+          "party": "a",
+          "disputeId": "d-3",
+          "lieState": "S3",
+          "questionType": "fact_pursuit",
+          "variants": []
+        },
+        {
+          "key": "a|d-3|S3|motive_search",
+          "party": "a",
+          "disputeId": "d-3",
+          "lieState": "S3",
+          "questionType": "motive_search",
+          "variants": []
+        },
+        {
+          "key": "a|d-3|S3|empathy_approach",
+          "party": "a",
+          "disputeId": "d-3",
+          "lieState": "S3",
+          "questionType": "empathy_approach",
+          "variants": []
+        },
+        {
+          "key": "a|d-3|S4|fact_pursuit",
+          "party": "a",
+          "disputeId": "d-3",
+          "lieState": "S4",
+          "questionType": "fact_pursuit",
+          "variants": []
+        },
+        {
+          "key": "a|d-3|S4|motive_search",
+          "party": "a",
+          "disputeId": "d-3",
+          "lieState": "S4",
+          "questionType": "motive_search",
+          "variants": []
+        },
+        {
+          "key": "a|d-3|S4|empathy_approach",
+          "party": "a",
+          "disputeId": "d-3",
+          "lieState": "S4",
+          "questionType": "empathy_approach",
+          "variants": []
+        },
+        {
+          "key": "a|d-3|S5|fact_pursuit",
+          "party": "a",
+          "disputeId": "d-3",
+          "lieState": "S5",
+          "questionType": "fact_pursuit",
+          "variants": []
+        },
+        {
+          "key": "a|d-3|S5|motive_search",
+          "party": "a",
+          "disputeId": "d-3",
+          "lieState": "S5",
+          "questionType": "motive_search",
+          "variants": []
+        },
+        {
+          "key": "a|d-3|S5|empathy_approach",
+          "party": "a",
+          "disputeId": "d-3",
+          "lieState": "S5",
+          "questionType": "empathy_approach",
+          "variants": []
+        },
+        {
+          "key": "a|d-4|S0|fact_pursuit",
+          "party": "a",
+          "disputeId": "d-4",
+          "lieState": "S0",
+          "questionType": "fact_pursuit",
+          "variants": []
+        },
+        {
+          "key": "a|d-4|S0|motive_search",
+          "party": "a",
+          "disputeId": "d-4",
+          "lieState": "S0",
+          "questionType": "motive_search",
+          "variants": []
+        },
+        {
+          "key": "a|d-4|S0|empathy_approach",
+          "party": "a",
+          "disputeId": "d-4",
+          "lieState": "S0",
+          "questionType": "empathy_approach",
+          "variants": []
+        },
+        {
+          "key": "a|d-4|S1|fact_pursuit",
+          "party": "a",
+          "disputeId": "d-4",
+          "lieState": "S1",
+          "questionType": "fact_pursuit",
+          "variants": []
+        },
+        {
+          "key": "a|d-4|S1|motive_search",
+          "party": "a",
+          "disputeId": "d-4",
+          "lieState": "S1",
+          "questionType": "motive_search",
+          "variants": []
+        },
+        {
+          "key": "a|d-4|S1|empathy_approach",
+          "party": "a",
+          "disputeId": "d-4",
+          "lieState": "S1",
+          "questionType": "empathy_approach",
+          "variants": []
+        },
+        {
+          "key": "a|d-4|S2|fact_pursuit",
+          "party": "a",
+          "disputeId": "d-4",
+          "lieState": "S2",
+          "questionType": "fact_pursuit",
+          "variants": []
+        },
+        {
+          "key": "a|d-4|S2|motive_search",
+          "party": "a",
+          "disputeId": "d-4",
+          "lieState": "S2",
+          "questionType": "motive_search",
+          "variants": []
+        },
+        {
+          "key": "a|d-4|S2|empathy_approach",
+          "party": "a",
+          "disputeId": "d-4",
+          "lieState": "S2",
+          "questionType": "empathy_approach",
+          "variants": []
+        },
+        {
+          "key": "a|d-4|S3|fact_pursuit",
+          "party": "a",
+          "disputeId": "d-4",
+          "lieState": "S3",
+          "questionType": "fact_pursuit",
+          "variants": []
+        },
+        {
+          "key": "a|d-4|S3|motive_search",
+          "party": "a",
+          "disputeId": "d-4",
+          "lieState": "S3",
+          "questionType": "motive_search",
+          "variants": []
+        },
+        {
+          "key": "a|d-4|S3|empathy_approach",
+          "party": "a",
+          "disputeId": "d-4",
+          "lieState": "S3",
+          "questionType": "empathy_approach",
+          "variants": []
+        },
+        {
+          "key": "a|d-4|S4|fact_pursuit",
+          "party": "a",
+          "disputeId": "d-4",
+          "lieState": "S4",
+          "questionType": "fact_pursuit",
+          "variants": []
+        },
+        {
+          "key": "a|d-4|S4|motive_search",
+          "party": "a",
+          "disputeId": "d-4",
+          "lieState": "S4",
+          "questionType": "motive_search",
+          "variants": []
+        },
+        {
+          "key": "a|d-4|S4|empathy_approach",
+          "party": "a",
+          "disputeId": "d-4",
+          "lieState": "S4",
+          "questionType": "empathy_approach",
+          "variants": []
+        },
+        {
+          "key": "a|d-4|S5|fact_pursuit",
+          "party": "a",
+          "disputeId": "d-4",
+          "lieState": "S5",
+          "questionType": "fact_pursuit",
+          "variants": []
+        },
+        {
+          "key": "a|d-4|S5|motive_search",
+          "party": "a",
+          "disputeId": "d-4",
+          "lieState": "S5",
+          "questionType": "motive_search",
+          "variants": []
+        },
+        {
+          "key": "a|d-4|S5|empathy_approach",
+          "party": "a",
+          "disputeId": "d-4",
+          "lieState": "S5",
+          "questionType": "empathy_approach",
+          "variants": []
+        },
+        {
+          "key": "a|d-5|S0|fact_pursuit",
+          "party": "a",
+          "disputeId": "d-5",
+          "lieState": "S0",
+          "questionType": "fact_pursuit",
+          "variants": []
+        },
+        {
+          "key": "a|d-5|S0|motive_search",
+          "party": "a",
+          "disputeId": "d-5",
+          "lieState": "S0",
+          "questionType": "motive_search",
+          "variants": []
+        },
+        {
+          "key": "a|d-5|S0|empathy_approach",
+          "party": "a",
+          "disputeId": "d-5",
+          "lieState": "S0",
+          "questionType": "empathy_approach",
+          "variants": []
+        },
+        {
+          "key": "a|d-5|S1|fact_pursuit",
+          "party": "a",
+          "disputeId": "d-5",
+          "lieState": "S1",
+          "questionType": "fact_pursuit",
+          "variants": []
+        },
+        {
+          "key": "a|d-5|S1|motive_search",
+          "party": "a",
+          "disputeId": "d-5",
+          "lieState": "S1",
+          "questionType": "motive_search",
+          "variants": []
+        },
+        {
+          "key": "a|d-5|S1|empathy_approach",
+          "party": "a",
+          "disputeId": "d-5",
+          "lieState": "S1",
+          "questionType": "empathy_approach",
+          "variants": []
+        },
+        {
+          "key": "a|d-5|S2|fact_pursuit",
+          "party": "a",
+          "disputeId": "d-5",
+          "lieState": "S2",
+          "questionType": "fact_pursuit",
+          "variants": []
+        },
+        {
+          "key": "a|d-5|S2|motive_search",
+          "party": "a",
+          "disputeId": "d-5",
+          "lieState": "S2",
+          "questionType": "motive_search",
+          "variants": []
+        },
+        {
+          "key": "a|d-5|S2|empathy_approach",
+          "party": "a",
+          "disputeId": "d-5",
+          "lieState": "S2",
+          "questionType": "empathy_approach",
+          "variants": []
+        },
+        {
+          "key": "a|d-5|S3|fact_pursuit",
+          "party": "a",
+          "disputeId": "d-5",
+          "lieState": "S3",
+          "questionType": "fact_pursuit",
+          "variants": []
+        },
+        {
+          "key": "a|d-5|S3|motive_search",
+          "party": "a",
+          "disputeId": "d-5",
+          "lieState": "S3",
+          "questionType": "motive_search",
+          "variants": []
+        },
+        {
+          "key": "a|d-5|S3|empathy_approach",
+          "party": "a",
+          "disputeId": "d-5",
+          "lieState": "S3",
+          "questionType": "empathy_approach",
+          "variants": []
+        },
+        {
+          "key": "a|d-5|S4|fact_pursuit",
+          "party": "a",
+          "disputeId": "d-5",
+          "lieState": "S4",
+          "questionType": "fact_pursuit",
+          "variants": []
+        },
+        {
+          "key": "a|d-5|S4|motive_search",
+          "party": "a",
+          "disputeId": "d-5",
+          "lieState": "S4",
+          "questionType": "motive_search",
+          "variants": []
+        },
+        {
+          "key": "a|d-5|S4|empathy_approach",
+          "party": "a",
+          "disputeId": "d-5",
+          "lieState": "S4",
+          "questionType": "empathy_approach",
+          "variants": []
+        },
+        {
+          "key": "a|d-5|S5|fact_pursuit",
+          "party": "a",
+          "disputeId": "d-5",
+          "lieState": "S5",
+          "questionType": "fact_pursuit",
+          "variants": []
+        },
+        {
+          "key": "a|d-5|S5|motive_search",
+          "party": "a",
+          "disputeId": "d-5",
+          "lieState": "S5",
+          "questionType": "motive_search",
+          "variants": []
+        },
+        {
+          "key": "a|d-5|S5|empathy_approach",
+          "party": "a",
+          "disputeId": "d-5",
+          "lieState": "S5",
+          "questionType": "empathy_approach",
+          "variants": []
+        },
+        {
+          "key": "b|d-1|S0|fact_pursuit",
+          "party": "b",
+          "disputeId": "d-1",
+          "lieState": "S0",
+          "questionType": "fact_pursuit",
+          "variants": []
+        },
+        {
+          "key": "b|d-1|S0|motive_search",
+          "party": "b",
+          "disputeId": "d-1",
+          "lieState": "S0",
+          "questionType": "motive_search",
+          "variants": []
+        },
+        {
+          "key": "b|d-1|S0|empathy_approach",
+          "party": "b",
+          "disputeId": "d-1",
+          "lieState": "S0",
+          "questionType": "empathy_approach",
+          "variants": []
+        },
+        {
+          "key": "b|d-1|S1|fact_pursuit",
+          "party": "b",
+          "disputeId": "d-1",
+          "lieState": "S1",
+          "questionType": "fact_pursuit",
+          "variants": []
+        },
+        {
+          "key": "b|d-1|S1|motive_search",
+          "party": "b",
+          "disputeId": "d-1",
+          "lieState": "S1",
+          "questionType": "motive_search",
+          "variants": []
+        },
+        {
+          "key": "b|d-1|S1|empathy_approach",
+          "party": "b",
+          "disputeId": "d-1",
+          "lieState": "S1",
+          "questionType": "empathy_approach",
+          "variants": []
+        },
+        {
+          "key": "b|d-1|S2|fact_pursuit",
+          "party": "b",
+          "disputeId": "d-1",
+          "lieState": "S2",
+          "questionType": "fact_pursuit",
+          "variants": []
+        },
+        {
+          "key": "b|d-1|S2|motive_search",
+          "party": "b",
+          "disputeId": "d-1",
+          "lieState": "S2",
+          "questionType": "motive_search",
+          "variants": []
+        },
+        {
+          "key": "b|d-1|S2|empathy_approach",
+          "party": "b",
+          "disputeId": "d-1",
+          "lieState": "S2",
+          "questionType": "empathy_approach",
+          "variants": []
+        },
+        {
+          "key": "b|d-1|S3|fact_pursuit",
+          "party": "b",
+          "disputeId": "d-1",
+          "lieState": "S3",
+          "questionType": "fact_pursuit",
+          "variants": []
+        },
+        {
+          "key": "b|d-1|S3|motive_search",
+          "party": "b",
+          "disputeId": "d-1",
+          "lieState": "S3",
+          "questionType": "motive_search",
+          "variants": []
+        },
+        {
+          "key": "b|d-1|S3|empathy_approach",
+          "party": "b",
+          "disputeId": "d-1",
+          "lieState": "S3",
+          "questionType": "empathy_approach",
+          "variants": []
+        },
+        {
+          "key": "b|d-1|S4|fact_pursuit",
+          "party": "b",
+          "disputeId": "d-1",
+          "lieState": "S4",
+          "questionType": "fact_pursuit",
+          "variants": []
+        },
+        {
+          "key": "b|d-1|S4|motive_search",
+          "party": "b",
+          "disputeId": "d-1",
+          "lieState": "S4",
+          "questionType": "motive_search",
+          "variants": []
+        },
+        {
+          "key": "b|d-1|S4|empathy_approach",
+          "party": "b",
+          "disputeId": "d-1",
+          "lieState": "S4",
+          "questionType": "empathy_approach",
+          "variants": []
+        },
+        {
+          "key": "b|d-1|S5|fact_pursuit",
+          "party": "b",
+          "disputeId": "d-1",
+          "lieState": "S5",
+          "questionType": "fact_pursuit",
+          "variants": []
+        },
+        {
+          "key": "b|d-1|S5|motive_search",
+          "party": "b",
+          "disputeId": "d-1",
+          "lieState": "S5",
+          "questionType": "motive_search",
+          "variants": []
+        },
+        {
+          "key": "b|d-1|S5|empathy_approach",
+          "party": "b",
+          "disputeId": "d-1",
+          "lieState": "S5",
+          "questionType": "empathy_approach",
+          "variants": []
+        },
+        {
+          "key": "b|d-2|S0|fact_pursuit",
+          "party": "b",
+          "disputeId": "d-2",
+          "lieState": "S0",
+          "questionType": "fact_pursuit",
+          "variants": []
+        },
+        {
+          "key": "b|d-2|S0|motive_search",
+          "party": "b",
+          "disputeId": "d-2",
+          "lieState": "S0",
+          "questionType": "motive_search",
+          "variants": []
+        },
+        {
+          "key": "b|d-2|S0|empathy_approach",
+          "party": "b",
+          "disputeId": "d-2",
+          "lieState": "S0",
+          "questionType": "empathy_approach",
+          "variants": []
+        },
+        {
+          "key": "b|d-2|S1|fact_pursuit",
+          "party": "b",
+          "disputeId": "d-2",
+          "lieState": "S1",
+          "questionType": "fact_pursuit",
+          "variants": []
+        },
+        {
+          "key": "b|d-2|S1|motive_search",
+          "party": "b",
+          "disputeId": "d-2",
+          "lieState": "S1",
+          "questionType": "motive_search",
+          "variants": []
+        },
+        {
+          "key": "b|d-2|S1|empathy_approach",
+          "party": "b",
+          "disputeId": "d-2",
+          "lieState": "S1",
+          "questionType": "empathy_approach",
+          "variants": []
+        },
+        {
+          "key": "b|d-2|S2|fact_pursuit",
+          "party": "b",
+          "disputeId": "d-2",
+          "lieState": "S2",
+          "questionType": "fact_pursuit",
+          "variants": []
+        },
+        {
+          "key": "b|d-2|S2|motive_search",
+          "party": "b",
+          "disputeId": "d-2",
+          "lieState": "S2",
+          "questionType": "motive_search",
+          "variants": []
+        },
+        {
+          "key": "b|d-2|S2|empathy_approach",
+          "party": "b",
+          "disputeId": "d-2",
+          "lieState": "S2",
+          "questionType": "empathy_approach",
+          "variants": []
+        },
+        {
+          "key": "b|d-2|S3|fact_pursuit",
+          "party": "b",
+          "disputeId": "d-2",
+          "lieState": "S3",
+          "questionType": "fact_pursuit",
+          "variants": []
+        },
+        {
+          "key": "b|d-2|S3|motive_search",
+          "party": "b",
+          "disputeId": "d-2",
+          "lieState": "S3",
+          "questionType": "motive_search",
+          "variants": []
+        },
+        {
+          "key": "b|d-2|S3|empathy_approach",
+          "party": "b",
+          "disputeId": "d-2",
+          "lieState": "S3",
+          "questionType": "empathy_approach",
+          "variants": []
+        },
+        {
+          "key": "b|d-2|S4|fact_pursuit",
+          "party": "b",
+          "disputeId": "d-2",
+          "lieState": "S4",
+          "questionType": "fact_pursuit",
+          "variants": []
+        },
+        {
+          "key": "b|d-2|S4|motive_search",
+          "party": "b",
+          "disputeId": "d-2",
+          "lieState": "S4",
+          "questionType": "motive_search",
+          "variants": []
+        },
+        {
+          "key": "b|d-2|S4|empathy_approach",
+          "party": "b",
+          "disputeId": "d-2",
+          "lieState": "S4",
+          "questionType": "empathy_approach",
+          "variants": []
+        },
+        {
+          "key": "b|d-2|S5|fact_pursuit",
+          "party": "b",
+          "disputeId": "d-2",
+          "lieState": "S5",
+          "questionType": "fact_pursuit",
+          "variants": []
+        },
+        {
+          "key": "b|d-2|S5|motive_search",
+          "party": "b",
+          "disputeId": "d-2",
+          "lieState": "S5",
+          "questionType": "motive_search",
+          "variants": []
+        },
+        {
+          "key": "b|d-2|S5|empathy_approach",
+          "party": "b",
+          "disputeId": "d-2",
+          "lieState": "S5",
+          "questionType": "empathy_approach",
+          "variants": []
+        },
+        {
+          "key": "b|d-3|S0|fact_pursuit",
+          "party": "b",
+          "disputeId": "d-3",
+          "lieState": "S0",
+          "questionType": "fact_pursuit",
+          "variants": []
+        },
+        {
+          "key": "b|d-3|S0|motive_search",
+          "party": "b",
+          "disputeId": "d-3",
+          "lieState": "S0",
+          "questionType": "motive_search",
+          "variants": []
+        },
+        {
+          "key": "b|d-3|S0|empathy_approach",
+          "party": "b",
+          "disputeId": "d-3",
+          "lieState": "S0",
+          "questionType": "empathy_approach",
+          "variants": []
+        },
+        {
+          "key": "b|d-3|S1|fact_pursuit",
+          "party": "b",
+          "disputeId": "d-3",
+          "lieState": "S1",
+          "questionType": "fact_pursuit",
+          "variants": []
+        },
+        {
+          "key": "b|d-3|S1|motive_search",
+          "party": "b",
+          "disputeId": "d-3",
+          "lieState": "S1",
+          "questionType": "motive_search",
+          "variants": []
+        },
+        {
+          "key": "b|d-3|S1|empathy_approach",
+          "party": "b",
+          "disputeId": "d-3",
+          "lieState": "S1",
+          "questionType": "empathy_approach",
+          "variants": []
+        },
+        {
+          "key": "b|d-3|S2|fact_pursuit",
+          "party": "b",
+          "disputeId": "d-3",
+          "lieState": "S2",
+          "questionType": "fact_pursuit",
+          "variants": []
+        },
+        {
+          "key": "b|d-3|S2|motive_search",
+          "party": "b",
+          "disputeId": "d-3",
+          "lieState": "S2",
+          "questionType": "motive_search",
+          "variants": []
+        },
+        {
+          "key": "b|d-3|S2|empathy_approach",
+          "party": "b",
+          "disputeId": "d-3",
+          "lieState": "S2",
+          "questionType": "empathy_approach",
+          "variants": []
+        },
+        {
+          "key": "b|d-3|S3|fact_pursuit",
+          "party": "b",
+          "disputeId": "d-3",
+          "lieState": "S3",
+          "questionType": "fact_pursuit",
+          "variants": []
+        },
+        {
+          "key": "b|d-3|S3|motive_search",
+          "party": "b",
+          "disputeId": "d-3",
+          "lieState": "S3",
+          "questionType": "motive_search",
+          "variants": []
+        },
+        {
+          "key": "b|d-3|S3|empathy_approach",
+          "party": "b",
+          "disputeId": "d-3",
+          "lieState": "S3",
+          "questionType": "empathy_approach",
+          "variants": []
+        },
+        {
+          "key": "b|d-3|S4|fact_pursuit",
+          "party": "b",
+          "disputeId": "d-3",
+          "lieState": "S4",
+          "questionType": "fact_pursuit",
+          "variants": []
+        },
+        {
+          "key": "b|d-3|S4|motive_search",
+          "party": "b",
+          "disputeId": "d-3",
+          "lieState": "S4",
+          "questionType": "motive_search",
+          "variants": []
+        },
+        {
+          "key": "b|d-3|S4|empathy_approach",
+          "party": "b",
+          "disputeId": "d-3",
+          "lieState": "S4",
+          "questionType": "empathy_approach",
+          "variants": []
+        },
+        {
+          "key": "b|d-3|S5|fact_pursuit",
+          "party": "b",
+          "disputeId": "d-3",
+          "lieState": "S5",
+          "questionType": "fact_pursuit",
+          "variants": []
+        },
+        {
+          "key": "b|d-3|S5|motive_search",
+          "party": "b",
+          "disputeId": "d-3",
+          "lieState": "S5",
+          "questionType": "motive_search",
+          "variants": []
+        },
+        {
+          "key": "b|d-3|S5|empathy_approach",
+          "party": "b",
+          "disputeId": "d-3",
+          "lieState": "S5",
+          "questionType": "empathy_approach",
+          "variants": []
+        },
+        {
+          "key": "b|d-4|S0|fact_pursuit",
+          "party": "b",
+          "disputeId": "d-4",
+          "lieState": "S0",
+          "questionType": "fact_pursuit",
+          "variants": []
+        },
+        {
+          "key": "b|d-4|S0|motive_search",
+          "party": "b",
+          "disputeId": "d-4",
+          "lieState": "S0",
+          "questionType": "motive_search",
+          "variants": []
+        },
+        {
+          "key": "b|d-4|S0|empathy_approach",
+          "party": "b",
+          "disputeId": "d-4",
+          "lieState": "S0",
+          "questionType": "empathy_approach",
+          "variants": []
+        },
+        {
+          "key": "b|d-4|S1|fact_pursuit",
+          "party": "b",
+          "disputeId": "d-4",
+          "lieState": "S1",
+          "questionType": "fact_pursuit",
+          "variants": []
+        },
+        {
+          "key": "b|d-4|S1|motive_search",
+          "party": "b",
+          "disputeId": "d-4",
+          "lieState": "S1",
+          "questionType": "motive_search",
+          "variants": []
+        },
+        {
+          "key": "b|d-4|S1|empathy_approach",
+          "party": "b",
+          "disputeId": "d-4",
+          "lieState": "S1",
+          "questionType": "empathy_approach",
+          "variants": []
+        },
+        {
+          "key": "b|d-4|S2|fact_pursuit",
+          "party": "b",
+          "disputeId": "d-4",
+          "lieState": "S2",
+          "questionType": "fact_pursuit",
+          "variants": []
+        },
+        {
+          "key": "b|d-4|S2|motive_search",
+          "party": "b",
+          "disputeId": "d-4",
+          "lieState": "S2",
+          "questionType": "motive_search",
+          "variants": []
+        },
+        {
+          "key": "b|d-4|S2|empathy_approach",
+          "party": "b",
+          "disputeId": "d-4",
+          "lieState": "S2",
+          "questionType": "empathy_approach",
+          "variants": []
+        },
+        {
+          "key": "b|d-4|S3|fact_pursuit",
+          "party": "b",
+          "disputeId": "d-4",
+          "lieState": "S3",
+          "questionType": "fact_pursuit",
+          "variants": []
+        },
+        {
+          "key": "b|d-4|S3|motive_search",
+          "party": "b",
+          "disputeId": "d-4",
+          "lieState": "S3",
+          "questionType": "motive_search",
+          "variants": []
+        },
+        {
+          "key": "b|d-4|S3|empathy_approach",
+          "party": "b",
+          "disputeId": "d-4",
+          "lieState": "S3",
+          "questionType": "empathy_approach",
+          "variants": []
+        },
+        {
+          "key": "b|d-4|S4|fact_pursuit",
+          "party": "b",
+          "disputeId": "d-4",
+          "lieState": "S4",
+          "questionType": "fact_pursuit",
+          "variants": []
+        },
+        {
+          "key": "b|d-4|S4|motive_search",
+          "party": "b",
+          "disputeId": "d-4",
+          "lieState": "S4",
+          "questionType": "motive_search",
+          "variants": []
+        },
+        {
+          "key": "b|d-4|S4|empathy_approach",
+          "party": "b",
+          "disputeId": "d-4",
+          "lieState": "S4",
+          "questionType": "empathy_approach",
+          "variants": []
+        },
+        {
+          "key": "b|d-4|S5|fact_pursuit",
+          "party": "b",
+          "disputeId": "d-4",
+          "lieState": "S5",
+          "questionType": "fact_pursuit",
+          "variants": []
+        },
+        {
+          "key": "b|d-4|S5|motive_search",
+          "party": "b",
+          "disputeId": "d-4",
+          "lieState": "S5",
+          "questionType": "motive_search",
+          "variants": []
+        },
+        {
+          "key": "b|d-4|S5|empathy_approach",
+          "party": "b",
+          "disputeId": "d-4",
+          "lieState": "S5",
+          "questionType": "empathy_approach",
+          "variants": []
+        },
+        {
+          "key": "b|d-5|S0|fact_pursuit",
+          "party": "b",
+          "disputeId": "d-5",
+          "lieState": "S0",
+          "questionType": "fact_pursuit",
+          "variants": []
+        },
+        {
+          "key": "b|d-5|S0|motive_search",
+          "party": "b",
+          "disputeId": "d-5",
+          "lieState": "S0",
+          "questionType": "motive_search",
+          "variants": []
+        },
+        {
+          "key": "b|d-5|S0|empathy_approach",
+          "party": "b",
+          "disputeId": "d-5",
+          "lieState": "S0",
+          "questionType": "empathy_approach",
+          "variants": []
+        },
+        {
+          "key": "b|d-5|S1|fact_pursuit",
+          "party": "b",
+          "disputeId": "d-5",
+          "lieState": "S1",
+          "questionType": "fact_pursuit",
+          "variants": []
+        },
+        {
+          "key": "b|d-5|S1|motive_search",
+          "party": "b",
+          "disputeId": "d-5",
+          "lieState": "S1",
+          "questionType": "motive_search",
+          "variants": []
+        },
+        {
+          "key": "b|d-5|S1|empathy_approach",
+          "party": "b",
+          "disputeId": "d-5",
+          "lieState": "S1",
+          "questionType": "empathy_approach",
+          "variants": []
+        },
+        {
+          "key": "b|d-5|S2|fact_pursuit",
+          "party": "b",
+          "disputeId": "d-5",
+          "lieState": "S2",
+          "questionType": "fact_pursuit",
+          "variants": []
+        },
+        {
+          "key": "b|d-5|S2|motive_search",
+          "party": "b",
+          "disputeId": "d-5",
+          "lieState": "S2",
+          "questionType": "motive_search",
+          "variants": []
+        },
+        {
+          "key": "b|d-5|S2|empathy_approach",
+          "party": "b",
+          "disputeId": "d-5",
+          "lieState": "S2",
+          "questionType": "empathy_approach",
+          "variants": []
+        },
+        {
+          "key": "b|d-5|S3|fact_pursuit",
+          "party": "b",
+          "disputeId": "d-5",
+          "lieState": "S3",
+          "questionType": "fact_pursuit",
+          "variants": []
+        },
+        {
+          "key": "b|d-5|S3|motive_search",
+          "party": "b",
+          "disputeId": "d-5",
+          "lieState": "S3",
+          "questionType": "motive_search",
+          "variants": []
+        },
+        {
+          "key": "b|d-5|S3|empathy_approach",
+          "party": "b",
+          "disputeId": "d-5",
+          "lieState": "S3",
+          "questionType": "empathy_approach",
+          "variants": []
+        },
+        {
+          "key": "b|d-5|S4|fact_pursuit",
+          "party": "b",
+          "disputeId": "d-5",
+          "lieState": "S4",
+          "questionType": "fact_pursuit",
+          "variants": []
+        },
+        {
+          "key": "b|d-5|S4|motive_search",
+          "party": "b",
+          "disputeId": "d-5",
+          "lieState": "S4",
+          "questionType": "motive_search",
+          "variants": []
+        },
+        {
+          "key": "b|d-5|S4|empathy_approach",
+          "party": "b",
+          "disputeId": "d-5",
+          "lieState": "S4",
+          "questionType": "empathy_approach",
+          "variants": []
+        },
+        {
+          "key": "b|d-5|S5|fact_pursuit",
+          "party": "b",
+          "disputeId": "d-5",
+          "lieState": "S5",
+          "questionType": "fact_pursuit",
+          "variants": []
+        },
+        {
+          "key": "b|d-5|S5|motive_search",
+          "party": "b",
+          "disputeId": "d-5",
+          "lieState": "S5",
+          "questionType": "motive_search",
+          "variants": []
+        },
+        {
+          "key": "b|d-5|S5|empathy_approach",
+          "party": "b",
+          "disputeId": "d-5",
+          "lieState": "S5",
+          "questionType": "empathy_approach",
+          "variants": []
+        }
+      ]
+    },
+    "evidence_present": {
+      "entries": [
+        {
+          "key": "a|e-1|early|both",
+          "party": "a",
+          "evidenceId": "e-1",
+          "lieBand": "early",
+          "subjectRole": "both",
+          "variants": []
+        },
+        {
+          "key": "a|e-1|mid|both",
+          "party": "a",
+          "evidenceId": "e-1",
+          "lieBand": "mid",
+          "subjectRole": "both",
+          "variants": []
+        },
+        {
+          "key": "a|e-1|late|both",
+          "party": "a",
+          "evidenceId": "e-1",
+          "lieBand": "late",
+          "subjectRole": "both",
+          "variants": []
+        },
+        {
+          "key": "a|e-2|early|both",
+          "party": "a",
+          "evidenceId": "e-2",
+          "lieBand": "early",
+          "subjectRole": "both",
+          "variants": []
+        },
+        {
+          "key": "a|e-2|mid|both",
+          "party": "a",
+          "evidenceId": "e-2",
+          "lieBand": "mid",
+          "subjectRole": "both",
+          "variants": []
+        },
+        {
+          "key": "a|e-2|late|both",
+          "party": "a",
+          "evidenceId": "e-2",
+          "lieBand": "late",
+          "subjectRole": "both",
+          "variants": []
+        },
+        {
+          "key": "a|e-3|early|both",
+          "party": "a",
+          "evidenceId": "e-3",
+          "lieBand": "early",
+          "subjectRole": "both",
+          "variants": []
+        },
+        {
+          "key": "a|e-3|mid|both",
+          "party": "a",
+          "evidenceId": "e-3",
+          "lieBand": "mid",
+          "subjectRole": "both",
+          "variants": []
+        },
+        {
+          "key": "a|e-3|late|both",
+          "party": "a",
+          "evidenceId": "e-3",
+          "lieBand": "late",
+          "subjectRole": "both",
+          "variants": []
+        },
+        {
+          "key": "a|e-4|early|both",
+          "party": "a",
+          "evidenceId": "e-4",
+          "lieBand": "early",
+          "subjectRole": "both",
+          "variants": []
+        },
+        {
+          "key": "a|e-4|mid|both",
+          "party": "a",
+          "evidenceId": "e-4",
+          "lieBand": "mid",
+          "subjectRole": "both",
+          "variants": []
+        },
+        {
+          "key": "a|e-4|late|both",
+          "party": "a",
+          "evidenceId": "e-4",
+          "lieBand": "late",
+          "subjectRole": "both",
+          "variants": []
+        },
+        {
+          "key": "a|e-5|early|both",
+          "party": "a",
+          "evidenceId": "e-5",
+          "lieBand": "early",
+          "subjectRole": "both",
+          "variants": []
+        },
+        {
+          "key": "a|e-5|mid|both",
+          "party": "a",
+          "evidenceId": "e-5",
+          "lieBand": "mid",
+          "subjectRole": "both",
+          "variants": []
+        },
+        {
+          "key": "a|e-5|late|both",
+          "party": "a",
+          "evidenceId": "e-5",
+          "lieBand": "late",
+          "subjectRole": "both",
+          "variants": []
+        },
+        {
+          "key": "a|e-6|early|both",
+          "party": "a",
+          "evidenceId": "e-6",
+          "lieBand": "early",
+          "subjectRole": "both",
+          "variants": []
+        },
+        {
+          "key": "a|e-6|mid|both",
+          "party": "a",
+          "evidenceId": "e-6",
+          "lieBand": "mid",
+          "subjectRole": "both",
+          "variants": []
+        },
+        {
+          "key": "a|e-6|late|both",
+          "party": "a",
+          "evidenceId": "e-6",
+          "lieBand": "late",
+          "subjectRole": "both",
+          "variants": []
+        },
+        {
+          "key": "b|e-1|early|both",
+          "party": "b",
+          "evidenceId": "e-1",
+          "lieBand": "early",
+          "subjectRole": "both",
+          "variants": []
+        },
+        {
+          "key": "b|e-1|mid|both",
+          "party": "b",
+          "evidenceId": "e-1",
+          "lieBand": "mid",
+          "subjectRole": "both",
+          "variants": []
+        },
+        {
+          "key": "b|e-1|late|both",
+          "party": "b",
+          "evidenceId": "e-1",
+          "lieBand": "late",
+          "subjectRole": "both",
+          "variants": []
+        },
+        {
+          "key": "b|e-2|early|both",
+          "party": "b",
+          "evidenceId": "e-2",
+          "lieBand": "early",
+          "subjectRole": "both",
+          "variants": []
+        },
+        {
+          "key": "b|e-2|mid|both",
+          "party": "b",
+          "evidenceId": "e-2",
+          "lieBand": "mid",
+          "subjectRole": "both",
+          "variants": []
+        },
+        {
+          "key": "b|e-2|late|both",
+          "party": "b",
+          "evidenceId": "e-2",
+          "lieBand": "late",
+          "subjectRole": "both",
+          "variants": []
+        },
+        {
+          "key": "b|e-3|early|both",
+          "party": "b",
+          "evidenceId": "e-3",
+          "lieBand": "early",
+          "subjectRole": "both",
+          "variants": []
+        },
+        {
+          "key": "b|e-3|mid|both",
+          "party": "b",
+          "evidenceId": "e-3",
+          "lieBand": "mid",
+          "subjectRole": "both",
+          "variants": []
+        },
+        {
+          "key": "b|e-3|late|both",
+          "party": "b",
+          "evidenceId": "e-3",
+          "lieBand": "late",
+          "subjectRole": "both",
+          "variants": []
+        },
+        {
+          "key": "b|e-4|early|both",
+          "party": "b",
+          "evidenceId": "e-4",
+          "lieBand": "early",
+          "subjectRole": "both",
+          "variants": []
+        },
+        {
+          "key": "b|e-4|mid|both",
+          "party": "b",
+          "evidenceId": "e-4",
+          "lieBand": "mid",
+          "subjectRole": "both",
+          "variants": []
+        },
+        {
+          "key": "b|e-4|late|both",
+          "party": "b",
+          "evidenceId": "e-4",
+          "lieBand": "late",
+          "subjectRole": "both",
+          "variants": []
+        },
+        {
+          "key": "b|e-5|early|both",
+          "party": "b",
+          "evidenceId": "e-5",
+          "lieBand": "early",
+          "subjectRole": "both",
+          "variants": []
+        },
+        {
+          "key": "b|e-5|mid|both",
+          "party": "b",
+          "evidenceId": "e-5",
+          "lieBand": "mid",
+          "subjectRole": "both",
+          "variants": []
+        },
+        {
+          "key": "b|e-5|late|both",
+          "party": "b",
+          "evidenceId": "e-5",
+          "lieBand": "late",
+          "subjectRole": "both",
+          "variants": []
+        },
+        {
+          "key": "b|e-6|early|both",
+          "party": "b",
+          "evidenceId": "e-6",
+          "lieBand": "early",
+          "subjectRole": "both",
+          "variants": []
+        },
+        {
+          "key": "b|e-6|mid|both",
+          "party": "b",
+          "evidenceId": "e-6",
+          "lieBand": "mid",
+          "subjectRole": "both",
+          "variants": []
+        },
+        {
+          "key": "b|e-6|late|both",
+          "party": "b",
+          "evidenceId": "e-6",
+          "lieBand": "late",
+          "subjectRole": "both",
+          "variants": []
+        }
+      ]
+    },
+    "dossier": {
+      "entries": [
+        {
+          "key": "a|dossier-1.a.q1|early",
+          "party": "a",
+          "dossierQuestionId": "dossier-1.a.q1",
+          "lieBand": "early",
+          "variants": []
+        },
+        {
+          "key": "a|dossier-1.a.q1|mid",
+          "party": "a",
+          "dossierQuestionId": "dossier-1.a.q1",
+          "lieBand": "mid",
+          "variants": []
+        },
+        {
+          "key": "a|dossier-1.a.q1|late",
+          "party": "a",
+          "dossierQuestionId": "dossier-1.a.q1",
+          "lieBand": "late",
+          "variants": []
+        },
+        {
+          "key": "a|dossier-1.a.q2|early",
+          "party": "a",
+          "dossierQuestionId": "dossier-1.a.q2",
+          "lieBand": "early",
+          "variants": []
+        },
+        {
+          "key": "a|dossier-1.a.q2|mid",
+          "party": "a",
+          "dossierQuestionId": "dossier-1.a.q2",
+          "lieBand": "mid",
+          "variants": []
+        },
+        {
+          "key": "a|dossier-1.a.q2|late",
+          "party": "a",
+          "dossierQuestionId": "dossier-1.a.q2",
+          "lieBand": "late",
+          "variants": []
+        },
+        {
+          "key": "a|dossier-1.a.q3|early",
+          "party": "a",
+          "dossierQuestionId": "dossier-1.a.q3",
+          "lieBand": "early",
+          "variants": []
+        },
+        {
+          "key": "a|dossier-1.a.q3|mid",
+          "party": "a",
+          "dossierQuestionId": "dossier-1.a.q3",
+          "lieBand": "mid",
+          "variants": []
+        },
+        {
+          "key": "a|dossier-1.a.q3|late",
+          "party": "a",
+          "dossierQuestionId": "dossier-1.a.q3",
+          "lieBand": "late",
+          "variants": []
+        },
+        {
+          "key": "a|dossier-1.b.q1|early",
+          "party": "a",
+          "dossierQuestionId": "dossier-1.b.q1",
+          "lieBand": "early",
+          "variants": []
+        },
+        {
+          "key": "a|dossier-1.b.q1|mid",
+          "party": "a",
+          "dossierQuestionId": "dossier-1.b.q1",
+          "lieBand": "mid",
+          "variants": []
+        },
+        {
+          "key": "a|dossier-1.b.q1|late",
+          "party": "a",
+          "dossierQuestionId": "dossier-1.b.q1",
+          "lieBand": "late",
+          "variants": []
+        },
+        {
+          "key": "a|dossier-1.b.q2|early",
+          "party": "a",
+          "dossierQuestionId": "dossier-1.b.q2",
+          "lieBand": "early",
+          "variants": []
+        },
+        {
+          "key": "a|dossier-1.b.q2|mid",
+          "party": "a",
+          "dossierQuestionId": "dossier-1.b.q2",
+          "lieBand": "mid",
+          "variants": []
+        },
+        {
+          "key": "a|dossier-1.b.q2|late",
+          "party": "a",
+          "dossierQuestionId": "dossier-1.b.q2",
+          "lieBand": "late",
+          "variants": []
+        },
+        {
+          "key": "a|dossier-1.b.q3|early",
+          "party": "a",
+          "dossierQuestionId": "dossier-1.b.q3",
+          "lieBand": "early",
+          "variants": []
+        },
+        {
+          "key": "a|dossier-1.b.q3|mid",
+          "party": "a",
+          "dossierQuestionId": "dossier-1.b.q3",
+          "lieBand": "mid",
+          "variants": []
+        },
+        {
+          "key": "a|dossier-1.b.q3|late",
+          "party": "a",
+          "dossierQuestionId": "dossier-1.b.q3",
+          "lieBand": "late",
+          "variants": []
+        },
+        {
+          "key": "a|dossier-2.a.q1|early",
+          "party": "a",
+          "dossierQuestionId": "dossier-2.a.q1",
+          "lieBand": "early",
+          "variants": []
+        },
+        {
+          "key": "a|dossier-2.a.q1|mid",
+          "party": "a",
+          "dossierQuestionId": "dossier-2.a.q1",
+          "lieBand": "mid",
+          "variants": []
+        },
+        {
+          "key": "a|dossier-2.a.q1|late",
+          "party": "a",
+          "dossierQuestionId": "dossier-2.a.q1",
+          "lieBand": "late",
+          "variants": []
+        },
+        {
+          "key": "a|dossier-2.a.q2|early",
+          "party": "a",
+          "dossierQuestionId": "dossier-2.a.q2",
+          "lieBand": "early",
+          "variants": []
+        },
+        {
+          "key": "a|dossier-2.a.q2|mid",
+          "party": "a",
+          "dossierQuestionId": "dossier-2.a.q2",
+          "lieBand": "mid",
+          "variants": []
+        },
+        {
+          "key": "a|dossier-2.a.q2|late",
+          "party": "a",
+          "dossierQuestionId": "dossier-2.a.q2",
+          "lieBand": "late",
+          "variants": []
+        },
+        {
+          "key": "a|dossier-2.a.q3|early",
+          "party": "a",
+          "dossierQuestionId": "dossier-2.a.q3",
+          "lieBand": "early",
+          "variants": []
+        },
+        {
+          "key": "a|dossier-2.a.q3|mid",
+          "party": "a",
+          "dossierQuestionId": "dossier-2.a.q3",
+          "lieBand": "mid",
+          "variants": []
+        },
+        {
+          "key": "a|dossier-2.a.q3|late",
+          "party": "a",
+          "dossierQuestionId": "dossier-2.a.q3",
+          "lieBand": "late",
+          "variants": []
+        },
+        {
+          "key": "a|dossier-2.b.q1|early",
+          "party": "a",
+          "dossierQuestionId": "dossier-2.b.q1",
+          "lieBand": "early",
+          "variants": []
+        },
+        {
+          "key": "a|dossier-2.b.q1|mid",
+          "party": "a",
+          "dossierQuestionId": "dossier-2.b.q1",
+          "lieBand": "mid",
+          "variants": []
+        },
+        {
+          "key": "a|dossier-2.b.q1|late",
+          "party": "a",
+          "dossierQuestionId": "dossier-2.b.q1",
+          "lieBand": "late",
+          "variants": []
+        },
+        {
+          "key": "a|dossier-2.b.q2|early",
+          "party": "a",
+          "dossierQuestionId": "dossier-2.b.q2",
+          "lieBand": "early",
+          "variants": []
+        },
+        {
+          "key": "a|dossier-2.b.q2|mid",
+          "party": "a",
+          "dossierQuestionId": "dossier-2.b.q2",
+          "lieBand": "mid",
+          "variants": []
+        },
+        {
+          "key": "a|dossier-2.b.q2|late",
+          "party": "a",
+          "dossierQuestionId": "dossier-2.b.q2",
+          "lieBand": "late",
+          "variants": []
+        },
+        {
+          "key": "a|dossier-2.b.q3|early",
+          "party": "a",
+          "dossierQuestionId": "dossier-2.b.q3",
+          "lieBand": "early",
+          "variants": []
+        },
+        {
+          "key": "a|dossier-2.b.q3|mid",
+          "party": "a",
+          "dossierQuestionId": "dossier-2.b.q3",
+          "lieBand": "mid",
+          "variants": []
+        },
+        {
+          "key": "a|dossier-2.b.q3|late",
+          "party": "a",
+          "dossierQuestionId": "dossier-2.b.q3",
+          "lieBand": "late",
+          "variants": []
+        },
+        {
+          "key": "a|dossier-3.a.q1|early",
+          "party": "a",
+          "dossierQuestionId": "dossier-3.a.q1",
+          "lieBand": "early",
+          "variants": []
+        },
+        {
+          "key": "a|dossier-3.a.q1|mid",
+          "party": "a",
+          "dossierQuestionId": "dossier-3.a.q1",
+          "lieBand": "mid",
+          "variants": []
+        },
+        {
+          "key": "a|dossier-3.a.q1|late",
+          "party": "a",
+          "dossierQuestionId": "dossier-3.a.q1",
+          "lieBand": "late",
+          "variants": []
+        },
+        {
+          "key": "a|dossier-3.a.q2|early",
+          "party": "a",
+          "dossierQuestionId": "dossier-3.a.q2",
+          "lieBand": "early",
+          "variants": []
+        },
+        {
+          "key": "a|dossier-3.a.q2|mid",
+          "party": "a",
+          "dossierQuestionId": "dossier-3.a.q2",
+          "lieBand": "mid",
+          "variants": []
+        },
+        {
+          "key": "a|dossier-3.a.q2|late",
+          "party": "a",
+          "dossierQuestionId": "dossier-3.a.q2",
+          "lieBand": "late",
+          "variants": []
+        },
+        {
+          "key": "a|dossier-3.a.q3|early",
+          "party": "a",
+          "dossierQuestionId": "dossier-3.a.q3",
+          "lieBand": "early",
+          "variants": []
+        },
+        {
+          "key": "a|dossier-3.a.q3|mid",
+          "party": "a",
+          "dossierQuestionId": "dossier-3.a.q3",
+          "lieBand": "mid",
+          "variants": []
+        },
+        {
+          "key": "a|dossier-3.a.q3|late",
+          "party": "a",
+          "dossierQuestionId": "dossier-3.a.q3",
+          "lieBand": "late",
+          "variants": []
+        },
+        {
+          "key": "a|dossier-3.b.q1|early",
+          "party": "a",
+          "dossierQuestionId": "dossier-3.b.q1",
+          "lieBand": "early",
+          "variants": []
+        },
+        {
+          "key": "a|dossier-3.b.q1|mid",
+          "party": "a",
+          "dossierQuestionId": "dossier-3.b.q1",
+          "lieBand": "mid",
+          "variants": []
+        },
+        {
+          "key": "a|dossier-3.b.q1|late",
+          "party": "a",
+          "dossierQuestionId": "dossier-3.b.q1",
+          "lieBand": "late",
+          "variants": []
+        },
+        {
+          "key": "a|dossier-3.b.q2|early",
+          "party": "a",
+          "dossierQuestionId": "dossier-3.b.q2",
+          "lieBand": "early",
+          "variants": []
+        },
+        {
+          "key": "a|dossier-3.b.q2|mid",
+          "party": "a",
+          "dossierQuestionId": "dossier-3.b.q2",
+          "lieBand": "mid",
+          "variants": []
+        },
+        {
+          "key": "a|dossier-3.b.q2|late",
+          "party": "a",
+          "dossierQuestionId": "dossier-3.b.q2",
+          "lieBand": "late",
+          "variants": []
+        },
+        {
+          "key": "a|dossier-3.b.q3|early",
+          "party": "a",
+          "dossierQuestionId": "dossier-3.b.q3",
+          "lieBand": "early",
+          "variants": []
+        },
+        {
+          "key": "a|dossier-3.b.q3|mid",
+          "party": "a",
+          "dossierQuestionId": "dossier-3.b.q3",
+          "lieBand": "mid",
+          "variants": []
+        },
+        {
+          "key": "a|dossier-3.b.q3|late",
+          "party": "a",
+          "dossierQuestionId": "dossier-3.b.q3",
+          "lieBand": "late",
+          "variants": []
+        },
+        {
+          "key": "b|dossier-1.a.q1|early",
+          "party": "b",
+          "dossierQuestionId": "dossier-1.a.q1",
+          "lieBand": "early",
+          "variants": []
+        },
+        {
+          "key": "b|dossier-1.a.q1|mid",
+          "party": "b",
+          "dossierQuestionId": "dossier-1.a.q1",
+          "lieBand": "mid",
+          "variants": []
+        },
+        {
+          "key": "b|dossier-1.a.q1|late",
+          "party": "b",
+          "dossierQuestionId": "dossier-1.a.q1",
+          "lieBand": "late",
+          "variants": []
+        },
+        {
+          "key": "b|dossier-1.a.q2|early",
+          "party": "b",
+          "dossierQuestionId": "dossier-1.a.q2",
+          "lieBand": "early",
+          "variants": []
+        },
+        {
+          "key": "b|dossier-1.a.q2|mid",
+          "party": "b",
+          "dossierQuestionId": "dossier-1.a.q2",
+          "lieBand": "mid",
+          "variants": []
+        },
+        {
+          "key": "b|dossier-1.a.q2|late",
+          "party": "b",
+          "dossierQuestionId": "dossier-1.a.q2",
+          "lieBand": "late",
+          "variants": []
+        },
+        {
+          "key": "b|dossier-1.a.q3|early",
+          "party": "b",
+          "dossierQuestionId": "dossier-1.a.q3",
+          "lieBand": "early",
+          "variants": []
+        },
+        {
+          "key": "b|dossier-1.a.q3|mid",
+          "party": "b",
+          "dossierQuestionId": "dossier-1.a.q3",
+          "lieBand": "mid",
+          "variants": []
+        },
+        {
+          "key": "b|dossier-1.a.q3|late",
+          "party": "b",
+          "dossierQuestionId": "dossier-1.a.q3",
+          "lieBand": "late",
+          "variants": []
+        },
+        {
+          "key": "b|dossier-1.b.q1|early",
+          "party": "b",
+          "dossierQuestionId": "dossier-1.b.q1",
+          "lieBand": "early",
+          "variants": []
+        },
+        {
+          "key": "b|dossier-1.b.q1|mid",
+          "party": "b",
+          "dossierQuestionId": "dossier-1.b.q1",
+          "lieBand": "mid",
+          "variants": []
+        },
+        {
+          "key": "b|dossier-1.b.q1|late",
+          "party": "b",
+          "dossierQuestionId": "dossier-1.b.q1",
+          "lieBand": "late",
+          "variants": []
+        },
+        {
+          "key": "b|dossier-1.b.q2|early",
+          "party": "b",
+          "dossierQuestionId": "dossier-1.b.q2",
+          "lieBand": "early",
+          "variants": []
+        },
+        {
+          "key": "b|dossier-1.b.q2|mid",
+          "party": "b",
+          "dossierQuestionId": "dossier-1.b.q2",
+          "lieBand": "mid",
+          "variants": []
+        },
+        {
+          "key": "b|dossier-1.b.q2|late",
+          "party": "b",
+          "dossierQuestionId": "dossier-1.b.q2",
+          "lieBand": "late",
+          "variants": []
+        },
+        {
+          "key": "b|dossier-1.b.q3|early",
+          "party": "b",
+          "dossierQuestionId": "dossier-1.b.q3",
+          "lieBand": "early",
+          "variants": []
+        },
+        {
+          "key": "b|dossier-1.b.q3|mid",
+          "party": "b",
+          "dossierQuestionId": "dossier-1.b.q3",
+          "lieBand": "mid",
+          "variants": []
+        },
+        {
+          "key": "b|dossier-1.b.q3|late",
+          "party": "b",
+          "dossierQuestionId": "dossier-1.b.q3",
+          "lieBand": "late",
+          "variants": []
+        },
+        {
+          "key": "b|dossier-2.a.q1|early",
+          "party": "b",
+          "dossierQuestionId": "dossier-2.a.q1",
+          "lieBand": "early",
+          "variants": []
+        },
+        {
+          "key": "b|dossier-2.a.q1|mid",
+          "party": "b",
+          "dossierQuestionId": "dossier-2.a.q1",
+          "lieBand": "mid",
+          "variants": []
+        },
+        {
+          "key": "b|dossier-2.a.q1|late",
+          "party": "b",
+          "dossierQuestionId": "dossier-2.a.q1",
+          "lieBand": "late",
+          "variants": []
+        },
+        {
+          "key": "b|dossier-2.a.q2|early",
+          "party": "b",
+          "dossierQuestionId": "dossier-2.a.q2",
+          "lieBand": "early",
+          "variants": []
+        },
+        {
+          "key": "b|dossier-2.a.q2|mid",
+          "party": "b",
+          "dossierQuestionId": "dossier-2.a.q2",
+          "lieBand": "mid",
+          "variants": []
+        },
+        {
+          "key": "b|dossier-2.a.q2|late",
+          "party": "b",
+          "dossierQuestionId": "dossier-2.a.q2",
+          "lieBand": "late",
+          "variants": []
+        },
+        {
+          "key": "b|dossier-2.a.q3|early",
+          "party": "b",
+          "dossierQuestionId": "dossier-2.a.q3",
+          "lieBand": "early",
+          "variants": []
+        },
+        {
+          "key": "b|dossier-2.a.q3|mid",
+          "party": "b",
+          "dossierQuestionId": "dossier-2.a.q3",
+          "lieBand": "mid",
+          "variants": []
+        },
+        {
+          "key": "b|dossier-2.a.q3|late",
+          "party": "b",
+          "dossierQuestionId": "dossier-2.a.q3",
+          "lieBand": "late",
+          "variants": []
+        },
+        {
+          "key": "b|dossier-2.b.q1|early",
+          "party": "b",
+          "dossierQuestionId": "dossier-2.b.q1",
+          "lieBand": "early",
+          "variants": []
+        },
+        {
+          "key": "b|dossier-2.b.q1|mid",
+          "party": "b",
+          "dossierQuestionId": "dossier-2.b.q1",
+          "lieBand": "mid",
+          "variants": []
+        },
+        {
+          "key": "b|dossier-2.b.q1|late",
+          "party": "b",
+          "dossierQuestionId": "dossier-2.b.q1",
+          "lieBand": "late",
+          "variants": []
+        },
+        {
+          "key": "b|dossier-2.b.q2|early",
+          "party": "b",
+          "dossierQuestionId": "dossier-2.b.q2",
+          "lieBand": "early",
+          "variants": []
+        },
+        {
+          "key": "b|dossier-2.b.q2|mid",
+          "party": "b",
+          "dossierQuestionId": "dossier-2.b.q2",
+          "lieBand": "mid",
+          "variants": []
+        },
+        {
+          "key": "b|dossier-2.b.q2|late",
+          "party": "b",
+          "dossierQuestionId": "dossier-2.b.q2",
+          "lieBand": "late",
+          "variants": []
+        },
+        {
+          "key": "b|dossier-2.b.q3|early",
+          "party": "b",
+          "dossierQuestionId": "dossier-2.b.q3",
+          "lieBand": "early",
+          "variants": []
+        },
+        {
+          "key": "b|dossier-2.b.q3|mid",
+          "party": "b",
+          "dossierQuestionId": "dossier-2.b.q3",
+          "lieBand": "mid",
+          "variants": []
+        },
+        {
+          "key": "b|dossier-2.b.q3|late",
+          "party": "b",
+          "dossierQuestionId": "dossier-2.b.q3",
+          "lieBand": "late",
+          "variants": []
+        },
+        {
+          "key": "b|dossier-3.a.q1|early",
+          "party": "b",
+          "dossierQuestionId": "dossier-3.a.q1",
+          "lieBand": "early",
+          "variants": []
+        },
+        {
+          "key": "b|dossier-3.a.q1|mid",
+          "party": "b",
+          "dossierQuestionId": "dossier-3.a.q1",
+          "lieBand": "mid",
+          "variants": []
+        },
+        {
+          "key": "b|dossier-3.a.q1|late",
+          "party": "b",
+          "dossierQuestionId": "dossier-3.a.q1",
+          "lieBand": "late",
+          "variants": []
+        },
+        {
+          "key": "b|dossier-3.a.q2|early",
+          "party": "b",
+          "dossierQuestionId": "dossier-3.a.q2",
+          "lieBand": "early",
+          "variants": []
+        },
+        {
+          "key": "b|dossier-3.a.q2|mid",
+          "party": "b",
+          "dossierQuestionId": "dossier-3.a.q2",
+          "lieBand": "mid",
+          "variants": []
+        },
+        {
+          "key": "b|dossier-3.a.q2|late",
+          "party": "b",
+          "dossierQuestionId": "dossier-3.a.q2",
+          "lieBand": "late",
+          "variants": []
+        },
+        {
+          "key": "b|dossier-3.a.q3|early",
+          "party": "b",
+          "dossierQuestionId": "dossier-3.a.q3",
+          "lieBand": "early",
+          "variants": []
+        },
+        {
+          "key": "b|dossier-3.a.q3|mid",
+          "party": "b",
+          "dossierQuestionId": "dossier-3.a.q3",
+          "lieBand": "mid",
+          "variants": []
+        },
+        {
+          "key": "b|dossier-3.a.q3|late",
+          "party": "b",
+          "dossierQuestionId": "dossier-3.a.q3",
+          "lieBand": "late",
+          "variants": []
+        },
+        {
+          "key": "b|dossier-3.b.q1|early",
+          "party": "b",
+          "dossierQuestionId": "dossier-3.b.q1",
+          "lieBand": "early",
+          "variants": []
+        },
+        {
+          "key": "b|dossier-3.b.q1|mid",
+          "party": "b",
+          "dossierQuestionId": "dossier-3.b.q1",
+          "lieBand": "mid",
+          "variants": []
+        },
+        {
+          "key": "b|dossier-3.b.q1|late",
+          "party": "b",
+          "dossierQuestionId": "dossier-3.b.q1",
+          "lieBand": "late",
+          "variants": []
+        },
+        {
+          "key": "b|dossier-3.b.q2|early",
+          "party": "b",
+          "dossierQuestionId": "dossier-3.b.q2",
+          "lieBand": "early",
+          "variants": []
+        },
+        {
+          "key": "b|dossier-3.b.q2|mid",
+          "party": "b",
+          "dossierQuestionId": "dossier-3.b.q2",
+          "lieBand": "mid",
+          "variants": []
+        },
+        {
+          "key": "b|dossier-3.b.q2|late",
+          "party": "b",
+          "dossierQuestionId": "dossier-3.b.q2",
+          "lieBand": "late",
+          "variants": []
+        },
+        {
+          "key": "b|dossier-3.b.q3|early",
+          "party": "b",
+          "dossierQuestionId": "dossier-3.b.q3",
+          "lieBand": "early",
+          "variants": []
+        },
+        {
+          "key": "b|dossier-3.b.q3|mid",
+          "party": "b",
+          "dossierQuestionId": "dossier-3.b.q3",
+          "lieBand": "mid",
+          "variants": []
+        },
+        {
+          "key": "b|dossier-3.b.q3|late",
+          "party": "b",
+          "dossierQuestionId": "dossier-3.b.q3",
+          "lieBand": "late",
+          "variants": []
+        }
+      ]
+    },
+    "witness": {
+      "entries": [
+        {
+          "key": "tp-1|vague",
+          "witnessId": "tp-1",
+          "depth": "vague",
+          "stanceHint": "answer",
+          "truthLevel": "hint",
+          "variants": [
+            {
+              "id": "tp-1|vague#1",
+              "text": "정다온 (공통 기타 세션 친구)은 당시 전후 사정을 일부만 알고 있다고 말합니다. 직접 본 장면이 있습니다.",
+              "behaviorHint": "조심스럽게 기억나는 범위만 말한다."
+            },
+            {
+              "id": "tp-1|vague#2",
+              "text": "정다온 (공통 기타 세션 친구)은 자신이 본 부분만 한정해 진술하려고 합니다. 특정 한쪽으로 기울지 않으려 합니다.",
+              "behaviorHint": "확실한 장면과 추정을 구분하려 한다."
+            },
+            {
+              "id": "tp-1|vague#3",
+              "text": "정다온 (공통 기타 세션 친구)은 사건 전체보다 주변 정황을 더 또렷하게 기억합니다. 지금은 핵심 장면만 짚으려 합니다.",
+              "behaviorHint": "말수를 아끼며 단정은 피한다."
+            }
+          ]
+        },
+        {
+          "key": "tp-1|partial",
+          "witnessId": "tp-1",
+          "depth": "partial",
+          "stanceHint": "answer",
+          "truthLevel": "partial",
+          "variants": [
+            {
+              "id": "tp-1|partial#1",
+              "text": "정다온 (공통 기타 세션 친구)이 알고 있는 범위는 이렇습니다. 수빈의 가사·가이드 녹음과 재윤의 편곡·촬영·편집 과정을 모두 봤고, 공개 직후 서로의 게시물을 둘 다 확인했다. 다만 사건의 시작과 끝을 모두 본 것은 아닙니다.",
+              "behaviorHint": "직접 본 내용과 빈 구간을 함께 설명한다."
+            },
+            {
+              "id": "tp-1|partial#2",
+              "text": "정다온 (공통 기타 세션 친구)은 자신이 관여한 장면만 비교적 또렷하게 기억합니다. 수빈의 가사·가이드 녹음과 재윤의 편곡·촬영·편집 과정을 모두 봤고, 공개 직후 서로의 게시물을 둘 다 확인했다. 그래서 해석보다 관찰 사실 위주로 말합니다.",
+              "behaviorHint": "목격 사실을 먼저 세우고 해석은 뒤로 뺀다."
+            },
+            {
+              "id": "tp-1|partial#3",
+              "text": "정다온 (공통 기타 세션 친구)의 진술은 제한적이지만 무의미하지는 않습니다. 수빈의 가사·가이드 녹음과 재윤의 편곡·촬영·편집 과정을 모두 봤고, 공개 직후 서로의 게시물을 둘 다 확인했다. 다만 직접 보지 못한 부분은 추정하지 않겠다고 선을 긋습니다.",
+              "behaviorHint": "확인한 범위와 모르는 범위를 분리한다."
+            }
+          ]
+        },
+        {
+          "key": "tp-1|full",
+          "witnessId": "tp-1",
+          "depth": "full",
+          "stanceHint": "answer",
+          "truthLevel": "full",
+          "variants": [
+            {
+              "id": "tp-1|full#1",
+              "text": "정다온 (공통 기타 세션 친구)은 both 입장에서 사건을 지켜본 제3자입니다. 수빈의 가사·가이드 녹음과 재윤의 편곡·촬영·편집 과정을 모두 봤고, 공개 직후 서로의 게시물을 둘 다 확인했다. 직접 확인하지 못한 부분은 추정으로 덧붙이지 않겠다고 말합니다.",
+              "behaviorHint": "사실 확인 범위를 분명히 하며 차분히 설명한다."
+            },
+            {
+              "id": "tp-1|full#2",
+              "text": "정다온 (공통 기타 세션 친구)의 증언은 관찰 범위가 비교적 넓습니다. 수빈의 가사·가이드 녹음과 재윤의 편곡·촬영·편집 과정을 모두 봤고, 공개 직후 서로의 게시물을 둘 다 확인했다. 다만 자신의 위치에서 놓친 장면이 있다는 점도 함께 인정합니다.",
+              "behaviorHint": "확실한 장면은 단정하고 빈 부분은 분리한다."
+            },
+            {
+              "id": "tp-1|full#3",
+              "text": "정다온 (공통 기타 세션 친구)은 감정 싸움보다 확인 가능한 정황을 중심으로 말하려 합니다. 수빈의 가사·가이드 녹음과 재윤의 편곡·촬영·편집 과정을 모두 봤고, 공개 직후 서로의 게시물을 둘 다 확인했다. 그래서 누구 편을 들기보다 자신이 확인한 흐름을 순서대로 진술합니다.",
+              "behaviorHint": "흥분을 누르고 시간 순서대로 진술한다."
+            }
+          ]
+        },
+        {
+          "key": "tp-2|vague",
+          "witnessId": "tp-2",
+          "depth": "vague",
+          "stanceHint": "answer",
+          "truthLevel": "hint",
+          "variants": [
+            {
+              "id": "tp-2|vague#1",
+              "text": "박나경 (인디 쇼케이스 코디네이터)은 당시 전후 사정을 일부만 알고 있다고 말합니다. 직접 본 장면이 있습니다.",
+              "behaviorHint": "조심스럽게 기억나는 범위만 말한다."
+            },
+            {
+              "id": "tp-2|vague#2",
+              "text": "박나경 (인디 쇼케이스 코디네이터)은 자신이 본 부분만 한정해 진술하려고 합니다. 특정 한쪽으로 기울지 않으려 합니다.",
+              "behaviorHint": "확실한 장면과 추정을 구분하려 한다."
+            },
+            {
+              "id": "tp-2|vague#3",
+              "text": "박나경 (인디 쇼케이스 코디네이터)은 사건 전체보다 주변 정황을 더 또렷하게 기억합니다. 지금은 핵심 장면만 짚으려 합니다.",
+              "behaviorHint": "말수를 아끼며 단정은 피한다."
+            }
+          ]
+        },
+        {
+          "key": "tp-2|partial",
+          "witnessId": "tp-2",
+          "depth": "partial",
+          "stanceHint": "answer",
+          "truthLevel": "partial",
+          "variants": [
+            {
+              "id": "tp-2|partial#1",
+              "text": "박나경 (인디 쇼케이스 코디네이터)이 알고 있는 범위는 이렇습니다. 제출 폼의 공동 크레딧, 보도자료 초안, 쇼케이스 포스터 템플릿 구조를 원본 기준으로 알고 있다. 다만 사건의 시작과 끝을 모두 본 것은 아닙니다.",
+              "behaviorHint": "직접 본 내용과 빈 구간을 함께 설명한다."
+            },
+            {
+              "id": "tp-2|partial#2",
+              "text": "박나경 (인디 쇼케이스 코디네이터)은 자신이 관여한 장면만 비교적 또렷하게 기억합니다. 제출 폼의 공동 크레딧, 보도자료 초안, 쇼케이스 포스터 템플릿 구조를 원본 기준으로 알고 있다. 그래서 해석보다 관찰 사실 위주로 말합니다.",
+              "behaviorHint": "목격 사실을 먼저 세우고 해석은 뒤로 뺀다."
+            },
+            {
+              "id": "tp-2|partial#3",
+              "text": "박나경 (인디 쇼케이스 코디네이터)의 진술은 제한적이지만 무의미하지는 않습니다. 제출 폼의 공동 크레딧, 보도자료 초안, 쇼케이스 포스터 템플릿 구조를 원본 기준으로 알고 있다. 다만 직접 보지 못한 부분은 추정하지 않겠다고 선을 긋습니다.",
+              "behaviorHint": "확인한 범위와 모르는 범위를 분리한다."
+            }
+          ]
+        },
+        {
+          "key": "tp-2|full",
+          "witnessId": "tp-2",
+          "depth": "full",
+          "stanceHint": "answer",
+          "truthLevel": "full",
+          "variants": [
+            {
+              "id": "tp-2|full#1",
+              "text": "박나경 (인디 쇼케이스 코디네이터)은 both 입장에서 사건을 지켜본 제3자입니다. 제출 폼의 공동 크레딧, 보도자료 초안, 쇼케이스 포스터 템플릿 구조를 원본 기준으로 알고 있다. 직접 확인하지 못한 부분은 추정으로 덧붙이지 않겠다고 말합니다.",
+              "behaviorHint": "사실 확인 범위를 분명히 하며 차분히 설명한다."
+            },
+            {
+              "id": "tp-2|full#2",
+              "text": "박나경 (인디 쇼케이스 코디네이터)의 증언은 관찰 범위가 비교적 넓습니다. 제출 폼의 공동 크레딧, 보도자료 초안, 쇼케이스 포스터 템플릿 구조를 원본 기준으로 알고 있다. 다만 자신의 위치에서 놓친 장면이 있다는 점도 함께 인정합니다.",
+              "behaviorHint": "확실한 장면은 단정하고 빈 부분은 분리한다."
+            },
+            {
+              "id": "tp-2|full#3",
+              "text": "박나경 (인디 쇼케이스 코디네이터)은 감정 싸움보다 확인 가능한 정황을 중심으로 말하려 합니다. 제출 폼의 공동 크레딧, 보도자료 초안, 쇼케이스 포스터 템플릿 구조를 원본 기준으로 알고 있다. 그래서 누구 편을 들기보다 자신이 확인한 흐름을 순서대로 진술합니다.",
+              "behaviorHint": "흥분을 누르고 시간 순서대로 진술한다."
+            }
+          ]
+        },
+        {
+          "key": "tp-3|vague",
+          "witnessId": "tp-3",
+          "depth": "vague",
+          "stanceHint": "answer",
+          "truthLevel": "hint",
+          "variants": [
+            {
+              "id": "tp-3|vague#1",
+              "text": "최서린 (음원유통 플랫폼 지원 매니저)은 당시 전후 사정을 일부만 알고 있다고 말합니다. 직접 본 장면이 있습니다.",
+              "behaviorHint": "조심스럽게 기억나는 범위만 말한다."
+            },
+            {
+              "id": "tp-3|vague#2",
+              "text": "최서린 (음원유통 플랫폼 지원 매니저)은 자신이 본 부분만 한정해 진술하려고 합니다. 특정 한쪽으로 기울지 않으려 합니다.",
+              "behaviorHint": "확실한 장면과 추정을 구분하려 한다."
+            },
+            {
+              "id": "tp-3|vague#3",
+              "text": "최서린 (음원유통 플랫폼 지원 매니저)은 사건 전체보다 주변 정황을 더 또렷하게 기억합니다. 지금은 핵심 장면만 짚으려 합니다.",
+              "behaviorHint": "말수를 아끼며 단정은 피한다."
+            }
+          ]
+        },
+        {
+          "key": "tp-3|partial",
+          "witnessId": "tp-3",
+          "depth": "partial",
+          "stanceHint": "answer",
+          "truthLevel": "partial",
+          "variants": [
+            {
+              "id": "tp-3|partial#1",
+              "text": "최서린 (음원유통 플랫폼 지원 매니저)이 알고 있는 범위는 이렇습니다. 스트리밍 카드에 어떤 이름이 먼저 보이는지, 숨겨진 기여자 메타데이터와 수정 이력을 확인할 수 있다. 다만 사건의 시작과 끝을 모두 본 것은 아닙니다.",
+              "behaviorHint": "직접 본 내용과 빈 구간을 함께 설명한다."
+            },
+            {
+              "id": "tp-3|partial#2",
+              "text": "최서린 (음원유통 플랫폼 지원 매니저)은 자신이 관여한 장면만 비교적 또렷하게 기억합니다. 스트리밍 카드에 어떤 이름이 먼저 보이는지, 숨겨진 기여자 메타데이터와 수정 이력을 확인할 수 있다. 그래서 해석보다 관찰 사실 위주로 말합니다.",
+              "behaviorHint": "목격 사실을 먼저 세우고 해석은 뒤로 뺀다."
+            },
+            {
+              "id": "tp-3|partial#3",
+              "text": "최서린 (음원유통 플랫폼 지원 매니저)의 진술은 제한적이지만 무의미하지는 않습니다. 스트리밍 카드에 어떤 이름이 먼저 보이는지, 숨겨진 기여자 메타데이터와 수정 이력을 확인할 수 있다. 다만 직접 보지 못한 부분은 추정하지 않겠다고 선을 긋습니다.",
+              "behaviorHint": "확인한 범위와 모르는 범위를 분리한다."
+            }
+          ]
+        },
+        {
+          "key": "tp-3|full",
+          "witnessId": "tp-3",
+          "depth": "full",
+          "stanceHint": "answer",
+          "truthLevel": "full",
+          "variants": [
+            {
+              "id": "tp-3|full#1",
+              "text": "최서린 (음원유통 플랫폼 지원 매니저)은 both 입장에서 사건을 지켜본 제3자입니다. 스트리밍 카드에 어떤 이름이 먼저 보이는지, 숨겨진 기여자 메타데이터와 수정 이력을 확인할 수 있다. 직접 확인하지 못한 부분은 추정으로 덧붙이지 않겠다고 말합니다.",
+              "behaviorHint": "사실 확인 범위를 분명히 하며 차분히 설명한다."
+            },
+            {
+              "id": "tp-3|full#2",
+              "text": "최서린 (음원유통 플랫폼 지원 매니저)의 증언은 관찰 범위가 비교적 넓습니다. 스트리밍 카드에 어떤 이름이 먼저 보이는지, 숨겨진 기여자 메타데이터와 수정 이력을 확인할 수 있다. 다만 자신의 위치에서 놓친 장면이 있다는 점도 함께 인정합니다.",
+              "behaviorHint": "확실한 장면은 단정하고 빈 부분은 분리한다."
+            },
+            {
+              "id": "tp-3|full#3",
+              "text": "최서린 (음원유통 플랫폼 지원 매니저)은 감정 싸움보다 확인 가능한 정황을 중심으로 말하려 합니다. 스트리밍 카드에 어떤 이름이 먼저 보이는지, 숨겨진 기여자 메타데이터와 수정 이력을 확인할 수 있다. 그래서 누구 편을 들기보다 자신이 확인한 흐름을 순서대로 진술합니다.",
+              "behaviorHint": "흥분을 누르고 시간 순서대로 진술한다."
+            }
+          ]
+        }
+      ]
+    },
+    "aftermath": {
+      "entries": [
+        {
+          "key": "a_primary_fault",
+          "resultClass": "a_primary_fault",
+          "variants": [
+            {
+              "id": "a_primary_fault#1",
+              "text": "윤수빈 쪽 책임이 더 크게 남습니다. 다만 이번 판단은 비난에서 끝내지 않고 크레딧재정리 합의로 이어져야 합니다.",
+              "behaviorHint": "없음"
+            },
+            {
+              "id": "a_primary_fault#2",
+              "text": "재판관은 윤수빈 쪽의 주된 책임을 확인합니다. 이후에는 크레딧재정리 장치를 우선 합의하는 것이 수습의 출발점이 됩니다.",
+              "behaviorHint": "없음"
+            }
+          ]
+        },
+        {
+          "key": "b_primary_fault",
+          "resultClass": "b_primary_fault",
+          "variants": [
+            {
+              "id": "b_primary_fault#1",
+              "text": "백재윤 쪽 책임이 더 크게 남습니다. 다만 이 결론 뒤에는 크레딧재정리 같은 재발 방지 장치가 바로 따라와야 합니다.",
+              "behaviorHint": "없음"
+            },
+            {
+              "id": "b_primary_fault#2",
+              "text": "이번 분쟁은 백재윤 쪽의 책임 비중이 더 큽니다. 이후 정리는 크레딧재정리와 작업절차복구 축으로 묶는 편이 안전합니다.",
+              "behaviorHint": "없음"
+            }
+          ]
+        },
+        {
+          "key": "shared_fault",
+          "resultClass": "shared_fault",
+          "variants": [
+            {
+              "id": "shared_fault#1",
+              "text": "양측 모두에게 책임이 남습니다. 그래서 결론도 일방 처벌보다 크레딧재정리와 작업절차복구를 함께 세우는 방향이어야 합니다.",
+              "behaviorHint": "없음"
+            },
+            {
+              "id": "shared_fault#2",
+              "text": "이번 사안은 상호 누적 책임으로 보는 편이 타당합니다. 합의는 감정 정리보다 크레딧재정리 같은 운영 규칙을 먼저 세우는 데서 시작됩니다.",
+              "behaviorHint": "없음"
+            }
+          ]
+        },
+        {
+          "key": "trust_rebuild",
+          "resultClass": "trust_rebuild",
+          "variants": [
+            {
+              "id": "trust_rebuild#1",
+              "text": "사실관계 정리만으로는 부족합니다. 두 사람은 크레딧재정리를 기반으로 신뢰를 다시 쌓는 절차를 함께 확인해야 합니다.",
+              "behaviorHint": "없음"
+            },
+            {
+              "id": "trust_rebuild#2",
+              "text": "이번 판단의 핵심은 관계 복구까지 이어지는지에 있습니다. 신뢰 회복은 크레딧재정리와 작업절차복구를 문장으로 남기는 순간부터 시작됩니다.",
+              "behaviorHint": "없음"
+            }
+          ]
+        },
+        {
+          "key": "procedural_caution",
+          "resultClass": "procedural_caution",
+          "variants": [
+            {
+              "id": "procedural_caution#1",
+              "text": "이번 사안은 감정보다 절차를 다시 세우는 쪽이 중요합니다. 다음 단계에서는 크레딧재정리 같은 운영 규칙을 먼저 확정해야 합니다.",
+              "behaviorHint": "없음"
+            },
+            {
+              "id": "procedural_caution#2",
+              "text": "재판관은 재발 방지를 위한 절차 정비를 우선 권고합니다. 합의는 크레딧재정리와 작업절차복구를 누가 언제 지킬지 명확히 적는 방식이 적절합니다.",
+              "behaviorHint": "없음"
+            }
+          ]
+        }
+      ]
+    },
+    "system_message": {
+      "entries": [
+        {
+          "key": "interrogation|repeat_warning",
+          "context": "interrogation",
+          "eventType": "repeat_warning",
+          "variants": [
+            {
+              "id": "interrogation|repeat_warning#1",
+              "text": "같은 축의 질문이 반복되고 있습니다. 새로운 사실이나 다른 각도에 집중해 주십시오.",
+              "behaviorHint": "없음"
+            },
+            {
+              "id": "interrogation|repeat_warning#2",
+              "text": "반복 질문 경고가 누적되고 있습니다. 다음 질문은 맥락을 바꾸는 편이 유리합니다.",
+              "behaviorHint": "없음"
+            }
+          ]
+        },
+        {
+          "key": "evidence|new_unlock",
+          "context": "evidence",
+          "eventType": "new_unlock",
+          "variants": [
+            {
+              "id": "evidence|new_unlock#1",
+              "text": "새로운 조사 결과가 열렸습니다. 지금부터는 열린 정보 범위 안에서 판단이 달라질 수 있습니다.",
+              "behaviorHint": "없음"
+            },
+            {
+              "id": "evidence|new_unlock#2",
+              "text": "증거 단서가 추가되었습니다. 방금 열린 정보는 다음 응답과 책임 판단에 반영됩니다.",
+              "behaviorHint": "없음"
+            }
+          ]
+        },
+        {
+          "key": "evidence|trap_notice",
+          "context": "evidence",
+          "eventType": "trap_notice",
+          "variants": [
+            {
+              "id": "evidence|trap_notice#1",
+              "text": "이 증거는 해석을 서두르면 오판을 부를 수 있습니다. 원본 맥락과 취득 경위를 함께 확인하십시오.",
+              "behaviorHint": "없음"
+            },
+            {
+              "id": "evidence|trap_notice#2",
+              "text": "함정성 증거가 감지되었습니다. 표면 장면보다 누락 구간과 출처를 먼저 점검해야 합니다.",
+              "behaviorHint": "없음"
+            }
+          ]
+        },
+        {
+          "key": "dossier|challenge_cleared",
+          "context": "dossier",
+          "eventType": "challenge_cleared",
+          "variants": [
+            {
+              "id": "dossier|challenge_cleared#1",
+              "text": "도전 과제가 정리되었습니다. 관련 질문의 잠금이 일부 해제될 수 있습니다.",
+              "behaviorHint": "없음"
+            },
+            {
+              "id": "dossier|challenge_cleared#2",
+              "text": "도감 조사 단계가 갱신되었습니다. 방금 확보한 정보는 이후 심문 축을 넓혀 줍니다.",
+              "behaviorHint": "없음"
+            }
+          ]
+        },
+        {
+          "key": "witness|credibility_shift",
+          "context": "witness",
+          "eventType": "credibility_shift",
+          "variants": [
+            {
+              "id": "witness|credibility_shift#1",
+              "text": "증인 신빙성 평가가 갱신되었습니다. 이후 진술 해석은 현재 등급을 기준으로 조정됩니다.",
+              "behaviorHint": "없음"
+            },
+            {
+              "id": "witness|credibility_shift#2",
+              "text": "증언 신뢰도가 변했습니다. 같은 말이라도 지금은 무게가 다르게 계산됩니다.",
+              "behaviorHint": "없음"
+            }
+          ]
+        },
+        {
+          "key": "verdict|profile_update",
+          "context": "verdict",
+          "eventType": "profile_update",
+          "variants": [
+            {
+              "id": "verdict|profile_update#1",
+              "text": "판정 결과가 프로필 기록에 반영됩니다. 누적된 판단은 이후 관계 평가에도 남습니다.",
+              "behaviorHint": "없음"
+            },
+            {
+              "id": "verdict|profile_update#2",
+              "text": "이번 결론이 사건 프로필을 갱신합니다. 후속 단계에서는 방금 반영된 평가를 기준으로 진행됩니다.",
+              "behaviorHint": "없음"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

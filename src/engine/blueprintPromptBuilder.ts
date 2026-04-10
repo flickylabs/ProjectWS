@@ -12,6 +12,7 @@ import type { Archetype } from '../types'
 import type { LieState } from '../types/agent'
 import { getMyCall, getJudgeReference, getAngryCall, canUseInformal } from './llmSpeechGuide'
 import { getBridgeEntry } from './bridgeEngine'
+import { normalizeCaseKey } from '../utils/caseHelpers'
 import { pp이가, pp은는 } from './koreanPostposition'
 
 /**
@@ -37,7 +38,7 @@ export function buildBlueprintSystemPrompt(
   const dispute = caseData.disputes.find(d => d.id === blueprint.focusDisputeId)
   const disputeName = dispute?.name ?? '해당 사안'
 
-  const bridgeEntry = getBridgeEntry(caseData.caseId?.replace(/^case-/, '') ?? '', party, blueprint.focusDisputeId)
+  const bridgeEntry = getBridgeEntry(normalizeCaseKey(caseData), party, blueprint.focusDisputeId)
   const admittedFacts = bridgeEntry?.alreadyPubliclyAdmitted ?? []
 
   // 최근 대화 (최대 4개, 간결하게)

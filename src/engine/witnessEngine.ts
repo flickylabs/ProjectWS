@@ -12,6 +12,7 @@ import { WITNESS_BUDGETS } from '../data/witnessBudget'
 import { buildWitnessFewShotBlock, buildHiddenAgendaPatternBlock, type WitnessSlot } from '../data/witnessFewShotExamples'
 import { normalizeCaseKey } from '../utils/caseHelpers'
 import { getWitnessSpeechSamples } from '../data/caseEnrichment'
+import { getScriptedWitness } from './scriptedTextLoader'
 import type { CaseData } from '../types'
 import type { AgentState } from '../types'
 import type { LieState } from '../types/agent'
@@ -128,6 +129,28 @@ export async function generateWitnessTestimony(
   recentDialogues: { speaker: string; text: string }[],
   depth: TestimonyDepth = 'full',
 ): Promise<WitnessTestimony> {
+  const caseKey = normalizeCaseKey(caseData)
+  const scripted = getScriptedWitness(caseKey, witness.id, depth)
+  if (scripted) {
+    return {
+      witnessId: witness.id,
+      witnessName: witness.name,
+      testimony: scripted.text,
+      behaviorHint: scripted.behaviorHint,
+      relatedDisputes: witness.relatedDisputeIds ?? [],
+      favorDirection: witness.bias === 'pro_a'
+        ? 'pro_a'
+        : witness.bias === 'pro_b'
+          ? 'pro_b'
+          : witness.bias === 'neutral'
+            ? 'neutral'
+            : 'mixed',
+      distorted: witness.distortionRisk !== 'accurate',
+      depth,
+      depthMessage: getDepthSystemMessage(depth),
+    }
+  }
+
   const vars = buildWitnessVars(witness, caseData, recentDialogues)
 
   // 깊이 게이팅 지시를 변수에 추가

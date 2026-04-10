@@ -8,6 +8,7 @@ import { createDialogueSlice, type DialogueSlice } from './slices/dialogueSlice'
 import { createVerdictSlice, type VerdictSlice } from './slices/verdictSlice'
 import { createShopSlice, type ShopSlice } from './slices/shopSlice'
 import { createDiscoverySlice, type DiscoverySlice } from './slices/discoverySlice'
+import { createCombinationLabSlice, type CombinationLabSlice } from './slices/combinationLabSlice'
 import type { CaseData, ProcessMetrics, PartyId } from '../types'
 import type { TestimonyAnalysis } from '../engine/llmTestimonyAnalysis'
 import { GamePhase } from '../types'
@@ -84,6 +85,7 @@ import { registerWorkplace09Data } from '../data/claimPolicies/workplace-09'
 import { registerWorkplace10Data } from '../data/claimPolicies/workplace-10'
 import { registerWorkplace11Data } from '../data/claimPolicies/workplace-11'
 import { registerWorkplace12Data } from '../data/claimPolicies/workplace-12'
+import { registerWorkplaceNew02Data } from '../data/claimPolicies/workplace-new-02'
 import { registerTenant01Data } from '../data/claimPolicies/tenant-01'
 import { registerTenant02Data } from '../data/claimPolicies/tenant-02'
 import { registerTenant03Data } from '../data/claimPolicies/tenant-03'
@@ -96,7 +98,10 @@ import { registerTenant09Data } from '../data/claimPolicies/tenant-09'
 import { registerTenant10Data } from '../data/claimPolicies/tenant-10'
 import { registerTenant11Data } from '../data/claimPolicies/tenant-11'
 import { registerTenant12Data } from '../data/claimPolicies/tenant-12'
+import { registerHeadline01Data } from '../data/claimPolicies/headline-01'
+import { registerHeadline02Data } from '../data/claimPolicies/headline-02'
 import { aggregateReadiness } from '../engine/readinessEngine'
+import { normalizeCaseKey } from '../utils/caseHelpers'
 import { resetTellTracker } from '../engine/tellValidator'
 import { resetHintTracker } from '../engine/archetypeHintEngine'
 import { getReadinessSets } from '../engine/evidenceChallengeEngine'
@@ -194,7 +199,7 @@ function applyPerks(set: (partial: any) => void): void {
   })
 }
 
-export type GameStore = PhaseSlice & AgentSlice & ResourceSlice & EvidenceSlice & DialogueSlice & VerdictSlice & ShopSlice & DiscoverySlice & {
+export type GameStore = PhaseSlice & AgentSlice & ResourceSlice & EvidenceSlice & DialogueSlice & VerdictSlice & ShopSlice & DiscoverySlice & CombinationLabSlice & {
   caseData: CaseData | null
   lieConfigs: { a: CaseData['lieConfigA']; b: CaseData['lieConfigB'] } | null
   isLLMLoading: boolean
@@ -277,6 +282,10 @@ export type GameStore = PhaseSlice & AgentSlice & ResourceSlice & EvidenceSlice 
   /** 최근 집중한 쟁점 ID (심문/증거 제시 시 갱신) */
   lastFocusedDisputeId: string | null
   setLastFocusedDisputeId: (id: string | null) => void
+  pcTargetParty: PartyId
+  setPcTargetParty: (party: PartyId) => void
+  pcSummaryUnlocked: boolean
+  setPcSummaryUnlocked: (value: boolean) => void
   /** PC 증거 상세 뷰어: 열려있는 증거 ID */
   pendingEvidenceView: string | null
   setPendingEvidenceView: (id: string | null) => void
@@ -349,6 +358,7 @@ export const useGameStore: import('zustand').UseBoundStore<import('zustand').Sto
     ...createVerdictSlice(...args),
     ...createShopSlice(...args),
     ...createDiscoverySlice(...args),
+    ...createCombinationLabSlice(...args),
 
     caseData: null,
     lieConfigs: null,
@@ -563,6 +573,10 @@ export const useGameStore: import('zustand').UseBoundStore<import('zustand').Sto
     setDisputeBoardAction: (a: GameStore['disputeBoardAction']) => set({ disputeBoardAction: a }),
     lastFocusedDisputeId: null,
     setLastFocusedDisputeId: (id: string | null) => set({ lastFocusedDisputeId: id }),
+    pcTargetParty: 'a',
+    setPcTargetParty: (party: PartyId) => set({ pcTargetParty: party }),
+    pcSummaryUnlocked: false,
+    setPcSummaryUnlocked: (value: boolean) => set({ pcSummaryUnlocked: value }),
     pendingEvidenceView: null,
     setPendingEvidenceView: (id: string | null) => set({ pendingEvidenceView: id }),
     activePerks: {
@@ -588,7 +602,7 @@ export const useGameStore: import('zustand').UseBoundStore<import('zustand').Sto
       if (!s.caseData) return null
 
       const snapshot: TurnSnapshot = {
-        caseId: s.caseData.caseId?.replace(/^case-/, '') ?? '',
+        caseId: normalizeCaseKey(s.caseData),
         turn: s.turnCount,
         activeParty: s.separationTarget ?? 'a',
         questionType,
@@ -654,7 +668,7 @@ export const useGameStore: import('zustand').UseBoundStore<import('zustand').Sto
 
     updateReadiness: () => {
       const state = useGameStore.getState()
-      const caseId = state.caseData?.caseId?.replace(/^case-/, '') ?? ''
+      const caseId = normalizeCaseKey(state.caseData)
 
       // 양측 lieStateMap 병합
       const allLieStates: Record<string, { currentState: import('../types').LieState }> = {}
@@ -708,6 +722,8 @@ export const useGameStore: import('zustand').UseBoundStore<import('zustand').Sto
         pendingPerkChoice: null,
         pendingTransitionChoice: null,
         lastFocusedDisputeId: null,
+        pcTargetParty: 'a',
+        pcSummaryUnlocked: false,
         pendingEvidenceView: null,
         // 턴/Phase 완전 초기화
         turnCount: 0,
@@ -728,13 +744,14 @@ export const useGameStore: import('zustand').UseBoundStore<import('zustand').Sto
 
       // 핵심 상태 초기화 — 리뉴얼 등록보다 먼저 실행 (등록 실패 시에도 게임 가능)
       store.initResources()
-      store.initEvidence(caseData.evidence, caseData.evidenceCombinations)
+      store.initEvidence(caseData.evidence, caseData.evidenceCombinations, caseData.baseEvidenceIds)
       store.clearDialogue()
       store.resetVerdict()
 
       // 퍼크 적용
       applyPerks(set)
       store.initDiscovery(caseData)
+      store.initCombinationLab(caseData)
 
       // 리뉴얼 데이터 등록 (ClaimPolicy/Bridge/EvidenceChallenge/V3)
       // try-catch로 감싸서 등록 실패가 게임 진행을 막지 않도록 함
@@ -742,7 +759,7 @@ export const useGameStore: import('zustand').UseBoundStore<import('zustand').Sto
       resetTellTracker()
       resetHintTracker()
       resetEventTriggerState()
-      const caseKey2 = caseData.caseId?.replace(/^case-/, '') ?? ''
+      const caseKey2 = normalizeCaseKey(caseData)
       if (caseKey2) {
         resetV3State(caseKey2)
         resetV2State(caseKey2)
@@ -754,7 +771,7 @@ export const useGameStore: import('zustand').UseBoundStore<import('zustand').Sto
       resetActivatedLinks()
       resetQuestionRotation()
       set({ phase3PromptBridge: null })
-      const caseKey = caseData.caseId?.replace(/^case-/, '') ?? ''
+      const caseKey = normalizeCaseKey(caseData)
       if (caseKey === 'spouse-01') registerSpouse01Data()
       if (caseKey === 'spouse-02') registerSpouse02Data()
       if (caseKey === 'spouse-03') registerSpouse03Data()
@@ -839,6 +856,9 @@ export const useGameStore: import('zustand').UseBoundStore<import('zustand').Sto
       if (caseKey === 'workplace-10') registerWorkplace10Data()
       if (caseKey === 'workplace-11') registerWorkplace11Data()
       if (caseKey === 'workplace-12') registerWorkplace12Data()
+      if (caseKey === 'workplace-new-02') registerWorkplaceNew02Data()
+      if (caseKey === 'headline-01') registerHeadline01Data()
+      if (caseKey === 'headline-02') registerHeadline02Data()
       } catch (err) {
         console.error('[Solomon] 리뉴얼 데이터 등록 실패 (게임은 계속 진행 가능):', err)
       }
@@ -875,6 +895,7 @@ export const useGameStore: import('zustand').UseBoundStore<import('zustand').Sto
     evidenceDefinitions: state.evidenceDefinitions,
     evidenceCombinations: state.evidenceCombinations,
     triggeredCombinations: state.triggeredCombinations,
+    combinationLabRuntime: state.combinationLabRuntime,
     // dialogue
     dialogueLog: state.dialogueLog,
     claimGraph: state.claimGraph,
@@ -899,5 +920,7 @@ export const useGameStore: import('zustand').UseBoundStore<import('zustand').Sto
     testimonyAnalysis: state.testimonyAnalysis,
     calledWitnesses: state.calledWitnesses,
     interrogationHistory: state.interrogationHistory,
+    pcTargetParty: state.pcTargetParty,
+    pcSummaryUnlocked: state.pcSummaryUnlocked,
   }),
 }))

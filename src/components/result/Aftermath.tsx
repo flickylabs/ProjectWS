@@ -1,9 +1,10 @@
-import { useEffect, useState, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { useGameStore, useStore } from '../../store/useGameStore'
 import { chatCompletion } from '../../engine/llmClient'
 import { isLLMMode } from '../../hooks/useActionDispatch'
 import { updateLatestAftermath } from '../../data/leaderboard'
 import { buildResultSystemPrompt, buildResultUserPrompt, formatResultAsNarrative } from '../../engine/phase6ResultPromptV2'
+import { resolveScriptedAftermath } from '../../engine/aftermathResolver'
 import type { VerdictData, ResultV2Response, CaseMeta } from '../../engine/phase6ResultPromptV2'
 
 function wrapText(ctx: CanvasRenderingContext2D, text: string, maxWidth: number): string[] {
@@ -13,18 +14,38 @@ function wrapText(ctx: CanvasRenderingContext2D, text: string, maxWidth: number)
     for (const char of paragraph) {
       const test = line + char
       if (ctx.measureText(test).width > maxWidth && line) {
-        lines.push(line); line = char
-      } else { line = test }
+        lines.push(line)
+        line = char
+      } else {
+        line = test
+      }
     }
     if (line) lines.push(line)
   }
   return lines
 }
 
-// 후일담 캐시 — 한 번 생성되면 같은 세션에서 고정
 let cachedAftermath: string | null = null
 
-export function resetAftermathCache() { cachedAftermath = null }
+export function resetAftermathCache() {
+  cachedAftermath = null
+}
+
+function getRelationshipLabel(relType: string): string {
+  if (relType === 'spouse') return '부부'
+  if (relType === 'friend') return '친구'
+  if (relType === 'neighbor') return '이웃'
+  if (relType === 'partnership') return '동업자'
+  if (relType === 'boss_employee') return '직장 관계'
+  if (relType === 'tenant_landlord') return '임대인과 임차인'
+  if (relType === 'family') return '가족'
+  if (relType === 'headline') return '당사자'
+  return '당사자'
+}
+
+function splitAftermathParagraphs(text: string): string[] {
+  return text.split('\n\n').map((item) => item.trim()).filter(Boolean)
+}
 
 export default function Aftermath() {
   const caseData = useStore((s) => s.caseData)
@@ -34,164 +55,95 @@ export default function Aftermath() {
   const [loading, setLoading] = useState(false)
   const aftermathCanvasRef = useRef<HTMLCanvasElement>(null)
 
+  const setResolvedAftermath = (text: string) => {
+    cachedAftermath = text
+    setAftermath(text)
+    updateLatestAftermath(text)
+  }
+
   useEffect(() => {
-    if (cachedAftermath) return // 이미 생성된 후일담이 있으면 재생성하지 않음
+    if (cachedAftermath) return
     if (!caseData || !verdictScore) return
 
+    const scripted = resolveScriptedAftermath(caseData, verdictInput)
+    if (scripted) {
+      setResolvedAftermath(scripted.text)
+      return
+    }
+
     if (isLLMMode()) {
-      generateAftermath()
+      void generateAftermath()
     } else {
-      const fb = buildFallbackAftermath()
-      cachedAftermath = fb
-      setAftermath(fb)
-      updateLatestAftermath(fb)
+      setResolvedAftermath(buildFallbackAftermath())
     }
   }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
   const generateAftermath = async () => {
-    if (cachedAftermath) return // 이중 호출 방지
+    if (cachedAftermath) return
     if (!caseData || !verdictScore) return
+
+    const scripted = resolveScriptedAftermath(caseData, verdictInput)
+    if (scripted) {
+      setResolvedAftermath(scripted.text)
+      return
+    }
+
     setLoading(true)
     try {
-      // V2 bridge가 있으면 구조화 로그 기반 프롬프트 사용
       const bridge = useGameStore.getState().phase3PromptBridge
       if (bridge) {
-        const result = await generateAftermathV2(bridge)
-        if (result) {
-          cachedAftermath = result
-          setAftermath(result)
-          updateLatestAftermath(result)
+        const v2 = await generateAftermathV2(bridge)
+        if (v2) {
+          setResolvedAftermath(v2)
           setLoading(false)
           return
         }
-        // V2 실패 시 기존 로직으로 fallback
       }
 
       const nameA = caseData.duo.partyA.name
       const nameB = caseData.duo.partyB.name
-      const solutions = verdictInput.selectedSolutions.join(', ') || '특별한 해결책 없음'
-      const score = `통찰 ${verdictScore.insight}, 권위 ${verdictScore.authority}, 지혜 ${verdictScore.wisdom}`
+      const relLabel = getRelationshipLabel(caseData.meta?.relationshipType ?? caseData.duo.relationshipType ?? '')
+      const selectedSolutions = verdictInput.selectedSolutions.length > 0
+        ? verdictInput.selectedSolutions.join(', ')
+        : '특별한 해결책 없음'
+      const scoreTone = verdictScore.total >= 75
+        ? '쓴 사실이 남아 있어도 정리 방향은 비교적 분명한 결말'
+        : verdictScore.total >= 55
+          ? '서로의 불만이 남지만 최소한의 질서는 세운 결말'
+          : '억울함과 미해결 지점이 함께 남는 불완전한 결말'
 
-      // 사실 판단 결과
-      const factResults = Object.entries(verdictInput.factFindings)
-        .map(([id, val]) => {
-          const dispute = caseData.disputes.find(d => d.id === id)
-          return dispute ? `${dispute.name}: ${val === 'true' ? '사실' : val === 'false' ? '허위' : val === 'pending' ? '판단 보류' : '모호'}` : ''
-        })
-        .filter(Boolean).join('\n')
+      const prompt = [
+        '법정 대화형 게임의 후일담을 한국어로 작성하라.',
+        `당사자: ${nameA}, ${nameB}`,
+        `관계: ${relLabel}`,
+        `사건 배경: ${caseData.context.description.slice(0, 180)}`,
+        `선택한 해결책: ${selectedSolutions}`,
+        `판결 점수 분위기: ${scoreTone}`,
+        '요구사항:',
+        '- 3개 문단으로 쓴다.',
+        '- 각 문단은 2문장 또는 3문장으로 제한한다.',
+        '- 1주 뒤, 1개월 뒤, 남은 여파 순으로 전개한다.',
+        '- 마지막 문단 마지막 문장만 짧은 여운 문장으로 쓴다.',
+        '- 보고서체가 아니라 소설처럼 자연스럽게 쓴다.',
+      ].join('\n')
 
-      // 책임 배분
-      const respResults = Object.entries(verdictInput.responsibility)
-        .map(([id, val]) => {
-          const dispute = caseData.disputes.find(d => d.id === id)
-          return dispute ? `${dispute.name}: ${nameA} ${val.a}% / ${nameB} ${val.b}%` : ''
-        })
-        .filter(Boolean).join('\n')
+      const response = await chatCompletion(
+        [{ role: 'user', content: prompt }],
+        { temperature: 0.9, maxTokens: 420 },
+      )
 
-      const endingTone = verdictScore.total >= 75 ? '희망적이고 성장하는 톤'
-        : verdictScore.total >= 55 ? '씁쓸하지만 의미 있는 톤'
-        : verdictScore.total >= 35 ? '아쉽고 불완전한 톤'
-        : '씁쓸하고 후회가 남는 톤'
-
-      const partyA = caseData.duo.partyA
-      const partyB = caseData.duo.partyB
-      const relType = caseData.meta?.relationshipType ?? caseData.duo.relationshipType ?? ''
-      const familyRel = caseData.meta?.relationshipState ?? caseData.meta?.familyRelation ?? ''
-      const callA = partyA.callTerms?.toPartner ?? ''
-      const callB = partyB.callTerms?.toPartner ?? ''
-
-      // 3인칭 서술용 관계 명칭 자동 추론
-      const relLabel = (() => {
-        if (relType === 'spouse') return '부부'
-        if (relType === 'friend') return '친구'
-        if (relType === 'neighbor') return '이웃'
-        if (relType === 'partnership') return '동업자'
-        if (relType === 'boss_employee') return '동료'
-        if (relType === 'tenant_landlord') return '임대인과 임차인'
-        if (relType === 'family') {
-          const all = `${callA} ${callB} ${partyA.callTerms?.toJudge ?? ''} ${partyB.callTerms?.toJudge ?? ''}`
-          const hasMom = all.includes('엄마') || all.includes('어머니') || all.includes('어머님')
-          const hasDad = all.includes('아빠') || all.includes('아버지') || all.includes('아버님')
-          const hasSon = all.includes('아들')
-          const hasDaughter = all.includes('딸')
-          // 부모-자식
-          if (hasMom && hasDaughter) return '모녀'
-          if (hasMom && (hasSon || !hasDaughter)) return '모자'
-          if (hasDad && hasDaughter) return '부녀'
-          if (hasDad && (hasSon || !hasDaughter)) return '부자'
-          // 형제자매 — 호칭으로 판단
-          if (all.includes('언니')) return '자매'
-          if (all.includes('누나')) return '남매'
-          if (all.includes('오빠')) return '남매'
-          if (all.includes('형')) return '형제'
-          return '가족'
-        }
-        return '두 사람'
-      })()
-
-      const prompt = `법정 심문 게임의 판결 후일담을 작성하세요.
-
-당사자:
-- ${nameA} (${partyA.age ?? ''}세${partyA.occupation ? ', ' + partyA.occupation : ''})
-- ${nameB} (${partyB.age ?? ''}세${partyB.occupation ? ', ' + partyB.occupation : ''})
-두 사람의 관계: ${relLabel}
-대화 시 호칭: ${nameA}→${nameB}: "${callA}", ${nameB}→${nameA}: "${callB}"
-
-★ 3인칭 서술 시 "${relLabel}"로 관계를 표현하세요. 다른 관계 명칭으로 바꾸지 마세요.
-배경: ${caseData.context.description.slice(0, 150)}
-해결책: ${solutions}
-점수: ${verdictScore.total}점 (${endingTone})
-
-규칙:
-- 판결 이후 1주~1개월 후 상황을 최소 3문단으로 묘사
-- 각 문단 2~3문장. 총 270~360자
-- 두 사람의 관계 변화와 내면을 담담하게
-- 호칭을 나이/관계에 맞게 사용
-- 마지막 줄은 반드시 "교훈 한 문장"만. 형식: "~~~" (큰따옴표로 감싼 한 문장). 부연 설명 없이 교훈만.
-- ★ 교훈 문장 앞에 반드시 빈 줄(\\n\\n)을 넣어 별도 문단으로 분리하라. 마지막 본문 문단과 교훈을 같은 문단에 합치지 마라.
-- 한국어 소설체
-
-★ 번역체/보고서 톤 절대 금지:
-- "~된 것으로 판단됩니다", "~인 측면이 있었습니다" → 자연스러운 한국어로
-- "여러 가지 상황이 얽혀" → 구체적으로 1가지만
-- "해당 건에 대해서는" → "그 일은"
-- "~하는 바입니다", "인지하고 있습니다" → 금지
-- 실제 법정 후일담/에필로그처럼 따뜻하고 인간적인 톤으로 작성하라.
-★ 후일담은 최소 3문단 이상. 양쪽 당사자의 이후 삶을 구체적으로 그려라.`
-
-      // 재시도 로직 (최대 2회)
-      let response = ''
-      for (let attempt = 0; attempt < 2; attempt++) {
-        try {
-          response = await chatCompletion(
-            [{ role: 'user', content: prompt }],
-            { temperature: 1.0, maxTokens: 500 },
-          )
-          if (response.trim()) break
-        } catch (retryErr) {
-          console.warn(`[Aftermath] 시도 ${attempt + 1} 실패:`, retryErr)
-          if (attempt === 0) await new Promise(r => setTimeout(r, 2000)) // 2초 대기 후 재시도
-          else throw retryErr
-        }
-      }
-      cachedAftermath = response
-      setAftermath(response)
-      updateLatestAftermath(response)
-    } catch (err) {
-      const errMsg = err instanceof Error ? err.message : String(err)
-      console.error('[Aftermath] 후일담 생성 실패:', errMsg)
-      const fb = buildFallbackAftermath() + `\n\n⚠️ AI 후일담 생성 실패: ${errMsg.slice(0, 80)}`
-      cachedAftermath = fb
-      setAftermath(fb)
-      updateLatestAftermath(fb)
+      setResolvedAftermath(response.trim() || buildFallbackAftermath())
+    } catch {
+      setResolvedAftermath(buildFallbackAftermath())
+    } finally {
+      setLoading(false)
     }
-    setLoading(false)
   }
 
   const generateAftermathV2 = async (bridge: NonNullable<ReturnType<typeof useGameStore.getState>['phase3PromptBridge']>): Promise<string | null> => {
-    if (!caseData || !verdictScore || !verdictInput || !bridge) return null
+    if (!caseData || !verdictScore) return null
     try {
-      const relLabel = caseData.meta?.relationshipType ?? caseData.duo.relationshipType ?? '두 사람'
+      const relLabel = getRelationshipLabel(caseData.meta?.relationshipType ?? caseData.duo.relationshipType ?? '')
       const caseMeta: CaseMeta = {
         caseId: bridge.caseId,
         nameA: caseData.duo.partyA.name,
@@ -199,10 +151,13 @@ export default function Aftermath() {
         relLabel,
         contextDesc: caseData.context.description.slice(0, 150),
       }
-      const endingTone = verdictScore.total >= 75 ? '희망적'
-        : verdictScore.total >= 55 ? '씁쓸하지만 의미 있는'
-        : verdictScore.total >= 35 ? '아쉽고 불완전한'
-        : '씁쓸하고 후회가 남는'
+      const endingTone = verdictScore.total >= 75
+        ? '정리와 회복이 함께 보이는 결말'
+        : verdictScore.total >= 55
+          ? '불만이 남지만 질서는 세운 결말'
+          : verdictScore.total >= 35
+            ? '상처와 미해결이 함께 남는 결말'
+            : '후회와 거리감이 크게 남는 결말'
       const verdict: VerdictData = {
         factFindings: verdictInput.factFindings,
         responsibility: verdictInput.responsibility,
@@ -212,35 +167,25 @@ export default function Aftermath() {
       }
       const systemPrompt = buildResultSystemPrompt()
       const userPrompt = buildResultUserPrompt(bridge, caseMeta, verdict)
-        + `\n\n출력은 반드시 위 JSON 형식으로만 답하라. 한국어 소설체로 작성하라.`
+        + '\n\n출력은 JSON 한 개 또는 자연어 후일담 본문만 허용한다.'
 
-      let response = ''
-      for (let attempt = 0; attempt < 2; attempt++) {
-        try {
-          response = await chatCompletion(
-            [{ role: 'system', content: systemPrompt }, { role: 'user', content: userPrompt }],
-            { temperature: 1.0, maxTokens: 600 },
-          )
-          if (response.trim()) break
-        } catch (retryErr) {
-          if (attempt === 0) await new Promise(r => setTimeout(r, 2000))
-          else throw retryErr
-        }
-      }
+      const response = await chatCompletion(
+        [{ role: 'system', content: systemPrompt }, { role: 'user', content: userPrompt }],
+        { temperature: 0.9, maxTokens: 600 },
+      )
 
-      // JSON 파싱 시도 → 서술형 변환
       try {
         const jsonStr = response.replace(/```json?\s*/g, '').replace(/```/g, '').trim()
         const parsed: ResultV2Response = JSON.parse(jsonStr)
         const narrative = formatResultAsNarrative(parsed)
         if (narrative.length > 50) return narrative
       } catch {
-        // JSON 파싱 실패 시 raw text 사용
+        // raw text fallback
       }
-      if (response.trim().length > 50) return response.trim()
-      return null
-    } catch (err) {
-      console.warn('[Aftermath V2] fallback to legacy:', err)
+
+      const trimmed = response.trim()
+      return trimmed.length > 50 ? trimmed : null
+    } catch {
       return null
     }
   }
@@ -252,165 +197,154 @@ export default function Aftermath() {
     const total = verdictScore.total
 
     if (total >= 75) {
-      return `판결 이후, ${nameA}와 ${nameB}는 조심스럽게 대화를 시작했습니다. 완전한 화해는 아니었지만, 서로의 입장을 이해하려는 노력이 보였습니다.\n\n재판관의 판결이 두 사람에게 거울이 되었습니다. 자신의 잘못을 직시하는 것, 그것이 변화의 시작이었습니다.\n\n— 진실은 아프지만, 그 아픔이 치유의 시작이 되기도 한다.`
+      return `${nameA}와 ${nameB}는 판결 직후에는 여전히 굳은 표정이었지만, 적어도 무엇이 문제였는지는 같은 문장으로 말할 수 있게 되었다.\n\n일주일쯤 지나자 서로를 향한 비난은 조금 줄었고, 대신 앞으로 지켜야 할 선과 절차를 다시 확인하는 대화가 시작됐다.\n\n완전한 화해는 아니어도, 이번에는 같은 실수를 반복하지 않겠다는 말만은 남았다.`
     }
     if (total >= 50) {
-      return `${nameA}는 판결을 받아들였지만, ${nameB}는 여전히 불만이 있었습니다. 완벽한 판결은 아니었을지 모릅니다.\n\n그래도 사실이 밝혀진 것만으로 둘 다 조금은 가벼워진 듯했습니다.\n\n— 모든 판결이 완벽할 수는 없다. 중요한 것은 진실에 가까이 가려는 노력이다.`
+      return `${nameA}와 ${nameB}는 판결을 받아들였지만, 누구도 완전히 만족한 얼굴은 아니었다.\n\n한 달이 지나도 억울함과 불만은 남았지만, 적어도 무엇을 다시 건드리면 같은 싸움이 반복되는지는 서로 알고 있었다.\n\n정리가 곧 화해는 아니지만, 더 크게 무너지는 일은 막아 낸 결말이었다.`
     }
-    return `판결은 두 사람 모두를 만족시키지 못했습니다. ${nameA}도, ${nameB}도 재판관의 판단에 의문을 품었습니다.\n\n핵심을 놓친 판결은 때로 상황을 더 악화시키기도 합니다.\n\n— 지혜로운 판결은 사실을 아는 것만으로는 부족하다. 사람을 이해해야 한다.`
+    return `${nameA}와 ${nameB}는 판결 뒤에도 쉽게 자리를 뜨지 못했다.\n\n사실이 드러났다고 해서 감정이 정리된 것은 아니었고, 남은 말들은 대부분 다음 갈등의 씨앗처럼 방 안에 남아 있었다.\n\n이번 결말은 봉합보다 경고에 가까웠다.`
   }
 
   if (loading) {
     return (
       <div className="flex items-center justify-center py-8 gap-2">
         <div className="w-4 h-4 border-2 border-amber-500 border-t-transparent rounded-full animate-spin" />
-        <span className="text-xs text-gray-400">후일담을 작성하고 있습니다...</span>
+        <span className="text-xs text-gray-400">후일담을 정리하고 있습니다...</span>
       </div>
     )
   }
 
   if (!aftermath) return null
 
-  // 후일담 텍스트를 문단 배열로 분리하되,
-  // 마지막 이탤릭/교훈 문장이 본문 문단에 붙어 있으면 강제 분리
-  const splitAftermathParagraphs = (text: string): string[] => {
-    const paragraphs = text.split('\n\n').map(p => p.trim()).filter(Boolean)
-    if (paragraphs.length === 0) return paragraphs
-
-    // 마지막 문단 내부에서 교훈 문장이 줄바꿈(\n)으로만 붙어 있는 경우 분리
-    const last = paragraphs[paragraphs.length - 1]
-    const lines = last.split('\n').map(l => l.trim()).filter(Boolean)
-    if (lines.length >= 2) {
-      const candidate = lines[lines.length - 1]
-      // 교훈 패턴: "..." 또는 — 로 시작하는 한 문장
-      const isQuoteLine = /^[""\u201C].*[""\u201D]$/.test(candidate) || /^[—\u2014\u2015]/.test(candidate)
-      if (isQuoteLine) {
-        paragraphs[paragraphs.length - 1] = lines.slice(0, -1).join('\n')
-        paragraphs.push(candidate)
-      }
-    }
-
-    return paragraphs
-  }
-
   const renderAftermathImage = (): string | null => {
     const canvas = aftermathCanvasRef.current
-    if (!canvas || !aftermath || !caseData || !verdictScore) return null
-    const W = 600, FIXED_H = 600 // 정사각
-    const ctx = canvas.getContext('2d')!
+    if (!canvas || !caseData || !verdictScore) return null
+
+    const W = 600
+    const H = 600
+    const ctx = canvas.getContext('2d')
+    if (!ctx) return null
     const dpr = window.devicePixelRatio || 1
-
     const paragraphs = splitAftermathParagraphs(aftermath)
-    const isLastQuote = (i: number) => i === paragraphs.length - 1
 
-    // 본문 줄 수 계산 (높이 동적)
     ctx.font = '14px Pretendard, sans-serif'
-    let totalLines = 0
-    const paraLines: string[][] = []
-    for (const p of paragraphs) {
-      const lines = wrapText(ctx, p, W - 80)
-      paraLines.push(lines)
-      totalLines += lines.length
-    }
-    const H = FIXED_H // 정사각 고정
+    const paragraphLines = paragraphs.map((item) => wrapText(ctx, item, W - 80))
 
-    canvas.width = W * dpr; canvas.height = H * dpr
+    canvas.width = W * dpr
+    canvas.height = H * dpr
     ctx.scale(dpr, dpr)
 
-    // 배경
     const bg = ctx.createLinearGradient(0, 0, 0, H)
-    bg.addColorStop(0, '#0c0f1a'); bg.addColorStop(1, '#030712')
-    ctx.fillStyle = bg; ctx.fillRect(0, 0, W, H)
+    bg.addColorStop(0, '#0c0f1a')
+    bg.addColorStop(1, '#030712')
+    ctx.fillStyle = bg
+    ctx.fillRect(0, 0, W, H)
 
-    // 상단 프레임 라인
-    ctx.strokeStyle = '#d9770620'; ctx.lineWidth = 1
+    ctx.strokeStyle = '#d9770620'
+    ctx.lineWidth = 1
     ctx.strokeRect(20, 20, W - 40, H - 40)
 
-    // ⚖️ 이모지 + 타이틀
-    ctx.fillStyle = '#fbbf24'; ctx.font = 'bold 24px Pretendard, sans-serif'; ctx.textAlign = 'center'
-    ctx.fillText('⚖️ 솔로몬 — 판결 후일담', W / 2, 55)
+    ctx.fillStyle = '#fbbf24'
+    ctx.font = 'bold 24px Pretendard, sans-serif'
+    ctx.textAlign = 'center'
+    ctx.fillText('⚖️ 솔로몬의 판결 후일담', W / 2, 55)
 
-    // 점수 + 당사자
-    ctx.fillStyle = '#fbbf24'; ctx.font = 'bold 18px Pretendard, sans-serif'
+    ctx.font = 'bold 18px Pretendard, sans-serif'
     ctx.fillText(`${verdictScore.total}점`, W / 2, 85)
-    ctx.fillStyle = '#6b7280'; ctx.font = '13px Pretendard, sans-serif'
+    ctx.fillStyle = '#6b7280'
+    ctx.font = '13px Pretendard, sans-serif'
     ctx.fillText(`${caseData.duo.partyA.name} vs ${caseData.duo.partyB.name}`, W / 2, 105)
 
-    // 구분선
-    ctx.strokeStyle = '#374151'; ctx.lineWidth = 0.5
-    ctx.beginPath(); ctx.moveTo(60, 118); ctx.lineTo(W - 60, 118); ctx.stroke()
+    ctx.strokeStyle = '#374151'
+    ctx.lineWidth = 0.5
+    ctx.beginPath()
+    ctx.moveTo(60, 118)
+    ctx.lineTo(W - 60, 118)
+    ctx.stroke()
 
-    // 본문 — 단락별 간격
     let y = 140
-    paraLines.forEach((lines, pi) => {
-      if (isLastQuote(pi)) {
-        // 마지막 명언: 중앙 정렬 + 노란색
-        ctx.fillStyle = '#fbbf24'; ctx.font = 'italic 14px Pretendard, sans-serif'; ctx.textAlign = 'center'
-        lines.forEach(line => { ctx.fillText(line, W / 2, y); y += 20 })
-      } else {
-        // 본문: 좌측 정렬 + 흰색
-        ctx.fillStyle = '#d1d5db'; ctx.font = '14px Pretendard, sans-serif'; ctx.textAlign = 'left'
-        lines.forEach(line => { ctx.fillText(line, 40, y); y += 20 })
-      }
-      y += 12 // 단락 간격
+    paragraphLines.forEach((lines, index) => {
+      const isLast = index === paragraphLines.length - 1
+      ctx.fillStyle = isLast ? '#fbbf24' : '#d1d5db'
+      ctx.font = isLast ? 'italic 14px Pretendard, sans-serif' : '14px Pretendard, sans-serif'
+      ctx.textAlign = isLast ? 'center' : 'left'
+      lines.forEach((line) => {
+        ctx.fillText(line, isLast ? W / 2 : 40, y)
+        y += 20
+      })
+      y += 12
     })
 
-    // 해시태그
-    ctx.fillStyle = '#4b5563'; ctx.font = '12px Pretendard, sans-serif'; ctx.textAlign = 'center'
-    ctx.fillText('#솔로몬 #법정추리게임', W / 2, H - 30)
+    ctx.fillStyle = '#4b5563'
+    ctx.font = '12px Pretendard, sans-serif'
+    ctx.textAlign = 'center'
+    ctx.fillText('#솔로몬 #판결후일담', W / 2, H - 30)
 
     return canvas.toDataURL('image/png')
   }
 
   const handleShareAftermath = async () => {
     const canvas = aftermathCanvasRef.current
-    if (!canvas || !aftermath) return
+    if (!canvas) return
     renderAftermathImage()
     try {
-      const blob = await new Promise<Blob | null>((res) => canvas.toBlob(res, 'image/png'))
+      const blob = await new Promise<Blob | null>((resolve) => canvas.toBlob(resolve, 'image/png'))
       if (!blob) return
       const file = new File([blob], 'solomon-aftermath.png', { type: 'image/png' })
       if (navigator.share && navigator.canShare?.({ files: [file] })) {
-        await navigator.share({ title: '솔로몬 판결 후일담', files: [file] })
+        await navigator.share({ title: '솔로몬 후일담', files: [file] })
       } else {
-        const a = document.createElement('a'); a.href = URL.createObjectURL(blob)
-        a.download = 'solomon-aftermath.png'; a.click(); URL.revokeObjectURL(a.href)
+        const anchor = document.createElement('a')
+        anchor.href = URL.createObjectURL(blob)
+        anchor.download = 'solomon-aftermath.png'
+        anchor.click()
+        URL.revokeObjectURL(anchor.href)
       }
-    } catch { /* 취소 */ }
+    } catch {
+      // share cancelled
+    }
   }
 
   const handleDownloadAftermath = () => {
     const canvas = aftermathCanvasRef.current
-    if (!canvas || !aftermath) return
+    if (!canvas) return
     renderAftermathImage()
-    const a = document.createElement('a'); a.href = canvas.toDataURL('image/png')
-    a.download = 'solomon-aftermath.png'; a.click()
+    const anchor = document.createElement('a')
+    anchor.href = canvas.toDataURL('image/png')
+    anchor.download = 'solomon-aftermath.png'
+    anchor.click()
   }
 
   return (
     <div className="space-y-4">
       <h3 className="text-sm font-bold text-amber-400 text-center">판결 이후</h3>
       <div className="bg-gray-800/40 border border-gray-700 rounded-lg p-5">
-        {splitAftermathParagraphs(aftermath).map((paragraph, i, arr) => (
-          <p key={i} className={`text-sm leading-relaxed ${
-            i === arr.length - 1
-              ? 'text-amber-400 italic mt-5 text-center font-medium'
-              : 'text-gray-300 mb-5'
-          }`}>
+        {splitAftermathParagraphs(aftermath).map((paragraph, index, all) => (
+          <p
+            key={index}
+            className={`text-sm leading-relaxed ${
+              index === all.length - 1
+                ? 'text-amber-400 italic mt-5 text-center font-medium'
+                : 'text-gray-300 mb-5'
+            }`}
+          >
             {paragraph}
           </p>
         ))}
       </div>
 
-      {/* 후일담 이미지 공유 */}
       <canvas ref={aftermathCanvasRef} className="hidden" />
       <div className="flex gap-2">
-        <button onClick={handleDownloadAftermath}
-          className="flex-1 bg-gray-800 hover:bg-gray-700 text-gray-300 py-2 rounded-lg text-xs font-semibold border border-gray-700">
+        <button
+          onClick={handleDownloadAftermath}
+          className="flex-1 bg-gray-800 hover:bg-gray-700 text-gray-300 py-2 rounded-lg text-xs font-semibold border border-gray-700"
+        >
           이미지 저장
         </button>
-        <button onClick={handleShareAftermath}
-          className="flex-1 bg-amber-700 hover:bg-amber-600 text-white py-2 rounded-lg text-xs font-semibold">
+        <button
+          onClick={handleShareAftermath}
+          className="flex-1 bg-amber-700 hover:bg-amber-600 text-white py-2 rounded-lg text-xs font-semibold"
+        >
           공유하기
         </button>
       </div>

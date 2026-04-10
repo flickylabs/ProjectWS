@@ -1,0 +1,51 @@
+module.exports = {
+  caseId: 'neighbor-new-11',
+  title: '맘카페 공지의 17분',
+  category: 'neighbor',
+  difficulty: 'hard',
+  hook: '엘리베이터 CCTV 스틸이 올라간 지 17분 만에 단지 맘카페에 유괴 의심 보호자 공지가 뜨고, A 아이의 공동육아방 픽업권이 정지된다. A는 B가 자기 아이 치료 일정까지 퍼뜨리며 자신을 단지에서 몰아냈다고 하고, B는 A가 다른 집 보호자 QR로 두 아이를 반복 데려갔다고 맞선다.',
+  partyA: {
+    name: '윤다정',
+    age: 36,
+    role: '프리랜서 북디자이너',
+    hiddenTruth: '회비 연체로 픽업권이 막히자 같은 동 이웃의 보호자 QR로 자기 아이와 조카를 반복 픽업한 것',
+    lieStrategy: 'victim_cosplay',
+  },
+  partyB: {
+    name: '최보람',
+    age: 39,
+    role: '단지 맘카페 운영진 겸 공동육아방 자원관리자',
+    hiddenTruth: '유괴 의심 공지에 치료 일정, 동선, 엘리베이터 CCTV를 붙여 여론으로 제재한 것',
+    lieStrategy: 'confrontational',
+  },
+  disputes: [
+    { id: 'd-1', name: 'A의 보호자 QR 차용은 단순 편의였는가, 안전규칙 위반이었는가' },
+    { id: 'd-2', name: 'B의 맘카페 공지는 아이 안전을 위한 경고였는가, 공개 망신이었는가' },
+    { id: 'd-3', name: '치료 일정과 이동 동선 공개는 어디까지 허용되는가' },
+    { id: 'd-4', name: 'B의 공지는 공용도서방 유료과외 신고에 대한 보복이었는가' },
+    { id: 'd-5', name: '공동체 자율통제와 군중처벌의 경계는 어디서 무너졌는가' },
+  ],
+  evidenceChain: {
+    initial: [
+      { id: 'e-1', name: '맘카페 공지 캡처' },
+      { id: 'e-2', name: '공동육아방 픽업 QR 정지 알림' },
+      { id: 'e-3', name: '엘리베이터 CCTV 스틸' },
+    ],
+    unlock1: { id: 'e-4', name: '보호자 QR 발급대장과 동일 QR 중복 인식 기록', requires: ['e-2'], minState: 'S1' },
+    unlock2: { id: 'e-5', name: '공지 draft와 운영진 단톡, 치료 일정 캡처 첨부본', requires: ['e-1'], minState: 'S2' },
+    unlock3: { id: 'e-6', name: '공용도서방 예약표와 유료과외 입금내역', requires: ['e-3'], minState: 'S2' },
+    final: { id: 'e-7', name: '공동육아방 회비 연체 내역과 A의 신고 접수 메일, B의 삭제 거부 답변', requires: ['e-4', 'e-6'], minState: 'S3' },
+    combinations: [
+      { requires: ['e-2', 'e-4'], description: 'A가 다른 집 보호자 QR을 반복적으로 사용했다는 점이 드러난다' },
+      { requires: ['e-1', 'e-5'], description: 'B가 아이 치료 일정과 동선을 붙여 여론몰이를 했다는 사실이 확인된다' },
+      { requires: ['e-6', 'e-7'], description: 'B의 공지가 단순 안전 경고가 아니라 보복성 권력 행사였다는 구조가 열린다' },
+    ],
+  },
+  midTwist: '초반엔 B의 맘카페 공지가 압도적으로 악질처럼 보이지만, e-4가 열리면 A도 실제로 보호자 QR을 반복 차용해 규정을 깬 사실이 나온다. 이후 e-6과 e-7이 열리면 B가 자신의 공용공간 유료과외 신고에 대한 반감으로 사건을 확대했다는 점이 드러난다.',
+  dilemma: '`아이 안전 vs 공동체 군중처벌`, `회비 연체 생존형 편법 vs 보호자 인증 규칙`, `신고 정당성 vs 보복성 낙인`이 충돌한다. A의 QR 차용은 분명 문제지만, B가 공동체 권력을 써 치료 정보와 동선을 퍼뜨린 방식 역시 별도 책임이 무겁다.',
+  dilemmaAxes: [
+    '아이 안전 vs 공동체 군중처벌',
+    '회비 연체 생존형 편법 vs 보호자 인증 규칙',
+    '신고 정당성 vs 보복성 낙인',
+  ],
+}

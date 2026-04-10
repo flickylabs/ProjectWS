@@ -1,0 +1,822 @@
+export const Headline01V3GameLoopData = {
+  "caseId": "headline-01",
+  "dossierCards": [
+    {
+      "id": "dossier-1",
+      "name": "편집 구간 비교",
+      "description": "원본 촬영본과 업로드본의 차이를 묶어 편집 의도와 반격 시점을 함께 확인하는 카드입니다.",
+      "evidenceIds": [
+        "e-1",
+        "e-6"
+      ],
+      "relatedDisputes": [
+        "d-1",
+        "d-4"
+      ],
+      "subjectParty": "both",
+      "challenges": [
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dossier-1.a.q1",
+              "text": "최종 업로드본에서 복구 대화 구간을 직접 덜어낸 사람이 본인 맞습니까?",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "headline01:a:d-1:S2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.a.q2",
+              "text": "원본 촬영본보다 위기감이 세게 느껴지도록 컷 순서를 바꾼 이유를 설명해 주십시오.",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "headline01:a:d-1:S3:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.a.q3",
+              "text": "문제 장면이 실제였더라도 편집으로 공포를 키운 점은 인정하십니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "headline01:a:d-1:S4:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        },
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dossier-1.b.q1",
+              "text": "편집이 과장됐더라도 실제 위생 문제가 있었다는 점까지 전부 부인하십니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "headline01:b:d-1:S2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.b.q2",
+              "text": "평점 하락 직후 반격 게시를 먼저 꺼낸 사람이 누구인지 지금 말씀해 주십시오.",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "headline01:b:d-4:S2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-1.b.q3",
+              "text": "반박과 신상 유포의 선이 어디서 무너졌는지 아직도 구분된다고 보십니까?",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "headline01:b:d-4:S3:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dossier-2",
+      "name": "위생 누적 기록",
+      "description": "주방 CCTV와 재점검 기록을 묶어 실제 위생 실패의 정도와 반복성을 따져보는 카드입니다.",
+      "evidenceIds": [
+        "e-2",
+        "e-3"
+      ],
+      "relatedDisputes": [
+        "d-2"
+      ],
+      "subjectParty": "both",
+      "challenges": [
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dossier-2.a.q1",
+              "text": "구청 재점검 기록까지 보기 전부터 즉각적인 공적 경고가 필요하다고 판단한 이유는 무엇입니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "headline01:a:d-2:S2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.a.q2",
+              "text": "직접 본 장면과 누적 위생 실패를 같은 무게로 묶어 설명한 점은 인정하십니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "headline01:a:d-2:S3:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.a.q3",
+              "text": "소비자 경고와 영상 연출의 경계가 흐려진 순간이 있었다는 점은 부인하지 않으시겠지요?",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "headline01:a:d-2:S4:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        },
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dossier-2.b.q1",
+              "text": "반복된 시정 권고를 받은 뒤에도 온도 관리와 교차오염 방지를 미룬 이유를 말씀해 주십시오.",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "headline01:b:d-2:S2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.b.q2",
+              "text": "즉시 영업정지 사안이 아니라는 점과 누적 실패가 없다는 말은 같은 뜻이 아닌데, 그 차이를 알고도 섞어 말한 것 아닙니까?",
+              "attackVector": "authenticity",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "headline01:b:d-2:S3:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-2.b.q3",
+              "text": "바쁜 시간대와 매출 압박을 핑계로 기준을 낮춘 점은 결국 업주 책임 아닙니까?",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "headline01:b:d-2:S4:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dossier-3",
+      "name": "협조 제안과 단체방",
+      "description": "협조 DM, 회복 패키지 견적, 점주 단체방 캡처를 함께 놓고 거래 압박과 보복 확산을 분리해 보는 카드입니다.",
+      "evidenceIds": [
+        "e-4",
+        "e-5"
+      ],
+      "relatedDisputes": [
+        "d-3",
+        "d-4"
+      ],
+      "subjectParty": "both",
+      "challenges": [
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dossier-3.a.q1",
+              "text": "촬영 전 메뉴 협조 요청과 공개 뒤 회복 패키지 연결이 한 흐름으로 이어진 점은 인정하십니까?",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "headline01:a:d-3:S2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.a.q2",
+              "text": "직접 협박 문구가 없었다는 말로 영향력 거래 구조까지 지울 수 있다고 보십니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "headline01:a:d-3:S3:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.a.q3",
+              "text": "협조라는 표현 뒤에 상대가 거절하기 어려운 압박이 있었다는 점은 이제 인정하셔야 하지 않겠습니까?",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "headline01:a:d-3:S4:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        },
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dossier-3.b.q1",
+              "text": "점주 단체방에서 차량 번호와 촬영 동선을 처음 꺼낸 사람이 누구인지 분명히 말씀해 주십시오.",
+              "attackVector": "identity",
+              "onSuccess": {
+                "blockVector": "identity",
+                "revealAtom": "headline01:b:d-4:S2:1",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.b.q2",
+              "text": "삭제한 뒤 복구된 게시물까지 보면 단순 감정 배설이 아니라 확산 의도가 있었다는 점을 부인하십니까?",
+              "attackVector": "context",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "headline01:b:d-4:S4:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dossier-3.b.q3",
+              "text": "생계가 무너지는 두려움이 있었다고 해도 신상 유포가 정당화되진 않는다는 점은 인정하십니까?",
+              "attackVector": "legality",
+              "onSuccess": {
+                "blockVector": "legality",
+                "revealAtom": "headline01:b:d-4:S5:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "stateUnlockAtoms": {
+    "a": {
+      "d-1": {
+        "S2": [
+          {
+            "id": "headline01:a:d-1:S2:0",
+            "factText": "편집 구간 비교 카드에서 리뷰어 쪽 숨기던 축이 한 단계 더 드러났습니다",
+            "tags": [
+              "headline",
+              "d-1",
+              "dossier-1"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "summary": {
+                "default": "편집 구간 비교 카드에서 숨기던 축이 더 드러났습니다"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame",
+              "confess"
+            ]
+          }
+        ]
+      },
+      "d-2": {
+        "S2": [
+          {
+            "id": "headline01:a:d-2:S2:0",
+            "factText": "위생 누적 기록 카드에서 리뷰어 쪽 숨기던 축이 한 단계 더 드러났습니다",
+            "tags": [
+              "headline",
+              "d-2",
+              "dossier-2"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "summary": {
+                "default": "위생 누적 기록 카드에서 숨기던 축이 더 드러났습니다"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame",
+              "confess"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "headline01:a:d-2:S3:0",
+            "factText": "위생 누적 기록 카드에서 리뷰어 쪽 숨기던 축이 한 단계 더 드러났습니다",
+            "tags": [
+              "headline",
+              "d-2",
+              "dossier-2"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "summary": {
+                "default": "위생 누적 기록 카드에서 숨기던 축이 더 드러났습니다"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame",
+              "confess"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "headline01:a:d-2:S4:0",
+            "factText": "위생 누적 기록 카드에서 리뷰어 쪽 숨기던 축이 한 단계 더 드러났습니다",
+            "tags": [
+              "headline",
+              "d-2",
+              "dossier-2"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "summary": {
+                "default": "위생 누적 기록 카드에서 숨기던 축이 더 드러났습니다"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame",
+              "confess"
+            ]
+          }
+        ]
+      },
+      "d-3": {
+        "S2": [
+          {
+            "id": "headline01:a:d-3:S2:0",
+            "factText": "협조 제안과 단체방 카드에서 리뷰어 쪽 숨기던 축이 한 단계 더 드러났습니다",
+            "tags": [
+              "headline",
+              "d-3",
+              "dossier-3"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "summary": {
+                "default": "협조 제안과 단체방 카드에서 숨기던 축이 더 드러났습니다"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame",
+              "confess"
+            ]
+          }
+        ]
+      },
+      "d-4": {
+        "S3": [
+          {
+            "id": "headline01:a:d-1:S3:0",
+            "factText": "편집 구간 비교 카드에서 리뷰어 쪽 숨기던 축이 한 단계 더 드러났습니다",
+            "tags": [
+              "headline",
+              "d-4",
+              "dossier-1"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "summary": {
+                "default": "편집 구간 비교 카드에서 숨기던 축이 더 드러났습니다"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame",
+              "confess"
+            ]
+          },
+          {
+            "id": "headline01:a:d-3:S3:0",
+            "factText": "협조 제안과 단체방 카드에서 리뷰어 쪽 숨기던 축이 한 단계 더 드러났습니다",
+            "tags": [
+              "headline",
+              "d-4",
+              "dossier-3"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "summary": {
+                "default": "협조 제안과 단체방 카드에서 숨기던 축이 더 드러났습니다"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame",
+              "confess"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "headline01:a:d-1:S4:0",
+            "factText": "편집 구간 비교 카드에서 리뷰어 쪽 숨기던 축이 한 단계 더 드러났습니다",
+            "tags": [
+              "headline",
+              "d-4",
+              "dossier-1"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "summary": {
+                "default": "편집 구간 비교 카드에서 숨기던 축이 더 드러났습니다"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame",
+              "confess"
+            ]
+          },
+          {
+            "id": "headline01:a:d-3:S4:0",
+            "factText": "협조 제안과 단체방 카드에서 리뷰어 쪽 숨기던 축이 한 단계 더 드러났습니다",
+            "tags": [
+              "headline",
+              "d-4",
+              "dossier-3"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "summary": {
+                "default": "협조 제안과 단체방 카드에서 숨기던 축이 더 드러났습니다"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame",
+              "confess"
+            ]
+          }
+        ]
+      }
+    },
+    "b": {
+      "d-1": {
+        "S2": [
+          {
+            "id": "headline01:b:d-1:S2:0",
+            "factText": "편집 구간 비교 카드에서 업주 쪽 숨기던 축이 한 단계 더 드러났습니다",
+            "tags": [
+              "headline",
+              "d-1",
+              "dossier-1"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "summary": {
+                "default": "편집 구간 비교 카드에서 숨기던 축이 더 드러났습니다"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame",
+              "confess"
+            ]
+          }
+        ]
+      },
+      "d-2": {
+        "S2": [
+          {
+            "id": "headline01:b:d-2:S2:0",
+            "factText": "위생 누적 기록 카드에서 업주 쪽 숨기던 축이 한 단계 더 드러났습니다",
+            "tags": [
+              "headline",
+              "d-2",
+              "dossier-2"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "summary": {
+                "default": "위생 누적 기록 카드에서 숨기던 축이 더 드러났습니다"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame",
+              "confess"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "headline01:b:d-2:S3:0",
+            "factText": "위생 누적 기록 카드에서 업주 쪽 숨기던 축이 한 단계 더 드러났습니다",
+            "tags": [
+              "headline",
+              "d-2",
+              "dossier-2"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "summary": {
+                "default": "위생 누적 기록 카드에서 숨기던 축이 더 드러났습니다"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame",
+              "confess"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "headline01:b:d-2:S4:0",
+            "factText": "위생 누적 기록 카드에서 업주 쪽 숨기던 축이 한 단계 더 드러났습니다",
+            "tags": [
+              "headline",
+              "d-2",
+              "dossier-2"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "summary": {
+                "default": "위생 누적 기록 카드에서 숨기던 축이 더 드러났습니다"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame",
+              "confess"
+            ]
+          }
+        ]
+      },
+      "d-3": {
+        "S2": [
+          {
+            "id": "headline01:b:d-4:S2:1",
+            "factText": "협조 제안과 단체방 카드에서 업주 쪽 숨기던 축이 한 단계 더 드러났습니다",
+            "tags": [
+              "headline",
+              "d-3",
+              "dossier-3"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "summary": {
+                "default": "협조 제안과 단체방 카드에서 숨기던 축이 더 드러났습니다"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame",
+              "confess"
+            ]
+          }
+        ]
+      },
+      "d-4": {
+        "S2": [
+          {
+            "id": "headline01:b:d-4:S2:0",
+            "factText": "편집 구간 비교 카드에서 업주 쪽 숨기던 축이 한 단계 더 드러났습니다",
+            "tags": [
+              "headline",
+              "d-4",
+              "dossier-1"
+            ],
+            "unlockedAtState": "S2",
+            "slots": {
+              "summary": {
+                "default": "편집 구간 비교 카드에서 숨기던 축이 더 드러났습니다"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame",
+              "confess"
+            ]
+          }
+        ],
+        "S3": [
+          {
+            "id": "headline01:b:d-4:S3:0",
+            "factText": "편집 구간 비교 카드에서 업주 쪽 숨기던 축이 한 단계 더 드러났습니다",
+            "tags": [
+              "headline",
+              "d-4",
+              "dossier-1"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "summary": {
+                "default": "편집 구간 비교 카드에서 숨기던 축이 더 드러났습니다"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame",
+              "confess"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "headline01:b:d-4:S4:0",
+            "factText": "협조 제안과 단체방 카드에서 업주 쪽 숨기던 축이 한 단계 더 드러났습니다",
+            "tags": [
+              "headline",
+              "d-4",
+              "dossier-3"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "summary": {
+                "default": "협조 제안과 단체방 카드에서 숨기던 축이 더 드러났습니다"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame",
+              "confess"
+            ]
+          }
+        ],
+        "S5": [
+          {
+            "id": "headline01:b:d-4:S5:0",
+            "factText": "협조 제안과 단체방 카드에서 업주 쪽 숨기던 축이 한 단계 더 드러났습니다",
+            "tags": [
+              "headline",
+              "d-4",
+              "dossier-3"
+            ],
+            "unlockedAtState": "S5",
+            "slots": {
+              "summary": {
+                "default": "협조 제안과 단체방 카드에서 숨기던 축이 더 드러났습니다"
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "blame",
+              "confess"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "events": {
+    "contradictions": [
+      {
+        "id": "headline-01-contradiction-1",
+        "statementA": "리뷰어는 문제 장면을 꾸며내지 않았다고 말합니다.",
+        "statementB": "원본 촬영본과 업로드본 비교에선 복구 구간이 의도적으로 빠져 있습니다.",
+        "options": {
+          "point_out": {
+            "label": "편집 차이를 짚는다",
+            "effect": "리뷰어 방어 폭이 줄어듭니다."
+          },
+          "let_go": {
+            "label": "지금은 넘긴다",
+            "effect": "더 넓은 맥락을 노릴 수 있습니다."
+          }
+        },
+        "npcReaction": "리뷰어는 실제 장면이었다는 말만 붙잡으려 합니다."
+      },
+      {
+        "id": "headline-01-contradiction-2",
+        "statementA": "업주는 즉시 영업정지급은 아니었다고 말합니다.",
+        "statementB": "기관 기록에는 반복된 시정 권고와 누적 실패가 남아 있습니다.",
+        "options": {
+          "point_out": {
+            "label": "누적 실패를 짚는다",
+            "effect": "업주 변명이 약해집니다."
+          },
+          "let_go": {
+            "label": "나중으로 미룬다",
+            "effect": "감정 폭발을 더 크게 유도할 수 있습니다."
+          }
+        },
+        "npcReaction": "업주는 즉시 영업정지가 아니었다는 말만 붙잡습니다."
+      }
+    ],
+    "interjections": [
+      {
+        "id": "headline-01-interjection-1",
+        "interruptor": "a",
+        "interjectionLine": "회복 패키지 얘기만 붙들면 정작 업주 쪽 위생 실패를 흐리게 만듭니다.",
+        "options": {
+          "allow": {
+            "label": "말하게 둔다",
+            "effect": "리뷰어 방어가 길어집니다."
+          },
+          "block": {
+            "label": "끊고 돌아간다",
+            "effect": "핵심 사실선으로 복귀합니다."
+          }
+        }
+      },
+      {
+        "id": "headline-01-interjection-2",
+        "interruptor": "b",
+        "interjectionLine": "편집과 거래 압박을 같이 봐야지, 위생 얘기로만 끝내면 안 됩니다.",
+        "options": {
+          "allow": {
+            "label": "말을 받는다",
+            "effect": "업주 감정이 더 노출됩니다."
+          },
+          "block": {
+            "label": "지금은 끊는다",
+            "effect": "신상 유포 쟁점이 선명해집니다."
+          }
+        }
+      }
+    ],
+    "emotionalOutbursts": [
+      {
+        "id": "headline-01-outburst-1",
+        "party": "a",
+        "outburstLine": "제가 찍은 영상 때문에 불편해진 건 알아도, 그래서 제 동선까지 돌린 건 선 넘은 겁니다.",
+        "options": {
+          "press": {
+            "label": "밀어붙인다",
+            "effect": "피해 감정이 사실 고백으로 이어질 수 있습니다."
+          },
+          "calm": {
+            "label": "가라앉힌다",
+            "effect": "방어 반응이 잠시 누그러집니다."
+          }
+        }
+      },
+      {
+        "id": "headline-01-outburst-2",
+        "party": "b",
+        "outburstLine": "위생이 완벽했다고는 못 하겠습니다. 그런데 그걸 그렇게까지 세게 걸었으니 저도 눈이 뒤집힌 겁니다.",
+        "options": {
+          "press": {
+            "label": "보복 책임을 짚는다",
+            "effect": "업주 감정 방어가 무너집니다."
+          },
+          "calm": {
+            "label": "누적 실패를 다시 본다",
+            "effect": "운영 책임 축으로 복귀합니다."
+          }
+        }
+      }
+    ]
+  },
+  "transitionBeats": [
+    {
+      "id": "tb-headline-a-d1-s1-s2",
+      "caseId": "headline-01",
+      "party": "a",
+      "disputeId": "d-1",
+      "fromState": "S1",
+      "toState": "S2",
+      "primaryBeatType": "evidence_hit",
+      "line": "원본 촬영본이 나란히 깔리자 리뷰어는 더는 컷 차이를 부정하지 못하고 공익과 연출을 함께 묶어 답하려 듭니다.",
+      "behaviorHint": "목소리가 잠깐 낮아졌다가 다시 단단해집니다."
+    },
+    {
+      "id": "tb-headline-a-d3-s4-s5",
+      "caseId": "headline-01",
+      "party": "a",
+      "disputeId": "d-3",
+      "fromState": "S4",
+      "toState": "S5",
+      "primaryBeatType": "confession",
+      "line": "협조와 회복이라는 단어를 썼지만 실질적으로는 영향력을 거래 카드처럼 쥐고 있었다는 고백이 터져 나옵니다.",
+      "behaviorHint": "마지막 한 문장을 내뱉고 짧게 침묵합니다."
+    },
+    {
+      "id": "tb-headline-b-d2-s1-s2",
+      "caseId": "headline-01",
+      "party": "b",
+      "disputeId": "d-2",
+      "fromState": "S1",
+      "toState": "S2",
+      "primaryBeatType": "evidence_hit",
+      "line": "주방 CCTV와 시정 메일이 겹치자 업주는 즉시 영업정지 사안이 아니었다는 말만 붙들고 누적 실패 자체는 더는 피하지 못합니다.",
+      "behaviorHint": "숫자와 시점을 과하게 정확히 말하려 듭니다."
+    },
+    {
+      "id": "tb-headline-b-d4-s4-s5",
+      "caseId": "headline-01",
+      "party": "b",
+      "disputeId": "d-4",
+      "fromState": "S4",
+      "toState": "S5",
+      "primaryBeatType": "confession",
+      "line": "업주는 생계 위기를 핑계로 차량 번호와 동선 공유를 막지 않았고 일부는 자신이 직접 올렸다는 수준까지 내려옵니다.",
+      "behaviorHint": "단어 사이 간격이 길어지고 손끝이 멈춥니다."
+    }
+  ]
+} as const
