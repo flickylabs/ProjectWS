@@ -141,32 +141,45 @@ export default function AutoDialoguePhase({ dialogues, llmGenerator, nextPhase, 
 
   if (loading) {
     return (
-      <div className="flex items-center justify-center py-3 gap-2">
-        <div className="w-4 h-4 border-2 border-amber-500 border-t-transparent rounded-full animate-spin" />
-        <span className="text-xs text-gray-400">AI가 진술을 준비하고 있습니다...</span>
+      <div className="pc-dialogue-loading">
+        <div className="pc-dialogue-loading__spinner" />
+        <span>AI가 진술을 준비하고 있습니다...</span>
       </div>
     )
   }
+
+  // Keyboard shortcut: Space / Enter to advance
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === ' ' || e.key === 'Enter') {
+        e.preventDefault()
+        handleTap()
+      }
+    }
+    window.addEventListener('keydown', onKey)
+    return () => window.removeEventListener('keydown', onKey)
+  }, [handleTap])
 
   // 전환 중 — 중앙 오버레이
   if (transitioning) {
     return (
-      <div className="flex items-center justify-center py-2">
-        <span className="text-xs text-amber-400/60">{nextLabel}...</span>
+      <div className="pc-dialogue-transition">
+        <span>{nextLabel}...</span>
       </div>
     )
   }
 
-  // 대사 진행 중 — 탭 안내
+  // 대사 진행 중 — PC 진행 버튼
   return (
-    <div className="flex items-center justify-center py-2">
+    <div className="pc-dialogue-controls">
       <button
+        className="pc-dialogue-advance"
         onClick={handleTap}
-        className="flex items-center gap-2 text-gray-400 hover:text-amber-400 active:scale-95 transition-all"
+        type="button"
       >
-        <span className="text-xs">탭하여 다음 진술</span>
-        <span className="text-xs text-gray-600">({displayCount}/{totalCount})</span>
-        <span className="animate-bounce text-amber-500/60 text-xs">▼</span>
+        <span className="pc-dialogue-advance__label">다음 진술</span>
+        <span className="pc-dialogue-advance__count">{displayCount}/{totalCount}</span>
+        <kbd>Space</kbd>
       </button>
     </div>
   )

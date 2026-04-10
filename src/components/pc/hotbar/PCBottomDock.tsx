@@ -38,6 +38,7 @@ export default function PCBottomDock() {
   const questionMeters = useStore((s) => s.questionMeters)
   const agentA = useStore((s) => s.agentA)
   const agentB = useStore((s) => s.agentB)
+  const calledWitnesses = useStore((s) => s.calledWitnesses)
 
   const [activePage, setActivePage] = useState<HotbarPage>('interrogation')
   const [freeQuestionOpen, setFreeQuestionOpen] = useState(false)
@@ -143,6 +144,35 @@ export default function PCBottomDock() {
     })
   }
 
+  const openWitnessPanel = () => {
+    if (!caseData) return
+    const witnesses = caseData.duo.socialGraph.filter(
+      (tp) => tp.slot === 'institutional' || tp.slot === 'acquaintance_1' || tp.slot === 'acquaintance_2'
+        || tp.slot === 'family_1' || tp.slot === 'family_2',
+    )
+
+    const DEPTH_LABELS: Record<string, string> = { vague: '모호', partial: '부분', full: '핵심' }
+
+    const witnessLines = witnesses.map((w) => {
+      const called = calledWitnesses.includes(w.id)
+      const status = called ? '소환됨' : '소환 가능'
+      return `${w.name} (${w.knowledgeScope ?? '관련인'}) — ${status}`
+    }).join('\n')
+
+    openPcInteractionPanel({
+      title: '증인 소환',
+      subtitle: '적절한 시점에 소환해야 핵심 증언을 들을 수 있습니다',
+      tone: 'gold',
+      body: witnesses.length > 0 ? witnessLines : '이 사건에 소환 가능한 증인이 없습니다.',
+      actions: witnesses.map((w) => ({
+        kind: 'summon_witness' as const,
+        label: calledWitnesses.includes(w.id) ? `${w.name} 재소환` : `${w.name} 소환`,
+        witnessId: w.id,
+        disabled: false,
+      })),
+    })
+  }
+
   const handleFreeQuestionSend = () => {
     if (!caseData || !activeDisputeId || !freeQuestionText.trim()) {
       return
@@ -179,7 +209,7 @@ export default function PCBottomDock() {
           onClick: () => runQuestion('empathy_approach'),
         },
         { key: 4, iconId: 'i-chat', label: '\uC790\uC720 \uC9C8\uBB38', onClick: () => setFreeQuestionOpen(true) },
-        { key: 5, iconId: 'i-lock', label: '\uBE48 \uC2AC\uB86F', locked: true },
+        { key: 5, iconId: 'i-plus', label: '\uBE48 \uC2AC\uB86F', locked: true },
         { key: 6, iconId: 'i-plus', label: '\uBE48 \uC2AC\uB86F', locked: true },
       ]
     }
@@ -202,7 +232,7 @@ export default function PCBottomDock() {
             }),
         },
         { key: 4, iconId: 'i-bolt', label: '\uB2E8\uACC4 \uC9C4\uD589', onClick: () => openSpecialPrompt('advance_phase') },
-        { key: 5, iconId: 'i-lock', label: '\uBE48 \uC2AC\uB86F', locked: true },
+        { key: 5, iconId: 'i-plus', label: '\uBE48 \uC2AC\uB86F', locked: true },
         { key: 6, iconId: 'i-plus', label: '\uBE48 \uC2AC\uB86F', locked: true },
       ]
     }
@@ -212,8 +242,8 @@ export default function PCBottomDock() {
       { key: 2, iconId: 'i-conflict', label: '\uC774\uC758 \uC81C\uAE30', onClick: () => openSpecialPrompt('objection') },
       { key: 3, iconId: 'i-hand', label: '\uBD84\uB9AC \uC2EC\uBB38', onClick: () => openSpecialPrompt('separation') },
       { key: 4, iconId: 'i-shield', label: '\uBE44\uACF5\uAC1C \uBCF4\uD638', onClick: () => openSpecialPrompt('confidential_protection') },
-      { key: 5, iconId: 'i-bulb', label: '\uB2E8\uACC4 \uC9C4\uD589', onClick: () => openSpecialPrompt('advance_phase') },
-      { key: 6, iconId: 'i-lock', label: '\uBE48 \uC2AC\uB86F', locked: true },
+      { key: 5, iconId: 'i-witness', label: '\uC99D\uC778 \uC18C\uD658', onClick: () => openWitnessPanel() },
+      { key: 6, iconId: 'i-bulb', label: '\uB2E8\uACC4 \uC9C4\uD589', onClick: () => openSpecialPrompt('advance_phase') },
     ]
   }, [activeDisputeId, activeDisputeName, activePage, caseData, evidenceDefinitions, evidenceStates, pcTargetParty, questionMeters])
 

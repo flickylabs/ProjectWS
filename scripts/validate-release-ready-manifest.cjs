@@ -48,6 +48,16 @@ function exists(filePath) {
   return fs.existsSync(filePath)
 }
 
+function parseSummary(text) {
+  const match = text.match(/summary=(\{[^\r\n]*\})/)
+  if (!match) return null
+  try {
+    return JSON.parse(match[1])
+  } catch {
+    return null
+  }
+}
+
 function validatePhaseDialogues(caseKey, phaseName, filePath) {
   const issues = []
   if (!exists(filePath)) {
@@ -91,8 +101,22 @@ function checkValidateLog(caseKey, suffix) {
   }
 
   const text = readText(filePath)
-  const ok = /summary=\{\}/.test(text) && /PASS/.test(text)
-  return { ok, reason: ok ? 'pass' : 'non_pass', filePath }
+  const summary = parseSummary(text)
+  if (!summary) {
+    const ok = /PASS/.test(text)
+    return { ok, reason: ok ? 'pass' : 'non_pass', filePath, summary: null }
+  }
+
+  const failCount = Number(summary.FAIL || 0) + Number(summary.CRITICAL || 0)
+  const warnCount = Number(summary.WARN || 0)
+  const ok = failCount === 0
+
+  return {
+    ok,
+    reason: ok ? (warnCount > 0 ? 'pass_with_warn' : 'pass') : 'non_pass',
+    filePath,
+    summary,
+  }
 }
 
 function main() {

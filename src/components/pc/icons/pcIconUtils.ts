@@ -6,8 +6,13 @@ const FACE_VARIANTS: Record<'man' | 'woman', Partial<Record<EmotionalPhase, stri
   man: {
     confident: 'i-man-confident',
     defensive: 'i-man-defensive',
+    shaken: 'i-man-shaken',
+    angry: 'i-man-angry',
+    resigned: 'i-man-resigned',
   },
   woman: {
+    confident: 'i-woman-confident',
+    defensive: 'i-woman-defensive',
     shaken: 'i-woman-shaken',
     angry: 'i-woman-angry',
     resigned: 'i-woman-resigned',
@@ -103,7 +108,7 @@ export function getPcEvidenceSymbolId(type: string): string {
     case 'bank':
     case 'financial_record':
     case 'receipt':
-      return 'i-doc'
+      return 'i-bank'
     case 'chat':
     case 'email':
       return 'i-chat'
@@ -135,6 +140,10 @@ export function getPcEvidenceSymbolId(type: string): string {
       return 'i-smartphone'
     case 'sns':
       return 'i-sns'
+    case 'timeline':
+    case 'comparison':
+    case 'schedule':
+      return 'i-clock'
     default:
       return 'i-doc'
   }

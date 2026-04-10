@@ -1,0 +1,2687 @@
+{
+  "caseId": "case-spouse-v3-01",
+  "sensitivityTags": [
+    "minor_privacy",
+    "health_privacy",
+    "family_debt",
+    "shared_finance"
+  ],
+  "meta": {
+    "relationshipType": "spouse",
+    "conflictSeed": "TE-SpouseV301",
+    "variableModules": [
+      "VM-spouse-v3-a",
+      "VM-spouse-v3-b"
+    ],
+    "twistModule": "TW-spouse-v3-1",
+    "difficulty": "hard",
+    "anchorTruth": "박지연은 남편이 딴살림을 차렸다고 믿은 뒤 자기 몫을 지키려 2,000만 원을 따로 움직였다가 투자 사기에 당했다. 이준호는 외도가 아니라 친형과 중2 조카를 몰래 돌보고 있었고, 시댁 불화를 피하려 그 사실을 숨긴 채 공동 적금 3,000만 원까지 깨 형 빚을 갚아 줬다.",
+    "emotionalBait": "카드 결제, 오피스텔 출입, 새벽 통화가 모두 외도처럼 보이지만 그 끝에는 가족 돌봄과 거울형 비밀 송금이 함께 걸려 있다.",
+    "resolutionDilemma": "형과 조카를 지키려다 가정 돈 3,000만 원을 독단으로 써 버린 남편과, 배신당했다고 믿고 자기 자신을 지키려다 2,000만 원을 사기에 날린 아내 중 누가 더 무거운 책임을 져야 하는가. 남편은 숨김을 먼저 시작했고, 아내는 실제 돈 이동을 먼저 실행했다."
+  },
+  "duo": {
+    "duoId": "duo-spouse-v3-01",
+    "relationshipType": "spouse",
+    "partyA": {
+      "id": "a",
+      "name": "박지연",
+      "age": 36,
+      "occupation": "학원 데스크 직원",
+      "incomeBracket": "mid",
+      "archetype": "victim_cosplay",
+      "speechStyle": "배신당한 사람이라는 위치를 먼저 잡고 말하지만, 동기 질문이 들어오면 수치심과 불안을 핑계로 설명 범위를 넓힌다.",
+      "pride": 6,
+      "fear": "외도가 아니었는데도 자신이 먼저 2,000만 원을 움직였다는 실행 책임이 중심으로 굳는 것을 두려워한다.",
+      "riskAppetite": 5,
+      "digitalHabit": "messenger_main",
+      "dailyRoutine": "학원 마감 뒤 집에 돌아와 카드 내역과 통화기록을 반복해 확인하며 남편이 먼저 가정을 버릴지 모른다는 불안을 키웠다.",
+      "sensitivePoints": [
+        "오피스텔 출입과 새벽 통화는 딴살림 흔적인가",
+        "아내의 2,000만 원 송금은 자기방어인가, 이혼 대비 은닉인가",
+        "누가 먼저 신뢰를 깼는가"
+      ],
+      "verbalTells": [
+        {
+          "type": "victim_frame",
+          "trigger": "cornered",
+          "pattern": "자신도 이미 배신당한 사람처럼 먼저 위치를 잡는다."
+        },
+        {
+          "type": "helplessness",
+          "trigger": "shame",
+          "pattern": "그때는 다른 선택이 없었다는 말로 계산된 선택의 각도를 흐린다."
+        },
+        {
+          "type": "soft_confession",
+          "trigger": "shame",
+          "pattern": "작은 인정부터 꺼내고 가장 수치스러운 사실은 마지막에 말한다."
+        }
+      ],
+      "callTerms": {
+        "toPartner": "여보",
+        "toJudge": "제 남편",
+        "angry": "이준호!"
+      },
+      "pcFaceType": "woman"
+    },
+    "partyB": {
+      "id": "b",
+      "name": "이준호",
+      "age": 38,
+      "occupation": "가전매장 직원",
+      "incomeBracket": "mid",
+      "archetype": "avoidant",
+      "speechStyle": "사실을 완전히 부정하기보다 중요한 이유를 뒤로 미루고, 모호어로 시간을 벌다가 압박이 누적되면 한꺼번에 털어놓는다.",
+      "pride": 6,
+      "fear": "형네를 숨긴 이유와 공동 적금 3,000만 원 이체가 한 덩어리로 묶여 자기 책임만 남는 상황을 두려워한다.",
+      "riskAppetite": 4,
+      "digitalHabit": "minimal",
+      "dailyRoutine": "매장 마감 뒤 형네 오피스텔에 들러 조카 저녁과 생필품을 챙기고 새벽에는 형 사정을 확인한 뒤 집으로 돌아왔다.",
+      "sensitivePoints": [
+        "오피스텔 출입과 새벽 통화는 딴살림 흔적인가",
+        "공동 적금 3,000만 원은 어디로 갔고 배우자 동의 없이 움직인 것인가",
+        "누가 먼저 신뢰를 깼는가"
+      ],
+      "verbalTells": [
+        {
+          "type": "answer_delay",
+          "trigger": "avoiding",
+          "pattern": "질문을 바로 받지 않고 한 박자 늦게 받아 핵심어를 피한다."
+        },
+        {
+          "type": "partial_scope",
+          "trigger": "cornered",
+          "pattern": "큰 사실은 인정하되 가장 아픈 이유는 마지막까지 자른다."
+        },
+        {
+          "type": "minimize_harm",
+          "trigger": "defensive",
+          "pattern": "선의였다는 말로 절차 위반의 무게를 먼저 낮추려 한다."
+        }
+      ],
+      "callTerms": {
+        "toPartner": "여보",
+        "toJudge": "제 아내",
+        "angry": "박지연!"
+      },
+      "pcFaceType": "man"
+    },
+    "relationshipLedger": [
+      {
+        "id": "ledger-1",
+        "category": "distorted",
+        "description": "카드 결제, 오피스텔, 새벽 통화가 겹치며 d-1은 외도 의심 프레임으로 굳어졌다.",
+        "isReal": true,
+        "whoRemembersAccurately": "neither",
+        "whoDistorts": "both",
+        "distortionDirection": "A는 외도 쪽으로, B는 숨김 이유를 말하지 않은 채 생활 패턴만 분리해 기억한다.",
+        "currentlyResolved": "surface_only",
+        "emotionalResidue": "strong",
+        "connectionToCurrent": "direct"
+      },
+      {
+        "id": "ledger-2",
+        "category": "silenced",
+        "description": "시댁 이야기가 나오면 크게 부딪힌다는 기억 때문에 B는 형네 사정을 말하지 않는 쪽을 택했다.",
+        "isReal": true,
+        "whoRemembersAccurately": "both",
+        "whoDistorts": "none",
+        "distortionDirection": "",
+        "currentlyResolved": "unresolved",
+        "emotionalResidue": "strong",
+        "connectionToCurrent": "direct"
+      },
+      {
+        "id": "ledger-3",
+        "category": "silenced",
+        "description": "B는 공동 적금 3,000만 원을 형에게 보냈고, A는 2,000만 원을 투자방으로 보냈다가 잃었다.",
+        "isReal": true,
+        "whoRemembersAccurately": "both",
+        "whoDistorts": "none",
+        "distortionDirection": "",
+        "currentlyResolved": "surface_only",
+        "emotionalResidue": "strong",
+        "connectionToCurrent": "direct"
+      },
+      {
+        "id": "ledger-4",
+        "category": "confirmed",
+        "description": "숨김의 시작과 실제 송금 실행의 순서는 서로 다르다.",
+        "isReal": true,
+        "whoRemembersAccurately": "both",
+        "whoDistorts": "both",
+        "distortionDirection": "각자 자기에게 유리한 선후만 먼저 강조한다.",
+        "currentlyResolved": "unresolved",
+        "emotionalResidue": "strong",
+        "connectionToCurrent": "direct"
+      }
+    ],
+    "socialGraph": [
+      {
+        "id": "w-1",
+        "slot": "family_1",
+        "name": "이성호",
+        "relationTo": "b",
+        "knowledgeScope": "제수씨에게 말하지 말라고 먼저 부탁했고 빚 독촉과 장시간 노동 때문에 집을 자주 비웠다는 사실을 직접 안다.",
+        "witnessedDirectly": true,
+        "bias": "pro_b",
+        "distortionRisk": "strategic",
+        "surfaceKnowledge": "형네 사정과 이준호의 방문 이유를 알고 있는 가족 증인이다.",
+        "relatedDisputeIds": [
+          "d-1",
+          "d-2",
+          "h-d4"
+        ],
+        "witnessProfile": {
+          "age": 43,
+          "occupation": "택배 상하차",
+          "relationToA": "시댁 식구로 알고 지냈지만 자주 부딪힌 사이다.",
+          "relationToB": "친형이다.",
+          "sentimentToA": -20,
+          "sentimentToB": 70,
+          "speechStyle": "생활 사정은 빠르게 털어놓지만 동생 책임을 직접 묻는 질문에는 한 박자 늦게 답한다.",
+          "addressJudge": "재판관님",
+          "addressA": "지연 씨",
+          "addressB": "준호야",
+          "hiddenAgenda": "동생이 적금까지 깬 책임은 줄여 보이고 싶어 한다."
+        }
+      },
+      {
+        "id": "w-2",
+        "slot": "family_2",
+        "name": "이가은",
+        "relationTo": "b",
+        "knowledgeScope": "삼촌이 저녁마다 와서 밥을 해 주고 생리대와 스타킹, 죽을 사다 준 이유를 가장 직관적으로 설명할 수 있다.",
+        "witnessedDirectly": true,
+        "bias": "pro_b",
+        "distortionRisk": "accurate",
+        "surfaceKnowledge": "오피스텔 방문의 실제 저녁 풍경을 기억하는 조카 증인이다.",
+        "relatedDisputeIds": [
+          "d-1"
+        ],
+        "witnessProfile": {
+          "age": 15,
+          "occupation": "중학생",
+          "relationToA": "가끔 명절에만 보던 큰어른이다.",
+          "relationToB": "삼촌이다.",
+          "sentimentToA": -5,
+          "sentimentToB": 80,
+          "speechStyle": "짧고 구체적으로 말하고 부끄러운 내용은 직접 표현을 피한다.",
+          "addressJudge": "재판관님",
+          "addressA": "아주머니",
+          "addressB": "삼촌",
+          "hiddenAgenda": "학교와 몸 상태 얘기는 자세히 말하고 싶지 않다."
+        }
+      },
+      {
+        "id": "w-3",
+        "slot": "acquaintance_1",
+        "name": "박미라",
+        "relationTo": "a",
+        "knowledgeScope": "박지연이 먼저 \"남편이 바람이면 내 돈부터 지켜야겠다\"고 말했고 자신이 투자방 링크를 보낸 사실을 안다.",
+        "witnessedDirectly": true,
+        "bias": "pro_a",
+        "distortionRisk": "strategic",
+        "surfaceKnowledge": "2,000만 원 송금 직전 박지연과 직접 대화한 동네 지인이다.",
+        "relatedDisputeIds": [
+          "h-d3",
+          "h-d4"
+        ],
+        "witnessProfile": {
+          "age": 37,
+          "occupation": "카페 운영",
+          "relationToA": "동네에서 오래 본 지인이다.",
+          "relationToB": "안면만 있는 사이다.",
+          "sentimentToA": 40,
+          "sentimentToB": 0,
+          "speechStyle": "과장은 하지 않지만 누가 먼저 무슨 말을 했는지는 또렷하게 기억한다.",
+          "addressJudge": "재판관님",
+          "addressA": "지연 씨",
+          "addressB": "준호 씨",
+          "hiddenAgenda": "자신이 링크를 보낸 책임이 불거질까 봐 표현을 조심한다."
+        }
+      }
+    ]
+  },
+  "context": {
+    "contextType": "marital_finance_reframe",
+    "description": "남편 카드 명세서에 여성 생리대, 스타킹이 찍혀 있고, 퇴근 뒤엔 늘 같은 오피스텔에 두 시간씩 머문다. 게다가 새벽마다 같은 번호와 통화한다. 아내는 딴살림을 확신한다.",
+    "emotionalPressure": 9,
+    "affects": "both",
+    "triggerAmplifier": "초반에는 카드 결제, 오피스텔 출입, 새벽 통화가 한 방향으로만 겹쳐 외도처럼 보인다. 그러나 형 문자와 조카 알림이 열리면 그 패턴은 가족 돌봄으로 재맥락화되고, 공동 적금 3,000만 원과 2,000만 원 송금이 연달아 드러나면서 사건의 중심은 외도가 아니라 서로 말하지 못한 가족 공포와 비밀 송금 순서로 뒤집힌다.",
+    "caseNumber": "TE-SpouseV301",
+    "caseName": "새벽 통화기록"
+  },
+  "disputes": [
+    {
+      "id": "d-1",
+      "name": "오피스텔 출입과 새벽 통화는 딴살림 흔적인가",
+      "truth": true,
+      "truthDescription": "오피스텔 출입과 새벽 통화는 외도가 아니라 친형과 조카를 숨겨 돌본 가족 돌봄의 흔적이었다.",
+      "quadrant": "b_only",
+      "requiredEvidence": [
+        "e-2",
+        "e-3",
+        "e-4"
+      ],
+      "correctResponsibility": {
+        "a": 25,
+        "b": 75
+      },
+      "ambiguity": "low",
+      "weight": "high",
+      "mediationLink": "외도 오해와 가족 돌봄",
+      "legitimacyIssue": false,
+      "judgmentStatement": "오피스텔 방문의 실체는 외도가 아니라 가족 돌봄이었다.",
+      "hidden": false,
+      "v3Visibility": "initial"
+    },
+    {
+      "id": "d-2",
+      "name": "공동 적금 3,000만 원은 어디로 갔고, 배우자 동의 없이 움직인 것인가",
+      "truth": true,
+      "truthDescription": "이준호는 공동 적금 3,000만 원을 형 계좌로 보냈고, 가족 구제 의도와 별개로 공동 자금을 독단 처분했다.",
+      "quadrant": "b_only",
+      "requiredEvidence": [
+        "e-5"
+      ],
+      "correctResponsibility": {
+        "a": 20,
+        "b": 80
+      },
+      "ambiguity": "low",
+      "weight": "high",
+      "mediationLink": "공동재산 독단 처분",
+      "legitimacyIssue": true,
+      "judgmentStatement": "공동 적금 3,000만 원 독단 이체는 남편 책임이 더 크다.",
+      "hidden": false,
+      "v3Visibility": "initial"
+    },
+    {
+      "id": "h-d3",
+      "name": "아내의 2,000만 원 송금은 자기방어인가, 이혼 대비 은닉인가",
+      "truth": true,
+      "truthDescription": "박지연의 2,000만 원 송금은 자기방어 심리와 이혼 대비 은닉 시도가 겹친 선택이었다.",
+      "quadrant": "a_only",
+      "requiredEvidence": [
+        "e-6"
+      ],
+      "correctResponsibility": {
+        "a": 75,
+        "b": 25
+      },
+      "ambiguity": "high",
+      "weight": "high",
+      "mediationLink": "자기방어와 은닉의 경계",
+      "legitimacyIssue": true,
+      "judgmentStatement": "2,000만 원 송금은 자기방어이면서 은닉 시도였다.",
+      "hidden": true,
+      "v3Visibility": "hidden",
+      "unlockCondition": {
+        "requireEvidence": "e-6"
+      },
+      "v3UnlockPlan": {
+        "runtimeRule": "e-6 제시 시 해금",
+        "authoredRule": "e-6이 Excerpt 이상이 되거나 A에게 동기탐색 2회가 누적되면 생성"
+      }
+    },
+    {
+      "id": "h-d4",
+      "name": "누가 먼저 신뢰를 깼는가",
+      "truth": true,
+      "truthDescription": "숨김은 이준호가 먼저 시작했고 실제 비밀 송금은 박지연이 먼저 실행했다.",
+      "quadrant": "shared_misconception",
+      "requiredEvidence": [
+        "e-5",
+        "e-6",
+        "e-7"
+      ],
+      "correctResponsibility": {
+        "a": 50,
+        "b": 50
+      },
+      "ambiguity": "high",
+      "weight": "high",
+      "mediationLink": "숨김의 시작과 송금의 시작",
+      "legitimacyIssue": true,
+      "judgmentStatement": "숨김의 선후와 송금의 선후는 서로 다르다.",
+      "hidden": true,
+      "v3Visibility": "hidden",
+      "unlockCondition": {
+        "requireDispute": {
+          "id": "h-d3",
+          "minState": "S1"
+        },
+        "requireEvidence": "e-7"
+      },
+      "v3UnlockPlan": {
+        "runtimeRule": "h-d3 해금 + e-7 제시 시 해금",
+        "authoredRule": "h-d3 생성 후 e-7이 Original 이상이 되거나 e-5+e-6으로 Reframe Lead가 생기면 생성"
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e-1",
+      "name": "카드 명세서",
+      "surfaceName": "카드 명세서 1건",
+      "description": "생리대, 스타킹, 컵죽, 즉석국이 같은 생활권에서 반복 결제된 카드 내역이다.",
+      "surfaceDescription": "카드 명세서 1건 존재만 보인다.",
+      "type": "bank",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "institutional",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-1"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "카드앱 원본에는 여성용품과 간편식이 같은 오피스텔 근처에서 반복 결제된 기록이 날짜와 시각까지 남아 있다.",
+        "check_metadata": "반복 구매 자체는 사실이고, 외도 의심을 밀어 올리는 가장 강한 표면 단서가 된다.",
+        "restore_context": "후반에는 조카 돌봄을 위한 생필품과 식사 준비 흔적으로 다시 읽힌다."
+      },
+      "subjectParty": "b",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 카드 명세서, 본인 카드 사용 내역 맞습니까?",
+            "attackVector": "authenticity"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "왜 같은 곳에서 여성용품과 간편식을 반복 결제했습니까?",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "이 결제 목적을 왜 배우자에게 설명하지 않았습니까?",
+            "attackVector": "responsibility"
+          }
+        }
+      ],
+      "partyContext": {
+        "a": {
+          "questionAngle": "왜 이 카드 명세서가 딴살림 확신으로 이어졌는지 설명해 주십시오.",
+          "implication": "외도 오해의 출발점이다."
+        },
+        "b": {
+          "questionAngle": "왜 이 결제 목적을 조카 돌봄이라고 바로 밝히지 못했는지 설명해 주십시오.",
+          "implication": "침묵이 더 큰 오해를 만들었다."
+        }
+      },
+      "v3DepthPlan": [
+        {
+          "id": "stub",
+          "label": "Stub",
+          "summary": "카드 명세서 1건 존재만 보임"
+        },
+        {
+          "id": "excerpt",
+          "label": "Excerpt",
+          "summary": "생리대, 스타킹, 컵죽, 즉석국 항목만 보임"
+        },
+        {
+          "id": "original",
+          "label": "Original",
+          "summary": "날짜, 시각, 금액, 지점이 모두 보이는 전체 내역"
+        },
+        {
+          "id": "context",
+          "label": "Context",
+          "summary": "e-2, e-3와 같은 날 겹치는 흐름이 붙음"
+        },
+        {
+          "id": "established",
+          "label": "Established",
+          "summary": "반복 구매 자체는 사실로 공식기록 채택"
+        }
+      ],
+      "v3TrustStates": [
+        {
+          "id": "submitted",
+          "label": "제출됨",
+          "summary": "A가 캡처 제출"
+        },
+        {
+          "id": "verifying",
+          "label": "검증 중",
+          "summary": "원본 제출 명령으로 전체 내역 확인"
+        },
+        {
+          "id": "authenticated",
+          "label": "인증됨",
+          "summary": "카드앱 원본과 문자 시각이 일치"
+        },
+        {
+          "id": "challenged",
+          "label": "이의 제기됨",
+          "summary": "품목만으로 외도 단정은 오독이라는 이의"
+        },
+        {
+          "id": "misread",
+          "label": "조작/오독 판정",
+          "summary": "데이터는 인증되지만 외도 해석은 오독 가능"
+        }
+      ],
+      "meta": {
+        "name": "카드 명세서 1건",
+        "type": "bank",
+        "viewerType": "bank",
+        "trustLevel": "mid",
+        "trustLabel": "보통",
+        "source": "org",
+        "sourceLabel": "기관",
+        "legality": "ok",
+        "legalLabel": "적법",
+        "stage": 1,
+        "stageLabel": "초기 공개",
+        "sourceNote": "institutional / original",
+        "redactions": []
+      },
+      "viewerData": {
+        "meta": {
+          "name": "카드 명세서 1건",
+          "type": "bank",
+          "viewerType": "bank",
+          "trustLevel": "mid",
+          "trustLabel": "보통",
+          "source": "org",
+          "sourceLabel": "기관",
+          "legality": "ok",
+          "legalLabel": "적법",
+          "stage": 1,
+          "stageLabel": "초기 공개",
+          "sourceNote": "institutional / original",
+          "redactions": []
+        },
+        "bank": [
+          {
+            "date": "기록",
+            "desc": "카드 명세서 1건",
+            "amount": "-",
+            "balance": "-",
+            "suspicious": false
+          }
+        ],
+        "media": {
+          "imageUrl": "data:image/svg+xml;charset=UTF-8,%0A%20%20%20%20%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%221280%22%20height%3D%22880%22%20viewBox%3D%220%200%201280%20880%22%3E%0A%20%20%20%20%20%20%3Crect%20width%3D%221280%22%20height%3D%22880%22%20rx%3D%2230%22%20fill%3D%22%230f172a%22%20%2F%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%2228%22%20y%3D%2228%22%20width%3D%221224%22%20height%3D%22824%22%20rx%3D%2224%22%20fill%3D%22%23111827%22%20stroke%3D%22rgba(255%2C255%2C255%2C0.08)%22%20%2F%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%2240%22%20y%3D%2240%22%20width%3D%22240%22%20height%3D%2230%22%20rx%3D%2215%22%20fill%3D%22%23f59e0b%22%20opacity%3D%220.92%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2258%22%20y%3D%2261%22%20font-size%3D%2214%22%20font-weight%3D%22800%22%20fill%3D%22%23111827%22%3EBANK%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2240%22%20y%3D%22108%22%20font-size%3D%2234%22%20font-weight%3D%22800%22%20fill%3D%22%23f8fafc%22%3E%EC%B9%B4%EB%93%9C%20%EB%AA%85%EC%84%B8%EC%84%9C%201%EA%B1%B4%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%2240%22%20y%3D%22138%22%20width%3D%221200%22%20height%3D%2244%22%20rx%3D%2212%22%20fill%3D%22rgba(255%2C255%2C255%2C0.06)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2266%22%20y%3D%22166%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%2394a3b8%22%3EDATE%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22278%22%20y%3D%22166%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%2394a3b8%22%3EDETAIL%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22860%22%20y%3D%22166%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%2394a3b8%22%20text-anchor%3D%22end%22%3EAMOUNT%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221190%22%20y%3D%22166%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%2394a3b8%22%20text-anchor%3D%22end%22%3EBALANCE%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2240%22%20y%3D%22154%22%20width%3D%221200%22%20height%3D%2272%22%20rx%3D%2214%22%20fill%3D%22rgba(255%2C255%2C255%2C0.03)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2266%22%20y%3D%22188%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23e5e7eb%22%3E1%EC%B0%A8%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22278%22%20y%3D%22188%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%EC%9B%90%EB%B3%B8%20%EC%9A%94%EC%B2%AD%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22860%22%20y%3D%22188%22%20font-size%3D%2220%22%20font-weight%3D%22700%22%20fill%3D%22%2386efac%22%20text-anchor%3D%22end%22%3E%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221190%22%20y%3D%22188%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23cbd5e1%22%20text-anchor%3D%22end%22%3E%EC%B9%B4%EB%93%9C%EC%95%B1%20%EC%9B%90%EB%B3%B8%EC%97%90%EB%8A%94%20%EC%97%AC%EC%84%B1%EC%9A%A9%ED%92%88%EA%B3%BC%20%EA%B0%84%ED%8E%B8%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2240%22%20y%3D%22242%22%20width%3D%221200%22%20height%3D%2272%22%20rx%3D%2214%22%20fill%3D%22rgba(245%2C158%2C11%2C0.12)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2266%22%20y%3D%22276%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23e5e7eb%22%3E2%EC%B0%A8%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22278%22%20y%3D%22276%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%EB%A9%94%ED%83%80%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22860%22%20y%3D%22276%22%20font-size%3D%2220%22%20font-weight%3D%22700%22%20fill%3D%22%2386efac%22%20text-anchor%3D%22end%22%3E%EA%B2%80%ED%86%A0%20%ED%95%84%EC%9A%94%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221190%22%20y%3D%22276%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23cbd5e1%22%20text-anchor%3D%22end%22%3E%EB%B0%98%EB%B3%B5%20%EA%B5%AC%EB%A7%A4%20%EC%9E%90%EC%B2%B4%EB%8A%94%20%EC%82%AC%EC%8B%A4%EC%9D%B4%EA%B3%A0%2C%20%EC%99%B8%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2240%22%20y%3D%22330%22%20width%3D%221200%22%20height%3D%2272%22%20rx%3D%2214%22%20fill%3D%22rgba(255%2C255%2C255%2C0.03)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2266%22%20y%3D%22364%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23e5e7eb%22%3E3%EC%B0%A8%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22278%22%20y%3D%22364%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%EB%A7%A5%EB%9D%BD%20%EB%B3%B5%EC%9B%90%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22860%22%20y%3D%22364%22%20font-size%3D%2220%22%20font-weight%3D%22700%22%20fill%3D%22%2386efac%22%20text-anchor%3D%22end%22%3E%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221190%22%20y%3D%22364%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23cbd5e1%22%20text-anchor%3D%22end%22%3E%ED%9B%84%EB%B0%98%EC%97%90%EB%8A%94%20%EC%A1%B0%EC%B9%B4%20%EB%8F%8C%EB%B4%84%EC%9D%84%20%EC%9C%84%ED%95%9C%20%EC%83%9D%ED%95%84%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%3C%2Fsvg%3E%0A%20%20",
+          "thumbnailUrl": "data:image/svg+xml;charset=UTF-8,%0A%20%20%20%20%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%221280%22%20height%3D%22880%22%20viewBox%3D%220%200%201280%20880%22%3E%0A%20%20%20%20%20%20%3Crect%20width%3D%221280%22%20height%3D%22880%22%20rx%3D%2230%22%20fill%3D%22%230f172a%22%20%2F%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%2228%22%20y%3D%2228%22%20width%3D%221224%22%20height%3D%22824%22%20rx%3D%2224%22%20fill%3D%22%23111827%22%20stroke%3D%22rgba(255%2C255%2C255%2C0.08)%22%20%2F%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%2240%22%20y%3D%2240%22%20width%3D%22240%22%20height%3D%2230%22%20rx%3D%2215%22%20fill%3D%22%23f59e0b%22%20opacity%3D%220.92%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2258%22%20y%3D%2261%22%20font-size%3D%2214%22%20font-weight%3D%22800%22%20fill%3D%22%23111827%22%3EBANK%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2240%22%20y%3D%22108%22%20font-size%3D%2234%22%20font-weight%3D%22800%22%20fill%3D%22%23f8fafc%22%3E%EC%B9%B4%EB%93%9C%20%EB%AA%85%EC%84%B8%EC%84%9C%201%EA%B1%B4%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%2240%22%20y%3D%22138%22%20width%3D%221200%22%20height%3D%2244%22%20rx%3D%2212%22%20fill%3D%22rgba(255%2C255%2C255%2C0.06)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2266%22%20y%3D%22166%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%2394a3b8%22%3EDATE%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22278%22%20y%3D%22166%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%2394a3b8%22%3EDETAIL%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22860%22%20y%3D%22166%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%2394a3b8%22%20text-anchor%3D%22end%22%3EAMOUNT%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221190%22%20y%3D%22166%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%2394a3b8%22%20text-anchor%3D%22end%22%3EBALANCE%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2240%22%20y%3D%22154%22%20width%3D%221200%22%20height%3D%2272%22%20rx%3D%2214%22%20fill%3D%22rgba(255%2C255%2C255%2C0.03)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2266%22%20y%3D%22188%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23e5e7eb%22%3E1%EC%B0%A8%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22278%22%20y%3D%22188%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%EC%9B%90%EB%B3%B8%20%EC%9A%94%EC%B2%AD%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22860%22%20y%3D%22188%22%20font-size%3D%2220%22%20font-weight%3D%22700%22%20fill%3D%22%2386efac%22%20text-anchor%3D%22end%22%3E%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221190%22%20y%3D%22188%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23cbd5e1%22%20text-anchor%3D%22end%22%3E%EC%B9%B4%EB%93%9C%EC%95%B1%20%EC%9B%90%EB%B3%B8%EC%97%90%EB%8A%94%20%EC%97%AC%EC%84%B1%EC%9A%A9%ED%92%88%EA%B3%BC%20%EA%B0%84%ED%8E%B8%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2240%22%20y%3D%22242%22%20width%3D%221200%22%20height%3D%2272%22%20rx%3D%2214%22%20fill%3D%22rgba(245%2C158%2C11%2C0.12)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2266%22%20y%3D%22276%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23e5e7eb%22%3E2%EC%B0%A8%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22278%22%20y%3D%22276%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%EB%A9%94%ED%83%80%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22860%22%20y%3D%22276%22%20font-size%3D%2220%22%20font-weight%3D%22700%22%20fill%3D%22%2386efac%22%20text-anchor%3D%22end%22%3E%EA%B2%80%ED%86%A0%20%ED%95%84%EC%9A%94%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221190%22%20y%3D%22276%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23cbd5e1%22%20text-anchor%3D%22end%22%3E%EB%B0%98%EB%B3%B5%20%EA%B5%AC%EB%A7%A4%20%EC%9E%90%EC%B2%B4%EB%8A%94%20%EC%82%AC%EC%8B%A4%EC%9D%B4%EA%B3%A0%2C%20%EC%99%B8%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2240%22%20y%3D%22330%22%20width%3D%221200%22%20height%3D%2272%22%20rx%3D%2214%22%20fill%3D%22rgba(255%2C255%2C255%2C0.03)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2266%22%20y%3D%22364%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23e5e7eb%22%3E3%EC%B0%A8%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22278%22%20y%3D%22364%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%EB%A7%A5%EB%9D%BD%20%EB%B3%B5%EC%9B%90%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22860%22%20y%3D%22364%22%20font-size%3D%2220%22%20font-weight%3D%22700%22%20fill%3D%22%2386efac%22%20text-anchor%3D%22end%22%3E%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221190%22%20y%3D%22364%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23cbd5e1%22%20text-anchor%3D%22end%22%3E%ED%9B%84%EB%B0%98%EC%97%90%EB%8A%94%20%EC%A1%B0%EC%B9%B4%20%EB%8F%8C%EB%B4%84%EC%9D%84%20%EC%9C%84%ED%95%9C%20%EC%83%9D%ED%95%84%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%3C%2Fsvg%3E%0A%20%20",
+          "posterUrl": "data:image/svg+xml;charset=UTF-8,%0A%20%20%20%20%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%221280%22%20height%3D%22880%22%20viewBox%3D%220%200%201280%20880%22%3E%0A%20%20%20%20%20%20%3Crect%20width%3D%221280%22%20height%3D%22880%22%20rx%3D%2230%22%20fill%3D%22%230f172a%22%20%2F%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%2228%22%20y%3D%2228%22%20width%3D%221224%22%20height%3D%22824%22%20rx%3D%2224%22%20fill%3D%22%23111827%22%20stroke%3D%22rgba(255%2C255%2C255%2C0.08)%22%20%2F%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%2240%22%20y%3D%2240%22%20width%3D%22240%22%20height%3D%2230%22%20rx%3D%2215%22%20fill%3D%22%23f59e0b%22%20opacity%3D%220.92%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2258%22%20y%3D%2261%22%20font-size%3D%2214%22%20font-weight%3D%22800%22%20fill%3D%22%23111827%22%3EBANK%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2240%22%20y%3D%22108%22%20font-size%3D%2234%22%20font-weight%3D%22800%22%20fill%3D%22%23f8fafc%22%3E%EC%B9%B4%EB%93%9C%20%EB%AA%85%EC%84%B8%EC%84%9C%201%EA%B1%B4%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%2240%22%20y%3D%22138%22%20width%3D%221200%22%20height%3D%2244%22%20rx%3D%2212%22%20fill%3D%22rgba(255%2C255%2C255%2C0.06)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2266%22%20y%3D%22166%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%2394a3b8%22%3EDATE%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22278%22%20y%3D%22166%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%2394a3b8%22%3EDETAIL%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22860%22%20y%3D%22166%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%2394a3b8%22%20text-anchor%3D%22end%22%3EAMOUNT%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221190%22%20y%3D%22166%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%2394a3b8%22%20text-anchor%3D%22end%22%3EBALANCE%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2240%22%20y%3D%22154%22%20width%3D%221200%22%20height%3D%2272%22%20rx%3D%2214%22%20fill%3D%22rgba(255%2C255%2C255%2C0.03)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2266%22%20y%3D%22188%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23e5e7eb%22%3E1%EC%B0%A8%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22278%22%20y%3D%22188%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%EC%9B%90%EB%B3%B8%20%EC%9A%94%EC%B2%AD%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22860%22%20y%3D%22188%22%20font-size%3D%2220%22%20font-weight%3D%22700%22%20fill%3D%22%2386efac%22%20text-anchor%3D%22end%22%3E%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221190%22%20y%3D%22188%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23cbd5e1%22%20text-anchor%3D%22end%22%3E%EC%B9%B4%EB%93%9C%EC%95%B1%20%EC%9B%90%EB%B3%B8%EC%97%90%EB%8A%94%20%EC%97%AC%EC%84%B1%EC%9A%A9%ED%92%88%EA%B3%BC%20%EA%B0%84%ED%8E%B8%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2240%22%20y%3D%22242%22%20width%3D%221200%22%20height%3D%2272%22%20rx%3D%2214%22%20fill%3D%22rgba(245%2C158%2C11%2C0.12)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2266%22%20y%3D%22276%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23e5e7eb%22%3E2%EC%B0%A8%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22278%22%20y%3D%22276%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%EB%A9%94%ED%83%80%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22860%22%20y%3D%22276%22%20font-size%3D%2220%22%20font-weight%3D%22700%22%20fill%3D%22%2386efac%22%20text-anchor%3D%22end%22%3E%EA%B2%80%ED%86%A0%20%ED%95%84%EC%9A%94%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221190%22%20y%3D%22276%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23cbd5e1%22%20text-anchor%3D%22end%22%3E%EB%B0%98%EB%B3%B5%20%EA%B5%AC%EB%A7%A4%20%EC%9E%90%EC%B2%B4%EB%8A%94%20%EC%82%AC%EC%8B%A4%EC%9D%B4%EA%B3%A0%2C%20%EC%99%B8%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2240%22%20y%3D%22330%22%20width%3D%221200%22%20height%3D%2272%22%20rx%3D%2214%22%20fill%3D%22rgba(255%2C255%2C255%2C0.03)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2266%22%20y%3D%22364%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23e5e7eb%22%3E3%EC%B0%A8%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22278%22%20y%3D%22364%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%EB%A7%A5%EB%9D%BD%20%EB%B3%B5%EC%9B%90%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22860%22%20y%3D%22364%22%20font-size%3D%2220%22%20font-weight%3D%22700%22%20fill%3D%22%2386efac%22%20text-anchor%3D%22end%22%3E%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221190%22%20y%3D%22364%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23cbd5e1%22%20text-anchor%3D%22end%22%3E%ED%9B%84%EB%B0%98%EC%97%90%EB%8A%94%20%EC%A1%B0%EC%B9%B4%20%EB%8F%8C%EB%B4%84%EC%9D%84%20%EC%9C%84%ED%95%9C%20%EC%83%9D%ED%95%84%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%3C%2Fsvg%3E%0A%20%20",
+          "width": 1280,
+          "height": 880,
+          "alt": "카드 명세서 1건 financial evidence",
+          "caption": "카드 명세서 1건 table preview"
+        }
+      }
+    },
+    {
+      "id": "e-2",
+      "name": "오피스텔 주차 출입 기록",
+      "surfaceName": "오피스텔 출입기록 1건",
+      "description": "평일 저녁 같은 오피스텔에 반복 진입한 주차 출입 기록이다.",
+      "surfaceDescription": "반복 진입 날짜 목록만 먼저 보인다.",
+      "type": "log",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "institutional",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-1"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "같은 차량 번호가 평일 저녁마다 같은 오피스텔에 들어간 기록이 원본대장에 남아 있다.",
+        "check_metadata": "체류 시간과 반복성 때문에 따로 챙기는 생활 동선처럼 읽힌다.",
+        "restore_context": "후반에는 외도 동선이 아니라 형네 돌봄 동선으로 재맥락화된다."
+      },
+      "subjectParty": "b",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 차량 출입 기록, 본인 차 맞습니까?",
+            "attackVector": "authenticity"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "왜 퇴근 뒤마다 같은 오피스텔에 갔습니까?",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "그 방문 사실을 왜 집에서는 다른 말로 덮었습니까?",
+            "attackVector": "responsibility"
+          }
+        }
+      ],
+      "partyContext": {
+        "a": {
+          "questionAngle": "왜 같은 오피스텔 반복 방문이 외도 동선처럼 보였는지 설명해 주십시오.",
+          "implication": "장소 축이 의심을 굳혔다."
+        },
+        "b": {
+          "questionAngle": "왜 형네 돌봄이라는 실체 대신 방문 사실 자체를 숨겼는지 설명해 주십시오.",
+          "implication": "방문 목적보다 침묵이 먼저 문제화된다."
+        }
+      },
+      "v3DepthPlan": [
+        {
+          "id": "stub",
+          "label": "Stub",
+          "summary": "출입기록 1건 존재만 보임"
+        },
+        {
+          "id": "excerpt",
+          "label": "Excerpt",
+          "summary": "평일 저녁 반복 진입 날짜 목록"
+        },
+        {
+          "id": "original",
+          "label": "Original",
+          "summary": "차량 번호와 진입/출차 시각, 체류 시간 확보"
+        },
+        {
+          "id": "context",
+          "label": "Context",
+          "summary": "e-1 결제와 e-3 통화 흐름이 붙음"
+        },
+        {
+          "id": "established",
+          "label": "Established",
+          "summary": "B의 반복 방문 사실이 공식기록 채택"
+        }
+      ],
+      "v3TrustStates": [
+        {
+          "id": "submitted",
+          "label": "제출됨",
+          "summary": "A가 관리실 출력본 제출"
+        },
+        {
+          "id": "verifying",
+          "label": "검증 중",
+          "summary": "원본대장과 차량번호 대조"
+        },
+        {
+          "id": "authenticated",
+          "label": "인증됨",
+          "summary": "B 차량번호와 일치"
+        },
+        {
+          "id": "challenged",
+          "label": "이의 제기됨",
+          "summary": "외도 장소라고 단정할 수 없다는 이의"
+        },
+        {
+          "id": "misread",
+          "label": "조작/오독 판정",
+          "summary": "장소 데이터는 인증되나 의미 해석은 열려 있음"
+        }
+      ],
+      "meta": {
+        "name": "오피스텔 출입기록 1건",
+        "type": "log",
+        "viewerType": "log",
+        "trustLevel": "mid",
+        "trustLabel": "보통",
+        "source": "org",
+        "sourceLabel": "기관",
+        "legality": "ok",
+        "legalLabel": "적법",
+        "stage": 2,
+        "stageLabel": "중간 공개",
+        "sourceNote": "institutional / original",
+        "redactions": []
+      },
+      "viewerData": {
+        "meta": {
+          "name": "오피스텔 출입기록 1건",
+          "type": "log",
+          "viewerType": "log",
+          "trustLevel": "mid",
+          "trustLabel": "보통",
+          "source": "org",
+          "sourceLabel": "기관",
+          "legality": "ok",
+          "legalLabel": "적법",
+          "stage": 2,
+          "stageLabel": "중간 공개",
+          "sourceNote": "institutional / original",
+          "redactions": []
+        },
+        "log": {
+          "rows": [
+            {
+              "date": "기록",
+              "type": "in",
+              "typeLabel": "기록",
+              "target": "오피스텔 출입기록 1건",
+              "duration": "-",
+              "suspicious": false
+            }
+          ],
+          "note": "반복 진입 날짜 목록만 먼저 보인다."
+        },
+        "media": {
+          "imageUrl": "data:image/svg+xml;charset=UTF-8,%0A%20%20%20%20%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%221280%22%20height%3D%22900%22%20viewBox%3D%220%200%201280%20900%22%3E%0A%20%20%20%20%20%20%3Crect%20width%3D%221280%22%20height%3D%22900%22%20rx%3D%2224%22%20fill%3D%22%230f172a%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2254%22%20y%3D%2274%22%20font-size%3D%2216%22%20font-weight%3D%22800%22%20fill%3D%22%2322c55e%22%3ELOG%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2254%22%20y%3D%22120%22%20font-size%3D%2234%22%20font-weight%3D%22800%22%20fill%3D%22%23f8fafc%22%3E%EC%98%A4%ED%94%BC%EC%8A%A4%ED%85%94%20%EC%B6%9C%EC%9E%85%EA%B8%B0%EB%A1%9D%201%EA%B1%B4%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2254%22%20y%3D%22158%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%2394a3b8%22%3E%EB%B0%98%EB%B3%B5%20%EC%A7%84%EC%9E%85%20%EB%82%A0%EC%A7%9C%20%EB%AA%A9%EB%A1%9D%EB%A7%8C%20%EB%A8%BC%EC%A0%80%20%EB%B3%B4%EC%9D%B8%EB%8B%A4.%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2254%22%20y%3D%22166%22%20width%3D%221172%22%20height%3D%2268%22%20rx%3D%2214%22%20fill%3D%22rgba(255%2C255%2C255%2C0.03)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2278%22%20y%3D%22200%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%23cbd5e1%22%3E1%EC%B0%A8%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22286%22%20y%3D%22200%22%20font-size%3D%2218%22%20font-weight%3D%22800%22%20fill%3D%22%2386efac%22%3E%EC%9B%90%EB%B3%B8%20%EC%9A%94%EC%B2%AD%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22444%22%20y%3D%22200%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%EA%B0%99%EC%9D%80%20%EC%B0%A8%EB%9F%89%20%EB%B2%88%ED%98%B8%EA%B0%80%20%ED%8F%89%EC%9D%BC%20%EC%A0%80%EB%85%81%EB%A7%88%EB%8B%A4%20%EA%B0%99%EC%9D%80%20%EC%98%A4%ED%94%BC%EC%8A%A4%ED%85%94%EC%97%90%20%EB%93%A4%EC%96%B4%EA%B0%84%20%EA%B8%B0%EB%A1%9D%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221160%22%20y%3D%22200%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%2394a3b8%22%20text-anchor%3D%22end%22%3E%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2254%22%20y%3D%22254%22%20width%3D%221172%22%20height%3D%2268%22%20rx%3D%2214%22%20fill%3D%22rgba(255%2C255%2C255%2C0.03)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2278%22%20y%3D%22288%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%23cbd5e1%22%3E2%EC%B0%A8%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22286%22%20y%3D%22288%22%20font-size%3D%2218%22%20font-weight%3D%22800%22%20fill%3D%22%2386efac%22%3E%EB%A9%94%ED%83%80%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22444%22%20y%3D%22288%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%EC%B2%B4%EB%A5%98%20%EC%8B%9C%EA%B0%84%EA%B3%BC%20%EB%B0%98%EB%B3%B5%EC%84%B1%20%EB%95%8C%EB%AC%B8%EC%97%90%20%EB%94%B0%EB%A1%9C%20%EC%B1%99%EA%B8%B0%EB%8A%94%20%EC%83%9D%ED%99%9C%20%EB%8F%99%EC%84%A0%EC%B2%98%EB%9F%BC%20%EC%9D%BD%ED%9E%8C%EB%8B%A4.%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221160%22%20y%3D%22288%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%2394a3b8%22%20text-anchor%3D%22end%22%3E%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2254%22%20y%3D%22342%22%20width%3D%221172%22%20height%3D%2268%22%20rx%3D%2214%22%20fill%3D%22rgba(255%2C255%2C255%2C0.03)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2278%22%20y%3D%22376%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%23cbd5e1%22%3E3%EC%B0%A8%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22286%22%20y%3D%22376%22%20font-size%3D%2218%22%20font-weight%3D%22800%22%20fill%3D%22%2386efac%22%3E%EB%A7%A5%EB%9D%BD%20%EB%B3%B5%EC%9B%90%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22444%22%20y%3D%22376%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%ED%9B%84%EB%B0%98%EC%97%90%EB%8A%94%20%EC%99%B8%EB%8F%84%20%EB%8F%99%EC%84%A0%EC%9D%B4%20%EC%95%84%EB%8B%88%EB%9D%BC%20%ED%98%95%EB%84%A4%20%EB%8F%8C%EB%B4%84%20%EB%8F%99%EC%84%A0%EC%9C%BC%EB%A1%9C%20%EC%9E%AC%EB%A7%A5%EB%9D%BD%ED%99%94%EB%90%9C%EB%8B%A4.%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221160%22%20y%3D%22376%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%2394a3b8%22%20text-anchor%3D%22end%22%3E%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%3C%2Fsvg%3E%0A%20%20",
+          "thumbnailUrl": "data:image/svg+xml;charset=UTF-8,%0A%20%20%20%20%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%221280%22%20height%3D%22900%22%20viewBox%3D%220%200%201280%20900%22%3E%0A%20%20%20%20%20%20%3Crect%20width%3D%221280%22%20height%3D%22900%22%20rx%3D%2224%22%20fill%3D%22%230f172a%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2254%22%20y%3D%2274%22%20font-size%3D%2216%22%20font-weight%3D%22800%22%20fill%3D%22%2322c55e%22%3ELOG%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2254%22%20y%3D%22120%22%20font-size%3D%2234%22%20font-weight%3D%22800%22%20fill%3D%22%23f8fafc%22%3E%EC%98%A4%ED%94%BC%EC%8A%A4%ED%85%94%20%EC%B6%9C%EC%9E%85%EA%B8%B0%EB%A1%9D%201%EA%B1%B4%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2254%22%20y%3D%22158%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%2394a3b8%22%3E%EB%B0%98%EB%B3%B5%20%EC%A7%84%EC%9E%85%20%EB%82%A0%EC%A7%9C%20%EB%AA%A9%EB%A1%9D%EB%A7%8C%20%EB%A8%BC%EC%A0%80%20%EB%B3%B4%EC%9D%B8%EB%8B%A4.%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2254%22%20y%3D%22166%22%20width%3D%221172%22%20height%3D%2268%22%20rx%3D%2214%22%20fill%3D%22rgba(255%2C255%2C255%2C0.03)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2278%22%20y%3D%22200%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%23cbd5e1%22%3E1%EC%B0%A8%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22286%22%20y%3D%22200%22%20font-size%3D%2218%22%20font-weight%3D%22800%22%20fill%3D%22%2386efac%22%3E%EC%9B%90%EB%B3%B8%20%EC%9A%94%EC%B2%AD%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22444%22%20y%3D%22200%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%EA%B0%99%EC%9D%80%20%EC%B0%A8%EB%9F%89%20%EB%B2%88%ED%98%B8%EA%B0%80%20%ED%8F%89%EC%9D%BC%20%EC%A0%80%EB%85%81%EB%A7%88%EB%8B%A4%20%EA%B0%99%EC%9D%80%20%EC%98%A4%ED%94%BC%EC%8A%A4%ED%85%94%EC%97%90%20%EB%93%A4%EC%96%B4%EA%B0%84%20%EA%B8%B0%EB%A1%9D%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221160%22%20y%3D%22200%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%2394a3b8%22%20text-anchor%3D%22end%22%3E%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2254%22%20y%3D%22254%22%20width%3D%221172%22%20height%3D%2268%22%20rx%3D%2214%22%20fill%3D%22rgba(255%2C255%2C255%2C0.03)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2278%22%20y%3D%22288%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%23cbd5e1%22%3E2%EC%B0%A8%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22286%22%20y%3D%22288%22%20font-size%3D%2218%22%20font-weight%3D%22800%22%20fill%3D%22%2386efac%22%3E%EB%A9%94%ED%83%80%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22444%22%20y%3D%22288%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%EC%B2%B4%EB%A5%98%20%EC%8B%9C%EA%B0%84%EA%B3%BC%20%EB%B0%98%EB%B3%B5%EC%84%B1%20%EB%95%8C%EB%AC%B8%EC%97%90%20%EB%94%B0%EB%A1%9C%20%EC%B1%99%EA%B8%B0%EB%8A%94%20%EC%83%9D%ED%99%9C%20%EB%8F%99%EC%84%A0%EC%B2%98%EB%9F%BC%20%EC%9D%BD%ED%9E%8C%EB%8B%A4.%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221160%22%20y%3D%22288%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%2394a3b8%22%20text-anchor%3D%22end%22%3E%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2254%22%20y%3D%22342%22%20width%3D%221172%22%20height%3D%2268%22%20rx%3D%2214%22%20fill%3D%22rgba(255%2C255%2C255%2C0.03)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2278%22%20y%3D%22376%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%23cbd5e1%22%3E3%EC%B0%A8%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22286%22%20y%3D%22376%22%20font-size%3D%2218%22%20font-weight%3D%22800%22%20fill%3D%22%2386efac%22%3E%EB%A7%A5%EB%9D%BD%20%EB%B3%B5%EC%9B%90%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22444%22%20y%3D%22376%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%ED%9B%84%EB%B0%98%EC%97%90%EB%8A%94%20%EC%99%B8%EB%8F%84%20%EB%8F%99%EC%84%A0%EC%9D%B4%20%EC%95%84%EB%8B%88%EB%9D%BC%20%ED%98%95%EB%84%A4%20%EB%8F%8C%EB%B4%84%20%EB%8F%99%EC%84%A0%EC%9C%BC%EB%A1%9C%20%EC%9E%AC%EB%A7%A5%EB%9D%BD%ED%99%94%EB%90%9C%EB%8B%A4.%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221160%22%20y%3D%22376%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%2394a3b8%22%20text-anchor%3D%22end%22%3E%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%3C%2Fsvg%3E%0A%20%20",
+          "posterUrl": "data:image/svg+xml;charset=UTF-8,%0A%20%20%20%20%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%221280%22%20height%3D%22900%22%20viewBox%3D%220%200%201280%20900%22%3E%0A%20%20%20%20%20%20%3Crect%20width%3D%221280%22%20height%3D%22900%22%20rx%3D%2224%22%20fill%3D%22%230f172a%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2254%22%20y%3D%2274%22%20font-size%3D%2216%22%20font-weight%3D%22800%22%20fill%3D%22%2322c55e%22%3ELOG%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2254%22%20y%3D%22120%22%20font-size%3D%2234%22%20font-weight%3D%22800%22%20fill%3D%22%23f8fafc%22%3E%EC%98%A4%ED%94%BC%EC%8A%A4%ED%85%94%20%EC%B6%9C%EC%9E%85%EA%B8%B0%EB%A1%9D%201%EA%B1%B4%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2254%22%20y%3D%22158%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%2394a3b8%22%3E%EB%B0%98%EB%B3%B5%20%EC%A7%84%EC%9E%85%20%EB%82%A0%EC%A7%9C%20%EB%AA%A9%EB%A1%9D%EB%A7%8C%20%EB%A8%BC%EC%A0%80%20%EB%B3%B4%EC%9D%B8%EB%8B%A4.%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2254%22%20y%3D%22166%22%20width%3D%221172%22%20height%3D%2268%22%20rx%3D%2214%22%20fill%3D%22rgba(255%2C255%2C255%2C0.03)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2278%22%20y%3D%22200%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%23cbd5e1%22%3E1%EC%B0%A8%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22286%22%20y%3D%22200%22%20font-size%3D%2218%22%20font-weight%3D%22800%22%20fill%3D%22%2386efac%22%3E%EC%9B%90%EB%B3%B8%20%EC%9A%94%EC%B2%AD%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22444%22%20y%3D%22200%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%EA%B0%99%EC%9D%80%20%EC%B0%A8%EB%9F%89%20%EB%B2%88%ED%98%B8%EA%B0%80%20%ED%8F%89%EC%9D%BC%20%EC%A0%80%EB%85%81%EB%A7%88%EB%8B%A4%20%EA%B0%99%EC%9D%80%20%EC%98%A4%ED%94%BC%EC%8A%A4%ED%85%94%EC%97%90%20%EB%93%A4%EC%96%B4%EA%B0%84%20%EA%B8%B0%EB%A1%9D%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221160%22%20y%3D%22200%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%2394a3b8%22%20text-anchor%3D%22end%22%3E%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2254%22%20y%3D%22254%22%20width%3D%221172%22%20height%3D%2268%22%20rx%3D%2214%22%20fill%3D%22rgba(255%2C255%2C255%2C0.03)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2278%22%20y%3D%22288%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%23cbd5e1%22%3E2%EC%B0%A8%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22286%22%20y%3D%22288%22%20font-size%3D%2218%22%20font-weight%3D%22800%22%20fill%3D%22%2386efac%22%3E%EB%A9%94%ED%83%80%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22444%22%20y%3D%22288%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%EC%B2%B4%EB%A5%98%20%EC%8B%9C%EA%B0%84%EA%B3%BC%20%EB%B0%98%EB%B3%B5%EC%84%B1%20%EB%95%8C%EB%AC%B8%EC%97%90%20%EB%94%B0%EB%A1%9C%20%EC%B1%99%EA%B8%B0%EB%8A%94%20%EC%83%9D%ED%99%9C%20%EB%8F%99%EC%84%A0%EC%B2%98%EB%9F%BC%20%EC%9D%BD%ED%9E%8C%EB%8B%A4.%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221160%22%20y%3D%22288%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%2394a3b8%22%20text-anchor%3D%22end%22%3E%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2254%22%20y%3D%22342%22%20width%3D%221172%22%20height%3D%2268%22%20rx%3D%2214%22%20fill%3D%22rgba(255%2C255%2C255%2C0.03)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2278%22%20y%3D%22376%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%23cbd5e1%22%3E3%EC%B0%A8%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22286%22%20y%3D%22376%22%20font-size%3D%2218%22%20font-weight%3D%22800%22%20fill%3D%22%2386efac%22%3E%EB%A7%A5%EB%9D%BD%20%EB%B3%B5%EC%9B%90%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22444%22%20y%3D%22376%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%ED%9B%84%EB%B0%98%EC%97%90%EB%8A%94%20%EC%99%B8%EB%8F%84%20%EB%8F%99%EC%84%A0%EC%9D%B4%20%EC%95%84%EB%8B%88%EB%9D%BC%20%ED%98%95%EB%84%A4%20%EB%8F%8C%EB%B4%84%20%EB%8F%99%EC%84%A0%EC%9C%BC%EB%A1%9C%20%EC%9E%AC%EB%A7%A5%EB%9D%BD%ED%99%94%EB%90%9C%EB%8B%A4.%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221160%22%20y%3D%22376%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%2394a3b8%22%20text-anchor%3D%22end%22%3E%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%3C%2Fsvg%3E%0A%20%20",
+          "width": 1280,
+          "height": 900,
+          "alt": "오피스텔 출입기록 1건 log evidence",
+          "caption": "오피스텔 출입기록 1건 log preview"
+        }
+      }
+    },
+    {
+      "id": "e-3",
+      "name": "새벽 통화기록",
+      "surfaceName": "같은 번호와의 반복 통화",
+      "description": "최근 3주 동안 새벽 5시 전후 같은 번호와 반복 통화한 내역이다.",
+      "surfaceDescription": "최근 3주 통화 횟수와 길이만 보인다.",
+      "type": "log",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "institutional",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-1"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "통신사 상세내역에는 새벽 5시 전후 같은 번호와 반복 통화한 로그가 남아 있다.",
+        "check_metadata": "같은 날 오피스텔 방문이 이어져 외도 연락처처럼 읽힌다.",
+        "restore_context": "후반에는 친형과의 비상 연락 패턴으로 재맥락화된다."
+      },
+      "subjectParty": "b",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 번호와 새벽마다 통화한 사실, 맞습니까?",
+            "attackVector": "authenticity"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "왜 하필 새벽 다섯 시 전후에 같은 번호와 통화했습니까?",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "새벽 통화와 오피스텔 방문이 이어진 이유를 설명해 보십시오.",
+            "attackVector": "responsibility"
+          }
+        }
+      ],
+      "partyContext": {
+        "a": {
+          "questionAngle": "왜 이 새벽 통화가 외도 확신으로 이어졌는지 설명해 주십시오.",
+          "implication": "시간축 단서가 감정 서사를 완성했다."
+        },
+        "b": {
+          "questionAngle": "왜 같은 번호가 친형이라는 사실을 바로 밝히지 못했는지 설명해 주십시오.",
+          "implication": "번호의 정체를 숨긴 회피가 오해를 키웠다."
+        }
+      },
+      "v3DepthPlan": [
+        {
+          "id": "stub",
+          "label": "Stub",
+          "summary": "같은 번호와의 반복 통화 존재 표시"
+        },
+        {
+          "id": "excerpt",
+          "label": "Excerpt",
+          "summary": "최근 3주 새벽 통화 횟수와 길이만 보임"
+        },
+        {
+          "id": "original",
+          "label": "Original",
+          "summary": "전체 통화 일시와 번호, 길이 확보"
+        },
+        {
+          "id": "context",
+          "label": "Context",
+          "summary": "e-2 방문과 e-1 결제가 같은 날 이어짐"
+        },
+        {
+          "id": "established",
+          "label": "Established",
+          "summary": "반복 통화와 반복 방문의 연동이 공식기록 채택"
+        }
+      ],
+      "v3TrustStates": [
+        {
+          "id": "submitted",
+          "label": "제출됨",
+          "summary": "A가 통화목록 캡처 제출"
+        },
+        {
+          "id": "verifying",
+          "label": "검증 중",
+          "summary": "원본 제출 명령으로 상세내역 대조"
+        },
+        {
+          "id": "authenticated",
+          "label": "인증됨",
+          "summary": "통신사 상세내역과 일치"
+        },
+        {
+          "id": "challenged",
+          "label": "이의 제기됨",
+          "summary": "통화 상대 정체가 빠져 있다는 이의"
+        },
+        {
+          "id": "misread",
+          "label": "조작/오독 판정",
+          "summary": "통화 자체는 인증되지만 외도 해석은 잠정 가설"
+        }
+      ],
+      "meta": {
+        "name": "같은 번호와의 반복 통화",
+        "type": "log",
+        "viewerType": "log",
+        "trustLevel": "mid",
+        "trustLabel": "보통",
+        "source": "org",
+        "sourceLabel": "기관",
+        "legality": "ok",
+        "legalLabel": "적법",
+        "stage": 3,
+        "stageLabel": "핵심 공개",
+        "sourceNote": "institutional / original",
+        "redactions": []
+      },
+      "viewerData": {
+        "meta": {
+          "name": "같은 번호와의 반복 통화",
+          "type": "log",
+          "viewerType": "log",
+          "trustLevel": "mid",
+          "trustLabel": "보통",
+          "source": "org",
+          "sourceLabel": "기관",
+          "legality": "ok",
+          "legalLabel": "적법",
+          "stage": 3,
+          "stageLabel": "핵심 공개",
+          "sourceNote": "institutional / original",
+          "redactions": []
+        },
+        "log": {
+          "rows": [
+            {
+              "date": "기록",
+              "type": "in",
+              "typeLabel": "기록",
+              "target": "같은 번호와의 반복 통화",
+              "duration": "-",
+              "suspicious": false
+            }
+          ],
+          "note": "최근 3주 통화 횟수와 길이만 보인다."
+        },
+        "media": {
+          "imageUrl": "data:image/svg+xml;charset=UTF-8,%0A%20%20%20%20%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%221280%22%20height%3D%22900%22%20viewBox%3D%220%200%201280%20900%22%3E%0A%20%20%20%20%20%20%3Crect%20width%3D%221280%22%20height%3D%22900%22%20rx%3D%2224%22%20fill%3D%22%230f172a%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2254%22%20y%3D%2274%22%20font-size%3D%2216%22%20font-weight%3D%22800%22%20fill%3D%22%2322c55e%22%3ELOG%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2254%22%20y%3D%22120%22%20font-size%3D%2234%22%20font-weight%3D%22800%22%20fill%3D%22%23f8fafc%22%3E%EA%B0%99%EC%9D%80%20%EB%B2%88%ED%98%B8%EC%99%80%EC%9D%98%20%EB%B0%98%EB%B3%B5%20%ED%86%B5%ED%99%94%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2254%22%20y%3D%22158%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%2394a3b8%22%3E%EC%B5%9C%EA%B7%BC%203%EC%A3%BC%20%ED%86%B5%ED%99%94%20%ED%9A%9F%EC%88%98%EC%99%80%20%EA%B8%B8%EC%9D%B4%EB%A7%8C%20%EB%B3%B4%EC%9D%B8%EB%8B%A4.%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2254%22%20y%3D%22166%22%20width%3D%221172%22%20height%3D%2268%22%20rx%3D%2214%22%20fill%3D%22rgba(255%2C255%2C255%2C0.03)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2278%22%20y%3D%22200%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%23cbd5e1%22%3E1%EC%B0%A8%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22286%22%20y%3D%22200%22%20font-size%3D%2218%22%20font-weight%3D%22800%22%20fill%3D%22%2386efac%22%3E%EC%9B%90%EB%B3%B8%20%EC%9A%94%EC%B2%AD%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22444%22%20y%3D%22200%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%ED%86%B5%EC%8B%A0%EC%82%AC%20%EC%83%81%EC%84%B8%EB%82%B4%EC%97%AD%EC%97%90%EB%8A%94%20%EC%83%88%EB%B2%BD%205%EC%8B%9C%20%EC%A0%84%ED%9B%84%20%EA%B0%99%EC%9D%80%20%EB%B2%88%ED%98%B8%EC%99%80%20%EB%B0%98%EB%B3%B5%20%ED%86%B5%ED%99%94%ED%95%9C%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221160%22%20y%3D%22200%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%2394a3b8%22%20text-anchor%3D%22end%22%3E%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2254%22%20y%3D%22254%22%20width%3D%221172%22%20height%3D%2268%22%20rx%3D%2214%22%20fill%3D%22rgba(255%2C255%2C255%2C0.03)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2278%22%20y%3D%22288%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%23cbd5e1%22%3E2%EC%B0%A8%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22286%22%20y%3D%22288%22%20font-size%3D%2218%22%20font-weight%3D%22800%22%20fill%3D%22%2386efac%22%3E%EB%A9%94%ED%83%80%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22444%22%20y%3D%22288%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%EA%B0%99%EC%9D%80%20%EB%82%A0%20%EC%98%A4%ED%94%BC%EC%8A%A4%ED%85%94%20%EB%B0%A9%EB%AC%B8%EC%9D%B4%20%EC%9D%B4%EC%96%B4%EC%A0%B8%20%EC%99%B8%EB%8F%84%20%EC%97%B0%EB%9D%BD%EC%B2%98%EC%B2%98%EB%9F%BC%20%EC%9D%BD%ED%9E%8C%EB%8B%A4.%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221160%22%20y%3D%22288%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%2394a3b8%22%20text-anchor%3D%22end%22%3E%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2254%22%20y%3D%22342%22%20width%3D%221172%22%20height%3D%2268%22%20rx%3D%2214%22%20fill%3D%22rgba(255%2C255%2C255%2C0.03)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2278%22%20y%3D%22376%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%23cbd5e1%22%3E3%EC%B0%A8%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22286%22%20y%3D%22376%22%20font-size%3D%2218%22%20font-weight%3D%22800%22%20fill%3D%22%2386efac%22%3E%EB%A7%A5%EB%9D%BD%20%EB%B3%B5%EC%9B%90%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22444%22%20y%3D%22376%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%ED%9B%84%EB%B0%98%EC%97%90%EB%8A%94%20%EC%B9%9C%ED%98%95%EA%B3%BC%EC%9D%98%20%EB%B9%84%EC%83%81%20%EC%97%B0%EB%9D%BD%20%ED%8C%A8%ED%84%B4%EC%9C%BC%EB%A1%9C%20%EC%9E%AC%EB%A7%A5%EB%9D%BD%ED%99%94%EB%90%9C%EB%8B%A4.%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221160%22%20y%3D%22376%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%2394a3b8%22%20text-anchor%3D%22end%22%3E%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%3C%2Fsvg%3E%0A%20%20",
+          "thumbnailUrl": "data:image/svg+xml;charset=UTF-8,%0A%20%20%20%20%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%221280%22%20height%3D%22900%22%20viewBox%3D%220%200%201280%20900%22%3E%0A%20%20%20%20%20%20%3Crect%20width%3D%221280%22%20height%3D%22900%22%20rx%3D%2224%22%20fill%3D%22%230f172a%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2254%22%20y%3D%2274%22%20font-size%3D%2216%22%20font-weight%3D%22800%22%20fill%3D%22%2322c55e%22%3ELOG%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2254%22%20y%3D%22120%22%20font-size%3D%2234%22%20font-weight%3D%22800%22%20fill%3D%22%23f8fafc%22%3E%EA%B0%99%EC%9D%80%20%EB%B2%88%ED%98%B8%EC%99%80%EC%9D%98%20%EB%B0%98%EB%B3%B5%20%ED%86%B5%ED%99%94%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2254%22%20y%3D%22158%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%2394a3b8%22%3E%EC%B5%9C%EA%B7%BC%203%EC%A3%BC%20%ED%86%B5%ED%99%94%20%ED%9A%9F%EC%88%98%EC%99%80%20%EA%B8%B8%EC%9D%B4%EB%A7%8C%20%EB%B3%B4%EC%9D%B8%EB%8B%A4.%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2254%22%20y%3D%22166%22%20width%3D%221172%22%20height%3D%2268%22%20rx%3D%2214%22%20fill%3D%22rgba(255%2C255%2C255%2C0.03)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2278%22%20y%3D%22200%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%23cbd5e1%22%3E1%EC%B0%A8%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22286%22%20y%3D%22200%22%20font-size%3D%2218%22%20font-weight%3D%22800%22%20fill%3D%22%2386efac%22%3E%EC%9B%90%EB%B3%B8%20%EC%9A%94%EC%B2%AD%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22444%22%20y%3D%22200%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%ED%86%B5%EC%8B%A0%EC%82%AC%20%EC%83%81%EC%84%B8%EB%82%B4%EC%97%AD%EC%97%90%EB%8A%94%20%EC%83%88%EB%B2%BD%205%EC%8B%9C%20%EC%A0%84%ED%9B%84%20%EA%B0%99%EC%9D%80%20%EB%B2%88%ED%98%B8%EC%99%80%20%EB%B0%98%EB%B3%B5%20%ED%86%B5%ED%99%94%ED%95%9C%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221160%22%20y%3D%22200%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%2394a3b8%22%20text-anchor%3D%22end%22%3E%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2254%22%20y%3D%22254%22%20width%3D%221172%22%20height%3D%2268%22%20rx%3D%2214%22%20fill%3D%22rgba(255%2C255%2C255%2C0.03)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2278%22%20y%3D%22288%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%23cbd5e1%22%3E2%EC%B0%A8%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22286%22%20y%3D%22288%22%20font-size%3D%2218%22%20font-weight%3D%22800%22%20fill%3D%22%2386efac%22%3E%EB%A9%94%ED%83%80%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22444%22%20y%3D%22288%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%EA%B0%99%EC%9D%80%20%EB%82%A0%20%EC%98%A4%ED%94%BC%EC%8A%A4%ED%85%94%20%EB%B0%A9%EB%AC%B8%EC%9D%B4%20%EC%9D%B4%EC%96%B4%EC%A0%B8%20%EC%99%B8%EB%8F%84%20%EC%97%B0%EB%9D%BD%EC%B2%98%EC%B2%98%EB%9F%BC%20%EC%9D%BD%ED%9E%8C%EB%8B%A4.%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221160%22%20y%3D%22288%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%2394a3b8%22%20text-anchor%3D%22end%22%3E%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2254%22%20y%3D%22342%22%20width%3D%221172%22%20height%3D%2268%22%20rx%3D%2214%22%20fill%3D%22rgba(255%2C255%2C255%2C0.03)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2278%22%20y%3D%22376%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%23cbd5e1%22%3E3%EC%B0%A8%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22286%22%20y%3D%22376%22%20font-size%3D%2218%22%20font-weight%3D%22800%22%20fill%3D%22%2386efac%22%3E%EB%A7%A5%EB%9D%BD%20%EB%B3%B5%EC%9B%90%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22444%22%20y%3D%22376%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%ED%9B%84%EB%B0%98%EC%97%90%EB%8A%94%20%EC%B9%9C%ED%98%95%EA%B3%BC%EC%9D%98%20%EB%B9%84%EC%83%81%20%EC%97%B0%EB%9D%BD%20%ED%8C%A8%ED%84%B4%EC%9C%BC%EB%A1%9C%20%EC%9E%AC%EB%A7%A5%EB%9D%BD%ED%99%94%EB%90%9C%EB%8B%A4.%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221160%22%20y%3D%22376%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%2394a3b8%22%20text-anchor%3D%22end%22%3E%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%3C%2Fsvg%3E%0A%20%20",
+          "posterUrl": "data:image/svg+xml;charset=UTF-8,%0A%20%20%20%20%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%221280%22%20height%3D%22900%22%20viewBox%3D%220%200%201280%20900%22%3E%0A%20%20%20%20%20%20%3Crect%20width%3D%221280%22%20height%3D%22900%22%20rx%3D%2224%22%20fill%3D%22%230f172a%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2254%22%20y%3D%2274%22%20font-size%3D%2216%22%20font-weight%3D%22800%22%20fill%3D%22%2322c55e%22%3ELOG%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2254%22%20y%3D%22120%22%20font-size%3D%2234%22%20font-weight%3D%22800%22%20fill%3D%22%23f8fafc%22%3E%EA%B0%99%EC%9D%80%20%EB%B2%88%ED%98%B8%EC%99%80%EC%9D%98%20%EB%B0%98%EB%B3%B5%20%ED%86%B5%ED%99%94%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2254%22%20y%3D%22158%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%2394a3b8%22%3E%EC%B5%9C%EA%B7%BC%203%EC%A3%BC%20%ED%86%B5%ED%99%94%20%ED%9A%9F%EC%88%98%EC%99%80%20%EA%B8%B8%EC%9D%B4%EB%A7%8C%20%EB%B3%B4%EC%9D%B8%EB%8B%A4.%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2254%22%20y%3D%22166%22%20width%3D%221172%22%20height%3D%2268%22%20rx%3D%2214%22%20fill%3D%22rgba(255%2C255%2C255%2C0.03)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2278%22%20y%3D%22200%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%23cbd5e1%22%3E1%EC%B0%A8%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22286%22%20y%3D%22200%22%20font-size%3D%2218%22%20font-weight%3D%22800%22%20fill%3D%22%2386efac%22%3E%EC%9B%90%EB%B3%B8%20%EC%9A%94%EC%B2%AD%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22444%22%20y%3D%22200%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%ED%86%B5%EC%8B%A0%EC%82%AC%20%EC%83%81%EC%84%B8%EB%82%B4%EC%97%AD%EC%97%90%EB%8A%94%20%EC%83%88%EB%B2%BD%205%EC%8B%9C%20%EC%A0%84%ED%9B%84%20%EA%B0%99%EC%9D%80%20%EB%B2%88%ED%98%B8%EC%99%80%20%EB%B0%98%EB%B3%B5%20%ED%86%B5%ED%99%94%ED%95%9C%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221160%22%20y%3D%22200%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%2394a3b8%22%20text-anchor%3D%22end%22%3E%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2254%22%20y%3D%22254%22%20width%3D%221172%22%20height%3D%2268%22%20rx%3D%2214%22%20fill%3D%22rgba(255%2C255%2C255%2C0.03)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2278%22%20y%3D%22288%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%23cbd5e1%22%3E2%EC%B0%A8%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22286%22%20y%3D%22288%22%20font-size%3D%2218%22%20font-weight%3D%22800%22%20fill%3D%22%2386efac%22%3E%EB%A9%94%ED%83%80%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22444%22%20y%3D%22288%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%EA%B0%99%EC%9D%80%20%EB%82%A0%20%EC%98%A4%ED%94%BC%EC%8A%A4%ED%85%94%20%EB%B0%A9%EB%AC%B8%EC%9D%B4%20%EC%9D%B4%EC%96%B4%EC%A0%B8%20%EC%99%B8%EB%8F%84%20%EC%97%B0%EB%9D%BD%EC%B2%98%EC%B2%98%EB%9F%BC%20%EC%9D%BD%ED%9E%8C%EB%8B%A4.%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221160%22%20y%3D%22288%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%2394a3b8%22%20text-anchor%3D%22end%22%3E%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2254%22%20y%3D%22342%22%20width%3D%221172%22%20height%3D%2268%22%20rx%3D%2214%22%20fill%3D%22rgba(255%2C255%2C255%2C0.03)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2278%22%20y%3D%22376%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%23cbd5e1%22%3E3%EC%B0%A8%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22286%22%20y%3D%22376%22%20font-size%3D%2218%22%20font-weight%3D%22800%22%20fill%3D%22%2386efac%22%3E%EB%A7%A5%EB%9D%BD%20%EB%B3%B5%EC%9B%90%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22444%22%20y%3D%22376%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%ED%9B%84%EB%B0%98%EC%97%90%EB%8A%94%20%EC%B9%9C%ED%98%95%EA%B3%BC%EC%9D%98%20%EB%B9%84%EC%83%81%20%EC%97%B0%EB%9D%BD%20%ED%8C%A8%ED%84%B4%EC%9C%BC%EB%A1%9C%20%EC%9E%AC%EB%A7%A5%EB%9D%BD%ED%99%94%EB%90%9C%EB%8B%A4.%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221160%22%20y%3D%22376%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%2394a3b8%22%20text-anchor%3D%22end%22%3E%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%3C%2Fsvg%3E%0A%20%20",
+          "width": 1280,
+          "height": 900,
+          "alt": "같은 번호와의 반복 통화 log evidence",
+          "caption": "같은 번호와의 반복 통화 log preview"
+        }
+      }
+    },
+    {
+      "id": "e-4",
+      "name": "형 문자 + 조카 학교 알림 문자",
+      "surfaceName": "같은 번호와의 문자 스레드",
+      "description": "같은 번호가 친형 번호이며 조카 돌봄 요청과 학교 알림이 붙어 있는 문자 스레드다.",
+      "surfaceDescription": "\"오늘 혼자 있으니 밥 좀 부탁\", \"스타킹 하나만 사다 줘\" 같은 문구만 일부 보인다.",
+      "type": "chat",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "self_possessed",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-1"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-3"
+      ],
+      "requiredLieState": "S1",
+      "investigationResults": {
+        "request_original": "같은 번호가 친형 번호이고 조카 학교 알림까지 붙은 대화 원본이 이어져 있다.",
+        "check_metadata": "조카 돌봄 요청이 e-1과 e-2의 표면 패턴을 한 번에 다시 묶어 준다.",
+        "restore_context": "\"제수씨는 우리 집 얘기만 나오면 또 싸움 난다\"는 문장이 숨김의 이유를 드러낸다."
+      },
+      "subjectParty": "b",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 번호가 친형 번호라는 점, 맞습니까?",
+            "attackVector": "authenticity"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "문자 속 부탁은 누구를 돌보라는 뜻이었습니까?",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "왜 배우자에게는 형네 사정을 끝까지 숨겼습니까?",
+            "attackVector": "responsibility"
+          }
+        }
+      ],
+      "partyContext": {
+        "a": {
+          "questionAngle": "왜 이 문자가 외도 정황을 가족 돌봄 정황으로 뒤집는지 설명해 주십시오.",
+          "implication": "표면 서사가 재맥락화된다."
+        },
+        "b": {
+          "questionAngle": "왜 형 사정을 말하지 않는 편을 택했는지 설명해 주십시오.",
+          "implication": "선의와 공포가 함께 드러나는 전환점이다."
+        }
+      },
+      "meta": {
+        "name": "같은 번호와의 문자 스레드",
+        "type": "chat",
+        "viewerType": "chat",
+        "trustLevel": "mid",
+        "trustLabel": "보통",
+        "source": "b",
+        "sourceLabel": "B측",
+        "legality": "ok",
+        "legalLabel": "적법",
+        "stage": 4,
+        "stageLabel": "핵심 공개",
+        "sourceNote": "self_possessed / original",
+        "redactions": [
+          "조카 이름 비공개",
+          "학교명 및 학년 마스킹",
+          "생리 관련 직접 표현 봉인"
+        ]
+      },
+      "v3DepthPlan": [
+        {
+          "id": "stub",
+          "label": "Stub",
+          "summary": "같은 번호와의 문자 스레드 존재만 보임"
+        },
+        {
+          "id": "excerpt",
+          "label": "Excerpt",
+          "summary": "돌봄 요청 문구 일부만 보임"
+        },
+        {
+          "id": "original",
+          "label": "Original",
+          "summary": "연락처가 친형으로 확인되고 학교 알림까지 연결됨"
+        },
+        {
+          "id": "context",
+          "label": "Context",
+          "summary": "시댁 불화와 형의 장시간 노동 맥락 복원"
+        },
+        {
+          "id": "established",
+          "label": "Established",
+          "summary": "오피스텔 방문 대상은 형네였다고 공식기록 채택 가능"
+        }
+      ],
+      "v3TrustStates": [
+        {
+          "id": "submitted",
+          "label": "제출됨",
+          "summary": "B 발췌본 또는 재판관 포착"
+        },
+        {
+          "id": "verifying",
+          "label": "검증 중",
+          "summary": "원본 제출 명령으로 전체 스레드 확인"
+        },
+        {
+          "id": "authenticated",
+          "label": "인증됨",
+          "summary": "연락처, 날짜, 알림이 e-2, e-3와 부합"
+        },
+        {
+          "id": "challenged",
+          "label": "이의 제기됨",
+          "summary": "형네 문자라고 해서 3,000만 원까지 정당화되진 않는다는 이의"
+        },
+        {
+          "id": "misread",
+          "label": "조작/오독 판정",
+          "summary": "외도 서사를 뒤집는 맥락 증거로 전환"
+        }
+      ],
+      "v3SealTargets": [
+        "조카 이름",
+        "학교명",
+        "학년",
+        "생리 관련 직접 표현"
+      ],
+      "viewerData": {
+        "meta": {
+          "name": "같은 번호와의 문자 스레드",
+          "type": "chat",
+          "viewerType": "chat",
+          "trustLevel": "mid",
+          "trustLabel": "보통",
+          "source": "b",
+          "sourceLabel": "B측",
+          "legality": "ok",
+          "legalLabel": "적법",
+          "stage": 4,
+          "stageLabel": "핵심 공개",
+          "sourceNote": "self_possessed / original",
+          "redactions": [
+            "조카 이름 비공개",
+            "학교명 및 학년 마스킹",
+            "생리 관련 직접 표현 봉인"
+          ]
+        },
+        "chat": {
+          "header": "같은 번호와의 문자 스레드 기록",
+          "messages": [
+            {
+              "side": "left",
+              "sender": "기록",
+              "text": "\"오늘 혼자 있으니 밥 좀 부탁\", \"스타킹 하나만 사다 줘\" 같은 문구만 일부 보인다."
+            }
+          ]
+        },
+        "media": {
+          "imageUrl": "data:image/svg+xml;charset=UTF-8,%0A%20%20%20%20%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%221080%22%20height%3D%221600%22%20viewBox%3D%220%200%201080%201600%22%3E%0A%20%20%20%20%20%20%3Crect%20width%3D%221080%22%20height%3D%221600%22%20rx%3D%2240%22%20fill%3D%22%230b1220%22%20%2F%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%2224%22%20y%3D%2224%22%20width%3D%221032%22%20height%3D%221552%22%20rx%3D%2234%22%20fill%3D%22%23111827%22%20stroke%3D%22rgba(255%2C255%2C255%2C0.08)%22%20%2F%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%2254%22%20y%3D%2254%22%20width%3D%22972%22%20height%3D%2278%22%20rx%3D%2222%22%20fill%3D%22rgba(255%2C255%2C255%2C0.06)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2282%22%20y%3D%22102%22%20font-size%3D%2218%22%20font-weight%3D%22800%22%20fill%3D%22%2334d399%22%3ECHAT%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2282%22%20y%3D%22132%22%20font-size%3D%2228%22%20font-weight%3D%22800%22%20fill%3D%22%23f8fafc%22%3E%EA%B0%99%EC%9D%80%20%EB%B2%88%ED%98%B8%EC%99%80%EC%9D%98%20%EB%AC%B8%EC%9E%90%20%EC%8A%A4%EB%A0%88%EB%93%9C%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%3Ctext%20x%3D%2254%22%20y%3D%22180%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%2394a3b8%22%3E%EA%B8%B0%EB%A1%9D%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22684%22%20y%3D%22180%22%20font-size%3D%2215%22%20font-weight%3D%22600%22%20fill%3D%22%2364748b%22%20text-anchor%3D%22end%22%3ET01%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%2254%22%20y%3D%22198%22%20width%3D%22640%22%20height%3D%22130%22%20rx%3D%2228%22%20fill%3D%22%231f2937%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2278%22%20y%3D%22236%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%EA%B0%99%EC%9D%80%20%EB%B2%88%ED%98%B8%EA%B0%80%20%EC%B9%9C%ED%98%95%20%EB%B2%88%ED%98%B8%EC%9D%B4%EA%B3%A0%20%EC%A1%B0%EC%B9%B4%20%ED%95%99%EA%B5%90%20%EC%95%8C%EB%A6%BC%EA%B9%8C%EC%A7%80%3C%2Ftext%3E%3Ctext%20x%3D%2278%22%20y%3D%22262%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%EB%B6%99%EC%9D%80%20%EB%8C%80%ED%99%94%20%EC%9B%90%EB%B3%B8%EC%9D%B4%20%EC%9D%B4%EC%96%B4%EC%A0%B8%20%EC%9E%88%EB%8B%A4.%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%0A%20%20%20%20%20%20%3Ctext%20x%3D%22386%22%20y%3D%22386%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%2394a3b8%22%3E%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221016%22%20y%3D%22386%22%20font-size%3D%2215%22%20font-weight%3D%22600%22%20fill%3D%22%2364748b%22%20text-anchor%3D%22end%22%3ET02%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%22386%22%20y%3D%22404%22%20width%3D%22640%22%20height%3D%22130%22%20rx%3D%2228%22%20fill%3D%22%2334d399%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22410%22%20y%3D%22442%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23052e16%22%3E%EC%A1%B0%EC%B9%B4%20%EB%8F%8C%EB%B4%84%20%EC%9A%94%EC%B2%AD%EC%9D%B4%20e-1%EA%B3%BC%20e-2%EC%9D%98%20%ED%91%9C%EB%A9%B4%20%ED%8C%A8%ED%84%B4%EC%9D%84%3C%2Ftext%3E%3Ctext%20x%3D%22410%22%20y%3D%22468%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23052e16%22%3E%ED%95%9C%20%EB%B2%88%EC%97%90%20%EB%8B%A4%EC%8B%9C%20%EB%AC%B6%EC%96%B4%20%EC%A4%80%EB%8B%A4.%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%0A%20%20%20%20%20%20%3Ctext%20x%3D%2254%22%20y%3D%22592%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%2394a3b8%22%3E%EA%B8%B0%EB%A1%9D%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22684%22%20y%3D%22592%22%20font-size%3D%2215%22%20font-weight%3D%22600%22%20fill%3D%22%2364748b%22%20text-anchor%3D%22end%22%3ET03%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%2254%22%20y%3D%22610%22%20width%3D%22640%22%20height%3D%22130%22%20rx%3D%2228%22%20fill%3D%22%231f2937%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2278%22%20y%3D%22648%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%26quot%3B%EC%A0%9C%EC%88%98%EC%94%A8%EB%8A%94%20%EC%9A%B0%EB%A6%AC%20%EC%A7%91%20%EC%96%98%EA%B8%B0%EB%A7%8C%20%EB%82%98%EC%98%A4%EB%A9%B4%20%EB%98%90%20%EC%8B%B8%EC%9B%80%3C%2Ftext%3E%3Ctext%20x%3D%2278%22%20y%3D%22674%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%EB%82%9C%EB%8B%A4%26quot%3B%EB%8A%94%20%EB%AC%B8%EC%9E%A5%EC%9D%B4%20%EC%88%A8%EA%B9%80%EC%9D%98%20%EC%9D%B4%EC%9C%A0%EB%A5%BC%20%EB%93%9C%EB%9F%AC%EB%82%B8%EB%8B%A4.%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%0A%20%20%20%20%3C%2Fsvg%3E%0A%20%20",
+          "thumbnailUrl": "data:image/svg+xml;charset=UTF-8,%0A%20%20%20%20%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%221080%22%20height%3D%221600%22%20viewBox%3D%220%200%201080%201600%22%3E%0A%20%20%20%20%20%20%3Crect%20width%3D%221080%22%20height%3D%221600%22%20rx%3D%2240%22%20fill%3D%22%230b1220%22%20%2F%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%2224%22%20y%3D%2224%22%20width%3D%221032%22%20height%3D%221552%22%20rx%3D%2234%22%20fill%3D%22%23111827%22%20stroke%3D%22rgba(255%2C255%2C255%2C0.08)%22%20%2F%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%2254%22%20y%3D%2254%22%20width%3D%22972%22%20height%3D%2278%22%20rx%3D%2222%22%20fill%3D%22rgba(255%2C255%2C255%2C0.06)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2282%22%20y%3D%22102%22%20font-size%3D%2218%22%20font-weight%3D%22800%22%20fill%3D%22%2334d399%22%3ECHAT%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2282%22%20y%3D%22132%22%20font-size%3D%2228%22%20font-weight%3D%22800%22%20fill%3D%22%23f8fafc%22%3E%EA%B0%99%EC%9D%80%20%EB%B2%88%ED%98%B8%EC%99%80%EC%9D%98%20%EB%AC%B8%EC%9E%90%20%EC%8A%A4%EB%A0%88%EB%93%9C%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%3Ctext%20x%3D%2254%22%20y%3D%22180%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%2394a3b8%22%3E%EA%B8%B0%EB%A1%9D%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22684%22%20y%3D%22180%22%20font-size%3D%2215%22%20font-weight%3D%22600%22%20fill%3D%22%2364748b%22%20text-anchor%3D%22end%22%3ET01%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%2254%22%20y%3D%22198%22%20width%3D%22640%22%20height%3D%22130%22%20rx%3D%2228%22%20fill%3D%22%231f2937%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2278%22%20y%3D%22236%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%EA%B0%99%EC%9D%80%20%EB%B2%88%ED%98%B8%EA%B0%80%20%EC%B9%9C%ED%98%95%20%EB%B2%88%ED%98%B8%EC%9D%B4%EA%B3%A0%20%EC%A1%B0%EC%B9%B4%20%ED%95%99%EA%B5%90%20%EC%95%8C%EB%A6%BC%EA%B9%8C%EC%A7%80%3C%2Ftext%3E%3Ctext%20x%3D%2278%22%20y%3D%22262%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%EB%B6%99%EC%9D%80%20%EB%8C%80%ED%99%94%20%EC%9B%90%EB%B3%B8%EC%9D%B4%20%EC%9D%B4%EC%96%B4%EC%A0%B8%20%EC%9E%88%EB%8B%A4.%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%0A%20%20%20%20%20%20%3Ctext%20x%3D%22386%22%20y%3D%22386%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%2394a3b8%22%3E%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221016%22%20y%3D%22386%22%20font-size%3D%2215%22%20font-weight%3D%22600%22%20fill%3D%22%2364748b%22%20text-anchor%3D%22end%22%3ET02%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%22386%22%20y%3D%22404%22%20width%3D%22640%22%20height%3D%22130%22%20rx%3D%2228%22%20fill%3D%22%2334d399%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22410%22%20y%3D%22442%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23052e16%22%3E%EC%A1%B0%EC%B9%B4%20%EB%8F%8C%EB%B4%84%20%EC%9A%94%EC%B2%AD%EC%9D%B4%20e-1%EA%B3%BC%20e-2%EC%9D%98%20%ED%91%9C%EB%A9%B4%20%ED%8C%A8%ED%84%B4%EC%9D%84%3C%2Ftext%3E%3Ctext%20x%3D%22410%22%20y%3D%22468%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23052e16%22%3E%ED%95%9C%20%EB%B2%88%EC%97%90%20%EB%8B%A4%EC%8B%9C%20%EB%AC%B6%EC%96%B4%20%EC%A4%80%EB%8B%A4.%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%0A%20%20%20%20%20%20%3Ctext%20x%3D%2254%22%20y%3D%22592%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%2394a3b8%22%3E%EA%B8%B0%EB%A1%9D%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22684%22%20y%3D%22592%22%20font-size%3D%2215%22%20font-weight%3D%22600%22%20fill%3D%22%2364748b%22%20text-anchor%3D%22end%22%3ET03%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%2254%22%20y%3D%22610%22%20width%3D%22640%22%20height%3D%22130%22%20rx%3D%2228%22%20fill%3D%22%231f2937%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2278%22%20y%3D%22648%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%26quot%3B%EC%A0%9C%EC%88%98%EC%94%A8%EB%8A%94%20%EC%9A%B0%EB%A6%AC%20%EC%A7%91%20%EC%96%98%EA%B8%B0%EB%A7%8C%20%EB%82%98%EC%98%A4%EB%A9%B4%20%EB%98%90%20%EC%8B%B8%EC%9B%80%3C%2Ftext%3E%3Ctext%20x%3D%2278%22%20y%3D%22674%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%EB%82%9C%EB%8B%A4%26quot%3B%EB%8A%94%20%EB%AC%B8%EC%9E%A5%EC%9D%B4%20%EC%88%A8%EA%B9%80%EC%9D%98%20%EC%9D%B4%EC%9C%A0%EB%A5%BC%20%EB%93%9C%EB%9F%AC%EB%82%B8%EB%8B%A4.%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%0A%20%20%20%20%3C%2Fsvg%3E%0A%20%20",
+          "posterUrl": "data:image/svg+xml;charset=UTF-8,%0A%20%20%20%20%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%221080%22%20height%3D%221600%22%20viewBox%3D%220%200%201080%201600%22%3E%0A%20%20%20%20%20%20%3Crect%20width%3D%221080%22%20height%3D%221600%22%20rx%3D%2240%22%20fill%3D%22%230b1220%22%20%2F%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%2224%22%20y%3D%2224%22%20width%3D%221032%22%20height%3D%221552%22%20rx%3D%2234%22%20fill%3D%22%23111827%22%20stroke%3D%22rgba(255%2C255%2C255%2C0.08)%22%20%2F%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%2254%22%20y%3D%2254%22%20width%3D%22972%22%20height%3D%2278%22%20rx%3D%2222%22%20fill%3D%22rgba(255%2C255%2C255%2C0.06)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2282%22%20y%3D%22102%22%20font-size%3D%2218%22%20font-weight%3D%22800%22%20fill%3D%22%2334d399%22%3ECHAT%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2282%22%20y%3D%22132%22%20font-size%3D%2228%22%20font-weight%3D%22800%22%20fill%3D%22%23f8fafc%22%3E%EA%B0%99%EC%9D%80%20%EB%B2%88%ED%98%B8%EC%99%80%EC%9D%98%20%EB%AC%B8%EC%9E%90%20%EC%8A%A4%EB%A0%88%EB%93%9C%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%3Ctext%20x%3D%2254%22%20y%3D%22180%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%2394a3b8%22%3E%EA%B8%B0%EB%A1%9D%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22684%22%20y%3D%22180%22%20font-size%3D%2215%22%20font-weight%3D%22600%22%20fill%3D%22%2364748b%22%20text-anchor%3D%22end%22%3ET01%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%2254%22%20y%3D%22198%22%20width%3D%22640%22%20height%3D%22130%22%20rx%3D%2228%22%20fill%3D%22%231f2937%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2278%22%20y%3D%22236%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%EA%B0%99%EC%9D%80%20%EB%B2%88%ED%98%B8%EA%B0%80%20%EC%B9%9C%ED%98%95%20%EB%B2%88%ED%98%B8%EC%9D%B4%EA%B3%A0%20%EC%A1%B0%EC%B9%B4%20%ED%95%99%EA%B5%90%20%EC%95%8C%EB%A6%BC%EA%B9%8C%EC%A7%80%3C%2Ftext%3E%3Ctext%20x%3D%2278%22%20y%3D%22262%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%EB%B6%99%EC%9D%80%20%EB%8C%80%ED%99%94%20%EC%9B%90%EB%B3%B8%EC%9D%B4%20%EC%9D%B4%EC%96%B4%EC%A0%B8%20%EC%9E%88%EB%8B%A4.%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%0A%20%20%20%20%20%20%3Ctext%20x%3D%22386%22%20y%3D%22386%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%2394a3b8%22%3E%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221016%22%20y%3D%22386%22%20font-size%3D%2215%22%20font-weight%3D%22600%22%20fill%3D%22%2364748b%22%20text-anchor%3D%22end%22%3ET02%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%22386%22%20y%3D%22404%22%20width%3D%22640%22%20height%3D%22130%22%20rx%3D%2228%22%20fill%3D%22%2334d399%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22410%22%20y%3D%22442%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23052e16%22%3E%EC%A1%B0%EC%B9%B4%20%EB%8F%8C%EB%B4%84%20%EC%9A%94%EC%B2%AD%EC%9D%B4%20e-1%EA%B3%BC%20e-2%EC%9D%98%20%ED%91%9C%EB%A9%B4%20%ED%8C%A8%ED%84%B4%EC%9D%84%3C%2Ftext%3E%3Ctext%20x%3D%22410%22%20y%3D%22468%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23052e16%22%3E%ED%95%9C%20%EB%B2%88%EC%97%90%20%EB%8B%A4%EC%8B%9C%20%EB%AC%B6%EC%96%B4%20%EC%A4%80%EB%8B%A4.%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%0A%20%20%20%20%20%20%3Ctext%20x%3D%2254%22%20y%3D%22592%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%2394a3b8%22%3E%EA%B8%B0%EB%A1%9D%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22684%22%20y%3D%22592%22%20font-size%3D%2215%22%20font-weight%3D%22600%22%20fill%3D%22%2364748b%22%20text-anchor%3D%22end%22%3ET03%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%2254%22%20y%3D%22610%22%20width%3D%22640%22%20height%3D%22130%22%20rx%3D%2228%22%20fill%3D%22%231f2937%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2278%22%20y%3D%22648%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%26quot%3B%EC%A0%9C%EC%88%98%EC%94%A8%EB%8A%94%20%EC%9A%B0%EB%A6%AC%20%EC%A7%91%20%EC%96%98%EA%B8%B0%EB%A7%8C%20%EB%82%98%EC%98%A4%EB%A9%B4%20%EB%98%90%20%EC%8B%B8%EC%9B%80%3C%2Ftext%3E%3Ctext%20x%3D%2278%22%20y%3D%22674%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%EB%82%9C%EB%8B%A4%26quot%3B%EB%8A%94%20%EB%AC%B8%EC%9E%A5%EC%9D%B4%20%EC%88%A8%EA%B9%80%EC%9D%98%20%EC%9D%B4%EC%9C%A0%EB%A5%BC%20%EB%93%9C%EB%9F%AC%EB%82%B8%EB%8B%A4.%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%0A%20%20%20%20%3C%2Fsvg%3E%0A%20%20",
+          "width": 1080,
+          "height": 1600,
+          "alt": "같은 번호와의 문자 스레드 chat evidence",
+          "caption": "같은 번호와의 문자 스레드 conversation preview"
+        }
+      }
+    },
+    {
+      "id": "e-5",
+      "name": "공동 적금 해지 내역 + 형 계좌 이체",
+      "surfaceName": "공동 적금 해지 내역 1건",
+      "description": "공동 적금 3,000만 원 해지와 형 계좌 이체가 같은 날 붙은 기록이다.",
+      "surfaceDescription": "해지일과 3,000만 원 금액만 먼저 보인다.",
+      "type": "bank",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "institutional",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-2",
+        "h-d4"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-4"
+      ],
+      "requiredLieState": "S2",
+      "investigationResults": {
+        "request_original": "공동 적금 3,000만 원 해지와 형 계좌 이체가 같은 날짜로 묶여 있다.",
+        "check_metadata": "돌봄이 생필품 수준을 넘어 공동 적금 전액 지출로 번졌다는 점이 확정된다.",
+        "restore_context": "가족 구제 의도와 별개로 공동 자금을 독단 처분한 월권 책임이 남는다."
+      },
+      "subjectParty": "b",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 적금, 두 분이 함께 모으던 돈 맞습니까?",
+            "attackVector": "authenticity"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "해지한 3,000만 원을 누구에게 보냈습니까?",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "왜 배우자와 상의하지 않고 공동 적금을 깼습니까?",
+            "attackVector": "responsibility"
+          }
+        }
+      ],
+      "partyContext": {
+        "a": {
+          "questionAngle": "왜 이 거래가 공동재산 침범으로 읽히는지 설명해 주십시오.",
+          "implication": "외도 의심이 돈 문제로 번진 계기다."
+        },
+        "b": {
+          "questionAngle": "형을 돕는 일과 별개로 왜 공동 적금을 단독 처분했는지 설명해 주십시오.",
+          "implication": "선의와 월권이 한 장에 겹친다."
+        }
+      },
+      "v3DepthPlan": [
+        {
+          "id": "stub",
+          "label": "Stub",
+          "summary": "공동 적금 해지 내역 1건 존재만 보임"
+        },
+        {
+          "id": "excerpt",
+          "label": "Excerpt",
+          "summary": "해지일과 3,000만 원만 보임"
+        },
+        {
+          "id": "original",
+          "label": "Original",
+          "summary": "형 계좌로 이체된 정확 내역까지 확인"
+        },
+        {
+          "id": "context",
+          "label": "Context",
+          "summary": "형의 급한 빚 독촉 정황이 붙음"
+        },
+        {
+          "id": "established",
+          "label": "Established",
+          "summary": "B가 배우자 동의 없이 3,000만 원을 형에게 보냈다고 공식기록 채택"
+        }
+      ],
+      "v3TrustStates": [
+        {
+          "id": "submitted",
+          "label": "제출됨",
+          "summary": "A가 통장내역 일부 제출"
+        },
+        {
+          "id": "verifying",
+          "label": "검증 중",
+          "summary": "계좌 원본 조회와 앱 원본 확인"
+        },
+        {
+          "id": "authenticated",
+          "label": "인증됨",
+          "summary": "해지와 이체가 동일 날짜로 확인"
+        },
+        {
+          "id": "challenged",
+          "label": "이의 제기됨",
+          "summary": "B가 빌려준 돈이라고 주장"
+        },
+        {
+          "id": "misread",
+          "label": "조작/오독 판정",
+          "summary": "데이터는 인증되지만 사용 목적은 맥락과 심문으로 확정"
+        }
+      ],
+      "meta": {
+        "name": "공동 적금 해지 내역 1건",
+        "type": "bank",
+        "viewerType": "bank",
+        "trustLevel": "mid",
+        "trustLabel": "보통",
+        "source": "org",
+        "sourceLabel": "기관",
+        "legality": "ok",
+        "legalLabel": "적법",
+        "stage": 5,
+        "stageLabel": "핵심 공개",
+        "sourceNote": "institutional / original",
+        "redactions": []
+      },
+      "viewerData": {
+        "meta": {
+          "name": "공동 적금 해지 내역 1건",
+          "type": "bank",
+          "viewerType": "bank",
+          "trustLevel": "mid",
+          "trustLabel": "보통",
+          "source": "org",
+          "sourceLabel": "기관",
+          "legality": "ok",
+          "legalLabel": "적법",
+          "stage": 5,
+          "stageLabel": "핵심 공개",
+          "sourceNote": "institutional / original",
+          "redactions": []
+        },
+        "bank": [
+          {
+            "date": "기록",
+            "desc": "공동 적금 해지 내역 1건",
+            "amount": "-",
+            "balance": "-",
+            "suspicious": false
+          }
+        ],
+        "media": {
+          "imageUrl": "data:image/svg+xml;charset=UTF-8,%0A%20%20%20%20%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%221280%22%20height%3D%22880%22%20viewBox%3D%220%200%201280%20880%22%3E%0A%20%20%20%20%20%20%3Crect%20width%3D%221280%22%20height%3D%22880%22%20rx%3D%2230%22%20fill%3D%22%230f172a%22%20%2F%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%2228%22%20y%3D%2228%22%20width%3D%221224%22%20height%3D%22824%22%20rx%3D%2224%22%20fill%3D%22%23111827%22%20stroke%3D%22rgba(255%2C255%2C255%2C0.08)%22%20%2F%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%2240%22%20y%3D%2240%22%20width%3D%22240%22%20height%3D%2230%22%20rx%3D%2215%22%20fill%3D%22%23f59e0b%22%20opacity%3D%220.92%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2258%22%20y%3D%2261%22%20font-size%3D%2214%22%20font-weight%3D%22800%22%20fill%3D%22%23111827%22%3EBANK%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2240%22%20y%3D%22108%22%20font-size%3D%2234%22%20font-weight%3D%22800%22%20fill%3D%22%23f8fafc%22%3E%EA%B3%B5%EB%8F%99%20%EC%A0%81%EA%B8%88%20%ED%95%B4%EC%A7%80%20%EB%82%B4%EC%97%AD%201%EA%B1%B4%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%2240%22%20y%3D%22138%22%20width%3D%221200%22%20height%3D%2244%22%20rx%3D%2212%22%20fill%3D%22rgba(255%2C255%2C255%2C0.06)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2266%22%20y%3D%22166%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%2394a3b8%22%3EDATE%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22278%22%20y%3D%22166%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%2394a3b8%22%3EDETAIL%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22860%22%20y%3D%22166%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%2394a3b8%22%20text-anchor%3D%22end%22%3EAMOUNT%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221190%22%20y%3D%22166%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%2394a3b8%22%20text-anchor%3D%22end%22%3EBALANCE%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2240%22%20y%3D%22154%22%20width%3D%221200%22%20height%3D%2272%22%20rx%3D%2214%22%20fill%3D%22rgba(255%2C255%2C255%2C0.03)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2266%22%20y%3D%22188%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23e5e7eb%22%3E1%EC%B0%A8%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22278%22%20y%3D%22188%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%EC%9B%90%EB%B3%B8%20%EC%9A%94%EC%B2%AD%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22860%22%20y%3D%22188%22%20font-size%3D%2220%22%20font-weight%3D%22700%22%20fill%3D%22%2386efac%22%20text-anchor%3D%22end%22%3E3%2C000%EB%A7%8C%20%EC%9B%90%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221190%22%20y%3D%22188%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23cbd5e1%22%20text-anchor%3D%22end%22%3E%EA%B3%B5%EB%8F%99%20%EC%A0%81%EA%B8%88%203%2C000%EB%A7%8C%20%EC%9B%90%20%ED%95%B4%EC%A7%80%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2240%22%20y%3D%22242%22%20width%3D%221200%22%20height%3D%2272%22%20rx%3D%2214%22%20fill%3D%22rgba(255%2C255%2C255%2C0.015)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2266%22%20y%3D%22276%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23e5e7eb%22%3E2%EC%B0%A8%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22278%22%20y%3D%22276%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%EB%A9%94%ED%83%80%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22860%22%20y%3D%22276%22%20font-size%3D%2220%22%20font-weight%3D%22700%22%20fill%3D%22%2386efac%22%20text-anchor%3D%22end%22%3E%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221190%22%20y%3D%22276%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23cbd5e1%22%20text-anchor%3D%22end%22%3E%EB%8F%8C%EB%B4%84%EC%9D%B4%20%EC%83%9D%ED%95%84%ED%92%88%20%EC%88%98%EC%A4%80%EC%9D%84%20%EB%84%98%EC%96%B4%20%EA%B3%B5%EB%8F%99%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2240%22%20y%3D%22330%22%20width%3D%221200%22%20height%3D%2272%22%20rx%3D%2214%22%20fill%3D%22rgba(255%2C255%2C255%2C0.03)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2266%22%20y%3D%22364%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23e5e7eb%22%3E3%EC%B0%A8%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22278%22%20y%3D%22364%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%EB%A7%A5%EB%9D%BD%20%EB%B3%B5%EC%9B%90%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22860%22%20y%3D%22364%22%20font-size%3D%2220%22%20font-weight%3D%22700%22%20fill%3D%22%2386efac%22%20text-anchor%3D%22end%22%3E%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221190%22%20y%3D%22364%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23cbd5e1%22%20text-anchor%3D%22end%22%3E%EA%B0%80%EC%A1%B1%20%EA%B5%AC%EC%A0%9C%20%EC%9D%98%EB%8F%84%EC%99%80%20%EB%B3%84%EA%B0%9C%EB%A1%9C%20%EA%B3%B5%EB%8F%99%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%3C%2Fsvg%3E%0A%20%20",
+          "thumbnailUrl": "data:image/svg+xml;charset=UTF-8,%0A%20%20%20%20%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%221280%22%20height%3D%22880%22%20viewBox%3D%220%200%201280%20880%22%3E%0A%20%20%20%20%20%20%3Crect%20width%3D%221280%22%20height%3D%22880%22%20rx%3D%2230%22%20fill%3D%22%230f172a%22%20%2F%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%2228%22%20y%3D%2228%22%20width%3D%221224%22%20height%3D%22824%22%20rx%3D%2224%22%20fill%3D%22%23111827%22%20stroke%3D%22rgba(255%2C255%2C255%2C0.08)%22%20%2F%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%2240%22%20y%3D%2240%22%20width%3D%22240%22%20height%3D%2230%22%20rx%3D%2215%22%20fill%3D%22%23f59e0b%22%20opacity%3D%220.92%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2258%22%20y%3D%2261%22%20font-size%3D%2214%22%20font-weight%3D%22800%22%20fill%3D%22%23111827%22%3EBANK%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2240%22%20y%3D%22108%22%20font-size%3D%2234%22%20font-weight%3D%22800%22%20fill%3D%22%23f8fafc%22%3E%EA%B3%B5%EB%8F%99%20%EC%A0%81%EA%B8%88%20%ED%95%B4%EC%A7%80%20%EB%82%B4%EC%97%AD%201%EA%B1%B4%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%2240%22%20y%3D%22138%22%20width%3D%221200%22%20height%3D%2244%22%20rx%3D%2212%22%20fill%3D%22rgba(255%2C255%2C255%2C0.06)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2266%22%20y%3D%22166%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%2394a3b8%22%3EDATE%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22278%22%20y%3D%22166%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%2394a3b8%22%3EDETAIL%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22860%22%20y%3D%22166%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%2394a3b8%22%20text-anchor%3D%22end%22%3EAMOUNT%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221190%22%20y%3D%22166%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%2394a3b8%22%20text-anchor%3D%22end%22%3EBALANCE%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2240%22%20y%3D%22154%22%20width%3D%221200%22%20height%3D%2272%22%20rx%3D%2214%22%20fill%3D%22rgba(255%2C255%2C255%2C0.03)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2266%22%20y%3D%22188%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23e5e7eb%22%3E1%EC%B0%A8%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22278%22%20y%3D%22188%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%EC%9B%90%EB%B3%B8%20%EC%9A%94%EC%B2%AD%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22860%22%20y%3D%22188%22%20font-size%3D%2220%22%20font-weight%3D%22700%22%20fill%3D%22%2386efac%22%20text-anchor%3D%22end%22%3E3%2C000%EB%A7%8C%20%EC%9B%90%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221190%22%20y%3D%22188%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23cbd5e1%22%20text-anchor%3D%22end%22%3E%EA%B3%B5%EB%8F%99%20%EC%A0%81%EA%B8%88%203%2C000%EB%A7%8C%20%EC%9B%90%20%ED%95%B4%EC%A7%80%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2240%22%20y%3D%22242%22%20width%3D%221200%22%20height%3D%2272%22%20rx%3D%2214%22%20fill%3D%22rgba(255%2C255%2C255%2C0.015)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2266%22%20y%3D%22276%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23e5e7eb%22%3E2%EC%B0%A8%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22278%22%20y%3D%22276%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%EB%A9%94%ED%83%80%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22860%22%20y%3D%22276%22%20font-size%3D%2220%22%20font-weight%3D%22700%22%20fill%3D%22%2386efac%22%20text-anchor%3D%22end%22%3E%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221190%22%20y%3D%22276%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23cbd5e1%22%20text-anchor%3D%22end%22%3E%EB%8F%8C%EB%B4%84%EC%9D%B4%20%EC%83%9D%ED%95%84%ED%92%88%20%EC%88%98%EC%A4%80%EC%9D%84%20%EB%84%98%EC%96%B4%20%EA%B3%B5%EB%8F%99%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2240%22%20y%3D%22330%22%20width%3D%221200%22%20height%3D%2272%22%20rx%3D%2214%22%20fill%3D%22rgba(255%2C255%2C255%2C0.03)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2266%22%20y%3D%22364%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23e5e7eb%22%3E3%EC%B0%A8%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22278%22%20y%3D%22364%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%EB%A7%A5%EB%9D%BD%20%EB%B3%B5%EC%9B%90%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22860%22%20y%3D%22364%22%20font-size%3D%2220%22%20font-weight%3D%22700%22%20fill%3D%22%2386efac%22%20text-anchor%3D%22end%22%3E%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221190%22%20y%3D%22364%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23cbd5e1%22%20text-anchor%3D%22end%22%3E%EA%B0%80%EC%A1%B1%20%EA%B5%AC%EC%A0%9C%20%EC%9D%98%EB%8F%84%EC%99%80%20%EB%B3%84%EA%B0%9C%EB%A1%9C%20%EA%B3%B5%EB%8F%99%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%3C%2Fsvg%3E%0A%20%20",
+          "posterUrl": "data:image/svg+xml;charset=UTF-8,%0A%20%20%20%20%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%221280%22%20height%3D%22880%22%20viewBox%3D%220%200%201280%20880%22%3E%0A%20%20%20%20%20%20%3Crect%20width%3D%221280%22%20height%3D%22880%22%20rx%3D%2230%22%20fill%3D%22%230f172a%22%20%2F%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%2228%22%20y%3D%2228%22%20width%3D%221224%22%20height%3D%22824%22%20rx%3D%2224%22%20fill%3D%22%23111827%22%20stroke%3D%22rgba(255%2C255%2C255%2C0.08)%22%20%2F%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%2240%22%20y%3D%2240%22%20width%3D%22240%22%20height%3D%2230%22%20rx%3D%2215%22%20fill%3D%22%23f59e0b%22%20opacity%3D%220.92%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2258%22%20y%3D%2261%22%20font-size%3D%2214%22%20font-weight%3D%22800%22%20fill%3D%22%23111827%22%3EBANK%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2240%22%20y%3D%22108%22%20font-size%3D%2234%22%20font-weight%3D%22800%22%20fill%3D%22%23f8fafc%22%3E%EA%B3%B5%EB%8F%99%20%EC%A0%81%EA%B8%88%20%ED%95%B4%EC%A7%80%20%EB%82%B4%EC%97%AD%201%EA%B1%B4%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%2240%22%20y%3D%22138%22%20width%3D%221200%22%20height%3D%2244%22%20rx%3D%2212%22%20fill%3D%22rgba(255%2C255%2C255%2C0.06)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2266%22%20y%3D%22166%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%2394a3b8%22%3EDATE%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22278%22%20y%3D%22166%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%2394a3b8%22%3EDETAIL%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22860%22%20y%3D%22166%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%2394a3b8%22%20text-anchor%3D%22end%22%3EAMOUNT%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221190%22%20y%3D%22166%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%2394a3b8%22%20text-anchor%3D%22end%22%3EBALANCE%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2240%22%20y%3D%22154%22%20width%3D%221200%22%20height%3D%2272%22%20rx%3D%2214%22%20fill%3D%22rgba(255%2C255%2C255%2C0.03)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2266%22%20y%3D%22188%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23e5e7eb%22%3E1%EC%B0%A8%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22278%22%20y%3D%22188%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%EC%9B%90%EB%B3%B8%20%EC%9A%94%EC%B2%AD%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22860%22%20y%3D%22188%22%20font-size%3D%2220%22%20font-weight%3D%22700%22%20fill%3D%22%2386efac%22%20text-anchor%3D%22end%22%3E3%2C000%EB%A7%8C%20%EC%9B%90%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221190%22%20y%3D%22188%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23cbd5e1%22%20text-anchor%3D%22end%22%3E%EA%B3%B5%EB%8F%99%20%EC%A0%81%EA%B8%88%203%2C000%EB%A7%8C%20%EC%9B%90%20%ED%95%B4%EC%A7%80%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2240%22%20y%3D%22242%22%20width%3D%221200%22%20height%3D%2272%22%20rx%3D%2214%22%20fill%3D%22rgba(255%2C255%2C255%2C0.015)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2266%22%20y%3D%22276%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23e5e7eb%22%3E2%EC%B0%A8%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22278%22%20y%3D%22276%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%EB%A9%94%ED%83%80%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22860%22%20y%3D%22276%22%20font-size%3D%2220%22%20font-weight%3D%22700%22%20fill%3D%22%2386efac%22%20text-anchor%3D%22end%22%3E%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221190%22%20y%3D%22276%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23cbd5e1%22%20text-anchor%3D%22end%22%3E%EB%8F%8C%EB%B4%84%EC%9D%B4%20%EC%83%9D%ED%95%84%ED%92%88%20%EC%88%98%EC%A4%80%EC%9D%84%20%EB%84%98%EC%96%B4%20%EA%B3%B5%EB%8F%99%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2240%22%20y%3D%22330%22%20width%3D%221200%22%20height%3D%2272%22%20rx%3D%2214%22%20fill%3D%22rgba(255%2C255%2C255%2C0.03)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2266%22%20y%3D%22364%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23e5e7eb%22%3E3%EC%B0%A8%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22278%22%20y%3D%22364%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%EB%A7%A5%EB%9D%BD%20%EB%B3%B5%EC%9B%90%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22860%22%20y%3D%22364%22%20font-size%3D%2220%22%20font-weight%3D%22700%22%20fill%3D%22%2386efac%22%20text-anchor%3D%22end%22%3E%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221190%22%20y%3D%22364%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23cbd5e1%22%20text-anchor%3D%22end%22%3E%EA%B0%80%EC%A1%B1%20%EA%B5%AC%EC%A0%9C%20%EC%9D%98%EB%8F%84%EC%99%80%20%EB%B3%84%EA%B0%9C%EB%A1%9C%20%EA%B3%B5%EB%8F%99%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%3C%2Fsvg%3E%0A%20%20",
+          "width": 1280,
+          "height": 880,
+          "alt": "공동 적금 해지 내역 1건 financial evidence",
+          "caption": "공동 적금 해지 내역 1건 table preview"
+        }
+      }
+    },
+    {
+      "id": "e-6",
+      "name": "A의 투자방 카톡 + 2,000만 원 송금 영수증",
+      "surfaceName": "A의 개인 송금 1건",
+      "description": "박지연이 \"내 돈부터 지켜야겠다\"는 말 뒤 2,000만 원을 보낸 투자방 카톡과 영수증이다.",
+      "surfaceDescription": "2,000만 원 송금 영수증과 \"잠깐 넣어둘게\" 문장만 일부 보인다.",
+      "type": "chat",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "self_possessed",
+      "legitimacy": "lawful",
+      "proves": [
+        "h-d3",
+        "h-d4"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-5"
+      ],
+      "requiredLieState": "S2",
+      "investigationResults": {
+        "request_original": "\"남편이 바람이면 내 돈부터 지켜야겠다\"는 메시지와 2,000만 원 송금 영수증이 함께 남아 있다.",
+        "check_metadata": "남편 진실이 확인되기 전 실행된 송금이라는 점이 문장과 시각으로 드러난다.",
+        "restore_context": "자기방어라고 말할 수 있지만 이혼 대비 은닉 심리와 사기 피해가 한 덩어리로 남는다."
+      },
+      "subjectParty": "a",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 2,000만 원 송금, 당신이 한 것 맞습니까?",
+            "attackVector": "authenticity"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "\"내 돈부터 지켜야겠다\"고 말한 이유가 무엇입니까?",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "남편의 진실을 확인하기도 전에 돈을 옮긴 건 이혼 대비였습니까?",
+            "attackVector": "responsibility"
+          }
+        }
+      ],
+      "partyContext": {
+        "a": {
+          "questionAngle": "왜 이 송금이 자기방어를 넘어 비밀 은닉으로 읽히는지 설명해 주십시오.",
+          "implication": "A의 선행 실행 책임을 드러낸다."
+        },
+        "b": {
+          "questionAngle": "왜 이 기록이 배우자에 대한 불신과 돈 선점의 시작으로 보이는지 설명해 주십시오.",
+          "implication": "외도 오해가 실제 자금 이동으로 바뀌는 지점이다."
+        }
+      },
+      "v3DepthPlan": [
+        {
+          "id": "stub",
+          "label": "Stub",
+          "summary": "A의 개인 송금 1건 존재만 보임"
+        },
+        {
+          "id": "excerpt",
+          "label": "Excerpt",
+          "summary": "2,000만 원 영수증과 짧은 문장만 보임"
+        },
+        {
+          "id": "original",
+          "label": "Original",
+          "summary": "발언, 링크, 송금 계좌 일치까지 확인"
+        },
+        {
+          "id": "context",
+          "label": "Context",
+          "summary": "사기당한 뒤 숨긴 정황과 수치심이 복원됨"
+        },
+        {
+          "id": "established",
+          "label": "Established",
+          "summary": "A가 2,000만 원을 따로 움직였다가 잃었다고 공식기록 채택 가능"
+        }
+      ],
+      "v3TrustStates": [
+        {
+          "id": "submitted",
+          "label": "제출됨",
+          "summary": "B가 존재를 문제 삼거나 A가 일부만 제출"
+        },
+        {
+          "id": "verifying",
+          "label": "검증 중",
+          "summary": "분리심문(A)과 원본 제출 명령으로 대조"
+        },
+        {
+          "id": "authenticated",
+          "label": "인증됨",
+          "summary": "채팅 시각과 송금 시각이 일치"
+        },
+        {
+          "id": "challenged",
+          "label": "이의 제기됨",
+          "summary": "숨기려 한 건 맞지만 은닉은 아니었다는 이의"
+        },
+        {
+          "id": "misread",
+          "label": "조작/오독 판정",
+          "summary": "사기 피해 자체는 인증되지만 자기방어인지 은닉인지는 열려 있음"
+        }
+      ],
+      "meta": {
+        "name": "A의 개인 송금 1건",
+        "type": "chat",
+        "viewerType": "chat",
+        "trustLevel": "mid",
+        "trustLabel": "보통",
+        "source": "a",
+        "sourceLabel": "A측",
+        "legality": "ok",
+        "legalLabel": "적법",
+        "stage": 6,
+        "stageLabel": "핵심 공개",
+        "sourceNote": "self_possessed / original",
+        "redactions": []
+      },
+      "viewerData": {
+        "meta": {
+          "name": "A의 개인 송금 1건",
+          "type": "chat",
+          "viewerType": "chat",
+          "trustLevel": "mid",
+          "trustLabel": "보통",
+          "source": "a",
+          "sourceLabel": "A측",
+          "legality": "ok",
+          "legalLabel": "적법",
+          "stage": 6,
+          "stageLabel": "핵심 공개",
+          "sourceNote": "self_possessed / original",
+          "redactions": []
+        },
+        "chat": {
+          "header": "A의 개인 송금 1건 기록",
+          "messages": [
+            {
+              "side": "left",
+              "sender": "기록",
+              "text": "2,000만 원 송금 영수증과 \"잠깐 넣어둘게\" 문장만 일부 보인다."
+            }
+          ]
+        },
+        "media": {
+          "imageUrl": "data:image/svg+xml;charset=UTF-8,%0A%20%20%20%20%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%221080%22%20height%3D%221600%22%20viewBox%3D%220%200%201080%201600%22%3E%0A%20%20%20%20%20%20%3Crect%20width%3D%221080%22%20height%3D%221600%22%20rx%3D%2240%22%20fill%3D%22%230b1220%22%20%2F%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%2224%22%20y%3D%2224%22%20width%3D%221032%22%20height%3D%221552%22%20rx%3D%2234%22%20fill%3D%22%23111827%22%20stroke%3D%22rgba(255%2C255%2C255%2C0.08)%22%20%2F%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%2254%22%20y%3D%2254%22%20width%3D%22972%22%20height%3D%2278%22%20rx%3D%2222%22%20fill%3D%22rgba(255%2C255%2C255%2C0.06)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2282%22%20y%3D%22102%22%20font-size%3D%2218%22%20font-weight%3D%22800%22%20fill%3D%22%2334d399%22%3ECHAT%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2282%22%20y%3D%22132%22%20font-size%3D%2228%22%20font-weight%3D%22800%22%20fill%3D%22%23f8fafc%22%3EA%EC%9D%98%20%EA%B0%9C%EC%9D%B8%20%EC%86%A1%EA%B8%88%201%EA%B1%B4%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%3Ctext%20x%3D%2254%22%20y%3D%22180%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%2394a3b8%22%3E%EA%B8%B0%EB%A1%9D%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22684%22%20y%3D%22180%22%20font-size%3D%2215%22%20font-weight%3D%22600%22%20fill%3D%22%2364748b%22%20text-anchor%3D%22end%22%3ET01%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%2254%22%20y%3D%22198%22%20width%3D%22640%22%20height%3D%22158%22%20rx%3D%2228%22%20fill%3D%22%231f2937%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2278%22%20y%3D%22236%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%26quot%3B%EB%82%A8%ED%8E%B8%EC%9D%B4%20%EB%B0%94%EB%9E%8C%EC%9D%B4%EB%A9%B4%20%EB%82%B4%20%EB%8F%88%EB%B6%80%ED%84%B0%20%EC%A7%80%EC%BC%9C%EC%95%BC%EA%B2%A0%EB%8B%A4%26quot%3B%EB%8A%94%3C%2Ftext%3E%3Ctext%20x%3D%2278%22%20y%3D%22262%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%EB%A9%94%EC%8B%9C%EC%A7%80%EC%99%80%202%2C000%EB%A7%8C%20%EC%9B%90%20%EC%86%A1%EA%B8%88%20%EC%98%81%EC%88%98%EC%A6%9D%EC%9D%B4%20%ED%95%A8%EA%BB%98%3C%2Ftext%3E%3Ctext%20x%3D%2278%22%20y%3D%22288%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%EB%82%A8%EC%95%84%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%0A%20%20%20%20%20%20%3Ctext%20x%3D%22386%22%20y%3D%22414%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%2394a3b8%22%3E%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221016%22%20y%3D%22414%22%20font-size%3D%2215%22%20font-weight%3D%22600%22%20fill%3D%22%2364748b%22%20text-anchor%3D%22end%22%3ET02%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%22386%22%20y%3D%22432%22%20width%3D%22640%22%20height%3D%22130%22%20rx%3D%2228%22%20fill%3D%22%2334d399%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22410%22%20y%3D%22470%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23052e16%22%3E%EB%82%A8%ED%8E%B8%20%EC%A7%84%EC%8B%A4%EC%9D%B4%20%ED%99%95%EC%9D%B8%EB%90%98%EA%B8%B0%20%EC%A0%84%20%EC%8B%A4%ED%96%89%EB%90%9C%20%EC%86%A1%EA%B8%88%EC%9D%B4%EB%9D%BC%EB%8A%94%20%EC%A0%90%EC%9D%B4%3C%2Ftext%3E%3Ctext%20x%3D%22410%22%20y%3D%22496%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23052e16%22%3E%EB%AC%B8%EC%9E%A5%EA%B3%BC%20%EC%8B%9C%EA%B0%81%EC%9C%BC%EB%A1%9C%20%EB%93%9C%EB%9F%AC%EB%82%9C%EB%8B%A4.%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%0A%20%20%20%20%20%20%3Ctext%20x%3D%2254%22%20y%3D%22620%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%2394a3b8%22%3E%EA%B8%B0%EB%A1%9D%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22684%22%20y%3D%22620%22%20font-size%3D%2215%22%20font-weight%3D%22600%22%20fill%3D%22%2364748b%22%20text-anchor%3D%22end%22%3ET03%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%2254%22%20y%3D%22638%22%20width%3D%22640%22%20height%3D%22130%22%20rx%3D%2228%22%20fill%3D%22%231f2937%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2278%22%20y%3D%22676%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%EC%9E%90%EA%B8%B0%EB%B0%A9%EC%96%B4%EB%9D%BC%EA%B3%A0%20%EB%A7%90%ED%95%A0%20%EC%88%98%20%EC%9E%88%EC%A7%80%EB%A7%8C%20%EC%9D%B4%ED%98%BC%20%EB%8C%80%EB%B9%84%20%EC%9D%80%EB%8B%89%3C%2Ftext%3E%3Ctext%20x%3D%2278%22%20y%3D%22702%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%EC%8B%AC%EB%A6%AC%EC%99%80%20%EC%82%AC%EA%B8%B0%20%ED%94%BC%ED%95%B4%EA%B0%80%20%ED%95%9C%20%EB%8D%A9%EC%96%B4%EB%A6%AC%EB%A1%9C%20%EB%82%A8%EB%8A%94%EB%8B%A4.%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%0A%20%20%20%20%3C%2Fsvg%3E%0A%20%20",
+          "thumbnailUrl": "data:image/svg+xml;charset=UTF-8,%0A%20%20%20%20%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%221080%22%20height%3D%221600%22%20viewBox%3D%220%200%201080%201600%22%3E%0A%20%20%20%20%20%20%3Crect%20width%3D%221080%22%20height%3D%221600%22%20rx%3D%2240%22%20fill%3D%22%230b1220%22%20%2F%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%2224%22%20y%3D%2224%22%20width%3D%221032%22%20height%3D%221552%22%20rx%3D%2234%22%20fill%3D%22%23111827%22%20stroke%3D%22rgba(255%2C255%2C255%2C0.08)%22%20%2F%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%2254%22%20y%3D%2254%22%20width%3D%22972%22%20height%3D%2278%22%20rx%3D%2222%22%20fill%3D%22rgba(255%2C255%2C255%2C0.06)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2282%22%20y%3D%22102%22%20font-size%3D%2218%22%20font-weight%3D%22800%22%20fill%3D%22%2334d399%22%3ECHAT%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2282%22%20y%3D%22132%22%20font-size%3D%2228%22%20font-weight%3D%22800%22%20fill%3D%22%23f8fafc%22%3EA%EC%9D%98%20%EA%B0%9C%EC%9D%B8%20%EC%86%A1%EA%B8%88%201%EA%B1%B4%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%3Ctext%20x%3D%2254%22%20y%3D%22180%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%2394a3b8%22%3E%EA%B8%B0%EB%A1%9D%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22684%22%20y%3D%22180%22%20font-size%3D%2215%22%20font-weight%3D%22600%22%20fill%3D%22%2364748b%22%20text-anchor%3D%22end%22%3ET01%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%2254%22%20y%3D%22198%22%20width%3D%22640%22%20height%3D%22158%22%20rx%3D%2228%22%20fill%3D%22%231f2937%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2278%22%20y%3D%22236%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%26quot%3B%EB%82%A8%ED%8E%B8%EC%9D%B4%20%EB%B0%94%EB%9E%8C%EC%9D%B4%EB%A9%B4%20%EB%82%B4%20%EB%8F%88%EB%B6%80%ED%84%B0%20%EC%A7%80%EC%BC%9C%EC%95%BC%EA%B2%A0%EB%8B%A4%26quot%3B%EB%8A%94%3C%2Ftext%3E%3Ctext%20x%3D%2278%22%20y%3D%22262%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%EB%A9%94%EC%8B%9C%EC%A7%80%EC%99%80%202%2C000%EB%A7%8C%20%EC%9B%90%20%EC%86%A1%EA%B8%88%20%EC%98%81%EC%88%98%EC%A6%9D%EC%9D%B4%20%ED%95%A8%EA%BB%98%3C%2Ftext%3E%3Ctext%20x%3D%2278%22%20y%3D%22288%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%EB%82%A8%EC%95%84%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%0A%20%20%20%20%20%20%3Ctext%20x%3D%22386%22%20y%3D%22414%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%2394a3b8%22%3E%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221016%22%20y%3D%22414%22%20font-size%3D%2215%22%20font-weight%3D%22600%22%20fill%3D%22%2364748b%22%20text-anchor%3D%22end%22%3ET02%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%22386%22%20y%3D%22432%22%20width%3D%22640%22%20height%3D%22130%22%20rx%3D%2228%22%20fill%3D%22%2334d399%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22410%22%20y%3D%22470%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23052e16%22%3E%EB%82%A8%ED%8E%B8%20%EC%A7%84%EC%8B%A4%EC%9D%B4%20%ED%99%95%EC%9D%B8%EB%90%98%EA%B8%B0%20%EC%A0%84%20%EC%8B%A4%ED%96%89%EB%90%9C%20%EC%86%A1%EA%B8%88%EC%9D%B4%EB%9D%BC%EB%8A%94%20%EC%A0%90%EC%9D%B4%3C%2Ftext%3E%3Ctext%20x%3D%22410%22%20y%3D%22496%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23052e16%22%3E%EB%AC%B8%EC%9E%A5%EA%B3%BC%20%EC%8B%9C%EA%B0%81%EC%9C%BC%EB%A1%9C%20%EB%93%9C%EB%9F%AC%EB%82%9C%EB%8B%A4.%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%0A%20%20%20%20%20%20%3Ctext%20x%3D%2254%22%20y%3D%22620%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%2394a3b8%22%3E%EA%B8%B0%EB%A1%9D%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22684%22%20y%3D%22620%22%20font-size%3D%2215%22%20font-weight%3D%22600%22%20fill%3D%22%2364748b%22%20text-anchor%3D%22end%22%3ET03%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%2254%22%20y%3D%22638%22%20width%3D%22640%22%20height%3D%22130%22%20rx%3D%2228%22%20fill%3D%22%231f2937%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2278%22%20y%3D%22676%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%EC%9E%90%EA%B8%B0%EB%B0%A9%EC%96%B4%EB%9D%BC%EA%B3%A0%20%EB%A7%90%ED%95%A0%20%EC%88%98%20%EC%9E%88%EC%A7%80%EB%A7%8C%20%EC%9D%B4%ED%98%BC%20%EB%8C%80%EB%B9%84%20%EC%9D%80%EB%8B%89%3C%2Ftext%3E%3Ctext%20x%3D%2278%22%20y%3D%22702%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%EC%8B%AC%EB%A6%AC%EC%99%80%20%EC%82%AC%EA%B8%B0%20%ED%94%BC%ED%95%B4%EA%B0%80%20%ED%95%9C%20%EB%8D%A9%EC%96%B4%EB%A6%AC%EB%A1%9C%20%EB%82%A8%EB%8A%94%EB%8B%A4.%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%0A%20%20%20%20%3C%2Fsvg%3E%0A%20%20",
+          "posterUrl": "data:image/svg+xml;charset=UTF-8,%0A%20%20%20%20%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%221080%22%20height%3D%221600%22%20viewBox%3D%220%200%201080%201600%22%3E%0A%20%20%20%20%20%20%3Crect%20width%3D%221080%22%20height%3D%221600%22%20rx%3D%2240%22%20fill%3D%22%230b1220%22%20%2F%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%2224%22%20y%3D%2224%22%20width%3D%221032%22%20height%3D%221552%22%20rx%3D%2234%22%20fill%3D%22%23111827%22%20stroke%3D%22rgba(255%2C255%2C255%2C0.08)%22%20%2F%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%2254%22%20y%3D%2254%22%20width%3D%22972%22%20height%3D%2278%22%20rx%3D%2222%22%20fill%3D%22rgba(255%2C255%2C255%2C0.06)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2282%22%20y%3D%22102%22%20font-size%3D%2218%22%20font-weight%3D%22800%22%20fill%3D%22%2334d399%22%3ECHAT%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2282%22%20y%3D%22132%22%20font-size%3D%2228%22%20font-weight%3D%22800%22%20fill%3D%22%23f8fafc%22%3EA%EC%9D%98%20%EA%B0%9C%EC%9D%B8%20%EC%86%A1%EA%B8%88%201%EA%B1%B4%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%3Ctext%20x%3D%2254%22%20y%3D%22180%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%2394a3b8%22%3E%EA%B8%B0%EB%A1%9D%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22684%22%20y%3D%22180%22%20font-size%3D%2215%22%20font-weight%3D%22600%22%20fill%3D%22%2364748b%22%20text-anchor%3D%22end%22%3ET01%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%2254%22%20y%3D%22198%22%20width%3D%22640%22%20height%3D%22158%22%20rx%3D%2228%22%20fill%3D%22%231f2937%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2278%22%20y%3D%22236%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%26quot%3B%EB%82%A8%ED%8E%B8%EC%9D%B4%20%EB%B0%94%EB%9E%8C%EC%9D%B4%EB%A9%B4%20%EB%82%B4%20%EB%8F%88%EB%B6%80%ED%84%B0%20%EC%A7%80%EC%BC%9C%EC%95%BC%EA%B2%A0%EB%8B%A4%26quot%3B%EB%8A%94%3C%2Ftext%3E%3Ctext%20x%3D%2278%22%20y%3D%22262%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%EB%A9%94%EC%8B%9C%EC%A7%80%EC%99%80%202%2C000%EB%A7%8C%20%EC%9B%90%20%EC%86%A1%EA%B8%88%20%EC%98%81%EC%88%98%EC%A6%9D%EC%9D%B4%20%ED%95%A8%EA%BB%98%3C%2Ftext%3E%3Ctext%20x%3D%2278%22%20y%3D%22288%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%EB%82%A8%EC%95%84%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%0A%20%20%20%20%20%20%3Ctext%20x%3D%22386%22%20y%3D%22414%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%2394a3b8%22%3E%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221016%22%20y%3D%22414%22%20font-size%3D%2215%22%20font-weight%3D%22600%22%20fill%3D%22%2364748b%22%20text-anchor%3D%22end%22%3ET02%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%22386%22%20y%3D%22432%22%20width%3D%22640%22%20height%3D%22130%22%20rx%3D%2228%22%20fill%3D%22%2334d399%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22410%22%20y%3D%22470%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23052e16%22%3E%EB%82%A8%ED%8E%B8%20%EC%A7%84%EC%8B%A4%EC%9D%B4%20%ED%99%95%EC%9D%B8%EB%90%98%EA%B8%B0%20%EC%A0%84%20%EC%8B%A4%ED%96%89%EB%90%9C%20%EC%86%A1%EA%B8%88%EC%9D%B4%EB%9D%BC%EB%8A%94%20%EC%A0%90%EC%9D%B4%3C%2Ftext%3E%3Ctext%20x%3D%22410%22%20y%3D%22496%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23052e16%22%3E%EB%AC%B8%EC%9E%A5%EA%B3%BC%20%EC%8B%9C%EA%B0%81%EC%9C%BC%EB%A1%9C%20%EB%93%9C%EB%9F%AC%EB%82%9C%EB%8B%A4.%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%0A%20%20%20%20%20%20%3Ctext%20x%3D%2254%22%20y%3D%22620%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%2394a3b8%22%3E%EA%B8%B0%EB%A1%9D%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22684%22%20y%3D%22620%22%20font-size%3D%2215%22%20font-weight%3D%22600%22%20fill%3D%22%2364748b%22%20text-anchor%3D%22end%22%3ET03%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%2254%22%20y%3D%22638%22%20width%3D%22640%22%20height%3D%22130%22%20rx%3D%2228%22%20fill%3D%22%231f2937%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2278%22%20y%3D%22676%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%EC%9E%90%EA%B8%B0%EB%B0%A9%EC%96%B4%EB%9D%BC%EA%B3%A0%20%EB%A7%90%ED%95%A0%20%EC%88%98%20%EC%9E%88%EC%A7%80%EB%A7%8C%20%EC%9D%B4%ED%98%BC%20%EB%8C%80%EB%B9%84%20%EC%9D%80%EB%8B%89%3C%2Ftext%3E%3Ctext%20x%3D%2278%22%20y%3D%22702%22%20font-size%3D%2220%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%EC%8B%AC%EB%A6%AC%EC%99%80%20%EC%82%AC%EA%B8%B0%20%ED%94%BC%ED%95%B4%EA%B0%80%20%ED%95%9C%20%EB%8D%A9%EC%96%B4%EB%A6%AC%EB%A1%9C%20%EB%82%A8%EB%8A%94%EB%8B%A4.%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%0A%20%20%20%20%3C%2Fsvg%3E%0A%20%20",
+          "width": 1080,
+          "height": 1600,
+          "alt": "A의 개인 송금 1건 chat evidence",
+          "caption": "A의 개인 송금 1건 conversation preview"
+        }
+      }
+    },
+    {
+      "id": "e-7",
+      "name": "통화·출입·계좌 이동 대조표",
+      "surfaceName": "비교 대조표 생성 가능",
+      "description": "통화, 방문, 적금 해지, 2,000만 원 송금을 한 장에 묶은 종합 대조표다.",
+      "surfaceDescription": "B의 비밀 방문 시작과 A의 비밀 송금 시점의 거친 순서만 보인다.",
+      "type": "log",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "institutional",
+      "legitimacy": "lawful",
+      "proves": [
+        "h-d4"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-5",
+        "e-6"
+      ],
+      "requiredLieState": "S3",
+      "investigationResults": {
+        "request_original": "핵심 날짜와 시각이 한 장에 정리되어 숨김의 시작과 실행의 순서를 함께 보여 준다.",
+        "check_metadata": "숨김은 B가 먼저, 실제 송금 실행은 A가 먼저였다는 구조가 시간축으로 분리된다.",
+        "restore_context": "누가 먼저 배신했는가와 누가 먼저 돈을 움직였는가가 같은 질문이 아니라는 점이 확정된다."
+      },
+      "subjectParty": "both",
+      "investigationStages": [
+        {
+          "stage": 0,
+          "revealKey": "request_original",
+          "question": {
+            "text": "이 대조표가 묶는 핵심 시점들, 모두 원자료와 일치합니까?",
+            "attackVector": "authenticity"
+          }
+        },
+        {
+          "stage": 1,
+          "revealKey": "check_metadata",
+          "question": {
+            "text": "숨김의 시작과 실제 송금 실행의 순서가 어떻게 다릅니까?",
+            "attackVector": "context"
+          }
+        },
+        {
+          "stage": 2,
+          "revealKey": "restore_context",
+          "question": {
+            "text": "누가 먼저 신뢰를 깼는지와 누가 먼저 돈을 움직였는지를 분리해서 설명해 보십시오.",
+            "attackVector": "responsibility"
+          }
+        }
+      ],
+      "partyContext": {
+        "a": {
+          "questionAngle": "왜 남편이 먼저 숨겼다는 말과 자신이 먼저 송금했다는 사실이 동시에 성립하는지 설명해 주십시오.",
+          "implication": "감정적 배신과 실행 책임이 갈라진다."
+        },
+        "b": {
+          "questionAngle": "왜 자신이 먼저 숨겼다는 점을 인정하면서도 송금 실행의 선후는 다르다고 말하는지 설명해 주십시오.",
+          "implication": "최종 책임 판단을 시간축으로 정리한다."
+        }
+      },
+      "v3DepthPlan": [
+        {
+          "id": "stub",
+          "label": "Stub",
+          "summary": "비교 대조표 생성 가능 상태만 표시"
+        },
+        {
+          "id": "excerpt",
+          "label": "Excerpt",
+          "summary": "비밀 방문 시작과 비밀 송금 시점의 거친 순서"
+        },
+        {
+          "id": "original",
+          "label": "Original",
+          "summary": "정확한 날짜와 시각이 한 장으로 정리됨"
+        },
+        {
+          "id": "context",
+          "label": "Context",
+          "summary": "각 시점의 핵심 발언과 심리 상태가 붙음"
+        },
+        {
+          "id": "established",
+          "label": "Established",
+          "summary": "숨김은 B가 먼저, 실제 비밀 송금은 A가 먼저라는 시간축이 공식기록 채택 대상"
+        }
+      ],
+      "v3TrustStates": [
+        {
+          "id": "submitted",
+          "label": "제출됨",
+          "summary": "다른 증거 조합을 통해 생성되는 종합 자료"
+        },
+        {
+          "id": "verifying",
+          "label": "검증 중",
+          "summary": "e-1부터 e-6의 핵심 축이 인증될 때 생성"
+        },
+        {
+          "id": "authenticated",
+          "label": "인증됨",
+          "summary": "기반 증거 4개 이상이 인증되면 표도 인증"
+        },
+        {
+          "id": "challenged",
+          "label": "이의 제기됨",
+          "summary": "A와 B 모두 순서가 의미 없다고 이의 가능"
+        },
+        {
+          "id": "misread",
+          "label": "조작/오독 판정",
+          "summary": "표 자체는 조작 불가이고 해석은 Reframe 선택에 따라 달라짐"
+        }
+      ],
+      "meta": {
+        "name": "비교 대조표 생성 가능",
+        "type": "log",
+        "viewerType": "log",
+        "trustLevel": "mid",
+        "trustLabel": "보통",
+        "source": "org",
+        "sourceLabel": "기관",
+        "legality": "ok",
+        "legalLabel": "적법",
+        "stage": 7,
+        "stageLabel": "핵심 공개",
+        "sourceNote": "institutional / original",
+        "redactions": []
+      },
+      "viewerData": {
+        "meta": {
+          "name": "비교 대조표 생성 가능",
+          "type": "log",
+          "viewerType": "log",
+          "trustLevel": "mid",
+          "trustLabel": "보통",
+          "source": "org",
+          "sourceLabel": "기관",
+          "legality": "ok",
+          "legalLabel": "적법",
+          "stage": 7,
+          "stageLabel": "핵심 공개",
+          "sourceNote": "institutional / original",
+          "redactions": []
+        },
+        "log": {
+          "rows": [
+            {
+              "date": "기록",
+              "type": "in",
+              "typeLabel": "기록",
+              "target": "비교 대조표 생성 가능",
+              "duration": "-",
+              "suspicious": false
+            }
+          ],
+          "note": "B의 비밀 방문 시작과 A의 비밀 송금 시점의 거친 순서만 보인다."
+        },
+        "media": {
+          "imageUrl": "data:image/svg+xml;charset=UTF-8,%0A%20%20%20%20%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%221280%22%20height%3D%22900%22%20viewBox%3D%220%200%201280%20900%22%3E%0A%20%20%20%20%20%20%3Crect%20width%3D%221280%22%20height%3D%22900%22%20rx%3D%2224%22%20fill%3D%22%230f172a%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2254%22%20y%3D%2274%22%20font-size%3D%2216%22%20font-weight%3D%22800%22%20fill%3D%22%2322c55e%22%3ELOG%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2254%22%20y%3D%22120%22%20font-size%3D%2234%22%20font-weight%3D%22800%22%20fill%3D%22%23f8fafc%22%3E%EB%B9%84%EA%B5%90%20%EB%8C%80%EC%A1%B0%ED%91%9C%20%EC%83%9D%EC%84%B1%20%EA%B0%80%EB%8A%A5%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2254%22%20y%3D%22158%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%2394a3b8%22%3EB%EC%9D%98%20%EB%B9%84%EB%B0%80%20%EB%B0%A9%EB%AC%B8%20%EC%8B%9C%EC%9E%91%EA%B3%BC%20A%EC%9D%98%20%EB%B9%84%EB%B0%80%20%EC%86%A1%EA%B8%88%20%EC%8B%9C%EC%A0%90%EC%9D%98%20%EA%B1%B0%EC%B9%9C%20%EC%88%9C%EC%84%9C%EB%A7%8C%20%EB%B3%B4%EC%9D%B8%EB%8B%A4.%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2254%22%20y%3D%22166%22%20width%3D%221172%22%20height%3D%2268%22%20rx%3D%2214%22%20fill%3D%22rgba(255%2C255%2C255%2C0.03)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2278%22%20y%3D%22200%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%23cbd5e1%22%3E1%EC%B0%A8%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22286%22%20y%3D%22200%22%20font-size%3D%2218%22%20font-weight%3D%22800%22%20fill%3D%22%2386efac%22%3E%EC%9B%90%EB%B3%B8%20%EC%9A%94%EC%B2%AD%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22444%22%20y%3D%22200%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%ED%95%B5%EC%8B%AC%20%EB%82%A0%EC%A7%9C%EC%99%80%20%EC%8B%9C%EA%B0%81%EC%9D%B4%20%ED%95%9C%20%EC%9E%A5%EC%97%90%20%EC%A0%95%EB%A6%AC%EB%90%98%EC%96%B4%20%EC%88%A8%EA%B9%80%EC%9D%98%20%EC%8B%9C%EC%9E%91%EA%B3%BC%20%EC%8B%A4%ED%96%89%EC%9D%98%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221160%22%20y%3D%22200%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%2394a3b8%22%20text-anchor%3D%22end%22%3E%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2254%22%20y%3D%22254%22%20width%3D%221172%22%20height%3D%2268%22%20rx%3D%2214%22%20fill%3D%22rgba(255%2C255%2C255%2C0.03)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2278%22%20y%3D%22288%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%23cbd5e1%22%3E2%EC%B0%A8%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22286%22%20y%3D%22288%22%20font-size%3D%2218%22%20font-weight%3D%22800%22%20fill%3D%22%2386efac%22%3E%EB%A9%94%ED%83%80%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22444%22%20y%3D%22288%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%EC%88%A8%EA%B9%80%EC%9D%80%20B%EA%B0%80%20%EB%A8%BC%EC%A0%80%2C%20%EC%8B%A4%EC%A0%9C%20%EC%86%A1%EA%B8%88%20%EC%8B%A4%ED%96%89%EC%9D%80%20A%EA%B0%80%20%EB%A8%BC%EC%A0%80%EC%98%80%EB%8B%A4%EB%8A%94%20%EA%B5%AC%EC%A1%B0%EA%B0%80%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221160%22%20y%3D%22288%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%2394a3b8%22%20text-anchor%3D%22end%22%3E%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2254%22%20y%3D%22342%22%20width%3D%221172%22%20height%3D%2268%22%20rx%3D%2214%22%20fill%3D%22rgba(255%2C255%2C255%2C0.03)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2278%22%20y%3D%22376%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%23cbd5e1%22%3E3%EC%B0%A8%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22286%22%20y%3D%22376%22%20font-size%3D%2218%22%20font-weight%3D%22800%22%20fill%3D%22%2386efac%22%3E%EB%A7%A5%EB%9D%BD%20%EB%B3%B5%EC%9B%90%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22444%22%20y%3D%22376%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%EB%88%84%EA%B0%80%20%EB%A8%BC%EC%A0%80%20%EB%B0%B0%EC%8B%A0%ED%96%88%EB%8A%94%EA%B0%80%EC%99%80%20%EB%88%84%EA%B0%80%20%EB%A8%BC%EC%A0%80%20%EB%8F%88%EC%9D%84%20%EC%9B%80%EC%A7%81%EC%98%80%EB%8A%94%EA%B0%80%EA%B0%80%20%EA%B0%99%EC%9D%80%20%EC%A7%88%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221160%22%20y%3D%22376%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%2394a3b8%22%20text-anchor%3D%22end%22%3E%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%3C%2Fsvg%3E%0A%20%20",
+          "thumbnailUrl": "data:image/svg+xml;charset=UTF-8,%0A%20%20%20%20%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%221280%22%20height%3D%22900%22%20viewBox%3D%220%200%201280%20900%22%3E%0A%20%20%20%20%20%20%3Crect%20width%3D%221280%22%20height%3D%22900%22%20rx%3D%2224%22%20fill%3D%22%230f172a%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2254%22%20y%3D%2274%22%20font-size%3D%2216%22%20font-weight%3D%22800%22%20fill%3D%22%2322c55e%22%3ELOG%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2254%22%20y%3D%22120%22%20font-size%3D%2234%22%20font-weight%3D%22800%22%20fill%3D%22%23f8fafc%22%3E%EB%B9%84%EA%B5%90%20%EB%8C%80%EC%A1%B0%ED%91%9C%20%EC%83%9D%EC%84%B1%20%EA%B0%80%EB%8A%A5%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2254%22%20y%3D%22158%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%2394a3b8%22%3EB%EC%9D%98%20%EB%B9%84%EB%B0%80%20%EB%B0%A9%EB%AC%B8%20%EC%8B%9C%EC%9E%91%EA%B3%BC%20A%EC%9D%98%20%EB%B9%84%EB%B0%80%20%EC%86%A1%EA%B8%88%20%EC%8B%9C%EC%A0%90%EC%9D%98%20%EA%B1%B0%EC%B9%9C%20%EC%88%9C%EC%84%9C%EB%A7%8C%20%EB%B3%B4%EC%9D%B8%EB%8B%A4.%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2254%22%20y%3D%22166%22%20width%3D%221172%22%20height%3D%2268%22%20rx%3D%2214%22%20fill%3D%22rgba(255%2C255%2C255%2C0.03)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2278%22%20y%3D%22200%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%23cbd5e1%22%3E1%EC%B0%A8%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22286%22%20y%3D%22200%22%20font-size%3D%2218%22%20font-weight%3D%22800%22%20fill%3D%22%2386efac%22%3E%EC%9B%90%EB%B3%B8%20%EC%9A%94%EC%B2%AD%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22444%22%20y%3D%22200%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%ED%95%B5%EC%8B%AC%20%EB%82%A0%EC%A7%9C%EC%99%80%20%EC%8B%9C%EA%B0%81%EC%9D%B4%20%ED%95%9C%20%EC%9E%A5%EC%97%90%20%EC%A0%95%EB%A6%AC%EB%90%98%EC%96%B4%20%EC%88%A8%EA%B9%80%EC%9D%98%20%EC%8B%9C%EC%9E%91%EA%B3%BC%20%EC%8B%A4%ED%96%89%EC%9D%98%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221160%22%20y%3D%22200%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%2394a3b8%22%20text-anchor%3D%22end%22%3E%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2254%22%20y%3D%22254%22%20width%3D%221172%22%20height%3D%2268%22%20rx%3D%2214%22%20fill%3D%22rgba(255%2C255%2C255%2C0.03)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2278%22%20y%3D%22288%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%23cbd5e1%22%3E2%EC%B0%A8%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22286%22%20y%3D%22288%22%20font-size%3D%2218%22%20font-weight%3D%22800%22%20fill%3D%22%2386efac%22%3E%EB%A9%94%ED%83%80%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22444%22%20y%3D%22288%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%EC%88%A8%EA%B9%80%EC%9D%80%20B%EA%B0%80%20%EB%A8%BC%EC%A0%80%2C%20%EC%8B%A4%EC%A0%9C%20%EC%86%A1%EA%B8%88%20%EC%8B%A4%ED%96%89%EC%9D%80%20A%EA%B0%80%20%EB%A8%BC%EC%A0%80%EC%98%80%EB%8B%A4%EB%8A%94%20%EA%B5%AC%EC%A1%B0%EA%B0%80%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221160%22%20y%3D%22288%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%2394a3b8%22%20text-anchor%3D%22end%22%3E%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2254%22%20y%3D%22342%22%20width%3D%221172%22%20height%3D%2268%22%20rx%3D%2214%22%20fill%3D%22rgba(255%2C255%2C255%2C0.03)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2278%22%20y%3D%22376%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%23cbd5e1%22%3E3%EC%B0%A8%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22286%22%20y%3D%22376%22%20font-size%3D%2218%22%20font-weight%3D%22800%22%20fill%3D%22%2386efac%22%3E%EB%A7%A5%EB%9D%BD%20%EB%B3%B5%EC%9B%90%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22444%22%20y%3D%22376%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%EB%88%84%EA%B0%80%20%EB%A8%BC%EC%A0%80%20%EB%B0%B0%EC%8B%A0%ED%96%88%EB%8A%94%EA%B0%80%EC%99%80%20%EB%88%84%EA%B0%80%20%EB%A8%BC%EC%A0%80%20%EB%8F%88%EC%9D%84%20%EC%9B%80%EC%A7%81%EC%98%80%EB%8A%94%EA%B0%80%EA%B0%80%20%EA%B0%99%EC%9D%80%20%EC%A7%88%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221160%22%20y%3D%22376%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%2394a3b8%22%20text-anchor%3D%22end%22%3E%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%3C%2Fsvg%3E%0A%20%20",
+          "posterUrl": "data:image/svg+xml;charset=UTF-8,%0A%20%20%20%20%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%221280%22%20height%3D%22900%22%20viewBox%3D%220%200%201280%20900%22%3E%0A%20%20%20%20%20%20%3Crect%20width%3D%221280%22%20height%3D%22900%22%20rx%3D%2224%22%20fill%3D%22%230f172a%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2254%22%20y%3D%2274%22%20font-size%3D%2216%22%20font-weight%3D%22800%22%20fill%3D%22%2322c55e%22%3ELOG%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2254%22%20y%3D%22120%22%20font-size%3D%2234%22%20font-weight%3D%22800%22%20fill%3D%22%23f8fafc%22%3E%EB%B9%84%EA%B5%90%20%EB%8C%80%EC%A1%B0%ED%91%9C%20%EC%83%9D%EC%84%B1%20%EA%B0%80%EB%8A%A5%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2254%22%20y%3D%22158%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%2394a3b8%22%3EB%EC%9D%98%20%EB%B9%84%EB%B0%80%20%EB%B0%A9%EB%AC%B8%20%EC%8B%9C%EC%9E%91%EA%B3%BC%20A%EC%9D%98%20%EB%B9%84%EB%B0%80%20%EC%86%A1%EA%B8%88%20%EC%8B%9C%EC%A0%90%EC%9D%98%20%EA%B1%B0%EC%B9%9C%20%EC%88%9C%EC%84%9C%EB%A7%8C%20%EB%B3%B4%EC%9D%B8%EB%8B%A4.%3C%2Ftext%3E%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2254%22%20y%3D%22166%22%20width%3D%221172%22%20height%3D%2268%22%20rx%3D%2214%22%20fill%3D%22rgba(255%2C255%2C255%2C0.03)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2278%22%20y%3D%22200%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%23cbd5e1%22%3E1%EC%B0%A8%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22286%22%20y%3D%22200%22%20font-size%3D%2218%22%20font-weight%3D%22800%22%20fill%3D%22%2386efac%22%3E%EC%9B%90%EB%B3%B8%20%EC%9A%94%EC%B2%AD%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22444%22%20y%3D%22200%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%ED%95%B5%EC%8B%AC%20%EB%82%A0%EC%A7%9C%EC%99%80%20%EC%8B%9C%EA%B0%81%EC%9D%B4%20%ED%95%9C%20%EC%9E%A5%EC%97%90%20%EC%A0%95%EB%A6%AC%EB%90%98%EC%96%B4%20%EC%88%A8%EA%B9%80%EC%9D%98%20%EC%8B%9C%EC%9E%91%EA%B3%BC%20%EC%8B%A4%ED%96%89%EC%9D%98%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221160%22%20y%3D%22200%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%2394a3b8%22%20text-anchor%3D%22end%22%3E%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2254%22%20y%3D%22254%22%20width%3D%221172%22%20height%3D%2268%22%20rx%3D%2214%22%20fill%3D%22rgba(255%2C255%2C255%2C0.03)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2278%22%20y%3D%22288%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%23cbd5e1%22%3E2%EC%B0%A8%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22286%22%20y%3D%22288%22%20font-size%3D%2218%22%20font-weight%3D%22800%22%20fill%3D%22%2386efac%22%3E%EB%A9%94%ED%83%80%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22444%22%20y%3D%22288%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%EC%88%A8%EA%B9%80%EC%9D%80%20B%EA%B0%80%20%EB%A8%BC%EC%A0%80%2C%20%EC%8B%A4%EC%A0%9C%20%EC%86%A1%EA%B8%88%20%EC%8B%A4%ED%96%89%EC%9D%80%20A%EA%B0%80%20%EB%A8%BC%EC%A0%80%EC%98%80%EB%8B%A4%EB%8A%94%20%EA%B5%AC%EC%A1%B0%EA%B0%80%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221160%22%20y%3D%22288%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%2394a3b8%22%20text-anchor%3D%22end%22%3E%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%3Crect%20x%3D%2254%22%20y%3D%22342%22%20width%3D%221172%22%20height%3D%2268%22%20rx%3D%2214%22%20fill%3D%22rgba(255%2C255%2C255%2C0.03)%22%20%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2278%22%20y%3D%22376%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%23cbd5e1%22%3E3%EC%B0%A8%20%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22286%22%20y%3D%22376%22%20font-size%3D%2218%22%20font-weight%3D%22800%22%20fill%3D%22%2386efac%22%3E%EB%A7%A5%EB%9D%BD%20%EB%B3%B5%EC%9B%90%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22444%22%20y%3D%22376%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%23f8fafc%22%3E%EB%88%84%EA%B0%80%20%EB%A8%BC%EC%A0%80%20%EB%B0%B0%EC%8B%A0%ED%96%88%EB%8A%94%EA%B0%80%EC%99%80%20%EB%88%84%EA%B0%80%20%EB%A8%BC%EC%A0%80%20%EB%8F%88%EC%9D%84%20%EC%9B%80%EC%A7%81%EC%98%80%EB%8A%94%EA%B0%80%EA%B0%80%20%EA%B0%99%EC%9D%80%20%EC%A7%88%E2%80%A6%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%221160%22%20y%3D%22376%22%20font-size%3D%2218%22%20font-weight%3D%22600%22%20fill%3D%22%2394a3b8%22%20text-anchor%3D%22end%22%3E%ED%99%95%EC%9D%B8%3C%2Ftext%3E%0A%20%20%20%20%0A%20%20%20%20%3C%2Fsvg%3E%0A%20%20",
+          "width": 1280,
+          "height": 900,
+          "alt": "비교 대조표 생성 가능 log evidence",
+          "caption": "비교 대조표 생성 가능 log preview"
+        }
+      }
+    }
+  ],
+  "evidenceCombinations": [
+    {
+      "requires": [
+        "e-1",
+        "e-2"
+      ],
+      "upgradesTo": "hard",
+      "proves": [
+        "d-1"
+      ]
+    },
+    {
+      "requires": [
+        "e-3",
+        "e-4"
+      ],
+      "upgradesTo": "hard",
+      "proves": [
+        "d-1"
+      ]
+    },
+    {
+      "requires": [
+        "e-4",
+        "e-5"
+      ],
+      "upgradesTo": "hard",
+      "proves": [
+        "d-2"
+      ]
+    },
+    {
+      "requires": [
+        "e-5",
+        "e-6"
+      ],
+      "upgradesTo": "hard",
+      "proves": [
+        "h-d4"
+      ]
+    },
+    {
+      "requires": [
+        "e-6",
+        "e-7"
+      ],
+      "upgradesTo": "hard",
+      "proves": [
+        "h-d3",
+        "h-d4"
+      ]
+    }
+  ],
+  "truthTable": [
+    {
+      "id": "t-1",
+      "fact": "B의 오피스텔 방문 대상은 외도 상대가 아니라 친형과 조카였다.",
+      "isTrue": true,
+      "weight": 10,
+      "quadrant": "b_only"
+    },
+    {
+      "id": "t-2",
+      "fact": "B는 공동 적금 3,000만 원을 배우자 동의 없이 형에게 보냈다.",
+      "isTrue": true,
+      "weight": 10,
+      "quadrant": "b_only"
+    },
+    {
+      "id": "t-3",
+      "fact": "A는 남편 외도를 확신한 뒤 2,000만 원을 따로 송금했다.",
+      "isTrue": true,
+      "weight": 9,
+      "quadrant": "a_only"
+    },
+    {
+      "id": "t-4",
+      "fact": "숨김은 B가 먼저 시작했고 실제 비밀 송금은 A가 먼저 실행했다.",
+      "isTrue": true,
+      "weight": 9,
+      "quadrant": "shared_misconception"
+    },
+    {
+      "id": "t-5",
+      "fact": "두 사람 모두 말 못할 이유가 있었지만 둘 다 공동 재산을 혼자 움직였다.",
+      "isTrue": true,
+      "weight": 8,
+      "quadrant": "both_know"
+    }
+  ],
+  "lieConfigA": [
+    {
+      "disputeId": "h-d3",
+      "lieType": "LT-2",
+      "lieIntensity": "L2",
+      "lieMotive": "self_protection",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "h-d3_a_denial_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "hard_evidence"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "e-6_presented"
+        },
+        {
+          "from": "S3",
+          "to": "S4",
+          "trigger": "h-d3_a_divorce_preparation_question"
+        },
+        {
+          "from": "S4",
+          "to": "S5",
+          "trigger": "h-d3_a_scam_confession"
+        }
+      ]
+    },
+    {
+      "disputeId": "h-d4",
+      "lieType": "LT-1",
+      "lieIntensity": "L2",
+      "lieMotive": "face_saving",
+      "initialState": "S0",
+      "collapseViaTrust": true,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "h-d4_a_blame_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "hard_evidence"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "e-7_presented"
+        },
+        {
+          "from": "S3",
+          "to": "S4",
+          "trigger": "h-d4_a_order_question"
+        },
+        {
+          "from": "S4",
+          "to": "S5",
+          "trigger": "mirror_finance_confession"
+        }
+      ]
+    }
+  ],
+  "lieConfigB": [
+    {
+      "disputeId": "d-1",
+      "lieType": "LT-6",
+      "lieIntensity": "L2",
+      "lieMotive": "self_protection",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "d-1_b_officetel_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "hard_evidence"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "e-4_presented"
+        },
+        {
+          "from": "S3",
+          "to": "S4",
+          "trigger": "d-1_b_inlaw_conflict_question"
+        },
+        {
+          "from": "S4",
+          "to": "S5",
+          "trigger": "d-1_b_caregiving_confession"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "lieType": "LT-6",
+      "lieIntensity": "L3",
+      "lieMotive": "financial_preservation",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "d-2_b_minimize_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "hard_evidence"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "e-5_presented"
+        },
+        {
+          "from": "S3",
+          "to": "S4",
+          "trigger": "d-2_b_beneficiary_question"
+        },
+        {
+          "from": "S4",
+          "to": "S5",
+          "trigger": "d-2_b_hide_reason_question"
+        }
+      ]
+    },
+    {
+      "disputeId": "h-d4",
+      "lieType": "LT-1",
+      "lieIntensity": "L2",
+      "lieMotive": "face_saving",
+      "initialState": "S0",
+      "collapseViaTrust": true,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "h-d4_b_betrayal_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "hard_evidence"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "e-7_presented"
+        },
+        {
+          "from": "S3",
+          "to": "S4",
+          "trigger": "h-d4_b_reason_question"
+        },
+        {
+          "from": "S4",
+          "to": "S5",
+          "trigger": "mirror_finance_confession"
+        }
+      ]
+    }
+  ],
+  "solutions": {
+    "공동재산회복": [
+      "공동 적금 3,000만 원과 2,000만 원 송금의 흐름을 분리 정리하고 회수 가능 금액과 손실액을 다시 맞춘다.",
+      "형네 지원은 부부 공동재산과 분리된 별도 합의 절차로만 허용한다."
+    ],
+    "신뢰순서분리": [
+      "숨김의 시작과 실제 송금 실행의 순서를 분리해 기록하고 감정적 배신과 실행 책임을 따로 판단한다.",
+      "시댁 관련 대화 규칙과 공동재산 사전 동의 규칙을 동시에 다시 세운다."
+    ],
+    "봉인정보경계": [
+      "미성년자 정보와 건강 관련 민감정보는 필요한 범위까지만 해제한다.",
+      "외도 오해는 해소하되 가족 돌봄과 공동재산 월권은 별도 책임으로 남긴다."
+    ]
+  },
+  "activeLedgerEntries": [
+    "ledger-1",
+    "ledger-2",
+    "ledger-3",
+    "ledger-4"
+  ],
+  "activeThirdParties": [
+    "w-1",
+    "w-2",
+    "w-3"
+  ],
+  "baseEvidenceIds": [
+    "e-1",
+    "e-2",
+    "e-3"
+  ],
+  "monetaryDisputeIds": [
+    "d-2",
+    "h-d3",
+    "h-d4"
+  ],
+  "combinationLab": {
+    "analysisPointsBase": 5,
+    "analysisPointRefundOnFirstHidden": 1,
+    "nodes": [
+      {
+        "id": "e-1",
+        "type": "evidence",
+        "label": "e-1 카드 명세서",
+        "sourceRef": "e-1",
+        "linkedDisputeIds": [
+          "d-1"
+        ],
+        "linkedEvidenceIds": [
+          "e-1"
+        ],
+        "visibility": "base"
+      },
+      {
+        "id": "e-2",
+        "type": "evidence",
+        "label": "e-2 오피스텔 출입 기록",
+        "sourceRef": "e-2",
+        "linkedDisputeIds": [
+          "d-1"
+        ],
+        "linkedEvidenceIds": [
+          "e-2"
+        ],
+        "visibility": "base"
+      },
+      {
+        "id": "e-3",
+        "type": "evidence",
+        "label": "e-3 새벽 통화기록",
+        "sourceRef": "e-3",
+        "linkedDisputeIds": [
+          "d-1"
+        ],
+        "linkedEvidenceIds": [
+          "e-3"
+        ],
+        "visibility": "base"
+      },
+      {
+        "id": "e-4",
+        "type": "evidence",
+        "label": "e-4 형 문자 + 조카 학교 알림",
+        "sourceRef": "e-4",
+        "linkedDisputeIds": [
+          "d-1"
+        ],
+        "linkedEvidenceIds": [
+          "e-4"
+        ],
+        "visibility": "base"
+      },
+      {
+        "id": "e-5",
+        "type": "evidence",
+        "label": "e-5 공동 적금 해지 + 형 계좌 이체",
+        "sourceRef": "e-5",
+        "linkedDisputeIds": [
+          "d-2",
+          "h-d4"
+        ],
+        "linkedEvidenceIds": [
+          "e-5"
+        ],
+        "visibility": "base"
+      },
+      {
+        "id": "e-6",
+        "type": "evidence",
+        "label": "e-6 투자방 카톡 + 2,000만 원 송금",
+        "sourceRef": "e-6",
+        "linkedDisputeIds": [
+          "h-d3",
+          "h-d4"
+        ],
+        "linkedEvidenceIds": [
+          "e-6"
+        ],
+        "visibility": "base"
+      },
+      {
+        "id": "e-7",
+        "type": "evidence",
+        "label": "e-7 통화·출입·계좌 이동 대조표",
+        "sourceRef": "e-7",
+        "linkedDisputeIds": [
+          "h-d4"
+        ],
+        "linkedEvidenceIds": [
+          "e-7"
+        ],
+        "visibility": "base"
+      },
+      {
+        "id": "stmt-b-family",
+        "type": "statement",
+        "label": "B의 발언 \"가족 쪽 일입니다\"",
+        "sourceRef": "stmt-b-family",
+        "linkedDisputeIds": [
+          "d-1"
+        ],
+        "visibility": "base"
+      },
+      {
+        "id": "stmt-b-repay",
+        "type": "statement",
+        "label": "B의 발언 \"형이 곧 갚는다고 했습니다\"",
+        "sourceRef": "stmt-b-repay",
+        "linkedDisputeIds": [
+          "d-2"
+        ],
+        "visibility": "base"
+      },
+      {
+        "id": "stmt-a-protect",
+        "type": "statement",
+        "label": "A의 발언 \"혹시 모르니까 제 몫을 지키려 했어요\"",
+        "sourceRef": "stmt-a-protect",
+        "linkedDisputeIds": [
+          "h-d3"
+        ],
+        "visibility": "base"
+      },
+      {
+        "id": "w-1-angle",
+        "type": "witness_angle",
+        "label": "w-1 이성호 증언 축",
+        "sourceRef": "w-1-angle",
+        "linkedDisputeIds": [
+          "d-1",
+          "d-2"
+        ],
+        "visibility": "base"
+      },
+      {
+        "id": "w-3-angle",
+        "type": "witness_angle",
+        "label": "w-3 박미라 증언 축",
+        "sourceRef": "w-3-angle",
+        "linkedDisputeIds": [
+          "h-d3"
+        ],
+        "visibility": "base"
+      },
+      {
+        "id": "L-1",
+        "type": "derived_note",
+        "label": "L-1 Timeline Lead",
+        "linkedDisputeIds": [
+          "d-1"
+        ],
+        "linkedEvidenceIds": [
+          "e-1",
+          "e-2"
+        ],
+        "visibility": "derived"
+      },
+      {
+        "id": "L-2",
+        "type": "derived_note",
+        "label": "L-2 Context Lead",
+        "linkedDisputeIds": [
+          "d-1"
+        ],
+        "linkedEvidenceIds": [
+          "e-3",
+          "e-4"
+        ],
+        "visibility": "derived"
+      },
+      {
+        "id": "L-3",
+        "type": "derived_note",
+        "label": "L-3 Beneficiary Lead",
+        "linkedDisputeIds": [
+          "d-2"
+        ],
+        "linkedEvidenceIds": [
+          "e-4",
+          "e-5"
+        ],
+        "visibility": "derived"
+      },
+      {
+        "id": "L-4",
+        "type": "derived_note",
+        "label": "L-4 Emotion Lead",
+        "linkedDisputeIds": [
+          "h-d3"
+        ],
+        "linkedEvidenceIds": [
+          "e-6"
+        ],
+        "visibility": "derived"
+      },
+      {
+        "id": "L-5",
+        "type": "derived_note",
+        "label": "L-5 Reframe Lead",
+        "linkedDisputeIds": [
+          "h-d4"
+        ],
+        "linkedEvidenceIds": [
+          "e-5",
+          "e-6",
+          "e-7"
+        ],
+        "visibility": "derived"
+      },
+      {
+        "id": "dc-1",
+        "type": "derived_note",
+        "label": "dc-1 오피스텔의 사람들",
+        "linkedDisputeIds": [
+          "d-1",
+          "h-d4"
+        ],
+        "linkedEvidenceIds": [
+          "e-2",
+          "e-4"
+        ],
+        "visibility": "derived"
+      },
+      {
+        "id": "dc-2",
+        "type": "derived_note",
+        "label": "dc-2 시댁 얘기만 나오면 싸움",
+        "linkedDisputeIds": [
+          "d-1"
+        ],
+        "linkedEvidenceIds": [
+          "e-3",
+          "e-4"
+        ],
+        "visibility": "derived"
+      },
+      {
+        "id": "dc-3",
+        "type": "derived_note",
+        "label": "dc-3 3,000만 원의 권한",
+        "linkedDisputeIds": [
+          "d-2"
+        ],
+        "linkedEvidenceIds": [
+          "e-4",
+          "e-5"
+        ],
+        "visibility": "derived"
+      },
+      {
+        "id": "dc-4",
+        "type": "derived_note",
+        "label": "dc-4 2,000만 원의 수치",
+        "linkedDisputeIds": [
+          "h-d3"
+        ],
+        "linkedEvidenceIds": [
+          "e-6"
+        ],
+        "visibility": "derived"
+      },
+      {
+        "id": "dc-5",
+        "type": "derived_note",
+        "label": "dc-5 5,000만 원의 순서",
+        "linkedDisputeIds": [
+          "h-d4"
+        ],
+        "linkedEvidenceIds": [
+          "e-5",
+          "e-6",
+          "e-7"
+        ],
+        "visibility": "derived"
+      }
+    ],
+    "outputs": [
+      {
+        "id": "L-1",
+        "label": "L-1 Timeline Lead",
+        "summary": "Timeline 리드",
+        "nodeType": "derived_note",
+        "noteText": "Timeline Lead",
+        "judgeHint": "후속 카드 dc-1와 연결된다.",
+        "effects": [
+          {
+            "kind": "unlock_note",
+            "unlockNodeId": "L-1"
+          }
+        ]
+      },
+      {
+        "id": "L-2",
+        "label": "L-2 Context Lead",
+        "summary": "Context 리드",
+        "nodeType": "derived_note",
+        "noteText": "Context Lead",
+        "judgeHint": "후속 카드 dc-2와 연결된다.",
+        "effects": [
+          {
+            "kind": "unlock_note",
+            "unlockNodeId": "L-2"
+          }
+        ]
+      },
+      {
+        "id": "L-3",
+        "label": "L-3 Beneficiary Lead",
+        "summary": "Beneficiary 리드",
+        "nodeType": "derived_note",
+        "noteText": "Beneficiary Lead",
+        "judgeHint": "후속 카드 dc-3와 연결된다.",
+        "effects": [
+          {
+            "kind": "unlock_note",
+            "unlockNodeId": "L-3"
+          }
+        ]
+      },
+      {
+        "id": "L-4",
+        "label": "L-4 Emotion Lead",
+        "summary": "Emotion 리드",
+        "nodeType": "derived_note",
+        "noteText": "Emotion Lead",
+        "judgeHint": "후속 카드 dc-4와 연결된다.",
+        "effects": [
+          {
+            "kind": "unlock_note",
+            "unlockNodeId": "L-4"
+          }
+        ]
+      },
+      {
+        "id": "L-5",
+        "label": "L-5 Reframe Lead",
+        "summary": "Reframe 리드",
+        "nodeType": "derived_note",
+        "noteText": "Reframe Lead",
+        "judgeHint": "후속 카드 dc-5와 연결된다.",
+        "effects": [
+          {
+            "kind": "unlock_note",
+            "unlockNodeId": "L-5"
+          }
+        ]
+      },
+      {
+        "id": "dc-1",
+        "label": "dc-1 오피스텔의 사람들",
+        "summary": "외도 오해를 형네 돌봄으로 뒤집는 카드",
+        "nodeType": "derived_note",
+        "noteText": "오피스텔의 사람들",
+        "effects": [
+          {
+            "kind": "unlock_note",
+            "unlockNodeId": "dc-1"
+          }
+        ]
+      },
+      {
+        "id": "dc-2",
+        "label": "dc-2 시댁 얘기만 나오면 싸움",
+        "summary": "숨김의 이유를 시댁 불화 공포로 정리하는 카드",
+        "nodeType": "derived_note",
+        "noteText": "시댁 얘기만 나오면 싸움",
+        "effects": [
+          {
+            "kind": "unlock_note",
+            "unlockNodeId": "dc-2"
+          }
+        ]
+      },
+      {
+        "id": "dc-3",
+        "label": "dc-3 3,000만 원의 권한",
+        "summary": "공동 적금 독단 처분 책임을 묻는 카드",
+        "nodeType": "derived_note",
+        "noteText": "3,000만 원의 권한",
+        "effects": [
+          {
+            "kind": "unlock_note",
+            "unlockNodeId": "dc-3"
+          }
+        ]
+      },
+      {
+        "id": "dc-4",
+        "label": "dc-4 2,000만 원의 수치",
+        "summary": "A의 2,000만 원 송금 동기를 묻는 카드",
+        "nodeType": "derived_note",
+        "noteText": "2,000만 원의 수치",
+        "effects": [
+          {
+            "kind": "unlock_note",
+            "unlockNodeId": "dc-4"
+          },
+          {
+            "kind": "unlock_dispute",
+            "unlockNodeId": "h-d3"
+          }
+        ]
+      },
+      {
+        "id": "dc-5",
+        "label": "dc-5 5,000만 원의 순서",
+        "summary": "숨김의 시작과 실제 송금 실행을 분리하는 카드",
+        "nodeType": "derived_note",
+        "noteText": "5,000만 원의 순서",
+        "effects": [
+          {
+            "kind": "unlock_note",
+            "unlockNodeId": "dc-5"
+          },
+          {
+            "kind": "unlock_dispute",
+            "unlockNodeId": "h-d4"
+          }
+        ]
+      }
+    ],
+    "recipes": [
+      {
+        "id": "lead-1",
+        "inputs": [
+          "e-1",
+          "e-2"
+        ],
+        "cost": 1,
+        "discoveryText": "같은 장소와 반복 패턴이 겹친다.",
+        "outputId": "L-1"
+      },
+      {
+        "id": "dossier-1",
+        "inputs": [
+          "L-1",
+          "e-4"
+        ],
+        "cost": 1,
+        "discoveryText": "오피스텔의 대상이 형네였다는 카드가 열린다.",
+        "outputId": "dc-1"
+      },
+      {
+        "id": "lead-2",
+        "inputs": [
+          "e-3",
+          "stmt-b-family"
+        ],
+        "cost": 1,
+        "discoveryText": "숨김의 이유를 묻는 맥락 리드가 생긴다.",
+        "outputId": "L-2"
+      },
+      {
+        "id": "dossier-2",
+        "inputs": [
+          "L-2",
+          "e-4"
+        ],
+        "cost": 1,
+        "discoveryText": "시댁 얘기만 나오면 싸움이라는 카드가 완성된다.",
+        "outputId": "dc-2"
+      },
+      {
+        "id": "lead-3",
+        "inputs": [
+          "e-4",
+          "e-5"
+        ],
+        "cost": 1,
+        "discoveryText": "3,000만 원의 수혜자를 묻는 리드가 생긴다.",
+        "outputId": "L-3"
+      },
+      {
+        "id": "dossier-3",
+        "inputs": [
+          "L-3",
+          "stmt-b-repay"
+        ],
+        "cost": 1,
+        "discoveryText": "3,000만 원의 권한을 묻는 카드가 열린다.",
+        "outputId": "dc-3"
+      },
+      {
+        "id": "lead-4",
+        "inputs": [
+          "e-6",
+          "stmt-a-protect"
+        ],
+        "cost": 1,
+        "discoveryText": "A의 2,000만 원 송금을 감정 축으로 묶는 리드가 생긴다.",
+        "outputId": "L-4"
+      },
+      {
+        "id": "dossier-4",
+        "inputs": [
+          "L-4",
+          "w-3-angle"
+        ],
+        "cost": 1,
+        "discoveryText": "2,000만 원의 수치를 직접 묻는 카드가 열린다.",
+        "outputId": "dc-4"
+      },
+      {
+        "id": "lead-5",
+        "inputs": [
+          "e-5",
+          "e-6"
+        ],
+        "cost": 1,
+        "discoveryText": "부부 돈 5,000만 원을 한 프레임에 묶는 리드가 생긴다.",
+        "outputId": "L-5"
+      },
+      {
+        "id": "dossier-5",
+        "inputs": [
+          "L-5",
+          "e-7"
+        ],
+        "cost": 1,
+        "discoveryText": "5,000만 원의 순서를 따지는 카드가 완성된다.",
+        "outputId": "dc-5"
+      }
+    ]
+  },
+  "v3Design": {
+    "evidenceAxisLegend": {
+      "depthStages": [
+        {
+          "id": "stub",
+          "label": "Stub",
+          "summary": "존재만 보임"
+        },
+        {
+          "id": "excerpt",
+          "label": "Excerpt",
+          "summary": "일부만 열람"
+        },
+        {
+          "id": "original",
+          "label": "Original",
+          "summary": "원본/전체본 확보"
+        },
+        {
+          "id": "context",
+          "label": "Context",
+          "summary": "앞뒤 맥락 복원"
+        },
+        {
+          "id": "established",
+          "label": "Established",
+          "summary": "공식기록 채택"
+        }
+      ],
+      "trustStates": [
+        {
+          "id": "submitted",
+          "label": "제출됨",
+          "summary": "당사자가 제출한 상태"
+        },
+        {
+          "id": "verifying",
+          "label": "검증 중",
+          "summary": "원본 대조 및 맥락 확인 중"
+        },
+        {
+          "id": "authenticated",
+          "label": "인증됨",
+          "summary": "신뢰 가능한 자료로 판단"
+        },
+        {
+          "id": "challenged",
+          "label": "이의 제기됨",
+          "summary": "상대방이 의미나 범위를 다툼"
+        },
+        {
+          "id": "misread",
+          "label": "조작/오독 판정",
+          "summary": "위조 또는 발췌/오독 여부가 판정됨"
+        }
+      ]
+    },
+    "hiddenDisputes": [
+      {
+        "id": "h-d3",
+        "name": "아내의 2,000만 원 송금은 자기방어인가, 이혼 대비 은닉인가",
+        "unlockPlan": {
+          "runtimeRule": "e-6 제시 시 해금",
+          "authoredRule": "e-6이 Excerpt 이상이 되거나 A에게 동기탐색 2회가 누적되면 생성"
+        }
+      },
+      {
+        "id": "h-d4",
+        "name": "누가 먼저 신뢰를 깼는가",
+        "unlockPlan": {
+          "runtimeRule": "h-d3 해금 + e-7 제시 시 해금",
+          "authoredRule": "h-d3 생성 후 e-7이 Original 이상이 되거나 e-5+e-6으로 Reframe Lead가 생기면 생성"
+        }
+      }
+    ],
+    "leadLines": [
+      {
+        "id": "L-1",
+        "name": "Timeline Lead",
+        "leadType": "Timeline",
+        "firstInputs": [
+          "e-1",
+          "e-2"
+        ],
+        "secondInputs": [
+          "L-1",
+          "e-4"
+        ],
+        "dossierCardId": "dc-1",
+        "interpretationChoices": [
+          {
+            "id": "L-1-A",
+            "text": "외도 동선이다",
+            "implication": "d-1을 외도 의심으로 밀어붙인다."
+          },
+          {
+            "id": "L-1-B",
+            "text": "누군가를 돌보는 생활 동선이다",
+            "implication": "e-4 반전과 잘 이어진다."
+          },
+          {
+            "id": "L-1-C",
+            "text": "단순 심부름일 수 있다",
+            "implication": "판단을 유보한다."
+          }
+        ]
+      },
+      {
+        "id": "L-2",
+        "name": "Context Lead",
+        "leadType": "Context",
+        "firstInputs": [
+          "e-3",
+          "stmt-b-family"
+        ],
+        "secondInputs": [
+          "L-2",
+          "e-4",
+          "w-1-angle"
+        ],
+        "dossierCardId": "dc-2",
+        "interpretationChoices": [
+          {
+            "id": "L-2-A",
+            "text": "외도는 아니지만 창피해서 숨겼다",
+            "implication": "B의 수치심을 먼저 본다."
+          },
+          {
+            "id": "L-2-B",
+            "text": "시댁 불화를 피하려 숨겼다",
+            "implication": "관계 공포 축을 연다."
+          }
+        ]
+      },
+      {
+        "id": "L-3",
+        "name": "Beneficiary Lead",
+        "leadType": "Beneficiary",
+        "firstInputs": [
+          "e-4",
+          "e-5"
+        ],
+        "secondInputs": [
+          "L-3",
+          "stmt-b-repay",
+          "w-1-angle"
+        ],
+        "dossierCardId": "dc-3",
+        "interpretationChoices": [
+          {
+            "id": "L-3-A",
+            "text": "형네를 실제로 살리려 한 돈이다",
+            "implication": "선의와 구제 논리를 본다."
+          },
+          {
+            "id": "L-3-B",
+            "text": "형의 무책임을 대신 떠안은 월권이다",
+            "implication": "공동재산 책임을 본다."
+          }
+        ]
+      },
+      {
+        "id": "L-4",
+        "name": "Emotion Lead",
+        "leadType": "Emotion",
+        "firstInputs": [
+          "e-6",
+          "stmt-a-protect"
+        ],
+        "secondInputs": [
+          "L-4",
+          "w-3-angle"
+        ],
+        "dossierCardId": "dc-4",
+        "interpretationChoices": [
+          {
+            "id": "L-4-A",
+            "text": "배신 공포 속 자기방어다",
+            "implication": "A의 공포를 먼저 본다."
+          },
+          {
+            "id": "L-4-B",
+            "text": "이혼 대비 은닉이다",
+            "implication": "A의 계산을 먼저 본다."
+          }
+        ]
+      },
+      {
+        "id": "L-5",
+        "name": "Reframe Lead",
+        "leadType": "Reframe",
+        "firstInputs": [
+          "e-5",
+          "e-6"
+        ],
+        "secondInputs": [
+          "L-5",
+          "e-7"
+        ],
+        "dossierCardId": "dc-5",
+        "interpretationChoices": [
+          {
+            "id": "L-5-A",
+            "text": "남편이 더 큰돈을 먼저 무너뜨렸다",
+            "implication": "금액 크기 기준 책임 서사다."
+          },
+          {
+            "id": "L-5-B",
+            "text": "아내가 먼저 돈을 움직여 신뢰를 깼다",
+            "implication": "실행 순서 기준 책임 서사다."
+          },
+          {
+            "id": "L-5-C",
+            "text": "거울형 거짓말 구조다",
+            "implication": "상호 붕괴와 대칭 구조를 본다."
+          }
+        ]
+      }
+    ],
+    "authorityPlacements": [
+      {
+        "action": "원본 제출 명령",
+        "recommendedMoment": "d-1 초반 e-1/e-3 Excerpt 시점",
+        "purpose": "감정이 아니라 패턴으로 의심을 고정"
+      },
+      {
+        "action": "원본 제출 명령",
+        "recommendedMoment": "e-4 등장 직후",
+        "purpose": "형 문자와 조카 알림을 원본으로 확보"
+      },
+      {
+        "action": "원본 제출 명령",
+        "recommendedMoment": "h-d3 등장 직후 e-6 축",
+        "purpose": "A의 2,000만 원 송금을 확정"
+      },
+      {
+        "action": "정확히 답변하십시오",
+        "recommendedMoment": "B가 \"가족 쪽 일\" 같은 모호어를 반복할 때",
+        "purpose": "형, 조카, 3,000만 원 같은 실체 명사 강제"
+      },
+      {
+        "action": "분리심문",
+        "recommendedMoment": "e-4 Original 직후 B",
+        "purpose": "avoidant인 B를 더 빨리 무너뜨림"
+      },
+      {
+        "action": "분리심문",
+        "recommendedMoment": "e-6 Excerpt 직후 A",
+        "purpose": "A의 피해자 프레임을 줄이고 동기를 드러냄"
+      },
+      {
+        "action": "잠정 인정",
+        "recommendedMoment": "e-4 인증 후",
+        "purpose": "오피스텔 방문 대상은 형네였다고 기록"
+      },
+      {
+        "action": "잠정 인정",
+        "recommendedMoment": "e-5 인증 후",
+        "purpose": "공동 적금 3,000만 원 이동 기록"
+      },
+      {
+        "action": "잠정 인정",
+        "recommendedMoment": "e-6 인증 후",
+        "purpose": "A의 2,000만 원 송금 기록"
+      },
+      {
+        "action": "잠정 인정",
+        "recommendedMoment": "e-7 Established 후",
+        "purpose": "숨김 시작과 송금 실행의 선후 분리 기록"
+      },
+      {
+        "action": "선처 창구",
+        "recommendedMoment": "dc-3 또는 dc-4 직후",
+        "purpose": "B는 죄책감, A는 수치심을 더 빨리 인정"
+      },
+      {
+        "action": "발언 제지 / 기록 제외",
+        "recommendedMoment": "A가 딴살림 단정만 반복하거나 B가 A를 조롱할 때",
+        "purpose": "프레임 싸움을 줄이고 공식기록과 가설을 분리"
+      },
+      {
+        "action": "민감정보 봉인 해제",
+        "recommendedMoment": "돌봄 해석을 택했지만 실체가 부족할 때 또는 dc-1 직전",
+        "purpose": "외도 오해를 확실히 꺾되 미성년자 사생활 리스크 관리"
+      }
+    ],
+    "sensitiveSealTargets": [
+      {
+        "evidenceId": "e-4",
+        "targets": [
+          "조카 이름",
+          "학교명",
+          "학년",
+          "생리 관련 직접 표현"
+        ],
+        "risk": "미성년자 사생활을 너무 일찍 열면 인도성 점수 하락과 B의 추가 셧다운이 발생할 수 있다."
+      }
+    ],
+    "officialRecordRecommendations": [
+      "B의 오피스텔 방문 대상은 형과 조카였다.",
+      "B는 공동 적금 3,000만 원을 배우자 동의 없이 형에게 보냈다.",
+      "A는 남편 외도를 확신한 뒤 2,000만 원을 따로 송금했다.",
+      "숨김은 B가 먼저 시작했고 실제 비밀 송금은 A가 먼저 실행했다.",
+      "두 사람 모두 말 못할 이유가 있었지만 둘 다 공동 재산을 혼자 움직였다."
+    ]
+  }
+}

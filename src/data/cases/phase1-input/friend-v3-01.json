@@ -1,0 +1,47 @@
+{
+  "caseId": "case-friend-v3-01",
+  "relationshipType": "friend",
+  "partyA": {
+    "name": "송다은",
+    "age": 31,
+    "occupation": "온라인 쇼핑몰 CS 직원",
+    "archetype": "premature_summary",
+    "speechStyle": "핵심 사실을 확인하기 전에 이미 결론난 이야기처럼 요약하고, 감정이 올라오면 같은 문장을 반복한다.",
+    "fear": "결혼 직전에 모든 게 무너지고 자신이 또 속았다는 사실을 직면하는 걸 두려워한다.",
+    "verbalTells": []
+  },
+  "partyB": {
+    "name": "최수민",
+    "age": 31,
+    "occupation": "필라테스 강사",
+    "archetype": "affect_flattening",
+    "speechStyle": "상대가 감정적으로 몰아칠수록 더 담담하게 말하며, 수치심이 걸린 사실은 끝까지 늦게 꺼낸다.",
+    "fear": "진실을 말하는 순간 다은의 결혼과 가족 세계가 한꺼번에 무너질까 두려워한다.",
+    "verbalTells": []
+  },
+  "context": {
+    "description": "손절한 전 절친이 내 예비신랑에게 계속 연락한다. 결혼 3주 전, 그 장면만 보면 누구라도 친구가 선을 넘었다고 생각한다."
+  },
+  "disputes": [
+    {
+      "id": "d-1",
+      "name": "B의 연락은 예비신랑 집착인가, 뭔가를 전하려는 경고인가"
+    },
+    {
+      "id": "d-4",
+      "name": "예전 손절 사건도 정말 B의 변심 때문이었는가"
+    },
+    {
+      "id": "d-5",
+      "name": "이번 사건에서 B의 명예를 먼저 무너뜨린 건 누구인가"
+    },
+    {
+      "id": "h-d2",
+      "name": "예비신랑이 먼저 B에게 선을 넘었는가"
+    },
+    {
+      "id": "h-d3",
+      "name": "A 아버지의 돈 접근은 과거와 현재가 같은 패턴인가"
+    }
+  ]
+}

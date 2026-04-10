@@ -1,0 +1,1069 @@
+export const FamilyV301V3GameLoopData = {
+  "caseId": "family-v3-01",
+  "dossierCards": [
+    {
+      "id": "dc-1",
+      "name": "마지막 몇 달",
+      "description": "말년 접근과 유서 개입을 시간축으로 압박하는 카드다.",
+      "evidenceIds": [
+        "e-1",
+        "e-2",
+        "e-3"
+      ],
+      "relatedDisputes": [
+        "d-1"
+      ],
+      "subjectParty": "b",
+      "leadId": "L-1",
+      "successConditionSummary": [
+        "L-1 완성",
+        "B에게 동기탐색 또는 정확히 답변하십시오 사용"
+      ],
+      "successEffects": [
+        "d-1이 강하게 전진",
+        "B의 담담함 뒤 긴장과 서두름이 처음 드러남"
+      ],
+      "challenges": [
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dc-1.b.q1",
+              "text": "형이 보기엔 당신이 말년을 파고든 것처럼 보입니다. 실제로 그 몇 달 동안 어머니에게 무엇을 반복해서 말했습니까?",
+              "lockedHint": "L-1이 완성되고 e-3가 충분히 열려야 질문이 보인다.",
+              "attackVector": "context",
+              "requiredLieState": "S2",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "family-v3-01:b:d-1:S3:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dc-2",
+      "name": "줄인 조작",
+      "description": "감액 조작의 이유를 정면으로 묻는 카드다.",
+      "evidenceIds": [
+        "e-1",
+        "e-4",
+        "e-5"
+      ],
+      "relatedDisputes": [
+        "d-2"
+      ],
+      "subjectParty": "b",
+      "leadId": "L-2",
+      "successConditionSummary": [
+        "L-2 완성",
+        "e-5가 Original 이상"
+      ],
+      "successEffects": [
+        "d-2가 자백 직전까지 진전",
+        "왜 자기 몫을 줄였는지 질문이 고정됨"
+      ],
+      "challenges": [
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dc-2.b.q1",
+              "text": "유서를 고친 건 맞는데, 왜 자기 몫을 늘리는 쪽이 아니라 줄이는 쪽으로 바꿨습니까?",
+              "lockedHint": "공증사무실 보관본과 90대 10 원본이 모두 열려야 보인다.",
+              "attackVector": "authenticity",
+              "requiredLieState": "S3",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "family-v3-01:b:d-2:S4:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dc-3",
+      "name": "어머니 돈인 줄 알았던 돈",
+      "description": "90대 10의 금전 근거와 숨은 지원 서사를 묻는 카드다.",
+      "evidenceIds": [
+        "e-5",
+        "e-6"
+      ],
+      "relatedDisputes": [
+        "h-d3"
+      ],
+      "subjectParty": "b",
+      "leadId": "L-3",
+      "successConditionSummary": [
+        "L-3 완성",
+        "e-6이 Original 이상"
+      ],
+      "successEffects": [
+        "h-d3가 공식 쟁점으로 고정",
+        "A의 기존 서사가 크게 흔들림"
+      ],
+      "challenges": [
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dc-3.b.q1",
+              "text": "형이 평생 어머니 돈인 줄 알고 받았던 그 돈, 사실은 당신 돈이었습니까?",
+              "lockedHint": "e-6이 원본 수준으로 열리고 B의 회피가 한 번 꺾여야 열린다.",
+              "attackVector": "authenticity",
+              "requiredLieState": "S2",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "family-v3-01:b:h-d3:S3:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dc-4",
+      "name": "20년 침묵",
+      "description": "오랫동안 도우면서도 왜 끝까지 말하지 않았는지를 묻는 카드다.",
+      "evidenceIds": [
+        "e-6",
+        "e-7"
+      ],
+      "relatedDisputes": [
+        "h-d3",
+        "d-5"
+      ],
+      "subjectParty": "b",
+      "leadId": "L-4",
+      "successConditionSummary": [
+        "L-4 완성",
+        "B에게 공감접근 누적 2회 이상"
+      ],
+      "successEffects": [
+        "B의 affect_flattening이 깨지기 시작함",
+        "d-5의 왜 숨겼나 칸이 강하게 채워짐"
+      ],
+      "challenges": [
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dc-4.b.q1",
+              "text": "20년을 도왔으면서 왜 단 한 번도 형에게 말하지 않았습니까?",
+              "lockedHint": "지원 흐름과 B의 감정 고백 축이 함께 붙어야 열린다.",
+              "attackVector": "context",
+              "requiredLieState": "S3",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "family-v3-01:b:h-d3:S4:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dc-5",
+      "name": "60대 40의 진짜 이유",
+      "description": "유산 문제를 출생 비밀 보호 문제로 재정의하는 최종 카드다.",
+      "evidenceIds": [
+        "e-6",
+        "e-7"
+      ],
+      "relatedDisputes": [
+        "h-d4"
+      ],
+      "subjectParty": "b",
+      "leadId": "L-5",
+      "successConditionSummary": [
+        "L-5 완성",
+        "e-7이 Original 이상"
+      ],
+      "successEffects": [
+        "h-d4가 완성",
+        "출생 비밀 보호와 감액 조작의 연결이 자백 수준으로 열림"
+      ],
+      "challenges": [
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dc-5.b.q1",
+              "text": "60대 40으로 바꾸지 않았다면, 형은 돈 말고 무엇을 잃게 됐습니까?",
+              "lockedHint": "L-5와 e-7 원본이 모두 열려야 질문이 보인다.",
+              "attackVector": "context",
+              "requiredLieState": "S3",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "family-v3-01:b:h-d4:S3:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "stateUnlockAtoms": {
+    "a": {
+      "d-5": {
+        "S3": [
+          {
+            "id": "family-v3-01:a:d-5:S3:0",
+            "factText": "윤태성은 자신이 진실을 모른 채 정후를 악의로만 읽어 왔다는 사실을 처음 받아들이기 시작한다.",
+            "tags": [
+              "thread-g",
+              "family-v3-01",
+              "d-5"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "summary": {
+                "default": "윤태성은 자신이 진실을 모른 채 정후를 악의로만 읽어 왔다는 사실을 처음 받아들이기 시작한다."
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "emotional",
+              "confess"
+            ]
+          }
+        ]
+      }
+    },
+    "b": {
+      "d-1": {
+        "S3": [
+          {
+            "id": "family-v3-01:b:d-1:S3:0",
+            "factText": "윤정후는 말년 몇 달 동안 어머니를 설득하고 서류를 서두르게 한 건 맞다고 인정한다.",
+            "tags": [
+              "thread-g",
+              "family-v3-01",
+              "d-1",
+              "dc-1"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "summary": {
+                "default": "윤정후는 말년 몇 달 동안 어머니를 설득하고 서류를 서두르게 한 건 맞다고 인정한다."
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "emotional",
+              "confess"
+            ]
+          }
+        ]
+      },
+      "d-2": {
+        "S4": [
+          {
+            "id": "family-v3-01:b:d-2:S4:0",
+            "factText": "윤정후는 더 가지려고가 아니라 줄이려고 60대 40으로 바꿨다고 분명히 말한다.",
+            "tags": [
+              "thread-g",
+              "family-v3-01",
+              "d-2",
+              "dc-2"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "summary": {
+                "default": "윤정후는 더 가지려고가 아니라 줄이려고 60대 40으로 바꿨다고 분명히 말한다."
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "emotional",
+              "confess"
+            ]
+          }
+        ]
+      },
+      "h-d3": {
+        "S3": [
+          {
+            "id": "family-v3-01:b:h-d3:S3:0",
+            "factText": "윤정후는 형이 어머니 돈인 줄 알고 받아 온 흐름 상당수가 사실은 자신의 돈이었다고 인정한다.",
+            "tags": [
+              "thread-g",
+              "family-v3-01",
+              "h-d3",
+              "dc-3"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "summary": {
+                "default": "윤정후는 형이 어머니 돈인 줄 알고 받아 온 흐름 상당수가 사실은 자신의 돈이었다고 인정한다."
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "emotional",
+              "confess"
+            ]
+          }
+        ],
+        "S4": [
+          {
+            "id": "family-v3-01:b:h-d3:S4:0",
+            "factText": "윤정후는 형 자존심이 무너질까 봐 20년 지원 사실을 끝까지 말하지 못했다고 인정한다.",
+            "tags": [
+              "thread-g",
+              "family-v3-01",
+              "h-d3",
+              "dc-4"
+            ],
+            "unlockedAtState": "S4",
+            "slots": {
+              "summary": {
+                "default": "윤정후는 형 자존심이 무너질까 봐 20년 지원 사실을 끝까지 말하지 못했다고 인정한다."
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "emotional",
+              "confess"
+            ]
+          }
+        ]
+      },
+      "h-d4": {
+        "S3": [
+          {
+            "id": "family-v3-01:b:h-d4:S3:0",
+            "factText": "윤정후는 형의 출생 비밀이 터지는 걸 막으려고 90을 60으로 낮췄다고 인정한다.",
+            "tags": [
+              "thread-g",
+              "family-v3-01",
+              "h-d4",
+              "dc-5"
+            ],
+            "unlockedAtState": "S3",
+            "slots": {
+              "summary": {
+                "default": "윤정후는 형의 출생 비밀이 터지는 걸 막으려고 90을 60으로 낮췄다고 인정한다."
+              }
+            },
+            "stanceHints": [
+              "partial",
+              "emotional",
+              "confess"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "evidenceProgressions": [
+    {
+      "evidenceId": "e-1",
+      "name": "60대 40 유서 사본",
+      "depthStages": [
+        {
+          "id": "stub",
+          "label": "Stub",
+          "summary": "유서 1건 존재만 보임"
+        },
+        {
+          "id": "excerpt",
+          "label": "Excerpt",
+          "summary": "정후 60, 태성 40 비율과 날짜만 보임"
+        },
+        {
+          "id": "original",
+          "label": "Original",
+          "summary": "공증 도장, 서명, 작성일이 붙은 전체 사본 확보"
+        },
+        {
+          "id": "context",
+          "label": "Context",
+          "summary": "e-2, e-3과 함께 말년 접근 맥락이 붙음"
+        },
+        {
+          "id": "established",
+          "label": "Established",
+          "summary": "60대 40 유서가 실제 제출된 최종본이었다는 점이 공식기록 채택 대상이 됨"
+        }
+      ],
+      "trustStates": [
+        {
+          "id": "submitted",
+          "label": "제출됨",
+          "summary": "A가 사본 제출"
+        },
+        {
+          "id": "verifying",
+          "label": "검증 중",
+          "summary": "공증사무실 사본과 대조"
+        },
+        {
+          "id": "authenticated",
+          "label": "인증됨",
+          "summary": "도장과 서명이 일치"
+        },
+        {
+          "id": "challenged",
+          "label": "이의 제기됨",
+          "summary": "B가 맥락이 빠졌다고 이의"
+        },
+        {
+          "id": "misread",
+          "label": "조작/오독 판정",
+          "summary": "문서 자체는 인증되지만 의미는 열려 있음"
+        }
+      ],
+      "sealTargets": []
+    },
+    {
+      "evidenceId": "e-2",
+      "name": "요양원 방문기록",
+      "depthStages": [
+        {
+          "id": "stub",
+          "label": "Stub",
+          "summary": "방문기록 1건 존재 표시"
+        },
+        {
+          "id": "excerpt",
+          "label": "Excerpt",
+          "summary": "공증 전 몇 주 동안 B 방문이 늘어난 날짜 목록"
+        },
+        {
+          "id": "original",
+          "label": "Original",
+          "summary": "방문 시각, 체류 시간, 보호사 교체 시점 확보"
+        },
+        {
+          "id": "context",
+          "label": "Context",
+          "summary": "A의 방문 간격과 e-3 증언이 함께 붙음"
+        },
+        {
+          "id": "established",
+          "label": "Established",
+          "summary": "B가 공증 전 어머니 곁에 자주 있었음이 공식기록 채택 대상이 됨"
+        }
+      ],
+      "trustStates": [
+        {
+          "id": "submitted",
+          "label": "제출됨",
+          "summary": "A가 출력본 제출"
+        },
+        {
+          "id": "verifying",
+          "label": "검증 중",
+          "summary": "요양원 원장부 대조"
+        },
+        {
+          "id": "authenticated",
+          "label": "인증됨",
+          "summary": "출입기록과 CCTV 시간 일치"
+        },
+        {
+          "id": "challenged",
+          "label": "이의 제기됨",
+          "summary": "B가 찾아간 것 자체는 죄가 아니라고 반발"
+        },
+        {
+          "id": "misread",
+          "label": "조작/오독 판정",
+          "summary": "기록은 인증되지만 꼬드김 해석은 보류"
+        }
+      ],
+      "sealTargets": []
+    },
+    {
+      "evidenceId": "e-3",
+      "name": "전 요양보호사 음성증언",
+      "depthStages": [
+        {
+          "id": "stub",
+          "label": "Stub",
+          "summary": "요양보호사 증언 1건 존재만 보임"
+        },
+        {
+          "id": "excerpt",
+          "label": "Excerpt",
+          "summary": "\"종이를 읽어드렸다\" 같은 일부 문장만 들림"
+        },
+        {
+          "id": "original",
+          "label": "Original",
+          "summary": "전체 음성과 말투, 상황이 함께 확보됨"
+        },
+        {
+          "id": "context",
+          "label": "Context",
+          "summary": "보호사 교체 이유와 어머니 컨디션, 긴장 분위기까지 복원"
+        },
+        {
+          "id": "established",
+          "label": "Established",
+          "summary": "B가 공증 전 유서 문제를 실제로 밀어붙였을 가능성이 공식기록 후보로 떠오름"
+        }
+      ],
+      "trustStates": [
+        {
+          "id": "submitted",
+          "label": "제출됨",
+          "summary": "A가 녹음 파일 제출"
+        },
+        {
+          "id": "verifying",
+          "label": "검증 중",
+          "summary": "증언자 확인과 녹음 일시 대조"
+        },
+        {
+          "id": "authenticated",
+          "label": "인증됨",
+          "summary": "증언자와 일시 확인 완료"
+        },
+        {
+          "id": "challenged",
+          "label": "이의 제기됨",
+          "summary": "B가 형을 배제한 게 아니라 어머니를 흥분시키지 않으려 한 것이라고 이의"
+        },
+        {
+          "id": "misread",
+          "label": "조작/오독 판정",
+          "summary": "발언은 인증되지만 의도 해석은 Context 필요"
+        }
+      ],
+      "sealTargets": [
+        "치매 관련 직접 표현",
+        "요양원 내부 개인 정보"
+      ]
+    },
+    {
+      "evidenceId": "e-4",
+      "name": "공증사무실 스캔 보관본",
+      "depthStages": [
+        {
+          "id": "stub",
+          "label": "Stub",
+          "summary": "보관본 1건 존재만 보임"
+        },
+        {
+          "id": "excerpt",
+          "label": "Excerpt",
+          "summary": "같은 날 두 번 스캔된 기록과 서로 다른 비율만 보임"
+        },
+        {
+          "id": "original",
+          "label": "Original",
+          "summary": "90대 10, 60대 40 두 버전과 마지막 제출자 확인"
+        },
+        {
+          "id": "context",
+          "label": "Context",
+          "summary": "직원 메모와 급한 재방문 정황이 붙음"
+        },
+        {
+          "id": "established",
+          "label": "Established",
+          "summary": "B가 유서를 고친 건 맞다는 점이 공식기록 채택 대상이 됨"
+        }
+      ],
+      "trustStates": [
+        {
+          "id": "submitted",
+          "label": "제출됨",
+          "summary": "재판관 원본 제출 명령으로 확보"
+        },
+        {
+          "id": "verifying",
+          "label": "검증 중",
+          "summary": "스캔 타임스탬프와 직원 진술 대조"
+        },
+        {
+          "id": "authenticated",
+          "label": "인증됨",
+          "summary": "시간, 버전, 제출자 흐름 일치"
+        },
+        {
+          "id": "challenged",
+          "label": "이의 제기됨",
+          "summary": "B가 더 가지려고 고친 게 아니었다고 주장"
+        },
+        {
+          "id": "misread",
+          "label": "조작/오독 판정",
+          "summary": "조작은 사실이고 동기는 아직 미확정"
+        }
+      ],
+      "sealTargets": []
+    },
+    {
+      "evidenceId": "e-5",
+      "name": "원본 유서 90대 10",
+      "depthStages": [
+        {
+          "id": "stub",
+          "label": "Stub",
+          "summary": "이전 버전 유서 존재만 보임"
+        },
+        {
+          "id": "excerpt",
+          "label": "Excerpt",
+          "summary": "정후 90, 태성 10 숫자만 보임"
+        },
+        {
+          "id": "original",
+          "label": "Original",
+          "summary": "더 이른 날짜와 어머니 서명이 붙은 원본 확보"
+        },
+        {
+          "id": "context",
+          "label": "Context",
+          "summary": "지원 서사와 연결되는 질문이 함께 붙음"
+        },
+        {
+          "id": "established",
+          "label": "Established",
+          "summary": "어머니가 원래는 B에게 훨씬 많이 주려 했다는 점이 공식기록 채택 대상이 됨"
+        }
+      ],
+      "trustStates": [
+        {
+          "id": "submitted",
+          "label": "제출됨",
+          "summary": "어머니 서랍 문서로 제출"
+        },
+        {
+          "id": "verifying",
+          "label": "검증 중",
+          "summary": "필체, 날짜, 보관 상태 대조"
+        },
+        {
+          "id": "authenticated",
+          "label": "인증됨",
+          "summary": "어머니 필체와 날짜 확인"
+        },
+        {
+          "id": "challenged",
+          "label": "이의 제기됨",
+          "summary": "A가 치매 전후를 더 따져야 한다고 이의"
+        },
+        {
+          "id": "misread",
+          "label": "조작/오독 판정",
+          "summary": "문서 진본은 인증되고 의미는 h-d3에서 재해석된다."
+        }
+      ],
+      "sealTargets": []
+    },
+    {
+      "evidenceId": "e-6",
+      "name": "20년 송금 내역 묶음",
+      "depthStages": [
+        {
+          "id": "stub",
+          "label": "Stub",
+          "summary": "장기 송금 흐름 1건 존재만 보임"
+        },
+        {
+          "id": "excerpt",
+          "label": "Excerpt",
+          "summary": "반복 송금 날짜와 횟수만 보임"
+        },
+        {
+          "id": "original",
+          "label": "Original",
+          "summary": "생활비 흐름과 큰돈 이동이 함께 확인됨"
+        },
+        {
+          "id": "context",
+          "label": "Context",
+          "summary": "A는 어머니 돈인 줄 알았고 B는 말하지 않았다는 서사가 붙음"
+        },
+        {
+          "id": "established",
+          "label": "Established",
+          "summary": "90대 10의 배경에 분명한 돈 근거가 있었다는 점이 공식기록 채택 대상이 됨"
+        }
+      ],
+      "trustStates": [
+        {
+          "id": "submitted",
+          "label": "제출됨",
+          "summary": "B 일부 제출 또는 재판관 확보"
+        },
+        {
+          "id": "verifying",
+          "label": "검증 중",
+          "summary": "은행 원본 대조"
+        },
+        {
+          "id": "authenticated",
+          "label": "인증됨",
+          "summary": "반복 송금과 큰돈 이동 모두 확인"
+        },
+        {
+          "id": "challenged",
+          "label": "이의 제기됨",
+          "summary": "A가 도운 것과 유서 조작은 별개라고 이의"
+        },
+        {
+          "id": "misread",
+          "label": "조작/오독 판정",
+          "summary": "돈 흐름은 인증되며 의미는 Beneficiary 해석에 따라 달라진다."
+        }
+      ],
+      "sealTargets": [
+        "정확한 계좌번호",
+        "사업 실패 당시 큰돈 액수"
+      ]
+    },
+    {
+      "evidenceId": "e-7",
+      "name": "어머니 일기장 사진",
+      "depthStages": [
+        {
+          "id": "stub",
+          "label": "Stub",
+          "summary": "어머니 일기장 사진 1건 존재만 보임"
+        },
+        {
+          "id": "excerpt",
+          "label": "Excerpt",
+          "summary": "\"90대 10대로 남기면 태성이 끝까지 파고들 것 같다\" 정도만 보임"
+        },
+        {
+          "id": "original",
+          "label": "Original",
+          "summary": "출생 비밀과 B의 인지 사실까지 열림"
+        },
+        {
+          "id": "context",
+          "label": "Context",
+          "summary": "감액 조작이 보호 선택이었다는 맥락이 붙음"
+        },
+        {
+          "id": "established",
+          "label": "Established",
+          "summary": "60대 40 조작이 출생 비밀 보호와 얽혀 있었다는 점이 공식기록 채택 대상이 됨"
+        }
+      ],
+      "trustStates": [
+        {
+          "id": "submitted",
+          "label": "제출됨",
+          "summary": "B 또는 유품 정리 과정에서 확보"
+        },
+        {
+          "id": "verifying",
+          "label": "검증 중",
+          "summary": "필체와 작성 시기 대조"
+        },
+        {
+          "id": "authenticated",
+          "label": "인증됨",
+          "summary": "어머니 필체 확인"
+        },
+        {
+          "id": "challenged",
+          "label": "이의 제기됨",
+          "summary": "A가 민감정보 봉인 해제를 거부할 수 있음"
+        },
+        {
+          "id": "misread",
+          "label": "조작/오독 판정",
+          "summary": "일기장 자체는 인증되고 공개 범위는 Authority 결정에 좌우된다."
+        }
+      ],
+      "sealTargets": [
+        "A의 출생 비밀 직접 문장",
+        "혈연 여부 표현",
+        "어머니의 치매 전 개인 기록 일부"
+      ]
+    }
+  ],
+  "leadLines": [
+    {
+      "id": "L-1",
+      "name": "Timeline Lead",
+      "leadType": "Timeline",
+      "firstInputs": [
+        "e-1",
+        "e-2"
+      ],
+      "secondInputs": [
+        "L-1",
+        "e-3"
+      ],
+      "dossierCardId": "dc-1",
+      "interpretationChoices": [
+        {
+          "id": "L-1-A",
+          "text": "동생이 말년을 파고들어 유산을 바꿨다",
+          "implication": "초반 complaint를 강화한다."
+        },
+        {
+          "id": "L-1-B",
+          "text": "마지막을 챙긴 사람이 동생이었다",
+          "implication": "개입과 돌봄을 함께 보게 만든다."
+        }
+      ]
+    },
+    {
+      "id": "L-2",
+      "name": "Authenticity Lead",
+      "leadType": "Authenticity",
+      "firstInputs": [
+        "e-1",
+        "e-4"
+      ],
+      "secondInputs": [
+        "L-2",
+        "e-5"
+      ],
+      "dossierCardId": "dc-2",
+      "interpretationChoices": [
+        {
+          "id": "L-2-A",
+          "text": "더 많이 가지려고 바꿨다",
+          "implication": "탐욕 서사를 유지한다."
+        },
+        {
+          "id": "L-2-B",
+          "text": "비율을 다시 조정하려 했다",
+          "implication": "감액 조작 질문으로 넘어간다."
+        }
+      ]
+    },
+    {
+      "id": "L-3",
+      "name": "Beneficiary Lead",
+      "leadType": "Beneficiary",
+      "firstInputs": [
+        "e-5",
+        "e-6"
+      ],
+      "secondInputs": [
+        "L-3",
+        "stmt-b-pride"
+      ],
+      "dossierCardId": "dc-3",
+      "interpretationChoices": [
+        {
+          "id": "L-3-A",
+          "text": "오랜 도움에 대한 보답이다",
+          "implication": "어머니 판단의 근거를 본다."
+        },
+        {
+          "id": "L-3-B",
+          "text": "형을 밀어낸 편애다",
+          "implication": "A의 불공정감이 유지된다."
+        },
+        {
+          "id": "L-3-C",
+          "text": "형을 대신 떠받친 세월의 계산서다",
+          "implication": "지원의 누적값을 본다."
+        }
+      ]
+    },
+    {
+      "id": "L-4",
+      "name": "Context Lead",
+      "leadType": "Context",
+      "firstInputs": [
+        "e-6",
+        "stmt-b-collapse"
+      ],
+      "secondInputs": [
+        "L-4",
+        "w-3-angle"
+      ],
+      "dossierCardId": "dc-4",
+      "interpretationChoices": [
+        {
+          "id": "L-4-A",
+          "text": "생색을 피했다",
+          "implication": "감정 억제와 체면을 본다."
+        },
+        {
+          "id": "L-4-B",
+          "text": "형의 삶을 보호하려 침묵했다",
+          "implication": "보호 동기를 본다."
+        }
+      ]
+    },
+    {
+      "id": "L-5",
+      "name": "Reframe Lead",
+      "leadType": "Reframe",
+      "firstInputs": [
+        "e-6",
+        "e-7"
+      ],
+      "secondInputs": [
+        "L-5",
+        "stmt-b-reduction"
+      ],
+      "dossierCardId": "dc-5",
+      "interpretationChoices": [
+        {
+          "id": "L-5-A",
+          "text": "형의 돈보다 형의 자리를 지키려 했다",
+          "implication": "보호 서사로 재정의한다."
+        },
+        {
+          "id": "L-5-B",
+          "text": "형을 지킨다는 명분으로 어머니 뜻까지 바꿨다",
+          "implication": "월권 책임을 남긴다."
+        }
+      ]
+    }
+  ],
+  "authorityPlacements": [
+    {
+      "action": "원본 제출 명령",
+      "recommendedMoment": "e-1 확인 직후",
+      "purpose": "유서 사본을 전체본으로 끌어올림"
+    },
+    {
+      "action": "원본 제출 명령",
+      "recommendedMoment": "e-4 등장 직후",
+      "purpose": "공증사무실 스캔 보관본 원본 확보"
+    },
+    {
+      "action": "원본 제출 명령",
+      "recommendedMoment": "e-6 또는 e-7 진입 전",
+      "purpose": "돈 흐름과 일기장 진본을 확정"
+    },
+    {
+      "action": "정확히 답변하십시오",
+      "recommendedMoment": "B가 손댄 건 맞지만 이유는 말 못 한다 수준에 머물 때",
+      "purpose": "날짜, 숫자, 이유를 강제로 끌어냄"
+    },
+    {
+      "action": "분리심문",
+      "recommendedMoment": "e-4 Original 직후 B",
+      "purpose": "형 앞에서 닫히는 B의 동기층을 먼저 열기"
+    },
+    {
+      "action": "분리심문",
+      "recommendedMoment": "e-6 Established 직후 A",
+      "purpose": "A의 공격적 프레임을 잠시 떼어 놓고 흔들림을 보기"
+    },
+    {
+      "action": "잠정 인정",
+      "recommendedMoment": "e-4 인증 후",
+      "purpose": "B가 60대 40 유서를 직접 제출한 사실을 기록"
+    },
+    {
+      "action": "잠정 인정",
+      "recommendedMoment": "e-5 인증 후",
+      "purpose": "원본 유서는 90대 10이었다는 사실을 기록"
+    },
+    {
+      "action": "잠정 인정",
+      "recommendedMoment": "e-6 인증 후",
+      "purpose": "B가 20년간 어머니에게 생활비를 보냈다는 사실을 기록"
+    },
+    {
+      "action": "잠정 인정",
+      "recommendedMoment": "e-7 Original 이후",
+      "purpose": "60대 40 감액 조작이 출생 비밀 보호와 연결된다는 사실을 기록"
+    },
+    {
+      "action": "선처 창구",
+      "recommendedMoment": "dc-2, dc-4, dc-5 직후",
+      "purpose": "B의 자발적 동기 고백을 유도"
+    },
+    {
+      "action": "발언 제지 / 기록 제외",
+      "recommendedMoment": "A가 배다른 놈 프레임을 반복하거나 B가 너무 차갑게 사실만 던질 때",
+      "purpose": "공격적 프레임을 끊고 사실과 가설을 분리"
+    },
+    {
+      "action": "민감정보 봉인 해제",
+      "recommendedMoment": "h-d4 진입 후 L-5가 완성됐지만 이유가 마지막 한 걸음 부족할 때",
+      "purpose": "치매 표현, 출생 비밀, 큰돈 정보의 공개 범위를 통제하며 final reframe을 완성"
+    }
+  ],
+  "hiddenDisputePlans": [
+    {
+      "disputeId": "h-d3",
+      "name": "왜 원래 유서는 90대 10이었는가, 그리고 그 비율은 무엇에 대한 보답이었는가",
+      "unlockPlan": {
+        "runtimeRule": "e-5 제시 시 해금",
+        "authoredRule": "e-5가 Original 이상이 되거나 e-4와 e-5로 Reframe Lead가 생기면 생성"
+      }
+    },
+    {
+      "disputeId": "h-d4",
+      "name": "60대 40 조작이 막으려 한 더 큰 비밀은 무엇인가",
+      "unlockPlan": {
+        "runtimeRule": "e-7 제시 시 해금",
+        "authoredRule": "e-7이 Excerpt 이상이 되거나 e-6과 e-7로 Context/Reframe Lead가 완성되면 생성"
+      }
+    }
+  ],
+  "sensitiveSealTargets": [
+    {
+      "evidenceId": "e-3",
+      "label": "전 요양보호사 음성증언",
+      "targets": [
+        "치매 관련 직접 표현",
+        "요양원 내부 개인 정보"
+      ],
+      "recommendedTiming": [
+        "d-1을 더 밀어붙여야 하지만 의료 정보는 아직 과하다고 느껴질 때"
+      ],
+      "risks": [
+        "인도성 점수 하락",
+        "제3자 프라이버시 침해"
+      ]
+    },
+    {
+      "evidenceId": "e-6",
+      "label": "20년 송금 내역 묶음",
+      "targets": [
+        "정확한 계좌번호",
+        "사업 실패 당시 큰돈 액수"
+      ],
+      "recommendedTiming": [
+        "h-d3는 열렸지만 정확한 돈 흐름이 마지막 한 걸음 부족할 때"
+      ],
+      "risks": [
+        "상속 분쟁 과열",
+        "가족 간 금전감정 증폭"
+      ]
+    },
+    {
+      "evidenceId": "e-7",
+      "label": "어머니 일기장 사진",
+      "targets": [
+        "A의 출생 비밀 직접 문장",
+        "혈연 여부 표현",
+        "어머니의 치매 전 개인 기록 일부"
+      ],
+      "recommendedTiming": [
+        "h-d4 진입 후 L-5가 완성됐지만 이유가 마지막 한 걸음 부족할 때",
+        "dc-5 직전"
+      ],
+      "risks": [
+        "공정성은 오르지만 인도성 점수 크게 하락",
+        "A의 즉각적 감정 폭발 가능"
+      ]
+    }
+  ],
+  "officialRecordRecommendations": [
+    "B는 말년의 어머니 곁에 자주 있었고 유서 문제에 실제로 개입했다.",
+    "B는 60대 40 유서를 직접 만들었다.",
+    "원래 유서는 90대 10이었다.",
+    "B는 20년간 어머니를 돈으로 도왔고, A 사업이 무너질 때도 큰돈을 보탰다.",
+    "60대 40 조작의 진짜 이유에는 A의 출생 비밀 보호가 얽혀 있다."
+  ]
+} as const

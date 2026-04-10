@@ -6,7 +6,8 @@
  */
 import { useEffect, useCallback } from 'react'
 import { useStore } from '../../../store/useGameStore'
-import { getEvidenceIconEmoji } from '../../../utils/evidenceIcons'
+import { getPcEvidenceSymbolId } from '../icons/pcIconUtils'
+import PCSvgIcon from '../icons/PCSvgIcon'
 import { DEMO_EVIDENCE_DATA } from './demoEvidenceData'
 import type { EvidenceMeta, TrustLevel, LegalStatus } from './demoEvidenceData'
 import {
@@ -115,7 +116,7 @@ export default function PCEvidenceViewer() {
             className="w-9 h-9 rounded-lg flex items-center justify-center text-base shrink-0"
             style={{ background: 'var(--pc-p3, #18181f)', color: '#8b8b9a' }}
           >
-            {getEvidenceIconEmoji(meta.type)}
+            <PCSvgIcon id={getPcEvidenceSymbolId(meta.type)} size={18} />
           </span>
 
           {/* Name */}

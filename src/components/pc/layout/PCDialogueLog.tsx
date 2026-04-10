@@ -169,16 +169,23 @@ function MessageBubble({ entry, animate }: { entry: DialogueEntryType; animate: 
   if (entry.speaker === 'witness') {
     const witnessFavor = entry.witnessFavor === 'pro_b' ? 'is-right' : 'is-left'
     const witnessName = entry.witnessName ?? '증인'
+    const depthLabel = entry.behaviorHint?.includes('모호') ? '모호'
+      : entry.behaviorHint?.includes('부분') ? '부분'
+      : entry.behaviorHint?.includes('핵심') ? '핵심'
+      : null
 
     return (
       <div className={`pc-log-row ${witnessFavor}`}>
-        <button className="pc-log-avatar is-witness" onClick={() => openEntryDetail(witnessName, '증언 정보', 'gold')} type="button">
-          <PCSvgIcon id="i-person" size={24} />
-        </button>
-        <div className="pc-log-stack">
-          <button className="pc-log-name is-witness pc-log-name--button" onClick={() => openEntryDetail(witnessName, '증언 정보', 'gold')} type="button">
-            {witnessName}
+        <div className="pc-log-speaker is-witness">
+          <button className="pc-log-avatar is-witness" onClick={() => openEntryDetail(witnessName, '증언 정보', 'gold')} type="button">
+            <PCSvgIcon id="i-witness" size={22} />
           </button>
+          <button className="pc-log-speaker__name is-witness pc-log-name--button" onClick={() => openEntryDetail(witnessName, '증언 정보', 'gold')} type="button">
+            <span>{witnessName}</span>
+            {depthLabel ? <span className={`pc-log-depth-badge is-${depthLabel === '모호' ? 'vague' : depthLabel === '부분' ? 'partial' : 'full'}`}>{depthLabel}</span> : null}
+          </button>
+        </div>
+        <div className="pc-log-stack">
           <button className="pc-log-bubble is-witness" onClick={() => openEntryDetail(witnessName, '증언 정보', 'gold')} type="button">
             <div className="pc-log-bubble__text">{displayText}</div>
             {entry.behaviorHint ? <div className="pc-log-bubble__hint">{entry.behaviorHint}</div> : null}
@@ -265,9 +272,12 @@ export default function PCDialogueLog() {
       </div>
 
       {isLLMLoading ? (
-        <div className={`pc-log-loading ${llmTarget === 'b' ? 'is-right' : 'is-left'}`}>
-          <PCSvgIcon id="i-scale" size={18} />
-          <span>응답 생성 중...</span>
+        <div className={`pc-log-typing ${llmTarget === 'b' ? 'is-right' : 'is-left'}`}>
+          <span className="pc-log-typing__dots">
+            <span className="pc-log-typing__dot" />
+            <span className="pc-log-typing__dot" />
+            <span className="pc-log-typing__dot" />
+          </span>
         </div>
       ) : null}
 

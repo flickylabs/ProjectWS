@@ -16,6 +16,10 @@ const OUTPUT_DIR = path.join(__dirname, '..', 'src', 'data', 'cases', 'phase1-in
 
 if (!fs.existsSync(OUTPUT_DIR)) fs.mkdirSync(OUTPUT_DIR, { recursive: true })
 
+function normalizeVerbalTells(party) {
+  return (party?.verbalTells ?? []).map(v => ({ trigger: v.trigger, pattern: v.pattern }))
+}
+
 function extractInput(caseId) {
   const filePath = path.join(CASES_DIR, `${caseId}.json`)
   if (!fs.existsSync(filePath)) {
@@ -35,7 +39,7 @@ function extractInput(caseId) {
       archetype: c.duo.partyA.archetype,
       speechStyle: c.duo.partyA.speechStyle,
       fear: c.duo.partyA.fear,
-      verbalTells: c.duo.partyA.verbalTells.map(v => ({ trigger: v.trigger, pattern: v.pattern })),
+      verbalTells: normalizeVerbalTells(c.duo.partyA),
     },
     partyB: {
       name: c.duo.partyB.name,
@@ -44,7 +48,7 @@ function extractInput(caseId) {
       archetype: c.duo.partyB.archetype,
       speechStyle: c.duo.partyB.speechStyle,
       fear: c.duo.partyB.fear,
-      verbalTells: c.duo.partyB.verbalTells.map(v => ({ trigger: v.trigger, pattern: v.pattern })),
+      verbalTells: normalizeVerbalTells(c.duo.partyB),
     },
     context: {
       description: c.context.description,

@@ -25,10 +25,12 @@ export interface PcInteractionAction {
     | 'present_evidence'
     | 'open_dispute_picker'
     | 'run_contradiction'
+    | 'summon_witness'
     | 'close'
   label: string
   disputeId?: string
   evidenceId?: string
+  witnessId?: string
   party?: PartyId
   text?: string
   previousClaim?: string
@@ -561,6 +563,11 @@ export default function PCInteractionPanel() {
       case 'run_contradiction':
         if (action.party && action.disputeId && action.previousClaim && action.currentClaim) {
           handleContradictionPursue(action.party, action.disputeId, action.previousClaim, action.currentClaim)
+        }
+        break
+      case 'summon_witness':
+        if (action.witnessId) {
+          dispatch({ type: 'call_witness', witnessId: action.witnessId })
         }
         break
       case 'close':

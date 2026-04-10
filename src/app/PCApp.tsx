@@ -11,6 +11,7 @@ import { GamePhase } from '../types'
 import ActionPanel from '../components/actions/ActionPanel'
 import AutoDialoguePhase, { triggerDialogueTap } from '../components/phase/AutoDialoguePhase'
 import Phase0_CaseIntro, { resetPrefetch } from '../components/phase/Phase0_CaseIntro'
+import PCCaseBrief from '../components/pc/home/PCCaseBrief'
 import Phase6_Mediation from '../components/phase/Phase6_Mediation'
 import PhaseTransition from '../components/layout/PhaseTransition'
 import PCCourtLayout from '../components/pc/layout/PCCourtLayout'
@@ -70,13 +71,7 @@ export default function PCApp() {
   }
 
   if (currentPhase === GamePhase.Phase0_CaseIntro) {
-    return (
-      <div className="pc-brief-shell">
-        <div className="pc-brief-shell__inner">
-          <Phase0_CaseIntro />
-        </div>
-      </div>
-    )
+    return <PCCaseBrief />
   }
 
   if (currentPhase === GamePhase.Phase7_Verdict) {

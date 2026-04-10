@@ -6,33 +6,33 @@ import { isLLMMode } from '../../hooks/useActionDispatch'
 import { buildBridgeFromStore } from '../../engine/phase6ResultPromptV2'
 import { hasStructureV2 } from '../../engine/v2DataLoader'
 import { loadMediationScript } from '../../data/dialogues/mediationScriptLoader'
-import Emoji from '../common/Emoji'
+import PCSvgIcon from '../pc/icons/PCSvgIcon'
 import type { PlayerAction } from '../../types'
 
 type MediationPath = 'immediate' | 'conditional' | 'postpone' | 'fact_first'
 
-const PATH_LABELS: Record<MediationPath, { label: string; icon: string; desc: string; judge: string }> = {
+const PATH_LABELS: Record<MediationPath, { label: string; iconId: string; desc: string; judge: string }> = {
   immediate: {
     label: '즉시 판결',
-    icon: '⚖️',
+    iconId: 'i-scale',
     desc: '정리된 쟁점을 기준으로 바로 판단합니다.',
     judge: '정리된 쟁점을 기준으로 즉시 판단하겠습니다. 판결 단계로 넘어가겠습니다.',
   },
   conditional: {
     label: '조건부 조정',
-    icon: '🤝',
+    iconId: 'i-heart',
     desc: '핵심 책임을 나눈 뒤 조건부 조정을 먼저 제시합니다.',
     judge: '핵심 책임을 분리한 조건부 조정을 먼저 제시하겠습니다.',
   },
   postpone: {
     label: '일부 보류',
-    icon: '📝',
+    iconId: 'i-doc',
     desc: '확정 가능한 사실만 먼저 고정하고 나머지는 보류합니다.',
     judge: '확정 가능한 사실만 먼저 고정하고 나머지는 보류하겠습니다.',
   },
   fact_first: {
     label: '사실 먼저',
-    icon: '🔍',
+    iconId: 'i-search',
     desc: '해결책보다 사실관계부터 먼저 정리합니다.',
     judge: '사실관계만 먼저 정리하고 해결책은 그 뒤에 조율하겠습니다.',
   },
@@ -154,49 +154,49 @@ export default function Phase6_Mediation() {
   }
 
   return (
-    <div className="space-y-3">
-      <div className="text-center">
-        <div className="text-xs text-amber-500 font-semibold">중재 Phase</div>
-        <p className="text-xs text-gray-500 mt-1">판결 방식을 선택하세요.</p>
+    <div className="pc-mediation">
+      <div className="pc-mediation__header">
+        <PCSvgIcon id="i-scale" size={18} />
+        <span className="pc-mediation__title">중재</span>
+        <span className="pc-mediation__subtitle">판결 방식을 선택하세요</span>
       </div>
 
-      {!selectedPath && (
-        <div className="space-y-2">
+      {!selectedPath ? (
+        <div className="pc-mediation__options">
           {(Object.entries(PATH_LABELS) as Array<[MediationPath, typeof PATH_LABELS[MediationPath]]>).map(([id, item]) => (
             <button
+              className="pc-mediation__option"
               key={id}
               onClick={() => handleSelect(id)}
-              className="w-full text-left border border-gray-700 bg-gray-800/50 hover:border-amber-600 rounded-lg p-3 transition-colors"
+              type="button"
             >
-              <div className="flex items-center gap-2">
-                <Emoji char={item.icon} size={18} />
-                <div>
-                  <div className="text-sm font-semibold text-gray-200">{item.label}</div>
-                  <div className="text-xs text-gray-500">{item.desc}</div>
-                </div>
-              </div>
+              <span className="pc-mediation__option-icon">
+                <PCSvgIcon id={item.iconId} size={20} />
+              </span>
+              <span className="pc-mediation__option-body">
+                <span className="pc-mediation__option-label">{item.label}</span>
+                <span className="pc-mediation__option-desc">{item.desc}</span>
+              </span>
             </button>
           ))}
         </div>
-      )}
+      ) : null}
 
-      {loading && (
-        <div className="flex items-center justify-center py-4 gap-2">
-          <div className="w-4 h-4 border-2 border-amber-500 border-t-transparent rounded-full animate-spin" />
-          <span className="text-xs text-gray-400">양측 반응을 확인하고 있습니다...</span>
+      {loading ? (
+        <div className="pc-mediation__loading">
+          <div className="pc-mediation__spinner" />
+          <span>양측 반응을 확인하고 있습니다...</span>
         </div>
-      )}
+      ) : null}
 
-      {selectedPath && selectedPath !== 'immediate' && !loading && (
-        <div className="text-center pt-2">
-          <button
-            onClick={() => advancePhase(GamePhase.Phase7_Verdict)}
-            className="bg-amber-600 hover:bg-amber-500 text-gray-950 font-semibold px-6 py-2 rounded-lg transition-colors text-sm"
-          >
-            판결로 진행
+      {selectedPath && selectedPath !== 'immediate' && !loading ? (
+        <div className="pc-mediation__advance">
+          <button className="pc-mediation__advance-btn" onClick={() => advancePhase(GamePhase.Phase7_Verdict)} type="button">
+            <PCSvgIcon id="i-gavel" size={18} />
+            <span>판결로 진행</span>
           </button>
         </div>
-      )}
+      ) : null}
     </div>
   )
 }
