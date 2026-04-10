@@ -27,6 +27,7 @@ export default function PCDisputeRibbon() {
   const [hoveredId, setHoveredId] = useState<string | null>(null)
   const [autoExpandedId, setAutoExpandedId] = useState<string | null>(null)
   const [flashId, setFlashId] = useState<string | null>(null)
+  const [collapsed, setCollapsed] = useState(false)
 
   useEffect(() => {
     if (!lastFocusedDisputeId) {
@@ -75,9 +76,17 @@ export default function PCDisputeRibbon() {
   }
 
   return (
-    <div className="pc-dispute-ribbon">
+    <div className={`pc-dispute-ribbon${collapsed ? ' is-collapsed' : ''}`}>
       <div className="pc-dispute-ribbon__bar">
-        <span className="pc-dispute-ribbon__label">쟁점</span>
+        <button
+          className="pc-dispute-ribbon__toggle"
+          onClick={() => setCollapsed((c) => !c)}
+          title={collapsed ? '쟁점 펼치기' : '쟁점 접기'}
+          type="button"
+        >
+          <span className="pc-dispute-ribbon__label">쟁점</span>
+          <span className="pc-dispute-ribbon__arrow">{collapsed ? '▼' : '▲'}</span>
+        </button>
         <div className="pc-dispute-ribbon__track">
           {caseData.disputes.map((dispute, index) => {
             const isActive = activeId === dispute.id

@@ -171,9 +171,9 @@ export default function PCImportantNotesSection() {
     <section className="sec collapsible pc-important-notes-section">
       <div className="sec-h">
         <PCSvgIcon id="i-pin" size={14} />
-        {COPY.sectionTitle}
+        <span>{COPY.sectionTitle}</span>
         <span className="cnt">{pinnedNotes.length}</span>
-        <span className="sec-summary">{COPY.sectionSummary}</span>
+        <span className="pc-notes-help" title="드래그 앤 드롭으로 순서를 조정할 수 있습니다. 핀 고정은 5개까지 가능합니다.">?</span>
       </div>
 
       <div className="sec-content">
@@ -187,13 +187,12 @@ export default function PCImportantNotesSection() {
           onDrop={() => reorderNote(null)}
         >
           {orderedNotes.map((note) => {
-            const speakerSide = note.speaker === 'b' ? 'right' : 'left'
-            const faceId = getSpeakerFaceId(note, caseData)
             const summary = getNoteSummary(note.text)
+            const dotClass = note.speaker === 'b' ? 'is-b' : 'is-a'
 
             return (
               <div
-                className={`pc-note-card side-${speakerSide}${note.pinned ? ' is-pinned' : ''}${draggingNoteId === note.id ? ' is-dragging' : ''}`}
+                className={`pc-note-card${note.pinned ? ' is-pinned' : ''}${draggingNoteId === note.id ? ' is-dragging' : ''}`}
                 draggable
                 key={note.id}
                 onClick={(event) => {
@@ -216,30 +215,13 @@ export default function PCImportantNotesSection() {
                   reorderNote(note.id)
                 }}
               >
-                {speakerSide === 'left' ? (
-                  <>
-                    <NoteAvatar faceId={faceId} speaker={note.speaker} />
-                    <div className="pc-note-card__body">
-                      <div className="pc-note-card__meta">
-                        <span className="pc-note-card__turn">T{note.turn}</span>
-                        <span className="pc-note-card__speaker">{getSpeakerLabel(note.speaker, speakerNameMap)}</span>
-                      </div>
-                      <div className="pc-note-card__summary">{summary}</div>
-                    </div>
-                  </>
-                ) : (
-                  <>
-                    <div className="pc-note-card__body">
-                      <div className="pc-note-card__meta">
-                        <span className="pc-note-card__turn">T{note.turn}</span>
-                        <span className="pc-note-card__speaker">{getSpeakerLabel(note.speaker, speakerNameMap)}</span>
-                      </div>
-                      <div className="pc-note-card__summary">{summary}</div>
-                    </div>
-                    <NoteAvatar faceId={faceId} speaker={note.speaker} />
-                  </>
-                )}
-
+                <div className={`pc-note-card__indicator ${dotClass}`}>
+                  <span className="pc-note-card__dot" />
+                  <span className="pc-note-card__turn">T{note.turn}</span>
+                </div>
+                <div className="pc-note-card__body">
+                  <div className="pc-note-card__summary">{summary}</div>
+                </div>
                 <button
                   className="pc-note-card__pin"
                   onClick={(event) => {
@@ -248,7 +230,7 @@ export default function PCImportantNotesSection() {
                   }}
                   type="button"
                 >
-                  <PCSvgIcon id="i-pin" size={14} />
+                  <PCSvgIcon id="i-pin" size={12} />
                 </button>
               </div>
             )
@@ -256,20 +238,6 @@ export default function PCImportantNotesSection() {
         </div>
       </div>
     </section>
-  )
-}
-
-function NoteAvatar({
-  faceId,
-  speaker,
-}: {
-  faceId: string
-  speaker: DialogueEntry['speaker']
-}) {
-  return (
-    <span className={`pc-note-card__avatar speaker-${speaker}`}>
-      <PCSvgIcon id={faceId} size={26} />
-    </span>
   )
 }
 

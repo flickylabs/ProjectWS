@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react'
-import { useCallback, useEffect, useMemo, useRef } from 'react'
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { GamePhase } from '../../../types'
 import { useStore } from '../../../store/useGameStore'
 import PCBottomDock from '../hotbar/PCBottomDock'
@@ -7,6 +7,7 @@ import PCSvgIcon from '../icons/PCSvgIcon'
 import PCEvidenceViewer from '../evidence/PCEvidenceViewer'
 import PCLeftPanel from '../panels/PCLeftPanel'
 import PCRightPanel from '../panels/PCRightPanel'
+import { resetPcSessionToHome } from '../../../app/PCApp'
 import PCDialogueLog from './PCDialogueLog'
 import PCDisputeRibbon from './PCDisputeRibbon'
 import PCGameplayOverlay from './PCGameplayOverlay'
@@ -47,6 +48,20 @@ export default function PCCourtLayout({ actionPanel, onDialogueTap, isDialoguePh
   const resources = useStore((s) => s.resources)
   const globalSkillPoints = useStore((s) => s.globalSkillPoints)
   const turnCount = useStore((s) => s.turnCount)
+
+  const [phaseBanner, setPhaseBanner] = useState<string | null>(null)
+  const prevPhaseRef = useRef(currentPhase)
+
+  useEffect(() => {
+    if (currentPhase !== prevPhaseRef.current) {
+      prevPhaseRef.current = currentPhase
+      const label = PHASE_LABELS[currentPhase]
+      const num = getPhaseNumber(currentPhase)
+      setPhaseBanner(`Phase ${num} — ${label}`)
+      const timer = window.setTimeout(() => setPhaseBanner(null), 2800)
+      return () => window.clearTimeout(timer)
+    }
+  }, [currentPhase])
 
   useEffect(() => {
     const timer = window.setTimeout(() => {
@@ -150,7 +165,7 @@ export default function PCCourtLayout({ actionPanel, onDialogueTap, isDialoguePh
     <>
       <div className="app pc-play-app">
         <header className="pc-play-header">
-          <button className="pc-play-back" type="button">
+          <button className="pc-play-back" onClick={resetPcSessionToHome} type="button">
             <span className="pc-play-back__arrow" aria-hidden="true">&#8592;</span>
             <span>나가기</span>
           </button>
@@ -227,6 +242,12 @@ export default function PCCourtLayout({ actionPanel, onDialogueTap, isDialoguePh
           <div className="pc-play-ribbon-wrap">
             <PCDisputeRibbon />
           </div>
+
+          {phaseBanner ? (
+            <div className="pc-phase-banner">
+              <span className="pc-phase-banner__text">{phaseBanner}</span>
+            </div>
+          ) : null}
 
           <div className="chat-area pc-play-chat" onClick={handleChatClick} ref={chatRef}>
             <PCDialogueLog />

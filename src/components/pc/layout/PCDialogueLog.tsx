@@ -155,18 +155,13 @@ function MessageBubble({ entry, animate }: { entry: DialogueEntryType; animate: 
 
   if (entry.speaker === 'judge') {
     return (
-      <div className="pc-log-row is-judge">
-        <button className="pc-log-avatar is-judge" onClick={() => openEntryDetail('재판관', '판단 지시', 'gold')} type="button">
-          <PCSvgIcon id="i-scale" size={24} />
+      <div className="pc-log-judge-center">
+        <button className="pc-log-judge-avatar" onClick={() => openEntryDetail('재판관', '판단 지시', 'gold')} type="button">
+          <PCSvgIcon id="i-scale" size={22} />
         </button>
-        <div className="pc-log-stack">
-          <button className="pc-log-name is-judge pc-log-name--button" onClick={() => openEntryDetail('재판관', '판단 지시', 'gold')} type="button">
-            재판관
-          </button>
-          <button className="pc-log-bubble is-judge" onClick={() => openEntryDetail('재판관', '판단 지시', 'gold')} type="button">
-            <div className="pc-log-bubble__text">{displayText}</div>
-          </button>
-        </div>
+        <button className="pc-log-bubble is-judge" onClick={() => openEntryDetail('재판관', '판단 지시', 'gold')} type="button">
+          <div className="pc-log-bubble__text">{displayText}</div>
+        </button>
       </div>
     )
   }

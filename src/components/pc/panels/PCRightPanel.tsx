@@ -60,12 +60,9 @@ export default function PCRightPanel() {
   const faceId = getPcFaceSymbolId(pcTargetParty, targetProfile, targetAgent.emotionalState.phase)
   const trustStateLabel = getTrustStateLabel(targetAgent.trustState.trustTowardJudge)
   const showCombination =
-    Boolean(combinationLabRuntime.config)
-    && (
-      currentPhase === GamePhase.Phase3_Interrogation
-      || currentPhase === GamePhase.Phase4_Evidence
-      || currentPhase === GamePhase.Phase5_ReExamination
-    )
+    currentPhase === GamePhase.Phase3_Interrogation
+    || currentPhase === GamePhase.Phase4_Evidence
+    || currentPhase === GamePhase.Phase5_ReExamination
 
   const availableNodes = useMemo(() => {
     const config = combinationLabRuntime.config
@@ -435,25 +432,21 @@ export default function PCRightPanel() {
               </button>
             </div>
 
-            <div className="pc-combination-card__hero">
-              {comboReady ? (
-                <button className="pc-combination-card__attempt" onClick={handleCombinationAttempt} type="button">
-                  <span className="pc-combination-card__attempt-icon">
-                    <PCSvgIcon id="i-bolt" size={28} />
-                  </span>
-                  <span>{'\uC870\uD569 \uC2DC\uB3C4'}</span>
-                </button>
-              ) : (
-                <>
-                  <p className="pc-skill-card__copy">{'\uC99D\uAC70, \uBC1C\uC5B8 \uB178\uD2B8 \uB4F1\uC744 \uB04C\uC5B4\uC640 \uC870\uD569\uD574\uBCF4\uC138\uC694.'}</p>
-                  <p className="pc-skill-card__copy is-hint">{'\uB4DC\uB798\uADF8 \uC564 \uB4DC\uB86D \uB610\uB294 Shift + \uD074\uB9AD'}</p>
-                  <div className="pc-combination-card__focus">
-                    <span>{'\uD604\uC7AC \uC7C1\uC810'}</span>
-                    <strong>{activeDispute?.name ?? '\uC544\uC9C1 \uC120\uD0DD\uB41C \uC7C1\uC810 \uC5C6\uC74C'}</strong>
-                  </div>
-                </>
-              )}
-            </div>
+            {comboReady ? (
+              <button className="pc-combination-card__attempt" onClick={handleCombinationAttempt} type="button">
+                <span>{'조합 시도'}</span>
+                <PCSvgIcon id="i-bolt" size={20} />
+              </button>
+            ) : (
+              <div className="pc-combination-card__desc">
+                <p className="pc-skill-card__copy">{'증거, 발언 노트 등을 끌어와 조합해보세요.'}</p>
+                <p className="pc-skill-card__copy is-hint">{'드래그 앤 드롭 또는 Shift + 클릭'}</p>
+                <div className="pc-combination-card__focus">
+                  <span>{'현재 쟁점'}</span>
+                  <strong>{activeDispute?.name ?? '아직 선택된 쟁점 없음'}</strong>
+                </div>
+              </div>
+            )}
 
             <div className="pc-combination-card__slots">
               <CombinationSlot
@@ -536,7 +529,7 @@ function CombinationSlot({
       type="button"
     >
       <span className="pc-combination-slot__label">{label}</span>
-      <span className="pc-combination-slot__text">{node ? '\uB2E8\uC11C \uC900\uBE44' : '\uBE44\uC5B4 \uC788\uC74C'}</span>
+      <span className="pc-combination-slot__text">{node ? node.label : '\uBE44\uC5B4 \uC788\uC74C'}</span>
     </button>
   )
 }

@@ -78,6 +78,17 @@ Truth Throttle:
 - system_message에서 정답을 직접 알려주는 것
 - aftermath를 판결문 요약처럼 쓰는 것
 
+Validator Stage3 하드 규칙:
+- witness는 재판관에게 직접 말하는 문장으로 쓰고, 전부 합니다체로 끝내라. `재판장님,`으로 시작해도 된다.
+- witness 문장 수는 depth에 정확히 맞춰라.
+  - `vague`: 정확히 1문장
+  - `partial`: 2~3문장
+  - `full`: 3~5문장
+- aftermath는 variant마다 2~5문장으로 맞춰라.
+- system_message는 variant마다 1~3문장으로 맞춰라.
+- 길이가 애매하면 `witness vague`는 1문장, `witness partial`은 2문장, `witness full`은 3문장, `aftermath`는 3문장, `system_message`는 2문장을 기본값으로 잡아라.
+- witness와 aftermath도 해요체로 풀지 말고 formal한 종결을 유지하라.
+
 출력 형식:
 ```json
 {

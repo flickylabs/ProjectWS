@@ -135,7 +135,8 @@ export default function PCLeftPanel() {
           <PCSvgIcon id="i-doc" size={14} />
           <span>증거</span>
           <span className="cnt">{surfaceResult ? evidenceCards.length : 0}</span>
-          <span className="sub">{`잠금 ${lockedCount}`}</span>
+          <span className="sub">{`— 잠금 ${lockedCount}`}</span>
+          <span className="pc-evidence-help" title="단서는 심문 진행 또는 증거 제시 이후 추가로 등장합니다">?</span>
         </div>
 
         <div className="pc-play-evidence-list">
@@ -173,11 +174,6 @@ export default function PCLeftPanel() {
           })}
         </div>
 
-        {currentPhase !== GamePhase.Phase4_Evidence && currentPhase !== GamePhase.Phase5_ReExamination ? (
-          <div className="pc-play-evidence-hint">
-            추가 단서는 심문 진행 또는 증거 제시 이후 해금됩니다.
-          </div>
-        ) : null}
       </section>
 
       <PCImportantNotesSection />

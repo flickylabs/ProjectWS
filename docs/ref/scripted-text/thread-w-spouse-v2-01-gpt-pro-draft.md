@@ -265,6 +265,39 @@ channel_inventory_source: "spouse-v2-01 runtime JSON + spouse v2 design doc + ru
 - spouse-v2-01 전용 `structure-v2` / `v2-atoms` / `full-scaffold`가 생성되면 재실행 시 함께 첨부
 - 다만 현재 문서는 위 파일들 없이도 runtime + 기획만으로 GPT Pro 실행이 가능하도록 닫아 둔다
 
+## Validator Stage3 재실행 규격
+
+- 이번 재실행의 목적은 대사 품질 재작성이 아니라 validator 형식 FAIL 제거다. 자연스러움보다 아래 규격 준수를 우선한다.
+- `interrogation`, `evidence_present`, `dossier`의 모든 variant는 첫머리를 반드시 `재판장님,`으로 시작한다. late 감정 장면도 예외 없이 유지한다.
+- judge-facing 문장은 전부 합니다체로 끝낸다. 이번 재실행에서는 S4~S5 `empathy_approach`도 해요체로 풀지 말고 끝까지 합니다체를 유지한다.
+- 금지 종결은 `-지요`, `-니까요`, `-거든요`, `-게요`, `-서요`다.
+- 문장 수는 validator 범위에 정확히 맞춘다.
+  - `interrogation` / `evidence_present` / `dossier`
+    - `stanceHint: deny | hedge` -> 1~2문장
+    - `stanceHint: partial | blame | emotional | confess` -> 2~3문장
+    - `lieState: S5` -> 3~4문장
+  - `witness`
+    - `vague` -> 1문장
+    - `partial` -> 2~3문장
+    - `full` -> 3~5문장
+  - `aftermath` -> 2~5문장
+  - `system_message` -> 1~3문장
+- 길이가 애매하면 validator 하한선이 아니라 안전 중앙값을 쓴다. 즉 `deny/hedge`는 2문장, `partial/blame/emotional/confess`는 2문장, `S5`는 3문장을 기본값으로 잡는다.
+- 모든 `evidence_present` variant는 해당 증거의 표면 키워드를 직접 포함해야 한다.
+  - `e-1` -> `카드` 또는 `명세서` 또는 `결제`
+  - `e-2` -> `오피스텔` 또는 `출입` 또는 `기록`
+  - `e-3` -> `새벽` 또는 `통화` 또는 `기록`
+  - `e-4` -> `문자` 또는 `형` 또는 `조카`
+  - `e-5` -> `적금` 또는 `해지` 또는 `계좌이체` 또는 `3,000만 원`
+  - `e-6` -> `카톡` 또는 `송금` 또는 `영수증` 또는 `2,000만 원`
+  - `e-7` -> `통화` 또는 `출입` 또는 `계좌이체` 또는 `대조표`
+- `d-2`, `d-3`, `d-4`의 `S5`는 구체 금액을 반드시 직접 쓴다.
+  - `d-2 S5` -> 최소 `3,000만 원`
+  - `d-3 S5` -> 최소 `2,000만 원`
+  - `d-4 S5` -> 최소 `5,000만 원`
+- 반대로 `S0~S4`의 금전 쟁점에서는 Truth Throttle을 유지해 금액을 조기 노출하지 않는다.
+- `d-1`은 비금전 쟁점이다. `d-1`에 연결되는 interrogation / evidence_present / dossier 문장에는 `돈`, `적금`, `송금`, `이체`, `계좌`, `원`, `만원` 같은 금전어를 넣지 않는다.
+
 ## 사건별 공통 지시문
 
 ```text

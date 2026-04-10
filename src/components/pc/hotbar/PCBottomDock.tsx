@@ -328,7 +328,6 @@ export default function PCBottomDock() {
 
               <div className="hotbar-help">
                 <span><kbd>1~6</kbd> {'\uC2AC\uB86F \uC2E4\uD589'}</span>
-                <span className="hotbar-help__sep">/</span>
                 <span><kbd>ESC</kbd> {'\uC785\uB825 \uB2EB\uAE30'}</span>
               </div>
             </div>
@@ -345,7 +344,7 @@ export default function PCBottomDock() {
                 >
                   <span className="slot-key">{slot.key}</span>
                   <span className="slot-ico">
-                    <PCSvgIcon id={slot.iconId} size={26} />
+                    <PCSvgIcon id={slot.iconId} size={30} />
                   </span>
                   <span className="slot-nm">{slot.label}</span>
                   {slot.effect ? (
@@ -392,7 +391,7 @@ function CharacterCard({
   return (
     <button className={`char char-${side}${isActive ? ' spk' : ''}`} onClick={onClick} type="button">
       <div className="char-face">
-        <PCSvgIcon id={faceId} size={52} />
+        <PCSvgIcon id={faceId} size={36} />
       </div>
       <div className="char-info">
         <span className="char-nm">{name}</span>
