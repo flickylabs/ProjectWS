@@ -33,6 +33,11 @@ export default function AutoDialoguePhase({ dialogues, llmGenerator, nextPhase, 
     if (startedRef.current) return
     startedRef.current = true
 
+    // Phase1 시작 시 이전 대화 클리어 (Phase0 잔여 방지)
+    if (phaseKey === 'phase1') {
+      useGameStore.getState().clearDialogue()
+    }
+
     const init = async () => {
       // Phase2는 AI prefetch 결과를 우선 사용, Phase1은 고정 스크립트 우선
       const prefetched = phaseKey === 'phase1' ? consumePrefetchedPhase1()
