@@ -7327,13 +7327,13 @@ body.pc-mode .pc-dialogue-advance kbd {
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
-  min-width: 28px !important;
-  height: 22px !important;
-  padding: 0 6px !important;
-  border-radius: 6px !important;
-  border: 1px solid rgba(255, 255, 255, 0.12) !important;
-  background: rgba(14, 14, 22, 0.8) !important;
-  color: #d0d4de !important;
+  min-width: 32px !important;
+  height: 24px !important;
+  padding: 0 8px !important;
+  border-radius: 7px !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  background: rgba(255, 255, 255, 0.08) !important;
+  color: #c0c4d0 !important;
   font-size: 11px !important;
   font-weight: 800 !important;
   font-family: inherit !important;
@@ -7371,21 +7371,52 @@ body.pc-mode .pc-dialogue-advance .text-gray-600 {
   color: #8c8fa0 !important;
 }
 
-/* AutoDialoguePhase — PC controls */
+/* AutoDialoguePhase — PC floating controls */
 body.pc-mode .pc-dialogue-controls {
+  position: fixed !important;
+  bottom: 120px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  z-index: 30 !important;
   display: flex !important;
   justify-content: center !important;
-  padding: 10px 0 !important;
+  pointer-events: auto !important;
+}
+
+body.pc-mode .pc-dialogue-advance {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  padding: 12px 28px !important;
+  border-radius: 16px !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  background: rgba(0, 0, 0, 0.65) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  color: #e8e6df !important;
+  font-size: 15px !important;
+  font-weight: 700 !important;
+  cursor: pointer !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4) !important;
+  transition: all 0.15s ease !important;
+}
+
+body.pc-mode .pc-dialogue-advance:hover {
+  background: rgba(0, 0, 0, 0.75) !important;
+  border-color: rgba(212, 162, 78, 0.2) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5) !important;
 }
 
 body.pc-mode .pc-dialogue-advance__label {
-  font-size: 14px !important;
+  font-size: 15px !important;
   font-weight: 700 !important;
+  color: #f2efe8 !important;
 }
 
 body.pc-mode .pc-dialogue-advance__count {
   font-size: 12px !important;
-  color: #8c8fa0 !important;
+  color: rgba(212, 162, 78, 0.7) !important;
   font-weight: 600 !important;
 }
 
@@ -7413,9 +7444,18 @@ body.pc-mode .pc-dialogue-loading__spinner {
 }
 
 body.pc-mode .pc-dialogue-transition {
+  position: fixed !important;
+  bottom: 120px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  z-index: 30 !important;
   display: flex !important;
   justify-content: center !important;
-  padding: 12px 0 !important;
+  padding: 12px 28px !important;
+  border-radius: 16px !important;
+  background: rgba(0, 0, 0, 0.65) !important;
+  backdrop-filter: blur(12px) !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4) !important;
   color: var(--pc-gold-light) !important;
   font-size: 15px !important;
   font-weight: 700 !important;

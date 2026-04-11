@@ -31,13 +31,19 @@ const PHASE_LABELS: Record<GamePhase, string> = {
   [GamePhase.Result]: '결과',
 }
 
+/** Phase2(반박)를 스킵하므로 유저에게 보이는 번호를 1단계씩 앞당김 */
 function getPhaseNumber(phase: GamePhase): string {
-  if (phase === GamePhase.Result) {
-    return 'R'
+  const DISPLAY_NUMBERS: Record<string, string> = {
+    [GamePhase.Phase0_CaseIntro]: '0',
+    [GamePhase.Phase1_InitialStatement]: '1',
+    [GamePhase.Phase3_Interrogation]: '2',
+    [GamePhase.Phase4_Evidence]: '3',
+    [GamePhase.Phase5_ReExamination]: '4',
+    [GamePhase.Phase6_Mediation]: '5',
+    [GamePhase.Phase7_Verdict]: '6',
+    [GamePhase.Result]: 'R',
   }
-
-  const match = phase.match(/phase(\d+)/)
-  return match?.[1] ?? '0'
+  return DISPLAY_NUMBERS[phase] ?? '0'
 }
 
 export default function PCCourtLayout({ actionPanel, onDialogueTap, isDialoguePhase }: Props) {
