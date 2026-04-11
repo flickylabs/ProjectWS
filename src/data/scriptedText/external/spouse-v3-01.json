@@ -145,7 +145,7 @@
           "variants": [
             {
               "id": "a-d-1-S0-fact-pursuit-v1",
-              "text": "재판관님, 같은 오피스텔을 들락거리고 새벽마다 같은 번호와 통화했는데, 딴살림 말고는 설명이 안 됐습니다.",
+              "text": "재판관님, 매일 저녁 같은 곳에 들어가고 새벽마다 누군가와 통화하는데, 그걸 보고 아무렇지 않을 배우자가 있겠습니까.",
               "behaviorHint": "a S0 fact_pursuit ?? 1",
               "tags": [
                 "channel:interrogation",
@@ -183,7 +183,7 @@
             },
             {
               "id": "a-d-1-S0-fact-pursuit-v2",
-              "text": "재판관님, 같은 오피스텔을 들락거리고 새벽마다 같은 번호와 통화했는데, 딴살림 말고는 설명이 안 됐습니다. 제가 추궁하면 제 남편은 아니라고만 하고 이유를 안 말했습니다.",
+              "text": "재판관님, 퇴근하면 어디론가 사라지고, 새벽에는 같은 번호로 전화합니다. 한두 번이 아닙니다. 몇 주째 똑같았습니다.",
               "behaviorHint": "a S0 fact_pursuit ?? 2",
               "tags": [
                 "channel:interrogation",
@@ -221,7 +221,7 @@
             },
             {
               "id": "a-d-1-S0-fact-pursuit-v3",
-              "text": "재판관님, 현장을 본 건 아니어도 그 패턴이 너무 뚜렷했습니다. 같은 오피스텔을 들락거리고 새벽마다 같은 번호와 통화했는데, 딴살림 말고는 설명이 안 됐습니다.",
+              "text": "재판관님, 같은 곳을 들락날락하고, 새벽마다 통화하고, 물어보면 아무 말도 안 합니다. 딴살림 아니면 뭡니까.",
               "behaviorHint": "a S0 fact_pursuit ?? 3",
               "tags": [
                 "channel:interrogation",
@@ -259,7 +259,7 @@
             },
             {
               "id": "a-d-1-S0-fact-pursuit-v4",
-              "text": "재판관님, 같은 오피스텔을 들락거리고 새벽마다 같은 번호와 통화했는데, 딴살림 말고는 설명이 안 됐습니다. 제 쪽에서 오해하고 싶어서 만든 이야기는 아니었습니다.",
+              "text": "재판관님, 제 남편이 매일 저녁 두 시간씩 어딜 다녀오는데 이유를 안 말합니다. 거기에 새벽 통화까지 겹치면 다른 설명이 있습니까.",
               "behaviorHint": "a S0 fact_pursuit ?? 4",
               "tags": [
                 "channel:interrogation",
@@ -297,7 +297,7 @@
             },
             {
               "id": "a-d-1-S0-fact-pursuit-v5",
-              "text": "재판관님, 누가 봐도 의심할 만한 흐름이었습니다. 같은 오피스텔을 들락거리고 새벽마다 같은 번호와 통화했는데, 딴살림 말고는 설명이 안 됐습니다.",
+              "text": "재판관님, 같은 장소, 같은 시간, 같은 번호입니다. 한 달 넘게 반복됐는데 저보고 아무 생각 말라는 건 무리입니다.",
               "behaviorHint": "a S0 fact_pursuit ?? 5",
               "tags": [
                 "channel:interrogation",
@@ -346,7 +346,7 @@
           "variants": [
             {
               "id": "a-d-1-S0-motive-search-v1",
-              "text": "재판관님, 제가 예민해서 그런 게 아니라, 제 남편이 숨기는 쪽으로만 움직인다고 느꼈습니다.",
+              "text": "재판관님, 저도 괜히 의심하고 싶었던 게 아닙니다. 제 남편이 아무것도 설명 안 하니까 나쁜 쪽으로 갈 수밖에 없었습니다.",
               "behaviorHint": "a S0 motive_search ?? 1",
               "tags": [
                 "channel:interrogation",
@@ -384,7 +384,7 @@
             },
             {
               "id": "a-d-1-S0-motive-search-v2",
-              "text": "재판관님, 제가 예민해서 그런 게 아니라, 제 남편이 숨기는 쪽으로만 움직인다고 느꼈습니다. 같은 시간대와 같은 장소가 계속 겹치니 다른 이유를 떠올리기 어려웠습니다.",
+              "text": "재판관님, 물어볼 때마다 말을 돌리고, 짜증만 내고, 자리를 피했습니다. 그러면 저는 어떻게 해석하겠습니까.",
               "behaviorHint": "a S0 motive_search ?? 2",
               "tags": [
                 "channel:interrogation",
@@ -422,7 +422,7 @@
             },
             {
               "id": "a-d-1-S0-motive-search-v3",
-              "text": "재판관님, 의심하고 싶지 않았는데도 제 남편이 끝까지 맥락을 안 줬습니다. 제가 예민해서 그런 게 아니라, 제 남편이 숨기는 쪽으로만 움직인다고 느꼈습니다.",
+              "text": "재판관님, 제 남편이 숨기는 게 느껴지는데 이유를 안 주니까, 가장 나쁜 쪽으로 채울 수밖에 없었습니다.",
               "behaviorHint": "a S0 motive_search ?? 3",
               "tags": [
                 "channel:interrogation",
@@ -460,7 +460,7 @@
             },
             {
               "id": "a-d-1-S0-motive-search-v4",
-              "text": "재판관님, 제가 예민해서 그런 게 아니라, 제 남편이 숨기는 쪽으로만 움직인다고 느꼈습니다. 아내 입장에서 그렇게 받아들일 수밖에 없는 상황이었습니다.",
+              "text": "재판관님, 예민해서 그런 게 아닙니다. 말을 안 하니까 머릿속이 혼자 돌아간 겁니다. 한마디라도 해줬으면 여기까지 안 왔습니다.",
               "behaviorHint": "a S0 motive_search ?? 4",
               "tags": [
                 "channel:interrogation",
@@ -498,7 +498,7 @@
             },
             {
               "id": "a-d-1-S0-motive-search-v5",
-              "text": "재판관님, 저를 안심시키려는 말 한마디가 없었습니다. 제가 예민해서 그런 게 아니라, 제 남편이 숨기는 쪽으로만 움직인다고 느꼈습니다.",
+              "text": "재판관님, 숨기는 사람 옆에서 편할 수가 없습니다. 제 남편이 입을 다물수록 저는 최악을 상상할 수밖에 없었습니다.",
               "behaviorHint": "a S0 motive_search ?? 5",
               "tags": [
                 "channel:interrogation",
@@ -547,7 +547,7 @@
           "variants": [
             {
               "id": "a-d-1-S0-empathy-approach-v1",
-              "text": "재판관님, 그 시간마다 저는 이미 버려진 사람처럼 굳었습니다.",
+              "text": "재판관님, 새벽에 혼자 깨어서 옆자리가 비어 있으면 사람이 어떻게 되는지 아십니까.",
               "behaviorHint": "a S0 empathy_approach ?? 1",
               "tags": [
                 "channel:interrogation",
@@ -585,7 +585,7 @@
             },
             {
               "id": "a-d-1-S0-empathy-approach-v2",
-              "text": "재판관님, 그 시간마다 저는 이미 버려진 사람처럼 굳었습니다. 새벽 통화기록을 보고 나면 밤새 잠을 못 잤습니다.",
+              "text": "재판관님, 그 시간마다 저는 버려진 사람처럼 굳어 있었습니다. 잠을 못 자는 게 몇 주째였습니다.",
               "behaviorHint": "a S0 empathy_approach ?? 2",
               "tags": [
                 "channel:interrogation",
@@ -623,7 +623,7 @@
             },
             {
               "id": "a-d-1-S0-empathy-approach-v3",
-              "text": "재판관님, 저 혼자만 모르고 있다는 느낌이 사람을 제일 먼저 무너뜨립니다. 그 시간마다 저는 이미 버려진 사람처럼 굳었습니다.",
+              "text": "재판관님, 나만 모르고 있다는 느낌이 제일 무서웠습니다. 밤마다 확인하는 제가 싫었습니다.",
               "behaviorHint": "a S0 empathy_approach ?? 3",
               "tags": [
                 "channel:interrogation",
@@ -661,7 +661,7 @@
             },
             {
               "id": "a-d-1-S0-empathy-approach-v4",
-              "text": "재판관님, 그 시간마다 저는 이미 버려진 사람처럼 굳었습니다. 제가 먼저 매달린 사람이 된 것 같아서 더 수치스러웠습니다.",
+              "text": "재판관님, 제가 매달리면 매달릴수록 더 초라해지는 느낌이었습니다. 물어봐도 답이 없으니 혼자 무너졌습니다.",
               "behaviorHint": "a S0 empathy_approach ?? 4",
               "tags": [
                 "channel:interrogation",
@@ -699,7 +699,7 @@
             },
             {
               "id": "a-d-1-S0-empathy-approach-v5",
-              "text": "재판관님, 매번 확인할수록 제 자리만 없어지는 느낌이었습니다. 그 시간마다 저는 이미 버려진 사람처럼 굳었습니다.",
+              "text": "재판관님, 확인할수록 제 자리만 없어지는 것 같았습니다. 의심하는 것도 지치지만, 모른 척하는 건 더 무서웠습니다.",
               "behaviorHint": "a S0 empathy_approach ?? 5",
               "tags": [
                 "channel:interrogation",
@@ -748,7 +748,7 @@
           "variants": [
             {
               "id": "a-d-1-S1-fact-pursuit-v1",
-              "text": "재판관님, 현장을 직접 본 건 아니지만, 반복된 출입과 새벽 통화는 분명했습니다.",
+              "text": "재판관님, 직접 현장을 본 건 아닙니다. 하지만 매일 같은 곳, 같은 시간, 같은 번호가 반복되면 우연이라고 보기 어렵습니다.",
               "behaviorHint": "a S1 fact_pursuit ?? 1",
               "tags": [
                 "channel:interrogation",
@@ -786,7 +786,7 @@
             },
             {
               "id": "a-d-1-S1-fact-pursuit-v2",
-              "text": "재판관님, 현장을 직접 본 건 아니지만, 반복된 출입과 새벽 통화는 분명했습니다. 그래서 저는 단순한 오해라고 넘길 수가 없었습니다.",
+              "text": "재판관님, 눈으로 확인한 건 아니어도, 그 흐름을 보면 누구라도 같은 생각을 했을 겁니다.",
               "behaviorHint": "a S1 fact_pursuit ?? 2",
               "tags": [
                 "channel:interrogation",
@@ -824,7 +824,7 @@
             },
             {
               "id": "a-d-1-S1-fact-pursuit-v3",
-              "text": "재판관님, 증거가 전부는 아니어도 의심할 근거는 충분했습니다. 현장을 직접 본 건 아니지만, 반복된 출입과 새벽 통화는 분명했습니다.",
+              "text": "재판관님, 현장을 잡은 건 아닙니다. 그래도 같은 패턴이 한 달 넘게 이어졌으면 그건 근거입니다.",
               "behaviorHint": "a S1 fact_pursuit ?? 3",
               "tags": [
                 "channel:interrogation",
@@ -862,7 +862,7 @@
             },
             {
               "id": "a-d-1-S1-fact-pursuit-v4",
-              "text": "재판관님, 현장을 직접 본 건 아니지만, 반복된 출입과 새벽 통화는 분명했습니다. 한 번이 아니라 계속 이어졌다는 점이 더 컸습니다.",
+              "text": "재판관님, 직접 본 게 아니라 약하다고 하실 수 있는데, 반복이 이 정도면 봐야 할 건 다 본 겁니다.",
               "behaviorHint": "a S1 fact_pursuit ?? 4",
               "tags": [
                 "channel:interrogation",
@@ -900,7 +900,7 @@
             },
             {
               "id": "a-d-1-S1-fact-pursuit-v5",
-              "text": "재판관님, 그 정도면 배우자로서는 확인할 수밖에 없습니다. 현장을 직접 본 건 아니지만, 반복된 출입과 새벽 통화는 분명했습니다.",
+              "text": "재판관님, 확실한 장면을 본 건 아닙니다. 하지만 같은 곳을 매일 드나들고 새벽마다 전화하면, 배우자로서 그냥 넘길 수 없습니다.",
               "behaviorHint": "a S1 fact_pursuit ?? 5",
               "tags": [
                 "channel:interrogation",
@@ -949,7 +949,7 @@
           "variants": [
             {
               "id": "a-d-1-S1-motive-search-v1",
-              "text": "재판관님, 믿고 싶지 않아서 여러 번 넘겨 보려 했지만 결국 같은 자리로 돌아왔습니다.",
+              "text": "재판관님, 믿고 싶어서 몇 번이나 넘기려 했습니다. 그런데 제 남편이 설명을 안 하니까 매번 같은 데로 돌아왔습니다.",
               "behaviorHint": "a S1 motive_search ?? 1",
               "tags": [
                 "channel:interrogation",
@@ -987,7 +987,7 @@
             },
             {
               "id": "a-d-1-S1-motive-search-v2",
-              "text": "재판관님, 믿고 싶지 않아서 여러 번 넘겨 보려 했지만 결국 같은 자리로 돌아왔습니다. 제 남편이 설명을 피할수록 저는 딴살림 쪽으로 더 굳었습니다.",
+              "text": "재판관님, 아닐 수도 있다고 스스로 달래 봤습니다. 그래도 제 남편이 한마디도 안 하니까 결국 같은 결론밖에 안 나왔습니다.",
               "behaviorHint": "a S1 motive_search ?? 2",
               "tags": [
                 "channel:interrogation",
@@ -1025,7 +1025,7 @@
             },
             {
               "id": "a-d-1-S1-motive-search-v3",
-              "text": "재판관님, 제가 먼저 몰아붙인 게 아니라 제 남편이 침묵으로 의심을 키웠습니다. 믿고 싶지 않아서 여러 번 넘겨 보려 했지만 결국 같은 자리로 돌아왔습니다.",
+              "text": "재판관님, 제가 먼저 몰아붙인 게 아닙니다. 제 남편이 침묵으로 의심을 키운 겁니다. 한 번이라도 설명했으면 달랐을 겁니다.",
               "behaviorHint": "a S1 motive_search ?? 3",
               "tags": [
                 "channel:interrogation",
@@ -1063,7 +1063,7 @@
             },
             {
               "id": "a-d-1-S1-motive-search-v4",
-              "text": "재판관님, 믿고 싶지 않아서 여러 번 넘겨 보려 했지만 결국 같은 자리로 돌아왔습니다. 다른 사정이 있었으면 그때 말했어야 한다고 생각했습니다.",
+              "text": "재판관님, 사정이 있었으면 그때 말했어야 합니다. 저는 다른 이유를 들은 적이 없으니 가장 나쁜 쪽으로 간 겁니다.",
               "behaviorHint": "a S1 motive_search ?? 4",
               "tags": [
                 "channel:interrogation",
@@ -1101,7 +1101,7 @@
             },
             {
               "id": "a-d-1-S1-motive-search-v5",
-              "text": "재판관님, 안심시켜 줄 기회는 제 남편 쪽에 더 많았습니다. 믿고 싶지 않아서 여러 번 넘겨 보려 했지만 결국 같은 자리로 돌아왔습니다.",
+              "text": "재판관님, 안심할 틈을 줬어야 합니다. 물어봐도 피하고, 추궁하면 짜증만 내면 저는 뭘 믿겠습니까.",
               "behaviorHint": "a S1 motive_search ?? 5",
               "tags": [
                 "channel:interrogation",
@@ -1150,7 +1150,7 @@
           "variants": [
             {
               "id": "a-d-1-S1-empathy-approach-v1",
-              "text": "재판관님, 확신하고 싶지 않았는데도 계속 그렇게 보였습니다.",
+              "text": "재판관님, 확신하고 싶지 않았는데 자꾸 그쪽으로 가게 됐습니다. 의심하는 사람도 같이 망가진다는 걸 그때 알았습니다.",
               "behaviorHint": "a S1 empathy_approach ?? 1",
               "tags": [
                 "channel:interrogation",
@@ -1188,7 +1188,7 @@
             },
             {
               "id": "a-d-1-S1-empathy-approach-v2",
-              "text": "재판관님, 확신하고 싶지 않았는데도 계속 그렇게 보였습니다. 의심하는 사람도 같이 망가진다는 걸 그때 처음 알았습니다.",
+              "text": "재판관님, 화가 나기 전에 먼저 겁이 났습니다. 아닐 수도 있다고 빌면서도 매일 같은 걸 확인했습니다.",
               "behaviorHint": "a S1 empathy_approach ?? 2",
               "tags": [
                 "channel:interrogation",
@@ -1226,7 +1226,7 @@
             },
             {
               "id": "a-d-1-S1-empathy-approach-v3",
-              "text": "재판관님, 저는 화가 나기 전에 먼저 겁이 났습니다. 확신하고 싶지 않았는데도 계속 그렇게 보였습니다.",
+              "text": "재판관님, 틀렸기를 바라면서 확인하는 게 제일 비참했습니다. 틀려도 맞아도 저만 다치는 구조였습니다.",
               "behaviorHint": "a S1 empathy_approach ?? 3",
               "tags": [
                 "channel:interrogation",
@@ -1264,7 +1264,7 @@
             },
             {
               "id": "a-d-1-S1-empathy-approach-v4",
-              "text": "재판관님, 확신하고 싶지 않았는데도 계속 그렇게 보였습니다. 제가 틀렸기를 바라면서도 매일 같은 걸 확인했습니다.",
+              "text": "재판관님, 안 믿고 싶은 마음하고 무너지는 마음이 동시에 왔습니다. 그게 매일이면 사람이 버틸 수 없습니다.",
               "behaviorHint": "a S1 empathy_approach ?? 4",
               "tags": [
                 "channel:interrogation",
@@ -1302,7 +1302,7 @@
             },
             {
               "id": "a-d-1-S1-empathy-approach-v5",
-              "text": "재판관님, 안 믿고 싶은 마음하고 무너지는 마음이 같이 갔습니다. 확신하고 싶지 않았는데도 계속 그렇게 보였습니다.",
+              "text": "재판관님, 제가 예민한 건지 상황이 이상한 건지 구분이 안 됐습니다. 그 혼란이 제일 힘들었습니다.",
               "behaviorHint": "a S1 empathy_approach ?? 5",
               "tags": [
                 "channel:interrogation",
@@ -1351,7 +1351,7 @@
           "variants": [
             {
               "id": "a-d-1-S2-fact-pursuit-v1",
-              "text": "재판관님, 제가 외도를 단정한 건 패턴 때문만이 아니라 제 남편이 끝까지 설명을 피했기 때문입니다. 숨길수록 더 그쪽으로 읽힐 수밖에 없었습니다. 적어도 제 대응이 거칠었던 점은 인정합니다.",
+              "text": "재판관님, 제가 너무 세게 나간 건 인정합니다. 그래도 제 남편이 끝까지 입을 안 열었으니까 저도 그럴 수밖에 없었습니다.",
               "behaviorHint": "a S2 fact_pursuit ?? 1",
               "tags": [
                 "channel:interrogation",
@@ -1389,7 +1389,7 @@
             },
             {
               "id": "a-d-1-S2-fact-pursuit-v2",
-              "text": "재판관님, 제가 외도를 단정한 건 패턴 때문만이 아니라 제 남편이 끝까지 설명을 피했기 때문입니다. 다른 사정이 있었다면 왜 그렇게 오래 비워 뒀은지 저는 아직도 묻고 싶습니다. 적어도 제 대응이 거칠었던 점은 인정합니다.",
+              "text": "재판관님, 외도라고 단정한 건 제가 급했을 수 있습니다. 하지만 설명 없이 숨기기만 하면 그쪽으로 읽히는 게 당연하지 않습니까.",
               "behaviorHint": "a S2 fact_pursuit ?? 2",
               "tags": [
                 "channel:interrogation",
@@ -1427,7 +1427,7 @@
             },
             {
               "id": "a-d-1-S2-fact-pursuit-v3",
-              "text": "재판관님, 저는 기록만 본 게 아니라 제 남편의 침묵까지 같이 봤습니다. 제가 외도를 단정한 건 패턴 때문만이 아니라 제 남편이 끝까지 설명을 피했기 때문입니다. 적어도 제 대응이 거칠었던 점은 인정합니다.",
+              "text": "재판관님, 제 반응이 과했다는 건 저도 압니다. 다만 아무 말 없이 비운 자리를 혼자서 채운 건 저였습니다. 그 무게까지 제 탓이라고는 못 하겠습니다.",
               "behaviorHint": "a S2 fact_pursuit ?? 3",
               "tags": [
                 "channel:interrogation",
@@ -1465,7 +1465,7 @@
             },
             {
               "id": "a-d-1-S2-fact-pursuit-v4",
-              "text": "재판관님, 제가 외도를 단정한 건 패턴 때문만이 아니라 제 남편이 끝까지 설명을 피했기 때문입니다. 숨길수록 더 그쪽으로 읽힐 수밖에 없었습니다. 적어도 제 대응이 거칠었던 점은 인정합니다.",
+              "text": "재판관님, 저도 돌이켜 보면 좀 더 기다릴 수 있었습니다. 그런데 기다림의 끝이 안 보이니까 결국 최악을 전제하고 움직인 겁니다.",
               "behaviorHint": "a S2 fact_pursuit ?? 4",
               "tags": [
                 "channel:interrogation",
@@ -1503,7 +1503,7 @@
             },
             {
               "id": "a-d-1-S2-fact-pursuit-v5",
-              "text": "재판관님, 저는 기록만 본 게 아니라 제 남편의 침묵까지 같이 봤습니다. 제가 외도를 단정한 건 패턴 때문만이 아니라 제 남편이 끝까지 설명을 피했기 때문입니다. 적어도 제 대응이 거칠었던 점은 인정합니다.",
+              "text": "재판관님, 다그친 건 인정합니다. 하지만 제 남편의 침묵이 먼저였습니다. 묻는 사람보다 안 대답하는 사람이 먼저 선을 그은 겁니다.",
               "behaviorHint": "a S2 fact_pursuit ?? 5",
               "tags": [
                 "channel:interrogation",
@@ -1552,7 +1552,7 @@
           "variants": [
             {
               "id": "a-d-1-S2-motive-search-v1",
-              "text": "재판관님, 이유를 말하지 않은 침묵이 제일 큰 신호였습니다. 저는 혼자 상상한 게 아니라 제 남편이 비워 둔 맥락을 그렇게 채웠습니다. 적어도 제 대응이 거칠었던 점은 인정합니다.",
+              "text": "재판관님, 설명이 없는 침묵이 제일 큰 신호였습니다. 빈칸을 저 혼자 채운 건 맞지만, 빈칸을 만든 건 제 남편입니다.",
               "behaviorHint": "a S2 motive_search ?? 1",
               "tags": [
                 "channel:interrogation",
@@ -1590,7 +1590,7 @@
             },
             {
               "id": "a-d-1-S2-motive-search-v2",
-              "text": "재판관님, 이유를 말하지 않은 침묵이 제일 큰 신호였습니다. 그래서 제 판단이 과해졌더라도 출발점까지 제 탓이라고는 못 하겠습니다. 적어도 제 대응이 거칠었던 점은 인정합니다.",
+              "text": "재판관님, 다른 이유가 있었으면 그때 한마디만 했어도 됐습니다. 아무 말 안 하니까 저는 최악으로 갈 수밖에 없었습니다.",
               "behaviorHint": "a S2 motive_search ?? 2",
               "tags": [
                 "channel:interrogation",
@@ -1628,7 +1628,7 @@
             },
             {
               "id": "a-d-1-S2-motive-search-v3",
-              "text": "재판관님, 다른 설명을 들은 적이 없으니 저는 가장 나쁜 쪽으로 갈 수밖에 없었습니다. 이유를 말하지 않은 침묵이 제일 큰 신호였습니다. 적어도 제 대응이 거칠었던 점은 인정합니다.",
+              "text": "재판관님, 제가 혼자 상상한 게 아닙니다. 제 남편이 비워 둔 자리를 저는 가장 무서운 것으로 채운 겁니다. 그게 아내의 본능입니다.",
               "behaviorHint": "a S2 motive_search ?? 3",
               "tags": [
                 "channel:interrogation",
@@ -1666,7 +1666,7 @@
             },
             {
               "id": "a-d-1-S2-motive-search-v4",
-              "text": "재판관님, 이유를 말하지 않은 침묵이 제일 큰 신호였습니다. 저는 혼자 상상한 게 아니라 제 남편이 비워 둔 맥락을 그렇게 채웠습니다. 적어도 제 대응이 거칠었던 점은 인정합니다.",
+              "text": "재판관님, 사정이 있었다면 힌트라도 줬어야 합니다. 아무것도 없이 침묵만 하면 저는 당연히 숨기는 거라고 봤습니다.",
               "behaviorHint": "a S2 motive_search ?? 4",
               "tags": [
                 "channel:interrogation",
@@ -1704,7 +1704,7 @@
             },
             {
               "id": "a-d-1-S2-motive-search-v5",
-              "text": "재판관님, 다른 설명을 들은 적이 없으니 저는 가장 나쁜 쪽으로 갈 수밖에 없었습니다. 이유를 말하지 않은 침묵이 제일 큰 신호였습니다. 적어도 제 대응이 거칠었던 점은 인정합니다.",
+              "text": "재판관님, 출발점은 제 의심이 아니라 제 남편의 침묵이었습니다. 제가 과했던 건 인정하지만, 시작까지 제 탓은 아닙니다.",
               "behaviorHint": "a S2 motive_search ?? 5",
               "tags": [
                 "channel:interrogation",
@@ -1753,7 +1753,7 @@
           "variants": [
             {
               "id": "a-d-1-S2-empathy-approach-v1",
-              "text": "재판관님, 저는 해명보다 침묵을 더 오래 받았습니다. 그러니 같은 기록을 보고도 제 쪽에서는 관계가 끝난 신호처럼 느꼈습니다. 적어도 제 대응이 거칠었던 점은 인정합니다.",
+              "text": "재판관님, 해명 대신 침묵을 받으면 사람이 부서집니다. 같은 기록을 보고도 저한테는 관계가 끝난 신호였습니다.",
               "behaviorHint": "a S2 empathy_approach ?? 1",
               "tags": [
                 "channel:interrogation",
@@ -1791,7 +1791,7 @@
             },
             {
               "id": "a-d-1-S2-empathy-approach-v2",
-              "text": "재판관님, 저는 해명보다 침묵을 더 오래 받았습니다. 안심시켜 달라는 마음이 쌓여서 결국 분노로 바뀌었습니다. 적어도 제 대응이 거칠었던 점은 인정합니다.",
+              "text": "재판관님, 저는 화낸 게 아니라 무서웠던 겁니다. 안심시켜 달라는 마음이 쌓여서 결국 분노로 바뀐 겁니다.",
               "behaviorHint": "a S2 empathy_approach ?? 2",
               "tags": [
                 "channel:interrogation",
@@ -1829,7 +1829,7 @@
             },
             {
               "id": "a-d-1-S2-empathy-approach-v3",
-              "text": "재판관님, 저를 붙잡아 준 말이 없었으니 저는 혼자 무너질 수밖에 없었습니다. 저는 해명보다 침묵을 더 오래 받았습니다. 적어도 제 대응이 거칠었던 점은 인정합니다.",
+              "text": "재판관님, 제가 거칠게 나간 건 맞습니다. 그런데 그 전에 저를 붙잡아 준 말이 한 번도 없었습니다.",
               "behaviorHint": "a S2 empathy_approach ?? 3",
               "tags": [
                 "channel:interrogation",
@@ -1867,7 +1867,7 @@
             },
             {
               "id": "a-d-1-S2-empathy-approach-v4",
-              "text": "재판관님, 저는 해명보다 침묵을 더 오래 받았습니다. 그러니 같은 기록을 보고도 제 쪽에서는 관계가 끝난 신호처럼 느꼈습니다. 적어도 제 대응이 거칠었던 점은 인정합니다.",
+              "text": "재판관님, 돌이키면 저도 좀 더 참을 수 있었습니다. 그런데 혼자 버티는 밤이 너무 길었습니다.",
               "behaviorHint": "a S2 empathy_approach ?? 4",
               "tags": [
                 "channel:interrogation",
@@ -1905,7 +1905,7 @@
             },
             {
               "id": "a-d-1-S2-empathy-approach-v5",
-              "text": "재판관님, 저를 붙잡아 준 말이 없었으니 저는 혼자 무너질 수밖에 없었습니다. 저는 해명보다 침묵을 더 오래 받았습니다. 적어도 제 대응이 거칠었던 점은 인정합니다.",
+              "text": "재판관님, 의심해서 미안한 마음은 있습니다. 그래도 그만큼 무서웠다는 것도 알아주셨으면 합니다.",
               "behaviorHint": "a S2 empathy_approach ?? 5",
               "tags": [
                 "channel:interrogation",
@@ -14617,7 +14617,7 @@
           "variants": [
             {
               "id": "b-d-1-S0-fact-pursuit-v1",
-              "text": "재판관님, 그런 식으로 의심받을 일은 아닙니다.",
+              "text": "재판관님, 그런 일 아닙니다.",
               "behaviorHint": "b S0 fact_pursuit ?? 1",
               "tags": [
                 "channel:interrogation",
@@ -14655,7 +14655,7 @@
             },
             {
               "id": "b-d-1-S0-fact-pursuit-v2",
-              "text": "재판관님, 그 출입하고 통화만으로 딴살림처럼 보실 일은 아닙니다.",
+              "text": "재판관님, 그 기록만 보고 딴살림이라고 하시면 안 됩니다.",
               "behaviorHint": "b S0 fact_pursuit ?? 2",
               "tags": [
                 "channel:interrogation",
@@ -14693,7 +14693,7 @@
             },
             {
               "id": "b-d-1-S0-fact-pursuit-v3",
-              "text": "재판관님, 오해하실 수는 있어도 그런 일은 없습니다.",
+              "text": "재판관님, 오해는 이해합니다. 하지만 사실이 아닙니다.",
               "behaviorHint": "b S0 fact_pursuit ?? 3",
               "tags": [
                 "channel:interrogation",
@@ -14731,7 +14731,7 @@
             },
             {
               "id": "b-d-1-S0-fact-pursuit-v4",
-              "text": "재판관님, 제가 바로 설명하지 못한 건 있어도 그쪽으로 단정하시면 안 됩니다.",
+              "text": "재판관님, 제가 설명이 부족했던 건 있어도, 그쪽으로 단정하시면 곤란합니다.",
               "behaviorHint": "b S0 fact_pursuit ?? 4",
               "tags": [
                 "channel:interrogation",
@@ -14769,7 +14769,7 @@
             },
             {
               "id": "b-d-1-S0-fact-pursuit-v5",
-              "text": "재판관님, 그 기록들이 바로 외도라는 뜻은 아닙니다. 그렇게 보이게 만든 제 잘못과 그 자체는 다릅니다.",
+              "text": "재판관님, 그렇게 보일 수는 있습니다. 하지만 아닙니다.",
               "behaviorHint": "b S0 fact_pursuit ?? 5",
               "tags": [
                 "channel:interrogation",
@@ -14818,7 +14818,7 @@
           "variants": [
             {
               "id": "b-d-1-S0-motive-search-v1",
-              "text": "재판관님, 사적인 일이라 길게 꺼내고 싶지 않았습니다.",
+              "text": "재판관님, 말하면 더 복잡해질 것 같아서 안 했습니다.",
               "behaviorHint": "b S0 motive_search ?? 1",
               "tags": [
                 "channel:interrogation",
@@ -14856,7 +14856,7 @@
             },
             {
               "id": "b-d-1-S0-motive-search-v2",
-              "text": "재판관님, 말 붙이면 더 시끄러워질 것 같아서 피했습니다.",
+              "text": "재판관님, 개인적인 일이라 집에 들이고 싶지 않았습니다.",
               "behaviorHint": "b S0 motive_search ?? 2",
               "tags": [
                 "channel:interrogation",
@@ -14894,7 +14894,7 @@
             },
             {
               "id": "b-d-1-S0-motive-search-v3",
-              "text": "재판관님, 개인적인 용무라고 생각해서 집에까지 들이고 싶지 않았습니다.",
+              "text": "재판관님, 설명이 길어질 일이어서 그냥 넘기려 했습니다.",
               "behaviorHint": "b S0 motive_search ?? 3",
               "tags": [
                 "channel:interrogation",
@@ -14932,7 +14932,7 @@
             },
             {
               "id": "b-d-1-S0-motive-search-v4",
-              "text": "재판관님, 설명이 길어질 일이라 그냥 넘어가려 했습니다. 그게 더 나를 줄 알았습니다.",
+              "text": "재판관님, 입 열면 다른 쪽으로 번질 것 같아서 참았습니다.",
               "behaviorHint": "b S0 motive_search ?? 4",
               "tags": [
                 "channel:interrogation",
@@ -14970,7 +14970,7 @@
             },
             {
               "id": "b-d-1-S0-motive-search-v5",
-              "text": "재판관님, 괜히 입을 열면 또 다른 오해가 붙을 것 같았습니다. 그래서 이유를 잘라서 말했습니다.",
+              "text": "재판관님, 괜히 말 꺼내면 오해만 더 커질 것 같아서 짧게 잘랐습니다.",
               "behaviorHint": "b S0 motive_search ?? 5",
               "tags": [
                 "channel:interrogation",
@@ -15019,7 +15019,7 @@
           "variants": [
             {
               "id": "b-d-1-S0-empathy-approach-v1",
-              "text": "재판관님, 그때는 괜히 더 크게 번질까 봐 겁이 났습니다.",
+              "text": "재판관님, 편해서 숨긴 게 아닙니다. 말하는 게 더 무서웠습니다.",
               "behaviorHint": "b S0 empathy_approach ?? 1",
               "tags": [
                 "channel:interrogation",
@@ -15057,7 +15057,7 @@
             },
             {
               "id": "b-d-1-S0-empathy-approach-v2",
-              "text": "재판관님, 한 번 꺼내면 집안이 시끄러워질 것 같아서 입을 닫았습니다.",
+              "text": "재판관님, 한번 꺼내면 감당이 안 될 것 같아서 입을 닫았습니다.",
               "behaviorHint": "b S0 empathy_approach ?? 2",
               "tags": [
                 "channel:interrogation",
@@ -15095,7 +15095,7 @@
             },
             {
               "id": "b-d-1-S0-empathy-approach-v3",
-              "text": "재판관님, 그 일은 건드리면 감정만 커질 것 같아서 피했습니다.",
+              "text": "재판관님, 그때는 침묵이 덜 위험한 길이라고 생각했습니다.",
               "behaviorHint": "b S0 empathy_approach ?? 3",
               "tags": [
                 "channel:interrogation",
@@ -15133,7 +15133,7 @@
             },
             {
               "id": "b-d-1-S0-empathy-approach-v4",
-              "text": "재판관님, 설명보다 침묵이 덜 흔들리는 길이라고 생각했습니다. 지금 보면 그 판단이 틀렸습니다.",
+              "text": "재판관님, 건드리면 더 큰일 날 것 같았습니다. 겁이 먼저 났습니다.",
               "behaviorHint": "b S0 empathy_approach ?? 4",
               "tags": [
                 "channel:interrogation",
@@ -15171,7 +15171,7 @@
             },
             {
               "id": "b-d-1-S0-empathy-approach-v5",
-              "text": "재판관님, 저도 편해서 숨긴 건 아닙니다. 말 꺼내는 순간 일이 커질까 봐 겁부터 났습니다.",
+              "text": "재판관님, 저도 속이 편한 침묵은 아니었습니다. 그래도 말하는 것보다는 나을 거라고 판단했습니다.",
               "behaviorHint": "b S0 empathy_approach ?? 5",
               "tags": [
                 "channel:interrogation",
@@ -15220,7 +15220,7 @@
           "variants": [
             {
               "id": "b-d-1-S1-fact-pursuit-v1",
-              "text": "재판관님, 아는 사람 집에 잠깐 들른 겁니다.",
+              "text": "재판관님, 그곳에 간 건 맞습니다. 다만 아는 사람을 만난 것이지, 그런 관계는 아닙니다.",
               "behaviorHint": "b S1 fact_pursuit ?? 1",
               "tags": [
                 "channel:interrogation",
@@ -15258,7 +15258,7 @@
             },
             {
               "id": "b-d-1-S1-fact-pursuit-v2",
-              "text": "재판관님, 같은 곳에 간 건 맞지만 이상한 관계는 아닙니다.",
+              "text": "재판관님, 같은 곳에 여러 번 간 건 인정합니다. 하지만 딴살림과는 관계없습니다.",
               "behaviorHint": "b S1 fact_pursuit ?? 2",
               "tags": [
                 "channel:interrogation",
@@ -15296,7 +15296,7 @@
             },
             {
               "id": "b-d-1-S1-fact-pursuit-v3",
-              "text": "재판관님, 들른 건 사실입니다. 다만 그걸 딴살림으로 보실 일은 아닙니다.",
+              "text": "재판관님, 드나든 건 사실입니다. 그래도 그걸 외도로 보시면 다릅니다.",
               "behaviorHint": "b S1 fact_pursuit ?? 3",
               "tags": [
                 "channel:interrogation",
@@ -15334,7 +15334,7 @@
             },
             {
               "id": "b-d-1-S1-fact-pursuit-v4",
-              "text": "재판관님, 제가 그쪽에 갔던 건 맞습니다. 그래도 상대를 그런 식으로 보시면 안 됩니다.",
+              "text": "재판관님, 그 장소에 간 건 맞고, 통화도 맞습니다. 그런데 제 아내가 생각하는 그런 일은 아닙니다.",
               "behaviorHint": "b S1 fact_pursuit ?? 4",
               "tags": [
                 "channel:interrogation",
@@ -15372,7 +15372,7 @@
             },
             {
               "id": "b-d-1-S1-fact-pursuit-v5",
-              "text": "재판관님, 통화하고 들른 흐름이 겹친 건 압니다. 하지만 아는 사람 챙기러 간 일이었지, 그런 일은 아닙니다.",
+              "text": "재판관님, 출입 기록은 사실입니다. 아는 사람 일로 간 건데, 외도라고 하시면 곤란합니다.",
               "behaviorHint": "b S1 fact_pursuit ?? 5",
               "tags": [
                 "channel:interrogation",
@@ -15421,7 +15421,7 @@
           "variants": [
             {
               "id": "b-d-1-S1-motive-search-v1",
-              "text": "재판관님, 설명하면 더 꼬일 것 같아서 짧게 넘겼습니다.",
+              "text": "재판관님, 설명하면 더 얽힐 것 같아서 짧게 넘겼습니다.",
               "behaviorHint": "b S1 motive_search ?? 1",
               "tags": [
                 "channel:interrogation",
@@ -15459,7 +15459,7 @@
             },
             {
               "id": "b-d-1-S1-motive-search-v2",
-              "text": "재판관님, 그 일은 캐묻기 시작하면 길어질 것 같아서 피했습니다.",
+              "text": "재판관님, 그 일은 꺼내면 길어집니다. 그래서 피했습니다.",
               "behaviorHint": "b S1 motive_search ?? 2",
               "tags": [
                 "channel:interrogation",
@@ -15497,7 +15497,7 @@
             },
             {
               "id": "b-d-1-S1-motive-search-v3",
-              "text": "재판관님, 괜히 상대까지 엮어 시끄러워질까 봐 이유를 안 꺼냈습니다.",
+              "text": "재판관님, 다른 사람까지 엮일 것 같아서 이유를 안 꺼낸 겁니다.",
               "behaviorHint": "b S1 motive_search ?? 3",
               "tags": [
                 "channel:interrogation",
@@ -15535,7 +15535,7 @@
             },
             {
               "id": "b-d-1-S1-motive-search-v4",
-              "text": "재판관님, 누구를 왜 만났는지 하나하나 말하면 더 오해만 커질 것 같았습니다. 그래서 막았습니다.",
+              "text": "재판관님, 말하면 더 큰 오해로 번질 것 같았습니다. 그래서 선을 그었는데, 그게 오히려 더 수상해 보인 겁니다.",
               "behaviorHint": "b S1 motive_search ?? 4",
               "tags": [
                 "channel:interrogation",
@@ -15573,7 +15573,7 @@
             },
             {
               "id": "b-d-1-S1-motive-search-v5",
-              "text": "재판관님, 숨기려 했다기보다 선을 그으려 했습니다. 그런데 그 선이 오히려 더 수상하게 보였던 겁니다.",
+              "text": "재판관님, 숨기려 했다기보다 거기까지 건드리고 싶지 않았습니다. 제 판단이 틀린 건 압니다.",
               "behaviorHint": "b S1 motive_search ?? 5",
               "tags": [
                 "channel:interrogation",
@@ -15622,7 +15622,7 @@
           "variants": [
             {
               "id": "b-d-1-S1-empathy-approach-v1",
-              "text": "재판관님, 말 꺼내면 더 큰 싸움으로 갈까 봐 피했습니다.",
+              "text": "재판관님, 말하면 싸움이 더 커질 것 같아서 참았습니다.",
               "behaviorHint": "b S1 empathy_approach ?? 1",
               "tags": [
                 "channel:interrogation",
@@ -15660,7 +15660,7 @@
             },
             {
               "id": "b-d-1-S1-empathy-approach-v2",
-              "text": "재판관님, 그때는 설명해도 믿어주지 않을 거라고 생각했습니다.",
+              "text": "재판관님, 설명해도 안 믿을 거라고 생각했습니다. 그래서 입을 닫은 겁니다.",
               "behaviorHint": "b S1 empathy_approach ?? 2",
               "tags": [
                 "channel:interrogation",
@@ -15698,7 +15698,7 @@
             },
             {
               "id": "b-d-1-S1-empathy-approach-v3",
-              "text": "재판관님, 형 얘기를 꺼내면 더 크게 부딪힐까 봐 겁이 났습니다. 그래서 설명보다 침묵을 먼저 택했습니다.",
+              "text": "재판관님, 꺼내는 순간 감정이 터질 것 같아서 피했습니다. 지금 보면 그게 더 나쁜 선택이었습니다.",
               "behaviorHint": "b S1 empathy_approach ?? 3",
               "tags": [
                 "channel:interrogation",
@@ -15736,7 +15736,7 @@
             },
             {
               "id": "b-d-1-S1-empathy-approach-v4",
-              "text": "재판관님, 한 번 열면 감정부터 터질 것 같았습니다. 그래서 차라리 짧게 막아 버렸습니다.",
+              "text": "재판관님, 한 번 열면 다 쏟아질 것 같았습니다. 저도 준비가 안 됐습니다.",
               "behaviorHint": "b S1 empathy_approach ?? 4",
               "tags": [
                 "channel:interrogation",
@@ -15774,7 +15774,7 @@
             },
             {
               "id": "b-d-1-S1-empathy-approach-v5",
-              "text": "재판관님, 저도 떳떳해서 그런 건 아니었습니다. 설명하는 순간 다 무너질까 봐 겁이 났습니다.",
+              "text": "재판관님, 떳떳해서 입을 다문 게 아닙니다. 말하면 무너질 것 같아서 버틴 겁니다.",
               "behaviorHint": "b S1 empathy_approach ?? 5",
               "tags": [
                 "channel:interrogation",
@@ -15823,7 +15823,7 @@
           "variants": [
             {
               "id": "b-d-1-S2-fact-pursuit-v1",
-              "text": "재판관님, 가족 쪽 일이 있어서 들른 건 맞습니다. 적어도 제 대응이 거칠었던 점은 인정합니다.",
+              "text": "재판관님, 가족 쪽 일로 간 겁니다. 외도가 아닌 건 확실합니다. 제가 제대로 말 못 한 건 인정합니다.",
               "behaviorHint": "b S2 fact_pursuit ?? 1",
               "tags": [
                 "channel:interrogation",
@@ -15861,7 +15861,7 @@
             },
             {
               "id": "b-d-1-S2-fact-pursuit-v2",
-              "text": "재판관님, 그 통화하고 방문은 가족 쪽 용무였습니다. 적어도 제 대응이 거칠었던 점은 인정합니다.",
+              "text": "재판관님, 그 통화도, 그곳도 가족 문제 때문이었습니다. 숨긴 건 잘못했습니다.",
               "behaviorHint": "b S2 fact_pursuit ?? 2",
               "tags": [
                 "channel:interrogation",
@@ -15899,7 +15899,7 @@
             },
             {
               "id": "b-d-1-S2-fact-pursuit-v3",
-              "text": "재판관님, 숨긴 건 있어도 외도는 아닙니다. 가족 쪽 일 때문에 움직였습니다. 적어도 제 대응이 거칠었던 점은 인정합니다.",
+              "text": "재판관님, 숨겼지만 외도는 아닙니다. 가족 쪽 사정이 있었습니다. 자세한 건 좀 더 시간을 주십시오.",
               "behaviorHint": "b S2 fact_pursuit ?? 3",
               "tags": [
                 "channel:interrogation",
@@ -15937,7 +15937,7 @@
             },
             {
               "id": "b-d-1-S2-fact-pursuit-v4",
-              "text": "재판관님, 제가 챙긴 쪽이 가족이라는 건 맞습니다. 다만 그때는 거기까지만 말씀드리고 싶었습니다. 적어도 제 대응이 거칠었던 점은 인정합니다.",
+              "text": "재판관님, 가족 일로 다닌 건 맞습니다. 왜 말 안 했냐고 하시면, 말하면 더 꼬일 것 같았습니다.",
               "behaviorHint": "b S2 fact_pursuit ?? 4",
               "tags": [
                 "channel:interrogation",
@@ -15975,7 +15975,7 @@
             },
             {
               "id": "b-d-1-S2-fact-pursuit-v5",
-              "text": "재판관님, 같은 번호와 주고받은 것도, 그 오피스텔로 간 것도 가족 쪽 일 때문입니다. 지금은 그 정도까지만 말씀드릴 수 있습니다. 적어도 제 대응이 거칠었던 점은 인정합니다.",
+              "text": "재판관님, 같은 번호와 주고받은 것도, 그곳에 간 것도 가족 쪽 일 때문입니다. 지금은 거기까지만 말씀드릴 수 있습니다.",
               "behaviorHint": "b S2 fact_pursuit ?? 5",
               "tags": [
                 "channel:interrogation",
@@ -16024,7 +16024,7 @@
           "variants": [
             {
               "id": "b-d-1-S2-motive-search-v1",
-              "text": "재판관님, 가족 쪽 일이라 더 말하기 어려웠습니다. 적어도 제 대응이 거칠었던 점은 인정합니다.",
+              "text": "재판관님, 가족 일이라 더 꺼내기 어려웠습니다. 집에 들이면 또 다른 싸움이 될 것 같았습니다.",
               "behaviorHint": "b S2 motive_search ?? 1",
               "tags": [
                 "channel:interrogation",
@@ -16062,7 +16062,7 @@
             },
             {
               "id": "b-d-1-S2-motive-search-v2",
-              "text": "재판관님, 그 이야기를 집으로 가져오면 더 크게 부딪힐 것 같았습니다. 적어도 제 대응이 거칠었던 점은 인정합니다.",
+              "text": "재판관님, 가족 사정이 얽혀 있어서 쉽게 말할 수 있는 일이 아니었습니다.",
               "behaviorHint": "b S2 motive_search ?? 2",
               "tags": [
                 "channel:interrogation",
@@ -16100,7 +16100,7 @@
             },
             {
               "id": "b-d-1-S2-motive-search-v3",
-              "text": "재판관님, 가족 문제까지 섞으면 일이 더 거칠어질 줄 알아서 막았습니다. 적어도 제 대응이 거칠었던 점은 인정합니다.",
+              "text": "재판관님, 그 얘기를 하면 감정이 더 험해질 게 뻔했습니다. 그래서 가족 쪽 일이라고만 했습니다.",
               "behaviorHint": "b S2 motive_search ?? 3",
               "tags": [
                 "channel:interrogation",
@@ -16138,7 +16138,7 @@
             },
             {
               "id": "b-d-1-S2-motive-search-v4",
-              "text": "재판관님, 이유를 털어놓은 순간 다른 싸움으로 번질 게 보여서 접었습니다. 그래서 가족 쪽 일이라는 말만 남겼습니다. 적어도 제 대응이 거칠었던 점은 인정합니다.",
+              "text": "재판관님, 이유를 말한 순간 다른 문제로 번질 게 보였습니다. 차단하려다 더 크게 터진 겁니다.",
               "behaviorHint": "b S2 motive_search ?? 4",
               "tags": [
                 "channel:interrogation",
@@ -16176,7 +16176,7 @@
             },
             {
               "id": "b-d-1-S2-motive-search-v5",
-              "text": "재판관님, 숨긴 이유가 떳떳해서가 아니라 그 반대였습니다. 가족 얘기까지 꺼내면 감정이 더 험해질 것 같았습니다. 적어도 제 대응이 거칠었던 점은 인정합니다.",
+              "text": "재판관님, 떳떳해서 숨긴 게 아닙니다. 가족 얘기까지 끌고 오면 수습이 안 될 것 같았습니다.",
               "behaviorHint": "b S2 motive_search ?? 5",
               "tags": [
                 "channel:interrogation",
@@ -16225,7 +16225,7 @@
           "variants": [
             {
               "id": "b-d-1-S2-empathy-approach-v1",
-              "text": "재판관님, 그 일은 말하는 쪽도 버거웠습니다. 적어도 제 대응이 거칠었던 점은 인정합니다.",
+              "text": "재판관님, 그 사정은 말하는 쪽도 무거운 이야기입니다. 가볍게 꺼낼 수 있는 일이 아니었습니다.",
               "behaviorHint": "b S2 empathy_approach ?? 1",
               "tags": [
                 "channel:interrogation",
@@ -16263,7 +16263,7 @@
             },
             {
               "id": "b-d-1-S2-empathy-approach-v2",
-              "text": "재판관님, 집안 싸움까지 겹칠까 봐 제가 먼저 입을 막았습니다. 적어도 제 대응이 거칠었던 점은 인정합니다.",
+              "text": "재판관님, 가족 문제까지 꺼내면 걷잡을 수 없을 것 같았습니다. 제가 먼저 버티기를 택한 겁니다.",
               "behaviorHint": "b S2 empathy_approach ?? 2",
               "tags": [
                 "channel:interrogation",
@@ -16301,7 +16301,7 @@
             },
             {
               "id": "b-d-1-S2-empathy-approach-v3",
-              "text": "재판관님, 가족 쪽 사정은 건드릴수록 더 아픈 이야기였습니다. 그래서 끝까지 뭉갰습니다. 적어도 제 대응이 거칠었던 점은 인정합니다.",
+              "text": "재판관님, 감당할 자신이 없어서 모호하게 넘겼습니다. 편해서 그런 게 아니라 겁이 나서 그랬습니다.",
               "behaviorHint": "b S2 empathy_approach ?? 3",
               "tags": [
                 "channel:interrogation",
@@ -16339,7 +16339,7 @@
             },
             {
               "id": "b-d-1-S2-empathy-approach-v4",
-              "text": "재판관님, 그때 저는 설명보다 버티기를 먼저 택했습니다. 감당할 자신이 없었습니다. 적어도 제 대응이 거칠었던 점은 인정합니다.",
+              "text": "재판관님, 숨길수록 제 아내가 더 힘들어지는 건 알았습니다. 그래도 말 한 번 잘못 꺼내면 더 깊은 상처가 될 것 같았습니다.",
               "behaviorHint": "b S2 empathy_approach ?? 4",
               "tags": [
                 "channel:interrogation",
@@ -16377,7 +16377,7 @@
             },
             {
               "id": "b-d-1-S2-empathy-approach-v5",
-              "text": "재판관님, 괜히 말 한 번 잘못 꺼내면 서로 더 깊게 상처 낼 것 같았습니다. 그래서 모호하게만 버텼습니다. 적어도 제 대응이 거칠었던 점은 인정합니다.",
+              "text": "재판관님, 저도 이 상황이 제 잘못에서 시작된 건 압니다. 다만 한꺼번에 다 쏟아내기엔 무거운 이야기입니다.",
               "behaviorHint": "b S2 empathy_approach ?? 5",
               "tags": [
                 "channel:interrogation",
