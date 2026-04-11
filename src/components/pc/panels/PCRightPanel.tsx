@@ -64,25 +64,25 @@ export default function PCRightPanel() {
     || currentPhase === GamePhase.Phase4_Evidence
     || currentPhase === GamePhase.Phase5_ReExamination
 
+  // config가 null이면 caseData에서 직접 초기화 시도
+  useEffect(() => {
+    if (!combinationLabRuntime.config && caseData?.combinationLab && showCombination) {
+      useGameStore.getState().initCombinationLab(caseData)
+    }
+  }, [combinationLabRuntime.config, caseData, showCombination])
+
   const availableNodes = useMemo(() => {
     const config = combinationLabRuntime.config
     if (!config) {
-      if (showCombination) console.warn('[CombinationLab] config is null in Phase3+ — initCombinationLab not called?')
       return [] as CombinationLabNode[]
     }
 
-    const filtered = config.nodes.filter((node) => {
+    return config.nodes.filter((node) => {
       if (node.type === 'evidence' || node.type === 'derived_evidence') {
-        const unlocked = Boolean(evidenceStates[node.id]?.unlocked)
-        if (!unlocked) console.log(`[CombinationLab] node ${node.id} locked (evidenceStates key exists: ${node.id in evidenceStates})`)
-        return unlocked
+        return Boolean(evidenceStates[node.id]?.unlocked)
       }
-      const discovered = combinationLabRuntime.discoveredNodeIds.includes(node.id)
-      if (!discovered) console.log(`[CombinationLab] node ${node.id} not discovered`)
-      return discovered
+      return combinationLabRuntime.discoveredNodeIds.includes(node.id)
     })
-    console.log(`[CombinationLab] availableNodes: ${filtered.length}/${config.nodes.length}`, filtered.map((n) => n.id))
-    return filtered
   }, [combinationLabRuntime.config, combinationLabRuntime.discoveredNodeIds, evidenceStates])
 
   const comboNodeA = comboSlots[0] ? availableNodes.find((node) => node.id === comboSlots[0]) ?? null : null
