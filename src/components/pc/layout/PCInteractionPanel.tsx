@@ -47,9 +47,10 @@ export interface PcInteractionPayload {
   subtitle?: string
   body: string
   tone?: InteractionTone
-  variant?: 'default' | 'feature'
+  variant?: 'default' | 'feature' | 'evidence'
   tags?: string[]
   actions?: PcInteractionAction[]
+  evidenceId?: string
 }
 
 const COPY = {
@@ -612,6 +613,10 @@ export default function PCInteractionPanel() {
 
         <div className="pc-interaction-card__body">{payload.body}</div>
 
+        {payload.variant === 'evidence' && payload.evidenceId ? (
+          <EvidenceDetailSection evidenceId={payload.evidenceId} />
+        ) : null}
+
         {payload.actions && payload.actions.length > 0 ? (
           <div className="pc-interaction-card__actions">
             {payload.actions.map((action) => (
@@ -631,5 +636,71 @@ export default function PCInteractionPanel() {
       </div>
     </div>,
     document.body,
+  )
+}
+
+function EvidenceDetailSection({ evidenceId }: { evidenceId: string }) {
+  const caseData = useStore((s) => s.caseData)
+  const evidenceStates = useStore((s) => s.evidenceStates)
+
+  if (!caseData) return null
+  const evidence = caseData.evidence.find((e) => e.id === evidenceId)
+  if (!evidence) return null
+
+  const state = evidenceStates[evidence.id]
+  const meta = evidence.meta
+  const disputes = caseData.disputes.filter((d) => evidence.proves.includes(d.id))
+
+  return (
+    <div className="pc-ev-detail">
+      {/* Meta row */}
+      <div className="pc-ev-detail__meta">
+        {meta ? (
+          <>
+            <span className="pc-ev-detail__tag is-trust">{meta.trustLabel ?? (evidence.reliability === 'hard' ? '하드' : '소프트')}</span>
+            <span className="pc-ev-detail__tag is-source">{meta.sourceLabel ?? '출처 불명'}</span>
+            <span className="pc-ev-detail__tag is-legal">{meta.legalLabel ?? '적법'}</span>
+          </>
+        ) : (
+          <>
+            <span className="pc-ev-detail__tag is-trust">{evidence.reliability === 'hard' ? '하드 증거' : '소프트 증거'}</span>
+            <span className="pc-ev-detail__tag is-source">{evidence.provenance === 'institutional' ? '기관' : '개인'}</span>
+          </>
+        )}
+        {state?.presented ? <span className="pc-ev-detail__tag is-done">제시됨</span> : null}
+      </div>
+
+      {/* Related disputes */}
+      {disputes.length > 0 ? (
+        <div className="pc-ev-detail__disputes">
+          {disputes.map((d) => (
+            <span className="pc-ev-detail__dispute" key={d.id}>{d.name}</span>
+          ))}
+        </div>
+      ) : null}
+
+      {/* Investigation stages */}
+      {evidence.investigationStages && evidence.investigationStages.length > 0 ? (
+        <div className="pc-ev-detail__stages">
+          <span className="pc-ev-detail__stages-label">조사 단계</span>
+          {evidence.investigationStages.map((stage, i) => {
+            const revealed = evidence.investigationResults[stage.revealKey]
+            return (
+              <div className={`pc-ev-detail__stage ${revealed ? 'is-open' : 'is-locked'}`} key={i}>
+                <span className="pc-ev-detail__stage-num">{stage.stage}</span>
+                <div className="pc-ev-detail__stage-body">
+                  <span className="pc-ev-detail__stage-q">{stage.question.text}</span>
+                  {revealed ? (
+                    <span className="pc-ev-detail__stage-a">{revealed}</span>
+                  ) : (
+                    <span className="pc-ev-detail__stage-lock">추가 조사 필요</span>
+                  )}
+                </div>
+              </div>
+            )
+          })}
+        </div>
+      ) : null}
+    </div>
   )
 }

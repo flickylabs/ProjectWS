@@ -93,17 +93,9 @@ export default function PCLeftPanel() {
       title: evidence.surfaceName ?? evidence.name,
       subtitle: TYPE_LABELS[evidence.type] ?? '증거 파일',
       tone: 'gold',
-      body: [
-        evidence.surfaceDescription ?? evidence.description,
-        '',
-        focusDisputeId
-          ? `관련 쟁점: ${caseData?.disputes.find((dispute) => dispute.id === focusDisputeId)?.name ?? '현재 선택된 쟁점'}`
-          : '관련 쟁점이 없습니다.',
-      ].join('\n'),
-      tags: [
-        evidence.reliability === 'hard' ? '하드 증거' : '소프트 증거',
-        evidenceStates[evidence.id]?.presented ? '제시됨' : '미제시',
-      ],
+      variant: 'evidence',
+      evidenceId: evidence.id,
+      body: evidence.surfaceDescription ?? evidence.description,
       actions,
     })
   }, [caseData, currentPhase, evidenceStates, lastFocusedDisputeId])
