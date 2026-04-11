@@ -616,17 +616,16 @@ async function handleQuestion(action: Extract<PlayerAction, { type: 'question' }
     state.trackMetric('togglesUsed')
   }
 
-  // 비LLM 모드: 고정 템플릿으로 재판관 질문 먼저 추가
-  // LLM 모드: llmDialogueResolver 내부에서 재판관 질문 + NPC 응답 동시 생성
-  //           (LLM 실패 시에도 폴백 질문이 자동 생성됨)
-  if (!useLLMMode) {
-    state.addDialogue({
-      speaker: 'judge',
-      text: buildQuestionText(action.questionType, action.target, action.disputeId),
-      relatedDisputes: [action.disputeId],
-      turn: state.turnCount,
-    })
-  }
+  // 스크립트 우선 모드: 항상 고정 템플릿으로 재판관 질문 추가
+  // NPC 응답은 ScriptedText 우선 → LLM 폴백 (llmDialogueResolver 내부에서 처리)
+  state.addDialogue({
+    speaker: 'judge',
+    text: buildQuestionText(action.questionType, action.target, action.disputeId),
+    relatedDisputes: [action.disputeId],
+    turn: state.turnCount,
+  })
+  // LLM 폴백 시 재판관 질문 중복 방지
+  setSkipNextJudgeQuestion(true)
 
   // 심문 이력 기록
   state.trackInterrogation(action.target, action.disputeId, action.questionType, state.turnCount)
