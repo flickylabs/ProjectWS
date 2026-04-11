@@ -213,7 +213,7 @@ function buildPresentActions(
       disputeId: focusDisputeId,
       disabled: !canPresent || alreadyPresented,
       disabledReason: !canPresent
-        ? '증거 제시는 Phase 4부터 가능합니다.'
+        ? '증거 제시는 증거 정리 단계부터 가능합니다.'
         : '이미 이 대상에게 제시한 증거입니다.',
     }
   })

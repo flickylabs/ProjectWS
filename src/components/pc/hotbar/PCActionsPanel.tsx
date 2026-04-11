@@ -474,7 +474,7 @@ export default function PCActionsPanel({
               description="선택한 쟁점을 강제로 끝까지 몰아붙인다."
               iconId="i-sword"
               label="즉답 요구"
-              meta={phaseAtLeast(currentPhase, GamePhase.Phase4_Evidence) ? '쟁점 선택 필요' : 'Phase 4 이후 해금'}
+              meta={phaseAtLeast(currentPhase, GamePhase.Phase4_Evidence) ? '쟁점 선택 필요' : '증거 정리 단계 이후 해금'}
               onClick={() => setExpandedSpecialId((current) => current === 'immediate' ? null : 'immediate')}
             />
 
@@ -492,7 +492,7 @@ export default function PCActionsPanel({
               description="비공개 보호를 약속해 방어 반응을 낮춘다."
               iconId="i-lock"
               label="비공개 보호"
-              meta={phaseAtLeast(currentPhase, GamePhase.Phase5_ReExamination) ? '신뢰/공포 수치 조정' : 'Phase 5 이후 해금'}
+              meta={phaseAtLeast(currentPhase, GamePhase.Phase5_ReExamination) ? '신뢰/공포 수치 조정' : '최종 심문 단계 이후 해금'}
               onClick={() => handleTrustAction('confidential_protection')}
             />
 
