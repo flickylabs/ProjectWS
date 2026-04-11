@@ -723,7 +723,7 @@ function EvidenceDetailSection({ evidenceId }: { evidenceId: string }) {
           }}
           type="button"
         >
-          <PCSvgIcon id="i-man" size={18} />
+          <PCSvgIcon id="i-man" size={24} />
           <span>{presentedToA ? `${nameA} 제시 완료` : `${nameA}에게 제시`}</span>
         </button>
         <button
@@ -736,7 +736,7 @@ function EvidenceDetailSection({ evidenceId }: { evidenceId: string }) {
           }}
           type="button"
         >
-          <PCSvgIcon id="i-woman" size={18} />
+          <PCSvgIcon id="i-woman" size={24} />
           <span>{presentedToB ? `${nameB} 제시 완료` : `${nameB}에게 제시`}</span>
         </button>
       </div>
