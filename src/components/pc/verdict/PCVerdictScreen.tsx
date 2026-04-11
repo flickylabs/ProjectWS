@@ -10,10 +10,6 @@ import { recordGameComplete } from '../../../hooks/useLocalStorage'
 import { useGameStore, useStore } from '../../../store/useGameStore'
 import { GamePhase } from '../../../types'
 import { recordHistory } from '../../layout/HistoryPanel'
-import EvidenceLegality from '../../verdict/EvidenceLegality'
-import FactChecklist from '../../verdict/FactChecklist'
-import ResponsibilitySlider from '../../verdict/ResponsibilitySlider'
-import SolutionPicker from '../../verdict/SolutionPicker'
 import { CAMPAIGN_STAGE_MAP, getCampaignStageKey } from '../../verdict/VerdictScreen'
 
 type VerdictStep = 'fact' | 'responsibility' | 'solution' | 'legality' | 'confirm'
@@ -264,37 +260,128 @@ export default function PCVerdictScreen() {
           </div>
 
           <div className="pc-verdict-stage">
-            {currentStep === 'fact' ? (
-              <FactChecklist
-                currentIdx={current.subIdx}
-                onChangeIdx={(nextIndex) => {
-                  const nextIdx = flatSteps.findIndex((step) => step.step === 'fact' && step.subIdx === nextIndex)
-                  if (nextIdx >= 0) setGlobalIdx(nextIdx)
-                }}
-              />
-            ) : null}
+            {currentStep === 'fact' ? (() => {
+              const dispute = disputes[current.subIdx]
+              if (!dispute) return null
+              const currentFinding = verdictInput.factFindings[dispute.id]
+              return (
+                <div className="pc-verdict-fact">
+                  <div className="pc-verdict-fact__header">
+                    <span className="pc-verdict-fact__num">{current.subIdx + 1}/{disputes.length}</span>
+                    <h2 className="pc-verdict-fact__title">{dispute.name}</h2>
+                    <p className="pc-verdict-fact__desc">{dispute.truthDescription}</p>
+                  </div>
+                  <div className="pc-verdict-fact__buttons">
+                    {(['false', 'pending', 'true'] as const).map((value) => {
+                      const labels = { false: '아니다', pending: '모르겠다', true: '그렇다' }
+                      const active = currentFinding === value
+                      return (
+                        <button
+                          className={`pc-verdict-fact__btn is-${value}${active ? ' is-active' : ''}`}
+                          key={value}
+                          onClick={() => {
+                            useGameStore.getState().setFactFinding(dispute.id, value)
+                            if (current.subIdx < disputes.length - 1) {
+                              const nextIdx = flatSteps.findIndex((s) => s.step === 'fact' && s.subIdx === current.subIdx + 1)
+                              if (nextIdx >= 0) setGlobalIdx(nextIdx)
+                            }
+                          }}
+                          type="button"
+                        >
+                          {labels[value]}
+                        </button>
+                      )
+                    })}
+                  </div>
+                  <div className="pc-verdict-fact__dots">
+                    {disputes.map((d, i) => {
+                      const f = verdictInput.factFindings[d.id]
+                      return (
+                        <button
+                          className={`pc-verdict-fact__dot ${f === 'true' ? 'is-true' : f === 'false' ? 'is-false' : f === 'pending' ? 'is-pending' : ''} ${i === current.subIdx ? 'is-current' : ''}`}
+                          key={d.id}
+                          onClick={() => {
+                            const idx = flatSteps.findIndex((s) => s.step === 'fact' && s.subIdx === i)
+                            if (idx >= 0) setGlobalIdx(idx)
+                          }}
+                          type="button"
+                        >
+                          {i + 1}
+                        </button>
+                      )
+                    })}
+                  </div>
+                </div>
+              )
+            })() : null}
 
-            {currentStep === 'responsibility' ? (
-              <ResponsibilitySlider
-                currentIdx={current.subIdx}
-                onChangeIdx={(nextIndex) => {
-                  const nextIdx = flatSteps.findIndex((step) => step.step === 'responsibility' && step.subIdx === nextIndex)
-                  if (nextIdx >= 0) setGlobalIdx(nextIdx)
-                }}
-              />
-            ) : null}
+            {currentStep === 'responsibility' ? (() => {
+              const dispute = activeDisputes[current.subIdx]
+              if (!dispute) return null
+              const resp = verdictInput.responsibility[dispute.id] ?? { a: 50, b: 50 }
+              return (
+                <div className="pc-verdict-resp">
+                  <h2 className="pc-verdict-resp__title">{dispute.name}</h2>
+                  <div className="pc-verdict-resp__slider-area">
+                    <span className="pc-verdict-resp__label is-a">{caseData.duo.partyA.name}</span>
+                    <div className="pc-verdict-resp__track">
+                      <input
+                        className="pc-verdict-resp__input"
+                        max={100}
+                        min={0}
+                        onChange={(e) => {
+                          const a = Number(e.target.value)
+                          useGameStore.getState().setResponsibility(dispute.id, a, 100 - a)
+                        }}
+                        type="range"
+                        value={resp.a}
+                      />
+                      <div className="pc-verdict-resp__fill" style={{ width: `${resp.a}%` }} />
+                    </div>
+                    <span className="pc-verdict-resp__label is-b">{caseData.duo.partyB.name}</span>
+                  </div>
+                  <div className="pc-verdict-resp__percent">
+                    <span className="is-a">{resp.a}%</span>
+                    <span className="is-b">{resp.b}%</span>
+                  </div>
+                </div>
+              )
+            })() : null}
 
-            {currentStep === 'solution' ? (
-              <SolutionPicker
-                currentIdx={current.subIdx}
-                onChangeIdx={(nextIndex) => {
-                  const nextIdx = flatSteps.findIndex((step) => step.step === 'solution' && step.subIdx === nextIndex)
-                  if (nextIdx >= 0) setGlobalIdx(nextIdx)
-                }}
-              />
-            ) : null}
+            {currentStep === 'solution' ? (() => {
+              const catKey = solutionCategories[current.subIdx]
+              const options = caseData.solutions[catKey] ?? []
+              return (
+                <div className="pc-verdict-solution">
+                  <h2 className="pc-verdict-solution__title">해결책 선택</h2>
+                  <div className="pc-verdict-solution__grid">
+                    {options.map((opt, i) => {
+                      const selected = verdictInput.selectedSolutions.includes(opt)
+                      return (
+                        <button
+                          className={`pc-verdict-solution__card${selected ? ' is-selected' : ''}`}
+                          key={i}
+                          onClick={() => {
+                        const store = useGameStore.getState()
+                        if (selected) { store.removeSolution(opt) } else { store.selectSolution(opt) }
+                      }}
+                          type="button"
+                        >
+                          {opt}
+                        </button>
+                      )
+                    })}
+                  </div>
+                </div>
+              )
+            })() : null}
 
-            {currentStep === 'legality' ? <EvidenceLegality /> : null}
+            {currentStep === 'legality' ? (
+              <div className="pc-verdict-legality">
+                <h2>증거 적법성 검토</h2>
+                <p>제시된 증거 중 적법성이 의심되는 항목이 있습니다.</p>
+              </div>
+            ) : null}
 
             {currentStep === 'confirm' ? (
               <div className="pc-verdict-confirm">
