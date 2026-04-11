@@ -256,7 +256,7 @@
   "disputes": [
     {
       "id": "d-1",
-      "name": "오피스텔 출입과 새벽 통화는 딴살림 흔적인가",
+      "name": "오피스텔 출입과 새벽 통화",
       "truth": true,
       "truthDescription": "오피스텔 출입과 새벽 통화는 외도가 아니라 친형과 조카를 숨겨 돌본 가족 돌봄의 흔적이었다.",
       "quadrant": "b_only",
@@ -279,7 +279,7 @@
     },
     {
       "id": "d-2",
-      "name": "공동 적금 3,000만 원은 어디로 갔고, 배우자 동의 없이 움직인 것인가",
+      "name": "공동적금 3,000만원의 행방",
       "truth": true,
       "truthDescription": "이준호는 공동 적금 3,000만 원을 형 계좌로 보냈고, 가족 구제 의도와 별개로 공동 자금을 독단 처분했다.",
       "quadrant": "b_only",
@@ -300,7 +300,7 @@
     },
     {
       "id": "h-d3",
-      "name": "아내의 2,000만 원 송금은 자기방어인가, 이혼 대비 은닉인가",
+      "name": "2,000만원 이체의 목적",
       "truth": true,
       "truthDescription": "박지연의 2,000만 원 송금은 자기방어 심리와 이혼 대비 은닉 시도가 겹친 선택이었다.",
       "quadrant": "a_only",
@@ -328,7 +328,7 @@
     },
     {
       "id": "h-d4",
-      "name": "누가 먼저 신뢰를 깼는가",
+      "name": "신뢰 위반의 책임",
       "truth": true,
       "truthDescription": "숨김은 이준호가 먼저 시작했고 실제 비밀 송금은 박지연이 먼저 실행했다.",
       "quadrant": "shared_misconception",
@@ -2439,7 +2439,7 @@
     "hiddenDisputes": [
       {
         "id": "h-d3",
-        "name": "아내의 2,000만 원 송금은 자기방어인가, 이혼 대비 은닉인가",
+        "name": "2,000만원 이체의 목적",
         "unlockPlan": {
           "runtimeRule": "e-6 제시 시 해금",
           "authoredRule": "e-6이 Excerpt 이상이 되거나 A에게 동기탐색 2회가 누적되면 생성"
@@ -2447,7 +2447,7 @@
       },
       {
         "id": "h-d4",
-        "name": "누가 먼저 신뢰를 깼는가",
+        "name": "신뢰 위반의 책임",
         "unlockPlan": {
           "runtimeRule": "h-d3 해금 + e-7 제시 시 해금",
           "authoredRule": "h-d3 생성 후 e-7이 Original 이상이 되거나 e-5+e-6으로 Reframe Lead가 생기면 생성"

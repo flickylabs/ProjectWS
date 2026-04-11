@@ -76,7 +76,8 @@ export default function PCBottomDock() {
   }
 
   const selectDisputeForQuestion = (disputeId: string) => {
-    setQuestionChoice((prev) => prev ? { ...prev, step: 'message', disputeId } : null)
+    if (!questionChoice) return
+    executeQuestion(questionChoice.type, disputeId)
   }
 
   const executeQuestion = (questionType: QuestionType, disputeId: string) => {
@@ -322,42 +323,19 @@ export default function PCBottomDock() {
               </button>
             </div>
 
-            {questionChoice.step === 'dispute' ? (
-              <div className="pc-question-choice__disputes">
-                <p className="pc-question-choice__hint">쟁점을 선택하세요</p>
-                {caseData?.disputes.map((d) => (
-                  <button
-                    className="pc-question-choice__dispute-btn"
-                    key={d.id}
-                    onClick={() => selectDisputeForQuestion(d.id)}
-                    type="button"
-                  >
-                    <span className="pc-question-choice__dispute-name">{d.name}</span>
-                  </button>
-                ))}
-              </div>
-            ) : (
-              <div className="pc-question-choice__messages">
-                <p className="pc-question-choice__hint">질문을 선택하세요</p>
-                {questionChoiceMessages.map((msg, i) => (
-                  <button
-                    className="pc-question-choice__msg-btn"
-                    key={i}
-                    onClick={() => questionChoice.disputeId && executeQuestion(questionChoice.type, questionChoice.disputeId)}
-                    type="button"
-                  >
-                    <span className="pc-question-choice__msg-text">{msg}</span>
-                  </button>
-                ))}
+            <div className="pc-question-choice__disputes">
+              <p className="pc-question-choice__hint">쟁점을 선택하세요</p>
+              {caseData?.disputes.map((d) => (
                 <button
-                  className="pc-question-choice__back"
-                  onClick={() => setQuestionChoice((prev) => prev ? { ...prev, step: 'dispute', disputeId: undefined } : null)}
+                  className="pc-question-choice__dispute-btn"
+                  key={d.id}
+                  onClick={() => selectDisputeForQuestion(d.id)}
                   type="button"
                 >
-                  ← 쟁점 다시 선택
+                  <span className="pc-question-choice__dispute-name">{d.name}</span>
                 </button>
-              </div>
-            )}
+              ))}
+            </div>
           </div>
         </div>
       ) : null}
