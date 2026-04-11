@@ -408,20 +408,11 @@ export default function PCActionsPanel({
       {view === 'question' && quickQuestionType ? (
         <div className="pc-control-quick">
           <div>
-            <div className="pc-control-quick-label">핫바 빠른 실행</div>
-            <div className="pc-control-quick-title">{QUICK_QUESTION_LABELS[quickQuestionType]}</div>
+            <div className="pc-control-quick-label">{QUICK_QUESTION_LABELS[quickQuestionType]}</div>
             <div className="pc-control-quick-text">
-              {focusedDisputeName ? `현재 선택된 쟁점 "${focusedDisputeName}"에 바로 적용할 수 있습니다.` : '먼저 쟁점을 선택해 주세요.'}
+              핫바 슬롯을 클릭하면 쟁점과 질문을 선택할 수 있습니다.
             </div>
           </div>
-          <button
-            className={`pc-control-quick-btn${quickQuestionDispute?.enabled ? '' : ' disabled'}`}
-            disabled={!focusedDisputeId || !quickQuestionDispute?.enabled}
-            onClick={() => focusedDisputeId && handleQuestion(quickQuestionType, focusedDisputeId)}
-            type="button"
-          >
-            {quickQuestionDispute?.enabled ? '현재 쟁점에 바로 실행' : quickQuestionDispute?.reason ?? '실행 불가'}
-          </button>
         </div>
       ) : null}
 

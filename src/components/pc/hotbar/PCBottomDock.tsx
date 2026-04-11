@@ -1,7 +1,8 @@
-import { useEffect, useMemo, useState } from 'react'
+import { useEffect, useMemo, useState, useCallback } from 'react'
 import { GamePhase, type EmotionalPhase, type PartyId, type QuestionType } from '../../../types'
 import { useActionDispatch } from '../../../hooks/useActionDispatch'
 import { useGameStore, useStore } from '../../../store/useGameStore'
+import { generateJudgeQuestion } from '../../../engine/judgeQuestionEngine'
 import { openPcInteractionPanel } from '../layout/PCInteractionPanel'
 import PCSvgIcon from '../icons/PCSvgIcon'
 import { getPcFaceSymbolId } from '../icons/pcIconUtils'
@@ -43,6 +44,7 @@ export default function PCBottomDock() {
   const [activePage, setActivePage] = useState<HotbarPage>('interrogation')
   const [freeQuestionOpen, setFreeQuestionOpen] = useState(false)
   const [freeQuestionText, setFreeQuestionText] = useState('')
+  const [questionChoice, setQuestionChoice] = useState<{ type: QuestionType; step: 'dispute' | 'message'; disputeId?: string } | null>(null)
 
   const activeDisputeId = lastFocusedDisputeId ?? caseData?.disputes[0]?.id ?? ''
   const activeDisputeName =
@@ -68,18 +70,37 @@ export default function PCBottomDock() {
     }
   }, [activePage, canUseEvidence, canUseSpecial])
 
-  const runQuestion = (questionType: QuestionType) => {
-    if (!caseData || !activeDisputeId) {
-      return
-    }
+  const openQuestionChoice = (questionType: QuestionType) => {
+    if (!caseData) return
+    setQuestionChoice({ type: questionType, step: 'dispute' })
+  }
 
+  const selectDisputeForQuestion = (disputeId: string) => {
+    setQuestionChoice((prev) => prev ? { ...prev, step: 'message', disputeId } : null)
+  }
+
+  const executeQuestion = (questionType: QuestionType, disputeId: string) => {
     dispatch({
       type: 'question',
       questionType,
       target: pcTargetParty,
-      disputeId: activeDisputeId,
+      disputeId,
     })
+    setQuestionChoice(null)
   }
+
+  const questionChoiceMessages = useMemo(() => {
+    if (!questionChoice?.disputeId || !caseData) return []
+    const { type, disputeId } = questionChoice
+    const agent = pcTargetParty === 'a' ? agentA : agentB
+    const lieEntry = agent.lieStateMap[disputeId]
+    const lieState = lieEntry?.currentState ?? 'S0'
+    const depth = questionMeters[pcTargetParty].contradictionTokens
+
+    return [0, 1, 2].map((offset) => {
+      return generateJudgeQuestion(type, caseData, pcTargetParty, disputeId, depth + offset, lieState)
+    }).filter((msg, i, arr) => arr.indexOf(msg) === i).slice(0, 3)
+  }, [questionChoice?.disputeId, questionChoice?.type, caseData, pcTargetParty, agentA, agentB, questionMeters])
 
   const openEvidenceSelection = () => {
     if (!caseData || !activeDisputeId) {
@@ -192,21 +213,21 @@ export default function PCBottomDock() {
           iconId: 'i-gavel',
           label: '\uC0AC\uC2E4 \uCD94\uAD81',
           effect: contradiction >= 2 ? 'strong' : 'normal',
-          onClick: () => runQuestion('fact_pursuit'),
+          onClick: () => openQuestionChoice('fact_pursuit'),
         },
         {
           key: 2,
           iconId: 'i-eye',
           label: '\uB3D9\uAE30 \uD0D0\uC0C9',
           effect: 'normal',
-          onClick: () => runQuestion('motive_search'),
+          onClick: () => openQuestionChoice('motive_search'),
         },
         {
           key: 3,
           iconId: 'i-heart',
           label: '\uACF5\uAC10 \uC811\uADFC',
           effect: 'weak',
-          onClick: () => runQuestion('empathy_approach'),
+          onClick: () => openQuestionChoice('empathy_approach'),
         },
         { key: 4, iconId: 'i-chat', label: '\uC790\uC720 \uC9C8\uBB38', onClick: () => setFreeQuestionOpen(true) },
         { key: 5, iconId: 'i-plus', label: '\uBE48 \uC2AC\uB86F', locked: true },
@@ -286,6 +307,61 @@ export default function PCBottomDock() {
 
   return (
     <div className="bottom pc-play-dock">
+      {/* Question choice panel */}
+      {questionChoice ? (
+        <div className="pc-question-choice">
+          <div className="pc-question-choice__backdrop" onClick={() => setQuestionChoice(null)} />
+          <div className="pc-question-choice__panel">
+            <div className="pc-question-choice__header">
+              <PCSvgIcon id={questionChoice.type === 'fact_pursuit' ? 'i-gavel' : questionChoice.type === 'motive_search' ? 'i-eye' : 'i-heart'} size={18} />
+              <span className="pc-question-choice__title">
+                {questionChoice.type === 'fact_pursuit' ? '사실 추궁' : questionChoice.type === 'motive_search' ? '동기 탐색' : '공감 접근'}
+              </span>
+              <button className="pc-question-choice__close" onClick={() => setQuestionChoice(null)} type="button">
+                <PCSvgIcon id="i-plus" size={14} />
+              </button>
+            </div>
+
+            {questionChoice.step === 'dispute' ? (
+              <div className="pc-question-choice__disputes">
+                <p className="pc-question-choice__hint">쟁점을 선택하세요</p>
+                {caseData?.disputes.map((d) => (
+                  <button
+                    className="pc-question-choice__dispute-btn"
+                    key={d.id}
+                    onClick={() => selectDisputeForQuestion(d.id)}
+                    type="button"
+                  >
+                    <span className="pc-question-choice__dispute-name">{d.name}</span>
+                  </button>
+                ))}
+              </div>
+            ) : (
+              <div className="pc-question-choice__messages">
+                <p className="pc-question-choice__hint">질문을 선택하세요</p>
+                {questionChoiceMessages.map((msg, i) => (
+                  <button
+                    className="pc-question-choice__msg-btn"
+                    key={i}
+                    onClick={() => questionChoice.disputeId && executeQuestion(questionChoice.type, questionChoice.disputeId)}
+                    type="button"
+                  >
+                    <span className="pc-question-choice__msg-text">{msg}</span>
+                  </button>
+                ))}
+                <button
+                  className="pc-question-choice__back"
+                  onClick={() => setQuestionChoice((prev) => prev ? { ...prev, step: 'dispute', disputeId: undefined } : null)}
+                  type="button"
+                >
+                  ← 쟁점 다시 선택
+                </button>
+              </div>
+            )}
+          </div>
+        </div>
+      ) : null}
+
       {freeQuestionOpen ? (
         <div className="pc-dock-free-question">
           <div className="pc-dock-free-question__shell">
