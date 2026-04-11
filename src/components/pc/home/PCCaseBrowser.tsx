@@ -193,6 +193,7 @@ export default function PCCaseBrowser({
                       type="button"
                     >
                       <span className="pc-stage-node-v2__number">{node.stageNumber}</span>
+                      <span className="pc-stage-node-v2__title">{truncate(node.caseData.meta?.title ?? node.caseData.disputes[0]?.name ?? '', 18)}</span>
                       <span className="pc-stage-node-v2__state">{node.score > 0 ? `${node.score}점` : <PCSvgIcon id="i-lock" size={14} />}</span>
                     </button>
                   </div>
@@ -220,6 +221,8 @@ export default function PCCaseBrowser({
 }
 
 function buildStageTitle(caseData: CaseData) {
+  const title = caseData.meta?.title
+  if (title) return truncate(compactText(title), 42)
   const dispute = compactText(caseData.disputes[0]?.name ?? '')
   if (dispute) return truncate(dispute, 42)
   return truncate(compactText(caseData.meta?.emotionalBait ?? caseData.context.description), 42)

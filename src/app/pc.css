@@ -4232,6 +4232,20 @@ body.pc-mode .pc-stage-node-v2__number {
   font-weight: 800;
 }
 
+body.pc-mode .pc-stage-node-v2__title {
+  font-size: 11px;
+  font-weight: 600;
+  color: #c0bdb6;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 140px;
+}
+
+body.pc-mode .pc-stage-node-v2.is-locked .pc-stage-node-v2__title {
+  color: #5a5e70;
+}
+
 body.pc-mode .pc-stage-node-v2__state {
   display: inline-flex;
   align-items: center;
