@@ -169,7 +169,8 @@ export default function PCCourtLayout({ actionPanel, onDialogueTap, isDialoguePh
 
   return (
     <>
-      <div className="app pc-play-app">
+      {/* eslint-disable-next-line jsx-a11y/no-static-element-interactions */}
+      <div className="app pc-play-app" onDragOver={(e) => e.preventDefault()}>
         <header className="pc-play-header">
           <button className="pc-play-back" onClick={resetPcSessionToHome} type="button">
             <span className="pc-play-back__arrow" aria-hidden="true">&#8592;</span>
