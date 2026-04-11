@@ -101,7 +101,7 @@ function getActionPanel(phase: GamePhase) {
     case GamePhase.Phase1_InitialStatement: {
       const script = caseData ? loadPhase1Script(caseData.caseId) : null
       const fallback = script ?? (caseData ? buildGenericPhase1(caseData) : phase1Dialogues)
-      return <AutoDialoguePhase dialogues={fallback} nextLabel="반박 단계로" nextPhase={GamePhase.Phase2_Rebuttal} phaseKey="phase1" />
+      return <AutoDialoguePhase dialogues={fallback} nextLabel="심문 시작" nextPhase={GamePhase.Phase3_Interrogation} phaseKey="phase1" />
     }
     case GamePhase.Phase2_Rebuttal: {
       const script = caseData ? loadPhase2Script(caseData.caseId) : null

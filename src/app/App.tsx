@@ -411,8 +411,8 @@ function getActionPanel(phase: GamePhase) {
       return (
         <AutoDialoguePhase
           dialogues={fallback}
-          nextPhase={GamePhase.Phase2_Rebuttal}
-          nextLabel="반박 단계로"
+          nextPhase={GamePhase.Phase3_Interrogation}
+          nextLabel="심문 시작"
           phaseKey="phase1"
         />
       )

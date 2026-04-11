@@ -17,7 +17,6 @@ const PHASE_LABELS: Record<GamePhase, string> = {
 const DISPLAY_ORDER: GamePhase[] = [
   GamePhase.Phase0_CaseIntro,
   GamePhase.Phase1_InitialStatement,
-  GamePhase.Phase2_Rebuttal,
   GamePhase.Phase3_Interrogation,
   GamePhase.Phase6_Mediation,
   GamePhase.Phase7_Verdict,
