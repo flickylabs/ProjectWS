@@ -156,7 +156,7 @@
   "disputes": [
     {
       "id": "d-1",
-      "name": "말년의 어머니는 유서를 제대로 판단할 수 있었는가",
+      "name": "말년 어머니의 판단 능력",
       "truth": true,
       "truthDescription": "B는 말년의 어머니 곁을 자주 드나들며 유서 문제에 실제로 개입했다.",
       "quadrant": "b_only",
@@ -179,7 +179,7 @@
     },
     {
       "id": "d-2",
-      "name": "60대 40 유서는 정말 어머니의 마지막 뜻이었는가",
+      "name": "60대 40 유서의 진위",
       "truth": true,
       "truthDescription": "B는 60대 40 유서를 직접 만들었지만 자기 몫을 늘린 것이 아니라 줄였다.",
       "quadrant": "b_only",
@@ -202,7 +202,7 @@
     },
     {
       "id": "d-5",
-      "name": "누가 정말 어머니를 이용했는가",
+      "name": "어머니 이용 의혹",
       "truth": true,
       "truthDescription": "A는 진실을 모르고 B를 미워했고, B는 형을 지키려다 어머니 뜻까지 손댔다.",
       "quadrant": "shared_misconception",
@@ -225,7 +225,7 @@
     },
     {
       "id": "h-d3",
-      "name": "왜 원래 유서는 90대 10이었는가, 그리고 그 비율은 무엇에 대한 보답이었는가",
+      "name": "90대 10 유서의 배경",
       "truth": true,
       "truthDescription": "어머니가 B에게 90을 주려 했던 이유는 20년 생활비와 A의 사업을 살린 돈 때문이었다.",
       "quadrant": "b_only",
@@ -254,7 +254,7 @@
     },
     {
       "id": "h-d4",
-      "name": "60대 40 조작이 막으려 한 더 큰 비밀은 무엇인가",
+      "name": "유서 조작이 숨긴 비밀",
       "truth": true,
       "truthDescription": "B는 A의 출생 비밀이 터지는 걸 막으려고 90을 60으로 낮췄다.",
       "quadrant": "b_only",

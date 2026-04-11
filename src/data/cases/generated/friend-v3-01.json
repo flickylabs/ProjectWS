@@ -156,7 +156,7 @@
   "disputes": [
     {
       "id": "d-1",
-      "name": "B의 연락은 예비신랑 집착인가, 뭔가를 전하려는 경고인가",
+      "name": "예비신랑 반복 연락의 목적",
       "truth": true,
       "truthDescription": "B의 반복 연락은 집착처럼 보였지만 실제 목적은 경고였다.",
       "quadrant": "b_only",
@@ -178,7 +178,7 @@
     },
     {
       "id": "d-4",
-      "name": "예전 손절 사건도 정말 B의 변심 때문이었는가",
+      "name": "과거 손절의 진짜 이유",
       "truth": true,
       "truthDescription": "과거 손절의 진짜 시작은 B의 변심이 아니라 A 아버지의 사기와 B의 침묵이었다.",
       "quadrant": "b_only",
@@ -200,7 +200,7 @@
     },
     {
       "id": "d-5",
-      "name": "이번 사건에서 B의 명예를 먼저 무너뜨린 건 누구인가",
+      "name": "명예 훼손의 선후",
       "truth": true,
       "truthDescription": "A는 직접 확인 없이 단톡방에서 먼저 B를 문제 인물로 만들었다.",
       "quadrant": "a_only",
@@ -221,7 +221,7 @@
     },
     {
       "id": "h-d2",
-      "name": "예비신랑이 먼저 B에게 선을 넘었는가",
+      "name": "예비신랑의 선 넘기",
       "truth": true,
       "truthDescription": "먼저 선을 넘은 쪽은 예비신랑이었다.",
       "quadrant": "b_only",
@@ -249,7 +249,7 @@
     },
     {
       "id": "h-d3",
-      "name": "A 아버지의 돈 접근은 과거와 현재가 같은 패턴인가",
+      "name": "아버지의 돈 접근 패턴",
       "truth": true,
       "truthDescription": "A 아버지는 과거에도 B에게, 현재는 예비신랑에게 비슷한 방식으로 돈을 요구했다.",
       "quadrant": "third_party",
