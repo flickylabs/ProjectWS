@@ -573,7 +573,7 @@ async function handleCallWitness(action: Extract<PlayerAction, { type: 'call_wit
 async function handleEvidenceInvestigate(action: Extract<PlayerAction, { type: 'evidence_investigate' }>) {
   const state = useGameStore.getState()
   const result = state.investigateEvidence(action.evidenceId, action.subAction)
-  if (result) state.addDialogue({ speaker: 'system', text: `🔍 ${result}`, relatedDisputes: [], turn: state.turnCount })
+  if (result) state.addDialogue({ speaker: 'system', text: `${result}`, relatedDisputes: [], turn: state.turnCount })
 
   // NPC 반응 — 조사 결과에 대해 반응하도록 LLM 호출
   const evDef = state.evidenceDefinitions.find(e => e.id === action.evidenceId)
@@ -609,7 +609,7 @@ async function handleQuestion(action: Extract<PlayerAction, { type: 'question' }
     state.changeTrust(action.target, 'trustTowardJudge', 20)
     state.addDialogue({
       speaker: 'system',
-      text: '🔒 비공개 심문 — 이 답변은 상대에게 공개되지 않는다.',
+      text: '[비공개] 비공개 심문 — 이 답변은 상대에게 공개되지 않는다.',
       relatedDisputes: [], turn: state.turnCount,
     })
     state.trackMetric('confidentialUsed')
@@ -800,14 +800,14 @@ async function handleQuestion(action: Extract<PlayerAction, { type: 'question' }
       if (fatigueAssessment.fatigueLevel === 'warning') {
         state.addDialogue({
           speaker: 'system',
-          text: '⚠ 같은 접근이 반복되고 있습니다. 다른 질문 유형이나 쟁점을 시도해 보세요.',
+          text: '[주의] 같은 접근이 반복되고 있습니다. 다른 질문 유형이나 쟁점을 시도해 보세요.',
           relatedDisputes: [action.disputeId],
           turn: state.turnCount,
         })
       } else if (fatigueAssessment.fatigueLevel === 'stalemate') {
         state.addDialogue({
           speaker: 'system',
-          text: '🚫 교착 상태 — 이 접근으로는 더 이상 진전이 어렵습니다. 다른 각도로 전환하세요.',
+          text: '[교착] 교착 상태 — 이 접근으로는 더 이상 진전이 어렵습니다. 다른 각도로 전환하세요.',
           relatedDisputes: [action.disputeId],
           turn: state.turnCount,
         })
@@ -1057,7 +1057,7 @@ async function handleQuestion(action: Extract<PlayerAction, { type: 'question' }
     if (prevTurns <= 1) {
       useGameStore.getState().addDialogue({
         speaker: 'system',
-        text: '🚪 분리 심문 종료 — 상대방이 복귀한다.',
+        text: '[분리] 분리 심문 종료 — 상대방이 복귀한다.',
         relatedDisputes: [],
         turn: useGameStore.getState().turnCount,
       })
@@ -1097,7 +1097,7 @@ async function handleQuestion(action: Extract<PlayerAction, { type: 'question' }
       if (secretRevealed) {
         interruptMsg = `💥 ${iga(opponentName)} 충격을 받고 끼어든다!`
       } else if (blameShifted) {
-        interruptMsg = `😡 ${iga(opponentName)} 참지 못하고 반박한다!`
+        interruptMsg = `${iga(opponentName)} 참지 못하고 반박한다!`
       } else {
         interruptMsg = `💬 ${iga(opponentName)} 참지 못하고 끼어든다!`
       }
@@ -1389,16 +1389,16 @@ function changeEmotionWithPhaseTracking(party: PartyId, delta: number) {
     let emotionText: string
     switch (newPhase) {
       case 'angry':
-        emotionText = `💢 ${iga(name ?? '')} 폭발 직전이다!`
+        emotionText = `${iga(name ?? '')} 폭발 직전이다!`
         break
       case 'shaken':
-        emotionText = `😰 ${iga(name ?? '')} 흔들리고 있다...`
+        emotionText = `${iga(name ?? '')} 흔들리고 있다...`
         break
       case 'resigned':
         emotionText = `😞 ${iga(name ?? '')} 지쳐 보인다.`
         break
       case 'confident':
-        emotionText = `😤 ${iga(name ?? '')} 자신감을 되찾았다.`
+        emotionText = `${iga(name ?? '')} 자신감을 되찾았다.`
         break
       default:
         emotionText = `🎭 ${name}의 감정 변화: ${prevLabel} → ${newLabel}`
@@ -1501,7 +1501,7 @@ export function actuallyDiscoverEvidence(evidenceId: string) {
   // 3) 시스템: 증거 포착
   state.addDialogue({
     speaker: 'system',
-    text: `🔍 ${name}의 말에서 새로운 증거를 확보했다`,
+    text: `${name}의 말에서 새로운 증거를 확보했다`,
     relatedDisputes: ev.proves,
     turn: state.turnCount,
   })
@@ -1632,7 +1632,7 @@ function showEvasionReadingResult(party: PartyId, disputeId: string) {
 
   state.addDialogue({
     speaker: 'system',
-    text: `🔍 ${name}의 속마음 — ${intensityLabel}`,
+    text: `${name}의 속마음 — ${intensityLabel}`,
     relatedDisputes: [disputeId],
     turn: state.turnCount,
   })
@@ -1863,7 +1863,7 @@ function applyTrustEffect(actionType: string, target: PartyId) {
         s.startSeparation(target, 3)
         playSeparation()
         s.changeTrust(target, 'retaliationWorry', -10)
-        s.addDialogue({ speaker: 'system', text: `🚪 분리 심문 시작 — 3턴간 상대방이 배제된다.`, relatedDisputes: [], turn: s.turnCount })
+        s.addDialogue({ speaker: 'system', text: `[분리] 분리 심문 시작 — 3턴간 상대방이 배제된다.`, relatedDisputes: [], turn: s.turnCount })
       } else {
         s.addDialogue({ speaker: 'system', text: `조사 토큰이 부족합니다.`, relatedDisputes: [], turn: s.turnCount })
       }
