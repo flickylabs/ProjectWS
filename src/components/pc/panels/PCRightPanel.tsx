@@ -67,7 +67,7 @@ export default function PCRightPanel() {
   const availableNodes = useMemo(() => {
     const config = combinationLabRuntime.config
     if (!config) {
-      console.warn('[CombinationLab] config is null — initCombinationLab not called?')
+      if (showCombination) console.warn('[CombinationLab] config is null in Phase3+ — initCombinationLab not called?')
       return [] as CombinationLabNode[]
     }
 

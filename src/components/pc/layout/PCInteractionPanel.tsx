@@ -4,6 +4,7 @@ import { handleContradictionPursue, useActionDispatch } from '../../../hooks/use
 import { useGameStore, useStore } from '../../../store/useGameStore'
 import type { PartyId, QuestionType } from '../../../types'
 import { showToast } from '../../common/Toast'
+import PCSvgIcon from '../icons/PCSvgIcon'
 
 export const PC_OPEN_INTERACTION_PANEL_EVENT = 'pc:open-interaction-panel'
 
@@ -640,8 +641,11 @@ export default function PCInteractionPanel() {
 }
 
 function EvidenceDetailSection({ evidenceId }: { evidenceId: string }) {
+  const dispatch = useActionDispatch()
   const caseData = useStore((s) => s.caseData)
   const evidenceStates = useStore((s) => s.evidenceStates)
+  const investigateEvidence = useStore((s) => s.investigateEvidence)
+  const lastFocusedDisputeId = useStore((s) => s.lastFocusedDisputeId)
 
   if (!caseData) return null
   const evidence = caseData.evidence.find((e) => e.id === evidenceId)
@@ -650,57 +654,92 @@ function EvidenceDetailSection({ evidenceId }: { evidenceId: string }) {
   const state = evidenceStates[evidence.id]
   const meta = evidence.meta
   const disputes = caseData.disputes.filter((d) => evidence.proves.includes(d.id))
+  const investigatedKeys = new Set(state?.investigatedActions ?? [])
+
+  // Determine stage states: revealed / unlockable / locked
+  const stages = (evidence.investigationStages ?? []).map((stage, i) => {
+    const revealed = investigatedKeys.has(stage.revealKey)
+    const allPreviousRevealed = (evidence.investigationStages ?? [])
+      .slice(0, i)
+      .every((prev) => investigatedKeys.has(prev.revealKey))
+    const unlockable = !revealed && allPreviousRevealed
+    return { ...stage, revealed, unlockable, index: i }
+  })
+
+  const handleInvestigate = (revealKey: string) => {
+    investigateEvidence(evidenceId, revealKey)
+  }
+
+  const nameA = caseData.duo.partyA.name
+  const nameB = caseData.duo.partyB.name
+  const presentedToA = state?.presentedTo?.includes('a') ?? false
+  const presentedToB = state?.presentedTo?.includes('b') ?? false
 
   return (
     <div className="pc-ev-detail">
-      {/* Meta row */}
+      {/* Meta + disputes row */}
       <div className="pc-ev-detail__meta">
-        {meta ? (
-          <>
-            <span className="pc-ev-detail__tag is-trust">{meta.trustLabel ?? (evidence.reliability === 'hard' ? '하드' : '소프트')}</span>
-            <span className="pc-ev-detail__tag is-source">{meta.sourceLabel ?? '출처 불명'}</span>
-            <span className="pc-ev-detail__tag is-legal">{meta.legalLabel ?? '적법'}</span>
-          </>
-        ) : (
-          <>
-            <span className="pc-ev-detail__tag is-trust">{evidence.reliability === 'hard' ? '하드 증거' : '소프트 증거'}</span>
-            <span className="pc-ev-detail__tag is-source">{evidence.provenance === 'institutional' ? '기관' : '개인'}</span>
-          </>
-        )}
-        {state?.presented ? <span className="pc-ev-detail__tag is-done">제시됨</span> : null}
+        <span className="pc-ev-detail__tag is-trust">{meta?.trustLabel ?? (evidence.reliability === 'hard' ? '하드 증거' : '소프트 증거')}</span>
+        <span className="pc-ev-detail__tag is-source">{meta?.sourceLabel ?? '출처 불명'}</span>
+        {disputes.map((d) => (
+          <span className="pc-ev-detail__dispute" key={d.id}>{d.name}</span>
+        ))}
       </div>
 
-      {/* Related disputes */}
-      {disputes.length > 0 ? (
-        <div className="pc-ev-detail__disputes">
-          {disputes.map((d) => (
-            <span className="pc-ev-detail__dispute" key={d.id}>{d.name}</span>
+      {/* Investigation stages */}
+      {stages.length > 0 ? (
+        <div className="pc-ev-detail__stages">
+          <span className="pc-ev-detail__stages-label">조사 단계</span>
+          {stages.map((stage) => (
+            <div className={`pc-ev-detail__stage ${stage.revealed ? 'is-open' : stage.unlockable ? 'is-ready' : 'is-locked'}`} key={stage.index}>
+              <span className="pc-ev-detail__stage-num">
+                {stage.revealed ? '✓' : stage.unlockable ? '?' : '🔒'}
+              </span>
+              <div className="pc-ev-detail__stage-body">
+                {stage.revealed ? (
+                  <span className="pc-ev-detail__stage-a">{evidence.investigationResults[stage.revealKey]}</span>
+                ) : stage.unlockable ? (
+                  <button className="pc-ev-detail__investigate-btn" onClick={() => handleInvestigate(stage.revealKey)} type="button">
+                    조사 시도
+                  </button>
+                ) : (
+                  <span className="pc-ev-detail__stage-lock">조사 단계 {stage.stage} — 해금 필요</span>
+                )}
+              </div>
+            </div>
           ))}
         </div>
       ) : null}
 
-      {/* Investigation stages */}
-      {evidence.investigationStages && evidence.investigationStages.length > 0 ? (
-        <div className="pc-ev-detail__stages">
-          <span className="pc-ev-detail__stages-label">조사 단계</span>
-          {evidence.investigationStages.map((stage, i) => {
-            const revealed = evidence.investigationResults[stage.revealKey]
-            return (
-              <div className={`pc-ev-detail__stage ${revealed ? 'is-open' : 'is-locked'}`} key={i}>
-                <span className="pc-ev-detail__stage-num">{stage.stage}</span>
-                <div className="pc-ev-detail__stage-body">
-                  <span className="pc-ev-detail__stage-q">{stage.question.text}</span>
-                  {revealed ? (
-                    <span className="pc-ev-detail__stage-a">{revealed}</span>
-                  ) : (
-                    <span className="pc-ev-detail__stage-lock">추가 조사 필요</span>
-                  )}
-                </div>
-              </div>
-            )
-          })}
-        </div>
-      ) : null}
+      {/* Present buttons — A/B split */}
+      <div className="pc-ev-detail__present">
+        <button
+          className={`pc-ev-detail__present-btn is-a${presentedToA ? ' is-done' : ''}`}
+          disabled={presentedToA}
+          onClick={() => {
+            if (!presentedToA) {
+              dispatch({ type: 'evidence_present', evidenceId, target: 'a' })
+            }
+          }}
+          type="button"
+        >
+          <PCSvgIcon id="i-man" size={18} />
+          <span>{presentedToA ? `${nameA} 제시 완료` : `${nameA}에게 제시`}</span>
+        </button>
+        <button
+          className={`pc-ev-detail__present-btn is-b${presentedToB ? ' is-done' : ''}`}
+          disabled={presentedToB}
+          onClick={() => {
+            if (!presentedToB) {
+              dispatch({ type: 'evidence_present', evidenceId, target: 'b' })
+            }
+          }}
+          type="button"
+        >
+          <PCSvgIcon id="i-woman" size={18} />
+          <span>{presentedToB ? `${nameB} 제시 완료` : `${nameB}에게 제시`}</span>
+        </button>
+      </div>
     </div>
   )
 }

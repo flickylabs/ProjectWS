@@ -755,6 +755,7 @@ export const useGameStore: import('zustand').UseBoundStore<import('zustand').Sto
       applyPerks(set)
       store.initDiscovery(caseData)
       store.initCombinationLab(caseData)
+      console.log('[initializeCase] combinationLab config:', store.combinationLabRuntime.config ? `${store.combinationLabRuntime.config.nodes.length} nodes` : 'NULL', 'discoveredNodeIds:', store.combinationLabRuntime.discoveredNodeIds.length)
 
       // 리뉴얼 데이터 등록 (ClaimPolicy/Bridge/EvidenceChallenge/V3)
       // try-catch로 감싸서 등록 실패가 게임 진행을 막지 않도록 함
