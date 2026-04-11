@@ -127,13 +127,12 @@ function fixParticles(text, runtimeCase, entry) {
   return next
 }
 
-function fixSingleWordParticles(text) {
-  let next = clean(text)
-  next = next.replace(/([가-힣A-Za-z0-9·]{1,24})(은|는)/gu, (_, term) => `${term}${selectParticle(term, 'topic')}`)
-  next = next.replace(/([가-힣A-Za-z0-9·]{1,24})(이|가)/gu, (_, term) => `${term}${selectParticle(term, 'subject')}`)
-  next = next.replace(/([가-힣A-Za-z0-9·]{1,24})(을|를)/gu, (_, term) => `${term}${selectParticle(term, 'object')}`)
-  next = next.replace(/([가-힣A-Za-z0-9·]{1,24})(과|와)/gu, (_, term) => `${term}${selectParticle(term, 'with')}`)
-  return next
+function getNormalizedCaseId(runtimeCase) {
+  return clean(runtimeCase?.caseId).replace(/^case-/, '')
+}
+
+function shouldSkipReleaseReadyScriptedHotfix(runtimeCase) {
+  return /-v3-\d+$/u.test(getNormalizedCaseId(runtimeCase))
 }
 
 function softenScaffoldPhrases(text) {
@@ -171,7 +170,6 @@ function fixVariantText(text, runtimeCase, entry) {
   let next = clean(text)
   next = replaceGenericSideRefs(next, runtimeCase, entry)
   next = fixParticles(next, runtimeCase, entry)
-  next = fixSingleWordParticles(next)
   next = softenScaffoldPhrases(next)
   next = fixCompoundGrammar(next)
   next = next.replace(/\s+\./gu, '.').replace(/\s+,/gu, ',')
@@ -192,6 +190,9 @@ function walkVariants(bundle, callback) {
 }
 
 function applyReleaseReadyScriptedHotfix({ bundle, runtimeCase }) {
+  if (shouldSkipReleaseReadyScriptedHotfix(runtimeCase)) {
+    return bundle
+  }
   walkVariants(bundle, ({ channelName, entry, variant }) => {
     if (!variant?.text) return
     if (!['interrogation', 'evidence_present', 'dossier', 'witness', 'aftermath', 'system_message'].includes(channelName)) return

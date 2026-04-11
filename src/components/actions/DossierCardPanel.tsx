@@ -176,6 +176,7 @@ function DossierQuestionList({ caseKey, dossierId, target, partyName, lieStates,
         }).filter(Boolean).join('\n')
 
         const dossierContext = {
+          questionId: question.id,
           questionText: question.text,
           cardName: card.name,
           cardDescription: card.description,

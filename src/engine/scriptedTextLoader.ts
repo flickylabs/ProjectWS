@@ -60,6 +60,8 @@ interface VariantSelectionContext {
   witnessId?: string
 }
 
+type ScriptedLookupChannel = SelectedScriptContext['channel']
+
 // Vite dynamic import — 빌드 시 정적 분석됨
 const scriptMods = import.meta.glob<true, string, { default?: ScriptedTextBundle }>(
   '../data/scriptedText/*.json',
@@ -233,6 +235,19 @@ function selectVariant(
   return selected
 }
 
+function logScriptedHit(caseId: string, channel: ScriptedLookupChannel, key: string): void {
+  console.log(`[Scripted] ${normalizeCaseKey(caseId)}/${channel}/${key}`)
+}
+
+function logScriptedMiss(
+  caseId: string,
+  channel: ScriptedLookupChannel,
+  key: string,
+  reason: 'bundle_missing' | 'key_missing' | 'variant_missing',
+): void {
+  console.warn(`[Scripted miss] ${normalizeCaseKey(caseId)}/${channel}/${key} — ${reason}`)
+}
+
 /** 심문 응답 스크립트 조회 */
 export function getScriptedInterrogation(
   caseId: string,
@@ -241,23 +256,33 @@ export function getScriptedInterrogation(
   lieState: string,
   questionType: string,
 ): { text: string; behaviorHint: string } | null {
-  const bundle = loadBundle(caseId)
-  if (!bundle) return null
   const key = buildInterrogationKey({
     party,
     disputeId,
     lieState: lieState as ScriptedLieState,
     questionType: questionType as ScriptedInterrogationQuestionType,
   })
+  const bundle = loadBundle(caseId)
+  if (!bundle) {
+    logScriptedMiss(caseId, 'interrogation', key, 'bundle_missing')
+    return null
+  }
   const entry = bundle.channels.interrogation.entries.find(e => e.key === key)
-  if (!entry) return null
+  if (!entry) {
+    logScriptedMiss(caseId, 'interrogation', key, 'key_missing')
+    return null
+  }
   const variant = selectVariant(entry.variants, caseId, {
     channel: 'interrogation',
     key,
     questionType,
     disputeId,
   })
-  if (!variant) return null
+  if (!variant) {
+    logScriptedMiss(caseId, 'interrogation', key, 'variant_missing')
+    return null
+  }
+  logScriptedHit(caseId, 'interrogation', key)
   return { text: variant.text, behaviorHint: variant.behaviorHint }
 }
 
@@ -269,8 +294,6 @@ export function getScriptedEvidencePresent(
   lieState: string,
   subjectRole: string,
 ): { text: string; behaviorHint: string } | null {
-  const bundle = loadBundle(caseId)
-  if (!bundle) return null
   const lieBand = toScriptedLieBand(lieState as ScriptedLieState)
   const key = buildEvidencePresentKey({
     party,
@@ -278,14 +301,26 @@ export function getScriptedEvidencePresent(
     lieBand,
     subjectRole: subjectRole as ScriptedSubjectRole,
   })
+  const bundle = loadBundle(caseId)
+  if (!bundle) {
+    logScriptedMiss(caseId, 'evidence_present', key, 'bundle_missing')
+    return null
+  }
   const entry = bundle.channels.evidence_present.entries.find(e => e.key === key)
-  if (!entry) return null
+  if (!entry) {
+    logScriptedMiss(caseId, 'evidence_present', key, 'key_missing')
+    return null
+  }
   const variant = selectVariant(entry.variants, caseId, {
     channel: 'evidence_present',
     key,
     evidenceId,
   })
-  if (!variant) return null
+  if (!variant) {
+    logScriptedMiss(caseId, 'evidence_present', key, 'variant_missing')
+    return null
+  }
+  logScriptedHit(caseId, 'evidence_present', key)
   return { text: variant.text, behaviorHint: variant.behaviorHint }
 }
 
@@ -296,17 +331,27 @@ export function getScriptedDossier(
   dossierQuestionId: string,
   lieState: string,
 ): { text: string; behaviorHint: string } | null {
-  const bundle = loadBundle(caseId)
-  if (!bundle) return null
   const lieBand = toScriptedLieBand(lieState as ScriptedLieState)
   const key = buildDossierKey({ party, dossierQuestionId, lieBand })
+  const bundle = loadBundle(caseId)
+  if (!bundle) {
+    logScriptedMiss(caseId, 'dossier', key, 'bundle_missing')
+    return null
+  }
   const entry = bundle.channels.dossier.entries.find(e => e.key === key)
-  if (!entry) return null
+  if (!entry) {
+    logScriptedMiss(caseId, 'dossier', key, 'key_missing')
+    return null
+  }
   const variant = selectVariant(entry.variants, caseId, {
     channel: 'dossier',
     key,
   })
-  if (!variant) return null
+  if (!variant) {
+    logScriptedMiss(caseId, 'dossier', key, 'variant_missing')
+    return null
+  }
+  logScriptedHit(caseId, 'dossier', key)
   return { text: variant.text, behaviorHint: variant.behaviorHint }
 }
 
@@ -316,17 +361,27 @@ export function getScriptedWitness(
   witnessId: string,
   depth: string,
 ): { text: string; behaviorHint: string } | null {
-  const bundle = loadBundle(caseId)
-  if (!bundle) return null
   const key = buildWitnessKey({ witnessId, depth: depth as ScriptedWitnessDepth })
+  const bundle = loadBundle(caseId)
+  if (!bundle) {
+    logScriptedMiss(caseId, 'witness', key, 'bundle_missing')
+    return null
+  }
   const entry = bundle.channels.witness.entries.find(e => e.key === key)
-  if (!entry) return null
+  if (!entry) {
+    logScriptedMiss(caseId, 'witness', key, 'key_missing')
+    return null
+  }
   const variant = selectVariant(entry.variants, caseId, {
     channel: 'witness',
     key,
     witnessId,
   })
-  if (!variant) return null
+  if (!variant) {
+    logScriptedMiss(caseId, 'witness', key, 'variant_missing')
+    return null
+  }
+  logScriptedHit(caseId, 'witness', key)
   return { text: variant.text, behaviorHint: variant.behaviorHint }
 }
 
@@ -336,14 +391,24 @@ export function getScriptedAftermath(
   resultClass: string,
 ): { text: string } | null {
   const bundle = loadBundle(caseId)
-  if (!bundle) return null
+  if (!bundle) {
+    logScriptedMiss(caseId, 'aftermath', resultClass, 'bundle_missing')
+    return null
+  }
   const entry = bundle.channels.aftermath.entries.find(e => e.key === resultClass)
-  if (!entry) return null
+  if (!entry) {
+    logScriptedMiss(caseId, 'aftermath', resultClass, 'key_missing')
+    return null
+  }
   const variant = selectVariant(entry.variants, caseId, {
     channel: 'aftermath',
     key: resultClass,
   })
-  if (!variant) return null
+  if (!variant) {
+    logScriptedMiss(caseId, 'aftermath', resultClass, 'variant_missing')
+    return null
+  }
+  logScriptedHit(caseId, 'aftermath', resultClass)
   return { text: variant.text }
 }
 

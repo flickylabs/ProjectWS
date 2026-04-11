@@ -365,701 +365,178 @@ export const FriendV301V3GameLoopData = {
       }
     }
   },
-  "evidenceProgressions": [
-    {
-      "evidenceId": "e-1",
-      "name": "B→예비신랑 연락 기록",
-      "depthStages": [
-        {
-          "id": "stub",
-          "label": "Stub",
-          "summary": "연락기록 1건 존재만 보임"
+  "events": {
+    "contradictions": [
+      {
+        "id": "friend-v3-01-fallback-contradiction-1",
+        "statementA": "송다은은 ‘B의 연락은 예비신랑 집착인가, 뭔가를 전하려는 경고인가’ 문제를 자기 쪽 피해로 먼저 고정하려 한다.",
+        "statementB": "최수민은 ‘B의 연락은 예비신랑 집착인가, 뭔가를 전하려는 경고인가’ 문제는 결과보다 경위를 같이 봐야 한다고 맞선다.",
+        "options": {
+          "point_out": {
+            "label": "충돌을 짚는다",
+            "effect": "같은 장면을 두고 서로 다른 해석이 정면으로 부딪힌다."
+          },
+          "let_go": {
+            "label": "다음 실마리를 기다린다",
+            "effect": "핵심 충돌을 잠시 보류하고 추가 자료를 더 모은다."
+          }
         },
-        {
-          "id": "excerpt",
-          "label": "Excerpt",
-          "summary": "최근 9일 전화 6번, 문자 11번만 보임"
+        "npcReaction": "‘B의 연락은 예비신랑 집착인가, 뭔가를 전하려는 경고인가’ 문제를 두고 결과 해석과 경위 해석이 갈라진다."
+      },
+      {
+        "id": "friend-v3-01-fallback-contradiction-2",
+        "statementA": "송다은은 ‘예전 손절 사건도 정말 B의 변심 때문이었는가’ 문제까지 보면 상대 설명이 더 수상해진다고 말한다.",
+        "statementB": "최수민은 ‘예전 손절 사건도 정말 B의 변심 때문이었는가’ 문제를 떼어 내면 판단이 기울어진다고 반박한다.",
+        "options": {
+          "point_out": {
+            "label": "연결고리를 짚는다",
+            "effect": "앞선 다툼과 이번 다툼이 같은 축에서 이어진다는 점이 드러난다."
+          },
+          "let_go": {
+            "label": "지금은 넘긴다",
+            "effect": "쟁점 연결은 잠시 미뤄 두고 다음 증거로 넘어간다."
+          }
         },
-        {
-          "id": "original",
-          "label": "Original",
-          "summary": "날짜, 시각, 미응답 여부까지 확보"
-        },
-        {
-          "id": "context",
-          "label": "Context",
-          "summary": "결혼 3주 전이라는 시점과 단톡방 흐름이 붙음"
-        },
-        {
-          "id": "established",
-          "label": "Established",
-          "summary": "B가 예비신랑에게 반복 연락한 사실이 공식기록 채택 대상이 됨"
+        "npcReaction": "‘예전 손절 사건도 정말 B의 변심 때문이었는가’ 문제가 앞선 갈등과 이어지면서 한쪽 주장만으로 정리하기 어려워진다."
+      }
+    ],
+    "interjections": [
+      {
+        "id": "friend-v3-01-fallback-interjection-a",
+        "interruptor": "a",
+        "interjectionLine": "송다은은 ‘B의 연락은 예비신랑 집착인가, 뭔가를 전하려는 경고인가’ 문제에서 자기 억울함이 빠졌다고 끼어든다.",
+        "options": {
+          "allow": {
+            "label": "더 듣는다",
+            "effect": "A의 감정선과 자기 해석이 조금 더 길게 드러난다."
+          },
+          "block": {
+            "label": "질문으로 돌린다",
+            "effect": "감정 호소를 끊고 사실 확인 질문으로 복귀한다."
+          }
         }
-      ],
-      "trustStates": [
-        {
-          "id": "submitted",
-          "label": "제출됨",
-          "summary": "A가 캡처 제출"
-        },
-        {
-          "id": "verifying",
-          "label": "검증 중",
-          "summary": "통신기록 원본 대조"
-        },
-        {
-          "id": "authenticated",
-          "label": "인증됨",
-          "summary": "횟수와 시각 일치"
-        },
-        {
-          "id": "challenged",
-          "label": "이의 제기됨",
-          "summary": "B가 연락 자체와 의도는 별개라고 주장"
-        },
-        {
-          "id": "misread",
-          "label": "조작/오독 판정",
-          "summary": "연락 사실은 인증되지만 집착 해석은 보류"
+      },
+      {
+        "id": "friend-v3-01-fallback-interjection-b",
+        "interruptor": "b",
+        "interjectionLine": "최수민은 ‘예전 손절 사건도 정말 B의 변심 때문이었는가’ 문제까지 같이 봐야 한다고 말을 자른다.",
+        "options": {
+          "allow": {
+            "label": "이유를 듣는다",
+            "effect": "B가 왜 그 연결을 붙들고 있는지 더 구체적으로 드러난다."
+          },
+          "block": {
+            "label": "범위를 좁힌다",
+            "effect": "확인된 사실만 남기고 해석 확장을 잠시 멈춘다."
+          }
         }
-      ],
-      "sealTargets": []
-    },
-    {
-      "evidenceId": "e-2",
-      "name": "공통 친구 단톡방 캡처",
-      "depthStages": [
-        {
-          "id": "stub",
-          "label": "Stub",
-          "summary": "단톡방 캡처 1건 존재만 보임"
-        },
-        {
-          "id": "excerpt",
-          "label": "Excerpt",
-          "summary": "\"수민이가 또 내 남자한테 연락한다\" 같은 문장만 보임"
-        },
-        {
-          "id": "original",
-          "label": "Original",
-          "summary": "친구들 반응과 A의 반복 표현까지 확인됨"
-        },
-        {
-          "id": "context",
-          "label": "Context",
-          "summary": "B에게 해명 기회가 거의 없었다는 분위기까지 복원"
-        },
-        {
-          "id": "established",
-          "label": "Established",
-          "summary": "A가 먼저 B를 문제 인물로 퍼뜨렸다는 점이 공식기록 채택 대상이 됨"
+      }
+    ],
+    "emotionalOutbursts": [
+      {
+        "id": "friend-v3-01-fallback-outburst-a",
+        "party": "a",
+        "outburstLine": "송다은은 ‘이번 사건에서 B의 명예를 먼저 무너뜨린 건 누구인가’ 문제까지 전부 악의로만 읽히는 순간 감정이 크게 흔들린다.",
+        "options": {
+          "press": {
+            "label": "계속 묻는다",
+            "effect": "A가 감정 속에서도 자기 책임과 상대 책임의 선을 더 분명히 말하게 된다."
+          },
+          "calm": {
+            "label": "숨을 돌리게 한다",
+            "effect": "A가 격앙 대신 경위 설명으로 다시 돌아올 시간을 번다."
+          }
         }
-      ],
-      "trustStates": [
-        {
-          "id": "submitted",
-          "label": "제출됨",
-          "summary": "B 또는 제3자가 제출"
-        },
-        {
-          "id": "verifying",
-          "label": "검증 중",
-          "summary": "단톡방 원본과 발화 순서 대조"
-        },
-        {
-          "id": "authenticated",
-          "label": "인증됨",
-          "summary": "원본 대화방과 일치"
-        },
-        {
-          "id": "challenged",
-          "label": "이의 제기됨",
-          "summary": "A가 화가 나서 그랬다고 감정 이의"
-        },
-        {
-          "id": "misread",
-          "label": "조작/오독 판정",
-          "summary": "편집은 없고 전체 맥락이 A에게 더 불리해진다."
+      },
+      {
+        "id": "friend-v3-01-fallback-outburst-b",
+        "party": "b",
+        "outburstLine": "최수민은 ‘예전 손절 사건도 정말 B의 변심 때문이었는가’ 문제의 숨긴 이유까지 단정당하자 말끝이 크게 흔들린다.",
+        "options": {
+          "press": {
+            "label": "핵심을 더 겨눈다",
+            "effect": "B가 감춰 온 동기나 맥락을 더 빨리 꺼내게 된다."
+          },
+          "calm": {
+            "label": "맥락부터 듣는다",
+            "effect": "B가 방어를 조금 내려놓고 숨긴 이유를 더 길게 설명한다."
+          }
         }
-      ],
-      "sealTargets": []
+      }
+    ]
+  },
+  "transitionBeats": [
+    {
+      "id": "friend-v3-01-fallback-beat-a-d-5-S2-S3-0",
+      "caseId": "friend-v3-01",
+      "party": "a",
+      "disputeId": "d-5",
+      "fromState": "S2",
+      "toState": "S3",
+      "primaryBeatType": "partial",
+      "secondaryBeatType": "partial",
+      "line": "송다은은 직접 확인도 안 하고 수민을 먼저 나쁜 사람으로 만들었다는 사실을 인정하기 시작한다.",
+      "behaviorHint": "‘이번 사건에서 B의 명예를 먼저 무너뜨린 건 누구인가’ 문제를 끝까지 피하지 못하고 핵심 사실 일부를 인정하기 시작한다."
     },
     {
-      "evidenceId": "e-3",
-      "name": "과거 손절 직전 카톡",
-      "depthStages": [
-        {
-          "id": "stub",
-          "label": "Stub",
-          "summary": "과거 카톡 1건 존재 표시"
-        },
-        {
-          "id": "excerpt",
-          "label": "Excerpt",
-          "summary": "B가 돈 문제를 알아서 정리하겠다고 한 문장만 보임"
-        },
-        {
-          "id": "original",
-          "label": "Original",
-          "summary": "A의 단정과 B의 침묵이 모두 확인됨"
-        },
-        {
-          "id": "context",
-          "label": "Context",
-          "summary": "오해가 굳는 구조가 복원됨"
-        },
-        {
-          "id": "established",
-          "label": "Established",
-          "summary": "과거 손절이 돈 문제와 침묵 위에서 벌어졌다는 점이 공식기록 후보가 됨"
-        }
-      ],
-      "trustStates": [
-        {
-          "id": "submitted",
-          "label": "제출됨",
-          "summary": "A 일부 또는 B 전체 제출"
-        },
-        {
-          "id": "verifying",
-          "label": "검증 중",
-          "summary": "원본 채팅방 대조"
-        },
-        {
-          "id": "authenticated",
-          "label": "인증됨",
-          "summary": "날짜와 발신자 일치"
-        },
-        {
-          "id": "challenged",
-          "label": "이의 제기됨",
-          "summary": "A가 그때도 설명하지 않았다고 이의"
-        },
-        {
-          "id": "misread",
-          "label": "조작/오독 판정",
-          "summary": "발췌만 보면 B에게 불리하지만 Context로 갈수록 오독 가능성이 드러난다."
-        }
-      ],
-      "sealTargets": []
+      "id": "friend-v3-01-fallback-beat-b-d-1-S2-S3-0",
+      "caseId": "friend-v3-01",
+      "party": "b",
+      "disputeId": "d-1",
+      "fromState": "S2",
+      "toState": "S3",
+      "primaryBeatType": "partial",
+      "secondaryBeatType": "partial",
+      "line": "최수민은 반복 연락의 목적이 집착이 아니라 경고였다고 분명히 말하기 시작한다.",
+      "behaviorHint": "‘B의 연락은 예비신랑 집착인가, 뭔가를 전하려는 경고인가’ 문제를 끝까지 피하지 못하고 핵심 사실 일부를 인정하기 시작한다."
     },
     {
-      "evidenceId": "e-4",
-      "name": "예비신랑의 선넘는 메시지 + B의 거절 답장",
-      "depthStages": [
-        {
-          "id": "stub",
-          "label": "Stub",
-          "summary": "예비신랑과 B의 카톡 스레드 존재만 보임"
-        },
-        {
-          "id": "excerpt",
-          "label": "Excerpt",
-          "summary": "\"커피 한 번 보자\", \"너 같은 스타일이 내 이상형\"과 B의 거절 문장 일부만 보임"
-        },
-        {
-          "id": "original",
-          "label": "Original",
-          "summary": "몇 달간 반복된 접근과 거절 답장이 전체 확보됨"
-        },
-        {
-          "id": "context",
-          "label": "Context",
-          "summary": "B가 경고용 채널로 남겨 둔 맥락이 붙음"
-        },
-        {
-          "id": "established",
-          "label": "Established",
-          "summary": "먼저 선을 넘은 쪽은 예비신랑이라는 점이 공식기록 후보가 됨"
-        }
-      ],
-      "trustStates": [
-        {
-          "id": "submitted",
-          "label": "제출됨",
-          "summary": "B 발췌 제출 또는 재판관 원본 요구"
-        },
-        {
-          "id": "verifying",
-          "label": "검증 중",
-          "summary": "휴대폰 원본 대화와 알림 기록 대조"
-        },
-        {
-          "id": "authenticated",
-          "label": "인증됨",
-          "summary": "메시지 원본 일치"
-        },
-        {
-          "id": "challenged",
-          "label": "이의 제기됨",
-          "summary": "A가 그래도 왜 답장을 이어 갔느냐고 이의"
-        },
-        {
-          "id": "misread",
-          "label": "조작/오독 판정",
-          "summary": "편집 의심은 해소되고 집착 프레임이 크게 흔들린다."
-        }
-      ],
-      "sealTargets": [
-        "결혼 날짜·장소 표현",
-        "성적 뉘앙스가 강한 문장 일부"
-      ]
-    },
-    {
-      "evidenceId": "e-5",
-      "name": "A 아버지와 예비신랑의 문자",
-      "depthStages": [
-        {
-          "id": "stub",
-          "label": "Stub",
-          "summary": "A 아버지와 예비신랑 문자 존재만 보임"
-        },
-        {
-          "id": "excerpt",
-          "label": "Excerpt",
-          "summary": "\"결혼 전에 잠깐만 도와주면 금방 돌려준다\" 수준만 보임"
-        },
-        {
-          "id": "original",
-          "label": "Original",
-          "summary": "반복적인 돈 요구와 압박 표현까지 열림"
-        },
-        {
-          "id": "context",
-          "label": "Context",
-          "summary": "B의 연락 시기와 정확히 겹치는 이유가 붙음"
-        },
-        {
-          "id": "established",
-          "label": "Established",
-          "summary": "A 아버지가 예비신랑에게 돈을 뜯어내려 접근했다는 점이 공식기록 후보가 됨"
-        }
-      ],
-      "trustStates": [
-        {
-          "id": "submitted",
-          "label": "제출됨",
-          "summary": "예비신랑 또는 B가 캡처 제출"
-        },
-        {
-          "id": "verifying",
-          "label": "검증 중",
-          "summary": "예비신랑 폰 원본 대조"
-        },
-        {
-          "id": "authenticated",
-          "label": "인증됨",
-          "summary": "문자 원본과 날짜 일치"
-        },
-        {
-          "id": "challenged",
-          "label": "이의 제기됨",
-          "summary": "A가 인사 차원이었을 뿐이라고 이의"
-        },
-        {
-          "id": "misread",
-          "label": "조작/오독 판정",
-          "summary": "돈 부탁 자체는 인증되고 악의 여부는 Context 필요"
-        }
-      ],
-      "sealTargets": [
-        "정확한 돈 액수",
-        "결혼 일정·예식장 정보",
-        "계좌번호"
-      ]
-    },
-    {
-      "evidenceId": "e-6",
-      "name": "과거 송금 영수증 + 아버지 문자",
-      "depthStages": [
-        {
-          "id": "stub",
-          "label": "Stub",
-          "summary": "과거 송금 내역 1건 존재만 보임"
-        },
-        {
-          "id": "excerpt",
-          "label": "Excerpt",
-          "summary": "B가 A 아버지에게 돈을 보낸 기록만 보임"
-        },
-        {
-          "id": "original",
-          "label": "Original",
-          "summary": "송금 영수증과 미루는 문자 흐름이 함께 열림"
-        },
-        {
-          "id": "context",
-          "label": "Context",
-          "summary": "왜 진실 대신 오해를 택했는지가 복원됨"
-        },
-        {
-          "id": "established",
-          "label": "Established",
-          "summary": "과거 손절의 핵심 원인에 A 아버지의 사기성 돈 요구가 있었다는 점이 공식기록 후보가 됨"
-        }
-      ],
-      "trustStates": [
-        {
-          "id": "submitted",
-          "label": "제출됨",
-          "summary": "B가 일부 내역 제출"
-        },
-        {
-          "id": "verifying",
-          "label": "검증 중",
-          "summary": "송금 영수증과 문자 원본 대조"
-        },
-        {
-          "id": "authenticated",
-          "label": "인증됨",
-          "summary": "금액, 날짜, 발신자 일치"
-        },
-        {
-          "id": "challenged",
-          "label": "이의 제기됨",
-          "summary": "A가 왜 그때 내게 말 안 했냐고 반발"
-        },
-        {
-          "id": "misread",
-          "label": "조작/오독 판정",
-          "summary": "데이터는 인증되고 왜 침묵했는가는 d-4와 h-d3에서 정리된다."
-        }
-      ],
-      "sealTargets": [
-        "정확한 송금 액수",
-        "B의 계좌번호"
-      ]
-    },
-    {
-      "evidenceId": "e-7",
-      "name": "과거·현재 대조표",
-      "depthStages": [
-        {
-          "id": "stub",
-          "label": "Stub",
-          "summary": "과거·현재 대조표 생성 가능 상태만 보임"
-        },
-        {
-          "id": "excerpt",
-          "label": "Excerpt",
-          "summary": "과거 피해 시점과 현재 접근 시점의 거친 겹침만 보임"
-        },
-        {
-          "id": "original",
-          "label": "Original",
-          "summary": "아버지의 비슷한 문구, B의 침묵, A의 오해가 날짜별로 정렬됨"
-        },
-        {
-          "id": "context",
-          "label": "Context",
-          "summary": "B가 두 번 다 A를 지키려다 악역이 된 감정 흐름이 붙음"
-        },
-        {
-          "id": "established",
-          "label": "Established",
-          "summary": "과거와 현재가 같은 패턴이었고 B의 연락은 반복을 막으려는 경고였다는 점이 공식기록 후보가 됨"
-        }
-      ],
-      "trustStates": [
-        {
-          "id": "submitted",
-          "label": "제출됨",
-          "summary": "조합과 검증으로 생성"
-        },
-        {
-          "id": "verifying",
-          "label": "검증 중",
-          "summary": "e-4~e-6 핵심 자료가 인증될 때 생성"
-        },
-        {
-          "id": "authenticated",
-          "label": "인증됨",
-          "summary": "기반 증거가 모두 인증되면 자동 인증"
-        },
-        {
-          "id": "challenged",
-          "label": "이의 제기됨",
-          "summary": "A가 그래도 연락 방식은 잘못이라고 이의"
-        },
-        {
-          "id": "misread",
-          "label": "조작/오독 판정",
-          "summary": "종합표 자체는 조작 불가이고 해석은 Reframe 선택에 따라 달라진다."
-        }
-      ],
-      "sealTargets": []
-    }
-  ],
-  "leadLines": [
-    {
-      "id": "L-1",
-      "name": "Contradiction Lead",
-      "leadType": "Contradiction",
-      "firstInputs": [
-        "e-1",
-        "e-2"
-      ],
-      "secondInputs": [
-        "L-1",
-        "e-4"
-      ],
-      "dossierCardId": "dc-1",
-      "interpretationChoices": [
-        {
-          "id": "L-1-A",
-          "text": "B가 예비신랑에게 집착한다",
-          "implication": "집착 서사를 강화한다."
-        },
-        {
-          "id": "L-1-B",
-          "text": "겉으로는 집착처럼 보여도 빠진 맥락이 있다",
-          "implication": "경고 서사를 준비한다."
-        }
-      ]
-    },
-    {
-      "id": "L-2",
-      "name": "Timeline Lead",
-      "leadType": "Timeline",
-      "firstInputs": [
-        "e-2",
-        "e-3"
-      ],
-      "secondInputs": [
-        "L-2",
-        "e-6"
-      ],
-      "dossierCardId": "dc-2",
-      "interpretationChoices": [
-        {
-          "id": "L-2-A",
-          "text": "B는 예전에도 비슷한 식으로 문제를 만들었다",
-          "implication": "A의 summary를 유지한다."
-        },
-        {
-          "id": "L-2-B",
-          "text": "예전에도 설명되지 않은 공백이 있었다",
-          "implication": "과거 사건을 다시 쓰게 만든다."
-        }
-      ]
-    },
-    {
-      "id": "L-3",
-      "name": "Third-party Lead",
-      "leadType": "Third-party",
-      "firstInputs": [
-        "e-1",
-        "e-5"
-      ],
-      "secondInputs": [
-        "L-3",
-        "stmt-b-protect"
-      ],
-      "dossierCardId": "dc-3",
-      "interpretationChoices": [
-        {
-          "id": "L-3-A",
-          "text": "B는 또 핑계를 만든다",
-          "implication": "우회적 변명 서사를 유지한다."
-        },
-        {
-          "id": "L-3-B",
-          "text": "B는 A 아버지의 접근을 보고 경고하려 했다",
-          "implication": "현재 사건의 진짜 목적을 연다."
-        }
-      ]
-    },
-    {
-      "id": "L-4",
-      "name": "Context Lead",
-      "leadType": "Context",
-      "firstInputs": [
-        "e-6",
-        "stmt-b-villain"
-      ],
-      "secondInputs": [
-        "L-4",
-        "w-3-angle"
-      ],
-      "dossierCardId": "dc-4",
-      "interpretationChoices": [
-        {
-          "id": "L-4-A",
-          "text": "B는 늘 말을 비틀어 더 큰 오해를 만든다",
-          "implication": "침묵의 비용을 본다."
-        },
-        {
-          "id": "L-4-B",
-          "text": "B는 A의 세계가 무너질까 봐 직접 진실을 못 말했다",
-          "implication": "보호 동기를 본다."
-        }
-      ]
-    },
-    {
-      "id": "L-5",
-      "name": "Reframe Lead",
-      "leadType": "Reframe",
-      "firstInputs": [
-        "e-5",
-        "e-6"
-      ],
-      "secondInputs": [
-        "L-5",
-        "e-7"
-      ],
-      "dossierCardId": "dc-5",
-      "interpretationChoices": [
-        {
-          "id": "L-5-A",
-          "text": "A 아버지의 반복된 돈 접근이 두 사건을 만들었다",
-          "implication": "반복 패턴을 중심에 둔다."
-        },
-        {
-          "id": "L-5-B",
-          "text": "그 패턴을 봐도 B는 항상 더 좋은 방식으로 말했어야 했다",
-          "implication": "B의 우회 책임을 남긴다."
-        }
-      ]
-    }
-  ],
-  "authorityPlacements": [
-    {
-      "action": "원본 제출 명령",
-      "recommendedMoment": "e-1 확인 직후",
-      "purpose": "연락 횟수를 감정이 아니라 원본으로 고정"
-    },
-    {
-      "action": "원본 제출 명령",
-      "recommendedMoment": "e-4 포착 직후",
-      "purpose": "예비신랑 메시지의 전체 흐름 확보"
-    },
-    {
-      "action": "원본 제출 명령",
-      "recommendedMoment": "e-5, e-6 진입 직후",
-      "purpose": "아버지의 현재/과거 돈 접근을 모두 원본으로 확정"
-    },
-    {
-      "action": "정확히 답변하십시오",
-      "recommendedMoment": "A가 예전에도 이래서만 반복하며 과거와 현재를 덮으려 할 때",
-      "purpose": "premature_summary를 깨고 시점과 사실을 분리"
-    },
-    {
-      "action": "분리심문",
-      "recommendedMoment": "e-4 Original 직후 B",
-      "purpose": "A 앞에서 닫히는 B의 설명을 먼저 끌어냄"
-    },
-    {
-      "action": "분리심문",
-      "recommendedMoment": "e-6 Original 직후 A",
-      "purpose": "아버지 얘기가 나오면 즉시 방어적인 A를 흔들어 보기"
-    },
-    {
-      "action": "잠정 인정",
-      "recommendedMoment": "e-1 인증 후",
-      "purpose": "B가 예비신랑에게 반복 연락한 사실을 기록"
-    },
-    {
-      "action": "잠정 인정",
-      "recommendedMoment": "e-4 인증 후",
-      "purpose": "예비신랑이 먼저 선을 넘는 메시지를 보낸 사실을 기록"
-    },
-    {
-      "action": "잠정 인정",
-      "recommendedMoment": "e-2 인증 후",
-      "purpose": "A가 단톡방에서 먼저 B를 문제 인물로 퍼뜨린 사실을 기록"
-    },
-    {
-      "action": "잠정 인정",
-      "recommendedMoment": "e-5 또는 e-6 인증 후",
-      "purpose": "A 아버지가 과거와 현재 모두 돈 접근을 시도한 사실을 기록"
-    },
-    {
-      "action": "선처 창구",
-      "recommendedMoment": "dc-3, dc-4 직후",
-      "purpose": "B가 또 내가 나쁜 사람 되는 쪽을 택했다는 본심을 풀도록 유도"
-    },
-    {
-      "action": "발언 제지 / 기록 제외",
-      "recommendedMoment": "A가 내 남자 프레임만 반복하거나 B가 예비신랑 잘못만 강조할 때",
-      "purpose": "프레임 싸움을 멈추고 사실과 가설을 분리"
-    },
-    {
-      "action": "민감정보 봉인 해제",
-      "recommendedMoment": "h-d2 또는 h-d3가 열렸지만 마지막 한 걸음이 부족할 때",
-      "purpose": "결혼 정보, 성적 뉘앙스, 송금 정보를 필요한 범위에서만 해제"
-    }
-  ],
-  "hiddenDisputePlans": [
-    {
+      "id": "friend-v3-01-fallback-beat-b-h-d2-S2-S3-0",
+      "caseId": "friend-v3-01",
+      "party": "b",
       "disputeId": "h-d2",
-      "name": "예비신랑이 먼저 B에게 선을 넘었는가",
-      "unlockPlan": {
-        "runtimeRule": "e-4 제시 시 해금",
-        "authoredRule": "e-4가 Excerpt 이상이 되거나 e-1과 B 발언으로 Contradiction Lead가 생기면 생성"
-      }
+      "fromState": "S2",
+      "toState": "S3",
+      "primaryBeatType": "partial",
+      "secondaryBeatType": "partial",
+      "line": "최수민은 먼저 선을 넘은 쪽이 예비신랑이었다고 인정한다.",
+      "behaviorHint": "‘예비신랑이 먼저 B에게 선을 넘었는가’ 문제를 끝까지 피하지 못하고 핵심 사실 일부를 인정하기 시작한다."
     },
     {
+      "id": "friend-v3-01-fallback-beat-b-h-d3-S2-S3-0",
+      "caseId": "friend-v3-01",
+      "party": "b",
       "disputeId": "h-d3",
-      "name": "A 아버지의 돈 접근은 과거와 현재가 같은 패턴인가",
-      "unlockPlan": {
-        "runtimeRule": "e-5 제시 시 해금",
-        "authoredRule": "e-5가 Excerpt 이상이 되거나 e-5와 e-6으로 Third-party Lead가 생성되면 생성"
-      }
-    }
-  ],
-  "sensitiveSealTargets": [
-    {
-      "evidenceId": "e-4",
-      "label": "예비신랑의 선넘는 메시지 + B의 거절 답장",
-      "targets": [
-        "결혼 날짜·장소 표현",
-        "성적 뉘앙스가 강한 문장 일부"
-      ],
-      "recommendedTiming": [
-        "h-d2에서 집착 프레임을 확실히 뒤집어야 할 때"
-      ],
-      "risks": [
-        "결혼 직전 사생활 침해가 크게 느껴질 수 있음",
-        "A의 감정 폭발 가능"
-      ]
+      "fromState": "S2",
+      "toState": "S3",
+      "primaryBeatType": "partial",
+      "secondaryBeatType": "partial",
+      "line": "최수민은 이번 연락의 진짜 이유가 A 아버지의 돈 접근을 또 막으려는 것이었다고 인정한다.",
+      "behaviorHint": "‘A 아버지의 돈 접근은 과거와 현재가 같은 패턴인가’ 문제를 끝까지 피하지 못하고 핵심 사실 일부를 인정하기 시작한다."
     },
     {
-      "evidenceId": "e-5",
-      "label": "A 아버지와 예비신랑의 문자",
-      "targets": [
-        "정확한 돈 액수",
-        "결혼 일정·예식장 정보",
-        "계좌번호"
-      ],
-      "recommendedTiming": [
-        "h-d3는 열렸지만 현재 패턴을 강하게 고정해야 할 때"
-      ],
-      "risks": [
-        "현재 결혼 준비 정보 과다 노출",
-        "아버지 문제로 시선이 급격히 이동"
-      ]
+      "id": "friend-v3-01-fallback-beat-b-d-4-S2-S3-0",
+      "caseId": "friend-v3-01",
+      "party": "b",
+      "disputeId": "d-4",
+      "fromState": "S2",
+      "toState": "S3",
+      "primaryBeatType": "partial",
+      "secondaryBeatType": "partial",
+      "line": "최수민은 과거 손절의 시작도 자신의 변심이 아니라 A 아버지의 돈 문제였다고 말한다.",
+      "behaviorHint": "‘예전 손절 사건도 정말 B의 변심 때문이었는가’ 문제를 끝까지 피하지 못하고 핵심 사실 일부를 인정하기 시작한다."
     },
     {
-      "evidenceId": "e-6",
-      "label": "과거 송금 영수증 + 아버지 문자",
-      "targets": [
-        "정확한 송금 액수",
-        "B의 계좌번호"
-      ],
-      "recommendedTiming": [
-        "d-4를 과거 사기 축으로 확정해야 할 때"
-      ],
-      "risks": [
-        "과거 수치심 급상승",
-        "B의 방어적 셧다운 가능"
-      ]
+      "id": "friend-v3-01-fallback-beat-b-d-4-S3-S4-0",
+      "caseId": "friend-v3-01",
+      "party": "b",
+      "disputeId": "d-4",
+      "fromState": "S3",
+      "toState": "S4",
+      "primaryBeatType": "partial",
+      "secondaryBeatType": "partial",
+      "line": "최수민은 차라리 자신이 나쁜 사람처럼 남는 편이 다은의 세계를 무너뜨리지 않는다고 믿었다고 인정한다.",
+      "behaviorHint": "‘예전 손절 사건도 정말 B의 변심 때문이었는가’ 문제에서 버티던 논리가 무너지며 숨긴 동기를 더 직접적으로 털어놓는다."
     }
-  ],
-  "officialRecordRecommendations": [
-    "B는 예비신랑에게 반복 연락했다.",
-    "예비신랑이 먼저 B에게 선을 넘는 메시지를 보냈다.",
-    "A는 단톡방에서 먼저 B를 문제 인물로 퍼뜨렸다.",
-    "A 아버지는 과거 B에게, 현재 예비신랑에게 비슷한 방식으로 돈을 요구했다.",
-    "B는 두 번 다 A를 지키려다 직접 말하지 못했고, 그 대가로 두 번 다 악역이 되었다."
   ]
 } as const

@@ -768,7 +768,7 @@ const runtimeCase = {
         { type: 'soft_confession', trigger: 'shame', pattern: '작은 인정부터 꺼내고 가장 수치스러운 사실은 마지막에 말한다.' },
       ],
       callTerms: {
-        toPartner: '여보',
+        toPartner: '자기',
         toJudge: '제 남편',
         angry: '이준호!',
       },
@@ -794,7 +794,7 @@ const runtimeCase = {
         { type: 'minimize_harm', trigger: 'defensive', pattern: '선의였다는 말로 절차 위반의 무게를 먼저 낮추려 한다.' },
       ],
       callTerms: {
-        toPartner: '여보',
+        toPartner: '자기',
         toJudge: '제 아내',
         angry: '박지연!',
       },

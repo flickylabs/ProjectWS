@@ -86,6 +86,9 @@ import { registerWorkplace10Data } from '../data/claimPolicies/workplace-10'
 import { registerWorkplace11Data } from '../data/claimPolicies/workplace-11'
 import { registerWorkplace12Data } from '../data/claimPolicies/workplace-12'
 import { registerWorkplaceNew02Data } from '../data/claimPolicies/workplace-new-02'
+import { registerSpouseV301Data } from '../data/claimPolicies/spouse-v3-01'
+import { registerFamilyV301Data } from '../data/claimPolicies/family-v3-01'
+import { registerFriendV301Data } from '../data/claimPolicies/friend-v3-01'
 import { registerTenant01Data } from '../data/claimPolicies/tenant-01'
 import { registerTenant02Data } from '../data/claimPolicies/tenant-02'
 import { registerTenant03Data } from '../data/claimPolicies/tenant-03'
@@ -857,6 +860,9 @@ export const useGameStore: import('zustand').UseBoundStore<import('zustand').Sto
       if (caseKey === 'workplace-11') registerWorkplace11Data()
       if (caseKey === 'workplace-12') registerWorkplace12Data()
       if (caseKey === 'workplace-new-02') registerWorkplaceNew02Data()
+      if (caseKey === 'spouse-v3-01') registerSpouseV301Data()
+      if (caseKey === 'family-v3-01') registerFamilyV301Data()
+      if (caseKey === 'friend-v3-01') registerFriendV301Data()
       if (caseKey === 'headline-01') registerHeadline01Data()
       if (caseKey === 'headline-02') registerHeadline02Data()
       } catch (err) {

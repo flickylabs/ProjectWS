@@ -35,7 +35,27 @@ import type { QuestionType, EmotionTier } from '../types'
 import { getTransitionBeat, getFallbackBeat } from './v3GameLoopLoader'
 import { emitStateTransitionEvent } from './stateTransitionHelper'
 // ── ScriptedText 우선 경로 (LLM 호출 없이 사전 생성 대사 사용) ──
-import { getScriptedInterrogation, getScriptedEvidencePresent } from './scriptedTextLoader'
+import { getScriptedInterrogation, getScriptedEvidencePresent, getScriptedDossier } from './scriptedTextLoader'
+
+interface DossierOverrideContext {
+  questionId?: string
+  questionText?: string
+  cardName?: string
+  cardDescription?: string
+  attackVector?: string
+  evidenceDetails?: string
+  relatedDisputes?: string[]
+}
+
+function parseDossierOverrideContext(raw: string | null): DossierOverrideContext | null {
+  if (!raw) return null
+  try {
+    const parsed = JSON.parse(raw) as DossierOverrideContext
+    return parsed && typeof parsed === 'object' ? parsed : null
+  } catch {
+    return null
+  }
+}
 
 export async function resolveLLMDialogue(
   action: PlayerAction,
@@ -49,9 +69,11 @@ export async function resolveLLMDialogue(
   }
 
   const store = useGameStore.getState()
+  const dossierRaw = consumeDossierQuestionOverride()
+  const dossierContext = parseDossierOverrideContext(dossierRaw)
 
   // ── ScriptedText 우선 경로: 사전 생성 대사가 있으면 LLM 호출 안 함 ──
-  const scriptedResult = tryScriptedDialoguePath(action, agentA, agentB, caseData, store)
+  const scriptedResult = tryScriptedDialoguePath(action, agentA, agentB, caseData, store, dossierContext)
   if (scriptedResult !== null) return scriptedResult
 
   // ── Blueprint 경로 분기: ClaimPolicy가 있는 사건은 새 경로 ──
@@ -171,7 +193,6 @@ export async function resolveLLMDialogue(
   let userPrompt = buildUserPrompt(action, dispute, evidenceForPrompt, focusedDisputeId, fallbackJudgeQuestion, investigationResult, contractResponseMode, target, caseData, interrogationDepth, lastOpponentLine, mentionedTruthIds)
 
   // 사건카드 질문 오버라이드: 재판관 질문이 이미 정해져 있으면 LLM에 직접 전달
-  const dossierRaw = consumeDossierQuestionOverride()
   if (dossierRaw) {
     const myName = target === 'a' ? caseData.duo.partyA.name : caseData.duo.partyB.name
     const opName = target === 'a' ? caseData.duo.partyB.name : caseData.duo.partyA.name
@@ -1797,6 +1818,7 @@ function tryScriptedDialoguePath(
   agentB: AgentState,
   caseData: CaseData,
   store: ReturnType<typeof useGameStore.getState>,
+  dossierContext: DossierOverrideContext | null,
 ): ResolvedDialogue | null {
   // question, evidence_present만 스크립트 경로 지원
   if (action.type !== 'question' && action.type !== 'evidence_present') return null
@@ -1820,7 +1842,11 @@ function tryScriptedDialoguePath(
 
   let scripted: { text: string; behaviorHint: string } | null = null
 
-  if (action.type === 'question' && 'questionType' in action) {
+  if (dossierContext?.questionId) {
+    scripted = getScriptedDossier(
+      caseId, target, dossierContext.questionId, lieEntry.currentState,
+    )
+  } else if (action.type === 'question' && 'questionType' in action) {
     scripted = getScriptedInterrogation(
       caseId, target, disputeId, lieEntry.currentState, action.questionType,
     )
@@ -1854,8 +1880,6 @@ function tryScriptedDialoguePath(
     toJudgeB: caseData.duo.partyB.callTerms?.toJudge,
     speaker: target,
   })
-
-  console.log(`[Scripted] ${caseId}/${target}/${disputeId}/${lieEntry.currentState} — 스크립트 응답 사용`)
 
   return {
     node: {
