@@ -797,7 +797,24 @@ async function handleQuestion(action: Extract<PlayerAction, { type: 'question' }
       const appliedStance = npcReaction.appliedStance
       const effectMultiplier = fatigueAssessment.finalMultiplier * npcReaction.effectMultiplier
 
-      // 5. V2 공통 처리: 피로도 커밋 + 미터 + misconception + 로그 (beat 유무와 무관)
+      // 5. 피로도 피드백 시스템 메시지
+      if (fatigueAssessment.fatigueLevel === 'warning') {
+        state.addDialogue({
+          speaker: 'system',
+          text: '⚠ 같은 접근이 반복되고 있습니다. 다른 질문 유형이나 쟁점을 시도해 보세요.',
+          relatedDisputes: [action.disputeId],
+          turn: state.turnCount,
+        })
+      } else if (fatigueAssessment.fatigueLevel === 'stalemate') {
+        state.addDialogue({
+          speaker: 'system',
+          text: '🚫 교착 상태 — 이 접근으로는 더 이상 진전이 어렵습니다. 다른 각도로 전환하세요.',
+          relatedDisputes: [action.disputeId],
+          turn: state.turnCount,
+        })
+      }
+
+      // V2 공통 처리: 피로도 커밋 + 미터 + misconception + 로그 (beat 유무와 무관)
 
       // Phase3 로그 수집: 턴별 스타일
       recordTurnStyle(action.questionType, angleTag)

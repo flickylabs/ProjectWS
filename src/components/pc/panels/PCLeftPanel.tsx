@@ -81,7 +81,7 @@ export default function PCLeftPanel() {
 
   const openEvidenceMenu = useCallback((evidence: EvidenceNode) => {
     const focusDisputeId = lastFocusedDisputeId ?? evidence.proves[0] ?? caseData?.disputes[0]?.id ?? null
-    const canPresent = currentPhase === GamePhase.Phase4_Evidence || currentPhase === GamePhase.Phase5_ReExamination
+    const canPresent = currentPhase === GamePhase.Phase3_Interrogation || currentPhase === GamePhase.Phase4_Evidence || currentPhase === GamePhase.Phase5_ReExamination
 
     const actions: PcInteractionAction[] = [
       { kind: 'open_evidence', label: '증거 열람', evidenceId: evidence.id },
