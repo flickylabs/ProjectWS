@@ -85,9 +85,15 @@ export default function PCRightPanel() {
     })
   }, [combinationLabRuntime.config, combinationLabRuntime.discoveredNodeIds, evidenceStates])
 
-  const comboNodeA = comboSlots[0] ? availableNodes.find((node) => node.id === comboSlots[0]) ?? null : null
-  const comboNodeB = comboSlots[1] ? availableNodes.find((node) => node.id === comboSlots[1]) ?? null : null
-  const comboReady = Boolean(comboNodeA && comboNodeB)
+  const comboNodeA = comboSlots[0]
+    ? (availableNodes.find((node) => node.id === comboSlots[0])
+      ?? (comboSlots[0] ? { id: comboSlots[0], type: 'evidence' as const, label: caseData?.evidence.find((e) => e.id === comboSlots[0])?.surfaceName ?? comboSlots[0], visibility: 'base' as const } as CombinationLabNode : null))
+    : null
+  const comboNodeB = comboSlots[1]
+    ? (availableNodes.find((node) => node.id === comboSlots[1])
+      ?? (comboSlots[1] ? { id: comboSlots[1], type: 'evidence' as const, label: caseData?.evidence.find((e) => e.id === comboSlots[1])?.surfaceName ?? comboSlots[1], visibility: 'base' as const } as CombinationLabNode : null))
+    : null
+  const comboReady = Boolean(comboSlots[0] && comboSlots[1])
 
   const matchingRecipe = useMemo(() => {
     const config = combinationLabRuntime.config
@@ -166,10 +172,11 @@ export default function PCRightPanel() {
   }, [availableNodes])
 
   const handleCombinationEvent = useCallback((detail: PcCombinationPanelEventDetail) => {
+    // combinationLab config 기반 resolve 시도, 실패 시 ID 직접 사용
     const nodeId = detail.evidenceId
-      ? resolveEvidenceNodeId(detail.evidenceId)
+      ? (resolveEvidenceNodeId(detail.evidenceId) ?? detail.evidenceId)
       : detail.note
-        ? resolveNoteNodeId(detail.note)
+        ? (resolveNoteNodeId(detail.note) ?? `note:${detail.note.text.slice(0, 20)}`)
         : null
 
     if (nodeId) {
