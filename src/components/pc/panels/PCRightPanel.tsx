@@ -67,15 +67,22 @@ export default function PCRightPanel() {
   const availableNodes = useMemo(() => {
     const config = combinationLabRuntime.config
     if (!config) {
+      console.warn('[CombinationLab] config is null — initCombinationLab not called?')
       return [] as CombinationLabNode[]
     }
 
-    return config.nodes.filter((node) => {
+    const filtered = config.nodes.filter((node) => {
       if (node.type === 'evidence' || node.type === 'derived_evidence') {
-        return Boolean(evidenceStates[node.id]?.unlocked)
+        const unlocked = Boolean(evidenceStates[node.id]?.unlocked)
+        if (!unlocked) console.log(`[CombinationLab] node ${node.id} locked (evidenceStates key exists: ${node.id in evidenceStates})`)
+        return unlocked
       }
-      return combinationLabRuntime.discoveredNodeIds.includes(node.id)
+      const discovered = combinationLabRuntime.discoveredNodeIds.includes(node.id)
+      if (!discovered) console.log(`[CombinationLab] node ${node.id} not discovered`)
+      return discovered
     })
+    console.log(`[CombinationLab] availableNodes: ${filtered.length}/${config.nodes.length}`, filtered.map((n) => n.id))
+    return filtered
   }, [combinationLabRuntime.config, combinationLabRuntime.discoveredNodeIds, evidenceStates])
 
   const comboNodeA = comboSlots[0] ? availableNodes.find((node) => node.id === comboSlots[0]) ?? null : null
