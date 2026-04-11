@@ -5631,6 +5631,29 @@ body.pc-mode .pc-timeline__dot {
 body.pc-mode .pc-timeline__dot.is-a { background: var(--pc-blue); }
 body.pc-mode .pc-timeline__dot.is-b { background: var(--pc-red); }
 body.pc-mode .pc-timeline__dot.is-sys { background: var(--pc-green); }
+body.pc-mode .pc-timeline__dot.is-gold { background: var(--pc-gold); }
+body.pc-mode .pc-timeline__dot.is-red { background: var(--pc-red); }
+body.pc-mode .pc-timeline__dot.is-blue { background: var(--pc-blue); }
+body.pc-mode .pc-timeline__dot.is-green { background: var(--pc-green); }
+body.pc-mode .pc-timeline__dot.is-neutral { background: #6a6e80; }
+
+/* Timeline item hover */
+body.pc-mode .pc-timeline__item:hover .pc-timeline__summary {
+  color: #fff;
+}
+
+body.pc-mode .pc-timeline__item.is-gold:hover { background: rgba(212, 162, 78, 0.06); }
+body.pc-mode .pc-timeline__item.is-red:hover { background: rgba(224, 96, 96, 0.06); }
+
+/* Chat message highlight on timeline click */
+body.pc-mode [data-dialogue-id].is-highlight {
+  animation: pc-chat-highlight 1.5s ease-out;
+}
+
+@keyframes pc-chat-highlight {
+  0% { background: rgba(212, 162, 78, 0.15); }
+  100% { background: transparent; }
+}
 
 body.pc-mode .pc-timeline__content {
   display: grid;

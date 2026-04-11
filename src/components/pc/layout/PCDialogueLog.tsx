@@ -267,7 +267,9 @@ export default function PCDialogueLog() {
 
       <div className="pc-log-list">
         {visibleEntries.map((entry, index) => (
-          <MessageBubble key={entry.id} entry={entry} animate={index === visibleEntries.length - 1} />
+          <div data-dialogue-id={entry.id} key={entry.id}>
+            <MessageBubble entry={entry} animate={index === visibleEntries.length - 1} />
+          </div>
         ))}
       </div>
 
