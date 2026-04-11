@@ -7419,7 +7419,7 @@
             },
             {
               "id": "a-h-d3-S0-fact-pursuit-v2",
-              "text": "재판관님, 저는 돈을 따로 옮긴 적 없습니다. 불안해서 통장만 들여다본 걸 실행처럼 보시면 억울합니다.",
+              "text": "재판관님, 불안해서 통장을 들여다본 건 있어도, 실제로 움직인 건 아닙니다.",
               "behaviorHint": "a S0 fact_pursuit ?? 2",
               "tags": [
                 "channel:interrogation",
@@ -7457,7 +7457,7 @@
             },
             {
               "id": "a-h-d3-S0-fact-pursuit-v3",
-              "text": "재판관님, 그때 저는 확인만 했을 뿐이라고 생각했습니다. 저는 돈을 따로 옮긴 적 없습니다.",
+              "text": "재판관님, 확인만 한 겁니다. 움직인 것과는 다릅니다.",
               "behaviorHint": "a S0 fact_pursuit ?? 3",
               "tags": [
                 "channel:interrogation",
@@ -7495,7 +7495,7 @@
             },
             {
               "id": "a-h-d3-S0-fact-pursuit-v4",
-              "text": "재판관님, 저는 돈을 따로 옮긴 적 없습니다. 버려질까 봐 겁난 것과 실제로 움직인 건 다른 이야기라고 여겼습니다.",
+              "text": "재판관님, 겁이 났던 거지, 실제로 손을 댄 건 아닙니다.",
               "behaviorHint": "a S0 fact_pursuit ?? 4",
               "tags": [
                 "channel:interrogation",
@@ -7533,7 +7533,7 @@
             },
             {
               "id": "a-h-d3-S0-fact-pursuit-v5",
-              "text": "재판관님, 저를 미리 숨긴 사람으로 보시는 건 받아들이기 어렵습니다. 저는 돈을 따로 옮긴 적 없습니다.",
+              "text": "재판관님, 저를 미리 숨긴 사람으로 보시면 억울합니다. 그런 적 없습니다.",
               "behaviorHint": "a S0 fact_pursuit ?? 5",
               "tags": [
                 "channel:interrogation",
@@ -7582,7 +7582,7 @@
           "variants": [
             {
               "id": "a-h-d3-S0-motive-search-v1",
-              "text": "재판관님, 제 남편이 먼저 가정을 버린다고 느껴서 방어적으로 굴긴 했습니다.",
+              "text": "재판관님, 제 남편이 먼저 집을 버린다고 느껴서 방어적으로 굴긴 했습니다.",
               "behaviorHint": "a S0 motive_search ?? 1",
               "tags": [
                 "channel:interrogation",
@@ -7620,7 +7620,7 @@
             },
             {
               "id": "a-h-d3-S0-motive-search-v2",
-              "text": "재판관님, 제 남편이 먼저 가정을 버린다고 느껴서 방어적으로 굴긴 했습니다. 그래도 그걸 곧장 실행한 사람처럼 몰리면 저는 더 막힙니다.",
+              "text": "재판관님, 배신당하는 쪽이라고 믿었으니까 마음이 거칠었던 건 맞습니다. 하지만 행동으로 옮긴 건 아닙니다.",
               "behaviorHint": "a S0 motive_search ?? 2",
               "tags": [
                 "channel:interrogation",
@@ -7658,7 +7658,7 @@
             },
             {
               "id": "a-h-d3-S0-motive-search-v3",
-              "text": "재판관님, 그때 제 마음은 이미 배신당한 사람 쪽에 가 있었습니다. 제 남편이 먼저 가정을 버린다고 느껴서 방어적으로 굴긴 했습니다.",
+              "text": "재판관님, 불안이 컸던 건 인정합니다. 그래도 생각과 실행을 같이 보지 말아 주십시오.",
               "behaviorHint": "a S0 motive_search ?? 3",
               "tags": [
                 "channel:interrogation",
@@ -7696,7 +7696,7 @@
             },
             {
               "id": "a-h-d3-S0-motive-search-v4",
-              "text": "재판관님, 제 남편이 먼저 가정을 버린다고 느껴서 방어적으로 굴긴 했습니다. 불안이 컸던 건 맞지만 아직은 생각과 행동을 같이 보지 말아 주셨으면 합니다.",
+              "text": "재판관님, 마음이 급했던 건 사실입니다. 그렇다고 바로 실행한 사람처럼 몰리면 억울합니다.",
               "behaviorHint": "a S0 motive_search ?? 4",
               "tags": [
                 "channel:interrogation",
@@ -7734,7 +7734,7 @@
             },
             {
               "id": "a-h-d3-S0-motive-search-v5",
-              "text": "재판관님, 제 마음이 거칠었다고 해서 바로 숨긴 사람으로 정리되는 건 억울합니다. 제 남편이 먼저 가정을 버린다고 느껴서 방어적으로 굴긴 했습니다.",
+              "text": "재판관님, 제가 겁먹은 건 맞습니다. 하지만 겁먹은 것과 돈을 숨긴 건 다른 이야기입니다.",
               "behaviorHint": "a S0 motive_search ?? 5",
               "tags": [
                 "channel:interrogation",
@@ -7783,7 +7783,7 @@
           "variants": [
             {
               "id": "a-h-d3-S0-empathy-approach-v1",
-              "text": "재판관님, 그때 저는 이미 버려진 사람처럼 살았습니다.",
+              "text": "재판관님, 그때 저는 이미 버려진 사람처럼 살고 있었습니다.",
               "behaviorHint": "a S0 empathy_approach ?? 1",
               "tags": [
                 "channel:interrogation",
@@ -7821,7 +7821,7 @@
             },
             {
               "id": "a-h-d3-S0-empathy-approach-v2",
-              "text": "재판관님, 그때 저는 이미 버려진 사람처럼 살았습니다. 그래서 방어적으로 굴었던 건 있지만, 지금도 그 밤들을 떠올리면 숨이 막힙니다.",
+              "text": "재판관님, 먼저 지키지 않으면 다 잃을 것 같은 공포 속에 있었습니다. 그래서 방어적으로 굴었습니다.",
               "behaviorHint": "a S0 empathy_approach ?? 2",
               "tags": [
                 "channel:interrogation",
@@ -7859,7 +7859,7 @@
             },
             {
               "id": "a-h-d3-S0-empathy-approach-v3",
-              "text": "재판관님, 상처받은 쪽이라는 감정이 너무 커서 다른 말이 안 나왔습니다. 그때 저는 이미 버려진 사람처럼 살았습니다.",
+              "text": "재판관님, 상처받은 쪽이라는 감정이 너무 커서 다른 말이 안 나왔습니다.",
               "behaviorHint": "a S0 empathy_approach ?? 3",
               "tags": [
                 "channel:interrogation",
@@ -7897,7 +7897,7 @@
             },
             {
               "id": "a-h-d3-S0-empathy-approach-v4",
-              "text": "재판관님, 그때 저는 이미 버려진 사람처럼 살았습니다. 저는 먼저 지키지 않으면 다 잃을 것 같은 공포 속에 있었습니다.",
+              "text": "재판관님, 불안이 사람을 얼마나 비겁하게 만드는지 그때 알았습니다.",
               "behaviorHint": "a S0 empathy_approach ?? 4",
               "tags": [
                 "channel:interrogation",
@@ -7935,7 +7935,7 @@
             },
             {
               "id": "a-h-d3-S0-empathy-approach-v5",
-              "text": "재판관님, 불안이 사람을 얼마나 비겁하게 만드는지 그때 알았습니다. 그때 저는 이미 버려진 사람처럼 살았습니다.",
+              "text": "재판관님, 그 밤들을 떠올리면 지금도 숨이 막힙니다. 저는 무너지는 쪽이었습니다.",
               "behaviorHint": "a S0 empathy_approach ?? 5",
               "tags": [
                 "channel:interrogation",
@@ -7984,7 +7984,7 @@
           "variants": [
             {
               "id": "a-h-d3-S1-fact-pursuit-v1",
-              "text": "재판관님, 잠깐 제 몫을 따로 생각한 건 맞습니다.",
+              "text": "재판관님, 제 몫을 따로 생각한 건 맞습니다. 하지만 크게 움직였다는 말까지는 못 하겠습니다.",
               "behaviorHint": "a S1 fact_pursuit ?? 1",
               "tags": [
                 "channel:interrogation",
@@ -8022,7 +8022,7 @@
             },
             {
               "id": "a-h-d3-S1-fact-pursuit-v2",
-              "text": "재판관님, 잠깐 제 몫을 따로 생각한 건 맞습니다. 하지만 그때는 아직 실제로 크게 움직였다는 말까지는 못 하겠습니다.",
+              "text": "재판관님, 마음이 먼저 흔들린 건 맞습니다. 그래도 그때 바로 실행까지 한 건 아닙니다.",
               "behaviorHint": "a S1 fact_pursuit ?? 2",
               "tags": [
                 "channel:interrogation",
@@ -8060,7 +8060,7 @@
             },
             {
               "id": "a-h-d3-S1-fact-pursuit-v3",
-              "text": "재판관님, 마음이 먼저 흔들린 건 맞습니다. 다만 그때 바로 실행까지 한 것은 아니라는 점은 말씀드리고 싶습니다.",
+              "text": "재판관님, 혼자 생각한 건 있었습니다. 다만 생각과 실행 사이에는 거리가 있었습니다.",
               "behaviorHint": "a S1 fact_pursuit ?? 3",
               "tags": [
                 "channel:interrogation",
@@ -8098,7 +8098,7 @@
             },
             {
               "id": "a-h-d3-S1-fact-pursuit-v4",
-              "text": "재판관님, 잠깐 제 몫을 따로 생각한 건 맞습니다. 마음이 먼저 흔들린 건 맞습니다.",
+              "text": "재판관님, 통장을 들여다보면서 제 몫을 떼어 둘까 하는 마음이 든 건 사실입니다.",
               "behaviorHint": "a S1 fact_pursuit ?? 4",
               "tags": [
                 "channel:interrogation",
@@ -8136,7 +8136,7 @@
             },
             {
               "id": "a-h-d3-S1-fact-pursuit-v5",
-              "text": "재판관님, 생각과 실행 사가를 일부러 벌려 놓고 싶었습니다. 잠깐 제 몫을 따로 생각한 건 맞습니다.",
+              "text": "재판관님, 따로 챙겨야 하나 하는 생각까지는 갔습니다. 그때 바로 실행했다고는 말씀드리기 어렵습니다.",
               "behaviorHint": "a S1 fact_pursuit ?? 5",
               "tags": [
                 "channel:interrogation",
@@ -8185,7 +8185,7 @@
           "variants": [
             {
               "id": "a-h-d3-S1-motive-search-v1",
-              "text": "재판관님, 그때는 제 남편이 먼저 가정을 버릴 거라고 믿었습니다.",
+              "text": "재판관님, 제 남편이 먼저 가정을 버릴 거라고 믿었습니다. 그래서 제 몫부터 지켜야 한다는 생각이 들었습니다.",
               "behaviorHint": "a S1 motive_search ?? 1",
               "tags": [
                 "channel:interrogation",
@@ -8223,7 +8223,7 @@
             },
             {
               "id": "a-h-d3-S1-motive-search-v2",
-              "text": "재판관님, 그때는 제 남편이 먼저 가정을 버릴 거라고 믿었습니다. 그래서 제 몫부터 지켜야 한다는 생각이 들었습니다.",
+              "text": "재판관님, 복수보다 생존에 가까운 마음이었습니다. 이 결혼이 끝나면 저한테 남는 게 없을 것 같았습니다.",
               "behaviorHint": "a S1 motive_search ?? 2",
               "tags": [
                 "channel:interrogation",
@@ -8261,7 +8261,7 @@
             },
             {
               "id": "a-h-d3-S1-motive-search-v3",
-              "text": "재판관님, 저는 복수보다 생존에 가깝다고 여겼습니다. 그때는 제 남편이 먼저 가정을 버릴 거라고 믿었습니다.",
+              "text": "재판관님, 배신 공포가 제 판단을 먼저 끌고 갔습니다. 이혼까지 떠올린 건 아니라고 버티고 싶었지만 두려움은 분명했습니다.",
               "behaviorHint": "a S1 motive_search ?? 3",
               "tags": [
                 "channel:interrogation",
@@ -8299,7 +8299,7 @@
             },
             {
               "id": "a-h-d3-S1-motive-search-v4",
-              "text": "재판관님, 그때는 제 남편이 먼저 가정을 버릴 거라고 믿었습니다. 이혼까지 떠올린 건 아니라고 버티고 싶었지만 두려움은 분명했습니다.",
+              "text": "재판관님, 남편이 떠나면 저한테 뭐가 남나, 그 생각이 먼저였습니다. 차갑게 계산한 게 아니라 겁이 앞선 겁니다.",
               "behaviorHint": "a S1 motive_search ?? 4",
               "tags": [
                 "channel:interrogation",
@@ -8337,7 +8337,7 @@
             },
             {
               "id": "a-h-d3-S1-motive-search-v5",
-              "text": "재판관님, 배신 공포가 제 판단을 먼저 끌고 갔습니다. 그때는 제 남편이 먼저 가정을 버릴 거라고 믿었습니다.",
+              "text": "재판관님, 제 남편이 숨기는 게 보이니까 저도 뭔가 붙잡아야 한다는 생각이 들었습니다. 그때의 불안이 판단을 흔들었습니다.",
               "behaviorHint": "a S1 motive_search ?? 5",
               "tags": [
                 "channel:interrogation",
@@ -8424,7 +8424,7 @@
             },
             {
               "id": "a-h-d3-S1-empathy-approach-v2",
-              "text": "재판관님, 정말 버려지는 줄 알아서 뭐라도 붙잡고 싶었습니다. 그 마음이 부끄러워서 더 단단하게 부정했습니다.",
+              "text": "재판관님, 그 마음이 부끄러워서 더 단단하게 부정했습니다. 약해 보일까 봐 겁났습니다.",
               "behaviorHint": "a S1 empathy_approach ?? 2",
               "tags": [
                 "channel:interrogation",
@@ -8462,7 +8462,7 @@
             },
             {
               "id": "a-h-d3-S1-empathy-approach-v3",
-              "text": "재판관님, 제가 약해 보일수록 더 크게 숨기게 됐습니다. 정말 버려지는 줄 알아서 뭐라도 붙잡고 싶었습니다.",
+              "text": "재판관님, 두려운 사람은 먼저 아닌 척하게 됩니다. 저도 그랬습니다.",
               "behaviorHint": "a S1 empathy_approach ?? 3",
               "tags": [
                 "channel:interrogation",
@@ -8500,7 +8500,7 @@
             },
             {
               "id": "a-h-d3-S1-empathy-approach-v4",
-              "text": "재판관님, 정말 버려지는 줄 알아서 뭐라도 붙잡고 싶었습니다. 두려운 사람은 먼저 아닌 척하게 됩니다.",
+              "text": "재판관님, 제가 약해 보일수록 더 크게 숨기게 됐습니다. 그게 악순환이었습니다.",
               "behaviorHint": "a S1 empathy_approach ?? 4",
               "tags": [
                 "channel:interrogation",
@@ -8538,7 +8538,7 @@
             },
             {
               "id": "a-h-d3-S1-empathy-approach-v5",
-              "text": "재판관님, 상처받은 쪽이라고 믿었기 때문에 제 행동도 덜 보였던 것 같습니다. 정말 버려지는 줄 알아서 뭐라도 붙잡고 싶었습니다.",
+              "text": "재판관님, 상처받은 쪽이라고 믿었기 때문에 제 행동이 덜 보였던 것 같습니다. 피해자인 줄 알았으니까요.",
               "behaviorHint": "a S1 empathy_approach ?? 5",
               "tags": [
                 "channel:interrogation",
@@ -8587,7 +8587,7 @@
           "variants": [
             {
               "id": "a-h-d3-S2-fact-pursuit-v1",
-              "text": "재판관님, 적지 않은 금액을 제 쪽으로 빼두려 한 건 맞습니다. 숨기려 했다기보다 먼저 잠이 두고 싶다는 마음이었습니다. 적어도 제 대응이 거칠었던 점은 인정합니다.",
+              "text": "재판관님, 적지 않은 금액을 제 쪽으로 빼두려 한 건 맞습니다. 숨기려 했다기보다 잠깐 지키고 싶다는 마음이었습니다.",
               "behaviorHint": "a S2 fact_pursuit ?? 1",
               "tags": [
                 "channel:interrogation",
@@ -8625,7 +8625,7 @@
             },
             {
               "id": "a-h-d3-S2-fact-pursuit-v2",
-              "text": "재판관님, 적지 않은 금액을 제 쪽으로 빼두려 한 건 맞습니다. 그때는 실행 책임보다 제 쪽을 지킨다는 생각이 더 앞섰습니다. 적어도 제 대응이 거칠었던 점은 인정합니다.",
+              "text": "재판관님, 돈을 따로 움직인 건 맞습니다. 그때는 제 쪽을 먼저 챙겨야 한다는 생각이 앞섰습니다.",
               "behaviorHint": "a S2 fact_pursuit ?? 2",
               "tags": [
                 "channel:interrogation",
@@ -8663,7 +8663,7 @@
             },
             {
               "id": "a-h-d3-S2-fact-pursuit-v3",
-              "text": "재판관님, 완전히 부인할 단계는 지났습니다. 적지 않은 금액을 제 쪽으로 빼두려 한 건 맞습니다. 적어도 제 대응이 거칠었던 점은 인정합니다.",
+              "text": "재판관님, 완전히 부인할 단계는 지났습니다. 적지 않은 금액을 따로 빼두려 한 건 사실입니다.",
               "behaviorHint": "a S2 fact_pursuit ?? 3",
               "tags": [
                 "channel:interrogation",
@@ -8701,7 +8701,7 @@
             },
             {
               "id": "a-h-d3-S2-fact-pursuit-v4",
-              "text": "재판관님, 적지 않은 금액을 제 쪽으로 빼두려 한 건 맞습니다. 숨기려 했다기보다 먼저 잠이 두고 싶다는 마음이었습니다. 적어도 제 대응이 거칠었던 점은 인정합니다.",
+              "text": "재판관님, 제가 움직인 건 인정합니다. 큰 돈이었고, 제 남편 몰래 한 건 맞습니다.",
               "behaviorHint": "a S2 fact_pursuit ?? 4",
               "tags": [
                 "channel:interrogation",
@@ -8739,7 +8739,7 @@
             },
             {
               "id": "a-h-d3-S2-fact-pursuit-v5",
-              "text": "재판관님, 완전히 부인할 단계는 지났습니다. 적지 않은 금액을 제 쪽으로 빼두려 한 건 맞습니다. 적어도 제 대응이 거칠었던 점은 인정합니다.",
+              "text": "재판관님, 불안에서 시작했지만 결국 돈을 움직인 건 저입니다. 그 부분은 부인하지 않겠습니다.",
               "behaviorHint": "a S2 fact_pursuit ?? 5",
               "tags": [
                 "channel:interrogation",
@@ -8788,7 +8788,7 @@
           "variants": [
             {
               "id": "a-h-d3-S2-motive-search-v1",
-              "text": "재판관님, 외도라고 믿고 있었으니 제 몫부터 지켜야 한다고 생각했습니다. 지금 보면 성급했지만 그때는 그게 마지막 방어처럼 보였습니다. 적어도 제 대응이 거칠었던 점은 인정합니다.",
+              "text": "재판관님, 외도라고 믿고 있었으니 제 몫부터 지켜야 한다고 생각했습니다. 지금 보면 성급했지만 그때는 마지막 방어처럼 보였습니다.",
               "behaviorHint": "a S2 motive_search ?? 1",
               "tags": [
                 "channel:interrogation",
@@ -8826,7 +8826,7 @@
             },
             {
               "id": "a-h-d3-S2-motive-search-v2",
-              "text": "재판관님, 외도라고 믿고 있었으니 제 몫부터 지켜야 한다고 생각했습니다. 그래서 제 계산된 선택도 불안 뒤에 숨기고 싶었습니다. 적어도 제 대응이 거칠었던 점은 인정합니다.",
+              "text": "재판관님, 차갑게 계산한 게 아니라 겁먹고 먼저 움켜쥔 겁니다. 그래도 결과적으로 먼저 움직인 건 저입니다.",
               "behaviorHint": "a S2 motive_search ?? 2",
               "tags": [
                 "channel:interrogation",
@@ -8864,7 +8864,7 @@
             },
             {
               "id": "a-h-d3-S2-motive-search-v3",
-              "text": "재판관님, 제가 차갑게 움직인 게 아니라 겁먹고 먼저 움켜쥔 겁니다. 외도라고 믿고 있었으니 제 몫부터 지켜야 한다고 생각했습니다. 적어도 제 대응이 거칠었던 점은 인정합니다.",
+              "text": "재판관님, 제 계산된 선택을 불안 뒤에 숨기고 싶었습니다. 하지만 움직인 건 움직인 겁니다.",
               "behaviorHint": "a S2 motive_search ?? 3",
               "tags": [
                 "channel:interrogation",
@@ -8902,7 +8902,7 @@
             },
             {
               "id": "a-h-d3-S2-motive-search-v4",
-              "text": "재판관님, 외도라고 믿고 있었으니 제 몫부터 지켜야 한다고 생각했습니다. 지금 보면 성급했지만 그때는 그게 마지막 방어처럼 보였습니다. 적어도 제 대응이 거칠었던 점은 인정합니다.",
+              "text": "재판관님, 자기방어라고 우기면 거짓말이 됩니다. 이혼 대비 생각도 섞여 있었습니다.",
               "behaviorHint": "a S2 motive_search ?? 4",
               "tags": [
                 "channel:interrogation",
@@ -8940,7 +8940,7 @@
             },
             {
               "id": "a-h-d3-S2-motive-search-v5",
-              "text": "재판관님, 제가 차갑게 움직인 게 아니라 겁먹고 먼저 움켜쥔 겁니다. 외도라고 믿고 있었으니 제 몫부터 지켜야 한다고 생각했습니다. 적어도 제 대응이 거칠었던 점은 인정합니다.",
+              "text": "재판관님, 배신 공포가 출발점이었던 건 맞습니다. 그래도 그 공포를 면죄부처럼 쓸 수는 없습니다.",
               "behaviorHint": "a S2 motive_search ?? 5",
               "tags": [
                 "channel:interrogation",
@@ -8989,7 +8989,7 @@
           "variants": [
             {
               "id": "a-h-d3-S2-empathy-approach-v1",
-              "text": "재판관님, 제가 계산만 한 게 아닙니다. 겁에 질려서 먼저 움켜쥔 겁니다. 적어도 제 대응이 거칠었던 점은 인정합니다.",
+              "text": "재판관님, 제가 계산만 한 게 아닙니다. 겁에 질려서 먼저 움켜쥔 겁니다.",
               "behaviorHint": "a S2 empathy_approach ?? 1",
               "tags": [
                 "channel:interrogation",
@@ -9027,7 +9027,7 @@
             },
             {
               "id": "a-h-d3-S2-empathy-approach-v2",
-              "text": "재판관님, 제가 계산만 한 게 아닙니다. 그러고도 제가 무슨 짓을 했는지 정면으로 보기 싫었습니다. 적어도 제 대응이 거칠었던 점은 인정합니다.",
+              "text": "재판관님, 제가 무슨 짓을 했는지 정면으로 보기 싫었습니다. 그래서 더 피해자인 척했습니다.",
               "behaviorHint": "a S2 empathy_approach ?? 2",
               "tags": [
                 "channel:interrogation",
@@ -9065,7 +9065,7 @@
             },
             {
               "id": "a-h-d3-S2-empathy-approach-v3",
-              "text": "재판관님, 제 자신을 지킨다고 하면서도 사실은 무너지고 있었습니다. 제가 계산만 한 게 아닙니다. 적어도 제 대응이 거칠었던 점은 인정합니다.",
+              "text": "재판관님, 제 자신을 지킨다고 하면서도 사실은 무너지고 있었습니다. 그 안에서 한 선택입니다.",
               "behaviorHint": "a S2 empathy_approach ?? 3",
               "tags": [
                 "channel:interrogation",
@@ -9103,7 +9103,7 @@
             },
             {
               "id": "a-h-d3-S2-empathy-approach-v4",
-              "text": "재판관님, 제가 계산만 한 게 아닙니다. 겁에 질려서 먼저 움켜쥔 겁니다. 적어도 제 대응이 거칠었던 점은 인정합니다.",
+              "text": "재판관님, 불안한 사람이 먼저 손을 댄 겁니다. 그게 옳았다고는 못 하겠습니다.",
               "behaviorHint": "a S2 empathy_approach ?? 4",
               "tags": [
                 "channel:interrogation",
@@ -9141,7 +9141,7 @@
             },
             {
               "id": "a-h-d3-S2-empathy-approach-v5",
-              "text": "재판관님, 제 자신을 지킨다고 하면서도 사실은 무너지고 있었습니다. 제가 계산만 한 게 아닙니다. 적어도 제 대응이 거칠었던 점은 인정합니다.",
+              "text": "재판관님, 움직이고 나서 더 무서웠습니다. 되돌릴 수 없다는 걸 알았기 때문입니다.",
               "behaviorHint": "a S2 empathy_approach ?? 5",
               "tags": [
                 "channel:interrogation",
@@ -9190,7 +9190,7 @@
           "variants": [
             {
               "id": "a-h-d3-S3-fact-pursuit-v1",
-              "text": "재판관님, 제가 2,000만 원을 먼저 보낸 건 맞습니다. 제 남편 진실을 확인하기도 전에 제 몫을 지킨다는 생각부터 앞섰습니다. 문제는 상대방 측 대응에도 분명히 있습니다, 저도 그 시점에는 이미 몰렸던 사람처럼 버티고 있었습니다.",
+              "text": "재판관님, 2,000만 원을 먼저 보낸 건 맞습니다. 제 남편의 진실을 확인하기도 전에 제 몫부터 지키겠다는 생각이 앞섰습니다.",
               "behaviorHint": "a S3 fact_pursuit ?? 1",
               "tags": [
                 "channel:interrogation",
@@ -9228,7 +9228,7 @@
             },
             {
               "id": "a-h-d3-S3-fact-pursuit-v2",
-              "text": "재판관님, 제가 2,000만 원을 먼저 보낸 건 맞습니다. 그때부터는 생각이 아니라 실행이었다는 걸 인정합니다. 문제는 상대방 측 대응에도 분명히 있습니다, 그때의 저는 이미 억울함과 손해를 한꺼번에 떠안은 상태였습니다.",
+              "text": "재판관님, 2,000만 원을 움직인 건 인정합니다. 생각이 아니라 실행이었다는 걸 이제는 압니다.",
               "behaviorHint": "a S3 fact_pursuit ?? 2",
               "tags": [
                 "channel:interrogation",
@@ -9266,7 +9266,7 @@
             },
             {
               "id": "a-h-d3-S3-fact-pursuit-v3",
-              "text": "재판관님, 이제는 부인할 수 없습니다. 제가 2,000만 원을 먼저 보낸 건 맞습니다. 문제는 상대방 측 대응에도 분명히 있습니다, 저 역시 그 과정에서 이미 손해와 피해를 함께 감당하고 있었습니다.",
+              "text": "재판관님, 이제 부인할 수 없습니다. 2,000만 원을 제가 먼저 보냈습니다. 하지만 그 의심을 만든 건 제 남편입니다.",
               "behaviorHint": "a S3 fact_pursuit ?? 3",
               "tags": [
                 "channel:interrogation",
@@ -9304,7 +9304,7 @@
             },
             {
               "id": "a-h-d3-S3-fact-pursuit-v4",
-              "text": "재판관님, 제가 2,000만 원을 먼저 보낸 건 맞습니다. 제 남편 진실을 확인하기도 전에 제 몫을 지킨다는 생각부터 앞섰습니다. 문제는 상대방 측 대응에도 분명히 있습니다, 저도 그 시점에는 이미 몰렸던 사람처럼 버티고 있었습니다.",
+              "text": "재판관님, 2,000만 원을 보낸 건 사실입니다. 그래도 그 선택으로 몰린 과정까지 제 탓이라고는 못 합니다.",
               "behaviorHint": "a S3 fact_pursuit ?? 4",
               "tags": [
                 "channel:interrogation",
@@ -9342,7 +9342,7 @@
             },
             {
               "id": "a-h-d3-S3-fact-pursuit-v5",
-              "text": "재판관님, 이제는 부인할 수 없습니다. 제가 2,000만 원을 먼저 보낸 건 맞습니다. 문제는 상대방 측 대응에도 분명히 있습니다, 그때의 저는 이미 억울함과 손해를 한꺼번에 떠안은 상태였습니다.",
+              "text": "재판관님, 저도 돈을 움직였습니다. 2,000만 원입니다. 다만 그 출발점에 제 남편의 숨김이 있었다는 건 기록해 주십시오.",
               "behaviorHint": "a S3 fact_pursuit ?? 5",
               "tags": [
                 "channel:interrogation",
@@ -9391,7 +9391,7 @@
           "variants": [
             {
               "id": "a-h-d3-S3-motive-search-v1",
-              "text": "재판관님, 그 2,000만 원은 욕심이라기보다 도망칠 구멍을 만드는 돈처럼 느껴졌습니다. 하지만 결과적으로 이혼 대비처럼 움직인 것도 부정하지 않겠습니다. 문제는 상대방 측 대응에도 분명히 있습니다, 저도 그 시점에는 이미 몰렸던 사람처럼 버티고 있었습니다.",
+              "text": "재판관님, 2,000만 원은 욕심이 아니라 도망칠 구멍을 만드는 돈이었습니다. 하지만 이혼 대비처럼 움직인 것도 부정하지 않겠습니다.",
               "behaviorHint": "a S3 motive_search ?? 1",
               "tags": [
                 "channel:interrogation",
@@ -9429,7 +9429,7 @@
             },
             {
               "id": "a-h-d3-S3-motive-search-v2",
-              "text": "재판관님, 그 2,000만 원은 욕심이라기보다 도망칠 구멍을 만드는 돈처럼 느껴졌습니다. 저는 자기방어라는 말 뒤에 제 계산을 같이 숨기고 있었습니다. 문제는 상대방 측 대응에도 분명히 있습니다, 그때의 저는 이미 억울함과 손해를 한꺼번에 떠안은 상태였습니다.",
+              "text": "재판관님, 자기방어라는 말 뒤에 제 계산도 섞여 있었습니다. 그래도 그 불안을 만든 건 제 남편입니다.",
               "behaviorHint": "a S3 motive_search ?? 2",
               "tags": [
                 "channel:interrogation",
@@ -9467,7 +9467,7 @@
             },
             {
               "id": "a-h-d3-S3-motive-search-v3",
-              "text": "재판관님, 배신 공포가 있었던 건 사실이지만 그걸 면죄부처럼 쓸 수는 없습니다. 그 2,000만 원은 욕심이라기보다 도망칠 구멍을 만드는 돈처럼 느껴졌습니다. 문제는 상대방 측 대응에도 분명히 있습니다, 저 역시 그 과정에서 이미 손해와 피해를 함께 감당하고 있었습니다.",
+              "text": "재판관님, 배신 공포가 있었던 건 사실입니다. 하지만 그걸 면죄부로 쓸 수는 없습니다. 2,000만 원은 제가 보낸 겁니다.",
               "behaviorHint": "a S3 motive_search ?? 3",
               "tags": [
                 "channel:interrogation",
@@ -9505,7 +9505,7 @@
             },
             {
               "id": "a-h-d3-S3-motive-search-v4",
-              "text": "재판관님, 그 2,000만 원은 욕심이라기보다 도망칠 구멍을 만드는 돈처럼 느껴졌습니다. 하지만 결과적으로 이혼 대비처럼 움직인 것도 부정하지 않겠습니다. 문제는 상대방 측 대응에도 분명히 있습니다, 저도 그 시점에는 이미 몰렸던 사람처럼 버티고 있었습니다.",
+              "text": "재판관님, 제 남편이 먼저 숨기지 않았으면 저도 그런 판단까지 안 갔습니다. 그래도 실행한 건 저입니다.",
               "behaviorHint": "a S3 motive_search ?? 4",
               "tags": [
                 "channel:interrogation",
@@ -9543,7 +9543,7 @@
             },
             {
               "id": "a-h-d3-S3-motive-search-v5",
-              "text": "재판관님, 배신 공포가 있었던 건 사실이지만 그걸 면죄부처럼 쓸 수는 없습니다. 그 2,000만 원은 욕심이라기보다 도망칠 구멍을 만드는 돈처럼 느껴졌습니다. 문제는 상대방 측 대응에도 분명히 있습니다, 그때의 저는 이미 억울함과 손해를 한꺼번에 떠안은 상태였습니다.",
+              "text": "재판관님, 돈을 지키겠다는 마음과 남편을 떠나겠다는 마음이 같이 갔습니다. 솔직히 구분이 안 됐습니다.",
               "behaviorHint": "a S3 motive_search ?? 5",
               "tags": [
                 "channel:interrogation",
@@ -9592,7 +9592,7 @@
           "variants": [
             {
               "id": "a-h-d3-S3-empathy-approach-v1",
-              "text": "재판관님, 그 돈을 보낼 때도 손이 떨렸습니다. 지키려는 마음이었다고 말했지만 이미 저는 관계가 끝났다고 믿고 있었습니다. 문제는 상대방 측 대응에도 분명히 있습니다, 저도 그 시점에는 이미 몰렸던 사람처럼 버티고 있었습니다.",
+              "text": "재판관님, 그 돈을 보낼 때도 손이 떨렸습니다. 지키려는 마음이었다고 말했지만, 이미 관계가 끝났다고 믿고 있었습니다.",
               "behaviorHint": "a S3 empathy_approach ?? 1",
               "tags": [
                 "channel:interrogation",
@@ -9630,7 +9630,7 @@
             },
             {
               "id": "a-h-d3-S3-empathy-approach-v2",
-              "text": "재판관님, 그 돈을 보낼 때도 손이 떨렸습니다. 그래서 먼저 보낸 사실이 더 무겁게 남습니다. 문제는 상대방 측 대응에도 분명히 있습니다, 그때의 저는 이미 억울함과 손해를 한꺼번에 떠안은 상태였습니다.",
+              "text": "재판관님, 2,000만 원을 보내고 나서 안심이 아니라 더 깊이 떨어졌습니다. 돌이킬 수 없다는 걸 알았기 때문입니다.",
               "behaviorHint": "a S3 empathy_approach ?? 2",
               "tags": [
                 "channel:interrogation",
@@ -9668,7 +9668,7 @@
             },
             {
               "id": "a-h-d3-S3-empathy-approach-v3",
-              "text": "재판관님, 안심하려고 보냈은데 오히려 더 깊이 떨어졌습니다. 그 돈을 보낼 때도 손이 떨렸습니다. 문제는 상대방 측 대응에도 분명히 있습니다, 저 역시 그 과정에서 이미 손해와 피해를 함께 감당하고 있었습니다.",
+              "text": "재판관님, 먼저 움직인 사실이 무겁게 남습니다. 제 남편이 의심을 만든 건 맞지만, 그 의심 속에서 먼저 손을 댄 건 저입니다.",
               "behaviorHint": "a S3 empathy_approach ?? 3",
               "tags": [
                 "channel:interrogation",
@@ -9706,7 +9706,7 @@
             },
             {
               "id": "a-h-d3-S3-empathy-approach-v4",
-              "text": "재판관님, 그 돈을 보낼 때도 손이 떨렸습니다. 지키려는 마음이었다고 말했지만 이미 저는 관계가 끝났다고 믿고 있었습니다. 문제는 상대방 측 대응에도 분명히 있습니다, 저도 그 시점에는 이미 몰렸던 사람처럼 버티고 있었습니다.",
+              "text": "재판관님, 저는 버려지는 줄 알고 먼저 챙겼습니다. 지금 와서 보면 그게 관계를 정말로 부순 행동이었습니다.",
               "behaviorHint": "a S3 empathy_approach ?? 4",
               "tags": [
                 "channel:interrogation",
@@ -9744,7 +9744,7 @@
             },
             {
               "id": "a-h-d3-S3-empathy-approach-v5",
-              "text": "재판관님, 안심하려고 보냈은데 오히려 더 깊이 떨어졌습니다. 그 돈을 보낼 때도 손이 떨렸습니다. 문제는 상대방 측 대응에도 분명히 있습니다, 그때의 저는 이미 억울함과 손해를 한꺼번에 떠안은 상태였습니다.",
+              "text": "재판관님, 제 남편한테 화가 났지만 저도 같은 시간에 숨기고 있었습니다. 그 모순이 제일 부끄럽습니다.",
               "behaviorHint": "a S3 empathy_approach ?? 5",
               "tags": [
                 "channel:interrogation",
@@ -9793,7 +9793,7 @@
           "variants": [
             {
               "id": "a-h-d3-S4-fact-pursuit-v1",
-              "text": "재판관님, 보낸 뒤에 잘못된 곳이라는 걸 알았고, 그 사실까지 숨겼습니다. 돈을 보낸 것보다 사기당했다는 말을 입에 올리는 게 더 수치스러웠습니다. 그때는 너무 흔들렸습니다, 저도 그 시점에는 이미 몰렸던 사람처럼 버티고 있었습니다.",
+              "text": "재판관님, 보낸 뒤에 잘못된 곳이라는 걸 알았습니다. 그리고 그 사실까지 숨겼습니다. 사기당했다는 말을 입에 올리는 게 더 수치스러웠습니다.",
               "behaviorHint": "a S4 fact_pursuit ?? 1",
               "tags": [
                 "channel:interrogation",
@@ -9831,7 +9831,7 @@
             },
             {
               "id": "a-h-d3-S4-fact-pursuit-v2",
-              "text": "재판관님, 보낸 뒤에 잘못된 곳이라는 걸 알았고, 그 사실까지 숨겼습니다. 그래서 저는 피해자처럼만 버티면서 제 실행을 늦게 말했습니다.",
+              "text": "재판관님, 2,000만 원을 보내고, 그 돈을 잃었습니다. 피해자처럼만 버티면서 제 실행을 늦게 말한 겁니다.",
               "behaviorHint": "a S4 fact_pursuit ?? 2",
               "tags": [
                 "channel:interrogation",
@@ -9869,7 +9869,7 @@
             },
             {
               "id": "a-h-d3-S4-fact-pursuit-v3",
-              "text": "재판관님, 잃었다는 사실을 인정하는 순간 제 잘못도 같이 드러날까 봐 무서웠습니다. 보낸 뒤에 잘못된 곳이라는 걸 알았고, 그 사실까지 숨겼습니다. 그때는 너무 흔들렸습니다, 저 역시 그 과정에서 이미 손해와 피해를 함께 감당하고 있었습니다.",
+              "text": "재판관님, 잃었다는 사실을 인정하면 제 잘못도 같이 드러날까 봐 무서웠습니다. 그래서 더 오래 숨겼습니다.",
               "behaviorHint": "a S4 fact_pursuit ?? 3",
               "tags": [
                 "channel:interrogation",
@@ -9907,7 +9907,7 @@
             },
             {
               "id": "a-h-d3-S4-fact-pursuit-v4",
-              "text": "재판관님, 보낸 뒤에 잘못된 곳이라는 걸 알았고, 그 사실까지 숨겼습니다. 돈을 보낸 것보다 사기당했다는 말을 입에 올리는 게 더 수치스러웠습니다. 그래서 저는 피해자처럼만 버티면서 제 실행을 늦게 말했습니다.",
+              "text": "재판관님, 돈을 보낸 것도 잘못인데 사기까지 당했습니다. 그걸 말하면 제가 완전히 끝난다고 생각했습니다.",
               "behaviorHint": "a S4 fact_pursuit ?? 4",
               "tags": [
                 "channel:interrogation",
@@ -9945,7 +9945,7 @@
             },
             {
               "id": "a-h-d3-S4-fact-pursuit-v5",
-              "text": "재판관님, 잃었다는 사실을 인정하는 순간 제 잘못도 같이 드러날까 봐 무서웠습니다. 보낸 뒤에 잘못된 곳이라는 걸 알았고, 그 사실까지 숨겼습니다. 그때는 너무 흔들렸습니다, 그때의 저는 이미 억울함과 손해를 한꺼번에 떠안은 상태였습니다.",
+              "text": "재판관님, 2,000만 원을 보내고 속았습니다. 그리고 속은 사실까지 숨겼습니다. 이중으로 숨긴 겁니다.",
               "behaviorHint": "a S4 fact_pursuit ?? 5",
               "tags": [
                 "channel:interrogation",
@@ -9994,7 +9994,7 @@
           "variants": [
             {
               "id": "a-h-d3-S4-motive-search-v1",
-              "text": "재판관님, 자기방어라고 우겼지만, 솔직히 이혼 대비 생각도 섞여 있었습니다. 그러니 사기까지 당했다는 걸 말하면 제가 완전히 무너질 것 같았습니다. 그때는 너무 흔들렸습니다, 저도 그 시점에는 이미 몰렸던 사람처럼 버티고 있었습니다.",
+              "text": "재판관님, 자기방어라고 우겼지만 솔직히 이혼 대비 생각도 섞여 있었습니다. 사기까지 당했다는 걸 말하면 제가 무너질 것 같았습니다.",
               "behaviorHint": "a S4 motive_search ?? 1",
               "tags": [
                 "channel:interrogation",
@@ -10032,7 +10032,7 @@
             },
             {
               "id": "a-h-d3-S4-motive-search-v2",
-              "text": "재판관님, 자기방어라고 우겼지만, 솔직히 이혼 대비 생각도 섞여 있었습니다. 결국 숨긴 이유는 억울함보다 수치심이 더 컸기 때문입니다. 그때는 너무 흔들렸습니다.",
+              "text": "재판관님, 방어였다고만 말하면 제 쪽 진실이 빠집니다. 이혼 대비와 자기방어가 구분이 안 됐습니다.",
               "behaviorHint": "a S4 motive_search ?? 2",
               "tags": [
                 "channel:interrogation",
@@ -10070,7 +10070,7 @@
             },
             {
               "id": "a-h-d3-S4-motive-search-v3",
-              "text": "재판관님, 방어였다고만 말하면 제 쪽 진실이 빠집니다. 자기방어라고 우겼지만, 솔직히 이혼 대비 생각도 섞여 있었습니다. 그때는 너무 흔들렸습니다, 저 역시 그 과정에서 이미 손해와 피해를 함께 감당하고 있었습니다.",
+              "text": "재판관님, 숨긴 이유가 억울함보다 수치심이 더 컸기 때문입니다. 돈을 잃고 나니 제 판단 전체가 무너졌습니다.",
               "behaviorHint": "a S4 motive_search ?? 3",
               "tags": [
                 "channel:interrogation",
@@ -10108,7 +10108,7 @@
             },
             {
               "id": "a-h-d3-S4-motive-search-v4",
-              "text": "재판관님, 자기방어라고 우겼지만, 솔직히 이혼 대비 생각도 섞여 있었습니다. 그러니 사기까지 당했다는 걸 말하면 제가 완전히 무너질 것 같았습니다. 그때는 너무 흔들렸습니다.",
+              "text": "재판관님, 사기당한 걸 말하면 제가 숨긴 것까지 다 드러납니다. 그게 무서워서 피해자인 척 더 세게 버텼습니다.",
               "behaviorHint": "a S4 motive_search ?? 4",
               "tags": [
                 "channel:interrogation",
@@ -10146,7 +10146,7 @@
             },
             {
               "id": "a-h-d3-S4-motive-search-v5",
-              "text": "재판관님, 방어였다고만 말하면 제 쪽 진실이 빠집니다. 자기방어라고 우겼지만, 솔직히 이혼 대비 생각도 섞여 있었습니다. 그때는 너무 흔들렸습니다, 그때의 저는 이미 억울함과 손해를 한꺼번에 떠안은 상태였습니다.",
+              "text": "재판관님, 제 남편한테 속았다고 생각했는데 정작 저도 다른 데서 속았습니다. 그 아이러니가 너무 창피해서 입을 다물었습니다.",
               "behaviorHint": "a S4 motive_search ?? 5",
               "tags": [
                 "channel:interrogation",
@@ -10195,7 +10195,7 @@
           "variants": [
             {
               "id": "a-h-d3-S4-empathy-approach-v1",
-              "text": "재판관님, 그때는 진짜 버려지는 줄 알았습니다. 그래서 먼저 보냈고, 잃었다는 말조차 못 했습니다. 그때는 너무 흔들렸습니다, 저도 그 시점에는 이미 몰렸던 사람처럼 버티고 있었습니다.",
+              "text": "재판관님, 진짜 버려지는 줄 알아서 먼저 보냈고, 잃었다는 말조차 못 했습니다.",
               "behaviorHint": "a S4 empathy_approach ?? 1",
               "tags": [
                 "channel:interrogation",
@@ -10233,7 +10233,7 @@
             },
             {
               "id": "a-h-d3-S4-empathy-approach-v2",
-              "text": "재판관님, 그때는 진짜 버려지는 줄 알았습니다. 제가 잘못 움직였다는 사실보다 사기당한 사람이 됐다는 게 더 창피했습니다. 그때는 너무 흔들렸습니다, 그때의 저는 이미 억울함과 손해를 한꺼번에 떠안은 상태였습니다.",
+              "text": "재판관님, 사기당한 사람이 됐다는 게 돈 보낸 것보다 더 창피했습니다. 그래서 더 오래 입을 닫았습니다.",
               "behaviorHint": "a S4 empathy_approach ?? 2",
               "tags": [
                 "channel:interrogation",
@@ -10271,7 +10271,7 @@
             },
             {
               "id": "a-h-d3-S4-empathy-approach-v3",
-              "text": "재판관님, 혼자 무너진 밤을 들키고 싶지 않았습니다. 그때는 진짜 버려지는 줄 알았습니다. 그때는 너무 흔들렸습니다, 저 역시 그 과정에서 이미 손해와 피해를 함께 감당하고 있었습니다.",
+              "text": "재판관님, 혼자 무너진 밤을 들키고 싶지 않았습니다. 사기당한 걸 말하면 제가 바보가 됩니다.",
               "behaviorHint": "a S4 empathy_approach ?? 3",
               "tags": [
                 "channel:interrogation",
@@ -10309,7 +10309,7 @@
             },
             {
               "id": "a-h-d3-S4-empathy-approach-v4",
-              "text": "재판관님, 그때는 진짜 버려지는 줄 알았습니다. 그래서 먼저 보냈고, 잃었다는 말조차 못 했습니다. 그때는 너무 흔들렸습니다, 저도 그 시점에는 이미 몰렸던 사람처럼 버티고 있었습니다.",
+              "text": "재판관님, 남편한테 배신당했다고 울면서 정작 저도 숨기고 있었습니다. 그 모순을 견디는 게 제일 힘들었습니다.",
               "behaviorHint": "a S4 empathy_approach ?? 4",
               "tags": [
                 "channel:interrogation",
@@ -10347,7 +10347,7 @@
             },
             {
               "id": "a-h-d3-S4-empathy-approach-v5",
-              "text": "재판관님, 혼자 무너진 밤을 들키고 싶지 않았습니다. 그때는 진짜 버려지는 줄 알았습니다. 그때는 너무 흔들렸습니다, 그때의 저는 이미 억울함과 손해를 한꺼번에 떠안은 상태였습니다.",
+              "text": "재판관님, 돈을 잃고 나서 매일 밤 자책했습니다. 그런데 그걸 말할 데가 없었습니다. 제 남편한테는 더더욱.",
               "behaviorHint": "a S4 empathy_approach ?? 5",
               "tags": [
                 "channel:interrogation",
@@ -10396,7 +10396,7 @@
           "variants": [
             {
               "id": "a-h-d3-S5-fact-pursuit-v1",
-              "text": "재판관님, 제가 따로 보낸 금액은 \"2,000만 원\"입니다. 제 남편 외도를 확신한 채 제 몫을 지키겠다고 움직였다가 투자 사기를 당했습니다. 그리고 그 사실까지 숨겼습니다. 이 부분은 제 책임으로 인정합니다.",
+              "text": "재판관님, 제가 따로 보낸 돈은 2,000만 원입니다. 제 남편 외도를 확신한 채 제 몫을 지키겠다고 움직였다가 투자 사기를 당했습니다. 그리고 그 사실까지 숨겼습니다.",
               "behaviorHint": "a S5 fact_pursuit ?? 1",
               "tags": [
                 "channel:interrogation",
@@ -10434,7 +10434,7 @@
             },
             {
               "id": "a-h-d3-S5-fact-pursuit-v2",
-              "text": "재판관님, 제 남편 외도를 확신한 채 제 몫을 지키겠다고 움직였다가 투자 사기를 당했습니다. 제가 따로 보낸 금액은 \"2,000만 원\"입니다. 그리고 그 사실까지 숨겼습니다. 이 부분은 제 책임으로 인정합니다.",
+              "text": "재판관님, 2,000만 원을 따로 보냈습니다. 이혼 대비 심리로 투자방에 넣었다가 전부 잃었습니다. 그 수치심 때문에 더 오래 숨겼습니다.",
               "behaviorHint": "a S5 fact_pursuit ?? 2",
               "tags": [
                 "channel:interrogation",
@@ -10472,7 +10472,7 @@
             },
             {
               "id": "a-h-d3-S5-fact-pursuit-v3",
-              "text": "재판관님, 제가 따로 보낸 금액은 \"2,000만 원\"입니다. 제 남편 외도를 확신한 채 제 몫을 지키겠다고 움직였다가 투자 사기를 당했습니다. 이 부분은 제 책임이라고 인정합니다.",
+              "text": "재판관님, 사실 그대로 말씀드리겠습니다. 2,000만 원을 제 판단으로 움직였고, 사기에 당해서 전부 잃었고, 그 사실을 끝까지 숨겼습니다.",
               "behaviorHint": "a S5 fact_pursuit ?? 3",
               "tags": [
                 "channel:interrogation",
@@ -10510,7 +10510,7 @@
             },
             {
               "id": "a-h-d3-S5-fact-pursuit-v4",
-              "text": "재판관님, 그리고 그 사실까지 숨겼습니다. 제가 따로 보낸 금액은 \"2,000만 원\"입니다. 제 남편 외도를 확신한 채 제 몫을 지키겠다고 움직였다가 투자 사기를 당했습니다. 이 부분은 제 책임으로 인정합니다.",
+              "text": "재판관님, 외도를 확신한 뒤 2,000만 원을 따로 빼서 투자를 했습니다. 결과는 사기 피해였습니다. 제 잘못입니다.",
               "behaviorHint": "a S5 fact_pursuit ?? 4",
               "tags": [
                 "channel:interrogation",
@@ -10548,7 +10548,7 @@
             },
             {
               "id": "a-h-d3-S5-fact-pursuit-v5",
-              "text": "재판관님, 제가 따로 보낸 금액은 \"2,000만 원\"입니다. 그리고 그 사실까지 숨겼습니다. 제 남편 외도를 확신한 채 제 몫을 지키겠다고 움직였다가 투자 사기를 당했습니다. 이 부분은 제 책임이라고 인정합니다.",
+              "text": "재판관님, 2,000만 원을 보낸 것도, 사기당한 것도, 그걸 숨긴 것도 전부 제가 한 일입니다. 피해자인 척한 시간까지 포함해서 인정합니다.",
               "behaviorHint": "a S5 fact_pursuit ?? 5",
               "tags": [
                 "channel:interrogation",
@@ -10597,7 +10597,7 @@
           "variants": [
             {
               "id": "a-h-d3-S5-motive-search-v1",
-              "text": "재판관님, 자기방어였다고만 말하면 거짓말입니다. 제가 따로 보낸 금액은 \"2,000만 원\"입니다. 잃고 나서는 제 선택이 너무 창피해서 더 입을 닫았습니다. 이 부분은 제 책임으로 인정합니다.",
+              "text": "재판관님, 자기방어였다고만 말하면 거짓말입니다. 이혼 대비 생각도 분명히 있었습니다. 2,000만 원을 잃고 나서는 수치심 때문에 더 입을 닫았습니다.",
               "behaviorHint": "a S5 motive_search ?? 1",
               "tags": [
                 "channel:interrogation",
@@ -10635,7 +10635,7 @@
             },
             {
               "id": "a-h-d3-S5-motive-search-v2",
-              "text": "재판관님, 제가 따로 보낸 금액은 \"2,000만 원\"입니다. 자기방어였다고만 말하면 거짓말입니다. 잃고 나서는 제 선택이 너무 창피해서 더 입을 닫았습니다. 이 부분은 제 책임으로 인정합니다.",
+              "text": "재판관님, 제 몫을 지키겠다는 마음과 남편을 떠나겠다는 마음이 같이 갔습니다. 그 마음으로 2,000만 원을 보냈고, 잃고 나서는 창피해서 말도 못 했습니다.",
               "behaviorHint": "a S5 motive_search ?? 2",
               "tags": [
                 "channel:interrogation",
@@ -10673,7 +10673,7 @@
             },
             {
               "id": "a-h-d3-S5-motive-search-v3",
-              "text": "재판관님, 자기방어였다고만 말하면 거짓말입니다. 제가 따로 보낸 금액은 \"2,000만 원\"입니다. 그 수치심이 제 동기를 더 오래 가렸습니다. 이 부분은 제 책임으로 인정합니다.",
+              "text": "재판관님, 배신 공포가 출발이었지만 결과는 제 독단이었습니다. 2,000만 원을 투자방에 넣은 것도, 사기당한 것도, 숨긴 것도 전부 제 선택입니다.",
               "behaviorHint": "a S5 motive_search ?? 3",
               "tags": [
                 "channel:interrogation",
@@ -10711,7 +10711,7 @@
             },
             {
               "id": "a-h-d3-S5-motive-search-v4",
-              "text": "재판관님, 잃고 나서는 제 선택이 너무 창피해서 더 입을 닫았습니다. 자기방어였다고만 말하면 거짓말입니다. 제가 따로 보낸 금액은 \"2,000만 원\"입니다. 이 부분은 제 책임으로 인정합니다.",
+              "text": "재판관님, 제 남편을 탓하면서 정작 저도 같은 시간에 숨기고 있었습니다. 2,000만 원의 수치심이 제 동기를 더 오래 가렸습니다.",
               "behaviorHint": "a S5 motive_search ?? 4",
               "tags": [
                 "channel:interrogation",
@@ -10749,7 +10749,7 @@
             },
             {
               "id": "a-h-d3-S5-motive-search-v5",
-              "text": "재판관님, 자기방어였다고만 말하면 거짓말입니다. 잃고 나서는 제 선택이 너무 창피해서 더 입을 닫았습니다. 제가 따로 보낸 금액은 \"2,000만 원\"입니다. 이 부분은 제 책임으로 인정합니다.",
+              "text": "재판관님, 숨긴 이유는 간단합니다. 돈을 잃은 게 창피했고, 제가 먼저 움직인 게 드러나면 피해자 자리를 잃을까 봐 무서웠습니다.",
               "behaviorHint": "a S5 motive_search ?? 5",
               "tags": [
                 "channel:interrogation",
@@ -10798,7 +10798,7 @@
           "variants": [
             {
               "id": "a-h-d3-S5-empathy-approach-v1",
-              "text": "재판관님, 그때는 진짜 버려지는 줄 알았습니다. 제가 따로 보낸 금액은 \"2,000만 원\"입니다. 숨긴 건 두려움과 수치심 때문입니다. 이 부분은 제 책임으로 인정합니다.",
+              "text": "재판관님, 진짜 버려지는 줄 알았습니다. 그래서 2,000만 원을 보냈고, 잃었고, 그 말조차 못 했습니다.",
               "behaviorHint": "a S5 empathy_approach ?? 1",
               "tags": [
                 "channel:interrogation",
@@ -10836,7 +10836,7 @@
             },
             {
               "id": "a-h-d3-S5-empathy-approach-v2",
-              "text": "재판관님, 제가 따로 보낸 금액은 \"2,000만 원\"입니다. 그때는 진짜 버려지는 줄 알았습니다. 숨긴 건 두려움과 수치심 때문입니다. 이 부분은 제 책임으로 인정합니다.",
+              "text": "재판관님, 숨긴 건 두려움과 수치심 때문입니다. 사기당한 사실을 말하면 제가 완전히 무너질 것 같았습니다.",
               "behaviorHint": "a S5 empathy_approach ?? 2",
               "tags": [
                 "channel:interrogation",
@@ -10874,7 +10874,7 @@
             },
             {
               "id": "a-h-d3-S5-empathy-approach-v3",
-              "text": "재판관님, 그때는 진짜 버려지는 줄 알았습니다. 제가 따로 보낸 금액은 \"2,000만 원\"입니다. 이제는 그 말까지 하겠습니다. 이 부분은 제 책임으로 인정합니다.",
+              "text": "재판관님, 제 남편한테 분노하면서 저도 같은 짓을 하고 있었습니다. 그 모순이 제일 견디기 어려웠습니다.",
               "behaviorHint": "a S5 empathy_approach ?? 3",
               "tags": [
                 "channel:interrogation",
@@ -10912,7 +10912,7 @@
             },
             {
               "id": "a-h-d3-S5-empathy-approach-v4",
-              "text": "재판관님, 숨긴 건 두려움과 수치심 때문입니다. 그때는 진짜 버려지는 줄 알았습니다. 제가 따로 보낸 금액은 \"2,000만 원\"입니다. 이 부분은 제 책임으로 인정합니다.",
+              "text": "재판관님, 돈을 잃고 나서 매일 자책했습니다. 그런데 그 자책을 누구한테도 말할 수 없었습니다. 제가 먼저 움직인 사람이니까요.",
               "behaviorHint": "a S5 empathy_approach ?? 4",
               "tags": [
                 "channel:interrogation",
@@ -10950,7 +10950,7 @@
             },
             {
               "id": "a-h-d3-S5-empathy-approach-v5",
-              "text": "재판관님, 그때는 진짜 버려지는 줄 알았습니다. 숨긴 건 두려움과 수치심 때문입니다. 제가 따로 보낸 금액은 \"2,000만 원\"입니다. 이 부분은 제 책임으로 인정합니다.",
+              "text": "재판관님, 쉽게 괜찮다고 못 하겠습니다. 2,000만 원을 잃은 것도 아프지만, 피해자인 척하면서 숨긴 시간이 더 부끄럽습니다.",
               "behaviorHint": "a S5 empathy_approach ?? 5",
               "tags": [
                 "channel:interrogation",
@@ -22005,7 +22005,7 @@
             },
             {
               "id": "b-h-d3-S0-fact-pursuit-v5",
-              "text": "재판관님, 제 아내가 제 모르게 움직였다는 사실 자체를 저는 뒤늦게 알았습니다.",
+              "text": "재판관님, 제 아내가 제 모르게 움직였다는 사실 자체를 뒤늦게 알았습니다.",
               "behaviorHint": "b S0 fact_pursuit ?? 5",
               "tags": [
                 "channel:interrogation",
@@ -22206,7 +22206,7 @@
             },
             {
               "id": "b-h-d3-S0-motive-search-v5",
-              "text": "재판관님, 그 마음을 제가 단정해서 말할 수는 없습니다. 저는 그때 제 쪽 일 숨기기에만 급했습니다.",
+              "text": "재판관님, 그때 저는 제 쪽 일 숨기기에만 급했습니다. 제 아내 마음을 단정해서 말할 수 없습니다.",
               "behaviorHint": "b S0 motive_search ?? 5",
               "tags": [
                 "channel:interrogation",
@@ -22255,7 +22255,7 @@
           "variants": [
             {
               "id": "b-h-d3-S0-empathy-approach-v1",
-              "text": "재판관님, 저는 제 아내가 그렇게까지 몰린 줄 몰랐습니다.",
+              "text": "재판관님, 제 아내가 그렇게까지 몰린 줄 몰랐습니다.",
               "behaviorHint": "b S0 empathy_approach ?? 1",
               "tags": [
                 "channel:interrogation",
@@ -22293,7 +22293,7 @@
             },
             {
               "id": "b-h-d3-S0-empathy-approach-v2",
-              "text": "재판관님, 지금 돌이켜 보면 불안은 있었는데 제가 못 본 겁니다.",
+              "text": "재판관님, 돌이켜 보면 불안의 신호는 있었는데 제가 못 본 겁니다.",
               "behaviorHint": "b S0 empathy_approach ?? 2",
               "tags": [
                 "channel:interrogation",
@@ -22369,7 +22369,7 @@
             },
             {
               "id": "b-h-d3-S0-empathy-approach-v4",
-              "text": "재판관님, 제 쪽만 급하다고 생각하다가 제 아내 상태를 아예 못 읽었습니다. 그 부분은 제 탓도 있습니다.",
+              "text": "재판관님, 제 쪽만 급하다고 생각하다가 제 아내 상태를 아예 못 읽었습니다.",
               "behaviorHint": "b S0 empathy_approach ?? 4",
               "tags": [
                 "channel:interrogation",
@@ -22407,7 +22407,7 @@
             },
             {
               "id": "b-h-d3-S0-empathy-approach-v5",
-              "text": "재판관님, 솔직히 그때 저는 제 아내가 얼마나 겁먹고 있었는지 보지 못했습니다. 다만 범위와 책임은 구분해 주십시오.",
+              "text": "재판관님, 그때 저는 제 아내가 얼마나 겁먹고 있었는지 보지 못했습니다.",
               "behaviorHint": "b S0 empathy_approach ?? 5",
               "tags": [
                 "channel:interrogation",
@@ -22456,7 +22456,7 @@
           "variants": [
             {
               "id": "b-h-d3-S1-fact-pursuit-v1",
-              "text": "재판관님, 제 아내가 뭔이 따로 챙기는 건 어렴풋이 느꼈습니다.",
+              "text": "재판관님, 제 아내가 뭔가 따로 챙기는 건 어렴풋이 느꼈습니다.",
               "behaviorHint": "b S1 fact_pursuit ?? 1",
               "tags": [
                 "channel:interrogation",
@@ -22608,7 +22608,7 @@
             },
             {
               "id": "b-h-d3-S1-fact-pursuit-v5",
-              "text": "재판관님, 불안해서 뭔이 붙들고 있다는 건 보였습니다. 그런데 제가 제대로 묻지도 못했습니다.",
+              "text": "재판관님, 불안해서 뭔가 붙들고 있다는 건 보였습니다. 그런데 제가 제대로 묻지 못했습니다.",
               "behaviorHint": "b S1 fact_pursuit ?? 5",
               "tags": [
                 "channel:interrogation",
@@ -22858,7 +22858,7 @@
           "variants": [
             {
               "id": "b-h-d3-S1-empathy-approach-v1",
-              "text": "재판관님, 제 아내가 카드며 통화기록을 붙들고 있는 건 봤습니다.",
+              "text": "재판관님, 제 아내가 카드며 통화 기록을 붙들고 있는 건 봤습니다.",
               "behaviorHint": "b S1 empathy_approach ?? 1",
               "tags": [
                 "channel:interrogation",
@@ -22972,7 +22972,7 @@
             },
             {
               "id": "b-h-d3-S1-empathy-approach-v4",
-              "text": "재판관님, 제 아내가 계속 흔들리고 있다는 건 보였는데 저는 제 사정만 감췄습니다. 그게 더 큰 불안을 만든 겁니다.",
+              "text": "재판관님, 제 아내가 계속 흔들리는 건 보였는데 저는 제 사정만 감췄습니다. 그게 더 큰 불안을 만든 겁니다.",
               "behaviorHint": "b S1 empathy_approach ?? 4",
               "tags": [
                 "channel:interrogation",
@@ -23010,7 +23010,7 @@
             },
             {
               "id": "b-h-d3-S1-empathy-approach-v5",
-              "text": "재판관님, 제 아내가 저를 믿지 못하는 상태라는 건 분명했습니다. 그런데도 저는 먼저 손을 내밀지 못했습니다.",
+              "text": "재판관님, 제 아내가 저를 믿지 못하는 상태라는 건 분명했습니다. 그런데도 먼저 손을 내밀지 못했습니다.",
               "behaviorHint": "b S1 empathy_approach ?? 5",
               "tags": [
                 "channel:interrogation",
@@ -23059,7 +23059,7 @@
           "variants": [
             {
               "id": "b-h-d3-S2-fact-pursuit-v1",
-              "text": "재판관님, 나중에 보니 제 아내도 따로 움직인 흔적이 있었습니다. 적어도 제 대응이 거칠었던 점은 인정합니다.",
+              "text": "재판관님, 나중에 보니 제 아내도 따로 움직인 흔적이 있었습니다.",
               "behaviorHint": "b S2 fact_pursuit ?? 1",
               "tags": [
                 "channel:interrogation",
@@ -23097,7 +23097,7 @@
             },
             {
               "id": "b-h-d3-S2-fact-pursuit-v2",
-              "text": "재판관님, 적지 않은 돈이 제 아내 쪽에서 먼저 빠진 건 맞은 것 같습니다. 적어도 제 대응이 거칠었던 점은 인정합니다.",
+              "text": "재판관님, 적지 않은 돈이 제 아내 쪽에서 먼저 빠진 건 맞는 것 같습니다.",
               "behaviorHint": "b S2 fact_pursuit ?? 2",
               "tags": [
                 "channel:interrogation",
@@ -23135,7 +23135,7 @@
             },
             {
               "id": "b-h-d3-S2-fact-pursuit-v3",
-              "text": "재판관님, 제 아내가 자기 쪽 자금을 따로 뺀 정황은 확인됐습니다. 적어도 제 대응이 거칠었던 점은 인정합니다.",
+              "text": "재판관님, 제 아내가 자기 쪽 자금을 따로 뺀 정황은 확인됐습니다.",
               "behaviorHint": "b S2 fact_pursuit ?? 3",
               "tags": [
                 "channel:interrogation",
@@ -23173,7 +23173,7 @@
             },
             {
               "id": "b-h-d3-S2-fact-pursuit-v4",
-              "text": "재판관님, 제가 뒤늦게 본 기록으로는 제 아내도 돈을 따로 챙긴 흔적이 있었습니다. 적어도 제 대응이 거칠었던 점은 인정합니다.",
+              "text": "재판관님, 뒤늦게 본 기록으로는 제 아내도 돈을 따로 챙긴 흔적이 있었습니다.",
               "behaviorHint": "b S2 fact_pursuit ?? 4",
               "tags": [
                 "channel:interrogation",
@@ -23211,7 +23211,7 @@
             },
             {
               "id": "b-h-d3-S2-fact-pursuit-v5",
-              "text": "재판관님, 제 아내가 불안만 품은 게 아니라 실제로 움직인 건 사실로 보입니다. 적어도 제 대응이 거칠었던 점은 인정합니다.",
+              "text": "재판관님, 제 아내가 불안만 품은 게 아니라 실제로 움직인 건 사실로 보입니다.",
               "behaviorHint": "b S2 fact_pursuit ?? 5",
               "tags": [
                 "channel:interrogation",
@@ -23260,7 +23260,7 @@
           "variants": [
             {
               "id": "b-h-d3-S2-motive-search-v1",
-              "text": "재판관님, 제 아내 입장에서는 자기 몫부터 지키려 한 것 같습니다. 적어도 제 대응이 거칠었던 점은 인정합니다.",
+              "text": "재판관님, 제 아내 입장에서는 자기 몫부터 지키려 한 것 같습니다. 제가 먼저 의심받을 패턴을 만든 건 맞습니다.",
               "behaviorHint": "b S2 motive_search ?? 1",
               "tags": [
                 "channel:interrogation",
@@ -23298,7 +23298,7 @@
             },
             {
               "id": "b-h-d3-S2-motive-search-v2",
-              "text": "재판관님, 제가 먼저 뭘 숨기고 있었으니 제 아내도 자기식 방어를 택한 것 같습니다. 적어도 제 대응이 거칠었던 점은 인정합니다.",
+              "text": "재판관님, 제가 먼저 숨기고 있었으니 제 아내도 자기식 방어를 택한 것 같습니다.",
               "behaviorHint": "b S2 motive_search ?? 2",
               "tags": [
                 "channel:interrogation",
@@ -23336,7 +23336,7 @@
             },
             {
               "id": "b-h-d3-S2-motive-search-v3",
-              "text": "재판관님, 외도로 믿었다면 제 아내가 자기 쪽부터 챙기려 한 흐름은 이해는 됩니다. 적어도 제 대응이 거칠었던 점은 인정합니다.",
+              "text": "재판관님, 외도로 믿었다면 자기 쪽부터 챙기려 한 흐름은 이해됩니다. 그래도 움직인 건 움직인 겁니다.",
               "behaviorHint": "b S2 motive_search ?? 3",
               "tags": [
                 "channel:interrogation",
@@ -23374,7 +23374,7 @@
             },
             {
               "id": "b-h-d3-S2-motive-search-v4",
-              "text": "재판관님, 제 아내는 버림받기 전에 먼저 대비한다고 생각했을 겁니다. 그 출발을 제가 만든 건 맞습니다. 적어도 제 대응이 거칠었던 점은 인정합니다.",
+              "text": "재판관님, 제 아내는 버림받기 전에 먼저 대비한다고 생각했을 겁니다. 그 출발을 제가 만든 건 맞습니다.",
               "behaviorHint": "b S2 motive_search ?? 4",
               "tags": [
                 "channel:interrogation",
@@ -23412,7 +23412,7 @@
             },
             {
               "id": "b-h-d3-S2-motive-search-v5",
-              "text": "재판관님, 제 아내가 왜 그런 판단으로 갔는지는 보입니다. 다만 보인다고 해서 그 선택까지 옳아지는 건 아닙니다. 적어도 제 대응이 거칠었던 점은 인정합니다.",
+              "text": "재판관님, 왜 그런 판단으로 갔는지는 보입니다. 다만 이해하는 것과 그 선택이 옳았다는 건 다릅니다.",
               "behaviorHint": "b S2 motive_search ?? 5",
               "tags": [
                 "channel:interrogation",
@@ -23461,7 +23461,7 @@
           "variants": [
             {
               "id": "b-h-d3-S2-empathy-approach-v1",
-              "text": "재판관님, 바람으로 오해한 채 버틴 시간이 길었습니다. 적어도 제 대응이 거칠었던 점은 인정합니다.",
+              "text": "재판관님, 제 아내가 바람으로 오해한 채 버틴 시간이 길었습니다. 그 불안을 만든 쪽에 제가 있습니다.",
               "behaviorHint": "b S2 empathy_approach ?? 1",
               "tags": [
                 "channel:interrogation",
@@ -23499,7 +23499,7 @@
             },
             {
               "id": "b-h-d3-S2-empathy-approach-v2",
-              "text": "재판관님, 제 아내가 혼자 불안을 키운 건 제가 먼저 설명을 끊었기 때문입니다. 적어도 제 대응이 거칠었던 점은 인정합니다.",
+              "text": "재판관님, 제 아내가 혼자 불안을 키운 건 제가 먼저 설명을 끊었기 때문입니다.",
               "behaviorHint": "b S2 empathy_approach ?? 2",
               "tags": [
                 "channel:interrogation",
@@ -23537,7 +23537,7 @@
             },
             {
               "id": "b-h-d3-S2-empathy-approach-v3",
-              "text": "재판관님, 저는 제 아내가 그렇게 겁먹을 만한 패턴을 만들었습니다. 적어도 제 대응이 거칠었던 점은 인정합니다.",
+              "text": "재판관님, 저는 제 아내가 그렇게 겁먹을 만한 패턴을 만들었습니다.",
               "behaviorHint": "b S2 empathy_approach ?? 3",
               "tags": [
                 "channel:interrogation",
@@ -23575,7 +23575,7 @@
             },
             {
               "id": "b-h-d3-S2-empathy-approach-v4",
-              "text": "재판관님, 제 아내가 자기 쪽부터 챙겨야겠다고 느꼈다면 그건 저를 믿지 못했기 때문일 겁니다. 그 믿음이 깨진 데는 제 책임도 있습니다. 적어도 제 대응이 거칠었던 점은 인정합니다.",
+              "text": "재판관님, 제 아내가 자기 쪽부터 챙겨야겠다고 느꼈다면 그건 저를 못 믿었기 때문일 겁니다. 그 믿음이 깨진 데는 제 책임도 있습니다.",
               "behaviorHint": "b S2 empathy_approach ?? 4",
               "tags": [
                 "channel:interrogation",
@@ -23613,7 +23613,7 @@
             },
             {
               "id": "b-h-d3-S2-empathy-approach-v5",
-              "text": "재판관님, 그 불안이 실행으로 이어질 줄은 몰랐습니다. 하지만 제 아내를 그 자리까지 몰아세운 일부 원인은 제 쪽에 있었습니다.",
+              "text": "재판관님, 그 불안이 실행으로 이어질 줄은 몰랐습니다. 하지만 제 아내를 그 자리까지 몬 원인 일부는 제 쪽에 있었습니다.",
               "behaviorHint": "b S2 empathy_approach ?? 5",
               "tags": [
                 "channel:interrogation",
@@ -23662,7 +23662,7 @@
           "variants": [
             {
               "id": "b-h-d3-S3-fact-pursuit-v1",
-              "text": "재판관님, 제 아내가 2,000만 원을 따로 보낸 건 맞습니다. 문제는 상대방 측 대응에도 분명히 있습니다.",
+              "text": "재판관님, 제 아내가 2,000만 원을 따로 보낸 건 맞습니다. 제가 먼저 의심을 만든 건 인정하지만, 확인 없이 2,000만 원을 보낸 건 제 아내 쪽 판단입니다.",
               "behaviorHint": "b S3 fact_pursuit ?? 1",
               "tags": [
                 "channel:interrogation",
@@ -23700,7 +23700,7 @@
             },
             {
               "id": "b-h-d3-S3-fact-pursuit-v2",
-              "text": "재판관님, 기록대로 2,000만 원이 제 아내 쪽에서 먼저 빠져나간 건 사실입니다. 문제는 상대방 측 대응에도 분명히 있습니다.",
+              "text": "재판관님, 기록대로 2,000만 원이 제 아내 쪽에서 먼저 빠져나간 건 사실입니다. 저도 숨긴 건 있지만 돈을 먼저 움직인 건 제 아내입니다.",
               "behaviorHint": "b S3 fact_pursuit ?? 2",
               "tags": [
                 "channel:interrogation",
@@ -23738,7 +23738,7 @@
             },
             {
               "id": "b-h-d3-S3-fact-pursuit-v3",
-              "text": "재판관님, 제 아내가 2,000만 원을 비밀로 움직인 건 확인됐습니다. 문제는 상대방 측 대응에도 분명히 있습니다.",
+              "text": "재판관님, 제 아내가 2,000만 원을 비밀로 움직인 건 확인됐습니다. 제 숨김이 출발점인 건 알지만, 실행 자체는 제 아내가 한 겁니다.",
               "behaviorHint": "b S3 fact_pursuit ?? 3",
               "tags": [
                 "channel:interrogation",
@@ -23776,7 +23776,7 @@
             },
             {
               "id": "b-h-d3-S3-fact-pursuit-v4",
-              "text": "재판관님, 제 아내가 2,000만 원을 따로 송금한 건 부인할 수 없습니다. 문제는 상대방 측 대응에도 분명히 있습니다.",
+              "text": "재판관님, 2,000만 원을 따로 보낸 건 부인할 수 없습니다. 저도 공동 적금에 손댔으니 입장이 같다고 할 수 있지만, 순서와 방식은 따로 봐야 합니다.",
               "behaviorHint": "b S3 fact_pursuit ?? 4",
               "tags": [
                 "channel:interrogation",
@@ -23814,7 +23814,7 @@
             },
             {
               "id": "b-h-d3-S3-fact-pursuit-v5",
-              "text": "재판관님, 그 부분은 분명합니다. 제 아내가 2,000만 원을 따로 보냈습니다. 문제는 상대방 측 대응에도 분명히 있습니다.",
+              "text": "재판관님, 2,000만 원이 제 아내 쪽에서 먼저 빠졌습니다. 제 잘못이 불안을 만든 건 인정하지만, 불안이 있다고 비밀 송금까지 정당화되진 않습니다.",
               "behaviorHint": "b S3 fact_pursuit ?? 5",
               "tags": [
                 "channel:interrogation",
@@ -23863,7 +23863,7 @@
           "variants": [
             {
               "id": "b-h-d3-S3-motive-search-v1",
-              "text": "재판관님, 제 아내는 저를 외도로 봤고 그래서 자기 몫부터 지키려 한 것 같습니다. 문제는 상대방 측 대응에도 분명히 있습니다.",
+              "text": "재판관님, 제 아내는 저를 외도로 봤고 자기 몫부터 지키려 한 것 같습니다. 이해는 하지만 2,000만 원 실행까지 제 탓이라고는 못 합니다.",
               "behaviorHint": "b S3 motive_search ?? 1",
               "tags": [
                 "channel:interrogation",
@@ -23901,7 +23901,7 @@
             },
             {
               "id": "b-h-d3-S3-motive-search-v2",
-              "text": "재판관님, 제가 먼저 수상한 패턴을 만들었으니 제 아내가 2,000만 원을 방어처럼 움직인 것 같습니다. 문제는 상대방 측 대응에도 분명히 있습니다.",
+              "text": "재판관님, 제가 먼저 수상한 패턴을 만든 건 맞습니다. 그래도 2,000만 원을 확인 없이 보낸 건 제 아내의 판단이었습니다.",
               "behaviorHint": "b S3 motive_search ?? 2",
               "tags": [
                 "channel:interrogation",
@@ -23939,7 +23939,7 @@
             },
             {
               "id": "b-h-d3-S3-motive-search-v3",
-              "text": "재판관님, 제 아내는 버림받기 전에 먼저 챙겨야 한다고 생각한 것 같습니다. 그래서 2,000만 원을 보낸 겁니다. 문제는 상대방 측 대응에도 분명히 있습니다.",
+              "text": "재판관님, 버림받기 전에 먼저 챙겨야 한다고 생각한 것 같습니다. 하지만 확인보다 실행이 먼저였다는 건 남습니다.",
               "behaviorHint": "b S3 motive_search ?? 3",
               "tags": [
                 "channel:interrogation",
@@ -23977,7 +23977,7 @@
             },
             {
               "id": "b-h-d3-S3-motive-search-v4",
-              "text": "재판관님, 제 아내 입장에서는 이혼 대비처럼 느껴졌을 수 있습니다. 그렇더라도 확인보다 2,000만 원 실행이 먼저였다는 점은 남습니다. 문제는 상대방 측 대응에도 분명히 있습니다.",
+              "text": "재판관님, 제 아내 입장에서는 이혼 대비처럼 느껴졌을 수 있습니다. 그래도 2,000만 원 비밀 송금이 가벼워지진 않습니다.",
               "behaviorHint": "b S3 motive_search ?? 4",
               "tags": [
                 "channel:interrogation",
@@ -24015,7 +24015,7 @@
             },
             {
               "id": "b-h-d3-S3-motive-search-v5",
-              "text": "재판관님, 그 선택의 출발에는 불안이 있었을 겁니다. 하지만 불안이 있었다고 해서 2,000만 원 비밀 송금까지 가벼워지진 않습니다. 문제는 상대방 측 대응에도 분명히 있습니다.",
+              "text": "재판관님, 불안이 있었다는 건 인정합니다. 하지만 불안이 있다고 해서 2,000만 원 비밀 송금까지 가볍게 볼 수는 없습니다.",
               "behaviorHint": "b S3 motive_search ?? 5",
               "tags": [
                 "channel:interrogation",
@@ -24064,7 +24064,7 @@
           "variants": [
             {
               "id": "b-h-d3-S3-empathy-approach-v1",
-              "text": "재판관님, 제가 먼저 숨긴 탓에 제 아내가 끝까지 혼자 판단한 건 있습니다. 그래서 2,000만 원까지 가버린 것 같습니다. 문제는 상대방 측 대응에도 분명히 있습니다.",
+              "text": "재판관님, 제가 먼저 숨긴 탓에 제 아내가 끝까지 혼자 판단한 건 있습니다. 그래서 2,000만 원까지 가버린 것 같습니다.",
               "behaviorHint": "b S3 empathy_approach ?? 1",
               "tags": [
                 "channel:interrogation",
@@ -24102,7 +24102,7 @@
             },
             {
               "id": "b-h-d3-S3-empathy-approach-v2",
-              "text": "재판관님, 제 아내가 저를 못 믿게 만든 쪽은 저였습니다. 다만 그 불신이 2,000만 원 송금으로 이어진 건 또 다른 문제입니다. 문제는 상대방 측 대응에도 분명히 있습니다.",
+              "text": "재판관님, 제 아내를 못 믿게 만든 쪽은 저였습니다. 다만 그 불신이 2,000만 원 송금으로 이어진 건 또 다른 문제입니다.",
               "behaviorHint": "b S3 empathy_approach ?? 2",
               "tags": [
                 "channel:interrogation",
@@ -24140,7 +24140,7 @@
             },
             {
               "id": "b-h-d3-S3-empathy-approach-v3",
-              "text": "재판관님, 제 아내가 혼자 겁먹고 혼자 정한 선택이라는 게 더 아픕니다. 그 틈을 제가 먼저 만들었습니다. 문제는 상대방 측 대응에도 분명히 있습니다.",
+              "text": "재판관님, 제 아내가 혼자 겁먹고 혼자 정한 선택이라는 게 더 아픕니다. 그 틈을 제가 먼저 만든 건 사실입니다.",
               "behaviorHint": "b S3 empathy_approach ?? 3",
               "tags": [
                 "channel:interrogation",
@@ -24178,7 +24178,7 @@
             },
             {
               "id": "b-h-d3-S3-empathy-approach-v4",
-              "text": "재판관님, 그 기록을 보고 저도 충격이었습니다. 제 아내가 그만큼 불안했다는 뜻이면서 동시에 이미 실행을 끝냈다는 뜻이었기 때문입니다. 문제는 상대방 측 대응에도 분명히 있습니다.",
+              "text": "재판관님, 그 기록을 보고 저도 충격이었습니다. 제 아내가 그만큼 불안했다는 뜻이면서 동시에 이미 실행을 끝냈다는 뜻이었기 때문입니다.",
               "behaviorHint": "b S3 empathy_approach ?? 4",
               "tags": [
                 "channel:interrogation",
@@ -24216,7 +24216,7 @@
             },
             {
               "id": "b-h-d3-S3-empathy-approach-v5",
-              "text": "재판관님, 제 아내가 저를 의심하며 버틴 밤이 길었을 겁니다. 그런데 그 끝이 2,000만 원 송금이었다는 건, 저희 둘 다 이미 크게 비틀렸다는 뜻이었습니다. 문제는 상대방 측 대응에도 분명히 있습니다.",
+              "text": "재판관님, 제 아내가 저를 의심하며 버틴 밤이 길었을 겁니다. 그런데 그 끝이 2,000만 원 송금이었다는 건, 저희 둘 다 크게 비틀렸다는 뜻입니다.",
               "behaviorHint": "b S3 empathy_approach ?? 5",
               "tags": [
                 "channel:interrogation",
@@ -24265,7 +24265,7 @@
           "variants": [
             {
               "id": "b-h-d3-S4-fact-pursuit-v1",
-              "text": "재판관님, 제 아내가 2,000만 원을 보내고 사기까지 당한 건 맞습니다. 그때는 너무 흔들렸습니다.",
+              "text": "재판관님, 제 아내가 2,000만 원을 보내고 사기까지 당한 건 맞습니다. 제가 먼저 의심받을 패턴을 만든 건 인정합니다.",
               "behaviorHint": "b S4 fact_pursuit ?? 1",
               "tags": [
                 "channel:interrogation",
@@ -24303,7 +24303,7 @@
             },
             {
               "id": "b-h-d3-S4-fact-pursuit-v2",
-              "text": "재판관님, 2,000만 원 송금 뒤에 피해가 난 것도 사실입니다. 그때는 너무 흔들렸습니다.",
+              "text": "재판관님, 2,000만 원 송금 뒤에 피해가 난 것도 사실입니다. 그 시작에 제 숨김이 있었다는 건 압니다.",
               "behaviorHint": "b S4 fact_pursuit ?? 2",
               "tags": [
                 "channel:interrogation",
@@ -24341,7 +24341,7 @@
             },
             {
               "id": "b-h-d3-S4-fact-pursuit-v3",
-              "text": "재판관님, 제 아내가 2,000만 원을 움직인 데서 끝난 게 아니라 손실까지 이어졌습니다. 그때는 너무 흔들렸습니다.",
+              "text": "재판관님, 2,000만 원을 움직인 데서 끝난 게 아니라 손실까지 이어졌습니다. 제 아내도 저처럼 혼자 감당하려다 더 깊이 빠진 겁니다.",
               "behaviorHint": "b S4 fact_pursuit ?? 3",
               "tags": [
                 "channel:interrogation",
@@ -24379,7 +24379,7 @@
             },
             {
               "id": "b-h-d3-S4-fact-pursuit-v4",
-              "text": "재판관님, 기록을 보면 제 아내가 2,000만 원을 보낸 뒤 그대로 피해를 입었습니다. 그때는 너무 흔들렸습니다.",
+              "text": "재판관님, 기록을 보면 제 아내가 2,000만 원을 보낸 뒤 그대로 피해를 입었습니다. 더 숨길 수 없는 사실입니다.",
               "behaviorHint": "b S4 fact_pursuit ?? 4",
               "tags": [
                 "channel:interrogation",
@@ -24417,7 +24417,7 @@
             },
             {
               "id": "b-h-d3-S4-fact-pursuit-v5",
-              "text": "재판관님, 제 아내는 2,000만 원을 따로 보냈고 그 결과도 좋지 않았습니다. 그 부분은 더 숨길 수 없습니다. 그때는 너무 흔들렸습니다.",
+              "text": "재판관님, 제 아내는 2,000만 원을 따로 보냈고 결과도 좋지 않았습니다. 제가 먼저 숨기지 않았으면 거기까지 안 갔을 수도 있습니다.",
               "behaviorHint": "b S4 fact_pursuit ?? 5",
               "tags": [
                 "channel:interrogation",
@@ -24466,7 +24466,7 @@
           "variants": [
             {
               "id": "b-h-d3-S4-motive-search-v1",
-              "text": "재판관님, 제 아내가 배신으로 받아들인 뒤 이혼 대비까지 떠올린 건 제가 먼저 의심받을 패턴을 만든 탓도 있습니다. 그래도 2,000만 원을 혼자 보낸 책임까지 사라지진 않습니다. 그때는 너무 흔들렸습니다.",
+              "text": "재판관님, 제 아내가 배신으로 받아들인 뒤 이혼 대비까지 떠올린 건 제가 의심받을 패턴을 만든 탓도 있습니다. 그래도 2,000만 원을 혼자 보낸 책임은 남습니다.",
               "behaviorHint": "b S4 motive_search ?? 1",
               "tags": [
                 "channel:interrogation",
@@ -24504,7 +24504,7 @@
             },
             {
               "id": "b-h-d3-S4-motive-search-v2",
-              "text": "재판관님, 제 아내는 저를 먼저 떠날 사람처럼 본 것 같습니다. 그래서 2,000만 원을 자기 쪽으로 돌린 겁니다. 그때는 너무 흔들렸습니다.",
+              "text": "재판관님, 제 아내는 저를 먼저 떠날 사람처럼 본 것 같습니다. 그래서 자기 쪽으로 돈을 돌린 겁니다.",
               "behaviorHint": "b S4 motive_search ?? 2",
               "tags": [
                 "channel:interrogation",
@@ -24542,7 +24542,7 @@
             },
             {
               "id": "b-h-d3-S4-motive-search-v3",
-              "text": "재판관님, 자기방어였다고는 말할 수 있습니다. 하지만 그 자기방어가 2,000만 원 비밀 송금이면 이미 선을 넘은 겁니다. 그때는 너무 흔들렸습니다.",
+              "text": "재판관님, 자기방어였다고 말할 수는 있습니다. 하지만 2,000만 원 비밀 송금이면 이미 선을 넘은 겁니다.",
               "behaviorHint": "b S4 motive_search ?? 3",
               "tags": [
                 "channel:interrogation",
@@ -24580,7 +24580,7 @@
             },
             {
               "id": "b-h-d3-S4-motive-search-v4",
-              "text": "재판관님, 제 아내는 상처받기 전에 먼저 대비하려 한 것 같습니다. 그런데 확인보다 2,000만 원 실행이 먼저였다는 점은 분명합니다. 그때는 너무 흔들렸습니다.",
+              "text": "재판관님, 확인보다 실행이 먼저였다는 건 분명합니다. 불안과 수치심이 섞였던 건 이해하지만, 그 선택 자체가 없어지진 않습니다.",
               "behaviorHint": "b S4 motive_search ?? 4",
               "tags": [
                 "channel:interrogation",
@@ -24618,7 +24618,7 @@
             },
             {
               "id": "b-h-d3-S4-motive-search-v5",
-              "text": "재판관님, 불안과 수치심이 섞였던 것 같습니다. 그렇더라도 2,000만 원을 혼자 옮긴 선택 자체까지 없어지진 않습니다.",
+              "text": "재판관님, 제 아내는 상처받기 전에 먼저 대비하려 했을 겁니다. 저도 같은 심리로 적금을 깼으니 뭐라 하기 어렵습니다. 하지만 사실은 사실입니다.",
               "behaviorHint": "b S4 motive_search ?? 5",
               "tags": [
                 "channel:interrogation",
@@ -24667,7 +24667,7 @@
           "variants": [
             {
               "id": "b-h-d3-S4-empathy-approach-v1",
-              "text": "재판관님, 그 기록 보고 저도 말이 막혔습니다. 제 아내가 그렇게까지 겁먹었다는 것도, 혼자 2,000만 원을 보냈다는 것도 다 충격이었습니다. 그때는 너무 흔들렸습니다.",
+              "text": "재판관님, 그 기록을 보고 저도 말이 막혔습니다. 제 아내가 그렇게까지 겁먹었다는 것도, 혼자 2,000만 원을 보냈다는 것도 충격이었습니다.",
               "behaviorHint": "b S4 empathy_approach ?? 1",
               "tags": [
                 "channel:interrogation",
@@ -24705,7 +24705,7 @@
             },
             {
               "id": "b-h-d3-S4-empathy-approach-v2",
-              "text": "재판관님, 제 아내가 2,000만 원까지 움직일 만큼 무너졌다는 뜻이라 더 씁쓸했습니다. 그 불안을 만든 쪽에 저도 있다는 걸 알기 때문입니다.",
+              "text": "재판관님, 제 아내가 2,000만 원까지 움직일 만큼 무너졌다는 뜻이라 씁쓸했습니다. 그 불안을 만든 쪽에 저도 있습니다.",
               "behaviorHint": "b S4 empathy_approach ?? 2",
               "tags": [
                 "channel:interrogation",
@@ -24743,7 +24743,7 @@
             },
             {
               "id": "b-h-d3-S4-empathy-approach-v3",
-              "text": "재판관님, 저는 제 아내가 저를 의심한 걸 억울하게만 봤습니다. 그런데 2,000만 원 송금 기록을 보니 그 의심이 이미 행동이 돼 버린 뒤였습니다. 그때는 너무 흔들렸습니다.",
+              "text": "재판관님, 제 아내가 저를 의심한 걸 억울하게만 봤습니다. 그런데 2,000만 원 송금 기록을 보니 그 의심이 이미 행동이 돼 버린 뒤였습니다.",
               "behaviorHint": "b S4 empathy_approach ?? 3",
               "tags": [
                 "channel:interrogation",
@@ -24781,7 +24781,7 @@
             },
             {
               "id": "b-h-d3-S4-empathy-approach-v4",
-              "text": "재판관님, 제 아내도 혼자 버틴 시간이 있었던 겁니다. 다만 그 버팀의 끝이 2,000만 원 비밀 송금이었다는 점까지 같이 봐야 합니다. 그때는 너무 흔들렸습니다.",
+              "text": "재판관님, 제 아내도 혼자 버틴 시간이 있었던 겁니다. 다만 그 끝이 2,000만 원 비밀 송금이었다는 것까지 같이 봐야 합니다.",
               "behaviorHint": "b S4 empathy_approach ?? 4",
               "tags": [
                 "channel:interrogation",
@@ -24819,7 +24819,7 @@
             },
             {
               "id": "b-h-d3-S4-empathy-approach-v5",
-              "text": "재판관님, 저는 제 잘못 때문에 제 아내가 겁먹었다는 사실과, 그 겁이 결국 2,000만 원 실행으로 갔다는 사실을 같이 보고 있습니다. 둘 중 하나만 골라 말할 수는 없습니다. 그때는 너무 흔들렸습니다.",
+              "text": "재판관님, 제 잘못 때문에 제 아내가 겁먹었다는 것과, 그 겁이 2,000만 원 실행으로 갔다는 것을 같이 보고 있습니다. 하나만 골라 말할 수는 없습니다.",
               "behaviorHint": "b S4 empathy_approach ?? 5",
               "tags": [
                 "channel:interrogation",
@@ -24868,7 +24868,7 @@
           "variants": [
             {
               "id": "b-h-d3-S5-fact-pursuit-v1",
-              "text": "재판관님, 제 아내가 먼저 움직인 금액은 \"2,000만 원\"입니다. 제가 먼저 수상한 패턴을 만든 탓에 불안이 커진 것도 맞습니다. 그래도 확인보다 실행이 먼저였다는 책임은 남습니다.",
+              "text": "재판관님, 제 아내가 먼저 움직인 건 2,000만 원입니다. 제가 먼저 의심받을 패턴을 만든 건 맞습니다. 그래도 확인보다 실행이 먼저였다는 책임은 남습니다.",
               "behaviorHint": "b S5 fact_pursuit ?? 1",
               "tags": [
                 "channel:interrogation",
@@ -24906,7 +24906,7 @@
             },
             {
               "id": "b-h-d3-S5-fact-pursuit-v2",
-              "text": "재판관님, 기록상 제 아내는 2,000만 원을 비밀로 보냈고 그 돈을 잃었습니다. 그 출발에 제 숨김이 있었다는 건 인정합니다. 하지만 2,000만 원 송금 자체는 제 아내가 한 선택입니다.",
+              "text": "재판관님, 기록상 제 아내는 2,000만 원을 비밀로 보냈고 그 돈을 잃었습니다. 출발에 제 숨김이 있었다는 건 인정합니다. 하지만 송금 자체는 제 아내가 한 선택입니다.",
               "behaviorHint": "b S5 fact_pursuit ?? 2",
               "tags": [
                 "channel:interrogation",
@@ -24944,7 +24944,7 @@
             },
             {
               "id": "b-h-d3-S5-fact-pursuit-v3",
-              "text": "재판관님, 제 아내가 2,000만 원을 따로 움직였다가 피해를 본 건 사실입니다. 저를 외도로 믿고 자기 몫부터 지키려 한 것 같습니다. 배경을 이해하는 것과 2,000만 원 실행 책임을 지우는 건 다릅니다. 이 부분은 제 책임으로 인정합니다.",
+              "text": "재판관님, 제 아내가 2,000만 원을 따로 움직였다가 피해를 본 건 사실입니다. 배경을 이해하는 것과 그 선택의 책임을 지우는 건 다릅니다.",
               "behaviorHint": "b S5 fact_pursuit ?? 3",
               "tags": [
                 "channel:interrogation",
@@ -24982,7 +24982,7 @@
             },
             {
               "id": "b-h-d3-S5-fact-pursuit-v4",
-              "text": "재판관님, 제 아내가 먼저 움직인 금액은 \"2,000만 원\"입니다. 그때 제 아내는 버림받기 전에 먼저 챙겨야 한다고 봤을 겁니다. 그렇더라도 확인보다 비밀 송금이 먼저였고, 그 책임까지 없어지진 않습니다. 이 부분은 제 책임으로 인정합니다.",
+              "text": "재판관님, 제 아내는 저를 외도로 믿고 2,000만 원을 자기 쪽으로 돌렸습니다. 제 숨김이 출발이었어도 비밀 송금 자체는 제 아내 판단입니다.",
               "behaviorHint": "b S5 fact_pursuit ?? 4",
               "tags": [
                 "channel:interrogation",
@@ -25020,7 +25020,7 @@
             },
             {
               "id": "b-h-d3-S5-fact-pursuit-v5",
-              "text": "재판관님, 제 아내는 2,000만 원을 따로 송금했고 결과적으로 사기 피해까지 입었습니다. 제가 먼저 숨김으로 불안을 키운 것도 맞습니다. 하지만 그 불안이 2,000만 원 실행으로 이어진 순간, 제 아내 쪽 책임도 분명해졌습니다. 그 점은 같이 기록돼야 합니다.",
+              "text": "재판관님, 2,000만 원 송금과 사기 피해는 사실입니다. 제가 불안을 키운 것도 맞습니다. 하지만 불안이 실행으로 이어진 순간, 제 아내 쪽 책임도 분명해집니다.",
               "behaviorHint": "b S5 fact_pursuit ?? 5",
               "tags": [
                 "channel:interrogation",
@@ -25069,7 +25069,7 @@
           "variants": [
             {
               "id": "b-h-d3-S5-motive-search-v1",
-              "text": "재판관님, 제 아내는 바람으로 믿고 자기 몫부터 지키려 했던 것 같습니다. 그 결이 2,000만 원 송금이었고 뒤에는 수치심 때문에 더 숨긴 걸로 보입니다. 제 잘못이 불안을 키웠지만 그 선택 자체까지 없어지진 않습니다.",
+              "text": "재판관님, 제 아내는 바람으로 믿고 자기 몫부터 지키려 했던 것 같습니다. 2,000만 원을 보내고 뒤에는 수치심 때문에 더 숨긴 걸로 보입니다. 제 잘못이 불안을 키웠지만 그 선택 자체까지 없어지진 않습니다.",
               "behaviorHint": "b S5 motive_search ?? 1",
               "tags": [
                 "channel:interrogation",
@@ -25107,7 +25107,7 @@
             },
             {
               "id": "b-h-d3-S5-motive-search-v2",
-              "text": "재판관님, 제 아내가 먼저 움직인 금액은 \"2,000만 원\"입니다. 그 마음에 배신 공포와 이혼 대비가 같이 있었던 걸로 보입니다. 배경은 이해해도 비밀 송금이라는 실행은 남습니다. 이 부분은 제 책임으로 인정합니다.",
+              "text": "재판관님, 제 아내가 2,000만 원을 보낸 마음에 배신 공포와 이혼 대비가 같이 있었던 걸로 보입니다. 배경은 이해해도 비밀 송금이라는 실행은 남습니다.",
               "behaviorHint": "b S5 motive_search ?? 2",
               "tags": [
                 "channel:interrogation",
@@ -25145,7 +25145,7 @@
             },
             {
               "id": "b-h-d3-S5-motive-search-v3",
-              "text": "재판관님, 자기방어였다는 말은 할 수 있습니다. 제 아내가 먼저 움직인 금액은 \"2,000만 원\"입니다. 그래서 저는 불안과 책임을 같이 봐야 한다고 생각합니다. 이 부분은 제 책임으로 인정합니다.",
+              "text": "재판관님, 자기방어였다는 말은 할 수 있습니다. 그래서 저는 불안과 책임을 같이 봐야 한다고 생각합니다.",
               "behaviorHint": "b S5 motive_search ?? 3",
               "tags": [
                 "channel:interrogation",
@@ -25183,7 +25183,7 @@
             },
             {
               "id": "b-h-d3-S5-motive-search-v4",
-              "text": "재판관님, 제 아내는 확인보다 대비를 먼저 택한 것 같습니다. 제 아내가 먼저 움직인 금액은 \"2,000만 원\"입니다. 제 숨김이 출발점이었어도 그 결심은 제 아내가 한 겁니다. 이 부분은 제 책임으로 인정합니다.",
+              "text": "재판관님, 제 아내는 확인보다 대비를 먼저 택한 것 같습니다. 제 숨김이 출발점이었어도 그 결심은 제 아내가 한 겁니다.",
               "behaviorHint": "b S5 motive_search ?? 4",
               "tags": [
                 "channel:interrogation",
@@ -25221,7 +25221,7 @@
             },
             {
               "id": "b-h-d3-S5-motive-search-v5",
-              "text": "재판관님, 제 아내 입장에서는 저를 못 믿은 마음이 먼저였을 겁니다. 그 마음이 2,000만 원 비밀 송금과 이후의 침묵으로 이어진 걸로 보입니다. 저는 그 감정은 이해하지만, 실행의 책임까지 대신 가져갈 수는 없습니다. 이 부분은 제 책임으로 인정합니다.",
+              "text": "재판관님, 제 아내가 저를 못 믿은 마음이 먼저였을 겁니다. 그 마음이 2,000만 원 비밀 송금과 이후의 침묵으로 이어졌습니다. 감정은 이해하지만 실행의 책임까지 대신 가져갈 수는 없습니다.",
               "behaviorHint": "b S5 motive_search ?? 5",
               "tags": [
                 "channel:interrogation",
@@ -25270,7 +25270,7 @@
           "variants": [
             {
               "id": "b-h-d3-S5-empathy-approach-v1",
-              "text": "재판관님, 제 아내가 먼저 움직인 금액은 \"2,000만 원\"입니다. 제 아내가 그만큼 겁먹었다는 뜻이기도 했고 동시에 먼저 움직였다는 뜻이기도 했습니다. 서로 숨기던 사이에 그렇게까지 간 건 저희 둘 다의 실패입니다. 이 부분은 제 책임으로 인정합니다.",
+              "text": "재판관님, 제 아내가 2,000만 원을 보낸 건 그만큼 겁먹었다는 뜻이기도 하고, 먼저 움직였다는 뜻이기도 합니다. 서로 숨기던 사이에 그렇게까지 간 건 저희 둘 다의 실패입니다.",
               "behaviorHint": "b S5 empathy_approach ?? 1",
               "tags": [
                 "channel:interrogation",
@@ -25308,7 +25308,7 @@
             },
             {
               "id": "b-h-d3-S5-empathy-approach-v2",
-              "text": "재판관님, 제 아내가 먼저 움직인 금액은 \"2,000만 원\"입니다. 저는 그 불안을 만든 사람 중 하나였고, 제 아내는 그 불안으로 실행한 사람이었습니다. 그 둘을 같이 봐야 한다고 생각합니다. 이 부분은 제 책임으로 인정합니다.",
+              "text": "재판관님, 저는 그 불안을 만든 사람 중 하나였고, 제 아내는 그 불안으로 실행한 사람이었습니다. 그 둘을 같이 봐야 합니다.",
               "behaviorHint": "b S5 empathy_approach ?? 2",
               "tags": [
                 "channel:interrogation",
@@ -25346,7 +25346,7 @@
             },
             {
               "id": "b-h-d3-S5-empathy-approach-v3",
-              "text": "재판관님, 2,000만 원 송금 기록을 보는 순간 저도 말이 안 나왔습니다. 제 아내가 저를 그렇게까지 못 믿었다는 뜻이었기 때문입니다. 하지만 그 상처가 먼저 송금하는 방식으로 나간 건 잘못입니다. 이 부분은 제 책임으로 인정합니다.",
+              "text": "재판관님, 2,000만 원 송금 기록을 보는 순간 저도 말이 안 나왔습니다. 제 아내가 저를 그렇게까지 못 믿었다는 뜻이었기 때문입니다. 하지만 그 상처가 비밀 송금으로 나간 건 잘못입니다.",
               "behaviorHint": "b S5 empathy_approach ?? 3",
               "tags": [
                 "channel:interrogation",
@@ -25384,7 +25384,7 @@
             },
             {
               "id": "b-h-d3-S5-empathy-approach-v4",
-              "text": "재판관님, 제 아내가 겁먹은 이유를 모르는 건 아닙니다. 그런데 그 겁이 2,000만 원 실행으로 바뀐 순간 이미 저희 관계는 너무 멀리 갔습니다. 그 사실 앞에서는 저도 더는 피해자인 척할 수 없습니다. 이 부분은 제 책임으로 인정합니다.",
+              "text": "재판관님, 제 아내가 겁먹은 이유를 모르는 건 아닙니다. 그런데 그 겁이 2,000만 원 실행으로 바뀐 순간 저희 관계는 이미 너무 멀리 갔습니다. 저도 더는 피해자인 척할 수 없습니다.",
               "behaviorHint": "b S5 empathy_approach ?? 4",
               "tags": [
                 "channel:interrogation",
@@ -25422,7 +25422,7 @@
             },
             {
               "id": "b-h-d3-S5-empathy-approach-v5",
-              "text": "재판관님, 저는 제 아내가 왜 무너졌은지 이제는 압니다. 다만 그 무너짐이 2,000만 원 비밀 송금과 사기 피해로 남았다는 점까지 같이 봐야 합니다. 저희 둘 다 두려움으로 움직였고, 그래서 둘 다 책임이 남습니다. 이 부분은 제 책임으로 인정합니다.",
+              "text": "재판관님, 저는 제 아내가 왜 무너졌는지 이제는 압니다. 다만 그 무너짐이 2,000만 원 비밀 송금과 사기 피해로 남았다는 것까지 같이 봐야 합니다. 저희 둘 다 두려움으로 움직였고, 그래서 둘 다 책임이 남습니다.",
               "behaviorHint": "b S5 empathy_approach ?? 5",
               "tags": [
                 "channel:interrogation",
