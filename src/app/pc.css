@@ -7896,8 +7896,71 @@ body.pc-mode .pc-ev-detail__stage.is-open .pc-ev-detail__stage-num {
   background: rgba(92,201,122,0.1); color: var(--pc-green);
 }
 
-body.pc-mode .pc-ev-detail__stage-body { display: grid; gap: 2px; min-width: 0; }
+body.pc-mode .pc-ev-detail__stage-body { display: grid; gap: 2px; min-width: 0; flex: 1; }
 body.pc-mode .pc-ev-detail__stage-q { font-size: 11px; font-weight: 600; color: #b0aeb6; }
-body.pc-mode .pc-ev-detail__stage-a { font-size: 10px; color: var(--pc-green); font-weight: 600; }
+body.pc-mode .pc-ev-detail__stage-a { font-size: 11px; color: var(--pc-green); font-weight: 700; line-height: 1.5; }
 body.pc-mode .pc-ev-detail__stage-lock { font-size: 10px; color: #5a5e70; font-style: italic; }
+
+/* Ready stage — unlockable */
+body.pc-mode .pc-ev-detail__stage.is-ready {
+  border-color: rgba(212,162,78,0.15); background: rgba(212,162,78,0.03);
+}
+
+body.pc-mode .pc-ev-detail__stage.is-ready .pc-ev-detail__stage-num {
+  background: rgba(212,162,78,0.12); color: var(--pc-gold);
+}
+
+body.pc-mode .pc-ev-detail__investigate-btn {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 5px 14px; border-radius: 8px;
+  border: 1px solid rgba(212,162,78,0.25);
+  background: rgba(212,162,78,0.08);
+  color: var(--pc-gold-light); font-size: 11px; font-weight: 800;
+  cursor: pointer; transition: all 0.15s ease;
+}
+
+body.pc-mode .pc-ev-detail__investigate-btn:hover {
+  background: rgba(212,162,78,0.14);
+  border-color: rgba(212,162,78,0.35);
+  transform: translateY(-1px);
+}
+
+/* Present buttons — A/B split */
+body.pc-mode .pc-ev-detail__present {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 6px;
+  margin-top: 12px; padding-top: 10px;
+  border-top: 1px solid rgba(255,255,255,0.04);
+}
+
+body.pc-mode .pc-ev-detail__present-btn {
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+  min-height: 40px; padding: 8px 12px;
+  border-radius: 10px; border: 1px solid rgba(255,255,255,0.06);
+  font-size: 12px; font-weight: 700; cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+body.pc-mode .pc-ev-detail__present-btn.is-a {
+  background: rgba(91,141,239,0.06); color: var(--pc-blue);
+  border-color: rgba(91,141,239,0.15);
+}
+
+body.pc-mode .pc-ev-detail__present-btn.is-a:hover:not(:disabled) {
+  background: rgba(91,141,239,0.12); border-color: rgba(91,141,239,0.25);
+  transform: translateY(-1px);
+}
+
+body.pc-mode .pc-ev-detail__present-btn.is-b {
+  background: rgba(224,96,96,0.05); color: var(--pc-red);
+  border-color: rgba(224,96,96,0.13);
+}
+
+body.pc-mode .pc-ev-detail__present-btn.is-b:hover:not(:disabled) {
+  background: rgba(224,96,96,0.1); border-color: rgba(224,96,96,0.22);
+  transform: translateY(-1px);
+}
+
+body.pc-mode .pc-ev-detail__present-btn.is-done {
+  opacity: 0.45; cursor: default;
+}
 

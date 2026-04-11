@@ -80,13 +80,8 @@ export default function PCLeftPanel() {
   }, [evidenceDefinitions, surfaceResult])
 
   const openEvidenceMenu = useCallback((evidence: EvidenceNode) => {
-    const focusDisputeId = lastFocusedDisputeId ?? evidence.proves[0] ?? caseData?.disputes[0]?.id ?? null
-    const canPresent = currentPhase === GamePhase.Phase3_Interrogation || currentPhase === GamePhase.Phase4_Evidence || currentPhase === GamePhase.Phase5_ReExamination
-
     const actions: PcInteractionAction[] = [
       { kind: 'open_evidence', label: '증거 열람', evidenceId: evidence.id },
-      ...buildPresentActions(evidence, focusDisputeId, canPresent, evidenceStates, caseData),
-      ...(focusDisputeId ? [{ kind: 'focus_dispute' as const, label: '관련 쟁점 보기', disputeId: focusDisputeId }] : []),
     ]
 
     openPcInteractionPanel({
