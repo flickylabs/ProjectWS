@@ -7933,34 +7933,44 @@ body.pc-mode .pc-ev-detail__present {
 }
 
 body.pc-mode .pc-ev-detail__present-btn {
-  display: flex; align-items: center; justify-content: center; gap: 8px;
-  min-height: 40px; padding: 8px 12px;
-  border-radius: 10px; border: 1px solid rgba(255,255,255,0.06);
-  font-size: 12px; font-weight: 700; cursor: pointer;
+  display: flex; align-items: center; justify-content: center; gap: 10px;
+  min-height: 46px; padding: 12px 16px;
+  border-radius: 12px; border: 1.5px solid rgba(255,255,255,0.08);
+  font-size: 13px; font-weight: 700; cursor: pointer;
   transition: all 0.15s ease;
 }
 
 body.pc-mode .pc-ev-detail__present-btn.is-a {
-  background: rgba(91,141,239,0.06); color: var(--pc-blue);
-  border-color: rgba(91,141,239,0.15);
+  background: rgba(91,141,239,0.08); color: var(--pc-blue);
+  border-color: rgba(91,141,239,0.25);
 }
 
 body.pc-mode .pc-ev-detail__present-btn.is-a:hover:not(:disabled) {
-  background: rgba(91,141,239,0.12); border-color: rgba(91,141,239,0.25);
-  transform: translateY(-1px);
+  background: rgba(91,141,239,0.15); border-color: rgba(91,141,239,0.4);
+  transform: scale(1.02);
+  box-shadow: 0 6px 18px rgba(91,141,239,0.12);
+}
+
+body.pc-mode .pc-ev-detail__present-btn.is-a:active:not(:disabled) {
+  transform: scale(0.98);
 }
 
 body.pc-mode .pc-ev-detail__present-btn.is-b {
-  background: rgba(224,96,96,0.05); color: var(--pc-red);
-  border-color: rgba(224,96,96,0.13);
+  background: rgba(224,96,96,0.07); color: var(--pc-red);
+  border-color: rgba(224,96,96,0.22);
 }
 
 body.pc-mode .pc-ev-detail__present-btn.is-b:hover:not(:disabled) {
-  background: rgba(224,96,96,0.1); border-color: rgba(224,96,96,0.22);
-  transform: translateY(-1px);
+  background: rgba(224,96,96,0.13); border-color: rgba(224,96,96,0.35);
+  transform: scale(1.02);
+  box-shadow: 0 6px 18px rgba(224,96,96,0.1);
+}
+
+body.pc-mode .pc-ev-detail__present-btn.is-b:active:not(:disabled) {
+  transform: scale(0.98);
 }
 
 body.pc-mode .pc-ev-detail__present-btn.is-done {
-  opacity: 0.45; cursor: default;
+  opacity: 0.4; cursor: default; border-style: dashed;
 }
 
