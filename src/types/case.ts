@@ -325,6 +325,7 @@ export interface ContextSeed {
 }
 
 export interface CaseMeta {
+  title?: string
   relationshipType: string
   relationshipState?: string
   familyRelation?: string

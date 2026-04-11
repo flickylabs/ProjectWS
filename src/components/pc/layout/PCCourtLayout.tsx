@@ -176,7 +176,12 @@ export default function PCCourtLayout({ actionPanel, onDialogueTap, isDialoguePh
                 <PCSvgIcon id="i-gavel" size={22} />
               </span>
               <span className="logo-text">솔로몬 법정</span>
-              {caseData ? <span className="logo-case">{caseData.caseId}</span> : null}
+              {caseData ? (
+                <span className="logo-case">
+                  {caseData.meta?.title ?? caseData.caseId}
+                  <span className="logo-case__ver">{caseData.caseId.replace(/^case-/, '').replace(/^(spouse|family|friend|neighbor|tenant|partnership|workplace|headline)-/, '')}</span>
+                </span>
+              ) : null}
             </div>
 
             <div className="phase-pill pc-play-phase">

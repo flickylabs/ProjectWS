@@ -228,6 +228,11 @@ function normalizeCaseData(raw: any): CaseData {
 
   const duo = raw.duo
 
+  if (!duo) {
+    console.warn('[caseLoader] normalizeCaseData: duo is missing, caseId=', raw.caseId || raw.meta?.caseId || 'unknown')
+    throw new Error('Case data missing duo field')
+  }
+
   // meta.relationshipType → duo.relationshipType 보존
   if (!duo.relationshipType && raw.meta?.relationshipType) {
     duo.relationshipType = raw.meta.relationshipType
@@ -242,6 +247,8 @@ function normalizeCaseData(raw: any): CaseData {
   duo.partyA.digitalHabit = normalizeDigitalHabit(duo.partyA.digitalHabit)
   duo.partyB.digitalHabit = normalizeDigitalHabit(duo.partyB.digitalHabit)
 
+  if (!Array.isArray(duo.partyA.verbalTells)) duo.partyA.verbalTells = []
+  if (!Array.isArray(duo.partyB.verbalTells)) duo.partyB.verbalTells = []
   for (const vt of duo.partyA.verbalTells) vt.trigger = normalizeTrigger(vt.trigger)
   for (const vt of duo.partyB.verbalTells) vt.trigger = normalizeTrigger(vt.trigger)
 

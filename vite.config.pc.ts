@@ -20,6 +20,8 @@ export default defineConfig({
     },
   },
   server: {
+    port: 5174,
+    open: '/index-pc.html',
     proxy: { '/api': { target: 'http://localhost:3001', changeOrigin: true } },
   },
 })
