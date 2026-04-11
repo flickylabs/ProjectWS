@@ -196,11 +196,8 @@ function buildPresentActions(
     return []
   }
 
-  const parties: PartyId[] = evidence.subjectParty === 'a'
-    ? ['a']
-    : evidence.subjectParty === 'b'
-      ? ['b']
-      : ['a', 'b']
+  // 양쪽 모두에게 제시 가능 — 대상 교체 허용
+  const parties: PartyId[] = ['a', 'b']
 
   return parties.map((party) => {
     const partyName = party === 'a' ? caseData.duo.partyA.name : caseData.duo.partyB.name

@@ -391,10 +391,35 @@ export default function PCInteractionPanel() {
         }
         break
       }
-      case 'open_evidence':
-        setPendingEvidenceView(action.evidenceId ?? null)
+      case 'open_evidence': {
+        // 증거 열람: 조사 단계(investigationStages) 진행 + 결과 채팅 표시
+        const evId = action.evidenceId
+        if (!evId) { setPayload(null); return }
+        const store = useGameStore.getState()
+        const ev = store.evidenceDefinitions.find((e) => e.id === evId)
+        if (!ev) { setPayload(null); return }
+        const stages = ev.investigationStages ?? []
+        const investigated = store.evidenceStates[evId]?.investigatedActions?.length ?? 0
+        const currentStage = stages.find((s) => s.stage === investigated)
+        if (currentStage) {
+          store.investigateEvidence(evId, currentStage.revealKey ?? `stage-${investigated}`)
+          store.addDialogue({
+            speaker: 'system',
+            text: `🔍 증거 조사 [${ev.surfaceName ?? ev.name}] — ${currentStage.question.text}`,
+            relatedDisputes: ev.proves,
+            turn: store.turnCount,
+          })
+        } else {
+          store.addDialogue({
+            speaker: 'system',
+            text: `🔍 [${ev.surfaceName ?? ev.name}] — 추가 조사 단계가 없습니다.`,
+            relatedDisputes: ev.proves,
+            turn: store.turnCount,
+          })
+        }
         setPayload(null)
         return
+      }
       case 'open_evidence_selection':
         if (action.party && action.disputeId) {
           const nextPayload = buildEvidenceSelectionPayload(action.disputeId, action.party)
