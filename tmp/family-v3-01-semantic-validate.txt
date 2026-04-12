@@ -1,0 +1,18 @@
+[scripted-semantic-quality] case=family-v3-01
+WARN R2 interrogation:a|d-1|S3|empathy_approach adjacent variants 3 and 4 are too similar (80%)
+WARN R2 interrogation:a|d-1|S4|motive_search adjacent variants 3 and 4 are too similar (76%)
+WARN R2 interrogation:a|d-1|S4|empathy_approach adjacent variants 3 and 4 are too similar (87%)
+WARN R2 interrogation:a|d-2|S1|fact_pursuit adjacent variants 1 and 2 are too similar (83%)
+WARN R2 interrogation:a|d-2|S5|empathy_approach adjacent variants 4 and 5 are too similar (80%)
+WARN R2 interrogation:a|d-5|S3|empathy_approach adjacent variants 3 and 4 are too similar (77%)
+WARN R2 interrogation:a|d-5|S5|motive_search adjacent variants 4 and 5 are too similar (81%)
+WARN R2 interrogation:a|d-5|S5|empathy_approach adjacent variants 4 and 5 are too similar (82%)
+WARN R2 interrogation:a|h-d3|S2|empathy_approach adjacent variants 3 and 4 are too similar (79%)
+WARN R2 interrogation:a|h-d4|S2|empathy_approach adjacent variants 3 and 4 are too similar (86%)
+WARN R2 interrogation:a|h-d4|S3|empathy_approach adjacent variants 3 and 4 are too similar (85%)
+WARN A8 interrogation:b-h-d4-S3-empathy_approach-v4 is more emotionally exposed than affect_flattening usually allows
+WARN A8 interrogation:b-h-d4-S5-empathy_approach-v3 is more emotionally exposed than affect_flattening usually allows
+WARN A8 evidence_present:b-e-1-early-self-v5 is more emotionally exposed than affect_flattening usually allows
+WARN A8 evidence_present:b-e-5-late-self-v3 is more emotionally exposed than affect_flattening usually allows
+summary={"WARN":15}
+PASS

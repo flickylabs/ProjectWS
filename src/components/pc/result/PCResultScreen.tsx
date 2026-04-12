@@ -90,6 +90,7 @@ export default function PCResultScreen() {
   const verdictSummary = useStore((s) => s.verdictSummary)
   const initializeCase = useStore((s) => s.initializeCase)
   const agentA = useStore((s) => s.agentA)
+  const disputeVisibility = useStore((s) => s.discovery.disputeVisibility)
   const agentB = useStore((s) => s.agentB)
   const turnCount = useStore((s) => s.turnCount)
   const evidenceStates = useStore((s) => s.evidenceStates)
@@ -232,7 +233,7 @@ export default function PCResultScreen() {
             </div>
             <div className="pc-result-hero__meta-card">
               <span>쟁점</span>
-              <strong>{caseData.disputes.length}개</strong>
+              <strong>{caseData.disputes.filter((d) => { const v = disputeVisibility[d.id]; return !v || v.visibility !== 'hidden' }).length}개</strong>
             </div>
             <div className="pc-result-hero__meta-card">
               <span>증거</span>
@@ -274,20 +275,30 @@ export default function PCResultScreen() {
             {/* score tab */}
             {tab === 'score' ? (
               <div className="pc-result-breakdown">
-                <div className="pc-result-breakdown__gauges">
+                <div className="pc-result-donuts">
                   {[
-                    { label: '탐구', value: verdictScore.insight, max: 40, color: 'var(--pc-blue)' },
-                    { label: '판결', value: verdictScore.authority, max: 30, color: 'var(--pc-gold)' },
-                    { label: '해결', value: verdictScore.wisdom, max: 30, color: 'var(--pc-green)' },
-                  ].map((g) => (
-                    <div className="pc-result-gauge" key={g.label}>
-                      <span className="pc-result-gauge__label">{g.label}</span>
-                      <div className="pc-result-gauge__bar">
-                        <div className="pc-result-gauge__fill" style={{ width: `${(g.value / g.max) * 100}%`, background: g.color }} />
+                    { label: '통찰', value: verdictScore.insight, color: 'var(--pc-blue)' },
+                    { label: '권위', value: verdictScore.authority, color: 'var(--pc-gold)' },
+                    { label: '지혜', value: verdictScore.wisdom, color: 'var(--pc-green)' },
+                  ].map((axis) => {
+                    const pct = Math.min(axis.value, 100)
+                    const dash = (pct / 100) * 251
+                    return (
+                      <div className="pc-result-donut-single" key={axis.label}>
+                        <svg viewBox="0 0 100 100" width="120" height="120">
+                          <circle cx="50" cy="50" r="40" fill="none" stroke="rgba(255,255,255,0.05)" strokeWidth="8" />
+                          <circle cx="50" cy="50" r="40" fill="none" stroke={axis.color} strokeWidth="8"
+                            strokeDasharray={`${dash} 251`} strokeDashoffset="0"
+                            transform="rotate(-90 50 50)" strokeLinecap="round"
+                            className="pc-result-donut-ring"
+                          />
+                          <text x="50" y="46" textAnchor="middle" fill="#f2efe8" fontSize="22" fontWeight="900">{axis.value}</text>
+                          <text x="50" y="62" textAnchor="middle" fill="#8c8fa0" fontSize="9">/100</text>
+                        </svg>
+                        <span className="pc-result-donut-label" style={{ color: axis.color }}>{axis.label}</span>
                       </div>
-                      <span className="pc-result-gauge__value" style={{ color: g.color }}>{g.value}</span>
-                    </div>
-                  ))}
+                    )
+                  })}
                 </div>
               </div>
             ) : null}
@@ -295,7 +306,7 @@ export default function PCResultScreen() {
             {/* truth tab */}
             {tab === 'truth' ? (
               <div className="pc-result-truth">
-                {caseData.disputes.map((d) => {
+                {caseData.disputes.filter((d) => { const v = disputeVisibility[d.id]; return !v || v.visibility !== 'hidden' }).map((d) => {
                   const finding = verdictInput.factFindings[d.id]
                   const correct = finding === 'pending'
                     ? null
@@ -435,50 +446,77 @@ function AftermathInline() {
   const caseData = useStore((s) => s.caseData)
   const verdictInput = useStore((s) => s.verdictInput)
   const verdictScore = useStore((s) => s.verdictScore)
+  const processMetrics = useStore((s) => s.processMetrics)
+  const discovery = useStore((s) => s.discovery)
   const [aftermath, setAftermath] = useState<string | null>(null)
   const [loading, setLoading] = useState(false)
 
   useEffect(() => {
     if (!caseData || !verdictScore) return
 
-    // Lazy-import the aftermath resolver to reuse existing logic
     void (async () => {
       const { resolveScriptedAftermath } = await import('../../../engine/aftermathResolver')
       const { isLLMMode } = await import('../../../hooks/useActionDispatch')
       const { chatCompletion } = await import('../../../engine/llmClient')
+      const { buildAftermathPrompt, postProcessAftermath } = await import('../../../engine/aftermathLLMGenerator')
+      const { evaluateTitles } = await import('../../../data/titles')
 
+      // 1. ScriptedText 우선
       const scripted = resolveScriptedAftermath(caseData, verdictInput)
       if (scripted) {
         setAftermath(scripted.text)
         return
       }
 
+      // 2. LLM 생성 (buildAftermathPrompt 사용)
       if (isLLMMode()) {
         setLoading(true)
         try {
-          const nameA = caseData.duo.partyA.name
-          const nameB = caseData.duo.partyB.name
-          const scoreTone = verdictScore.total >= 75
-            ? '정리 방향은 비교적 분명한 결말'
-            : verdictScore.total >= 55
-              ? '최소한의 질서는 세운 결말'
-              : '불완전한 결말'
+          // 핵심 발견 수집
+          const keyDiscoveries: string[] = []
+          if (processMetrics.liesCollapsed > 0) keyDiscoveries.push(`거짓말 ${processMetrics.liesCollapsed}건 자백 유도`)
+          if (processMetrics.deepTruthsUnlocked > 0) keyDiscoveries.push(`숨겨진 진실 ${processMetrics.deepTruthsUnlocked}건 발견`)
+          const emergedCount = Object.values(discovery.disputeVisibility).filter(v => v.visibility === 'emerged').length
+          if (emergedCount > 0) keyDiscoveries.push(`숨겨진 쟁점 ${emergedCount}건 발현`)
 
-          const prompt = [
-            '법정 대화형 게임의 후일담을 한국어로 작성하라.',
-            `당사자: ${nameA}, ${nameB}`,
-            `사건 배경: ${caseData.context.description.slice(0, 180)}`,
-            `선택한 해결책: ${verdictInput.selectedSolutions.join(', ') || '없음'}`,
-            `판결 점수 분위기: ${scoreTone}`,
-            '- 3개 문단, 각 2~3문장.',
-            '- 1주 뒤, 1개월 뒤, 남은 여파 순.',
-          ].join('\n')
+          // 칭호 계산
+          const titles = evaluateTitles(verdictScore, verdictInput, {
+            turnsUsed: processMetrics.questionsAsked + processMetrics.evidenceEffective,
+            evidencePresented: processMetrics.evidenceEffective,
+            trustActionsUsed: processMetrics.trustActionsUsed,
+            skillsUsed: 0,
+            collapsedDisputes: processMetrics.liesCollapsed,
+            totalDisputes: caseData.disputes.length,
+          })
+          const titleName = titles[0]?.name ?? '견습 재판관'
+
+          // 쟁점별 판단 조립
+          const disputeJudgments: Record<string, string> = {}
+          for (const d of caseData.disputes) {
+            const fact = verdictInput.factFindings[d.id]
+            disputeJudgments[d.id] = fact === 'true' ? '사실로 판단' : fact === 'false' ? '거짓으로 판단' : '보류'
+          }
+
+          const prompt = buildAftermathPrompt({
+            caseData,
+            verdictInput,
+            verdictDetails: {
+              disputeJudgments,
+              issueWeights: Object.fromEntries(
+                Object.entries(verdictInput.responsibility).map(([id, r]) => [id, r.b]),
+              ),
+              selectedResolution: verdictInput.selectedSolutions.join(', ') || '없음',
+            },
+            scores: { insight: verdictScore.insight, authority: verdictScore.authority, wisdom: verdictScore.wisdom },
+            title: titleName,
+            keyDiscoveries,
+          })
 
           const response = await chatCompletion(
             [{ role: 'user', content: prompt }],
-            { temperature: 0.9, maxTokens: 420 },
+            { temperature: 0.9, maxTokens: 500 },
           )
-          setAftermath(response.trim() || buildFallback(caseData, verdictScore.total))
+          setAftermath(postProcessAftermath(response) || buildFallback(caseData, verdictScore.total))
         } catch {
           setAftermath(buildFallback(caseData, verdictScore.total))
         } finally {
@@ -548,18 +586,25 @@ function ProfileInline() {
       )}
 
       <div className="pc-result-profile__tier">
-        {tierInfo.emoji} {tierInfo.name} ({profile.casesCompleted}건)
+        <PCSvgIcon id="i-scale" size={16} style={{verticalAlign:'middle',marginRight:4}} /> {tierInfo.name} ({profile.casesCompleted}건)
         {profile.isStabilized && <span className="pc-result-profile__stable"> 안정</span>}
       </div>
 
-      <div className="pc-result-profile__axes">
-        <h3>{totalGames > 1 ? `누적 성향 (${totalGames}건)` : '성향 분석'}</h3>
-        <ProfileAxis label={AXIS_LABELS.inquiry.label} axisState={driftState.inquiry} negLabel={AXIS_LABELS.inquiry.negative} posLabel={AXIS_LABELS.inquiry.positive} />
-        <ProfileAxis label={AXIS_LABELS.judgment.label} axisState={driftState.judgment} negLabel={AXIS_LABELS.judgment.negative} posLabel={AXIS_LABELS.judgment.positive} />
-        <ProfileAxis label={AXIS_LABELS.resolution.label} axisState={driftState.resolution} negLabel={AXIS_LABELS.resolution.negative} posLabel={AXIS_LABELS.resolution.positive} />
-      </div>
-
       <p className="pc-result-summary__style">{getProfileDescription(profile.titleId)}</p>
+
+      {totalGames === 0 ? (
+        <div className="pc-result-profile__intro">
+          <p>첫 번째 재판을 마쳤습니다. 사건을 거듭할수록 당신만의 재판 성향이 드러납니다.</p>
+          <p>더 많은 사건을 심리하면 3개 축(탐구/판단/해결)의 균형이 변화하고, 고유한 재판관 칭호가 부여됩니다.</p>
+        </div>
+      ) : (
+        <div className="pc-result-profile__axes">
+          <h3>누적 성향 ({totalGames}건)</h3>
+          <ProfileAxis label={AXIS_LABELS.inquiry.label} axisState={driftState.inquiry} negLabel={AXIS_LABELS.inquiry.negative} posLabel={AXIS_LABELS.inquiry.positive} />
+          <ProfileAxis label={AXIS_LABELS.judgment.label} axisState={driftState.judgment} negLabel={AXIS_LABELS.judgment.negative} posLabel={AXIS_LABELS.judgment.positive} />
+          <ProfileAxis label={AXIS_LABELS.resolution.label} axisState={driftState.resolution} negLabel={AXIS_LABELS.resolution.negative} posLabel={AXIS_LABELS.resolution.positive} />
+        </div>
+      )}
     </div>
   )
 }

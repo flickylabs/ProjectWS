@@ -1,0 +1,3 @@
+[scripted-semantic-quality] case=friend-07
+summary={}
+PASS

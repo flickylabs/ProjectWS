@@ -1,0 +1,18 @@
+[case-stage1a-runtime] wrote src/data/cases/generated/civic-new-05.json
+[runtime-template-coverage] case=civic-new-05
+summary={}
+PASS
+[case-stage1e-mediation-dialogues] caseId=case-civic-new-05
+[case-stage1e-mediation-dialogues] out=src/data/dialogues/mediation/civic-new-05.json
+[case-stage2-scripted-bootstrap] wrote src/data/scriptedText/civic-new-05.json
+[scripted-template-coverage] case=civic-new-05
+summary={}
+PASS
+[scripted-semantic-quality] case=civic-new-05
+WARN T5 interrogation:b-d-3-S4-motive_search-v2 feels too flat for S4 rattled tone
+summary={"WARN":1}
+PASS
+[validate-scripted-text] case=civic-new-05
+[validate-scripted-text] summary={}
+[validate-scripted-text] PASS
+[civic-new-05] wrote tmp\civic-new-05-stage3-validate.txt

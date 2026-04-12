@@ -1,0 +1,268 @@
+[33m[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+5459 |    }
+5460 |  }
+5461 |  @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-s...
+     |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+5462 |  :root {
+5463 |    --solomon-primary: #d97706;[39m
+[2m오후 9:04:51[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/health[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 9:04:51[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/health[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 9:07:24[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/health[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 9:07:24[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/health[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 9:07:57[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/health[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 9:07:57[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/health[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 9:07:59[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-prompts[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 9:07:59[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[PromptManager] Server unavailable, using cached/default prompts
+[2m오후 9:07:59[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-agents[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 9:07:59[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-blocks[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 9:07:59[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[AgentManager] Server unavailable, using cached data
+[2m오후 9:07:59[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/stats/settings[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 9:08:21[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/health[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 9:08:21[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/health[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 9:18:53[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/health[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 9:18:53[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/health[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 9:22:12[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/health[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 9:22:12[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/health[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 9:22:42[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/health[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 9:22:42[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/health[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 9:22:43[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-prompts[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 9:22:43[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[PromptManager] Server unavailable, using cached/default prompts
+[2m오후 9:22:43[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-agents[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 9:22:43[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-blocks[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 9:22:43[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[AgentManager] Server unavailable, using cached data
+[2m오후 9:22:43[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/stats/settings[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 9:23:37[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/health[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 9:23:37[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/health[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 9:23:38[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-prompts[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 9:23:38[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[PromptManager] Server unavailable, using cached/default prompts
+[2m오후 9:23:38[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-agents[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 9:23:38[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-blocks[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 9:23:38[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[AgentManager] Server unavailable, using cached data
+[2m오후 9:23:38[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/stats/settings[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 9:24:15[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/health[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 9:24:15[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/health[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 9:24:17[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-prompts[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 9:25:06[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/health[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 9:25:06[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/health[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 9:25:08[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-prompts[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 9:25:08[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[PromptManager] Server unavailable, using cached/default prompts
+[2m오후 9:25:08[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-agents[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 9:25:08[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-blocks[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 9:25:08[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[AgentManager] Server unavailable, using cached data
+[2m오후 9:25:08[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/stats/settings[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 9:25:40[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/health[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 9:25:40[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/health[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 9:25:42[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-prompts[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 9:25:42[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[PromptManager] Server unavailable, using cached/default prompts
+[2m오후 9:25:42[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-agents[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 9:25:42[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-blocks[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 9:25:42[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[AgentManager] Server unavailable, using cached data
+[2m오후 9:25:42[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/stats/settings[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 9:28:02[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/health[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 9:28:02[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/health[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 9:28:04[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-prompts[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 9:28:04[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[PromptManager] Server unavailable, using cached/default prompts
+[2m오후 9:28:04[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-agents[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 9:28:04[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-blocks[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 9:28:04[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[AgentManager] Server unavailable, using cached data
+[2m오후 9:28:04[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/stats/settings[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 9:31:10[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/health[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 9:31:10[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/health[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 9:31:11[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-prompts[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 9:31:11[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[PromptManager] Server unavailable, using cached/default prompts
+[2m오후 9:31:11[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-agents[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 9:31:11[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-blocks[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 9:31:11[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[AgentManager] Server unavailable, using cached data
+[2m오후 9:31:11[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/stats/settings[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 9:36:25[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/health[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 9:36:25[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/health[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 9:36:26[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-prompts[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 9:36:26[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[PromptManager] Server unavailable, using cached/default prompts
+[2m오후 9:36:26[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-agents[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 9:36:26[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-blocks[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 9:36:26[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[AgentManager] Server unavailable, using cached data
+[2m오후 9:36:26[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/stats/settings[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+^C

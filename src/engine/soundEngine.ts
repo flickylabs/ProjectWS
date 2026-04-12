@@ -125,6 +125,115 @@ export function playObjection() {
   playFile('/sfx/alert.mp3', 0.4)
 }
 
+// ── V4 연출 사운드 ──
+
+/** #1 NEW FACT 발견 — 밝은 2음 상승 (C5→E5) */
+export function playNewFactDiscovery() {
+  if (!enabled) return
+  try {
+    const ctx = getAudioCtx()
+    const t = ctx.currentTime
+    // 1st note: C5 (523Hz)
+    const osc1 = ctx.createOscillator()
+    const g1 = ctx.createGain()
+    osc1.type = 'sine'
+    osc1.frequency.value = 523
+    g1.gain.setValueAtTime(0.12, t)
+    g1.gain.exponentialRampToValueAtTime(0.001, t + 0.15)
+    osc1.connect(g1).connect(ctx.destination)
+    osc1.start(t)
+    osc1.stop(t + 0.15)
+    // 2nd note: E5 (659Hz)
+    const osc2 = ctx.createOscillator()
+    const g2 = ctx.createGain()
+    osc2.type = 'sine'
+    osc2.frequency.value = 659
+    g2.gain.setValueAtTime(0.14, t + 0.1)
+    g2.gain.exponentialRampToValueAtTime(0.001, t + 0.3)
+    osc2.connect(g2).connect(ctx.destination)
+    osc2.start(t + 0.1)
+    osc2.stop(t + 0.3)
+  } catch { /* */ }
+}
+
+/** #2 숨겨진 쟁점 발견 — 낮은 떨림 (A2 tremolo) */
+export function playDisputeDiscovery() {
+  if (!enabled) return
+  try {
+    const ctx = getAudioCtx()
+    const t = ctx.currentTime
+    const osc = ctx.createOscillator()
+    const g = ctx.createGain()
+    const lfo = ctx.createOscillator()
+    const lfoG = ctx.createGain()
+    osc.type = 'triangle'
+    osc.frequency.value = 110 // A2
+    g.gain.value = 0.15
+    lfo.type = 'sine'
+    lfo.frequency.value = 8
+    lfoG.gain.value = 0.06
+    lfo.connect(lfoG).connect(g.gain)
+    osc.connect(g).connect(ctx.destination)
+    g.gain.exponentialRampToValueAtTime(0.001, t + 0.6)
+    osc.start(t)
+    lfo.start(t)
+    osc.stop(t + 0.6)
+    lfo.stop(t + 0.6)
+  } catch { /* */ }
+}
+
+/** #4 모순 발견 — 경고 2음 하강 */
+export function playContradiction() {
+  if (!enabled) return
+  try {
+    const ctx = getAudioCtx()
+    const t = ctx.currentTime
+    const osc = ctx.createOscillator()
+    const g = ctx.createGain()
+    osc.type = 'sawtooth'
+    osc.frequency.setValueAtTime(440, t)
+    osc.frequency.exponentialRampToValueAtTime(220, t + 0.25)
+    g.gain.setValueAtTime(0.08, t)
+    g.gain.exponentialRampToValueAtTime(0.001, t + 0.3)
+    osc.connect(g).connect(ctx.destination)
+    osc.start(t)
+    osc.stop(t + 0.3)
+  } catch { /* */ }
+}
+
+/** #8 점수 카운터 틱 */
+export function playScoreTick() {
+  if (!enabled) return
+  try {
+    const ctx = getAudioCtx()
+    const t = ctx.currentTime
+    const osc = ctx.createOscillator()
+    const g = ctx.createGain()
+    osc.type = 'square'
+    osc.frequency.value = 1200
+    g.gain.setValueAtTime(0.04, t)
+    g.gain.exponentialRampToValueAtTime(0.001, t + 0.02)
+    osc.connect(g).connect(ctx.destination)
+    osc.start(t)
+    osc.stop(t + 0.02)
+  } catch { /* */ }
+}
+
+/** #14 계좌 감시 폭로 — tension + shake */
+export function playDramaticReveal() {
+  playFile('/sfx/tension.mp3', 0.3)
+}
+
+/** #3 조합 성공 */
+export function playCombineSuccess() {
+  playFile('/sfx/chime.mp3', 0.3)
+}
+
+/** #12 DossierCard 해금 */
+export function playDossierUnlock() {
+  playFile('/sfx/notification.mp3', 0.25)
+}
+
 // ── BGM 시스템 ──
 
 let bgmAudio: HTMLAudioElement | null = null

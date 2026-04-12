@@ -1,0 +1,3 @@
+[scripted-semantic-quality] case=civic-new-02
+summary={}
+PASS

@@ -375,13 +375,9 @@ export default function PCRightPanel() {
               <div className="tgt-meta">{`${targetProfile.age}\uC138 \u00B7 ${targetProfile.occupation}`}</div>
               <div className="tgt-tags">
                 <span className="tag tag-arch">{getPcArchetypeLabel(targetArchetype)}</span>
-                <span className="tag tag-tell" title={tellDescription}>
-                  {getPcTellLabel(tellType)}
-                </span>
               </div>
             </div>
 
-            <p className="pc-target-hint">{currentHint}</p>
           </div>
 
           <div className="lie-bar">
@@ -440,39 +436,27 @@ export default function PCRightPanel() {
             onDrop={handleCombinationDrop}
           >
             <div className="pc-skill-card__topline">
-              <div className="pc-skill-card__eyebrow">{'\uC870\uD569 \uC2A4\uD0AC'}</div>
-              <button className="pc-skill-card__info-button" onClick={openCombinationInfo} type="button">
-                !
-              </button>
+              <div className="pc-skill-card__eyebrow">조합</div>
+              <button className="pc-skill-card__info-button" onClick={openCombinationInfo} type="button">?</button>
             </div>
 
-            {comboReady ? (
-              <button className="pc-combination-card__attempt" onClick={handleCombinationAttempt} type="button">
-                <span>{'조합 시도'}</span>
-                <PCSvgIcon id="i-bolt" size={20} />
-              </button>
-            ) : (
-              <div className="pc-combination-card__desc">
-                <p className="pc-skill-card__copy">{'증거, 발언 노트 등을 끌어와 조합해보세요.'}</p>
-                <p className="pc-skill-card__copy is-hint">{'드래그 앤 드롭 또는 Shift + 클릭'}</p>
-                <div className="pc-combination-card__focus">
-                  <span>{'현재 쟁점'}</span>
-                  <strong>{activeDispute?.name ?? '아직 선택된 쟁점 없음'}</strong>
+            <div className="pc-combination-card__body">
+              {comboReady ? (
+                <button className="pc-combination-card__attempt pc-combination-card__attempt--center" onClick={handleCombinationAttempt} type="button">
+                  <PCSvgIcon id="i-bolt" size={20} />
+                  <span>조합 실행</span>
+                </button>
+              ) : (
+                <div className="pc-combination-card__guide">
+                  <p><strong>증거</strong> 또는 <strong>발언 카드</strong>를 채워주신 후 조합을 실행해주세요.</p>
+                  <p className="pc-combination-card__guide-sub">드래그 앤 드롭 또는 Shift + 클릭</p>
                 </div>
-              </div>
-            )}
-
+              )}
+            </div>
             <div className="pc-combination-card__slots">
-              <CombinationSlot
-                label="A"
-                node={comboNodeA}
-                onClear={() => setComboSlots((current) => [null, current[1]])}
-              />
-              <CombinationSlot
-                label="B"
-                node={comboNodeB}
-                onClear={() => setComboSlots((current) => [current[0], null])}
-              />
+              <CombinationSlot label="A" node={comboNodeA} onClear={() => setComboSlots((c) => [null, c[1]])} />
+              <span className="pc-combination-card__plus">+</span>
+              <CombinationSlot label="B" node={comboNodeB} onClear={() => setComboSlots((c) => [c[0], null])} />
             </div>
           </div>
         </section>

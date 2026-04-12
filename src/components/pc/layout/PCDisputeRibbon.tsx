@@ -22,6 +22,7 @@ export default function PCDisputeRibbon() {
   const lastFocusedDisputeId = useStore((s) => s.lastFocusedDisputeId)
   const setLastFocusedDisputeId = useStore((s) => s.setLastFocusedDisputeId)
   const setPendingEvidenceView = useStore((s) => s.setPendingEvidenceView)
+  const disputeVisibility = useStore((s) => s.discovery.disputeVisibility)
 
   const [pinnedId, setPinnedId] = useState<string | null>(null)
   const [hoveredId, setHoveredId] = useState<string | null>(null)
@@ -88,7 +89,7 @@ export default function PCDisputeRibbon() {
           <span className="pc-dispute-ribbon__arrow">{collapsed ? '▼' : '▲'}</span>
         </button>
         <div className="pc-dispute-ribbon__track">
-          {caseData.disputes.map((dispute, index) => {
+          {caseData.disputes.filter((d) => { const v = disputeVisibility[d.id]; return !v || v.visibility !== 'hidden' }).map((dispute, index) => {
             const isActive = activeId === dispute.id
             const isPinned = pinnedId === dispute.id
             const isFocused = lastFocusedDisputeId === dispute.id

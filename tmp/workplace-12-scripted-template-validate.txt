@@ -1,0 +1,3 @@
+[scripted-template-coverage] case=workplace-12
+summary={}
+PASS

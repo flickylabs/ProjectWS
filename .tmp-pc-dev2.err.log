@@ -1,0 +1,163 @@
+[33m[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+5407 |    }
+5408 |  }
+5409 |  @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-s...
+     |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+5410 |  :root {
+5411 |    --solomon-primary: #d97706;[39m
+[2m오전 6:22:14[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/health[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오전 6:22:14[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/health[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[33m[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+5407 |    }
+5408 |  }
+5409 |  @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-s...
+     |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+5410 |  :root {
+5411 |    --solomon-primary: #d97706;[39m
+[33m[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+5407 |    }
+5408 |  }
+5409 |  @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-s...
+     |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+5410 |  :root {
+5411 |    --solomon-primary: #d97706;[39m
+[2m오전 6:28:28[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22m[vite] Failed to reload /src/components/pc/home/PCCaseBrowser.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above)
+[33m[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+5407 |    }
+5408 |  }
+5409 |  @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-s...
+     |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+5410 |  :root {
+5411 |    --solomon-primary: #d97706;[39m
+[33m[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+5407 |    }
+5408 |  }
+5409 |  @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-s...
+     |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+5410 |  :root {
+5411 |    --solomon-primary: #d97706;[39m
+[2m오전 6:29:12[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22m[vite] Failed to reload /src/components/pc/home/PCHomeScreen.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above)
+[33m[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+5407 |    }
+5408 |  }
+5409 |  @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-s...
+     |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+5410 |  :root {
+5411 |    --solomon-primary: #d97706;[39m
+[33m[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+5407 |    }
+5408 |  }
+5409 |  @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-s...
+     |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+5410 |  :root {
+5411 |    --solomon-primary: #d97706;[39m
+[2m오전 6:33:12[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/health[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오전 6:33:12[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/players/sync[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오전 6:33:12[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/mail/unread-count/80e234e1-14ef-4771-8fc8-8639d190e895[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오전 6:33:12[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/notices[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[33m[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+5407 |    }
+5408 |  }
+5409 |  @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-s...
+     |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+5410 |  :root {
+5411 |    --solomon-primary: #d97706;[39m
+[33m[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+5407 |    }
+5408 |  }
+5409 |  @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-s...
+     |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+5410 |  :root {
+5411 |    --solomon-primary: #d97706;[39m
+[2m오전 6:34:59[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/health[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오전 6:34:59[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/players/sync[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오전 6:34:59[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/mail/unread-count/80e234e1-14ef-4771-8fc8-8639d190e895[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오전 6:34:59[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/notices[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오전 6:38:55[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/health[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오전 6:38:55[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/health[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오전 6:38:55[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/players/sync[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오전 6:38:55[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/players/sync[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오전 6:38:55[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/mail/unread-count/80e234e1-14ef-4771-8fc8-8639d190e895[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오전 6:38:55[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/notices[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오전 6:38:55[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/mail/unread-count/80e234e1-14ef-4771-8fc8-8639d190e895[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오전 6:38:55[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/notices[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오전 6:39:33[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-prompts[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오전 6:39:33[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[PromptManager] Server unavailable, using cached/default prompts
+[2m오전 6:39:33[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-agents[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오전 6:39:33[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-blocks[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오전 6:39:33[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[AgentManager] Server unavailable, using cached data
+[2m오전 6:39:33[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/stats/settings[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오전 6:39:39[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mPhase 2 LLM 생성 실패: TypeError: Cannot read properties of undefined (reading 'toLowerCase')
+    at normalizeSpeaker (http://127.0.0.1:4178/src/engine/llmPhaseDialogue.ts:78:16)
+    at http://127.0.0.1:4178/src/engine/llmPhaseDialogue.ts:99:13
+    at Array.map (<anonymous>)
+    at parseDialogueArray (http://127.0.0.1:4178/src/engine/llmPhaseDialogue.ts:94:16)
+    at generatePhase2Dialogues (http://127.0.0.1:4178/src/engine/llmPhaseDialogue.ts:70:10)
+[2m오전 6:39:53[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[ScriptLoader] Phase 1 not found: case-workplace-new-02. Available: family-01, family-02, family-03...
+[2m오전 6:39:53[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[ScriptLoader] Phase 1 not found: case-workplace-new-02. Available: family-01, family-02, family-03...

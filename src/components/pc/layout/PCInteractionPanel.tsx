@@ -48,10 +48,15 @@ export interface PcInteractionPayload {
   subtitle?: string
   body: string
   tone?: InteractionTone
-  variant?: 'default' | 'feature' | 'evidence'
+  variant?: 'default' | 'feature' | 'evidence' | 'dialogue'
   tags?: string[]
   actions?: PcInteractionAction[]
   evidenceId?: string
+  /** dialogue variant fields */
+  dialogueTurn?: number
+  dialogueSpeaker?: string
+  dialogueSpeakerName?: string
+  dialogueDisputeIds?: string[]
 }
 
 const COPY = {
@@ -130,9 +135,9 @@ function buildCaseSummaryPayload(): PcInteractionPayload {
       `${COPY.unlockedEvidence}: ${unlockedEvidence.length}/${state.evidenceDefinitions.length}`,
       '',
       COPY.disputeList,
-      ...caseData.disputes.slice(0, 5).map((dispute, index) => `${index + 1}. ${dispute.name}`),
+      ...caseData.disputes.filter((d) => !d.hidden && d.v3Visibility !== 'hidden').slice(0, 5).map((dispute, index) => `${index + 1}. ${dispute.name}`),
     ].join('\n'),
-    tags: [`${caseData.disputes.length}\uAC1C \uC7C1\uC810`, `${unlockedEvidence.length}\uAC1C \uC99D\uAC70`],
+    tags: [`${caseData.disputes.filter((d) => !d.hidden && d.v3Visibility !== 'hidden').length}\uAC1C \uC7C1\uC810`, `${unlockedEvidence.length}\uAC1C \uC99D\uAC70`],
     actions: [
       ...(focusedDispute ? [{ kind: 'focus_dispute' as const, label: COPY.viewCurrentDispute, disputeId: focusedDispute.id }] : []),
       ...(unlockedEvidence[0] ? [{ kind: 'open_evidence' as const, label: COPY.latestEvidence, evidenceId: unlockedEvidence[0].id }] : []),
@@ -308,8 +313,9 @@ function buildDisputePickerPayload(currentDisputeId: string): PcInteractionPaylo
     return null
   }
 
+  const vis = state.discovery.disputeVisibility
   const currentDispute = caseData.disputes.find((item) => item.id === currentDisputeId)
-  const candidates = caseData.disputes.filter((item) => item.id !== currentDisputeId)
+  const candidates = caseData.disputes.filter((item) => item.id !== currentDisputeId && (!vis[item.id] || vis[item.id].visibility !== 'hidden'))
 
   if (candidates.length === 0) {
     return {
@@ -612,7 +618,11 @@ export default function PCInteractionPanel() {
           </div>
         ) : null}
 
-        <div className="pc-interaction-card__body">{payload.body}</div>
+        {payload.variant === 'dialogue' ? (
+          <DialogueDetailSection payload={payload} />
+        ) : (
+          <div className="pc-interaction-card__body">{payload.body}</div>
+        )}
 
         {payload.variant === 'evidence' && payload.evidenceId ? (
           <EvidenceDetailSection evidenceId={payload.evidenceId} />
@@ -740,6 +750,48 @@ function EvidenceDetailSection({ evidenceId }: { evidenceId: string }) {
           <span>{presentedToB ? `${nameB} 제시 완료` : `${nameB}에게 제시`}</span>
         </button>
       </div>
+    </div>
+  )
+}
+
+function DialogueDetailSection({ payload }: { payload: PcInteractionPayload }) {
+  const caseData = useStore((s) => s.caseData)
+  const disputes = caseData?.disputes ?? []
+  const relatedIds = payload.dialogueDisputeIds ?? []
+  const primaryDispute = relatedIds.length > 0 ? disputes.find((d) => d.id === relatedIds[0]) : null
+  const extraDisputes = relatedIds.slice(1).map((id) => disputes.find((d) => d.id === id)?.name).filter(Boolean)
+  const isImportant = (payload.subtitle ?? '').includes('중요')
+
+  return (
+    <div className="pc-dialogue-popup">
+      {/* Dispute + character row */}
+      <div className="pc-dialogue-popup__dispute-row">
+        <div className="pc-dialogue-popup__dispute-left">
+          {primaryDispute ? (
+            <>
+              <span className="pc-dialogue-popup__dispute-label">주요 쟁점</span>
+              <span className="pc-dialogue-popup__dispute-name">{primaryDispute.name}</span>
+            </>
+          ) : (
+            <span className="pc-dialogue-popup__dispute-label">쟁점 없음</span>
+          )}
+        </div>
+        <div className="pc-dialogue-popup__speaker">
+          <PCSvgIcon id={payload.dialogueSpeaker === 'a' ? 'i-man' : payload.dialogueSpeaker === 'b' ? 'i-woman' : payload.dialogueSpeaker === 'judge' ? 'i-scale' : 'i-bulb'} size={18} />
+          <span>{payload.dialogueSpeakerName ?? '시스템'}</span>
+        </div>
+      </div>
+
+      {/* Extra disputes */}
+      {extraDisputes.length > 0 ? (
+        <div className="pc-dialogue-popup__extra">
+          <span>추가 연관 쟁점: </span>
+          {extraDisputes.join(', ')}
+        </div>
+      ) : null}
+
+      {/* Body text */}
+      <div className="pc-dialogue-popup__body">{payload.body}</div>
     </div>
   )
 }

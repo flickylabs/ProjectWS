@@ -1,0 +1,1961 @@
+[33m[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+5410 |    }
+5411 |  }
+5412 |  @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-s...
+     |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+5413 |  :root {
+5414 |    --solomon-primary: #d97706;[39m
+[2m오후 9:57:16[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/health[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 9:57:16[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/health[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 9:57:16[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/players/sync[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 9:57:16[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/players/sync[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 9:57:16[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/mail/unread-count/51a1ede6-084a-4a52-b050-8d42aa80e8f2[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 9:57:16[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/notices[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 9:57:16[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/mail/unread-count/51a1ede6-084a-4a52-b050-8d42aa80e8f2[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 9:57:16[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/notices[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[33m[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+5410 |    }
+5411 |  }
+5412 |  @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-s...
+     |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+5413 |  :root {
+5414 |    --solomon-primary: #d97706;[39m
+[33m[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+5466 |    }
+5467 |  }
+5468 |  @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-s...
+     |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+5469 |  :root {
+5470 |    --solomon-primary: #d97706;[39m
+[2m오후 9:59:15[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/health[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 9:59:15[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/health[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 9:59:15[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/players/sync[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 9:59:15[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/players/sync[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 9:59:15[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/mail/unread-count/51a1ede6-084a-4a52-b050-8d42aa80e8f2[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 9:59:15[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/notices[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 9:59:15[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/mail/unread-count/51a1ede6-084a-4a52-b050-8d42aa80e8f2[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 9:59:15[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/notices[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[33m[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+5466 |    }
+5467 |  }
+5468 |  @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-s...
+     |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+5469 |  :root {
+5470 |    --solomon-primary: #d97706;[39m
+[33m[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+5466 |    }
+5467 |  }
+5468 |  @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-s...
+     |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+5469 |  :root {
+5470 |    --solomon-primary: #d97706;[39m
+[33m[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+5466 |    }
+5467 |  }
+5468 |  @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-s...
+     |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+5469 |  :root {
+5470 |    --solomon-primary: #d97706;[39m
+[2m오후 10:13:36[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/mail/player/51a1ede6-084a-4a52-b050-8d42aa80e8f2[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 10:13:36[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/notices[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 10:19:59[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-prompts[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 10:19:59[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[PromptManager] Server unavailable, using cached/default prompts
+[2m오후 10:19:59[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-agents[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 10:19:59[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-blocks[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 10:19:59[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[AgentManager] Server unavailable, using cached data
+[2m오후 10:19:59[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/stats/settings[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 10:20:01[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/health[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 10:20:01[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/health[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 10:20:01[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/players/sync[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 10:20:01[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/players/sync[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 10:20:01[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/mail/unread-count/51a1ede6-084a-4a52-b050-8d42aa80e8f2[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 10:20:01[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/notices[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 10:20:01[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/mail/unread-count/51a1ede6-084a-4a52-b050-8d42aa80e8f2[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 10:20:01[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/notices[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 10:21:03[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-prompts[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 10:21:03[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[PromptManager] Server unavailable, using cached/default prompts
+[2m오후 10:21:03[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-agents[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 10:21:03[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-blocks[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 10:21:03[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[AgentManager] Server unavailable, using cached data
+[2m오후 10:21:03[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/stats/settings[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 10:23:19[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/health[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 10:23:19[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/health[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 10:23:19[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/players/sync[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 10:23:19[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/players/sync[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 10:23:19[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/mail/unread-count/51a1ede6-084a-4a52-b050-8d42aa80e8f2[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 10:23:19[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/notices[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 10:23:19[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/mail/unread-count/51a1ede6-084a-4a52-b050-8d42aa80e8f2[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 10:23:19[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/notices[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 10:23:24[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-prompts[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 10:23:24[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[PromptManager] Server unavailable, using cached/default prompts
+[2m오후 10:23:24[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-agents[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 10:23:24[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-blocks[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 10:23:24[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[AgentManager] Server unavailable, using cached data
+[2m오후 10:23:24[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/stats/settings[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 10:23:44[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mIn HTML, <button> cannot be a descendant of <button>.
+This will cause a hydration error.
+
+  <ErrorBoundary>
+    <PCPrototypeStyle>
+    <PCSvgDefs>
+    <PCApp>
+      <PhaseTransition>
+      <PCCourtLayout actionPanel={<AutoDialoguePhase>} isDialoguePhase={true} onDialogueTap={function triggerDialogueTap}>
+        <PCGameplayOverlay>
+        <PCInteractionPanel>
+        <div className="app">
+          <header>
+          <div>
+          <div>
+          <div className="panel panel-r">
+            <div>
+            <button>
+            <PCRightPanel>
+              <section className="sec collap...">
+                <button>
+                <div className="sec-content">
+                  <div>
+>                 <button className="target target-clickable" onClick={function} type="button">
+                    <div>
+                    <div className="tgt-info">
+                      <div>
+                      <div>
+                      <div className="tgt-tags">
+>                       <button className="tag tag-arch tag-button" onClick={function onClick} type="button">
+                        ...
+                      ...
+                  ...
+              ...
+        ...
+    ...
+
+[2m오후 10:23:44[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22m<button> cannot contain a nested <button>.
+See this log for the ancestor stack trace.
+[2m오후 10:28:27[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[dispatch] 이전 액션 처리 중 — 무시
+[2m오후 10:28:30[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[dispatch] 이전 액션 처리 중 — 무시
+[2m오후 10:28:31[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[dispatch] 이전 액션 처리 중 — 무시
+[33m[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+5466 |    }
+5467 |  }
+5468 |  @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-s...
+     |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+5469 |  :root {
+5470 |    --solomon-primary: #d97706;[39m
+[33m[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+5466 |    }
+5467 |  }
+5468 |  @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-s...
+     |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+5469 |  :root {
+5470 |    --solomon-primary: #d97706;[39m
+[33m[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+5466 |    }
+5467 |  }
+5468 |  @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-s...
+     |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+5469 |  :root {
+5470 |    --solomon-primary: #d97706;[39m
+[33m[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+5466 |    }
+5467 |  }
+5468 |  @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-s...
+     |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+5469 |  :root {
+5470 |    --solomon-primary: #d97706;[39m
+[33m[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+5466 |    }
+5467 |  }
+5468 |  @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-s...
+     |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+5469 |  :root {
+5470 |    --solomon-primary: #d97706;[39m
+[33m[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+5466 |    }
+5467 |  }
+5468 |  @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-s...
+     |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+5469 |  :root {
+5470 |    --solomon-primary: #d97706;[39m
+[33m[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+5466 |    }
+5467 |  }
+5468 |  @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-s...
+     |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+5469 |  :root {
+5470 |    --solomon-primary: #d97706;[39m
+[33m[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+5466 |    }
+5467 |  }
+5468 |  @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-s...
+     |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+5469 |  :root {
+5470 |    --solomon-primary: #d97706;[39m
+[33m[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+5466 |    }
+5467 |  }
+5468 |  @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-s...
+     |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+5469 |  :root {
+5470 |    --solomon-primary: #d97706;[39m
+[33m[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+5466 |    }
+5467 |  }
+5468 |  @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-s...
+     |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+5469 |  :root {
+5470 |    --solomon-primary: #d97706;[39m
+[33m[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+5466 |    }
+5467 |  }
+5468 |  @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-s...
+     |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+5469 |  :root {
+5470 |    --solomon-primary: #d97706;[39m
+[33m[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+5466 |    }
+5467 |  }
+5468 |  @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-s...
+     |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+5469 |  :root {
+5470 |    --solomon-primary: #d97706;[39m
+[2m오후 10:46:44[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mTypeError: Cannot read properties of undefined (reading 'let_go')
+    at ContradictionModal (http://localhost:5180/src/components/discovery/GameEventModal.tsx:271:31)
+    at Object.react_stack_bottom_frame (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:12867:12)
+    at renderWithHooks (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:4212:19)
+    at updateFunctionComponent (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:5568:16)
+    at beginWork (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:6139:20)
+    at runWithFiberInDEV (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:850:66)
+    at performUnitOfWork (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:8428:92)
+    at workLoopSync (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:8324:37)
+    at renderRootSync (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:8308:6)
+    at performWorkOnRoot (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:7993:27)
+
+The above error occurred in the <ContradictionModal> component.
+
+React will try to recreate this component tree from scratch using the error boundary you provided, ErrorBoundary.
+
+[2m오후 10:46:44[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mErrorBoundary caught: TypeError: Cannot read properties of undefined (reading 'let_go')
+    at ContradictionModal (http://localhost:5180/src/components/discovery/GameEventModal.tsx:271:31)
+    at Object.react_stack_bottom_frame (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:12867:12)
+    at renderWithHooks (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:4212:19)
+    at updateFunctionComponent (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:5568:16)
+    at beginWork (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:6139:20)
+    at runWithFiberInDEV (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:850:66)
+    at performUnitOfWork (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:8428:92)
+    at workLoopSync (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:8324:37)
+    at renderRootSync (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:8308:6)
+    at performWorkOnRoot (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:7993:27) {"componentStack":"\n    at ContradictionModal (http://localhost:5180/src/components/discovery/GameEventModal.tsx:160:31)\n    at div (<anonymous>)\n    at div (<anonymous>)\n    at GameEventModal (http://localhost:5180/src/components/discovery/GameEventModal.tsx:18:23)\n    at Suspense (<anonymous>)\n    at PCGameplayOverlay (http://localhost:5180/src/components/pc/layout/PCGameplayOverlay.tsx?t=1775739568989:25:23)\n    at PCCourtLayout (http://localhost:5180/src/components/pc/layout/PCCourtLayout.tsx?t=1775742081773:23:41)\n    at PCApp (http://localhost:5180/src/app/PCApp.tsx?t=1775739568989:36:23)\n    at ErrorBoundary (http://localhost:5180/src/components/layout/ErrorBoundary.tsx:5:16)"}
+[33m[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+5466 |    }
+5467 |  }
+5468 |  @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-s...
+     |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+5469 |  :root {
+5470 |    --solomon-primary: #d97706;[39m
+[2m오후 11:01:03[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-prompts[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 11:01:03[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[PromptManager] Server unavailable, using cached/default prompts
+[2m오후 11:01:03[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-agents[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 11:01:03[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-blocks[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 11:01:03[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[AgentManager] Server unavailable, using cached data
+[2m오후 11:01:03[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/stats/settings[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 11:01:04[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mTypeError: Cannot read properties of undefined (reading 'let_go')
+    at ContradictionModal (http://localhost:5180/src/components/discovery/GameEventModal.tsx:271:31)
+    at Object.react_stack_bottom_frame (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:12867:12)
+    at renderWithHooks (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:4212:19)
+    at updateFunctionComponent (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:5568:16)
+    at beginWork (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:6139:20)
+    at runWithFiberInDEV (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:850:66)
+    at performUnitOfWork (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:8428:92)
+    at workLoopSync (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:8324:37)
+    at renderRootSync (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:8308:6)
+    at performWorkOnRoot (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:7993:27)
+
+The above error occurred in the <ContradictionModal> component.
+
+React will try to recreate this component tree from scratch using the error boundary you provided, ErrorBoundary.
+
+[2m오후 11:01:04[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mErrorBoundary caught: TypeError: Cannot read properties of undefined (reading 'let_go')
+    at ContradictionModal (http://localhost:5180/src/components/discovery/GameEventModal.tsx:271:31)
+    at Object.react_stack_bottom_frame (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:12867:12)
+    at renderWithHooks (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:4212:19)
+    at updateFunctionComponent (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:5568:16)
+    at beginWork (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:6139:20)
+    at runWithFiberInDEV (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:850:66)
+    at performUnitOfWork (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:8428:92)
+    at workLoopSync (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:8324:37)
+    at renderRootSync (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:8308:6)
+    at performWorkOnRoot (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:7993:27) {"componentStack":"\n    at ContradictionModal (http://localhost:5180/src/components/discovery/GameEventModal.tsx:160:31)\n    at div (<anonymous>)\n    at div (<anonymous>)\n    at GameEventModal (http://localhost:5180/src/components/discovery/GameEventModal.tsx:18:23)\n    at Suspense (<anonymous>)\n    at PCGameplayOverlay (http://localhost:5180/src/components/pc/layout/PCGameplayOverlay.tsx?t=1775739568989:25:23)\n    at PCCourtLayout (http://localhost:5180/src/components/pc/layout/PCCourtLayout.tsx?t=1775742081773:23:41)\n    at PCApp (http://localhost:5180/src/app/PCApp.tsx?t=1775739568989:36:23)\n    at ErrorBoundary (http://localhost:5180/src/components/layout/ErrorBoundary.tsx:5:16)"}
+[33m[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+5466 |    }
+5467 |  }
+5468 |  @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-s...
+     |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+5469 |  :root {
+5470 |    --solomon-primary: #d97706;[39m
+[2m오후 11:01:54[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-prompts[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 11:01:54[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[PromptManager] Server unavailable, using cached/default prompts
+[2m오후 11:01:54[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-agents[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 11:01:54[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-blocks[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 11:01:54[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[AgentManager] Server unavailable, using cached data
+[2m오후 11:01:54[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/stats/settings[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 11:01:54[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mTypeError: Cannot read properties of undefined (reading 'let_go')
+    at ContradictionModal (http://localhost:5180/src/components/discovery/GameEventModal.tsx:271:31)
+    at Object.react_stack_bottom_frame (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:12867:12)
+    at renderWithHooks (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:4212:19)
+    at updateFunctionComponent (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:5568:16)
+    at beginWork (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:6139:20)
+    at runWithFiberInDEV (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:850:66)
+    at performUnitOfWork (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:8428:92)
+    at workLoopSync (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:8324:37)
+    at renderRootSync (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:8308:6)
+    at performWorkOnRoot (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:7993:27)
+
+The above error occurred in the <ContradictionModal> component.
+
+React will try to recreate this component tree from scratch using the error boundary you provided, ErrorBoundary.
+
+[2m오후 11:01:54[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mErrorBoundary caught: TypeError: Cannot read properties of undefined (reading 'let_go')
+    at ContradictionModal (http://localhost:5180/src/components/discovery/GameEventModal.tsx:271:31)
+    at Object.react_stack_bottom_frame (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:12867:12)
+    at renderWithHooks (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:4212:19)
+    at updateFunctionComponent (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:5568:16)
+    at beginWork (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:6139:20)
+    at runWithFiberInDEV (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:850:66)
+    at performUnitOfWork (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:8428:92)
+    at workLoopSync (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:8324:37)
+    at renderRootSync (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:8308:6)
+    at performWorkOnRoot (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:7993:27) {"componentStack":"\n    at ContradictionModal (http://localhost:5180/src/components/discovery/GameEventModal.tsx:160:31)\n    at div (<anonymous>)\n    at div (<anonymous>)\n    at GameEventModal (http://localhost:5180/src/components/discovery/GameEventModal.tsx:18:23)\n    at Suspense (<anonymous>)\n    at PCGameplayOverlay (http://localhost:5180/src/components/pc/layout/PCGameplayOverlay.tsx?t=1775739568989:25:23)\n    at PCCourtLayout (http://localhost:5180/src/components/pc/layout/PCCourtLayout.tsx?t=1775742081773:23:41)\n    at PCApp (http://localhost:5180/src/app/PCApp.tsx?t=1775739568989:36:23)\n    at ErrorBoundary (http://localhost:5180/src/components/layout/ErrorBoundary.tsx:5:16)"}
+[33m[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+5466 |    }
+5467 |  }
+5468 |  @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-s...
+     |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+5469 |  :root {
+5470 |    --solomon-primary: #d97706;[39m
+[2m오후 11:02:11[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-prompts[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 11:02:11[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[PromptManager] Server unavailable, using cached/default prompts
+[2m오후 11:02:11[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-agents[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 11:02:11[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-blocks[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 11:02:11[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[AgentManager] Server unavailable, using cached data
+[2m오후 11:02:11[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/stats/settings[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 11:02:11[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mTypeError: Cannot read properties of undefined (reading 'let_go')
+    at ContradictionModal (http://localhost:5180/src/components/discovery/GameEventModal.tsx:271:31)
+    at Object.react_stack_bottom_frame (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:12867:12)
+    at renderWithHooks (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:4212:19)
+    at updateFunctionComponent (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:5568:16)
+    at beginWork (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:6139:20)
+    at runWithFiberInDEV (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:850:66)
+    at performUnitOfWork (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:8428:92)
+    at workLoopSync (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:8324:37)
+    at renderRootSync (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:8308:6)
+    at performWorkOnRoot (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:7993:27)
+
+The above error occurred in the <ContradictionModal> component.
+
+React will try to recreate this component tree from scratch using the error boundary you provided, ErrorBoundary.
+
+[2m오후 11:02:11[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mErrorBoundary caught: TypeError: Cannot read properties of undefined (reading 'let_go')
+    at ContradictionModal (http://localhost:5180/src/components/discovery/GameEventModal.tsx:271:31)
+    at Object.react_stack_bottom_frame (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:12867:12)
+    at renderWithHooks (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:4212:19)
+    at updateFunctionComponent (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:5568:16)
+    at beginWork (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:6139:20)
+    at runWithFiberInDEV (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:850:66)
+    at performUnitOfWork (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:8428:92)
+    at workLoopSync (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:8324:37)
+    at renderRootSync (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:8308:6)
+    at performWorkOnRoot (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:7993:27) {"componentStack":"\n    at ContradictionModal (http://localhost:5180/src/components/discovery/GameEventModal.tsx:160:31)\n    at div (<anonymous>)\n    at div (<anonymous>)\n    at GameEventModal (http://localhost:5180/src/components/discovery/GameEventModal.tsx:18:23)\n    at Suspense (<anonymous>)\n    at PCGameplayOverlay (http://localhost:5180/src/components/pc/layout/PCGameplayOverlay.tsx?t=1775739568989:25:23)\n    at PCCourtLayout (http://localhost:5180/src/components/pc/layout/PCCourtLayout.tsx?t=1775742081773:23:41)\n    at PCApp (http://localhost:5180/src/app/PCApp.tsx?t=1775739568989:36:23)\n    at ErrorBoundary (http://localhost:5180/src/components/layout/ErrorBoundary.tsx:5:16)"}
+[33m[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+5466 |    }
+5467 |  }
+5468 |  @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-s...
+     |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+5469 |  :root {
+5470 |    --solomon-primary: #d97706;[39m
+[2m오후 11:02:25[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-prompts[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 11:02:25[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[PromptManager] Server unavailable, using cached/default prompts
+[2m오후 11:02:25[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-agents[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 11:02:25[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-blocks[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 11:02:25[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[AgentManager] Server unavailable, using cached data
+[2m오후 11:02:25[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/stats/settings[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 11:02:25[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mTypeError: Cannot read properties of undefined (reading 'let_go')
+    at ContradictionModal (http://localhost:5180/src/components/discovery/GameEventModal.tsx:271:31)
+    at Object.react_stack_bottom_frame (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:12867:12)
+    at renderWithHooks (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:4212:19)
+    at updateFunctionComponent (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:5568:16)
+    at beginWork (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:6139:20)
+    at runWithFiberInDEV (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:850:66)
+    at performUnitOfWork (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:8428:92)
+    at workLoopSync (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:8324:37)
+    at renderRootSync (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:8308:6)
+    at performWorkOnRoot (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:7993:27)
+
+The above error occurred in the <ContradictionModal> component.
+
+React will try to recreate this component tree from scratch using the error boundary you provided, ErrorBoundary.
+
+[2m오후 11:02:25[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mErrorBoundary caught: TypeError: Cannot read properties of undefined (reading 'let_go')
+    at ContradictionModal (http://localhost:5180/src/components/discovery/GameEventModal.tsx:271:31)
+    at Object.react_stack_bottom_frame (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:12867:12)
+    at renderWithHooks (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:4212:19)
+    at updateFunctionComponent (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:5568:16)
+    at beginWork (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:6139:20)
+    at runWithFiberInDEV (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:850:66)
+    at performUnitOfWork (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:8428:92)
+    at workLoopSync (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:8324:37)
+    at renderRootSync (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:8308:6)
+    at performWorkOnRoot (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:7993:27) {"componentStack":"\n    at ContradictionModal (http://localhost:5180/src/components/discovery/GameEventModal.tsx:160:31)\n    at div (<anonymous>)\n    at div (<anonymous>)\n    at GameEventModal (http://localhost:5180/src/components/discovery/GameEventModal.tsx:18:23)\n    at Suspense (<anonymous>)\n    at PCGameplayOverlay (http://localhost:5180/src/components/pc/layout/PCGameplayOverlay.tsx?t=1775739568989:25:23)\n    at PCCourtLayout (http://localhost:5180/src/components/pc/layout/PCCourtLayout.tsx?t=1775742081773:23:41)\n    at PCApp (http://localhost:5180/src/app/PCApp.tsx?t=1775739568989:36:23)\n    at ErrorBoundary (http://localhost:5180/src/components/layout/ErrorBoundary.tsx:5:16)"}
+[33m[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+5466 |    }
+5467 |  }
+5468 |  @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-s...
+     |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+5469 |  :root {
+5470 |    --solomon-primary: #d97706;[39m
+[2m오후 11:02:51[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-prompts[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 11:02:51[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[PromptManager] Server unavailable, using cached/default prompts
+[2m오후 11:02:51[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-agents[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 11:02:51[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-blocks[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 11:02:51[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[AgentManager] Server unavailable, using cached data
+[2m오후 11:02:51[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/stats/settings[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 11:02:51[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mTypeError: Cannot read properties of undefined (reading 'let_go')
+    at ContradictionModal (http://localhost:5180/src/components/discovery/GameEventModal.tsx:271:31)
+    at Object.react_stack_bottom_frame (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:12867:12)
+    at renderWithHooks (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:4212:19)
+    at updateFunctionComponent (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:5568:16)
+    at beginWork (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:6139:20)
+    at runWithFiberInDEV (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:850:66)
+    at performUnitOfWork (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:8428:92)
+    at workLoopSync (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:8324:37)
+    at renderRootSync (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:8308:6)
+    at performWorkOnRoot (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:7993:27)
+
+The above error occurred in the <ContradictionModal> component.
+
+React will try to recreate this component tree from scratch using the error boundary you provided, ErrorBoundary.
+
+[2m오후 11:02:51[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mErrorBoundary caught: TypeError: Cannot read properties of undefined (reading 'let_go')
+    at ContradictionModal (http://localhost:5180/src/components/discovery/GameEventModal.tsx:271:31)
+    at Object.react_stack_bottom_frame (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:12867:12)
+    at renderWithHooks (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:4212:19)
+    at updateFunctionComponent (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:5568:16)
+    at beginWork (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:6139:20)
+    at runWithFiberInDEV (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:850:66)
+    at performUnitOfWork (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:8428:92)
+    at workLoopSync (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:8324:37)
+    at renderRootSync (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:8308:6)
+    at performWorkOnRoot (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:7993:27) {"componentStack":"\n    at ContradictionModal (http://localhost:5180/src/components/discovery/GameEventModal.tsx:160:31)\n    at div (<anonymous>)\n    at div (<anonymous>)\n    at GameEventModal (http://localhost:5180/src/components/discovery/GameEventModal.tsx:18:23)\n    at Suspense (<anonymous>)\n    at PCGameplayOverlay (http://localhost:5180/src/components/pc/layout/PCGameplayOverlay.tsx?t=1775739568989:25:23)\n    at PCCourtLayout (http://localhost:5180/src/components/pc/layout/PCCourtLayout.tsx?t=1775742081773:23:41)\n    at PCApp (http://localhost:5180/src/app/PCApp.tsx?t=1775739568989:36:23)\n    at ErrorBoundary (http://localhost:5180/src/components/layout/ErrorBoundary.tsx:5:16)"}
+[33m[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+5466 |    }
+5467 |  }
+5468 |  @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-s...
+     |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+5469 |  :root {
+5470 |    --solomon-primary: #d97706;[39m
+[2m오후 11:03:23[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-prompts[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 11:03:23[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[PromptManager] Server unavailable, using cached/default prompts
+[2m오후 11:03:23[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-agents[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 11:03:23[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-blocks[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 11:03:23[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[AgentManager] Server unavailable, using cached data
+[2m오후 11:03:23[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/stats/settings[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 11:03:23[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mTypeError: Cannot read properties of undefined (reading 'let_go')
+    at ContradictionModal (http://localhost:5180/src/components/discovery/GameEventModal.tsx:271:31)
+    at Object.react_stack_bottom_frame (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:12867:12)
+    at renderWithHooks (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:4212:19)
+    at updateFunctionComponent (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:5568:16)
+    at beginWork (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:6139:20)
+    at runWithFiberInDEV (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:850:66)
+    at performUnitOfWork (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:8428:92)
+    at workLoopSync (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:8324:37)
+    at renderRootSync (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:8308:6)
+    at performWorkOnRoot (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:7993:27)
+
+The above error occurred in the <ContradictionModal> component.
+
+React will try to recreate this component tree from scratch using the error boundary you provided, ErrorBoundary.
+
+[2m오후 11:03:23[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mErrorBoundary caught: TypeError: Cannot read properties of undefined (reading 'let_go')
+    at ContradictionModal (http://localhost:5180/src/components/discovery/GameEventModal.tsx:271:31)
+    at Object.react_stack_bottom_frame (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:12867:12)
+    at renderWithHooks (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:4212:19)
+    at updateFunctionComponent (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:5568:16)
+    at beginWork (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:6139:20)
+    at runWithFiberInDEV (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:850:66)
+    at performUnitOfWork (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:8428:92)
+    at workLoopSync (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:8324:37)
+    at renderRootSync (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:8308:6)
+    at performWorkOnRoot (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:7993:27) {"componentStack":"\n    at ContradictionModal (http://localhost:5180/src/components/discovery/GameEventModal.tsx:160:31)\n    at div (<anonymous>)\n    at div (<anonymous>)\n    at GameEventModal (http://localhost:5180/src/components/discovery/GameEventModal.tsx:18:23)\n    at Suspense (<anonymous>)\n    at PCGameplayOverlay (http://localhost:5180/src/components/pc/layout/PCGameplayOverlay.tsx?t=1775739568989:25:23)\n    at PCCourtLayout (http://localhost:5180/src/components/pc/layout/PCCourtLayout.tsx?t=1775742081773:23:41)\n    at PCApp (http://localhost:5180/src/app/PCApp.tsx?t=1775739568989:36:23)\n    at ErrorBoundary (http://localhost:5180/src/components/layout/ErrorBoundary.tsx:5:16)"}
+[33m[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+5466 |    }
+5467 |  }
+5468 |  @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-s...
+     |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+5469 |  :root {
+5470 |    --solomon-primary: #d97706;[39m
+[2m오후 11:06:26[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-prompts[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 11:06:26[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[PromptManager] Server unavailable, using cached/default prompts
+[2m오후 11:06:26[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-agents[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 11:06:26[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-blocks[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 11:06:26[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[AgentManager] Server unavailable, using cached data
+[2m오후 11:06:26[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/stats/settings[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 11:06:26[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mTypeError: Cannot read properties of undefined (reading 'let_go')
+    at ContradictionModal (http://localhost:5180/src/components/discovery/GameEventModal.tsx:271:31)
+    at Object.react_stack_bottom_frame (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:12867:12)
+    at renderWithHooks (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:4212:19)
+    at updateFunctionComponent (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:5568:16)
+    at beginWork (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:6139:20)
+    at runWithFiberInDEV (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:850:66)
+    at performUnitOfWork (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:8428:92)
+    at workLoopSync (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:8324:37)
+    at renderRootSync (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:8308:6)
+    at performWorkOnRoot (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:7993:27)
+
+The above error occurred in the <ContradictionModal> component.
+
+React will try to recreate this component tree from scratch using the error boundary you provided, ErrorBoundary.
+
+[2m오후 11:06:26[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mErrorBoundary caught: TypeError: Cannot read properties of undefined (reading 'let_go')
+    at ContradictionModal (http://localhost:5180/src/components/discovery/GameEventModal.tsx:271:31)
+    at Object.react_stack_bottom_frame (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:12867:12)
+    at renderWithHooks (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:4212:19)
+    at updateFunctionComponent (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:5568:16)
+    at beginWork (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:6139:20)
+    at runWithFiberInDEV (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:850:66)
+    at performUnitOfWork (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:8428:92)
+    at workLoopSync (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:8324:37)
+    at renderRootSync (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:8308:6)
+    at performWorkOnRoot (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:7993:27) {"componentStack":"\n    at ContradictionModal (http://localhost:5180/src/components/discovery/GameEventModal.tsx:160:31)\n    at div (<anonymous>)\n    at div (<anonymous>)\n    at GameEventModal (http://localhost:5180/src/components/discovery/GameEventModal.tsx:18:23)\n    at Suspense (<anonymous>)\n    at PCGameplayOverlay (http://localhost:5180/src/components/pc/layout/PCGameplayOverlay.tsx?t=1775739568989:25:23)\n    at PCCourtLayout (http://localhost:5180/src/components/pc/layout/PCCourtLayout.tsx?t=1775742081773:23:41)\n    at PCApp (http://localhost:5180/src/app/PCApp.tsx?t=1775739568989:36:23)\n    at ErrorBoundary (http://localhost:5180/src/components/layout/ErrorBoundary.tsx:5:16)"}
+[33m[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+5466 |    }
+5467 |  }
+5468 |  @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-s...
+     |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+5469 |  :root {
+5470 |    --solomon-primary: #d97706;[39m
+[2m오후 11:06:44[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-prompts[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 11:06:44[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[PromptManager] Server unavailable, using cached/default prompts
+[2m오후 11:06:44[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-agents[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 11:06:44[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-blocks[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 11:06:44[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[AgentManager] Server unavailable, using cached data
+[2m오후 11:06:44[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/stats/settings[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 11:06:44[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mTypeError: Cannot read properties of undefined (reading 'let_go')
+    at ContradictionModal (http://localhost:5180/src/components/discovery/GameEventModal.tsx:271:31)
+    at Object.react_stack_bottom_frame (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:12867:12)
+    at renderWithHooks (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:4212:19)
+    at updateFunctionComponent (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:5568:16)
+    at beginWork (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:6139:20)
+    at runWithFiberInDEV (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:850:66)
+    at performUnitOfWork (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:8428:92)
+    at workLoopSync (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:8324:37)
+    at renderRootSync (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:8308:6)
+    at performWorkOnRoot (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:7993:27)
+
+The above error occurred in the <ContradictionModal> component.
+
+React will try to recreate this component tree from scratch using the error boundary you provided, ErrorBoundary.
+
+[2m오후 11:06:44[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mErrorBoundary caught: TypeError: Cannot read properties of undefined (reading 'let_go')
+    at ContradictionModal (http://localhost:5180/src/components/discovery/GameEventModal.tsx:271:31)
+    at Object.react_stack_bottom_frame (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:12867:12)
+    at renderWithHooks (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:4212:19)
+    at updateFunctionComponent (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:5568:16)
+    at beginWork (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:6139:20)
+    at runWithFiberInDEV (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:850:66)
+    at performUnitOfWork (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:8428:92)
+    at workLoopSync (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:8324:37)
+    at renderRootSync (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:8308:6)
+    at performWorkOnRoot (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:7993:27) {"componentStack":"\n    at ContradictionModal (http://localhost:5180/src/components/discovery/GameEventModal.tsx:160:31)\n    at div (<anonymous>)\n    at div (<anonymous>)\n    at GameEventModal (http://localhost:5180/src/components/discovery/GameEventModal.tsx:18:23)\n    at Suspense (<anonymous>)\n    at PCGameplayOverlay (http://localhost:5180/src/components/pc/layout/PCGameplayOverlay.tsx?t=1775739568989:25:23)\n    at PCCourtLayout (http://localhost:5180/src/components/pc/layout/PCCourtLayout.tsx?t=1775742081773:23:41)\n    at PCApp (http://localhost:5180/src/app/PCApp.tsx?t=1775739568989:36:23)\n    at ErrorBoundary (http://localhost:5180/src/components/layout/ErrorBoundary.tsx:5:16)"}
+[33m[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+5466 |    }
+5467 |  }
+5468 |  @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-s...
+     |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+5469 |  :root {
+5470 |    --solomon-primary: #d97706;[39m
+[2m오후 11:07:29[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-prompts[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 11:07:29[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[PromptManager] Server unavailable, using cached/default prompts
+[2m오후 11:07:29[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-agents[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 11:07:29[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-blocks[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 11:07:29[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[AgentManager] Server unavailable, using cached data
+[2m오후 11:07:29[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/stats/settings[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 11:07:29[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mTypeError: Cannot read properties of undefined (reading 'let_go')
+    at ContradictionModal (http://localhost:5180/src/components/discovery/GameEventModal.tsx:271:31)
+    at Object.react_stack_bottom_frame (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:12867:12)
+    at renderWithHooks (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:4212:19)
+    at updateFunctionComponent (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:5568:16)
+    at beginWork (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:6139:20)
+    at runWithFiberInDEV (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:850:66)
+    at performUnitOfWork (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:8428:92)
+    at workLoopSync (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:8324:37)
+    at renderRootSync (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:8308:6)
+    at performWorkOnRoot (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:7993:27)
+
+The above error occurred in the <ContradictionModal> component.
+
+React will try to recreate this component tree from scratch using the error boundary you provided, ErrorBoundary.
+
+[2m오후 11:07:29[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mErrorBoundary caught: TypeError: Cannot read properties of undefined (reading 'let_go')
+    at ContradictionModal (http://localhost:5180/src/components/discovery/GameEventModal.tsx:271:31)
+    at Object.react_stack_bottom_frame (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:12867:12)
+    at renderWithHooks (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:4212:19)
+    at updateFunctionComponent (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:5568:16)
+    at beginWork (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:6139:20)
+    at runWithFiberInDEV (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:850:66)
+    at performUnitOfWork (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:8428:92)
+    at workLoopSync (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:8324:37)
+    at renderRootSync (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:8308:6)
+    at performWorkOnRoot (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:7993:27) {"componentStack":"\n    at ContradictionModal (http://localhost:5180/src/components/discovery/GameEventModal.tsx:160:31)\n    at div (<anonymous>)\n    at div (<anonymous>)\n    at GameEventModal (http://localhost:5180/src/components/discovery/GameEventModal.tsx:18:23)\n    at Suspense (<anonymous>)\n    at PCGameplayOverlay (http://localhost:5180/src/components/pc/layout/PCGameplayOverlay.tsx?t=1775739568989:25:23)\n    at PCCourtLayout (http://localhost:5180/src/components/pc/layout/PCCourtLayout.tsx?t=1775742081773:23:41)\n    at PCApp (http://localhost:5180/src/app/PCApp.tsx?t=1775739568989:36:23)\n    at ErrorBoundary (http://localhost:5180/src/components/layout/ErrorBoundary.tsx:5:16)"}
+[33m[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+5466 |    }
+5467 |  }
+5468 |  @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-s...
+     |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+5469 |  :root {
+5470 |    --solomon-primary: #d97706;[39m
+[2m오후 11:09:39[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-prompts[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 11:09:39[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[PromptManager] Server unavailable, using cached/default prompts
+[2m오후 11:09:39[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-agents[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 11:09:39[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-blocks[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 11:09:39[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[AgentManager] Server unavailable, using cached data
+[2m오후 11:09:39[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/stats/settings[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 11:09:39[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mTypeError: Cannot read properties of undefined (reading 'let_go')
+    at ContradictionModal (http://localhost:5180/src/components/discovery/GameEventModal.tsx:271:31)
+    at Object.react_stack_bottom_frame (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:12867:12)
+    at renderWithHooks (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:4212:19)
+    at updateFunctionComponent (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:5568:16)
+    at beginWork (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:6139:20)
+    at runWithFiberInDEV (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:850:66)
+    at performUnitOfWork (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:8428:92)
+    at workLoopSync (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:8324:37)
+    at renderRootSync (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:8308:6)
+    at performWorkOnRoot (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:7993:27)
+
+The above error occurred in the <ContradictionModal> component.
+
+React will try to recreate this component tree from scratch using the error boundary you provided, ErrorBoundary.
+
+[2m오후 11:09:39[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mErrorBoundary caught: TypeError: Cannot read properties of undefined (reading 'let_go')
+    at ContradictionModal (http://localhost:5180/src/components/discovery/GameEventModal.tsx:271:31)
+    at Object.react_stack_bottom_frame (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:12867:12)
+    at renderWithHooks (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:4212:19)
+    at updateFunctionComponent (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:5568:16)
+    at beginWork (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:6139:20)
+    at runWithFiberInDEV (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:850:66)
+    at performUnitOfWork (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:8428:92)
+    at workLoopSync (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:8324:37)
+    at renderRootSync (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:8308:6)
+    at performWorkOnRoot (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:7993:27) {"componentStack":"\n    at ContradictionModal (http://localhost:5180/src/components/discovery/GameEventModal.tsx:160:31)\n    at div (<anonymous>)\n    at div (<anonymous>)\n    at GameEventModal (http://localhost:5180/src/components/discovery/GameEventModal.tsx:18:23)\n    at Suspense (<anonymous>)\n    at PCGameplayOverlay (http://localhost:5180/src/components/pc/layout/PCGameplayOverlay.tsx?t=1775739568989:25:23)\n    at PCCourtLayout (http://localhost:5180/src/components/pc/layout/PCCourtLayout.tsx?t=1775742081773:23:41)\n    at PCApp (http://localhost:5180/src/app/PCApp.tsx?t=1775739568989:36:23)\n    at ErrorBoundary (http://localhost:5180/src/components/layout/ErrorBoundary.tsx:5:16)"}
+[2m오후 11:11:32[22m [31m[1m[vite][22m[39m [31mInternal server error: Transform failed with 1 error:
+
+[31m[PARSE_ERROR] Error:[0m Expected `,` or `)` but found `{`
+     [38;5;246m╭[0m[38;5;246m─[0m[38;5;246m[[0m src/components/pc/hotbar/PCBottomDock.tsx:829:13 [38;5;246m][0m
+     [38;5;246m│[0m
+ [38;5;246m814 │[0m [38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m{[0m[38;5;249m![0m[38;5;249me[0m[38;5;249mv[0m[38;5;249mi[0m[38;5;249md[0m[38;5;249me[0m[38;5;249mn[0m[38;5;249mc[0m[38;5;249me[0m[38;5;249mS[0m[38;5;249me[0m[38;5;249ml[0m[38;5;249me[0m[38;5;249mc[0m[38;5;249mt[0m[38;5;249mi[0m[38;5;249mo[0m[38;5;249mn[0m[38;5;249m [0m[38;5;249m?[0m[38;5;249m [0m(
+ [38;5;240m    │[0m                                   ┬  
+ [38;5;240m    │[0m                                   ╰── Opened here
+ [38;5;240m    │[0m 
+ [38;5;246m829 │[0m [38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m{[38;5;249mh[0m[38;5;249mu[0m[38;5;249md[0m[38;5;249mO[0m[38;5;249mp[0m[38;5;249me[0m[38;5;249mn[0m[38;5;249m [0m[38;5;249m?[0m[38;5;249m [0m[38;5;249m([0m
+ [38;5;240m    │[0m             ┬  
+ [38;5;240m    │[0m             ╰── `,` or `)` expected
+[38;5;246m─────╯[0m
+[39m
+  Plugin: [35mvite:oxc[39m
+  File: [36mD:/ProjectWS/src/components/pc/hotbar/PCBottomDock.tsx[39m
+      at transformWithOxc (file:///D:/ProjectWS/node_modules/vite/dist/node/chunks/node.js:3745:19)
+      at TransformPluginContext.transform (file:///D:/ProjectWS/node_modules/vite/dist/node/chunks/node.js:3813:26)
+      at EnvironmentPluginContainer.transform (file:///D:/ProjectWS/node_modules/vite/dist/node/chunks/node.js:30143:51)
+      at async loadAndTransform (file:///D:/ProjectWS/node_modules/vite/dist/node/chunks/node.js:24468:26)
+      at async viteTransformMiddleware (file:///D:/ProjectWS/node_modules/vite/dist/node/chunks/node.js:24262:20)
+[33m[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+5466 |    }
+5467 |  }
+5468 |  @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-s...
+     |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+5469 |  :root {
+5470 |    --solomon-primary: #d97706;[39m
+[2m오후 11:11:33[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22m[vite] Failed to reload /src/components/pc/hotbar/PCBottomDock.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above)
+[2m오후 11:13:13[22m [31m[1m[vite][22m[39m [31mInternal server error: Transform failed with 1 error:
+
+[31m[PARSE_ERROR] Error:[0m Expected `,` or `)` but found `{`
+     [38;5;246m╭[0m[38;5;246m─[0m[38;5;246m[[0m src/components/pc/hotbar/PCBottomDock.tsx:829:13 [38;5;246m][0m
+     [38;5;246m│[0m
+ [38;5;246m814 │[0m [38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m{[0m[38;5;249m![0m[38;5;249me[0m[38;5;249mv[0m[38;5;249mi[0m[38;5;249md[0m[38;5;249me[0m[38;5;249mn[0m[38;5;249mc[0m[38;5;249me[0m[38;5;249mS[0m[38;5;249me[0m[38;5;249ml[0m[38;5;249me[0m[38;5;249mc[0m[38;5;249mt[0m[38;5;249mi[0m[38;5;249mo[0m[38;5;249mn[0m[38;5;249m [0m[38;5;249m?[0m[38;5;249m [0m(
+ [38;5;240m    │[0m                                   ┬  
+ [38;5;240m    │[0m                                   ╰── Opened here
+ [38;5;240m    │[0m 
+ [38;5;246m829 │[0m [38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m{[38;5;249mh[0m[38;5;249mu[0m[38;5;249md[0m[38;5;249mO[0m[38;5;249mp[0m[38;5;249me[0m[38;5;249mn[0m[38;5;249m [0m[38;5;249m?[0m[38;5;249m [0m[38;5;249m([0m
+ [38;5;240m    │[0m             ┬  
+ [38;5;240m    │[0m             ╰── `,` or `)` expected
+[38;5;246m─────╯[0m
+[39m
+  Plugin: [35mvite:oxc[39m
+  File: [36mD:/ProjectWS/src/components/pc/hotbar/PCBottomDock.tsx[39m
+      at transformWithOxc (file:///D:/ProjectWS/node_modules/vite/dist/node/chunks/node.js:3745:19)
+      at TransformPluginContext.transform (file:///D:/ProjectWS/node_modules/vite/dist/node/chunks/node.js:3813:26)
+      at EnvironmentPluginContainer.transform (file:///D:/ProjectWS/node_modules/vite/dist/node/chunks/node.js:30143:51)
+      at async loadAndTransform (file:///D:/ProjectWS/node_modules/vite/dist/node/chunks/node.js:24468:26)
+      at async viteTransformMiddleware (file:///D:/ProjectWS/node_modules/vite/dist/node/chunks/node.js:24262:20)
+[33m[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+5466 |    }
+5467 |  }
+5468 |  @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-s...
+     |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+5469 |  :root {
+5470 |    --solomon-primary: #d97706;[39m
+[2m오후 11:13:13[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22m[vite] Failed to reload /src/components/pc/hotbar/PCBottomDock.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above)
+[2m오후 11:14:07[22m [31m[1m[vite][22m[39m [31mInternal server error: Transform failed with 1 error:
+
+[31m[PARSE_ERROR] Error:[0m Expected `,` or `)` but found `{`
+     [38;5;246m╭[0m[38;5;246m─[0m[38;5;246m[[0m src/components/pc/hotbar/PCBottomDock.tsx:829:13 [38;5;246m][0m
+     [38;5;246m│[0m
+ [38;5;246m814 │[0m [38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m{[0m[38;5;249m![0m[38;5;249me[0m[38;5;249mv[0m[38;5;249mi[0m[38;5;249md[0m[38;5;249me[0m[38;5;249mn[0m[38;5;249mc[0m[38;5;249me[0m[38;5;249mS[0m[38;5;249me[0m[38;5;249ml[0m[38;5;249me[0m[38;5;249mc[0m[38;5;249mt[0m[38;5;249mi[0m[38;5;249mo[0m[38;5;249mn[0m[38;5;249m [0m[38;5;249m?[0m[38;5;249m [0m(
+ [38;5;240m    │[0m                                   ┬  
+ [38;5;240m    │[0m                                   ╰── Opened here
+ [38;5;240m    │[0m 
+ [38;5;246m829 │[0m [38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m{[38;5;249me[0m[38;5;249md[0m[38;5;249mi[0m[38;5;249mt[0m[38;5;249mM[0m[38;5;249mo[0m[38;5;249md[0m[38;5;249me[0m[38;5;249m [0m[38;5;249m?[0m[38;5;249m [0m[38;5;249m([0m
+ [38;5;240m    │[0m             ┬  
+ [38;5;240m    │[0m             ╰── `,` or `)` expected
+[38;5;246m─────╯[0m
+[39m
+  Plugin: [35mvite:oxc[39m
+  File: [36mD:/ProjectWS/src/components/pc/hotbar/PCBottomDock.tsx[39m
+      at transformWithOxc (file:///D:/ProjectWS/node_modules/vite/dist/node/chunks/node.js:3745:19)
+      at TransformPluginContext.transform (file:///D:/ProjectWS/node_modules/vite/dist/node/chunks/node.js:3813:26)
+      at EnvironmentPluginContainer.transform (file:///D:/ProjectWS/node_modules/vite/dist/node/chunks/node.js:30143:51)
+      at async loadAndTransform (file:///D:/ProjectWS/node_modules/vite/dist/node/chunks/node.js:24468:26)
+      at async viteTransformMiddleware (file:///D:/ProjectWS/node_modules/vite/dist/node/chunks/node.js:24262:20)
+[33m[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+5466 |    }
+5467 |  }
+5468 |  @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-s...
+     |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+5469 |  :root {
+5470 |    --solomon-primary: #d97706;[39m
+[2m오후 11:14:07[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22m[vite] Failed to reload /src/components/pc/hotbar/PCBottomDock.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above)
+[2m오후 11:14:22[22m [31m[1m[vite][22m[39m [31mInternal server error: Transform failed with 1 error:
+
+[31m[PARSE_ERROR] Error:[0m Expected `,` or `)` but found `{`
+     [38;5;246m╭[0m[38;5;246m─[0m[38;5;246m[[0m src/components/pc/hotbar/PCBottomDock.tsx:829:13 [38;5;246m][0m
+     [38;5;246m│[0m
+ [38;5;246m814 │[0m [38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m{[0m[38;5;249m![0m[38;5;249me[0m[38;5;249mv[0m[38;5;249mi[0m[38;5;249md[0m[38;5;249me[0m[38;5;249mn[0m[38;5;249mc[0m[38;5;249me[0m[38;5;249mS[0m[38;5;249me[0m[38;5;249ml[0m[38;5;249me[0m[38;5;249mc[0m[38;5;249mt[0m[38;5;249mi[0m[38;5;249mo[0m[38;5;249mn[0m[38;5;249m [0m[38;5;249m?[0m[38;5;249m [0m(
+ [38;5;240m    │[0m                                   ┬  
+ [38;5;240m    │[0m                                   ╰── Opened here
+ [38;5;240m    │[0m 
+ [38;5;246m829 │[0m [38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m{[38;5;249me[0m[38;5;249md[0m[38;5;249mi[0m[38;5;249mt[0m[38;5;249mM[0m[38;5;249mo[0m[38;5;249md[0m[38;5;249me[0m[38;5;249m [0m[38;5;249m?[0m[38;5;249m [0m[38;5;249m([0m
+ [38;5;240m    │[0m             ┬  
+ [38;5;240m    │[0m             ╰── `,` or `)` expected
+[38;5;246m─────╯[0m
+[39m
+  Plugin: [35mvite:oxc[39m
+  File: [36mD:/ProjectWS/src/components/pc/hotbar/PCBottomDock.tsx[39m
+      at transformWithOxc (file:///D:/ProjectWS/node_modules/vite/dist/node/chunks/node.js:3745:19)
+      at TransformPluginContext.transform (file:///D:/ProjectWS/node_modules/vite/dist/node/chunks/node.js:3813:26)
+      at EnvironmentPluginContainer.transform (file:///D:/ProjectWS/node_modules/vite/dist/node/chunks/node.js:30143:51)
+      at async loadAndTransform (file:///D:/ProjectWS/node_modules/vite/dist/node/chunks/node.js:24468:26)
+      at async viteTransformMiddleware (file:///D:/ProjectWS/node_modules/vite/dist/node/chunks/node.js:24262:20)
+[33m[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+5466 |    }
+5467 |  }
+5468 |  @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-s...
+     |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+5469 |  :root {
+5470 |    --solomon-primary: #d97706;[39m
+[2m오후 11:14:22[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22m[vite] Failed to reload /src/components/pc/hotbar/PCBottomDock.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above)
+[2m오후 11:15:34[22m [31m[1m[vite][22m[39m [31mInternal server error: Transform failed with 1 error:
+
+[31m[PARSE_ERROR] Error:[0m Expected `,` or `)` but found `{`
+     [38;5;246m╭[0m[38;5;246m─[0m[38;5;246m[[0m src/components/pc/hotbar/PCBottomDock.tsx:829:13 [38;5;246m][0m
+     [38;5;246m│[0m
+ [38;5;246m814 │[0m [38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m{[0m[38;5;249m![0m[38;5;249me[0m[38;5;249mv[0m[38;5;249mi[0m[38;5;249md[0m[38;5;249me[0m[38;5;249mn[0m[38;5;249mc[0m[38;5;249me[0m[38;5;249mS[0m[38;5;249me[0m[38;5;249ml[0m[38;5;249me[0m[38;5;249mc[0m[38;5;249mt[0m[38;5;249mi[0m[38;5;249mo[0m[38;5;249mn[0m[38;5;249m [0m[38;5;249m?[0m[38;5;249m [0m(
+ [38;5;240m    │[0m                                   ┬  
+ [38;5;240m    │[0m                                   ╰── Opened here
+ [38;5;240m    │[0m 
+ [38;5;246m829 │[0m [38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m{[38;5;249me[0m[38;5;249md[0m[38;5;249mi[0m[38;5;249mt[0m[38;5;249mM[0m[38;5;249mo[0m[38;5;249md[0m[38;5;249me[0m[38;5;249m [0m[38;5;249m?[0m[38;5;249m [0m[38;5;249m([0m
+ [38;5;240m    │[0m             ┬  
+ [38;5;240m    │[0m             ╰── `,` or `)` expected
+[38;5;246m─────╯[0m
+[39m
+  Plugin: [35mvite:oxc[39m
+  File: [36mD:/ProjectWS/src/components/pc/hotbar/PCBottomDock.tsx[39m
+      at transformWithOxc (file:///D:/ProjectWS/node_modules/vite/dist/node/chunks/node.js:3745:19)
+      at TransformPluginContext.transform (file:///D:/ProjectWS/node_modules/vite/dist/node/chunks/node.js:3813:26)
+      at EnvironmentPluginContainer.transform (file:///D:/ProjectWS/node_modules/vite/dist/node/chunks/node.js:30143:51)
+      at async loadAndTransform (file:///D:/ProjectWS/node_modules/vite/dist/node/chunks/node.js:24468:26)
+      at async viteTransformMiddleware (file:///D:/ProjectWS/node_modules/vite/dist/node/chunks/node.js:24262:20)
+[33m[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+5466 |    }
+5467 |  }
+5468 |  @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-s...
+     |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+5469 |  :root {
+5470 |    --solomon-primary: #d97706;[39m
+[2m오후 11:15:34[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22m[vite] Failed to reload /src/components/pc/hotbar/PCBottomDock.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above)
+[2m오후 11:16:08[22m [31m[1m[vite][22m[39m [31mInternal server error: Transform failed with 1 error:
+
+[31m[PARSE_ERROR] Error:[0m Expected `,` or `)` but found `{`
+     [38;5;246m╭[0m[38;5;246m─[0m[38;5;246m[[0m src/components/pc/hotbar/PCBottomDock.tsx:830:13 [38;5;246m][0m
+     [38;5;246m│[0m
+ [38;5;246m815 │[0m [38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m{[0m[38;5;249m![0m[38;5;249me[0m[38;5;249mv[0m[38;5;249mi[0m[38;5;249md[0m[38;5;249me[0m[38;5;249mn[0m[38;5;249mc[0m[38;5;249me[0m[38;5;249mS[0m[38;5;249me[0m[38;5;249ml[0m[38;5;249me[0m[38;5;249mc[0m[38;5;249mt[0m[38;5;249mi[0m[38;5;249mo[0m[38;5;249mn[0m[38;5;249m [0m[38;5;249m?[0m[38;5;249m [0m(
+ [38;5;240m    │[0m                                   ┬  
+ [38;5;240m    │[0m                                   ╰── Opened here
+ [38;5;240m    │[0m 
+ [38;5;246m830 │[0m [38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m{[38;5;249me[0m[38;5;249md[0m[38;5;249mi[0m[38;5;249mt[0m[38;5;249mM[0m[38;5;249mo[0m[38;5;249md[0m[38;5;249me[0m[38;5;249m [0m[38;5;249m?[0m[38;5;249m [0m[38;5;249m([0m
+ [38;5;240m    │[0m             ┬  
+ [38;5;240m    │[0m             ╰── `,` or `)` expected
+[38;5;246m─────╯[0m
+[39m
+  Plugin: [35mvite:oxc[39m
+  File: [36mD:/ProjectWS/src/components/pc/hotbar/PCBottomDock.tsx[39m
+      at transformWithOxc (file:///D:/ProjectWS/node_modules/vite/dist/node/chunks/node.js:3745:19)
+      at TransformPluginContext.transform (file:///D:/ProjectWS/node_modules/vite/dist/node/chunks/node.js:3813:26)
+      at EnvironmentPluginContainer.transform (file:///D:/ProjectWS/node_modules/vite/dist/node/chunks/node.js:30143:51)
+      at async loadAndTransform (file:///D:/ProjectWS/node_modules/vite/dist/node/chunks/node.js:24468:26)
+      at async viteTransformMiddleware (file:///D:/ProjectWS/node_modules/vite/dist/node/chunks/node.js:24262:20)
+[33m[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+5466 |    }
+5467 |  }
+5468 |  @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-s...
+     |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+5469 |  :root {
+5470 |    --solomon-primary: #d97706;[39m
+[2m오후 11:16:08[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22m[vite] Failed to reload /src/components/pc/hotbar/PCBottomDock.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above)
+[33m[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+5466 |    }
+5467 |  }
+5468 |  @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-s...
+     |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+5469 |  :root {
+5470 |    --solomon-primary: #d97706;[39m
+[2m오후 11:17:40[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-prompts[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 11:17:40[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[PromptManager] Server unavailable, using cached/default prompts
+[2m오후 11:17:40[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-agents[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 11:17:40[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-blocks[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 11:17:40[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[AgentManager] Server unavailable, using cached data
+[2m오후 11:17:40[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/stats/settings[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 11:17:40[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mTypeError: Cannot read properties of undefined (reading 'let_go')
+    at ContradictionModal (http://localhost:5180/src/components/discovery/GameEventModal.tsx:271:31)
+    at Object.react_stack_bottom_frame (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:12867:12)
+    at renderWithHooks (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:4212:19)
+    at updateFunctionComponent (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:5568:16)
+    at beginWork (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:6139:20)
+    at runWithFiberInDEV (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:850:66)
+    at performUnitOfWork (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:8428:92)
+    at workLoopSync (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:8324:37)
+    at renderRootSync (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:8308:6)
+    at performWorkOnRoot (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:7993:27)
+
+The above error occurred in the <ContradictionModal> component.
+
+React will try to recreate this component tree from scratch using the error boundary you provided, ErrorBoundary.
+
+[2m오후 11:17:40[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mErrorBoundary caught: TypeError: Cannot read properties of undefined (reading 'let_go')
+    at ContradictionModal (http://localhost:5180/src/components/discovery/GameEventModal.tsx:271:31)
+    at Object.react_stack_bottom_frame (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:12867:12)
+    at renderWithHooks (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:4212:19)
+    at updateFunctionComponent (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:5568:16)
+    at beginWork (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:6139:20)
+    at runWithFiberInDEV (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:850:66)
+    at performUnitOfWork (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:8428:92)
+    at workLoopSync (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:8324:37)
+    at renderRootSync (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:8308:6)
+    at performWorkOnRoot (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:7993:27) {"componentStack":"\n    at ContradictionModal (http://localhost:5180/src/components/discovery/GameEventModal.tsx:160:31)\n    at div (<anonymous>)\n    at div (<anonymous>)\n    at GameEventModal (http://localhost:5180/src/components/discovery/GameEventModal.tsx:18:23)\n    at Suspense (<anonymous>)\n    at PCGameplayOverlay (http://localhost:5180/src/components/pc/layout/PCGameplayOverlay.tsx?t=1775739568989:25:23)\n    at PCCourtLayout (http://localhost:5180/src/components/pc/layout/PCCourtLayout.tsx?t=1775742081773:23:41)\n    at PCApp (http://localhost:5180/src/app/PCApp.tsx?t=1775739568989:36:23)\n    at ErrorBoundary (http://localhost:5180/src/components/layout/ErrorBoundary.tsx:5:16)"}
+[33m[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+5466 |    }
+5467 |  }
+5468 |  @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-s...
+     |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+5469 |  :root {
+5470 |    --solomon-primary: #d97706;[39m
+[2m오후 11:20:09[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-prompts[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 11:20:09[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[PromptManager] Server unavailable, using cached/default prompts
+[2m오후 11:20:09[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-agents[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 11:20:09[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-blocks[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 11:20:10[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[AgentManager] Server unavailable, using cached data
+[2m오후 11:20:10[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/stats/settings[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 11:20:10[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mTypeError: Cannot read properties of undefined (reading 'let_go')
+    at ContradictionModal (http://localhost:5180/src/components/discovery/GameEventModal.tsx:271:31)
+    at Object.react_stack_bottom_frame (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:12867:12)
+    at renderWithHooks (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:4212:19)
+    at updateFunctionComponent (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:5568:16)
+    at beginWork (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:6139:20)
+    at runWithFiberInDEV (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:850:66)
+    at performUnitOfWork (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:8428:92)
+    at workLoopSync (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:8324:37)
+    at renderRootSync (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:8308:6)
+    at performWorkOnRoot (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:7993:27)
+
+The above error occurred in the <ContradictionModal> component.
+
+React will try to recreate this component tree from scratch using the error boundary you provided, ErrorBoundary.
+
+[2m오후 11:20:10[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mErrorBoundary caught: TypeError: Cannot read properties of undefined (reading 'let_go')
+    at ContradictionModal (http://localhost:5180/src/components/discovery/GameEventModal.tsx:271:31)
+    at Object.react_stack_bottom_frame (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:12867:12)
+    at renderWithHooks (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:4212:19)
+    at updateFunctionComponent (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:5568:16)
+    at beginWork (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:6139:20)
+    at runWithFiberInDEV (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:850:66)
+    at performUnitOfWork (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:8428:92)
+    at workLoopSync (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:8324:37)
+    at renderRootSync (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:8308:6)
+    at performWorkOnRoot (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:7993:27) {"componentStack":"\n    at ContradictionModal (http://localhost:5180/src/components/discovery/GameEventModal.tsx:160:31)\n    at div (<anonymous>)\n    at div (<anonymous>)\n    at GameEventModal (http://localhost:5180/src/components/discovery/GameEventModal.tsx:18:23)\n    at Suspense (<anonymous>)\n    at PCGameplayOverlay (http://localhost:5180/src/components/pc/layout/PCGameplayOverlay.tsx?t=1775739568989:25:23)\n    at PCCourtLayout (http://localhost:5180/src/components/pc/layout/PCCourtLayout.tsx?t=1775742081773:23:41)\n    at PCApp (http://localhost:5180/src/app/PCApp.tsx?t=1775739568989:36:23)\n    at ErrorBoundary (http://localhost:5180/src/components/layout/ErrorBoundary.tsx:5:16)"}
+[33m[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+5466 |    }
+5467 |  }
+5468 |  @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-s...
+     |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+5469 |  :root {
+5470 |    --solomon-primary: #d97706;[39m
+[2m오후 11:20:24[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-prompts[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 11:20:24[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[PromptManager] Server unavailable, using cached/default prompts
+[2m오후 11:20:24[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-agents[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 11:20:24[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-blocks[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 11:20:24[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[AgentManager] Server unavailable, using cached data
+[2m오후 11:20:24[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/stats/settings[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 11:20:24[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mTypeError: Cannot read properties of undefined (reading 'let_go')
+    at ContradictionModal (http://localhost:5180/src/components/discovery/GameEventModal.tsx:271:31)
+    at Object.react_stack_bottom_frame (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:12867:12)
+    at renderWithHooks (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:4212:19)
+    at updateFunctionComponent (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:5568:16)
+    at beginWork (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:6139:20)
+    at runWithFiberInDEV (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:850:66)
+    at performUnitOfWork (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:8428:92)
+    at workLoopSync (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:8324:37)
+    at renderRootSync (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:8308:6)
+    at performWorkOnRoot (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:7993:27)
+
+The above error occurred in the <ContradictionModal> component.
+
+React will try to recreate this component tree from scratch using the error boundary you provided, ErrorBoundary.
+
+[2m오후 11:20:24[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mErrorBoundary caught: TypeError: Cannot read properties of undefined (reading 'let_go')
+    at ContradictionModal (http://localhost:5180/src/components/discovery/GameEventModal.tsx:271:31)
+    at Object.react_stack_bottom_frame (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:12867:12)
+    at renderWithHooks (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:4212:19)
+    at updateFunctionComponent (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:5568:16)
+    at beginWork (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:6139:20)
+    at runWithFiberInDEV (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:850:66)
+    at performUnitOfWork (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:8428:92)
+    at workLoopSync (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:8324:37)
+    at renderRootSync (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:8308:6)
+    at performWorkOnRoot (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:7993:27) {"componentStack":"\n    at ContradictionModal (http://localhost:5180/src/components/discovery/GameEventModal.tsx:160:31)\n    at div (<anonymous>)\n    at div (<anonymous>)\n    at GameEventModal (http://localhost:5180/src/components/discovery/GameEventModal.tsx:18:23)\n    at Suspense (<anonymous>)\n    at PCGameplayOverlay (http://localhost:5180/src/components/pc/layout/PCGameplayOverlay.tsx?t=1775739568989:25:23)\n    at PCCourtLayout (http://localhost:5180/src/components/pc/layout/PCCourtLayout.tsx?t=1775742081773:23:41)\n    at PCApp (http://localhost:5180/src/app/PCApp.tsx?t=1775739568989:36:23)\n    at ErrorBoundary (http://localhost:5180/src/components/layout/ErrorBoundary.tsx:5:16)"}
+[33m[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+5466 |    }
+5467 |  }
+5468 |  @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-s...
+     |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+5469 |  :root {
+5470 |    --solomon-primary: #d97706;[39m
+[2m오후 11:20:43[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-prompts[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 11:20:43[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[PromptManager] Server unavailable, using cached/default prompts
+[2m오후 11:20:43[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-agents[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 11:20:43[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-blocks[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 11:20:43[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[AgentManager] Server unavailable, using cached data
+[2m오후 11:20:43[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/stats/settings[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 11:20:43[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mTypeError: Cannot read properties of undefined (reading 'let_go')
+    at ContradictionModal (http://localhost:5180/src/components/discovery/GameEventModal.tsx:271:31)
+    at Object.react_stack_bottom_frame (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:12867:12)
+    at renderWithHooks (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:4212:19)
+    at updateFunctionComponent (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:5568:16)
+    at beginWork (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:6139:20)
+    at runWithFiberInDEV (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:850:66)
+    at performUnitOfWork (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:8428:92)
+    at workLoopSync (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:8324:37)
+    at renderRootSync (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:8308:6)
+    at performWorkOnRoot (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:7993:27)
+
+The above error occurred in the <ContradictionModal> component.
+
+React will try to recreate this component tree from scratch using the error boundary you provided, ErrorBoundary.
+
+[2m오후 11:20:43[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mErrorBoundary caught: TypeError: Cannot read properties of undefined (reading 'let_go')
+    at ContradictionModal (http://localhost:5180/src/components/discovery/GameEventModal.tsx:271:31)
+    at Object.react_stack_bottom_frame (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:12867:12)
+    at renderWithHooks (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:4212:19)
+    at updateFunctionComponent (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:5568:16)
+    at beginWork (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:6139:20)
+    at runWithFiberInDEV (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:850:66)
+    at performUnitOfWork (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:8428:92)
+    at workLoopSync (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:8324:37)
+    at renderRootSync (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:8308:6)
+    at performWorkOnRoot (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:7993:27) {"componentStack":"\n    at ContradictionModal (http://localhost:5180/src/components/discovery/GameEventModal.tsx:160:31)\n    at div (<anonymous>)\n    at div (<anonymous>)\n    at GameEventModal (http://localhost:5180/src/components/discovery/GameEventModal.tsx:18:23)\n    at Suspense (<anonymous>)\n    at PCGameplayOverlay (http://localhost:5180/src/components/pc/layout/PCGameplayOverlay.tsx?t=1775739568989:25:23)\n    at PCCourtLayout (http://localhost:5180/src/components/pc/layout/PCCourtLayout.tsx?t=1775742081773:23:41)\n    at PCApp (http://localhost:5180/src/app/PCApp.tsx?t=1775739568989:36:23)\n    at ErrorBoundary (http://localhost:5180/src/components/layout/ErrorBoundary.tsx:5:16)"}
+[33m[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+5466 |    }
+5467 |  }
+5468 |  @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-s...
+     |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+5469 |  :root {
+5470 |    --solomon-primary: #d97706;[39m
+[2m오후 11:21:02[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-prompts[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 11:21:02[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[PromptManager] Server unavailable, using cached/default prompts
+[2m오후 11:21:02[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-agents[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 11:21:02[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-blocks[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 11:21:02[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[AgentManager] Server unavailable, using cached data
+[2m오후 11:21:02[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/stats/settings[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 11:21:02[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mTypeError: Cannot read properties of undefined (reading 'let_go')
+    at ContradictionModal (http://localhost:5180/src/components/discovery/GameEventModal.tsx:271:31)
+    at Object.react_stack_bottom_frame (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:12867:12)
+    at renderWithHooks (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:4212:19)
+    at updateFunctionComponent (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:5568:16)
+    at beginWork (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:6139:20)
+    at runWithFiberInDEV (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:850:66)
+    at performUnitOfWork (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:8428:92)
+    at workLoopSync (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:8324:37)
+    at renderRootSync (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:8308:6)
+    at performWorkOnRoot (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:7993:27)
+
+The above error occurred in the <ContradictionModal> component.
+
+React will try to recreate this component tree from scratch using the error boundary you provided, ErrorBoundary.
+
+[2m오후 11:21:02[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mErrorBoundary caught: TypeError: Cannot read properties of undefined (reading 'let_go')
+    at ContradictionModal (http://localhost:5180/src/components/discovery/GameEventModal.tsx:271:31)
+    at Object.react_stack_bottom_frame (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:12867:12)
+    at renderWithHooks (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:4212:19)
+    at updateFunctionComponent (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:5568:16)
+    at beginWork (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:6139:20)
+    at runWithFiberInDEV (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:850:66)
+    at performUnitOfWork (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:8428:92)
+    at workLoopSync (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:8324:37)
+    at renderRootSync (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:8308:6)
+    at performWorkOnRoot (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:7993:27) {"componentStack":"\n    at ContradictionModal (http://localhost:5180/src/components/discovery/GameEventModal.tsx:160:31)\n    at div (<anonymous>)\n    at div (<anonymous>)\n    at GameEventModal (http://localhost:5180/src/components/discovery/GameEventModal.tsx:18:23)\n    at Suspense (<anonymous>)\n    at PCGameplayOverlay (http://localhost:5180/src/components/pc/layout/PCGameplayOverlay.tsx?t=1775739568989:25:23)\n    at PCCourtLayout (http://localhost:5180/src/components/pc/layout/PCCourtLayout.tsx?t=1775742081773:23:41)\n    at PCApp (http://localhost:5180/src/app/PCApp.tsx?t=1775739568989:36:23)\n    at ErrorBoundary (http://localhost:5180/src/components/layout/ErrorBoundary.tsx:5:16)"}
+[33m[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+5466 |    }
+5467 |  }
+5468 |  @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-s...
+     |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+5469 |  :root {
+5470 |    --solomon-primary: #d97706;[39m
+[2m오후 11:21:25[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-prompts[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 11:21:25[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[PromptManager] Server unavailable, using cached/default prompts
+[2m오후 11:21:25[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-agents[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 11:21:25[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-blocks[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 11:21:25[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[AgentManager] Server unavailable, using cached data
+[2m오후 11:21:25[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/stats/settings[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 11:21:25[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mTypeError: Cannot read properties of undefined (reading 'let_go')
+    at ContradictionModal (http://localhost:5180/src/components/discovery/GameEventModal.tsx:271:31)
+    at Object.react_stack_bottom_frame (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:12867:12)
+    at renderWithHooks (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:4212:19)
+    at updateFunctionComponent (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:5568:16)
+    at beginWork (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:6139:20)
+    at runWithFiberInDEV (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:850:66)
+    at performUnitOfWork (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:8428:92)
+    at workLoopSync (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:8324:37)
+    at renderRootSync (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:8308:6)
+    at performWorkOnRoot (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:7993:27)
+
+The above error occurred in the <ContradictionModal> component.
+
+React will try to recreate this component tree from scratch using the error boundary you provided, ErrorBoundary.
+
+[2m오후 11:21:25[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mErrorBoundary caught: TypeError: Cannot read properties of undefined (reading 'let_go')
+    at ContradictionModal (http://localhost:5180/src/components/discovery/GameEventModal.tsx:271:31)
+    at Object.react_stack_bottom_frame (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:12867:12)
+    at renderWithHooks (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:4212:19)
+    at updateFunctionComponent (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:5568:16)
+    at beginWork (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:6139:20)
+    at runWithFiberInDEV (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:850:66)
+    at performUnitOfWork (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:8428:92)
+    at workLoopSync (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:8324:37)
+    at renderRootSync (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:8308:6)
+    at performWorkOnRoot (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:7993:27) {"componentStack":"\n    at ContradictionModal (http://localhost:5180/src/components/discovery/GameEventModal.tsx:160:31)\n    at div (<anonymous>)\n    at div (<anonymous>)\n    at GameEventModal (http://localhost:5180/src/components/discovery/GameEventModal.tsx:18:23)\n    at Suspense (<anonymous>)\n    at PCGameplayOverlay (http://localhost:5180/src/components/pc/layout/PCGameplayOverlay.tsx?t=1775739568989:25:23)\n    at PCCourtLayout (http://localhost:5180/src/components/pc/layout/PCCourtLayout.tsx?t=1775742081773:23:41)\n    at PCApp (http://localhost:5180/src/app/PCApp.tsx?t=1775739568989:36:23)\n    at ErrorBoundary (http://localhost:5180/src/components/layout/ErrorBoundary.tsx:5:16)"}
+[2m오후 11:27:21[22m [31m[1m[vite][22m[39m [31mInternal server error: Transform failed with 1 error:
+
+[31m[PARSE_ERROR] Error:[0m Expected `,` or `)` but found `{`
+     [38;5;246m╭[0m[38;5;246m─[0m[38;5;246m[[0m src/components/pc/hotbar/PCBottomDock.tsx:829:13 [38;5;246m][0m
+     [38;5;246m│[0m
+ [38;5;246m814 │[0m [38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m{[0m[38;5;249m![0m[38;5;249me[0m[38;5;249mv[0m[38;5;249mi[0m[38;5;249md[0m[38;5;249me[0m[38;5;249mn[0m[38;5;249mc[0m[38;5;249me[0m[38;5;249mS[0m[38;5;249me[0m[38;5;249ml[0m[38;5;249me[0m[38;5;249mc[0m[38;5;249mt[0m[38;5;249mi[0m[38;5;249mo[0m[38;5;249mn[0m[38;5;249m [0m[38;5;249m?[0m[38;5;249m [0m(
+ [38;5;240m    │[0m                                   ┬  
+ [38;5;240m    │[0m                                   ╰── Opened here
+ [38;5;240m    │[0m 
+ [38;5;246m829 │[0m [38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m{[38;5;249me[0m[38;5;249md[0m[38;5;249mi[0m[38;5;249mt[0m[38;5;249mM[0m[38;5;249mo[0m[38;5;249md[0m[38;5;249me[0m[38;5;249m [0m[38;5;249m?[0m[38;5;249m [0m[38;5;249m([0m
+ [38;5;240m    │[0m             ┬  
+ [38;5;240m    │[0m             ╰── `,` or `)` expected
+[38;5;246m─────╯[0m
+[39m
+  Plugin: [35mvite:oxc[39m
+  File: [36mD:/ProjectWS/src/components/pc/hotbar/PCBottomDock.tsx[39m
+      at transformWithOxc (file:///D:/ProjectWS/node_modules/vite/dist/node/chunks/node.js:3745:19)
+      at TransformPluginContext.transform (file:///D:/ProjectWS/node_modules/vite/dist/node/chunks/node.js:3813:26)
+      at EnvironmentPluginContainer.transform (file:///D:/ProjectWS/node_modules/vite/dist/node/chunks/node.js:30143:51)
+      at async loadAndTransform (file:///D:/ProjectWS/node_modules/vite/dist/node/chunks/node.js:24468:26)
+      at async viteTransformMiddleware (file:///D:/ProjectWS/node_modules/vite/dist/node/chunks/node.js:24262:20)
+[33m[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+5466 |    }
+5467 |  }
+5468 |  @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-s...
+     |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+5469 |  :root {
+5470 |    --solomon-primary: #d97706;[39m
+[2m오후 11:27:21[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22m[vite] Failed to reload /src/components/pc/hotbar/PCBottomDock.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above)
+[2m오후 11:27:43[22m [31m[1m[vite][22m[39m [31mInternal server error: Transform failed with 1 error:
+
+[31m[PARSE_ERROR] Error:[0m Expected `,` or `)` but found `{`
+     [38;5;246m╭[0m[38;5;246m─[0m[38;5;246m[[0m src/components/pc/hotbar/PCBottomDock.tsx:829:13 [38;5;246m][0m
+     [38;5;246m│[0m
+ [38;5;246m814 │[0m [38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m{[0m[38;5;249m![0m[38;5;249me[0m[38;5;249mv[0m[38;5;249mi[0m[38;5;249md[0m[38;5;249me[0m[38;5;249mn[0m[38;5;249mc[0m[38;5;249me[0m[38;5;249mS[0m[38;5;249me[0m[38;5;249ml[0m[38;5;249me[0m[38;5;249mc[0m[38;5;249mt[0m[38;5;249mi[0m[38;5;249mo[0m[38;5;249mn[0m[38;5;249m [0m[38;5;249m?[0m[38;5;249m [0m(
+ [38;5;240m    │[0m                                   ┬  
+ [38;5;240m    │[0m                                   ╰── Opened here
+ [38;5;240m    │[0m 
+ [38;5;246m829 │[0m [38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m{[38;5;249me[0m[38;5;249md[0m[38;5;249mi[0m[38;5;249mt[0m[38;5;249mM[0m[38;5;249mo[0m[38;5;249md[0m[38;5;249me[0m[38;5;249m [0m[38;5;249m?[0m[38;5;249m [0m[38;5;249m([0m
+ [38;5;240m    │[0m             ┬  
+ [38;5;240m    │[0m             ╰── `,` or `)` expected
+[38;5;246m─────╯[0m
+[39m
+  Plugin: [35mvite:oxc[39m
+  File: [36mD:/ProjectWS/src/components/pc/hotbar/PCBottomDock.tsx[39m
+      at transformWithOxc (file:///D:/ProjectWS/node_modules/vite/dist/node/chunks/node.js:3745:19)
+      at TransformPluginContext.transform (file:///D:/ProjectWS/node_modules/vite/dist/node/chunks/node.js:3813:26)
+      at EnvironmentPluginContainer.transform (file:///D:/ProjectWS/node_modules/vite/dist/node/chunks/node.js:30143:51)
+      at async loadAndTransform (file:///D:/ProjectWS/node_modules/vite/dist/node/chunks/node.js:24468:26)
+      at async viteTransformMiddleware (file:///D:/ProjectWS/node_modules/vite/dist/node/chunks/node.js:24262:20)
+[33m[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+5466 |    }
+5467 |  }
+5468 |  @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-s...
+     |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+5469 |  :root {
+5470 |    --solomon-primary: #d97706;[39m
+[2m오후 11:27:43[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22m[vite] Failed to reload /src/components/pc/hotbar/PCBottomDock.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above)
+[2m오후 11:30:44[22m [31m[1m[vite][22m[39m [31mInternal server error: Transform failed with 1 error:
+
+[31m[PARSE_ERROR] Error:[0m Expected `,` or `)` but found `{`
+     [38;5;246m╭[0m[38;5;246m─[0m[38;5;246m[[0m src/components/pc/hotbar/PCBottomDock.tsx:830:13 [38;5;246m][0m
+     [38;5;246m│[0m
+ [38;5;246m815 │[0m [38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m{[0m[38;5;249m![0m[38;5;249me[0m[38;5;249mv[0m[38;5;249mi[0m[38;5;249md[0m[38;5;249me[0m[38;5;249mn[0m[38;5;249mc[0m[38;5;249me[0m[38;5;249mS[0m[38;5;249me[0m[38;5;249ml[0m[38;5;249me[0m[38;5;249mc[0m[38;5;249mt[0m[38;5;249mi[0m[38;5;249mo[0m[38;5;249mn[0m[38;5;249m [0m[38;5;249m?[0m[38;5;249m [0m(
+ [38;5;240m    │[0m                                   ┬  
+ [38;5;240m    │[0m                                   ╰── Opened here
+ [38;5;240m    │[0m 
+ [38;5;246m830 │[0m [38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m{[38;5;249me[0m[38;5;249md[0m[38;5;249mi[0m[38;5;249mt[0m[38;5;249mM[0m[38;5;249mo[0m[38;5;249md[0m[38;5;249me[0m[38;5;249m [0m[38;5;249m?[0m[38;5;249m [0m[38;5;249m([0m
+ [38;5;240m    │[0m             ┬  
+ [38;5;240m    │[0m             ╰── `,` or `)` expected
+[38;5;246m─────╯[0m
+[39m
+  Plugin: [35mvite:oxc[39m
+  File: [36mD:/ProjectWS/src/components/pc/hotbar/PCBottomDock.tsx[39m
+      at transformWithOxc (file:///D:/ProjectWS/node_modules/vite/dist/node/chunks/node.js:3745:19)
+      at TransformPluginContext.transform (file:///D:/ProjectWS/node_modules/vite/dist/node/chunks/node.js:3813:26)
+      at EnvironmentPluginContainer.transform (file:///D:/ProjectWS/node_modules/vite/dist/node/chunks/node.js:30143:51)
+      at async loadAndTransform (file:///D:/ProjectWS/node_modules/vite/dist/node/chunks/node.js:24468:26)
+      at async viteTransformMiddleware (file:///D:/ProjectWS/node_modules/vite/dist/node/chunks/node.js:24262:20)
+[33m[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+5466 |    }
+5467 |  }
+5468 |  @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-s...
+     |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+5469 |  :root {
+5470 |    --solomon-primary: #d97706;[39m
+[2m오후 11:30:45[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22m[vite] Failed to reload /src/components/pc/hotbar/PCBottomDock.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above)
+[33m[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+5466 |    }
+5467 |  }
+5468 |  @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-s...
+     |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+5469 |  :root {
+5470 |    --solomon-primary: #d97706;[39m
+[2m오후 11:32:27[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-prompts[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 11:32:27[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[PromptManager] Server unavailable, using cached/default prompts
+[2m오후 11:32:27[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-agents[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 11:32:27[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-blocks[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 11:32:27[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[AgentManager] Server unavailable, using cached data
+[2m오후 11:32:27[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/stats/settings[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 11:32:27[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mTypeError: Cannot read properties of undefined (reading 'let_go')
+    at ContradictionModal (http://localhost:5180/src/components/discovery/GameEventModal.tsx:271:31)
+    at Object.react_stack_bottom_frame (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:12867:12)
+    at renderWithHooks (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:4212:19)
+    at updateFunctionComponent (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:5568:16)
+    at beginWork (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:6139:20)
+    at runWithFiberInDEV (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:850:66)
+    at performUnitOfWork (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:8428:92)
+    at workLoopSync (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:8324:37)
+    at renderRootSync (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:8308:6)
+    at performWorkOnRoot (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:7993:27)
+
+The above error occurred in the <ContradictionModal> component.
+
+React will try to recreate this component tree from scratch using the error boundary you provided, ErrorBoundary.
+
+[2m오후 11:32:27[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mErrorBoundary caught: TypeError: Cannot read properties of undefined (reading 'let_go')
+    at ContradictionModal (http://localhost:5180/src/components/discovery/GameEventModal.tsx:271:31)
+    at Object.react_stack_bottom_frame (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:12867:12)
+    at renderWithHooks (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:4212:19)
+    at updateFunctionComponent (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:5568:16)
+    at beginWork (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:6139:20)
+    at runWithFiberInDEV (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:850:66)
+    at performUnitOfWork (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:8428:92)
+    at workLoopSync (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:8324:37)
+    at renderRootSync (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:8308:6)
+    at performWorkOnRoot (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:7993:27) {"componentStack":"\n    at ContradictionModal (http://localhost:5180/src/components/discovery/GameEventModal.tsx:160:31)\n    at div (<anonymous>)\n    at div (<anonymous>)\n    at GameEventModal (http://localhost:5180/src/components/discovery/GameEventModal.tsx:18:23)\n    at Suspense (<anonymous>)\n    at PCGameplayOverlay (http://localhost:5180/src/components/pc/layout/PCGameplayOverlay.tsx?t=1775739568989:25:23)\n    at PCCourtLayout (http://localhost:5180/src/components/pc/layout/PCCourtLayout.tsx?t=1775742081773:23:41)\n    at PCApp (http://localhost:5180/src/app/PCApp.tsx?t=1775739568989:36:23)\n    at ErrorBoundary (http://localhost:5180/src/components/layout/ErrorBoundary.tsx:5:16)"}
+[33m[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+5466 |    }
+5467 |  }
+5468 |  @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-s...
+     |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+5469 |  :root {
+5470 |    --solomon-primary: #d97706;[39m
+[2m오후 11:32:58[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-prompts[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 11:32:58[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[PromptManager] Server unavailable, using cached/default prompts
+[2m오후 11:32:58[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-agents[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 11:32:58[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-blocks[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 11:32:58[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[AgentManager] Server unavailable, using cached data
+[2m오후 11:32:58[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/stats/settings[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 11:32:58[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mTypeError: Cannot read properties of undefined (reading 'let_go')
+    at ContradictionModal (http://localhost:5180/src/components/discovery/GameEventModal.tsx:271:31)
+    at Object.react_stack_bottom_frame (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:12867:12)
+    at renderWithHooks (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:4212:19)
+    at updateFunctionComponent (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:5568:16)
+    at beginWork (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:6139:20)
+    at runWithFiberInDEV (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:850:66)
+    at performUnitOfWork (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:8428:92)
+    at workLoopSync (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:8324:37)
+    at renderRootSync (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:8308:6)
+    at performWorkOnRoot (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:7993:27)
+
+The above error occurred in the <ContradictionModal> component.
+
+React will try to recreate this component tree from scratch using the error boundary you provided, ErrorBoundary.
+
+[2m오후 11:32:58[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mErrorBoundary caught: TypeError: Cannot read properties of undefined (reading 'let_go')
+    at ContradictionModal (http://localhost:5180/src/components/discovery/GameEventModal.tsx:271:31)
+    at Object.react_stack_bottom_frame (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:12867:12)
+    at renderWithHooks (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:4212:19)
+    at updateFunctionComponent (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:5568:16)
+    at beginWork (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:6139:20)
+    at runWithFiberInDEV (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:850:66)
+    at performUnitOfWork (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:8428:92)
+    at workLoopSync (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:8324:37)
+    at renderRootSync (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:8308:6)
+    at performWorkOnRoot (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:7993:27) {"componentStack":"\n    at ContradictionModal (http://localhost:5180/src/components/discovery/GameEventModal.tsx:160:31)\n    at div (<anonymous>)\n    at div (<anonymous>)\n    at GameEventModal (http://localhost:5180/src/components/discovery/GameEventModal.tsx:18:23)\n    at Suspense (<anonymous>)\n    at PCGameplayOverlay (http://localhost:5180/src/components/pc/layout/PCGameplayOverlay.tsx?t=1775739568989:25:23)\n    at PCCourtLayout (http://localhost:5180/src/components/pc/layout/PCCourtLayout.tsx?t=1775742081773:23:41)\n    at PCApp (http://localhost:5180/src/app/PCApp.tsx?t=1775739568989:36:23)\n    at ErrorBoundary (http://localhost:5180/src/components/layout/ErrorBoundary.tsx:5:16)"}
+[33m[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+5466 |    }
+5467 |  }
+5468 |  @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-s...
+     |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+5469 |  :root {
+5470 |    --solomon-primary: #d97706;[39m
+[2m오후 11:33:12[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-prompts[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 11:33:12[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[PromptManager] Server unavailable, using cached/default prompts
+[2m오후 11:33:12[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-agents[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 11:33:12[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-blocks[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 11:33:12[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[AgentManager] Server unavailable, using cached data
+[2m오후 11:33:12[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/stats/settings[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 11:33:12[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mTypeError: Cannot read properties of undefined (reading 'let_go')
+    at ContradictionModal (http://localhost:5180/src/components/discovery/GameEventModal.tsx:271:31)
+    at Object.react_stack_bottom_frame (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:12867:12)
+    at renderWithHooks (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:4212:19)
+    at updateFunctionComponent (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:5568:16)
+    at beginWork (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:6139:20)
+    at runWithFiberInDEV (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:850:66)
+    at performUnitOfWork (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:8428:92)
+    at workLoopSync (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:8324:37)
+    at renderRootSync (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:8308:6)
+    at performWorkOnRoot (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:7993:27)
+
+The above error occurred in the <ContradictionModal> component.
+
+React will try to recreate this component tree from scratch using the error boundary you provided, ErrorBoundary.
+
+[2m오후 11:33:12[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mErrorBoundary caught: TypeError: Cannot read properties of undefined (reading 'let_go')
+    at ContradictionModal (http://localhost:5180/src/components/discovery/GameEventModal.tsx:271:31)
+    at Object.react_stack_bottom_frame (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:12867:12)
+    at renderWithHooks (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:4212:19)
+    at updateFunctionComponent (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:5568:16)
+    at beginWork (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:6139:20)
+    at runWithFiberInDEV (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:850:66)
+    at performUnitOfWork (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:8428:92)
+    at workLoopSync (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:8324:37)
+    at renderRootSync (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:8308:6)
+    at performWorkOnRoot (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:7993:27) {"componentStack":"\n    at ContradictionModal (http://localhost:5180/src/components/discovery/GameEventModal.tsx:160:31)\n    at div (<anonymous>)\n    at div (<anonymous>)\n    at GameEventModal (http://localhost:5180/src/components/discovery/GameEventModal.tsx:18:23)\n    at Suspense (<anonymous>)\n    at PCGameplayOverlay (http://localhost:5180/src/components/pc/layout/PCGameplayOverlay.tsx?t=1775739568989:25:23)\n    at PCCourtLayout (http://localhost:5180/src/components/pc/layout/PCCourtLayout.tsx?t=1775742081773:23:41)\n    at PCApp (http://localhost:5180/src/app/PCApp.tsx?t=1775739568989:36:23)\n    at ErrorBoundary (http://localhost:5180/src/components/layout/ErrorBoundary.tsx:5:16)"}
+[33m[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+5466 |    }
+5467 |  }
+5468 |  @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-s...
+     |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+5469 |  :root {
+5470 |    --solomon-primary: #d97706;[39m
+[2m오후 11:34:45[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-prompts[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 11:34:45[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[PromptManager] Server unavailable, using cached/default prompts
+[2m오후 11:34:45[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-agents[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 11:34:45[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-blocks[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 11:34:45[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[AgentManager] Server unavailable, using cached data
+[2m오후 11:34:45[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/stats/settings[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 11:34:45[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mTypeError: Cannot read properties of undefined (reading 'let_go')
+    at ContradictionModal (http://localhost:5180/src/components/discovery/GameEventModal.tsx:271:31)
+    at Object.react_stack_bottom_frame (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:12867:12)
+    at renderWithHooks (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:4212:19)
+    at updateFunctionComponent (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:5568:16)
+    at beginWork (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:6139:20)
+    at runWithFiberInDEV (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:850:66)
+    at performUnitOfWork (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:8428:92)
+    at workLoopSync (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:8324:37)
+    at renderRootSync (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:8308:6)
+    at performWorkOnRoot (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:7993:27)
+
+The above error occurred in the <ContradictionModal> component.
+
+React will try to recreate this component tree from scratch using the error boundary you provided, ErrorBoundary.
+
+[2m오후 11:34:45[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mErrorBoundary caught: TypeError: Cannot read properties of undefined (reading 'let_go')
+    at ContradictionModal (http://localhost:5180/src/components/discovery/GameEventModal.tsx:271:31)
+    at Object.react_stack_bottom_frame (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:12867:12)
+    at renderWithHooks (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:4212:19)
+    at updateFunctionComponent (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:5568:16)
+    at beginWork (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:6139:20)
+    at runWithFiberInDEV (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:850:66)
+    at performUnitOfWork (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:8428:92)
+    at workLoopSync (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:8324:37)
+    at renderRootSync (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:8308:6)
+    at performWorkOnRoot (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:7993:27) {"componentStack":"\n    at ContradictionModal (http://localhost:5180/src/components/discovery/GameEventModal.tsx:160:31)\n    at div (<anonymous>)\n    at div (<anonymous>)\n    at GameEventModal (http://localhost:5180/src/components/discovery/GameEventModal.tsx:18:23)\n    at Suspense (<anonymous>)\n    at PCGameplayOverlay (http://localhost:5180/src/components/pc/layout/PCGameplayOverlay.tsx?t=1775739568989:25:23)\n    at PCCourtLayout (http://localhost:5180/src/components/pc/layout/PCCourtLayout.tsx?t=1775742081773:23:41)\n    at PCApp (http://localhost:5180/src/app/PCApp.tsx?t=1775739568989:36:23)\n    at ErrorBoundary (http://localhost:5180/src/components/layout/ErrorBoundary.tsx:5:16)"}
+[33m[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+5466 |    }
+5467 |  }
+5468 |  @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-s...
+     |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+5469 |  :root {
+5470 |    --solomon-primary: #d97706;[39m
+[2m오후 11:34:59[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-prompts[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 11:34:59[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[PromptManager] Server unavailable, using cached/default prompts
+[2m오후 11:34:59[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-agents[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 11:34:59[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-blocks[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 11:34:59[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[AgentManager] Server unavailable, using cached data
+[2m오후 11:34:59[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/stats/settings[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 11:34:59[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mTypeError: Cannot read properties of undefined (reading 'let_go')
+    at ContradictionModal (http://localhost:5180/src/components/discovery/GameEventModal.tsx:271:31)
+    at Object.react_stack_bottom_frame (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:12867:12)
+    at renderWithHooks (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:4212:19)
+    at updateFunctionComponent (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:5568:16)
+    at beginWork (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:6139:20)
+    at runWithFiberInDEV (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:850:66)
+    at performUnitOfWork (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:8428:92)
+    at workLoopSync (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:8324:37)
+    at renderRootSync (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:8308:6)
+    at performWorkOnRoot (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:7993:27)
+
+The above error occurred in the <ContradictionModal> component.
+
+React will try to recreate this component tree from scratch using the error boundary you provided, ErrorBoundary.
+
+[2m오후 11:34:59[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mErrorBoundary caught: TypeError: Cannot read properties of undefined (reading 'let_go')
+    at ContradictionModal (http://localhost:5180/src/components/discovery/GameEventModal.tsx:271:31)
+    at Object.react_stack_bottom_frame (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:12867:12)
+    at renderWithHooks (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:4212:19)
+    at updateFunctionComponent (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:5568:16)
+    at beginWork (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:6139:20)
+    at runWithFiberInDEV (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:850:66)
+    at performUnitOfWork (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:8428:92)
+    at workLoopSync (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:8324:37)
+    at renderRootSync (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:8308:6)
+    at performWorkOnRoot (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:7993:27) {"componentStack":"\n    at ContradictionModal (http://localhost:5180/src/components/discovery/GameEventModal.tsx:160:31)\n    at div (<anonymous>)\n    at div (<anonymous>)\n    at GameEventModal (http://localhost:5180/src/components/discovery/GameEventModal.tsx:18:23)\n    at Suspense (<anonymous>)\n    at PCGameplayOverlay (http://localhost:5180/src/components/pc/layout/PCGameplayOverlay.tsx?t=1775739568989:25:23)\n    at PCCourtLayout (http://localhost:5180/src/components/pc/layout/PCCourtLayout.tsx?t=1775742081773:23:41)\n    at PCApp (http://localhost:5180/src/app/PCApp.tsx?t=1775739568989:36:23)\n    at ErrorBoundary (http://localhost:5180/src/components/layout/ErrorBoundary.tsx:5:16)"}
+[33m[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+5466 |    }
+5467 |  }
+5468 |  @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-s...
+     |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+5469 |  :root {
+5470 |    --solomon-primary: #d97706;[39m
+[2m오후 11:35:52[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-prompts[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 11:35:52[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[PromptManager] Server unavailable, using cached/default prompts
+[2m오후 11:35:52[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-agents[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 11:35:52[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-blocks[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 11:35:52[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[AgentManager] Server unavailable, using cached data
+[2m오후 11:35:52[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/stats/settings[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 11:35:52[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mTypeError: Cannot read properties of undefined (reading 'let_go')
+    at ContradictionModal (http://localhost:5180/src/components/discovery/GameEventModal.tsx:271:31)
+    at Object.react_stack_bottom_frame (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:12867:12)
+    at renderWithHooks (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:4212:19)
+    at updateFunctionComponent (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:5568:16)
+    at beginWork (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:6139:20)
+    at runWithFiberInDEV (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:850:66)
+    at performUnitOfWork (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:8428:92)
+    at workLoopSync (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:8324:37)
+    at renderRootSync (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:8308:6)
+    at performWorkOnRoot (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:7993:27)
+
+The above error occurred in the <ContradictionModal> component.
+
+React will try to recreate this component tree from scratch using the error boundary you provided, ErrorBoundary.
+
+[2m오후 11:35:52[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mErrorBoundary caught: TypeError: Cannot read properties of undefined (reading 'let_go')
+    at ContradictionModal (http://localhost:5180/src/components/discovery/GameEventModal.tsx:271:31)
+    at Object.react_stack_bottom_frame (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:12867:12)
+    at renderWithHooks (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:4212:19)
+    at updateFunctionComponent (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:5568:16)
+    at beginWork (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:6139:20)
+    at runWithFiberInDEV (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:850:66)
+    at performUnitOfWork (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:8428:92)
+    at workLoopSync (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:8324:37)
+    at renderRootSync (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:8308:6)
+    at performWorkOnRoot (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:7993:27) {"componentStack":"\n    at ContradictionModal (http://localhost:5180/src/components/discovery/GameEventModal.tsx:160:31)\n    at div (<anonymous>)\n    at div (<anonymous>)\n    at GameEventModal (http://localhost:5180/src/components/discovery/GameEventModal.tsx:18:23)\n    at Suspense (<anonymous>)\n    at PCGameplayOverlay (http://localhost:5180/src/components/pc/layout/PCGameplayOverlay.tsx?t=1775739568989:25:23)\n    at PCCourtLayout (http://localhost:5180/src/components/pc/layout/PCCourtLayout.tsx?t=1775742081773:23:41)\n    at PCApp (http://localhost:5180/src/app/PCApp.tsx?t=1775739568989:36:23)\n    at ErrorBoundary (http://localhost:5180/src/components/layout/ErrorBoundary.tsx:5:16)"}
+[33m[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+5466 |    }
+5467 |  }
+5468 |  @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-s...
+     |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+5469 |  :root {
+5470 |    --solomon-primary: #d97706;[39m
+[2m오후 11:36:40[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-prompts[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 11:36:40[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[PromptManager] Server unavailable, using cached/default prompts
+[2m오후 11:36:40[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-agents[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 11:36:40[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-blocks[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 11:36:40[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[AgentManager] Server unavailable, using cached data
+[2m오후 11:36:40[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/stats/settings[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 11:36:40[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mTypeError: Cannot read properties of undefined (reading 'let_go')
+    at ContradictionModal (http://localhost:5180/src/components/discovery/GameEventModal.tsx:271:31)
+    at Object.react_stack_bottom_frame (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:12867:12)
+    at renderWithHooks (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:4212:19)
+    at updateFunctionComponent (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:5568:16)
+    at beginWork (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:6139:20)
+    at runWithFiberInDEV (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:850:66)
+    at performUnitOfWork (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:8428:92)
+    at workLoopSync (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:8324:37)
+    at renderRootSync (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:8308:6)
+    at performWorkOnRoot (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:7993:27)
+
+The above error occurred in the <ContradictionModal> component.
+
+React will try to recreate this component tree from scratch using the error boundary you provided, ErrorBoundary.
+
+[2m오후 11:36:40[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mErrorBoundary caught: TypeError: Cannot read properties of undefined (reading 'let_go')
+    at ContradictionModal (http://localhost:5180/src/components/discovery/GameEventModal.tsx:271:31)
+    at Object.react_stack_bottom_frame (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:12867:12)
+    at renderWithHooks (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:4212:19)
+    at updateFunctionComponent (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:5568:16)
+    at beginWork (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:6139:20)
+    at runWithFiberInDEV (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:850:66)
+    at performUnitOfWork (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:8428:92)
+    at workLoopSync (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:8324:37)
+    at renderRootSync (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:8308:6)
+    at performWorkOnRoot (http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=c548fa4b:7993:27) {"componentStack":"\n    at ContradictionModal (http://localhost:5180/src/components/discovery/GameEventModal.tsx:160:31)\n    at div (<anonymous>)\n    at div (<anonymous>)\n    at GameEventModal (http://localhost:5180/src/components/discovery/GameEventModal.tsx:18:23)\n    at Suspense (<anonymous>)\n    at PCGameplayOverlay (http://localhost:5180/src/components/pc/layout/PCGameplayOverlay.tsx?t=1775739568989:25:23)\n    at PCCourtLayout (http://localhost:5180/src/components/pc/layout/PCCourtLayout.tsx?t=1775742081773:23:41)\n    at PCApp (http://localhost:5180/src/app/PCApp.tsx?t=1775739568989:36:23)\n    at ErrorBoundary (http://localhost:5180/src/components/layout/ErrorBoundary.tsx:5:16)"}
+[33m[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+5466 |    }
+5467 |  }
+5468 |  @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-s...
+     |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+5469 |  :root {
+5470 |    --solomon-primary: #d97706;[39m
+[33m[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+5466 |    }
+5467 |  }
+5468 |  @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-s...
+     |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+5469 |  :root {
+5470 |    --solomon-primary: #d97706;[39m
+[2m오후 11:39:13[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m Pre-transform error: Transform failed with 1 error:
+
+[31m[PARSE_ERROR] Error:[0m Expected `,` or `)` but found `{`
+     [38;5;246m╭[0m[38;5;246m─[0m[38;5;246m[[0m src/components/pc/hotbar/PCBottomDock.tsx:830:13 [38;5;246m][0m
+     [38;5;246m│[0m
+ [38;5;246m815 │[0m [38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m{[0m[38;5;249m![0m[38;5;249me[0m[38;5;249mv[0m[38;5;249mi[0m[38;5;249md[0m[38;5;249me[0m[38;5;249mn[0m[38;5;249mc[0m[38;5;249me[0m[38;5;249mS[0m[38;5;249me[0m[38;5;249ml[0m[38;5;249me[0m[38;5;249mc[0m[38;5;249mt[0m[38;5;249mi[0m[38;5;249mo[0m[38;5;249mn[0m[38;5;249m [0m[38;5;249m?[0m[38;5;249m [0m(
+ [38;5;240m    │[0m                                   ┬  
+ [38;5;240m    │[0m                                   ╰── Opened here
+ [38;5;240m    │[0m 
+ [38;5;246m830 │[0m [38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m{[38;5;249me[0m[38;5;249md[0m[38;5;249mi[0m[38;5;249mt[0m[38;5;249mM[0m[38;5;249mo[0m[38;5;249md[0m[38;5;249me[0m[38;5;249m [0m[38;5;249m?[0m[38;5;249m [0m[38;5;249m([0m
+ [38;5;240m    │[0m             ┬  
+ [38;5;240m    │[0m             ╰── `,` or `)` expected
+[38;5;246m─────╯[0m
+
+  Plugin: [35mvite:oxc[39m
+  File: [36mD:/ProjectWS/src/components/pc/hotbar/PCBottomDock.tsx[39m
+[2m오후 11:39:13[22m [31m[1m[vite][22m[39m [31mInternal server error: Transform failed with 1 error:
+
+[31m[PARSE_ERROR] Error:[0m Expected `,` or `)` but found `{`
+     [38;5;246m╭[0m[38;5;246m─[0m[38;5;246m[[0m src/components/pc/hotbar/PCBottomDock.tsx:830:13 [38;5;246m][0m
+     [38;5;246m│[0m
+ [38;5;246m815 │[0m [38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m{[0m[38;5;249m![0m[38;5;249me[0m[38;5;249mv[0m[38;5;249mi[0m[38;5;249md[0m[38;5;249me[0m[38;5;249mn[0m[38;5;249mc[0m[38;5;249me[0m[38;5;249mS[0m[38;5;249me[0m[38;5;249ml[0m[38;5;249me[0m[38;5;249mc[0m[38;5;249mt[0m[38;5;249mi[0m[38;5;249mo[0m[38;5;249mn[0m[38;5;249m [0m[38;5;249m?[0m[38;5;249m [0m(
+ [38;5;240m    │[0m                                   ┬  
+ [38;5;240m    │[0m                                   ╰── Opened here
+ [38;5;240m    │[0m 
+ [38;5;246m830 │[0m [38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m{[38;5;249me[0m[38;5;249md[0m[38;5;249mi[0m[38;5;249mt[0m[38;5;249mM[0m[38;5;249mo[0m[38;5;249md[0m[38;5;249me[0m[38;5;249m [0m[38;5;249m?[0m[38;5;249m [0m[38;5;249m([0m
+ [38;5;240m    │[0m             ┬  
+ [38;5;240m    │[0m             ╰── `,` or `)` expected
+[38;5;246m─────╯[0m
+[39m
+  Plugin: [35mvite:oxc[39m
+  File: [36mD:/ProjectWS/src/components/pc/hotbar/PCBottomDock.tsx[39m
+      at transformWithOxc (file:///D:/ProjectWS/node_modules/vite/dist/node/chunks/node.js:3745:19)
+      at TransformPluginContext.transform (file:///D:/ProjectWS/node_modules/vite/dist/node/chunks/node.js:3813:26)
+      at EnvironmentPluginContainer.transform (file:///D:/ProjectWS/node_modules/vite/dist/node/chunks/node.js:30143:51)
+      at async loadAndTransform (file:///D:/ProjectWS/node_modules/vite/dist/node/chunks/node.js:24468:26)
+      at async viteTransformMiddleware (file:///D:/ProjectWS/node_modules/vite/dist/node/chunks/node.js:24262:20)
+[2m오후 11:39:15[22m [31m[1m[vite][22m[39m [31mInternal server error: Transform failed with 1 error:
+
+[31m[PARSE_ERROR] Error:[0m Expected `,` or `)` but found `{`
+     [38;5;246m╭[0m[38;5;246m─[0m[38;5;246m[[0m src/components/pc/hotbar/PCBottomDock.tsx:830:13 [38;5;246m][0m
+     [38;5;246m│[0m
+ [38;5;246m815 │[0m [38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m{[0m[38;5;249m![0m[38;5;249me[0m[38;5;249mv[0m[38;5;249mi[0m[38;5;249md[0m[38;5;249me[0m[38;5;249mn[0m[38;5;249mc[0m[38;5;249me[0m[38;5;249mS[0m[38;5;249me[0m[38;5;249ml[0m[38;5;249me[0m[38;5;249mc[0m[38;5;249mt[0m[38;5;249mi[0m[38;5;249mo[0m[38;5;249mn[0m[38;5;249m [0m[38;5;249m?[0m[38;5;249m [0m(
+ [38;5;240m    │[0m                                   ┬  
+ [38;5;240m    │[0m                                   ╰── Opened here
+ [38;5;240m    │[0m 
+ [38;5;246m830 │[0m [38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m[38;5;249m [0m{[38;5;249me[0m[38;5;249md[0m[38;5;249mi[0m[38;5;249mt[0m[38;5;249mM[0m[38;5;249mo[0m[38;5;249md[0m[38;5;249me[0m[38;5;249m [0m[38;5;249m?[0m[38;5;249m [0m[38;5;249m([0m
+ [38;5;240m    │[0m             ┬  
+ [38;5;240m    │[0m             ╰── `,` or `)` expected
+[38;5;246m─────╯[0m
+[39m
+  Plugin: [35mvite:oxc[39m
+  File: [36mD:/ProjectWS/src/components/pc/hotbar/PCBottomDock.tsx[39m
+      at transformWithOxc (file:///D:/ProjectWS/node_modules/vite/dist/node/chunks/node.js:3745:19)
+      at TransformPluginContext.transform (file:///D:/ProjectWS/node_modules/vite/dist/node/chunks/node.js:3813:26)
+      at EnvironmentPluginContainer.transform (file:///D:/ProjectWS/node_modules/vite/dist/node/chunks/node.js:30143:51)
+      at async loadAndTransform (file:///D:/ProjectWS/node_modules/vite/dist/node/chunks/node.js:24468:26)
+      at async viteTransformMiddleware (file:///D:/ProjectWS/node_modules/vite/dist/node/chunks/node.js:24262:20)
+[33m[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+5527 |    }
+5528 |  }
+5529 |  @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-s...
+     |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+5530 |  :root {
+5531 |    --solomon-primary: #d97706;[39m
+[2m오후 1:34:50[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-prompts[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 1:34:50[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[PromptManager] Server unavailable, using cached/default prompts
+[2m오후 1:34:50[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-agents[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 1:34:50[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-blocks[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 1:34:50[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[AgentManager] Server unavailable, using cached data
+[2m오후 1:34:50[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/stats/settings[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 1:34:50[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/stats/settings[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 1:34:52[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-prompts[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 1:34:52[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[PromptManager] Server unavailable, using cached/default prompts
+[2m오후 1:34:52[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-agents[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 1:34:52[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-blocks[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 1:34:52[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[AgentManager] Server unavailable, using cached data
+[2m오후 1:34:52[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/stats/settings[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)

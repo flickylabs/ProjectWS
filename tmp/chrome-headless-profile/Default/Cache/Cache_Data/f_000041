@@ -1,0 +1,254 @@
+import { createHotContext as __vite__createHotContext } from "/@vite/client";import.meta.hot = __vite__createHotContext("/src/components/verdict/EvidenceLegality.tsx");const _jsxDEV = __vite__cjsImport2_react_jsxDevRuntime["jsxDEV"];import { useStore } from "/src/store/useGameStore.ts";
+import Emoji from "/src/components/common/Emoji.tsx";
+var _jsxFileName = "D:/ProjectWS/src/components/verdict/EvidenceLegality.tsx";
+import __vite__cjsImport2_react_jsxDevRuntime from "/node_modules/.vite/deps/react_jsx-dev-runtime.js?v=bcc235b4";
+var _s = $RefreshSig$();
+export default function EvidenceLegality() {
+	_s();
+	const caseData = useStore((s) => s.caseData);
+	const evidenceStates = useStore((s) => s.evidenceStates);
+	const verdictInput = useStore((s) => s.verdictInput);
+	const setEvidenceLegality = useStore((s) => s.setEvidenceLegality);
+	if (!caseData) return null;
+	// 정당성 의심 증거만 표시 (사용된 것 중)
+	const questionableEvidence = caseData.evidence.filter((e) => e.legitimacy !== "lawful" && evidenceStates[e.id]?.presented);
+	// 비공개 보호로 획득한 증거 (제시된 것 중)
+	const confidentialEvidence = caseData.evidence.filter((e) => evidenceStates[e.id]?.confidentialSource && evidenceStates[e.id]?.presented);
+	if (questionableEvidence.length === 0 && confidentialEvidence.length === 0) return null;
+	return /* @__PURE__ */ _jsxDEV("div", {
+		className: "space-y-3",
+		children: [
+			/* @__PURE__ */ _jsxDEV("h3", {
+				className: "text-sm font-bold text-amber-400",
+				children: "④ 증거 정당성 판단"
+			}, void 0, false, {
+				fileName: _jsxFileName,
+				lineNumber: 26,
+				columnNumber: 7
+			}, this),
+			/* @__PURE__ */ _jsxDEV("p", {
+				className: "text-xs text-gray-500",
+				children: "다음 증거는 취득 과정에 문제가 있을 수 있습니다. 판결 근거로 사용할지 결정하세요."
+			}, void 0, false, {
+				fileName: _jsxFileName,
+				lineNumber: 27,
+				columnNumber: 7
+			}, this),
+			/* @__PURE__ */ _jsxDEV("div", {
+				className: "space-y-2",
+				children: [confidentialEvidence.map((ev) => {
+					const allowed = verdictInput.evidenceLegality[ev.id];
+					return /* @__PURE__ */ _jsxDEV("div", {
+						className: "bg-gray-800/60 border border-purple-800/50 rounded-lg p-3",
+						children: [
+							/* @__PURE__ */ _jsxDEV("div", {
+								className: "flex items-center gap-2 mb-2",
+								children: [/* @__PURE__ */ _jsxDEV("span", {
+									className: "text-xs px-1.5 py-0.5 rounded bg-purple-900/50 text-purple-400",
+									children: "비공개 보호 약속"
+								}, void 0, false, {
+									fileName: _jsxFileName,
+									lineNumber: 35,
+									columnNumber: 17
+								}, this), /* @__PURE__ */ _jsxDEV("span", {
+									className: "text-sm font-semibold text-gray-200",
+									children: ev.name
+								}, void 0, false, {
+									fileName: _jsxFileName,
+									lineNumber: 38,
+									columnNumber: 17
+								}, this)]
+							}, void 0, true, {
+								fileName: _jsxFileName,
+								lineNumber: 34,
+								columnNumber: 15
+							}, this),
+							/* @__PURE__ */ _jsxDEV("p", {
+								className: "text-xs text-gray-400 mb-3",
+								children: ev.description
+							}, void 0, false, {
+								fileName: _jsxFileName,
+								lineNumber: 40,
+								columnNumber: 15
+							}, this),
+							/* @__PURE__ */ _jsxDEV("p", {
+								className: "text-xs text-purple-400/80 mb-3",
+								children: "이 증거는 비공개를 약속하고 얻은 진술에서 나왔습니다."
+							}, void 0, false, {
+								fileName: _jsxFileName,
+								lineNumber: 41,
+								columnNumber: 15
+							}, this),
+							/* @__PURE__ */ _jsxDEV("div", {
+								className: "flex gap-2",
+								children: [/* @__PURE__ */ _jsxDEV("button", {
+									onClick: () => setEvidenceLegality(ev.id, true),
+									className: `flex-1 border rounded px-3 py-1.5 text-xs font-semibold transition-colors ${allowed === true ? "bg-purple-700 text-white border-purple-600" : "bg-gray-800 text-gray-400 border-gray-700 hover:border-purple-600"}`,
+									children: "판결 근거로 사용"
+								}, void 0, false, {
+									fileName: _jsxFileName,
+									lineNumber: 44,
+									columnNumber: 17
+								}, this), /* @__PURE__ */ _jsxDEV("button", {
+									onClick: () => setEvidenceLegality(ev.id, false),
+									className: `flex-1 border rounded px-3 py-1.5 text-xs font-semibold transition-colors ${allowed === false ? "bg-gray-600 text-white border-gray-500" : "bg-gray-800 text-gray-400 border-gray-700 hover:border-gray-500"}`,
+									children: "판결에서 제외"
+								}, void 0, false, {
+									fileName: _jsxFileName,
+									lineNumber: 54,
+									columnNumber: 17
+								}, this)]
+							}, void 0, true, {
+								fileName: _jsxFileName,
+								lineNumber: 43,
+								columnNumber: 15
+							}, this),
+							allowed === true && /* @__PURE__ */ _jsxDEV("div", {
+								className: "text-xs text-purple-400 mt-2",
+								children: [/* @__PURE__ */ _jsxDEV(Emoji, {
+									char: "⚠️",
+									size: 12
+								}, void 0, false, {
+									fileName: _jsxFileName,
+									lineNumber: 66,
+									columnNumber: 63
+								}, this), " 비공개 약속을 어기면 권위 점수가 크게 감소합니다."]
+							}, void 0, true, {
+								fileName: _jsxFileName,
+								lineNumber: 66,
+								columnNumber: 17
+							}, this)
+						]
+					}, ev.id, true, {
+						fileName: _jsxFileName,
+						lineNumber: 33,
+						columnNumber: 13
+					}, this);
+				}), questionableEvidence.map((ev) => {
+					const allowed = verdictInput.evidenceLegality[ev.id];
+					return /* @__PURE__ */ _jsxDEV("div", {
+						className: "bg-gray-800/60 border border-orange-800/50 rounded-lg p-3",
+						children: [
+							/* @__PURE__ */ _jsxDEV("div", {
+								className: "flex items-center gap-2 mb-2",
+								children: [/* @__PURE__ */ _jsxDEV("span", {
+									className: "text-xs px-1.5 py-0.5 rounded bg-orange-900/50 text-orange-400",
+									children: ev.legitimacy === "privacy_concern" ? "사생활 침해 소지" : "위법 취득"
+								}, void 0, false, {
+									fileName: _jsxFileName,
+									lineNumber: 77,
+									columnNumber: 17
+								}, this), /* @__PURE__ */ _jsxDEV("span", {
+									className: "text-sm font-semibold text-gray-200",
+									children: ev.name
+								}, void 0, false, {
+									fileName: _jsxFileName,
+									lineNumber: 80,
+									columnNumber: 17
+								}, this)]
+							}, void 0, true, {
+								fileName: _jsxFileName,
+								lineNumber: 76,
+								columnNumber: 15
+							}, this),
+							/* @__PURE__ */ _jsxDEV("p", {
+								className: "text-xs text-gray-400 mb-3",
+								children: ev.description
+							}, void 0, false, {
+								fileName: _jsxFileName,
+								lineNumber: 82,
+								columnNumber: 15
+							}, this),
+							/* @__PURE__ */ _jsxDEV("div", {
+								className: "flex gap-2",
+								children: [/* @__PURE__ */ _jsxDEV("button", {
+									onClick: () => setEvidenceLegality(ev.id, true),
+									className: `flex-1 border rounded px-3 py-1.5 text-xs font-semibold transition-colors ${allowed === true ? "bg-orange-700 text-white border-orange-600" : "bg-gray-800 text-gray-400 border-gray-700 hover:border-orange-600"}`,
+									children: "판결 근거로 사용"
+								}, void 0, false, {
+									fileName: _jsxFileName,
+									lineNumber: 85,
+									columnNumber: 17
+								}, this), /* @__PURE__ */ _jsxDEV("button", {
+									onClick: () => setEvidenceLegality(ev.id, false),
+									className: `flex-1 border rounded px-3 py-1.5 text-xs font-semibold transition-colors ${allowed === false ? "bg-gray-600 text-white border-gray-500" : "bg-gray-800 text-gray-400 border-gray-700 hover:border-gray-500"}`,
+									children: "판결에서 제외"
+								}, void 0, false, {
+									fileName: _jsxFileName,
+									lineNumber: 95,
+									columnNumber: 17
+								}, this)]
+							}, void 0, true, {
+								fileName: _jsxFileName,
+								lineNumber: 84,
+								columnNumber: 15
+							}, this),
+							allowed === true && /* @__PURE__ */ _jsxDEV("div", {
+								className: "text-xs text-orange-400 mt-2",
+								children: [/* @__PURE__ */ _jsxDEV(Emoji, {
+									char: "⚠️",
+									size: 12
+								}, void 0, false, {
+									fileName: _jsxFileName,
+									lineNumber: 107,
+									columnNumber: 63
+								}, this), " 위법 증거 사용 시 권위 점수가 감소합니다."]
+							}, void 0, true, {
+								fileName: _jsxFileName,
+								lineNumber: 107,
+								columnNumber: 17
+							}, this)
+						]
+					}, ev.id, true, {
+						fileName: _jsxFileName,
+						lineNumber: 75,
+						columnNumber: 13
+					}, this);
+				})]
+			}, void 0, true, {
+				fileName: _jsxFileName,
+				lineNumber: 29,
+				columnNumber: 7
+			}, this)
+		]
+	}, void 0, true, {
+		fileName: _jsxFileName,
+		lineNumber: 25,
+		columnNumber: 5
+	}, this);
+}
+_s(EvidenceLegality, "sBezwGk41krjOFvu9CSsg70dAm8=", false, function() {
+	return [
+		useStore,
+		useStore,
+		useStore,
+		useStore
+	];
+});
+_c = EvidenceLegality;
+var _c;
+$RefreshReg$(_c, "EvidenceLegality");
+import * as RefreshRuntime from "/@react-refresh";
+const inWebWorker = typeof WorkerGlobalScope !== 'undefined' && self instanceof WorkerGlobalScope;
+import * as __vite_react_currentExports from "/src/components/verdict/EvidenceLegality.tsx";
+if (import.meta.hot && !inWebWorker) {
+  if (!window.$RefreshReg$) {
+    throw new Error(
+      "@vitejs/plugin-react can't detect preamble. Something is wrong."
+    );
+  }
+
+  const currentExports = __vite_react_currentExports;
+  queueMicrotask(() => {
+    RefreshRuntime.registerExportsForReactRefresh("D:/ProjectWS/src/components/verdict/EvidenceLegality.tsx", currentExports);
+    import.meta.hot.accept((nextExports) => {
+      if (!nextExports) return;
+      const invalidateMessage = RefreshRuntime.validateRefreshBoundaryAndEnqueueUpdate("D:/ProjectWS/src/components/verdict/EvidenceLegality.tsx", currentExports, nextExports);
+      if (invalidateMessage) import.meta.hot.invalidate(invalidateMessage);
+    });
+  });
+}
+function $RefreshReg$(type, id) { return RefreshRuntime.register(type, "D:/ProjectWS/src/components/verdict/EvidenceLegality.tsx" + ' ' + id); }
+function $RefreshSig$() { return RefreshRuntime.createSignatureFunctionForTransform(); }
+
+//# sourceMappingURL=data:application/json;base64,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QTttQkFFUDtTQUVROzs7O2lCQUNMOzs7Ozs7T0FDTCxZQUFZLFFBQ1gsd0JBQUMsT0FBRDtRQUFLLFdBQVU7a0JBQWYsQ0FBOEMsd0JBQUMsT0FBRDtTQUFPLE1BQUs7U0FBSyxNQUFNO1NBQU07Ozs7OENBQStCOzs7Ozs7T0FFeEc7UUFsQ0ksR0FBRzs7OzthQWtDUDtNQUVSLENBQ0U7Ozs7OztHQUNGOzs7Ozs7Ozs7Ozs7OztFQUVUIiwibmFtZXMiOltdLCJzb3VyY2VzIjpbIkV2aWRlbmNlTGVnYWxpdHkudHN4Il0sInZlcnNpb24iOjMsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IHVzZVN0b3JlIH0gZnJvbSAnLi4vLi4vc3RvcmUvdXNlR2FtZVN0b3JlJ1xuaW1wb3J0IEVtb2ppIGZyb20gJy4uL2NvbW1vbi9FbW9qaSdcblxuZXhwb3J0IGRlZmF1bHQgZnVuY3Rpb24gRXZpZGVuY2VMZWdhbGl0eSgpIHtcbiAgY29uc3QgY2FzZURhdGEgPSB1c2VTdG9yZSgocykgPT4gcy5jYXNlRGF0YSlcbiAgY29uc3QgZXZpZGVuY2VTdGF0ZXMgPSB1c2VTdG9yZSgocykgPT4gcy5ldmlkZW5jZVN0YXRlcylcbiAgY29uc3QgdmVyZGljdElucHV0ID0gdXNlU3RvcmUoKHMpID0+IHMudmVyZGljdElucHV0KVxuICBjb25zdCBzZXRFdmlkZW5jZUxlZ2FsaXR5ID0gdXNlU3RvcmUoKHMpID0+IHMuc2V0RXZpZGVuY2VMZWdhbGl0eSlcblxuICBpZiAoIWNhc2VEYXRhKSByZXR1cm4gbnVsbFxuXG4gIC8vIOygleuLueyEsSDsnZjsi6wg7Kad6rGw66eMIO2RnOyLnCAo7IKs7Jqp65CcIOqygyDspJEpXG4gIGNvbnN0IHF1ZXN0aW9uYWJsZUV2aWRlbmNlID0gY2FzZURhdGEuZXZpZGVuY2UuZmlsdGVyKFxuICAgIChlKSA9PiBlLmxlZ2l0aW1hY3kgIT09ICdsYXdmdWwnICYmIGV2aWRlbmNlU3RhdGVzW2UuaWRdPy5wcmVzZW50ZWQsXG4gIClcblxuICAvLyDruYTqs7XqsJwg67O07Zi466GcIO2ajeuTne2VnCDspp3qsbAgKOygnOyLnOuQnCDqsoMg7KSRKVxuICBjb25zdCBjb25maWRlbnRpYWxFdmlkZW5jZSA9IGNhc2VEYXRhLmV2aWRlbmNlLmZpbHRlcihcbiAgICAoZSkgPT4gZXZpZGVuY2VTdGF0ZXNbZS5pZF0/LmNvbmZpZGVudGlhbFNvdXJjZSAmJiBldmlkZW5jZVN0YXRlc1tlLmlkXT8ucHJlc2VudGVkLFxuICApXG5cbiAgaWYgKHF1ZXN0aW9uYWJsZUV2aWRlbmNlLmxlbmd0aCA9PT0gMCAmJiBjb25maWRlbnRpYWxFdmlkZW5jZS5sZW5ndGggPT09IDApIHJldHVybiBudWxsXG5cbiAgcmV0dXJuIChcbiAgICA8ZGl2IGNsYXNzTmFtZT1cInNwYWNlLXktM1wiPlxuICAgICAgPGgzIGNsYXNzTmFtZT1cInRleHQtc20gZm9udC1ib2xkIHRleHQtYW1iZXItNDAwXCI+4pGjIOymneqxsCDsoJXri7nshLEg7YyQ64uoPC9oMz5cbiAgICAgIDxwIGNsYXNzTmFtZT1cInRleHQteHMgdGV4dC1ncmF5LTUwMFwiPuuLpOydjCDspp3qsbDripQg7Leo65OdIOqzvOygleyXkCDrrLjsoJzqsIAg7J6I7J2EIOyImCDsnojsirXri4jri6QuIO2MkOqysCDqt7zqsbDroZwg7IKs7Jqp7ZWg7KeAIOqysOygle2VmOyEuOyalC48L3A+XG5cbiAgICAgIDxkaXYgY2xhc3NOYW1lPVwic3BhY2UteS0yXCI+XG4gICAgICAgIHtjb25maWRlbnRpYWxFdmlkZW5jZS5tYXAoKGV2KSA9PiB7XG4gICAgICAgICAgY29uc3QgYWxsb3dlZCA9IHZlcmRpY3RJbnB1dC5ldmlkZW5jZUxlZ2FsaXR5W2V2LmlkXVxuICAgICAgICAgIHJldHVybiAoXG4gICAgICAgICAgICA8ZGl2IGtleT17ZXYuaWR9IGNsYXNzTmFtZT1cImJnLWdyYXktODAwLzYwIGJvcmRlciBib3JkZXItcHVycGxlLTgwMC81MCByb3VuZGVkLWxnIHAtM1wiPlxuICAgICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT1cImZsZXggaXRlbXMtY2VudGVyIGdhcC0yIG1iLTJcIj5cbiAgICAgICAgICAgICAgICA8c3BhbiBjbGFzc05hbWU9XCJ0ZXh0LXhzIHB4LTEuNSBweS0wLjUgcm91bmRlZCBiZy1wdXJwbGUtOTAwLzUwIHRleHQtcHVycGxlLTQwMFwiPlxuICAgICAgICAgICAgICAgICAg67mE6rO16rCcIOuztO2YuCDslb3sho1cbiAgICAgICAgICAgICAgICA8L3NwYW4+XG4gICAgICAgICAgICAgICAgPHNwYW4gY2xhc3NOYW1lPVwidGV4dC1zbSBmb250LXNlbWlib2xkIHRleHQtZ3JheS0yMDBcIj57ZXYubmFtZX08L3NwYW4+XG4gICAgICAgICAgICAgIDwvZGl2PlxuICAgICAgICAgICAgICA8cCBjbGFzc05hbWU9XCJ0ZXh0LXhzIHRleHQtZ3JheS00MDAgbWItM1wiPntldi5kZXNjcmlwdGlvbn08L3A+XG4gICAgICAgICAgICAgIDxwIGNsYXNzTmFtZT1cInRleHQteHMgdGV4dC1wdXJwbGUtNDAwLzgwIG1iLTNcIj7snbQg7Kad6rGw64qUIOu5hOqzteqwnOulvCDslb3sho3tlZjqs6Ag7Ja77J2AIOynhOyIoOyXkOyEnCDrgpjsmZTsirXri4jri6QuPC9wPlxuXG4gICAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPVwiZmxleCBnYXAtMlwiPlxuICAgICAgICAgICAgICAgIDxidXR0b25cbiAgICAgICAgICAgICAgICAgIG9uQ2xpY2s9eygpID0+IHNldEV2aWRlbmNlTGVnYWxpdHkoZXYuaWQsIHRydWUpfVxuICAgICAgICAgICAgICAgICAgY2xhc3NOYW1lPXtgZmxleC0xIGJvcmRlciByb3VuZGVkIHB4LTMgcHktMS41IHRleHQteHMgZm9udC1zZW1pYm9sZCB0cmFuc2l0aW9uLWNvbG9ycyAke1xuICAgICAgICAgICAgICAgICAgICBhbGxvd2VkID09PSB0cnVlXG4gICAgICAgICAgICAgICAgICAgICAgPyAnYmctcHVycGxlLTcwMCB0ZXh0LXdoaXRlIGJvcmRlci1wdXJwbGUtNjAwJ1xuICAgICAgICAgICAgICAgICAgICAgIDogJ2JnLWdyYXktODAwIHRleHQtZ3JheS00MDAgYm9yZGVyLWdyYXktNzAwIGhvdmVyOmJvcmRlci1wdXJwbGUtNjAwJ1xuICAgICAgICAgICAgICAgICAgfWB9XG4gICAgICAgICAgICAgICAgPlxuICAgICAgICAgICAgICAgICAg7YyQ6rKwIOq3vOqxsOuhnCDsgqzsmqlcbiAgICAgICAgICAgICAgICA8L2J1dHRvbj5cbiAgICAgICAgICAgICAgICA8YnV0dG9uXG4gICAgICAgICAgICAgICAgICBvbkNsaWNrPXsoKSA9PiBzZXRFdmlkZW5jZUxlZ2FsaXR5KGV2LmlkLCBmYWxzZSl9XG4gICAgICAgICAgICAgICAgICBjbGFzc05hbWU9e2BmbGV4LTEgYm9yZGVyIHJvdW5kZWQgcHgtMyBweS0xLjUgdGV4dC14cyBmb250LXNlbWlib2xkIHRyYW5zaXRpb24tY29sb3JzICR7XG4gICAgICAgICAgICAgICAgICAgIGFsbG93ZWQgPT09IGZhbHNlXG4gICAgICAgICAgICAgICAgICAgICAgPyAnYmctZ3JheS02MDAgdGV4dC13aGl0ZSBib3JkZXItZ3JheS01MDAnXG4gICAgICAgICAgICAgICAgICAgICAgOiAnYmctZ3JheS04MDAgdGV4dC1ncmF5LTQwMCBib3JkZXItZ3JheS03MDAgaG92ZXI6Ym9yZGVyLWdyYXktNTAwJ1xuICAgICAgICAgICAgICAgICAgfWB9XG4gICAgICAgICAgICAgICAgPlxuICAgICAgICAgICAgICAgICAg7YyQ6rKw7JeQ7IScIOygnOyZuFxuICAgICAgICAgICAgICAgIDwvYnV0dG9uPlxuICAgICAgICAgICAgICA8L2Rpdj5cbiAgICAgICAgICAgICAge2FsbG93ZWQgPT09IHRydWUgJiYgKFxuICAgICAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPVwidGV4dC14cyB0ZXh0LXB1cnBsZS00MDAgbXQtMlwiPjxFbW9qaSBjaGFyPVwi4pqg77iPXCIgc2l6ZT17MTJ9IC8+IOu5hOqzteqwnCDslb3sho3snYQg7Ja06riw66m0IOq2jOychCDsoJDsiJjqsIAg7YGs6rKMIOqwkOyGjO2VqeuLiOuLpC48L2Rpdj5cbiAgICAgICAgICAgICAgKX1cbiAgICAgICAgICAgIDwvZGl2PlxuICAgICAgICAgIClcbiAgICAgICAgfSl9XG5cbiAgICAgICAge3F1ZXN0aW9uYWJsZUV2aWRlbmNlLm1hcCgoZXYpID0+IHtcbiAgICAgICAgICBjb25zdCBhbGxvd2VkID0gdmVyZGljdElucHV0LmV2aWRlbmNlTGVnYWxpdHlbZXYuaWRdXG4gICAgICAgICAgcmV0dXJuIChcbiAgICAgICAgICAgIDxkaXYga2V5PXtldi5pZH0gY2xhc3NOYW1lPVwiYmctZ3JheS04MDAvNjAgYm9yZGVyIGJvcmRlci1vcmFuZ2UtODAwLzUwIHJvdW5kZWQtbGcgcC0zXCI+XG4gICAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPVwiZmxleCBpdGVtcy1jZW50ZXIgZ2FwLTIgbWItMlwiPlxuICAgICAgICAgICAgICAgIDxzcGFuIGNsYXNzTmFtZT1cInRleHQteHMgcHgtMS41IHB5LTAuNSByb3VuZGVkIGJnLW9yYW5nZS05MDAvNTAgdGV4dC1vcmFuZ2UtNDAwXCI+XG4gICAgICAgICAgICAgICAgICB7ZXYubGVnaXRpbWFjeSA9PT0gJ3ByaXZhY3lfY29uY2VybicgPyAn7IKs7IOd7ZmcIOy5qO2VtCDshozsp4AnIDogJ+ychOuylSDst6jrk50nfVxuICAgICAgICAgICAgICAgIDwvc3Bhbj5cbiAgICAgICAgICAgICAgICA8c3BhbiBjbGFzc05hbWU9XCJ0ZXh0LXNtIGZvbnQtc2VtaWJvbGQgdGV4dC1ncmF5LTIwMFwiPntldi5uYW1lfTwvc3Bhbj5cbiAgICAgICAgICAgICAgPC9kaXY+XG4gICAgICAgICAgICAgIDxwIGNsYXNzTmFtZT1cInRleHQteHMgdGV4dC1ncmF5LTQwMCBtYi0zXCI+e2V2LmRlc2NyaXB0aW9ufTwvcD5cblxuICAgICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT1cImZsZXggZ2FwLTJcIj5cbiAgICAgICAgICAgICAgICA8YnV0dG9uXG4gICAgICAgICAgICAgICAgICBvbkNsaWNrPXsoKSA9PiBzZXRFdmlkZW5jZUxlZ2FsaXR5KGV2LmlkLCB0cnVlKX1cbiAgICAgICAgICAgICAgICAgIGNsYXNzTmFtZT17YGZsZXgtMSBib3JkZXIgcm91bmRlZCBweC0zIHB5LTEuNSB0ZXh0LXhzIGZvbnQtc2VtaWJvbGQgdHJhbnNpdGlvbi1jb2xvcnMgJHtcbiAgICAgICAgICAgICAgICAgICAgYWxsb3dlZCA9PT0gdHJ1ZVxuICAgICAgICAgICAgICAgICAgICAgID8gJ2JnLW9yYW5nZS03MDAgdGV4dC13aGl0ZSBib3JkZXItb3JhbmdlLTYwMCdcbiAgICAgICAgICAgICAgICAgICAgICA6ICdiZy1ncmF5LTgwMCB0ZXh0LWdyYXktNDAwIGJvcmRlci1ncmF5LTcwMCBob3Zlcjpib3JkZXItb3JhbmdlLTYwMCdcbiAgICAgICAgICAgICAgICAgIH1gfVxuICAgICAgICAgICAgICAgID5cbiAgICAgICAgICAgICAgICAgIO2MkOqysCDqt7zqsbDroZwg7IKs7JqpXG4gICAgICAgICAgICAgICAgPC9idXR0b24+XG4gICAgICAgICAgICAgICAgPGJ1dHRvblxuICAgICAgICAgICAgICAgICAgb25DbGljaz17KCkgPT4gc2V0RXZpZGVuY2VMZWdhbGl0eShldi5pZCwgZmFsc2UpfVxuICAgICAgICAgICAgICAgICAgY2xhc3NOYW1lPXtgZmxleC0xIGJvcmRlciByb3VuZGVkIHB4LTMgcHktMS41IHRleHQteHMgZm9udC1zZW1pYm9sZCB0cmFuc2l0aW9uLWNvbG9ycyAke1xuICAgICAgICAgICAgICAgICAgICBhbGxvd2VkID09PSBmYWxzZVxuICAgICAgICAgICAgICAgICAgICAgID8gJ2JnLWdyYXktNjAwIHRleHQtd2hpdGUgYm9yZGVyLWdyYXktNTAwJ1xuICAgICAgICAgICAgICAgICAgICAgIDogJ2JnLWdyYXktODAwIHRleHQtZ3JheS00MDAgYm9yZGVyLWdyYXktNzAwIGhvdmVyOmJvcmRlci1ncmF5LTUwMCdcbiAgICAgICAgICAgICAgICAgIH1gfVxuICAgICAgICAgICAgICAgID5cbiAgICAgICAgICAgICAgICAgIO2MkOqysOyXkOyEnCDsoJzsmbhcbiAgICAgICAgICAgICAgICA8L2J1dHRvbj5cbiAgICAgICAgICAgICAgPC9kaXY+XG4gICAgICAgICAgICAgIHthbGxvd2VkID09PSB0cnVlICYmIChcbiAgICAgICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT1cInRleHQteHMgdGV4dC1vcmFuZ2UtNDAwIG10LTJcIj48RW1vamkgY2hhcj1cIuKaoO+4j1wiIHNpemU9ezEyfSAvPiDsnITrspUg7Kad6rGwIOyCrOyaqSDsi5wg6raM7JyEIOygkOyImOqwgCDqsJDshoztlanri4jri6QuPC9kaXY+XG4gICAgICAgICAgICAgICl9XG4gICAgICAgICAgICA8L2Rpdj5cbiAgICAgICAgICApXG4gICAgICAgIH0pfVxuICAgICAgPC9kaXY+XG4gICAgPC9kaXY+XG4gIClcbn1cbiJdfQ==

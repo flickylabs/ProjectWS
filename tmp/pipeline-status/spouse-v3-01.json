@@ -1,0 +1,64 @@
+{
+  "schemaVersion": 1,
+  "owner": "Codex",
+  "workspace": "D:\\ProjectWS",
+  "activeWorkstream": {
+    "name": "spouse-v3-01 staged validation",
+    "caseId": "spouse-v3-01",
+    "status": "completed",
+    "currentStep": "completed",
+    "mode": "auto",
+    "validateOnly": true,
+    "steps": [
+      {
+        "id": "stage1b",
+        "name": "runtime_template_validate",
+        "status": "completed",
+        "script": "scripts/validate-runtime-template-coverage.cjs",
+        "scriptArgs": [
+          "--case",
+          "spouse-v3-01"
+        ],
+        "logPath": "tmp/spouse-v3-01-runtime-template-validate.txt"
+      },
+      {
+        "id": "stage2b",
+        "name": "scripted_template_validate",
+        "status": "completed",
+        "script": "scripts/validate-scripted-template-coverage.cjs",
+        "scriptArgs": [
+          "--case",
+          "spouse-v3-01"
+        ],
+        "logPath": "tmp/spouse-v3-01-scripted-template-validate.txt"
+      },
+      {
+        "id": "stage2c",
+        "name": "scripted_semantic_validate",
+        "status": "completed",
+        "script": "scripts/validate-scripted-semantic-quality.cjs",
+        "scriptArgs": [
+          "--case",
+          "spouse-v3-01"
+        ],
+        "logPath": "tmp/spouse-v3-01-semantic-validate.txt"
+      },
+      {
+        "id": "stage3",
+        "name": "scripted_validate",
+        "status": "completed",
+        "action": "scripted_validate",
+        "logPath": "tmp/spouse-v3-01-stage3-validate.txt"
+      }
+    ]
+  },
+  "updatedAt": "2026-04-11T05:00:52.514Z",
+  "lastKnownValidation": {
+    "caseId": "spouse-v3-01",
+    "logPath": "tmp/spouse-v3-01-stage3-validate.txt",
+    "summary": {
+      "WARN": 134
+    },
+    "note": "spouse-v3-01 staged validation completed."
+  }
+}

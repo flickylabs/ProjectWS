@@ -1,0 +1,93 @@
+{
+  "schemaVersion": 1,
+  "owner": "Codex",
+  "workspace": "D:\\ProjectWS",
+  "activeWorkstream": {
+    "name": "civic-new-07 staged scripted generation",
+    "caseId": "civic-new-07",
+    "status": "completed",
+    "currentStep": "completed",
+    "steps": [
+      {
+        "id": "stage1a",
+        "name": "runtime_case_generate",
+        "status": "completed",
+        "script": "scripts/case-stage1a-runtime.cjs",
+        "scriptArgs": [
+          "--case",
+          "civic-new-07"
+        ],
+        "outputPath": "src/data/cases/generated/civic-new-07.json"
+      },
+      {
+        "id": "stage1b",
+        "name": "runtime_template_validate",
+        "status": "completed",
+        "script": "scripts/validate-runtime-template-coverage.cjs",
+        "scriptArgs": [
+          "--case",
+          "civic-new-07"
+        ],
+        "logPath": "tmp/civic-new-07-runtime-template-validate.txt"
+      },
+      {
+        "id": "stage1c",
+        "name": "mediation_dialogues_generate",
+        "status": "completed",
+        "script": "scripts/case-stage1e-mediation-dialogues.cjs",
+        "scriptArgs": [
+          "--case",
+          "civic-new-07"
+        ],
+        "outputPath": "src/data/dialogues/mediation/civic-new-07.json"
+      },
+      {
+        "id": "stage2",
+        "name": "scripted_bootstrap_generate",
+        "status": "completed",
+        "script": "scripts/case-stage2-scripted-bootstrap.cjs",
+        "scriptArgs": [
+          "--case",
+          "civic-new-07"
+        ],
+        "outputPath": "src/data/scriptedText/civic-new-07.json"
+      },
+      {
+        "id": "stage2b",
+        "name": "scripted_template_validate",
+        "status": "completed",
+        "script": "scripts/validate-scripted-template-coverage.cjs",
+        "scriptArgs": [
+          "--case",
+          "civic-new-07"
+        ],
+        "logPath": "tmp/civic-new-07-scripted-template-validate.txt"
+      },
+      {
+        "id": "stage2c",
+        "name": "scripted_semantic_validate",
+        "status": "completed",
+        "script": "scripts/validate-scripted-semantic-quality.cjs",
+        "scriptArgs": [
+          "--case",
+          "civic-new-07"
+        ],
+        "logPath": "tmp/civic-new-07-semantic-validate.txt"
+      },
+      {
+        "id": "stage3",
+        "name": "scripted_validate",
+        "status": "completed",
+        "action": "scripted_validate",
+        "logPath": "tmp/civic-new-07-stage3-validate.txt"
+      }
+    ]
+  },
+  "updatedAt": "2026-04-08T21:49:21.336Z",
+  "lastKnownValidation": {
+    "caseId": "civic-new-07",
+    "logPath": "tmp/civic-new-07-stage3-validate.txt",
+    "summary": {},
+    "note": "civic-new-07 staged pipeline completed."
+  }
+}

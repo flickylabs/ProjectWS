@@ -83,6 +83,7 @@ export async function generatePhase2Dialogues(caseData: CaseData): Promise<Omit<
 
 /** LLM이 반환하는 speaker 값을 정규화 (이름 매칭 포함) */
 function normalizeSpeaker(raw: string, nameA?: string, nameB?: string): 'a' | 'b' | 'system' {
+  if (!raw) return 'system'
   const s = raw.toLowerCase().trim()
   // 기본 키워드 매칭
   if (s === 'a' || s === 'partya' || s === 'party_a') return 'a'

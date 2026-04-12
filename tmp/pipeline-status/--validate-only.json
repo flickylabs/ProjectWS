@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "owner": "Codex",
+  "workspace": "D:\\ProjectWS",
+  "activeWorkstream": {
+    "name": "--validate-only staged validation",
+    "caseId": "--validate-only",
+    "status": "blocked",
+    "currentStep": "stage1b",
+    "mode": "auto",
+    "validateOnly": true,
+    "steps": [
+      {
+        "id": "stage1b",
+        "name": "runtime_template_validate",
+        "status": "failed",
+        "script": "scripts/validate-runtime-template-coverage.cjs",
+        "scriptArgs": [
+          "--case",
+          "--validate-only"
+        ],
+        "logPath": "tmp/--validate-only-runtime-template-validate.txt"
+      },
+      {
+        "id": "stage2b",
+        "name": "scripted_template_validate",
+        "status": "pending",
+        "script": "scripts/validate-scripted-template-coverage.cjs",
+        "scriptArgs": [
+          "--case",
+          "--validate-only"
+        ],
+        "logPath": "tmp/--validate-only-scripted-template-validate.txt"
+      },
+      {
+        "id": "stage2c",
+        "name": "scripted_semantic_validate",
+        "status": "pending",
+        "script": "scripts/validate-scripted-semantic-quality.cjs",
+        "scriptArgs": [
+          "--case",
+          "--validate-only"
+        ],
+        "logPath": "tmp/--validate-only-semantic-validate.txt"
+      },
+      {
+        "id": "stage3",
+        "name": "scripted_validate",
+        "status": "pending",
+        "action": "scripted_validate",
+        "logPath": "tmp/--validate-only-stage3-validate.txt"
+      }
+    ],
+    "blockingIssues": [
+      "scripts/validate-runtime-template-coverage.cjs exited with status 1"
+    ]
+  },
+  "updatedAt": "2026-04-10T03:05:25.608Z"
+}

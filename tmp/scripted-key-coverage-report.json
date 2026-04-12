@@ -1,0 +1,14 @@
+{
+  "generatedAt": "2026-04-09T19:57:35.896Z",
+  "scriptedCaseCount": 117,
+  "manifestCaseCount": 117,
+  "manifestOnlyCount": 0,
+  "scriptedOnlyCount": 0,
+  "missingInterrogationCaseCount": 0,
+  "missingEvidencePresentCaseCount": 0,
+  "totalMissingInterrogationKeys": 0,
+  "totalMissingEvidencePresentKeys": 0,
+  "manifestOnly": [],
+  "scriptedOnly": [],
+  "casesWithIssues": []
+}

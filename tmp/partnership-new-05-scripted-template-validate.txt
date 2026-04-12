@@ -1,0 +1,3 @@
+[scripted-template-coverage] case=partnership-new-05
+summary={}
+PASS

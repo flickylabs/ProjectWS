@@ -1,0 +1,61 @@
+{
+  "caseId": "case-spouse-legacy-01",
+  "dialogues": [
+    {
+      "speaker": "system",
+      "text": "초기 진술이 끝났다. 아내는 구체적인 정황을 들이밀고, 남편은 최소한만 인정하며 버티고 있다.",
+      "relatedDisputes": [
+        "d-1"
+      ],
+      "behaviorHint": null
+    },
+    {
+      "speaker": "a",
+      "text": "재판관님, 제가 블랙박스만 본 게 아닙니다. 제 남편 차에서 영수증 묶음을 찾았습니다. 머리끈, 틴트, 헤어롤 — 제가 안 쓰는 물건들입니다.",
+      "relatedDisputes": [
+        "d-1"
+      ],
+      "behaviorHint": "증거를 하나씩 꺼내듯 차분하지만 날카롭게 짚는다."
+    },
+    {
+      "speaker": "b",
+      "text": "그건… 제가 산 겁니다. 아는 사람한테 필요한 것들이었습니다.",
+      "relatedDisputes": [
+        "d-1"
+      ],
+      "behaviorHint": "당황해서 잠깐 말이 끊긴다. 인정은 하되 설명은 최소화한다."
+    },
+    {
+      "speaker": "a",
+      "text": "자기야, 틴트를 누구한테 사다 준 거야. 아는 사람이 누군데. 10년을 같이 살았는데 나는 그 사람이 누군지도 모르잖아.",
+      "relatedDisputes": [
+        "d-1"
+      ],
+      "behaviorHint": "남편에게 직접 반말로 추궁한다. 분노 속에 서운함이 섞여 있다."
+    },
+    {
+      "speaker": "b",
+      "text": "… 지금은 말하기가 어려워. 집안 사정이 있어서 그래.",
+      "relatedDisputes": [
+        "d-1"
+      ],
+      "behaviorHint": "시선을 내리며 최소한의 단어로만 답한다. 말끝이 흐려진다."
+    },
+    {
+      "speaker": "a",
+      "text": "재판관님, 오피스텔, 새벽 전화, 여자 물건 영수증. 이게 셋이 겹치는데 딴살림이 아니면 뭡니까.",
+      "relatedDisputes": [
+        "d-1"
+      ],
+      "behaviorHint": "재판관에게 정황을 정리하며 확신을 강화한다."
+    },
+    {
+      "speaker": "system",
+      "text": "남편은 방문과 영수증을 인정했지만, 상대가 누구인지 밝히지 않고 있다. 아내의 의심은 더 굳어졌다. 심문을 통해 진실을 파악해야 한다.",
+      "relatedDisputes": [
+        "d-1"
+      ],
+      "behaviorHint": null
+    }
+  ]
+}

@@ -12,16 +12,20 @@ import { GamePhase } from '../../../types'
 import { recordHistory } from '../../layout/HistoryPanel'
 import { CAMPAIGN_STAGE_MAP, getCampaignStageKey } from '../../verdict/VerdictScreen'
 
-type VerdictStep = 'fact' | 'responsibility' | 'solution' | 'legality' | 'confirm'
+type VerdictStep = 'fact' | 'responsibility' | 'solution' | 'confirm'
 type FlatItem = { step: VerdictStep; subIdx: number }
 
 const STEPS: { id: VerdictStep; label: string }[] = [
-  { id: 'fact', label: '사실 인정' },
-  { id: 'responsibility', label: '책임 배분' },
-  { id: 'solution', label: '해결책' },
-  { id: 'legality', label: '증거 적법성' },
-  { id: 'confirm', label: '판결 확정' },
+  { id: 'fact', label: '쟁점 판단' },
+  { id: 'responsibility', label: '안건 책임' },
+  { id: 'solution', label: '해결안' },
+  { id: 'confirm', label: '판결문' },
 ]
+
+function getRelLabel(type: string): string {
+  const map: Record<string, string> = { spouse: '부부', family: '가족', friend: '친구', neighbor: '이웃', partnership: '동업', workplace: '직장', tenant_landlord: '세입자' }
+  return map[type] ?? type
+}
 
 export default function PCVerdictScreen() {
   const [globalIdx, setGlobalIdx] = useState(0)
@@ -38,32 +42,32 @@ export default function PCVerdictScreen() {
     return null
   }
 
-  const disputes = caseData.disputes
+  const disputeVisibility = useStore((s) => s.discovery.disputeVisibility)
+  const disputes = caseData.disputes.filter((d) => {
+    const vis = disputeVisibility[d.id]
+    return !vis || vis.visibility !== 'hidden'
+  })
   const activeDisputes = disputes.filter(
     (item) => verdictInput.factFindings[item.id] && verdictInput.factFindings[item.id] !== 'pending',
   )
   const solutionCategories = Object.keys(caseData.solutions)
   const factCount = Object.keys(verdictInput.factFindings).length
   const allFactsJudged = factCount >= disputes.length
-  const hasLegalityIssue = caseData.evidence.some(
-    (item) => (item.legitimacy !== 'lawful' || evidenceStates[item.id]?.confidentialSource) && evidenceStates[item.id]?.presented,
-  )
 
   const flatSteps: FlatItem[] = useMemo(
     () => [
       ...disputes.map((_, index) => ({ step: 'fact' as VerdictStep, subIdx: index })),
       ...activeDisputes.map((_, index) => ({ step: 'responsibility' as VerdictStep, subIdx: index })),
       ...solutionCategories.map((_, index) => ({ step: 'solution' as VerdictStep, subIdx: index })),
-      ...(hasLegalityIssue ? [{ step: 'legality' as VerdictStep, subIdx: 0 }] : []),
       { step: 'confirm' as VerdictStep, subIdx: 0 },
     ],
-    [activeDisputes, disputes, hasLegalityIssue, solutionCategories],
+    [activeDisputes, disputes, solutionCategories],
   )
 
   const safeGlobalIdx = Math.min(globalIdx, flatSteps.length - 1)
   const current = flatSteps[safeGlobalIdx]
   const currentStep = current.step
-  const visibleSteps = STEPS.filter((item) => item.id !== 'legality' || hasLegalityIssue)
+  const visibleSteps = STEPS
 
   const currentStepIndex = visibleSteps.findIndex((item) => item.id === currentStep)
 
@@ -273,7 +277,9 @@ export default function PCVerdictScreen() {
                   </div>
                   <div className="pc-verdict-fact__buttons">
                     {(['false', 'pending', 'true'] as const).map((value) => {
-                      const labels = { false: '아니다', pending: '모르겠다', true: '그렇다' }
+                      const nameA = caseData.duo.partyA.name
+                      const nameB = caseData.duo.partyB.name
+                      const labels = { false: `거짓 (${nameA} 측 부정)`, pending: '보류', true: `사실 (${nameB} 측 인정)` }
                       const active = currentFinding === value
                       return (
                         <button
@@ -344,6 +350,9 @@ export default function PCVerdictScreen() {
                     <span className="is-a">{resp.a}%</span>
                     <span className="is-b">{resp.b}%</span>
                   </div>
+                  <div className="pc-verdict-resp__direction">
+                    A ({caseData.duo.partyA.name}) {resp.a}% &larr; &rarr; {resp.b}% B ({caseData.duo.partyB.name})
+                  </div>
                 </div>
               )
             })() : null}
@@ -372,50 +381,45 @@ export default function PCVerdictScreen() {
                       )
                     })}
                   </div>
+                  <p className="pc-verdict-solution__hint">복수 선택 가능합니다</p>
                 </div>
               )
             })() : null}
 
-            {currentStep === 'legality' ? (
-              <div className="pc-verdict-legality">
-                <h2>증거 적법성 검토</h2>
-                <p>제시된 증거 중 적법성이 의심되는 항목이 있습니다.</p>
-              </div>
-            ) : null}
 
-            {currentStep === 'confirm' ? (
-              <div className="pc-verdict-confirm">
-                <div className="pc-verdict-confirm__hero">
-                  <div className="pc-verdict-confirm__eyebrow">FINAL REVIEW</div>
-                  <h2>판결을 확정할 준비가 되었습니다.</h2>
-                  <p>쟁점별 판단, 책임 배분, 해결책을 한 번 더 확인한 뒤 망치를 내리세요.</p>
-                </div>
+            {currentStep === 'confirm' ? (() => {
+              const now = new Date()
+              const caseNumber = `${getRelLabel(caseData.duo.relationshipType)}-${now.getFullYear()}${String(now.getMonth()+1).padStart(2,'0')}${String(now.getDate()).padStart(2,'0')}${String(now.getHours()).padStart(2,'0')}${String(now.getMinutes()).padStart(2,'0')}${String(now.getSeconds()).padStart(2,'0')}-SP001`
+              return (
+                <div className="pc-verdict-confirm">
+                  <div className="pc-verdict-confirm__case-id">사건번호 {caseNumber}</div>
 
-                <div className="pc-verdict-confirm__list">
-                  {summaryDisputes.map((item) => (
-                    <div className="pc-verdict-confirm__item" key={item.id}>
-                      <div>
+                  <div className="pc-verdict-confirm__summary">
+                    <h3>쟁점별 판단 요약</h3>
+                    {summaryDisputes.map((item) => (
+                      <div className="pc-verdict-confirm__item" key={item.id}>
                         <strong>{item.name}</strong>
-                        <span>
-                          {item.fact === 'true'
-                            ? '사실'
-                            : item.fact === 'false'
-                              ? '거짓'
-                              : item.fact === 'pending'
-                                ? '보류'
-                                : '미판단'}
+                        <span className={`pc-verdict-confirm__badge is-${item.fact ?? 'none'}`}>
+                          {item.fact === 'true' ? '사실' : item.fact === 'false' ? '거짓' : item.fact === 'pending' ? '보류' : '미판단'}
                         </span>
+                        {item.responsibility ? (
+                          <em>{caseData.duo.partyA.name} {item.responsibility.a}% / {caseData.duo.partyB.name} {item.responsibility.b}%</em>
+                        ) : null}
                       </div>
-                      <em>
-                        {item.responsibility
-                          ? `${caseData.duo.partyA.name} ${item.responsibility.a}% / ${caseData.duo.partyB.name} ${item.responsibility.b}%`
-                          : '책임 배분 대기'}
-                      </em>
+                    ))}
+                  </div>
+
+                  {verdictInput.selectedSolutions.length > 0 ? (
+                    <div className="pc-verdict-confirm__solutions">
+                      <h3>선택한 해결안</h3>
+                      {verdictInput.selectedSolutions.map((sol, i) => (
+                        <div className="pc-verdict-confirm__sol" key={i}>{sol}</div>
+                      ))}
                     </div>
-                  ))}
+                  ) : null}
                 </div>
-              </div>
-            ) : null}
+              )
+            })() : null}
           </div>
 
           <div className="pc-verdict-footer">

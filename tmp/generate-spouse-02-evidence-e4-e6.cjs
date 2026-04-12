@@ -1,0 +1,550 @@
+const fs = require('fs')
+const path = require('path')
+
+const OUT = path.join(__dirname, 'spouse-02-evidence-e4-e6.json')
+
+const entries = [
+  {
+    key: 'a|e-4|early|institutional',
+    variants: [
+      {
+        id: 'a|e-4|early|institutional#1',
+        text: '학교 메일 헤더 원본입니다. 발신 계정의 복구 정보와 첨부 해시가 도윤 정보와 일치합니다.',
+        behaviorHint: '기관 원본의 일치 사실을 먼저 짚는다.',
+      },
+      {
+        id: 'a|e-4|early|institutional#2',
+        text: '학교가 보관한 헤더 전문을 먼저 보십시오. 복구 이메일과 전화번호 뒷자리가 도윤 정보와 같고, 첨부 해시도 일치합니다.',
+        behaviorHint: '원본과 계정 연결을 차분히 제시한다.',
+      },
+      {
+        id: 'a|e-4|early|institutional#3',
+        text: '익명 글처럼 보였지만, 발신 흔적은 학교 메일 서버에 남아 있습니다. 헤더와 계정 복구 정보가 도윤 쪽으로 이어집니다.',
+        behaviorHint: '익명성 뒤의 식별 흔적을 드러낸다.',
+      },
+      {
+        id: 'a|e-4|early|institutional#4',
+        text: '학교 메일 서버 원본에는 발신 IP와 복구 정보가 그대로 남아 있습니다. 그 정보가 도윤 쪽과 맞아떨어집니다.',
+        behaviorHint: '서버 원본의 신뢰성을 강조한다.',
+      },
+      {
+        id: 'a|e-4|early|institutional#5',
+        text: '겉으로는 익명 메일이지만, 헤더는 익명이 아닙니다. 복구 이메일과 첨부 해시가 도윤 정보와 연결됩니다.',
+        behaviorHint: '겉모습과 실제 식별 가능성을 대비한다.',
+      },
+    ],
+  },
+  {
+    key: 'a|e-4|mid|institutional',
+    variants: [
+      {
+        id: 'a|e-4|mid|institutional#1',
+        text: '학교가 받은 익명 메일의 헤더는 복구 정보까지 남아 있습니다. 그래서 발신 계정이 도윤 정보와 이어집니다.',
+        behaviorHint: '헤더 정보와 계정 연결을 묶어 말한다.',
+      },
+      {
+        id: 'a|e-4|mid|institutional#2',
+        text: '학교 서버 원본을 대조하면, 익명 계정이라도 복구 이메일과 전화번호를 숨기지 못했다는 점이 보입니다. 그 흔적이 도윤 쪽으로 갑니다.',
+        behaviorHint: '대조 확인의 결과를 중심으로 설명한다.',
+      },
+      {
+        id: 'a|e-4|mid|institutional#3',
+        text: '이 자료는 단순한 캡처가 아닙니다. 서버 원본 헤더와 첨부 해시가 모두 도윤 정보와 맞아떨어집니다.',
+        behaviorHint: '캡처와 원본의 차이를 분명히 한다.',
+      },
+      {
+        id: 'a|e-4|mid|institutional#4',
+        text: '학교 담당자도 헤더 원본에서 같은 결과를 확인했습니다. 익명 발신처럼 보였지만 실제 경로는 도윤 계정 쪽으로 이어집니다.',
+        behaviorHint: '기관 확인 결과를 덧댄다.',
+      },
+      {
+        id: 'a|e-4|mid|institutional#5',
+        text: '헤더의 복구 정보와 첨부 해시가 함께 남아 있어서, 익명 메일이라고만 볼 수 없습니다. 연결점은 도윤 정보입니다.',
+        behaviorHint: '복수의 식별 단서를 연결한다.',
+      },
+    ],
+  },
+  {
+    key: 'a|e-4|late|institutional',
+    variants: [
+      {
+        id: 'a|e-4|late|institutional#1',
+        text: '학교가 받은 익명 메일은 결국 기관 원본으로 추적됩니다. 복구 정보와 해시가 도윤 쪽과 일치합니다.',
+        behaviorHint: '사건의 결론으로 이어지는 형태로 말한다.',
+      },
+      {
+        id: 'a|e-4|late|institutional#2',
+        text: '더 뒤로 가도 결과는 같습니다. 학교 서버 헤더 원본이 남아 있고, 도윤 정보와 맞는 복구 흔적이 보입니다.',
+        behaviorHint: '검증 반복의 결론을 정리한다.',
+      },
+      {
+        id: 'a|e-4|late|institutional#3',
+        text: '익명 글처럼 시작됐지만, 원본을 보면 익명이 아닙니다. 헤더와 첨부 해시가 도윤 정보와 연결됩니다.',
+        behaviorHint: '익명성의 붕괴를 강조한다.',
+      },
+      {
+        id: 'a|e-4|late|institutional#4',
+        text: '학교 기록을 끝까지 따라가면 발신 경로가 드러납니다. 복구 이메일, 전화번호, 해시값이 모두 도윤 쪽입니다.',
+        behaviorHint: '추적의 종착점을 말한다.',
+      },
+      {
+        id: 'a|e-4|late|institutional#5',
+        text: '이 증거가 말하는 건 한 가지입니다. 익명 발신처럼 보였던 메일의 실경로가 도윤 정보와 맞습니다.',
+        behaviorHint: '핵심 결론만 압축한다.',
+      },
+    ],
+  },
+  {
+    key: 'a|e-5|early|other',
+    variants: [
+      {
+        id: 'a|e-5|early|other#1',
+        text: '가정용 복합기 스캔 기록입니다. 도윤 계정으로 종결서가 스캔됐고, 가족클라우드로 이어졌습니다.',
+        behaviorHint: '가정 장비의 스캔 경로를 바로 말한다.',
+      },
+      {
+        id: 'a|e-5|early|other#2',
+        text: '복합기 관리자 로그를 보면, 종결서가 도윤 계정으로 스캔된 뒤 가족클라우드로 동기화됐습니다.',
+        behaviorHint: '관리자 로그와 동기화 경로를 함께 말한다.',
+      },
+      {
+        id: 'a|e-5|early|other#3',
+        text: '이건 누가 우연히 본 화면이 아닙니다. 가정용 복합기에서 도윤 계정으로 스캔된 뒤 클라우드에 올린 기록입니다.',
+        behaviorHint: '우연이 아닌 준비된 경로임을 드러낸다.',
+      },
+      {
+        id: 'a|e-5|early|other#4',
+        text: '스캔 시각이 익명 글보다 사흘 앞섭니다. 종결서가 미리 준비됐다는 뜻입니다.',
+        behaviorHint: '시간 차를 먼저 짚는다.',
+      },
+      {
+        id: 'a|e-5|early|other#5',
+        text: '가정용 복합기와 가족클라우드 기록이 연결됩니다. 종결서가 도윤 계정으로 스캔돼 저장됐습니다.',
+        behaviorHint: '장비와 클라우드의 연결을 강조한다.',
+      },
+    ],
+  },
+  {
+    key: 'a|e-5|mid|other',
+    variants: [
+      {
+        id: 'a|e-5|mid|other#1',
+        text: '도윤 계정으로 스캔된 종결서가 가족클라우드에 남아 있습니다. 스캔 시각은 익명 글 게시 3일 전입니다.',
+        behaviorHint: '스캔 시각과 후속 저장을 정리한다.',
+      },
+      {
+        id: 'a|e-5|mid|other#2',
+        text: '복합기 로그와 클라우드 이력을 같이 보면, 준비 없이 나온 유출이 아니라 미리 스캔해 둔 기록입니다.',
+        behaviorHint: '사전 준비성을 강조한다.',
+      },
+      {
+        id: 'a|e-5|mid|other#3',
+        text: '파일명도 의미가 있습니다. 종결서가 `school_ref`로 저장되고 자동 동기화됐습니다.',
+        behaviorHint: '파일명과 의도를 연결한다.',
+      },
+      {
+        id: 'a|e-5|mid|other#4',
+        text: '복합기 관리자 계정 기준으로 보면 도윤이 직접 쓴 스캔 경로입니다. 가족클라우드 업로드도 같은 흐름입니다.',
+        behaviorHint: '계정 주체성과 업로드 흐름을 말한다.',
+      },
+      {
+        id: 'a|e-5|mid|other#5',
+        text: '이 자료는 단순한 출력물이 아니라 스캔 후 저장 경로까지 남긴 기록입니다. 도윤 계정과 가족클라우드가 묶입니다.',
+        behaviorHint: '스캔 이후의 저장 경로까지 포함한다.',
+      },
+    ],
+  },
+  {
+    key: 'a|e-5|late|other',
+    variants: [
+      {
+        id: 'a|e-5|late|other#1',
+        text: '결국 남는 건 복합기와 클라우드 기록입니다. 종결서는 도윤 계정으로 스캔됐고 익명 글보다 사흘 먼저 움직였습니다.',
+        behaviorHint: '시간과 경로를 결론 형태로 말한다.',
+      },
+      {
+        id: 'a|e-5|late|other#2',
+        text: '뒤로 갈수록 준비된 흔적이 선명합니다. `school_ref` 파일명으로 클라우드에 동기화된 사실이 남아 있습니다.',
+        behaviorHint: '파일명 흔적을 결론으로 끌어온다.',
+      },
+      {
+        id: 'a|e-5|late|other#3',
+        text: '이건 즉흥적인 반응이 아닙니다. 스캔 시각이 익명 글보다 3일 앞선다는 점이 그걸 보여줍니다.',
+        behaviorHint: '사전 준비와 즉흥성 부재를 강조한다.',
+      },
+      {
+        id: 'a|e-5|late|other#4',
+        text: '종결서가 도윤 계정으로 스캔된 뒤 가족클라우드로 이어진 기록이 그대로 남아 있습니다. 경로는 숨겨지지 않았습니다.',
+        behaviorHint: '기록의 남음 자체를 말한다.',
+      },
+      {
+        id: 'a|e-5|late|other#5',
+        text: '처음부터 끝까지 보면 스캔 기록이 유출 경로입니다. 복합기와 클라우드가 같은 이야기를 하고 있습니다.',
+        behaviorHint: '전체 경로를 한 문장으로 묶는다.',
+      },
+    ],
+  },
+  {
+    key: 'a|e-6|early|self',
+    variants: [
+      {
+        id: 'a|e-6|early|self#1',
+        text: '학교 파일 보류는 신고 때문이 아닙니다. 전입 확인서 주소가 먼저 맞지 않아 자동 보류된 것입니다.',
+        behaviorHint: '행정 오류와 신고 무관성을 먼저 짚는다.',
+      },
+      {
+        id: 'a|e-6|early|self#2',
+        text: '관리사무소 정정서와 학교 메모를 같이 보면, 보류 원인이 익명 메일보다 앞섰다는 점이 보입니다.',
+        behaviorHint: '보류 시점이 앞선다는 점을 강조한다.',
+      },
+      {
+        id: 'a|e-6|early|self#3',
+        text: '지금 확인되는 건 행정 오류입니다. 구 동호수 기재가 틀려서 파일이 먼저 멈췄습니다.',
+        behaviorHint: '오류 원인을 간단히 정리한다.',
+      },
+      {
+        id: 'a|e-6|early|self#4',
+        text: '익명 메일과 연결하기 전에, 학교의 자동 보류 규정이 이미 작동했습니다.',
+        behaviorHint: '연결 시도보다 시스템 원인을 먼저 둔다.',
+      },
+      {
+        id: 'a|e-6|early|self#5',
+        text: '정정 공문이 말해 주는 건 하나입니다. 파일 보류는 신고가 아니라 주소 오류 때문이었습니다.',
+        behaviorHint: '공문의 결론을 압축한다.',
+      },
+    ],
+  },
+  {
+    key: 'a|e-6|mid|self',
+    variants: [
+      {
+        id: 'a|e-6|mid|self#1',
+        text: '학교 파일 보류는 익명 메일이 아니라 전입 확인서 오류에서 시작됐습니다. 보류 시각이 더 앞섭니다.',
+        behaviorHint: '시간선과 원인을 함께 말한다.',
+      },
+      {
+        id: 'a|e-6|mid|self#2',
+        text: '관리사무소 정정 공문과 학교 메모가 같은 결론을 가리킵니다. 구 동호수 기재 오류가 보류 원인입니다.',
+        behaviorHint: '기관 문서의 일치를 강조한다.',
+      },
+      {
+        id: 'a|e-6|mid|self#3',
+        text: '이 자료는 누군가의 신고를 설명하는 게 아닙니다. 행정실이 먼저 파일을 멈춘 이유를 설명합니다.',
+        behaviorHint: '신고축이 아닌 행정축으로 전환한다.',
+      },
+      {
+        id: 'a|e-6|mid|self#4',
+        text: '학교 내부 메모를 보면 보류는 자동 규정에 따른 것이었습니다. 익명 메일보다 앞선 조치였습니다.',
+        behaviorHint: '자동 규정 작동을 강조한다.',
+      },
+      {
+        id: 'a|e-6|mid|self#5',
+        text: '전입 확인서 정정이 늦어지면 파일이 먼저 멈춥니다. 이번 보류가 바로 그 경우입니다.',
+        behaviorHint: '행정 절차의 일반 규칙을 보여준다.',
+      },
+    ],
+  },
+  {
+    key: 'a|e-6|late|self',
+    variants: [
+      {
+        id: 'a|e-6|late|self#1',
+        text: '결론은 같습니다. 파일 보류는 익명 메일 때문이 아니라 주소 정정 문제 때문이었습니다.',
+        behaviorHint: '최종 결론형으로 정리한다.',
+      },
+      {
+        id: 'a|e-6|late|self#2',
+        text: '학교 메모와 정정 공문을 끝까지 비교하면 신고 축이 아니라 행정 오류 축입니다.',
+        behaviorHint: '축 전환을 분명히 한다.',
+      },
+      {
+        id: 'a|e-6|late|self#3',
+        text: '보류 시각이 앞섰다는 점 때문에, 이 사안은 익명 메일과 분리해서 봐야 합니다.',
+        behaviorHint: '시점 차이를 핵심으로 둔다.',
+      },
+      {
+        id: 'a|e-6|late|self#4',
+        text: '이 자료가 말하는 건 신고가 아니라 자동 보류입니다. 구 동호수 오류가 먼저였습니다.',
+        behaviorHint: '오류 원인과 결과를 압축한다.',
+      },
+      {
+        id: 'a|e-6|late|self#5',
+        text: '더 이상 돌릴 필요 없이, 학교 파일은 행정 오류 때문에 멈춘 것입니다.',
+        behaviorHint: '직설적으로 행정 오류를 결론낸다.',
+      },
+    ],
+  },
+  {
+    key: 'b|e-4|early|institutional',
+    variants: [
+      {
+        id: 'b|e-4|early|institutional#1',
+        text: '학교 메일 헤더 원본을 보면, 도윤 정보와 이어지는 발신 흔적이 남아 있습니다.',
+        behaviorHint: '발신 흔적과 계정 연결을 말한다.',
+      },
+      {
+        id: 'b|e-4|early|institutional#2',
+        text: '복구 이메일과 전화번호 뒤 네 자리가 도윤 정보와 같습니다. 익명처럼 보이지만 원본은 다르게 말합니다.',
+        behaviorHint: '복구 정보 일치를 강조한다.',
+      },
+      {
+        id: 'b|e-4|early|institutional#3',
+        text: '학교 서버 원본에는 발신 IP와 첨부 해시가 그대로 남아 있습니다. 그 경로가 도윤 쪽으로 이어집니다.',
+        behaviorHint: '서버 원본의 신뢰성을 강조한다.',
+      },
+      {
+        id: 'b|e-4|early|institutional#4',
+        text: '헤더를 보면 익명 발신이 아니라는 점이 드러납니다. 복구 정보가 도윤 정보와 맞습니다.',
+        behaviorHint: '익명성 붕괴를 짚는다.',
+      },
+      {
+        id: 'b|e-4|early|institutional#5',
+        text: '학교가 보관한 메일 원본은 기록을 숨기지 못했습니다. 복구 정보와 해시가 도윤 쪽입니다.',
+        behaviorHint: '기관 원본이 남긴 단서를 말한다.',
+      },
+    ],
+  },
+  {
+    key: 'b|e-4|mid|institutional',
+    variants: [
+      {
+        id: 'b|e-4|mid|institutional#1',
+        text: '학교 메일 서버 헤더를 대조하면 복구 정보가 도윤 정보와 같습니다. 익명으로 보기 어렵습니다.',
+        behaviorHint: '대조 결과를 차분히 말한다.',
+      },
+      {
+        id: 'b|e-4|mid|institutional#2',
+        text: '학교 담당자도 원본 헤더에서 같은 일치를 확인했습니다. 익명 발신처럼 보였지만 실제 경로는 도윤 쪽입니다.',
+        behaviorHint: '기관 확인과 실제 경로를 묶는다.',
+      },
+      {
+        id: 'b|e-4|mid|institutional#3',
+        text: '첨부 파일 해시와 복구 정보가 같이 남아 있어, 발신자를 지우기 어렵습니다. 도윤 정보가 그대로 남습니다.',
+        behaviorHint: '복수의 식별 단서를 연결한다.',
+      },
+      {
+        id: 'b|e-4|mid|institutional#4',
+        text: '이건 캡처본이 아니라 헤더 원본입니다. 원본은 도윤 정보와 맞아떨어집니다.',
+        behaviorHint: '원본성과 일치를 강조한다.',
+      },
+      {
+        id: 'b|e-4|mid|institutional#5',
+        text: '학교 메일 기록을 끝까지 보면 익명성은 성립하지 않습니다. 복구 이메일과 전화번호가 도윤 쪽입니다.',
+        behaviorHint: '익명성의 붕괴를 정리한다.',
+      },
+    ],
+  },
+  {
+    key: 'b|e-4|late|institutional',
+    variants: [
+      {
+        id: 'b|e-4|late|institutional#1',
+        text: '결국 원본은 도윤 쪽으로 돌아갑니다. 헤더와 해시가 그걸 보여줍니다.',
+        behaviorHint: '결론만 압축한다.',
+      },
+      {
+        id: 'b|e-4|late|institutional#2',
+        text: '더 뒤로 가도 같은 결과입니다. 학교 헤더 원본의 복구 정보가 도윤 정보와 일치합니다.',
+        behaviorHint: '반복 검증의 결론을 말한다.',
+      },
+      {
+        id: 'b|e-4|late|institutional#3',
+        text: '익명 메일로 보였던 흔적이 원본에서 무너집니다. 발신 경로는 도윤 정보입니다.',
+        behaviorHint: '익명성 붕괴를 다시 정리한다.',
+      },
+      {
+        id: 'b|e-4|late|institutional#4',
+        text: '학교 기록의 끝에는 도윤 정보가 남습니다. 복구 이메일, 전화번호, 해시가 모두 같습니다.',
+        behaviorHint: '종착점을 말한다.',
+      },
+      {
+        id: 'b|e-4|late|institutional#5',
+        text: '이 증거가 남기는 결론은 단순합니다. 익명 발신처럼 보였지만 실경로는 도윤 쪽입니다.',
+        behaviorHint: '핵심 결론만 압축한다.',
+      },
+    ],
+  },
+  {
+    key: 'b|e-5|early|self',
+    variants: [
+      {
+        id: 'b|e-5|early|self#1',
+        text: '복합기 스캔 기록에 도윤 계정이 남아 있습니다. 종결서가 가족클라우드로 이어졌습니다.',
+        behaviorHint: '스캔 기록과 계정 연결을 말한다.',
+      },
+      {
+        id: 'b|e-5|early|self#2',
+        text: '복합기 관리자 로그를 보면, 도윤 계정으로 종결서를 스캔한 뒤 클라우드에 올린 흔적이 남아 있습니다.',
+        behaviorHint: '관리자 로그와 업로드 경로를 묶는다.',
+      },
+      {
+        id: 'b|e-5|early|self#3',
+        text: '이건 우발적 출력이 아닙니다. 종결서를 스캔해 `school_ref`로 저장한 뒤 가족클라우드에 동기화한 기록입니다.',
+        behaviorHint: '준비된 저장 경로를 강조한다.',
+      },
+      {
+        id: 'b|e-5|early|self#4',
+        text: '스캔 시각이 익명 글 게시 사흘 전입니다. 도윤이 미리 준비해 둔 경로입니다.',
+        behaviorHint: '시간 차를 먼저 말한다.',
+      },
+      {
+        id: 'b|e-5|early|self#5',
+        text: '가정용 복합기와 도윤 계정, 가족클라우드가 한 줄로 이어집니다. 스캔 기록이 남아 있습니다.',
+        behaviorHint: '장비와 클라우드 경로를 압축한다.',
+      },
+    ],
+  },
+  {
+    key: 'b|e-5|mid|self',
+    variants: [
+      {
+        id: 'b|e-5|mid|self#1',
+        text: '도윤 계정으로 스캔된 종결서가 가족클라우드에 남아 있습니다. 시점은 익명 글보다 3일 앞섭니다.',
+        behaviorHint: '시점과 경로를 함께 말한다.',
+      },
+      {
+        id: 'b|e-5|mid|self#2',
+        text: '복합기 로그와 클라우드 이력을 같이 보면, 미리 준비한 경로가 분명합니다. 스캔 후 저장까지 이어집니다.',
+        behaviorHint: '사전 준비성을 강조한다.',
+      },
+      {
+        id: 'b|e-5|mid|self#3',
+        text: '`school_ref`라는 파일명까지 남아 있습니다. 학교 제출용으로 돌렸다는 뜻입니다.',
+        behaviorHint: '파일명과 의도를 연결한다.',
+      },
+      {
+        id: 'b|e-5|mid|self#4',
+        text: '도윤 계정 기준으로 스캔과 동기화가 연결됩니다. 종결서는 그 경로를 따라 움직였습니다.',
+        behaviorHint: '계정과 이동 경로를 묶는다.',
+      },
+      {
+        id: 'b|e-5|mid|self#5',
+        text: '이 자료는 단순한 스캔본이 아닙니다. 스캔 후 클라우드 동기화까지 남은 경로입니다.',
+        behaviorHint: '경로의 연속성을 강조한다.',
+      },
+    ],
+  },
+  {
+    key: 'b|e-5|late|self',
+    variants: [
+      {
+        id: 'b|e-5|late|self#1',
+        text: '끝까지 보면 종결서는 도윤 계정으로 스캔됐고, 익명 글보다 사흘 먼저 움직였습니다.',
+        behaviorHint: '결론형으로 압축한다.',
+      },
+      {
+        id: 'b|e-5|late|self#2',
+        text: '`school_ref`로 저장된 뒤 가족클라우드에 남았습니다. 준비된 경로였습니다.',
+        behaviorHint: '파일명과 준비성을 결론으로 묶는다.',
+      },
+      {
+        id: 'b|e-5|late|self#3',
+        text: '충동보다 준비에 가까운 기록입니다. 스캔 시각이 익명 글보다 3일 앞섭니다.',
+        behaviorHint: '사전 준비와 즉흥성 부재를 말한다.',
+      },
+      {
+        id: 'b|e-5|late|self#4',
+        text: '복합기와 클라우드 기록은 같은 말을 합니다. 도윤 계정으로 스캔된 종결서가 남아 있습니다.',
+        behaviorHint: '기록의 일치를 강조한다.',
+      },
+      {
+        id: 'b|e-5|late|self#5',
+        text: '이 경로는 숨겨지지 않았습니다. 스캔에서 동기화까지 도윤 흔적이 남아 있습니다.',
+        behaviorHint: '전체 경로를 결론처럼 제시한다.',
+      },
+    ],
+  },
+  {
+    key: 'b|e-6|early|institutional',
+    variants: [
+      {
+        id: 'b|e-6|early|institutional#1',
+        text: '학교 파일 보류는 신고 때문이 아닙니다. 전입 확인서의 구 동호수 오류가 먼저였습니다.',
+        behaviorHint: '행정 오류와 신고 무관성을 먼저 말한다.',
+      },
+      {
+        id: 'b|e-6|early|institutional#2',
+        text: '정정 공문과 학교 메모를 보면, 보류 시각이 익명 메일보다 앞섭니다. 원인은 행정 오류입니다.',
+        behaviorHint: '보류 시점과 원인을 함께 보여준다.',
+      },
+      {
+        id: 'b|e-6|early|institutional#3',
+        text: '관리사무소 정정서가 먼저 있고, 학교 보류 메모가 뒤따릅니다. 순서는 신고가 아니라 오류입니다.',
+        behaviorHint: '문서 순서를 먼저 짚는다.',
+      },
+      {
+        id: 'b|e-6|early|institutional#4',
+        text: '이건 익명 메일과 연결된 보류가 아닙니다. 주소 정정 문제 때문에 파일이 먼저 멈췄습니다.',
+        behaviorHint: '신고축이 아닌 행정축으로 돌린다.',
+      },
+      {
+        id: 'b|e-6|early|institutional#5',
+        text: '학교 내부 규정이 자동으로 작동한 기록입니다. 구 동호수 기재 오류가 원인입니다.',
+        behaviorHint: '자동 보류 규정을 강조한다.',
+      },
+    ],
+  },
+  {
+    key: 'b|e-6|mid|institutional',
+    variants: [
+      {
+        id: 'b|e-6|mid|institutional#1',
+        text: '파일 보류는 익명 메일이 아니라 행정 오류에서 시작됐습니다. 시각도 그보다 앞섭니다.',
+        behaviorHint: '시점 차이와 원인을 함께 말한다.',
+      },
+      {
+        id: 'b|e-6|mid|institutional#2',
+        text: '관리사무소 정정 공문과 학교 메모가 같은 결론을 보여 줍니다. 구 동호수 기재 오류입니다.',
+        behaviorHint: '기관 문서의 일치를 강조한다.',
+      },
+      {
+        id: 'b|e-6|mid|institutional#3',
+        text: '행정실 메모를 보면 신고가 아니라 자동 보류였습니다. 익명 메일과는 분리해서 봐야 합니다.',
+        behaviorHint: '행정실 기록으로 분리한다.',
+      },
+      {
+        id: 'b|e-6|mid|institutional#4',
+        text: '정정 공문과 보류 메모를 같이 보면, 원인은 주소 오류입니다. 신고를 근거로 한 보류가 아닙니다.',
+        behaviorHint: '원인과 오해를 분리한다.',
+      },
+      {
+        id: 'b|e-6|mid|institutional#5',
+        text: '이 자료는 학교가 먼저 멈춘 이유를 설명합니다. 보류는 익명 메일보다 앞선 행정 조치였습니다.',
+        behaviorHint: '행정 조치의 선행을 말한다.',
+      },
+    ],
+  },
+  {
+    key: 'b|e-6|late|institutional',
+    variants: [
+      {
+        id: 'b|e-6|late|institutional#1',
+        text: '결론은 행정 오류입니다. 학교 파일 보류는 신고가 아니라 주소 정정 문제 때문이었습니다.',
+        behaviorHint: '최종 결론형으로 정리한다.',
+      },
+      {
+        id: 'b|e-6|late|institutional#2',
+        text: '마지막까지 확인해도 순서는 같습니다. 보류 시각이 익명 메일보다 앞섭니다.',
+        behaviorHint: '시점 차이를 핵심으로 둔다.',
+      },
+      {
+        id: 'b|e-6|late|institutional#3',
+        text: '학교 메모와 정정 공문을 끝까지 맞춰 보면 신고 축이 아니라 자동 보류 축입니다.',
+        behaviorHint: '축 전환을 분명히 한다.',
+      },
+      {
+        id: 'b|e-6|late|institutional#4',
+        text: '파일은 먼저 멈췄고, 원인은 전입 확인서의 구 동호수 오류였습니다.',
+        behaviorHint: '원인과 결과를 압축한다.',
+      },
+      {
+        id: 'b|e-6|late|institutional#5',
+        text: '이 증거가 말하는 건 신고가 아닙니다. 학교 행정이 먼저 보류를 걸었습니다.',
+        behaviorHint: '신고 오해를 직접 차단한다.',
+      },
+    ],
+  },
+]
+
+fs.writeFileSync(OUT, `${JSON.stringify(entries, null, 2)}\n`, 'utf8')
+console.log(`wrote ${entries.length} entries to ${OUT}`)

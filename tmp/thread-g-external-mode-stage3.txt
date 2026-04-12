@@ -1,0 +1,3 @@
+[validate-scripted-text] case=spouse-05
+[validate-scripted-text] summary={}
+[validate-scripted-text] PASS

@@ -122,9 +122,12 @@ export default function PCHomeScreen() {
     setSelectedHistoryKey(getHistoryKey(selectedTrackEntries[0]))
   }, [selectedHistoryKey, selectedTrackEntries])
 
-  const startCase = (caseData: CaseData) => {
+  const startCase = async (caseData: CaseData) => {
     stopBgmFn()
     setLLMMode(llmConnected ?? false)
+    // ScriptedText 번들 미리 로드 (lazy 로드 대응)
+    const { preloadScriptedTextBundle } = await import('../../../engine/scriptedTextLoader')
+    await preloadScriptedTextBundle(caseData.caseId)
     initializeCase(caseData)
   }
 

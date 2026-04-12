@@ -1,0 +1,309 @@
+{
+  "duo": {
+    "partyA": {
+      "name": "노유진",
+      "age": 31,
+      "occupation": "출판사 홍보 AE",
+      "incomeBracket": "mid",
+      "archetype": "planner",
+      "speechStyle": "'일단 결론부터 말씀드리면, 159만 8천원이었고요' — 불편할수록 숫자부터 꺼내 방어선을 친다. 감정은 뒤로 미루고, 궁지에 몰리면 설명을 더 촘촘하게 붙여 합리적이었다는 인상을 만들려 든다.",
+      "pride": 7,
+      "fear": "새 회사 첫 미팅에 구겨진 셔츠를 입고 나가는 사람, 수습 발표에서 빛나지 못하는 사람으로 보이는 것이 두렵다.",
+      "riskAppetite": 4,
+      "digitalHabit": "household_sheet",
+      "dailyRoutine": "아침 7시에 집을 나서 지하철로 편도 70분을 이동하고, 점심시간에는 회사 메신저와 카드앱을 번갈아 확인한다.",
+      "sensitivePoints": [
+        "이직 성공 여부",
+        "옷차림과 업무 적응",
+        "비상금 사용"
+      ],
+      "verbalTells": [
+        {
+          "type": "over_precision",
+          "trigger": "lying",
+          "pattern": "'160만원이 아니라 159만 8천원이었어.' 숨긴 지출을 들킬수록 숫자가 정밀해진다. 정확함으로 성실함을 증명하려는 버릇이지만 준비된 변명처럼 들린다."
+        },
+        {
+          "type": "minimization",
+          "trigger": "shame",
+          "pattern": "'잠깐 메꾼 거야', '며칠만 쓰려던 거야.' 160만원짜리 인출을 '잠깐'과 '며칠'로 축소한다. 행동의 규모를 말로 줄여 죄책감을 덜려는 버릇이다."
+        },
+        {
+          "type": "future_offset",
+          "trigger": "cornered",
+          "pattern": "'왜 미리 말 안 했어?'에 '다음 급여 들어오면 바로 채울 거야'로 답한다. 현재의 잘못을 미래 계획으로 대체하는 회피 패턴이다."
+        }
+      ],
+      "callTerms": {
+        "toPartner": "오빠",
+        "toJudge": "제 남편",
+        "angry": "황인호 씨!"
+      }
+    },
+    "partyB": {
+      "name": "황인호",
+      "age": 34,
+      "occupation": "오토바이 정비기사",
+      "incomeBracket": "mid",
+      "archetype": "improviser",
+      "speechStyle": "'건조기도 질투하네~' 불편한 이야기를 농담으로 넘기다가 추궁이 오면 '했어. 내가 했어.' 짧게 끊는다. 자기 요령을 '이건 상식이야' 톤으로 밀어붙이고, 맞받아칠수록 '내가 살림 모르냐'를 먼저 꺼낸다.",
+      "pride": 6,
+      "fear": "아내가 이직에 성공한 달에 적금도 못 지키고 건조기 할부나 질러대는 남편 — 가계를 굴릴 줄 모르는 사람이라는 시선이 두렵다.",
+      "riskAppetite": 6,
+      "digitalHabit": "card_alerts",
+      "dailyRoutine": "오전에는 정비소 오픈 준비, 오후에는 출장 수리, 밤에는 배달기사 커뮤니티와 카드 승인 알림을 함께 본다.",
+      "sensitivePoints": [
+        "가장 역할",
+        "생활가전 구매",
+        "현금 흐름 통제"
+      ],
+      "verbalTells": [
+        {
+          "type": "joke_shield",
+          "trigger": "lying",
+          "pattern": "'건조기도 질투하네~', '빨래가 나한테 고마워할 걸?' 찔리는 질문이 올수록 농담 톤이 높아진다. 웃음으로 추궁 타이밍을 흐트러뜨리는 버릇이다."
+        },
+        {
+          "type": "commonsense_frame",
+          "trigger": "defensive",
+          "pattern": "'이 정도는 다들 해. 적금 잠깐 멈추는 거, 누구나 하잖아.' 몰래 내린 결정을 세상 상식으로 포장한다. 반론하려면 '다들'이라는 벽부터 깨야 한다."
+        },
+        {
+          "type": "question_flip",
+          "trigger": "cornered",
+          "pattern": "'그래 건조기 84만원, 인정해. 그럼 네 백화점 건은?' 자기 지출을 묻는 순간 상대 지출로 화살을 돌린다. 반사적 되묻기다."
+        }
+      ],
+      "callTerms": {
+        "toPartner": "유진아",
+        "toJudge": "제 아내",
+        "angry": "노유진 씨!"
+      }
+    },
+    "relationshipLedger": [
+      {
+        "id": "ledger-1",
+        "category": "confirmed",
+        "description": "유진이 이직을 확정한 날 밤, 두 사람은 약속했다 — '수습 기간 두 달, 50만원 넘는 돈은 반드시 먼저 상의하자.' 둘 다 기억하는 분명한 합의다. 그리고 둘 다 깼다.",
+        "isReal": true,
+        "whoRemembersAccurately": "both",
+        "whoDistorts": "none",
+        "distortionDirection": "",
+        "currentlyResolved": "surface_only",
+        "emotionalResidue": "strong",
+        "connectionToCurrent": "direct"
+      },
+      {
+        "id": "ledger-2",
+        "category": "distorted",
+        "description": "작년 겨울, 인호가 타이어비 45만원을 메우려고 적금 이체를 한 달 미뤘다. 인호는 '금방 원상복구했다'고, 유진은 '그때도 혼자 결정했다'고 기억한다.",
+        "isReal": true,
+        "whoRemembersAccurately": "both",
+        "whoDistorts": "both",
+        "distortionDirection": "A: '그때도 말 없이 돌렸다' / B: '그때는 살림 지키려고 임시로 조정한 거다'",
+        "currentlyResolved": "unresolved",
+        "emotionalResidue": "mild",
+        "connectionToCurrent": "indirect"
+      },
+      {
+        "id": "ledger-3",
+        "category": "silenced",
+        "description": "유진은 '정장 없이 미팅 나가면 끝'이라는 불안을 말하지 못했다. 인호도 아내의 불안을 눈치챘지만 묻지 않았다. 그 침묵이 지금 갈등을 키웠다.",
+        "isReal": true,
+        "whoRemembersAccurately": "both",
+        "whoDistorts": "none",
+        "distortionDirection": "",
+        "currentlyResolved": "surface_only",
+        "emotionalResidue": "strong",
+        "connectionToCurrent": "direct"
+      }
+    ],
+    "socialGraph": [
+      {
+        "id": "tp-1",
+        "slot": "family_1",
+        "name": "황미정 (인호의 누나)",
+        "relationTo": "b",
+        "knowledgeScope": "인호가 아침 세탁 동선을 줄이려고 건조기 할부를 서둘렀다는 사정을 안다. 사치가 아니라 생활 효율 판단이었다는 맥락을 증언할 수 있는 인물이다.",
+        "witnessedDirectly": false,
+        "bias": "pro_b",
+        "distortionRisk": "unconscious",
+        "witnessProfile": {
+          "age": 37,
+          "occupation": "인호의 누나",
+          "relationToA": "노유진와는 이 사건을 통해 알게 됨",
+          "relationToB": "인호의 누나",
+          "sentimentToA": -10,
+          "sentimentToB": 60,
+          "speechStyle": "동생 걱정이 앞서지만 사실은 사실대로 말하려 한다. 감정이 올라오면 직설적이 된다.",
+          "addressJudge": "재판관님",
+          "addressA": "유진씨",
+          "addressB": "인호씨"
+        },
+        "addressA": "유진",
+        "addressB": "인호"
+      },
+      {
+        "id": "tp-2",
+        "slot": "acquaintance_1",
+        "name": "임도현 (유진의 온보딩 동기)",
+        "relationTo": "a",
+        "knowledgeScope": "수습 기간 외부 미팅 시 정장 필수라는 복장 기준과, 교통비·복지비가 익월 정산이라는 점을 직접 알고 있다.",
+        "witnessedDirectly": false,
+        "bias": "pro_a",
+        "distortionRisk": "accurate",
+        "witnessProfile": {
+          "age": 31,
+          "occupation": "출판사 마케팅팀",
+          "relationToA": "유진의 온보딩 동기",
+          "relationToB": "황인호와는 이 사건을 통해 알게 됨",
+          "sentimentToA": 60,
+          "sentimentToB": -10,
+          "speechStyle": "편하게 말하다가 재판관 앞에서는 존댓말로 돌아간다. 친구의 입장을 자연스럽게 대변한다.",
+          "addressJudge": "재판관님",
+          "addressA": "유진",
+          "addressB": "인호씨"
+        },
+        "addressA": "유진씨",
+        "addressB": "인호씨"
+      },
+      {
+        "id": "tp-3",
+        "slot": "institutional",
+        "name": "손주희 (출판사 급여·복지 담당)",
+        "relationTo": "both",
+        "knowledgeScope": "유진의 첫 급여일이 3주 늦춰진 사실과 교통비·업무복 보전 규정을 인사 시스템 기록으로 확인할 수 있다.",
+        "witnessedDirectly": true,
+        "bias": "neutral",
+        "distortionRisk": "accurate",
+        "witnessProfile": {
+          "age": 37,
+          "occupation": "출판사 급여·복지 담당",
+          "relationToA": "노유진을 업무상 알고 있음",
+          "relationToB": "황인호을 업무상 알고 있음",
+          "sentimentToA": 20,
+          "sentimentToB": 20,
+          "speechStyle": "사실 위주로 간결하게 답한다. 직업적 용어를 섞되 감정은 절제한다.",
+          "addressJudge": "재판관님",
+          "addressA": "노유진씨",
+          "addressB": "황인호씨"
+        },
+        "addressA": "유진씨",
+        "addressB": "인호씨"
+      }
+    ],
+    "relationshipType": "spouse"
+  },
+  "disputes": [
+    {
+      "id": "d-1",
+      "name": "유진의 비상금 160만원 비밀 인출",
+      "truth": true,
+      "truthDescription": "유진은 인호에게 한마디 상의 없이 공동 비상금에서 160만원을 빼냈다. 수습용 정장, 구두, 3개월 정기권. 목적은 합리적이었지만, 숨긴 것 자체가 약속 위반이다.",
+      "judgmentStatement": "유진은 비상금 160만원을 비밀 인출했다."
+    },
+    {
+      "id": "d-2",
+      "name": "인호의 적금 두 달치 자동이체 중단",
+      "truth": true,
+      "truthDescription": "인호는 생활비가 빠듯해지자 적금 자동이체를 두 달 정지하고, 그 돈을 생활비와 건조기 초회금으로 돌려썼다. 유진에게는 한마디도 하지 않았다.",
+      "judgmentStatement": "인호는 적금 자동이체를 두 달 중단했다."
+    },
+    {
+      "id": "d-3",
+      "name": "백화점 정장 결제 — 사치인가 수습 필수품인가",
+      "truth": false,
+      "truthDescription": "인호가 의심한 백화점 결제는 대부분 수습 복장 필수품이었다. 정기권과 구두 일부는 익월 복지비로 보전될 항목이었다. 사치가 아니라 출근 준비였다.",
+      "judgmentStatement": "인호의 결제는 수습 필수품이다."
+    },
+    {
+      "id": "d-4",
+      "name": "50만원 사전 상의 약속 쌍방 위반",
+      "truth": true,
+      "truthDescription": "유진은 비상금 160만원을 몰래 인출했고, 인호는 적금을 멈추고 건조기 84만원 할부를 혼자 질렀다. 둘 다 50만원 약속을 어겼다. 방법만 달랐을 뿐, 약속을 깬 건 똑같다.",
+      "judgmentStatement": "유진과 인호는 약속을 위반했다."
+    },
+    {
+      "id": "d-5",
+      "name": "이직 직후 가계 공백 — 누구 한 사람 탓인가",
+      "truth": false,
+      "truthDescription": "가계 공백은 한쪽 탓이 아니다. 유진의 인출, 인호의 적금 중단과 건조기 할부가 같은 주에 겹쳤고, 급여일 3주 지연이 구멍을 더 키웠다.",
+      "judgmentStatement": "가계 공백은 유진과 인호 탓이 아니다."
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e-1",
+      "name": "공동 비상금 계좌 인출내역",
+      "description": "이직 첫 주, 공동 비상금 계좌에서 160만원이 유진 명의 인증으로 빠져나간 은행 원본 거래내역이다. 인출 시각과 인증 수단이 고스란히 찍혀 있다.",
+      "subjectParty": "both",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-1",
+        "d-4",
+        "d-5"
+      ],
+      "requiredLieState": null
+    },
+    {
+      "id": "e-2",
+      "name": "온보딩 안내문과 정기권 영수증",
+      "description": "온보딩 포털 복장 기준, 3개월 정기권 영수증, 업무복 보전 규정이 하나로 묶인 자료다. 160만원이 어디에 쓰였는지 항목별로 대조할 수 있다.",
+      "subjectParty": "a",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-1",
+        "d-3"
+      ],
+      "requiredLieState": "S3"
+    },
+    {
+      "id": "e-3",
+      "name": "인호가 캡처한 카드 승인 알림 묶음",
+      "description": "인호가 새벽 1시 18분에 유진 잠금 화면을 촬영한 이미지다. 백화점 카드 승인 알림이 연달아 보이지만 품목이나 회사 보전 여부는 알 수 없다.",
+      "subjectParty": "a",
+      "legitimacy": "privacy_concern",
+      "proves": [
+        "d-3"
+      ],
+      "requiredLieState": null
+    },
+    {
+      "id": "e-4",
+      "name": "회사 복장 가이드와 복지비 지급 공지",
+      "description": "유진의 첫 출근 전날 회사가 보낸 사내 메일이다. 정장·구두 필수가 명시돼 있고, 교통비와 업무복 일부는 익월 복지비로 보전된다고 안내돼 있다.",
+      "subjectParty": "a",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-3"
+      ],
+      "requiredLieState": null
+    },
+    {
+      "id": "e-5",
+      "name": "적금 자동이체 변경기록과 건조기 할부 계약서",
+      "description": "인호가 적금 자동이체를 두 달 정지한 은행 기록과, 같은 주 84만원 건조기 할부 계약서다. 적금을 멈춘 돈으로 초회금을 낸 흐름이 읽힌다.",
+      "subjectParty": "b",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-2",
+        "d-4",
+        "d-5"
+      ],
+      "requiredLieState": null
+    },
+    {
+      "id": "e-6",
+      "name": "생활비 메모장과 건조기 배송 완료 문자",
+      "description": "인호 메모앱의 '첫 급여 들어오면 적금 다시 채움, 건조기 할부 3회차부터 정상 납부' 메모와 배송 완료 문자다. 나름의 계획은 있었지만 유진에게는 공유하지 않았다.",
+      "subjectParty": "b",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-2",
+        "d-4",
+        "d-5"
+      ],
+      "requiredLieState": "S2"
+    }
+  ]
+}

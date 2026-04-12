@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useMemo, useState, type DragEvent } from 'react'
 import { useStore } from '../../../store/useGameStore'
 import type { CaseData, DialogueEntry } from '../../../types'
+import type { DisputeVisibilityEntry } from '../../../types/discovery'
 import { HOTBAR_DRAG_TYPE } from '../hotbar/pcHotbarConfig'
 import PCSvgIcon from '../icons/PCSvgIcon'
 import { getPcFaceSymbolId } from '../icons/pcIconUtils'
@@ -40,9 +41,11 @@ const COPY = {
 export default function PCImportantNotesSection() {
   const dialogueLog = useStore((s) => s.dialogueLog)
   const caseData = useStore((s) => s.caseData)
+  const disputeVisibility = useStore((s) => s.discovery.disputeVisibility)
   const [pinnedNotes, setPinnedNotes] = useState<PcPinnedNote[]>([])
   const [draggingNoteId, setDraggingNoteId] = useState<string | null>(null)
   const [noteOrder, setNoteOrder] = useState<string[]>([])
+  const [disputeTab, setDisputeTab] = useState<string | null>(null)
 
   const speakerNameMap = useMemo(() => {
     return new Map<DialogueEntry['speaker'], string>([
@@ -123,6 +126,11 @@ export default function PCImportantNotesSection() {
     return [...visibleNotes].sort((left, right) => (rank.get(left.id) ?? 999) - (rank.get(right.id) ?? 999))
   }, [noteOrder, visibleNotes])
 
+  const filteredNotes = useMemo(() => {
+    if (!disputeTab) return orderedNotes
+    return orderedNotes.filter((n) => n.relatedDisputes.includes(disputeTab))
+  }, [disputeTab, orderedNotes])
+
   const addToCombination = useCallback((note: PcPinnedNote) => {
     window.dispatchEvent(new CustomEvent<PcCombinationPanelEventDetail>(PC_ADD_COMBINATION_NOTE_EVENT, { detail: { note } }))
   }, [])
@@ -154,88 +162,117 @@ export default function PCImportantNotesSection() {
     setDraggingNoteId(null)
   }, [draggingNoteId])
 
-  const openNotePanel = useCallback((note: PcPinnedNote) => {
-    const disputeName = getPrimaryDisputeName(note, disputeNameMap)
+  const openNotePanel = useCallback((note: PcPinnedNote, isPinned = false) => {
     const speakerLabel = getSpeakerLabel(note.speaker, speakerNameMap)
 
     openPcInteractionPanel({
-      title: `${disputeName} + ${speakerLabel}`,
-      subtitle: `T${note.turn} 중요 발언`,
-      tone: note.speaker === 'a' ? 'blue' : note.speaker === 'b' ? 'red' : 'gold',
-      body: [getNoteSummary(note.text), '', note.text].join('\n'),
-      tags: note.relatedDisputes.length > 0 ? note.relatedDisputes.map((_, index) => `쟁점 ${index + 1}`) : undefined,
+      title: `Turn ${note.turn}`,
+      subtitle: isPinned ? '중요 발언' : '발언 기록',
+      tone: note.speaker === 'a' ? 'red' : note.speaker === 'b' ? 'blue' : 'gold',
+      variant: 'dialogue',
+      body: note.text,
+      dialogueTurn: note.turn,
+      dialogueSpeaker: note.speaker,
+      dialogueSpeakerName: speakerLabel,
+      dialogueDisputeIds: note.relatedDisputes,
     })
-  }, [disputeNameMap, speakerNameMap])
+  }, [speakerNameMap])
 
   return (
     <section className="sec collapsible pc-important-notes-section">
       <div className="sec-h">
         <PCSvgIcon id="i-pin" size={14} />
-        <span>{COPY.sectionTitle}</span>
-        <span className="cnt">{pinnedNotes.length}</span>
-        <span className="pc-notes-help" title="드래그 앤 드롭으로 순서를 조정할 수 있습니다. 핀 고정은 5개까지 가능합니다.">?</span>
+        <span>발언 노트</span>
+        <span className="cnt">{visibleNotes.length}</span>
+        <span className="pc-notes-help" title="쟁점별 탭을 클릭하면 양측 발언을 대조할 수 있습니다">?</span>
       </div>
 
       <div className="sec-content">
-        <div
-          className="pc-important-notes__scroll"
-          onDragOver={(event) => {
-            if (draggingNoteId) {
-              event.preventDefault()
-            }
-          }}
-          onDrop={() => reorderNote(null)}
-        >
-          {orderedNotes.map((note) => {
-            const summary = getNoteSummary(note.text)
-            const dotClass = note.speaker === 'b' ? 'is-b' : 'is-a'
-
-            return (
-              <div
-                className={`pc-note-card${note.pinned ? ' is-pinned' : ''}${draggingNoteId === note.id ? ' is-dragging' : ''}`}
-                draggable
-                key={note.id}
-                onClick={(event) => {
-                  if (event.shiftKey) {
-                    addToCombination(note)
-                    return
-                  }
-                  openNotePanel(note)
-                }}
-                onDragEnd={() => setDraggingNoteId(null)}
-                onDragOver={(event) => {
-                  if (!draggingNoteId || draggingNoteId === note.id) {
-                    return
-                  }
-                  event.preventDefault()
-                }}
-                onDragStart={(event) => startNoteDrag(event, note)}
-                onDrop={(event) => {
-                  event.preventDefault()
-                  reorderNote(note.id)
-                }}
-              >
-                <div className={`pc-note-card__indicator ${dotClass}`}>
-                  <span className="pc-note-card__dot" />
-                  <span className="pc-note-card__turn">T{note.turn}</span>
-                </div>
-                <div className="pc-note-card__body">
-                  <div className="pc-note-card__summary">{summary}</div>
-                </div>
-                <button
-                  className="pc-note-card__pin"
-                  onClick={(event) => {
-                    event.stopPropagation()
-                    togglePin(note)
-                  }}
-                  type="button"
-                >
-                  <PCSvgIcon id="i-pin" size={12} />
-                </button>
-              </div>
-            )
-          })}
+        {/* Dispute tabs */}
+        <div className="pc-notes-tabs">
+          {caseData?.disputes.filter((d) => { const v = disputeVisibility[d.id]; return !v || v.visibility !== 'hidden' }).map((d) => (
+            <button
+              className={`pc-notes-tab${disputeTab === d.id ? ' is-active' : ''}`}
+              key={d.id}
+              onClick={() => setDisputeTab(disputeTab === d.id ? null : d.id)}
+              type="button"
+            >
+              {d.name.length > 8 ? d.name.slice(0, 8) + '…' : d.name}
+            </button>
+          ))}
+          <button
+            className={`pc-notes-tab${disputeTab === null ? ' is-active' : ''}`}
+            onClick={() => setDisputeTab(null)}
+            type="button"
+          >
+            전체
+          </button>
         </div>
+
+        {/* Content */}
+        {disputeTab ? (
+          /* Expanded: A/B comparison */
+          <div className="pc-notes-compare">
+            <div className="pc-notes-compare__col is-a">
+              <span className="pc-notes-compare__header">{caseData?.duo.partyA.name ?? 'A'}</span>
+              {filteredNotes.filter((n) => n.speaker === 'a').map((n) => (
+                <div className={`pc-notes-compare__entry${n.contradictionMeta ? ' is-contradiction' : ''}`} key={n.id}
+                  onClick={() => openNotePanel(n, n.pinned)}
+                >
+                  <span className="pc-notes-compare__text">{getNoteSummary(n.text)}</span>
+                  {n.contradictionMeta ? <span className="pc-notes-compare__flash">⚡</span> : null}
+                </div>
+              ))}
+            </div>
+            <div className="pc-notes-compare__col is-b">
+              <span className="pc-notes-compare__header">{caseData?.duo.partyB.name ?? 'B'}</span>
+              {filteredNotes.filter((n) => n.speaker === 'b').map((n) => (
+                <div className={`pc-notes-compare__entry${n.contradictionMeta ? ' is-contradiction' : ''}`} key={n.id}
+                  onClick={() => openNotePanel(n, n.pinned)}
+                >
+                  <span className="pc-notes-compare__text">{getNoteSummary(n.text)}</span>
+                  {n.contradictionMeta ? <span className="pc-notes-compare__flash">⚡</span> : null}
+                </div>
+              ))}
+            </div>
+          </div>
+        ) : (
+          /* Default: compact list */
+          <div className="pc-important-notes__scroll"
+            onDragOver={(event) => { if (draggingNoteId) event.preventDefault() }}
+            onDrop={() => reorderNote(null)}
+          >
+            {orderedNotes.map((note) => {
+              const dotClass = note.speaker === 'b' ? 'is-b' : 'is-a'
+              return (
+                <div
+                  className={`pc-note-card${note.pinned ? ' is-pinned' : ''}${draggingNoteId === note.id ? ' is-dragging' : ''}`}
+                  draggable
+                  key={note.id}
+                  onClick={(event) => {
+                    if (event.shiftKey) { addToCombination(note); return }
+                    openNotePanel(note, note.pinned)
+                  }}
+                  onDragEnd={() => setDraggingNoteId(null)}
+                  onDragOver={(event) => { if (draggingNoteId && draggingNoteId !== note.id) event.preventDefault() }}
+                  onDragStart={(event) => startNoteDrag(event, note)}
+                  onDrop={(event) => { event.preventDefault(); reorderNote(note.id) }}
+                >
+                  <div className={`pc-note-card__indicator ${dotClass}`}>
+                    <span className="pc-note-card__dot" />
+                    <span className="pc-note-card__turn">T{note.turn}</span>
+                  </div>
+                  <div className="pc-note-card__body">
+                    <div className="pc-note-card__summary">{getNoteSummary(note.text)}</div>
+                  </div>
+                  <button className="pc-note-card__pin" onClick={(event) => { event.stopPropagation(); togglePin(note) }} type="button">
+                    <PCSvgIcon id="i-pin" size={12} />
+                  </button>
+                </div>
+              )
+            })}
+          </div>
+        )}
       </div>
     </section>
   )

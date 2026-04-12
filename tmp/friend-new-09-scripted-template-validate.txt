@@ -1,0 +1,3 @@
+[scripted-template-coverage] case=friend-new-09
+summary={}
+PASS

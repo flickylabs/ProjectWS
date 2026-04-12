@@ -1,0 +1,3 @@
+[validate-scripted-text] case=workplace-new-06
+[validate-scripted-text] summary={}
+[validate-scripted-text] PASS

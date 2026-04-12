@@ -1,0 +1,18 @@
+[build-pilot-partnership-09-runtime] wrote src/data/cases/generated/partnership-09.json
+[case-stage1a-runtime] wrote src/data/cases/generated/partnership-09.json
+[runtime-template-coverage] case=partnership-09
+summary={}
+PASS
+[case-stage1e-mediation-dialogues] caseId=case-partnership-09
+[case-stage1e-mediation-dialogues] out=src/data/dialogues/mediation/partnership-09.json
+[case-stage2-scripted-bootstrap] wrote src/data/scriptedText/partnership-09.json
+[scripted-template-coverage] case=partnership-09
+summary={}
+PASS
+[scripted-semantic-quality] case=partnership-09
+summary={}
+PASS
+[validate-scripted-text] case=partnership-09
+[validate-scripted-text] summary={}
+[validate-scripted-text] PASS
+[partnership-09] wrote tmp\partnership-09-stage3-validate.txt

@@ -1,0 +1,3 @@
+[scripted-semantic-quality] case=spouse-new-10
+summary={}
+PASS

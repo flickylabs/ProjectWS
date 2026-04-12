@@ -1,0 +1,116 @@
+[validate-scripted-text] case=spouse-v2-01
+[validate-scripted-text] summary={"FAIL":91,"WARN":23}
+- [FAIL] B4 interrogation / a|d-2|S5|fact_pursuit / a-d-2-S5-fact_pursuit-v1: S5 구체적 금액 미포함
+- [FAIL] B4 interrogation / a|d-2|S5|fact_pursuit / a-d-2-S5-fact_pursuit-v2: S5 구체적 금액 미포함
+- [FAIL] B4 interrogation / a|d-2|S5|fact_pursuit / a-d-2-S5-fact_pursuit-v3: S5 구체적 금액 미포함
+- [FAIL] B4 interrogation / a|d-2|S5|fact_pursuit / a-d-2-S5-fact_pursuit-v4: S5 구체적 금액 미포함
+- [FAIL] B4 interrogation / a|d-2|S5|fact_pursuit / a-d-2-S5-fact_pursuit-v5: S5 구체적 금액 미포함
+- [FAIL] B4 interrogation / a|d-2|S5|motive_search / a-d-2-S5-motive_search-v1: S5 구체적 금액 미포함
+- [FAIL] B4 interrogation / a|d-2|S5|motive_search / a-d-2-S5-motive_search-v2: S5 구체적 금액 미포함
+- [FAIL] B4 interrogation / a|d-2|S5|motive_search / a-d-2-S5-motive_search-v3: S5 구체적 금액 미포함
+- [FAIL] B4 interrogation / a|d-2|S5|motive_search / a-d-2-S5-motive_search-v4: S5 구체적 금액 미포함
+- [FAIL] B4 interrogation / a|d-2|S5|motive_search / a-d-2-S5-motive_search-v5: S5 구체적 금액 미포함
+- [FAIL] B4 interrogation / a|d-2|S5|empathy_approach / a-d-2-S5-empathy_approach-v1: S5 구체적 금액 미포함
+- [FAIL] B4 interrogation / a|d-2|S5|empathy_approach / a-d-2-S5-empathy_approach-v2: S5 구체적 금액 미포함
+- [FAIL] B4 interrogation / a|d-2|S5|empathy_approach / a-d-2-S5-empathy_approach-v3: S5 구체적 금액 미포함
+- [FAIL] B4 interrogation / a|d-2|S5|empathy_approach / a-d-2-S5-empathy_approach-v4: S5 구체적 금액 미포함
+- [FAIL] B4 interrogation / a|d-2|S5|empathy_approach / a-d-2-S5-empathy_approach-v5: S5 구체적 금액 미포함
+- [FAIL] B4 interrogation / a|d-3|S5|fact_pursuit / a-d-3-S5-fact_pursuit-v1: S5 구체적 금액 미포함
+- [FAIL] B4 interrogation / a|d-3|S5|fact_pursuit / a-d-3-S5-fact_pursuit-v2: S5 구체적 금액 미포함
+- [FAIL] B4 interrogation / a|d-3|S5|fact_pursuit / a-d-3-S5-fact_pursuit-v3: S5 구체적 금액 미포함
+- [FAIL] B4 interrogation / a|d-3|S5|fact_pursuit / a-d-3-S5-fact_pursuit-v4: S5 구체적 금액 미포함
+- [FAIL] B4 interrogation / a|d-3|S5|fact_pursuit / a-d-3-S5-fact_pursuit-v5: S5 구체적 금액 미포함
+- [FAIL] B4 interrogation / a|d-3|S5|motive_search / a-d-3-S5-motive_search-v1: S5 구체적 금액 미포함
+- [FAIL] B4 interrogation / a|d-3|S5|motive_search / a-d-3-S5-motive_search-v2: S5 구체적 금액 미포함
+- [FAIL] B4 interrogation / a|d-3|S5|motive_search / a-d-3-S5-motive_search-v3: S5 구체적 금액 미포함
+- [FAIL] B4 interrogation / a|d-3|S5|motive_search / a-d-3-S5-motive_search-v4: S5 구체적 금액 미포함
+- [FAIL] B4 interrogation / a|d-3|S5|motive_search / a-d-3-S5-motive_search-v5: S5 구체적 금액 미포함
+- [FAIL] B4 interrogation / a|d-3|S5|empathy_approach / a-d-3-S5-empathy_approach-v1: S5 구체적 금액 미포함
+- [FAIL] B4 interrogation / a|d-3|S5|empathy_approach / a-d-3-S5-empathy_approach-v2: S5 구체적 금액 미포함
+- [FAIL] B4 interrogation / a|d-3|S5|empathy_approach / a-d-3-S5-empathy_approach-v3: S5 구체적 금액 미포함
+- [FAIL] B4 interrogation / a|d-3|S5|empathy_approach / a-d-3-S5-empathy_approach-v4: S5 구체적 금액 미포함
+- [FAIL] B4 interrogation / a|d-3|S5|empathy_approach / a-d-3-S5-empathy_approach-v5: S5 구체적 금액 미포함
+- [FAIL] B4 interrogation / a|d-4|S5|fact_pursuit / a-d-4-S5-fact_pursuit-v1: S5 구체적 금액 미포함
+- [FAIL] B4 interrogation / a|d-4|S5|fact_pursuit / a-d-4-S5-fact_pursuit-v2: S5 구체적 금액 미포함
+- [FAIL] B4 interrogation / a|d-4|S5|fact_pursuit / a-d-4-S5-fact_pursuit-v3: S5 구체적 금액 미포함
+- [FAIL] B4 interrogation / a|d-4|S5|fact_pursuit / a-d-4-S5-fact_pursuit-v4: S5 구체적 금액 미포함
+- [FAIL] B4 interrogation / a|d-4|S5|fact_pursuit / a-d-4-S5-fact_pursuit-v5: S5 구체적 금액 미포함
+- [FAIL] B4 interrogation / a|d-4|S5|motive_search / a-d-4-S5-motive_search-v1: S5 구체적 금액 미포함
+- [FAIL] B4 interrogation / a|d-4|S5|motive_search / a-d-4-S5-motive_search-v2: S5 구체적 금액 미포함
+- [FAIL] B4 interrogation / a|d-4|S5|motive_search / a-d-4-S5-motive_search-v3: S5 구체적 금액 미포함
+- [FAIL] B4 interrogation / a|d-4|S5|motive_search / a-d-4-S5-motive_search-v4: S5 구체적 금액 미포함
+- [FAIL] B4 interrogation / a|d-4|S5|motive_search / a-d-4-S5-motive_search-v5: S5 구체적 금액 미포함
+- [FAIL] B4 interrogation / a|d-4|S5|empathy_approach / a-d-4-S5-empathy_approach-v1: S5 구체적 금액 미포함
+- [FAIL] B4 interrogation / a|d-4|S5|empathy_approach / a-d-4-S5-empathy_approach-v2: S5 구체적 금액 미포함
+- [FAIL] B4 interrogation / a|d-4|S5|empathy_approach / a-d-4-S5-empathy_approach-v3: S5 구체적 금액 미포함
+- [FAIL] B4 interrogation / a|d-4|S5|empathy_approach / a-d-4-S5-empathy_approach-v4: S5 구체적 금액 미포함
+- [FAIL] B4 interrogation / a|d-4|S5|empathy_approach / a-d-4-S5-empathy_approach-v5: S5 구체적 금액 미포함
+- [FAIL] B4 interrogation / b|d-2|S5|fact_pursuit / b-d-2-S5-fact_pursuit-v1: S5 구체적 금액 미포함
+- [FAIL] B4 interrogation / b|d-2|S5|fact_pursuit / b-d-2-S5-fact_pursuit-v3: S5 구체적 금액 미포함
+- [FAIL] B4 interrogation / b|d-2|S5|fact_pursuit / b-d-2-S5-fact_pursuit-v4: S5 구체적 금액 미포함
+- [FAIL] B4 interrogation / b|d-2|S5|fact_pursuit / b-d-2-S5-fact_pursuit-v5: S5 구체적 금액 미포함
+- [FAIL] B4 interrogation / b|d-2|S5|motive_search / b-d-2-S5-motive_search-v1: S5 구체적 금액 미포함
+- [FAIL] B4 interrogation / b|d-2|S5|motive_search / b-d-2-S5-motive_search-v2: S5 구체적 금액 미포함
+- [FAIL] B4 interrogation / b|d-2|S5|motive_search / b-d-2-S5-motive_search-v3: S5 구체적 금액 미포함
+- [FAIL] B4 interrogation / b|d-2|S5|motive_search / b-d-2-S5-motive_search-v4: S5 구체적 금액 미포함
+- [FAIL] B4 interrogation / b|d-2|S5|empathy_approach / b-d-2-S5-empathy_approach-v1: S5 구체적 금액 미포함
+- [FAIL] B4 interrogation / b|d-2|S5|empathy_approach / b-d-2-S5-empathy_approach-v2: S5 구체적 금액 미포함
+- [FAIL] B4 interrogation / b|d-2|S5|empathy_approach / b-d-2-S5-empathy_approach-v4: S5 구체적 금액 미포함
+- [FAIL] B4 interrogation / b|d-2|S5|empathy_approach / b-d-2-S5-empathy_approach-v5: S5 구체적 금액 미포함
+- [FAIL] B4 interrogation / b|d-3|S5|fact_pursuit / b-d-3-S5-fact_pursuit-v1: S5 구체적 금액 미포함
+- [FAIL] B4 interrogation / b|d-3|S5|fact_pursuit / b-d-3-S5-fact_pursuit-v2: S5 구체적 금액 미포함
+- [FAIL] B4 interrogation / b|d-3|S5|fact_pursuit / b-d-3-S5-fact_pursuit-v4: S5 구체적 금액 미포함
+- [FAIL] B4 interrogation / b|d-3|S5|fact_pursuit / b-d-3-S5-fact_pursuit-v5: S5 구체적 금액 미포함
+- [FAIL] B4 interrogation / b|d-3|S5|motive_search / b-d-3-S5-motive_search-v1: S5 구체적 금액 미포함
+- [FAIL] B4 interrogation / b|d-3|S5|motive_search / b-d-3-S5-motive_search-v3: S5 구체적 금액 미포함
+- [FAIL] B4 interrogation / b|d-3|S5|motive_search / b-d-3-S5-motive_search-v4: S5 구체적 금액 미포함
+- [FAIL] B4 interrogation / b|d-3|S5|motive_search / b-d-3-S5-motive_search-v5: S5 구체적 금액 미포함
+- [FAIL] B4 interrogation / b|d-3|S5|empathy_approach / b-d-3-S5-empathy_approach-v1: S5 구체적 금액 미포함
+- [FAIL] B4 interrogation / b|d-3|S5|empathy_approach / b-d-3-S5-empathy_approach-v2: S5 구체적 금액 미포함
+- [FAIL] B4 interrogation / b|d-3|S5|empathy_approach / b-d-3-S5-empathy_approach-v3: S5 구체적 금액 미포함
+- [FAIL] B4 interrogation / b|d-3|S5|empathy_approach / b-d-3-S5-empathy_approach-v4: S5 구체적 금액 미포함
+- [FAIL] B4 interrogation / b|d-4|S5|fact_pursuit / b-d-4-S5-fact_pursuit-v1: S5 구체적 금액 미포함
+- [FAIL] B4 interrogation / b|d-4|S5|fact_pursuit / b-d-4-S5-fact_pursuit-v2: S5 구체적 금액 미포함
+- [FAIL] B4 interrogation / b|d-4|S5|fact_pursuit / b-d-4-S5-fact_pursuit-v3: S5 구체적 금액 미포함
+- [FAIL] B4 interrogation / b|d-4|S5|fact_pursuit / b-d-4-S5-fact_pursuit-v4: S5 구체적 금액 미포함
+- [FAIL] B4 interrogation / b|d-4|S5|motive_search / b-d-4-S5-motive_search-v1: S5 구체적 금액 미포함
+- [FAIL] B4 interrogation / b|d-4|S5|motive_search / b-d-4-S5-motive_search-v2: S5 구체적 금액 미포함
+- [FAIL] B4 interrogation / b|d-4|S5|motive_search / b-d-4-S5-motive_search-v3: S5 구체적 금액 미포함
+- [FAIL] B4 interrogation / b|d-4|S5|empathy_approach / b-d-4-S5-empathy_approach-v1: S5 구체적 금액 미포함
+- [FAIL] B4 interrogation / b|d-4|S5|empathy_approach / b-d-4-S5-empathy_approach-v2: S5 구체적 금액 미포함
+- [FAIL] B4 interrogation / b|d-4|S5|empathy_approach / b-d-4-S5-empathy_approach-v3: S5 구체적 금액 미포함
+- [FAIL] B4 interrogation / b|d-4|S5|empathy_approach / b-d-4-S5-empathy_approach-v5: S5 구체적 금액 미포함
+- [FAIL] EV1 evidence_present / a|e-1|early|institutional / a-e-1-early-institutional-v3: evidence_present에서 증거 직접 반응 부족
+- [FAIL] EV1 evidence_present / a|e-1|mid|institutional / a-e-1-mid-institutional-v3: evidence_present에서 증거 직접 반응 부족
+- [FAIL] EV1 evidence_present / a|e-3|early|institutional / a-e-3-early-institutional-v4: evidence_present에서 증거 직접 반응 부족
+- [FAIL] EV1 evidence_present / a|e-3|mid|institutional / a-e-3-mid-institutional-v4: evidence_present에서 증거 직접 반응 부족
+- [FAIL] EV1 evidence_present / a|e-3|late|institutional / a-e-3-late-institutional-v4: evidence_present에서 증거 직접 반응 부족
+- [WARN] 4-E evidence_present / a|e-6|early|self / a-e-6-early-self-v3: 증거 반응에 해당 증거의 구체 내용이 부족합니다
+- [FAIL] EV1 evidence_present / a|e-6|early|self / a-e-6-early-self-v3: evidence_present에서 증거 직접 반응 부족
+- [WARN] 4-E evidence_present / a|e-6|mid|self / a-e-6-mid-self-v3: 증거 반응에 해당 증거의 구체 내용이 부족합니다
+- [FAIL] EV1 evidence_present / a|e-6|mid|self / a-e-6-mid-self-v3: evidence_present에서 증거 직접 반응 부족
+- [FAIL] EV1 evidence_present / b|e-3|early|self / b-e-3-early-self-v5: evidence_present에서 증거 직접 반응 부족
+- [FAIL] EV1 evidence_present / b|e-3|late|self / b-e-3-late-self-v5: evidence_present에서 증거 직접 반응 부족
+- [FAIL] EV1 evidence_present / b|e-6|early|other / b-e-6-early-other-v3: evidence_present에서 증거 직접 반응 부족
+- [FAIL] EV1 evidence_present / b|e-6|mid|other / b-e-6-mid-other-v3: evidence_present에서 증거 직접 반응 부족
+- [WARN] 4-E dossier / b|dc-1.b.q1|early / b-dc-1.b.q1-early-v1: Dossier 반응에 질문 고유 전제가 거의 반영되지 않았습니다
+- [WARN] 4-E dossier / b|dc-1.b.q1|early / b-dc-1.b.q1-early-v3: Dossier 반응에 질문 고유 전제가 거의 반영되지 않았습니다
+- [WARN] 4-E dossier / b|dc-1.b.q1|mid / b-dc-1.b.q1-mid-v1: Dossier 반응에 질문 고유 전제가 거의 반영되지 않았습니다
+- [WARN] 4-E dossier / b|dc-1.b.q1|mid / b-dc-1.b.q1-mid-v2: Dossier 반응에 질문 고유 전제가 거의 반영되지 않았습니다
+- [WARN] 4-E dossier / b|dc-1.b.q1|mid / b-dc-1.b.q1-mid-v3: Dossier 반응에 질문 고유 전제가 거의 반영되지 않았습니다
+- [WARN] 4-E dossier / b|dc-1.b.q1|late / b-dc-1.b.q1-late-v2: Dossier 반응에 질문 고유 전제가 거의 반영되지 않았습니다
+- [WARN] 4-E dossier / b|dc-1.b.q1|late / b-dc-1.b.q1-late-v3: Dossier 반응에 질문 고유 전제가 거의 반영되지 않았습니다
+- [WARN] 4-E dossier / b|dc-1.b.q2|early / b-dc-1.b.q2-early-v1: Dossier 반응에 질문 고유 전제가 거의 반영되지 않았습니다
+- [WARN] 4-E dossier / b|dc-1.b.q2|early / b-dc-1.b.q2-early-v2: Dossier 반응에 질문 고유 전제가 거의 반영되지 않았습니다
+- [WARN] 4-E dossier / b|dc-1.b.q2|mid / b-dc-1.b.q2-mid-v1: Dossier 반응에 질문 고유 전제가 거의 반영되지 않았습니다
+- [WARN] 4-E dossier / b|dc-1.b.q2|mid / b-dc-1.b.q2-mid-v2: Dossier 반응에 질문 고유 전제가 거의 반영되지 않았습니다
+- [WARN] 4-E dossier / b|dc-1.b.q2|late / b-dc-1.b.q2-late-v1: Dossier 반응에 질문 고유 전제가 거의 반영되지 않았습니다
+- [WARN] 4-E dossier / b|dc-2.b.q1|early / b-dc-2.b.q1-early-v3: Dossier 반응에 질문 고유 전제가 거의 반영되지 않았습니다
+- [WARN] 4-E dossier / b|dc-2.b.q1|mid / b-dc-2.b.q1-mid-v1: Dossier 반응에 질문 고유 전제가 거의 반영되지 않았습니다
+- [WARN] 4-E dossier / b|dc-2.b.q2|early / b-dc-2.b.q2-early-v3: Dossier 반응에 질문 고유 전제가 거의 반영되지 않았습니다
+- [WARN] 4-E dossier / b|dc-2.b.q2|mid / b-dc-2.b.q2-mid-v1: Dossier 반응에 질문 고유 전제가 거의 반영되지 않았습니다
+- [WARN] 4-E dossier / a|dc-3.a.q1|early / a-dc-3.a.q1-early-v2: Dossier 반응에 질문 고유 전제가 거의 반영되지 않았습니다
+- [WARN] 4-E dossier / a|dc-3.a.q2|early / a-dc-3.a.q2-early-v2: Dossier 반응에 질문 고유 전제가 거의 반영되지 않았습니다
+- [WARN] 4-H aftermath / a_primary_fault / a_primary_fault-v2: aftermath에 사건 고유 결말이나 선택 솔루션이 부족합니다
+- [WARN] 4-H aftermath / b_primary_fault / b_primary_fault-v1: aftermath에 사건 고유 결말이나 선택 솔루션이 부족합니다
+- [WARN] 4-H aftermath / shared_fault / shared_fault-v2: aftermath에 사건 고유 결말이나 선택 솔루션이 부족합니다

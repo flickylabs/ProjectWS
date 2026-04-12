@@ -58,10 +58,11 @@ export default function PCCaseBrief() {
   const bait = meta?.emotionalBait ?? ''
   const versionTag = caseData.caseId.replace(/^case-/, '').replace(/^(spouse|family|friend|neighbor|tenant|partnership|workplace|headline)-/, '')
 
-  const initialDisputes = caseData.disputes
+  const visibleDisputes = caseData.disputes.filter((d) => !d.hidden && d.v3Visibility !== 'hidden')
+  const initialDisputes = visibleDisputes
     .filter((d) => d.weight === 'high' && d.quadrant !== 'neither_knows' && d.quadrant !== 'shared_misconception')
     .slice(0, 3)
-  const hiddenCount = caseData.disputes.length - initialDisputes.length
+  const hiddenCount = caseData.disputes.length - visibleDisputes.length
 
   return (
     <div className="pc-brief">
@@ -161,7 +162,7 @@ export default function PCCaseBrief() {
         <footer className="pc-brief__footer">
           <button className="pc-brief__start" onClick={handleStart} type="button">
             <PCSvgIcon id="i-gavel" size={22} />
-            <span>초기 진술 듣기</span>
+            <span>사건 입장하기</span>
             <kbd>Enter</kbd>
           </button>
         </footer>

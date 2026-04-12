@@ -195,3 +195,121 @@
 | 계층 3 (수동) | 7건 플레이 GPT Pro 분석 전건 PASS |
 
 이 3계층을 모두 통과하면 **출시 품질 달성**.
+
+---
+
+## 7. V4 게임플레이 검증 체크리스트 (2026-04-13 추가)
+
+> V4 리뉴얼에서 발견된 버그 패턴을 반영한 추가 검증 항목.
+> Thread-Q / Thread-QW 플레이스루 시 반드시 확인.
+
+### 7-1. 숨겨진 쟁점 비노출
+
+`hidden: true` 또는 `v3Visibility: "hidden"`인 쟁점은 해금 조건 충족 전까지 **절대 노출 금지**.
+
+- [ ] 브리프 화면: 숨겨진 쟁점이 사건 소개 쟁점 목록에 미표시
+- [ ] 쟁점 선택 (핫바): 심문 시 드롭다운에 숨겨진 쟁점 미포함
+- [ ] 쟁점 리본: 상단 칩에 숨겨진 쟁점 미포함
+- [ ] 발언 노트 탭: 숨겨진 쟁점 탭 미포함
+- [ ] NPC 대사: 숨겨진 쟁점 내용이 다른 쟁점 응답에 언급되지 않음
+- [ ] 증거 잠금: 숨겨진 쟁점 전용 증거가 `requires` 체인에 의해 잠김
+- [ ] 해금 후 정상 노출: 해금 조건 충족 시 `emergeDispute()` → 정상 표시
+
+**근본 원인 (수정 완료)**: `initializeDisputeVisibility`에서 `quadrant` 기준만 사용 → `hidden`/`v3Visibility` 미체크.
+**수정**: discoveryEngine.ts + PC UI 7개 컴포넌트에 hidden 필터 적용 + 시스템 메시지(증거 제시/조합 격상) hidden 필터.
+
+### 7-1b. 숨겨진 쟁점 해금 후 정상 동작
+
+해금 조건이 충족되면 hidden 쟁점이 **emerged → visible** 전이 후 모든 기능이 정상 작동해야 한다.
+
+- [ ] **해금 트리거**: 선행 쟁점이 지정 state 도달 시 `emergeDispute()` 발동
+- [ ] **쟁점 UI 반영**: 해금 즉시 핫바 드롭다운, 쟁점 리본, 노트 탭에 추가
+- [ ] **심문 가능**: 해금된 쟁점을 선택하여 질문 가능 (fact_pursuit/motive_search/empathy)
+- [ ] **ScriptedText 히트**: 해금된 쟁점의 ScriptedText 키가 정상 히트 (miss 0건)
+- [ ] **LieState 전이**: 해금된 쟁점에서 S0→S1 이상 전이 정상 작동
+- [ ] **증거 연쇄 해금**: 해금된 쟁점의 증거가 requires/requiredLieState 충족 시 순차 해금
+- [ ] **시스템 메시지**: 해금 시점 이후 시스템 메시지에 해당 쟁점명 정상 표시
+- [ ] **끼어들기/이벤트**: 해금된 쟁점에서 끼어들기, 모순 이벤트 정상 발동
+- [ ] **판결 포함**: 판결 단계에서 해금된 쟁점이 판단 목록에 포함
+
+**검증 경로 (spouse-01 기준)**:
+1. d-1 심문 → A d-1 S3 도달 → d-2 해금 확인
+2. d-2 심문 → B d-2 S1 도달 → h-d3 해금 확인
+3. h-d3 심문 → 정상 ScriptedText 히트 + LieState 전이
+4. 증거 체인: e-4 → e-5 → e-6 → e-7 순차 해금
+5. 판결까지 완주 → 해금된 쟁점 전부 판단 목록에 포함
+
+### 7-2. 쟁점-캐릭터 매핑 정합성
+
+- [ ] 피해자/가해자 구분: `quadrant`(a_only/b_only/both)와 캐릭터 대사 입장 일치
+- [ ] lieConfig 범위: 피해자 측 S4/S5에 가해자 자백 내용 미포함
+  - 예: spouse-01 A(피해자)의 d-2가 S3 캡 — h-d3 내용 침투 방지
+- [ ] S0~S5 대사 일관성: 같은 쟁점 대사가 state 진행에 따라 논리적 연결
+- [ ] 교차 오염 없음: 쟁점 X 질문에 쟁점 Y 내용 미포함
+
+**근본 원인 (수정 완료)**: spouse-01 lieConfigA d-2가 S0→S5 전이 허용 → S4/S5에서 h-d3 내용 노출.
+**수정**: lieConfigA d-2 전이를 S3에서 캡.
+
+### 7-3. LieState 전이 메커니즘
+
+- [ ] fact_pursuit 토큰 축적: 모순 토큰이 **턴 간 유지** (2/3회 임계치 도달 → 전이)
+- [ ] empathy 보장 전이: S0~S2에서 3회 연속 실패 시 100% 전이 보장 작동
+- [ ] S0 고착 없음: 4턴 이상 같은 쟁점 질문해도 S0 유지 시 FAIL
+- [ ] 상성 보정: affinityGrade에 따라 토큰 획득/전이 확률 차별화
+
+**근본 원인 (수정 완료)**: `_contradictionTokens`/`_empathyAttempts`를 Zustand state 객체에 저장 → `setState` 시 유실.
+**수정**: 모듈 레벨 변수로 이동.
+
+### 7-4. 증거 체인 잠금
+
+- [ ] 초기 해금: `baseEvidenceIds`에 지정된 증거만 게임 시작 시 해금
+- [ ] requires 체인: 선행 증거 미해금 시 후속 증거 잠김
+- [ ] requiredLieState: 지정 lie state 미도달 시 증거 미해금
+- [ ] 숨겨진 쟁점 연관 증거: `proves`에 hidden 쟁점만 있는 증거가 해금 전 미노출
+
+### 7-5. UI/연출 품질
+
+- [ ] 중재 화면 (Phase 6): 불투명 패널 + 큰 글씨 선택지 (18px+)
+- [ ] 균열/궁지/개방 전이 모달: feature variant 스타일 (색상 그라데이션, 24px 제목)
+- [ ] 진실공방 패널: A/B 영역이 컬러 바로 구분, 선택지 가독성 확보
+- [ ] 판결 슬라이더: 트랙 16px, 라벨 16px, 퍼센트 32px, 방향 안내 14px
+- [ ] 판결문: 사건번호·판단요약·해결안 목록이 15px+ 폰트로 가독성 확보
+
+### 7-6. ScriptedText 커버리지
+
+- [ ] `[Scripted miss]` 콘솔 로그 발생 시 key + 사유 기록
+- [ ] LLM 폴백: scripted miss 시 에러 배너 없이 대사 생성
+- [ ] 도달 불가 키 요청 없음: lieConfig 캡 범위 초과 state의 ScriptedText 키가 요청되면 안 됨
+
+### 7-7. 디스패치 안정성
+
+- [ ] 모순 추궁: `setSkipNextJudgeQuestion(true)` 정상 호출 (미선언 변수 아님)
+- [ ] globalDispatchLock: 액션 처리 후 반드시 해제 (후속 액션 가능)
+- [ ] LLM 로딩: `isLLMLoading` 상태가 호출 후 반드시 false 복귀
+- [ ] TypeError/undefined: 콘솔 런타임 에러 0건
+- [ ] 판결까지 완주 가능
+
+### 7-8. 끼어들기 / 이벤트
+
+- [ ] 끼어들기 유도: 같은 대상 3턴+ 집중 시 상대방 끼어들기 기회 발생
+- [ ] 감정 폭발: 감정 수치 65+ 도달 시 이벤트 발동
+- [ ] 모순 이벤트: 발언 변경 감지 시 지연 실행
+
+---
+
+### V4 수정 이력
+
+| 날짜 | 항목 | 파일 |
+|------|------|------|
+| 2026-04-13 | hidden dispute 필터링 | discoveryEngine.ts, PC UI 6개 |
+| 2026-04-13 | d-2/h-d3 매핑 캡 | spouse-01.json lieConfigA |
+| 2026-04-13 | 토큰/시도 영속성 | useActionDispatch.ts |
+| 2026-04-13 | skipJudgeQuestion 변수 | useActionDispatch.ts |
+| 2026-04-13 | UI CSS 추가 | pc.css (중재/균열/진실공방/판결) |
+| 2026-04-13 | 레거시 파일 _archive 이동 | 527개 파일, useGameStore.ts import 정리 |
+| 2026-04-13 | h-d4 조기 노출 차단 (6차 PASS) | useActionDispatch.ts 증거 제시/조합 격상 hidden 필터 |
+| 2026-04-13 | e-5 subjectParty 수정 | spouse-01.json e-5 "b" → "both" |
+| 2026-04-13 | institutional subjectRole 제거 | llmDialogueResolver.ts |
+| 2026-04-13 | 노트 탭 동적 필터 | PCImportantNotesSection.tsx disputeVisibility 기반 |
+| 2026-04-13 | 후일담 LLM 연동 | PCResultScreen.tsx → buildAftermathPrompt 사용 |
+| 2026-04-13 | family/friend case 데이터 재생성 | family-01.json, friend-01.json (v2 설계 기준) |

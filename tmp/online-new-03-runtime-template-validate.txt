@@ -1,0 +1,3 @@
+[runtime-template-coverage] case=online-new-03
+summary={}
+PASS

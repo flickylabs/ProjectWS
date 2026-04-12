@@ -1,0 +1,2086 @@
+[
+  {
+    "caseId": "workplace-new-02",
+    "phase1": 0,
+    "phase2": 0,
+    "runtimeTemplate": true,
+    "scriptedTemplate": true,
+    "semantic": {},
+    "stage3": true,
+    "viewer": "옵션 행사 공지 메일",
+    "unlock": {
+      "initial": [
+        "e-1",
+        "e-2",
+        "e-3"
+      ],
+      "s1": [
+        "e-4"
+      ],
+      "s2": [
+        "e-5",
+        "e-6"
+      ],
+      "s3": [
+        "e-7"
+      ],
+      "final": [
+        "e-1",
+        "e-2",
+        "e-3",
+        "e-4",
+        "e-5",
+        "e-6",
+        "e-7"
+      ],
+      "combos": 3,
+      "comboTotal": 3
+    },
+    "lie": {
+      "primary": {
+        "party": "a",
+        "disputeId": "d-1"
+      },
+      "expected": {
+        "first": "notice_timing_question",
+        "second": "hard_evidence",
+        "third": "practical_choice_question"
+      },
+      "initial": "S0",
+      "step1": true,
+      "repeatBlocked": true,
+      "step2": true,
+      "step3": true,
+      "states": {
+        "after1": "S1",
+        "afterRepeat": "S1",
+        "after2": "S2",
+        "after3": "S3"
+      },
+      "s5": {
+        "reachable": true,
+        "party": "a",
+        "disputeId": "d-1",
+        "trigger": "e-4_or_responsibility_question",
+        "from": "S3"
+      }
+    },
+    "witness": {
+      "relatedWitnesses": 3,
+      "gateWorks": true,
+      "institutionalS2Full": true,
+      "sample": {
+        "witnessId": "tp-1",
+        "slot": "institutional",
+        "s0": "vague",
+        "s2": "full",
+        "s4": "full"
+      }
+    },
+    "scripted": {
+      "logged": true,
+      "logSample": "[Scripted] workplace-new-02/a/d-1/S0 — 스크립트 응답 사용",
+      "uniqueVariants": 3,
+      "channels": {
+        "interrogation": 180,
+        "evidence_present": 42,
+        "dossier": 48,
+        "witness": 9,
+        "aftermath": 5,
+        "system_message": 6
+      }
+    },
+    "mediationPaths": 4,
+    "mediationDialogues": 6,
+    "solutionGroups": 3
+  },
+  {
+    "caseId": "tenant-new-01",
+    "phase1": 0,
+    "phase2": 0,
+    "runtimeTemplate": true,
+    "scriptedTemplate": true,
+    "semantic": {},
+    "stage3": true,
+    "viewer": "보일러 앱 18도 제한 화면 캡처",
+    "unlock": {
+      "initial": [
+        "e-1",
+        "e-2",
+        "e-3"
+      ],
+      "s1": [
+        "e-4"
+      ],
+      "s2": [
+        "e-5",
+        "e-6"
+      ],
+      "s3": [
+        "e-7"
+      ],
+      "final": [
+        "e-1",
+        "e-2",
+        "e-3",
+        "e-4",
+        "e-5",
+        "e-6",
+        "e-7"
+      ],
+      "combos": 3,
+      "comboTotal": 3
+    },
+    "lie": {
+      "primary": {
+        "party": "a",
+        "disputeId": "d-1"
+      },
+      "expected": {
+        "first": "d-1_a_timeline_question",
+        "second": "hard_evidence",
+        "third": "d-1_a_responsibility_question"
+      },
+      "initial": "S0",
+      "step1": true,
+      "repeatBlocked": true,
+      "step2": true,
+      "step3": true,
+      "states": {
+        "after1": "S1",
+        "afterRepeat": "S1",
+        "after2": "S2",
+        "after3": "S3"
+      },
+      "s5": {
+        "reachable": true,
+        "party": "a",
+        "disputeId": "d-1",
+        "trigger": "d-1_a_final_pressure",
+        "from": "S3"
+      }
+    },
+    "witness": {
+      "relatedWitnesses": 3,
+      "gateWorks": true,
+      "institutionalS2Full": true,
+      "sample": {
+        "witnessId": "tp-1",
+        "slot": "acquaintance_1",
+        "s0": "vague",
+        "s2": "partial",
+        "s4": "full"
+      }
+    },
+    "scripted": {
+      "logged": true,
+      "logSample": "[Scripted] tenant-new-01/a/d-1/S0 — 스크립트 응답 사용",
+      "uniqueVariants": 3,
+      "channels": {
+        "interrogation": 180,
+        "evidence_present": 42,
+        "dossier": 48,
+        "witness": 9,
+        "aftermath": 5,
+        "system_message": 6
+      }
+    },
+    "mediationPaths": 4,
+    "mediationDialogues": 6,
+    "solutionGroups": 3
+  },
+  {
+    "caseId": "civic-new-10",
+    "phase1": 0,
+    "phase2": 0,
+    "runtimeTemplate": true,
+    "scriptedTemplate": true,
+    "semantic": {},
+    "stage3": true,
+    "viewer": "최종 심사표",
+    "unlock": {
+      "initial": [
+        "e-1",
+        "e-2",
+        "e-3"
+      ],
+      "s1": [
+        "e-4"
+      ],
+      "s2": [
+        "e-5",
+        "e-6"
+      ],
+      "s3": [
+        "e-7"
+      ],
+      "final": [
+        "e-1",
+        "e-2",
+        "e-3",
+        "e-4",
+        "e-5",
+        "e-6",
+        "e-7"
+      ],
+      "combos": 3,
+      "comboTotal": 3
+    },
+    "lie": {
+      "primary": {
+        "party": "a",
+        "disputeId": "d-1"
+      },
+      "expected": {
+        "first": "d-1_a_timeline_question",
+        "second": "hard_evidence",
+        "third": "d-1_a_responsibility_question"
+      },
+      "initial": "S0",
+      "step1": true,
+      "repeatBlocked": true,
+      "step2": true,
+      "step3": true,
+      "states": {
+        "after1": "S1",
+        "afterRepeat": "S1",
+        "after2": "S2",
+        "after3": "S3"
+      },
+      "s5": {
+        "reachable": true,
+        "party": "a",
+        "disputeId": "d-1",
+        "trigger": "d-1_a_final_pressure",
+        "from": "S3"
+      }
+    },
+    "witness": {
+      "relatedWitnesses": 3,
+      "gateWorks": true,
+      "institutionalS2Full": true,
+      "sample": {
+        "witnessId": "tp-1",
+        "slot": "acquaintance_1",
+        "s0": "vague",
+        "s2": "partial",
+        "s4": "full"
+      }
+    },
+    "scripted": {
+      "logged": true,
+      "logSample": "[Scripted] civic-new-10/a/d-1/S0 — 스크립트 응답 사용",
+      "uniqueVariants": 3,
+      "channels": {
+        "interrogation": 180,
+        "evidence_present": 42,
+        "dossier": 48,
+        "witness": 9,
+        "aftermath": 5,
+        "system_message": 6
+      }
+    },
+    "mediationPaths": 4,
+    "mediationDialogues": 6,
+    "solutionGroups": 3
+  },
+  {
+    "caseId": "partnership-new-10",
+    "phase1": 0,
+    "phase2": 0,
+    "runtimeTemplate": true,
+    "scriptedTemplate": true,
+    "semantic": {},
+    "stage3": true,
+    "viewer": "시범사업 제안서 PDF",
+    "unlock": {
+      "initial": [
+        "e-1",
+        "e-2",
+        "e-3"
+      ],
+      "s1": [
+        "e-4"
+      ],
+      "s2": [
+        "e-5",
+        "e-6"
+      ],
+      "s3": [
+        "e-7"
+      ],
+      "final": [
+        "e-1",
+        "e-2",
+        "e-3",
+        "e-4",
+        "e-5",
+        "e-6",
+        "e-7"
+      ],
+      "combos": 3,
+      "comboTotal": 3
+    },
+    "lie": {
+      "primary": {
+        "party": "a",
+        "disputeId": "d-1"
+      },
+      "expected": {
+        "first": "d-1_a_timeline_question",
+        "second": "hard_evidence",
+        "third": "d-1_a_responsibility_question"
+      },
+      "initial": "S0",
+      "step1": true,
+      "repeatBlocked": true,
+      "step2": true,
+      "step3": true,
+      "states": {
+        "after1": "S1",
+        "afterRepeat": "S1",
+        "after2": "S2",
+        "after3": "S3"
+      },
+      "s5": {
+        "reachable": true,
+        "party": "a",
+        "disputeId": "d-1",
+        "trigger": "d-1_a_final_pressure",
+        "from": "S3"
+      }
+    },
+    "witness": {
+      "relatedWitnesses": 3,
+      "gateWorks": true,
+      "institutionalS2Full": true,
+      "sample": {
+        "witnessId": "tp-1",
+        "slot": "acquaintance_1",
+        "s0": "vague",
+        "s2": "partial",
+        "s4": "full"
+      }
+    },
+    "scripted": {
+      "logged": true,
+      "logSample": "[Scripted] partnership-new-10/a/d-1/S0 — 스크립트 응답 사용",
+      "uniqueVariants": 3,
+      "channels": {
+        "interrogation": 180,
+        "evidence_present": 42,
+        "dossier": 48,
+        "witness": 9,
+        "aftermath": 5,
+        "system_message": 6
+      }
+    },
+    "mediationPaths": 4,
+    "mediationDialogues": 6,
+    "solutionGroups": 3
+  },
+  {
+    "caseId": "spouse-new-06",
+    "phase1": 0,
+    "phase2": 0,
+    "runtimeTemplate": true,
+    "scriptedTemplate": true,
+    "semantic": {},
+    "stage3": true,
+    "viewer": "병원 앱 연장 종료 알림",
+    "unlock": {
+      "initial": [
+        "e-1",
+        "e-2",
+        "e-3"
+      ],
+      "s1": [
+        "e-4"
+      ],
+      "s2": [
+        "e-5",
+        "e-6"
+      ],
+      "s3": [],
+      "final": [
+        "e-1",
+        "e-2",
+        "e-3",
+        "e-4",
+        "e-5",
+        "e-6"
+      ],
+      "combos": 2,
+      "comboTotal": 2
+    },
+    "lie": {
+      "primary": {
+        "party": "a",
+        "disputeId": "d-1"
+      },
+      "expected": {
+        "first": "d-1_a_timeline_question",
+        "second": "hard_evidence",
+        "third": "d-1_a_responsibility_question"
+      },
+      "initial": "S0",
+      "step1": true,
+      "repeatBlocked": true,
+      "step2": true,
+      "step3": true,
+      "states": {
+        "after1": "S1",
+        "afterRepeat": "S1",
+        "after2": "S2",
+        "after3": "S3"
+      },
+      "s5": {
+        "reachable": true,
+        "party": "a",
+        "disputeId": "d-1",
+        "trigger": "d-1_a_final_pressure",
+        "from": "S3"
+      }
+    },
+    "witness": {
+      "relatedWitnesses": 3,
+      "gateWorks": true,
+      "institutionalS2Full": true,
+      "sample": {
+        "witnessId": "tp-1",
+        "slot": "family_1",
+        "s0": "vague",
+        "s2": "partial",
+        "s4": "full"
+      }
+    },
+    "scripted": {
+      "logged": true,
+      "logSample": "[Scripted] spouse-new-06/a/d-1/S0 — 스크립트 응답 사용",
+      "uniqueVariants": 3,
+      "channels": {
+        "interrogation": 144,
+        "evidence_present": 36,
+        "dossier": 48,
+        "witness": 9,
+        "aftermath": 5,
+        "system_message": 6
+      }
+    },
+    "mediationPaths": 4,
+    "mediationDialogues": 6,
+    "solutionGroups": 3
+  },
+  {
+    "caseId": "neighbor-new-03",
+    "phase1": 0,
+    "phase2": 0,
+    "runtimeTemplate": true,
+    "scriptedTemplate": true,
+    "semantic": {},
+    "stage3": true,
+    "viewer": "전자동의율 변동 캡처",
+    "unlock": {
+      "initial": [
+        "e-1",
+        "e-2",
+        "e-3"
+      ],
+      "s1": [
+        "e-4"
+      ],
+      "s2": [
+        "e-5",
+        "e-6"
+      ],
+      "s3": [
+        "e-7"
+      ],
+      "final": [
+        "e-1",
+        "e-2",
+        "e-3",
+        "e-4",
+        "e-5",
+        "e-6",
+        "e-7"
+      ],
+      "combos": 3,
+      "comboTotal": 3
+    },
+    "lie": {
+      "primary": {
+        "party": "a",
+        "disputeId": "d-1"
+      },
+      "expected": {
+        "first": "d-1_a_timeline_question",
+        "second": "hard_evidence",
+        "third": "d-1_a_responsibility_question"
+      },
+      "initial": "S0",
+      "step1": true,
+      "repeatBlocked": true,
+      "step2": true,
+      "step3": true,
+      "states": {
+        "after1": "S1",
+        "afterRepeat": "S1",
+        "after2": "S2",
+        "after3": "S3"
+      },
+      "s5": {
+        "reachable": true,
+        "party": "a",
+        "disputeId": "d-1",
+        "trigger": "d-1_a_final_pressure",
+        "from": "S3"
+      }
+    },
+    "witness": {
+      "relatedWitnesses": 3,
+      "gateWorks": true,
+      "institutionalS2Full": true,
+      "sample": {
+        "witnessId": "tp-1",
+        "slot": "acquaintance_1",
+        "s0": "vague",
+        "s2": "partial",
+        "s4": "full"
+      }
+    },
+    "scripted": {
+      "logged": true,
+      "logSample": "[Scripted] neighbor-new-03/a/d-1/S0 — 스크립트 응답 사용",
+      "uniqueVariants": 3,
+      "channels": {
+        "interrogation": 180,
+        "evidence_present": 42,
+        "dossier": 48,
+        "witness": 9,
+        "aftermath": 5,
+        "system_message": 6
+      }
+    },
+    "mediationPaths": 4,
+    "mediationDialogues": 6,
+    "solutionGroups": 3
+  },
+  {
+    "caseId": "online-new-05",
+    "phase1": 0,
+    "phase2": 0,
+    "runtimeTemplate": true,
+    "scriptedTemplate": true,
+    "semantic": {},
+    "stage3": true,
+    "viewer": "유포된 11초 음성 클립",
+    "unlock": {
+      "initial": [
+        "e-1",
+        "e-2",
+        "e-3"
+      ],
+      "s1": [
+        "e-4"
+      ],
+      "s2": [
+        "e-5",
+        "e-6"
+      ],
+      "s3": [
+        "e-7"
+      ],
+      "final": [
+        "e-1",
+        "e-2",
+        "e-3",
+        "e-4",
+        "e-5",
+        "e-6",
+        "e-7"
+      ],
+      "combos": 3,
+      "comboTotal": 3
+    },
+    "lie": {
+      "primary": {
+        "party": "a",
+        "disputeId": "d-1"
+      },
+      "expected": {
+        "first": "d-1_a_timeline_question",
+        "second": "hard_evidence",
+        "third": "d-1_a_responsibility_question"
+      },
+      "initial": "S0",
+      "step1": true,
+      "repeatBlocked": true,
+      "step2": true,
+      "step3": true,
+      "states": {
+        "after1": "S1",
+        "afterRepeat": "S1",
+        "after2": "S2",
+        "after3": "S3"
+      },
+      "s5": {
+        "reachable": true,
+        "party": "a",
+        "disputeId": "d-1",
+        "trigger": "d-1_a_final_pressure",
+        "from": "S3"
+      }
+    },
+    "witness": {
+      "relatedWitnesses": 3,
+      "gateWorks": true,
+      "institutionalS2Full": true,
+      "sample": {
+        "witnessId": "tp-1",
+        "slot": "acquaintance_1",
+        "s0": "vague",
+        "s2": "partial",
+        "s4": "full"
+      }
+    },
+    "scripted": {
+      "logged": true,
+      "logSample": "[Scripted] online-new-05/a/d-1/S0 — 스크립트 응답 사용",
+      "uniqueVariants": 3,
+      "channels": {
+        "interrogation": 180,
+        "evidence_present": 42,
+        "dossier": 48,
+        "witness": 9,
+        "aftermath": 5,
+        "system_message": 6
+      }
+    },
+    "mediationPaths": 4,
+    "mediationDialogues": 6,
+    "solutionGroups": 3
+  },
+  {
+    "caseId": "professional-new-01",
+    "phase1": 0,
+    "phase2": 0,
+    "runtimeTemplate": true,
+    "scriptedTemplate": true,
+    "semantic": {},
+    "stage3": true,
+    "viewer": "주황 트리아지 팔찌 사진",
+    "unlock": {
+      "initial": [
+        "e-1",
+        "e-2",
+        "e-3"
+      ],
+      "s1": [
+        "e-4"
+      ],
+      "s2": [
+        "e-5",
+        "e-6"
+      ],
+      "s3": [
+        "e-7"
+      ],
+      "final": [
+        "e-1",
+        "e-2",
+        "e-3",
+        "e-4",
+        "e-5",
+        "e-6",
+        "e-7"
+      ],
+      "combos": 3,
+      "comboTotal": 3
+    },
+    "lie": {
+      "primary": {
+        "party": "a",
+        "disputeId": "d-1"
+      },
+      "expected": {
+        "first": "d-1_a_timeline_question",
+        "second": "hard_evidence",
+        "third": "d-1_a_responsibility_question"
+      },
+      "initial": "S0",
+      "step1": true,
+      "repeatBlocked": true,
+      "step2": true,
+      "step3": true,
+      "states": {
+        "after1": "S1",
+        "afterRepeat": "S1",
+        "after2": "S2",
+        "after3": "S3"
+      },
+      "s5": {
+        "reachable": true,
+        "party": "a",
+        "disputeId": "d-1",
+        "trigger": "d-1_a_final_pressure",
+        "from": "S3"
+      }
+    },
+    "witness": {
+      "relatedWitnesses": 3,
+      "gateWorks": true,
+      "institutionalS2Full": true,
+      "sample": {
+        "witnessId": "tp-1",
+        "slot": "acquaintance_1",
+        "s0": "vague",
+        "s2": "partial",
+        "s4": "full"
+      }
+    },
+    "scripted": {
+      "logged": true,
+      "logSample": "[Scripted] professional-new-01/a/d-1/S0 — 스크립트 응답 사용",
+      "uniqueVariants": 3,
+      "channels": {
+        "interrogation": 180,
+        "evidence_present": 42,
+        "dossier": 48,
+        "witness": 9,
+        "aftermath": 5,
+        "system_message": 6
+      }
+    },
+    "mediationPaths": 4,
+    "mediationDialogues": 6,
+    "solutionGroups": 3
+  },
+  {
+    "caseId": "friend-new-08",
+    "phase1": 0,
+    "phase2": 0,
+    "runtimeTemplate": true,
+    "scriptedTemplate": true,
+    "semantic": {},
+    "stage3": true,
+    "viewer": "구조 릴스 업로드본",
+    "unlock": {
+      "initial": [
+        "e-1",
+        "e-2",
+        "e-3"
+      ],
+      "s1": [
+        "e-4"
+      ],
+      "s2": [
+        "e-5",
+        "e-6"
+      ],
+      "s3": [
+        "e-7"
+      ],
+      "final": [
+        "e-1",
+        "e-2",
+        "e-3",
+        "e-4",
+        "e-5",
+        "e-6",
+        "e-7"
+      ],
+      "combos": 3,
+      "comboTotal": 3
+    },
+    "lie": {
+      "primary": {
+        "party": "a",
+        "disputeId": "d-1"
+      },
+      "expected": {
+        "first": "d-1_a_timeline_question",
+        "second": "hard_evidence",
+        "third": "d-1_a_responsibility_question"
+      },
+      "initial": "S0",
+      "step1": true,
+      "repeatBlocked": true,
+      "step2": true,
+      "step3": true,
+      "states": {
+        "after1": "S1",
+        "afterRepeat": "S1",
+        "after2": "S2",
+        "after3": "S3"
+      },
+      "s5": {
+        "reachable": true,
+        "party": "a",
+        "disputeId": "d-1",
+        "trigger": "d-1_a_final_pressure",
+        "from": "S3"
+      }
+    },
+    "witness": {
+      "relatedWitnesses": 3,
+      "gateWorks": true,
+      "institutionalS2Full": true,
+      "sample": {
+        "witnessId": "tp-1",
+        "slot": "acquaintance_1",
+        "s0": "vague",
+        "s2": "partial",
+        "s4": "full"
+      }
+    },
+    "scripted": {
+      "logged": true,
+      "logSample": "[Scripted] friend-new-08/a/d-1/S0 — 스크립트 응답 사용",
+      "uniqueVariants": 3,
+      "channels": {
+        "interrogation": 180,
+        "evidence_present": 42,
+        "dossier": 48,
+        "witness": 9,
+        "aftermath": 5,
+        "system_message": 6
+      }
+    },
+    "mediationPaths": 4,
+    "mediationDialogues": 6,
+    "solutionGroups": 3
+  },
+  {
+    "caseId": "family-new-04",
+    "phase1": 0,
+    "phase2": 0,
+    "runtimeTemplate": true,
+    "scriptedTemplate": true,
+    "semantic": {},
+    "stage3": true,
+    "viewer": "AI 복원본 PDF",
+    "unlock": {
+      "initial": [
+        "e-1",
+        "e-2",
+        "e-3"
+      ],
+      "s1": [
+        "e-4"
+      ],
+      "s2": [
+        "e-5",
+        "e-6"
+      ],
+      "s3": [
+        "e-7"
+      ],
+      "final": [
+        "e-1",
+        "e-2",
+        "e-3",
+        "e-4",
+        "e-5",
+        "e-6",
+        "e-7"
+      ],
+      "combos": 3,
+      "comboTotal": 3
+    },
+    "lie": {
+      "primary": {
+        "party": "a",
+        "disputeId": "d-1"
+      },
+      "expected": {
+        "first": "d-1_a_timeline_question",
+        "second": "hard_evidence",
+        "third": "d-1_a_responsibility_question"
+      },
+      "initial": "S0",
+      "step1": true,
+      "repeatBlocked": true,
+      "step2": true,
+      "step3": true,
+      "states": {
+        "after1": "S1",
+        "afterRepeat": "S1",
+        "after2": "S2",
+        "after3": "S3"
+      },
+      "s5": {
+        "reachable": true,
+        "party": "a",
+        "disputeId": "d-1",
+        "trigger": "d-1_a_final_pressure",
+        "from": "S3"
+      }
+    },
+    "witness": {
+      "relatedWitnesses": 3,
+      "gateWorks": true,
+      "institutionalS2Full": true,
+      "sample": {
+        "witnessId": "tp-1",
+        "slot": "family_1",
+        "s0": "vague",
+        "s2": "partial",
+        "s4": "full"
+      }
+    },
+    "scripted": {
+      "logged": true,
+      "logSample": "[Scripted] family-new-04/a/d-1/S0 — 스크립트 응답 사용",
+      "uniqueVariants": 3,
+      "channels": {
+        "interrogation": 180,
+        "evidence_present": 42,
+        "dossier": 48,
+        "witness": 9,
+        "aftermath": 5,
+        "system_message": 6
+      }
+    },
+    "mediationPaths": 4,
+    "mediationDialogues": 6,
+    "solutionGroups": 3
+  },
+  {
+    "caseId": "spouse-new-03",
+    "phase1": 0,
+    "phase2": 0,
+    "runtimeTemplate": true,
+    "scriptedTemplate": true,
+    "semantic": {},
+    "stage3": true,
+    "viewer": "청약 포털 접수 화면 캡처",
+    "unlock": {
+      "initial": [
+        "e-1",
+        "e-2",
+        "e-3"
+      ],
+      "s1": [
+        "e-4"
+      ],
+      "s2": [
+        "e-5",
+        "e-6"
+      ],
+      "s3": [],
+      "final": [
+        "e-1",
+        "e-2",
+        "e-3",
+        "e-4",
+        "e-5",
+        "e-6"
+      ],
+      "combos": 2,
+      "comboTotal": 2
+    },
+    "lie": {
+      "primary": {
+        "party": "a",
+        "disputeId": "d-1"
+      },
+      "expected": {
+        "first": "d-1_a_timeline_question",
+        "second": "hard_evidence",
+        "third": "d-1_a_responsibility_question"
+      },
+      "initial": "S0",
+      "step1": true,
+      "repeatBlocked": true,
+      "step2": true,
+      "step3": true,
+      "states": {
+        "after1": "S1",
+        "afterRepeat": "S1",
+        "after2": "S2",
+        "after3": "S3"
+      },
+      "s5": {
+        "reachable": true,
+        "party": "a",
+        "disputeId": "d-1",
+        "trigger": "d-1_a_final_pressure",
+        "from": "S3"
+      }
+    },
+    "witness": {
+      "relatedWitnesses": 3,
+      "gateWorks": true,
+      "institutionalS2Full": true,
+      "sample": {
+        "witnessId": "tp-1",
+        "slot": "family_1",
+        "s0": "vague",
+        "s2": "partial",
+        "s4": "full"
+      }
+    },
+    "scripted": {
+      "logged": true,
+      "logSample": "[Scripted] spouse-new-03/a/d-1/S0 — 스크립트 응답 사용",
+      "uniqueVariants": 3,
+      "channels": {
+        "interrogation": 180,
+        "evidence_present": 36,
+        "dossier": 48,
+        "witness": 9,
+        "aftermath": 5,
+        "system_message": 6
+      }
+    },
+    "mediationPaths": 4,
+    "mediationDialogues": 6,
+    "solutionGroups": 3
+  },
+  {
+    "caseId": "family-new-02",
+    "phase1": 0,
+    "phase2": 0,
+    "runtimeTemplate": true,
+    "scriptedTemplate": true,
+    "semantic": {},
+    "stage3": true,
+    "viewer": "상표 출원 접수증",
+    "unlock": {
+      "initial": [
+        "e-1",
+        "e-2",
+        "e-3"
+      ],
+      "s1": [
+        "e-4"
+      ],
+      "s2": [
+        "e-5",
+        "e-6"
+      ],
+      "s3": [
+        "e-7"
+      ],
+      "final": [
+        "e-1",
+        "e-2",
+        "e-3",
+        "e-4",
+        "e-5",
+        "e-6",
+        "e-7"
+      ],
+      "combos": 3,
+      "comboTotal": 3
+    },
+    "lie": {
+      "primary": {
+        "party": "a",
+        "disputeId": "d-1"
+      },
+      "expected": {
+        "first": "d-1_a_timeline_question",
+        "second": "hard_evidence",
+        "third": "d-1_a_responsibility_question"
+      },
+      "initial": "S0",
+      "step1": true,
+      "repeatBlocked": true,
+      "step2": true,
+      "step3": true,
+      "states": {
+        "after1": "S1",
+        "afterRepeat": "S1",
+        "after2": "S2",
+        "after3": "S3"
+      },
+      "s5": {
+        "reachable": true,
+        "party": "a",
+        "disputeId": "d-1",
+        "trigger": "d-1_a_final_pressure",
+        "from": "S3"
+      }
+    },
+    "witness": {
+      "relatedWitnesses": 3,
+      "gateWorks": true,
+      "institutionalS2Full": true,
+      "sample": {
+        "witnessId": "tp-1",
+        "slot": "family_1",
+        "s0": "vague",
+        "s2": "partial",
+        "s4": "full"
+      }
+    },
+    "scripted": {
+      "logged": true,
+      "logSample": "[Scripted] family-new-02/a/d-1/S0 — 스크립트 응답 사용",
+      "uniqueVariants": 3,
+      "channels": {
+        "interrogation": 180,
+        "evidence_present": 42,
+        "dossier": 48,
+        "witness": 9,
+        "aftermath": 5,
+        "system_message": 6
+      }
+    },
+    "mediationPaths": 4,
+    "mediationDialogues": 6,
+    "solutionGroups": 3
+  },
+  {
+    "caseId": "friend-new-01",
+    "phase1": 0,
+    "phase2": 0,
+    "runtimeTemplate": true,
+    "scriptedTemplate": true,
+    "semantic": {},
+    "stage3": true,
+    "viewer": "공식 기록 인증 화면",
+    "unlock": {
+      "initial": [
+        "e-1",
+        "e-2",
+        "e-3"
+      ],
+      "s1": [
+        "e-4"
+      ],
+      "s2": [
+        "e-5",
+        "e-6"
+      ],
+      "s3": [
+        "e-7"
+      ],
+      "final": [
+        "e-1",
+        "e-2",
+        "e-3",
+        "e-4",
+        "e-5",
+        "e-6",
+        "e-7"
+      ],
+      "combos": 3,
+      "comboTotal": 3
+    },
+    "lie": {
+      "primary": {
+        "party": "a",
+        "disputeId": "d-1"
+      },
+      "expected": {
+        "first": "d-1_a_timeline_question",
+        "second": "hard_evidence",
+        "third": "d-1_a_responsibility_question"
+      },
+      "initial": "S0",
+      "step1": true,
+      "repeatBlocked": true,
+      "step2": true,
+      "step3": true,
+      "states": {
+        "after1": "S1",
+        "afterRepeat": "S1",
+        "after2": "S2",
+        "after3": "S3"
+      },
+      "s5": {
+        "reachable": true,
+        "party": "a",
+        "disputeId": "d-1",
+        "trigger": "d-1_a_final_pressure",
+        "from": "S3"
+      }
+    },
+    "witness": {
+      "relatedWitnesses": 3,
+      "gateWorks": true,
+      "institutionalS2Full": true,
+      "sample": {
+        "witnessId": "tp-1",
+        "slot": "acquaintance_1",
+        "s0": "vague",
+        "s2": "partial",
+        "s4": "full"
+      }
+    },
+    "scripted": {
+      "logged": true,
+      "logSample": "[Scripted] friend-new-01/a/d-1/S0 — 스크립트 응답 사용",
+      "uniqueVariants": 3,
+      "channels": {
+        "interrogation": 180,
+        "evidence_present": 42,
+        "dossier": 48,
+        "witness": 9,
+        "aftermath": 5,
+        "system_message": 6
+      }
+    },
+    "mediationPaths": 4,
+    "mediationDialogues": 6,
+    "solutionGroups": 3
+  },
+  {
+    "caseId": "neighbor-new-10",
+    "phase1": 0,
+    "phase2": 0,
+    "runtimeTemplate": true,
+    "scriptedTemplate": true,
+    "semantic": {},
+    "stage3": true,
+    "viewer": "보험 청구 사진",
+    "unlock": {
+      "initial": [
+        "e-1",
+        "e-2",
+        "e-3"
+      ],
+      "s1": [
+        "e-4"
+      ],
+      "s2": [
+        "e-5",
+        "e-6"
+      ],
+      "s3": [
+        "e-7"
+      ],
+      "final": [
+        "e-1",
+        "e-2",
+        "e-3",
+        "e-4",
+        "e-5",
+        "e-6",
+        "e-7"
+      ],
+      "combos": 3,
+      "comboTotal": 3
+    },
+    "lie": {
+      "primary": {
+        "party": "a",
+        "disputeId": "d-1"
+      },
+      "expected": {
+        "first": "d-1_a_timeline_question",
+        "second": "hard_evidence",
+        "third": "d-1_a_responsibility_question"
+      },
+      "initial": "S0",
+      "step1": true,
+      "repeatBlocked": true,
+      "step2": true,
+      "step3": true,
+      "states": {
+        "after1": "S1",
+        "afterRepeat": "S1",
+        "after2": "S2",
+        "after3": "S3"
+      },
+      "s5": {
+        "reachable": true,
+        "party": "a",
+        "disputeId": "d-1",
+        "trigger": "d-1_a_final_pressure",
+        "from": "S3"
+      }
+    },
+    "witness": {
+      "relatedWitnesses": 3,
+      "gateWorks": true,
+      "institutionalS2Full": true,
+      "sample": {
+        "witnessId": "tp-1",
+        "slot": "acquaintance_1",
+        "s0": "vague",
+        "s2": "partial",
+        "s4": "full"
+      }
+    },
+    "scripted": {
+      "logged": true,
+      "logSample": "[Scripted] neighbor-new-10/a/d-1/S0 — 스크립트 응답 사용",
+      "uniqueVariants": 3,
+      "channels": {
+        "interrogation": 180,
+        "evidence_present": 42,
+        "dossier": 48,
+        "witness": 9,
+        "aftermath": 5,
+        "system_message": 6
+      }
+    },
+    "mediationPaths": 4,
+    "mediationDialogues": 6,
+    "solutionGroups": 3
+  },
+  {
+    "caseId": "partnership-new-01",
+    "phase1": 0,
+    "phase2": 0,
+    "runtimeTemplate": true,
+    "scriptedTemplate": true,
+    "semantic": {},
+    "stage3": true,
+    "viewer": "공식 장애공지",
+    "unlock": {
+      "initial": [
+        "e-1",
+        "e-2",
+        "e-3"
+      ],
+      "s1": [
+        "e-4"
+      ],
+      "s2": [
+        "e-5",
+        "e-6"
+      ],
+      "s3": [
+        "e-7"
+      ],
+      "final": [
+        "e-1",
+        "e-2",
+        "e-3",
+        "e-4",
+        "e-5",
+        "e-6",
+        "e-7"
+      ],
+      "combos": 3,
+      "comboTotal": 3
+    },
+    "lie": {
+      "primary": {
+        "party": "a",
+        "disputeId": "d-1"
+      },
+      "expected": {
+        "first": "d-1_a_timeline_question",
+        "second": "hard_evidence",
+        "third": "d-1_a_responsibility_question"
+      },
+      "initial": "S0",
+      "step1": true,
+      "repeatBlocked": true,
+      "step2": true,
+      "step3": true,
+      "states": {
+        "after1": "S1",
+        "afterRepeat": "S1",
+        "after2": "S2",
+        "after3": "S3"
+      },
+      "s5": {
+        "reachable": true,
+        "party": "a",
+        "disputeId": "d-1",
+        "trigger": "d-1_a_final_pressure",
+        "from": "S3"
+      }
+    },
+    "witness": {
+      "relatedWitnesses": 3,
+      "gateWorks": true,
+      "institutionalS2Full": true,
+      "sample": {
+        "witnessId": "tp-1",
+        "slot": "acquaintance_1",
+        "s0": "vague",
+        "s2": "partial",
+        "s4": "full"
+      }
+    },
+    "scripted": {
+      "logged": true,
+      "logSample": "[Scripted] partnership-new-01/a/d-1/S0 — 스크립트 응답 사용",
+      "uniqueVariants": 3,
+      "channels": {
+        "interrogation": 180,
+        "evidence_present": 42,
+        "dossier": 48,
+        "witness": 9,
+        "aftermath": 5,
+        "system_message": 6
+      }
+    },
+    "mediationPaths": 4,
+    "mediationDialogues": 6,
+    "solutionGroups": 3
+  },
+  {
+    "caseId": "tenant-new-10",
+    "phase1": 0,
+    "phase2": 0,
+    "runtimeTemplate": true,
+    "scriptedTemplate": true,
+    "semantic": {},
+    "stage3": true,
+    "viewer": "렌트프리 광고 캡처",
+    "unlock": {
+      "initial": [
+        "e-1",
+        "e-2",
+        "e-3"
+      ],
+      "s1": [
+        "e-4"
+      ],
+      "s2": [
+        "e-5",
+        "e-6"
+      ],
+      "s3": [
+        "e-7"
+      ],
+      "final": [
+        "e-1",
+        "e-2",
+        "e-3",
+        "e-4",
+        "e-5",
+        "e-6",
+        "e-7"
+      ],
+      "combos": 3,
+      "comboTotal": 3
+    },
+    "lie": {
+      "primary": {
+        "party": "a",
+        "disputeId": "d-1"
+      },
+      "expected": {
+        "first": "d-1_a_timeline_question",
+        "second": "hard_evidence",
+        "third": "d-1_a_responsibility_question"
+      },
+      "initial": "S0",
+      "step1": true,
+      "repeatBlocked": true,
+      "step2": true,
+      "step3": true,
+      "states": {
+        "after1": "S1",
+        "afterRepeat": "S1",
+        "after2": "S2",
+        "after3": "S3"
+      },
+      "s5": {
+        "reachable": true,
+        "party": "a",
+        "disputeId": "d-1",
+        "trigger": "d-1_a_final_pressure",
+        "from": "S3"
+      }
+    },
+    "witness": {
+      "relatedWitnesses": 3,
+      "gateWorks": true,
+      "institutionalS2Full": true,
+      "sample": {
+        "witnessId": "tp-1",
+        "slot": "acquaintance_1",
+        "s0": "vague",
+        "s2": "partial",
+        "s4": "full"
+      }
+    },
+    "scripted": {
+      "logged": true,
+      "logSample": "[Scripted] tenant-new-10/a/d-1/S0 — 스크립트 응답 사용",
+      "uniqueVariants": 3,
+      "channels": {
+        "interrogation": 180,
+        "evidence_present": 42,
+        "dossier": 48,
+        "witness": 9,
+        "aftermath": 5,
+        "system_message": 6
+      }
+    },
+    "mediationPaths": 4,
+    "mediationDialogues": 6,
+    "solutionGroups": 3
+  },
+  {
+    "caseId": "workplace-new-10",
+    "phase1": 0,
+    "phase2": 0,
+    "runtimeTemplate": true,
+    "scriptedTemplate": true,
+    "semantic": {},
+    "stage3": true,
+    "viewer": "퇴직합의서 재전송 메일",
+    "unlock": {
+      "initial": [
+        "e-1",
+        "e-2",
+        "e-3"
+      ],
+      "s1": [
+        "e-4"
+      ],
+      "s2": [
+        "e-5",
+        "e-6"
+      ],
+      "s3": [
+        "e-7"
+      ],
+      "final": [
+        "e-1",
+        "e-2",
+        "e-3",
+        "e-4",
+        "e-5",
+        "e-6",
+        "e-7"
+      ],
+      "combos": 3,
+      "comboTotal": 3
+    },
+    "lie": {
+      "primary": {
+        "party": "a",
+        "disputeId": "d-1"
+      },
+      "expected": {
+        "first": "d-1_a_timeline_question",
+        "second": "hard_evidence",
+        "third": "d-1_a_responsibility_question"
+      },
+      "initial": "S0",
+      "step1": true,
+      "repeatBlocked": true,
+      "step2": true,
+      "step3": true,
+      "states": {
+        "after1": "S1",
+        "afterRepeat": "S1",
+        "after2": "S2",
+        "after3": "S3"
+      },
+      "s5": {
+        "reachable": true,
+        "party": "a",
+        "disputeId": "d-1",
+        "trigger": "d-1_a_final_pressure",
+        "from": "S3"
+      }
+    },
+    "witness": {
+      "relatedWitnesses": 3,
+      "gateWorks": true,
+      "institutionalS2Full": true,
+      "sample": {
+        "witnessId": "tp-1",
+        "slot": "acquaintance_1",
+        "s0": "vague",
+        "s2": "partial",
+        "s4": "full"
+      }
+    },
+    "scripted": {
+      "logged": true,
+      "logSample": "[Scripted] workplace-new-10/a/d-1/S0 — 스크립트 응답 사용",
+      "uniqueVariants": 3,
+      "channels": {
+        "interrogation": 180,
+        "evidence_present": 42,
+        "dossier": 48,
+        "witness": 9,
+        "aftermath": 5,
+        "system_message": 6
+      }
+    },
+    "mediationPaths": 4,
+    "mediationDialogues": 6,
+    "solutionGroups": 3
+  },
+  {
+    "caseId": "online-new-06",
+    "phase1": 0,
+    "phase2": 0,
+    "runtimeTemplate": true,
+    "scriptedTemplate": true,
+    "semantic": {},
+    "stage3": true,
+    "viewer": "텔레그램 유출 ZIP 목록",
+    "unlock": {
+      "initial": [
+        "e-1",
+        "e-2",
+        "e-3"
+      ],
+      "s1": [
+        "e-4"
+      ],
+      "s2": [
+        "e-5",
+        "e-6"
+      ],
+      "s3": [
+        "e-7"
+      ],
+      "final": [
+        "e-1",
+        "e-2",
+        "e-3",
+        "e-4",
+        "e-5",
+        "e-6",
+        "e-7"
+      ],
+      "combos": 3,
+      "comboTotal": 3
+    },
+    "lie": {
+      "primary": {
+        "party": "a",
+        "disputeId": "d-1"
+      },
+      "expected": {
+        "first": "d-1_a_timeline_question",
+        "second": "hard_evidence",
+        "third": "d-1_a_responsibility_question"
+      },
+      "initial": "S0",
+      "step1": true,
+      "repeatBlocked": true,
+      "step2": true,
+      "step3": true,
+      "states": {
+        "after1": "S1",
+        "afterRepeat": "S1",
+        "after2": "S2",
+        "after3": "S3"
+      },
+      "s5": {
+        "reachable": true,
+        "party": "a",
+        "disputeId": "d-1",
+        "trigger": "d-1_a_final_pressure",
+        "from": "S3"
+      }
+    },
+    "witness": {
+      "relatedWitnesses": 3,
+      "gateWorks": true,
+      "institutionalS2Full": true,
+      "sample": {
+        "witnessId": "tp-1",
+        "slot": "acquaintance_1",
+        "s0": "vague",
+        "s2": "partial",
+        "s4": "full"
+      }
+    },
+    "scripted": {
+      "logged": true,
+      "logSample": "[Scripted] online-new-06/a/d-1/S0 — 스크립트 응답 사용",
+      "uniqueVariants": 3,
+      "channels": {
+        "interrogation": 144,
+        "evidence_present": 42,
+        "dossier": 48,
+        "witness": 9,
+        "aftermath": 5,
+        "system_message": 6
+      }
+    },
+    "mediationPaths": 4,
+    "mediationDialogues": 6,
+    "solutionGroups": 3
+  },
+  {
+    "caseId": "professional-new-10",
+    "phase1": 0,
+    "phase2": 0,
+    "runtimeTemplate": true,
+    "scriptedTemplate": true,
+    "semantic": {},
+    "stage3": true,
+    "viewer": "final_final_v7.docx 파일 메타데이터",
+    "unlock": {
+      "initial": [
+        "e-1",
+        "e-2",
+        "e-3"
+      ],
+      "s1": [
+        "e-4"
+      ],
+      "s2": [
+        "e-5",
+        "e-6"
+      ],
+      "s3": [
+        "e-7"
+      ],
+      "final": [
+        "e-1",
+        "e-2",
+        "e-3",
+        "e-4",
+        "e-5",
+        "e-6",
+        "e-7"
+      ],
+      "combos": 3,
+      "comboTotal": 3
+    },
+    "lie": {
+      "primary": {
+        "party": "a",
+        "disputeId": "d-1"
+      },
+      "expected": {
+        "first": "d-1_a_timeline_question",
+        "second": "hard_evidence",
+        "third": "d-1_a_responsibility_question"
+      },
+      "initial": "S0",
+      "step1": true,
+      "repeatBlocked": true,
+      "step2": true,
+      "step3": true,
+      "states": {
+        "after1": "S1",
+        "afterRepeat": "S1",
+        "after2": "S2",
+        "after3": "S3"
+      },
+      "s5": {
+        "reachable": true,
+        "party": "a",
+        "disputeId": "d-1",
+        "trigger": "d-1_a_final_pressure",
+        "from": "S3"
+      }
+    },
+    "witness": {
+      "relatedWitnesses": 3,
+      "gateWorks": true,
+      "institutionalS2Full": true,
+      "sample": {
+        "witnessId": "tp-1",
+        "slot": "acquaintance_1",
+        "s0": "vague",
+        "s2": "partial",
+        "s4": "full"
+      }
+    },
+    "scripted": {
+      "logged": true,
+      "logSample": "[Scripted] professional-new-10/a/d-1/S0 — 스크립트 응답 사용",
+      "uniqueVariants": 3,
+      "channels": {
+        "interrogation": 180,
+        "evidence_present": 42,
+        "dossier": 48,
+        "witness": 9,
+        "aftermath": 5,
+        "system_message": 6
+      }
+    },
+    "mediationPaths": 4,
+    "mediationDialogues": 6,
+    "solutionGroups": 3
+  },
+  {
+    "caseId": "civic-new-07",
+    "phase1": 0,
+    "phase2": 0,
+    "runtimeTemplate": true,
+    "scriptedTemplate": true,
+    "semantic": {},
+    "stage3": true,
+    "viewer": "공익신고 접수증",
+    "unlock": {
+      "initial": [
+        "e-1",
+        "e-2",
+        "e-3"
+      ],
+      "s1": [
+        "e-4"
+      ],
+      "s2": [
+        "e-5",
+        "e-6"
+      ],
+      "s3": [
+        "e-7"
+      ],
+      "final": [
+        "e-1",
+        "e-2",
+        "e-3",
+        "e-4",
+        "e-5",
+        "e-6",
+        "e-7"
+      ],
+      "combos": 3,
+      "comboTotal": 3
+    },
+    "lie": {
+      "primary": {
+        "party": "a",
+        "disputeId": "d-1"
+      },
+      "expected": {
+        "first": "d-1_a_timeline_question",
+        "second": "hard_evidence",
+        "third": "d-1_a_responsibility_question"
+      },
+      "initial": "S0",
+      "step1": true,
+      "repeatBlocked": true,
+      "step2": true,
+      "step3": true,
+      "states": {
+        "after1": "S1",
+        "afterRepeat": "S1",
+        "after2": "S2",
+        "after3": "S3"
+      },
+      "s5": {
+        "reachable": true,
+        "party": "a",
+        "disputeId": "d-1",
+        "trigger": "d-1_a_final_pressure",
+        "from": "S3"
+      }
+    },
+    "witness": {
+      "relatedWitnesses": 3,
+      "gateWorks": true,
+      "institutionalS2Full": true,
+      "sample": {
+        "witnessId": "tp-1",
+        "slot": "acquaintance_1",
+        "s0": "vague",
+        "s2": "partial",
+        "s4": "full"
+      }
+    },
+    "scripted": {
+      "logged": true,
+      "logSample": "[Scripted] civic-new-07/a/d-1/S0 — 스크립트 응답 사용",
+      "uniqueVariants": 3,
+      "channels": {
+        "interrogation": 180,
+        "evidence_present": 42,
+        "dossier": 48,
+        "witness": 9,
+        "aftermath": 5,
+        "system_message": 6
+      }
+    },
+    "mediationPaths": 4,
+    "mediationDialogues": 6,
+    "solutionGroups": 3
+  },
+  {
+    "caseId": "neighbor-new-11",
+    "phase1": 0,
+    "phase2": 0,
+    "runtimeTemplate": true,
+    "scriptedTemplate": true,
+    "semantic": {},
+    "stage3": true,
+    "viewer": "맘카페 공지 캡처",
+    "unlock": {
+      "initial": [
+        "e-1",
+        "e-2",
+        "e-3"
+      ],
+      "s1": [
+        "e-4"
+      ],
+      "s2": [
+        "e-5",
+        "e-6"
+      ],
+      "s3": [
+        "e-7"
+      ],
+      "final": [
+        "e-1",
+        "e-2",
+        "e-3",
+        "e-4",
+        "e-5",
+        "e-6",
+        "e-7"
+      ],
+      "combos": 3,
+      "comboTotal": 3
+    },
+    "lie": {
+      "primary": {
+        "party": "a",
+        "disputeId": "d-1"
+      },
+      "expected": {
+        "first": "d-1_a_timeline_question",
+        "second": "hard_evidence",
+        "third": "d-1_a_responsibility_question"
+      },
+      "initial": "S0",
+      "step1": true,
+      "repeatBlocked": true,
+      "step2": true,
+      "step3": true,
+      "states": {
+        "after1": "S1",
+        "afterRepeat": "S1",
+        "after2": "S2",
+        "after3": "S3"
+      },
+      "s5": {
+        "reachable": true,
+        "party": "a",
+        "disputeId": "d-1",
+        "trigger": "d-1_a_final_pressure",
+        "from": "S3"
+      }
+    },
+    "witness": {
+      "relatedWitnesses": 3,
+      "gateWorks": true,
+      "institutionalS2Full": true,
+      "sample": {
+        "witnessId": "tp-1",
+        "slot": "acquaintance_1",
+        "s0": "vague",
+        "s2": "partial",
+        "s4": "full"
+      }
+    },
+    "scripted": {
+      "logged": true,
+      "logSample": "[Scripted] neighbor-new-11/a/d-1/S0 — 스크립트 응답 사용",
+      "uniqueVariants": 3,
+      "channels": {
+        "interrogation": 180,
+        "evidence_present": 42,
+        "dossier": 48,
+        "witness": 9,
+        "aftermath": 5,
+        "system_message": 6
+      }
+    },
+    "mediationPaths": 4,
+    "mediationDialogues": 6,
+    "solutionGroups": 3
+  },
+  {
+    "caseId": "civic-new-11",
+    "phase1": 0,
+    "phase2": 0,
+    "runtimeTemplate": true,
+    "scriptedTemplate": true,
+    "semantic": {},
+    "stage3": true,
+    "viewer": "안전수당 신청 접수증",
+    "unlock": {
+      "initial": [
+        "e-1",
+        "e-2",
+        "e-3"
+      ],
+      "s1": [
+        "e-4"
+      ],
+      "s2": [
+        "e-5",
+        "e-6"
+      ],
+      "s3": [
+        "e-7"
+      ],
+      "final": [
+        "e-1",
+        "e-2",
+        "e-3",
+        "e-4",
+        "e-5",
+        "e-6",
+        "e-7"
+      ],
+      "combos": 3,
+      "comboTotal": 3
+    },
+    "lie": {
+      "primary": {
+        "party": "a",
+        "disputeId": "d-1"
+      },
+      "expected": {
+        "first": "d-1_a_timeline_question",
+        "second": "hard_evidence",
+        "third": "d-1_a_responsibility_question"
+      },
+      "initial": "S0",
+      "step1": true,
+      "repeatBlocked": true,
+      "step2": true,
+      "step3": true,
+      "states": {
+        "after1": "S1",
+        "afterRepeat": "S1",
+        "after2": "S2",
+        "after3": "S3"
+      },
+      "s5": {
+        "reachable": true,
+        "party": "a",
+        "disputeId": "d-1",
+        "trigger": "d-1_a_final_pressure",
+        "from": "S3"
+      }
+    },
+    "witness": {
+      "relatedWitnesses": 3,
+      "gateWorks": true,
+      "institutionalS2Full": true,
+      "sample": {
+        "witnessId": "tp-1",
+        "slot": "acquaintance_1",
+        "s0": "vague",
+        "s2": "partial",
+        "s4": "full"
+      }
+    },
+    "scripted": {
+      "logged": true,
+      "logSample": "[Scripted] civic-new-11/a/d-1/S0 — 스크립트 응답 사용",
+      "uniqueVariants": 3,
+      "channels": {
+        "interrogation": 180,
+        "evidence_present": 42,
+        "dossier": 48,
+        "witness": 9,
+        "aftermath": 5,
+        "system_message": 6
+      }
+    },
+    "mediationPaths": 4,
+    "mediationDialogues": 6,
+    "solutionGroups": 3
+  }
+]

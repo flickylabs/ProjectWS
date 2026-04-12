@@ -1,0 +1,225 @@
+[validate-scripted-text] case=family-v3-01
+[validate-scripted-text] summary={"WARN":193,"FAIL":30}
+- [WARN] D2 interrogation / a|d-1|S0|fact_pursuit / a-d-1-S0-fact_pursuit-v1 <> a-d-1-S0-fact_pursuit-v2: variant 유사도 과다 (76%)
+- [WARN] D2 interrogation / a|d-1|S0|motive_search / a-d-1-S0-motive_search-v2 <> a-d-1-S0-motive_search-v3: variant 유사도 과다 (76%)
+- [WARN] D2 interrogation / a|d-1|S1|empathy_approach / a-d-1-S1-empathy_approach-v2 <> a-d-1-S1-empathy_approach-v3: variant 유사도 과다 (75%)
+- [WARN] D2 interrogation / a|d-1|S1|empathy_approach / a-d-1-S1-empathy_approach-v3 <> a-d-1-S1-empathy_approach-v5: variant 유사도 과다 (72%)
+- [WARN] D2 interrogation / a|d-1|S2|fact_pursuit / a-d-1-S2-fact_pursuit-v3 <> a-d-1-S2-fact_pursuit-v4: variant 유사도 과다 (76%)
+- [WARN] D2 interrogation / a|d-1|S2|motive_search / a-d-1-S2-motive_search-v1 <> a-d-1-S2-motive_search-v4: variant 유사도 과다 (84%)
+- [WARN] D2 interrogation / a|d-1|S2|empathy_approach / a-d-1-S2-empathy_approach-v1 <> a-d-1-S2-empathy_approach-v4: variant 유사도 과다 (83%)
+- [WARN] D2 interrogation / a|d-1|S2|empathy_approach / a-d-1-S2-empathy_approach-v2 <> a-d-1-S2-empathy_approach-v5: variant 유사도 과다 (73%)
+- [WARN] D2 interrogation / a|d-1|S3|fact_pursuit / a-d-1-S3-fact_pursuit-v1 <> a-d-1-S3-fact_pursuit-v4: variant 유사도 과다 (79%)
+- [WARN] D2 interrogation / a|d-1|S3|fact_pursuit / a-d-1-S3-fact_pursuit-v2 <> a-d-1-S3-fact_pursuit-v5: variant 유사도 과다 (84%)
+- [WARN] D2 interrogation / a|d-1|S3|fact_pursuit / a-d-1-S3-fact_pursuit-v3 <> a-d-1-S3-fact_pursuit-v4: variant 유사도 과다 (76%)
+- [WARN] D2 interrogation / a|d-1|S3|motive_search / a-d-1-S3-motive_search-v1 <> a-d-1-S3-motive_search-v4: variant 유사도 과다 (85%)
+- [WARN] D2 interrogation / a|d-1|S3|empathy_approach / a-d-1-S3-empathy_approach-v1 <> a-d-1-S3-empathy_approach-v4: variant 유사도 과다 (81%)
+- [WARN] D2 interrogation / a|d-1|S3|empathy_approach / a-d-1-S3-empathy_approach-v2 <> a-d-1-S3-empathy_approach-v5: variant 유사도 과다 (78%)
+- [WARN] D2 interrogation / a|d-1|S3|empathy_approach / a-d-1-S3-empathy_approach-v3 <> a-d-1-S3-empathy_approach-v4: variant 유사도 과다 (81%)
+- [WARN] D2 interrogation / a|d-1|S4|fact_pursuit / a-d-1-S4-fact_pursuit-v1 <> a-d-1-S4-fact_pursuit-v4: variant 유사도 과다 (73%)
+- [WARN] D2 interrogation / a|d-1|S4|fact_pursuit / a-d-1-S4-fact_pursuit-v2 <> a-d-1-S4-fact_pursuit-v5: variant 유사도 과다 (74%)
+- [WARN] D2 interrogation / a|d-1|S4|motive_search / a-d-1-S4-motive_search-v2 <> a-d-1-S4-motive_search-v5: variant 유사도 과다 (76%)
+- [WARN] D2 interrogation / a|d-1|S4|motive_search / a-d-1-S4-motive_search-v3 <> a-d-1-S4-motive_search-v4: variant 유사도 과다 (79%)
+- [WARN] D2 interrogation / a|d-1|S4|empathy_approach / a-d-1-S4-empathy_approach-v2 <> a-d-1-S4-empathy_approach-v5: variant 유사도 과다 (74%)
+- [WARN] D2 interrogation / a|d-1|S4|empathy_approach / a-d-1-S4-empathy_approach-v3 <> a-d-1-S4-empathy_approach-v4: variant 유사도 과다 (86%)
+- [WARN] D2 interrogation / a|d-1|S5|fact_pursuit / a-d-1-S5-fact_pursuit-v1 <> a-d-1-S5-fact_pursuit-v5: variant 유사도 과다 (80%)
+- [WARN] D2 interrogation / a|d-1|S5|fact_pursuit / a-d-1-S5-fact_pursuit-v2 <> a-d-1-S5-fact_pursuit-v5: variant 유사도 과다 (77%)
+- [WARN] D2 interrogation / a|d-1|S5|fact_pursuit / a-d-1-S5-fact_pursuit-v3 <> a-d-1-S5-fact_pursuit-v5: variant 유사도 과다 (81%)
+- [WARN] D2 interrogation / a|d-1|S5|fact_pursuit / a-d-1-S5-fact_pursuit-v4 <> a-d-1-S5-fact_pursuit-v5: variant 유사도 과다 (77%)
+- [WARN] D2 interrogation / a|d-1|S5|motive_search / a-d-1-S5-motive_search-v1 <> a-d-1-S5-motive_search-v5: variant 유사도 과다 (80%)
+- [WARN] D2 interrogation / a|d-1|S5|motive_search / a-d-1-S5-motive_search-v2 <> a-d-1-S5-motive_search-v5: variant 유사도 과다 (79%)
+- [WARN] D2 interrogation / a|d-1|S5|motive_search / a-d-1-S5-motive_search-v3 <> a-d-1-S5-motive_search-v5: variant 유사도 과다 (79%)
+- [WARN] D2 interrogation / a|d-1|S5|motive_search / a-d-1-S5-motive_search-v4 <> a-d-1-S5-motive_search-v5: variant 유사도 과다 (77%)
+- [WARN] D2 interrogation / a|d-1|S5|empathy_approach / a-d-1-S5-empathy_approach-v1 <> a-d-1-S5-empathy_approach-v3: variant 유사도 과다 (75%)
+- [WARN] D2 interrogation / a|d-1|S5|empathy_approach / a-d-1-S5-empathy_approach-v1 <> a-d-1-S5-empathy_approach-v5: variant 유사도 과다 (90%)
+- [WARN] D2 interrogation / a|d-1|S5|empathy_approach / a-d-1-S5-empathy_approach-v3 <> a-d-1-S5-empathy_approach-v5: variant 유사도 과다 (84%)
+- [WARN] D2 interrogation / a|d-1|S5|empathy_approach / a-d-1-S5-empathy_approach-v4 <> a-d-1-S5-empathy_approach-v5: variant 유사도 과다 (74%)
+- [WARN] D2 interrogation / a|d-2|S0|motive_search / a-d-2-S0-motive_search-v2 <> a-d-2-S0-motive_search-v3: variant 유사도 과다 (75%)
+- [WARN] D2 interrogation / a|d-2|S0|empathy_approach / a-d-2-S0-empathy_approach-v3 <> a-d-2-S0-empathy_approach-v5: variant 유사도 과다 (74%)
+- [WARN] D2 interrogation / a|d-2|S1|fact_pursuit / a-d-2-S1-fact_pursuit-v1 <> a-d-2-S1-fact_pursuit-v2: variant 유사도 과다 (84%)
+- [WARN] D2 interrogation / a|d-2|S1|fact_pursuit / a-d-2-S1-fact_pursuit-v1 <> a-d-2-S1-fact_pursuit-v4: variant 유사도 과다 (78%)
+- [WARN] D2 interrogation / a|d-2|S1|motive_search / a-d-2-S1-motive_search-v1 <> a-d-2-S1-motive_search-v4: variant 유사도 과다 (76%)
+- [WARN] D2 interrogation / a|d-2|S1|motive_search / a-d-2-S1-motive_search-v3 <> a-d-2-S1-motive_search-v5: variant 유사도 과다 (81%)
+- [WARN] D2 interrogation / a|d-2|S1|empathy_approach / a-d-2-S1-empathy_approach-v3 <> a-d-2-S1-empathy_approach-v5: variant 유사도 과다 (73%)
+- [WARN] D2 interrogation / a|d-2|S2|fact_pursuit / a-d-2-S2-fact_pursuit-v1 <> a-d-2-S2-fact_pursuit-v4: variant 유사도 과다 (76%)
+- [WARN] D2 interrogation / a|d-2|S2|motive_search / a-d-2-S2-motive_search-v1 <> a-d-2-S2-motive_search-v4: variant 유사도 과다 (80%)
+- [WARN] D2 interrogation / a|d-2|S2|motive_search / a-d-2-S2-motive_search-v2 <> a-d-2-S2-motive_search-v5: variant 유사도 과다 (84%)
+- [WARN] D2 interrogation / a|d-2|S2|empathy_approach / a-d-2-S2-empathy_approach-v1 <> a-d-2-S2-empathy_approach-v4: variant 유사도 과다 (76%)
+- [WARN] D2 interrogation / a|d-2|S2|empathy_approach / a-d-2-S2-empathy_approach-v2 <> a-d-2-S2-empathy_approach-v5: variant 유사도 과다 (76%)
+- [WARN] D2 interrogation / a|d-2|S2|empathy_approach / a-d-2-S2-empathy_approach-v3 <> a-d-2-S2-empathy_approach-v4: variant 유사도 과다 (73%)
+- [WARN] D2 interrogation / a|d-2|S3|fact_pursuit / a-d-2-S3-fact_pursuit-v1 <> a-d-2-S3-fact_pursuit-v4: variant 유사도 과다 (80%)
+- [WARN] D2 interrogation / a|d-2|S3|fact_pursuit / a-d-2-S3-fact_pursuit-v2 <> a-d-2-S3-fact_pursuit-v5: variant 유사도 과다 (88%)
+- [WARN] D2 interrogation / a|d-2|S3|empathy_approach / a-d-2-S3-empathy_approach-v1 <> a-d-2-S3-empathy_approach-v4: variant 유사도 과다 (77%)
+- [WARN] D2 interrogation / a|d-2|S3|empathy_approach / a-d-2-S3-empathy_approach-v2 <> a-d-2-S3-empathy_approach-v5: variant 유사도 과다 (75%)
+- [WARN] D2 interrogation / a|d-2|S3|empathy_approach / a-d-2-S3-empathy_approach-v3 <> a-d-2-S3-empathy_approach-v4: variant 유사도 과다 (73%)
+- [WARN] D2 interrogation / a|d-2|S4|fact_pursuit / a-d-2-S4-fact_pursuit-v2 <> a-d-2-S4-fact_pursuit-v4: variant 유사도 과다 (80%)
+- [WARN] D2 interrogation / a|d-2|S4|motive_search / a-d-2-S4-motive_search-v1 <> a-d-2-S4-motive_search-v4: variant 유사도 과다 (77%)
+- [WARN] D2 interrogation / a|d-2|S4|empathy_approach / a-d-2-S4-empathy_approach-v1 <> a-d-2-S4-empathy_approach-v4: variant 유사도 과다 (76%)
+- [WARN] D2 interrogation / a|d-2|S4|empathy_approach / a-d-2-S4-empathy_approach-v2 <> a-d-2-S4-empathy_approach-v5: variant 유사도 과다 (73%)
+- [WARN] D2 interrogation / a|d-2|S5|fact_pursuit / a-d-2-S5-fact_pursuit-v1 <> a-d-2-S5-fact_pursuit-v5: variant 유사도 과다 (85%)
+- [WARN] D2 interrogation / a|d-2|S5|fact_pursuit / a-d-2-S5-fact_pursuit-v2 <> a-d-2-S5-fact_pursuit-v5: variant 유사도 과다 (76%)
+- [WARN] D2 interrogation / a|d-2|S5|fact_pursuit / a-d-2-S5-fact_pursuit-v3 <> a-d-2-S5-fact_pursuit-v5: variant 유사도 과다 (78%)
+- [WARN] D2 interrogation / a|d-2|S5|fact_pursuit / a-d-2-S5-fact_pursuit-v4 <> a-d-2-S5-fact_pursuit-v5: variant 유사도 과다 (73%)
+- [WARN] D2 interrogation / a|d-2|S5|motive_search / a-d-2-S5-motive_search-v1 <> a-d-2-S5-motive_search-v5: variant 유사도 과다 (82%)
+- [WARN] D2 interrogation / a|d-2|S5|motive_search / a-d-2-S5-motive_search-v2 <> a-d-2-S5-motive_search-v5: variant 유사도 과다 (74%)
+- [WARN] D2 interrogation / a|d-2|S5|motive_search / a-d-2-S5-motive_search-v3 <> a-d-2-S5-motive_search-v5: variant 유사도 과다 (74%)
+- [WARN] D2 interrogation / a|d-2|S5|motive_search / a-d-2-S5-motive_search-v4 <> a-d-2-S5-motive_search-v5: variant 유사도 과다 (74%)
+- [WARN] D2 interrogation / a|d-2|S5|empathy_approach / a-d-2-S5-empathy_approach-v1 <> a-d-2-S5-empathy_approach-v4: variant 유사도 과다 (73%)
+- [WARN] D2 interrogation / a|d-2|S5|empathy_approach / a-d-2-S5-empathy_approach-v1 <> a-d-2-S5-empathy_approach-v5: variant 유사도 과다 (91%)
+- [WARN] D2 interrogation / a|d-2|S5|empathy_approach / a-d-2-S5-empathy_approach-v2 <> a-d-2-S5-empathy_approach-v5: variant 유사도 과다 (74%)
+- [WARN] D2 interrogation / a|d-2|S5|empathy_approach / a-d-2-S5-empathy_approach-v4 <> a-d-2-S5-empathy_approach-v5: variant 유사도 과다 (82%)
+- [WARN] D2 interrogation / a|d-5|S0|fact_pursuit / a-d-5-S0-fact_pursuit-v1 <> a-d-5-S0-fact_pursuit-v4: variant 유사도 과다 (74%)
+- [WARN] D2 interrogation / a|d-5|S0|fact_pursuit / a-d-5-S0-fact_pursuit-v3 <> a-d-5-S0-fact_pursuit-v5: variant 유사도 과다 (75%)
+- [WARN] D2 interrogation / a|d-5|S0|empathy_approach / a-d-5-S0-empathy_approach-v3 <> a-d-5-S0-empathy_approach-v5: variant 유사도 과다 (72%)
+- [WARN] D2 interrogation / a|d-5|S1|fact_pursuit / a-d-5-S1-fact_pursuit-v3 <> a-d-5-S1-fact_pursuit-v5: variant 유사도 과다 (77%)
+- [WARN] D2 interrogation / a|d-5|S1|motive_search / a-d-5-S1-motive_search-v1 <> a-d-5-S1-motive_search-v4: variant 유사도 과다 (74%)
+- [WARN] D2 interrogation / a|d-5|S1|motive_search / a-d-5-S1-motive_search-v3 <> a-d-5-S1-motive_search-v5: variant 유사도 과다 (74%)
+- [WARN] D2 interrogation / a|d-5|S2|fact_pursuit / a-d-5-S2-fact_pursuit-v1 <> a-d-5-S2-fact_pursuit-v4: variant 유사도 과다 (74%)
+- [WARN] D2 interrogation / a|d-5|S2|fact_pursuit / a-d-5-S2-fact_pursuit-v2 <> a-d-5-S2-fact_pursuit-v5: variant 유사도 과다 (74%)
+- [WARN] D2 interrogation / a|d-5|S2|fact_pursuit / a-d-5-S2-fact_pursuit-v3 <> a-d-5-S2-fact_pursuit-v4: variant 유사도 과다 (73%)
+- [WARN] D2 interrogation / a|d-5|S2|motive_search / a-d-5-S2-motive_search-v1 <> a-d-5-S2-motive_search-v4: variant 유사도 과다 (76%)
+- [WARN] D2 interrogation / a|d-5|S2|motive_search / a-d-5-S2-motive_search-v2 <> a-d-5-S2-motive_search-v5: variant 유사도 과다 (75%)
+- [WARN] D2 interrogation / a|d-5|S2|empathy_approach / a-d-5-S2-empathy_approach-v1 <> a-d-5-S2-empathy_approach-v4: variant 유사도 과다 (76%)
+- [WARN] D2 interrogation / a|d-5|S2|empathy_approach / a-d-5-S2-empathy_approach-v2 <> a-d-5-S2-empathy_approach-v5: variant 유사도 과다 (81%)
+- [WARN] D2 interrogation / a|d-5|S3|fact_pursuit / a-d-5-S3-fact_pursuit-v1 <> a-d-5-S3-fact_pursuit-v4: variant 유사도 과다 (79%)
+- [WARN] D2 interrogation / a|d-5|S3|fact_pursuit / a-d-5-S3-fact_pursuit-v2 <> a-d-5-S3-fact_pursuit-v5: variant 유사도 과다 (76%)
+- [WARN] D2 interrogation / a|d-5|S3|fact_pursuit / a-d-5-S3-fact_pursuit-v3 <> a-d-5-S3-fact_pursuit-v4: variant 유사도 과다 (75%)
+- [WARN] D2 interrogation / a|d-5|S3|motive_search / a-d-5-S3-motive_search-v2 <> a-d-5-S3-motive_search-v4: variant 유사도 과다 (78%)
+- [WARN] D2 interrogation / a|d-5|S3|motive_search / a-d-5-S3-motive_search-v2 <> a-d-5-S3-motive_search-v5: variant 유사도 과다 (81%)
+- [WARN] D2 interrogation / a|d-5|S3|empathy_approach / a-d-5-S3-empathy_approach-v1 <> a-d-5-S3-empathy_approach-v4: variant 유사도 과다 (73%)
+- [WARN] D2 interrogation / a|d-5|S3|empathy_approach / a-d-5-S3-empathy_approach-v2 <> a-d-5-S3-empathy_approach-v5: variant 유사도 과다 (85%)
+- [WARN] D2 interrogation / a|d-5|S3|empathy_approach / a-d-5-S3-empathy_approach-v3 <> a-d-5-S3-empathy_approach-v4: variant 유사도 과다 (78%)
+- [WARN] D2 interrogation / a|d-5|S4|fact_pursuit / a-d-5-S4-fact_pursuit-v2 <> a-d-5-S4-fact_pursuit-v5: variant 유사도 과다 (86%)
+- [WARN] D2 interrogation / a|d-5|S4|motive_search / a-d-5-S4-motive_search-v1 <> a-d-5-S4-motive_search-v4: variant 유사도 과다 (75%)
+- [WARN] D2 interrogation / a|d-5|S4|empathy_approach / a-d-5-S4-empathy_approach-v1 <> a-d-5-S4-empathy_approach-v4: variant 유사도 과다 (84%)
+- [WARN] D2 interrogation / a|d-5|S4|empathy_approach / a-d-5-S4-empathy_approach-v2 <> a-d-5-S4-empathy_approach-v5: variant 유사도 과다 (77%)
+- [WARN] D2 interrogation / a|d-5|S4|empathy_approach / a-d-5-S4-empathy_approach-v3 <> a-d-5-S4-empathy_approach-v4: variant 유사도 과다 (75%)
+- [WARN] D2 interrogation / a|d-5|S5|fact_pursuit / a-d-5-S5-fact_pursuit-v1 <> a-d-5-S5-fact_pursuit-v2: variant 유사도 과다 (74%)
+- [WARN] D2 interrogation / a|d-5|S5|fact_pursuit / a-d-5-S5-fact_pursuit-v1 <> a-d-5-S5-fact_pursuit-v4: variant 유사도 과다 (75%)
+- [WARN] D2 interrogation / a|d-5|S5|fact_pursuit / a-d-5-S5-fact_pursuit-v1 <> a-d-5-S5-fact_pursuit-v5: variant 유사도 과다 (98%)
+- [WARN] D2 interrogation / a|d-5|S5|fact_pursuit / a-d-5-S5-fact_pursuit-v2 <> a-d-5-S5-fact_pursuit-v5: variant 유사도 과다 (76%)
+- [WARN] D2 interrogation / a|d-5|S5|fact_pursuit / a-d-5-S5-fact_pursuit-v4 <> a-d-5-S5-fact_pursuit-v5: variant 유사도 과다 (75%)
+- [WARN] D2 interrogation / a|d-5|S5|motive_search / a-d-5-S5-motive_search-v1 <> a-d-5-S5-motive_search-v5: variant 유사도 과다 (86%)
+- [WARN] D2 interrogation / a|d-5|S5|motive_search / a-d-5-S5-motive_search-v2 <> a-d-5-S5-motive_search-v5: variant 유사도 과다 (82%)
+- [WARN] D2 interrogation / a|d-5|S5|motive_search / a-d-5-S5-motive_search-v4 <> a-d-5-S5-motive_search-v5: variant 유사도 과다 (82%)
+- [WARN] D2 interrogation / a|d-5|S5|empathy_approach / a-d-5-S5-empathy_approach-v1 <> a-d-5-S5-empathy_approach-v4: variant 유사도 과다 (77%)
+- [WARN] D2 interrogation / a|d-5|S5|empathy_approach / a-d-5-S5-empathy_approach-v1 <> a-d-5-S5-empathy_approach-v5: variant 유사도 과다 (93%)
+- [WARN] D2 interrogation / a|d-5|S5|empathy_approach / a-d-5-S5-empathy_approach-v3 <> a-d-5-S5-empathy_approach-v5: variant 유사도 과다 (77%)
+- [WARN] D2 interrogation / a|d-5|S5|empathy_approach / a-d-5-S5-empathy_approach-v4 <> a-d-5-S5-empathy_approach-v5: variant 유사도 과다 (84%)
+- [WARN] D2 interrogation / a|h-d3|S0|fact_pursuit / a-h-d3-S0-fact_pursuit-v1 <> a-h-d3-S0-fact_pursuit-v4: variant 유사도 과다 (76%)
+- [WARN] D2 interrogation / a|h-d3|S0|fact_pursuit / a-h-d3-S0-fact_pursuit-v3 <> a-h-d3-S0-fact_pursuit-v5: variant 유사도 과다 (75%)
+- [WARN] D2 interrogation / a|h-d3|S1|fact_pursuit / a-h-d3-S1-fact_pursuit-v1 <> a-h-d3-S1-fact_pursuit-v4: variant 유사도 과다 (72%)
+- [WARN] D2 interrogation / a|h-d3|S1|motive_search / a-h-d3-S1-motive_search-v3 <> a-h-d3-S1-motive_search-v5: variant 유사도 과다 (82%)
+- [WARN] D2 interrogation / a|h-d3|S1|empathy_approach / a-h-d3-S1-empathy_approach-v2 <> a-h-d3-S1-empathy_approach-v3: variant 유사도 과다 (72%)
+- [WARN] D2 interrogation / a|h-d3|S2|fact_pursuit / a-h-d3-S2-fact_pursuit-v1 <> a-h-d3-S2-fact_pursuit-v4: variant 유사도 과다 (76%)
+- [WARN] D2 interrogation / a|h-d3|S2|fact_pursuit / a-h-d3-S2-fact_pursuit-v2 <> a-h-d3-S2-fact_pursuit-v5: variant 유사도 과다 (79%)
+- [WARN] D2 interrogation / a|h-d3|S2|motive_search / a-h-d3-S2-motive_search-v1 <> a-h-d3-S2-motive_search-v4: variant 유사도 과다 (79%)
+- [WARN] D2 interrogation / a|h-d3|S2|motive_search / a-h-d3-S2-motive_search-v2 <> a-h-d3-S2-motive_search-v5: variant 유사도 과다 (74%)
+- [WARN] D2 interrogation / a|h-d3|S2|empathy_approach / a-h-d3-S2-empathy_approach-v2 <> a-h-d3-S2-empathy_approach-v5: variant 유사도 과다 (90%)
+- [WARN] D2 interrogation / a|h-d3|S2|empathy_approach / a-h-d3-S2-empathy_approach-v3 <> a-h-d3-S2-empathy_approach-v4: variant 유사도 과다 (79%)
+- [WARN] D2 interrogation / a|h-d3|S3|fact_pursuit / a-h-d3-S3-fact_pursuit-v1 <> a-h-d3-S3-fact_pursuit-v4: variant 유사도 과다 (84%)
+- [WARN] D2 interrogation / a|h-d3|S3|fact_pursuit / a-h-d3-S3-fact_pursuit-v2 <> a-h-d3-S3-fact_pursuit-v5: variant 유사도 과다 (79%)
+- [WARN] D2 interrogation / a|h-d3|S3|motive_search / a-h-d3-S3-motive_search-v1 <> a-h-d3-S3-motive_search-v4: variant 유사도 과다 (76%)
+- [WARN] D2 interrogation / a|h-d3|S3|motive_search / a-h-d3-S3-motive_search-v2 <> a-h-d3-S3-motive_search-v4: variant 유사도 과다 (74%)
+- [WARN] D2 interrogation / a|h-d3|S3|motive_search / a-h-d3-S3-motive_search-v2 <> a-h-d3-S3-motive_search-v5: variant 유사도 과다 (86%)
+- [WARN] D2 interrogation / a|h-d3|S3|empathy_approach / a-h-d3-S3-empathy_approach-v1 <> a-h-d3-S3-empathy_approach-v4: variant 유사도 과다 (77%)
+- [WARN] D2 interrogation / a|h-d3|S3|empathy_approach / a-h-d3-S3-empathy_approach-v2 <> a-h-d3-S3-empathy_approach-v5: variant 유사도 과다 (82%)
+- [WARN] D2 interrogation / a|h-d3|S3|empathy_approach / a-h-d3-S3-empathy_approach-v3 <> a-h-d3-S3-empathy_approach-v4: variant 유사도 과다 (75%)
+- [WARN] D2 interrogation / a|h-d3|S4|fact_pursuit / a-h-d3-S4-fact_pursuit-v2 <> a-h-d3-S4-fact_pursuit-v4: variant 유사도 과다 (81%)
+- [WARN] D2 interrogation / a|h-d3|S4|fact_pursuit / a-h-d3-S4-fact_pursuit-v2 <> a-h-d3-S4-fact_pursuit-v5: variant 유사도 과다 (83%)
+- [WARN] D2 interrogation / a|h-d3|S4|motive_search / a-h-d3-S4-motive_search-v2 <> a-h-d3-S4-motive_search-v4: variant 유사도 과다 (74%)
+- [WARN] D2 interrogation / a|h-d3|S4|motive_search / a-h-d3-S4-motive_search-v2 <> a-h-d3-S4-motive_search-v5: variant 유사도 과다 (80%)
+- [WARN] D2 interrogation / a|h-d3|S4|empathy_approach / a-h-d3-S4-empathy_approach-v2 <> a-h-d3-S4-empathy_approach-v4: variant 유사도 과다 (77%)
+- [WARN] D2 interrogation / a|h-d3|S4|empathy_approach / a-h-d3-S4-empathy_approach-v2 <> a-h-d3-S4-empathy_approach-v5: variant 유사도 과다 (84%)
+- [FAIL] B4 interrogation / a|h-d3|S5|fact_pursuit / a-h-d3-S5-fact_pursuit-v1: S5 구체적 금액 미포함
+- [FAIL] B4 interrogation / a|h-d3|S5|fact_pursuit / a-h-d3-S5-fact_pursuit-v2: S5 구체적 금액 미포함
+- [FAIL] B4 interrogation / a|h-d3|S5|fact_pursuit / a-h-d3-S5-fact_pursuit-v3: S5 구체적 금액 미포함
+- [FAIL] B4 interrogation / a|h-d3|S5|fact_pursuit / a-h-d3-S5-fact_pursuit-v4: S5 구체적 금액 미포함
+- [FAIL] B4 interrogation / a|h-d3|S5|fact_pursuit / a-h-d3-S5-fact_pursuit-v5: S5 구체적 금액 미포함
+- [FAIL] B4 interrogation / a|h-d3|S5|motive_search / a-h-d3-S5-motive_search-v1: S5 구체적 금액 미포함
+- [FAIL] B4 interrogation / a|h-d3|S5|motive_search / a-h-d3-S5-motive_search-v2: S5 구체적 금액 미포함
+- [FAIL] B4 interrogation / a|h-d3|S5|motive_search / a-h-d3-S5-motive_search-v3: S5 구체적 금액 미포함
+- [FAIL] B4 interrogation / a|h-d3|S5|motive_search / a-h-d3-S5-motive_search-v4: S5 구체적 금액 미포함
+- [FAIL] B4 interrogation / a|h-d3|S5|motive_search / a-h-d3-S5-motive_search-v5: S5 구체적 금액 미포함
+- [FAIL] B4 interrogation / a|h-d3|S5|empathy_approach / a-h-d3-S5-empathy_approach-v1: S5 구체적 금액 미포함
+- [FAIL] B4 interrogation / a|h-d3|S5|empathy_approach / a-h-d3-S5-empathy_approach-v2: S5 구체적 금액 미포함
+- [FAIL] B4 interrogation / a|h-d3|S5|empathy_approach / a-h-d3-S5-empathy_approach-v3: S5 구체적 금액 미포함
+- [FAIL] B4 interrogation / a|h-d3|S5|empathy_approach / a-h-d3-S5-empathy_approach-v4: S5 구체적 금액 미포함
+- [FAIL] B4 interrogation / a|h-d3|S5|empathy_approach / a-h-d3-S5-empathy_approach-v5: S5 구체적 금액 미포함
+- [WARN] D2 interrogation / a|h-d4|S0|fact_pursuit / a-h-d4-S0-fact_pursuit-v1 <> a-h-d4-S0-fact_pursuit-v4: variant 유사도 과다 (80%)
+- [WARN] D2 interrogation / a|h-d4|S0|fact_pursuit / a-h-d4-S0-fact_pursuit-v3 <> a-h-d4-S0-fact_pursuit-v5: variant 유사도 과다 (77%)
+- [WARN] D2 interrogation / a|h-d4|S0|motive_search / a-h-d4-S0-motive_search-v1 <> a-h-d4-S0-motive_search-v4: variant 유사도 과다 (73%)
+- [WARN] D2 interrogation / a|h-d4|S0|motive_search / a-h-d4-S0-motive_search-v3 <> a-h-d4-S0-motive_search-v5: variant 유사도 과다 (75%)
+- [WARN] D2 interrogation / a|h-d4|S0|empathy_approach / a-h-d4-S0-empathy_approach-v1 <> a-h-d4-S0-empathy_approach-v4: variant 유사도 과다 (73%)
+- [WARN] D2 interrogation / a|h-d4|S0|empathy_approach / a-h-d4-S0-empathy_approach-v3 <> a-h-d4-S0-empathy_approach-v5: variant 유사도 과다 (74%)
+- [WARN] D2 interrogation / a|h-d4|S1|fact_pursuit / a-h-d4-S1-fact_pursuit-v3 <> a-h-d4-S1-fact_pursuit-v5: variant 유사도 과다 (73%)
+- [WARN] D2 interrogation / a|h-d4|S1|motive_search / a-h-d4-S1-motive_search-v2 <> a-h-d4-S1-motive_search-v3: variant 유사도 과다 (73%)
+- [WARN] D2 interrogation / a|h-d4|S1|empathy_approach / a-h-d4-S1-empathy_approach-v1 <> a-h-d4-S1-empathy_approach-v4: variant 유사도 과다 (77%)
+- [WARN] D2 interrogation / a|h-d4|S1|empathy_approach / a-h-d4-S1-empathy_approach-v3 <> a-h-d4-S1-empathy_approach-v5: variant 유사도 과다 (80%)
+- [WARN] D2 interrogation / a|h-d4|S2|fact_pursuit / a-h-d4-S2-fact_pursuit-v1 <> a-h-d4-S2-fact_pursuit-v4: variant 유사도 과다 (76%)
+- [WARN] D2 interrogation / a|h-d4|S2|fact_pursuit / a-h-d4-S2-fact_pursuit-v2 <> a-h-d4-S2-fact_pursuit-v5: variant 유사도 과다 (79%)
+- [WARN] D2 interrogation / a|h-d4|S2|motive_search / a-h-d4-S2-motive_search-v2 <> a-h-d4-S2-motive_search-v4: variant 유사도 과다 (83%)
+- [WARN] D2 interrogation / a|h-d4|S2|motive_search / a-h-d4-S2-motive_search-v2 <> a-h-d4-S2-motive_search-v5: variant 유사도 과다 (76%)
+- [WARN] D2 interrogation / a|h-d4|S2|empathy_approach / a-h-d4-S2-empathy_approach-v1 <> a-h-d4-S2-empathy_approach-v4: variant 유사도 과다 (75%)
+- [WARN] D2 interrogation / a|h-d4|S2|empathy_approach / a-h-d4-S2-empathy_approach-v2 <> a-h-d4-S2-empathy_approach-v5: variant 유사도 과다 (78%)
+- [WARN] D2 interrogation / a|h-d4|S2|empathy_approach / a-h-d4-S2-empathy_approach-v3 <> a-h-d4-S2-empathy_approach-v4: variant 유사도 과다 (87%)
+- [WARN] D2 interrogation / a|h-d4|S3|fact_pursuit / a-h-d4-S3-fact_pursuit-v1 <> a-h-d4-S3-fact_pursuit-v4: variant 유사도 과다 (73%)
+- [WARN] D2 interrogation / a|h-d4|S3|fact_pursuit / a-h-d4-S3-fact_pursuit-v2 <> a-h-d4-S3-fact_pursuit-v5: variant 유사도 과다 (88%)
+- [WARN] D2 interrogation / a|h-d4|S3|fact_pursuit / a-h-d4-S3-fact_pursuit-v3 <> a-h-d4-S3-fact_pursuit-v4: variant 유사도 과다 (72%)
+- [WARN] D2 interrogation / a|h-d4|S3|motive_search / a-h-d4-S3-motive_search-v1 <> a-h-d4-S3-motive_search-v4: variant 유사도 과다 (74%)
+- [WARN] D2 interrogation / a|h-d4|S3|motive_search / a-h-d4-S3-motive_search-v2 <> a-h-d4-S3-motive_search-v5: variant 유사도 과다 (84%)
+- [WARN] D2 interrogation / a|h-d4|S3|empathy_approach / a-h-d4-S3-empathy_approach-v1 <> a-h-d4-S3-empathy_approach-v4: variant 유사도 과다 (75%)
+- [WARN] D2 interrogation / a|h-d4|S3|empathy_approach / a-h-d4-S3-empathy_approach-v2 <> a-h-d4-S3-empathy_approach-v5: variant 유사도 과다 (83%)
+- [WARN] D2 interrogation / a|h-d4|S3|empathy_approach / a-h-d4-S3-empathy_approach-v3 <> a-h-d4-S3-empathy_approach-v4: variant 유사도 과다 (85%)
+- [WARN] D2 interrogation / a|h-d4|S4|fact_pursuit / a-h-d4-S4-fact_pursuit-v1 <> a-h-d4-S4-fact_pursuit-v4: variant 유사도 과다 (73%)
+- [WARN] D2 interrogation / a|h-d4|S4|motive_search / a-h-d4-S4-motive_search-v2 <> a-h-d4-S4-motive_search-v4: variant 유사도 과다 (75%)
+- [WARN] D2 interrogation / a|h-d4|S4|motive_search / a-h-d4-S4-motive_search-v2 <> a-h-d4-S4-motive_search-v5: variant 유사도 과다 (79%)
+- [WARN] D2 interrogation / a|h-d4|S4|empathy_approach / a-h-d4-S4-empathy_approach-v1 <> a-h-d4-S4-empathy_approach-v4: variant 유사도 과다 (76%)
+- [WARN] D2 interrogation / a|h-d4|S4|empathy_approach / a-h-d4-S4-empathy_approach-v2 <> a-h-d4-S4-empathy_approach-v5: variant 유사도 과다 (83%)
+- [WARN] D2 interrogation / a|h-d4|S5|fact_pursuit / a-h-d4-S5-fact_pursuit-v1 <> a-h-d4-S5-fact_pursuit-v5: variant 유사도 과다 (88%)
+- [WARN] D2 interrogation / a|h-d4|S5|fact_pursuit / a-h-d4-S5-fact_pursuit-v2 <> a-h-d4-S5-fact_pursuit-v5: variant 유사도 과다 (75%)
+- [WARN] D2 interrogation / a|h-d4|S5|motive_search / a-h-d4-S5-motive_search-v1 <> a-h-d4-S5-motive_search-v5: variant 유사도 과다 (82%)
+- [WARN] D2 interrogation / a|h-d4|S5|motive_search / a-h-d4-S5-motive_search-v2 <> a-h-d4-S5-motive_search-v5: variant 유사도 과다 (77%)
+- [WARN] D2 interrogation / a|h-d4|S5|motive_search / a-h-d4-S5-motive_search-v3 <> a-h-d4-S5-motive_search-v5: variant 유사도 과다 (78%)
+- [WARN] D2 interrogation / a|h-d4|S5|motive_search / a-h-d4-S5-motive_search-v4 <> a-h-d4-S5-motive_search-v5: variant 유사도 과다 (75%)
+- [WARN] D2 interrogation / a|h-d4|S5|empathy_approach / a-h-d4-S5-empathy_approach-v1 <> a-h-d4-S5-empathy_approach-v5: variant 유사도 과다 (92%)
+- [WARN] D2 interrogation / a|h-d4|S5|empathy_approach / a-h-d4-S5-empathy_approach-v2 <> a-h-d4-S5-empathy_approach-v5: variant 유사도 과다 (73%)
+- [WARN] D2 interrogation / a|h-d4|S5|empathy_approach / a-h-d4-S5-empathy_approach-v3 <> a-h-d4-S5-empathy_approach-v5: variant 유사도 과다 (73%)
+- [FAIL] B4 interrogation / b|h-d3|S5|fact_pursuit / b-h-d3-S5-fact_pursuit-v1: S5 구체적 금액 미포함
+- [FAIL] B4 interrogation / b|h-d3|S5|fact_pursuit / b-h-d3-S5-fact_pursuit-v2: S5 구체적 금액 미포함
+- [FAIL] B4 interrogation / b|h-d3|S5|fact_pursuit / b-h-d3-S5-fact_pursuit-v3: S5 구체적 금액 미포함
+- [FAIL] B4 interrogation / b|h-d3|S5|fact_pursuit / b-h-d3-S5-fact_pursuit-v4: S5 구체적 금액 미포함
+- [FAIL] B4 interrogation / b|h-d3|S5|fact_pursuit / b-h-d3-S5-fact_pursuit-v5: S5 구체적 금액 미포함
+- [FAIL] B4 interrogation / b|h-d3|S5|motive_search / b-h-d3-S5-motive_search-v1: S5 구체적 금액 미포함
+- [FAIL] B4 interrogation / b|h-d3|S5|motive_search / b-h-d3-S5-motive_search-v2: S5 구체적 금액 미포함
+- [FAIL] B4 interrogation / b|h-d3|S5|motive_search / b-h-d3-S5-motive_search-v3: S5 구체적 금액 미포함
+- [FAIL] B4 interrogation / b|h-d3|S5|motive_search / b-h-d3-S5-motive_search-v4: S5 구체적 금액 미포함
+- [FAIL] B4 interrogation / b|h-d3|S5|motive_search / b-h-d3-S5-motive_search-v5: S5 구체적 금액 미포함
+- [FAIL] B4 interrogation / b|h-d3|S5|empathy_approach / b-h-d3-S5-empathy_approach-v1: S5 구체적 금액 미포함
+- [FAIL] B4 interrogation / b|h-d3|S5|empathy_approach / b-h-d3-S5-empathy_approach-v2: S5 구체적 금액 미포함
+- [FAIL] B4 interrogation / b|h-d3|S5|empathy_approach / b-h-d3-S5-empathy_approach-v3: S5 구체적 금액 미포함
+- [FAIL] B4 interrogation / b|h-d3|S5|empathy_approach / b-h-d3-S5-empathy_approach-v4: S5 구체적 금액 미포함
+- [FAIL] B4 interrogation / b|h-d3|S5|empathy_approach / b-h-d3-S5-empathy_approach-v5: S5 구체적 금액 미포함
+- [WARN] 4-E dossier / b|dc-1.b.q1|early / b-dc-1.b.q1-early-v1: Dossier 반응에 질문 고유 전제가 거의 반영되지 않았습니다
+- [WARN] 4-E dossier / b|dc-1.b.q1|early / b-dc-1.b.q1-early-v2: Dossier 반응에 질문 고유 전제가 거의 반영되지 않았습니다
+- [WARN] 4-E dossier / b|dc-1.b.q1|early / b-dc-1.b.q1-early-v3: Dossier 반응에 질문 고유 전제가 거의 반영되지 않았습니다
+- [WARN] 4-E dossier / b|dc-1.b.q1|mid / b-dc-1.b.q1-mid-v3: Dossier 반응에 질문 고유 전제가 거의 반영되지 않았습니다
+- [WARN] 4-E dossier / b|dc-1.b.q1|late / b-dc-1.b.q1-late-v1: Dossier 반응에 질문 고유 전제가 거의 반영되지 않았습니다
+- [WARN] 4-E dossier / b|dc-2.b.q1|mid / b-dc-2.b.q1-mid-v2: Dossier 반응에 질문 고유 전제가 거의 반영되지 않았습니다
+- [WARN] 4-E dossier / b|dc-2.b.q1|late / b-dc-2.b.q1-late-v2: Dossier 반응에 질문 고유 전제가 거의 반영되지 않았습니다
+- [WARN] 4-E dossier / b|dc-3.b.q1|early / b-dc-3.b.q1-early-v2: Dossier 반응에 질문 고유 전제가 거의 반영되지 않았습니다
+- [WARN] 4-E dossier / b|dc-3.b.q1|mid / b-dc-3.b.q1-mid-v1: Dossier 반응에 질문 고유 전제가 거의 반영되지 않았습니다
+- [WARN] 4-E dossier / b|dc-3.b.q1|mid / b-dc-3.b.q1-mid-v3: Dossier 반응에 질문 고유 전제가 거의 반영되지 않았습니다
+- [WARN] 4-E dossier / b|dc-4.b.q1|early / b-dc-4.b.q1-early-v3: Dossier 반응에 질문 고유 전제가 거의 반영되지 않았습니다
+- [WARN] 4-E dossier / b|dc-4.b.q1|mid / b-dc-4.b.q1-mid-v1: Dossier 반응에 질문 고유 전제가 거의 반영되지 않았습니다
+- [WARN] 4-E dossier / b|dc-4.b.q1|mid / b-dc-4.b.q1-mid-v3: Dossier 반응에 질문 고유 전제가 거의 반영되지 않았습니다
+- [WARN] 4-E dossier / b|dc-4.b.q1|late / b-dc-4.b.q1-late-v1: Dossier 반응에 질문 고유 전제가 거의 반영되지 않았습니다
+- [WARN] 4-D witness / w-1|partial / w-1-partial-v1: 증인 증언에 사건 고유 단서가 부족합니다
+- [WARN] 4-D witness / w-1|partial / w-1-partial-v2: 증인 증언에 사건 고유 단서가 부족합니다
+- [WARN] 4-D witness / w-3|vague / w-3-vague-v3: 증인 증언에 사건 고유 단서가 부족합니다
+- [WARN] 4-D witness / w-3|partial / w-3-partial-v2: 증인 증언에 사건 고유 단서가 부족합니다
+- [WARN] 4-H aftermath / a_primary_fault / a_primary_fault-v1: aftermath에 사건 고유 결말이나 선택 솔루션이 부족합니다
+- [WARN] 4-H aftermath / a_primary_fault / a_primary_fault-v2: aftermath에 사건 고유 결말이나 선택 솔루션이 부족합니다
+- [WARN] 4-H aftermath / protective_resolution / protective_resolution-v1: aftermath에 사건 고유 결말이나 선택 솔루션이 부족합니다
+- [WARN] 4-H aftermath / protective_resolution / protective_resolution-v2: aftermath에 사건 고유 결말이나 선택 솔루션이 부족합니다
+- [WARN] 4-H aftermath / procedural_caution / procedural_caution-v1: aftermath에 사건 고유 결말이나 선택 솔루션이 부족합니다
+- [WARN] 4-H aftermath / procedural_caution / procedural_caution-v2: aftermath에 사건 고유 결말이나 선택 솔루션이 부족합니다

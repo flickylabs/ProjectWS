@@ -1,0 +1,17 @@
+[case-stage1a-runtime] wrote src/data/cases/generated/family-new-03.json
+[runtime-template-coverage] case=family-new-03
+summary={}
+PASS
+[case-stage1e-mediation-dialogues] caseId=case-family-new-03
+[case-stage1e-mediation-dialogues] out=src/data/dialogues/mediation/family-new-03.json
+[case-stage2-scripted-bootstrap] wrote src/data/scriptedText/family-new-03.json
+[scripted-template-coverage] case=family-new-03
+summary={}
+PASS
+[scripted-semantic-quality] case=family-new-03
+summary={}
+PASS
+[validate-scripted-text] case=family-new-03
+[validate-scripted-text] summary={}
+[validate-scripted-text] PASS
+[family-new-03] wrote tmp\family-new-03-stage3-validate.txt

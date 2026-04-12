@@ -1,0 +1,3 @@
+[scripted-template-coverage] case=online-new-07
+summary={}
+PASS

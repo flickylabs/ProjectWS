@@ -1,0 +1,3 @@
+[validate-scripted-text] case=neighbor-new-08
+[validate-scripted-text] summary={}
+[validate-scripted-text] PASS

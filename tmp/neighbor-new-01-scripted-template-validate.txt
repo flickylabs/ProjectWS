@@ -1,0 +1,3 @@
+[scripted-template-coverage] case=neighbor-new-01
+summary={}
+PASS

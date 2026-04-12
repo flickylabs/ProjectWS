@@ -17,6 +17,7 @@ import {
   computeCascadeTargets,
   checkEmergence,
 } from '../../engine/discoveryEngine'
+import { notifyDisputeEmergence } from '../../engine/readinessEngine'
 import { createAppraisal } from '../../engine/evidenceEngine'
 
 const EMPTY_DISCOVERY: DiscoveryState = {
@@ -148,6 +149,8 @@ export const createDiscoverySlice: StateCreator<DiscoverySlice, [], [], Discover
 
   // ── 숨겨진 쟁점 ──
   emergeDispute: (disputeId, via, turn, description) => {
+    // 숨겨진 쟁점 발현 시 보너스 턴 부여 (동기 호출)
+    notifyDisputeEmergence()
     set((prev) => {
       const d = { ...prev.discovery }
       const vis = { ...d.disputeVisibility }

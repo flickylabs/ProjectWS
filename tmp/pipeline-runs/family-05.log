@@ -1,0 +1,17 @@
+[case-stage1a-runtime] wrote src/data/cases/generated/family-05.json
+[runtime-template-coverage] case=family-05
+summary={}
+PASS
+[case-stage1e-mediation-dialogues] caseId=case-family-05
+[case-stage1e-mediation-dialogues] out=src/data/dialogues/mediation/family-05.json
+[case-stage2-scripted-bootstrap] wrote src/data/scriptedText/family-05.json
+[scripted-template-coverage] case=family-05
+summary={}
+PASS
+[scripted-semantic-quality] case=family-05
+summary={}
+PASS
+[validate-scripted-text] case=family-05
+[validate-scripted-text] summary={}
+[validate-scripted-text] PASS
+[family-05] wrote tmp\family-05-stage3-validate.txt

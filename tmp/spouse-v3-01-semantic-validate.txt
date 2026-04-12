@@ -1,0 +1,48 @@
+[scripted-semantic-quality] case=spouse-v3-01
+WARN T2 interrogation:a-d-1-S0-empathy-approach-v4 may soften too abruptly for S0
+WARN T2 interrogation:a-d-1-S1-motive-search-v3 may soften too abruptly for S1
+WARN R2 interrogation:a|d-1|S5|fact_pursuit adjacent variants 1 and 2 are too similar (94%)
+WARN R2 interrogation:a|d-1|S5|fact_pursuit adjacent variants 4 and 5 are too similar (94%)
+WARN R2 interrogation:a|d-1|S5|motive_search adjacent variants 1 and 2 are too similar (94%)
+WARN R2 interrogation:a|d-1|S5|motive_search adjacent variants 4 and 5 are too similar (94%)
+WARN R2 interrogation:a|d-1|S5|empathy_approach adjacent variants 1 and 2 are too similar (92%)
+WARN R2 interrogation:a|d-1|S5|empathy_approach adjacent variants 4 and 5 are too similar (77%)
+WARN R2 interrogation:a|d-2|S5|fact_pursuit adjacent variants 1 and 2 are too similar (94%)
+WARN R2 interrogation:a|d-2|S5|fact_pursuit adjacent variants 4 and 5 are too similar (94%)
+WARN R2 interrogation:a|d-2|S5|motive_search adjacent variants 1 and 2 are too similar (94%)
+WARN R2 interrogation:a|d-2|S5|motive_search adjacent variants 4 and 5 are too similar (94%)
+WARN T7 interrogation:a-d-2-S5-empathy-approach-v1 lacks an admission/resigned contour for S5
+WARN T7 interrogation:a-d-2-S5-empathy-approach-v2 lacks an admission/resigned contour for S5
+WARN T7 interrogation:a-d-2-S5-empathy-approach-v3 lacks an admission/resigned contour for S5
+WARN T7 interrogation:a-d-2-S5-empathy-approach-v4 lacks an admission/resigned contour for S5
+WARN T7 interrogation:a-d-2-S5-empathy-approach-v5 lacks an admission/resigned contour for S5
+WARN R2 interrogation:a|d-2|S5|empathy_approach adjacent variants 1 and 2 are too similar (92%)
+WARN T2 interrogation:a-h-d3-S1-fact-pursuit-v1 may soften too abruptly for S1
+WARN T2 interrogation:a-h-d3-S1-fact-pursuit-v2 may soften too abruptly for S1
+WARN T2 interrogation:a-h-d3-S1-fact-pursuit-v4 may soften too abruptly for S1
+WARN A7 interrogation:a-h-d3-S4-motive-search-v4 lacks self-victim framing for victim_cosplay archetype
+WARN R2 interrogation:a|h-d3|S5|fact_pursuit adjacent variants 1 and 2 are too similar (100%)
+WARN R2 interrogation:a|h-d3|S5|fact_pursuit adjacent variants 4 and 5 are too similar (84%)
+WARN R2 interrogation:a|h-d3|S5|motive_search adjacent variants 1 and 2 are too similar (93%)
+WARN R2 interrogation:a|h-d3|S5|motive_search adjacent variants 4 and 5 are too similar (93%)
+WARN R2 interrogation:a|h-d3|S5|empathy_approach adjacent variants 1 and 2 are too similar (92%)
+WARN R2 interrogation:a|h-d3|S5|empathy_approach adjacent variants 4 and 5 are too similar (92%)
+WARN T2 interrogation:a-h-d4-S1-empathy-approach-v3 may soften too abruptly for S1
+WARN R2 interrogation:a|h-d4|S5|fact_pursuit adjacent variants 1 and 2 are too similar (92%)
+WARN R2 interrogation:a|h-d4|S5|fact_pursuit adjacent variants 4 and 5 are too similar (76%)
+WARN R2 interrogation:a|h-d4|S5|motive_search adjacent variants 1 and 2 are too similar (96%)
+WARN R2 interrogation:a|h-d4|S5|motive_search adjacent variants 4 and 5 are too similar (96%)
+WARN R2 interrogation:a|h-d4|S5|empathy_approach adjacent variants 1 and 2 are too similar (95%)
+WARN T2 interrogation:b-d-2-S1-fact-pursuit-v2 may soften too abruptly for S1
+WARN T2 interrogation:b-d-2-S1-empathy-approach-v3 may soften too abruptly for S1
+WARN T2 interrogation:b-h-d3-S1-motive-search-v1 may soften too abruptly for S1
+WARN T2 interrogation:b-h-d3-S1-motive-search-v4 may soften too abruptly for S1
+WARN T2 interrogation:b-h-d4-S0-fact-pursuit-v1 may soften too abruptly for S0
+WARN T2 interrogation:b-h-d4-S0-motive-search-v4 may soften too abruptly for S0
+WARN T2 interrogation:b-h-d4-S1-fact-pursuit-v1 may soften too abruptly for S1
+WARN T2 interrogation:b-h-d4-S1-fact-pursuit-v2 may soften too abruptly for S1
+WARN T2 interrogation:b-h-d4-S1-fact-pursuit-v3 may soften too abruptly for S1
+WARN T2 interrogation:b-h-d4-S1-fact-pursuit-v4 may soften too abruptly for S1
+WARN T2 interrogation:b-h-d4-S1-motive-search-v5 may soften too abruptly for S1
+summary={"WARN":45}
+PASS

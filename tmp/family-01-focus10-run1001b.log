@@ -1,0 +1,109 @@
+[page:debug] [vite] connecting...
+[page:debug] [vite] connected.
+[page:info] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[page:log] [ScriptLoader] Phase 1: 3 scripts, Phase 2: 1 scripts
+[page:log] [thread-q] run 1001 start
+[page:log] [initializeCase] combinationLab config: NULL discoveredNodeIds: 0
+[page:log] [Renewal] family-01 리뉴얼 데이터 등록 시작
+[page:log] [Renewal] family-01 등록 완료: V2 + Bridge + EvidenceChallenge + Tell + V3 GameLoop + BeatFallback + StructureV2 + BeatsV2
+[page:error] Failed to load resource: the server responded with a status of 502 (Bad Gateway)
+[page:warning] [PromptManager] Server unavailable, using cached/default prompts
+[page:error] Failed to load resource: the server responded with a status of 502 (Bad Gateway)
+[page:warning] [AgentManager] Server unavailable, using cached data
+[page:error] Failed to load resource: the server responded with a status of 502 (Bad Gateway)
+[page:error] Failed to load resource: the server responded with a status of 502 (Bad Gateway)
+[page:log] [AutoDialogue] init: total dialogues: 34 choice nodes: 3
+[page:log] [AutoDialogue] choice at idx 4 choiceId: c1 options: 3
+[page:log] [AutoDialogue] choice at idx 14 choiceId: c2 options: 3
+[page:log] [AutoDialogue] choice at idx 26 choiceId: c3 options: 3
+[page:log] [AutoDialogue] advanceToNext idx: 1 speaker: a choiceId: undefined options: undefined
+[page:log] [AutoDialogue] advanceToNext idx: 2 speaker: a choiceId: undefined options: undefined
+[page:log] [AutoDialogue] advanceToNext idx: 3 speaker: b choiceId: undefined options: undefined
+[page:log] [AutoDialogue] advanceToNext idx: 4 speaker: choice choiceId: c1 options: 3
+[page:log] [AutoDialogue] → SHOWING CHOICE PANEL: c1
+[page:log] [AutoDialogue] advanceToNext idx: 5 speaker: b choiceId: undefined options: undefined
+[page:log] [AutoDialogue] advanceToNext idx: 6 speaker: a choiceId: undefined options: undefined
+[page:log] [AutoDialogue] advanceToNext idx: 7 speaker: b choiceId: undefined options: undefined
+[page:log] [AutoDialogue] advanceToNext idx: 13 speaker: a choiceId: undefined options: undefined
+[page:log] [AutoDialogue] advanceToNext idx: 14 speaker: choice choiceId: c2 options: 3
+[page:log] [AutoDialogue] → SHOWING CHOICE PANEL: c2
+[page:log] [AutoDialogue] advanceToNext idx: 15 speaker: b choiceId: undefined options: undefined
+[page:log] [AutoDialogue] advanceToNext idx: 16 speaker: a choiceId: undefined options: undefined
+[page:log] [AutoDialogue] advanceToNext idx: 22 speaker: a choiceId: undefined options: undefined
+[page:log] [AutoDialogue] advanceToNext idx: 23 speaker: b choiceId: undefined options: undefined
+[page:log] [AutoDialogue] advanceToNext idx: 24 speaker: a choiceId: undefined options: undefined
+[page:log] [AutoDialogue] advanceToNext idx: 25 speaker: b choiceId: undefined options: undefined
+[page:log] [AutoDialogue] advanceToNext idx: 26 speaker: choice choiceId: c3 options: 3
+[page:log] [AutoDialogue] → SHOWING CHOICE PANEL: c3
+[page:warning] Phase 2 LLM 생성 실패: TypeError: Cannot read properties of undefined (reading 'toLowerCase')
+    at normalizeSpeaker (http://127.0.0.1:4173/src/engine/llmPhaseDialogue.ts:78:16)
+    at http://127.0.0.1:4173/src/engine/llmPhaseDialogue.ts:99:13
+    at Array.map (<anonymous>)
+    at parseDialogueArray (http://127.0.0.1:4173/src/engine/llmPhaseDialogue.ts:94:16)
+    at generatePhase2Dialogues (http://127.0.0.1:4173/src/engine/llmPhaseDialogue.ts:70:10)
+[page:log] [AutoDialogue] advanceToNext idx: 27 speaker: a choiceId: undefined options: undefined
+[page:log] [AutoDialogue] advanceToNext idx: 28 speaker: b choiceId: undefined options: undefined
+[page:log] [AutoDialogue] advanceToNext idx: 33 speaker: system choiceId: undefined options: undefined
+[page:log] [Bridge] a/d-1: S0 → S2
+[page:log] [Bridge] a/d-2: S0 → S1
+[page:log] [Bridge] a/d-3: S0 → S2
+[page:log] [Bridge] a/d-5: S0 → S1
+[page:log] [Bridge] b/d-1: S0 → S1
+[page:log] [Bridge] b/d-2: S0 → S2
+[page:log] [Bridge] b/d-3: S0 → S2
+[page:log] [Bridge] b/d-5: S0 → S1
+[page:log] [thread-q] executeUnlockChain start d-1:S2, d-2:S3, d-3:S2, d-4:S2
+[page:log] [thread-q] unlock step d-1 target S2
+[page:log] [V2 Context] comply quality:bad effect:1 stance:hedge fatigue:fresh layer:surface quality:bad | arch:affect_flattening | motive:third_party_protection
+[page:log] [Scripted] family-01/interrogation/b|d-1|S1|fact_pursuit
+[page:log] [V2 Context] resist quality:normal effect:0.55 stance:hedge fatigue:fresh layer:surface quality:normal | arch:affect_flattening | motive:third_party_protection
+[page:log] [Scripted] family-01/interrogation/b|d-1|S2|motive_search
+[page:log] [thread-q] unlock step d-1 result b:S2
+[page:warning] [Scripted miss] family-01/evidence_present/b|e-1|mid|both — key_missing
+[page:startGroup] [LLM Prompt Debug] target=b, dispute=d-1, action=evidence_present
+[page:log] [SYSTEM PROMPT] 당신은 한국 법정 갈등 시뮬레이션 게임의 NPC "윤정후"(44세)입니다.
+상대: 윤태성. 관계: 가족
+배경: 치매 어머니가 남긴 유서에서 동생 60%, 형 40%로 적혀 있다. 평생 어머니를 모시고 살았다고 자부하는 형은 분노하고, 동생은 끝까지 담담하다.
+
+## 말투
+감정을 최대한 억누르며 사실만 짧게 말한다. 담담해 보이지만 그 담담함이 오히려 의심을 산다. 진짜 감정은 마지막까지 드러내지 않으려 한다.
+
+## 호칭 (가장 중요)
+- 상대를 부를 때: "형" (호칭은 3문장 중 1번만. 매번 넣지 마.)
+- 재판관에게 상대 언급: "제 형"
+- 감정 폭발: "윤태성!"
+- 상대에게: 반말 (~야, ~잖아, ~거야)
+- 재판관에게: 항상 존댓말 ("재판관님, ~입니다")
+
+## 대화 규칙 (반드시 지켜)
+1. 한 답변에 재판관에게 1문장 + 상대에게 1문장을 섞어라.
+2. 같은 말을 반복하지 마. 이전 대화에서 안 한 새로운 내용을 꺼내.
+3. 자기에게 불리한 사실을 먼저 꺼내지 ... (총 3419자)
+[page:log] [USER PROMPT] ★ 당신은 "윤정후"이다. 재판관에게 답한 뒤, 윤태성에게 짧게 1문장만 덧붙일 수 있다.
+★ 재판관에게는 반드시 존댓말. 상대에게는 관계에 맞는 말투.
+★ 답변의 주 대상은 재판관이다. 상대에게 직접 말하는 비중이 50%를 넘지 마라.
+
+★★ 호칭 규칙 (절대 위반 금지):
+- 재판관에게 윤태성을 언급할 때: 반드시 "제 형"로 지칭
+  ✅ "제 형이 그렇게 했습니다", "제 형은 알고 있었습니다"
+  ❌ "형가~", "형도~" (애칭을 재판관 앞에서 쓰지 마라)
+- 윤태성에게 직접 말할 때만: "형" 사용 가능
+
+★ 이 증거의 윤정후 관점 맥락:
+- 질문 각도: 이 유서의 비율이 어떻게 정해졌는지 설명해 주십시오.
+- 의미: B가 유서 작성 과정에 관여했다는 의심이 생긴다.
+- 이 맥락에 맞게 답변하라. 상대방의 쟁점에 대해 답하지 마라.
+현재 액션은 evidence_present다.
+focusedDisputeId: d-1
+재판관이 "60:40 유서 사본" 증거를 제시했다.
+증거 ... (총 749자)
+[page:log] [knownFacts 포함 여부] YES
+[page:log] [사건 배경 포함 여부] YES
+[page:endGroup] console.groupEnd
+[page:log] [Scripted] family-01/evidence_present/b|e-2|late|self
+[page:log] [Scripted] family-01/evidence_present/b|e-3|late|self
+[page:log] [Scripted] family-01/evidence_present/b|e-4|late|self
+[page:log] [V2 Misconception via Evidence] d-3: M0→M3
+[page:log] [Scripted] family-01/evidence_present/b|e-5|late|self
+[page:error] WebSocket connection to 'ws://127.0.0.1:4173/?token=4vyqCTPvFgYx' failed: 
+[page:log] [vite] server connection lost. Polling for restart...

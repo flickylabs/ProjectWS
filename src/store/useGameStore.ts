@@ -13,97 +13,11 @@ import type { CaseData, ProcessMetrics, PartyId } from '../types'
 import type { TestimonyAnalysis } from '../engine/llmTestimonyAnalysis'
 import { GamePhase } from '../types'
 import { snapshotForSession, clearSessionSnapshot } from '../api/agentManager'
+// ── V4 활성 사건 등록 ──
 import { registerSpouse01Data } from '../data/claimPolicies/spouse-01'
-import { registerSpouse02Data } from '../data/claimPolicies/spouse-02'
-import { registerSpouse03Data } from '../data/claimPolicies/spouse-03'
-import { registerSpouse04Data } from '../data/claimPolicies/spouse-04'
-import { registerSpouse05Data } from '../data/claimPolicies/spouse-05'
-import { registerSpouse06Data } from '../data/claimPolicies/spouse-06'
-import { registerSpouse09Data } from '../data/claimPolicies/spouse-09'
-import { registerSpouse10Data } from '../data/claimPolicies/spouse-10'
-import { registerSpouse11Data } from '../data/claimPolicies/spouse-11'
-import { registerSpouse12Data } from '../data/claimPolicies/spouse-12'
-import { registerSpouse07Data } from '../data/claimPolicies/spouse-07'
-import { registerSpouse08Data } from '../data/claimPolicies/spouse-08'
 import { registerFamily01Data } from '../data/claimPolicies/family-01'
-import { registerFamily02Data } from '../data/claimPolicies/family-02'
-import { registerFamily03Data } from '../data/claimPolicies/family-03'
-import { registerFamily04Data } from '../data/claimPolicies/family-04'
-import { registerFamily05Data } from '../data/claimPolicies/family-05'
-import { registerFamily06Data } from '../data/claimPolicies/family-06'
-import { registerFamily07Data } from '../data/claimPolicies/family-07'
-import { registerFamily08Data } from '../data/claimPolicies/family-08'
-import { registerFamily09Data } from '../data/claimPolicies/family-09'
-import { registerFamily10Data } from '../data/claimPolicies/family-10'
-import { registerFamily11Data } from '../data/claimPolicies/family-11'
-import { registerFamily12Data } from '../data/claimPolicies/family-12'
 import { registerFriend01Data } from '../data/claimPolicies/friend-01'
-import { registerFriend02Data } from '../data/claimPolicies/friend-02'
-import { registerFriend03Data } from '../data/claimPolicies/friend-03'
-import { registerFriend04Data } from '../data/claimPolicies/friend-04'
-import { registerFriend05Data } from '../data/claimPolicies/friend-05'
-import { registerFriend06Data } from '../data/claimPolicies/friend-06'
-import { registerFriend07Data } from '../data/claimPolicies/friend-07'
-import { registerFriend08Data } from '../data/claimPolicies/friend-08'
-import { registerFriend09Data } from '../data/claimPolicies/friend-09'
-import { registerFriend10Data } from '../data/claimPolicies/friend-10'
-import { registerFriend11Data } from '../data/claimPolicies/friend-11'
-import { registerFriend12Data } from '../data/claimPolicies/friend-12'
-import { registerNeighbor01Data } from '../data/claimPolicies/neighbor-01'
-import { registerNeighbor02Data } from '../data/claimPolicies/neighbor-02'
-import { registerNeighbor03Data } from '../data/claimPolicies/neighbor-03'
-import { registerNeighbor04Data } from '../data/claimPolicies/neighbor-04'
-import { registerNeighbor05Data } from '../data/claimPolicies/neighbor-05'
-import { registerNeighbor06Data } from '../data/claimPolicies/neighbor-06'
-import { registerNeighbor07Data } from '../data/claimPolicies/neighbor-07'
-import { registerNeighbor08Data } from '../data/claimPolicies/neighbor-08'
-import { registerNeighbor09Data } from '../data/claimPolicies/neighbor-09'
-import { registerNeighbor10Data } from '../data/claimPolicies/neighbor-10'
-import { registerNeighbor11Data } from '../data/claimPolicies/neighbor-11'
-import { registerNeighbor12Data } from '../data/claimPolicies/neighbor-12'
-import { registerPartnership01Data } from '../data/claimPolicies/partnership-01'
-import { registerPartnership02Data } from '../data/claimPolicies/partnership-02'
-import { registerPartnership03Data } from '../data/claimPolicies/partnership-03'
-import { registerPartnership04Data } from '../data/claimPolicies/partnership-04'
-import { registerPartnership05Data } from '../data/claimPolicies/partnership-05'
-import { registerPartnership06Data } from '../data/claimPolicies/partnership-06'
-import { registerPartnership07Data } from '../data/claimPolicies/partnership-07'
-import { registerPartnership08Data } from '../data/claimPolicies/partnership-08'
-import { registerPartnership09Data } from '../data/claimPolicies/partnership-09'
-import { registerPartnership10Data } from '../data/claimPolicies/partnership-10'
-import { registerPartnership11Data } from '../data/claimPolicies/partnership-11'
-import { registerPartnership12Data } from '../data/claimPolicies/partnership-12'
-import { registerWorkplace01Data } from '../data/claimPolicies/workplace-01'
-import { registerWorkplace02Data } from '../data/claimPolicies/workplace-02'
-import { registerWorkplace03Data } from '../data/claimPolicies/workplace-03'
-import { registerWorkplace04Data } from '../data/claimPolicies/workplace-04'
-import { registerWorkplace05Data } from '../data/claimPolicies/workplace-05'
-import { registerWorkplace06Data } from '../data/claimPolicies/workplace-06'
-import { registerWorkplace07Data } from '../data/claimPolicies/workplace-07'
-import { registerWorkplace08Data } from '../data/claimPolicies/workplace-08'
-import { registerWorkplace09Data } from '../data/claimPolicies/workplace-09'
-import { registerWorkplace10Data } from '../data/claimPolicies/workplace-10'
-import { registerWorkplace11Data } from '../data/claimPolicies/workplace-11'
-import { registerWorkplace12Data } from '../data/claimPolicies/workplace-12'
-import { registerWorkplaceNew02Data } from '../data/claimPolicies/workplace-new-02'
-import { registerSpouseV301Data } from '../data/claimPolicies/spouse-v3-01'
-import { registerFamilyV301Data } from '../data/claimPolicies/family-v3-01'
-import { registerFriendV301Data } from '../data/claimPolicies/friend-v3-01'
-import { registerTenant01Data } from '../data/claimPolicies/tenant-01'
-import { registerTenant02Data } from '../data/claimPolicies/tenant-02'
-import { registerTenant03Data } from '../data/claimPolicies/tenant-03'
-import { registerTenant04Data } from '../data/claimPolicies/tenant-04'
-import { registerTenant05Data } from '../data/claimPolicies/tenant-05'
-import { registerTenant06Data } from '../data/claimPolicies/tenant-06'
-import { registerTenant07Data } from '../data/claimPolicies/tenant-07'
-import { registerTenant08Data } from '../data/claimPolicies/tenant-08'
-import { registerTenant09Data } from '../data/claimPolicies/tenant-09'
-import { registerTenant10Data } from '../data/claimPolicies/tenant-10'
-import { registerTenant11Data } from '../data/claimPolicies/tenant-11'
-import { registerTenant12Data } from '../data/claimPolicies/tenant-12'
-import { registerHeadline01Data } from '../data/claimPolicies/headline-01'
-import { registerHeadline02Data } from '../data/claimPolicies/headline-02'
-import { aggregateReadiness } from '../engine/readinessEngine'
+import { aggregateReadiness, resetEmergenceCount } from '../engine/readinessEngine'
 import { normalizeCaseKey } from '../utils/caseHelpers'
 import { resetTellTracker } from '../engine/tellValidator'
 import { resetHintTracker } from '../engine/archetypeHintEngine'
@@ -763,6 +677,7 @@ export const useGameStore: import('zustand').UseBoundStore<import('zustand').Sto
       resetTellTracker()
       resetHintTracker()
       resetEventTriggerState()
+      resetEmergenceCount()
       const caseKey2 = normalizeCaseKey(caseData)
       if (caseKey2) {
         resetV3State(caseKey2)
@@ -776,96 +691,10 @@ export const useGameStore: import('zustand').UseBoundStore<import('zustand').Sto
       resetQuestionRotation()
       set({ phase3PromptBridge: null })
       const caseKey = normalizeCaseKey(caseData)
+      // V4 활성 사건
       if (caseKey === 'spouse-01') registerSpouse01Data()
-      if (caseKey === 'spouse-02') registerSpouse02Data()
-      if (caseKey === 'spouse-03') registerSpouse03Data()
-      if (caseKey === 'spouse-04') registerSpouse04Data()
-      if (caseKey === 'spouse-05') registerSpouse05Data()
-      if (caseKey === 'spouse-06') registerSpouse06Data()
-      if (caseKey === 'spouse-09') registerSpouse09Data()
-      if (caseKey === 'spouse-10') registerSpouse10Data()
-      if (caseKey === 'spouse-11') registerSpouse11Data()
-      if (caseKey === 'spouse-12') registerSpouse12Data()
-      if (caseKey === 'spouse-07') registerSpouse07Data()
-      if (caseKey === 'spouse-08') registerSpouse08Data()
       if (caseKey === 'family-01') registerFamily01Data()
-      if (caseKey === 'family-02') registerFamily02Data()
-      if (caseKey === 'family-03') registerFamily03Data()
-      if (caseKey === 'family-04') registerFamily04Data()
-      if (caseKey === 'family-05') registerFamily05Data()
-      if (caseKey === 'family-06') registerFamily06Data()
-      if (caseKey === 'family-07') registerFamily07Data()
-      if (caseKey === 'family-08') registerFamily08Data()
-      if (caseKey === 'family-09') registerFamily09Data()
-      if (caseKey === 'family-10') registerFamily10Data()
-      if (caseKey === 'family-11') registerFamily11Data()
-      if (caseKey === 'family-12') registerFamily12Data()
       if (caseKey === 'friend-01') registerFriend01Data()
-      if (caseKey === 'friend-02') registerFriend02Data()
-      if (caseKey === 'friend-03') registerFriend03Data()
-      if (caseKey === 'friend-04') registerFriend04Data()
-      if (caseKey === 'friend-05') registerFriend05Data()
-      if (caseKey === 'friend-06') registerFriend06Data()
-      if (caseKey === 'friend-07') registerFriend07Data()
-      if (caseKey === 'friend-08') registerFriend08Data()
-      if (caseKey === 'friend-09') registerFriend09Data()
-      if (caseKey === 'friend-10') registerFriend10Data()
-      if (caseKey === 'friend-11') registerFriend11Data()
-      if (caseKey === 'friend-12') registerFriend12Data()
-      if (caseKey === 'neighbor-01') registerNeighbor01Data()
-      if (caseKey === 'neighbor-02') registerNeighbor02Data()
-      if (caseKey === 'neighbor-03') registerNeighbor03Data()
-      if (caseKey === 'neighbor-04') registerNeighbor04Data()
-      if (caseKey === 'neighbor-05') registerNeighbor05Data()
-      if (caseKey === 'neighbor-06') registerNeighbor06Data()
-      if (caseKey === 'neighbor-07') registerNeighbor07Data()
-      if (caseKey === 'neighbor-08') registerNeighbor08Data()
-      if (caseKey === 'neighbor-09') registerNeighbor09Data()
-      if (caseKey === 'neighbor-10') registerNeighbor10Data()
-      if (caseKey === 'neighbor-11') registerNeighbor11Data()
-      if (caseKey === 'neighbor-12') registerNeighbor12Data()
-      if (caseKey === 'partnership-01') registerPartnership01Data()
-      if (caseKey === 'partnership-02') registerPartnership02Data()
-      if (caseKey === 'partnership-03') registerPartnership03Data()
-      if (caseKey === 'partnership-04') registerPartnership04Data()
-      if (caseKey === 'partnership-05') registerPartnership05Data()
-      if (caseKey === 'partnership-06') registerPartnership06Data()
-      if (caseKey === 'partnership-07') registerPartnership07Data()
-      if (caseKey === 'partnership-08') registerPartnership08Data()
-      if (caseKey === 'partnership-09') registerPartnership09Data()
-      if (caseKey === 'partnership-10') registerPartnership10Data()
-      if (caseKey === 'partnership-11') registerPartnership11Data()
-      if (caseKey === 'partnership-12') registerPartnership12Data()
-      if (caseKey === 'tenant-01') registerTenant01Data()
-      if (caseKey === 'tenant-02') registerTenant02Data()
-      if (caseKey === 'tenant-03') registerTenant03Data()
-      if (caseKey === 'tenant-04') registerTenant04Data()
-      if (caseKey === 'tenant-05') registerTenant05Data()
-      if (caseKey === 'tenant-06') registerTenant06Data()
-      if (caseKey === 'tenant-07') registerTenant07Data()
-      if (caseKey === 'tenant-08') registerTenant08Data()
-      if (caseKey === 'tenant-09') registerTenant09Data()
-      if (caseKey === 'tenant-10') registerTenant10Data()
-      if (caseKey === 'tenant-11') registerTenant11Data()
-      if (caseKey === 'tenant-12') registerTenant12Data()
-      if (caseKey === 'workplace-01') registerWorkplace01Data()
-      if (caseKey === 'workplace-02') registerWorkplace02Data()
-      if (caseKey === 'workplace-03') registerWorkplace03Data()
-      if (caseKey === 'workplace-04') registerWorkplace04Data()
-      if (caseKey === 'workplace-05') registerWorkplace05Data()
-      if (caseKey === 'workplace-06') registerWorkplace06Data()
-      if (caseKey === 'workplace-07') registerWorkplace07Data()
-      if (caseKey === 'workplace-08') registerWorkplace08Data()
-      if (caseKey === 'workplace-09') registerWorkplace09Data()
-      if (caseKey === 'workplace-10') registerWorkplace10Data()
-      if (caseKey === 'workplace-11') registerWorkplace11Data()
-      if (caseKey === 'workplace-12') registerWorkplace12Data()
-      if (caseKey === 'workplace-new-02') registerWorkplaceNew02Data()
-      if (caseKey === 'spouse-v3-01') registerSpouseV301Data()
-      if (caseKey === 'family-v3-01') registerFamilyV301Data()
-      if (caseKey === 'friend-v3-01') registerFriendV301Data()
-      if (caseKey === 'headline-01') registerHeadline01Data()
-      if (caseKey === 'headline-02') registerHeadline02Data()
       } catch (err) {
         console.error('[Solomon] 리뉴얼 데이터 등록 실패 (게임은 계속 진행 가능):', err)
       }

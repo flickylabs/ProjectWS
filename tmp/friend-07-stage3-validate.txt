@@ -1,0 +1,3 @@
+[validate-scripted-text] case=friend-07
+[validate-scripted-text] summary={}
+[validate-scripted-text] PASS

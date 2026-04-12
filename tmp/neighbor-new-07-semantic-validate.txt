@@ -1,0 +1,3 @@
+[scripted-semantic-quality] case=neighbor-new-07
+summary={}
+PASS

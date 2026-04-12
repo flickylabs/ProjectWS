@@ -62,8 +62,8 @@ interface VariantSelectionContext {
 
 type ScriptedLookupChannel = SelectedScriptContext['channel']
 
-// Vite dynamic import — 빌드 시 정적 분석됨
-const scriptMods = import.meta.glob<true, string, { default?: ScriptedTextBundle }>(
+// Vite dynamic import — eager 로드 (불필요 파일은 _archive로 이동하여 3개만 로드)
+const scriptModsLazy = import.meta.glob<true, string, { default?: ScriptedTextBundle }>(
   '../data/scriptedText/*.json',
   { eager: true },
 )
@@ -77,7 +77,7 @@ function loadBundle(caseId: string): ScriptedTextBundle | null {
   const candidateIds = [...new Set([normalizedId, caseId].filter(Boolean))]
   for (const candidateId of candidateIds) {
     const path = `../data/scriptedText/${candidateId}.json`
-    const mod = scriptMods[path]
+    const mod = scriptModsLazy[path]
     if (!mod) continue
     const bundle = ((mod as any).default ?? mod) as ScriptedTextBundle
     if (bundle.schemaVersion !== 1) return null
@@ -88,9 +88,14 @@ function loadBundle(caseId: string): ScriptedTextBundle | null {
   return null
 }
 
+/** 사건 선택 시 미리 로드 (호환용 — eager이므로 즉시 완료) */
+export async function preloadScriptedTextBundle(caseId: string): Promise<void> {
+  loadBundle(caseId)
+}
+
 export function hasScriptedTextBundle(caseId: string): boolean {
   const normalizedId = normalizeCaseKey(caseId)
-  return Boolean(scriptMods[`../data/scriptedText/${normalizedId}.json`] || scriptMods[`../data/scriptedText/${caseId}.json`])
+  return Boolean(scriptModsLazy[`../data/scriptedText/${normalizedId}.json`] || scriptModsLazy[`../data/scriptedText/${caseId}.json`])
 }
 
 function parseTags(tags?: string[]): VariantTagMap {
@@ -417,9 +422,9 @@ export function hasScriptedBundle(caseId: string): boolean {
   const normalizedId = normalizeCaseKey(caseId)
   if (bundleCache.has(normalizedId) || bundleCache.has(caseId)) return true
   const normalizedPath = `../data/scriptedText/${normalizedId}.json`
-  if (normalizedPath in scriptMods) return true
+  if (normalizedPath in scriptModsLazy) return true
   const rawPath = `../data/scriptedText/${caseId}.json`
-  return rawPath in scriptMods
+  return rawPath in scriptModsLazy
 }
 
 /** 캐시 클리어 */

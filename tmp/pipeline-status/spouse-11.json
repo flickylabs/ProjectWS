@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "owner": "Codex",
+  "workspace": "D:\\ProjectWS",
+  "activeWorkstream": {
+    "name": "spouse-11 staged scripted generation",
+    "caseId": "spouse-11",
+    "status": "blocked",
+    "currentStep": "stage3",
+    "mode": "auto",
+    "validateOnly": true,
+    "steps": [
+      {
+        "id": "stage1b",
+        "name": "runtime_template_validate",
+        "status": "completed",
+        "script": "scripts/validate-runtime-template-coverage.cjs",
+        "scriptArgs": [
+          "--case",
+          "spouse-11"
+        ],
+        "logPath": "tmp/spouse-11-runtime-template-validate.txt"
+      },
+      {
+        "id": "stage2b",
+        "name": "scripted_template_validate",
+        "status": "completed",
+        "script": "scripts/validate-scripted-template-coverage.cjs",
+        "scriptArgs": [
+          "--case",
+          "spouse-11"
+        ],
+        "logPath": "tmp/spouse-11-scripted-template-validate.txt"
+      },
+      {
+        "id": "stage2c",
+        "name": "scripted_semantic_validate",
+        "status": "completed",
+        "script": "scripts/validate-scripted-semantic-quality.cjs",
+        "scriptArgs": [
+          "--case",
+          "spouse-11"
+        ],
+        "logPath": "tmp/spouse-11-semantic-validate.txt"
+      },
+      {
+        "id": "stage3",
+        "name": "scripted_validate",
+        "status": "failed",
+        "action": "scripted_validate",
+        "logPath": "tmp/spouse-11-stage3-validate.txt"
+      }
+    ],
+    "blockingIssues": [
+      "scripted_validate exited with status 1"
+    ]
+  },
+  "updatedAt": "2026-04-10T03:05:48.017Z",
+  "lastKnownValidation": {
+    "caseId": "spouse-11",
+    "logPath": "tmp/spouse-11-stage3-validate.txt",
+    "summary": {},
+    "note": "spouse-11 staged pipeline completed."
+  }
+}

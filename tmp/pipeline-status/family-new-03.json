@@ -1,0 +1,93 @@
+{
+  "schemaVersion": 1,
+  "owner": "Codex",
+  "workspace": "D:\\ProjectWS",
+  "activeWorkstream": {
+    "name": "family-new-03 staged scripted generation",
+    "caseId": "family-new-03",
+    "status": "completed",
+    "currentStep": "completed",
+    "steps": [
+      {
+        "id": "stage1a",
+        "name": "runtime_case_generate",
+        "status": "completed",
+        "script": "scripts/case-stage1a-runtime.cjs",
+        "scriptArgs": [
+          "--case",
+          "family-new-03"
+        ],
+        "outputPath": "src/data/cases/generated/family-new-03.json"
+      },
+      {
+        "id": "stage1b",
+        "name": "runtime_template_validate",
+        "status": "completed",
+        "script": "scripts/validate-runtime-template-coverage.cjs",
+        "scriptArgs": [
+          "--case",
+          "family-new-03"
+        ],
+        "logPath": "tmp/family-new-03-runtime-template-validate.txt"
+      },
+      {
+        "id": "stage1c",
+        "name": "mediation_dialogues_generate",
+        "status": "completed",
+        "script": "scripts/case-stage1e-mediation-dialogues.cjs",
+        "scriptArgs": [
+          "--case",
+          "family-new-03"
+        ],
+        "outputPath": "src/data/dialogues/mediation/family-new-03.json"
+      },
+      {
+        "id": "stage2",
+        "name": "scripted_bootstrap_generate",
+        "status": "completed",
+        "script": "scripts/case-stage2-scripted-bootstrap.cjs",
+        "scriptArgs": [
+          "--case",
+          "family-new-03"
+        ],
+        "outputPath": "src/data/scriptedText/family-new-03.json"
+      },
+      {
+        "id": "stage2b",
+        "name": "scripted_template_validate",
+        "status": "completed",
+        "script": "scripts/validate-scripted-template-coverage.cjs",
+        "scriptArgs": [
+          "--case",
+          "family-new-03"
+        ],
+        "logPath": "tmp/family-new-03-scripted-template-validate.txt"
+      },
+      {
+        "id": "stage2c",
+        "name": "scripted_semantic_validate",
+        "status": "completed",
+        "script": "scripts/validate-scripted-semantic-quality.cjs",
+        "scriptArgs": [
+          "--case",
+          "family-new-03"
+        ],
+        "logPath": "tmp/family-new-03-semantic-validate.txt"
+      },
+      {
+        "id": "stage3",
+        "name": "scripted_validate",
+        "status": "completed",
+        "action": "scripted_validate",
+        "logPath": "tmp/family-new-03-stage3-validate.txt"
+      }
+    ]
+  },
+  "updatedAt": "2026-04-09T02:04:28.940Z",
+  "lastKnownValidation": {
+    "caseId": "family-new-03",
+    "logPath": "tmp/family-new-03-stage3-validate.txt",
+    "summary": {},
+    "note": "family-new-03 staged pipeline completed."
+  }
+}

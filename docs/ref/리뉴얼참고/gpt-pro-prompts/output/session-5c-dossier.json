@@ -1,0 +1,606 @@
+{
+  "session": "session-5c-dossier",
+  "channel": "dossier",
+  "entries": [
+    {
+      "key": "b|dc-1.b.q1|early",
+      "party": "b",
+      "dossierQuestionId": "dc-1.b.q1",
+      "lieBand": "early",
+      "stanceHint": "hedge",
+      "truthLevel": "hint",
+      "variants": [
+        {
+          "id": "v1",
+          "text": "예, 그 집안 일이 걸려 있었습니다. 그 얘기를 꺼내면 더 크게 터질까 봤습니다.",
+          "behaviorHint": "시선을 피한 채 이유를 짧게 인정하고, 상처의 뿌리는 끝까지 다 말하지 않는다."
+        },
+        {
+          "id": "v2",
+          "text": "이미 집안 문제로 각방까지 간 뒤였으니, 그쪽 이야기는 입에 올리기 어려웠습니다.",
+          "behaviorHint": "시선을 피한 채 이유를 짧게 인정하고, 상처의 뿌리는 끝까지 다 말하지 않는다."
+        },
+        {
+          "id": "v3",
+          "text": "제 아내가 그 집안 일에 예민한 걸 알아서 더 숨겼습니다.",
+          "behaviorHint": "시선을 피한 채 이유를 짧게 인정하고, 상처의 뿌리는 끝까지 다 말하지 않는다."
+        }
+      ]
+    },
+    {
+      "key": "b|dc-1.b.q1|mid",
+      "party": "b",
+      "dossierQuestionId": "dc-1.b.q1",
+      "lieBand": "mid",
+      "stanceHint": "partial",
+      "truthLevel": "partial",
+      "variants": [
+        {
+          "id": "v1",
+          "text": "맞습니다. 시댁 일로 한번 크게 깨진 뒤라 형 얘기만 꺼내도 끝날까 봤습니다.",
+          "behaviorHint": "이미 깨진 관계 위에 같은 상처를 다시 올리기 두려워했던 마음을 설명한다."
+        },
+        {
+          "id": "v2",
+          "text": "부모님 재산 문제 뒤로 제 아내는 형 이름만 들어도 화가 났습니다. 그래서 더 못 말했습니다.",
+          "behaviorHint": "이미 깨진 관계 위에 같은 상처를 다시 올리기 두려워했던 마음을 설명한다."
+        },
+        {
+          "id": "v3",
+          "text": "형을 돕는다는 말이 나오면 제 아내가 바로 거부할 거라고 생각했습니다.",
+          "behaviorHint": "이미 깨진 관계 위에 같은 상처를 다시 올리기 두려워했던 마음을 설명한다."
+        }
+      ]
+    },
+    {
+      "key": "b|dc-1.b.q1|late",
+      "party": "b",
+      "dossierQuestionId": "dc-1.b.q1",
+      "lieBand": "late",
+      "stanceHint": "confess",
+      "truthLevel": "full",
+      "variants": [
+        {
+          "id": "v1",
+          "text": "맞습니다. 형이 부모님 재산을 혼자 받아 다 써버린 뒤였으니, 그 얘기를 다시 꺼내면 제 아내가 받아들이지 않을 거라 봤습니다.",
+          "behaviorHint": "숨김의 이유가 단순 회피가 아니라, 이미 터졌던 집안 갈등에 대한 공포였음을 털어놓는다."
+        },
+        {
+          "id": "v2",
+          "text": "각방 원인이 바로 그 집안 문제였는데, 제가 형과 다시 얽혀 있다는 사실까지 말할 자신이 없었습니다.",
+          "behaviorHint": "숨김의 이유가 단순 회피가 아니라, 이미 터졌던 집안 갈등에 대한 공포였음을 털어놓는다."
+        },
+        {
+          "id": "v3",
+          "text": "형을 돕는다고 하면 이혼 얘기까지 갈까 봤습니다. 그래서 오피스텔도 돈도 다 숨겼습니다.",
+          "behaviorHint": "숨김의 이유가 단순 회피가 아니라, 이미 터졌던 집안 갈등에 대한 공포였음을 털어놓는다."
+        }
+      ]
+    },
+    {
+      "key": "b|dc-2.b.q1|early",
+      "party": "b",
+      "dossierQuestionId": "dc-2.b.q1",
+      "lieBand": "early",
+      "stanceHint": "hedge",
+      "truthLevel": "hint",
+      "variants": [
+        {
+          "id": "v1",
+          "text": "계좌로 보내기 어려운 사정이 있었습니다.",
+          "behaviorHint": "직접적인 명칭은 피하면서도, 현금 전달이 선택이 아니라 조건이었다는 점을 시사한다."
+        },
+        {
+          "id": "v2",
+          "text": "통장으로 남기면 바로 막힐 수 있는 상황이어서 현금이 필요했습니다.",
+          "behaviorHint": "직접적인 명칭은 피하면서도, 현금 전달이 선택이 아니라 조건이었다는 점을 시사한다."
+        },
+        {
+          "id": "v3",
+          "text": "은행 거래가 온전치 않은 쪽이라 직접 건네는 수밖에 없었습니다.",
+          "behaviorHint": "직접적인 명칭은 피하면서도, 현금 전달이 선택이 아니라 조건이었다는 점을 시사한다."
+        }
+      ]
+    },
+    {
+      "key": "b|dc-2.b.q1|mid",
+      "party": "b",
+      "dossierQuestionId": "dc-2.b.q1",
+      "lieBand": "mid",
+      "stanceHint": "partial",
+      "truthLevel": "partial",
+      "variants": [
+        {
+          "id": "v1",
+          "text": "맞습니다. 빚 정리 중이어서 형 계좌로는 제대로 전달하기 어려웠습니다.",
+          "behaviorHint": "상대를 지키려는 변명보다는, 왜 송금 대신 현금을 택했는지 실무적 이유를 내놓는다."
+        },
+        {
+          "id": "v2",
+          "text": "개인회생 절차에 들어간 뒤라, 입금해도 생활비처럼 바로 쓰기 힘든 상태였습니다.",
+          "behaviorHint": "상대를 지키려는 변명보다는, 왜 송금 대신 현금을 택했는지 실무적 이유를 내놓는다."
+        },
+        {
+          "id": "v3",
+          "text": "그래서 제가 찾아서 들고 갔습니다. 숨기려는 목적만은 아니었습니다.",
+          "behaviorHint": "상대를 지키려는 변명보다는, 왜 송금 대신 현금을 택했는지 실무적 이유를 내놓는다."
+        }
+      ]
+    },
+    {
+      "key": "b|dc-2.b.q1|late",
+      "party": "b",
+      "dossierQuestionId": "dc-2.b.q1",
+      "lieBand": "late",
+      "stanceHint": "confess",
+      "truthLevel": "full",
+      "variants": [
+        {
+          "id": "v1",
+          "text": "맞습니다. 형이 개인회생 중이라 계좌 입금은 사실상 소용이 없어서 3,000만원을 현금으로 전달했습니다.",
+          "behaviorHint": "액수와 절차까지 구체화하며, 현금 전달의 구조를 책임과 함께 인정한다."
+        },
+        {
+          "id": "v2",
+          "text": "압류나 출금 제한이 걸릴 수 있어 직접 건네는 방법밖에 없었습니다.",
+          "behaviorHint": "액수와 절차까지 구체화하며, 현금 전달의 구조를 책임과 함께 인정한다."
+        },
+        {
+          "id": "v3",
+          "text": "그래서 인출 기록만 남고 송금 기록은 없었던 겁니다. 그 선택 자체는 제가 책임지겠습니다.",
+          "behaviorHint": "액수와 절차까지 구체화하며, 현금 전달의 구조를 책임과 함께 인정한다."
+        }
+      ]
+    },
+    {
+      "key": "b|dc-3.b.q1|early",
+      "party": "b",
+      "dossierQuestionId": "dc-3.b.q1",
+      "lieBand": "early",
+      "stanceHint": "hedge",
+      "truthLevel": "hint",
+      "variants": [
+        {
+          "id": "v1",
+          "text": "밥 챙기고 필요한 것 놓고 왔습니다.",
+          "behaviorHint": "행동은 말하지만 대상을 흐리며, 방문 목적을 생활 돌봄 수준에서만 묘사한다."
+        },
+        {
+          "id": "v2",
+          "text": "저녁 시간 비워 두지 않으려고 들렀고, 집 안을 좀 봐주다 나왔습니다.",
+          "behaviorHint": "행동은 말하지만 대상을 흐리며, 방문 목적을 생활 돌봄 수준에서만 묘사한다."
+        },
+        {
+          "id": "v3",
+          "text": "잠깐 얼굴만 본 게 아니라 몇 시간씩 머물며 챙길 일을 했습니다.",
+          "behaviorHint": "행동은 말하지만 대상을 흐리며, 방문 목적을 생활 돌봄 수준에서만 묘사한다."
+        }
+      ]
+    },
+    {
+      "key": "b|dc-3.b.q1|mid",
+      "party": "b",
+      "dossierQuestionId": "dc-3.b.q1",
+      "lieBand": "mid",
+      "stanceHint": "partial",
+      "truthLevel": "partial",
+      "variants": [
+        {
+          "id": "v1",
+          "text": "혼자 있는 아이 저녁 챙기고, 숙제 확인하고, 잠들 때까지 같이 있었습니다.",
+          "behaviorHint": "생활 단위를 하나씩 꺼내며, 오피스텔에서 한 일을 구체적인 돌봄으로 바꿔 말한다."
+        },
+        {
+          "id": "v2",
+          "text": "편의점 들러 먹을 것 사 가고 학교에서 온 알림도 대신 봤습니다.",
+          "behaviorHint": "생활 단위를 하나씩 꺼내며, 오피스텔에서 한 일을 구체적인 돌봄으로 바꿔 말한다."
+        },
+        {
+          "id": "v3",
+          "text": "형이 돌아올 때까지 집을 비우지 않으려고 밤까지 있다 나온 날이 많았습니다.",
+          "behaviorHint": "생활 단위를 하나씩 꺼내며, 오피스텔에서 한 일을 구체적인 돌봄으로 바꿔 말한다."
+        }
+      ]
+    },
+    {
+      "key": "b|dc-3.b.q1|late",
+      "party": "b",
+      "dossierQuestionId": "dc-3.b.q1",
+      "lieBand": "late",
+      "stanceHint": "confess",
+      "truthLevel": "full",
+      "variants": [
+        {
+          "id": "v1",
+          "text": "형네 오피스텔에서 조카 저녁 챙기고, 숙제 봐주고, 귀가 확인까지 했습니다.",
+          "behaviorHint": "숨겨 둔 방문의 정체를 빠짐없이 털어놓으며, 오피스텔을 생활 공간으로 설명한다."
+        },
+        {
+          "id": "v2",
+          "text": "가은이가 무서워하는 날은 씻고 눕는 것까지 보고 나왔습니다.",
+          "behaviorHint": "숨겨 둔 방문의 정체를 빠짐없이 털어놓으며, 오피스텔을 생활 공간으로 설명한다."
+        },
+        {
+          "id": "v3",
+          "text": "화분 하나 놓고, 참고서 사다 주고, 밤마다 생활을 이어 주는 역할을 제가 했습니다.",
+          "behaviorHint": "숨겨 둔 방문의 정체를 빠짐없이 털어놓으며, 오피스텔을 생활 공간으로 설명한다."
+        }
+      ]
+    },
+    {
+      "key": "b|dc-3.b.q2|early",
+      "party": "b",
+      "dossierQuestionId": "dc-3.b.q2",
+      "lieBand": "early",
+      "stanceHint": "hedge",
+      "truthLevel": "hint",
+      "variants": [
+        {
+          "id": "v1",
+          "text": "아직 어린 학생입니다. 저녁 시간에 혼자 있는 날이 길었습니다.",
+          "behaviorHint": "구체를 조금씩 열어 보이되, 먼저는 '혼자 둘 수 없는 아이'라는 감각으로 답한다."
+        },
+        {
+          "id": "v2",
+          "text": "중학생입니다. 보호자가 돌아오기 전까지 혼자 버티는 시간이 있었습니다.",
+          "behaviorHint": "구체를 조금씩 열어 보이되, 먼저는 '혼자 둘 수 없는 아이'라는 감각으로 답한다."
+        },
+        {
+          "id": "v3",
+          "text": "혼자 둘 만한 나이는 아니라고 생각해서 제가 갔습니다.",
+          "behaviorHint": "구체를 조금씩 열어 보이되, 먼저는 '혼자 둘 수 없는 아이'라는 감각으로 답한다."
+        }
+      ]
+    },
+    {
+      "key": "b|dc-3.b.q2|mid",
+      "party": "b",
+      "dossierQuestionId": "dc-3.b.q2",
+      "lieBand": "mid",
+      "stanceHint": "partial",
+      "truthLevel": "partial",
+      "variants": [
+        {
+          "id": "v1",
+          "text": "중학교 2학년입니다. 형이 새벽부터 밤까지 일해서 저녁마다 혼자 있었습니다.",
+          "behaviorHint": "나이와 생활 공백을 함께 말하며, 왜 통화가 이어졌는지 자연스럽게 연결한다."
+        },
+        {
+          "id": "v2",
+          "text": "학교가 끝나고 집에 들어오면 밤까지 어른이 없는 날이 많았습니다.",
+          "behaviorHint": "나이와 생활 공백을 함께 말하며, 왜 통화가 이어졌는지 자연스럽게 연결한다."
+        },
+        {
+          "id": "v3",
+          "text": "겁이 많은 편이라 비 오는 날이나 아픈 날엔 혼자 못 버티고 전화가 왔습니다.",
+          "behaviorHint": "나이와 생활 공백을 함께 말하며, 왜 통화가 이어졌는지 자연스럽게 연결한다."
+        }
+      ]
+    },
+    {
+      "key": "b|dc-3.b.q2|late",
+      "party": "b",
+      "dossierQuestionId": "dc-3.b.q2",
+      "lieBand": "late",
+      "stanceHint": "confess",
+      "truthLevel": "full",
+      "variants": [
+        {
+          "id": "v1",
+          "text": "조카는 열다섯, 중학교 2학년입니다. 형이 새벽 인력일을 뛰느라 밤까지 집을 비웠습니다.",
+          "behaviorHint": "숫자와 생활 사정을 모두 열어 보이며, 새벽 전화와 돌봄의 이유를 완성한다."
+        },
+        {
+          "id": "v2",
+          "text": "학교 끝나고 집에 들어오면 저녁도, 안부도 혼자 해결해야 했습니다. 그래서 제가 갔습니다.",
+          "behaviorHint": "숫자와 생활 사정을 모두 열어 보이며, 새벽 전화와 돌봄의 이유를 완성한다."
+        },
+        {
+          "id": "v3",
+          "text": "아픈 날이나 비 오는 날엔 혼자 못 버텼습니다. 새벽 통화가 많았던 이유도 그겁니다.",
+          "behaviorHint": "숫자와 생활 사정을 모두 열어 보이며, 새벽 전화와 돌봄의 이유를 완성한다."
+        }
+      ]
+    },
+    {
+      "key": "a|dc-4.a.q1|early",
+      "party": "a",
+      "dossierQuestionId": "dc-4.a.q1",
+      "lieBand": "early",
+      "stanceHint": "hedge",
+      "truthLevel": "hint",
+      "variants": [
+        {
+          "id": "v1",
+          "text": "오래됐습니다. 최근 일만은 아닙니다.",
+          "behaviorHint": "처음엔 기간만 얼버무리지만, 감시가 오래되었다는 사실 자체는 부정하지 못한다."
+        },
+        {
+          "id": "v2",
+          "text": "결혼 생활 초반부터 불안할 때마다 확인했습니다.",
+          "behaviorHint": "처음엔 기간만 얼버무리지만, 감시가 오래되었다는 사실 자체는 부정하지 못한다."
+        },
+        {
+          "id": "v3",
+          "text": "한두 번 우연히 본 게 아니라, 오래전부터 봐온 건 맞습니다.",
+          "behaviorHint": "처음엔 기간만 얼버무리지만, 감시가 오래되었다는 사실 자체는 부정하지 못한다."
+        }
+      ]
+    },
+    {
+      "key": "a|dc-4.a.q1|mid",
+      "party": "a",
+      "dossierQuestionId": "dc-4.a.q1",
+      "lieBand": "mid",
+      "stanceHint": "partial",
+      "truthLevel": "partial",
+      "variants": [
+        {
+          "id": "v1",
+          "text": "신혼 초부터 봐왔습니다. 처음엔 비자금이 있는지만 확인하려고 했습니다.",
+          "behaviorHint": "불안이 습관으로 굳은 과정을 털어놓으며, 자신의 침해를 부분적으로 인정한다."
+        },
+        {
+          "id": "v2",
+          "text": "결혼하고 얼마 안 돼 이상한 계좌 흐름을 보고, 그때부터 끊지 못했습니다.",
+          "behaviorHint": "불안이 습관으로 굳은 과정을 털어놓으며, 자신의 침해를 부분적으로 인정한다."
+        },
+        {
+          "id": "v3",
+          "text": "각방 뒤부터가 아니라 그전부터였습니다. 제가 먼저 선을 넘은 것도 맞습니다.",
+          "behaviorHint": "불안이 습관으로 굳은 과정을 털어놓으며, 자신의 침해를 부분적으로 인정한다."
+        }
+      ]
+    },
+    {
+      "key": "a|dc-4.a.q1|late",
+      "party": "a",
+      "dossierQuestionId": "dc-4.a.q1",
+      "lieBand": "late",
+      "stanceHint": "confess",
+      "truthLevel": "full",
+      "variants": [
+        {
+          "id": "v1",
+          "text": "신혼 초부터 봐왔습니다. 비자금 계좌가 있다는 것도 그때 알았습니다.",
+          "behaviorHint": "변명 대신 사실관계를 정리하듯 말하며, 감시의 시작과 결과를 모두 시인한다."
+        },
+        {
+          "id": "v2",
+          "text": "처음엔 한 번만 보려 했는데, 남편이 숨기는 일이 생길 때마다 확인이 습관이 됐습니다.",
+          "behaviorHint": "변명 대신 사실관계를 정리하듯 말하며, 감시의 시작과 결과를 모두 시인한다."
+        },
+        {
+          "id": "v3",
+          "text": "그래서 이번 3,000만원 출금도 바로 알았습니다. 저는 오래전부터 남편 사생활을 들여다보고 있었습니다.",
+          "behaviorHint": "변명 대신 사실관계를 정리하듯 말하며, 감시의 시작과 결과를 모두 시인한다."
+        }
+      ]
+    },
+    {
+      "key": "a|dc-4.a.q2|early",
+      "party": "a",
+      "dossierQuestionId": "dc-4.a.q2",
+      "lieBand": "early",
+      "stanceHint": "hedge",
+      "truthLevel": "hint",
+      "variants": [
+        {
+          "id": "v1",
+          "text": "제가 서류를 만들어 창구에 냈습니다.",
+          "behaviorHint": "과정을 축약해 말하면서도, 계획적으로 움직였다는 사실은 숨기지 못한다."
+        },
+        {
+          "id": "v2",
+          "text": "남편 없이도 처리되게 준비해서 직접 갔습니다.",
+          "behaviorHint": "과정을 축약해 말하면서도, 계획적으로 움직였다는 사실은 숨기지 못한다."
+        },
+        {
+          "id": "v3",
+          "text": "들키기 전에 끝내려고 한 번에 밀어붙였습니다.",
+          "behaviorHint": "과정을 축약해 말하면서도, 계획적으로 움직였다는 사실은 숨기지 못한다."
+        }
+      ]
+    },
+    {
+      "key": "a|dc-4.a.q2|mid",
+      "party": "a",
+      "dossierQuestionId": "dc-4.a.q2",
+      "lieBand": "mid",
+      "stanceHint": "partial",
+      "truthLevel": "partial",
+      "variants": [
+        {
+          "id": "v1",
+          "text": "위임장을 써서 제 신분증 사본과 함께 냈습니다. 남편 동의는 없었습니다.",
+          "behaviorHint": "실행 과정을 기계처럼 되짚으며, 사전 준비가 있었음을 인정한다."
+        },
+        {
+          "id": "v2",
+          "text": "창구에서는 서류만 보고 처리했습니다. 제가 먼저 서명 칸을 맞춰 준비했습니다.",
+          "behaviorHint": "실행 과정을 기계처럼 되짚으며, 사전 준비가 있었음을 인정한다."
+        },
+        {
+          "id": "v3",
+          "text": "해지 확인까지 받고 그날 바로 돈을 옮길 생각이었습니다.",
+          "behaviorHint": "실행 과정을 기계처럼 되짚으며, 사전 준비가 있었음을 인정한다."
+        }
+      ]
+    },
+    {
+      "key": "a|dc-4.a.q2|late",
+      "party": "a",
+      "dossierQuestionId": "dc-4.a.q2",
+      "lieBand": "late",
+      "stanceHint": "confess",
+      "truthLevel": "full",
+      "variants": [
+        {
+          "id": "v1",
+          "text": "위임장에 남편 서명을 제가 흉내 냈습니다. 그리고 직접 창구에 가서 2,000만원을 해지했습니다.",
+          "behaviorHint": "수치심을 누른 채, 위조와 해지와 송금이 한 흐름이었다는 점을 또렷하게 말한다."
+        },
+        {
+          "id": "v2",
+          "text": "신분증 사본, 위임장, 해지 신청서를 맞춰 들고 갔고 직원은 서류대로 처리했습니다.",
+          "behaviorHint": "수치심을 누른 채, 위조와 해지와 송금이 한 흐름이었다는 점을 또렷하게 말한다."
+        },
+        {
+          "id": "v3",
+          "text": "해지 직후 투자방으로 송금했습니다. 계획부터 실행까지 전부 제 손으로 했습니다.",
+          "behaviorHint": "수치심을 누른 채, 위조와 해지와 송금이 한 흐름이었다는 점을 또렷하게 말한다."
+        }
+      ]
+    },
+    {
+      "key": "b|dc-5.b.q1|early",
+      "party": "b",
+      "dossierQuestionId": "dc-5.b.q1",
+      "lieBand": "early",
+      "stanceHint": "hedge",
+      "truthLevel": "hint",
+      "variants": [
+        {
+          "id": "v1",
+          "text": "이렇게 분명히 안 건 오늘이 처음입니다.",
+          "behaviorHint": "충격을 그대로 드러내며, 뒤늦게 퍼즐이 맞춰지는 느낌으로 답한다."
+        },
+        {
+          "id": "v2",
+          "text": "의심은 못 했습니다. 그냥 제 아내가 우연히 안 줄 알았습니다.",
+          "behaviorHint": "충격을 그대로 드러내며, 뒤늦게 퍼즐이 맞춰지는 느낌으로 답한다."
+        },
+        {
+          "id": "v3",
+          "text": "숫자까지 알고 있을 때마다 이상하긴 했지만, 계좌를 본다고까지는 생각 못 했습니다.",
+          "behaviorHint": "충격을 그대로 드러내며, 뒤늦게 퍼즐이 맞춰지는 느낌으로 답한다."
+        }
+      ]
+    },
+    {
+      "key": "b|dc-5.b.q1|mid",
+      "party": "b",
+      "dossierQuestionId": "dc-5.b.q1",
+      "lieBand": "mid",
+      "stanceHint": "partial",
+      "truthLevel": "partial",
+      "variants": [
+        {
+          "id": "v1",
+          "text": "확신은 오늘입니다. 다만 전부터 너무 정확히 아는 순간들이 있어 이상하다고는 느꼈습니다.",
+          "behaviorHint": "돌이켜 보니 이상했던 장면들을 하나씩 붙이며, 확신 전의 의혹을 인정한다."
+        },
+        {
+          "id": "v2",
+          "text": "출금 시점이나 잔액 변화를 짚을 때마다 느낌은 왔습니다. 그래도 확인한 적은 없었습니다.",
+          "behaviorHint": "돌이켜 보니 이상했던 장면들을 하나씩 붙이며, 확신 전의 의혹을 인정한다."
+        },
+        {
+          "id": "v3",
+          "text": "제가 숨긴 걸 아는 속도가 너무 빨라서 마음 한편으론 의심했습니다.",
+          "behaviorHint": "돌이켜 보니 이상했던 장면들을 하나씩 붙이며, 확신 전의 의혹을 인정한다."
+        }
+      ]
+    },
+    {
+      "key": "b|dc-5.b.q1|late",
+      "party": "b",
+      "dossierQuestionId": "dc-5.b.q1",
+      "lieBand": "late",
+      "stanceHint": "answer",
+      "truthLevel": "full",
+      "variants": [
+        {
+          "id": "v1",
+          "text": "처음엔 몰랐고, 몇 번 액수까지 아는 걸 보고 감이 왔습니다. 오늘 여기서 확인됐습니다.",
+          "behaviorHint": "충격에서 벗어나지 못한 채, 자신의 숨김과 아내의 감시가 대칭처럼 겹쳤음을 받아들인다."
+        },
+        {
+          "id": "v2",
+          "text": "신혼 초부터였다는 말을 듣고 더 충격이었습니다. 제가 생각한 것보다 훨씬 오래였습니다.",
+          "behaviorHint": "충격에서 벗어나지 못한 채, 자신의 숨김과 아내의 감시가 대칭처럼 겹쳤음을 받아들인다."
+        },
+        {
+          "id": "v3",
+          "text": "제가 비자금을 숨긴 만큼, 제 아내도 제 삶을 오래 들여다보고 있었다는 걸 오늘 알았습니다.",
+          "behaviorHint": "충격에서 벗어나지 못한 채, 자신의 숨김과 아내의 감시가 대칭처럼 겹쳤음을 받아들인다."
+        }
+      ]
+    },
+    {
+      "key": "a|dc-5.a.q1|early",
+      "party": "a",
+      "dossierQuestionId": "dc-5.a.q1",
+      "lieBand": "early",
+      "stanceHint": "hedge",
+      "truthLevel": "hint",
+      "variants": [
+        {
+          "id": "v1",
+          "text": "그때 알았다면 저는 반대했을 겁니다.",
+          "behaviorHint": "즉각적인 분노와 거부감을 먼저 내세우며, 당시의 자신이라면 막았을 거라고 말한다."
+        },
+        {
+          "id": "v2",
+          "text": "그렇게 큰돈을 제게 숨기고 움직이는 건 어떤 이유라도 받아들이기 어려웠습니다.",
+          "behaviorHint": "즉각적인 분노와 거부감을 먼저 내세우며, 당시의 자신이라면 막았을 거라고 말한다."
+        },
+        {
+          "id": "v3",
+          "text": "최소한 그냥 넘기진 않았을 겁니다. 먼저 따지고 막았을 겁니다.",
+          "behaviorHint": "즉각적인 분노와 거부감을 먼저 내세우며, 당시의 자신이라면 막았을 거라고 말한다."
+        }
+      ]
+    },
+    {
+      "key": "a|dc-5.a.q1|mid",
+      "party": "a",
+      "dossierQuestionId": "dc-5.a.q1",
+      "lieBand": "mid",
+      "stanceHint": "partial",
+      "truthLevel": "partial",
+      "variants": [
+        {
+          "id": "v1",
+          "text": "형만 돕는 일이라고 들었다면 저는 반대했을 겁니다. 하지만 아이가 혼자 있다는 말까지 들었으면 다르게 생각했을 수도 있습니다.",
+          "behaviorHint": "분노 속에서도 조카의 사정을 분리해 보기 시작하며, 조건부 가능성을 인정한다."
+        },
+        {
+          "id": "v2",
+          "text": "금액과 방식은 절대 그냥 두지 않았겠지만, 조카 사정까지 알았다면 조건을 걸었을 겁니다.",
+          "behaviorHint": "분노 속에서도 조카의 사정을 분리해 보기 시작하며, 조건부 가능성을 인정한다."
+        },
+        {
+          "id": "v3",
+          "text": "저를 속이지만 않았다면 저는 무조건 아니라고만 하진 않았을 겁니다.",
+          "behaviorHint": "분노 속에서도 조카의 사정을 분리해 보기 시작하며, 조건부 가능성을 인정한다."
+        }
+      ]
+    },
+    {
+      "key": "a|dc-5.a.q1|late",
+      "party": "a",
+      "dossierQuestionId": "dc-5.a.q1",
+      "lieBand": "late",
+      "stanceHint": "answer",
+      "truthLevel": "full",
+      "variants": [
+        {
+          "id": "v1",
+          "text": "형의 잘못과 조카의 사정은 다릅니다. 처음부터 그걸 알았다면 저는 현금 3,000만원을 혼자 결정하게 두진 않았어도, 아이까지 외면하진 않았을 겁니다.",
+          "behaviorHint": "분노와 후회가 섞인 채, 자신이 원했던 것은 돈보다 설명이었다는 점을 드러낸다."
+        },
+        {
+          "id": "v2",
+          "text": "함께 상의했다면 액수는 줄이고 방법은 바꿨을 겁니다. 적어도 저는 외도라고 믿고 망가지진 않았을 겁니다.",
+          "behaviorHint": "분노와 후회가 섞인 채, 자신이 원했던 것은 돈보다 설명이었다는 점을 드러낸다."
+        },
+        {
+          "id": "v3",
+          "text": "저는 아직도 형을 쉽게 용서 못 합니다. 그래도 진실을 알았다면 적금을 깨고 사기에 뛰어드는 대신, 싸우더라도 같은 사실을 보고 결정했을 겁니다.",
+          "behaviorHint": "분노와 후회가 섞인 채, 자신이 원했던 것은 돈보다 설명이었다는 점을 드러낸다."
+        }
+      ]
+    }
+  ]
+}

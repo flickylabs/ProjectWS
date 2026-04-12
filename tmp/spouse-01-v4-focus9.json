@@ -1,0 +1,1417 @@
+{
+  "caseId": "case-spouse-01",
+  "requestedCaseKey": "spouse-01",
+  "runProfile": "focus9",
+  "appPhaseOrder": [
+    "phase0",
+    "phase1",
+    "phase2",
+    "phase3",
+    "phase6",
+    "phase7",
+    "result"
+  ],
+  "runs": [
+    {
+      "run": 301,
+      "label": "Run 1 ??bonus turn unlock-chain validation",
+      "phasePath": [
+        "phase0",
+        "phase1",
+        "phase3",
+        "phase6",
+        "phase7",
+        "result"
+      ],
+      "turnCount": 19,
+      "verdictMode": "forced_incomplete",
+      "verdictScore": {
+        "insight": 61,
+        "authority": 93,
+        "wisdom": 87,
+        "total": 80
+      },
+      "scriptedMissCount": 0,
+      "scriptedHitCount": 26,
+      "scriptedMissTexts": [],
+      "scriptedHitTexts": [
+        "[Scripted] spouse-01/interrogation/a|d-1|S0|fact_pursuit",
+        "[Scripted] spouse-01/interrogation/a|d-1|S1|motive_search",
+        "[Scripted] spouse-01/interrogation/a|d-1|S2|fact_pursuit",
+        "[Scripted] spouse-01/interrogation/a|d-1|S3|empathy_approach",
+        "[Scripted] spouse-01/interrogation/b|d-1|S0|empathy_approach",
+        "[Scripted] spouse-01/interrogation/a|d-2|S0|fact_pursuit",
+        "[Scripted] spouse-01/interrogation/a|d-2|S0|motive_search",
+        "[Scripted] spouse-01/interrogation/b|d-2|S0|motive_search",
+        "[Scripted] spouse-01/interrogation/a|d-2|S1|empathy_approach",
+        "[Scripted] spouse-01/interrogation/b|d-2|S0|fact_pursuit",
+        "[Scripted] spouse-01/interrogation/b|d-2|S0|motive_search",
+        "[Scripted] spouse-01/interrogation/b|d-2|S1|empathy_approach",
+        "[Scripted] spouse-01/interrogation/a|d-2|S1|empathy_approach",
+        "[Scripted] spouse-01/interrogation/b|d-2|S2|fact_pursuit",
+        "[Scripted] spouse-01/interrogation/a|h-d3|S0|fact_pursuit",
+        "[Scripted] spouse-01/interrogation/b|h-d3|S0|fact_pursuit",
+        "[Scripted] spouse-01/interrogation/a|h-d3|S1|motive_search",
+        "[Scripted] spouse-01/interrogation/a|h-d3|S1|empathy_approach",
+        "[Scripted] spouse-01/interrogation/a|h-d3|S2|fact_pursuit",
+        "[Scripted] spouse-01/interrogation/a|h-d3|S3|motive_search"
+      ],
+      "seriousErrors": [],
+      "typeErrorLike": [],
+      "events": [
+        {
+          "type": "evidence_discovery"
+        }
+      ],
+      "detail": {
+        "check": "full hidden unlock chain",
+        "initialDiscovery": {
+          "d-1": "visible",
+          "d-2": "hidden",
+          "h-d3": "hidden",
+          "h-d4": "hidden"
+        },
+        "initialUi": {
+          "bodyLeaks": [],
+          "hotbarDisputeNames": [
+            "오피스텔 방문과 새벽 전화"
+          ],
+          "hotbarLeakNames": [],
+          "ribbonTitles": [
+            "오피스텔 방문과 새벽 전화"
+          ],
+          "ribbonChipCount": 1,
+          "notesTabs": [
+            "오피스텔 방문과…",
+            "전체"
+          ],
+          "notesTabCount": 2,
+          "evidenceNames": [
+            "영수증 묶음 5장",
+            "블랙박스 GPS 기록",
+            "통화기록"
+          ]
+        },
+        "turnCapTimeline": [
+          {
+            "label": "start",
+            "turnCount": 0,
+            "effectiveMaxTurns": 16,
+            "discovery": {
+              "d-1": "visible",
+              "d-2": "hidden",
+              "h-d3": "hidden",
+              "h-d4": "hidden"
+            }
+          },
+          {
+            "label": "after_a_d1_to_s3",
+            "turnCount": 4,
+            "effectiveMaxTurns": 16,
+            "discovery": {
+              "d-1": "visible",
+              "d-2": "emerged",
+              "h-d3": "hidden",
+              "h-d4": "hidden"
+            }
+          },
+          {
+            "label": "after_b_d2_to_s2",
+            "turnCount": 11,
+            "effectiveMaxTurns": 16,
+            "discovery": {
+              "d-1": "visible",
+              "d-2": "emerged",
+              "h-d3": "emerged",
+              "h-d4": "hidden"
+            }
+          },
+          {
+            "label": "after_a_hd3_to_s3",
+            "turnCount": 16,
+            "effectiveMaxTurns": 16,
+            "discovery": {
+              "d-1": "visible",
+              "d-2": "emerged",
+              "h-d3": "emerged",
+              "h-d4": "emerged"
+            }
+          },
+          {
+            "label": "after_h_d4_ui_check",
+            "turnCount": 17,
+            "effectiveMaxTurns": 16,
+            "discovery": {
+              "d-1": "visible",
+              "d-2": "emerged",
+              "h-d3": "emerged",
+              "h-d4": "emerged"
+            }
+          },
+          {
+            "label": "after_h_d4_questioning",
+            "turnCount": 19,
+            "effectiveMaxTurns": 16,
+            "discovery": {
+              "d-1": "visible",
+              "d-2": "emerged",
+              "h-d3": "emerged",
+              "h-d4": "emerged"
+            }
+          },
+          {
+            "label": "after_result",
+            "turnCount": 19,
+            "effectiveMaxTurns": 16,
+            "discovery": {
+              "d-1": "visible",
+              "d-2": "emerged",
+              "h-d3": "emerged",
+              "h-d4": "emerged"
+            }
+          }
+        ],
+        "aD1Progress": {
+          "finalState": "S3",
+          "turns": [
+            {
+              "turn": 1,
+              "questionType": "fact_pursuit",
+              "beforeState": "S0",
+              "afterState": "S0",
+              "freshDialogues": [
+                {
+                  "speaker": "judge",
+                  "text": "박지연 씨, 오피스텔 방문과 새벽 전화 당시 정확히 어떤 일이 있었습니까?"
+                },
+                {
+                  "speaker": "system",
+                  "text": "모순이 쌓이고 있습니다. 조금 더 추궁하면 균열이 생길 것 같습니다."
+                },
+                {
+                  "speaker": "a",
+                  "text": "처음엔 제가 이상한 거라고 생각했습니다. 예민한 거라고. 그런데 같은 곳이 찍히고, 또 찍히고, 또 찍히면… 바보를 시키는 겁니다."
+                },
+                {
+                  "speaker": "system",
+                  "text": "💡 재판관의 관찰: 모든 답변을 자신의 피해로 연결합니다"
+                },
+                {
+                  "speaker": "system",
+                  "text": "📌 [진술 시점 고정] — 이 부정은 향후 모순 추궁의 근거가 됩니다"
+                }
+              ]
+            },
+            {
+              "turn": 2,
+              "questionType": "motive_search",
+              "beforeState": "S0",
+              "afterState": "S1",
+              "freshDialogues": [
+                {
+                  "speaker": "judge",
+                  "text": "박지연 씨, 다른 방법도 있었을 텐데 왜 하필 그렇게 하셨는지 말씀해 주십시오."
+                },
+                {
+                  "speaker": "system",
+                  "text": "⚡ 박지연 — 방어적 태도를 보이기 시작했다"
+                },
+                {
+                  "speaker": "a",
+                  "text": "블랙박스를 보고 나서부터는 차 안까지 열었습니다. 한 번 의심이 시작되면… 멈추는 게 더 고통입니다."
+                }
+              ]
+            },
+            {
+              "turn": 3,
+              "questionType": "fact_pursuit",
+              "beforeState": "S1",
+              "afterState": "S2",
+              "freshDialogues": [
+                {
+                  "speaker": "judge",
+                  "text": "박지연 씨, 아까 말씀하신 내용 중 오피스텔 방문과 새벽 전화과 맞지 않는 부분이 있습니다. 설명해 주시겠습니까?"
+                },
+                {
+                  "speaker": "system",
+                  "text": "⚡ 박지연 — 답변에 변화가 감지된다"
+                },
+                {
+                  "speaker": "system",
+                  "text": "⚡ 박지연의 진술에서 이전과 다른 점이 발견되었다 — 탭하여 추궁"
+                },
+                {
+                  "speaker": "a",
+                  "text": "제 남편은 늘 \"상대방이 예민한 거야\"라고만 했습니다. 그 말로 저를 눌렀습니다. 정작 답해야 할 말은 끝까지 안 하면서요."
+                }
+              ]
+            },
+            {
+              "turn": 4,
+              "questionType": "empathy_approach",
+              "beforeState": "S2",
+              "afterState": "S3",
+              "freshDialogues": [
+                {
+                  "speaker": "judge",
+                  "text": "박지연 씨, 오피스텔 방문과 새벽 전화에 대해서 — 그때 어떤 마음이셨는지 솔직하게 말씀해 주시겠습니까."
+                },
+                {
+                  "speaker": "system",
+                  "text": "⚡ 박지연 — 감정이 동요하고 있다"
+                },
+                {
+                  "speaker": "a",
+                  "text": "결국 저도 정상은 아니었습니다. 돈이 움직인 걸 확인한 뒤부터는… 저도 제 몫부터 생각하게 됐습니다."
+                },
+                {
+                  "speaker": "system",
+                  "text": "💡 재판관의 관찰: \"저는요...\", \"저만...\" 식의 표현을 반복합니다"
+                },
+                {
+                  "speaker": "system",
+                  "text": "이준호가 참지 못하고 반박한다!"
+                },
+                {
+                  "speaker": "b",
+                  "text": "…이런 말을 들을 줄 몰랐습니다. 여기서. 이런 자리에서."
+                }
+              ]
+            }
+          ]
+        },
+        "afterD2Ui": {
+          "bodyLeaks": [
+            "비자금 3,000만원 출금"
+          ],
+          "hotbarDisputeNames": [
+            "오피스텔 방문과 새벽 전화",
+            "비자금 3,000만원 출금"
+          ],
+          "hotbarLeakNames": [
+            "비자금 3,000만원 출금"
+          ],
+          "ribbonTitles": [
+            "오피스텔 방문과 새벽 전화",
+            "비자금 3,000만원 출금"
+          ],
+          "ribbonChipCount": 2,
+          "notesTabs": [
+            "오피스텔 방문과…",
+            "비자금 3,00…",
+            "전체"
+          ],
+          "notesTabCount": 3,
+          "evidenceNames": [
+            "영수증 묶음 5장",
+            "블랙박스 GPS 기록",
+            "통화기록"
+          ]
+        },
+        "aD2Progress": {
+          "finalState": "S1",
+          "turns": [
+            {
+              "turn": 1,
+              "questionType": "fact_pursuit",
+              "beforeState": "S0",
+              "afterState": "S0",
+              "freshDialogues": [
+                {
+                  "speaker": "judge",
+                  "text": "박지연 씨, 비자금 3,000만원 출금에 대해 빠뜨린 부분이 있지 않습니까?"
+                },
+                {
+                  "speaker": "system",
+                  "text": "모순이 쌓이고 있습니다. 조금 더 추궁하면 균열이 생길 것 같습니다."
+                },
+                {
+                  "speaker": "a",
+                  "text": "오피스텔 얘기까지 나온 뒤라, 그 돈도 같은 줄로 보였습니다. 연결 안 하는 게 더 이상한 거 아닙니까요."
+                },
+                {
+                  "speaker": "system",
+                  "text": "📌 [진술 시점 고정] — 이 부정은 향후 모순 추궁의 근거가 됩니다"
+                }
+              ]
+            },
+            {
+              "turn": 2,
+              "questionType": "motive_search",
+              "beforeState": "S0",
+              "afterState": "S0",
+              "freshDialogues": [
+                {
+                  "speaker": "judge",
+                  "text": "박지연 씨, 비자금 3,000만원 출금의 배경을 좀 더 설명해 주시겠습니까?"
+                },
+                {
+                  "speaker": "a",
+                  "text": "오피스텔과 돈이 겹친 그때부터는 제 쪽 돈도 지켜야 한다는 생각이 들었습니다. …가만히 있으면 제가 바보니까요."
+                },
+                {
+                  "speaker": "system",
+                  "text": "💬 이준호가 참지 못하고 끼어든다!"
+                },
+                {
+                  "speaker": "b",
+                  "text": "쓸 데가 정해진 돈이라기보다, 버틸 곳이 하나 필요해서 만든 돈입니다."
+                }
+              ]
+            },
+            {
+              "turn": 3,
+              "questionType": "empathy_approach",
+              "beforeState": "S0",
+              "afterState": "S1",
+              "freshDialogues": [
+                {
+                  "speaker": "judge",
+                  "text": "박지연 씨, 비자금 3,000만원 출금에 대해서 — 그때 어떤 마음이셨는지 솔직하게 말씀해 주시겠습니까."
+                },
+                {
+                  "speaker": "system",
+                  "text": "⚡ 박지연 — 방어적 태도를 보이기 시작했다"
+                },
+                {
+                  "speaker": "a",
+                  "text": "남의 휴대전화를 보는 사람이 된 것처럼, 남편 계좌를 열어보는 제가 싫었습니다."
+                }
+              ]
+            }
+          ]
+        },
+        "d2ScriptedHits": [
+          "[Scripted] spouse-01/interrogation/a|d-2|S0|fact_pursuit",
+          "[Scripted] spouse-01/interrogation/a|d-2|S0|motive_search",
+          "[Scripted] spouse-01/interrogation/a|d-2|S1|empathy_approach"
+        ],
+        "bD2Progress": {
+          "finalState": "S2",
+          "turns": [
+            {
+              "turn": 1,
+              "questionType": "fact_pursuit",
+              "beforeState": "S0",
+              "afterState": "S0",
+              "freshDialogues": [
+                {
+                  "speaker": "judge",
+                  "text": "이준호 씨, 비자금 3,000만원 출금 당시 정확히 어떤 일이 있었습니까?"
+                },
+                {
+                  "speaker": "system",
+                  "text": "모순이 쌓이고 있습니다. 조금 더 추궁하면 균열이 생길 것 같습니다."
+                },
+                {
+                  "speaker": "b",
+                  "text": "…따로 모아둔 돈이 있긴 했습니다."
+                },
+                {
+                  "speaker": "system",
+                  "text": "📌 [진술 시점 고정] — 이 부정은 향후 모순 추궁의 근거가 됩니다"
+                }
+              ]
+            },
+            {
+              "turn": 2,
+              "questionType": "motive_search",
+              "beforeState": "S0",
+              "afterState": "S0",
+              "freshDialogues": [
+                {
+                  "speaker": "judge",
+                  "text": "이준호 씨, 다른 방법도 있었을 텐데 왜 하필 그렇게 하셨는지 말씀해 주십시오."
+                },
+                {
+                  "speaker": "b",
+                  "text": "제 아내가 싫어할 건 알았습니다. …그래도 없으면 더 불안했습니다."
+                }
+              ]
+            },
+            {
+              "turn": 3,
+              "questionType": "empathy_approach",
+              "beforeState": "S0",
+              "afterState": "S1",
+              "freshDialogues": [
+                {
+                  "speaker": "judge",
+                  "text": "이준호 씨, 이 부분이 쉽지 않으시겠지만 — 비자금 3,000만원 출금에 대한 본심을 말씀해 주시겠습니까."
+                },
+                {
+                  "speaker": "system",
+                  "text": "⚡ 이준호 — 방어적 태도를 보이기 시작했다"
+                },
+                {
+                  "speaker": "b",
+                  "text": "배신처럼 들릴 수 있다는 것도 알았습니다. …그래도 못 말했습니다."
+                },
+                {
+                  "speaker": "system",
+                  "text": "💬 박지연이 참지 못하고 끼어든다!"
+                },
+                {
+                  "speaker": "a",
+                  "text": "한 번이 아닙니다. 여러 번 봤습니다. 인정하는 순간 저도 선을 넘었다는 걸 압니다."
+                }
+              ]
+            },
+            {
+              "turn": 4,
+              "questionType": "fact_pursuit",
+              "beforeState": "S1",
+              "afterState": "S2",
+              "freshDialogues": [
+                {
+                  "speaker": "judge",
+                  "text": "이준호 씨, 비자금 3,000만원 출금에 대해 사실대로 말씀해 주십시오."
+                },
+                {
+                  "speaker": "system",
+                  "text": "⚡ 이준호 — 답변에 변화가 감지된다"
+                },
+                {
+                  "speaker": "system",
+                  "text": "⚡ 이준호의 진술에서 이전과 다른 점이 발견되었다 — 탭하여 추궁"
+                },
+                {
+                  "speaker": "b",
+                  "text": "그 돈을 빼고 난 뒤로… 더 숨기게 됐습니다."
+                }
+              ]
+            }
+          ]
+        },
+        "afterHD3Ui": {
+          "bodyLeaks": [
+            "비자금 3,000만원 출금",
+            "공동 적금 2,000만원 해지"
+          ],
+          "hotbarDisputeNames": [
+            "오피스텔 방문과 새벽 전화",
+            "비자금 3,000만원 출금",
+            "공동 적금 2,000만원 해지"
+          ],
+          "hotbarLeakNames": [
+            "비자금 3,000만원 출금",
+            "공동 적금 2,000만원 해지"
+          ],
+          "ribbonTitles": [
+            "오피스텔 방문과 새벽 전화",
+            "비자금 3,000만원 출금",
+            "공동 적금 2,000만원 해지"
+          ],
+          "ribbonChipCount": 3,
+          "notesTabs": [
+            "오피스텔 방문과…",
+            "비자금 3,00…",
+            "공동 적금 2,…",
+            "전체"
+          ],
+          "notesTabCount": 4,
+          "evidenceNames": [
+            "영수증 묶음 5장",
+            "블랙박스 GPS 기록",
+            "통화기록"
+          ]
+        },
+        "hD3Diag": {
+          "aHasHD3": true,
+          "bHasHD3": true,
+          "aHD3State": "S0",
+          "bHD3State": "S0",
+          "hd3Visibility": "emerged",
+          "aD2State": "S1",
+          "bD2State": "S2",
+          "e4unlocked": false,
+          "e5unlocked": false,
+          "e6unlocked": false,
+          "turnBefore": 11,
+          "phaseBefore": "phase3",
+          "isLLMLoading": false,
+          "loopEntered": true,
+          "afterDispatches": [
+            {
+              "turnAfter": 12,
+              "turnAdvanced": true,
+              "hd3StateAfter": "S0",
+              "dialogueAdded": true
+            },
+            {
+              "turnAfter": 13,
+              "turnAdvanced": true,
+              "hd3StateAfter": "S1",
+              "dialogueAdded": true
+            },
+            {
+              "turnAfter": 14,
+              "turnAdvanced": true,
+              "hd3StateAfter": "S1",
+              "dialogueAdded": true
+            },
+            {
+              "turnAfter": 15,
+              "turnAdvanced": true,
+              "hd3StateAfter": "S2",
+              "dialogueAdded": true
+            },
+            {
+              "turnAfter": 16,
+              "turnAdvanced": true,
+              "hd3StateAfter": "S3",
+              "dialogueAdded": true
+            }
+          ],
+          "loopGate": {
+            "currentState": "S0",
+            "targetState": "S3",
+            "phaseBeforeLoop": "phase3",
+            "turnBeforeLoop": 11,
+            "canIterate": true
+          },
+          "finalState": "S3",
+          "turnCountAfter": 16,
+          "phaseAfter": "phase3"
+        },
+        "aHD3Progress": {
+          "finalState": "S3",
+          "turns": [
+            {
+              "turn": 1,
+              "questionType": "fact_pursuit",
+              "beforeState": "S0",
+              "afterState": "S0",
+              "freshDialogues": [
+                {
+                  "speaker": "judge",
+                  "text": "박지연 씨, 공동 적금 2,000만원 해지에 대해 빠뜨린 부분이 있지 않습니까?"
+                },
+                {
+                  "speaker": "system",
+                  "text": "모순이 쌓이고 있습니다. 조금 더 추궁하면 균열이 생길 것 같습니다."
+                },
+                {
+                  "speaker": "a",
+                  "text": "그 적금은 만기까지 두기로 한 돈이었습니다. 없애거나 빼돌린 적 없습니다."
+                },
+                {
+                  "speaker": "system",
+                  "text": "💬 이준호가 참지 못하고 끼어든다!"
+                },
+                {
+                  "speaker": "b",
+                  "text": "적금 통장이나 앱은 거의 아내가 챙겼습니다. 저는 잔액까지 늘 들여다보진 않았습니다."
+                },
+                {
+                  "speaker": "system",
+                  "text": "📌 [진술 시점 고정] — 이 부정은 향후 모순 추궁의 근거가 됩니다"
+                }
+              ]
+            },
+            {
+              "turn": 2,
+              "questionType": "motive_search",
+              "beforeState": "S0",
+              "afterState": "S1",
+              "freshDialogues": [
+                {
+                  "speaker": "judge",
+                  "text": "박지연 씨, 공동 적금 2,000만원 해지의 배경을 좀 더 설명해 주시겠습니까?"
+                },
+                {
+                  "speaker": "system",
+                  "text": "⚡ 박지연 — 방어적 태도를 보이기 시작했다"
+                },
+                {
+                  "speaker": "a",
+                  "text": "이혼 얘기까지 갈까 봐 겁이 났습니다. 그때는 제가 반도 못 받을 것 같았습니다."
+                }
+              ]
+            },
+            {
+              "turn": 3,
+              "questionType": "empathy_approach",
+              "beforeState": "S1",
+              "afterState": "S1",
+              "freshDialogues": [
+                {
+                  "speaker": "judge",
+                  "text": "박지연 씨, 공동 적금 2,000만원 해지에 대해서 — 그때 어떤 마음이셨는지 솔직하게 말씀해 주시겠습니까."
+                },
+                {
+                  "speaker": "system",
+                  "text": "상대방의 경계가 조금씩 풀리고 있습니다."
+                },
+                {
+                  "speaker": "a",
+                  "text": "그때 제 마음은 방어부터 하고 보자는 쪽이었습니다. 믿음이 아니라 불안으로 버틴 시간이었습니다."
+                }
+              ]
+            },
+            {
+              "turn": 4,
+              "questionType": "fact_pursuit",
+              "beforeState": "S1",
+              "afterState": "S2",
+              "freshDialogues": [
+                {
+                  "speaker": "judge",
+                  "text": "박지연 씨, 공동 적금 2,000만원 해지 당시 정확히 어떤 일이 있었습니까?"
+                },
+                {
+                  "speaker": "system",
+                  "text": "⚡ 박지연 — 답변에 변화가 감지된다"
+                },
+                {
+                  "speaker": "system",
+                  "text": "⚡ 박지연의 진술에서 이전과 다른 점이 발견되었다 — 탭하여 추궁"
+                },
+                {
+                  "speaker": "a",
+                  "text": "가만히만 있지는 않았습니다. 제가 쓸 수 있게 돈 흐름을 따로 만들려 했습니다."
+                }
+              ]
+            },
+            {
+              "turn": 5,
+              "questionType": "motive_search",
+              "beforeState": "S2",
+              "afterState": "S3",
+              "freshDialogues": [
+                {
+                  "speaker": "judge",
+                  "text": "박지연 씨, 다른 방법도 있었을 텐데 왜 하필 그렇게 하셨는지 말씀해 주십시오."
+                },
+                {
+                  "speaker": "system",
+                  "text": "⚡ 박지연 — 감정이 동요하고 있다"
+                },
+                {
+                  "speaker": "a",
+                  "text": "그때 제 머릿속에는 공평이라는 말이 없었습니다. 남편이 먼저 숨겼으니 저도 먼저 챙겨야 한다고 봤습니다."
+                },
+                {
+                  "speaker": "system",
+                  "text": "이준호가 참지 못하고 반박한다!"
+                },
+                {
+                  "speaker": "b",
+                  "text": "솔직히 저도 피한 면이 있습니다. 적금까지 하나하나 확인하면 또 싸울 것 같았습니다."
+                },
+                {
+                  "speaker": "system",
+                  "text": "📋 책임 회피 문구가 기록되었습니다"
+                }
+              ]
+            }
+          ]
+        },
+        "hD3ScriptedHits": [
+          "[Scripted] spouse-01/interrogation/a|h-d3|S0|fact_pursuit",
+          "[Scripted] spouse-01/interrogation/a|h-d3|S1|motive_search",
+          "[Scripted] spouse-01/interrogation/a|h-d3|S1|empathy_approach",
+          "[Scripted] spouse-01/interrogation/a|h-d3|S2|fact_pursuit",
+          "[Scripted] spouse-01/interrogation/a|h-d3|S3|motive_search"
+        ],
+        "evidenceTimeline": [
+          {
+            "label": "start",
+            "unlocked": [
+              "e-1",
+              "e-2",
+              "e-3"
+            ],
+            "newIds": [
+              "e-1",
+              "e-2",
+              "e-3"
+            ]
+          },
+          {
+            "label": "after_a_d1_to_s3",
+            "unlocked": [
+              "e-1",
+              "e-2",
+              "e-3"
+            ],
+            "newIds": []
+          },
+          {
+            "label": "after_b_d2_to_s2",
+            "unlocked": [
+              "e-1",
+              "e-2",
+              "e-3"
+            ],
+            "newIds": []
+          },
+          {
+            "label": "after_a_hd3_to_s3",
+            "unlocked": [
+              "e-1",
+              "e-2",
+              "e-3"
+            ],
+            "newIds": []
+          },
+          {
+            "label": "after_present_e3_to_a",
+            "unlocked": [
+              "e-1",
+              "e-2",
+              "e-3",
+              "e-4",
+              "e-5",
+              "e-6",
+              "e-7"
+            ],
+            "newIds": [
+              "e-4",
+              "e-5",
+              "e-6",
+              "e-7"
+            ]
+          }
+        ],
+        "afterHD4Ui": {
+          "bodyLeaks": [
+            "비자금 3,000만원 출금",
+            "공동 적금 2,000만원 해지",
+            "누가 먼저 숨기고 움직였는가"
+          ],
+          "hotbarDisputeNames": [
+            "오피스텔 방문과 새벽 전화",
+            "비자금 3,000만원 출금",
+            "공동 적금 2,000만원 해지",
+            "누가 먼저 숨기고 움직였는가"
+          ],
+          "hotbarLeakNames": [
+            "비자금 3,000만원 출금",
+            "공동 적금 2,000만원 해지",
+            "누가 먼저 숨기고 움직였는가"
+          ],
+          "ribbonTitles": [
+            "오피스텔 방문과 새벽 전화",
+            "비자금 3,000만원 출금",
+            "공동 적금 2,000만원 해지",
+            "누가 먼저 숨기고 움직였는가"
+          ],
+          "ribbonChipCount": 4,
+          "notesTabs": [
+            "오피스텔 방문과…",
+            "비자금 3,00…",
+            "공동 적금 2,…",
+            "누가 먼저 숨기…",
+            "전체"
+          ],
+          "notesTabCount": 5,
+          "evidenceNames": [
+            "영수증 묶음 5장",
+            "블랙박스 GPS 기록",
+            "통화기록",
+            "형 문자 스레드",
+            "B 계좌 출금 내역",
+            "투자방 카톡 기록",
+            "공동 적금 해지 서류"
+          ]
+        },
+        "hD4Name": "누가 먼저 숨기고 움직였는가",
+        "hD4Progress": {
+          "finalState": "S1",
+          "turns": [
+            {
+              "turn": 1,
+              "questionType": "fact_pursuit",
+              "beforeState": "S0",
+              "afterState": "S0",
+              "freshDialogues": [
+                {
+                  "speaker": "judge",
+                  "text": "박지연 씨, 누가 먼저 숨기고 움직였는가 당시 정확히 어떤 일이 있었습니까?"
+                },
+                {
+                  "speaker": "system",
+                  "text": "모순이 쌓이고 있습니다. 조금 더 추궁하면 균열이 생길 것 같습니다."
+                },
+                {
+                  "speaker": "a",
+                  "text": "그 돈이든 그곳 출입이든 시댁 쪽 일이든, 먼저 감춘 쪽은 제 남편입니다. 저는 늘 결과만 맞닥뜨렸습니다."
+                },
+                {
+                  "speaker": "system",
+                  "text": "📌 [진술 시점 고정] — 이 부정은 향후 모순 추궁의 근거가 됩니다"
+                }
+              ]
+            },
+            {
+              "turn": 2,
+              "questionType": "motive_search",
+              "beforeState": "S0",
+              "afterState": "S1",
+              "freshDialogues": [
+                {
+                  "speaker": "judge",
+                  "text": "박지연 씨, 다른 방법도 있었을 텐데 왜 하필 그렇게 하셨는지 말씀해 주십시오."
+                },
+                {
+                  "speaker": "system",
+                  "text": "⚡ 박지연 — 방어적 태도를 보이기 시작했다"
+                },
+                {
+                  "speaker": "a",
+                  "text": "의심이 먼저라기보다 불안이 먼저였습니다. 남편이 돈 얘기를 잘 안 해서 확인하게 됐습니다."
+                }
+              ]
+            }
+          ]
+        },
+        "hD4ScriptedHits": [
+          "[Scripted] spouse-01/interrogation/a|h-d4|S0|fact_pursuit",
+          "[Scripted] spouse-01/interrogation/a|h-d4|S1|motive_search"
+        ],
+        "hD4DialogueLeakTexts": [
+          "judge: 박지연 씨, 누가 먼저 숨기고 움직였는가 당시 정확히 어떤 일이 있었습니까?"
+        ],
+        "verdictBundle": {
+          "phase6Ui": {
+            "text": "₩ 중재안 판결 방식을 선택하세요 박지연vs이준호 ← 나가기 솔로몬 법정 매일 아내 몰래 오피스텔에 머물다 오는 남편01 Phase 5 - 중재 6 5 3 Turn 19 증거 수첩 7 — 잠금 0 ? 영수증 묶음 5장 기록 영수증 묶음 5장이 존재한다. 발견한 내용: (미확인 항목 3개) 블랙박스 GPS 기록 기기 차량 GPS에 같은 좌표 반복 정차 기록이 있다. 발견한 내용: (미확인 항목 3개) 통화기록 기록 새벽 시간대 같은 번호 반복 통화 기록이 있다. 발견한 내용: (미확인 항목 3개) 공동 적금 해지 서류 계약 공동 적금 해지 서류가 존재한다. 발견한 내용: (미확인 항목 3개) 형 문자 스레드 메신저 문자 스레드가 존재한다....",
+            "buttons": [
+              "←나가기",
+              "6",
+              "5",
+              "3",
+              "Turn19",
+              "영수증 묶음 5장기록",
+              "블랙박스 GPS 기록기기",
+              "통화기록기록",
+              "공동 적금 해지 서류계약",
+              "형 문자 스레드메신저",
+              "B 계좌 출금 내역금융",
+              "투자방 카톡 기록메신저",
+              "오피스텔 방문과…",
+              "비자금 3,00…"
+            ]
+          },
+          "phase7Ui": {
+            "step": "solution",
+            "buttons": [
+              "01쟁점 판단",
+              "02안건 책임",
+              "03해결안",
+              "04판결문",
+              "쟁점 판단",
+              "안건 책임",
+              "해결안",
+              "판결문",
+              "거짓 (박지연 측 부정)",
+              "보류",
+              "사실 (이준호 측 인정)",
+              "1",
+              "2",
+              "3",
+              "4",
+              "이전 단계"
+            ]
+          },
+          "verdictFact": {
+            "dotCount": 4,
+            "titles": [
+              "오피스텔 방문과 새벽 전화",
+              "비자금 3,000만원 출금",
+              "공동 적금 2,000만원 해지",
+              "누가 먼저 숨기고 움직였는가"
+            ]
+          },
+          "verdictFlow": {
+            "verdictSteps": [
+              "solution",
+              "confirm"
+            ],
+            "verdictScore": {
+              "insight": 61,
+              "authority": 93,
+              "wisdom": 87,
+              "total": 80
+            },
+            "finalPhase": "result"
+          },
+          "resultState": {
+            "tabLabels": [
+              "점수 분석",
+              "진실 해설",
+              "획득 칭호",
+              "후일담",
+              "판결문",
+              "재판관 성향",
+              "공유"
+            ],
+            "aftermathText": "판결 이후 판결은 어느 한쪽만의 상처로 끝나지 않았다. 한 사람은 가족을 이유로 진실을 가렸고, 다른 한 사람은 불안을 이유로 문서를 조작했다. 빠져나간 돈은 숫자로 남았지만, 법정을 나서는 두 사람에게 더 뼈아픈 손실은 이미 오래전에 깨져 있던 신뢰였다.",
+            "verdictSummaryText": "판결문 — 매일 퇴근 후 같은 오피스텔에 들렀다 오는 남편. 차에서 발견된 여성용품 영수증. 새벽의 통화. 아내는 남편의 딴 살림을 확신한다. 본 사건은 박지연과(와) 이준호 간의 분쟁으로, 총 19턴의 심리를 거쳐 판결에 이르렀습니다. 책임 배분 박지연 43% 이준호 57% 양측 모두 일부 책임이 있으나, 증거와 진술 분석 결과 이준호의 책임이 더 큰 것으로 판단합니다. 결정적 증거 통화기록 결정적 순간 특별한 전환점 없이 점진적으로 진행되었습니다. 해결 방향 공동재산회복::공동 적금 3,000만 원과 2,000만 원 송금의 흐름을 분리 정리하고 회수 가능 금액과 손실액을 다시 맞춘다., 신뢰순서분리::숨김의 시작과 실제 송금 실행의 순서를 분리해 기록하고 감정적 배신과 실행 책임을 따로 판단한다., 봉인정보경계::미성년자 정보와 건강 관련 민감정보는 필요한 범위까지만 해제한다. 본 재판은 \"훌륭한 재판관\" 성향의 재판관에 의해 진행되었습니다. 판결문 복사하기",
+            "heroText": "RESULT DOSSIER 오피스텔 방문과 새벽 전화 매일 퇴근 후 같은 오피스텔에 들렀다 오는 남편. 차에서 발견된 여성용품 영수증. 새벽의 통화. 아내는 남편의 딴 살림을 확신한다. 80 점 훌륭한 재판관 ★ ★ ★ 관계 부부 쟁점 4개 증거 7종 사건 선택으로 판결 다시 하기",
+            "heroDisputeCount": 4
+          }
+        },
+        "verdictDisputeNames": [
+          "오피스텔 방문과 새벽 전화",
+          "비자금 3,000만원 출금",
+          "공동 적금 2,000만원 해지",
+          "누가 먼저 숨기고 움직였는가"
+        ],
+        "finalDiscovery": {
+          "d-1": "visible",
+          "d-2": "emerged",
+          "h-d3": "emerged",
+          "h-d4": "emerged"
+        }
+      },
+      "finalSnapshot": {
+        "phase": "result",
+        "phaseHistory": [
+          "phase0",
+          "phase1",
+          "phase3",
+          "phase6",
+          "phase7",
+          "result"
+        ],
+        "turnCount": 19,
+        "verdictMode": "forced_incomplete",
+        "lieStates": {
+          "a": {
+            "d-1": "S4",
+            "d-2": "S1",
+            "h-d3": "S3",
+            "h-d4": "S1"
+          },
+          "b": {
+            "d-1": "S0",
+            "d-2": "S2",
+            "h-d3": "S0",
+            "h-d4": "S0"
+          }
+        },
+        "evidence": {
+          "unlocked": [
+            "e-1",
+            "e-2",
+            "e-3",
+            "e-4",
+            "e-5",
+            "e-6",
+            "e-7"
+          ],
+          "presented": [
+            "e-3"
+          ]
+        },
+        "discovery": {
+          "d-1": "visible",
+          "d-2": "emerged",
+          "h-d3": "emerged",
+          "h-d4": "emerged"
+        },
+        "calledWitnesses": [],
+        "combination": {
+          "analysisPoints": 5,
+          "appliedRecipeIds": [],
+          "history": []
+        },
+        "verdictScore": {
+          "insight": 61,
+          "authority": 93,
+          "wisdom": 87,
+          "total": 80
+        },
+        "dialogueTail": [
+          {
+            "speaker": "system",
+            "text": "모순이 쌓이고 있습니다. 조금 더 추궁하면 균열이 생길 것 같습니다."
+          },
+          {
+            "speaker": "a",
+            "text": "그 돈이든 그곳 출입이든 시댁 쪽 일이든, 먼저 감춘 쪽은 제 남편입니다. 저는 늘 결과만 맞닥뜨렸습니다."
+          },
+          {
+            "speaker": "system",
+            "text": "📌 [진술 시점 고정] — 이 부정은 향후 모순 추궁의 근거가 됩니다"
+          },
+          {
+            "speaker": "judge",
+            "text": "박지연 씨, 다른 방법도 있었을 텐데 왜 하필 그렇게 하셨는지 말씀해 주십시오."
+          },
+          {
+            "speaker": "system",
+            "text": "⚡ 박지연 — 방어적 태도를 보이기 시작했다"
+          },
+          {
+            "speaker": "a",
+            "text": "의심이 먼저라기보다 불안이 먼저였습니다. 남편이 돈 얘기를 잘 안 해서 확인하게 됐습니다."
+          }
+        ]
+      }
+    },
+    {
+      "run": 902,
+      "label": "Run 2 ??early verdict without bonus turns",
+      "phasePath": [
+        "phase0",
+        "phase1",
+        "phase3",
+        "phase6",
+        "phase7",
+        "result"
+      ],
+      "turnCount": 3,
+      "verdictMode": "forced_incomplete",
+      "verdictScore": {
+        "insight": 59,
+        "authority": 89,
+        "wisdom": 90,
+        "total": 79
+      },
+      "scriptedMissCount": 0,
+      "scriptedHitCount": 7,
+      "scriptedMissTexts": [],
+      "scriptedHitTexts": [
+        "[Scripted] spouse-01/interrogation/b|d-1|S0|empathy_approach",
+        "[Scripted] spouse-01/interrogation/a|d-1|S0|empathy_approach",
+        "[Scripted] spouse-01/interrogation/b|d-1|S1|motive_search",
+        "[Scripted] spouse-01/interrogation/a|d-1|S0|motive_search",
+        "[Scripted] spouse-01/interrogation/b|d-1|S1|empathy_approach",
+        "[Scripted] spouse-01/aftermath/shared_fault",
+        "[Scripted] spouse-01/aftermath/shared_fault"
+      ],
+      "seriousErrors": [],
+      "typeErrorLike": [],
+      "events": [],
+      "detail": {
+        "check": "early verdict without hidden unlock",
+        "turnCapTimeline": [
+          {
+            "label": "start",
+            "turnCount": 0,
+            "effectiveMaxTurns": 16,
+            "discovery": {
+              "d-1": "visible",
+              "d-2": "hidden",
+              "h-d3": "hidden",
+              "h-d4": "hidden"
+            }
+          },
+          {
+            "label": "after_b_d1_to_s2",
+            "turnCount": 3,
+            "effectiveMaxTurns": 16,
+            "discovery": {
+              "d-1": "visible",
+              "d-2": "hidden",
+              "h-d3": "hidden",
+              "h-d4": "hidden"
+            }
+          },
+          {
+            "label": "after_result",
+            "turnCount": 3,
+            "effectiveMaxTurns": 16,
+            "discovery": {
+              "d-1": "visible",
+              "d-2": "hidden",
+              "h-d3": "hidden",
+              "h-d4": "hidden"
+            }
+          }
+        ],
+        "initialUi": {
+          "bodyLeaks": [],
+          "hotbarDisputeNames": [
+            "오피스텔 방문과 새벽 전화"
+          ],
+          "hotbarLeakNames": [],
+          "ribbonTitles": [
+            "오피스텔 방문과 새벽 전화"
+          ],
+          "ribbonChipCount": 1,
+          "notesTabs": [
+            "오피스텔 방문과…",
+            "전체"
+          ],
+          "notesTabCount": 2,
+          "evidenceNames": [
+            "영수증 묶음 5장",
+            "블랙박스 GPS 기록",
+            "통화기록"
+          ]
+        },
+        "bD1Progress": {
+          "finalState": "S1",
+          "turns": [
+            {
+              "turn": 1,
+              "questionType": "empathy_approach",
+              "beforeState": "S0",
+              "afterState": "S0",
+              "freshDialogues": [
+                {
+                  "speaker": "judge",
+                  "text": "이준호 씨, 오피스텔 방문과 새벽 전화 당시 심정이 어떠셨습니까? 편하게 말씀해 주세요."
+                },
+                {
+                  "speaker": "system",
+                  "text": "상대방의 경계가 조금씩 풀리고 있습니다."
+                },
+                {
+                  "speaker": "b",
+                  "text": "말이 바로 안 나옵니다. …이렇게까지 의심할 줄은 몰랐습니다."
+                },
+                {
+                  "speaker": "system",
+                  "text": "💡 재판관의 관찰: 직접적인 질문을 피하고 절차를 언급합니다"
+                },
+                {
+                  "speaker": "system",
+                  "text": "💬 박지연이 참지 못하고 끼어든다!"
+                },
+                {
+                  "speaker": "a",
+                  "text": "그 한순간에 제가 아내가 아니라 바깥사람이 된 기분이었습니다. 안에서 웃으면서 전화하는데 저만 문 밖이었습니다."
+                }
+              ]
+            },
+            {
+              "turn": 2,
+              "questionType": "motive_search",
+              "beforeState": "S0",
+              "afterState": "S1",
+              "freshDialogues": [
+                {
+                  "speaker": "judge",
+                  "text": "이준호 씨, 다른 방법도 있었을 텐데 왜 하필 그렇게 하셨는지 말씀해 주십시오."
+                },
+                {
+                  "speaker": "system",
+                  "text": "⚡ 이준호 — 방어적 태도를 보이기 시작했다"
+                },
+                {
+                  "speaker": "b",
+                  "text": "오해할 걸 알면서 안 말한 건 제 책임입니다. …그래도 당장은 입을 다무는 쪽을 택했습니다."
+                },
+                {
+                  "speaker": "system",
+                  "text": "💬 박지연이 참지 못하고 끼어든다!"
+                },
+                {
+                  "speaker": "a",
+                  "text": "한밤중에 울린 전화 하나가 저를 이렇게 만들었습니다. 혹시나 해서 확인했는데, 예감이란 게 이렇게 잔인한 줄 몰랐습니다."
+                }
+              ]
+            },
+            {
+              "turn": 3,
+              "questionType": "empathy_approach",
+              "beforeState": "S1",
+              "afterState": "S1",
+              "freshDialogues": [
+                {
+                  "speaker": "judge",
+                  "text": "이준호 씨, 이 부분이 쉽지 않으시겠지만 — 오피스텔 방문과 새벽 전화에 대한 본심을 말씀해 주시겠습니까."
+                },
+                {
+                  "speaker": "system",
+                  "text": "상대방의 경계가 조금씩 풀리고 있습니다."
+                },
+                {
+                  "speaker": "b",
+                  "text": "집에 오면 제 아내 얼굴 보기가… 힘들었습니다. 사이가 이미 얼어 있는데 또 말을 꺼내야 하나, 그 생각만 했습니다."
+                }
+              ]
+            }
+          ]
+        },
+        "preVerdictUi": {
+          "bodyLeaks": [],
+          "hotbarDisputeNames": [
+            "오피스텔 방문과 새벽 전화"
+          ],
+          "hotbarLeakNames": [],
+          "ribbonTitles": [
+            "오피스텔 방문과 새벽 전화"
+          ],
+          "ribbonChipCount": 1,
+          "notesTabs": [
+            "오피스텔 방문과…",
+            "전체"
+          ],
+          "notesTabCount": 2,
+          "evidenceNames": [
+            "영수증 묶음 5장",
+            "블랙박스 GPS 기록",
+            "통화기록"
+          ]
+        },
+        "verdictBundle": {
+          "phase6Ui": {
+            "text": "₩ 중재안 판결 방식을 선택하세요 박지연vs이준호 ← 나가기 솔로몬 법정 매일 아내 몰래 오피스텔에 머물다 오는 남편01 Phase 5 - 중재 6 5 3 Turn 3 증거 수첩 3 — 잠금 4 ? 영수증 묶음 5장 기록 영수증 묶음 5장이 존재한다. 발견한 내용: (미확인 항목 3개) 블랙박스 GPS 기록 기기 차량 GPS에 같은 좌표 반복 정차 기록이 있다. 발견한 내용: (미확인 항목 3개) 통화기록 기록 새벽 시간대 같은 번호 반복 통화 기록이 있다. 발견한 내용: (미확인 항목 3개) 발언 노트 18 ? 오피스텔 방문과… 전체 T0 박지연 씨, 시댁 문제는 지금 사안과 다릅니다. T0 … 네. T0 … 감사합니다, 재판관님. T...",
+            "buttons": [
+              "←나가기",
+              "6",
+              "5",
+              "3",
+              "Turn3",
+              "영수증 묶음 5장기록",
+              "블랙박스 GPS 기록기기",
+              "통화기록기록",
+              "오피스텔 방문과…",
+              "전체",
+              "Top ↓",
+              "T0신뢰 +12 (12%)",
+              "T1누설미터 +15% (15%)",
+              "T1이준호 — 균열: 완전 부정 → 흔들림"
+            ]
+          },
+          "phase7Ui": {
+            "step": "solution",
+            "buttons": [
+              "01쟁점 판단",
+              "02안건 책임",
+              "03해결안",
+              "04판결문",
+              "쟁점 판단",
+              "안건 책임",
+              "해결안",
+              "판결문",
+              "거짓 (박지연 측 부정)",
+              "보류",
+              "사실 (이준호 측 인정)",
+              "1",
+              "이전 단계",
+              "다음 단계"
+            ]
+          },
+          "verdictFact": {
+            "dotCount": 1,
+            "titles": [
+              "오피스텔 방문과 새벽 전화"
+            ]
+          },
+          "verdictFlow": {
+            "verdictSteps": [
+              "solution",
+              "confirm"
+            ],
+            "verdictScore": {
+              "insight": 59,
+              "authority": 89,
+              "wisdom": 90,
+              "total": 79
+            },
+            "finalPhase": "result"
+          },
+          "resultState": {
+            "tabLabels": [
+              "점수 분석",
+              "진실 해설",
+              "획득 칭호",
+              "후일담",
+              "판결문",
+              "재판관 성향",
+              "공유"
+            ],
+            "aftermathText": "판결 이후 판결은 어느 한쪽만의 상처로 끝나지 않았다. 한 사람은 가족을 이유로 진실을 가렸고, 다른 한 사람은 불안을 이유로 문서를 조작했다. 빠져나간 돈은 숫자로 남았지만, 법정을 나서는 두 사람에게 더 뼈아픈 손실은 이미 오래전에 깨져 있던 신뢰였다.",
+            "verdictSummaryText": "판결문 — 매일 퇴근 후 같은 오피스텔에 들렀다 오는 남편. 차에서 발견된 여성용품 영수증. 새벽의 통화. 아내는 남편의 딴 살림을 확신한다. 본 사건은 박지연과(와) 이준호 간의 분쟁으로, 총 3턴의 심리를 거쳐 판결에 이르렀습니다. 책임 배분 박지연 43% 이준호 57% 양측 모두 일부 책임이 있으나, 증거와 진술 분석 결과 이준호의 책임이 더 큰 것으로 판단합니다. 결정적 순간 특별한 전환점 없이 점진적으로 진행되었습니다. 해결 방향 공동재산회복::공동 적금 3,000만 원과 2,000만 원 송금의 흐름을 분리 정리하고 회수 가능 금액과 손실액을 다시 맞춘다., 신뢰순서분리::숨김의 시작과 실제 송금 실행의 순서를 분리해 기록하고 감정적 배신과 실행 책임을 따로 판단한다., 봉인정보경계::미성년자 정보와 건강 관련 민감정보는 필요한 범위까지만 해제한다. 본 재판은 \"훌륭한 재판관\" 성향의 재판관에 의해 진행되었습니다. 판결문 복사하기",
+            "heroText": "RESULT DOSSIER 오피스텔 방문과 새벽 전화 매일 퇴근 후 같은 오피스텔에 들렀다 오는 남편. 차에서 발견된 여성용품 영수증. 새벽의 통화. 아내는 남편의 딴 살림을 확신한다. 79 점 훌륭한 재판관 ★ ★ ★ 관계 부부 쟁점 1개 증거 7종 사건 선택으로 판결 다시 하기",
+            "heroDisputeCount": 1
+          }
+        },
+        "verdictDisputeNames": [
+          "오피스텔 방문과 새벽 전화"
+        ],
+        "finalDiscovery": {
+          "d-1": "visible",
+          "d-2": "hidden",
+          "h-d3": "hidden",
+          "h-d4": "hidden"
+        }
+      },
+      "finalSnapshot": {
+        "phase": "result",
+        "phaseHistory": [
+          "phase0",
+          "phase1",
+          "phase3",
+          "phase6",
+          "phase7",
+          "result"
+        ],
+        "turnCount": 3,
+        "verdictMode": "forced_incomplete",
+        "lieStates": {
+          "a": {
+            "d-1": "S0",
+            "d-2": "S0",
+            "h-d3": "S0",
+            "h-d4": "S0"
+          },
+          "b": {
+            "d-1": "S1",
+            "d-2": "S0",
+            "h-d3": "S0",
+            "h-d4": "S0"
+          }
+        },
+        "evidence": {
+          "unlocked": [
+            "e-1",
+            "e-2",
+            "e-3"
+          ],
+          "presented": []
+        },
+        "discovery": {
+          "d-1": "visible",
+          "d-2": "hidden",
+          "h-d3": "hidden",
+          "h-d4": "hidden"
+        },
+        "calledWitnesses": [],
+        "combination": {
+          "analysisPoints": 5,
+          "appliedRecipeIds": [],
+          "history": []
+        },
+        "verdictScore": {
+          "insight": 59,
+          "authority": 89,
+          "wisdom": 90,
+          "total": 79
+        },
+        "dialogueTail": [
+          {
+            "speaker": "b",
+            "text": "오해할 걸 알면서 안 말한 건 제 책임입니다. …그래도 당장은 입을 다무는 쪽을 택했습니다."
+          },
+          {
+            "speaker": "system",
+            "text": "💬 박지연이 참지 못하고 끼어든다!"
+          },
+          {
+            "speaker": "a",
+            "text": "한밤중에 울린 전화 하나가 저를 이렇게 만들었습니다. 혹시나 해서 확인했는데, 예감이란 게 이렇게 잔인한 줄 몰랐습니다."
+          },
+          {
+            "speaker": "judge",
+            "text": "이준호 씨, 이 부분이 쉽지 않으시겠지만 — 오피스텔 방문과 새벽 전화에 대한 본심을 말씀해 주시겠습니까."
+          },
+          {
+            "speaker": "system",
+            "text": "상대방의 경계가 조금씩 풀리고 있습니다."
+          },
+          {
+            "speaker": "b",
+            "text": "집에 오면 제 아내 얼굴 보기가… 힘들었습니다. 사이가 이미 얼어 있는데 또 말을 꺼내야 하나, 그 생각만 했습니다."
+          }
+        ]
+      }
+    }
+  ]
+}

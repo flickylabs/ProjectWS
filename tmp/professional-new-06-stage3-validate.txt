@@ -1,0 +1,3 @@
+[validate-scripted-text] case=professional-new-06
+[validate-scripted-text] summary={}
+[validate-scripted-text] PASS

@@ -1,0 +1,7 @@
+[scripted-semantic-quality] case=spouse-11
+WARN A8 interrogation:a-d-5-S0-empathy_approach-v2 is more emotionally exposed than affect_flattening usually allows
+WARN A8 interrogation:a-d-5-S1-empathy_approach-v2 is more emotionally exposed than affect_flattening usually allows
+WARN A8 interrogation:a-d-5-S2-empathy_approach-v2 is more emotionally exposed than affect_flattening usually allows
+WARN A8 interrogation:a-d-5-S3-empathy_approach-v2 is more emotionally exposed than affect_flattening usually allows
+summary={"WARN":4}
+PASS

@@ -1,0 +1,3 @@
+[runtime-template-coverage] case=civic-new-03
+summary={}
+PASS

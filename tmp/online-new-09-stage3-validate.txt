@@ -1,0 +1,3 @@
+[validate-scripted-text] case=online-new-09
+[validate-scripted-text] summary={}
+[validate-scripted-text] PASS

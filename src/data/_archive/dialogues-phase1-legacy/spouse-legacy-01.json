@@ -1,0 +1,75 @@
+{
+  "caseId": "case-spouse-legacy-01",
+  "dialogues": [
+    {
+      "speaker": "system",
+      "text": "결혼 10년차 부부. 8개월 전부터 각방을 쓰고 있으며, 아내가 남편의 딴살림을 의심하여 재판을 신청했다.",
+      "relatedDisputes": [],
+      "behaviorHint": null
+    },
+    {
+      "speaker": "a",
+      "text": "재판관님, 제 남편이 매일 퇴근하면 어디론가 사라집니다. 블랙박스를 확인해 보니 같은 오피스텔 앞에 차를 세워두고 몇 시간씩 있다 옵니다.",
+      "relatedDisputes": [
+        "d-1"
+      ],
+      "behaviorHint": "확신에 찬 표정으로 단호하게 말한다. 오랫동안 참아온 것이 느껴진다."
+    },
+    {
+      "speaker": "a",
+      "text": "새벽에 화장실을 가려는데, 복도에서 제 남편 목소리가 들렸습니다. 문틈으로 들리는 전화 통화였습니다. 각방이라 제가 듣게 된 겁니다.",
+      "relatedDisputes": [
+        "d-1"
+      ],
+      "behaviorHint": "목소리를 낮추며 그때의 장면을 떠올린다."
+    },
+    {
+      "speaker": "b",
+      "text": "재판관님, 그런 일이 아닙니다.",
+      "relatedDisputes": [
+        "d-1"
+      ],
+      "behaviorHint": "짧게 부정하고 입을 다문다. 시선을 아래로 내린다."
+    },
+    {
+      "speaker": "a",
+      "text": "자기야, 매일 같은 곳에 가고 새벽에 전화하면서 '그런 일 아니다'가 끝이야? 나한테 한마디도 설명 안 하면서?",
+      "relatedDisputes": [
+        "d-1"
+      ],
+      "behaviorHint": "남편에게 직접 반말로 몰아붙인다. 억울함이 분노로 바뀐다."
+    },
+    {
+      "speaker": "b",
+      "text": "… 사정이 있어. 근데 지금 여기서 말하기가 어려워.",
+      "relatedDisputes": [
+        "d-1"
+      ],
+      "behaviorHint": "말을 아끼며 회피한다. 무언가를 숨기고 있는 것이 분명하다."
+    },
+    {
+      "speaker": "a",
+      "text": "재판관님, 8개월 동안 이런 식입니다. 물어보면 화를 내거나 말을 돌립니다. 한 번도 제대로 답한 적이 없습니다.",
+      "relatedDisputes": [
+        "d-1"
+      ],
+      "behaviorHint": "재판관에게 호소하듯 말한다. 피해자 포지셔닝을 강화한다."
+    },
+    {
+      "speaker": "b",
+      "text": "재판관님, 제 아내가 의심하는 건 이해합니다. 하지만 그게 제 아내가 생각하는 일은 아닙니다. 지금은 그것만 말씀드리겠습니다.",
+      "relatedDisputes": [
+        "d-1"
+      ],
+      "behaviorHint": "조심스럽게 말을 고른다. 최소한의 선만 지키려 한다."
+    },
+    {
+      "speaker": "system",
+      "text": "오피스텔 방문과 새벽 전화 — 남편은 부정하고, 아내는 딴살림을 확신하고 있다. 양측의 주장을 심문을 통해 확인해야 한다.",
+      "relatedDisputes": [
+        "d-1"
+      ],
+      "behaviorHint": null
+    }
+  ]
+}

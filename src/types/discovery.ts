@@ -82,7 +82,7 @@ export interface DisputeVisibilityEntry {
 }
 
 export interface EmergenceRoute {
-  type: 'evidence' | 'truth_confrontation' | 'witness' | 'lie_collapse' | 'emotional_slip'
+  type: 'evidence' | 'truth_confrontation' | 'witness' | 'lie_collapse' | 'emotional_slip' | 'lie_state_threshold'
   /** 필요 조건 상세 */
   condition: {
     /** 특정 증거 제시/조사 필요 */
@@ -95,6 +95,10 @@ export interface EmergenceRoute {
     lieCollapseDispute?: string
     /** 특정 쟁점에서 감정 격앙 실수 필요 */
     emotionalSlipDispute?: string
+    /** 특정 쟁점이 지정 state 이상 도달 필요 (lie_state_threshold용) */
+    lieThresholdDispute?: string
+    lieThresholdMinState?: string
+    lieThresholdParty?: 'a' | 'b'
   }
 }
 

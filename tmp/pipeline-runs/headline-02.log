@@ -1,0 +1,33 @@
+[case-stage1a-runtime] wrote src/data/cases/generated/headline-02.json
+[headline-stage1b-v3] wrote docs\ref\리뉴얼참고\headline-02-v3-game-loop-data.json
+[headline-stage1b-v3] wrote docs\ref\리뉴얼참고\headline-02-v3-game-loop-data.ts
+[runtime-template-coverage] case=headline-02
+summary={}
+PASS
+[headline-stage1c-phase-dialogues] wrote src\data\dialogues\phase1\headline-02.json
+[headline-stage1c-phase-dialogues] wrote src\data\dialogues\phase2\headline-02.json
+[case-stage1e-mediation-dialogues] caseId=case-headline-02
+[case-stage1e-mediation-dialogues] out=src/data/dialogues/mediation/headline-02.json
+[headline-02-stage2-scripted-bootstrap] wrote src\data\scriptedText\headline-02.json
+[case-stage2-scripted-bootstrap] wrote src/data/scriptedText/headline-02.json
+[scripted-template-coverage] case=headline-02
+summary={}
+PASS
+[scripted-semantic-quality] case=headline-02
+summary={}
+PASS
+[validate-scripted-text] case=headline-02
+[validate-scripted-text] summary={"WARN":12}
+- [WARN] D2 evidence_present / b|e-2|early|institutional / b|e-2|early|institutional#1 <> b|e-2|early|institutional#4: variant 유사도 과다 (73%)
+- [WARN] D2 evidence_present / b|e-2|mid|institutional / b|e-2|mid|institutional#1 <> b|e-2|mid|institutional#4: variant 유사도 과다 (73%)
+- [WARN] D2 evidence_present / b|e-2|late|institutional / b|e-2|late|institutional#1 <> b|e-2|late|institutional#4: variant 유사도 과다 (73%)
+- [WARN] D2 evidence_present / b|e-3|early|self / b|e-3|early|self#1 <> b|e-3|early|self#4: variant 유사도 과다 (77%)
+- [WARN] D2 evidence_present / b|e-3|mid|self / b|e-3|mid|self#1 <> b|e-3|mid|self#4: variant 유사도 과다 (77%)
+- [WARN] D2 evidence_present / b|e-3|late|self / b|e-3|late|self#1 <> b|e-3|late|self#4: variant 유사도 과다 (77%)
+- [WARN] D2 evidence_present / b|e-5|early|self / b|e-5|early|self#1 <> b|e-5|early|self#4: variant 유사도 과다 (73%)
+- [WARN] D2 evidence_present / b|e-5|mid|self / b|e-5|mid|self#1 <> b|e-5|mid|self#4: variant 유사도 과다 (73%)
+- [WARN] D2 evidence_present / b|e-5|late|self / b|e-5|late|self#1 <> b|e-5|late|self#4: variant 유사도 과다 (73%)
+- [WARN] D2 evidence_present / b|e-6|early|both / b|e-6|early|both#1 <> b|e-6|early|both#4: variant 유사도 과다 (75%)
+- [WARN] D2 evidence_present / b|e-6|mid|both / b|e-6|mid|both#1 <> b|e-6|mid|both#4: variant 유사도 과다 (75%)
+- [WARN] D2 evidence_present / b|e-6|late|both / b|e-6|late|both#1 <> b|e-6|late|both#4: variant 유사도 과다 (75%)
+[headline-02] wrote tmp\headline-02-stage3-validate.txt

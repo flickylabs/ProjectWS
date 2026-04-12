@@ -3,7 +3,7 @@ import { useStore } from '../../../store/useGameStore'
 import type { DialogueEntry as DialogueEntryType, EmotionalPhase } from '../../../types'
 import PCSvgIcon from '../icons/PCSvgIcon'
 import { getPcFaceSymbolId } from '../icons/pcIconUtils'
-import { openPcInteractionPanel, type PcInteractionAction } from './PCInteractionPanel'
+import { openPcInteractionPanel } from './PCInteractionPanel'
 
 const EMOTION_LABELS: Partial<Record<EmotionalPhase, string>> = {
   confident: '자신감',
@@ -42,25 +42,31 @@ function MessageBubble({ entry, animate }: { entry: DialogueEntryType; animate: 
   const caseData = useStore((s) => s.caseData)
   const agentA = useStore((s) => s.agentA)
   const agentB = useStore((s) => s.agentB)
-  const displayText = useRevealText(entry.text, animate)
-  const fullText = entry.text.trim()
+  const rawText = entry.text ?? ''
+  const displayText = useRevealText(rawText, animate)
+  const fullText = rawText.trim()
   const nameA = caseData?.duo.partyA.name ?? '당사자 A'
   const nameB = caseData?.duo.partyB.name ?? '당사자 B'
 
-  const openEntryDetail = useCallback((
-    title: string,
-    subtitle: string,
-    tone: 'blue' | 'red' | 'gold' | 'neutral',
-    actions?: PcInteractionAction[],
-  ) => {
+  const speakerName = entry.speaker === 'a' ? nameA
+    : entry.speaker === 'b' ? nameB
+    : entry.speaker === 'judge' ? '재판관'
+    : entry.speaker === 'witness' ? (entry.witnessName ?? '증인')
+    : '시스템'
+
+  const openEntryDetail = useCallback(() => {
     openPcInteractionPanel({
-      title,
-      subtitle,
-      tone,
-      body: [fullText, '', entry.behaviorHint ?? ''].filter(Boolean).join('\n'),
-      actions,
+      title: `Turn ${entry.turn}`,
+      subtitle: entry.behaviorHint ? '중요 발언' : '발언 기록',
+      tone: entry.speaker === 'a' ? 'red' : entry.speaker === 'b' ? 'blue' : 'gold',
+      variant: 'dialogue',
+      body: fullText,
+      dialogueTurn: entry.turn,
+      dialogueSpeaker: entry.speaker,
+      dialogueSpeakerName: speakerName,
+      dialogueDisputeIds: entry.relatedDisputes,
     })
-  }, [entry.behaviorHint, fullText])
+  }, [entry, fullText, speakerName])
 
   if (entry.speaker === 'system') {
     const contradiction = entry.contradictionMeta
@@ -121,7 +127,7 @@ function MessageBubble({ entry, animate }: { entry: DialogueEntryType; animate: 
         <div className="pc-log-system-row is-explainer">
           <button
             className="pc-log-system-explainer"
-            onClick={() => openEntryDetail('설명 메시지', '시스템 안내', 'gold')}
+            onClick={() => openEntryDetail()}
             type="button"
           >
             <span className="pc-log-system-explainer__line" />
@@ -141,7 +147,7 @@ function MessageBubble({ entry, animate }: { entry: DialogueEntryType; animate: 
       <div className="pc-log-system-row is-toast">
         <button
           className="pc-log-system-card"
-          onClick={() => openEntryDetail('시스템 메시지', '진행 안내', 'neutral')}
+          onClick={() => openEntryDetail()}
           type="button"
         >
           <span className="pc-log-system-card__icon">
@@ -156,10 +162,10 @@ function MessageBubble({ entry, animate }: { entry: DialogueEntryType; animate: 
   if (entry.speaker === 'judge') {
     return (
       <div className="pc-log-judge-center">
-        <button className="pc-log-judge-avatar" onClick={() => openEntryDetail('재판관', '판단 지시', 'gold')} type="button">
+        <button className="pc-log-judge-avatar" onClick={() => openEntryDetail()} type="button">
           <PCSvgIcon id="i-scale" size={22} />
         </button>
-        <button className="pc-log-bubble is-judge" onClick={() => openEntryDetail('재판관', '판단 지시', 'gold')} type="button">
+        <button className="pc-log-bubble is-judge" onClick={() => openEntryDetail()} type="button">
           <div className="pc-log-bubble__text">{displayText}</div>
         </button>
       </div>
@@ -177,16 +183,16 @@ function MessageBubble({ entry, animate }: { entry: DialogueEntryType; animate: 
     return (
       <div className={`pc-log-row ${witnessFavor}`}>
         <div className="pc-log-speaker is-witness">
-          <button className="pc-log-avatar is-witness" onClick={() => openEntryDetail(witnessName, '증언 정보', 'gold')} type="button">
+          <button className="pc-log-avatar is-witness" onClick={() => openEntryDetail()} type="button">
             <PCSvgIcon id="i-witness" size={22} />
           </button>
-          <button className="pc-log-speaker__name is-witness pc-log-name--button" onClick={() => openEntryDetail(witnessName, '증언 정보', 'gold')} type="button">
+          <button className="pc-log-speaker__name is-witness pc-log-name--button" onClick={() => openEntryDetail()} type="button">
             <span>{witnessName}</span>
             {depthLabel ? <span className={`pc-log-depth-badge is-${depthLabel === '모호' ? 'vague' : depthLabel === '부분' ? 'partial' : 'full'}`}>{depthLabel}</span> : null}
           </button>
         </div>
         <div className="pc-log-stack">
-          <button className="pc-log-bubble is-witness" onClick={() => openEntryDetail(witnessName, '증언 정보', 'gold')} type="button">
+          <button className="pc-log-bubble is-witness" onClick={() => openEntryDetail()} type="button">
             <div className="pc-log-bubble__text">{displayText}</div>
             {entry.behaviorHint ? <div className="pc-log-bubble__hint">{entry.behaviorHint}</div> : null}
           </button>
@@ -201,23 +207,16 @@ function MessageBubble({ entry, animate }: { entry: DialogueEntryType; animate: 
   const emotion = agent?.emotionalState.phase
   const emotionLabel = emotion ? EMOTION_LABELS[emotion] : null
   const faceId = profile ? getPcFaceSymbolId(isPartyA ? 'a' : 'b', profile, emotion) : 'i-person'
-  const speakerName = isPartyA ? nameA : nameB
-  const speakerTone = isPartyA ? 'blue' as const : 'red' as const
-  const relatedDispute = entry.relatedDisputes[0] ?? null
-  const actions: PcInteractionAction[] = [
-    { kind: 'set_target', label: '대상 정보 보기', party: isPartyA ? 'a' : 'b' },
-    ...(relatedDispute ? [{ kind: 'focus_dispute' as const, label: '관련 쟁점으로 이동', disputeId: relatedDispute }] : []),
-  ]
 
   return (
     <div className={`pc-log-row ${isPartyA ? 'is-left' : 'is-right'}`}>
       <div className={`pc-log-speaker ${isPartyA ? 'is-a' : 'is-b'}`}>
-        <button className={`pc-log-avatar ${isPartyA ? 'is-a' : 'is-b'}`} onClick={() => openEntryDetail(speakerName, '대상 정보', speakerTone, actions)} type="button">
+        <button className={`pc-log-avatar ${isPartyA ? 'is-a' : 'is-b'}`} onClick={() => openEntryDetail()} type="button">
           <PCSvgIcon id={faceId} size={24} />
         </button>
         <button
           className={`pc-log-speaker__name ${isPartyA ? 'is-a' : 'is-b'} pc-log-name--button`}
-          onClick={() => openEntryDetail(speakerName, '대상 정보', speakerTone, actions)}
+          onClick={() => openEntryDetail()}
           type="button"
         >
           <span>{speakerName}</span>
@@ -227,7 +226,7 @@ function MessageBubble({ entry, animate }: { entry: DialogueEntryType; animate: 
       <div className="pc-log-stack">
         <button
           className={`pc-log-bubble ${isPartyA ? 'is-a' : 'is-b'}${entry.isConfidential ? ' is-confidential' : ''}`}
-          onClick={() => openEntryDetail(speakerName, '발언 정보', speakerTone, actions)}
+          onClick={() => openEntryDetail()}
           type="button"
         >
           {entry.isConfidential ? (

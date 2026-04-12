@@ -1,0 +1,1518 @@
+{
+  "session": "session-5a-evidence",
+  "channel": "evidence_present",
+  "entries": [
+    {
+      "key": "b|e-1|early|self",
+      "party": "b",
+      "evidenceId": "e-1",
+      "lieBand": "early",
+      "subjectRole": "self",
+      "stanceHint": "hedge",
+      "truthLevel": "hint",
+      "variants": [
+        {
+          "id": "v1",
+          "text": "연락한 건 맞습니다.",
+          "behaviorHint": "짧은 문장으로 사실만 인정하고 이유는 닫아 둔다."
+        },
+        {
+          "id": "v2",
+          "text": "최근 9일 동안 전화도 했고 문자도 보냈습니다. 기록 그대로입니다.",
+          "behaviorHint": "기록의 디테일을 건조하게 짚고 더는 설명하지 않는다."
+        },
+        {
+          "id": "v3",
+          "text": "전화 여섯 번, 문자 열한 번. 숫자도 부정하지 않습니다.",
+          "behaviorHint": "반박보다 확인에 가깝게 말하며 표정을 거의 바꾸지 않는다."
+        },
+        {
+          "id": "v4",
+          "text": "답이 거의 없어서 더 도드라져 보일 겁니다. 그래도 제가 남긴 기록은 맞습니다.",
+          "behaviorHint": "감정이 비칠 듯 말 듯하지만 끝내 눌러 버린다."
+        },
+        {
+          "id": "v5",
+          "text": "왜 했는지는 아직 다 말하지 않겠습니다. 연락했다는 사실만 인정합니다.",
+          "behaviorHint": "다음 진실을 암시하면서도 입을 더 열지 않으려 한다."
+        }
+      ]
+    },
+    {
+      "key": "a|e-1|early|other",
+      "party": "a",
+      "evidenceId": "e-1",
+      "lieBand": "early",
+      "subjectRole": "other",
+      "stanceHint": "emotional",
+      "truthLevel": "hint",
+      "variants": [
+        {
+          "id": "v1",
+          "text": "이게 제 예비신랑한테 연락한 증거입니다. 9일 동안요.",
+          "behaviorHint": "분노가 앞서며 상대를 문제의 중심에 둔다."
+        },
+        {
+          "id": "v2",
+          "text": "전화도 여러 번이고 문자도 계속입니다. 한 번 실수한 수준이 아닙니다.",
+          "behaviorHint": "증거의 숫자와 장면을 붙잡고 자기 확신을 밀어붙인다."
+        },
+        {
+          "id": "v3",
+          "text": "답이 거의 없는데도 멈추지 않았습니다. 저는 그게 제일 이상했습니다.",
+          "behaviorHint": "상처받은 약혼녀의 시선으로 거칠게 단정한다."
+        },
+        {
+          "id": "v4",
+          "text": "손절한 사람이 결혼 직전에 저러니까 저는 더 나쁘게 볼 수밖에 없었습니다.",
+          "behaviorHint": "격앙된 감정을 누르지 못한 채 말끝이 서 있다."
+        },
+        {
+          "id": "v5",
+          "text": "예전 일까지 알고 있는 저한테는, 이 기록이 그냥 우연으로는 안 보였습니다.",
+          "behaviorHint": "과거 서사를 현재에 겹쳐 보며 확신을 강화한다."
+        }
+      ]
+    },
+    {
+      "key": "b|e-1|mid|self",
+      "party": "b",
+      "evidenceId": "e-1",
+      "lieBand": "mid",
+      "subjectRole": "self",
+      "stanceHint": "partial",
+      "truthLevel": "partial",
+      "variants": [
+        {
+          "id": "v1",
+          "text": "꼭 전해야 할 일이 있었습니다. 답이 없으니까 계속 보낸 겁니다.",
+          "behaviorHint": "핵심 이유를 조금 열되 여전히 절반만 말한다."
+        },
+        {
+          "id": "v2",
+          "text": "전화를 안 받으면 문자로 남겼고, 문자도 끊기면 다시 전화했습니다.",
+          "behaviorHint": "증거의 세부를 짚으며 행동의 이유를 논리적으로 설명한다."
+        },
+        {
+          "id": "v3",
+          "text": "짧게 끊기는 답만 돌아와서 더 멈출 수가 없었습니다.",
+          "behaviorHint": "감정보다 경위를 우선해 차분하게 풀어낸다."
+        },
+        {
+          "id": "v4",
+          "text": "저 기록이 이상해 보일 건 압니다. 그래도 그냥 넘길 수 있는 일은 아니었습니다.",
+          "behaviorHint": "그때의 압박감을 짧게 드러내지만 목소리는 낮다."
+        },
+        {
+          "id": "v5",
+          "text": "그때 전하지 않으면 늦는다고 생각했습니다. 그래서 같은 번호로 계속 남겼습니다.",
+          "behaviorHint": "다음 쟁점과 이어지는 실마리를 남기며 말을 아낀다."
+        }
+      ]
+    },
+    {
+      "key": "a|e-1|mid|other",
+      "party": "a",
+      "evidenceId": "e-1",
+      "lieBand": "mid",
+      "subjectRole": "other",
+      "stanceHint": "emotional",
+      "truthLevel": "partial",
+      "variants": [
+        {
+          "id": "v1",
+          "text": "답도 거의 안 하는데 계속 보냈습니다. 저는 정상적인 연락으로 안 보입니다.",
+          "behaviorHint": "여전히 날이 서 있지만 자기 판단의 빈틈이 조금 생긴다."
+        },
+        {
+          "id": "v2",
+          "text": "끊기듯 끝나는 답장을 받고도 다시 전화했습니다. 왜 그렇게까지 했습니까.",
+          "behaviorHint": "따져 묻는 어조로 증거의 이상함을 짚는다."
+        },
+        {
+          "id": "v3",
+          "text": "제 입장에서는 막아 달라는 신호가 아니라 밀어붙이는 모습으로 보였습니다.",
+          "behaviorHint": "상대를 몰아세우면서도 완전한 확신에는 금이 간 상태다."
+        },
+        {
+          "id": "v4",
+          "text": "지금 다른 사정이 있었다는 말은 듣고 있습니다. 그래도 저 기록만 보면 너무 집요합니다.",
+          "behaviorHint": "화가 남아 있지만 문장 사이로 혼란이 스민다."
+        },
+        {
+          "id": "v5",
+          "text": "이유가 있었다 해도, 설명 없이 저렇게 남겨 놓으면 저는 오해할 수밖에 없습니다.",
+          "behaviorHint": "방식의 문제를 붙들며 자신의 충격도 함께 드러낸다."
+        }
+      ]
+    },
+    {
+      "key": "b|e-1|late|self",
+      "party": "b",
+      "evidenceId": "e-1",
+      "lieBand": "late",
+      "subjectRole": "self",
+      "stanceHint": "confess",
+      "truthLevel": "full",
+      "variants": [
+        {
+          "id": "v1",
+          "text": "경고하려고 연락한 겁니다. 답이 없으면 만나서라도 말해야 했습니다.",
+          "behaviorHint": "더 숨기지 않겠다는 듯 건조한 고백을 꺼낸다."
+        },
+        {
+          "id": "v2",
+          "text": "문자로 끝낼 일이 아니어서 전화도 했습니다. 읽고 무시하면 더 급해졌습니다.",
+          "behaviorHint": "자기희생의 선택을 담담하게 인정한다."
+        },
+        {
+          "id": "v3",
+          "text": "저 기록이 집착처럼 보일 건 압니다. 하지만 저는 막아야 할 일이 있다고 봤습니다.",
+          "behaviorHint": "감정보다 체념이 먼저 드러나는 톤이다."
+        },
+        {
+          "id": "v4",
+          "text": "답이 없을수록 더 조급했습니다. 이번에도 늦으면 또 똑같이 갈 것 같았습니다.",
+          "behaviorHint": "무너진 마음을 억누르며 늦은 진실을 말한다."
+        },
+        {
+          "id": "v5",
+          "text": "저 연락은 관심이 아니라 경고였습니다. 받아 주지 않으면 직접라도 끊어 세워야 했습니다.",
+          "behaviorHint": "이번 일과 과거의 반복을 한 문장으로 묶어 낸다."
+        }
+      ]
+    },
+    {
+      "key": "a|e-1|late|other",
+      "party": "a",
+      "evidenceId": "e-1",
+      "lieBand": "late",
+      "subjectRole": "other",
+      "stanceHint": "emotional",
+      "truthLevel": "partial",
+      "variants": [
+        {
+          "id": "v1",
+          "text": "이렇게까지 한 이유가 있긴 한 건가요... 그래도 이건 너무 합니다.",
+          "behaviorHint": "분노보다 상처와 혼란이 앞서는 톤이다."
+        },
+        {
+          "id": "v2",
+          "text": "이제는 다른 사정이 있었을 수도 있다고 봅니다. 그런데도 9일 동안 그만큼 보낸 건 과합니다.",
+          "behaviorHint": "이유를 이해하려 하면서도 방식에 대한 분노를 놓지 못한다."
+        },
+        {
+          "id": "v3",
+          "text": "경고였다고 해도, 답이 없으면 다른 방식이 있었어야 했습니다.",
+          "behaviorHint": "자기 오해를 일부 인정하지만 감정은 아직 거칠다."
+        },
+        {
+          "id": "v4",
+          "text": "저는 저 기록을 보고 결혼을 흔드는 의도로 받아들였습니다. 지금도 그 충격은 남아 있습니다.",
+          "behaviorHint": "확신이 무너진 자리에 당혹감이 남아 있다."
+        },
+        {
+          "id": "v5",
+          "text": "이유가 밝혀져도 방식까지 괜찮았다고는 못 하겠습니다. 저는 저 기록에 먼저 무너졌습니다.",
+          "behaviorHint": "판단을 거두기 시작하면서도 자기 상처를 방어한다."
+        }
+      ]
+    },
+    {
+      "key": "a|e-2|early|self",
+      "party": "a",
+      "evidenceId": "e-2",
+      "lieBand": "early",
+      "subjectRole": "self",
+      "stanceHint": "hedge",
+      "truthLevel": "hint",
+      "variants": [
+        {
+          "id": "v1",
+          "text": "제가 올린 건 맞습니다.",
+          "behaviorHint": "최소한만 인정하고 곧바로 자기 판단을 정당화한다."
+        },
+        {
+          "id": "v2",
+          "text": "단톡방에 먼저 말을 꺼낸 사람도 저입니다.",
+          "behaviorHint": "분노를 근거처럼 붙들고 행동을 합리화한다."
+        },
+        {
+          "id": "v3",
+          "text": "그때는 수민이가 또 그런다고 확신했습니다. 그래서 친구들한테 알렸습니다.",
+          "behaviorHint": "확신에 찬 태도로 자신이 먼저 움직인 이유를 강조한다."
+        },
+        {
+          "id": "v4",
+          "text": "화가 나서 그냥 넘길 수가 없었습니다. 누군가는 알아야 한다고 생각했습니다.",
+          "behaviorHint": "화가 식지 않은 사람처럼 말이 빠르고 단정적이다."
+        },
+        {
+          "id": "v5",
+          "text": "지금 보니 거칠었을 수는 있어도, 그 순간에는 사실을 말한다고 믿었습니다.",
+          "behaviorHint": "뒤늦은 의심보다 당시의 확신을 먼저 내세운다."
+        }
+      ]
+    },
+    {
+      "key": "b|e-2|early|other",
+      "party": "b",
+      "evidenceId": "e-2",
+      "lieBand": "early",
+      "subjectRole": "other",
+      "stanceHint": "answer",
+      "truthLevel": "hint",
+      "variants": [
+        {
+          "id": "v1",
+          "text": "이렇게 말하고 다닌 줄 몰랐습니다.",
+          "behaviorHint": "충격을 받았지만 소리치지 않고 얼어붙은 듯 말한다."
+        },
+        {
+          "id": "v2",
+          "text": "단톡방에서 제 얘기가 저렇게 돌았다는 건 처음 봅니다.",
+          "behaviorHint": "짧은 문장으로 상황을 받아들이며 감정을 눌러 담는다."
+        },
+        {
+          "id": "v3",
+          "text": "예전 일까지 꺼내서 같은 식으로 말했군요.",
+          "behaviorHint": "건조한 어조 아래 상처가 비친다."
+        },
+        {
+          "id": "v4",
+          "text": "해명도 못 해보고 이미 그런 사람이 되어 있었던 겁니다.",
+          "behaviorHint": "해명 기회를 잃은 사람처럼 말을 삼킨다."
+        },
+        {
+          "id": "v5",
+          "text": "그래서 누구도 제 말을 들으려 하지 않았던 겁니다.",
+          "behaviorHint": "보이는 장면을 그대로 받아 적듯 낮게 말한다."
+        }
+      ]
+    },
+    {
+      "key": "a|e-2|mid|self",
+      "party": "a",
+      "evidenceId": "e-2",
+      "lieBand": "mid",
+      "subjectRole": "self",
+      "stanceHint": "partial",
+      "truthLevel": "partial",
+      "variants": [
+        {
+          "id": "v1",
+          "text": "화가 나서 그랬습니다. 확인 안 하고 올린 건 인정합니다.",
+          "behaviorHint": "잘못의 일부를 인정하지만 아직 자기 방어가 남아 있다."
+        },
+        {
+          "id": "v2",
+          "text": "연락 기록만 보고 바로 단톡방에 올렸습니다. 수민이한테 먼저 묻지 않았습니다.",
+          "behaviorHint": "확인하지 않았다는 사실을 인정하며 시선을 피한다."
+        },
+        {
+          "id": "v3",
+          "text": "'예전에도 이랬다'는 제 확신이 너무 앞섰습니다.",
+          "behaviorHint": "화와 확신이 섞여 판단을 흐렸음을 드러낸다."
+        },
+        {
+          "id": "v4",
+          "text": "친구들이 거기에 붙는 걸 보면서도 멈추지 못했습니다. 그때는 제가 맞다고 믿었습니다.",
+          "behaviorHint": "스스로의 성급함을 인정하면서도 감정의 이유를 덧붙인다."
+        },
+        {
+          "id": "v5",
+          "text": "그 순간 제가 결론부터 내린 건 맞습니다. 확인보다 확신이 빨랐습니다.",
+          "behaviorHint": "결론을 먼저 낸 자신을 뒤늦게 돌아보는 톤이다."
+        }
+      ]
+    },
+    {
+      "key": "b|e-2|mid|other",
+      "party": "b",
+      "evidenceId": "e-2",
+      "lieBand": "mid",
+      "subjectRole": "other",
+      "stanceHint": "emotional",
+      "truthLevel": "partial",
+      "variants": [
+        {
+          "id": "v1",
+          "text": "확인도 안 하고 '또 남자한테 붙었다'라고 했다면 저는 뭡니까.",
+          "behaviorHint": "억울함이 올라오지만 끝까지 언성을 높이지 않는다."
+        },
+        {
+          "id": "v2",
+          "text": "제게 한 번만 물었어도 될 일을 단톡방에서 먼저 끝내버렸습니다.",
+          "behaviorHint": "상대의 확인 없는 단정을 또렷하게 짚는다."
+        },
+        {
+          "id": "v3",
+          "text": "'예전에도 이랬다'는 말 하나로 저는 다시 같은 사람이 됐습니다.",
+          "behaviorHint": "자기 입장을 설명하면서도 이미 늦었다는 체념이 묻어난다."
+        },
+        {
+          "id": "v4",
+          "text": "설명할 자리도 없이 욕부터 먹었습니다. 그게 제일 컸습니다.",
+          "behaviorHint": "상처를 논리로 버티는 말투다."
+        },
+        {
+          "id": "v5",
+          "text": "저 연락 기록보다 저 말들이 더 빨리 퍼졌을 겁니다. 저는 시작도 못 했습니다.",
+          "behaviorHint": "낙인이 퍼진 속도를 떠올리며 씁쓸하게 말한다."
+        }
+      ]
+    },
+    {
+      "key": "a|e-2|late|self",
+      "party": "a",
+      "evidenceId": "e-2",
+      "lieBand": "late",
+      "subjectRole": "self",
+      "stanceHint": "confess",
+      "truthLevel": "full",
+      "variants": [
+        {
+          "id": "v1",
+          "text": "수민이한테 해명할 기회도 안 주고 먼저 매도한 건 제 잘못입니다.",
+          "behaviorHint": "자기 잘못을 더는 돌리지 못하고 정면으로 인정한다."
+        },
+        {
+          "id": "v2",
+          "text": "제가 먼저 단톡방에 못을 박았습니다. 그 뒤로는 누구도 수민이 말을 들으려 하지 않았습니다.",
+          "behaviorHint": "상대에게 준 상처를 또렷이 자각한 목소리다."
+        },
+        {
+          "id": "v3",
+          "text": "예전 일까지 끌어와 같은 사람처럼 몰았습니다. 그건 제 분노가 만든 프레임이었습니다.",
+          "behaviorHint": "단정했던 사람이 처음으로 자기 말의 폭력을 본다."
+        },
+        {
+          "id": "v4",
+          "text": "화가 났다는 말로는 부족합니다. 제가 수민이 명예를 먼저 무너뜨렸습니다.",
+          "behaviorHint": "후회가 감정을 뚫고 올라와 문장이 무겁다."
+        },
+        {
+          "id": "v5",
+          "text": "저는 확인보다 확신을 먼저 택했고, 그 대가를 수민이가 치르게 했습니다.",
+          "behaviorHint": "자기 확신이 낳은 결과를 스스로 판결하듯 말한다."
+        }
+      ]
+    },
+    {
+      "key": "b|e-2|late|other",
+      "party": "b",
+      "evidenceId": "e-2",
+      "lieBand": "late",
+      "subjectRole": "other",
+      "stanceHint": "emotional",
+      "truthLevel": "full",
+      "variants": [
+        {
+          "id": "v1",
+          "text": "예전 일까지 끌어와서 같은 프레임을 씌운 겁니다. 제가 변명할 곳이 없게 만들었습니다.",
+          "behaviorHint": "이번 일의 상처를 과거와 겹쳐 보며 체념한다."
+        },
+        {
+          "id": "v2",
+          "text": "다은이가 먼저 결론을 내리고 친구들이 거기에 올라탔습니다. 저는 그 안에서 바로 나쁜 사람이 됐습니다.",
+          "behaviorHint": "억울함보다 낙인의 무게를 말하는 톤이다."
+        },
+        {
+          "id": "v3",
+          "text": "이번에도 설명보다 낙인이 먼저였습니다. 그래서 제가 무슨 말을 해도 늦었습니다.",
+          "behaviorHint": "두 번의 반복을 깨닫고 더 깊이 무너진다."
+        },
+        {
+          "id": "v4",
+          "text": "두 번 다 똑같았습니다. 다은이는 제가 왜 그랬는지 듣기 전에 저를 정리했습니다.",
+          "behaviorHint": "이미 잃어버린 자리에서 늦은 진실을 말한다."
+        },
+        {
+          "id": "v5",
+          "text": "저를 무너뜨린 건 연락 기록만이 아니라, 다은이가 붙인 이름이었습니다.",
+          "behaviorHint": "상처의 구조를 차분하게 꺼내 놓는다."
+        }
+      ]
+    },
+    {
+      "key": "a|e-3|early|both",
+      "party": "a",
+      "evidenceId": "e-3",
+      "lieBand": "early",
+      "subjectRole": "both",
+      "stanceHint": "blame",
+      "truthLevel": "hint",
+      "variants": [
+        {
+          "id": "v1",
+          "text": "그때 수민이가 변한 거라고 생각했습니다. 이 대화가 증거입니다.",
+          "behaviorHint": "과거 기억을 끌어와 상대 책임으로 정리한다."
+        },
+        {
+          "id": "v2",
+          "text": "돈 이야기가 나오자 갑자기 '내가 알아서 정리할게'라고 했습니다. 저는 거기서 선을 긋는다고 느꼈습니다.",
+          "behaviorHint": "증거를 자기 확신의 뒷받침으로 사용한다."
+        },
+        {
+          "id": "v3",
+          "text": "제가 묻는 말에는 답하지 않고 정리하겠다는 말만 했습니다. 저는 밀려난 줄 알았습니다.",
+          "behaviorHint": "질문보다 결론이 먼저 나온 사람처럼 단정한다."
+        },
+        {
+          "id": "v4",
+          "text": "그때 제 눈에는 수민이가 저를 밀어내는 것처럼 보였습니다.",
+          "behaviorHint": "상대가 자신을 밀어냈다는 감각을 분노로 말한다."
+        },
+        {
+          "id": "v5",
+          "text": "그래서 저는 돈만 걸리면 사람이 달라진다고 받아들였습니다.",
+          "behaviorHint": "당시 서사를 조금도 의심하지 않는 태도다."
+        }
+      ]
+    },
+    {
+      "key": "b|e-3|early|both",
+      "party": "b",
+      "evidenceId": "e-3",
+      "lieBand": "early",
+      "subjectRole": "both",
+      "stanceHint": "hedge",
+      "truthLevel": "hint",
+      "variants": [
+        {
+          "id": "v1",
+          "text": "사실을 말할 수 없었습니다. 그래서 저렇게밖에 못 했습니다.",
+          "behaviorHint": "짧은 문장으로 사실만 인정하고 이유는 닫아 둔다."
+        },
+        {
+          "id": "v2",
+          "text": "다은이한테 바로 설명할 수 있는 일이 아니었습니다.",
+          "behaviorHint": "기록의 디테일을 건조하게 짚고 더는 설명하지 않는다."
+        },
+        {
+          "id": "v3",
+          "text": "'알아서 정리할게'라는 말로 끊은 건 맞습니다.",
+          "behaviorHint": "반박보다 확인에 가깝게 말하며 표정을 거의 바꾸지 않는다."
+        },
+        {
+          "id": "v4",
+          "text": "그때는 저 문장 하나만 남기고 끝내는 게 최선이라고 생각했습니다.",
+          "behaviorHint": "감정이 비칠 듯 말 듯하지만 끝내 눌러 버린다."
+        },
+        {
+          "id": "v5",
+          "text": "제가 닫은 이유가 있었지만, 그 이유는 아직 여기까지입니다.",
+          "behaviorHint": "다음 진실을 암시하면서도 입을 더 열지 않으려 한다."
+        }
+      ]
+    },
+    {
+      "key": "a|e-3|mid|both",
+      "party": "a",
+      "evidenceId": "e-3",
+      "lieBand": "mid",
+      "subjectRole": "both",
+      "stanceHint": "hedge",
+      "truthLevel": "partial",
+      "variants": [
+        {
+          "id": "v1",
+          "text": "뭘 정리한다는 건지 끝내 말 안 했습니다. 저는 물어볼 수도 없었습니다.",
+          "behaviorHint": "확신이 깨지기 시작해 말끝이 조심스러워진다."
+        },
+        {
+          "id": "v2",
+          "text": "그 말 뒤로 수민이는 설명을 끊었고, 저는 더 캐묻기도 어려웠습니다.",
+          "behaviorHint": "자신이 놓친 빈칸을 더듬듯 말한다."
+        },
+        {
+          "id": "v3",
+          "text": "왜 갑자기 저렇게 닫히는지 이해가 안 됐습니다. 그래서 더 제 쪽으로 해석했습니다.",
+          "behaviorHint": "설명되지 않던 장면을 다시 꿰맞추려 한다."
+        },
+        {
+          "id": "v4",
+          "text": "지금 돌아보면 제가 겁이 나서 확인을 피한 면도 있습니다.",
+          "behaviorHint": "화보다 혼란이 커져 문장이 잠시 끊긴다."
+        },
+        {
+          "id": "v5",
+          "text": "수민이가 말하지 않은 빈칸을 제가 제멋대로 채운 겁니다.",
+          "behaviorHint": "자기 해석이 전부였을 수 있음을 마지못해 인정한다."
+        }
+      ]
+    },
+    {
+      "key": "b|e-3|mid|both",
+      "party": "b",
+      "evidenceId": "e-3",
+      "lieBand": "mid",
+      "subjectRole": "both",
+      "stanceHint": "partial",
+      "truthLevel": "partial",
+      "variants": [
+        {
+          "id": "v1",
+          "text": "'알아서 정리할게'가 제가 할 수 있는 전부였습니다. 진짜 이유는 말할 수 없었으니까.",
+          "behaviorHint": "핵심 이유를 조금 열되 여전히 절반만 말한다."
+        },
+        {
+          "id": "v2",
+          "text": "그때 더 말하면 다은이까지 끌려 들어옵니다. 그래서 잘랐습니다.",
+          "behaviorHint": "증거의 세부를 짚으며 행동의 이유를 논리적으로 설명한다."
+        },
+        {
+          "id": "v3",
+          "text": "설명 대신 정리하겠다고 한 건, 제가 혼자 뒤집어쓰려 한 겁니다.",
+          "behaviorHint": "감정보다 경위를 우선해 차분하게 풀어낸다."
+        },
+        {
+          "id": "v4",
+          "text": "차갑게 들렸을 겁니다. 일부러 그랬습니다. 더 묻지 못하게 하려고.",
+          "behaviorHint": "그때의 압박감을 짧게 드러내지만 목소리는 낮다."
+        },
+        {
+          "id": "v5",
+          "text": "그 한 문장 뒤에 숨긴 일이 지금까지 이어졌습니다.",
+          "behaviorHint": "다음 쟁점과 이어지는 실마리를 남기며 말을 아낀다."
+        }
+      ]
+    },
+    {
+      "key": "a|e-3|late|both",
+      "party": "a",
+      "evidenceId": "e-3",
+      "lieBand": "late",
+      "subjectRole": "both",
+      "stanceHint": "emotional",
+      "truthLevel": "partial",
+      "variants": [
+        {
+          "id": "v1",
+          "text": "이제 보니 수민이가 숨긴 게 아버지 얘기였을 수 있습니다.",
+          "behaviorHint": "뒤늦은 깨달음이 밀려와 말을 천천히 잇는다."
+        },
+        {
+          "id": "v2",
+          "text": "그때 '정리할게'라는 말이 저를 밀어낸 게 아니라 저를 막아 세운 걸 수도 있습니다.",
+          "behaviorHint": "상대가 숨긴 것과 자신이 놓친 것을 함께 본다."
+        },
+        {
+          "id": "v3",
+          "text": "저는 수민이가 변했다고 믿었는데, 사실은 제 쪽에서 감당 못 할 일이 있었던 걸지도 모릅니다.",
+          "behaviorHint": "자기 오해의 크기를 깨닫고 숨을 고른다."
+        },
+        {
+          "id": "v4",
+          "text": "그 대화를 이제 읽으니 제가 전혀 다른 문장으로 받아들였다는 생각이 듭니다.",
+          "behaviorHint": "과거와 현재가 이어지자 표정이 무너진다."
+        },
+        {
+          "id": "v5",
+          "text": "그때 제가 물었어야 할 건 수민이 성격이 아니라, 수민이가 뭘 숨기고 있느냐였습니다.",
+          "behaviorHint": "자기 판단을 거둬들이며 진실의 무게를 받아낸다."
+        }
+      ]
+    },
+    {
+      "key": "b|e-3|late|both",
+      "party": "b",
+      "evidenceId": "e-3",
+      "lieBand": "late",
+      "subjectRole": "both",
+      "stanceHint": "confess",
+      "truthLevel": "full",
+      "variants": [
+        {
+          "id": "v1",
+          "text": "다은이가 '돈만 엮이면 달라진다'고 했을 때, 맞다 할 수밖에 없었습니다. 진실을 말하면 아버지까지 무너지니까.",
+          "behaviorHint": "더 숨기지 않겠다는 듯 건조한 고백을 꺼낸다."
+        },
+        {
+          "id": "v2",
+          "text": "제가 나쁜 쪽으로 남는 편이 다은이한테는 덜 아프다고 생각했습니다.",
+          "behaviorHint": "자기희생의 선택을 담담하게 인정한다."
+        },
+        {
+          "id": "v3",
+          "text": "그때 바로 말했으면 손절은 막았을지 몰라도, 다은이는 자기 아버지 진실을 한꺼번에 받아야 했습니다.",
+          "behaviorHint": "감정보다 체념이 먼저 드러나는 톤이다."
+        },
+        {
+          "id": "v4",
+          "text": "그래서 저는 변한 사람으로 남았습니다. 사실은 숨긴 사람이었습니다.",
+          "behaviorHint": "무너진 마음을 억누르며 늦은 진실을 말한다."
+        },
+        {
+          "id": "v5",
+          "text": "예전에도 말하지 못했고, 그 선택이 이번 일까지 끌고 왔습니다.",
+          "behaviorHint": "이번 일과 과거의 반복을 한 문장으로 묶어 낸다."
+        }
+      ]
+    },
+    {
+      "key": "b|e-4|early|self",
+      "party": "b",
+      "evidenceId": "e-4",
+      "lieBand": "early",
+      "subjectRole": "self",
+      "stanceHint": "hedge",
+      "truthLevel": "hint",
+      "variants": [
+        {
+          "id": "v1",
+          "text": "이런 메시지를 받았습니다. 제가 먼저 한 게 아닙니다.",
+          "behaviorHint": "짧은 문장으로 사실만 인정하고 이유는 닫아 둔다."
+        },
+        {
+          "id": "v2",
+          "text": "먼저 커피를 보자는 쪽도, 선을 넘는 말을 한 쪽도 제가 아니었습니다.",
+          "behaviorHint": "기록의 디테일을 건조하게 짚고 더는 설명하지 않는다."
+        },
+        {
+          "id": "v3",
+          "text": "저 대화를 보고도 제가 들이댔다고만 보신다면 할 말이 없습니다.",
+          "behaviorHint": "반박보다 확인에 가깝게 말하며 표정을 거의 바꾸지 않는다."
+        },
+        {
+          "id": "v4",
+          "text": "그래서 저는 그때부터 선을 그으려고 했습니다.",
+          "behaviorHint": "감정이 비칠 듯 말 듯하지만 끝내 눌러 버린다."
+        },
+        {
+          "id": "v5",
+          "text": "적어도 시작이 어디였는지는 이 메시지가 보여줍니다.",
+          "behaviorHint": "다음 진실을 암시하면서도 입을 더 열지 않으려 한다."
+        }
+      ]
+    },
+    {
+      "key": "a|e-4|early|other",
+      "party": "a",
+      "evidenceId": "e-4",
+      "lieBand": "early",
+      "subjectRole": "other",
+      "stanceHint": "emotional",
+      "truthLevel": "hint",
+      "variants": [
+        {
+          "id": "v1",
+          "text": "이건... 처음 봅니다.",
+          "behaviorHint": "처음 보는 사실 앞에서 말문이 막힌다."
+        },
+        {
+          "id": "v2",
+          "text": "제 예비신랑이 먼저 저런 말을 했다는 건 지금 처음 압니다.",
+          "behaviorHint": "충격이 커서 짧은 문장으로만 반응한다."
+        },
+        {
+          "id": "v3",
+          "text": "'다은이 몰래 보자'는 문장을 제가 여기서 보게 될 줄은 몰랐습니다.",
+          "behaviorHint": "익숙한 사람의 다른 얼굴을 본 듯 얼어붙는다."
+        },
+        {
+          "id": "v4",
+          "text": "저는 수민이가 먼저 붙은 줄 알았습니다. 이 메시지는 그 생각을 흔듭니다.",
+          "behaviorHint": "기존 확신이 흔들리며 감정이 급히 가라앉는다."
+        },
+        {
+          "id": "v5",
+          "text": "적어도 시작이 제가 믿었던 그림과는 다릅니다.",
+          "behaviorHint": "눈앞의 증거를 믿지 못한 채 다시 확인하듯 말한다."
+        }
+      ]
+    },
+    {
+      "key": "b|e-4|mid|self",
+      "party": "b",
+      "evidenceId": "e-4",
+      "lieBand": "mid",
+      "subjectRole": "self",
+      "stanceHint": "partial",
+      "truthLevel": "partial",
+      "variants": [
+        {
+          "id": "v1",
+          "text": "거절했습니다. '친구 남자친구니까 이러지 마'라고 했습니다.",
+          "behaviorHint": "핵심 이유를 조금 열되 여전히 절반만 말한다."
+        },
+        {
+          "id": "v2",
+          "text": "저는 애매하게 넘기지 않았습니다. 분명하게 선을 그었습니다.",
+          "behaviorHint": "증거의 세부를 짚으며 행동의 이유를 논리적으로 설명한다."
+        },
+        {
+          "id": "v3",
+          "text": "커피를 보자는 말도, 이상형이라는 말도 다 끊어냈습니다.",
+          "behaviorHint": "감정보다 경위를 우선해 차분하게 풀어낸다."
+        },
+        {
+          "id": "v4",
+          "text": "그때 바로 잘라내지 않으면 더 지저분해질 것 같았습니다.",
+          "behaviorHint": "그때의 압박감을 짧게 드러내지만 목소리는 낮다."
+        },
+        {
+          "id": "v5",
+          "text": "제가 먼저 다가갔다면 저 답장이 나올 이유가 없습니다.",
+          "behaviorHint": "다음 쟁점과 이어지는 실마리를 남기며 말을 아낀다."
+        }
+      ]
+    },
+    {
+      "key": "a|e-4|mid|other",
+      "party": "a",
+      "evidenceId": "e-4",
+      "lieBand": "mid",
+      "subjectRole": "other",
+      "stanceHint": "emotional",
+      "truthLevel": "partial",
+      "variants": [
+        {
+          "id": "v1",
+          "text": "'다은이 몰래 보자'요? 이 사람이 수민이한테 이런 말을 했다고요?",
+          "behaviorHint": "확신이 깨지기 시작해 말끝이 조심스러워진다."
+        },
+        {
+          "id": "v2",
+          "text": "이상형이라는 말까지 했는데, 저는 왜 아무것도 몰랐습니까.",
+          "behaviorHint": "자신이 놓친 빈칸을 더듬듯 말한다."
+        },
+        {
+          "id": "v3",
+          "text": "수민이가 거절했다는 답장도 분명합니다. 그러면 제가 본 건 뒤쪽만이었던 겁니다.",
+          "behaviorHint": "설명되지 않던 장면을 다시 꿰맞추려 한다."
+        },
+        {
+          "id": "v4",
+          "text": "저는 연락 기록만 보고 다 판단했습니다. 이걸 보니 제가 본 장면이 반쪽이었다는 생각이 듭니다.",
+          "behaviorHint": "화보다 혼란이 커져 문장이 잠시 끊긴다."
+        },
+        {
+          "id": "v5",
+          "text": "제 화가 완전히 틀린 방향으로 갔을 수도 있습니다.",
+          "behaviorHint": "자기 해석이 전부였을 수 있음을 마지못해 인정한다."
+        }
+      ]
+    },
+    {
+      "key": "b|e-4|late|self",
+      "party": "b",
+      "evidenceId": "e-4",
+      "lieBand": "late",
+      "subjectRole": "self",
+      "stanceHint": "confess",
+      "truthLevel": "full",
+      "variants": [
+        {
+          "id": "v1",
+          "text": "이걸 다은이한테 말하면 결혼이 깨집니다. 그래서 혼자 끊어낸 겁니다.",
+          "behaviorHint": "더 숨기지 않겠다는 듯 건조한 고백을 꺼낸다."
+        },
+        {
+          "id": "v2",
+          "text": "약혼한 사람 입에서 저런 말이 나온다고 바로 들이밀 수는 없었습니다.",
+          "behaviorHint": "자기희생의 선택을 담담하게 인정한다."
+        },
+        {
+          "id": "v3",
+          "text": "다은이가 행복하다고 믿고 있던 걸 제가 제 입으로 깨고 싶지 않았습니다.",
+          "behaviorHint": "감정보다 체념이 먼저 드러나는 톤이다."
+        },
+        {
+          "id": "v4",
+          "text": "그래서 제가 선만 긋고 끝내려 했습니다. 그게 더 큰 오해를 만든 줄도 모르고.",
+          "behaviorHint": "무너진 마음을 억누르며 늦은 진실을 말한다."
+        },
+        {
+          "id": "v5",
+          "text": "그때 말했으면 지금은 달랐을지 몰라도, 저는 또 제가 나쁜 쪽을 택했습니다.",
+          "behaviorHint": "이번 일과 과거의 반복을 한 문장으로 묶어 낸다."
+        }
+      ]
+    },
+    {
+      "key": "a|e-4|late|other",
+      "party": "a",
+      "evidenceId": "e-4",
+      "lieBand": "late",
+      "subjectRole": "other",
+      "stanceHint": "emotional",
+      "truthLevel": "partial",
+      "variants": [
+        {
+          "id": "v1",
+          "text": "수민이가 거절한 거잖아요. 그러면 수민이가 연락한 건... 다른 이유였던 겁니까.",
+          "behaviorHint": "뒤늦은 깨달음이 밀려와 말을 천천히 잇는다."
+        },
+        {
+          "id": "v2",
+          "text": "제가 믿은 '또 내 남자한테 붙었다'는 말이 여기서 무너집니다.",
+          "behaviorHint": "상대가 숨긴 것과 자신이 놓친 것을 함께 본다."
+        },
+        {
+          "id": "v3",
+          "text": "시작은 저 사람 쪽이었고, 수민이는 선을 그었습니다. 그러면 뒤의 연락도 다시 봐야 합니다.",
+          "behaviorHint": "자기 오해의 크기를 깨닫고 숨을 고른다."
+        },
+        {
+          "id": "v4",
+          "text": "저는 수민이를 의심했는데, 먼저 의심해야 할 사람을 못 봤습니다.",
+          "behaviorHint": "과거와 현재가 이어지자 표정이 무너진다."
+        },
+        {
+          "id": "v5",
+          "text": "이 증거 하나로도 제가 너무 빨리 결론 냈다는 건 알겠습니다.",
+          "behaviorHint": "자기 판단을 거둬들이며 진실의 무게를 받아낸다."
+        }
+      ]
+    },
+    {
+      "key": "b|e-5|early|self",
+      "party": "b",
+      "evidenceId": "e-5",
+      "lieBand": "early",
+      "subjectRole": "self",
+      "stanceHint": "hedge",
+      "truthLevel": "hint",
+      "variants": [
+        {
+          "id": "v1",
+          "text": "이걸 보고 연락한 겁니다.",
+          "behaviorHint": "짧은 문장으로 사실만 인정하고 이유는 닫아 둔다."
+        },
+        {
+          "id": "v2",
+          "text": "저 문장을 보고 그냥 넘길 수 없었습니다.",
+          "behaviorHint": "기록의 디테일을 건조하게 짚고 더는 설명하지 않는다."
+        },
+        {
+          "id": "v3",
+          "text": "결혼 전이라는 시점까지 겹치니까 더 눈에 들어왔습니다.",
+          "behaviorHint": "반박보다 확인에 가깝게 말하며 표정을 거의 바꾸지 않는다."
+        },
+        {
+          "id": "v4",
+          "text": "그래서 답이 없어도 계속 보낸 겁니다.",
+          "behaviorHint": "감정이 비칠 듯 말 듯하지만 끝내 눌러 버린다."
+        },
+        {
+          "id": "v5",
+          "text": "연락 기록만 보면 이상하겠지만, 출발점은 여기였습니다.",
+          "behaviorHint": "다음 진실을 암시하면서도 입을 더 열지 않으려 한다."
+        }
+      ]
+    },
+    {
+      "key": "a|e-5|early|both",
+      "party": "a",
+      "evidenceId": "e-5",
+      "lieBand": "early",
+      "subjectRole": "both",
+      "stanceHint": "emotional",
+      "truthLevel": "hint",
+      "variants": [
+        {
+          "id": "v1",
+          "text": "아버지가... 이런 말을 했다고요?",
+          "behaviorHint": "처음 보는 사실 앞에서 말문이 막힌다."
+        },
+        {
+          "id": "v2",
+          "text": "'금방 돌려준다'는 말도, '믿어야지'라는 말도 아버지 말투처럼 보여서 더 놀랍습니다.",
+          "behaviorHint": "충격이 커서 짧은 문장으로만 반응한다."
+        },
+        {
+          "id": "v3",
+          "text": "제 예비신랑한테 이런 문자가 갔다는 것부터 믿기 어렵습니다.",
+          "behaviorHint": "익숙한 사람의 다른 얼굴을 본 듯 얼어붙는다."
+        },
+        {
+          "id": "v4",
+          "text": "저는 수민이 쪽만 보고 있었는데, 여기서 전혀 다른 사람이 보입니다.",
+          "behaviorHint": "기존 확신이 흔들리며 감정이 급히 가라앉는다."
+        },
+        {
+          "id": "v5",
+          "text": "이게 사실이면 제가 몰랐던 일이 너무 큽니다.",
+          "behaviorHint": "눈앞의 증거를 믿지 못한 채 다시 확인하듯 말한다."
+        }
+      ]
+    },
+    {
+      "key": "b|e-5|mid|self",
+      "party": "b",
+      "evidenceId": "e-5",
+      "lieBand": "mid",
+      "subjectRole": "self",
+      "stanceHint": "partial",
+      "truthLevel": "partial",
+      "variants": [
+        {
+          "id": "v1",
+          "text": "예전에 제게 했던 것과 같은 말입니다. '금방 돌려준다', '이 정도는 믿어야지'.",
+          "behaviorHint": "핵심 이유를 조금 열되 여전히 절반만 말한다."
+        },
+        {
+          "id": "v2",
+          "text": "문구가 너무 익숙했습니다. 저는 저 말을 전에 이미 들었습니다.",
+          "behaviorHint": "증거의 세부를 짚으며 행동의 이유를 논리적으로 설명한다."
+        },
+        {
+          "id": "v3",
+          "text": "한 번 당해 본 말이라서, 이번에는 그냥 못 넘겼습니다.",
+          "behaviorHint": "감정보다 경위를 우선해 차분하게 풀어낸다."
+        },
+        {
+          "id": "v4",
+          "text": "저 문장 하나로 과거가 그대로 돌아왔습니다.",
+          "behaviorHint": "그때의 압박감을 짧게 드러내지만 목소리는 낮다."
+        },
+        {
+          "id": "v5",
+          "text": "그래서 이건 돈 부탁이 아니라 반복이라고 본 겁니다.",
+          "behaviorHint": "다음 쟁점과 이어지는 실마리를 남기며 말을 아낀다."
+        }
+      ]
+    },
+    {
+      "key": "a|e-5|mid|both",
+      "party": "a",
+      "evidenceId": "e-5",
+      "lieBand": "mid",
+      "subjectRole": "both",
+      "stanceHint": "emotional",
+      "truthLevel": "partial",
+      "variants": [
+        {
+          "id": "v1",
+          "text": "아버지가 예비신랑한테 돈 얘기를 꺼냈다니 믿기 어렵습니다.",
+          "behaviorHint": "확신이 깨지기 시작해 말끝이 조심스러워진다."
+        },
+        {
+          "id": "v2",
+          "text": "결혼 전에 잠깐만 도와 달라고 했다는 건, 그냥 안부 문자가 아니었다는 뜻이잖아요.",
+          "behaviorHint": "자신이 놓친 빈칸을 더듬듯 말한다."
+        },
+        {
+          "id": "v3",
+          "text": "'사위 될 사람이면'이라는 표현까지 쓰셨다면 선을 넘은 겁니다.",
+          "behaviorHint": "설명되지 않던 장면을 다시 꿰맞추려 한다."
+        },
+        {
+          "id": "v4",
+          "text": "저는 지금까지 수민이 연락만 이상하게 봤는데, 원인을 다른 데서 봐야 할지도 모르겠습니다.",
+          "behaviorHint": "화보다 혼란이 커져 문장이 잠시 끊긴다."
+        },
+        {
+          "id": "v5",
+          "text": "이 문자를 보니 수민이가 왜 예비신랑 쪽을 붙잡았는지 질문이 생깁니다.",
+          "behaviorHint": "자기 해석이 전부였을 수 있음을 마지못해 인정한다."
+        }
+      ]
+    },
+    {
+      "key": "b|e-5|late|self",
+      "party": "b",
+      "evidenceId": "e-5",
+      "lieBand": "late",
+      "subjectRole": "self",
+      "stanceHint": "confess",
+      "truthLevel": "full",
+      "variants": [
+        {
+          "id": "v1",
+          "text": "같은 문구, 같은 방식입니다. 이번에는 막아야 했습니다.",
+          "behaviorHint": "더 숨기지 않겠다는 듯 건조한 고백을 꺼낸다."
+        },
+        {
+          "id": "v2",
+          "text": "예전에도 저 말 다음에 일이 커졌습니다. 이번에도 똑같이 갈 거라고 봤습니다.",
+          "behaviorHint": "자기희생의 선택을 담담하게 인정한다."
+        },
+        {
+          "id": "v3",
+          "text": "다은이 예비신랑이 다음 순서가 되는 걸 보고만 있을 수는 없었습니다.",
+          "behaviorHint": "감정보다 체념이 먼저 드러나는 톤이다."
+        },
+        {
+          "id": "v4",
+          "text": "그래서 제가 또 끼어들었습니다. 또 나쁜 사람이 되더라도.",
+          "behaviorHint": "무너진 마음을 억누르며 늦은 진실을 말한다."
+        },
+        {
+          "id": "v5",
+          "text": "저 연락은 관심이 아니라 차단이었습니다. 그 사람을 끊어내려 한 겁니다.",
+          "behaviorHint": "이번 일과 과거의 반복을 한 문장으로 묶어 낸다."
+        }
+      ]
+    },
+    {
+      "key": "a|e-5|late|both",
+      "party": "a",
+      "evidenceId": "e-5",
+      "lieBand": "late",
+      "subjectRole": "both",
+      "stanceHint": "emotional",
+      "truthLevel": "partial",
+      "variants": [
+        {
+          "id": "v1",
+          "text": "이게 사실이면 수민이가 경고하려 한 게 이거였던 겁니까.",
+          "behaviorHint": "뒤늦은 깨달음이 밀려와 말을 천천히 잇는다."
+        },
+        {
+          "id": "v2",
+          "text": "저는 수민이가 제 결혼을 흔든다고 생각했는데, 반대로 막으려 했을 수도 있겠습니다.",
+          "behaviorHint": "상대가 숨긴 것과 자신이 놓친 것을 함께 본다."
+        },
+        {
+          "id": "v3",
+          "text": "아버지 문자가 먼저였다면 연락 기록의 의미가 완전히 달라집니다.",
+          "behaviorHint": "자기 오해의 크기를 깨닫고 숨을 고른다."
+        },
+        {
+          "id": "v4",
+          "text": "제가 몰랐다는 이유로 없어지는 일은 아닙니다. 이건 제가 바로 확인해야 할 문제입니다.",
+          "behaviorHint": "과거와 현재가 이어지자 표정이 무너진다."
+        },
+        {
+          "id": "v5",
+          "text": "수민이가 왜 말을 돌렸는지는 아직 화가 나지만, 연락한 이유는 이제 보입니다.",
+          "behaviorHint": "자기 판단을 거둬들이며 진실의 무게를 받아낸다."
+        }
+      ]
+    },
+    {
+      "key": "b|e-6|early|self",
+      "party": "b",
+      "evidenceId": "e-6",
+      "lieBand": "early",
+      "subjectRole": "self",
+      "stanceHint": "hedge",
+      "truthLevel": "hint",
+      "variants": [
+        {
+          "id": "v1",
+          "text": "이체한 건 제 돈입니다.",
+          "behaviorHint": "짧은 문장으로 사실만 인정하고 이유는 닫아 둔다."
+        },
+        {
+          "id": "v2",
+          "text": "문자에서 말한 '급한 투자금'도 저때 들은 말입니다.",
+          "behaviorHint": "기록의 디테일을 건조하게 짚고 더는 설명하지 않는다."
+        },
+        {
+          "id": "v3",
+          "text": "한 달만 쓰고 갚겠다고 했습니다. 기록은 저렇게 남았습니다.",
+          "behaviorHint": "반박보다 확인에 가깝게 말하며 표정을 거의 바꾸지 않는다."
+        },
+        {
+          "id": "v4",
+          "text": "저 문서가 남아 있어서 부정할 것도 없습니다.",
+          "behaviorHint": "감정이 비칠 듯 말 듯하지만 끝내 눌러 버린다."
+        },
+        {
+          "id": "v5",
+          "text": "그래서 저는 이 일을 없던 일처럼 볼 수 없었습니다.",
+          "behaviorHint": "다음 진실을 암시하면서도 입을 더 열지 않으려 한다."
+        }
+      ]
+    },
+    {
+      "key": "a|e-6|early|both",
+      "party": "a",
+      "evidenceId": "e-6",
+      "lieBand": "early",
+      "subjectRole": "both",
+      "stanceHint": "emotional",
+      "truthLevel": "hint",
+      "variants": [
+        {
+          "id": "v1",
+          "text": "아버지가... 수민이한테 돈을?",
+          "behaviorHint": "처음 보는 사실 앞에서 말문이 막힌다."
+        },
+        {
+          "id": "v2",
+          "text": "이체 내역에 아버지 이름이 같이 있는 걸 보니 머리가 하얘집니다.",
+          "behaviorHint": "충격이 커서 짧은 문장으로만 반응한다."
+        },
+        {
+          "id": "v3",
+          "text": "저는 그냥 감정싸움인 줄 알았는데, 여기엔 실제 돈이 걸려 있었습니다.",
+          "behaviorHint": "익숙한 사람의 다른 얼굴을 본 듯 얼어붙는다."
+        },
+        {
+          "id": "v4",
+          "text": "수민이가 돈 얘기를 했을 때 제가 완전히 다른 뜻으로 받아들였던 것 같습니다.",
+          "behaviorHint": "기존 확신이 흔들리며 감정이 급히 가라앉는다."
+        },
+        {
+          "id": "v5",
+          "text": "지금은 놀라서 뭐부터 물어야 할지도 모르겠습니다.",
+          "behaviorHint": "눈앞의 증거를 믿지 못한 채 다시 확인하듯 말한다."
+        }
+      ]
+    },
+    {
+      "key": "b|e-6|mid|self",
+      "party": "b",
+      "evidenceId": "e-6",
+      "lieBand": "mid",
+      "subjectRole": "self",
+      "stanceHint": "partial",
+      "truthLevel": "partial",
+      "variants": [
+        {
+          "id": "v1",
+          "text": "'투자금'이라고 했습니다. 한 달만 쓰겠다고 했습니다. 돌아오지 않았습니다.",
+          "behaviorHint": "핵심 이유를 조금 열되 여전히 절반만 말한다."
+        },
+        {
+          "id": "v2",
+          "text": "이체는 바로 됐고, 갚겠다는 날짜만 계속 밀렸습니다.",
+          "behaviorHint": "증거의 세부를 짚으며 행동의 이유를 논리적으로 설명한다."
+        },
+        {
+          "id": "v3",
+          "text": "문자마다 조금만 더 기다려 달라는 말이 붙었습니다. 돈은 끝내 안 돌아왔습니다.",
+          "behaviorHint": "감정보다 경위를 우선해 차분하게 풀어낸다."
+        },
+        {
+          "id": "v4",
+          "text": "저는 그때부터 같은 문장을 들으면 몸이 먼저 굳습니다.",
+          "behaviorHint": "그때의 압박감을 짧게 드러내지만 목소리는 낮다."
+        },
+        {
+          "id": "v5",
+          "text": "그래서 이번 문자도 그냥 보기 어려웠습니다.",
+          "behaviorHint": "다음 쟁점과 이어지는 실마리를 남기며 말을 아낀다."
+        }
+      ]
+    },
+    {
+      "key": "a|e-6|mid|both",
+      "party": "a",
+      "evidenceId": "e-6",
+      "lieBand": "mid",
+      "subjectRole": "both",
+      "stanceHint": "emotional",
+      "truthLevel": "partial",
+      "variants": [
+        {
+          "id": "v1",
+          "text": "이체 내역이 이렇게 있는데... 아버지가 정말 이러셨습니까.",
+          "behaviorHint": "확신이 깨지기 시작해 말끝이 조심스러워진다."
+        },
+        {
+          "id": "v2",
+          "text": "한 달만 쓰고 갚겠다고 해 놓고 미뤘다는 문자까지 있으면 변명하기 어렵습니다.",
+          "behaviorHint": "자신이 놓친 빈칸을 더듬듯 말한다."
+        },
+        {
+          "id": "v3",
+          "text": "저는 수민이가 돈 때문에 달라졌다고 믿었는데, 기록은 전혀 다른 쪽을 가리킵니다.",
+          "behaviorHint": "설명되지 않던 장면을 다시 꿰맞추려 한다."
+        },
+        {
+          "id": "v4",
+          "text": "그때 제가 수민이 사정을 묻지 않은 게 너무 크게 느껴집니다.",
+          "behaviorHint": "화보다 혼란이 커져 문장이 잠시 끊긴다."
+        },
+        {
+          "id": "v5",
+          "text": "이걸 보면 과거 손절의 이유부터 다시 봐야 합니다.",
+          "behaviorHint": "자기 해석이 전부였을 수 있음을 마지못해 인정한다."
+        }
+      ]
+    },
+    {
+      "key": "b|e-6|late|self",
+      "party": "b",
+      "evidenceId": "e-6",
+      "lieBand": "late",
+      "subjectRole": "self",
+      "stanceHint": "confess",
+      "truthLevel": "full",
+      "variants": [
+        {
+          "id": "v1",
+          "text": "다은이한테 말할 수 없었습니다. '네 아빠가 사기꾼이다'를 어떻게 말합니까.",
+          "behaviorHint": "더 숨기지 않겠다는 듯 건조한 고백을 꺼낸다."
+        },
+        {
+          "id": "v2",
+          "text": "돈이 안 돌아온 것보다 더 어려운 건, 그 사실을 다은이 얼굴 보고 말하는 일이었습니다.",
+          "behaviorHint": "자기희생의 선택을 담담하게 인정한다."
+        },
+        {
+          "id": "v3",
+          "text": "제가 입을 열면 다은이는 친구를 잃는 게 아니라 아버지를 잃는 기분이었을 겁니다.",
+          "behaviorHint": "감정보다 체념이 먼저 드러나는 톤이다."
+        },
+        {
+          "id": "v4",
+          "text": "그래서 저는 다시 숨겼습니다. 또 제가 이상한 사람이 되는 쪽으로.",
+          "behaviorHint": "무너진 마음을 억누르며 늦은 진실을 말한다."
+        },
+        {
+          "id": "v5",
+          "text": "과거에 끝냈어야 할 말을 못 한 대가가 이번까지 왔습니다.",
+          "behaviorHint": "이번 일과 과거의 반복을 한 문장으로 묶어 낸다."
+        }
+      ]
+    },
+    {
+      "key": "a|e-6|late|both",
+      "party": "a",
+      "evidenceId": "e-6",
+      "lieBand": "late",
+      "subjectRole": "both",
+      "stanceHint": "emotional",
+      "truthLevel": "full",
+      "variants": [
+        {
+          "id": "v1",
+          "text": "수민이가 '돈 때문에 변했다'가 아니라, 아버지 때문에 떠난 거였습니까.",
+          "behaviorHint": "뒤늦은 깨달음이 밀려와 말을 천천히 잇는다."
+        },
+        {
+          "id": "v2",
+          "text": "제가 수민이 탓으로 정리했던 과거가 여기서 무너집니다.",
+          "behaviorHint": "상대가 숨긴 것과 자신이 놓친 것을 함께 본다."
+        },
+        {
+          "id": "v3",
+          "text": "수민이는 말하지 못했고, 저는 확인하지 않았습니다. 그래서 아버지 일을 친구 잘못으로 덮어버렸습니다.",
+          "behaviorHint": "자기 오해의 크기를 깨닫고 숨을 고른다."
+        },
+        {
+          "id": "v4",
+          "text": "제가 그때 수민이를 붙잡아 물어봤다면 여기까지 오지 않았을지도 모릅니다.",
+          "behaviorHint": "과거와 현재가 이어지자 표정이 무너진다."
+        },
+        {
+          "id": "v5",
+          "text": "저는 두 번 다 같은 사람을 오해한 셈입니다.",
+          "behaviorHint": "자기 판단을 거둬들이며 진실의 무게를 받아낸다."
+        }
+      ]
+    },
+    {
+      "key": "a|e-7|early|both",
+      "party": "a",
+      "evidenceId": "e-7",
+      "lieBand": "early",
+      "subjectRole": "both",
+      "stanceHint": "answer",
+      "truthLevel": "hint",
+      "variants": [
+        {
+          "id": "v1",
+          "text": "문구가... 같습니다.",
+          "behaviorHint": "처음 보는 사실 앞에서 말문이 막힌다."
+        },
+        {
+          "id": "v2",
+          "text": "예전 문장과 지금 문장이 거의 겹칩니다.",
+          "behaviorHint": "충격이 커서 짧은 문장으로만 반응한다."
+        },
+        {
+          "id": "v3",
+          "text": "'금방 돌려준다', '믿어야지' 같은 말이 반복되는 걸 보니 우연처럼 안 보입니다.",
+          "behaviorHint": "익숙한 사람의 다른 얼굴을 본 듯 얼어붙는다."
+        },
+        {
+          "id": "v4",
+          "text": "저는 서로 다른 일이라고 생각했는데, 같은 패턴으로 보입니다.",
+          "behaviorHint": "기존 확신이 흔들리며 감정이 급히 가라앉는다."
+        },
+        {
+          "id": "v5",
+          "text": "이 비교표는 제가 놓친 연결을 한 번에 보여줍니다.",
+          "behaviorHint": "눈앞의 증거를 믿지 못한 채 다시 확인하듯 말한다."
+        }
+      ]
+    },
+    {
+      "key": "b|e-7|early|both",
+      "party": "b",
+      "evidenceId": "e-7",
+      "lieBand": "early",
+      "subjectRole": "both",
+      "stanceHint": "answer",
+      "truthLevel": "hint",
+      "variants": [
+        {
+          "id": "v1",
+          "text": "또 같은 일이 반복되고 있었습니다.",
+          "behaviorHint": "짧은 문장으로 사실만 인정하고 이유는 닫아 둔다."
+        },
+        {
+          "id": "v2",
+          "text": "문구를 보는 순간 예전이 다시 온다고 느꼈습니다.",
+          "behaviorHint": "기록의 디테일을 건조하게 짚고 더는 설명하지 않는다."
+        },
+        {
+          "id": "v3",
+          "text": "말투도 시점도 비슷했습니다. 저는 그래서 바로 알아봤습니다.",
+          "behaviorHint": "반박보다 확인에 가깝게 말하며 표정을 거의 바꾸지 않는다."
+        },
+        {
+          "id": "v4",
+          "text": "이 비교표는 제가 왜 가만히 못 있었는지 설명합니다.",
+          "behaviorHint": "감정이 비칠 듯 말 듯하지만 끝내 눌러 버린다."
+        },
+        {
+          "id": "v5",
+          "text": "처음 봤을 때부터 낯선 일이 아니었습니다.",
+          "behaviorHint": "다음 진실을 암시하면서도 입을 더 열지 않으려 한다."
+        }
+      ]
+    },
+    {
+      "key": "a|e-7|mid|both",
+      "party": "a",
+      "evidenceId": "e-7",
+      "lieBand": "mid",
+      "subjectRole": "both",
+      "stanceHint": "partial",
+      "truthLevel": "partial",
+      "variants": [
+        {
+          "id": "v1",
+          "text": "예전에 수민이한테 한 말이랑 지금 예비신랑한테 한 말이 거의 똑같습니다.",
+          "behaviorHint": "확신이 깨지기 시작해 말끝이 조심스러워진다."
+        },
+        {
+          "id": "v2",
+          "text": "문구만 같은 게 아니라 시점도 비슷합니다. 결혼 전, 급하다는 말, 곧 갚겠다는 말까지요.",
+          "behaviorHint": "자신이 놓친 빈칸을 더듬듯 말한다."
+        },
+        {
+          "id": "v3",
+          "text": "수민이가 입 다문 시점과 다시 연락한 시점이 이 표에서 이어집니다.",
+          "behaviorHint": "설명되지 않던 장면을 다시 꿰맞추려 한다."
+        },
+        {
+          "id": "v4",
+          "text": "저는 따로따로 본 장면들이 사실은 한 줄로 이어져 있었습니다.",
+          "behaviorHint": "화보다 혼란이 커져 문장이 잠시 끊긴다."
+        },
+        {
+          "id": "v5",
+          "text": "이걸 보면 수민이 행동을 예전 버릇처럼만 볼 수 없습니다.",
+          "behaviorHint": "자기 해석이 전부였을 수 있음을 마지못해 인정한다."
+        }
+      ]
+    },
+    {
+      "key": "b|e-7|mid|both",
+      "party": "b",
+      "evidenceId": "e-7",
+      "lieBand": "mid",
+      "subjectRole": "both",
+      "stanceHint": "partial",
+      "truthLevel": "partial",
+      "variants": [
+        {
+          "id": "v1",
+          "text": "같은 문구, 같은 시점. 우연이 아닙니다.",
+          "behaviorHint": "핵심 이유를 조금 열되 여전히 절반만 말한다."
+        },
+        {
+          "id": "v2",
+          "text": "예전에도 급하다고 했고, 이번에도 결혼 전이라며 다급함을 앞세웠습니다.",
+          "behaviorHint": "증거의 세부를 짚으며 행동의 이유를 논리적으로 설명한다."
+        },
+        {
+          "id": "v3",
+          "text": "저는 두 장면을 따로 못 봤습니다. 너무 똑같았으니까.",
+          "behaviorHint": "감정보다 경위를 우선해 차분하게 풀어낸다."
+        },
+        {
+          "id": "v4",
+          "text": "그래서 연락이 집요해 보였을 겁니다. 저는 반복을 막는다고 생각했습니다.",
+          "behaviorHint": "그때의 압박감을 짧게 드러내지만 목소리는 낮다."
+        },
+        {
+          "id": "v5",
+          "text": "이 표가 없었다면 저도 계속 변명처럼만 들렸을 겁니다.",
+          "behaviorHint": "다음 쟁점과 이어지는 실마리를 남기며 말을 아낀다."
+        }
+      ]
+    },
+    {
+      "key": "a|e-7|late|both",
+      "party": "a",
+      "evidenceId": "e-7",
+      "lieBand": "late",
+      "subjectRole": "both",
+      "stanceHint": "confess",
+      "truthLevel": "full",
+      "variants": [
+        {
+          "id": "v1",
+          "text": "수민이가 두 번 다 말하지 못하고 혼자 막으려 한 거였습니다. 저는 두 번 다 수민이를 버렸습니다.",
+          "behaviorHint": "자기 잘못을 더는 돌리지 못하고 정면으로 인정한다."
+        },
+        {
+          "id": "v2",
+          "text": "예전에도 이번에도 시작은 아버지 쪽이었는데, 저는 늘 마지막에 보인 수민이만 봤습니다.",
+          "behaviorHint": "상대에게 준 상처를 또렷이 자각한 목소리다."
+        },
+        {
+          "id": "v3",
+          "text": "수민이는 같은 패턴을 막으려 했고 저는 그걸 같은 잘못으로 오해했습니다.",
+          "behaviorHint": "단정했던 사람이 처음으로 자기 말의 폭력을 본다."
+        },
+        {
+          "id": "v4",
+          "text": "제가 먼저 결론 냈던 두 장면이 여기서 하나로 묶입니다. 부끄럽습니다.",
+          "behaviorHint": "후회가 감정을 뚫고 올라와 문장이 무겁다."
+        },
+        {
+          "id": "v5",
+          "text": "저는 두 번 다 친구를 잃은 게 아니라, 두 번 다 친구를 밀어냈습니다.",
+          "behaviorHint": "자기 확신이 낳은 결과를 스스로 판결하듯 말한다."
+        }
+      ]
+    },
+    {
+      "key": "b|e-7|late|both",
+      "party": "b",
+      "evidenceId": "e-7",
+      "lieBand": "late",
+      "subjectRole": "both",
+      "stanceHint": "confess",
+      "truthLevel": "full",
+      "variants": [
+        {
+          "id": "v1",
+          "text": "예전에도 말하지 못했고, 이번에도 말하지 못했습니다. 달라진 건 없습니다.",
+          "behaviorHint": "더 숨기지 않겠다는 듯 건조한 고백을 꺼낸다."
+        },
+        {
+          "id": "v2",
+          "text": "두 번 다 다은이를 지키겠다고 생각했는데, 결과는 두 번 다 제가 나쁜 사람이 되는 거였습니다.",
+          "behaviorHint": "자기희생의 선택을 담담하게 인정한다."
+        },
+        {
+          "id": "v3",
+          "text": "아버지 일을 말하지 못한 침묵과, 예비신랑을 막으려 한 연락이 같은 줄에 서 있습니다.",
+          "behaviorHint": "감정보다 체념이 먼저 드러나는 톤이다."
+        },
+        {
+          "id": "v4",
+          "text": "저는 패턴을 봤고, 다은이는 제 행동만 봤습니다. 그래서 또 어긋났습니다.",
+          "behaviorHint": "무너진 마음을 억누르며 늦은 진실을 말한다."
+        },
+        {
+          "id": "v5",
+          "text": "이 표가 늦게 나온 만큼, 저도 너무 늦게 말했습니다.",
+          "behaviorHint": "이번 일과 과거의 반복을 한 문장으로 묶어 낸다."
+        }
+      ]
+    }
+  ]
+}

@@ -267,8 +267,8 @@ function checkInterjection(snapshot: TurnSnapshot): GameEventTrigger | null {
     description: v3Event
       ? v3Event.interjectionLine
       : severity === 'major'
-        ? '상대방이 참지 못하고 강하게 끼어듭니다.'
-        : '상대방이 짧게 반박합니다.',
+        ? '잠깐만요, 재판관님. 저도 할 말이 있습니다.'
+        : '그건 사실과 다릅니다.',
     effects: [
       { type: 'emotion_spike', party: otherParty, delta: -5 },
       { type: 'trust_change', party: otherParty, delta: -5 },

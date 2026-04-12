@@ -1856,11 +1856,19 @@ function tryScriptedDialoguePath(
     const subjectRole = subjectParty === target
       ? 'self'
       : subjectParty === 'both'
-        ? ev?.provenance === 'institutional' ? 'institutional' : 'both'
-        : ev?.provenance === 'institutional' ? 'institutional' : 'other'
+        ? 'both'
+        : 'other'
     scripted = getScriptedEvidencePresent(
       caseId, target, action.evidenceId, lieEntry.currentState, subjectRole,
     )
+    // subjectRole 폴백: 1차 miss 시 'self' → 'other' → 'both' 순으로 재시도
+    if (!scripted) {
+      const fallbacks = ['self', 'other', 'both'].filter(r => r !== subjectRole)
+      for (const fb of fallbacks) {
+        scripted = getScriptedEvidencePresent(caseId, target, action.evidenceId, lieEntry.currentState, fb)
+        if (scripted) break
+      }
+    }
   }
 
   if (!scripted) return null

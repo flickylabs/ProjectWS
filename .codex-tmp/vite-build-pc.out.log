@@ -1,0 +1,25 @@
+[36mvite v8.0.7 [32mbuilding client environment for production...[36m[39m
+[2Ktransforming...✓ 905 modules transformed.
+rendering chunks...
+computing gzip size...
+dist-pc/index-pc.html                                    1.46 kB │ gzip:     0.61 kB
+dist-pc/assets/index-pc-Cb_i4rpw.css                   200.80 kB │ gzip:    26.75 kB
+dist-pc/assets/misconceptionEngine-B3U_Q5wf.js           0.09 kB │ gzip:     0.10 kB
+dist-pc/assets/settingsManager-DXExY6QA.js               0.19 kB │ gzip:     0.16 kB
+dist-pc/assets/useLocalStorage-BGexQm6s.js               0.54 kB │ gzip:     0.34 kB
+dist-pc/assets/rolldown-runtime-COnpUsM8.js              0.81 kB │ gzip:     0.46 kB
+dist-pc/assets/ForcedVerdictBanner-DT62RAaK.js           1.59 kB │ gzip:     0.75 kB
+dist-pc/assets/EvidenceResultToast-gr-rop1a.js           1.62 kB │ gzip:     0.87 kB
+dist-pc/assets/CourtHeader-DMqfCiBx.js                   1.93 kB │ gzip:     0.66 kB
+dist-pc/assets/StateTransitionFeedback-ru6u1YtT.js       3.02 kB │ gzip:     1.30 kB
+dist-pc/assets/Emoji-CeobvFMJ.js                         3.19 kB │ gzip:     1.38 kB
+dist-pc/assets/TransitionChoiceModal--sCtvRtS.js         4.72 kB │ gzip:     1.90 kB
+dist-pc/assets/PerkChoiceModal-DYyWKu9j.js               5.13 kB │ gzip:     1.67 kB
+dist-pc/assets/GameEventModal-FjX9blta.js                8.48 kB │ gzip:     2.63 kB
+dist-pc/assets/useActionDispatch-CfZgvCrr.js            45.76 kB │ gzip:    14.99 kB
+dist-pc/assets/vendor-react-BbU_pIxN.js                182.16 kB │ gzip:    57.34 kB
+dist-pc/assets/engine-DNQZxriz.js                      274.85 kB │ gzip:    91.43 kB
+dist-pc/assets/index-pc-ChkpF9u8.js                    392.48 kB │ gzip:    96.18 kB
+dist-pc/assets/case-data-GilKFkpw.js                35,947.61 kB │ gzip: 4,194.88 kB
+
+[32m✓ built in 10m 26s[39m

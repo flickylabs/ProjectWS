@@ -1,0 +1,17 @@
+[case-stage1a-runtime] wrote src/data/cases/generated/friend-07.json
+[runtime-template-coverage] case=friend-07
+summary={}
+PASS
+[case-stage1e-mediation-dialogues] caseId=case-friend-07
+[case-stage1e-mediation-dialogues] out=src/data/dialogues/mediation/friend-07.json
+[case-stage2-scripted-bootstrap] wrote src/data/scriptedText/friend-07.json
+[scripted-template-coverage] case=friend-07
+summary={}
+PASS
+[scripted-semantic-quality] case=friend-07
+summary={}
+PASS
+[validate-scripted-text] case=friend-07
+[validate-scripted-text] summary={}
+[validate-scripted-text] PASS
+[friend-07] wrote tmp\friend-07-stage3-validate.txt

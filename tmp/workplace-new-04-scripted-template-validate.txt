@@ -1,0 +1,3 @@
+[scripted-template-coverage] case=workplace-new-04
+summary={}
+PASS

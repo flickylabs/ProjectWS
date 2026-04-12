@@ -1,0 +1,3 @@
+[validate-scripted-text] case=family-09
+[validate-scripted-text] summary={}
+[validate-scripted-text] PASS

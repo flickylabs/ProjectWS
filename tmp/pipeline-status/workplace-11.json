@@ -1,0 +1,93 @@
+{
+  "schemaVersion": 1,
+  "owner": "Codex",
+  "workspace": "D:\\ProjectWS",
+  "activeWorkstream": {
+    "name": "workplace-11 staged scripted generation",
+    "caseId": "workplace-11",
+    "status": "completed",
+    "currentStep": "completed",
+    "steps": [
+      {
+        "id": "stage1a",
+        "name": "runtime_case_generate",
+        "status": "completed",
+        "script": "scripts/case-stage1a-runtime.cjs",
+        "scriptArgs": [
+          "--case",
+          "workplace-11"
+        ],
+        "outputPath": "src/data/cases/generated/workplace-11.json"
+      },
+      {
+        "id": "stage1b",
+        "name": "runtime_template_validate",
+        "status": "completed",
+        "script": "scripts/validate-runtime-template-coverage.cjs",
+        "scriptArgs": [
+          "--case",
+          "workplace-11"
+        ],
+        "logPath": "tmp/workplace-11-runtime-template-validate.txt"
+      },
+      {
+        "id": "stage1c",
+        "name": "mediation_dialogues_generate",
+        "status": "completed",
+        "script": "scripts/case-stage1e-mediation-dialogues.cjs",
+        "scriptArgs": [
+          "--case",
+          "workplace-11"
+        ],
+        "outputPath": "src/data/dialogues/mediation/workplace-11.json"
+      },
+      {
+        "id": "stage2",
+        "name": "scripted_bootstrap_generate",
+        "status": "completed",
+        "script": "scripts/case-stage2-scripted-bootstrap.cjs",
+        "scriptArgs": [
+          "--case",
+          "workplace-11"
+        ],
+        "outputPath": "src/data/scriptedText/workplace-11.json"
+      },
+      {
+        "id": "stage2b",
+        "name": "scripted_template_validate",
+        "status": "completed",
+        "script": "scripts/validate-scripted-template-coverage.cjs",
+        "scriptArgs": [
+          "--case",
+          "workplace-11"
+        ],
+        "logPath": "tmp/workplace-11-scripted-template-validate.txt"
+      },
+      {
+        "id": "stage2c",
+        "name": "scripted_semantic_validate",
+        "status": "completed",
+        "script": "scripts/validate-scripted-semantic-quality.cjs",
+        "scriptArgs": [
+          "--case",
+          "workplace-11"
+        ],
+        "logPath": "tmp/workplace-11-semantic-validate.txt"
+      },
+      {
+        "id": "stage3",
+        "name": "scripted_validate",
+        "status": "completed",
+        "action": "scripted_validate",
+        "logPath": "tmp/workplace-11-stage3-validate.txt"
+      }
+    ]
+  },
+  "updatedAt": "2026-04-08T23:37:10.982Z",
+  "lastKnownValidation": {
+    "caseId": "workplace-11",
+    "logPath": "tmp/workplace-11-stage3-validate.txt",
+    "summary": {},
+    "note": "workplace-11 staged pipeline completed."
+  }
+}

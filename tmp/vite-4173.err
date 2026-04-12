@@ -1,0 +1,746 @@
+[33m[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+5459 |    }
+5460 |  }
+5461 |  @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-s...
+     |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+5462 |  :root {
+5463 |    --solomon-primary: #d97706;[39m
+[2m오후 10:20:04[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/health[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 10:20:04[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/health[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 10:20:05[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-prompts[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 10:20:44[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/health[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 10:20:44[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/health[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 10:20:46[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-prompts[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 10:20:46[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[PromptManager] Server unavailable, using cached/default prompts
+[2m오후 10:20:46[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-agents[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 10:20:46[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-blocks[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 10:20:46[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[AgentManager] Server unavailable, using cached data
+[2m오후 10:20:46[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/stats/settings[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 10:21:59[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/health[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 10:21:59[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/health[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 10:22:01[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-prompts[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 10:22:01[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[PromptManager] Server unavailable, using cached/default prompts
+[2m오후 10:22:01[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-agents[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 10:22:01[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-blocks[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 10:22:01[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[AgentManager] Server unavailable, using cached data
+[2m오후 10:22:01[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/stats/settings[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 10:22:30[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[Scripted miss] spouse-01/evidence_present/a|e-3|mid|institutional — key_missing
+[2m오후 10:23:02[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[Scripted miss] spouse-01/evidence_present/a|e-1|mid|institutional — key_missing
+[2m오후 10:23:04[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[Scripted miss] spouse-01/evidence_present/a|e-3|late|institutional — key_missing
+[2m오후 10:23:11[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[Scripted miss] spouse-01/evidence_present/a|e-3|mid|institutional — key_missing
+[2m오후 10:24:23[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[Scripted miss] spouse-01/evidence_present/a|e-3|mid|institutional — key_missing
+[2m오후 10:31:11[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-prompts[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 10:31:11[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[PromptManager] Server unavailable, using cached/default prompts
+[2m오후 10:31:11[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-agents[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 10:31:11[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-blocks[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 10:31:11[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[AgentManager] Server unavailable, using cached data
+[2m오후 10:31:11[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/stats/settings[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[33m[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+5459 |    }
+5460 |  }
+5461 |  @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-s...
+     |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+5462 |  :root {
+5463 |    --solomon-primary: #d97706;[39m
+[33m[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+5459 |    }
+5460 |  }
+5461 |  @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-s...
+     |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+5462 |  :root {
+5463 |    --solomon-primary: #d97706;[39m
+[33m[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+5459 |    }
+5460 |  }
+5461 |  @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-s...
+     |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+5462 |  :root {
+5463 |    --solomon-primary: #d97706;[39m
+[33m[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+5459 |    }
+5460 |  }
+5461 |  @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-s...
+     |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+5462 |  :root {
+5463 |    --solomon-primary: #d97706;[39m
+[33m[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+5459 |    }
+5460 |  }
+5461 |  @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-s...
+     |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+5462 |  :root {
+5463 |    --solomon-primary: #d97706;[39m
+[2m오후 10:39:42[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-prompts[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 10:39:42[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[PromptManager] Server unavailable, using cached/default prompts
+[2m오후 10:39:42[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-agents[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 10:39:42[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-blocks[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 10:39:42[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[AgentManager] Server unavailable, using cached data
+[2m오후 10:39:42[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/stats/settings[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 10:39:42[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/stats/settings[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[33m[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+5459 |    }
+5460 |  }
+5461 |  @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-s...
+     |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+5462 |  :root {
+5463 |    --solomon-primary: #d97706;[39m
+[33m[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+5459 |    }
+5460 |  }
+5461 |  @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-s...
+     |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+5462 |  :root {
+5463 |    --solomon-primary: #d97706;[39m
+[33m[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+5459 |    }
+5460 |  }
+5461 |  @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-s...
+     |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+5462 |  :root {
+5463 |    --solomon-primary: #d97706;[39m
+[33m[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+5459 |    }
+5460 |  }
+5461 |  @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-s...
+     |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+5462 |  :root {
+5463 |    --solomon-primary: #d97706;[39m
+[33m[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+5459 |    }
+5460 |  }
+5461 |  @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-s...
+     |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+5462 |  :root {
+5463 |    --solomon-primary: #d97706;[39m
+[33m[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+5459 |    }
+5460 |  }
+5461 |  @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-s...
+     |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+5462 |  :root {
+5463 |    --solomon-primary: #d97706;[39m
+[33m[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+5459 |    }
+5460 |  }
+5461 |  @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-s...
+     |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+5462 |  :root {
+5463 |    --solomon-primary: #d97706;[39m
+[33m[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+5459 |    }
+5460 |  }
+5461 |  @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-s...
+     |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+5462 |  :root {
+5463 |    --solomon-primary: #d97706;[39m
+[33m[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+5459 |    }
+5460 |  }
+5461 |  @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-s...
+     |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+5462 |  :root {
+5463 |    --solomon-primary: #d97706;[39m
+[33m[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+5459 |    }
+5460 |  }
+5461 |  @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-s...
+     |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+5462 |  :root {
+5463 |    --solomon-primary: #d97706;[39m
+[33m[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+5459 |    }
+5460 |  }
+5461 |  @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-s...
+     |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+5462 |  :root {
+5463 |    --solomon-primary: #d97706;[39m
+[33m[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+5459 |    }
+5460 |  }
+5461 |  @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-s...
+     |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+5462 |  :root {
+5463 |    --solomon-primary: #d97706;[39m
+[2m오후 11:06:12[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-prompts[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 11:06:12[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[PromptManager] Server unavailable, using cached/default prompts
+[2m오후 11:06:12[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-agents[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 11:06:12[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-blocks[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 11:06:12[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[AgentManager] Server unavailable, using cached data
+[2m오후 11:06:12[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/stats/settings[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 11:06:12[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/stats/settings[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[33m[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+5459 |    }
+5460 |  }
+5461 |  @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-s...
+     |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+5462 |  :root {
+5463 |    --solomon-primary: #d97706;[39m
+[2m오후 11:07:29[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-prompts[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 11:07:29[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[PromptManager] Server unavailable, using cached/default prompts
+[2m오후 11:07:29[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-agents[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 11:07:29[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-blocks[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 11:07:29[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[AgentManager] Server unavailable, using cached data
+[2m오후 11:07:29[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/stats/settings[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 11:07:29[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/stats/settings[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[33m[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+5459 |    }
+5460 |  }
+5461 |  @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-s...
+     |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+5462 |  :root {
+5463 |    --solomon-primary: #d97706;[39m
+[2m오후 11:12:53[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-prompts[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 11:12:53[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[PromptManager] Server unavailable, using cached/default prompts
+[2m오후 11:12:53[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-agents[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 11:12:53[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-blocks[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 11:12:53[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[AgentManager] Server unavailable, using cached data
+[2m오후 11:12:53[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/stats/settings[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 11:12:53[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/stats/settings[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[33m[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+5459 |    }
+5460 |  }
+5461 |  @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-s...
+     |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+5462 |  :root {
+5463 |    --solomon-primary: #d97706;[39m
+[33m[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+5459 |    }
+5460 |  }
+5461 |  @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-s...
+     |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+5462 |  :root {
+5463 |    --solomon-primary: #d97706;[39m
+[2m오후 11:16:30[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-prompts[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 11:16:30[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[PromptManager] Server unavailable, using cached/default prompts
+[2m오후 11:16:30[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-agents[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 11:16:30[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-blocks[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 11:16:30[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[AgentManager] Server unavailable, using cached data
+[2m오후 11:16:30[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/stats/settings[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 11:16:30[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/stats/settings[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[33m[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+5459 |    }
+5460 |  }
+5461 |  @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-s...
+     |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+5462 |  :root {
+5463 |    --solomon-primary: #d97706;[39m
+[2m오후 11:17:30[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-prompts[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 11:17:30[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[PromptManager] Server unavailable, using cached/default prompts
+[2m오후 11:17:30[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-agents[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 11:17:30[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-blocks[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 11:17:30[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[AgentManager] Server unavailable, using cached data
+[2m오후 11:17:30[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/stats/settings[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 11:17:30[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/stats/settings[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 11:46:41[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/health[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 11:46:41[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/health[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 11:46:55[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/health[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 11:46:55[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/health[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 11:49:08[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/health[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 11:49:08[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/health[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 11:49:33[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/health[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 11:49:33[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/health[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 11:51:29[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/health[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 11:51:29[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/health[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 11:51:44[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-prompts[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 11:51:44[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[PromptManager] Server unavailable, using cached/default prompts
+[2m오후 11:51:44[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-agents[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 11:51:44[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-blocks[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 11:51:44[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[AgentManager] Server unavailable, using cached data
+[2m오후 11:51:44[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/stats/settings[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 11:52:07[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[Scripted miss] spouse-01/evidence_present/a|e-1|early|institutional — key_missing
+[2m오후 11:53:28[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-prompts[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 11:53:28[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[PromptManager] Server unavailable, using cached/default prompts
+[2m오후 11:53:29[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-agents[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 11:53:29[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-blocks[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 11:53:29[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[AgentManager] Server unavailable, using cached data
+[2m오후 11:53:29[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/stats/settings[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 11:53:29[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/stats/settings[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 11:53:30[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-prompts[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 11:53:30[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[PromptManager] Server unavailable, using cached/default prompts
+[2m오후 11:53:30[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-agents[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 11:53:30[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-blocks[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 11:53:30[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[AgentManager] Server unavailable, using cached data
+[2m오후 11:53:30[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/stats/settings[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오후 11:53:30[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/stats/settings[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[33m[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+5459 |    }
+5460 |  }
+5461 |  @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-s...
+     |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+5462 |  :root {
+5463 |    --solomon-primary: #d97706;[39m
+[2m오전 12:05:31[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-prompts[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오전 12:05:31[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[PromptManager] Server unavailable, using cached/default prompts
+[2m오전 12:05:31[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-agents[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오전 12:05:31[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-blocks[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오전 12:05:31[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[AgentManager] Server unavailable, using cached data
+[2m오전 12:05:31[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/stats/settings[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오전 12:05:31[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/stats/settings[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오전 12:05:38[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-prompts[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오전 12:05:38[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[PromptManager] Server unavailable, using cached/default prompts
+[2m오전 12:05:38[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-agents[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오전 12:05:38[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-blocks[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오전 12:05:38[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[AgentManager] Server unavailable, using cached data
+[2m오전 12:05:38[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/stats/settings[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오전 12:05:38[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/stats/settings[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오전 12:07:39[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/health[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오전 12:07:39[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/health[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[33m[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+5459 |    }
+5460 |  }
+5461 |  @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-s...
+     |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+5462 |  :root {
+5463 |    --solomon-primary: #d97706;[39m
+[2m오전 12:10:17[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/health[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오전 12:10:17[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/health[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[33m[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+5459 |    }
+5460 |  }
+5461 |  @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-s...
+     |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+5462 |  :root {
+5463 |    --solomon-primary: #d97706;[39m
+[33m[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+5459 |    }
+5460 |  }
+5461 |  @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-s...
+     |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+5462 |  :root {
+5463 |    --solomon-primary: #d97706;[39m
+[33m[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+5459 |    }
+5460 |  }
+5461 |  @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-s...
+     |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+5462 |  :root {
+5463 |    --solomon-primary: #d97706;[39m
+[33m[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+5459 |    }
+5460 |  }
+5461 |  @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-s...
+     |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+5462 |  :root {
+5463 |    --solomon-primary: #d97706;[39m
+[33m[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+5459 |    }
+5460 |  }
+5461 |  @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-s...
+     |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+5462 |  :root {
+5463 |    --solomon-primary: #d97706;[39m
+[33m[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+5459 |    }
+5460 |  }
+5461 |  @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-s...
+     |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+5462 |  :root {
+5463 |    --solomon-primary: #d97706;[39m
+[33m[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+5459 |    }
+5460 |  }
+5461 |  @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-s...
+     |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+5462 |  :root {
+5463 |    --solomon-primary: #d97706;[39m
+[33m[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+5459 |    }
+5460 |  }
+5461 |  @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-s...
+     |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+5462 |  :root {
+5463 |    --solomon-primary: #d97706;[39m
+[33m[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+5459 |    }
+5460 |  }
+5461 |  @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-s...
+     |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+5462 |  :root {
+5463 |    --solomon-primary: #d97706;[39m
+[33m[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+5459 |    }
+5460 |  }
+5461 |  @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-s...
+     |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+5462 |  :root {
+5463 |    --solomon-primary: #d97706;[39m
+[33m[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+5459 |    }
+5460 |  }
+5461 |  @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-s...
+     |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+5462 |  :root {
+5463 |    --solomon-primary: #d97706;[39m
+[33m[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+5459 |    }
+5460 |  }
+5461 |  @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-s...
+     |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+5462 |  :root {
+5463 |    --solomon-primary: #d97706;[39m
+[2m오전 12:15:11[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-prompts[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오전 12:15:11[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[PromptManager] Server unavailable, using cached/default prompts
+[2m오전 12:15:11[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-agents[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오전 12:15:11[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-blocks[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오전 12:15:11[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[AgentManager] Server unavailable, using cached data
+[2m오전 12:15:11[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/stats/settings[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오전 12:15:11[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/stats/settings[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오전 12:15:20[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-prompts[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오전 12:15:20[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[PromptManager] Server unavailable, using cached/default prompts
+[2m오전 12:15:20[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-agents[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오전 12:15:20[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-blocks[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오전 12:15:20[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[AgentManager] Server unavailable, using cached data
+[2m오전 12:15:20[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/stats/settings[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오전 12:15:20[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/stats/settings[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오전 12:15:42[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-prompts[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오전 12:15:42[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[PromptManager] Server unavailable, using cached/default prompts
+[2m오전 12:15:42[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-agents[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오전 12:15:42[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-blocks[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오전 12:15:42[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[AgentManager] Server unavailable, using cached data
+[2m오전 12:15:42[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/stats/settings[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오전 12:15:57[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-prompts[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오전 12:15:57[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[PromptManager] Server unavailable, using cached/default prompts
+[2m오전 12:15:57[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-blocks[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오전 12:15:57[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-agents[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오전 12:15:57[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[AgentManager] Server unavailable, using cached data
+[2m오전 12:15:57[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/stats/settings[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오전 12:17:07[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-prompts[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오전 12:17:07[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[PromptManager] Server unavailable, using cached/default prompts
+[2m오전 12:17:07[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-agents[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오전 12:17:07[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/ai-blocks[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오전 12:17:07[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[AgentManager] Server unavailable, using cached data
+[2m오전 12:17:07[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/stats/settings[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+[2m오전 12:17:37[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[Scripted miss] spouse-01/evidence_present/a|e-3|early|institutional — key_missing
+[2m오전 12:18:21[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[Scripted miss] spouse-01/evidence_present/a|e-1|mid|institutional — key_missing
+[2m오전 12:18:24[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[Scripted miss] spouse-01/evidence_present/a|e-3|mid|institutional — key_missing
+[2m오전 12:18:32[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[Scripted miss] spouse-01/evidence_present/a|e-3|early|institutional — key_missing
+[2m오전 12:19:57[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[Scripted miss] spouse-01/evidence_present/a|e-3|early|institutional — key_missing
+[2m오전 12:20:40[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[Scripted miss] spouse-01/evidence_present/a|e-3|mid|institutional — key_missing
+^C

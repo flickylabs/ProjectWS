@@ -370,17 +370,23 @@ function GameEventPanel() {
       ? getInterjectionEvent(caseKey, pendingEvent.scriptSlot.textId)
       : null
     const interjectionText = v3Event?.interjectionLine ?? pendingEvent.description
+    // V4: 범용 fallback 대사를 캐릭터+상황 맞춤 대사로 교체
+    const finalInterjectionText = v3Event?.interjectionLine
+      ? interjectionText
+      : pendingEvent.severity === 'major'
+        ? `재판관님, 잠깐만요. 저도 할 말이 있습니다.`
+        : `재판관님, 지금 하신 말씀은 사실과 다릅니다.`
 
     const handleAllow = () => {
       addDialogue({
         speaker: pendingEvent.party,
-        text: interjectionText,
+        text: finalInterjectionText,
         relatedDisputes: [pendingEvent.disputeId],
         turn: turnCount,
       })
       addDialogue({
         speaker: 'judge',
-        text: '발언을 허용합니다. 계속 진행하세요.',
+        text: '발언을 허용합니다.',
         relatedDisputes: [pendingEvent.disputeId],
         turn: turnCount,
       })

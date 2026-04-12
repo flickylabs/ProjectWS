@@ -1,0 +1,18 @@
+[build-pilot-neighbor-08-runtime] wrote src/data/cases/generated/neighbor-08.json
+[case-stage1a-runtime] wrote src/data/cases/generated/neighbor-08.json
+[runtime-template-coverage] case=neighbor-08
+summary={}
+PASS
+[case-stage1e-mediation-dialogues] caseId=case-neighbor-08
+[case-stage1e-mediation-dialogues] out=src/data/dialogues/mediation/neighbor-08.json
+[case-stage2-scripted-bootstrap] wrote src/data/scriptedText/neighbor-08.json
+[scripted-template-coverage] case=neighbor-08
+summary={}
+PASS
+[scripted-semantic-quality] case=neighbor-08
+summary={}
+PASS
+[validate-scripted-text] case=neighbor-08
+[validate-scripted-text] summary={}
+[validate-scripted-text] PASS
+[neighbor-08] wrote tmp\neighbor-08-stage3-validate.txt

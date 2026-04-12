@@ -1,0 +1,3 @@
+[scripted-semantic-quality] case=professional-new-08
+summary={}
+PASS

@@ -1,0 +1,21 @@
+﻿[case-stage1a-runtime] wrote src/data/cases/generated/spouse-05.json
+[runtime-template-coverage] case=spouse-05
+summary={}
+PASS
+[case-stage1e-mediation-dialogues] caseId=case-spouse-05
+[case-stage1e-mediation-dialogues] out=src/data/dialogues/mediation/spouse-05.json
+[case-stage2-scripted-bootstrap] wrote src/data/scriptedText/spouse-05.json
+[case-stage2-scripted-bootstrap] mode=generic_builder
+[scripted-template-coverage] case=spouse-05
+summary={}
+PASS
+[scripted-semantic-quality] case=spouse-05
+summary={}
+PASS
+[validate-scripted-text] case=spouse-05
+[validate-scripted-text] summary={"WARN":3}
+- [WARN] 4-D witness / tp-1|vague / tp-1-vague-v2: 증인 증언이 공통 메타 서술 골격에 치우쳐 있습니다
+- [WARN] 4-D witness / tp-2|vague / tp-2-vague-v2: 증인 증언이 공통 메타 서술 골격에 치우쳐 있습니다
+- [WARN] 4-D witness / tp-3|vague / tp-3-vague-v2: 증인 증언이 공통 메타 서술 골격에 치우쳐 있습니다
+[spouse-05] wrote tmp\spouse-05-stage3-validate.txt
+

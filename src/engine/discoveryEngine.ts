@@ -243,8 +243,10 @@ export function initializeDisputeVisibility(
 
   for (const dispute of caseData.disputes) {
     const shouldHide =
-      (dispute.quadrant === 'neither_knows' || dispute.quadrant === 'shared_misconception') &&
-      dispute.weight === 'high'
+      dispute.hidden === true ||
+      dispute.v3Visibility === 'hidden' ||
+      ((dispute.quadrant === 'neither_knows' || dispute.quadrant === 'shared_misconception') &&
+        dispute.weight === 'high')
 
     // 어떤 파티에 관련되는지 결정
     const relevantParties = getDisputeRelevantParties(dispute, caseData)
@@ -295,16 +297,32 @@ function generateEmergenceRoutes(dispute: Dispute, caseData: CaseData): Emergenc
 
   // 경로 2: unlockCondition에 쟁점 선행 조건이 있으면
   if (dispute.unlockCondition?.requireDispute) {
-    routes.push({
-      type: 'lie_collapse',
-      condition: { lieCollapseDispute: dispute.unlockCondition.requireDispute.id },
-    })
+    const req = dispute.unlockCondition.requireDispute as { id: string; minState?: string; party?: string }
+    if (req.minState && req.minState !== 'S5') {
+      // 임의 state 임계치 (S1, S2, S3 등)
+      routes.push({
+        type: 'lie_state_threshold',
+        condition: {
+          lieThresholdDispute: req.id,
+          lieThresholdMinState: req.minState,
+          lieThresholdParty: req.party as 'a' | 'b' | undefined,
+        },
+      })
+    } else {
+      // S5 전용 (기존 lie_collapse 호환)
+      routes.push({
+        type: 'lie_collapse',
+        condition: { lieCollapseDispute: req.id },
+      })
+    }
   }
 
-  // 경로 3: 증인이 관련 증거를 가지고 있으면
+  // 경로 3: 해당 쟁점과 관련된 증인이 소환되면
   for (const tp of caseData.duo.socialGraph ?? []) {
-    if (tp.witnessedDirectly && caseData.activeThirdParties.includes(tp.id)) {
-      // 이 증인의 knowledgeScope가 해당 쟁점과 관련 있을 수 있음
+    if (!tp.witnessedDirectly || !caseData.activeThirdParties.includes(tp.id)) continue
+    // 증인의 relatedDisputeIds에 이 쟁점이 포함된 경우만
+    const relatedIds: string[] = (tp as any).relatedDisputeIds ?? []
+    if (relatedIds.includes(dispute.id)) {
       routes.push({
         type: 'witness',
         condition: { witnessId: tp.id },
@@ -338,9 +356,13 @@ export function checkEmergence(
     calledWitnessIds: string[]
     collapsedDisputes: Record<string, PartyId>
     emotionalSlipDisputes: string[]
+    /** party별 disputeId → currentState 맵 (lie_state_threshold 체크용) */
+    lieStates?: { a: Record<string, string>; b: Record<string, string> }
   },
 ): EmergenceRoute['type'] | null {
   if (entry.visibility !== 'hidden') return null
+
+  const LIE_RANK: Record<string, number> = { S0: 0, S1: 1, S2: 2, S3: 3, S4: 4, S5: 5 }
 
   for (const route of entry.emergenceRoutes) {
     const cond = route.condition
@@ -367,6 +389,22 @@ export function checkEmergence(
       case 'lie_collapse':
         if (cond.lieCollapseDispute && context.collapsedDisputes[cond.lieCollapseDispute]) {
           return 'lie_collapse'
+        }
+        break
+
+      case 'lie_state_threshold':
+        if (cond.lieThresholdDispute && cond.lieThresholdMinState && context.lieStates) {
+          const minRank = LIE_RANK[cond.lieThresholdMinState] ?? 0
+          // party 지정이 있으면 해당 party만, 없으면 양쪽 중 하나라도
+          const partiesToCheck = cond.lieThresholdParty
+            ? [cond.lieThresholdParty]
+            : (['a', 'b'] as const)
+          for (const p of partiesToCheck) {
+            const currentState = context.lieStates[p][cond.lieThresholdDispute]
+            if (currentState && (LIE_RANK[currentState] ?? 0) >= minRank) {
+              return 'lie_state_threshold'
+            }
+          }
         }
         break
 

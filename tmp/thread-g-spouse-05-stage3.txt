@@ -1,0 +1,5 @@
+[validate-scripted-text] case=spouse-05
+[validate-scripted-text] summary={"WARN":3}
+- [WARN] 4-D witness / tp-1|vague / tp-1-vague-v2: 증인 증언이 공통 메타 서술 골격에 치우쳐 있습니다
+- [WARN] 4-D witness / tp-2|vague / tp-2-vague-v2: 증인 증언이 공통 메타 서술 골격에 치우쳐 있습니다
+- [WARN] 4-D witness / tp-3|vague / tp-3-vague-v2: 증인 증언이 공통 메타 서술 골격에 치우쳐 있습니다

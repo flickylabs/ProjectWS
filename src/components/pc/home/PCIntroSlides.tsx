@@ -46,7 +46,11 @@ export default function PCIntroSlides({ onComplete }: Props) {
             <span className="pc-intro__brand-mark">
               <PCSvgIcon id="i-scale" size={28} />
             </span>
+            <span className="pc-intro__brand-name">솔로몬의 딜레마</span>
+            <span className="pc-intro__brand-sep">|</span>
             <span className="pc-intro__brand-copy">COURT SIMULATION GAME</span>
+            <span className="pc-intro__brand-sep">|</span>
+            <span className="pc-intro__brand-kicker">{slide.kicker}</span>
           </div>
 
           <button className="pc-intro__skip" onClick={finish} type="button">

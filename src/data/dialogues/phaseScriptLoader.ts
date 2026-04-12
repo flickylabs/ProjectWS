@@ -66,12 +66,16 @@ export function loadPhase1Script(caseId: string): Omit<DialogueEntry, 'id'>[] | 
     console.warn(`[ScriptLoader] Phase 1 not found: ${caseId}. Available: ${[...phase1Index.keys()].slice(0, 3).join(', ')}...`)
     return null
   }
-  return script.dialogues.map((d) => ({
-    speaker: d.speaker as DialogueEntry['speaker'],
-    text: d.text,
-    relatedDisputes: d.relatedDisputes,
+  return script.dialogues.map((d: any) => ({
+    speaker: d.speaker,
+    text: d.text ?? '',
+    relatedDisputes: d.relatedDisputes ?? [],
     turn: 0,
     behaviorHint: d.behaviorHint ?? undefined,
+    // V4 분기 선택지 필드 (있으면 전달)
+    ...(d.choiceId ? { choiceId: d.choiceId } : {}),
+    ...(d.options ? { options: d.options } : {}),
+    ...(d.branchCondition ? { branchCondition: d.branchCondition } : {}),
   }))
 }
 
@@ -79,12 +83,15 @@ export function loadPhase1Script(caseId: string): Omit<DialogueEntry, 'id'>[] | 
 export function loadPhase2Script(caseId: string): Omit<DialogueEntry, 'id'>[] | null {
   const script = phase2Index.get(normalizeCaseKey(caseId))
   if (!script) return null
-  return script.dialogues.map((d) => ({
-    speaker: d.speaker as DialogueEntry['speaker'],
-    text: d.text,
-    relatedDisputes: d.relatedDisputes,
+  return script.dialogues.map((d: any) => ({
+    speaker: d.speaker,
+    text: d.text ?? '',
+    relatedDisputes: d.relatedDisputes ?? [],
     turn: 0,
     behaviorHint: d.behaviorHint ?? undefined,
+    ...(d.choiceId ? { choiceId: d.choiceId } : {}),
+    ...(d.options ? { options: d.options } : {}),
+    ...(d.branchCondition ? { branchCondition: d.branchCondition } : {}),
   }))
 }
 

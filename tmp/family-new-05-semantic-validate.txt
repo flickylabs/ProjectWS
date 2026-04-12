@@ -1,0 +1,3 @@
+[scripted-semantic-quality] case=family-new-05
+summary={}
+PASS

@@ -18,6 +18,7 @@ import PCCourtLayout from '../components/pc/layout/PCCourtLayout'
 import PCHomeScreen from '../components/pc/home/PCHomeScreen'
 import PCResultScreen from '../components/pc/result/PCResultScreen'
 import PCVerdictScreen from '../components/pc/verdict/PCVerdictScreen'
+import { useActionDispatch } from '../hooks/useActionDispatch'
 import { useGameStore, useStore } from '../store/useGameStore'
 
 try {
@@ -32,6 +33,31 @@ export default function PCApp() {
   const currentPhase = useStore((s) => s.currentPhase)
   const caseData = useStore((s) => s.caseData)
   const [sessionReady, setSessionReady] = useState(false)
+  const [splashDone, setSplashDone] = useState(false)
+  const dispatch = useActionDispatch()
+
+  // 인트로 스플래시: 최소 1.2초 표시 후 fade out
+  useEffect(() => {
+    const timer = setTimeout(() => setSplashDone(true), 1200)
+    return () => clearTimeout(timer)
+  }, [])
+
+  useEffect(() => {
+    if (!import.meta.env.DEV) return
+    const devWindow = globalThis as typeof globalThis & {
+      __pcDispatch?: typeof dispatch
+      __pcStore?: typeof useGameStore
+      __pcTriggerDialogueTap?: typeof triggerDialogueTap
+    }
+    devWindow.__pcDispatch = dispatch
+    devWindow.__pcStore = useGameStore
+    devWindow.__pcTriggerDialogueTap = triggerDialogueTap
+    return () => {
+      delete devWindow.__pcDispatch
+      delete devWindow.__pcStore
+      delete devWindow.__pcTriggerDialogueTap
+    }
+  }, [dispatch])
 
   useEffect(() => {
     if (!caseData) {
@@ -53,6 +79,18 @@ export default function PCApp() {
       setSessionReady(true)
     })()
   }, [caseData, sessionReady])
+
+  if (!splashDone) {
+    return (
+      <div className="pc-splash">
+        <div className="pc-splash__content">
+          <div className="pc-splash__icon">⚖</div>
+          <h1 className="pc-splash__title">솔로몬의 딜레마</h1>
+          <p className="pc-splash__sub">COURT SIMULATION GAME</p>
+        </div>
+      </div>
+    )
+  }
 
   if (!caseData) {
     return <PCHomeScreen />

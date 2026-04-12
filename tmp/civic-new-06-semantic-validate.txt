@@ -1,0 +1,8 @@
+[scripted-semantic-quality] case=civic-new-06
+WARN A8 interrogation:b-d-4-S0-empathy_approach-v4 is more emotionally exposed than affect_flattening usually allows
+WARN A8 interrogation:b-d-4-S1-empathy_approach-v4 is more emotionally exposed than affect_flattening usually allows
+WARN A8 interrogation:b-d-4-S2-empathy_approach-v4 is more emotionally exposed than affect_flattening usually allows
+WARN A8 interrogation:b-d-4-S3-empathy_approach-v4 is more emotionally exposed than affect_flattening usually allows
+WARN A8 interrogation:b-d-4-S5-empathy_approach-v1 is more emotionally exposed than affect_flattening usually allows
+summary={"WARN":5}
+PASS

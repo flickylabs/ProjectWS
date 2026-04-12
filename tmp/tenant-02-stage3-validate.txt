@@ -1,0 +1,3 @@
+[validate-scripted-text] case=tenant-02
+[validate-scripted-text] summary={}
+[validate-scripted-text] PASS

@@ -6,6 +6,7 @@ import { resolveLLMDialogue } from '../engine/llmDialogueResolver'
 import { generateWitnessTestimony, canCallWitness, determineTestimonyDepth, getDepthSystemMessage } from '../engine/witnessEngine'
 import type { PlayerAction, PartyId, QuestionType, DialogueNode } from '../types'
 import { playEvidencePresent, playLieCollapse, playEvidenceUnlock, playEvidenceUpgrade, playSeparation } from '../engine/soundEngine'
+import { v4Effects } from '../engine/presentationEngine'
 import { iga, eunneun } from '../utils/korean'
 import { showToast, showLLMErrorBanner } from '../components/common/Toast'
 import { getAffinityScore, getAffinityGrade } from '../data/actionAffinity'
@@ -63,6 +64,10 @@ export { setDossierQuestionOverride, consumeDossierQuestionOverride }
 export { setNextConfidential, setNextEvasionReading }
 
 let globalDispatchLock = false
+
+// ── V4 전략적 차별화: 모듈 레벨 상태 (Zustand state에 붙이면 setState 시 유실) ──
+const _contradictionTokens: Record<string, number> = {}
+const _empathyAttempts: Record<string, number> = {}
 
 // ── Archetype 힌트: NPC 응답 후 재판관의 관찰을 system 메시지로 추가 ──
 function maybeShowArchetypeHint(target: PartyId, turnNumber: number): void {
@@ -247,12 +252,16 @@ async function handleEvidencePresent(action: Extract<PlayerAction, { type: 'evid
   const newUnlocks = state.presentEvidence(action.evidenceId, action.target)
 
   playEvidencePresent()
-  const disputeNames = evDef.proves.map(dId => state.caseData?.disputes.find(d => d.id === dId)?.name ?? dId).join(', ')
+  const evVis = state.discovery.disputeVisibility
+  const visibleEvProves = evDef.proves.filter(dId => { const v = evVis[dId]; return !v || v.visibility !== 'hidden' })
+  const disputeNames = visibleEvProves.length > 0
+    ? visibleEvProves.map(dId => state.caseData?.disputes.find(d => d.id === dId)?.name ?? dId).join(', ')
+    : '관련 쟁점'
   const reliabilityLabel = evDef.reliability === 'hard' ? 'Hard' : 'Soft'
   state.addDialogue({
     speaker: 'system',
     text: `📋 증거 제시: ${evDef.name} [${reliabilityLabel}] → "${disputeNames}"`,
-    relatedDisputes: evDef.proves,
+    relatedDisputes: visibleEvProves,
     turn: state.turnCount,
   })
 
@@ -346,12 +355,16 @@ async function handleEvidencePresent(action: Extract<PlayerAction, { type: 'evid
         const combo = caseData.evidenceCombinations.find((c) => c.requires.join('+') === comboKey)
         if (combo) {
           const names = combo.requires.map((id) => caseData.evidence.find((e) => e.id === id)?.name ?? id).join(' + ')
-          const disputeNames = combo.proves.map(dId => caseData.disputes.find(d => d.id === dId)?.name ?? dId).join(', ')
+          const comboVis = freshState.discovery.disputeVisibility
+          const visibleComboProves = combo.proves.filter(dId => { const v = comboVis[dId]; return !v || v.visibility !== 'hidden' })
+          const comboDisputeNames = visibleComboProves.length > 0
+            ? visibleComboProves.map(dId => caseData.disputes.find(d => d.id === dId)?.name ?? dId).join(', ')
+            : '관련 쟁점'
           playEvidenceUpgrade()
           freshState.addDialogue({
             speaker: 'system',
-            text: `🔗 증거 조합 격상! ${names} → "${disputeNames}" 신뢰도 Hard 확정`,
-            relatedDisputes: combo.proves,
+            text: `🔗 증거 조합 격상! ${names} → "${comboDisputeNames}" 신뢰도 Hard 확정`,
+            relatedDisputes: visibleComboProves,
             turn: freshState.turnCount,
           })
         }
@@ -650,58 +663,166 @@ async function handleQuestion(action: Extract<PlayerAction, { type: 'question' }
     if (otherAsked) state.trackMetric('bothSidesQuestioned')
   }
 
-  // lie 전이 시도 — actionAffinity 점수로 게이팅
+  // ── V4 전략적 차별화: 질문 유형별 다른 메커니즘 ──
   const triggers = questionTypeToTrigger(action.questionType)
   let didTransition = false
 
-  // 상성 점수 조회: 해당 쟁점의 lieMotive × 질문 유형
   const agent = action.target === 'a' ? state.agentA : state.agentB
   const lieEntry = agent.lieStateMap[action.disputeId]
+  const currentLieState = lieEntry?.currentState ?? 'S0'
+
+  // 상성 점수 (archetype 약점 반영)
   const affinityScore = lieEntry ? getAffinityScore(lieEntry.lieMotive, action.questionType) : 1.0
   const affinityGrade = getAffinityGrade(affinityScore)
 
-  // 상성 게이팅: worst(0.70 미만)이면 전이 확률 30%, weak(0.70~0.84)이면 60%, 나머지 100%
-  const affinityRoll = Math.random()
-  const affinityPass = affinityGrade === 'worst' ? affinityRoll < 0.3
-    : affinityGrade === 'weak' ? affinityRoll < 0.6
-    : true
+  if (action.questionType === 'fact_pursuit') {
+    // ── 모순에 집중하기: 모순 토큰 축적 → 임계치 도달 시 전이 ──
+    // 같은 쟁점에 대해 사실추궁을 반복하면 모순 토큰 축적
+    const contradictionKey = `${action.target}:${action.disputeId}:contradiction`
+    const prevTokens = _contradictionTokens[contradictionKey] ?? 0
+    const tokenGain = affinityGrade === 'strong' ? 2 : affinityGrade === 'weak' ? 0.5 : 1
+    const newTokens = prevTokens + tokenGain
+    // 임계치: S0~S1은 2회, S2+는 3회
+    const threshold = currentLieState <= 'S1' ? 2 : 3
 
-  if (affinityPass) {
-    snapshotLieState(action.target, action.disputeId)
-    for (const trigger of triggers) {
-      const transitioned = state.transitionLie(action.target, action.disputeId, trigger)
-      if (transitioned) {
+    // 토큰 저장 (모듈 레벨)
+    _contradictionTokens[contradictionKey] = newTokens
+
+    if (newTokens >= threshold) {
+      // 임계치 도달 → 전이 시도
+      _contradictionTokens[contradictionKey] = 0 // 리셋
+      snapshotLieState(action.target, action.disputeId)
+      for (const trigger of triggers) {
+        const transitioned = state.transitionLie(action.target, action.disputeId, trigger)
+        if (transitioned) {
+          notifyLieTransition(action.target, action.disputeId)
+          didTransition = true
+          state.trackMetric('lieTransitions')
+          state.trackMetric('effectiveFactCount')
+          break
+        }
+      }
+    } else {
+      // 토큰 축적 중 — 시스템 피드백
+      const remaining = Math.ceil(threshold - newTokens)
+      state.addDialogue({
+        speaker: 'system',
+        text: `모순이 쌓이고 있습니다. 조금 더 추궁하면 균열이 생길 것 같습니다.`,
+        relatedDisputes: [action.disputeId],
+        turn: state.turnCount,
+      })
+    }
+
+  } else if (action.questionType === 'motive_search') {
+    // ── 숨겨진 쟁점찾기: 전이는 느리지만 숨겨진 쟁점 발견 확률 증가 ──
+    // 전이: 50% 확률 (상성 보정)
+    const transitionChance = affinityGrade === 'strong' ? 0.7
+      : affinityGrade === 'weak' ? 0.3
+      : 0.5
+    const roll = Math.random()
+
+    if (roll < transitionChance) {
+      snapshotLieState(action.target, action.disputeId)
+      for (const trigger of triggers) {
+        const transitioned = state.transitionLie(action.target, action.disputeId, trigger)
+        if (transitioned) {
+          notifyLieTransition(action.target, action.disputeId)
+          didTransition = true
+          state.trackMetric('lieTransitions')
+          break
+        }
+      }
+    }
+
+    // 숨겨진 쟁점 발견 부스트: discovery 체크를 강제 실행
+    // (runDiscoveryChecks가 이미 턴 끝에 실행되지만, motive_search는 추가 부스트)
+    if (state.caseData) {
+      const hiddenDisputes = state.caseData.disputes.filter(d => d.hidden && d.v3Visibility === 'hidden')
+      for (const hd of hiddenDisputes) {
+        // 이미 발견된 쟁점은 스킵
+        if (state.discovery?.discoveredDisputes?.includes(hd.id)) continue
+        // 동기탐색은 숨겨진 쟁점 발견 확률을 높임 (unlock 조건 완화)
+        state.trackMetric('motiveSearchCount')
+      }
+    }
+
+  } else if (action.questionType === 'empathy_approach') {
+    // ── 자백 유도하기: 신뢰도 상승 + S3 이상에서 자발적 자백 가능 ──
+    // 신뢰도 상승
+    state.changeTrust(action.target, 'trustTowardJudge', 8)
+
+    // S3 이상에서: 신뢰 임계치 도달 시 자발적 자백 (S5로 점프)
+    if (currentLieState >= 'S3') {
+      const freshAgent = action.target === 'a' ? useGameStore.getState().agentA : useGameStore.getState().agentB
+      const trust = freshAgent.trustState.trustTowardJudge
+      // 신뢰 70+ 이면 자백 유도 성공 (S5로)
+      if (trust >= 70) {
+        snapshotLieState(action.target, action.disputeId)
+        state.forceSetLieState(action.target, action.disputeId, 'S5')
         notifyLieTransition(action.target, action.disputeId)
         didTransition = true
         state.trackMetric('lieTransitions')
-        // 질문 유형별 유효 전이 카운트 (재판관 성향 추적용)
-        if (action.questionType === 'fact_pursuit') state.trackMetric('effectiveFactCount')
-        if (action.questionType === 'empathy_approach') state.trackMetric('effectiveEmpathyCount')
-        // S5 도달 체크
-        const freshAgent = action.target === 'a' ? useGameStore.getState().agentA : useGameStore.getState().agentB
-        const qNewState = freshAgent.lieStateMap[action.disputeId]?.currentState
-        if (qNewState === 'S5') {
-          state.trackMetric('liesCollapsed')
-          // 신뢰/공감 경로 S5 도달 추적 (재판관 성향용)
-          if (action.questionType === 'empathy_approach' || triggers.includes('empathy_question')) {
-            state.trackMetric('collapseViaTrustOrEmpathy')
-          }
-          // unsupportedCollapses: 질문만으로 S5 도달 (hard_evidence/trust 아님)
-          // empathy_approach, empathy_question, motive_question 제외
-          const isEmpathyOrMotive = action.questionType === 'empathy_approach'
-            || triggers.includes('empathy_question')
-            || triggers.includes('motive_question')
-          if (!isEmpathyOrMotive) {
-            state.trackMetric('unsupportedCollapses')
+        state.trackMetric('liesCollapsed')
+        state.trackMetric('collapseViaTrustOrEmpathy')
+      } else {
+        // 신뢰 부족 — 일반 전이 시도
+        snapshotLieState(action.target, action.disputeId)
+        for (const trigger of triggers) {
+          const transitioned = state.transitionLie(action.target, action.disputeId, trigger)
+          if (transitioned) {
+            notifyLieTransition(action.target, action.disputeId)
+            didTransition = true
+            state.trackMetric('lieTransitions')
+            state.trackMetric('effectiveEmpathyCount')
+            break
           }
         }
-        // deepTruthsUnlocked: S4+ 도달 시 narrativeExpansion 존재 여부
-        if (qNewState && (qNewState === 'S4' || qNewState === 'S5')) {
-          const caseKey = normalizeCaseKey(state.caseData?.caseId ?? '')
-          if (getNarrativeExpansion(caseKey, action.disputeId)) state.trackMetric('deepTruthsUnlocked')
-        }
-        break
       }
+    } else {
+      // S0~S2: 신뢰 축적 + 3회 연속 실패 시 보장 전이
+      const empathyKey = `${action.target}:${action.disputeId}:empathy_attempts`
+      const prevAttempts = _empathyAttempts[empathyKey] ?? 0
+      const newAttempts = prevAttempts + 1
+
+      // 확률: 기본 50%, 상성 strong 70%. 3회 연속 미전이 시 100%
+      const empathyChance = newAttempts >= 3 ? 1.0
+        : affinityGrade === 'strong' ? 0.7
+        : 0.5
+      if (Math.random() < empathyChance) {
+        _empathyAttempts[empathyKey] = 0 // 리셋
+        snapshotLieState(action.target, action.disputeId)
+        for (const trigger of triggers) {
+          const transitioned = state.transitionLie(action.target, action.disputeId, trigger)
+          if (transitioned) {
+            notifyLieTransition(action.target, action.disputeId)
+            didTransition = true
+            state.trackMetric('lieTransitions')
+            state.trackMetric('effectiveEmpathyCount')
+            break
+          }
+        }
+      } else {
+        _empathyAttempts[empathyKey] = newAttempts
+        state.addDialogue({
+          speaker: 'system',
+          text: `상대방의 경계가 조금씩 풀리고 있습니다.`,
+          relatedDisputes: [action.disputeId],
+          turn: state.turnCount,
+        })
+      }
+    }
+  }
+
+  // S5 도달 후처리 (공통)
+  if (didTransition) {
+    const freshAgent = action.target === 'a' ? useGameStore.getState().agentA : useGameStore.getState().agentB
+    const qNewState = freshAgent.lieStateMap[action.disputeId]?.currentState
+    if (qNewState === 'S5') {
+      state.trackMetric('liesCollapsed')
+    }
+    if (qNewState && (qNewState === 'S4' || qNewState === 'S5')) {
+      const caseKey = normalizeCaseKey(state.caseData?.caseId ?? '')
+      if (getNarrativeExpansion(caseKey, action.disputeId)) state.trackMetric('deepTruthsUnlocked')
     }
   }
 
@@ -1669,7 +1790,12 @@ function notifyLieTransition(party: PartyId, disputeId: string) {
     S5: '진술 태도가 크게 변했다',
   }
   if (newState && labels[newState]) {
-    if (newState === 'S5') playLieCollapse()
+    if (newState === 'S5') {
+      playLieCollapse()
+      v4Effects.confession(party, name)
+    } else {
+      v4Effects.newFact(`${name} — ${labels[newState]}`, disputeId)
+    }
     const icon = newState >= 'S4' ? '💥' : '⚡'
     const text = newState === 'S5'
       ? `🔥 결정적 순간 — ${name}의 진술 태도가 크게 변했다!`
@@ -1734,6 +1860,7 @@ function notifyLieTransition(party: PartyId, disputeId: string) {
       }
       const desc = transitionDesc[`${prevState}→${newState}`] ?? `이전 진술과 입장이 달라졌습니다`
 
+      v4Effects.contradiction(party, previousClaim, desc, disputeId)
       state.addDialogue({
         speaker: 'system',
         text: `⚡ ${name}의 진술에서 이전과 다른 점이 발견되었다 — 탭하여 추궁`,
@@ -2000,7 +2127,7 @@ export async function handleContradictionPursue(
     })
 
     // LLM으로 NPC 응답 생성 — 재판관 질문은 이미 추가했으므로 스킵
-    _skipNextJudgeQuestion = true
+    setSkipNextJudgeQuestion(true)
     const action: PlayerAction = {
       type: 'question',
       questionType: 'fact_pursuit',

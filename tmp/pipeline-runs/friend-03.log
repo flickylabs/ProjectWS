@@ -1,0 +1,18 @@
+[build-pilot-friend-03-runtime] normalized src/data/cases/generated/friend-03.json
+[case-stage1a-runtime] wrote src/data/cases/generated/friend-03.json
+[runtime-template-coverage] case=friend-03
+summary={}
+PASS
+[case-stage1e-mediation-dialogues] caseId=case-friend-03
+[case-stage1e-mediation-dialogues] out=src/data/dialogues/mediation/friend-03.json
+[case-stage2-scripted-bootstrap] wrote src/data/scriptedText/friend-03.json
+[scripted-template-coverage] case=friend-03
+summary={}
+PASS
+[scripted-semantic-quality] case=friend-03
+summary={}
+PASS
+[validate-scripted-text] case=friend-03
+[validate-scripted-text] summary={}
+[validate-scripted-text] PASS
+[friend-03] wrote tmp\friend-03-stage3-validate.txt

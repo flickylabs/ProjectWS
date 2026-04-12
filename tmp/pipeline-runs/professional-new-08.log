@@ -1,0 +1,17 @@
+[case-stage1a-runtime] wrote src/data/cases/generated/professional-new-08.json
+[runtime-template-coverage] case=professional-new-08
+summary={}
+PASS
+[case-stage1e-mediation-dialogues] caseId=case-professional-new-08
+[case-stage1e-mediation-dialogues] out=src/data/dialogues/mediation/professional-new-08.json
+[case-stage2-scripted-bootstrap] wrote src/data/scriptedText/professional-new-08.json
+[scripted-template-coverage] case=professional-new-08
+summary={}
+PASS
+[scripted-semantic-quality] case=professional-new-08
+summary={}
+PASS
+[validate-scripted-text] case=professional-new-08
+[validate-scripted-text] summary={}
+[validate-scripted-text] PASS
+[professional-new-08] wrote tmp\professional-new-08-stage3-validate.txt

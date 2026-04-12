@@ -14,8 +14,19 @@ import type { LieState } from '../types'
 // 상수
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-/** 통합 심문 최대 턴 수 */
-export const MAX_INTERROGATION_TURNS = 16
+/** 통합 심문 기본 최대 턴 수 */
+const BASE_MAX_INTERROGATION_TURNS = 16
+/** 숨겨진 쟁점 발현 시 추가 턴 */
+const BONUS_TURNS_PER_EMERGENCE = 4
+
+let _emergenceCount = 0
+export function notifyDisputeEmergence() { _emergenceCount++ }
+export function resetEmergenceCount() { _emergenceCount = 0 }
+
+/** 통합 심문 최대 턴 수 (동적: 숨겨진 쟁점 발현 시 확장) */
+export const MAX_INTERROGATION_TURNS_FN = () => BASE_MAX_INTERROGATION_TURNS + (_emergenceCount * BONUS_TURNS_PER_EMERGENCE)
+/** 하위 호환용 getter */
+export const MAX_INTERROGATION_TURNS = BASE_MAX_INTERROGATION_TURNS
 
 /** 판결 가능 최소 턴 */
 const MIN_TURNS_FOR_VERDICT = 8
@@ -89,7 +100,8 @@ export function checkForcedVerdict(
 ): { forced: boolean; verdictMode: VerdictMode } {
   const { eligible } = checkVerdictEligible(turn, state)
 
-  if (turn >= MAX_INTERROGATION_TURNS) {
+  const effectiveMax = MAX_INTERROGATION_TURNS_FN()
+  if (turn >= effectiveMax) {
     return {
       forced: !eligible,
       verdictMode: eligible ? 'normal' : 'forced_incomplete',

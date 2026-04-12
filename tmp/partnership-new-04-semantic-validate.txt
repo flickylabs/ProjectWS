@@ -1,0 +1,3 @@
+[scripted-semantic-quality] case=partnership-new-04
+summary={}
+PASS

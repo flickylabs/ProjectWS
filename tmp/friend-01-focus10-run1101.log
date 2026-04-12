@@ -1,0 +1,94 @@
+[page:debug] [vite] connecting...
+[page:debug] [vite] connected.
+[page:info] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[page:log] [ScriptLoader] Phase 1: 3 scripts, Phase 2: 1 scripts
+[page:log] [thread-q] run 1101 start
+[page:log] [initializeCase] combinationLab config: NULL discoveredNodeIds: 0
+[page:log] [Renewal] friend-01 리뉴얼 데이터 등록 시작
+[page:log] [Renewal] friend-01 등록 완료: V2 + Tell + V3 GameLoop + BeatFallback + StructureV2
+[page:error] Failed to load resource: the server responded with a status of 502 (Bad Gateway)
+[page:warning] [PromptManager] Server unavailable, using cached/default prompts
+[page:error] Failed to load resource: the server responded with a status of 502 (Bad Gateway)
+[page:error] Failed to load resource: the server responded with a status of 502 (Bad Gateway)
+[page:warning] [AgentManager] Server unavailable, using cached data
+[page:error] Failed to load resource: the server responded with a status of 502 (Bad Gateway)
+[page:log] [AutoDialogue] init: total dialogues: 34 choice nodes: 3
+[page:log] [AutoDialogue] choice at idx 4 choiceId: c1 options: 3
+[page:log] [AutoDialogue] choice at idx 14 choiceId: c2 options: 3
+[page:log] [AutoDialogue] choice at idx 26 choiceId: c3 options: 3
+[page:log] [AutoDialogue] advanceToNext idx: 1 speaker: a choiceId: undefined options: undefined
+[page:log] [AutoDialogue] advanceToNext idx: 2 speaker: a choiceId: undefined options: undefined
+[page:log] [AutoDialogue] advanceToNext idx: 3 speaker: b choiceId: undefined options: undefined
+[page:log] [AutoDialogue] advanceToNext idx: 4 speaker: choice choiceId: c1 options: 3
+[page:log] [AutoDialogue] → SHOWING CHOICE PANEL: c1
+[page:log] [AutoDialogue] advanceToNext idx: 5 speaker: b choiceId: undefined options: undefined
+[page:warning] Phase 2 LLM 생성 실패: SyntaxError: Unexpected token '즉', "즉각 반박 대사를 "... is not valid JSON
+    at JSON.parse (<anonymous>)
+    at parseDialogueArray (http://127.0.0.1:4173/src/engine/llmPhaseDialogue.ts:93:22)
+    at generatePhase2Dialogues (http://127.0.0.1:4173/src/engine/llmPhaseDialogue.ts:70:10)
+[page:log] [AutoDialogue] advanceToNext idx: 6 speaker: a choiceId: undefined options: undefined
+[page:log] [AutoDialogue] advanceToNext idx: 7 speaker: b choiceId: undefined options: undefined
+[page:log] [AutoDialogue] advanceToNext idx: 13 speaker: a choiceId: undefined options: undefined
+[page:log] [AutoDialogue] advanceToNext idx: 14 speaker: choice choiceId: c2 options: 3
+[page:log] [AutoDialogue] → SHOWING CHOICE PANEL: c2
+[page:log] [AutoDialogue] advanceToNext idx: 15 speaker: b choiceId: undefined options: undefined
+[page:log] [AutoDialogue] advanceToNext idx: 16 speaker: a choiceId: undefined options: undefined
+[page:log] [AutoDialogue] advanceToNext idx: 22 speaker: a choiceId: undefined options: undefined
+[page:log] [AutoDialogue] advanceToNext idx: 23 speaker: b choiceId: undefined options: undefined
+[page:log] [AutoDialogue] advanceToNext idx: 24 speaker: a choiceId: undefined options: undefined
+[page:log] [AutoDialogue] advanceToNext idx: 25 speaker: b choiceId: undefined options: undefined
+[page:log] [AutoDialogue] advanceToNext idx: 26 speaker: choice choiceId: c3 options: 3
+[page:log] [AutoDialogue] → SHOWING CHOICE PANEL: c3
+[page:log] [AutoDialogue] advanceToNext idx: 27 speaker: a choiceId: undefined options: undefined
+[page:log] [AutoDialogue] advanceToNext idx: 28 speaker: b choiceId: undefined options: undefined
+[page:log] [AutoDialogue] advanceToNext idx: 33 speaker: system choiceId: undefined options: undefined
+[page:log] [Bridge] friend-01: 브리지 데이터 없음 — 기존 상태 유지
+[page:log] [Bridge] friend-01: 브리지 데이터 없음 — 기존 상태 유지
+[page:log] [thread-q] executeUnlockChain start d-1:S2, d-2:S3, d-3:S2, d-4:S2, d-5:S1
+[page:log] [thread-q] unlock step d-1 target S2
+[page:log] [V2 Context] counter quality:bad effect:0.2 stance:blame fatigue:fresh layer:surface quality:bad | arch:affect_flattening | motive:third_party_protection
+[page:log] [Scripted] friend-01/interrogation/b|d-1|S0|fact_pursuit
+[page:log] [V2 Context] comply quality:normal effect:1 stance:deny fatigue:fresh layer:surface quality:normal | arch:affect_flattening | motive:third_party_protection
+[page:log] [Scripted] friend-01/interrogation/b|d-1|S0|motive_search
+[page:log] [V2 Context] comply quality:good effect:1 stance:deny fatigue:wary layer:surface quality:good | arch:affect_flattening | motive:third_party_protection
+[page:log] [Scripted] friend-01/interrogation/b|d-1|S1|empathy_approach
+[page:log] [V2 Context] resist quality:bad effect:0.55 stance:hedge fatigue:wary layer:surface quality:bad | arch:affect_flattening | motive:third_party_protection | counter_blocked
+[page:log] [Scripted] friend-01/interrogation/b|d-1|S1|fact_pursuit
+[page:log] [Scripted] friend-01/interrogation/a|d-1|S0|fact_pursuit
+[page:log] [V2 Context] resist quality:bad effect:0.55 stance:hedge fatigue:high layer:surface quality:bad | arch:affect_flattening | motive:third_party_protection | counter_blocked
+[page:log] [Scripted] friend-01/interrogation/b|d-1|S1|motive_search
+[page:log] [Scripted] friend-01/interrogation/a|d-1|S0|motive_search
+[page:log] [V2 Context] resist quality:good effect:0.55 stance:hedge fatigue:high layer:surface quality:good | arch:affect_flattening | motive:third_party_protection | counter_blocked
+[page:log] [Scripted] friend-01/interrogation/b|d-1|S2|empathy_approach
+[page:log] [Scripted] friend-01/interrogation/a|d-1|S0|empathy_approach
+[page:log] [thread-q] unlock step d-1 result b:S2
+[page:log] [Scripted] friend-01/evidence_present/b|e-1|mid|self
+[page:log] [Scripted] friend-01/evidence_present/a|e-2|early|self
+[page:log] [Scripted] friend-01/evidence_present/b|e-3|early|both
+[page:log] [thread-q] unlock step d-2 target S3
+[page:log] [V2 Context] comply quality:good effect:1 stance:deny fatigue:fresh layer:surface quality:good | arch:affect_flattening | motive:self_protection | counter_blocked
+[page:log] [Scripted] friend-01/interrogation/b|d-2|S0|fact_pursuit
+[page:log] [Scripted] friend-01/interrogation/a|d-2|S0|fact_pursuit
+[page:log] [V2 Context] comply quality:bad effect:1 stance:deny fatigue:high layer:surface quality:bad | arch:affect_flattening | motive:self_protection | counter_blocked
+[page:log] [Scripted] friend-01/interrogation/b|d-2|S1|motive_search
+[page:log] [Scripted] friend-01/interrogation/a|d-2|S0|motive_search
+[page:log] [V2 Context] comply quality:normal effect:1 stance:hedge fatigue:high layer:surface quality:normal | arch:affect_flattening | motive:self_protection | counter_blocked
+[page:log] [Scripted] friend-01/interrogation/b|d-2|S1|empathy_approach
+[page:log] [Scripted] friend-01/interrogation/a|d-2|S0|empathy_approach
+[page:log] [V2 Context] resist quality:normal effect:0.55 stance:hedge fatigue:high layer:surface quality:normal | arch:affect_flattening | motive:self_protection | counter_blocked
+[page:log] [Scripted] friend-01/interrogation/b|d-2|S2|fact_pursuit
+[page:log] [Scripted] friend-01/interrogation/a|d-2|S0|fact_pursuit
+[page:log] [V2 Context] resist quality:bad effect:0.55 stance:partial fatigue:high layer:motive quality:bad | arch:affect_flattening | motive:self_protection | counter_blocked
+[page:log] [Scripted] friend-01/interrogation/b|d-2|S3|motive_search
+[page:log] [Scripted] friend-01/interrogation/a|d-2|S0|motive_search
+[page:log] [thread-q] unlock step d-2 result b:S3
+[page:log] [thread-q] unlock step d-3 target S2
+[page:log] [V2 Misconception] d-3: M0→M1 (focus_first_probe)
+[page:log] [V2 Context] resist quality:bad effect:0.55 stance:deny fatigue:high layer:surface quality:bad | arch:affect_flattening | motive:third_party_protection | counter_blocked
+[page:log] [Scripted] friend-01/interrogation/b|d-3|S0|fact_pursuit
+[page:log] [V2 Misconception] d-3: M1→M2 (focus_repeat_probe)
+[page:log] [V2 Context] resist quality:bad effect:0.55 stance:deny fatigue:high layer:surface quality:bad | arch:affect_flattening | motive:third_party_protection | counter_blocked
+[page:log] [Scripted] friend-01/interrogation/b|d-3|S1|motive_search
+[page:log] [V2 Context] comply quality:good effect:1 stance:hedge fatigue:high layer:surface quality:good | arch:affect_flattening | motive:third_party_protection | counter_blocked
+[page:log] [Scripted] friend-01/interrogation/b|d-3|S2|empathy_approach
+[page:log] [thread-q] unlock step d-3 result b:S2

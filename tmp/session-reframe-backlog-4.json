@@ -1,0 +1,10 @@
+{
+  "removedFromActiveOn": "2026-04-10",
+  "cases": [
+    "friend-07",
+    "headline-01",
+    "spouse-12",
+    "workplace-11"
+  ],
+  "reason": "Session fit is not dominant enough for release. These cases require reframing or relocation before returning to the active set."
+}

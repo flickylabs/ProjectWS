@@ -314,6 +314,10 @@ export interface Dispute {
     requireEvidence?: string
   }
   legitimacyIssue: boolean
+  /** 게임 시작 시 숨겨진 쟁점 여부 */
+  hidden?: boolean
+  /** V3 visibility: 'hidden'이면 발현 전까지 비노출 */
+  v3Visibility?: 'visible' | 'hidden'
 }
 
 export interface ContextSeed {

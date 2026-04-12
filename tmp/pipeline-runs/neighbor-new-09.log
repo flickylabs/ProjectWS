@@ -1,0 +1,17 @@
+[case-stage1a-runtime] wrote src/data/cases/generated/neighbor-new-09.json
+[runtime-template-coverage] case=neighbor-new-09
+summary={}
+PASS
+[case-stage1e-mediation-dialogues] caseId=case-neighbor-new-09
+[case-stage1e-mediation-dialogues] out=src/data/dialogues/mediation/neighbor-new-09.json
+[case-stage2-scripted-bootstrap] wrote src/data/scriptedText/neighbor-new-09.json
+[scripted-template-coverage] case=neighbor-new-09
+summary={}
+PASS
+[scripted-semantic-quality] case=neighbor-new-09
+summary={}
+PASS
+[validate-scripted-text] case=neighbor-new-09
+[validate-scripted-text] summary={}
+[validate-scripted-text] PASS
+[neighbor-new-09] wrote tmp\neighbor-new-09-stage3-validate.txt

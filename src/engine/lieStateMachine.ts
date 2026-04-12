@@ -62,6 +62,21 @@ export function attemptLieTransition(
     }
   }
 
+  // V4 폴백: 모든 question trigger에 대해 1단계 전이 허용
+  // (config에 정확한 trigger가 없어도, 같은 from state의 전이가 있으면 실행)
+  const QUESTION_TRIGGERS = ['direct_question', 'timeline_question', 'motive_question', 'context_question', 'empathy_question', 'provenance_question']
+  if (QUESTION_TRIGGERS.includes(trigger) && currentState !== 'S5') {
+    const sameFromTransition = config.transitions.find(t => t.from === currentState)
+    if (sameFromTransition) {
+      return { transitioned: true, from: currentState, to: sameFromTransition.to as LieState, trigger }
+    }
+    // 그래도 없으면 단순 다음 단계
+    const nextState = getNextState(currentState)
+    if (nextState) {
+      return { transitioned: true, from: currentState, to: nextState, trigger }
+    }
+  }
+
   // 증인 증언: 직접 목격(soft_evidence 수준)이면 한 단계 진행 시도
   if (trigger === 'witness_testimony' && currentState <= 'S2') {
     const nextState = getNextState(currentState)

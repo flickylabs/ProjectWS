@@ -1,0 +1,6 @@
+[53176:32860:0410/131038.755:ERROR:components\device_event_log\device_event_log_impl.cc:202] [13:10:38.755] USB: usb_service_win.cc:104 SetupDiGetDeviceProperty({{A45C254E-DF1C-4EFD-8020-67D146A850E0}, 6}) failed: 요소가 없습니다. (0x490)
+[53176:21760:0410/131040.057:ERROR:google_apis\gcm\engine\registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT
+Created TensorFlow Lite XNNPACK delegate for CPU.
+[53176:21760:0410/131107.182:ERROR:google_apis\gcm\engine\registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT
+[53176:21760:0410/131152.294:ERROR:google_apis\gcm\engine\registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT
+52863 bytes written to file d:\ProjectWS\tmp\thread-u-index-pc.png

@@ -1,0 +1,3 @@
+[scripted-semantic-quality] case=online-new-09
+summary={}
+PASS

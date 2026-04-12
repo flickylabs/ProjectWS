@@ -28,6 +28,9 @@ function summarizeEvent(event: GameEvent): string {
 export default function PCCaseTimelineSection() {
   const gameEventLog = useStore((s) => s.gameEventLog)
   const dialogueLog = useStore((s) => s.dialogueLog)
+  const caseData = useStore((s) => s.caseData)
+  const agentA = useStore((s) => s.agentA)
+  const agentB = useStore((s) => s.agentB)
   const scrollRef = useRef<HTMLDivElement>(null)
 
   const timelineItems = useMemo<TimelineItem[]>(() => {
@@ -38,6 +41,19 @@ export default function PCCaseTimelineSection() {
       tone: TONE_MAP[event.type] ?? 'neutral',
     }))
   }, [gameEventLog])
+
+  const mysteryPoints = useMemo(() => {
+    if (!caseData) return []
+    const LIE_ORDER = ['S0', 'S1', 'S2', 'S3', 'S4', 'S5']
+    return caseData.disputes
+      .filter((d) => {
+        const stA = agentA?.lieStateMap[d.id]?.currentState ?? 'S0'
+        const stB = agentB?.lieStateMap[d.id]?.currentState ?? 'S0'
+        return Math.max(LIE_ORDER.indexOf(stA), LIE_ORDER.indexOf(stB)) < 3
+      })
+      .map((d) => ({ id: `mystery-${d.id}`, hint: `이 시기에 무언가 있었을 것 같다` }))
+      .slice(0, 3)
+  }, [caseData, agentA, agentB])
 
   useEffect(() => {
     const el = scrollRef.current
@@ -108,6 +124,20 @@ export default function PCCaseTimelineSection() {
                     <span className="pc-timeline__summary">{item.summary}</span>
                   </span>
                 </button>
+              ))}
+              {/* Mystery points */}
+              {mysteryPoints.map((mp) => (
+                <div className="pc-timeline__item is-mystery" key={mp.id}>
+                  <span className="pc-timeline__rail">
+                    <span className="pc-timeline__line" />
+                    <span className="pc-timeline__dot is-mystery" />
+                    <span className="pc-timeline__line" />
+                  </span>
+                  <span className="pc-timeline__content">
+                    <span className="pc-timeline__turn">???</span>
+                    <span className="pc-timeline__summary">{mp.hint}</span>
+                  </span>
+                </div>
               ))}
             </div>
           )}

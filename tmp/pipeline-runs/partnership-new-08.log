@@ -1,0 +1,17 @@
+[case-stage1a-runtime] wrote src/data/cases/generated/partnership-new-08.json
+[runtime-template-coverage] case=partnership-new-08
+summary={}
+PASS
+[case-stage1e-mediation-dialogues] caseId=case-partnership-new-08
+[case-stage1e-mediation-dialogues] out=src/data/dialogues/mediation/partnership-new-08.json
+[case-stage2-scripted-bootstrap] wrote src/data/scriptedText/partnership-new-08.json
+[scripted-template-coverage] case=partnership-new-08
+summary={}
+PASS
+[scripted-semantic-quality] case=partnership-new-08
+summary={}
+PASS
+[validate-scripted-text] case=partnership-new-08
+[validate-scripted-text] summary={}
+[validate-scripted-text] PASS
+[partnership-new-08] wrote tmp\partnership-new-08-stage3-validate.txt

@@ -12,6 +12,7 @@ import PCDialogueLog from './PCDialogueLog'
 import PCDisputeRibbon from './PCDisputeRibbon'
 import PCGameplayOverlay from './PCGameplayOverlay'
 import PCInteractionPanel, { openPcInteractionPanel } from './PCInteractionPanel'
+import PCRecordSummary from './PCRecordSummary'
 
 interface Props {
   actionPanel?: ReactNode
@@ -56,6 +57,7 @@ export default function PCCourtLayout({ actionPanel, onDialogueTap, isDialoguePh
   const turnCount = useStore((s) => s.turnCount)
 
   const [phaseBanner, setPhaseBanner] = useState<string | null>(null)
+  const [recordSummaryOpen, setRecordSummaryOpen] = useState(false)
   const prevPhaseRef = useRef(currentPhase)
 
   useEffect(() => {
@@ -68,6 +70,12 @@ export default function PCCourtLayout({ actionPanel, onDialogueTap, isDialoguePh
       return () => window.clearTimeout(timer)
     }
   }, [currentPhase])
+
+  useEffect(() => {
+    const handler = () => setRecordSummaryOpen(true)
+    window.addEventListener('pc:open-record-summary', handler)
+    return () => window.removeEventListener('pc:open-record-summary', handler)
+  }, [])
 
   useEffect(() => {
     const timer = window.setTimeout(() => {
@@ -282,6 +290,7 @@ export default function PCCourtLayout({ actionPanel, onDialogueTap, isDialoguePh
       <PCEvidenceViewer />
       <PCInteractionPanel />
       <PCGameplayOverlay />
+      {recordSummaryOpen ? <PCRecordSummary onClose={() => setRecordSummaryOpen(false)} /> : null}
     </>
   )
 }

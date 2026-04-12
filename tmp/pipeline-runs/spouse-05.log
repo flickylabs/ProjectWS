@@ -1,0 +1,13 @@
+[runtime-template-coverage] case=spouse-05
+summary={}
+PASS
+[scripted-template-coverage] case=spouse-05
+summary={}
+PASS
+[scripted-semantic-quality] case=spouse-05
+summary={}
+PASS
+[validate-scripted-text] case=spouse-05
+[validate-scripted-text] summary={}
+[validate-scripted-text] PASS
+[spouse-05] wrote tmp\spouse-05-stage3-validate.txt

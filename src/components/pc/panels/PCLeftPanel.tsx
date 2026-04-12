@@ -44,7 +44,6 @@ export default function PCLeftPanel() {
   const currentPhase = useStore((s) => s.currentPhase)
   const evidenceDefinitions = useStore((s) => s.evidenceDefinitions)
   const evidenceStates = useStore((s) => s.evidenceStates)
-  const recommendedEvidenceIds = useStore((s) => s.recommendedEvidenceIds)
   const lastFocusedDisputeId = useStore((s) => s.lastFocusedDisputeId)
   const [timelineOpen, setTimelineOpen] = useState(false)
 
@@ -99,7 +98,7 @@ export default function PCLeftPanel() {
     window.dispatchEvent(new CustomEvent<PcCombinationPanelEventDetail>(PC_ADD_COMBINATION_NOTE_EVENT, { detail: { evidenceId } }))
   }, [])
 
-  const startEvidenceDrag = useCallback((event: DragEvent<HTMLButtonElement>, evidenceId: string, label: string) => {
+  const startEvidenceDrag = useCallback((event: DragEvent<HTMLElement>, evidenceId: string, label: string) => {
     event.dataTransfer.effectAllowed = 'copyMove'
     event.dataTransfer.setData(HOTBAR_DRAG_TYPE, JSON.stringify({ kind: 'evidence', evidenceId }))
     event.dataTransfer.setData('text/plain', label)
@@ -120,7 +119,7 @@ export default function PCLeftPanel() {
       <section className="sec pc-play-evidence-section">
         <div className="sec-h">
           <PCSvgIcon id="i-doc" size={14} />
-          <span>증거</span>
+          <span>증거 수첩</span>
           <span className="cnt">{surfaceResult ? evidenceCards.length : 0}</span>
           <span className="sub">{`— 잠금 ${lockedCount}`}</span>
           <span className="pc-evidence-help" title="단서는 심문 진행 또는 증거 제시 이후 추가로 등장합니다">?</span>
@@ -128,35 +127,56 @@ export default function PCLeftPanel() {
 
         <div className="pc-play-evidence-list">
           {evidenceCards.map((evidence) => {
-            const recommended = recommendedEvidenceIds.includes(evidence.id)
-            const surfaced = surfaceResult?.surfacedIds.includes(evidence.id) ?? false
             const state = evidenceStates[evidence.id]
             const label = state?.deepInvestigated ? evidence.name : (evidence.surfaceName ?? evidence.name)
+            const desc = state?.deepInvestigated ? evidence.description : (evidence.surfaceDescription ?? evidence.description)
+            const stages = evidence.investigationStages ?? []
+            const investigatedKeys = new Set(state?.investigatedActions ?? [])
+            const hiddenCount = stages.filter((s) => !investigatedKeys.has(s.revealKey)).length
 
             return (
-              <button
-                className={`ev-card pc-play-ev-card${recommended || surfaced ? ' rec' : ''}${surfaceResult?.dimmedIds.includes(evidence.id) ? ' is-dim' : ''}`}
+              <div
+                className="pc-ev-notebook"
                 draggable
                 key={evidence.id}
-                onClick={(event) => {
-                  if (event.shiftKey) {
-                    sendEvidenceToCombination(evidence.id)
-                    return
-                  }
-                  openEvidenceMenu(evidence)
-                }}
-                onDoubleClick={() => openEvidenceMenu(evidence)}
                 onDragStart={(event) => startEvidenceDrag(event, evidence.id, label)}
-                type="button"
               >
-                <span className="ev-ico">
-                  <PCSvgIcon id={getPcEvidenceSymbolId(evidence.type)} size={18} />
-                </span>
-                <span className="ev-nm">{label}</span>
-                <span className={`ev-badge ${recommended ? 'badge-rec' : 'badge-new'}`}>
-                  {TYPE_LABELS[evidence.type] ?? '기록'}
-                </span>
-              </button>
+                <button
+                  className="pc-ev-notebook__header"
+                  onClick={(event) => {
+                    if (event.shiftKey) {
+                      sendEvidenceToCombination(evidence.id)
+                      return
+                    }
+                    openEvidenceMenu(evidence)
+                  }}
+                  type="button"
+                >
+                  <span className="pc-ev-notebook__icon">
+                    <PCSvgIcon id={getPcEvidenceSymbolId(evidence.type)} size={16} />
+                  </span>
+                  <span className="pc-ev-notebook__name">{label}</span>
+                  <span className="pc-ev-notebook__badge">{TYPE_LABELS[evidence.type] ?? '기록'}</span>
+                </button>
+                <div className="pc-ev-notebook__body">
+                  <p className="pc-ev-notebook__desc">{desc}</p>
+                  {stages.length > 0 ? (
+                    <div className="pc-ev-notebook__findings">
+                      <span className="pc-ev-notebook__findings-label">발견한 내용:</span>
+                      {stages.map((s, i) => {
+                        const revealed = investigatedKeys.has(s.revealKey)
+                        const result = evidence.investigationResults[s.revealKey]
+                        return revealed && result ? (
+                          <span className="pc-ev-notebook__finding is-revealed" key={i}>{result}</span>
+                        ) : null
+                      })}
+                      {hiddenCount > 0 ? (
+                        <span className="pc-ev-notebook__finding is-hidden">(미확인 항목 {hiddenCount}개)</span>
+                      ) : null}
+                    </div>
+                  ) : null}
+                </div>
+              </div>
             )
           })}
         </div>

@@ -86,12 +86,23 @@ export function runDiscoveryChecks(party: PartyId, disputeId?: string) {
   for (const entry of Object.values(discovery.disputeVisibility) as DisputeVisibilityEntry[]) {
     if (entry.visibility !== 'hidden') continue
 
+    // lieStates 맵 구축 (lie_state_threshold 체크용)
+    const lieStatesMap = {
+      a: Object.fromEntries(
+        Object.entries(agentA.lieStateMap).map(([dId, e]) => [dId, (e as any).currentState ?? 'S0']),
+      ),
+      b: Object.fromEntries(
+        Object.entries(agentB.lieStateMap).map(([dId, e]) => [dId, (e as any).currentState ?? 'S0']),
+      ),
+    }
+
     const via = checkEmergence(entry, {
       presentedEvidenceIds,
       judgedDisputeIds,
       calledWitnessIds: calledWitnesses,
       collapsedDisputes,
       emotionalSlipDisputes,
+      lieStates: lieStatesMap,
     })
 
     if (via) {
