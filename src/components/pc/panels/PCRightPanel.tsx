@@ -333,7 +333,7 @@ export default function PCRightPanel() {
       actions: [
         {
           kind: pcSummaryUnlocked ? 'open_summary' : 'unlock_summary',
-          label: pcSummaryUnlocked ? '\uC694\uC57D \uC2E4\uD589' : '\uC694\uC57D \uD574\uAE08',
+          label: pcSummaryUnlocked ? '기록 정리' : '요약 해금',
         },
       ],
     })
@@ -464,12 +464,12 @@ export default function PCRightPanel() {
 
       <section className="sec pc-right-block">
         <div className="pc-skill-card pc-summary-card pc-right-card">
-          <div className="pc-skill-card__eyebrow">{'\uC694\uC57D \uC2A4\uD0AC'}</div>
+          <div className="pc-skill-card__eyebrow">{'요약'}</div>
           <button className="pc-summary-button" onClick={openSummaryPanel} type="button">
             <span className="pc-summary-button__left">
               {!pcSummaryUnlocked ? <PCSvgIcon id="i-lock" size={16} /> : null}
             </span>
-            <span className="pc-summary-button__text">{'\uC694\uC57D \uC2E4\uD589'}</span>
+            <span className="pc-summary-button__text">{'기록 정리'}</span>
             <span className="pc-summary-button__right">
               {pcSummaryUnlocked ? null : (
                 <>

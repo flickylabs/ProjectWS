@@ -570,7 +570,8 @@ export default function PCInteractionPanel() {
         break
       }
       case 'open_summary':
-        setPayload(buildCaseSummaryPayload())
+        window.dispatchEvent(new Event('pc:open-record-summary'))
+        setPayload(null)
         return
       case 'unlock_summary': {
         const state = useGameStore.getState()

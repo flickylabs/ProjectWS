@@ -203,6 +203,7 @@ export default function PCBottomDock() {
   useEffect(() => {
     const onKeyDown = (event: KeyboardEvent) => {
       if ((event.target as HTMLElement)?.tagName === 'INPUT') return
+      const key = event.key.toLowerCase()
       const num = Number(event.key)
       if (num === 1) { event.preventDefault(); openQuestionChoice('fact_pursuit') }
       if (num === 2) { event.preventDefault(); openQuestionChoice('motive_search') }
@@ -210,6 +211,9 @@ export default function PCBottomDock() {
       if (num === 4) { event.preventDefault(); openFreeQuestion() }
       if (num === 5) { event.preventDefault(); openEvidenceChoice() }
       if (num === 6 && hasWitness) { event.preventDefault(); openWitnessPanel() }
+      if (key === 'q') { event.preventDefault(); openSpecialAction('separation') }
+      if (key === 'w') { event.preventDefault(); openSpecialAction('confidential') }
+      if (key === 'e') { event.preventDefault(); openSpecialAction('immediate') }
       if (event.key === 'Escape') closeAll()
     }
     window.addEventListener('keydown', onKeyDown)
@@ -325,24 +329,6 @@ export default function PCBottomDock() {
         </div>
       ) : null}
 
-      {/* --- Special skill bar (B-6) --- */}
-      <div className="pc-special-bar">
-        <button className="pc-special-bar__summary" onClick={() => window.dispatchEvent(new Event('pc:open-record-summary'))} title="기록 정리" type="button">
-          기록 정리
-        </button>
-        <div className="pc-special-bar__actions">
-          <button className="pc-special-bar__action" onClick={() => openSpecialAction('separation')} title="분리 심문" type="button">
-            <PCSvgIcon id="i-hand" size={14} /><span>분리 심문</span>
-          </button>
-          <button className="pc-special-bar__action" onClick={() => openSpecialAction('confidential')} title="비공개 보호" type="button">
-            <PCSvgIcon id="i-shield" size={14} /><span>비공개 보호</span>
-          </button>
-          <button className="pc-special-bar__action" onClick={() => openSpecialAction('immediate')} title="즉답 요구" type="button">
-            <PCSvgIcon id="i-bolt" size={14} /><span>즉답 요구</span>
-          </button>
-        </div>
-      </div>
-
       {/* --- Main hotbar --- */}
       <div className="hbar pc-play-hbar">
         {/* Character A */}
@@ -359,10 +345,16 @@ export default function PCBottomDock() {
         <div className="hb-center hb-center--compact">
           <div className="hotbar hotbar--compact hotbar--v4">
             <div className="hotbar-topbar">
-              <div className="hotbar-help">
-                <span><kbd>1~6</kbd> 슬롯 실행</span>
-                <span className="hotbar-help__sep">/</span>
-                <span><kbd>ESC</kbd> 닫기</span>
+              <div className="hotbar-special-row">
+                <button className="hotbar-special-btn" onClick={() => openSpecialAction('separation')} title="분리 심문 (Q)" type="button">
+                  <kbd>Q</kbd><PCSvgIcon id="i-hand" size={13} /><span>분리 심문</span>
+                </button>
+                <button className="hotbar-special-btn" onClick={() => openSpecialAction('confidential')} title="비공개 보호 (W)" type="button">
+                  <kbd>W</kbd><PCSvgIcon id="i-shield" size={13} /><span>비공개 보호</span>
+                </button>
+                <button className="hotbar-special-btn" onClick={() => openSpecialAction('immediate')} title="즉답 요구 (E)" type="button">
+                  <kbd>E</kbd><PCSvgIcon id="i-bolt" size={13} /><span>즉답 요구</span>
+                </button>
               </div>
             </div>
 
