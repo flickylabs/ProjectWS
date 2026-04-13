@@ -24,3 +24,5 @@ server/solomon.db-shm
 server/solomon.db-wal
 server/node_modules/
 dist-pc/
+
+.vercel

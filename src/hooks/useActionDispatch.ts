@@ -3,6 +3,7 @@ import { useCallback } from 'react'
 import { useGameStore } from '../store/useGameStore'
 import { resolveDialogue, generateDynamicFallback } from '../engine/dialogueResolver'
 import { resolveLLMDialogue } from '../engine/llmDialogueResolver'
+import { pp을를, pp과와, pp이가 } from '../engine/koreanPostposition'
 import { generateWitnessTestimony, canCallWitness, determineTestimonyDepth, getDepthSystemMessage } from '../engine/witnessEngine'
 import type { PlayerAction, PartyId, QuestionType, DialogueNode } from '../types'
 import { playEvidencePresent, playLieCollapse, playEvidenceUnlock, playEvidenceUpgrade, playSeparation } from '../engine/soundEngine'
@@ -193,6 +194,26 @@ export function resolveInterjectionV2(choice: 'allow' | 'block'): void {
     }
   }
 
+  // 재판관 후속 코멘트 — 끼어들기 허용/차단 후 흐름 이어가기
+  const interruptorName = opportunity.interruptor === 'a'
+    ? store.caseData?.duo.partyA.name ?? 'A'
+    : store.caseData?.duo.partyB.name ?? 'B'
+  if (choice === 'allow') {
+    store.addDialogue({
+      speaker: 'judge',
+      text: `${interruptorName} 씨의 발언을 기록했습니다. 심문을 계속하겠습니다.`,
+      relatedDisputes: [opportunity.disputeId],
+      turn: store.turnCount,
+    })
+  } else {
+    store.addDialogue({
+      speaker: 'judge',
+      text: `${interruptorName} 씨, 지금은 발언 순서가 아닙니다. 심문을 계속합니다.`,
+      relatedDisputes: [opportunity.disputeId],
+      turn: store.turnCount,
+    })
+  }
+
   // 대기 해제
   store.setPendingInterjectionV2(null)
   console.log(`[V2 Interjection] resolved: ${choice}`, effects.map(e => e.type).join(', '))
@@ -242,7 +263,10 @@ export function useActionDispatch() {
 
 // ── 증거 제시 ──
 let evidencePresentLock = false
-let _lastTransitionChoiceTurn = -1  // 전략 선택 모달: 턴당 1회 제한
+/** 전략 선택 패널에서 실행한 액션 중에는 새 전략 선택을 차단 */
+let _suppressTransitionChoice = false
+export function suppressTransitionChoice() { _suppressTransitionChoice = true }
+export function unsuppressTransitionChoice() { _suppressTransitionChoice = false }
 async function handleEvidencePresent(action: Extract<PlayerAction, { type: 'evidence_present' }>) {
   if (evidencePresentLock) return
   evidencePresentLock = true
@@ -416,8 +440,7 @@ async function handleEvidencePresent(action: Extract<PlayerAction, { type: 'evid
 
         // 상태 전이 후 전략 선택 모달 (증거 제시 경유, 턴당 1회)
         const transLabel = getTransitionLabel(prev, cur)
-        if ((transLabel === 'cracked' || transLabel === 'cornered' || transLabel === 'opening') && _lastTransitionChoiceTurn !== v3State.turnCount) {
-          _lastTransitionChoiceTurn = v3State.turnCount
+        if ((transLabel === 'cracked' || transLabel === 'cornered' || transLabel === 'opening') && !_suppressTransitionChoice) {
           v3State.setPendingTransitionChoice({
             label: transLabel,
             party: action.target,
@@ -452,7 +475,6 @@ async function handleCallWitness(action: Extract<PlayerAction, { type: 'call_wit
   // 비용: 조사 토큰 1개
   if (state.resources.investigationTokens < 1) {
     state.addDialogue({ speaker: 'system', text: '조사 토큰이 모두 소진되었습니다.', relatedDisputes: [], turn: state.turnCount })
-    import('../components/layout/CourtHeader').then(m => m.openResourcePopup('invest'))
     return
   }
   state.spend('investigationTokens', 1)
@@ -1340,8 +1362,7 @@ async function handleQuestion(action: Extract<PlayerAction, { type: 'question' }
 
       // 상태 전이 후 전략 선택 모달 (cracked/cornered/opening만, 턴당 1회)
       const transLabel = getTransitionLabel(prevState, newState)
-      if ((transLabel === 'cracked' || transLabel === 'cornered' || transLabel === 'opening') && _lastTransitionChoiceTurn !== v3State.turnCount) {
-        _lastTransitionChoiceTurn = v3State.turnCount
+      if ((transLabel === 'cracked' || transLabel === 'cornered' || transLabel === 'opening') && !_suppressTransitionChoice) {
         v3State.setPendingTransitionChoice({
           label: transLabel,
           party: action.target,
@@ -1827,6 +1848,16 @@ function notifyLieTransition(party: PartyId, disputeId: string) {
       : `${icon} ${name} — ${labels[newState]}`
     state.addDialogue({ speaker: 'system', text, relatedDisputes: [disputeId], turn: state.turnCount })
 
+    // S5 도달 시 재판관이 계속 진술을 유도
+    if (newState === 'S5') {
+      state.addDialogue({
+        speaker: 'judge',
+        text: `${name} 씨, 계속 말씀해 보십시오.`,
+        relatedDisputes: [disputeId],
+        turn: state.turnCount,
+      })
+    }
+
     // S5 도달 시 진실 발견 + 정답지 기록
     if (newState === 'S5' && dispute) {
       playLieCollapse()
@@ -2058,7 +2089,7 @@ function buildQuestionText(type: QuestionType, target: PartyId, disputeId: strin
       `${myName} 씨, ${topic}에 대해 사실대로 말씀해 주십시오.`,
       `${myName} 씨, ${topic} 당시 정확히 어떤 일이 있었습니까?`,
       `${myName} 씨, ${topic}에 대해 빠뜨린 부분이 있지 않습니까?`,
-      `${myName} 씨, 아까 말씀하신 내용 중 ${topic}과 맞지 않는 부분이 있습니다. 설명해 주시겠습니까?`,
+      `${myName} 씨, 아까 말씀하신 내용 중 ${topic}${pp과와(topic)} 맞지 않는 부분이 있습니다. 설명해 주시겠습니까?`,
     ]
     return pool[(turn + disputeId.charCodeAt(disputeId.length - 1)) % pool.length]
   }
@@ -2066,7 +2097,7 @@ function buildQuestionText(type: QuestionType, target: PartyId, disputeId: strin
   if (type === 'motive_search') {
     if (lieState >= 'S3') return `${myName} 씨, 상대방 탓만 하지 마시고 ${topic}에 대한 본인의 생각을 말씀해 주십시오.`
     const pool = [
-      `${myName} 씨, ${topic}을 왜 그렇게 하셨습니까?`,
+      `${myName} 씨, ${topic}${pp을를(topic)} 왜 그렇게 하셨습니까?`,
       `${myName} 씨, ${topic} 당시 어떤 사정이 있었습니까?`,
       `${myName} 씨, 다른 방법도 있었을 텐데 왜 하필 그렇게 하셨는지 말씀해 주십시오.`,
       `${myName} 씨, ${topic}의 배경을 좀 더 설명해 주시겠습니까?`,

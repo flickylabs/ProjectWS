@@ -125,6 +125,8 @@ async function main() {
       resolveInterjectionV2,
       setSkipNextJudgeQuestion,
       setDossierQuestionOverride,
+      actuallyDiscoverEvidence,
+      handleContradictionPursue,
     } = hookMod
     const {
       getDossierCards,
@@ -434,6 +436,7 @@ async function main() {
           continue
         }
         if (store.pendingGameEvent) {
+          if (preferences.autoResolveGameEvent === false) break
           if (store.pendingGameEvent.type === 'contradiction') {
             await applyContradictionResolution(store.pendingGameEvent, preferences.contradiction ?? 'point_out')
           } else if (store.pendingGameEvent.type === 'interjection') {
@@ -447,6 +450,7 @@ async function main() {
           continue
         }
         if (store.pendingTransitionChoice) {
+          if (preferences.autoResolveTransitionChoice === false) break
           recordEvent('transition_choice', {
             label: store.pendingTransitionChoice.label,
             disputeId: store.pendingTransitionChoice.disputeId,
@@ -465,6 +469,7 @@ async function main() {
           continue
         }
         if (store.pendingMinigame) {
+          if (preferences.autoResolveMinigame === false) break
           recordEvent('minigame', { type: store.pendingMinigame.type })
           store.setPendingMinigame(null)
           await sleep(50)
@@ -475,20 +480,21 @@ async function main() {
       }
     }
 
-    async function dispatchTurn(action, preferences = {}) {
+    async function dispatchTurn(action, preferences = {}, options = {}) {
       const beforeTurn = getStore().turnCount
       const beforePhase = getStore().currentPhase
       const beforeLogLen = getStore().dialogueLog.length
+      const waitTimeoutMs = options.waitTimeoutMs ?? 12000
       devWindow.__pcDispatch(action)
       await waitFor(
         () =>
           getStore().turnCount > beforeTurn ||
           getStore().currentPhase !== beforePhase ||
           getStore().dialogueLog.length > beforeLogLen,
-        12000,
+        waitTimeoutMs,
         50,
       )
-      await waitFor(() => !getStore().isLLMLoading, 12000, 50)
+      await waitFor(() => !getStore().isLLMLoading, waitTimeoutMs, 50)
       await sleep(120)
       await resolvePending(preferences)
       await sleep(80)
@@ -677,6 +683,182 @@ async function main() {
         .slice(0, 20)
     }
 
+    function collectScriptedChannelHits(logStart, channel) {
+      const token = `/${channel}/`
+      return getLogs(logStart)
+        .filter((entry) => entry.text.includes('[Scripted]') && entry.text.includes(token))
+        .map((entry) => sliceText(entry.text, 220))
+        .slice(0, 20)
+    }
+
+    function collectScriptedChannelMisses(logStart, channel) {
+      const token = `/${channel}/`
+      return getLogs(logStart)
+        .filter((entry) => entry.text.includes('[Scripted miss]') && entry.text.includes(token))
+        .map((entry) => sliceText(entry.text, 220))
+        .slice(0, 20)
+    }
+
+    function rectSnapshot(node) {
+      if (!node) return null
+      const rect = node.getBoundingClientRect()
+      return {
+        top: Math.round(rect.top),
+        left: Math.round(rect.left),
+        width: Math.round(rect.width),
+        height: Math.round(rect.height),
+        right: Math.round(rect.right),
+        bottom: Math.round(rect.bottom),
+      }
+    }
+
+    function styleSnapshot(node) {
+      if (!node) return null
+      const style = window.getComputedStyle(node)
+      return {
+        display: style.display,
+        position: style.position,
+        flexDirection: style.flexDirection,
+        backgroundColor: style.backgroundColor,
+        borderColor: style.borderColor,
+        opacity: style.opacity,
+      }
+    }
+
+    function collectInteractionPanelState() {
+      const panel = document.querySelector('.pc-interaction-card')
+      const actionWrap = panel?.querySelector('.pc-interaction-card__actions')
+      return {
+        exists: Boolean(panel),
+        title: toText(panel?.querySelector('.pc-interaction-card__title')?.textContent ?? ''),
+        subtitle: toText(panel?.querySelector('.pc-interaction-card__subtitle')?.textContent ?? ''),
+        body: sliceText(panel?.querySelector('.pc-interaction-card__body')?.innerText ?? '', 320),
+        tags: listTexts('.pc-interaction-card__tag'),
+        actionTexts: listTexts('.pc-interaction-card__action'),
+        actionCount: panel?.querySelectorAll('.pc-interaction-card__action').length ?? 0,
+        className: toText(panel?.className ?? ''),
+        rect: rectSnapshot(panel),
+        actionsStyle: styleSnapshot(actionWrap),
+      }
+    }
+
+    async function clickFirstEnabled(selector) {
+      const nodes = Array.from(document.querySelectorAll(selector)).filter((node) => !node.disabled)
+      const target = nodes[0]
+      if (!target) return false
+      target.dispatchEvent(new MouseEvent('click', { bubbles: true }))
+      await nextFrame()
+      await sleep(120)
+      return true
+    }
+
+    async function clickButtonByText(selector, pattern) {
+      const buttons = Array.from(document.querySelectorAll(selector)).filter((button) => !button.disabled)
+      const target = buttons.find((button) => pattern.test(toText(button.innerText ?? button.textContent ?? '')))
+      if (!target) return false
+      target.dispatchEvent(new MouseEvent('click', { bubbles: true }))
+      await nextFrame()
+      await sleep(120)
+      return true
+    }
+
+    function collectSystemPalette() {
+      const rows = Array.from(document.querySelectorAll('.pc-log-system-row'))
+      const result = {}
+      for (const row of rows) {
+        const rowClass = toText(row.className ?? '')
+        const category = ['action', 'unlock', 'warning', 'success', 'witness', 'explainer', 'info']
+          .find((key) => rowClass.includes(`is-${key}`))
+        if (!category || result[category]) continue
+        const card = row.querySelector('.pc-log-system-card, .pc-log-system-explainer')
+        result[category] = {
+          rowClass,
+          cardClass: toText(card?.className ?? ''),
+          backgroundColor: card ? window.getComputedStyle(card).backgroundColor : null,
+          borderColor: card ? window.getComputedStyle(card).borderColor : null,
+          text: sliceText(card?.innerText ?? '', 180),
+        }
+      }
+      return result
+    }
+
+    function collectMediationUiState() {
+      const root = document.querySelector('.pc-mediation')
+      const optionsWrap = root?.querySelector('.pc-mediation__options')
+      return {
+        exists: Boolean(root),
+        phaseHeader: toText(document.querySelector('.pc-play-phase')?.innerText ?? ''),
+        title: toText(root?.querySelector('.pc-mediation__title')?.textContent ?? ''),
+        subtitle: toText(root?.querySelector('.pc-mediation__subtitle')?.textContent ?? ''),
+        optionLabels: listTexts('.pc-mediation__option-label'),
+        optionCount: root?.querySelectorAll('.pc-mediation__option').length ?? 0,
+        rect: rectSnapshot(root),
+        style: styleSnapshot(root),
+        optionsStyle: styleSnapshot(optionsWrap),
+        advanceButtons: listTexts('.pc-mediation__advance-btn'),
+      }
+    }
+
+    function collectVerdictUiState() {
+      const root = document.querySelector('.pc-verdict-screen') ?? document.querySelector('.pc-verdict-main')
+      const buttons = Array.from(document.querySelectorAll('.pc-verdict-fact__btn')).map((button) => ({
+        text: toText(button.innerText ?? ''),
+        main: toText(button.querySelector('.pc-verdict-fact__btn-main')?.textContent ?? ''),
+        sub: toText(button.querySelector('.pc-verdict-fact__btn-sub')?.textContent ?? ''),
+      }))
+      return {
+        exists: Boolean(root),
+        phaseHeader: toText(document.querySelector('.pc-play-phase')?.innerText ?? ''),
+        rect: rectSnapshot(root),
+        style: styleSnapshot(root),
+        factButtons: buttons,
+        step: getVerdictStep(),
+      }
+    }
+
+    async function collectRichResultScreenState() {
+      const base = await collectResultScreenState()
+      const heroActionWrap = document.querySelector('.pc-result-hero__actions')
+      const tabButtons = Array.from(document.querySelectorAll('.pc-result-tab'))
+      if (tabButtons[3]) {
+        tabButtons[3].dispatchEvent(new MouseEvent('click', { bubbles: true }))
+        await nextFrame()
+        await sleep(120)
+      }
+      const aftermathParagraphs = Array.from(document.querySelectorAll('.pc-result-panel p'))
+        .map((node) => toText(node.textContent ?? ''))
+        .filter(Boolean)
+      return {
+        ...base,
+        aftermathParagraphs,
+        heroActionButtons: listTexts('.pc-result-hero__button'),
+        heroActionWrapStyle: styleSnapshot(heroActionWrap),
+      }
+    }
+
+    async function navigateToCaseBrowserAudit() {
+      const exited = await clickFirstEnabled('.pc-result-hero__button')
+      await waitFor(() => Boolean(document.querySelector('.pc-home-v2')), 5000, 50)
+      const homeVisible = Boolean(document.querySelector('.pc-home-v2'))
+      const openedGeneral = homeVisible ? await clickFirstEnabled('.pc-mode-card') : false
+      await waitFor(() => Boolean(document.querySelector('.pc-session-card-v2')), 5000, 50)
+      const openedSession = await clickFirstEnabled('.pc-session-card-v2:not(.is-disabled)')
+      await waitFor(() => Boolean(document.querySelector('.pc-case-browser-v2')), 5000, 50)
+      const stageNode = document.querySelector('.pc-stage-node-v2')
+      return {
+        exited,
+        homeVisible,
+        openedGeneral,
+        openedSession,
+        browserVisible: Boolean(document.querySelector('.pc-case-browser-v2')),
+        stageNodeText: toText(stageNode?.innerText ?? ''),
+        stageNodeNumber: toText(stageNode?.querySelector('.pc-stage-node-v2__number')?.textContent ?? ''),
+        stageNodeState: toText(stageNode?.querySelector('.pc-stage-node-v2__state')?.textContent ?? ''),
+        stageNodeHasInlineTitle: Boolean(stageNode?.querySelector('h3, .pc-stage-node-v2__title')),
+        stagePreviewTitle: toText(document.querySelector('.pc-stage-preview-v2 h3')?.textContent ?? ''),
+      }
+    }
+
     async function collectVerdictFactTitles() {
       const dots = Array.from(document.querySelectorAll('.pc-verdict-fact__dot'))
       const titles = []
@@ -777,6 +959,55 @@ async function main() {
         phase7Ui,
         verdictFact,
         verdictFlow,
+        resultState,
+      }
+    }
+
+    async function driveToResultWithConditionalMediation(mode = 'forced') {
+      if (getStore().currentPhase === GamePhase.Phase3_Interrogation) {
+        const store = getStore()
+        if (mode === 'forced' && !store.canAdvancePhase()) {
+          store.setVerdictMode('forced_incomplete')
+        }
+        store.advancePhase(GamePhase.Phase6_Mediation)
+        await waitFor(() => getStore().currentPhase === GamePhase.Phase6_Mediation, 5000, 50)
+      }
+
+      await nextFrame()
+      await sleep(150)
+      const phase6Before = collectMediationUiState()
+      const optionButtons = Array.from(document.querySelectorAll('.pc-mediation__option'))
+      optionButtons[1]?.dispatchEvent(new MouseEvent('click', { bubbles: true }))
+      await nextFrame()
+      await waitFor(() => !getStore().isLLMLoading, 8000, 50)
+      await sleep(200)
+      const phase6After = collectMediationUiState()
+      if (document.querySelector('.pc-mediation__advance-btn')) {
+        document.querySelector('.pc-mediation__advance-btn')?.dispatchEvent(new MouseEvent('click', { bubbles: true }))
+      } else {
+        getStore().advancePhase()
+      }
+
+      await waitFor(() => getStore().currentPhase === GamePhase.Phase7_Verdict, 5000, 50)
+      await nextFrame()
+      await sleep(150)
+      const phase7Before = collectVerdictUiState()
+      const verdictFact = await collectVerdictFactTitles()
+      prefillVerdict()
+      const verdictSteps = await progressVerdictUi()
+      let resultState = null
+      if (getStore().currentPhase === GamePhase.Result) {
+        await nextFrame()
+        await sleep(180)
+        resultState = await collectRichResultScreenState()
+      }
+      return {
+        phase6Before,
+        phase6After,
+        phase7Before,
+        verdictFact,
+        verdictSteps,
+        verdictScore: getStore().verdictScore,
         resultState,
       }
     }
@@ -2253,6 +2484,237 @@ async function main() {
         }
       }
 
+      if (strategy.id === 903) {
+        const hiddenNames = (getStore().caseData?.disputes ?? [])
+          .filter((dispute) => dispute.hidden || dispute.v3Visibility === 'hidden')
+          .map((dispute) => dispute.name)
+        const judgeQuestionSamples = []
+        const transitionPanels = []
+
+        const askWithTransitionAudit = async (action) => {
+          const beforeDialogue = getStore().dialogueLog.length
+          await dispatchTurn(
+            { type: 'question', ...action },
+            {
+              contradiction: 'point_out',
+              outburst: 'calm',
+              interjection: 'allow',
+              autoResolveTransitionChoice: false,
+            },
+            { waitTimeoutMs: 5000 },
+          )
+          await waitFor(() => Boolean(document.querySelector('.pc-interaction-card')), 1200, 50)
+          const panelState = collectInteractionPanelState()
+          if (panelState.exists) {
+            transitionPanels.push(panelState)
+            await clickFirstEnabled('.pc-interaction-card__action')
+            await waitFor(() => !document.querySelector('.pc-interaction-card'), 3000, 50)
+            await waitFor(() => !getStore().isLLMLoading, 5000, 50)
+            await sleep(120)
+          }
+          const judgeEntry = getStore().dialogueLog
+            .slice(beforeDialogue)
+            .find((entry) => entry.speaker === 'judge')
+          if (judgeEntry) judgeQuestionSamples.push(sliceText(judgeEntry.text, 220))
+        }
+
+        await askWithTransitionAudit({ target: 'a', disputeId: 'd-1', questionType: 'fact_pursuit' })
+        await askWithTransitionAudit({ target: 'a', disputeId: 'd-1', questionType: 'motive_search' })
+        await askWithTransitionAudit({ target: 'b', disputeId: 'd-1', questionType: 'empathy_approach' })
+
+        let interjectionAttempts = 0
+        while (
+          collectScriptedChannelHits(logStart, 'interjection').length === 0 &&
+          interjectionAttempts < 8 &&
+          getStore().currentPhase === GamePhase.Phase3_Interrogation
+        ) {
+          await dispatchTurn(
+            { type: 'question', target: 'a', disputeId: 'd-1', questionType: interjectionAttempts < 5 ? 'fact_pursuit' : 'motive_search' },
+            { contradiction: 'point_out', outburst: 'press', interjection: 'allow' },
+            { waitTimeoutMs: 5000 },
+          )
+          interjectionAttempts += 1
+        }
+
+        const contradictionBadgeBefore = toText(
+          document.querySelector('.pc-log-system-card.is-action:not(.is-used) .pc-log-system-card__action-badge')?.textContent ?? '',
+        )
+        let contradictionPanel = null
+        let contradictionPath = 'direct'
+        if (await clickFirstEnabled('.pc-log-system-card.is-action:not(.is-used)')) {
+          contradictionPath = 'ui_card'
+          await waitFor(() => Boolean(document.querySelector('.pc-interaction-card')), 3000, 50)
+          contradictionPanel = collectInteractionPanelState()
+          await clickFirstEnabled('.pc-interaction-card__action')
+          await waitFor(() => !document.querySelector('.pc-interaction-card'), 3000, 50)
+          await waitFor(() => !getStore().isLLMLoading, 5000, 50)
+          await sleep(120)
+        } else {
+          await handleContradictionPursue(
+            'a',
+            'd-1',
+            '오피스텔에는 간 적 없습니다.',
+            '같은 시간대에 근처까지는 갔습니다.',
+          )
+          await sleep(150)
+        }
+        const contradictionBadgeAfter = toText(
+          document.querySelector('.pc-log-system-card.is-action.is-used .pc-log-system-card__action-badge')?.textContent ?? '',
+        )
+        let contradictionDirectError = null
+        try {
+          await handleContradictionPursue(
+            'a',
+            'd-1',
+            '오피스텔에는 간 적이 없습니다.',
+            '같은 시간대 같은 주소 기록은 설명이 필요합니다.',
+          )
+          await sleep(150)
+        } catch (error) {
+          contradictionDirectError = String(error?.message ?? error)
+        }
+
+        const interjectionBefore = collectScriptedChannelHits(logStart, 'interjection').length
+        getStore().setPendingInterjectionV2({
+          type: 'interjection',
+          textId: 'thread-q-manual-interjection',
+          line: '제가 끼어드는 건 여기서 더는 못 듣겠어서입니다.',
+          choiceLabels: ['허용', '제지'],
+          interruptor: 'b',
+          target: 'a',
+          disputeId: 'd-1',
+          quadrant: 'both',
+          triggerReason: 'emotion_spike',
+          infoLevel: 'partial',
+          focusStreak: 3,
+          chanceApplied: 1,
+          severity: 'major',
+          allowEffects: [],
+          blockEffects: [],
+        })
+        await nextFrame()
+        resolveInterjectionV2('allow')
+        await sleep(150)
+        const interjectionAfter = collectScriptedChannelHits(logStart, 'interjection').length
+
+        const evidenceBefore = getUnlockedEvidenceIds()
+        getStore().setPendingMinigame({
+          type: 'evidence_discovery',
+          evidenceId: 'e-4',
+          clues: ['오피스텔', '새벽 통화', '현금 출금'],
+          npcName: getPartyName('a'),
+          lieState: getCurrentLie('a', 'd-1'),
+          party: 'a',
+          minigameVariant: 'memory',
+        })
+        await nextFrame()
+        await sleep(80)
+        const evidenceDiscoveryPendingBefore = Boolean(getStore().pendingMinigame)
+        let evidenceDiscoveryError = null
+        try {
+          actuallyDiscoverEvidence('e-4')
+          await waitFor(() => !getStore().isLLMLoading, 5000, 50)
+          await sleep(120)
+        } catch (error) {
+          evidenceDiscoveryError = String(error?.message ?? error)
+        }
+        const evidenceAfter = getUnlockedEvidenceIds()
+
+        const trustLogStart = getLogs().length
+        const trustTurnBefore = getStore().turnCount
+        let trustActionError = null
+        try {
+          await dispatchTurn(
+            { type: 'trust_action', actionType: 'separation', target: 'a', disputeId: 'd-1' },
+            {},
+            { waitTimeoutMs: 2500 },
+          )
+          await sleep(160)
+        } catch (error) {
+          trustActionError = String(error?.message ?? error)
+        }
+        const trustTurnAfter = getStore().turnCount
+        const trustErrors = getLogs(trustLogStart)
+          .filter((entry) => isSeriousError(entry))
+          .map((entry) => sliceText(entry.text, 220))
+          .slice(0, 10)
+
+        getStore().setPendingGameEvent({
+          type: 'emotional_burst',
+          party: 'a',
+          disputeId: 'd-1',
+          severity: 'major',
+          description: '감정이 폭발해 언성이 높아졌다.',
+          deferredEffects: [],
+          scriptSlot: { textId: 'emotional_burst_major', fallbackText: '' },
+        })
+        await nextFrame()
+        await waitFor(() => Boolean(document.querySelector('.pc-discovery-card')), 3000, 50)
+        const emotionalPanel = {
+          title: toText(document.querySelector('.pc-discovery-card__title')?.textContent ?? ''),
+          subtitle: toText(document.querySelector('.pc-discovery-card__subtitle')?.textContent ?? ''),
+          buttons: listTexts('.pc-discovery-card__action'),
+          body: sliceText(document.querySelector('.pc-discovery-card__body')?.innerText ?? '', 220),
+        }
+        const emotionalButtons = Array.from(document.querySelectorAll('.pc-discovery-card__action'))
+        emotionalButtons[1]?.dispatchEvent(new MouseEvent('click', { bubbles: true }))
+        await nextFrame()
+        await sleep(160)
+
+        const phase3UiAudit = await collectPhase3UiAudit(hiddenNames)
+        const systemPalette = collectSystemPalette()
+        const verdictBundle = await driveToResultWithConditionalMediation('forced')
+        const caseBrowserAudit = await navigateToCaseBrowserAudit()
+
+        const channelAudit = {}
+        for (const channel of [
+          'interrogation',
+          'judge_question',
+          'judge_contradiction',
+          'contradiction_pursuit',
+          'interjection',
+          'trust_action',
+          'emotional_overload',
+          'evidence_discovery',
+          'mediation',
+        ]) {
+          channelAudit[channel] = {
+            hitTexts: collectScriptedChannelHits(logStart, channel),
+            missTexts: collectScriptedChannelMisses(logStart, channel),
+          }
+        }
+
+        detail = {
+          check: 'spouse scriptedText 9-channel + ui audit',
+          phase3Ui: phase3UiAudit,
+          judgeQuestionSamples,
+          judgeQuestionsIndirectOnly: judgeQuestionSamples.every((text) => !/["'“”]/.test(text)),
+          transitionPanels,
+          contradictionBadgeBefore,
+          contradictionBadgeAfter,
+          contradictionPath,
+          contradictionDirectError,
+          contradictionPanel,
+          interjectionAttempts,
+          interjectionInjected: interjectionAfter > interjectionBefore,
+          evidenceDiscoveryPendingBefore,
+          evidenceUnlockDelta: diffIds(evidenceBefore, evidenceAfter),
+          evidenceDiscoveryError,
+          trustAction: {
+            turnBefore: trustTurnBefore,
+            turnAfter: trustTurnAfter,
+            advanced: trustTurnAfter > trustTurnBefore,
+            error: trustActionError,
+            errors: trustErrors,
+          },
+          emotionalPanel,
+          systemPalette,
+          verdictBundle,
+          caseBrowserAudit,
+          channelAudit,
+        }
+      }
+
       if (strategy.id === 1001) {
         const chain = await executeUnlockChain([
           { disputeId: 'd-1', preferredTarget: 'b', targetState: 'S2', maxTurns: 6 },
@@ -2347,6 +2809,8 @@ async function main() {
         })
         const afterD1Ui = await collectPhase3UiAudit(hiddenNames)
         const unlockedAfterD1 = getUnlockedEvidenceIds()
+        const e1Step = await presentEvidenceStep('e-1', 'b')
+        const unlockedAfterE1 = getUnlockedEvidenceIds()
 
         const d2Progress = await advanceExactDisputeTo({
           target: 'b',
@@ -2356,13 +2820,37 @@ async function main() {
         })
         const afterD2Ui = await collectPhase3UiAudit(hiddenNames)
         const unlockedAfterD2 = getUnlockedEvidenceIds()
-
         const evidenceSteps = []
-        evidenceSteps.push(await presentEvidenceStep('e-1', 'b'))
-        for (const evidenceId of ['e-4', 'e-5', 'e-6', 'e-7']) {
-          evidenceSteps.push(await presentEvidenceStep(evidenceId, 'b'))
-        }
-        const afterEvidenceUi = await collectPhase3UiAudit(hiddenNames)
+        evidenceSteps.push(await presentEvidenceStep('e-4', 'b'))
+        evidenceSteps.push(await presentEvidenceStep('e-5', 'b'))
+
+        const d3Progress = await advanceExactDisputeTo({
+          target: 'b',
+          disputeId: 'd-3',
+          targetState: 'S3',
+          maxTurns: 8,
+        })
+        const afterD3Ui = await collectPhase3UiAudit(hiddenNames)
+        const d5VisibilityAfterD3 = getStore().discovery.disputeVisibility?.['d-5']?.visibility ?? 'hidden'
+        evidenceSteps.push(await presentEvidenceStep('e-6', 'b'))
+
+        const d4Progress = await advanceExactDisputeTo({
+          target: 'b',
+          disputeId: 'd-4',
+          targetState: 'S2',
+          maxTurns: 6,
+        })
+        const afterD4Ui = await collectPhase3UiAudit(hiddenNames)
+        const d5VisibilityAfterD4 = getStore().discovery.disputeVisibility?.['d-5']?.visibility ?? 'hidden'
+        evidenceSteps.push(await presentEvidenceStep('e-7', 'b'))
+
+        const d5Progress = await advanceDisputeTo({
+          disputeId: 'd-5',
+          preferredTarget: 'b',
+          targetState: 'S1',
+          maxTurns: 4,
+        })
+        const afterD5Ui = await collectPhase3UiAudit(hiddenNames)
         const verdictBundle = await driveToResultFromCurrentPhase('forced')
 
         detail = {
@@ -2372,11 +2860,20 @@ async function main() {
           d1Progress,
           afterD1Ui,
           unlockedAfterD1,
+          e1Step,
+          unlockedAfterE1,
           d2Progress,
           afterD2Ui,
           unlockedAfterD2,
+          d3Progress,
+          afterD3Ui,
+          d5VisibilityAfterD3,
+          d4Progress,
+          afterD4Ui,
+          d5VisibilityAfterD4,
+          d5Progress,
+          afterD5Ui,
           evidenceSteps,
-          afterEvidenceUi,
           verdictBundle,
         }
       }
@@ -2407,9 +2904,7 @@ async function main() {
         const unlockedAfterD2 = getUnlockedEvidenceIds()
 
         const evidenceSteps = []
-        for (const evidenceId of ['e-4', 'e-5', 'e-6']) {
-          evidenceSteps.push(await presentEvidenceStep(evidenceId, 'b'))
-        }
+        evidenceSteps.push(await presentEvidenceStep('e-4', 'b'))
 
         const d3Progress = await advanceExactDisputeTo({
           target: 'b',
@@ -2418,6 +2913,8 @@ async function main() {
           maxTurns: 8,
         })
         const afterD3Ui = await collectPhase3UiAudit(hiddenNames)
+        const d5VisibilityAfterD3 = getStore().discovery.disputeVisibility?.['d-5']?.visibility ?? 'hidden'
+        evidenceSteps.push(await presentEvidenceStep('e-5', 'b'))
 
         const d4Progress = await advanceExactDisputeTo({
           target: 'b',
@@ -2426,6 +2923,16 @@ async function main() {
           maxTurns: 6,
         })
         const afterD4Ui = await collectPhase3UiAudit(hiddenNames)
+        const d5VisibilityAfterD4 = getStore().discovery.disputeVisibility?.['d-5']?.visibility ?? 'hidden'
+        evidenceSteps.push(await presentEvidenceStep('e-6', 'b'))
+
+        const d5Progress = await advanceDisputeTo({
+          disputeId: 'd-5',
+          preferredTarget: 'b',
+          targetState: 'S1',
+          maxTurns: 4,
+        })
+        const afterD5Ui = await collectPhase3UiAudit(hiddenNames)
         const verdictBundle = await driveToResultFromCurrentPhase('forced')
 
         detail = {
@@ -2441,8 +2948,12 @@ async function main() {
           evidenceSteps,
           d3Progress,
           afterD3Ui,
+          d5VisibilityAfterD3,
           d4Progress,
           afterD4Ui,
+          d5VisibilityAfterD4,
+          d5Progress,
+          afterD5Ui,
           verdictBundle,
         }
       }
@@ -2494,6 +3005,7 @@ async function main() {
         ? [
             { id: 301, label: 'Run 1 ??bonus turn unlock-chain validation', choiceIndex: 0 },
             { id: 902, label: 'Run 2 ??early verdict without bonus turns', choiceIndex: 0 },
+            { id: 903, label: 'Run 3 ??scriptedText 9-channel and UI audit', choiceIndex: 0 },
           ]
       : runProfile === 'focus10'
         ? caseKey === 'family-01'

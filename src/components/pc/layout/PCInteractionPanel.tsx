@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
-import { handleContradictionPursue, useActionDispatch } from '../../../hooks/useActionDispatch'
+import { handleContradictionPursue, useActionDispatch, suppressTransitionChoice, unsuppressTransitionChoice } from '../../../hooks/useActionDispatch'
 import { useGameStore, useStore } from '../../../store/useGameStore'
 import type { PartyId, QuestionType } from '../../../types'
 import { showToast } from '../../common/Toast'
@@ -446,11 +446,13 @@ export default function PCInteractionPanel() {
           if (action.disputeId) {
             setLastFocusedDisputeId(action.disputeId)
           }
+          suppressTransitionChoice()
           dispatch({
             type: 'evidence_present',
             evidenceId: action.evidenceId,
             target: action.party,
           })
+          setTimeout(unsuppressTransitionChoice, 2000)
           setPayload(null)
           return
         }
@@ -483,12 +485,16 @@ export default function PCInteractionPanel() {
         if (action.party && action.disputeId && action.questionType) {
           setTargetParty(action.party)
           setLastFocusedDisputeId(action.disputeId)
+          // 전략 패널에서 실행한 액션 → 연속 전략 선택 차단
+          suppressTransitionChoice()
           dispatch({
             type: 'question',
             questionType: action.questionType,
             target: action.party,
             disputeId: action.disputeId,
           })
+          // 액션 처리 완료 후 차단 해제 (비동기 처리 후)
+          setTimeout(unsuppressTransitionChoice, 2000)
         }
         break
       case 'run_special': {

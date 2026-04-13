@@ -97,5 +97,9 @@ export function fixPostpositions(text: string): string {
   // "이름만을 보고" → "이름만 보고", "이름만을." → "이름만."
   result = result.replace(/만을(?=[\s.?!…,]|$)/g, '만')
 
+  // ── "없은" → "없는" 교정 (관형형 활용 오류) ──
+  // "없은 일" → "없는 일", "있은" → "있는" (관형 문맥)
+  result = result.replace(/없은/g, '없는')
+
   return result
 }

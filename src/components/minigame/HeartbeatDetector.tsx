@@ -4,11 +4,12 @@
  * 3번 연속 성공하면 통과. 실패 시 처음부터 다시.
  */
 import { useState, useEffect, useRef, useCallback } from 'react'
+import { IconSuccess, IconFail } from './MinigameSvgIcons'
 
 interface Props {
   onSuccess: () => void
   onFail: () => void
-  onWatchAd: () => void
+  onWatchAd?: () => void
 }
 
 const RADIUS = 80
@@ -138,7 +139,7 @@ export default function HeartbeatDetector({ onSuccess, onFail, onWatchAd }: Prop
       >
         {result === 'success' ? (
           <>
-            <div style={{ fontSize: 32 }}>🎯</div>
+            <IconSuccess size={48} />
             <p style={{ fontWeight: 700, fontSize: 18, margin: 0 }}>거짓말을 간파했다!</p>
             <button
               onClick={onSuccess}
@@ -152,7 +153,7 @@ export default function HeartbeatDetector({ onSuccess, onFail, onWatchAd }: Prop
           </>
         ) : (
           <>
-            <div style={{ fontSize: 32 }}>💭</div>
+            <IconFail size={48} />
             <p style={{ fontWeight: 700, fontSize: 18, margin: 0 }}>놓쳤다...</p>
             <div style={{ display: 'flex', gap: 12 }}>
               <button
@@ -164,7 +165,7 @@ export default function HeartbeatDetector({ onSuccess, onFail, onWatchAd }: Prop
               >
                 다시 시도
               </button>
-              <button
+              {onWatchAd && <button
                 onClick={onWatchAd}
                 style={{
                   padding: '10px 20px', borderRadius: 8, border: 'none',
@@ -172,7 +173,7 @@ export default function HeartbeatDetector({ onSuccess, onFail, onWatchAd }: Prop
                 }}
               >
                 광고 보기
-              </button>
+              </button>}
               <button
                 onClick={onFail}
                 style={{

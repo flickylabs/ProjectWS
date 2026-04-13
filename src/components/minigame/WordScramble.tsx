@@ -5,7 +5,7 @@
  * 30초 제한, 틀리면 3초 감점, 전부 맞으면 성공.
  */
 import { useState, useEffect, useCallback, useRef } from 'react'
-import Emoji from '../common/Emoji'
+import { IconSuccess, IconTimeout } from './MinigameSvgIcons'
 
 interface Props {
   /** 원문 단어 배열 (정답 순서) */
@@ -14,8 +14,8 @@ interface Props {
   onSuccess: () => void
   /** 실패 시 */
   onFail: () => void
-  /** 광고 보고 즉시 성공 */
-  onWatchAd: () => void
+  /** 광고 보고 즉시 성공 — PC에서는 미사용 */
+  onWatchAd?: () => void
 }
 
 type CheckResult = 'correct' | 'wrong' | null
@@ -322,7 +322,7 @@ export default function WordScramble({ words, onSuccess, onFail, onWatchAd }: Pr
           <div className="text-center space-y-4 py-2">
             {result === 'success' ? (
               <>
-                <Emoji char="🎯" size={48} />
+                <IconSuccess size={48} />
                 <div className="space-y-1">
                   <div className="text-sm font-bold text-emerald-400">모순을 밝혀냈다!</div>
                   <div className="text-xs text-gray-500">문장을 완벽하게 재조합했습니다</div>
@@ -330,18 +330,18 @@ export default function WordScramble({ words, onSuccess, onFail, onWatchAd }: Pr
               </>
             ) : (
               <>
-                <Emoji char="⏳" size={48} />
+                <IconTimeout size={48} />
                 <div className="space-y-1">
                   <div className="text-sm font-bold text-gray-400">시간이 초과됐다...</div>
                   <div className="text-xs text-gray-600">문장을 완성하지 못했습니다</div>
                 </div>
                 <div className="flex gap-2 pt-1">
-                  <button
+                  {onWatchAd && <button
                     onClick={onWatchAd}
                     className="flex-1 py-2.5 rounded-xl text-xs font-bold bg-amber-600 text-gray-950 active:scale-95 hover:bg-amber-500"
                   >
                     광고 보고 성공
-                  </button>
+                  </button>}
                   <button
                     onClick={onFail}
                     className="flex-1 py-2.5 rounded-xl text-xs text-gray-500 bg-gray-800 active:scale-95 hover:bg-gray-700"

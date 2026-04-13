@@ -3,21 +3,20 @@
  * 6쌍 = 12장의 이모지 카드를 3x4 그리드로 배치, 45초 제한
  */
 import { useState, useEffect, useCallback } from 'react'
-import Emoji from '../common/Emoji'
+import { CardIcon, IconCardBack, IconSuccess, IconFail, CARD_ICON_IDS } from './MinigameSvgIcons'
 
-const EMOJI_POOL = ['⚖️', '🔍', '📋', '🔒', '💼', '🏠', '🤝', '🔥', '⭐', '🎯', '📄', '⚡', '💡', '🏆']
 const TOTAL_PAIRS = 6
 const TIME_LIMIT = 45
 
 interface Props {
   onSuccess: () => void
   onFail: () => void
-  onWatchAd: () => void
+  onWatchAd?: () => void
 }
 
 interface Card {
   id: number
-  emoji: string
+  iconIndex: number
   pairId: number
   flipped: boolean
   matched: boolean
@@ -33,11 +32,11 @@ function shuffle<T>(arr: T[]): T[] {
 }
 
 function buildCards(): Card[] {
-  const chosen = shuffle(EMOJI_POOL).slice(0, TOTAL_PAIRS)
+  const indices = shuffle(Array.from({ length: CARD_ICON_IDS.length }, (_, i) => i)).slice(0, TOTAL_PAIRS)
   const cards: Card[] = []
-  chosen.forEach((emoji, pairId) => {
-    cards.push({ id: pairId * 2,     emoji, pairId, flipped: false, matched: false })
-    cards.push({ id: pairId * 2 + 1, emoji, pairId, flipped: false, matched: false })
+  indices.forEach((iconIndex, pairId) => {
+    cards.push({ id: pairId * 2,     iconIndex, pairId, flipped: false, matched: false })
+    cards.push({ id: pairId * 2 + 1, iconIndex, pairId, flipped: false, matched: false })
   })
   return shuffle(cards)
 }
@@ -160,8 +159,8 @@ export default function MatchingPuzzle({ onSuccess, onFail, onWatchAd }: Props) 
                 `}
               >
                 {card.flipped || card.matched
-                  ? <Emoji char={card.emoji} size={36} />
-                  : <span className="text-2xl text-gray-600 font-bold">?</span>
+                  ? <CardIcon index={card.iconIndex} size={36} />
+                  : <IconCardBack size={36} />
                 }
               </button>
             ))}
@@ -176,22 +175,22 @@ export default function MatchingPuzzle({ onSuccess, onFail, onWatchAd }: Props) 
 
       {result === 'success' && (
         <div className="text-center space-y-4">
-          <Emoji char="🎯" size={64} />
+          <IconSuccess size={64} />
           <div className="text-lg font-bold text-emerald-400">모든 짝을 찾았다!</div>
         </div>
       )}
 
       {result === 'fail' && (
         <div className="text-center space-y-4 px-8">
-          <Emoji char="💭" size={64} />
+          <IconFail size={64} />
           <div className="text-base font-bold text-gray-400">시간 초과...</div>
           <div className="flex gap-3">
-            <button
+            {onWatchAd && <button
               onClick={onWatchAd}
               className="flex-1 py-3 rounded-2xl text-sm font-bold bg-amber-500 text-gray-950 active:scale-95 transition-transform"
             >
               광고 보고 획득
-            </button>
+            </button>}
             <button
               onClick={onFail}
               className="flex-1 py-3 rounded-2xl text-sm text-gray-400 bg-gray-800 border border-gray-700 active:scale-95 transition-transform"

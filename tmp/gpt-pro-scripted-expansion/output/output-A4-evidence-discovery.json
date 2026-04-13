@@ -1,0 +1,604 @@
+{
+  "entries": [
+    {
+      "key": "b|e-1|probe",
+      "party": "b",
+      "evidenceId": "e-1",
+      "step": "probe",
+      "variants": [
+        {
+          "id": "discover-b-e-1-probe-v1",
+          "text": "그날 지출 목록을 보면 생활용품 말고도 다른 물건이 보입니다. 그 부분까지 함께 설명해 주시겠습니까.",
+          "behaviorHint": "재판관이 영수증의 겉항목을 훑은 뒤, 사소해 보이는 품목 하나를 조용히 다시 집어 든다.",
+          "tags": [
+            "channel:evidence_discovery_sequence",
+            "speaker:judge",
+            "speakerRole:judge",
+            "listener:party",
+            "listenerRole:party",
+            "address:toParty",
+            "scope:judge_only",
+            "revealScope:judge_only",
+            "register:formal",
+            "honorific:formal",
+            "audience:single",
+            "tense:present",
+            "relationship:spouse",
+            "judgeAddress:none",
+            "judgeAddressState:none",
+            "callTerm:이준호_씨",
+            "callTermState:defined",
+            "counterpartyRef:이준호_씨",
+            "counterpartyRefState:defined",
+            "targetParty:b",
+            "mentionTarget:evidence_sequence",
+            "emotion:measured",
+            "continuity:probe",
+            "reveal:none",
+            "revealGuard:open",
+            "disclosure:open",
+            "responseMode:judge_formal_prompt",
+            "step:probe",
+            "evidenceId:e-1",
+            "disputeId:d-1"
+          ],
+          "sourceRefs": [
+            "evidence:e-1",
+            "dispute:d-1"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "b|e-1|slip",
+      "party": "b",
+      "evidenceId": "e-1",
+      "step": "slip",
+      "variants": [
+        {
+          "id": "discover-b-e-1-slip-v1",
+          "text": "아, 그날은 참고서도… 아닙니다. 그건 지금 말씀드릴 얘기가 아닙니다.",
+          "behaviorHint": "무심코 튀어나온 단어를 급히 거둬들인다. 스스로 실수했다는 걸 바로 알아차린다.",
+          "tags": [
+            "channel:evidence_discovery_sequence",
+            "speaker:b",
+            "speakerRole:party",
+            "listener:judge",
+            "listenerRole:judge",
+            "address:toJudge",
+            "scope:judge_only",
+            "revealScope:judge_only",
+            "register:formal",
+            "honorific:formal",
+            "audience:single",
+            "tense:present",
+            "relationship:spouse",
+            "judgeAddress:재판관님",
+            "judgeAddressState:defined",
+            "callTerm:제_아내",
+            "callTermState:defined",
+            "counterpartyRef:제_아내",
+            "counterpartyRefState:defined",
+            "mentionTarget:evidence_sequence",
+            "emotion:cautious",
+            "continuity:slip",
+            "reveal:hint",
+            "revealGuard:moderate",
+            "disclosure:guarded",
+            "responseMode:judge_formal_answer",
+            "stance:hedge",
+            "step:slip",
+            "evidenceId:e-1",
+            "disputeId:d-1"
+          ],
+          "sourceRefs": [
+            "evidence:e-1",
+            "dispute:d-1"
+          ]
+        }
+      ],
+      "stanceHint": "hedge",
+      "truthLevel": "hint"
+    },
+    {
+      "key": "b|e-1|capture",
+      "party": "b",
+      "evidenceId": "e-1",
+      "step": "capture",
+      "variants": [
+        {
+          "id": "discover-b-e-1-capture-v1",
+          "text": "방금 참고서라고 하셨습니다. 누구를 위한 물건이었는지 분명하게 말씀해 주십시오.",
+          "behaviorHint": "재판관이 놓치지 않고 바로 단어를 붙든다. 주변 설명으로 흘려보내지 못하게 길을 막는다.",
+          "tags": [
+            "channel:evidence_discovery_sequence",
+            "speaker:judge",
+            "speakerRole:judge",
+            "listener:party",
+            "listenerRole:party",
+            "address:toParty",
+            "scope:judge_only",
+            "revealScope:judge_only",
+            "register:formal",
+            "honorific:formal",
+            "audience:single",
+            "tense:present",
+            "relationship:spouse",
+            "judgeAddress:none",
+            "judgeAddressState:none",
+            "callTerm:이준호_씨",
+            "callTermState:defined",
+            "counterpartyRef:이준호_씨",
+            "counterpartyRefState:defined",
+            "targetParty:b",
+            "mentionTarget:evidence_sequence",
+            "emotion:measured",
+            "continuity:capture",
+            "reveal:none",
+            "revealGuard:open",
+            "disclosure:open",
+            "responseMode:judge_formal_prompt",
+            "step:capture",
+            "evidenceId:e-1",
+            "disputeId:d-1"
+          ],
+          "sourceRefs": [
+            "evidence:e-1",
+            "dispute:d-1"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "b|e-1|confirm",
+      "party": "b",
+      "evidenceId": "e-1",
+      "step": "confirm",
+      "variants": [
+        {
+          "id": "discover-b-e-1-confirm-v1",
+          "text": "…네, 참고서를 산 건 맞습니다. 제가 볼 책은 아니었습니다.",
+          "behaviorHint": "끝까지 숨길 수 없다고 판단한 듯 짧게 인정한다. 하지만 대상은 아직 입에 올리지 않는다.",
+          "tags": [
+            "channel:evidence_discovery_sequence",
+            "speaker:b",
+            "speakerRole:party",
+            "listener:judge",
+            "listenerRole:judge",
+            "address:toJudge",
+            "scope:judge_only",
+            "revealScope:judge_only",
+            "register:formal",
+            "honorific:formal",
+            "audience:single",
+            "tense:present",
+            "relationship:spouse",
+            "judgeAddress:재판관님",
+            "judgeAddressState:defined",
+            "callTerm:제_아내",
+            "callTermState:defined",
+            "counterpartyRef:제_아내",
+            "counterpartyRefState:defined",
+            "mentionTarget:evidence_sequence",
+            "emotion:resigned",
+            "continuity:confirm",
+            "reveal:full",
+            "revealGuard:open",
+            "disclosure:open",
+            "responseMode:judge_formal_answer",
+            "stance:partial",
+            "step:confirm",
+            "evidenceId:e-1",
+            "disputeId:d-1"
+          ],
+          "sourceRefs": [
+            "evidence:e-1",
+            "dispute:d-1"
+          ]
+        }
+      ],
+      "stanceHint": "partial",
+      "truthLevel": "partial"
+    },
+    {
+      "key": "b|e-3|probe",
+      "party": "b",
+      "evidenceId": "e-3",
+      "step": "probe",
+      "variants": [
+        {
+          "id": "discover-b-e-3-probe-v1",
+          "text": "같은 번호와의 연락이 새벽에만 있었던 건 아닌 것 같습니다. 낮 시간대 연결까지 설명해 주시겠습니까.",
+          "behaviorHint": "재판관이 통화 시각의 패턴을 먼저 짚고, 새벽 바깥 시간대를 의도적으로 넓혀 묻는다.",
+          "tags": [
+            "channel:evidence_discovery_sequence",
+            "speaker:judge",
+            "speakerRole:judge",
+            "listener:party",
+            "listenerRole:party",
+            "address:toParty",
+            "scope:judge_only",
+            "revealScope:judge_only",
+            "register:formal",
+            "honorific:formal",
+            "audience:single",
+            "tense:present",
+            "relationship:spouse",
+            "judgeAddress:none",
+            "judgeAddressState:none",
+            "callTerm:이준호_씨",
+            "callTermState:defined",
+            "counterpartyRef:이준호_씨",
+            "counterpartyRefState:defined",
+            "targetParty:b",
+            "mentionTarget:evidence_sequence",
+            "emotion:measured",
+            "continuity:probe",
+            "reveal:none",
+            "revealGuard:open",
+            "disclosure:open",
+            "responseMode:judge_formal_prompt",
+            "step:probe",
+            "evidenceId:e-3",
+            "disputeId:d-1"
+          ],
+          "sourceRefs": [
+            "evidence:e-3",
+            "dispute:d-1"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "b|e-3|slip",
+      "party": "b",
+      "evidenceId": "e-3",
+      "step": "slip",
+      "variants": [
+        {
+          "id": "discover-b-e-3-slip-v1",
+          "text": "네. 학교 끝날 때쯤에도… 아닙니다. 그건 연결해서 보시면 안 됩니다.",
+          "behaviorHint": "숨어 있던 생활 맥락이 순간 입 밖으로 새어 나온다. 곧바로 스스로 선을 긋지만 이미 늦었다.",
+          "tags": [
+            "channel:evidence_discovery_sequence",
+            "speaker:b",
+            "speakerRole:party",
+            "listener:judge",
+            "listenerRole:judge",
+            "address:toJudge",
+            "scope:judge_only",
+            "revealScope:judge_only",
+            "register:formal",
+            "honorific:formal",
+            "audience:single",
+            "tense:present",
+            "relationship:spouse",
+            "judgeAddress:재판관님",
+            "judgeAddressState:defined",
+            "callTerm:제_아내",
+            "callTermState:defined",
+            "counterpartyRef:제_아내",
+            "counterpartyRefState:defined",
+            "mentionTarget:evidence_sequence",
+            "emotion:cautious",
+            "continuity:slip",
+            "reveal:hint",
+            "revealGuard:moderate",
+            "disclosure:guarded",
+            "responseMode:judge_formal_answer",
+            "stance:hedge",
+            "step:slip",
+            "evidenceId:e-3",
+            "disputeId:d-1"
+          ],
+          "sourceRefs": [
+            "evidence:e-3",
+            "dispute:d-1"
+          ]
+        }
+      ],
+      "stanceHint": "hedge",
+      "truthLevel": "hint"
+    },
+    {
+      "key": "b|e-3|capture",
+      "party": "b",
+      "evidenceId": "e-3",
+      "step": "capture",
+      "variants": [
+        {
+          "id": "discover-b-e-3-capture-v1",
+          "text": "방금 학교라고 하셨습니다. 그 번호와 학교 알림이 어떤 관계인지 설명해 주십시오.",
+          "behaviorHint": "재판관이 새로 나온 단서를 즉시 좁힌다. 번호의 정체를 더는 막연하게 둘 수 없게 만든다.",
+          "tags": [
+            "channel:evidence_discovery_sequence",
+            "speaker:judge",
+            "speakerRole:judge",
+            "listener:party",
+            "listenerRole:party",
+            "address:toParty",
+            "scope:judge_only",
+            "revealScope:judge_only",
+            "register:formal",
+            "honorific:formal",
+            "audience:single",
+            "tense:present",
+            "relationship:spouse",
+            "judgeAddress:none",
+            "judgeAddressState:none",
+            "callTerm:이준호_씨",
+            "callTermState:defined",
+            "counterpartyRef:이준호_씨",
+            "counterpartyRefState:defined",
+            "targetParty:b",
+            "mentionTarget:evidence_sequence",
+            "emotion:measured",
+            "continuity:capture",
+            "reveal:none",
+            "revealGuard:open",
+            "disclosure:open",
+            "responseMode:judge_formal_prompt",
+            "step:capture",
+            "evidenceId:e-3",
+            "disputeId:d-1"
+          ],
+          "sourceRefs": [
+            "evidence:e-3",
+            "dispute:d-1"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "b|e-3|confirm",
+      "party": "b",
+      "evidenceId": "e-3",
+      "step": "confirm",
+      "variants": [
+        {
+          "id": "discover-b-e-3-confirm-v1",
+          "text": "…네, 조카 학교 알림까지 그 번호로 왔습니다. 같은 번호가 맞습니다.",
+          "behaviorHint": "더 감추기 어렵다는 걸 알고 결국 핵심 연결고리를 인정한다.",
+          "tags": [
+            "channel:evidence_discovery_sequence",
+            "speaker:b",
+            "speakerRole:party",
+            "listener:judge",
+            "listenerRole:judge",
+            "address:toJudge",
+            "scope:judge_only",
+            "revealScope:judge_only",
+            "register:formal",
+            "honorific:formal",
+            "audience:single",
+            "tense:present",
+            "relationship:spouse",
+            "judgeAddress:재판관님",
+            "judgeAddressState:defined",
+            "callTerm:제_아내",
+            "callTermState:defined",
+            "counterpartyRef:제_아내",
+            "counterpartyRefState:defined",
+            "mentionTarget:evidence_sequence",
+            "emotion:resigned",
+            "continuity:confirm",
+            "reveal:full",
+            "revealGuard:open",
+            "disclosure:open",
+            "responseMode:judge_formal_answer",
+            "stance:partial",
+            "step:confirm",
+            "evidenceId:e-3",
+            "disputeId:d-1"
+          ],
+          "sourceRefs": [
+            "evidence:e-3",
+            "dispute:d-1"
+          ]
+        }
+      ],
+      "stanceHint": "partial",
+      "truthLevel": "full"
+    },
+    {
+      "key": "a|e-5|probe",
+      "party": "a",
+      "evidenceId": "e-5",
+      "step": "probe",
+      "variants": [
+        {
+          "id": "discover-a-e-5-probe-v1",
+          "text": "박지연 씨는 그 무렵 돈이 이상하게 움직인다는 걸 언제부터 느끼셨습니까.",
+          "behaviorHint": "재판관이 출금 자체보다 먼저 인지 시점을 묻는다. 누가 먼저 무엇을 봤는지 선후를 잡으려는 질문이다.",
+          "tags": [
+            "channel:evidence_discovery_sequence",
+            "speaker:judge",
+            "speakerRole:judge",
+            "listener:party",
+            "listenerRole:party",
+            "address:toParty",
+            "scope:judge_only",
+            "revealScope:judge_only",
+            "register:formal",
+            "honorific:formal",
+            "audience:single",
+            "tense:present",
+            "relationship:spouse",
+            "judgeAddress:none",
+            "judgeAddressState:none",
+            "callTerm:박지연_씨",
+            "callTermState:defined",
+            "counterpartyRef:박지연_씨",
+            "counterpartyRefState:defined",
+            "targetParty:a",
+            "mentionTarget:evidence_sequence",
+            "emotion:measured",
+            "continuity:probe",
+            "reveal:none",
+            "revealGuard:open",
+            "disclosure:open",
+            "responseMode:judge_formal_prompt",
+            "step:probe",
+            "evidenceId:e-5",
+            "disputeId:d-2"
+          ],
+          "sourceRefs": [
+            "evidence:e-5",
+            "dispute:d-2"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "a|e-5|slip",
+      "party": "a",
+      "evidenceId": "e-5",
+      "step": "slip",
+      "variants": [
+        {
+          "id": "discover-a-e-5-slip-v1",
+          "text": "처음엔 느낌뿐이었는데, 어느 날 목돈이 빠진 걸 보고… 아닙니다. 그건 아직.",
+          "behaviorHint": "숨기려던 확인 경로가 무심코 튀어나온다. 말끝을 삼키지만 이미 단서가 남는다.",
+          "tags": [
+            "channel:evidence_discovery_sequence",
+            "speaker:a",
+            "speakerRole:party",
+            "listener:judge",
+            "listenerRole:judge",
+            "address:toJudge",
+            "scope:judge_only",
+            "revealScope:judge_only",
+            "register:formal",
+            "honorific:formal",
+            "audience:single",
+            "tense:present",
+            "relationship:spouse",
+            "judgeAddress:재판관님",
+            "judgeAddressState:defined",
+            "callTerm:제_남편",
+            "callTermState:defined",
+            "counterpartyRef:제_남편",
+            "counterpartyRefState:defined",
+            "mentionTarget:evidence_sequence",
+            "emotion:cautious",
+            "continuity:slip",
+            "reveal:hint",
+            "revealGuard:moderate",
+            "disclosure:guarded",
+            "responseMode:judge_formal_answer",
+            "stance:hedge",
+            "step:slip",
+            "evidenceId:e-5",
+            "disputeId:d-2"
+          ],
+          "sourceRefs": [
+            "evidence:e-5",
+            "dispute:d-2"
+          ]
+        }
+      ],
+      "stanceHint": "hedge",
+      "truthLevel": "hint"
+    },
+    {
+      "key": "a|e-5|capture",
+      "party": "a",
+      "evidenceId": "e-5",
+      "step": "capture",
+      "variants": [
+        {
+          "id": "discover-a-e-5-capture-v1",
+          "text": "방금 목돈이 빠졌다고 하셨습니다. 그 움직임을 직접 보셨다는 뜻입니까.",
+          "behaviorHint": "재판관이 모호한 느낌의 영역을 잘라내고, 실제 열람 여부로 질문을 바꿔 고정한다.",
+          "tags": [
+            "channel:evidence_discovery_sequence",
+            "speaker:judge",
+            "speakerRole:judge",
+            "listener:party",
+            "listenerRole:party",
+            "address:toParty",
+            "scope:judge_only",
+            "revealScope:judge_only",
+            "register:formal",
+            "honorific:formal",
+            "audience:single",
+            "tense:present",
+            "relationship:spouse",
+            "judgeAddress:none",
+            "judgeAddressState:none",
+            "callTerm:박지연_씨",
+            "callTermState:defined",
+            "counterpartyRef:박지연_씨",
+            "counterpartyRefState:defined",
+            "targetParty:a",
+            "mentionTarget:evidence_sequence",
+            "emotion:measured",
+            "continuity:capture",
+            "reveal:none",
+            "revealGuard:open",
+            "disclosure:open",
+            "responseMode:judge_formal_prompt",
+            "step:capture",
+            "evidenceId:e-5",
+            "disputeId:d-2"
+          ],
+          "sourceRefs": [
+            "evidence:e-5",
+            "dispute:d-2"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "a|e-5|confirm",
+      "party": "a",
+      "evidenceId": "e-5",
+      "step": "confirm",
+      "variants": [
+        {
+          "id": "discover-a-e-5-confirm-v1",
+          "text": "…네. 3,000만원이 현금으로 빠진 건 제가 직접 봤습니다. 그래서 더 놓지 못했습니다.",
+          "behaviorHint": "결국 확인 사실과 금액을 함께 인정한다. 그 순간부터 자신도 선을 넘기 시작했다는 뉘앙스가 따라온다.",
+          "tags": [
+            "channel:evidence_discovery_sequence",
+            "speaker:a",
+            "speakerRole:party",
+            "listener:judge",
+            "listenerRole:judge",
+            "address:toJudge",
+            "scope:judge_only",
+            "revealScope:judge_only",
+            "register:formal",
+            "honorific:formal",
+            "audience:single",
+            "tense:present",
+            "relationship:spouse",
+            "judgeAddress:재판관님",
+            "judgeAddressState:defined",
+            "callTerm:제_남편",
+            "callTermState:defined",
+            "counterpartyRef:제_남편",
+            "counterpartyRefState:defined",
+            "mentionTarget:evidence_sequence",
+            "emotion:resigned",
+            "continuity:confirm",
+            "reveal:full",
+            "revealGuard:open",
+            "disclosure:open",
+            "responseMode:judge_formal_answer",
+            "stance:partial",
+            "step:confirm",
+            "evidenceId:e-5",
+            "disputeId:d-2"
+          ],
+          "sourceRefs": [
+            "evidence:e-5",
+            "dispute:d-2"
+          ]
+        }
+      ],
+      "stanceHint": "partial",
+      "truthLevel": "full"
+    }
+  ]
+}

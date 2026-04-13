@@ -14,12 +14,22 @@ export default function PCRecordSummary({ onClose }: { onClose: () => void }) {
   const agentB = useStore((s) => s.agentB)
   const dialogueLog = useStore((s) => s.dialogueLog)
   const evidenceStates = useStore((s) => s.evidenceStates)
+  const disputeVisibility = useStore((s) => s.discovery.disputeVisibility)
+
+  // hidden 쟁점 중 아직 emerged 되지 않은 것은 표시하지 않음
+  const isVisible = (disputeId: string) => {
+    const vis = disputeVisibility[disputeId]
+    if (!vis) return true // visibility 정보가 없으면 기본 표시
+    return vis.visibility !== 'hidden'
+  }
 
   const confirmedFacts = useMemo(() => {
     if (!caseData) return []
     const facts: { text: string; confirmed: boolean }[] = []
 
     for (const dispute of caseData.disputes) {
+      if (!isVisible(dispute.id)) continue
+
       const stateA = agentA.lieStateMap[dispute.id]?.currentState ?? 'S0'
       const stateB = agentB.lieStateMap[dispute.id]?.currentState ?? 'S0'
       const maxIdx = Math.max(stateIndex(stateA), stateIndex(stateB))
@@ -41,19 +51,21 @@ export default function PCRecordSummary({ onClose }: { onClose: () => void }) {
     }
 
     return facts
-  }, [agentA, agentB, caseData, evidenceStates])
+  }, [agentA, agentB, caseData, evidenceStates, disputeVisibility])
 
   const unresolvedQuestions = useMemo(() => {
     if (!caseData) return []
     return caseData.disputes
       .filter((d) => {
+        if (!isVisible(d.id)) return false
+
         const stateA = agentA.lieStateMap[d.id]?.currentState ?? 'S0'
         const stateB = agentB.lieStateMap[d.id]?.currentState ?? 'S0'
         const maxIdx = Math.max(stateIndex(stateA), stateIndex(stateB))
         return maxIdx < 3
       })
       .map((d) => d.name)
-  }, [agentA, agentB, caseData])
+  }, [agentA, agentB, caseData, disputeVisibility])
 
   const contradictions = useMemo(() => {
     return dialogueLog

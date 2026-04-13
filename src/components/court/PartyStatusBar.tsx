@@ -332,7 +332,7 @@ function getEmotionLabel(phase: string) {
 
 function getLieStateLabel(state: string) {
   const map: Record<string, string> = {
-    S0: '완강히 부정', S1: '동요 시작', S2: '일부 인정', S3: '책임 전가', S4: '감정 호소', S5: '붕괴',
+    S0: '방어', S1: '동요', S2: '변명', S3: '궁지', S4: '한계', S5: '고백',
   }
   return map[state] ?? state
 }

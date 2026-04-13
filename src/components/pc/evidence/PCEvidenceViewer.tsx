@@ -89,14 +89,16 @@ export default function PCEvidenceViewer() {
 }
 
 function EvidenceSubContent({ type, viewerData }: { type: string; viewerData: Record<string, unknown> }) {
-  const data = viewerData[type] ?? viewerData.bank ?? viewerData.chat ?? viewerData.log
+  // viewerData의 실제 content key를 기준으로 뷰어를 선택 (type과 content key가 불일치할 수 있음)
+  const contentKey = Object.keys(viewerData).find(k => k !== 'meta' && k !== 'media') ?? type
+  const data = viewerData[contentKey] ?? viewerData[type]
   if (!data) return null
 
-  switch (type) {
+  switch (contentKey) {
     case 'bank':
     case 'financial_record':
     case 'receipt':
-      return <BankViewer rows={data as any} />
+      return <BankViewer rows={Array.isArray(data) ? data as any : [data]} />
     case 'chat':
     case 'email':
       return <ChatViewer header={(data as any).header ?? ''} messages={(data as any).messages ?? []} />
@@ -110,12 +112,12 @@ function EvidenceSubContent({ type, viewerData }: { type: string; viewerData: Re
     case 'photo':
     case 'video':
     case 'dashcam':
-      return <CCTVViewer events={data as any} />
+      return <CCTVViewer events={Array.isArray(data) ? data as any : [data]} />
     case 'log':
     case 'platform_log':
     case 'cloud_log':
     case 'device_log':
-      return <LogViewer rows={(data as any).rows ?? []} note={(data as any).note} />
+      return <LogViewer rows={(data as any).rows ?? []} note={(data as any).note ?? ''} />
     case 'device':
       return <DeviceViewer ownerName={(data as any).ownerName ?? ''} sections={(data as any).sections ?? []} />
     case 'sns':

@@ -123,9 +123,8 @@ export default function EvidencePresenter({ target, onPresent, onConfront, onWit
 
     if (globalInvest < 1) {
       useGameStore.getState().addDialogue({
-        speaker: 'system', text: '조사 토큰이 모두 소진되었습니다. 충전이 필요합니다.', relatedDisputes: [], turn: useGameStore.getState().turnCount,
+        speaker: 'system', text: '조사 토큰이 모두 소진되었습니다.', relatedDisputes: [], turn: useGameStore.getState().turnCount,
       })
-      import('../layout/CourtHeader').then(m => m.openResourcePopup('invest'))
       return
     }
 

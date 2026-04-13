@@ -9,19 +9,19 @@ type TransitionLabel = 'cracked' | 'cornered' | 'opening'
 
 const TRANSITION_META: Record<TransitionLabel, { title: string; tone: 'gold' | 'red' | 'green'; body: string }> = {
   cracked: {
-    title: '균열',
+    title: '방어가 흔들린다',
     tone: 'gold',
-    body: '진술 사이에 틈이 벌어졌습니다. 지금 흐름을 이어 갈 전략을 고르세요.',
+    body: '말이 달라지기 시작했습니다. 지금 파고들면 숨기고 있던 것이 나올 수 있습니다.',
   },
   cornered: {
-    title: '궁지',
+    title: '도망칠 곳이 줄어든다',
     tone: 'red',
-    body: '상대가 압박을 받는 구간입니다. 다음 압박 방향을 선택하세요.',
+    body: '변명이 통하지 않는다는 걸 본인도 느끼고 있습니다. 어떻게 압박하시겠습니까?',
   },
   opening: {
-    title: '개방',
+    title: '입을 열 준비가 됐다',
     tone: 'green',
-    body: '입을 열기 좋은 순간이 왔습니다. 가장 효율적인 접근을 고르세요.',
+    body: '더 숨기는 것보다 말하는 게 나을 수 있다고 느끼기 시작했습니다.',
   },
 }
 
@@ -85,21 +85,21 @@ export default function PCGameplayOverlay() {
         ? [
             {
               kind: 'run_question' as const,
-              label: '모순을 더 쌓는다',
+              label: `"그 말, 아까와 다릅니다" — 사실 추궁`,
               party: pendingTransitionChoice.party,
               disputeId: pendingTransitionChoice.disputeId,
               questionType: 'fact_pursuit' as const,
             },
             {
               kind: 'run_question' as const,
-              label: '동기를 판다',
+              label: `"왜 숨기셨습니까?" — 동기 탐색`,
               party: pendingTransitionChoice.party,
               disputeId: pendingTransitionChoice.disputeId,
               questionType: 'motive_search' as const,
             },
             {
               kind: 'open_evidence_selection' as const,
-              label: '증거를 낸다',
+              label: `"이 증거를 보십시오" — 증거 제시`,
               party: pendingTransitionChoice.party,
               disputeId: pendingTransitionChoice.disputeId,
             },
@@ -108,41 +108,41 @@ export default function PCGameplayOverlay() {
           ? [
               {
                 kind: 'run_question' as const,
-                label: '정면으로 밀어붙인다',
+                label: `"더 숨길 게 있습니까?" — 정면 추궁`,
                 party: pendingTransitionChoice.party,
                 disputeId: pendingTransitionChoice.disputeId,
                 questionType: 'fact_pursuit' as const,
               },
               {
                 kind: 'run_question' as const,
-                label: '공감으로 전환한다',
+                label: `"사정이 있었겠지요" — 공감 접근`,
                 party: pendingTransitionChoice.party,
                 disputeId: pendingTransitionChoice.disputeId,
                 questionType: 'empathy_approach' as const,
               },
               {
                 kind: 'open_dispute_picker' as const,
-                label: '다른 쟁점으로 이동한다',
+                label: '다른 쟁점으로 화제 전환',
                 disputeId: pendingTransitionChoice.disputeId,
               },
             ]
           : [
               {
                 kind: 'run_question' as const,
-                label: '결정적 질문으로 간다',
+                label: `"마지막으로 묻겠습니다" — 결정적 질문`,
                 party: pendingTransitionChoice.party,
                 disputeId: pendingTransitionChoice.disputeId,
                 questionType: 'fact_pursuit' as const,
               },
               {
                 kind: 'open_evidence_selection' as const,
-                label: '증거로 마무리한다',
+                label: `"이것으로 끝내겠습니다" — 증거 제시`,
                 party: pendingTransitionChoice.party,
                 disputeId: pendingTransitionChoice.disputeId,
               },
               {
                 kind: 'run_question' as const,
-                label: '자백을 유도한다',
+                label: `"솔직히 말씀하시지요" — 자백 유도`,
                 party: pendingTransitionChoice.party,
                 disputeId: pendingTransitionChoice.disputeId,
                 questionType: 'empathy_approach' as const,
@@ -150,12 +150,11 @@ export default function PCGameplayOverlay() {
             ]
 
     openPcInteractionPanel({
-      title: `${meta.title} · ${partyName}`,
+      title: `${partyName} — ${meta.title}`,
       subtitle: disputeName,
       body: meta.body,
       tone: meta.tone,
       variant: 'feature',
-      tags: [`${pendingTransitionChoice.from} → ${pendingTransitionChoice.to}`],
       actions,
     })
     setPendingTransitionChoice(null)

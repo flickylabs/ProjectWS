@@ -74,6 +74,9 @@ export async function chatCompletion(
   options: { temperature?: number; maxTokens?: number; model?: string } = {},
 ): Promise<string> {
   const config = getConfig()
+  if (!config.apiKey && config.provider === 'local') {
+    console.warn('[LLM] VITE_OPENAI_API_KEY 미설정 — 로컬 LM Studio 모드로 동작합니다.')
+  }
   const modelId = options.model && config.provider === 'openai'
     ? options.model
     : await resolveModelId(config)

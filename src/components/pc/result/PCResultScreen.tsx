@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react'
+import React, { useEffect, useMemo, useState } from 'react'
 import { loadGeneratedCases } from '../../../data/cases/caseLoader'
 import { evaluateTitles, saveUnlockedTitles, loadUnlockedTitles, type Title } from '../../../data/titles'
 import { loadDriftState, loadJudgePerks } from '../../../data/leaderboard'
@@ -10,17 +10,16 @@ import { useGameStore, useStore } from '../../../store/useGameStore'
 import { saveCaseProgress } from '../../phase/CaseMap'
 import { resetAftermathCache } from '../../result/Aftermath'
 import PCSvgIcon from '../icons/PCSvgIcon'
+import { playClick } from '../../../engine/soundEngine'
+import { pp과와 } from '../../../engine/koreanPostposition'
+import CharacterFaceSvg from '../icons/CharacterFaceSvg'
 
-type ResultTab = 'score' | 'truth' | 'titles' | 'aftermath' | 'verdict_summary' | 'profile' | 'share'
+type ResultTab = 'result' | 'verdict_pronounce' | 'epilogue'
 
 const TABS: { id: ResultTab; label: string }[] = [
-  { id: 'score', label: '점수 분석' },
-  { id: 'truth', label: '진실 해설' },
-  { id: 'titles', label: '획득 칭호' },
-  { id: 'aftermath', label: '후일담' },
-  { id: 'verdict_summary', label: '판결문' },
-  { id: 'profile', label: '재판관 성향' },
-  { id: 'share', label: '공유' },
+  { id: 'result', label: '01 결과 확인' },
+  { id: 'verdict_pronounce', label: '02 판결 선고' },
+  { id: 'epilogue', label: '03 후일담' },
 ]
 
 function getRating(total: number): string {
@@ -83,6 +82,54 @@ function getProfileDescription(titleId: string): string {
   return descriptions[titleId] ?? descriptions.neutral_observer
 }
 
+/** 칭호 SVG 아이콘 — 순수 라인 아트(테두리만, 흰색) */
+function getTitleSvgIcon(icon: string): React.ReactNode {
+  const S = 32 // viewBox size
+  const svgs: Record<string, React.ReactNode> = {
+    // ⚖️ 저울
+    '⚖️': <svg width={S} height={S} viewBox="0 0 32 32" fill="none"><line x1="16" y1="4" x2="16" y2="24" stroke="white" strokeWidth="1.5"/><line x1="6" y1="10" x2="26" y2="10" stroke="white" strokeWidth="1.5"/><path d="M6 10l-2 8h8l-2-8" stroke="white" strokeWidth="1.5" fill="none"/><path d="M26 10l-2 8h8l-2-8" stroke="white" strokeWidth="1.5" fill="none"/><line x1="10" y1="26" x2="22" y2="26" stroke="white" strokeWidth="1.5"/></svg>,
+    // 🎯 과녁
+    '🎯': <svg width={S} height={S} viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="12" stroke="white" strokeWidth="1.5"/><circle cx="16" cy="16" r="8" stroke="white" strokeWidth="1.2"/><circle cx="16" cy="16" r="4" stroke="white" strokeWidth="1.2"/><circle cx="16" cy="16" r="1.5" fill="white"/></svg>,
+    // 🔍 돋보기
+    '🔍': <svg width={S} height={S} viewBox="0 0 32 32" fill="none"><circle cx="14" cy="14" r="8" stroke="white" strokeWidth="1.5"/><line x1="20" y1="20" x2="28" y2="28" stroke="white" strokeWidth="2" strokeLinecap="round"/></svg>,
+    // ⚡ 번개
+    '⚡': <svg width={S} height={S} viewBox="0 0 32 32" fill="none"><path d="M18 4L8 18h8l-2 10 12-16h-8l2-8z" stroke="white" strokeWidth="1.5" strokeLinejoin="round" fill="none"/></svg>,
+    // 🛡️ 방패
+    '🛡️': <svg width={S} height={S} viewBox="0 0 32 32" fill="none"><path d="M16 4L6 10v8c0 6 4.5 11.5 10 13 5.5-1.5 10-7 10-13v-8L16 4z" stroke="white" strokeWidth="1.5" fill="none"/></svg>,
+    // 💡 전구
+    '💡': <svg width={S} height={S} viewBox="0 0 32 32" fill="none"><path d="M16 4a8 8 0 00-5 14.3V22h10v-3.7A8 8 0 0016 4z" stroke="white" strokeWidth="1.5" fill="none"/><line x1="12" y1="24" x2="20" y2="24" stroke="white" strokeWidth="1.2"/><line x1="13" y1="27" x2="19" y2="27" stroke="white" strokeWidth="1.2"/></svg>,
+    // 🏆 트로피
+    '🏆': <svg width={S} height={S} viewBox="0 0 32 32" fill="none"><path d="M10 6h12v5a6 6 0 01-12 0V6z" stroke="white" strokeWidth="1.5" fill="none"/><path d="M10 8H7a2 2 0 00-2 2v1a3 3 0 003 3h2" stroke="white" strokeWidth="1"/><path d="M22 8h3a2 2 0 012 2v1a3 3 0 01-3 3h-2" stroke="white" strokeWidth="1"/><line x1="16" y1="17" x2="16" y2="22" stroke="white" strokeWidth="1.5"/><rect x="11" y="22" width="10" height="4" rx="1" stroke="white" strokeWidth="1" fill="none"/></svg>,
+    // 🤝 악수 — 손바닥 라인
+    '🤝': <svg width={S} height={S} viewBox="0 0 32 32" fill="none"><path d="M4 18l3-3 4 1 2-2 2 2 4-1 3 3" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/><path d="M7 15l-3 1v7l4-2" stroke="white" strokeWidth="1.2"/><path d="M25 15l3 1v7l-4-2" stroke="white" strokeWidth="1.2"/></svg>,
+    // ❄️ 눈꽃
+    '❄️': <svg width={S} height={S} viewBox="0 0 32 32" fill="none"><line x1="16" y1="4" x2="16" y2="28" stroke="white" strokeWidth="1.5"/><line x1="4" y1="16" x2="28" y2="16" stroke="white" strokeWidth="1.5"/><line x1="8" y1="8" x2="24" y2="24" stroke="white" strokeWidth="1"/><line x1="24" y1="8" x2="8" y2="24" stroke="white" strokeWidth="1"/><line x1="16" y1="4" x2="13" y2="7" stroke="white" strokeWidth="1"/><line x1="16" y1="4" x2="19" y2="7" stroke="white" strokeWidth="1"/></svg>,
+    // 🕊️ 비둘기
+    '🕊️': <svg width={S} height={S} viewBox="0 0 32 32" fill="none"><path d="M16 8c-4 0-8 4-8 10h16c0-6-4-10-8-10z" stroke="white" strokeWidth="1.5" fill="none"/><path d="M10 18l-3 5" stroke="white" strokeWidth="1.2"/><path d="M22 18l3 5" stroke="white" strokeWidth="1.2"/><circle cx="14" cy="14" r="1" fill="white"/></svg>,
+    // 🤔 고민 — 얼굴 라인
+    '🤔': <svg width={S} height={S} viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="12" stroke="white" strokeWidth="1.5"/><circle cx="12" cy="14" r="1.5" fill="white"/><circle cx="20" cy="14" r="1.5" fill="white"/><path d="M12 21 Q16 19 20 21" stroke="white" strokeWidth="1.2" strokeLinecap="round" fill="none"/><path d="M22 10l4-3" stroke="white" strokeWidth="1.2" strokeLinecap="round"/></svg>,
+    // ✋ 손바닥 — 라인
+    '✋': <svg width={S} height={S} viewBox="0 0 32 32" fill="none"><path d="M16 28c-5 0-8-3-8-8V12" stroke="white" strokeWidth="1.5" strokeLinecap="round"/><path d="M16 28c5 0 8-3 8-8V10" stroke="white" strokeWidth="1.5" strokeLinecap="round"/><line x1="8" y1="12" x2="8" y2="8" stroke="white" strokeWidth="1.5" strokeLinecap="round"/><line x1="12" y1="6" x2="12" y2="12" stroke="white" strokeWidth="1.5" strokeLinecap="round"/><line x1="16" y1="4" x2="16" y2="12" stroke="white" strokeWidth="1.5" strokeLinecap="round"/><line x1="20" y1="6" x2="20" y2="12" stroke="white" strokeWidth="1.5" strokeLinecap="round"/><line x1="24" y1="8" x2="24" y2="12" stroke="white" strokeWidth="1.5" strokeLinecap="round"/></svg>,
+    // 👁 눈 — 라인
+    '👁': <svg width={S} height={S} viewBox="0 0 32 32" fill="none"><path d="M4 16s5-8 12-8 12 8 12 8-5 8-12 8-12-8-12-8z" stroke="white" strokeWidth="1.5" fill="none"/><circle cx="16" cy="16" r="4" stroke="white" strokeWidth="1.5"/><circle cx="16" cy="16" r="1.5" fill="white"/></svg>,
+    // 🔥 불꽃
+    '🔥': <svg width={S} height={S} viewBox="0 0 32 32" fill="none"><path d="M16 4c0 0-8 8-8 16a8 8 0 0016 0c0-8-8-16-8-16z" stroke="white" strokeWidth="1.5" fill="none"/><path d="M16 14c0 0-3 3-3 7a3 3 0 006 0c0-4-3-7-3-7z" stroke="white" strokeWidth="1" fill="none"/></svg>,
+    // 💎 다이아몬드
+    '💎': <svg width={S} height={S} viewBox="0 0 32 32" fill="none"><polygon points="16,4 6,14 16,28 26,14" stroke="white" strokeWidth="1.5" fill="none"/><line x1="6" y1="14" x2="26" y2="14" stroke="white" strokeWidth="1"/><line x1="16" y1="4" x2="12" y2="14" stroke="white" strokeWidth="1"/><line x1="16" y1="4" x2="20" y2="14" stroke="white" strokeWidth="1"/></svg>,
+  }
+  // Default fallback — thinking face (신중)
+  return svgs[icon] ?? (
+    <svg width={S} height={S} viewBox="0 0 32 32" fill="none">
+      <circle cx="16" cy="14" r="10" stroke="white" strokeWidth="1.5"/>
+      <circle cx="12" cy="12" r="1.5" fill="white"/><circle cx="20" cy="12" r="1.5" fill="white"/>
+      <path d="M12 18 Q16 16 20 18" stroke="white" strokeWidth="1.2" strokeLinecap="round" fill="none"/>
+      <path d="M22 8l3-2" stroke="white" strokeWidth="1.2" strokeLinecap="round"/>
+      <line x1="16" y1="24" x2="16" y2="28" stroke="white" strokeWidth="1.2"/>
+      <line x1="12" y1="27" x2="20" y2="27" stroke="white" strokeWidth="1.2"/>
+    </svg>
+  )
+}
+
 export default function PCResultScreen() {
   const verdictScore = useStore((s) => s.verdictScore)
   const caseData = useStore((s) => s.caseData)
@@ -97,7 +144,7 @@ export default function PCResultScreen() {
   const skillUseCounts = useStore((s) => s.skillUseCounts)
   const processMetrics = useStore((s) => s.processMetrics)
 
-  const [tab, setTab] = useState<ResultTab>('score')
+  const [tab, setTab] = useState<ResultTab>('result')
   const [titles, setTitles] = useState<Title[]>([])
   const [newTitles, setNewTitles] = useState<Set<string>>(new Set())
   const [copied, setCopied] = useState(false)
@@ -138,9 +185,64 @@ export default function PCResultScreen() {
     }
   }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
+  // 결과 화면 진입 시 LLM 후일담을 즉시 백그라운드 생성 (판결 결과 기반)
+  useEffect(() => {
+    if (_aftermathCache) return // 이미 캐시됨
+    if (!caseData || !verdictScore) return
+    const apiKey = (import.meta as any).env?.VITE_OPENAI_API_KEY as string | undefined
+    if (!apiKey) return
+
+    void (async () => {
+      try {
+        const { chatCompletion } = await import('../../../engine/llmClient')
+        const { buildAftermathPrompt, postProcessAftermath } = await import('../../../engine/aftermathLLMGenerator')
+
+        const keyDiscoveries: string[] = []
+        if (processMetrics.liesCollapsed > 0) keyDiscoveries.push(`거짓말 ${processMetrics.liesCollapsed}건 자백 유도`)
+        if (processMetrics.deepTruthsUnlocked > 0) keyDiscoveries.push(`숨겨진 진실 ${processMetrics.deepTruthsUnlocked}건 발견`)
+
+        const disputeJudgments: Record<string, string> = {}
+        for (const d of caseData.disputes) {
+          const fact = verdictInput.factFindings[d.id]
+          disputeJudgments[d.id] = fact === 'true' ? '사실로 판단' : fact === 'false' ? '거짓으로 판단' : '보류'
+        }
+
+        const prompt = buildAftermathPrompt({
+          caseData, verdictInput,
+          verdictDetails: {
+            disputeJudgments,
+            issueWeights: Object.fromEntries(Object.entries(verdictInput.responsibility).map(([id, r]) => [id, r.b])),
+            selectedResolution: verdictInput.selectedSolutions.join(', ') || '없음',
+          },
+          scores: { insight: verdictScore.insight, authority: verdictScore.authority, wisdom: verdictScore.wisdom },
+          title: '재판관',
+          keyDiscoveries,
+        })
+
+        console.log('[후일담] 결과 화면 진입 — LLM 즉시 호출 시작')
+        const response = await chatCompletion(
+          [{ role: 'user', content: prompt }],
+          { temperature: 0.9, maxTokens: 900, model: 'gpt-4o-mini' },
+        )
+        if (response) {
+          const processed = postProcessAftermath(response)
+          if (processed) {
+            _aftermathCache = processed
+            console.log('[후일담] LLM 생성 완료, 길이:', processed.length)
+          }
+        }
+      } catch (err) {
+        console.warn('[후일담] 백그라운드 LLM 생성 실패:', err)
+      }
+    })()
+  }, []) // eslint-disable-line react-hooks/exhaustive-deps
+
   if (!verdictScore || !caseData) {
     return null
   }
+
+  const { profile: judgeProfile } = useProfileData()
+  const judgeTierInfo = TIER_LABELS[judgeProfile.tier]
 
   const stars = verdictScore.total >= 75 ? 3 : verdictScore.total >= 55 ? 2 : verdictScore.total >= 35 ? 1 : 0
   const relationLabel = getRelationLabel(caseData.meta?.relationshipType ?? caseData.duo.relationshipType)
@@ -212,7 +314,6 @@ export default function PCResultScreen() {
         <aside className="pc-result-hero">
           <div className="pc-result-hero__eyebrow">RESULT DOSSIER</div>
           <h1>{headline}</h1>
-          <p className="pc-result-hero__summary">{caseData.context.description}</p>
 
           <div className="pc-result-score">
             <span className="pc-result-score__value">{verdictScore.total}</span>
@@ -241,15 +342,23 @@ export default function PCResultScreen() {
             </div>
           </div>
 
-          <div className="pc-result-hero__actions">
-            <button className="pc-result-hero__button" onClick={handleExit} type="button">
-              사건 선택으로
-            </button>
-            {nextCase ? (
-              <button className="pc-result-hero__button is-primary" onClick={handleNextCase} type="button">
-                다음 사건
+          <div className="pc-result-hero__steps">
+            {TABS.map((item) => (
+              <button
+                className={`pc-result-step-link${tab === item.id ? ' is-active' : ''}`}
+                key={item.id}
+                onClick={() => setTab(item.id)}
+                type="button"
+              >
+                {item.label}
               </button>
-            ) : null}
+            ))}
+          </div>
+
+          <div className="pc-result-hero__actions">
+            <div style={{ fontSize: 15, fontWeight: 800, color: '#a8a8b4', textAlign: 'center', marginBottom: 8 }}>
+              {judgeTierInfo.name} ({judgeProfile.casesCompleted}건){judgeProfile.isStabilized ? ' 안정' : ''}
+            </div>
             <button className="pc-result-hero__button is-ghost" onClick={handleRetry} type="button">
               판결 다시 하기
             </button>
@@ -272,10 +381,11 @@ export default function PCResultScreen() {
           </div>
 
           <div className="pc-result-panel">
-            {/* score tab */}
-            {tab === 'score' ? (
-              <div className="pc-result-breakdown">
-                <div className="pc-result-donuts">
+            {/* ━━━ 결과 확인 탭 ━━━ */}
+            {tab === 'result' ? (
+              <div className="pc-result-combined">
+                {/* 점수 도넛 — 2배 크기, /100 제거, 라벨 상단 */}
+                <div className="pc-result-donuts" style={{ gap: 32 }}>
                   {[
                     { label: '통찰', value: verdictScore.insight, color: 'var(--pc-blue)' },
                     { label: '권위', value: verdictScore.authority, color: 'var(--pc-gold)' },
@@ -284,153 +394,204 @@ export default function PCResultScreen() {
                     const pct = Math.min(axis.value, 100)
                     const dash = (pct / 100) * 251
                     return (
-                      <div className="pc-result-donut-single" key={axis.label}>
-                        <svg viewBox="0 0 100 100" width="120" height="120">
-                          <circle cx="50" cy="50" r="40" fill="none" stroke="rgba(255,255,255,0.05)" strokeWidth="8" />
-                          <circle cx="50" cy="50" r="40" fill="none" stroke={axis.color} strokeWidth="8"
+                      <div className="pc-result-donut-single" key={axis.label} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 8 }}>
+                        <span className="pc-result-donut-label" style={{ color: axis.color, fontSize: 14, fontWeight: 800 }}>{axis.label}</span>
+                        <svg viewBox="0 0 100 100" width="180" height="180">
+                          <circle cx="50" cy="50" r="40" fill="none" stroke="rgba(255,255,255,0.05)" strokeWidth="6" />
+                          <circle cx="50" cy="50" r="40" fill="none" stroke={axis.color} strokeWidth="6"
                             strokeDasharray={`${dash} 251`} strokeDashoffset="0"
                             transform="rotate(-90 50 50)" strokeLinecap="round"
                             className="pc-result-donut-ring"
                           />
-                          <text x="50" y="46" textAnchor="middle" fill="#f2efe8" fontSize="22" fontWeight="900">{axis.value}</text>
-                          <text x="50" y="62" textAnchor="middle" fill="#8c8fa0" fontSize="9">/100</text>
+                          <text x="50" y="56" textAnchor="middle" fill="#f2efe8" fontSize="28" fontWeight="900">{axis.value}</text>
                         </svg>
-                        <span className="pc-result-donut-label" style={{ color: axis.color }}>{axis.label}</span>
                       </div>
                     )
                   })}
                 </div>
-              </div>
-            ) : null}
 
-            {/* truth tab */}
-            {tab === 'truth' ? (
-              <div className="pc-result-truth">
-                {caseData.disputes.filter((d) => { const v = disputeVisibility[d.id]; return !v || v.visibility !== 'hidden' }).map((d) => {
-                  const finding = verdictInput.factFindings[d.id]
-                  const correct = finding === 'pending'
-                    ? null
-                    : (finding === 'true') === d.truth
-                  return (
-                    <div className={`pc-result-truth__card ${correct === true ? 'is-correct' : correct === false ? 'is-wrong' : ''}`} key={d.id}>
-                      <strong>{d.name}</strong>
-                      <span className="pc-result-truth__verdict">
-                        {finding === 'true' ? '사실' : finding === 'false' ? '거짓' : '보류'}
-                        {correct === true ? ' — 정확' : correct === false ? ' — 오답' : ''}
-                      </span>
-                      <span className="pc-result-truth__answer">{d.truth ? '실제: 사실' : '실제: 거짓'}</span>
-                      <p>{d.truthDescription}</p>
-                    </div>
-                  )
-                })}
-              </div>
-            ) : null}
-
-            {/* titles tab */}
-            {tab === 'titles' ? (
-              <div className="pc-result-text">
-                <h2>획득한 칭호</h2>
-                {titles.length === 0 ? (
-                  <p>획득한 칭호가 없습니다.</p>
-                ) : (
-                  <div className="pc-result-titles">
-                    {titles.map((t) => (
-                      <div className={`pc-result-titles__card ${RARITY_CLASS[t.rarity] ?? ''} ${newTitles.has(t.id) ? 'is-new' : ''}`} key={t.id}>
-                        <span className="pc-result-titles__icon">{t.icon}</span>
-                        <div className="pc-result-titles__info">
-                          <span className="pc-result-titles__name">
-                            {t.name}
-                            {newTitles.has(t.id) ? <em className="pc-result-titles__new">NEW</em> : null}
-                          </span>
-                          <span className="pc-result-titles__rarity">{RARITY_LABEL[t.rarity]}</span>
-                          <span className="pc-result-titles__desc">{t.description}</span>
+                {/* 쟁점별 정답 공개 */}
+                <div className="pc-result-truth" style={{ marginTop: 8 }}>
+                  <h3 style={{ fontSize: 16, fontWeight: 800, color: '#e0ddd6', marginBottom: 8 }}>쟁점별 판단 결과</h3>
+                  {caseData.disputes.filter((d) => { const v = disputeVisibility[d.id]; return !v || v.visibility !== 'hidden' }).map((d) => {
+                    const finding = verdictInput.factFindings[d.id]
+                    const correct = finding === 'pending'
+                      ? null
+                      : (finding === 'true') === d.truth
+                    // 유저가 실제로 선택한 텍스트
+                    const selectedText = ((window as any).__factSelectedTexts ?? {})[d.id] as string | undefined
+                    return (
+                      <div className={`pc-result-truth__card ${correct === true ? 'is-correct' : correct === false ? 'is-wrong' : ''}`} key={d.id}
+                        style={{ display: 'flex', alignItems: 'center', gap: 12, padding: '10px 14px' }}
+                      >
+                        <div style={{ flex: 1, minWidth: 0 }}>
+                          <strong style={{ fontSize: 14, display: 'block', marginBottom: 3, color: '#e0ddd6' }}>{d.name}</strong>
+                          <p style={{ fontSize: 13, color: '#b0aда4', lineHeight: 1.5, margin: 0, overflow: 'hidden', textOverflow: 'ellipsis', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical' } as any}>
+                            {selectedText ?? d.truthDescription}
+                          </p>
+                        </div>
+                        <div style={{
+                          flexShrink: 0, width: 56, height: 40, borderRadius: 10,
+                          display: 'flex', alignItems: 'center', justifyContent: 'center',
+                          fontSize: 16, fontWeight: 900,
+                          background: correct === true ? 'rgba(92,201,122,0.12)' : correct === false ? 'rgba(224,96,96,0.12)' : 'rgba(160,165,180,0.08)',
+                          color: correct === true ? '#5cc97a' : correct === false ? '#e06060' : '#8c8fa0',
+                          border: `2px solid ${correct === true ? 'rgba(92,201,122,0.3)' : correct === false ? 'rgba(224,96,96,0.3)' : 'rgba(160,165,180,0.15)'}`,
+                        }}>
+                          {correct === true ? 'O' : correct === false ? 'X' : '\u2014'}
                         </div>
                       </div>
-                    ))}
-                  </div>
-                )}
+                    )
+                  })}
+                </div>
+
+                {/* 하단 prev/next */}
+                <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: 20 }}>
+                  <button className="pc-verdict-footer__button" disabled type="button">&lt; 이전</button>
+                  <button className="pc-verdict-footer__button is-primary" onClick={() => setTab('verdict_pronounce')} type="button">다음 &gt;</button>
+                </div>
               </div>
             ) : null}
 
-            {/* aftermath tab */}
-            {tab === 'aftermath' ? (
+            {/* ━━━ 판결 선고 탭 ━━━ */}
+            {tab === 'verdict_pronounce' ? (() => {
+              const avgA = verdictSummary ? verdictSummary.responsibility.percentA : 50
+              return (
               <div className="pc-result-text">
-                <h2>판결 이후</h2>
-                <AftermathInline />
-              </div>
-            ) : null}
+                {/* 상단 선고문 */}
+                <p style={{ fontSize: 17, color: '#e8e5dc', lineHeight: 1.8, textAlign: 'center', marginBottom: 20 }}>
+                  본 사건은 <strong>{caseData.duo.partyA.name}</strong>{pp과와(caseData.duo.partyA.name)} <strong>{caseData.duo.partyB.name}</strong>의 {relationLabel} 간 분쟁으로, 총 <strong style={{ color: 'var(--pc-gold-light)' }}>{turnCount}</strong>회의 심리를 거쳐 다음과 같은 판결에 이르렀습니다.
+                </p>
 
-            {/* verdict_summary tab */}
-            {tab === 'verdict_summary' ? (
-              <div className="pc-result-text">
                 {verdictSummary ? (
                   <>
-                    <h2>{verdictSummary.title}</h2>
-                    <p>{verdictSummary.caseSummary}</p>
+                    {/* ── 상단: 좌측 저울 + 우측 2영역 ── */}
+                    <div style={{ display: 'grid', gridTemplateColumns: '240px 1fr', gap: 20, marginBottom: 20 }}>
+                      {/* 좌측 — 저울 + 책임 배분 설명 */}
+                      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 8, padding: '16px 0' }}>
+                        <svg width="220" height="160" viewBox="0 0 400 200" style={{ display: 'block' }}>
+                          <polygon points="200,140 182,170 218,170" fill="#d4a24e" opacity="0.6" />
+                          <rect x="165" y="170" width="70" height="6" rx="3" fill="#d4a24e" opacity="0.3" />
+                          {(() => { const t = ((avgA - 50) / 50) * 12; return (
+                          <g transform={`rotate(${t}, 200, 140)`}>
+                            <rect x="40" y="136" width="320" height="8" rx="4" fill="#d4a24e" />
+                            <rect x="45" y="126" width="90" height="10" rx="5" fill="rgba(91,141,239,0.2)" stroke="#5b8def" strokeWidth="1.5" />
+                            <foreignObject x="62" y="72" width="56" height="56"><CharacterFaceSvg party="a" size={56} /></foreignObject>
+                            <text x="90" y="68" textAnchor="middle" fontSize="10" fontWeight="700" fill="#5b8def">{caseData.duo.partyA.name}</text>
+                            <rect x="265" y="126" width="90" height="10" rx="5" fill="rgba(224,96,96,0.2)" stroke="#e06060" strokeWidth="1.5" />
+                            <foreignObject x="282" y="72" width="56" height="56"><CharacterFaceSvg party="b" size={56} /></foreignObject>
+                            <text x="310" y="68" textAnchor="middle" fontSize="10" fontWeight="700" fill="#e06060">{caseData.duo.partyB.name}</text>
+                          </g>
+                          ) })()}
+                        </svg>
+                        <div style={{ display: 'flex', gap: 24, fontSize: 20, fontWeight: 900 }}>
+                          <span style={{ color: '#5b8def' }}>{verdictSummary.responsibility.percentA}%</span>
+                          <span style={{ color: '#e06060' }}>{verdictSummary.responsibility.percentB}%</span>
+                        </div>
+                        <p style={{ fontSize: 13, color: '#8c8fa0', lineHeight: 1.6, textAlign: 'center', marginTop: 4 }}>{verdictSummary.responsibilityReason}</p>
+                      </div>
 
-                    <div className="pc-result-summary__section">
-                      <h3>책임 배분</h3>
-                      <div className="pc-result-summary__resp">
-                        <span>{verdictSummary.responsibility.partyA}</span>
-                        <div className="pc-result-gauge__bar">
-                          <div className="pc-result-gauge__fill" style={{ width: `${verdictSummary.responsibility.percentA}%`, background: 'var(--pc-gold)' }} />
+                      {/* 우측 — 2영역 */}
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
+                        {/* 결정적 순간 */}
+                        <div className="pc-result-summary__section" style={{ margin: 0 }}>
+                          <h3>결정적 순간</h3>
+                          <p>{verdictSummary.keyMoment}</p>
                         </div>
-                        <strong>{verdictSummary.responsibility.percentA}%</strong>
-                      </div>
-                      <div className="pc-result-summary__resp">
-                        <span>{verdictSummary.responsibility.partyB}</span>
-                        <div className="pc-result-gauge__bar">
-                          <div className="pc-result-gauge__fill" style={{ width: `${verdictSummary.responsibility.percentB}%`, background: 'var(--pc-blue)' }} />
+                        {/* 해결 방향 — 스크롤 영역 */}
+                        <div className="pc-result-summary__section" style={{ margin: 0 }}>
+                          <h3>해결 방향</h3>
+                          <div style={{ maxHeight: 140, overflowY: 'auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8 }}>
+                            {verdictSummary.resolution.split(/[.。]\s*/).filter((s: string) => s.trim()).map((sentence: string, i: number) => (
+                              <div key={i} style={{
+                                padding: '10px 14px', borderRadius: 8,
+                                border: '1px solid rgba(255,255,255,0.06)', background: 'rgba(255,255,255,0.02)',
+                                fontSize: 13, color: '#a8a8b4', lineHeight: 1.5,
+                              }}>
+                                {sentence.trim()}.
+                              </div>
+                            ))}
+                          </div>
                         </div>
-                        <strong>{verdictSummary.responsibility.percentB}%</strong>
                       </div>
-                      <p className="pc-result-summary__reason">{verdictSummary.responsibilityReason}</p>
                     </div>
 
-                    {verdictSummary.keyEvidence.length > 0 && (
-                      <div className="pc-result-summary__section">
-                        <h3>결정적 증거</h3>
-                        <div className="pc-result-summary__tags">
-                          {verdictSummary.keyEvidence.map((e, i) => (
-                            <span className="pc-result-summary__tag" key={i}>{e}</span>
-                          ))}
-                        </div>
+                    {/* ── 하단: 재판관 성향 — 좌측 타이틀/설명, 우측 게이지 ── */}
+                    <div style={{ paddingTop: 20, borderTop: '1px solid rgba(255,255,255,0.06)' }}>
+                      <h3 style={{ marginTop: 0, marginBottom: 12 }}>재판관 성향</h3>
+                      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20 }}>
+                        {/* 좌측: 타이틀 + 설명 + 태그 */}
+                        <ProfileInfoSection />
+                        {/* 우측: 게이지 */}
+                        <ProfileGaugeSection />
                       </div>
-                    )}
-
-                    <div className="pc-result-summary__section">
-                      <h3>결정적 순간</h3>
-                      <p>{verdictSummary.keyMoment}</p>
+                      <div style={{ display: 'flex', gap: 8, marginTop: 16, justifyContent: 'flex-end' }}>
+                        <button className="pc-result-text__copy-btn" onClick={handleCopySummary} type="button">
+                          {summaryCopied ? '복사 완료!' : '판결문 복사'}
+                        </button>
+                        <button className="pc-result-text__copy-btn" onClick={handleCopyShare} type="button">
+                          {copied ? '복사 완료!' : '공유하기'}
+                        </button>
+                      </div>
                     </div>
 
-                    <div className="pc-result-summary__section">
-                      <h3>해결 방향</h3>
-                      <p>{verdictSummary.resolution}</p>
+                    {/* 하단 prev/next */}
+                    <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: 20 }}>
+                      <button className="pc-verdict-footer__button" onClick={() => setTab('result')} type="button">&lt; 이전</button>
+                      <button className="pc-verdict-footer__button is-primary" onClick={() => setTab('epilogue')} type="button">다음 &gt;</button>
                     </div>
-
-                    <p className="pc-result-summary__style">{verdictSummary.judgeStyle}</p>
-
-                    <button className="pc-result-text__copy-btn" onClick={handleCopySummary} type="button">
-                      {summaryCopied ? '복사 완료!' : '판결문 복사하기'}
-                    </button>
                   </>
-                ) : (
-                  <p>판결문이 생성되지 않았습니다.</p>
-                )}
+                ) : null}
               </div>
-            ) : null}
+              )
+            })() : null}
 
-            {/* profile tab */}
-            {tab === 'profile' ? <ProfileInline /> : null}
-
-            {/* share tab */}
-            {tab === 'share' ? (
+            {/* ━━━ 후일담 탭 ━━━ */}
+            {tab === 'epilogue' ? (
               <div className="pc-result-text">
-                <h2>결과 공유</h2>
-                <p>{headline} - {verdictScore.total}점 ({getRating(verdictScore.total)})</p>
-                <button className="pc-result-text__copy-btn" onClick={handleCopyShare} type="button">
-                  {copied ? '복사 완료!' : '클립보드에 복사'}
-                </button>
+                {/* 후일담 — on top */}
+                <div style={{ textAlign: 'center', marginBottom: 8 }}>
+                  <div style={{ fontSize: 12, fontWeight: 800, letterSpacing: '0.2em', color: 'var(--pc-gold-light)', textTransform: 'uppercase' }}>Epilogue</div>
+                </div>
+                <div style={{
+                  border: '1px solid rgba(212,162,78,0.15)', borderRadius: 16,
+                  padding: '20px 24px', background: 'rgba(212,162,78,0.02)',
+                  marginBottom: 32,
+                }}>
+                  <AftermathInline />
+                </div>
+
+                {/* 획득 칭호 — 가로 스크롤 */}
+                {titles.length > 0 && (
+                  <div style={{ marginBottom: 32 }}>
+                    <h3 style={{ fontSize: 16, fontWeight: 800, color: '#e0ddd6', marginBottom: 12 }}>획득한 칭호</h3>
+                    <div className="pc-result-titles-scroll">
+                      {titles.map((t) => (
+                        <button
+                          className={`pc-result-title-card ${RARITY_CLASS[t.rarity] ?? ''} ${newTitles.has(t.id) ? 'is-new' : ''}`}
+                          key={t.id}
+                          onClick={() => playClick()}
+                          type="button"
+                        >
+                          <span className="pc-result-title-card__tooltip">{t.description}</span>
+                          <span className="pc-result-title-card__icon">{getTitleSvgIcon(t.icon)}</span>
+                          <span className="pc-result-title-card__name">{t.name}</span>
+                          <span className="pc-result-title-card__rarity">{RARITY_LABEL[t.rarity]}</span>
+                          {newTitles.has(t.id) ? <em className="pc-result-title-card__new">NEW</em> : null}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {/* 하단 버튼 */}
+                <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: 20 }}>
+                  <button className="pc-verdict-footer__button" onClick={() => setTab('verdict_pronounce')} type="button">&lt; 이전</button>
+                  <button className="pc-verdict-footer__button is-primary" onClick={handleExit} type="button">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" style={{ display: 'inline-block', verticalAlign: 'middle', marginRight: 4 }}><path d="M3 12l9-8 9 8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/><path d="M5 10v9a1 1 0 001 1h4v-5h4v5h4a1 1 0 001-1v-9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                    홈으로
+                  </button>
+                </div>
               </div>
             ) : null}
           </div>
@@ -442,97 +603,134 @@ export default function PCResultScreen() {
 
 /* ─── Aftermath inline (uses same LLM/scripted logic) ─── */
 
+// 후일담 캐시 — 탭 전환으로 리마운트되어도 재호출하지 않음
+let _aftermathCache: string | null = null
+
 function AftermathInline() {
   const caseData = useStore((s) => s.caseData)
   const verdictInput = useStore((s) => s.verdictInput)
   const verdictScore = useStore((s) => s.verdictScore)
   const processMetrics = useStore((s) => s.processMetrics)
   const discovery = useStore((s) => s.discovery)
-  const [aftermath, setAftermath] = useState<string | null>(null)
+  const [aftermath, setAftermath] = useState<string | null>(_aftermathCache)
   const [loading, setLoading] = useState(false)
+  const [error, setError] = useState<string | null>(null)
 
   useEffect(() => {
+    // 캐시가 있으면 재호출하지 않음
+    if (_aftermathCache) { setAftermath(_aftermathCache); return }
+    // 사전 생성된 결과가 있으면 사용
+    const pregenerated = (window as any).__aftermathPregenerated as string | undefined
+    if (pregenerated) {
+      _aftermathCache = pregenerated
+      setAftermath(pregenerated)
+      console.log('[후일담] 사전 생성 결과 사용')
+      return
+    }
     if (!caseData || !verdictScore) return
 
     void (async () => {
-      const { resolveScriptedAftermath } = await import('../../../engine/aftermathResolver')
-      const { isLLMMode } = await import('../../../hooks/useActionDispatch')
-      const { chatCompletion } = await import('../../../engine/llmClient')
-      const { buildAftermathPrompt, postProcessAftermath } = await import('../../../engine/aftermathLLMGenerator')
-      const { evaluateTitles } = await import('../../../data/titles')
+      // API 키 유무를 직접 확인
+      const apiKey = (import.meta as any).env?.VITE_OPENAI_API_KEY as string | undefined
+      if (!apiKey) {
+        console.warn('[후일담] VITE_OPENAI_API_KEY 없음 — fallback 사용')
+        const fb = buildFallback(caseData, verdictScore.total)
+        _aftermathCache = fb
+        setAftermath(fb)
+        return
+      }
 
-      // 1. LLM 생성 우선 (PC — 상세 후일담)
-      if (isLLMMode()) {
-        setLoading(true)
-        try {
-          // 핵심 발견 수집
-          const keyDiscoveries: string[] = []
-          if (processMetrics.liesCollapsed > 0) keyDiscoveries.push(`거짓말 ${processMetrics.liesCollapsed}건 자백 유도`)
-          if (processMetrics.deepTruthsUnlocked > 0) keyDiscoveries.push(`숨겨진 진실 ${processMetrics.deepTruthsUnlocked}건 발견`)
-          const emergedCount = Object.values(discovery.disputeVisibility).filter(v => v.visibility === 'emerged').length
-          if (emergedCount > 0) keyDiscoveries.push(`숨겨진 쟁점 ${emergedCount}건 발현`)
+      setLoading(true)
+      setError(null)
+      try {
+        const { chatCompletion } = await import('../../../engine/llmClient')
+        const { buildAftermathPrompt, postProcessAftermath } = await import('../../../engine/aftermathLLMGenerator')
+        const { evaluateTitles } = await import('../../../data/titles')
 
-          // 칭호 계산
-          const titles = evaluateTitles(verdictScore, verdictInput, {
-            turnsUsed: processMetrics.questionsAsked + processMetrics.evidenceEffective,
-            evidencePresented: processMetrics.evidenceEffective,
-            trustActionsUsed: processMetrics.trustActionsUsed,
-            skillsUsed: 0,
-            collapsedDisputes: processMetrics.liesCollapsed,
-            totalDisputes: caseData.disputes.length,
-          })
-          const titleName = titles[0]?.name ?? '견습 재판관'
+        const keyDiscoveries: string[] = []
+        if (processMetrics.liesCollapsed > 0) keyDiscoveries.push(`거짓말 ${processMetrics.liesCollapsed}건 자백 유도`)
+        if (processMetrics.deepTruthsUnlocked > 0) keyDiscoveries.push(`숨겨진 진실 ${processMetrics.deepTruthsUnlocked}건 발견`)
+        const emergedCount = Object.values(discovery.disputeVisibility).filter(v => v.visibility === 'emerged').length
+        if (emergedCount > 0) keyDiscoveries.push(`숨겨진 쟁점 ${emergedCount}건 발현`)
 
-          // 쟁점별 판단 조립
-          const disputeJudgments: Record<string, string> = {}
-          for (const d of caseData.disputes) {
-            const fact = verdictInput.factFindings[d.id]
-            disputeJudgments[d.id] = fact === 'true' ? '사실로 판단' : fact === 'false' ? '거짓으로 판단' : '보류'
-          }
+        const titles = evaluateTitles(verdictScore, verdictInput, {
+          turnsUsed: processMetrics.questionsAsked + processMetrics.evidenceEffective,
+          evidencePresented: processMetrics.evidenceEffective,
+          trustActionsUsed: processMetrics.trustActionsUsed,
+          skillsUsed: 0,
+          collapsedDisputes: processMetrics.liesCollapsed,
+          totalDisputes: caseData.disputes.length,
+        })
 
-          const prompt = buildAftermathPrompt({
-            caseData,
-            verdictInput,
-            verdictDetails: {
-              disputeJudgments,
-              issueWeights: Object.fromEntries(
-                Object.entries(verdictInput.responsibility).map(([id, r]) => [id, r.b]),
-              ),
-              selectedResolution: verdictInput.selectedSolutions.join(', ') || '없음',
-            },
-            scores: { insight: verdictScore.insight, authority: verdictScore.authority, wisdom: verdictScore.wisdom },
-            title: titleName,
-            keyDiscoveries,
-          })
-
-          const response = await chatCompletion(
-            [{ role: 'user', content: prompt }],
-            { temperature: 0.9, maxTokens: 900 },
-          )
-          setAftermath(postProcessAftermath(response) || buildFallback(caseData, verdictScore.total))
-        } catch {
-          setAftermath(buildFallback(caseData, verdictScore.total))
-        } finally {
-          setLoading(false)
+        const disputeJudgments: Record<string, string> = {}
+        for (const d of caseData.disputes) {
+          const fact = verdictInput.factFindings[d.id]
+          disputeJudgments[d.id] = fact === 'true' ? '사실로 판단' : fact === 'false' ? '거짓으로 판단' : '보류'
         }
-      } else {
-        setAftermath(buildFallback(caseData, verdictScore.total))
+
+        const prompt = buildAftermathPrompt({
+          caseData,
+          verdictInput,
+          verdictDetails: {
+            disputeJudgments,
+            issueWeights: Object.fromEntries(
+              Object.entries(verdictInput.responsibility).map(([id, r]) => [id, r.b]),
+            ),
+            selectedResolution: verdictInput.selectedSolutions.join(', ') || '없음',
+          },
+          scores: { insight: verdictScore.insight, authority: verdictScore.authority, wisdom: verdictScore.wisdom },
+          title: titles[0]?.name ?? '견습 재판관',
+          keyDiscoveries,
+        })
+
+        console.log('[후일담] LLM 호출 시작 (API key:', apiKey.slice(0, 10) + '...)')
+        const response = await chatCompletion(
+          [{ role: 'user', content: prompt }],
+          { temperature: 0.9, maxTokens: 900, model: 'gpt-4o-mini' },
+        )
+        console.log('[후일담] LLM 응답 길이:', response.length)
+        const result = postProcessAftermath(response) || buildFallback(caseData, verdictScore.total)
+        _aftermathCache = result
+        setAftermath(result)
+      } catch (err: any) {
+        console.error('[후일담] LLM 호출 실패:', err?.message ?? err)
+        setError(err?.message ?? 'LLM 호출 실패')
+        const fb = buildFallback(caseData, verdictScore.total)
+        _aftermathCache = fb
+        setAftermath(fb)
+      } finally {
+        setLoading(false)
       }
     })()
   }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
   if (loading) {
-    return <p>후일담을 정리하고 있습니다...</p>
+    return <p style={{ color: '#8c8fa0', fontStyle: 'italic' }}>후일담을 작성하고 있습니다...</p>
   }
   if (!aftermath) {
     return <p>후일담 데이터가 없습니다.</p>
   }
 
+  // "**교훈 한 문장**:" 제거
+  let cleaned = aftermath.replace(/\*?\*?교훈 한 문장\*?\*?:\s*/g, '')
+  const allParas = cleaned.split('\n\n').filter(p => p.trim())
+  // 본문 3문단(흰색) + 마지막 1문장(노란색 따옴표)
+  const bodyParas = allParas.slice(0, 3)
+  const lesson = allParas.length > 3 ? allParas[allParas.length - 1] : null
+
   return (
     <>
-      {aftermath.split('\n\n').map((para, i) => (
-        <p key={i}>{para}</p>
+      {bodyParas.map((para, i) => (
+        <p key={i} style={{ fontSize: 15, lineHeight: 1.9, color: '#e8e5dc' }}>{para}</p>
       ))}
+      {lesson && (() => {
+        const text = lesson.trim().replace(/^[""\u201C]|[""\u201D]$/g, '')
+        return (
+          <p style={{ fontSize: 16, lineHeight: 1.8, color: 'var(--pc-gold-light, #e8c172)', textAlign: 'center', fontWeight: 600, marginTop: 10, fontStyle: 'italic' }}>
+            &ldquo;{text}&rdquo;
+          </p>
+        )
+      })()}
     </>
   )
 }
@@ -551,87 +749,94 @@ function buildFallback(caseData: { duo: { partyA: { name: string }; partyB: { na
 
 /* ─── Profile inline ─── */
 
-function ProfileInline() {
-  const { profile, driftState, totalGames, savedPerks } = useMemo(() => {
+/** 프로필 데이터 공유 hook */
+function useProfileData() {
+  return useMemo(() => {
     const drift = loadDriftState()
     const perks = loadJudgePerks()
     const prof = deriveJudgeProfile(drift, undefined, {
       major: perks.major as PerkId | null,
       minor: perks.minor as PerkId | null,
     })
-    return { profile: prof, driftState: drift, totalGames: drift.casesProcessed, savedPerks: perks }
+    return { profile: prof, driftState: drift, totalGames: drift.casesProcessed }
   }, [])
+}
 
+/** 좌측: 타이틀 + 설명 + 태그 + 티어 */
+function ProfileInfoSection() {
+  const { profile } = useProfileData()
   const titleInfo = TITLE_LABELS[profile.titleId] ?? TITLE_LABELS.neutral_observer
   const tierInfo = TIER_LABELS[profile.tier]
 
   return (
-    <div className="pc-result-text">
-      <h2>{titleInfo.name}</h2>
-      <p>{titleInfo.subtitle}</p>
-
+    <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+      <h2 style={{ fontSize: 20, fontWeight: 900, color: 'var(--pc-gold-light)', margin: 0 }}>{titleInfo.name}</h2>
+      <p style={{ fontSize: 15, color: '#a8a8b4', lineHeight: 1.6, margin: 0 }}>
+        {getProfileDescription(profile.titleId)}
+      </p>
       {profile.subtags.length > 0 && (
-        <div className="pc-result-profile__tags">
+        <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap', marginTop: 4 }}>
           {profile.subtags.map((tag) => (
             <span className="pc-result-summary__tag" key={tag}>{tag}</span>
           ))}
-        </div>
-      )}
-
-      <div className="pc-result-profile__tier">
-        <PCSvgIcon id="i-scale" size={16} style={{verticalAlign:'middle',marginRight:4}} /> {tierInfo.name} ({profile.casesCompleted}건)
-        {profile.isStabilized && <span className="pc-result-profile__stable"> 안정</span>}
-      </div>
-
-      <p className="pc-result-summary__style">{getProfileDescription(profile.titleId)}</p>
-
-      {totalGames === 0 ? (
-        <div className="pc-result-profile__intro">
-          <p>첫 번째 재판을 마쳤습니다. 사건을 거듭할수록 당신만의 재판 성향이 드러납니다.</p>
-          <p>더 많은 사건을 심리하면 3개 축(탐구/판단/해결)의 균형이 변화하고, 고유한 재판관 칭호가 부여됩니다.</p>
-        </div>
-      ) : (
-        <div className="pc-result-profile__axes">
-          <h3>누적 성향 ({totalGames}건)</h3>
-          <ProfileAxis label={AXIS_LABELS.inquiry.label} axisState={driftState.inquiry} negLabel={AXIS_LABELS.inquiry.negative} posLabel={AXIS_LABELS.inquiry.positive} />
-          <ProfileAxis label={AXIS_LABELS.judgment.label} axisState={driftState.judgment} negLabel={AXIS_LABELS.judgment.negative} posLabel={AXIS_LABELS.judgment.positive} />
-          <ProfileAxis label={AXIS_LABELS.resolution.label} axisState={driftState.resolution} negLabel={AXIS_LABELS.resolution.negative} posLabel={AXIS_LABELS.resolution.positive} />
         </div>
       )}
     </div>
   )
 }
 
-function ProfileAxis({ label, axisState, negLabel, posLabel }: {
+/** 우측: 3축 게이지 */
+function ProfileGaugeSection() {
+  const { driftState, totalGames } = useProfileData()
+
+  if (totalGames === 0) {
+    return (
+      <div style={{ padding: '12px 16px', borderRadius: 10, border: '1px solid rgba(255,255,255,0.06)', background: 'rgba(255,255,255,0.02)', fontSize: 13, color: '#8c8fa0', lineHeight: 1.7 }}>
+        첫 번째 재판을 마쳤습니다. 사건을 거듭할수록 성향이 드러납니다.
+      </div>
+    )
+  }
+
+  return (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: 8, justifyContent: 'center' }}>
+      <ProfileAxis label="탐구" axisState={driftState.inquiry} />
+      <ProfileAxis label="판단" axisState={driftState.judgment} />
+      <ProfileAxis label="해결" axisState={driftState.resolution} />
+    </div>
+  )
+}
+
+/** 기존 통합 (다른 곳에서 사용 시) */
+function ProfileInline() {
+  return (
+    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20 }}>
+      <ProfileInfoSection />
+      <ProfileGaugeSection />
+    </div>
+  )
+}
+
+function ProfileAxis({ label, axisState }: {
   label: string
   axisState: AxisLevelState
-  negLabel: string
-  posLabel: string
 }) {
   const { level } = axisState
   const levelPct = ((level + 3) / 6) * 100
-  const dirLabel = level !== 0 ? (level < 0 ? negLabel : posLabel) : '균형'
-  const levelText = LEVEL_LABELS[level] ?? '균형'
-  const displayText = level === 0 ? '균형' : `${dirLabel} ${levelText}`
 
   return (
-    <div className="pc-result-profile__axis">
-      <div className="pc-result-profile__axis-header">
-        <span>{label}</span>
-        <span>Lv{level > 0 ? '+' : ''}{level} ({displayText})</span>
-      </div>
-      <div className="pc-result-gauge__bar">
+    <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+      <span style={{ fontSize: 12, fontWeight: 700, color: '#8c8fa0', minWidth: 28 }}>{label}</span>
+      <div style={{ flex: 1, position: 'relative', height: 10, borderRadius: 5, background: 'rgba(255,255,255,0.06)' }}>
         {level < 0 && (
-          <div className="pc-result-gauge__fill" style={{ left: `${levelPct}%`, width: `${50 - levelPct}%`, background: 'var(--pc-blue)' }} />
+          <div style={{ position: 'absolute', top: 0, left: `${levelPct}%`, width: `${50 - levelPct}%`, height: '100%', borderRadius: 5, background: 'var(--pc-blue, #5b8def)' }} />
         )}
         {level > 0 && (
-          <div className="pc-result-gauge__fill" style={{ left: '50%', width: `${levelPct - 50}%`, background: 'var(--pc-gold)' }} />
+          <div style={{ position: 'absolute', top: 0, left: '50%', width: `${levelPct - 50}%`, height: '100%', borderRadius: 5, background: 'var(--pc-gold, #d4a24e)' }} />
         )}
-        <div className="pc-result-profile__marker" style={{ left: `${levelPct}%` }} />
-      </div>
-      <div className="pc-result-profile__axis-labels">
-        <span>-3 {negLabel}</span>
-        <span>{posLabel} +3</span>
+        {/* 중앙선 */}
+        <div style={{ position: 'absolute', top: -2, left: '50%', width: 1, height: 14, background: 'rgba(255,255,255,0.15)' }} />
+        {/* 현재 위치 마커 */}
+        <div style={{ position: 'absolute', top: -1, left: `${levelPct}%`, width: 12, height: 12, borderRadius: '50%', background: level === 0 ? '#6a6e80' : level < 0 ? 'var(--pc-blue)' : 'var(--pc-gold)', border: '2px solid rgba(12,12,20,0.8)', transform: 'translateX(-50%)' }} />
       </div>
     </div>
   )

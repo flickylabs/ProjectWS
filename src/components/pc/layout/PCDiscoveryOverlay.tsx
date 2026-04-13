@@ -323,8 +323,8 @@ function GameEventPanel() {
       addDialogue({
         speaker: 'judge',
         text: v3Event
-          ? `${v3Event.statementA} ${v3Event.statementB} 사이의 모순을 지적합니다.`
-          : '진술 사이의 모순을 지적합니다. 해명을 요구합니다.',
+          ? `${partyName} 씨, 아까 하신 말씀과 지금 말씀이 다릅니다. 어느 쪽이 맞습니까?`
+          : `${partyName} 씨, 방금 답변이 앞선 진술과 맞지 않습니다. 정확히 말씀해 주십시오.`,
         relatedDisputes: [pendingEvent.disputeId],
         turn: turnCount,
       })
@@ -339,8 +339,8 @@ function GameEventPanel() {
       addDialogue({
         speaker: 'system',
         text: pendingEvent.severity === 'critical'
-          ? '결정적 모순이 드러났습니다. 다음 행동의 압박력이 커집니다.'
-          : '모순이 드러났습니다. 다음 질문의 효율이 높아집니다.',
+          ? `결정적 모순이 드러났다. ${partyName}의 방어가 크게 흔들린다.`
+          : `진술이 엇갈리기 시작했다. 지금 압박하면 효과적이다.`,
         relatedDisputes: [pendingEvent.disputeId],
         turn: turnCount,
       })

@@ -273,7 +273,13 @@
       "legitimacyIssue": true,
       "judgmentStatement": "어머니의 판단 능력은 완전히 상실되지 않았으나, B의 개입은 적법성 문제를 남긴다.",
       "hidden": false,
-      "v3Visibility": "initial"
+      "v3Visibility": "initial",
+      "verdictOptions": {
+        "wrong": "어머니는 동생의 압박으로 유서를 작성했고, 제대로 판단할 수 없는 상태였다.",
+        "partial": "어머니의 인지 능력에 의문이 있지만, 완전히 무효라고 단정하긴 어렵다.",
+        "truth": "윤정후는 말년에 자주 방문하며 유서를 논의했지만, 어머니 의사를 완전히 무시한 건 아니었다.",
+        "defer": "어머니의 판단 능력 여부를 확인할 수 없다. 유보한다."
+      }
     },
     {
       "id": "d-2",
@@ -306,6 +312,12 @@
       "v3UnlockPlan": {
         "runtimeRule": "B d-1 S2 도달 시 (공증 과정 의혹 언급)",
         "authoredRule": "B가 d-1 심문에서 S2에 도달하면 공증 이중 스캔 발견으로 새 쟁점 부상"
+      },
+      "verdictOptions": {
+        "wrong": "동생이 자기 몫을 90%로 늘리기 위해 유서를 조작했다.",
+        "partial": "유서가 변경된 건 맞지만, 의도가 탐욕인지 보호인지는 불분명하다.",
+        "truth": "윤정후는 어머니의 90:10 원본 유서를 60:40으로 조작했다. 자기 몫을 줄인 조작이었지만 위조는 위조다.",
+        "defer": "조작 여부와 그 의도를 판단하기 어렵다. 유보한다."
       }
     },
     {
@@ -337,6 +349,12 @@
       "v3UnlockPlan": {
         "runtimeRule": "d-2 S3 도달 시 해금",
         "authoredRule": "d-2에서 유서 조작 동기가 드러나면서 20년 지원 이야기가 부상"
+      },
+      "verdictOptions": {
+        "wrong": "동생이 생활비를 빌미로 어머니를 통제한 것이다.",
+        "partial": "생활비를 보낸 건 맞지만, 그 규모와 성격은 확실하지 않다.",
+        "truth": "윤정후는 20년간 매달 생활비를 보냈고, 형의 공장 부도 때도 큰돈을 대신 갚았다. 어머니 돈처럼 보였던 상당수가 사실 윤정후의 돈이었다.",
+        "defer": "생활비의 성격과 규모를 판단하기 어렵다. 유보한다."
       }
     },
     {
@@ -368,6 +386,12 @@
       "v3UnlockPlan": {
         "runtimeRule": "d-3 S2 도달 시 해금",
         "authoredRule": "20년 지원의 실체가 드러나면서 왜 그렇게까지 했는지 의문이 생기며 출생 비밀 쟁점 부상"
+      },
+      "verdictOptions": {
+        "wrong": "동생이 출생 비밀을 이용해 형을 유산에서 배제하려 했다.",
+        "partial": "출생에 관한 비밀이 있는 것 같지만, 그것이 유서 조작과 직접 관련되는지는 불분명하다.",
+        "truth": "윤태성은 아버지와 혈연이 아니다. 윤정후는 이 사실을 알고도, 형의 삶이 무너질까 봐 유서를 줄여 법정까지 안 가게 하려 했다.",
+        "defer": "출생 비밀의 존재 여부를 확인할 수 없다. 유보한다."
       }
     },
     {
@@ -406,6 +430,12 @@
       "v3UnlockPlan": {
         "runtimeRule": "d-3 S3 + d-4 S2 모두 도달 시 자동 해금",
         "authoredRule": "20년 지원과 출생 비밀이 모두 드러난 뒤 최종 쟁점 발현"
+      },
+      "verdictOptions": {
+        "wrong": "동생이 어머니를 이용해 유산을 독점하려 했다.",
+        "partial": "양쪽 모두 어머니와의 관계에서 문제가 있었다.",
+        "truth": "형은 유산을 당연시했고, 동생은 어머니 뜻을 고쳐 형을 보호하려 했다. 둘 다 어머니를 있는 그대로 두지 못했다.",
+        "defer": "누가 어머니를 이용했는지 판단하기 어렵다. 유보한다."
       }
     }
   ],
@@ -470,18 +500,58 @@
         }
       },
       "v3DepthPlan": [
-        { "id": "stub", "label": "Stub", "summary": "유서 존재만 보임" },
-        { "id": "excerpt", "label": "Excerpt", "summary": "60:40 비율 확인" },
-        { "id": "original", "label": "Original", "summary": "공증 날짜, 내용 전문 확보" },
-        { "id": "context", "label": "Context", "summary": "작성 시점과 어머니 상태 대조" },
-        { "id": "established", "label": "Established", "summary": "공증된 최종본으로 확인" }
+        {
+          "id": "stub",
+          "label": "Stub",
+          "summary": "유서 존재만 보임"
+        },
+        {
+          "id": "excerpt",
+          "label": "Excerpt",
+          "summary": "60:40 비율 확인"
+        },
+        {
+          "id": "original",
+          "label": "Original",
+          "summary": "공증 날짜, 내용 전문 확보"
+        },
+        {
+          "id": "context",
+          "label": "Context",
+          "summary": "작성 시점과 어머니 상태 대조"
+        },
+        {
+          "id": "established",
+          "label": "Established",
+          "summary": "공증된 최종본으로 확인"
+        }
       ],
       "v3TrustStates": [
-        { "id": "submitted", "label": "제출됨", "summary": "A가 유서 사본 제출" },
-        { "id": "verifying", "label": "검증 중", "summary": "공증 기록과 대조" },
-        { "id": "authenticated", "label": "인증됨", "summary": "공증 도장 진위 확인" },
-        { "id": "challenged", "label": "이의 제기됨", "summary": "원본 존재 가능성 제기" },
-        { "id": "misread", "label": "조작/오독 판정", "summary": "이 유서가 조작본일 가능성 열림" }
+        {
+          "id": "submitted",
+          "label": "제출됨",
+          "summary": "A가 유서 사본 제출"
+        },
+        {
+          "id": "verifying",
+          "label": "검증 중",
+          "summary": "공증 기록과 대조"
+        },
+        {
+          "id": "authenticated",
+          "label": "인증됨",
+          "summary": "공증 도장 진위 확인"
+        },
+        {
+          "id": "challenged",
+          "label": "이의 제기됨",
+          "summary": "원본 존재 가능성 제기"
+        },
+        {
+          "id": "misread",
+          "label": "조작/오독 판정",
+          "summary": "이 유서가 조작본일 가능성 열림"
+        }
       ],
       "meta": {
         "name": "60:40 유서 사본",
@@ -558,18 +628,58 @@
         }
       },
       "v3DepthPlan": [
-        { "id": "stub", "label": "Stub", "summary": "방문 기록 존재만 보임" },
-        { "id": "excerpt", "label": "Excerpt", "summary": "방문 빈도 증가 확인" },
-        { "id": "original", "label": "Original", "summary": "날짜별 전체 방문 기록 확보" },
-        { "id": "context", "label": "Context", "summary": "요양보호사 교체 시점과 대조" },
-        { "id": "established", "label": "Established", "summary": "공증 전 방문 패턴 확정" }
+        {
+          "id": "stub",
+          "label": "Stub",
+          "summary": "방문 기록 존재만 보임"
+        },
+        {
+          "id": "excerpt",
+          "label": "Excerpt",
+          "summary": "방문 빈도 증가 확인"
+        },
+        {
+          "id": "original",
+          "label": "Original",
+          "summary": "날짜별 전체 방문 기록 확보"
+        },
+        {
+          "id": "context",
+          "label": "Context",
+          "summary": "요양보호사 교체 시점과 대조"
+        },
+        {
+          "id": "established",
+          "label": "Established",
+          "summary": "공증 전 방문 패턴 확정"
+        }
       ],
       "v3TrustStates": [
-        { "id": "submitted", "label": "제출됨", "summary": "요양원에서 기록 제출" },
-        { "id": "verifying", "label": "검증 중", "summary": "방문자 서명과 일자 대조" },
-        { "id": "authenticated", "label": "인증됨", "summary": "기관 기록으로 인증" },
-        { "id": "challenged", "label": "이의 제기됨", "summary": "방문 목적에 대한 해석 다툼" },
-        { "id": "misread", "label": "조작/오독 판정", "summary": "방문 동기 해석은 열려 있음" }
+        {
+          "id": "submitted",
+          "label": "제출됨",
+          "summary": "요양원에서 기록 제출"
+        },
+        {
+          "id": "verifying",
+          "label": "검증 중",
+          "summary": "방문자 서명과 일자 대조"
+        },
+        {
+          "id": "authenticated",
+          "label": "인증됨",
+          "summary": "기관 기록으로 인증"
+        },
+        {
+          "id": "challenged",
+          "label": "이의 제기됨",
+          "summary": "방문 목적에 대한 해석 다툼"
+        },
+        {
+          "id": "misread",
+          "label": "조작/오독 판정",
+          "summary": "방문 동기 해석은 열려 있음"
+        }
       ],
       "meta": {
         "name": "요양원 방문기록",
@@ -646,18 +756,58 @@
         }
       },
       "v3DepthPlan": [
-        { "id": "stub", "label": "Stub", "summary": "증언 존재만 보임" },
-        { "id": "excerpt", "label": "Excerpt", "summary": "핵심 문장 일부 공개" },
-        { "id": "original", "label": "Original", "summary": "전체 증언 내용 확보" },
-        { "id": "context", "label": "Context", "summary": "근무 기간과 목격 상황 대조" },
-        { "id": "established", "label": "Established", "summary": "증언 신뢰도 판정 완료" }
+        {
+          "id": "stub",
+          "label": "Stub",
+          "summary": "증언 존재만 보임"
+        },
+        {
+          "id": "excerpt",
+          "label": "Excerpt",
+          "summary": "핵심 문장 일부 공개"
+        },
+        {
+          "id": "original",
+          "label": "Original",
+          "summary": "전체 증언 내용 확보"
+        },
+        {
+          "id": "context",
+          "label": "Context",
+          "summary": "근무 기간과 목격 상황 대조"
+        },
+        {
+          "id": "established",
+          "label": "Established",
+          "summary": "증언 신뢰도 판정 완료"
+        }
       ],
       "v3TrustStates": [
-        { "id": "submitted", "label": "제출됨", "summary": "재판관이 증인 소환" },
-        { "id": "verifying", "label": "검증 중", "summary": "근무 기록과 대조" },
-        { "id": "authenticated", "label": "인증됨", "summary": "해당 시기 근무 확인" },
-        { "id": "challenged", "label": "이의 제기됨", "summary": "증언 해석에 대한 다툼" },
-        { "id": "misread", "label": "조작/오독 판정", "summary": "기억 왜곡 가능성 열림" }
+        {
+          "id": "submitted",
+          "label": "제출됨",
+          "summary": "재판관이 증인 소환"
+        },
+        {
+          "id": "verifying",
+          "label": "검증 중",
+          "summary": "근무 기록과 대조"
+        },
+        {
+          "id": "authenticated",
+          "label": "인증됨",
+          "summary": "해당 시기 근무 확인"
+        },
+        {
+          "id": "challenged",
+          "label": "이의 제기됨",
+          "summary": "증언 해석에 대한 다툼"
+        },
+        {
+          "id": "misread",
+          "label": "조작/오독 판정",
+          "summary": "기억 왜곡 가능성 열림"
+        }
       ],
       "meta": {
         "name": "전 요양보호사 음성증언",
@@ -738,18 +888,58 @@
         }
       },
       "v3DepthPlan": [
-        { "id": "stub", "label": "Stub", "summary": "스캔 기록 존재만 보임" },
-        { "id": "excerpt", "label": "Excerpt", "summary": "두 버전 비율 차이 확인" },
-        { "id": "original", "label": "Original", "summary": "스캔 시간, 제출자 기록 전체 확보" },
-        { "id": "context", "label": "Context", "summary": "90:10 → 60:40 변경 경위 복원" },
-        { "id": "established", "label": "Established", "summary": "B의 자기 몫 축소 조작으로 확정" }
+        {
+          "id": "stub",
+          "label": "Stub",
+          "summary": "스캔 기록 존재만 보임"
+        },
+        {
+          "id": "excerpt",
+          "label": "Excerpt",
+          "summary": "두 버전 비율 차이 확인"
+        },
+        {
+          "id": "original",
+          "label": "Original",
+          "summary": "스캔 시간, 제출자 기록 전체 확보"
+        },
+        {
+          "id": "context",
+          "label": "Context",
+          "summary": "90:10 → 60:40 변경 경위 복원"
+        },
+        {
+          "id": "established",
+          "label": "Established",
+          "summary": "B의 자기 몫 축소 조작으로 확정"
+        }
       ],
       "v3TrustStates": [
-        { "id": "submitted", "label": "제출됨", "summary": "공증사무실에서 기록 제출" },
-        { "id": "verifying", "label": "검증 중", "summary": "스캔 시간과 제출자 대조" },
-        { "id": "authenticated", "label": "인증됨", "summary": "기관 기록으로 인증" },
-        { "id": "challenged", "label": "이의 제기됨", "summary": "조작 동기에 대한 해석 다툼" },
-        { "id": "misread", "label": "조작/오독 판정", "summary": "조작은 확정, 동기 해석은 열림" }
+        {
+          "id": "submitted",
+          "label": "제출됨",
+          "summary": "공증사무실에서 기록 제출"
+        },
+        {
+          "id": "verifying",
+          "label": "검증 중",
+          "summary": "스캔 시간과 제출자 대조"
+        },
+        {
+          "id": "authenticated",
+          "label": "인증됨",
+          "summary": "기관 기록으로 인증"
+        },
+        {
+          "id": "challenged",
+          "label": "이의 제기됨",
+          "summary": "조작 동기에 대한 해석 다툼"
+        },
+        {
+          "id": "misread",
+          "label": "조작/오독 판정",
+          "summary": "조작은 확정, 동기 해석은 열림"
+        }
       ],
       "meta": {
         "name": "공증사무실 스캔 보관본",
@@ -830,18 +1020,58 @@
         }
       },
       "v3DepthPlan": [
-        { "id": "stub", "label": "Stub", "summary": "원본 유서 존재만 보임" },
-        { "id": "excerpt", "label": "Excerpt", "summary": "90:10 비율 확인" },
-        { "id": "original", "label": "Original", "summary": "자필 확인, 날짜 대조 완료" },
-        { "id": "context", "label": "Context", "summary": "공증본과의 차이 확정" },
-        { "id": "established", "label": "Established", "summary": "어머니 원래 뜻 확정" }
+        {
+          "id": "stub",
+          "label": "Stub",
+          "summary": "원본 유서 존재만 보임"
+        },
+        {
+          "id": "excerpt",
+          "label": "Excerpt",
+          "summary": "90:10 비율 확인"
+        },
+        {
+          "id": "original",
+          "label": "Original",
+          "summary": "자필 확인, 날짜 대조 완료"
+        },
+        {
+          "id": "context",
+          "label": "Context",
+          "summary": "공증본과의 차이 확정"
+        },
+        {
+          "id": "established",
+          "label": "Established",
+          "summary": "어머니 원래 뜻 확정"
+        }
       ],
       "v3TrustStates": [
-        { "id": "submitted", "label": "제출됨", "summary": "서랍에서 발견 제출" },
-        { "id": "verifying", "label": "검증 중", "summary": "자필 감정과 날짜 대조" },
-        { "id": "authenticated", "label": "인증됨", "summary": "어머니 자필로 인증" },
-        { "id": "challenged", "label": "이의 제기됨", "summary": "치매 상태에서 쓴 것 아닌지 다툼" },
-        { "id": "misread", "label": "조작/오독 판정", "summary": "자필은 확정, 판단 능력은 별도 판단" }
+        {
+          "id": "submitted",
+          "label": "제출됨",
+          "summary": "서랍에서 발견 제출"
+        },
+        {
+          "id": "verifying",
+          "label": "검증 중",
+          "summary": "자필 감정과 날짜 대조"
+        },
+        {
+          "id": "authenticated",
+          "label": "인증됨",
+          "summary": "어머니 자필로 인증"
+        },
+        {
+          "id": "challenged",
+          "label": "이의 제기됨",
+          "summary": "치매 상태에서 쓴 것 아닌지 다툼"
+        },
+        {
+          "id": "misread",
+          "label": "조작/오독 판정",
+          "summary": "자필은 확정, 판단 능력은 별도 판단"
+        }
       ],
       "meta": {
         "name": "어머니 서랍 원본 유서",
@@ -922,18 +1152,58 @@
         }
       },
       "v3DepthPlan": [
-        { "id": "stub", "label": "Stub", "summary": "송금 기록 존재만 보임" },
-        { "id": "excerpt", "label": "Excerpt", "summary": "생활비 송금 패턴 확인" },
-        { "id": "original", "label": "Original", "summary": "20년 전체 내역 확보" },
-        { "id": "context", "label": "Context", "summary": "부도 시점 큰돈 이동 확인" },
-        { "id": "established", "label": "Established", "summary": "B 돈이 어머니 돈으로 위장된 구조 확정" }
+        {
+          "id": "stub",
+          "label": "Stub",
+          "summary": "송금 기록 존재만 보임"
+        },
+        {
+          "id": "excerpt",
+          "label": "Excerpt",
+          "summary": "생활비 송금 패턴 확인"
+        },
+        {
+          "id": "original",
+          "label": "Original",
+          "summary": "20년 전체 내역 확보"
+        },
+        {
+          "id": "context",
+          "label": "Context",
+          "summary": "부도 시점 큰돈 이동 확인"
+        },
+        {
+          "id": "established",
+          "label": "Established",
+          "summary": "B 돈이 어머니 돈으로 위장된 구조 확정"
+        }
       ],
       "v3TrustStates": [
-        { "id": "submitted", "label": "제출됨", "summary": "은행 기록 제출" },
-        { "id": "verifying", "label": "검증 중", "summary": "계좌 명의와 송금 흐름 대조" },
-        { "id": "authenticated", "label": "인증됨", "summary": "은행 기록으로 인증" },
-        { "id": "challenged", "label": "이의 제기됨", "summary": "송금 성격에 대한 해석 다툼" },
-        { "id": "misread", "label": "조작/오독 판정", "summary": "송금은 확정, 성격 해석은 열림" }
+        {
+          "id": "submitted",
+          "label": "제출됨",
+          "summary": "은행 기록 제출"
+        },
+        {
+          "id": "verifying",
+          "label": "검증 중",
+          "summary": "계좌 명의와 송금 흐름 대조"
+        },
+        {
+          "id": "authenticated",
+          "label": "인증됨",
+          "summary": "은행 기록으로 인증"
+        },
+        {
+          "id": "challenged",
+          "label": "이의 제기됨",
+          "summary": "송금 성격에 대한 해석 다툼"
+        },
+        {
+          "id": "misread",
+          "label": "조작/오독 판정",
+          "summary": "송금은 확정, 성격 해석은 열림"
+        }
       ],
       "meta": {
         "name": "20년 송금 내역",
@@ -1015,18 +1285,58 @@
         }
       },
       "v3DepthPlan": [
-        { "id": "stub", "label": "Stub", "summary": "일기장 존재만 보임" },
-        { "id": "excerpt", "label": "Excerpt", "summary": "핵심 문장 일부 공개" },
-        { "id": "original", "label": "Original", "summary": "전체 기록 확보" },
-        { "id": "context", "label": "Context", "summary": "작성 시점과 유서 시점 대조" },
-        { "id": "established", "label": "Established", "summary": "출생 비밀과 유서 조작 동기 확정" }
+        {
+          "id": "stub",
+          "label": "Stub",
+          "summary": "일기장 존재만 보임"
+        },
+        {
+          "id": "excerpt",
+          "label": "Excerpt",
+          "summary": "핵심 문장 일부 공개"
+        },
+        {
+          "id": "original",
+          "label": "Original",
+          "summary": "전체 기록 확보"
+        },
+        {
+          "id": "context",
+          "label": "Context",
+          "summary": "작성 시점과 유서 시점 대조"
+        },
+        {
+          "id": "established",
+          "label": "Established",
+          "summary": "출생 비밀과 유서 조작 동기 확정"
+        }
       ],
       "v3TrustStates": [
-        { "id": "submitted", "label": "제출됨", "summary": "B가 일기장 사진 제출" },
-        { "id": "verifying", "label": "검증 중", "summary": "자필 감정 진행" },
-        { "id": "authenticated", "label": "인증됨", "summary": "어머니 자필로 인증" },
-        { "id": "challenged", "label": "이의 제기됨", "summary": "치매 상태의 기록 신뢰성 다툼" },
-        { "id": "misread", "label": "조작/오독 판정", "summary": "자필은 확정, 내용 정확성은 별도" }
+        {
+          "id": "submitted",
+          "label": "제출됨",
+          "summary": "B가 일기장 사진 제출"
+        },
+        {
+          "id": "verifying",
+          "label": "검증 중",
+          "summary": "자필 감정 진행"
+        },
+        {
+          "id": "authenticated",
+          "label": "인증됨",
+          "summary": "어머니 자필로 인증"
+        },
+        {
+          "id": "challenged",
+          "label": "이의 제기됨",
+          "summary": "치매 상태의 기록 신뢰성 다툼"
+        },
+        {
+          "id": "misread",
+          "label": "조작/오독 판정",
+          "summary": "자필은 확정, 내용 정확성은 별도"
+        }
       ],
       "meta": {
         "name": "어머니 일기장",
@@ -1094,11 +1404,31 @@
       "initialState": "S0",
       "collapseViaTrust": false,
       "transitions": [
-        { "from": "S0", "to": "S1", "trigger": "direct_question" },
-        { "from": "S1", "to": "S2", "trigger": "motive_question" },
-        { "from": "S2", "to": "S3", "trigger": "hard_evidence" },
-        { "from": "S3", "to": "S4", "trigger": "empathy_question" },
-        { "from": "S4", "to": "S5", "trigger": "direct_question" }
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "direct_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "motive_question"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "hard_evidence"
+        },
+        {
+          "from": "S3",
+          "to": "S4",
+          "trigger": "empathy_question"
+        },
+        {
+          "from": "S4",
+          "to": "S5",
+          "trigger": "direct_question"
+        }
       ]
     },
     {
@@ -1109,9 +1439,21 @@
       "initialState": "S0",
       "collapseViaTrust": false,
       "transitions": [
-        { "from": "S0", "to": "S1", "trigger": "direct_question" },
-        { "from": "S1", "to": "S2", "trigger": "motive_question" },
-        { "from": "S2", "to": "S3", "trigger": "direct_question" }
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "direct_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "motive_question"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "direct_question"
+        }
       ]
     },
     {
@@ -1122,11 +1464,31 @@
       "initialState": "S0",
       "collapseViaTrust": true,
       "transitions": [
-        { "from": "S0", "to": "S1", "trigger": "direct_question" },
-        { "from": "S1", "to": "S2", "trigger": "hard_evidence" },
-        { "from": "S2", "to": "S3", "trigger": "motive_question" },
-        { "from": "S3", "to": "S4", "trigger": "empathy_question" },
-        { "from": "S4", "to": "S5", "trigger": "empathy_question" }
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "direct_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "hard_evidence"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "motive_question"
+        },
+        {
+          "from": "S3",
+          "to": "S4",
+          "trigger": "empathy_question"
+        },
+        {
+          "from": "S4",
+          "to": "S5",
+          "trigger": "empathy_question"
+        }
       ]
     },
     {
@@ -1137,11 +1499,31 @@
       "initialState": "S0",
       "collapseViaTrust": false,
       "transitions": [
-        { "from": "S0", "to": "S1", "trigger": "direct_question" },
-        { "from": "S1", "to": "S2", "trigger": "motive_question" },
-        { "from": "S2", "to": "S3", "trigger": "empathy_question" },
-        { "from": "S3", "to": "S4", "trigger": "direct_question" },
-        { "from": "S4", "to": "S5", "trigger": "empathy_question" }
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "direct_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "motive_question"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "empathy_question"
+        },
+        {
+          "from": "S3",
+          "to": "S4",
+          "trigger": "direct_question"
+        },
+        {
+          "from": "S4",
+          "to": "S5",
+          "trigger": "empathy_question"
+        }
       ]
     }
   ],
@@ -1154,11 +1536,31 @@
       "initialState": "S0",
       "collapseViaTrust": false,
       "transitions": [
-        { "from": "S0", "to": "S1", "trigger": "direct_question" },
-        { "from": "S1", "to": "S2", "trigger": "motive_question" },
-        { "from": "S2", "to": "S3", "trigger": "hard_evidence" },
-        { "from": "S3", "to": "S4", "trigger": "empathy_question" },
-        { "from": "S4", "to": "S5", "trigger": "direct_question" }
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "direct_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "motive_question"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "hard_evidence"
+        },
+        {
+          "from": "S3",
+          "to": "S4",
+          "trigger": "empathy_question"
+        },
+        {
+          "from": "S4",
+          "to": "S5",
+          "trigger": "direct_question"
+        }
       ]
     },
     {
@@ -1169,11 +1571,31 @@
       "initialState": "S0",
       "collapseViaTrust": false,
       "transitions": [
-        { "from": "S0", "to": "S1", "trigger": "direct_question" },
-        { "from": "S1", "to": "S2", "trigger": "motive_question" },
-        { "from": "S2", "to": "S3", "trigger": "hard_evidence" },
-        { "from": "S3", "to": "S4", "trigger": "empathy_question" },
-        { "from": "S4", "to": "S5", "trigger": "direct_question" }
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "direct_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "motive_question"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "hard_evidence"
+        },
+        {
+          "from": "S3",
+          "to": "S4",
+          "trigger": "empathy_question"
+        },
+        {
+          "from": "S4",
+          "to": "S5",
+          "trigger": "direct_question"
+        }
       ]
     },
     {
@@ -1184,11 +1606,31 @@
       "initialState": "S0",
       "collapseViaTrust": false,
       "transitions": [
-        { "from": "S0", "to": "S1", "trigger": "direct_question" },
-        { "from": "S1", "to": "S2", "trigger": "motive_question" },
-        { "from": "S2", "to": "S3", "trigger": "hard_evidence" },
-        { "from": "S3", "to": "S4", "trigger": "empathy_question" },
-        { "from": "S4", "to": "S5", "trigger": "empathy_question" }
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "direct_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "motive_question"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "hard_evidence"
+        },
+        {
+          "from": "S3",
+          "to": "S4",
+          "trigger": "empathy_question"
+        },
+        {
+          "from": "S4",
+          "to": "S5",
+          "trigger": "empathy_question"
+        }
       ]
     },
     {
@@ -1199,11 +1641,31 @@
       "initialState": "S0",
       "collapseViaTrust": false,
       "transitions": [
-        { "from": "S0", "to": "S1", "trigger": "motive_question" },
-        { "from": "S1", "to": "S2", "trigger": "direct_question" },
-        { "from": "S2", "to": "S3", "trigger": "hard_evidence" },
-        { "from": "S3", "to": "S4", "trigger": "empathy_question" },
-        { "from": "S4", "to": "S5", "trigger": "empathy_question" }
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "motive_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "direct_question"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "hard_evidence"
+        },
+        {
+          "from": "S3",
+          "to": "S4",
+          "trigger": "empathy_question"
+        },
+        {
+          "from": "S4",
+          "to": "S5",
+          "trigger": "empathy_question"
+        }
       ]
     },
     {
@@ -1214,11 +1676,31 @@
       "initialState": "S0",
       "collapseViaTrust": false,
       "transitions": [
-        { "from": "S0", "to": "S1", "trigger": "direct_question" },
-        { "from": "S1", "to": "S2", "trigger": "motive_question" },
-        { "from": "S2", "to": "S3", "trigger": "empathy_question" },
-        { "from": "S3", "to": "S4", "trigger": "hard_evidence" },
-        { "from": "S4", "to": "S5", "trigger": "empathy_question" }
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "direct_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "motive_question"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "empathy_question"
+        },
+        {
+          "from": "S3",
+          "to": "S4",
+          "trigger": "hard_evidence"
+        },
+        {
+          "from": "S4",
+          "to": "S5",
+          "trigger": "empathy_question"
+        }
       ]
     }
   ],
@@ -1262,8 +1744,13 @@
         "type": "evidence",
         "label": "e-1 60:40 유서 사본",
         "sourceRef": "e-1",
-        "linkedDisputeIds": ["d-1", "d-2"],
-        "linkedEvidenceIds": ["e-1"],
+        "linkedDisputeIds": [
+          "d-1",
+          "d-2"
+        ],
+        "linkedEvidenceIds": [
+          "e-1"
+        ],
         "visibility": "base"
       },
       {
@@ -1271,8 +1758,12 @@
         "type": "evidence",
         "label": "e-2 요양원 방문기록",
         "sourceRef": "e-2",
-        "linkedDisputeIds": ["d-1"],
-        "linkedEvidenceIds": ["e-2"],
+        "linkedDisputeIds": [
+          "d-1"
+        ],
+        "linkedEvidenceIds": [
+          "e-2"
+        ],
         "visibility": "base"
       },
       {
@@ -1280,8 +1771,12 @@
         "type": "evidence",
         "label": "e-3 전 요양보호사 음성증언",
         "sourceRef": "e-3",
-        "linkedDisputeIds": ["d-1"],
-        "linkedEvidenceIds": ["e-3"],
+        "linkedDisputeIds": [
+          "d-1"
+        ],
+        "linkedEvidenceIds": [
+          "e-3"
+        ],
         "visibility": "base"
       },
       {
@@ -1289,8 +1784,12 @@
         "type": "evidence",
         "label": "e-4 공증사무실 스캔 보관본",
         "sourceRef": "e-4",
-        "linkedDisputeIds": ["d-2"],
-        "linkedEvidenceIds": ["e-4"],
+        "linkedDisputeIds": [
+          "d-2"
+        ],
+        "linkedEvidenceIds": [
+          "e-4"
+        ],
         "visibility": "base"
       },
       {
@@ -1298,8 +1797,13 @@
         "type": "evidence",
         "label": "e-5 어머니 서랍 원본 유서",
         "sourceRef": "e-5",
-        "linkedDisputeIds": ["d-2", "d-3"],
-        "linkedEvidenceIds": ["e-5"],
+        "linkedDisputeIds": [
+          "d-2",
+          "d-3"
+        ],
+        "linkedEvidenceIds": [
+          "e-5"
+        ],
         "visibility": "base"
       },
       {
@@ -1307,8 +1811,13 @@
         "type": "evidence",
         "label": "e-6 20년 송금 내역",
         "sourceRef": "e-6",
-        "linkedDisputeIds": ["d-3", "d-5"],
-        "linkedEvidenceIds": ["e-6"],
+        "linkedDisputeIds": [
+          "d-3",
+          "d-5"
+        ],
+        "linkedEvidenceIds": [
+          "e-6"
+        ],
         "visibility": "base"
       },
       {
@@ -1316,8 +1825,13 @@
         "type": "evidence",
         "label": "e-7 어머니 일기장",
         "sourceRef": "e-7",
-        "linkedDisputeIds": ["d-4", "d-5"],
-        "linkedEvidenceIds": ["e-7"],
+        "linkedDisputeIds": [
+          "d-4",
+          "d-5"
+        ],
+        "linkedEvidenceIds": [
+          "e-7"
+        ],
         "visibility": "base"
       },
       {
@@ -1325,7 +1839,9 @@
         "type": "statement",
         "label": "A의 발언 \"모시고 산 건 나인데 왜 40이냐\"",
         "sourceRef": "stmt-a-heir",
-        "linkedDisputeIds": ["d-1"],
+        "linkedDisputeIds": [
+          "d-1"
+        ],
         "visibility": "base"
       },
       {
@@ -1333,7 +1849,10 @@
         "type": "statement",
         "label": "B의 발언 \"제가 말할 수 있는 부분이 아닙니다\"",
         "sourceRef": "stmt-b-silence",
-        "linkedDisputeIds": ["d-2", "d-4"],
+        "linkedDisputeIds": [
+          "d-2",
+          "d-4"
+        ],
         "visibility": "base"
       },
       {
@@ -1341,7 +1860,10 @@
         "type": "statement",
         "label": "B의 발언 \"어머니가 그렇게 하고 싶어 하셨습니다\"",
         "sourceRef": "stmt-b-mother",
-        "linkedDisputeIds": ["d-1", "d-2"],
+        "linkedDisputeIds": [
+          "d-1",
+          "d-2"
+        ],
         "visibility": "base"
       },
       {
@@ -1349,7 +1871,9 @@
         "type": "witness_angle",
         "label": "w-1 최복순 증언 축",
         "sourceRef": "w-1-angle",
-        "linkedDisputeIds": ["d-1"],
+        "linkedDisputeIds": [
+          "d-1"
+        ],
         "visibility": "base"
       },
       {
@@ -1357,7 +1881,9 @@
         "type": "witness_angle",
         "label": "w-2 김영수 증언 축",
         "sourceRef": "w-2-angle",
-        "linkedDisputeIds": ["d-2"],
+        "linkedDisputeIds": [
+          "d-2"
+        ],
         "visibility": "base"
       },
       {
@@ -1365,63 +1891,102 @@
         "type": "witness_angle",
         "label": "w-3 박순애 증언 축",
         "sourceRef": "w-3-angle",
-        "linkedDisputeIds": ["d-3", "d-5"],
+        "linkedDisputeIds": [
+          "d-3",
+          "d-5"
+        ],
         "visibility": "base"
       },
       {
         "id": "L-1",
         "type": "derived_note",
         "label": "L-1 말년 접근 + 유산 비율",
-        "linkedDisputeIds": ["d-1"],
-        "linkedEvidenceIds": ["e-1", "e-2"],
+        "linkedDisputeIds": [
+          "d-1"
+        ],
+        "linkedEvidenceIds": [
+          "e-1",
+          "e-2"
+        ],
         "visibility": "derived"
       },
       {
         "id": "L-2",
         "type": "derived_note",
         "label": "L-2 조작 확인 + 방향 전환",
-        "linkedDisputeIds": ["d-2"],
-        "linkedEvidenceIds": ["e-4", "e-5"],
+        "linkedDisputeIds": [
+          "d-2"
+        ],
+        "linkedEvidenceIds": [
+          "e-4",
+          "e-5"
+        ],
         "visibility": "derived"
       },
       {
         "id": "L-3",
         "type": "derived_note",
         "label": "L-3 원본 유서 + 20년 지원",
-        "linkedDisputeIds": ["d-3"],
-        "linkedEvidenceIds": ["e-5", "e-6"],
+        "linkedDisputeIds": [
+          "d-3"
+        ],
+        "linkedEvidenceIds": [
+          "e-5",
+          "e-6"
+        ],
         "visibility": "derived"
       },
       {
         "id": "L-4",
         "type": "derived_note",
         "label": "L-4 송금 + 일기장",
-        "linkedDisputeIds": ["d-4", "d-5"],
-        "linkedEvidenceIds": ["e-6", "e-7"],
+        "linkedDisputeIds": [
+          "d-4",
+          "d-5"
+        ],
+        "linkedEvidenceIds": [
+          "e-6",
+          "e-7"
+        ],
         "visibility": "derived"
       },
       {
         "id": "dc-1",
         "type": "derived_note",
         "label": "dc-1 자기 몫을 줄인 조작의 이유",
-        "linkedDisputeIds": ["d-2"],
-        "linkedEvidenceIds": ["e-4", "e-5"],
+        "linkedDisputeIds": [
+          "d-2"
+        ],
+        "linkedEvidenceIds": [
+          "e-4",
+          "e-5"
+        ],
         "visibility": "derived"
       },
       {
         "id": "dc-2",
         "type": "derived_note",
         "label": "dc-2 형이 모르던 20년의 돈",
-        "linkedDisputeIds": ["d-3"],
-        "linkedEvidenceIds": ["e-6"],
+        "linkedDisputeIds": [
+          "d-3"
+        ],
+        "linkedEvidenceIds": [
+          "e-6"
+        ],
         "visibility": "derived"
       },
       {
         "id": "dc-3",
         "type": "derived_note",
         "label": "dc-3 60대 40이 아니었다면",
-        "linkedDisputeIds": ["d-4", "d-5"],
-        "linkedEvidenceIds": ["e-5", "e-7"],
+        "linkedDisputeIds": [
+          "d-4",
+          "d-5"
+        ],
+        "linkedEvidenceIds": [
+          "e-5",
+          "e-7"
+        ],
         "visibility": "derived"
       }
     ],
@@ -1434,7 +1999,10 @@
         "noteText": "말년 접근과 유산 비율이 맞물린다",
         "judgeHint": "후속 카드 dc-1과 연결된다.",
         "effects": [
-          { "kind": "unlock_note", "unlockNodeId": "L-1" }
+          {
+            "kind": "unlock_note",
+            "unlockNodeId": "L-1"
+          }
         ]
       },
       {
@@ -1445,7 +2013,10 @@
         "noteText": "조작은 맞다. 그런데 자기 몫을 줄였다",
         "judgeHint": "후속 카드 dc-1과 연결된다.",
         "effects": [
-          { "kind": "unlock_note", "unlockNodeId": "L-2" }
+          {
+            "kind": "unlock_note",
+            "unlockNodeId": "L-2"
+          }
         ]
       },
       {
@@ -1456,7 +2027,10 @@
         "noteText": "원본 유서와 20년 지원이 같은 맥락이다",
         "judgeHint": "후속 카드 dc-2와 연결된다.",
         "effects": [
-          { "kind": "unlock_note", "unlockNodeId": "L-3" }
+          {
+            "kind": "unlock_note",
+            "unlockNodeId": "L-3"
+          }
         ]
       },
       {
@@ -1467,7 +2041,10 @@
         "noteText": "B는 돈과 비밀 둘 다 떠안고 있었다",
         "judgeHint": "후속 카드 dc-3과 연결된다.",
         "effects": [
-          { "kind": "unlock_note", "unlockNodeId": "L-4" }
+          {
+            "kind": "unlock_note",
+            "unlockNodeId": "L-4"
+          }
         ]
       },
       {
@@ -1477,7 +2054,10 @@
         "nodeType": "derived_note",
         "noteText": "자기 몫을 줄인 조작의 이유",
         "effects": [
-          { "kind": "unlock_note", "unlockNodeId": "dc-1" }
+          {
+            "kind": "unlock_note",
+            "unlockNodeId": "dc-1"
+          }
         ]
       },
       {
@@ -1487,8 +2067,14 @@
         "nodeType": "derived_note",
         "noteText": "형이 모르던 20년의 돈",
         "effects": [
-          { "kind": "unlock_note", "unlockNodeId": "dc-2" },
-          { "kind": "unlock_dispute", "unlockNodeId": "d-3" }
+          {
+            "kind": "unlock_note",
+            "unlockNodeId": "dc-2"
+          },
+          {
+            "kind": "unlock_dispute",
+            "unlockNodeId": "d-3"
+          }
         ]
       },
       {
@@ -1498,15 +2084,24 @@
         "nodeType": "derived_note",
         "noteText": "60대 40이 아니었다면",
         "effects": [
-          { "kind": "unlock_note", "unlockNodeId": "dc-3" },
-          { "kind": "unlock_dispute", "unlockNodeId": "d-4" }
+          {
+            "kind": "unlock_note",
+            "unlockNodeId": "dc-3"
+          },
+          {
+            "kind": "unlock_dispute",
+            "unlockNodeId": "d-4"
+          }
         ]
       }
     ],
     "recipes": [
       {
         "id": "combine-1",
-        "inputs": ["e-1", "e-2"],
+        "inputs": [
+          "e-1",
+          "e-2"
+        ],
         "cost": 1,
         "discoveryText": "유서의 60:40 비율과 B의 말년 방문 급증이 겹친다. 유서 작성에 B가 개입했다는 의심이 강화된다.",
         "outputId": "L-1",
@@ -1514,7 +2109,10 @@
       },
       {
         "id": "combine-2",
-        "inputs": ["e-4", "e-5"],
+        "inputs": [
+          "e-4",
+          "e-5"
+        ],
         "cost": 1,
         "discoveryText": "공증사무실 이중 스캔과 원본 유서를 대조하면... 90이 60으로 바뀐 건 자기 몫을 줄인 조작이었다!",
         "outputId": "dc-1",
@@ -1522,7 +2120,10 @@
       },
       {
         "id": "combine-3",
-        "inputs": ["e-5", "e-6"],
+        "inputs": [
+          "e-5",
+          "e-6"
+        ],
         "cost": 1,
         "discoveryText": "어머니가 90을 남기려 한 이유가 보인다. 20년간 생활비를 대고 형의 부도까지 막아준 것이 B였다.",
         "outputId": "L-3",
@@ -1530,7 +2131,10 @@
       },
       {
         "id": "combine-4",
-        "inputs": ["e-6", "e-7"],
+        "inputs": [
+          "e-6",
+          "e-7"
+        ],
         "cost": 1,
         "discoveryText": "20년 송금 내역과 어머니 일기장을 합치면... B는 돈과 출생 비밀 두 가지를 모두 떠안고 형을 지켜왔다.",
         "outputId": "dc-3",
@@ -1538,7 +2142,10 @@
       },
       {
         "id": "combine-5",
-        "inputs": ["stmt-b-silence", "e-4"],
+        "inputs": [
+          "stmt-b-silence",
+          "e-4"
+        ],
         "cost": 1,
         "discoveryText": "B가 '말할 수 있는 부분이 아니다'라고 한 이유... 공증 이중 스캔을 보면 자기 몫을 줄인 이유를 말할 수 없었던 것이다.",
         "outputId": "L-2",
@@ -1546,7 +2153,10 @@
       },
       {
         "id": "combine-6",
-        "inputs": ["stmt-b-mother", "e-6"],
+        "inputs": [
+          "stmt-b-mother",
+          "e-6"
+        ],
         "cost": 1,
         "discoveryText": "어머니가 그렇게 하고 싶어 했다는 말 뒤에... 20년간 B가 보낸 돈이 있었다. 어머니의 뜻에는 근거가 있었다.",
         "outputId": "dc-2",
@@ -1557,18 +2167,58 @@
   "v3Design": {
     "evidenceAxisLegend": {
       "depthStages": [
-        { "id": "stub", "label": "Stub", "summary": "존재만 보임" },
-        { "id": "excerpt", "label": "Excerpt", "summary": "일부만 열람" },
-        { "id": "original", "label": "Original", "summary": "원본/전체본 확보" },
-        { "id": "context", "label": "Context", "summary": "앞뒤 맥락 복원" },
-        { "id": "established", "label": "Established", "summary": "공식기록 채택" }
+        {
+          "id": "stub",
+          "label": "Stub",
+          "summary": "존재만 보임"
+        },
+        {
+          "id": "excerpt",
+          "label": "Excerpt",
+          "summary": "일부만 열람"
+        },
+        {
+          "id": "original",
+          "label": "Original",
+          "summary": "원본/전체본 확보"
+        },
+        {
+          "id": "context",
+          "label": "Context",
+          "summary": "앞뒤 맥락 복원"
+        },
+        {
+          "id": "established",
+          "label": "Established",
+          "summary": "공식기록 채택"
+        }
       ],
       "trustStates": [
-        { "id": "submitted", "label": "제출됨", "summary": "당사자가 제출한 상태" },
-        { "id": "verifying", "label": "검증 중", "summary": "원본 대조 및 맥락 확인 중" },
-        { "id": "authenticated", "label": "인증됨", "summary": "신뢰 가능한 자료로 판단" },
-        { "id": "challenged", "label": "이의 제기됨", "summary": "상대방이 의미나 범위를 다툼" },
-        { "id": "misread", "label": "조작/오독 판정", "summary": "위조 또는 발췌/오독 여부가 판정됨" }
+        {
+          "id": "submitted",
+          "label": "제출됨",
+          "summary": "당사자가 제출한 상태"
+        },
+        {
+          "id": "verifying",
+          "label": "검증 중",
+          "summary": "원본 대조 및 맥락 확인 중"
+        },
+        {
+          "id": "authenticated",
+          "label": "인증됨",
+          "summary": "신뢰 가능한 자료로 판단"
+        },
+        {
+          "id": "challenged",
+          "label": "이의 제기됨",
+          "summary": "상대방이 의미나 범위를 다툼"
+        },
+        {
+          "id": "misread",
+          "label": "조작/오독 판정",
+          "summary": "위조 또는 발췌/오독 여부가 판정됨"
+        }
       ]
     },
     "hiddenDisputes": [
@@ -1610,8 +2260,15 @@
         "id": "L-1",
         "name": "Timeline Lead",
         "leadType": "Timeline",
-        "firstInputs": ["e-1", "e-2"],
-        "secondInputs": ["L-1", "e-3", "w-1-angle"],
+        "firstInputs": [
+          "e-1",
+          "e-2"
+        ],
+        "secondInputs": [
+          "L-1",
+          "e-3",
+          "w-1-angle"
+        ],
         "dossierCardId": "dc-1",
         "interpretationChoices": [
           {
@@ -1635,8 +2292,15 @@
         "id": "L-2",
         "name": "Forgery Lead",
         "leadType": "Context",
-        "firstInputs": ["e-4", "stmt-b-silence"],
-        "secondInputs": ["L-2", "e-5", "w-2-angle"],
+        "firstInputs": [
+          "e-4",
+          "stmt-b-silence"
+        ],
+        "secondInputs": [
+          "L-2",
+          "e-5",
+          "w-2-angle"
+        ],
         "dossierCardId": "dc-1",
         "interpretationChoices": [
           {
@@ -1655,8 +2319,15 @@
         "id": "L-3",
         "name": "Support Lead",
         "leadType": "Beneficiary",
-        "firstInputs": ["e-5", "e-6"],
-        "secondInputs": ["L-3", "stmt-b-mother", "w-3-angle"],
+        "firstInputs": [
+          "e-5",
+          "e-6"
+        ],
+        "secondInputs": [
+          "L-3",
+          "stmt-b-mother",
+          "w-3-angle"
+        ],
         "dossierCardId": "dc-2",
         "interpretationChoices": [
           {
@@ -1675,8 +2346,14 @@
         "id": "L-4",
         "name": "Secret Lead",
         "leadType": "Reframe",
-        "firstInputs": ["e-6", "e-7"],
-        "secondInputs": ["L-4", "w-3-angle"],
+        "firstInputs": [
+          "e-6",
+          "e-7"
+        ],
+        "secondInputs": [
+          "L-4",
+          "w-3-angle"
+        ],
         "dossierCardId": "dc-3",
         "interpretationChoices": [
           {

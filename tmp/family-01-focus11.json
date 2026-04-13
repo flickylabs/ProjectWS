@@ -23,40 +23,36 @@
         "phase7",
         "result"
       ],
-      "turnCount": 14,
+      "turnCount": 16,
       "verdictMode": "normal",
       "verdictScore": {
         "insight": 68,
         "authority": 91,
-        "wisdom": 87,
+        "wisdom": 86,
         "total": 82
       },
-      "scriptedMissCount": 2,
-      "scriptedHitCount": 19,
-      "scriptedMissTexts": [
-        "[Scripted miss] family-01/evidence_present/b|e-1|mid|both — key_missing",
-        "[Scripted miss] family-01/evidence_present/b|e-7|early|both — key_missing"
-      ],
+      "scriptedMissCount": 0,
+      "scriptedHitCount": 18,
+      "scriptedMissTexts": [],
       "scriptedHitTexts": [
         "[Scripted] family-01/interrogation/b|d-1|S1|fact_pursuit",
         "[Scripted] family-01/interrogation/b|d-1|S1|motive_search",
         "[Scripted] family-01/interrogation/a|d-1|S2|motive_search",
         "[Scripted] family-01/interrogation/b|d-1|S1|empathy_approach",
         "[Scripted] family-01/interrogation/b|d-1|S1|fact_pursuit",
+        "[Scripted] family-01/interrogation/a|d-1|S2|fact_pursuit",
         "[Scripted] family-01/interrogation/b|d-1|S1|motive_search",
-        "[Scripted] family-01/interrogation/a|d-1|S2|motive_search",
-        "[Scripted] family-01/interrogation/b|d-1|S1|empathy_approach",
-        "[Scripted] family-01/interrogation/b|d-2|S2|fact_pursuit",
-        "[Scripted] family-01/interrogation/b|d-2|S2|motive_search",
-        "[Scripted] family-01/interrogation/b|d-2|S3|empathy_approach",
-        "[Scripted] family-01/interrogation/a|d-2|S1|empathy_approach",
-        "[Scripted] family-01/evidence_present/b|e-1|mid|self",
+        "[Scripted] family-01/interrogation/b|d-1|S2|empathy_approach",
+        "[Scripted] family-01/evidence_present/b|e-1|mid|both",
         "[Scripted] family-01/evidence_present/b|e-4|late|self",
         "[Scripted] family-01/evidence_present/b|e-5|late|self",
         "[Scripted] family-01/evidence_present/b|e-6|late|self",
-        "[Scripted] family-01/evidence_present/b|e-7|early|self",
-        "[Scripted] family-01/aftermath/b_primary_fault",
-        "[Scripted] family-01/aftermath/b_primary_fault"
+        "[Scripted] family-01/interrogation/b|d-4|S0|fact_pursuit",
+        "[Scripted] family-01/interrogation/b|d-4|S0|motive_search",
+        "[Scripted] family-01/interrogation/b|d-4|S0|empathy_approach",
+        "[Scripted] family-01/interrogation/b|d-4|S0|fact_pursuit",
+        "[Scripted] family-01/interrogation/b|d-4|S1|motive_search",
+        "[Scripted] family-01/interrogation/b|d-4|S2|empathy_approach"
       ],
       "seriousErrors": [],
       "typeErrorLike": [],
@@ -74,6 +70,9 @@
           "disputeId": "d-4",
           "severity": "major",
           "text": "누나, 잘린 수첩 사진 한 장으로 상속 얘기까지 가실 겁니까. 전체 스캔부터 보게 해 주세요, 그 한 줄만 들고 가면 또 결론부터 납니다."
+        },
+        {
+          "type": "evidence_discovery"
         }
       ],
       "introTrace": {
@@ -378,14 +377,6 @@
             "bodyLeaks": [],
             "selectedIndex": null,
             "selectedText": null
-          },
-          {
-            "phase": "phase1",
-            "guard": 36,
-            "options": [],
-            "bodyLeaks": [],
-            "selectedIndex": null,
-            "selectedText": null
           }
         ],
         "finalPhase": "phase3"
@@ -402,11 +393,8 @@
             "말년의 어머니는 유서를 제대로 판단할 수 있었는가"
           ],
           "ribbonChipCount": 1,
-          "notesTabs": [
-            "말년의 어머니는…",
-            "전체"
-          ],
-          "notesTabCount": 2,
+          "notesTabs": [],
+          "notesTabCount": 0,
           "evidenceNames": [
             "60:40 유서 사본",
             "요양원 방문기록",
@@ -419,7 +407,7 @@
           "e-3"
         ],
         "d1Progress": {
-          "finalState": "S1",
+          "finalState": "S2",
           "turns": [
             {
               "turn": 1,
@@ -437,7 +425,7 @@
                 },
                 {
                   "speaker": "b",
-                  "text": "예전보다 횟수가 늘어난 것도 맞습니다. 하루하루 컨디션이 달라지셔서 틈날 때마다 갔습니다."
+                  "text": "기록으로 보면 많아 보일 겁니다. 실제로는 잠깐씩 확인하고 나온 날도 적지 않았습니다."
                 },
                 {
                   "speaker": "system",
@@ -457,7 +445,7 @@
                 },
                 {
                   "speaker": "b",
-                  "text": "제 형은 갑자기 왜 왔냐고 묻지만 저는 늦기 전에 보자는 마음이 더 컸습니다."
+                  "text": "어머니 몸이 나빠지시니 더 자주 간 겁니다. 다른 뜻은 없었습니다."
                 },
                 {
                   "speaker": "system",
@@ -465,7 +453,7 @@
                 },
                 {
                   "speaker": "a",
-                  "text": "어머상대방이 더 약해진 순간을 그냥 기다린 게 아니라 그 상태를 자기에게 유리한 흐름으로 묶은 겁니다."
+                  "text": "늘 보던 사람 앞에서는 어머니 마음을 흔들기 어려웠을 겁니다. 그래서 분위기부터 바꾼 거라고 봅니다."
                 }
               ]
             },
@@ -510,6 +498,14 @@
                 {
                   "speaker": "system",
                   "text": "💡 재판관의 관찰: \"네, 그렇게 했습니다\" 식의 극도로 짧은 답변을 합니다"
+                },
+                {
+                  "speaker": "system",
+                  "text": "💬 윤태성이 참지 못하고 끼어든다!"
+                },
+                {
+                  "speaker": "a",
+                  "text": "어머니 담당하던 분이 바뀐 시점이 공증 직전입니다. 이 흐름을 저는 우연으로 못 보겠습니다."
                 }
               ]
             },
@@ -525,15 +521,7 @@
                 },
                 {
                   "speaker": "b",
-                  "text": "제가 자주 간 걸 이상하게 보실 수는 있습니다. 하지만 그 이상한 시선이 곧 다른 목적의 증거는 아닙니다."
-                },
-                {
-                  "speaker": "system",
-                  "text": "💬 윤태성이 참지 못하고 끼어든다!"
-                },
-                {
-                  "speaker": "a",
-                  "text": "이건 한 번의 우연으로 끝날 일이 아닙니다. 어머니 곁 사람, 순서, 서류가 한 줄로 이어져 보입니다."
+                  "text": "평소보다 자주 간 이유를 굳이 하나로 말하긴 어렵습니다. 그냥 미뤄 두면 안 될 때처럼 느껴졌습니다."
                 }
               ]
             },
@@ -541,7 +529,7 @@
               "turn": 6,
               "questionType": "empathy_approach",
               "beforeState": "S1",
-              "afterState": "S1",
+              "afterState": "S2",
               "freshDialogues": [
                 {
                   "speaker": "judge",
@@ -549,11 +537,15 @@
                 },
                 {
                   "speaker": "system",
-                  "text": "상대방의 경계가 조금씩 풀리고 있습니다."
+                  "text": "⚡ 윤정후 — 답변에 변화가 감지된다"
+                },
+                {
+                  "speaker": "system",
+                  "text": "⚡ 윤정후의 진술에서 이전과 다른 점이 발견되었다 — 탭하여 추궁"
                 },
                 {
                   "speaker": "b",
-                  "text": "제 형이 그걸 뒤늦게 의심으로만 보는 건 조금 답답합니다. 그때는 누가 더 많이 다녀오느냐보다 어머니 하루가 먼저였으니까요."
+                  "text": "저는 그 얘기를 하고 싶지 않았습니다. 그런데 어머상대방이 먼저 꺼내시면 아예 없던 일처럼 할 수는 없었습니다."
                 }
               ]
             }
@@ -561,26 +553,26 @@
         },
         "afterD1Ui": {
           "bodyLeaks": [
+            "60:40 유서 조작은 자기 몫을 늘리려 한 조작인가, 줄이려 한 조작인가",
             "A의 출생 비밀을 B는 왜 알고도 숨겼는가"
           ],
           "hotbarDisputeNames": [
             "말년의 어머니는 유서를 제대로 판단할 수 있었는가",
+            "60:40 유서 조작은 자기 몫을 늘리려 한 조작인가, 줄이려 한 조작인가",
             "A의 출생 비밀을 B는 왜 알고도 숨겼는가"
           ],
           "hotbarLeakNames": [
+            "60:40 유서 조작은 자기 몫을 늘리려 한 조작인가, 줄이려 한 조작인가",
             "A의 출생 비밀을 B는 왜 알고도 숨겼는가"
           ],
           "ribbonTitles": [
             "말년의 어머니는 유서를 제대로 판단할 수 있었는가",
+            "60:40 유서 조작은 자기 몫을 늘리려 한 조작인가, 줄이려 한 조작인가",
             "A의 출생 비밀을 B는 왜 알고도 숨겼는가"
           ],
-          "ribbonChipCount": 2,
-          "notesTabs": [
-            "말년의 어머니는…",
-            "A의 출생 비밀…",
-            "전체"
-          ],
-          "notesTabCount": 3,
+          "ribbonChipCount": 3,
+          "notesTabs": [],
+          "notesTabCount": 0,
           "evidenceNames": [
             "60:40 유서 사본",
             "요양원 방문기록",
@@ -592,125 +584,403 @@
           "e-2",
           "e-3"
         ],
+        "e1Step": {
+          "evidenceId": "e-1",
+          "target": "b",
+          "attempted": true,
+          "unlockedBefore": [
+            "e-1",
+            "e-2",
+            "e-3"
+          ],
+          "unlockedAfter": [
+            "e-1",
+            "e-2",
+            "e-3",
+            "e-4"
+          ],
+          "newUnlocked": [
+            "e-4"
+          ],
+          "freshDialogues": [
+            {
+              "speaker": "system",
+              "text": "📋 증거 제시: 60:40 유서 사본 [Hard] → \"말년의 어머니는 유서를 제대로 판단할 수 있었는가, 60:40 유서 조작은 자기 몫을 늘리려 한 조작인가, 줄이려 한 조작인가\""
+            },
+            {
+              "speaker": "system",
+              "text": "⚡ 윤정후 — 감정이 동요하고 있다"
+            },
+            {
+              "speaker": "system",
+              "text": "⚡ 윤정후 — 감정이 동요하고 있다"
+            },
+            {
+              "speaker": "system",
+              "text": "윤정후가 자신감을 되찾았다."
+            },
+            {
+              "speaker": "system",
+              "text": "🔓 새로운 증거를 손에 넣었다 — 공증사무실 스캔 보관본"
+            },
+            {
+              "speaker": "b",
+              "text": "이 문서를 보시고 바로 결론 내리시면 안 됩니다. 뒤에 설명드려야 할 경위가 남아 있습니다."
+            }
+          ]
+        },
+        "unlockedAfterE1": [
+          "e-1",
+          "e-2",
+          "e-3",
+          "e-4"
+        ],
         "d2Progress": {
           "finalState": "S3",
+          "turns": []
+        },
+        "afterD2Ui": {
+          "bodyLeaks": [
+            "60:40 유서 조작은 자기 몫을 늘리려 한 조작인가, 줄이려 한 조작인가",
+            "A의 출생 비밀을 B는 왜 알고도 숨겼는가",
+            "누가 정말 어머니를 이용했는가"
+          ],
+          "hotbarDisputeNames": [
+            "말년의 어머니는 유서를 제대로 판단할 수 있었는가",
+            "60:40 유서 조작은 자기 몫을 늘리려 한 조작인가, 줄이려 한 조작인가",
+            "B가 20년간 보낸 생활비와 A 사업 실패 때 들어간 돈은 어떤 성격이었는가",
+            "A의 출생 비밀을 B는 왜 알고도 숨겼는가",
+            "누가 정말 어머니를 이용했는가"
+          ],
+          "hotbarLeakNames": [
+            "60:40 유서 조작은 자기 몫을 늘리려 한 조작인가, 줄이려 한 조작인가",
+            "B가 20년간 보낸 생활비와 A 사업 실패 때 들어간 돈은 어떤 성격이었는가",
+            "A의 출생 비밀을 B는 왜 알고도 숨겼는가",
+            "누가 정말 어머니를 이용했는가"
+          ],
+          "ribbonTitles": [
+            "말년의 어머니는 유서를 제대로 판단할 수 있었는가",
+            "60:40 유서 조작은 자기 몫을 늘리려 한 조작인가, 줄이려 한 조작인가",
+            "B가 20년간 보낸 생활비와 A 사업 실패 때 들어간 돈은 어떤 성격이었는가",
+            "A의 출생 비밀을 B는 왜 알고도 숨겼는가",
+            "누가 정말 어머니를 이용했는가"
+          ],
+          "ribbonChipCount": 5,
+          "notesTabs": [],
+          "notesTabCount": 0,
+          "evidenceNames": [
+            "60:40 유서 사본",
+            "요양원 방문기록",
+            "전 요양보호사 음성증언",
+            "공증사무실 스캔 보관본"
+          ]
+        },
+        "unlockedAfterD2": [
+          "e-1",
+          "e-2",
+          "e-3",
+          "e-4"
+        ],
+        "d3Progress": {
+          "finalState": "S3",
+          "turns": []
+        },
+        "afterD3Ui": {
+          "bodyLeaks": [
+            "60:40 유서 조작은 자기 몫을 늘리려 한 조작인가, 줄이려 한 조작인가",
+            "B가 20년간 보낸 생활비와 A 사업 실패 때 들어간 돈은 어떤 성격이었는가",
+            "누가 정말 어머니를 이용했는가"
+          ],
+          "hotbarDisputeNames": [
+            "말년의 어머니는 유서를 제대로 판단할 수 있었는가",
+            "60:40 유서 조작은 자기 몫을 늘리려 한 조작인가, 줄이려 한 조작인가",
+            "B가 20년간 보낸 생활비와 A 사업 실패 때 들어간 돈은 어떤 성격이었는가",
+            "A의 출생 비밀을 B는 왜 알고도 숨겼는가",
+            "누가 정말 어머니를 이용했는가"
+          ],
+          "hotbarLeakNames": [
+            "60:40 유서 조작은 자기 몫을 늘리려 한 조작인가, 줄이려 한 조작인가",
+            "B가 20년간 보낸 생활비와 A 사업 실패 때 들어간 돈은 어떤 성격이었는가",
+            "A의 출생 비밀을 B는 왜 알고도 숨겼는가",
+            "누가 정말 어머니를 이용했는가"
+          ],
+          "ribbonTitles": [
+            "말년의 어머니는 유서를 제대로 판단할 수 있었는가",
+            "60:40 유서 조작은 자기 몫을 늘리려 한 조작인가, 줄이려 한 조작인가",
+            "B가 20년간 보낸 생활비와 A 사업 실패 때 들어간 돈은 어떤 성격이었는가",
+            "A의 출생 비밀을 B는 왜 알고도 숨겼는가",
+            "누가 정말 어머니를 이용했는가"
+          ],
+          "ribbonChipCount": 5,
+          "notesTabs": [],
+          "notesTabCount": 0,
+          "evidenceNames": [
+            "60:40 유서 사본",
+            "요양원 방문기록",
+            "전 요양보호사 음성증언",
+            "공증사무실 스캔 보관본",
+            "어머니 서랍 원본 유서",
+            "20년 송금 내역"
+          ]
+        },
+        "d5VisibilityAfterD3": "emerged",
+        "d4Progress": {
+          "finalState": "S2",
           "turns": [
             {
               "turn": 1,
               "questionType": "fact_pursuit",
-              "beforeState": "S2",
-              "afterState": "S2",
+              "beforeState": "S0",
+              "afterState": "S0",
               "freshDialogues": [
                 {
                   "speaker": "judge",
-                  "text": "윤정후 씨, 60:40 유서 조작은 자기 몫을 늘리려 한 조작인가, 줄이려 한 조작인가에 대해 사실대로 말씀해 주십시오."
+                  "text": "윤정후 씨, A의 출생 비밀을 B는 왜 알고도 숨겼는가에 대해 빠뜨린 부분이 있지 않습니까?"
                 },
                 {
                   "speaker": "system",
                   "text": "모순이 쌓이고 있습니다. 조금 더 추궁하면 균열이 생길 것 같습니다."
                 },
                 {
+                  "speaker": "system",
+                  "text": "📌 [진술 시점 고정] — 이 부정은 향후 모순 추궁의 근거가 됩니다"
+                },
+                {
                   "speaker": "b",
-                  "text": "정리한 문서를 마지막에 제가 들고 갔습니다. 제출까지 제 손으로 한 것도 맞습니다."
+                  "text": "지금은 그 부분에 답하지 않겠습니다."
+                },
+                {
+                  "speaker": "system",
+                  "text": "📌 [진술 시점 고정] — 이 부정은 향후 모순 추궁의 근거가 됩니다"
                 }
               ]
             },
             {
               "turn": 2,
               "questionType": "motive_search",
-              "beforeState": "S2",
-              "afterState": "S2",
+              "beforeState": "S0",
+              "afterState": "S0",
               "freshDialogues": [
                 {
                   "speaker": "judge",
-                  "text": "윤정후 씨, 60:40 유서 조작은 자기 몫을 늘리려 한 조작인가, 줄이려 한 조작인가 당시 어떤 사정이 있었습니까?"
+                  "text": "윤정후 씨, A의 출생 비밀을 B는 왜 알고도 숨겼는가의 배경을 좀 더 설명해 주시겠습니까?"
                 },
                 {
                   "speaker": "b",
-                  "text": "왜 제가 움직였느냐고 하시면, 그날 어머상대방이 저를 보며 끝내 달라고 하셨기 때문입니다."
+                  "text": "제가 욕을 먹은 쪽이 낫습니다."
                 }
               ]
             },
             {
               "turn": 3,
               "questionType": "empathy_approach",
-              "beforeState": "S2",
-              "afterState": "S3",
+              "beforeState": "S0",
+              "afterState": "S0",
               "freshDialogues": [
                 {
                   "speaker": "judge",
-                  "text": "윤정후 씨, 60:40 유서 조작은 자기 몫을 늘리려 한 조작인가, 줄이려 한 조작인가에 대한 솔직한 마음을 듣고 싶습니다."
+                  "text": "윤정후 씨, A의 출생 비밀을 B는 왜 알고도 숨겼는가에 대해서 — 그때 어떤 마음이셨는지 솔직하게 말씀해 주시겠습니까."
                 },
                 {
                   "speaker": "system",
-                  "text": "⚡ 윤정후 — 감정이 동요하고 있다"
+                  "text": "상대방의 경계가 조금씩 풀리고 있습니다."
                 },
                 {
                   "speaker": "b",
-                  "text": "제 형이 저를 어떻게 볼지는 알았습니다. 그래도 그 문서를 그대로 둘 수는 없었습니다."
+                  "text": "지금 대답하면 형이 더 힘들어질 겁니다."
                 },
                 {
                   "speaker": "system",
-                  "text": "윤태성이 참지 못하고 반박한다!"
+                  "text": "🔒 윤정후이(가) 감정 과부하로 응답을 거부합니다. (2턴간 질문 불가)"
+                }
+              ]
+            },
+            {
+              "turn": 4,
+              "questionType": "fact_pursuit",
+              "beforeState": "S0",
+              "afterState": "S0",
+              "freshDialogues": [
+                {
+                  "speaker": "judge",
+                  "text": "윤정후 씨, A의 출생 비밀을 B는 왜 알고도 숨겼는가 당시 정확히 어떤 일이 있었습니까?"
                 },
                 {
-                  "speaker": "a",
-                  "text": "저를 부르지 않은 채 일이 흘러간 걸 생각하면, 어머니보다 제 동생이 더 앞에 서 있었던 것 같습니다."
+                  "speaker": "system",
+                  "text": "모순이 쌓이고 있습니다. 조금 더 추궁하면 균열이 생길 것 같습니다."
+                },
+                {
+                  "speaker": "system",
+                  "text": "📌 [진술 시점 고정] — 이 부정은 향후 모순 추궁의 근거가 됩니다"
+                },
+                {
+                  "speaker": "b",
+                  "text": "다른 건 답해도 그건 못 합니다."
+                },
+                {
+                  "speaker": "system",
+                  "text": "🔒 윤정후이(가) 감정 과부하로 응답을 거부합니다. (2턴간 질문 불가)"
+                },
+                {
+                  "speaker": "system",
+                  "text": "📌 [진술 시점 고정] — 이 부정은 향후 모순 추궁의 근거가 됩니다"
+                }
+              ]
+            },
+            {
+              "turn": 5,
+              "questionType": "motive_search",
+              "beforeState": "S0",
+              "afterState": "S1",
+              "freshDialogues": [
+                {
+                  "speaker": "judge",
+                  "text": "윤정후 씨, 다른 방법도 있었을 텐데 왜 하필 그렇게 하셨는지 말씀해 주십시오."
+                },
+                {
+                  "speaker": "system",
+                  "text": "⚡ 윤정후 — 방어적 태도를 보이기 시작했다"
+                },
+                {
+                  "speaker": "b",
+                  "text": "무슨 얘기가 있냐고 물으시면... 지금은 말하기 어렵습니다."
+                },
+                {
+                  "speaker": "system",
+                  "text": "🔒 윤정후이(가) 감정 과부하로 응답을 거부합니다. (2턴간 질문 불가)"
+                },
+                {
+                  "speaker": "b",
+                  "text": "누나, 잘린 수첩 사진 한 장으로 상속 얘기까지 가실 겁니까. 전체 스캔부터 보게 해 주세요, 그 한 줄만 들고 가면 또 결론부터 납니다."
+                },
+                {
+                  "speaker": "judge",
+                  "text": "발언을 허용합니다."
+                }
+              ]
+            },
+            {
+              "turn": 6,
+              "questionType": "empathy_approach",
+              "beforeState": "S1",
+              "afterState": "S2",
+              "freshDialogues": [
+                {
+                  "speaker": "judge",
+                  "text": "윤정후 씨, 이 부분이 쉽지 않으시겠지만 — A의 출생 비밀을 B는 왜 알고도 숨겼는가에 대한 본심을 말씀해 주시겠습니까."
+                },
+                {
+                  "speaker": "system",
+                  "text": "⚡ 윤정후 — 답변에 변화가 감지된다"
+                },
+                {
+                  "speaker": "system",
+                  "text": "⚡ 윤정후의 진술에서 이전과 다른 점이 발견되었다 — 탭하여 추궁"
+                },
+                {
+                  "speaker": "b",
+                  "text": "형은 지금까지 믿고 살던 것 일부를 잃을 수 있습니다."
                 }
               ]
             }
           ]
         },
-        "afterD2Ui": {
+        "afterD4Ui": {
           "bodyLeaks": [
-            "60:40 유서 조작은 자기 몫을 늘리려 한 조작인가, 줄이려 한 조작인가"
+            "60:40 유서 조작은 자기 몫을 늘리려 한 조작인가, 줄이려 한 조작인가",
+            "B가 20년간 보낸 생활비와 A 사업 실패 때 들어간 돈은 어떤 성격이었는가",
+            "A의 출생 비밀을 B는 왜 알고도 숨겼는가",
+            "누가 정말 어머니를 이용했는가"
           ],
           "hotbarDisputeNames": [
             "말년의 어머니는 유서를 제대로 판단할 수 있었는가",
             "60:40 유서 조작은 자기 몫을 늘리려 한 조작인가, 줄이려 한 조작인가",
             "B가 20년간 보낸 생활비와 A 사업 실패 때 들어간 돈은 어떤 성격이었는가",
-            "A의 출생 비밀을 B는 왜 알고도 숨겼는가"
+            "A의 출생 비밀을 B는 왜 알고도 숨겼는가",
+            "누가 정말 어머니를 이용했는가"
           ],
           "hotbarLeakNames": [
             "60:40 유서 조작은 자기 몫을 늘리려 한 조작인가, 줄이려 한 조작인가",
             "B가 20년간 보낸 생활비와 A 사업 실패 때 들어간 돈은 어떤 성격이었는가",
-            "A의 출생 비밀을 B는 왜 알고도 숨겼는가"
+            "A의 출생 비밀을 B는 왜 알고도 숨겼는가",
+            "누가 정말 어머니를 이용했는가"
           ],
           "ribbonTitles": [
             "말년의 어머니는 유서를 제대로 판단할 수 있었는가",
             "60:40 유서 조작은 자기 몫을 늘리려 한 조작인가, 줄이려 한 조작인가",
             "B가 20년간 보낸 생활비와 A 사업 실패 때 들어간 돈은 어떤 성격이었는가",
-            "A의 출생 비밀을 B는 왜 알고도 숨겼는가"
+            "A의 출생 비밀을 B는 왜 알고도 숨겼는가",
+            "누가 정말 어머니를 이용했는가"
           ],
-          "ribbonChipCount": 4,
-          "notesTabs": [
-            "말년의 어머니는…",
-            "60:40 유서…",
-            "B가 20년간 …",
-            "A의 출생 비밀…",
-            "전체"
-          ],
-          "notesTabCount": 5,
+          "ribbonChipCount": 5,
+          "notesTabs": [],
+          "notesTabCount": 0,
           "evidenceNames": [
             "60:40 유서 사본",
             "요양원 방문기록",
-            "전 요양보호사 음성증언"
+            "전 요양보호사 음성증언",
+            "공증사무실 스캔 보관본",
+            "어머니 서랍 원본 유서",
+            "20년 송금 내역"
           ]
         },
-        "unlockedAfterD2": [
-          "e-1",
-          "e-2",
-          "e-3"
-        ],
+        "d5VisibilityAfterD4": "emerged",
+        "d5Progress": {
+          "target": "b",
+          "progress": {
+            "finalState": "S2",
+            "turns": []
+          }
+        },
+        "afterD5Ui": {
+          "bodyLeaks": [
+            "60:40 유서 조작은 자기 몫을 늘리려 한 조작인가, 줄이려 한 조작인가",
+            "B가 20년간 보낸 생활비와 A 사업 실패 때 들어간 돈은 어떤 성격이었는가",
+            "A의 출생 비밀을 B는 왜 알고도 숨겼는가",
+            "누가 정말 어머니를 이용했는가"
+          ],
+          "hotbarDisputeNames": [
+            "말년의 어머니는 유서를 제대로 판단할 수 있었는가",
+            "60:40 유서 조작은 자기 몫을 늘리려 한 조작인가, 줄이려 한 조작인가",
+            "B가 20년간 보낸 생활비와 A 사업 실패 때 들어간 돈은 어떤 성격이었는가",
+            "A의 출생 비밀을 B는 왜 알고도 숨겼는가",
+            "누가 정말 어머니를 이용했는가"
+          ],
+          "hotbarLeakNames": [
+            "60:40 유서 조작은 자기 몫을 늘리려 한 조작인가, 줄이려 한 조작인가",
+            "B가 20년간 보낸 생활비와 A 사업 실패 때 들어간 돈은 어떤 성격이었는가",
+            "A의 출생 비밀을 B는 왜 알고도 숨겼는가",
+            "누가 정말 어머니를 이용했는가"
+          ],
+          "ribbonTitles": [
+            "말년의 어머니는 유서를 제대로 판단할 수 있었는가",
+            "60:40 유서 조작은 자기 몫을 늘리려 한 조작인가, 줄이려 한 조작인가",
+            "B가 20년간 보낸 생활비와 A 사업 실패 때 들어간 돈은 어떤 성격이었는가",
+            "A의 출생 비밀을 B는 왜 알고도 숨겼는가",
+            "누가 정말 어머니를 이용했는가"
+          ],
+          "ribbonChipCount": 5,
+          "notesTabs": [],
+          "notesTabCount": 0,
+          "evidenceNames": [
+            "60:40 유서 사본",
+            "요양원 방문기록",
+            "전 요양보호사 음성증언",
+            "공증사무실 스캔 보관본",
+            "어머니 서랍 원본 유서",
+            "20년 송금 내역"
+          ]
+        },
         "evidenceSteps": [
           {
-            "evidenceId": "e-1",
+            "evidenceId": "e-4",
             "target": "b",
             "attempted": true,
             "unlockedBefore": [
               "e-1",
               "e-2",
-              "e-3"
+              "e-3",
+              "e-4"
             ],
             "unlockedAfter": [
               "e-1",
@@ -718,27 +988,16 @@
               "e-3",
               "e-4",
               "e-5",
-              "e-6",
-              "e-7"
+              "e-6"
             ],
             "newUnlocked": [
-              "e-4",
               "e-5",
-              "e-6",
-              "e-7"
+              "e-6"
             ],
             "freshDialogues": [
               {
                 "speaker": "system",
-                "text": "📋 증거 제시: 60:40 유서 사본 [Hard] → \"말년의 어머니는 유서를 제대로 판단할 수 있었는가, 60:40 유서 조작은 자기 몫을 늘리려 한 조작인가, 줄이려 한 조작인가\""
-              },
-              {
-                "speaker": "system",
-                "text": "⚡ 윤정후 — 답변에 변화가 감지된다"
-              },
-              {
-                "speaker": "system",
-                "text": "⚡ 윤정후의 진술에서 이전과 다른 점이 발견되었다 — 탭하여 추궁"
+                "text": "📋 증거 제시: 공증사무실 스캔 보관본 [Hard] → \"60:40 유서 조작은 자기 몫을 늘리려 한 조작인가, 줄이려 한 조작인가\""
               },
               {
                 "speaker": "system",
@@ -746,11 +1005,7 @@
               },
               {
                 "speaker": "system",
-                "text": "윤정후가 자신감을 되찾았다."
-              },
-              {
-                "speaker": "system",
-                "text": "🔓 새로운 증거를 손에 넣었다 — 공증사무실 스캔 보관본"
+                "text": "윤정후가 흔들리고 있다..."
               },
               {
                 "speaker": "system",
@@ -761,58 +1016,8 @@
                 "text": "🔓 새로운 증거를 손에 넣었다 — 20년 송금 내역 묶음"
               },
               {
-                "speaker": "system",
-                "text": "🔓 새로운 증거를 손에 넣었다 — 어머니 일기장 사진"
-              },
-              {
                 "speaker": "b",
-                "text": "이 유서가 만들어진 과정은 복잡합니다. 숫자만 바로 보시면 오해하십니다."
-              }
-            ]
-          },
-          {
-            "evidenceId": "e-4",
-            "target": "b",
-            "attempted": true,
-            "unlockedBefore": [
-              "e-1",
-              "e-2",
-              "e-3",
-              "e-4",
-              "e-5",
-              "e-6",
-              "e-7"
-            ],
-            "unlockedAfter": [
-              "e-1",
-              "e-2",
-              "e-3",
-              "e-4",
-              "e-5",
-              "e-6",
-              "e-7"
-            ],
-            "newUnlocked": [],
-            "freshDialogues": [
-              {
-                "speaker": "system",
-                "text": "📋 증거 제시: 공증사무실 스캔 보관본 [Hard] → \"60:40 유서 조작은 자기 몫을 늘리려 한 조작인가, 줄이려 한 조작인가\""
-              },
-              {
-                "speaker": "system",
-                "text": "🔥 결정적 순간 — 윤정후의 진술 태도가 크게 변했다!"
-              },
-              {
-                "speaker": "system",
-                "text": "✅ 결정적 진술이 확보되었습니다. 증거 게시판에서 확인하십시오."
-              },
-              {
-                "speaker": "system",
-                "text": "윤정후가 흔들리고 있다..."
-              },
-              {
-                "speaker": "b",
-                "text": "제가 손댄 건 맞습니다. 늘리려던 조작이 아니라 깎아 내린 조작이었습니다. 결국 그 부분을 숨긴 건 제 두려움 때문이었습니다."
+                "text": "그날 제가 바꾼 건 숫자만이 아닙니다. 제 형이 끝까지 파고들 흐름도 함께 꺾으려 했습니다."
               },
               {
                 "speaker": "b",
@@ -834,8 +1039,7 @@
               "e-3",
               "e-4",
               "e-5",
-              "e-6",
-              "e-7"
+              "e-6"
             ],
             "unlockedAfter": [
               "e-1",
@@ -843,8 +1047,7 @@
               "e-3",
               "e-4",
               "e-5",
-              "e-6",
-              "e-7"
+              "e-6"
             ],
             "newUnlocked": [],
             "freshDialogues": [
@@ -854,11 +1057,23 @@
               },
               {
                 "speaker": "system",
+                "text": "🔥 결정적 순간 — 윤정후의 진술 태도가 크게 변했다!"
+              },
+              {
+                "speaker": "system",
+                "text": "✅ 결정적 진술이 확보되었습니다. 증거 게시판에서 확인하십시오."
+              },
+              {
+                "speaker": "system",
                 "text": "⚡ 윤정후 — 감정이 동요하고 있다"
               },
               {
+                "speaker": "system",
+                "text": "윤정후가 흔들리고 있다..."
+              },
+              {
                 "speaker": "b",
-                "text": "이 원본은 어머상대방이 저를 더 챙기려 해서가 아니라, 오래 누적된 일을 반영한 겁니다. 돌이켜 보면 그때 더 솔직했어야 했습니다. 결국 그 부분을 숨긴 건 제 두려움 때문이었습니다."
+                "text": "어머상대방이 저에게 크게 남기신 데는 20년의 이유가 있습니다. 그 점만큼은 제가 너무 경솔했습니다. 그 판단이 지금도 마음에 남습니다."
               }
             ]
           },
@@ -872,8 +1087,7 @@
               "e-3",
               "e-4",
               "e-5",
-              "e-6",
-              "e-7"
+              "e-6"
             ],
             "unlockedAfter": [
               "e-1",
@@ -881,8 +1095,7 @@
               "e-3",
               "e-4",
               "e-5",
-              "e-6",
-              "e-7"
+              "e-6"
             ],
             "newUnlocked": [],
             "freshDialogues": [
@@ -911,15 +1124,14 @@
           {
             "evidenceId": "e-7",
             "target": "b",
-            "attempted": true,
+            "attempted": false,
             "unlockedBefore": [
               "e-1",
               "e-2",
               "e-3",
               "e-4",
               "e-5",
-              "e-6",
-              "e-7"
+              "e-6"
             ],
             "unlockedAfter": [
               "e-1",
@@ -927,111 +1139,30 @@
               "e-3",
               "e-4",
               "e-5",
-              "e-6",
-              "e-7"
+              "e-6"
             ],
             "newUnlocked": [],
-            "freshDialogues": [
-              {
-                "speaker": "system",
-                "text": "📋 증거 제시: 어머니 일기장 사진 [Hard] → \"A의 출생 비밀을 B는 왜 알고도 숨겼는가, 누가 정말 어머니를 이용했는가\""
-              },
-              {
-                "speaker": "system",
-                "text": "⚡ 윤정후 — 방어적 태도를 보이기 시작했다"
-              },
-              {
-                "speaker": "system",
-                "text": "⚡ 윤정후 — 감정이 동요하고 있다"
-              },
-              {
-                "speaker": "system",
-                "text": "😞 윤정후가 지쳐 보인다."
-              },
-              {
-                "speaker": "b",
-                "text": "서랍에서 나온 그대로의 글씨입니다. 어머니 손글씨 맞습니다."
-              },
-              {
-                "speaker": "system",
-                "text": "🔒 윤정후이(가) 감정 과부하로 응답을 거부합니다. (2턴간 질문 불가)"
-              },
-              {
-                "speaker": "b",
-                "text": "누나, 잘린 수첩 사진 한 장으로 상속 얘기까지 가실 겁니까. 전체 스캔부터 보게 해 주세요, 그 한 줄만 들고 가면 또 결론부터 납니다."
-              },
-              {
-                "speaker": "judge",
-                "text": "발언을 허용합니다."
-              }
-            ]
+            "freshDialogues": []
           }
         ],
-        "afterEvidenceUi": {
-          "bodyLeaks": [
-            "60:40 유서 조작은 자기 몫을 늘리려 한 조작인가, 줄이려 한 조작인가",
-            "B가 20년간 보낸 생활비와 A 사업 실패 때 들어간 돈은 어떤 성격이었는가",
-            "A의 출생 비밀을 B는 왜 알고도 숨겼는가",
-            "누가 정말 어머니를 이용했는가"
-          ],
-          "hotbarDisputeNames": [
-            "말년의 어머니는 유서를 제대로 판단할 수 있었는가",
-            "60:40 유서 조작은 자기 몫을 늘리려 한 조작인가, 줄이려 한 조작인가",
-            "B가 20년간 보낸 생활비와 A 사업 실패 때 들어간 돈은 어떤 성격이었는가",
-            "A의 출생 비밀을 B는 왜 알고도 숨겼는가",
-            "누가 정말 어머니를 이용했는가"
-          ],
-          "hotbarLeakNames": [
-            "60:40 유서 조작은 자기 몫을 늘리려 한 조작인가, 줄이려 한 조작인가",
-            "B가 20년간 보낸 생활비와 A 사업 실패 때 들어간 돈은 어떤 성격이었는가",
-            "A의 출생 비밀을 B는 왜 알고도 숨겼는가",
-            "누가 정말 어머니를 이용했는가"
-          ],
-          "ribbonTitles": [
-            "말년의 어머니는 유서를 제대로 판단할 수 있었는가",
-            "60:40 유서 조작은 자기 몫을 늘리려 한 조작인가, 줄이려 한 조작인가",
-            "B가 20년간 보낸 생활비와 A 사업 실패 때 들어간 돈은 어떤 성격이었는가",
-            "A의 출생 비밀을 B는 왜 알고도 숨겼는가",
-            "누가 정말 어머니를 이용했는가"
-          ],
-          "ribbonChipCount": 5,
-          "notesTabs": [
-            "말년의 어머니는…",
-            "60:40 유서…",
-            "B가 20년간 …",
-            "A의 출생 비밀…",
-            "누가 정말 어머…",
-            "전체"
-          ],
-          "notesTabCount": 6,
-          "evidenceNames": [
-            "60:40 유서 사본",
-            "요양원 방문기록",
-            "전 요양보호사 음성증언",
-            "어머니 일기장",
-            "공증사무실 스캔 보관본",
-            "어머니 서랍 원본 유서",
-            "20년 송금 내역"
-          ]
-        },
         "verdictBundle": {
           "phase6Ui": {
-            "text": "₩ 중재안 판결 방식을 선택하세요 윤태성vs윤정후 ← 나가기 솔로몬 법정 치매 어머니의 유서01 Phase 5 - 중재 6 5 3 Turn 14 증거 수첩 7 — 잠금 0 ? 60:40 유서 사본 계약 어머니의 유서 사본이 존재한다. 발견한 내용: (미확인 항목 3개) 요양원 방문기록 기록 요양원 방문 기록이 존재한다. 발견한 내용: (미확인 항목 3개) 전 요양보호사 음성증언 증언 전 요양보호사의 증언이 존재한다. 발견한 내용: (미확인 항목 3개) 어머니 일기장 기기 어머니 일기장 사진이 존재한다. 발견한 내용: (미확인 항목 3개) 공증사무실 스캔 보관본 기록 공증사무실의 스캔 보관본이 존재한다. 발견한 내용: (미확인 항목 3개)...",
+            "text": "₩ 중재안 판결 방식을 선택하세요 윤태성vs윤정후 ← 나가기 솔로몬 법정 치매 어머니의 유서01 Phase 3 - 중재 6 5 3 Turn 16 증거 수첩 6 — 잠금 1 ? 60:40 유서 사본 계약 요양원 방문기록 기록 전 요양보호사 음성증언 증언 공증사무실 스캔 보관본 기록 어머니 서랍 원본 유서 계약 20년 송금 내역 금융 발언 노트 30 윤정후 T2 | S1 솔직히 말씀드리면 저는 제가 간 횟수를 세고 싶지 않았습니다. 재판관 T3 | S1 윤정후 씨, 말년의 어머니는 유서를 제대로 판단할 수 있었는가에 대해 사실대… 윤정후 T3 | S1 자주 간 건 맞습니다. 윤태성 T3 | S1 어머니 담당하던 분이 바뀐 시점이 공증 직전입...",
             "buttons": [
               "←나가기",
               "6",
               "5",
               "3",
-              "Turn14",
+              "Turn16",
               "60:40 유서 사본계약",
               "요양원 방문기록기록",
               "전 요양보호사 음성증언증언",
-              "어머니 일기장기기",
               "공증사무실 스캔 보관본기록",
               "어머니 서랍 원본 유서계약",
               "20년 송금 내역금융",
-              "말년의 어머니는…",
-              "60:40 유서…"
+              "Top ↓",
+              "T0모순 토큰 +0",
+              "T0새로운 쟁점 발견: 윤태성은 어머니와 아버지가 완전히 같은 사람의 자식…"
             ]
           },
           "phase7Ui": {
@@ -1045,9 +1176,9 @@
               "안건 책임",
               "해결안",
               "판결문",
-              "거짓 (윤태성 측 부정)",
+              "거짓윤태성 측 부정",
               "보류",
-              "사실 (윤정후 측 인정)",
+              "사실윤정후 측 인정",
               "1",
               "2",
               "3",
@@ -1074,7 +1205,7 @@
             "verdictScore": {
               "insight": 68,
               "authority": 91,
-              "wisdom": 87,
+              "wisdom": 86,
               "total": 82
             },
             "finalPhase": "result"
@@ -1089,8 +1220,8 @@
               "재판관 성향",
               "공유"
             ],
-            "aftermathText": "판결 이후 판결은 윤정후에게 가장 엄격했다. 가족을 떠받쳐 온 시간과 숨겨 둔 배려는 인정되었지만, 어머니 뜻을 직접 고쳐 버린 방식이 더 큰 문제로 남았다. 법정이 비자 윤정후는 반박보다 정리를 택했고, 윤태성 역시 승리보다 어머니가 왜 그런 유서를 남겼는지만 계속 되씹게 되었다.",
-            "verdictSummaryText": "판결문 — 치매 어머니가 남긴 유서에서 동생 60%, 형 40%로 적혀 있다. 평생 어머니를 모시고 살았다고 자부하는 형은 분노하고, 동생은 끝까지 담담하다. 본 사건은 윤태성과(와) 윤정후 간의 분쟁으로, 총 14턴의 심리를 거쳐 판결에 이르렀습니다. 책임 배분 윤태성 36% 윤정후 64% 양측 모두 일부 책임이 있으나, 증거와 진술 분석 결과 윤정후의 책임이 더 큰 것으로 판단합니다. 결정적 증거 60:40 유서 사본 공증사무실 스캔 보관본 어머니 서랍에서 나온 원본 유서 20년 송금 내역 묶음 어머니 일기장 사진 결정적 순간 윤정후이(가) 감정적 동요에서 자백로 전환된 순간이 결정적이었습니다. 해결 방향 유서적법성판단::치매 어머니의 유서 작성 당시 판단 능력을 전문 감정으로 확인하고, 공증 절차의 적법성을 다시 판단한다., 재산분배재조정::원본 유서(90:10)와 조작본(60:40)의 법적 효력을 비교하고, 20년 지원 내역을 참작한 공정한 분배를 재산정한다., 가족관계회복::출생 비밀의 공개 범위를 당사자 동의 하에 결정하고, 형제 관계 복원을 위한 조율 절차를 마련한다. 본 재판은 \"훌륭한 재판관\" 성향의 재판관에 의해 진행되었습니다. 판결문 복사하기",
+            "aftermathText": "판결 이후 후일담을 정리하고 있습니다...",
+            "verdictSummaryText": "판결문 — 치매 어머니가 남긴 유서에서 동생 60%, 형 40%로 적혀 있다. 평생 어머니를 모시고 살았다고 자부하는 형은 분노하고, 동생은 끝까지 담담하다. 본 사건은 윤태성과(와) 윤정후 간의 분쟁으로, 총 16턴의 심리를 거쳐 판결에 이르렀습니다. 책임 배분 윤태성 36% 윤정후 64% 양측 모두 일부 책임이 있으나, 증거와 진술 분석 결과 윤정후의 책임이 더 큰 것으로 판단합니다. 결정적 증거 60:40 유서 사본 공증사무실 스캔 보관본 어머니 서랍에서 나온 원본 유서 20년 송금 내역 묶음 결정적 순간 윤정후이(가) 감정적 동요에서 자백로 전환된 순간이 결정적이었습니다. 해결 방향 유서적법성판단::치매 어머니의 유서 작성 당시 판단 능력을 전문 감정으로 확인하고, 공증 절차의 적법성을 다시 판단한다., 재산분배재조정::원본 유서(90:10)와 조작본(60:40)의 법적 효력을 비교하고, 20년 지원 내역을 참작한 공정한 분배를 재산정한다., 가족관계회복::출생 비밀의 공개 범위를 당사자 동의 하에 결정하고, 형제 관계 복원을 위한 조율 절차를 마련한다. 본 재판은 \"훌륭한 재판관\" 성향의 재판관에 의해 진행되었습니다. 판결문 복사하기",
             "heroText": "RESULT DOSSIER 말년의 어머니는 유서를 제대로 판단할 수 있었는가 치매 어머니가 남긴 유서에서 동생 60%, 형 40%로 적혀 있다. 평생 어머니를 모시고 살았다고 자부하는 형은 분노하고, 동생은 끝까지 담담하다. 82 점 훌륭한 재판관 ★ ★ ★ 관계 가족 쟁점 5개 증거 7종 사건 선택으로 판결 다시 하기",
             "heroDisputeCount": 5
           }
@@ -1106,7 +1237,7 @@
           "phase7",
           "result"
         ],
-        "turnCount": 14,
+        "turnCount": 16,
         "verdictMode": "normal",
         "lieStates": {
           "a": {
@@ -1116,11 +1247,11 @@
             "d-5": "S1"
           },
           "b": {
-            "d-1": "S2",
+            "d-1": "S3",
             "d-2": "S5",
             "d-3": "S4",
-            "d-4": "S1",
-            "d-5": "S3"
+            "d-4": "S2",
+            "d-5": "S2"
           }
         },
         "evidence": {
@@ -1130,15 +1261,13 @@
             "e-3",
             "e-4",
             "e-5",
-            "e-6",
-            "e-7"
+            "e-6"
           ],
           "presented": [
             "e-1",
             "e-4",
             "e-5",
-            "e-6",
-            "e-7"
+            "e-6"
           ]
         },
         "discovery": {
@@ -1157,26 +1286,10 @@
         "verdictScore": {
           "insight": 68,
           "authority": 91,
-          "wisdom": 87,
+          "wisdom": 86,
           "total": 82
         },
         "dialogueTail": [
-          {
-            "speaker": "system",
-            "text": "⚡ 윤정후 — 감정이 동요하고 있다"
-          },
-          {
-            "speaker": "system",
-            "text": "😞 윤정후가 지쳐 보인다."
-          },
-          {
-            "speaker": "b",
-            "text": "서랍에서 나온 그대로의 글씨입니다. 어머니 손글씨 맞습니다."
-          },
-          {
-            "speaker": "system",
-            "text": "🔒 윤정후이(가) 감정 과부하로 응답을 거부합니다. (2턴간 질문 불가)"
-          },
           {
             "speaker": "b",
             "text": "누나, 잘린 수첩 사진 한 장으로 상속 얘기까지 가실 겁니까. 전체 스캔부터 보게 해 주세요, 그 한 줄만 들고 가면 또 결론부터 납니다."
@@ -1184,6 +1297,22 @@
           {
             "speaker": "judge",
             "text": "발언을 허용합니다."
+          },
+          {
+            "speaker": "judge",
+            "text": "윤정후 씨, 이 부분이 쉽지 않으시겠지만 — A의 출생 비밀을 B는 왜 알고도 숨겼는가에 대한 본심을 말씀해 주시겠습니까."
+          },
+          {
+            "speaker": "system",
+            "text": "⚡ 윤정후 — 답변에 변화가 감지된다"
+          },
+          {
+            "speaker": "system",
+            "text": "⚡ 윤정후의 진술에서 이전과 다른 점이 발견되었다 — 탭하여 추궁"
+          },
+          {
+            "speaker": "b",
+            "text": "형은 지금까지 믿고 살던 것 일부를 잃을 수 있습니다."
           }
         ]
       }

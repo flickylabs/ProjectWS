@@ -44,12 +44,12 @@ export interface VerdictSummaryInput {
 }
 
 const LIE_STATE_LABELS: Record<string, string> = {
-  S0: '완전 부정',
-  S1: '일부 인정',
-  S2: '핑계',
-  S3: '책임 전가',
-  S4: '감정적 동요',
-  S5: '자백',
+  S0: '방어',
+  S1: '동요',
+  S2: '변명',
+  S3: '궁지',
+  S4: '한계',
+  S5: '고백',
 }
 
 /**

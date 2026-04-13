@@ -89,7 +89,7 @@ export default function DialogueLog({ onTestimonyClick }: Props) {
               </div>
 
               <p className="text-xs text-gray-500 leading-relaxed">
-                이 모순을 추궁하면 거짓말 상태가 흔들리고, 핵심 진실에 더 가까워질 수 있습니다.
+                이 모순을 추궁하면 심리 방어가 흔들리고, 핵심 진실에 더 가까워질 수 있습니다.
               </p>
             </div>
 

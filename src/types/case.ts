@@ -318,6 +318,13 @@ export interface Dispute {
   hidden?: boolean
   /** V3 visibility: 'hidden'이면 발현 전까지 비노출 */
   v3Visibility?: 'visible' | 'hidden'
+  /** 판결 단계 4지선다 선택지 (스크립트 생성) */
+  verdictOptions?: {
+    wrong: string
+    partial: string
+    truth: string
+    defer: string
+  }
 }
 
 export interface ContextSeed {

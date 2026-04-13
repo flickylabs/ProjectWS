@@ -101,21 +101,21 @@ const LABEL_CONFIG: Record<'cracked' | 'cornered' | 'opening', {
   titleColor: string
 }> = {
   cracked: {
-    text: '\uADE0\uC5F4',
+    text: '\uBC29\uC5B4\uAC00 \uD754\uB4E4\uB9B0\uB2E4',
     icon: '\u26A1',
     gradient: 'from-yellow-900/40 to-gray-900',
     borderColor: 'border-yellow-600/30',
     titleColor: 'text-yellow-400',
   },
   cornered: {
-    text: '\uAD81\uC9C0',
+    text: '\uB3C4\uB9DD\uCE60 \uACF3\uC774 \uC904\uC5B4\uB4E0\uB2E4',
     icon: '\uD83D\uDD25',
     gradient: 'from-orange-900/40 to-gray-900',
     borderColor: 'border-orange-600/30',
     titleColor: 'text-orange-400',
   },
   opening: {
-    text: '\uAC1C\uBC29',
+    text: '\uC785\uC744 \uC5F4 \uC900\uBE44\uAC00 \uB410\uB2E4',
     icon: '\uD83C\uDF05',
     gradient: 'from-emerald-900/40 to-gray-900',
     borderColor: 'border-emerald-600/30',

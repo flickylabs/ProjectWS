@@ -8,7 +8,7 @@ import MemoryPuzzle from '../minigame/MemoryPuzzle'
 import HeartbeatDetector from '../minigame/HeartbeatDetector'
 import MatchingPuzzle from '../minigame/MatchingPuzzle'
 import WordScramble from '../minigame/WordScramble'
-import AdCountdown from '../minigame/AdCountdown'
+// AdCountdown removed — PC/모바일 모두 광고 비활성화
 import { actuallyDiscoverEvidence, applyLieCollapseSuccess, applyLieCollapseFail, applyContradictionSuccess, applyContradictionFail } from '../../hooks/useActionDispatch'
 import DisputeChecklist from '../info/DisputeChecklist'
 import ClaimGraph from '../info/ClaimGraph'
@@ -221,29 +221,6 @@ function MinigameOverlay() {
   const caseData = useStore((s) => s.caseData)
   const [chosenMethod, setChosenMethod] = useState<'minigame' | null>(null)
 
-  // 광고 카운트다운 상태: null이면 비활성, 함수이면 완료 시 실행할 성공 콜백
-  const [adSuccessCallback, setAdSuccessCallback] = useState<(() => void) | null>(null)
-
-  // 광고 카운트다운 요청 — 성공 콜백을 미리 저장
-  const showAdCountdown = (successFn: () => void) => {
-    setAdSuccessCallback(() => successFn)
-  }
-
-  const handleAdComplete = () => {
-    const cb = adSuccessCallback
-    setAdSuccessCallback(null)
-    cb?.()
-  }
-
-  const handleAdCancel = () => {
-    setAdSuccessCallback(null)
-  }
-
-  // 광고 카운트다운 중이면 최상위에 오버레이
-  if (adSuccessCallback !== null) {
-    return <AdCountdown onComplete={handleAdComplete} onCancel={handleAdCancel} />
-  }
-
   if (!mg) return null
 
   if (mg.type === 'evidence_discovery') {
@@ -254,48 +231,24 @@ function MinigameOverlay() {
       clearMg(null)
     }
     const handleFail = () => clearMg(null)
-    const handleWatchAd = () => showAdCountdown(handleSuccess)
 
     if (minigameVariant === 'heartbeat') {
-      return (
-        <HeartbeatDetector onSuccess={handleSuccess} onFail={handleFail} onWatchAd={handleWatchAd} />
-      )
+      return <HeartbeatDetector onSuccess={handleSuccess} onFail={handleFail} />
     }
 
     if (minigameVariant === 'matching') {
-      return (
-        <MatchingPuzzle
-          onSuccess={handleSuccess}
-          onFail={handleFail}
-          onWatchAd={handleWatchAd}
-        />
-      )
+      return <MatchingPuzzle onSuccess={handleSuccess} onFail={handleFail} />
     }
 
     if (minigameVariant === 'word_scramble') {
-      // 증거 이름을 글자 단위로 분해 (공백 제거, 6~10글자)
       const evDef = evidenceDefinitions.find(e => e.id === evidenceId)
       const evName = evDef?.name ?? '새로운 증거 확보'
       const words = splitToWords(evName)
-      return (
-        <WordScramble
-          words={words}
-          onSuccess={handleSuccess}
-          onFail={handleFail}
-          onWatchAd={handleWatchAd}
-        />
-      )
+      return <WordScramble words={words} onSuccess={handleSuccess} onFail={handleFail} />
     }
 
     // variant === 'memory' (기본값)
-    return (
-      <MemoryPuzzle
-        clues={clues}
-        onSuccess={handleSuccess}
-        onFail={handleFail}
-        onWatchAd={handleWatchAd}
-      />
-    )
+    return <MemoryPuzzle clues={clues} onSuccess={handleSuccess} onFail={handleFail} />
   }
 
   // evidence_depth → 단계별 미니게임 + 선택지
@@ -324,9 +277,7 @@ function MinigameOverlay() {
       })
       clearMg(null)
     }
-    const handleWatchAd = () => showAdCountdown(handleSuccess)
-
-    // 선택지 화면: 미니게임 / 광고 / 아이템(=즉시 성공) 택1
+    // 선택지 화면: 미니게임 / 즉시 완료 택1
     if (!chosenMethod) {
       const depthLabel = depth === 1 ? '1단계: 원본 확보' : depth === 2 ? '2단계: 맥락 복원' : '3단계: 편집 검증'
       const miniLabel = depth === 1 ? '하트 맞추기' : depth === 2 ? '그림 짝 맞추기' : '글자 순서 맞추기'
@@ -343,10 +294,6 @@ function MinigameOverlay() {
               className="w-full py-3.5 rounded-2xl text-sm font-bold bg-amber-600 text-gray-950 active:scale-95">
               <Emoji char="🎮" size={16} /> {miniLabel} 미니게임
             </button>
-            <button onClick={() => { setChosenMethod(null); handleWatchAd() }}
-              className="w-full py-3.5 rounded-2xl text-sm font-medium bg-gray-800 text-gray-300 border border-gray-700 active:scale-95">
-              <Emoji char="📺" size={16} /> 광고 보기
-            </button>
             <button onClick={() => { setChosenMethod(null); handleSuccess() }}
               className="w-full py-3.5 rounded-2xl text-sm font-medium bg-gray-800 text-gray-300 border border-gray-700 active:scale-95">
               <Emoji char="🔍" size={16} /> 조사 토큰 사용 (즉시)
@@ -361,37 +308,27 @@ function MinigameOverlay() {
     }
 
     // 미니게임 실행 — depth별 분기
-    // 1단계: 하트 맞추기, 2단계: 그림 짝 맞추기, 3단계: 글자 순서 맞추기
     if (depth === 1) {
-      return <HeartbeatDetector onSuccess={() => { setChosenMethod(null); handleSuccess() }} onFail={() => { setChosenMethod(null); handleFail() }} onWatchAd={() => { setChosenMethod(null); handleWatchAd() }} />
+      return <HeartbeatDetector onSuccess={() => { setChosenMethod(null); handleSuccess() }} onFail={() => { setChosenMethod(null); handleFail() }} />
     }
     if (depth === 2) {
-      return <MatchingPuzzle onSuccess={() => { setChosenMethod(null); handleSuccess() }} onFail={() => { setChosenMethod(null); handleFail() }} onWatchAd={() => { setChosenMethod(null); handleWatchAd() }} />
+      return <MatchingPuzzle onSuccess={() => { setChosenMethod(null); handleSuccess() }} onFail={() => { setChosenMethod(null); handleFail() }} />
     }
-    // depth === 3: 글자 순서 맞추기
     const evName3 = evDef?.name ?? '증거 조사'
     const words3 = splitToWords(evName3)
-    return <WordScramble words={words3} onSuccess={() => { setChosenMethod(null); handleSuccess() }} onFail={() => { setChosenMethod(null); handleFail() }} onWatchAd={() => { setChosenMethod(null); handleWatchAd() }} />
+    return <WordScramble words={words3} onSuccess={() => { setChosenMethod(null); handleSuccess() }} onFail={() => { setChosenMethod(null); handleFail() }} />
   }
 
   // lie_collapse → HeartbeatDetector
   if (mg.type === 'lie_collapse') {
     const { disputeId, party } = mg
-
-    const handleSuccess = () => {
-      applyLieCollapseSuccess(disputeId, party)
-      clearMg(null)
-    }
-    const handleFail = () => {
-      applyLieCollapseFail(disputeId)
-      clearMg(null)
-    }
-    const handleWatchAd = () => showAdCountdown(handleSuccess)
+    const handleSuccess = () => { applyLieCollapseSuccess(disputeId, party); clearMg(null) }
+    const handleFail = () => { applyLieCollapseFail(disputeId); clearMg(null) }
 
     return (
       <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm">
         <div className="bg-gray-900 border border-amber-700/50 rounded-2xl p-5 w-[340px] shadow-2xl">
-          <HeartbeatDetector onSuccess={handleSuccess} onFail={handleFail} onWatchAd={handleWatchAd} />
+          <HeartbeatDetector onSuccess={handleSuccess} onFail={handleFail} />
         </div>
       </div>
     )
@@ -401,25 +338,10 @@ function MinigameOverlay() {
   if (mg.type === 'contradiction') {
     const { text, disputeId, target } = mg
     const words = splitToWords(text)
+    const handleSuccess = () => { applyContradictionSuccess(disputeId, target); clearMg(null) }
+    const handleFail = () => { applyContradictionFail(disputeId); clearMg(null) }
 
-    const handleSuccess = () => {
-      applyContradictionSuccess(disputeId, target)
-      clearMg(null)
-    }
-    const handleFail = () => {
-      applyContradictionFail(disputeId)
-      clearMg(null)
-    }
-    const handleWatchAd = () => showAdCountdown(handleSuccess)
-
-    return (
-      <WordScramble
-        words={words}
-        onSuccess={handleSuccess}
-        onFail={handleFail}
-        onWatchAd={handleWatchAd}
-      />
-    )
+    return <WordScramble words={words} onSuccess={handleSuccess} onFail={handleFail} />
   }
 
   return null

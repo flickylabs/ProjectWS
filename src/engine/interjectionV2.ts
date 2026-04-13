@@ -281,7 +281,9 @@ function deriveTriggerReason(
   focusStreak: number,
 ): InterjectionTriggerReason | null {
   const t = input.targetTransition
-  if (t && ['S4', 'S5'].includes(t.to)) return 'forced_secret_reveal'
+  // S5(고백) 도달 시에는 끼어들기 차단 — 자백 흐름을 방해하지 않음
+  if (t && t.to === 'S5') return null
+  if (t && t.to === 'S4') return 'forced_secret_reveal'
   if (t && t.to === 'S3') return 'forced_blame_shift'
   if (focusStreak >= CONFIG.guaranteeFocusStreak) return 'focus_streak_three'
   if (focusStreak === 2 && input.interruptorEmotionValue >= CONFIG.emotionThreshold) return 'focus_streak_two'

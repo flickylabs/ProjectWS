@@ -38,28 +38,28 @@ const LABEL_CONFIG: Record<NonNullable<TransitionLabel>, {
   borderClass: string
 }> = {
   cracked: {
-    text: '균열',
+    text: '방어가 흔들린다',
     icon: '⚡',
     bgClass: 'bg-yellow-950/80',
     textClass: 'text-yellow-400',
     borderClass: 'border-yellow-600/50',
   },
   cornered: {
-    text: '궁지',
+    text: '도망칠 곳이 줄어든다',
     icon: '🔥',
     bgClass: 'bg-orange-950/80',
     textClass: 'text-orange-400',
     borderClass: 'border-orange-500/50',
   },
   opening: {
-    text: '개방',
+    text: '입을 열 준비가 됐다',
     icon: '🌅',
     bgClass: 'bg-emerald-950/80',
     textClass: 'text-emerald-400',
     borderClass: 'border-emerald-800/50',
   },
   confessed: {
-    text: '시인',
+    text: '고백',
     icon: '✓',
     bgClass: 'bg-emerald-950/80',
     textClass: 'text-emerald-400',

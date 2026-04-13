@@ -13,7 +13,7 @@ const STATE_RANK: Record<LieState, number> = {
 }
 
 const STATE_LABELS: Record<LieState, string> = {
-  S0: '완전 부정', S1: '흔들림', S2: '부분 인정', S3: '전가', S4: '감정 호소', S5: '시인',
+  S0: '방어', S1: '동요', S2: '변명', S3: '궁지', S4: '한계', S5: '고백',
 }
 
 const LABEL_TEXT: Record<NonNullable<TransitionLabel>, string> = {

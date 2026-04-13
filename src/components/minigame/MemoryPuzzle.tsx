@@ -5,7 +5,7 @@
  * 실패 시 증거 발견 실패. 광고 보기로 즉시 성공 가능.
  */
 import { useState, useEffect, useCallback } from 'react'
-import Emoji from '../common/Emoji'
+import { IconSuccess, IconFail } from './MinigameSvgIcons'
 
 interface Props {
   /** 단서 조각 3개 (짧은 텍스트) */
@@ -14,8 +14,8 @@ interface Props {
   onSuccess: () => void
   /** 실패 시 콜백 */
   onFail: () => void
-  /** 광고 보기 콜백 (100% 성공) */
-  onWatchAd: () => void
+  /** 광고 보기 콜백 (100% 성공) — PC에서는 미사용 */
+  onWatchAd?: () => void
   /** 제한 시간 (초, 기본 6) */
   timeLimit?: number
 }
@@ -146,20 +146,20 @@ export default function MemoryPuzzle({ clues, onSuccess, onFail, onWatchAd, time
           <div className="text-center space-y-3">
             {result === 'success' ? (
               <>
-                <Emoji char="🎯" size={48} />
+                <IconSuccess size={48} />
                 <div className="text-sm font-bold text-emerald-400">단서를 찾았다!</div>
               </>
             ) : (
               <>
-                <Emoji char="💭" size={48} />
+                <IconFail size={48} />
                 <div className="text-sm font-bold text-gray-400">단서를 놓쳤다...</div>
                 <div className="flex gap-2">
-                  <button
+                  {onWatchAd && <button
                     onClick={onWatchAd}
                     className="flex-1 py-2 rounded-xl text-xs font-bold bg-amber-600 text-gray-950 active:scale-95"
                   >
                     광고 보고 획득
-                  </button>
+                  </button>}
                   <button
                     onClick={onFail}
                     className="flex-1 py-2 rounded-xl text-xs text-gray-500 bg-gray-800 active:scale-95"

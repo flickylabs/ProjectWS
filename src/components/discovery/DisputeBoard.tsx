@@ -76,7 +76,7 @@ export default function DisputeBoard({ onClose, onSelectDispute }: {
     const card0 = cards.find(c => c.disputeId === compareSlots[0])
     const card1 = cards.find(c => c.disputeId === compareSlots[1])
 
-    const stateLabels: Record<string, string> = { S0: '완전 부정', S1: '일부 인정', S2: '핑계', S3: '책임 전가', S4: '감정적', S5: '자백' }
+    const stateLabels: Record<string, string> = { S0: '방어', S1: '동요', S2: '변명', S3: '궁지', S4: '한계', S5: '고백' }
 
     const lines = [
       `[비교 보관함] 쟁점 비교:`,
@@ -344,7 +344,7 @@ function ClaimLine({ party, text, name }: { party: PartyId; text: string; name: 
 function StateTag({ label, state, color }: { label: string; state: LieState | null; color: 'blue' | 'rose' }) {
   if (!state) return null
   const stateLabels: Record<string, string> = {
-    S0: '완전 부정', S1: '흔들림', S2: '부분 인정', S3: '전가', S4: '감정 호소', S5: '인정',
+    S0: '방어', S1: '동요', S2: '변명', S3: '궁지', S4: '한계', S5: '고백',
   }
   const colorClass = color === 'blue' ? 'text-blue-400/60' : 'text-rose-400/60'
   return (

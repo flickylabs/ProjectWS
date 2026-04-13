@@ -803,7 +803,7 @@ function ReorganizeDeclareButton({ target }: { target: PartyId }) {
     // 각 쟁점의 현재 상태 요약 생성
     const lines: string[] = [`[재정리 선언] ${partyName ?? '당사자'} 측 쟁점 현황:`]
     const stateLabels: Record<string, string> = {
-      S0: '완전 부정', S1: '일부 인정', S2: '핑계/변명', S3: '책임 전가', S4: '감정적', S5: '자백',
+      S0: '방어', S1: '동요', S2: '변명', S3: '궁지', S4: '한계', S5: '고백',
     }
 
     for (const [disputeId, entry] of Object.entries(lieStates)) {

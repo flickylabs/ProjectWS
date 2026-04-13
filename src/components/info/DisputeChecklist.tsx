@@ -3,12 +3,12 @@ import type { LieState } from '../../types'
 import type { TruthJudgment } from '../../types/discovery'
 
 const STATE_DISPLAY: Record<LieState, { label: string; color: string }> = {
-  S0: { label: '부정 중', color: 'bg-gray-600' },
-  S1: { label: '흔들림', color: 'bg-yellow-700' },
-  S2: { label: '부분 인정', color: 'bg-orange-700' },
-  S3: { label: '책임 전가', color: 'bg-red-800' },
-  S4: { label: '감정 호소', color: 'bg-red-600' },
-  S5: { label: '인정/붕괴', color: 'bg-emerald-700' },
+  S0: { label: '방어', color: 'bg-gray-600' },
+  S1: { label: '동요', color: 'bg-yellow-700' },
+  S2: { label: '변명', color: 'bg-orange-700' },
+  S3: { label: '궁지', color: 'bg-red-800' },
+  S4: { label: '한계', color: 'bg-red-600' },
+  S5: { label: '고백', color: 'bg-emerald-700' },
 }
 
 const JUDGMENT_ICONS: Record<TruthJudgment, string> = {

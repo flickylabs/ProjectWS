@@ -9,7 +9,7 @@ import { chatCompletion, MODEL_DIALOGUE } from './llmClient'
 import { getPrompt, getPromptConfig } from '../api/promptManager'
 import { buildAgentPrompt, getAgentConfig, isAgentLoaded, getContextFlags } from '../api/agentManager'
 import { getMyCall, getJudgeReference, getAngryCall, getRelationLabel, canUseInformal } from './llmSpeechGuide'
-import { pp이가, pp은는, pp을를, fixPostpositions } from './koreanPostposition'
+import { pp이가, pp은는, pp을를, pp과와, fixPostpositions } from './koreanPostposition'
 import { resolveDialogue as fallbackResolve, type ResolvedDialogue } from './dialogueResolver'
 import type { PlayerAction, PartyId, DialogueNode, AgentState } from '../types'
 import { GamePhase } from '../types'
@@ -1522,17 +1522,17 @@ function buildJudgeQuestion(
       fact_pursuit: [
         `${myName} 씨, ${topic}에 대해 정확히 어떤 일이 있었는지 날짜와 경위를 말씀해 주십시오.`,
         `${myName} 씨, ${topic} 건에 대해 본인의 행위와 그 시점을 구체적으로 설명해 주시겠습니까.`,
-        `${myName} 씨, ${topic}이 사실입니까? 사실관계를 정확히 확인하겠습니다.`,
+        `${myName} 씨, ${topic}${pp이가(topic)} 사실입니까? 사실관계를 정확히 확인하겠습니다.`,
       ],
       motive_search: [
         `${myName} 씨, ${topic} 건에서 그런 판단을 내린 이유가 무엇입니까?`,
-        `${myName} 씨, 왜 그 시점에 ${topic}을 결정하셨는지 설명해 주십시오.`,
+        `${myName} 씨, 왜 그 시점에 ${topic}${pp을를(topic)} 결정하셨는지 설명해 주십시오.`,
         `${myName} 씨, ${topic}의 동기와 배경을 구체적으로 말씀해 주십시오.`,
       ],
       empathy_approach: [
         `${myName} 씨, ${topic} 당시 어떤 상황에 놓여 계셨는지 말씀해 주시겠습니까.`,
         `${myName} 씨, ${topic}에 대해 그런 선택을 하게 된 당시의 심정을 듣고 싶습니다.`,
-        `${myName} 씨, ${topic}과 관련해서 당시 어떤 어려움이 있었는지 편하게 말씀해 주십시오.`,
+        `${myName} 씨, ${topic}${pp과와(topic)} 관련해서 당시 어떤 어려움이 있었는지 편하게 말씀해 주십시오.`,
       ],
     }
     const pool = templates[action.questionType] ?? templates.fact_pursuit
@@ -1550,10 +1550,11 @@ function buildJudgeQuestion(
 
     if (isTargetTheActor) {
       // 행위 당사자에게 → 해명/추궁
+      const evP = pp을를(evName)
       const templates = [
-        `${myName} 씨, '${evName}'을 제시합니다. 이 내용이 사실입니까? 해명해 주십시오.`,
+        `${myName} 씨, '${evName}'${evP} 제시합니다. 이 내용이 사실입니까? 해명해 주십시오.`,
         `${myName} 씨, '${evName}'에 기록된 내용에 대해 직접 설명해 주시겠습니까.`,
-        `${myName} 씨, '${evName}'을 보고 계십니다. 이 사실관계가 맞는지 확인해 주십시오.`,
+        `${myName} 씨, '${evName}'${evP} 보고 계십니다. 이 사실관계가 맞는지 확인해 주십시오.`,
       ]
       return templates[Math.floor(Math.random() * templates.length)]
     } else if (isTargetTheOther) {
@@ -1561,30 +1562,30 @@ function buildJudgeQuestion(
       if (prov === 'institutional') {
         // 기관/플랫폼 제공 → 취득 경위 불필요, 내용에 대한 의견
         const templates = [
-          `${myName} 씨, '${evName}'을 제시합니다. 이 기록에 대해 어떻게 생각하십니까.`,
+          `${myName} 씨, '${evName}'${pp을를(evName)} 제시합니다. 이 기록에 대해 어떻게 생각하십니까.`,
           `${myName} 씨, '${evName}'의 내용을 확인하셨습니까? 의견을 말씀해 주십시오.`,
         ]
         return templates[Math.floor(Math.random() * templates.length)]
       } else if (prov === 'third_party') {
         // 제3자 제공 → 존재 인지 여부
         const templates = [
-          `${myName} 씨, '${evName}'이 제출되었습니다. 이 자료의 존재를 알고 계셨습니까.`,
+          `${myName} 씨, '${evName}'${pp이가(evName)} 제출되었습니다. 이 자료의 존재를 알고 계셨습니까.`,
           `${myName} 씨, 제3자가 제출한 '${evName}'에 대해 말씀해 주십시오.`,
         ]
         return templates[Math.floor(Math.random() * templates.length)]
       } else {
         // 당사자/개인기기 → 취득 경위
         const templates = [
-          `${myName} 씨, '${evName}'을 어떻게 확보하셨습니까? 취득 경위를 설명해 주십시오.`,
-          `${myName} 씨, '${evName}'을 처음 확인한 시점과 경위에 대해 말씀해 주십시오.`,
+          `${myName} 씨, '${evName}'${pp을를(evName)} 어떻게 확보하셨습니까? 취득 경위를 설명해 주십시오.`,
+          `${myName} 씨, '${evName}'${pp을를(evName)} 처음 확인한 시점과 경위에 대해 말씀해 주십시오.`,
         ]
         return templates[Math.floor(Math.random() * templates.length)]
       }
     } else {
       // 양쪽 모두 해당 또는 quadrant 정보 없음 → 일반 질문
       const templates = [
-        `${myName} 씨, '${evName}'을 제시합니다. 이 자료에 대해 설명해 주십시오.`,
-        `${myName} 씨, '${evName}'을 확인하셨습니까? 이 내용에 대해 어떻게 생각하십니까.`,
+        `${myName} 씨, '${evName}'${pp을를(evName)} 제시합니다. 이 자료에 대해 설명해 주십시오.`,
+        `${myName} 씨, '${evName}'${pp을를(evName)} 확인하셨습니까? 이 내용에 대해 어떻게 생각하십니까.`,
       ]
       return templates[Math.floor(Math.random() * templates.length)]
     }

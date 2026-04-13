@@ -1,0 +1,23 @@
+
+> solomon-init@0.0.0 dev:pc
+> vite --config vite.config.pc.ts
+
+[2m오전 8:16:56[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m Re-optimizing dependencies because vite config has changed
+
+  [32m[1mVITE[22m v8.0.7[39m  [2mready in [0m[1m1092[22m[2m[0m ms[22m
+
+  [32m➜[39m  [1mLocal[22m:   [36mhttp://localhost:[1m5174[22m/[39m
+[2m  [32m➜[39m  [1mNetwork[22m[2m: use [22m[1m--host[22m[2m to expose[22m
+[2m오전 8:16:58[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [optimizer] scanning dependencies...
+[2m오전 8:17:04[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [optimizer] bundling dependencies...
+[2m오전 8:18:45[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/app/index.css, /src/components/pc/evidence/PCEvidenceViewer.tsx[22m
+[2m오전 8:19:00[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/app/index.css, /src/components/pc/layout/PCInteractionPanel.tsx[22m
+[2m오전 8:19:01[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [33mhmr invalidate [39m[2m/src/components/pc/layout/PCInteractionPanel.tsx[22m Could not Fast Refresh ("openPcInteractionPanel" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+[2m오전 8:19:01[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/components/pc/layout/PCCourtLayout.tsx, /src/components/pc/home/PCHomeScreen.tsx, /src/components/pc/panels/PCRightPanel.tsx, /src/components/pc/panels/PCLeftPanel.tsx, /src/components/pc/layout/PCDialogueLog.tsx, /src/components/pc/layout/PCGameplayOverlay.tsx, /src/components/pc/hotbar/PCBottomDock.tsx, /src/components/pc/panels/PCImportantNotesSection.tsx[22m
+[2m오전 8:19:01[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [33mhmr invalidate [39m[2m/src/components/pc/panels/PCImportantNotesSection.tsx[22m Could not Fast Refresh ("getNoteSummary" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+[2m오전 8:19:01[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/components/pc/panels/PCRightPanel.tsx, /src/components/pc/panels/PCLeftPanel.tsx[22m
+[2m오전 8:19:12[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/app/index.css, /src/components/pc/layout/PCInteractionPanel.tsx[22m
+[2m오전 8:19:13[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [33mhmr invalidate [39m[2m/src/components/pc/layout/PCInteractionPanel.tsx[22m Could not Fast Refresh ("openPcInteractionPanel" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+[2m오전 8:19:13[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/components/pc/layout/PCCourtLayout.tsx, /src/components/pc/home/PCHomeScreen.tsx, /src/components/pc/panels/PCRightPanel.tsx, /src/components/pc/panels/PCLeftPanel.tsx, /src/components/pc/layout/PCDialogueLog.tsx, /src/components/pc/layout/PCGameplayOverlay.tsx, /src/components/pc/hotbar/PCBottomDock.tsx, /src/components/pc/panels/PCImportantNotesSection.tsx[22m
+[2m오전 8:19:13[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [33mhmr invalidate [39m[2m/src/components/pc/panels/PCImportantNotesSection.tsx[22m Could not Fast Refresh ("getNoteSummary" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+[2m오전 8:19:13[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/components/pc/panels/PCRightPanel.tsx, /src/components/pc/panels/PCLeftPanel.tsx[22m
