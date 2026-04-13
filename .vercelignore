@@ -1,0 +1,9 @@
+node_modules
+tmp
+dist
+dist-pc
+.codex-tmp
+.git
+tests
+*.log
+*.err
