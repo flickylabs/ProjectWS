@@ -5415,13 +5415,14 @@ body.pc-mode .pc-play-right .pc-combination-card__attempt {
   align-items: center;
   justify-content: center;
   gap: 8px;
+  padding: 10px 18px;
   border-radius: 12px;
   border: 1px solid rgba(212, 162, 78, 0.4);
   background: linear-gradient(180deg, rgba(212, 162, 78, 0.92), rgba(186, 136, 55, 0.94));
   color: #16120a;
-  font-size: 16px;
-  font-weight: 900;
-  box-shadow: 0 8px 20px rgba(159, 112, 33, 0.22);
+  font-size: 14px;
+  font-weight: 800;
+  box-shadow: 0 4px 12px rgba(159, 112, 33, 0.15);
 }
 body.pc-mode .pc-combination-card__attempt--center {
   margin: 0;
@@ -5498,31 +5499,28 @@ body.pc-mode .pc-play-right .pc-summary-card {
 
 body.pc-mode .pc-play-right .pc-summary-button {
   width: 100%;
-  min-height: 66px;
-  display: grid;
-  grid-template-columns: auto 1fr auto;
+  min-height: 42px;
+  display: flex;
   align-items: center;
-  gap: 12px;
-  padding: 0 18px;
-  border-radius: 18px;
-  border: 1px solid rgba(212, 162, 78, 0.24);
-  background: linear-gradient(180deg, rgba(63, 47, 20, 0.92), rgba(47, 35, 14, 0.96));
-  color: #f7f0e2;
+  justify-content: center;
+  padding: 10px 18px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(255,255,255,0.03);
+  color: #c0bdb6;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  white-space: nowrap;
 }
-
-body.pc-mode .pc-play-right .pc-summary-button__left,
-body.pc-mode .pc-play-right .pc-summary-button__right {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  color: var(--pc-gold-light);
+body.pc-mode .pc-play-right .pc-summary-button:hover {
+  background: rgba(255,255,255,0.07);
+  border-color: rgba(255,255,255,0.15);
+  color: #e0ddd6;
 }
 
 body.pc-mode .pc-play-right .pc-summary-button__text {
-  text-align: center;
-  font-size: 20px;
-  font-weight: 900;
-  letter-spacing: -0.02em;
+  font-size: 14px;
+  font-weight: 700;
 }
 
 /* Final play layout lock */
@@ -5584,19 +5582,7 @@ body.pc-mode .pc-play-right .pc-target-hint {
   line-height: 1.55 !important;
 }
 
-body.pc-mode .pc-play-right .pc-summary-button {
-  grid-template-columns: 44px minmax(0, 1fr) 52px !important;
-}
-
-body.pc-mode .pc-play-right .pc-summary-button__left,
-body.pc-mode .pc-play-right .pc-summary-button__right {
-  min-width: 32px !important;
-  justify-content: center !important;
-}
-
-body.pc-mode .pc-play-right .pc-summary-button__text {
-  font-size: 17px !important;
-}
+/* summary-button overrides removed — simplified */
 
 /* Play layout stabilization v2 */
 body.pc-mode .pc-play-chat {
@@ -5659,35 +5645,7 @@ body.pc-mode .pc-play-right .tgt-tags {
   gap: 8px !important;
 }
 
-body.pc-mode .pc-play-right .pc-summary-button {
-  min-height: 60px !important;
-  grid-template-columns: 36px minmax(0, 1fr) 54px !important;
-  padding: 0 16px !important;
-}
-
-body.pc-mode .pc-play-right .pc-summary-button__left,
-body.pc-mode .pc-play-right .pc-summary-button__right {
-  min-width: 28px !important;
-  min-height: 28px !important;
-  justify-content: center !important;
-  align-items: center !important;
-}
-
-body.pc-mode .pc-play-right .pc-summary-button__left svg,
-body.pc-mode .pc-play-right .pc-summary-button__right svg {
-  width: 18px !important;
-  height: 18px !important;
-}
-
-body.pc-mode .pc-play-right .pc-summary-button__right b {
-  font-size: 13px !important;
-  font-weight: 900 !important;
-}
-
-body.pc-mode .pc-play-right .pc-summary-button__text {
-  font-size: 15px !important;
-  font-weight: 800 !important;
-}
+/* summary-button overrides removed — simplified */
 /* Left timeline side panel */
 body.pc-mode .pc-play-panel--left {
   position: relative;
@@ -6949,12 +6907,7 @@ body.pc-mode .pc-skill-card {
   box-sizing: border-box !important;
 }
 
-body.pc-mode .pc-summary-button {
-  display: grid !important;
-  grid-template-columns: 22px minmax(0, 1fr) auto !important;
-  align-items: center !important;
-  gap: 10px !important;
-}
+/* summary-button overrides removed — simplified */
 
 body.pc-mode .pc-play-chat .pc-log-list {
   width: min(1320px, 100%) !important;
