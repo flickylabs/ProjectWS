@@ -635,11 +635,6 @@ export default function PCInteractionPanel() {
               </div>
               <div className="pc-interaction-card__title">{payload.title}</div>
             </div>
-            {payload.evidenceId ? (
-              <button className="pc-ev-viewer-btn" onClick={() => handleAction({ kind: 'open_evidence', label: '증거 열람', evidenceId: payload.evidenceId })} type="button">
-                증거 열람
-              </button>
-            ) : null}
             <button className="pc-interaction-card__close" onClick={closePanel} type="button">
               &times;
             </button>
