@@ -16,6 +16,7 @@ import Phase6_Mediation from '../components/phase/Phase6_Mediation'
 import PhaseTransition from '../components/layout/PhaseTransition'
 import PCCourtLayout from '../components/pc/layout/PCCourtLayout'
 import PCHomeScreen from '../components/pc/home/PCHomeScreen'
+import { playBgm } from '../engine/soundEngine'
 import PCResultScreen from '../components/pc/result/PCResultScreen'
 import PCVerdictScreen from '../components/pc/verdict/PCVerdictScreen'
 import { useActionDispatch } from '../hooks/useActionDispatch'
@@ -93,6 +94,7 @@ export default function PCApp() {
   }
 
   if (!caseData) {
+    playBgm('/bgm/title.mp3')
     return <PCHomeScreen />
   }
 

@@ -8,7 +8,7 @@ const PHASE_BGM: Partial<Record<GamePhase, string>> = {
   [GamePhase.Phase0_CaseIntro]: '/bgm/court.mp3',
   [GamePhase.Phase1_InitialStatement]: '/bgm/court.mp3',
   [GamePhase.Phase3_Interrogation]: '/bgm/court.mp3',
-  [GamePhase.Phase6_Mediation]: '/bgm/court.mp3',
+  [GamePhase.Phase6_Mediation]: '/bgm/verdict.mp3',
   [GamePhase.Phase7_Verdict]: '/bgm/verdict.mp3',
   [GamePhase.Result]: '/bgm/result.mp3',
 }
