@@ -6071,7 +6071,8 @@ body.pc-mode .pc-case-timeline__empty {
 
 /* Important notes compact cards */
 body.pc-mode .pc-play-left .pc-important-notes-section {
-  flex: 1 1 auto;
+  flex: 0 0 auto;
+  max-height: 200px;
   min-height: 0;
   display: flex;
   flex-direction: column;
@@ -6081,6 +6082,7 @@ body.pc-mode .pc-play-left .pc-important-notes-section {
 body.pc-mode .pc-play-left .pc-important-notes-section .sec-content {
   flex: 1 1 auto;
   min-height: 0;
+  overflow: hidden;
 }
 
 body.pc-mode .pc-play-left .pc-important-notes__scroll {
@@ -6787,8 +6789,9 @@ body.pc-mode .pc-play-evidence-section {
 }
 
 body.pc-mode .pc-important-notes-section {
-  flex: 1 1 auto !important;
-  min-height: 180px !important;
+  flex: 0 0 auto !important;
+  min-height: 0 !important;
+  max-height: 200px !important;
 }
 
 body.pc-mode .pc-important-notes__scroll {

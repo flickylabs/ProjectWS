@@ -56,8 +56,8 @@ export default function PCEvidenceViewer() {
 
   const state = evidenceStates[evidence.id]
   const displayName = state?.deepInvestigated ? evidence.name : (evidence.surfaceName ?? evidence.name)
-  // sessionStorage 복원 시 viewerData가 누락될 수 있으므로 원본 JSON에서 fallback
-  const viewerData = evidence.viewerData ?? getOriginalViewerData(caseData!.caseId, evidence.id)
+  // 원본 JSON의 viewerData를 항상 우선 사용 (sessionStorage 캐시가 오래된 구조일 수 있음)
+  const viewerData = getOriginalViewerData(caseData!.caseId, evidence.id) ?? evidence.viewerData
   const hasSubViewer = Boolean(viewerData)
 
   return (
