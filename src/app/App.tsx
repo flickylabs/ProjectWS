@@ -1,6 +1,7 @@
 import { useEffect, useState, useMemo } from 'react'
 import { GamePhase } from '../types'
 import { useGameStore, useStore } from '../store/useGameStore'
+import type { GameStore } from '../store/useGameStore'
 import { checkConnection, getProviderName } from '../engine/llmClient'
 import { setLLMMode, isLLMMode } from '../hooks/useActionDispatch'
 import { getRandomCase, getCaseCount, getCaseCountByType } from '../data/cases'
@@ -57,8 +58,8 @@ if (typeof window !== 'undefined') {
 import { triggerDialogueTap } from '../components/phase/AutoDialoguePhase'
 
 export default function App() {
-  const currentPhase = useStore((s) => s.currentPhase)
-  const caseData = useStore((s) => s.caseData)
+  const currentPhase = useStore((s: GameStore) => s.currentPhase)
+  const caseData = useStore((s: GameStore) => s.caseData)
   const [sessionReady, setSessionReady] = useState(false)
 
   // 세션 복원 시 프롬프트/에이전트 재로드
@@ -133,11 +134,11 @@ function TitleScreen() {
   const [serverConnected, setServerConnected] = useState(false)
   const [showResourcePopup, setShowResourcePopup] = useState<'invest' | 'skill' | null>(null)
   const [bgmOn, setBgmOn] = useState(isBgmEnabled())
-  const initializeCase = useStore((s) => s.initializeCase)
-  const globalInvest = useStore((s) => s.globalInvestTokens)
-  const globalSkill = useStore((s) => s.globalSkillPoints)
-  const getCountdown = useStore((s) => s.getNextRechargeCountdown)
-  const tickRecharge = useStore((s) => s.tickInvestRecharge)
+  const initializeCase = useStore((s: GameStore) => s.initializeCase)
+  const globalInvest = useStore((s: GameStore) => s.globalInvestTokens)
+  const globalSkill = useStore((s: GameStore) => s.globalSkillPoints)
+  const getCountdown = useStore((s: GameStore) => s.getNextRechargeCountdown)
+  const tickRecharge = useStore((s: GameStore) => s.tickInvestRecharge)
   const adCountInvest = useStore((s) => s.adWatchCountInvest)
   const adCountSkill = useStore((s) => s.adWatchCountSkill)
   const watchAdInvest = useStore((s) => s.watchAdForInvest)
