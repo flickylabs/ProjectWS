@@ -427,6 +427,97 @@ export function hasScriptedBundle(caseId: string): boolean {
   return rawPath in scriptModsLazy
 }
 
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+// V4 확장 채널 로더
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+/** 모순 추궁 응답 */
+export function getScriptedContradictionPursuit(
+  caseId: string, party: PartyId, disputeId: string, lieState: string,
+): { text: string; behaviorHint: string } | null {
+  const key = `${party}|${disputeId}|${lieState}`
+  return getFromChannel(caseId, 'contradiction_pursuit', key)
+}
+
+/** 끼어들기 */
+export function getScriptedInterjection(
+  caseId: string, party: PartyId, disputeId: string, severity: 'minor' | 'major',
+): { text: string; behaviorHint: string } | null {
+  const key = `${party}|${disputeId}|${severity}`
+  return getFromChannel(caseId, 'interjection', key)
+}
+
+/** 감정 과부하 */
+export function getScriptedEmotionalOverload(
+  caseId: string, party: PartyId, disputeId: string,
+): { text: string; behaviorHint: string } | null {
+  const key = `${party}|${disputeId}`
+  return getFromChannel(caseId, 'emotional_overload', key)
+}
+
+/** 증거 발견 시퀀스 */
+export function getScriptedEvidenceDiscovery(
+  caseId: string, party: PartyId, evidenceId: string, step: 'probe' | 'slip' | 'capture' | 'confirm',
+): { text: string; behaviorHint: string } | null {
+  const key = `${party}|${evidenceId}|${step}`
+  return getFromChannel(caseId, 'evidence_discovery', key)
+}
+
+/** 신뢰 행동 응답 */
+export function getScriptedTrustAction(
+  caseId: string, party: PartyId, actionType: string, lieState: string,
+): { text: string; behaviorHint: string } | null {
+  // 엔진 actionType → ScriptedText 키 매핑
+  const shortType: Record<string, string> = {
+    separation: 'separation',
+    confidential_protection: 'confidential',
+    immediate_answer: 'immediate',
+  }
+  const mapped = shortType[actionType] ?? actionType
+  const key = `${party}|${mapped}|${lieState}`
+  return getFromChannel(caseId, 'trust_action', key)
+}
+
+/** 중재 단계 대화 */
+export function getScriptedMediation(
+  caseId: string, party: PartyId, resultClass: string,
+): { text: string; behaviorHint: string } | null {
+  const key = `${party}|${resultClass}`
+  return getFromChannel(caseId, 'mediation', key)
+}
+
+/** 재판관 심문 질문 (사건별) */
+export function getScriptedJudgeQuestion(
+  caseId: string, disputeId: string, questionType: string, depth: number,
+): { text: string; behaviorHint: string } | null {
+  const key = `${disputeId}|${questionType}|${depth}`
+  return getFromChannel(caseId, 'judge_question', key)
+}
+
+/** 재판관 모순 추궁 질문 (사건별) */
+export function getScriptedJudgeContradiction(
+  caseId: string, disputeId: string, tone: string,
+): { text: string; behaviorHint: string } | null {
+  const key = `${disputeId}|${tone}`
+  return getFromChannel(caseId, 'judge_contradiction', key)
+}
+
+/** 범용 채널 조회 헬퍼 */
+function getFromChannel(
+  caseId: string, channel: string, key: string,
+): { text: string; behaviorHint: string } | null {
+  const bundle = loadBundle(caseId)
+  if (!bundle) return null
+  const ch = (bundle.channels as any)[channel]
+  if (!ch?.entries) return null
+  const entry = ch.entries.find((e: any) => e.key === key)
+  if (!entry?.variants?.length) return null
+  const variant = selectVariant(entry.variants, caseId, { channel, key } as any)
+  if (!variant) return null
+  logScriptedHit(caseId, channel as any, key)
+  return { text: variant.text, behaviorHint: variant.behaviorHint }
+}
+
 /** 캐시 클리어 */
 export function clearScriptedCache(): void {
   bundleCache.clear()

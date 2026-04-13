@@ -16,6 +16,8 @@ import {
   getOutburstEvent,
 } from '../../engine/v3GameLoopLoader'
 import { resolveInterjectionV2 } from '../../hooks/useActionDispatch'
+import { getScriptedEmotionalOverload } from '../../engine/scriptedTextLoader'
+import { normalizeCaseKey } from '../../utils/caseHelpers'
 
 export default function GameEventModal() {
   const pendingEvent = useStore(s => s.pendingGameEvent)
@@ -261,7 +263,9 @@ function EmotionalBurstModal({ event, caseKey, partyName }: { event: GameEventTr
     ? getOutburstEvent(caseKey, event.scriptSlot.textId)
     : null
 
-  const outburstText = v3Event?.outburstLine ?? event.description
+  // ScriptedText 우선 → V3 이벤트 → 폴백
+  const scriptedOverload = getScriptedEmotionalOverload(normalizeCaseKey(caseKey), event.party, event.disputeId)
+  const outburstText = scriptedOverload?.text ?? v3Event?.outburstLine ?? event.description
 
   const handlePress = () => {
     const s = useGameStore.getState()

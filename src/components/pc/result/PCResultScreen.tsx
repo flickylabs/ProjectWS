@@ -461,14 +461,7 @@ function AftermathInline() {
       const { buildAftermathPrompt, postProcessAftermath } = await import('../../../engine/aftermathLLMGenerator')
       const { evaluateTitles } = await import('../../../data/titles')
 
-      // 1. ScriptedText 우선
-      const scripted = resolveScriptedAftermath(caseData, verdictInput)
-      if (scripted) {
-        setAftermath(scripted.text)
-        return
-      }
-
-      // 2. LLM 생성 (buildAftermathPrompt 사용)
+      // 1. LLM 생성 우선 (PC — 상세 후일담)
       if (isLLMMode()) {
         setLoading(true)
         try {

@@ -3,6 +3,8 @@ import { GamePhase } from '../../types'
 import { useGameStore, useStore } from '../../store/useGameStore'
 import { resolveLLMDialogue } from '../../engine/llmDialogueResolver'
 import { isLLMMode } from '../../hooks/useActionDispatch'
+import { getScriptedMediation } from '../../engine/scriptedTextLoader'
+import { normalizeCaseKey } from '../../utils/caseHelpers'
 import { buildBridgeFromStore } from '../../engine/phase6ResultPromptV2'
 import { hasStructureV2 } from '../../engine/v2DataLoader'
 import { loadMediationScript } from '../../data/dialogues/mediationScriptLoader'
@@ -90,44 +92,38 @@ export default function Phase6_Mediation() {
       return
     }
 
-    if (isLLMMode()) {
+    {
       setLoading(true)
       const store = useGameStore.getState()
-      const mediationAction: PlayerAction = { type: 'mediation', choice: pathToChoice(path) }
+      const mediationCaseKey = normalizeCaseKey(caseData.caseId ?? '')
+      const resultClass = pathToChoice(path)
+      const mediationAction: PlayerAction = { type: 'mediation', choice: resultClass }
 
-      try {
-        store.setLLMLoading(true, 'a')
-        const resultA = await resolveLLMDialogue(mediationAction, store.agentA, store.agentB, store.evidenceStates, caseData)
-        store.setLLMLoading(false)
-        if (resultA) {
-          store.addDialogue({
-            speaker: 'a',
-            text: resultA.node.text,
-            relatedDisputes: [],
-            turn: store.turnCount,
-            behaviorHint: resultA.node.behaviorHint,
-          })
-        }
-      } catch {
-        store.setLLMLoading(false)
+      // A 응답: ScriptedText 우선 → LLM 폴백
+      const scriptedA = getScriptedMediation(mediationCaseKey, 'a', resultClass)
+      if (scriptedA) {
+        store.addDialogue({ speaker: 'a', text: scriptedA.text, relatedDisputes: [], turn: store.turnCount, behaviorHint: scriptedA.behaviorHint })
+      } else if (isLLMMode()) {
+        try {
+          store.setLLMLoading(true, 'a')
+          const resultA = await resolveLLMDialogue(mediationAction, store.agentA, store.agentB, store.evidenceStates, caseData)
+          store.setLLMLoading(false)
+          if (resultA) store.addDialogue({ speaker: 'a', text: resultA.node.text, relatedDisputes: [], turn: store.turnCount, behaviorHint: resultA.node.behaviorHint })
+        } catch { store.setLLMLoading(false) }
       }
 
-      try {
-        const freshStore = useGameStore.getState()
-        freshStore.setLLMLoading(true, 'b')
-        const resultB = await resolveLLMDialogue(mediationAction, freshStore.agentA, freshStore.agentB, freshStore.evidenceStates, caseData)
-        freshStore.setLLMLoading(false)
-        if (resultB) {
-          freshStore.addDialogue({
-            speaker: 'b',
-            text: resultB.node.text,
-            relatedDisputes: [],
-            turn: freshStore.turnCount,
-            behaviorHint: resultB.node.behaviorHint,
-          })
-        }
-      } catch {
-        useGameStore.getState().setLLMLoading(false)
+      // B 응답: ScriptedText 우선 → LLM 폴백
+      const freshStore = useGameStore.getState()
+      const scriptedB = getScriptedMediation(mediationCaseKey, 'b', resultClass)
+      if (scriptedB) {
+        freshStore.addDialogue({ speaker: 'b', text: scriptedB.text, relatedDisputes: [], turn: freshStore.turnCount, behaviorHint: scriptedB.behaviorHint })
+      } else if (isLLMMode()) {
+        try {
+          freshStore.setLLMLoading(true, 'b')
+          const resultB = await resolveLLMDialogue(mediationAction, freshStore.agentA, freshStore.agentB, freshStore.evidenceStates, caseData)
+          freshStore.setLLMLoading(false)
+          if (resultB) freshStore.addDialogue({ speaker: 'b', text: resultB.node.text, relatedDisputes: [], turn: freshStore.turnCount, behaviorHint: resultB.node.behaviorHint })
+        } catch { useGameStore.getState().setLLMLoading(false) }
       }
 
       setLoading(false)
@@ -148,7 +144,7 @@ export default function Phase6_Mediation() {
         '해결책을 서두르기보다 사실을 먼저 정리하는 편이 공정합니다. 감정과 책임을 분리해 봐야 합니다.',
       ],
     }
-    const lines = fallbacks[path]
+    const lines = (fallbacks as any)[path] ?? ['']
     if (lines[0]) addDialogue({ speaker: 'a', text: lines[0], relatedDisputes: [], turn: turnCount })
     if (lines[1]) addDialogue({ speaker: 'b', text: lines[1], relatedDisputes: [], turn: turnCount })
   }

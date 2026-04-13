@@ -13,6 +13,14 @@ import { getAffinityScore, getAffinityGrade } from '../data/actionAffinity'
 import { getOptimalPath, getNarrativeExpansion } from '../data/caseEnrichment'
 import { normalizeCaseKey } from '../utils/caseHelpers'
 import { detectStatementChange } from '../engine/contradictionEngine'
+import {
+  getScriptedContradictionPursuit,
+  getScriptedInterjection,
+  getScriptedEmotionalOverload,
+  getScriptedTrustAction,
+  getScriptedJudgeQuestion,
+  getScriptedJudgeContradiction,
+} from '../engine/scriptedTextLoader'
 import { runDiscoveryChecks, updateCascadeTargets } from './useDiscoveryIntegration'
 import {
   clearNextConfidential,
@@ -105,10 +113,13 @@ export function resolveInterjectionV2(choice: 'allow' | 'block'): void {
   setSessionInterjectionTracker(nextTracker)
   recordInterjectionStyleChoice(choice)
 
-  // 끼어들기 응답 출력
+  // 끼어들기 응답: ScriptedText 우선 → V3 beat 폴백
+  const interjCaseKey = normalizeCaseKey(store.caseData?.caseId ?? '')
+  const interjScripted = getScriptedInterjection(interjCaseKey, opportunity.interruptor, opportunity.disputeId, opportunity.severity ?? 'minor')
   store.addDialogue({
     speaker: opportunity.interruptor,
-    text: opportunity.line,
+    text: interjScripted?.text ?? opportunity.line,
+    behaviorHint: interjScripted?.behaviorHint,
     relatedDisputes: [opportunity.disputeId],
     turn: store.turnCount,
   })
@@ -231,6 +242,7 @@ export function useActionDispatch() {
 
 // ── 증거 제시 ──
 let evidencePresentLock = false
+let _lastTransitionChoiceTurn = -1  // 전략 선택 모달: 턴당 1회 제한
 async function handleEvidencePresent(action: Extract<PlayerAction, { type: 'evidence_present' }>) {
   if (evidencePresentLock) return
   evidencePresentLock = true
@@ -402,9 +414,10 @@ async function handleEvidencePresent(action: Extract<PlayerAction, { type: 'evid
         const pName = action.target === 'a' ? v3State.caseData?.duo.partyA.name : v3State.caseData?.duo.partyB.name
         emitStateTransitionEvent(action.target, dId, prev, cur, v3State.turnCount, pName ?? '')
 
-        // 상태 전이 후 전략 선택 모달 (증거 제시 경유)
+        // 상태 전이 후 전략 선택 모달 (증거 제시 경유, 턴당 1회)
         const transLabel = getTransitionLabel(prev, cur)
-        if (transLabel === 'cracked' || transLabel === 'cornered' || transLabel === 'opening') {
+        if ((transLabel === 'cracked' || transLabel === 'cornered' || transLabel === 'opening') && _lastTransitionChoiceTurn !== v3State.turnCount) {
+          _lastTransitionChoiceTurn = v3State.turnCount
           v3State.setPendingTransitionChoice({
             label: transLabel,
             party: action.target,
@@ -1325,9 +1338,10 @@ async function handleQuestion(action: Extract<PlayerAction, { type: 'question' }
       const pName = action.target === 'a' ? v3State.caseData?.duo.partyA.name : v3State.caseData?.duo.partyB.name
       emitStateTransitionEvent(action.target, action.disputeId, prevState, newState, v3State.turnCount, pName ?? '')
 
-      // 상태 전이 후 전략 선택 모달 (cracked/cornered/opening만)
+      // 상태 전이 후 전략 선택 모달 (cracked/cornered/opening만, 턴당 1회)
       const transLabel = getTransitionLabel(prevState, newState)
-      if (transLabel === 'cracked' || transLabel === 'cornered' || transLabel === 'opening') {
+      if ((transLabel === 'cracked' || transLabel === 'cornered' || transLabel === 'opening') && _lastTransitionChoiceTurn !== v3State.turnCount) {
+        _lastTransitionChoiceTurn = v3State.turnCount
         v3State.setPendingTransitionChoice({
           label: transLabel,
           party: action.target,
@@ -1378,7 +1392,24 @@ async function handleTrustAction(action: Extract<PlayerAction, { type: 'trust_ac
   }
 
   const isConfidential = action.actionType === 'confidential_protection'
-  await resolveAndApply(action, action.target, isConfidential)
+
+  // trust_action ScriptedText 우선
+  const trustCaseKey = normalizeCaseKey(v3State.caseData?.caseId ?? '')
+  const trustLieEntry = (action.target === 'a' ? v3State.agentA : v3State.agentB).lieStateMap[action.disputeId ?? '']
+  const trustLieState = trustLieEntry?.currentState ?? 'S0'
+  const trustScripted = getScriptedTrustAction(trustCaseKey, action.target, action.actionType, trustLieState)
+  if (trustScripted) {
+    v3State.addDialogue({
+      speaker: action.target,
+      text: trustScripted.text,
+      behaviorHint: trustScripted.behaviorHint,
+      relatedDisputes: action.disputeId ? [action.disputeId] : [],
+      turn: v3State.turnCount,
+      isConfidential,
+    })
+  } else {
+    await resolveAndApply(action, action.target, isConfidential)
+  }
 
   useGameStore.getState().incrementTurn()
 }
@@ -1610,39 +1641,24 @@ export function actuallyDiscoverEvidence(evidenceId: string) {
   const party = mg?.party ?? 'a'
 
   const { probe, slip, confirm } = getDiscoveryLines(ev, name, lieState)
+  const discoverCaseKey = normalizeCaseKey(state.caseData?.caseId ?? '')
+  const { getScriptedEvidenceDiscovery } = require('../engine/scriptedTextLoader')
 
-  // 1) 재판관 유도 질문 — 허점을 파고든다
-  state.addDialogue({
-    speaker: 'judge',
-    text: probe,
-    relatedDisputes: ev.proves,
-    turn: state.turnCount,
-  })
+  // 1) 재판관 유도 질문
+  const sProbe = getScriptedEvidenceDiscovery(discoverCaseKey, party, evidenceId, 'probe')
+  state.addDialogue({ speaker: 'judge', text: sProbe?.text ?? probe, relatedDisputes: ev.proves, turn: state.turnCount })
 
-  // 2) 당사자 실수 대사 — 무심코 단서를 흘린다
-  state.addDialogue({
-    speaker: party,
-    text: slip,
-    relatedDisputes: ev.proves,
-    turn: state.turnCount,
-    behaviorHint: getSlipBehavior(lieState),
-  })
+  // 2) 당사자 실수 대사
+  const sSlip = getScriptedEvidenceDiscovery(discoverCaseKey, party, evidenceId, 'slip')
+  state.addDialogue({ speaker: party, text: sSlip?.text ?? slip, relatedDisputes: ev.proves, turn: state.turnCount, behaviorHint: sSlip?.behaviorHint ?? getSlipBehavior(lieState) })
 
   // 3) 시스템: 증거 포착
-  state.addDialogue({
-    speaker: 'system',
-    text: `${name}의 말에서 새로운 증거를 확보했다`,
-    relatedDisputes: ev.proves,
-    turn: state.turnCount,
-  })
+  const sCapture = getScriptedEvidenceDiscovery(discoverCaseKey, party, evidenceId, 'capture')
+  state.addDialogue({ speaker: 'system', text: sCapture?.text ?? `${name}의 말에서 새로운 증거를 확보했다`, relatedDisputes: ev.proves, turn: state.turnCount })
 
   // 4) 재판관 확인 선언
-  state.addDialogue({
-    speaker: 'judge',
-    text: confirm,
-    relatedDisputes: ev.proves,
-    turn: state.turnCount,
-  })
+  const sConfirm = getScriptedEvidenceDiscovery(discoverCaseKey, party, evidenceId, 'confirm')
+  state.addDialogue({ speaker: 'judge', text: sConfirm?.text ?? confirm, relatedDisputes: ev.proves, turn: state.turnCount })
 
   // 5) 시스템: 증거 해금
   useGameStore.setState((prev) => ({
@@ -2113,10 +2129,14 @@ export async function handleContradictionPursue(
       : state.caseData.duo.partyB.name
     const dispute = state.caseData.disputes.find(d => d.id === disputeId)
 
-    // 템플릿 기반 모순 추궁 질문 생성 (LLM 불필요, 즉시 생성)
     const lieEntry = (party === 'a' ? state.agentA : state.agentB).lieStateMap[disputeId]
     const currentLieState = lieEntry?.currentState ?? 'S0'
-    const judgeQuestion = buildContradictionQuestion(npcName, previousClaim, currentClaim, currentLieState)
+
+    // 사건별 스크립트 우선 → 일반 템플릿 폴백
+    const caseKeyForJudge = normalizeCaseKey(state.caseData?.caseId ?? '')
+    const tone = resolveContradictionTone(currentLieState)
+    const scriptedJudge = getScriptedJudgeContradiction(caseKeyForJudge, disputeId, tone)
+    const judgeQuestion = scriptedJudge?.text ?? buildContradictionQuestion(npcName, previousClaim, currentClaim, currentLieState)
 
     state.addDialogue({
       speaker: 'judge',
@@ -2134,15 +2154,27 @@ export async function handleContradictionPursue(
       isHidden: true,
     })
 
-    // LLM으로 NPC 응답 생성 — 재판관 질문은 이미 추가했으므로 스킵
-    setSkipNextJudgeQuestion(true)
-    const action: PlayerAction = {
-      type: 'question',
-      questionType: 'fact_pursuit',
-      target: party,
-      disputeId,
+    // ScriptedText 우선 → LLM 폴백
+    const caseKey = normalizeCaseKey(state.caseData?.caseId ?? '')
+    const scripted = getScriptedContradictionPursuit(caseKey, party, disputeId, currentLieState)
+    if (scripted) {
+      state.addDialogue({
+        speaker: party,
+        text: scripted.text,
+        behaviorHint: scripted.behaviorHint,
+        relatedDisputes: [disputeId],
+        turn: state.turnCount,
+      })
+    } else {
+      setSkipNextJudgeQuestion(true)
+      const action: PlayerAction = {
+        type: 'question',
+        questionType: 'fact_pursuit',
+        target: party,
+        disputeId,
+      }
+      await resolveAndApply(action, party)
     }
-    await resolveAndApply(action, party)
 
     // 모순 추궁은 거짓말 전이에 유리 — 추가 전이 시도
     snapshotLieState(party, disputeId)

@@ -32,16 +32,16 @@ const PHASE_LABELS: Record<GamePhase, string> = {
   [GamePhase.Result]: '결과',
 }
 
-/** Phase2(반박)를 스킵하므로 유저에게 보이는 번호를 1단계씩 앞당김 */
+/** V4: Phase4/5 스킵 → Phase3(심문)→Phase6(중재)→Phase7(판결) 직행 */
 function getPhaseNumber(phase: GamePhase): string {
   const DISPLAY_NUMBERS: Record<string, string> = {
     [GamePhase.Phase0_CaseIntro]: '0',
     [GamePhase.Phase1_InitialStatement]: '1',
     [GamePhase.Phase3_Interrogation]: '2',
-    [GamePhase.Phase4_Evidence]: '3',
-    [GamePhase.Phase5_ReExamination]: '4',
-    [GamePhase.Phase6_Mediation]: '5',
-    [GamePhase.Phase7_Verdict]: '6',
+    [GamePhase.Phase4_Evidence]: '2',
+    [GamePhase.Phase5_ReExamination]: '2',
+    [GamePhase.Phase6_Mediation]: '3',
+    [GamePhase.Phase7_Verdict]: '4',
     [GamePhase.Result]: 'R',
   }
   return DISPLAY_NUMBERS[phase] ?? '0'
@@ -274,7 +274,7 @@ export default function PCCourtLayout({ actionPanel, onDialogueTap, isDialoguePh
           </div>
 
           {actionPanel ? (
-            <div className={`pc-play-action-shell${isDialoguePhase ? ' is-dialogue' : ''}${showDock ? ' has-dock' : ''}`}>
+            <div className={`pc-play-action-shell${isDialoguePhase ? ' is-dialogue' : ''}${showDock ? ' has-dock' : ''}${currentPhase === GamePhase.Phase6_Mediation || currentPhase === GamePhase.Phase7_Verdict ? ' is-fullscreen-panel' : ''}`}>
               {actionPanel}
             </div>
           ) : null}

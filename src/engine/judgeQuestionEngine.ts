@@ -229,6 +229,16 @@ export function generateJudgeQuestion(
   interrogationDepth: number,
   lieState?: LieState,
 ): string {
+  // ScriptedText 우선: 사건별 맞춤 질문
+  try {
+    const { getScriptedJudgeQuestion } = require('./scriptedTextLoader')
+    const { normalizeCaseKey } = require('../utils/caseHelpers')
+    const caseKey = normalizeCaseKey(caseData.caseId ?? '')
+    const depth = Math.min(Math.max(interrogationDepth, 1), 4)
+    const scripted = getScriptedJudgeQuestion(caseKey, disputeId, questionType, depth)
+    if (scripted) return scripted.text
+  } catch { /* 폴백 */ }
+
   const profile = target === 'a' ? caseData.duo.partyA : caseData.duo.partyB
   const dispute = caseData.disputes.find(d => d.id === disputeId)
 

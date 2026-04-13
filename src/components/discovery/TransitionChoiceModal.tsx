@@ -167,7 +167,7 @@ export default function TransitionChoiceModal() {
 
   return (
     <div className="fixed inset-0 z-50 bg-gray-950/85 flex items-center justify-center px-4">
-      <div className="bg-gray-900 border border-gray-700/60 rounded-2xl w-full max-w-sm overflow-hidden animate-fade-in shadow-2xl">
+      <div className="bg-gray-900 border border-gray-700/60 rounded-2xl w-full max-w-lg overflow-hidden animate-fade-in shadow-2xl">
         {/* 헤더 */}
         <div className={`bg-gradient-to-b ${config.gradient} border-b ${config.borderColor} px-4 py-3`}>
           <div className="flex items-center gap-2">
@@ -181,21 +181,20 @@ export default function TransitionChoiceModal() {
           </p>
         </div>
 
-        {/* 선택지 */}
-        <div className="px-4 py-3 space-y-2">
+        {/* 선택지 — 가로 배치 */}
+        <div className="px-4 py-3 flex gap-2">
           {options.map((option, idx) => {
             const c = OPTION_COLORS[option.color] ?? OPTION_COLORS.gray
             return (
               <button
                 key={idx}
                 onClick={() => handleChoice(option)}
-                className={`w-full text-left px-3 py-2.5 rounded-xl border transition-all active:scale-[0.97] ${c.bg} ${c.border} ${c.hover}`}
+                className={`flex-1 text-center px-2 py-3 rounded-xl border transition-all active:scale-[0.97] ${c.bg} ${c.border} ${c.hover}`}
               >
-                <div className="flex items-center gap-2">
-                  <Emoji char={option.icon} size={16} />
+                <div className="flex flex-col items-center gap-1">
+                  <Emoji char={option.icon} size={18} />
                   <span className={`text-xs font-bold ${c.text}`}>{option.label}</span>
                 </div>
-                <p className="text-[11px] text-gray-400 mt-0.5 pl-6">{option.description}</p>
               </button>
             )
           })}

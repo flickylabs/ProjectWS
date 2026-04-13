@@ -279,7 +279,8 @@ export default function PCVerdictScreen() {
                     {(['false', 'pending', 'true'] as const).map((value) => {
                       const nameA = caseData.duo.partyA.name
                       const nameB = caseData.duo.partyB.name
-                      const labels = { false: `거짓 (${nameA} 측 부정)`, pending: '보류', true: `사실 (${nameB} 측 인정)` }
+                      const mainLabels = { false: '거짓', pending: '보류', true: '사실' }
+                      const subLabels = { false: `${nameA} 측 부정`, pending: '', true: `${nameB} 측 인정` }
                       const active = currentFinding === value
                       return (
                         <button
@@ -294,7 +295,8 @@ export default function PCVerdictScreen() {
                           }}
                           type="button"
                         >
-                          {labels[value]}
+                          <span className="pc-verdict-fact__btn-main">{mainLabels[value]}</span>
+                          {subLabels[value] ? <span className="pc-verdict-fact__btn-sub">{subLabels[value]}</span> : null}
                         </button>
                       )
                     })}
