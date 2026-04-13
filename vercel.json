@@ -1,8 +1,8 @@
 {
-  "buildCommand": "npm run build",
-  "outputDirectory": "dist",
+  "buildCommand": "npm run build:pc",
+  "outputDirectory": "dist-pc",
   "framework": "vite",
   "rewrites": [
-    { "source": "/((?!assets|resource-checklist|manifest|favicon|icon).*)", "destination": "/index.html" }
+    { "source": "/((?!assets|sfx|emoji|evidence|favicon|icon|manifest).*)", "destination": "/index-pc.html" }
   ]
 }
