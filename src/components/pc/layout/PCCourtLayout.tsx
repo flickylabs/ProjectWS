@@ -13,6 +13,7 @@ import PCDisputeRibbon from './PCDisputeRibbon'
 import PCGameplayOverlay from './PCGameplayOverlay'
 import PCInteractionPanel, { openPcInteractionPanel } from './PCInteractionPanel'
 import PCRecordSummary from './PCRecordSummary'
+import PhaseTransition from '../../layout/PhaseTransition'
 
 interface Props {
   actionPanel?: ReactNode
@@ -290,6 +291,7 @@ export default function PCCourtLayout({ actionPanel, onDialogueTap, isDialoguePh
       <PCEvidenceViewer />
       <PCInteractionPanel />
       <PCGameplayOverlay />
+      <PhaseTransition />
       {recordSummaryOpen ? <PCRecordSummary onClose={() => setRecordSummaryOpen(false)} /> : null}
     </>
   )
