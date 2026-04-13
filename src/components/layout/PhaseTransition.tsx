@@ -3,13 +3,11 @@ import { GamePhase } from '../../types'
 import { useStore } from '../../store/useGameStore'
 import { playPhaseTransition, playBgm, stopBgm } from '../../engine/soundEngine'
 
-/** Phase별 BGM 매핑 */
+/** V4 Phase별 BGM 매핑 */
 const PHASE_BGM: Partial<Record<GamePhase, string>> = {
+  [GamePhase.Phase0_CaseIntro]: '/bgm/court.mp3',
   [GamePhase.Phase1_InitialStatement]: '/bgm/court.mp3',
-  [GamePhase.Phase2_Rebuttal]: '/bgm/court.mp3',
   [GamePhase.Phase3_Interrogation]: '/bgm/court.mp3',
-  [GamePhase.Phase4_Evidence]: '/bgm/court.mp3',
-  [GamePhase.Phase5_ReExamination]: '/bgm/court.mp3',
   [GamePhase.Phase6_Mediation]: '/bgm/court.mp3',
   [GamePhase.Phase7_Verdict]: '/bgm/verdict.mp3',
   [GamePhase.Result]: '/bgm/result.mp3',
@@ -50,7 +48,6 @@ export default function PhaseTransition() {
       // BGM 전환 (info가 없는 Phase — Result 등)
       const bgmTrack = PHASE_BGM[currentPhase]
       if (bgmTrack) playBgm(bgmTrack)
-      else if (currentPhase === GamePhase.Phase0_CaseIntro) stopBgm()
       setLastPhase(currentPhase)
     }
   }, [currentPhase, lastPhase])
