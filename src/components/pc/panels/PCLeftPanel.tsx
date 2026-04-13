@@ -104,16 +104,18 @@ export default function PCLeftPanel() {
     ]
 
     const meta = evidence.meta
-    const subtitleParts = [TYPE_LABELS[evidence.type] ?? '증거 파일']
-    if (meta?.trustLabel) subtitleParts.push(meta.trustLabel)
-    if (meta?.sourceLabel) subtitleParts.push(meta.sourceLabel)
+    const metaTags: string[] = []
+    if (meta?.trustLabel) metaTags.push(meta.trustLabel)
+    if (meta?.sourceLabel) metaTags.push(meta.sourceLabel)
 
     openPcInteractionPanel({
       title: label,
-      subtitle: subtitleParts.join(' · '),
+      subtitle: TYPE_LABELS[evidence.type] ?? '증거 파일',
       tone: 'gold',
       variant: 'evidence',
       evidenceId: evidence.id,
+      evidenceTypeLabel: TYPE_LABELS[evidence.type] ?? '증거 파일',
+      evidenceMetaTags: metaTags,
       body: bodyParts.join('\n'),
       actions,
     })

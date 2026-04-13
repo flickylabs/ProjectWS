@@ -52,6 +52,10 @@ export interface PcInteractionPayload {
   tags?: string[]
   actions?: PcInteractionAction[]
   evidenceId?: string
+  /** evidence variant: 타입 레이블 (기기, 기록 등) */
+  evidenceTypeLabel?: string
+  /** evidence variant: 메타 태그 배열 (보통, 기관 등) */
+  evidenceMetaTags?: string[]
   /** dialogue variant fields */
   dialogueTurn?: number
   dialogueSpeaker?: string
@@ -622,10 +626,20 @@ export default function PCInteractionPanel() {
       >
         {payload.variant === 'dialogue' ? null : payload.variant === 'evidence' ? (
           <div className="pc-interaction-card__header pc-interaction-card__header--evidence">
-            <div>
-              {payload.subtitle ? <div className="pc-interaction-card__subtitle">{payload.subtitle}</div> : null}
+            <div className="pc-ev-header-left">
+              <div className="pc-ev-header-top">
+                {payload.evidenceTypeLabel ? <span className="pc-ev-header-type">{payload.evidenceTypeLabel}</span> : null}
+                {payload.evidenceMetaTags?.map((tag) => (
+                  <span className="pc-ev-header-meta-tag" key={tag}>{tag}</span>
+                ))}
+              </div>
               <div className="pc-interaction-card__title">{payload.title}</div>
             </div>
+            {payload.evidenceId ? (
+              <button className="pc-ev-viewer-btn" onClick={() => handleAction({ kind: 'open_evidence', label: '증거 열람', evidenceId: payload.evidenceId })} type="button">
+                증거 열람
+              </button>
+            ) : null}
             <button className="pc-interaction-card__close" onClick={closePanel} type="button">
               &times;
             </button>

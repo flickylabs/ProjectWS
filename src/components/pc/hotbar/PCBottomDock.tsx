@@ -136,16 +136,18 @@ export default function PCBottomDock() {
       if (hiddenCount > 0) bodyParts.push(`(미확인 항목 ${hiddenCount}개)`)
     }
     const meta = ev.meta
-    const subtitleParts = [TYPE_LABELS[ev.type] ?? '증거 파일']
-    if (meta?.trustLabel) subtitleParts.push(meta.trustLabel)
-    if (meta?.sourceLabel) subtitleParts.push(meta.sourceLabel)
+    const metaTags: string[] = []
+    if (meta?.trustLabel) metaTags.push(meta.trustLabel)
+    if (meta?.sourceLabel) metaTags.push(meta.sourceLabel)
 
     openPcInteractionPanel({
       title: label,
-      subtitle: subtitleParts.join(' · '),
+      subtitle: TYPE_LABELS[ev.type] ?? '증거 파일',
       tone: 'gold',
       variant: 'evidence',
       evidenceId: ev.id,
+      evidenceTypeLabel: TYPE_LABELS[ev.type] ?? '증거 파일',
+      evidenceMetaTags: metaTags,
       body: bodyParts.join('\n'),
       actions: [{ kind: 'open_evidence' as const, label: '증거 열람', evidenceId: ev.id }],
     })

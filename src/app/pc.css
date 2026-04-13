@@ -615,8 +615,46 @@ body.pc-mode .pc-ev-body-wrap {
 /* Evidence variant header */
 body.pc-mode .pc-interaction-card__header--evidence {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 12px;
+}
+
+body.pc-mode .pc-ev-header-left {
+  flex: 1;
+  min-width: 0;
+}
+
+body.pc-mode .pc-ev-header-top {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 4px;
+}
+
+body.pc-mode .pc-ev-header-type {
+  font-size: 11px;
+  font-weight: 700;
+  color: #8c8fa0;
+  letter-spacing: 0.05em;
+}
+
+body.pc-mode .pc-ev-header-meta-tag {
+  padding: 2px 8px;
+  border-radius: 4px;
+  background: rgba(255,255,255,0.06);
+  color: #787c8a;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+body.pc-mode .pc-interaction-card__header--evidence .pc-interaction-card__title {
+  text-align: left;
+}
+
+body.pc-mode .pc-interaction-card__header--evidence .pc-ev-viewer-btn {
+  margin-left: auto;
+  flex-shrink: 0;
+  align-self: center;
 }
 
 /* Dispute ribbon — toast bar, half-width, collapsible */
