@@ -6,7 +6,213 @@ import { useState, useCallback } from 'react'
 import type {
   BankRow, ChatMessage, ContractRow, TestimonyData,
   CCTVEvent, LogRow, DeviceSection, SNSData,
+  ReceiptSheet, GpsLogEntry,
 } from './demoEvidenceData'
+
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+// 0. ReceiptViewer — 영수증 묶음 (좌우 넘기기)
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+export function ReceiptViewer({ sheets }: { sheets: ReceiptSheet[] }) {
+  const [current, setCurrent] = useState(0)
+  const sheet = sheets[current]
+  if (!sheet) return null
+
+  return (
+    <div>
+      {/* Header: page indicator */}
+      <div className="flex items-center justify-between mb-3">
+        <span className="text-xs font-semibold" style={{ color: '#8b8b9a' }}>
+          영수증 {current + 1} / {sheets.length}
+        </span>
+        <div className="flex gap-1">
+          {sheets.map((_, i) => (
+            <button
+              key={i}
+              className="w-2 h-2 rounded-full transition-all duration-150"
+              style={{
+                background: i === current ? 'var(--pc-gold, #d4a24e)' : 'rgba(255,255,255,0.1)',
+                cursor: 'pointer',
+                border: 'none',
+              }}
+              onClick={() => setCurrent(i)}
+            />
+          ))}
+        </div>
+      </div>
+
+      {/* Receipt paper */}
+      <div
+        className="rounded-xl px-5 py-4 mb-3"
+        style={{
+          background: sheet.suspicious ? 'rgba(224,96,96,0.04)' : 'rgba(255,255,255,0.02)',
+          border: sheet.suspicious ? '1px solid rgba(224,96,96,0.15)' : '1px solid rgba(255,255,255,0.06)',
+          fontFamily: 'monospace',
+        }}
+      >
+        {/* Store name */}
+        <div className="text-center text-sm font-bold tracking-wider mb-0.5" style={{ color: '#dcdce0' }}>
+          {sheet.storeName}
+        </div>
+        {sheet.storeAddr ? (
+          <div className="text-center text-xs mb-2" style={{ color: '#4e4e5c' }}>{sheet.storeAddr}</div>
+        ) : null}
+        <div className="text-center text-xs mb-3" style={{ color: '#4e4e5c' }}>{sheet.date}</div>
+
+        {/* Separator */}
+        <div className="mb-2" style={{ borderTop: '1px dashed rgba(255,255,255,0.1)' }} />
+
+        {/* Items header */}
+        <div className="flex text-xs font-semibold mb-1 px-1" style={{ color: '#4e4e5c' }}>
+          <span className="flex-1">상품명</span>
+          <span className="w-14 text-right">단가</span>
+          <span className="w-8 text-center">수량</span>
+          <span className="w-16 text-right">금액</span>
+        </div>
+
+        {/* Items */}
+        {sheet.items.map((item, i) => (
+          <div key={i} className="flex text-sm py-1 px-1" style={{ color: '#8b8b9a', borderBottom: '1px solid rgba(255,255,255,0.03)' }}>
+            <div className="flex-1 min-w-0">
+              <div className="truncate">{item.name}</div>
+              {item.code ? <div className="text-xs" style={{ color: '#3a3a48' }}>{item.code}</div> : null}
+            </div>
+            <span className="w-14 text-right tabular-nums shrink-0">{item.unitPrice}</span>
+            <span className="w-8 text-center tabular-nums shrink-0">{item.qty}</span>
+            <span className="w-16 text-right tabular-nums shrink-0 font-medium" style={{ color: '#dcdce0' }}>{item.amount}</span>
+          </div>
+        ))}
+
+        {/* Separator */}
+        <div className="my-2" style={{ borderTop: '1px dashed rgba(255,255,255,0.1)' }} />
+
+        {/* Totals */}
+        <div className="flex justify-between text-sm px-1 mb-1" style={{ color: '#8b8b9a' }}>
+          <span>합계</span><span className="tabular-nums">{sheet.subtotal}</span>
+        </div>
+        <div className="flex justify-between text-sm px-1 mb-1" style={{ color: '#4e4e5c' }}>
+          <span>부가세</span><span className="tabular-nums">{sheet.tax}</span>
+        </div>
+        <div className="flex justify-between text-sm font-bold px-1 mb-2" style={{ color: '#dcdce0' }}>
+          <span>결제금액</span><span className="tabular-nums">{sheet.total}</span>
+        </div>
+
+        {/* Separator */}
+        <div className="mb-2" style={{ borderTop: '1px dashed rgba(255,255,255,0.1)' }} />
+
+        {/* Payment method */}
+        <div className="text-xs text-center" style={{ color: '#4e4e5c' }}>
+          {sheet.paymentMethod}
+        </div>
+      </div>
+
+      {/* Prev/Next */}
+      <div className="flex justify-center gap-4">
+        <button
+          className="text-sm px-4 py-2 rounded-lg transition-colors duration-150"
+          style={{
+            background: 'var(--pc-p3, #18181f)',
+            border: '1px solid rgba(255,255,255,0.06)',
+            color: current > 0 ? '#8b8b9a' : '#3a3a48',
+            cursor: current > 0 ? 'pointer' : 'default',
+          }}
+          disabled={current === 0}
+          onClick={() => setCurrent((p) => Math.max(0, p - 1))}
+        >
+          ← 이전
+        </button>
+        <button
+          className="text-sm px-4 py-2 rounded-lg transition-colors duration-150"
+          style={{
+            background: 'var(--pc-p3, #18181f)',
+            border: '1px solid rgba(255,255,255,0.06)',
+            color: current < sheets.length - 1 ? '#8b8b9a' : '#3a3a48',
+            cursor: current < sheets.length - 1 ? 'pointer' : 'default',
+          }}
+          disabled={current === sheets.length - 1}
+          onClick={() => setCurrent((p) => Math.min(sheets.length - 1, p + 1))}
+        >
+          다음 →
+        </button>
+      </div>
+    </div>
+  )
+}
+
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+// 0b. GpsLogViewer — GPS/블랙박스 로그
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+export function GpsLogViewer({ entries }: { entries: GpsLogEntry[] }) {
+  const [filter, setFilter] = useState<'all' | 'suspicious'>('all')
+  const filtered = filter === 'all' ? entries : entries.filter((e) => e.suspicious)
+
+  return (
+    <div>
+      {/* Header */}
+      <div className="flex items-center gap-2 mb-3">
+        <span className="text-xs font-semibold px-2 py-1 rounded" style={{ background: 'rgba(92,201,122,0.1)', color: '#5cc97a' }}>GPS</span>
+        <span className="text-xs" style={{ color: '#4e4e5c' }}>블랙박스 GPS 로그 — {entries.length}건</span>
+        <div className="ml-auto flex gap-1.5">
+          {(['all', 'suspicious'] as const).map((f) => (
+            <button
+              key={f}
+              className="text-xs px-2.5 py-1 rounded-lg font-medium transition-colors duration-150"
+              style={{
+                background: filter === f ? 'rgba(212,162,78,0.1)' : 'transparent',
+                border: filter === f ? '1px solid rgba(212,162,78,0.18)' : '1px solid rgba(255,255,255,0.05)',
+                color: filter === f ? 'var(--pc-gold-light, #e8c172)' : '#4e4e5c',
+              }}
+              onClick={() => setFilter(f)}
+            >
+              {f === 'all' ? '전체' : '주목'}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      {/* Table */}
+      <table className="w-full text-sm" style={{ borderCollapse: 'collapse' }}>
+        <thead>
+          <tr>
+            {['시각', '위치', '위도/경도', '속도'].map((h) => (
+              <th
+                key={h}
+                className="text-left text-xs font-semibold py-2 px-2"
+                style={{ color: '#4e4e5c', borderBottom: '1px solid rgba(255,255,255,0.06)' }}
+              >
+                {h}
+              </th>
+            ))}
+          </tr>
+        </thead>
+        <tbody>
+          {filtered.map((e, i) => (
+            <tr
+              key={i}
+              style={{
+                background: e.suspicious ? 'rgba(212,162,78,0.06)' : 'transparent',
+              }}
+            >
+              <td className="py-1.5 px-2 tabular-nums whitespace-nowrap" style={{ color: e.suspicious ? 'var(--pc-gold-light, #e8c172)' : '#8b8b9a', borderBottom: '1px solid rgba(255,255,255,0.03)', fontSize: 12 }}>
+                {e.timestamp}
+              </td>
+              <td className="py-1.5 px-2" style={{ color: e.suspicious ? '#dcdce0' : '#8b8b9a', borderBottom: '1px solid rgba(255,255,255,0.03)', fontWeight: e.suspicious ? 600 : 400 }}>
+                {e.location}
+              </td>
+              <td className="py-1.5 px-2 tabular-nums" style={{ color: '#4e4e5c', borderBottom: '1px solid rgba(255,255,255,0.03)', fontSize: 11 }}>
+                {e.lat}, {e.lng}
+              </td>
+              <td className="py-1.5 px-2 tabular-nums" style={{ color: '#8b8b9a', borderBottom: '1px solid rgba(255,255,255,0.03)' }}>
+                {e.speed}
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  )
+}
 
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 // 1. BankViewer — 계좌 이체 내역

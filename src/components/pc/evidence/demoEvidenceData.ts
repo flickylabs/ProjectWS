@@ -58,6 +58,37 @@ export interface TestimonyData {
   relatedRef: string
 }
 
+// ── Receipt ──
+export interface ReceiptItem {
+  name: string
+  code?: string
+  unitPrice: string
+  qty: number
+  amount: string
+}
+export interface ReceiptSheet {
+  storeName: string
+  storeAddr?: string
+  date: string
+  items: ReceiptItem[]
+  subtotal: string
+  tax: string
+  total: string
+  paymentMethod: string
+  suspicious: boolean
+}
+
+// ── GPS Log ──
+export interface GpsLogEntry {
+  timestamp: string
+  lat: string
+  lng: string
+  speed: string
+  heading?: string
+  location: string
+  suspicious: boolean
+}
+
 // ── CCTV ──
 export interface CCTVEvent {
   time: string

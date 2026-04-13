@@ -11,6 +11,8 @@ import { getOriginalViewerData } from '../../../data/cases/caseLoader'
 import { getPcEvidenceSymbolId } from '../icons/pcIconUtils'
 import PCSvgIcon from '../icons/PCSvgIcon'
 import {
+  ReceiptViewer,
+  GpsLogViewer,
   BankViewer,
   ChatViewer,
   ContractViewer,
@@ -98,9 +100,12 @@ function EvidenceSubContent({ type, viewerData }: { type: string; viewerData: Re
   if (!data) return null
 
   switch (contentKey) {
+    case 'receipt':
+      return <ReceiptViewer sheets={Array.isArray(data) ? data as any : [data]} />
+    case 'gps_log':
+      return <GpsLogViewer entries={Array.isArray(data) ? data as any : [data]} />
     case 'bank':
     case 'financial_record':
-    case 'receipt':
       return <BankViewer rows={Array.isArray(data) ? data as any : [data]} />
     case 'chat':
     case 'email':
