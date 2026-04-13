@@ -387,3 +387,11 @@ export function loadCaseMetas(): CaseMeta[] {
     disputeNames: (raw.disputes ?? raw.issues ?? []).map((d: any) => d.name ?? d.statement?.slice(0, 40) ?? ''),
   }))
 }
+
+/** 원본 JSON에서 특정 증거의 viewerData를 조회 (sessionStorage 복원 시 누락 방어) */
+export function getOriginalViewerData(caseId: string, evidenceId: string): Record<string, unknown> | undefined {
+  const raw = RAW_CASES.find((r: any) => r.caseId === caseId)
+  if (!raw) return undefined
+  const ev = (raw.evidence ?? []).find((e: any) => e.id === evidenceId)
+  return ev?.viewerData
+}

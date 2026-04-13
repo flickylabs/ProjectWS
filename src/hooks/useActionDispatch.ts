@@ -493,6 +493,12 @@ async function handleCallWitness(action: Extract<PlayerAction, { type: 'call_wit
     if (caseKey === 'spouse-01') {
       const { SPOUSE_01_TESTIMONY } = await import('../data/witnessTestimonyData/spouse-01')
       testimonySlots = SPOUSE_01_TESTIMONY
+    } else if (caseKey === 'friend-01') {
+      const { FRIEND_01_TESTIMONY } = await import('../data/witnessTestimonyData/friend-01')
+      testimonySlots = FRIEND_01_TESTIMONY
+    } else if (caseKey === 'family-01') {
+      const { FAMILY_01_TESTIMONY } = await import('../data/witnessTestimonyData/family-01')
+      testimonySlots = FAMILY_01_TESTIMONY
     }
   } catch { /* 데이터 없으면 기존 방식 */ }
 

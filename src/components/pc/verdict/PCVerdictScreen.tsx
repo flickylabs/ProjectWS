@@ -488,7 +488,6 @@ export default function PCVerdictScreen() {
                         }}
                         type="range"
                         value={resp.a}
-                        style={{ direction: 'rtl' }}
                       />
                       <div className="pc-verdict-resp__fill" style={{ width: `${resp.a}%` }} />
                     </div>

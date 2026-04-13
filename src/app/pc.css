@@ -8735,6 +8735,16 @@ body.pc-mode .pc-verdict-resp__input::-webkit-slider-thumb {
   border-top: 14px solid #d4a24e;
   cursor: grab; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.4));
 }
+body.pc-mode .pc-verdict-resp__input::-moz-range-thumb {
+  width: 0; height: 0; border: none;
+  border-left: 10px solid transparent; border-right: 10px solid transparent;
+  border-top: 14px solid #d4a24e;
+  cursor: grab; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.4));
+  background: transparent;
+}
+body.pc-mode .pc-verdict-resp__input::-moz-range-track {
+  background: transparent; border: none; height: 0;
+}
 body.pc-mode .pc-verdict-resp__percent { display: flex; justify-content: space-between; width: 100%; max-width: 600px; }
 body.pc-mode .pc-verdict-resp__percent .is-a { font-size: 32px; font-weight: 900; color: var(--pc-blue); }
 body.pc-mode .pc-verdict-resp__percent .is-b { font-size: 32px; font-weight: 900; color: var(--pc-red); }

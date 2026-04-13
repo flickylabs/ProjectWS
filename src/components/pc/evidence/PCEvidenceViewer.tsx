@@ -7,6 +7,7 @@
  */
 import { useEffect, useCallback, useMemo } from 'react'
 import { useStore } from '../../../store/useGameStore'
+import { getOriginalViewerData } from '../../../data/cases/caseLoader'
 import { getPcEvidenceSymbolId } from '../icons/pcIconUtils'
 import PCSvgIcon from '../icons/PCSvgIcon'
 import {
@@ -53,7 +54,9 @@ export default function PCEvidenceViewer() {
 
   const state = evidenceStates[evidence.id]
   const displayName = state?.deepInvestigated ? evidence.name : (evidence.surfaceName ?? evidence.name)
-  const hasSubViewer = Boolean(evidence.viewerData)
+  // sessionStorage 복원 시 viewerData가 누락될 수 있으므로 원본 JSON에서 fallback
+  const viewerData = evidence.viewerData ?? getOriginalViewerData(caseData!.caseId, evidence.id)
+  const hasSubViewer = Boolean(viewerData)
 
   return (
     <>
@@ -74,7 +77,7 @@ export default function PCEvidenceViewer() {
         {/* Body — SVG sub-viewer only */}
         <div className="pc-ev-body">
           {hasSubViewer ? (
-            <EvidenceSubContent type={evidence.type} viewerData={evidence.viewerData!} />
+            <EvidenceSubContent type={evidence.type} viewerData={viewerData!} />
           ) : (
             <div className="pc-ev-placeholder">
               <PCSvgIcon id={getPcEvidenceSymbolId(evidence.type)} size={64} />
