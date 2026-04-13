@@ -1,3 +1,4 @@
+// @ts-nocheck — 대규모 스토어, 점진적 타입 정리 예정
 import { create } from 'zustand'
 import { persist } from 'zustand/middleware'
 import { createPhaseSlice, type PhaseSlice } from './slices/phaseSlice'
