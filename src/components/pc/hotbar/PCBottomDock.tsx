@@ -1,14 +1,16 @@
 /**
  * PCBottomDock — V4 single-bar hotbar
- * 6 fixed slots: [사실추궁] [동기탐색] [공감접근] [증거 제시▼] [증인 소환] [메뉴▼]
+ * 6 fixed slots: [사실추궁] [동기탐색] [공감접근] [자유질문] [증거제시] [증인소환]
+ * + 하단 특수 스킬: [기록정리] + [분리심문|비공개보호|즉답요구]
+ * + 단계 진행: canAdvancePhase 충족 시 자동 배너 제안
  */
-import { useEffect, useMemo, useState, useCallback } from 'react'
+import { useEffect, useMemo, useState, useCallback, useRef } from 'react'
 import { GamePhase, type EmotionalPhase, type PartyId, type QuestionType } from '../../../types'
 import { useActionDispatch } from '../../../hooks/useActionDispatch'
 import { useGameStore, useStore } from '../../../store/useGameStore'
 import { openPcInteractionPanel } from '../layout/PCInteractionPanel'
 import PCSvgIcon from '../icons/PCSvgIcon'
-import { getPcFaceSymbolId } from '../icons/pcIconUtils'
+import { getPcFaceSymbolId, getPcEvidenceSymbolId } from '../icons/pcIconUtils'
 
 const EMOTION_LABELS: Record<EmotionalPhase, string> = {
   defensive: '경계',
@@ -16,6 +18,13 @@ const EMOTION_LABELS: Record<EmotionalPhase, string> = {
   shaken: '동요',
   angry: '격앙',
   resigned: '체념',
+}
+
+const TYPE_LABELS: Record<string, string> = {
+  bank: '금융', financial_record: '금융', receipt: '영수증', chat: '메신저', contract: '계약',
+  document: '문서', institutional_note: '기관 문서', testimony: '증언', cctv: '영상',
+  photo: '사진', video: '영상', log: '기록', email: '메일', audio: '오디오',
+  forensic_report: '감정', device: '기기', sns: 'SNS',
 }
 
 export default function PCBottomDock() {
@@ -32,12 +41,16 @@ export default function PCBottomDock() {
   const agentB = useStore((s) => s.agentB)
   const calledWitnesses = useStore((s) => s.calledWitnesses)
   const disputeVisibility = useStore((s) => s.discovery.disputeVisibility)
+  const canAdvance = useStore((s) => s.canAdvancePhase())
 
+  // --- overlay states ---
   const [questionChoice, setQuestionChoice] = useState<{ type: QuestionType } | null>(null)
-  const [evidenceDropdown, setEvidenceDropdown] = useState(false)
-  const [menuDropdown, setMenuDropdown] = useState(false)
+  const [evidenceChoice, setEvidenceChoice] = useState(false)
+  const [freeQuestionOpen, setFreeQuestionOpen] = useState(false)
+  const freeQuestionRef = useRef<HTMLInputElement>(null)
+  const [advanceDismissed, setAdvanceDismissed] = useState(false)
 
-  // hidden 쟁점 필터: discovery visibility가 'visible'인 것만 표시
+  // hidden 쟁점 필터
   const visibleDisputes = useMemo(() => {
     if (!caseData) return []
     return caseData.disputes.filter((d) => {
@@ -48,19 +61,19 @@ export default function PCBottomDock() {
 
   const activeDisputeId = lastFocusedDisputeId ?? visibleDisputes[0]?.id ?? ''
 
-  // Close dropdowns on outside click
-  useEffect(() => {
-    if (!evidenceDropdown && !menuDropdown) return
-    const close = () => { setEvidenceDropdown(false); setMenuDropdown(false) }
-    window.addEventListener('click', close)
-    return () => window.removeEventListener('click', close)
-  }, [evidenceDropdown, menuDropdown])
+  // Close overlays
+  const closeAll = useCallback(() => {
+    setQuestionChoice(null)
+    setEvidenceChoice(false)
+    setFreeQuestionOpen(false)
+  }, [])
 
-  // Question choice → dispute selection
+  // --- Question choice (slots 1-3) ---
   const openQuestionChoice = useCallback((questionType: QuestionType) => {
     if (!caseData) return
+    closeAll()
     setQuestionChoice({ type: questionType })
-  }, [caseData])
+  }, [caseData, closeAll])
 
   const selectDisputeForQuestion = useCallback((disputeId: string) => {
     if (!questionChoice) return
@@ -73,17 +86,72 @@ export default function PCBottomDock() {
     setQuestionChoice(null)
   }, [dispatch, pcTargetParty, questionChoice])
 
-  // Evidence dropdown
+  // --- Free question (slot 4) ---
+  const openFreeQuestion = useCallback(() => {
+    if (!caseData) return
+    closeAll()
+    setFreeQuestionOpen(true)
+    setTimeout(() => freeQuestionRef.current?.focus(), 50)
+  }, [caseData, closeAll])
+
+  const submitFreeQuestion = useCallback((text: string) => {
+    if (!text.trim()) return
+    setFreeQuestionOpen(false)
+    // 자유 질문은 pc:free-question 커스텀 이벤트로 전달 → PCActionsPanel이 처리
+    window.dispatchEvent(new CustomEvent('pc:free-question', {
+      detail: { question: text.trim(), target: pcTargetParty, disputeId: activeDisputeId },
+    }))
+  }, [pcTargetParty, activeDisputeId])
+
+  // --- Evidence choice (slot 5) ---
   const unlockedEvidence = useMemo(() => {
     return evidenceDefinitions.filter((ev) => evidenceStates[ev.id]?.unlocked)
   }, [evidenceDefinitions, evidenceStates])
 
-  const handlePresentEvidence = useCallback((evidenceId: string) => {
-    dispatch({ type: 'evidence_present', evidenceId, target: pcTargetParty })
-    setEvidenceDropdown(false)
-  }, [dispatch, pcTargetParty])
+  const openEvidenceChoice = useCallback(() => {
+    closeAll()
+    setEvidenceChoice(true)
+  }, [closeAll])
 
-  // Witness availability
+  const selectEvidence = useCallback((evidenceId: string) => {
+    setEvidenceChoice(false)
+    // 좌측 증거 클릭과 동일한 증거 정보 패널 열기
+    const ev = evidenceDefinitions.find((e) => e.id === evidenceId)
+    if (!ev) return
+    const st = evidenceStates[ev.id]
+    const label = st?.deepInvestigated ? ev.name : (ev.surfaceName ?? ev.name)
+    const desc = st?.deepInvestigated ? ev.description : (ev.surfaceDescription ?? ev.description)
+    const stages = ev.investigationStages ?? []
+    const investigatedKeys = new Set(st?.investigatedActions ?? [])
+    const bodyParts: string[] = [desc]
+    const revealedFindings = stages
+      .filter((s) => investigatedKeys.has(s.revealKey))
+      .map((s) => ev.investigationResults[s.revealKey])
+      .filter(Boolean)
+    const hiddenCount = stages.filter((s) => !investigatedKeys.has(s.revealKey)).length
+    if (revealedFindings.length > 0 || hiddenCount > 0) {
+      bodyParts.push('')
+      bodyParts.push('발견한 내용:')
+      revealedFindings.forEach((f) => bodyParts.push(`• ${f}`))
+      if (hiddenCount > 0) bodyParts.push(`(미확인 항목 ${hiddenCount}개)`)
+    }
+    const meta = ev.meta
+    const subtitleParts = [TYPE_LABELS[ev.type] ?? '증거 파일']
+    if (meta?.trustLabel) subtitleParts.push(meta.trustLabel)
+    if (meta?.sourceLabel) subtitleParts.push(meta.sourceLabel)
+
+    openPcInteractionPanel({
+      title: label,
+      subtitle: subtitleParts.join(' · '),
+      tone: 'gold',
+      variant: 'evidence',
+      evidenceId: ev.id,
+      body: bodyParts.join('\n'),
+      actions: [{ kind: 'open_evidence' as const, label: '증거 열람', evidenceId: ev.id }],
+    })
+  }, [evidenceDefinitions, evidenceStates])
+
+  // --- Witness (slot 6) ---
   const availableWitnesses = useMemo(() => {
     if (!caseData) return []
     return caseData.duo.socialGraph.filter(
@@ -96,55 +164,57 @@ export default function PCBottomDock() {
 
   const openWitnessPanel = useCallback(() => {
     if (!caseData || !hasWitness) return
-    const witnessLines = availableWitnesses.map((w) => {
-      const called = calledWitnesses.includes(w.id)
-      return `${w.name} (${w.knowledgeScope ?? '관련인'}) — ${called ? '소환됨' : '소환 가능'}`
-    }).join('\n')
-
     openPcInteractionPanel({
       title: '증인 소환',
       subtitle: '적절한 시점에 소환해야 핵심 증언을 들을 수 있습니다',
       tone: 'gold',
-      body: witnessLines,
-      actions: availableWitnesses.map((w) => ({
-        kind: 'summon_witness' as const,
-        label: calledWitnesses.includes(w.id) ? `${w.name} 재소환` : `${w.name} 소환`,
-        witnessId: w.id,
-      })),
+      variant: 'witness',
+      body: '',
     })
-  }, [availableWitnesses, calledWitnesses, caseData, hasWitness])
+  }, [caseData, hasWitness])
 
-  // Menu actions
-  const openMenuAction = useCallback((action: string) => {
-    setMenuDropdown(false)
+  // --- Special skill actions (B-6) ---
+  const openSpecialAction = useCallback((action: string) => {
     if (action === 'separation') {
       openPcInteractionPanel({ title: '분리 심문', subtitle: '특수 행동', tone: 'gold', body: '당사자를 분리해 개별 심문합니다.', actions: [{ kind: 'run_special', label: '분리 심문 실행', party: pcTargetParty, disputeId: activeDisputeId, specialAction: 'separation' }] })
     } else if (action === 'confidential') {
       openPcInteractionPanel({ title: '비공개 보호', subtitle: '특수 행동', tone: 'gold', body: '비공개를 약속해 방어 반응을 낮춥니다.', actions: [{ kind: 'run_special', label: '비공개 보호 실행', party: pcTargetParty, disputeId: activeDisputeId, specialAction: 'confidential_protection' }] })
     } else if (action === 'immediate') {
       openPcInteractionPanel({ title: '즉답 요구', subtitle: '특수 행동', tone: 'gold', body: '선택한 쟁점에 대해 즉답을 요구합니다.', actions: [{ kind: 'run_special', label: '즉답 요구 실행', party: pcTargetParty, disputeId: activeDisputeId, specialAction: 'immediate_answer' }] })
-    } else if (action === 'summary') {
-      window.dispatchEvent(new Event('pc:open-record-summary'))
-    } else if (action === 'advance') {
-      openPcInteractionPanel({ title: '단계 진행', subtitle: '다음 단계', tone: 'green', body: '다음 단계로 진행합니다.', actions: [{ kind: 'run_special', label: '단계 진행', party: pcTargetParty, disputeId: activeDisputeId, specialAction: 'advance_phase' }] })
     }
   }, [activeDisputeId, pcTargetParty])
 
-  // Keyboard shortcuts: 1~6
+  // --- Advance phase banner (B-7) ---
+  const handleAdvance = useCallback(() => {
+    dispatch({ type: 'advance_phase' } as any)
+    setAdvanceDismissed(true)
+  }, [dispatch])
+
+  // phase 변경 시 dismiss 리셋
+  useEffect(() => { setAdvanceDismissed(false) }, [currentPhase])
+
+  const advanceLabel = currentPhase === GamePhase.Phase3_Interrogation
+    ? '판결 단계로 진행'
+    : currentPhase === GamePhase.Phase4_Evidence
+      ? '최종 심문 단계로'
+      : '다음 단계로 진행'
+
+  // --- Keyboard shortcuts ---
   useEffect(() => {
     const onKeyDown = (event: KeyboardEvent) => {
+      if ((event.target as HTMLElement)?.tagName === 'INPUT') return
       const num = Number(event.key)
       if (num === 1) { event.preventDefault(); openQuestionChoice('fact_pursuit') }
       if (num === 2) { event.preventDefault(); openQuestionChoice('motive_search') }
       if (num === 3) { event.preventDefault(); openQuestionChoice('empathy_approach') }
-      if (num === 4) { event.preventDefault(); setEvidenceDropdown((c) => !c) }
-      if (num === 5 && hasWitness) { event.preventDefault(); openWitnessPanel() }
-      if (num === 6) { event.preventDefault(); setMenuDropdown((c) => !c) }
-      if (event.key === 'Escape') { setQuestionChoice(null); setEvidenceDropdown(false); setMenuDropdown(false) }
+      if (num === 4) { event.preventDefault(); openFreeQuestion() }
+      if (num === 5) { event.preventDefault(); openEvidenceChoice() }
+      if (num === 6 && hasWitness) { event.preventDefault(); openWitnessPanel() }
+      if (event.key === 'Escape') closeAll()
     }
     window.addEventListener('keydown', onKeyDown)
     return () => window.removeEventListener('keydown', onKeyDown)
-  }, [hasWitness, openQuestionChoice, openWitnessPanel])
+  }, [closeAll, hasWitness, openEvidenceChoice, openFreeQuestion, openQuestionChoice, openWitnessPanel])
 
   if (!caseData) return null
 
@@ -152,7 +222,18 @@ export default function PCBottomDock() {
 
   return (
     <div className="bottom pc-play-dock">
-      {/* Question choice overlay */}
+      {/* --- Advance phase auto-suggestion banner (B-7) --- */}
+      {canAdvance && !advanceDismissed ? (
+        <div className="pc-advance-banner">
+          <span className="pc-advance-banner__text">{advanceLabel}할 수 있습니다</span>
+          <button className="pc-advance-banner__btn" onClick={handleAdvance} type="button">{advanceLabel}</button>
+          <button className="pc-advance-banner__dismiss" onClick={() => setAdvanceDismissed(true)} title="닫기" type="button">
+            <PCSvgIcon id="i-plus" size={12} />
+          </button>
+        </div>
+      ) : null}
+
+      {/* --- Question choice overlay (slots 1-3) --- */}
       {questionChoice ? (
         <div className="pc-question-choice">
           <div className="pc-question-choice__backdrop" onClick={() => setQuestionChoice(null)} />
@@ -178,6 +259,91 @@ export default function PCBottomDock() {
         </div>
       ) : null}
 
+      {/* --- Free question overlay (slot 4) --- */}
+      {freeQuestionOpen ? (
+        <div className="pc-question-choice">
+          <div className="pc-question-choice__backdrop" onClick={() => setFreeQuestionOpen(false)} />
+          <div className="pc-question-choice__panel">
+            <div className="pc-question-choice__header">
+              <PCSvgIcon id="i-chat" size={18} />
+              <span className="pc-question-choice__title">자유 질문</span>
+              <button className="pc-question-choice__close" onClick={() => setFreeQuestionOpen(false)} type="button">
+                <PCSvgIcon id="i-plus" size={14} />
+              </button>
+            </div>
+            <div className="pc-question-choice__disputes">
+              <p className="pc-question-choice__hint">질문을 직접 입력하세요</p>
+              <form className="pc-free-question-form" onSubmit={(e) => {
+                e.preventDefault()
+                const input = freeQuestionRef.current
+                if (input) submitFreeQuestion(input.value)
+              }}>
+                <input
+                  ref={freeQuestionRef}
+                  className="pc-free-question-input"
+                  maxLength={200}
+                  placeholder="예: 그 돈은 어디서 났습니까?"
+                  type="text"
+                />
+                <button className="pc-free-question-submit" type="submit">질문하기</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      ) : null}
+
+      {/* --- Evidence choice overlay (slot 5) --- */}
+      {evidenceChoice ? (
+        <div className="pc-question-choice">
+          <div className="pc-question-choice__backdrop" onClick={() => setEvidenceChoice(false)} />
+          <div className="pc-question-choice__panel">
+            <div className="pc-question-choice__header">
+              <PCSvgIcon id="i-doc" size={18} />
+              <span className="pc-question-choice__title">증거 제시</span>
+              <button className="pc-question-choice__close" onClick={() => setEvidenceChoice(false)} type="button">
+                <PCSvgIcon id="i-plus" size={14} />
+              </button>
+            </div>
+            <div className="pc-question-choice__disputes">
+              {unlockedEvidence.length === 0 ? (
+                <p className="pc-question-choice__hint">해금된 증거가 없습니다</p>
+              ) : (
+                <>
+                  <p className="pc-question-choice__hint">제시할 증거를 선택하세요</p>
+                  {unlockedEvidence.map((ev) => (
+                    <button className="pc-question-choice__dispute-btn" key={ev.id} onClick={() => selectEvidence(ev.id)} type="button">
+                      <span className="pc-question-choice__dispute-icon">
+                        <PCSvgIcon id={getPcEvidenceSymbolId(ev.type)} size={14} />
+                      </span>
+                      <span className="pc-question-choice__dispute-name">{ev.surfaceName ?? ev.name}</span>
+                    </button>
+                  ))}
+                </>
+              )}
+            </div>
+          </div>
+        </div>
+      ) : null}
+
+      {/* --- Special skill bar (B-6) --- */}
+      <div className="pc-special-bar">
+        <button className="pc-special-bar__summary" onClick={() => window.dispatchEvent(new Event('pc:open-record-summary'))} title="기록 정리" type="button">
+          기록 정리
+        </button>
+        <div className="pc-special-bar__actions">
+          <button className="pc-special-bar__action" onClick={() => openSpecialAction('separation')} title="분리 심문" type="button">
+            <PCSvgIcon id="i-hand" size={14} /><span>분리 심문</span>
+          </button>
+          <button className="pc-special-bar__action" onClick={() => openSpecialAction('confidential')} title="비공개 보호" type="button">
+            <PCSvgIcon id="i-shield" size={14} /><span>비공개 보호</span>
+          </button>
+          <button className="pc-special-bar__action" onClick={() => openSpecialAction('immediate')} title="즉답 요구" type="button">
+            <PCSvgIcon id="i-bolt" size={14} /><span>즉답 요구</span>
+          </button>
+        </div>
+      </div>
+
+      {/* --- Main hotbar --- */}
       <div className="hbar pc-play-hbar">
         {/* Character A */}
         <CharacterCard
@@ -201,83 +367,48 @@ export default function PCBottomDock() {
             </div>
 
             <div className="hotbar-slots">
-              {/* 1: 모순에 집중 */}
+              {/* 1: 사실 추궁 */}
               <button className="slot" onClick={() => openQuestionChoice('fact_pursuit')} title="모순에 집중하기" type="button">
                 <span className="slot-key">1</span>
                 <span className="slot-ico"><PCSvgIcon id="i-gavel" size={24} /></span>
-                <span className="slot-nm">모순에 집중</span>
+                <span className="slot-nm">사실 추궁</span>
                 {contradiction >= 2 ? <span className="slot-eff ef-s" /> : null}
               </button>
 
-              {/* 2: 쟁점 탐색 */}
+              {/* 2: 동기 탐색 */}
               <button className="slot" onClick={() => openQuestionChoice('motive_search')} title="숨겨진 쟁점찾기" type="button">
                 <span className="slot-key">2</span>
                 <span className="slot-ico"><PCSvgIcon id="i-eye" size={24} /></span>
-                <span className="slot-nm">쟁점 탐색</span>
+                <span className="slot-nm">동기 탐색</span>
               </button>
 
-              {/* 3: 자백 유도 */}
+              {/* 3: 공감 접근 */}
               <button className="slot" onClick={() => openQuestionChoice('empathy_approach')} title="자백 유도하기" type="button">
                 <span className="slot-key">3</span>
                 <span className="slot-ico"><PCSvgIcon id="i-heart" size={24} /></span>
-                <span className="slot-nm">자백 유도</span>
+                <span className="slot-nm">공감 접근</span>
               </button>
 
-              {/* 4: 증거 제시 ▼ */}
-              <div className="slot-dropdown-wrap">
-                <button className="slot" onClick={(e) => { e.stopPropagation(); setEvidenceDropdown((c) => !c); setMenuDropdown(false) }} title="증거 제시" type="button">
-                  <span className="slot-key">4</span>
-                  <span className="slot-ico"><PCSvgIcon id="i-doc" size={24} /></span>
-                  <span className="slot-nm">증거 제시</span>
-                </button>
-                {evidenceDropdown ? (
-                  <div className="slot-dropdown" onClick={(e) => e.stopPropagation()}>
-                    {unlockedEvidence.length === 0 ? (
-                      <span className="slot-dropdown__empty">해금된 증거 없음</span>
-                    ) : unlockedEvidence.map((ev) => (
-                      <button className="slot-dropdown__item" key={ev.id} onClick={() => handlePresentEvidence(ev.id)} type="button">
-                        <PCSvgIcon id="i-doc" size={14} />
-                        <span>{ev.surfaceName ?? ev.name}</span>
-                      </button>
-                    ))}
-                  </div>
-                ) : null}
-              </div>
+              {/* 4: 자유 질문 */}
+              <button className="slot" onClick={openFreeQuestion} title="자유 질문" type="button">
+                <span className="slot-key">4</span>
+                <span className="slot-ico"><PCSvgIcon id="i-chat" size={24} /></span>
+                <span className="slot-nm">자유 질문</span>
+              </button>
 
-              {/* 5: 증인 소환 */}
-              <button className={`slot${!hasWitness ? ' slot-locked' : ''}`} disabled={!hasWitness} onClick={openWitnessPanel} title="증인 소환" type="button">
+              {/* 5: 증거 제시 */}
+              <button className="slot" onClick={openEvidenceChoice} title="증거 제시" type="button">
                 <span className="slot-key">5</span>
+                <span className="slot-ico"><PCSvgIcon id="i-doc" size={24} /></span>
+                <span className="slot-nm">증거 제시</span>
+              </button>
+
+              {/* 6: 증인 소환 */}
+              <button className={`slot${!hasWitness ? ' slot-locked' : ''}`} disabled={!hasWitness} onClick={openWitnessPanel} title="증인 소환" type="button">
+                <span className="slot-key">6</span>
                 <span className="slot-ico"><PCSvgIcon id="i-witness" size={24} /></span>
                 <span className="slot-nm">증인 소환</span>
               </button>
-
-              {/* 6: 메뉴 ▼ */}
-              <div className="slot-dropdown-wrap">
-                <button className="slot" onClick={(e) => { e.stopPropagation(); setMenuDropdown((c) => !c); setEvidenceDropdown(false) }} title="메뉴" type="button">
-                  <span className="slot-key">6</span>
-                  <span className="slot-ico"><PCSvgIcon id="i-gear" size={24} /></span>
-                  <span className="slot-nm">메뉴</span>
-                </button>
-                {menuDropdown ? (
-                  <div className="slot-dropdown" onClick={(e) => e.stopPropagation()}>
-                    <button className="slot-dropdown__item" onClick={() => openMenuAction('separation')} type="button">
-                      <PCSvgIcon id="i-hand" size={14} /><span>분리 심문</span>
-                    </button>
-                    <button className="slot-dropdown__item" onClick={() => openMenuAction('confidential')} type="button">
-                      <PCSvgIcon id="i-shield" size={14} /><span>비공개 보호</span>
-                    </button>
-                    <button className="slot-dropdown__item" onClick={() => openMenuAction('immediate')} type="button">
-                      <PCSvgIcon id="i-bolt" size={14} /><span>즉답 요구</span>
-                    </button>
-                    <button className="slot-dropdown__item" onClick={() => openMenuAction('summary')} type="button">
-                      <PCSvgIcon id="i-doc" size={14} /><span>기록 정리</span>
-                    </button>
-                    <button className="slot-dropdown__item" onClick={() => openMenuAction('advance')} type="button">
-                      <PCSvgIcon id="i-bulb" size={14} /><span>단계 진행</span>
-                    </button>
-                  </div>
-                ) : null}
-              </div>
             </div>
           </div>
         </div>

@@ -79,20 +79,45 @@ export default function PCLeftPanel() {
   }, [evidenceDefinitions, surfaceResult])
 
   const openEvidenceMenu = useCallback((evidence: EvidenceNode) => {
+    const state = evidenceStates[evidence.id]
+    const label = state?.deepInvestigated ? evidence.name : (evidence.surfaceName ?? evidence.name)
+    const desc = state?.deepInvestigated ? evidence.description : (evidence.surfaceDescription ?? evidence.description)
+    const stages = evidence.investigationStages ?? []
+    const investigatedKeys = new Set(state?.investigatedActions ?? [])
+
+    const bodyParts: string[] = [desc]
+    const revealedFindings = stages
+      .filter((s) => investigatedKeys.has(s.revealKey))
+      .map((s) => evidence.investigationResults[s.revealKey])
+      .filter(Boolean)
+    const hiddenCount = stages.filter((s) => !investigatedKeys.has(s.revealKey)).length
+
+    if (revealedFindings.length > 0 || hiddenCount > 0) {
+      bodyParts.push('')
+      bodyParts.push('발견한 내용:')
+      revealedFindings.forEach((f) => bodyParts.push(`• ${f}`))
+      if (hiddenCount > 0) bodyParts.push(`(미확인 항목 ${hiddenCount}개)`)
+    }
+
     const actions: PcInteractionAction[] = [
       { kind: 'open_evidence', label: '증거 열람', evidenceId: evidence.id },
     ]
 
+    const meta = evidence.meta
+    const subtitleParts = [TYPE_LABELS[evidence.type] ?? '증거 파일']
+    if (meta?.trustLabel) subtitleParts.push(meta.trustLabel)
+    if (meta?.sourceLabel) subtitleParts.push(meta.sourceLabel)
+
     openPcInteractionPanel({
-      title: evidence.surfaceName ?? evidence.name,
-      subtitle: TYPE_LABELS[evidence.type] ?? '증거 파일',
+      title: label,
+      subtitle: subtitleParts.join(' · '),
       tone: 'gold',
       variant: 'evidence',
       evidenceId: evidence.id,
-      body: evidence.surfaceDescription ?? evidence.description,
+      body: bodyParts.join('\n'),
       actions,
     })
-  }, [caseData, currentPhase, evidenceStates, lastFocusedDisputeId])
+  }, [evidenceStates])
 
   const sendEvidenceToCombination = useCallback((evidenceId: string) => {
     window.dispatchEvent(new CustomEvent<PcCombinationPanelEventDetail>(PC_ADD_COMBINATION_NOTE_EVENT, { detail: { evidenceId } }))
@@ -129,10 +154,6 @@ export default function PCLeftPanel() {
           {evidenceCards.map((evidence) => {
             const state = evidenceStates[evidence.id]
             const label = state?.deepInvestigated ? evidence.name : (evidence.surfaceName ?? evidence.name)
-            const desc = state?.deepInvestigated ? evidence.description : (evidence.surfaceDescription ?? evidence.description)
-            const stages = evidence.investigationStages ?? []
-            const investigatedKeys = new Set(state?.investigatedActions ?? [])
-            const hiddenCount = stages.filter((s) => !investigatedKeys.has(s.revealKey)).length
 
             return (
               <div
@@ -158,24 +179,6 @@ export default function PCLeftPanel() {
                   <span className="pc-ev-notebook__name">{label}</span>
                   <span className="pc-ev-notebook__badge">{TYPE_LABELS[evidence.type] ?? '기록'}</span>
                 </button>
-                <div className="pc-ev-notebook__body">
-                  <p className="pc-ev-notebook__desc">{desc}</p>
-                  {stages.length > 0 ? (
-                    <div className="pc-ev-notebook__findings">
-                      <span className="pc-ev-notebook__findings-label">발견한 내용:</span>
-                      {stages.map((s, i) => {
-                        const revealed = investigatedKeys.has(s.revealKey)
-                        const result = evidence.investigationResults[s.revealKey]
-                        return revealed && result ? (
-                          <span className="pc-ev-notebook__finding is-revealed" key={i}>{result}</span>
-                        ) : null
-                      })}
-                      {hiddenCount > 0 ? (
-                        <span className="pc-ev-notebook__finding is-hidden">(미확인 항목 {hiddenCount}개)</span>
-                      ) : null}
-                    </div>
-                  ) : null}
-                </div>
               </div>
             )
           })}

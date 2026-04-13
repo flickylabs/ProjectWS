@@ -514,7 +514,7 @@ function AftermathInline() {
 
           const response = await chatCompletion(
             [{ role: 'user', content: prompt }],
-            { temperature: 0.9, maxTokens: 500 },
+            { temperature: 0.9, maxTokens: 900 },
           )
           setAftermath(postProcessAftermath(response) || buildFallback(caseData, verdictScore.total))
         } catch {

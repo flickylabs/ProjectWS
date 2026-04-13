@@ -36313,11 +36313,11 @@
     "evidence_present": {
       "entries": [
         {
-          "key": "a|e-1|early|self",
+          "key": "a|e-1|early|both",
           "party": "a",
           "evidenceId": "e-1",
           "lieBand": "early",
-          "subjectRole": "self",
+          "subjectRole": "both",
           "stanceHint": "emotional",
           "truthLevel": "hint",
           "variants": [
@@ -36529,11 +36529,11 @@
           ]
         },
         {
-          "key": "a|e-1|mid|self",
+          "key": "a|e-1|mid|both",
           "party": "a",
           "evidenceId": "e-1",
           "lieBand": "mid",
-          "subjectRole": "self",
+          "subjectRole": "both",
           "stanceHint": "blame",
           "truthLevel": "partial",
           "variants": [
@@ -36745,11 +36745,11 @@
           ]
         },
         {
-          "key": "a|e-1|late|self",
+          "key": "a|e-1|late|both",
           "party": "a",
           "evidenceId": "e-1",
           "lieBand": "late",
-          "subjectRole": "self",
+          "subjectRole": "both",
           "stanceHint": "emotional",
           "truthLevel": "partial",
           "variants": [
@@ -36961,11 +36961,11 @@
           ]
         },
         {
-          "key": "b|e-1|early|self",
+          "key": "b|e-1|early|both",
           "party": "b",
           "evidenceId": "e-1",
           "lieBand": "early",
-          "subjectRole": "self",
+          "subjectRole": "both",
           "stanceHint": "hedge",
           "truthLevel": "hint",
           "variants": [
@@ -37177,11 +37177,11 @@
           ]
         },
         {
-          "key": "b|e-1|mid|self",
+          "key": "b|e-1|mid|both",
           "party": "b",
           "evidenceId": "e-1",
           "lieBand": "mid",
-          "subjectRole": "self",
+          "subjectRole": "both",
           "stanceHint": "partial",
           "truthLevel": "partial",
           "variants": [
@@ -37393,11 +37393,11 @@
           ]
         },
         {
-          "key": "b|e-1|late|self",
+          "key": "b|e-1|late|both",
           "party": "b",
           "evidenceId": "e-1",
           "lieBand": "late",
-          "subjectRole": "self",
+          "subjectRole": "both",
           "stanceHint": "partial",
           "truthLevel": "partial",
           "variants": [
@@ -44737,11 +44737,11 @@
           ]
         },
         {
-          "key": "b|e-7|early|self",
+          "key": "b|e-7|early|both",
           "party": "b",
           "evidenceId": "e-7",
           "lieBand": "early",
-          "subjectRole": "self",
+          "subjectRole": "both",
           "stanceHint": "hedge",
           "truthLevel": "hint",
           "variants": [
@@ -44953,11 +44953,11 @@
           ]
         },
         {
-          "key": "b|e-7|mid|self",
+          "key": "b|e-7|mid|both",
           "party": "b",
           "evidenceId": "e-7",
           "lieBand": "mid",
-          "subjectRole": "self",
+          "subjectRole": "both",
           "stanceHint": "partial",
           "truthLevel": "partial",
           "variants": [
@@ -45169,11 +45169,11 @@
           ]
         },
         {
-          "key": "b|e-7|late|self",
+          "key": "b|e-7|late|both",
           "party": "b",
           "evidenceId": "e-7",
           "lieBand": "late",
-          "subjectRole": "self",
+          "subjectRole": "both",
           "stanceHint": "confess",
           "truthLevel": "full",
           "variants": [

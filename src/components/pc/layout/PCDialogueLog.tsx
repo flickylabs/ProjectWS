@@ -14,6 +14,9 @@ const EMOTION_LABELS: Partial<Record<EmotionalPhase, string>> = {
 
 const EXPLAINER_KEYWORDS = ['정리', '설명', '힌트', '구분', '주의', '필요']
 
+// 모순 추궁 1회 사용 추적
+const _usedContradictions = new Set<string>()
+
 function useRevealText(text: string, animate: boolean) {
   const [displayText, setDisplayText] = useState(animate ? '' : text)
 
@@ -70,22 +73,35 @@ function MessageBubble({ entry, animate }: { entry: DialogueEntryType; animate: 
 
   if (entry.speaker === 'system') {
     const contradiction = entry.contradictionMeta
-    const isExplainer = !contradiction && EXPLAINER_KEYWORDS.some((keyword) => fullText.includes(keyword))
 
-    const iconId = contradiction
-      ? 'i-bolt'
-      : isExplainer
-        ? 'i-bulb'
-        : fullText.includes('증거') || fullText.includes('단서')
-          ? 'i-doc'
-          : 'i-scale'
+    // ── 카테고리 분류 ──
+    const category = contradiction ? 'action'
+      : /\[주의\]|\[교착\]|소진|불가/.test(fullText) ? 'warning'
+      : /🔓|해금|손에 넣|새 증거|📋|증거 제시|🔗|조합 격상|🔥|간파/.test(fullText) ? 'unlock'
+      : /✅|결정적|확보/.test(fullText) ? 'success'
+      : /🧑‍⚖️|증인.*소환/.test(fullText) ? 'witness'
+      : EXPLAINER_KEYWORDS.some((kw) => fullText.includes(kw)) ? 'hint'
+      : 'info'
 
+    const iconId = category === 'action' ? 'i-bolt'
+      : category === 'unlock' ? 'i-doc'
+      : category === 'warning' ? 'i-flame'
+      : category === 'success' ? 'i-star'
+      : category === 'witness' ? 'i-witness'
+      : category === 'hint' ? 'i-bulb'
+      : 'i-scale'
+
+    // ── 모순 추궁 (1회 사용) ──
     if (contradiction) {
+      const used = _usedContradictions.has(entry.id)
       return (
         <div className="pc-log-system-row is-action">
           <button
-            className="pc-log-system-card is-action"
+            className={`pc-log-system-card is-action${used ? ' is-used' : ''}`}
+            disabled={used}
             onClick={() => {
+              if (used) return
+              _usedContradictions.add(entry.id)
               openPcInteractionPanel({
                 title: '모순 감지',
                 subtitle: `${contradiction.party === 'a' ? nameA : nameB} 진술 비교`,
@@ -117,24 +133,34 @@ function MessageBubble({ entry, animate }: { entry: DialogueEntryType; animate: 
               <PCSvgIcon id={iconId} size={16} />
             </span>
             <span className="pc-log-system-card__text">{displayText.trim()}</span>
+            <span className="pc-log-system-card__action-badge">{used ? '추궁 완료' : '추궁하기'}</span>
           </button>
         </div>
       )
     }
 
-    if (isExplainer) {
+    // ── 성공/발견 (클릭 가능 강조, 1회) ──
+    if (category === 'success') {
+      const checked = _usedContradictions.has(entry.id)
+      return (
+        <div className="pc-log-system-row is-success">
+          <button className={`pc-log-system-card is-success${checked ? ' is-used' : ''}`} onClick={() => { _usedContradictions.add(entry.id); openEntryDetail() }} type="button">
+            <span className="pc-log-system-card__icon"><PCSvgIcon id={iconId} size={16} /></span>
+            <span className="pc-log-system-card__text">{displayText}</span>
+            {!checked ? <span className="pc-log-system-card__action-badge">확인</span> : null}
+          </button>
+        </div>
+      )
+    }
+
+    // ── 힌트 (구분선 스타일) ──
+    if (category === 'hint') {
       return (
         <div className="pc-log-system-row is-explainer">
-          <button
-            className="pc-log-system-explainer"
-            onClick={() => openEntryDetail()}
-            type="button"
-          >
+          <button className="pc-log-system-explainer" onClick={() => openEntryDetail()} type="button">
             <span className="pc-log-system-explainer__line" />
             <span className="pc-log-system-explainer__body">
-              <span className="pc-log-system-explainer__icon">
-                <PCSvgIcon id={iconId} size={14} />
-              </span>
+              <span className="pc-log-system-explainer__icon"><PCSvgIcon id={iconId} size={14} /></span>
               <span className="pc-log-system-explainer__text">{displayText}</span>
             </span>
             <span className="pc-log-system-explainer__line" />
@@ -143,16 +169,11 @@ function MessageBubble({ entry, animate }: { entry: DialogueEntryType; animate: 
       )
     }
 
+    // ── 나머지: unlock / warning / witness / info ──
     return (
-      <div className="pc-log-system-row is-toast">
-        <button
-          className="pc-log-system-card"
-          onClick={() => openEntryDetail()}
-          type="button"
-        >
-          <span className="pc-log-system-card__icon">
-            <PCSvgIcon id={iconId} size={15} />
-          </span>
+      <div className={`pc-log-system-row is-${category}`}>
+        <button className={`pc-log-system-card is-${category}`} onClick={() => openEntryDetail()} type="button">
+          <span className="pc-log-system-card__icon"><PCSvgIcon id={iconId} size={15} /></span>
           <span className="pc-log-system-card__text">{displayText}</span>
         </button>
       </div>

@@ -287,19 +287,30 @@ function getDisputeRelevantParties(dispute: Dispute, caseData: CaseData): PartyI
 function generateEmergenceRoutes(dispute: Dispute, caseData: CaseData): EmergenceRoute[] {
   const routes: EmergenceRoute[] = []
 
-  // 경로 1: 관련 증거가 제시되면 발현
-  if (dispute.requiredEvidence.length > 0) {
-    routes.push({
-      type: 'evidence',
-      condition: { evidenceIds: [...dispute.requiredEvidence] },
-    })
-  }
-
-  // 경로 2: unlockCondition에 쟁점 선행 조건이 있으면
+  // unlockCondition이 있으면 해당 경로만 생성 (자동 경로 추가 안 함)
+  // → 설계된 선행 쟁점 달성 순서를 우회하는 것을 방지
   if (dispute.unlockCondition?.requireDispute) {
-    const req = dispute.unlockCondition.requireDispute as { id: string; minState?: string; party?: string }
+    const raw = dispute.unlockCondition.requireDispute
+    const reqs: Array<{ id: string; minState?: string; party?: string }> = Array.isArray(raw) ? raw : [raw]
+
+    // AND 조건 (배열): 모든 조건을 한 경로에 묶음
+    if (reqs.length > 1) {
+      routes.push({
+        type: 'lie_state_threshold',
+        condition: {
+          lieThresholdAll: reqs.map((r) => ({
+            dispute: r.id,
+            minState: r.minState ?? 'S5',
+            party: r.party as 'a' | 'b' | undefined,
+          })),
+        },
+      })
+      return routes
+    }
+
+    // 단일 조건
+    const req = reqs[0]
     if (req.minState && req.minState !== 'S5') {
-      // 임의 state 임계치 (S1, S2, S3 등)
       routes.push({
         type: 'lie_state_threshold',
         condition: {
@@ -309,18 +320,25 @@ function generateEmergenceRoutes(dispute: Dispute, caseData: CaseData): Emergenc
         },
       })
     } else {
-      // S5 전용 (기존 lie_collapse 호환)
       routes.push({
         type: 'lie_collapse',
         condition: { lieCollapseDispute: req.id },
       })
     }
+    return routes
   }
 
-  // 경로 3: 해당 쟁점과 관련된 증인이 소환되면
+  // 경로 1: 관련 증거가 제시되면 발현
+  if (dispute.requiredEvidence.length > 0) {
+    routes.push({
+      type: 'evidence',
+      condition: { evidenceIds: [...dispute.requiredEvidence] },
+    })
+  }
+
+  // 경로 2: 해당 쟁점과 관련된 증인이 소환되면
   for (const tp of caseData.duo.socialGraph ?? []) {
     if (!tp.witnessedDirectly || !caseData.activeThirdParties.includes(tp.id)) continue
-    // 증인의 relatedDisputeIds에 이 쟁점이 포함된 경우만
     const relatedIds: string[] = (tp as any).relatedDisputeIds ?? []
     if (relatedIds.includes(dispute.id)) {
       routes.push({
@@ -330,7 +348,7 @@ function generateEmergenceRoutes(dispute: Dispute, caseData: CaseData): Emergenc
     }
   }
 
-  // 경로 4: 관련 쟁점 2개 이상 판단 완료 시 발현
+  // 경로 3: 관련 쟁점 2개 이상 판단 완료 시 발현
   const linkedDisputes = caseData.evidence
     .filter((e) => e.proves.includes(dispute.id))
     .flatMap((e) => e.proves.filter((id) => id !== dispute.id))
@@ -393,9 +411,21 @@ export function checkEmergence(
         break
 
       case 'lie_state_threshold':
+        // AND 조건: lieThresholdAll (복수 쟁점 모두 충족)
+        if (cond.lieThresholdAll && context.lieStates) {
+          const allMet = cond.lieThresholdAll.every((req) => {
+            const minRank = LIE_RANK[req.minState] ?? 0
+            const parties = req.party ? [req.party] : (['a', 'b'] as const)
+            return parties.some((p) => {
+              const cur = context.lieStates![p][req.dispute]
+              return cur && (LIE_RANK[cur] ?? 0) >= minRank
+            })
+          })
+          if (allMet) return 'lie_state_threshold'
+        }
+        // 단일 조건
         if (cond.lieThresholdDispute && cond.lieThresholdMinState && context.lieStates) {
           const minRank = LIE_RANK[cond.lieThresholdMinState] ?? 0
-          // party 지정이 있으면 해당 party만, 없으면 양쪽 중 하나라도
           const partiesToCheck = cond.lieThresholdParty
             ? [cond.lieThresholdParty]
             : (['a', 'b'] as const)

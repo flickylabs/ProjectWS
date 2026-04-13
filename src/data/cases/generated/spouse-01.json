@@ -386,8 +386,8 @@
       "id": "e-1",
       "name": "영수증 묶음 (5장)",
       "surfaceName": "영수증 묶음 5장",
-      "description": "B의 차에서 발견된 영수증 5장: (1)편의점 컵라면/삼각김밥 (2)올리브영 머리끈/틴트/헤어롤(여성/청소년) (3)서점 중학교 참고서(핵심) (4)꽃집 화분 (5)주유소",
-      "surfaceDescription": "영수증 묶음 5장이 존재한다.",
+      "description": "남편의 차에서 발견한 영수증 목록이다. 영수증 내역 중 여성용 물품이 있어 아내의 의심이 시작됐다.",
+      "surfaceDescription": "남편의 차에서 발견한 영수증 묶음이다.",
       "type": "log",
       "reliability": "hard",
       "completeness": "original",
@@ -399,9 +399,9 @@
       "isTrap": false,
       "requires": [],
       "investigationResults": {
-        "request_original": "5장 영수증 중 편의점과 올리브영 영수증이 먼저 눈에 들어온다. 머리끈, 틴트, 헤어롤은 여성 혹은 청소년 물품이다.",
-        "check_metadata": "서점 영수증에 중학교 참고서, 꽃집 영수증에 화분, 주유소 영수증이 추가로 확인된다. 참고서는 중학교 2학년용이다.",
-        "restore_context": "중학교 2학년 참고서가 결정적 단서이다. 조카(중2) 돌봄을 위한 구매로 재맥락화된다."
+        "request_original": "5장의 영수증 중, 올리브영 영수증이 눈에 들어온다. 머리끈, 틴트, 헤어롤 등 여성용 물품이다.",
+        "check_metadata": "다른 영수증 항목도 확인했다. 주유소 — 5만원 주유, 편의점 — 라면과 즉석밥 등 1만원, 꽃집 — 화분 3만원, 서점 — 참고서 2만원.",
+        "restore_context": "서점에서 구입한 참고서가 눈에 띈다. 30대 남성이 구입할 이유가 없는 물품이다."
       },
       "subjectParty": "b",
       "investigationStages": [
@@ -1062,8 +1062,8 @@
     },
     {
       "id": "e-5",
-      "name": "B 계좌 출금 내역",
-      "surfaceName": "B 계좌 출금 내역",
+      "name": "이준호의 계좌 출금 내역",
+      "surfaceName": "이준호의 계좌 출금 내역",
       "description": "비자금 계좌에서 3,000만원 현금 출금 기록.",
       "surfaceDescription": "비자금 계좌 출금 기록이 있다.",
       "type": "bank",
@@ -1176,7 +1176,7 @@
         }
       ],
       "meta": {
-        "name": "B 계좌 출금 내역",
+        "name": "이준호의 계좌 출금 내역",
         "type": "bank",
         "viewerType": "bank",
         "trustLevel": "mid",
@@ -1192,7 +1192,7 @@
       },
       "viewerData": {
         "meta": {
-          "name": "B 계좌 출금 내역",
+          "name": "이준호의 계좌 출금 내역",
           "type": "bank",
           "viewerType": "bank",
           "trustLevel": "mid",

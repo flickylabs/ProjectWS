@@ -250,6 +250,7 @@ async function handleEvidencePresent(action: Extract<PlayerAction, { type: 'evid
   const prevTriggeredCount = state.triggeredCombinations.length
 
   const newUnlocks = state.presentEvidence(action.evidenceId, action.target)
+  if (newUnlocks.length > 0) v4Effects.evidenceUnlock()
 
   playEvidencePresent()
   const evVis = state.discovery.disputeVisibility
@@ -263,6 +264,13 @@ async function handleEvidencePresent(action: Extract<PlayerAction, { type: 'evid
     text: `📋 증거 제시: ${evDef.name} [${reliabilityLabel}] → "${disputeNames}"`,
     relatedDisputes: visibleEvProves,
     turn: state.turnCount,
+  })
+  state.pushGameEvent({
+    id: state.gameEventLog.length + 1,
+    turn: state.turnCount,
+    type: 'event_trigger',
+    message: `📋 증거 제시: ${evDef.name}`,
+    timestamp: Date.now(),
   })
 
   const trigger = evDef.reliability === 'hard' ? 'hard_evidence' : 'soft_evidence'
@@ -361,6 +369,7 @@ async function handleEvidencePresent(action: Extract<PlayerAction, { type: 'evid
             ? visibleComboProves.map(dId => caseData.disputes.find(d => d.id === dId)?.name ?? dId).join(', ')
             : '관련 쟁점'
           playEvidenceUpgrade()
+          v4Effects.combineSuccess('upgrade', `${names} → ${comboDisputeNames}`)
           freshState.addDialogue({
             speaker: 'system',
             text: `🔗 증거 조합 격상! ${names} → "${comboDisputeNames}" 신뢰도 Hard 확정`,
@@ -1847,18 +1856,17 @@ function notifyLieTransition(party: PartyId, disputeId: string) {
     if (prevClaims.length > 0) {
       const previousClaim = prevClaims[prevClaims.length - 1].summary
 
-      // 입장 변화 설명 생성 (프로그래밍 기반, LLM 불필요)
       const transitionDesc: Record<string, string> = {
-        'S0→S2': `이전 답변과 달리, 태도에 변화가 감지됩니다`,
-        'S0→S3': `이전 답변과 달리, 감정적으로 동요하고 있습니다`,
-        'S0→S4': `이전 답변과 달리, 심리적 압박을 받고 있는 듯합니다`,
-        'S0→S5': `이전 답변과 크게 달라진 태도를 보이고 있습니다`,
-        'S1→S2': `이전 답변과 달리, 태도에 변화가 감지됩니다`,
-        'S1→S3': `이전 답변과 달리, 감정적으로 동요하고 있습니다`,
-        'S1→S4': `이전 답변과 달리, 심리적 압박을 받고 있는 듯합니다`,
-        'S1→S5': `이전 답변과 크게 달라진 태도를 보이고 있습니다`,
+        'S0→S2': `말씀이 조금씩 달라지고 있습니다`,
+        'S0→S3': `처음과 다르게 흔들리는 모습입니다`,
+        'S0→S4': `상당히 다른 이야기를 하고 계십니다`,
+        'S0→S5': `처음 입장을 완전히 바꾸셨습니다`,
+        'S1→S2': `말씀이 조금씩 달라지고 있습니다`,
+        'S1→S3': `처음과 다르게 흔들리는 모습입니다`,
+        'S1→S4': `상당히 다른 이야기를 하고 계십니다`,
+        'S1→S5': `처음 입장을 완전히 바꾸셨습니다`,
       }
-      const desc = transitionDesc[`${prevState}→${newState}`] ?? `이전 진술과 입장이 달라졌습니다`
+      const desc = transitionDesc[`${prevState}→${newState}`] ?? `처음 하신 말씀과 지금이 다릅니다`
 
       v4Effects.contradiction(party, previousClaim, desc, disputeId)
       state.addDialogue({
@@ -1945,7 +1953,7 @@ export function applyContradictionSuccess(disputeId: string, target: PartyId) {
     notifyLieTransition(target, disputeId)
     state.addDialogue({
       speaker: 'system',
-      text: `🔓 ${name}의 방어가 흔들렸다! 진술 태도에 변화가 감지된다.`,
+      text: `🔓 ${name}의 방어가 흔들렸다! 진술이 달라지기 시작한다.`,
       relatedDisputes: [disputeId],
       turn: state.turnCount,
     })
@@ -2168,25 +2176,25 @@ type ContradictionTone = 'soft' | 'mid' | 'hard'
 
 const CONTRADICTION_TEMPLATES: Record<ContradictionTone, string[]> = {
   soft: [
-    '${name} 씨, 앞서 \'${prev}\'라고 하셨습니다. 그런데 현재 기록에는 \'${curr}\'라는 내용이 보입니다. 기억이 달라진 것인지 차분히 설명해 주시겠습니까?',
-    '${name} 씨, 조금 전 진술의 핵심은 \'${prev}\'였습니다. 반면 지금 정리되는 내용은 \'${curr}\'입니다. 어느 부분에서 설명이 바뀐 것인지 짚어 주시겠습니까?',
-    '${name} 씨, 제가 적어 둔 이전 답변은 \'${prev}\'입니다. 그런데 지금은 \'${curr}\'라는 흐름이 나타납니다. 두 내용을 어떻게 이해해야 합니까?',
-    '${name} 씨, 처음 말씀은 \'${prev}\' 쪽이었는데, 현재는 \'${curr}\'라는 방향이 보입니다. 기억 차이인지, 표현 차이인지 말씀해 주십시오.',
-    '${name} 씨, 앞선 답변과 지금 드러나는 흐름 사이에 간격이 있습니다. 이전에는 \'${prev}\'라고 하셨고, 현재 기록에는 \'${curr}\'라는 내용이 남아 있습니다. 어느 쪽이 더 가까운 설명인지 말씀해 주시겠습니까?',
+    '${name} 씨, 방금 전 답변과 지금 말씀이 조금 다른 것 같습니다. 정리해 주시겠습니까?',
+    '${name} 씨, 아까 하신 말씀과 지금 말씀 사이에 차이가 있습니다. 혹시 빠뜨린 부분이 있으신 겁니까?',
+    '${name} 씨, 이 부분에 대해 처음 답변하셨을 때와 지금 말씀이 좀 다릅니다. 왜 달라졌는지 설명해 주시겠습니까?',
+    '${name} 씨, 처음 하신 말씀과 지금 흐름이 좀 다릅니다. 어떤 부분에서 생각이 바뀌신 건지 말씀해 주십시오.',
+    '${name} 씨, 같은 사안에 대해 두 번 다르게 말씀하셨습니다. 기억을 정리해 주시겠습니까?',
   ],
   mid: [
-    '${name} 씨, 앞서 \'${prev}\'라고 하셨는데, 현재는 \'${curr}\'라는 내용이 확인됩니다. 입장이 달라진 이유를 분명히 설명해 주십시오.',
-    '${name} 씨, \'${prev}\'라는 이전 진술과 지금 \'${curr}\'로 정리되는 내용은 그대로 이어지기 어렵습니다. 어느 쪽을 기준으로 받아들여야 합니까?',
-    '${name} 씨, 제가 기록한 답변은 \'${prev}\'입니다. 그런데 현재 진술의 흐름은 \'${curr}\' 쪽으로 움직이고 있습니다. 왜 이렇게 달라졌는지 설명하십시오.',
-    '${name} 씨, 조금 전까지는 \'${prev}\'라는 취지였는데, 이제는 \'${curr}\'라는 내용이 드러납니다. 무엇 때문에 설명이 달라졌는지 답하십시오.',
-    '${name} 씨, 이전 답변의 요지는 \'${prev}\'였고, 지금 정리되는 내용은 \'${curr}\'입니다. 이 차이를 그대로 넘길 수는 없으니, 정확히 정리해 주십시오.',
+    '${name} 씨, 아까 하신 말씀과 지금 하시는 말씀이 맞지 않습니다. 어느 쪽이 사실입니까?',
+    '${name} 씨, 진술이 바뀌고 있습니다. 처음 말씀을 유지하시는 겁니까, 지금 말씀이 맞는 겁니까?',
+    '${name} 씨, 이 쟁점에 대해 처음 답변과 지금 답변이 다릅니다. 무엇 때문에 바뀐 겁니까?',
+    '${name} 씨, 앞뒤가 맞지 않습니다. 정확히 말씀해 주십시오.',
+    '${name} 씨, 이전 답변과 지금 답변 사이에 모순이 있습니다. 이 차이를 넘기기 어렵습니다.',
   ],
   hard: [
-    '${name} 씨, 이전 진술은 \'${prev}\'였는데, 현재는 \'${curr}\'라는 변화가 나타납니다. 더 이상 모호하게 말씀하지 말고, 어느 설명을 기준으로 판단해야 하는지 분명히 답하십시오.',
-    '${name} 씨, 분명히 \'${prev}\'라고 하셨습니다. 그런데 현재 기록은 \'${curr}\'로 바뀌어 있습니다. 이 차이가 왜 생겼는지 분명히 설명하십시오.',
-    '${name} 씨, 처음 답변은 \'${prev}\'였고, 지금은 \'${curr}\'라는 방향으로 내용이 움직였습니다. 이렇게 달라진 이상, 한 문장으로 넘기지 말고 정확한 경위를 말씀하십시오.',
-    '${name} 씨, 앞선 진술과 지금 확인되는 내용이 서로 맞지 않습니다. 앞선 진술은 \'${prev}\'였고, 지금 확인되는 내용은 \'${curr}\'입니다. 설명 없이 지나갈 수 없으니, 핵심을 분명히 밝히십시오.',
-    '${name} 씨, 지금 나타난 진술 변화는 가볍게 볼 수 없습니다. 이전에는 \'${prev}\'였는데 현재는 \'${curr}\'라는 흐름이 확인됩니다. 어느 시점부터 설명이 달라졌는지 명확히 답하십시오.',
+    '${name} 씨, 지금 하시는 말씀은 아까와 완전히 다릅니다. 어느 쪽이 진실입니까?',
+    '${name} 씨, 더 이상 넘어갈 수 없습니다. 처음 하신 말씀과 지금 말씀이 정면으로 충돌합니다.',
+    '${name} 씨, 진술이 크게 바뀌었습니다. 왜 달라졌습니까?',
+    '${name} 씨, 처음 하신 말과 지금 말 중 어느 쪽이 사실입니까? 분명히 답하십시오.',
+    '${name} 씨, 말씀이 계속 바뀌고 있습니다. 이제 정확히 해 주십시오.',
   ],
 }
 
@@ -2211,8 +2219,8 @@ function buildContradictionQuestion(
   _contradictionRotation.set(key, idx + 1)
   const template = templates[idx % templates.length]
 
-  const prev = previousClaim.length > 50 ? previousClaim.slice(0, 47) + '…' : previousClaim
-  const curr = currentClaim.length > 50 ? currentClaim.slice(0, 47) + '…' : currentClaim
+  const prev = previousClaim.length > 20 ? previousClaim.slice(0, 18) + '…' : previousClaim
+  const curr = currentClaim.length > 30 ? currentClaim.slice(0, 28) + '…' : currentClaim
 
   return template
     .replace(/\$\{name\}/g, name)

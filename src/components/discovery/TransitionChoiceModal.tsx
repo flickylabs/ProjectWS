@@ -22,22 +22,22 @@ const TRANSITION_OPTIONS: Record<'cracked' | 'cornered' | 'opening', TransitionO
   // S1->S2 균열
   cracked: [
     {
-      label: '모순을 더 쌓는다',
-      description: '사실 추궁으로 진술의 틈을 넓힙니다',
+      label: '모순을 파고든다',
+      description: '진술의 틈을 잡아 집요하게 추궁합니다',
       icon: '\u26A1',
       actionHint: 'fact_pursuit',
       color: 'blue',
     },
     {
-      label: '동기를 판다',
-      description: '왜 거짓을 말하는지 동기를 탐색합니다',
+      label: '숨긴 이유를 캔다',
+      description: '왜 숨기는지, 진짜 동기를 탐색합니다',
       icon: '\uD83D\uDD0D',
       actionHint: 'motive_search',
       color: 'purple',
     },
     {
-      label: '증거를 낸다',
-      description: '확보한 증거로 압박합니다',
+      label: '증거를 들이민다',
+      description: '확보한 증거로 빠져나갈 길을 막습니다',
       icon: '\uD83D\uDCCB',
       actionHint: 'evidence_present',
       color: 'amber',

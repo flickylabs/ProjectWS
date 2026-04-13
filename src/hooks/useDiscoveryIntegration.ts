@@ -15,6 +15,7 @@ import {
 } from '../engine/discoveryEngine'
 import type { PartyId } from '../types'
 import type { DisputeVisibilityEntry, EmotionalSlipEvent } from '../types/discovery'
+import { v4Effects } from '../engine/presentationEngine'
 
 /**
  * 질문/증거/증인 액션 후 discovery 체크를 실행.
@@ -108,7 +109,9 @@ export function runDiscoveryChecks(party: PartyId, disputeId?: string) {
     if (via) {
       const dispute = caseData.disputes.find((d: import('../types').Dispute) => d.id === entry.disputeId)
       const description = dispute?.truthDescription ?? dispute?.name ?? entry.disputeId
+      const title = dispute?.name ?? entry.disputeId
       state.emergeDispute(entry.disputeId, via, turnCount, description)
+      v4Effects.disputeDiscovered(entry.disputeId, title, description)
       break  // 한 턴에 하나만 발현
     }
   }

@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
 import { handleContradictionPursue, useActionDispatch } from '../../../hooks/useActionDispatch'
 import { useGameStore, useStore } from '../../../store/useGameStore'
@@ -48,7 +48,7 @@ export interface PcInteractionPayload {
   subtitle?: string
   body: string
   tone?: InteractionTone
-  variant?: 'default' | 'feature' | 'evidence' | 'dialogue'
+  variant?: 'default' | 'feature' | 'evidence' | 'dialogue' | 'witness'
   tags?: string[]
   actions?: PcInteractionAction[]
   evidenceId?: string
@@ -350,6 +350,7 @@ export default function PCInteractionPanel() {
   const setPcSummaryUnlocked = useStore((s) => s.setPcSummaryUnlocked)
 
   const [payload, setPayload] = useState<PcInteractionPayload | null>(null)
+  const savedPayloadRef = useRef<PcInteractionPayload | null>(null)
 
   useEffect(() => {
     const handler = (event: Event) => {
@@ -359,6 +360,18 @@ export default function PCInteractionPanel() {
 
     window.addEventListener(PC_OPEN_INTERACTION_PANEL_EVENT, handler)
     return () => window.removeEventListener(PC_OPEN_INTERACTION_PANEL_EVENT, handler)
+  }, [])
+
+  // SVG 뷰어 닫힐 때 증거 팝업 복귀
+  useEffect(() => {
+    const handler = () => {
+      if (savedPayloadRef.current) {
+        setPayload(savedPayloadRef.current)
+        savedPayloadRef.current = null
+      }
+    }
+    window.addEventListener('pc:evidence-viewer-closed', handler)
+    return () => window.removeEventListener('pc:evidence-viewer-closed', handler)
   }, [])
 
   useEffect(() => {
@@ -400,7 +413,8 @@ export default function PCInteractionPanel() {
         break
       }
       case 'open_evidence':
-        // 증거 열람: PCEvidenceViewer 오버레이로 증거 내용 표시
+        // 증거 열람: SVG 뷰어 열기 → 닫으면 이 팝업으로 복귀
+        savedPayloadRef.current = payload
         setPendingEvidenceView(action.evidenceId ?? null)
         setPayload(null)
         return
@@ -577,6 +591,14 @@ export default function PCInteractionPanel() {
       case 'summon_witness':
         if (action.witnessId) {
           dispatch({ type: 'call_witness', witnessId: action.witnessId })
+          const store = useGameStore.getState()
+          store.pushGameEvent({
+            id: store.gameEventLog.length + 1,
+            turn: store.turnCount,
+            type: 'event_trigger',
+            message: `🗣️ 증인 소환: ${action.label.replace(/\s*(재)?소환$/, '')}`,
+            timestamp: Date.now(),
+          })
         }
         break
       case 'close':
@@ -597,16 +619,27 @@ export default function PCInteractionPanel() {
         className={`pc-interaction-card tone-${payload.tone ?? 'neutral'}${payload.variant === 'feature' ? ' pc-interaction-card--feature' : ''}`}
         onClick={(event) => event.stopPropagation()}
       >
-        <div className="pc-interaction-card__header">
-          <div>
-            {payload.subtitle ? <div className="pc-interaction-card__subtitle">{payload.subtitle}</div> : null}
-            <div className="pc-interaction-card__title">{payload.title}</div>
+        {payload.variant === 'dialogue' ? null : payload.variant === 'evidence' ? (
+          <div className="pc-interaction-card__header pc-interaction-card__header--evidence">
+            <div>
+              {payload.subtitle ? <div className="pc-interaction-card__subtitle">{payload.subtitle}</div> : null}
+              <div className="pc-interaction-card__title">{payload.title}</div>
+            </div>
+            <button className="pc-interaction-card__close" onClick={closePanel} type="button">
+              &times;
+            </button>
           </div>
-
-          <button className="pc-interaction-card__close" onClick={closePanel} type="button">
-            &times;
-          </button>
-        </div>
+        ) : (
+          <div className="pc-interaction-card__header">
+            <div>
+              {payload.subtitle ? <div className="pc-interaction-card__subtitle">{payload.subtitle}</div> : null}
+              <div className="pc-interaction-card__title">{payload.title}</div>
+            </div>
+            <button className="pc-interaction-card__close" onClick={closePanel} type="button">
+              &times;
+            </button>
+          </div>
+        )}
 
         {payload.tags && payload.tags.length > 0 ? (
           <div className="pc-interaction-card__tags">
@@ -619,7 +652,18 @@ export default function PCInteractionPanel() {
         ) : null}
 
         {payload.variant === 'dialogue' ? (
-          <DialogueDetailSection payload={payload} />
+          <DialogueDetailSection payload={payload} onClose={closePanel} />
+        ) : payload.variant === 'witness' ? (
+          <WitnessDetailSection onAction={handleAction} />
+        ) : payload.variant === 'evidence' ? (
+          <div className="pc-interaction-card__body pc-ev-body-wrap">
+            <span>{payload.body}</span>
+            {payload.evidenceId ? (
+              <button className="pc-ev-viewer-btn" onClick={() => handleAction({ kind: 'open_evidence', label: '증거 열람', evidenceId: payload.evidenceId })} type="button">
+                증거 열람
+              </button>
+            ) : null}
+          </div>
         ) : (
           <div className="pc-interaction-card__body">{payload.body}</div>
         )}
@@ -628,11 +672,11 @@ export default function PCInteractionPanel() {
           <EvidenceDetailSection evidenceId={payload.evidenceId} />
         ) : null}
 
-        {payload.actions && payload.actions.length > 0 ? (
+        {payload.variant !== 'witness' && payload.actions && payload.actions.length > 0 ? (
           <div className="pc-interaction-card__actions">
-            {payload.actions.map((action) => (
+            {payload.actions.filter((a) => !(payload.variant === 'evidence' && a.kind === 'open_evidence')).map((action) => (
               <button
-                className={`pc-interaction-card__action${action.disabled ? ' is-disabled' : ''}`}
+                className={`pc-interaction-card__action${action.disabled ? ' is-disabled' : ''}${action.kind === 'open_evidence' ? ' is-viewer-link' : ''}`}
                 key={`${action.kind}:${action.label}:${action.disputeId ?? action.evidenceId ?? action.party ?? ''}`}
                 onClick={() => handleAction(action)}
                 title={action.disabledReason}
@@ -687,14 +731,17 @@ function EvidenceDetailSection({ evidenceId }: { evidenceId: string }) {
 
   return (
     <div className="pc-ev-detail">
-      {/* Meta + disputes row */}
-      <div className="pc-ev-detail__meta">
-        <span className="pc-ev-detail__tag is-trust">{meta?.trustLabel ?? (evidence.reliability === 'hard' ? '하드 증거' : '소프트 증거')}</span>
-        <span className="pc-ev-detail__tag is-source">{meta?.sourceLabel ?? '출처 불명'}</span>
-        {disputes.map((d) => (
-          <span className="pc-ev-detail__dispute" key={d.id}>{d.name}</span>
-        ))}
-      </div>
+      {/* Dispute section */}
+      {disputes.length > 0 ? (
+        <div className="pc-ev-detail__dispute-section">
+          <span className="pc-ev-detail__dispute-label">주요 쟁점</span>
+          <div className="pc-ev-detail__dispute-names">
+            {disputes.map((d) => (
+              <span className="pc-ev-detail__dispute" key={d.id}>{d.name}</span>
+            ))}
+          </div>
+        </div>
+      ) : null}
 
       {/* Investigation stages */}
       {stages.length > 0 ? (
@@ -754,44 +801,99 @@ function EvidenceDetailSection({ evidenceId }: { evidenceId: string }) {
   )
 }
 
-function DialogueDetailSection({ payload }: { payload: PcInteractionPayload }) {
+const SPEAKER_TONE_CLASS: Record<string, string> = {
+  a: 'is-a',
+  b: 'is-b',
+  judge: 'is-judge',
+  witness: 'is-witness',
+  system: 'is-system',
+}
+
+function DialogueDetailSection({ payload, onClose }: { payload: PcInteractionPayload; onClose: () => void }) {
   const caseData = useStore((s) => s.caseData)
   const disputes = caseData?.disputes ?? []
   const relatedIds = payload.dialogueDisputeIds ?? []
-  const primaryDispute = relatedIds.length > 0 ? disputes.find((d) => d.id === relatedIds[0]) : null
-  const extraDisputes = relatedIds.slice(1).map((id) => disputes.find((d) => d.id === id)?.name).filter(Boolean)
-  const isImportant = (payload.subtitle ?? '').includes('중요')
+  const relatedNames = relatedIds.map((id) => disputes.find((d) => d.id === id)?.name).filter(Boolean) as string[]
+  const speakerClass = SPEAKER_TONE_CLASS[payload.dialogueSpeaker ?? ''] ?? ''
+  const speakerIconId = payload.dialogueSpeaker === 'a' ? 'i-man'
+    : payload.dialogueSpeaker === 'b' ? 'i-woman'
+    : payload.dialogueSpeaker === 'judge' ? 'i-scale'
+    : payload.dialogueSpeaker === 'witness' ? 'i-witness'
+    : 'i-bulb'
 
   return (
     <div className="pc-dialogue-popup">
-      {/* Dispute + character row */}
+      {/* Header: 발언 기록 - Turn N  +  X */}
+      <div className="pc-dialogue-popup__header-row">
+        <span className="pc-dialogue-popup__label">발언 기록</span>
+        <span className="pc-dialogue-popup__dash">-</span>
+        <span className="pc-dialogue-popup__turn">Turn {payload.dialogueTurn ?? 0}</span>
+        <button className="pc-dialogue-popup__close" onClick={onClose} type="button">&times;</button>
+      </div>
+
+      <div className="pc-dialogue-popup__divider" />
+
+      {/* Dispute + speaker row */}
       <div className="pc-dialogue-popup__dispute-row">
-        <div className="pc-dialogue-popup__dispute-left">
-          {primaryDispute ? (
-            <>
-              <span className="pc-dialogue-popup__dispute-label">주요 쟁점</span>
-              <span className="pc-dialogue-popup__dispute-name">{primaryDispute.name}</span>
-            </>
-          ) : (
-            <span className="pc-dialogue-popup__dispute-label">쟁점 없음</span>
-          )}
-        </div>
-        <div className="pc-dialogue-popup__speaker">
-          <PCSvgIcon id={payload.dialogueSpeaker === 'a' ? 'i-man' : payload.dialogueSpeaker === 'b' ? 'i-woman' : payload.dialogueSpeaker === 'judge' ? 'i-scale' : 'i-bulb'} size={18} />
+        <span className="pc-dialogue-popup__dispute-label">주요 쟁점</span>
+        <div className={`pc-dialogue-popup__speaker ${speakerClass}`}>
+          <PCSvgIcon id={speakerIconId} size={16} />
           <span>{payload.dialogueSpeakerName ?? '시스템'}</span>
         </div>
       </div>
 
-      {/* Extra disputes */}
-      {extraDisputes.length > 0 ? (
-        <div className="pc-dialogue-popup__extra">
-          <span>추가 연관 쟁점: </span>
-          {extraDisputes.join(', ')}
+      {/* Dispute names — 여러 개면 구분자로 연이어 */}
+      {relatedNames.length > 0 ? (
+        <div className="pc-dialogue-popup__dispute-names">
+          {relatedNames.map((name, i) => (
+            <span key={i}>
+              {i > 0 ? <span className="pc-dialogue-popup__dispute-sep">|</span> : null}
+              <span className="pc-dialogue-popup__dispute-name">{name}</span>
+            </span>
+          ))}
         </div>
       ) : null}
 
       {/* Body text */}
       <div className="pc-dialogue-popup__body">{payload.body}</div>
+    </div>
+  )
+}
+
+function WitnessDetailSection({ onAction }: { onAction: (action: PcInteractionAction) => void }) {
+  const caseData = useStore((s) => s.caseData)
+  const calledWitnesses = useStore((s) => s.calledWitnesses)
+
+  if (!caseData) return null
+
+  const witnesses = caseData.duo.socialGraph.filter(
+    (tp) => tp.slot === 'institutional' || tp.slot === 'acquaintance_1' || tp.slot === 'acquaintance_2'
+      || tp.slot === 'family_1' || tp.slot === 'family_2',
+  )
+
+  return (
+    <div className="pc-witness-panel">
+      {witnesses.map((w) => {
+        const called = calledWitnesses.includes(w.id)
+        const slotLabel = w.slot === 'institutional' ? '기관 증인' : '관련인'
+        return (
+          <div className={`pc-witness-card${called ? ' is-called' : ''}`} key={w.id}>
+            <div className="pc-witness-card__info">
+              <span className="pc-witness-card__name">{w.name}</span>
+              <span className="pc-witness-card__meta">{slotLabel}</span>
+              <span className="pc-witness-card__scope">{w.knowledgeScope ?? '관련 사실에 대해 알고 있음'}</span>
+            </div>
+            <button
+              className={`pc-witness-card__btn${called ? ' is-done' : ''}`}
+              disabled={false}
+              onClick={() => onAction({ kind: 'summon_witness', label: `${w.name} 소환`, witnessId: w.id })}
+              type="button"
+            >
+              {called ? '재소환' : '소환'}
+            </button>
+          </div>
+        )
+      })}
     </div>
   )
 }

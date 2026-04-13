@@ -60,12 +60,35 @@ export function buildAftermathPrompt(input: AftermathLLMInput): string {
     ? keyDiscoveries.map(d => `- ${d}`).join('\n')
     : '- 특별한 발견 없음'
 
-  return `당신은 한국 법정 드라마의 내레이터입니다. 재판이 끝난 후의 후일담을 3인칭 관찰 시점으로 작성해주세요.
+  // 쟁점별 진실 요약 (truthDescription)
+  const truthLines = caseData.disputes
+    .filter(d => !d.hidden && d.v3Visibility !== 'hidden')
+    .map(d => `- ${d.name}: ${d.truthDescription ?? d.judgmentStatement ?? ''}`)
+    .join('\n')
 
-## 사건 정보
-- 사건: ${caseData.meta?.title ?? ''}
-- ${partyA.name} (${partyA.age}세, ${partyA.occupation}): ${partyA.fear}
-- ${partyB.name} (${partyB.age}세, ${partyB.occupation}): ${partyB.fear}
+  // 숨겨진 쟁점의 진실
+  const hiddenTruthLines = caseData.disputes
+    .filter(d => d.hidden || d.v3Visibility === 'hidden')
+    .filter(d => keyDiscoveries.some(k => k.includes(d.name) || k.includes(d.id)))
+    .map(d => `- [발견됨] ${d.name}: ${d.truthDescription ?? ''}`)
+    .join('\n')
+
+  return `당신은 한국 법정 드라마의 내레이터입니다. 재판이 끝난 뒤 후일담을 작성합니다.
+
+## 등장인물
+${partyA.name} (${partyA.age}세, ${partyA.occupation})
+- 성격: ${partyA.archetype ?? '방어적'}
+- 두려움: ${partyA.fear}
+
+${partyB.name} (${partyB.age}세, ${partyB.occupation})
+- 성격: ${partyB.archetype ?? '방어적'}
+- 두려움: ${partyB.fear}
+
+관계: ${caseData.duo.relationshipType}
+
+## 사건의 진실
+${truthLines}
+${hiddenTruthLines ? `\n${hiddenTruthLines}` : ''}
 
 ## 재판관의 판결
 책임 비율: ${respText}
@@ -74,27 +97,29 @@ export function buildAftermathPrompt(input: AftermathLLMInput): string {
 ### 쟁점별 판단
 ${judgmentLines}
 
-### 안건별 책임 평가
-${issueLines}
-
-### 심문 중 핵심 발견
+### 심문에서 밝혀진 것들
 ${discoveryLines}
 
-### 재판관 평가
-- 통찰: ${scores.insight}점, 권위: ${scores.authority}점, 지혜: ${scores.wisdom}점
-- 칭호: ${title}
+## 작성 지시
+3인칭 관찰자 시점. 서술체("~했다", "~였다"). 총 3문단, 각 문단 3~5문장으로 구체적이고 밀도 있게 쓰세요.
 
-## 작성 규칙
-1. 3인칭 관찰 시점 (내레이터)
-2. 3~4문단, 각 문단 2~3문장
-3. 1문단: 판결 직후 두 사람의 반응 (판결 내용 반영)
-4. 2문단: 판결이 각자의 삶에 미치는 영향 (해결안 반영)
-5. 3문단: 숨겨졌던 것들이 드러난 후의 변화 (핵심 발견 반영)
-6. 마지막에 줄바꿈 후 교훈 한 문장: 이 사건에서 얻을 수 있는 삶의 교훈을 한 줄로 남긴다. 격언이나 명언이 아니라, 이 사건만의 구체적 통찰이어야 한다. 예: "숨기는 것이 지키는 것이 되는 순간, 관계는 이미 무너지고 있었다."
-7. 실명 사용 (${partyA.name}, ${partyB.name})
-8. 합니다체가 아닌 서술체 ("~했다", "~였다")
-9. 번역체 금지, 기획 용어 금지
-10. 감정 과잉 금지 — 담담하되 깊이 있게`
+**1문단 — 판결 직후**
+재판관이 판결을 내리는 순간의 장면. ${partyA.name}과 ${partyB.name} 각각의 표정과 반응. 판결 내용(책임 비율, 해결안)이 발표될 때 두 사람이 어떤 감정을 보이는지. 예상과 달랐는지, 체념했는지, 분노했는지를 구체적으로 묘사.
+
+**2문단 — 드러난 진실의 무게**
+심문 과정에서 밝혀진 핵심 사실들이 두 사람의 관계에 어떤 의미인지. 숨겨왔던 것이 드러났을 때의 충격, 혹은 이미 알고 있었지만 말하지 못했던 것의 해방감. 판결 이후 각자가 어떤 선택을 하게 되는지. 구체적 사실(금액, 사건, 행동)을 섞어 서술.
+
+**3문단 — 이후의 삶**
+며칠, 몇 주 뒤의 장면. 해결안이 실행되면서 벌어지는 일상의 변화. 관계가 회복되는지 끊어지는지, 또는 새로운 형태로 재편되는지. 마지막 문장은 여운을 남기되 과장 없이 마무리.
+
+줄바꿈 후 **교훈 한 문장**: 이 사건만의 구체적 통찰. 격언이 아니라 이 사건에서만 나올 수 있는 교훈.
+예: "숨기는 것이 지키는 것이 되는 순간, 관계는 이미 무너지고 있었다."
+
+## 금지
+- 번역체, 기획 용어, "~된 것으로 생각됩니다" 류
+- 합니다체 사용 금지
+- 감정 과잉 (울었다, 소리쳤다 등 반복)
+- 추상적 표현 — 항상 구체적 사실에 기반`
 }
 
 function computeAverageResponsibility(caseData: CaseData, verdictInput: VerdictInput): { a: number; b: number } | null {

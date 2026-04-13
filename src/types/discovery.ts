@@ -95,10 +95,12 @@ export interface EmergenceRoute {
     lieCollapseDispute?: string
     /** 특정 쟁점에서 감정 격앙 실수 필요 */
     emotionalSlipDispute?: string
-    /** 특정 쟁점이 지정 state 이상 도달 필요 (lie_state_threshold용) */
+    /** 특정 쟁점이 지정 state 이상 도달 필요 (lie_state_threshold용, 단일) */
     lieThresholdDispute?: string
     lieThresholdMinState?: string
     lieThresholdParty?: 'a' | 'b'
+    /** AND 조건: 복수 쟁점 모두 지정 state 이상이어야 발현 */
+    lieThresholdAll?: Array<{ dispute: string; minState: string; party?: 'a' | 'b' }>
   }
 }
 

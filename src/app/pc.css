@@ -585,6 +585,40 @@ body.pc-mode .pc-interaction-card__action:active:not(.is-disabled) {
   transform: scale(0.98);
 }
 
+/* 증거 열람 버튼 */
+body.pc-mode .pc-ev-viewer-btn {
+  padding: 4px 12px;
+  border-radius: 6px;
+  border: 1px solid rgba(212,162,78,0.3);
+  background: rgba(212,162,78,0.1);
+  color: #d9a654;
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.15s ease;
+  flex-shrink: 0;
+  align-self: flex-start;
+}
+body.pc-mode .pc-ev-viewer-btn:hover {
+  background: rgba(212,162,78,0.2);
+  border-color: rgba(212,162,78,0.5);
+}
+
+/* Evidence body: 설명 + 증거열람 버튼 한 줄 */
+body.pc-mode .pc-ev-body-wrap {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+/* Evidence variant header */
+body.pc-mode .pc-interaction-card__header--evidence {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
 /* Dispute ribbon — toast bar, half-width, collapsible */
 body.pc-mode .pc-dispute-ribbon {
   position: relative;
@@ -4999,10 +5033,11 @@ body.pc-mode .pc-log-system-card {
   display: flex;
   align-items: center;
   gap: 10px;
-  width: 100%;
+  width: min(980px, calc(100% - 72px));
+  margin: 0 auto;
   min-height: 42px;
   padding: 10px 24px;
-  border-radius: 0;
+  border-radius: 12px;
   border: 0;
   border-top: 1px solid rgba(212, 162, 78, 0.12);
   border-bottom: 1px solid rgba(212, 162, 78, 0.12);
@@ -5026,6 +5061,70 @@ body.pc-mode .pc-log-system-card.is-alert {
   border-color: rgba(224, 96, 96, 0.2);
   background: rgba(224, 96, 96, 0.12);
   color: #ffb5b5;
+}
+
+/* 시스템 메시지: 증거/해금 (녹색) */
+body.pc-mode .pc-log-system-card.is-unlock {
+  border-top-color: rgba(96, 192, 144, 0.2);
+  border-bottom-color: rgba(96, 192, 144, 0.2);
+  background: linear-gradient(90deg, rgba(96,192,144,0.03), rgba(96,192,144,0.1) 50%, rgba(96,192,144,0.03));
+  color: #90e0b8;
+}
+
+/* 시스템 메시지: 경고/교착 (주황) */
+body.pc-mode .pc-log-system-card.is-warning {
+  border-top-color: rgba(240, 160, 60, 0.25);
+  border-bottom-color: rgba(240, 160, 60, 0.25);
+  background: linear-gradient(90deg, rgba(240,160,60,0.03), rgba(240,160,60,0.12) 50%, rgba(240,160,60,0.03));
+  color: #f0c070;
+}
+
+/* 시스템 메시지: 성공/발견 (파란 강조) */
+body.pc-mode .pc-log-system-card.is-success {
+  border-top-color: rgba(91, 141, 239, 0.25);
+  border-bottom-color: rgba(91, 141, 239, 0.25);
+  background: linear-gradient(90deg, rgba(91,141,239,0.03), rgba(91,141,239,0.12) 50%, rgba(91,141,239,0.03));
+  color: #a0c4f0;
+}
+
+/* 시스템 메시지: 증인 (청록) */
+body.pc-mode .pc-log-system-card.is-witness {
+  border-top-color: rgba(80, 180, 170, 0.2);
+  border-bottom-color: rgba(80, 180, 170, 0.2);
+  background: linear-gradient(90deg, rgba(80,180,170,0.03), rgba(80,180,170,0.1) 50%, rgba(80,180,170,0.03));
+  color: #80d0c8;
+}
+
+/* 액션 배지 (클릭 유도 버튼) */
+body.pc-mode .pc-log-system-card__action-badge {
+  margin-left: auto;
+  padding: 3px 12px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+body.pc-mode .pc-log-system-card.is-action .pc-log-system-card__action-badge {
+  background: rgba(224, 96, 96, 0.2);
+  color: #f0a0a0;
+  border: 1px solid rgba(224, 96, 96, 0.3);
+}
+body.pc-mode .pc-log-system-card.is-success .pc-log-system-card__action-badge {
+  background: rgba(91, 141, 239, 0.15);
+  color: #a0c4f0;
+  border: 1px solid rgba(91, 141, 239, 0.25);
+}
+
+/* 사용 완료 상태 */
+body.pc-mode .pc-log-system-card.is-used {
+  opacity: 0.45;
+  pointer-events: none;
+}
+body.pc-mode .pc-log-system-card.is-used .pc-log-system-card__action-badge {
+  background: rgba(255,255,255,0.04);
+  color: #5a5e70;
+  border-color: rgba(255,255,255,0.06);
 }
 
 body.pc-mode .pc-log-system-explainer {
@@ -5957,10 +6056,10 @@ body.pc-mode .pc-play-left .pc-important-notes__scroll {
 /* Note cards — compact: [dot+turn] [2-line text] [pin] */
 body.pc-mode .pc-play-left .pc-note-card {
   display: grid;
-  grid-template-columns: 22px minmax(0, 1fr) 20px;
+  grid-template-columns: 38px minmax(0, 1fr) auto 24px;
   align-items: start;
-  gap: 8px;
-  padding: 7px 8px;
+  gap: 3px;
+  padding: 6px 4px 6px 4px;
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.05);
   background: rgba(255, 255, 255, 0.02);
@@ -5981,34 +6080,31 @@ body.pc-mode .pc-play-left .pc-note-card.is-pinned {
   background: rgba(255, 255, 255, 0.035);
 }
 
-/* Indicator: colored dot + turn number */
+/* Indicator: speaker name + turn number + left border */
 body.pc-mode .pc-play-left .pc-note-card__indicator {
-  display: grid;
-  justify-items: center;
-  gap: 3px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
   padding-top: 2px;
+  border-left: 2px solid rgba(160, 165, 180, 0.3);
+  padding-left: 6px;
 }
 
-body.pc-mode .pc-play-left .pc-note-card__dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: rgba(160, 165, 180, 0.5);
+body.pc-mode .pc-play-left .pc-note-card__speaker {
+  font-size: 9px;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.3px;
 }
 
-body.pc-mode .pc-play-left .pc-note-card__indicator.is-a .pc-note-card__dot {
-  background: var(--pc-blue);
-}
-
-body.pc-mode .pc-play-left .pc-note-card__indicator.is-b .pc-note-card__dot {
-  background: var(--pc-red);
-}
-
-body.pc-mode .pc-play-left .pc-note-card__turn {
+body.pc-mode .pc-play-left .pc-note-card__turn,
+body.pc-mode .pc-play-left .pc-note-card__tag {
   font-size: 9px;
   font-weight: 700;
   color: #8c8fa0;
   line-height: 1;
+  white-space: nowrap;
 }
 
 /* Note body */
@@ -6034,8 +6130,8 @@ body.pc-mode .pc-play-left .pc-note-card.is-pinned .pc-note-card__summary {
 
 /* Pin button */
 body.pc-mode .pc-play-left .pc-note-card__pin {
-  width: 20px;
-  height: 20px;
+  width: 24px;
+  height: 24px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -6045,7 +6141,8 @@ body.pc-mode .pc-play-left .pc-note-card__pin {
   color: #7a7d8e;
   opacity: 0;
   transition: opacity 0.15s ease;
-  margin-top: 1px;
+  margin-top: 0;
+  justify-self: end;
 }
 
 body.pc-mode .pc-play-left .pc-note-card:hover .pc-note-card__pin,
@@ -6088,6 +6185,331 @@ body.pc-mode .pc-play-left .pc-notes-help {
   font-weight: 800;
   cursor: help;
   flex-shrink: 0;
+}
+
+/* Note card: dispute badge */
+body.pc-mode .pc-note-card__dispute {
+  display: inline-block;
+  margin-top: 2px;
+  padding: 1px 6px;
+  border-radius: 4px;
+  background: rgba(255,255,255,0.04);
+  color: #787c8a;
+  font-size: 9px;
+  font-weight: 600;
+}
+
+/* Note card: contradiction flash */
+body.pc-mode .pc-note-card__flash {
+  font-size: 14px;
+  line-height: 1;
+  align-self: center;
+}
+
+body.pc-mode .pc-note-card.is-contradiction {
+  border-color: rgba(224, 96, 96, 0.2);
+  background: rgba(224, 96, 96, 0.04);
+}
+
+/* Expand button in header */
+body.pc-mode .pc-notes-expand-btn {
+  margin-left: auto;
+  width: 22px;
+  height: 22px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(255,255,255,0.03);
+  color: #8c8fa0;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  flex-shrink: 0;
+}
+body.pc-mode .pc-notes-expand-btn:hover {
+  background: rgba(217,119,6,0.12);
+  border-color: rgba(217,119,6,0.3);
+  color: #d9a654;
+}
+
+/* ━━━ Expanded panel (overlay) ━━━ */
+body.pc-mode .pc-notes-expanded-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: pc-modal-enter 0.15s ease-out;
+}
+
+body.pc-mode .pc-notes-expanded {
+  width: min(860px, calc(100vw - 80px));
+  max-height: calc(100vh - 120px);
+  border-radius: 20px;
+  border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(14,14,22,0.98);
+  box-shadow: 0 24px 60px rgba(0,0,0,0.5);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+body.pc-mode .pc-notes-expanded__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px 12px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+body.pc-mode .pc-notes-expanded__title {
+  font-size: 16px;
+  font-weight: 800;
+  color: #e0ddd6;
+}
+
+body.pc-mode .pc-notes-expanded__close {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 0;
+  background: rgba(255,255,255,0.04);
+  color: #787c8a;
+  cursor: pointer;
+  transform: rotate(45deg);
+  transition: all 0.15s ease;
+}
+body.pc-mode .pc-notes-expanded__close:hover {
+  background: rgba(255,255,255,0.08);
+  color: #c0bdb6;
+}
+
+body.pc-mode .pc-notes-expanded__content {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  padding: 16px 20px;
+}
+
+/* Dispute tabs (shared) */
+body.pc-mode .pc-notes-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  padding: 8px 20px 4px;
+}
+
+body.pc-mode .pc-notes-tab {
+  padding: 4px 10px;
+  border-radius: 6px;
+  border: 1px solid rgba(255,255,255,0.06);
+  background: rgba(255,255,255,0.02);
+  color: #787c8a;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+body.pc-mode .pc-notes-tab:hover {
+  background: rgba(255,255,255,0.06);
+  color: #a09d96;
+}
+body.pc-mode .pc-notes-tab.is-active {
+  background: rgba(217,119,6,0.12);
+  border-color: rgba(217,119,6,0.3);
+  color: #d9a654;
+}
+
+/* A/B comparison view */
+body.pc-mode .pc-notes-compare {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+body.pc-mode .pc-notes-compare__col {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+body.pc-mode .pc-notes-compare__header {
+  font-size: 13px;
+  font-weight: 800;
+  padding: 6px 0 4px;
+  border-bottom: 2px solid rgba(255,255,255,0.06);
+  margin-bottom: 4px;
+}
+body.pc-mode .pc-notes-compare__col.is-a .pc-notes-compare__header { color: #6090e0; border-color: rgba(96,144,224,0.3); }
+body.pc-mode .pc-notes-compare__col.is-b .pc-notes-compare__header { color: #e06060; border-color: rgba(224,96,96,0.3); }
+
+body.pc-mode .pc-notes-compare__entry {
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.04);
+  background: rgba(255,255,255,0.02);
+  cursor: pointer;
+  transition: background 0.12s ease;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+body.pc-mode .pc-notes-compare__entry:hover {
+  background: rgba(255,255,255,0.06);
+}
+body.pc-mode .pc-notes-compare__entry.is-contradiction {
+  border-color: rgba(224,96,96,0.2);
+  background: rgba(224,96,96,0.04);
+}
+
+body.pc-mode .pc-notes-compare__turn {
+  flex-shrink: 0;
+  font-size: 9px;
+  font-weight: 700;
+  color: #8c8fa0;
+  padding-top: 2px;
+}
+
+body.pc-mode .pc-notes-compare__text {
+  font-size: 13px;
+  color: #c0bdb6;
+  line-height: 1.5;
+}
+
+body.pc-mode .pc-notes-compare__flash {
+  flex-shrink: 0;
+  font-size: 14px;
+}
+
+body.pc-mode .pc-notes-compare__pin {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  border: 0;
+  background: transparent;
+  color: #7a7d8e;
+  cursor: pointer;
+  opacity: 0;
+  margin-left: auto;
+  transition: opacity 0.12s ease, color 0.12s ease;
+}
+body.pc-mode .pc-notes-compare__entry:hover .pc-notes-compare__pin,
+body.pc-mode .pc-notes-compare__entry.is-pinned .pc-notes-compare__pin {
+  opacity: 1;
+}
+body.pc-mode .pc-notes-compare__entry.is-pinned .pc-notes-compare__pin {
+  color: var(--pc-gold-light);
+}
+body.pc-mode .pc-notes-compare__pin:hover {
+  color: var(--pc-gold);
+}
+
+body.pc-mode .pc-notes-compare__entry.is-pinned {
+  border-color: rgba(212,162,78,0.14);
+  border-left: 2px solid var(--pc-gold);
+  background: rgba(255,255,255,0.035);
+}
+
+/* Expanded: turn group */
+body.pc-mode .pc-notes-turn-group {
+  margin-bottom: 12px;
+}
+
+body.pc-mode .pc-notes-turn-group__label {
+  font-size: 10px;
+  font-weight: 800;
+  color: #8c8fa0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 6px;
+  padding-left: 4px;
+}
+
+body.pc-mode .pc-notes-expanded__list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+/* Expanded note card */
+body.pc-mode .pc-note-expanded-card {
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.05);
+  background: rgba(255,255,255,0.02);
+  cursor: pointer;
+  transition: background 0.12s ease;
+}
+body.pc-mode .pc-note-expanded-card:hover {
+  background: rgba(255,255,255,0.06);
+}
+body.pc-mode .pc-note-expanded-card.is-pinned {
+  border-color: rgba(212,162,78,0.14);
+  border-left: 3px solid var(--pc-gold);
+}
+body.pc-mode .pc-note-expanded-card.is-contradiction {
+  border-color: rgba(224,96,96,0.2);
+  background: rgba(224,96,96,0.04);
+}
+
+body.pc-mode .pc-note-expanded-card__head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+body.pc-mode .pc-note-expanded-card__speaker {
+  font-size: 12px;
+  font-weight: 800;
+}
+
+body.pc-mode .pc-note-expanded-card__disputes {
+  font-size: 10px;
+  font-weight: 600;
+  color: #787c8a;
+  background: rgba(255,255,255,0.04);
+  padding: 1px 8px;
+  border-radius: 4px;
+}
+
+body.pc-mode .pc-note-expanded-card__flash {
+  font-size: 11px;
+  font-weight: 700;
+  color: #e06060;
+}
+
+body.pc-mode .pc-note-expanded-card__pin {
+  margin-left: auto;
+  width: 20px;
+  height: 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  border: 0;
+  background: transparent;
+  color: #7a7d8e;
+  cursor: pointer;
+  transition: color 0.15s ease;
+}
+body.pc-mode .pc-note-expanded-card__pin:hover { color: var(--pc-gold); }
+body.pc-mode .pc-note-expanded-card.is-pinned .pc-note-expanded-card__pin { color: var(--pc-gold-light); }
+
+body.pc-mode .pc-note-expanded-card__text {
+  font-size: 14px;
+  color: #d8d6cf;
+  line-height: 1.6;
 }
 
 body.pc-mode .pc-play-chat .pc-log-list {
@@ -6908,9 +7330,7 @@ body.pc-mode .pc-play-hbar .char:hover {
   background: rgba(255,255,255,0.035) !important;
 }
 
-body.pc-mode .pc-play-hbar .char.spk {
-  box-shadow: inset 0 0 0 1px rgba(212,162,78,0.15) !important;
-}
+/* char.spk 는 party별 분기 스타일 사용 (아래 char-a.spk / char-b.spk) */
 
 /* A: face left, info right */
 body.pc-mode .pc-play-hbar .char-a {
@@ -7169,9 +7589,23 @@ body.pc-mode .pc-play-hbar .char-hp-f {
   transition: width 0.6s ease !important;
 }
 
-body.pc-mode .pc-play-hbar .char.spk {
-  border-color: rgba(212, 162, 78, 0.2) !important;
-  box-shadow: inset 0 0 0 1px rgba(212, 162, 78, 0.1), 0 0 12px rgba(212, 162, 78, 0.06) !important;
+body.pc-mode .pc-play-hbar .char-a.spk {
+  border-color: rgba(91, 141, 239, 0.5) !important;
+  box-shadow: inset 0 0 0 1px rgba(91, 141, 239, 0.2), 0 0 20px rgba(91, 141, 239, 0.15) !important;
+  animation: pc-char-pulse-a 1.5s ease-in-out infinite !important;
+}
+body.pc-mode .pc-play-hbar .char-b.spk {
+  border-color: rgba(224, 96, 96, 0.5) !important;
+  box-shadow: inset 0 0 0 1px rgba(224, 96, 96, 0.2), 0 0 20px rgba(224, 96, 96, 0.15) !important;
+  animation: pc-char-pulse-b 1.5s ease-in-out infinite !important;
+}
+@keyframes pc-char-pulse-a {
+  0%, 100% { box-shadow: inset 0 0 0 1px rgba(91,141,239,0.2), 0 0 16px rgba(91,141,239,0.1); }
+  50% { box-shadow: inset 0 0 0 2px rgba(91,141,239,0.35), 0 0 28px rgba(91,141,239,0.2); }
+}
+@keyframes pc-char-pulse-b {
+  0%, 100% { box-shadow: inset 0 0 0 1px rgba(224,96,96,0.2), 0 0 16px rgba(224,96,96,0.1); }
+  50% { box-shadow: inset 0 0 0 2px rgba(224,96,96,0.35), 0 0 28px rgba(224,96,96,0.2); }
 }
 
 body.pc-mode .pc-play-hbar .hotbar-mode.is-active {
@@ -7959,7 +8393,7 @@ body.pc-mode .pc-ev-placeholder span {
 
 /* Evidence detail in InteractionPanel */
 body.pc-mode .pc-ev-detail {
-  margin-top: 10px; padding-top: 10px;
+  margin-top: 10px; padding: 10px 24px 0;
   border-top: 1px solid rgba(255,255,255,0.04);
 }
 
@@ -7972,19 +8406,29 @@ body.pc-mode .pc-ev-detail__tag {
   font-size: 13px; font-weight: 700;
 }
 
-body.pc-mode .pc-ev-detail__tag.is-trust { background: rgba(212,162,78,0.1); color: #e8c172; }
-body.pc-mode .pc-ev-detail__tag.is-source { background: rgba(139,139,154,0.1); color: #8b8b9a; }
-body.pc-mode .pc-ev-detail__tag.is-legal { background: rgba(92,201,122,0.08); color: #5cc97a; }
-body.pc-mode .pc-ev-detail__tag.is-done { background: rgba(92,201,122,0.1); color: #5cc97a; }
+body.pc-mode .pc-ev-detail__tag.is-trust { background: rgba(255,255,255,0.06); color: #d8d6cf; }
+body.pc-mode .pc-ev-detail__tag.is-source { background: rgba(255,255,255,0.06); color: #d8d6cf; }
+body.pc-mode .pc-ev-detail__tag.is-legal { background: rgba(255,255,255,0.06); color: #d8d6cf; }
+body.pc-mode .pc-ev-detail__tag.is-done { background: rgba(255,255,255,0.06); color: #d8d6cf; }
 
-body.pc-mode .pc-ev-detail__disputes {
-  display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 10px;
+body.pc-mode .pc-ev-detail__dispute-section {
+  margin-bottom: 12px;
+}
+
+body.pc-mode .pc-ev-detail__dispute-label {
+  display: block;
+  font-size: 11px; font-weight: 700; color: #6a6e80;
+  letter-spacing: 0.06em; text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+body.pc-mode .pc-ev-detail__dispute-names {
+  display: flex; flex-wrap: wrap; gap: 6px;
 }
 
 body.pc-mode .pc-ev-detail__dispute {
-  padding: 4px 10px; border-radius: 6px;
-  background: rgba(224,96,96,0.08); color: var(--pc-red);
-  font-size: 12px; font-weight: 700;
+  font-size: 14px; font-weight: 800;
+  color: var(--pc-gold-light);
 }
 
 body.pc-mode .pc-ev-detail__stages { margin-top: 6px; }
@@ -7997,7 +8441,7 @@ body.pc-mode .pc-ev-detail__stages-label {
 
 body.pc-mode .pc-ev-detail__stage {
   display: flex; align-items: flex-start; gap: 12px;
-  padding: 12px 14px; margin-bottom: 6px;
+  padding: 10px 14px; margin-bottom: 6px; min-height: 52px;
   border-radius: 10px; border: 1px solid rgba(255,255,255,0.04);
   background: rgba(255,255,255,0.015);
 }
@@ -8018,7 +8462,7 @@ body.pc-mode .pc-ev-detail__stage.is-open .pc-ev-detail__stage-num {
 
 body.pc-mode .pc-ev-detail__stage-body { display: grid; gap: 4px; min-width: 0; flex: 1; }
 body.pc-mode .pc-ev-detail__stage-q { font-size: 14px; font-weight: 600; color: #b0aeb6; line-height: 1.5; }
-body.pc-mode .pc-ev-detail__stage-a { font-size: 13px; color: var(--pc-green); font-weight: 700; line-height: 1.6; }
+body.pc-mode .pc-ev-detail__stage-a { font-size: 13px; color: #e0ddd6; font-weight: 700; line-height: 1.6; }
 body.pc-mode .pc-ev-detail__stage-lock { font-size: 13px; color: #5a5e70; font-style: italic; }
 
 /* Ready stage — unlockable */
@@ -8239,22 +8683,70 @@ body.pc-mode .pc-result-profile__marker { position: absolute; top: 0; height: 10
    Dialogue popup — unified layout
    ═══════════════════════════════════════════════════ */
 body.pc-mode .pc-dialogue-popup {
-  padding: 0 28px 20px;
+  padding: 16px 28px 20px;
 }
 
+/* Header row: 발언 기록 - Turn N  [X] */
+body.pc-mode .pc-dialogue-popup__header-row {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  padding-top: 4px;
+  margin-bottom: 10px;
+}
+
+body.pc-mode .pc-dialogue-popup__label {
+  font-size: 14px;
+  font-weight: 800;
+  color: #e0ddd6;
+}
+
+body.pc-mode .pc-dialogue-popup__dash {
+  font-size: 12px;
+  color: #6a6e80;
+  font-weight: 400;
+}
+
+body.pc-mode .pc-dialogue-popup__turn {
+  font-size: 11px;
+  font-weight: 700;
+  color: #8c8fa0;
+}
+
+body.pc-mode .pc-dialogue-popup__close {
+  margin-left: auto;
+  width: 26px;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 0;
+  background: rgba(255,255,255,0.04);
+  color: #787c8a;
+  font-size: 18px;
+  cursor: pointer;
+  line-height: 1;
+  transition: all 0.12s ease;
+  align-self: center;
+}
+body.pc-mode .pc-dialogue-popup__close:hover {
+  background: rgba(255,255,255,0.1);
+  color: #c0bdb6;
+}
+
+body.pc-mode .pc-dialogue-popup__divider {
+  height: 1px;
+  background: rgba(255,255,255,0.06);
+  margin-bottom: 12px;
+}
+
+/* Dispute + speaker row */
 body.pc-mode .pc-dialogue-popup__dispute-row {
   display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 16px;
-  padding-bottom: 12px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
-  margin-bottom: 14px;
-}
-
-body.pc-mode .pc-dialogue-popup__dispute-left {
-  display: grid;
-  gap: 4px;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
 }
 
 body.pc-mode .pc-dialogue-popup__dispute-label {
@@ -8263,42 +8755,126 @@ body.pc-mode .pc-dialogue-popup__dispute-label {
   color: #6a6e80;
   letter-spacing: 0.06em;
   text-transform: uppercase;
+  white-space: nowrap;
+}
+
+/* Speaker: {아이콘} {이름} — 우측 정렬 */
+body.pc-mode .pc-dialogue-popup__speaker {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-left: auto;
+  font-size: 12px;
+  font-weight: 700;
+}
+body.pc-mode .pc-dialogue-popup__speaker.is-a { color: #6090e0; }
+body.pc-mode .pc-dialogue-popup__speaker.is-b { color: #e06060; }
+body.pc-mode .pc-dialogue-popup__speaker.is-judge { color: #d9a654; }
+body.pc-mode .pc-dialogue-popup__speaker.is-witness { color: #60c090; }
+body.pc-mode .pc-dialogue-popup__speaker.is-system { color: #8c8fa0; }
+
+/* Dispute names: 쟁점1 | 쟁점2 */
+body.pc-mode .pc-dialogue-popup__dispute-names {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0;
+  margin-bottom: 12px;
 }
 
 body.pc-mode .pc-dialogue-popup__dispute-name {
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 800;
   color: var(--pc-gold-light);
   line-height: 1.4;
 }
 
-body.pc-mode .pc-dialogue-popup__speaker {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  flex-shrink: 0;
+body.pc-mode .pc-dialogue-popup__dispute-sep {
+  margin: 0 8px;
   font-size: 12px;
-  color: #8c8fa0;
-  font-weight: 600;
+  color: rgba(255,255,255,0.12);
+  font-weight: 400;
 }
 
-body.pc-mode .pc-dialogue-popup__extra {
-  margin-bottom: 12px;
-  font-size: 12px;
-  color: #6a6e80;
-  line-height: 1.5;
-}
-
-body.pc-mode .pc-dialogue-popup__extra span {
-  font-weight: 700;
-  color: #8c8fa0;
-}
-
+/* Body text */
 body.pc-mode .pc-dialogue-popup__body {
   font-size: 15px;
   line-height: 1.7;
   color: #f2efe8;
   white-space: pre-wrap;
+}
+
+/* ━━━ Witness panel ━━━ */
+body.pc-mode .pc-witness-panel {
+  padding: 0 28px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+body.pc-mode .pc-witness-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 16px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.06);
+  background: rgba(255,255,255,0.02);
+  transition: background 0.12s ease;
+}
+body.pc-mode .pc-witness-card:hover {
+  background: rgba(255,255,255,0.05);
+}
+body.pc-mode .pc-witness-card.is-called {
+  border-color: rgba(96,192,144,0.2);
+}
+
+body.pc-mode .pc-witness-card__info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+body.pc-mode .pc-witness-card__name {
+  font-size: 16px;
+  font-weight: 800;
+  color: #e0ddd6;
+}
+
+body.pc-mode .pc-witness-card__meta {
+  font-size: 12px;
+  font-weight: 600;
+  color: #8c8fa0;
+}
+
+body.pc-mode .pc-witness-card__scope {
+  font-size: 11px;
+  color: #6a6e80;
+  line-height: 1.4;
+}
+
+body.pc-mode .pc-witness-card__btn {
+  flex-shrink: 0;
+  padding: 8px 20px;
+  border-radius: 8px;
+  border: 1px solid rgba(217,119,6,0.3);
+  background: rgba(217,119,6,0.1);
+  color: #d9a654;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+body.pc-mode .pc-witness-card__btn:hover {
+  background: rgba(217,119,6,0.2);
+  border-color: rgba(217,119,6,0.5);
+}
+body.pc-mode .pc-witness-card__btn.is-done {
+  border-color: rgba(96,192,144,0.3);
+  background: rgba(96,192,144,0.08);
+  color: #60c090;
 }
 
 /* ═══════════════════════════════════════════════════
@@ -9316,5 +9892,166 @@ body.pc-mode .pc-discovery-card__option strong {
 
 body.pc-mode .pc-discovery-card__option span {
   font-size: 13px; color: #8a8e9e; line-height: 1.5;
+}
+
+/* ━━━ B-6: Special skill bar ━━━ */
+body.pc-mode .pc-special-bar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  padding: 0 24px 4px;
+}
+
+body.pc-mode .pc-special-bar__summary {
+  padding: 3px 14px;
+  border-radius: 6px;
+  border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(14,14,22,0.7);
+  color: #a09d96;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+}
+body.pc-mode .pc-special-bar__summary:hover {
+  background: rgba(217,119,6,0.15);
+  color: #d9a654;
+  border-color: rgba(217,119,6,0.3);
+}
+
+body.pc-mode .pc-special-bar__actions {
+  display: flex;
+  gap: 2px;
+}
+
+body.pc-mode .pc-special-bar__action {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 10px;
+  border-radius: 6px;
+  border: 1px solid rgba(255,255,255,0.06);
+  background: rgba(14,14,22,0.5);
+  color: #787c8a;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+}
+body.pc-mode .pc-special-bar__action:hover {
+  background: rgba(255,255,255,0.06);
+  color: #c0bdb6;
+  border-color: rgba(255,255,255,0.12);
+}
+
+/* ━━━ B-7: Advance phase banner ━━━ */
+body.pc-mode .pc-advance-banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 6px 16px;
+  background: linear-gradient(90deg, rgba(217,119,6,0.08) 0%, rgba(217,119,6,0.15) 50%, rgba(217,119,6,0.08) 100%);
+  border-top: 1px solid rgba(217,119,6,0.2);
+  animation: pc-advance-pulse 2s ease-in-out infinite;
+}
+@keyframes pc-advance-pulse {
+  0%, 100% { border-top-color: rgba(217,119,6,0.2); }
+  50% { border-top-color: rgba(217,119,6,0.5); }
+}
+
+body.pc-mode .pc-advance-banner__text {
+  font-size: 12px;
+  font-weight: 600;
+  color: #d9a654;
+}
+
+body.pc-mode .pc-advance-banner__btn {
+  padding: 4px 16px;
+  border-radius: 6px;
+  border: 1px solid rgba(217,119,6,0.4);
+  background: rgba(217,119,6,0.15);
+  color: #d9a654;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+body.pc-mode .pc-advance-banner__btn:hover {
+  background: rgba(217,119,6,0.3);
+  border-color: rgba(217,119,6,0.6);
+}
+
+body.pc-mode .pc-advance-banner__dismiss {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 0;
+  background: transparent;
+  color: #787c8a;
+  cursor: pointer;
+  transform: rotate(45deg);
+  transition: color 0.15s ease;
+}
+body.pc-mode .pc-advance-banner__dismiss:hover {
+  color: #c0bdb6;
+}
+
+/* ━━━ Slot 4: Free question input ━━━ */
+body.pc-mode .pc-free-question-form {
+  display: flex;
+  gap: 6px;
+  padding: 4px 0;
+}
+
+body.pc-mode .pc-free-question-input {
+  flex: 1;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.1);
+  background: rgba(14,14,22,0.6);
+  color: #e0ddd6;
+  font-size: 13px;
+  font-weight: 500;
+  outline: none;
+  transition: border-color 0.15s ease;
+}
+body.pc-mode .pc-free-question-input:focus {
+  border-color: rgba(217,119,6,0.4);
+}
+body.pc-mode .pc-free-question-input::placeholder {
+  color: #555;
+}
+
+body.pc-mode .pc-free-question-submit {
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: 1px solid rgba(217,119,6,0.3);
+  background: rgba(217,119,6,0.12);
+  color: #d9a654;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.15s ease;
+}
+body.pc-mode .pc-free-question-submit:hover {
+  background: rgba(217,119,6,0.25);
+  border-color: rgba(217,119,6,0.5);
+}
+
+/* Evidence choice icon in overlay */
+body.pc-mode .pc-question-choice__dispute-icon {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  margin-right: 4px;
+  opacity: 0.7;
 }
 

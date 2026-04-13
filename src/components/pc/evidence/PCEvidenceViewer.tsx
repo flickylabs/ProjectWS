@@ -27,8 +27,13 @@ export default function PCEvidenceViewer() {
   const evidenceStates = useStore((s) => s.evidenceStates)
 
   const close = useCallback(() => {
+    const closingId = pendingEvidenceView
     setPendingEvidenceView(null)
-  }, [setPendingEvidenceView])
+    // 증거 팝업 복귀를 위한 이벤트
+    if (closingId) {
+      window.dispatchEvent(new CustomEvent('pc:evidence-viewer-closed', { detail: { evidenceId: closingId } }))
+    }
+  }, [pendingEvidenceView, setPendingEvidenceView])
 
   useEffect(() => {
     if (!pendingEvidenceView) return

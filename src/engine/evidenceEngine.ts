@@ -67,12 +67,13 @@ export function checkUnlocks(
     })
     if (!allRequirementsMet) continue
 
-    // lieState 조건: 아무 쟁점이든 최대 state가 필요 상태 이상이면 해금
+    // lieState 조건: proves[]에 연결된 쟁점 중 최대 state가 필요 상태 이상이면 해금
     if (e.requiredLieState && lieStates) {
       const reqRank = LIE_STATE_RANK[e.requiredLieState] ?? 0
-      const allRanks = Object.values(lieStates).map(s => LIE_STATE_RANK[s as string] ?? 0)
-      const maxGlobalRank = allRanks.length > 0 ? Math.max(...allRanks) : 0
-      if (maxGlobalRank < reqRank) continue
+      const relevantIds = e.proves.length > 0 ? e.proves : Object.keys(lieStates)
+      const relevantRanks = relevantIds.map(id => LIE_STATE_RANK[lieStates[id] as string] ?? 0)
+      const maxRelevantRank = relevantRanks.length > 0 ? Math.max(...relevantRanks) : 0
+      if (maxRelevantRank < reqRank) continue
     }
 
     updated[e.id] = { ...state, unlocked: true }

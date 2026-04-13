@@ -151,6 +151,15 @@ export const createDiscoverySlice: StateCreator<DiscoverySlice, [], [], Discover
   emergeDispute: (disputeId, via, turn, description) => {
     // 숨겨진 쟁점 발현 시 보너스 턴 부여 (동기 호출)
     notifyDisputeEmergence()
+    // 타임라인 이벤트
+    const store = get() as any
+    store.pushGameEvent?.({
+      id: (store.gameEventLog?.length ?? 0) + 1,
+      turn,
+      type: 'discovery',
+      message: `🔍 새로운 쟁점 발견: ${description}`,
+      timestamp: Date.now(),
+    })
     set((prev) => {
       const d = { ...prev.discovery }
       const vis = { ...d.disputeVisibility }

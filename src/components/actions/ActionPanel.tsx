@@ -5,6 +5,7 @@ import { useGameStore, useStore } from '../../store/useGameStore'
 import { useActionDispatch, isLLMMode, setNextConfidential, setNextEvasionReading, setSkipNextJudgeQuestion, setDossierQuestionOverride } from '../../hooks/useActionDispatch'
 import { processFreeQuestion } from '../../engine/llmFreeQuestion'
 import { analyzeTestimony } from '../../engine/llmTestimonyAnalysis'
+import { v4Effects } from '../../engine/presentationEngine'
 // 증인 소환은 EvidencePresenter 내부로 이동
 import QuestionSelector from './QuestionSelector'
 import type { QuestionToggles } from './QuestionSelector'
@@ -177,6 +178,7 @@ export default function ActionPanel() {
   if (dossierUnlockResult.newlyUnlocked && dossierCardsExist) {
     dossierUnlockPrevRef.current = true
     showToast(dossierUnlockResult.label, 'success')
+    v4Effects.dossierUnlock(dossierUnlockResult.label)
     // 최초 해금 시 auto-showcase 트리거
     if (!showcaseTriggeredRef.current) {
       showcaseTriggeredRef.current = true
