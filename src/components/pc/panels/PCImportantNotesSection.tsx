@@ -346,7 +346,7 @@ function NoteCard({
       </div>
       {note.contradictionMeta ? <span className="pc-note-card__flash">⚡</span> : null}
       <button className="pc-note-card__pin" onClick={(event) => { event.stopPropagation(); onPin() }} type="button">
-        <PCSvgIcon id="i-pin" size={14} />
+        <PCSvgIcon id="i-pin" size={18} />
       </button>
     </div>
   )

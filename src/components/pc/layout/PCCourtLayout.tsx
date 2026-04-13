@@ -13,7 +13,7 @@ import PCDisputeRibbon from './PCDisputeRibbon'
 import PCGameplayOverlay from './PCGameplayOverlay'
 import PCInteractionPanel, { openPcInteractionPanel } from './PCInteractionPanel'
 import PCRecordSummary from './PCRecordSummary'
-import PhaseTransition from '../../layout/PhaseTransition'
+import { playBgm, stopBgm } from '../../../engine/soundEngine'
 
 interface Props {
   actionPanel?: ReactNode
@@ -67,6 +67,17 @@ export default function PCCourtLayout({ actionPanel, onDialogueTap, isDialoguePh
       const label = PHASE_LABELS[currentPhase]
       const num = getPhaseNumber(currentPhase)
       setPhaseBanner(`Phase ${num} — ${label}`)
+      // BGM 전환
+      const BGM_MAP: Partial<Record<GamePhase, string>> = {
+        [GamePhase.Phase0_CaseIntro]: '/bgm/court.mp3',
+        [GamePhase.Phase1_InitialStatement]: '/bgm/court.mp3',
+        [GamePhase.Phase3_Interrogation]: '/bgm/court.mp3',
+        [GamePhase.Phase6_Mediation]: '/bgm/verdict.mp3',
+        [GamePhase.Phase7_Verdict]: '/bgm/verdict.mp3',
+        [GamePhase.Result]: '/bgm/result.mp3',
+      }
+      const bgm = BGM_MAP[currentPhase]
+      if (bgm) playBgm(bgm)
       const timer = window.setTimeout(() => setPhaseBanner(null), 2800)
       return () => window.clearTimeout(timer)
     }
@@ -291,7 +302,6 @@ export default function PCCourtLayout({ actionPanel, onDialogueTap, isDialoguePh
       <PCEvidenceViewer />
       <PCInteractionPanel />
       <PCGameplayOverlay />
-      <PhaseTransition />
       {recordSummaryOpen ? <PCRecordSummary onClose={() => setRecordSummaryOpen(false)} /> : null}
     </>
   )
