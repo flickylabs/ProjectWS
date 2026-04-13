@@ -317,27 +317,8 @@ export default function PCRightPanel() {
   }, [combinationLabRuntime.analysisPoints, combinationLabRuntime.config?.outputs, store])
 
   const openSummaryPanel = useCallback(() => {
-    openPcInteractionPanel({
-      title: pcSummaryUnlocked ? '\uC694\uC57D \uC2E4\uD589' : '\uC694\uC57D \uC2A4\uD0AC',
-      subtitle: pcSummaryUnlocked ? '\uC99D\uC2DC \uC0AC\uAC74 \uC694\uC57D \uD655\uC778' : '\uC2A4\uD0AC \uD3EC\uC778\uD2B8 3\uAC1C \uD544\uC694',
-      tone: 'gold',
-      variant: 'feature',
-      body: pcSummaryUnlocked
-        ? '\uD604\uC7AC \uC0AC\uAC74\uC758 \uBC1C\uB2EC \uC7C1\uC810, \uC5F4\uB9B0 \uC99D\uAC70, \uC9C4\uD589 \uC0C1\uD0DC\uB97C \uD55C \uBC88\uC5D0 \uC815\uB9AC\uD574\uC11C \uBCF4\uC5EC\uC90D\uB2C8\uB2E4.'
-        : [
-            '\uC694\uC57D \uC2A4\uD0AC\uC744 \uD574\uAE08\uD558\uBA74 \uC774\uD6C4\uC5D0\uB294 \uD604\uC7AC \uC0AC\uAC74\uC758 \uC9C4\uD589 \uD750\uB984\uC744 \uD55C \uBC88\uC5D0 \uC815\uB9AC\uD574 \uBCFC \uC218 \uC788\uC2B5\uB2C8\uB2E4.',
-            '',
-            `\uBCF4\uC720 \uC2A4\uD0AC \uD3EC\uC778\uD2B8: ${globalSkillPoints}`,
-            '\uC0AC\uC6A9 \uBE44\uC6A9: 3',
-          ].join('\n'),
-      actions: [
-        {
-          kind: pcSummaryUnlocked ? 'open_summary' : 'unlock_summary',
-          label: pcSummaryUnlocked ? '기록 정리' : '요약 해금',
-        },
-      ],
-    })
-  }, [globalSkillPoints, pcSummaryUnlocked])
+    window.dispatchEvent(new Event('pc:open-record-summary'))
+  }, [])
 
   return (
     <div className="pc-play-right">
@@ -466,18 +447,7 @@ export default function PCRightPanel() {
         <div className="pc-skill-card pc-summary-card pc-right-card">
           <div className="pc-skill-card__eyebrow">{'요약'}</div>
           <button className="pc-summary-button" onClick={openSummaryPanel} type="button">
-            <span className="pc-summary-button__left">
-              {!pcSummaryUnlocked ? <PCSvgIcon id="i-lock" size={16} /> : null}
-            </span>
             <span className="pc-summary-button__text">{'기록 정리'}</span>
-            <span className="pc-summary-button__right">
-              {pcSummaryUnlocked ? null : (
-                <>
-                  <PCSvgIcon id="i-bolt" size={16} />
-                  <b>x3</b>
-                </>
-              )}
-            </span>
           </button>
         </div>
       </section>
