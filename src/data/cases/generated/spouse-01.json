@@ -639,7 +639,7 @@
             "subtotal": "29,000",
             "tax": "0",
             "total": "29,000",
-            "paymentMethod": "현금",
+            "paymentMethod": "신한카드 (일시불) ****-3892",
             "suspicious": true
           },
           {
@@ -719,7 +719,7 @@
             "subtotal": "8,000",
             "tax": "727",
             "total": "8,000",
-            "paymentMethod": "현금",
+            "paymentMethod": "신한카드 (일시불) ****-3892",
             "suspicious": true
           }
         ]
@@ -914,7 +914,7 @@
             "lat": "37.4962",
             "lng": "126.9461",
             "speed": "0 km/h",
-            "location": "★ 봉천동 오피스텔 302호 앞 주차",
+            "location": "★ 봉천동 엔젤오피스텔 앞 (주차)",
             "suspicious": true
           },
           {
@@ -970,7 +970,7 @@
             "lat": "37.4962",
             "lng": "126.9461",
             "speed": "0 km/h",
-            "location": "★ 봉천동 오피스텔 302호 앞 주차",
+            "location": "★ 봉천동 엔젤오피스텔 앞 (주차)",
             "suspicious": true
           },
           {
@@ -994,7 +994,7 @@
             "lat": "37.4962",
             "lng": "126.9461",
             "speed": "0 km/h",
-            "location": "★ 봉천동 오피스텔 302호 앞 주차",
+            "location": "★ 봉천동 엔젤오피스텔 앞 (주차)",
             "suspicious": true
           },
           {
@@ -1010,7 +1010,7 @@
             "lat": "37.4962",
             "lng": "126.9461",
             "speed": "0 km/h",
-            "location": "★ 봉천동 오피스텔 302호 앞 주차",
+            "location": "★ 봉천동 엔젤오피스텔 앞 (주차)",
             "suspicious": true
           }
         ]
