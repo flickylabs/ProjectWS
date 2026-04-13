@@ -567,6 +567,88 @@
         "stageLabel": "초기 공개",
         "sourceNote": "institutional / original",
         "redactions": []
+      },
+      "viewerData": {
+        "meta": {
+          "name": "60:40 유서 사본",
+          "type": "contract",
+          "viewerType": "contract",
+          "trustLevel": "high",
+          "trustLabel": "높음",
+          "source": "org",
+          "sourceLabel": "기관 (공증)",
+          "legality": "ok",
+          "legalLabel": "적법",
+          "stage": 1,
+          "stageLabel": "초기 공개"
+        },
+        "contract": {
+          "title": "유   언   장",
+          "subtitle": "공증사무소 제2026-0183호 — 2025년 11월 5일",
+          "rows": [
+            {
+              "date": "유언자",
+              "content": "윤○○ (모친, 1948년생)",
+              "amount": "",
+              "missing": false
+            },
+            {
+              "date": "상속인 1",
+              "content": "윤정후 (차남) — 전체 재산의 60%",
+              "amount": "60%",
+              "missing": false
+            },
+            {
+              "date": "상속인 2",
+              "content": "윤태성 (장남) — 전체 재산의 40%",
+              "amount": "40%",
+              "missing": false
+            },
+            {
+              "date": "",
+              "content": "",
+              "amount": "",
+              "missing": false
+            },
+            {
+              "date": "부동산",
+              "content": "마포구 ○○로 24 아파트 (시가 4억 추정)",
+              "amount": "4억",
+              "missing": false
+            },
+            {
+              "date": "예금",
+              "content": "○○은행 정기예금 + 보통예금",
+              "amount": "1.2억",
+              "missing": false
+            },
+            {
+              "date": "기타",
+              "content": "귀금속류 및 동산",
+              "amount": "미산정",
+              "missing": false
+            },
+            {
+              "date": "",
+              "content": "",
+              "amount": "",
+              "missing": false
+            },
+            {
+              "date": "공증",
+              "content": "공증인 배○○ 배석 / 증인 2명 입회",
+              "amount": "",
+              "missing": false
+            },
+            {
+              "date": "비고",
+              "content": "“정후가 나를 마지막까지 보살폈으니 마땅하다”",
+              "amount": "",
+              "missing": false
+            }
+          ],
+          "signature": "유언자: 윤○○ (인) ——— 공증인: 배○○ ——— 증인: 김○○, 박○○"
+        }
       }
     },
     {
@@ -695,6 +777,121 @@
         "stageLabel": "초기 공개",
         "sourceNote": "institutional / original",
         "redactions": []
+      },
+      "viewerData": {
+        "meta": {
+          "name": "요양원 방문기록",
+          "type": "log",
+          "viewerType": "log",
+          "trustLevel": "high",
+          "trustLabel": "높음",
+          "source": "org",
+          "sourceLabel": "기관 (요양원)",
+          "legality": "ok",
+          "legalLabel": "적법",
+          "stage": 1
+        },
+        "log": {
+          "rows": [
+            {
+              "date": "09.05",
+              "type": "in",
+              "typeLabel": "방문",
+              "target": "윤정후",
+              "duration": "2시간 10분",
+              "suspicious": false
+            },
+            {
+              "date": "09.12",
+              "type": "in",
+              "typeLabel": "방문",
+              "target": "윤정후",
+              "duration": "1시간 40분",
+              "suspicious": false
+            },
+            {
+              "date": "09.20",
+              "type": "in",
+              "typeLabel": "방문",
+              "target": "윤태성",
+              "duration": "45분",
+              "suspicious": false
+            },
+            {
+              "date": "10.01",
+              "type": "in",
+              "typeLabel": "방문",
+              "target": "윤정후",
+              "duration": "3시간 20분",
+              "suspicious": true
+            },
+            {
+              "date": "10.08",
+              "type": "in",
+              "typeLabel": "방문",
+              "target": "윤정후",
+              "duration": "2시간",
+              "suspicious": true
+            },
+            {
+              "date": "10.14",
+              "type": "miss",
+              "typeLabel": "변경",
+              "target": "담당 요양보호사 교체 (김○○ → 박○○)",
+              "duration": "—",
+              "suspicious": true
+            },
+            {
+              "date": "10.15",
+              "type": "in",
+              "typeLabel": "방문",
+              "target": "윤정후",
+              "duration": "4시간",
+              "suspicious": true
+            },
+            {
+              "date": "10.18",
+              "type": "in",
+              "typeLabel": "방문",
+              "target": "윤정후",
+              "duration": "2시간 30분",
+              "suspicious": true
+            },
+            {
+              "date": "10.22",
+              "type": "in",
+              "typeLabel": "방문",
+              "target": "윤정후 + 공증인",
+              "duration": "1시간",
+              "suspicious": true
+            },
+            {
+              "date": "10.25",
+              "type": "in",
+              "typeLabel": "방문",
+              "target": "윤정후",
+              "duration": "3시간",
+              "suspicious": true
+            },
+            {
+              "date": "11.02",
+              "type": "in",
+              "typeLabel": "방문",
+              "target": "윤태성",
+              "duration": "30분",
+              "suspicious": false
+            },
+            {
+              "date": "11.05",
+              "type": "in",
+              "typeLabel": "공증",
+              "target": "윤정후 + 공증인 + 증인 2명",
+              "duration": "40분",
+              "suspicious": true
+            }
+          ],
+          "note": "10월 이후 B(윤정후) 방문 급증 (9월 2회 → 10월 6회). 요양보호사 교체(10.14)와 공증(11.05) 사이 3주간 집중 방문. A(윤태성)는 같은 기간 2회뿐."
+        }
       }
     },
     {
@@ -823,6 +1020,31 @@
         "stageLabel": "초기 공개",
         "sourceNote": "self_possessed / partial",
         "redactions": []
+      },
+      "viewerData": {
+        "meta": {
+          "name": "전 요양보호사 증언",
+          "type": "testimony",
+          "viewerType": "testimony",
+          "trustLevel": "mid",
+          "trustLabel": "보통",
+          "source": "third",
+          "sourceLabel": "제3자",
+          "legality": "ok",
+          "legalLabel": "적법",
+          "stage": 1
+        },
+        "testimony": {
+          "witnessName": "김○○",
+          "witnessDesc": "전 담당 요양보호사 (2024.03~2025.10.14 근무)",
+          "quote": "정후 씨가 어머님한테 종이를 자주 읽어드렸어요. 내용은 못 들었지만, 형님 오기 전에는 끔내자고 조심스러워하셨어요. 어머님이 힘들어하시면 그만하자고 하셨고, 어머님이 먼저 말씀하시면 그때 더 여줬어요. 근데 저는 10월에 갑자기 교체됐어요. 이유는 안 들었고요.",
+          "confidence": "mid",
+          "confidenceLabel": "보통",
+          "bias": "neutral",
+          "biasLabel": "중립",
+          "directWitness": true,
+          "relatedRef": "요양보호사 교체 시점 (10.14)  공증 3주 전"
+        }
       }
     },
     {
@@ -955,6 +1177,65 @@
         "stageLabel": "중반 공개",
         "sourceNote": "institutional / original",
         "redactions": []
+      },
+      "viewerData": {
+        "meta": {
+          "name": "공증사무실 스캔본",
+          "type": "log",
+          "viewerType": "log",
+          "trustLevel": "high",
+          "trustLabel": "높음",
+          "source": "org",
+          "sourceLabel": "기관 (공증)",
+          "legality": "ok",
+          "legalLabel": "적법",
+          "stage": 2
+        },
+        "log": {
+          "rows": [
+            {
+              "date": "11.05 10:12",
+              "type": "in",
+              "typeLabel": "스캔 1차",
+              "target": "유언장 — 정후 90% / 태성 10%",
+              "duration": "원본",
+              "suspicious": true
+            },
+            {
+              "date": "11.05 10:38",
+              "type": "out",
+              "typeLabel": "반출",
+              "target": "윤정후 씨가 서류 회수 요청",
+              "duration": "—",
+              "suspicious": true
+            },
+            {
+              "date": "11.05 11:05",
+              "type": "in",
+              "typeLabel": "스캔 2차",
+              "target": "유언장 — 정후 60% / 태성 40%",
+              "duration": "변경본",
+              "suspicious": true
+            },
+            {
+              "date": "11.05 11:10",
+              "type": "in",
+              "typeLabel": "공증",
+              "target": "최종 공증 처리 (변경본 기준)",
+              "duration": "확정",
+              "suspicious": false
+            },
+            {
+              "date": "11.05 11:15",
+              "type": "out",
+              "typeLabel": "교부",
+              "target": "유언장 사본 윤정후 씨에게 전달",
+              "duration": "—",
+              "suspicious": false
+            }
+          ],
+          "note": "같은 날 같은 문서가 두 번 스캔. 1차: 정후 90 / 태성 10. 2차: 정후 60 / 태성 40. 사이 26분간 윤정후가 서류를 가져가 수정 후 다시 제출. 자기 몷을 90에서 60으로 줄인 조작."
+        }
       }
     },
     {
@@ -1087,6 +1368,69 @@
         "stageLabel": "핵심 공개",
         "sourceNote": "self_possessed / original",
         "redactions": []
+      },
+      "viewerData": {
+        "meta": {
+          "name": "원본 유서 (90:10)",
+          "type": "contract",
+          "viewerType": "contract",
+          "trustLevel": "high",
+          "trustLabel": "높음",
+          "source": "b",
+          "sourceLabel": "B측 (서랍 발견)",
+          "legality": "ok",
+          "legalLabel": "적법",
+          "stage": 2
+        },
+        "contract": {
+          "title": "유   언   장  (원본)",
+          "subtitle": "어머니 서랍에서 발견 — 작성일 2025년 10월 28일",
+          "rows": [
+            {
+              "date": "유언자",
+              "content": "윤○○ (모친)",
+              "amount": "",
+              "missing": false
+            },
+            {
+              "date": "상속인 1",
+              "content": "윤정후 (차남) — 전체 재산의 90%",
+              "amount": "90%",
+              "missing": false
+            },
+            {
+              "date": "상속인 2",
+              "content": "윤태성 (장남) — 전체 재산의 10%",
+              "amount": "10%",
+              "missing": false
+            },
+            {
+              "date": "",
+              "content": "",
+              "amount": "",
+              "missing": false
+            },
+            {
+              "date": "비고",
+              "content": "“정후가 20년간 나를 보살편 아이다. 태성이에게는 미안하지만”",
+              "amount": "",
+              "missing": false
+            },
+            {
+              "date": "",
+              "content": "“태성이는 공장일이 바쁘 나를 보러올 여유가 없었으니”",
+              "amount": "",
+              "missing": false
+            },
+            {
+              "date": "",
+              "content": "“그래도 둘 다 내 아들인 것은 변함없다”",
+              "amount": "",
+              "missing": false
+            }
+          ],
+          "signature": "유언자: 윤○○ (자필) ——— 미공증 / 서랍 보관"
+        }
       }
     },
     {
@@ -1219,6 +1563,78 @@
         "stageLabel": "핵심 공개",
         "sourceNote": "institutional / original",
         "redactions": []
+      },
+      "viewerData": {
+        "meta": {
+          "name": "20년 송금 내역",
+          "type": "bank",
+          "viewerType": "bank",
+          "trustLevel": "high",
+          "trustLabel": "높음",
+          "source": "org",
+          "sourceLabel": "기관 (은행)",
+          "legality": "ok",
+          "legalLabel": "적법",
+          "stage": 2
+        },
+        "bank": [
+          {
+            "date": "2005~2024",
+            "desc": "윤정후 → 어머니 통장 (매월 생활비)",
+            "amount": "월 80~150만원",
+            "balance": "총 20년간",
+            "suspicious": false
+          },
+          {
+            "date": "누적액",
+            "desc": "송금 총액 (추정)",
+            "amount": "약 2억 4천만원",
+            "balance": "",
+            "suspicious": true
+          },
+          {
+            "date": "2018.03",
+            "desc": "어머니 통장 → 윤태성 (공장 부도 긴급자금)",
+            "amount": "-8,000만원",
+            "balance": "",
+            "suspicious": true
+          },
+          {
+            "date": "2018.03",
+            "desc": "비고: 윤태성은 \"어머니가 도와준 것\"으로 인식",
+            "amount": "",
+            "balance": "",
+            "suspicious": false
+          },
+          {
+            "date": "2018.02",
+            "desc": "윤정후 → 어머니 통장 (특별 입금)",
+            "amount": "+8,500만원",
+            "balance": "",
+            "suspicious": true
+          },
+          {
+            "date": "비고",
+            "desc": "특별 입금(8,500) → 태성 긴급자금(8,000) 시점 일치",
+            "amount": "",
+            "balance": "",
+            "suspicious": true
+          },
+          {
+            "date": "2019.11",
+            "desc": "어머니 통장 → 윤태성 (공장 추가 운영자금)",
+            "amount": "-3,000만원",
+            "balance": "",
+            "suspicious": true
+          },
+          {
+            "date": "2019.10",
+            "desc": "윤정후 → 어머니 통장 (특별 입금)",
+            "amount": "+3,200만원",
+            "balance": "",
+            "suspicious": true
+          }
+        ]
       }
     },
     {
@@ -1355,6 +1771,83 @@
           "아버지 실명 비공개",
           "출생 비밀 관련 구체적 경위 봉인"
         ]
+      },
+      "viewerData": {
+        "meta": {
+          "name": "어머니 일기장",
+          "type": "device",
+          "viewerType": "device",
+          "trustLevel": "mid",
+          "trustLabel": "보통",
+          "source": "b",
+          "sourceLabel": "B측 (발견)",
+          "legality": "ok",
+          "legalLabel": "적법",
+          "stage": 3
+        },
+        "device": {
+          "ownerName": "어머니 (윤○○)",
+          "sections": [
+            {
+              "title": "2024년 8월 12일 일기",
+              "id": "entry1",
+              "items": [
+                {
+                  "text": "태성이도 내 배로 낳았지만 네 아버지 피는 아니다.",
+                  "suspicious": true
+                },
+                {
+                  "text": "그 사람이 떠나고 나서 태성이를 혼자 키웠다.",
+                  "suspicious": false
+                },
+                {
+                  "text": "정후는 아버지와 나 사이의 아들이고, 태성이는...",
+                  "suspicious": true
+                },
+                {
+                  "text": "이 사실을 태성이가 알면 살이 무너질까 봐 평생 숨겨왔다.",
+                  "suspicious": true
+                }
+              ]
+            },
+            {
+              "title": "2025년 2월 3일 일기",
+              "id": "entry2",
+              "items": [
+                {
+                  "text": "정후가 오늘 일기장을 봄 것 같다. 표정이 달라졌다.",
+                  "suspicious": true
+                },
+                {
+                  "text": "그 애가 알고도 형 지켜주겠다고 했다.",
+                  "suspicious": true
+                },
+                {
+                  "text": "고마운데 미안하다. 내가 만든 짐을 어린 것이 졌어지고 있다.",
+                  "suspicious": false
+                }
+              ]
+            },
+            {
+              "title": "2025년 10월 20일 일기 (유서 작성 직전)",
+              "id": "entry3",
+              "items": [
+                {
+                  "text": "90대 10으로 남기면 태성이 끝까지 파고들 것 같아 무섭다.",
+                  "suspicious": true
+                },
+                {
+                  "text": "그러면 진실이 드러날지도 모르고... 그게 제일 무섭다.",
+                  "suspicious": true
+                },
+                {
+                  "text": "정후에게 미안하지만 줄여서라도 둘 다 지키고 싶다.",
+                  "suspicious": false
+                }
+              ]
+            }
+          ]
+        }
       }
     }
   ],

@@ -582,18 +582,119 @@
         "log": {
           "rows": [
             {
-              "date": "기록",
+              "date": "03.01 19:22",
               "type": "out",
               "typeLabel": "발신",
-              "target": "예비신랑",
-              "duration": "-",
+              "target": "김태윤 (예비신랑)",
+              "duration": "0분 12초 (끊김)",
+              "suspicious": true
+            },
+            {
+              "date": "03.01 19:35",
+              "type": "out",
+              "typeLabel": "문자",
+              "target": "김태윤",
+              "duration": "\"태윤 씨, 수민입니다. 잠깐만 통화할 수 있을까요\"",
+              "suspicious": false
+            },
+            {
+              "date": "03.02 10:15",
+              "type": "out",
+              "typeLabel": "문자",
+              "target": "김태윤",
+              "duration": "\"중요한 얘기가 있어요. 다은이 아버지 건으로요\"",
+              "suspicious": true
+            },
+            {
+              "date": "03.02 18:40",
+              "type": "out",
+              "typeLabel": "발신",
+              "target": "김태윤",
+              "duration": "부재중",
+              "suspicious": false
+            },
+            {
+              "date": "03.03 09:08",
+              "type": "out",
+              "typeLabel": "문자",
+              "target": "김태윤",
+              "duration": "\"전화 좀 받아주세요. 결혼 전에 꼭 아셔야 할 게 있어요\"",
+              "suspicious": true
+            },
+            {
+              "date": "03.04 12:30",
+              "type": "out",
+              "typeLabel": "발신",
+              "target": "김태윤",
+              "duration": "0분 08초 (끊김)",
+              "suspicious": false
+            },
+            {
+              "date": "03.04 12:45",
+              "type": "out",
+              "typeLabel": "문자",
+              "target": "김태윤",
+              "duration": "\"피하지 마세요. 다은이한테 못 하는 말이라 이러는 거예요\"",
+              "suspicious": true
+            },
+            {
+              "date": "03.05 21:10",
+              "type": "out",
+              "typeLabel": "문자",
+              "target": "김태윤",
+              "duration": "\"한 번만 만나서 얘기하면 다 이해할 거예요\"",
+              "suspicious": true
+            },
+            {
+              "date": "03.06 08:50",
+              "type": "out",
+              "typeLabel": "발신",
+              "target": "김태윤",
+              "duration": "1분 42초",
+              "suspicious": true
+            },
+            {
+              "date": "03.07 14:20",
+              "type": "out",
+              "typeLabel": "문자",
+              "target": "김태윤",
+              "duration": "\"저도 이러고 싶지 않아요. 제발 한 번만\"",
+              "suspicious": false
+            },
+            {
+              "date": "03.08 17:30",
+              "type": "out",
+              "typeLabel": "발신",
+              "target": "김태윤",
+              "duration": "부재중",
+              "suspicious": false
+            },
+            {
+              "date": "03.08 17:45",
+              "type": "out",
+              "typeLabel": "문자",
+              "target": "김태윤",
+              "duration": "\"마지막으로 부탁드려요. 예전에 같은 일이 있었거든요\"",
+              "suspicious": true
+            },
+            {
+              "date": "03.09 11:00",
+              "type": "out",
+              "typeLabel": "발신",
+              "target": "김태윤",
+              "duration": "부재중 (차단 추정)",
+              "suspicious": true
+            },
+            {
+              "date": "03.09 11:15",
+              "type": "out",
+              "typeLabel": "문자",
+              "target": "김태윤",
+              "duration": "\"차단하셨나 봐요. 다은이 때문에 그런 거 이해해요. 미안해요\"",
               "suspicious": false
             }
           ],
-          "note": "9일간 전화 6번, 문자 11번의 연락 기록이다. 대부분 미응답이거나 짧게 끊겼다."
-        },
-        "media": {
-          "imageUrl": "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%221080%22%20height%3D%22720%22%20viewBox%3D%220%200%201080%20720%22%3E%3Crect%20width%3D%221080%22%20height%3D%22720%22%20fill%3D%22%23f3f4f6%22%2F%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22central%22%20fill%3D%22%236b7280%22%20font-size%3D%2224%22%3Ee-1%20%EC%97%B0%EB%9D%BD%20%EA%B8%B0%EB%A1%9D%3C%2Ftext%3E%3C%2Fsvg%3E"
+          "note": "9일간 발신 전화 6회 (연결 1회), 문자 11회. 답장 0건. 최종일 차단 추정. 문자 내용상 “다은이 아버지” “예전에 같은 일” 등 경고성 언급이 반복됨."
         }
       }
     },
@@ -741,22 +842,64 @@
           "redactions": []
         },
         "chat": {
-          "header": "공통 친구 단톡방",
+          "header": "카카오톡 단체채팅 \"우리반 여자들\" — 2026.03.06",
           "messages": [
             {
               "side": "right",
               "sender": "송다은",
-              "text": "수민이가 또 내 남자한테 연락한다"
+              "text": "얘들아 나 진짜 미치겠어"
+            },
+            {
+              "side": "right",
+              "sender": "송다은",
+              "text": "수민이가 또 내 남자한테 연락하고 있어"
             },
             {
               "side": "left",
-              "sender": "김세라",
-              "text": "또야? 그 애 원래 그렇잖아"
+              "sender": "유진",
+              "text": "뭐?? 진짜??"
+            },
+            {
+              "side": "right",
+              "sender": "송다은",
+              "text": "태윤이 전화기 보니까 수민이가 전화 문자 엄청 했더라고"
+            },
+            {
+              "side": "left",
+              "sender": "하은",
+              "text": "아 걔 진짜 또?"
+            },
+            {
+              "side": "right",
+              "sender": "송다은",
+              "text": "예전에 내 소개팅남한테도 그랬잖아. 그때도 정리 안 됐었는데"
+            },
+            {
+              "side": "left",
+              "sender": "유진",
+              "text": "수민이는 왜 맨날 남의 남자한테 집착하는 건지"
+            },
+            {
+              "side": "left",
+              "sender": "소연",
+              "text": "차단하게 해. 결혼 준비하는데 방해만 되지"
+            },
+            {
+              "side": "right",
+              "sender": "송다은",
+              "text": "벌써 차단함. 근데 진짜 열받아서 여기 쓴다"
+            },
+            {
+              "side": "left",
+              "sender": "하은",
+              "text": "그냥 걔 완전 손절해. 예전 일이랑 똑같은 패턴이잖아"
+            },
+            {
+              "side": "left",
+              "sender": "소연",
+              "text": "맞아 걔는 진짜 변하질 않네"
             }
           ]
-        },
-        "media": {
-          "imageUrl": "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%221080%22%20height%3D%22720%22%20viewBox%3D%220%200%201080%20720%22%3E%3Crect%20width%3D%221080%22%20height%3D%22720%22%20fill%3D%22%23f3f4f6%22%2F%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22central%22%20fill%3D%22%236b7280%22%20font-size%3D%2224%22%3Ee-2%20%EB%8B%A8%ED%86%A1%EB%B0%A9%20%EC%BA%A1%EC%B2%98%3C%2Ftext%3E%3C%2Fsvg%3E"
         }
       }
     },
@@ -904,8 +1047,23 @@
           "redactions": []
         },
         "chat": {
-          "header": "과거 손절 직전 카카오톡",
+          "header": "송다은 ↔ 최수민 1:1 카톡 — 2024.08 (과거 기록)",
           "messages": [
+            {
+              "side": "right",
+              "sender": "송다은",
+              "text": "수민아, 아빠가 너한테 돈 얘기를 했다는 게 무슨 뜻이야?"
+            },
+            {
+              "side": "left",
+              "sender": "최수민",
+              "text": "..."
+            },
+            {
+              "side": "right",
+              "sender": "송다은",
+              "text": "뭘 숨기는 건데? 똑바로 말해"
+            },
             {
               "side": "left",
               "sender": "최수민",
@@ -914,12 +1072,42 @@
             {
               "side": "right",
               "sender": "송다은",
+              "text": "뭘 정리해? 아빠가 뭘 했는데?"
+            },
+            {
+              "side": "left",
+              "sender": "최수민",
+              "text": "그냥... 나한테 급하다고 빌린 거야"
+            },
+            {
+              "side": "right",
+              "sender": "송다은",
               "text": "넌 돈만 엮이면 사람이 달라진다"
+            },
+            {
+              "side": "left",
+              "sender": "최수민",
+              "text": "그게 아니라..."
+            },
+            {
+              "side": "right",
+              "sender": "송다은",
+              "text": "됐어. 더 이상 무슨 말을 해도 믿기 힘들어"
+            },
+            {
+              "type": "read",
+              "text": "최수민 — 읽음"
+            },
+            {
+              "side": "left",
+              "sender": "최수민",
+              "text": "미안해 다은아. 진짜 너한테 말하고 싶었는데..."
+            },
+            {
+              "type": "read",
+              "text": "송다은 — 읽음 (답장 없음)"
             }
           ]
-        },
-        "media": {
-          "imageUrl": "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%221080%22%20height%3D%22720%22%20viewBox%3D%220%200%201080%20720%22%3E%3Crect%20width%3D%221080%22%20height%3D%22720%22%20fill%3D%22%23f3f4f6%22%2F%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22central%22%20fill%3D%22%236b7280%22%20font-size%3D%2224%22%3Ee-3%20%EA%B3%BC%EA%B1%B0%20%EC%B9%B4%ED%86%A1%3C%2Ftext%3E%3C%2Fsvg%3E"
         }
       }
     },
@@ -1070,22 +1258,53 @@
           "redactions": []
         },
         "chat": {
-          "header": "예비신랑 ↔ B 카카오톡",
+          "header": "김태윤(예비신랑) ↔ 최수민 카톡 — 2026.02",
           "messages": [
             {
               "side": "left",
-              "sender": "예비신랑",
-              "text": "다은이 몰래 커피 한 번 보자"
+              "sender": "김태윤",
+              "text": "수민 씨 인스타 잘 봤어요. 필라테스 강사시구나"
             },
             {
               "side": "right",
               "sender": "최수민",
-              "text": "친구 남자친구니까 이러지 마"
+              "text": "네 감사합니다. 다은이 친구분이시죠?"
+            },
+            {
+              "side": "left",
+              "sender": "김태윤",
+              "text": "다은이 몰래 커피 한 번 보자. 물어볼 게 있어서"
+            },
+            {
+              "side": "right",
+              "sender": "최수민",
+              "text": "무슨 얘긴지 여기서 하시면 될 것 같은데요"
+            },
+            {
+              "side": "left",
+              "sender": "김태윤",
+              "text": "너 같은 스타일이 원래 내 이상형이야 ㅋㅋ 농담이고"
+            },
+            {
+              "side": "right",
+              "sender": "최수민",
+              "text": "태윤 씨, 다은이 예비신랑이잖아요. 이러지 마세요"
+            },
+            {
+              "side": "left",
+              "sender": "김태윤",
+              "text": "너무 딱딱하네. 그냥 가볍게 얘기하자고"
+            },
+            {
+              "side": "right",
+              "sender": "최수민",
+              "text": "친구 남자친구한테 이런 말 듣고 싶지 않아요. 여기까지 할게요"
+            },
+            {
+              "type": "read",
+              "text": "김태윤 — 읽음 (답장 없음)"
             }
           ]
-        },
-        "media": {
-          "imageUrl": "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%221080%22%20height%3D%22720%22%20viewBox%3D%220%200%201080%20720%22%3E%3Crect%20width%3D%221080%22%20height%3D%22720%22%20fill%3D%22%23f3f4f6%22%2F%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22central%22%20fill%3D%22%236b7280%22%20font-size%3D%2224%22%3Ee-4%20%EC%98%88%EB%B9%84%EC%8B%A0%EB%9E%91%20%EB%A9%94%EC%8B%9C%EC%A7%80%3C%2Ftext%3E%3C%2Fsvg%3E"
         }
       }
     },
@@ -1236,22 +1455,58 @@
           "redactions": []
         },
         "chat": {
-          "header": "A 아버지 ↔ 예비신랑 문자",
+          "header": "송 아버지 ↔ 김태윤(예비신랑) 문자 — 2026.02~03",
           "messages": [
             {
               "side": "left",
-              "sender": "A 아버지",
-              "text": "결혼 전에 잠깐만 도와주면 금방 돌려준다"
+              "sender": "송 아버지",
+              "text": "태윤아, 결혼 준비 잘 되고 있지?"
+            },
+            {
+              "side": "right",
+              "sender": "김태윤",
+              "text": "네 아버님, 잘 진행 중입니다"
             },
             {
               "side": "left",
-              "sender": "A 아버지",
-              "text": "사위 될 사람이면 이 정도는 믿어야지"
+              "sender": "송 아버지",
+              "text": "사위 될 사람한테 부탁하기 좀 그렇지만"
+            },
+            {
+              "side": "left",
+              "sender": "송 아버지",
+              "text": "결혼 전에 잠깐만 도와주면 금방 돌려준다"
+            },
+            {
+              "side": "right",
+              "sender": "김태윤",
+              "text": "네? 무슨 말씀이신지..."
+            },
+            {
+              "side": "left",
+              "sender": "송 아버지",
+              "text": "사위 될 사람이면 이 정도는 믿어야지. 3천만 원만 잠깐"
+            },
+            {
+              "side": "left",
+              "sender": "송 아버지",
+              "text": "2달이면 갚을 수 있어. 사업 자금이 급해서 그래"
+            },
+            {
+              "side": "right",
+              "sender": "김태윤",
+              "text": "좀 생각해볼게요..."
+            },
+            {
+              "side": "left",
+              "sender": "송 아버지",
+              "text": "다은이한테는 아직 말하지 마. 걱정시키기 싫으니까"
+            },
+            {
+              "type": "read",
+              "text": "김태윤 — 읽음"
             }
           ]
-        },
-        "media": {
-          "imageUrl": "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%221080%22%20height%3D%22720%22%20viewBox%3D%220%200%201080%20720%22%3E%3Crect%20width%3D%221080%22%20height%3D%22720%22%20fill%3D%22%23f3f4f6%22%2F%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22central%22%20fill%3D%22%236b7280%22%20font-size%3D%2224%22%3Ee-5%20A%20%EC%95%84%EB%B2%84%EC%A7%80%20%EB%AC%B8%EC%9E%90%3C%2Ftext%3E%3C%2Fsvg%3E"
         }
       }
     },
@@ -1403,16 +1658,55 @@
         },
         "bank": [
           {
-            "date": "기록",
-            "desc": "B→A 아버지 이체",
-            "amount": "-",
-            "balance": "-",
+            "date": "2024.05.12",
+            "desc": "최수민 → 송○○ (송 아버지) 이체",
+            "amount": "-500만원",
+            "balance": "320만",
+            "suspicious": true
+          },
+          {
+            "date": "2024.05.12",
+            "desc": "비고: \"급한 투자금이니 한 달만 쓰고 갑겠다\"",
+            "amount": "",
+            "balance": "",
+            "suspicious": false
+          },
+          {
+            "date": "2024.06.15",
+            "desc": "최수민 → 송○○ 이체 (2차)",
+            "amount": "-300만원",
+            "balance": "20만",
+            "suspicious": true
+          },
+          {
+            "date": "2024.06.15",
+            "desc": "비고: \"조금만 더 부탁한다. 다음 달에 함께 돌려줄게\"",
+            "amount": "",
+            "balance": "",
+            "suspicious": false
+          },
+          {
+            "date": "2024.07~12",
+            "desc": "송 아버지 → 최수민 상환 기록",
+            "amount": "없음",
+            "balance": "",
+            "suspicious": true
+          },
+          {
+            "date": "2024.08.20",
+            "desc": "비고: \"조금만 기다려라. 사업이 좋아지면 바로 갑는다\"",
+            "amount": "",
+            "balance": "",
+            "suspicious": false
+          },
+          {
+            "date": "2024.10.05",
+            "desc": "비고: \"수민아 미안하다. 조금만 더. 다은이한테는 말하지 마\"",
+            "amount": "",
+            "balance": "",
             "suspicious": true
           }
-        ],
-        "media": {
-          "imageUrl": "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%221080%22%20height%3D%22720%22%20viewBox%3D%220%200%201080%20720%22%3E%3Crect%20width%3D%221080%22%20height%3D%22720%22%20fill%3D%22%23f3f4f6%22%2F%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22central%22%20fill%3D%22%236b7280%22%20font-size%3D%2224%22%3Ee-6%20%EA%B3%BC%EA%B1%B0%20%EC%86%A1%EA%B8%88%20%EA%B8%B0%EB%A1%9D%3C%2Ftext%3E%3C%2Fsvg%3E"
-        }
+        ]
       }
     },
     {
@@ -1567,26 +1861,55 @@
         "log": {
           "rows": [
             {
-              "date": "과거",
-              "type": "pattern",
-              "typeLabel": "패턴",
-              "target": "B에게 돈 부탁",
-              "duration": "-",
+              "date": "2024.05",
+              "type": "out",
+              "typeLabel": "과거",
+              "target": "송 아버지 → B에게 \"급한 투자금, 한 달만\"",
+              "duration": "500만원",
               "suspicious": true
             },
             {
-              "date": "현재",
-              "type": "pattern",
-              "typeLabel": "패턴",
-              "target": "예비신랑에게 돈 부탁",
-              "duration": "-",
+              "date": "2026.02",
+              "type": "in",
+              "typeLabel": "현재",
+              "target": "송 아버지 → 예비신랑에게 \"사위 될 사람이면 이 정도는\"",
+              "duration": "3,000만원 요청",
+              "suspicious": true
+            },
+            {
+              "date": "2024.06",
+              "type": "out",
+              "typeLabel": "과거",
+              "target": "B 추가 송금 요청받음",
+              "duration": "300만원",
+              "suspicious": false
+            },
+            {
+              "date": "2026.03",
+              "type": "in",
+              "typeLabel": "현재",
+              "target": "예비신랑 \"좀 생각해볼게요\" 답변",
+              "duration": "미정",
+              "suspicious": false
+            },
+            {
+              "date": "2024.08",
+              "type": "miss",
+              "typeLabel": "과거",
+              "target": "B, 송다은에게 말 못 하고 손절당함",
+              "duration": "—",
+              "suspicious": true
+            },
+            {
+              "date": "2026.03",
+              "type": "miss",
+              "typeLabel": "현재",
+              "target": "B, 예비신랑에게 경고 시도 → 집착으로 오해받음",
+              "duration": "—",
               "suspicious": true
             }
           ],
-          "note": "A 아버지의 돈 접근 문구가 과거와 현재 거의 동일하며, B가 사라진 시점이 격친다."
-        },
-        "media": {
-          "imageUrl": "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%221080%22%20height%3D%22720%22%20viewBox%3D%220%200%201080%20720%22%3E%3Crect%20width%3D%221080%22%20height%3D%22720%22%20fill%3D%22%23f3f4f6%22%2F%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22central%22%20fill%3D%22%236b7280%22%20font-size%3D%2224%22%3Ee-7%20%EB%8C%80%EC%A1%B0%ED%91%9C%3C%2Ftext%3E%3C%2Fsvg%3E"
+          "note": "과거와 현재의 패턴이 거의 동일. \"급한 돈, 다은이한테 말하지 마\" → \"사위 될 사람이면, 다은이한테 말하지 마.\" B는 두 번 다 말하지 못하고 악역을 자처했다."
         }
       }
     }

@@ -209,12 +209,22 @@ export default function PCImportantNotesSection() {
     setFavDragOver(false)
     setFavReorderTarget(null)
 
-    const noteJson = event.dataTransfer.getData(NOTE_DRAG_TYPE)
+    // NOTE_DRAG_TYPE 우선, 없으면 HOTBAR_DRAG_TYPE에서 note 추출
+    let noteJson = event.dataTransfer.getData(NOTE_DRAG_TYPE)
+    if (!noteJson) {
+      const hotbarJson = event.dataTransfer.getData(HOTBAR_DRAG_TYPE)
+      if (hotbarJson) {
+        try {
+          const parsed = JSON.parse(hotbarJson)
+          if (parsed.kind === 'note' && parsed.note) noteJson = JSON.stringify(parsed.note)
+        } catch { /* ignore */ }
+      }
+    }
     if (noteJson) {
       try {
         const note = JSON.parse(noteJson) as PcPinnedNote
         // If already a favorite, reorder
-        if (favorites.some((f) => f.id === note.id)) {
+        if (note.id && favorites.some((f) => f.id === note.id)) {
           reorderFavorite(note.id, targetId ?? null)
         } else {
           // Add as new favorite
@@ -226,11 +236,10 @@ export default function PCImportantNotesSection() {
   }, [addFavorite, favorites, reorderFavorite])
 
   const handleFavDragOver = useCallback((event: DragEvent<HTMLDivElement>) => {
-    if (event.dataTransfer.types.includes(NOTE_DRAG_TYPE) || event.dataTransfer.types.includes(HOTBAR_DRAG_TYPE)) {
-      event.preventDefault()
-      event.dataTransfer.dropEffect = 'copy'
-      setFavDragOver(true)
-    }
+    // NOTE_DRAG_TYPE 또는 HOTBAR_DRAG_TYPE 또는 text/plain이 있으면 드롭 허용
+    event.preventDefault()
+    event.dataTransfer.dropEffect = 'copy'
+    setFavDragOver(true)
   }, [])
 
   return (
@@ -253,16 +262,11 @@ export default function PCImportantNotesSection() {
             onDragLeave={() => setFavDragOver(false)}
             onDrop={(e) => handleFavDrop(e)}
           >
-            {favorites.length === 0 ? (
-              <div className="pc-fav-notes__empty">
-                <StarIcon size={20} />
-                <span>중요한 발언을 고정시켜 주세요</span>
-              </div>
-            ) : (
-              <div className="pc-fav-notes__scroll">
-                {favorites.map((note) => (
-                  <FavoriteCard
-                    key={note.id}
+            {/* 즐겨찾기 목록 + 드롭 영역 통합 — 하나의 스크롤 영역 */}
+            <div className="pc-fav-notes__scroll">
+              {favorites.map((note) => (
+                <FavoriteCard
+                  key={note.id}
                     note={note}
                     speakerName={speakerNameMap.get(note.speaker) ?? ''}
                     disputeIndices={note.relatedDisputes.map((id) => disputeIndexMap.get(id)).filter((v): v is number => v != null)}
@@ -279,9 +283,13 @@ export default function PCImportantNotesSection() {
                     }}
                     onDrop={(e) => handleFavDrop(e, note.id)}
                   />
-                ))}
+              ))}
+              {/* 빈 공간 — 드롭 안내 (목록 아래에 항상 표시, 남은 공간 채움) */}
+              <div className="pc-fav-notes__placeholder">
+                <StarIcon size={14} />
+                <span>{favorites.length === 0 ? '발언을 끌어다 놓으세요' : '추가'}</span>
               </div>
-            )}
+            </div>
           </div>
         </div>
       </section>

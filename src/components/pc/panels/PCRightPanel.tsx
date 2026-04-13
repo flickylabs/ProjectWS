@@ -176,7 +176,7 @@ export default function PCRightPanel() {
     const nodeId = detail.evidenceId
       ? (resolveEvidenceNodeId(detail.evidenceId) ?? detail.evidenceId)
       : detail.note
-        ? (resolveNoteNodeId(detail.note) ?? `note:${detail.note.text.slice(0, 20)}`)
+        ? (resolveNoteNodeId(detail.note) ?? detail.note.text.slice(0, 30))
         : null
 
     if (nodeId) {
@@ -497,7 +497,7 @@ function CombinationSlot({
       type="button"
     >
       <span className="pc-combination-slot__label">{label}</span>
-      <span className="pc-combination-slot__text">{node ? node.label : '\uBE44\uC5B4 \uC788\uC74C'}</span>
+      <span className="pc-combination-slot__text">{node ? node.label.replace(/^note:/, '') : '\uBE44\uC5B4 \uC788\uC74C'}</span>
     </button>
   )
 }

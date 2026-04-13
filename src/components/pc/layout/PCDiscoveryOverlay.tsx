@@ -328,14 +328,20 @@ function GameEventPanel() {
         relatedDisputes: [pendingEvent.disputeId],
         turn: turnCount,
       })
-      if (v3Event?.npcReaction) {
-        addDialogue({
-          speaker: pendingEvent.party,
-          text: v3Event.npcReaction,
-          relatedDisputes: [pendingEvent.disputeId],
-          turn: turnCount,
-        })
-      }
+      // NPC 답변 — 스크립트 없으면 lieState 기반 fallback 생성
+      const npcText = v3Event?.npcReaction ?? (() => {
+        const agent = pendingEvent.party === 'a' ? useGameStore.getState().agentA : useGameStore.getState().agentB
+        const lie = agent.lieStateMap[pendingEvent.disputeId]?.currentState ?? 'S0'
+        if (lie >= 'S3') return `...그건... 상황이 복잡했습니다. 제가 처음에 말씀드린 것과 다른 부분이 있었습니다.`
+        if (lie >= 'S2') return `재판관님, 제 기억이 혼란스러웠던 것 같습니다. 다시 정리하겠습니다.`
+        return `그건... 제가 말한 것과 다르지 않습니다. 맥락이 다른 것입니다.`
+      })()
+      addDialogue({
+        speaker: pendingEvent.party,
+        text: npcText,
+        relatedDisputes: [pendingEvent.disputeId],
+        turn: turnCount,
+      })
       addDialogue({
         speaker: 'system',
         text: pendingEvent.severity === 'critical'
@@ -590,6 +596,7 @@ export default function PCDiscoveryOverlay() {
   const pendingInterjectionV2 = useStore((s) => s.pendingInterjectionV2)
   const pendingGameEvent = useStore((s) => s.pendingGameEvent)
   const pendingPerkChoice = useStore((s) => s.pendingPerkChoice)
+  const pendingWitnessChoice = useStore((s) => s.pendingWitnessChoice)
 
   const visibleKind = useMemo(() => {
     if (discovery.pendingSlip) return 'slip'
@@ -599,6 +606,7 @@ export default function PCDiscoveryOverlay() {
     if (pendingInterjectionV2) return 'interjection_v2'
     if (pendingGameEvent) return 'game_event'
     if (pendingPerkChoice) return 'perk'
+    if (pendingWitnessChoice) return 'witness_choice'
     return null
   }, [
     discovery.pendingConflict,
@@ -608,6 +616,7 @@ export default function PCDiscoveryOverlay() {
     pendingGameEvent,
     pendingInterjectionV2,
     pendingPerkChoice,
+    pendingWitnessChoice,
   ])
 
   if (visibleKind === 'slip') return <EmotionalSlipPanel />
@@ -617,6 +626,59 @@ export default function PCDiscoveryOverlay() {
   if (visibleKind === 'interjection_v2') return <PendingInterjectionPanel />
   if (visibleKind === 'game_event') return <GameEventPanel />
   if (visibleKind === 'perk') return <PerkChoicePanel />
+  if (visibleKind === 'witness_choice') return <WitnessChoicePanel />
 
   return null
+}
+
+/** 증인 다층 증언 주제 선택 패널 */
+function WitnessChoicePanel() {
+  const pending = useStore((s) => s.pendingWitnessChoice)
+  if (!pending) return null
+
+  return (
+    <OverlayShell
+      title={pending.isResummon ? '추가 질문' : '증인 심문'}
+      subtitle={pending.witnessName}
+      tone="green"
+    >
+      <div className="pc-discovery-card__body">
+        <p style={{ fontSize: 13, color: '#8c8fa0', marginBottom: 12 }}>
+          {pending.isResummon
+            ? `${pending.witnessName}에게 추가로 무엇을 물어보시겠습니까?`
+            : `${pending.witnessName}에게 어떤 질문을 하시겠습니까?`}
+        </p>
+      </div>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 8, padding: '0 16px 16px' }}>
+        {pending.slots.map((slot) => (
+          <button
+            key={slot.id}
+            onClick={() => {
+              const { applyWitnessSlot } = require('../../../hooks/useActionDispatch')
+              applyWitnessSlot(slot.id)
+            }}
+            style={{
+              display: 'block', width: '100%', textAlign: 'left',
+              padding: '14px 18px', borderRadius: 12,
+              border: '1px solid rgba(255,255,255,0.08)',
+              background: 'rgba(255,255,255,0.03)',
+              color: '#e0ddd6', fontSize: 14, fontWeight: 600,
+              cursor: 'pointer', transition: 'all 0.15s ease',
+            }}
+            onMouseEnter={(e) => {
+              (e.currentTarget as HTMLElement).style.borderColor = 'rgba(92,201,122,0.3)'
+              ;(e.currentTarget as HTMLElement).style.background = 'rgba(92,201,122,0.06)'
+            }}
+            onMouseLeave={(e) => {
+              (e.currentTarget as HTMLElement).style.borderColor = 'rgba(255,255,255,0.08)'
+              ;(e.currentTarget as HTMLElement).style.background = 'rgba(255,255,255,0.03)'
+            }}
+            type="button"
+          >
+            {slot.topic}
+          </button>
+        ))}
+      </div>
+    </OverlayShell>
+  )
 }

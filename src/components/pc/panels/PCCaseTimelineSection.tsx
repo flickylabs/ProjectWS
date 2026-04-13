@@ -58,14 +58,14 @@ export default function PCCaseTimelineSection() {
   useEffect(() => {
     const el = scrollRef.current
     if (el) {
-      el.scrollTop = el.scrollHeight
+      el.scrollTop = 0 // 최신이 위이므로 맨 위로
     }
   }, [timelineItems.length])
 
-  const scrollToBottom = useCallback(() => {
+  const scrollToTop = useCallback(() => {
     const el = scrollRef.current
     if (el) {
-      el.scrollTo({ top: el.scrollHeight, behavior: 'smooth' })
+      el.scrollTo({ top: 0, behavior: 'smooth' })
     }
   }, [])
 
@@ -92,11 +92,11 @@ export default function PCCaseTimelineSection() {
         <span className="cnt">{timelineItems.length}</span>
         <button
           className="pc-timeline-top-btn"
-          onClick={scrollToBottom}
+          onClick={scrollToTop}
           title="최근으로 이동"
           type="button"
         >
-          Top ↓
+          최근 ↑
         </button>
       </div>
 
@@ -106,7 +106,8 @@ export default function PCCaseTimelineSection() {
             <div className="pc-timeline__empty">이벤트가 발생하면 여기에 기록됩니다.</div>
           ) : (
             <div className="pc-timeline__track">
-              {timelineItems.map((item, index) => (
+              {/* 최신이 위로 — 역순 표시 */}
+              {[...timelineItems].reverse().map((item, index, arr) => (
                 <button
                   className={`pc-timeline__item is-${item.tone}`}
                   key={item.id}
@@ -117,7 +118,7 @@ export default function PCCaseTimelineSection() {
                   <span className="pc-timeline__rail">
                     {index > 0 ? <span className="pc-timeline__line" /> : null}
                     <span className={`pc-timeline__dot is-${item.tone}`} />
-                    {index < timelineItems.length - 1 ? <span className="pc-timeline__line" /> : null}
+                    {index < arr.length - 1 ? <span className="pc-timeline__line" /> : null}
                   </span>
                   <span className="pc-timeline__content">
                     <span className="pc-timeline__turn">T{item.turn}</span>

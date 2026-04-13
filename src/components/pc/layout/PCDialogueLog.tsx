@@ -4,6 +4,9 @@ import type { DialogueEntry as DialogueEntryType, EmotionalPhase } from '../../.
 import PCSvgIcon from '../icons/PCSvgIcon'
 import { getPcFaceSymbolId } from '../icons/pcIconUtils'
 import { openPcInteractionPanel } from './PCInteractionPanel'
+import { HOTBAR_DRAG_TYPE } from '../hotbar/pcHotbarConfig'
+
+const CHAT_NOTE_DRAG_TYPE = 'application/x-pc-note'
 
 const EMOTION_LABELS: Partial<Record<EmotionalPhase, string>> = {
   confident: '자신감',
@@ -266,6 +269,7 @@ function MessageBubble({ entry, animate }: { entry: DialogueEntryType; animate: 
 
 export default function PCDialogueLog() {
   const dialogueLog = useStore((s) => s.dialogueLog)
+  const caseData = useStore((s) => s.caseData)
   const isLLMLoading = useStore((s) => s.isLLMLoading)
   const llmTarget = useStore((s) => s.llmLoadingTarget)
   const bottomRef = useRef<HTMLDivElement>(null)
@@ -286,11 +290,38 @@ export default function PCDialogueLog() {
       ) : null}
 
       <div className="pc-log-list">
-        {visibleEntries.map((entry, index) => (
-          <div data-dialogue-id={entry.id} key={entry.id}>
-            <MessageBubble entry={entry} animate={index === visibleEntries.length - 1} />
-          </div>
-        ))}
+        {visibleEntries.map((entry, index) => {
+          const isDraggable = entry.speaker !== 'system'
+          return (
+            <div
+              data-dialogue-id={entry.id}
+              key={entry.id}
+              draggable={isDraggable}
+              onDragStart={isDraggable ? (e) => {
+                const notePayload = {
+                  dialogueId: entry.id,
+                  speaker: entry.speaker,
+                  speakerName: entry.speaker === 'a' ? (caseData?.duo.partyA.name ?? 'A')
+                    : entry.speaker === 'b' ? (caseData?.duo.partyB.name ?? 'B')
+                    : entry.speaker === 'judge' ? '재판관'
+                    : entry.witnessName ?? '증인',
+                  text: entry.text,
+                  turn: entry.turn,
+                  relatedDisputes: entry.relatedDisputes,
+                }
+                // 발언노트 즐겨찾기용
+                e.dataTransfer.setData(CHAT_NOTE_DRAG_TYPE, JSON.stringify(notePayload))
+                // 조합 슬롯용
+                e.dataTransfer.setData(HOTBAR_DRAG_TYPE, JSON.stringify({ kind: 'note', note: notePayload }))
+                e.dataTransfer.setData('text/plain', entry.text.slice(0, 60))
+                e.dataTransfer.effectAllowed = 'copyMove'
+              } : undefined}
+              style={isDraggable ? { cursor: 'grab' } : undefined}
+            >
+              <MessageBubble entry={entry} animate={index === visibleEntries.length - 1} />
+            </div>
+          )
+        })}
       </div>
 
       {isLLMLoading ? (

@@ -486,7 +486,37 @@ async function handleCallWitness(action: Extract<PlayerAction, { type: 'call_wit
   const witness = state.caseData.duo.socialGraph.find(tp => tp.id === action.witnessId)
   if (!witness) return
 
-  const check = canCallWitness(action.witnessId, state.calledWitnesses, state.caseData)
+  // 다층 증언 데이터 로드 시도
+  const caseKey = normalizeCaseKey(state.caseData.caseId ?? '')
+  let testimonySlots: import('../types/witnessTestimony').TestimonySlot[] = []
+  try {
+    if (caseKey === 'spouse-01') {
+      const { SPOUSE_01_TESTIMONY } = await import('../data/witnessTestimonyData/spouse-01')
+      testimonySlots = SPOUSE_01_TESTIMONY
+    }
+  } catch { /* 데이터 없으면 기존 방식 */ }
+
+  // 다층 증언 시스템: 사용 가능한 슬롯 확인
+  const session = state.witnessSessions[action.witnessId] ?? { heardSlots: [], lastChoice: null, summonCount: 0 }
+  const gameStateForWitness = {
+    disputeVisibility: state.discovery.disputeVisibility,
+    disputeLieState: Object.fromEntries(
+      (state.caseData.disputes ?? []).map(d => {
+        const a = state.agentA.lieStateMap[d.id]?.currentState ?? 'S0'
+        const b = state.agentB.lieStateMap[d.id]?.currentState ?? 'S0'
+        return [d.id, a > b ? a : b]
+      }),
+    ),
+  }
+
+  let availableSlots: import('../types/witnessTestimony').TestimonySlot[] = []
+  if (testimonySlots.length > 0) {
+    const { getAvailableSlots } = await import('../engine/witnessTestimonyResolver')
+    availableSlots = getAvailableSlots(testimonySlots, action.witnessId, session, gameStateForWitness)
+  }
+
+  const hasSlots = availableSlots.length > 0
+  const check = canCallWitness(action.witnessId, state.calledWitnesses, state.caseData, hasSlots)
   if (!check.available) {
     state.addDialogue({ speaker: 'system', text: check.reason ?? '증인 소환 불가', relatedDisputes: [], turn: state.turnCount })
     return
@@ -498,6 +528,32 @@ async function handleCallWitness(action: Extract<PlayerAction, { type: 'call_wit
     return
   }
   state.spend('investigationTokens', 1)
+
+  // 다층 증언이 있으면 주제 선택 모달 표시
+  if (hasSlots) {
+    if (!state.calledWitnesses.includes(action.witnessId)) {
+      state.addCalledWitness(action.witnessId)
+    }
+    const isResummon = session.summonCount > 0
+    state.addDialogue({
+      speaker: 'system',
+      text: isResummon
+        ? `🧑‍⚖️ 증인 ${witness.name}에게 추가 질문을 합니다.`
+        : `🧑‍⚖️ 증인 ${witness.name} 소환 — 증언이 시작됩니다.`,
+      relatedDisputes: [],
+      turn: state.turnCount,
+    })
+    // 주제 선택 모달 표시 → UI에서 선택 후 applyWitnessSlot 호출
+    state.setPendingWitnessChoice({
+      witnessId: action.witnessId,
+      witnessName: witness.name,
+      slots: availableSlots,
+      isResummon,
+    })
+    return
+  }
+
+  // 다층 증언 데이터 없음 → 기존 LLM 방식
   state.addCalledWitness(action.witnessId)
 
   // 소환 연출
@@ -2309,4 +2365,82 @@ function buildContradictionQuestion(
     .replace(/\$\{name\}/g, name)
     .replace(/\$\{prev\}/g, prev)
     .replace(/\$\{curr\}/g, curr)
+}
+
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+// 증인 다층 증언 — 슬롯 선택 후 효과 적용
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+export function applyWitnessSlot(slotId: string): void {
+  const state = useGameStore.getState()
+  const pending = state.pendingWitnessChoice
+  if (!pending) return
+
+  const slot = pending.slots.find(s => s.id === slotId)
+  if (!slot) return
+
+  // 재판관 질문
+  state.addDialogue({
+    speaker: 'judge',
+    text: slot.question,
+    relatedDisputes: slot.effect.relatedDisputes,
+    turn: state.turnCount,
+  })
+
+  // 증인 답변
+  state.addDialogue({
+    speaker: 'witness',
+    text: slot.testimony,
+    behaviorHint: slot.behaviorHint,
+    relatedDisputes: slot.effect.relatedDisputes,
+    turn: state.turnCount,
+    witnessName: pending.witnessName,
+    witnessFavor: slot.effect.favorDirection === 'pro_a' ? 'pro_a' : slot.effect.favorDirection === 'pro_b' ? 'pro_b' : 'neutral',
+  })
+
+  // 효과 적용
+  if (slot.effect.emotionDelta) {
+    // 불리한 쪽의 감정 상승
+    const unfavored = slot.effect.favorDirection === 'pro_a' ? 'b' : 'a'
+    changeEmotionWithPhaseTracking(unfavored as any, slot.effect.emotionDelta)
+  }
+
+  if (slot.effect.lieStateNudge) {
+    const { party, dispute } = slot.effect.lieStateNudge
+    const transitioned = state.transitionLie(party as any, dispute, 'witness_testimony')
+    if (transitioned) {
+      notifyLieTransition(party as any, dispute)
+      state.trackMetric('lieTransitions')
+    }
+  }
+
+  if (slot.effect.emergenceTrigger) {
+    // Hidden 쟁점 발현 트리거
+    state.emergeDispute(slot.effect.emergenceTrigger, state.turnCount, 'witness_testimony')
+    state.addDialogue({
+      speaker: 'system',
+      text: '💡 새로운 쟁점이 발견되었습니다.',
+      relatedDisputes: [slot.effect.emergenceTrigger],
+      turn: state.turnCount,
+    })
+  }
+
+  // 세션 업데이트
+  state.updateWitnessSession(pending.witnessId, slotId)
+
+  // 시스템 메시지
+  const session = state.witnessSessions[pending.witnessId]
+  const remaining = pending.slots.filter(s => s.id !== slotId && !session?.heardSlots.includes(s.id))
+  if (remaining.length > 0) {
+    state.addDialogue({
+      speaker: 'system',
+      text: `📋 ${pending.witnessName}에게 추가 질문이 가능합니다. (재소환 시)`,
+      relatedDisputes: [],
+      turn: state.turnCount,
+    })
+  }
+
+  // 대기 해제
+  state.setPendingWitnessChoice(null)
+  state.incrementTurn()
 }

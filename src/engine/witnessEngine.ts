@@ -105,19 +105,31 @@ export function canCallWitness(
   witnessId: string,
   calledWitnesses: string[],
   caseData: CaseData,
-): { available: boolean; reason?: string } {
+  /** 다층 증언: 남은 슬롯이 있으면 재소환 허용 */
+  hasRemainingSlots?: boolean,
+): { available: boolean; reason?: string; isResummon?: boolean } {
   const tp = caseData.duo.socialGraph.find(t => t.id === witnessId)
   if (!tp) return { available: false, reason: '존재하지 않는 증인' }
-  if (calledWitnesses.includes(witnessId)) return { available: false, reason: '이미 소환한 증인' }
+  if (calledWitnesses.includes(witnessId)) {
+    // 다층 증언에서 남은 슬롯이 있으면 재소환 허용
+    if (hasRemainingSlots) return { available: true, isResummon: true }
+    return { available: false, reason: '더 이상 물어볼 것이 없습니다' }
+  }
   return { available: true }
 }
 
-/** 소환 가능한 증인 목록 반환 */
+/** 소환 가능한 증인 목록 반환 (재소환 포함) */
 export function getAvailableWitnesses(
   calledWitnesses: string[],
   caseData: CaseData,
+  /** 다층 증언: 증인별 남은 슬롯 여부 */
+  witnessHasSlots?: Record<string, boolean>,
 ): ThirdParty[] {
-  return caseData.duo.socialGraph.filter(tp => !calledWitnesses.includes(tp.id))
+  return caseData.duo.socialGraph.filter(tp => {
+    if (!calledWitnesses.includes(tp.id)) return true
+    // 재소환 가능 여부
+    return witnessHasSlots?.[tp.id] ?? false
+  })
 }
 
 /** LLM으로 증인 증언 생성 (lieState 기반 깊이 게이팅 적용) */

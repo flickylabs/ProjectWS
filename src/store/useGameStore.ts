@@ -133,6 +133,12 @@ export type GameStore = PhaseSlice & AgentSlice & ResourceSlice & EvidenceSlice 
   setTestimonyAnalysis: (analysis: TestimonyAnalysis | null) => void
   calledWitnesses: string[]
   addCalledWitness: (witnessId: string) => void
+  /** 증인 다층 증언 세션 상태 (witnessId → session) */
+  witnessSessions: Record<string, { heardSlots: string[]; lastChoice: string | null; summonCount: number }>
+  updateWitnessSession: (witnessId: string, slotId: string) => void
+  /** 증인 주제 선택 대기 */
+  pendingWitnessChoice: { witnessId: string; witnessName: string; slots: import('../types/witnessTestimony').TestimonySlot[]; isResummon: boolean } | null
+  setPendingWitnessChoice: (choice: GameStore['pendingWitnessChoice']) => void
   /** 미니게임 대기 (UI에서 모달 표시) */
   pendingMinigame:
     | { type: 'evidence_discovery'; evidenceId: string; clues: [string, string, string]; npcName: string; lieState: string; party: PartyId; minigameVariant: 'memory' | 'heartbeat' | 'matching' | 'word_scramble' }
@@ -291,6 +297,22 @@ export const useGameStore: import('zustand').UseBoundStore<import('zustand').Sto
     setTestimonyAnalysis: (analysis) => set({ testimonyAnalysis: analysis }),
     calledWitnesses: [],
     addCalledWitness: (witnessId) => set((prev) => ({ calledWitnesses: [...prev.calledWitnesses, witnessId] })),
+    pendingWitnessChoice: null,
+    setPendingWitnessChoice: (choice) => set({ pendingWitnessChoice: choice }),
+    witnessSessions: {},
+    updateWitnessSession: (witnessId, slotId) => set((prev) => {
+      const existing = prev.witnessSessions[witnessId] ?? { heardSlots: [], lastChoice: null, summonCount: 0 }
+      return {
+        witnessSessions: {
+          ...prev.witnessSessions,
+          [witnessId]: {
+            heardSlots: [...existing.heardSlots, slotId],
+            lastChoice: slotId,
+            summonCount: existing.summonCount + 1,
+          },
+        },
+      }
+    }),
     pendingMinigame: null,
     setPendingMinigame: (mg) => set({ pendingMinigame: mg }),
     pendingInterjectionV2: null,
@@ -631,6 +653,8 @@ export const useGameStore: import('zustand').UseBoundStore<import('zustand').Sto
         processMetrics: { ...EMPTY_METRICS },
         testimonyAnalysis: null,
         calledWitnesses: [],
+        witnessSessions: {},
+        pendingWitnessChoice: null,
         interrogationHistory: { a: {}, b: {} },
         recentAtomIds: { a: [], b: [] },
         pendingMinigame: null,
