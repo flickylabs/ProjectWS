@@ -4,6 +4,7 @@
  * 진실공방/증거감별/숨겨진쟁점/감정전략을 처리한다.
  */
 import { useGameStore, useStore } from '../store/useGameStore'
+import { pp이가 } from '../engine/koreanPostposition'
 import {
   checkTruthConfrontation,
   checkEmergence,
@@ -33,7 +34,7 @@ export function runDiscoveryChecks(party: PartyId, disputeId?: string) {
   if (!canInterrogate(agent.emotionalState.internalValue)) {
     state.addDialogue({
       speaker: 'system',
-      text: `🔒 ${party === 'a' ? caseData.duo.partyA.name : caseData.duo.partyB.name}이(가) 감정 과부하로 응답을 거부합니다. (2턴간 질문 불가)`,
+      text: (() => { const n = party === 'a' ? caseData.duo.partyA.name : caseData.duo.partyB.name; return `🔒 ${n}${pp이가(n)} 감정 과부하로 응답을 거부합니다. (2턴간 질문 불가)` })(),
       relatedDisputes: disputeId ? [disputeId] : [],
       turn: turnCount,
     })
@@ -126,7 +127,7 @@ export function runDiscoveryChecks(party: PartyId, disputeId?: string) {
         const conflict = checkJudgmentConflict(
           disputeId,
           discovery.judgments,
-          `${party === 'a' ? caseData.duo.partyA.name : caseData.duo.partyB.name}이(가) 자백했습니다: ${dispute.truthDescription}`,
+          (() => { const n = party === 'a' ? caseData.duo.partyA.name : caseData.duo.partyB.name; return `${n}${pp이가(n)} 자백했습니다: ${dispute.truthDescription}` })(),
           'lie_collapse',
         )
         if (conflict) {

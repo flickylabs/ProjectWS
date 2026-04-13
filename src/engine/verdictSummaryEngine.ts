@@ -3,6 +3,7 @@
  * - 순수 함수: ProcessMetrics + 판결 결과 + 성향 정보 → 판결문 초안
  * - 책임 배분 근거, 결정적 증거, 결정적 순간, 해결안, 재판관 성향 반영
  */
+import { pp과와, pp이가 } from './koreanPostposition'
 
 export interface VerdictSummary {
   /** 판결문 제목 */
@@ -66,7 +67,7 @@ export function generateVerdictSummary(input: VerdictSummaryInput): VerdictSumma
   const title = `판결문 — ${caseName}`
 
   const caseSummary =
-    `본 사건은 ${partyAName}과(와) ${partyBName} 간의 분쟁으로, ` +
+    `본 사건은 ${partyAName}${pp과와(partyAName)} ${partyBName} 간의 분쟁으로, ` +
     `총 ${totalTurns}턴의 심리를 거쳐 판결에 이르렀습니다.`
 
   // 책임 배분 근거 (비율에 따라 톤 변화)
@@ -96,13 +97,13 @@ export function generateVerdictSummary(input: VerdictSummaryInput): VerdictSumma
   if (keyTransition) {
     const fromLabel = LIE_STATE_LABELS[keyTransition.from] ?? keyTransition.from
     const toLabel = LIE_STATE_LABELS[keyTransition.to] ?? keyTransition.to
-    keyMoment = `${keyTransition.party}이(가) ${fromLabel}에서 ${toLabel}로 전환된 순간이 결정적이었습니다.`
+    keyMoment = `${keyTransition.party}${pp이가(keyTransition.party)} ${fromLabel}에서 ${toLabel}로 전환된 순간이 결정적이었습니다.`
   }
 
   const judgeStyle = `본 재판은 "${judgeTitle}" 성향의 재판관에 의해 진행되었습니다.`
 
   const evidenceText = keyEvidenceNames.length > 0
-    ? `결정적 증거로는 ${keyEvidenceNames.join(', ')}이(가) 활용되었습니다.`
+    ? (() => { const last = keyEvidenceNames[keyEvidenceNames.length - 1]; return `결정적 증거로는 ${keyEvidenceNames.join(', ')}${pp이가(last)} 활용되었습니다.` })()
     : '특별히 결정적인 증거 없이 진술 분석 위주로 진행되었습니다.'
 
   const fullText = [

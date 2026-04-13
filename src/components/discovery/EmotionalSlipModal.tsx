@@ -36,7 +36,7 @@ export default function EmotionalSlipModal() {
             <h2 className="text-base font-bold text-red-400">감정적 실수 포착</h2>
           </div>
           <p className="text-xs text-gray-500 mt-1">
-            {partyData.name}이(가) 흥분 상태에서 의미심장한 발언을 했습니다
+            {partyData.name}가 흥분 상태에서 의미심장한 발언을 했습니다
           </p>
         </div>
 

@@ -199,6 +199,22 @@ export function resolveInterjectionV2(choice: 'allow' | 'block'): void {
     ? store.caseData?.duo.partyA.name ?? 'A'
     : store.caseData?.duo.partyB.name ?? 'B'
   if (choice === 'allow') {
+    // 끼어든 사람에게 추가 발언 기회 — 관련 쟁점의 진술을 생성
+    const dispute = store.caseData?.disputes.find(d => d.id === opportunity.disputeId)
+    if (dispute) {
+      const interruptorAgent = opportunity.interruptor === 'a' ? store.agentA : store.agentB
+      const lieState = interruptorAgent.lieStateMap[opportunity.disputeId]?.currentState ?? 'S0'
+      // 끼어든 사람의 현재 심리 상태에 따른 추가 발언
+      const followUp = lieState >= 'S3'
+        ? `저도 할 말이 있습니다. ${dispute.name}에 대해서 — 사실 제가 숨긴 부분이 있었습니다.`
+        : `잠깐, ${dispute.name}에 대해서 상대방이 빠뜨린 부분이 있습니다.`
+      store.addDialogue({
+        speaker: opportunity.interruptor,
+        text: interjScripted?.text ? followUp : followUp,
+        relatedDisputes: [opportunity.disputeId],
+        turn: store.turnCount,
+      })
+    }
     store.addDialogue({
       speaker: 'judge',
       text: `${interruptorName} 씨의 발언을 기록했습니다. 심문을 계속하겠습니다.`,
@@ -213,6 +229,10 @@ export function resolveInterjectionV2(choice: 'allow' | 'block'): void {
       turn: store.turnCount,
     })
   }
+
+  // 심문 대상을 원래 target(끼어들기 당한 쪽)으로 복원
+  // 끼어든 사람(interruptor)이 아닌, 원래 심문 중이던 사람(target)
+  store.setPcTargetParty(opportunity.target)
 
   // 대기 해제
   store.setPendingInterjectionV2(null)
