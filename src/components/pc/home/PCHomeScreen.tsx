@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState, type ReactNode } from 'react'
 import { getAllCases, getCaseById } from '../../../data/cases'
-import { getHallOfFameForSeason, getJudgeProfile, getLeaderboard, getPlayerStats, loadExtendedHistory, loadProfile, loadProgressionState } from '../../../data/leaderboard'
+import { getHallOfFameForSeason, getJudgeProfile, getLeaderboard, getPlayerStats, loadExtendedHistory, loadProfile } from '../../../data/leaderboard'
 import { getCurrentSeason, getRemainingDays } from '../../../data/seasons'
 import { TITLE_LABELS } from '../../../engine/judgeProfileEngine'
 import { checkConnection } from '../../../engine/llmClient'
@@ -11,8 +11,8 @@ import { useStore } from '../../../store/useGameStore'
 import type { CaseData, ExtendedHistoryEntry, SortCategory } from '../../../types'
 import PCSvgIcon from '../icons/PCSvgIcon'
 import { openPcInteractionPanel } from '../layout/PCInteractionPanel'
-import PCPerkEquipPanel from '../progression/PCPerkEquipPanel'
-import PCTraitEnhancePanel from '../progression/PCTraitEnhancePanel'
+import PCPerkEquipPanel from '../profile/PCPerkEquipPanel'
+import PCTraitEnhancePanel from '../profile/PCTraitEnhancePanel'
 import PCCaseBrowser from './PCCaseBrowser'
 import PCIntroSlides from './PCIntroSlides'
 import { type PCGeneralSessionId, PC_GENERAL_SESSIONS, formatCountdown, getCasesForPcGeneralSession, getRelationshipLabel, getSeasonCases, hasSeenPcIntro, loadPcCaseProgress } from './pcHomeShared'
@@ -77,7 +77,6 @@ export default function PCHomeScreen() {
   const profile = useMemo(() => loadProfile(), [refreshKey])
   const history = useMemo(() => loadExtendedHistory(), [refreshKey])
   const judgeProfile = useMemo(() => getJudgeProfile(), [refreshKey])
-  const progressionState = useMemo(() => loadProgressionState(), [refreshKey])
   const playerStats = useMemo(() => getPlayerStats(), [refreshKey])
   const hallOfFame = useMemo(() => getHallOfFameForSeason(season.id), [refreshKey, season.id])
   const leaderboard = useMemo(() => getLeaderboard(season.id, leaderboardSort), [leaderboardSort, refreshKey, season.id])
@@ -276,8 +275,8 @@ export default function PCHomeScreen() {
               </Card>
             </div>
             <div className="pc-judge-progression-layout">
-              <PCTraitEnhancePanel onChange={refreshProgression} progressionState={progressionState} />
-              <PCPerkEquipPanel onChange={refreshProgression} progressionState={progressionState} />
+              <PCTraitEnhancePanel onChange={refreshProgression} syncKey={refreshKey} />
+              <PCPerkEquipPanel onChange={refreshProgression} syncKey={refreshKey} />
             </div>
             </>
           ) : (

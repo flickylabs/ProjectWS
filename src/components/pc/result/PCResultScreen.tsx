@@ -5,7 +5,7 @@ import { loadDriftState, loadExtendedHistory, loadJudgePerks, loadProgressionSta
 import { deriveCaseProfile, deriveJudgeProfile, TITLE_LABELS, AXIS_LABELS, TIER_LABELS, LEVEL_LABELS } from '../../../engine/judgeProfileEngine'
 import type { AxisLevelState } from '../../../engine/judgeProfileEngine'
 import type { PerkId } from '../../../engine/judgePerks'
-import { applyRewardsToInventory, canEnhanceTrait, computeCaseRewards, type FragmentReward, type TraitId } from '../../../engine/judgeProgressionEngine'
+import { TRAIT_META, applyRewardsToInventory, canEnhanceTrait, computeCaseRewards, type FragmentReward, type TraitId } from '../../../engine/judgeProgressionEngine'
 import { GamePhase } from '../../../types'
 import { useGameStore, useStore } from '../../../store/useGameStore'
 import { saveCaseProgress } from '../../phase/CaseMap'
@@ -15,8 +15,7 @@ import { pp과와 } from '../../../engine/koreanPostposition'
 import CharacterFaceSvg from '../icons/CharacterFaceSvg'
 import PCClearanceDetailPopup from './PCClearanceDetailPopup'
 import { evaluateClearance } from '../../../engine/clearanceTracker'
-import PCFragmentRewardOverlay from '../progression/PCFragmentRewardOverlay'
-import { TRAIT_ORDER } from '../progression/PCJudgeProgressionShared'
+import PCFragmentRewardOverlay from './PCFragmentRewardOverlay'
 
 type ResultTab = 'result' | 'verdict_pronounce' | 'epilogue'
 
@@ -318,7 +317,7 @@ export default function PCResultScreen() {
       : applyRewardsToInventory(progressionState.inventory, rewards)
 
     return {
-      enhanceableTraits: TRAIT_ORDER.filter((traitId) => canEnhanceTrait(traitId, progressionState.traits, projectedInventory)),
+      enhanceableTraits: TRAIT_META.map(({ id }) => id).filter((traitId) => canEnhanceTrait(traitId, progressionState.traits, projectedInventory)),
       marker: getResultRewardMarkerKey(caseData.caseId, currentEntry?.date ?? `${verdictScore.total}-${turnCount}`),
       rewards,
     }
