@@ -274,7 +274,7 @@ function normalizeCaseData(raw: any): CaseData {
     investigationResults: e.investigationResults ?? {},
   }))
 
-  return {
+  const result = {
     caseId: raw.caseId,
     meta: raw.meta,
     duo,
@@ -291,6 +291,53 @@ function normalizeCaseData(raw: any): CaseData {
     baseEvidenceIds: raw.baseEvidenceIds,
     monetaryDisputeIds: raw.monetaryDisputeIds ?? [],
   }
+
+  // A/B 리터럴 → 실명 치환 (사건 데이터 내 설명 텍스트)
+  replaceABWithNames(result)
+  return result
+}
+
+/** 사건 데이터 내 텍스트에서 'A', 'B' 리터럴을 실명으로 치환 */
+function replaceABWithNames(caseData: any) {
+  const nameA = caseData.duo?.partyA?.name
+  const nameB = caseData.duo?.partyB?.name
+  if (!nameA || !nameB) return
+
+  const sub = (text: string) => {
+    if (typeof text !== 'string') return text
+    return text
+      .replace(/\bA 씨\b/g, `${nameA} 씨`)
+      .replace(/\bB 씨\b/g, `${nameB} 씨`)
+      .replace(/\bA가 /g, `${nameA}이 `)
+      .replace(/\bB가 /g, `${nameB}이 `)
+      .replace(/\bA의 /g, `${nameA}의 `)
+      .replace(/\bB의 /g, `${nameB}의 `)
+      .replace(/\bA는 /g, `${nameA}은 `)
+      .replace(/\bB는 /g, `${nameB}은 `)
+      .replace(/\bA를 /g, `${nameA}을 `)
+      .replace(/\bB를 /g, `${nameB}을 `)
+      .replace(/\bA에게/g, `${nameA}에게`)
+      .replace(/\bB에게/g, `${nameB}에게`)
+      .replace(/\bA 아버지/g, `${nameA} 아버지`)
+      .replace(/\bB 아버지/g, `${nameB} 아버지`)
+  }
+
+  const walk = (obj: any) => {
+    if (!obj || typeof obj !== 'object') return
+    for (const key of Object.keys(obj)) {
+      if (typeof obj[key] === 'string') {
+        obj[key] = sub(obj[key])
+      } else if (typeof obj[key] === 'object') {
+        walk(obj[key])
+      }
+    }
+  }
+
+  // meta, context, disputes, truthTable의 텍스트 필드만 치환
+  walk(caseData.meta)
+  walk(caseData.context)
+  walk(caseData.disputes)
+  walk(caseData.truthTable)
 }
 
 function normalizeArchetype(a: string): 'avoidant' | 'confrontational' | 'victim_cosplay' | 'cold_logic' {

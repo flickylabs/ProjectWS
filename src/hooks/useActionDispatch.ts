@@ -208,9 +208,11 @@ export function resolveInterjectionV2(choice: 'allow' | 'block'): void {
       const interruptorAgent = opportunity.interruptor === 'a' ? store.agentA : store.agentB
       const lieState = interruptorAgent.lieStateMap[opportunity.disputeId]?.currentState ?? 'S0'
       // 끼어든 사람의 현재 심리 상태에 따른 추가 발언
+      const interruptorName = opportunity.interruptor === 'a' ? store.caseData?.duo.partyA.name : store.caseData?.duo.partyB.name
+      const otherName = opportunity.interruptor === 'a' ? store.caseData?.duo.partyB.name : store.caseData?.duo.partyA.name
       const followUp = lieState >= 'S3'
-        ? `저도 할 말이 있습니다. ${dispute.name}에 대해서 — 사실 제가 숨긴 부분이 있었습니다.`
-        : `잠깐, ${dispute.name}에 대해서 상대방이 빠뜨린 부분이 있습니다.`
+        ? `저도 할 말이 있습니다. ${dispute.name} 건에서 — 사실 제가 숨긴 부분이 있었습니다.`
+        : `잠깐요. ${dispute.name} 건에서 ${otherName ?? '상대'} 씨가 빠뜨린 얘기가 있습니다.`
       store.addDialogue({
         speaker: opportunity.interruptor,
         text: interjScripted?.text ? followUp : followUp,
@@ -943,7 +945,7 @@ async function handleQuestion(action: Extract<PlayerAction, { type: 'question' }
         _empathyAttempts[empathyKey] = newAttempts
         state.addDialogue({
           speaker: 'system',
-          text: `상대방의 경계가 조금씩 풀리고 있습니다.`,
+          text: `경계가 조금씩 풀리고 있습니다.`,
           relatedDisputes: [action.disputeId],
           turn: state.turnCount,
         })
@@ -1327,7 +1329,7 @@ async function handleQuestion(action: Extract<PlayerAction, { type: 'question' }
     if (prevTurns <= 1) {
       useGameStore.getState().addDialogue({
         speaker: 'system',
-        text: '[분리] 분리 심문 종료 — 상대방이 복귀한다.',
+        text: '[분리] 분리 심문 종료 — 상대측이 복귀합니다.',
         relatedDisputes: [],
         turn: useGameStore.getState().turnCount,
       })
@@ -2165,7 +2167,7 @@ function applyTrustEffect(actionType: string, target: PartyId) {
         s.startSeparation(target, 3)
         playSeparation()
         s.changeTrust(target, 'retaliationWorry', -10)
-        s.addDialogue({ speaker: 'system', text: `[분리] 분리 심문 시작 — 3턴간 상대방이 배제된다.`, relatedDisputes: [], turn: s.turnCount })
+        s.addDialogue({ speaker: 'system', text: `[분리] 분리 심문 시작 — 3턴간 상대측이 배제됩니다.`, relatedDisputes: [], turn: s.turnCount })
       } else {
         s.addDialogue({ speaker: 'system', text: `법정 지배력이 부족합니다.`, relatedDisputes: [], turn: s.turnCount })
       }
