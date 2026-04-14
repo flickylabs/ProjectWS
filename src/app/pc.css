@@ -10309,3 +10309,13 @@ body.pc-mode .pc-question-choice__dispute-icon {
   opacity: 0.7;
 }
 
+/* ── Combinable evidence shimmer ── */
+@keyframes pc-combinable-shimmer {
+  0%, 100% { box-shadow: 0 0 4px rgba(212,162,78,0.15), inset 0 0 2px rgba(212,162,78,0.08); border-color: rgba(212,162,78,0.2); }
+  50% { box-shadow: 0 0 12px rgba(212,162,78,0.4), inset 0 0 4px rgba(212,162,78,0.15); border-color: rgba(212,162,78,0.5); }
+}
+body.pc-mode .is-combinable {
+  animation: pc-combinable-shimmer 2s ease-in-out infinite;
+  border: 1.5px solid rgba(212,162,78,0.3) !important;
+}
+

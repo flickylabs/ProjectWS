@@ -9,6 +9,7 @@ import { GamePhase, type EmotionalPhase, type PartyId, type QuestionType } from 
 import { useActionDispatch } from '../../../hooks/useActionDispatch'
 import { useGameStore, useStore } from '../../../store/useGameStore'
 import { openPcInteractionPanel } from '../layout/PCInteractionPanel'
+import { showToast } from '../../common/Toast'
 import PCSvgIcon from '../icons/PCSvgIcon'
 import { getPcFaceSymbolId, getPcEvidenceSymbolId } from '../icons/pcIconUtils'
 
@@ -42,6 +43,27 @@ export default function PCBottomDock() {
   const calledWitnesses = useStore((s) => s.calledWitnesses)
   const disputeVisibility = useStore((s) => s.discovery.disputeVisibility)
   const canAdvance = useStore((s) => s.canAdvancePhase())
+  const combinableIds = useStore((s) => s.getCombinableEvidenceIds())
+  const evidenceCombinations = useStore((s) => s.evidenceCombinations)
+  const triggeredCombinations = useStore((s) => s.triggeredCombinations)
+
+  // 조합 준비 완료 감지 — 양쪽 모두 해금된 미완료 레시피 수가 증가하면 얼럿
+  const readyComboCount = useMemo(() => {
+    const triggered = new Set(triggeredCombinations)
+    return evidenceCombinations.filter((combo) => {
+      const key = combo.requires.join('+')
+      if (triggered.has(key)) return false
+      return combo.requires.every((eid) => evidenceStates[eid]?.unlocked)
+    }).length
+  }, [evidenceCombinations, triggeredCombinations, evidenceStates])
+
+  const prevReadyCount = useRef(-1) // -1 = 초기 마운트 (토스트 억제)
+  useEffect(() => {
+    if (prevReadyCount.current >= 0 && readyComboCount > prevReadyCount.current) {
+      showToast('🔗 새로운 증거 조합이 가능합니다', 'success')
+    }
+    prevReadyCount.current = readyComboCount
+  }, [readyComboCount])
 
   // --- overlay states ---
   const [questionChoice, setQuestionChoice] = useState<{ type: QuestionType } | null>(null)
@@ -317,7 +339,7 @@ export default function PCBottomDock() {
                 <>
                   <p className="pc-question-choice__hint">제시할 증거를 선택하세요</p>
                   {unlockedEvidence.map((ev) => (
-                    <button className="pc-question-choice__dispute-btn" key={ev.id} onClick={() => selectEvidence(ev.id)} type="button">
+                    <button className={`pc-question-choice__dispute-btn${combinableIds.has(ev.id) ? ' is-combinable' : ''}`} key={ev.id} onClick={() => selectEvidence(ev.id)} type="button">
                       <span className="pc-question-choice__dispute-icon">
                         <PCSvgIcon id={getPcEvidenceSymbolId(ev.type)} size={14} />
                       </span>

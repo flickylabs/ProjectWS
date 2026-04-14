@@ -30,6 +30,8 @@ export interface EvidenceSlice {
   isUnlocked: (evidenceId: string) => boolean
   isPresented: (evidenceId: string) => boolean
   getUnlockedEvidence: () => EvidenceNode[]
+  /** 조합 레시피에 포함되어 있고, 해금됐고, 아직 미완료인 증거 ID 집합 */
+  getCombinableEvidenceIds: () => Set<string>
   addDerivedEvidence: (node: EvidenceNode, unlock?: boolean) => void
   patchEvidenceDefinition: (evidenceId: string, patch: Partial<EvidenceNode>) => void
 }
@@ -163,6 +165,20 @@ export const createEvidenceSlice: StateCreator<EvidenceSlice, [], [], EvidenceSl
   getUnlockedEvidence: () => {
     const { evidenceStates, evidenceDefinitions } = get()
     return evidenceDefinitions.filter((e) => evidenceStates[e.id]?.unlocked)
+  },
+
+  getCombinableEvidenceIds: () => {
+    const { evidenceStates, evidenceCombinations, triggeredCombinations } = get()
+    const triggered = new Set(triggeredCombinations)
+    const ids = new Set<string>()
+    for (const combo of evidenceCombinations) {
+      const comboKey = combo.requires.join('+')
+      if (triggered.has(comboKey)) continue // 이미 완료된 조합은 제외
+      for (const eid of combo.requires) {
+        if (evidenceStates[eid]?.unlocked) ids.add(eid)
+      }
+    }
+    return ids
   },
 
   addDerivedEvidence: (node, unlock = true) => {
