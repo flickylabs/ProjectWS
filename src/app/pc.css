@@ -4202,6 +4202,17 @@ body.pc-mode .pc-intro__ghost:hover {
 body.pc-mode .pc-depth-shell {
   margin-top: 28px;
   padding: 28px 32px 34px;
+  max-height: calc(100vh - 60px);
+  display: flex;
+  flex-direction: column;
+}
+body.pc-mode .pc-depth-shell > .pc-depth-header { flex-shrink: 0; }
+body.pc-mode .pc-depth-shell > .pc-desk-tabs { flex-shrink: 0; }
+body.pc-mode .pc-desk-tab-content {
+  flex: 1; min-height: 0;
+  overflow-y: auto;
+  scrollbar-width: thin; scrollbar-color: rgba(212,162,78,0.12) transparent;
+  padding-top: 4px;
 }
 
 body.pc-mode .pc-depth-header {

@@ -242,8 +242,8 @@ export default function PCHomeScreen() {
             <button className={`pc-desk-tab${judgeDeskTab === 'progression' ? ' is-active' : ''}`} onClick={() => setJudgeDeskTab('progression')} type="button">재판관 관리</button>
           </div>
 
+          <div className="pc-desk-tab-content">
           {judgeDeskTab === 'profile' ? (
-            <>
             <div className="pc-desk-grid">
               <Card eyebrow="JUDGE PROFILE" title={`Lv ${Math.max(1, judgeLevel)} ${titleInfo.name}`}>
                 <div className="pc-desk-hero__meter"><strong>명성 진행</strong><span>{`${Math.min(reputation, 1200)}/1200`}</span><div className="pc-progress-bar"><i style={{ width: `${Math.min(100, (Math.min(reputation, 1200) / 1200) * 100)}%` }} /></div></div>
@@ -266,7 +266,6 @@ export default function PCHomeScreen() {
                 </div>
               </Card>
             </div>
-            </>
           ) : judgeDeskTab === 'progression' ? (
             <div className="pc-judge-progression-layout">
               <PCTraitEnhancePanel onChange={refreshProgression} syncKey={refreshKey} />
@@ -288,6 +287,7 @@ export default function PCHomeScreen() {
               </Card>
             </div>
           )}
+          </div>
         </section>
       )}
 
