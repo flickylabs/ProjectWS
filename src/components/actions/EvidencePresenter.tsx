@@ -57,7 +57,7 @@ export default function EvidencePresenter({ target, onPresent, onConfront, onWit
   const evidenceDefinitions = useStore((s) => s.evidenceDefinitions)
   const caseData = useStore((s) => s.caseData)
   const resources = useStore((s) => s.resources)
-  const globalInvest = useStore((s) => s.globalInvestTokens)
+  const globalInvest = useStore((s) => s.resources.investigationTokens)
   const discovery = useStore((s) => s.discovery)
   const recommendedEvidenceIds = useStore((s) => s.recommendedEvidenceIds)
   const lastFocusedDisputeId = useStore((s) => s.lastFocusedDisputeId)
@@ -265,7 +265,7 @@ function WitnessSection({ dispatch, resources, onCalled }: { dispatch: (a: any) 
   const [expanded, setExpanded] = useState(false)
   const caseData = useStore((s) => s.caseData)
   const calledWitnesses = useStore((s) => s.calledWitnesses)
-  const witGlobalInvest = useStore((s) => s.globalInvestTokens)
+  const witGlobalInvest = useStore((s) => s.resources.investigationTokens)
 
   const available = useMemo(() => {
     if (!caseData) return []

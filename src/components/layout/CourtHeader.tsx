@@ -74,8 +74,8 @@ export default function CourtHeader({ isDialoguePhase, onToggleInfo, infoOpen }:
   const separationTarget = useStore((s) => s.separationTarget)
   const tickRecharge = useStore((s) => s.tickInvestRecharge)
   const turnCount = useStore((s) => s.turnCount)
-  const globalInvest = useStore((s) => s.globalInvestTokens)
-  const globalSkill = useStore((s) => s.globalSkillPoints)
+  const globalInvest = useStore((s) => s.resources.investigationTokens)
+  const globalSkill = useStore((s) => s.resources.skillPoints)
   const adCountInvest = useStore((s) => s.adWatchCountInvest)
   const adCountSkill = useStore((s) => s.adWatchCountSkill)
   const watchAdInvest = useStore((s) => s.watchAdForInvest)
@@ -133,7 +133,7 @@ export default function CourtHeader({ isDialoguePhase, onToggleInfo, infoOpen }:
 
   const handleUnlockSummary = () => {
     const s = useGameStore.getState()
-    if (s.globalSkillPoints >= 3) {
+    if (s.resources.skillPoints >= 3) {
       s.spend('skillPoints', 3)
       setSummaryUnlocked(true)
       setShowSummaryLock(false)

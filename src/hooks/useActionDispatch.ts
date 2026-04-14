@@ -113,6 +113,9 @@ export function resolveInterjectionV2(choice: 'allow' | 'block'): void {
   )
   setSessionInterjectionTracker(nextTracker)
   recordInterjectionStyleChoice(choice)
+  if (choice === 'allow') {
+    store.trackMetric('counterQuestionUsed')
+  }
 
   // 끼어들기 응답: ScriptedText 우선 → V3 beat 폴백
   const interjCaseKey = normalizeCaseKey(store.caseData?.caseId ?? '')
@@ -695,14 +698,16 @@ async function handleCallWitness(action: Extract<PlayerAction, { type: 'call_wit
     const favorParty: 'a' | 'b' = testimony.favorDirection === 'pro_a' ? 'a' : 'b'
     runDiscoveryChecks(favorParty)
   } catch {
-    useGameStore.getState().setLLMLoading(false)
-    useGameStore.getState().addDialogue({
+    const fresh = useGameStore.getState()
+    fresh.setLLMLoading(false)
+    fresh.gain('investigationTokens', 1)
+    fresh.addDialogue({
       speaker: 'system',
       text: '증인 증언 생성에 실패했다.',
       relatedDisputes: [],
-      turn: useGameStore.getState().turnCount,
+      turn: fresh.turnCount,
     })
-    showToast('증인 증언 생성에 실패했습니다', 'warn')
+    showToast('증인 증언 생성에 실패했습니다. 토큰이 반환되었습니다.', 'warn')
   }
 
   // 증인 소환은 토큰만 소비, 턴 소비 없음
@@ -711,6 +716,10 @@ async function handleCallWitness(action: Extract<PlayerAction, { type: 'call_wit
 // ── 증거 조사 ──
 async function handleEvidenceInvestigate(action: Extract<PlayerAction, { type: 'evidence_investigate' }>) {
   const state = useGameStore.getState()
+  if (!state.spend('investigationTokens', 1)) {
+    state.addDialogue({ speaker: 'system', text: '조사 토큰이 부족합니다.', relatedDisputes: [], turn: state.turnCount })
+    return
+  }
   const result = state.investigateEvidence(action.evidenceId, action.subAction)
   if (result) state.addDialogue({ speaker: 'system', text: `${result}`, relatedDisputes: [], turn: state.turnCount })
 
@@ -874,15 +883,18 @@ async function handleQuestion(action: Extract<PlayerAction, { type: 'question' }
 
   } else if (action.questionType === 'empathy_approach') {
     // ── 자백 유도하기: 신뢰도 상승 + S3 이상에서 자발적 자백 가능 ──
+    state.incrementEmpathyAtCurrentState(action.target)
+
     // 신뢰도 상승
     state.changeTrust(action.target, 'trustTowardJudge', 8)
 
-    // S3 이상에서: 신뢰 임계치 도달 시 자발적 자백 (S5로 점프)
+    // S3 이상에서: 같은 상태에서 공감 2회+ 누적되고 신뢰 임계치 도달 시 자발적 자백 (S5로 점프)
     if (currentLieState >= 'S3') {
       const freshAgent = action.target === 'a' ? useGameStore.getState().agentA : useGameStore.getState().agentB
       const trust = freshAgent.trustState.trustTowardJudge
+      const empathyAtCurrentState = freshAgent.empathyAtCurrentState
       // 신뢰 70+ 이면 자백 유도 성공 (S5로)
-      if (trust >= 70) {
+      if (trust >= 70 && empathyAtCurrentState >= 2) {
         snapshotLieState(action.target, action.disputeId)
         state.forceSetLieState(action.target, action.disputeId, 'S5')
         notifyLieTransition(action.target, action.disputeId)

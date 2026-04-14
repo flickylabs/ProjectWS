@@ -1,6 +1,15 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import type { CSSProperties, PointerEvent as ReactPointerEvent } from 'react'
 import { useStore } from '../../../store/useGameStore'
+import {
+  playMoleHit,
+  playMoleMiss,
+  playMoleBossHit,
+  playMoleEscape,
+  playTimerWarning,
+  playMiniGameSuccess,
+  playMiniGameFail,
+} from '../../../engine/soundEngine'
 
 type MoleKind = 'criminal' | 'civilian' | 'boss'
 type MolePhase = 'visible' | 'hit' | 'escaping'
@@ -279,7 +288,8 @@ export default function WhackAMoleGame() {
       visible: true,
       swingTick: current.swingTick + 1,
     }))
-    placeImpactMarker(nextPosition.x, nextPosition.y, 'criminal')
+    const hitTone = activeMole?.phase === 'visible' ? activeMole.kind : 'criminal'
+    placeImpactMarker(nextPosition.x, nextPosition.y, hitTone)
   }, [placeImpactMarker, playState, updateCursorPosition])
 
   const handleHoleClick = useCallback((holeIndex: number) => {
@@ -298,14 +308,19 @@ export default function WhackAMoleGame() {
     showFeedback(activeMole.kind, FEEDBACK_LABELS[activeMole.kind])
 
     if (activeMole.kind === 'civilian') {
+      playMoleMiss()
       setDangerPulse((current) => current + 1)
       setShakePulse((current) => current + 1)
       return
     }
 
     if (activeMole.kind === 'boss') {
+      playMoleBossHit()
       setGoldPulse((current) => current + 1)
+      return
     }
+
+    playMoleHit()
   }, [activeMole, playState, showFeedback, spawnHoleEffect])
 
   useEffect(() => {
@@ -317,12 +332,20 @@ export default function WhackAMoleGame() {
     if (playState !== 'running') return undefined
 
     const deadline = Date.now() + profile.durationMs
+    let lastWarnSec = -1
     const intervalId = window.setInterval(() => {
       const nextLeft = Math.max(0, deadline - Date.now())
       setTimeLeftMs(nextLeft)
 
+      const sec = Math.ceil(nextLeft / 1000)
+      if (nextLeft > 0 && sec <= 8 && sec !== lastWarnSec) {
+        lastWarnSec = sec
+        playTimerWarning()
+      }
+
       if (nextLeft <= 0) {
         window.clearInterval(intervalId)
+        playMiniGameFail()
         setPlayState('failed')
         setActiveMole(null)
         showFeedback('civilian', '시간 종료')
@@ -361,11 +384,13 @@ export default function WhackAMoleGame() {
       : profile.stayMs
 
     const timeoutId = window.setTimeout(() => {
-      setActiveMole((current) => (
-        current && current.id === activeMole.id && current.phase === 'visible'
-          ? { ...current, phase: 'escaping' }
-          : current
-      ))
+      setActiveMole((current) => {
+        if (current && current.id === activeMole.id && current.phase === 'visible') {
+          playMoleEscape()
+          return { ...current, phase: 'escaping' }
+        }
+        return current
+      })
     }, visibleDuration)
 
     return () => window.clearTimeout(timeoutId)
@@ -383,6 +408,7 @@ export default function WhackAMoleGame() {
 
   useEffect(() => {
     if (playState !== 'running' || score < profile.target) return
+    playMiniGameSuccess()
     setPlayState('success')
     completeMinigame(true)
   }, [completeMinigame, playState, profile.target, score])

@@ -50,8 +50,8 @@ function getSessionProgress(type: string, allCases: any[], progress: Record<stri
 }
 
 function ResourceBadge() {
-  const invest = useStore((s) => s.globalInvestTokens)
-  const skill = useStore((s) => s.globalSkillPoints)
+  const invest = useStore((s) => s.resources.investigationTokens)
+  const skill = useStore((s) => s.resources.skillPoints)
   return (
     <div className="flex items-center gap-2 text-xs">
       <span><Emoji char="🔍" size={11} /> <span className="text-amber-400 font-bold">{invest}</span></span>

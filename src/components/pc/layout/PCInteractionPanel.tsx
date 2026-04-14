@@ -588,7 +588,7 @@ export default function PCInteractionPanel() {
         return
       case 'unlock_summary': {
         const state = useGameStore.getState()
-        if (state.globalSkillPoints < 3) {
+        if (state.resources.skillPoints < 3) {
           showToast(COPY.insufficientSkill, 'warn')
           return
         }

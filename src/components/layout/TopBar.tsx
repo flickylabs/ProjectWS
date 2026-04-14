@@ -35,8 +35,8 @@ export default function TopBar() {
   const [showResource, setShowResource] = useState<'invest' | 'skill' | null>(null)
   const [showDisputeBoard, setShowDisputeBoard] = useState(false)
 
-  const globalInvest = useStore((s) => s.globalInvestTokens)
-  const globalSkill = useStore((s) => s.globalSkillPoints)
+  const globalInvest = useStore((s) => s.resources.investigationTokens)
+  const globalSkill = useStore((s) => s.resources.skillPoints)
   const adCountInvest = useStore((s) => s.adWatchCountInvest)
   const adCountSkill = useStore((s) => s.adWatchCountSkill)
   const tickRecharge = useStore((s) => s.tickInvestRecharge)

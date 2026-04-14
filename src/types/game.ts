@@ -70,6 +70,9 @@ export interface ProcessMetrics {
   togglesUsed: number            // 토글 스킬 사용 (회피판독 + 비공개보호)
   bothSidesQuestioned: boolean   // 양측 모두 심문했는지
   confidentialUsed: number       // 비공개 보호 사용 횟수
+  combinationDossierUnlocked: number // 조합 DossierCard 해금 횟수
+  counterQuestionUsed: number        // 반격 질문 사용 횟수
+  bothSidesS3Plus: boolean           // 양쪽 NPC 모두 S3 이상 도달 여부
   // v2: 상성/경로/품질 지표
   affinityHits: number           // 상성 맞는 액션 횟수 (best/good)
   affinityMisses: number         // 상성 안 맞는 액션 횟수 (weak/worst)

@@ -211,6 +211,7 @@ function InterjectionModal({ event, caseKey, partyName }: { event: GameEventTrig
       turn: turnCount,
     })
     trackMetric('interjectionAllowed')
+    trackMetric('counterQuestionUsed')
     // 권위 감소
     changeTrust(event.party === 'a' ? 'b' : 'a', 'trustTowardJudge', -3)
     dismiss(null)

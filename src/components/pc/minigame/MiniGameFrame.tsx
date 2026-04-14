@@ -1,18 +1,22 @@
 /**
  * MiniGameFrame — 미니게임 공통 래퍼
  * 타이틀 배너 + 회차 표시 + 시간 제한 + 결과 화면 + 재도전/스킵 버튼
+ * 공통 3→2→1→Go! 카운트다운 포함
  */
-import { useCallback } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import { useStore } from '../../../store/useGameStore'
 import { MINIGAME_LABELS, MINIGAME_MAX_ROUNDS, MINIGAME_TOKEN_MAP } from '../../../types/minigame'
 import type { MiniGameType } from '../../../types/minigame'
 import PCSvgIcon from '../icons/PCSvgIcon'
+import { playMiniGameCountdown, playMiniGameStart } from '../../../engine/soundEngine'
 
 const TOKEN_LABELS: Record<string, string> = {
   investigation: '조사 토큰',
   skill: '스킬 포인트',
   court: '법정 지배력',
 }
+
+type CountdownPhase = 3 | 2 | 1 | 'go' | null
 
 interface Props {
   children: React.ReactNode
@@ -22,6 +26,33 @@ export default function MiniGameFrame({ children }: Props) {
   const activeMinigame = useStore((s) => s.activeMinigame)
   const minigameProgress = useStore((s) => s.minigameProgress)
   const cancelMinigame = useStore((s) => s.cancelMinigame)
+  const [countdown, setCountdown] = useState<CountdownPhase>(3)
+  const prevTypeRef = useRef<string | null>(null)
+
+  useEffect(() => {
+    const key = activeMinigame ? `${activeMinigame.type}-${activeMinigame.round}` : null
+    if (key && key !== prevTypeRef.current) {
+      prevTypeRef.current = key
+      setCountdown(3)
+    }
+  }, [activeMinigame])
+
+  useEffect(() => {
+    if (countdown === null) return
+
+    if (countdown === 'go') {
+      playMiniGameStart()
+      const id = window.setTimeout(() => setCountdown(null), 500)
+      return () => window.clearTimeout(id)
+    }
+
+    playMiniGameCountdown()
+    const id = window.setTimeout(() => {
+      if (countdown === 1) setCountdown('go')
+      else setCountdown((countdown - 1) as 2 | 1)
+    }, 800)
+    return () => window.clearTimeout(id)
+  }, [countdown])
 
   if (!activeMinigame) return null
 
@@ -47,9 +78,17 @@ export default function MiniGameFrame({ children }: Props) {
           </button>
         </div>
 
-        {/* Game area — 각 미니게임 컴포넌트가 children으로 들어옴 */}
+        {/* Game area — 카운트다운 종료 후 게임 렌더 */}
         <div className="pc-minigame-frame__body">
-          {children}
+          {countdown !== null ? (
+            <div className="pc-minigame-countdown">
+              <span className={`pc-minigame-countdown__number${countdown === 'go' ? ' is-go' : ''}`}>
+                {countdown === 'go' ? 'Go!' : countdown}
+              </span>
+            </div>
+          ) : (
+            children
+          )}
         </div>
       </div>
     </div>

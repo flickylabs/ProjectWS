@@ -2,7 +2,8 @@ import { useMemo, useState, useCallback } from 'react'
 import { loadDriftState, loadJudgePerks, saveJudgePerks } from '../../data/leaderboard'
 import { deriveJudgeProfile, getThreshold, TITLE_LABELS, AXIS_LABELS, TIER_LABELS, LEVEL_LABELS } from '../../engine/judgeProfileEngine'
 import type { AxisLevelState, JudgeProfile } from '../../engine/judgeProfileEngine'
-import { getAvailablePerks, axisToLevel } from '../../engine/judgePerks'
+import { getAllUnlockedPerks } from '../../engine/judgePerks'
+import { axisToLevel } from '../../engine/judgeProgressionEngine'
 import type { PerkId, PerkDefinition } from '../../engine/judgePerks'
 import JudgeProfileCard from './JudgeProfileCard'
 
@@ -96,15 +97,23 @@ function PerkSelector({ tier, profile, currentPerkId, onSelect }: {
   currentPerkId: PerkId | null
   onSelect: (perkId: PerkId | null) => void
 }) {
-  const levels = useMemo(() => ({
-    inquiry: axisToLevel(profile.inquiryAxis),
-    judgment: axisToLevel(profile.judgmentAxis),
-    resolution: axisToLevel(profile.resolutionAxis),
-  }), [profile.inquiryAxis, profile.judgmentAxis, profile.resolutionAxis])
+  const traitLevels = useMemo(() => {
+    const inqLv = axisToLevel(profile.inquiryAxis)
+    const judLv = axisToLevel(profile.judgmentAxis)
+    const resLv = axisToLevel(profile.resolutionAxis)
+    return {
+      logical: { level: inqLv < 0 ? Math.abs(inqLv) : 0 },
+      intuitive: { level: inqLv > 0 ? inqLv : 0 },
+      strict: { level: judLv < 0 ? Math.abs(judLv) : 0 },
+      lenient: { level: judLv > 0 ? judLv : 0 },
+      principled: { level: resLv < 0 ? Math.abs(resLv) : 0 },
+      reconciling: { level: resLv > 0 ? resLv : 0 },
+    }
+  }, [profile.inquiryAxis, profile.judgmentAxis, profile.resolutionAxis])
 
   const available = useMemo(
-    () => getAvailablePerks(levels, tier),
-    [levels, tier],
+    () => getAllUnlockedPerks(traitLevels, tier),
+    [traitLevels, tier],
   )
 
   if (available.length === 0) {

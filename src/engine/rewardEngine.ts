@@ -68,11 +68,11 @@ export function checkAndGrantRewards(): { id: string; label: string; amount: num
         store.grantSkillReward(cond.reward.amount, cond.label)
       } else {
         // invest 보상
-        const current = store.globalInvestTokens
+        const current = store.resources.investigationTokens
         const max = store.freeCap
         const actual = Math.min(cond.reward.amount, max - current)
         if (actual > 0) {
-          useGameStore.setState({ globalInvestTokens: current + actual })
+          store.gain('investigationTokens', actual)
         }
       }
 
@@ -96,11 +96,11 @@ export function checkDailyLogin(): { granted: boolean; amount: number } {
 
   localStorage.setItem('solomon_last_login', today)
   const store = useGameStore.getState()
-  const current = store.globalInvestTokens
+  const current = store.resources.investigationTokens
   const max = store.freeCap
   const amount = Math.min(2, max - current)
   if (amount > 0) {
-    useGameStore.setState({ globalInvestTokens: current + amount })
+    store.gain('investigationTokens', amount)
   }
   return { granted: true, amount }
 }

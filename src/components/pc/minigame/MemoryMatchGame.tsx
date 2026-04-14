@@ -1,6 +1,14 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
 import type { CSSProperties, ReactNode } from 'react'
 import { useStore } from '../../../store/useGameStore'
+import {
+  playCardFlip,
+  playCardMatch,
+  playCardMismatch,
+  playTimerWarning,
+  playMiniGameSuccess,
+  playMiniGameFail,
+} from '../../../engine/soundEngine'
 
 type EvidenceCardId =
   | 'receipt'
@@ -307,13 +315,17 @@ export default function MemoryMatchGame({ round }: { round: number }) {
 
     const updateTimer = () => {
       const remaining = Math.max(0, Math.ceil((deadlineRef.current - Date.now()) / 1000))
-      setTimeLeft((current) => (current === remaining ? current : remaining))
+      setTimeLeft((current) => {
+        if (current !== remaining && remaining > 0 && remaining <= 10) playTimerWarning()
+        return current === remaining ? current : remaining
+      })
 
       if (remaining > 0) return
 
       clearScheduled()
       setSelectedIds([])
       setIsResolving(false)
+      playMiniGameFail()
       setGameState('failed')
     }
 
@@ -330,6 +342,7 @@ export default function MemoryMatchGame({ round }: { round: number }) {
     clearScheduled()
     setIsResolving(false)
     setSelectedIds([])
+    playMiniGameSuccess()
     setGameState('success')
   }, [cards, clearScheduled, gameState])
 
@@ -344,11 +357,12 @@ export default function MemoryMatchGame({ round }: { round: number }) {
   }, [completeMinigame, gameState])
 
   const handleCardClick = (cardId: string) => {
-    if (gameState !== 'playing' || isResolving || selectedIds.includes(cardId)) return
+    if (gameState !== 'playing' || isResolving || selectedIds.length >= 2 || selectedIds.includes(cardId)) return
 
     const clickedCard = cards.find((card) => card.id === cardId)
     if (!clickedCard || clickedCard.faceUp || clickedCard.cleared || clickedCard.clearing) return
 
+    playCardFlip()
     const nextSelectedIds = [...selectedIds, cardId]
 
     setCards((current) => current.map((card) => (
@@ -368,6 +382,7 @@ export default function MemoryMatchGame({ round }: { round: number }) {
     setIsResolving(true)
 
     if (isMatch) {
+      playCardMatch()
       setCards((current) => current.map((card) => (
         nextSelectedIds.includes(card.id)
           ? { ...card, faceUp: true, clearing: true }
@@ -386,6 +401,7 @@ export default function MemoryMatchGame({ round }: { round: number }) {
       return
     }
 
+    playCardMismatch()
     schedule(() => {
       setCards((current) => current.map((card) => (
         nextSelectedIds.includes(card.id)

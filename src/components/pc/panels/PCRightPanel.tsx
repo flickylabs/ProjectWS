@@ -42,7 +42,7 @@ export default function PCRightPanel() {
   const archetypeB = useStore((s) => s.archetypeB)
   const combinationLabRuntime = useStore((s) => s.combinationLabRuntime)
   const pcSummaryUnlocked = useStore((s) => s.pcSummaryUnlocked)
-  const globalSkillPoints = useStore((s) => s.globalSkillPoints)
+  const globalSkillPoints = useStore((s) => s.resources.skillPoints)
 
   const evidenceCombinations = useStore((s) => s.evidenceCombinations)
   const triggeredCombinations = useStore((s) => s.triggeredCombinations)

@@ -43,6 +43,7 @@ const EMPTY_METRICS: ProcessMetrics = {
   questionsAsked: 0, lieTransitions: 0, liesCollapsed: 0,
   evidenceDiscovered: 0, evidenceEffective: 0, skillsUsedEffective: 0,
   freeQuestionsRelevant: 0, togglesUsed: 0, bothSidesQuestioned: false, confidentialUsed: 0,
+  combinationDossierUnlocked: 0, counterQuestionUsed: 0, bothSidesS3Plus: false,
   // v2
   affinityHits: 0, affinityMisses: 0, requiredPathsCovered: 0, bonusPathsCovered: 0,
   deepTruthsUnlocked: 0, sameActionRepeats: 0, unsupportedCollapses: 0, immediateAnswerUsed: 0, trustActionsUsed: 0,

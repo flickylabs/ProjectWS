@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState, type ReactNode } from 'react'
 import { getAllCases, getCaseById } from '../../../data/cases'
-import { getHallOfFameForSeason, getJudgeProfile, getLeaderboard, getPlayerStats, loadExtendedHistory, loadProfile } from '../../../data/leaderboard'
+import { getHallOfFameForSeason, getJudgeProfile, getLeaderboard, getPlayerStats, loadExtendedHistory, loadProfile, loadProgressionState } from '../../../data/leaderboard'
 import { getCurrentSeason, getRemainingDays } from '../../../data/seasons'
 import { TITLE_LABELS } from '../../../engine/judgeProfileEngine'
 import { checkConnection } from '../../../engine/llmClient'
@@ -11,6 +11,8 @@ import { useStore } from '../../../store/useGameStore'
 import type { CaseData, ExtendedHistoryEntry, SortCategory } from '../../../types'
 import PCSvgIcon from '../icons/PCSvgIcon'
 import { openPcInteractionPanel } from '../layout/PCInteractionPanel'
+import PCPerkEquipPanel from '../progression/PCPerkEquipPanel'
+import PCTraitEnhancePanel from '../progression/PCTraitEnhancePanel'
 import PCCaseBrowser from './PCCaseBrowser'
 import PCIntroSlides from './PCIntroSlides'
 import { type PCGeneralSessionId, PC_GENERAL_SESSIONS, formatCountdown, getCasesForPcGeneralSession, getRelationshipLabel, getSeasonCases, hasSeenPcIntro, loadPcCaseProgress } from './pcHomeShared'
@@ -45,8 +47,8 @@ export default function PCHomeScreen() {
   const [countdown, setCountdown] = useState(0)
 
   const initializeCase = useStore((s) => s.initializeCase)
-  const globalInvest = useStore((s) => s.globalInvestTokens)
-  const globalSkill = useStore((s) => s.globalSkillPoints)
+  const globalInvest = useStore((s) => s.resources.investigationTokens)
+  const globalSkill = useStore((s) => s.resources.skillPoints)
   const getCountdown = useStore((s) => s.getNextRechargeCountdown)
   const tickRecharge = useStore((s) => s.tickInvestRecharge)
 
@@ -75,6 +77,7 @@ export default function PCHomeScreen() {
   const profile = useMemo(() => loadProfile(), [refreshKey])
   const history = useMemo(() => loadExtendedHistory(), [refreshKey])
   const judgeProfile = useMemo(() => getJudgeProfile(), [refreshKey])
+  const progressionState = useMemo(() => loadProgressionState(), [refreshKey])
   const playerStats = useMemo(() => getPlayerStats(), [refreshKey])
   const hallOfFame = useMemo(() => getHallOfFameForSeason(season.id), [refreshKey, season.id])
   const leaderboard = useMemo(() => getLeaderboard(season.id, leaderboardSort), [leaderboardSort, refreshKey, season.id])
@@ -174,6 +177,8 @@ export default function PCHomeScreen() {
     body: [`AI 연결: ${llmConnected ? '정상' : '미연결'}`, `조사 토큰: ${globalInvest}`, `스킬 포인트: ${globalSkill}`, `다음 충전: ${formatCountdown(countdown)}`].join('\n'),
   })
 
+  const refreshProgression = () => setRefreshKey((current) => current + 1)
+
   if (showIntro) {
     return <div className="pc-home-shell"><div className="pc-home-shell__ambient pc-home-shell__ambient--gold" /><div className="pc-home-shell__ambient pc-home-shell__ambient--blue" /><PCIntroSlides onComplete={() => setShowIntro(false)} /></div>
   }
@@ -247,6 +252,7 @@ export default function PCHomeScreen() {
           </div>
 
           {judgeDeskTab === 'profile' ? (
+            <>
             <div className="pc-desk-grid">
               <Card eyebrow="JUDGE PROFILE" title={`Lv ${Math.max(1, judgeLevel)} ${titleInfo.name}`}>
                 <div className="pc-desk-hero__meter"><strong>명성 진행</strong><span>{`${Math.min(reputation, 1200)}/1200`}</span><div className="pc-progress-bar"><i style={{ width: `${Math.min(100, (Math.min(reputation, 1200) / 1200) * 100)}%` }} /></div></div>
@@ -269,6 +275,11 @@ export default function PCHomeScreen() {
                 </div>
               </Card>
             </div>
+            <div className="pc-judge-progression-layout">
+              <PCTraitEnhancePanel onChange={refreshProgression} progressionState={progressionState} />
+              <PCPerkEquipPanel onChange={refreshProgression} progressionState={progressionState} />
+            </div>
+            </>
           ) : (
             <div className="pc-history-board">
               <Card eyebrow="GENERAL MODE" title="일반 모드">

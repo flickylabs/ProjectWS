@@ -39,4 +39,5 @@ export interface AgentState {
   lieStateMap: Record<string, LieStateEntry>
   emotionalState: EmotionalState
   trustState: TrustState
+  empathyAtCurrentState: number
 }

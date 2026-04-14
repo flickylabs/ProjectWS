@@ -156,6 +156,7 @@ export const createCombinationLabSlice: StateCreator<any, [], [], CombinationLab
     const output = config.outputs.find((item: CombinationLabOutput) => item.id === recipe.outputId)
     if (!output) return { ok: false, reason: 'output_not_found' }
     const hiddenRefund = recipe.hidden ? (config.analysisPointRefundOnFirstHidden ?? 0) : 0
+    const unlockedDossierForFirstTime = output.id.startsWith('dc-') && !runtime.appliedRecipeIds.includes(recipe.id)
 
     let caseData = root.caseData as CaseData | null
     if (!caseData) return { ok: false, reason: 'no_case' }
@@ -325,6 +326,10 @@ export const createCombinationLabSlice: StateCreator<any, [], [], CombinationLab
         ],
       },
     })
+
+    if (unlockedDossierForFirstTime) {
+      root.trackMetric?.('combinationDossierUnlocked')
+    }
 
     return { ok: true, outputId: output.id }
   },

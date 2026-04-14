@@ -1,13 +1,27 @@
 import type { ExtendedHistoryEntry, HallOfFameEntry, SortCategory, LocalPlayerProfile } from '../types'
 import { getSeasonForDate, getCurrentSeason } from './seasons'
-import { deriveJudgeProfile, createDefaultDriftState } from '../engine/judgeProfileEngine'
+import {
+  createDefaultProgressionState,
+  migrateDriftToProgression,
+  resolveTitle,
+  computeTier,
+  TITLE_LABELS,
+  TIER_LABELS,
+} from '../engine/judgeProgressionEngine'
+import type { JudgeProgressionState } from '../engine/judgeProgressionEngine'
+// 하위 호환: 기존 소비자가 import하는 타입/함수를 re-export
+import { deriveJudgeProfile, createDefaultDriftState, applyDriftUpdate } from '../engine/judgeProfileEngine'
 import type { JudgeProfile, JudgeDriftState } from '../engine/judgeProfileEngine'
+export { deriveJudgeProfile, applyDriftUpdate, createDefaultDriftState }
+export type { JudgeProfile, JudgeDriftState }
 
 const HISTORY_KEY = 'solomon-history'
 const PROFILE_KEY = 'solomon-profile'
 const HOF_KEY = 'solomon-hall-of-fame'
-const JUDGE_PERKS_KEY = 'solomon-judge-perks'
-const JUDGE_DRIFT_KEY = 'solomon-judge-drift'
+const JUDGE_PROGRESSION_KEY = 'solomon-judge-progression'
+// Legacy keys (마이그레이션 후 제거 대상)
+const LEGACY_PERKS_KEY = 'solomon-judge-perks'
+const LEGACY_DRIFT_KEY = 'solomon-judge-drift'
 const MAX_HISTORY = 100
 
 // ── 프로필 ──
@@ -185,60 +199,146 @@ export function getPlayerStats(seasonId?: string): PlayerStats {
   }
 }
 
-// ── 재판관 퍼크 저장/로드 ──
+// ── 재판관 진행 상태 저장/로드 (v3 재료 기반) ──
 
-export function saveJudgePerks(major: string | null, minor: string | null): void {
-  localStorage.setItem(JUDGE_PERKS_KEY, JSON.stringify({ major, minor }))
+export function saveProgressionState(state: JudgeProgressionState): void {
+  localStorage.setItem(JUDGE_PROGRESSION_KEY, JSON.stringify(state))
 }
 
-export function loadJudgePerks(): { major: string | null; minor: string | null } {
+export function loadProgressionState(): JudgeProgressionState {
   try {
-    const raw = localStorage.getItem(JUDGE_PERKS_KEY)
+    const raw = localStorage.getItem(JUDGE_PROGRESSION_KEY)
     if (raw) {
       const parsed = JSON.parse(raw)
-      return { major: parsed.major ?? null, minor: parsed.minor ?? null }
+      if (parsed.schemaVersion === 3) return parsed as JudgeProgressionState
     }
   } catch { /* ignore */ }
-  return { major: null, minor: null }
+
+  // v2 드리프트 마이그레이션 시도
+  try {
+    const driftRaw = localStorage.getItem(LEGACY_DRIFT_KEY)
+    if (driftRaw) {
+      const drift = JSON.parse(driftRaw)
+      if (drift.schemaVersion === 2) {
+        const perksRaw = localStorage.getItem(LEGACY_PERKS_KEY)
+        const perks = perksRaw
+          ? JSON.parse(perksRaw)
+          : { major: null, minor: null }
+        const migrated = migrateDriftToProgression(drift, perks)
+        saveProgressionState(migrated)
+        return migrated
+      }
+    }
+  } catch { /* ignore */ }
+
+  return createDefaultProgressionState()
 }
 
-// ── 드리프트 상태 저장/로드 ──
-
-export function saveDriftState(state: JudgeDriftState): void {
-  localStorage.setItem(JUDGE_DRIFT_KEY, JSON.stringify(state))
+/** 하위 호환: 기존 코드에서 loadJudgePerks를 호출하는 곳을 위한 어댑터 */
+export function loadJudgePerks(): { major: string | null; minor: string | null } {
+  const state = loadProgressionState()
+  return { major: state.equippedMajor, minor: state.equippedMinor }
 }
+
+/** 하위 호환: 기존 코드에서 saveJudgePerks를 호출하는 곳을 위한 어댑터 */
+export function saveJudgePerks(major: string | null, minor: string | null): void {
+  const state = loadProgressionState()
+  state.equippedMajor = (major as JudgeProgressionState['equippedMajor'])
+  state.equippedMinor = (minor as JudgeProgressionState['equippedMinor'])
+  saveProgressionState(state)
+}
+
+/** 재판관 요약 프로필 (UI 표시용) */
+export function getJudgeProgressionSummary() {
+  const state = loadProgressionState()
+  const titleId = resolveTitle(state.traits)
+  const maxLevel = Math.max(
+    ...Object.values(state.traits).map(t => t.level),
+  )
+  const tier = computeTier(state.casesCompleted, maxLevel)
+  const titleLabel = TITLE_LABELS[titleId]
+  const tierLabel = TIER_LABELS[tier]
+
+  return {
+    state,
+    titleId,
+    titleName: titleLabel.name,
+    titleSubtitle: titleLabel.subtitle,
+    tier,
+    tierName: tierLabel.name,
+    tierEmoji: tierLabel.emoji,
+    maxLevel,
+  }
+}
+
+// ── 하위 호환 어댑터: loadDriftState / saveDriftState / getJudgeProfile ──
+// 기존 컴포넌트(VerdictScreen, PCVerdictScreen, PCResultScreen 등)가 사용
 
 export function loadDriftState(): JudgeDriftState {
-  try {
-    const raw = localStorage.getItem(JUDGE_DRIFT_KEY)
-    if (raw) {
-      const parsed = JSON.parse(raw)
-      if (parsed.schemaVersion === 2) return parsed as JudgeDriftState
-    }
-  } catch { /* ignore */ }
-  return createDefaultDriftState()
+  const prog = loadProgressionState()
+  // v3 traits → v2 drift 형식으로 변환
+  function toLegacyAxis(negTrait: keyof typeof prog.traits, posTrait: keyof typeof prog.traits) {
+    const neg = prog.traits[negTrait].level
+    const pos = prog.traits[posTrait].level
+    if (neg > pos) return { level: -neg, progress: 0 }
+    if (pos > neg) return { level: pos, progress: 0 }
+    return { level: 0, progress: 0 }
+  }
+  return {
+    inquiry: toLegacyAxis('logical', 'intuitive'),
+    judgment: toLegacyAxis('strict', 'lenient'),
+    resolution: toLegacyAxis('principled', 'reconciling'),
+    casesProcessed: prog.casesCompleted,
+    lastUpdated: prog.lastUpdated,
+    schemaVersion: 2,
+  }
 }
 
-// ── 재판관 성향 프로필 ──
+export function saveDriftState(state: JudgeDriftState): void {
+  // v2 drift 저장 요청을 v3로 변환하여 저장
+  const prog = loadProgressionState()
+  function updateTraits(axis: { level: number }, negKey: keyof typeof prog.traits, posKey: keyof typeof prog.traits) {
+    if (axis.level < 0) {
+      prog.traits[negKey] = { level: Math.min(3, Math.abs(axis.level)) }
+    } else if (axis.level > 0) {
+      prog.traits[posKey] = { level: Math.min(3, axis.level) }
+    }
+  }
+  updateTraits(state.inquiry, 'logical', 'intuitive')
+  updateTraits(state.judgment, 'strict', 'lenient')
+  updateTraits(state.resolution, 'principled', 'reconciling')
+  prog.casesCompleted = state.casesProcessed
+  prog.lastUpdated = new Date().toISOString()
+  saveProgressionState(prog)
+}
 
 export function getJudgeProfile(): JudgeProfile {
-  const driftState = loadDriftState()
-  const savedPerks = loadJudgePerks()
-  // 최근 5건 칭호 이력 수집 (titleId가 있는 히스토리에서)
-  const history = loadExtendedHistory()
-  const recentTitles = history
-    .slice(0, 5)
-    .filter(e => e.caseTelemetry != null)
-    .map((e): string | undefined => {
-      // caseTelemetry에서 개별 titleId를 역산할 수 없으므로 생략
-      // 칭호 이력은 별도 관리 필요 — 현재는 축값 기반으로 결정
-      return undefined
-    })
-    .filter((t): t is string => t != null)
-  return deriveJudgeProfile(driftState, recentTitles.length > 0 ? recentTitles : undefined, {
-    major: savedPerks.major as any,
-    minor: savedPerks.minor as any,
-  })
+  const prog = loadProgressionState()
+  const titleId = resolveTitle(prog.traits)
+  const titleLabel = TITLE_LABELS[titleId]
+  const maxLevel = Math.max(...Object.values(prog.traits).map(t => t.level))
+  const tier = computeTier(prog.casesCompleted, maxLevel)
+
+  function traitToAxis(negKey: keyof typeof prog.traits, posKey: keyof typeof prog.traits): number {
+    const neg = prog.traits[negKey].level
+    const pos = prog.traits[posKey].level
+    if (neg > pos) return -neg * 33
+    if (pos > neg) return pos * 33
+    return 0
+  }
+
+  return {
+    inquiryAxis: traitToAxis('logical', 'intuitive'),
+    judgmentAxis: traitToAxis('strict', 'lenient'),
+    resolutionAxis: traitToAxis('principled', 'reconciling'),
+    titleId,
+    subtags: [],
+    casesCompleted: prog.casesCompleted,
+    tier: tier as any,
+    majorPerk: prog.equippedMajor as any,
+    minorPerk: prog.equippedMinor as any,
+    isStabilized: maxLevel >= 1 && prog.casesCompleted >= 4,
+  }
 }
 
 // ── 명예의 전당 ──

@@ -89,7 +89,6 @@ export default function PCCourtLayout({ actionPanel, onDialogueTap, isDialoguePh
   const currentPhase = useStore((s) => s.currentPhase)
   const dialogueLog = useStore((s) => s.dialogueLog)
   const resources = useStore((s) => s.resources)
-  const globalSkillPoints = useStore((s) => s.globalSkillPoints)
   const turnCount = useStore((s) => s.turnCount)
 
   const [phaseBanner, setPhaseBanner] = useState<string | null>(null)
@@ -255,7 +254,7 @@ export default function PCCourtLayout({ actionPanel, onDialogueTap, isDialoguePh
         subtitle: '현재 사용 가능한 스킬',
         tone: 'gold',
         body: [
-          `스킬 포인트: ${globalSkillPoints}`,
+          `스킬 포인트: ${resources.skillPoints}`,
           '',
           '요약 스킬, 조합 스킬, 특수 행동에서 사용합니다.',
         ].join('\n'),
@@ -298,7 +297,7 @@ export default function PCCourtLayout({ actionPanel, onDialogueTap, isDialoguePh
       tone: 'blue',
       body: timelineBody,
     })
-  }, [caseData?.caseId, currentPhase, globalSkillPoints, resources.courtControl, resources.investigationTokens, timelineBody, turnCount])
+  }, [caseData?.caseId, currentPhase, resources.skillPoints, resources.courtControl, resources.investigationTokens, timelineBody, turnCount])
 
   return (
     <>
@@ -350,7 +349,7 @@ export default function PCCourtLayout({ actionPanel, onDialogueTap, isDialoguePh
               type="button"
             >
               <PCSvgIcon id="i-bolt" size={16} />
-              <b>{globalSkillPoints}</b>
+              <b>{resources.skillPoints}</b>
             </button>
             <MiniGameLaunchButton type="skill_runner" />
             <button

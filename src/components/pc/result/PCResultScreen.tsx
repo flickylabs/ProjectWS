@@ -1,10 +1,11 @@
 import React, { useEffect, useMemo, useState } from 'react'
 import { loadGeneratedCases } from '../../../data/cases/caseLoader'
 import { evaluateTitles, saveUnlockedTitles, loadUnlockedTitles, type Title } from '../../../data/titles'
-import { loadDriftState, loadJudgePerks } from '../../../data/leaderboard'
-import { deriveJudgeProfile, TITLE_LABELS, AXIS_LABELS, TIER_LABELS, LEVEL_LABELS } from '../../../engine/judgeProfileEngine'
+import { loadDriftState, loadExtendedHistory, loadJudgePerks, loadProgressionState, saveProgressionState } from '../../../data/leaderboard'
+import { deriveCaseProfile, deriveJudgeProfile, TITLE_LABELS, AXIS_LABELS, TIER_LABELS, LEVEL_LABELS } from '../../../engine/judgeProfileEngine'
 import type { AxisLevelState } from '../../../engine/judgeProfileEngine'
 import type { PerkId } from '../../../engine/judgePerks'
+import { applyRewardsToInventory, canEnhanceTrait, computeCaseRewards, type FragmentReward, type TraitId } from '../../../engine/judgeProgressionEngine'
 import { GamePhase } from '../../../types'
 import { useGameStore, useStore } from '../../../store/useGameStore'
 import { saveCaseProgress } from '../../phase/CaseMap'
@@ -14,6 +15,8 @@ import { pp과와 } from '../../../engine/koreanPostposition'
 import CharacterFaceSvg from '../icons/CharacterFaceSvg'
 import PCClearanceDetailPopup from './PCClearanceDetailPopup'
 import { evaluateClearance } from '../../../engine/clearanceTracker'
+import PCFragmentRewardOverlay from '../progression/PCFragmentRewardOverlay'
+import { TRAIT_ORDER } from '../progression/PCJudgeProgressionShared'
 
 type ResultTab = 'result' | 'verdict_pronounce' | 'epilogue'
 
@@ -66,6 +69,33 @@ const RARITY_LABEL: Record<string, string> = {
   rare: '희귀',
   epic: '영웅',
   legendary: '전설',
+}
+
+function aggregateFragmentRewards(rewards: FragmentReward[]): FragmentReward[] {
+  const merged = new Map<FragmentReward['fragmentId'], FragmentReward>()
+
+  rewards.forEach((reward) => {
+    const existing = merged.get(reward.fragmentId)
+    if (!existing) {
+      merged.set(reward.fragmentId, { ...reward })
+      return
+    }
+
+    existing.count += reward.count
+  })
+
+  return Array.from(merged.values())
+}
+
+function getResultRewardMarkerKey(caseId: string, marker: string) {
+  return `solomon-fragment-reward:${caseId}:${marker}`
+}
+
+function isLieStateS3Plus(state?: { currentState?: string }) {
+  const raw = state?.currentState
+  if (!raw) return false
+  const rank = Number.parseInt(raw.replace('S', ''), 10)
+  return Number.isFinite(rank) && rank >= 3
 }
 
 function getProfileDescription(titleId: string): string {
@@ -145,6 +175,9 @@ export default function PCResultScreen() {
   const skillUseCounts = useStore((s) => s.skillUseCounts)
   const processMetrics = useStore((s) => s.processMetrics)
   const minigameProgress = useStore((s) => s.minigameProgress)
+  const calledWitnesses = useStore((s) => s.calledWitnesses)
+  const triggeredCombinations = useStore((s) => s.triggeredCombinations)
+  const combinationLabRuntime = useStore((s) => s.combinationLabRuntime)
 
   const [tab, setTab] = useState<ResultTab>('result')
   const [titles, setTitles] = useState<Title[]>([])
@@ -152,6 +185,8 @@ export default function PCResultScreen() {
   const [copied, setCopied] = useState(false)
   const [summaryCopied, setSummaryCopied] = useState(false)
   const [clearanceDetailOpen, setClearanceDetailOpen] = useState(false)
+  const [rewardApplied, setRewardApplied] = useState(true)
+  const [rewardOverlayDismissed, setRewardOverlayDismissed] = useState(true)
 
   useEffect(() => {
     if (verdictScore && caseData) {
@@ -240,11 +275,94 @@ export default function PCResultScreen() {
     })()
   }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
+  const rewardBundle = useMemo(() => {
+    if (!verdictScore || !caseData) {
+      return {
+        enhanceableTraits: [] as TraitId[],
+        marker: null as string | null,
+        rewards: [] as FragmentReward[],
+      }
+    }
+
+    const caseAxes = deriveCaseProfile(
+      verdictInput,
+      processMetrics,
+      caseData.disputes.map((item) => ({
+        id: item.id,
+        ambiguity: item.ambiguity,
+        truth: item.truth ?? true,
+      })),
+      caseData.caseId,
+      caseData.solutions,
+    )
+    const history = loadExtendedHistory()
+    const currentEntry = history.find((entry) => entry.caseId === caseData.caseId)
+    const autoCombinationTarget = caseData.evidenceCombinations.length
+    const manualCombinationTarget = combinationLabRuntime.config?.recipes.length ?? 0
+    const witnessTarget = caseData.duo.socialGraph.length
+    const rewards = aggregateFragmentRewards(computeCaseRewards(caseAxes, {
+      bothSidesS3Plus:
+        Object.values(agentA.lieStateMap).some((entry) => isLieStateS3Plus(entry))
+        && Object.values(agentB.lieStateMap).some((entry) => isLieStateS3Plus(entry)),
+      perfectClearance: (verdictScore.clearanceResult ?? evaluateClearance(useGameStore.getState())).percent >= 100,
+      isFirstPlay: history.filter((entry) => entry.caseId === caseData.caseId).length === 1,
+      allCombinationsFound:
+        (autoCombinationTarget > 0 || manualCombinationTarget > 0)
+        && new Set(triggeredCombinations).size >= autoCombinationTarget
+        && new Set(combinationLabRuntime.appliedRecipeIds).size >= manualCombinationTarget,
+      allWitnessesCalled: witnessTarget > 0 && new Set(calledWitnesses).size >= witnessTarget,
+    }))
+    const progressionState = loadProgressionState()
+    const projectedInventory = rewardApplied
+      ? progressionState.inventory
+      : applyRewardsToInventory(progressionState.inventory, rewards)
+
+    return {
+      enhanceableTraits: TRAIT_ORDER.filter((traitId) => canEnhanceTrait(traitId, progressionState.traits, projectedInventory)),
+      marker: getResultRewardMarkerKey(caseData.caseId, currentEntry?.date ?? `${verdictScore.total}-${turnCount}`),
+      rewards,
+    }
+  }, [
+    agentA.lieStateMap,
+    agentB.lieStateMap,
+    calledWitnesses,
+    caseData,
+    combinationLabRuntime.appliedRecipeIds,
+    combinationLabRuntime.config,
+    processMetrics,
+    rewardApplied,
+    triggeredCombinations,
+    turnCount,
+    verdictInput,
+    verdictScore,
+  ])
+
+  useEffect(() => {
+    if (!rewardBundle.marker) return
+    const claimed = localStorage.getItem(rewardBundle.marker) === '1'
+    setRewardApplied(claimed)
+    setRewardOverlayDismissed(claimed)
+  }, [rewardBundle.marker])
+
+  useEffect(() => {
+    if (!rewardBundle.marker || rewardBundle.rewards.length === 0 || rewardApplied) return
+
+    const progressionState = loadProgressionState()
+    saveProgressionState({
+      ...progressionState,
+      inventory: applyRewardsToInventory(progressionState.inventory, rewardBundle.rewards),
+      lastUpdated: new Date().toISOString(),
+    })
+    localStorage.setItem(rewardBundle.marker, '1')
+    setRewardApplied(true)
+  }, [rewardApplied, rewardBundle.marker, rewardBundle.rewards])
+
+  const { profile: judgeProfile } = useProfileData()
+
   if (!verdictScore || !caseData) {
     return null
   }
 
-  const { profile: judgeProfile } = useProfileData()
   const judgeTierInfo = TIER_LABELS[judgeProfile.tier]
 
   const stars = verdictScore.total >= 75 ? 3 : verdictScore.total >= 55 ? 2 : verdictScore.total >= 35 ? 1 : 0
@@ -258,6 +376,7 @@ export default function PCResultScreen() {
     .sort((a, b) => (diffOrder[a.meta?.difficulty ?? 'medium'] ?? 1) - (diffOrder[b.meta?.difficulty ?? 'medium'] ?? 1))
   const currentIdx = sessionCases.findIndex((item) => item.caseId === caseData.caseId)
   const nextCase = currentIdx >= 0 ? sessionCases[currentIdx + 1] : null
+  const rewardOverlayOpen = rewardBundle.rewards.length > 0 && !rewardOverlayDismissed
 
   const handleExit = () => {
     resetAftermathCache()
@@ -291,6 +410,11 @@ export default function PCResultScreen() {
   const handleCloseClearanceDetail = () => {
     playClick()
     setClearanceDetailOpen(false)
+  }
+
+  const handleCloseRewardOverlay = () => {
+    playClick()
+    setRewardOverlayDismissed(true)
   }
 
   const handleCopyShare = async () => {
@@ -618,6 +742,13 @@ export default function PCResultScreen() {
           </div>
         </section>
       </div>
+
+      <PCFragmentRewardOverlay
+        enhanceableTraits={rewardBundle.enhanceableTraits}
+        onClose={handleCloseRewardOverlay}
+        open={rewardOverlayOpen}
+        rewards={rewardBundle.rewards}
+      />
 
       {clearanceDetailOpen ? (
         <PCClearanceDetailPopup

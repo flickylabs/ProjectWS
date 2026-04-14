@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState, type ReactNode } from 'react'
 import { resetFatigueForDossier } from '../../../engine/questionFatigueEngine'
 import { getContradictionEvent, getInterjectionEvent, getOutburstEvent } from '../../../engine/v3GameLoopLoader'
-import { resolveInterjectionV2 } from '../../../hooks/useActionDispatch'
+import { resolveInterjectionV2, applyWitnessSlot } from '../../../hooks/useActionDispatch'
 import { useGameStore, useStore } from '../../../store/useGameStore'
 import type { TruthJudgment } from '../../../types/discovery'
 
@@ -397,6 +397,7 @@ function GameEventPanel() {
         turn: turnCount,
       })
       trackMetric('interjectionAllowed')
+      trackMetric('counterQuestionUsed')
       changeTrust(pendingEvent.party === 'a' ? 'b' : 'a', 'trustTowardJudge', -3)
       setPendingGameEvent(null)
     }
@@ -654,7 +655,6 @@ function WitnessChoicePanel() {
           <button
             key={slot.id}
             onClick={() => {
-              const { applyWitnessSlot } = require('../../../hooks/useActionDispatch')
               applyWitnessSlot(slot.id)
             }}
             style={{

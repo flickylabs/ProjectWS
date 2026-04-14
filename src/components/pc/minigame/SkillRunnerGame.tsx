@@ -1,5 +1,12 @@
 import { useEffect, useEffectEvent, useRef, useState } from 'react'
 import { useStore } from '../../../store/useGameStore'
+import {
+  playRunnerJump,
+  playRunnerCollect,
+  playRunnerHit,
+  playMiniGameSuccess,
+  playMiniGameFail,
+} from '../../../engine/soundEngine'
 
 const VIEW_WIDTH = 960
 const VIEW_HEIGHT = 420
@@ -81,6 +88,7 @@ interface GameState {
   player: PlayerState
   screenShake: number
   note: string
+  sfxEvents: string[]
 }
 
 interface InputState {
@@ -185,6 +193,7 @@ function createInitialState(round: number): GameState {
     },
     screenShake: 0,
     note: '',
+    sfxEvents: [],
   }
 
   spawnSegmentContent(state, config, initialSegment, 480, 120)
@@ -330,6 +339,7 @@ function updateGame(state: GameState, config: RoundConfig, input: InputState, fr
     player.velocityY = JUMP_VELOCITY
     player.jumpBoostRemaining = EXTRA_JUMP_BOOST
     player.landingTimer = 0
+    state.sfxEvents.push('jump')
   }
   input.jumpPressed = false
 
@@ -383,7 +393,9 @@ function updateGame(state: GameState, config: RoundConfig, input: InputState, fr
     if (rectsOverlap(playerRect, itemRect)) {
       item.collected = true
       state.collected += 1
+      state.sfxEvents.push('collect')
       if (state.collected >= state.target) {
+        state.sfxEvents.push('success')
         setGameResult(state, 'success', `목표 ${state.target}개를 모두 모았습니다.`)
         return
       }
@@ -401,8 +413,10 @@ function updateGame(state: GameState, config: RoundConfig, input: InputState, fr
       player.knockback = -18
       state.screenShake = 9
       player.landingTimer = Math.max(player.landingTimer, 0.12)
+      state.sfxEvents.push('hit')
 
       if (state.lives <= 0) {
+        state.sfxEvents.push('fail')
         setGameResult(state, 'failed', '장애물에 연속으로 걸려 스킬 조각을 놓쳤습니다.')
       }
       break
@@ -410,6 +424,7 @@ function updateGame(state: GameState, config: RoundConfig, input: InputState, fr
   }
 
   if (player.y > VIEW_HEIGHT + 40) {
+    state.sfxEvents.push('fail')
     setGameResult(state, 'failed', '낭떠러지로 떨어져 재판이 중단되었습니다.')
   }
 }
@@ -848,6 +863,16 @@ export default function SkillRunnerGame() {
       lastTime = now
 
       updateGame(state, config, inputRef.current, frameDelta)
+
+      for (const sfx of state.sfxEvents) {
+        if (sfx === 'jump') playRunnerJump()
+        else if (sfx === 'collect') playRunnerCollect()
+        else if (sfx === 'hit') playRunnerHit()
+        else if (sfx === 'success') playMiniGameSuccess()
+        else if (sfx === 'fail') playMiniGameFail()
+      }
+      state.sfxEvents.length = 0
+
       drawScene(ctx, state, config)
       syncUi(state)
 

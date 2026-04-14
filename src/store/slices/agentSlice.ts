@@ -1,5 +1,5 @@
 import type { StateCreator } from 'zustand'
-import type { AgentState, LieState, EmotionalPhase } from '../../types'
+import type { AgentState, LieState, EmotionalPhase, CaseData, ProcessMetrics } from '../../types'
 import type { LieConfig } from '../../types'
 import type { Archetype } from '../../types'
 import { initializeLieStates, attemptLieTransition } from '../../engine/lieStateMachine'
@@ -27,6 +27,7 @@ export interface AgentSlice {
   applyPhase3Bridge: (caseId: string) => void
   transitionLie: (party: 'a' | 'b', disputeId: string, trigger: string) => boolean
   forceSetLieState: (party: 'a' | 'b', disputeId: string, state: LieState) => void
+  incrementEmpathyAtCurrentState: (party: 'a' | 'b') => void
   changeEmotion: (party: 'a' | 'b', delta: number) => void
   changeTrust: (party: 'a' | 'b', field: 'trustTowardJudge' | 'fearOfExposure' | 'retaliationWorry', delta: number) => void
   getAgent: (party: 'a' | 'b') => AgentState
@@ -38,6 +39,28 @@ const emptyAgent: AgentState = {
   lieStateMap: {},
   emotionalState: { phase: 'defensive', internalValue: 10, behaviorHint: '' },
   trustState: { trustTowardJudge: 30, fearOfExposure: 50, retaliationWorry: 30 },
+  empathyAtCurrentState: 0,
+}
+
+type AgentSliceRootState = AgentSlice & {
+  agentA: AgentState
+  agentB: AgentState
+  caseData: CaseData | null
+  processMetrics: ProcessMetrics
+  trackMetric: (key: keyof ProcessMetrics, delta?: number) => void
+}
+
+function hasS3Plus(agent: AgentState): boolean {
+  return Object.values(agent.lieStateMap).some((entry) => entry.currentState >= 'S3')
+}
+
+function shouldTrackBothSidesS3Plus(root: AgentSliceRootState, party: 'a' | 'b', nextAgent: AgentState): boolean {
+  if (root.processMetrics.bothSidesS3Plus) return false
+
+  const nextAgentA = party === 'a' ? nextAgent : root.agentA
+  const nextAgentB = party === 'b' ? nextAgent : root.agentB
+
+  return hasS3Plus(nextAgentA) && hasS3Plus(nextAgentB)
 }
 
 export const createAgentSlice: StateCreator<AgentSlice, [], [], AgentSlice> = (set, get) => ({
@@ -55,12 +78,14 @@ export const createAgentSlice: StateCreator<AgentSlice, [], [], AgentSlice> = (s
         lieStateMap: initializeLieStates(lieConfigA),
         emotionalState: createInitialEmotionalState(archetypeA, startEmotionA),
         trustState: createInitialTrustState(),
+        empathyAtCurrentState: 0,
       },
       agentB: {
         partyId: 'b',
         lieStateMap: initializeLieStates(lieConfigB),
         emotionalState: createInitialEmotionalState(archetypeB, startEmotionB),
         trustState: createInitialTrustState(),
+        empathyAtCurrentState: 0,
       },
       archetypeA,
       archetypeB,
@@ -84,7 +109,7 @@ export const createAgentSlice: StateCreator<AgentSlice, [], [], AgentSlice> = (s
   },
 
   transitionLie: (party, disputeId, trigger) => {
-    const state = get()
+    const state = get() as AgentSliceRootState
     const agent = party === 'a' ? state.agentA : state.agentB
     const configs = party === 'a' ? state.lieConfigsA : state.lieConfigsB
     const entry = agent.lieStateMap[disputeId]
@@ -97,33 +122,57 @@ export const createAgentSlice: StateCreator<AgentSlice, [], [], AgentSlice> = (s
     const result = attemptLieTransition(entry, config, trigger, agent)
     if (result.transitioned) {
       const agentKey = party === 'a' ? 'agentA' : 'agentB'
-      set({
-        [agentKey]: {
-          ...agent,
-          lieStateMap: {
-            ...agent.lieStateMap,
-            [disputeId]: { ...entry, currentState: result.to },
-          },
+      const nextAgent: AgentState = {
+        ...agent,
+        lieStateMap: {
+          ...agent.lieStateMap,
+          [disputeId]: { ...entry, currentState: result.to },
         },
+        empathyAtCurrentState: 0,
+      }
+
+      set({
+        [agentKey]: nextAgent,
       })
+      if (shouldTrackBothSidesS3Plus(state, party, nextAgent)) {
+        state.trackMetric('bothSidesS3Plus')
+      }
       return true
     }
     return false
   },
 
   forceSetLieState: (party, disputeId, newState) => {
-    const state = get()
+    const state = get() as AgentSliceRootState
     const agentKey = party === 'a' ? 'agentA' : 'agentB'
     const agent = state[agentKey]
     const entry = agent.lieStateMap[disputeId]
     if (!entry) return
+    const didTransition = entry.currentState !== newState
+    const nextAgent: AgentState = {
+      ...agent,
+      lieStateMap: {
+        ...agent.lieStateMap,
+        [disputeId]: { ...entry, currentState: newState },
+      },
+      empathyAtCurrentState: didTransition ? 0 : agent.empathyAtCurrentState,
+    }
+    set({
+      [agentKey]: nextAgent,
+    })
+    if (didTransition && shouldTrackBothSidesS3Plus(state, party, nextAgent)) {
+      state.trackMetric('bothSidesS3Plus')
+    }
+  },
+
+  incrementEmpathyAtCurrentState: (party) => {
+    const state = get()
+    const agentKey = party === 'a' ? 'agentA' : 'agentB'
+    const agent = state[agentKey]
     set({
       [agentKey]: {
         ...agent,
-        lieStateMap: {
-          ...agent.lieStateMap,
-          [disputeId]: { ...entry, currentState: newState },
-        },
+        empathyAtCurrentState: agent.empathyAtCurrentState + 1,
       },
     })
   },
