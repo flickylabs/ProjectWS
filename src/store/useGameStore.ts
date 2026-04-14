@@ -553,7 +553,7 @@ export const useGameStore: import('zustand').UseBoundStore<import('zustand').Sto
       const snapshot: TurnSnapshot = {
         caseId: normalizeCaseKey(s.caseData),
         turn: s.turnCount,
-        activeParty: s.separationTarget ?? 'a',
+        activeParty: s.separationTarget ?? s.pcTargetParty ?? 'a',
         questionType,
         lieStates: { a: s.agentA.lieStateMap, b: s.agentB.lieStateMap },
         emotions: {

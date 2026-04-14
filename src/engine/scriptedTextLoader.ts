@@ -342,10 +342,22 @@ export function getScriptedInterrogation(
     logScriptedMiss(caseId, 'interrogation', key, 'bundle_missing')
     return null
   }
-  const entry = bundle.channels.interrogation.entries.find(e => e.key === key)
+  let entry = bundle.channels.interrogation.entries.find(e => e.key === key)
   if (!entry) {
+    // 해당 파티 키가 없으면 상대 파티 키로 폴백 시도
+    const oppositeParty: PartyId = party === 'a' ? 'b' : 'a'
+    const fallbackKey = buildInterrogationKey({
+      party: oppositeParty,
+      disputeId,
+      lieState: lieState as ScriptedLieState,
+      questionType: questionType as ScriptedInterrogationQuestionType,
+    })
+    entry = bundle.channels.interrogation.entries.find(e => e.key === fallbackKey)
+    if (!entry) {
+      logScriptedMiss(caseId, 'interrogation', key, 'key_missing')
+      return null
+    }
     logScriptedMiss(caseId, 'interrogation', key, 'key_missing')
-    return null
   }
   const variant = selectVariant(entry.variants, caseId, {
     channel: 'interrogation',
