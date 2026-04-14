@@ -742,8 +742,6 @@ export default function PCResultScreen() {
               <div className="pc-result-text">
                 <div style={{ textAlign: 'center', marginBottom: 16 }}>
                   <div style={{ fontSize: 12, fontWeight: 800, letterSpacing: '0.2em', color: 'var(--pc-gold-light)', textTransform: 'uppercase' }}>Bonus</div>
-                  <h2 style={{ fontSize: 22, fontWeight: 900, color: '#f2efe8', margin: '8px 0 4px' }}>조각 획득</h2>
-                  <p style={{ fontSize: 13, color: '#8c8fa0' }}>이번 재판에서 획득한 성향 조각입니다.</p>
                 </div>
 
                 <FragmentGrid rewards={rewardBundle.rewards} />
@@ -815,66 +813,84 @@ const FRAG_SVG: Record<string, React.ReactNode> = {
   reconciliation_fragment: <svg viewBox="0 0 32 32" fill="none" width="28" height="28"><path d="M6 16c2-2 4-3 6-3 1 0 2.5.5 4 2 1.5-1.5 3-2 4-2 2 0 4 1 6 3" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/><path d="M10 19l3 3 3-3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/><path d="M16 19l3 3 3-3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/></svg>,
 }
 
-const GRID_ROWS: { axis: string; label: string; fragments: [string, string, string] }[] = [
-  { axis: '탐구', label: '논리 ← → 직관', fragments: ['reasoning_fragment', 'inquiry_fragment', 'empathy_fragment'] },
-  { axis: '심판', label: '엄격 ← → 관용', fragments: ['severity_fragment', 'deliberation_fragment', 'leniency_fragment'] },
-  { axis: '해결', label: '원칙 ← → 화해', fragments: ['jurisprudence_fragment', 'balance_fragment', 'reconciliation_fragment'] },
+const GRID_ROWS: { negLabel: string; posLabel: string; fragments: [string, string, string] }[] = [
+  { negLabel: '논리', posLabel: '직관', fragments: ['reasoning_fragment', 'inquiry_fragment', 'empathy_fragment'] },
+  { negLabel: '엄격', posLabel: '관용', fragments: ['severity_fragment', 'deliberation_fragment', 'leniency_fragment'] },
+  { negLabel: '원칙', posLabel: '화해', fragments: ['jurisprudence_fragment', 'balance_fragment', 'reconciliation_fragment'] },
 ]
 
-const COL_HEADERS = ['음(−)', '중립', '양(+)']
+const FRAG_COLORS: Record<string, string> = {
+  reasoning_fragment: '#5b8def',
+  inquiry_fragment: '#8b8b9a',
+  empathy_fragment: '#e8c172',
+  severity_fragment: '#e06060',
+  deliberation_fragment: '#8b8b9a',
+  leniency_fragment: '#5cc97a',
+  jurisprudence_fragment: '#d4a24e',
+  balance_fragment: '#8b8b9a',
+  reconciliation_fragment: '#a78bfa',
+}
 
 function FragmentGrid({ rewards }: { rewards: FragmentReward[] }) {
   const rewardMap = new Map<string, number>()
   for (const r of rewards) rewardMap.set(r.fragmentId, (rewardMap.get(r.fragmentId) ?? 0) + r.count)
 
   return (
-    <div style={{
-      border: '1px solid rgba(212,162,78,0.15)', borderRadius: 16,
-      padding: '16px 20px', background: 'rgba(212,162,78,0.02)',
-      marginBottom: 24,
-    }}>
-      {/* Column headers */}
-      <div style={{ display: 'grid', gridTemplateColumns: '64px 1fr 1fr 1fr', gap: 8, marginBottom: 8 }}>
-        <div />
-        {COL_HEADERS.map(h => (
-          <div key={h} style={{ textAlign: 'center', fontSize: 10, fontWeight: 700, color: '#6b6e7e', letterSpacing: '0.05em' }}>{h}</div>
-        ))}
-      </div>
+    <div style={{ marginBottom: 24 }}>
+      {GRID_ROWS.map((row, rowIdx) => (
+        <div key={rowIdx} style={{ display: 'flex', alignItems: 'center', gap: 0, marginBottom: 12 }}>
+          {/* 왼쪽 라벨 */}
+          <span style={{ width: 36, textAlign: 'right', fontSize: 11, fontWeight: 800, color: '#6b6e7e', flexShrink: 0 }}>
+            {'<'}{row.negLabel}
+          </span>
 
-      {/* Rows */}
-      {GRID_ROWS.map(row => (
-        <div key={row.axis} style={{ display: 'grid', gridTemplateColumns: '64px 1fr 1fr 1fr', gap: 8, marginBottom: 8 }}>
-          <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: 2 }}>
-            <span style={{ fontSize: 12, fontWeight: 800, color: '#c4c4c4' }}>{row.axis}</span>
-            <span style={{ fontSize: 9, color: '#555' }}>{row.label}</span>
+          {/* 3 카드 */}
+          <div style={{ display: 'flex', gap: 10, flex: 1, justifyContent: 'center', padding: '0 8px' }}>
+            {row.fragments.map(fragId => {
+              const def = FRAGMENT_TABLE.find(f => f.id === fragId)
+              const count = rewardMap.get(fragId) ?? 0
+              const active = count > 0
+              const color = FRAG_COLORS[fragId] ?? '#8b8b9a'
+
+              return (
+                <div key={fragId} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 2, width: 80 }}>
+                  {/* 카드 */}
+                  <div style={{
+                    display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center',
+                    gap: 6, padding: '14px 8px 10px', borderRadius: 12, width: '100%',
+                    border: `1.5px solid ${active ? color + '55' : 'rgba(255,255,255,0.04)'}`,
+                    background: active ? color + '0c' : 'rgba(255,255,255,0.01)',
+                    opacity: active ? 1 : 0.3,
+                    transition: 'all 0.3s ease',
+                  }}>
+                    <span style={{ color: active ? color : '#3a3d4e', lineHeight: 1, transform: 'scale(1.5)', transformOrigin: 'center' }}>
+                      {FRAG_SVG[fragId] ?? '?'}
+                    </span>
+                    <span style={{ fontSize: 10, fontWeight: 700, color: active ? '#e0ddd6' : '#4a4d5e', marginTop: 4 }}>
+                      {def?.name?.replace('의 조각', '') ?? fragId}
+                    </span>
+                  </div>
+                  {/* 수량 — 카드 바깥 */}
+                  {active ? (
+                    <span style={{ fontSize: 13, fontWeight: 900, color, letterSpacing: '-0.02em' }}>x{count}</span>
+                  ) : (
+                    <span style={{ fontSize: 11, color: '#2a2d3e' }}>—</span>
+                  )}
+                </div>
+              )
+            })}
           </div>
-          {row.fragments.map(fragId => {
-            const def = FRAGMENT_TABLE.find(f => f.id === fragId)
-            const count = rewardMap.get(fragId) ?? 0
-            const active = count > 0
-            const color = active ? (def?.direction === 'neutral' ? '#8b8b9a' : def?.direction === 'negative' ? '#5b8def' : '#e8c172') : '#2a2d3e'
 
-            return (
-              <div key={fragId} style={{
-                display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center',
-                gap: 4, padding: '10px 6px', borderRadius: 10,
-                border: `1.5px solid ${active ? color + '44' : 'rgba(255,255,255,0.04)'}`,
-                background: active ? color + '0a' : 'transparent',
-                opacity: active ? 1 : 0.35,
-                transition: 'all 0.3s ease',
-              }}>
-                <span style={{ color, lineHeight: 1 }}>{FRAG_SVG[fragId] ?? '?'}</span>
-                <span style={{ fontSize: 10, fontWeight: 700, color: active ? '#e0ddd6' : '#4a4d5e' }}>{def?.name ?? fragId}</span>
-                {active ? (
-                  <span style={{ fontSize: 14, fontWeight: 900, color }}>{`+${count}`}</span>
-                ) : (
-                  <span style={{ fontSize: 11, color: '#3a3d4e' }}>—</span>
-                )}
-              </div>
-            )
-          })}
+          {/* 오른쪽 라벨 */}
+          <span style={{ width: 36, textAlign: 'left', fontSize: 11, fontWeight: 800, color: '#6b6e7e', flexShrink: 0 }}>
+            {row.posLabel}{'>'}
+          </span>
         </div>
       ))}
+
+      <p style={{ textAlign: 'center', fontSize: 11, color: '#4a4d5e', marginTop: 8 }}>
+        *각 조각은 재판관 성향 성장 재료로 사용할 수 있습니다.
+      </p>
     </div>
   )
 }
