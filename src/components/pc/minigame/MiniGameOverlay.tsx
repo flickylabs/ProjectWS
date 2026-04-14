@@ -5,6 +5,7 @@
  */
 import { useStore } from '../../../store/useGameStore'
 import MiniGameFrame from './MiniGameFrame'
+import MemoryMatchGame from './MemoryMatchGame'
 
 export default function MiniGameOverlay() {
   const activeMinigame = useStore((s) => s.activeMinigame)
@@ -14,12 +15,19 @@ export default function MiniGameOverlay() {
 
   const { type, round } = activeMinigame
 
-  // Placeholder — 각 게임 컴포넌트로 교체 예정
+  if (type === 'memory_match') {
+    return (
+      <MiniGameFrame>
+        <MemoryMatchGame round={round} />
+      </MiniGameFrame>
+    )
+  }
+
   return (
     <MiniGameFrame>
       <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', minHeight: 300, gap: 16 }}>
         <p style={{ color: '#8b8b9a', fontSize: 14 }}>
-          {type === 'memory_match' ? '짝맞추기 게임' : type === 'skill_runner' ? '스킬 러너 게임' : '두더지 잡기 게임'}
+          {type === 'skill_runner' ? '스킬 러너 게임' : '두더지 잡기 게임'}
           {' '}(Round {round})
         </p>
         <p style={{ color: '#4e4e5c', fontSize: 12 }}>구현 예정 — 테스트용 버튼</p>
