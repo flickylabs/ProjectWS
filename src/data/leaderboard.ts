@@ -9,6 +9,7 @@ import {
   TIER_LABELS,
 } from '../engine/judgeProgressionEngine'
 import type { JudgeProgressionState } from '../engine/judgeProgressionEngine'
+import { createDefaultTitleLevels, createDefaultLoadout } from '../engine/judgeTitleEngine'
 // 하위 호환: 기존 소비자가 import하는 타입/함수를 re-export
 import { deriveJudgeProfile, createDefaultDriftState, applyDriftUpdate } from '../engine/judgeProfileEngine'
 import type { JudgeProfile, JudgeDriftState } from '../engine/judgeProfileEngine'
@@ -210,7 +211,18 @@ export function loadProgressionState(): JudgeProgressionState {
     const raw = localStorage.getItem(JUDGE_PROGRESSION_KEY)
     if (raw) {
       const parsed = JSON.parse(raw)
-      if (parsed.schemaVersion === 3) return parsed as JudgeProgressionState
+      if (parsed.schemaVersion === 4) return parsed as JudgeProgressionState
+      // v3 → v4 마이그레이션: 타이틀 시스템 추가 (기존 조각 보존)
+      if (parsed.schemaVersion === 3) {
+        const migrated: JudgeProgressionState = {
+          ...parsed,
+          titleLevels: createDefaultTitleLevels(),
+          titleLoadout: createDefaultLoadout(),
+          schemaVersion: 4,
+        }
+        saveProgressionState(migrated)
+        return migrated
+      }
     }
   } catch { /* ignore */ }
 

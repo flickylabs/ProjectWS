@@ -12,6 +12,7 @@
 
 import type { ProcessMetrics } from '../types'
 import type { PerkId } from './judgePerks'
+import { createDefaultTitleLevels, createDefaultLoadout, type TitleId, type TitleLevels, type TitleLoadout } from './judgeTitleEngine'
 
 // ── 조각 ID ──
 
@@ -420,11 +421,17 @@ export const AXIS_LABELS = {
 export interface JudgeProgressionState {
   inventory: FragmentInventory
   traits: TraitLevels
+  /** @deprecated v4 — 퍼크 폐지, titleLevels + titleLoadout 사용 */
   equippedMajor: PerkId | null
+  /** @deprecated v4 — 퍼크 폐지, titleLevels + titleLoadout 사용 */
   equippedMinor: PerkId | null
+  /** 타이틀 9종 레벨 (v4) */
+  titleLevels: TitleLevels
+  /** 타이틀 장착 2슬롯 (v4) */
+  titleLoadout: TitleLoadout
   casesCompleted: number
   lastUpdated: string
-  schemaVersion: 3
+  schemaVersion: 4
 }
 
 export function createDefaultProgressionState(): JudgeProgressionState {
@@ -433,9 +440,11 @@ export function createDefaultProgressionState(): JudgeProgressionState {
     traits: createDefaultTraitLevels(),
     equippedMajor: null,
     equippedMinor: null,
+    titleLevels: createDefaultTitleLevels(),
+    titleLoadout: createDefaultLoadout(),
     casesCompleted: 0,
     lastUpdated: new Date().toISOString(),
-    schemaVersion: 3,
+    schemaVersion: 4,
   }
 }
 
@@ -498,9 +507,11 @@ export function migrateDriftToProgression(
     traits,
     equippedMajor: (savedPerks.major as PerkId) ?? null,
     equippedMinor: (savedPerks.minor as PerkId) ?? null,
+    titleLevels: createDefaultTitleLevels(),
+    titleLoadout: createDefaultLoadout(),
     casesCompleted: drift.casesProcessed,
     lastUpdated: new Date().toISOString(),
-    schemaVersion: 3,
+    schemaVersion: 4,
   }
 }
 

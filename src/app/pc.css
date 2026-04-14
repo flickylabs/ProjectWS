@@ -12654,9 +12654,9 @@ body.pc-mode .jp__slot-label {
 body.pc-mode .jp__slot strong { font-size: 13px; color: rgba(255,255,255,0.9); }
 body.pc-mode .jp__slot p { font-size: 11px; color: rgba(255,255,255,0.4); margin: 0; line-height: 1.4; }
 
-/* ── 성향 선택바 ── */
+/* ── 타이틀 선택바 (9종 = 3×3) ── */
 body.pc-mode .jp__selector {
-  display: grid; grid-template-columns: repeat(6, 1fr); gap: 8px;
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px;
 }
 body.pc-mode .jp__trait-btn {
   position: relative; display: flex; flex-direction: column; align-items: center; gap: 4px;
@@ -12830,6 +12830,35 @@ body.pc-mode .jp__perk-lock {
   font-size: 11px; color: rgba(255,255,255,0.25);
 }
 body.pc-mode .jp__perks-empty { font-size: 12px; color: rgba(255,255,255,0.3); }
+
+/* ── 효과 리스트 ── */
+body.pc-mode .jp__effect {
+  display: flex; align-items: baseline; gap: 8px;
+  padding: 6px 0; opacity: 0.35;
+}
+body.pc-mode .jp__effect.is-active { opacity: 1; }
+body.pc-mode .jp__effect-lv {
+  font-size: 10px; font-weight: 700; color: var(--jp-accent, #888);
+  min-width: 30px; flex-shrink: 0;
+}
+body.pc-mode .jp__effect p { font-size: 12px; color: rgba(255,255,255,0.7); margin: 0; line-height: 1.4; }
+body.pc-mode .jp__effect.is-active .jp__effect-lv { color: var(--jp-accent, #d4a24e); }
+
+/* ── 장착 액션 ── */
+body.pc-mode .jp__equip-actions { margin-top: 14px; padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.06); }
+body.pc-mode .jp__equip-actions h4 { margin-bottom: 8px; }
+body.pc-mode .jp__equip-slots { display: flex; gap: 8px; }
+body.pc-mode .jp__equip-slots .jp__perk-btn { flex: 1; text-align: center; padding: 8px; }
+
+/* ── 상세 헤더 아이콘 ── */
+body.pc-mode .jp__detail-icons { display: flex; gap: 4px; }
+
+/* ── 슬롯 해제 버튼 ── */
+body.pc-mode .jp__slot-unequip {
+  margin-left: auto; background: none; border: none; cursor: pointer;
+  color: rgba(255,255,255,0.3); font-size: 14px; padding: 4px;
+}
+body.pc-mode .jp__slot-unequip:hover { color: rgba(255,255,255,0.6); }
 
 @media (max-width: 720px) {
   body.pc-mode .jp__selector { grid-template-columns: repeat(3, 1fr); }
