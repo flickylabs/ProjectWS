@@ -198,12 +198,7 @@ export default function PCHomeScreen() {
             <ModeCard badge="NORMAL MODE" iconId="i-gavel" label="일반 모드 >" metaLeft={`세션 ${PC_GENERAL_SESSIONS.length}개`} metaRight={`진척 ${totalGeneralCompleted}/${totalGeneralCases}`} onClick={() => { setSelectedSession(null); setView('general') }} progressRate={totalGeneralCases ? (totalGeneralCompleted / totalGeneralCases) * 100 : 0} />
             <ModeCard badge={season.name} iconId="i-crown" label="시즌 모드 >" metaLeft={seasonCases.length ? `${seasonCases.length}건 배정` : '배정 준비 중'} metaRight={`${remainingDays}일 남음`} onClick={() => setView('season')} progressRate={seasonProgress.progressRate} season />
           </div>
-          <div className="pc-home-v2__resource-row">
-            <span className="pc-home-v2__resource-pill"><PCSvgIcon id="i-search" size={14} /> 조사 {globalInvest}/10</span>
-            <span className="pc-home-v2__resource-pill"><PCSvgIcon id="i-bolt" size={14} /> 스킬 {globalSkill}/5</span>
-            <span className="pc-home-v2__resource-pill"><PCSvgIcon id="i-crown" size={14} /> 명성 {reputation.toLocaleString()}</span>
-          </div>
-          <div className="pc-home-v2__info-grid">
+<div className="pc-home-v2__info-grid">
             <InfoCard actionLabel="내 정보 >" iconId="i-person" onClick={() => { setJudgeDeskTab('profile'); setView('profile') }} subtitle={profile.playerName} title={titleInfo.name} />
             <InfoCard actionLabel="상세 보기 >" iconId="i-crown" onClick={() => setView('leaderboard')} subtitle={season.name} title="리더보드" />
           </div>
