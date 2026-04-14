@@ -177,6 +177,8 @@ export function getEventEffects(trigger: GameEventTrigger): TriggerEffect[] {
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 function checkContradiction(snapshot: TurnSnapshot): GameEventTrigger | null {
+  // 최소 3턴 경과 후에만 모순 감지 (초반 즉시 발화 방지)
+  if (snapshot.turn < 3) return null
   // 쿨다운 체크 (4턴) + 같은 쟁점 연속 방지 (6턴)
   if (snapshot.turn - lastContradictionTurn < 4) return null
   if (snapshot.focusDisputeId === lastContradictionDisputeId && snapshot.turn - lastContradictionTurn < 6) return null
