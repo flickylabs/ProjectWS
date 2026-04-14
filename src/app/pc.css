@@ -12635,3 +12635,205 @@ body.pc-mode .pc-fragment-reward-card.is-bonus .pc-fragment-reward-card__tag {
   }
 }
 
+/* ═══ Judge Progression Panel v2 (RPG-style) ═══ */
+
+body.pc-mode .jp { display: flex; flex-direction: column; gap: 16px; margin-top: 20px; }
+
+/* ── 장착 슬롯 ── */
+body.pc-mode .jp__equipped { display: flex; gap: 12px; }
+body.pc-mode .jp__slot {
+  flex: 1; display: flex; align-items: center; gap: 10px;
+  padding: 10px 14px; border-radius: 10px;
+  background: rgba(30,30,40,0.6); border: 1px solid rgba(255,255,255,0.06);
+}
+body.pc-mode .jp__slot.is-filled { border-color: rgba(255,255,255,0.12); }
+body.pc-mode .jp__slot-label {
+  font-size: 10px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+  color: rgba(255,255,255,0.35); writing-mode: vertical-rl; text-orientation: mixed;
+}
+body.pc-mode .jp__slot strong { font-size: 13px; color: rgba(255,255,255,0.9); }
+body.pc-mode .jp__slot p { font-size: 11px; color: rgba(255,255,255,0.4); margin: 0; line-height: 1.4; }
+
+/* ── 성향 선택바 ── */
+body.pc-mode .jp__selector {
+  display: grid; grid-template-columns: repeat(6, 1fr); gap: 8px;
+}
+body.pc-mode .jp__trait-btn {
+  position: relative; display: flex; flex-direction: column; align-items: center; gap: 4px;
+  padding: 12px 8px 10px; border-radius: 10px; cursor: pointer;
+  background: rgba(30,30,40,0.5); border: 1.5px solid rgba(255,255,255,0.06);
+  transition: border-color 0.2s, background 0.2s, transform 0.15s;
+}
+body.pc-mode .jp__trait-btn:hover { background: rgba(40,40,55,0.7); }
+body.pc-mode .jp__trait-btn.is-active {
+  border-color: var(--jp-accent, #888); background: rgba(40,40,55,0.8);
+  box-shadow: 0 0 12px rgba(255,255,255,0.04);
+}
+body.pc-mode .jp__trait-btn.is-ready::before {
+  content: ''; position: absolute; inset: -1px; border-radius: 11px;
+  border: 1.5px solid var(--jp-accent, #888); opacity: 0.5;
+  animation: jp-pulse 1.6s ease-in-out infinite;
+}
+body.pc-mode .jp__trait-btn.is-celebrating { transform: scale(1.06); }
+body.pc-mode .jp__trait-btn strong { font-size: 13px; color: rgba(255,255,255,0.85); }
+body.pc-mode .jp__trait-lv {
+  font-size: 11px; font-weight: 600; color: rgba(255,255,255,0.5);
+}
+body.pc-mode .jp__trait-lv.is-max { color: #d4a24e; }
+body.pc-mode .jp__trait-dots { display: flex; gap: 4px; }
+body.pc-mode .jp__trait-dots i {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: rgba(255,255,255,0.12); transition: background 0.2s;
+}
+body.pc-mode .jp__trait-dots i.is-on { background: var(--jp-accent, #888); }
+body.pc-mode .jp__trait-badge {
+  position: absolute; top: 4px; right: 6px;
+  width: 16px; height: 16px; border-radius: 50%;
+  background: #e06060; color: #fff; font-size: 10px; font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+}
+
+@keyframes jp-pulse {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.7; }
+}
+
+/* ── 상세 패널 ── */
+body.pc-mode .jp__detail {
+  border-radius: 12px; background: rgba(30,30,40,0.6);
+  border: 1px solid rgba(255,255,255,0.06); overflow: hidden;
+}
+body.pc-mode .jp__detail-header {
+  display: flex; align-items: center; gap: 12px;
+  padding: 16px 20px; border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+body.pc-mode .jp__detail-axis {
+  font-size: 10px; font-weight: 600; letter-spacing: 0.06em;
+  text-transform: uppercase; color: rgba(255,255,255,0.4);
+}
+body.pc-mode .jp__detail-header h3 { font-size: 18px; color: rgba(255,255,255,0.9); margin: 0; }
+body.pc-mode .jp__detail-level {
+  margin-left: auto; font-size: 13px; font-weight: 700;
+  color: var(--jp-accent, #888); white-space: nowrap;
+}
+body.pc-mode .jp__detail-level.is-max { color: #d4a24e; }
+body.pc-mode .jp__detail-body {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 0;
+  min-height: 200px;
+}
+body.pc-mode .jp__detail-body > div { padding: 16px 20px; }
+body.pc-mode .jp__detail-body > div + div {
+  border-left: 1px solid rgba(255,255,255,0.06);
+}
+
+/* ── 강화 영역 ── */
+body.pc-mode .jp__enhance h4,
+body.pc-mode .jp__perks h4 {
+  font-size: 11px; font-weight: 700; letter-spacing: 0.08em;
+  text-transform: uppercase; color: rgba(255,255,255,0.35); margin: 0 0 12px;
+}
+body.pc-mode .jp__cost { margin-bottom: 10px; }
+body.pc-mode .jp__cost-label {
+  display: flex; align-items: center; gap: 6px; margin-bottom: 4px;
+  font-size: 12px; color: rgba(255,255,255,0.6);
+}
+body.pc-mode .jp__cost-bar { display: flex; align-items: center; gap: 8px; }
+body.pc-mode .jp__cost-track {
+  flex: 1; height: 6px; border-radius: 3px; background: rgba(255,255,255,0.08);
+  overflow: hidden;
+}
+body.pc-mode .jp__cost-track i {
+  display: block; height: 100%; border-radius: 3px;
+  background: var(--jp-accent, #888); transition: width 0.3s;
+}
+body.pc-mode .jp__cost-bar strong { font-size: 12px; min-width: 42px; text-align: right; }
+body.pc-mode .jp__cost-bar strong.is-enough { color: #5cc97a; }
+body.pc-mode .jp__cost-bar strong.is-short { color: #e06060; }
+
+body.pc-mode .jp__enhance-btn {
+  width: 100%; padding: 10px; margin-top: 14px; border-radius: 8px;
+  font-size: 14px; font-weight: 700; cursor: pointer;
+  background: rgba(255,255,255,0.06); color: rgba(255,255,255,0.3);
+  border: 1px solid rgba(255,255,255,0.06); transition: all 0.2s;
+}
+body.pc-mode .jp__enhance-btn.is-ready {
+  background: var(--jp-accent, #888); color: #fff;
+  border-color: var(--jp-accent, #888);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.3);
+}
+body.pc-mode .jp__enhance-btn.is-ready:hover { filter: brightness(1.1); transform: translateY(-1px); }
+
+body.pc-mode .jp__enhance-maxed {
+  text-align: center; padding: 20px 0;
+}
+body.pc-mode .jp__enhance-maxed span {
+  font-size: 11px; color: #d4a24e; font-weight: 600; letter-spacing: 0.04em;
+}
+body.pc-mode .jp__enhance-maxed strong { display: block; font-size: 16px; margin-top: 6px; color: rgba(255,255,255,0.9); }
+body.pc-mode .jp__enhance-maxed p { font-size: 12px; color: rgba(255,255,255,0.5); margin-top: 4px; }
+
+/* ── 변환 ── */
+body.pc-mode .jp__convert {
+  margin-top: 16px; padding-top: 14px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+body.pc-mode .jp__convert-stock {
+  display: flex; align-items: center; gap: 6px; margin-bottom: 8px;
+  font-size: 12px; color: rgba(255,255,255,0.5);
+}
+body.pc-mode .jp__convert-actions { display: flex; gap: 6px; }
+body.pc-mode .jp__convert-btn {
+  flex: 1; padding: 6px 10px; border-radius: 6px; font-size: 12px; cursor: pointer;
+  background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+  color: rgba(255,255,255,0.6); transition: all 0.2s;
+}
+body.pc-mode .jp__convert-btn:not(:disabled):hover { background: rgba(255,255,255,0.08); }
+body.pc-mode .jp__convert-btn:disabled { opacity: 0.3; cursor: default; }
+body.pc-mode .jp__convert-btn.is-firing {
+  background: var(--jp-accent, #888); color: #fff; border-color: var(--jp-accent, #888);
+}
+
+/* ── 퍼크 영역 ── */
+body.pc-mode .jp__perk {
+  padding: 10px 12px; margin-bottom: 8px; border-radius: 8px;
+  background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.04);
+  transition: border-color 0.2s;
+}
+body.pc-mode .jp__perk.is-unlocked { border-color: rgba(255,255,255,0.08); }
+body.pc-mode .jp__perk.is-equipped { border-color: var(--jp-accent, #888); background: rgba(255,255,255,0.04); }
+body.pc-mode .jp__perk.is-locked { opacity: 0.5; }
+body.pc-mode .jp__perk-head {
+  display: flex; align-items: center; gap: 8px; margin-bottom: 4px;
+}
+body.pc-mode .jp__perk-tier { font-size: 16px; line-height: 1; }
+body.pc-mode .jp__perk-head strong { font-size: 13px; color: rgba(255,255,255,0.85); }
+body.pc-mode .jp__perk-cond {
+  font-size: 10px; color: rgba(255,255,255,0.35); font-weight: 600;
+}
+body.pc-mode .jp__perk-badge {
+  margin-left: auto; font-size: 10px; font-weight: 700; padding: 2px 8px;
+  border-radius: 4px; background: var(--jp-accent, #888); color: #fff;
+}
+body.pc-mode .jp__perk p {
+  font-size: 12px; color: rgba(255,255,255,0.5); margin: 0 0 6px; line-height: 1.5;
+}
+body.pc-mode .jp__perk-btn {
+  padding: 4px 14px; border-radius: 6px; font-size: 11px; font-weight: 600;
+  cursor: pointer; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
+  color: rgba(255,255,255,0.7); transition: all 0.15s;
+}
+body.pc-mode .jp__perk-btn:hover { background: rgba(255,255,255,0.1); }
+body.pc-mode .jp__perk-btn.is-equipped {
+  background: transparent; border-color: rgba(255,255,255,0.15); color: rgba(255,255,255,0.4);
+}
+body.pc-mode .jp__perk-lock {
+  font-size: 11px; color: rgba(255,255,255,0.25);
+}
+body.pc-mode .jp__perks-empty { font-size: 12px; color: rgba(255,255,255,0.3); }
+
+@media (max-width: 720px) {
+  body.pc-mode .jp__selector { grid-template-columns: repeat(3, 1fr); }
+  body.pc-mode .jp__detail-body { grid-template-columns: 1fr; }
+  body.pc-mode .jp__detail-body > div + div { border-left: none; border-top: 1px solid rgba(255,255,255,0.06); }
+  body.pc-mode .jp__equipped { flex-direction: column; }
+}

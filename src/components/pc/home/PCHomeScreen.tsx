@@ -11,8 +11,7 @@ import { useStore } from '../../../store/useGameStore'
 import type { CaseData, ExtendedHistoryEntry, SortCategory } from '../../../types'
 import PCSvgIcon from '../icons/PCSvgIcon'
 import { openPcInteractionPanel } from '../layout/PCInteractionPanel'
-import PCPerkEquipPanel from '../profile/PCPerkEquipPanel'
-import PCTraitEnhancePanel from '../profile/PCTraitEnhancePanel'
+import PCJudgeProgressionPanel from '../profile/PCJudgeProgressionPanel'
 import PCCaseBrowser from './PCCaseBrowser'
 import PCIntroSlides from './PCIntroSlides'
 import { type PCGeneralSessionId, PC_GENERAL_SESSIONS, formatCountdown, getCasesForPcGeneralSession, getRelationshipLabel, getSeasonCases, hasSeenPcIntro, loadPcCaseProgress } from './pcHomeShared'
@@ -267,10 +266,7 @@ export default function PCHomeScreen() {
               </Card>
             </div>
           ) : judgeDeskTab === 'progression' ? (
-            <div className="pc-judge-progression-layout">
-              <PCTraitEnhancePanel onChange={refreshProgression} syncKey={refreshKey} />
-              <PCPerkEquipPanel onChange={refreshProgression} syncKey={refreshKey} />
-            </div>
+            <PCJudgeProgressionPanel onChange={refreshProgression} syncKey={refreshKey} />
           ) : (
             <div className="pc-history-board">
               <Card eyebrow="GENERAL MODE" title="일반 모드">
