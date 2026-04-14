@@ -41,8 +41,13 @@ export default function PCBottomDock() {
   const agentB = useStore((s) => s.agentB)
   const calledWitnesses = useStore((s) => s.calledWitnesses)
   const disputeVisibility = useStore((s) => s.discovery.disputeVisibility)
-  const canAdvance = useStore((s) => s.canAdvancePhase())
-  const combinableIds = useStore((s) => s.getCombinableEvidenceIds())
+  const turnCount = useStore((s) => s.turnCount)
+  // canAdvancePhase()와 getCombinableEvidenceIds()는 매번 새 값을 반환하여 무한 루프 유발
+  // → useMemo + getState()로 의존성 기반 캐싱
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const canAdvance = useMemo(() => useGameStore.getState().canAdvancePhase(), [currentPhase, turnCount])
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const combinableIds = useMemo(() => useGameStore.getState().getCombinableEvidenceIds(), [evidenceStates])
 
   // --- overlay states ---
   const [questionChoice, setQuestionChoice] = useState<{ type: QuestionType } | null>(null)
