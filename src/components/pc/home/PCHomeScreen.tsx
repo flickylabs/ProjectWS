@@ -7,8 +7,8 @@ import { checkConnection } from '../../../engine/llmClient'
 import { isBgmEnabled, isSoundEnabled, playBgm as playBgmFn, setBgmEnabled, setSoundEnabled, stopBgm as stopBgmFn } from '../../../engine/soundEngine'
 import { getSettings, updateSettings } from '../../../hooks/useLocalStorage'
 import { setLLMMode } from '../../../hooks/useActionDispatch'
-import { useStore } from '../../../store/useGameStore'
-import type { CaseData, ExtendedHistoryEntry, SortCategory } from '../../../types'
+import { useGameStore, useStore } from '../../../store/useGameStore'
+import { GamePhase, type CaseData, type ExtendedHistoryEntry, type SortCategory } from '../../../types'
 import PCSvgIcon from '../icons/PCSvgIcon'
 import { openPcInteractionPanel } from '../layout/PCInteractionPanel'
 import PCJudgeProgressionPanel from '../profile/PCJudgeProgressionPanel'
@@ -120,7 +120,12 @@ export default function PCHomeScreen() {
     // ScriptedText 번들 미리 로드 (lazy 로드 대응)
     const { preloadScriptedTextBundle } = await import('../../../engine/scriptedTextLoader')
     await preloadScriptedTextBundle(caseData.caseId)
+    // LLM 프리패치 (기존 브리핑 화면에서 수행하던 것)
+    const { beginCasePrefetch } = await import('../../phase/Phase0_CaseIntro')
     initializeCase(caseData)
+    beginCasePrefetch(caseData)
+    // 브리핑 건너뛰고 바로 Phase1 진입
+    useGameStore.getState().advancePhase(GamePhase.Phase1_InitialStatement)
   }
 
   const toggleBgm = () => {
