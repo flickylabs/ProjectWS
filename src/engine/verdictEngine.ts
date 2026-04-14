@@ -113,9 +113,9 @@ function calculateInsight(ctx: VerdictContext, clearanceResult?: ClearanceResult
 /* ── 권위 (Authority) ──────────────────────── */
 
 function calculateAuthority(ctx: VerdictContext): number {
-  let score = 70
+  let score = 55
 
-  score += ctx.courtControlRemaining * 5
+  score += ctx.courtControlRemaining * 3
 
   // 위법 증거
   for (const evidence of ctx.evidence) {

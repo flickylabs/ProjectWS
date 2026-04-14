@@ -563,8 +563,9 @@ export default function PCInteractionPanel() {
         }
 
         if (action.specialAction === 'separation') {
-          if (!state.spend('investigationTokens', 1)) {
-            showToast('조사 토큰이 부족합니다.', 'warn')
+          // courtControl은 applyTrustEffect에서 차감 (이중 과금 방지)
+          if (!state.canAfford('courtControl', 1)) {
+            showToast('법정 지배력이 부족합니다.', 'warn')
             break
           }
           dispatch({ type: 'trust_action', actionType: 'separation', target })
@@ -572,8 +573,9 @@ export default function PCInteractionPanel() {
         }
 
         if (action.specialAction === 'confidential_protection') {
-          if (!state.spend('skillPoints', 1)) {
-            showToast('스킬 포인트가 부족합니다.', 'warn')
+          // courtControl은 applyTrustEffect에서 차감 (이중 과금 방지)
+          if (!state.canAfford('courtControl', 1)) {
+            showToast('법정 지배력이 부족합니다.', 'warn')
             break
           }
           dispatch({ type: 'trust_action', actionType: 'confidential_protection', target })

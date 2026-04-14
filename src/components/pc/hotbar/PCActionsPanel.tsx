@@ -339,8 +339,7 @@ export default function PCActionsPanel({
       })
       dispatch({ type: 'question', questionType: 'fact_pursuit', target: targetParty, disputeId })
     }
-
-    state.incrementTurn()
+    // incrementTurn()은 dispatch된 question 핸들러에서 수행 — 이중 소비 방지
   }
 
   const handleTrustAction = (actionType: TrustActionType) => {

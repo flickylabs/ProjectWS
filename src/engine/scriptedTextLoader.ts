@@ -222,10 +222,16 @@ function scoreVariant(
 
   // ── v1~v5 변주 가중치 (archetype/emotion) ──
   const vid = variant.id as string
-  if (vid.startsWith('v') && vid.length === 2) {
+  const vMatch = vid.match(/-(v[1-5])$/)
+  const bareVid = vMatch ? vMatch[1] : vid
+  if (bareVid.startsWith('v') && bareVid.length === 2) {
     const archetypePrefs: Record<string, string[]> = {
       avoidant: ['v2', 'v5', 'v4', 'v1', 'v3'],
       confrontational: ['v3', 'v1', 'v4', 'v2', 'v5'],
+      victim_cosplay: ['v4', 'v2', 'v5', 'v1', 'v3'],
+      cold_logic: ['v1', 'v3', 'v4', 'v2', 'v5'],
+      affect_flattening: ['v2', 'v1', 'v5', 'v4', 'v3'],
+      premature_summary: ['v1', 'v4', 'v3', 'v2', 'v5'],
     }
     const emotionWeights: Record<string, Record<string, number>> = {
       calm: { v2: 1.5, v4: 1.3 },
@@ -249,7 +255,7 @@ function scoreVariant(
     const archetype = tags.archetype || context.archetype
     const prefs = archetype ? archetypePrefs[archetype] : undefined
     if (prefs) {
-      const rank = prefs.indexOf(vid)
+      const rank = prefs.indexOf(bareVid)
       if (rank >= 0) score += [4, 3, 2, 1, 0][rank]
     }
 
@@ -257,7 +263,7 @@ function scoreVariant(
     const rawEmotion = tags.emotion || context.emotion
     const emotion = rawEmotion ? (phaseToEmotion[rawEmotion] ?? rawEmotion) : undefined
     const ew = emotion ? emotionWeights[emotion] : undefined
-    if (ew && ew[vid]) score += ew[vid]
+    if (ew && ew[bareVid]) score += ew[bareVid]
   }
 
   return score

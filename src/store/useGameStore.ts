@@ -83,9 +83,9 @@ function applyPerks(set: (partial: any) => void): void {
     if (!perk) continue
     const eff = perk.effect
 
-    // 즉시 적용: 조사 토큰
+    // 즉시 적용: 조사 토큰 → 로컬 리소스에 직접 반영
     if (eff.extraInvestTokens) {
-      set({ globalInvestTokens: state.globalInvestTokens + eff.extraInvestTokens })
+      state.gain('investigationTokens', eff.extraInvestTokens)
     }
     // 미터 초기값 수정
     if (eff.firstTargetContradictionBonus) {

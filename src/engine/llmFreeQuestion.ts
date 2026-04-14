@@ -8,7 +8,7 @@
 import { chatCompletion, MODEL_DIALOGUE } from './llmClient'
 import { getPrompt, getPromptConfig } from '../api/promptManager'
 import { buildAgentPrompt, getAgentConfig, isAgentLoaded } from '../api/agentManager'
-import { enforceHonorifics, fixMisdirectedAddress } from './llmDialogueResolver'
+import { enforceHonorifics, fixMisdirectedAddress, postProcessNpcText, type PostProcessContext } from './llmDialogueResolver'
 import { fixPostpositions } from './koreanPostposition'
 import { buildSpeechGuide, getMyCall, getJudgeReference, getAngryCall, getRelationLabel, canUseInformal } from './llmSpeechGuide'
 import { eunneun } from '../utils/korean'
@@ -315,7 +315,18 @@ async function generateResponse(
       { temperature: config.temperature, maxTokens: config.maxTokens, model: MODEL_DIALOGUE },
     )
 
-    const parsed = parseResponderResponse(raw)
+    const currentLieState = lieEntry?.currentState ?? 'S0'
+    const monetaryRe = /송금|이체|금액|원\b|만원|돈|비용|계좌|환급|보증금|월세|정산|예치|납부|수당|급여|계약금|위약금|배상금|합의금|채무|대출|융자|임대료/
+    const focusText = [dispute?.name, dispute?.truthDescription].filter(Boolean).join(' ')
+    const hasMonetaryDispute = monetaryRe.test(focusText)
+    const ppCtx: PostProcessContext = {
+      lieState: currentLieState,
+      hasMonetaryDispute,
+      partyNames: { nameA: caseData.duo.partyA.name, nameB: caseData.duo.partyB.name },
+      speaker: target,
+      previousNpcResponse: dialogueLog.filter(d => d.speaker === target).slice(-1)[0]?.text,
+    }
+    const parsed = parseResponderResponse(raw, ppCtx)
     return {
       questionType: classification.questionType,
       disputeId: classification.primaryDisputeId,
@@ -333,7 +344,7 @@ async function generateResponse(
   }
 }
 
-function parseResponderResponse(raw: string): { response: string; behaviorHint: string } {
+function parseResponderResponse(raw: string, ppCtx?: PostProcessContext): { response: string; behaviorHint: string } {
   try {
     const jsonMatch = raw.match(/\{[\s\S]*\}/)
     if (!jsonMatch) throw new Error('No JSON')
@@ -344,7 +355,8 @@ function parseResponderResponse(raw: string): { response: string; behaviorHint: 
     const behaviorMatch = responseText.match(/[（(]([^)）]+)[)）]/)
     const behaviorHint = parsed.behaviorHint || (behaviorMatch ? behaviorMatch[1] : '')
     const rawResponse = responseText.replace(/[（(][^)）]+[)）]/g, '').trim()
-    const response = fixPostpositions(enforceHonorifics(fixMisdirectedAddress(rawResponse)))
+    // 전체 후처리 파이프라인 적용 (TruthThrottle/클리셰 필터/금액 보호 포함)
+    const response = ppCtx ? postProcessNpcText(rawResponse, ppCtx) : fixPostpositions(enforceHonorifics(fixMisdirectedAddress(rawResponse)))
 
     return { response: response || '...', behaviorHint }
   } catch {

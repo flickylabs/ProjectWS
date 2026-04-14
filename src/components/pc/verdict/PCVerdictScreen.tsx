@@ -233,7 +233,7 @@ export default function PCVerdictScreen() {
       pending_count: pendingCount,
       total_disputes: caseData.disputes.length,
       turnsUsed: turnCount,
-      illegal_evidence_admitted_count: Object.values(verdictInput.evidenceLegality ?? {}).filter(v => v === false).length,
+      illegal_evidence_admitted_count: Object.values(verdictInput.evidenceLegality ?? {}).filter(v => v === true).length,
       extreme_blame_dispute_count: responsibilityValues.filter(r => Math.abs(r.a - r.b) >= 80).length,
       selected_solutions_count: verdictInput.selectedSolutions.length,
       ...(() => {
@@ -250,7 +250,7 @@ export default function PCVerdictScreen() {
         const hasBothSides = principleCount > 0 && reconcileCount > 0
         return {
           selected_final_solution_count: principleCount,
-          selected_temporary_solution_count: 0,
+          selected_temporary_solution_count: orientations.filter(o => o === 'hybrid').length,
           selected_mutual_solution_count: reconcileCount,
           selected_one_sided_solution_count: principleCount >= 2 && reconcileCount === 0 ? principleCount : 0,
           selected_solution_side_coverage: hasBothSides ? 'both' as const : reconcileCount > 0 ? 'a_only' as const : principleCount > 0 ? 'b_only' as const : 'none' as const,
@@ -260,9 +260,13 @@ export default function PCVerdictScreen() {
       responsibility_gap_average: gapAvg,
       high_ambiguity_pending_count: highWeightDisputes.filter(d => verdictInput.factFindings[d.id] === 'pending').length,
       resolved_low_or_medium_ambiguity_count: caseData.disputes.filter(d => d.ambiguity !== 'high' && verdictInput.factFindings[d.id] && verdictInput.factFindings[d.id] !== 'pending').length,
-      discovered_privacy_evidence_count: 0,
+      discovered_privacy_evidence_count: caseData.evidence.filter(
+        e => e.legitimacy === 'privacy_concern' && evidenceStates[e.id]?.presented,
+      ).length,
       evidence_legality_judged_count: Object.keys(verdictInput.evidenceLegality ?? {}).length,
-      confidential_evidence_protected_count: 0,
+      confidential_evidence_protected_count: caseData.evidence.filter(
+        e => evidenceStates[e.id]?.confidentialSource && evidenceStates[e.id]?.presented,
+      ).length,
     }
 
     const mediationDelta = computeMediationScoreModifiers(mediationChoice, mediationCtx)

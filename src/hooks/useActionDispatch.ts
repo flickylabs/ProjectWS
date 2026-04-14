@@ -885,8 +885,8 @@ async function handleQuestion(action: Extract<PlayerAction, { type: 'question' }
     // ── 자백 유도하기: 신뢰도 상승 + S3 이상에서 자발적 자백 가능 ──
     state.incrementEmpathyAtCurrentState(action.target)
 
-    // 신뢰도 상승
-    state.changeTrust(action.target, 'trustTowardJudge', 8)
+    // 신뢰도: +12 base (line 974) + engine trust_boost (0.5x 감정 보너스) 로 통합
+    // 여기서는 카운트만 증가, trust 중복 적용 방지
 
     // S3 이상에서: 같은 상태에서 공감 2회+ 누적되고 신뢰 임계치 도달 시 자발적 자백 (S5로 점프)
     if (currentLieState >= 'S3') {
@@ -1056,14 +1056,14 @@ async function handleQuestion(action: Extract<PlayerAction, { type: 'question' }
       const effectMultiplier = fatigueAssessment.finalMultiplier * npcReaction.effectMultiplier
 
       // 5. 피로도 피드백 시스템 메시지
-      if (fatigueAssessment.fatigueLevel === 'warning') {
+      if (fatigueAssessment.fatigueLevel === 'high') {
         state.addDialogue({
           speaker: 'system',
           text: '[주의] 같은 접근이 반복되고 있습니다. 다른 질문 유형이나 쟁점을 시도해 보세요.',
           relatedDisputes: [action.disputeId],
           turn: state.turnCount,
         })
-      } else if (fatigueAssessment.fatigueLevel === 'stalemate') {
+      } else if (fatigueAssessment.fatigueLevel === 'exhausted') {
         const qType = 'questionType' in action ? (action as { questionType: string }).questionType : ''
         const alternatives = ['사실 추궁', '동기 탐색', '공감 접근'].filter(t => {
           if (qType === 'fact_pursuit' && t === '사실 추궁') return false

@@ -65,11 +65,12 @@ export function checkAndGrantRewards(): { id: string; label: string; amount: num
 
     if (cond.check()) {
       if (cond.reward.type === 'skill') {
-        store.grantSkillReward(cond.reward.amount, cond.label)
+        // shopSlice.grantSkillReward는 no-op → 로컬 리소스 직접 지급
+        store.gain('skillPoints', cond.reward.amount)
       } else {
-        // invest 보상
+        // invest 보상 — 초기값(20) 기준 캡
         const current = store.resources.investigationTokens
-        const max = store.freeCap
+        const max = 20
         const actual = Math.min(cond.reward.amount, max - current)
         if (actual > 0) {
           store.gain('investigationTokens', actual)
@@ -97,7 +98,7 @@ export function checkDailyLogin(): { granted: boolean; amount: number } {
   localStorage.setItem('solomon_last_login', today)
   const store = useGameStore.getState()
   const current = store.resources.investigationTokens
-  const max = store.freeCap
+  const max = 20
   const amount = Math.min(2, max - current)
   if (amount > 0) {
     store.gain('investigationTokens', amount)
