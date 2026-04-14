@@ -1,14 +1,37 @@
 export enum GamePhase {
   Phase0_CaseIntro = 'phase0',
   Phase1_InitialStatement = 'phase1',
+  /** @deprecated PC 경로에서 미사용 — Phase1로 통합됨 */
   Phase2_Rebuttal = 'phase2',
   Phase3_Interrogation = 'phase3',
+  /** @deprecated PHASE_ORDER에서 제외됨 */
   Phase4_Evidence = 'phase4',
+  /** @deprecated PHASE_ORDER에서 제외됨 */
   Phase5_ReExamination = 'phase5',
   Phase6_Mediation = 'phase6',
   Phase7_Verdict = 'phase7',
   Result = 'result',
 }
+
+/**
+ * 의도된 Phase 체계 alias.
+ * 코드에서는 GamePhase enum 값을 직접 사용하되, 의미를 명확히 할 때 참조.
+ *
+ *   Phase 0: 브리핑     = Phase0_CaseIntro
+ *   Phase 1: 사전진술   = Phase1_InitialStatement (선택지 포함, 구 Phase1+2 통합)
+ *   Phase 2: 심문       = Phase3_Interrogation
+ *   Phase 3a: 중재      = Phase6_Mediation
+ *   Phase 3b: 판결      = Phase7_Verdict
+ *   결과                = Result
+ */
+export const Phase = {
+  Briefing: GamePhase.Phase0_CaseIntro,
+  Pretrial: GamePhase.Phase1_InitialStatement,
+  Interrogation: GamePhase.Phase3_Interrogation,
+  Mediation: GamePhase.Phase6_Mediation,
+  Verdict: GamePhase.Phase7_Verdict,
+  Result: GamePhase.Result,
+} as const
 
 export interface Resources {
   investigationTokens: number

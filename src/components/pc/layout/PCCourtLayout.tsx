@@ -24,30 +24,31 @@ interface Props {
   isDialoguePhase?: boolean
 }
 
-const PHASE_LABELS: Record<GamePhase, string> = {
+const PHASE_LABELS: Record<string, string> = {
   [GamePhase.Phase0_CaseIntro]: '사건 브리핑',
-  [GamePhase.Phase1_InitialStatement]: '초기 진술',
-  [GamePhase.Phase2_Rebuttal]: '반박',
+  [GamePhase.Phase1_InitialStatement]: '사전진술',
   [GamePhase.Phase3_Interrogation]: '심문',
-  [GamePhase.Phase4_Evidence]: '증거 정리',
-  [GamePhase.Phase5_ReExamination]: '재심문',
   [GamePhase.Phase6_Mediation]: '중재',
   [GamePhase.Phase7_Verdict]: '판결',
   [GamePhase.Result]: '결과',
+  // Legacy fallback
+  [GamePhase.Phase2_Rebuttal]: '사전진술',
+  [GamePhase.Phase4_Evidence]: '심문',
+  [GamePhase.Phase5_ReExamination]: '심문',
 }
 
-/** V4: Phase4/5 스킵 → Phase3(심문)→Phase6(중재)→Phase7(판결) 직행 */
 function getPhaseNumber(phase: GamePhase): string {
   const DISPLAY_NUMBERS: Record<string, string> = {
     [GamePhase.Phase0_CaseIntro]: '0',
     [GamePhase.Phase1_InitialStatement]: '1',
-    [GamePhase.Phase2_Rebuttal]: '1',
     [GamePhase.Phase3_Interrogation]: '2',
+    [GamePhase.Phase6_Mediation]: '3',
+    [GamePhase.Phase7_Verdict]: '3',
+    [GamePhase.Result]: 'R',
+    // Legacy
+    [GamePhase.Phase2_Rebuttal]: '1',
     [GamePhase.Phase4_Evidence]: '2',
     [GamePhase.Phase5_ReExamination]: '2',
-    [GamePhase.Phase6_Mediation]: '3',
-    [GamePhase.Phase7_Verdict]: '4',
-    [GamePhase.Result]: 'R',
   }
   return DISPLAY_NUMBERS[phase] ?? '0'
 }

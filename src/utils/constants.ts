@@ -37,7 +37,7 @@ export const TRUST_DELTAS = {
 export const PHASE_ORDER: GamePhase[] = [
   GamePhase.Phase0_CaseIntro,
   GamePhase.Phase1_InitialStatement,
-  GamePhase.Phase2_Rebuttal,
+  // Phase2_Rebuttal은 Phase1로 통합됨 — PHASE_ORDER에서 제거
   GamePhase.Phase3_Interrogation,
   GamePhase.Phase6_Mediation,
   GamePhase.Phase7_Verdict,

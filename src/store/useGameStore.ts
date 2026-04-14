@@ -1,4 +1,4 @@
-// @ts-nocheck — 대규모 스토어, 점진적 타입 정리 예정
+// @ts-check-enabled — 타입 체크 활성화 (2026-04-14)
 import { create } from 'zustand'
 import { persist } from 'zustand/middleware'
 import { createPhaseSlice, type PhaseSlice } from './slices/phaseSlice'
