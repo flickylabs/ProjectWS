@@ -56,6 +56,10 @@ export default function PCHomeScreen() {
     checkConnection().then((r) => setLlmConnected(r.connected)).catch(() => setLlmConnected(false))
   }, [])
 
+  useEffect(() => {
+    playBgmFn('/bgm/title.mp3')
+  }, [])
+
   const allCases = useMemo(
     () => getAllCases().map(({ caseId }) => getCaseById(caseId)).filter((item): item is CaseData => item != null),
     [],

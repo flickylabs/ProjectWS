@@ -94,7 +94,6 @@ export default function PCApp() {
   }
 
   if (!caseData) {
-    playBgm('/bgm/title.mp3')
     return <PCHomeScreen />
   }
 
