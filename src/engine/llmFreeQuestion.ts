@@ -358,7 +358,16 @@ function parseResponderResponse(raw: string, ppCtx?: PostProcessContext): { resp
     // 전체 후처리 파이프라인 적용 (TruthThrottle/클리셰 필터/금액 보호 포함)
     const response = ppCtx ? postProcessNpcText(rawResponse, ppCtx) : fixPostpositions(enforceHonorifics(fixMisdirectedAddress(rawResponse)))
 
-    return { response: response || '...', behaviorHint }
+    // S0-S1 회피 패턴 감지 → 플레이어에게 힌트 제공
+    let finalHint = behaviorHint
+    if (!finalHint && ppCtx?.lieState && ['S0', 'S1'].includes(ppCtx.lieState)) {
+      const evasionPattern = /해당 금액|그 사람|그곳|그 쪽|그때|해당 시기|그 건/
+      if (evasionPattern.test(response)) {
+        finalHint = '구체적인 내용을 언급하지 않으려 한다.'
+      }
+    }
+
+    return { response: response || '...', behaviorHint: finalHint }
   } catch {
     return { response: raw.slice(0, 200), behaviorHint: '' }
   }

@@ -1,0 +1,54 @@
+{
+  "interrogation": {
+    "entryCount": 180,
+    "sampleKeys": [
+      "a|d-1|S0|fact_pursuit",
+      "a|d-1|S0|motive_search",
+      "a|d-1|S0|empathy_approach"
+    ]
+  },
+  "evidence_present": {
+    "entryCount": 42,
+    "sampleKeys": [
+      "a|e-1|early|both",
+      "a|e-1|mid|both",
+      "a|e-1|late|both"
+    ]
+  },
+  "dossier": {
+    "entryCount": 9,
+    "sampleKeys": [
+      "b|dc-1|early",
+      "b|dc-1|mid",
+      "b|dc-1|late"
+    ]
+  },
+  "witness": {
+    "entryCount": 9,
+    "sampleKeys": [
+      "w-1|vague",
+      "w-1|partial",
+      "w-1|full"
+    ]
+  },
+  "aftermath": {
+    "entryCount": 3,
+    "sampleKeys": [
+      "shared_fault",
+      "a_primary_fault",
+      "b_primary_fault"
+    ]
+  },
+  "system_message": {
+    "entryCount": 6,
+    "sampleKeys": [
+      "interrogation|repeat_warning",
+      "evidence|new_unlock",
+      "evidence|trap_notice"
+    ]
+  },
+  "mediation": {
+    "entryCount": 0,
+    "sampleKeys": []
+  }
+}
