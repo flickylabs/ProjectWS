@@ -1,0 +1,102 @@
+{
+  "family-01": {
+    "partyA": "윤태성",
+    "partyB": "윤정후",
+    "missing": [
+      {
+        "cardName": "감춘 이유",
+        "questionId": "dc-4.b.q1",
+        "targetParty": "b",
+        "questionText": "윤정후 씨, 형의 출생 비밀을 언제 알게 되었고, 그 뒤 왜 혼자 감당하려 하셨습니까?",
+        "attackVector": "timeline",
+        "requiredLieState": "S2"
+      },
+      {
+        "cardName": "감춘 이유",
+        "questionId": "dc-4.b.q2",
+        "targetParty": "b",
+        "questionText": "형이 그 사실을 알면 삶의 기반이 무너질까 두려워, 결국 법정까지 가지 않게 하려 했다는 말입니까?",
+        "attackVector": "context",
+        "requiredLieState": "S3"
+      },
+      {
+        "cardName": "어머니의 뜻",
+        "questionId": "dc-5.a.q1",
+        "targetParty": "a",
+        "questionText": "윤태성 씨, 동생 돈이었다는 사실을 몰랐다 해도 장남이니 더 받아야 한다고 여긴 마음까지는 부인하지 않으십니까?",
+        "attackVector": "context",
+        "requiredLieState": "S2"
+      },
+      {
+        "cardName": "어머니의 뜻",
+        "questionId": "dc-5.b.q1",
+        "targetParty": "b",
+        "questionText": "윤정후 씨, 형을 지키려 했다는 이유가 있더라도 어머니가 남긴 90대10 뜻을 당신이 고쳐 쓴 책임까지 없어지는 건 아니지 않습니까?",
+        "attackVector": "contradiction",
+        "requiredLieState": "S2"
+      },
+      {
+        "cardName": "어머니의 뜻",
+        "questionId": "dc-5.b.q2",
+        "targetParty": "b",
+        "questionText": "결국 두 형제 모두 어머니를 있는 그대로 두지 못했다는 말, 이제는 인정하십니까?",
+        "attackVector": "context",
+        "requiredLieState": "S3"
+      }
+    ]
+  },
+  "friend-01": {
+    "partyA": "송다은",
+    "partyB": "최수민",
+    "missing": [
+      {
+        "cardName": "집착의 겉면",
+        "questionId": "dc-1.a.q1",
+        "targetParty": "a",
+        "questionText": "연락 횟수만 보고 수민 씨를 집착하는 사람으로 먼저 못 박은 것 아닙니까?",
+        "attackVector": "contradiction",
+        "requiredLieState": "S1"
+      },
+      {
+        "cardName": "같은 부탁",
+        "questionId": "dc-3.b.q1",
+        "targetParty": "b",
+        "questionText": "같은 돈 부탁을 다시 봤다면, 왜 이번에도 혼자 막는 쪽을 택했습니까?",
+        "attackVector": "context",
+        "requiredLieState": "S2"
+      },
+      {
+        "cardName": "손절의 값",
+        "questionId": "dc-4.b.q1",
+        "targetParty": "b",
+        "questionText": "다은이 아버지가 당신 돈을 가져간 뒤에도, 왜 그 사실만은 다은이에게 끝내 말하지 못했습니까?",
+        "attackVector": "context",
+        "requiredLieState": "S2"
+      },
+      {
+        "cardName": "손절의 값",
+        "questionId": "dc-4.a.q1",
+        "targetParty": "a",
+        "questionText": "그때 수민 씨를 변심으로 단정하기 전에, 왜 끝까지 무슨 돈 문제인지 확인하지 않았습니까?",
+        "attackVector": "timeline",
+        "requiredLieState": "S1"
+      },
+      {
+        "cardName": "낙인의 순서",
+        "questionId": "dc-5.a.q1",
+        "targetParty": "a",
+        "questionText": "수민 씨에게 직접 묻기도 전에 단톡방에 먼저 올린 이유가, 사실 확인보다 분노를 먼저 퍼뜨리고 싶어서였던 것 아닙니까?",
+        "attackVector": "timeline",
+        "requiredLieState": "S2"
+      },
+      {
+        "cardName": "낙인의 순서",
+        "questionId": "dc-5.b.q1",
+        "targetParty": "b",
+        "questionText": "이번에도 스스로 악역이 되면 또 같은 낙인이 반복된다는 걸 알면서, 왜 끝까지 혼자 버텼습니까?",
+        "attackVector": "context",
+        "requiredLieState": "S3"
+      }
+    ]
+  }
+}
