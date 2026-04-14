@@ -17,26 +17,26 @@ const PATH_LABELS: Record<MediationPath, { label: string; iconId: string; desc: 
   immediate: {
     label: '즉시 판결',
     iconId: 'i-scale',
-    desc: '정리된 쟁점을 기준으로 바로 판단합니다.',
-    judge: '정리된 쟁점을 기준으로 즉시 판단하겠습니다. 판결 단계로 넘어가겠습니다.',
+    desc: '쟁점이 충분히 드러났으니 바로 판결합니다.',
+    judge: '쟁점은 충분히 드러났습니다. 더 늦추지 않고 지금 판결의 기준을 세우겠습니다.',
   },
   conditional: {
     label: '조건부 조정',
     iconId: 'i-heart',
-    desc: '핵심 책임을 나눈 뒤 조건부 조정을 먼저 제시합니다.',
-    judge: '핵심 책임을 분리한 조건부 조정을 먼저 제시하겠습니다.',
+    desc: '서로 받아들일 조건을 묶어 타협점을 찾습니다.',
+    judge: '지금은 누가 얼마나 책임을 지는지만 정하면 끝나지 않습니다. 서로 받아들일 조건을 함께 묶어 보며 합의 가능한 선부터 확인하겠습니다.',
   },
   postpone: {
     label: '일부 보류',
     iconId: 'i-doc',
-    desc: '확정 가능한 사실만 먼저 고정하고 나머지는 보류합니다.',
-    judge: '확정 가능한 사실만 먼저 고정하고 나머지는 보류하겠습니다.',
+    desc: '확정 가능한 것만 정리하고 나머지는 숨 돌린 뒤 판단합니다.',
+    judge: '당장 결론을 서두르면 남는 상처가 더 커질 수 있습니다. 오늘 확정할 사실과 남겨 둘 쟁점을 나눠서 숨 돌릴 틈을 만든 뒤 판단하겠습니다.',
   },
   fact_first: {
     label: '사실 먼저',
     iconId: 'i-search',
-    desc: '해결책보다 사실관계부터 먼저 정리합니다.',
-    judge: '사실관계만 먼저 정리하고 해결책은 그 뒤에 조율하겠습니다.',
+    desc: '감정과 해법을 섞기 전에 사실관계부터 고정합니다.',
+    judge: '감정과 해법을 먼저 섞으면 판단이 흐려집니다. 사실관계부터 한 줄씩 고정한 뒤 그 위에 책임과 해결책을 얹겠습니다.',
   },
 }
 
@@ -69,6 +69,7 @@ export default function Phase6_Mediation() {
 
   const handleSelect = async (path: MediationPath) => {
     setSelectedPath(path)
+    useGameStore.getState().setMediationChoice(path)
 
     const scriptedPath = mediationScript?.paths?.[path]
     const judgeText = scriptedPath?.judge ?? PATH_LABELS[path].judge

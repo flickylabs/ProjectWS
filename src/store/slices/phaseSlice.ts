@@ -5,6 +5,8 @@ import { PHASE_ORDER } from '../../utils/constants'
 import { checkVerdictEligible, checkForcedVerdict } from '../../engine/readinessEngine'
 import { normalizeCaseKey } from '../../utils/caseHelpers'
 
+export type MediationChoice = 'immediate' | 'conditional' | 'postpone' | 'fact_first' | null
+
 export interface PhaseSlice {
   currentPhase: GamePhase
   phaseHistory: GamePhase[]
@@ -12,12 +14,15 @@ export interface PhaseSlice {
   phaseTurnCount: number
   /** 판결 모드: normal(정상) / forced_incomplete(불충분 심리) */
   verdictMode: VerdictMode
+  /** Phase 6에서 선택한 중재 유형 (Phase 7에서 참조) */
+  mediationChoice: MediationChoice
 
   advancePhase: (skipTo?: GamePhase) => void
   incrementTurn: () => void
   canAdvancePhase: () => boolean
   setPhase: (phase: GamePhase) => void
   setVerdictMode: (mode: VerdictMode) => void
+  setMediationChoice: (choice: MediationChoice) => void
 }
 
 export const createPhaseSlice: StateCreator<PhaseSlice, [], [], PhaseSlice> = (set, get) => ({
@@ -26,6 +31,7 @@ export const createPhaseSlice: StateCreator<PhaseSlice, [], [], PhaseSlice> = (s
   turnCount: 0,
   phaseTurnCount: 0,
   verdictMode: 'normal',
+  mediationChoice: null,
 
   advancePhase: (skipTo) => {
     const { currentPhase } = get()
@@ -120,5 +126,8 @@ export const createPhaseSlice: StateCreator<PhaseSlice, [], [], PhaseSlice> = (s
 
   setVerdictMode: (mode) => {
     set({ verdictMode: mode })
+  },
+  setMediationChoice: (choice) => {
+    set({ mediationChoice: choice })
   },
 })
