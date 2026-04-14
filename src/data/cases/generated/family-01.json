@@ -2947,5 +2947,60 @@
       "A는 아버지의 친자가 아니며 B는 이 사실을 알고 형을 보호하기 위해 유서를 조작했다.",
       "둘 다 어머니를 있는 그대로 두지 못했다. A는 유산을 당연시했고 B는 어머니 뜻을 고쳐 형을 보호하려 했다."
     ]
-  }
+  },
+  "evidenceCombinations": [
+    {
+      "requires": [
+        "e-2",
+        "e-3"
+      ],
+      "upgradesTo": "hard",
+      "proves": [
+        "d-1"
+      ]
+    },
+    {
+      "requires": [
+        "e-1",
+        "e-4"
+      ],
+      "upgradesTo": "hard",
+      "proves": [
+        "d-2"
+      ]
+    },
+    {
+      "requires": [
+        "e-4",
+        "e-5"
+      ],
+      "upgradesTo": "hard",
+      "proves": [
+        "d-2",
+        "d-3"
+      ]
+    },
+    {
+      "requires": [
+        "e-5",
+        "e-6"
+      ],
+      "upgradesTo": "hard",
+      "proves": [
+        "d-3",
+        "d-5"
+      ]
+    },
+    {
+      "requires": [
+        "e-6",
+        "e-7"
+      ],
+      "upgradesTo": "hard",
+      "proves": [
+        "d-4",
+        "d-5"
+      ]
+    }
+  ]
 }
