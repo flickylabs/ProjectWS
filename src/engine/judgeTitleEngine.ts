@@ -1,26 +1,29 @@
 /**
- * judgeTitleEngine.ts — 재판관 타이틀 시스템 v4
+ * judgeTitleEngine.ts — 재판관 타이틀 시스템 v5
  *
- * 조각 9종 → 타이틀 9종 (Lv.0~5) → 장착 2칸
- *
- * 기존 성향 6종 + 퍼크 15종을 폐기하고,
- * 3축 조합 기반 타이틀 9종으로 통합.
+ * 9종 타이틀 × 3축 서브레벨(각 0~5) = 합산 최대 15Lv
+ * 각 축 강화에 방향 조각 + 중립 조각 소비
  */
 
-import type { FragmentId, FragmentInventory } from './judgeProgressionEngine'
+import { FRAGMENT_TABLE, type FragmentId, type FragmentInventory } from './judgeProgressionEngine'
 
 // ── 타이틀 ID ──
 
 export type TitleId =
-  | 'cold_judge'        // 냉철한 심판자 (논리+엄격+원칙)
-  | 'practical_analyst'  // 실용적 분석가 (논리+엄격+화해)
-  | 'careful_mediator'   // 신중한 중재자 (논리+관용+원칙)
-  | 'balanced_sage'      // 균형의 현자   (논리+관용+화해)
-  | 'instinct_judge'     // 직감의 심판관 (직관+엄격+원칙)
-  | 'passion_arbiter'    // 열정의 조정관 (직관+엄격+화해)
-  | 'gentle_guardian'    // 온화한 수호자 (직관+관용+원칙)
-  | 'warm_mediator'      // 따뜻한 중재자 (직관+관용+화해)
-  | 'neutral_observer'   // 중립의 관찰자 (중립×3)
+  | 'cold_judge' | 'practical_analyst' | 'careful_mediator' | 'balanced_sage'
+  | 'instinct_judge' | 'passion_arbiter' | 'gentle_guardian' | 'warm_mediator'
+  | 'neutral_observer'
+
+// ── 축 서브레벨 ──
+
+export interface TitleAxisLevel {
+  label: string               // 표시명 (예: 논리, 엄격, 원칙)
+  directionFragment: FragmentId
+  neutralFragment: FragmentId
+  level: number               // 0~5
+}
+
+export type TitleSubLevels = [TitleAxisLevel, TitleAxisLevel, TitleAxisLevel]
 
 // ── 타이틀 정의 ──
 
@@ -28,202 +31,179 @@ export interface TitleDefinition {
   id: TitleId
   name: string
   subtitle: string
-  /** 필요 조각 3종 (축별 1개씩) */
-  requiredFragments: [FragmentId, FragmentId, FragmentId]
-  /** 레벨별 효과 설명 */
+  /** 3축 조각 정의 */
+  axes: Array<{
+    label: string
+    directionFragment: FragmentId
+    neutralFragment: FragmentId
+  }>
+  /** 합산 레벨별 효과 */
   effects: Record<number, string>
 }
 
 export const TITLE_TABLE: readonly TitleDefinition[] = [
   {
-    id: 'cold_judge',
-    name: '냉철한 심판자',
-    subtitle: '법도의 추적자',
-    requiredFragments: ['reasoning_fragment', 'severity_fragment', 'jurisprudence_fragment'],
-    effects: {
-      1: '모순 토큰 추가 +1',
-      2: '모순 토큰 추가 +2',
-      3: '모순 감지 시 관련 쟁점 하이라이트',
-      4: '모순 토큰 추가 +3, 모순 쿨다운 -1턴',
-      5: '모순 감지 자동 표시 + 첫 모순 추궁 효과 2배',
-    },
+    id: 'cold_judge', name: '냉철한 심판자', subtitle: '법도의 추적자',
+    axes: [
+      { label: '논리', directionFragment: 'reasoning_fragment', neutralFragment: 'inquiry_fragment' },
+      { label: '엄격', directionFragment: 'severity_fragment', neutralFragment: 'deliberation_fragment' },
+      { label: '원칙', directionFragment: 'jurisprudence_fragment', neutralFragment: 'balance_fragment' },
+    ],
+    effects: { 1: '모순 토큰 +1', 3: '모순 감지 시 쟁점 하이라이트', 6: '모순 토큰 +2', 9: '모순 쿨다운 -1턴', 12: '첫 모순 추궁 효과 2배', 15: '모순 감지 자동 표시 + 토큰 +3' },
   },
   {
-    id: 'practical_analyst',
-    name: '실용적 분석가',
-    subtitle: '해결의 설계자',
-    requiredFragments: ['reasoning_fragment', 'severity_fragment', 'reconciliation_fragment'],
-    effects: {
-      1: '증거 조합 힌트 표시',
-      2: '증거 조합 성공 시 추가 정보 획득',
-      3: '증거 조사 비용 1 할인 (최소 1)',
-      4: '미발견 조합 존재 시 알림',
-      5: '첫 증거 조합 자동 발견 + 조사 비용 2 할인',
-    },
+    id: 'practical_analyst', name: '실용적 분석가', subtitle: '해결의 설계자',
+    axes: [
+      { label: '논리', directionFragment: 'reasoning_fragment', neutralFragment: 'inquiry_fragment' },
+      { label: '엄격', directionFragment: 'severity_fragment', neutralFragment: 'deliberation_fragment' },
+      { label: '화해', directionFragment: 'reconciliation_fragment', neutralFragment: 'balance_fragment' },
+    ],
+    effects: { 1: '증거 조합 힌트 표시', 3: '조합 성공 시 추가 정보', 6: '증거 조사 비용 1 할인', 9: '미발견 조합 알림', 12: '조사 비용 2 할인', 15: '첫 조합 자동 발견' },
   },
   {
-    id: 'careful_mediator',
-    name: '신중한 중재자',
-    subtitle: '신뢰의 설계자',
-    requiredFragments: ['reasoning_fragment', 'leniency_fragment', 'jurisprudence_fragment'],
-    effects: {
-      1: '증인 증언 depth +1 보너스',
-      2: '증인 실패 시 토큰 환불',
-      3: '증인 full depth 도달 시 추가 정보',
-      4: '증인 소환 비용 1 할인',
-      5: '첫 증인 무료 소환 + depth 항상 +1',
-    },
+    id: 'careful_mediator', name: '신중한 중재자', subtitle: '신뢰의 설계자',
+    axes: [
+      { label: '논리', directionFragment: 'reasoning_fragment', neutralFragment: 'inquiry_fragment' },
+      { label: '관용', directionFragment: 'leniency_fragment', neutralFragment: 'deliberation_fragment' },
+      { label: '원칙', directionFragment: 'jurisprudence_fragment', neutralFragment: 'balance_fragment' },
+    ],
+    effects: { 1: '증인 depth +1', 3: '증인 실패 토큰 환불', 6: '증인 full depth 추가 정보', 9: '증인 소환 비용 1 할인', 12: '증인 depth 항상 +1', 15: '첫 증인 무료' },
   },
   {
-    id: 'balanced_sage',
-    name: '균형의 현자',
-    subtitle: '공정의 수호자',
-    requiredFragments: ['reasoning_fragment', 'leniency_fragment', 'reconciliation_fragment'],
-    effects: {
-      1: '양측 심문 시 교차 힌트 표시',
-      2: '양측 S3+ 도달 시 보너스 조각 +1',
-      3: '판결 Wisdom 기본 +3',
-      4: '중재 효과 보정 +2',
-      5: '양측 동시 심문 가능 + Wisdom +8',
-    },
+    id: 'balanced_sage', name: '균형의 현자', subtitle: '공정의 수호자',
+    axes: [
+      { label: '논리', directionFragment: 'reasoning_fragment', neutralFragment: 'inquiry_fragment' },
+      { label: '관용', directionFragment: 'leniency_fragment', neutralFragment: 'deliberation_fragment' },
+      { label: '화해', directionFragment: 'reconciliation_fragment', neutralFragment: 'balance_fragment' },
+    ],
+    effects: { 1: '양측 교차 힌트', 3: 'Wisdom 기본 +3', 6: '양측 S3+ 보너스 조각', 9: '중재 효과 +2', 12: 'Wisdom +8', 15: '양측 동시 심문 가능' },
   },
   {
-    id: 'instinct_judge',
-    name: '직감의 심판관',
-    subtitle: '본능의 추적자',
-    requiredFragments: ['empathy_fragment', 'severity_fragment', 'jurisprudence_fragment'],
-    effects: {
-      1: '동기탐색 누설미터 +5 보너스',
-      2: '숨겨진 쟁점 발견 확률 증가',
-      3: '동기탐색 연속 성공 시 추가 전이',
-      4: '누설미터 40%+ 시 자동 힌트',
-      5: '숨겨진 쟁점 첫 턴 자동 힌트 + 누설미터 +10',
-    },
+    id: 'instinct_judge', name: '직감의 심판관', subtitle: '본능의 추적자',
+    axes: [
+      { label: '직관', directionFragment: 'empathy_fragment', neutralFragment: 'inquiry_fragment' },
+      { label: '엄격', directionFragment: 'severity_fragment', neutralFragment: 'deliberation_fragment' },
+      { label: '원칙', directionFragment: 'jurisprudence_fragment', neutralFragment: 'balance_fragment' },
+    ],
+    effects: { 1: '누설미터 +5', 3: '숨겨진 쟁점 발견 확률 증가', 6: '동기탐색 연속 추가 전이', 9: '누설미터 40%+ 자동 힌트', 12: '누설미터 +10', 15: '숨겨진 쟁점 첫 턴 자동 힌트' },
   },
   {
-    id: 'passion_arbiter',
-    name: '열정의 조정관',
-    subtitle: '정의의 불꽃',
-    requiredFragments: ['empathy_fragment', 'severity_fragment', 'reconciliation_fragment'],
-    effects: {
-      1: '감정 폭발 감지 시 선택지 확장',
-      2: '끼어들기 이벤트 시 추가 정보',
-      3: '감정 격앙 상태에서 사실추궁 효과 +50%',
-      4: '감정 이벤트 발생 빈도 증가',
-      5: '감정 폭발 시 자동 전이 + 사실추궁 효과 2배',
-    },
+    id: 'passion_arbiter', name: '열정의 조정관', subtitle: '정의의 불꽃',
+    axes: [
+      { label: '직관', directionFragment: 'empathy_fragment', neutralFragment: 'inquiry_fragment' },
+      { label: '엄격', directionFragment: 'severity_fragment', neutralFragment: 'deliberation_fragment' },
+      { label: '화해', directionFragment: 'reconciliation_fragment', neutralFragment: 'balance_fragment' },
+    ],
+    effects: { 1: '감정 폭발 선택지 확장', 3: '끼어들기 추가 정보', 6: '격앙 시 사실추궁 +50%', 9: '감정 이벤트 빈도 증가', 12: '사실추궁 2배', 15: '감정 폭발 자동 전이' },
   },
   {
-    id: 'gentle_guardian',
-    name: '온화한 수호자',
-    subtitle: '원칙의 품격',
-    requiredFragments: ['empathy_fragment', 'leniency_fragment', 'jurisprudence_fragment'],
-    effects: {
-      1: '공감접근 신뢰도 +3 보너스',
-      2: '공감접근 연속 시 피로도 감소',
-      3: '신뢰 임계치 -5 (자백 유도 촉진)',
-      4: '공감접근 시 상대 감정 상태 표시',
-      5: '공감접근 신뢰도 +8, 임계치 -10, 피로도 면역',
-    },
+    id: 'gentle_guardian', name: '온화한 수호자', subtitle: '원칙의 품격',
+    axes: [
+      { label: '직관', directionFragment: 'empathy_fragment', neutralFragment: 'inquiry_fragment' },
+      { label: '관용', directionFragment: 'leniency_fragment', neutralFragment: 'deliberation_fragment' },
+      { label: '원칙', directionFragment: 'jurisprudence_fragment', neutralFragment: 'balance_fragment' },
+    ],
+    effects: { 1: '공감 신뢰 +3', 3: '공감 피로도 감소', 6: '자백 임계치 -5', 9: '감정 상태 표시', 12: '신뢰 +8, 임계치 -10', 15: '공감 피로 면역' },
   },
   {
-    id: 'warm_mediator',
-    name: '따뜻한 중재자',
-    subtitle: '화해의 길잡이',
-    requiredFragments: ['empathy_fragment', 'leniency_fragment', 'reconciliation_fragment'],
-    effects: {
-      1: '비공개보호 시 신뢰도 추가 +5',
-      2: '분리심문 시 솔직도 보너스 증가',
-      3: '법정 지배력 행동 시 추가 정보 획득',
-      4: '비공개보호 효과 2배',
-      5: '법정 지배력 행동 무제한 효과 + 신뢰도 +15',
-    },
+    id: 'warm_mediator', name: '따뜻한 중재자', subtitle: '화해의 길잡이',
+    axes: [
+      { label: '직관', directionFragment: 'empathy_fragment', neutralFragment: 'inquiry_fragment' },
+      { label: '관용', directionFragment: 'leniency_fragment', neutralFragment: 'deliberation_fragment' },
+      { label: '화해', directionFragment: 'reconciliation_fragment', neutralFragment: 'balance_fragment' },
+    ],
+    effects: { 1: '비공개보호 신뢰 +5', 3: '분리심문 솔직도 보너스', 6: '법정 지배력 추가 정보', 9: '비공개보호 2배', 12: '신뢰 +15', 15: '법정 지배력 무제한' },
   },
   {
-    id: 'neutral_observer',
-    name: '중립의 관찰자',
-    subtitle: '균형의 눈',
-    requiredFragments: ['inquiry_fragment', 'deliberation_fragment', 'balance_fragment'],
-    effects: {
-      1: '턴 보너스 +1',
-      2: '모든 쟁점 초기 상태 힌트',
-      3: '턴 보너스 +2, 교착 피드백 강화',
-      4: '첫 턴 모든 액션 효과 +30%',
-      5: '턴 보너스 +3, 모든 심문 피로도 감소, 초기 힌트 확장',
-    },
+    id: 'neutral_observer', name: '중립의 관찰자', subtitle: '균형의 눈',
+    axes: [
+      { label: '탐구', directionFragment: 'inquiry_fragment', neutralFragment: 'inquiry_fragment' },
+      { label: '심리', directionFragment: 'deliberation_fragment', neutralFragment: 'deliberation_fragment' },
+      { label: '균형', directionFragment: 'balance_fragment', neutralFragment: 'balance_fragment' },
+    ],
+    effects: { 1: '턴 +1', 3: '초기 상태 힌트', 6: '턴 +2, 교착 피드백 강화', 9: '첫 턴 효과 +30%', 12: '심문 피로도 감소', 15: '턴 +3, 초기 힌트 확장' },
   },
 ] as const
 
-// ── 레벨업 비용 ──
+// ── 서브레벨 비용 ──
 
-/** 각 조각별 소비량 (3종 각각 동일) */
-const LEVEL_COSTS: Record<number, number> = {
-  0: 2,   // Lv.0→1: ×2 × 3종 = 6
-  1: 4,   // Lv.1→2: ×4 × 3종 = 12
-  2: 6,   // Lv.2→3: ×6 × 3종 = 18
-  3: 9,   // Lv.3→4: ×9 × 3종 = 27
-  4: 12,  // Lv.4→5: ×12 × 3종 = 36
+export const MAX_SUB_LEVEL = 5
+
+interface SubLevelCost {
+  direction: number
+  neutral: number
 }
 
-export const MAX_TITLE_LEVEL = 5
-
-export function getTitleLevelCost(currentLevel: number): number | null {
-  return LEVEL_COSTS[currentLevel] ?? null
+const SUB_LEVEL_COSTS: Record<number, SubLevelCost> = {
+  0: { direction: 2, neutral: 3 },
+  1: { direction: 4, neutral: 5 },
+  2: { direction: 6, neutral: 8 },
+  3: { direction: 8, neutral: 10 },
+  4: { direction: 10, neutral: 12 },
 }
 
-/** 레벨업 가능 여부 */
-export function canLevelUpTitle(
-  titleId: TitleId,
-  titleLevels: TitleLevels,
-  inventory: FragmentInventory,
-): boolean {
-  const level = titleLevels[titleId]
-  if (level >= MAX_TITLE_LEVEL) return false
-
-  const cost = LEVEL_COSTS[level]
-  if (cost == null) return false
-
-  const def = TITLE_TABLE.find(t => t.id === titleId)!
-  return def.requiredFragments.every(fid => inventory[fid] >= cost)
-}
-
-/** 레벨업 실행 */
-export function levelUpTitle(
-  titleId: TitleId,
-  titleLevels: TitleLevels,
-  inventory: FragmentInventory,
-): { titleLevels: TitleLevels; inventory: FragmentInventory } | null {
-  if (!canLevelUpTitle(titleId, titleLevels, inventory)) return null
-
-  const level = titleLevels[titleId]
-  const cost = LEVEL_COSTS[level]!
-  const def = TITLE_TABLE.find(t => t.id === titleId)!
-
-  const newInventory = { ...inventory }
-  for (const fid of def.requiredFragments) {
-    newInventory[fid] -= cost
-  }
-
-  const newLevels = { ...titleLevels, [titleId]: level + 1 }
-  return { titleLevels: newLevels, inventory: newInventory }
+export function getSubLevelCost(currentSubLevel: number): SubLevelCost | null {
+  return SUB_LEVEL_COSTS[currentSubLevel] ?? null
 }
 
 // ── 타이틀 레벨 상태 ──
 
-export type TitleLevels = Record<TitleId, number>
+/** 각 타이틀의 3축 서브레벨 */
+export type TitleLevels = Record<TitleId, [number, number, number]>
 
 export function createDefaultTitleLevels(): TitleLevels {
+  const zero: [number, number, number] = [0, 0, 0]
   return {
-    cold_judge: 0,
-    practical_analyst: 0,
-    careful_mediator: 0,
-    balanced_sage: 0,
-    instinct_judge: 0,
-    passion_arbiter: 0,
-    gentle_guardian: 0,
-    warm_mediator: 0,
-    neutral_observer: 0,
+    cold_judge: [...zero], practical_analyst: [...zero], careful_mediator: [...zero],
+    balanced_sage: [...zero], instinct_judge: [...zero], passion_arbiter: [...zero],
+    gentle_guardian: [...zero], warm_mediator: [...zero], neutral_observer: [...zero],
   }
+}
+
+/** 합산 레벨 */
+export function getTotalLevel(subLevels: [number, number, number]): number {
+  return subLevels[0] + subLevels[1] + subLevels[2]
+}
+
+/** 현재 합산 레벨에서 활성화된 최고 효과 */
+export function getActiveEffect(titleDef: TitleDefinition, totalLevel: number): string {
+  let best = ''
+  for (const [lv, desc] of Object.entries(titleDef.effects)) {
+    if (totalLevel >= Number(lv)) best = desc
+  }
+  return best
+}
+
+// ── 축별 강화 ──
+
+export function canEnhanceAxis(
+  titleId: TitleId, axisIndex: number,
+  titleLevels: TitleLevels, inventory: FragmentInventory,
+): boolean {
+  const subs = titleLevels[titleId]
+  if (subs[axisIndex] >= MAX_SUB_LEVEL) return false
+  const cost = SUB_LEVEL_COSTS[subs[axisIndex]]
+  if (!cost) return false
+  const def = TITLE_TABLE.find(t => t.id === titleId)!
+  const axis = def.axes[axisIndex]
+  return inventory[axis.directionFragment] >= cost.direction
+    && inventory[axis.neutralFragment] >= cost.neutral
+}
+
+export function enhanceAxis(
+  titleId: TitleId, axisIndex: number,
+  titleLevels: TitleLevels, inventory: FragmentInventory,
+): { titleLevels: TitleLevels; inventory: FragmentInventory } | null {
+  if (!canEnhanceAxis(titleId, axisIndex, titleLevels, inventory)) return null
+  const subs = [...titleLevels[titleId]] as [number, number, number]
+  const cost = SUB_LEVEL_COSTS[subs[axisIndex]]!
+  const def = TITLE_TABLE.find(t => t.id === titleId)!
+  const axis = def.axes[axisIndex]
+  const newInv = { ...inventory }
+  newInv[axis.directionFragment] -= cost.direction
+  newInv[axis.neutralFragment] -= cost.neutral
+  subs[axisIndex] += 1
+  return { titleLevels: { ...titleLevels, [titleId]: subs }, inventory: newInv }
 }
 
 // ── 장착 ──
@@ -237,46 +217,56 @@ export function createDefaultLoadout(): TitleLoadout {
   return { slot1: null, slot2: null }
 }
 
-/** 장착 가능 여부 (Lv.1 이상 + 중복 방지) */
 export function canEquipTitle(
-  titleId: TitleId,
-  slot: 'slot1' | 'slot2',
-  titleLevels: TitleLevels,
-  loadout: TitleLoadout,
+  titleId: TitleId, slot: 'slot1' | 'slot2',
+  titleLevels: TitleLevels, loadout: TitleLoadout,
 ): boolean {
-  if (titleLevels[titleId] < 1) return false
-  const otherSlot = slot === 'slot1' ? 'slot2' : 'slot1'
-  return loadout[otherSlot] !== titleId
+  if (getTotalLevel(titleLevels[titleId]) < 1) return false
+  const other = slot === 'slot1' ? 'slot2' : 'slot1'
+  return loadout[other] !== titleId
 }
 
-// ── 활성 효과 수집 ──
+// ── 활성 효과 ──
 
 export interface ActiveTitleEffect {
   titleId: TitleId
-  level: number
+  totalLevel: number
   description: string
 }
 
 export function getActiveTitleEffects(
-  titleLevels: TitleLevels,
-  loadout: TitleLoadout,
+  titleLevels: TitleLevels, loadout: TitleLoadout,
 ): ActiveTitleEffect[] {
   const effects: ActiveTitleEffect[] = []
   for (const slot of [loadout.slot1, loadout.slot2]) {
     if (!slot) continue
-    const level = titleLevels[slot]
-    if (level < 1) continue
+    const total = getTotalLevel(titleLevels[slot])
+    if (total < 1) continue
     const def = TITLE_TABLE.find(t => t.id === slot)!
-    effects.push({
-      titleId: slot,
-      level,
-      description: def.effects[level] ?? '',
-    })
+    effects.push({ titleId: slot, totalLevel: total, description: getActiveEffect(def, total) })
   }
   return effects
 }
 
-/** 타이틀 정의 조회 */
 export function getTitleById(titleId: TitleId): TitleDefinition | undefined {
   return TITLE_TABLE.find(t => t.id === titleId)
+}
+
+// ── 조각 교환 ──
+
+export const EXCHANGE_RATE = 3  // 3:1 교환
+
+export function canExchangeFragments(inventory: FragmentInventory, sourceId: FragmentId): boolean {
+  return inventory[sourceId] >= EXCHANGE_RATE
+}
+
+export function exchangeFragments(
+  inventory: FragmentInventory, sourceId: FragmentId, targetId: FragmentId,
+): FragmentInventory | null {
+  if (sourceId === targetId) return null
+  if (inventory[sourceId] < EXCHANGE_RATE) return null
+  const next = { ...inventory }
+  next[sourceId] -= EXCHANGE_RATE
+  next[targetId] += 1
+  return next
 }

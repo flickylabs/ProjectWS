@@ -1,28 +1,31 @@
-import { useCallback, useEffect, useMemo, useState, type CSSProperties } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import { loadProgressionState, saveProgressionState } from '../../../data/leaderboard'
 import {
-  CONVERSION_RATE,
   FRAGMENT_TABLE,
-  convertFragments,
+  createEmptyInventory,
   type FragmentId,
   type JudgeProgressionState,
 } from '../../../engine/judgeProgressionEngine'
 import {
   TITLE_TABLE,
-  MAX_TITLE_LEVEL,
-  canLevelUpTitle,
-  levelUpTitle,
-  getTitleLevelCost,
+  MAX_SUB_LEVEL,
+  canEnhanceAxis,
+  enhanceAxis,
   canEquipTitle,
-  getTitleById,
+  getTotalLevel,
+  getActiveEffect,
+  getSubLevelCost,
+  canExchangeFragments,
+  exchangeFragments,
+  EXCHANGE_RATE,
   createDefaultTitleLevels,
   createDefaultLoadout,
+  getTitleById,
   type TitleId,
 } from '../../../engine/judgeTitleEngine'
 import {
   FRAGMENT_VISUALS,
   PCFragmentIcon,
-  TRAIT_VISUALS,
 } from '../progression/PCJudgeProgressionShared'
 
 interface Props {
@@ -30,24 +33,21 @@ interface Props {
   syncKey?: number
 }
 
-/** 타이틀에 맞는 accent 색상 (3개 조각 색 중 첫번째) */
-function getTitleAccent(titleId: TitleId): string {
-  const def = getTitleById(titleId)
-  if (!def) return '#888'
-  return FRAGMENT_VISUALS[def.requiredFragments[0]]?.color ?? '#888'
-}
+type RightTab = 'titles' | 'fragments'
 
 export default function PCJudgeProgressionPanel({ onChange, syncKey }: Props) {
   const [state, setState] = useState<JudgeProgressionState>(() => loadProgressionState())
+  const [rightTab, setRightTab] = useState<RightTab>('titles')
   const [selectedTitle, setSelectedTitle] = useState<TitleId>('cold_judge')
-  const [celebrating, setCelebrating] = useState<TitleId | null>(null)
+  const [selectedFragment, setSelectedFragment] = useState<FragmentId>('reasoning_fragment')
+  const [exchangeTarget, setExchangeTarget] = useState<FragmentId | null>(null)
+  const [showExchangeConfirm, setShowExchangeConfirm] = useState(false)
 
   useEffect(() => { setState(loadProgressionState()) }, [syncKey])
-  useEffect(() => {
-    if (!celebrating) return
-    const t = window.setTimeout(() => setCelebrating(null), 1300)
-    return () => window.clearTimeout(t)
-  }, [celebrating])
+
+  const titleLevels = state.titleLevels ?? createDefaultTitleLevels()
+  const titleLoadout = state.titleLoadout ?? createDefaultLoadout()
+  const inventory = state.inventory ?? createEmptyInventory()
 
   const commitState = useCallback((next: JudgeProgressionState) => {
     saveProgressionState(next)
@@ -55,276 +55,308 @@ export default function PCJudgeProgressionPanel({ onChange, syncKey }: Props) {
     onChange?.(next)
   }, [onChange])
 
-  // v3→v4 마이그레이션 미완료 시 방어
-  const titleLevels = state.titleLevels ?? createDefaultTitleLevels()
-  const titleLoadout = state.titleLoadout ?? createDefaultLoadout()
-
-  // ── 선택된 타이틀 데이터 ──
-  const titleDef = getTitleById(selectedTitle)!
-  const currentLevel = titleLevels[selectedTitle]
-  const costPerFragment = getTitleLevelCost(currentLevel)
-  const ready = canLevelUpTitle(selectedTitle, titleLevels, state.inventory)
-
-  const handleLevelUp = () => {
-    const result = levelUpTitle(selectedTitle, titleLevels, state.inventory)
+  // ── 타이틀 강화 ──
+  const handleEnhanceAxis = (axisIndex: number) => {
+    if (!confirm('이 축을 강화하시겠습니까? 조각이 소비됩니다.')) return
+    const result = enhanceAxis(selectedTitle, axisIndex, titleLevels, inventory)
     if (!result) return
-    commitState({
-      ...state,
-      titleLevels: result.titleLevels,
-      inventory: result.inventory,
-      lastUpdated: new Date().toISOString(),
-    })
-    setCelebrating(selectedTitle)
+    commitState({ ...state, titleLevels: result.titleLevels, inventory: result.inventory, lastUpdated: new Date().toISOString() })
   }
 
+  // ── 타이틀 장착 ──
   const handleEquip = (slot: 'slot1' | 'slot2') => {
     if (!canEquipTitle(selectedTitle, slot, titleLevels, titleLoadout)) return
-    const current = titleLoadout[slot]
     commitState({
       ...state,
-      titleLoadout: {
-        ...titleLoadout,
-        [slot]: current === selectedTitle ? null : selectedTitle,
-      },
+      titleLoadout: { ...titleLoadout, [slot]: titleLoadout[slot] === selectedTitle ? null : selectedTitle },
       lastUpdated: new Date().toISOString(),
     })
   }
 
   const handleUnequip = (slot: 'slot1' | 'slot2') => {
-    commitState({
-      ...state,
-      titleLoadout: { ...titleLoadout, [slot]: null },
-      lastUpdated: new Date().toISOString(),
-    })
+    commitState({ ...state, titleLoadout: { ...titleLoadout, [slot]: null }, lastUpdated: new Date().toISOString() })
   }
 
-  // 장착 상태
-  const isEquippedSlot1 = titleLoadout.slot1 === selectedTitle
-  const isEquippedSlot2 = titleLoadout.slot2 === selectedTitle
-  const isEquipped = isEquippedSlot1 || isEquippedSlot2
-
-  // 조각 변환 (선택된 타이틀과 관련된 축 찾기)
-  const relatedConversions = useMemo(() => {
-    if (!titleDef) return []
-    const seen = new Set<string>()
-    return titleDef.requiredFragments
-      .map(fid => {
-        const fv = FRAGMENT_VISUALS[fid]
-        if (!fv) return null
-        // 이 조각의 축에서 중립 조각 찾기
-        const axisDefs = FRAGMENT_TABLE as readonly { id: FragmentId; axis: string; direction: string }[]
-        const thisFrag = axisDefs.find(f => f.id === fid)
-        if (!thisFrag || thisFrag.direction === 'neutral') return null
-        const neutral = axisDefs.find(f => f.axis === thisFrag.axis && f.direction === 'neutral')
-        if (!neutral || seen.has(neutral.id)) return null
-        seen.add(neutral.id)
-        const targets = axisDefs.filter(f => f.axis === thisFrag.axis && f.direction !== 'neutral')
-        return { neutralId: neutral.id as FragmentId, targets: targets.map(t => t.id as FragmentId) }
-      })
-      .filter(Boolean) as Array<{ neutralId: FragmentId; targets: FragmentId[] }>
-  }, [titleDef])
-
-  const handleConvert = (targetFragId: FragmentId) => {
-    const next = convertFragments(state.inventory, targetFragId)
+  // ── 조각 교환 ──
+  const handleExchange = () => {
+    if (!exchangeTarget) return
+    const next = exchangeFragments(inventory, selectedFragment, exchangeTarget)
     if (!next) return
     commitState({ ...state, inventory: next, lastUpdated: new Date().toISOString() })
+    setShowExchangeConfirm(false)
+    setExchangeTarget(null)
   }
 
-  // 슬롯 표시 데이터
-  const slot1Title = titleLoadout.slot1 ? getTitleById(titleLoadout.slot1) : null
-  const slot2Title = titleLoadout.slot2 ? getTitleById(titleLoadout.slot2) : null
+  const titleDef = getTitleById(selectedTitle)!
+  const subs = titleLevels[selectedTitle]
+  const totalLv = getTotalLevel(subs)
+  const activeEffect = getActiveEffect(titleDef, totalLv)
+  const isEquipped = titleLoadout.slot1 === selectedTitle || titleLoadout.slot2 === selectedTitle
+
+  // 슬롯 데이터
+  const slot1Def = titleLoadout.slot1 ? getTitleById(titleLoadout.slot1) : null
+  const slot2Def = titleLoadout.slot2 ? getTitleById(titleLoadout.slot2) : null
 
   return (
-    <div className="jp">
-      {/* ── 1. 장착 슬롯 ── */}
-      <div className="jp__equipped">
-        <EquipSlotDisplay label="Slot 1" title={slot1Title ?? null} level={titleLoadout.slot1 ? titleLevels[titleLoadout.slot1] : 0} onUnequip={() => handleUnequip('slot1')} />
-        <EquipSlotDisplay label="Slot 2" title={slot2Title ?? null} level={titleLoadout.slot2 ? titleLevels[titleLoadout.slot2] : 0} onUnequip={() => handleUnequip('slot2')} />
+    <div className="jp2">
+      {/* ── 상단: 장착 슬롯 ── */}
+      <div className="jp2__slots">
+        <SlotDisplay label="SLOT 1" title={slot1Def ?? null} level={titleLoadout.slot1 ? getTotalLevel(titleLevels[titleLoadout.slot1]) : 0} onUnequip={() => handleUnequip('slot1')} />
+        <SlotDisplay label="SLOT 2" title={slot2Def ?? null} level={titleLoadout.slot2 ? getTotalLevel(titleLevels[titleLoadout.slot2]) : 0} onUnequip={() => handleUnequip('slot2')} />
       </div>
 
-      {/* ── 2. 타이틀 선택바 ── */}
-      <div className="jp__selector">
-        {TITLE_TABLE.map(t => {
-          const lv = titleLevels[t.id]
-          const canUp = canLevelUpTitle(t.id, titleLevels, state.inventory)
-          const accent = getTitleAccent(t.id)
+      {/* ── 좌우 분할 ── */}
+      <div className="jp2__split">
+
+        {/* 좌: 상세 패널 */}
+        <div className="jp2__left">
+          {rightTab === 'titles' ? (
+            <TitleDetailPanel
+              titleDef={titleDef}
+              subs={subs}
+              totalLv={totalLv}
+              activeEffect={activeEffect}
+              inventory={inventory}
+              titleLevels={titleLevels}
+              titleLoadout={titleLoadout}
+              isEquipped={isEquipped}
+              selectedTitle={selectedTitle}
+              onEnhanceAxis={handleEnhanceAxis}
+              onEquip={handleEquip}
+            />
+          ) : (
+            <FragmentDetailPanel
+              fragmentId={selectedFragment}
+              inventory={inventory}
+              exchangeTarget={exchangeTarget}
+              showConfirm={showExchangeConfirm}
+              onSetTarget={setExchangeTarget}
+              onShowConfirm={setShowExchangeConfirm}
+              onExchange={handleExchange}
+            />
+          )}
+        </div>
+
+        {/* 우: 선택 패널 */}
+        <div className="jp2__right">
+          <div className="jp2__toggle">
+            <button className={`jp2__toggle-btn${rightTab === 'titles' ? ' is-active' : ''}`} onClick={() => setRightTab('titles')} type="button">재판관 타이틀</button>
+            <button className={`jp2__toggle-btn${rightTab === 'fragments' ? ' is-active' : ''}`} onClick={() => setRightTab('fragments')} type="button">판결 조각</button>
+          </div>
+
+          {rightTab === 'titles' ? (
+            <div className="jp2__grid">
+              {TITLE_TABLE.map(t => {
+                const lv = getTotalLevel(titleLevels[t.id])
+                const active = selectedTitle === t.id
+                return (
+                  <button key={t.id} className={`jp2__card${active ? ' is-active' : ''}`} onClick={() => setSelectedTitle(t.id)} type="button">
+                    <strong>{t.name}</strong>
+                    <span className="jp2__card-lv">{lv > 0 ? `Lv.${lv}` : '—'}</span>
+                  </button>
+                )
+              })}
+            </div>
+          ) : (
+            <div className="jp2__grid">
+              {FRAGMENT_TABLE.map(f => {
+                const active = selectedFragment === f.id
+                const count = inventory[f.id]
+                const vis = FRAGMENT_VISUALS[f.id]
+                return (
+                  <button key={f.id} className={`jp2__card${active ? ' is-active' : ''}`} onClick={() => setSelectedFragment(f.id)} type="button">
+                    <PCFragmentIcon fragmentId={f.id} size={28} />
+                    <strong>{vis?.name ?? f.name}</strong>
+                    <span className="jp2__card-count">×{count}</span>
+                  </button>
+                )
+              })}
+            </div>
+          )}
+        </div>
+      </div>
+    </div>
+  )
+}
+
+// ── 타이틀 상세 패널 ──
+
+function TitleDetailPanel({ titleDef, subs, totalLv, activeEffect, inventory, titleLevels, titleLoadout, isEquipped, selectedTitle, onEnhanceAxis, onEquip }: {
+  titleDef: NonNullable<ReturnType<typeof getTitleById>>
+  subs: [number, number, number]
+  totalLv: number
+  activeEffect: string
+  inventory: Record<FragmentId, number>
+  titleLevels: ReturnType<typeof createDefaultTitleLevels>
+  titleLoadout: ReturnType<typeof createDefaultLoadout>
+  isEquipped: boolean
+  selectedTitle: TitleId
+  onEnhanceAxis: (i: number) => void
+  onEquip: (slot: 'slot1' | 'slot2') => void
+}) {
+  return (
+    <div className="jp2__detail">
+      <div className="jp2__detail-head">
+        <div>
+          <div className="jp2__detail-tags">
+            {titleDef.axes.map(a => <span key={a.label} className="jp2__tag">{a.label}</span>)}
+          </div>
+          <h3>{titleDef.name} <span className="jp2__detail-lv">Lv.{totalLv}</span></h3>
+          {activeEffect && <p className="jp2__detail-effect">+ {activeEffect}</p>}
+        </div>
+      </div>
+
+      <div className="jp2__axes">
+        {titleDef.axes.map((axis, i) => {
+          const subLv = subs[i]
+          const cost = getSubLevelCost(subLv)
+          const canUp = canEnhanceAxis(selectedTitle, i, titleLevels, inventory)
+          const dirVis = FRAGMENT_VISUALS[axis.directionFragment]
+          const neuVis = FRAGMENT_VISUALS[axis.neutralFragment]
+
           return (
-            <button
-              key={t.id}
-              className={`jp__trait-btn${selectedTitle === t.id ? ' is-active' : ''}${canUp ? ' is-ready' : ''}${celebrating === t.id ? ' is-celebrating' : ''}`}
-              onClick={() => setSelectedTitle(t.id)}
-              style={{ '--jp-accent': accent } as CSSProperties}
-              type="button"
-            >
-              <PCFragmentIcon fragmentId={t.requiredFragments[0]} size={24} />
-              <strong>{t.name}</strong>
-              <span className={`jp__trait-lv${lv >= MAX_TITLE_LEVEL ? ' is-max' : ''}`}>
-                {lv >= MAX_TITLE_LEVEL ? 'MAX' : lv > 0 ? `Lv.${lv}` : '—'}
-              </span>
-              {canUp && <span className="jp__trait-badge">!</span>}
-            </button>
+            <div className="jp2__axis" key={axis.label}>
+              <div className="jp2__axis-head">
+                <strong>{axis.label}</strong>
+                <span className="jp2__axis-lv">{subLv >= MAX_SUB_LEVEL ? 'MAX' : `Lv.${subLv}`}</span>
+              </div>
+              {cost ? (
+                <div className="jp2__axis-cost">
+                  <span>{dirVis?.name ?? axis.directionFragment} ×{cost.direction} <b className={inventory[axis.directionFragment] >= cost.direction ? 'ok' : 'no'}>({inventory[axis.directionFragment]})</b></span>
+                  <span>{neuVis?.name ?? axis.neutralFragment} ×{cost.neutral} <b className={inventory[axis.neutralFragment] >= cost.neutral ? 'ok' : 'no'}>({inventory[axis.neutralFragment]})</b></span>
+                </div>
+              ) : (
+                <div className="jp2__axis-cost"><span className="jp2__axis-max">최대 레벨</span></div>
+              )}
+              {cost && canUp && (
+                <button className="jp2__axis-btn" onClick={() => onEnhanceAxis(i)} type="button">강화</button>
+              )}
+            </div>
           )
         })}
       </div>
 
-      {/* ── 3. 타이틀 상세 ── */}
-      <div className="jp__detail" style={{ '--jp-accent': getTitleAccent(selectedTitle) } as CSSProperties}>
-        <div className="jp__detail-header">
-          <div className="jp__detail-icons">
-            {titleDef.requiredFragments.map(fid => (
-              <PCFragmentIcon key={fid} fragmentId={fid} size={28} />
-            ))}
+      <div className="jp2__detail-effects">
+        <h4>레벨별 효과</h4>
+        {Object.entries(titleDef.effects).map(([lv, desc]) => (
+          <div key={lv} className={`jp2__effect-row${totalLv >= Number(lv) ? ' is-active' : ''}`}>
+            <span>Lv.{lv}</span>
+            <p>{desc}</p>
           </div>
-          <div>
-            <span className="jp__detail-axis">{titleDef.subtitle}</span>
-            <h3>{titleDef.name}</h3>
+        ))}
+      </div>
+
+      <div className="jp2__detail-actions">
+        {isEquipped ? (
+          <span className="jp2__equipped-badge">착용 중</span>
+        ) : totalLv >= 1 ? (
+          <div className="jp2__equip-btns">
+            <button className="jp2__action-btn" disabled={!canEquipTitle(selectedTitle, 'slot1', titleLevels, titleLoadout)} onClick={() => onEquip('slot1')} type="button">Slot 1 착용</button>
+            <button className="jp2__action-btn" disabled={!canEquipTitle(selectedTitle, 'slot2', titleLevels, titleLoadout)} onClick={() => onEquip('slot2')} type="button">Slot 2 착용</button>
           </div>
-          <span className={`jp__detail-level${currentLevel >= MAX_TITLE_LEVEL ? ' is-max' : ''}`}>
-            {currentLevel >= MAX_TITLE_LEVEL ? 'MAX' : currentLevel > 0 ? `Lv.${currentLevel} → ${currentLevel + 1}` : 'Lv.0 → 1'}
-          </span>
-        </div>
-
-        <div className="jp__detail-body">
-          {/* 좌: 강화 */}
-          <div className="jp__enhance">
-            <h4>강화</h4>
-            {costPerFragment != null ? (
-              <>
-                {titleDef.requiredFragments.map(fid => (
-                  <CostRow
-                    key={fid}
-                    fragmentId={fid}
-                    label={FRAGMENT_VISUALS[fid]?.name ?? fid}
-                    owned={state.inventory[fid]}
-                    required={costPerFragment}
-                  />
-                ))}
-                <button
-                  className={`jp__enhance-btn${ready ? ' is-ready' : ''}`}
-                  disabled={!ready}
-                  onClick={handleLevelUp}
-                  type="button"
-                >
-                  {ready ? '★ 레벨업' : '재료 부족'}
-                </button>
-              </>
-            ) : (
-              <div className="jp__enhance-maxed">
-                <span>최대 레벨 도달</span>
-                <strong>Lv.{MAX_TITLE_LEVEL}</strong>
-                <p>{titleDef.effects[MAX_TITLE_LEVEL]}</p>
-              </div>
-            )}
-
-            {/* 변환 */}
-            {relatedConversions.map(conv => {
-              const neuStock = state.inventory[conv.neutralId]
-              const canConvert = neuStock >= CONVERSION_RATE
-              return (
-                <div className="jp__convert" key={conv.neutralId}>
-                  <div className="jp__convert-stock">
-                    <PCFragmentIcon fragmentId={conv.neutralId} size={18} />
-                    <span>{FRAGMENT_VISUALS[conv.neutralId]?.name} ×{neuStock}</span>
-                  </div>
-                  <div className="jp__convert-actions">
-                    {conv.targets.map(tid => (
-                      <button
-                        key={tid}
-                        className="jp__convert-btn"
-                        disabled={!canConvert}
-                        onClick={() => handleConvert(tid)}
-                        type="button"
-                      >
-                        → {FRAGMENT_VISUALS[tid]?.shortLabel ?? FRAGMENT_VISUALS[tid]?.name} +1
-                      </button>
-                    ))}
-                  </div>
-                </div>
-              )
-            })}
-          </div>
-
-          {/* 우: 효과 + 장착 */}
-          <div className="jp__perks">
-            <h4>레벨별 효과</h4>
-            {[1, 2, 3, 4, 5].map(lv => (
-              <div key={lv} className={`jp__effect${lv <= currentLevel ? ' is-active' : ''}`}>
-                <span className="jp__effect-lv">Lv.{lv}</span>
-                <p>{titleDef.effects[lv]}</p>
-              </div>
-            ))}
-
-            {currentLevel >= 1 && (
-              <div className="jp__equip-actions">
-                <h4>장착</h4>
-                {isEquipped ? (
-                  <button className="jp__perk-btn is-equipped" onClick={() => handleUnequip(isEquippedSlot1 ? 'slot1' : 'slot2')} type="button">
-                    해제 ({isEquippedSlot1 ? 'Slot 1' : 'Slot 2'})
-                  </button>
-                ) : (
-                  <div className="jp__equip-slots">
-                    <button
-                      className="jp__perk-btn"
-                      disabled={!canEquipTitle(selectedTitle, 'slot1', titleLevels, titleLoadout)}
-                      onClick={() => handleEquip('slot1')}
-                      type="button"
-                    >
-                      Slot 1에 장착
-                    </button>
-                    <button
-                      className="jp__perk-btn"
-                      disabled={!canEquipTitle(selectedTitle, 'slot2', titleLevels, titleLoadout)}
-                      onClick={() => handleEquip('slot2')}
-                      type="button"
-                    >
-                      Slot 2에 장착
-                    </button>
-                  </div>
-                )}
-              </div>
-            )}
-            {currentLevel < 1 && <p className="jp__perks-empty">Lv.1 이상에서 장착 가능합니다.</p>}
-          </div>
-        </div>
+        ) : (
+          <span className="jp2__lock-hint">Lv.1 이상에서 착용 가능</span>
+        )}
       </div>
     </div>
   )
 }
 
-// ── 서브 컴포넌트 ──
+// ── 조각 상세 패널 ──
 
-function EquipSlotDisplay({ label, title, level, onUnequip }: {
-  label: string
-  title: import('../../../engine/judgeTitleEngine').TitleDefinition | null
-  level: number
-  onUnequip: () => void
+function FragmentDetailPanel({ fragmentId, inventory, exchangeTarget, showConfirm, onSetTarget, onShowConfirm, onExchange }: {
+  fragmentId: FragmentId
+  inventory: Record<FragmentId, number>
+  exchangeTarget: FragmentId | null
+  showConfirm: boolean
+  onSetTarget: (id: FragmentId | null) => void
+  onShowConfirm: (v: boolean) => void
+  onExchange: () => void
+}) {
+  const vis = FRAGMENT_VISUALS[fragmentId]
+  const fragDef = FRAGMENT_TABLE.find(f => f.id === fragmentId)
+  const count = inventory[fragmentId]
+  const canExchange = canExchangeFragments(inventory, fragmentId)
+
+  // 이 조각을 사용하는 타이틀 목록
+  const usedBy = TITLE_TABLE.filter(t => t.axes.some(a => a.directionFragment === fragmentId || a.neutralFragment === fragmentId))
+
+  // 교환 대상 목록 (자기 자신 제외)
+  const exchangeOptions = FRAGMENT_TABLE.filter(f => f.id !== fragmentId)
+
+  return (
+    <div className="jp2__frag-detail">
+      <div className="jp2__frag-hero">
+        <PCFragmentIcon fragmentId={fragmentId} size={64} />
+        <div>
+          <h3>{vis?.name ?? fragmentId}</h3>
+          <span className="jp2__frag-count">보유 ×{count}</span>
+        </div>
+      </div>
+
+      <div className="jp2__frag-info">
+        <div className="jp2__frag-section">
+          <h4>얻는 방법</h4>
+          <p>{fragDef?.direction === 'neutral'
+            ? '균형 잡힌 플레이 시 획득. 축 값이 중립에 가까울수록 많이 획득합니다.'
+            : `${fragDef?.direction === 'negative' ? '논리적/엄격한/원칙적' : '공감적/관대한/화해적'} 플레이 시 획득. 해당 축 성향이 강할수록 많이 획득합니다.`
+          }</p>
+        </div>
+        <div className="jp2__frag-section">
+          <h4>사용처</h4>
+          <div className="jp2__frag-usedby">
+            {usedBy.map(t => <span key={t.id}>{t.name}</span>)}
+          </div>
+        </div>
+      </div>
+
+      <div className="jp2__frag-exchange">
+        <h4>교환하기</h4>
+        {!showConfirm ? (
+          <button className="jp2__action-btn" disabled={!canExchange} onClick={() => { onSetTarget(exchangeOptions[0]?.id ?? null); onShowConfirm(true) }} type="button">
+            {canExchange ? '교환하기' : `${EXCHANGE_RATE}개 이상 필요`}
+          </button>
+        ) : (
+          <div className="jp2__exchange-flow">
+            <div className="jp2__exchange-row">
+              <div className="jp2__exchange-from">
+                <PCFragmentIcon fragmentId={fragmentId} size={28} />
+                <span>{vis?.name} ×{EXCHANGE_RATE}</span>
+              </div>
+              <span className="jp2__exchange-arrow">→</span>
+              <div className="jp2__exchange-to">
+                <select value={exchangeTarget ?? ''} onChange={e => onSetTarget(e.target.value as FragmentId)}>
+                  {exchangeOptions.map(f => (
+                    <option key={f.id} value={f.id}>{FRAGMENT_VISUALS[f.id]?.name ?? f.name} ×1</option>
+                  ))}
+                </select>
+              </div>
+            </div>
+            <p className="jp2__exchange-rate">교환비: {EXCHANGE_RATE}:1</p>
+            <div className="jp2__exchange-actions">
+              <button className="jp2__action-btn is-confirm" onClick={() => { if (confirm(`${vis?.name} ${EXCHANGE_RATE}개를 교환하시겠습니까?`)) onExchange() }} type="button">확인</button>
+              <button className="jp2__action-btn is-cancel" onClick={() => { onShowConfirm(false); onSetTarget(null) }} type="button">취소</button>
+            </div>
+          </div>
+        )}
+      </div>
+    </div>
+  )
+}
+
+// ── 슬롯 표시 ──
+
+function SlotDisplay({ label, title, level, onUnequip }: {
+  label: string; title: ReturnType<typeof getTitleById> | null; level: number; onUnequip: () => void
 }) {
   return (
-    <div className={`jp__slot${title ? ' is-filled' : ''}`}>
-      <span className="jp__slot-label">{label}</span>
-      {title && <PCFragmentIcon fragmentId={title.requiredFragments[0]} size={24} />}
-      <div>
+    <div className={`jp2__slot${title ? ' is-filled' : ''}`}>
+      <span className="jp2__slot-label">{label}</span>
+      <div className="jp2__slot-info">
         <strong>{title ? `${title.name} Lv.${level}` : '비어 있음'}</strong>
-        <p>{title ? title.effects[level] ?? '' : '타이틀을 레벨업 후 장착하세요.'}</p>
+        <p>{title ? getActiveEffect(title, level) : '타이틀을 착용하세요'}</p>
       </div>
-      {title && <button className="jp__slot-unequip" onClick={onUnequip} type="button">✕</button>}
-    </div>
-  )
-}
-
-function CostRow({ fragmentId, label, owned, required }: { fragmentId: FragmentId; label: string; owned: number; required: number }) {
-  const ratio = Math.min(owned / required, 1)
-  const enough = owned >= required
-  return (
-    <div className="jp__cost">
-      <div className="jp__cost-label">
-        <PCFragmentIcon fragmentId={fragmentId} size={20} />
-        <span>{label}</span>
-      </div>
-      <div className="jp__cost-bar">
-        <div className="jp__cost-track"><i style={{ width: `${Math.round(ratio * 100)}%` }} /></div>
-        <strong className={enough ? 'is-enough' : 'is-short'}>{owned}/{required}</strong>
-      </div>
+      {title && <button className="jp2__slot-remove" onClick={onUnequip} type="button">✕</button>}
     </div>
   )
 }

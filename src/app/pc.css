@@ -13133,6 +13133,141 @@ body.pc-mode .cb__brief-start kbd {
   font-family: inherit;
 }
 
+/* ═══ Judge Progression v5 (Split Panel) ═══ */
+
+body.pc-mode .jp2 { display: flex; flex-direction: column; gap: 14px; }
+
+/* 슬롯 */
+body.pc-mode .jp2__slots { display: flex; gap: 10px; }
+body.pc-mode .jp2__slot {
+  flex: 1; display: flex; align-items: center; gap: 10px;
+  padding: 10px 14px; border-radius: 10px;
+  background: rgba(30,30,40,0.6); border: 1px solid rgba(255,255,255,0.06);
+}
+body.pc-mode .jp2__slot.is-filled { border-color: rgba(212,162,78,0.2); }
+body.pc-mode .jp2__slot-label { font-size: 9px; font-weight: 800; letter-spacing: 0.1em; color: rgba(255,255,255,0.25); writing-mode: vertical-rl; }
+body.pc-mode .jp2__slot-info { flex: 1; }
+body.pc-mode .jp2__slot-info strong { font-size: 13px; color: rgba(255,255,255,0.85); }
+body.pc-mode .jp2__slot-info p { font-size: 11px; color: rgba(255,255,255,0.35); margin: 2px 0 0; }
+body.pc-mode .jp2__slot-remove { background: none; border: none; color: rgba(255,255,255,0.25); cursor: pointer; font-size: 14px; padding: 4px; }
+
+/* 좌우 분할 */
+body.pc-mode .jp2__split { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; min-height: 420px; }
+
+/* 우측: 토글 + 그리드 */
+body.pc-mode .jp2__right { display: flex; flex-direction: column; gap: 12px; }
+body.pc-mode .jp2__toggle { display: flex; gap: 4px; background: rgba(255,255,255,0.03); border-radius: 8px; padding: 3px; }
+body.pc-mode .jp2__toggle-btn {
+  flex: 1; padding: 8px; border-radius: 6px; font-size: 13px; font-weight: 700;
+  cursor: pointer; background: transparent; border: none; color: rgba(255,255,255,0.4);
+  transition: all 0.15s;
+}
+body.pc-mode .jp2__toggle-btn.is-active { background: rgba(212,162,78,0.12); color: var(--pc-gold-light); }
+
+body.pc-mode .jp2__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+body.pc-mode .jp2__card {
+  display: flex; flex-direction: column; align-items: center; gap: 6px;
+  padding: 14px 8px; border-radius: 10px; cursor: pointer;
+  border: 1px solid rgba(255,255,255,0.06); background: rgba(255,255,255,0.02);
+  transition: border-color 0.15s;
+}
+body.pc-mode .jp2__card:hover { border-color: rgba(212,162,78,0.15); }
+body.pc-mode .jp2__card.is-active { border-color: rgba(212,162,78,0.4); background: rgba(212,162,78,0.06); }
+body.pc-mode .jp2__card strong { font-size: 12px; color: rgba(255,255,255,0.8); text-align: center; }
+body.pc-mode .jp2__card-lv { font-size: 11px; color: rgba(255,255,255,0.3); }
+body.pc-mode .jp2__card-count { font-size: 12px; color: var(--pc-gold-light); font-weight: 700; }
+
+/* 좌측: 상세 */
+body.pc-mode .jp2__left { overflow-y: auto; max-height: calc(100vh - 320px); }
+body.pc-mode .jp2__detail, body.pc-mode .jp2__frag-detail {
+  border-radius: 12px; background: rgba(25,25,35,0.8);
+  border: 1px solid rgba(255,255,255,0.06); padding: 20px;
+}
+
+/* 타이틀 상세 */
+body.pc-mode .jp2__detail-head { margin-bottom: 16px; }
+body.pc-mode .jp2__detail-tags { display: flex; gap: 6px; margin-bottom: 6px; }
+body.pc-mode .jp2__tag {
+  padding: 3px 10px; border-radius: 4px; font-size: 11px; font-weight: 700;
+  background: rgba(212,162,78,0.1); color: var(--pc-gold-light);
+}
+body.pc-mode .jp2__detail-head h3 { margin: 0; font-size: 20px; color: #f3efe8; }
+body.pc-mode .jp2__detail-lv { font-size: 16px; color: var(--pc-gold-light); }
+body.pc-mode .jp2__detail-effect { font-size: 13px; color: rgba(92,201,122,0.8); margin: 4px 0 0; }
+
+/* 축별 강화 */
+body.pc-mode .jp2__axes { display: flex; flex-direction: column; gap: 10px; margin-bottom: 16px; }
+body.pc-mode .jp2__axis {
+  padding: 12px; border-radius: 8px;
+  background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.04);
+}
+body.pc-mode .jp2__axis-head { display: flex; justify-content: space-between; margin-bottom: 6px; }
+body.pc-mode .jp2__axis-head strong { font-size: 14px; color: rgba(255,255,255,0.8); }
+body.pc-mode .jp2__axis-lv { font-size: 13px; font-weight: 700; color: var(--pc-gold-light); }
+body.pc-mode .jp2__axis-cost { display: flex; gap: 16px; font-size: 12px; color: rgba(255,255,255,0.45); }
+body.pc-mode .jp2__axis-cost b.ok { color: #5cc97a; }
+body.pc-mode .jp2__axis-cost b.no { color: #e06060; }
+body.pc-mode .jp2__axis-max { color: rgba(212,162,78,0.6); font-size: 12px; }
+body.pc-mode .jp2__axis-btn {
+  margin-top: 8px; padding: 6px 16px; border-radius: 6px; font-size: 12px; font-weight: 700;
+  cursor: pointer; background: rgba(212,162,78,0.15); border: 1px solid rgba(212,162,78,0.3);
+  color: var(--pc-gold-light); transition: all 0.15s;
+}
+body.pc-mode .jp2__axis-btn:hover { background: rgba(212,162,78,0.25); }
+
+/* 레벨별 효과 */
+body.pc-mode .jp2__detail-effects { margin-bottom: 16px; }
+body.pc-mode .jp2__detail-effects h4 { font-size: 11px; font-weight: 700; color: rgba(255,255,255,0.3); margin: 0 0 8px; letter-spacing: 0.06em; }
+body.pc-mode .jp2__effect-row { display: flex; gap: 10px; padding: 4px 0; opacity: 0.3; }
+body.pc-mode .jp2__effect-row.is-active { opacity: 1; }
+body.pc-mode .jp2__effect-row span { font-size: 11px; font-weight: 700; color: var(--pc-gold-light); min-width: 32px; }
+body.pc-mode .jp2__effect-row p { font-size: 12px; color: rgba(255,255,255,0.6); margin: 0; }
+
+/* 착용/강화 버튼 */
+body.pc-mode .jp2__detail-actions { padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.06); }
+body.pc-mode .jp2__equip-btns { display: flex; gap: 8px; }
+body.pc-mode .jp2__action-btn {
+  flex: 1; padding: 10px; border-radius: 8px; font-size: 13px; font-weight: 700;
+  cursor: pointer; background: rgba(212,162,78,0.12); border: 1px solid rgba(212,162,78,0.25);
+  color: var(--pc-gold-light); transition: all 0.15s; text-align: center;
+}
+body.pc-mode .jp2__action-btn:hover:not(:disabled) { background: rgba(212,162,78,0.2); }
+body.pc-mode .jp2__action-btn:disabled { opacity: 0.3; cursor: default; }
+body.pc-mode .jp2__action-btn.is-confirm { background: rgba(92,201,122,0.15); border-color: rgba(92,201,122,0.3); color: #5cc97a; }
+body.pc-mode .jp2__action-btn.is-cancel { background: rgba(255,255,255,0.04); border-color: rgba(255,255,255,0.08); color: rgba(255,255,255,0.4); }
+body.pc-mode .jp2__equipped-badge { font-size: 13px; font-weight: 700; color: #5cc97a; }
+body.pc-mode .jp2__lock-hint { font-size: 12px; color: rgba(255,255,255,0.25); }
+
+/* 조각 상세 */
+body.pc-mode .jp2__frag-hero { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; }
+body.pc-mode .jp2__frag-hero h3 { margin: 0; font-size: 20px; color: #f3efe8; }
+body.pc-mode .jp2__frag-count { font-size: 14px; color: var(--pc-gold-light); font-weight: 700; }
+body.pc-mode .jp2__frag-info { display: flex; flex-direction: column; gap: 14px; margin-bottom: 20px; }
+body.pc-mode .jp2__frag-section h4 { font-size: 11px; font-weight: 700; color: rgba(255,255,255,0.3); margin: 0 0 6px; letter-spacing: 0.06em; }
+body.pc-mode .jp2__frag-section p { font-size: 13px; color: rgba(255,255,255,0.5); margin: 0; line-height: 1.6; }
+body.pc-mode .jp2__frag-usedby { display: flex; flex-wrap: wrap; gap: 6px; }
+body.pc-mode .jp2__frag-usedby span { padding: 3px 10px; border-radius: 4px; font-size: 11px; background: rgba(255,255,255,0.04); color: rgba(255,255,255,0.5); }
+
+/* 교환 */
+body.pc-mode .jp2__frag-exchange { padding-top: 14px; border-top: 1px solid rgba(255,255,255,0.06); }
+body.pc-mode .jp2__frag-exchange h4 { font-size: 11px; font-weight: 700; color: rgba(255,255,255,0.3); margin: 0 0 10px; }
+body.pc-mode .jp2__exchange-flow { display: flex; flex-direction: column; gap: 10px; }
+body.pc-mode .jp2__exchange-row { display: flex; align-items: center; gap: 12px; }
+body.pc-mode .jp2__exchange-from, body.pc-mode .jp2__exchange-to { display: flex; align-items: center; gap: 8px; font-size: 13px; color: rgba(255,255,255,0.7); }
+body.pc-mode .jp2__exchange-arrow { font-size: 16px; color: var(--pc-gold-light); font-weight: 700; }
+body.pc-mode .jp2__exchange-to select {
+  padding: 6px 10px; border-radius: 6px; font-size: 13px;
+  background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
+  color: #e8e5dc; cursor: pointer;
+}
+body.pc-mode .jp2__exchange-rate { font-size: 12px; color: rgba(255,255,255,0.3); margin: 0; }
+body.pc-mode .jp2__exchange-actions { display: flex; gap: 8px; }
+
+@media (max-width: 720px) {
+  body.pc-mode .jp2__split { grid-template-columns: 1fr; }
+  body.pc-mode .jp2__slots { flex-direction: column; }
+}
+
 @media (max-width: 720px) {
   body.pc-mode .cb__split { grid-template-columns: 1fr; }
   body.pc-mode .cb__stages { max-height: 240px; }
