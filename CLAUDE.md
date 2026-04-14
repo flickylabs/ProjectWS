@@ -40,6 +40,7 @@ src/
 ├── types/            TypeScript 타입 (GDD v2.0 기반)
 └── utils/            상수 및 유틸
 
+docs/case-generation/  ★ 신규 스테이지 생성 가이드 (스키마/절차/GPT Pro 템플릿)
 docs/ref/리뉴얼참고/   설계 문서, GPT 배치 결과, 스레드 패키지
 tests/                 헤드리스 플레이스루 + 검증 스크립트
 public/emoji/          MS Fluent Emoji PNG 에셋
@@ -273,6 +274,22 @@ node tests/v2-atoms-audit.cjs
 | **Thread C** | V3 스크립트 (보류 중) |
 | **Thread D** | Phase 1/2 스크립트 교정 |
 | **Thread E** | 통합 테스트 (헤드리스 플레이스루 + GPT Pro 분석) |
+
+---
+
+## ★ 신규 스테이지 생성 가이드
+
+**`docs/case-generation/`** 폴더에 5개 문서로 체계화:
+
+| 문서 | 내용 |
+|------|------|
+| `README.md` | 전체 절차 (Phase A~E), 산출물 일람, 완료 체크리스트 |
+| `schemas.md` | 케이스JSON/ScriptedText/Phase1/증인/DossierCards/StructureV2 필드 스키마 |
+| `scripted-text-channels.md` | 15채널 키 패턴, 수량 공식, 엔트리 구조 |
+| `gpt-pro-sessions.md` | GPT Pro 6세션 프롬프트 템플릿 |
+| `quality-rules.md` | 번역체 금지, 호칭, TruthThrottle, 검증 체크리스트 |
+
+**새 사건 추가 시 반드시 이 가이드를 따를 것.** 등록 아키텍처는 v3 fallback 패턴 (spouse-01 기준).
 
 ---
 
