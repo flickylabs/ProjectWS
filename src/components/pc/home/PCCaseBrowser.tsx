@@ -116,10 +116,6 @@ export default function PCCaseBrowser({
                   type="button"
                 >
                   <span className="cb__stage-num">{s.num}</span>
-                  <div className="cb__stage-body">
-                    <span className="cb__stage-eyebrow">STAGE {s.num}</span>
-                    <strong>{buildStageTitle(s.caseData)}</strong>
-                  </div>
                   <span className="cb__stage-score">
                     {s.score > 0 ? `${s.score}점` : s.unlocked ? '—' : <PCSvgIcon id="i-lock" size={14} />}
                   </span>

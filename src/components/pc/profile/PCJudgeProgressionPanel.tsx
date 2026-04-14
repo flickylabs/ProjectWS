@@ -2,6 +2,7 @@ import { useCallback, useEffect, useMemo, useState, type CSSProperties } from 'r
 import { loadProgressionState, saveProgressionState } from '../../../data/leaderboard'
 import {
   CONVERSION_RATE,
+  FRAGMENT_TABLE,
   convertFragments,
   type FragmentId,
   type JudgeProgressionState,
@@ -14,6 +15,8 @@ import {
   getTitleLevelCost,
   canEquipTitle,
   getTitleById,
+  createDefaultTitleLevels,
+  createDefaultLoadout,
   type TitleId,
 } from '../../../engine/judgeTitleEngine'
 import {
@@ -52,14 +55,18 @@ export default function PCJudgeProgressionPanel({ onChange, syncKey }: Props) {
     onChange?.(next)
   }, [onChange])
 
+  // v3→v4 마이그레이션 미완료 시 방어
+  const titleLevels = state.titleLevels ?? createDefaultTitleLevels()
+  const titleLoadout = state.titleLoadout ?? createDefaultLoadout()
+
   // ── 선택된 타이틀 데이터 ──
   const titleDef = getTitleById(selectedTitle)!
-  const currentLevel = state.titleLevels[selectedTitle]
+  const currentLevel = titleLevels[selectedTitle]
   const costPerFragment = getTitleLevelCost(currentLevel)
-  const ready = canLevelUpTitle(selectedTitle, state.titleLevels, state.inventory)
+  const ready = canLevelUpTitle(selectedTitle, titleLevels, state.inventory)
 
   const handleLevelUp = () => {
-    const result = levelUpTitle(selectedTitle, state.titleLevels, state.inventory)
+    const result = levelUpTitle(selectedTitle, titleLevels, state.inventory)
     if (!result) return
     commitState({
       ...state,
@@ -71,12 +78,12 @@ export default function PCJudgeProgressionPanel({ onChange, syncKey }: Props) {
   }
 
   const handleEquip = (slot: 'slot1' | 'slot2') => {
-    if (!canEquipTitle(selectedTitle, slot, state.titleLevels, state.titleLoadout)) return
-    const current = state.titleLoadout[slot]
+    if (!canEquipTitle(selectedTitle, slot, titleLevels, titleLoadout)) return
+    const current = titleLoadout[slot]
     commitState({
       ...state,
       titleLoadout: {
-        ...state.titleLoadout,
+        ...titleLoadout,
         [slot]: current === selectedTitle ? null : selectedTitle,
       },
       lastUpdated: new Date().toISOString(),
@@ -86,14 +93,14 @@ export default function PCJudgeProgressionPanel({ onChange, syncKey }: Props) {
   const handleUnequip = (slot: 'slot1' | 'slot2') => {
     commitState({
       ...state,
-      titleLoadout: { ...state.titleLoadout, [slot]: null },
+      titleLoadout: { ...titleLoadout, [slot]: null },
       lastUpdated: new Date().toISOString(),
     })
   }
 
   // 장착 상태
-  const isEquippedSlot1 = state.titleLoadout.slot1 === selectedTitle
-  const isEquippedSlot2 = state.titleLoadout.slot2 === selectedTitle
+  const isEquippedSlot1 = titleLoadout.slot1 === selectedTitle
+  const isEquippedSlot2 = titleLoadout.slot2 === selectedTitle
   const isEquipped = isEquippedSlot1 || isEquippedSlot2
 
   // 조각 변환 (선택된 타이틀과 관련된 축 찾기)
@@ -105,8 +112,7 @@ export default function PCJudgeProgressionPanel({ onChange, syncKey }: Props) {
         const fv = FRAGMENT_VISUALS[fid]
         if (!fv) return null
         // 이 조각의 축에서 중립 조각 찾기
-        const allFragments = Object.entries(FRAGMENT_VISUALS)
-        const axisDefs = require('../../../engine/judgeProgressionEngine').FRAGMENT_TABLE as Array<{ id: FragmentId; axis: string; direction: string }>
+        const axisDefs = FRAGMENT_TABLE as readonly { id: FragmentId; axis: string; direction: string }[]
         const thisFrag = axisDefs.find(f => f.id === fid)
         if (!thisFrag || thisFrag.direction === 'neutral') return null
         const neutral = axisDefs.find(f => f.axis === thisFrag.axis && f.direction === 'neutral')
@@ -125,22 +131,22 @@ export default function PCJudgeProgressionPanel({ onChange, syncKey }: Props) {
   }
 
   // 슬롯 표시 데이터
-  const slot1Title = state.titleLoadout.slot1 ? getTitleById(state.titleLoadout.slot1) : null
-  const slot2Title = state.titleLoadout.slot2 ? getTitleById(state.titleLoadout.slot2) : null
+  const slot1Title = titleLoadout.slot1 ? getTitleById(titleLoadout.slot1) : null
+  const slot2Title = titleLoadout.slot2 ? getTitleById(titleLoadout.slot2) : null
 
   return (
     <div className="jp">
       {/* ── 1. 장착 슬롯 ── */}
       <div className="jp__equipped">
-        <EquipSlotDisplay label="Slot 1" title={slot1Title ?? null} level={state.titleLoadout.slot1 ? state.titleLevels[state.titleLoadout.slot1] : 0} onUnequip={() => handleUnequip('slot1')} />
-        <EquipSlotDisplay label="Slot 2" title={slot2Title ?? null} level={state.titleLoadout.slot2 ? state.titleLevels[state.titleLoadout.slot2] : 0} onUnequip={() => handleUnequip('slot2')} />
+        <EquipSlotDisplay label="Slot 1" title={slot1Title ?? null} level={titleLoadout.slot1 ? titleLevels[titleLoadout.slot1] : 0} onUnequip={() => handleUnequip('slot1')} />
+        <EquipSlotDisplay label="Slot 2" title={slot2Title ?? null} level={titleLoadout.slot2 ? titleLevels[titleLoadout.slot2] : 0} onUnequip={() => handleUnequip('slot2')} />
       </div>
 
       {/* ── 2. 타이틀 선택바 ── */}
       <div className="jp__selector">
         {TITLE_TABLE.map(t => {
-          const lv = state.titleLevels[t.id]
-          const canUp = canLevelUpTitle(t.id, state.titleLevels, state.inventory)
+          const lv = titleLevels[t.id]
+          const canUp = canLevelUpTitle(t.id, titleLevels, state.inventory)
           const accent = getTitleAccent(t.id)
           return (
             <button
@@ -259,7 +265,7 @@ export default function PCJudgeProgressionPanel({ onChange, syncKey }: Props) {
                   <div className="jp__equip-slots">
                     <button
                       className="jp__perk-btn"
-                      disabled={!canEquipTitle(selectedTitle, 'slot1', state.titleLevels, state.titleLoadout)}
+                      disabled={!canEquipTitle(selectedTitle, 'slot1', titleLevels, titleLoadout)}
                       onClick={() => handleEquip('slot1')}
                       type="button"
                     >
@@ -267,7 +273,7 @@ export default function PCJudgeProgressionPanel({ onChange, syncKey }: Props) {
                     </button>
                     <button
                       className="jp__perk-btn"
-                      disabled={!canEquipTitle(selectedTitle, 'slot2', state.titleLevels, state.titleLoadout)}
+                      disabled={!canEquipTitle(selectedTitle, 'slot2', titleLevels, titleLoadout)}
                       onClick={() => handleEquip('slot2')}
                       type="button"
                     >

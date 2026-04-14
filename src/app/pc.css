@@ -12927,7 +12927,7 @@ body.pc-mode .cb__count { font-size: 14px; font-weight: 700; color: var(--pc-gol
 
 /* ── 좌우 분할 ── */
 body.pc-mode .cb__split {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
+  display: grid; grid-template-columns: 80px 1fr; gap: 12px;
   flex: 1; min-height: 0;
 }
 
@@ -12938,37 +12938,26 @@ body.pc-mode .cb__stages {
   max-height: calc(100vh - 240px);
 }
 body.pc-mode .cb__stage {
-  display: flex; align-items: center; gap: 12px;
-  padding: 12px 14px; border-radius: 10px;
+  display: flex; flex-direction: column; align-items: center; gap: 4px;
+  padding: 10px 6px; border-radius: 10px;
   border: 1px solid rgba(255,255,255,0.04);
   background: rgba(255,255,255,0.02);
-  color: #e8e5dc; text-align: left; cursor: pointer;
+  color: #e8e5dc; cursor: pointer;
   transition: border-color 0.15s, background 0.15s;
 }
 body.pc-mode .cb__stage:hover { border-color: rgba(212,162,78,0.15); background: rgba(255,255,255,0.03); }
 body.pc-mode .cb__stage.is-active {
-  border-color: rgba(212,162,78,0.35);
-  background: rgba(212,162,78,0.06);
+  border-color: rgba(212,162,78,0.4);
+  background: rgba(212,162,78,0.08);
 }
-body.pc-mode .cb__stage.is-cleared { border-left: 3px solid rgba(92,201,122,0.5); }
-body.pc-mode .cb__stage.is-locked { opacity: 0.35; cursor: default; }
+body.pc-mode .cb__stage.is-cleared { border-color: rgba(92,201,122,0.25); }
+body.pc-mode .cb__stage.is-locked { opacity: 0.3; cursor: default; }
 body.pc-mode .cb__stage-num {
-  font-size: 20px; font-weight: 900; color: rgba(255,255,255,0.15);
-  min-width: 32px; text-align: center;
+  font-size: 18px; font-weight: 900; color: rgba(255,255,255,0.15);
 }
 body.pc-mode .cb__stage.is-active .cb__stage-num { color: var(--pc-gold-light); }
-body.pc-mode .cb__stage-body { flex: 1; min-width: 0; }
-body.pc-mode .cb__stage-eyebrow {
-  font-size: 9px; font-weight: 700; letter-spacing: 0.15em;
-  text-transform: uppercase; color: rgba(255,255,255,0.25);
-}
-body.pc-mode .cb__stage-body strong {
-  display: block; font-size: 14px; margin-top: 2px;
-  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
-}
 body.pc-mode .cb__stage-score {
-  font-size: 12px; font-weight: 600; color: rgba(255,255,255,0.3);
-  white-space: nowrap;
+  font-size: 11px; font-weight: 600; color: rgba(255,255,255,0.25);
 }
 body.pc-mode .cb__stage.is-cleared .cb__stage-score { color: #5cc97a; }
 
