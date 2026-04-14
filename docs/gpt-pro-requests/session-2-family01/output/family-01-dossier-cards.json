@@ -1,0 +1,289 @@
+{
+  "caseId": "family-01",
+  "dossierCards": [
+    {
+      "id": "dc-1",
+      "name": "말년의 종이",
+      "description": "말년의 방문 패턴과 읽어주던 종이가 치매 이용인지, 불안한 보호인지 가르는 첫 카드다.",
+      "evidenceIds": [
+        "e-1",
+        "e-2",
+        "e-3"
+      ],
+      "relatedDisputes": [
+        "d-1"
+      ],
+      "subjectParty": "b",
+      "leadId": "L-1",
+      "successConditionSummary": [
+        "e-2와 e-3이 Original 또는 Context 이상",
+        "B가 d-1에서 S2 이상으로 진입"
+      ],
+      "successEffects": [
+        "d-1의 쟁점이 '전면 무효'가 아니라 '부분 판단능력 + B 개입' 구조로 정리된다",
+        "형을 피하려 서둘렀다는 B의 동기가 드러나며 d-2 해금 준비가 된다"
+      ],
+      "challenges": [
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dc-1.b.q1",
+              "text": "윤정후 씨, 공증 직전 방문이 급증했고 어머니에게 종이를 읽어드린 정황까지 있는데, 왜 형이 오기 전에 끝내려 하셨습니까?",
+              "lockedHint": "요양원 방문기록과 전 요양보호사 증언이 원본 수준으로 열려야 질문이 보입니다.",
+              "attackVector": "timeline",
+              "requiredLieState": "S2",
+              "onSuccess": {
+                "blockVector": "timeline",
+                "revealAtom": "family-01:b:d-1:unlock:s3:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dc-1.b.q2",
+              "text": "어머니 판단이 완전히 없었다고까지는 보기 어렵다면, 어디까지는 돕고 어디서부터는 대신 결정한 것입니까?",
+              "lockedHint": "B가 개입 자체를 더는 부인하지 못해야 마지막 질문이 열립니다.",
+              "attackVector": "contradiction",
+              "requiredLieState": "S3",
+              "onSuccess": {
+                "blockVector": "contradiction",
+                "revealAtom": "family-01:b:d-1:unlock:s4:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dc-2",
+      "name": "줄인 유서",
+      "description": "유서 조작의 존재를 넘어서, 왜 자기 몫을 줄이는 방향으로 손댔는지를 찌르는 반전 카드다.",
+      "evidenceIds": [
+        "e-4",
+        "e-5"
+      ],
+      "relatedDisputes": [
+        "d-2"
+      ],
+      "subjectParty": "b",
+      "leadId": "L-2",
+      "successConditionSummary": [
+        "e-4와 e-5가 Original 이상",
+        "d-1이 S2 이상이어서 d-2가 열린 상태"
+      ],
+      "successEffects": [
+        "d-2의 핵심 사실 '90:10 원본 → 60:40 변경'이 잠정 인정 가능해진다",
+        "위조의 방향이 탐욕이 아니라 차단이었다는 동기 축이 열린다"
+      ],
+      "challenges": [
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dc-2.b.q1",
+              "text": "윤정후 씨, 같은 날 90대10 원본과 60대40 변경본이 모두 남아 있는데, 왜 자기 몫을 줄인 서류를 다시 제출하셨습니까?",
+              "lockedHint": "공증사무실 이중 스캔 기록과 원본 유서가 함께 확보돼야 보입니다.",
+              "attackVector": "contradiction",
+              "requiredLieState": "S2",
+              "onSuccess": {
+                "blockVector": "contradiction",
+                "revealAtom": "family-01:b:d-2:unlock:s3:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dc-2.b.q2",
+              "text": "위조라는 책임을 감수하면서까지 60대40으로 바꾼 이유가 돈이 아니었다면, 무엇을 막으려 한 겁니까?",
+              "lockedHint": "자기 몫 축소 조작을 이미 인정한 뒤에야 마지막 질문이 열립니다.",
+              "attackVector": "context",
+              "requiredLieState": "S3",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "family-01:b:d-2:unlock:s4:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dc-3",
+      "name": "20년의 돈",
+      "description": "어머니 돈처럼 보였던 흐름을 윤정후 개인의 희생으로 뒤집는 지원 실체 카드다.",
+      "evidenceIds": [
+        "e-5",
+        "e-6"
+      ],
+      "relatedDisputes": [
+        "d-3"
+      ],
+      "subjectParty": "b",
+      "leadId": "L-3",
+      "successConditionSummary": [
+        "e-6이 Original 이상",
+        "d-2가 S3 이상으로 진전되어 d-3이 열린 상태"
+      ],
+      "successEffects": [
+        "어머니의 90대10 판단에 실질 근거가 있었다는 맥락이 확보된다",
+        "형이 모르던 20년 지원의 실체와 숨김의 이유가 함께 드러난다"
+      ],
+      "challenges": [
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dc-3.b.q1",
+              "text": "윤정후 씨, 20년 생활비와 형 공장 자금 상당수가 실제로는 당신 돈이었다는 점, 이제도 부인하십니까?",
+              "lockedHint": "20년 송금 내역 묶음이 원본 수준으로 확보돼야 질문이 보입니다.",
+              "attackVector": "authenticity",
+              "requiredLieState": "S2",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "family-01:b:d-3:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dc-3.b.q2",
+              "text": "형이 평생 어머니가 도와준 줄 믿게 둔 이유가, 결국 형 자존심을 먼저 지키려는 것이었습니까?",
+              "lockedHint": "돈의 출처를 더는 숨길 수 없게 된 뒤에야 두 번째 질문이 열립니다.",
+              "attackVector": "context",
+              "requiredLieState": "S3",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "family-01:b:d-3:unlock:s3:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dc-4",
+      "name": "감춘 이유",
+      "description": "유서 조작과 20년 지원의 끝에 있던 출생 비밀의 이유를 직접 묻는 심층 카드다.",
+      "evidenceIds": [
+        "e-6",
+        "e-7"
+      ],
+      "relatedDisputes": [
+        "d-4"
+      ],
+      "subjectParty": "b",
+      "leadId": "L-4",
+      "successConditionSummary": [
+        "e-7이 Context 이상",
+        "d-3이 S2 이상으로 진전되어 d-4가 열린 상태"
+      ],
+      "successEffects": [
+        "출생 비밀이 단순 폭로 소재가 아니라 유서 조작 동기의 핵심이었다는 점이 드러난다",
+        "B의 침묵이 돈이 아니라 형의 정체성을 지키려는 선택이었다는 축이 열린다"
+      ],
+      "challenges": [
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dc-4.b.q1",
+              "text": "윤정후 씨, 형의 출생 비밀을 언제 알게 되었고, 그 뒤 왜 혼자 감당하려 하셨습니까?",
+              "lockedHint": "어머니 일기장 핵심 문장과 20년 지원 맥락이 함께 붙어야 질문이 보입니다.",
+              "attackVector": "timeline",
+              "requiredLieState": "S2",
+              "onSuccess": {
+                "blockVector": "timeline",
+                "revealAtom": "family-01:b:d-4:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dc-4.b.q2",
+              "text": "형이 그 사실을 알면 삶의 기반이 무너질까 두려워, 결국 법정까지 가지 않게 하려 했다는 말입니까?",
+              "lockedHint": "B가 출생 비밀의 존재를 더는 부인하지 못해야 마지막 질문이 열립니다.",
+              "attackVector": "context",
+              "requiredLieState": "S3",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "family-01:b:d-4:unlock:s4:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dc-5",
+      "name": "어머니의 뜻",
+      "description": "장남 당연시와 보호 명분을 한 자리에 올려, 누가 정말 어머니를 이용했는지 정리하는 최종 카드다.",
+      "evidenceIds": [
+        "e-1",
+        "e-6",
+        "e-7"
+      ],
+      "relatedDisputes": [
+        "d-5"
+      ],
+      "subjectParty": "both",
+      "leadId": "L-5",
+      "successConditionSummary": [
+        "d-3이 S3 이상이고 d-4가 S2 이상",
+        "e-6과 e-7이 모두 Context 이상"
+      ],
+      "successEffects": [
+        "d-5가 열리며 A의 상속 당연시와 B의 보호 명분이 동시에 기록된다",
+        "최종 평의에서 '누가 더 나쁜가'가 아니라 '누가 어떤 방식으로 어머니 뜻을 바꿨나'로 프레임이 이동한다"
+      ],
+      "challenges": [
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dc-5.a.q1",
+              "text": "윤태성 씨, 동생 돈이었다는 사실을 몰랐다 해도 장남이니 더 받아야 한다고 여긴 마음까지는 부인하지 않으십니까?",
+              "lockedHint": "20년 지원 축이 열린 뒤에야 A 대상 질문이 보입니다.",
+              "attackVector": "context",
+              "requiredLieState": "S2",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "family-01:a:d-5:unlock:s2:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        },
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dc-5.b.q1",
+              "text": "윤정후 씨, 형을 지키려 했다는 이유가 있더라도 어머니가 남긴 90대10 뜻을 당신이 고쳐 쓴 책임까지 없어지는 건 아니지 않습니까?",
+              "lockedHint": "출생 비밀 축이 열린 뒤에야 B 대상 질문이 보입니다.",
+              "attackVector": "contradiction",
+              "requiredLieState": "S2",
+              "onSuccess": {
+                "blockVector": "contradiction",
+                "revealAtom": "family-01:b:d-5:unlock:s2:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dc-5.b.q2",
+              "text": "결국 두 형제 모두 어머니를 있는 그대로 두지 못했다는 말, 이제는 인정하십니까?",
+              "lockedHint": "A와 B의 책임축이 모두 한 번씩 열린 뒤에야 마지막 질문이 열립니다.",
+              "attackVector": "context",
+              "requiredLieState": "S3",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "family-01:both:d-5:unlock:s3:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

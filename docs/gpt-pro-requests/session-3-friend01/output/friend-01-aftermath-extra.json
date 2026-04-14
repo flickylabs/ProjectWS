@@ -1,0 +1,150 @@
+{
+  "protective_resolution": {
+    "variants": [
+      {
+        "id": "protective_resolution-v1",
+        "text": "재판관은 이번 결론을 승패보다 회복의 문제로 먼저 정리했다. 다은에게는 단톡방에서 먼저 만든 낙인을 직접 거두고 아버지의 돈 문제를 더는 외면하지 말라고 했고, 수민에게는 또 혼자 악역을 감당하지 말고 피해 사실을 공식적으로 남기라고 권했다. 두 사람은 당장 예전으로 돌아가지는 못해도, 같은 왜곡을 반복하지 않는 쪽으로는 처음 같은 방향을 보게 되었다. 그 말 앞에서 둘은 오래 아무 말도 하지 못했다.",
+        "tags": [
+          "channel:aftermath",
+          "speaker:narrator",
+          "speakerRole:narrator",
+          "listener:player",
+          "listenerRole:player",
+          "address:toPlayer",
+          "scope:public_summary",
+          "revealScope:public_summary",
+          "register:formal",
+          "honorific:neutral",
+          "audience:single",
+          "tense:present",
+          "relationship:friend",
+          "judgeAddress:none",
+          "judgeAddressState:none",
+          "callTerm:none",
+          "callTermState:none",
+          "counterpartyRef:none",
+          "counterpartyRefState:none",
+          "emotion:measured",
+          "continuity:resolved",
+          "disclosure:open",
+          "revealGuard:open",
+          "mentionTarget:result",
+          "responseMode:player_summary",
+          "reveal:full"
+        ],
+        "sourceRefs": [
+          "result:protective_resolution"
+        ]
+      },
+      {
+        "id": "protective_resolution-v2",
+        "text": "판결은 누가 더 나쁜지만 가르는 데서 멈추지 않았다. 재판관은 다은에게 확인 없는 공개 매도를 정정하라고 하고, 수민에게는 침묵으로 모든 것을 혼자 막으려는 습관을 끊으라고 말했다. 아버지의 반복된 돈 접근과 예비신랑의 선넘는 행동을 함께 직면해야만 두 사람 모두 이번 사건을 상처가 아니라 경계로 남길 수 있다는 뜻이었다. 서로를 다시 설명할 언어를 남기기 위해서였다.",
+        "tags": [
+          "channel:aftermath",
+          "speaker:narrator",
+          "speakerRole:narrator",
+          "listener:player",
+          "listenerRole:player",
+          "address:toPlayer",
+          "scope:public_summary",
+          "revealScope:public_summary",
+          "register:formal",
+          "honorific:neutral",
+          "audience:single",
+          "tense:present",
+          "relationship:friend",
+          "judgeAddress:none",
+          "judgeAddressState:none",
+          "callTerm:none",
+          "callTermState:none",
+          "counterpartyRef:none",
+          "counterpartyRefState:none",
+          "emotion:measured",
+          "continuity:resolved",
+          "disclosure:open",
+          "revealGuard:open",
+          "mentionTarget:result",
+          "responseMode:player_summary",
+          "reveal:full"
+        ],
+        "sourceRefs": [
+          "result:protective_resolution"
+        ]
+      }
+    ]
+  },
+  "procedural_caution": {
+    "variants": [
+      {
+        "id": "procedural_caution-v1",
+        "text": "재판관은 확인 없이 단톡방에 상대를 매도한 행위가 계속되면 명예훼손 분쟁으로 번질 수 있고, 과거 송금과 현재 돈 요구 역시 별도의 법적 책임 문제로 이어질 수 있다고 분명히 경고했다. 다만 경고만으로 끝내지 않고, 다은에게는 정정과 사과를, 수민에게는 피해 입증과 공식 기록 정리를 권했다. 관계 회복의 가능성도 결국 사실을 바로 세우는 절차 위에서만 남을 수 있었다.",
+        "tags": [
+          "channel:aftermath",
+          "speaker:narrator",
+          "speakerRole:narrator",
+          "listener:player",
+          "listenerRole:player",
+          "address:toPlayer",
+          "scope:public_summary",
+          "revealScope:public_summary",
+          "register:formal",
+          "honorific:neutral",
+          "audience:single",
+          "tense:present",
+          "relationship:friend",
+          "judgeAddress:none",
+          "judgeAddressState:none",
+          "callTerm:none",
+          "callTermState:none",
+          "counterpartyRef:none",
+          "counterpartyRefState:none",
+          "emotion:measured",
+          "continuity:resolved",
+          "disclosure:open",
+          "revealGuard:open",
+          "mentionTarget:result",
+          "responseMode:player_summary",
+          "reveal:full"
+        ],
+        "sourceRefs": [
+          "result:procedural_caution"
+        ]
+      },
+      {
+        "id": "procedural_caution-v2",
+        "text": "법정의 마지막 말은 차갑지만 완전히 닫혀 있지는 않았다. 재판관은 예비신랑의 메시지, 아버지의 차용 문자, 단톡방 공개 발언이 각기 다른 위험을 남긴다고 짚으며 더 이상의 감정적 확산을 막으라고 했다. 동시에 지금 정정해야 할 말과 남겨야 할 기록을 분리해 처리한다면, 두 사람 사이의 관계 역시 처벌과는 별개로 다시 설명될 여지는 남아 있다고 보았다. 그 여지는 결국 정리된 사실 위에서만 가능하다는 뜻이었다.",
+        "tags": [
+          "channel:aftermath",
+          "speaker:narrator",
+          "speakerRole:narrator",
+          "listener:player",
+          "listenerRole:player",
+          "address:toPlayer",
+          "scope:public_summary",
+          "revealScope:public_summary",
+          "register:formal",
+          "honorific:neutral",
+          "audience:single",
+          "tense:present",
+          "relationship:friend",
+          "judgeAddress:none",
+          "judgeAddressState:none",
+          "callTerm:none",
+          "callTermState:none",
+          "counterpartyRef:none",
+          "counterpartyRefState:none",
+          "emotion:measured",
+          "continuity:resolved",
+          "disclosure:open",
+          "revealGuard:open",
+          "mentionTarget:result",
+          "responseMode:player_summary",
+          "reveal:full"
+        ],
+        "sourceRefs": [
+          "result:procedural_caution"
+        ]
+      }
+    ]
+  }
+}

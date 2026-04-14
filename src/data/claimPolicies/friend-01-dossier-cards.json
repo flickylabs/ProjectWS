@@ -1,0 +1,286 @@
+{
+  "caseId": "friend-01",
+  "dossierCards": [
+    {
+      "id": "dc-1",
+      "name": "집착의 겉면",
+      "description": "반복 연락의 표면을 집착 프레임에서 경고 맥락으로 돌려세우는 첫 카드다.",
+      "evidenceIds": [
+        "e-1",
+        "e-2"
+      ],
+      "relatedDisputes": [
+        "d-1",
+        "d-5"
+      ],
+      "subjectParty": "both",
+      "leadId": "L-1",
+      "successConditionSummary": [
+        "e-1이 Original 이상",
+        "e-2가 Excerpt 이상",
+        "d-1에서 최수민이 S1 이상"
+      ],
+      "successEffects": [
+        "d-1의 표면 프레임이 흔들린다",
+        "송다은의 선단정과 최수민의 연락 의도를 같은 화면에서 다룰 수 있다"
+      ],
+      "challenges": [
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dc-1.a.q1",
+              "text": "연락 횟수만 보고 수민 씨를 집착하는 사람으로 먼저 못 박은 것 아닙니까?",
+              "lockedHint": "연락 기록과 단톡방 발언이 함께 열려야 보입니다.",
+              "attackVector": "contradiction",
+              "requiredLieState": "S1",
+              "onSuccess": {
+                "blockVector": "contradiction",
+                "revealAtom": "d5.unlock.s2.public_label_before_direct_check",
+                "lieAdvance": true
+              }
+            }
+          ]
+        },
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dc-1.b.q1",
+              "text": "그 연락이 감정 때문이 아니라면, 예비신랑에게 꼭 전하려던 말이 무엇이었습니까?",
+              "lockedHint": "연락 기록의 문구와 시간대가 원본 수준까지 열려야 보입니다.",
+              "attackVector": "context",
+              "requiredLieState": "S2",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "d1.unlock.s2.daieun_father_named",
+                "lieAdvance": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dc-2",
+      "name": "먼저 넘은 선",
+      "description": "예비신랑이 먼저 경계를 넘었다는 반전을 열어 최수민의 연락 해석을 뒤집는 카드다.",
+      "evidenceIds": [
+        "e-1",
+        "e-4"
+      ],
+      "relatedDisputes": [
+        "d-1",
+        "d-2"
+      ],
+      "subjectParty": "b",
+      "leadId": "L-2",
+      "successConditionSummary": [
+        "e-4가 Original 이상",
+        "d-1에서 최수민이 S2 이상"
+      ],
+      "successEffects": [
+        "d-2의 선후관계가 뒤집힌다",
+        "d-3 해금에 필요한 설명 경로가 열린다"
+      ],
+      "challenges": [
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dc-2.b.q1",
+              "text": "예비신랑이 먼저 선을 넘었다면, 왜 다은이에게 바로 이 대화를 보여주지 않았습니까?",
+              "lockedHint": "예비신랑 메시지 원본과 연락 기록을 함께 대조해야 보입니다.",
+              "attackVector": "context",
+              "requiredLieState": "S2",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "d2.unlock.s3.b_did_not_show_a_immediately",
+                "lieAdvance": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dc-3",
+      "name": "같은 부탁",
+      "description": "현재 문자와 과거 송금 흐름을 붙여 아버지의 반복 패턴을 확정하는 카드다.",
+      "evidenceIds": [
+        "e-5",
+        "e-6"
+      ],
+      "relatedDisputes": [
+        "d-3",
+        "d-4"
+      ],
+      "subjectParty": "both",
+      "leadId": "L-3",
+      "successConditionSummary": [
+        "e-5가 Original 이상",
+        "e-6이 Original 이상",
+        "d-2가 S3 이상"
+      ],
+      "successEffects": [
+        "A 아버지의 현재 접근이 과거와 연결된다",
+        "d-4 해금에 필요한 반복 패턴이 확정된다"
+      ],
+      "challenges": [
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dc-3.b.q1",
+              "text": "같은 돈 부탁을 다시 봤다면, 왜 이번에도 혼자 막는 쪽을 택했습니까?",
+              "lockedHint": "현재 문자와 과거 송금 흐름이 함께 열려야 보입니다.",
+              "attackVector": "context",
+              "requiredLieState": "S2",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "d3.unlock.s3.b_recognized_repeat_pattern",
+                "lieAdvance": true
+              }
+            }
+          ]
+        },
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dc-3.a.q1",
+              "text": "아버지의 문구가 과거 수민 씨에게 보낸 말과 겹친다면, 여전히 오해라고만 보십니까?",
+              "lockedHint": "과거 송금 기록과 현재 문구가 나란히 대조돼야 보입니다.",
+              "attackVector": "contradiction",
+              "requiredLieState": "S1",
+              "onSuccess": {
+                "blockVector": "contradiction",
+                "revealAtom": "d3.unlock.s4.current_and_past_phrasing_match",
+                "lieAdvance": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dc-4",
+      "name": "손절의 값",
+      "description": "과거 손절이 변심이 아니라 사기 피해와 침묵의 결과였음을 드러내는 카드다.",
+      "evidenceIds": [
+        "e-3",
+        "e-6"
+      ],
+      "relatedDisputes": [
+        "d-4"
+      ],
+      "subjectParty": "both",
+      "leadId": "L-3",
+      "successConditionSummary": [
+        "e-3이 Original 이상",
+        "e-6이 Original 이상",
+        "d-3이 S2 이상"
+      ],
+      "successEffects": [
+        "과거 손절의 빈칸이 사기 피해 맥락으로 채워진다",
+        "최수민의 침묵 동기와 송다은의 성급한 결론이 함께 드러난다"
+      ],
+      "challenges": [
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dc-4.b.q1",
+              "text": "다은이 아버지가 당신 돈을 가져간 뒤에도, 왜 그 사실만은 다은이에게 끝내 말하지 못했습니까?",
+              "lockedHint": "과거 카톡과 송금 기록이 함께 열려야 보입니다.",
+              "attackVector": "context",
+              "requiredLieState": "S2",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "d4.unlock.s3.b_chose_silence_to_protect_a",
+                "lieAdvance": true
+              }
+            }
+          ]
+        },
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dc-4.a.q1",
+              "text": "그때 수민 씨를 변심으로 단정하기 전에, 왜 끝까지 무슨 돈 문제인지 확인하지 않았습니까?",
+              "lockedHint": "과거 카톡 원본이 열려야 보입니다.",
+              "attackVector": "timeline",
+              "requiredLieState": "S1",
+              "onSuccess": {
+                "blockVector": "timeline",
+                "revealAtom": "d4.unlock.s1.money_problem_phrase_blank",
+                "lieAdvance": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dc-5",
+      "name": "낙인의 순서",
+      "description": "누가 먼저 공개적으로 최수민을 낙인찍었는지와 왜 같은 구조가 반복됐는지를 묻는 최종 카드다.",
+      "evidenceIds": [
+        "e-2",
+        "e-7"
+      ],
+      "relatedDisputes": [
+        "d-1",
+        "d-5"
+      ],
+      "subjectParty": "both",
+      "leadId": "L-4",
+      "successConditionSummary": [
+        "e-7이 Original 이상",
+        "d-3과 d-4가 S3 이상",
+        "단톡방 발언의 시간 순서가 확인됨"
+      ],
+      "successEffects": [
+        "d-5가 최종 쟁점으로 정리된다",
+        "정정과 사과가 필요한 지점이 명확해진다"
+      ],
+      "challenges": [
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dc-5.a.q1",
+              "text": "수민 씨에게 직접 묻기도 전에 단톡방에 먼저 올린 이유가, 사실 확인보다 분노를 먼저 퍼뜨리고 싶어서였던 것 아닙니까?",
+              "lockedHint": "단톡방 캡처와 대조표가 함께 열려야 보입니다.",
+              "attackVector": "timeline",
+              "requiredLieState": "S2",
+              "onSuccess": {
+                "blockVector": "timeline",
+                "revealAtom": "d5.unlock.s3.a_broke_reputation_first",
+                "lieAdvance": true
+              }
+            }
+          ]
+        },
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dc-5.b.q1",
+              "text": "이번에도 스스로 악역이 되면 또 같은 낙인이 반복된다는 걸 알면서, 왜 끝까지 혼자 버텼습니까?",
+              "lockedHint": "반복 패턴 대조표가 열려야 보입니다.",
+              "attackVector": "context",
+              "requiredLieState": "S3",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "d5.unlock.s4.b_silence_enabled_repeat",
+                "lieAdvance": true
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
