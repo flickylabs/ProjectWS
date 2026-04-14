@@ -1,14 +1,9 @@
-import { useEffect, useMemo, useRef, useState, type MouseEvent as ReactMouseEvent } from 'react'
+import { useMemo, useState } from 'react'
 import type { CaseData } from '../../../types'
 import PCSvgIcon from '../icons/PCSvgIcon'
 import { getDifficultyLabel, sortCasesForBrowser } from './pcHomeShared'
 
 const CLEAR_SCORE_THRESHOLD = 40
-const EDGE_SCROLL_THRESHOLD = 88
-const EDGE_SCROLL_STEP = 14
-
-type PreviewPosition = { top: number; left: number; side: 'left' | 'right' }
-type StageNode = { caseData: CaseData; index: number; stageNumber: string; score: number; cleared: boolean; unlocked: boolean; side: 'left' | 'right' }
 
 interface Props {
   accentIconId?: string
@@ -25,7 +20,6 @@ interface Props {
 }
 
 export default function PCCaseBrowser({
-  accentIconId,
   eyebrow,
   title,
   description,
@@ -38,201 +32,152 @@ export default function PCCaseBrowser({
   emptyDescription = '다른 세션을 고르거나 필터를 조정한 뒤 다시 확인해 주세요.',
 }: Props) {
   const [showCompletedOnly, setShowCompletedOnly] = useState(false)
-  const [hoveredCaseId, setHoveredCaseId] = useState<string | null>(null)
-  const [pinnedCaseId, setPinnedCaseId] = useState<string | null>(null)
-  const [previewPosition, setPreviewPosition] = useState<PreviewPosition | null>(null)
-  const [autoScrollDirection, setAutoScrollDirection] = useState<-1 | 0 | 1>(0)
+  const [selectedCaseId, setSelectedCaseId] = useState<string | null>(null)
 
-  const routeScrollRef = useRef<HTMLDivElement | null>(null)
-  const nodeRefs = useRef<Record<string, HTMLButtonElement | null>>({})
   const progressMap = useMemo(() => {
     try {
       const raw = localStorage.getItem('solomon-case-progress')
       return raw ? JSON.parse(raw) : {}
-    } catch {
-      return {}
-    }
+    } catch { return {} }
   }, [])
 
   const filteredCases = useMemo(() => {
     const sorted = sortCasesForBrowser(cases)
     if (!showCompletedFilter || !showCompletedOnly) return sorted
-    return sorted.filter((caseData) => (progressMap[caseData.caseId]?.bestScore ?? 0) >= CLEAR_SCORE_THRESHOLD)
+    return sorted.filter(c => (progressMap[c.caseId]?.bestScore ?? 0) >= CLEAR_SCORE_THRESHOLD)
   }, [cases, progressMap, showCompletedFilter, showCompletedOnly])
 
-  const stageNodes = useMemo<StageNode[]>(() => {
-    let previousCleared = true
-    return filteredCases.map((caseData, index) => {
+  const stages = useMemo(() => {
+    let prevCleared = true
+    return filteredCases.map((caseData, i) => {
       const score = progressMap[caseData.caseId]?.bestScore ?? 0
       const cleared = score >= CLEAR_SCORE_THRESHOLD
-      const unlocked = index === 0 ? true : previousCleared
-      previousCleared = cleared
-      return { caseData, index, stageNumber: String(index + 1).padStart(2, '0'), score, cleared, unlocked, side: index % 2 === 0 ? 'left' : 'right' }
+      const unlocked = i === 0 || prevCleared
+      prevCleared = cleared
+      return { caseData, num: String(i + 1).padStart(2, '0'), score, cleared, unlocked }
     })
   }, [filteredCases, progressMap])
 
-  const defaultCaseId = useMemo(() => {
-    if (stageNodes.length === 0) return null
-    let latestUnlocked = stageNodes[0].caseData.caseId
-    for (const node of stageNodes) {
-      if (!node.unlocked) break
-      latestUnlocked = node.caseData.caseId
-    }
-    return latestUnlocked
-  }, [stageNodes])
+  // 기본 선택: 최근 해금된 스테이지
+  const defaultId = useMemo(() => {
+    if (stages.length === 0) return null
+    let latest = stages[0].caseData.caseId
+    for (const s of stages) { if (!s.unlocked) break; latest = s.caseData.caseId }
+    return latest
+  }, [stages])
 
-  const activeCaseId = pinnedCaseId ?? hoveredCaseId ?? defaultCaseId
-  const activeNode = stageNodes.find((node) => node.caseData.caseId === activeCaseId) ?? null
-  const activeCase = activeNode?.caseData ?? null
-
-  const updatePreviewPosition = () => {
-    if (!routeScrollRef.current || !activeNode) {
-      setPreviewPosition(null)
-      return
-    }
-    const nodeEl = nodeRefs.current[activeNode.caseData.caseId]
-    if (!nodeEl) {
-      setPreviewPosition(null)
-      return
-    }
-
-    const routeEl = routeScrollRef.current
-    const previewHeight = 248
-    const previewWidth = Math.min(420, Math.max(340, routeEl.clientWidth - 176))
-    const top = clamp(nodeEl.offsetTop + nodeEl.offsetHeight / 2 - previewHeight / 2, 20, Math.max(20, routeEl.scrollHeight - previewHeight - 20))
-    const rawLeft = activeNode.side === 'left' ? nodeEl.offsetLeft + nodeEl.offsetWidth + 28 : nodeEl.offsetLeft - previewWidth - 28
-    const left = clamp(rawLeft, 24, Math.max(24, routeEl.clientWidth - previewWidth - 24))
-    setPreviewPosition({ top, left, side: activeNode.side })
-  }
-
-  useEffect(() => {
-    if (!defaultCaseId || pinnedCaseId || hoveredCaseId || !routeScrollRef.current) return
-    const nodeEl = nodeRefs.current[defaultCaseId]
-    if (!nodeEl) return
-    const routeEl = routeScrollRef.current
-    const targetTop = clamp(nodeEl.offsetTop - routeEl.clientHeight * 0.5 + nodeEl.offsetHeight * 0.5, 0, Math.max(0, routeEl.scrollHeight - routeEl.clientHeight))
-    routeEl.scrollTo({ top: targetTop, behavior: 'smooth' })
-  }, [defaultCaseId, hoveredCaseId, pinnedCaseId, stageNodes.length])
-
-  useEffect(() => { updatePreviewPosition() }, [activeCaseId, stageNodes.length])
-  useEffect(() => {
-    const onResize = () => updatePreviewPosition()
-    window.addEventListener('resize', onResize)
-    return () => window.removeEventListener('resize', onResize)
-  }, [activeCaseId, stageNodes.length])
-  useEffect(() => {
-    if (autoScrollDirection === 0) return
-    let frameId = 0
-    const tick = () => {
-      const routeEl = routeScrollRef.current
-      if (routeEl) {
-        routeEl.scrollTop += autoScrollDirection * EDGE_SCROLL_STEP
-        updatePreviewPosition()
-        frameId = window.requestAnimationFrame(tick)
-      }
-    }
-    frameId = window.requestAnimationFrame(tick)
-    return () => window.cancelAnimationFrame(frameId)
-  }, [activeCaseId, autoScrollDirection])
-
-  const handleRouteMouseMove = (event: ReactMouseEvent<HTMLDivElement>) => {
-    const routeEl = routeScrollRef.current
-    if (!routeEl) return
-    const bounds = routeEl.getBoundingClientRect()
-    const relativeY = event.clientY - bounds.top
-    if (relativeY <= EDGE_SCROLL_THRESHOLD) setAutoScrollDirection(-1)
-    else if (relativeY >= bounds.height - EDGE_SCROLL_THRESHOLD) setAutoScrollDirection(1)
-    else setAutoScrollDirection(0)
-  }
-
-  const handleRouteMouseLeave = () => {
-    setAutoScrollDirection(0)
-    if (!pinnedCaseId) setHoveredCaseId(null)
-  }
+  const activeId = selectedCaseId ?? defaultId
+  const activeStage = stages.find(s => s.caseData.caseId === activeId)
+  const activeCase = activeStage?.caseData ?? null
 
   return (
-    <div className="pc-case-browser-v2">
-      <header className="pc-depth-header">
-        <button className="pc-depth-back" onClick={onBack} type="button"><span aria-hidden="true">‹</span>뒤로</button>
-        <div className="pc-depth-header__copy">
-          <span>{eyebrow ?? 'CASE BROWSER'}</span>
-          <h1>{title}</h1>
+    <div className="cb">
+      {/* ── 헤더 ── */}
+      <header className="cb__header">
+        <button className="pc-depth-back" onClick={onBack} type="button"><span aria-hidden="true">‹</span> 뒤로</button>
+        <div className="cb__header-info">
+          <span className="cb__eyebrow">{eyebrow ?? 'CASE BROWSER'}</span>
+          <h2>{title}</h2>
           <p>{description}</p>
         </div>
-        <div className="pc-case-browser-v2__header-tools">
-          {showCompletedFilter ? (
-            <button className={`pc-filter-pill-v2${showCompletedOnly ? ' is-active' : ''}`} onClick={() => setShowCompletedOnly((current) => !current)} type="button">
+        <div className="cb__header-tools">
+          {showCompletedFilter && (
+            <button className={`pc-filter-pill-v2${showCompletedOnly ? ' is-active' : ''}`} onClick={() => setShowCompletedOnly(v => !v)} type="button">
               완료 기록만
             </button>
-          ) : null}
-          <div className="pc-case-browser-v2__summary">
-            <span>표시 중</span>
-            <strong>{progressLabel ?? `${filteredCases.length}건`}</strong>
-          </div>
+          )}
+          <span className="cb__count">{progressLabel ?? `${filteredCases.length}건`}</span>
         </div>
       </header>
 
-      {stageNodes.length === 0 ? (
-        <div className="pc-panel-card-v2"><div className="pc-empty-block"><span className="pc-empty-block__icon"><PCSvgIcon id="i-doc" size={24} /></span><strong>{emptyTitle}</strong><p>{emptyDescription}</p></div></div>
+      {stages.length === 0 ? (
+        <div className="cb__empty">
+          <PCSvgIcon id="i-doc" size={28} />
+          <strong>{emptyTitle}</strong>
+          <p>{emptyDescription}</p>
+        </div>
       ) : (
-        <section className="pc-stage-map-v2">
-          <div className="pc-stage-map-v2__scroll" onMouseLeave={handleRouteMouseLeave} onMouseMove={handleRouteMouseMove} onScroll={updatePreviewPosition} ref={routeScrollRef}>
-            <div className="pc-stage-map-v2__route">
-              <div className="pc-stage-map-v2__line" />
-              {stageNodes.map((node) => {
-                const isActive = activeCaseId === node.caseData.caseId
-                const isPinned = pinnedCaseId === node.caseData.caseId
-                return (
-                  <div className={`pc-stage-map-v2__row ${node.side}`} key={node.caseData.caseId}>
-                    <button
-                      className={['pc-stage-node-v2', isActive ? 'is-active' : '', isPinned ? 'is-pinned' : '', node.cleared ? 'is-cleared' : '', !node.unlocked ? 'is-locked' : ''].filter(Boolean).join(' ')}
-                      disabled={!node.unlocked}
-                      onClick={() => setPinnedCaseId((current) => current === node.caseData.caseId ? null : node.caseData.caseId)}
-                      onMouseEnter={() => { if (!pinnedCaseId) setHoveredCaseId(node.caseData.caseId) }}
-                      ref={(element) => { nodeRefs.current[node.caseData.caseId] = element }}
-                      type="button"
-                    >
-                      <span className="pc-stage-node-v2__number">{node.stageNumber}</span>
-                      <span className="pc-stage-node-v2__state">{node.score > 0 ? `${node.score}점` : <PCSvgIcon id="i-lock" size={14} />}</span>
-                    </button>
+        <div className="cb__split">
+          {/* 좌: 스테이지 맵 */}
+          <div className="cb__stages">
+            {stages.map(s => {
+              const active = activeId === s.caseData.caseId
+              return (
+                <button
+                  key={s.caseData.caseId}
+                  className={`cb__stage${active ? ' is-active' : ''}${s.cleared ? ' is-cleared' : ''}${!s.unlocked ? ' is-locked' : ''}`}
+                  disabled={!s.unlocked}
+                  onClick={() => setSelectedCaseId(s.caseData.caseId)}
+                  type="button"
+                >
+                  <span className="cb__stage-num">{s.num}</span>
+                  <div className="cb__stage-body">
+                    <span className="cb__stage-eyebrow">STAGE {s.num}</span>
+                    <strong>{buildStageTitle(s.caseData)}</strong>
                   </div>
-                )
-              })}
-
-              {activeCase && activeNode && previewPosition ? (
-                <article className={`pc-stage-preview-v2 ${previewPosition.side === 'left' ? 'is-left' : 'is-right'}${pinnedCaseId ? ' is-pinned' : ''}`} style={{ top: `${previewPosition.top}px`, left: `${previewPosition.left}px` }}>
-                  <span className="pc-stage-preview-v2__eyebrow">STAGE {activeNode.stageNumber}</span>
-                  <h3>{buildStageTitle(activeCase)}</h3>
-                  <div className="pc-stage-preview-v2__meta">
-                    <span>난이도 <b>{getDifficultyLabel(activeCase.meta?.difficulty ?? 'medium')}</b></span>
-                    <span>획득 점수 <b>{activeNode.score > 0 ? `${activeNode.score}점` : '\u00A0'}</b></span>
-                  </div>
-                  <p>{buildCaseSummary(activeCase)}</p>
-                  <button className="pc-stage-preview-v2__action" onClick={() => onSelectCase(activeCase)} type="button">상세 보기 &gt;</button>
-                </article>
-              ) : null}
-            </div>
+                  <span className="cb__stage-score">
+                    {s.score > 0 ? `${s.score}점` : s.unlocked ? '미완료' : <PCSvgIcon id="i-lock" size={14} />}
+                  </span>
+                </button>
+              )
+            })}
           </div>
-        </section>
+
+          {/* 우: 선택된 사건 상세 */}
+          <div className="cb__detail">
+            {activeCase && activeStage ? (
+              <>
+                <div className="cb__detail-banner">
+                  <span className="cb__eyebrow">STAGE {activeStage.num}</span>
+                  <h3>{buildStageTitle(activeCase)}</h3>
+                </div>
+                <div className="cb__detail-info">
+                  <div className="cb__detail-parties">
+                    <span><PCSvgIcon id="i-person" size={14} /> {activeCase.duo.partyA.name}</span>
+                    <span className="cb__detail-vs">vs</span>
+                    <span><PCSvgIcon id="i-person" size={14} /> {activeCase.duo.partyB.name}</span>
+                  </div>
+                  <div className="cb__detail-meta">
+                    <span>난이도 <b>{getDifficultyLabel(activeCase.meta?.difficulty ?? 'medium')}</b></span>
+                    <span>쟁점 <b>{activeCase.disputes.length}개</b></span>
+                    <span>증거 <b>{activeCase.evidence.length}종</b></span>
+                  </div>
+                  <p className="cb__detail-desc">{buildCaseSummary(activeCase)}</p>
+                  {activeStage.score > 0 && (
+                    <div className="cb__detail-record">
+                      최고 기록 <strong>{activeStage.score}점</strong>
+                    </div>
+                  )}
+                </div>
+                <button className="cb__detail-action" onClick={() => onSelectCase(activeCase)} type="button">
+                  상세 보기 &gt;
+                </button>
+              </>
+            ) : (
+              <div className="cb__detail-empty">
+                <p>좌측에서 사건을 선택하세요.</p>
+              </div>
+            )}
+          </div>
+        </div>
       )}
     </div>
   )
 }
 
-function buildStageTitle(caseData: CaseData) {
-  const title = caseData.meta?.title
-  if (title) return truncate(compactText(title), 42)
-  const dispute = compactText(caseData.disputes[0]?.name ?? '')
-  if (dispute) return truncate(dispute, 42)
-  return truncate(compactText(caseData.meta?.emotionalBait ?? caseData.context.description), 42)
+function buildStageTitle(c: CaseData) {
+  const t = c.meta?.title
+  if (t) return truncate(compact(t), 48)
+  const d = compact(c.disputes[0]?.name ?? '')
+  if (d) return truncate(d, 48)
+  return truncate(compact(c.meta?.emotionalBait ?? c.context.description), 48)
 }
 
-function buildCaseSummary(caseData: CaseData) {
-  const teaser = compactText(caseData.meta?.emotionalBait ?? '')
-  if (teaser) return truncate(teaser, 96)
-  return truncate(compactText(caseData.context.description), 96)
+function buildCaseSummary(c: CaseData) {
+  const t = compact(c.meta?.emotionalBait ?? '')
+  if (t) return truncate(t, 160)
+  return truncate(compact(c.context.description), 160)
 }
 
-function compactText(text: string) { return text.replace(/\s+/g, ' ').trim() }
-function truncate(text: string, maxLength: number) { return text.length > maxLength ? `${text.slice(0, Math.max(0, maxLength - 1)).trim()}…` : text }
-function clamp(value: number, min: number, max: number) { return Math.max(min, Math.min(max, value)) }
+function compact(s: string) { return s.replace(/\s+/g, ' ').trim() }
+function truncate(s: string, n: number) { return s.length > n ? `${s.slice(0, n - 1).trim()}…` : s }
