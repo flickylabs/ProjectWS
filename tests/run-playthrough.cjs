@@ -74,6 +74,7 @@ async function runScenario(caseId) {
       turn.action,
       turn.question,
       evidenceInfo,
+      turn.evidenceId || null,
       caseData,
       v2Data,
       ctx

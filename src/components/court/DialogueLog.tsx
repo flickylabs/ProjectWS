@@ -9,26 +9,38 @@ interface Props {
   onTestimonyClick?: () => void
 }
 
+type PendingContradiction = {
+  entryId: string
+  meta: NonNullable<DialogueEntryType['contradictionMeta']>
+}
+
+const _usedContradictions = new Set<string>()
+
 export default function DialogueLog({ onTestimonyClick }: Props) {
   const dialogueLog = useStore((s) => s.dialogueLog)
   const isLLMLoading = useStore((s) => s.isLLMLoading)
   const llmTarget = useStore((s) => s.llmLoadingTarget)
   const caseData = useStore((s) => s.caseData)
-  const [pendingContradiction, setPendingContradiction] = useState<NonNullable<DialogueEntryType['contradictionMeta']> | null>(null)
+  const [pendingContradiction, setPendingContradiction] = useState<PendingContradiction | null>(null)
+  const [, setContradictionVersion] = useState(0)
 
-  const handleContradictionClick = (meta: NonNullable<DialogueEntryType['contradictionMeta']>) => {
-    setPendingContradiction(meta)
+  const handleContradictionClick = (entryId: string, meta: NonNullable<DialogueEntryType['contradictionMeta']>) => {
+    if (_usedContradictions.has(entryId)) return
+    setPendingContradiction({ entryId, meta })
   }
 
   const handleConfirmPursue = async () => {
     if (!pendingContradiction) return
-    const { party, disputeId, previousClaim, currentClaim } = pendingContradiction
+    const { entryId, meta } = pendingContradiction
+    const { party, disputeId, previousClaim, currentClaim } = meta
+    _usedContradictions.add(entryId)
+    setContradictionVersion((value) => value + 1)
     setPendingContradiction(null)
     await handleContradictionPursue(party, disputeId, previousClaim, currentClaim)
   }
 
   const npcName = pendingContradiction && caseData
-    ? (pendingContradiction.party === 'a' ? caseData.duo.partyA.name : caseData.duo.partyB.name)
+    ? (pendingContradiction.meta.party === 'a' ? caseData.duo.partyA.name : caseData.duo.partyB.name)
     : ''
 
   return (
@@ -47,6 +59,7 @@ export default function DialogueLog({ onTestimonyClick }: Props) {
             animate={i === dialogueLog.length - 1}
             onTestimonyClick={onTestimonyClick}
             onContradictionClick={handleContradictionClick}
+            contradictionUsed={_usedContradictions.has(entry.id)}
           />
         ))}
       </div>
@@ -76,7 +89,7 @@ export default function DialogueLog({ onTestimonyClick }: Props) {
 
               <div className="bg-gray-800/40 border border-gray-700/30 rounded-xl p-3">
                 <div className="text-[10px] text-gray-600 mb-1">이전 주장</div>
-                <p className="text-xs text-gray-400 leading-relaxed">"{pendingContradiction.previousClaim}"</p>
+                <p className="text-xs text-gray-400 leading-relaxed">"{pendingContradiction.meta.previousClaim}"</p>
               </div>
 
               <div className="flex justify-center">
@@ -85,7 +98,7 @@ export default function DialogueLog({ onTestimonyClick }: Props) {
 
               <div className="bg-amber-950/30 border border-amber-800/30 rounded-xl p-3">
                 <div className="text-[10px] text-amber-600 mb-1">현재 주장</div>
-                <p className="text-xs text-amber-200 leading-relaxed">"{pendingContradiction.currentClaim}"</p>
+                <p className="text-xs text-amber-200 leading-relaxed">"{pendingContradiction.meta.currentClaim}"</p>
               </div>
 
               <p className="text-xs text-gray-500 leading-relaxed">

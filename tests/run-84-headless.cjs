@@ -18,7 +18,20 @@ const CATEGORIES = ['spouse', 'family', 'friend', 'neighbor', 'partnership', 'te
 // ── 유틸 ──
 
 function findAtomsPath(caseId) {
+  const preferredByCase = {
+    'spouse-01': [
+      path.join(ROOT, 'src/data/claimPolicies/spouse-01-v2-atoms.json'),
+    ],
+    'friend-01': [
+      path.join(ROOT, 'docs/ref/리뉴얼참고/gpt-batch/friend-01/friend-01-v2-atoms.json'),
+    ],
+    'family-01': [
+      path.join(ROOT, 'docs/ref/리뉴얼참고/gpt-session2/output/family-01-v2-atoms.json'),
+      path.join(ROOT, 'docs/ref/리뉴얼참고/gpt-batch-v2/round-04/family-01-v2-atoms.json'),
+    ],
+  }
   const paths = [
+    ...(preferredByCase[caseId] || []),
     path.join(ROOT, `src/data/claimPolicies/${caseId}-v2-atoms.json`),
     path.join(ROOT, `docs/ref/리뉴얼참고/gpt-batch/${caseId}/${caseId}-v2-atoms.json`),
     path.join(ROOT, `docs/ref/리뉴얼참고/gpt-batch-v2/round-04/${caseId}-v2-atoms.json`),
@@ -182,7 +195,7 @@ async function runCase(caseId) {
       if (ev) evidenceInfo = `증거: ${ev.name}\n설명: ${(ev.description || '').slice(0, 120)}`
     }
 
-    await runner.run(turn.label, turn.party, turn.dispute, turn.state, turn.action, turn.question, evidenceInfo, caseData, v2Data, ctx)
+    await runner.run(turn.label, turn.party, turn.dispute, turn.state, turn.action, turn.question, evidenceInfo, turn.evidenceId || null, caseData, v2Data, ctx)
 
     // 트랜스크립트에 턴 데이터 추가
     const lastResult = ctx.results[ctx.results.length - 1]

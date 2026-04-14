@@ -18,6 +18,59 @@ require('dotenv').config({ path: path.join(__dirname, '..', '.env') })
 const API_KEY = process.env.VITE_OPENAI_API_KEY
 const MODEL = 'gpt-4o'
 const BASE_URL = 'https://api.openai.com/v1'
+const SCRIPTED_DIR = path.join(__dirname, '..', 'src/data/scriptedText')
+const scriptedBundleCache = new Map()
+
+function normalizeCaseId(caseId) {
+  return String(caseId || '').replace(/^case-/, '')
+}
+
+function toLieBand(lieState) {
+  if (lieState === 'S0' || lieState === 'S1') return 'early'
+  if (lieState === 'S2' || lieState === 'S3') return 'mid'
+  return 'late'
+}
+
+function loadScriptedBundle(caseId) {
+  const normalized = normalizeCaseId(caseId)
+  if (scriptedBundleCache.has(normalized)) return scriptedBundleCache.get(normalized)
+  const bundlePath = path.join(SCRIPTED_DIR, `${normalized}.json`)
+  if (!fs.existsSync(bundlePath)) {
+    scriptedBundleCache.set(normalized, null)
+    return null
+  }
+  const bundle = JSON.parse(fs.readFileSync(bundlePath, 'utf8'))
+  scriptedBundleCache.set(normalized, bundle)
+  return bundle
+}
+
+function getScriptedResponse(caseData, party, disputeId, lieState, subAction, evidenceId) {
+  const bundle = loadScriptedBundle(caseData.caseId)
+  if (!bundle) return null
+
+  if (subAction === 'evidence_present' && evidenceId) {
+    const evidence = (caseData.evidence || []).find(ev => ev.id === evidenceId)
+    const subjectParty = evidence?.subjectParty ?? 'both'
+    const primaryRole = subjectParty === party ? 'self' : subjectParty === 'both' ? 'both' : 'other'
+    const roles = [primaryRole, 'self', 'other', 'both'].filter((role, idx, arr) => arr.indexOf(role) === idx)
+    const lieBand = toLieBand(lieState)
+    for (const subjectRole of roles) {
+      const key = `${party}|${evidenceId}|${lieBand}|${subjectRole}`
+      const entry = bundle.channels?.evidence_present?.entries?.find(item => item.key === key)
+      if (entry?.variants?.length) {
+        const variant = entry.variants[0]
+        return { source: 'scripted', key, text: variant.text, behaviorHint: variant.behaviorHint }
+      }
+    }
+    return null
+  }
+
+  const key = `${party}|${disputeId}|${lieState}|${subAction}`
+  const entry = bundle.channels?.interrogation?.entries?.find(item => item.key === key)
+  if (!entry?.variants?.length) return null
+  const variant = entry.variants[0]
+  return { source: 'scripted', key, text: variant.text, behaviorHint: variant.behaviorHint }
+}
 
 // ── P0-1: 한국어 조사 인라인 ──
 
@@ -383,6 +436,7 @@ function extractForbiddenInstitutions(v2Data) {
 
 function validateResponse(resp, vCtx) {
   const issues = []
+  const EXACT_AMOUNT_RE = /(?:(?:[0-9][0-9,]*\s*[천백십만억]?)+|[일이삼사오육칠팔구십백천만억조]+)\s*원/
 
   // === A: 금지 표현 ===
   // A1: 금전 행위 표현 (비금전 사건만 — "비용/수수료" 등 사건 맥락 표현은 허용)
@@ -431,7 +485,7 @@ function validateResponse(resp, vCtx) {
   // === B: Truth Throttle ===
   // B1: S0-S1에서 구체적 금액
   if (['S0','S1'].includes(vCtx.state) && vCtx.isMonetary) {
-    if (/[0-9,]+만?\s*원|\d{2,}만\s*원/.test(resp)) {
+    if (EXACT_AMOUNT_RE.test(resp)) {
       issues.push({ code: 'B1', severity: 'CRITICAL', detail: 'S0-S1 금액 노출' })
     }
   }
@@ -460,7 +514,7 @@ function validateResponse(resp, vCtx) {
     if (sentences.length < 4) {
       issues.push({ code: 'B4', severity: 'FAIL', detail: `S5 문장 부족(${sentences.length}/4)` })
     }
-    if (vCtx.isMonetary && !/[0-9]+만?\s*원/.test(resp)) {
+    if (vCtx.isMonetary && !EXACT_AMOUNT_RE.test(resp)) {
       issues.push({ code: 'B4', severity: 'FAIL', detail: 'S5 구체적 금액 미포함' })
     }
   }
@@ -534,12 +588,60 @@ function validateResponse(resp, vCtx) {
 
 // ── 1턴 실행 ──
 
-async function run(label, party, disputeId, state, subAction, judgeQ, evidenceInfo, caseData, v2Data, ctx) {
+async function run(label, party, disputeId, state, subAction, judgeQ, evidenceInfo, evidenceId, caseData, v2Data, ctx) {
   ctx.turnNum++
   const profile = party === 'a' ? caseData.duo.partyA : caseData.duo.partyB
   const policy = v2Data.claimPolicies[party]?.[disputeId]?.[state]
 
   const { stance, defense, sent } = getStance(state, 30)
+
+  if (!ctx._vCtx) {
+    ctx._vCtx = {
+      caseId: caseData.caseId,
+      isMonetary: isMonetaryCase(caseData),
+      forbiddenNames: extractForbiddenNames(v2Data),
+      forbiddenInstitutions: extractForbiddenInstitutions(v2Data),
+      usageCount: {},
+      prevResponse: null,
+      prevApology: null,
+    }
+  }
+  ctx._vCtx.state = state
+  ctx._vCtx.stance = stance
+
+  const scripted = getScriptedResponse(caseData, party, disputeId, state, subAction, evidenceId)
+  if (scripted) {
+    const issues = validateResponse(scripted.text, ctx._vCtx)
+    const hasCritical = issues.some(i => i.severity === 'CRITICAL')
+    const hasFail = issues.some(i => i.severity === 'FAIL')
+    const status = hasCritical ? 'CRITICAL' : hasFail ? 'FAIL' : issues.length > 0 ? 'WARN' : 'PASS'
+
+    console.log(`  [${status}] #${ctx.turnNum} [${state}/${subAction}/${stance}] ${label} (scripted)`)
+    console.log(`     Q: ${judgeQ.slice(0, 60)}`)
+    console.log(`     A: ${profile.name}: ${scripted.text}`)
+    if (scripted.behaviorHint) console.log(`     hint: ${scripted.behaviorHint}`)
+    if (issues.length > 0) console.log(`     ISSUES: ${issues.map(i => `[${i.severity}]${i.code}:${i.detail}`).join(', ')}`)
+    console.log()
+
+    ctx.results.push({
+      num: ctx.turnNum,
+      label,
+      party,
+      disputeId,
+      state,
+      subAction,
+      stance,
+      defense,
+      judgeQ,
+      response: scripted.text,
+      hint: scripted.behaviorHint,
+      issues,
+      evidence: !!evidenceInfo,
+      source: scripted.source,
+      key: scripted.key,
+    })
+    return scripted.text
+  }
 
   // P1-1: atoms 없거나 빈약하면 fallback (시스템 거절 방지)
   const rawAtoms = policy?.claimAtoms || []
@@ -573,21 +675,6 @@ async function run(label, party, disputeId, state, subAction, judgeQ, evidenceIn
     const raw = await callLLM(sys, usr)
     const parsed = JSON.parse((raw.match(/\{[\s\S]*\}/) ?? ['{}'])[0])
     const resp = parsed.npcResponse ?? raw.slice(0, 200)
-
-    // 검증 컨텍스트 구성
-    if (!ctx._vCtx) {
-      ctx._vCtx = {
-        caseId: caseData.caseId,
-        isMonetary: isMonetaryCase(caseData),
-        forbiddenNames: extractForbiddenNames(v2Data),
-        forbiddenInstitutions: extractForbiddenInstitutions(v2Data),
-        usageCount: {},
-        prevResponse: null,
-        prevApology: null,
-      }
-    }
-    ctx._vCtx.state = state
-    ctx._vCtx.stance = stance
 
     const issues = validateResponse(resp, ctx._vCtx)
 

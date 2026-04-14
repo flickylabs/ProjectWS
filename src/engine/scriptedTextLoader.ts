@@ -253,6 +253,32 @@ function logScriptedMiss(
   console.warn(`[Scripted miss] ${normalizeCaseKey(caseId)}/${channel}/${key} — ${reason}`)
 }
 
+function convertDossierLegacyPrefix(dossierQuestionId: string): string {
+  if (!dossierQuestionId) return dossierQuestionId
+  if (/^dossier-\d+/.test(dossierQuestionId)) {
+    return dossierQuestionId.replace(/^dossier-(\d+)/, 'dc-$1')
+  }
+  if (/^dc-\d+/.test(dossierQuestionId)) {
+    return dossierQuestionId.replace(/^dc-(\d+)/, 'dossier-$1')
+  }
+  return dossierQuestionId
+}
+
+function getDossierCandidateIds(dossierQuestionId: string): string[] {
+  const seeds = [...new Set([
+    dossierQuestionId,
+    convertDossierLegacyPrefix(dossierQuestionId),
+  ].filter(Boolean))]
+  const candidates: string[] = []
+  for (const seed of seeds) {
+    const parts = seed.split('.')
+    candidates.push(seed)
+    if (parts.length >= 2) candidates.push(parts.slice(0, 2).join('.'))
+    if (parts.length >= 1) candidates.push(parts[0])
+  }
+  return [...new Set(candidates.filter(Boolean))]
+}
+
 /** 심문 응답 스크립트 조회 */
 export function getScriptedInterrogation(
   caseId: string,
@@ -337,14 +363,22 @@ export function getScriptedDossier(
   lieState: string,
 ): { text: string; behaviorHint: string } | null {
   const lieBand = toScriptedLieBand(lieState as ScriptedLieState)
-  const key = buildDossierKey({ party, dossierQuestionId, lieBand })
   const bundle = loadBundle(caseId)
   if (!bundle) {
+    const key = buildDossierKey({ party, dossierQuestionId, lieBand })
     logScriptedMiss(caseId, 'dossier', key, 'bundle_missing')
     return null
   }
-  const entry = bundle.channels.dossier.entries.find(e => e.key === key)
+  const candidateIds = getDossierCandidateIds(dossierQuestionId)
+  let key = ''
+  let entry: typeof bundle.channels.dossier.entries[number] | undefined
+  for (const candidateId of candidateIds) {
+    key = buildDossierKey({ party, dossierQuestionId: candidateId, lieBand })
+    entry = bundle.channels.dossier.entries.find(e => e.key === key)
+    if (entry) break
+  }
   if (!entry) {
+    key = buildDossierKey({ party, dossierQuestionId, lieBand })
     logScriptedMiss(caseId, 'dossier', key, 'key_missing')
     return null
   }

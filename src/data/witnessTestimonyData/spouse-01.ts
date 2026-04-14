@@ -180,6 +180,7 @@ export const SPOUSE_01_TESTIMONY: TestimonySlot[] = [
     behaviorHint: '조심스럽게',
     conditions: {
       disputeState: { id: 'h-d3', visibility: 'emerged' },
+      prevSlotRequired: 'w2-hd3-savings-cancel',
       prevChoiceRequired: 'w2-hd3-savings-cancel',
     },
     effect: {

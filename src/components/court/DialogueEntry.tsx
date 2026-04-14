@@ -7,7 +7,8 @@ interface Props {
   entry: DialogueEntryType
   animate?: boolean
   onTestimonyClick?: () => void
-  onContradictionClick?: (meta: NonNullable<DialogueEntryType['contradictionMeta']>) => void
+  onContradictionClick?: (entryId: string, meta: NonNullable<DialogueEntryType['contradictionMeta']>) => void
+  contradictionUsed?: boolean
 }
 
 /** 감정 상태 → 이모지 매핑 */
@@ -29,7 +30,13 @@ function getEmotionEmoji(speaker: string, emotionPhase?: string): string {
   return emojiMap[speaker]?.[emotionPhase] ?? (speaker === 'a' ? '👨' : '👩')
 }
 
-export default function DialogueEntry({ entry, animate = false, onTestimonyClick, onContradictionClick }: Props) {
+export default function DialogueEntry({
+  entry,
+  animate = false,
+  onTestimonyClick,
+  onContradictionClick,
+  contradictionUsed = false,
+}: Props) {
   const caseData = useStore((s) => s.caseData)
   const agentA = useStore((s) => s.agentA)
   const agentB = useStore((s) => s.agentB)
@@ -86,12 +93,19 @@ export default function DialogueEntry({ entry, animate = false, onTestimonyClick
       return (
         <div className="flex justify-center my-2.5 animate-shake">
           <button
-            onClick={() => onContradictionClick(entry.contradictionMeta!)}
-            className="text-xs px-4 py-2.5 rounded-xl bg-amber-950/50 text-amber-300 ring-1 ring-amber-600/40 hover:ring-amber-500/60 hover:bg-amber-900/40 transition-all active:scale-95 flex items-center gap-2"
+            disabled={contradictionUsed}
+            onClick={() => onContradictionClick(entry.id, entry.contradictionMeta!)}
+            className={`text-xs px-4 py-2.5 rounded-xl ring-1 transition-all flex items-center gap-2 ${
+              contradictionUsed
+                ? 'bg-gray-900/80 text-gray-500 ring-gray-700/50 cursor-default'
+                : 'bg-amber-950/50 text-amber-300 ring-amber-600/40 hover:ring-amber-500/60 hover:bg-amber-900/40 active:scale-95'
+            }`}
           >
             <Emoji char="⚡" size={16} />
             <span>{displayText.replace('— 탭하여 추궁', '').trim()}</span>
-            <span className="text-amber-500/60 text-[10px] ml-1">탭하여 추궁</span>
+            <span className={`text-[10px] ml-1 ${contradictionUsed ? 'text-gray-600' : 'text-amber-500/60'}`}>
+              {contradictionUsed ? '추궁 완료' : '탭하여 추궁'}
+            </span>
           </button>
         </div>
       )
