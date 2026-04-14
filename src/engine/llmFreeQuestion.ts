@@ -12,6 +12,7 @@ import { enforceHonorifics, fixMisdirectedAddress } from './llmDialogueResolver'
 import { fixPostpositions } from './koreanPostposition'
 import { buildSpeechGuide, getMyCall, getJudgeReference, getAngryCall, getRelationLabel, canUseInformal } from './llmSpeechGuide'
 import { eunneun } from '../utils/korean'
+import { getTruthThrottle, getArchetypeGuide } from './blueprintPromptBuilderV2'
 import type { CaseData, PartyId, QuestionType } from '../types'
 import type { AgentState } from '../types'
 import type { EvidenceRuntimeState } from './evidenceEngine'
@@ -181,15 +182,43 @@ async function generateResponse(
 
   let disputeInfo = ''
   if (lieEntry && dispute) {
-    const stateInstructions: Record<string, string> = {
-      S0: '이 쟁점을 완전히 부정하세요.',
-      S1: '약간 흔들리고 있지만 핵심은 부정하세요.',
-      S2: '일부를 인정합니다. "맞지만 이유가 다르다"고 하세요.',
-      S3: '상대 탓으로 돌리세요.',
-      S4: '감정적으로 호소하세요.',
-      S5: '인정합니다. 자기 입장에서 재해석하세요.',
-    }
-    disputeInfo = `현재 쟁점: "${dispute.name}" — ${stateInstructions[lieEntry.currentState] ?? ''}`
+    disputeInfo = `현재 쟁점: "${dispute.name}" (lieState: ${lieEntry.currentState})`
+  }
+
+  // ── 게임 맥락 채우기 ──
+  const store = useGameStore.getState()
+  const dialogueLog = store.dialogueLog ?? []
+
+  // 최근 대화 5턴
+  const recentDialogue = dialogueLog
+    .slice(-10)
+    .map(d => `[${d.speaker}] ${d.text}`)
+    .join('\n')
+
+  // 이미 공개된 사실 (S3+ 쟁점의 진실)
+  const knownFacts = Object.entries(agent.lieStateMap)
+    .filter(([, entry]) => entry.currentState >= 'S3')
+    .map(([dId, entry]) => {
+      const d = caseData.disputes.find(x => x.id === dId)
+      return d ? `${d.name}: ${entry.currentState} (부분 인정됨)` : null
+    })
+    .filter(Boolean)
+    .join('\n')
+
+  // 제시된 증거 목록
+  const presentedEvidence = caseData.evidence
+    .filter(e => store.evidenceStates?.[e.id]?.presented)
+    .map(e => `${e.name} (${e.reliability})`)
+    .join(', ')
+
+  // Truth Throttle + Archetype 보강 블록
+  let truthThrottleBlock = ''
+  let archetypeBlock = ''
+  if (lieEntry) {
+    truthThrottleBlock = getTruthThrottle(lieEntry.currentState as any)
+  }
+  if (party.archetype) {
+    archetypeBlock = getArchetypeGuide(party.archetype)
   }
 
   const responderVars: Record<string, string> = {
@@ -219,11 +248,11 @@ async function generateResponse(
 - 감정 호소나 변명으로 시작하지 마라. 사실 → 이유 → 입장 순서로 답하라.`,
     // v3 변수
     focusedDisputeId,
-    knownFacts: '',
+    knownFacts: knownFacts || '아직 공개된 사실 없음',
     disputeInfo,
     emotionInfo: `현재 감정: ${agent.emotionalState.behaviorHint || agent.emotionalState.phase}`,
-    evidenceInfo: '',
-    recentDialogue: '',
+    evidenceInfo: presentedEvidence ? `제시된 증거: ${presentedEvidence}` : '제시된 증거 없음',
+    recentDialogue: recentDialogue || '대화 기록 없음',
     historyContext: '',
     phaseTranscript: '',
     actionContract: JSON.stringify({
@@ -243,7 +272,13 @@ async function generateResponse(
       retaliationWorry: agent.trustState.retaliationWorry,
     }),
     skillOverlay: '',
+    truthThrottleBlock: '',
+    archetypeBlock: '',
   }
+
+  // Truth Throttle + Archetype을 프롬프트 변수에 주입
+  responderVars.truthThrottleBlock = truthThrottleBlock
+  responderVars.archetypeBlock = archetypeBlock ? `\n캐릭터 유형:\n${archetypeBlock}` : ''
 
   const currentPhase = useGameStore.getState().currentPhase
   const systemPrompt = isAgentLoaded()

@@ -307,7 +307,7 @@ const TRUTH_THROTTLE: Record<string, string> = {
 - ❌ "이로 인해", "~에 기인하여" 등 보고서 톤 절대 금지. 사람의 말투로 자백하라`,
 }
 
-function getTruthThrottle(lieState: LieState): string {
+export function getTruthThrottle(lieState: LieState): string {
   if (lieState <= 'S1') return TRUTH_THROTTLE.early
   if (lieState === 'S2') return TRUTH_THROTTLE.hint
   if (lieState === 'S3') return TRUTH_THROTTLE.blame
@@ -394,6 +394,10 @@ const DEFENSE_LABELS: Record<string, string> = {
   counterattack: '상대의 잘못을 역공하라',
   silence: '말을 아끼고 핵심을 흐려라',
   concession: '인정 쪽으로 기울어라',
+}
+
+export function getArchetypeGuide(archetype: string): string {
+  return ARCHETYPE_GUIDE[archetype as Archetype] ?? ''
 }
 
 const ARCHETYPE_GUIDE: Record<Archetype, string> = {
