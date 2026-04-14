@@ -217,7 +217,8 @@ export default function PCVerdictScreen() {
       clearanceState: runtimeState,
     })
 
-    // Phase 6 중재 유형별 점수 보정
+    // Phase 6 중재 유형별 점수 보정 — 에러 시에도 summary 생성 보장
+    try {
     const mediationChoice = runtimeState.mediationChoice
     const responsibilityValues = Object.values(verdictInput.responsibility) as { a: number; b: number }[]
     const gapAvg = responsibilityValues.length > 0
@@ -260,11 +261,11 @@ export default function PCVerdictScreen() {
       responsibility_gap_average: gapAvg,
       high_ambiguity_pending_count: highWeightDisputes.filter(d => verdictInput.factFindings[d.id] === 'pending').length,
       resolved_low_or_medium_ambiguity_count: caseData.disputes.filter(d => d.ambiguity !== 'high' && verdictInput.factFindings[d.id] && verdictInput.factFindings[d.id] !== 'pending').length,
-      discovered_privacy_evidence_count: caseData.evidence.filter(
+      discovered_privacy_evidence_count: (caseData.evidence ?? []).filter(
         e => e.legitimacy === 'privacy_concern' && evidenceStates[e.id]?.presented,
       ).length,
       evidence_legality_judged_count: Object.keys(verdictInput.evidenceLegality ?? {}).length,
-      confidential_evidence_protected_count: caseData.evidence.filter(
+      confidential_evidence_protected_count: (caseData.evidence ?? []).filter(
         e => evidenceStates[e.id]?.confidentialSource && evidenceStates[e.id]?.presented,
       ).length,
     }
@@ -382,6 +383,24 @@ export default function PCVerdictScreen() {
     }
 
     checkAndGrantRewards()
+    } catch (err) {
+      console.error('[Verdict] mediation/summary error:', err)
+      // 에러 시에도 기본 summary 생성
+      if (!useGameStore.getState().verdictSummary) {
+        setVerdictSummary(generateVerdictSummary({
+          caseName: caseData.context.description || caseData.caseId,
+          partyAName: caseData.duo.partyA.name,
+          partyBName: caseData.duo.partyB.name,
+          percentA: 50,
+          selectedSolution: verdictInput.selectedSolutions.join(', ') || '미선택',
+          keyEvidenceNames: [],
+          keyTransition: null,
+          judgeTitle: '재판관',
+          totalTurns: turnCount,
+          contradictionsFound: 0,
+        }))
+      }
+    }
     advancePhase(GamePhase.Result)
   }
 
