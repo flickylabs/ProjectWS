@@ -1,30 +1,28 @@
 /**
- * friend-01 리뉴얼 데이터 등록
- * GPT Batch: V2 ClaimAtom + ExecutableVerbalTell + BeatScript + V3 GameLoop
+ * friend-01 데이터 등록 (v3 fallback 패턴)
+ * ─────────────────────────────────────────
+ * runtimeCase에서 ClaimPolicies를 자동 생성하고,
+ * v3GameLoopData는 fallback으로 빈 DossierCards + 자동 이벤트/전이 비트를 사용한다.
+ * GPT Pro에서 올바른 DossierCards가 생성되면 v3GameLoopData를 교체할 것.
  */
 import { registerClaimPolicies } from '../claimPolicyLoader'
-import { registerExecutableTells } from '../executableTellLoader'
-import { registerV3GameLoopData, registerBeatScripts } from '../../engine/v3GameLoopLoader'
-import { friend01V2Atoms } from '../../../docs/ref/리뉴얼참고/gpt-batch/friend-01/friend-01-v2-atoms'
-import { friend01TellsBeats } from '../../../docs/ref/리뉴얼참고/gpt-batch/friend-01/friend-01-tells-beats'
-import { friend01V3GameLoopData } from '../../../docs/ref/리뉴얼참고/gpt-batch/friend-01/friend-01-v3-game-loop-data'
+import { registerV3GameLoopData } from '../../engine/v3GameLoopLoader'
 import { registerStructureV2 } from '../../engine/v2DataLoader'
+import runtimeCase from '../cases/generated/friend-01.json'
 import structureV2 from './friend-01-structure-v2.json'
+import { buildV3FallbackClaimPolicies } from './v3FallbackClaimPolicies'
+import { ensureV3RuntimeGameLoopData } from './v3FallbackGameLoopData'
 
 export function registerFriend01Data(): void {
-  console.log('[Renewal] friend-01 리뉴얼 데이터 등록 시작')
+  console.log('[Renewal] friend-01 data registration start')
 
-  registerClaimPolicies('friend-01', (friend01V2Atoms as any).claimPolicies)
+  // Case JSON 기반 ClaimPolicies 자동 생성
+  const runtimeV3Data = ensureV3RuntimeGameLoopData(runtimeCase as any, { caseId: 'friend-01' } as any)
+  registerClaimPolicies('friend-01', buildV3FallbackClaimPolicies(runtimeCase as any, runtimeV3Data as any))
+  registerV3GameLoopData(runtimeV3Data as any)
 
-  registerExecutableTells('friend-01', 'a', (friend01TellsBeats as any).executableTells.a)
-  registerExecutableTells('friend-01', 'b', (friend01TellsBeats as any).executableTells.b)
-
-  registerV3GameLoopData(friend01V3GameLoopData as any)
-
-  registerBeatScripts('friend-01', (friend01TellsBeats as any).beatScripts)
-
-
-  // V2 Structure 등록
+  // Structure V2 등록 (최소 유효 — GPT Pro 확장 대기)
   registerStructureV2(structureV2 as any)
-  console.log('[Renewal] friend-01 등록 완료: V2 + Tell + V3 GameLoop + BeatFallback + StructureV2')
+
+  console.log('[Renewal] friend-01 registration complete (v3 fallback)')
 }

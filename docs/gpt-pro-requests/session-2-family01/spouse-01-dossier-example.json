@@ -1,0 +1,252 @@
+{
+  "caseId": "spouse-01",
+  "dossierCards": [
+    {
+      "id": "dc-1",
+      "name": "오피스텔의 사람들",
+      "description": "외도 서사를 가족 돌봄 서사로 뒤집는 첫 반전 카드다.",
+      "evidenceIds": [
+        "e-2",
+        "e-4"
+      ],
+      "relatedDisputes": [
+        "d-1",
+        "h-d4"
+      ],
+      "subjectParty": "b",
+      "leadId": "L-1",
+      "successConditionSummary": [
+        "e-4가 Original 이상",
+        "B에게 공감접근 또는 분리심문 사용"
+      ],
+      "successEffects": [
+        "d-1 핵심 사실 \"외도 아님\" 잠정 인정 가능",
+        "B가 시댁 불화와 조카 사정을 직접 언급"
+      ],
+      "challenges": [
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dc-1.b.q1",
+              "text": "그 오피스텔에 있던 사람이 외도 상대가 아니라 형과 조카라면, 왜 지금까지 한마디도 못 했습니까?",
+              "lockedHint": "형 문자와 조카 알림이 원본 수준까지 열려야 질문이 보인다.",
+              "attackVector": "context",
+              "requiredLieState": "S2",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "spouse-v3-01:b:d-1:S3:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dc-2",
+      "name": "시댁 얘기만 나오면 싸움",
+      "description": "왜 숨겼는가를 외도 은폐가 아니라 시댁 불화 공포로 정리하는 카드다.",
+      "evidenceIds": [
+        "e-3",
+        "e-4"
+      ],
+      "relatedDisputes": [
+        "d-1"
+      ],
+      "subjectParty": "b",
+      "leadId": "L-2",
+      "successConditionSummary": [
+        "L-2 완성",
+        "정확히 답변하십시오 사용 또는 B의 모호어 제거 상태"
+      ],
+      "successEffects": [
+        "d-1의 왜 숨겼나 칸이 채워진다",
+        "민감정보 봉인 해제 없이도 시댁 불화 맥락 일부 확보"
+      ],
+      "challenges": [
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dc-2.b.q1",
+              "text": "숨긴 이유가 외도가 아니라면, 당신은 아내보다 시댁과의 싸움을 더 두려워한 겁니까?",
+              "lockedHint": "B가 모호어를 버리고 숨김의 이유를 설명하기 시작해야 열린다.",
+              "attackVector": "context",
+              "requiredLieState": "S3",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "spouse-v3-01:b:d-1:S4:1",
+                "lieAdvance": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dc-3",
+      "name": "3,000만 원의 권한",
+      "description": "공동 적금 3,000만 원을 혼자 형에게 보낼 권리가 있었는지 정면으로 묻는 카드다.",
+      "evidenceIds": [
+        "e-4",
+        "e-5"
+      ],
+      "relatedDisputes": [
+        "d-2"
+      ],
+      "subjectParty": "b",
+      "leadId": "L-3",
+      "successConditionSummary": [
+        "L-3 완성",
+        "e-5가 Original 이상"
+      ],
+      "successEffects": [
+        "d-2가 S4~S5로 진전",
+        "B가 빚 상환 이유와 자기정당화의 한계를 함께 인정"
+      ],
+      "challenges": [
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dc-3.b.q1",
+              "text": "공동 적금 3,000만 원을 형에게 줄 권리가 정말 당신 혼자에게 있었습니까?",
+              "lockedHint": "3,000만 원 해지와 형 계좌 이체가 원본 수준까지 열려야 보인다.",
+              "attackVector": "authenticity",
+              "requiredLieState": "S3",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "spouse-v3-01:b:d-2:S4:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dc-3.b.q2",
+              "text": "가족을 돕는 일이었다 해도, 배우자 동의 없이 공동 적금을 깬 책임은 인정합니까?",
+              "lockedHint": "B가 3,000만 원 전액 이체 사실을 이미 인정해야 마지막 질문이 열린다.",
+              "attackVector": "context",
+              "requiredLieState": "S4",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "spouse-v3-01:b:d-2:S5:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dc-4",
+      "name": "2,000만 원의 수치",
+      "description": "A가 남편의 진실을 확인하기도 전에 2,000만 원을 옮긴 이유를 정면으로 묻는 카드다.",
+      "evidenceIds": [
+        "e-6"
+      ],
+      "relatedDisputes": [
+        "h-d3"
+      ],
+      "subjectParty": "a",
+      "leadId": "L-4",
+      "successConditionSummary": [
+        "L-4 완성",
+        "A에게 동기탐색 누적 2회 이상"
+      ],
+      "successEffects": [
+        "h-d3가 생성되거나 심화",
+        "A의 수치심과 사기 피해 고백이 열린다"
+      ],
+      "challenges": [
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dc-4.a.q1",
+              "text": "남편의 진실을 확인하기도 전에 2,000만 원을 먼저 움직인 이유가, 결국 이혼 대비였습니까?",
+              "lockedHint": "2,000만 원 송금 축과 A의 방어 발언이 함께 붙어야 열린다.",
+              "attackVector": "context",
+              "requiredLieState": "S2",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "spouse-v3-01:a:h-d3:S3:0",
+                "lieAdvance": true
+              }
+            },
+            {
+              "id": "dc-4.a.q2",
+              "text": "그 2,000만 원을 보내고 사기당한 사실까지 숨긴 건 결국 수치심 때문이었습니까?",
+              "lockedHint": "A가 송금 동기를 어느 정도 인정해야 두 번째 질문이 열린다.",
+              "attackVector": "authenticity",
+              "requiredLieState": "S3",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "spouse-v3-01:a:h-d3:S4:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dc-5",
+      "name": "5,000만 원의 순서",
+      "description": "누가 먼저 숨겼는지와 누가 먼저 돈을 움직였는지를 같은 질문 안에서 분리해 묻는 최종 카드다.",
+      "evidenceIds": [
+        "e-5",
+        "e-6",
+        "e-7"
+      ],
+      "relatedDisputes": [
+        "h-d4"
+      ],
+      "subjectParty": "both",
+      "leadId": "L-5",
+      "successConditionSummary": [
+        "L-5 완성",
+        "e-7이 Original 이상"
+      ],
+      "successEffects": [
+        "h-d4 해금",
+        "평의의 무슨 일이 있었나와 왜 숨겼나 두 칸이 함께 채워진다"
+      ],
+      "challenges": [
+        {
+          "targetParty": "b",
+          "questions": [
+            {
+              "id": "dc-5.b.q1",
+              "text": "숨김은 누가 먼저 시작했고, 돈은 누가 먼저 움직였습니까?",
+              "lockedHint": "e-7 시간축이 열려야 순서 질문이 가능하다.",
+              "attackVector": "authenticity",
+              "requiredLieState": "S2",
+              "onSuccess": {
+                "blockVector": "authenticity",
+                "revealAtom": "spouse-v3-01:b:h-d4:S3:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        },
+        {
+          "targetParty": "a",
+          "questions": [
+            {
+              "id": "dc-5.a.q1",
+              "text": "남편이 먼저 숨겼다고 해도, 실제 비밀 송금 실행은 당신이 먼저였다는 점까지 인정합니까?",
+              "lockedHint": "A가 2,000만 원 송금을 일부 인정한 뒤에야 열린다.",
+              "attackVector": "context",
+              "requiredLieState": "S2",
+              "onSuccess": {
+                "blockVector": "context",
+                "revealAtom": "spouse-v3-01:a:h-d4:S3:0",
+                "lieAdvance": true
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

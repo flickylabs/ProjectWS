@@ -1,50 +1,28 @@
 /**
- * family-01 전체 리뉴얼 데이터 등록
- * Session 3: ClaimPolicy V1 + Bridge + EvidenceChallenge
- * Session 1 Round2: ExecutableVerbalTell + BeatScript
- * Session 2 Round2: V2 ClaimPolicy Atom + V3 Game Loop
+ * family-01 데이터 등록 (v3 fallback 패턴)
+ * ─────────────────────────────────────────
+ * runtimeCase에서 ClaimPolicies를 자동 생성하고,
+ * v3GameLoopData는 fallback으로 빈 DossierCards + 자동 이벤트/전이 비트를 사용한다.
+ * GPT Pro에서 올바른 DossierCards가 생성되면 v3GameLoopData를 교체할 것.
  */
 import { registerClaimPolicies } from '../claimPolicyLoader'
-import { registerExecutableTells } from '../executableTellLoader'
-import { registerBridge } from '../../engine/bridgeEngine'
-import { registerEvidenceChallenges } from '../../engine/evidenceChallengeEngine'
-import { registerV3GameLoopData, registerBeatScripts } from '../../engine/v3GameLoopLoader'
-import { registerStructureV2, registerBeatsV2 } from '../../engine/v2DataLoader'
-import session3 from './family-01-data.json'
-import { family01TellsBeats } from '../../../docs/ref/리뉴얼참고/gpt-session1/output/family-01-tells-beats'
-import { family01V2Atoms } from '../../../docs/ref/리뉴얼참고/gpt-session2/output/family-01-v2-atoms'
-import { family01V3GameLoopData } from '../../../docs/ref/리뉴얼참고/gpt-session2/output/family-01-v3-game-loop-data'
+import { registerV3GameLoopData } from '../../engine/v3GameLoopLoader'
+import { registerStructureV2 } from '../../engine/v2DataLoader'
+import runtimeCase from '../cases/generated/family-01.json'
 import structureV2 from './family-01-structure-v2.json'
-import beatsV2 from './family-01-beats-v2-full.json'
+import { buildV3FallbackClaimPolicies } from './v3FallbackClaimPolicies'
+import { ensureV3RuntimeGameLoopData } from './v3FallbackGameLoopData'
 
 export function registerFamily01Data(): void {
-  console.log('[Renewal] family-01 리뉴얼 데이터 등록 시작')
+  console.log('[Renewal] family-01 data registration start')
 
-  // V2 atom 데이터 (V1 ClaimPolicy를 대체)
-  registerClaimPolicies('family-01', (family01V2Atoms as any).claimPolicies)
+  // Case JSON 기반 ClaimPolicies 자동 생성
+  const runtimeV3Data = ensureV3RuntimeGameLoopData(runtimeCase as any, { caseId: 'family-01' } as any)
+  registerClaimPolicies('family-01', buildV3FallbackClaimPolicies(runtimeCase as any, runtimeV3Data as any))
+  registerV3GameLoopData(runtimeV3Data as any)
 
-  // Bridge
-  registerBridge({
-    caseId: 'family-01',
-    bridges: session3.bridges as any,
-  })
-
-  // EvidenceChallenge
-  registerEvidenceChallenges('family-01', session3.evidenceChallenges as any)
-
-  // ExecutableVerbalTell
-  registerExecutableTells('family-01', 'a', (family01TellsBeats as any).executableTells.a)
-  registerExecutableTells('family-01', 'b', (family01TellsBeats as any).executableTells.b)
-
-  // V3 Game Loop Data (DossierCard + StateUnlockAtom + EventText + TransitionBeat)
-  registerV3GameLoopData(family01V3GameLoopData as any)
-
-  // BeatScript 런타임 fallback 등록
-  registerBeatScripts('family-01', (family01TellsBeats as any).beatScripts)
-
-  // V2 Structure + BeatScript V2 등록
+  // Structure V2 등록 (최소 유효 — GPT Pro 확장 대기)
   registerStructureV2(structureV2 as any)
-  registerBeatsV2(beatsV2 as any)
 
-  console.log('[Renewal] family-01 등록 완료: V2 + Bridge + EvidenceChallenge + Tell + V3 GameLoop + BeatFallback + StructureV2 + BeatsV2')
+  console.log('[Renewal] family-01 registration complete (v3 fallback)')
 }

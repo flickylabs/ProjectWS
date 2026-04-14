@@ -3,6 +3,7 @@
  * 번들에 직접 포함하지 않고, 필요할 때 로드.
  */
 import type { CaseData, LieConfig } from '../../types'
+import { postposition } from '../../engine/koreanPostposition'
 
 // Vite의 glob import로 모든 JSON을 lazy 로드 가능하게 등록
 const caseModules = import.meta.glob('./generated/*.json', { eager: true }) as Record<string, { default: any }>
@@ -303,28 +304,51 @@ function replaceABWithNames(caseData: any) {
   const nameB = caseData.duo?.partyB?.name
   if (!nameA || !nameB) return
 
+  // 조사 헬퍼: 이름 받침 유무에 따라 올바른 조사 선택
+  const ppGA = (name: string) => postposition(name, '이', '가')
+  const ppNUN = (name: string) => postposition(name, '은', '는')
+  const ppRUL = (name: string) => postposition(name, '을', '를')
+  const ppGWA = (name: string) => postposition(name, '과', '와')
+  const ppDO = (name: string) => postposition(name, '도', '도')
+
   const sub = (text: string) => {
     if (typeof text !== 'string') return text
     return text
-      .replace(/\bA 씨\b/g, `${nameA} 씨`)
-      .replace(/\bB 씨\b/g, `${nameB} 씨`)
-      .replace(/\bA가 /g, `${nameA}이 `)
-      .replace(/\bB가 /g, `${nameB}이 `)
+      .replace(/\bA 씨/g, `${nameA} 씨`)
+      .replace(/\bB 씨/g, `${nameB} 씨`)
+      .replace(/\bA가 /g, `${nameA}${ppGA(nameA)} `)
+      .replace(/\bB가 /g, `${nameB}${ppGA(nameB)} `)
       .replace(/\bA의 /g, `${nameA}의 `)
       .replace(/\bB의 /g, `${nameB}의 `)
-      .replace(/\bA는 /g, `${nameA}은 `)
-      .replace(/\bB는 /g, `${nameB}은 `)
-      .replace(/\bA를 /g, `${nameA}을 `)
-      .replace(/\bB를 /g, `${nameB}을 `)
+      .replace(/\bA는 /g, `${nameA}${ppNUN(nameA)} `)
+      .replace(/\bB는 /g, `${nameB}${ppNUN(nameB)} `)
+      .replace(/\bA를 /g, `${nameA}${ppRUL(nameA)} `)
+      .replace(/\bB를 /g, `${nameB}${ppRUL(nameB)} `)
+      .replace(/\bA와 /g, `${nameA}${ppGWA(nameA)} `)
+      .replace(/\bB와 /g, `${nameB}${ppGWA(nameB)} `)
+      .replace(/\bA도 /g, `${nameA}${ppDO(nameA)} `)
+      .replace(/\bB도 /g, `${nameB}${ppDO(nameB)} `)
       .replace(/\bA에게/g, `${nameA}에게`)
       .replace(/\bB에게/g, `${nameB}에게`)
+      .replace(/\bA 쪽/g, `${nameA} 쪽`)
+      .replace(/\bB 쪽/g, `${nameB} 쪽`)
       .replace(/\bA 아버지/g, `${nameA} 아버지`)
       .replace(/\bB 아버지/g, `${nameB} 아버지`)
+      .replace(/\bA 사업/g, `${nameA} 사업`)
+      .replace(/\bB 사업/g, `${nameB} 사업`)
   }
+
+  // 식별자 키는 치환 제외
+  const SKIP_KEYS = new Set([
+    'caseId', 'id', 'duoId', 'disputeId', 'evidenceId', 'witnessId',
+    'relationshipType', 'contextType', 'type', 'speaker', 'party',
+    'archetype', 'verbalTell', 'digitalHabit', 'key', 'schemaVersion',
+  ])
 
   const walk = (obj: any) => {
     if (!obj || typeof obj !== 'object') return
     for (const key of Object.keys(obj)) {
+      if (SKIP_KEYS.has(key)) continue
       if (typeof obj[key] === 'string') {
         obj[key] = sub(obj[key])
       } else if (typeof obj[key] === 'object') {
@@ -333,11 +357,15 @@ function replaceABWithNames(caseData: any) {
     }
   }
 
-  // meta, context, disputes, truthTable의 텍스트 필드만 치환
-  walk(caseData.meta)
-  walk(caseData.context)
-  walk(caseData.disputes)
-  walk(caseData.truthTable)
+  // 전체 객체 순회 (duo 제외 — 이름 원본 보존)
+  for (const topKey of Object.keys(caseData)) {
+    if (topKey === 'duo' || topKey === 'caseId') continue
+    if (typeof caseData[topKey] === 'string') {
+      caseData[topKey] = sub(caseData[topKey])
+    } else if (typeof caseData[topKey] === 'object') {
+      walk(caseData[topKey])
+    }
+  }
 }
 
 function normalizeArchetype(a: string): 'avoidant' | 'confrontational' | 'victim_cosplay' | 'cold_logic' {
