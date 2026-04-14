@@ -5,7 +5,7 @@ import { loadDriftState, loadExtendedHistory, loadJudgePerks, loadProgressionSta
 import { deriveCaseProfile, deriveJudgeProfile, TITLE_LABELS, AXIS_LABELS, TIER_LABELS, LEVEL_LABELS } from '../../../engine/judgeProfileEngine'
 import type { AxisLevelState } from '../../../engine/judgeProfileEngine'
 import type { PerkId } from '../../../engine/judgePerks'
-import { TRAIT_META, applyRewardsToInventory, canEnhanceTrait, computeCaseRewards, type FragmentReward, type TraitId } from '../../../engine/judgeProgressionEngine'
+import { TRAIT_META, FRAGMENT_TABLE, applyRewardsToInventory, canEnhanceTrait, computeCaseRewards, type FragmentReward, type TraitId } from '../../../engine/judgeProgressionEngine'
 import { GamePhase } from '../../../types'
 import { useGameStore, useStore } from '../../../store/useGameStore'
 import { saveCaseProgress } from '../../phase/CaseMap'
@@ -17,12 +17,13 @@ import PCClearanceDetailPopup from './PCClearanceDetailPopup'
 import { evaluateClearance } from '../../../engine/clearanceTracker'
 import PCFragmentRewardOverlay from './PCFragmentRewardOverlay'
 
-type ResultTab = 'result' | 'verdict_pronounce' | 'epilogue'
+type ResultTab = 'result' | 'verdict_pronounce' | 'epilogue' | 'bonus'
 
 const TABS: { id: ResultTab; label: string }[] = [
   { id: 'result', label: '01 결과 확인' },
   { id: 'verdict_pronounce', label: '02 판결 선고' },
   { id: 'epilogue', label: '03 후일담' },
+  { id: 'bonus', label: '04 보너스' },
 ]
 
 function getRating(total: number): string {
@@ -375,7 +376,7 @@ export default function PCResultScreen() {
     .sort((a, b) => (diffOrder[a.meta?.difficulty ?? 'medium'] ?? 1) - (diffOrder[b.meta?.difficulty ?? 'medium'] ?? 1))
   const currentIdx = sessionCases.findIndex((item) => item.caseId === caseData.caseId)
   const nextCase = currentIdx >= 0 ? sessionCases[currentIdx + 1] : null
-  const rewardOverlayOpen = rewardBundle.rewards.length > 0 && !rewardOverlayDismissed
+  const rewardOverlayOpen = false // 보너스 탭으로 이동 — 팝업 비활성
 
   const handleExit = () => {
     resetAftermathCache()
@@ -527,7 +528,7 @@ export default function PCResultScreen() {
                     { label: '통찰', value: verdictScore.insight, color: 'var(--pc-blue)' },
                     { label: '권위', value: verdictScore.authority, color: 'var(--pc-gold)' },
                     { label: '지혜', value: verdictScore.wisdom, color: 'var(--pc-green)' },
-                    { label: '클리어율', value: clearanceResult.percent, color: '#d4a24e' },
+                    { label: '달성율', value: clearanceResult.percent, color: '#d4a24e', isClearance: true },
                   ].map((axis) => {
                     const pct = Math.min(axis.value, 100)
                     const dash = (pct / 100) * 251
@@ -541,17 +542,17 @@ export default function PCResultScreen() {
                             transform="rotate(-90 50 50)" strokeLinecap="round"
                             className="pc-result-donut-ring"
                           />
-                          <text x="50" y="56" textAnchor="middle" fill="#f2efe8" fontSize="28" fontWeight="900">{axis.value}</text>
+                          <text x="50" y="52" textAnchor="middle" fill="#f2efe8" fontSize="28" fontWeight="900">{axis.value}</text>
+                          {'isClearance' in axis && axis.isClearance ? (
+                            <text x="50" y="68" textAnchor="middle" fill="#8b8b9a" fontSize="9" fontWeight="600"
+                              style={{ cursor: 'pointer' }} onClick={handleOpenClearanceDetail}>
+                              상세보기
+                            </text>
+                          ) : null}
                         </svg>
                       </div>
                     )
                   })}
-                </div>
-
-                <div className="pc-result-clearance-detail">
-                  <button className="pc-result-clearance-detail__button" onClick={handleOpenClearanceDetail} type="button">
-                    상세 보기
-                  </button>
                 </div>
 
                 {/* 쟁점별 정답 공개 */}
@@ -731,6 +732,64 @@ export default function PCResultScreen() {
                 {/* 하단 버튼 */}
                 <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: 20 }}>
                   <button className="pc-verdict-footer__button" onClick={() => setTab('verdict_pronounce')} type="button">&lt; 이전</button>
+                  <button className="pc-verdict-footer__button is-primary" onClick={() => setTab('bonus')} type="button">다음 &gt;</button>
+                </div>
+              </div>
+            ) : null}
+
+            {/* ━━━ 보너스 탭 ━━━ */}
+            {tab === 'bonus' ? (
+              <div className="pc-result-text">
+                <div style={{ textAlign: 'center', marginBottom: 16 }}>
+                  <div style={{ fontSize: 12, fontWeight: 800, letterSpacing: '0.2em', color: 'var(--pc-gold-light)', textTransform: 'uppercase' }}>Bonus</div>
+                  <h2 style={{ fontSize: 22, fontWeight: 900, color: '#f2efe8', margin: '8px 0 4px' }}>조각 획득</h2>
+                  <p style={{ fontSize: 13, color: '#8c8fa0' }}>이번 재판에서 획득한 성향 조각입니다.</p>
+                </div>
+
+                <div style={{
+                  border: '1px solid rgba(212,162,78,0.15)', borderRadius: 16,
+                  padding: '20px 24px', background: 'rgba(212,162,78,0.02)',
+                  marginBottom: 24,
+                }}>
+                  {rewardBundle.rewards.length > 0 ? (
+                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: 12, justifyContent: 'center' }}>
+                      {rewardBundle.rewards.map((reward, idx) => {
+                        const def = FRAGMENT_TABLE.find(f => f.id === reward.fragmentId)
+                        return (
+                          <div key={idx} style={{
+                            display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 4,
+                            padding: '12px 16px', borderRadius: 12,
+                            border: '1px solid rgba(255,255,255,0.06)', background: 'rgba(255,255,255,0.02)',
+                            minWidth: 80,
+                          }}>
+                            <span style={{ fontSize: 24 }}>{def?.emoji ?? '?'}</span>
+                            <span style={{ fontSize: 12, fontWeight: 700, color: '#e0ddd6' }}>{def?.name ?? reward.fragmentId}</span>
+                            <span style={{ fontSize: 18, fontWeight: 900, color: 'var(--pc-gold-light)' }}>+{reward.count}</span>
+                            <span style={{ fontSize: 10, color: '#6b6e7e' }}>{reward.reason}</span>
+                          </div>
+                        )
+                      })}
+                    </div>
+                  ) : (
+                    <p style={{ textAlign: 'center', color: '#6b6e7e', fontSize: 13 }}>이번 재판에서 획득한 조각이 없습니다.</p>
+                  )}
+                </div>
+
+                {rewardBundle.enhanceableTraits.length > 0 && (
+                  <div style={{
+                    padding: '12px 16px', borderRadius: 10,
+                    background: 'rgba(92,201,122,0.06)', border: '1px solid rgba(92,201,122,0.15)',
+                    textAlign: 'center', marginBottom: 24,
+                  }}>
+                    <span style={{ fontSize: 13, fontWeight: 700, color: '#5cc97a' }}>
+                      성향 강화 가능! — 내 정보에서 확인하세요
+                    </span>
+                  </div>
+                )}
+
+                {/* 하단 버튼 */}
+                <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: 20 }}>
+                  <button className="pc-verdict-footer__button" onClick={() => setTab('epilogue')} type="button">&lt; 이전</button>
                   <button className="pc-verdict-footer__button is-primary" onClick={handleExit} type="button">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" style={{ display: 'inline-block', verticalAlign: 'middle', marginRight: 4 }}><path d="M3 12l9-8 9 8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/><path d="M5 10v9a1 1 0 001 1h4v-5h4v5h4a1 1 0 001-1v-9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
                     홈으로
