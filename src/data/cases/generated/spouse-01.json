@@ -1750,7 +1750,7 @@
       ],
       "isTrap": false,
       "requires": [
-        "e-5"
+        "e-7"
       ],
       "requiredLieState": "S2",
       "investigationResults": {
@@ -1972,8 +1972,7 @@
       ],
       "isTrap": false,
       "requires": [
-        "e-5",
-        "e-6"
+        "e-5"
       ],
       "requiredLieState": "S3",
       "investigationResults": {

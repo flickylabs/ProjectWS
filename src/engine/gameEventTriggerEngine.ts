@@ -115,11 +115,13 @@ const EMERGENCE_MIN_PROGRESS = 2
 let lastInterjectionTurn = -99
 let lastEmotionalBurstTurn = -99
 let lastContradictionTurn = -99
+let lastContradictionDisputeId = ''
 
 export function resetEventTriggerState(): void {
   lastInterjectionTurn = -99
   lastEmotionalBurstTurn = -99
   lastContradictionTurn = -99
+  lastContradictionDisputeId = ''
 }
 
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -137,6 +139,7 @@ export function evaluateEventTriggers(snapshot: TurnSnapshot): GameEventTrigger 
   const contradiction = checkContradiction(snapshot)
   if (contradiction) {
     lastContradictionTurn = snapshot.turn
+    lastContradictionDisputeId = snapshot.focusDisputeId
     return contradiction
   }
 
@@ -174,8 +177,9 @@ export function getEventEffects(trigger: GameEventTrigger): TriggerEffect[] {
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 function checkContradiction(snapshot: TurnSnapshot): GameEventTrigger | null {
-  // 쿨다운 체크
-  if (snapshot.turn - lastContradictionTurn < 2) return null
+  // 쿨다운 체크 (4턴) + 같은 쟁점 연속 방지 (6턴)
+  if (snapshot.turn - lastContradictionTurn < 4) return null
+  if (snapshot.focusDisputeId === lastContradictionDisputeId && snapshot.turn - lastContradictionTurn < 6) return null
 
   const party = snapshot.activeParty
   const meterEffects = getMeterEffects(snapshot.meters[party])
