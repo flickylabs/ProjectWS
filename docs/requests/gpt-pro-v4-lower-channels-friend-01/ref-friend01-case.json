@@ -1,0 +1,307 @@
+{
+  "caseId": "case-friend-01",
+  "duo": {
+    "duoId": "duo-friend-v4-01",
+    "relationshipType": "friend",
+    "partyA": {
+      "id": "a",
+      "name": "송다은",
+      "age": 31,
+      "occupation": "온라인 쇼핑몰 CS 직원",
+      "incomeBracket": "mid",
+      "archetype": "premature_summary",
+      "speechStyle": "결론부터 말하고 그 안에 근거를 끼워 넣는다. 상대가 반박하면 이미 끝난 얘기를 다시 꺼내며 맥락을 자기 쪽으로 좁힌다.",
+      "pride": 7,
+      "fear": "아버지의 진짜 모습이 드러나는 것을 가장 두려워한다.",
+      "riskAppetite": 5,
+      "digitalHabit": "messenger_main",
+      "dailyRoutine": "쇼핑몰 CS 업무를 마치면 예비신랑과 결혼 준비를 하고, 공통 친구 단톡방에 일상을 올리며 관계를 유지한다.",
+      "sensitivePoints": [
+        "아버지의 돈 문제",
+        "과거 손절의 진짜 이유",
+        "확인 없이 단톡방에 올린 일"
+      ],
+      "verbalTells": [
+        {
+          "type": "premature_conclusion",
+          "trigger": "cornered",
+          "pattern": "상대 말이 끝나기 전에 '그러니까 결국~'으로 결론을 먼저 내려버린다."
+        },
+        {
+          "type": "pattern_citation",
+          "trigger": "defensive",
+          "pattern": "'예전에도 그랬잖아'라며 과거 사례를 현재 판단의 근거로 가져온다."
+        },
+        {
+          "type": "scope_narrowing",
+          "trigger": "shame",
+          "pattern": "불리한 지점이 나오면 '그건 지금 얘기가 아니다'라며 범위를 좁힌다."
+        }
+      ],
+      "callTerms": {
+        "toPartner": "수민아",
+        "toJudge": "제 전 친구",
+        "angry": "최수민!"
+      },
+      "pcFaceType": "female_young"
+    },
+    "partyB": {
+      "id": "b",
+      "name": "최수민",
+      "age": 31,
+      "occupation": "필라테스 강사",
+      "incomeBracket": "mid",
+      "archetype": "affect_flattening",
+      "speechStyle": "감정을 눌러 담고 사실만 나열한다. 정작 가장 아픈 이야기를 할 때 목소리가 더 평평해진다.",
+      "pride": 5,
+      "fear": "A에게 아버지의 진실을 말하면 친구가 아버지를 사기꾼으로 봐야 한다는 것을 알기에 끝까지 말하지 못한다.",
+      "riskAppetite": 3,
+      "digitalHabit": "minimal",
+      "dailyRoutine": "필라테스 수업을 마치면 혼자 정리하고, 공통 친구들과의 연락은 점점 줄었다. 예비신랑에게 연락할 때도 카페에서 혼자 문자를 보냈다.",
+      "sensitivePoints": [
+        "A 아버지에게 당한 사기",
+        "예비신랑이 먼저 선을 넘은 사실",
+        "또 악역이 된 현재 상황"
+      ],
+      "verbalTells": [
+        {
+          "type": "flat_delivery",
+          "trigger": "emotional",
+          "pattern": "가장 아픈 이야기를 할 때 오히려 톤이 더 평평해지고 감정이 사라진다."
+        },
+        {
+          "type": "self_blame_shield",
+          "trigger": "cornered",
+          "pattern": "'제가 그냥 참았어야 했는데'라며 책임을 먼저 가져가 상대의 추궁을 무력화한다."
+        },
+        {
+          "type": "third_party_protection",
+          "trigger": "avoiding",
+          "pattern": "핵심 인물의 행동을 직접 말하지 않고 '그쪽 상황이 있었다'로 에둘러 말한다."
+        }
+      ],
+      "callTerms": {
+        "toPartner": "다은아",
+        "toJudge": "다은이",
+        "angry": "송다은!"
+      },
+      "pcFaceType": "female_young"
+    },
+    "relationshipLedger": [
+      {
+        "id": "ledger-1",
+        "category": "distorted",
+        "description": "B가 예비신랑에게 9일간 연락한 사실이 단톡방에서 '집착'으로 프레이밍됐다.",
+        "isReal": true,
+        "whoRemembersAccurately": "b",
+        "whoDistorts": "a",
+        "distortionDirection": "A는 연락의 의도를 확인하지 않고 과거 손절 때와 같은 패턴으로 단정했다.",
+        "currentlyResolved": "surface_only",
+        "emotionalResidue": "strong",
+        "connectionToCurrent": "direct"
+      },
+      {
+        "id": "ledger-2",
+        "category": "silenced",
+        "description": "과거 손절의 진짜 원인은 A 아버지의 사기였으나, B는 A에게 말하지 못하고 악역을 자처했다.",
+        "isReal": true,
+        "whoRemembersAccurately": "b",
+        "whoDistorts": "a",
+        "distortionDirection": "A는 B가 돈 때문에 변심한 것으로 기억하고 있다.",
+        "currentlyResolved": "unresolved",
+        "emotionalResidue": "strong",
+        "connectionToCurrent": "direct"
+      },
+      {
+        "id": "ledger-3",
+        "category": "silenced",
+        "description": "예비신랑이 먼저 B에게 선넘는 메시지를 보냈고 B는 거절했다. 이후 B의 연락은 이 상황의 연장선이었다.",
+        "isReal": true,
+        "whoRemembersAccurately": "b",
+        "whoDistorts": "neither",
+        "distortionDirection": "A는 이 사실 자체를 모른다.",
+        "currentlyResolved": "unresolved",
+        "emotionalResidue": "strong",
+        "connectionToCurrent": "direct"
+      },
+      {
+        "id": "ledger-4",
+        "category": "confirmed",
+        "description": "A가 확인 없이 단톡방에서 B를 매도했고 공통 친구들이 동조했다.",
+        "isReal": true,
+        "whoRemembersAccurately": "both",
+        "whoDistorts": "a",
+        "distortionDirection": "A는 '사실을 알린 것'이라 생각하지만 실제로는 확인 없는 단정이었다.",
+        "currentlyResolved": "unresolved",
+        "emotionalResidue": "strong",
+        "connectionToCurrent": "direct"
+      }
+    ],
+    "socialGraph": [
+      {
+        "id": "w-1",
+        "slot": "close_friend",
+        "name": "김세라",
+        "relationTo": "both",
+        "knowledgeScope": "단톡방에서 A의 글을 보고 B를 비난하는 데 동조했다. 나중에 찜찜한 마음이 들었다.",
+        "witnessedDirectly": true,
+        "bias": "pro_a",
+        "distortionRisk": "strategic",
+        "surfaceKnowledge": "단톡방 분위기와 A의 최초 발언 경위를 아는 공통 친구 증인이다.",
+        "relatedDisputeIds": [
+          "d-5"
+        ],
+        "witnessProfile": {
+          "age": 32,
+          "occupation": "미용실 직원",
+          "relationToA": "고등학교 때부터 친구다.",
+          "relationToB": "A를 통해 알게 된 사이다.",
+          "sentimentToA": 30,
+          "sentimentToB": -10,
+          "speechStyle": "솔직하게 말하되 자기가 동조한 부분은 살짝 줄여서 말한다.",
+          "addressJudge": "재판관님",
+          "addressA": "다은이",
+          "addressB": "수민 씨",
+          "hiddenAgenda": "자신도 B를 비난하는 데 가담한 것이 부끄럽다."
+        }
+      },
+      {
+        "id": "w-2",
+        "slot": "neutral_observer",
+        "name": "박준혁",
+        "relationTo": "neutral",
+        "knowledgeScope": "예비신랑의 회사 후배로, 예비신랑이 B에게 먼저 접근한 사실을 알고 있다.",
+        "witnessedDirectly": true,
+        "bias": "neutral",
+        "distortionRisk": "accurate",
+        "surfaceKnowledge": "예비신랑의 행동 패턴을 아는 제3자 증인이다.",
+        "relatedDisputeIds": [
+          "d-2"
+        ],
+        "witnessProfile": {
+          "age": 34,
+          "occupation": "회사원",
+          "relationToA": "모르는 사이다.",
+          "relationToB": "예비신랑을 통해 한두 번 본 적 있다.",
+          "sentimentToA": 0,
+          "sentimentToB": 0,
+          "speechStyle": "사실 위주로 간결하게 말하며 불필요한 판단은 삼간다.",
+          "addressJudge": "재판관님",
+          "addressA": "그분",
+          "addressB": "그 여자분",
+          "hiddenAgenda": "예비신랑과의 직장 관계가 불편해질까 봐 조심한다."
+        }
+      },
+      {
+        "id": "w-3",
+        "slot": "community_witness",
+        "name": "오미경",
+        "relationTo": "b",
+        "knowledgeScope": "동네 분식집 사장으로, 과거에 A 아버지가 B에게 돈을 빌리러 온 것을 봤다. B가 울면서 가게에 온 적이 있다.",
+        "witnessedDirectly": true,
+        "bias": "pro_b",
+        "distortionRisk": "accurate",
+        "surfaceKnowledge": "과거 A 아버지와 B 사이의 돈 거래를 목격한 제3자 증인이다.",
+        "relatedDisputeIds": [
+          "d-4"
+        ],
+        "witnessProfile": {
+          "age": 58,
+          "occupation": "분식집 사장",
+          "relationToA": "A 아버지를 동네에서 본 적 있다.",
+          "relationToB": "가게 단골이다.",
+          "sentimentToA": 0,
+          "sentimentToB": 20,
+          "speechStyle": "정을 담아 말하되 본 것은 정확하게 전달한다.",
+          "addressJudge": "재판관님",
+          "addressA": "그 집 딸",
+          "addressB": "수민이",
+          "hiddenAgenda": "없음."
+        }
+      }
+    ]
+  },
+  "disputes": [
+    {
+      "id": "d-1",
+      "name": "B의 연락은 예비신랑 집착인가, 위험 경고인가",
+      "truthDescription": "최수민은 예비신랑에게 9일간 연락했다. 집착이 아니라 송다은 아버지의 돈 접근 패턴을 경고하려 했지만, 직접 말할 길이 없었다.",
+      "hidden": false
+    },
+    {
+      "id": "d-2",
+      "name": "예비신랑이 먼저 B에게 찝적댐 사실이 있었는가",
+      "truthDescription": "예비신랑이 먼저 B에게 선넘는 메시지를 보냈고, B는 거절했다. B가 이후 연락한 건 이 상황의 연장선이었다.",
+      "hidden": false
+    },
+    {
+      "id": "d-3",
+      "name": "A 아버지는 예비신랑에게 돈을 떯어내려 접근하고 있었는가",
+      "truthDescription": "A 아버지가 예비신랑에게 돈 얘기를 꺼내고 있었고, B는 과거에 같은 패턴을 당한 적이 있어 예비신랑에게 경고하려 했다.",
+      "hidden": true
+    },
+    {
+      "id": "d-4",
+      "name": "과거 손절 사건의 진짜 원인은 B의 변심이었는가, A 아버지의 사기였는가",
+      "truthDescription": "과거 손절의 진짜 원인은 A 아버지가 B에게 투자 명목으로 돈을 받아간 사기였다. B는 A에게 말하면 아버지가 사기꾼이라는 뜻이 되므로 차마 말하지 못하고 악역을 자처했다.",
+      "hidden": true
+    },
+    {
+      "id": "d-5",
+      "name": "이번 사건에서 B의 명예를 먼저 무너뜨린 건 누구인가",
+      "truthDescription": "A가 확인 없이 단톡방에서 B를 매도했고, B는 또 악역을 자처하는 구조가 반복됐다. 두 사람 모두 확인 전에 단정한 책임이 있다.",
+      "hidden": true
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e-1",
+      "name": "B→예비신랑 연락 기록",
+      "description": "최근 9일 동안 B가 예비신랑에게 전화 6번, 문자 11번을 보냈고 대부분 답이 없거나 짧게 끊긴 기록.",
+      "type": "log",
+      "legitimacy": "lawful"
+    },
+    {
+      "id": "e-2",
+      "name": "공통 친구 단톡방 캡처",
+      "description": "A가 '수민이가 또 내 남자한테 연락한다'고 올렸고, 몇몇 친구들이 B를 비난한 내용.",
+      "type": "chat",
+      "legitimacy": "lawful"
+    },
+    {
+      "id": "e-3",
+      "name": "과거 손절 직전 카톡",
+      "description": "B가 '돈 문제는 내가 알아서 정리할게'라고만 남기고 설명을 피했고, A는 '넌 돈만 엮이면 사람이 달라진다'고 답한 기록.",
+      "type": "chat",
+      "legitimacy": "lawful"
+    },
+    {
+      "id": "e-4",
+      "name": "예비신랑의 선넘는 메시지와 B의 거절 답장",
+      "description": "예비신랑이 '다은이 몰래 커피 한 번 보자', '너 같은 스타일이 원래 내 이상형' 같은 메시지를 보냈고, B는 '친구 남자친구니까 이러지 마'라고 끊어낸 기록.",
+      "type": "chat",
+      "legitimacy": "lawful"
+    },
+    {
+      "id": "e-5",
+      "name": "A 아버지와 예비신랑의 문자",
+      "description": "A 아버지가 '결혼 전에 잠깐만 도와주면 금방 돌려준다', '사위 될 사람이면 이 정도는 믿어야지'라며 돈 얘기를 꺼낸 기록. B가 연락하던 시기와 격침.",
+      "type": "chat",
+      "legitimacy": "lawful"
+    },
+    {
+      "id": "e-6",
+      "name": "과거 송금 영수증 + 문자",
+      "description": "A 아버지가 B에게 '급한 투자금이니 한 달만 쓰고 갚겠다'고 받아간 돈의 이체 내역과, 이후 차일피일 미루며 갚지 않은 문자.",
+      "type": "bank",
+      "legitimacy": "lawful"
+    },
+    {
+      "id": "e-7",
+      "name": "과거·현재 대조표",
+      "description": "A 아버지가 예전에 B에게 보낸 돈 부탁 문구와, 지금 예비신랑에게 보낸 문구가 거의 같고, 그 사이마다 B가 말 대신 혼자 끊고 사라졌던 시점이 한 줄 타임라인으로 정리돼 있다.",
+      "type": "log",
+      "legitimacy": "lawful"
+    }
+  ]
+}
