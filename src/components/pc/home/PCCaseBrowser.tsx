@@ -103,25 +103,30 @@ export default function PCCaseBrowser({
         </div>
       ) : (
         <div className="cb__split">
-          {/* ── 좌: 스테이지 리스트 ── */}
+          {/* ── 좌: 지그재그 스테이지맵 ── */}
           <div className="cb__stages">
-            {stages.map(s => {
-              const active = activeId === s.caseData.caseId
-              return (
-                <button
-                  key={s.caseData.caseId}
-                  className={`cb__stage${active ? ' is-active' : ''}${s.cleared ? ' is-cleared' : ''}${!s.unlocked ? ' is-locked' : ''}`}
-                  disabled={!s.unlocked}
-                  onClick={() => setSelectedCaseId(s.caseData.caseId)}
-                  type="button"
-                >
-                  <span className="cb__stage-num">{s.num}</span>
-                  <span className="cb__stage-score">
-                    {s.score > 0 ? `${s.score}점` : s.unlocked ? '—' : <PCSvgIcon id="i-lock" size={14} />}
-                  </span>
-                </button>
-              )
-            })}
+            <div className="cb__zigzag">
+              <div className="cb__zigzag-line" />
+              {stages.map((s, i) => {
+                const active = activeId === s.caseData.caseId
+                const side = i % 2 === 0 ? 'left' : 'right'
+                return (
+                  <div className={`cb__zigzag-row cb__zigzag-row--${side}`} key={s.caseData.caseId}>
+                    <button
+                      className={`cb__stage${active ? ' is-active' : ''}${s.cleared ? ' is-cleared' : ''}${!s.unlocked ? ' is-locked' : ''}`}
+                      disabled={!s.unlocked}
+                      onClick={() => setSelectedCaseId(s.caseData.caseId)}
+                      type="button"
+                    >
+                      <span className="cb__stage-num">{s.num}</span>
+                      <span className="cb__stage-score">
+                        {s.score > 0 ? `${s.score}점` : s.unlocked ? '—' : <PCSvgIcon id="i-lock" size={14} />}
+                      </span>
+                    </button>
+                  </div>
+                )
+              })}
+            </div>
           </div>
 
           {/* ── 우: 브리핑 패널 ── */}
