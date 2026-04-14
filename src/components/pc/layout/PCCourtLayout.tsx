@@ -13,6 +13,7 @@ import PCDisputeRibbon from './PCDisputeRibbon'
 import PCGameplayOverlay from './PCGameplayOverlay'
 import TokenSpendEffect from '../effects/TokenSpendEffect'
 import MiniGameOverlay from '../minigame/MiniGameOverlay'
+import { MiniGameLaunchButton } from '../minigame/MiniGameFrame'
 import PCInteractionPanel, { openPcInteractionPanel } from './PCInteractionPanel'
 import PCRecordSummary from './PCRecordSummary'
 import { playBgm, playCourtControl } from '../../../engine/soundEngine'
@@ -340,6 +341,7 @@ export default function PCCourtLayout({ actionPanel, onDialogueTap, isDialoguePh
               <PCSvgIcon id="i-search" size={16} />
               <b>{resources.investigationTokens}</b>
             </button>
+            <MiniGameLaunchButton type="memory_match" />
             <button
               className="pc-play-tool is-gold"
               data-pc-token="skill"
@@ -350,6 +352,7 @@ export default function PCCourtLayout({ actionPanel, onDialogueTap, isDialoguePh
               <PCSvgIcon id="i-bolt" size={16} />
               <b>{globalSkillPoints}</b>
             </button>
+            <MiniGameLaunchButton type="skill_runner" />
             <button
               className="pc-play-tool is-red"
               data-pc-token="court"
@@ -360,6 +363,7 @@ export default function PCCourtLayout({ actionPanel, onDialogueTap, isDialoguePh
               <PCSvgIcon id="i-scale" size={16} />
               <b>{resources.courtControl}</b>
             </button>
+            <MiniGameLaunchButton type="whack_a_mole" />
             <div className="nav-sep" />
             <button className="pc-play-tool" onClick={() => openHeaderPanel('turn')} type="button">
               <span>Turn</span>
