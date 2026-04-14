@@ -1,9 +1,16 @@
 import { useMemo, useState } from 'react'
 import type { CaseData } from '../../../types'
 import PCSvgIcon from '../icons/PCSvgIcon'
+import { getPcFaceSymbolId, getPcEvidenceSymbolId } from '../icons/pcIconUtils'
 import { getDifficultyLabel, sortCasesForBrowser } from './pcHomeShared'
 
 const CLEAR_SCORE_THRESHOLD = 40
+
+const ARCHETYPE_LABELS: Record<string, string> = {
+  avoidant: '회피형', confrontational: '정면돌파형',
+  victim_cosplay: '피해자형', cold_logic: '냉정논리형',
+  affect_flattening: '감정억제형', premature_summary: '조기결론형',
+}
 
 interface Props {
   accentIconId?: string
@@ -58,7 +65,6 @@ export default function PCCaseBrowser({
     })
   }, [filteredCases, progressMap])
 
-  // 기본 선택: 최근 해금된 스테이지
   const defaultId = useMemo(() => {
     if (stages.length === 0) return null
     let latest = stages[0].caseData.caseId
@@ -78,7 +84,6 @@ export default function PCCaseBrowser({
         <div className="cb__header-info">
           <span className="cb__eyebrow">{eyebrow ?? 'CASE BROWSER'}</span>
           <h2>{title}</h2>
-          <p>{description}</p>
         </div>
         <div className="cb__header-tools">
           {showCompletedFilter && (
@@ -98,7 +103,7 @@ export default function PCCaseBrowser({
         </div>
       ) : (
         <div className="cb__split">
-          {/* 좌: 스테이지 맵 */}
+          {/* ── 좌: 스테이지 리스트 ── */}
           <div className="cb__stages">
             {stages.map(s => {
               const active = activeId === s.caseData.caseId
@@ -116,51 +121,115 @@ export default function PCCaseBrowser({
                     <strong>{buildStageTitle(s.caseData)}</strong>
                   </div>
                   <span className="cb__stage-score">
-                    {s.score > 0 ? `${s.score}점` : s.unlocked ? '미완료' : <PCSvgIcon id="i-lock" size={14} />}
+                    {s.score > 0 ? `${s.score}점` : s.unlocked ? '—' : <PCSvgIcon id="i-lock" size={14} />}
                   </span>
                 </button>
               )
             })}
           </div>
 
-          {/* 우: 선택된 사건 상세 */}
+          {/* ── 우: 브리핑 패널 ── */}
           <div className="cb__detail">
             {activeCase && activeStage ? (
-              <>
-                <div className="cb__detail-banner">
-                  <span className="cb__eyebrow">STAGE {activeStage.num}</span>
-                  <h3>{buildStageTitle(activeCase)}</h3>
-                </div>
-                <div className="cb__detail-info">
-                  <div className="cb__detail-parties">
-                    <span><PCSvgIcon id="i-person" size={14} /> {activeCase.duo.partyA.name}</span>
-                    <span className="cb__detail-vs">vs</span>
-                    <span><PCSvgIcon id="i-person" size={14} /> {activeCase.duo.partyB.name}</span>
-                  </div>
-                  <div className="cb__detail-meta">
-                    <span>난이도 <b>{getDifficultyLabel(activeCase.meta?.difficulty ?? 'medium')}</b></span>
-                    <span>쟁점 <b>{activeCase.disputes.length}개</b></span>
-                    <span>증거 <b>{activeCase.evidence.length}종</b></span>
-                  </div>
-                  <p className="cb__detail-desc">{buildCaseSummary(activeCase)}</p>
-                  {activeStage.score > 0 && (
-                    <div className="cb__detail-record">
-                      최고 기록 <strong>{activeStage.score}점</strong>
-                    </div>
-                  )}
-                </div>
-                <button className="cb__detail-action" onClick={() => onSelectCase(activeCase)} type="button">
-                  상세 보기 &gt;
-                </button>
-              </>
+              <CaseBriefPanel caseData={activeCase} stageNum={activeStage.num} score={activeStage.score} onStart={() => onSelectCase(activeCase)} />
             ) : (
-              <div className="cb__detail-empty">
-                <p>좌측에서 사건을 선택하세요.</p>
-              </div>
+              <div className="cb__detail-empty"><p>좌측에서 사건을 선택하세요.</p></div>
             )}
           </div>
         </div>
       )}
+    </div>
+  )
+}
+
+// ── 우측 브리핑 패널 (PCCaseBrief 내용 인라인) ──
+
+function CaseBriefPanel({ caseData, stageNum, score, onStart }: {
+  caseData: CaseData; stageNum: string; score: number; onStart: () => void
+}) {
+  const { duo, meta } = caseData
+  const faceA = getPcFaceSymbolId('a', duo.partyA, 'defensive')
+  const faceB = getPcFaceSymbolId('b', duo.partyB, 'defensive')
+  const caseTitle = meta?.title ?? caseData.caseId
+  const bait = meta?.emotionalBait ?? ''
+
+  const visibleDisputes = caseData.disputes.filter(d => !d.hidden && d.v3Visibility !== 'hidden')
+  const initialDisputes = visibleDisputes
+    .filter(d => d.weight === 'high' && d.quadrant !== 'neither_knows' && d.quadrant !== 'shared_misconception')
+    .slice(0, 3)
+  const hiddenCount = caseData.disputes.length - visibleDisputes.length
+
+  const baseEvidence = useMemo(() => {
+    const baseIds = caseData.baseEvidenceIds ?? []
+    return baseIds
+      .map(id => caseData.evidence.find(e => e.id === id))
+      .filter((e): e is NonNullable<typeof e> => Boolean(e))
+      .slice(0, 3)
+  }, [caseData])
+
+  return (
+    <div className="cb__brief">
+      {/* 사건 제목 */}
+      <div className="cb__brief-title">
+        <h3>{caseTitle}</h3>
+        {bait && <p>{bait}</p>}
+      </div>
+
+      {/* 캐릭터 VS */}
+      <div className="cb__brief-vs">
+        <div className="cb__brief-party">
+          <div className="cb__brief-party-text is-right">
+            <span className="cb__brief-name is-a">{duo.partyA.name}</span>
+            <span className="cb__brief-meta">{duo.partyA.age}세 · {duo.partyA.occupation}</span>
+            <span className="cb__brief-archetype">{ARCHETYPE_LABELS[duo.partyA.archetype] ?? ''}</span>
+          </div>
+          <div className="cb__brief-face is-a"><PCSvgIcon id={faceA} size={44} /></div>
+        </div>
+        <span className="cb__brief-vs-badge">VS</span>
+        <div className="cb__brief-party">
+          <div className="cb__brief-face is-b"><PCSvgIcon id={faceB} size={44} /></div>
+          <div className="cb__brief-party-text is-left">
+            <span className="cb__brief-name is-b">{duo.partyB.name}</span>
+            <span className="cb__brief-meta">{duo.partyB.age}세 · {duo.partyB.occupation}</span>
+            <span className="cb__brief-archetype">{ARCHETYPE_LABELS[duo.partyB.archetype] ?? ''}</span>
+          </div>
+        </div>
+      </div>
+
+      {/* 쟁점 + 증거 2열 */}
+      <div className="cb__brief-grid">
+        <div className="cb__brief-section">
+          <h4><PCSvgIcon id="i-gavel" size={13} /> 주요 쟁점</h4>
+          {initialDisputes.map((d, i) => (
+            <div className="cb__brief-item" key={d.id}>
+              <span className="cb__brief-item-num">{i + 1}</span>
+              <span>{d.name}</span>
+            </div>
+          ))}
+          {hiddenCount > 0 && (
+            <p className="cb__brief-hint"><PCSvgIcon id="i-lock" size={10} /> 심문 과정에서 추가 쟁점이 드러날 수 있습니다</p>
+          )}
+        </div>
+        <div className="cb__brief-section">
+          <h4><PCSvgIcon id="i-doc" size={13} /> 초기 증거</h4>
+          {baseEvidence.length > 0 ? baseEvidence.map(ev => (
+            <div className="cb__brief-item" key={ev.id}>
+              <span className="cb__brief-item-icon"><PCSvgIcon id={getPcEvidenceSymbolId(ev.type)} size={14} /></span>
+              <span>{ev.surfaceName ?? ev.name}</span>
+            </div>
+          )) : <p className="cb__brief-hint">초기 증거 미지정</p>}
+        </div>
+      </div>
+
+      {/* 기록 + 입장 */}
+      {score > 0 && (
+        <div className="cb__brief-record">최고 기록 <strong>{score}점</strong></div>
+      )}
+      <button className="cb__brief-start" onClick={onStart} type="button">
+        <PCSvgIcon id="i-gavel" size={18} />
+        <span>사건 입장하기</span>
+        <kbd>Enter</kbd>
+      </button>
     </div>
   )
 }
@@ -171,12 +240,6 @@ function buildStageTitle(c: CaseData) {
   const d = compact(c.disputes[0]?.name ?? '')
   if (d) return truncate(d, 48)
   return truncate(compact(c.meta?.emotionalBait ?? c.context.description), 48)
-}
-
-function buildCaseSummary(c: CaseData) {
-  const t = compact(c.meta?.emotionalBait ?? '')
-  if (t) return truncate(t, 160)
-  return truncate(compact(c.context.description), 160)
 }
 
 function compact(s: string) { return s.replace(/\s+/g, ' ').trim() }
