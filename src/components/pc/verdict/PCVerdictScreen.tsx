@@ -4,6 +4,8 @@ import { completeStage } from '../../../data/campaign'
 import { checkAndGrantRewards } from '../../../engine/rewardEngine'
 import { playGavel } from '../../../engine/soundEngine'
 import { calculateVerdict } from '../../../engine/verdictEngine'
+import { computeMediationScoreModifiers } from '../../../engine/mediationEffectEngine'
+import type { MediationScoreContext } from '../../../engine/mediationEffectEngine'
 import { deriveCaseProfile, applyDriftUpdate } from '../../../engine/judgeProfileEngine'
 import { generateVerdictSummary } from '../../../engine/verdictSummaryEngine'
 import { recordGameComplete } from '../../../hooks/useLocalStorage'
@@ -213,6 +215,45 @@ export default function PCVerdictScreen() {
       processMetrics,
       clearanceState: runtimeState,
     })
+
+    // Phase 6 중재 유형별 점수 보정
+    const mediationChoice = runtimeState.mediationChoice
+    const responsibilityValues = Object.values(verdictInput.responsibility) as { a: number; b: number }[]
+    const gapAvg = responsibilityValues.length > 0
+      ? responsibilityValues.reduce((sum, r) => sum + Math.abs(r.a - r.b), 0) / responsibilityValues.length
+      : 0
+    const pendingCount = Object.values(verdictInput.factFindings).filter(v => v === 'pending').length
+    const highWeightDisputes = caseData.disputes.filter(d => d.ambiguity === 'high')
+    const resolvedHighWeight = highWeightDisputes.filter(d => verdictInput.factFindings[d.id] && verdictInput.factFindings[d.id] !== 'pending').length
+
+    const mediationCtx: MediationScoreContext = {
+      resolved_high_weight_count: resolvedHighWeight,
+      high_weight_total: highWeightDisputes.length,
+      pending_count: pendingCount,
+      total_disputes: caseData.disputes.length,
+      turnsUsed: turnCount,
+      illegal_evidence_admitted_count: Object.values(verdictInput.evidenceLegality ?? {}).filter(v => v === false).length,
+      extreme_blame_dispute_count: responsibilityValues.filter(r => Math.abs(r.a - r.b) >= 80).length,
+      selected_solutions_count: verdictInput.selectedSolutions.length,
+      selected_final_solution_count: verdictInput.selectedSolutions.filter(s => s.includes('final') || s.includes('deadline') || s.includes('closure')).length,
+      selected_temporary_solution_count: verdictInput.selectedSolutions.filter(s => s.includes('temporary') || s.includes('hold') || s.includes('freeze')).length,
+      selected_mutual_solution_count: verdictInput.selectedSolutions.filter(s => s.includes('mutual') || s.includes('reciprocal')).length,
+      selected_one_sided_solution_count: verdictInput.selectedSolutions.filter(s => s.includes('sanction') || s.includes('penalty')).length,
+      selected_solution_side_coverage: 'both',
+      selected_fact_record_solution_count: verdictInput.selectedSolutions.filter(s => s.includes('record') || s.includes('audit') || s.includes('timeline')).length,
+      responsibility_gap_average: gapAvg,
+      high_ambiguity_pending_count: highWeightDisputes.filter(d => verdictInput.factFindings[d.id] === 'pending').length,
+      resolved_low_or_medium_ambiguity_count: caseData.disputes.filter(d => d.ambiguity !== 'high' && verdictInput.factFindings[d.id] && verdictInput.factFindings[d.id] !== 'pending').length,
+      discovered_privacy_evidence_count: 0,
+      evidence_legality_judged_count: Object.keys(verdictInput.evidenceLegality ?? {}).length,
+      confidential_evidence_protected_count: 0,
+    }
+
+    const mediationDelta = computeMediationScoreModifiers(mediationChoice, mediationCtx)
+    score.insight = Math.max(0, Math.min(100, score.insight + mediationDelta.insight))
+    score.authority = Math.max(0, Math.min(100, score.authority + mediationDelta.authority))
+    score.wisdom = Math.max(0, Math.min(100, score.wisdom + mediationDelta.wisdom))
+    score.total = Math.round((score.insight + score.authority + score.wisdom) / 3)
 
     setVerdictScore(score)
 

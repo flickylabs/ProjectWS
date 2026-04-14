@@ -12,7 +12,7 @@ import { getMyCall, getJudgeReference, getAngryCall, getRelationLabel, canUseInf
 import { pp이가, pp은는, pp을를, pp과와, fixPostpositions } from './koreanPostposition'
 import { resolveDialogue as fallbackResolve, type ResolvedDialogue } from './dialogueResolver'
 import type { PlayerAction, PartyId, DialogueNode, AgentState } from '../types'
-import { GamePhase } from '../types'
+import { GamePhase, Phase } from '../types'
 import type { EvidenceRuntimeState } from './evidenceEngine'
 import type { CaseData } from '../types'
 import { useGameStore } from '../store/useGameStore'
@@ -725,7 +725,7 @@ function buildSystemPrompt(
 
 function getPhaseGuide(phase: GamePhase): string {
   switch (phase) {
-    case GamePhase.Phase3_Interrogation:
+    case Phase.Interrogation:
       return getPrompt('interrogation_phase3')
     case GamePhase.Phase4_Evidence:
       return getPrompt('interrogation_phase4')
@@ -1848,8 +1848,11 @@ function tryScriptedDialoguePath(
       caseId, target, dossierContext.questionId, lieEntry.currentState,
     )
   } else if (action.type === 'question' && 'questionType' in action) {
+    const targetProfile = target === 'a' ? caseData.duo.partyA : caseData.duo.partyB
+    const targetAgent = target === 'a' ? agentA : agentB
     scripted = getScriptedInterrogation(
       caseId, target, disputeId, lieEntry.currentState, action.questionType,
+      targetProfile.archetype, targetAgent.emotionalState?.phase,
     )
   } else if (action.type === 'evidence_present' && 'evidenceId' in action) {
     const ev = caseData.evidence.find(e => e.id === action.evidenceId)

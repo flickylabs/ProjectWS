@@ -58,6 +58,8 @@ interface VariantSelectionContext {
   disputeId?: string
   evidenceId?: string
   witnessId?: string
+  archetype?: string
+  emotion?: string
 }
 
 type ScriptedLookupChannel = SelectedScriptContext['channel']
@@ -218,6 +220,35 @@ function scoreVariant(
     score -= 1
   }
 
+  // ── v1~v5 변주 가중치 (archetype/emotion) ──
+  const vid = variant.id as string
+  if (vid.startsWith('v') && vid.length === 2) {
+    const archetypePrefs: Record<string, string[]> = {
+      avoidant: ['v2', 'v5', 'v4', 'v1', 'v3'],
+      confrontational: ['v3', 'v1', 'v4', 'v2', 'v5'],
+    }
+    const emotionWeights: Record<string, Record<string, number>> = {
+      angry: { v3: 3, v1: 2 },
+      cornered: { v5: 3, v4: 2 },
+      ashamed: { v5: 3, v2: 1.5 },
+      anxious: { v2: 2, v5: 2 },
+      resigned: { v1: 2, v5: 2 },
+    }
+
+    // archetype 선호도 반영
+    const archetype = tags.archetype || context.archetype
+    const prefs = archetype ? archetypePrefs[archetype] : undefined
+    if (prefs) {
+      const rank = prefs.indexOf(vid)
+      if (rank >= 0) score += [4, 3, 2, 1, 0][rank]
+    }
+
+    // emotion 가중치 반영
+    const emotion = tags.emotion || context.emotion
+    const ew = emotion ? emotionWeights[emotion] : undefined
+    if (ew && ew[vid]) score += ew[vid]
+  }
+
   return score
 }
 
@@ -286,6 +317,8 @@ export function getScriptedInterrogation(
   disputeId: string,
   lieState: string,
   questionType: string,
+  archetype?: string,
+  emotion?: string,
 ): { text: string; behaviorHint: string } | null {
   const key = buildInterrogationKey({
     party,
@@ -306,6 +339,8 @@ export function getScriptedInterrogation(
   const variant = selectVariant(entry.variants, caseId, {
     channel: 'interrogation',
     key,
+    archetype,
+    emotion,
     questionType,
     disputeId,
   })
