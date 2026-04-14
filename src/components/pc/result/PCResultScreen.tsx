@@ -746,34 +746,7 @@ export default function PCResultScreen() {
                   <p style={{ fontSize: 13, color: '#8c8fa0' }}>이번 재판에서 획득한 성향 조각입니다.</p>
                 </div>
 
-                <div style={{
-                  border: '1px solid rgba(212,162,78,0.15)', borderRadius: 16,
-                  padding: '20px 24px', background: 'rgba(212,162,78,0.02)',
-                  marginBottom: 24,
-                }}>
-                  {rewardBundle.rewards.length > 0 ? (
-                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: 12, justifyContent: 'center' }}>
-                      {rewardBundle.rewards.map((reward, idx) => {
-                        const def = FRAGMENT_TABLE.find(f => f.id === reward.fragmentId)
-                        return (
-                          <div key={idx} style={{
-                            display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 4,
-                            padding: '12px 16px', borderRadius: 12,
-                            border: '1px solid rgba(255,255,255,0.06)', background: 'rgba(255,255,255,0.02)',
-                            minWidth: 80,
-                          }}>
-                            <span style={{ fontSize: 24 }}>{def?.emoji ?? '?'}</span>
-                            <span style={{ fontSize: 12, fontWeight: 700, color: '#e0ddd6' }}>{def?.name ?? reward.fragmentId}</span>
-                            <span style={{ fontSize: 18, fontWeight: 900, color: 'var(--pc-gold-light)' }}>+{reward.count}</span>
-                            <span style={{ fontSize: 10, color: '#6b6e7e' }}>{reward.reason}</span>
-                          </div>
-                        )
-                      })}
-                    </div>
-                  ) : (
-                    <p style={{ textAlign: 'center', color: '#6b6e7e', fontSize: 13 }}>이번 재판에서 획득한 조각이 없습니다.</p>
-                  )}
-                </div>
+                <FragmentGrid rewards={rewardBundle.rewards} />
 
                 {rewardBundle.enhanceableTraits.length > 0 && (
                   <div style={{
@@ -815,6 +788,93 @@ export default function PCResultScreen() {
           result={clearanceResult}
         />
       ) : null}
+    </div>
+  )
+}
+
+/* ─── Fragment 3×3 Grid ─── */
+
+const FRAG_SVG: Record<string, React.ReactNode> = {
+  // 탐구 — 음: 추론(돋보기)
+  reasoning_fragment: <svg viewBox="0 0 32 32" fill="none" width="28" height="28"><circle cx="14" cy="14" r="8" stroke="currentColor" strokeWidth="2.5"/><line x1="20" y1="20" x2="27" y2="27" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"/></svg>,
+  // 탐구 — 중립: 탐구(책)
+  inquiry_fragment: <svg viewBox="0 0 32 32" fill="none" width="28" height="28"><path d="M6 6h8c2 0 2 2 2 2v18s0-2-2-2H6V6z" stroke="currentColor" strokeWidth="2" strokeLinejoin="round"/><path d="M26 6h-8c-2 0-2 2-2 2v18s0-2 2-2h8V6z" stroke="currentColor" strokeWidth="2" strokeLinejoin="round"/></svg>,
+  // 탐구 — 양: 공감(전구)
+  empathy_fragment: <svg viewBox="0 0 32 32" fill="none" width="28" height="28"><path d="M16 5a8 8 0 00-5 14.3V23h10v-3.7A8 8 0 0016 5z" stroke="currentColor" strokeWidth="2"/><line x1="13" y1="25" x2="19" y2="25" stroke="currentColor" strokeWidth="1.5"/><line x1="14" y1="27" x2="18" y2="27" stroke="currentColor" strokeWidth="1.5"/></svg>,
+  // 심판 — 음: 준엄(검)
+  severity_fragment: <svg viewBox="0 0 32 32" fill="none" width="28" height="28"><line x1="16" y1="4" x2="16" y2="22" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"/><line x1="10" y1="10" x2="22" y2="10" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/><path d="M13 22h6l-3 6-3-6z" fill="currentColor"/></svg>,
+  // 심판 — 중립: 심리(저울)
+  deliberation_fragment: <svg viewBox="0 0 32 32" fill="none" width="28" height="28"><line x1="16" y1="6" x2="16" y2="26" stroke="currentColor" strokeWidth="2"/><line x1="8" y1="11" x2="24" y2="11" stroke="currentColor" strokeWidth="2"/><path d="M8 11l-2 7h6l-2-7z" stroke="currentColor" strokeWidth="1.5" fill="none"/><path d="M24 11l-2 7h6l-2-7z" stroke="currentColor" strokeWidth="1.5" fill="none"/><line x1="12" y1="26" x2="20" y2="26" stroke="currentColor" strokeWidth="2"/></svg>,
+  // 심판 — 양: 이해(비둘기)
+  leniency_fragment: <svg viewBox="0 0 32 32" fill="none" width="28" height="28"><path d="M10 20c0-4 3-7 6-7 2 0 4 1 5 3l4-2c0 0 1 4-2 6l-4 1c-1 2-3 4-6 4-4 0-3-5-3-5z" stroke="currentColor" strokeWidth="2" strokeLinejoin="round"/><path d="M14 16l-4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/></svg>,
+  // 해결 — 음: 법리(두루마리)
+  jurisprudence_fragment: <svg viewBox="0 0 32 32" fill="none" width="28" height="28"><rect x="8" y="6" width="16" height="20" rx="2" stroke="currentColor" strokeWidth="2"/><line x1="12" y1="12" x2="20" y2="12" stroke="currentColor" strokeWidth="1.5"/><line x1="12" y1="16" x2="20" y2="16" stroke="currentColor" strokeWidth="1.5"/><line x1="12" y1="20" x2="17" y2="20" stroke="currentColor" strokeWidth="1.5"/></svg>,
+  // 해결 — 중립: 균형(기둥)
+  balance_fragment: <svg viewBox="0 0 32 32" fill="none" width="28" height="28"><line x1="16" y1="4" x2="16" y2="24" stroke="currentColor" strokeWidth="2.5"/><rect x="8" y="24" width="16" height="4" rx="1" stroke="currentColor" strokeWidth="2"/><line x1="10" y1="4" x2="22" y2="4" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/></svg>,
+  // 해결 — 양: 봉합(악수)
+  reconciliation_fragment: <svg viewBox="0 0 32 32" fill="none" width="28" height="28"><path d="M6 16c2-2 4-3 6-3 1 0 2.5.5 4 2 1.5-1.5 3-2 4-2 2 0 4 1 6 3" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/><path d="M10 19l3 3 3-3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/><path d="M16 19l3 3 3-3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/></svg>,
+}
+
+const GRID_ROWS: { axis: string; label: string; fragments: [string, string, string] }[] = [
+  { axis: '탐구', label: '논리 ← → 직관', fragments: ['reasoning_fragment', 'inquiry_fragment', 'empathy_fragment'] },
+  { axis: '심판', label: '엄격 ← → 관용', fragments: ['severity_fragment', 'deliberation_fragment', 'leniency_fragment'] },
+  { axis: '해결', label: '원칙 ← → 화해', fragments: ['jurisprudence_fragment', 'balance_fragment', 'reconciliation_fragment'] },
+]
+
+const COL_HEADERS = ['음(−)', '중립', '양(+)']
+
+function FragmentGrid({ rewards }: { rewards: FragmentReward[] }) {
+  const rewardMap = new Map<string, number>()
+  for (const r of rewards) rewardMap.set(r.fragmentId, (rewardMap.get(r.fragmentId) ?? 0) + r.count)
+
+  return (
+    <div style={{
+      border: '1px solid rgba(212,162,78,0.15)', borderRadius: 16,
+      padding: '16px 20px', background: 'rgba(212,162,78,0.02)',
+      marginBottom: 24,
+    }}>
+      {/* Column headers */}
+      <div style={{ display: 'grid', gridTemplateColumns: '64px 1fr 1fr 1fr', gap: 8, marginBottom: 8 }}>
+        <div />
+        {COL_HEADERS.map(h => (
+          <div key={h} style={{ textAlign: 'center', fontSize: 10, fontWeight: 700, color: '#6b6e7e', letterSpacing: '0.05em' }}>{h}</div>
+        ))}
+      </div>
+
+      {/* Rows */}
+      {GRID_ROWS.map(row => (
+        <div key={row.axis} style={{ display: 'grid', gridTemplateColumns: '64px 1fr 1fr 1fr', gap: 8, marginBottom: 8 }}>
+          <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: 2 }}>
+            <span style={{ fontSize: 12, fontWeight: 800, color: '#c4c4c4' }}>{row.axis}</span>
+            <span style={{ fontSize: 9, color: '#555' }}>{row.label}</span>
+          </div>
+          {row.fragments.map(fragId => {
+            const def = FRAGMENT_TABLE.find(f => f.id === fragId)
+            const count = rewardMap.get(fragId) ?? 0
+            const active = count > 0
+            const color = active ? (def?.direction === 'neutral' ? '#8b8b9a' : def?.direction === 'negative' ? '#5b8def' : '#e8c172') : '#2a2d3e'
+
+            return (
+              <div key={fragId} style={{
+                display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center',
+                gap: 4, padding: '10px 6px', borderRadius: 10,
+                border: `1.5px solid ${active ? color + '44' : 'rgba(255,255,255,0.04)'}`,
+                background: active ? color + '0a' : 'transparent',
+                opacity: active ? 1 : 0.35,
+                transition: 'all 0.3s ease',
+              }}>
+                <span style={{ color, lineHeight: 1 }}>{FRAG_SVG[fragId] ?? '?'}</span>
+                <span style={{ fontSize: 10, fontWeight: 700, color: active ? '#e0ddd6' : '#4a4d5e' }}>{def?.name ?? fragId}</span>
+                {active ? (
+                  <span style={{ fontSize: 14, fontWeight: 900, color }}>{`+${count}`}</span>
+                ) : (
+                  <span style={{ fontSize: 11, color: '#3a3d4e' }}>—</span>
+                )}
+              </div>
+            )
+          })}
+        </div>
+      ))}
     </div>
   )
 }
