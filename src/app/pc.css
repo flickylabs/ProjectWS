@@ -4288,10 +4288,9 @@ body.pc-mode .pc-leaderboard-grid {
 }
 
 body.pc-mode .pc-session-grid-v2 {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 12px;
-  max-width: 720px;
-  margin: 0 auto;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 10px;
+  max-width: 100%;
 }
 
 body.pc-mode .pc-session-card-v2 {
