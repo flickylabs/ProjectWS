@@ -292,6 +292,14 @@ const TRUTH_THROTTLE: Record<string, string> = {
 
   hint: `★ 핵심은 숨기고 표면만 인정하라:\n- 사실 자체를 부정하지 마라. 그러나 의미/목적은 흐려라\n- "그런 일이 있었던 건 맞는데…" 수준까지만\n- 금액, 기관명, 인물 직함, 서비스명 언급 금지\n- "개인 사정이 있었다"보다 더 구체적으로 들어가지 마라\n- "사실은~" 고백 금지. 논점을 돌리거나 질문으로 되받아라`,
 
+  emotional: `★ 감정이 격해져 통제력을 잃고 있다 — 의도치 않게 정보가 새어 나온다:
+- 흥분·분노·억울함에 휩쓸려 평소라면 숨겼을 구체적 사실을 "실수로" 흘려라
+- 금액, 인물명, 기관명 중 1~2개를 감정적 맥락 속에서 노출하라 (예: "280만원이 어디서 나온 건데요!")
+- 단, 자발적 고백이 아니라 감정 폭발 속 실수여야 한다. "사실은~"으로 시작하는 자백 금지
+- 흘린 직후 당황하거나 말을 돌리는 반응이 자연스럽다
+- 전체 진실을 체계적으로 정리하지 마라. 한두 조각만 터뜨리고, 나머지는 아직 방어하라
+- 톤: 격앙, 억울, 분노. 차분한 인정이 아니라 감정이 앞선 실수`,
+
   open: `★ 이제 진실을 모두 털어놓아라 — 이 턴이 가장 중요하다:
 - "표현 재료"와 "실제로 알고 있지만 숨기는 것"에 있는 구체적 정보를 반드시 사용하라
 - 금액은 정확한 숫자로, 인물은 이름으로, 기관은 정식 명칭으로 말하라
@@ -311,6 +319,7 @@ export function getTruthThrottle(lieState: LieState): string {
   if (lieState <= 'S1') return TRUTH_THROTTLE.early
   if (lieState === 'S2') return TRUTH_THROTTLE.hint
   if (lieState === 'S3') return TRUTH_THROTTLE.blame
+  if (lieState === 'S4') return TRUTH_THROTTLE.emotional
   return TRUTH_THROTTLE.open
 }
 
