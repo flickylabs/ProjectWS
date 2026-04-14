@@ -470,7 +470,9 @@
           "question": {
             "text": "이 유서가 어머니 사후에 나온 최종본 맞습니까?",
             "attackVector": "authenticity"
-          }
+          },
+          "label": "원본확인",
+          "unlockHint": null
         },
         {
           "stage": 1,
@@ -478,7 +480,9 @@
           "question": {
             "text": "왜 형이 40이고 동생이 60인지, 처음 들었을 때 무엇이 가장 이상했습니까?",
             "attackVector": "context"
-          }
+          },
+          "label": "내용대조",
+          "unlockHint": "원본을 확인하면 공증 시점과 유언 비율을 대조할 수 있습니다."
         },
         {
           "stage": 2,
@@ -486,7 +490,9 @@
           "question": {
             "text": "이 유서만 보면 B가 어머니를 움직인 것처럼 보이는데, 그렇게 믿게 된 결정적 이유는 무엇입니까?",
             "attackVector": "responsibility"
-          }
+          },
+          "label": "맥락복원",
+          "unlockHint": "내용을 대조하면 이 유서가 왜 의심을 키웠는지 추궁할 수 있습니다."
         }
       ],
       "partyContext": {
@@ -680,7 +686,9 @@
           "question": {
             "text": "B가 말년에 자주 찾아간 건 사실입니까?",
             "attackVector": "authenticity"
-          }
+          },
+          "label": "기록확인",
+          "unlockHint": null
         },
         {
           "stage": 1,
@@ -688,7 +696,9 @@
           "question": {
             "text": "왜 공증 직전부터 방문 횟수가 더 늘어났다고 보십니까?",
             "attackVector": "context"
-          }
+          },
+          "label": "시점대조",
+          "unlockHint": "기록을 확인하면 방문 급증 시점과 요양보호사 교체 시점을 대조할 수 있습니다."
         },
         {
           "stage": 2,
@@ -696,7 +706,9 @@
           "question": {
             "text": "요양보호사가 바뀐 시점까지 겹치는데, 누가 그 흐름을 만들었다고 의심합니까?",
             "attackVector": "responsibility"
-          }
+          },
+          "label": "개입추궁",
+          "unlockHint": "시점을 대조하면 방문 증가가 유서 작성 과정과 어떻게 맞물리는지 추궁할 수 있습니다."
         }
       ],
       "partyContext": {
@@ -923,7 +935,9 @@
           "question": {
             "text": "이 증언 속 '종이'가 유서라고 보십니까?",
             "attackVector": "authenticity"
-          }
+          },
+          "label": "증언확인",
+          "unlockHint": null
         },
         {
           "stage": 1,
@@ -931,7 +945,9 @@
           "question": {
             "text": "형 오기 전에 끝내자고 했다는 대목, 누구에게 유리한 말입니까?",
             "attackVector": "context"
-          }
+          },
+          "label": "정황검토",
+          "unlockHint": "증언을 확인하면 근무 시기와 발언 맥락을 함께 검토할 수 있습니다."
         },
         {
           "stage": 2,
@@ -939,7 +955,9 @@
           "question": {
             "text": "그 조심스러움이 어머니 보호였는지, 형 배제였는지 지금도 단정할 수 있습니까?",
             "attackVector": "responsibility"
-          }
+          },
+          "label": "의도추궁",
+          "unlockHint": "정황을 검토하면 그 조심스러움이 보호였는지 배제였는지 추궁할 수 있습니다."
         }
       ],
       "partyContext": {
@@ -1080,7 +1098,9 @@
           "question": {
             "text": "같은 날 두 버전이 스캔된 사실, 부인할 수 있습니까?",
             "attackVector": "authenticity"
-          }
+          },
+          "label": "기록확인",
+          "unlockHint": null
         },
         {
           "stage": 1,
@@ -1088,7 +1108,9 @@
           "question": {
             "text": "왜 90이 60으로 바뀐 서류를 다시 냈습니까?",
             "attackVector": "context"
-          }
+          },
+          "label": "시간대조",
+          "unlockHint": "기록을 확인하면 두 스캔 시점과 마지막 제출자를 대조할 수 있습니다."
         },
         {
           "stage": 2,
@@ -1096,7 +1118,9 @@
           "question": {
             "text": "자기 몫을 줄이는 조작까지 하면서, 도대체 무엇을 막으려 했습니까?",
             "attackVector": "responsibility"
-          }
+          },
+          "label": "동기추궁",
+          "unlockHint": "시간대를 대조하면 왜 다시 낸 서류의 비율이 바뀌었는지 추궁할 수 있습니다."
         }
       ],
       "partyContext": {
@@ -1271,7 +1295,9 @@
           "question": {
             "text": "이 원본 유서, 어머니가 먼저 써 둔 문서 맞습니까?",
             "attackVector": "authenticity"
-          }
+          },
+          "label": "원본확인",
+          "unlockHint": null
         },
         {
           "stage": 1,
@@ -1279,7 +1305,9 @@
           "question": {
             "text": "90대 10이 어머니의 진심이었다면, 왜 굳이 60대 40으로 바꿨습니까?",
             "attackVector": "context"
-          }
+          },
+          "label": "자필대조",
+          "unlockHint": "원본을 확인하면 작성 시점과 자필 여부를 대조할 수 있습니다."
         },
         {
           "stage": 2,
@@ -1287,7 +1315,9 @@
           "question": {
             "text": "자기 몫을 깎는 쪽으로 유서를 고친 이유가 돈이 아니라면, 남는 이유는 무엇입니까?",
             "attackVector": "responsibility"
-          }
+          },
+          "label": "이유추궁",
+          "unlockHint": "자필과 시점을 대조하면 90대 10을 60대 40으로 바꾼 이유를 추궁할 수 있습니다."
         }
       ],
       "partyContext": {
@@ -1466,7 +1496,9 @@
           "question": {
             "text": "이 생활비 송금, B가 어머니에게 보낸 것 맞습니까?",
             "attackVector": "authenticity"
-          }
+          },
+          "label": "내역확인",
+          "unlockHint": null
         },
         {
           "stage": 1,
@@ -1474,7 +1506,9 @@
           "question": {
             "text": "A 사업이 무너질 뻔했을 때 나간 큰돈도 같은 흐름으로 봐야 합니까?",
             "attackVector": "context"
-          }
+          },
+          "label": "흐름대조",
+          "unlockHint": "내역을 확인하면 생활비 송금과 부도 시기 자금 이동을 함께 대조할 수 있습니다."
         },
         {
           "stage": 2,
@@ -1482,7 +1516,9 @@
           "question": {
             "text": "왜 형이 평생 어머니가 도와준 줄 알게 놔뒀습니까?",
             "attackVector": "responsibility"
-          }
+          },
+          "label": "숨김추궁",
+          "unlockHint": "자금 흐름을 대조하면 왜 이 돈의 출처를 형에게 숨겼는지 추궁할 수 있습니다."
         }
       ],
       "partyContext": {
@@ -1671,7 +1707,9 @@
           "question": {
             "text": "이 글씨가 어머니 글씨라는 점, 다투실 겁니까?",
             "attackVector": "authenticity"
-          }
+          },
+          "label": "원본확인",
+          "unlockHint": null
         },
         {
           "stage": 1,
@@ -1679,7 +1717,9 @@
           "question": {
             "text": "'태성이도 네 아버지 피는 아니다'라는 문장을 어떻게 받아들여야 합니까?",
             "attackVector": "context"
-          }
+          },
+          "label": "문장대조",
+          "unlockHint": "원본을 확인하면 일기 작성 시점과 핵심 문장을 대조할 수 있습니다."
         },
         {
           "stage": 2,
@@ -1687,7 +1727,9 @@
           "question": {
             "text": "결국 60대 40 조작은 형의 돈이 아니라 형의 삶을 지키려 한 행동이었습니까?",
             "attackVector": "responsibility"
-          }
+          },
+          "label": "동기복원",
+          "unlockHint": "문장과 시점을 대조하면 유서 조작의 진짜 이유를 복원할 수 있습니다."
         }
       ],
       "partyContext": {
