@@ -22,7 +22,7 @@ npx tsc -b --force   # 타입 체크만 (tsconfig.app.json 경유)
 ## 기술 스택
 
 - **React 19** + TypeScript 5.9 + Vite 8 + Tailwind CSS 4
-- **Zustand 5** (슬라이스 패턴 — 8개 도메인 슬라이스)
+- **Zustand 5** (슬라이스 패턴 — 10개 도메인 슬라이스)
 - **OpenAI GPT-4o** (NPC 대사) / GPT-4o-mini (분석)
 - Web Audio API (합성음)
 
@@ -32,8 +32,8 @@ npx tsc -b --force   # 타입 체크만 (tsconfig.app.json 경유)
 
 ```
 src/
-├── engine/           48개 룰 엔진 (게임 로직의 핵심)
-├── store/            Zustand 8슬라이스 (상태 관리)
+├── engine/           58개 룰 엔진 (게임 로직의 핵심)
+├── store/            Zustand 10슬라이스 (상태 관리)
 ├── hooks/            useActionDispatch (97KB, 액션 디스패치 메인)
 ├── components/       16개 UI 모듈
 ├── data/             84건 사건 데이터 + 대사 + 솔루션 태그
@@ -134,8 +134,9 @@ S0: 완전 부정 → S1: 일부 인정 → S2: 핑계 → S3: 책임 전가 →
 | `koreanPostposition.ts` | 한국어 조사 헬퍼 (이/가, 을/를, 은/는, 과/와) + 후처리 |
 | `meterStagingV2.ts` | DossierCard 해금 조건 판정 |
 | `verdictEngine.ts` | 최종 점수 계산 (통찰/권위/지혜) |
-| `judgeProfileEngine.ts` | 재판관 성향 프로필 (3축 드리프트: inquiry/judgment/resolution, 레벨+포인트) |
-| `judgePerks.ts` | 재판관 퍼크 테이블 (메이저 6종 + 마이너 6종, 성향축별 해금) |
+| `judgeProfileEngine.ts` | 재판관 성향 프로필 (caseAxis 계산, 하위 호환 드리프트 로직) |
+| `judgeProgressionEngine.ts` | 재판관 성향 v2 (9종 조각, 6성향 강화, 변환 3:1, 칭호 9종) |
+| `judgePerks.ts` | 재판관 퍼크 v2 (메이저 6종 + 마이너 9종, 성향 레벨별 해금) |
 | `questionEffectEngine.ts` | 심문 3종 효과 판정 (computeEffectiveness) + 교착 피드백 |
 | `questionFatigueEngine.ts` | 심문 피로도 (streak/교착 3단계 + dossier 리셋) |
 | `stateTransitionHelper.ts` | 상태 전이 라벨 (S4='opening' 분리 + 행동 추천) |
@@ -175,32 +176,44 @@ src/data/solutionOrientations.ts  (963개 태그: principle/reconcile/hybrid)
 
 ### 재판관 성향 저장
 ```
-localStorage 'solomon-judge-drift'   (드리프트 상태: 3축 레벨+포인트)
-localStorage 'solomon-judge-perks'   (선택된 퍼크: major + minor)
-localStorage 'solomon-history'       (caseTelemetry 포함, max 100건)
+localStorage 'solomon-judge-progression'  (v3: 조각 인벤토리 + 6성향 레벨 + 장착 퍼크)
+localStorage 'solomon-history'            (caseTelemetry 포함, max 100건)
 ```
 
 ---
 
-## 재판관 성향 시스템
+## 재판관 성향 시스템 (v2 — 재료 기반 강화)
 
-### 3축 드리프트 (레벨+포인트)
-```
-강논리(-3) ← 논리(-2) ← 약논리(-1) ← 균형(0) → 약직관(+1) → 직관(+2) → 강직관(+3)
-```
-- 승급: Lv0→1: 3p, Lv1→2: 4p, Lv2→3: 5p
-- 강등: progress 먼저 감소, 바닥나면 레벨 하강
-- 사건당: |caseAxis| <15→0, 15~44→±1, 45+→±2
-- 신뢰도 게이트: 탐구(질문 3회+), 해결(솔루션 1개+)
+### 9종 조각 (3축 × 3방향)
+| 축 | 음(-) | 중립 | 양(+) |
+|---|---|---|---|
+| 탐구 | 추론의 조각 | 탐구의 조각 | 공감의 조각 |
+| 심판 | 준엄의 조각 | 심리의 조각 | 이해의 조각 |
+| 해결 | 법리의 조각 | 균형의 조각 | 봉합의 조각 |
 
-### 퍼크 (12종)
-- 해금: Lv2→minor, Lv3→major
-- 메이저 1 + 마이너 1 상한
-- 자격 상실 시 비활성화 (회수 아님)
+### 획득 (사건 결과 기반)
+- |caseAxis| ≥ 45 → 해당 방향 3개
+- |caseAxis| 15~44 → 해당 방향 2개 + 중립 1개
+- |caseAxis| < 15 → 중립 2개
+- 보너스 조건: 양측 S3+, 100% 달성, 첫 플레이, 전체 조합, 전체 증인
+
+### 강화 비용 (방향 + 중립 필수)
+- Lv0→1: 방향 ×3 + 중립 ×5 → Minor 퍼크 개방
+- Lv1→2: 방향 ×6 + 중립 ×10
+- Lv2→3: 방향 ×10 + 중립 ×16 → Major 퍼크 해금
+
+### 변환: 같은 축 중립 3개 → 방향 1개
+
+### 퍼크 (15종)
+- Major 6종 (Lv3, 상시 효과): 논리의 눈/직감의 촉/냉정한 관찰/두 번째 기회/철저한 수사관/마음의 다리
+- Minor 9종 (Lv1): 모순 감각/비교 확장/누설 감지/집요한 추궁/선례 감각/신뢰의 기반/법의 눈/자동 정리/경청의 힘
+- 장착: Major 1 + Minor 1
+
+### 칭호 9종 (3축 최고 레벨 조합)
+- 냉철한 심판자/실용적 분석가/균형의 현자/신중한 중재자/직감의 심판관/열정의 조정관/온화한 수호자/따뜻한 중재자/중립의 관찰자
 
 ### 성장 5단계
-- apprentice(1~4건) → regular(5건+안정화) → veteran(10건) → senior(20건) → legendary(30건)
-- 퍼크 해금은 건수+안정화, 프로필 카드는 40건+평균 75점+
+- apprentice(1~4건) → regular(5건+Lv1) → veteran(10건) → senior(20건) → legendary(30건)
 
 ---
 

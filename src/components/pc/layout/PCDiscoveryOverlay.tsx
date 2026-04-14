@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState, type ReactNode } from 'react'
+import { useFocusTrap } from '../../../hooks/useFocusTrap'
 import { resetFatigueForDossier } from '../../../engine/questionFatigueEngine'
 import { getContradictionEvent, getInterjectionEvent, getOutburstEvent } from '../../../engine/v3GameLoopLoader'
 import { resolveInterjectionV2, applyWitnessSlot } from '../../../hooks/useActionDispatch'
@@ -33,8 +34,9 @@ function OverlayShell({
   tone: Tone
   children: ReactNode
 }) {
+  const trapRef = useFocusTrap<HTMLDivElement>()
   return (
-    <div className="pc-discovery-overlay">
+    <div className="pc-discovery-overlay" role="dialog" aria-modal="true" aria-label={title} ref={trapRef}>
       <div className={`pc-discovery-card tone-${tone}`}>
         <div className="pc-discovery-card__header">
           {subtitle ? <div className="pc-discovery-card__subtitle">{subtitle}</div> : null}

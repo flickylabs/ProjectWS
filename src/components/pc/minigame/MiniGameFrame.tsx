@@ -4,6 +4,7 @@
  * 공통 3→2→1→Go! 카운트다운 포함
  */
 import { useCallback, useEffect, useRef, useState } from 'react'
+import { useFocusTrap } from '../../../hooks/useFocusTrap'
 import { useStore } from '../../../store/useGameStore'
 import { MINIGAME_LABELS, MINIGAME_MAX_ROUNDS, MINIGAME_TOKEN_MAP } from '../../../types/minigame'
 import type { MiniGameType } from '../../../types/minigame'
@@ -28,6 +29,7 @@ export default function MiniGameFrame({ children }: Props) {
   const cancelMinigame = useStore((s) => s.cancelMinigame)
   const [countdown, setCountdown] = useState<CountdownPhase>(3)
   const prevTypeRef = useRef<string | null>(null)
+  const trapRef = useFocusTrap<HTMLDivElement>()
 
   useEffect(() => {
     const key = activeMinigame ? `${activeMinigame.type}-${activeMinigame.round}` : null
@@ -62,7 +64,7 @@ export default function MiniGameFrame({ children }: Props) {
   const label = MINIGAME_LABELS[type]
 
   return (
-    <div className="pc-minigame-backdrop">
+    <div className="pc-minigame-backdrop" role="dialog" aria-modal="true" aria-label={label} ref={trapRef}>
       <div className="pc-minigame-frame">
         {/* Header */}
         <div className="pc-minigame-frame__header">
