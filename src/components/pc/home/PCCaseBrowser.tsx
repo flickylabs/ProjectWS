@@ -149,8 +149,8 @@ function CaseBriefPanel({ caseData, stageNum, score, onStart }: {
   caseData: CaseData; stageNum: string; score: number; onStart: () => void
 }) {
   const { duo, meta } = caseData
-  const faceA = getPcFaceSymbolId('a', duo.partyA, 'defensive')
-  const faceB = getPcFaceSymbolId('b', duo.partyB, 'defensive')
+  const faceA = getPcFaceSymbolId('a', duo?.partyA, 'defensive')
+  const faceB = getPcFaceSymbolId('b', duo?.partyB, 'defensive')
   const caseTitle = meta?.title ?? caseData.caseId
   const bait = meta?.emotionalBait ?? ''
 
@@ -180,9 +180,9 @@ function CaseBriefPanel({ caseData, stageNum, score, onStart }: {
       <div className="cb__brief-vs">
         <div className="cb__brief-party">
           <div className="cb__brief-party-text is-right">
-            <span className="cb__brief-name is-a">{duo.partyA.name}</span>
-            <span className="cb__brief-meta">{duo.partyA.age}세 · {duo.partyA.occupation}</span>
-            <span className="cb__brief-archetype">{ARCHETYPE_LABELS[duo.partyA.archetype] ?? ''}</span>
+            <span className="cb__brief-name is-a">{duo?.partyA?.name ?? 'A'}</span>
+            <span className="cb__brief-meta">{duo?.partyA?.age ?? '?'}세 · {duo?.partyA?.occupation ?? ''}</span>
+            <span className="cb__brief-archetype">{ARCHETYPE_LABELS[duo?.partyA?.archetype ?? ''] ?? ''}</span>
           </div>
           <div className="cb__brief-face is-a"><PCSvgIcon id={faceA} size={44} /></div>
         </div>
@@ -190,9 +190,9 @@ function CaseBriefPanel({ caseData, stageNum, score, onStart }: {
         <div className="cb__brief-party">
           <div className="cb__brief-face is-b"><PCSvgIcon id={faceB} size={44} /></div>
           <div className="cb__brief-party-text is-left">
-            <span className="cb__brief-name is-b">{duo.partyB.name}</span>
-            <span className="cb__brief-meta">{duo.partyB.age}세 · {duo.partyB.occupation}</span>
-            <span className="cb__brief-archetype">{ARCHETYPE_LABELS[duo.partyB.archetype] ?? ''}</span>
+            <span className="cb__brief-name is-b">{duo?.partyB?.name ?? 'B'}</span>
+            <span className="cb__brief-meta">{duo?.partyB?.age ?? '?'}세 · {duo?.partyB?.occupation ?? ''}</span>
+            <span className="cb__brief-archetype">{ARCHETYPE_LABELS[duo?.partyB?.archetype ?? ''] ?? ''}</span>
           </div>
         </div>
       </div>
