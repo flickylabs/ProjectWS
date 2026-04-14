@@ -1,0 +1,201 @@
+{
+  "caseId": "family-01",
+  "evidenceStages": {
+    "e-1": {
+      "investigationStages": [
+        {
+          "stage": 0,
+          "label": "원본확인",
+          "questions": [
+            "request_original"
+          ],
+          "unlockHint": null
+        },
+        {
+          "stage": 1,
+          "label": "내용대조",
+          "questions": [
+            "check_metadata"
+          ],
+          "unlockHint": "원본을 확인하면 공증 시점과 유언 비율을 대조할 수 있습니다."
+        },
+        {
+          "stage": 2,
+          "label": "맥락복원",
+          "questions": [
+            "restore_context"
+          ],
+          "unlockHint": "내용을 대조하면 이 유서가 왜 의심을 키웠는지 추궁할 수 있습니다."
+        }
+      ]
+    },
+    "e-2": {
+      "investigationStages": [
+        {
+          "stage": 0,
+          "label": "기록확인",
+          "questions": [
+            "request_original"
+          ],
+          "unlockHint": null
+        },
+        {
+          "stage": 1,
+          "label": "시점대조",
+          "questions": [
+            "check_metadata"
+          ],
+          "unlockHint": "기록을 확인하면 방문 급증 시점과 요양보호사 교체 시점을 대조할 수 있습니다."
+        },
+        {
+          "stage": 2,
+          "label": "개입추궁",
+          "questions": [
+            "restore_context"
+          ],
+          "unlockHint": "시점을 대조하면 방문 증가가 유서 작성 과정과 어떻게 맞물리는지 추궁할 수 있습니다."
+        }
+      ]
+    },
+    "e-3": {
+      "investigationStages": [
+        {
+          "stage": 0,
+          "label": "증언확인",
+          "questions": [
+            "request_original"
+          ],
+          "unlockHint": null
+        },
+        {
+          "stage": 1,
+          "label": "정황검토",
+          "questions": [
+            "check_metadata"
+          ],
+          "unlockHint": "증언을 확인하면 근무 시기와 발언 맥락을 함께 검토할 수 있습니다."
+        },
+        {
+          "stage": 2,
+          "label": "의도추궁",
+          "questions": [
+            "restore_context"
+          ],
+          "unlockHint": "정황을 검토하면 그 조심스러움이 보호였는지 배제였는지 추궁할 수 있습니다."
+        }
+      ]
+    },
+    "e-4": {
+      "investigationStages": [
+        {
+          "stage": 0,
+          "label": "기록확인",
+          "questions": [
+            "request_original"
+          ],
+          "unlockHint": null
+        },
+        {
+          "stage": 1,
+          "label": "시간대조",
+          "questions": [
+            "check_metadata"
+          ],
+          "unlockHint": "기록을 확인하면 두 스캔 시점과 마지막 제출자를 대조할 수 있습니다."
+        },
+        {
+          "stage": 2,
+          "label": "동기추궁",
+          "questions": [
+            "restore_context"
+          ],
+          "unlockHint": "시간대를 대조하면 왜 다시 낸 서류의 비율이 바뀌었는지 추궁할 수 있습니다."
+        }
+      ]
+    },
+    "e-5": {
+      "investigationStages": [
+        {
+          "stage": 0,
+          "label": "원본확인",
+          "questions": [
+            "request_original"
+          ],
+          "unlockHint": null
+        },
+        {
+          "stage": 1,
+          "label": "자필대조",
+          "questions": [
+            "check_metadata"
+          ],
+          "unlockHint": "원본을 확인하면 작성 시점과 자필 여부를 대조할 수 있습니다."
+        },
+        {
+          "stage": 2,
+          "label": "이유추궁",
+          "questions": [
+            "restore_context"
+          ],
+          "unlockHint": "자필과 시점을 대조하면 90대 10을 60대 40으로 바꾼 이유를 추궁할 수 있습니다."
+        }
+      ]
+    },
+    "e-6": {
+      "investigationStages": [
+        {
+          "stage": 0,
+          "label": "내역확인",
+          "questions": [
+            "request_original"
+          ],
+          "unlockHint": null
+        },
+        {
+          "stage": 1,
+          "label": "흐름대조",
+          "questions": [
+            "check_metadata"
+          ],
+          "unlockHint": "내역을 확인하면 생활비 송금과 부도 시기 자금 이동을 함께 대조할 수 있습니다."
+        },
+        {
+          "stage": 2,
+          "label": "숨김추궁",
+          "questions": [
+            "restore_context"
+          ],
+          "unlockHint": "자금 흐름을 대조하면 왜 이 돈의 출처를 형에게 숨겼는지 추궁할 수 있습니다."
+        }
+      ]
+    },
+    "e-7": {
+      "investigationStages": [
+        {
+          "stage": 0,
+          "label": "원본확인",
+          "questions": [
+            "request_original"
+          ],
+          "unlockHint": null
+        },
+        {
+          "stage": 1,
+          "label": "문장대조",
+          "questions": [
+            "check_metadata"
+          ],
+          "unlockHint": "원본을 확인하면 일기 작성 시점과 핵심 문장을 대조할 수 있습니다."
+        },
+        {
+          "stage": 2,
+          "label": "동기복원",
+          "questions": [
+            "restore_context"
+          ],
+          "unlockHint": "문장과 시점을 대조하면 유서 조작의 진짜 이유를 복원할 수 있습니다."
+        }
+      ]
+    }
+  }
+}

@@ -1,9 +1,8 @@
 import { useState } from 'react'
 import { useGameStore, useStore } from '../../store/useGameStore'
-import { INITIAL_RESOURCES, MAX_TURNS } from '../../utils/constants'
+import { MAX_TURNS } from '../../utils/constants'
 import { GamePhase, Phase } from '../../types'
 import Emoji from '../common/Emoji'
-import ResourcePopup from '../shop/ResourcePopup'
 import PhaseIndicator from '../layout/PhaseIndicator'
 // EmotionGuide는 PartyDetailPopup 내부 탭으로 통합됨
 
@@ -12,33 +11,15 @@ const EMOTION_EMOJI: Record<string, string> = {
 }
 
 
-// 외부에서 리소스 팝업을 여는 전역 함수
-let openResourcePopupFn: ((type: 'invest' | 'skill') => void) | null = null
-export function openResourcePopup(type: 'invest' | 'skill') {
-  openResourcePopupFn?.(type)
-}
-
 export default function PartyStatusBar() {
   const caseData = useStore((s) => s.caseData)
   const agentA = useStore((s) => s.agentA)
   const agentB = useStore((s) => s.agentB)
-  const resources = useStore((s) => s.resources)
   const separationTarget = useStore((s) => s.separationTarget)
   const [showPartyPopup, setShowPartyPopup] = useState<{ party: 'a' | 'b'; tab: 'info' | 'emotion' } | null>(null)
-  const [showResource, setShowResource] = useState<'invest' | 'skill' | null>(null)
-  // 전역 접근용
-  openResourcePopupFn = setShowResource
   const turnCount = useStore((s) => s.turnCount)
   const processMetrics = useStore((s) => s.processMetrics)
   const currentPhase = useStore((s) => s.currentPhase)
-  const globalInvest = useStore((s) => s.resources.investigationTokens)
-  const globalSkill = useStore((s) => s.resources.skillPoints)
-  const adCountInvest = useStore((s) => s.adWatchCountInvest)
-  const adCountSkill = useStore((s) => s.adWatchCountSkill)
-  const watchAdInvest = useStore((s) => s.watchAdForInvest)
-  const watchAdSkill = useStore((s) => s.watchAdForSkill)
-  const getCountdown = useStore((s) => s.getNextRechargeCountdown)
-
   if (!caseData) return null
 
   const remainingTurns = MAX_TURNS - turnCount
@@ -91,16 +72,6 @@ export default function PartyStatusBar() {
           </button>
         </div>
       </div>
-
-      {/* 리소스 충전 팝업 */}
-      {showResource === 'invest' && (
-        <ResourcePopup type="invest" current={globalInvest} countdown={getCountdown()}
-          adRemaining={5 - adCountInvest} onWatchAd={watchAdInvest} onClose={() => setShowResource(null)} />
-      )}
-      {showResource === 'skill' && (
-        <ResourcePopup type="skill" current={globalSkill}
-          adRemaining={2 - adCountSkill} onWatchAd={watchAdSkill} onClose={() => setShowResource(null)} />
-      )}
 
       {/* 캐릭터/감정 통합 팝업 */}
       {showPartyPopup && (

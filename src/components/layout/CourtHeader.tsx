@@ -3,7 +3,6 @@ import { useGameStore, useStore } from '../../store/useGameStore'
 import { GamePhase, Phase } from '../../types'
 import PhaseIndicator from './PhaseIndicator'
 import SettingsPanel from './SettingsPanel'
-import ResourcePopup from '../shop/ResourcePopup'
 import Emoji from '../common/Emoji'
 import { checkConnection } from '../../engine/llmClient'
 import { MAX_TURNS } from '../../utils/constants'
@@ -17,12 +16,6 @@ const ForcedVerdictBanner = lazy(() => import('../discovery/ForcedVerdictBanner'
 
 const EMOTION_EMOJI: Record<string, string> = {
   defensive: '😐', confident: '😤', shaken: '😰', angry: '😡', resigned: '😞',
-}
-
-// 외부에서 리소스 팝업을 여는 전역 함수
-let openResourcePopupFn: ((type: 'invest' | 'skill') => void) | null = null
-export function openResourcePopup(type: 'invest' | 'skill') {
-  openResourcePopupFn?.(type)
 }
 
 interface CourtHeaderProps {
@@ -56,7 +49,6 @@ const PHASE_DESC: Record<string, { title: string; desc: string }> = {
 export default function CourtHeader({ isDialoguePhase, onToggleInfo, infoOpen }: CourtHeaderProps) {
   const [showSettings, setShowSettings] = useState(false)
   const [showExitConfirm, setShowExitConfirm] = useState(false)
-  const [showResource, setShowResource] = useState<'invest' | 'skill' | null>(null)
   const [aiStatus, setAiStatus] = useState<'checking' | 'connected' | 'disconnected'>('checking')
   const [showSummaryLock, setShowSummaryLock] = useState(false)
   const [showScorePopup, setShowScorePopup] = useState(false)
@@ -72,21 +64,13 @@ export default function CourtHeader({ isDialoguePhase, onToggleInfo, infoOpen }:
   const agentA = useStore((s) => s.agentA)
   const agentB = useStore((s) => s.agentB)
   const separationTarget = useStore((s) => s.separationTarget)
-  const tickRecharge = useStore((s) => s.tickInvestRecharge)
   const turnCount = useStore((s) => s.turnCount)
   const globalInvest = useStore((s) => s.resources.investigationTokens)
   const globalSkill = useStore((s) => s.resources.skillPoints)
-  const adCountInvest = useStore((s) => s.adWatchCountInvest)
-  const adCountSkill = useStore((s) => s.adWatchCountSkill)
-  const watchAdInvest = useStore((s) => s.watchAdForInvest)
-  const watchAdSkill = useStore((s) => s.watchAdForSkill)
-  const getCountdown = useStore((s) => s.getNextRechargeCountdown)
   const processMetrics = useStore((s) => s.processMetrics)
   const pendingEvidenceResult = useStore((s) => s.pendingEvidenceResult)
   const setPendingEvidenceResult = useStore((s) => s.setPendingEvidenceResult)
   const verdictMode = useStore((s) => s.verdictMode)
-
-  openResourcePopupFn = setShowResource
 
   const LATE_PHASES = [
     Phase.Interrogation, GamePhase.Phase4_Evidence,
@@ -103,12 +87,6 @@ export default function CourtHeader({ isDialoguePhase, onToggleInfo, infoOpen }:
     processMetrics.liesCollapsed * 10 + processMetrics.evidenceDiscovered * 8
     + processMetrics.evidenceEffective * 5 + processMetrics.freeQuestionsRelevant * 3
   )
-
-  useEffect(() => {
-    tickRecharge()
-    const timer = setInterval(tickRecharge, 60_000)
-    return () => clearInterval(timer)
-  }, [tickRecharge])
 
   useEffect(() => {
     const check = () => checkConnection().then(r => setAiStatus(r.connected ? 'connected' : 'disconnected'))
@@ -241,16 +219,16 @@ export default function CourtHeader({ isDialoguePhase, onToggleInfo, infoOpen }:
           <div className="flex-1" />
 
           {/* 🔍 조사 토큰 */}
-          <button onClick={() => setShowResource('invest')} className="flex items-center gap-1 px-2.5 py-1.5 rounded-lg bg-white/[0.03] ring-1 ring-white/5 hover:ring-amber-500/20 hover:bg-amber-500/5 active:scale-95 transition-all">
+          <div className="flex items-center gap-1 px-2.5 py-1.5 rounded-lg bg-white/[0.03] ring-1 ring-white/5">
             <Emoji char="🔍" size={16} />
             <span className={`text-sm font-bold tabular-nums ${globalInvest === 0 ? 'text-red-400' : 'text-amber-400'}`}>{globalInvest}</span>
-          </button>
+          </div>
 
           {/* ⚡ 스킬 */}
-          <button onClick={() => setShowResource('skill')} className="flex items-center gap-1 px-2.5 py-1.5 rounded-lg bg-white/[0.03] ring-1 ring-white/5 hover:ring-amber-500/20 hover:bg-amber-500/5 active:scale-95 transition-all">
+          <div className="flex items-center gap-1 px-2.5 py-1.5 rounded-lg bg-white/[0.03] ring-1 ring-white/5">
             <Emoji char="⚡" size={16} />
             <span className={`text-sm font-bold tabular-nums ${globalSkill === 0 ? 'text-red-400' : 'text-amber-400'}`}>{globalSkill}</span>
-          </button>
+          </div>
 
           {/* ❓ 도움말 */}
           <button onClick={() => { setHelpPage(0); setShowHelp(true) }}
@@ -264,16 +242,6 @@ export default function CourtHeader({ isDialoguePhase, onToggleInfo, infoOpen }:
 
       {/* 설정 */}
       {showSettings && <SettingsPanel onClose={() => setShowSettings(false)} />}
-
-      {/* 리소스 팝업 */}
-      {showResource === 'invest' && (
-        <ResourcePopup type="invest" current={globalInvest} countdown={getCountdown()}
-          adRemaining={5 - adCountInvest} onWatchAd={watchAdInvest} onClose={() => setShowResource(null)} />
-      )}
-      {showResource === 'skill' && (
-        <ResourcePopup type="skill" current={globalSkill}
-          adRemaining={2 - adCountSkill} onWatchAd={watchAdSkill} onClose={() => setShowResource(null)} />
-      )}
 
       {/* 요약 활성화 경고 */}
       {showSummaryLock && (

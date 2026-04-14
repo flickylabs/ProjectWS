@@ -6,6 +6,7 @@ import { playGavel } from '../../../engine/soundEngine'
 import { calculateVerdict } from '../../../engine/verdictEngine'
 import { computeMediationScoreModifiers } from '../../../engine/mediationEffectEngine'
 import type { MediationScoreContext } from '../../../engine/mediationEffectEngine'
+import { getSolutionOrientationByText } from '../../../data/solutionOrientations'
 import { deriveCaseProfile, applyDriftUpdate } from '../../../engine/judgeProfileEngine'
 import { generateVerdictSummary } from '../../../engine/verdictSummaryEngine'
 import { recordGameComplete } from '../../../hooks/useLocalStorage'
@@ -235,12 +236,27 @@ export default function PCVerdictScreen() {
       illegal_evidence_admitted_count: Object.values(verdictInput.evidenceLegality ?? {}).filter(v => v === false).length,
       extreme_blame_dispute_count: responsibilityValues.filter(r => Math.abs(r.a - r.b) >= 80).length,
       selected_solutions_count: verdictInput.selectedSolutions.length,
-      selected_final_solution_count: verdictInput.selectedSolutions.filter(s => s.includes('final') || s.includes('deadline') || s.includes('closure')).length,
-      selected_temporary_solution_count: verdictInput.selectedSolutions.filter(s => s.includes('temporary') || s.includes('hold') || s.includes('freeze')).length,
-      selected_mutual_solution_count: verdictInput.selectedSolutions.filter(s => s.includes('mutual') || s.includes('reciprocal')).length,
-      selected_one_sided_solution_count: verdictInput.selectedSolutions.filter(s => s.includes('sanction') || s.includes('penalty')).length,
-      selected_solution_side_coverage: 'both',
-      selected_fact_record_solution_count: verdictInput.selectedSolutions.filter(s => s.includes('record') || s.includes('audit') || s.includes('timeline')).length,
+      ...(() => {
+        // solutionOrientations 기반 태그 분류
+        const orientations = verdictInput.selectedSolutions.map(entry => {
+          const sep = entry.indexOf('::')
+          if (sep < 0) return 'hybrid' as const
+          return getSolutionOrientationByText(
+            caseData.caseId, entry.slice(0, sep), entry.slice(sep + 2), caseData.solutions,
+          )
+        })
+        const principleCount = orientations.filter(o => o === 'principle').length
+        const reconcileCount = orientations.filter(o => o === 'reconcile').length
+        const hasBothSides = principleCount > 0 && reconcileCount > 0
+        return {
+          selected_final_solution_count: principleCount,
+          selected_temporary_solution_count: 0,
+          selected_mutual_solution_count: reconcileCount,
+          selected_one_sided_solution_count: principleCount >= 2 && reconcileCount === 0 ? principleCount : 0,
+          selected_solution_side_coverage: hasBothSides ? 'both' as const : reconcileCount > 0 ? 'a_only' as const : principleCount > 0 ? 'b_only' as const : 'none' as const,
+          selected_fact_record_solution_count: principleCount,
+        }
+      })(),
       responsibility_gap_average: gapAvg,
       high_ambiguity_pending_count: highWeightDisputes.filter(d => verdictInput.factFindings[d.id] === 'pending').length,
       resolved_low_or_medium_ambiguity_count: caseData.disputes.filter(d => d.ambiguity !== 'high' && verdictInput.factFindings[d.id] && verdictInput.factFindings[d.id] !== 'pending').length,

@@ -1,0 +1,201 @@
+{
+  "caseId": "spouse-01",
+  "evidenceStages": {
+    "e-1": {
+      "investigationStages": [
+        {
+          "stage": 0,
+          "label": "영수확인",
+          "questions": [
+            "request_original"
+          ],
+          "unlockHint": null
+        },
+        {
+          "stage": 1,
+          "label": "품목대조",
+          "questions": [
+            "check_metadata"
+          ],
+          "unlockHint": "영수증을 확인하면 여성용품과 참고서 같은 품목 구성을 함께 대조할 수 있습니다."
+        },
+        {
+          "stage": 2,
+          "label": "대상복원",
+          "questions": [
+            "restore_context"
+          ],
+          "unlockHint": "품목을 대조하면 이 구매가 누구를 위한 것이었는지 복원할 수 있습니다."
+        }
+      ]
+    },
+    "e-2": {
+      "investigationStages": [
+        {
+          "stage": 0,
+          "label": "기록확인",
+          "questions": [
+            "request_original"
+          ],
+          "unlockHint": null
+        },
+        {
+          "stage": 1,
+          "label": "동선대조",
+          "questions": [
+            "check_metadata"
+          ],
+          "unlockHint": "기록을 확인하면 반복 정차 좌표와 체류 시간을 대조할 수 있습니다."
+        },
+        {
+          "stage": 2,
+          "label": "숨김추궁",
+          "questions": [
+            "restore_context"
+          ],
+          "unlockHint": "동선을 대조하면 왜 같은 오피스텔 방문을 배우자에게 숨겼는지 추궁할 수 있습니다."
+        }
+      ]
+    },
+    "e-3": {
+      "investigationStages": [
+        {
+          "stage": 0,
+          "label": "기록확인",
+          "questions": [
+            "request_original"
+          ],
+          "unlockHint": null
+        },
+        {
+          "stage": 1,
+          "label": "패턴대조",
+          "questions": [
+            "check_metadata"
+          ],
+          "unlockHint": "기록을 확인하면 새벽 통화와 낮 통화가 같은 번호인지 패턴을 대조할 수 있습니다."
+        },
+        {
+          "stage": 2,
+          "label": "숨김추궁",
+          "questions": [
+            "restore_context"
+          ],
+          "unlockHint": "통화 패턴을 대조하면 왜 이 연락의 상대와 내용을 숨겼는지 추궁할 수 있습니다."
+        }
+      ]
+    },
+    "e-4": {
+      "investigationStages": [
+        {
+          "stage": 0,
+          "label": "대화확인",
+          "questions": [
+            "request_original"
+          ],
+          "unlockHint": null
+        },
+        {
+          "stage": 1,
+          "label": "관계대조",
+          "questions": [
+            "check_metadata"
+          ],
+          "unlockHint": "대화를 확인하면 발신자와 돌봄 부탁 내용의 관계를 대조할 수 있습니다."
+        },
+        {
+          "stage": 2,
+          "label": "맥락복원",
+          "questions": [
+            "restore_context"
+          ],
+          "unlockHint": "관계를 대조하면 오피스텔 방문이 외도가 아니라 무엇이었는지 복원할 수 있습니다."
+        }
+      ]
+    },
+    "e-5": {
+      "investigationStages": [
+        {
+          "stage": 0,
+          "label": "내역확인",
+          "questions": [
+            "request_original"
+          ],
+          "unlockHint": null
+        },
+        {
+          "stage": 1,
+          "label": "금액대조",
+          "questions": [
+            "check_metadata"
+          ],
+          "unlockHint": "내역을 확인하면 3,000만원 현금 출금 시점과 방문 시작 시점을 대조할 수 있습니다."
+        },
+        {
+          "stage": 2,
+          "label": "사용추궁",
+          "questions": [
+            "restore_context"
+          ],
+          "unlockHint": "금액과 시점을 대조하면 그 현금이 실제로 어디로 갔는지 추궁할 수 있습니다."
+        }
+      ]
+    },
+    "e-6": {
+      "investigationStages": [
+        {
+          "stage": 0,
+          "label": "송금확인",
+          "questions": [
+            "request_original"
+          ],
+          "unlockHint": null
+        },
+        {
+          "stage": 1,
+          "label": "가입대조",
+          "questions": [
+            "check_metadata"
+          ],
+          "unlockHint": "송금을 확인하면 투자방 가입 경로와 송금 시점을 함께 대조할 수 있습니다."
+        },
+        {
+          "stage": 2,
+          "label": "손실복원",
+          "questions": [
+            "restore_context"
+          ],
+          "unlockHint": "가입 경로와 시점을 대조하면 2,000만원이 어떻게 사기로 사라졌는지 복원할 수 있습니다."
+        }
+      ]
+    },
+    "e-7": {
+      "investigationStages": [
+        {
+          "stage": 0,
+          "label": "서류확인",
+          "questions": [
+            "request_original"
+          ],
+          "unlockHint": null
+        },
+        {
+          "stage": 1,
+          "label": "필체대조",
+          "questions": [
+            "check_metadata"
+          ],
+          "unlockHint": "서류를 확인하면 해지 기록과 위임장 서명을 함께 대조할 수 있습니다."
+        },
+        {
+          "stage": 2,
+          "label": "책임추궁",
+          "questions": [
+            "restore_context"
+          ],
+          "unlockHint": "필체를 대조하면 누가 동의 없이 공동 적금을 움직였는지 추궁할 수 있습니다."
+        }
+      ]
+    }
+  }
+}

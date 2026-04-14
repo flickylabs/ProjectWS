@@ -1,0 +1,201 @@
+{
+  "caseId": "friend-01",
+  "evidenceStages": {
+    "e-1": {
+      "investigationStages": [
+        {
+          "stage": 0,
+          "label": "기록확인",
+          "questions": [
+            "request_original"
+          ],
+          "unlockHint": null
+        },
+        {
+          "stage": 1,
+          "label": "시간대조",
+          "questions": [
+            "check_metadata"
+          ],
+          "unlockHint": "기록을 확인하면 연락 횟수와 문구의 시간대를 대조할 수 있습니다."
+        },
+        {
+          "stage": 2,
+          "label": "의도추궁",
+          "questions": [
+            "restore_context"
+          ],
+          "unlockHint": "시간대를 대조하면 이 연락이 집착이었는지 경고였는지 추궁할 수 있습니다."
+        }
+      ]
+    },
+    "e-2": {
+      "investigationStages": [
+        {
+          "stage": 0,
+          "label": "대화확인",
+          "questions": [
+            "request_original"
+          ],
+          "unlockHint": null
+        },
+        {
+          "stage": 1,
+          "label": "순서대조",
+          "questions": [
+            "check_metadata"
+          ],
+          "unlockHint": "대화를 확인하면 직접 확인보다 단톡방 공개가 먼저였는지 순서를 대조할 수 있습니다."
+        },
+        {
+          "stage": 2,
+          "label": "책임추궁",
+          "questions": [
+            "restore_context"
+          ],
+          "unlockHint": "순서를 대조하면 누가 먼저 낙인을 만들었는지 추궁할 수 있습니다."
+        }
+      ]
+    },
+    "e-3": {
+      "investigationStages": [
+        {
+          "stage": 0,
+          "label": "대화확인",
+          "questions": [
+            "request_original"
+          ],
+          "unlockHint": null
+        },
+        {
+          "stage": 1,
+          "label": "맥락대조",
+          "questions": [
+            "check_metadata"
+          ],
+          "unlockHint": "대화를 확인하면 손절 직전의 말과 그 직후 침묵의 맥락을 대조할 수 있습니다."
+        },
+        {
+          "stage": 2,
+          "label": "침묵추궁",
+          "questions": [
+            "restore_context"
+          ],
+          "unlockHint": "맥락을 대조하면 왜 돈 문제의 실체를 끝내 말하지 않았는지 추궁할 수 있습니다."
+        }
+      ]
+    },
+    "e-4": {
+      "investigationStages": [
+        {
+          "stage": 0,
+          "label": "대화확인",
+          "questions": [
+            "request_original"
+          ],
+          "unlockHint": null
+        },
+        {
+          "stage": 1,
+          "label": "선후대조",
+          "questions": [
+            "check_metadata"
+          ],
+          "unlockHint": "대화를 확인하면 누가 먼저 선을 넘었는지 선후를 대조할 수 있습니다."
+        },
+        {
+          "stage": 2,
+          "label": "의도복원",
+          "questions": [
+            "restore_context"
+          ],
+          "unlockHint": "선후를 대조하면 B의 연락이 꼬임이 아니라 경고였는지 복원할 수 있습니다."
+        }
+      ]
+    },
+    "e-5": {
+      "investigationStages": [
+        {
+          "stage": 0,
+          "label": "대화확인",
+          "questions": [
+            "request_original"
+          ],
+          "unlockHint": null
+        },
+        {
+          "stage": 1,
+          "label": "시점대조",
+          "questions": [
+            "check_metadata"
+          ],
+          "unlockHint": "대화를 확인하면 돈 요구 시점과 B의 연락 시점을 대조할 수 있습니다."
+        },
+        {
+          "stage": 2,
+          "label": "경고복원",
+          "questions": [
+            "restore_context"
+          ],
+          "unlockHint": "시점을 대조하면 B가 왜 예비신랑을 붙잡으려 했는지 복원할 수 있습니다."
+        }
+      ]
+    },
+    "e-6": {
+      "investigationStages": [
+        {
+          "stage": 0,
+          "label": "내역확인",
+          "questions": [
+            "request_original"
+          ],
+          "unlockHint": null
+        },
+        {
+          "stage": 1,
+          "label": "상환대조",
+          "questions": [
+            "check_metadata"
+          ],
+          "unlockHint": "내역을 확인하면 송금 시점과 미상환 문자를 함께 대조할 수 있습니다."
+        },
+        {
+          "stage": 2,
+          "label": "침묵추궁",
+          "questions": [
+            "restore_context"
+          ],
+          "unlockHint": "상환 흐름을 대조하면 왜 A에게 이 일을 끝내 말하지 못했는지 추궁할 수 있습니다."
+        }
+      ]
+    },
+    "e-7": {
+      "investigationStages": [
+        {
+          "stage": 0,
+          "label": "패턴확인",
+          "questions": [
+            "request_original"
+          ],
+          "unlockHint": null
+        },
+        {
+          "stage": 1,
+          "label": "시점대조",
+          "questions": [
+            "check_metadata"
+          ],
+          "unlockHint": "대조표를 확인하면 과거와 현재의 문구와 시점을 나란히 대조할 수 있습니다."
+        },
+        {
+          "stage": 2,
+          "label": "낙인추궁",
+          "questions": [
+            "restore_context"
+          ],
+          "unlockHint": "패턴을 대조하면 이번 사건에서 누가 먼저 B를 낙인찍었는지 추궁할 수 있습니다."
+        }
+      ]
+    }
+  }
+}

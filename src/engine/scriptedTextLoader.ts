@@ -228,11 +228,21 @@ function scoreVariant(
       confrontational: ['v3', 'v1', 'v4', 'v2', 'v5'],
     }
     const emotionWeights: Record<string, Record<string, number>> = {
+      calm: { v2: 1.5, v4: 1.3 },
       angry: { v3: 3, v1: 2 },
       cornered: { v5: 3, v4: 2 },
       ashamed: { v5: 3, v2: 1.5 },
       anxious: { v2: 2, v5: 2 },
       resigned: { v1: 2, v5: 2 },
+    }
+
+    // EmotionalPhase → 변주 emotion 매핑
+    const phaseToEmotion: Record<string, string> = {
+      defensive: 'anxious',
+      confident: 'calm',
+      shaken: 'cornered',
+      angry: 'angry',
+      resigned: 'resigned',
     }
 
     // archetype 선호도 반영
@@ -243,8 +253,9 @@ function scoreVariant(
       if (rank >= 0) score += [4, 3, 2, 1, 0][rank]
     }
 
-    // emotion 가중치 반영
-    const emotion = tags.emotion || context.emotion
+    // emotion 가중치 반영 (EmotionalPhase → 변주 emotion 매핑 적용)
+    const rawEmotion = tags.emotion || context.emotion
+    const emotion = rawEmotion ? (phaseToEmotion[rawEmotion] ?? rawEmotion) : undefined
     const ew = emotion ? emotionWeights[emotion] : undefined
     if (ew && ew[vid]) score += ew[vid]
   }

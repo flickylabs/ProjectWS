@@ -1,0 +1,364 @@
+{
+  "phase7_effects": {
+    "immediate": {
+      "design_intent": "빠르게 결론을 내리되, 애매한 보류를 오래 끌지 않는 경로",
+      "path_balance_rule": {
+        "max_net_dimension_delta": 10,
+        "per_dimension_cap": 6,
+        "apply_after_base_calc": true
+      },
+      "ui_rules": {
+        "fact_finding_preset": {
+          "default_state": "unselected",
+          "button_order": ["true", "false", "pending"],
+          "pending_warning_threshold": 2
+        },
+        "responsibility_preset": {
+          "default_split": "50:50",
+          "quick_presets": ["70:30", "50:50", "30:70"],
+          "slider_step": 10
+        },
+        "solution_rules": {
+          "extra_options": ["written_closure", "contact_boundary", "payment_deadline"],
+          "highlight_tags": ["final", "boundary", "deadline"],
+          "deprioritized_tags": ["temporary", "followup", "reinvestigate"],
+          "min_selections": 1,
+          "max_selections": 2
+        }
+      },
+      "score_modifiers": {
+        "insight": [
+          {
+            "when": "resolved_high_weight_count == high_weight_total && pending_count <= 1",
+            "delta": 6
+          },
+          {
+            "when": "pending_count >= 2",
+            "delta": -6
+          }
+        ],
+        "authority": [
+          {
+            "when": "turnsUsed <= 18 && illegal_evidence_admitted_count == 0",
+            "delta": 4
+          },
+          {
+            "when": "extreme_blame_dispute_count >= 2",
+            "delta": -4
+          }
+        ],
+        "wisdom": [
+          {
+            "when": "selected_final_solution_count >= 1",
+            "delta": 4
+          },
+          {
+            "when": "selected_solutions_count == 0",
+            "delta": -6
+          }
+        ]
+      },
+      "npc_attitude_modifiers": [
+        {
+          "when": "on_select",
+          "a": -1,
+          "b": -1,
+          "meaning": "압박감 상승"
+        },
+        {
+          "when": "resolved_high_weight_count == high_weight_total && extreme_blame_dispute_count == 0 && selected_final_solution_count >= 1",
+          "a": 1,
+          "b": 1,
+          "meaning": "결단 수용"
+        },
+        {
+          "when": "extreme_blame_dispute_count >= 2",
+          "target": "heavier_blamed_side",
+          "delta": -2,
+          "meaning": "억울함 누적"
+        }
+      ],
+      "aftermath_tone_bias": ["결단", "단절", "빠른 봉합"]
+    },
+    "conditional": {
+      "design_intent": "책임과 보완 조건을 묶어, 받아들일 수 있는 타협점을 만드는 경로",
+      "path_balance_rule": {
+        "max_net_dimension_delta": 10,
+        "per_dimension_cap": 6,
+        "apply_after_base_calc": true
+      },
+      "ui_rules": {
+        "fact_finding_preset": {
+          "default_state": "unselected",
+          "button_order": ["true", "pending", "false"],
+          "high_weight_pending_soft_warning": true
+        },
+        "responsibility_preset": {
+          "default_split": "50:50",
+          "quick_presets": ["60:40", "50:50", "40:60"],
+          "slider_step": 5,
+          "show_condition_link_badge": true
+        },
+        "solution_rules": {
+          "extra_options": ["staged_payment", "mutual_apology", "reciprocal_access_rule", "review_deadline"],
+          "highlight_tags": ["mutual", "staged", "review"],
+          "deprioritized_tags": ["sanction", "permanent_cutoff"],
+          "min_selections": 2,
+          "requires_dual_side_coverage_if_gap_over": 20
+        }
+      },
+      "score_modifiers": {
+        "insight": [
+          {
+            "when": "resolved_high_weight_count >= 1",
+            "delta": 4
+          },
+          {
+            "when": "high_weight_pending_count == high_weight_total",
+            "delta": -4
+          }
+        ],
+        "authority": [
+          {
+            "when": "responsibility_gap_average >= 10 && responsibility_gap_average <= 40 && illegal_evidence_admitted_count == 0",
+            "delta": 4
+          },
+          {
+            "when": "selected_one_sided_solution_count >= 1 && extreme_blame_dispute_count >= 2",
+            "delta": -4
+          }
+        ],
+        "wisdom": [
+          {
+            "when": "selected_mutual_solution_count >= 1 || selected_solution_side_coverage == both",
+            "delta": 6
+          },
+          {
+            "when": "selected_mutual_solution_count == 0 && extreme_blame_dispute_count >= 1",
+            "delta": -6
+          }
+        ]
+      },
+      "npc_attitude_modifiers": [
+        {
+          "when": "on_select",
+          "a": 0,
+          "b": 0,
+          "meaning": "탐색적 긴장"
+        },
+        {
+          "when": "selected_mutual_solution_count >= 1 && selected_solution_side_coverage == both",
+          "a": 1,
+          "b": 1,
+          "meaning": "조건부 수용"
+        },
+        {
+          "when": "selected_one_sided_solution_count >= 1 && responsibility_gap_average >= 30",
+          "target": "burdened_side",
+          "delta": -2,
+          "meaning": "조건 강요로 인한 반발"
+        }
+      ],
+      "aftermath_tone_bias": ["타협", "시험", "조건부 휴전"]
+    },
+    "postpone": {
+      "design_intent": "확정 가능한 것만 먼저 정리하고, 위험한 단정은 뒤로 미루는 경로",
+      "path_balance_rule": {
+        "max_net_dimension_delta": 10,
+        "per_dimension_cap": 6,
+        "apply_after_base_calc": true
+      },
+      "ui_rules": {
+        "fact_finding_preset": {
+          "default_state_by_ambiguity": {
+            "high": "pending",
+            "medium": "unselected",
+            "low": "unselected"
+          },
+          "button_order": ["pending", "true", "false"],
+          "show_temporary_resolution_badge": true
+        },
+        "responsibility_preset": {
+          "default_split": "50:50",
+          "lock_while_pending": true,
+          "quick_presets_after_resolution": ["65:35", "50:50", "35:65"],
+          "slider_step": 10
+        },
+        "solution_rules": {
+          "extra_options": ["temporary_freeze", "expense_hold", "evidence_preservation", "followup_hearing"],
+          "highlight_tags": ["temporary", "hold", "followup"],
+          "deprioritized_tags": ["final", "permanent"],
+          "min_selections": 1,
+          "max_selections": 3,
+          "unlock_final_tags_when": "resolved_high_weight_count >= 1"
+        }
+      },
+      "score_modifiers": {
+        "insight": [
+          {
+            "when": "high_ambiguity_pending_count >= 1 && resolved_low_or_medium_ambiguity_count >= 2",
+            "delta": 6
+          },
+          {
+            "when": "resolved_high_weight_count == 0",
+            "delta": -4
+          }
+        ],
+        "authority": [
+          {
+            "when": "illegal_evidence_admitted_count == 0 && high_ambiguity_pending_count >= 1",
+            "delta": 4
+          },
+          {
+            "when": "pending_count > floor(total_disputes / 2)",
+            "delta": -6
+          },
+          {
+            "when": "selected_final_solution_count >= 1 && pending_count >= 2",
+            "delta": -4
+          }
+        ],
+        "wisdom": [
+          {
+            "when": "pending_count >= 1 && selected_temporary_solution_count >= 1",
+            "delta": 6
+          },
+          {
+            "when": "selected_temporary_solution_count == 0 && pending_count >= 2",
+            "delta": -4
+          }
+        ]
+      },
+      "npc_attitude_modifiers": [
+        {
+          "when": "on_select",
+          "a": 1,
+          "b": 1,
+          "meaning": "즉시 충돌 완화"
+        },
+        {
+          "when": "pending_count >= 1 && selected_temporary_solution_count >= 1",
+          "a": 1,
+          "b": 1,
+          "meaning": "숨 고르기 수용"
+        },
+        {
+          "when": "selected_final_solution_count >= 1 && pending_count >= 2",
+          "target": "heavier_blamed_side",
+          "delta": -2,
+          "meaning": "성급한 확정에 대한 불만"
+        }
+      ],
+      "aftermath_tone_bias": ["유예", "잔류 긴장", "추가 확인"]
+    },
+    "fact_first": {
+      "design_intent": "감정보다 사실관계를 먼저 고정하고, 해결책은 그 다음에 붙이는 경로",
+      "path_balance_rule": {
+        "max_net_dimension_delta": 10,
+        "per_dimension_cap": 6,
+        "apply_after_base_calc": true
+      },
+      "ui_rules": {
+        "fact_finding_preset": {
+          "default_state": "unselected",
+          "button_order": ["true", "false", "pending"],
+          "must_set_before_solution_for": "high_weight_disputes",
+          "sort_order": "weight_desc_then_evidence_coverage_desc"
+        },
+        "responsibility_preset": {
+          "default_split": "50:50",
+          "lock_until_fact_set": true,
+          "quick_presets": ["65:35", "50:50", "35:65"],
+          "slider_step": 5
+        },
+        "solution_rules": {
+          "extra_options": ["timeline_reconstruction", "statement_exchange", "record_correction", "account_audit"],
+          "highlight_tags": ["record", "audit", "timeline"],
+          "deprioritized_tags": ["emotion_only", "relationship_reset"],
+          "min_selections": 1,
+          "max_selections": 2,
+          "unlock_solution_panel_when": "resolved_high_weight_count == high_weight_total"
+        }
+      },
+      "score_modifiers": {
+        "insight": [
+          {
+            "when": "resolved_high_weight_count == high_weight_total",
+            "delta": 6
+          },
+          {
+            "when": "resolved_high_weight_count == 0",
+            "delta": -6
+          }
+        ],
+        "authority": [
+          {
+            "when": "illegal_evidence_admitted_count == 0 && confidential_evidence_protected_count >= 1",
+            "delta": 4
+          },
+          {
+            "when": "evidence_legality_judged_count < discovered_privacy_evidence_count",
+            "delta": -4
+          }
+        ],
+        "wisdom": [
+          {
+            "when": "selected_fact_record_solution_count >= 1 && extreme_blame_dispute_count == 0",
+            "delta": 4
+          },
+          {
+            "when": "selected_solutions_count >= 3",
+            "delta": -4
+          }
+        ]
+      },
+      "npc_attitude_modifiers": [
+        {
+          "when": "on_select",
+          "a": 0,
+          "b": 0,
+          "meaning": "감정 보류"
+        },
+        {
+          "when": "resolved_high_weight_count == high_weight_total && extreme_blame_dispute_count == 0",
+          "a": 1,
+          "b": 1,
+          "meaning": "논리적 수용"
+        },
+        {
+          "when": "selected_solutions_count >= 3",
+          "a": -1,
+          "b": -1,
+          "meaning": "과잉 처방에 대한 거리감"
+        }
+      ],
+      "aftermath_tone_bias": ["정리", "차가운 납득", "느린 수습"]
+    }
+  },
+  "judge_comments": {
+    "immediate": "쟁점은 충분히 드러났습니다. 더 늦추지 않고 지금 판결의 기준을 세우겠습니다.",
+    "conditional": "지금은 누가 얼마나 책임을 지는지만 정하면 끝나지 않습니다. 서로 받아들일 조건을 함께 묶어 보며 합의 가능한 선부터 확인하겠습니다.",
+    "postpone": "당장 결론을 서두르면 남는 상처가 더 커질 수 있습니다. 오늘 확정할 사실과 남겨 둘 쟁점을 나눠서 숨 돌릴 틈을 만든 뒤 판단하겠습니다.",
+    "fact_first": "감정과 해법을 먼저 섞으면 판단이 흐려집니다. 사실관계부터 한 줄씩 고정한 뒤 그 위에 책임과 해결책을 얹겠습니다."
+  },
+  "aftermath_keywords": {
+    "spouse-01": {
+      "immediate": "빠른 결론, 냉랭한 동거",
+      "conditional": "조건부 화해, 신뢰 시험",
+      "postpone": "숨 고르기, 불편한 동거",
+      "fact_first": "기록 대조, 감정 유예"
+    },
+    "family-01": {
+      "immediate": "선 긋기, 서운한 가족",
+      "conditional": "부담 재조정, 불안한 휴전",
+      "postpone": "시간 벌기, 눌린 감정",
+      "fact_first": "기여 검증, 조심스런 재편"
+    },
+    "friend-01": {
+      "immediate": "손절 정산, 메마른 우정",
+      "conditional": "수익 재배분, 시험대 신뢰",
+      "postpone": "추가 검토, 얼어붙은 동업",
+      "fact_first": "계약 재해석, 차가운 합리"
+    }
+  }
+}

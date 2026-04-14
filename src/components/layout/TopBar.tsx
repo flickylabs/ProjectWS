@@ -3,7 +3,6 @@ import { useGameStore, useStore } from '../../store/useGameStore'
 import { GamePhase, Phase } from '../../types'
 import PhaseIndicator from './PhaseIndicator'
 import SettingsPanel from './SettingsPanel'
-import ResourcePopup from '../shop/ResourcePopup'
 import Emoji from '../common/Emoji'
 import { checkConnection } from '../../engine/llmClient'
 import { MAX_TURNS } from '../../utils/constants'
@@ -32,18 +31,10 @@ export default function TopBar() {
   const [showSettings, setShowSettings] = useState(false)
   const [aiStatus, setAiStatus] = useState<'checking' | 'connected' | 'disconnected'>('checking')
   const [showExitConfirm, setShowExitConfirm] = useState(false)
-  const [showResource, setShowResource] = useState<'invest' | 'skill' | null>(null)
   const [showDisputeBoard, setShowDisputeBoard] = useState(false)
 
   const globalInvest = useStore((s) => s.resources.investigationTokens)
   const globalSkill = useStore((s) => s.resources.skillPoints)
-  const adCountInvest = useStore((s) => s.adWatchCountInvest)
-  const adCountSkill = useStore((s) => s.adWatchCountSkill)
-  const tickRecharge = useStore((s) => s.tickInvestRecharge)
-  const getCountdown = useStore((s) => s.getNextRechargeCountdown)
-  const watchAdInvest = useStore((s) => s.watchAdForInvest)
-  const watchAdSkill = useStore((s) => s.watchAdForSkill)
-
   const currentPhase = useStore((s) => s.currentPhase)
   const turnCount = useStore((s) => s.turnCount)
   const processMetrics = useStore((s) => s.processMetrics)
@@ -74,13 +65,6 @@ export default function TopBar() {
     : Math.min(100, processMetrics.liesCollapsed * 10 + processMetrics.evidenceDiscovered * 8 + processMetrics.evidenceEffective * 5 + processMetrics.freeQuestionsRelevant * 3)
 
   const remainingTurns = MAX_TURNS - turnCount
-
-  // 1분마다 자동 충전 체크
-  useEffect(() => {
-    tickRecharge()
-    const timer = setInterval(tickRecharge, 60_000)
-    return () => clearInterval(timer)
-  }, [tickRecharge])
 
   // AI 연결 상태 주기적 체크 (30초마다)
   useEffect(() => {
@@ -118,12 +102,12 @@ export default function TopBar() {
               ) : (
                 <span className="text-xs text-indigo-300/80"><Emoji char="📊" size={14} /> {estimatedScore}</span>
               )}
-              <button onClick={() => setShowResource('invest')} className="flex items-center gap-1 text-xs hover:opacity-80 active:scale-95">
+              <span className="flex items-center gap-1 text-xs">
                 <Emoji char="🔍" size={16} /><span className={`font-bold ${globalInvest === 0 ? 'text-red-400' : 'text-amber-400'}`}>{globalInvest}</span>
-              </button>
-              <button onClick={() => setShowResource('skill')} className="flex items-center gap-1 text-xs hover:opacity-80 active:scale-95">
+              </span>
+              <span className="flex items-center gap-1 text-xs">
                 <Emoji char="⚡" size={16} /><span className={`font-bold ${globalSkill === 0 ? 'text-red-400' : 'text-amber-400'}`}>{globalSkill}</span>
-              </button>
+              </span>
               <span className={`text-xs font-semibold ${remainingTurns <= 5 ? 'text-red-400' : 'text-gray-400'}`}>
                 {turnCount}/{MAX_TURNS}
               </span>
@@ -155,27 +139,6 @@ export default function TopBar() {
 
       {/* 2행: PartyStatusBar에서 통합 표시 */}
       {showSettings && <SettingsPanel onClose={() => setShowSettings(false)} />}
-
-      {/* 돋보기/번개 팝업 */}
-      {showResource === 'invest' && (
-        <ResourcePopup
-          type="invest"
-          current={globalInvest}
-          countdown={getCountdown()}
-          adRemaining={5 - adCountInvest}
-          onWatchAd={watchAdInvest}
-          onClose={() => setShowResource(null)}
-        />
-      )}
-      {showResource === 'skill' && (
-        <ResourcePopup
-          type="skill"
-          current={globalSkill}
-          adRemaining={2 - adCountSkill}
-          onWatchAd={watchAdSkill}
-          onClose={() => setShowResource(null)}
-        />
-      )}
 
       {/* 쟁점 현황 보드 */}
       {showDisputeBoard && (
