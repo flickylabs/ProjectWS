@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { GamePhase } from '../../types'
+import { GamePhase, Phase } from '../../types'
 import { useStore } from '../../store/useGameStore'
 import Emoji from '../common/Emoji'
 
@@ -14,7 +14,7 @@ interface TutorialStep {
 
 const TUTORIAL_STEPS: TutorialStep[] = [
   {
-    phase: GamePhase.Phase1_InitialStatement,
+    phase: Phase.Pretrial,
     trigger: 'phase_enter',
     title: '초기 진술',
     message: '양측의 주장을 잘 들어보세요. 누가 더 그럴듯한지가 아니라, 어디서 모순이 보이는지 집중하세요.',
@@ -22,7 +22,7 @@ const TUTORIAL_STEPS: TutorialStep[] = [
     position: 'center',
   },
   {
-    phase: GamePhase.Phase3_Interrogation,
+    phase: Phase.Interrogation,
     trigger: 'phase_enter',
     title: '심문 시작',
     message: '하단에서 대상(민준/서연)을 선택하고, 질문 유형과 쟁점을 골라 질문하세요. 비활성화된 선택지는 현재 의미 없는 조합입니다.',
@@ -46,7 +46,7 @@ const TUTORIAL_STEPS: TutorialStep[] = [
     position: 'bottom',
   },
   {
-    phase: GamePhase.Phase6_Mediation,
+    phase: Phase.Mediation,
     trigger: 'phase_enter',
     title: '중재안',
     message: '바로 판결할 수도 있고, 조건부 조정안을 제시할 수도 있습니다. 솔로몬다운 지혜를 보여주세요.',
@@ -54,7 +54,7 @@ const TUTORIAL_STEPS: TutorialStep[] = [
     position: 'center',
   },
   {
-    phase: GamePhase.Phase7_Verdict,
+    phase: Phase.Verdict,
     trigger: 'phase_enter',
     title: '최종 판결',
     message: '사실 인정 → 책임 배분 → 해결책 선택. 위법 증거를 판결 근거로 쓰면 권위 점수가 떨어집니다.',

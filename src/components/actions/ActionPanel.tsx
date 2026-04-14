@@ -1,6 +1,6 @@
 import React, { useState, useRef, useCallback, useEffect } from 'react'
 import type { PartyId, QuestionType, TrustActionType, SkillType } from '../../types'
-import { GamePhase } from '../../types'
+import { GamePhase, Phase } from '../../types'
 import { useGameStore, useStore } from '../../store/useGameStore'
 import { useActionDispatch, isLLMMode, setNextConfidential, setNextEvasionReading, setSkipNextJudgeQuestion, setDossierQuestionOverride } from '../../hooks/useActionDispatch'
 import { processFreeQuestion } from '../../engine/llmFreeQuestion'
@@ -27,7 +27,7 @@ const EMOTION_EMOJI: Record<string, string> = { defensive: '😐', confident: '�
 /* ── Phase별 해금 설정 ─────────────────────── */
 
 const PHASE_NUM: Record<string, number> = {
-  [GamePhase.Phase3_Interrogation]: 3,
+  [Phase.Interrogation]: 3,
   [GamePhase.Phase4_Evidence]: 4,
   [GamePhase.Phase5_ReExamination]: 5,
 }
@@ -43,15 +43,15 @@ function isEvidenceLocked(_phase: GamePhase): boolean {
 
 /** 액티브 스킬별 해금 Phase */
 const SKILL_UNLOCK: Record<string, GamePhase> = {
-  obj: GamePhase.Phase3_Interrogation,  // 이의 제기: Phase 3~
-  sep: GamePhase.Phase3_Interrogation,  // 분리 심문: Phase 3~
+  obj: Phase.Interrogation,  // 이의 제기: Phase 3~
+  sep: Phase.Interrogation,  // 분리 심문: Phase 3~
   imm: GamePhase.Phase4_Evidence,       // 즉답 요구: Phase 4~
 }
 
 /** 다음 단계 설명 */
 function getAdvanceInfo(phase: GamePhase): { label: string; unlocks: string[] } {
   switch (phase) {
-    case GamePhase.Phase3_Interrogation:
+    case Phase.Interrogation:
       return { label: '증거 심리로', unlocks: ['📄 증거 제시 해금', '⚡ 즉답 요구 해금', '🔍 회피 판독 토글 해금'] }
     case GamePhase.Phase4_Evidence:
       return { label: '최종 심문으로', unlocks: ['🔒 비공개 보호 토글 해금'] }
@@ -314,7 +314,7 @@ export default function ActionPanel() {
     s.incrementTurn(); setActiveTab(null)
   }
   const hTrust = (at: TrustActionType) => { if (target) { dispatch({ type: 'trust_action', actionType: at, target }); setActiveTab(null) } }
-  const hAdv = () => { const n: Record<string,GamePhase> = { [GamePhase.Phase3_Interrogation]: GamePhase.Phase4_Evidence, [GamePhase.Phase4_Evidence]: GamePhase.Phase5_ReExamination, [GamePhase.Phase5_ReExamination]: GamePhase.Phase6_Mediation }; const x = n[currentPhase]; if (x) advancePhase(x) }
+  const hAdv = () => { const n: Record<string,GamePhase> = { [Phase.Interrogation]: GamePhase.Phase4_Evidence, [GamePhase.Phase4_Evidence]: GamePhase.Phase5_ReExamination, [GamePhase.Phase5_ReExamination]: Phase.Mediation }; const x = n[currentPhase]; if (x) advancePhase(x) }
 
   // ── 사건카드 자동 실행 핸들러 ──
   const hDossierAutoExecute = (cardId: string, questionId: string, t: PartyId) => {

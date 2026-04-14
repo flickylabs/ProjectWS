@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react'
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
-import { GamePhase } from '../../../types'
+import { GamePhase, Phase } from '../../../types'
 import { useStore } from '../../../store/useGameStore'
 import PCBottomDock from '../hotbar/PCBottomDock'
 import PCSvgIcon from '../icons/PCSvgIcon'
@@ -25,12 +25,12 @@ interface Props {
 }
 
 const PHASE_LABELS: Record<string, string> = {
-  [GamePhase.Phase0_CaseIntro]: '사건 브리핑',
-  [GamePhase.Phase1_InitialStatement]: '사전진술',
-  [GamePhase.Phase3_Interrogation]: '심문',
-  [GamePhase.Phase6_Mediation]: '중재',
-  [GamePhase.Phase7_Verdict]: '판결',
-  [GamePhase.Result]: '결과',
+  [Phase.Briefing]: '사건 브리핑',
+  [Phase.Pretrial]: '사전진술',
+  [Phase.Interrogation]: '심문',
+  [Phase.Mediation]: '중재',
+  [Phase.Verdict]: '판결',
+  [Phase.Result]: '결과',
   // Legacy fallback
   [GamePhase.Phase2_Rebuttal]: '사전진술',
   [GamePhase.Phase4_Evidence]: '심문',
@@ -39,12 +39,12 @@ const PHASE_LABELS: Record<string, string> = {
 
 function getPhaseNumber(phase: GamePhase): string {
   const DISPLAY_NUMBERS: Record<string, string> = {
-    [GamePhase.Phase0_CaseIntro]: '0',
-    [GamePhase.Phase1_InitialStatement]: '1',
-    [GamePhase.Phase3_Interrogation]: '2',
-    [GamePhase.Phase6_Mediation]: '3',
-    [GamePhase.Phase7_Verdict]: '3',
-    [GamePhase.Result]: 'R',
+    [Phase.Briefing]: '0',
+    [Phase.Pretrial]: '1',
+    [Phase.Interrogation]: '2',
+    [Phase.Mediation]: '3',
+    [Phase.Verdict]: '3',
+    [Phase.Result]: 'R',
     // Legacy
     [GamePhase.Phase2_Rebuttal]: '1',
     [GamePhase.Phase4_Evidence]: '2',
@@ -108,12 +108,12 @@ export default function PCCourtLayout({ actionPanel, onDialogueTap, isDialoguePh
       setPhaseBanner(`Phase ${num} — ${label}`)
       // BGM 전환
       const BGM_MAP: Partial<Record<GamePhase, string>> = {
-        [GamePhase.Phase0_CaseIntro]: '/bgm/court.mp3',
-        [GamePhase.Phase1_InitialStatement]: '/bgm/court.mp3',
-        [GamePhase.Phase3_Interrogation]: '/bgm/court.mp3',
-        [GamePhase.Phase6_Mediation]: '/bgm/verdict.mp3',
-        [GamePhase.Phase7_Verdict]: '/bgm/verdict.mp3',
-        [GamePhase.Result]: '/bgm/result.mp3',
+        [Phase.Briefing]: '/bgm/court.mp3',
+        [Phase.Pretrial]: '/bgm/court.mp3',
+        [Phase.Interrogation]: '/bgm/court.mp3',
+        [Phase.Mediation]: '/bgm/verdict.mp3',
+        [Phase.Verdict]: '/bgm/verdict.mp3',
+        [Phase.Result]: '/bgm/result.mp3',
       }
       const bgm = BGM_MAP[currentPhase]
       if (bgm) playBgm(bgm)
@@ -220,7 +220,7 @@ export default function PCCourtLayout({ actionPanel, onDialogueTap, isDialoguePh
     }
   }, [isDialoguePhase, onDialogueTap])
 
-  const showDock = currentPhase === GamePhase.Phase3_Interrogation
+  const showDock = currentPhase === Phase.Interrogation
     || currentPhase === GamePhase.Phase4_Evidence
     || currentPhase === GamePhase.Phase5_ReExamination
 
@@ -406,7 +406,7 @@ export default function PCCourtLayout({ actionPanel, onDialogueTap, isDialoguePh
           </div>
 
           {actionPanel ? (
-            <div className={`pc-play-action-shell${isDialoguePhase ? ' is-dialogue' : ''}${showDock ? ' has-dock' : ''}${currentPhase === GamePhase.Phase6_Mediation || currentPhase === GamePhase.Phase7_Verdict ? ' is-fullscreen-panel' : ''}`}>
+            <div className={`pc-play-action-shell${isDialoguePhase ? ' is-dialogue' : ''}${showDock ? ' has-dock' : ''}${currentPhase === Phase.Mediation || currentPhase === Phase.Verdict ? ' is-fullscreen-panel' : ''}`}>
               {actionPanel}
             </div>
           ) : null}

@@ -4,7 +4,7 @@ import { setNextConfidential, setNextEvasionReading, isLLMMode } from '../../../
 import { useActionDispatch } from '../../../hooks/useActionDispatch'
 import { useValidActions } from '../../../hooks/useValidActions'
 import { useGameStore, useStore } from '../../../store/useGameStore'
-import { GamePhase, type PartyId, type QuestionType, type SkillType, type TrustActionType } from '../../../types'
+import { GamePhase, Phase, type PartyId, type QuestionType, type SkillType, type TrustActionType } from '../../../types'
 import EvidencePresenter from '../../actions/EvidencePresenter'
 import QuestionSelector, { type QuestionToggles } from '../../actions/QuestionSelector'
 import PCSvgIcon from '../icons/PCSvgIcon'
@@ -553,15 +553,15 @@ function ActionCard({
 
 function phaseAtLeast(current: GamePhase, required: GamePhase): boolean {
   const phaseOrder: Record<GamePhase, number> = {
-    [GamePhase.Phase0_CaseIntro]: 0,
-    [GamePhase.Phase1_InitialStatement]: 1,
+    [Phase.Briefing]: 0,
+    [Phase.Pretrial]: 1,
     [GamePhase.Phase2_Rebuttal]: 2,
-    [GamePhase.Phase3_Interrogation]: 3,
+    [Phase.Interrogation]: 3,
     [GamePhase.Phase4_Evidence]: 4,
     [GamePhase.Phase5_ReExamination]: 5,
-    [GamePhase.Phase6_Mediation]: 6,
-    [GamePhase.Phase7_Verdict]: 7,
-    [GamePhase.Result]: 8,
+    [Phase.Mediation]: 6,
+    [Phase.Verdict]: 7,
+    [Phase.Result]: 8,
   }
 
   return phaseOrder[current] >= phaseOrder[required]
@@ -569,7 +569,7 @@ function phaseAtLeast(current: GamePhase, required: GamePhase): boolean {
 
 function getAdvanceLabel(phase: GamePhase): string {
   switch (phase) {
-    case GamePhase.Phase3_Interrogation:
+    case Phase.Interrogation:
       return '증거 정리 단계로'
     case GamePhase.Phase4_Evidence:
       return '최종 심문 단계로'

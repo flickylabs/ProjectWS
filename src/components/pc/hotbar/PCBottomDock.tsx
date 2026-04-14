@@ -5,7 +5,7 @@
  * + 단계 진행: canAdvancePhase 충족 시 자동 배너 제안
  */
 import { useEffect, useMemo, useState, useCallback, useRef } from 'react'
-import { GamePhase, type EmotionalPhase, type PartyId, type QuestionType } from '../../../types'
+import { GamePhase, Phase, type EmotionalPhase, type PartyId, type QuestionType } from '../../../types'
 import { useActionDispatch } from '../../../hooks/useActionDispatch'
 import { useGameStore, useStore } from '../../../store/useGameStore'
 import { openPcInteractionPanel } from '../layout/PCInteractionPanel'
@@ -196,7 +196,7 @@ export default function PCBottomDock() {
   // phase 변경 시 dismiss 리셋
   useEffect(() => { setAdvanceDismissed(false) }, [currentPhase])
 
-  const advanceLabel = currentPhase === GamePhase.Phase3_Interrogation
+  const advanceLabel = currentPhase === Phase.Interrogation
     ? '판결 단계로 진행'
     : currentPhase === GamePhase.Phase4_Evidence
       ? '최종 심문 단계로'

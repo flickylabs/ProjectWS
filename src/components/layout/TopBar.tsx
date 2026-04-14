@@ -1,6 +1,6 @@
 import { useState, useEffect, lazy, Suspense } from 'react'
 import { useGameStore, useStore } from '../../store/useGameStore'
-import { GamePhase } from '../../types'
+import { GamePhase, Phase } from '../../types'
 import PhaseIndicator from './PhaseIndicator'
 import SettingsPanel from './SettingsPanel'
 import ResourcePopup from '../shop/ResourcePopup'
@@ -54,16 +54,16 @@ export default function TopBar() {
 
   // Phase3 이후 단계 여부
   const LATE_PHASES = [
-    GamePhase.Phase3_Interrogation,
+    Phase.Interrogation,
     GamePhase.Phase4_Evidence,
     GamePhase.Phase5_ReExamination,
-    GamePhase.Phase6_Mediation,
-    GamePhase.Phase7_Verdict,
-    GamePhase.Result,
+    Phase.Mediation,
+    Phase.Verdict,
+    Phase.Result,
   ]
   const isLatePhase = LATE_PHASES.includes(currentPhase)
   const isInterrogation = [
-    GamePhase.Phase3_Interrogation,
+    Phase.Interrogation,
     GamePhase.Phase4_Evidence,
     GamePhase.Phase5_ReExamination,
   ].includes(currentPhase)
@@ -93,7 +93,7 @@ export default function TopBar() {
   const handleExit = () => {
     // 게임 상태 초기화 → 홈으로 돌아감
     useGameStore.setState({ caseData: null })
-    useGameStore.getState().setPhase(GamePhase.Phase0_CaseIntro)
+    useGameStore.getState().setPhase(Phase.Briefing)
     useGameStore.getState().clearDialogue()
   }
 

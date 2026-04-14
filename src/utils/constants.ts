@@ -1,4 +1,4 @@
-import { GamePhase, type Resources } from '../types'
+import { GamePhase, Phase, type Resources } from '../types'
 
 export const INITIAL_RESOURCES: Resources = {
   investigationTokens: 20,  // 증거 조사(21) + 증인(3) — 미니게임으로 추가 획득 가능
@@ -35,18 +35,18 @@ export const TRUST_DELTAS = {
  * Phase3 → Phase6(조정) → Phase7(판결)로 직행.
  */
 export const PHASE_ORDER: GamePhase[] = [
-  GamePhase.Phase0_CaseIntro,
-  GamePhase.Phase1_InitialStatement,
+  Phase.Briefing,
+  Phase.Pretrial,
   // Phase2_Rebuttal은 Phase1로 통합됨 — PHASE_ORDER에서 제거
-  GamePhase.Phase3_Interrogation,
-  GamePhase.Phase6_Mediation,
-  GamePhase.Phase7_Verdict,
-  GamePhase.Result,
+  Phase.Interrogation,
+  Phase.Mediation,
+  Phase.Verdict,
+  Phase.Result,
 ]
 
 /** @deprecated Phase 통합으로 미사용 — readinessEngine 참조 */
 export const MIN_TURNS_BEFORE_ADVANCE: Record<string, number> = {
-  [GamePhase.Phase3_Interrogation]: 10,
+  [Phase.Interrogation]: 10,
 }
 
 /**

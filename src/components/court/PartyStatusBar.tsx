@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useGameStore, useStore } from '../../store/useGameStore'
 import { INITIAL_RESOURCES, MAX_TURNS } from '../../utils/constants'
-import { GamePhase } from '../../types'
+import { GamePhase, Phase } from '../../types'
 import Emoji from '../common/Emoji'
 import ResourcePopup from '../shop/ResourcePopup'
 import PhaseIndicator from '../layout/PhaseIndicator'
@@ -46,7 +46,7 @@ export default function PartyStatusBar() {
     processMetrics.liesCollapsed * 10 + processMetrics.evidenceDiscovered * 8
     + processMetrics.evidenceEffective * 5 + processMetrics.freeQuestionsRelevant * 3
   )
-  const isLatePhase = [GamePhase.Phase3_Interrogation, GamePhase.Phase4_Evidence, GamePhase.Phase5_ReExamination, GamePhase.Phase6_Mediation, GamePhase.Phase7_Verdict].includes(currentPhase)
+  const isLatePhase = [Phase.Interrogation, GamePhase.Phase4_Evidence, GamePhase.Phase5_ReExamination, Phase.Mediation, Phase.Verdict].includes(currentPhase)
 
   const phaseA = agentA.emotionalState.phase
   const phaseB = agentB.emotionalState.phase

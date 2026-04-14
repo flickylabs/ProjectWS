@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState, type DragEvent, type ReactNode } from 'react'
 import {
   GamePhase,
+  Phase,
   type CombinationLabNode,
   type CombinationLabOutput,
   type CombinationLabRecipe,
@@ -66,7 +67,7 @@ export default function PCRightPanel() {
   const faceId = getPcFaceSymbolId(pcTargetParty, targetProfile, targetAgent.emotionalState.phase)
   const trustStateLabel = getTrustStateLabel(targetAgent.trustState.trustTowardJudge)
   const showCombination =
-    currentPhase === GamePhase.Phase3_Interrogation
+    currentPhase === Phase.Interrogation
     || currentPhase === GamePhase.Phase4_Evidence
     || currentPhase === GamePhase.Phase5_ReExamination
 

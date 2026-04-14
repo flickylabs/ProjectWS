@@ -1,29 +1,29 @@
 import { useEffect, useState } from 'react'
-import { GamePhase } from '../../types'
+import { GamePhase, Phase } from '../../types'
 import { useStore } from '../../store/useGameStore'
 import { playPhaseTransition, playBgm, stopBgm } from '../../engine/soundEngine'
 
 /** V4 Phase별 BGM 매핑 */
 const PHASE_BGM: Partial<Record<GamePhase, string>> = {
-  [GamePhase.Phase0_CaseIntro]: '/bgm/court.mp3',
-  [GamePhase.Phase1_InitialStatement]: '/bgm/court.mp3',
-  [GamePhase.Phase3_Interrogation]: '/bgm/court.mp3',
-  [GamePhase.Phase6_Mediation]: '/bgm/verdict.mp3',
-  [GamePhase.Phase7_Verdict]: '/bgm/verdict.mp3',
-  [GamePhase.Result]: '/bgm/result.mp3',
+  [Phase.Briefing]: '/bgm/court.mp3',
+  [Phase.Pretrial]: '/bgm/court.mp3',
+  [Phase.Interrogation]: '/bgm/court.mp3',
+  [Phase.Mediation]: '/bgm/verdict.mp3',
+  [Phase.Verdict]: '/bgm/verdict.mp3',
+  [Phase.Result]: '/bgm/result.mp3',
 }
 import PCSvgIcon from '../pc/icons/PCSvgIcon'
 
 const PHASE_INFO: Record<GamePhase, { title: string; subtitle: string; iconId: string; unlocks?: string[] } | null> = {
-  [GamePhase.Phase0_CaseIntro]: null,
-  [GamePhase.Phase1_InitialStatement]: { title: '초기 진술', subtitle: '양측의 주장을 들어봅니다', iconId: 'i-person' },
+  [Phase.Briefing]: null,
+  [Phase.Pretrial]: { title: '초기 진술', subtitle: '양측의 주장을 들어봅니다', iconId: 'i-person' },
   [GamePhase.Phase2_Rebuttal]: { title: '즉각 반박', subtitle: '양측이 서로의 진술에 반박합니다', iconId: 'i-bolt' },
-  [GamePhase.Phase3_Interrogation]: { title: '심문 개시', subtitle: '질문을 통해 진실을 파헤치세요', iconId: 'i-search' },
+  [Phase.Interrogation]: { title: '심문 개시', subtitle: '질문을 통해 진실을 파헤치세요', iconId: 'i-search' },
   [GamePhase.Phase4_Evidence]: { title: '증거 심리', subtitle: '확보한 증거를 공개하세요', iconId: 'i-doc', unlocks: ['증거 제시 해금', '즉답 요구 해금'] },
   [GamePhase.Phase5_ReExamination]: { title: '최종 심문', subtitle: '붕괴된 쟁점을 깊이 파고드세요', iconId: 'i-eye', unlocks: ['비공개 보호 해금'] },
-  [GamePhase.Phase6_Mediation]: { title: '중재안', subtitle: '판결 방식을 선택하세요', iconId: 'i-heart' },
-  [GamePhase.Phase7_Verdict]: { title: '최종 판결', subtitle: '사실과 책임, 해결책을 결정하세요', iconId: 'i-scale' },
-  [GamePhase.Result]: null,
+  [Phase.Mediation]: { title: '중재안', subtitle: '판결 방식을 선택하세요', iconId: 'i-heart' },
+  [Phase.Verdict]: { title: '최종 판결', subtitle: '사실과 책임, 해결책을 결정하세요', iconId: 'i-scale' },
+  [Phase.Result]: null,
 }
 
 export default function PhaseTransition() {

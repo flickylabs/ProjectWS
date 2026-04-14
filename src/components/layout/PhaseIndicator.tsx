@@ -1,26 +1,26 @@
-import { GamePhase } from '../../types'
+import { GamePhase, Phase } from '../../types'
 import { useStore } from '../../store/useGameStore'
 
 const PHASE_LABELS: Record<GamePhase, string> = {
-  [GamePhase.Phase0_CaseIntro]: '개요',
-  [GamePhase.Phase1_InitialStatement]: '진술',
+  [Phase.Briefing]: '개요',
+  [Phase.Pretrial]: '진술',
   [GamePhase.Phase2_Rebuttal]: '반박',
-  [GamePhase.Phase3_Interrogation]: '심문',
+  [Phase.Interrogation]: '심문',
   [GamePhase.Phase4_Evidence]: '심문',      // 통합: Phase4도 '심문'으로 표시
   [GamePhase.Phase5_ReExamination]: '심문', // 통합: Phase5도 '심문'으로 표시
-  [GamePhase.Phase6_Mediation]: '조정',
-  [GamePhase.Phase7_Verdict]: '판결',
-  [GamePhase.Result]: '결과',
+  [Phase.Mediation]: '조정',
+  [Phase.Verdict]: '판결',
+  [Phase.Result]: '결과',
 }
 
 /** 통합된 Phase 순서 — Phase4/5 제외 */
 const DISPLAY_ORDER: GamePhase[] = [
-  GamePhase.Phase0_CaseIntro,
-  GamePhase.Phase1_InitialStatement,
-  GamePhase.Phase3_Interrogation,
-  GamePhase.Phase6_Mediation,
-  GamePhase.Phase7_Verdict,
-  GamePhase.Result,
+  Phase.Briefing,
+  Phase.Pretrial,
+  Phase.Interrogation,
+  Phase.Mediation,
+  Phase.Verdict,
+  Phase.Result,
 ]
 
 export default function PhaseIndicator({ compact }: { compact?: boolean } = {}) {
@@ -29,7 +29,7 @@ export default function PhaseIndicator({ compact }: { compact?: boolean } = {}) 
   // Phase4/5는 Phase3과 같은 '심문'으로 매핑
   const displayPhase =
     currentPhase === GamePhase.Phase4_Evidence || currentPhase === GamePhase.Phase5_ReExamination
-      ? GamePhase.Phase3_Interrogation
+      ? Phase.Interrogation
       : currentPhase
   const currentIdx = DISPLAY_ORDER.indexOf(displayPhase)
 

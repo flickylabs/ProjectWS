@@ -7,7 +7,7 @@ import { phase1Dialogues } from '../data/dialogues/phase1'
 import { phase2Dialogues } from '../data/dialogues/phase2'
 import { loadPhase1Script, loadPhase2Script } from '../data/dialogues/phaseScriptLoader'
 import { generatePhase2Dialogues } from '../engine/llmPhaseDialogue'
-import { GamePhase } from '../types'
+import { GamePhase, Phase } from '../types'
 import ActionPanel from '../components/actions/ActionPanel'
 import AutoDialoguePhase, { triggerDialogueTap } from '../components/phase/AutoDialoguePhase'
 import Phase0_CaseIntro, { resetPrefetch } from '../components/phase/Phase0_CaseIntro'
@@ -110,15 +110,15 @@ export default function PCApp() {
     )
   }
 
-  if (currentPhase === GamePhase.Phase0_CaseIntro) {
+  if (currentPhase === Phase.Briefing) {
     return <PCCaseBrief />
   }
 
-  if (currentPhase === GamePhase.Phase7_Verdict) {
+  if (currentPhase === Phase.Verdict) {
     return <PCVerdictScreen />
   }
 
-  if (currentPhase === GamePhase.Result) {
+  if (currentPhase === Phase.Result) {
     return <PCResultScreen />
   }
 
@@ -127,7 +127,7 @@ export default function PCApp() {
       <PhaseTransition />
       <PCCourtLayout
         actionPanel={getActionPanel(currentPhase)}
-        isDialoguePhase={currentPhase === GamePhase.Phase1_InitialStatement || currentPhase === GamePhase.Phase2_Rebuttal}
+        isDialoguePhase={currentPhase === Phase.Pretrial || currentPhase === GamePhase.Phase2_Rebuttal}
         onDialogueTap={triggerDialogueTap}
       />
     </>
@@ -138,10 +138,10 @@ function getActionPanel(phase: GamePhase) {
   const caseData = useGameStore.getState().caseData
 
   switch (phase) {
-    case GamePhase.Phase1_InitialStatement: {
+    case Phase.Pretrial: {
       const script = caseData ? loadPhase1Script(caseData.caseId) : null
       const fallback = script ?? (caseData ? buildGenericPhase1(caseData) : phase1Dialogues)
-      return <AutoDialoguePhase dialogues={fallback} nextLabel="심문 시작" nextPhase={GamePhase.Phase3_Interrogation} phaseKey="phase1" />
+      return <AutoDialoguePhase dialogues={fallback} nextLabel="심문 시작" nextPhase={Phase.Interrogation} phaseKey="phase1" />
     }
     case GamePhase.Phase2_Rebuttal: {
       const script = caseData ? loadPhase2Script(caseData.caseId) : null
@@ -151,16 +151,16 @@ function getActionPanel(phase: GamePhase) {
           dialogues={fallback}
           llmGenerator={caseData ? () => generatePhase2Dialogues(caseData) : undefined}
           nextLabel="심문 시작"
-          nextPhase={GamePhase.Phase3_Interrogation}
+          nextPhase={Phase.Interrogation}
           phaseKey="phase2"
         />
       )
     }
-    case GamePhase.Phase3_Interrogation:
+    case Phase.Interrogation:
     case GamePhase.Phase4_Evidence:
     case GamePhase.Phase5_ReExamination:
       return null
-    case GamePhase.Phase6_Mediation:
+    case Phase.Mediation:
       return <Phase6_Mediation />
     default:
       return <ActionPanel />
@@ -173,5 +173,5 @@ export function resetPcSessionToHome() {
   state.clearSavedGame?.()
   state.clearDialogue()
   useGameStore.setState({ caseData: null })
-  state.setPhase(GamePhase.Phase0_CaseIntro)
+  state.setPhase(Phase.Briefing)
 }

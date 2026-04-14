@@ -1,5 +1,5 @@
 import { useEffect, useState, useMemo } from 'react'
-import { GamePhase } from '../types'
+import { GamePhase, Phase } from '../types'
 import { useGameStore, useStore } from '../store/useGameStore'
 import type { GameStore } from '../store/useGameStore'
 import { checkConnection, getProviderName } from '../engine/llmClient'
@@ -90,10 +90,10 @@ export default function App() {
     )
   }
 
-  if (currentPhase === GamePhase.Phase0_CaseIntro) {
+  if (currentPhase === Phase.Briefing) {
     return <div className="h-[100dvh] bg-gray-950 text-gray-100 max-w-lg mx-auto"><Phase0_CaseIntro /></div>
   }
-  if (currentPhase === GamePhase.Result) {
+  if (currentPhase === Phase.Result) {
     return <div className="h-[100dvh] bg-gray-950 text-gray-100 max-w-lg mx-auto"><ResultScreen /></div>
   }
 
@@ -104,7 +104,7 @@ export default function App() {
       <CourtLayout
         actionPanel={getActionPanel(currentPhase)}
         onDialogueTap={triggerDialogueTap}
-        isDialoguePhase={currentPhase === GamePhase.Phase1_InitialStatement || currentPhase === GamePhase.Phase2_Rebuttal}
+        isDialoguePhase={currentPhase === Phase.Pretrial || currentPhase === GamePhase.Phase2_Rebuttal}
       />
     </>
   )
@@ -404,7 +404,7 @@ function getActionPanel(phase: GamePhase) {
   const llmMode = isLLMMode()
 
   switch (phase) {
-    case GamePhase.Phase1_InitialStatement: {
+    case Phase.Pretrial: {
       // Phase 1: 사건별 사전 생성 스크립트 우선 → 없으면 범용 폴백
       const caseScript = caseData ? loadPhase1Script(caseData.caseId) : null
       if (caseData) console.log(`[Phase1] caseId=${caseData.caseId}, script=${caseScript ? `loaded(${caseScript.length} entries)` : 'NOT FOUND → fallback'}`)
@@ -412,7 +412,7 @@ function getActionPanel(phase: GamePhase) {
       return (
         <AutoDialoguePhase
           dialogues={fallback}
-          nextPhase={GamePhase.Phase3_Interrogation}
+          nextPhase={Phase.Interrogation}
           nextLabel="심문 시작"
           phaseKey="phase1"
         />
@@ -426,19 +426,19 @@ function getActionPanel(phase: GamePhase) {
         <AutoDialoguePhase
           dialogues={fallback}
           llmGenerator={caseData && !caseScript ? () => generatePhase2Dialogues(caseData) : undefined}
-          nextPhase={GamePhase.Phase3_Interrogation}
+          nextPhase={Phase.Interrogation}
           nextLabel="심문 시작"
           phaseKey="phase2"
         />
       )
     }
-    case GamePhase.Phase3_Interrogation:
+    case Phase.Interrogation:
     case GamePhase.Phase4_Evidence:
     case GamePhase.Phase5_ReExamination:
       return <ActionPanel />
-    case GamePhase.Phase6_Mediation:
+    case Phase.Mediation:
       return <Phase6_Mediation />
-    case GamePhase.Phase7_Verdict:
+    case Phase.Verdict:
       return <VerdictScreen />
     default:
       return null

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { GamePhase } from '../../types'
+import { GamePhase, Phase } from '../../types'
 import { useGameStore, useStore } from '../../store/useGameStore'
 import { resolveLLMDialogue } from '../../engine/llmDialogueResolver'
 import { isLLMMode } from '../../hooks/useActionDispatch'
@@ -76,7 +76,7 @@ export default function Phase6_Mediation() {
     addDialogue({ speaker: 'judge', text: judgeText, relatedDisputes: [], turn: turnCount })
 
     if (path === 'immediate') {
-      advancePhase(GamePhase.Phase7_Verdict)
+      advancePhase(Phase.Verdict)
       return
     }
 
@@ -188,7 +188,7 @@ export default function Phase6_Mediation() {
 
       {selectedPath && selectedPath !== 'immediate' && !loading ? (
         <div className="pc-mediation__advance">
-          <button className="pc-mediation__advance-btn" onClick={() => advancePhase(GamePhase.Phase7_Verdict)} type="button">
+          <button className="pc-mediation__advance-btn" onClick={() => advancePhase(Phase.Verdict)} type="button">
             <PCSvgIcon id="i-gavel" size={18} />
             <span>판결로 진행</span>
           </button>

@@ -1,6 +1,6 @@
 import { useState, useEffect, lazy, Suspense } from 'react'
 import { useGameStore, useStore } from '../../store/useGameStore'
-import { GamePhase } from '../../types'
+import { GamePhase, Phase } from '../../types'
 import PhaseIndicator from './PhaseIndicator'
 import SettingsPanel from './SettingsPanel'
 import ResourcePopup from '../shop/ResourcePopup'
@@ -43,14 +43,14 @@ const HELP_PAGES = [
 
 /* ── Phase 설명 ── */
 const PHASE_DESC: Record<string, { title: string; desc: string }> = {
-  [GamePhase.Phase0_CaseIntro]: { title: '사건 개요', desc: '사건의 배경과 당사자를 확인합니다.' },
-  [GamePhase.Phase1_InitialStatement]: { title: '초기 진술', desc: '양측의 첫 진술을 듣습니다.\n대화를 탭하면 다음으로 넘어갑니다.' },
+  [Phase.Briefing]: { title: '사건 개요', desc: '사건의 배경과 당사자를 확인합니다.' },
+  [Phase.Pretrial]: { title: '초기 진술', desc: '양측의 첫 진술을 듣습니다.\n대화를 탭하면 다음으로 넘어갑니다.' },
   [GamePhase.Phase2_Rebuttal]: { title: '반박', desc: '상대 주장에 대한 반박을 듣습니다.' },
-  [GamePhase.Phase3_Interrogation]: { title: '심문', desc: '직접 질문하고 증거를 제시하여\n진실을 밝히는 핵심 단계입니다.' },
+  [Phase.Interrogation]: { title: '심문', desc: '직접 질문하고 증거를 제시하여\n진실을 밝히는 핵심 단계입니다.' },
   [GamePhase.Phase4_Evidence]: { title: '증거 심리', desc: '증거 제시와 즉답 요구가\n해금됩니다.' },
   [GamePhase.Phase5_ReExamination]: { title: '재심문', desc: '비공개 보호 토글이 해금됩니다.\nAI 진술 분석도 사용 가능합니다.' },
-  [GamePhase.Phase6_Mediation]: { title: '조정', desc: '최종 판결 전 조정 단계입니다.' },
-  [GamePhase.Phase7_Verdict]: { title: '판결', desc: '수집한 증거와 심문 결과를 바탕으로\n판결을 내립니다.' },
+  [Phase.Mediation]: { title: '조정', desc: '최종 판결 전 조정 단계입니다.' },
+  [Phase.Verdict]: { title: '판결', desc: '수집한 증거와 심문 결과를 바탕으로\n판결을 내립니다.' },
 }
 
 export default function CourtHeader({ isDialoguePhase, onToggleInfo, infoOpen }: CourtHeaderProps) {
@@ -89,13 +89,13 @@ export default function CourtHeader({ isDialoguePhase, onToggleInfo, infoOpen }:
   openResourcePopupFn = setShowResource
 
   const LATE_PHASES = [
-    GamePhase.Phase3_Interrogation, GamePhase.Phase4_Evidence,
-    GamePhase.Phase5_ReExamination, GamePhase.Phase6_Mediation,
-    GamePhase.Phase7_Verdict, GamePhase.Result,
+    Phase.Interrogation, GamePhase.Phase4_Evidence,
+    GamePhase.Phase5_ReExamination, Phase.Mediation,
+    Phase.Verdict, Phase.Result,
   ]
   const isLatePhase = LATE_PHASES.includes(currentPhase)
   const isInterrogation = [
-    GamePhase.Phase3_Interrogation, GamePhase.Phase4_Evidence, GamePhase.Phase5_ReExamination,
+    Phase.Interrogation, GamePhase.Phase4_Evidence, GamePhase.Phase5_ReExamination,
   ].includes(currentPhase)
 
   const remainingTurns = MAX_TURNS - turnCount
@@ -119,7 +119,7 @@ export default function CourtHeader({ isDialoguePhase, onToggleInfo, infoOpen }:
 
   const handleExit = () => {
     useGameStore.setState({ caseData: null })
-    useGameStore.getState().setPhase(GamePhase.Phase0_CaseIntro)
+    useGameStore.getState().setPhase(Phase.Briefing)
     useGameStore.getState().clearDialogue()
   }
 

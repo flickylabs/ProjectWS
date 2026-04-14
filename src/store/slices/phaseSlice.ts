@@ -1,5 +1,5 @@
 import type { StateCreator } from 'zustand'
-import { GamePhase } from '../../types'
+import { GamePhase, Phase } from '../../types'
 import type { VerdictMode } from '../../types'
 import { PHASE_ORDER } from '../../utils/constants'
 import { checkVerdictEligible, checkForcedVerdict } from '../../engine/readinessEngine'
@@ -26,7 +26,7 @@ export interface PhaseSlice {
 }
 
 export const createPhaseSlice: StateCreator<PhaseSlice, [], [], PhaseSlice> = (set, get) => ({
-  currentPhase: GamePhase.Phase0_CaseIntro,
+  currentPhase: Phase.Briefing,
   phaseHistory: [],
   turnCount: 0,
   phaseTurnCount: 0,
@@ -56,7 +56,7 @@ export const createPhaseSlice: StateCreator<PhaseSlice, [], [], PhaseSlice> = (s
     } as Partial<typeof state>))
 
     // Phase 3 진입 시 브리지 자동 적용
-    if (nextPhase === GamePhase.Phase3_Interrogation) {
+    if (nextPhase === Phase.Interrogation) {
       const fullState = get() as any
       if (fullState.applyPhase3Bridge && fullState.caseData) {
         const caseId = normalizeCaseKey(fullState.caseData)
@@ -79,7 +79,7 @@ export const createPhaseSlice: StateCreator<PhaseSlice, [], [], PhaseSlice> = (s
     const state = get() as any
     const { turnCount, currentPhase, advancePhase, setVerdictMode } = state
     const interrogationPhases = [
-      GamePhase.Phase3_Interrogation,
+      Phase.Interrogation,
       GamePhase.Phase4_Evidence,
       GamePhase.Phase5_ReExamination,
     ]
@@ -87,7 +87,7 @@ export const createPhaseSlice: StateCreator<PhaseSlice, [], [], PhaseSlice> = (s
       const { forced, verdictMode } = checkForcedVerdict(turnCount, state.readinessState)
       if (forced) {
         setVerdictMode(verdictMode)
-        advancePhase(GamePhase.Phase6_Mediation)
+        advancePhase(Phase.Mediation)
       }
     }
   },
@@ -97,7 +97,7 @@ export const createPhaseSlice: StateCreator<PhaseSlice, [], [], PhaseSlice> = (s
     const { currentPhase } = state
 
     // Phase 3 통합 심문: readinessEngine에서 판결 가능 여부 확인
-    if (currentPhase === GamePhase.Phase3_Interrogation) {
+    if (currentPhase === Phase.Interrogation) {
       // readinessState가 store에 있으면 사용, 없으면 기본 허용
       if (state.readinessState) {
         const { eligible } = checkVerdictEligible(state.turnCount, state.readinessState)
