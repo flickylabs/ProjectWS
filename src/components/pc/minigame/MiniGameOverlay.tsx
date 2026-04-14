@@ -1,7 +1,6 @@
 /**
  * MiniGameOverlay — 활성 미니게임이 있으면 MiniGameFrame + 해당 게임 렌더
- * 각 게임 컴포넌트(MemoryMatchGame, SkillRunnerGame, WhackAMoleGame)는
- * 별도 세션에서 구현 예정. 현재는 placeholder.
+ * 세션별로 구현된 PC 미니게임을 타입별로 연결한다.
  */
 import { useStore } from '../../../store/useGameStore'
 import MiniGameFrame from './MiniGameFrame'

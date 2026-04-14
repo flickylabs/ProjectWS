@@ -252,9 +252,18 @@ function spawnGapRewards(state: GameState, gapStart: number, gapWidth: number) {
 }
 
 function ensureTerrain(state: GameState, config: RoundConfig) {
+  const gapRanges: Array<[number, number]> = [
+    [118, 160],
+    [128, 188],
+    [140, 214],
+    [150, 228],
+    [165, 248],
+  ]
+  const [minGap, maxGap] = gapRanges[clamp(state.round - 1, 0, gapRanges.length - 1)]
+
   while (state.nextTerrainX - state.cameraX < VIEW_WIDTH + 950) {
     const gapChance = config.gapChance + Math.min(0.03, state.elapsed * 0.00045)
-    const gapWidth = Math.random() < gapChance ? randomBetween(165, 285 + state.round * 16) : 0
+    const gapWidth = Math.random() < gapChance ? randomBetween(minGap, maxGap) : 0
     const segmentX = state.nextTerrainX + gapWidth
     const segmentWidth = randomBetween(320, 560)
 
