@@ -108,6 +108,14 @@ export const PC_GENERAL_SESSIONS = [
     description: '공적 절차와 개인의 사정이 같은 장면 안에서 맞붙습니다.',
     accent: 'gold',
   },
+  {
+    id: 'lover',
+    label: '연인',
+    iconId: 'i-heart',
+    tagline: '사랑과 의심 사이, 감정이 증거가 되는 순간',
+    description: '약속과 배신, 질투와 진심이 가장 가까운 사이를 시험합니다.',
+    accent: 'pink',
+  },
 ] as const
 
 export type PCGeneralSessionId = (typeof PC_GENERAL_SESSIONS)[number]['id']
@@ -156,6 +164,7 @@ const PC_GENERAL_SESSION_PREFIXES: Record<PCGeneralSessionId, readonly string[]>
   online: ['online-new-'],
   medical_education: ['professional-new-'],
   public_system: ['civic-new-'],
+  lover: ['lover-', 'lover-new-'],
 }
 
 export function hasSeenPcIntro(): boolean {

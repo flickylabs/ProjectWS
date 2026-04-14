@@ -4288,7 +4288,7 @@ body.pc-mode .pc-leaderboard-grid {
 }
 
 body.pc-mode .pc-session-grid-v2 {
-  grid-template-columns: repeat(6, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 10px;
   max-width: 100%;
 }
