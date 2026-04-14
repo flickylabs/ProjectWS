@@ -14,6 +14,7 @@ import { getAffinityScore, getAffinityGrade } from '../data/actionAffinity'
 import { getOptimalPath, getNarrativeExpansion } from '../data/caseEnrichment'
 import { normalizeCaseKey } from '../utils/caseHelpers'
 import { detectStatementChange } from '../engine/contradictionEngine'
+import { extractDisputeSubject } from '../engine/judgeQuestionEngine'
 import {
   getScriptedContradictionPursuit,
   getScriptedInterjection,
@@ -2192,16 +2193,16 @@ function buildQuestionText(type: QuestionType, target: PartyId, disputeId: strin
   const rawTopic = dispute?.name ?? '해당 사안'
   const myGiven = myName.slice(1)  // 성 제거
   const opGiven = opName.slice(1)
-  let topic = rawTopic
+  let topic = extractDisputeSubject(rawTopic)
   // 대상 본인의 이름이 쟁점에 있으면 제거 → "~에 대해"가 자연스러움
   if (topic.includes(myGiven + '의 ')) {
     topic = topic.replace(myGiven + '의 ', '')
   } else if (topic.includes(myGiven + '이 ') || topic.includes(myGiven + '가 ')) {
     topic = topic.replace(new RegExp(myGiven + '[이가] '), '')
   }
-  // 상대 이름은 "상대방의"로 치환
+  // 상대 이름은 "OOO 씨의"로 치환
   if (topic.includes(opGiven + '의 ')) {
-    topic = topic.replace(opGiven + '의 ', '상대방의 ')
+    topic = topic.replace(opGiven + '의 ', `${opName} 씨의 `)
   }
 
   // 질문 유형별 + lieState별 질문

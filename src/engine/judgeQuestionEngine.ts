@@ -303,7 +303,7 @@ function interpolate(template: string, values: Record<string, string>): string {
  * Progressive Truth Throttle: 스포일러 단어를 제거해
  * 재판관 질문이 진실을 선제 노출하지 않도록 한다.
  */
-function extractDisputeSubject(disputeName: string): string {
+export function extractDisputeSubject(disputeName: string): string {
   let subject = disputeName.replace(/^[가-힣]+의\s+/, '')
 
   const spoilerWords =

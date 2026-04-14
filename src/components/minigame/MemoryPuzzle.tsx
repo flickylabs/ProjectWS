@@ -92,7 +92,7 @@ export default function MemoryPuzzle({ clues, onSuccess, onFail, onWatchAd, time
                 </div>
               ))}
             </div>
-            <div className="text-xs text-gray-500">위 순서(1→2→3)대로 탭하세요!</div>
+            <div className="text-xs text-gray-500">위 순서(1→2→3)대로 클릭하세요!</div>
           </div>
         )}
 
@@ -100,7 +100,7 @@ export default function MemoryPuzzle({ clues, onSuccess, onFail, onWatchAd, time
         {phase === 'play' && (
           <div className="space-y-3">
             <div className="flex justify-between items-center">
-              <span className="text-sm font-bold text-amber-400">순서대로 탭하세요!</span>
+              <span className="text-sm font-bold text-amber-400">순서대로 클릭하세요!</span>
               <span className={`text-sm font-bold ${timeLeft < 1 ? 'text-red-400' : 'text-gray-400'}`}>
                 {timeLeft.toFixed(1)}초
               </span>
