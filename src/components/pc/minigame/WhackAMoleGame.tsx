@@ -263,6 +263,8 @@ export default function WhackAMoleGame() {
     setCursor((current) => ({ ...current, visible: false }))
   }, [clearTransientTimeouts, profile.durationMs])
 
+  const hammerRef = useRef<HTMLDivElement>(null)
+
   const updateCursorPosition = useCallback((event: ReactPointerEvent<HTMLDivElement>) => {
     if (playState !== 'running') return null
 
@@ -271,6 +273,11 @@ export default function WhackAMoleGame() {
 
     const x = event.clientX - rect.left
     const y = event.clientY - rect.top
+    // DOM 직접 업데이트 — setState 리렌더 없이 즉시 반영
+    if (hammerRef.current) {
+      hammerRef.current.style.transform = `translate(${x - 26}px, ${y - 18}px)`
+      hammerRef.current.style.display = ''
+    }
     setCursor((current) => ({ ...current, x, y, visible: true }))
     return { x, y }
   }, [playState])
@@ -509,6 +516,7 @@ export default function WhackAMoleGame() {
 
         <div
           className={hammerClassName}
+          ref={hammerRef}
           style={{ transform: `translate(${cursor.x - 26}px, ${cursor.y - 18}px)` }}
         >
           <HammerGraphic />

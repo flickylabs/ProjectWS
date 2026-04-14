@@ -889,7 +889,7 @@ export default function SkillRunnerGame() {
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.code === 'Space') {
+      if (event.code === 'Space' || event.code === 'ArrowUp' || event.code === 'KeyW') {
         event.preventDefault()
         if (!inputRef.current.jumpHeld) {
           inputRef.current.jumpPressed = true
@@ -922,7 +922,7 @@ export default function SkillRunnerGame() {
     }
 
     const handleKeyUp = (event: KeyboardEvent) => {
-      if (event.code === 'Space') {
+      if (event.code === 'Space' || event.code === 'ArrowUp' || event.code === 'KeyW') {
         event.preventDefault()
         inputRef.current.jumpHeld = false
       }
@@ -1043,7 +1043,7 @@ export default function SkillRunnerGame() {
       </div>
 
       <div className="pc-skill-runner__footer">
-        <span>Space를 짧게 누르면 낮게, 길게 누르면 더 높이 점프합니다.</span>
+        <span>Space/↑/W를 짧게 누르면 낮게, 길게 누르면 더 높이 점프합니다.</span>
         <span>{Math.round(config.accelEvery10s * 100)}% / 10초 가속</span>
       </div>
     </div>
