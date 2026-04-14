@@ -18,7 +18,7 @@ import PCIntroSlides from './PCIntroSlides'
 import { type PCGeneralSessionId, PC_GENERAL_SESSIONS, formatCountdown, getCasesForPcGeneralSession, getRelationshipLabel, getSeasonCases, hasSeenPcIntro, loadPcCaseProgress } from './pcHomeShared'
 
 type HomeView = 'home' | 'general' | 'generalCases' | 'season' | 'profile' | 'leaderboard' | 'settings'
-type JudgeDeskTab = 'profile' | 'history'
+type JudgeDeskTab = 'profile' | 'history' | 'progression'
 type HistoryTrackId = PCGeneralSessionId | 'season'
 type HomeSettings = ReturnType<typeof getSettings>
 type SessionProgress = { completedCount: number; totalCount: number; averageScore: number | null; progressRate: number }
@@ -239,6 +239,7 @@ export default function PCHomeScreen() {
           <div className="pc-desk-tabs">
             <button className={`pc-desk-tab${judgeDeskTab === 'profile' ? ' is-active' : ''}`} onClick={() => setJudgeDeskTab('profile')} type="button">내 정보</button>
             <button className={`pc-desk-tab${judgeDeskTab === 'history' ? ' is-active' : ''}`} onClick={() => setJudgeDeskTab('history')} type="button">판결 기록</button>
+            <button className={`pc-desk-tab${judgeDeskTab === 'progression' ? ' is-active' : ''}`} onClick={() => setJudgeDeskTab('progression')} type="button">재판관 관리</button>
           </div>
 
           {judgeDeskTab === 'profile' ? (
@@ -265,11 +266,12 @@ export default function PCHomeScreen() {
                 </div>
               </Card>
             </div>
+            </>
+          ) : judgeDeskTab === 'progression' ? (
             <div className="pc-judge-progression-layout">
               <PCTraitEnhancePanel onChange={refreshProgression} syncKey={refreshKey} />
               <PCPerkEquipPanel onChange={refreshProgression} syncKey={refreshKey} />
             </div>
-            </>
           ) : (
             <div className="pc-history-board">
               <Card eyebrow="GENERAL MODE" title="일반 모드">
