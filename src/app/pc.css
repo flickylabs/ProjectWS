@@ -10602,8 +10602,9 @@ body.pc-mode .pc-minigame-frame__reward strong { color: #e8c172; }
 body.pc-mode .pc-minigame-frame__close {
   width: 28px; height: 28px; display: flex; align-items: center; justify-content: center;
   background: transparent; border: 1px solid rgba(255,255,255,0.08); border-radius: 6px;
-  color: #8b8b9a; cursor: pointer; transform: rotate(45deg);
+  color: #8b8b9a; cursor: pointer;
 }
+body.pc-mode .pc-minigame-frame__close:hover { color: #c4c4c4; border-color: rgba(255,255,255,0.15); }
 body.pc-mode .pc-minigame-frame__body { padding: 20px; min-height: 300px; position: relative; }
 
 /* Countdown overlay */

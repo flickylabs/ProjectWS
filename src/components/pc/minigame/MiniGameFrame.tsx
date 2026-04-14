@@ -17,6 +17,12 @@ const TOKEN_LABELS: Record<string, string> = {
   court: '법정 지배력',
 }
 
+const TOKEN_ICONS: Record<string, string> = {
+  investigation: 'i-search',
+  skill: 'i-bolt',
+  court: 'i-crown',
+}
+
 type CountdownPhase = 3 | 2 | 1 | 'go' | null
 
 interface Props {
@@ -73,12 +79,11 @@ export default function MiniGameFrame({ children }: Props) {
             <span className="pc-minigame-frame__round">Round {round} / {MINIGAME_MAX_ROUNDS}</span>
           </div>
           <div className="pc-minigame-frame__reward">
-            성공 시: <strong>{TOKEN_LABELS[tokenType]} +1</strong>
+            <PCSvgIcon id={TOKEN_ICONS[tokenType] ?? 'i-search'} size={14} />
+            {' '}성공 시: <strong>{TOKEN_LABELS[tokenType]} +1</strong>
           </div>
           <button className="pc-minigame-frame__close" onClick={cancelMinigame} title="스킵" type="button" aria-label="미니게임 스킵">
-            <span aria-hidden="true" style={{ display: 'inline-block', transform: 'rotate(45deg)' }}>
-              <PCSvgIcon id="i-plus" size={14} />
-            </span>
+            <span aria-hidden="true" style={{ fontSize: '16px', lineHeight: 1 }}>✕</span>
           </button>
         </div>
 
