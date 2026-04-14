@@ -73,8 +73,10 @@ export default function MiniGameFrame({ children }: Props) {
           <div className="pc-minigame-frame__reward">
             성공 시: <strong>{TOKEN_LABELS[tokenType]} +1</strong>
           </div>
-          <button className="pc-minigame-frame__close" onClick={cancelMinigame} title="스킵" type="button">
-            <PCSvgIcon id="i-plus" size={14} />
+          <button className="pc-minigame-frame__close" onClick={cancelMinigame} title="스킵" type="button" aria-label="미니게임 스킵">
+            <span aria-hidden="true" style={{ display: 'inline-block', transform: 'rotate(45deg)' }}>
+              <PCSvgIcon id="i-plus" size={14} />
+            </span>
           </button>
         </div>
 

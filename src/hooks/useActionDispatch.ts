@@ -1064,9 +1064,20 @@ async function handleQuestion(action: Extract<PlayerAction, { type: 'question' }
           turn: state.turnCount,
         })
       } else if (fatigueAssessment.fatigueLevel === 'stalemate') {
+        const qType = 'questionType' in action ? (action as { questionType: string }).questionType : ''
+        const alternatives = ['사실 추궁', '동기 탐색', '공감 접근'].filter(t => {
+          if (qType === 'fact_pursuit' && t === '사실 추궁') return false
+          if (qType === 'motive_search' && t === '동기 탐색') return false
+          if (qType === 'empathy_approach' && t === '공감 접근') return false
+          return true
+        })
+        const targetName = action.target === 'a'
+          ? (state.caseData?.duo.partyA.name ?? 'A')
+          : (state.caseData?.duo.partyB.name ?? 'B')
+        const otherParty = action.target === 'a' ? 'B' : 'A'
         state.addDialogue({
           speaker: 'system',
-          text: '[교착] 교착 상태 — 이 접근으로는 더 이상 진전이 어렵습니다. 다른 각도로 전환하세요.',
+          text: `이 접근으로는 더 이상 진전이 어렵습니다. ${alternatives.join(' 또는 ')}으로 전환하거나, ${otherParty}측을 심문하거나, 다른 쟁점을 시도해 보세요.`,
           relatedDisputes: [action.disputeId],
           turn: state.turnCount,
         })

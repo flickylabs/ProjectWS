@@ -439,10 +439,16 @@ export const useGameStore: import('zustand').UseBoundStore<import('zustand').Sto
                 id: prev.gameEventLog.length + 1,
                 turn: prev.turnCount,
                 type: 'question_effect' as const,
-                message: '🔗 숨겨진 연결고리가 감지되었습니다 — 새로운 쟁점이 곧 드러날 수 있습니다',
+                message: '동기 탐색으로 숨겨진 연결고리를 발견했습니다 — 새로운 쟁점이 곧 드러날 수 있습니다',
                 timestamp: Date.now(),
               }],
             }))
+            state.addDialogue({
+              speaker: 'system',
+              text: '동기 탐색이 효과를 보이고 있습니다 — 아직 드러나지 않은 쟁점의 단서가 보입니다.',
+              relatedDisputes: [effect.hintDisputeId],
+              turn: state.turnCount,
+            })
             break
           case 'blame_text_exposed':
             // 동기 탐색: 책임 회피 문구 노출 → 대화 로그에 시스템 노트

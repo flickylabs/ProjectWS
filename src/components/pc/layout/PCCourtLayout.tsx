@@ -41,6 +41,7 @@ function getPhaseNumber(phase: GamePhase): string {
   const DISPLAY_NUMBERS: Record<string, string> = {
     [GamePhase.Phase0_CaseIntro]: '0',
     [GamePhase.Phase1_InitialStatement]: '1',
+    [GamePhase.Phase2_Rebuttal]: '1',
     [GamePhase.Phase3_Interrogation]: '2',
     [GamePhase.Phase4_Evidence]: '2',
     [GamePhase.Phase5_ReExamination]: '2',

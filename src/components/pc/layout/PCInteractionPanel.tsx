@@ -522,6 +522,7 @@ export default function PCInteractionPanel() {
             break
           }
           if (!state.spend('skillPoints', 1)) {
+            showToast('스킬 포인트가 부족합니다.', 'warn')
             break
           }
           window.dispatchEvent(new CustomEvent('pc:court-control-used', {
@@ -563,6 +564,7 @@ export default function PCInteractionPanel() {
 
         if (action.specialAction === 'separation') {
           if (!state.spend('investigationTokens', 1)) {
+            showToast('조사 토큰이 부족합니다.', 'warn')
             break
           }
           dispatch({ type: 'trust_action', actionType: 'separation', target })
@@ -571,6 +573,7 @@ export default function PCInteractionPanel() {
 
         if (action.specialAction === 'confidential_protection') {
           if (!state.spend('skillPoints', 1)) {
+            showToast('스킬 포인트가 부족합니다.', 'warn')
             break
           }
           dispatch({ type: 'trust_action', actionType: 'confidential_protection', target })

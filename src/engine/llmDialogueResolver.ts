@@ -1872,7 +1872,10 @@ function tryScriptedDialoguePath(
     }
   }
 
-  if (!scripted) return null
+  if (!scripted) {
+    logScriptMiss(caseId, action, target, disputeId, lieEntry.currentState)
+    return null
+  }
 
   // 후처리 파이프라인 경유 (기존과 동일한 품질 가드)
   const bpPartyNames = { nameA: caseData.duo.partyA.name, nameB: caseData.duo.partyB.name }
@@ -1890,13 +1893,22 @@ function tryScriptedDialoguePath(
     speaker: target,
   })
 
+  // Truth Throttle 행동 힌트: S0-S1에서 회피성 표현 감지 시 보충
+  let finalHint = scripted.behaviorHint
+  if (!finalHint && (lieEntry.currentState === 'S0' || lieEntry.currentState === 'S1')) {
+    const evasionPattern = /해당 금액|그 사람|그곳|그 쪽|그때|해당 시기|그 건/
+    if (evasionPattern.test(processedText)) {
+      finalHint = '구체적인 내용을 언급하지 않으려 한다.'
+    }
+  }
+
   return {
     node: {
       id: `scripted-${Date.now()}`,
       conditions: { disputeId },
       speaker: target,
       text: processedText,
-      behaviorHint: scripted.behaviorHint,
+      behaviorHint: finalHint,
       effects: {},
     },
     target,
@@ -1906,6 +1918,46 @@ function tryScriptedDialoguePath(
     mentionedTruthIds: [],
     requestedFollowup: '',
   }
+}
+
+// ── 스크립트 미스 로깅 ──
+
+const SCRIPT_MISS_LOG_KEY = 'solomon-script-miss-log'
+const MAX_MISS_LOG = 200
+
+function logScriptMiss(
+  caseId: string,
+  action: PlayerAction,
+  target: PartyId,
+  disputeId: string,
+  lieState: string,
+) {
+  try {
+    const channel = action.type === 'evidence_present' ? 'evidence_present' : 'interrogation'
+    const detail = action.type === 'question' && 'questionType' in action
+      ? (action as { questionType: string }).questionType
+      : action.type === 'evidence_present' && 'evidenceId' in action
+        ? (action as { evidenceId: string }).evidenceId
+        : 'unknown'
+
+    const entry = {
+      caseId,
+      channel,
+      target,
+      disputeId,
+      lieState,
+      detail,
+      timestamp: new Date().toISOString(),
+    }
+
+    const raw = localStorage.getItem(SCRIPT_MISS_LOG_KEY)
+    const log: typeof entry[] = raw ? JSON.parse(raw) : []
+    log.push(entry)
+    if (log.length > MAX_MISS_LOG) log.splice(0, log.length - MAX_MISS_LOG)
+    localStorage.setItem(SCRIPT_MISS_LOG_KEY, JSON.stringify(log))
+
+    console.warn('[Script miss]', entry)
+  } catch { /* localStorage 실패 시 무시 */ }
 }
 
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
