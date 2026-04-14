@@ -59,7 +59,7 @@ export function getPcFaceSymbolId(
   emotion: EmotionalPhase | undefined,
 ): string {
   const faceType = profile?.pcFaceType ?? inferFaceType(profile) ?? (party === 'a' ? 'man' : 'woman')
-  const variant = emotion ? FACE_VARIANTS[faceType][emotion] : undefined
+  const variant = emotion ? FACE_VARIANTS[faceType as 'man' | 'woman']?.[emotion] : undefined
   return variant ?? (faceType === 'man' ? 'i-man' : 'i-woman')
 }
 
