@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useState, type DragEvent, type ReactNode } from 'react'
+import { useCallback, useEffect, useMemo, useRef, useState, type DragEvent, type ReactNode } from 'react'
 import {
   GamePhase,
   type CombinationLabNode,
@@ -13,6 +13,7 @@ import { getPcFaceSymbolId } from '../icons/pcIconUtils'
 import { getPcArchetypeLabel, getPcTellDescription, getPcTellLabel } from '../pcUiLabels'
 import { HOTBAR_DRAG_TYPE } from '../hotbar/pcHotbarConfig'
 import { openPcInteractionPanel } from '../layout/PCInteractionPanel'
+import { showToast } from '../../common/Toast'
 import { PC_ADD_COMBINATION_NOTE_EVENT, type PcCombinationPanelEventDetail, type PcPinnedNote } from './PCImportantNotesSection'
 
 const LIE_STATES: LieState[] = ['S0', 'S1', 'S2', 'S3', 'S4', 'S5']
@@ -41,6 +42,9 @@ export default function PCRightPanel() {
   const pcSummaryUnlocked = useStore((s) => s.pcSummaryUnlocked)
   const globalSkillPoints = useStore((s) => s.globalSkillPoints)
 
+  const evidenceCombinations = useStore((s) => s.evidenceCombinations)
+  const triggeredCombinations = useStore((s) => s.triggeredCombinations)
+
   const [comboSlots, setComboSlots] = useState<[string | null, string | null]>([null, null])
 
   if (!caseData) {
@@ -63,6 +67,33 @@ export default function PCRightPanel() {
     currentPhase === GamePhase.Phase3_Interrogation
     || currentPhase === GamePhase.Phase4_Evidence
     || currentPhase === GamePhase.Phase5_ReExamination
+
+  // 조합 준비 완료 감지 — 양쪽 모두 해금된 미완료 레시피 수 변화 → 얼럿 + shimmer
+  const readyComboCount = useMemo(() => {
+    const triggered = new Set(triggeredCombinations)
+    const fromEvCombo = (evidenceCombinations ?? []).filter((combo) => {
+      const key = combo.requires.join('+')
+      if (triggered.has(key)) return false
+      return combo.requires.every((eid) => evidenceStates[eid]?.unlocked)
+    }).length
+    const applied = new Set(combinationLabRuntime.appliedRecipeIds ?? [])
+    const discovered = new Set(combinationLabRuntime.discoveredNodeIds ?? [])
+    const fromLab = (combinationLabRuntime.config?.recipes ?? []).filter((recipe) => {
+      if (applied.has(recipe.id) && !recipe.repeatable) return false
+      return recipe.inputs.every((id) => evidenceStates[id]?.unlocked || discovered.has(id))
+    }).length
+    return fromEvCombo + fromLab
+  }, [evidenceCombinations, triggeredCombinations, evidenceStates, combinationLabRuntime])
+
+  const prevReadyCount = useRef(-1)
+  useEffect(() => {
+    if (prevReadyCount.current >= 0 && readyComboCount > prevReadyCount.current) {
+      showToast('🔗 조합 가능한 쌍이 준비되었습니다!', 'success')
+    }
+    prevReadyCount.current = readyComboCount
+  }, [readyComboCount])
+
+  const hasReadyCombos = readyComboCount > 0
 
   // config가 null이면 caseData에서 직접 초기화 시도
   useEffect(() => {
@@ -412,7 +443,7 @@ export default function PCRightPanel() {
       {showCombination ? (
         <section className="sec pc-right-block">
           <div
-            className="pc-skill-card pc-combination-card pc-right-card"
+            className={`pc-skill-card pc-combination-card pc-right-card${hasReadyCombos ? ' is-combinable' : ''}`}
             onDragOver={(event) => event.preventDefault()}
             onDrop={handleCombinationDrop}
           >

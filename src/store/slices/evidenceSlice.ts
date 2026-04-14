@@ -171,11 +171,27 @@ export const createEvidenceSlice: StateCreator<EvidenceSlice, [], [], EvidenceSl
     const { evidenceStates, evidenceCombinations, triggeredCombinations } = get()
     const triggered = new Set(triggeredCombinations)
     const ids = new Set<string>()
+    // 1) evidenceCombinations (구 시스템)
     for (const combo of evidenceCombinations) {
       const comboKey = combo.requires.join('+')
-      if (triggered.has(comboKey)) continue // 이미 완료된 조합은 제외
+      if (triggered.has(comboKey)) continue
       for (const eid of combo.requires) {
         if (evidenceStates[eid]?.unlocked) ids.add(eid)
+      }
+    }
+    // 2) combinationLab.recipes (신 시스템 — stmt 포함)
+    const labRuntime = (get() as any).combinationLabRuntime as { config: any; appliedRecipeIds: string[]; discoveredNodeIds: string[] } | undefined
+    if (labRuntime?.config?.recipes) {
+      const applied = new Set(labRuntime.appliedRecipeIds ?? [])
+      const discovered = new Set(labRuntime.discoveredNodeIds ?? [])
+      for (const recipe of labRuntime.config.recipes) {
+        if (applied.has(recipe.id) && !recipe.repeatable) continue
+        for (const inputId of recipe.inputs) {
+          // 증거면 evidenceStates, 발언/노트면 discoveredNodeIds로 체크
+          if (evidenceStates[inputId]?.unlocked || discovered.has(inputId)) {
+            ids.add(inputId)
+          }
+        }
       }
     }
     return ids
