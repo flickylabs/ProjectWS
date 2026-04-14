@@ -276,14 +276,24 @@ function selectVariant(
   context: VariantSelectionContext,
 ): ScriptedVariant | null {
   if (!variants.length) return null
-  const scored = variants.map((variant, index) => ({
+
+  // 하이브리드 반복 방지: variant 4개 이상이면 최근 3턴 hard block
+  let candidates = variants
+  if (variants.length >= 4) {
+    const recentIds = recentScriptIds.get(caseId) ?? []
+    const recentWindow = recentIds.slice(-3)
+    const filtered = variants.filter(v => !recentWindow.includes(v.id))
+    if (filtered.length > 0) candidates = filtered
+  }
+
+  const scored = candidates.map((variant, index) => ({
     variant,
     index,
     score: scoreVariant(variant, caseId, context),
   }))
   const maxScore = Math.max(...scored.map((item) => item.score))
   const pool = scored.filter((item) => item.score === maxScore)
-  const selected = pool[Math.floor(Math.random() * pool.length)]?.variant ?? variants[0]
+  const selected = pool[Math.floor(Math.random() * pool.length)]?.variant ?? candidates[0]
   rememberVariant(caseId, selected, context)
   return selected
 }
