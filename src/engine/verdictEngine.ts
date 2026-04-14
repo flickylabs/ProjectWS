@@ -5,9 +5,10 @@
  * - 반복/unsupported collapse 패널티 추가
  * - 즉답요구 S5: unsupportedCollapse 패널티만 면제
  */
-import type { VerdictInput, VerdictScore, ProcessMetrics } from '../types'
+import type { ClearanceResult, VerdictInput, VerdictScore, ProcessMetrics } from '../types'
 import type { Dispute, EvidenceNode } from '../types'
 import type { EvidenceRuntimeState } from './evidenceEngine'
+import { evaluateClearance, type ClearanceTrackerState } from './clearanceTracker'
 
 interface VerdictContext {
   disputes: Dispute[]
@@ -17,20 +18,22 @@ interface VerdictContext {
   turnsUsed: number
   courtControlRemaining: number
   processMetrics: ProcessMetrics
+  clearanceState?: ClearanceTrackerState
 }
 
 export function calculateVerdict(ctx: VerdictContext): VerdictScore {
-  const insight = calculateInsight(ctx)
+  const clearanceResult = ctx.clearanceState ? evaluateClearance(ctx.clearanceState) : undefined
+  const insight = calculateInsight(ctx, clearanceResult)
   const authority = calculateAuthority(ctx)
   const wisdom = calculateWisdom(ctx)
   const total = Math.round((insight + authority + wisdom) / 3)
 
-  return { insight, authority, wisdom, total }
+  return { insight, authority, wisdom, total, clearanceResult }
 }
 
 /* ── 통찰 (Insight) ────────────────────────── */
 
-function calculateInsight(ctx: VerdictContext): number {
+function calculateInsight(ctx: VerdictContext, clearanceResult?: ClearanceResult): number {
   let score = 0
   let maxScore = 0
 
@@ -93,6 +96,15 @@ function calculateInsight(ctx: VerdictContext): number {
   // V4 보너스: 조합 결정적 질문 해금 +10
   if ((pm as any).combinationDossierUnlocked > 0) {
     processBonus += 10
+  }
+
+  if (clearanceResult) {
+    const unlockedEvidence = clearanceResult.items.find((item) => item.id === 'evidence-unlocked')
+    const lockedEvidenceCount = Math.max(0, (unlockedEvidence?.target ?? 0) - (unlockedEvidence?.current ?? 0))
+    processBonus += Math.min(28, clearanceResult.achieved * 2)
+    processBonus -= clearanceResult.missedConnections.length * 3
+    processBonus -= lockedEvidenceCount * 2
+    if (clearanceResult.percent === 100) processBonus += 30
   }
 
   return Math.max(0, Math.min(100, base + processBonus))

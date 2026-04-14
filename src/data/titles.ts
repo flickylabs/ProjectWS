@@ -24,6 +24,16 @@ interface TitleCheckMeta {
   skillsUsed: number
   collapsedDisputes: number
   totalDisputes: number
+  /** 100% 클리어 달성률 (0~100) */
+  clearancePercent?: number
+  /** 조합 달성 수 (자동+수동) */
+  combinationsCompleted?: number
+  /** 총 조합 가능 수 */
+  combinationsTotal?: number
+  /** 증인 depth 3 도달 수 */
+  witnessDepth3Count?: number
+  /** 미니게임 총 성공 수 */
+  minigameSuccessTotal?: number
 }
 
 const TITLES: TitleCondition[] = [
@@ -74,6 +84,27 @@ const TITLES: TitleCondition[] = [
   {
     title: { id: 'dirty-hands', name: '더러운 손', description: '위법 증거를 판결 근거로 사용', icon: '🧤', rarity: 'common' },
     check: (_s, i) => Object.values(i.evidenceLegality).some((v) => v === true),
+  },
+  // ── 100% 클리어 + 조합 칭호 (V5) ──
+  {
+    title: { id: 'perfect-clearance', name: '완벽한 재판관', description: '100% 달성률로 클리어', icon: '🏆', rarity: 'legendary' },
+    check: (_s, _i, m) => (m.clearancePercent ?? 0) >= 100,
+  },
+  {
+    title: { id: 'evidence-weaver', name: '증거의 직조자', description: '모든 조합을 발견', icon: '🔗', rarity: 'epic' },
+    check: (_s, _i, m) => (m.combinationsTotal ?? 0) > 0 && (m.combinationsCompleted ?? 0) >= (m.combinationsTotal ?? 0),
+  },
+  {
+    title: { id: 'deep-listener', name: '깊은 경청자', description: '모든 증인의 핵심 증언을 청취', icon: '👂', rarity: 'epic' },
+    check: (_s, _i, m) => (m.witnessDepth3Count ?? 0) >= 3,
+  },
+  {
+    title: { id: 'minigame-master', name: '법정의 만능인', description: '미니게임 15회 모두 성공', icon: '🎮', rarity: 'legendary' },
+    check: (_s, _i, m) => (m.minigameSuccessTotal ?? 0) >= 15,
+  },
+  {
+    title: { id: 'resource-master', name: '자원의 달인', description: '모든 토큰을 1개 이상 잔여로 판결', icon: '💎', rarity: 'rare' },
+    check: (_s, _i, m) => m.skillsUsed >= 1 && m.trustActionsUsed >= 1 && m.evidencePresented >= 5,
   },
 ]
 

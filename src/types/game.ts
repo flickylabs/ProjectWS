@@ -23,11 +23,37 @@ export interface VerdictInput {
   evidenceLegality: Record<string, boolean>
 }
 
+export type ClearanceCategory =
+  | 'evidence'
+  | 'combination'
+  | 'witness'
+  | 'interrogation'
+  | 'dispute'
+  | 'minigame'
+
+export interface ClearanceItem {
+  id: string
+  category: ClearanceCategory
+  label: string
+  achieved: boolean
+  current: number
+  target: number
+}
+
+export interface ClearanceResult {
+  items: ClearanceItem[]
+  achieved: number
+  total: number
+  percent: number
+  missedConnections: { a: string; b: string; label: string }[]
+}
+
 export interface VerdictScore {
   insight: number
   authority: number
   wisdom: number
   total: number
+  clearanceResult?: ClearanceResult
 }
 
 export type PartyId = 'a' | 'b'

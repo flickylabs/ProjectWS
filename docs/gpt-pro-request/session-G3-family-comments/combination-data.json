@@ -1,0 +1,98 @@
+{
+  "caseId": "case-family-01",
+  "caseName": "치매 어머니의 유서",
+  "partyA": "윤태성",
+  "partyB": "윤정후",
+  "recipes": [
+    {
+      "id": "combine-1",
+      "inputs": [
+        "e-1",
+        "e-2"
+      ],
+      "inputLabels": [
+        "e-1 60:40 유서 사본",
+        "e-2 요양원 방문기록"
+      ],
+      "outputId": "L-1",
+      "outputLabel": "L-1 말년 접근 + 유산 비율",
+      "outputSummary": "초반 의심 강화 리드",
+      "isDossier": false
+    },
+    {
+      "id": "combine-2",
+      "inputs": [
+        "e-4",
+        "e-5"
+      ],
+      "inputLabels": [
+        "e-4 공증사무실 스캔 보관본",
+        "e-5 어머니 서랍 원본 유서"
+      ],
+      "outputId": "dc-1",
+      "outputLabel": "dc-1 자기 몫을 줄인 조작의 이유",
+      "outputSummary": "유서를 고친 건 맞는데, 왜 자기 몫을 더 많이 가져가는 쪽이 아니라 덜 가져가는 쪽으로 바꿨습니까?",
+      "isDossier": true
+    },
+    {
+      "id": "combine-3",
+      "inputs": [
+        "e-5",
+        "e-6"
+      ],
+      "inputLabels": [
+        "e-5 어머니 서랍 원본 유서",
+        "e-6 20년 송금 내역"
+      ],
+      "outputId": "L-3",
+      "outputLabel": "L-3 원본 유서 + 20년 지원",
+      "outputSummary": "90% 판단 근거 확정 리드",
+      "isDossier": false
+    },
+    {
+      "id": "combine-4",
+      "inputs": [
+        "e-6",
+        "e-7"
+      ],
+      "inputLabels": [
+        "e-6 20년 송금 내역",
+        "e-7 어머니 일기장"
+      ],
+      "outputId": "dc-3",
+      "outputLabel": "dc-3 60대 40이 아니었다면",
+      "outputSummary": "60대 40으로 바꾸지 않았다면, 형이 무엇을 잃게 됐습니까?",
+      "isDossier": true
+    },
+    {
+      "id": "combine-5",
+      "inputs": [
+        "stmt-b-silence",
+        "e-4"
+      ],
+      "inputLabels": [
+        "B의 발언 \"제가 말할 수 있는 부분이 아닙니다\"",
+        "e-4 공증사무실 스캔 보관본"
+      ],
+      "outputId": "L-2",
+      "outputLabel": "L-2 조작 확인 + 방향 전환",
+      "outputSummary": "자기 몫 줄인 조작 리드",
+      "isDossier": false
+    },
+    {
+      "id": "combine-6",
+      "inputs": [
+        "stmt-b-mother",
+        "e-6"
+      ],
+      "inputLabels": [
+        "B의 발언 \"어머니가 그렇게 하고 싶어 하셨습니다\"",
+        "e-6 20년 송금 내역"
+      ],
+      "outputId": "dc-2",
+      "outputLabel": "dc-2 형이 모르던 20년의 돈",
+      "outputSummary": "형이 평생 어머니 돈인 줄 알았던 그 돈, 사실은 당신 돈이었습니까?",
+      "isDossier": true
+    }
+  ]
+}

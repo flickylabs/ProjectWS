@@ -9,10 +9,11 @@ import { GamePhase } from '../../../types'
 import { useGameStore, useStore } from '../../../store/useGameStore'
 import { saveCaseProgress } from '../../phase/CaseMap'
 import { resetAftermathCache } from '../../result/Aftermath'
-import PCSvgIcon from '../icons/PCSvgIcon'
 import { playClick } from '../../../engine/soundEngine'
 import { pp과와 } from '../../../engine/koreanPostposition'
 import CharacterFaceSvg from '../icons/CharacterFaceSvg'
+import PCClearanceDetailPopup from './PCClearanceDetailPopup'
+import { evaluateClearance } from '../../../engine/clearanceTracker'
 
 type ResultTab = 'result' | 'verdict_pronounce' | 'epilogue'
 
@@ -143,12 +144,14 @@ export default function PCResultScreen() {
   const evidenceStates = useStore((s) => s.evidenceStates)
   const skillUseCounts = useStore((s) => s.skillUseCounts)
   const processMetrics = useStore((s) => s.processMetrics)
+  const minigameProgress = useStore((s) => s.minigameProgress)
 
   const [tab, setTab] = useState<ResultTab>('result')
   const [titles, setTitles] = useState<Title[]>([])
   const [newTitles, setNewTitles] = useState<Set<string>>(new Set())
   const [copied, setCopied] = useState(false)
   const [summaryCopied, setSummaryCopied] = useState(false)
+  const [clearanceDetailOpen, setClearanceDetailOpen] = useState(false)
 
   useEffect(() => {
     if (verdictScore && caseData) {
@@ -247,6 +250,7 @@ export default function PCResultScreen() {
   const stars = verdictScore.total >= 75 ? 3 : verdictScore.total >= 55 ? 2 : verdictScore.total >= 35 ? 1 : 0
   const relationLabel = getRelationLabel(caseData.meta?.relationshipType ?? caseData.duo.relationshipType)
   const headline = caseData.disputes[0]?.name ?? caseData.context.description
+  const clearanceResult = verdictScore.clearanceResult ?? evaluateClearance(useGameStore.getState())
   const diffOrder: Record<string, number> = { easy: 0, medium: 1, hard: 2 }
   const allCases = loadGeneratedCases()
   const sessionCases = allCases
@@ -277,6 +281,16 @@ export default function PCResultScreen() {
   const handleRetry = () => {
     useGameStore.getState().resetVerdict()
     useGameStore.getState().setPhase(GamePhase.Phase7_Verdict)
+  }
+
+  const handleOpenClearanceDetail = () => {
+    playClick()
+    setClearanceDetailOpen(true)
+  }
+
+  const handleCloseClearanceDetail = () => {
+    playClick()
+    setClearanceDetailOpen(false)
   }
 
   const handleCopyShare = async () => {
@@ -390,6 +404,7 @@ export default function PCResultScreen() {
                     { label: '통찰', value: verdictScore.insight, color: 'var(--pc-blue)' },
                     { label: '권위', value: verdictScore.authority, color: 'var(--pc-gold)' },
                     { label: '지혜', value: verdictScore.wisdom, color: 'var(--pc-green)' },
+                    { label: '클리어율', value: clearanceResult.percent, color: '#d4a24e' },
                   ].map((axis) => {
                     const pct = Math.min(axis.value, 100)
                     const dash = (pct / 100) * 251
@@ -408,6 +423,12 @@ export default function PCResultScreen() {
                       </div>
                     )
                   })}
+                </div>
+
+                <div className="pc-result-clearance-detail">
+                  <button className="pc-result-clearance-detail__button" onClick={handleOpenClearanceDetail} type="button">
+                    상세 보기
+                  </button>
                 </div>
 
                 {/* 쟁점별 정답 공개 */}
@@ -597,6 +618,14 @@ export default function PCResultScreen() {
           </div>
         </section>
       </div>
+
+      {clearanceDetailOpen ? (
+        <PCClearanceDetailPopup
+          minigameProgress={minigameProgress}
+          onClose={handleCloseClearanceDetail}
+          result={clearanceResult}
+        />
+      ) : null}
     </div>
   )
 }

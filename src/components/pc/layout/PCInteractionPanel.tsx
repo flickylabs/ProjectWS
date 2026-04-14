@@ -524,6 +524,9 @@ export default function PCInteractionPanel() {
           if (!state.spend('skillPoints', 1)) {
             break
           }
+          window.dispatchEvent(new CustomEvent('pc:court-control-used', {
+            detail: { action: 'immediate_answer', label: '즉답 요구' },
+          }))
           const currentEntry = (target === 'a' ? state.agentA : state.agentB).lieStateMap[action.disputeId]
           if (!currentEntry) {
             break

@@ -13,6 +13,7 @@ import {
   type PcCombinationPanelEventDetail,
   type PcPinnedNote,
 } from '../pc/panels/PCImportantNotesSection'
+import { playCombinationSuccess } from '../../engine/soundEngine'
 
 function normalizeInputs(ids: string[]): string[] {
   return [...ids].sort()
@@ -229,6 +230,27 @@ export default function CombinationLabPanel() {
         .filter((value): value is string => !!value),
       turn: turnCount,
     })
+
+    playCombinationSuccess()
+    window.dispatchEvent(new CustomEvent('pc:combination-success', {
+      detail: {
+        inputs: selectedIds
+          .slice(0, 2)
+          .map((id) => availableNodes.find((node) => node.id === id))
+          .filter((node): node is CombinationLabNode => Boolean(node))
+          .map((node) => ({
+            label: node.label.replace(/^note:/, ''),
+            type: node.type,
+          })),
+        outputLabel: matchingOutput.label,
+        outputSummary: matchingOutput.summary,
+        resultType: matchingOutput.id.startsWith('dc-')
+          ? 'dossier'
+          : matchingOutput.nodeType === 'dispute'
+            ? 'dispute'
+            : 'upgrade',
+      },
+    }))
 
     showToast(`조합 성공: ${matchingOutput.label}`, 'success')
     clearAll()

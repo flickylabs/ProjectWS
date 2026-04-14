@@ -201,7 +201,8 @@ export default function PCVerdictScreen() {
 
   const handleSubmit = () => {
     playGavel()
-    const processMetrics = useGameStore.getState().processMetrics
+    const runtimeState = useGameStore.getState()
+    const processMetrics = runtimeState.processMetrics
     const score = calculateVerdict({
       disputes: caseData.disputes,
       evidence: caseData.evidence,
@@ -210,6 +211,7 @@ export default function PCVerdictScreen() {
       turnsUsed: turnCount,
       courtControlRemaining: resources.courtControl,
       processMetrics,
+      clearanceState: runtimeState,
     })
 
     setVerdictScore(score)
@@ -218,7 +220,7 @@ export default function PCVerdictScreen() {
       .filter((item) => evidenceStates[item.id]?.presented)
       .map((item) => item.name)
 
-    const state = useGameStore.getState()
+    const state = runtimeState
     let keyTransition: { party: string; from: string; to: string } | null = null
 
     for (const value of Object.values(state.agentA.lieStateMap)) {

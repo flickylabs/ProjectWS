@@ -68,6 +68,10 @@ export function getDossierCard(caseId: string, dossierId: string): DossierCard |
   return getDossierCards(caseId).find(d => d.id === dossierId) ?? null
 }
 
+export function getUsedDossierQuestionIds(caseId: string): Set<string> {
+  return new Set(usedDossierQuestions.get(caseId) ?? [])
+}
+
 // ── lieState 순위 맵 (게이팅용) ──
 const LIE_STATE_RANK: Record<string, number> = { S0: 0, S1: 1, S2: 2, S3: 3, S4: 4, S5: 5 }
 

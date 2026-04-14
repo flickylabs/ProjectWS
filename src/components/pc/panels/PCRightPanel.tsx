@@ -14,7 +14,9 @@ import { getPcArchetypeLabel, getPcTellDescription, getPcTellLabel } from '../pc
 import { HOTBAR_DRAG_TYPE } from '../hotbar/pcHotbarConfig'
 import { openPcInteractionPanel } from '../layout/PCInteractionPanel'
 import { showToast } from '../../common/Toast'
+import { getCombinationComment } from '../../../data/combinationComments'
 import { PC_ADD_COMBINATION_NOTE_EVENT, type PcCombinationPanelEventDetail, type PcPinnedNote } from './PCImportantNotesSection'
+import { playCombinationSuccess } from '../../../engine/soundEngine'
 
 const LIE_STATES: LieState[] = ['S0', 'S1', 'S2', 'S3', 'S4', 'S5']
 
@@ -320,8 +322,39 @@ export default function PCRightPanel() {
         .map((disputeId) => ({ kind: 'focus_dispute' as const, label: '\uAD00\uB828 \uC7C1\uC810 \uBCF4\uAE30', disputeId })),
     })
 
+    // 재판관 조합 코멘트
+    const caseKey = store.caseData?.caseId ?? ''
+    const judgeComment = matchingRecipe ? getCombinationComment(caseKey, matchingRecipe.id) : null
+    if (judgeComment) {
+      store.addDialogue({
+        speaker: 'judge',
+        text: judgeComment,
+        relatedDisputes: [],
+        turn: store.turnCount,
+      })
+    }
+
+    playCombinationSuccess()
+    window.dispatchEvent(new CustomEvent('pc:combination-success', {
+      detail: {
+        inputs: [comboNodeA, comboNodeB]
+          .filter((node): node is NonNullable<typeof comboNodeA> => Boolean(node))
+          .map((node) => ({
+            label: node.label.replace(/^note:/, ''),
+            type: node.type,
+          })),
+        outputLabel: matchingOutput.label,
+        outputSummary: matchingOutput.summary,
+        resultType: matchingOutput.id.startsWith('dc-')
+          ? 'dossier'
+          : matchingOutput.nodeType === 'dispute'
+            ? 'dispute'
+            : 'upgrade',
+      },
+    }))
+
     clearComboSlots()
-  }, [clearComboSlots, comboReady, matchingOutput, matchingRecipe, store])
+  }, [clearComboSlots, comboNodeA, comboNodeB, comboReady, matchingOutput, matchingRecipe, store])
 
   const openCombinationInfo = useCallback(() => {
     const availableRecipes = store.getAvailableCombinationRecipes()

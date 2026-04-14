@@ -15,6 +15,17 @@ function getAudioCtx(): AudioContext {
   return audioCtx
 }
 
+function withAudioContext(run: (ctx: AudioContext) => void) {
+  if (!enabled) return
+  try {
+    const ctx = getAudioCtx()
+    if (ctx.state === 'suspended') {
+      ctx.resume().catch(() => {})
+    }
+    run(ctx)
+  } catch { /* 무시 */ }
+}
+
 export function setSoundEnabled(v: boolean) {
   enabled = v
   try { localStorage.setItem('solomon-sfx', v ? 'on' : 'off') } catch { /* */ }
@@ -225,8 +236,64 @@ export function playDramaticReveal() {
 }
 
 /** #3 조합 성공 */
+export function playCombinationSuccess() {
+  withAudioContext((ctx) => {
+    const start = ctx.currentTime
+    const notes = [
+      { frequency: 523, offset: 0, duration: 0.08, gain: 0.06 },
+      { frequency: 659, offset: 0.06, duration: 0.1, gain: 0.08 },
+      { frequency: 784, offset: 0.14, duration: 0.14, gain: 0.09 },
+    ]
+
+    for (const note of notes) {
+      const osc = ctx.createOscillator()
+      const gain = ctx.createGain()
+      const noteStart = start + note.offset
+      osc.type = 'triangle'
+      osc.frequency.setValueAtTime(note.frequency, noteStart)
+      gain.gain.setValueAtTime(0.001, noteStart)
+      gain.gain.exponentialRampToValueAtTime(note.gain, noteStart + 0.015)
+      gain.gain.exponentialRampToValueAtTime(0.001, noteStart + note.duration)
+      osc.connect(gain).connect(ctx.destination)
+      osc.start(noteStart)
+      osc.stop(noteStart + note.duration)
+    }
+  })
+}
+
 export function playCombineSuccess() {
-  playFile('/sfx/chime.mp3', 0.3)
+  playCombinationSuccess()
+}
+
+/** 법정 지배력 사용 */
+export function playCourtControl() {
+  withAudioContext((ctx) => {
+    const start = ctx.currentTime
+
+    const body = ctx.createOscillator()
+    const bodyGain = ctx.createGain()
+    body.type = 'triangle'
+    body.frequency.setValueAtTime(180, start)
+    body.frequency.exponentialRampToValueAtTime(58, start + 0.16)
+    bodyGain.gain.setValueAtTime(0.001, start)
+    bodyGain.gain.exponentialRampToValueAtTime(0.16, start + 0.01)
+    bodyGain.gain.exponentialRampToValueAtTime(0.001, start + 0.2)
+    body.connect(bodyGain).connect(ctx.destination)
+    body.start(start)
+    body.stop(start + 0.2)
+
+    const strike = ctx.createOscillator()
+    const strikeGain = ctx.createGain()
+    const strikeStart = start + 0.012
+    strike.type = 'square'
+    strike.frequency.setValueAtTime(960, strikeStart)
+    strike.frequency.exponentialRampToValueAtTime(220, strikeStart + 0.05)
+    strikeGain.gain.setValueAtTime(0.08, strikeStart)
+    strikeGain.gain.exponentialRampToValueAtTime(0.001, strikeStart + 0.08)
+    strike.connect(strikeGain).connect(ctx.destination)
+    strike.start(strikeStart)
+    strike.stop(strikeStart + 0.08)
+  })
 }
 
 /** #12 DossierCard 해금 */

@@ -1,0 +1,98 @@
+{
+  "caseId": "case-friend-01",
+  "caseName": "손절한 절친",
+  "partyA": "송다은",
+  "partyB": "최수민",
+  "recipes": [
+    {
+      "id": "combine-1",
+      "inputs": [
+        "e-1",
+        "e-2"
+      ],
+      "inputLabels": [
+        "e-1 연락 기록",
+        "e-2 단톡방 캡처"
+      ],
+      "outputId": "L-1",
+      "outputLabel": "L-1 집착 프레임 리드",
+      "outputSummary": "집착하는 사람 프레임 완성",
+      "isDossier": false
+    },
+    {
+      "id": "combine-2",
+      "inputs": [
+        "e-1",
+        "e-4"
+      ],
+      "inputLabels": [
+        "e-1 연락 기록",
+        "e-4 예비신랑 메시지"
+      ],
+      "outputId": "dc-1",
+      "outputLabel": "dc-1 왜 바로 말하지 않았는가",
+      "outputSummary": "예비신랑이 먼저 선을 넘었다면 왜 바로 A에게 말하지 않았는가",
+      "isDossier": true
+    },
+    {
+      "id": "combine-3",
+      "inputs": [
+        "e-5",
+        "e-6"
+      ],
+      "inputLabels": [
+        "e-5 A 아버지 문자",
+        "e-6 과거 송금 기록"
+      ],
+      "outputId": "dc-2",
+      "outputLabel": "dc-2 또 혼자 막으려 했는가",
+      "outputSummary": "A 아버지가 또 같은 방식으로 돈 얘기를 꺼냈다면 왜 또 혼자 막으려 했는가",
+      "isDossier": true
+    },
+    {
+      "id": "combine-4",
+      "inputs": [
+        "e-4",
+        "e-7"
+      ],
+      "inputLabels": [
+        "e-4 예비신랑 메시지",
+        "e-7 대조표"
+      ],
+      "outputId": "L-4",
+      "outputLabel": "L-4 경고 결론 리드",
+      "outputSummary": "B의 연락은 경고 결론 강화",
+      "isDossier": false
+    },
+    {
+      "id": "combine-5",
+      "inputs": [
+        "stmt-a-accusation",
+        "e-2"
+      ],
+      "inputLabels": [
+        "A의 발언 \"수민이가 또 내 남자한테 연락한다\"",
+        "e-2 단톡방 캡처"
+      ],
+      "outputId": "dc-3",
+      "outputLabel": "dc-3 확인 없이 매도한 건 누구인가",
+      "outputSummary": "직접 확인도 하지 않고 친구를 단톡방에서 먼저 매도한 건 누구인가",
+      "isDossier": true
+    },
+    {
+      "id": "combine-6",
+      "inputs": [
+        "e-3",
+        "e-7"
+      ],
+      "inputLabels": [
+        "e-3 과거 카톡",
+        "e-7 대조표"
+      ],
+      "outputId": "L-4",
+      "outputLabel": "L-4 경고 결론 리드",
+      "outputSummary": "B의 연락은 경고 결론 강화",
+      "isDossier": false
+    }
+  ]
+}

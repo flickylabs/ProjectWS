@@ -2123,6 +2123,9 @@ function applyTrustEffect(actionType: string, target: PartyId) {
       // 비공개보호: 법정 지배력 1 소비
       if (s.resources.courtControl >= 1) {
         s.spend('courtControl', 1)
+        window.dispatchEvent(new CustomEvent('pc:court-control-used', {
+          detail: { action: 'confidential_protection', label: '비공개 보호' },
+        }))
         s.changeTrust(target, 'trustTowardJudge', 20)
         s.changeTrust(target, 'fearOfExposure', -15)
       } else {
@@ -2133,6 +2136,9 @@ function applyTrustEffect(actionType: string, target: PartyId) {
       // 분리심문: 법정 지배력 1 소비, 3턴간 상대 배제
       if (s.resources.courtControl >= 1) {
         s.spend('courtControl', 1)
+        window.dispatchEvent(new CustomEvent('pc:court-control-used', {
+          detail: { action: 'separation', label: '분리 심문' },
+        }))
         s.startSeparation(target, 3)
         playSeparation()
         s.changeTrust(target, 'retaliationWorry', -10)

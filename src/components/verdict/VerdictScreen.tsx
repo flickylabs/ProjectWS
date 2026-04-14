@@ -123,11 +123,13 @@ export default function VerdictScreen() {
 
   const handleSubmit = () => {
     playGavel()
-    const processMetrics = useGameStore.getState().processMetrics
+    const runtimeState = useGameStore.getState()
+    const processMetrics = runtimeState.processMetrics
     const score = calculateVerdict({
       disputes: caseData.disputes, evidence: caseData.evidence, evidenceStates,
       input: verdictInput, turnsUsed: turnCount, courtControlRemaining: resources.courtControl,
       processMetrics,
+      clearanceState: runtimeState,
     })
     setVerdictScore(score)
 
@@ -139,8 +141,8 @@ export default function VerdictScreen() {
         .map(e => e.name)
 
       // 결정적 순간: lieState 전이가 가장 많이 일어난 파티 기준
-      const agentA = useGameStore.getState().agentA
-      const agentB = useGameStore.getState().agentB
+      const agentA = runtimeState.agentA
+      const agentB = runtimeState.agentB
       let keyTransition: { party: string; from: string; to: string } | null = null
       // A/B 중 S5에 도달한 쟁점이 있으면 그것을 결정적 순간으로
       for (const [, v] of Object.entries(agentA.lieStateMap)) {
