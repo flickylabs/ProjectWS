@@ -125,6 +125,8 @@ export const createCombinationLabSlice: StateCreator<any, [], [], CombinationLab
     if (state.analysisPoints < recipe.cost) return false
 
     const root = get() as any
+    // 스킬 포인트 1 이상 필요
+    if ((root.resources?.skillPoints ?? 0) < 1) return false
     return recipe.inputs.every((inputId: string) => {
       const node = config.nodes.find((item: CombinationLabNode) => item.id === inputId)
       if (!node) return false
@@ -290,6 +292,12 @@ export const createCombinationLabSlice: StateCreator<any, [], [], CombinationLab
         default:
           break
       }
+    }
+
+    // 스킬 포인트 1 소비 (수동 조합 비용)
+    const resources = (root as any).resources
+    if (resources && resources.skillPoints >= 1) {
+      ;(root as any).spend('skillPoints', 1)
     }
 
     ;(set as (partial: any) => void)({

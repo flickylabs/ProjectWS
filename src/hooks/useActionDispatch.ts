@@ -705,7 +705,7 @@ async function handleCallWitness(action: Extract<PlayerAction, { type: 'call_wit
     showToast('증인 증언 생성에 실패했습니다', 'warn')
   }
 
-  useGameStore.getState().incrementTurn()
+  // 증인 소환은 토큰만 소비, 턴 소비 없음
 }
 
 // ── 증거 조사 ──
@@ -726,7 +726,7 @@ async function handleEvidenceInvestigate(action: Extract<PlayerAction, { type: '
     await resolveAndApply(action, target)
   }
 
-  useGameStore.getState().incrementTurn()
+  // 증거 조사는 토큰만 소비, 턴 소비 없음
 }
 
 // ── 질문 ──
@@ -2119,17 +2119,26 @@ function questionTypeToTrigger(type: QuestionType): string[] {
 function applyTrustEffect(actionType: string, target: PartyId) {
   const s = useGameStore.getState()
   switch (actionType) {
-    case 'confidential_protection': s.changeTrust(target, 'trustTowardJudge', 20); s.changeTrust(target, 'fearOfExposure', -15); break
+    case 'confidential_protection':
+      // 비공개보호: 법정 지배력 1 소비
+      if (s.resources.courtControl >= 1) {
+        s.spend('courtControl', 1)
+        s.changeTrust(target, 'trustTowardJudge', 20)
+        s.changeTrust(target, 'fearOfExposure', -15)
+      } else {
+        s.addDialogue({ speaker: 'system', text: `법정 지배력이 부족합니다.`, relatedDisputes: [], turn: s.turnCount })
+      }
+      break
     case 'separation':
-      // 분리심문: 조사 토큰 1 소모, 3턴간 상대 배제
-      if (s.resources.investigationTokens >= 1) {
-        s.spend('investigationTokens', 1)
+      // 분리심문: 법정 지배력 1 소비, 3턴간 상대 배제
+      if (s.resources.courtControl >= 1) {
+        s.spend('courtControl', 1)
         s.startSeparation(target, 3)
         playSeparation()
         s.changeTrust(target, 'retaliationWorry', -10)
         s.addDialogue({ speaker: 'system', text: `[분리] 분리 심문 시작 — 3턴간 상대방이 배제된다.`, relatedDisputes: [], turn: s.turnCount })
       } else {
-        s.addDialogue({ speaker: 'system', text: `조사 토큰이 부족합니다.`, relatedDisputes: [], turn: s.turnCount })
+        s.addDialogue({ speaker: 'system', text: `법정 지배력이 부족합니다.`, relatedDisputes: [], turn: s.turnCount })
       }
       break
   }
@@ -2448,5 +2457,5 @@ export function applyWitnessSlot(slotId: string): void {
 
   // 대기 해제
   state.setPendingWitnessChoice(null)
-  state.incrementTurn()
+  // 증인 주제 선택은 소환의 일부, 별도 턴 소비 없음
 }

@@ -10309,6 +10309,64 @@ body.pc-mode .pc-question-choice__dispute-icon {
   opacity: 0.7;
 }
 
+/* ── Mini-game frame ── */
+body.pc-mode .pc-minigame-backdrop {
+  position: fixed; inset: 0; z-index: 9980;
+  background: rgba(0,0,0,0.7); backdrop-filter: blur(4px);
+  display: flex; align-items: center; justify-content: center;
+}
+body.pc-mode .pc-minigame-frame {
+  background: var(--pc-p2, #111119); border: 1px solid rgba(212,162,78,0.2);
+  border-radius: 16px; min-width: 480px; max-width: 720px; width: 90%;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.6);
+}
+body.pc-mode .pc-minigame-frame__header {
+  display: flex; align-items: center; gap: 12px; padding: 16px 20px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+body.pc-mode .pc-minigame-frame__title { display: flex; flex-direction: column; gap: 2px; }
+body.pc-mode .pc-minigame-frame__label { font-size: 18px; font-weight: 900; color: #f2efe8; }
+body.pc-mode .pc-minigame-frame__round { font-size: 12px; color: #8b8b9a; font-weight: 600; }
+body.pc-mode .pc-minigame-frame__reward { margin-left: auto; font-size: 13px; color: #d4a24e; font-weight: 600; }
+body.pc-mode .pc-minigame-frame__reward strong { color: #e8c172; }
+body.pc-mode .pc-minigame-frame__close {
+  width: 28px; height: 28px; display: flex; align-items: center; justify-content: center;
+  background: transparent; border: 1px solid rgba(255,255,255,0.08); border-radius: 6px;
+  color: #8b8b9a; cursor: pointer; transform: rotate(45deg);
+}
+body.pc-mode .pc-minigame-frame__body { padding: 20px; min-height: 300px; }
+
+/* Mini-game launch button (+) */
+body.pc-mode .pc-minigame-launch-btn {
+  display: inline-flex; align-items: center; gap: 2px;
+  padding: 2px 6px; border-radius: 6px;
+  background: rgba(212,162,78,0.08); border: 1px solid rgba(212,162,78,0.2);
+  color: #d4a24e; font-size: 11px; font-weight: 700; cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+body.pc-mode .pc-minigame-launch-btn:hover {
+  background: rgba(212,162,78,0.15); border-color: rgba(212,162,78,0.4);
+}
+body.pc-mode .pc-minigame-launch-btn__plus { font-size: 14px; font-weight: 900; }
+body.pc-mode .pc-minigame-launch-btn__count { font-size: 10px; opacity: 0.7; }
+
+/* ── Token spend floating effect ── */
+@keyframes pc-token-float-up {
+  0% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(-40px); }
+}
+body.pc-mode .pc-token-spend-container {
+  position: fixed; top: 60px; right: 24px; z-index: 9990;
+  display: flex; flex-direction: column; gap: 4px; pointer-events: none;
+}
+body.pc-mode .pc-token-spend-float {
+  animation: pc-token-float-up 1.2s ease-out forwards;
+  font-size: 16px; font-weight: 900; display: flex; gap: 6px; align-items: center;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.6);
+}
+body.pc-mode .pc-token-spend-float__label { font-size: 11px; font-weight: 600; opacity: 0.7; }
+body.pc-mode .pc-token-spend-float__amount { font-size: 18px; }
+
 /* ── Combinable evidence shimmer ── */
 @keyframes pc-combinable-shimmer {
   0%, 100% { box-shadow: 0 0 4px rgba(212,162,78,0.15), inset 0 0 2px rgba(212,162,78,0.08); border-color: rgba(212,162,78,0.2); }

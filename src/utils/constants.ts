@@ -1,13 +1,13 @@
 import { GamePhase, type Resources } from '../types'
 
 export const INITIAL_RESOURCES: Resources = {
-  investigationTokens: 6,   // 증거 조사(~3) + 증인(~1) + AI분석(1) + 여유(1)
-  skillPoints: 5,
-  courtControl: 3,
+  investigationTokens: 20,  // 증거 조사(21) + 증인(3) — 미니게임으로 추가 획득 가능
+  skillPoints: 10,           // 조합(6) + DossierCard(3) + 회피읽기(1)
+  courtControl: 5,           // 분리심문(1) + 비공개보호(1) + 즉답요구(1) + 잔여→점수보너스
 }
 
 export const SKILL_COSTS: Record<string, { resource: keyof Resources; amount: number }> = {
-  immediate_answer: { resource: 'skillPoints', amount: 1 },
+  immediate_answer: { resource: 'courtControl', amount: 1 },
   evasion_reading: { resource: 'skillPoints', amount: 1 },
 }
 

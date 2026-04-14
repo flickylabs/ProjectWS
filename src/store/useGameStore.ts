@@ -10,6 +10,7 @@ import { createVerdictSlice, type VerdictSlice } from './slices/verdictSlice'
 import { createShopSlice, type ShopSlice } from './slices/shopSlice'
 import { createDiscoverySlice, type DiscoverySlice } from './slices/discoverySlice'
 import { createCombinationLabSlice, type CombinationLabSlice } from './slices/combinationLabSlice'
+import { createMinigameSlice, type MinigameSlice } from './slices/minigameSlice'
 import type { CaseData, ProcessMetrics, PartyId } from '../types'
 import type { TestimonyAnalysis } from '../engine/llmTestimonyAnalysis'
 import { GamePhase } from '../types'
@@ -117,7 +118,7 @@ function applyPerks(set: (partial: any) => void): void {
   })
 }
 
-export type GameStore = PhaseSlice & AgentSlice & ResourceSlice & EvidenceSlice & DialogueSlice & VerdictSlice & ShopSlice & DiscoverySlice & CombinationLabSlice & {
+export type GameStore = PhaseSlice & AgentSlice & ResourceSlice & EvidenceSlice & DialogueSlice & VerdictSlice & ShopSlice & DiscoverySlice & CombinationLabSlice & MinigameSlice & {
   caseData: CaseData | null
   lieConfigs: { a: CaseData['lieConfigA']; b: CaseData['lieConfigB'] } | null
   isLLMLoading: boolean
@@ -283,6 +284,7 @@ export const useGameStore: import('zustand').UseBoundStore<import('zustand').Sto
     ...createShopSlice(...args),
     ...createDiscoverySlice(...args),
     ...createCombinationLabSlice(...args),
+    ...createMinigameSlice(...args),
 
     caseData: null,
     lieConfigs: null,

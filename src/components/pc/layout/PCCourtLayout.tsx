@@ -11,6 +11,8 @@ import { resetPcSessionToHome } from '../../../app/PCApp'
 import PCDialogueLog from './PCDialogueLog'
 import PCDisputeRibbon from './PCDisputeRibbon'
 import PCGameplayOverlay from './PCGameplayOverlay'
+import TokenSpendEffect from '../effects/TokenSpendEffect'
+import MiniGameOverlay from '../minigame/MiniGameOverlay'
 import PCInteractionPanel, { openPcInteractionPanel } from './PCInteractionPanel'
 import PCRecordSummary from './PCRecordSummary'
 import { playBgm, stopBgm } from '../../../engine/soundEngine'
@@ -302,6 +304,8 @@ export default function PCCourtLayout({ actionPanel, onDialogueTap, isDialoguePh
       <PCEvidenceViewer />
       <PCInteractionPanel />
       <PCGameplayOverlay />
+      <TokenSpendEffect />
+      <MiniGameOverlay />
       {recordSummaryOpen ? <PCRecordSummary onClose={() => setRecordSummaryOpen(false)} /> : null}
     </>
   )

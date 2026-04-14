@@ -23,11 +23,16 @@ export const createResourceSlice: StateCreator<ResourceSlice, [], [], ResourceSl
   },
 
   spend: (resource, amount) => {
+    const tokenType = resource === 'investigationTokens' ? 'investigation'
+      : resource === 'skillPoints' ? 'skill'
+      : resource === 'courtControl' ? 'court' : null
+
     // investigationTokens → 글로벌 돋보기에서 차감
     if (resource === 'investigationTokens') {
       const globalTokens = (get() as any).globalInvestTokens ?? 0
       if (globalTokens < amount) return false
       set({ globalInvestTokens: globalTokens - amount } as any)
+      if (tokenType) window.dispatchEvent(new CustomEvent('pc:token-spend', { detail: { type: tokenType, amount } }))
       return true
     }
     // skillPoints → 글로벌 번개에서 차감
@@ -35,11 +40,13 @@ export const createResourceSlice: StateCreator<ResourceSlice, [], [], ResourceSl
       const globalSkill = (get() as any).globalSkillPoints ?? 0
       if (globalSkill < amount) return false
       set({ globalSkillPoints: globalSkill - amount } as any)
+      if (tokenType) window.dispatchEvent(new CustomEvent('pc:token-spend', { detail: { type: tokenType, amount } }))
       return true
     }
     const { resources } = get()
     if (resources[resource] < amount) return false
     set({ resources: { ...resources, [resource]: resources[resource] - amount } })
+    if (tokenType) window.dispatchEvent(new CustomEvent('pc:token-spend', { detail: { type: tokenType, amount } }))
     return true
   },
 

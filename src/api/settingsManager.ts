@@ -48,9 +48,9 @@ function getJSON<T>(key: string, fallback: T): T {
 // ── 초기 리소스 ──
 export function getInitialResources(): Resources {
   return {
-    investigationTokens: getNum('balance.initial.investigationTokens', 6),
-    skillPoints: getNum('balance.initial.skillPoints', 5),
-    courtControl: getNum('balance.initial.courtControl', 3),
+    investigationTokens: getNum('balance.initial.investigationTokens', 20),
+    skillPoints: getNum('balance.initial.skillPoints', 10),
+    courtControl: getNum('balance.initial.courtControl', 5),
   }
 }
 
