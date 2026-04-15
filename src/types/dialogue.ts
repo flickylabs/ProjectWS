@@ -17,6 +17,8 @@ export interface DialogueEntry {
   witnessFavor?: 'pro_a' | 'pro_b' | 'neutral' | 'mixed'
   /** LLM 컨텍스트 전용 — UI에 표시하지 않음 */
   isHidden?: boolean
+  /** 자동 즐겨찾기 대상 — timeline_lock 등에서 사용 */
+  autoPin?: boolean
   /** 모순 감지 전용: 클릭하면 추궁 가능 */
   contradictionMeta?: {
     party: PartyId

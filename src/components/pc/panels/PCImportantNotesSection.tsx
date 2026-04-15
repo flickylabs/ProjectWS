@@ -1,4 +1,4 @@
-import { useCallback, useMemo, useState, type DragEvent } from 'react'
+import { useCallback, useEffect, useMemo, useState, type DragEvent } from 'react'
 import { useStore } from '../../../store/useGameStore'
 import type { DialogueEntry } from '../../../types'
 import { HOTBAR_DRAG_TYPE } from '../hotbar/pcHotbarConfig'
@@ -91,6 +91,27 @@ export default function PCImportantNotesSection() {
       )
       .slice(-30)
   }, [dialogueLog])
+
+  // autoPin 엔트리 자동 즐겨찾기 등록
+  useEffect(() => {
+    const autoPinEntries = dialogueLog.filter((e) => e.autoPin && !favorites.some((f) => f.dialogueId === e.id))
+    if (autoPinEntries.length === 0) return
+    setFavorites((current) => {
+      const newPins = autoPinEntries
+        .filter((e) => !current.some((f) => f.dialogueId === e.id))
+        .map((e) => ({
+          id: `pin-${e.id}`,
+          dialogueId: e.id,
+          speaker: e.speaker,
+          text: e.text,
+          turn: e.turn,
+          relatedDisputes: e.relatedDisputes,
+          behaviorHint: e.behaviorHint,
+          contradictionMeta: e.contradictionMeta,
+        }))
+      return newPins.length > 0 ? [...current, ...newPins] : current
+    })
+  }, [dialogueLog, favorites])
 
   const toPinnedNote = useCallback((entry: DialogueEntry | PcPinnedNote): PcPinnedNote => {
     const dialogueId = 'dialogueId' in entry ? entry.dialogueId : entry.id

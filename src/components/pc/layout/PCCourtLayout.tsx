@@ -324,7 +324,7 @@ export default function PCCourtLayout({ actionPanel, onDialogueTap, isDialoguePh
                 }}
                 type="button"
               >
-                {tokenPopupData.minigameLabel}로 충전하기 ({tokenPopupRemaining}/{MINIGAME_MAX_ROUNDS})
+                미니게임으로 충전하기 ({tokenPopupRemaining}/{MINIGAME_MAX_ROUNDS})
               </button>
             ) : (
               <span className="pc-token-popup__recharge-done">충전 완료 (0/{MINIGAME_MAX_ROUNDS})</span>

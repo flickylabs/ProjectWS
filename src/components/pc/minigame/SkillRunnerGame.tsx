@@ -1,4 +1,4 @@
-import { useEffect, useEffectEvent, useRef, useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import { useStore } from '../../../store/useGameStore'
 import {
   playRunnerJump,
@@ -821,7 +821,7 @@ export default function SkillRunnerGame() {
   const [runToken, setRunToken] = useState(0)
   const [ui, setUi] = useState<UiState>(() => uiRef.current)
 
-  const syncUi = useEffectEvent((game: GameState, force = false) => {
+  const syncUiRef = useRef((game: GameState, force = false) => {
     const next = makeUiState(game)
     const previous = uiRef.current
     const speedBucket = Math.round(next.speed * 10) !== Math.round(previous.speed * 10)
@@ -839,6 +839,7 @@ export default function SkillRunnerGame() {
       setUi(next)
     }
   })
+  const syncUi = useCallback((game: GameState, force = false) => syncUiRef.current(game, force), [])
 
   useEffect(() => {
     const canvas = canvasRef.current
@@ -885,7 +886,8 @@ export default function SkillRunnerGame() {
       window.cancelAnimationFrame(frameId)
       stateRef.current = null
     }
-  }, [config, round, runToken, syncUi])
+  // eslint-disable-next-line react-hooks/exhaustive-deps -- config is derived from round, syncUi is stable ref
+  }, [round, runToken])
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
@@ -978,7 +980,6 @@ export default function SkillRunnerGame() {
 
         <div className="pc-skill-runner__hud">
           <div className="pc-skill-runner__panel">
-            <span className="pc-skill-runner__panel-label">생명</span>
             <div className="pc-skill-runner__hearts" aria-label={`남은 생명 ${ui.lives}`}>
               {Array.from({ length: 3 }).map((_, index) => (
                 <span className={index < ui.lives ? 'is-on' : 'is-off'} key={index}>❤</span>
@@ -987,9 +988,7 @@ export default function SkillRunnerGame() {
           </div>
 
           <div className="pc-skill-runner__panel pc-skill-runner__panel--count">
-            <span className="pc-skill-runner__panel-label">수집</span>
             <strong>{ui.collected} / {ui.target}</strong>
-            <span className="pc-skill-runner__speed">x{speedMultiplier.toFixed(2)} 속도</span>
           </div>
         </div>
 
@@ -1044,7 +1043,6 @@ export default function SkillRunnerGame() {
 
       <div className="pc-skill-runner__footer">
         <span>Space/↑/W를 짧게 누르면 낮게, 길게 누르면 더 높이 점프합니다.</span>
-        <span>{Math.round(config.accelEvery10s * 100)}% / 10초 가속</span>
       </div>
     </div>
   )

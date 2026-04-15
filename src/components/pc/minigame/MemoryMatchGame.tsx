@@ -422,13 +422,7 @@ export default function MemoryMatchGame({ round }: { round: number }) {
     <div className="pc-memory-match">
       <div className="pc-memory-match__status">
         <div className="pc-memory-match__status-copy">
-          <p className="pc-memory-match__eyebrow">조사 토큰 확보</p>
           <h3 className="pc-memory-match__title">같은 증거 카드를 두 장씩 찾으세요.</h3>
-          <p className="pc-memory-match__subtitle">
-            {roundConfig.columns}×{roundConfig.rows} 그리드
-            {' · '}
-            {clearedPairs}/{roundConfig.pairs}쌍 확보
-          </p>
         </div>
         <div className={`pc-memory-match__timer ${timeLeft <= 10 ? 'is-critical' : ''}`}>
           <span className="pc-memory-match__timer-label">남은 시간</span>

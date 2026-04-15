@@ -278,7 +278,8 @@ export default function WhackAMoleGame() {
       hammerRef.current.style.transform = `translate(${x - 26}px, ${y - 18}px)`
       hammerRef.current.style.display = ''
     }
-    setCursor((current) => ({ ...current, x, y, visible: true }))
+    // visible 상태만 필요할 때 업데이트 (매 move마다 리렌더 방지)
+    setCursor((current) => current.visible ? current : { ...current, x, y, visible: true })
     return { x, y }
   }, [playState])
 
@@ -447,7 +448,6 @@ export default function WhackAMoleGame() {
     <div className={rootClassName}>
       <div className="pc-whack-a-mole__hud">
         <div className="pc-whack-a-mole__card pc-whack-a-mole__card--score">
-          <div className="pc-whack-a-mole__eyebrow">법정 지배력</div>
           <div className="pc-whack-a-mole__value">{score} / {profile.target}</div>
           <div className="pc-whack-a-mole__meter">
             <span className="pc-whack-a-mole__meter-fill is-score" style={{ width: `${scoreRatio}%` }} />
@@ -455,8 +455,10 @@ export default function WhackAMoleGame() {
         </div>
 
         <div className="pc-whack-a-mole__card pc-whack-a-mole__card--timer">
-          <div className="pc-whack-a-mole__eyebrow">남은 시간</div>
-          <div className="pc-whack-a-mole__value">{formatClock(timeLeftMs)}</div>
+          <div className="pc-whack-a-mole__value">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{display:'inline',verticalAlign:'middle',marginRight:4}}><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            {formatClock(timeLeftMs)}
+          </div>
           <div className="pc-whack-a-mole__meter">
             <span className={`pc-whack-a-mole__meter-fill is-time${timeLeftMs <= 8_000 ? ' is-urgent' : ''}`} style={{ width: `${timeRatio}%` }} />
           </div>
@@ -465,9 +467,8 @@ export default function WhackAMoleGame() {
 
       <div className="pc-whack-a-mole__legend">
         <span className="pc-whack-a-mole__legend-pill is-criminal">범인 +1</span>
-        <span className="pc-whack-a-mole__legend-pill is-civilian">시민 -2</span>
         <span className="pc-whack-a-mole__legend-pill is-boss">보스 +3</span>
-        <span className="pc-whack-a-mole__legend-copy">{scoreLeft > 0 ? `${scoreLeft}점 남음` : '판정을 장악했습니다'}</span>
+        <span className="pc-whack-a-mole__legend-pill is-civilian">시민 -2</span>
       </div>
 
       <div

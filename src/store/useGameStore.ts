@@ -424,12 +424,13 @@ export const useGameStore: import('zustand').UseBoundStore<import('zustand').Sto
 
           // ── 신규 5종 효과 ──
           case 'timeline_lock':
-            // 사실 추궁: 부정 시점 고정 → 대화 로그에 시스템 메시지
+            // 사실 추궁: 부정 시점 고정 → 대화 로그에 시스템 메시지 + 자동 즐겨찾기
             state.addDialogue({
               speaker: 'system',
               text: '📌 [진술 시점 고정] — 이 부정은 향후 모순 추궁의 근거가 됩니다',
               relatedDisputes: [effect.disputeId],
               turn: state.turnCount,
+              autoPin: true,
             })
             break
           case 'hidden_dispute_hook':
