@@ -65,7 +65,7 @@ export function checkAndGrantRewards(): { id: string; label: string; amount: num
 
     if (cond.check()) {
       if (cond.reward.type === 'skill') {
-        // shopSlice.grantSkillReward는 no-op → 로컬 리소스 직접 지급
+        // 로컬 리소스 직접 지급
         store.gain('skillPoints', cond.reward.amount)
       } else {
         // invest 보상 — 초기값(20) 기준 캡

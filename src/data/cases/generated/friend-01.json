@@ -2575,6 +2575,33 @@
           "e-2"
         ],
         "visibility": "derived"
+      },
+      {
+        "id": "dc-4",
+        "type": "derived_note",
+        "label": "dc-4 손절의 값",
+        "linkedDisputeIds": [
+          "d-4"
+        ],
+        "linkedEvidenceIds": [
+          "e-3",
+          "e-6"
+        ],
+        "visibility": "derived"
+      },
+      {
+        "id": "dc-5",
+        "type": "derived_note",
+        "label": "dc-5 낙인의 순서",
+        "linkedDisputeIds": [
+          "d-1",
+          "d-5"
+        ],
+        "linkedEvidenceIds": [
+          "e-3",
+          "e-7"
+        ],
+        "visibility": "derived"
       }
     ],
     "outputs": [
@@ -2672,6 +2699,32 @@
             "unlockNodeId": "dc-3"
           }
         ]
+      },
+      {
+        "id": "dc-4",
+        "label": "dc-4 손절의 값",
+        "summary": "과거 손절이 변심이 아니라 사기 피해와 침묵의 결과였다면, 왜 끝내 말하지 못했습니까?",
+        "nodeType": "derived_note",
+        "noteText": "손절의 값",
+        "effects": [
+          {
+            "kind": "unlock_note",
+            "unlockNodeId": "dc-4"
+          }
+        ]
+      },
+      {
+        "id": "dc-5",
+        "label": "dc-5 낙인의 순서",
+        "summary": "두 번 다 말하지 못해 악역이 된 구조 — 누가 먼저 낙인을 찍었습니까?",
+        "nodeType": "derived_note",
+        "noteText": "낙인의 순서",
+        "effects": [
+          {
+            "kind": "unlock_note",
+            "unlockNodeId": "dc-5"
+          }
+        ]
       }
     ],
     "recipes": [
@@ -2738,7 +2791,40 @@
         ],
         "cost": 1,
         "discoveryText": "과거 카톡과 대조표를 합치면, 최수민이 두 번 다 말하지 못해 악역이 된 구조가 보인다.",
-        "outputId": "L-4",
+        "outputId": "dc-5",
+        "resultType": "dossier"
+      },
+      {
+        "id": "combine-7",
+        "inputs": [
+          "e-3",
+          "e-6"
+        ],
+        "cost": 1,
+        "discoveryText": "과거 카톡의 '돈 문제' 언급과 과거 송금 기록을 대조하면, 손절의 진짜 원인이 변심이 아니라 사기 피해였다는 사실이 드러난다.",
+        "outputId": "dc-4",
+        "resultType": "dossier"
+      },
+      {
+        "id": "combine-8",
+        "inputs": [
+          "stmt-b-silence",
+          "e-4"
+        ],
+        "cost": 1,
+        "discoveryText": "수민이 '참았어야 했다'는 말과 예비신랑 메시지를 대조하면, 먼저 선을 넘은 쪽이 예비신랑이었다는 반전이 나온다.",
+        "outputId": "L-2",
+        "resultType": "upgrade"
+      },
+      {
+        "id": "combine-9",
+        "inputs": [
+          "stmt-b-silence",
+          "e-5"
+        ],
+        "cost": 1,
+        "discoveryText": "수민이 참으려 했다는 말과 다은 아버지의 문자를 합치면, 아버지의 돈 접근 패턴이 처음이 아니라는 사실이 드러난다.",
+        "outputId": "L-3",
         "resultType": "upgrade"
       }
     ]

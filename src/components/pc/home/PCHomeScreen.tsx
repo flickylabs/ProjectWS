@@ -43,7 +43,7 @@ export default function PCHomeScreen() {
   const [llmConnected, setLlmConnected] = useState<boolean | null>(null)
   const [checkingConnection, setCheckingConnection] = useState(false)
   const [refreshKey, setRefreshKey] = useState(0)
-  const countdown = 0 // shopSlice 충전 비활성 상태
+  const countdown = 0 // 충전 시스템 비활성 상태
 
   const initializeCase = useStore((s) => s.initializeCase)
   const globalInvest = useStore((s) => s.resources.investigationTokens)

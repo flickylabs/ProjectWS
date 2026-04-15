@@ -2523,6 +2523,47 @@
           "e-7"
         ],
         "visibility": "derived"
+      },
+      {
+        "id": "dc-4",
+        "type": "derived_note",
+        "label": "dc-4 감춘 이유",
+        "linkedDisputeIds": [
+          "d-4"
+        ],
+        "linkedEvidenceIds": [
+          "e-6",
+          "e-7"
+        ],
+        "visibility": "derived"
+      },
+      {
+        "id": "L-5",
+        "type": "derived_note",
+        "label": "L-5 장남 당연시 + 보호 명분",
+        "linkedDisputeIds": [
+          "d-5"
+        ],
+        "linkedEvidenceIds": [
+          "e-1",
+          "e-6",
+          "e-7"
+        ],
+        "visibility": "derived"
+      },
+      {
+        "id": "dc-5",
+        "type": "derived_note",
+        "label": "dc-5 어머니의 뜻",
+        "linkedDisputeIds": [
+          "d-5"
+        ],
+        "linkedEvidenceIds": [
+          "e-1",
+          "e-6",
+          "e-7"
+        ],
+        "visibility": "derived"
       }
     ],
     "outputs": [
@@ -2574,7 +2615,7 @@
         "summary": "전체 동기 완성 리드",
         "nodeType": "derived_note",
         "noteText": "윤정후는 돈과 비밀 둘 다 떠안고 있었다",
-        "judgeHint": "후속 카드 dc-3과 연결된다.",
+        "judgeHint": "후속 카드 dc-4와 연결된다.",
         "effects": [
           {
             "kind": "unlock_note",
@@ -2628,6 +2669,50 @@
             "unlockNodeId": "d-4"
           }
         ]
+      },
+      {
+        "id": "dc-4",
+        "label": "dc-4 감춘 이유",
+        "summary": "유서 조작과 20년 지원의 끝에 있던 출생 비밀 — 형의 정체성을 지키려 한 것입니까?",
+        "nodeType": "derived_note",
+        "noteText": "감춘 이유",
+        "effects": [
+          {
+            "kind": "unlock_note",
+            "unlockNodeId": "dc-4"
+          }
+        ]
+      },
+      {
+        "id": "L-5",
+        "label": "L-5 장남 당연시 + 보호 명분",
+        "summary": "장남 상속 당연시와 보호 명분 충돌 리드",
+        "nodeType": "derived_note",
+        "noteText": "장남이니 받아야 한다는 논리와, 형을 지키려 했다는 논리가 동시에 서 있다",
+        "judgeHint": "후속 카드 dc-5와 연결된다.",
+        "effects": [
+          {
+            "kind": "unlock_note",
+            "unlockNodeId": "L-5"
+          }
+        ]
+      },
+      {
+        "id": "dc-5",
+        "label": "dc-5 어머니의 뜻",
+        "summary": "두 형제 모두 어머니를 있는 그대로 두지 못했다 — 누가 정말 어머니를 이용했습니까?",
+        "nodeType": "derived_note",
+        "noteText": "어머니의 뜻",
+        "effects": [
+          {
+            "kind": "unlock_note",
+            "unlockNodeId": "dc-5"
+          },
+          {
+            "kind": "unlock_dispute",
+            "unlockNodeId": "d-5"
+          }
+        ]
       }
     ],
     "recipes": [
@@ -2672,7 +2757,7 @@
         ],
         "cost": 1,
         "discoveryText": "20년 송금 내역과 어머니 일기장을 합치면... 윤정후는 돈과 출생 비밀 두 가지를 모두 떠안고 형을 지켜왔다.",
-        "outputId": "dc-3",
+        "outputId": "dc-4",
         "resultType": "dossier"
       },
       {
@@ -2696,6 +2781,50 @@
         "discoveryText": "어머니가 그렇게 하고 싶어 했다는 말 뒤에... 20년간 윤정후가 보낸 돈이 있었다. 어머니의 뜻에는 근거가 있었다.",
         "outputId": "dc-2",
         "resultType": "dossier"
+      },
+      {
+        "id": "combine-7",
+        "inputs": [
+          "e-5",
+          "e-7"
+        ],
+        "cost": 1,
+        "discoveryText": "원본 유서와 어머니 일기장을 대조하면... 60대 40이 아니었을 때 형이 마주해야 했을 진실이 보인다.",
+        "outputId": "dc-3",
+        "resultType": "dossier"
+      },
+      {
+        "id": "combine-8",
+        "inputs": [
+          "e-1",
+          "e-7"
+        ],
+        "cost": 1,
+        "discoveryText": "유서 비율과 어머니 일기장의 기록이 겹친다. 장남 당연시와 보호 명분이 같은 구조 위에 서 있다.",
+        "outputId": "L-5",
+        "resultType": "upgrade"
+      },
+      {
+        "id": "combine-9",
+        "inputs": [
+          "stmt-a-heir",
+          "e-7"
+        ],
+        "cost": 1,
+        "discoveryText": "형의 '모시고 산 건 나인데'라는 말과 어머니 일기장을 대조하면... 두 형제 모두 어머니 뜻을 자기 방식으로 바꿨다.",
+        "outputId": "dc-5",
+        "resultType": "dossier"
+      },
+      {
+        "id": "combine-10",
+        "inputs": [
+          "stmt-a-heir",
+          "e-6"
+        ],
+        "cost": 1,
+        "discoveryText": "형의 '모시고 산 건 나인데'라는 말과 20년 송금 내역을 합치면... 돈과 비밀 두 가지를 모두 떠안은 동생의 전체 동기가 보인다.",
+        "outputId": "L-4",
+        "resultType": "upgrade"
       }
     ]
   },

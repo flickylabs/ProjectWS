@@ -7,7 +7,6 @@ import { createResourceSlice, type ResourceSlice } from './slices/resourceSlice'
 import { createEvidenceSlice, type EvidenceSlice } from './slices/evidenceSlice'
 import { createDialogueSlice, type DialogueSlice } from './slices/dialogueSlice'
 import { createVerdictSlice, type VerdictSlice } from './slices/verdictSlice'
-import { createShopSlice, type ShopSlice } from './slices/shopSlice'
 import { createDiscoverySlice, type DiscoverySlice } from './slices/discoverySlice'
 import { createCombinationLabSlice, type CombinationLabSlice } from './slices/combinationLabSlice'
 import { createMinigameSlice, type MinigameSlice } from './slices/minigameSlice'
@@ -119,7 +118,7 @@ function applyPerks(set: (partial: any) => void): void {
   })
 }
 
-export type GameStore = PhaseSlice & AgentSlice & ResourceSlice & EvidenceSlice & DialogueSlice & VerdictSlice & ShopSlice & DiscoverySlice & CombinationLabSlice & MinigameSlice & {
+export type GameStore = PhaseSlice & AgentSlice & ResourceSlice & EvidenceSlice & DialogueSlice & VerdictSlice & DiscoverySlice & CombinationLabSlice & MinigameSlice & {
   caseData: CaseData | null
   lieConfigs: { a: CaseData['lieConfigA']; b: CaseData['lieConfigB'] } | null
   isLLMLoading: boolean
@@ -282,7 +281,6 @@ export const useGameStore: import('zustand').UseBoundStore<import('zustand').Sto
     ...createEvidenceSlice(...args),
     ...createDialogueSlice(...args),
     ...createVerdictSlice(...args),
-    ...createShopSlice(...args),
     ...createDiscoverySlice(...args),
     ...createCombinationLabSlice(...args),
     ...createMinigameSlice(...args),
@@ -774,14 +772,6 @@ export const useGameStore: import('zustand').UseBoundStore<import('zustand').Sto
     // verdict
     verdictInput: state.verdictInput,
     verdictScore: state.verdictScore,
-    // shop
-    globalInvestTokens: state.globalInvestTokens,
-    globalSkillPoints: state.globalSkillPoints,
-    freeCap: state.freeCap,
-    lastInvestRechargeAt: state.lastInvestRechargeAt,
-    adWatchCountInvest: state.adWatchCountInvest,
-    adWatchCountSkill: state.adWatchCountSkill,
-    adResetDate: state.adResetDate,
     // main
     caseData: state.caseData,
     lieConfigs: state.lieConfigs,
