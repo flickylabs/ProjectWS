@@ -96,5 +96,106 @@
         }
       }
     }
+  ],
+  "transitionBeats": [
+    {
+      "id": "friend-01-beat-b-d1-s1-s2",
+      "caseId": "friend-01",
+      "party": "b",
+      "disputeId": "d-1",
+      "fromState": "S1",
+      "toState": "S2",
+      "primaryBeatType": "evidence_hit",
+      "line": "최수민은 9일 동안 연락한 건 맞다고 먼저 접으면서도, 들이댄 게 아니라 한 번은 막아야 할 일이 있었다고만 말한다.",
+      "behaviorHint": "연락 횟수가 나오자 손끝으로 휴대폰 모서리를 천천히 문지른다."
+    },
+    {
+      "id": "friend-01-beat-b-d1-s2-s3",
+      "caseId": "friend-01",
+      "party": "b",
+      "disputeId": "d-1",
+      "fromState": "S2",
+      "toState": "S3",
+      "primaryBeatType": "partial",
+      "line": "최수민은 송다은 아버지가 결혼 앞두고 예비신랑에게 돈 얘기를 꺼내기 시작해서, 경고하려고 연락했다고 이유를 처음 분명히 밝힌다.",
+      "behaviorHint": "짧게 끊어 말하던 리듬이 깨지고 이유 설명이 한 문장 길어진다."
+    },
+    {
+      "id": "friend-01-beat-b-d2-s2-s3",
+      "caseId": "friend-01",
+      "party": "b",
+      "disputeId": "d-2",
+      "fromState": "S2",
+      "toState": "S3",
+      "primaryBeatType": "evidence_hit",
+      "line": "최수민은 먼저 선을 넘은 쪽은 자신이 아니라 예비신랑이었고, 커피를 보자거나 이상형 운운한 연락에는 바로 선을 그었다고 담담하게 말한다.",
+      "behaviorHint": "목소리는 낮게 유지되지만 손등 힘줄이 도드라질 만큼 주먹이 잠깐 조여진다."
+    },
+    {
+      "id": "friend-01-beat-a-d3-s1-s2",
+      "caseId": "friend-01",
+      "party": "a",
+      "disputeId": "d-3",
+      "fromState": "S1",
+      "toState": "S2",
+      "primaryBeatType": "evidence_hit",
+      "line": "송다은은 아버지가 예비신랑에게 먼저 돈 얘기를 꺼낸 문자 앞에서, 수민이가 예비신랑을 노렸다는 자기 결론을 처음으로 바로 이어 붙이지 못한다.",
+      "behaviorHint": "말을 재빨리 덧붙이던 습관이 끊기고 입을 다문 채 눈만 몇 번 깜빡인다."
+    },
+    {
+      "id": "friend-01-beat-a-d5-s2-s3",
+      "caseId": "friend-01",
+      "party": "a",
+      "disputeId": "d-5",
+      "fromState": "S2",
+      "toState": "S3",
+      "primaryBeatType": "counter_shift",
+      "line": "송다은은 단톡방에 올린 건 맞지만 그 기록들만 보면 누구라도 그렇게 봤을 거라고 버티며, 확인 없이 퍼뜨린 책임은 반쪽만 붙든다.",
+      "behaviorHint": "인정하는 문장을 꺼낸 직후 턱을 치켜들고 바로 자기 판단을 방어한다."
+    },
+    {
+      "id": "friend-01-beat-b-d4-s2-s3",
+      "caseId": "friend-01",
+      "party": "b",
+      "disputeId": "d-4",
+      "fromState": "S2",
+      "toState": "S3",
+      "primaryBeatType": "confession",
+      "line": "최수민은 예전에 송다은 아버지가 투자라며 자기 돈을 받아 갔고, 손절의 시작도 사실은 그 일 때문이었다고 평평한 목소리로 꺼낸다.",
+      "behaviorHint": "가장 아픈 대목에서 오히려 표정 변화가 사라지고 시선이 한 점에 박힌다."
+    },
+    {
+      "id": "friend-01-beat-a-d4-s3-s4",
+      "caseId": "friend-01",
+      "party": "a",
+      "disputeId": "d-4",
+      "fromState": "S3",
+      "toState": "S4",
+      "primaryBeatType": "emotional",
+      "line": "송다은은 수민이 자기 아버지에게 돈을 떼였다는 말을 듣고도 곧장 받아들이지 못한 채, 왜 그걸 이제야 꺼내느냐는 쪽으로 분노를 돌린다.",
+      "behaviorHint": "양손을 꽉 맞잡은 채 무릎 위에서 한 번 크게 비틀어 쥔다."
+    },
+    {
+      "id": "friend-01-beat-b-d5-s4-s5",
+      "caseId": "friend-01",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S4",
+      "toState": "S5",
+      "primaryBeatType": "confession",
+      "line": "최수민은 다은이 결혼 앞두고 아버지가 같은 수법을 또 쓰는 걸 보면서도, 그 말을 자기 입으로 꺼내면 아버지를 무너뜨리는 사람이 될까 봐 차라리 자신이 나쁜 사람으로 남으려 했다고 고백한다.",
+      "behaviorHint": "끝까지 평정을 지키려다 마지막 문장에서 숨이 한 번 꺾이고 시선이 아래로 떨어진다."
+    },
+    {
+      "id": "friend-01-beat-a-d5-s4-s5",
+      "caseId": "friend-01",
+      "party": "a",
+      "disputeId": "d-5",
+      "fromState": "S4",
+      "toState": "S5",
+      "primaryBeatType": "partial",
+      "line": "송다은은 수민이를 먼저 단톡방에서 매도해 놓고도 확인해 볼 생각조차 하지 않았다는 사실만큼은 더는 부정하지 못한다.",
+      "behaviorHint": "반박을 준비하듯 입을 열었다가 닫고, 손에 쥔 휴대폰 화면만 오래 내려다본다."
+    }
   ]
 }

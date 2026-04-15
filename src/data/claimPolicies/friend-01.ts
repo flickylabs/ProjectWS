@@ -18,6 +18,7 @@ export function registerFriend01Data(): void {
     caseId: 'friend-01',
     dossierCards: (dossierData as any).dossierCards,
     events: gameEvents,
+    transitionBeats: (gameEvents as any).transitionBeats,
   } as any)
   registerClaimPolicies('friend-01', buildV3FallbackClaimPolicies(runtimeCase as any, runtimeV3Data as any))
   registerV3GameLoopData(runtimeV3Data as any)
