@@ -186,7 +186,7 @@ export default function PCRightPanel() {
   }, [availableNodes])
 
   const resolveNoteNodeId = useCallback((note: PcPinnedNote) => {
-    const noteNodes = availableNodes.filter((node) => node.type === 'note' || node.type === 'derived_note')
+    const noteNodes = availableNodes.filter((node) => node.type === 'note' || node.type === 'derived_note' || node.type === 'statement')
     if (noteNodes.length === 0) {
       return null
     }
