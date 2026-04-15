@@ -2564,6 +2564,20 @@
           "e-7"
         ],
         "visibility": "derived"
+      },
+      {
+        "id": "L-6",
+        "type": "derived_note",
+        "label": "L-6 방문 횟수 + 증언 교차",
+        "visibility": "derived",
+        "linkedDisputeIds": [
+          "d-1",
+          "d-5"
+        ],
+        "linkedEvidenceIds": [
+          "e-2",
+          "e-3"
+        ]
       }
     ],
     "outputs": [
@@ -2713,6 +2727,20 @@
             "unlockNodeId": "d-5"
           }
         ]
+      },
+      {
+        "id": "L-6",
+        "label": "L-6 방문 횟수 + 증언 교차",
+        "summary": "공증 직전 방문 횟수가 늘어난 시기와 요양보호사가 목격한 장면이 겹친다.",
+        "nodeType": "derived_note",
+        "effects": [
+          {
+            "kind": "unlock_note",
+            "unlockNodeId": "L-6"
+          }
+        ],
+        "judgeHint": "방문과 증언이 같은 시기를 가리킨다. 돌봄이었는지 개입이었는지 갈라지는 지점.",
+        "noteText": "방문 횟수 증가와 종이를 읽어드렸다는 증언이 같은 시기에 겹치며, 그것이 어머니 보호였는지 형 배제였는지가 핵심 분기점이 된다"
       }
     ],
     "recipes": [
@@ -2824,6 +2852,17 @@
         "cost": 1,
         "discoveryText": "형의 '모시고 산 건 나인데'라는 말과 20년 송금 내역을 합치면... 돈과 비밀 두 가지를 모두 떠안은 동생의 전체 동기가 보인다.",
         "outputId": "L-4",
+        "resultType": "upgrade"
+      },
+      {
+        "id": "combine-11",
+        "inputs": [
+          "e-2",
+          "e-3"
+        ],
+        "cost": 1,
+        "discoveryText": "요양원 방문기록의 횟수 증가 시점과 전 요양보호사가 종이를 읽어드리는 장면을 목격한 시점이 겹친다.",
+        "outputId": "L-6",
         "resultType": "upgrade"
       }
     ]
