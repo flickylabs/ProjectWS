@@ -110,123 +110,124 @@ function MemoryMatchIcon({ kind, className }: { kind: EvidenceCardId; className?
   let content: ReactNode
 
   switch (kind) {
-    case 'receipt':
+    case 'receipt': // 영수증 — 찢어진 종이 + 선
       content = (
         <>
-          <path {...strokeProps} d="M20 10H42L52 20V54L47 50L42 54L37 50L32 54L27 50L22 54L20 52V10Z" />
-          <path {...strokeProps} d="M28 26H44" />
-          <path {...strokeProps} d="M28 34H44" />
-          <path {...strokeProps} d="M28 42H38" />
+          <path {...strokeProps} d="M18 8H46V52L41 48L36 52L32 48L28 52L23 48L18 52V8Z" />
+          <path {...strokeProps} d="M26 20H42" />
+          <path {...strokeProps} d="M26 28H38" />
+          <path {...strokeProps} d="M26 36H44" />
         </>
       )
       break
-    case 'gps':
+    case 'gps': // 위치핀 — 방울 + 십자
       content = (
         <>
-          <path {...strokeProps} d="M32 54C32 54 18 40.8 18 29C18 21.3 24.3 15 32 15C39.7 15 46 21.3 46 29C46 40.8 32 54 32 54Z" />
-          <path {...strokeProps} d="M32 34C34.7614 34 37 31.7614 37 29C37 26.2386 34.7614 24 32 24C29.2386 24 27 26.2386 27 29C27 31.7614 29.2386 34 32 34Z" />
+          <path {...strokeProps} d="M32 56C32 56 14 38 14 26C14 16.1 22 8 32 8C42 8 50 16.1 50 26C50 38 32 56 32 56Z" />
+          <path {...strokeProps} d="M32 20V32" />
+          <path {...strokeProps} d="M26 26H38" />
         </>
       )
       break
-    case 'call':
+    case 'call': // 전화기 — 곡선 수화기
       content = (
         <>
-          <path {...strokeProps} d="M22 16L28 26L22 30C25.9 37.6 31.9 43.7 39.6 47.7L44 41L54 47V53C54 55.2 52.2 57 50 57C27.4 57 7 36.6 7 14C7 11.8 8.8 10 11 10H17L22 16Z" />
+          <path {...strokeProps} d="M14 24C14 24 16 14 26 10L30 18L24 24C28 32 32 36 40 40L46 34L54 38C50 48 40 50 40 50" />
+          <path {...strokeProps} d="M40 50C26 50 14 38 14 24" />
         </>
       )
       break
-    case 'message':
+    case 'message': // 말풍선 — 둥근 꼬리
       content = (
         <>
-          <path {...strokeProps} d="M14 18H50V40H31L22 48V40H14V18Z" />
-          <path {...strokeProps} d="M22 27H42" />
-          <path {...strokeProps} d="M22 33H36" />
+          <path {...strokeProps} d="M10 14H54V38C54 40 52 42 50 42H24L16 52V42H14C12 42 10 40 10 38V14Z" />
+          <circle cx="24" cy="28" r="2.5" fill="currentColor" />
+          <circle cx="32" cy="28" r="2.5" fill="currentColor" />
+          <circle cx="40" cy="28" r="2.5" fill="currentColor" />
         </>
       )
       break
-    case 'account':
+    case 'account': // 은행 — 삼각 지붕 + 기둥
       content = (
         <>
-          <path {...strokeProps} d="M12 24L32 14L52 24" />
-          <path {...strokeProps} d="M16 24V46" />
-          <path {...strokeProps} d="M26 24V46" />
-          <path {...strokeProps} d="M38 24V46" />
-          <path {...strokeProps} d="M48 24V46" />
-          <path {...strokeProps} d="M12 46H52" />
-          <path {...strokeProps} d="M10 52H54" />
+          <path {...strokeProps} d="M8 26L32 10L56 26" />
+          <path {...strokeProps} d="M14 26V48" />
+          <path {...strokeProps} d="M26 26V48" />
+          <path {...strokeProps} d="M38 26V48" />
+          <path {...strokeProps} d="M50 26V48" />
+          <path {...strokeProps} d="M8 48H56" />
+          <path {...strokeProps} d="M6 54H58" />
         </>
       )
       break
-    case 'kakao':
+    case 'kakao': // 스마트폰 — 둥근 사각 + 홈버튼
       content = (
         <>
-          <path {...strokeProps} d="M15 19H49V37H37L26 46V37H15V19Z" />
-          <path {...strokeProps} d="M24 27H24.02" />
-          <path {...strokeProps} d="M32 27H32.02" />
-          <path {...strokeProps} d="M40 27H40.02" />
+          <rect {...strokeProps} x="18" y="6" width="28" height="52" rx="4" />
+          <path {...strokeProps} d="M18 14H46" />
+          <path {...strokeProps} d="M18 48H46" />
+          <circle cx="32" cy="53" r="2" fill="currentColor" />
         </>
       )
       break
-    case 'document':
+    case 'document': // 클립보드 — 상단 집게
       content = (
         <>
-          <path {...strokeProps} d="M18 10H38L48 20V54H18V10Z" />
-          <path {...strokeProps} d="M38 10V20H48" />
-          <path {...strokeProps} d="M24 30H42" />
-          <path {...strokeProps} d="M24 38H42" />
-          <path {...strokeProps} d="M24 46H34" />
+          <rect {...strokeProps} x="14" y="14" width="36" height="44" rx="3" />
+          <path {...strokeProps} d="M24 14V10C24 8 26 6 28 6H36C38 6 40 8 40 10V14" />
+          <path {...strokeProps} d="M22 28H42" />
+          <path {...strokeProps} d="M22 36H42" />
+          <path {...strokeProps} d="M22 44H34" />
         </>
       )
       break
-    case 'magnifier':
+    case 'magnifier': // 돋보기 — 큰 원 + 손잡이
       content = (
         <>
-          <path {...strokeProps} d="M28 44C36.8366 44 44 36.8366 44 28C44 19.1634 36.8366 12 28 12C19.1634 12 12 19.1634 12 28C12 36.8366 19.1634 44 28 44Z" />
-          <path {...strokeProps} d="M39.5 39.5L52 52" />
+          <circle {...strokeProps} cx="28" cy="28" r="18" />
+          <path {...strokeProps} d="M40 40L54 54" strokeWidth={5} />
         </>
       )
       break
-    case 'fingerprint':
+    case 'fingerprint': // 지문 — 동심원 아크
       content = (
         <>
-          <path {...strokeProps} d="M32 16C39.7 16 46 22.3 46 30C46 36.2 43.4 40.3 43.4 45.8C43.4 49.1 44.4 52 46 54" />
-          <path {...strokeProps} d="M32 22C36.4 22 40 25.6 40 30C40 36.1 36.4 39.6 36.4 45.2C36.4 48.6 37.2 51.3 38.8 54" />
-          <path {...strokeProps} d="M24 30C24 37.2 20 41.3 20 47C20 49.9 20.8 52.2 22 54" />
-          <path {...strokeProps} d="M18 30C18 22.3 24.3 16 32 16" />
-          <path {...strokeProps} d="M32 28C33.7 28 35 29.3 35 31C35 35.6 30.4 38 30.4 44C30.4 47.5 31.2 50.7 32.8 54" />
+          <path {...strokeProps} d="M32 52C32 52 22 44 22 32C22 26 26 22 32 22C38 22 42 26 42 32C42 44 32 52 32 52" />
+          <path {...strokeProps} d="M32 44C28 40 28 36 28 32C28 28.7 29.3 26 32 26C34.7 26 36 28.7 36 32C36 36 36 40 32 44" />
+          <circle cx="32" cy="32" r="2" fill="currentColor" />
         </>
       )
       break
-    case 'lock':
+    case 'lock': // 자물쇠 — 고리 + 열쇠구멍
       content = (
         <>
-          <path {...strokeProps} d="M20 29V21C20 14.4 25.4 9 32 9C38.6 9 44 14.4 44 21V29" />
-          <path {...strokeProps} d="M17 29H47V55H17V29Z" />
-          <path {...strokeProps} d="M32 38V46" />
+          <path {...strokeProps} d="M20 28V20C20 12.3 25.4 6 32 6C38.6 6 44 12.3 44 20V28" />
+          <rect {...strokeProps} x="14" y="28" width="36" height="28" rx="4" />
+          <circle cx="32" cy="40" r="3" fill="currentColor" />
+          <path {...strokeProps} d="M32 43V50" />
         </>
       )
       break
-    case 'gavel':
+    case 'gavel': // 망치 — 법봉
       content = (
         <>
-          <path {...strokeProps} d="M20 16L32 28" />
-          <path {...strokeProps} d="M28 12L40 24" />
-          <path {...strokeProps} d="M36 20L44 12L52 20L44 28L36 20Z" />
-          <path {...strokeProps} d="M14 34L32 52" />
-          <path {...strokeProps} d="M18 48H42" />
+          <rect {...strokeProps} x="34" y="8" width="20" height="12" rx="3" transform="rotate(45 44 14)" />
+          <path {...strokeProps} d="M28 28L14 42" strokeWidth={5} />
+          <path {...strokeProps} d="M8 50H40" />
+          <path {...strokeProps} d="M12 56H36" />
         </>
       )
       break
-    case 'scale':
+    case 'scale': // 저울 — 균형
       content = (
         <>
-          <path {...strokeProps} d="M32 12V48" />
-          <path {...strokeProps} d="M18 20H46" />
-          <path {...strokeProps} d="M24 20L18 34" />
-          <path {...strokeProps} d="M40 20L46 34" />
-          <path {...strokeProps} d="M12 34H24C24 39.5 19.6 44 14 44C8.4 44 4 39.5 4 34H12Z" />
-          <path {...strokeProps} d="M40 34H52C52 39.5 47.6 44 42 44C36.4 44 32 39.5 32 34H40Z" />
-          <path {...strokeProps} d="M22 54H42" />
+          <path {...strokeProps} d="M32 8V50" />
+          <path {...strokeProps} d="M14 18H50" />
+          <path {...strokeProps} d="M14 18L8 34H20" />
+          <path {...strokeProps} d="M50 18L56 34H44" />
+          <path {...strokeProps} d="M8 34C8 38 11.6 42 14 42C16.4 42 20 38 20 34" />
+          <path {...strokeProps} d="M44 34C44 38 47.6 42 50 42C52.4 42 56 38 56 34" />
+          <path {...strokeProps} d="M22 56H42" />
         </>
       )
       break
