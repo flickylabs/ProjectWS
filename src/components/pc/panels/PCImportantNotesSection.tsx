@@ -80,20 +80,20 @@ export default function PCImportantNotesSection() {
   }, [caseData, disputeVisibility])
 
   // 조합 가능 발언 텍스트 — 즐겨찾기 shimmer용
+  const evidenceStates = useStore((s) => s.evidenceStates)
+  const combinationLabRuntime = useStore((s) => (s as any).combinationLabRuntime)
   const combinableStatementTexts = useMemo(() => {
-    const labRuntime = (useGameStore.getState() as any).combinationLabRuntime
-    if (!labRuntime?.config?.nodes) return new Set<string>()
+    if (!combinationLabRuntime?.config?.nodes) return new Set<string>()
     const combinableIds = useGameStore.getState().getCombinableEvidenceIds()
     const texts = new Set<string>()
-    for (const node of labRuntime.config.nodes) {
+    for (const node of combinationLabRuntime.config.nodes) {
       if (node.type === 'statement' && combinableIds.has(node.id)) {
         const match = node.label?.match(/"([^"]+)"/)
         if (match) texts.add(match[1])
       }
     }
     return texts
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [dialogueLog.length])
+  }, [combinationLabRuntime, evidenceStates])
 
   const disputeIndexMap = useMemo(() => {
     return new Map(visibleDisputes.map((d, i) => [d.id, i + 1]))

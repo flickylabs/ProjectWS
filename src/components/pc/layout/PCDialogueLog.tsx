@@ -272,21 +272,22 @@ export default function PCDialogueLog() {
   const caseData = useStore((s) => s.caseData)
   const isLLMLoading = useStore((s) => s.isLLMLoading)
   const llmTarget = useStore((s) => s.llmLoadingTarget)
+  const evidenceStates = useStore((s) => s.evidenceStates)
+  const combinationLabRuntime = useStore((s) => (s as any).combinationLabRuntime)
 
   // 조합 대상 발언 텍스트 추출 (statement 노드의 따옴표 내용)
   const combinableStatementTexts = useMemo(() => {
-    const labRuntime = (useGameStore.getState() as any).combinationLabRuntime
-    if (!labRuntime?.config?.nodes) return new Set<string>()
+    if (!combinationLabRuntime?.config?.nodes) return new Set<string>()
     const combinableIds = useGameStore.getState().getCombinableEvidenceIds()
     const texts = new Set<string>()
-    for (const node of labRuntime.config.nodes) {
+    for (const node of combinationLabRuntime.config.nodes) {
       if (node.type === 'statement' && combinableIds.has(node.id)) {
         const match = node.label?.match(/"([^"]+)"/)
         if (match) texts.add(match[1])
       }
     }
     return texts
-  }, [dialogueLog.length])
+  }, [combinationLabRuntime, evidenceStates])
   const bottomRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
