@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useMemo, useState, type DragEvent } from 'react'
-import { useStore } from '../../../store/useGameStore'
+import { useStore, useGameStore } from '../../../store/useGameStore'
 import type { DialogueEntry } from '../../../types'
 import { HOTBAR_DRAG_TYPE } from '../hotbar/pcHotbarConfig'
 import PCSvgIcon from '../icons/PCSvgIcon'
@@ -78,6 +78,22 @@ export default function PCImportantNotesSection() {
       return !vis || vis.visibility !== 'hidden'
     })
   }, [caseData, disputeVisibility])
+
+  // 조합 가능 발언 텍스트 — 즐겨찾기 shimmer용
+  const combinableStatementTexts = useMemo(() => {
+    const labRuntime = (useGameStore.getState() as any).combinationLabRuntime
+    if (!labRuntime?.config?.nodes) return new Set<string>()
+    const combinableIds = useGameStore.getState().getCombinableEvidenceIds()
+    const texts = new Set<string>()
+    for (const node of labRuntime.config.nodes) {
+      if (node.type === 'statement' && combinableIds.has(node.id)) {
+        const match = node.label?.match(/"([^"]+)"/)
+        if (match) texts.add(match[1])
+      }
+    }
+    return texts
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [dialogueLog.length])
 
   const disputeIndexMap = useMemo(() => {
     return new Map(visibleDisputes.map((d, i) => [d.id, i + 1]))
@@ -285,14 +301,17 @@ export default function PCImportantNotesSection() {
           >
             {/* 즐겨찾기 목록 + 드롭 영역 통합 — 하나의 스크롤 영역 */}
             <div className="pc-fav-notes__scroll">
-              {favorites.map((note) => (
-                <FavoriteCard
-                  key={note.id}
+              {favorites.map((note) => {
+                const isCombinable = combinableStatementTexts.size > 0 && [...combinableStatementTexts].some((t) => note.text.includes(t))
+                return (
+                  <FavoriteCard
+                    key={note.id}
                     note={note}
                     speakerName={speakerNameMap.get(note.speaker) ?? ''}
                     disputeIndices={note.relatedDisputes.map((id) => disputeIndexMap.get(id)).filter((v): v is number => v != null)}
                     dragging={draggingNoteId === note.id}
                     reorderTarget={favReorderTarget === note.id}
+                    isCombinable={isCombinable}
                     onClickNote={() => openNotePanel(note, true)}
                     onShiftClick={() => addToCombination(note)}
                     onRemove={() => removeFavorite(note.dialogueId)}
@@ -304,7 +323,8 @@ export default function PCImportantNotesSection() {
                     }}
                     onDrop={(e) => handleFavDrop(e, note.id)}
                   />
-              ))}
+                )
+              })}
               {/* 빈 공간 — 드롭 안내 (목록 아래에 항상 표시, 남은 공간 채움) */}
               <div className="pc-fav-notes__placeholder">
                 <StarIcon size={14} />
@@ -410,10 +430,10 @@ export default function PCImportantNotesSection() {
 
 /* ━━━ Favorite compact card (left panel) ━━━ */
 function FavoriteCard({
-  note, speakerName, disputeIndices, dragging, reorderTarget,
+  note, speakerName, disputeIndices, dragging, reorderTarget, isCombinable,
   onClickNote, onShiftClick, onRemove, onDragStart, onDragEnd, onDragOver, onDrop,
 }: {
-  note: PcPinnedNote; speakerName: string; disputeIndices: number[]; dragging: boolean; reorderTarget: boolean
+  note: PcPinnedNote; speakerName: string; disputeIndices: number[]; dragging: boolean; reorderTarget: boolean; isCombinable?: boolean
   onClickNote: () => void; onShiftClick: () => void; onRemove: () => void
   onDragStart: (e: DragEvent<HTMLDivElement>) => void; onDragEnd: () => void
   onDragOver: (e: DragEvent<HTMLDivElement>) => void; onDrop: (e: DragEvent<HTMLDivElement>) => void
@@ -425,7 +445,7 @@ function FavoriteCard({
 
   return (
     <div
-      className={`pc-note-card is-pinned${dragging ? ' is-dragging' : ''}${reorderTarget ? ' is-reorder-target' : ''}${note.contradictionMeta ? ' is-contradiction' : ''}`}
+      className={`pc-note-card is-pinned${dragging ? ' is-dragging' : ''}${reorderTarget ? ' is-reorder-target' : ''}${note.contradictionMeta ? ' is-contradiction' : ''}${isCombinable ? ' is-combinable' : ''}`}
       draggable
       onClick={(event) => { if (event.shiftKey) { onShiftClick(); return }; onClickNote() }}
       onDragEnd={onDragEnd}

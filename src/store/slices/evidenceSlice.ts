@@ -171,26 +171,34 @@ export const createEvidenceSlice: StateCreator<EvidenceSlice, [], [], EvidenceSl
     const { evidenceStates, evidenceCombinations, triggeredCombinations } = get()
     const triggered = new Set(triggeredCombinations)
     const ids = new Set<string>()
-    // 1) evidenceCombinations (구 시스템)
+    // 1) evidenceCombinations (구 시스템) — ALL requires 해금 시에만 shimmer
     for (const combo of evidenceCombinations) {
       const comboKey = combo.requires.join('+')
       if (triggered.has(comboKey)) continue
+      const allUnlocked = combo.requires.every((eid) => evidenceStates[eid]?.unlocked)
+      if (!allUnlocked) continue
       for (const eid of combo.requires) {
-        if (evidenceStates[eid]?.unlocked) ids.add(eid)
+        ids.add(eid)
       }
     }
-    // 2) combinationLab.recipes (신 시스템 — stmt 포함)
+    // 2) combinationLab.recipes (신 시스템) — ALL inputs 준비 시에만 shimmer
     const labRuntime = (get() as any).combinationLabRuntime as { config: any; appliedRecipeIds: string[]; discoveredNodeIds: string[] } | undefined
     if (labRuntime?.config?.recipes) {
       const applied = new Set(labRuntime.appliedRecipeIds ?? [])
       const discovered = new Set(labRuntime.discoveredNodeIds ?? [])
+      const nodes = labRuntime.config.nodes ?? []
       for (const recipe of labRuntime.config.recipes) {
         if (applied.has(recipe.id) && !recipe.repeatable) continue
-        for (const inputId of recipe.inputs) {
-          // 증거면 evidenceStates, 발언/노트면 discoveredNodeIds로 체크
-          if (evidenceStates[inputId]?.unlocked || discovered.has(inputId)) {
-            ids.add(inputId)
+        const allReady = recipe.inputs.every((inputId: string) => {
+          const node = nodes.find((n: any) => n.id === inputId)
+          if (node?.type === 'evidence' || node?.type === 'derived_evidence') {
+            return !!evidenceStates[inputId]?.unlocked
           }
+          return discovered.has(inputId)
+        })
+        if (!allReady) continue
+        for (const inputId of recipe.inputs) {
+          ids.add(inputId)
         }
       }
     }

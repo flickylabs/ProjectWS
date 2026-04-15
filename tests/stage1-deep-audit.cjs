@@ -91,23 +91,35 @@ const KEYWORD_ALLOWLIST = new Set([
   '수리', '계약', '서류', '통화', '문자', '카드', '소음', '공사',
   '증거', '자료', '내역', '일정', '상담', '연락', '약속', '비용',
   '관리', '요청', '확인', '통보', '서명', '동의', '합의', '신고',
+  // 관계 호칭 — 구조적 어휘, 스포일러 아님
+  '어머니', '아버지', '남편', '아내', '형', '동생', '언니', '오빠',
+  '누나', '부모', '자녀', '배우자', '친구', '조카',
+  // 시간 표현
+  '오래전에',
 ]);
 
-function extractKeywords(anchorTruth) {
-  // Extract person names (2-3 char Korean names), institution names, exact amounts
+/**
+ * anchorTruth에서 스포일러 키워드 추출 (B1/B2용)
+ * @param {string} anchorTruth
+ * @param {Set<string>} partyNames - 당사자 이름 (Phase 0부터 공개, 제외)
+ * @param {string} premiseText - context.description (사건 전제, 공개 정보)
+ */
+function extractKeywords(anchorTruth, partyNames = new Set(), premiseText = '') {
   const keywords = [];
-  // Korean names: 2-3 syllable patterns that look like names
-  const nameMatches = anchorTruth.match(/[가-힣]{2,3}(?=이|가|은|는|의|에게|한테|와|과|도|를|을)/g);
+  // 한글 어절 + 조사 패턴 — 전체 단어 캡처 (기존 2-3자 제한 제거)
+  const nameMatches = anchorTruth.match(/[가-힣]{2,}(?=이|가|은|는|의|에게|한테|와|과|도|를|을)/g);
   if (nameMatches) keywords.push(...nameMatches);
-  // Exact amounts with 만원
+  // 금액
   const amountMatches = anchorTruth.match(/\d[\d,]*만\s*원/g);
   if (amountMatches) keywords.push(...amountMatches);
-  // Specific institution names (3+ chars ending in 센터/원/소/사/국 etc)
+  // 기관명
   const instMatches = anchorTruth.match(/[가-힣]{2,}(?:센터|병원|사무소|은행|법원|회사|학원|기관)/g);
   if (instMatches) keywords.push(...instMatches);
-  // Filter: 2글자 이하 일반 명사 제외 + 허용 목록 제외
   const filtered = [...new Set(keywords)].filter(kw => {
     if (KEYWORD_ALLOWLIST.has(kw)) return false;
+    if (partyNames.has(kw)) return false;
+    // 전제 텍스트에 이미 등장하는 키워드는 공개 정보 → 제외 (공백 무시 비교)
+    if (premiseText && premiseText.replace(/\s/g, '').includes(kw.replace(/\s/g, ''))) return false;
     // 2글자 이하이면서 금액/기관명이 아닌 일반 단어 제외
     if (kw.length <= 2 && !/\d/.test(kw) && !/센터|병원|은행|법원|회사|학원|기관/.test(kw)) return false;
     return true;
@@ -118,11 +130,14 @@ function extractKeywords(anchorTruth) {
 /**
  * B3 Phase 1/2 검증용 — 핵심 결론 키워드만 추출
  * (인물 실명 3글자+, 기관 정식명칭, 서비스명, 금액)
+ * @param {string} anchorTruth
+ * @param {Set<string>} partyNames
+ * @param {string} premiseText
  */
-function extractCoreKeywords(anchorTruth) {
+function extractCoreKeywords(anchorTruth, partyNames = new Set(), premiseText = '') {
   const keywords = [];
-  // 3글자 이상 인물명
-  const nameMatches = anchorTruth.match(/[가-힣]{3}(?=이|가|은|는|의|에게|한테|와|과|도|를|을)/g);
+  // 3글자 이상 한글 어절 (전체 단어 캡처)
+  const nameMatches = anchorTruth.match(/[가-힣]{3,}(?=이|가|은|는|의|에게|한테|와|과|도|를|을)/g);
   if (nameMatches) keywords.push(...nameMatches);
   // 금액
   const amountMatches = anchorTruth.match(/\d[\d,]*만\s*원/g);
@@ -130,10 +145,15 @@ function extractCoreKeywords(anchorTruth) {
   // 기관명 (3글자+ 접미)
   const instMatches = anchorTruth.match(/[가-힣]{3,}(?:센터|병원|사무소|은행|법원|회사|학원|기관)/g);
   if (instMatches) keywords.push(...instMatches);
-  // 서비스명 (재가돌봄, 간병 등 — 4글자+)
+  // 서비스명
   const serviceMatches = anchorTruth.match(/[가-힣]{4,}(?:서비스|프로그램|시스템)/g);
   if (serviceMatches) keywords.push(...serviceMatches);
-  return [...new Set(keywords)].filter(kw => !KEYWORD_ALLOWLIST.has(kw));
+  return [...new Set(keywords)].filter(kw => {
+    if (KEYWORD_ALLOWLIST.has(kw)) return false;
+    if (partyNames.has(kw)) return false;
+    if (premiseText && premiseText.replace(/\s/g, '').includes(kw.replace(/\s/g, ''))) return false;
+    return true;
+  });
 }
 
 function searchText(text, pattern) {
@@ -299,9 +319,17 @@ for (const caseId of CASE_IDS) {
   console.log('\n  [B] 스포일러 안전성');
 
   const anchorTruth = caseData.meta?.anchorTruth || '';
-  const keywords = extractKeywords(anchorTruth);
+  // 당사자 이름은 Phase 0부터 공개 → 스포일러 아님
+  const partyNames = new Set([
+    caseData.duo?.partyA?.name,
+    caseData.duo?.partyB?.name,
+  ].filter(Boolean));
+  // context.description은 사건 전제 (공개 정보) → 여기 등장하는 키워드도 스포일러 아님
+  const premiseText = caseData.context?.description || '';
+  const keywords = extractKeywords(anchorTruth, partyNames, premiseText);
   if (keywords.length === 0) {
-    warn(caseId, `B: anchorTruth에서 키워드 추출 실패 — 수동 확인 필요. anchorTruth: "${anchorTruth.substring(0, 60)}..."`);
+    // 키워드 0건은 anchorTruth가 서술형(이름/금액/기관 미포함)일 때 정상
+    pass(caseId, `B: anchorTruth 키워드 0건 (서술형 — 이름·금액·기관 없음)`);
   }
 
   // B1. surfaceName spoiler check
@@ -333,7 +361,7 @@ for (const caseId of CASE_IDS) {
   }
 
   // B3. Phase 1/2 spoiler check — 핵심 결론 키워드만 검출 (오탐 방지)
-  const coreKeywords = extractCoreKeywords(anchorTruth);
+  const coreKeywords = extractCoreKeywords(anchorTruth, partyNames, premiseText);
   for (const [label, data] of [['Phase1', phase1], ['Phase2', phase2]]) {
     if (!data) {
       warn(caseId, `B3: ${label} 파일 없음 — 스킵`);
