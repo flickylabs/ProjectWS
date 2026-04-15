@@ -11456,107 +11456,96 @@ body.pc-mode .pc-memory-match__grid.is-paused {
 
 body.pc-mode .pc-memory-card {
   position: relative;
-  width: 100%;
-  height: 100%;
   border: 0;
   padding: 0;
-  background: transparent;
-  perspective: 1200px;
+  border-radius: 14px;
   cursor: pointer;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 30% 20%, rgba(232,193,114,0.16), transparent 40%),
+    linear-gradient(180deg, rgba(26,26,36,1), rgba(13,13,22,1));
+  border: 1px solid rgba(212,162,78,0.26);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
-body.pc-mode .pc-memory-match__grid[data-cols="6"] .pc-memory-card {
-  width: 100%;
-  height: 100%;
+body.pc-mode .pc-memory-card:hover:not(:disabled) {
+  transform: scale(1.04);
+  box-shadow: 0 6px 20px rgba(212,162,78,0.2);
 }
 
 body.pc-mode .pc-memory-card:disabled {
   cursor: default;
 }
 
+/* 카드 내부: back(뒷면)과 front(앞면) — show/hide 방식 */
 body.pc-mode .pc-memory-card__inner {
-  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   height: 100%;
-  transform-style: preserve-3d;
-  transition: transform 0.38s ease;
 }
 
-body.pc-mode .pc-memory-card.is-flipped .pc-memory-card__inner {
-  transform: rotateY(180deg);
-}
-
-body.pc-mode .pc-memory-card__face {
-  position: absolute;
-  inset: 0;
-  border-radius: 16px;
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-  overflow: hidden;
-}
-
+/* 뒷면: ?마크 — 기본 보임 */
 body.pc-mode .pc-memory-card__face--back {
   display: flex;
   align-items: center;
   justify-content: center;
-  background:
-    radial-gradient(circle at 30% 20%, rgba(232,193,114,0.16), transparent 40%),
-    linear-gradient(180deg, rgba(26,26,36,1), rgba(13,13,22,1));
-  border: 1px solid rgba(212,162,78,0.26);
-  box-shadow:
-    inset 0 1px 0 rgba(255,255,255,0.03),
-    0 10px 24px rgba(0,0,0,0.25);
-}
-
-body.pc-mode .pc-memory-card__back-badge {
-  width: 48px;
-  height: 48px;
-  border-radius: 14px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(212,162,78,0.12);
-  border: 1px solid rgba(212,162,78,0.38);
-  color: #e8c172;
-  font-size: 24px;
-  font-weight: 900;
-  box-shadow: 0 0 20px rgba(212,162,78,0.12);
+  width: 100%;
+  height: 100%;
 }
 
 body.pc-mode .pc-memory-card__face--front {
+  display: none;
+}
+
+/* 뒤집힘: back 숨기고 front 보이기 */
+body.pc-mode .pc-memory-card.is-flipped .pc-memory-card__face--back {
+  display: none;
+}
+
+body.pc-mode .pc-memory-card.is-flipped .pc-memory-card__face--front {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 10px;
-  padding: 14px 10px;
-  transform: rotateY(180deg);
-  background:
-    radial-gradient(circle at 25% 20%, rgba(255,255,255,0.18), transparent 38%),
-    linear-gradient(180deg, color-mix(in srgb, var(--memory-card-color) 88%, #ffffff 12%), var(--memory-card-color));
-  border: 1px solid color-mix(in srgb, var(--memory-card-color) 72%, #ffffff 28%);
+  gap: 6px;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(40,40,56,1), rgba(24,24,38,1));
+  border-radius: 14px;
   color: #ffffff;
-  box-shadow:
-    inset 0 1px 0 rgba(255,255,255,0.15),
-    0 10px 26px rgba(0,0,0,0.26);
+}
+
+body.pc-mode .pc-memory-card.is-flipped {
+  border-color: rgba(212,162,78,0.5);
+  box-shadow: 0 0 12px rgba(212,162,78,0.25);
+}
+
+body.pc-mode .pc-memory-card__back-badge {
+  font-size: 22px;
+  font-weight: 900;
+  color: rgba(212,162,78,0.6);
 }
 
 body.pc-mode .pc-memory-card__icon {
-  width: 42px;
-  height: 42px;
+  width: 36px;
+  height: 36px;
   flex-shrink: 0;
+  color: var(--memory-card-color, #e8c172);
 }
 
 body.pc-mode .pc-memory-card__label {
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 800;
   letter-spacing: -0.02em;
-  text-shadow: 0 1px 4px rgba(0,0,0,0.2);
+  color: rgba(255,255,255,0.8);
 }
 
 body.pc-mode .pc-memory-match__grid[data-cols="6"] .pc-memory-card__icon {
-  width: 34px;
-  height: 34px;
+  width: 28px;
+  height: 28px;
 }
 
 body.pc-mode .pc-memory-match__grid[data-cols="6"] .pc-memory-card__label {
