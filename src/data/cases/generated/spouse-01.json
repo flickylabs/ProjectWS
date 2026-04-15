@@ -1504,7 +1504,7 @@
     {
       "id": "e-5",
       "name": "이준호의 계좌 출금 내역",
-      "surfaceName": "이준호의 계좌 출금 내역",
+      "surfaceName": "개인 계좌 출금 내역",
       "description": "비자금 계좌에서 3,000만원 현금 출금 기록.",
       "surfaceDescription": "대규모 출금 기록이 있다.",
       "type": "bank",
