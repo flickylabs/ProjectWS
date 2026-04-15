@@ -191,6 +191,17 @@ export default function PCRightPanel() {
       return null
     }
 
+    // 1차: statement 노드 라벨의 따옴표 핵심 문구로 매칭
+    const byQuote = noteNodes.find((node) => {
+      const quoteMatch = node.label?.match(/"([^"]+)"/)
+      if (!quoteMatch) return false
+      return note.text.includes(quoteMatch[1])
+    })
+    if (byQuote) {
+      return byQuote.id
+    }
+
+    // 2차: 전체 라벨 텍스트 포함 매칭
     const normalizedText = normalizeNodeText(note.text)
     const byText = noteNodes.find((node) => {
       const label = normalizeNodeText(node.label)
@@ -200,9 +211,18 @@ export default function PCRightPanel() {
       return byText.id
     }
 
+    // 3차: 관련 쟁점 매칭 (같은 화자 우선)
     const relatedDisputeIds = new Set(note.relatedDisputes)
+    const speakerPrefix = note.speaker === 'a' ? 'a' : note.speaker === 'b' ? 'b' : ''
+    const byDisputeAndSpeaker = speakerPrefix
+      ? noteNodes.find((node) => node.id.includes(speakerPrefix) && node.linkedDisputeIds?.some((disputeId) => relatedDisputeIds.has(disputeId)))
+      : null
+    if (byDisputeAndSpeaker) {
+      return byDisputeAndSpeaker.id
+    }
+
     const byDispute = noteNodes.find((node) => node.linkedDisputeIds?.some((disputeId) => relatedDisputeIds.has(disputeId)))
-    return byDispute?.id ?? noteNodes[0]?.id ?? null
+    return byDispute?.id ?? null
   }, [availableNodes])
 
   const handleCombinationEvent = useCallback((detail: PcCombinationPanelEventDetail) => {
