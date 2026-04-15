@@ -103,18 +103,16 @@ export default function PCImportantNotesSection() {
     return dialogueLog
       .filter(
         (entry) => !entry.isHidden
-          && (entry.contradictionMeta || entry.behaviorHint || entry.speaker === 'a' || entry.speaker === 'b' || entry.speaker === 'judge'),
+          && (entry.autoPin || entry.contradictionMeta || entry.behaviorHint || entry.speaker === 'a' || entry.speaker === 'b' || entry.speaker === 'judge'),
       )
       .slice(-30)
   }, [dialogueLog])
 
-  // autoPin 엔트리 자동 즐겨찾기 등록
+  // autoPin 엔트리 자동 즐겨찾기 등록 (중복 방지: current 기준 체크, favorites deps 제거)
   useEffect(() => {
-    const autoPinEntries = dialogueLog.filter((e) => e.autoPin && !favorites.some((f) => f.dialogueId === e.id))
-    if (autoPinEntries.length === 0) return
     setFavorites((current) => {
-      const newPins = autoPinEntries
-        .filter((e) => !current.some((f) => f.dialogueId === e.id))
+      const newPins = dialogueLog
+        .filter((e) => e.autoPin && !current.some((f) => f.dialogueId === e.id))
         .map((e) => ({
           id: `pin-${e.id}`,
           dialogueId: e.id,
@@ -127,7 +125,7 @@ export default function PCImportantNotesSection() {
         }))
       return newPins.length > 0 ? [...current, ...newPins] : current
     })
-  }, [dialogueLog, favorites])
+  }, [dialogueLog])
 
   const toPinnedNote = useCallback((entry: DialogueEntry | PcPinnedNote): PcPinnedNote => {
     const dialogueId = 'dialogueId' in entry ? entry.dialogueId : entry.id
