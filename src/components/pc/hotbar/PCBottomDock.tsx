@@ -184,11 +184,11 @@ export default function PCBottomDock() {
   // --- Special skill actions (B-6) ---
   const openSpecialAction = useCallback((action: string) => {
     if (action === 'separation') {
-      openPcInteractionPanel({ title: '분리 심문', subtitle: '특수 행동', tone: 'gold', body: '당사자를 분리해 개별 심문합니다.', actions: [{ kind: 'run_special', label: '분리 심문 실행', party: pcTargetParty, disputeId: activeDisputeId, specialAction: 'separation' }] })
+      openPcInteractionPanel({ title: '분리 심문', subtitle: '특수 행동', tone: 'gold', body: '당사자를 분리해 개별 심문합니다.', actions: [{ kind: 'run_special', label: '⚡-1 분리 심문 실행', party: pcTargetParty, disputeId: activeDisputeId, specialAction: 'separation' }] })
     } else if (action === 'confidential') {
-      openPcInteractionPanel({ title: '비공개 보호', subtitle: '특수 행동', tone: 'gold', body: '비공개를 약속해 방어 반응을 낮춥니다.', actions: [{ kind: 'run_special', label: '비공개 보호 실행', party: pcTargetParty, disputeId: activeDisputeId, specialAction: 'confidential_protection' }] })
+      openPcInteractionPanel({ title: '비공개 보호', subtitle: '특수 행동', tone: 'gold', body: '비공개를 약속해 방어 반응을 낮춥니다.', actions: [{ kind: 'run_special', label: '⚡-1 비공개 보호 실행', party: pcTargetParty, disputeId: activeDisputeId, specialAction: 'confidential_protection' }] })
     } else if (action === 'immediate') {
-      openPcInteractionPanel({ title: '즉답 요구', subtitle: '특수 행동', tone: 'gold', body: '선택한 쟁점에 대해 즉답을 요구합니다.', actions: [{ kind: 'run_special', label: '즉답 요구 실행', party: pcTargetParty, disputeId: activeDisputeId, specialAction: 'immediate_answer' }] })
+      openPcInteractionPanel({ title: '즉답 요구', subtitle: '특수 행동', tone: 'gold', body: '선택한 쟁점에 대해 즉답을 요구합니다.', actions: [{ kind: 'run_special', label: '⚖️-1 즉답 요구 실행', party: pcTargetParty, disputeId: activeDisputeId, specialAction: 'immediate_answer' }] })
     }
   }, [activeDisputeId, pcTargetParty])
 

@@ -13274,3 +13274,66 @@ body.pc-mode .jp2__exchange-actions { display: flex; gap: 8px; }
   body.pc-mode .cb__brief-grid { grid-template-columns: 1fr; }
 }
 
+/* ━━━ 토큰 상세 팝업 ━━━ */
+body.pc-mode .pc-token-popup-overlay {
+  position: fixed; inset: 0; z-index: 9000;
+  background: rgba(0,0,0,0.55);
+  display: flex; align-items: center; justify-content: center;
+}
+body.pc-mode .pc-token-popup {
+  position: relative; width: 340px; padding: 28px 24px 24px;
+  background: var(--pc-panel-bg, #1a1a2e);
+  border: 1.5px solid rgba(255,255,255,0.08);
+  border-radius: 16px; text-align: center;
+  box-shadow: 0 16px 48px rgba(0,0,0,0.5);
+}
+body.pc-mode .pc-token-popup--blue { border-color: rgba(96,165,250,0.3); }
+body.pc-mode .pc-token-popup--gold { border-color: rgba(212,162,78,0.3); }
+body.pc-mode .pc-token-popup--red  { border-color: rgba(239,68,68,0.3); }
+body.pc-mode .pc-token-popup__close {
+  position: absolute; top: 12px; right: 14px;
+  background: none; border: none; color: rgba(255,255,255,0.4);
+  font-size: 20px; cursor: pointer; line-height: 1;
+}
+body.pc-mode .pc-token-popup__close:hover { color: rgba(255,255,255,0.8); }
+body.pc-mode .pc-token-popup__title {
+  font-size: 13px; font-weight: 600; letter-spacing: 0.02em;
+  color: rgba(255,255,255,0.5); margin-bottom: 16px;
+}
+body.pc-mode .pc-token-popup__value-row {
+  display: flex; align-items: center; justify-content: center; gap: 10px;
+  margin-bottom: 16px;
+}
+body.pc-mode .pc-token-popup--blue .pc-token-popup__value-row svg { color: #60a5fa; }
+body.pc-mode .pc-token-popup--gold .pc-token-popup__value-row svg { color: #d4a24e; }
+body.pc-mode .pc-token-popup--red  .pc-token-popup__value-row svg { color: #ef4444; }
+body.pc-mode .pc-token-popup__value {
+  font-size: 32px; font-weight: 800; color: #fff;
+}
+body.pc-mode .pc-token-popup__desc {
+  font-size: 13px; color: rgba(255,255,255,0.5); line-height: 1.6;
+  margin-bottom: 20px;
+}
+body.pc-mode .pc-token-popup__recharge-btn {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 10px 20px; border-radius: 10px;
+  font-size: 13px; font-weight: 700; cursor: pointer;
+  border: 1.5px solid rgba(212,162,78,0.35);
+  background: rgba(212,162,78,0.12); color: var(--pc-gold-light);
+  transition: all 0.15s ease;
+}
+body.pc-mode .pc-token-popup__recharge-btn:hover {
+  background: rgba(212,162,78,0.22);
+  border-color: rgba(212,162,78,0.5);
+}
+body.pc-mode .pc-token-popup__recharge-done {
+  font-size: 12px; color: rgba(255,255,255,0.3);
+}
+
+/* ━━━ 조사 버튼 토큰 비용 표시 ━━━ */
+body.pc-mode .pc-ev-detail__investigate-cost {
+  display: inline-flex; align-items: center; gap: 3px;
+  font-size: 12px; opacity: 0.7;
+}
+body.pc-mode .pc-ev-detail__investigate-cost svg { color: #60a5fa; }
+

@@ -13,7 +13,7 @@ import PCDisputeRibbon from './PCDisputeRibbon'
 import PCGameplayOverlay from './PCGameplayOverlay'
 import TokenSpendEffect from '../effects/TokenSpendEffect'
 import MiniGameOverlay from '../minigame/MiniGameOverlay'
-import { MiniGameLaunchButton } from '../minigame/MiniGameFrame'
+import { MINIGAME_MAX_ROUNDS } from '../../../types/minigame'
 import PCInteractionPanel, { openPcInteractionPanel } from './PCInteractionPanel'
 import PCRecordSummary from './PCRecordSummary'
 import { playBgm, playCourtControl } from '../../../engine/soundEngine'
@@ -92,7 +92,10 @@ export default function PCCourtLayout({ actionPanel, onDialogueTap, isDialoguePh
   const dialogueLog = useStore((s) => s.dialogueLog)
   const resources = useStore((s) => s.resources)
   const turnCount = useStore((s) => s.turnCount)
+  const minigameProgress = useStore((s) => s.minigameProgress)
+  const startMinigame = useStore((s) => s.startMinigame)
 
+  const [tokenPopup, setTokenPopup] = useState<'invest' | 'skill' | 'court' | null>(null)
   const [phaseBanner, setPhaseBanner] = useState<string | null>(null)
   const [recordSummaryOpen, setRecordSummaryOpen] = useState(false)
   const [combinationOverlay, setCombinationOverlay] = useState<CombinationOverlayState | null>(null)
@@ -236,45 +239,8 @@ export default function PCCourtLayout({ actionPanel, onDialogueTap, isDialoguePh
   }, [dialogueLog])
 
   const openHeaderPanel = useCallback((kind: 'invest' | 'skill' | 'court' | 'turn' | 'timeline') => {
-    if (kind === 'invest') {
-      openPcInteractionPanel({
-        title: '조사 자원',
-        subtitle: '현재 사용 가능한 조사 토큰',
-        tone: 'blue',
-        body: [
-          `조사 토큰: ${resources.investigationTokens}`,
-          '',
-          '추가 단서 조사, 특수 행동, 사건 분석 단계에서 사용합니다.',
-        ].join('\n'),
-      })
-      return
-    }
-
-    if (kind === 'skill') {
-      openPcInteractionPanel({
-        title: '스킬 포인트',
-        subtitle: '현재 사용 가능한 스킬',
-        tone: 'gold',
-        body: [
-          `스킬 포인트: ${resources.skillPoints}`,
-          '',
-          '요약 스킬, 조합 스킬, 특수 행동에서 사용합니다.',
-        ].join('\n'),
-      })
-      return
-    }
-
-    if (kind === 'court') {
-      openPcInteractionPanel({
-        title: '법정 지배력',
-        subtitle: '현재 법정 분위기',
-        tone: 'red',
-        body: [
-          `법정 지배력: ${resources.courtControl}`,
-          '',
-          '질문과 증거 제시가 효과적으로 이어질수록 법정 흐름을 유리하게 가져갈 수 있습니다.',
-        ].join('\n'),
-      })
+    if (kind === 'invest' || kind === 'skill' || kind === 'court') {
+      setTokenPopup(kind)
       return
     }
 
@@ -301,8 +267,72 @@ export default function PCCourtLayout({ actionPanel, onDialogueTap, isDialoguePh
     })
   }, [caseData?.caseId, currentPhase, resources.skillPoints, resources.courtControl, resources.investigationTokens, timelineBody, turnCount])
 
+  const TOKEN_POPUP_CONFIG = {
+    invest: {
+      title: '조사 토큰',
+      icon: 'i-search' as const,
+      tone: 'blue' as const,
+      value: resources.investigationTokens,
+      desc: '증거 조사, 추가 단서 발굴, 사건 분석에서 사용합니다.',
+      minigameType: 'memory_match' as const,
+      minigameLabel: '짝맞추기',
+    },
+    skill: {
+      title: '스킬 포인트',
+      icon: 'i-bolt' as const,
+      tone: 'gold' as const,
+      value: resources.skillPoints,
+      desc: '즉답 요구, 분리 심문, 비공개 보호 등 특수 행동에 사용합니다.',
+      minigameType: 'skill_runner' as const,
+      minigameLabel: '스킬 러너',
+    },
+    court: {
+      title: '법정 지배력',
+      icon: 'i-scale' as const,
+      tone: 'red' as const,
+      value: resources.courtControl,
+      desc: '질문과 증거 제시의 효과를 높이고, 판결에서 유리한 위치를 확보합니다.',
+      minigameType: 'whack_a_mole' as const,
+      minigameLabel: '두더지 잡기',
+    },
+  }
+
+  const tokenPopupData = tokenPopup ? TOKEN_POPUP_CONFIG[tokenPopup] : null
+  const tokenPopupRemaining = tokenPopup
+    ? MINIGAME_MAX_ROUNDS - (minigameProgress[TOKEN_POPUP_CONFIG[tokenPopup].minigameType]?.completedRounds ?? 0)
+    : 0
+
   return (
     <>
+      {/* 토큰 상세 팝업 */}
+      {tokenPopup && tokenPopupData && (
+        <div className="pc-token-popup-overlay" onClick={() => setTokenPopup(null)}>
+          <div className={`pc-token-popup pc-token-popup--${tokenPopupData.tone}`} onClick={(e) => e.stopPropagation()}>
+            <button className="pc-token-popup__close" onClick={() => setTokenPopup(null)} type="button" aria-label="닫기">&times;</button>
+            <h3 className="pc-token-popup__title">{tokenPopupData.title}</h3>
+            <div className="pc-token-popup__value-row">
+              <PCSvgIcon id={tokenPopupData.icon} size={28} />
+              <span className="pc-token-popup__value">{tokenPopupData.value}</span>
+            </div>
+            <p className="pc-token-popup__desc">{tokenPopupData.desc}</p>
+            {tokenPopupRemaining > 0 ? (
+              <button
+                className="pc-token-popup__recharge-btn"
+                onClick={() => {
+                  setTokenPopup(null)
+                  startMinigame(tokenPopupData.minigameType)
+                }}
+                type="button"
+              >
+                {tokenPopupData.minigameLabel}로 충전하기 ({tokenPopupRemaining}/{MINIGAME_MAX_ROUNDS})
+              </button>
+            ) : (
+              <span className="pc-token-popup__recharge-done">충전 완료 (0/{MINIGAME_MAX_ROUNDS})</span>
+            )}
+          </div>
+        </div>
+      )}
+
       {/* eslint-disable-next-line jsx-a11y/no-static-element-interactions */}
       <div className="app pc-play-app" onDragOver={(e) => e.preventDefault()}>
         <header className="pc-play-header">
@@ -342,7 +372,6 @@ export default function PCCourtLayout({ actionPanel, onDialogueTap, isDialoguePh
               <PCSvgIcon id="i-search" size={16} />
               <b>{resources.investigationTokens}</b>
             </button>
-            <MiniGameLaunchButton type="memory_match" />
             <button
               className="pc-play-tool is-gold"
               data-pc-token="skill"
@@ -353,7 +382,6 @@ export default function PCCourtLayout({ actionPanel, onDialogueTap, isDialoguePh
               <PCSvgIcon id="i-bolt" size={16} />
               <b>{resources.skillPoints}</b>
             </button>
-            <MiniGameLaunchButton type="skill_runner" />
             <button
               className="pc-play-tool is-red"
               data-pc-token="court"
@@ -364,7 +392,6 @@ export default function PCCourtLayout({ actionPanel, onDialogueTap, isDialoguePh
               <PCSvgIcon id="i-scale" size={16} />
               <b>{resources.courtControl}</b>
             </button>
-            <MiniGameLaunchButton type="whack_a_mole" />
             <div className="nav-sep" />
             <button className="pc-play-tool" onClick={() => openHeaderPanel('turn')} type="button">
               <span>Turn</span>

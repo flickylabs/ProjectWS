@@ -781,7 +781,7 @@ function EvidenceDetailSection({ evidenceId }: { evidenceId: string }) {
                   <span className="pc-ev-detail__stage-a">{evidence.investigationResults[stage.revealKey]}</span>
                 ) : stage.unlockable ? (
                   <button className="pc-ev-detail__investigate-btn" onClick={() => handleInvestigate(stage.revealKey)} type="button">
-                    조사 시도
+                    <span className="pc-ev-detail__investigate-cost"><PCSvgIcon id="i-search" size={14} /> -1</span> 조사 시도
                   </button>
                 ) : (
                   <span className="pc-ev-detail__stage-lock">조사 단계 {stage.stage} — 해금 필요</span>
