@@ -291,6 +291,7 @@ function normalizeCaseData(raw: any): CaseData {
     activeThirdParties: raw.activeThirdParties ?? [],
     baseEvidenceIds: raw.baseEvidenceIds,
     monetaryDisputeIds: raw.monetaryDisputeIds ?? [],
+    combinationLab: raw.combinationLab ?? null,
   }
 
   // A/B 리터럴 → 실명 치환 (사건 데이터 내 설명 텍스트)
