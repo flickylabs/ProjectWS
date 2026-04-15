@@ -5161,11 +5161,10 @@ body.pc-mode .pc-log-system-card {
   display: flex;
   align-items: center;
   gap: 10px;
-  width: min(980px, calc(100% - 108px));
-  margin: 0 auto;
+  width: 100%;
   min-height: 42px;
-  padding: 10px 24px;
-  border-radius: 12px;
+  padding: 10px 54px;
+  border-radius: 0;
   border: 0;
   border-top: 1px solid rgba(212, 162, 78, 0.12);
   border-bottom: 1px solid rgba(212, 162, 78, 0.12);
@@ -6967,10 +6966,14 @@ body.pc-mode .pc-log-system-explainer {
 }
 
 body.pc-mode .pc-log-system-card {
-  max-width: calc(100% - 108px) !important;
-  width: calc(100% - 108px) !important;
-  margin: 0 auto !important;
-  border-radius: 12px !important;
+  max-width: 100% !important;
+  width: 100% !important;
+  margin: 0 !important;
+  border-radius: 0 !important;
+  border-left: 0 !important;
+  border-right: 0 !important;
+  padding-left: 54px !important;
+  padding-right: 54px !important;
 }
 
 /* Judge bubble — centered with avatar overlapping top */
