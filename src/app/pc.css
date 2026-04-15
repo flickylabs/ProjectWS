@@ -10712,7 +10712,7 @@ body.pc-mode .pc-skill-runner__canvas {
   display: block;
   width: 100%;
   height: auto;
-  aspect-ratio: 960 / 420;
+  aspect-ratio: 1200 / 560;
 }
 
 body.pc-mode .pc-skill-runner__hud {

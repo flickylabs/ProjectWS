@@ -8,17 +8,18 @@ import {
   playMiniGameFail,
 } from '../../../engine/soundEngine'
 
-const VIEW_WIDTH = 960
-const VIEW_HEIGHT = 420
-const GROUND_Y = 320
+const VIEW_WIDTH = 1200
+const VIEW_HEIGHT = 560
+const GROUND_Y = 480
 const PLAYER_X = 180
-const PLAYER_WIDTH = 46
-const PLAYER_HEIGHT = 92
-const GRAVITY = 0.8
-const JUMP_VELOCITY = -16
-const EXTRA_JUMP_BOOST = 5
+const PLAYER_WIDTH = 24
+const PLAYER_HEIGHT = 48
+const GRAVITY = 0.55
+const JUMP_VELOCITY = -11
+const EXTRA_JUMP_BOOST = 3.5
 const MAX_FRAME_STEP = 2.5
 const MAX_AIR_JUMPS = 1 // 이중점프
+const PLATFORM_Y = 320 // 2층 플랫폼 높이
 
 type RunnerStatus = 'running' | 'paused' | 'success' | 'failed'
 type ItemKind = 'book' | 'scales' | 'pen'
@@ -37,6 +38,7 @@ interface GroundSegment {
   id: number
   x: number
   width: number
+  y?: number // 기본값=GROUND_Y, 2층 플랫폼은 PLATFORM_Y
 }
 
 interface Collectible {
@@ -231,9 +233,9 @@ function spawnSegmentContent(state: GameState, config: RoundConfig, segment: Gro
           id: nextId(state),
           kind: ITEM_KINDS[Math.floor(Math.random() * ITEM_KINDS.length)],
           x: cursor + offsetX,
-          y: GROUND_Y - randomBetween(100, 200) - arcLift,
-          width: 48,
-          height: 48,
+          y: GROUND_Y - randomBetween(60, 120) - arcLift,
+          width: 32,
+          height: 32,
           bobPhase: randomBetween(0, Math.PI * 2),
           collected: false,
         })
@@ -254,9 +256,9 @@ function spawnGapRewards(state: GameState, gapStart: number, gapWidth: number) {
       id: nextId(state),
       kind: ITEM_KINDS[Math.floor(Math.random() * ITEM_KINDS.length)],
       x: gapStart + 22 + t * Math.max(10, gapWidth - 44),
-      y: GROUND_Y - 120 - Math.sin(t * Math.PI) * (40 + gapWidth * 0.15),
-      width: 48,
-      height: 48,
+      y: GROUND_Y - 80 - Math.sin(t * Math.PI) * (30 + gapWidth * 0.12),
+      width: 32,
+      height: 32,
       bobPhase: randomBetween(0, Math.PI * 2),
       collected: false,
     })
@@ -291,6 +293,34 @@ function ensureTerrain(state: GameState, config: RoundConfig) {
 
     state.segments.push(segment)
     spawnSegmentContent(state, config, segment, gapWidth > 0 ? 190 : 120, 90)
+
+    // 확률적으로 2층 플랫폼 생성 (30%)
+    if (Math.random() < 0.3 && segmentWidth >= 360) {
+      const platWidth = randomBetween(160, 280)
+      const platX = segmentX + randomBetween(40, segmentWidth - platWidth - 40)
+      const platform: GroundSegment = {
+        id: nextId(state),
+        x: platX,
+        width: platWidth,
+        y: PLATFORM_Y,
+      }
+      state.segments.push(platform)
+      // 2층에도 아이템 배치
+      const platItemCount = clamp(Math.floor(platWidth / 60), 1, 4)
+      for (let pi = 0; pi < platItemCount; pi++) {
+        state.items.push({
+          id: nextId(state),
+          kind: ITEM_KINDS[Math.floor(Math.random() * ITEM_KINDS.length)],
+          x: platX + 20 + pi * (platWidth - 40) / Math.max(1, platItemCount - 1),
+          y: PLATFORM_Y - randomBetween(50, 80),
+          width: 48,
+          height: 48,
+          bobPhase: randomBetween(0, Math.PI * 2),
+          collected: false,
+        })
+      }
+    }
+
     state.nextTerrainX = segmentX + segmentWidth
   }
 }
@@ -303,7 +333,31 @@ function getSupportingSegment(state: GameState) {
   const playerScreenX = getPlayerScreenX(state.player)
   const footLeft = state.cameraX + playerScreenX + 8
   const footRight = state.cameraX + playerScreenX + PLAYER_WIDTH - 8
-  return state.segments.find((segment) => footRight > segment.x && footLeft < segment.x + segment.width) ?? null
+  const playerFoot = state.player.y + PLAYER_HEIGHT
+
+  // 아래로 떨어지고 있을 때만 플랫폼 착지 (위로 올라갈 때는 통과)
+  const falling = state.player.velocityY >= 0
+
+  let bestSegment: GroundSegment | null = null
+  let bestY = Infinity
+
+  for (const segment of state.segments) {
+    if (footRight <= segment.x || footLeft >= segment.x + segment.width) continue
+    const segY = segment.y ?? GROUND_Y
+    // 플레이어 발이 플랫폼 근처이고 떨어지는 중이면 착지
+    if (falling && playerFoot >= segY - 6 && playerFoot <= segY + 12 && segY < bestY) {
+      bestSegment = segment
+      bestY = segY
+    }
+    // 바닥(GROUND_Y)은 항상 지지
+    if (segY === GROUND_Y && playerFoot >= GROUND_Y - 6) {
+      if (GROUND_Y < bestY) {
+        bestSegment = segment
+        bestY = GROUND_Y
+      }
+    }
+  }
+  return bestSegment
 }
 
 function setGameResult(state: GameState, status: Extract<RunnerStatus, 'success' | 'failed'>, note: string) {
@@ -369,20 +423,24 @@ function updateGame(state: GameState, config: RoundConfig, input: InputState, fr
     player.velocityY += GRAVITY * frameDelta
     player.y += player.velocityY * frameDelta
   } else {
-    player.y = GROUND_Y - PLAYER_HEIGHT
+    // 현재 서 있는 세그먼트의 높이에 맞춤
+    const standOn = getSupportingSegment(state)
+    const standY = standOn?.y ?? GROUND_Y
+    player.y = standY - PLAYER_HEIGHT
     player.velocityY = 0
     player.airJumps = 0
   }
 
   support = getSupportingSegment(state)
   const feetY = player.y + PLAYER_HEIGHT
-  if (support && player.velocityY >= 0 && feetY >= GROUND_Y) {
+  const supportY = support?.y ?? GROUND_Y
+  if (support && player.velocityY >= 0 && feetY >= supportY - 4) {
     if (!player.grounded) {
       const impact = clamp(Math.abs(player.velocityY) / 18, 0.25, 1)
       player.landingTimer = Math.max(player.landingTimer, 0.09 + impact * 0.12)
     }
     player.grounded = true
-    player.y = GROUND_Y - PLAYER_HEIGHT
+    player.y = supportY - PLAYER_HEIGHT
     player.velocityY = 0
     player.jumpBoostRemaining = 0
   }
@@ -506,28 +564,58 @@ function drawGround(ctx: CanvasRenderingContext2D, state: GameState) {
   for (const segment of state.segments) {
     const screenX = segment.x - state.cameraX
     if (screenX > VIEW_WIDTH || screenX + segment.width < -80) continue
+    const segY = segment.y ?? GROUND_Y
 
-    ctx.fillStyle = '#2a2a36'
-    ctx.fillRect(screenX, GROUND_Y, segment.width, VIEW_HEIGHT - GROUND_Y)
+    if (segY === GROUND_Y) {
+      // 바닥 세그먼트
+      ctx.fillStyle = '#2a2a36'
+      ctx.fillRect(screenX, GROUND_Y, segment.width, VIEW_HEIGHT - GROUND_Y)
 
-    ctx.fillStyle = '#393645'
-    ctx.fillRect(screenX, GROUND_Y, segment.width, 8)
+      ctx.fillStyle = '#393645'
+      ctx.fillRect(screenX, GROUND_Y, segment.width, 8)
 
-    ctx.strokeStyle = 'rgba(255,255,255,0.08)'
-    ctx.lineWidth = 1
-    for (let x = screenX + ((state.cameraX * 0.8) % 38); x < screenX + segment.width; x += 38) {
+      ctx.strokeStyle = 'rgba(255,255,255,0.08)'
+      ctx.lineWidth = 1
+      for (let x = screenX + ((state.cameraX * 0.8) % 38); x < screenX + segment.width; x += 38) {
+        ctx.beginPath()
+        ctx.moveTo(x, GROUND_Y + 8)
+        ctx.lineTo(x - 12, VIEW_HEIGHT)
+        ctx.stroke()
+      }
+
+      ctx.strokeStyle = 'rgba(212,162,78,0.15)'
+      for (let y = GROUND_Y + 20; y < VIEW_HEIGHT; y += 22) {
+        ctx.beginPath()
+        ctx.moveTo(screenX, y)
+        ctx.lineTo(screenX + segment.width, y)
+        ctx.stroke()
+      }
+    } else {
+      // 2층 플랫폼
+      ctx.fillStyle = 'rgba(212,162,78,0.18)'
+      ctx.fillRect(screenX, segY, segment.width, 10)
+
+      ctx.fillStyle = 'rgba(212,162,78,0.08)'
+      ctx.fillRect(screenX, segY + 10, segment.width, 4)
+
+      // 플랫폼 상단 하이라이트
+      ctx.strokeStyle = 'rgba(212,162,78,0.4)'
+      ctx.lineWidth = 2
       ctx.beginPath()
-      ctx.moveTo(x, GROUND_Y + 8)
-      ctx.lineTo(x - 12, VIEW_HEIGHT)
+      ctx.moveTo(screenX, segY)
+      ctx.lineTo(screenX + segment.width, segY)
       ctx.stroke()
-    }
 
-    ctx.strokeStyle = 'rgba(212,162,78,0.15)'
-    for (let y = GROUND_Y + 20; y < VIEW_HEIGHT; y += 22) {
-      ctx.beginPath()
-      ctx.moveTo(screenX, y)
-      ctx.lineTo(screenX + segment.width, y)
-      ctx.stroke()
+      // 지지대
+      ctx.strokeStyle = 'rgba(255,255,255,0.05)'
+      ctx.lineWidth = 1
+      const pillarSpacing = 60
+      for (let px = screenX + pillarSpacing / 2; px < screenX + segment.width; px += pillarSpacing) {
+        ctx.beginPath()
+        ctx.moveTo(px, segY + 14)
+        ctx.lineTo(px, GROUND_Y)
+        ctx.stroke()
+      }
     }
   }
 }
