@@ -173,11 +173,29 @@ function ImpactParticles({ tone }: { tone: MoleKind }) {
 function HammerGraphic() {
   return (
     <svg viewBox="0 0 96 96" className="pc-whack-a-mole__hammer-svg" aria-hidden="true">
-      <path d="M55 18c5-5 16-3 21 2s7 15 2 20l-9 9-23-23 9-8Z" fill="#c9ced7" />
-      <path d="m62 26 11 11" stroke="#8f97a3" strokeWidth="7" strokeLinecap="round" />
-      <path d="M22 58c2-2 6-2 8 0l8 8c2 2 2 6 0 8L20 92c-2 2-6 2-8 0l-8-8c-2-2-2-6 0-8l18-18Z" fill="#8a5a2d" />
-      <path d="M16 66 30 80" stroke="rgba(255,255,255,0.35)" strokeWidth="5" strokeLinecap="round" />
-      <path d="M39 55 57 37" stroke="#a86f38" strokeWidth="10" strokeLinecap="round" />
+      {/* 법관 망치(gavel) — 원통 헤드 + 밴드 + 손잡이 */}
+      {/* 헤드: 둥근 원통 */}
+      <rect x="30" y="8" width="36" height="22" rx="8" fill="#4a3728" />
+      <rect x="30" y="8" width="36" height="22" rx="8" fill="url(#gavelHead)" />
+      {/* 헤드 좌우 밴드 */}
+      <rect x="30" y="14" width="8" height="10" rx="2" fill="#d4a24e" opacity="0.7" />
+      <rect x="58" y="14" width="8" height="10" rx="2" fill="#d4a24e" opacity="0.7" />
+      {/* 헤드 하이라이트 */}
+      <rect x="38" y="10" width="20" height="4" rx="2" fill="rgba(255,255,255,0.15)" />
+      {/* 손잡이 */}
+      <rect x="44" y="28" width="8" height="48" rx="4" fill="#5c3d24" />
+      <rect x="46" y="28" width="4" height="48" rx="2" fill="rgba(255,255,255,0.08)" />
+      {/* 받침 링 */}
+      <ellipse cx="48" cy="30" rx="7" ry="3" fill="#d4a24e" opacity="0.5" />
+      {/* 손잡이 끝 */}
+      <rect x="42" y="72" width="12" height="6" rx="3" fill="#3e2a18" />
+      {/* 그라디언트 */}
+      <defs>
+        <linearGradient id="gavelHead" x1="48" y1="8" x2="48" y2="30" gradientUnits="userSpaceOnUse">
+          <stop offset="0" stopColor="rgba(255,255,255,0.12)" />
+          <stop offset="1" stopColor="rgba(0,0,0,0.15)" />
+        </linearGradient>
+      </defs>
     </svg>
   )
 }

@@ -11095,7 +11095,8 @@ body.pc-mode .pc-whack-a-mole__grid {
 body.pc-mode .pc-whack-a-mole__hole {
   position: relative;
   display: block;
-  padding: 0;
+  padding: 12px;
+  margin: -12px;
   border: 0;
   background: transparent;
   aspect-ratio: 1 / 0.82;
