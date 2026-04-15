@@ -11439,14 +11439,14 @@ body.pc-mode .pc-memory-match__grid {
   position: relative;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-auto-rows: 130px;
+  grid-auto-rows: 150px;
   gap: 10px;
   width: 100%;
 }
 
 body.pc-mode .pc-memory-match__grid[data-cols="6"] {
   grid-template-columns: repeat(6, 1fr);
-  grid-auto-rows: 110px;
+  grid-auto-rows: 120px;
   gap: 8px;
 }
 
@@ -11533,7 +11533,8 @@ body.pc-mode .pc-memory-card__icon {
   width: 72px;
   height: 72px;
   flex-shrink: 0;
-  color: var(--memory-card-color, #e8c172);
+  object-fit: contain;
+  filter: drop-shadow(0 2px 6px rgba(0,0,0,0.3));
 }
 
 body.pc-mode .pc-memory-card__label {
@@ -11541,8 +11542,8 @@ body.pc-mode .pc-memory-card__label {
 }
 
 body.pc-mode .pc-memory-match__grid[data-cols="6"] .pc-memory-card__icon {
-  width: 56px;
-  height: 56px;
+  width: 52px;
+  height: 52px;
 }
 
 body.pc-mode .pc-memory-match__grid[data-cols="6"] .pc-memory-card__label {

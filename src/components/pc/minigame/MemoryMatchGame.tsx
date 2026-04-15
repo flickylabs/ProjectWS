@@ -28,6 +28,7 @@ interface EvidenceCardDefinition {
   id: EvidenceCardId
   label: string
   color: string
+  image: string
 }
 
 interface MemoryCard {
@@ -46,18 +47,18 @@ interface RoundConfig {
 }
 
 const CARD_LIBRARY: readonly EvidenceCardDefinition[] = [
-  { id: 'receipt', label: '영수증', color: '#5cc97a' },
-  { id: 'gps', label: 'GPS', color: '#5b8def' },
-  { id: 'call', label: '통화', color: '#a78bfa' },
-  { id: 'message', label: '문자', color: '#e8c172' },
-  { id: 'account', label: '계좌', color: '#e06060' },
-  { id: 'kakao', label: '카톡', color: '#f59e0b' },
-  { id: 'document', label: '서류', color: '#60c090' },
-  { id: 'magnifier', label: '돋보기', color: '#ec4899' },
-  { id: 'fingerprint', label: '지문', color: '#38bdf8' },
-  { id: 'lock', label: '자물쇠', color: '#8b8b9a' },
-  { id: 'gavel', label: '망치', color: '#d4a24e' },
-  { id: 'scale', label: '저울', color: '#6366f1' },
+  { id: 'receipt', label: '영수증', color: '#5cc97a', image: '/emoji/evidence_bank.png' },
+  { id: 'gps', label: 'GPS', color: '#5b8def', image: '/emoji/1f4cd.png' },
+  { id: 'call', label: '통화', color: '#a78bfa', image: '/emoji/evidence_audio.png' },
+  { id: 'message', label: '문자', color: '#e8c172', image: '/emoji/evidence_chat.png' },
+  { id: 'account', label: '계좌', color: '#e06060', image: '/emoji/1f3e6.png' },
+  { id: 'kakao', label: '카톡', color: '#f59e0b', image: '/emoji/1f4f1.png' },
+  { id: 'document', label: '서류', color: '#60c090', image: '/emoji/evidence_document.png' },
+  { id: 'magnifier', label: '돋보기', color: '#ec4899', image: '/emoji/1f50d.png' },
+  { id: 'fingerprint', label: '지문', color: '#38bdf8', image: '/emoji/evidence_forensic.png' },
+  { id: 'lock', label: '자물쇠', color: '#8b8b9a', image: '/emoji/1f512.png' },
+  { id: 'gavel', label: '망치', color: '#d4a24e', image: '/emoji/2696-fe0f.png' },
+  { id: 'scale', label: '저울', color: '#6366f1', image: '/emoji/evidence_misc.png' },
 ] as const
 
 function getRoundConfig(round: number): RoundConfig {
@@ -465,8 +466,7 @@ export default function MemoryMatchGame({ round }: { round: number }) {
                   className="pc-memory-card__face pc-memory-card__face--front"
                   style={{ '--memory-card-color': definition.color } as CSSProperties}
                 >
-                  <MemoryMatchIcon className="pc-memory-card__icon" kind={card.kind} />
-                  <span className="pc-memory-card__label">{definition.label}</span>
+                  <img className="pc-memory-card__icon" src={definition.image} alt={definition.label} draggable={false} />
                 </span>
               </span>
             </button>
