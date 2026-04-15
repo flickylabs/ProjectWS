@@ -5161,7 +5161,7 @@ body.pc-mode .pc-log-system-card {
   display: flex;
   align-items: center;
   gap: 10px;
-  width: min(980px, calc(100% - 72px));
+  width: min(980px, calc(100% - 108px));
   margin: 0 auto;
   min-height: 42px;
   padding: 10px 24px;
@@ -5256,7 +5256,7 @@ body.pc-mode .pc-log-system-card.is-used .pc-log-system-card__action-badge {
 }
 
 body.pc-mode .pc-log-system-explainer {
-  width: min(980px, calc(100% - 48px));
+  width: min(980px, calc(100% - 108px));
   display: grid;
   grid-template-columns: 1fr;
   gap: 10px;
