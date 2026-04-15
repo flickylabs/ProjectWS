@@ -54,6 +54,7 @@ d-1(초기) → d-2(조건) → d-3(조건) → ...
 - correctResponsibility 합계 = 100
 - 한국어 자연어, 번역체 금지
 - unlockCondition 연쇄: 동시 해금 방지 (minState 차이 2단계 이상)
+- mediation 파일 caseId 필드: "case-{caseId}" (case-{caseId}-v3-01 ❌)
 ```
 
 ---
@@ -133,6 +134,7 @@ dialogues/phase1/{caseId}.json (phase2 파일 없음)
 | S0-S1 | "해당 금액" | "그 사람" | "그곳" |
 | S2 | "200만원대" | "김 씨" | 약칭 |
 | S3+ | 구체적 | 실명 | 정식명칭 |
+| S4 | 실수로 노출 | 실수로 노출 | 실수로 노출 |
 | S5 | 전부 | 전부 | 전부 |
 
 ## stanceHint 매핑
@@ -140,6 +142,7 @@ S0: deny / S1: partial / S2: deflect / S3: shift / S4: emotional / S5: confess
 
 ## 금지 사항
 - 번역체 9패턴 (schemas 참조)
+- "특정" 사용 금지 → "어떤 X", "그 X" 사용
 - "사전 상의/협의" S0~S2 금지
 - 기계적 관찰문 ("~확인됩니다") 금지
 - 변형 간 90% 이상 동일 텍스트 금지
@@ -176,15 +179,16 @@ S0: deny / S1: partial / S2: deflect / S3: shift / S4: emotional / S5: confess
 아래 항목은 v3FallbackGameLoopData가 쟁점명 직접 삽입 또는 LLM 폴백으로
 자동 생성하는 placeholder이다. 사건별 고품질 스크립트로 반드시 교체할 것.
 
-### 게임 이벤트 (ScriptedText 채널)
-- contradiction_pursuit: 모순 이벤트 2건 (사건 맥락에 맞는 모순 발견 대사)
-- interjection: 끼어들기 2건 (상대 진술 중 참지 못하고 끼어드는 대사)
-- emotional_overload: 감정 폭발 2건 (감정이 격해져 터지는 대사)
+### 게임 이벤트 (별도 JSON — ScriptedText 아님)
+게임 이벤트는 ScriptedText가 아닌 별도 JSON (`claimPolicies/{caseId}-game-events.json`)으로 생성한다.
+- contradictions 2건, interjections 2건, emotionalOutbursts 2건
+- 쟁점명 직접 삽입 ❌
+- ScriptedText의 contradiction_pursuit / interjection / emotional_overload 채널은 이벤트 발생 시 NPC 응답을 제공
 
-### evidence_present (126키 전수)
-- 키 패턴: {party}|{evidenceId}|{disputeId}|{lieState}
-- 현재 67% 미작성 — 전체 커버리지 필수
-- 각 키당 variants 3~5개
+### evidence_present (42키 기본)
+- 키 패턴: `{party}|{evidenceId}|{lieBand}|{subjectRole}`, 각 키 5변형
+- subjectRole 폴백(self→other→both)은 caller에서 처리
+- 전체 커버리지 필수
 
 ### transitionBeats (v3GameLoopData)
 - 쟁점별 x lieState별 전이 비트

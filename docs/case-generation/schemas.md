@@ -123,7 +123,7 @@
 |------|------|------|
 | `id` | string | e-N |
 | `name` | string | 증거 이름 |
-| `surfaceName` | string | 화면 표시용 |
+| `surfaceName` | string | 조사 전 화면 표시명. **숨김 정보 노출 금지** ("형 문자 스레드" X -> "발신자 미상 문자" O) |
 | `description` | string | 상세 설명 |
 | `surfaceDescription` | string | 초기 표시 설명 |
 | `type` | string | log / device / chat / bank / contract / testimony / cctv / sns |
@@ -182,7 +182,7 @@
 
 ## 3. Phase 1 대화
 
-> Phase 1은 구 Phase 2(선택지 사전진술)를 포함한다. `dialogues/phase2/` 파일은 존재하지 않아야 정상이다.
+> Phase 1은 구 Phase 2(선택지 사전진술)를 포함한다. `dialogues/phase2/` 파일은 존재하지 않아야 정상이며, 신규 생성도 금지한다.
 
 경로: `src/data/dialogues/phase1/{caseId}.json`
 
@@ -346,3 +346,60 @@ export const SOLUTION_ORIENTATIONS: Record<string, SolutionOrientation> = {
 | `id` | string | e-N |
 | `type` | string | 증거 타입 |
 | `timing` | object | `{ bestPhase, impactCurve }` |
+
+---
+
+## 8. 게임 이벤트 JSON
+
+경로: `src/data/claimPolicies/{caseId}-game-events.json`
+
+게임 중 발생하는 모순/끼어들기/감정 폭발 이벤트. v3FallbackGameLoopData의 placeholder를 대체한다.
+
+### contradictions 항목
+
+| 필드 | 타입 | 설명 |
+|------|------|------|
+| `id` | string | `{caseId}-contradiction-{N}` |
+| `statementA` | string | A 측 주장 (재판관 대상 합니다체, 1문장) |
+| `statementB` | string | B 측 주장 (재판관 대상 합니다체, 1문장) |
+| `options.point_out` | `{label, effect}` | 짚었을 때 선택지 |
+| `options.let_go` | `{label, effect}` | 넘겼을 때 선택지 |
+| `npcReaction` | string | 시스템 관찰자 서술체 (1문장) |
+
+### interjections 항목
+
+| 필드 | 타입 | 설명 |
+|------|------|------|
+| `id` | string | `{caseId}-interjection-{a\|b}` |
+| `interruptor` | string | a 또는 b |
+| `interjectionLine` | string | 끼어드는 대사 (상대 대상 반말, 1~2문장) |
+| `options.allow` | `{label, effect}` | 허용 시 |
+| `options.block` | `{label, effect}` | 차단 시 |
+
+### emotionalOutbursts 항목
+
+| 필드 | 타입 | 설명 |
+|------|------|------|
+| `id` | string | `{caseId}-outburst-{a\|b}` |
+| `party` | string | a 또는 b |
+| `outburstLine` | string | 감정 폭발 대사 (해요체 허용, 1~2문장) |
+| `options.press` | `{label, effect}` | 압박 시 |
+| `options.calm` | `{label, effect}` | 진정 시 |
+
+---
+
+## 9. TransitionBeats
+
+NPC의 거짓말 상태(S0->S5) 전이 시 표시되는 서술 비트.
+
+| 필드 | 타입 | 설명 |
+|------|------|------|
+| `id` | string | `{caseId}-beat-{party}-{disputeId}-{fromState}-{toState}` |
+| `caseId` | string | 사건 ID |
+| `party` | string | a 또는 b |
+| `disputeId` | string | 쟁점 ID |
+| `fromState` | string | 이전 상태 (S0~S4) |
+| `toState` | string | 다음 상태 (S1~S5) |
+| `primaryBeatType` | string | hedge / partial / confession / emotional / evidence_hit / counter_shift |
+| `line` | string | 3인칭 관찰자 서술 (1~2문장, 구체적 사실 포함) |
+| `behaviorHint` | string | 시각적 연출 힌트 (구체적 행동/표정) |

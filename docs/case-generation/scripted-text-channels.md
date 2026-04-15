@@ -9,7 +9,7 @@
 | 채널 | 공식 | spouse-01 (4쟁점) | 5쟁점 케이스 |
 |------|------|-------------------|-------------|
 | interrogation | 쟁점×2×6×3 | 144 | 180 |
-| evidence_present | 증거×2×3 | 42 | 42 |
+| evidence_present | 증거×2파티×3밴드 | 42 | 42 |
 | dossier | dc질문수×3밴드 | 24 | ~15 |
 | witness | 증인×3깊이 | 9 | 9 |
 | aftermath | 5종 고정 | 5 | 5 |
@@ -23,6 +23,8 @@
 | judge_contradiction | 쟁점×3톤÷2 | 6 | 6~9 |
 | system_message_v2 | 혼합 | 8 | 8~10 |
 | mediation | 4경로 고정 | 4 paths | 4 paths |
+
+> evidence_present는 42키(party × evidence × lieBand 조합)가 기본. subjectRole 폴백(self→other→both)은 caller에서 처리.
 
 ---
 
@@ -54,6 +56,7 @@ NPC가 심문 질문에 답하는 대사. **가장 큰 채널.**
 
 - **키**: `{party}|{evidenceId}|{lieBand}|{subjectRole}`
 - **예시**: `b|e-1|early|self`
+- **lieBand**: early (S0-S1) / mid (S2-S3) / late (S4-S5)
 - **variants/key**: 5
 - **추가 필드**: `subjectRole` (self / other / both)
 
@@ -100,6 +103,7 @@ DossierCard 질문에 대한 NPC 답변.
 - **키**: `{party}|{disputeId}|{lieState}`
 - **예시**: `a|d-1|S1`
 - **variants/key**: 3
+- 게임 이벤트 구조는 `claimPolicies/{caseId}-game-events.json`에서 정의. ScriptedText 채널은 이벤트 발생 시 NPC 응답을 제공.
 
 ### 8. interjection
 
@@ -109,6 +113,7 @@ DossierCard 질문에 대한 NPC 답변.
 - **예시**: `a|d-1|minor`
 - **severity**: minor / major
 - **variants/key**: 3
+- 게임 이벤트 구조는 `claimPolicies/{caseId}-game-events.json`에서 정의. ScriptedText 채널은 이벤트 발생 시 NPC 응답을 제공.
 
 ### 9. emotional_overload
 
@@ -117,6 +122,7 @@ DossierCard 질문에 대한 NPC 답변.
 - **키**: `{party}|{disputeId}`
 - **예시**: `a|d-1`
 - **variants/key**: 2
+- 게임 이벤트 구조는 `claimPolicies/{caseId}-game-events.json`에서 정의. ScriptedText 채널은 이벤트 발생 시 NPC 응답을 제공.
 
 ### 10. evidence_discovery
 
@@ -141,6 +147,8 @@ DossierCard 질문에 대한 NPC 답변.
 
 중재 대화. **entries가 아닌 paths 구조.**
 
+- **파일**: `dialogues/mediation/{caseId}-v3-01.json`
+- **caseId 필드**: `"case-{caseId}"` (예: `"case-spouse-01"`). `case-{caseId}-v3-01` 형식 ❌
 - **4 paths**: `immediate`, `conditional`, `postpone`, `fact_first`
 - 각 path: `{ dialogues: [ {speaker, text, relatedDisputes, behaviorHint}, ... ] }`
 - path당 dialogues 2개 (a, b 각 1개)

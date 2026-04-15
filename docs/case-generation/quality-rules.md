@@ -39,8 +39,17 @@
 | 패턴 | 규칙 |
 |------|------|
 | "~만을" | "~만" 으로 |
-| "상대방" | 실명 사용 |
+| "상대방" | "상대측" 또는 실명 |
 | A/B 리터럴 | 실명 사용 (caseLoader 자동치환 범위 외 주의) |
+
+### surfaceName 규칙
+
+증거의 surfaceName은 조사 전 플레이어에게 보이는 이름. 숨김 정보 노출 금지.
+
+| 금지 예시 | 올바른 예시 |
+|----------|-----------|
+| "형 문자 스레드" (발신자 정체가 숨김) | "발신자 미상 문자" |
+| "비자금 계좌 출금" (비자금 존재가 숨김) | "대규모 출금 기록" |
 
 ---
 
@@ -59,6 +68,13 @@
 - 재판관이 "제 아내/남편" 사용
 - NPC가 자기 배우자를 "OOO 씨"로 호칭 (그건 재판관 전용)
 
+### angry callTerm 사용
+
+각 사건 Phase 1에서 최소 1회, 격앙된 장면에서 angry callTerm 사용 필수.
+- spouse-01: "이준호!" / "박지연!"
+- family-01: "윤정후!" / "윤태성!"
+모든 직접 호칭을 angry로 바꾸지 말 것 — 가장 감정이 격한 1~2곳에만 적용.
+
 ---
 
 ## 3. 톤 규칙
@@ -76,6 +92,16 @@
 | soft | 정리 요청 | "한 번 정리해주시겠습니까?" |
 | mid | 추궁 | "그 부분이 좀 이상한데요." |
 | hard | 단호 | "지금 하신 말씀, 아까와 다릅니다." |
+
+### behaviorHint 구체성
+
+| 금지 | 올바른 |
+|------|--------|
+| "화난다" | "주먹을 쥐며 시선을 내린다" |
+| "놀란다" | "눈을 크게 뜨고 입이 살짝 벌어진다" |
+| "슬프다" | "목이 메이며 말끝이 떨린다" |
+
+신체 표현 최소 1개 필수 (시선, 자세, 손, 표정, 목소리 등)
 
 ---
 
@@ -134,6 +160,13 @@ node tests/run-84-headless.cjs --category {category}
 □ 기계적 관찰문 0건
 □ 증인 speechStyle이 증언 텍스트에 반영됨
 □ correctResponsibility 합계 = 100 (모든 쟁점)
+□ game-events.json 존재 + 구조 검증 (contradictions/interjections/emotionalOutbursts)
+□ transitionBeats 핵심 전이 커버
+□ surfaceName 숨김 정보 노출 없음
+□ angry callTerm 최소 1회 사용
+□ dispute name 단어형 + 3곳 동기화 (generated + structure-v2 + mediation)
+□ mediation caseId = "case-{caseId}" 확인
+□ A/B 리터럴 0건 (수동 편집 파일 기준, caseLoader 자동치환 범위 외 주의)
 ```
 
 ### v3 Fallback 교체 검증

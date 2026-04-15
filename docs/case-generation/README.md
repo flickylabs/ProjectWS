@@ -10,7 +10,7 @@
 |-------|------|------|
 | Phase 0 | 사건 소개 | 배경/인물 파악 |
 | Phase 1 | 초기 진술 + 선택지 사전진술 | 구 Phase 2 통합 완료 |
-| Phase 2 | **삭제됨** | Phase 1에 통합. phase2 파일이 없는 것이 정상 |
+| Phase 2 | **삭제됨** | Phase 1에 통합. phase2 파일이 없는 것이 정상. 존재하면 안 됨 |
 | Phase 3 | 심문 | 핵심 게임플레이 |
 | Phase 4 | 증거 조사 | |
 | Phase 5 | 재심문 | |
@@ -52,11 +52,13 @@
 
 | # | 산출물 | 경로 | 없을 때 |
 |---|--------|------|---------|
-| R1 | DossierCards | v3GameLoopData JSON | 증거 카드 조사 비활성 |
-| R2 | Structure V2 | `src/data/claimPolicies/{caseId}-structure-v2.json` | depthLayers/misconception 미작동 |
-| R3 | 증인 증언 | `src/data/witnessTestimonyData/{caseId}.ts` | 증인 소환 비활성 |
-| R4 | SolutionOrientations | `src/data/solutionOrientations.ts` 항목 추가 | 판결 성향 분류 미작동 |
-| R5 | Aftermath 5종 | ScriptedText aftermath 채널 | shared_fault로 폴백 |
+| R1 | 게임 이벤트 | `claimPolicies/{caseId}-game-events.json` | contradictions 2건 + interjections 2건 + emotionalOutbursts 2건 |
+| R2 | TransitionBeats | v3GameLoopData 또는 별도 | 쟁점별 x lieState별 전이 비트 |
+| R3 | DossierCards | v3GameLoopData JSON | 증거 카드 조사 비활성 |
+| R4 | Structure V2 | `src/data/claimPolicies/{caseId}-structure-v2.json` | depthLayers/misconception 미작동 |
+| R5 | 증인 증언 | `src/data/witnessTestimonyData/{caseId}.ts` | 증인 소환 비활성 |
+| R6 | SolutionOrientations | `src/data/solutionOrientations.ts` 항목 추가 | 판결 성향 분류 미작동 |
+| R7 | Aftermath 5종 | ScriptedText aftermath 채널 | shared_fault로 폴백 |
 
 ### 자동 생성 (A) — 수동 작업 불필요
 
@@ -72,15 +74,18 @@
 `v3FallbackGameLoopData`가 자동 생성하는 placeholder는 반드시 사건별 스크립트로 교체해야 한다.
 Fallback 상태에서는 쟁점명이 직접 삽입되거나 LLM 폴백이 사용되어 품질이 낮다.
 
-| 항목 | Fallback 동작 | 필수 교체 | 비고 |
-|------|-------------|----------|------|
-| contradictions (모순 이벤트) | 쟁점명 직접 삽입 | 사건별 2건 | ScriptedText contradiction_pursuit 채널 |
-| interjections (끼어들기) | 쟁점명 직접 삽입 | 사건별 2건 | ScriptedText interjection 채널 |
-| emotionalOutbursts (감정 폭발) | 쟁점명 직접 삽입 | 사건별 2건 | ScriptedText emotional_overload 채널 |
-| transitionBeats (전이 비트) | lieState x 쟁점 자동 생성 | 사건별 전수 | v3GameLoopData transitionBeats |
+| 항목 | Fallback 동작 | 필수 교체 | 저장 위치 |
+|------|-------------|----------|----------|
+| contradictions (모순 이벤트) | 쟁점명 직접 삽입 | 사건별 2건 | `claimPolicies/{caseId}-game-events.json` |
+| interjections (끼어들기) | 쟁점명 직접 삽입 | 사건별 2건 | `claimPolicies/{caseId}-game-events.json` |
+| emotionalOutbursts (감정 폭발) | 쟁점명 직접 삽입 | 사건별 2건 | `claimPolicies/{caseId}-game-events.json` |
+| transitionBeats (전이 비트) | lieState x 쟁점 자동 생성 | 사건별 전수 (핵심 6~10건) | v3GameLoopData `transitionBeats` 또는 game-events.json |
 | evidence_present 채널 | LLM 폴백 | 126키/사건 | ScriptedText evidence_present 채널 |
 
-> Fallback 교체 여부는 Phase E QA에서 반드시 확인한다.
+> - 게임 이벤트(contradictions/interjections/emotionalOutbursts)는 별도 JSON 파일: `src/data/claimPolicies/{caseId}-game-events.json`
+> - transitionBeats는 v3GameLoopData 또는 game-events.json에 저장
+> - evidence_present는 42키 기본 제공, 역할 폴백(나머지 키)은 caller 측에서 처리
+> - Fallback 교체 여부는 Phase E QA에서 반드시 확인한다.
 
 ---
 
@@ -91,9 +96,9 @@ Phase A ─── 사건 설계 ──────── GPT Pro S1 → Claude �
   │
 Phase B ─── 스크립트 생성 ──── GPT Pro S2~S4 → Claude 보정 → F2, F3
   │
-Phase C ─── 보조 데이터 ────── GPT Pro S5~S6 → Claude 보정 → R1~R5
+Phase C ─── 보조 데이터 ────── GPT Pro S5~S6 → Claude 보정 → R1~R7
   │
-Phase D ─── 통합 등록 ──────── Claude → F4, F5, F6, R4
+Phase D ─── 통합 등록 ──────── Claude → F4, F5, F6, R6
   │
 Phase E ─── QA ─────────────── Claude + 수동 플레이
 ```
@@ -154,6 +159,7 @@ Claude 보정 포인트:
 - evidence_present, dossier, witness, aftermath 5종, system_message
 - V4 8채널 (contradiction_pursuit, interjection, emotional_overload, evidence_discovery, trust_action, judge_question, judge_contradiction, system_message_v2)
 - mediation (paths 구조)
+  - 중재 파일 caseId 형식: `case-{caseId}` (case-{caseId}-v3-01 형식 사용 금지)
 
 **v3 Fallback 교체 항목 (필수)**:
 - contradiction_pursuit: 사건별 모순 이벤트 2건 (fallback의 쟁점명 직접 삽입 교체)
@@ -171,9 +177,9 @@ Claude 보정 포인트:
 - 스키마: [schemas.md § DossierCards](schemas.md#6-v3-gameloop-data), [schemas.md § Structure V2](schemas.md#7-structure-v2)
 
 산출물:
-- R1: DossierCards 5장 (ID: `dc-N`, 질문 ID: `dc-N.{party}.qN`)
-- R2: Structure V2 (disputeKind, depthLayers 3층, linkEdges)
-- R5: Aftermath 5종 (F2에 미포함 시)
+- R3: DossierCards 5장 (ID: `dc-N`, 질문 ID: `dc-N.{party}.qN`)
+- R4: Structure V2 (disputeKind, depthLayers 3층, linkEdges)
+- R7: Aftermath 5종 (F2에 미포함 시)
 
 **GPT Pro Session 6** — 증인 증언
 
@@ -181,7 +187,7 @@ Claude 보정 포인트:
 - F1의 socialGraph + 스키마: [schemas.md § 증인 증언](schemas.md#4-증인-증언)
 
 산출물:
-- R3: 증인 3명, 각 3~5슬롯, depth 1~3
+- R5: 증인 3명, 각 3~5슬롯, depth 1~3
 
 ### Phase D: 통합 등록
 
@@ -202,7 +208,7 @@ Claude 작업:
    src/data/cases/refined/manifest.json:
    - refined[] 배열에 '{caseId}' 추가
 
-4. R4 SolutionOrientations
+4. R6 SolutionOrientations
    src/data/solutionOrientations.ts:
    - solutions의 각 카테고리 × 옵션 인덱스별 principle/reconcile/hybrid 매핑
 ```
@@ -247,11 +253,13 @@ Claude 작업:
 □ F6  manifest.json refined[] 추가
 
 ━━ 권장 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-□ R1  DossierCards (dc-N 형식, v3GameLoopData)
-□ R2  {caseId}-structure-v2.json
-□ R3  witnessTestimonyData/{caseId}.ts
-□ R4  solutionOrientations.ts 항목 추가
-□ R5  aftermath 5종 (ScriptedText 내)
+□ R1  game-events.json 존재 (contradictions 2 + interjections 2 + emotionalOutbursts 2)
+□ R2  transitionBeats 전수 (핵심 전이 6~10건)
+□ R3  DossierCards (dc-N 형식, v3GameLoopData)
+□ R4  {caseId}-structure-v2.json
+□ R5  witnessTestimonyData/{caseId}.ts
+□ R6  solutionOrientations.ts 항목 추가
+□ R7  aftermath 5종 (ScriptedText 내)
 
 ━━ Fallback 교체 ━━━━━━━━━━━━━━━━━━━━
 □ v3FallbackGameLoopData placeholder 교체 완료
@@ -260,6 +268,12 @@ Claude 작업:
   □ emotionalOutbursts 2건
   □ transitionBeats 전수
 □ evidence_present 채널 126키 완비
+
+━━ 데이터 동기화 ━━━━━━━━━━━━━━━━━━━━
+□ mediation caseId = "case-{caseId}" 형식 확인
+□ dispute name 동기화: generated + structure-v2 + mediation 3곳 일치
+□ surfaceName 숨김 정보 노출 없음
+□ angry callTerm 최소 1회 사용
 □ Phase 2 파일 없음 확인 (Phase 1에 통합)
 
 ━━ 검증 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -288,6 +302,9 @@ Claude 작업:
 | witness ID | `w-{N}` | `w-1` ~ `w-3` |
 | ScriptedText interrogation 키 | `{party}\|{disputeId}\|{state}\|{qType}` | `a\|d-1\|S0\|fact_pursuit` |
 | ScriptedText dossier 키 | `{party}\|{dcId}.{party}.q{N}\|{band}` | `b\|dc-1.b.q1\|early` |
+| Mediation 파일 | `dialogues/mediation/{caseId}-v3-01.json` | `spouse-01-v3-01.json` |
+| Mediation caseId 필드 | `case-{caseId}` | `case-spouse-01` |
+| Game events 파일 | `claimPolicies/{caseId}-game-events.json` | `spouse-01-game-events.json` |
 | SolutionOrientation 키 | `{caseId}::{카테고리}::{optIdx}` | `spouse-01::재정투명화::0` |
 
 ---
