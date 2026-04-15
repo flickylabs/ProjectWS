@@ -6963,13 +6963,14 @@ body.pc-mode .pc-log-bubble__text {
 }
 
 body.pc-mode .pc-log-system-explainer {
-  width: min(960px, calc(100% - 48px)) !important;
+  width: min(960px, calc(100% - 108px)) !important;
 }
 
 body.pc-mode .pc-log-system-card {
-  max-width: 100% !important;
-  width: 100% !important;
-  border-radius: 0 !important;
+  max-width: calc(100% - 108px) !important;
+  width: calc(100% - 108px) !important;
+  margin: 0 auto !important;
+  border-radius: 12px !important;
 }
 
 /* Judge bubble — centered with avatar overlapping top */
