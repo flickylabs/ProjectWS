@@ -10654,7 +10654,7 @@ body.pc-mode .pc-minigame-frame__close {
   color: #8b8b9a; cursor: pointer;
 }
 body.pc-mode .pc-minigame-frame__close:hover { color: #c4c4c4; border-color: rgba(255,255,255,0.15); }
-body.pc-mode .pc-minigame-frame__body { padding: 20px; min-height: 300px; position: relative; }
+body.pc-mode .pc-minigame-frame__body { padding: 20px; min-height: 300px; position: relative; width: 100%; box-sizing: border-box; }
 
 /* Countdown overlay */
 body.pc-mode .pc-minigame-countdown {
@@ -11359,6 +11359,7 @@ body.pc-mode .pc-memory-match {
   flex-direction: column;
   gap: 18px;
   color: #f2efe8;
+  width: 100%;
 }
 
 body.pc-mode .pc-memory-match__status {
