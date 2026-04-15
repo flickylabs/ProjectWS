@@ -336,6 +336,8 @@ function replaceABWithNames(caseData: any) {
       .replace(/\bB 아버지/g, `${nameB} 아버지`)
       .replace(/\bA 사업/g, `${nameA} 사업`)
       .replace(/\bB 사업/g, `${nameB} 사업`)
+      .replace(/\bA(?=\s)/g, nameA)
+      .replace(/\bB(?=\s)/g, nameB)
   }
 
   // 식별자 키는 치환 제외

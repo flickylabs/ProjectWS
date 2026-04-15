@@ -60,6 +60,8 @@ d-1(초기) → d-2(조건) → d-3(조건) → ...
 
 ## Session 2: Phase 1 대화 (F3)
 
+> Phase 1은 구 Phase 2(선택지 사전진술)를 포함한다. **별도 phase2 파일은 생성하지 않는다.**
+
 ### 보낼 파일
 - REQUEST.md
 - {caseId}.json (S1 산출물)
@@ -69,11 +71,16 @@ d-1(초기) → d-2(조건) → d-3(조건) → ...
 ```
 # 요청: {caseId} Phase 1 대화 생성
 
+## 중요: Phase 구조 변경
+Phase 2는 Phase 1에 통합되었다.
+Phase 1 파일 하나에 초기 진술 + 선택지 사전진술을 모두 포함한다.
+dialogues/phase2/ 파일은 생성하지 않는다.
+
 ## 입력
 첨부된 {caseId}.json 참조
 
 ## 산출물
-dialogues/phase1/{caseId}.json
+dialogues/phase1/{caseId}.json (phase2 파일 없음)
 
 ## 스키마
 - caseId: "case-{caseId}" (case- 접두어 필수)
@@ -87,11 +94,11 @@ dialogues/phase1/{caseId}.json
 - 당사자 간: 반말 + callTerms 사용
 - 재판관에게 상대 언급: callTerms.toJudge 사용
 
-## 구성
+## 구성 (초기 진술 + 선택지 사전진술 통합)
 1. system: 사건 소개 (배경, 인물 소개, 갈등 상황)
 2. a: 첫 진술 (자기 입장 주장)
 3. b: 첫 진술 (자기 입장 주장)
-4. choice: 플레이어 선택지 3개
+4. choice: 플레이어 선택지 3개 (구 Phase 2의 선택지 기반 사전진술)
 5. 선택에 따른 분기 대화 (branchCondition)
 6. system: 심문 전환 안내
 
@@ -140,7 +147,7 @@ S0: deny / S1: partial / S2: deflect / S3: shift / S4: emotional / S5: confess
 
 ---
 
-## Session 4: ScriptedText — 나머지 14채널
+## Session 4: ScriptedText — 나머지 14채널 + 게임 이벤트 스크립트
 
 ### 보낼 파일
 - REQUEST.md
@@ -150,7 +157,7 @@ S0: deny / S1: partial / S2: deflect / S3: shift / S4: emotional / S5: confess
 ### 프롬프트 핵심
 
 ```
-# 요청: {caseId} ScriptedText 나머지 14채널
+# 요청: {caseId} ScriptedText 나머지 14채널 + 게임 이벤트 스크립트
 
 ## 채널 목록 + 키 패턴
 (scripted-text-channels.md 내용 붙여넣기)
@@ -164,6 +171,24 @@ S0: deny / S1: partial / S2: deflect / S3: shift / S4: emotional / S5: confess
   protective_resolution, procedural_caution
 - judge_question/judge_contradiction: party 필드 없음
 - evidence_discovery: stanceHint/truthLevel 없음
+
+## ★ v3 Fallback 교체 필수 항목
+아래 항목은 v3FallbackGameLoopData가 쟁점명 직접 삽입 또는 LLM 폴백으로
+자동 생성하는 placeholder이다. 사건별 고품질 스크립트로 반드시 교체할 것.
+
+### 게임 이벤트 (ScriptedText 채널)
+- contradiction_pursuit: 모순 이벤트 2건 (사건 맥락에 맞는 모순 발견 대사)
+- interjection: 끼어들기 2건 (상대 진술 중 참지 못하고 끼어드는 대사)
+- emotional_overload: 감정 폭발 2건 (감정이 격해져 터지는 대사)
+
+### evidence_present (126키 전수)
+- 키 패턴: {party}|{evidenceId}|{disputeId}|{lieState}
+- 현재 67% 미작성 — 전체 커버리지 필수
+- 각 키당 variants 3~5개
+
+### transitionBeats (v3GameLoopData)
+- 쟁점별 x lieState별 전이 비트
+- 구조: { disputeId, party, fromState, toState, text, behaviorHint }
 
 ## DossierCard 질문 ID
 (S5에서 생성 예정이므로 임시 dc-1~dc-5 사용, 나중에 매핑)

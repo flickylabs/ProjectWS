@@ -4,6 +4,25 @@
 
 ---
 
+## Phase 구조 (현행)
+
+| Phase | 내용 | 비고 |
+|-------|------|------|
+| Phase 0 | 사건 소개 | 배경/인물 파악 |
+| Phase 1 | 초기 진술 + 선택지 사전진술 | 구 Phase 2 통합 완료 |
+| Phase 2 | **삭제됨** | Phase 1에 통합. phase2 파일이 없는 것이 정상 |
+| Phase 3 | 심문 | 핵심 게임플레이 |
+| Phase 4 | 증거 조사 | |
+| Phase 5 | 재심문 | |
+| Phase 6 | 중재 | |
+| Phase 7 | 판결 | |
+| Result | 점수/칭호/후일담 | |
+
+> **주의**: Phase 2 대화 파일(`dialogues/phase2/`)은 존재하지 않아야 한다.
+> 기존 Phase 2의 선택지 기반 사전진술은 Phase 1 파일에 `choice` speaker로 포함되어 있다.
+
+---
+
 ## 문서 구조
 
 | 파일 | 내용 |
@@ -48,6 +67,21 @@
 | TransitionBeats | `ensureV3RuntimeGameLoopData()` | F1 있으면 fallback |
 | A/B → 실명 치환 | `caseLoader.replaceABWithNames()` | duo 이름 기반 자동 |
 
+### v3 Fallback 대체 필수 항목
+
+`v3FallbackGameLoopData`가 자동 생성하는 placeholder는 반드시 사건별 스크립트로 교체해야 한다.
+Fallback 상태에서는 쟁점명이 직접 삽입되거나 LLM 폴백이 사용되어 품질이 낮다.
+
+| 항목 | Fallback 동작 | 필수 교체 | 비고 |
+|------|-------------|----------|------|
+| contradictions (모순 이벤트) | 쟁점명 직접 삽입 | 사건별 2건 | ScriptedText contradiction_pursuit 채널 |
+| interjections (끼어들기) | 쟁점명 직접 삽입 | 사건별 2건 | ScriptedText interjection 채널 |
+| emotionalOutbursts (감정 폭발) | 쟁점명 직접 삽입 | 사건별 2건 | ScriptedText emotional_overload 채널 |
+| transitionBeats (전이 비트) | lieState x 쟁점 자동 생성 | 사건별 전수 | v3GameLoopData transitionBeats |
+| evidence_present 채널 | LLM 폴백 | 126키/사건 | ScriptedText evidence_present 채널 |
+
+> Fallback 교체 여부는 Phase E QA에서 반드시 확인한다.
+
 ---
 
 ## 2. 생성 절차
@@ -90,6 +124,8 @@ Claude 보정 포인트:
 
 **GPT Pro Session 2** — Phase 1 대화 (F3)
 
+> Phase 1은 구 Phase 2(선택지 사전진술)를 포함한다. 별도 phase2 파일은 생성하지 않는다.
+
 입력:
 - F1 케이스 JSON + 호칭 규칙 ([quality-rules.md](quality-rules.md))
 - 스키마: [schemas.md § Phase 1](schemas.md#3-phase-1-대화)
@@ -98,7 +134,8 @@ Claude 보정 포인트:
 - `phase1/{caseId}.json` (~200줄)
 - caseId: `"case-{caseId}"` 형식 주의
 - speaker: system/a/b/choice
-- 선택지 3개, relatedDisputes 매핑
+- 선택지 3개 (구 Phase 2의 선택지 기반 사전진술 포함), relatedDisputes 매핑
+- **phase2 파일은 생성하지 않음** (Phase 1에 통합됨)
 
 **GPT Pro Session 3** — ScriptedText interrogation (F2 핵심)
 
@@ -108,7 +145,7 @@ Claude 보정 포인트:
 산출물:
 - 쟁점수 × 2당사자 × 6상태 × 3질문유형 = N개 엔트리, 각 5변형
 
-**GPT Pro Session 4** — ScriptedText 나머지 14채널
+**GPT Pro Session 4** — ScriptedText 나머지 14채널 + 게임 이벤트 스크립트
 
 입력:
 - F1 + S3 결과 + 채널 스키마: [scripted-text-channels.md](scripted-text-channels.md)
@@ -117,6 +154,13 @@ Claude 보정 포인트:
 - evidence_present, dossier, witness, aftermath 5종, system_message
 - V4 8채널 (contradiction_pursuit, interjection, emotional_overload, evidence_discovery, trust_action, judge_question, judge_contradiction, system_message_v2)
 - mediation (paths 구조)
+
+**v3 Fallback 교체 항목 (필수)**:
+- contradiction_pursuit: 사건별 모순 이벤트 2건 (fallback의 쟁점명 직접 삽입 교체)
+- interjection: 사건별 끼어들기 2건 (fallback의 쟁점명 직접 삽입 교체)
+- emotional_overload: 사건별 감정 폭발 2건 (fallback의 쟁점명 직접 삽입 교체)
+- evidence_present: 126키 전수 커버 (LLM 폴백 교체, 현재 67% 미작성)
+- transitionBeats: 쟁점별 x lieState별 전이 비트 전수 (v3GameLoopData에 포함)
 
 ### Phase C: 보조 데이터
 
@@ -208,6 +252,15 @@ Claude 작업:
 □ R3  witnessTestimonyData/{caseId}.ts
 □ R4  solutionOrientations.ts 항목 추가
 □ R5  aftermath 5종 (ScriptedText 내)
+
+━━ Fallback 교체 ━━━━━━━━━━━━━━━━━━━━
+□ v3FallbackGameLoopData placeholder 교체 완료
+  □ contradictions 2건
+  □ interjections 2건
+  □ emotionalOutbursts 2건
+  □ transitionBeats 전수
+□ evidence_present 채널 126키 완비
+□ Phase 2 파일 없음 확인 (Phase 1에 통합)
 
 ━━ 검증 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 □ tsc 빌드 성공

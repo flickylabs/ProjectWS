@@ -317,7 +317,7 @@
         "wrong": "비자금 3,000만원은 이준호가 개인 유흥에 쓴 돈이다.",
         "partial": "비자금 출금은 사실이지만, 정확한 사용처는 불확실하다.",
         "truth": "비자금 3,000만원은 개인회생 중인 형에게 현금으로 전달한 돈이었다.",
-        "defer": "사용처를 특정할 수 없다. 판단을 유보한다."
+        "defer": "사용처를 단정할 수 없다. 판단을 유보한다."
       }
     },
     {
@@ -399,7 +399,7 @@
       },
       "verdictOptions": {
         "wrong": "이준호가 먼저 비밀을 만들었으므로, 박지연의 행동은 자구책이었다.",
-        "partial": "양쪽 모두 숨긴 것이 있지만, 선후 관계를 특정하기 어렵다.",
+        "partial": "양쪽 모두 숨긴 것이 있지만, 선후 관계를 가리기 어렵다.",
         "truth": "숨김은 이준호가 먼저, 계좌 감시는 박지연이 먼저. 범죄 행위(위임장 조작)는 박지연 쪽이다.",
         "defer": "누가 먼저인지 판단할 근거가 부족하다. 유보한다."
       }
@@ -735,7 +735,7 @@
       "id": "e-2",
       "name": "블랙박스 GPS / 네비 즐겨찾기",
       "surfaceName": "블랙박스 GPS 기록",
-      "description": "매일 같은 좌표에 정차. 오피스텔 주소 특정. A가 B 차에서 확인.",
+      "description": "매일 같은 좌표에 정차. 오피스텔 주소 확인. A가 B 차에서 확인.",
       "surfaceDescription": "차량 GPS에 같은 좌표 반복 정차 기록이 있다.",
       "type": "device",
       "reliability": "hard",
@@ -749,7 +749,7 @@
       "requires": [],
       "investigationResults": {
         "request_original": "블랙박스 GPS에 매일 같은 좌표에 정차한 기록이 남아 있다. 네비 즐겨찾기에도 같은 주소가 저장되어 있다.",
-        "check_metadata": "정차 빈도는 주 2~3회 이상이며, 체류 시간은 2~3시간이다. 오피스텔 주소로 특정된다.",
+        "check_metadata": "정차 빈도는 주 2~3회 이상이며, 체류 시간은 2~3시간이다. 오피스텔 주소로 확인된다.",
         "restore_context": "후반에는 형네 오피스텔 방문 동선으로 재맥락화된다."
       },
       "subjectParty": "b",
@@ -1267,7 +1267,7 @@
     {
       "id": "e-4",
       "name": "형 문자 스레드",
-      "surfaceName": "형 문자 스레드",
+      "surfaceName": "발신자 미상 문자",
       "description": "'오늘도 부탁해', '가은이 학교 알림' 등. 돌봄 관계 직접 증명.",
       "surfaceDescription": "문자 스레드가 존재한다.",
       "type": "chat",
@@ -1506,7 +1506,7 @@
       "name": "이준호의 계좌 출금 내역",
       "surfaceName": "이준호의 계좌 출금 내역",
       "description": "비자금 계좌에서 3,000만원 현금 출금 기록.",
-      "surfaceDescription": "비자금 계좌 출금 기록이 있다.",
+      "surfaceDescription": "대규모 출금 기록이 있다.",
       "type": "bank",
       "reliability": "hard",
       "completeness": "original",
@@ -3054,7 +3054,7 @@
           "e-5"
         ],
         "cost": 1,
-        "discoveryText": "A가 '목돈이 빠졌다'고 했는데 어떻게 알았지? A가 계좌를 봐왔다는 의미다.",
+        "discoveryText": "박지연이 '목돈이 빠졌다'고 했는데 어떻게 알았지? 박지연이 계좌를 봐왔다는 의미다.",
         "outputId": "dc-4",
         "resultType": "dossier"
       },
@@ -3065,7 +3065,7 @@
           "e-4"
         ],
         "cost": 1,
-        "discoveryText": "B가 말한 '가족'이 형이었다. 문자 내용이 돌봄 관계를 증명한다.",
+        "discoveryText": "이준호가 말한 '가족'이 형이었다. 문자 내용이 돌봄 관계를 증명한다.",
         "outputId": "dc-2",
         "resultType": "dossier"
       }
@@ -3119,7 +3119,7 @@
         {
           "id": "challenged",
           "label": "이의 제기됨",
-          "summary": "상대방이 의미나 범위를 다툼"
+          "summary": "상대측이 의미나 범위를 다툼"
         },
         {
           "id": "misread",

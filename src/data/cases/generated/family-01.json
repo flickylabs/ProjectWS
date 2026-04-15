@@ -488,7 +488,7 @@
           "stage": 2,
           "revealKey": "restore_context",
           "question": {
-            "text": "이 유서만 보면 B가 어머니를 움직인 것처럼 보이는데, 그렇게 믿게 된 결정적 이유는 무엇입니까?",
+            "text": "이 유서만 보면 윤정후 씨가 어머니를 움직인 것처럼 보이는데, 그렇게 믿게 된 결정적 이유는 무엇입니까?",
             "attackVector": "responsibility"
           },
           "label": "맥락복원",
@@ -684,7 +684,7 @@
           "stage": 0,
           "revealKey": "request_original",
           "question": {
-            "text": "B가 말년에 자주 찾아간 건 사실입니까?",
+            "text": "윤정후 씨가 말년에 자주 찾아간 건 사실입니까?",
             "attackVector": "authenticity"
           },
           "label": "기록확인",
@@ -1494,7 +1494,7 @@
           "stage": 0,
           "revealKey": "request_original",
           "question": {
-            "text": "이 생활비 송금, B가 어머니에게 보낸 것 맞습니까?",
+            "text": "이 생활비 송금, 윤정후 씨가 어머니에게 보낸 것 맞습니까?",
             "attackVector": "authenticity"
           },
           "label": "내역확인",
@@ -1504,7 +1504,7 @@
           "stage": 1,
           "revealKey": "check_metadata",
           "question": {
-            "text": "A 사업이 무너질 뻔했을 때 나간 큰돈도 같은 흐름으로 봐야 합니까?",
+            "text": "윤태성 씨 사업이 무너질 뻔했을 때 나간 큰돈도 같은 흐름으로 봐야 합니까?",
             "attackVector": "context"
           },
           "label": "흐름대조",
@@ -2573,7 +2573,7 @@
         "label": "L-4 송금 + 일기장",
         "summary": "전체 동기 완성 리드",
         "nodeType": "derived_note",
-        "noteText": "B는 돈과 비밀 둘 다 떠안고 있었다",
+        "noteText": "윤정후는 돈과 비밀 둘 다 떠안고 있었다",
         "judgeHint": "후속 카드 dc-3과 연결된다.",
         "effects": [
           {
@@ -2638,7 +2638,7 @@
           "e-2"
         ],
         "cost": 1,
-        "discoveryText": "유서의 60:40 비율과 B의 말년 방문 급증이 겹친다. 유서 작성에 B가 개입했다는 의심이 강화된다.",
+        "discoveryText": "유서의 60:40 비율과 윤정후의 말년 방문 급증이 겹친다. 유서 작성에 윤정후가 개입했다는 의심이 강화된다.",
         "outputId": "L-1",
         "resultType": "upgrade"
       },
@@ -2660,7 +2660,7 @@
           "e-6"
         ],
         "cost": 1,
-        "discoveryText": "어머니가 90을 남기려 한 이유가 보인다. 20년간 생활비를 대고 형의 부도까지 막아준 것이 B였다.",
+        "discoveryText": "어머니가 90을 남기려 한 이유가 보인다. 20년간 생활비를 대고 형의 부도까지 막아준 것이 윤정후였다.",
         "outputId": "L-3",
         "resultType": "upgrade"
       },
@@ -2671,7 +2671,7 @@
           "e-7"
         ],
         "cost": 1,
-        "discoveryText": "20년 송금 내역과 어머니 일기장을 합치면... B는 돈과 출생 비밀 두 가지를 모두 떠안고 형을 지켜왔다.",
+        "discoveryText": "20년 송금 내역과 어머니 일기장을 합치면... 윤정후는 돈과 출생 비밀 두 가지를 모두 떠안고 형을 지켜왔다.",
         "outputId": "dc-3",
         "resultType": "dossier"
       },
@@ -2682,7 +2682,7 @@
           "e-4"
         ],
         "cost": 1,
-        "discoveryText": "B가 '말할 수 있는 부분이 아니다'라고 한 이유... 공증 이중 스캔을 보면 자기 몫을 줄인 이유를 말할 수 없었던 것이다.",
+        "discoveryText": "윤정후가 '말할 수 있는 부분이 아니다'라고 한 이유... 공증 이중 스캔을 보면 자기 몫을 줄인 이유를 말할 수 없었던 것이다.",
         "outputId": "L-2",
         "resultType": "upgrade"
       },
@@ -2693,7 +2693,7 @@
           "e-6"
         ],
         "cost": 1,
-        "discoveryText": "어머니가 그렇게 하고 싶어 했다는 말 뒤에... 20년간 B가 보낸 돈이 있었다. 어머니의 뜻에는 근거가 있었다.",
+        "discoveryText": "어머니가 그렇게 하고 싶어 했다는 말 뒤에... 20년간 윤정후가 보낸 돈이 있었다. 어머니의 뜻에는 근거가 있었다.",
         "outputId": "dc-2",
         "resultType": "dossier"
       }
@@ -2747,7 +2747,7 @@
         {
           "id": "challenged",
           "label": "이의 제기됨",
-          "summary": "상대방이 의미나 범위를 다툼"
+          "summary": "상대측이 의미나 범위를 다툼"
         },
         {
           "id": "misread",
@@ -2808,12 +2808,12 @@
         "interpretationChoices": [
           {
             "id": "L-1-A",
-            "text": "B가 치매 어머니를 이용해 유서를 조작했다",
+            "text": "윤정후가 치매 어머니를 이용해 유서를 조작했다",
             "implication": "d-1을 B의 악의적 개입으로 밀어붙인다."
           },
           {
             "id": "L-1-B",
-            "text": "B는 어머니 뜻을 확인하며 조심스럽게 진행했다",
+            "text": "윤정후는 어머니 뜻을 확인하며 조심스럽게 진행했다",
             "implication": "요양보호사 증언과 잘 이어진다."
           },
           {

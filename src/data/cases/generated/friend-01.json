@@ -245,7 +245,7 @@
     "description": "손절한 전 절친이 내 예비신랑에게 계속 연락한다. 결혼 3주 전, 그 장면만 보면 누구라도 친구가 선을 넘었다고 생각한다.",
     "emotionalPressure": 8,
     "affects": "both",
-    "triggerAmplifier": "초반에는 B의 9일간 연락 기록과 A의 단톡방 발언이 격치며 B가 집착하는 사람으로 보인다. 그러나 예비신랑의 선넘는 메시지와 A 아버지의 돈 접근 패턴이 드러나면서 사건의 중심은 집착이 아니라 반복되는 침묵과 낙인으로 뒤집힌다.",
+    "triggerAmplifier": "초반에는 B의 9일간 연락 기록과 A의 단톡방 발언이 겹치며 B가 집착하는 사람으로 보인다. 그러나 예비신랑의 선넘는 메시지와 A 아버지의 돈 접근 패턴이 드러나면서 사건의 중심은 집착이 아니라 반복되는 침묵과 낙인으로 뒤집힌다.",
     "caseNumber": "TE-FriendV401",
     "caseName": "손절한 절친"
   },
@@ -313,7 +313,7 @@
         "wrong": "최수민이 먼저 예비신랑에게 접근했고, 예비신랑은 피해자다.",
         "partial": "양쪽 다 연락이 있었지만, 누가 선을 넘었는지는 애매하다.",
         "truth": "예비신랑이 먼저 선넘는 메시지를 보냈고, 최수민은 거절했다.",
-        "defer": "선후 관계를 특정할 수 없다. 유보한다."
+        "defer": "선후 관계를 가리기 어렵다. 유보한다."
       }
     },
     {
@@ -387,7 +387,7 @@
         "wrong": "과거 손절은 최수민이 변심해서 일방적으로 끊은 것이다.",
         "partial": "손절에 돈 문제가 얽혀 있었지만, 정확한 경위는 알 수 없다.",
         "truth": "송다은 아버지가 최수민에게 투자 명목으로 돈을 받아간 사기가 원인이었다. 최수민은 차마 말 못하고 악역을 자처했다.",
-        "defer": "손절의 진짜 원인을 특정하기 어렵다. 유보한다."
+        "defer": "손절의 진짜 원인을 가리기 어렵다. 유보한다."
       }
     },
     {
@@ -441,7 +441,7 @@
       "name": "B→예비신랑 연락 기록",
       "surfaceName": "연락 기록",
       "description": "최근 9일 동안 B가 예비신랑에게 전화 6번, 문자 11번을 보냈고 대부분 답이 없거나 짧게 끊긴 기록.",
-      "surfaceDescription": "B가 예비신랑에게 보낸 연락 기록이 존재한다.",
+      "surfaceDescription": "최수민 씨가 예비신랑에게 보낸 연락 기록이 존재한다.",
       "type": "log",
       "reliability": "hard",
       "completeness": "original",
@@ -463,7 +463,7 @@
           "stage": 0,
           "revealKey": "request_original",
           "question": {
-            "text": "이 연락 기록, B가 먼저 보낸 것 맞습니까?",
+            "text": "이 연락 기록, 최수민 씨가 먼저 보낸 것 맞습니까?",
             "attackVector": "authenticity"
           },
           "label": "기록확인",
@@ -741,7 +741,7 @@
           "stage": 1,
           "revealKey": "check_metadata",
           "question": {
-            "text": "직접 확인하기 전에 B를 이런 식으로 설명한 이유가 무엇입니까?",
+            "text": "직접 확인하기 전에 최수민 씨를 이런 식으로 설명한 이유가 무엇입니까?",
             "attackVector": "context"
           },
           "label": "순서대조",
@@ -751,7 +751,7 @@
           "stage": 2,
           "revealKey": "restore_context",
           "question": {
-            "text": "예전 일까지 끌어와 B를 같은 사람으로 못 박은 건, 화가 나서였습니까 아니면 확신이 있어서였습니까?",
+            "text": "예전 일까지 끌어와 최수민 씨를 같은 사람으로 못 박은 건, 화가 나서였습니까 아니면 확신이 있어서였습니까?",
             "attackVector": "responsibility"
           },
           "label": "책임추궁",
@@ -952,7 +952,7 @@
           "stage": 1,
           "revealKey": "check_metadata",
           "question": {
-            "text": "B가 숨긴 '돈 문제'는 무엇이었다고 생각했습니까?",
+            "text": "최수민 씨가 숨긴 '돈 문제'는 무엇이었다고 생각했습니까?",
             "attackVector": "context"
           },
           "label": "맥락대조",
@@ -962,7 +962,7 @@
           "stage": 2,
           "revealKey": "restore_context",
           "question": {
-            "text": "A는 왜 B가 끝까지 말하지 않은 이유를 한 번도 다시 묻지 않았습니까?",
+            "text": "송다은 씨는 왜 최수민 씨가 끝까지 말하지 않은 이유를 한 번도 다시 묻지 않았습니까?",
             "attackVector": "responsibility"
           },
           "label": "침묵추궁",
@@ -1134,7 +1134,7 @@
       "name": "예비신랑의 선넘는 메시지와 B의 거절 답장",
       "surfaceName": "예비신랑 메시지",
       "description": "예비신랑이 '다은이 몰래 커피 한 번 보자', '너 같은 스타일이 원래 내 이상형' 같은 메시지를 보냈고, B는 '친구 남자친구니까 이러지 마'라고 끊어낸 기록.",
-      "surfaceDescription": "예비신랑과 B 사이의 메시지 기록이 존재한다.",
+      "surfaceDescription": "예비신랑과 최수민 씨 사이의 메시지 기록이 존재한다.",
       "type": "chat",
       "reliability": "hard",
       "completeness": "original",
@@ -1169,7 +1169,7 @@
           "stage": 1,
           "revealKey": "check_metadata",
           "question": {
-            "text": "그런데도 B가 집착한 쪽처럼 보이게 된 이유는 무엇입니까?",
+            "text": "그런데도 최수민 씨가 집착한 쪽처럼 보이게 된 이유는 무엇입니까?",
             "attackVector": "context"
           },
           "label": "선후대조",
@@ -1179,7 +1179,7 @@
           "stage": 2,
           "revealKey": "restore_context",
           "question": {
-            "text": "B가 예비신랑에게 연락한 건 꼬시려는 게 아니라 경고였다는 해석을 부정할 수 있습니까?",
+            "text": "최수민 씨가 예비신랑에게 연락한 건 꼬시려는 게 아니라 경고였다는 해석을 부정할 수 있습니까?",
             "attackVector": "responsibility"
           },
           "label": "의도복원",
@@ -1334,10 +1334,10 @@
     },
     {
       "id": "e-5",
-      "name": "A 아버지와 예비신랑의 문자",
-      "surfaceName": "A 아버지 문자",
+      "name": "송다은 아버지와 예비신랑의 문자",
+      "surfaceName": "송다은 씨 아버지 문자",
       "description": "A 아버지가 '결혼 전에 잠깐만 도와주면 금방 돌려준다', '사위 될 사람이면 이 정도는 믿어야지'라며 돈 얘기를 꺼낸 기록. B가 연락하던 시기와 격침.",
-      "surfaceDescription": "A 아버지와 예비신랑 사이의 문자 기록이 존재한다.",
+      "surfaceDescription": "송다은 씨 아버지와 예비신랑 사이의 문자 기록이 존재한다.",
       "type": "chat",
       "reliability": "hard",
       "completeness": "original",
@@ -1353,8 +1353,8 @@
       "requiredLieState": "S2",
       "investigationResults": {
         "request_original": "A 아버지가 '결혼 전에 잠깐만 도와주면 금방 돌려준다'는 문자를 먼저 보냈다.",
-        "check_metadata": "'사위 될 사람이면 이 정도는 믿어야지'라는 추가 메시지가 있고, B가 연락하던 시기와 정확히 격친다.",
-        "restore_context": "B가 예비신랑에게 연락한 시점과 A 아버지의 돈 접근 시점이 격치며 경고 동기가 확인된다."
+        "check_metadata": "'사위 될 사람이면 이 정도는 믿어야지'라는 추가 메시지가 있고, B가 연락하던 시기와 정확히 겹친다.",
+        "restore_context": "B가 예비신랑에게 연락한 시점과 A 아버지의 돈 접근 시점이 겹치며 경고 동기가 확인된다."
       },
       "subjectParty": "both",
       "investigationStages": [
@@ -1372,7 +1372,7 @@
           "stage": 1,
           "revealKey": "check_metadata",
           "question": {
-            "text": "B가 이 흐름을 보고 예비신랑에게 경고하려 했다고 볼 수 있습니까?",
+            "text": "최수민 씨가 이 흐름을 보고 예비신랑에게 경고하려 했다고 볼 수 있습니까?",
             "attackVector": "context"
           },
           "label": "시점대조",
@@ -1382,7 +1382,7 @@
           "stage": 2,
           "revealKey": "restore_context",
           "question": {
-            "text": "A에게 직접 말할 수 없었다면, B에게 남은 다른 길이 정말 있었습니까?",
+            "text": "송다은 씨에게 직접 말할 수 없었다면, 최수민 씨에게 남은 다른 길이 정말 있었습니까?",
             "attackVector": "responsibility"
           },
           "label": "경고복원",
@@ -1545,7 +1545,7 @@
       "name": "과거 송금 영수증 + 문자",
       "surfaceName": "과거 송금 기록",
       "description": "A 아버지가 B에게 '급한 투자금이니 한 달만 쓰고 갚겠다'고 받아간 돈의 이체 내역과, 이후 차일피일 미루며 갚지 않은 문자.",
-      "surfaceDescription": "과거 B와 A 아버지 사이의 송금 기록과 문자가 존재한다.",
+      "surfaceDescription": "과거 최수민 씨와 송다은 씨 아버지 사이의 송금 기록과 문자가 존재한다.",
       "type": "bank",
       "reliability": "hard",
       "completeness": "original",
@@ -1570,7 +1570,7 @@
           "stage": 0,
           "revealKey": "request_original",
           "question": {
-            "text": "이 돈을 B가 A 아버지에게 보낸 사실 맞습니까?",
+            "text": "이 돈을 최수민 씨가 송다은 씨 아버지에게 보낸 사실 맞습니까?",
             "attackVector": "authenticity"
           },
           "label": "내역확인",
@@ -1580,7 +1580,7 @@
           "stage": 1,
           "revealKey": "check_metadata",
           "question": {
-            "text": "그때도 A는 아무것도 몰랐습니까?",
+            "text": "그때도 송다은 씨는 아무것도 몰랐습니까?",
             "attackVector": "context"
           },
           "label": "상환대조",
@@ -1590,7 +1590,7 @@
           "stage": 2,
           "revealKey": "restore_context",
           "question": {
-            "text": "왜 B는 '네 아버지가 내 돈을 가져갔다'는 말을 끝내 하지 않았습니까?",
+            "text": "왜 최수민 씨는 '네 아버지가 내 돈을 가져갔다'는 말을 끝내 하지 않았습니까?",
             "attackVector": "responsibility"
           },
           "label": "침묵추궁",
@@ -1769,7 +1769,7 @@
       "requiredLieState": "S3",
       "investigationResults": {
         "request_original": "과거 B에게 보낸 문구와 현재 예비신랑에게 보낸 문구가 거의 동일하다.",
-        "check_metadata": "두 시점 사이에 B가 말 대신 혼자 끊고 사라진 타이밍이 정확히 격친다.",
+        "check_metadata": "두 시점 사이에 B가 말 대신 혼자 끊고 사라진 타이밍이 정확히 겹친다.",
         "restore_context": "A 아버지의 돈 접근 패턴이 반복되고 있으며 B는 이번에도 혼자 막으려 했다."
       },
       "subjectParty": "both",
@@ -1778,7 +1778,7 @@
           "stage": 0,
           "revealKey": "request_original",
           "question": {
-            "text": "과거와 현재의 문구와 시점이 이렇게 격치는 것, 우연이라고 보십니까?",
+            "text": "과거와 현재의 문구와 시점이 이렇게 겹치는 것, 우연이라고 보십니까?",
             "attackVector": "authenticity"
           },
           "label": "패턴확인",
@@ -1788,7 +1788,7 @@
           "stage": 1,
           "revealKey": "check_metadata",
           "question": {
-            "text": "B가 이번 연락을 집착이 아니라 반복되는 패턴을 막으려 한 시도로 볼 수 있습니까?",
+            "text": "최수민 씨가 이번 연락을 집착이 아니라 반복되는 패턴을 막으려 한 시도로 볼 수 있습니까?",
             "attackVector": "context"
           },
           "label": "시점대조",
@@ -2609,9 +2609,9 @@
       {
         "id": "L-3",
         "label": "L-3 아버지 패턴 리드",
-        "summary": "A 아버지 패턴 확정",
+        "summary": "송다은 아버지 패턴 확정",
         "nodeType": "derived_note",
-        "noteText": "A 아버지의 돈 접근은 처음이 아니다",
+        "noteText": "송다은 아버지의 돈 접근은 처음이 아니다",
         "judgeHint": "후속 카드 dc-2와 연결된다.",
         "effects": [
           {
@@ -2623,9 +2623,9 @@
       {
         "id": "L-4",
         "label": "L-4 경고 결론 리드",
-        "summary": "B의 연락은 경고 결론 강화",
+        "summary": "최수민의 연락은 경고 결론 강화",
         "nodeType": "derived_note",
-        "noteText": "B는 두 번 다 말하지 못해 악역이 됐다",
+        "noteText": "최수민은 두 번 다 말하지 못해 악역이 됐다",
         "judgeHint": "사건 전체 구조를 뒤집는 최종 리드.",
         "effects": [
           {
@@ -2637,9 +2637,9 @@
       {
         "id": "dc-1",
         "label": "dc-1 왜 바로 말하지 않았는가",
-        "summary": "예비신랑이 먼저 선을 넘었다면 왜 바로 A에게 말하지 않았는가",
+        "summary": "예비신랑이 먼저 선을 넘었다면 왜 바로 송다은에게 말하지 않았는가",
         "nodeType": "derived_note",
-        "noteText": "예비신랑이 먼저 선을 넘었다면, 왜 그때 바로 A에게 말하지 않았습니까?",
+        "noteText": "예비신랑이 먼저 선을 넘었다면, 왜 그때 바로 송다은에게 말하지 않았습니까?",
         "effects": [
           {
             "kind": "unlock_note",
@@ -2650,9 +2650,9 @@
       {
         "id": "dc-2",
         "label": "dc-2 또 혼자 막으려 했는가",
-        "summary": "A 아버지가 또 같은 방식으로 돈 얘기를 꺼냈다면 왜 또 혼자 막으려 했는가",
+        "summary": "송다은 아버지가 또 같은 방식으로 돈 얘기를 꺼냈다면 왜 또 혼자 막으려 했는가",
         "nodeType": "derived_note",
-        "noteText": "A 아버지가 또 같은 방식으로 돈 얘기를 꺼냈다면, 당신은 이번에도 왜 혼자 막으려 했습니까?",
+        "noteText": "송다은 아버지가 또 같은 방식으로 돈 얘기를 꺼냈다면, 당신은 이번에도 왜 혼자 막으려 했습니까?",
         "effects": [
           {
             "kind": "unlock_note",
@@ -2682,7 +2682,7 @@
           "e-2"
         ],
         "cost": 1,
-        "discoveryText": "연락 기록과 단톡방 캡처를 대조하면, B의 연락 사실이 확인도 없이 '집착'으로 프레이밍된 과정이 보인다.",
+        "discoveryText": "연락 기록과 단톡방 캡처를 대조하면, 최수민의 연락 사실이 확인도 없이 '집착'으로 프레이밍된 과정이 보인다.",
         "outputId": "L-1",
         "resultType": "upgrade"
       },
@@ -2704,7 +2704,7 @@
           "e-6"
         ],
         "cost": 1,
-        "discoveryText": "A 아버지가 예비신랑에게 보낸 문자와 과거 B에게 보낸 차용 문자의 패턴이 거의 동일하다.",
+        "discoveryText": "송다은 아버지가 예비신랑에게 보낸 문자와 과거 최수민에게 보낸 차용 문자의 패턴이 거의 동일하다.",
         "outputId": "dc-2",
         "resultType": "dossier"
       },
@@ -2715,7 +2715,7 @@
           "e-7"
         ],
         "cost": 1,
-        "discoveryText": "예비신랑의 접근과 대조표를 합치면, B의 연락이 경고였다는 결론이 강화된다.",
+        "discoveryText": "예비신랑의 접근과 대조표를 합치면, 최수민의 연락이 경고였다는 결론이 강화된다.",
         "outputId": "L-4",
         "resultType": "upgrade"
       },
@@ -2726,7 +2726,7 @@
           "e-2"
         ],
         "cost": 1,
-        "discoveryText": "A의 '또 내 남자한테 연락한다'는 발언이 단톡방에서 어떻게 확산됐는지 경로가 확인된다.",
+        "discoveryText": "송다은의 '또 내 남자한테 연락한다'는 발언이 단톡방에서 어떻게 확산됐는지 경로가 확인된다.",
         "outputId": "dc-3",
         "resultType": "dossier"
       },
@@ -2737,7 +2737,7 @@
           "e-7"
         ],
         "cost": 1,
-        "discoveryText": "과거 카톡과 대조표를 합치면, B가 두 번 다 말하지 못해 악역이 된 구조가 보인다.",
+        "discoveryText": "과거 카톡과 대조표를 합치면, 최수민이 두 번 다 말하지 못해 악역이 된 구조가 보인다.",
         "outputId": "L-4",
         "resultType": "upgrade"
       }
@@ -2791,7 +2791,7 @@
         {
           "id": "challenged",
           "label": "이의 제기됨",
-          "summary": "상대방이 의미나 범위를 다투"
+          "summary": "상대측이 의미나 범위를 다투"
         },
         {
           "id": "misread",
@@ -2843,12 +2843,12 @@
         "interpretationChoices": [
           {
             "id": "L-1-A",
-            "text": "B가 집착한 것이다",
+            "text": "최수민이 집착한 것이다",
             "implication": "d-1을 집착으로 밀어붙인다."
           },
           {
             "id": "L-1-B",
-            "text": "A가 먼저 프레이밍한 것이다",
+            "text": "송다은이 먼저 프레이밍한 것이다",
             "implication": "d-5와 연결된다."
           },
           {
@@ -2879,7 +2879,7 @@
           },
           {
             "id": "L-2-B",
-            "text": "그래도 B가 연락을 이어간 건 문제다",
+            "text": "그래도 최수민이 연락을 이어간 건 문제다",
             "implication": "d-1의 방식 적절성을 묻는다."
           },
           {
@@ -2905,7 +2905,7 @@
         "interpretationChoices": [
           {
             "id": "L-3-A",
-            "text": "A 아버지의 사기 패턴이 맞다",
+            "text": "송다은 아버지의 사기 패턴이 맞다",
             "implication": "d-3, d-4를 확정한다."
           },
           {
@@ -2915,7 +2915,7 @@
           },
           {
             "id": "L-3-C",
-            "text": "B가 직접 말했어야 한다",
+            "text": "최수민이 직접 말했어야 한다",
             "implication": "침묵의 책임을 묻는다."
           }
         ]

@@ -182,6 +182,8 @@
 
 ## 3. Phase 1 대화
 
+> Phase 1은 구 Phase 2(선택지 사전진술)를 포함한다. `dialogues/phase2/` 파일은 존재하지 않아야 정상이다.
+
 경로: `src/data/dialogues/phase1/{caseId}.json`
 
 ### 최상위

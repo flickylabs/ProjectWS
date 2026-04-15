@@ -135,3 +135,15 @@ node tests/run-84-headless.cjs --category {category}
 □ 증인 speechStyle이 증언 텍스트에 반영됨
 □ correctResponsibility 합계 = 100 (모든 쟁점)
 ```
+
+### v3 Fallback 교체 검증
+
+```
+□ v3FallbackGameLoopData placeholder 교체 완료
+  □ contradictions 2건 (쟁점명 직접 삽입이 아닌 사건별 스크립트)
+  □ interjections 2건
+  □ emotionalOutbursts 2건
+  □ transitionBeats 전수 (쟁점별 x lieState별)
+□ evidence_present 채널 126키 완비 (LLM 폴백 의존 0건)
+□ Phase 2 파일 없음 확인 (Phase 1에 통합, dialogues/phase2/ 디렉토리 해당 파일 없어야 정상)
+```
