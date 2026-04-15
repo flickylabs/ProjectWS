@@ -432,6 +432,19 @@ export function playMoleBossHit() {
   })
 }
 
+/** 두더지: 시민 잡음 (경고음) */
+export function playMoleCivilianHit() {
+  withAudioContext((ctx) => {
+    const t = ctx.currentTime
+    ;[400, 300, 200].forEach((freq, i) => {
+      const osc = ctx.createOscillator(); const gain = ctx.createGain()
+      osc.type = 'sawtooth'; osc.frequency.value = freq
+      gain.gain.setValueAtTime(0.1, t + i * 0.08); gain.gain.exponentialRampToValueAtTime(0.001, t + i * 0.08 + 0.1)
+      osc.connect(gain); gain.connect(ctx.destination); osc.start(t + i * 0.08); osc.stop(t + i * 0.08 + 0.1)
+    })
+  })
+}
+
 /** 두더지: 두더지 놓침 (시간 초과로 내려감) */
 export function playMoleEscape() {
   withAudioContext((ctx) => {

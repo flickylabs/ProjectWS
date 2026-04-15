@@ -5,6 +5,7 @@ import {
   playMoleHit,
   playMoleMiss,
   playMoleBossHit,
+  playMoleCivilianHit,
   playMoleEscape,
   playTimerWarning,
   playMiniGameSuccess,
@@ -316,7 +317,7 @@ export default function WhackAMoleGame() {
     showFeedback(activeMole.kind, FEEDBACK_LABELS[activeMole.kind])
 
     if (activeMole.kind === 'civilian') {
-      playMoleMiss()
+      playMoleCivilianHit()
       setDangerPulse((current) => current + 1)
       setShakePulse((current) => current + 1)
       return

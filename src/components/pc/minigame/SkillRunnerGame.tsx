@@ -226,14 +226,20 @@ function spawnSegmentContent(state: GameState, config: RoundConfig, segment: Gro
       })
     } else if (roll < config.obstacleChance + config.itemChance) {
       const cluster = Math.random() < 0.4 ? (Math.random() < 0.55 ? 2 : 3) : 1
+      // 바닥(30%) vs 점프 높이(70%) — 확실히 구분
+      const isGroundLevel = Math.random() < 0.3
+      const baseY = isGroundLevel
+        ? GROUND_Y - randomBetween(32, 48) // 바닥 바로 위 — 점프 없이 수집
+        : GROUND_Y - randomBetween(110, 180) // 점프 필요 높이
+
       for (let index = 0; index < cluster; index += 1) {
         const offsetX = index * 34
-        const arcLift = cluster > 1 ? Math.sin((index / Math.max(1, cluster - 1)) * Math.PI) * 18 : 0
+        const arcLift = cluster > 1 ? Math.sin((index / Math.max(1, cluster - 1)) * Math.PI) * 14 : 0
         state.items.push({
           id: nextId(state),
           kind: ITEM_KINDS[Math.floor(Math.random() * ITEM_KINDS.length)],
           x: cursor + offsetX,
-          y: GROUND_Y - randomBetween(60, 120) - arcLift,
+          y: baseY - arcLift,
           width: 32,
           height: 32,
           bobPhase: randomBetween(0, Math.PI * 2),
