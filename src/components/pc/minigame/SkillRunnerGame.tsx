@@ -438,17 +438,37 @@ function updateGame(state: GameState, config: RoundConfig, input: InputState, fr
   }
 
   support = getSupportingSegment(state)
-  const feetY = player.y + PLAYER_HEIGHT
-  const supportY = support?.y ?? GROUND_Y
-  if (support && player.velocityY >= 0 && feetY >= supportY - 4) {
-    if (!player.grounded) {
-      const impact = clamp(Math.abs(player.velocityY) / 18, 0.25, 1)
-      player.landingTimer = Math.max(player.landingTimer, 0.09 + impact * 0.12)
+  if (support) {
+    const feetY = player.y + PLAYER_HEIGHT
+    const supportY = support.y ?? GROUND_Y
+    if (player.velocityY >= 0 && feetY >= supportY - 4) {
+      if (!player.grounded) {
+        const impact = clamp(Math.abs(player.velocityY) / 18, 0.25, 1)
+        player.landingTimer = Math.max(player.landingTimer, 0.09 + impact * 0.12)
+      }
+      player.grounded = true
+      player.y = supportY - PLAYER_HEIGHT
+      player.velocityY = 0
+      player.jumpBoostRemaining = 0
     }
-    player.grounded = true
-    player.y = supportY - PLAYER_HEIGHT
-    player.velocityY = 0
-    player.jumpBoostRemaining = 0
+  }
+
+  // 구멍에 빠져 화면 밖으로 떨어지면 라이프 -1
+  if (player.y > VIEW_HEIGHT + 20) {
+    state.lives -= 1
+    state.sfxEvents.push('hit')
+    if (state.lives <= 0) {
+      setGameResult(state, 'failed', '구멍에 빠졌습니다')
+    } else {
+      // 부활: 현재 카메라 위치에서 안전한 세그먼트 위로 리셋
+      player.y = GROUND_Y - PLAYER_HEIGHT - 60
+      player.velocityY = 0
+      player.grounded = false
+      player.airJumps = 0
+      player.hitTimer = 0.3
+      player.invulnerableTimer = 1.5
+      state.screenShake = 8
+    }
   }
 
   const cullLeft = state.cameraX - 240
