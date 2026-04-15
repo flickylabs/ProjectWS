@@ -2855,6 +2855,16 @@
           "e-7"
         ],
         "visibility": "derived"
+      },
+      {
+        "id": "L-stmt-cross",
+        "type": "derived_note",
+        "label": "양쪽의 숨김이 부딪히다",
+        "visibility": "derived",
+        "linkedDisputeIds": [
+          "d-1",
+          "h-d3"
+        ]
       }
     ],
     "outputs": [
@@ -3000,6 +3010,20 @@
             "unlockNodeId": "h-d4"
           }
         ]
+      },
+      {
+        "id": "L-stmt-cross",
+        "label": "양쪽의 숨김이 부딪히다",
+        "summary": "한쪽은 가족 일이라 숨기고, 다른 쪽은 제 몫을 지키려 먼저 움직였다.",
+        "nodeType": "derived_note",
+        "effects": [
+          {
+            "kind": "unlock_note",
+            "unlockNodeId": "L-stmt-cross"
+          }
+        ],
+        "judgeHint": "서로 숨긴 이유가 다르지만, 둘 다 상대에게 먼저 말하지 않았다는 점은 같다.",
+        "noteText": "이준호는 형네 일이라 입을 다물었고, 박지연은 의심이 확신이 된 뒤 혼자 적금을 움직였다. 신뢰가 깨진 순서를 따지면 양쪽 모두 먼저 말하지 않은 쪽이다."
       }
     ],
     "recipes": [
@@ -3068,6 +3092,17 @@
         "discoveryText": "이준호가 말한 '가족'이 형이었다. 문자 내용이 돌봄 관계를 증명한다.",
         "outputId": "dc-2",
         "resultType": "dossier"
+      },
+      {
+        "id": "combine-7",
+        "inputs": [
+          "stmt-b-family",
+          "stmt-a-protect"
+        ],
+        "cost": 1,
+        "discoveryText": "\"가족 쪽 일\"이라는 말과 \"제 몫을 지키려 했다\"는 말을 나란히 놓으면, 서로에게 먼저 말하지 않은 이유가 겹친다.",
+        "outputId": "L-stmt-cross",
+        "resultType": "upgrade"
       }
     ]
   },

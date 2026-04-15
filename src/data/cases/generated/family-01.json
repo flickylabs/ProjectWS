@@ -2578,6 +2578,16 @@
           "e-2",
           "e-3"
         ]
+      },
+      {
+        "id": "L-stmt-cross",
+        "type": "derived_note",
+        "label": "자격과 침묵이 부딪히다",
+        "visibility": "derived",
+        "linkedDisputeIds": [
+          "d-1",
+          "d-4"
+        ]
       }
     ],
     "outputs": [
@@ -2741,6 +2751,20 @@
         ],
         "judgeHint": "방문과 증언이 같은 시기를 가리킨다. 돌봄이었는지 개입이었는지 갈라지는 지점.",
         "noteText": "방문 횟수 증가와 종이를 읽어드렸다는 증언이 같은 시기에 겹치며, 그것이 어머니 보호였는지 형 배제였는지가 핵심 분기점이 된다"
+      },
+      {
+        "id": "L-stmt-cross",
+        "label": "자격과 침묵이 부딪히다",
+        "summary": "형은 모시고 산 사람의 자격을 내세우고, 동생은 말할 수 없는 이유를 품고 있다.",
+        "nodeType": "derived_note",
+        "effects": [
+          {
+            "kind": "unlock_note",
+            "unlockNodeId": "L-stmt-cross"
+          }
+        ],
+        "judgeHint": "왜 40이냐는 분노와, 말할 수 없다는 침묵 사이에 아직 드러나지 않은 사정이 있다.",
+        "noteText": "윤태성은 돌봄의 대가로 상속을 당연시하고, 윤정후는 그 대가를 인정하면서도 입을 열 수 없는 이유가 있다. 침묵의 이유가 풀리면 비율의 의미가 달라진다."
       }
     ],
     "recipes": [
@@ -2863,6 +2887,17 @@
         "cost": 1,
         "discoveryText": "요양원 방문기록의 횟수 증가 시점과 전 요양보호사가 종이를 읽어드리는 장면을 목격한 시점이 겹친다.",
         "outputId": "L-6",
+        "resultType": "upgrade"
+      },
+      {
+        "id": "combine-12",
+        "inputs": [
+          "stmt-a-heir",
+          "stmt-b-silence"
+        ],
+        "cost": 1,
+        "discoveryText": "\"모시고 산 건 나인데 왜 40이냐\"와 \"말할 수 있는 부분이 아닙니다\"를 맞대면, 비율 뒤에 숨은 사정이 있다는 흐름이 보인다.",
+        "outputId": "L-stmt-cross",
         "resultType": "upgrade"
       }
     ]
