@@ -1,0 +1,119 @@
+{
+  "spouse-01": {
+    "note": "이 구조가 현재 placeholder로 사용 중 — 사건 맥락에 맞는 텍스트로 교체 필요",
+    "contradictions_placeholder": [
+      {
+        "id": "spouse-01-contradiction-1",
+        "axis": "오피스텔 방문과 새벽 전화",
+        "statementA": "박지연은 오피스텔 방문과 새벽 전화 문제를 자기 쪽 피해로 먼저 고정하려 한다.",
+        "statementB": "이준호은 오피스텔 방문과 새벽 전화 문제는 결과보다 경위를 같이 봐야 한다고 맞선다.",
+        "npcReaction": "오피스텔 방문과 새벽 전화 문제를 두고 결과 해석과 경위 해석이 갈라진다."
+      },
+      {
+        "id": "spouse-01-contradiction-2",
+        "axis": "비자금 3,000만원 출금",
+        "statementA": "박지연은 비자금 3,000만원 출금 문제까지 보면 상대 설명이 더 수상해진다고 말한다.",
+        "statementB": "이준호은 비자금 3,000만원 출금 문제를 떼어 내면 판단이 기울어진다고 반박한다.",
+        "npcReaction": "비자금 3,000만원 출금 문제가 앞선 갈등과 이어지면서 한쪽 주장만으로 정리하기 어려워진다."
+      }
+    ],
+    "interjections_placeholder": [
+      {
+        "interruptor": "a",
+        "line": "박지연은 핵심 쟁점 문제에서 자기 억울함이 빠졌다고 끼어든다."
+      },
+      {
+        "interruptor": "b",
+        "line": "이준호은 다른 쟁점까지 같이 봐야 한다고 말을 자른다."
+      }
+    ],
+    "emotionalOutbursts_placeholder": [
+      {
+        "party": "a",
+        "line": "박지연은 전부 악의로만 읽히는 순간 감정이 크게 흔들린다."
+      },
+      {
+        "party": "b",
+        "line": "이준호은 숨긴 이유까지 단정당하자 말끝이 크게 흔들린다."
+      }
+    ]
+  },
+  "family-01": {
+    "note": "이 구조가 현재 placeholder로 사용 중 — 사건 맥락에 맞는 텍스트로 교체 필요",
+    "contradictions_placeholder": [
+      {
+        "id": "family-01-contradiction-1",
+        "axis": "유서 작성과 판단 능력",
+        "statementA": "윤태성은 유서 작성과 판단 능력 문제를 자기 쪽 피해로 먼저 고정하려 한다.",
+        "statementB": "윤정후은 유서 작성과 판단 능력 문제는 결과보다 경위를 같이 봐야 한다고 맞선다.",
+        "npcReaction": "유서 작성과 판단 능력 문제를 두고 결과 해석과 경위 해석이 갈라진다."
+      },
+      {
+        "id": "family-01-contradiction-2",
+        "axis": "60:40 유서의 진짜 의도",
+        "statementA": "윤태성은 60:40 유서의 진짜 의도 문제까지 보면 상대 설명이 더 수상해진다고 말한다.",
+        "statementB": "윤정후은 60:40 유서의 진짜 의도 문제를 떼어 내면 판단이 기울어진다고 반박한다.",
+        "npcReaction": "60:40 유서의 진짜 의도 문제가 앞선 갈등과 이어지면서 한쪽 주장만으로 정리하기 어려워진다."
+      }
+    ],
+    "interjections_placeholder": [
+      {
+        "interruptor": "a",
+        "line": "윤태성은 핵심 쟁점 문제에서 자기 억울함이 빠졌다고 끼어든다."
+      },
+      {
+        "interruptor": "b",
+        "line": "윤정후은 다른 쟁점까지 같이 봐야 한다고 말을 자른다."
+      }
+    ],
+    "emotionalOutbursts_placeholder": [
+      {
+        "party": "a",
+        "line": "윤태성은 전부 악의로만 읽히는 순간 감정이 크게 흔들린다."
+      },
+      {
+        "party": "b",
+        "line": "윤정후은 숨긴 이유까지 단정당하자 말끝이 크게 흔들린다."
+      }
+    ]
+  },
+  "friend-01": {
+    "note": "이 구조가 현재 placeholder로 사용 중 — 사건 맥락에 맞는 텍스트로 교체 필요",
+    "contradictions_placeholder": [
+      {
+        "id": "friend-01-contradiction-1",
+        "axis": "9일간의 연락 의도",
+        "statementA": "송다은은 9일간의 연락 의도 문제를 자기 쪽 피해로 먼저 고정하려 한다.",
+        "statementB": "최수민은 9일간의 연락 의도 문제는 결과보다 경위를 같이 봐야 한다고 맞선다.",
+        "npcReaction": "9일간의 연락 의도 문제를 두고 결과 해석과 경위 해석이 갈라진다."
+      },
+      {
+        "id": "friend-01-contradiction-2",
+        "axis": "예비신랑의 선넘는 접근",
+        "statementA": "송다은은 예비신랑의 선넘는 접근 문제까지 보면 상대 설명이 더 수상해진다고 말한다.",
+        "statementB": "최수민은 예비신랑의 선넘는 접근 문제를 떼어 내면 판단이 기울어진다고 반박한다.",
+        "npcReaction": "예비신랑의 선넘는 접근 문제가 앞선 갈등과 이어지면서 한쪽 주장만으로 정리하기 어려워진다."
+      }
+    ],
+    "interjections_placeholder": [
+      {
+        "interruptor": "a",
+        "line": "송다은은 핵심 쟁점 문제에서 자기 억울함이 빠졌다고 끼어든다."
+      },
+      {
+        "interruptor": "b",
+        "line": "최수민은 다른 쟁점까지 같이 봐야 한다고 말을 자른다."
+      }
+    ],
+    "emotionalOutbursts_placeholder": [
+      {
+        "party": "a",
+        "line": "송다은은 전부 악의로만 읽히는 순간 감정이 크게 흔들린다."
+      },
+      {
+        "party": "b",
+        "line": "최수민은 숨긴 이유까지 단정당하자 말끝이 크게 흔들린다."
+      }
+    ]
+  }
+}
