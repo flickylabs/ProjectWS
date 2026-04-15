@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
-import { useStore } from '../../../store/useGameStore'
+import { useStore, useGameStore } from '../../../store/useGameStore'
 import type { DialogueEntry as DialogueEntryType, EmotionalPhase } from '../../../types'
 import PCSvgIcon from '../icons/PCSvgIcon'
 import { getPcFaceSymbolId } from '../icons/pcIconUtils'
@@ -44,7 +44,7 @@ function useRevealText(text: string, animate: boolean) {
   return displayText
 }
 
-function MessageBubble({ entry, animate }: { entry: DialogueEntryType; animate: boolean }) {
+function MessageBubble({ entry, animate, combinableTexts }: { entry: DialogueEntryType; animate: boolean; combinableTexts?: Set<string> }) {
   const caseData = useStore((s) => s.caseData)
   const agentA = useStore((s) => s.agentA)
   const agentB = useStore((s) => s.agentB)
@@ -249,7 +249,7 @@ function MessageBubble({ entry, animate }: { entry: DialogueEntryType; animate: 
       </div>
       <div className="pc-log-stack">
         <button
-          className={`pc-log-bubble ${isPartyA ? 'is-a' : 'is-b'}${entry.isConfidential ? ' is-confidential' : ''}`}
+          className={`pc-log-bubble ${isPartyA ? 'is-a' : 'is-b'}${entry.isConfidential ? ' is-confidential' : ''}${combinableTexts && [...combinableTexts].some(t => rawText.includes(t)) ? ' is-combinable' : ''}`}
           onClick={() => openEntryDetail()}
           type="button"
         >
@@ -272,6 +272,21 @@ export default function PCDialogueLog() {
   const caseData = useStore((s) => s.caseData)
   const isLLMLoading = useStore((s) => s.isLLMLoading)
   const llmTarget = useStore((s) => s.llmLoadingTarget)
+
+  // 조합 대상 발언 텍스트 추출 (statement 노드의 따옴표 내용)
+  const combinableStatementTexts = useMemo(() => {
+    const labRuntime = (useGameStore.getState() as any).combinationLabRuntime
+    if (!labRuntime?.config?.nodes) return new Set<string>()
+    const combinableIds = useGameStore.getState().getCombinableEvidenceIds()
+    const texts = new Set<string>()
+    for (const node of labRuntime.config.nodes) {
+      if (node.type === 'statement' && combinableIds.has(node.id)) {
+        const match = node.label?.match(/"([^"]+)"/)
+        if (match) texts.add(match[1])
+      }
+    }
+    return texts
+  }, [dialogueLog.length])
   const bottomRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
@@ -318,7 +333,7 @@ export default function PCDialogueLog() {
               } : undefined}
               style={isDraggable ? { cursor: 'grab' } : undefined}
             >
-              <MessageBubble entry={entry} animate={index === visibleEntries.length - 1} />
+              <MessageBubble entry={entry} animate={index === visibleEntries.length - 1} combinableTexts={combinableStatementTexts} />
             </div>
           )
         })}
