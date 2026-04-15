@@ -79,7 +79,7 @@ export default function MiniGameFrame({ children }: Props) {
             <span className="pc-minigame-frame__round">Round {round} / {MINIGAME_MAX_ROUNDS}</span>
           </div>
           <div className="pc-minigame-frame__reward">
-            성공 시: <PCSvgIcon id={TOKEN_ICONS[tokenType] ?? 'i-search'} size={16} /> <strong>x1</strong>
+            성공 시: <span style={{color:'#e8c172'}}><PCSvgIcon id={TOKEN_ICONS[tokenType] ?? 'i-search'} size={16} /> <strong>x1</strong></span>
           </div>
           <button className="pc-minigame-frame__close" onClick={cancelMinigame} title="스킵" type="button" aria-label="미니게임 스킵">
             <span aria-hidden="true" style={{ fontSize: '16px', lineHeight: 1 }}>✕</span>

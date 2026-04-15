@@ -59,11 +59,11 @@ interface ImpactMarker {
 }
 
 const ROUND_PROFILES: Record<number, RoundProfile> = {
-  1: { rows: 3, cols: 3, target: 10, durationMs: 30_000, stayMs: 1_500, weights: { criminal: 80, civilian: 20, boss: 0 } },
-  2: { rows: 3, cols: 3, target: 14, durationMs: 25_000, stayMs: 1_200, weights: { criminal: 80, civilian: 20, boss: 0 } },
-  3: { rows: 4, cols: 3, target: 18, durationMs: 25_000, stayMs: 1_000, weights: { criminal: 60, civilian: 25, boss: 15 } },
-  4: { rows: 4, cols: 3, target: 22, durationMs: 20_000, stayMs: 800, weights: { criminal: 60, civilian: 25, boss: 15 } },
-  5: { rows: 4, cols: 4, target: 26, durationMs: 20_000, stayMs: 600, weights: { criminal: 45, civilian: 40, boss: 15 } },
+  1: { rows: 3, cols: 3, target: 10, durationMs: 30_000, stayMs: 750, weights: { criminal: 80, civilian: 20, boss: 0 } },
+  2: { rows: 3, cols: 3, target: 14, durationMs: 25_000, stayMs: 600, weights: { criminal: 80, civilian: 20, boss: 0 } },
+  3: { rows: 4, cols: 3, target: 18, durationMs: 25_000, stayMs: 500, weights: { criminal: 60, civilian: 25, boss: 15 } },
+  4: { rows: 4, cols: 3, target: 22, durationMs: 20_000, stayMs: 400, weights: { criminal: 60, civilian: 25, boss: 15 } },
+  5: { rows: 4, cols: 4, target: 26, durationMs: 20_000, stayMs: 300, weights: { criminal: 45, civilian: 40, boss: 15 } },
 }
 
 const FEEDBACK_LABELS: Record<MoleKind, string> = {
@@ -418,8 +418,13 @@ export default function WhackAMoleGame() {
     if (playState !== 'running' || score < profile.target) return
     playMiniGameSuccess()
     setPlayState('success')
-    completeMinigame(true)
-  }, [completeMinigame, playState, profile.target, score])
+  }, [playState, profile.target, score])
+
+  useEffect(() => {
+    if (playState !== 'success') return undefined
+    const timer = window.setTimeout(() => completeMinigame(true), 1200)
+    return () => window.clearTimeout(timer)
+  }, [completeMinigame, playState])
 
   const rootClassName = [
     'pc-whack-a-mole',
@@ -456,7 +461,7 @@ export default function WhackAMoleGame() {
 
         <div className="pc-whack-a-mole__card pc-whack-a-mole__card--timer">
           <div className="pc-whack-a-mole__value">
-            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{display:'inline',verticalAlign:'middle',marginRight:4}}><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{display:'inline',verticalAlign:'middle',marginRight:4}}><circle cx="12" cy="13" r="9"/><polyline points="12 9 12 13 15 15"/><path d="M9 2h6"/><path d="M12 2v2"/></svg>
             {formatClock(timeLeftMs)}
           </div>
           <div className="pc-whack-a-mole__meter">
@@ -535,6 +540,17 @@ export default function WhackAMoleGame() {
         {feedback ? (
           <div className={`pc-whack-a-mole__floating-feedback is-${feedback.tone}`}>
             {feedback.text}
+          </div>
+        ) : null}
+
+        {playState === 'success' ? (
+          <div className="pc-whack-a-mole__result">
+            <div className="pc-whack-a-mole__result-card" style={{borderColor:'rgba(212,162,78,0.4)'}}>
+              <div className="pc-whack-a-mole__result-title" style={{color:'#e8c172'}}>클리어!</div>
+              <p className="pc-whack-a-mole__result-copy">
+                법정 지배력을 확보했습니다.
+              </p>
+            </div>
           </div>
         ) : null}
 

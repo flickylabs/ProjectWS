@@ -11438,11 +11438,13 @@ body.pc-mode .pc-memory-match__timer.is-critical strong {
 body.pc-mode .pc-memory-match__grid {
   position: relative;
   display: grid;
-  grid-template-columns: repeat(var(--memory-cols), minmax(0, 1fr));
+  grid-template-columns: repeat(4, 1fr);
   gap: 10px;
+  width: 100%;
 }
 
 body.pc-mode .pc-memory-match__grid[data-cols="6"] {
+  grid-template-columns: repeat(6, 1fr);
   gap: 8px;
 }
 
@@ -11454,6 +11456,7 @@ body.pc-mode .pc-memory-card {
   position: relative;
   aspect-ratio: 7 / 8;
   min-height: 80px;
+  min-width: 60px;
   border: 0;
   padding: 0;
   background: transparent;

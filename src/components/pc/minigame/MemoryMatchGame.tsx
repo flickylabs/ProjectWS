@@ -425,8 +425,10 @@ export default function MemoryMatchGame({ round }: { round: number }) {
           <h3 className="pc-memory-match__title">같은 증거 카드를 두 장씩 찾으세요.</h3>
         </div>
         <div className={`pc-memory-match__timer ${timeLeft <= 10 ? 'is-critical' : ''}`}>
-          <span className="pc-memory-match__timer-label">남은 시간</span>
-          <strong>{timeLeft}s</strong>
+          <strong>
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{display:'inline',verticalAlign:'middle',marginRight:4}}><circle cx="12" cy="13" r="9"/><polyline points="12 9 12 13 15 15"/><path d="M9 2h6"/><path d="M12 2v2"/></svg>
+            {timeLeft}s
+          </strong>
         </div>
       </div>
 

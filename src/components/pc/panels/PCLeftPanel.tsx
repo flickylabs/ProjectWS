@@ -44,6 +44,8 @@ export default function PCLeftPanel() {
   const currentPhase = useStore((s) => s.currentPhase)
   const evidenceDefinitions = useStore((s) => s.evidenceDefinitions)
   const evidenceStates = useStore((s) => s.evidenceStates)
+  const getCombinableEvidenceIds = useStore((s) => s.getCombinableEvidenceIds)
+  const combinableIds = useMemo(() => getCombinableEvidenceIds(), [getCombinableEvidenceIds, evidenceStates])
   const lastFocusedDisputeId = useStore((s) => s.lastFocusedDisputeId)
   const [timelineOpen, setTimelineOpen] = useState(false)
 
@@ -159,7 +161,7 @@ export default function PCLeftPanel() {
 
             return (
               <div
-                className="pc-ev-notebook"
+                className={`pc-ev-notebook${combinableIds.has(evidence.id) ? ' is-combinable' : ''}`}
                 draggable
                 key={evidence.id}
                 onDragStart={(event) => startEvidenceDrag(event, evidence.id, label)}

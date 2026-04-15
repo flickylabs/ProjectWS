@@ -14,10 +14,11 @@ const GROUND_Y = 320
 const PLAYER_X = 180
 const PLAYER_WIDTH = 46
 const PLAYER_HEIGHT = 92
-const GRAVITY = 0.6
-const JUMP_VELOCITY = -12
-const EXTRA_JUMP_BOOST = 3
-const MAX_FRAME_STEP = 1.8
+const GRAVITY = 0.8
+const JUMP_VELOCITY = -16
+const EXTRA_JUMP_BOOST = 5
+const MAX_FRAME_STEP = 2.5
+const MAX_AIR_JUMPS = 1 // 이중점프
 
 type RunnerStatus = 'running' | 'paused' | 'success' | 'failed'
 type ItemKind = 'book' | 'scales' | 'pen'
@@ -68,6 +69,7 @@ interface PlayerState {
   landingTimer: number
   knockback: number
   runClock: number
+  airJumps: number
 }
 
 interface GameState {
@@ -113,11 +115,11 @@ interface Rect {
 }
 
 const ROUND_CONFIGS: RoundConfig[] = [
-  { target: 50, baseSpeed: 3, accelEvery10s: 0.05, obstacleChance: 0.18, gapChance: 0.08, itemChance: 0.82 },
-  { target: 100, baseSpeed: 4, accelEvery10s: 0.05, obstacleChance: 0.22, gapChance: 0.1, itemChance: 0.78 },
-  { target: 150, baseSpeed: 5, accelEvery10s: 0.07, obstacleChance: 0.24, gapChance: 0.115, itemChance: 0.76 },
-  { target: 200, baseSpeed: 5, accelEvery10s: 0.07, obstacleChance: 0.27, gapChance: 0.13, itemChance: 0.74 },
-  { target: 250, baseSpeed: 6, accelEvery10s: 0.1, obstacleChance: 0.3, gapChance: 0.145, itemChance: 0.72 },
+  { target: 50, baseSpeed: 15, accelEvery10s: 0.05, obstacleChance: 0.18, gapChance: 0.08, itemChance: 0.85 },
+  { target: 100, baseSpeed: 18, accelEvery10s: 0.05, obstacleChance: 0.22, gapChance: 0.1, itemChance: 0.82 },
+  { target: 150, baseSpeed: 22, accelEvery10s: 0.07, obstacleChance: 0.24, gapChance: 0.115, itemChance: 0.80 },
+  { target: 200, baseSpeed: 25, accelEvery10s: 0.07, obstacleChance: 0.27, gapChance: 0.13, itemChance: 0.78 },
+  { target: 250, baseSpeed: 28, accelEvery10s: 0.1, obstacleChance: 0.3, gapChance: 0.145, itemChance: 0.76 },
 ]
 
 const ITEM_KINDS: ItemKind[] = ['book', 'scales', 'pen']
@@ -190,6 +192,7 @@ function createInitialState(round: number): GameState {
       landingTimer: 0,
       knockback: 0,
       runClock: 0,
+      airJumps: 0,
     },
     screenShake: 0,
     note: '',
@@ -228,9 +231,9 @@ function spawnSegmentContent(state: GameState, config: RoundConfig, segment: Gro
           id: nextId(state),
           kind: ITEM_KINDS[Math.floor(Math.random() * ITEM_KINDS.length)],
           x: cursor + offsetX,
-          y: GROUND_Y - randomBetween(72, 138) - arcLift,
-          width: 30,
-          height: 30,
+          y: GROUND_Y - randomBetween(100, 200) - arcLift,
+          width: 48,
+          height: 48,
           bobPhase: randomBetween(0, Math.PI * 2),
           collected: false,
         })
@@ -251,9 +254,9 @@ function spawnGapRewards(state: GameState, gapStart: number, gapWidth: number) {
       id: nextId(state),
       kind: ITEM_KINDS[Math.floor(Math.random() * ITEM_KINDS.length)],
       x: gapStart + 22 + t * Math.max(10, gapWidth - 44),
-      y: GROUND_Y - 76 - Math.sin(t * Math.PI) * (28 + gapWidth * 0.12),
-      width: 30,
-      height: 30,
+      y: GROUND_Y - 120 - Math.sin(t * Math.PI) * (40 + gapWidth * 0.15),
+      width: 48,
+      height: 48,
       bobPhase: randomBetween(0, Math.PI * 2),
       collected: false,
     })
@@ -334,12 +337,21 @@ function updateGame(state: GameState, config: RoundConfig, input: InputState, fr
     player.grounded = false
   }
 
-  if (input.jumpPressed && player.grounded) {
-    player.grounded = false
-    player.velocityY = JUMP_VELOCITY
-    player.jumpBoostRemaining = EXTRA_JUMP_BOOST
-    player.landingTimer = 0
-    state.sfxEvents.push('jump')
+  if (input.jumpPressed) {
+    if (player.grounded) {
+      player.grounded = false
+      player.velocityY = JUMP_VELOCITY
+      player.jumpBoostRemaining = EXTRA_JUMP_BOOST
+      player.airJumps = 0
+      player.landingTimer = 0
+      state.sfxEvents.push('jump')
+    } else if (player.airJumps < MAX_AIR_JUMPS) {
+      // 이중점프 — 더 높이, 더 멀리
+      player.velocityY = JUMP_VELOCITY * 1.15
+      player.jumpBoostRemaining = EXTRA_JUMP_BOOST * 0.7
+      player.airJumps += 1
+      state.sfxEvents.push('jump')
+    }
   }
   input.jumpPressed = false
 
@@ -359,6 +371,7 @@ function updateGame(state: GameState, config: RoundConfig, input: InputState, fr
   } else {
     player.y = GROUND_Y - PLAYER_HEIGHT
     player.velocityY = 0
+    player.airJumps = 0
   }
 
   support = getSupportingSegment(state)
