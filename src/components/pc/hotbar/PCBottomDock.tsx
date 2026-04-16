@@ -10,6 +10,7 @@ import { useActionDispatch } from '../../../hooks/useActionDispatch'
 import { useGameStore, useStore } from '../../../store/useGameStore'
 import { openPcInteractionPanel } from '../layout/PCInteractionPanel'
 import PCSvgIcon from '../icons/PCSvgIcon'
+import PCCharacterPortrait from '../icons/PCCharacterPortrait'
 import { getPcFaceSymbolId, getPcEvidenceSymbolId } from '../icons/pcIconUtils'
 
 const EMOTION_LABELS: Record<EmotionalPhase, string> = {
@@ -341,6 +342,7 @@ export default function PCBottomDock() {
       <div className="hbar pc-play-hbar">
         {/* Character A */}
         <CharacterCard
+          caseId={caseData.caseId}
           name={caseData.duo.partyA.name}
           emotion={agentA.emotionalState.phase}
           faceId={getPcFaceSymbolId('a', caseData.duo.partyA, agentA.emotionalState.phase)}
@@ -415,6 +417,7 @@ export default function PCBottomDock() {
 
         {/* Character B */}
         <CharacterCard
+          caseId={caseData.caseId}
           name={caseData.duo.partyB.name}
           emotion={agentB.emotionalState.phase}
           faceId={getPcFaceSymbolId('b', caseData.duo.partyB, agentB.emotionalState.phase)}
@@ -428,14 +431,21 @@ export default function PCBottomDock() {
 }
 
 function CharacterCard({
-  name, emotion, faceId, isActive, onClick, side,
+  caseId, name, emotion, faceId, isActive, onClick, side,
 }: {
-  name: string; emotion: EmotionalPhase; faceId: string; isActive: boolean; onClick: () => void; side: PartyId
+  caseId: string; name: string; emotion: EmotionalPhase; faceId: string; isActive: boolean; onClick: () => void; side: PartyId
 }) {
   return (
     <button className={`char char-${side}${isActive ? ' spk' : ''}`} onClick={onClick} type="button">
       <div className="char-face">
-        <PCSvgIcon id={faceId} size={52} />
+        <PCCharacterPortrait
+          alt={name}
+          caseId={caseId}
+          emotion={emotion}
+          fallbackSymbolId={faceId}
+          party={side}
+          size={52}
+        />
       </div>
       <div className="char-info">
         <span className="char-nm">{name}</span>

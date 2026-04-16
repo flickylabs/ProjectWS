@@ -4,6 +4,7 @@ import { useGameStore, useStore } from '../../../store/useGameStore'
 import { beginCasePrefetch } from '../../phase/Phase0_CaseIntro'
 import { stopBgm } from '../../../engine/soundEngine'
 import PCSvgIcon from '../icons/PCSvgIcon'
+import PCCharacterPortrait from '../icons/PCCharacterPortrait'
 import { getPcFaceSymbolId, getPcEvidenceSymbolId } from '../icons/pcIconUtils'
 
 const ARCHETYPE_LABELS: Record<string, string> = {
@@ -95,7 +96,14 @@ export default function PCCaseBrief() {
                 <span className="pc-brief__party-trait">{ARCHETYPE_LABELS[duo.partyA.archetype] ?? ''}</span>
               </div>
               <div className="pc-brief__party-face is-a">
-                <PCSvgIcon id={faceA} size={52} />
+                <PCCharacterPortrait
+                  alt={duo.partyA.name}
+                  caseId={caseData.caseId}
+                  emotion="defensive"
+                  fallbackSymbolId={faceA}
+                  party="a"
+                  size={52}
+                />
               </div>
             </div>
 
@@ -105,7 +113,14 @@ export default function PCCaseBrief() {
 
             <div className="pc-brief__party-row pc-brief__party-row--b">
               <div className="pc-brief__party-face is-b">
-                <PCSvgIcon id={faceB} size={52} />
+                <PCCharacterPortrait
+                  alt={duo.partyB.name}
+                  caseId={caseData.caseId}
+                  emotion="defensive"
+                  fallbackSymbolId={faceB}
+                  party="b"
+                  size={52}
+                />
               </div>
               <div className="pc-brief__party-text is-left">
                 <span className="pc-brief__party-name is-b">{duo.partyB.name}</span>

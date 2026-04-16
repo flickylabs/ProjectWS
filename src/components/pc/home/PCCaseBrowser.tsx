@@ -2,6 +2,7 @@ import { useMemo, useState } from 'react'
 import type { CaseData } from '../../../types'
 import PCSvgIcon from '../icons/PCSvgIcon'
 import { getPcFaceSymbolId, getPcEvidenceSymbolId } from '../icons/pcIconUtils'
+import PCCharacterPortrait from '../icons/PCCharacterPortrait'
 import { getDifficultyLabel, sortCasesForBrowser } from './pcHomeShared'
 
 const CLEAR_SCORE_THRESHOLD = 40
@@ -184,11 +185,29 @@ function CaseBriefPanel({ caseData, stageNum, score, onStart }: {
             <span className="cb__brief-meta">{duo?.partyA?.age ?? '?'}세 · {duo?.partyA?.occupation ?? ''}</span>
             <span className="cb__brief-archetype">{ARCHETYPE_LABELS[duo?.partyA?.archetype ?? ''] ?? ''}</span>
           </div>
-          <div className="cb__brief-face is-a"><PCSvgIcon id={faceA} size={44} /></div>
+          <div className="cb__brief-face is-a">
+            <PCCharacterPortrait
+              alt={duo?.partyA?.name}
+              caseId={caseData.caseId}
+              emotion="defensive"
+              fallbackSymbolId={faceA}
+              party="a"
+              size={44}
+            />
+          </div>
         </div>
         <span className="cb__brief-vs-badge">VS</span>
         <div className="cb__brief-party">
-          <div className="cb__brief-face is-b"><PCSvgIcon id={faceB} size={44} /></div>
+          <div className="cb__brief-face is-b">
+            <PCCharacterPortrait
+              alt={duo?.partyB?.name}
+              caseId={caseData.caseId}
+              emotion="defensive"
+              fallbackSymbolId={faceB}
+              party="b"
+              size={44}
+            />
+          </div>
           <div className="cb__brief-party-text is-left">
             <span className="cb__brief-name is-b">{duo?.partyB?.name ?? 'B'}</span>
             <span className="cb__brief-meta">{duo?.partyB?.age ?? '?'}세 · {duo?.partyB?.occupation ?? ''}</span>

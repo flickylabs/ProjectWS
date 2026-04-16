@@ -10,6 +10,7 @@ import {
 } from '../../../types'
 import { useGameStore, useStore } from '../../../store/useGameStore'
 import PCSvgIcon from '../icons/PCSvgIcon'
+import PCCharacterPortrait from '../icons/PCCharacterPortrait'
 import { getPcFaceSymbolId } from '../icons/pcIconUtils'
 import { getPcArchetypeLabel, getPcTellDescription, getPcTellLabel } from '../pcUiLabels'
 import { HOTBAR_DRAG_TYPE } from '../hotbar/pcHotbarConfig'
@@ -434,7 +435,15 @@ export default function PCRightPanel() {
 
           <div className="target pc-target-profile">
             <div className="tgt-face">
-              <PCSvgIcon id={faceId} size={72} />
+              <PCCharacterPortrait
+                alt={targetProfile.name}
+                caseId={caseData.caseId}
+                emotion={targetAgent.emotionalState.phase}
+                fallbackSymbolId={faceId}
+                lieState={activeLieState}
+                party={pcTargetParty}
+                size={72}
+              />
             </div>
 
             <div className="pc-target-copy__main">

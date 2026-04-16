@@ -2,6 +2,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { useStore, useGameStore } from '../../../store/useGameStore'
 import type { DialogueEntry as DialogueEntryType, EmotionalPhase } from '../../../types'
 import PCSvgIcon from '../icons/PCSvgIcon'
+import PCCharacterPortrait from '../icons/PCCharacterPortrait'
 import { getPcFaceSymbolId } from '../icons/pcIconUtils'
 import { openPcInteractionPanel } from './PCInteractionPanel'
 import { HOTBAR_DRAG_TYPE } from '../hotbar/pcHotbarConfig'
@@ -236,7 +237,14 @@ function MessageBubble({ entry, animate, combinableTexts }: { entry: DialogueEnt
     <div className={`pc-log-row ${isPartyA ? 'is-left' : 'is-right'}`}>
       <div className={`pc-log-speaker ${isPartyA ? 'is-a' : 'is-b'}`}>
         <button className={`pc-log-avatar ${isPartyA ? 'is-a' : 'is-b'}`} onClick={() => openEntryDetail()} type="button">
-          <PCSvgIcon id={faceId} size={24} />
+          <PCCharacterPortrait
+            alt={profile?.name}
+            caseId={caseData?.caseId}
+            emotion={emotion}
+            fallbackSymbolId={faceId}
+            party={isPartyA ? 'a' : 'b'}
+            size={24}
+          />
         </button>
         <button
           className={`pc-log-speaker__name ${isPartyA ? 'is-a' : 'is-b'} pc-log-name--button`}
