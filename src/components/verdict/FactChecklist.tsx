@@ -51,11 +51,13 @@ export default function FactChecklist({ currentIdx, onChangeIdx }: Props) {
             <span className="text-xs text-gray-600">{currentIdx + 1} / {disputes.length}</span>
           </div>
 
-          {/* 쟁점명 + 진실 설명 */}
+          {/* 쟁점명 + 판정문(judgmentStatement 전용 — truthDescription 누출 금지) */}
           <p className="text-base font-bold text-gray-100 leading-snug mb-1">{d.name}</p>
-          <p className="text-xs text-gray-400 leading-relaxed mb-2 border-l-2 border-amber-600/30 pl-2">
-            {d.judgmentStatement ?? d.truthDescription?.split(/[.!?]/)[0]?.trim()?.slice(0, 50) ?? ''}
-          </p>
+          {d.judgmentStatement ? (
+            <p className="text-xs text-gray-400 leading-relaxed mb-2 border-l-2 border-amber-600/30 pl-2">
+              {d.judgmentStatement}
+            </p>
+          ) : null}
 
           {/* 붕괴 여부 */}
           {collapsed && (

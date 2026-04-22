@@ -13,7 +13,6 @@ import type { PartyId, QuestionType, AttackVector, Stance, DefenseMode, Response
 import type { LieState, LieMotive } from '../types'
 import type { AngleTag, BeliefMode, FatigueLevel } from '../types'
 import type { DisputeKind } from '../types'
-import { getResentmentPenalty, type InterjectionTrackerState } from './interjectionV2'
 
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 // 타입
@@ -44,7 +43,6 @@ export interface NpcReactionContext {
   quality: ActionQuality
   beliefMode?: BeliefMode
   retaliationWindow?: { active: boolean; angleTag?: AngleTag }
-  interjectionTracker?: InterjectionTrackerState
 }
 
 export interface NpcReactionResolution {
@@ -148,15 +146,6 @@ export function resolveNpcReaction(
   if (ctx.retaliationWindow?.active) {
     w = apply(w, { comply: -5, counter: 10 })
     notes.push('retaliation')
-  }
-
-  // resentment
-  if (ctx.interjectionTracker) {
-    const penalty = getResentmentPenalty(ctx.interjectionTracker, ctx.party, ctx.turn)
-    if (penalty > 0) {
-      w = apply(w, { comply: -penalty, resist: penalty })
-      notes.push(`resentment:-${penalty}`)
-    }
   }
 
   // truth floor: S4+, blocked 3+, trust 60+ → counter 봉쇄

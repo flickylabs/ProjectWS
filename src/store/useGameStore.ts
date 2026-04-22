@@ -31,7 +31,6 @@ import { evaluateEventTriggers, markInterjectionUsed, resetEventTriggerState, ty
 import { resetV3State } from '../engine/v3GameLoopLoader'
 import { resetV2State } from '../engine/v2DataLoader'
 import { resetSessionFatigueState } from '../engine/questionFatigueEngine'
-import { resetSessionInterjectionTracker } from '../engine/interjectionV2'
 import { resetPhase3Log } from '../engine/phase3LogCollector'
 import { resetMisconceptionState } from '../engine/misconceptionEngine'
 import { resetActivatedLinks } from '../engine/linkEdgeEngine'
@@ -773,7 +772,6 @@ export const useGameStore: import('zustand').UseBoundStore<import('zustand').Sto
         resetV2State(caseKey2)
       }
       resetSessionFatigueState()
-      resetSessionInterjectionTracker()
       resetPhase3Log()
       resetMisconceptionState()
       resetActivatedLinks()

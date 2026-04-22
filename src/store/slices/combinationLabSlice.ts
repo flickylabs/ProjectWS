@@ -79,7 +79,6 @@ export interface CombinationLabSlice {
   getCombinationNode: (nodeId: string) => CombinationLabNode | undefined
   getCombinationOutput: (outputId: string) => CombinationLabOutput | undefined
   canRunCombinationRecipe: (recipeId: string) => boolean
-  getAvailableCombinationRecipes: () => CombinationLabRecipe[]
   runCombinationRecipe: (recipeId: string) => { ok: boolean; reason?: string; outputId?: string }
   /** 대화에서 statement 노드의 따옴표 문구가 실제 발화될 때 discoveredNodeIds에 추가 */
   syncStatementsFromDialogue: (text: string) => void
@@ -165,12 +164,6 @@ export const createCombinationLabSlice: StateCreator<any, [], [], CombinationLab
       }
       return state.discoveredNodeIds.includes(inputId)
     })
-  },
-
-  getAvailableCombinationRecipes: () => {
-    const config = get().combinationLabRuntime.config
-    if (!config) return []
-    return config.recipes.filter((recipe: CombinationLabRecipe) => get().canRunCombinationRecipe(recipe.id))
   },
 
   runCombinationRecipe: (recipeId) => {

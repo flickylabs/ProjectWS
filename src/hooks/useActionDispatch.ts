@@ -42,10 +42,6 @@ import { hasV2Data, hasStructureV2, getBeatLibrary, getBeatRuntimeState, recordB
 import { evaluateQuestionFatigue, commitQuestionFatigue, getSessionFatigueState, setSessionFatigueState } from '../engine/questionFatigueEngine'
 import { selectTurnPresentation, deriveAngleTag, deriveResponseIntent } from '../engine/beatSelectorV2'
 import { deriveActionQuality, resolveNpcReaction, applyReactionToBlueprint } from '../engine/npcReactionV2'
-import {
-  getSessionInterjectionTracker,
-  applyInterjectionBlockResentment,
-} from '../engine/interjectionV2'
 import { recordRevealedAtom, recordTurnStyle, recordKeyMoment, recordResolvedLink } from '../engine/phase3LogCollector'
 import {
   isMisconceptionDispute, attemptMisconceptionTransition, getMisconceptionState,
@@ -910,7 +906,6 @@ async function handleQuestion(action: Extract<PlayerAction, { type: 'question' }
         trustWindowValue: trustValue,
         blockedVectors: [],
         quality: actionQuality,
-        interjectionTracker: getSessionInterjectionTracker(),
       }, { focusDisputeId: action.disputeId, stance: stanceGuess as any, defenseMode: 'flat_denial' as any, allowedClaimAtoms: [], forbiddenClaimAtoms: [], sentenceCount: 2, shouldCounterQuestion: false })
 
       // 적용된 stance/defenseMode를 beat selector에 전달

@@ -14,6 +14,7 @@ import {
   type PcPinnedNote,
 } from '../pc/panels/PCImportantNotesSection'
 import { playCombinationSuccess } from '../../engine/soundEngine'
+import { cleanOutputLabel, cleanOutputSummary } from '../../utils/combinationLabels'
 
 function normalizeInputs(ids: string[]): string[] {
   return [...ids].sort()
@@ -213,7 +214,7 @@ export default function CombinationLabPanel() {
 
     store.addDialogue({
       speaker: 'system',
-      text: `🧪 조합 실험실: ${matchingOutput.label}\n${matchingOutput.summary}`,
+      text: `🧪 조합 실험실: ${cleanOutputLabel(matchingOutput.label)}${cleanOutputSummary(matchingOutput.summary, matchingOutput.label) ? '\n' + cleanOutputSummary(matchingOutput.summary, matchingOutput.label) : ''}`,
       relatedDisputes: matchingOutput.effects
         .flatMap((effect) => [
           effect.targetId,
@@ -242,8 +243,8 @@ export default function CombinationLabPanel() {
             label: node.label.replace(/^note:/, ''),
             type: node.type,
           })),
-        outputLabel: matchingOutput.label,
-        outputSummary: matchingOutput.summary,
+        outputLabel: cleanOutputLabel(matchingOutput.label),
+        outputSummary: cleanOutputSummary(matchingOutput.summary, matchingOutput.label),
         resultType: matchingOutput.id.startsWith('dc-')
           ? 'dossier'
           : matchingOutput.nodeType === 'dispute'
@@ -252,7 +253,7 @@ export default function CombinationLabPanel() {
       },
     }))
 
-    showToast(`조합 성공: ${matchingOutput.label}`, 'success')
+    showToast(`조합 성공: ${cleanOutputLabel(matchingOutput.label)}`, 'success')
     clearAll()
   }
 

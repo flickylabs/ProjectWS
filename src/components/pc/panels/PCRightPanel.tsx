@@ -19,6 +19,7 @@ import { showToast } from '../../common/Toast'
 import { getCombinationComment } from '../../../data/combinationComments'
 import { PC_ADD_COMBINATION_NOTE_EVENT, type PcCombinationPanelEventDetail, type PcPinnedNote } from './PCImportantNotesSection'
 import { playCombinationSuccess } from '../../../engine/soundEngine'
+import { cleanOutputLabel, cleanOutputSummary } from '../../../utils/combinationLabels'
 
 const LIE_STATES: LieState[] = ['S0', 'S1', 'S2', 'S3', 'S4', 'S5']
 
@@ -776,30 +777,7 @@ function getNodeDisplayLabel(
   return node.label.replace(/^note:/, '').replace(/^[a-z]+-\d+\s+/i, '')
 }
 
-function translateLeadLabel(text: string): string {
-  return text
-    .replace(/Timeline\s+Lead/gi, '동선 단서')
-    .replace(/Context\s+Lead/gi, '맥락 단서')
-    .replace(/Beneficiary\s+Lead/gi, '수혜자 단서')
-    .replace(/Emotion\s+Lead/gi, '감정 단서')
-    .replace(/Motive\s+Lead/gi, '동기 단서')
-    .replace(/Responsibility\s+Lead/gi, '책임 단서')
-    .replace(/Lead/gi, '단서')
-}
-
-function cleanOutputLabel(label: string): string {
-  const stripped = (label ?? '').replace(/^[A-Za-z]+-\d+\s+/i, '').trim()
-  return translateLeadLabel(stripped)
-}
-
-function cleanOutputSummary(summary: string, label: string): string {
-  const s = (summary ?? '').trim()
-  if (!s) return ''
-  const cleaned = translateLeadLabel(s.replace(/^[A-Za-z]+-\d+\s+/i, '').trim())
-  const cleanedLabel = cleanOutputLabel(label)
-  if (cleaned === cleanedLabel || cleaned === label.trim()) return ''
-  return cleaned
-}
+// 라벨 헬퍼는 utils/combinationLabels.ts로 통합됨
 
 function normalizeInputs(ids: string[]): string[] {
   return [...ids].sort()

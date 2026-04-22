@@ -3,7 +3,6 @@ import { useFocusTrap } from '../../../hooks/useFocusTrap'
 import { resetFatigueForDossier } from '../../../engine/questionFatigueEngine'
 import { getContradictionEvent, getInterjectionEvent, getOutburstEvent } from '../../../engine/v3GameLoopLoader'
 import { applyWitnessSlot } from '../../../hooks/useActionDispatch'
-import { applyInterjectionBlockResentment } from '../../../engine/interjectionV2'
 import { recordInterjectionChoice } from '../../../engine/phase3LogCollector'
 import { stripOutputCodename } from '../../../utils/combinationLabels'
 import { useGameStore, useStore } from '../../../store/useGameStore'
@@ -400,8 +399,6 @@ function GameEventPanel() {
     }
 
     const handleBlock = () => {
-      // 제지 시 끼어든 당사자에게 resentment 누적 — NPC 반응 가중치에 반영됨
-      applyInterjectionBlockResentment(pendingEvent.party, turnCount)
       recordInterjectionChoice('block')
       addDialogue({
         speaker: 'judge',
