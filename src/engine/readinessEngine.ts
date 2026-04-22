@@ -100,7 +100,10 @@ export function checkForcedVerdict(
 ): { forced: boolean; verdictMode: VerdictMode } {
   const { eligible } = checkVerdictEligible(turn, state)
 
-  const effectiveMax = MAX_INTERROGATION_TURNS_FN()
+  const effectiveMax = Math.max(
+    MAX_INTERROGATION_TURNS_FN(),
+    BASE_MAX_INTERROGATION_TURNS + (state.hiddenDisputeRevealCount * BONUS_TURNS_PER_EMERGENCE),
+  )
   if (turn >= effectiveMax) {
     return {
       forced: !eligible,

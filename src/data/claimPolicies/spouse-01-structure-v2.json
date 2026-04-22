@@ -72,15 +72,15 @@
         {
           "target": "d-2",
           "relation": "unlocks_layer",
-          "note": "박지연의 d-1이 S3에 도달하면, 외도 의심 뒤에 있던 3,000만원 출금 쟁점이 열린다."
+          "note": "박지연의 d-1이 S3에 도달하면, 외도 의심 뒤에 있던 2,000만원 출금 쟁점이 열린다."
         }
       ]
     },
     {
       "id": "d-2",
-      "name": "비자금 3,000만원 출금",
+      "name": "비자금 2,000만원 출금",
       "truth": true,
-      "truthDescription": "이준호는 배우자와 상의 없이 개인 비자금에서 3,000만원을 현금으로 빼 개인회생 중인 형에게 전달했다. 형을 돕겠다는 선의가 있었다 해도, 공동 재정 신뢰를 깨고 혼자 결정한 책임은 분명하다.",
+      "truthDescription": "이준호는 배우자와 상의 없이 개인 비자금에서 2,000만원을 현금으로 빼 개인회생 중인 형에게 전달했다. 형을 돕겠다는 선의가 있었다 해도, 공동 재정 신뢰를 깨고 혼자 결정한 책임은 분명하다.",
       "quadrant": "b_only",
       "requiredEvidence": [
         "e-5"
@@ -93,7 +93,7 @@
       "weight": "high",
       "mediationLink": "가족지원 합의",
       "legitimacyIssue": true,
-      "judgmentStatement": "비자금 3,000만원 현금 전달은 남편이 혼자 감당하려 한 선의이자 동시에 월권이었다.",
+      "judgmentStatement": "비자금 2,000만원 현금 전달은 남편이 혼자 감당하려 한 선의이자 동시에 월권이었다.",
       "disputeKind": "core_truth",
       "hidden": false,
       "v3Visibility": "hidden",
@@ -114,7 +114,7 @@
         {
           "id": "surface",
           "label": "목돈의 흔적",
-          "summary": "외도 의심을 쫓던 흐름이 3,000만원 현금 출금으로 꺾이는 층이다. 큰돈이 빠졌다는 사실 자체가 먼저 충격으로 남는다.",
+          "summary": "외도 의심을 쫓던 흐름이 2,000만원 현금 출금으로 꺾이는 층이다. 큰돈이 빠졌다는 사실 자체가 먼저 충격으로 남는다.",
           "lockedSummary": "돈이 빠진 건 보이지만 누구에게 왜 갔는지는 아직 닫혀 있다.",
           "revealAtomIds": [],
           "uiStyle": "card_expand"
@@ -138,7 +138,7 @@
         {
           "id": "core",
           "label": "월권의 책임",
-          "summary": "개인회생이라는 사정을 알아도, 배우자 동의 없이 3,000만원을 현금으로 움직인 건 월권이다. 선의와 절차 위반은 따로 판단돼야 한다.",
+          "summary": "개인회생이라는 사정을 알아도, 배우자 동의 없이 2,000만원을 현금으로 움직인 건 월권이다. 선의와 절차 위반은 따로 판단돼야 한다.",
           "lockedSummary": "이 쟁점의 안쪽에는 '왜 도왔나'보다 '왜 혼자 결정했나'가 남아 있다.",
           "revealAtomIds": [],
           "uiStyle": "relation_core",
@@ -167,9 +167,9 @@
     },
     {
       "id": "h-d3",
-      "name": "공동 적금 2,000만원 해지",
+      "name": "공동 적금 3,000만원 해지",
       "truth": true,
-      "truthDescription": "박지연은 남편의 외도를 확신한 뒤 이준호 동의 없이 위임장을 꾸며 공동 적금 2,000만원을 해지했고, 그 돈을 투자방에 넣었다가 전액 잃었다. 배신 공포가 동기였더라도 위임장 조작과 독단 집행은 별개의 책임이다.",
+      "truthDescription": "박지연은 남편의 외도를 확신한 뒤 이준호 동의 없이 위임장을 꾸며 공동 적금 3,000만원을 해지했고, 그 돈을 투자방에 넣었다가 전액 잃었다. 배신 공포가 동기였더라도 위임장 조작과 독단 집행은 별개의 책임이다.",
       "quadrant": "b_only",
       "requiredEvidence": [
         "e-6",
@@ -183,7 +183,7 @@
       "weight": "high",
       "mediationLink": "공동재산 경계",
       "legitimacyIssue": true,
-      "judgmentStatement": "공동 적금 2,000만원 해지는 박지연의 위임장 조작과 투자 사기 손실로 이어졌다.",
+      "judgmentStatement": "공동 적금 3,000만원 해지는 박지연의 위임장 조작과 투자 사기 손실로 이어졌다.",
       "disputeKind": "sub_truth",
       "hidden": true,
       "v3Visibility": "hidden",
@@ -198,7 +198,7 @@
       },
       "v3UnlockPlan": {
         "runtimeRule": "d-2가 S1에 도달한 뒤 이준호가 역공하면 h-d3가 열린다.",
-        "authoredRule": "비자금 3,000만원이 드러난 직후, 이준호가 공동 적금 해지 정황을 되받아치며 숨은 축을 노출한다."
+        "authoredRule": "비자금 2,000만원이 드러난 직후, 이준호가 공동 적금 해지 정황을 되받아치며 숨은 축을 노출한다."
       },
       "depthLayers": [
         {

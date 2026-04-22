@@ -1185,6 +1185,7 @@ async function handleQuestion(action: Extract<PlayerAction, { type: 'question' }
           const beat = presentation.main.beat
           const beatLine = 'line' in beat ? beat.line : ''
           const beatHint = 'behaviorHint' in beat ? beat.behaviorHint : ''
+          const isTransitionLane = presentation.main.lane === 'transition'
 
           state.addDialogue({
             speaker: 'judge',
@@ -1193,13 +1194,33 @@ async function handleQuestion(action: Extract<PlayerAction, { type: 'question' }
             turn: state.turnCount,
           })
 
-          state.addDialogue({
-            speaker: action.target,
-            text: beatLine,
-            relatedDisputes: [action.disputeId],
-            turn: state.turnCount,
-            behaviorHint: beatHint,
-          })
+          if (isTransitionLane) {
+            // transitionBeat.line은 3인칭 서술체 — 내레이션으로 처리 (당사자 말풍선 아님)
+            if (beatLine) {
+              state.addDialogue({
+                speaker: 'system',
+                text: beatLine,
+                relatedDisputes: [action.disputeId],
+                turn: state.turnCount,
+              })
+            }
+            if (beatHint) {
+              state.addDialogue({
+                speaker: 'system',
+                text: `🎭 ${beatHint}`,
+                relatedDisputes: [action.disputeId],
+                turn: state.turnCount,
+              })
+            }
+          } else {
+            state.addDialogue({
+              speaker: action.target,
+              text: beatLine,
+              relatedDisputes: [action.disputeId],
+              turn: state.turnCount,
+              behaviorHint: beatHint,
+            })
+          }
 
           // Archetype 힌트: NPC 응답 직후 재판관의 관찰 표시
           maybeShowArchetypeHint(action.target, state.turnCount)

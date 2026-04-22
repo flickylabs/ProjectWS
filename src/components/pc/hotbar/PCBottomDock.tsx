@@ -60,11 +60,14 @@ export default function PCBottomDock() {
   // hidden 쟁점 필터
   const visibleDisputes = useMemo(() => {
     if (!caseData) return []
+    const targetAgent = pcTargetParty === 'a' ? agentA : agentB
     return caseData.disputes.filter((d) => {
       const vis = disputeVisibility[d.id]
-      return !vis || vis.visibility !== 'hidden'
+      if (vis?.visibility === 'hidden' || vis?.visibility === 'inactive') return false
+      if (vis && !vis.relevantParties.includes(pcTargetParty)) return false
+      return Boolean(targetAgent.lieStateMap?.[d.id])
     })
-  }, [caseData, disputeVisibility])
+  }, [agentA, agentB, caseData, disputeVisibility, pcTargetParty])
 
   const activeDisputeId = lastFocusedDisputeId ?? visibleDisputes[0]?.id ?? ''
 

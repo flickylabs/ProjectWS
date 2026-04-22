@@ -23,6 +23,17 @@ const JUDGMENT_OPTIONS: { value: TruthJudgment; label: string; description: stri
   { value: 'undetermined', label: '아직 보류하겠습니다.', description: '판단을 고정하기 전에 추가 자료가 더 필요합니다.' },
 ]
 
+function isNarrativeReaction(text: string | undefined): boolean {
+  if (!text) return false
+  return /(부딪힌다|드러난다|흔들린다|뒤집힌다|갈라진다|맞선다|올라오자|설명이|해석이|책임의 방향)/.test(text)
+}
+
+function buildContradictionFallbackLine(lieState: string): string {
+  if (lieState >= 'S3') return '...그건... 상황이 복잡했습니다. 제가 처음에 말씀드린 것과 다른 부분이 있었습니다.'
+  if (lieState >= 'S2') return '재판관님, 제 기억이 혼란스러웠던 것 같습니다. 다시 정리하겠습니다.'
+  return '그건... 제가 말한 것과 다르지 않습니다. 맥락이 다른 것입니다.'
+}
+
 function OverlayShell({
   title,
   subtitle,
@@ -331,19 +342,26 @@ function GameEventPanel() {
         turn: turnCount,
       })
       // NPC 답변 — 스크립트 없으면 lieState 기반 fallback 생성
-      const npcText = v3Event?.npcReaction ?? (() => {
-        const agent = pendingEvent.party === 'a' ? useGameStore.getState().agentA : useGameStore.getState().agentB
-        const lie = agent.lieStateMap[pendingEvent.disputeId]?.currentState ?? 'S0'
-        if (lie >= 'S3') return `...그건... 상황이 복잡했습니다. 제가 처음에 말씀드린 것과 다른 부분이 있었습니다.`
-        if (lie >= 'S2') return `재판관님, 제 기억이 혼란스러웠던 것 같습니다. 다시 정리하겠습니다.`
-        return `그건... 제가 말한 것과 다르지 않습니다. 맥락이 다른 것입니다.`
-      })()
+      const agent = pendingEvent.party === 'a' ? useGameStore.getState().agentA : useGameStore.getState().agentB
+      const lie = agent.lieStateMap[pendingEvent.disputeId]?.currentState ?? 'S0'
+      const reactionIsNarrative = isNarrativeReaction(v3Event?.npcReaction)
+      const npcText = reactionIsNarrative
+        ? buildContradictionFallbackLine(lie)
+        : v3Event?.npcReaction ?? buildContradictionFallbackLine(lie)
       addDialogue({
         speaker: pendingEvent.party,
         text: npcText,
         relatedDisputes: [pendingEvent.disputeId],
         turn: turnCount,
       })
+      if (reactionIsNarrative && v3Event?.npcReaction) {
+        addDialogue({
+          speaker: 'system',
+          text: v3Event.npcReaction,
+          relatedDisputes: [pendingEvent.disputeId],
+          turn: turnCount,
+        })
+      }
       addDialogue({
         speaker: 'system',
         text: pendingEvent.severity === 'critical'

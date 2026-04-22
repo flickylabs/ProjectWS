@@ -27,7 +27,7 @@ import { createInitialMeterState, resolveQuestionEffect, getMeterEffects, type Q
 import { loadJudgePerks } from '../data/leaderboard'
 import { getPerkById } from '../engine/judgePerks'
 import type { PerkId } from '../engine/judgePerks'
-import { evaluateEventTriggers, resetEventTriggerState, type GameEventTrigger, type TurnSnapshot } from '../engine/gameEventTriggerEngine'
+import { evaluateEventTriggers, markInterjectionUsed, resetEventTriggerState, type GameEventTrigger, type TurnSnapshot } from '../engine/gameEventTriggerEngine'
 import { resetV3State } from '../engine/v3GameLoopLoader'
 import { resetV2State } from '../engine/v2DataLoader'
 import { resetSessionFatigueState } from '../engine/questionFatigueEngine'
@@ -598,12 +598,21 @@ export const useGameStore: import('zustand').UseBoundStore<import('zustand').Sto
         focusDisputeId,
       }
 
-      const trigger = evaluateEventTriggers(snapshot)
+      let trigger = evaluateEventTriggers(snapshot)
+      // 분리심문 중에는 상대 파티의 관찰/반응 이벤트(끼어들기)를 차단
+      if (trigger && trigger.type === 'interjection' && s.separationTarget) {
+        trigger = null
+      }
       if (trigger) {
         // dispute_emergence는 Discovery 경로(pendingEmergence + DisputeEmergenceModal)가 canonical
         // → pendingGameEvent를 설정하지 않고 effects만 적용
         if (trigger.type !== 'dispute_emergence') {
           set({ pendingGameEvent: trigger })
+        }
+
+        // 끼어들기는 동일 대사 반복 방지를 위해 사용 기록
+        if (trigger.type === 'interjection' && trigger.scriptSlot?.textId) {
+          markInterjectionUsed(snapshot.caseId, trigger.scriptSlot.textId)
         }
 
         // 이벤트 로그에 기록
@@ -650,7 +659,9 @@ export const useGameStore: import('zustand').UseBoundStore<import('zustand').Sto
       for (const [k, v] of Object.entries(state.agentB.lieStateMap)) allLieStates[`b:${k}`] = v as { currentState: import('../types').LieState }
 
       const { investigationSuccessEvidenceIds, fullCollapseEvidenceIds } = getReadinessSets(caseId)
-      const hiddenReveals = (state as any).discoveredTruths?.length ?? 0
+      const hiddenReveals = Object.values(state.discovery?.disputeVisibility ?? {})
+        .filter((entry: any) => entry.visibility === 'emerged' || entry.emergedAtTurn !== null)
+        .length
 
       const readiness = aggregateReadiness(
         allLieStates, investigationSuccessEvidenceIds, fullCollapseEvidenceIds, hiddenReveals,
@@ -695,9 +706,12 @@ export const useGameStore: import('zustand').UseBoundStore<import('zustand').Sto
         interrogationHistory: { a: {}, b: {} },
         recentAtomIds: { a: [], b: [] },
         pendingMinigame: null,
+        pendingInterjectionV2: null,
         questionMeters: { a: createInitialMeterState(), b: createInitialMeterState() },
         gameEventLog: [],
         pendingGameEvent: null,
+        pendingEvidenceResult: null,
+        disputeBoardAction: null,
         pendingPerkChoice: null,
         pendingTransitionChoice: null,
         lastFocusedDisputeId: null,
@@ -709,6 +723,19 @@ export const useGameStore: import('zustand').UseBoundStore<import('zustand').Sto
         phaseTurnCount: 0,
         phaseHistory: [],
         currentPhase: GamePhase.Phase0_CaseIntro,
+        verdictMode: 'normal',
+        readinessState: null,
+        phase3PromptBridge: null,
+        activePerks: {
+          majorPerk: null, minorPerk: null,
+          freeSummaryRemaining: 0, evidencePreviewRemaining: 0, skillRefundRemaining: 0,
+          burstWarningEnabled: false, penaltyBufferUsesRemaining: 0,
+          firstTargetContradictionBonus: 0,
+          relationBufferQuestionAvailable: 0, angleSwitchOpportunity: 0,
+          legalityHintEnabled: false, interjectionLevelBoost: 0,
+          compareLockerAvailable: 0, privateCheckAvailable: 0,
+          precedentHintAvailable: 0, reorganizeDeclareAvailable: 0,
+        },
       })
 
       // 에이전트 초기화
@@ -778,6 +805,10 @@ export const useGameStore: import('zustand').UseBoundStore<import('zustand').Sto
     phaseHistory: state.phaseHistory,
     turnCount: state.turnCount,
     phaseTurnCount: state.phaseTurnCount,
+    verdictMode: state.verdictMode,
+    readinessState: state.readinessState,
+    phase3Flags: state.phase3Flags,
+    phase3PromptBridge: state.phase3PromptBridge,
     // agents
     agentA: state.agentA,
     agentB: state.agentB,
@@ -794,6 +825,20 @@ export const useGameStore: import('zustand').UseBoundStore<import('zustand').Sto
     evidenceCombinations: state.evidenceCombinations,
     triggeredCombinations: state.triggeredCombinations,
     combinationLabRuntime: state.combinationLabRuntime,
+    // discovery / event runtime
+    discovery: state.discovery,
+    questionMeters: state.questionMeters,
+    gameEventLog: state.gameEventLog,
+    pendingGameEvent: state.pendingGameEvent,
+    pendingInterjectionV2: state.pendingInterjectionV2,
+    pendingEvidenceResult: state.pendingEvidenceResult,
+    pendingMinigame: state.pendingMinigame,
+    disputeBoardAction: state.disputeBoardAction,
+    pendingEvidenceView: state.pendingEvidenceView,
+    lastFocusedDisputeId: state.lastFocusedDisputeId,
+    activePerks: state.activePerks,
+    pendingPerkChoice: state.pendingPerkChoice,
+    pendingTransitionChoice: state.pendingTransitionChoice,
     // dialogue
     dialogueLog: state.dialogueLog,
     claimGraph: state.claimGraph,
@@ -810,7 +855,10 @@ export const useGameStore: import('zustand').UseBoundStore<import('zustand').Sto
     testimonyAnalysis: state.testimonyAnalysis,
     calledWitnesses: state.calledWitnesses,
     unlockedWitnessIds: state.unlockedWitnessIds,
+    witnessSessions: state.witnessSessions,
+    pendingWitnessChoice: state.pendingWitnessChoice,
     interrogationHistory: state.interrogationHistory,
+    recentAtomIds: state.recentAtomIds,
     pcTargetParty: state.pcTargetParty,
     pcSummaryUnlocked: state.pcSummaryUnlocked,
   }),

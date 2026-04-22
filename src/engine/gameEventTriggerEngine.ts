@@ -102,7 +102,7 @@ export interface TurnSnapshot {
 /** 감정 폭발 임계값 (emotionalState.internalValue) */
 const EMOTIONAL_BURST_THRESHOLD = 75
 /** 끼어들기 발생 최소 턴 간격 */
-const INTERJECTION_MIN_INTERVAL = 3
+const INTERJECTION_MIN_INTERVAL = 6
 /** 모순 감지 최소 모순토큰 */
 const CONTRADICTION_MIN_TOKENS = 3
 /** 새 쟁점 출현 최소 진행 쟁점 */
@@ -116,12 +116,22 @@ let lastInterjectionTurn = -99
 let lastEmotionalBurstTurn = -99
 let lastContradictionTurn = -99
 let lastContradictionDisputeId = ''
+/** caseId → 이미 발화한 interjection ID Set */
+const usedInterjections: Map<string, Set<string>> = new Map()
 
 export function resetEventTriggerState(): void {
   lastInterjectionTurn = -99
   lastEmotionalBurstTurn = -99
   lastContradictionTurn = -99
   lastContradictionDisputeId = ''
+  usedInterjections.clear()
+}
+
+/** 끼어들기 실제 표출 시 호출 — 같은 대사 반복 방지 */
+export function markInterjectionUsed(caseId: string, interjectionId: string): void {
+  const set = usedInterjections.get(caseId) ?? new Set<string>()
+  set.add(interjectionId)
+  usedInterjections.set(caseId, set)
 }
 
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -246,42 +256,38 @@ function checkInterjection(snapshot: TurnSnapshot): GameEventTrigger | null {
 
   const otherParty: PartyId = snapshot.activeParty === 'a' ? 'b' : 'a'
 
-  // 조건: 상대방의 감정이 agitated 이상 + 현재 쟁점에서 S1+ 상태
+  // 조건: 상대방의 감정이 충분히 격앙된 상태 + 현재 쟁점에서 의미 있는 방어 상태(S1~S3)
   const otherEmotion = snapshot.emotions[otherParty]
-  if (otherEmotion.internalValue < 40) return null
+  if (otherEmotion.internalValue < 55) return null
 
   const otherLie = snapshot.lieStates[otherParty][snapshot.focusDisputeId]
   if (!otherLie) return null
   const rank = STATE_RANK[otherLie.currentState]
-  if (rank < 1) return null // S0이면 끼어들기 동기 없음
+  if (rank < 1 || rank >= 4) return null // S0이면 동기 부족, S4/S5면 이미 무너짐
 
-  // 추가 조건: 현재 질문이 사실추궁/증거제시일 때 더 잘 발생
+  // 추가 조건: 사실추궁/증거제시일 때만 발동(방관자가 자발적으로 끼어들 만한 상황)
   const isProvocative = snapshot.questionType === 'fact_pursuit' || snapshot.questionType === 'evidence_present'
-  if (!isProvocative && otherEmotion.internalValue < 60) return null
+  if (!isProvocative && otherEmotion.internalValue < 68) return null
+
+  // V3 텍스트 조회: 미사용 interjection만 허용. 없으면 끼어들기 자체를 발동하지 않음
+  const used = usedInterjections.get(snapshot.caseId) ?? new Set<string>()
+  const v3Candidates = getAvailableInterjections(snapshot.caseId, otherParty).filter((e) => !used.has(e.id))
+  const v3Event = v3Candidates[0]
+  if (!v3Event) return null
 
   const severity = otherEmotion.internalValue >= 70 ? 'major' : 'minor'
-
-  // V3 텍스트 조회
-  const v3Interjections = getAvailableInterjections(snapshot.caseId, otherParty)
-  const v3Event = v3Interjections[0] // 첫 번째 미사용 이벤트
 
   return {
     type: 'interjection',
     party: otherParty,
     disputeId: snapshot.focusDisputeId,
     severity,
-    description: v3Event
-      ? v3Event.interjectionLine
-      : severity === 'major'
-        ? '잠깐만요, 재판관님. 저도 할 말이 있습니다.'
-        : '그건 사실과 다릅니다.',
+    description: v3Event.interjectionLine,
     effects: [
       { type: 'emotion_spike', party: otherParty, delta: -5 },
       { type: 'trust_change', party: otherParty, delta: -5 },
     ],
-    scriptSlot: v3Event
-      ? { textId: v3Event.id, fallbackText: v3Event.interjectionLine }
-      : { textId: `interjection_${severity}`, fallbackText: '' },
+    scriptSlot: { textId: v3Event.id, fallbackText: v3Event.interjectionLine },
   }
 }
 

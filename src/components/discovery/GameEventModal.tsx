@@ -19,6 +19,17 @@ import { resolveInterjectionV2 } from '../../hooks/useActionDispatch'
 import { getScriptedEmotionalOverload } from '../../engine/scriptedTextLoader'
 import { normalizeCaseKey } from '../../utils/caseHelpers'
 
+function isNarrativeReaction(text: string | undefined): boolean {
+  if (!text) return false
+  return /(부딪힌다|드러난다|흔들린다|뒤집힌다|갈라진다|맞선다|올라오자|설명이|해석이|책임의 방향)/.test(text)
+}
+
+function buildContradictionFallbackLine(lieState: string): string {
+  if (lieState >= 'S3') return '...그건... 상황이 복잡했습니다. 제가 처음에 말씀드린 것과 다른 부분이 있었습니다.'
+  if (lieState >= 'S2') return '재판관님, 제 기억이 혼란스러웠던 것 같습니다. 다시 정리하겠습니다.'
+  return '그건... 제가 말한 것과 다르지 않습니다. 맥락이 다른 것입니다.'
+}
+
 export default function GameEventModal() {
   const pendingEvent = useStore(s => s.pendingGameEvent)
   const pendingV2 = useStore(s => s.pendingInterjectionV2)
@@ -87,6 +98,8 @@ function ContradictionModal({ event, caseKey, partyName }: { event: GameEventTri
   const dismiss = useStore(s => s.setPendingGameEvent)
   const addDialogue = useStore(s => s.addDialogue)
   const turnCount = useStore(s => s.turnCount)
+  const agentA = useStore(s => s.agentA)
+  const agentB = useStore(s => s.agentB)
 
   const v3Event = event.scriptSlot?.textId
     ? getContradictionEvent(caseKey, event.scriptSlot.textId)
@@ -122,9 +135,19 @@ function ContradictionModal({ event, caseKey, partyName }: { event: GameEventTri
       relatedDisputes: [event.disputeId],
       turn: turnCount,
     })
-    if (v3Event?.npcReaction) {
+    const lie = (event.party === 'a' ? agentA : agentB).lieStateMap[event.disputeId]?.currentState ?? 'S0'
+    const reactionIsNarrative = isNarrativeReaction(v3Event?.npcReaction)
+    addDialogue({
+      speaker: event.party,
+      text: reactionIsNarrative
+        ? buildContradictionFallbackLine(lie)
+        : v3Event?.npcReaction ?? buildContradictionFallbackLine(lie),
+      relatedDisputes: [event.disputeId],
+      turn: turnCount,
+    })
+    if (reactionIsNarrative && v3Event?.npcReaction) {
       addDialogue({
-        speaker: event.party,
+        speaker: 'system',
         text: v3Event.npcReaction,
         relatedDisputes: [event.disputeId],
         turn: turnCount,
@@ -266,16 +289,20 @@ function EmotionalBurstModal({ event, caseKey, partyName }: { event: GameEventTr
 
   // ScriptedText 우선 → V3 이벤트 → 폴백
   const scriptedOverload = getScriptedEmotionalOverload(normalizeCaseKey(caseKey), event.party, event.disputeId)
-  const outburstText = scriptedOverload?.text ?? v3Event?.outburstLine ?? event.description
-
-  const handlePress = () => {
-    const s = useGameStore.getState()
+  const outburstLine = scriptedOverload?.text ?? v3Event?.outburstLine
+  const outburstText = outburstLine ?? event.description
+  const emitOutburst = () => {
     addDialogue({
-      speaker: event.party,
+      speaker: outburstLine ? event.party : 'system',
       text: outburstText,
       relatedDisputes: [event.disputeId],
       turn: turnCount,
     })
+  }
+
+  const handlePress = () => {
+    const s = useGameStore.getState()
+    emitOutburst()
     addDialogue({
       speaker: 'judge',
       text: '계속하십시오. 이 자리에서 사실대로 말하셔야 합니다.',
@@ -305,12 +332,7 @@ function EmotionalBurstModal({ event, caseKey, partyName }: { event: GameEventTr
 
   const handleCalm = () => {
     const s = useGameStore.getState()
-    addDialogue({
-      speaker: event.party,
-      text: outburstText,
-      relatedDisputes: [event.disputeId],
-      turn: turnCount,
-    })
+    emitOutburst()
     addDialogue({
       speaker: 'judge',
       text: '잠시 진정하시고, 준비되면 말씀하십시오.',

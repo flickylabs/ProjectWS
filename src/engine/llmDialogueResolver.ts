@@ -2163,11 +2163,17 @@ async function tryBlueprintPath(
     if (newLieState !== prevLieState) {
       const beat = getTransitionBeat(caseKey, target, disputeId, prevLieState, newLieState)
       if (beat) {
-        // TransitionBeat가 있으면 LLM 응답 대신 사전 작성 대사로 교체
-        finalText = beat.line
-        console.log(`[V3 Beat] ${target}/${disputeId}: ${prevLieState}→${newLieState} — beat 삽입: ${beat.id}`)
+        // transitionBeat.line은 3인칭 서술체 — 내레이션(system)으로 추가 표시.
+        // LLM 응답(1인칭)은 finalText로 유지.
+        console.log(`[V3 Beat] ${target}/${disputeId}: ${prevLieState}→${newLieState} — beat narration: ${beat.id}`)
 
-        // behaviorHint도 beat 것으로 교체
+        store.addDialogue({
+          speaker: 'system',
+          text: beat.line,
+          relatedDisputes: [disputeId],
+          turn: store.turnCount,
+        })
+
         if (beat.behaviorHint) {
           store.addDialogue({
             speaker: 'system',
