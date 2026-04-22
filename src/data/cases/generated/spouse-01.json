@@ -183,7 +183,10 @@
           "addressA": "이쪽 분",
           "addressB": "그 차 주인분",
           "hiddenAgenda": "없음."
-        }
+        },
+        "unlockedByDossier": [
+          "dc-1"
+        ]
       },
       {
         "id": "w-2",
@@ -211,7 +214,11 @@
           "addressA": "고객님",
           "addressB": "명의자분",
           "hiddenAgenda": "절차상 확인이 미흡했던 본인 책임이 불거질까 봐 조심한다."
-        }
+        },
+        "unlockedByDossier": [
+          "dc-3",
+          "dc-4"
+        ]
       },
       {
         "id": "w-3",
@@ -239,7 +246,11 @@
           "addressA": "지연 씨",
           "addressB": "준호 씨",
           "hiddenAgenda": "자신이 링크를 보낸 책임이 불거질까 봐 표현을 조심한다."
-        }
+        },
+        "unlockedByDossier": [
+          "dc-3",
+          "dc-5"
+        ]
       }
     ]
   },
@@ -284,9 +295,9 @@
     },
     {
       "id": "d-2",
-      "name": "비자금 3,000만원 출금",
+      "name": "개인 비자금 2,000만원 출금",
       "truth": true,
-      "truthDescription": "이준호는 개인 비자금에서 3,000만원을 출금하여 형에게 현금으로 전달했다. 형이 개인회생 중이라 계좌 입금이 불가능했다.",
+      "truthDescription": "이준호는 본인 명의 개인 계좌의 비자금에서 2,000만원을 현금으로 출금하여 형에게 전달했다. 형이 개인회생 중이라 계좌 입금이 불가능했다. 공동 적금과는 무관한 개인 자금이다.",
       "quadrant": "b_only",
       "requiredEvidence": [
         "e-5"
@@ -322,9 +333,9 @@
     },
     {
       "id": "h-d3",
-      "name": "공동 적금 2,000만원 해지",
+      "name": "공동 적금 3,000만원 해지 (위임장 조작)",
       "truth": true,
-      "truthDescription": "박지연은 위임장을 조작하여 공동 적금 2,000만원을 해지했다. 이는 범죄 행위이며, 해지한 돈을 투자방에 넣었다가 사기로 전액 손실했다.",
+      "truthDescription": "박지연은 이준호 명의 위임장을 조작하여 공동 적금 3,000만원을 해지했다. 이는 범죄 행위이며, 해지한 돈을 투자방에 전액 송금했다가 사기로 손실했다.",
       "quadrant": "a_only",
       "requiredEvidence": [
         "e-6"
@@ -362,7 +373,7 @@
       "id": "h-d4",
       "name": "은폐와 선제행동의 순서",
       "truth": true,
-      "truthDescription": "숨김은 B가 먼저(비자금+형 상황 은폐), 계좌 감시는 A가 먼저(신혼 초), 돈 실행은 동시기(B 4개월 전, A 6주 전), 범죄 행위는 A(위임장 조작).",
+      "truthDescription": "숨김은 B가 먼저(개인 비자금 2천만+형 상황 은폐), 계좌 감시는 A가 먼저(신혼 초), 돈 실행은 동시기(B 4개월 전 2천만 현금 출금, A 6주 전 공동 적금 3천만 위임장 조작 해지), 범죄 행위는 A(위임장 조작).",
       "quadrant": "shared_misconception",
       "requiredEvidence": [
         "e-5",
@@ -729,6 +740,225 @@
             "suspicious": true
           }
         ]
+      },
+      "viewerDataByStage": {
+        "0": {
+          "meta": {
+            "name": "영수증 묶음 5장",
+            "type": "log",
+            "viewerType": "log",
+            "trustLevel": "mid",
+            "trustLabel": "보통",
+            "source": "org",
+            "sourceLabel": "기관",
+            "legality": "ok",
+            "legalLabel": "적법",
+            "stage": 1,
+            "stageLabel": "Stub — 편의점 영수증 2장만 확인",
+            "sourceNote": "institutional / original",
+            "redactions": []
+          },
+          "receipt": [
+            {
+              "storeName": "CU 관악봉천점",
+              "storeAddr": "서울 관악구 봉천로 234",
+              "date": "2026.02.18 (화) 19:23",
+              "items": [
+                {
+                  "name": "빙그레 바나나맛우유",
+                  "code": "880104",
+                  "unitPrice": "1,500",
+                  "qty": 1,
+                  "amount": "1,500"
+                },
+                {
+                  "name": "삼각김밥 불고기",
+                  "code": "880211",
+                  "unitPrice": "1,500",
+                  "qty": 2,
+                  "amount": "3,000"
+                },
+                {
+                  "name": "핫식스 250ml",
+                  "code": "880309",
+                  "unitPrice": "900",
+                  "qty": 1,
+                  "amount": "900"
+                }
+              ],
+              "subtotal": "5,400",
+              "tax": "491",
+              "total": "5,400",
+              "paymentMethod": "신한카드 (일시불) ****-3892",
+              "suspicious": false
+            },
+            {
+              "storeName": "GS25 관악중앙점",
+              "storeAddr": "서울 관악구 관악로 142",
+              "date": "2026.02.08 (토) 21:45",
+              "items": [
+                {
+                  "name": "컵라면 진라면매운맛",
+                  "code": "880022",
+                  "unitPrice": "1,200",
+                  "qty": 1,
+                  "amount": "1,200"
+                },
+                {
+                  "name": "삼각김밥 참치마요",
+                  "code": "880215",
+                  "unitPrice": "1,500",
+                  "qty": 1,
+                  "amount": "1,500"
+                },
+                {
+                  "name": "코카콜라 500ml",
+                  "code": "880301",
+                  "unitPrice": "1,800",
+                  "qty": 1,
+                  "amount": "1,800"
+                },
+                {
+                  "name": "핫도그 클래식",
+                  "code": "880401",
+                  "unitPrice": "2,000",
+                  "qty": 1,
+                  "amount": "2,000"
+                }
+              ],
+              "subtotal": "6,500",
+              "tax": "591",
+              "total": "6,500",
+              "paymentMethod": "신한카드 (일시불) ****-3892",
+              "suspicious": false
+            }
+          ]
+        },
+        "1": {
+          "meta": {
+            "name": "영수증 묶음 5장",
+            "type": "log",
+            "viewerType": "log",
+            "trustLevel": "mid",
+            "trustLabel": "보통",
+            "source": "org",
+            "sourceLabel": "기관",
+            "legality": "ok",
+            "legalLabel": "적법",
+            "stage": 1,
+            "stageLabel": "Excerpt — 의심스러운 여성용품 포함 3장",
+            "sourceNote": "institutional / original",
+            "redactions": []
+          },
+          "receipt": [
+            {
+              "storeName": "CU 관악봉천점",
+              "storeAddr": "서울 관악구 봉천로 234",
+              "date": "2026.02.18 (화) 19:23",
+              "items": [
+                {
+                  "name": "빙그레 바나나맛우유",
+                  "code": "880104",
+                  "unitPrice": "1,500",
+                  "qty": 1,
+                  "amount": "1,500"
+                },
+                {
+                  "name": "삼각김밥 불고기",
+                  "code": "880211",
+                  "unitPrice": "1,500",
+                  "qty": 2,
+                  "amount": "3,000"
+                },
+                {
+                  "name": "핫식스 250ml",
+                  "code": "880309",
+                  "unitPrice": "900",
+                  "qty": 1,
+                  "amount": "900"
+                }
+              ],
+              "subtotal": "5,400",
+              "tax": "491",
+              "total": "5,400",
+              "paymentMethod": "신한카드 (일시불) ****-3892",
+              "suspicious": false
+            },
+            {
+              "storeName": "GS25 관악중앙점",
+              "storeAddr": "서울 관악구 관악로 142",
+              "date": "2026.02.08 (토) 21:45",
+              "items": [
+                {
+                  "name": "컵라면 진라면매운맛",
+                  "code": "880022",
+                  "unitPrice": "1,200",
+                  "qty": 1,
+                  "amount": "1,200"
+                },
+                {
+                  "name": "삼각김밥 참치마요",
+                  "code": "880215",
+                  "unitPrice": "1,500",
+                  "qty": 1,
+                  "amount": "1,500"
+                },
+                {
+                  "name": "코카콜라 500ml",
+                  "code": "880301",
+                  "unitPrice": "1,800",
+                  "qty": 1,
+                  "amount": "1,800"
+                },
+                {
+                  "name": "핫도그 클래식",
+                  "code": "880401",
+                  "unitPrice": "2,000",
+                  "qty": 1,
+                  "amount": "2,000"
+                }
+              ],
+              "subtotal": "6,500",
+              "tax": "591",
+              "total": "6,500",
+              "paymentMethod": "신한카드 (일시불) ****-3892",
+              "suspicious": false
+            },
+            {
+              "storeName": "올리브영 봉천역점",
+              "storeAddr": "서울 관악구 봉천로 212 2F",
+              "date": "2026.02.15 (토) 14:07",
+              "items": [
+                {
+                  "name": "이니스프리 그린티씨드세럼",
+                  "code": "410752",
+                  "unitPrice": "28,000",
+                  "qty": 1,
+                  "amount": "28,000"
+                },
+                {
+                  "name": "에뛰드 픽싱틴트 #05",
+                  "code": "410381",
+                  "unitPrice": "12,000",
+                  "qty": 1,
+                  "amount": "12,000"
+                },
+                {
+                  "name": "쏘내추럴 코튼패드 80매",
+                  "code": "410104",
+                  "unitPrice": "3,500",
+                  "qty": 1,
+                  "amount": "3,500"
+                }
+              ],
+              "subtotal": "43,500",
+              "tax": "3,954",
+              "total": "43,500",
+              "paymentMethod": "신한카드 (일시불) ****-3892",
+              "suspicious": true
+            }
+          ]
+        }
       }
     },
     {
@@ -750,7 +980,7 @@
       "investigationResults": {
         "request_original": "블랙박스 GPS에 매일 같은 좌표에 정차한 기록이 남아 있다. 네비 즐겨찾기에도 같은 주소가 저장되어 있다.",
         "check_metadata": "정차 빈도는 주 2~3회 이상이며, 체류 시간은 2~3시간이다. 오피스텔 주소로 확인된다.",
-        "restore_context": "후반에는 형네 오피스텔 방문 동선으로 재맥락화된다."
+        "restore_context": "GPS 정차 기록을 시간대로 분류하면, 방문은 평일 저녁 식사 시간대(19~21시)에만 집중되어 있다. 주말·심야 방문은 없다. 외박이나 장시간 체류도 없는 짧은 단기 체류 패턴이다."
       },
       "subjectParty": "b",
       "investigationStages": [
@@ -1047,7 +1277,7 @@
       "investigationResults": {
         "request_original": "새벽 시간대에 같은 번호로 반복 통화한 기록이다. 낮에도 짧은 통화가 다수 있다.",
         "check_metadata": "통화 상대는 1명이다. 새벽과 낮 모두 같은 번호이며, 긴급 연락 패턴이다.",
-        "restore_context": "후반에는 형과의 긴급 연락으로 재맥락화된다."
+        "restore_context": "통화 시간을 집계하면 대부분 2~3분, 가장 긴 통화도 4분 30초를 넘지 않는다. 외도 관계에서 흔한 장시간 새벽 통화 패턴이 아니다. 용건만 짧게 주고받는 실용적 연락에 가깝다."
       },
       "subjectParty": "b",
       "investigationStages": [
@@ -1184,7 +1414,7 @@
               "type": "out",
               "typeLabel": "발신",
               "target": "010-****-3847",
-              "duration": "4분 22초",
+              "duration": "3분 12초",
               "suspicious": true
             },
             {
@@ -1200,7 +1430,7 @@
               "type": "out",
               "typeLabel": "발신",
               "target": "010-****-3847",
-              "duration": "12분 48초",
+              "duration": "4분 28초",
               "suspicious": true
             },
             {
@@ -1216,7 +1446,7 @@
               "type": "out",
               "typeLabel": "발신",
               "target": "010-****-3847",
-              "duration": "8분 33초",
+              "duration": "2분 47초",
               "suspicious": true
             },
             {
@@ -1232,7 +1462,7 @@
               "type": "out",
               "typeLabel": "발신",
               "target": "010-****-3847",
-              "duration": "15분 02초",
+              "duration": "3분 55초",
               "suspicious": true
             },
             {
@@ -1248,7 +1478,7 @@
               "type": "out",
               "typeLabel": "발신",
               "target": "010-****-3847",
-              "duration": "3분 55초",
+              "duration": "1분 48초",
               "suspicious": true
             },
             {
@@ -1256,11 +1486,11 @@
               "type": "out",
               "typeLabel": "발신",
               "target": "010-****-3847",
-              "duration": "22분 17초",
+              "duration": "4분 12초",
               "suspicious": true
             }
           ],
-          "note": "010-****-3847 번호로의 야간 통화가 반복적으로 확인됨. 통화 시간이 길고 빈도가 높음."
+          "note": "010-****-3847 번호로의 야간 통화가 반복적으로 확인됨. 다만 통화 시간은 대부분 3분 이하, 최장도 5분 미만."
         }
       }
     },
@@ -1268,7 +1498,7 @@
       "id": "e-4",
       "name": "형 문자 스레드",
       "surfaceName": "발신자 미상 문자",
-      "description": "'오늘도 부탁해', '가은이 학교 알림' 등. 돌봄 관계 직접 증명.",
+      "description": "발신자 불명의 문자 스레드. 지역번호는 익숙하지만 명의가 확인되지 않는 번호와의 반복 교신.",
       "surfaceDescription": "문자 스레드가 존재한다.",
       "type": "chat",
       "reliability": "hard",
@@ -1284,9 +1514,9 @@
       ],
       "requiredLieState": "S1",
       "investigationResults": {
-        "request_original": "문자 내용에 '오늘도 부탁해', '가은이 학교 알림' 등 돌봄 관련 메시지가 있다.",
-        "check_metadata": "발신자는 형(이성호)이다. 일상적 돌봄 부탁 내용이 반복된다.",
-        "restore_context": "조카 돌봄 관계를 직접 증명하는 결정적 증거이다."
+        "request_original": "스레드에 반복되는 문구: '나야. 당분간 이 번호로 연락할께.', '내 이름으로 저장은 하지마. 나중에 문제가 될 수 있어.', '오늘도 부탁해.', '항상 고마워.' 수신 시각은 주로 저녁에서 밤 사이.",
+        "check_metadata": "발신 번호는 이준호 씨가 주로 쓰는 번호부에 저장되어 있지 않다. 지역번호와 앞자리가 어딘가 익숙하지만 누구 것인지 바로 떠오르지 않는다. 명의 조회는 미상.",
+        "restore_context": "번호를 역추적하면 이준호 씨 형이 최근 개통한 선불폰 번호로 확인된다. 기존 형의 번호는 채권추심 문제로 정지 상태였다. 스레드 안에 '가은이 학교 알림' 관련 단체 문자가 섞여 있어 조카(중2) 돌봄 맥락이 드러난다."
       },
       "subjectParty": "b",
       "investigationStages": [
@@ -1304,11 +1534,11 @@
           "stage": 1,
           "revealKey": "check_metadata",
           "question": {
-            "text": "이 문자 내용이 돌봄 부탁이라면 왜 아내에게 보여주지 않았습니까?",
+            "text": "이 번호는 왜 번호부에 저장해두지 않으셨습니까?",
             "attackVector": "context"
           },
           "label": "관계대조",
-          "unlockHint": "대화를 확인하면 발신자와 돌봄 부탁 내용의 관계를 대조할 수 있습니다."
+          "unlockHint": "대화 내용을 확인하면 번호 주인의 정체를 좁혀볼 수 있습니다."
         },
         {
           "stage": 2,
@@ -1499,13 +1729,155 @@
             }
           ]
         }
+      },
+      "viewerDataByStage": {
+        "0": {
+          "meta": {
+            "name": "형 문자 스레드",
+            "type": "chat",
+            "viewerType": "chat",
+            "trustLevel": "mid",
+            "trustLabel": "보통",
+            "source": "b",
+            "sourceLabel": "B측",
+            "legality": "ok",
+            "legalLabel": "적법",
+            "stage": 4,
+            "stageLabel": "Stub — 발신자 미상, 발췌만",
+            "sourceNote": "self_possessed / original",
+            "redactions": [
+              "조카 이름 비공개",
+              "학교명 및 학년 마스킹",
+              "생리 관련 직접 표현 봉인"
+            ]
+          },
+          "chat": {
+            "header": "이준호 ↔ 발신자 미상 문자 기록",
+            "messages": [
+              {
+                "side": "left",
+                "sender": "***",
+                "text": "오늘도 부탁해."
+              },
+              {
+                "side": "right",
+                "sender": "이준호",
+                "text": "알겠어."
+              },
+              {
+                "side": "left",
+                "sender": "***",
+                "text": "항상 고마워."
+              },
+              {
+                "side": "right",
+                "sender": "이준호",
+                "text": "뭘."
+              },
+              {
+                "side": "left",
+                "sender": "***",
+                "text": "오늘 혼자 있으니 밥 좀 부탁."
+              },
+              {
+                "side": "right",
+                "sender": "이준호",
+                "text": "알겠어 이따 들를게."
+              },
+              {
+                "type": "note",
+                "text": "※ 조사 1회만 수행됨. 발신자는 확인되지 않았습니다."
+              }
+            ]
+          }
+        },
+        "1": {
+          "meta": {
+            "name": "형 문자 스레드",
+            "type": "chat",
+            "viewerType": "chat",
+            "trustLevel": "mid",
+            "trustLabel": "보통",
+            "source": "b",
+            "sourceLabel": "B측",
+            "legality": "ok",
+            "legalLabel": "적법",
+            "stage": 4,
+            "stageLabel": "Excerpt — 번호만 노출, 의심스러운 문구 확인",
+            "sourceNote": "self_possessed / original",
+            "redactions": [
+              "조카 이름 비공개",
+              "학교명 및 학년 마스킹",
+              "생리 관련 직접 표현 봉인"
+            ]
+          },
+          "chat": {
+            "header": "이준호 ↔ 010-****-3847 문자 기록",
+            "messages": [
+              {
+                "side": "left",
+                "sender": "010-****-3847",
+                "text": "나야. 당분간 이 번호로 연락할께."
+              },
+              {
+                "side": "right",
+                "sender": "이준호",
+                "text": "응 알겠어."
+              },
+              {
+                "side": "left",
+                "sender": "010-****-3847",
+                "text": "내 이름으로 저장은 하지마. 나중에 문제가 될 수 있어."
+              },
+              {
+                "side": "right",
+                "sender": "이준호",
+                "text": "…알았어."
+              },
+              {
+                "side": "left",
+                "sender": "010-****-3847",
+                "text": "오늘도 부탁해."
+              },
+              {
+                "side": "right",
+                "sender": "이준호",
+                "text": "알겠어 이따 들를게."
+              },
+              {
+                "side": "left",
+                "sender": "010-****-3847",
+                "text": "항상 고마워."
+              },
+              {
+                "side": "right",
+                "sender": "이준호",
+                "text": "뭘."
+              },
+              {
+                "side": "left",
+                "sender": "010-****-3847",
+                "text": "지연이한테는 아직 말하지 마. 내 사정 알려지면…"
+              },
+              {
+                "side": "right",
+                "sender": "이준호",
+                "text": "알아. 걱정 마."
+              },
+              {
+                "type": "note",
+                "text": "※ 조사 2회 수행. 발신 번호 지역·앞자리는 익숙하지만 명의는 미상(번호부 미저장)."
+              }
+            ]
+          }
+        }
       }
     },
     {
       "id": "e-5",
-      "name": "이준호의 계좌 출금 내역",
+      "name": "이준호의 개인 계좌 출금 내역",
       "surfaceName": "개인 계좌 출금 내역",
-      "description": "비자금 계좌에서 3,000만원 현금 출금 기록.",
+      "description": "이준호 본인 명의 개인 비자금 계좌에서 2,000만원 현금 출금 기록. 공동 적금과는 별개.",
       "surfaceDescription": "대규모 출금 기록이 있다.",
       "type": "bank",
       "reliability": "hard",
@@ -1521,9 +1893,9 @@
       ],
       "requiredLieState": "S2",
       "investigationResults": {
-        "request_original": "비자금 계좌에서 3,000만원이 현금으로 출금된 기록이다.",
-        "check_metadata": "출금 시점은 4개월 전이며, 오피스텔 방문 시작 시점과 일치한다.",
-        "restore_context": "형에게 현금으로 전달하기 위한 출금이었다. 형은 개인회생 중이라 계좌 입금 불가."
+        "request_original": "이준호 명의 개인 계좌의 비자금에서 2,000만원이 현금으로 출금된 기록이다.",
+        "check_metadata": "출금 시점은 4개월 전이며, 오피스텔 방문 시작 시점과 일치한다. 해당 계좌는 이준호 단독 명의.",
+        "restore_context": "형에게 현금으로 전달하기 위한 출금이었다. 형은 개인회생 중이라 계좌 입금이 불가능했다. 공동 적금과는 무관한 이준호 개인 자금이다."
       },
       "subjectParty": "both",
       "investigationStages": [
@@ -1738,7 +2110,7 @@
       "id": "e-6",
       "name": "투자방 카톡 + 송금 기록",
       "surfaceName": "투자방 카톡 기록",
-      "description": "A의 2,000만원 송금 내역 + 투자방 대화. 사기 경위.",
+      "description": "박지연의 3,000만원 투자방 송금 내역 + 투자방 대화. 사기 경위.",
       "surfaceDescription": "투자방 카톡 대화와 송금 기록이 있다.",
       "type": "chat",
       "reliability": "hard",
@@ -1754,9 +2126,9 @@
       ],
       "requiredLieState": "S2",
       "investigationResults": {
-        "request_original": "A가 투자방에 2,000만원을 송금한 내역과 카톡 대화 기록이다.",
-        "check_metadata": "송금 시점은 5주 전이며, 친구 박미라가 보내준 링크를 통해 가입했다.",
-        "restore_context": "투자방은 사기였으며, 4주 전에 전액 손실이 확정되었다."
+        "request_original": "박지연이 투자방에 3,000만원을 송금한 내역과 카톡 대화 기록이다.",
+        "check_metadata": "송금 시점은 5주 전이며, 친구 박미라가 보내준 링크를 통해 가입했다. 송금액은 공동 적금 해지액과 정확히 일치한다.",
+        "restore_context": "투자방은 사기였으며, 4주 전에 3,000만원 전액 손실이 확정되었다. 이 돈은 공동 적금 위임장 조작으로 빼낸 것이다."
       },
       "subjectParty": "a",
       "investigationStages": [
@@ -1976,9 +2348,9 @@
       ],
       "requiredLieState": "S3",
       "investigationResults": {
-        "request_original": "위임장과 공동 적금 해지 기록이다. 해지 금액은 2,000만원.",
-        "check_metadata": "위임장의 서명이 B 본인 것이 아닌 것으로 의심된다. A가 대필한 흔적이 있다.",
-        "restore_context": "A가 위임장을 조작하여 B 동의 없이 공동 적금을 해지한 범죄 행위의 증거이다."
+        "request_original": "공동 적금 해지 서류와 위임장이다. 해지 금액은 3,000만원.",
+        "check_metadata": "위임장의 이준호 서명이 본인 필적이 아닌 것으로 의심된다. 박지연이 대필한 흔적이 있다.",
+        "restore_context": "박지연이 위임장을 조작하여 이준호 동의 없이 공동 적금 3,000만원을 해지한 범죄 행위의 증거이다."
       },
       "subjectParty": "a",
       "investigationStages": [
@@ -2726,71 +3098,6 @@
         "visibility": "base"
       },
       {
-        "id": "L-1",
-        "type": "derived_note",
-        "label": "L-1 Timeline Lead",
-        "linkedDisputeIds": [
-          "d-1"
-        ],
-        "linkedEvidenceIds": [
-          "e-1",
-          "e-2"
-        ],
-        "visibility": "derived"
-      },
-      {
-        "id": "L-2",
-        "type": "derived_note",
-        "label": "L-2 Context Lead",
-        "linkedDisputeIds": [
-          "d-1"
-        ],
-        "linkedEvidenceIds": [
-          "e-3",
-          "e-4"
-        ],
-        "visibility": "derived"
-      },
-      {
-        "id": "L-3",
-        "type": "derived_note",
-        "label": "L-3 Beneficiary Lead",
-        "linkedDisputeIds": [
-          "d-2"
-        ],
-        "linkedEvidenceIds": [
-          "e-4",
-          "e-5"
-        ],
-        "visibility": "derived"
-      },
-      {
-        "id": "L-4",
-        "type": "derived_note",
-        "label": "L-4 Emotion Lead",
-        "linkedDisputeIds": [
-          "h-d3"
-        ],
-        "linkedEvidenceIds": [
-          "e-6"
-        ],
-        "visibility": "derived"
-      },
-      {
-        "id": "L-5",
-        "type": "derived_note",
-        "label": "L-5 Reframe Lead",
-        "linkedDisputeIds": [
-          "h-d4"
-        ],
-        "linkedEvidenceIds": [
-          "e-5",
-          "e-6",
-          "e-7"
-        ],
-        "visibility": "derived"
-      },
-      {
         "id": "dc-1",
         "type": "derived_note",
         "label": "dc-1 오피스텔의 사람들",
@@ -2855,89 +3162,9 @@
           "e-7"
         ],
         "visibility": "derived"
-      },
-      {
-        "id": "L-stmt-cross",
-        "type": "derived_note",
-        "label": "양쪽의 숨김이 부딪히다",
-        "visibility": "derived",
-        "linkedDisputeIds": [
-          "d-1",
-          "h-d3"
-        ]
       }
     ],
     "outputs": [
-      {
-        "id": "L-1",
-        "label": "L-1 Timeline Lead",
-        "summary": "Timeline 리드",
-        "nodeType": "derived_note",
-        "noteText": "Timeline Lead",
-        "judgeHint": "후속 카드 dc-1와 연결된다.",
-        "effects": [
-          {
-            "kind": "unlock_note",
-            "unlockNodeId": "L-1"
-          }
-        ]
-      },
-      {
-        "id": "L-2",
-        "label": "L-2 Context Lead",
-        "summary": "Context 리드",
-        "nodeType": "derived_note",
-        "noteText": "Context Lead",
-        "judgeHint": "후속 카드 dc-2와 연결된다.",
-        "effects": [
-          {
-            "kind": "unlock_note",
-            "unlockNodeId": "L-2"
-          }
-        ]
-      },
-      {
-        "id": "L-3",
-        "label": "L-3 Beneficiary Lead",
-        "summary": "Beneficiary 리드",
-        "nodeType": "derived_note",
-        "noteText": "Beneficiary Lead",
-        "judgeHint": "후속 카드 dc-3와 연결된다.",
-        "effects": [
-          {
-            "kind": "unlock_note",
-            "unlockNodeId": "L-3"
-          }
-        ]
-      },
-      {
-        "id": "L-4",
-        "label": "L-4 Emotion Lead",
-        "summary": "Emotion 리드",
-        "nodeType": "derived_note",
-        "noteText": "Emotion Lead",
-        "judgeHint": "후속 카드 dc-4와 연결된다.",
-        "effects": [
-          {
-            "kind": "unlock_note",
-            "unlockNodeId": "L-4"
-          }
-        ]
-      },
-      {
-        "id": "L-5",
-        "label": "L-5 Reframe Lead",
-        "summary": "Reframe 리드",
-        "nodeType": "derived_note",
-        "noteText": "Reframe Lead",
-        "judgeHint": "후속 카드 dc-5와 연결된다.",
-        "effects": [
-          {
-            "kind": "unlock_note",
-            "unlockNodeId": "L-5"
-          }
-        ]
-      },
       {
         "id": "dc-1",
         "label": "dc-1 오피스텔의 사람들",
@@ -2948,8 +3175,17 @@
           {
             "kind": "unlock_note",
             "unlockNodeId": "dc-1"
+          },
+          {
+            "kind": "upgrade_dispute",
+            "disputeUpgrade": {
+              "disputeId": "d-1",
+              "weight": "high",
+              "ambiguity": "low"
+            }
           }
-        ]
+        ],
+        "judgeHint": "이제 '오피스텔 경비'를 증인으로 불러 동선을 확정하실 수 있습니다."
       },
       {
         "id": "dc-2",
@@ -2961,26 +3197,39 @@
           {
             "kind": "unlock_note",
             "unlockNodeId": "dc-2"
+          },
+          {
+            "kind": "upgrade_evidence",
+            "evidenceUpgrade": {
+              "evidenceId": "e-4",
+              "toReliability": "verified"
+            }
           }
-        ]
+        ],
+        "judgeHint": "이 감정 패턴을 이준호 씨에게 직접 추궁하시거나 형 문자(e-4)를 제시하면 구체적 사연이 드러날 것입니다."
       },
       {
         "id": "dc-3",
         "label": "dc-3 3,000만 원의 권한",
-        "summary": "공동 적금 독단 처분 책임을 묻는 카드",
+        "summary": "공동 적금 3,000만원 해지의 권한이 누구에게 있었는지, 위임장이 조작됐는지를 묻는 카드",
         "nodeType": "derived_note",
         "noteText": "3,000만 원의 권한",
         "effects": [
           {
             "kind": "unlock_note",
             "unlockNodeId": "dc-3"
+          },
+          {
+            "kind": "unlock_dispute",
+            "unlockNodeId": "h-d3"
           }
-        ]
+        ],
+        "judgeHint": "'은행 직원'을 증인으로 불러 공동 적금 해지 절차와 위임장 진위를 확인해보시지요."
       },
       {
         "id": "dc-4",
         "label": "dc-4 2,000만 원의 수치",
-        "summary": "A의 2,000만 원 송금 동기를 묻는 카드",
+        "summary": "이준호의 개인 비자금 2,000만원이 어디로 움직였는지, 왜 숨겼는지를 묻는 카드",
         "nodeType": "derived_note",
         "noteText": "2,000만 원의 수치",
         "effects": [
@@ -2989,10 +3238,15 @@
             "unlockNodeId": "dc-4"
           },
           {
-            "kind": "unlock_dispute",
-            "unlockNodeId": "h-d3"
+            "kind": "upgrade_dispute",
+            "disputeUpgrade": {
+              "disputeId": "d-2",
+              "weight": "high",
+              "ambiguity": "low"
+            }
           }
-        ]
+        ],
+        "judgeHint": "이제 이준호 씨 형의 상황을 직접 확인하거나 동기 탐색으로 숨긴 이유를 물어볼 수 있습니다."
       },
       {
         "id": "dc-5",
@@ -3009,21 +3263,8 @@
             "kind": "unlock_dispute",
             "unlockNodeId": "h-d4"
           }
-        ]
-      },
-      {
-        "id": "L-stmt-cross",
-        "label": "양쪽의 숨김이 부딪히다",
-        "summary": "한쪽은 가족 일이라 숨기고, 다른 쪽은 제 몫을 지키려 먼저 움직였다.",
-        "nodeType": "derived_note",
-        "effects": [
-          {
-            "kind": "unlock_note",
-            "unlockNodeId": "L-stmt-cross"
-          }
         ],
-        "judgeHint": "서로 숨긴 이유가 다르지만, 둘 다 상대에게 먼저 말하지 않았다는 점은 같다.",
-        "noteText": "이준호는 형네 일이라 입을 다물었고, 박지연은 의심이 확신이 된 뒤 혼자 적금을 움직였다. 신뢰가 깨진 순서를 따지면 양쪽 모두 먼저 말하지 않은 쪽이다."
+        "judgeHint": "'박미라' 증인이 투자 링크 전달 경위를 결정적으로 채워줄 것입니다."
       }
     ],
     "recipes": [
@@ -3035,7 +3276,7 @@
         ],
         "cost": 1,
         "discoveryText": "영수증 구매 위치와 블랙박스 정차 좌표가 일치한다. 오피스텔 근처에서만 구매한 패턴이 확정된다.",
-        "outputId": "L-1",
+        "outputId": "dc-1",
         "resultType": "upgrade"
       },
       {
@@ -3056,8 +3297,8 @@
           "e-3"
         ],
         "cost": 1,
-        "discoveryText": "비자금 출금 시점과 새벽 통화 빈도 급증 시점이 정확히 겹친다.",
-        "outputId": "L-3",
+        "discoveryText": "새벽 통화 상대로 나간 돈의 흐름이 맞물린다. 이준호 개인 비자금 2,000만원이 형 쪽으로 움직인 경로가 드러난다.",
+        "outputId": "dc-4",
         "resultType": "dispute"
       },
       {
@@ -3067,19 +3308,19 @@
           "e-7"
         ],
         "cost": 1,
-        "discoveryText": "적금 해지 → 투자방 송금 → 사기 피해. 돈의 전체 경로가 확정된다.",
-        "outputId": "L-4",
+        "discoveryText": "공동 적금 해지 서류의 3,000만원과 투자방 송금 내역의 3,000만원이 정확히 일치한다. 위임장 조작으로 빠진 돈의 행선지가 확정된다.",
+        "outputId": "dc-3",
         "resultType": "upgrade"
       },
       {
         "id": "combine-5",
         "inputs": [
           "stmt-a-protect",
-          "e-5"
+          "e-7"
         ],
         "cost": 1,
-        "discoveryText": "박지연이 '목돈이 빠졌다'고 했는데 어떻게 알았지? 박지연이 계좌를 봐왔다는 의미다.",
-        "outputId": "dc-4",
+        "discoveryText": "박지연의 '제 몫을 지키려 했다'는 말과 위조된 위임장이 같은 방향을 가리킨다. 3,000만원 해지가 자각된 행위였음이 드러난다.",
+        "outputId": "dc-3",
         "resultType": "dossier"
       },
       {
@@ -3101,7 +3342,7 @@
         ],
         "cost": 1,
         "discoveryText": "\"가족 쪽 일\"이라는 말과 \"제 몫을 지키려 했다\"는 말을 나란히 놓으면, 서로에게 먼저 말하지 않은 이유가 겹친다.",
-        "outputId": "L-stmt-cross",
+        "outputId": "dc-5",
         "resultType": "upgrade"
       }
     ]

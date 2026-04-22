@@ -10,6 +10,7 @@ import { setLLMMode } from '../../../hooks/useActionDispatch'
 import { useGameStore, useStore } from '../../../store/useGameStore'
 import { GamePhase, type CaseData, type ExtendedHistoryEntry, type SortCategory } from '../../../types'
 import PCSvgIcon from '../icons/PCSvgIcon'
+import PCSessionIcon from '../icons/PCSessionIcon'
 import { openPcInteractionPanel } from '../layout/PCInteractionPanel'
 import PCJudgeProgressionPanel from '../profile/PCJudgeProgressionPanel'
 import PCCaseBrowser from './PCCaseBrowser'
@@ -185,15 +186,21 @@ export default function PCHomeScreen() {
       {view === 'home' && (
         <section className="pc-home-v2">
           <header className="pc-home-v2__topbar">
-            <div className="pc-home-v2__center-mark"><span className="pc-home-v2__mark"><PCSvgIcon id="i-scale" size={34} /></span></div>
             <div className="pc-home-v2__tools">
-              <button className="pc-home-v2__tool" onClick={openLive} type="button"><PCSvgIcon id="i-bolt" size={16} /></button>
-              <button className="pc-home-v2__tool" onClick={openGuide} type="button"><PCSvgIcon id="i-bulb" size={16} /></button>
-              <button className="pc-home-v2__tool" onClick={toggleBgm} type="button"><PCSvgIcon id={bgmOn ? 'i-bolt' : 'i-lock'} size={16} /></button>
-              <button className="pc-home-v2__tool" onClick={() => setView('settings')} type="button"><PCSvgIcon id="i-gear" size={16} /></button>
+              <button className="pc-home-v2__tool pc-home-v2__tool--settings" onClick={() => setView('settings')} type="button" aria-label="설정">
+                <img src="/emoji/2699-fe0f.png" alt="설정" width={28} height={28} style={{ display: 'block', objectFit: 'contain' }} />
+              </button>
             </div>
           </header>
-          <div className="pc-home-v2__hero"><span className="pc-home-v2__eyebrow">COURT SIMULATION GAME</span><h1>솔로몬의 딜레마</h1><p>현대판 솔로몬이 되어 판결을 내려보세요.</p></div>
+          <div className="pc-home-v2__hero">
+            <span className="pc-home-v2__eyebrow">COURT SIMULATION GAME</span>
+            <div className="pc-home-v2__title-row">
+              <img className="pc-home-v2__title-scale" src="/icons/ornament/scale-balance.png" alt="" width={48} height={48} aria-hidden="true" />
+              <h1>솔로몬의 딜레마</h1>
+              <img className="pc-home-v2__title-scale" src="/icons/ornament/scale-balance.png" alt="" width={48} height={48} aria-hidden="true" />
+            </div>
+            <p>현대판 솔로몬이 되어 판결을 내려보세요.</p>
+          </div>
           <div className="pc-home-v2__mode-grid">
             <ModeCard badge="NORMAL MODE" iconId="i-gavel" label="일반 모드 >" metaLeft={`세션 ${PC_GENERAL_SESSIONS.length}개`} metaRight={`진척 ${totalGeneralCompleted}/${totalGeneralCases}`} onClick={() => { setSelectedSession(null); setView('general') }} progressRate={totalGeneralCases ? (totalGeneralCompleted / totalGeneralCases) * 100 : 0} />
             <ModeCard badge={season.name} iconId="i-crown" label="시즌 모드 >" metaLeft={seasonCases.length ? `${seasonCases.length}건 배정` : '배정 준비 중'} metaRight={`${remainingDays}일 남음`} onClick={() => setView('season')} progressRate={seasonProgress.progressRate} season />
@@ -215,7 +222,7 @@ export default function PCHomeScreen() {
               return (
                 <button className={`pc-session-card-v2 pc-session-card-v2--${session.accent}${disabled ? ' is-disabled' : ''}`} disabled={disabled} key={session.id} onClick={() => { setSelectedSession(session.id); setView('generalCases') }} type="button">
                   <div className="pc-session-card-v2__top"><span>{`SESSION ${String(index + 1).padStart(2, '0')}`}</span><strong>{disabled ? '준비 중' : `${progress.completedCount}/${progress.totalCount}`}</strong></div>
-                  <div className="pc-session-card-v2__main"><span className="pc-session-card-v2__icon"><PCSvgIcon id={session.iconId} size={24} /></span><div><h3>{session.label}</h3>{progress.averageScore != null ? <p>{`평균 ${progress.averageScore}점`}</p> : null}</div></div>
+                  <div className="pc-session-card-v2__main"><span className="pc-session-card-v2__icon"><PCSessionIcon sessionId={session.id} size={80} fallbackSymbolId={session.iconId} alt={session.label} /></span><div><h3>{session.label}</h3>{progress.averageScore != null ? <p>{`평균 ${progress.averageScore}점`}</p> : null}</div></div>
                   <div className="pc-session-card-v2__track"><i style={{ width: `${progress.progressRate}%` }} /></div>
                 </button>
               )

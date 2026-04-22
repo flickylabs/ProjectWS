@@ -423,16 +423,38 @@ function GameEventPanel() {
     const v3Event = pendingEvent.scriptSlot?.textId
       ? getOutburstEvent(caseKey, pendingEvent.scriptSlot.textId)
       : null
-    const outburstText = v3Event?.outburstLine ?? pendingEvent.description
+    // v3 outburstLine(1인칭 대사)가 있으면 당사자 말풍선, 없으면 3인칭 서술 → 시스템 메시지
+    const outburstLine = v3Event?.outburstLine
+    const outburstText = outburstLine ?? pendingEvent.description
+    const emitOutburst = (extraSystemTail: string) => {
+      if (outburstLine) {
+        addDialogue({
+          speaker: pendingEvent.party,
+          text: outburstLine,
+          relatedDisputes: [pendingEvent.disputeId],
+          turn: turnCount,
+        })
+      } else {
+        addDialogue({
+          speaker: 'system',
+          text: pendingEvent.description,
+          relatedDisputes: [pendingEvent.disputeId],
+          turn: turnCount,
+        })
+      }
+      if (extraSystemTail) {
+        addDialogue({
+          speaker: 'system',
+          text: extraSystemTail,
+          relatedDisputes: [pendingEvent.disputeId],
+          turn: turnCount,
+        })
+      }
+    }
 
     const handlePress = () => {
       const state = useGameStore.getState()
-      addDialogue({
-        speaker: pendingEvent.party,
-        text: outburstText,
-        relatedDisputes: [pendingEvent.disputeId],
-        turn: turnCount,
-      })
+      emitOutburst('')
       addDialogue({
         speaker: 'judge',
         text: '계속 말해보세요. 지금의 흐름을 더 확인하겠습니다.',
@@ -459,12 +481,7 @@ function GameEventPanel() {
 
     const handleCalm = () => {
       const state = useGameStore.getState()
-      addDialogue({
-        speaker: pendingEvent.party,
-        text: outburstText,
-        relatedDisputes: [pendingEvent.disputeId],
-        turn: turnCount,
-      })
+      emitOutburst('')
       addDialogue({
         speaker: 'judge',
         text: '잠시 진정하고, 사실만 다시 정리해 주세요.',
@@ -493,7 +510,11 @@ function GameEventPanel() {
     return (
       <OverlayShell title="감정 폭발" subtitle={`${partyName} · ${disputeName}`} tone="red">
         <div className="pc-discovery-card__body">
-          <div className="pc-discovery-card__quote">“{outburstText}”</div>
+          {outburstLine ? (
+            <div className="pc-discovery-card__quote">“{outburstText}”</div>
+          ) : (
+            <div className="pc-discovery-card__narration">{outburstText}</div>
+          )}
         </div>
         <ActionRow>
           <ActionButton onClick={handleCalm}>진정시킨다</ActionButton>

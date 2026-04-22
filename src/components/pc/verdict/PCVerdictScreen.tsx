@@ -14,6 +14,7 @@ import { useGameStore, useStore } from '../../../store/useGameStore'
 import { GamePhase } from '../../../types'
 import { recordHistory } from '../../layout/HistoryPanel'
 import CharacterFaceSvg from '../icons/CharacterFaceSvg'
+import PCCharacterPortrait from '../icons/PCCharacterPortrait'
 import { CAMPAIGN_STAGE_MAP, getCampaignStageKey } from '../../verdict/VerdictScreen'
 
 type VerdictStep = 'fact' | 'responsibility' | 'solution' | 'confirm'
@@ -123,32 +124,42 @@ function buildFactOptions(
 }
 
 /** Seesaw-style scale SVG that tilts based on percentage */
-function ScaleSVG({ percentA, nameA, nameB }: { percentA: number; nameA: string; nameB: string }) {
+function ScaleSVG({ percentA, nameA, nameB, caseId }: { percentA: number; nameA: string; nameB: string; caseId: string }) {
   // percentA가 높으면 A(왼쪽)가 무거워서 내려감 → 음수 tilt = 왼쪽 내려감
   const tilt = -((percentA - 50) / 50) * 12
+  const blueColor = '#4a6fa5'  // 플레이 톤과 맞춘 다운된 블루
+  const redColor = '#a84f4f'   // 플레이 톤과 맞춘 다운된 레드
   return (
-    <svg width="400" height="200" viewBox="0 0 400 200" style={{ display: 'block', margin: '12px auto' }}>
+    <svg width="420" height="220" viewBox="0 0 420 220" style={{ display: 'block', margin: '12px auto' }}>
       {/* fulcrum */}
-      <polygon points="200,140 182,170 218,170" fill="#d4a24e" opacity="0.6" />
-      <rect x="165" y="170" width="70" height="6" rx="3" fill="#d4a24e" opacity="0.3" />
+      <polygon points="210,160 192,188 228,188" fill="#8b6f3d" opacity="0.7" />
+      <rect x="175" y="188" width="70" height="5" rx="2" fill="#8b6f3d" opacity="0.35" />
       {/* tilting beam group */}
-      <g transform={`rotate(${tilt}, 200, 140)`}>
+      <g transform={`rotate(${tilt}, 210, 156)`}>
         {/* beam */}
-        <rect x="40" y="136" width="320" height="8" rx="4" fill="#d4a24e" />
-        {/* left platform */}
-        <rect x="45" y="126" width="90" height="10" rx="5" fill="rgba(91,141,239,0.2)" stroke="#5b8def" strokeWidth="1.5" />
-        {/* left character face — foreignObject로 CharacterFaceSvg 삽입 */}
-        <foreignObject x="62" y="72" width="56" height="56">
-          <CharacterFaceSvg party="a" size={56} />
+        <rect x="50" y="154" width="320" height="6" rx="3" fill="#8b6f3d" />
+        {/* left side — 동그란 테두리 + 초상화 */}
+        <circle cx="100" cy="118" r="32" fill="rgba(74, 111, 165, 0.12)" stroke={blueColor} strokeWidth="1.8" />
+        <clipPath id="clip-verdict-a">
+          <circle cx="100" cy="118" r="30" />
+        </clipPath>
+        <foreignObject x="70" y="88" width="60" height="60" clipPath="url(#clip-verdict-a)">
+          <div style={{ width: 60, height: 60, borderRadius: '50%', overflow: 'hidden' }}>
+            <PCCharacterPortrait alt={nameA} caseId={caseId} emotion="defensive" fallbackSymbolId="i-person" party="a" size={60} />
+          </div>
         </foreignObject>
-        <text x="90" y="68" textAnchor="middle" fontSize="10" fontWeight="700" fill="#5b8def">{nameA}</text>
-        {/* right platform */}
-        <rect x="265" y="126" width="90" height="10" rx="5" fill="rgba(224,96,96,0.2)" stroke="#e06060" strokeWidth="1.5" />
-        {/* right character face */}
-        <foreignObject x="282" y="72" width="56" height="56">
-          <CharacterFaceSvg party="b" size={56} />
+        <text x="100" y="70" textAnchor="middle" fontSize="11" fontWeight="800" fill={blueColor}>{nameA}</text>
+        {/* right side */}
+        <circle cx="320" cy="118" r="32" fill="rgba(168, 79, 79, 0.12)" stroke={redColor} strokeWidth="1.8" />
+        <clipPath id="clip-verdict-b">
+          <circle cx="320" cy="118" r="30" />
+        </clipPath>
+        <foreignObject x="290" y="88" width="60" height="60" clipPath="url(#clip-verdict-b)">
+          <div style={{ width: 60, height: 60, borderRadius: '50%', overflow: 'hidden' }}>
+            <PCCharacterPortrait alt={nameB} caseId={caseId} emotion="defensive" fallbackSymbolId="i-person" party="b" size={60} />
+          </div>
         </foreignObject>
-        <text x="310" y="68" textAnchor="middle" fontSize="10" fontWeight="700" fill="#e06060">{nameB}</text>
+        <text x="320" y="70" textAnchor="middle" fontSize="11" fontWeight="800" fill={redColor}>{nameB}</text>
       </g>
     </svg>
   )
@@ -556,7 +567,9 @@ export default function PCVerdictScreen() {
                   </div>
                   <div className="pc-verdict-resp__slider-area">
                     <span className="pc-verdict-resp__label is-a">
-                      <span className="pc-verdict-resp__avatar is-a">{nameA[0]}</span>
+                      <span className="pc-verdict-resp__avatar is-a">
+                        <PCCharacterPortrait alt={nameA} caseId={caseData.caseId} emotion="defensive" fallbackSymbolId="i-person" party="a" size={36} />
+                      </span>
                       {nameA}
                     </span>
                     <div className="pc-verdict-resp__track" style={{ '--a-pct': `${resp.a}%` } as React.CSSProperties}>
@@ -574,7 +587,9 @@ export default function PCVerdictScreen() {
                       <div className="pc-verdict-resp__fill" style={{ width: `${resp.a}%` }} />
                     </div>
                     <span className="pc-verdict-resp__label is-b">
-                      <span className="pc-verdict-resp__avatar is-b">{nameB[0]}</span>
+                      <span className="pc-verdict-resp__avatar is-b">
+                        <PCCharacterPortrait alt={nameB} caseId={caseData.caseId} emotion="defensive" fallbackSymbolId="i-person" party="b" size={36} />
+                      </span>
                       {nameB}
                     </span>
                   </div>
@@ -582,7 +597,7 @@ export default function PCVerdictScreen() {
                     <span className="is-a">{resp.a}%</span>
                     <span className="is-b">{resp.b}%</span>
                   </div>
-                  <ScaleSVG percentA={resp.a} nameA={nameA} nameB={nameB} />
+                  <ScaleSVG percentA={resp.a} nameA={nameA} nameB={nameB} caseId={caseData.caseId} />
                   <div className="pc-verdict-resp__direction">
                     {resp.a >= 80 ? `${nameA} 측에 주요 책임`
                      : resp.a >= 60 ? `${nameA} 측에 더 큰 책임`
@@ -640,7 +655,7 @@ export default function PCVerdictScreen() {
                           <strong className="pc-verdict-confirm__card-name">{item.name}</strong>
                           {resp ? (
                             <div className="pc-verdict-confirm__card-scale">
-                              <ScaleSVG percentA={resp.a} nameA={nameA} nameB={nameB} />
+                              <ScaleSVG percentA={resp.a} nameA={nameA} nameB={nameB} caseId={caseData.caseId} />
                             </div>
                           ) : null}
                           <span className={`pc-verdict-confirm__badge is-${item.fact ?? 'none'}`}>

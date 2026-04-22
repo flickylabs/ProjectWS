@@ -67,6 +67,13 @@ export interface ThirdParty {
   /** 이 증인이 관련된 쟁점 ID 목록 (lieState 게이팅에 사용) */
   relatedDisputeIds?: string[]
 
+  /**
+   * 소환을 잠금하는 조건.
+   * 여기 나열된 dossier 카드(dc-*) 중 하나라도 조합으로 달성되면 증인이 해금됨.
+   * 미지정(undefined/빈배열)이면 처음부터 소환 가능.
+   */
+  unlockedByDossier?: string[]
+
   /** 증인 상세 프로필 (증인 소환 시 사용) */
   witnessProfile?: {
     age: number

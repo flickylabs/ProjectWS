@@ -124,10 +124,17 @@ export function runDiscoveryChecks(party: PartyId, disputeId?: string) {
     if (lieEntry && lieEntry.currentState === 'S5') {
       const dispute = caseData.disputes.find((d) => d.id === disputeId)
       if (dispute) {
+        // 자백의 주체는 '진실을 가진 당사자' (quadrant 기준)
+        // quadrant: 'a_only' → A가 자백 / 'b_only' → B가 자백 / 그 외 → 실제 S5 당사자
+        const truthOwner: 'a' | 'b' =
+          dispute.quadrant === 'a_only' ? 'a'
+          : dispute.quadrant === 'b_only' ? 'b'
+          : party
+        const ownerName = truthOwner === 'a' ? caseData.duo.partyA.name : caseData.duo.partyB.name
         const conflict = checkJudgmentConflict(
           disputeId,
           discovery.judgments,
-          (() => { const n = party === 'a' ? caseData.duo.partyA.name : caseData.duo.partyB.name; return `${n}${pp이가(n)} 자백했습니다: ${dispute.truthDescription}` })(),
+          `${ownerName}${pp이가(ownerName)} 자백했습니다: ${dispute.truthDescription}`,
           'lie_collapse',
         )
         if (conflict) {

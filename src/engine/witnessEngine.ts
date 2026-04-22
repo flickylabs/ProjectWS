@@ -107,9 +107,16 @@ export function canCallWitness(
   caseData: CaseData,
   /** 다층 증언: 남은 슬롯이 있으면 재소환 허용 */
   hasRemainingSlots?: boolean,
+  /** 조합으로 해금된 증인 ID 목록 — 전달되지 않으면 게이팅 스킵 (구버전 호환) */
+  unlockedWitnessIds?: string[],
 ): { available: boolean; reason?: string; isResummon?: boolean } {
   const tp = caseData.duo.socialGraph.find(t => t.id === witnessId)
   if (!tp) return { available: false, reason: '존재하지 않는 증인' }
+  // 해금 게이팅: unlockedByDossier가 있으면 unlockedWitnessIds에 포함되어야 소환 가능
+  const gate = tp.unlockedByDossier ?? []
+  if (gate.length > 0 && unlockedWitnessIds && !unlockedWitnessIds.includes(witnessId)) {
+    return { available: false, reason: '조합으로 단서를 확보해야 소환 가능합니다' }
+  }
   if (calledWitnesses.includes(witnessId)) {
     // 다층 증언에서 남은 슬롯이 있으면 재소환 허용
     if (hasRemainingSlots) return { available: true, isResummon: true }

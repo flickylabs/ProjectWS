@@ -473,3 +473,11 @@ export function getOriginalViewerData(caseId: string, evidenceId: string): Recor
   const ev = (raw.evidence ?? []).find((e: any) => e.id === evidenceId)
   return ev?.viewerData
 }
+
+/** 원본 JSON에서 단계별 viewerData 오버라이드를 조회 */
+export function getOriginalViewerDataByStage(caseId: string, evidenceId: string): Record<string, Record<string, unknown>> | undefined {
+  const raw = RAW_CASES.find((r: any) => r.caseId === caseId)
+  if (!raw) return undefined
+  const ev = (raw.evidence ?? []).find((e: any) => e.id === evidenceId)
+  return ev?.viewerDataByStage
+}

@@ -15,9 +15,9 @@ const COMMENTS: Record<string, CombinationComment[]> = {
   'spouse-01': [
     { recipeId: 'combine-1', comment: '결제 시점과 출입 시간이 맞물립니다. 동선을 함께 보시지요.' },
     { recipeId: 'combine-2', comment: '문자 내용과 구매 품목이 맞물립니다. 오피스텔의 사람을 짚어야겠습니다.' },
-    { recipeId: 'combine-3', comment: '새벽 통화 뒤 돈의 흐름이 이어집니다. 받는 쪽을 따져볼 만합니다.' },
-    { recipeId: 'combine-4', comment: '투자 연락 직후 자금 흐름이 급해집니다. 누가 다급했는지 보시지요.' },
-    { recipeId: 'combine-5', comment: '몫을 지키려 했다면, 이 2천만 원의 성격도 짚어야겠습니다.' },
+    { recipeId: 'combine-3', comment: '새벽 통화 뒤 개인 계좌 2천만 원이 현금으로 나갔습니다. 받는 쪽부터 따져볼 만합니다.' },
+    { recipeId: 'combine-4', comment: '해지 서류 3천만 원과 투자방 송금 3천만 원이 정확히 맞물립니다. 빠진 돈의 행선지가 확정됐습니다.' },
+    { recipeId: 'combine-5', comment: '“제 몫을 지키려 했다”는 말과 위조된 위임장이 한 방향을 가리킵니다. 3천만 원 해지가 자각된 행위였는지 따져야겠습니다.' },
     { recipeId: 'combine-6', comment: '가족 쪽 일이라는 말에 구체성이 붙습니다. 숨긴 이유도 봐야겠습니다.' },
   ],
   'friend-01': [

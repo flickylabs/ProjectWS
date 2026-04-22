@@ -182,7 +182,10 @@
           "addressA": "다은이",
           "addressB": "수민 씨",
           "hiddenAgenda": "자신도 B를 비난하는 데 가담한 것이 부끄럽다."
-        }
+        },
+        "unlockedByDossier": [
+          "dc-3"
+        ]
       },
       {
         "id": "w-2",
@@ -209,7 +212,10 @@
           "addressA": "그분",
           "addressB": "그 여자분",
           "hiddenAgenda": "예비신랑과의 직장 관계가 불편해질까 봐 조심한다."
-        }
+        },
+        "unlockedByDossier": [
+          "dc-2"
+        ]
       },
       {
         "id": "w-3",
@@ -236,7 +242,10 @@
           "addressA": "그 집 딸",
           "addressB": "수민이",
           "hiddenAgenda": "없음."
-        }
+        },
+        "unlockedByDossier": [
+          "dc-4"
+        ]
       }
     ]
   },
@@ -2482,61 +2491,6 @@
         "visibility": "base"
       },
       {
-        "id": "L-1",
-        "type": "derived_note",
-        "label": "L-1 집착 프레임 리드",
-        "linkedDisputeIds": [
-          "d-1",
-          "d-5"
-        ],
-        "linkedEvidenceIds": [
-          "e-1",
-          "e-2"
-        ],
-        "visibility": "derived"
-      },
-      {
-        "id": "L-2",
-        "type": "derived_note",
-        "label": "L-2 예비신랑 반전 리드",
-        "linkedDisputeIds": [
-          "d-2"
-        ],
-        "linkedEvidenceIds": [
-          "e-1",
-          "e-4"
-        ],
-        "visibility": "derived"
-      },
-      {
-        "id": "L-3",
-        "type": "derived_note",
-        "label": "L-3 아버지 패턴 리드",
-        "linkedDisputeIds": [
-          "d-3",
-          "d-4"
-        ],
-        "linkedEvidenceIds": [
-          "e-5",
-          "e-6"
-        ],
-        "visibility": "derived"
-      },
-      {
-        "id": "L-4",
-        "type": "derived_note",
-        "label": "L-4 경고 결론 리드",
-        "linkedDisputeIds": [
-          "d-1",
-          "d-5"
-        ],
-        "linkedEvidenceIds": [
-          "e-4",
-          "e-7"
-        ],
-        "visibility": "derived"
-      },
-      {
         "id": "dc-1",
         "type": "derived_note",
         "label": "dc-1 왜 바로 말하지 않았는가",
@@ -2602,75 +2556,9 @@
           "e-7"
         ],
         "visibility": "derived"
-      },
-      {
-        "id": "L-stmt-cross",
-        "type": "derived_note",
-        "label": "단정과 자책이 부딪히다",
-        "visibility": "derived",
-        "linkedDisputeIds": [
-          "d-1",
-          "d-4"
-        ]
       }
     ],
     "outputs": [
-      {
-        "id": "L-1",
-        "label": "L-1 집착 프레임 리드",
-        "summary": "집착하는 사람 프레임 완성",
-        "nodeType": "derived_note",
-        "noteText": "모두가 B를 집착하는 사람으로 믿기 시작했다",
-        "judgeHint": "후속 카드 dc-3와 연결된다.",
-        "effects": [
-          {
-            "kind": "unlock_note",
-            "unlockNodeId": "L-1"
-          }
-        ]
-      },
-      {
-        "id": "L-2",
-        "label": "L-2 예비신랑 반전 리드",
-        "summary": "선넘은 건 예비신랑 재해석",
-        "nodeType": "derived_note",
-        "noteText": "먼저 선을 넘은 건 예비신랑이었다",
-        "judgeHint": "후속 카드 dc-1와 연결된다.",
-        "effects": [
-          {
-            "kind": "unlock_note",
-            "unlockNodeId": "L-2"
-          }
-        ]
-      },
-      {
-        "id": "L-3",
-        "label": "L-3 아버지 패턴 리드",
-        "summary": "송다은 아버지 패턴 확정",
-        "nodeType": "derived_note",
-        "noteText": "송다은 아버지의 돈 접근은 처음이 아니다",
-        "judgeHint": "후속 카드 dc-2와 연결된다.",
-        "effects": [
-          {
-            "kind": "unlock_note",
-            "unlockNodeId": "L-3"
-          }
-        ]
-      },
-      {
-        "id": "L-4",
-        "label": "L-4 경고 결론 리드",
-        "summary": "최수민의 연락은 경고 결론 강화",
-        "nodeType": "derived_note",
-        "noteText": "최수민은 두 번 다 말하지 못해 악역이 됐다",
-        "judgeHint": "사건 전체 구조를 뒤집는 최종 리드.",
-        "effects": [
-          {
-            "kind": "unlock_note",
-            "unlockNodeId": "L-4"
-          }
-        ]
-      },
       {
         "id": "dc-1",
         "label": "dc-1 왜 바로 말하지 않았는가",
@@ -2681,8 +2569,16 @@
           {
             "kind": "unlock_note",
             "unlockNodeId": "dc-1"
+          },
+          {
+            "kind": "upgrade_dispute",
+            "disputeUpgrade": {
+              "disputeId": "d-1",
+              "weight": "high"
+            }
           }
-        ]
+        ],
+        "judgeHint": "수민 씨에게 왜 바로 말하지 않았는지 직접 물어볼 수 있습니다."
       },
       {
         "id": "dc-2",
@@ -2694,8 +2590,16 @@
           {
             "kind": "unlock_note",
             "unlockNodeId": "dc-2"
+          },
+          {
+            "kind": "upgrade_dispute",
+            "disputeUpgrade": {
+              "disputeId": "d-2",
+              "weight": "high"
+            }
           }
-        ]
+        ],
+        "judgeHint": "아버지의 과거 돈 접근 패턴에 초점을 맞춰 추궁해보시지요."
       },
       {
         "id": "dc-3",
@@ -2707,8 +2611,13 @@
           {
             "kind": "unlock_note",
             "unlockNodeId": "dc-3"
+          },
+          {
+            "kind": "unlock_dispute",
+            "unlockNodeId": "d-5"
           }
-        ]
+        ],
+        "judgeHint": "새 쟁점 '단톡방 매도와 명예훼손'이 드러났습니다. 확산 경로를 짚어보세요."
       },
       {
         "id": "dc-4",
@@ -2720,8 +2629,13 @@
           {
             "kind": "unlock_note",
             "unlockNodeId": "dc-4"
+          },
+          {
+            "kind": "unlock_dispute",
+            "unlockNodeId": "d-4"
           }
-        ]
+        ],
+        "judgeHint": "새 쟁점 '과거 손절과 아버지의 사기'가 드러났습니다. 손절의 진짜 원인을 파고들 수 있습니다."
       },
       {
         "id": "dc-5",
@@ -2733,22 +2647,13 @@
           {
             "kind": "unlock_note",
             "unlockNodeId": "dc-5"
-          }
-        ]
-      },
-      {
-        "id": "L-stmt-cross",
-        "label": "단정과 자책이 부딪히다",
-        "summary": "한쪽은 또 선을 넘었다고 단정하고, 다른 쪽은 참았어야 했다고 자책한다.",
-        "nodeType": "derived_note",
-        "effects": [
+          },
           {
-            "kind": "unlock_note",
-            "unlockNodeId": "L-stmt-cross"
+            "kind": "unlock_dispute",
+            "unlockNodeId": "d-3"
           }
         ],
-        "judgeHint": "확인 없이 내린 결론과, 말하지 못해 자책하는 마음이 같은 사건의 양면이다.",
-        "noteText": "송다은은 연락 기록만 보고 집착이라 단정했고, 최수민은 경고하려 했지만 말할 수 없었던 이유를 안고 자책한다. 같은 9일을 전혀 다르게 살았다."
+        "judgeHint": "새 쟁점 '아버지의 돈 접근 패턴'이 드러났습니다. 반복된 구조를 물어보세요."
       }
     ],
     "recipes": [
@@ -2760,7 +2665,7 @@
         ],
         "cost": 1,
         "discoveryText": "연락 기록과 단톡방 캡처를 대조하면, 최수민의 연락 사실이 확인도 없이 '집착'으로 프레이밍된 과정이 보인다.",
-        "outputId": "L-1",
+        "outputId": "dc-3",
         "resultType": "upgrade"
       },
       {
@@ -2793,7 +2698,7 @@
         ],
         "cost": 1,
         "discoveryText": "예비신랑의 접근과 대조표를 합치면, 최수민의 연락이 경고였다는 결론이 강화된다.",
-        "outputId": "L-4",
+        "outputId": "dc-3",
         "resultType": "upgrade"
       },
       {
@@ -2837,7 +2742,7 @@
         ],
         "cost": 1,
         "discoveryText": "수민이 '참았어야 했다'는 말과 예비신랑 메시지를 대조하면, 먼저 선을 넘은 쪽이 예비신랑이었다는 반전이 나온다.",
-        "outputId": "L-2",
+        "outputId": "dc-1",
         "resultType": "upgrade"
       },
       {
@@ -2848,7 +2753,7 @@
         ],
         "cost": 1,
         "discoveryText": "수민이 참으려 했다는 말과 다은 아버지의 문자를 합치면, 아버지의 돈 접근 패턴이 처음이 아니라는 사실이 드러난다.",
-        "outputId": "L-3",
+        "outputId": "dc-2",
         "resultType": "upgrade"
       },
       {
@@ -2859,7 +2764,7 @@
         ],
         "cost": 1,
         "discoveryText": "\"또 내 남자한테 연락한다\"는 단정과 \"참았어야 했는데\"라는 자책을 나란히 놓으면, 같은 사건을 전혀 다르게 겪고 있다는 점이 드러난다.",
-        "outputId": "L-stmt-cross",
+        "outputId": "dc-3",
         "resultType": "upgrade"
       }
     ]

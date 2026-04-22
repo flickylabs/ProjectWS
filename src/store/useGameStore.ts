@@ -134,6 +134,9 @@ export type GameStore = PhaseSlice & AgentSlice & ResourceSlice & EvidenceSlice 
   setTestimonyAnalysis: (analysis: TestimonyAnalysis | null) => void
   calledWitnesses: string[]
   addCalledWitness: (witnessId: string) => void
+  /** 소환 가능하도록 해금된 증인 ID 목록 (unlockedByDossier 게이팅 사용) */
+  unlockedWitnessIds: string[]
+  addUnlockedWitness: (witnessId: string) => void
   /** 증인 다층 증언 세션 상태 (witnessId → session) */
   witnessSessions: Record<string, { heardSlots: string[]; lastChoice: string | null; summonCount: number }>
   updateWitnessSession: (witnessId: string, slotId: string) => void
@@ -298,6 +301,12 @@ export const useGameStore: import('zustand').UseBoundStore<import('zustand').Sto
     setTestimonyAnalysis: (analysis) => set({ testimonyAnalysis: analysis }),
     calledWitnesses: [],
     addCalledWitness: (witnessId) => set((prev) => ({ calledWitnesses: [...prev.calledWitnesses, witnessId] })),
+    unlockedWitnessIds: [],
+    addUnlockedWitness: (witnessId) => set((prev) => (
+      prev.unlockedWitnessIds.includes(witnessId)
+        ? prev
+        : { unlockedWitnessIds: [...prev.unlockedWitnessIds, witnessId] }
+    )),
     pendingWitnessChoice: null,
     setPendingWitnessChoice: (choice) => set({ pendingWitnessChoice: choice }),
     witnessSessions: {},
@@ -421,16 +430,33 @@ export const useGameStore: import('zustand').UseBoundStore<import('zustand').Sto
             break
 
           // ── 신규 5종 효과 ──
-          case 'timeline_lock':
-            // 사실 추궁: 부정 시점 고정 → 대화 로그에 시스템 메시지 + 자동 즐겨찾기
+          case 'timeline_lock': {
+            // 사실 추궁: 부정 시점 고정
+            // → 해당 당사자의 가장 최근 부정 발언을 즐겨찾기에 자동 등록
+            // → 시스템 메시지는 알림용(autoPin 아님)
+            const lockParty = effect.party as 'a' | 'b'
+            const recentDialogue = [...state.dialogueLog]
+              .reverse()
+              .find((entry) => entry.speaker === lockParty
+                && !entry.autoPin
+                && (entry.relatedDisputes ?? []).includes(effect.disputeId))
+            if (recentDialogue) {
+              set((prev) => ({
+                dialogueLog: prev.dialogueLog.map((entry) =>
+                  entry.id === recentDialogue.id
+                    ? { ...entry, autoPin: true, behaviorHint: entry.behaviorHint ?? '진술 시점 고정' }
+                    : entry
+                ),
+              }))
+            }
             state.addDialogue({
               speaker: 'system',
               text: '📌 [진술 시점 고정] — 이 부정은 향후 모순 추궁의 근거가 됩니다',
               relatedDisputes: [effect.disputeId],
               turn: state.turnCount,
-              autoPin: true,
             })
             break
+          }
           case 'hidden_dispute_hook':
             // 동기 탐색: 숨겨진 쟁점 연결고리 → 이벤트 로그(토스트)
             set((prev) => ({
@@ -661,6 +687,9 @@ export const useGameStore: import('zustand').UseBoundStore<import('zustand').Sto
         processMetrics: { ...EMPTY_METRICS },
         testimonyAnalysis: null,
         calledWitnesses: [],
+        unlockedWitnessIds: (caseData.duo.socialGraph ?? [])
+          .filter((tp) => !tp.unlockedByDossier || tp.unlockedByDossier.length === 0)
+          .map((tp) => tp.id),
         witnessSessions: {},
         pendingWitnessChoice: null,
         interrogationHistory: { a: {}, b: {} },
@@ -780,6 +809,7 @@ export const useGameStore: import('zustand').UseBoundStore<import('zustand').Sto
     processMetrics: state.processMetrics,
     testimonyAnalysis: state.testimonyAnalysis,
     calledWitnesses: state.calledWitnesses,
+    unlockedWitnessIds: state.unlockedWitnessIds,
     interrogationHistory: state.interrogationHistory,
     pcTargetParty: state.pcTargetParty,
     pcSummaryUnlocked: state.pcSummaryUnlocked,

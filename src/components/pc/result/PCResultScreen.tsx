@@ -3,6 +3,9 @@ import { loadGeneratedCases } from '../../../data/cases/caseLoader'
 import { evaluateTitles, saveUnlockedTitles, loadUnlockedTitles, type Title } from '../../../data/titles'
 import { loadDriftState, loadExtendedHistory, loadJudgePerks, loadProgressionState, saveProgressionState } from '../../../data/leaderboard'
 import { deriveCaseProfile, deriveJudgeProfile, TITLE_LABELS, AXIS_LABELS, TIER_LABELS, LEVEL_LABELS } from '../../../engine/judgeProfileEngine'
+import PCTitleEmblem from '../icons/PCTitleEmblem'
+import PCCharacterPortrait from '../icons/PCCharacterPortrait'
+import { PCFragmentIcon } from '../progression/PCJudgeProgressionShared'
 import type { AxisLevelState } from '../../../engine/judgeProfileEngine'
 import type { PerkId } from '../../../engine/judgePerks'
 import { TRAIT_META, FRAGMENT_TABLE, applyRewardsToInventory, canEnhanceTrait, computeCaseRewards, type FragmentReward, type TraitId } from '../../../engine/judgeProgressionEngine'
@@ -493,8 +496,13 @@ export default function PCResultScreen() {
             ))}
           </div>
 
-          <div className="pc-result-hero__actions">
-            <div style={{ fontSize: 15, fontWeight: 800, color: '#a8a8b4', textAlign: 'center', marginBottom: 8 }}>
+          <div className="pc-result-hero__actions" style={{ marginTop: 'auto', display: 'flex', alignItems: 'center', gap: 12 }}>
+            <div style={{
+              flex: 1, minWidth: 0,
+              display: 'flex', alignItems: 'center', justifyContent: 'center',
+              minHeight: 48, padding: '0 12px',
+              fontSize: 14, fontWeight: 800, color: '#a8a8b4', textAlign: 'center',
+            }}>
               {judgeTierInfo.name} ({judgeProfile.casesCompleted}건){judgeProfile.isStabilized ? ' 안정' : ''}
             </div>
             <button className="pc-result-hero__button is-ghost" onClick={handleRetry} type="button">
@@ -591,7 +599,7 @@ export default function PCResultScreen() {
                 </div>
 
                 {/* 하단 prev/next */}
-                <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: 20 }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                   <button className="pc-verdict-footer__button" disabled type="button">&lt; 이전</button>
                   <button className="pc-verdict-footer__button is-primary" onClick={() => setTab('verdict_pronounce')} type="button">다음 &gt;</button>
                 </div>
@@ -604,34 +612,44 @@ export default function PCResultScreen() {
               return (
               <div className="pc-result-text">
                 {/* 상단 선고문 */}
-                <p style={{ fontSize: 17, color: '#e8e5dc', lineHeight: 1.8, textAlign: 'center', marginBottom: 20 }}>
+                <p style={{ fontSize: 17, color: '#e8e5dc', lineHeight: 1.8, textAlign: 'center', marginBottom: 28 }}>
                   본 사건은 <strong>{caseData.duo.partyA.name}</strong>{pp과와(caseData.duo.partyA.name)} <strong>{caseData.duo.partyB.name}</strong>의 {relationLabel} 간 분쟁으로, 총 <strong style={{ color: 'var(--pc-gold-light)' }}>{turnCount}</strong>회의 심리를 거쳐 다음과 같은 판결에 이르렀습니다.
                 </p>
 
                 {verdictSummary ? (
                   <>
                     {/* ── 상단: 좌측 저울 + 우측 2영역 ── */}
-                    <div style={{ display: 'grid', gridTemplateColumns: '240px 1fr', gap: 20, marginBottom: 20 }}>
-                      {/* 좌측 — 저울 + 책임 배분 설명 */}
-                      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 8, padding: '16px 0' }}>
-                        <svg width="220" height="160" viewBox="0 0 400 200" style={{ display: 'block' }}>
-                          <polygon points="200,140 182,170 218,170" fill="#d4a24e" opacity="0.6" />
-                          <rect x="165" y="170" width="70" height="6" rx="3" fill="#d4a24e" opacity="0.3" />
+                    <div style={{ display: 'grid', gridTemplateColumns: '240px 1fr', gap: 20, marginBottom: 28 }}>
+                      {/* 좌측 — 저울 + 책임 배분 설명 (top-aligned) */}
+                      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'flex-start', gap: 8, padding: '1px 0 0' }}>
+                        <svg width="240" height="180" viewBox="0 0 420 220" style={{ display: 'block' }}>
+                          <polygon points="210,160 192,188 228,188" fill="#8b6f3d" opacity="0.7" />
+                          <rect x="175" y="188" width="70" height="5" rx="2" fill="#8b6f3d" opacity="0.35" />
                           {(() => { const t = ((avgA - 50) / 50) * 12; return (
-                          <g transform={`rotate(${t}, 200, 140)`}>
-                            <rect x="40" y="136" width="320" height="8" rx="4" fill="#d4a24e" />
-                            <rect x="45" y="126" width="90" height="10" rx="5" fill="rgba(91,141,239,0.2)" stroke="#5b8def" strokeWidth="1.5" />
-                            <foreignObject x="62" y="72" width="56" height="56"><CharacterFaceSvg party="a" size={56} /></foreignObject>
-                            <text x="90" y="68" textAnchor="middle" fontSize="10" fontWeight="700" fill="#5b8def">{caseData.duo.partyA.name}</text>
-                            <rect x="265" y="126" width="90" height="10" rx="5" fill="rgba(224,96,96,0.2)" stroke="#e06060" strokeWidth="1.5" />
-                            <foreignObject x="282" y="72" width="56" height="56"><CharacterFaceSvg party="b" size={56} /></foreignObject>
-                            <text x="310" y="68" textAnchor="middle" fontSize="10" fontWeight="700" fill="#e06060">{caseData.duo.partyB.name}</text>
+                          <g transform={`rotate(${t}, 210, 156)`}>
+                            <rect x="50" y="154" width="320" height="6" rx="3" fill="#8b6f3d" />
+                            <circle cx="100" cy="118" r="32" fill="rgba(74, 111, 165, 0.12)" stroke="#4a6fa5" strokeWidth="1.8" />
+                            <clipPath id="clip-result-a"><circle cx="100" cy="118" r="30" /></clipPath>
+                            <foreignObject x="70" y="88" width="60" height="60" clipPath="url(#clip-result-a)">
+                              <div style={{ width: 60, height: 60, borderRadius: '50%', overflow: 'hidden' }}>
+                                <PCCharacterPortrait alt={caseData.duo.partyA.name} caseId={caseData.caseId} emotion="defensive" fallbackSymbolId="i-person" party="a" size={60} />
+                              </div>
+                            </foreignObject>
+                            <text x="100" y="70" textAnchor="middle" fontSize="11" fontWeight="800" fill="#4a6fa5">{caseData.duo.partyA.name}</text>
+                            <circle cx="320" cy="118" r="32" fill="rgba(168, 79, 79, 0.12)" stroke="#a84f4f" strokeWidth="1.8" />
+                            <clipPath id="clip-result-b"><circle cx="320" cy="118" r="30" /></clipPath>
+                            <foreignObject x="290" y="88" width="60" height="60" clipPath="url(#clip-result-b)">
+                              <div style={{ width: 60, height: 60, borderRadius: '50%', overflow: 'hidden' }}>
+                                <PCCharacterPortrait alt={caseData.duo.partyB.name} caseId={caseData.caseId} emotion="defensive" fallbackSymbolId="i-person" party="b" size={60} />
+                              </div>
+                            </foreignObject>
+                            <text x="320" y="70" textAnchor="middle" fontSize="11" fontWeight="800" fill="#a84f4f">{caseData.duo.partyB.name}</text>
                           </g>
                           ) })()}
                         </svg>
                         <div style={{ display: 'flex', gap: 24, fontSize: 20, fontWeight: 900 }}>
-                          <span style={{ color: '#5b8def' }}>{verdictSummary.responsibility.percentA}%</span>
-                          <span style={{ color: '#e06060' }}>{verdictSummary.responsibility.percentB}%</span>
+                          <span style={{ color: '#4a6fa5' }}>{verdictSummary.responsibility.percentA}%</span>
+                          <span style={{ color: '#a84f4f' }}>{verdictSummary.responsibility.percentB}%</span>
                         </div>
                         <p style={{ fontSize: 13, color: '#8c8fa0', lineHeight: 1.6, textAlign: 'center', marginTop: 4 }}>{verdictSummary.responsibilityReason}</p>
                       </div>
@@ -647,13 +665,13 @@ export default function PCResultScreen() {
                         <div className="pc-result-summary__section" style={{ margin: 0 }}>
                           <h3>해결 방향</h3>
                           <div style={{ maxHeight: 140, overflowY: 'auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8 }}>
-                            {verdictSummary.resolution.split(/[.。]\s*/).filter((s: string) => s.trim()).map((sentence: string, i: number) => (
+                            {verdictSummary.resolution.split(/[.。]\s*/).map((s: string) => s.trim().replace(/^,\s*/, '').trim()).filter((s: string) => s).map((sentence: string, i: number) => (
                               <div key={i} style={{
                                 padding: '10px 14px', borderRadius: 8,
                                 border: '1px solid rgba(255,255,255,0.06)', background: 'rgba(255,255,255,0.02)',
                                 fontSize: 13, color: '#a8a8b4', lineHeight: 1.5,
                               }}>
-                                {sentence.trim()}.
+                                {sentence}.
                               </div>
                             ))}
                           </div>
@@ -694,22 +712,26 @@ export default function PCResultScreen() {
             {/* ━━━ 후일담 탭 ━━━ */}
             {tab === 'epilogue' ? (
               <div className="pc-result-text">
-                {/* 후일담 — on top */}
+                {/* 후일담 — header (fixed top) */}
                 <div style={{ textAlign: 'center', marginBottom: 8 }}>
                   <div style={{ fontSize: 12, fontWeight: 800, letterSpacing: '0.2em', color: 'var(--pc-gold-light)', textTransform: 'uppercase' }}>Epilogue</div>
                 </div>
+                {/* Epilogue 본문 — flex:1로 남은 공간 채움 (내용 짧으면 줄어들고 길면 스크롤) */}
                 <div style={{
                   border: '1px solid rgba(212,162,78,0.15)', borderRadius: 16,
-                  padding: '20px 24px', background: 'rgba(212,162,78,0.02)',
-                  marginBottom: 32,
+                  padding: '16px 20px', background: 'rgba(212,162,78,0.02)',
+                  marginBottom: 16,
+                  flex: 1,
+                  minHeight: 0,
+                  overflowY: 'auto',
                 }}>
                   <AftermathInline />
                 </div>
 
-                {/* 획득 칭호 — 가로 스크롤 */}
+                {/* 획득 칭호 — 버튼 바로 위 고정 */}
                 {titles.length > 0 && (
-                  <div style={{ marginBottom: 32 }}>
-                    <h3 style={{ fontSize: 16, fontWeight: 800, color: '#e0ddd6', marginBottom: 12 }}>획득한 칭호</h3>
+                  <div style={{ marginBottom: 16, flexShrink: 0 }}>
+                    <h3 style={{ fontSize: 16, fontWeight: 800, color: '#e0ddd6', marginBottom: 8 }}>획득한 칭호</h3>
                     <div className="pc-result-titles-scroll">
                       {titles.map((t) => (
                         <button
@@ -729,8 +751,8 @@ export default function PCResultScreen() {
                   </div>
                 )}
 
-                {/* 하단 버튼 */}
-                <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: 20 }}>
+                {/* 하단 버튼 — 최하단 고정 */}
+                <div style={{ display: 'flex', justifyContent: 'space-between', flexShrink: 0 }}>
                   <button className="pc-verdict-footer__button" onClick={() => setTab('verdict_pronounce')} type="button">&lt; 이전</button>
                   <button className="pc-verdict-footer__button is-primary" onClick={() => setTab('bonus')} type="button">다음 &gt;</button>
                 </div>
@@ -740,26 +762,24 @@ export default function PCResultScreen() {
             {/* ━━━ 보너스 탭 ━━━ */}
             {tab === 'bonus' ? (
               <div className="pc-result-text">
-                <div style={{ textAlign: 'center', marginBottom: 16 }}>
-                  <div style={{ fontSize: 12, fontWeight: 800, letterSpacing: '0.2em', color: 'var(--pc-gold-light)', textTransform: 'uppercase' }}>Bonus</div>
+                <div style={{ padding: '6px 0' }}>
+                  <FragmentGrid rewards={rewardBundle.rewards} />
                 </div>
-
-                <FragmentGrid rewards={rewardBundle.rewards} />
 
                 {rewardBundle.enhanceableTraits.length > 0 && (
                   <div style={{
-                    padding: '12px 16px', borderRadius: 10,
-                    background: 'rgba(92,201,122,0.06)', border: '1px solid rgba(92,201,122,0.15)',
-                    textAlign: 'center', marginBottom: 24,
+                    padding: '8px 16px', borderRadius: 8,
+                    background: 'rgba(92, 201, 122, 0.06)', border: '1px solid rgba(92, 201, 122, 0.15)',
+                    textAlign: 'center', marginTop: 6, marginBottom: 6,
                   }}>
-                    <span style={{ fontSize: 13, fontWeight: 700, color: '#5cc97a' }}>
+                    <span style={{ fontSize: 12, fontWeight: 700, color: '#5cc97a' }}>
                       성향 강화 가능! — 내 정보에서 확인하세요
                     </span>
                   </div>
                 )}
 
                 {/* 하단 버튼 */}
-                <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: 20 }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                   <button className="pc-verdict-footer__button" onClick={() => setTab('epilogue')} type="button">&lt; 이전</button>
                   <button className="pc-verdict-footer__button is-primary" onClick={handleExit} type="button">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" style={{ display: 'inline-block', verticalAlign: 'middle', marginRight: 4 }}><path d="M3 12l9-8 9 8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/><path d="M5 10v9a1 1 0 001 1h4v-5h4v5h4a1 1 0 001-1v-9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
@@ -836,16 +856,16 @@ function FragmentGrid({ rewards }: { rewards: FragmentReward[] }) {
   for (const r of rewards) rewardMap.set(r.fragmentId, (rewardMap.get(r.fragmentId) ?? 0) + r.count)
 
   return (
-    <div style={{ marginBottom: 24 }}>
+    <div style={{ marginBottom: 8 }}>
       {GRID_ROWS.map((row, rowIdx) => (
-        <div key={rowIdx} style={{ display: 'flex', alignItems: 'center', gap: 0, marginBottom: 12 }}>
+        <div key={rowIdx} style={{ display: 'flex', alignItems: 'center', gap: 0, marginBottom: 8 }}>
           {/* 왼쪽 라벨 */}
-          <span style={{ width: 36, textAlign: 'right', fontSize: 11, fontWeight: 800, color: '#6b6e7e', flexShrink: 0 }}>
+          <span style={{ width: 48, textAlign: 'right', fontSize: 13, fontWeight: 800, color: '#8b8d99', flexShrink: 0 }}>
             {'<'}{row.negLabel}
           </span>
 
-          {/* 3 카드 */}
-          <div style={{ display: 'flex', gap: 10, flex: 1, justifyContent: 'center', padding: '0 8px' }}>
+          {/* 3 카드 — 큰 카드 + 넓은 간격 */}
+          <div style={{ display: 'flex', gap: 28, flex: 1, justifyContent: 'center', padding: '0 16px' }}>
             {row.fragments.map(fragId => {
               const def = FRAGMENT_TABLE.find(f => f.id === fragId)
               const count = rewardMap.get(fragId) ?? 0
@@ -853,36 +873,48 @@ function FragmentGrid({ rewards }: { rewards: FragmentReward[] }) {
               const color = FRAG_COLORS[fragId] ?? '#8b8b9a'
 
               return (
-                <div key={fragId} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 2, width: 80 }}>
-                  {/* 카드 */}
-                  <div style={{
-                    display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center',
-                    gap: 6, padding: '14px 8px 10px', borderRadius: 12, width: '100%',
-                    border: `1.5px solid ${active ? color + '55' : 'rgba(255,255,255,0.04)'}`,
-                    background: active ? color + '0c' : 'rgba(255,255,255,0.01)',
-                    opacity: active ? 1 : 0.3,
-                    transition: 'all 0.3s ease',
-                  }}>
-                    <span style={{ color: active ? color : '#3a3d4e', lineHeight: 1, transform: 'scale(1.5)', transformOrigin: 'center' }}>
-                      {FRAG_SVG[fragId] ?? '?'}
-                    </span>
-                    <span style={{ fontSize: 10, fontWeight: 700, color: active ? '#e0ddd6' : '#4a4d5e', marginTop: 4 }}>
-                      {def?.name?.replace('의 조각', '') ?? fragId}
-                    </span>
-                  </div>
-                  {/* 수량 — 카드 바깥 */}
+                <div key={fragId} style={{
+                  position: 'relative',
+                  width: 150, height: 150,
+                  display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center',
+                  padding: '16px 10px 14px', borderRadius: 16,
+                  border: `2px solid ${active ? color + '66' : 'rgba(255,255,255,0.06)'}`,
+                  background: active ? color + '14' : 'rgba(255,255,255,0.02)',
+                  opacity: active ? 1 : 0.35,
+                  transition: 'all 0.3s ease',
+                }}>
+                  {/* 수량 배지 — 우측 상단 오버레이 */}
                   {active ? (
-                    <span style={{ fontSize: 13, fontWeight: 900, color, letterSpacing: '-0.02em' }}>x{count}</span>
-                  ) : (
-                    <span style={{ fontSize: 11, color: '#2a2d3e' }}>—</span>
-                  )}
+                    <span style={{
+                      position: 'absolute', top: -10, right: -10,
+                      minWidth: 36, height: 36, padding: '0 10px',
+                      display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
+                      borderRadius: 999,
+                      background: color, color: '#1a1610',
+                      fontSize: 15, fontWeight: 900, letterSpacing: '-0.02em',
+                      boxShadow: '0 3px 10px rgba(0,0,0,0.45)',
+                      border: '2px solid rgba(18,19,24,0.72)',
+                    }}>x{count}</span>
+                  ) : null}
+                  {/* 아이콘 — 크게 */}
+                  <PCFragmentIcon fragmentId={fragId as any} size={92} />
+                  {/* 이름 라벨 — 카드 하단 오버레이 */}
+                  <span style={{
+                    position: 'absolute', bottom: 10, left: 10, right: 10,
+                    fontSize: 13, fontWeight: 800, textAlign: 'center',
+                    color: active ? '#ede3cc' : '#5a5d6e',
+                    textShadow: '0 2px 6px rgba(0,0,0,0.6)',
+                    letterSpacing: '0.02em',
+                  }}>
+                    {def?.name?.replace('의 조각', '') ?? fragId}
+                  </span>
                 </div>
               )
             })}
           </div>
 
           {/* 오른쪽 라벨 */}
-          <span style={{ width: 36, textAlign: 'left', fontSize: 11, fontWeight: 800, color: '#6b6e7e', flexShrink: 0 }}>
+          <span style={{ width: 48, textAlign: 'left', fontSize: 13, fontWeight: 800, color: '#8b8d99', flexShrink: 0 }}>
             {row.posLabel}{'>'}
           </span>
         </div>
@@ -1063,18 +1095,26 @@ function ProfileInfoSection() {
   const tierInfo = TIER_LABELS[profile.tier]
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
-      <h2 style={{ fontSize: 20, fontWeight: 900, color: 'var(--pc-gold-light)', margin: 0 }}>{titleInfo.name}</h2>
-      <p style={{ fontSize: 15, color: '#a8a8b4', lineHeight: 1.6, margin: 0 }}>
-        {getProfileDescription(profile.titleId)}
-      </p>
-      {profile.subtags.length > 0 && (
-        <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap', marginTop: 4 }}>
-          {profile.subtags.map((tag) => (
-            <span className="pc-result-summary__tag" key={tag}>{tag}</span>
-          ))}
-        </div>
-      )}
+    <div style={{ display: 'flex', alignItems: 'flex-start', gap: 16 }}>
+      <PCTitleEmblem
+        alt={titleInfo.name}
+        size={96}
+        style={{ flexShrink: 0, filter: 'drop-shadow(0 2px 6px rgba(0,0,0,0.45))' }}
+        titleId={profile.titleId}
+      />
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 8, minWidth: 0 }}>
+        <h2 style={{ fontSize: 20, fontWeight: 900, color: 'var(--pc-gold-light)', margin: 0 }}>{titleInfo.name}</h2>
+        <p style={{ fontSize: 15, color: '#a8a8b4', lineHeight: 1.6, margin: 0 }}>
+          {getProfileDescription(profile.titleId)}
+        </p>
+        {profile.subtags.length > 0 && (
+          <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap', marginTop: 4 }}>
+            {profile.subtags.map((tag) => (
+              <span className="pc-result-summary__tag" key={tag}>{tag}</span>
+            ))}
+          </div>
+        )}
+      </div>
     </div>
   )
 }

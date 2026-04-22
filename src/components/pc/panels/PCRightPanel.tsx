@@ -128,6 +128,8 @@ export default function PCRightPanel() {
     ? (availableNodes.find((node) => node.id === comboSlots[1])
       ?? (comboSlots[1] ? { id: comboSlots[1], type: 'evidence' as const, label: caseData?.evidence.find((e) => e.id === comboSlots[1])?.surfaceName ?? comboSlots[1], visibility: 'base' as const } as CombinationLabNode : null))
     : null
+  const comboNodeADisplay = comboNodeA ? getNodeDisplayLabel(comboNodeA, caseData) : null
+  const comboNodeBDisplay = comboNodeB ? getNodeDisplayLabel(comboNodeB, caseData) : null
   const comboReady = Boolean(comboSlots[0] && comboSlots[1])
 
   const matchingRecipe = useMemo(() => {
@@ -159,6 +161,7 @@ export default function PCRightPanel() {
   const queueNode = useCallback((nodeId: string) => {
     setComboSlots((current) => {
       if (current.includes(nodeId)) {
+        showToast('이미 같은 카드가 슬롯에 있습니다.', 'info')
         return current
       }
       if (!current[0]) {
@@ -192,49 +195,55 @@ export default function PCRightPanel() {
       return null
     }
 
-    // 1차: statement 노드 라벨의 따옴표 핵심 문구로 매칭
+    // 1차: statement 노드 라벨의 따옴표 문구로 정확 매칭
     const byQuote = noteNodes.find((node) => {
-      const quoteMatch = node.label?.match(/"([^"]+)"/)
+      const quoteMatch = node.label?.match(/["“”]([^"“”]+)["“”]/)
       if (!quoteMatch) return false
       return note.text.includes(quoteMatch[1])
     })
-    if (byQuote) {
-      return byQuote.id
+    if (byQuote) return byQuote.id
+
+    // 2차: 화자 + 쟁점 컨텍스트로 유사 발언 매칭
+    //   - statement 노드 라벨에서 "A의 발언" / "B의 발언" 패턴으로 화자 식별
+    //   - 대화의 relatedDisputes와 노드의 linkedDisputeIds 교집합이 가장 큰 노드 선택
+    const dialogueSpeaker = note.speaker === 'a' ? 'A' : note.speaker === 'b' ? 'B' : null
+    if (!dialogueSpeaker) return null
+
+    const getNodeSpeaker = (node: CombinationLabNode): string | null => {
+      const m = node.label?.match(/^([AB])의\s*(?:발언|진술|주장)/)
+      return m ? m[1] : null
     }
 
-    // 2차: 전체 라벨 텍스트 포함 매칭
-    const normalizedText = normalizeNodeText(note.text)
-    const byText = noteNodes.find((node) => {
-      const label = normalizeNodeText(node.label)
-      return label.length > 0 && (normalizedText.includes(label) || label.includes(normalizedText))
+    const sameSpeakerNodes = noteNodes.filter((node) => {
+      if (node.type !== 'statement') return false
+      return getNodeSpeaker(node) === dialogueSpeaker
     })
-    if (byText) {
-      return byText.id
-    }
+    if (sameSpeakerNodes.length === 0) return null
 
-    // 3차: 관련 쟁점 매칭 (같은 화자 우선)
-    const relatedDisputeIds = new Set(note.relatedDisputes)
-    const speakerPrefix = note.speaker === 'a' ? 'a' : note.speaker === 'b' ? 'b' : ''
-    const byDisputeAndSpeaker = speakerPrefix
-      ? noteNodes.find((node) => node.id.includes(speakerPrefix) && node.linkedDisputeIds?.some((disputeId) => relatedDisputeIds.has(disputeId)))
-      : null
-    if (byDisputeAndSpeaker) {
-      return byDisputeAndSpeaker.id
+    const dialogueDisputes = new Set(note.relatedDisputes ?? [])
+    let best: { node: CombinationLabNode; score: number } | null = null
+    for (const node of sameSpeakerNodes) {
+      const overlap = (node.linkedDisputeIds ?? []).filter((id) => dialogueDisputes.has(id)).length
+      const score = overlap * 10 + 1
+      if (!best || score > best.score) {
+        best = { node, score }
+      }
     }
-
-    const byDispute = noteNodes.find((node) => node.linkedDisputeIds?.some((disputeId) => relatedDisputeIds.has(disputeId)))
-    return byDispute?.id ?? null
+    return best?.node.id ?? null
   }, [availableNodes])
 
   const handleCombinationEvent = useCallback((detail: PcCombinationPanelEventDetail) => {
-    // combinationLab config 기반 resolve 시도, 실패 시 ID 직접 사용
-    const nodeId = detail.evidenceId
-      ? (resolveEvidenceNodeId(detail.evidenceId) ?? detail.evidenceId)
-      : detail.note
-        ? (resolveNoteNodeId(detail.note) ?? detail.note.text.slice(0, 30))
-        : null
-
-    if (nodeId) {
+    if (detail.evidenceId) {
+      const nodeId = resolveEvidenceNodeId(detail.evidenceId) ?? detail.evidenceId
+      queueNode(nodeId)
+      return
+    }
+    if (detail.note) {
+      const nodeId = resolveNoteNodeId(detail.note)
+      if (!nodeId) {
+        showToast('하이라이트된 핵심 발언만 조합할 수 있습니다.', 'info')
+        return
+      }
       queueNode(nodeId)
     }
   }, [queueNode, resolveEvidenceNodeId, resolveNoteNodeId])
@@ -311,7 +320,7 @@ export default function PCRightPanel() {
 
     store.addDialogue({
       speaker: 'system',
-      text: `\uC870\uD569 \uACB0\uACFC: ${matchingOutput.label}\n${matchingOutput.summary}`,
+      text: `\uC870\uD569 \uACB0\uACFC: ${cleanOutputLabel(matchingOutput.label)}${matchingRecipe.discoveryText ? '\n' + matchingRecipe.discoveryText : cleanOutputSummary(matchingOutput.summary, matchingOutput.label) ? '\n' + cleanOutputSummary(matchingOutput.summary, matchingOutput.label) : ''}`,
       relatedDisputes: matchingOutput.effects
         .flatMap((effect) => [
           effect.targetId,
@@ -331,11 +340,11 @@ export default function PCRightPanel() {
 
     const effectTags = matchingOutput.effects.slice(0, 4).map((effect) => getResultKindLabel(effect.kind))
     openPcInteractionPanel({
-      title: matchingOutput.label,
+      title: cleanOutputLabel(matchingOutput.label),
       subtitle: '\uC870\uD569 \uC131\uACF5',
       tone: 'gold',
       variant: 'feature',
-      body: matchingOutput.summary,
+      body: matchingRecipe.discoveryText || cleanOutputSummary(matchingOutput.summary, matchingOutput.label) || matchingOutput.judgeHint || '',
       tags: effectTags,
       actions: matchingOutput.effects
         .map((effect) => effect.targetId ?? effect.unlockNodeId ?? effect.disputeUpgrade?.disputeId)
@@ -355,6 +364,17 @@ export default function PCRightPanel() {
         turn: store.turnCount,
       })
     }
+    // 재판관 후속 가이드 — judgeHint로 구체적 다음 액션 제안
+    if (matchingOutput.judgeHint) {
+      store.addDialogue({
+        speaker: 'judge',
+        text: matchingOutput.judgeHint,
+        relatedDisputes: matchingOutput.effects
+          .map((e) => e.disputeUpgrade?.disputeId ?? e.unlockNodeId ?? e.targetId)
+          .filter((v): v is string => Boolean(v)),
+        turn: store.turnCount,
+      })
+    }
 
     playCombinationSuccess()
     window.dispatchEvent(new CustomEvent('pc:combination-success', {
@@ -362,11 +382,11 @@ export default function PCRightPanel() {
         inputs: [comboNodeA, comboNodeB]
           .filter((node): node is NonNullable<typeof comboNodeA> => Boolean(node))
           .map((node) => ({
-            label: node.label.replace(/^note:/, ''),
+            label: getNodeDisplayLabel(node, caseData),
             type: node.type,
           })),
-        outputLabel: matchingOutput.label,
-        outputSummary: matchingOutput.summary,
+        outputLabel: cleanOutputLabel(matchingOutput.label),
+        outputSummary: matchingRecipe.discoveryText || cleanOutputSummary(matchingOutput.summary, matchingOutput.label) || matchingOutput.judgeHint || '',
         resultType: matchingOutput.id.startsWith('dc-')
           ? 'dossier'
           : matchingOutput.nodeType === 'dispute'
@@ -529,9 +549,9 @@ export default function PCRightPanel() {
               )}
             </div>
             <div className="pc-combination-card__slots">
-              <CombinationSlot label="A" node={comboNodeA} onClear={() => setComboSlots((c) => [null, c[1]])} />
+              <CombinationSlot label="A" node={comboNodeA} displayText={comboNodeADisplay} onClear={() => setComboSlots((c) => [null, c[1]])} />
               <span className="pc-combination-card__plus">+</span>
-              <CombinationSlot label="B" node={comboNodeB} onClear={() => setComboSlots((c) => [c[0], null])} />
+              <CombinationSlot label="B" node={comboNodeB} displayText={comboNodeBDisplay} onClear={() => setComboSlots((c) => [c[0], null])} />
             </div>
           </div>
         </section>
@@ -577,23 +597,71 @@ function MeterRow({
 function CombinationSlot({
   label,
   node,
+  displayText,
   onClear,
 }: {
   label: 'A' | 'B'
   node: CombinationLabNode | null
+  displayText: string | null
   onClear: () => void
 }) {
+  const fallback = node ? node.label.replace(/^note:/, '') : '\uBE44\uC5B4 \uC788\uC74C'
+  const text = displayText ?? fallback
   return (
     <button
       className={`pc-combination-slot${node ? ' is-filled' : ''}`}
       onClick={node ? onClear : undefined}
-      title={node?.label ?? `${label} \uC2AC\uB86F`}
+      title={text}
       type="button"
     >
       <span className="pc-combination-slot__label">{label}</span>
-      <span className="pc-combination-slot__text">{node ? node.label.replace(/^note:/, '') : '\uBE44\uC5B4 \uC788\uC74C'}</span>
+      <span className="pc-combination-slot__text">{text}</span>
     </button>
   )
+}
+
+function getNodeDisplayLabel(
+  node: CombinationLabNode,
+  caseData: { evidence: { id: string; name?: string; surfaceName?: string }[] } | null,
+): string {
+  if (node.type === 'evidence' || node.type === 'derived_evidence') {
+    const srcId = node.sourceRef ?? node.linkedEvidenceIds?.[0] ?? node.id
+    const ev = caseData?.evidence.find((e) => e.id === srcId)
+    if (ev?.surfaceName) return ev.surfaceName
+    if (ev?.name) return ev.name
+    return node.label.replace(/^[a-z]+-\d+\s+/i, '').replace(/^note:/, '')
+  }
+  if (node.type === 'statement') {
+    const match = node.label.match(/["\u201C\u201D]([^"\u201C\u201D]+)["\u201C\u201D]/)
+    if (match) return match[1]
+    return node.label.replace(/^[A-Za-z\uAC00-\uD7A3]+\s*\uC758\s*\uBC1C\uC5B8\s*/, '').replace(/^[a-z]+-\d+\s+/i, '')
+  }
+  return node.label.replace(/^note:/, '').replace(/^[a-z]+-\d+\s+/i, '')
+}
+
+function translateLeadLabel(text: string): string {
+  return text
+    .replace(/Timeline\s+Lead/gi, '동선 단서')
+    .replace(/Context\s+Lead/gi, '맥락 단서')
+    .replace(/Beneficiary\s+Lead/gi, '수혜자 단서')
+    .replace(/Emotion\s+Lead/gi, '감정 단서')
+    .replace(/Motive\s+Lead/gi, '동기 단서')
+    .replace(/Responsibility\s+Lead/gi, '책임 단서')
+    .replace(/Lead/gi, '단서')
+}
+
+function cleanOutputLabel(label: string): string {
+  const stripped = (label ?? '').replace(/^[A-Za-z]+-\d+\s+/i, '').trim()
+  return translateLeadLabel(stripped)
+}
+
+function cleanOutputSummary(summary: string, label: string): string {
+  const s = (summary ?? '').trim()
+  if (!s) return ''
+  const cleaned = translateLeadLabel(s.replace(/^[A-Za-z]+-\d+\s+/i, '').trim())
+  const cleanedLabel = cleanOutputLabel(label)
+  if (cleaned === cleanedLabel || cleaned === label.trim()) return ''
+  return cleaned
 }
 
 function normalizeInputs(ids: string[]): string[] {

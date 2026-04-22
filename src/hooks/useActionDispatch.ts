@@ -528,7 +528,7 @@ async function handleCallWitness(action: Extract<PlayerAction, { type: 'call_wit
   }
 
   const hasSlots = availableSlots.length > 0
-  const check = canCallWitness(action.witnessId, state.calledWitnesses, state.caseData, hasSlots)
+  const check = canCallWitness(action.witnessId, state.calledWitnesses, state.caseData, hasSlots, state.unlockedWitnessIds)
   if (!check.available) {
     state.addDialogue({ speaker: 'system', text: check.reason ?? '증인 소환 불가', relatedDisputes: [], turn: state.turnCount })
     return

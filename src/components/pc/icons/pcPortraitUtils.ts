@@ -7,6 +7,8 @@ import type { EmotionalPhase, LieState, PartyId } from '../../../types'
  */
 const PORTRAIT_PREFIX: Record<string, Partial<Record<PartyId, string>>> = {
   'spouse-01': { a: 'park-jiyeon', b: 'lee-junho' },
+  'family-01': { a: 'yoon-taesung', b: 'yoon-jeonghu' },
+  'friend-01': { a: 'song-daeun', b: 'choi-sumin' },
 }
 
 /** 엔진 EmotionalPhase → 초상화 파일 접미사. `confident`는 `defensive`로 집약. */

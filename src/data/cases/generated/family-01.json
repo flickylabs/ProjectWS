@@ -184,7 +184,10 @@
           "addressA": "큰아들분",
           "addressB": "작은아들분",
           "hiddenAgenda": "요양보호사 교체 과정에서 자기 책임이 불거질까 봐 조심한다."
-        }
+        },
+        "unlockedByDossier": [
+          "dc-1"
+        ]
       },
       {
         "id": "w-2",
@@ -211,7 +214,10 @@
           "addressA": "큰아들분",
           "addressB": "서류 제출자분",
           "hiddenAgenda": "공증 절차상 확인이 부족했던 점이 불거질까 봐 선을 긋는다."
-        }
+        },
+        "unlockedByDossier": [
+          "dc-3"
+        ]
       },
       {
         "id": "w-3",
@@ -239,7 +245,11 @@
           "addressA": "태성이",
           "addressB": "정후",
           "hiddenAgenda": "어머니의 비밀(출생 비밀)을 자기도 알고 있었는지 모호하게 넘기려 한다."
-        }
+        },
+        "unlockedByDossier": [
+          "dc-2",
+          "dc-5"
+        ]
       }
     ]
   },
@@ -2433,59 +2443,6 @@
         "visibility": "base"
       },
       {
-        "id": "L-1",
-        "type": "derived_note",
-        "label": "L-1 말년 접근 + 유산 비율",
-        "linkedDisputeIds": [
-          "d-1"
-        ],
-        "linkedEvidenceIds": [
-          "e-1",
-          "e-2"
-        ],
-        "visibility": "derived"
-      },
-      {
-        "id": "L-2",
-        "type": "derived_note",
-        "label": "L-2 조작 확인 + 방향 전환",
-        "linkedDisputeIds": [
-          "d-2"
-        ],
-        "linkedEvidenceIds": [
-          "e-4",
-          "e-5"
-        ],
-        "visibility": "derived"
-      },
-      {
-        "id": "L-3",
-        "type": "derived_note",
-        "label": "L-3 원본 유서 + 20년 지원",
-        "linkedDisputeIds": [
-          "d-3"
-        ],
-        "linkedEvidenceIds": [
-          "e-5",
-          "e-6"
-        ],
-        "visibility": "derived"
-      },
-      {
-        "id": "L-4",
-        "type": "derived_note",
-        "label": "L-4 송금 + 일기장",
-        "linkedDisputeIds": [
-          "d-4",
-          "d-5"
-        ],
-        "linkedEvidenceIds": [
-          "e-6",
-          "e-7"
-        ],
-        "visibility": "derived"
-      },
-      {
         "id": "dc-1",
         "type": "derived_note",
         "label": "dc-1 자기 몫을 줄인 조작의 이유",
@@ -2538,20 +2495,6 @@
         "visibility": "derived"
       },
       {
-        "id": "L-5",
-        "type": "derived_note",
-        "label": "L-5 장남 당연시 + 보호 명분",
-        "linkedDisputeIds": [
-          "d-5"
-        ],
-        "linkedEvidenceIds": [
-          "e-1",
-          "e-6",
-          "e-7"
-        ],
-        "visibility": "derived"
-      },
-      {
         "id": "dc-5",
         "type": "derived_note",
         "label": "dc-5 어머니의 뜻",
@@ -2564,89 +2507,9 @@
           "e-7"
         ],
         "visibility": "derived"
-      },
-      {
-        "id": "L-6",
-        "type": "derived_note",
-        "label": "L-6 방문 횟수 + 증언 교차",
-        "visibility": "derived",
-        "linkedDisputeIds": [
-          "d-1",
-          "d-5"
-        ],
-        "linkedEvidenceIds": [
-          "e-2",
-          "e-3"
-        ]
-      },
-      {
-        "id": "L-stmt-cross",
-        "type": "derived_note",
-        "label": "자격과 침묵이 부딪히다",
-        "visibility": "derived",
-        "linkedDisputeIds": [
-          "d-1",
-          "d-4"
-        ]
       }
     ],
     "outputs": [
-      {
-        "id": "L-1",
-        "label": "L-1 말년 접근 + 유산 비율",
-        "summary": "초반 의심 강화 리드",
-        "nodeType": "derived_note",
-        "noteText": "말년 접근과 유산 비율이 맞물린다",
-        "judgeHint": "후속 카드 dc-1과 연결된다.",
-        "effects": [
-          {
-            "kind": "unlock_note",
-            "unlockNodeId": "L-1"
-          }
-        ]
-      },
-      {
-        "id": "L-2",
-        "label": "L-2 조작 확인 + 방향 전환",
-        "summary": "자기 몫 줄인 조작 리드",
-        "nodeType": "derived_note",
-        "noteText": "조작은 맞다. 그런데 자기 몫을 줄였다",
-        "judgeHint": "후속 카드 dc-1과 연결된다.",
-        "effects": [
-          {
-            "kind": "unlock_note",
-            "unlockNodeId": "L-2"
-          }
-        ]
-      },
-      {
-        "id": "L-3",
-        "label": "L-3 원본 유서 + 20년 지원",
-        "summary": "90% 판단 근거 확정 리드",
-        "nodeType": "derived_note",
-        "noteText": "원본 유서와 20년 지원이 같은 맥락이다",
-        "judgeHint": "후속 카드 dc-2와 연결된다.",
-        "effects": [
-          {
-            "kind": "unlock_note",
-            "unlockNodeId": "L-3"
-          }
-        ]
-      },
-      {
-        "id": "L-4",
-        "label": "L-4 송금 + 일기장",
-        "summary": "전체 동기 완성 리드",
-        "nodeType": "derived_note",
-        "noteText": "윤정후는 돈과 비밀 둘 다 떠안고 있었다",
-        "judgeHint": "후속 카드 dc-4와 연결된다.",
-        "effects": [
-          {
-            "kind": "unlock_note",
-            "unlockNodeId": "L-4"
-          }
-        ]
-      },
       {
         "id": "dc-1",
         "label": "dc-1 자기 몫을 줄인 조작의 이유",
@@ -2657,8 +2520,17 @@
           {
             "kind": "unlock_note",
             "unlockNodeId": "dc-1"
+          },
+          {
+            "kind": "upgrade_dispute",
+            "disputeUpgrade": {
+              "disputeId": "d-1",
+              "weight": "high",
+              "ambiguity": "low"
+            }
           }
-        ]
+        ],
+        "judgeHint": "유서 판단 능력 쟁점을 더 깊이 추궁하거나, 방문 기록 증인을 불러볼 수 있습니다."
       },
       {
         "id": "dc-2",
@@ -2675,7 +2547,8 @@
             "kind": "unlock_dispute",
             "unlockNodeId": "d-3"
           }
-        ]
+        ],
+        "judgeHint": "새 쟁점 '20년 송금의 실체'가 드러났습니다. 누가 실질적으로 보냈는지 확인해보세요."
       },
       {
         "id": "dc-3",
@@ -2692,7 +2565,8 @@
             "kind": "unlock_dispute",
             "unlockNodeId": "d-4"
           }
-        ]
+        ],
+        "judgeHint": "새 쟁점 '출생 비밀과 침묵의 이유'가 드러났습니다. 침묵의 목적을 짚어보세요."
       },
       {
         "id": "dc-4",
@@ -2704,22 +2578,16 @@
           {
             "kind": "unlock_note",
             "unlockNodeId": "dc-4"
-          }
-        ]
-      },
-      {
-        "id": "L-5",
-        "label": "L-5 장남 당연시 + 보호 명분",
-        "summary": "장남 상속 당연시와 보호 명분 충돌 리드",
-        "nodeType": "derived_note",
-        "noteText": "장남이니 받아야 한다는 논리와, 형을 지키려 했다는 논리가 동시에 서 있다",
-        "judgeHint": "후속 카드 dc-5와 연결된다.",
-        "effects": [
+          },
           {
-            "kind": "unlock_note",
-            "unlockNodeId": "L-5"
+            "kind": "upgrade_dispute",
+            "disputeUpgrade": {
+              "disputeId": "d-4",
+              "legitimacyIssue": true
+            }
           }
-        ]
+        ],
+        "judgeHint": "출생 비밀 쟁점의 정당성을 다시 짚으며 추궁할 수 있습니다."
       },
       {
         "id": "dc-5",
@@ -2736,35 +2604,8 @@
             "kind": "unlock_dispute",
             "unlockNodeId": "d-5"
           }
-        ]
-      },
-      {
-        "id": "L-6",
-        "label": "L-6 방문 횟수 + 증언 교차",
-        "summary": "공증 직전 방문 횟수가 늘어난 시기와 요양보호사가 목격한 장면이 겹친다.",
-        "nodeType": "derived_note",
-        "effects": [
-          {
-            "kind": "unlock_note",
-            "unlockNodeId": "L-6"
-          }
         ],
-        "judgeHint": "방문과 증언이 같은 시기를 가리킨다. 돌봄이었는지 개입이었는지 갈라지는 지점.",
-        "noteText": "방문 횟수 증가와 종이를 읽어드렸다는 증언이 같은 시기에 겹치며, 그것이 어머니 보호였는지 형 배제였는지가 핵심 분기점이 된다"
-      },
-      {
-        "id": "L-stmt-cross",
-        "label": "자격과 침묵이 부딪히다",
-        "summary": "형은 모시고 산 사람의 자격을 내세우고, 동생은 말할 수 없는 이유를 품고 있다.",
-        "nodeType": "derived_note",
-        "effects": [
-          {
-            "kind": "unlock_note",
-            "unlockNodeId": "L-stmt-cross"
-          }
-        ],
-        "judgeHint": "왜 40이냐는 분노와, 말할 수 없다는 침묵 사이에 아직 드러나지 않은 사정이 있다.",
-        "noteText": "윤태성은 돌봄의 대가로 상속을 당연시하고, 윤정후는 그 대가를 인정하면서도 입을 열 수 없는 이유가 있다. 침묵의 이유가 풀리면 비율의 의미가 달라진다."
+        "judgeHint": "새 쟁점 '어머니 이용의 진짜 주체'가 드러났습니다. 누가 어머니를 움직였는지 확인하세요."
       }
     ],
     "recipes": [
@@ -2776,7 +2617,7 @@
         ],
         "cost": 1,
         "discoveryText": "유서의 60:40 비율과 윤정후의 말년 방문 급증이 겹친다. 유서 작성에 윤정후가 개입했다는 의심이 강화된다.",
-        "outputId": "L-1",
+        "outputId": "dc-1",
         "resultType": "upgrade"
       },
       {
@@ -2798,7 +2639,7 @@
         ],
         "cost": 1,
         "discoveryText": "어머니가 90을 남기려 한 이유가 보인다. 20년간 생활비를 대고 형의 부도까지 막아준 것이 윤정후였다.",
-        "outputId": "L-3",
+        "outputId": "dc-2",
         "resultType": "upgrade"
       },
       {
@@ -2820,7 +2661,7 @@
         ],
         "cost": 1,
         "discoveryText": "윤정후가 '말할 수 있는 부분이 아니다'라고 한 이유... 공증 이중 스캔을 보면 자기 몫을 줄인 이유를 말할 수 없었던 것이다.",
-        "outputId": "L-2",
+        "outputId": "dc-1",
         "resultType": "upgrade"
       },
       {
@@ -2853,7 +2694,7 @@
         ],
         "cost": 1,
         "discoveryText": "유서 비율과 어머니 일기장의 기록이 겹친다. 장남 당연시와 보호 명분이 같은 구조 위에 서 있다.",
-        "outputId": "L-5",
+        "outputId": "dc-1",
         "resultType": "upgrade"
       },
       {
@@ -2875,7 +2716,7 @@
         ],
         "cost": 1,
         "discoveryText": "형의 '모시고 산 건 나인데'라는 말과 20년 송금 내역을 합치면... 돈과 비밀 두 가지를 모두 떠안은 동생의 전체 동기가 보인다.",
-        "outputId": "L-4",
+        "outputId": "dc-3",
         "resultType": "upgrade"
       },
       {
@@ -2886,7 +2727,7 @@
         ],
         "cost": 1,
         "discoveryText": "요양원 방문기록의 횟수 증가 시점과 전 요양보호사가 종이를 읽어드리는 장면을 목격한 시점이 겹친다.",
-        "outputId": "L-6",
+        "outputId": "dc-2",
         "resultType": "upgrade"
       },
       {
@@ -2897,7 +2738,7 @@
         ],
         "cost": 1,
         "discoveryText": "\"모시고 산 건 나인데 왜 40이냐\"와 \"말할 수 있는 부분이 아닙니다\"를 맞대면, 비율 뒤에 숨은 사정이 있다는 흐름이 보인다.",
-        "outputId": "L-stmt-cross",
+        "outputId": "dc-3",
         "resultType": "upgrade"
       }
     ]

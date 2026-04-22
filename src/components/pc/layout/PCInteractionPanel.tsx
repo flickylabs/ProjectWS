@@ -5,6 +5,7 @@ import { useGameStore, useStore } from '../../../store/useGameStore'
 import type { PartyId, QuestionType } from '../../../types'
 import { showToast } from '../../common/Toast'
 import PCSvgIcon from '../icons/PCSvgIcon'
+import PCCharacterPortrait from '../icons/PCCharacterPortrait'
 
 export const PC_OPEN_INTERACTION_PANEL_EVENT = 'pc:open-interaction-panel'
 
@@ -804,7 +805,9 @@ function EvidenceDetailSection({ evidenceId }: { evidenceId: string }) {
           }}
           type="button"
         >
-          <PCSvgIcon id="i-man" size={24} />
+          <span className="pc-ev-detail__present-avatar">
+            <PCCharacterPortrait alt={nameA} caseId={caseData.caseId} emotion="defensive" fallbackSymbolId="i-person" party="a" size={28} />
+          </span>
           <span>{presentedToA ? `${nameA} 제시 완료` : `${nameA}에게 제시`}</span>
         </button>
         <button
@@ -817,7 +820,9 @@ function EvidenceDetailSection({ evidenceId }: { evidenceId: string }) {
           }}
           type="button"
         >
-          <PCSvgIcon id="i-woman" size={24} />
+          <span className="pc-ev-detail__present-avatar">
+            <PCCharacterPortrait alt={nameB} caseId={caseData.caseId} emotion="defensive" fallbackSymbolId="i-person" party="b" size={28} />
+          </span>
           <span>{presentedToB ? `${nameB} 제시 완료` : `${nameB}에게 제시`}</span>
         </button>
       </div>
@@ -887,6 +892,7 @@ function DialogueDetailSection({ payload, onClose }: { payload: PcInteractionPay
 function WitnessDetailSection({ onAction }: { onAction: (action: PcInteractionAction) => void }) {
   const caseData = useStore((s) => s.caseData)
   const calledWitnesses = useStore((s) => s.calledWitnesses)
+  const unlockedWitnessIds = useStore((s) => s.unlockedWitnessIds)
 
   if (!caseData) return null
 
@@ -900,20 +906,24 @@ function WitnessDetailSection({ onAction }: { onAction: (action: PcInteractionAc
       {witnesses.map((w) => {
         const called = calledWitnesses.includes(w.id)
         const slotLabel = w.slot === 'institutional' ? '기관 증인' : '관련인'
+        const gated = (w.unlockedByDossier ?? []).length > 0
+        const locked = gated && !unlockedWitnessIds.includes(w.id)
         return (
-          <div className={`pc-witness-card${called ? ' is-called' : ''}`} key={w.id}>
+          <div className={`pc-witness-card${called ? ' is-called' : ''}${locked ? ' is-locked' : ''}`} key={w.id}>
             <div className="pc-witness-card__info">
-              <span className="pc-witness-card__name">{w.name}</span>
-              <span className="pc-witness-card__meta">{slotLabel}</span>
-              <span className="pc-witness-card__scope">{w.knowledgeScope ?? '관련 사실에 대해 알고 있음'}</span>
+              <span className="pc-witness-card__name">{locked ? '???' : w.name}</span>
+              <span className="pc-witness-card__meta">{slotLabel}{locked ? ' · 잠김' : ''}</span>
+              <span className="pc-witness-card__scope">
+                {locked ? '조합으로 단서를 확보해야 소환할 수 있습니다' : (w.knowledgeScope ?? '관련 사실에 대해 알고 있음')}
+              </span>
             </div>
             <button
-              className={`pc-witness-card__btn${called ? ' is-done' : ''}`}
-              disabled={false}
-              onClick={() => onAction({ kind: 'summon_witness', label: `${w.name} 소환`, witnessId: w.id })}
+              className={`pc-witness-card__btn${called ? ' is-done' : ''}${locked ? ' is-locked' : ''}`}
+              disabled={locked}
+              onClick={() => !locked && onAction({ kind: 'summon_witness', label: `${w.name} 소환`, witnessId: w.id })}
               type="button"
             >
-              {called ? '재소환' : '소환'}
+              {locked ? '잠김' : called ? '재소환' : '소환'}
             </button>
           </div>
         )

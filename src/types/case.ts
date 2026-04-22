@@ -131,6 +131,13 @@ export interface EvidenceNode {
     sns?: unknown
     [key: string]: unknown
   }
+  /**
+   * 조사 단계별 뷰어 데이터 오버라이드.
+   * key는 조사 완료 횟수(investigatedActions.length), value는 viewerData와 같은 구조.
+   * 뷰어는 currentStage 이하 중 가장 큰 키를 선택. 없으면 기본 viewerData 사용.
+   * 예: { "0": {...초기 보기}, "1": {...조사 1회 후}, "2": {...조사 2회 후} }
+   */
+  viewerDataByStage?: Record<string, EvidenceNode['viewerData']>
   type: EvidenceType
   reliability: Reliability
   completeness: Completeness

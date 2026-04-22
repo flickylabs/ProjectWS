@@ -45,7 +45,7 @@ function useRevealText(text: string, animate: boolean) {
   return displayText
 }
 
-function MessageBubble({ entry, animate, combinableTexts }: { entry: DialogueEntryType; animate: boolean; combinableTexts?: Set<string> }) {
+function MessageBubble({ entry, animate, combinableTexts, isLatestForSpeaker }: { entry: DialogueEntryType; animate: boolean; combinableTexts?: Set<string>; isLatestForSpeaker?: boolean }) {
   const caseData = useStore((s) => s.caseData)
   const agentA = useStore((s) => s.agentA)
   const agentB = useStore((s) => s.agentB)
@@ -243,7 +243,7 @@ function MessageBubble({ entry, animate, combinableTexts }: { entry: DialogueEnt
             emotion={emotion}
             fallbackSymbolId={faceId}
             party={isPartyA ? 'a' : 'b'}
-            size={24}
+            size={40}
           />
         </button>
         <button
@@ -257,7 +257,7 @@ function MessageBubble({ entry, animate, combinableTexts }: { entry: DialogueEnt
       </div>
       <div className="pc-log-stack">
         <button
-          className={`pc-log-bubble ${isPartyA ? 'is-a' : 'is-b'}${entry.isConfidential ? ' is-confidential' : ''}${combinableTexts && [...combinableTexts].some(t => rawText.includes(t)) ? ' is-combinable' : ''}`}
+          className={`pc-log-bubble ${isPartyA ? 'is-a' : 'is-b'}${entry.isConfidential ? ' is-confidential' : ''}${combinableTexts && [...combinableTexts].some(t => rawText.includes(t)) ? ' is-combinable' : ''}${emotion ? ` emotion-${emotion}` : ''}${isLatestForSpeaker ? ' is-latest' : ''}`}
           onClick={() => openEntryDetail()}
           type="button"
         >
@@ -307,6 +307,17 @@ export default function PCDialogueLog() {
 
   const visibleEntries = useMemo(() => dialogueLog.filter((entry) => !entry.isHidden), [dialogueLog])
 
+  // 각 화자별 마지막 발언 인덱스 (감정 이펙트를 최신 말풍선에만 적용)
+  const latestIndexBySpeaker = useMemo(() => {
+    const map: Record<string, number> = {}
+    visibleEntries.forEach((entry, idx) => {
+      if (entry.speaker === 'a' || entry.speaker === 'b') {
+        map[entry.speaker] = idx
+      }
+    })
+    return map
+  }, [visibleEntries])
+
   return (
     <>
       {visibleEntries.length === 0 && !isLLMLoading ? (
@@ -342,7 +353,7 @@ export default function PCDialogueLog() {
               } : undefined}
               style={isDraggable ? { cursor: 'grab' } : undefined}
             >
-              <MessageBubble entry={entry} animate={index === visibleEntries.length - 1} combinableTexts={combinableStatementTexts} />
+              <MessageBubble entry={entry} animate={index === visibleEntries.length - 1} combinableTexts={combinableStatementTexts} isLatestForSpeaker={latestIndexBySpeaker[entry.speaker] === index} />
             </div>
           )
         })}

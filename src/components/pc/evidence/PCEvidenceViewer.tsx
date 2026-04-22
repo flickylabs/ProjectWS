@@ -7,7 +7,7 @@
  */
 import { useEffect, useCallback, useMemo } from 'react'
 import { useStore } from '../../../store/useGameStore'
-import { getOriginalViewerData } from '../../../data/cases/caseLoader'
+import { getOriginalViewerData, getOriginalViewerDataByStage } from '../../../data/cases/caseLoader'
 import { getPcEvidenceSymbolId } from '../icons/pcIconUtils'
 import PCSvgIcon from '../icons/PCSvgIcon'
 import {
@@ -56,8 +56,21 @@ export default function PCEvidenceViewer() {
 
   const state = evidenceStates[evidence.id]
   const displayName = state?.deepInvestigated ? evidence.name : (evidence.surfaceName ?? evidence.name)
+  const currentStage = state?.investigatedActions?.length ?? 0
   // 원본 JSON의 viewerData를 항상 우선 사용 (sessionStorage 캐시가 오래된 구조일 수 있음)
-  const viewerData = getOriginalViewerData(caseData!.caseId, evidence.id) ?? evidence.viewerData
+  const baseViewerData = getOriginalViewerData(caseData!.caseId, evidence.id) ?? evidence.viewerData
+  // 단계별 오버라이드 — currentStage 이하 중 가장 큰 key 선택 (원본 JSON 우선)
+  const viewerData = (() => {
+    const stageMap = getOriginalViewerDataByStage(caseData!.caseId, evidence.id)
+      ?? (evidence as any).viewerDataByStage
+    if (!stageMap || typeof stageMap !== 'object') return baseViewerData
+    const validKeys = Object.keys(stageMap)
+      .map((k) => Number(k))
+      .filter((k) => !Number.isNaN(k) && k <= currentStage)
+      .sort((a, b) => b - a)
+    if (validKeys.length === 0) return baseViewerData
+    return stageMap[String(validKeys[0])] ?? baseViewerData
+  })()
   const hasSubViewer = Boolean(viewerData)
 
   return (

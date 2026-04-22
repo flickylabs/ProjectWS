@@ -21,7 +21,9 @@ type PartialV3GameLoopData = Partial<V3GameLoopData> & {
 const STATE_ORDER: LieState[] = ['S0', 'S1', 'S2', 'S3', 'S4', 'S5']
 
 function normalizeCaseId(caseData: CaseData, rawData: PartialV3GameLoopData): string {
-  return String(rawData.caseId || caseData.caseId || '').replace(/^case-/, '')
+  // 런타임 케이스 ID(spouse-01 등)를 우선 — v3 raw 데이터의 caseId('spouse-v3-01')를 쓰면
+  // 조회 키 불일치로 v3 이벤트 텍스트가 로드되지 않음
+  return String(caseData.caseId || rawData.caseId || '').replace(/^case-/, '')
 }
 
 function getPartyName(caseData: CaseData, party: PartyId): string {

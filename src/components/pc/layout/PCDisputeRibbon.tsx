@@ -164,7 +164,7 @@ export default function PCDisputeRibbon() {
                   type="button"
                 >
                   <PCSvgIcon id={getPcEvidenceSymbolId(evidence.type)} size={14} />
-                  <span>{evidence.surfaceName ?? evidence.name}</span>
+                  <span>{unlocked ? (evidence.surfaceName ?? evidence.name) : '???'}</span>
                   {!unlocked ? <small>잠금</small> : null}
                 </button>
               )

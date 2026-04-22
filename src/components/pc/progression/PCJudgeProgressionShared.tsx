@@ -1,4 +1,4 @@
-import type { CSSProperties } from 'react'
+import { useState, type CSSProperties } from 'react'
 import { PERK_TABLE, type PerkDefinition } from '../../../engine/judgePerks'
 import type { FragmentId, TraitId } from '../../../engine/judgeProgressionEngine'
 
@@ -104,6 +104,18 @@ interface FragmentIconProps {
   style?: CSSProperties
 }
 
+const FRAGMENT_PNG_NAME: Record<FragmentId, string> = {
+  reasoning_fragment: 'reasoning',
+  inquiry_fragment: 'inquiry',
+  empathy_fragment: 'empathy',
+  severity_fragment: 'severity',
+  deliberation_fragment: 'deliberation',
+  leniency_fragment: 'leniency',
+  jurisprudence_fragment: 'jurisprudence',
+  balance_fragment: 'balance',
+  reconciliation_fragment: 'reconciliation',
+}
+
 export function PCFragmentIcon({
   fragmentId,
   size = 32,
@@ -111,6 +123,29 @@ export function PCFragmentIcon({
   style,
 }: FragmentIconProps) {
   const visual = FRAGMENT_VISUALS[fragmentId]
+  const [pngFailed, setPngFailed] = useState(false)
+  const pngName = FRAGMENT_PNG_NAME[fragmentId]
+
+  if (!pngFailed && pngName) {
+    return (
+      <img
+        alt=""
+        aria-hidden="true"
+        className={className}
+        height={size}
+        onError={() => setPngFailed(true)}
+        src={`/icons/fragment/${pngName}.png`}
+        style={{
+          width: size,
+          height: size,
+          objectFit: 'contain',
+          filter: 'drop-shadow(0 2px 6px rgba(0, 0, 0, 0.4)) drop-shadow(0 0 10px rgba(212, 162, 78, 0.18))',
+          ...style,
+        }}
+        width={size}
+      />
+    )
+  }
 
   return (
     <span

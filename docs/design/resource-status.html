@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Solomon's Dilemma — 리소스 적용 현황</title>
+<style>
+  :root {
+    --bg: #0e0e14; --card: #1a1610; --border: #3a3022;
+    --gold: #d4a24e; --gold-light: #e8c172; --gold-dim: rgba(212,162,78,0.15);
+    --text: #e8e5dc; --dim: #8c8070; --muted: #857b68;
+    --green: #5cc97a; --red: #e06060; --blue: #5b8def; --amber: #f59e0b; --purple: #a78bfa;
+    --legendary: #f59e0b; --epic: #a78bfa; --rare: #5b8def; --common: #9ba3ae;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:'Pretendard',-apple-system,'Segoe UI',sans-serif; background:var(--bg); color:var(--text); line-height:1.6; padding:40px; max-width:1500px; margin:0 auto; }
+  h1 { font-size:28px; color:var(--gold); text-align:center; margin-bottom:4px; }
+  .sub { text-align:center; color:var(--dim); font-size:14px; margin-bottom:40px; }
+
+  h2.section-title { font-size:22px; color:var(--gold); margin:48px 0 16px; padding-bottom:8px; border-bottom:2px solid var(--gold-dim); }
+  h3.subsection-title { font-size:17px; color:var(--text); margin:28px 0 14px; display:flex; align-items:center; gap:10px; }
+  h3.subsection-title::before { content:''; width:4px; height:18px; background:var(--gold); border-radius:2px; }
+
+  .intro { background:var(--card); border:1px solid var(--border); border-radius:12px; padding:18px 22px; margin-bottom:24px; color:var(--dim); font-size:14px; line-height:1.8; }
+  .intro strong { color:var(--text); }
+
+  table { width:100%; border-collapse:separate; border-spacing:0; background:var(--card); border:1px solid var(--border); border-radius:10px; overflow:hidden; margin-bottom:20px; }
+  th, td { padding:12px 14px; text-align:left; vertical-align:top; border-bottom:1px solid rgba(255,255,255,0.04); font-size:13px; }
+  th { background:rgba(212,162,78,0.08); color:var(--gold); font-size:11px; font-weight:800; letter-spacing:0.06em; text-transform:uppercase; }
+  tr:last-child td { border-bottom:0; }
+
+  .asset-name { font-weight:700; color:var(--text); font-size:14px; margin-bottom:2px; }
+  .asset-file { font-family:'JetBrains Mono',monospace; color:var(--gold); font-size:11px; }
+  .asset-desc { color:var(--dim); font-size:11px; margin-top:4px; }
+
+  .badge { display:inline-block; padding:3px 10px; border-radius:999px; font-size:10px; font-weight:800; letter-spacing:0.06em; }
+  .badge.missing { background:rgba(224,96,96,0.15); color:var(--red); }
+  .badge.redesign { background:rgba(245,158,11,0.15); color:var(--amber); }
+  .badge.new { background:rgba(91,141,239,0.15); color:var(--blue); }
+  .badge.unused { background:rgba(155,163,174,0.15); color:var(--common); }
+  .badge.applied { background:rgba(92,201,122,0.15); color:var(--green); }
+
+  .img-preview { display:flex; flex-direction:column; align-items:center; gap:4px; min-width:120px; }
+  .img-preview img { max-width:110px; max-height:80px; object-fit:contain; background:#000; border-radius:6px; border:1px solid rgba(255,255,255,0.06); }
+  .img-preview .caption { font-size:10px; color:var(--dim); text-align:center; }
+
+  .reason { color:var(--dim); font-size:12px; line-height:1.55; }
+  .reason strong { color:var(--text); }
+
+  /* CSS mock 프리뷰 */
+  .mock-bubble {
+    display:inline-block; padding:10px 14px; border-radius:10px; border:1.5px solid rgba(212,162,78,0.22);
+    background:linear-gradient(180deg, rgba(22,19,16,0.72), rgba(16,14,12,0.80));
+    color:var(--text); font-size:11px; position:relative;
+  }
+  .mock-bubble.is-a { border-left:3px solid rgba(74,111,165,0.78); }
+  .mock-bubble.is-b { border-right:3px solid rgba(168,79,79,0.78); }
+  .mock-bubble.is-judge { border-top:2px solid rgba(240,216,144,0.9); }
+
+  .mock-hotbar {
+    display:flex; gap:4px; padding:6px 10px; border-radius:10px; border:1px solid var(--gold-dim);
+    background:linear-gradient(180deg, rgba(22,19,16,0.85), rgba(16,14,12,0.92));
+  }
+  .mock-hotbar > span { width:30px; height:30px; border-radius:6px; background:rgba(26,28,34,0.5); border:1px solid rgba(212,162,78,0.08); display:grid; place-items:center; font-size:10px; color:var(--dim); }
+
+  .mock-tab-row { display:flex; gap:6px; }
+  .mock-tab { padding:8px 14px; border-radius:8px; font-size:11px; font-weight:700; }
+  .mock-tab.active { border:1px solid rgba(212,162,78,0.4); background:linear-gradient(180deg, rgba(22,19,16,0.58), rgba(16,14,12,0.68)); color:var(--gold-light); }
+  .mock-tab.inactive { border:1px solid rgba(212,162,78,0.12); background:linear-gradient(180deg, rgba(26,28,34,0.38), rgba(18,19,24,0.50)); color:var(--muted); }
+
+  .mock-ribbon {
+    display:inline-flex; align-items:center; padding:6px 14px;
+    background:linear-gradient(90deg, rgba(212,162,78,0.12), rgba(212,162,78,0.18), rgba(212,162,78,0.12));
+    border-top:1px solid rgba(212,162,78,0.22); border-bottom:1px solid rgba(212,162,78,0.22);
+    color:var(--gold-light); font-size:11px; font-weight:700;
+  }
+
+  .mock-frame-circle {
+    width:70px; height:70px; border-radius:50%;
+    border:2px solid rgba(212,162,78,0.5);
+    background:radial-gradient(circle, rgba(26,19,12,0.3), rgba(13,14,18,0.7));
+    display:grid; place-items:center; color:var(--dim); font-size:10px;
+  }
+
+  .info-red { background:rgba(224,96,96,0.04); border:1px solid rgba(224,96,96,0.18); border-radius:8px; padding:10px 14px; margin-top:8px; font-size:11.5px; color:#e0a0a0; line-height:1.6; }
+  .info-red strong { color:#f0b5b5; }
+
+  .info-amber { background:rgba(245,158,11,0.04); border:1px solid rgba(245,158,11,0.18); border-radius:8px; padding:10px 14px; margin-top:8px; font-size:11.5px; color:#e0b570; line-height:1.6; }
+  .info-amber strong { color:#f0c870; }
+
+  .info-green { background:rgba(92,201,122,0.04); border:1px solid rgba(92,201,122,0.18); border-radius:8px; padding:10px 14px; margin-top:8px; font-size:11.5px; color:#a0d4b0; line-height:1.6; }
+  .info-green strong { color:#b0e4c0; }
+
+  .summary { background:linear-gradient(180deg, rgba(212,162,78,0.08), rgba(212,162,78,0.03)); border:1px solid rgba(212,162,78,0.2); border-radius:12px; padding:20px 24px; margin:32px 0; }
+  .summary h2 { font-size:16px; color:var(--gold); margin-bottom:12px; }
+  .summary ul { list-style:none; padding:0; }
+  .summary li { padding:6px 0; font-size:13px; }
+  .summary li::before { content:'▪ '; color:var(--gold); }
+  .summary li .count { color:var(--gold); font-weight:800; }
+
+  .spec-row { display:flex; gap:6px; flex-wrap:wrap; margin-top:4px; }
+  .spec-chip { display:inline-block; padding:2px 8px; border-radius:4px; background:rgba(255,255,255,0.04); font-size:10px; color:var(--dim); font-family:'JetBrains Mono',monospace; }
+
+  .applied-list { display:grid; grid-template-columns:repeat(auto-fill, minmax(200px, 1fr)); gap:8px; margin-top:12px; }
+  .applied-item { background:rgba(92,201,122,0.04); border:1px solid rgba(92,201,122,0.15); border-radius:6px; padding:8px 12px; font-size:12px; color:#a0d4b0; }
+  .applied-item strong { color:var(--green); display:block; font-size:11px; letter-spacing:0.04em; margin-bottom:2px; }
+
+  /* IC-4 시스템 아이콘 그리드 */
+  .sys-icon-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(130px, 1fr)); gap:10px; margin-top:10px; }
+  .sys-icon-card { background:rgba(255,255,255,0.02); border:1px solid rgba(255,255,255,0.06); border-radius:8px; padding:10px 12px; font-size:11px; }
+  .sys-icon-card strong { color:var(--text); display:block; font-size:12px; margin-bottom:2px; }
+  .sys-icon-card .used { color:var(--dim); font-size:10px; line-height:1.5; margin-top:4px; }
+  .sys-icon-card .sym { color:var(--gold); font-family:'JetBrains Mono',monospace; font-size:11px; }
+
+  /* 희귀도별 */
+  .rarity-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(280px, 1fr)); gap:12px; margin-top:12px; }
+  .rarity-card { background:rgba(255,255,255,0.02); border:1px solid; border-radius:10px; padding:14px; }
+  .rarity-card.legendary { border-color:rgba(245,158,11,0.3); background:linear-gradient(180deg, rgba(245,158,11,0.06), rgba(245,158,11,0.02)); }
+  .rarity-card.epic { border-color:rgba(167,139,250,0.3); background:linear-gradient(180deg, rgba(167,139,250,0.06), rgba(167,139,250,0.02)); }
+  .rarity-card.rare { border-color:rgba(91,141,239,0.3); background:linear-gradient(180deg, rgba(91,141,239,0.06), rgba(91,141,239,0.02)); }
+  .rarity-card.common { border-color:rgba(155,163,174,0.3); background:linear-gradient(180deg, rgba(155,163,174,0.06), rgba(155,163,174,0.02)); }
+  .rarity-card h4 { font-size:13px; margin-bottom:10px; font-weight:800; letter-spacing:0.06em; }
+  .rarity-card ul { list-style:none; padding:0; }
+  .rarity-card li { padding:4px 0; font-size:11px; color:var(--dim); display:flex; gap:8px; align-items:center; }
+  .rarity-card li .emoji { font-size:16px; }
+  .rarity-card li strong { color:var(--text); }
+  .rarity-legendary { color:var(--legendary); }
+  .rarity-epic { color:var(--epic); }
+  .rarity-rare { color:var(--rare); }
+  .rarity-common { color:var(--common); }
+</style>
+</head>
+<body>
+
+<h1>리소스 적용 현황</h1>
+<p class="sub">솔로몬의 딜레마 — 제작물 적용 여부 및 추가 필요 에셋 정리 (2026.04.22 개정 v2)</p>
+
+<div class="intro">
+  본 문서는 현재까지 납품된 이미지 리소스의 <strong>게임 내 적용 여부</strong>와 <strong>추가로 필요한 에셋</strong>을 정리합니다.<br>
+  가이드 원본: <code>docs/design/asset-production-guide.html</code>
+</div>
+
+<!-- ================================================================ -->
+<!-- 섹션 0: 적용 완료 -->
+<!-- ================================================================ -->
+<h2 class="section-title">0. 적용 완료</h2>
+
+<div class="applied-list">
+  <div class="applied-item"><strong>CH 캐릭터 초상화</strong>3 사건 × 2인 × 5표정 = 30장 (말풍선·저울·슬라이더·카드·제시버튼)</div>
+  <div class="applied-item"><strong>IC-1 세션 아이콘</strong>12종 — 홈 카테고리 그리드</div>
+  <div class="applied-item"><strong>IC-2 조각 아이콘</strong>9종 — 재판관 패널 · 04 보너스</div>
+  <div class="applied-item"><strong>IC-3 타이틀 엠블럼</strong>9종 — 02 판결 선고 (흰 배경 → 투명 처리 완료)</div>
+  <div class="applied-item"><strong>BG 배경 4종</strong>홈 · 브리프 · 법정 · 결과</div>
+  <div class="applied-item"><strong>BT-5 card-session</strong>세션 선택 카드 프레임</div>
+  <div class="applied-item"><strong>OB-1 scale-balance <span style="color:var(--amber);">(신규 적용)</span></strong>홈 화면 중앙 심볼 (i-scale SVG 교체)</div>
+</div>
+
+<!-- ================================================================ -->
+<!-- 섹션 1: 미사용 결정 -->
+<!-- ================================================================ -->
+<h2 class="section-title">1. 미사용 결정</h2>
+
+<div class="intro">
+  납품됐으나 <strong>현재 CSS 구현이 더 양호</strong>하거나, <strong>개념상 재검토가 필요</strong>하여 미사용 처리한 항목입니다.
+</div>
+
+<table>
+  <thead>
+    <tr>
+      <th style="width:20%">에셋 / 파일명</th>
+      <th style="width:15%">납품본</th>
+      <th style="width:28%">현재 대체 형태</th>
+      <th style="width:37%">미사용 사유</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    <!-- 증거 카드 프레임 -->
+    <tr>
+      <td>
+        <div class="asset-name">증거 카드 프레임 <span class="badge unused">미사용</span></div>
+        <div class="asset-file">card-evidence.png</div>
+        <div class="asset-desc">PL-4 · 480×640</div>
+      </td>
+      <td>
+        <div class="img-preview">
+          <img src="../../public/assets/panel/card-evidence.png" alt="card-evidence">
+        </div>
+      </td>
+      <td>
+        <div class="img-preview">
+          <div style="width:100px; height:80px; background:rgba(255,255,255,0.02); border:1px dashed rgba(212,162,78,0.25); border-radius:8px; display:flex; flex-direction:column; align-items:center; justify-content:center; color:var(--dim); font-size:10px; gap:4px;">
+            <span style="font-size:18px;">📄</span>
+            <span>증거 타입별 SVG</span>
+          </div>
+        </div>
+      </td>
+      <td class="reason">
+        <strong>개념 재검토 필요.</strong> 단일 프레임이 아니라 증거 타입별(bank/chat/cctv/contract/log/device/sns) <strong>각기 다른 디자인</strong>이 맞을 것으로 보임. 방향 협의 후 재결정.
+      </td>
+    </tr>
+
+    <!-- 말풍선 3종 -->
+    <tr>
+      <td>
+        <div class="asset-name">말풍선 3종 (judge/A/B) <span class="badge unused">미사용</span></div>
+        <div class="asset-file">bubble-judge.png<br>bubble-party-a.png<br>bubble-party-b.png</div>
+        <div class="asset-desc">PL-1/2/3</div>
+      </td>
+      <td>
+        <div class="img-preview">
+          <img src="../../public/assets/panel/bubble-judge.png" alt="bubble-judge" style="max-height:50px;">
+        </div>
+      </td>
+      <td>
+        <div style="display:flex; flex-direction:column; gap:4px;">
+          <div class="mock-bubble is-a">박지연: 진술…</div>
+          <div class="mock-bubble is-b">이준호: 주장…</div>
+          <div class="mock-bubble is-judge">재판관: 질문…</div>
+        </div>
+      </td>
+      <td class="reason">
+        CSS 구현이 양호. 조합 대상 하이라이트 등 동적 상태도 CSS로 해결됨.
+      </td>
+    </tr>
+
+    <!-- 정보 패널 -->
+    <tr>
+      <td>
+        <div class="asset-name">정보 패널 대형 <span class="badge unused">미사용</span></div>
+        <div class="asset-file">panel-info.png</div>
+        <div class="asset-desc">PL-5 · 1400×1600</div>
+      </td>
+      <td>
+        <div class="img-preview">
+          <img src="../../public/assets/panel/panel-info.png" alt="panel-info" style="max-height:60px;">
+        </div>
+      </td>
+      <td>
+        <div class="reason" style="font-size:11px;">디자인 토큰 + backdrop-filter blur로 구현</div>
+      </td>
+      <td class="reason">
+        전체 UI 톤과 일관된 마호가니 반투명 패널 유지.
+      </td>
+    </tr>
+
+    <!-- 핫바 배경 -->
+    <tr>
+      <td>
+        <div class="asset-name">핫바 배경 <span class="badge unused">미사용</span></div>
+        <div class="asset-file">hotbar-bg.png</div>
+        <div class="asset-desc">PL-6 · 2400×200</div>
+      </td>
+      <td>
+        <div class="img-preview">
+          <img src="../../public/assets/panel/hotbar-bg.png" alt="hotbar-bg" style="max-height:25px; max-width:110px;">
+        </div>
+      </td>
+      <td>
+        <div class="mock-hotbar"><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span></div>
+      </td>
+      <td class="reason">
+        CSS가 화면 크기 변화에 유연. 배경 이미지 불필요.
+      </td>
+    </tr>
+
+    <!-- 토큰 팝업 -->
+    <tr>
+      <td>
+        <div class="asset-name">토큰 팝업 프레임 <span class="badge unused">미사용</span></div>
+        <div class="asset-file">popup-token.png</div>
+        <div class="asset-desc">PL-7 · 640×480</div>
+      </td>
+      <td>
+        <div class="img-preview">
+          <img src="../../public/assets/panel/popup-token.png" alt="popup-token" style="max-height:60px;">
+        </div>
+      </td>
+      <td>
+        <div class="reason" style="font-size:11px;">토큰 팝업 UI 미구현</div>
+      </td>
+      <td class="reason">
+        정식 UI 구현 후 재검토.
+      </td>
+    </tr>
+
+    <!-- 배너 5종 -->
+    <tr>
+      <td>
+        <div class="asset-name">배너 5종 <span class="badge unused">미사용</span></div>
+        <div class="asset-file">banner-mode.png<br>banner-title.png<br>banner-verdict.png<br>banner-phase.png<br>toast-notify.png</div>
+        <div class="asset-desc">BN-1/2/3/4/6</div>
+      </td>
+      <td>
+        <div class="img-preview">
+          <img src="../../public/assets/banner/banner-mode.png" alt="banner-mode" style="max-height:30px; max-width:110px;">
+        </div>
+      </td>
+      <td>
+        <div class="reason" style="font-size:11px;">CSS 헤더 + 타이포로 심플 표시</div>
+      </td>
+      <td class="reason">
+        절제된 헤더가 정보 집중도 유리. 배너 장식이 UI 흐름을 끊을 수 있음.
+      </td>
+    </tr>
+
+    <!-- 초상화 프레임 -->
+    <tr>
+      <td>
+        <div class="asset-name">초상화 프레임 <span class="badge unused">미사용</span></div>
+        <div class="asset-file">frame-portrait.png</div>
+        <div class="asset-desc">OB-2 · 512×512</div>
+      </td>
+      <td>
+        <div class="img-preview">
+          <img src="../../public/icons/ornament/frame-portrait.png" alt="frame-portrait" style="max-height:60px;">
+        </div>
+      </td>
+      <td>
+        <div class="img-preview">
+          <div class="mock-frame-circle">OO</div>
+        </div>
+      </td>
+      <td class="reason">
+        CSS 원형 링으로 동일 효과. 크기·색상 유연 조정 가능.
+      </td>
+    </tr>
+
+    <!-- CTA 버튼 -->
+    <tr>
+      <td>
+        <div class="asset-name">CTA 대형/중형 버튼 <span class="badge unused">미사용</span></div>
+        <div class="asset-file">btn-cta-large.png<br>btn-cta-medium.png</div>
+        <div class="asset-desc">BT-1/2</div>
+      </td>
+      <td>
+        <div class="img-preview">
+          <img src="../../public/assets/button/btn-cta-large.png" alt="btn-cta" style="max-height:25px;">
+        </div>
+      </td>
+      <td>
+        <div style="display:inline-block; padding:8px 18px; border-radius:8px; background:linear-gradient(180deg, #d4a24e, #a57f34); color:#1a1610; font-size:11px; font-weight:800;">CSS 골드 버튼</div>
+      </td>
+      <td class="reason">
+        "테두리가 어중간하다" 피드백으로 CSS 그라데이션 버튼으로 교체.
+      </td>
+    </tr>
+
+    <!-- 탭 버튼 -->
+    <tr>
+      <td>
+        <div class="asset-name">탭 버튼 Active/Inactive <span class="badge unused">미사용</span></div>
+        <div class="asset-file">btn-tab-active.png<br>btn-tab-inactive.png</div>
+        <div class="asset-desc">BT-3/4</div>
+      </td>
+      <td>
+        <div class="img-preview">
+          <img src="../../public/assets/button/btn-tab-active.png" alt="btn-tab" style="max-height:30px;">
+        </div>
+      </td>
+      <td>
+        <div class="mock-tab-row"><div class="mock-tab active">01</div><div class="mock-tab inactive">02</div></div>
+      </td>
+      <td class="reason">
+        비활성 흰 배경 이슈로 CSS로 교체됨. 계열 유지 + 테두리/폰트 밝기로만 구분.
+      </td>
+    </tr>
+
+  </tbody>
+</table>
+
+<!-- ================================================================ -->
+<!-- 섹션 2: 추가 제작 필요 -->
+<!-- ================================================================ -->
+<h2 class="section-title">2. 추가 제작이 필요한 것</h2>
+
+<!-- ─────────── 2-1. 누락 항목 ─────────── -->
+<h3 class="subsection-title">2-1. 누락 항목 (가이드에 있으나 납품되지 않음)</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th style="width:22%">에셋 / 파일명</th>
+      <th style="width:16%">스펙</th>
+      <th style="width:42%">상세 가이드</th>
+      <th style="width:20%">현재 상태</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <div class="asset-name">NEW / UNLOCKED 띠 <span class="badge missing">누락</span></div>
+        <div class="asset-file">label-new.png</div>
+      </td>
+      <td>
+        <div class="spec-row">
+          <span class="spec-chip">640×96</span>
+          <span class="spec-chip">투명</span>
+        </div>
+      </td>
+      <td class="reason">
+        신규 해금 항목에 붙는 작은 라벨/태그. 황금 그라데이션 + 코너 장식. 사용처: 획득한 칭호 카드 우측 상단, 해금 사건 카드.
+      </td>
+      <td>
+        <div class="img-preview">
+          <img src="../../public/assets/banner/label-new.png" alt="label-new dummy">
+          <span class="caption">임시 더미</span>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <div class="asset-name">미니게임 결과 리본 <span class="badge missing">누락</span></div>
+        <div class="asset-file">ribbon-minigame.png<br>ribbon-minigame-success.png<br>ribbon-minigame-fail.png</div>
+      </td>
+      <td>
+        <div class="spec-row">
+          <span class="spec-chip">800×200</span>
+          <span class="spec-chip">2변형</span>
+        </div>
+      </td>
+      <td class="reason">
+        미니게임(짝맞추기·러너·두더지) 결과 리본. 성공=골드 / 실패=회색. 리본 형태.
+      </td>
+      <td>
+        <div class="img-preview">
+          <img src="../../public/assets/banner/ribbon-minigame-success.png" alt="ribbon-success dummy">
+          <span class="caption">임시 더미</span>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <div class="asset-name">IC-4 시스템 아이콘 세트 <span class="badge missing">최우선</span></div>
+        <div class="asset-file">public/icons/system/*.png</div>
+      </td>
+      <td>
+        <div class="spec-row">
+          <span class="spec-chip">64×64</span>
+          <span class="spec-chip">24+ 종</span>
+          <span class="spec-chip">골드톤</span>
+        </div>
+      </td>
+      <td class="reason">
+        UI 전반 시스템 아이콘. 현재 SVG 스프라이트 라인 아이콘으로 제공 중.<br>
+        심볼별 현재 사용처는 아래 "2-1-A" 참조.
+      </td>
+      <td>
+        <strong style="color:var(--dim);">SVG 라인 아이콘</strong><br>
+        <code>public/icons.svg</code>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <div class="asset-name">ST Steam 에셋 <span class="badge missing">출시 전 필수</span></div>
+        <div class="asset-file">public/steam/*.png</div>
+      </td>
+      <td>
+        <div class="spec-row">
+          <span class="spec-chip">10+ 종</span>
+          <span class="spec-chip">각 규격</span>
+        </div>
+      </td>
+      <td class="reason">
+        Steam 배포 필수. 헤더 460×215 · 소형 231×87 · 대형 616×353 · 히어로 3840×1240 · 로고 1280×720 · 라이브러리 히어로 3840×1240 · 라이브러리 로고 1280×720 · 라이브러리 캡슐 600×900 · 커뮤니티(소) 32×32 · 커뮤니티(대) 184×184 · 클라이언트 아이콘 16~256.
+      </td>
+      <td>
+        <strong style="color:var(--red);">출시 전 필수</strong><br>
+        미제작
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- 2-1-A. 시스템 아이콘 현재 사용처 -->
+<h3 class="subsection-title">2-1-A. IC-4 시스템 아이콘 — 심볼별 현재 적용</h3>
+
+<p class="reason" style="margin-bottom:10px;">
+  각 심볼별 게임 내 사용 위치. 현재 라인 SVG로 대체되고 있어 골드 일러스트 PNG 제작이 필요합니다.
+</p>
+
+<div class="sys-icon-grid">
+  <div class="sys-icon-card"><strong>i-gavel <span class="sym">🔨</span></strong><div class="used">핫바 1번 "사실 추궁"<br>결과화면 최고 점수</div></div>
+  <div class="sys-icon-card"><strong>i-eye <span class="sym">👁</span></strong><div class="used">핫바 2번 "동기 탐색"<br>발언노트 우측 토글</div></div>
+  <div class="sys-icon-card"><strong>i-heart <span class="sym">♥</span></strong><div class="used">핫바 3번 "공감 접근"<br>카테고리 "연인/부부"</div></div>
+  <div class="sys-icon-card"><strong>i-chat <span class="sym">💬</span></strong><div class="used">핫바 4번 "자유 질문"<br>카테고리 "친구"</div></div>
+  <div class="sys-icon-card"><strong>i-doc <span class="sym">📄</span></strong><div class="used">핫바 5번 "증거 제시"<br>카테고리 "세입자"</div></div>
+  <div class="sys-icon-card"><strong>i-witness <span class="sym">👥</span></strong><div class="used">핫바 6번 "증인 소환"<br>증인 말풍선 아바타</div></div>
+  <div class="sys-icon-card"><strong>i-scale <span class="sym">⚖️</span></strong><div class="used">Phase 전환 배너<br>PCCaseBrief 관계<br><em style="color:var(--green)">※ 홈 중앙은 PNG 적용됨</em></div></div>
+  <div class="sys-icon-card"><strong>i-shield <span class="sym">🛡️</span></strong><div class="used">특수 W "비공개 보호"<br>카테고리 "가족/의료"</div></div>
+  <div class="sys-icon-card"><strong>i-hand <span class="sym">✋</span></strong><div class="used">특수 Q "분리 심문"<br>카테고리 "동업"</div></div>
+  <div class="sys-icon-card"><strong>i-bolt <span class="sym">⚡</span></strong><div class="used">특수 E "즉답 요구"<br>홈 live 버튼<br>skill 토큰</div></div>
+  <div class="sys-icon-card"><strong>i-lock <span class="sym">🔒</span></strong><div class="used">비공개 진술 표시<br>잠긴 조사 단계</div></div>
+  <div class="sys-icon-card"><strong>i-search <span class="sym">🔍</span></strong><div class="used">투자 토큰 표시<br>조사 시도 비용</div></div>
+  <div class="sys-icon-card"><strong>i-crown <span class="sym">👑</span></strong><div class="used">시즌 모드 배지<br>카테고리 "헤드라인"</div></div>
+  <div class="sys-icon-card"><strong>i-bulb <span class="sym">💡</span></strong><div class="used">홈 가이드 버튼<br>카테고리 "이웃"</div></div>
+  <div class="sys-icon-card"><strong>i-gear <span class="sym">⚙️</span></strong><div class="used">홈 설정 버튼<br>타임라인 도구</div></div>
+  <div class="sys-icon-card"><strong>i-bank <span class="sym">🏦</span></strong><div class="used">증거: bank/financial/receipt</div></div>
+  <div class="sys-icon-card"><strong>i-cam <span class="sym">📹</span></strong><div class="used">증거: cctv/photo/video/dashcam</div></div>
+  <div class="sys-icon-card"><strong>i-ledger <span class="sym">📑</span></strong><div class="used">증거: log/record<br>카테고리 "직장"</div></div>
+  <div class="sys-icon-card"><strong>i-clock <span class="sym">🕐</span></strong><div class="used">증거: timeline/schedule<br>타이머</div></div>
+  <div class="sys-icon-card"><strong>i-smartphone <span class="sym">📱</span></strong><div class="used">증거: audio/device</div></div>
+  <div class="sys-icon-card"><strong>i-sns <span class="sym">🌐</span></strong><div class="used">증거: sns<br>카테고리 "온라인"</div></div>
+  <div class="sys-icon-card"><strong>i-person <span class="sym">👤</span></strong><div class="used">증거: testimony<br>기본 아바타 fallback</div></div>
+  <div class="sys-icon-card"><strong>i-drop <span class="sym">💧</span></strong><div class="used">대상 미터 헤더</div></div>
+  <div class="sys-icon-card"><strong>i-man / i-woman <span class="sym">👨/👩</span></strong><div class="used">초상화 PNG 미등록 사건용 fallback</div></div>
+</div>
+
+<!-- ─────────── 2-2. 다시 제작 권장 항목 ─────────── -->
+<h3 class="subsection-title">2-2. 다시 제작 권장 항목</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th style="width:17%">에셋 / 파일명</th>
+      <th style="width:15%">납품본</th>
+      <th style="width:15%">현재 대체</th>
+      <th style="width:24%">문제점</th>
+      <th style="width:29%">재제작 요구사항</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <div class="asset-name">승급/칭호 리본 <span class="badge redesign">재제작</span></div>
+        <div class="asset-file">ribbon-rank.png</div>
+        <div class="asset-desc">BN-5 · 960×240</div>
+      </td>
+      <td>
+        <div class="img-preview">
+          <img src="../../public/assets/banner/ribbon-rank.png" alt="ribbon-rank" style="max-height:50px;">
+        </div>
+      </td>
+      <td>
+        <div class="img-preview">
+          <div class="mock-ribbon">견습 → 정식</div>
+          <span class="caption">CSS 수평 밴드</span>
+        </div>
+      </td>
+      <td class="reason">
+        양끝 V컷 고정 형태. 5개 티어(견습/정식/숙련/수석/전설)를 단일 이미지로 표현 불가.
+      </td>
+      <td class="reason">
+        <strong>옵션 A</strong>: 티어별 5종 개별 제작<br>
+        <strong>옵션 B</strong>: 플랫 단일 템플릿 + CSS 컬러 오버레이<br>
+        크기 960×180 권장 (240은 과대).
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- ─────────── 2-3. 신규 제작 필요 항목 ─────────── -->
+<h3 class="subsection-title">2-3. 신규 제작 필요 항목 (가이드에도 없음)</h3>
+
+<div class="info-amber">
+  <strong>⚠️ 필수 아님 — 우선순위 낮음</strong><br>
+  Achievement 칭호 아이콘은 <strong>현재 이모지 기반 SVG 글리프</strong>로 게임에서 정상 작동 중입니다. 디자인 퀄리티 향상 목적의 확장 작업이며 출시 전 필수 아님.
+</div>
+
+<h3 class="subsection-title" style="margin-top:20px;">Achievement 칭호 아이콘 (희귀도별)</h3>
+
+<p class="reason" style="margin-bottom:8px;">
+  <strong>스펙</strong>: 192×192 PNG · 투명 · 희귀도별 <strong>베이스 프레임 컬러 통일</strong> (내부 심볼만 칭호마다 다름)<br>
+  <strong>사용처</strong>: 결과 화면 "03 후일담" 탭 획득한 칭호 카드
+</p>
+
+<div class="rarity-grid">
+  <div class="rarity-card legendary">
+    <h4 class="rarity-legendary">◆ LEGENDARY (3종)</h4>
+    <p style="font-size:11px; color:var(--dim); margin-bottom:10px;">베이스: <strong class="rarity-legendary">#f59e0b (앰버)</strong> · 화려한 금속 광택 + 방사형 글로우</p>
+    <ul>
+      <li><span class="emoji">👑</span><div><strong>완벽한 판결</strong> (perfect-judge)<br>통찰/권위/지혜 80+</div></li>
+      <li><span class="emoji">🏆</span><div><strong>완벽한 재판관</strong> (perfect-clearance)<br>100% 달성율</div></li>
+      <li><span class="emoji">🎮</span><div><strong>법정의 만능인</strong> (minigame-master)<br>미니게임 15회 전 성공</div></li>
+    </ul>
+  </div>
+
+  <div class="rarity-card epic">
+    <h4 class="rarity-epic">◆ EPIC (5종)</h4>
+    <p style="font-size:11px; color:var(--dim); margin-bottom:10px;">베이스: <strong class="rarity-epic">#a78bfa (보라)</strong> · 보라+은빛 그라데이션 + 내부 글로우</p>
+    <ul>
+      <li><span class="emoji">🔍</span><div><strong>진실 추적자</strong> (truth-seeker)<br>통찰 90+</div></li>
+      <li><span class="emoji">💡</span><div><strong>솔로몬의 지혜</strong> (wise-solomon)<br>지혜 90+</div></li>
+      <li><span class="emoji">⚖️</span><div><strong>철의 재판관</strong> (iron-judge)<br>권위 90+</div></li>
+      <li><span class="emoji">🔗</span><div><strong>증거의 직조자</strong> (evidence-weaver)<br>모든 조합 발견</div></li>
+      <li><span class="emoji">👂</span><div><strong>깊은 경청자</strong> (deep-listener)<br>모든 증인 핵심 증언</div></li>
+    </ul>
+  </div>
+
+  <div class="rarity-card rare">
+    <h4 class="rarity-rare">◆ RARE (6종)</h4>
+    <p style="font-size:11px; color:var(--dim); margin-bottom:10px;">베이스: <strong class="rarity-rare">#5b8def (블루)</strong> · 블루+은빛 + 은은한 내부 라인</p>
+    <ul>
+      <li><span class="emoji">⚡</span><div><strong>신속 재판</strong> (speed-trial)<br>10턴 이내 판결</div></li>
+      <li><span class="emoji">🤝</span><div><strong>신뢰의 판사</strong> (trust-builder)<br>신뢰 행동 3회+</div></li>
+      <li><span class="emoji">💥</span><div><strong>완전 붕괴</strong> (full-collapse)<br>모든 쟁점 거짓말 붕괴</div></li>
+      <li><span class="emoji">📄</span><div><strong>증거의 달인</strong> (evidence-master)<br>모든 증거 제시</div></li>
+      <li><span class="emoji">✋</span><div><strong>맨손의 재판관</strong> (no-skill)<br>스킬 사용 없이 판결</div></li>
+      <li><span class="emoji">💎</span><div><strong>자원의 달인</strong> (resource-master)<br>모든 토큰 잔여</div></li>
+    </ul>
+  </div>
+
+  <div class="rarity-card common">
+    <h4 class="rarity-common">◆ COMMON (3종)</h4>
+    <p style="font-size:11px; color:var(--dim); margin-bottom:10px;">베이스: <strong class="rarity-common">#9ba3ae (회색)</strong> · 무광 은빛</p>
+    <ul>
+      <li><span class="emoji">🕊️</span><div><strong>자비로운 판결</strong> (merciful)<br>모든 해결책 온건</div></li>
+      <li><span class="emoji">🤔</span><div><strong>신중한 판단</strong> (cautious)<br>1개 이상 보류</div></li>
+      <li><span class="emoji">🧤</span><div><strong>더러운 손</strong> (dirty-hands)<br>위법 증거 사용</div></li>
+    </ul>
+  </div>
+</div>
+
+<div class="info-green" style="margin-top:16px;">
+  <strong>💡 제작 제안</strong><br>
+  17종 전부 부담되면 <strong>LEGENDARY 3종 + EPIC 5종 (총 8종)만 우선 제작</strong>도 가능. 핵심 엔드게임 보상에만 별도 아이콘을 주면 획득 차별성이 살아납니다.
+</div>
+
+<!-- ================================================================ -->
+<!-- 요약 -->
+<!-- ================================================================ -->
+<h2 class="section-title">📊 요약</h2>
+
+<div class="summary">
+  <h2>현재 상태</h2>
+  <ul>
+    <li><span class="count">7</span> 카테고리 <strong>완전 적용</strong> (CH · session · fragment · emblem · BG · card-session · scale-balance)</li>
+    <li><span class="count">14</span> 종 <strong>미사용 결정</strong> (말풍선 3 · 정보패널 · 핫바 · 토큰팝업 · 배너 5 · 초상화프레임 · CTA 2 · 탭 2 · 증거카드프레임)</li>
+    <li><span class="count">4</span> 항목 <strong>누락 — 추가 제작 필요</strong> (label-new · ribbon-minigame · IC-4 24종+ · Steam)</li>
+    <li><span class="count">1</span> 항목 <strong>재제작 권장</strong> (ribbon-rank — 티어별 5종 또는 플랫 베이스)</li>
+    <li><span class="count">17</span> 종 <strong>신규 선택사항</strong> (Achievement 칭호 — 이모지 SVG로 동작)</li>
+  </ul>
+
+  <h2 style="margin-top:18px;">우선순위</h2>
+  <ul>
+    <li><strong style="color:var(--red);">[Critical]</strong> IC-4 시스템 아이콘 24+종 — UI 전반 톤 일관성</li>
+    <li><strong style="color:var(--red);">[Critical]</strong> ST Steam 에셋 10+종 — 출시 전 필수</li>
+    <li><strong style="color:var(--amber);">[High]</strong> 증거 카드 프레임 개념 협의 (타입별 디자인 vs 단일)</li>
+    <li><strong style="color:var(--blue);">[Med]</strong> ribbon-rank 티어별 재제작</li>
+    <li><strong style="color:var(--blue);">[Low]</strong> label-new · ribbon-minigame (더미로 동작)</li>
+    <li><strong style="color:var(--common);">[Optional]</strong> Achievement 칭호 8~17종 (이모지 SVG로 동작)</li>
+  </ul>
+</div>
+
+<p style="text-align:center; color:var(--dim); font-size:12px; margin-top:40px; padding-top:20px; border-top:1px solid var(--border);">
+  작성일: 2026-04-22 개정 v2 · 솔로몬의 딜레마 리소스 현황
+</p>
+
+</body>
+</html>
