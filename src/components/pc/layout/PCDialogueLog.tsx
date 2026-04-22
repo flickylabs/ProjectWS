@@ -45,7 +45,9 @@ function useRevealText(text: string, animate: boolean) {
   return displayText
 }
 
-function MessageBubble({ entry, animate, combinableTexts, isLatestForSpeaker }: { entry: DialogueEntryType; animate: boolean; combinableTexts?: Set<string>; isLatestForSpeaker?: boolean }) {
+export type CombinationHintInfo = { readyCount: number; potentialCount: number }
+
+function MessageBubble({ entry, animate, combinableTexts, combinationHintMap, isLatestForSpeaker }: { entry: DialogueEntryType; animate: boolean; combinableTexts?: Set<string>; combinationHintMap?: Map<string, CombinationHintInfo>; isLatestForSpeaker?: boolean }) {
   const caseData = useStore((s) => s.caseData)
   const agentA = useStore((s) => s.agentA)
   const agentB = useStore((s) => s.agentB)
@@ -267,6 +269,23 @@ function MessageBubble({ entry, animate, combinableTexts, isLatestForSpeaker }: 
               <span>비공개 진술</span>
             </div>
           ) : null}
+          {(() => {
+            if (!combinationHintMap || combinationHintMap.size === 0) return null
+            for (const [phrase, hint] of combinationHintMap) {
+              if (!rawText.includes(phrase)) continue
+              const title = [
+                hint.readyCount > 0 ? `조합 가능 ${hint.readyCount}개 — 지금 바로 연결 가능` : null,
+                hint.potentialCount > 0 ? `실마리 필요 ${hint.potentialCount}개 — 아직 찾지 못한 단서가 있는 듯` : null,
+              ].filter(Boolean).join('\n')
+              return (
+                <span className="pc-log-bubble__combo" title={title}>
+                  {hint.readyCount > 0 ? <span className="pc-log-bubble__combo-badge is-ready">🔗</span> : null}
+                  {hint.potentialCount > 0 ? <span className="pc-log-bubble__combo-badge is-potential">🔍</span> : null}
+                </span>
+              )
+            }
+            return null
+          })()}
           <div className="pc-log-bubble__text">{displayText}</div>
           {entry.behaviorHint ? <div className="pc-log-bubble__hint">{entry.behaviorHint}</div> : null}
         </button>
@@ -295,6 +314,27 @@ export default function PCDialogueLog() {
       }
     }
     return texts
+  }, [combinationLabRuntime, evidenceStates])
+
+  // 말풍선용 조합 힌트 맵 — text → { readyCount, potentialCount }
+  const combinationHintMap = useMemo(() => {
+    if (!combinationLabRuntime?.config?.nodes) return new Map<string, CombinationHintInfo>()
+    const hints = useGameStore.getState().getCombinationPartnerHints()
+    const byText = new Map<string, CombinationHintInfo>()
+    for (const node of combinationLabRuntime.config.nodes) {
+      if (node.type !== 'statement') continue
+      const hint = hints.get(node.id)
+      if (!hint || hint.recipeCount === 0) continue
+      const match = node.label?.match(/"([^"]+)"/)
+      if (!match) continue
+      const phrase = match[1]
+      const prev = byText.get(phrase) ?? { readyCount: 0, potentialCount: 0 }
+      byText.set(phrase, {
+        readyCount: prev.readyCount + hint.readyCount,
+        potentialCount: prev.potentialCount + (hint.recipeCount - hint.readyCount),
+      })
+    }
+    return byText
   }, [combinationLabRuntime, evidenceStates])
   const bottomRef = useRef<HTMLDivElement>(null)
 
@@ -353,7 +393,7 @@ export default function PCDialogueLog() {
               } : undefined}
               style={isDraggable ? { cursor: 'grab' } : undefined}
             >
-              <MessageBubble entry={entry} animate={index === visibleEntries.length - 1} combinableTexts={combinableStatementTexts} isLatestForSpeaker={latestIndexBySpeaker[entry.speaker] === index} />
+              <MessageBubble entry={entry} animate={index === visibleEntries.length - 1} combinableTexts={combinableStatementTexts} combinationHintMap={combinationHintMap} isLatestForSpeaker={latestIndexBySpeaker[entry.speaker] === index} />
             </div>
           )
         })}

@@ -79,21 +79,35 @@ export default function PCImportantNotesSection() {
     })
   }, [caseData, disputeVisibility])
 
-  // 조합 가능 발언 텍스트 — 즐겨찾기 shimmer용
+  // 조합 가능 발언 텍스트 — 즐겨찾기 shimmer + 힌트용
   const evidenceStates = useStore((s) => s.evidenceStates)
   const combinationLabRuntime = useStore((s) => (s as any).combinationLabRuntime)
-  const combinableStatementTexts = useMemo(() => {
-    if (!combinationLabRuntime?.config?.nodes) return new Set<string>()
-    const combinableIds = useGameStore.getState().getCombinableEvidenceIds()
-    const texts = new Set<string>()
+  const statementHintMap = useMemo(() => {
+    if (!combinationLabRuntime?.config?.nodes) return new Map<string, { readyCount: number; potentialCount: number }>()
+    const hints = useGameStore.getState().getCombinationPartnerHints()
+    const byText = new Map<string, { readyCount: number; potentialCount: number }>()
     for (const node of combinationLabRuntime.config.nodes) {
-      if (node.type === 'statement' && combinableIds.has(node.id)) {
-        const match = node.label?.match(/"([^"]+)"/)
-        if (match) texts.add(match[1])
-      }
+      if (node.type !== 'statement') continue
+      const hint = hints.get(node.id)
+      if (!hint || hint.recipeCount === 0) continue
+      const match = node.label?.match(/"([^"]+)"/)
+      if (!match) continue
+      const phrase = match[1]
+      const prev = byText.get(phrase) ?? { readyCount: 0, potentialCount: 0 }
+      byText.set(phrase, {
+        readyCount: prev.readyCount + hint.readyCount,
+        potentialCount: prev.potentialCount + (hint.recipeCount - hint.readyCount),
+      })
     }
-    return texts
+    return byText
   }, [combinationLabRuntime, evidenceStates])
+
+  const findStatementHint = useCallback((text: string) => {
+    for (const [phrase, hint] of statementHintMap) {
+      if (text.includes(phrase)) return hint
+    }
+    return null
+  }, [statementHintMap])
 
   const disputeIndexMap = useMemo(() => {
     return new Map(visibleDisputes.map((d, i) => [d.id, i + 1]))
@@ -300,7 +314,8 @@ export default function PCImportantNotesSection() {
             {/* 즐겨찾기 목록 + 드롭 영역 통합 — 하나의 스크롤 영역 */}
             <div className="pc-fav-notes__scroll">
               {favorites.map((note) => {
-                const isCombinable = combinableStatementTexts.size > 0 && [...combinableStatementTexts].some((t) => note.text.includes(t))
+                const stmtHint = findStatementHint(note.text)
+                const isCombinable = (stmtHint?.readyCount ?? 0) > 0
                 return (
                   <FavoriteCard
                     key={note.id}
@@ -310,6 +325,7 @@ export default function PCImportantNotesSection() {
                     dragging={draggingNoteId === note.id}
                     reorderTarget={favReorderTarget === note.id}
                     isCombinable={isCombinable}
+                    comboHint={stmtHint}
                     onClickNote={() => openNotePanel(note, true)}
                     onShiftClick={() => addToCombination(note)}
                     onRemove={() => removeFavorite(note.dialogueId)}
@@ -428,10 +444,11 @@ export default function PCImportantNotesSection() {
 
 /* ━━━ Favorite compact card (left panel) ━━━ */
 function FavoriteCard({
-  note, speakerName, disputeIndices, dragging, reorderTarget, isCombinable,
+  note, speakerName, disputeIndices, dragging, reorderTarget, isCombinable, comboHint,
   onClickNote, onShiftClick, onRemove, onDragStart, onDragEnd, onDragOver, onDrop,
 }: {
   note: PcPinnedNote; speakerName: string; disputeIndices: number[]; dragging: boolean; reorderTarget: boolean; isCombinable?: boolean
+  comboHint?: { readyCount: number; potentialCount: number } | null
   onClickNote: () => void; onShiftClick: () => void; onRemove: () => void
   onDragStart: (e: DragEvent<HTMLDivElement>) => void; onDragEnd: () => void
   onDragOver: (e: DragEvent<HTMLDivElement>) => void; onDrop: (e: DragEvent<HTMLDivElement>) => void
@@ -440,6 +457,13 @@ function FavoriteCard({
   const tag = disputeIndices.length > 0
     ? `T${note.turn} | S${disputeIndices.join(',')}`
     : `T${note.turn}`
+
+  const comboTitle = comboHint
+    ? [
+        comboHint.readyCount > 0 ? `조합 가능 ${comboHint.readyCount}개 — 지금 바로 연결 가능` : null,
+        comboHint.potentialCount > 0 ? `실마리 필요 ${comboHint.potentialCount}개 — 아직 찾지 못한 단서가 있는 듯` : null,
+      ].filter(Boolean).join('\n')
+    : undefined
 
   return (
     <div
@@ -458,6 +482,16 @@ function FavoriteCard({
       <div className="pc-note-card__body">
         <div className="pc-note-card__summary">{getNoteSummary(note.text)}</div>
       </div>
+      {comboHint && (comboHint.readyCount > 0 || comboHint.potentialCount > 0) ? (
+        <span className="pc-note-card__combo" title={comboTitle}>
+          {comboHint.readyCount > 0 ? (
+            <span className="pc-note-card__combo-badge is-ready">🔗 {comboHint.readyCount}</span>
+          ) : null}
+          {comboHint.potentialCount > 0 ? (
+            <span className="pc-note-card__combo-badge is-potential">🔍 {comboHint.potentialCount}</span>
+          ) : null}
+        </span>
+      ) : null}
       {note.contradictionMeta ? <span className="pc-note-card__flash">&#x26A1;</span> : null}
       <button className="pc-note-card__pin pc-note-card__unfav" onClick={(event) => { event.stopPropagation(); onRemove() }} title="즐겨찾기 해제" type="button">
         <StarIcon size={16} filled />

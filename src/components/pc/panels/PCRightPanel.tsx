@@ -50,6 +50,8 @@ export default function PCRightPanel() {
   const triggeredCombinations = useStore((s) => s.triggeredCombinations)
 
   const [comboSlots, setComboSlots] = useState<[string | null, string | null]>([null, null])
+  const [autoMatchPanelOpen, setAutoMatchPanelOpen] = useState(false)
+  const [autoMatchConfirming, setAutoMatchConfirming] = useState(false)
 
   if (!caseData) {
     return null
@@ -98,6 +100,77 @@ export default function PCRightPanel() {
   }, [readyComboCount])
 
   const hasReadyCombos = readyComboCount > 0
+
+  // 자동 매칭 대상: combinationLab 레시피 중 모든 입력이 준비됐고 아직 적용되지 않은 것
+  const readyLabRecipes = useMemo(() => {
+    const config = combinationLabRuntime.config
+    if (!config?.recipes) return [] as CombinationLabRecipe[]
+    const applied = new Set(combinationLabRuntime.appliedRecipeIds ?? [])
+    const discovered = new Set(combinationLabRuntime.discoveredNodeIds ?? [])
+    const nodeTypeById = new Map<string, string>(config.nodes.map((n: CombinationLabNode) => [n.id, n.type]))
+    return config.recipes.filter((recipe: CombinationLabRecipe) => {
+      if (applied.has(recipe.id) && !recipe.repeatable) return false
+      return recipe.inputs.every((id) => {
+        const type = nodeTypeById.get(id)
+        if (type === 'evidence' || type === 'derived_evidence') return !!evidenceStates[id]?.unlocked
+        return discovered.has(id)
+      })
+    })
+  }, [combinationLabRuntime, evidenceStates])
+
+  // 레시피 카테고리 breakdown (증거+증거 / 증거+발언 / 발언+발언) — ready vs potential
+  const recipeBreakdown = useMemo(() => {
+    const out = {
+      ee: { ready: 0, potential: 0 },
+      es: { ready: 0, potential: 0 },
+      ss: { ready: 0, potential: 0 },
+    }
+    const config = combinationLabRuntime.config
+    if (!config?.recipes) return out
+    const applied = new Set(combinationLabRuntime.appliedRecipeIds ?? [])
+    const discovered = new Set(combinationLabRuntime.discoveredNodeIds ?? [])
+    const nodeTypeById = new Map<string, string>(config.nodes.map((n: CombinationLabNode) => [n.id, n.type]))
+    const isReady = (id: string) => {
+      const t = nodeTypeById.get(id)
+      if (t === 'evidence' || t === 'derived_evidence') return !!evidenceStates[id]?.unlocked
+      return discovered.has(id)
+    }
+    const isEvidence = (id: string) => {
+      const t = nodeTypeById.get(id)
+      return t === 'evidence' || t === 'derived_evidence'
+    }
+    for (const recipe of config.recipes) {
+      if (applied.has(recipe.id) && !recipe.repeatable) continue
+      if (recipe.inputs.length !== 2) continue
+      const [a, b] = recipe.inputs
+      const allReady = isReady(a) && isReady(b)
+      const evCount = (isEvidence(a) ? 1 : 0) + (isEvidence(b) ? 1 : 0)
+      const cat = evCount === 2 ? 'ee' : evCount === 1 ? 'es' : 'ss'
+      if (allReady) out[cat].ready += 1
+      else out[cat].potential += 1
+    }
+    return out
+  }, [combinationLabRuntime, evidenceStates])
+
+  const autoMatchCost = 1
+  const canAutoMatch = readyLabRecipes.length > 0 && globalSkillPoints >= autoMatchCost
+
+  const handleAutoMatchConfirm = useCallback(() => {
+    if (!canAutoMatch) return
+    // 첫 번째 준비된 레시피 선택
+    const recipe = readyLabRecipes[0]
+    if (!recipe) return
+    const spent = (store as any).spend('skillPoints', autoMatchCost)
+    if (!spent) {
+      showToast('스킬 포인트가 부족합니다.', 'info')
+      return
+    }
+    const [a, b] = recipe.inputs
+    setComboSlots([a ?? null, b ?? null])
+    setAutoMatchPanelOpen(false)
+    setAutoMatchConfirming(false)
+    showToast('🔎 조합 대상이 슬롯에 자동 배치됐습니다.', 'success')
+  }, [canAutoMatch, readyLabRecipes, store])
 
   // config가 null이면 caseData에서 직접 초기화 시도
   useEffect(() => {
@@ -398,29 +471,10 @@ export default function PCRightPanel() {
     clearComboSlots()
   }, [clearComboSlots, comboNodeA, comboNodeB, comboReady, matchingOutput, matchingRecipe, store])
 
-  const openCombinationInfo = useCallback(() => {
-    const availableRecipes = store.getAvailableCombinationRecipes()
-    const lines = availableRecipes.length > 0
-      ? availableRecipes.slice(0, 6).map((recipe, index) => {
-          const output = combinationLabRuntime.config?.outputs.find((item) => item.id === recipe.outputId)
-          return `${index + 1}. ${output?.label ?? recipe.id} · \uBE44\uC6A9 ${recipe.cost}`
-        })
-      : ['\uC9C0\uAE08\uC740 \uD655\uC778 \uAC00\uB2A5\uD55C \uC870\uD569\uC774 \uC5C6\uC2B5\uB2C8\uB2E4.']
-
-    openPcInteractionPanel({
-      title: '\uC870\uD569 \uC2A4\uD0AC',
-      subtitle: '\uBD84\uC11D \uD3EC\uC778\uD2B8 \uAE30\uBC18 \uC870\uD569',
-      tone: 'blue',
-      body: [
-        `\uAC00\uC6A9 \uBD84\uC11D \uD3EC\uC778\uD2B8: ${combinationLabRuntime.analysisPoints}`,
-        '',
-        '\uC99D\uAC70\uC640 \uC911\uC694 \uBC1C\uC5B8 \uB178\uD2B8\uB97C \uC870\uD569\uD558\uBA74 \uC0C8\uB85C\uC6B4 \uC7C1\uC810, \uC0C8\uB85C\uC6B4 \uBC1C\uC5B8, \uAE30\uC874 \uC99D\uAC70 \uAC15\uD654 \uAC19\uC740 \uACB0\uACFC\uB97C \uC5BB\uC744 \uC218 \uC788\uC2B5\uB2C8\uB2E4.',
-        '',
-        '\uD604\uC7AC \uD655\uC778 \uAC00\uB2A5\uD55C \uC870\uD569',
-        ...lines,
-      ].join('\n'),
-    })
-  }, [combinationLabRuntime.analysisPoints, combinationLabRuntime.config?.outputs, store])
+  const toggleCombinationPanel = useCallback(() => {
+    setAutoMatchPanelOpen((v) => !v)
+    setAutoMatchConfirming(false)
+  }, [])
 
   const openSummaryPanel = useCallback(() => {
     window.dispatchEvent(new Event('pc:open-record-summary'))
@@ -532,14 +586,84 @@ export default function PCRightPanel() {
           >
             <div className="pc-skill-card__topline">
               <div className="pc-skill-card__eyebrow">조합</div>
-              <button className="pc-skill-card__info-button" onClick={openCombinationInfo} type="button">?</button>
+              <button className="pc-skill-card__info-button" onClick={toggleCombinationPanel} type="button" title="조합 정보">?</button>
             </div>
+
+            {autoMatchPanelOpen ? (
+              <div className="pc-combination-card__auto-panel">
+                {!autoMatchConfirming ? (
+                  <>
+                    <div className="pc-combination-card__auto-status">
+                      <span className="pc-combination-card__auto-mask">분석 포인트 {combinationLabRuntime.analysisPoints}</span>
+                      <span className="pc-combination-card__auto-hint">조합 대상은 가려져 있습니다 — 카테고리·잠금 상태만 공개</span>
+                    </div>
+                    <div className="pc-combination-card__auto-breakdown">
+                      <CategoryRow label="증거 + 증거" ready={recipeBreakdown.ee.ready} potential={recipeBreakdown.ee.potential} />
+                      <CategoryRow label="증거 + 발언" ready={recipeBreakdown.es.ready} potential={recipeBreakdown.es.potential} />
+                      <CategoryRow label="발언 + 발언" ready={recipeBreakdown.ss.ready} potential={recipeBreakdown.ss.potential} />
+                    </div>
+                    <button
+                      className="pc-combination-card__auto-cta"
+                      disabled={!canAutoMatch}
+                      onClick={() => setAutoMatchConfirming(true)}
+                      type="button"
+                    >
+                      <span>✨ 자동 매칭</span>
+                      <span className="pc-combination-card__auto-cost" title={`스킬 포인트 ${autoMatchCost} 소비`}>
+                        ⚡ {autoMatchCost}
+                      </span>
+                    </button>
+                    {readyLabRecipes.length === 0 ? (
+                      <p className="pc-combination-card__auto-warn">지금은 자동 매칭할 준비된 조합이 없습니다.</p>
+                    ) : globalSkillPoints < autoMatchCost ? (
+                      <p className="pc-combination-card__auto-warn">스킬 포인트가 부족합니다.</p>
+                    ) : null}
+                  </>
+                ) : (
+                  <>
+                    <p className="pc-combination-card__auto-confirm-text">
+                      조합 실행과 <strong>별개로</strong> 조합 대상 매칭에
+                      스킬 포인트 <strong>{autoMatchCost}</strong>이 소비됩니다.<br />
+                      매칭을 진행할까요?
+                    </p>
+                    <div className="pc-combination-card__auto-confirm-actions">
+                      <button
+                        className="pc-combination-card__auto-cta is-danger"
+                        onClick={() => setAutoMatchConfirming(false)}
+                        type="button"
+                      >
+                        아니오
+                      </button>
+                      <button
+                        className="pc-combination-card__auto-cta is-primary"
+                        onClick={handleAutoMatchConfirm}
+                        type="button"
+                      >
+                        예, 매칭합니다
+                      </button>
+                    </div>
+                  </>
+                )}
+              </div>
+            ) : null}
 
             <div className="pc-combination-card__body">
               {comboReady ? (
                 <button className="pc-combination-card__attempt pc-combination-card__attempt--center" onClick={handleCombinationAttempt} type="button">
                   <PCSvgIcon id="i-bolt" size={20} />
                   <span>조합 실행</span>
+                </button>
+              ) : readyLabRecipes.length > 0 && !autoMatchPanelOpen ? (
+                <button
+                  className="pc-combination-card__ready-indicator"
+                  onClick={toggleCombinationPanel}
+                  type="button"
+                >
+                  <span className="pc-combination-card__ready-icon">🔗</span>
+                  <span className="pc-combination-card__ready-text">
+                    조합 가능한 항목이 <strong>{readyLabRecipes.length}개</strong> 있습니다
+                  </span>
+                  <span className="pc-combination-card__ready-cta">확인</span>
                 </button>
               ) : (
                 <div className="pc-combination-card__guide">
@@ -590,6 +714,19 @@ function MeterRow({
         <div className={`meter-fill mf-${tone}`} style={{ width: `${Math.max(0, Math.min(width, 100))}%` }} />
       </div>
       <span className="meter-val">{valueText}</span>
+    </div>
+  )
+}
+
+function CategoryRow({ label, ready, potential }: { label: string; ready: number; potential: number }) {
+  if (ready === 0 && potential === 0) return null
+  return (
+    <div className="pc-combination-card__cat-row">
+      <span className="pc-combination-card__cat-label">{label}</span>
+      <span className="pc-combination-card__cat-counts">
+        {ready > 0 ? <span className="pc-combination-card__cat-ready">🔗 준비 {ready}</span> : null}
+        {potential > 0 ? <span className="pc-combination-card__cat-potential">🔍 실마리 {potential}</span> : null}
+      </span>
     </div>
   )
 }

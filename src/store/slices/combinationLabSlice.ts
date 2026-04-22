@@ -8,6 +8,7 @@ import type {
   Dispute,
   EvidenceNode,
 } from '../../types'
+import { stripOutputCodename } from '../../utils/combinationLabels'
 
 export interface CombinationLabHistoryEntry {
   recipeId: string
@@ -80,6 +81,8 @@ export interface CombinationLabSlice {
   canRunCombinationRecipe: (recipeId: string) => boolean
   getAvailableCombinationRecipes: () => CombinationLabRecipe[]
   runCombinationRecipe: (recipeId: string) => { ok: boolean; reason?: string; outputId?: string }
+  /** 대화에서 statement 노드의 따옴표 문구가 실제 발화될 때 discoveredNodeIds에 추가 */
+  syncStatementsFromDialogue: (text: string) => void
 }
 
 export const createCombinationLabSlice: StateCreator<any, [], [], CombinationLabSlice> = (set, get) => ({
@@ -87,8 +90,11 @@ export const createCombinationLabSlice: StateCreator<any, [], [], CombinationLab
 
   initCombinationLab: (caseData) => {
     const config = caseData.combinationLab ?? null
+    // base visibility 노드를 등록하되, statement는 해당 발언이 실제 대화에서
+    // 발화될 때까지 "아직 발견 전"으로 둔다. 그렇지 않으면 NPC가 말하기도 전에
+    // 자동 매칭에 노출되어 조기 스포일러를 유발한다.
     const discoveredNodeIds = (config?.nodes ?? [])
-      .filter((node) => node.visibility === 'base')
+      .filter((node) => node.visibility === 'base' && node.type !== 'statement')
       .map((node) => node.id)
 
     set({
@@ -97,6 +103,30 @@ export const createCombinationLabSlice: StateCreator<any, [], [], CombinationLab
         config,
         analysisPoints: config?.analysisPointsBase ?? 0,
         discoveredNodeIds,
+      },
+    })
+  },
+
+  syncStatementsFromDialogue: (text: string) => {
+    if (!text) return
+    const state = get().combinationLabRuntime
+    const config = state.config
+    if (!config) return
+    const already = new Set(state.discoveredNodeIds)
+    const newlyDiscovered: string[] = []
+    for (const node of config.nodes) {
+      if (node.type !== 'statement') continue
+      if (already.has(node.id)) continue
+      // statement label 안의 따옴표 문구와 매칭
+      const match = node.label?.match(/["“”]([^"“”]+)["“”]/)
+      if (!match) continue
+      if (text.includes(match[1])) newlyDiscovered.push(node.id)
+    }
+    if (newlyDiscovered.length === 0) return
+    set({
+      combinationLabRuntime: {
+        ...state,
+        discoveredNodeIds: [...state.discoveredNodeIds, ...newlyDiscovered],
       },
     })
   },
@@ -241,7 +271,7 @@ export const createCombinationLabSlice: StateCreator<any, [], [], CombinationLab
           if (disputeId && caseData?.disputes.some((d) => d.id === disputeId)) {
             const visibilityEntry = root.discovery?.disputeVisibility?.[disputeId]
             if (visibilityEntry?.visibility === 'hidden') {
-              root.emergeDispute?.(disputeId, 'truth_confrontation', root.turnCount ?? 0, output.label ?? disputeId)
+              root.emergeDispute?.(disputeId, 'truth_confrontation', root.turnCount ?? 0, stripOutputCodename(output.label ?? disputeId))
             }
           }
           break

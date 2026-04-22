@@ -25,6 +25,10 @@ export const createDialogueSlice: StateCreator<DialogueSlice, [], [], DialogueSl
       dialogueLog: [...state.dialogueLog, { ...entry, id }],
       nextDialogueId: state.nextDialogueId + 1,
     }))
+    // 조합용 statement 노드 동기화 — 당사자 발언에서만 매칭
+    if (entry.speaker === 'a' || entry.speaker === 'b') {
+      ;(get() as any).syncStatementsFromDialogue?.(entry.text ?? '')
+    }
     return id
   },
 

@@ -594,9 +594,15 @@ export const useGameStore: import('zustand').UseBoundStore<import('zustand').Sto
       }
 
       let trigger = evaluateEventTriggers(snapshot)
-      // 분리심문 중에는 상대 파티의 관찰/반응 이벤트(끼어들기)를 차단
-      if (trigger && trigger.type === 'interjection' && s.separationTarget) {
-        trigger = null
+      // 끼어들기 차단 조건:
+      //   - 분리심문 중 (상대 파티 관찰/반응 완전 봉쇄)
+      //   - 감정 과부하 (shutdown tier, emotion ≥ 85) — 본인 또는 상대가 해당되면 끼어들 상황 아님
+      if (trigger && trigger.type === 'interjection') {
+        const aShutdown = s.agentA.emotionalState.internalValue >= 85
+        const bShutdown = s.agentB.emotionalState.internalValue >= 85
+        if (s.separationTarget || aShutdown || bShutdown) {
+          trigger = null
+        }
       }
       if (trigger) {
         // dispute_emergence는 Discovery 경로(pendingEmergence + DisputeEmergenceModal)가 canonical

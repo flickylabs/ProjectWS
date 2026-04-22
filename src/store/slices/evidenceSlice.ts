@@ -32,8 +32,23 @@ export interface EvidenceSlice {
   getUnlockedEvidence: () => EvidenceNode[]
   /** 조합 레시피에 포함되어 있고, 해금됐고, 아직 미완료인 증거 ID 집합 */
   getCombinableEvidenceIds: () => Set<string>
+  /** 노드별 조합 힌트 — 미완료 레시피 기준 파트너 수/카테고리 */
+  getCombinationPartnerHints: () => Map<string, CombinationPartnerHint>
   addDerivedEvidence: (node: EvidenceNode, unlock?: boolean) => void
   patchEvidenceDefinition: (evidenceId: string, patch: Partial<EvidenceNode>) => void
+}
+
+export interface CombinationPartnerHint {
+  /** 이 노드가 포함된 미완료 레시피 수 */
+  recipeCount: number
+  /** 즉시 조합 가능한 레시피 수 (다른 입력 전부 준비됨) */
+  readyCount: number
+  /** 카테고리별 파트너 수 (중복 제외) */
+  partnersByCategory: {
+    evidence: number
+    statement: number
+    other: number
+  }
 }
 
 export const createEvidenceSlice: StateCreator<EvidenceSlice, [], [], EvidenceSlice> = (set, get) => ({
@@ -203,6 +218,64 @@ export const createEvidenceSlice: StateCreator<EvidenceSlice, [], [], EvidenceSl
       }
     }
     return ids
+  },
+
+  getCombinationPartnerHints: () => {
+    const { evidenceStates } = get()
+    const hints = new Map<string, CombinationPartnerHint>()
+    const labRuntime = (get() as any).combinationLabRuntime as { config: any; appliedRecipeIds: string[]; discoveredNodeIds: string[] } | undefined
+    if (!labRuntime?.config?.recipes) return hints
+
+    const applied = new Set(labRuntime.appliedRecipeIds ?? [])
+    const discovered = new Set(labRuntime.discoveredNodeIds ?? [])
+    const nodes: Array<{ id: string; type: string }> = labRuntime.config.nodes ?? []
+    const nodeTypeById = new Map(nodes.map((n) => [n.id, n.type]))
+    // 노드별로 만난 파트너 id 집합 (중복 방지)
+    const partnersByNode = new Map<string, Set<string>>()
+
+    const isInputReady = (inputId: string): boolean => {
+      const type = nodeTypeById.get(inputId)
+      if (type === 'evidence' || type === 'derived_evidence') {
+        return !!evidenceStates[inputId]?.unlocked
+      }
+      return discovered.has(inputId)
+    }
+
+    for (const recipe of labRuntime.config.recipes) {
+      if (applied.has(recipe.id) && !recipe.repeatable) continue
+      const inputs: string[] = recipe.inputs ?? []
+      for (const inputId of inputs) {
+        // 이 노드 자체가 이미 준비된 상태일 때만 힌트 제공 (해금 전에는 어차피 UI에 없음)
+        if (!isInputReady(inputId)) continue
+        const othersReady = inputs.every((other) => other === inputId || isInputReady(other))
+        const existing = hints.get(inputId) ?? {
+          recipeCount: 0,
+          readyCount: 0,
+          partnersByCategory: { evidence: 0, statement: 0, other: 0 },
+        }
+        existing.recipeCount += 1
+        if (othersReady) existing.readyCount += 1
+        hints.set(inputId, existing)
+
+        // 파트너 카테고리 집계 (이 레시피의 나머지 입력)
+        const partnerSet = partnersByNode.get(inputId) ?? new Set<string>()
+        for (const other of inputs) {
+          if (other === inputId) continue
+          if (partnerSet.has(other)) continue
+          partnerSet.add(other)
+          const otherType = nodeTypeById.get(other)
+          if (otherType === 'evidence' || otherType === 'derived_evidence') {
+            existing.partnersByCategory.evidence += 1
+          } else if (otherType === 'statement') {
+            existing.partnersByCategory.statement += 1
+          } else {
+            existing.partnersByCategory.other += 1
+          }
+        }
+        partnersByNode.set(inputId, partnerSet)
+      }
+    }
+    return hints
   },
 
   addDerivedEvidence: (node, unlock = true) => {

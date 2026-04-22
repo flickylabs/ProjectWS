@@ -5,6 +5,7 @@ import { getContradictionEvent, getInterjectionEvent, getOutburstEvent } from '.
 import { applyWitnessSlot } from '../../../hooks/useActionDispatch'
 import { applyInterjectionBlockResentment } from '../../../engine/interjectionV2'
 import { recordInterjectionChoice } from '../../../engine/phase3LogCollector'
+import { stripOutputCodename } from '../../../utils/combinationLabels'
 import { useGameStore, useStore } from '../../../store/useGameStore'
 import type { TruthJudgment } from '../../../types/discovery'
 
@@ -220,7 +221,7 @@ function DisputeEmergencePanel() {
       <div className="pc-discovery-card__body">
         <div className="pc-discovery-card__block">
           <strong>{dispute?.name ?? event.disputeId}</strong>
-          <p>{event.description}</p>
+          <p>{stripOutputCodename(event.description)}</p>
         </div>
       </div>
       <ActionRow>

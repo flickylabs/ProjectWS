@@ -148,7 +148,9 @@ export default function PCDisputeRibbon() {
               {getMaxLieState(activeDispute.id)}
             </span>
           </div>
-          <p className="pc-dispute-ribbon__popover-copy">{activeDispute.truthDescription}</p>
+          <p className="pc-dispute-ribbon__popover-copy pc-dispute-ribbon__popover-copy--muted">
+            심문과 증거로 진실을 밝혀내세요.
+          </p>
           <div className="pc-dispute-ribbon__evidence-list">
             {activeEvidence.map((evidence) => {
               const unlocked = evidenceStates[evidence.id]?.unlocked ?? false

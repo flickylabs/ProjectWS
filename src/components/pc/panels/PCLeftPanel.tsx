@@ -45,7 +45,10 @@ export default function PCLeftPanel() {
   const evidenceDefinitions = useStore((s) => s.evidenceDefinitions)
   const evidenceStates = useStore((s) => s.evidenceStates)
   const getCombinableEvidenceIds = useStore((s) => s.getCombinableEvidenceIds)
+  const getCombinationPartnerHints = useStore((s) => s.getCombinationPartnerHints)
+  const combinationLabRuntime = useStore((s) => (s as any).combinationLabRuntime)
   const combinableIds = useMemo(() => getCombinableEvidenceIds(), [getCombinableEvidenceIds, evidenceStates])
+  const partnerHints = useMemo(() => getCombinationPartnerHints(), [getCombinationPartnerHints, evidenceStates, combinationLabRuntime])
   const lastFocusedDisputeId = useStore((s) => s.lastFocusedDisputeId)
   const [timelineOpen, setTimelineOpen] = useState(false)
 
@@ -158,6 +161,10 @@ export default function PCLeftPanel() {
           {evidenceCards.map((evidence) => {
             const state = evidenceStates[evidence.id]
             const label = state?.deepInvestigated ? evidence.name : (evidence.surfaceName ?? evidence.name)
+            const hint = partnerHints.get(evidence.id)
+            const comboTitle = hint
+              ? buildComboHintTitle(hint)
+              : undefined
 
             return (
               <div
@@ -181,6 +188,20 @@ export default function PCLeftPanel() {
                     <PCSvgIcon id={getPcEvidenceSymbolId(evidence.type)} size={16} />
                   </span>
                   <span className="pc-ev-notebook__name">{label}</span>
+                  {hint && hint.recipeCount > 0 ? (
+                    <span className="pc-ev-notebook__combo-wrap" title={comboTitle}>
+                      {hint.readyCount > 0 ? (
+                        <span className="pc-ev-notebook__combo-badge is-ready">
+                          🔗 {hint.readyCount}
+                        </span>
+                      ) : null}
+                      {hint.recipeCount - hint.readyCount > 0 ? (
+                        <span className="pc-ev-notebook__combo-badge is-potential">
+                          🔍 {hint.recipeCount - hint.readyCount}
+                        </span>
+                      ) : null}
+                    </span>
+                  ) : null}
                   <span className="pc-ev-notebook__badge">{TYPE_LABELS[evidence.type] ?? '기록'}</span>
                 </button>
               </div>
@@ -197,6 +218,25 @@ export default function PCLeftPanel() {
       </aside>
     </div>
   )
+}
+
+function buildComboHintTitle(hint: { recipeCount: number; readyCount: number; partnersByCategory: { evidence: number; statement: number; other: number } }): string {
+  const potential = hint.recipeCount - hint.readyCount
+  const parts: string[] = []
+  if (hint.readyCount > 0) {
+    parts.push(`조합 가능 ${hint.readyCount}개 — 지금 바로 연결 가능`)
+  }
+  if (potential > 0) {
+    parts.push(`실마리 필요 ${potential}개 — 아직 찾지 못한 단서가 있는 듯`)
+  }
+  const { evidence, statement } = hint.partnersByCategory
+  const categories: string[] = []
+  if (evidence > 0) categories.push(`증거 ${evidence}`)
+  if (statement > 0) categories.push(`발언 ${statement}`)
+  if (categories.length > 0) {
+    parts.push(`짝 후보: ${categories.join(' · ')}`)
+  }
+  return parts.join('\n')
 }
 
 function buildPresentActions(

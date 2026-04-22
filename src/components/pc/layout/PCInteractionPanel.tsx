@@ -897,8 +897,7 @@ function WitnessDetailSection({ onAction }: { onAction: (action: PcInteractionAc
   if (!caseData) return null
 
   const witnesses = caseData.duo.socialGraph.filter(
-    (tp) => tp.slot === 'institutional' || tp.slot === 'acquaintance_1' || tp.slot === 'acquaintance_2'
-      || tp.slot === 'family_1' || tp.slot === 'family_2',
+    (tp) => tp.slot === 'institutional' || tp.slot.startsWith('acquaintance_') || tp.slot.startsWith('family_'),
   )
 
   return (
