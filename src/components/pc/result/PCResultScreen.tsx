@@ -266,7 +266,7 @@ export default function PCResultScreen() {
           { temperature: 0.9, maxTokens: 900, model: 'gpt-4o-mini' },
         )
         if (response) {
-          const processed = postProcessAftermath(response)
+          const processed = postProcessAftermath(response, { a: caseData.duo.partyA.name, b: caseData.duo.partyB.name })
           if (processed) {
             _aftermathCache = processed
             console.log('[후일담] LLM 생성 완료, 길이:', processed.length)
@@ -1015,7 +1015,7 @@ function AftermathInline() {
           { temperature: 0.9, maxTokens: 900, model: 'gpt-4o-mini' },
         )
         console.log('[후일담] LLM 응답 길이:', response.length)
-        const result = postProcessAftermath(response) || buildFallback(caseData, verdictScore.total)
+        const result = postProcessAftermath(response, { a: caseData.duo.partyA.name, b: caseData.duo.partyB.name }) || buildFallback(caseData, verdictScore.total)
         _aftermathCache = result
         setAftermath(result)
       } catch (err: any) {
