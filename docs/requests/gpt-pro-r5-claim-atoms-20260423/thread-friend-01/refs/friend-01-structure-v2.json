@@ -1,0 +1,948 @@
+{
+  "caseId": "friend-01",
+  "schemaVersion": "structure_v2",
+  "disputes": [
+    {
+      "id": "d-1",
+      "name": "9일간의 연락 의도",
+      "truth": true,
+      "truthDescription": "최수민은 예비신랑에게 9일간 연락했다. 집착이 아니라 송다은 아버지의 돈 접근 패턴을 경고하려 했지만, 직접 말할 길이 없었다.",
+      "quadrant": "both",
+      "requiredEvidence": [
+        "e-1",
+        "e-4"
+      ],
+      "correctResponsibility": {
+        "a": 40,
+        "b": 60
+      },
+      "ambiguity": "mid",
+      "weight": "high",
+      "mediationLink": "연락의 의도와 방식의 적절성",
+      "legitimacyIssue": false,
+      "judgmentStatement": "최수민의 연락은 집착이 아니라 경고였으나 방식의 적절성은 별도 판단이 필요하다.",
+      "disputeKind": "core_truth",
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "9일간 연락",
+          "summary": "전화 6번, 문자 11건이라는 숫자와 표현만 보면 집착처럼 보이는 첫 인상을 다루는 층.",
+          "lockedSummary": "횟수와 문구는 보이지만 왜 그 연락이 이어졌는지는 아직 안쪽에 남아 있다.",
+          "revealAtomIds": [
+            "d1.unlock.s1.contact_volume_visible",
+            "d1.unlock.s2.warning_words_visible"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "왜 예비신랑이었나",
+          "summary": "다은에게 직접 말하지 못한 최수민이 왜 예비신랑을 붙잡으려 했는지를 다루는 층.",
+          "lockedSummary": "연락 사실보다 더 중요한 것은 왜 하필 그 사람을 향해 경고를 밀어 넣었는가이다.",
+          "revealAtomIds": [
+            "d1.unlock.s2.daieun_father_named",
+            "d1.unlock.s3.no_romance_in_messages"
+          ],
+          "uiStyle": "card_expand",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-1",
+                "minState": "S2"
+              }
+            ]
+          }
+        },
+        {
+          "id": "core",
+          "label": "악역의 방식",
+          "summary": "경고였더라도 왜 또 혼자 감당하려 했는지, 그리고 그 선택이 어떻게 오해를 키웠는지를 다루는 핵심 층.",
+          "lockedSummary": "의도만 맞다고 끝나지 않는다. 이 쟁점의 안쪽에는 침묵과 방식의 비용이 남아 있다.",
+          "revealAtomIds": [
+            "d1.unlock.s3.warning_not_obsession",
+            "d1.unlock.s4.self_sacrifice_repeat"
+          ],
+          "uiStyle": "relation_core",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-1",
+                "minState": "S3"
+              }
+            ],
+            "requireEvidenceIds": [
+              "e-4"
+            ]
+          }
+        }
+      ],
+      "linkEdges": [
+        {
+          "id": "link.d1.to.d2.unlocks_dispute",
+          "fromDisputeId": "d-1",
+          "toDisputeId": "d-2",
+          "type": "unlocks_dispute",
+          "when": {
+            "requireDispute": {
+              "id": "d-1",
+              "party": "b",
+              "minState": "S2"
+            }
+          },
+          "effect": {
+            "grantFlag": "d2.initial_reversal_open"
+          },
+          "uiLabel": "최수민이 연락 이유를 경고 쪽으로 열기 시작하면 예비신랑의 선넘는 접근 쟁점이 열린다"
+        },
+        {
+          "id": "link.d1.to.d5.supports",
+          "fromDisputeId": "d-1",
+          "toDisputeId": "d-5",
+          "type": "supports",
+          "when": {
+            "minState": "S2",
+            "minLayer": "motive"
+          },
+          "effect": {
+            "supportBonus": 10,
+            "grantFlag": "d5.obsession_frame_weakened"
+          },
+          "uiLabel": "연락의 의도가 흔들리면 단톡방 프레임이 먼저 문제였다는 축이 강해진다"
+        }
+      ]
+    },
+    {
+      "id": "d-2",
+      "name": "예비신랑의 선넘는 접근",
+      "truth": true,
+      "truthDescription": "예비신랑이 먼저 B에게 선넘는 메시지를 보냈고, 최수민은 거절했다. B가 이후 연락한 건 이 상황의 연장선이었다.",
+      "quadrant": "b_only",
+      "requiredEvidence": [
+        "e-4"
+      ],
+      "correctResponsibility": {
+        "a": 20,
+        "b": 80
+      },
+      "ambiguity": "low",
+      "weight": "high",
+      "mediationLink": "예비신랑의 접근과 B의 대응",
+      "legitimacyIssue": false,
+      "judgmentStatement": "예비신랑이 먼저 선을 넘었고 최수민은 거절한 쪽이었다.",
+      "disputeKind": "core_truth",
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "먼저 온 말",
+          "summary": "커피를 보자, 이상형이라는 농담을 던졌다는 선넘는 첫 메시지의 존재를 다루는 층.",
+          "lockedSummary": "누가 먼저 접근했는지가 드러나기 전까지는 최수민이 먼저 들이댄 것처럼 보이기 쉽다.",
+          "revealAtomIds": [
+            "d2.unlock.s1.coffee_request_first",
+            "d2.unlock.s2.ideal_type_message_exists"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "왜 바로 못 보였나",
+          "summary": "최수민이 그 메시지를 다은에게 바로 내밀지 못하고 혼자 끊어내려 했던 이유를 다루는 층.",
+          "lockedSummary": "예비신랑의 잘못이 보인 뒤에도, 왜 그 사실이 곧바로 드러나지 않았는지는 아직 남아 있다.",
+          "revealAtomIds": [
+            "d2.unlock.s2.b_rejected_boundary",
+            "d2.unlock.s3.b_did_not_show_a_immediately"
+          ],
+          "uiStyle": "card_expand",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-2",
+                "minState": "S2"
+              }
+            ]
+          }
+        },
+        {
+          "id": "core",
+          "label": "선후의 재배치",
+          "summary": "유혹한 사람과 거절한 사람의 자리가 뒤집히며, 이후 최수민의 연락이 경고의 연장선으로 재배치되는 핵심 층.",
+          "lockedSummary": "이 쟁점의 안쪽은 누가 먼저 문을 열었는지보다, 그 사실이 사건 전체 해석을 어떻게 바꾸는가에 있다.",
+          "revealAtomIds": [
+            "d2.unlock.s3.fiance_crossed_line_first",
+            "d2.unlock.s4.later_contact_was_extension_of_warning"
+          ],
+          "uiStyle": "relation_core",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-2",
+                "minState": "S3"
+              }
+            ]
+          }
+        }
+      ],
+      "linkEdges": [
+        {
+          "id": "link.d2.to.d3.unlocks_dispute",
+          "fromDisputeId": "d-2",
+          "toDisputeId": "d-3",
+          "type": "unlocks_dispute",
+          "when": {
+            "requireDispute": {
+              "id": "d-2",
+              "minState": "S3"
+            }
+          },
+          "effect": {
+            "grantFlag": "d3.money_pattern_window_open"
+          },
+          "uiLabel": "예비신랑의 접근이 확인되면 최수민이 왜 경고하려 했는지, 곧 아버지 패턴 쟁점이 열린다"
+        },
+        {
+          "id": "link.d2.to.d1.reframes",
+          "fromDisputeId": "d-2",
+          "toDisputeId": "d-1",
+          "type": "reframes",
+          "when": {
+            "minState": "S2",
+            "minLayer": "surface"
+          },
+          "effect": {
+            "grantFlag": "d1.obsession_reading_reframed"
+          },
+          "uiLabel": "누가 먼저 선을 넘었는지가 드러나면 최수민의 반복 연락 해석이 달라진다"
+        }
+      ]
+    },
+    {
+      "id": "d-3",
+      "name": "아버지의 돈 접근 패턴",
+      "truth": true,
+      "truthDescription": "A 아버지가 예비신랑에게 돈 얘기를 꺼내고 있었고, 최수민은 과거에 같은 패턴을 당한 적이 있어 예비신랑에게 경고하려 했다.",
+      "quadrant": "b_only",
+      "requiredEvidence": [
+        "e-5"
+      ],
+      "correctResponsibility": {
+        "a": 65,
+        "b": 35
+      },
+      "ambiguity": "mid",
+      "weight": "high",
+      "mediationLink": "송다은 아버지의 돈 접근 패턴",
+      "legitimacyIssue": false,
+      "judgmentStatement": "송다은 아버지의 돈 접근 패턴은 과거와 현재가 같았다.",
+      "disputeKind": "core_truth",
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "돈 얘기의 시작",
+          "summary": "송다은 아버지가 예비신랑에게 직접 돈 얘기를 꺼냈다는 현재 기록을 다루는 층.",
+          "lockedSummary": "걱정시키기 싫다며 숨기라고 한 문장까지 보이기 전에는 단순 부탁처럼 흐릴 수 있다.",
+          "revealAtomIds": [
+            "d3.unlock.s1.loan_request_to_fiance",
+            "d3.unlock.s2.keep_it_from_daieun"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "경고의 근거",
+          "summary": "최수민이 이 흐름을 왜 그냥 넘기지 못했는지, 연락 시점과 돈 요구 시점의 겹침을 다루는 층.",
+          "lockedSummary": "현재 돈 요구가 최수민의 연락과 맞물린다는 점이 붙어야 경고 동기가 선다.",
+          "revealAtomIds": [
+            "d3.unlock.s2.timing_overlaps_warning_contact",
+            "d3.unlock.s3.b_recognized_repeat_pattern"
+          ],
+          "uiStyle": "card_expand",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-3",
+                "minState": "S2"
+              }
+            ]
+          }
+        },
+        {
+          "id": "core",
+          "label": "반복되는 문구",
+          "summary": "현재 예비신랑에게 향한 돈 접근이 과거 최수민에게 했던 방식과 거의 같다는 반복 패턴의 핵심 층.",
+          "lockedSummary": "이번 일만 떼어 보면 부탁처럼 보일 수 있지만, 과거와 겹치는 순간 패턴이 된다.",
+          "revealAtomIds": [
+            "d3.unlock.s3.father_pattern_repeat_confirmed",
+            "d3.unlock.s4.current_and_past_phrasing_match"
+          ],
+          "uiStyle": "relation_core",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-3",
+                "minState": "S3"
+              }
+            ],
+            "requireEvidenceIds": [
+              "e-6"
+            ]
+          }
+        }
+      ],
+      "linkEdges": [
+        {
+          "id": "link.d3.to.d4.unlocks_dispute",
+          "fromDisputeId": "d-3",
+          "toDisputeId": "d-4",
+          "type": "unlocks_dispute",
+          "when": {
+            "requireDispute": {
+              "id": "d-3",
+              "minState": "S2"
+            }
+          },
+          "effect": {
+            "grantFlag": "d4.past_severance_root_open"
+          },
+          "uiLabel": "현재 돈 접근이 확인되면 과거 손절의 진짜 원인도 같은 축에서 열린다"
+        },
+        {
+          "id": "link.d3.to.d5.supports",
+          "fromDisputeId": "d-3",
+          "toDisputeId": "d-5",
+          "type": "supports",
+          "when": {
+            "requireDispute": {
+              "id": "d-3",
+              "minState": "S3"
+            }
+          },
+          "effect": {
+            "supportBonus": 14,
+            "grantFlag": "d5.current_pattern_confirmed"
+          },
+          "uiLabel": "아버지의 현재 패턴이 굳어지면 누가 먼저 B를 잘못된 사람으로 만들었는지 따질 힘이 커진다"
+        }
+      ]
+    },
+    {
+      "id": "d-4",
+      "name": "과거 손절과 아버지의 사기",
+      "truth": true,
+      "truthDescription": "과거 손절의 진짜 원인은 송다은 아버지가 B에게 투자 명목으로 돈을 받아간 사기였다. B는 A에게 말하면 아버지가 사기꾼이라는 뜻이 되므로 차마 말하지 못하고 악역을 자처했다.",
+      "quadrant": "b_only",
+      "requiredEvidence": [
+        "e-6"
+      ],
+      "correctResponsibility": {
+        "a": 30,
+        "b": 70
+      },
+      "ambiguity": "high",
+      "weight": "high",
+      "mediationLink": "과거 사기와 침묵의 대가",
+      "legitimacyIssue": true,
+      "judgmentStatement": "과거 손절의 진짜 원인은 송다은 아버지의 사기였고 최수민의 침묵은 보호에서 비롯됐다.",
+      "disputeKind": "core_truth",
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "끊긴 카톡",
+          "summary": "\"돈 문제는 내가 알아서 정리할게\"라는 말 뒤에 설명이 끊기며 손절로 이어진 표면 층.",
+          "lockedSummary": "대화만 보면 B가 뭔가 숨긴 채 돌아선 것처럼 보이지만, 실체는 아직 비어 있다.",
+          "revealAtomIds": [
+            "d4.unlock.s1.money_problem_phrase_blank",
+            "d4.unlock.s2.transfer_records_exist"
+          ],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "왜 끝내 못 말했나",
+          "summary": "A 아버지가 실제로 돈을 받아 갚지 않았는데도, 최수민이 왜 다은에게 그 사실을 못 말했다는 침묵의 이유를 다루는 층.",
+          "lockedSummary": "피해 사실이 드러나도, 왜 피해자가 스스로 악역을 택했는지는 아직 남아 있다.",
+          "revealAtomIds": [
+            "d4.unlock.s2.father_borrowed_from_b",
+            "d4.unlock.s3.b_chose_silence_to_protect_a"
+          ],
+          "uiStyle": "card_expand",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-4",
+                "minState": "S2"
+              }
+            ]
+          }
+        },
+        {
+          "id": "core",
+          "label": "보호의 대가",
+          "summary": "과거 손절이 변심이 아니라 사기 피해와 보호 심리의 결과였고, 그 침묵이 더 큰 낙인을 만들었다는 핵심 층.",
+          "lockedSummary": "말하지 않은 이유가 선의였더라도, 그 선의가 만든 상처까지 함께 봐야 한다.",
+          "revealAtomIds": [
+            "d4.unlock.s3.severance_was_not_change_of_heart",
+            "d4.unlock.s4.protection_created_stigma"
+          ],
+          "uiStyle": "relation_core",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-4",
+                "minState": "S3"
+              }
+            ]
+          }
+        }
+      ],
+      "linkEdges": [
+        {
+          "id": "link.d4.to.d5.unlocks_dispute",
+          "fromDisputeId": "d-4",
+          "toDisputeId": "d-5",
+          "type": "unlocks_dispute",
+          "when": {
+            "requireDisputes": [
+              {
+                "id": "d-3",
+                "minState": "S3"
+              },
+              {
+                "id": "d-4",
+                "minState": "S3"
+              }
+            ],
+            "requireFlags": [
+              "d5.current_pattern_confirmed"
+            ]
+          },
+          "effect": {
+            "grantFlag": "d5.full_reputation_reckoning_open"
+          },
+          "uiLabel": "현재 패턴과 과거 사기가 모두 굳어지면, 마지막으로 명예를 먼저 무너뜨린 쪽을 따질 수 있다"
+        }
+      ]
+    },
+    {
+      "id": "d-5",
+      "name": "단톡방 매도와 명예훼손",
+      "truth": true,
+      "truthDescription": "A가 확인 없이 단톡방에서 B를 매도했고, B는 또 악역을 자처하는 구조가 반복됐다. 두 사람 모두 확인 전에 단정한 책임이 있다.",
+      "quadrant": "both",
+      "requiredEvidence": [
+        "e-2",
+        "e-7"
+      ],
+      "correctResponsibility": {
+        "a": 60,
+        "b": 40
+      },
+      "ambiguity": "mid",
+      "weight": "high",
+      "mediationLink": "성급한 단정과 명예훼손",
+      "legitimacyIssue": false,
+      "judgmentStatement": "먼저 단정하고 공개한 쪽의 책임이 더 크지만 침묵으로 반복을 허용한 쪽도 책임이 있다.",
+      "disputeKind": "core_truth",
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "단톡방의 시작",
+          "summary": "다은이 단톡방에 먼저 올린 말과 그 뒤 친구들이 따라붙은 공개 낙인의 시작점을 다루는 층.",
+          "lockedSummary": "누가 먼저 화를 냈는지가 아니라, 누가 먼저 공개적으로 이름을 걸고 규정했는지가 핵심이다.",
+          "revealAtomIds": [
+            "d5.unlock.s1.group_chat_accusation_first",
+            "d5.unlock.s2.friends_joined_pile_on"
+          ],
+          "uiStyle": "card_expand",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-3",
+                "minState": "S3"
+              },
+              {
+                "id": "d-4",
+                "minState": "S3"
+              }
+            ]
+          }
+        },
+        {
+          "id": "motive",
+          "label": "왜 공개가 먼저였나",
+          "summary": "다은은 왜 확인보다 공개를 먼저 택했는지, 수민은 왜 또 혼자 감당하며 반박을 늦췄는지를 함께 다루는 층.",
+          "lockedSummary": "이 쟁점은 한 사람의 분노만으로 설명되지 않는다. 공개와 침묵이 함께 얽혀 있다.",
+          "revealAtomIds": [
+            "d5.unlock.s2.public_label_before_direct_check",
+            "d5.unlock.s3.old_pattern_used_as_frame"
+          ],
+          "uiStyle": "card_expand",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-5",
+                "minState": "S2"
+              }
+            ]
+          }
+        },
+        {
+          "id": "core",
+          "label": "반복된 악역",
+          "summary": "먼저 단정하고 퍼뜨린 책임과, 또다시 혼자 막으려다 낙인을 허용한 책임이 어떻게 엇갈리는지를 정리하는 핵심 층.",
+          "lockedSummary": "가장 늦게 남는 질문은 누가 더 나쁜가보다, 왜 수민이 두 번 다 악역이 되었는가이다.",
+          "revealAtomIds": [
+            "d5.unlock.s3.a_broke_reputation_first",
+            "d5.unlock.s4.b_silence_enabled_repeat"
+          ],
+          "uiStyle": "relation_core",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-5",
+                "minState": "S3"
+              }
+            ]
+          }
+        }
+      ],
+      "linkEdges": []
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e-1",
+      "name": "최수민→예비신랑 연락 기록",
+      "description": "최근 9일 동안 최수민이 예비신랑에게 전화 6번, 문자 11번을 보냈고 대부분 답이 없거나 짧게 끊긴 기록이다.",
+      "type": "log",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "self_possessed",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-1"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "9일간 전화 6번, 문자 11번. 대부분 답이 없거나 짧게 끊겼다.",
+        "check_metadata": "연락 시간대가 주로 저녁~밤이고 내용은 '꼭 할 말이 있다', '한 번만 만나달라'는 톤이다.",
+        "restore_context": "연락 내용에 호감이나 집착의 흔적은 없고, 긴급하게 전달할 것이 있다는 맥락이다."
+      },
+      "subjectParty": "b",
+      "timing": {
+        "intent": "expose",
+        "role": "establish",
+        "bestAtStates": [
+          "S0",
+          "S1",
+          "S2"
+        ],
+        "weakAtStates": [
+          "S4",
+          "S5"
+        ],
+        "preferredQuestionTypes": [
+          "fact_pursuit",
+          "evidence_present"
+        ],
+        "preferredAngles": [
+          "timeline",
+          "context",
+          "responsibility"
+        ],
+        "blockedVectorsHelp": [
+          "authenticity",
+          "timeline"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-1",
+            "state": "S1",
+            "multiplier": 1.4,
+            "note": "횟수만 남아 의도가 비어 있는 초반에 가장 강하다."
+          },
+          {
+            "disputeId": "d-5",
+            "state": "S1",
+            "multiplier": 1.25,
+            "note": "단톡방 프레임이 만들어진 직후, 무엇을 근거로 공개 매도가 시작됐는지 못 박는다."
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-2",
+      "name": "공통 친구 단톡방 캡처",
+      "description": "송다은이 \"수민이가 또 내 남자한테 연락한다\"고 올렸고, 몇몇 공통 친구가 이에 동조한 단체채팅 캡처다.",
+      "type": "chat",
+      "reliability": "hard",
+      "completeness": "excerpt",
+      "provenance": "self_possessed",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-5"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "A가 '수민이가 또 내 남자한테 연락한다'는 메시지를 올린 것이 시작이다.",
+        "check_metadata": "이후 몇몇 친구들이 '그 애 원래 그렇잖아', '또야?' 등으로 동조했다.",
+        "restore_context": "A가 B에게 직접 확인하기 전에 단톡방에 먼저 올렸다는 시간 순서가 확인된다."
+      },
+      "subjectParty": "a",
+      "timing": {
+        "intent": "impeach",
+        "role": "establish",
+        "bestAtStates": [
+          "S0",
+          "S1",
+          "S2"
+        ],
+        "weakAtStates": [
+          "S4",
+          "S5"
+        ],
+        "preferredQuestionTypes": [
+          "evidence_present",
+          "fact_pursuit"
+        ],
+        "preferredAngles": [
+          "timeline",
+          "responsibility",
+          "contradiction"
+        ],
+        "blockedVectorsHelp": [
+          "timeline",
+          "contradiction"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-5",
+            "state": "S1",
+            "multiplier": 1.5,
+            "note": "직접 확인보다 단톡방 공개가 먼저였다는 순서를 가장 선명하게 드러낸다."
+          },
+          {
+            "disputeId": "d-1",
+            "state": "S2",
+            "multiplier": 1.2,
+            "note": "집착 프레임이 어떻게 확산됐는지 보여주며 d-1 해석을 흔든다."
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-3",
+      "name": "과거 손절 직전 카톡",
+      "description": "과거 손절 직전, 최수민이 \"돈 문제는 내가 알아서 정리할게\"라고만 남기고 설명을 피했으며 송다은은 이를 변심으로 받아들인 대화 기록이다.",
+      "type": "chat",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "self_possessed",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-4"
+      ],
+      "isTrap": false,
+      "requires": [],
+      "investigationResults": {
+        "request_original": "B가 '돈 문제는 내가 알아서 정리할게'라고만 남겼고, A는 '넌 돈만 엮이면 사람이 달라진다'고 답했다.",
+        "check_metadata": "이 대화 직후 두 사람은 연락이 끊겼고 약 2년간 만나지 않았다.",
+        "restore_context": "B가 숨긴 '돈 문제'의 실체가 송다은 아버지의 사기였다는 맥락이 빠져 있다."
+      },
+      "subjectParty": "both",
+      "timing": {
+        "intent": "foreshadow",
+        "role": "reframe",
+        "bestAtStates": [
+          "S1",
+          "S2",
+          "S3"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "motive_search",
+          "evidence_present"
+        ],
+        "preferredAngles": [
+          "context",
+          "timeline",
+          "contradiction"
+        ],
+        "blockedVectorsHelp": [
+          "context",
+          "contradiction"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-4",
+            "state": "S1",
+            "multiplier": 1.35,
+            "note": "손절의 표면 서사를 먼저 꺼내 과거 빈칸이 무엇인지 추궁할 때 강하다."
+          },
+          {
+            "disputeId": "d-1",
+            "state": "S3",
+            "multiplier": 1.15,
+            "note": "이번에도 왜 직접 말하지 못했는지, 과거 침묵 패턴과 이어 붙일 수 있다."
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-4",
+      "name": "예비신랑의 선넘는 메시지와 B의 거절 답장",
+      "description": "예비신랑이 \"다은이 몰래 커피 한 번 보자\", \"너 같은 스타일이 원래 내 이상형\" 같은 말을 보냈고 최수민이 이를 거절한 원본 대화다.",
+      "type": "chat",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "self_possessed",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-2"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-1"
+      ],
+      "investigationResults": {
+        "request_original": "예비신랑이 '다은이 몰래 커피 한 번 보자'라는 메시지를 먼저 보냈다.",
+        "check_metadata": "'너 같은 스타일이 원래 내 이상형'이라는 추가 메시지가 있고, B는 '친구 남자친구니까 이러지 마'라고 끊어냈다.",
+        "restore_context": "선을 넘은 건 예비신랑이었고 최수민은 거절한 쪽이었다. B의 이후 연락은 이 상황의 연장선이다."
+      },
+      "subjectParty": "b",
+      "timing": {
+        "intent": "reframe",
+        "role": "establish",
+        "bestAtStates": [
+          "S2",
+          "S3",
+          "S4"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "evidence_present",
+          "fact_pursuit"
+        ],
+        "preferredAngles": [
+          "timeline",
+          "contradiction",
+          "context"
+        ],
+        "blockedVectorsHelp": [
+          "authenticity",
+          "timeline",
+          "contradiction"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-2",
+            "state": "S2",
+            "multiplier": 1.6,
+            "note": "누가 먼저 선을 넘었는지 뒤집는 핵심 증거라 d-2 초반에 가장 세다."
+          },
+          {
+            "disputeId": "d-1",
+            "state": "S3",
+            "multiplier": 1.35,
+            "note": "최수민의 반복 연락을 유혹이 아니라 경고의 연장선으로 재배치한다."
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-5",
+      "name": "송다은 아버지와 예비신랑의 문자",
+      "description": "송다은 아버지가 예비신랑에게 \"결혼 전에 잠깐만 도와주면 금방 돌려준다\", \"다은이한테는 아직 말하지 마\"라고 보낸 문자 기록이다.",
+      "type": "chat",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "self_possessed",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-3"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-1"
+      ],
+      "investigationResults": {
+        "request_original": "A 아버지가 '결혼 전에 잠깐만 도와주면 금방 돌려준다'는 문자를 먼저 보냈다.",
+        "check_metadata": "'사위 될 사람이면 이 정도는 믿어야지'라는 추가 메시지가 있고, 최수민이 연락하던 시기와 정확히 격친다.",
+        "restore_context": "B가 예비신랑에게 연락한 시점과 송다은 아버지의 돈 접근 시점이 격치며 경고 동기가 확인된다."
+      },
+      "subjectParty": "both",
+      "timing": {
+        "intent": "expose",
+        "role": "reframe",
+        "bestAtStates": [
+          "S2",
+          "S3",
+          "S4"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "evidence_present",
+          "motive_search"
+        ],
+        "preferredAngles": [
+          "context",
+          "timeline",
+          "responsibility"
+        ],
+        "blockedVectorsHelp": [
+          "authenticity",
+          "context"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-3",
+            "state": "S1",
+            "multiplier": 1.5,
+            "note": "돈 요구와 비밀 유지 문구가 함께 보여 현재 패턴을 바로 세울 수 있다."
+          },
+          {
+            "disputeId": "d-1",
+            "state": "S3",
+            "multiplier": 1.2,
+            "note": "최수민이 왜 예비신랑에게 다급하게 연락했는지 동기를 붙여 준다."
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-6",
+      "name": "과거 송금 영수증 + 문자",
+      "description": "최수민이 송다은 아버지에게 투자 명목으로 돈을 보낸 이체 내역과, 이후 차일피일 상환을 미루며 다은이에게는 말하지 말라고 한 문자 기록이다.",
+      "type": "bank",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "institutional",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-4"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-3"
+      ],
+      "investigationResults": {
+        "request_original": "B에서 송다은 아버지에게로의 이체 내역이 확인된다. '급한 투자금이니 한 달만 쓰고 갚겠다'는 문자가 동반돼 있다.",
+        "check_metadata": "이후 송다은 아버지가 '조금만 더 기다려라', '곧 정리한다'며 차일피일 미룬 문자가 이어진다.",
+        "restore_context": "돈을 돌려받지 못한 상태에서 B가 A에게 이 사실을 말하지 못하고 손절을 택한 맥락이 확인된다."
+      },
+      "subjectParty": "b",
+      "timing": {
+        "intent": "corroborate",
+        "role": "finish",
+        "bestAtStates": [
+          "S2",
+          "S3",
+          "S4"
+        ],
+        "weakAtStates": [
+          "S0"
+        ],
+        "preferredQuestionTypes": [
+          "evidence_present",
+          "fact_pursuit"
+        ],
+        "preferredAngles": [
+          "authenticity",
+          "timeline",
+          "context"
+        ],
+        "blockedVectorsHelp": [
+          "authenticity",
+          "context",
+          "contradiction"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-4",
+            "state": "S2",
+            "multiplier": 1.55,
+            "note": "과거 손절을 변심으로 밀어붙이는 방어를 끊고, 사기 피해의 실체를 굳힌다."
+          },
+          {
+            "disputeId": "d-3",
+            "state": "S3",
+            "multiplier": 1.25,
+            "note": "현재 문자와 붙는 순간 아버지의 반복 패턴이 우연이 아니게 된다."
+          }
+        ]
+      }
+    },
+    {
+      "id": "e-7",
+      "name": "과거/현재 대조표",
+      "description": "과거 최수민에게 했던 돈 부탁 문구와 현재 예비신랑에게 보낸 문구, 그리고 그 사이마다 최수민이 혼자 끊고 사라졌던 시점을 한 줄 타임라인으로 정리한 대조표다.",
+      "type": "log",
+      "reliability": "hard",
+      "completeness": "original",
+      "provenance": "self_possessed",
+      "legitimacy": "lawful",
+      "proves": [
+        "d-5",
+        "d-1"
+      ],
+      "isTrap": false,
+      "requires": [
+        "e-4",
+        "e-5",
+        "e-6"
+      ],
+      "investigationResults": {
+        "request_original": "과거 B에게 보낸 문구와 현재 예비신랑에게 보낸 문구가 거의 동일하다.",
+        "check_metadata": "두 시점 사이에 B가 말 대신 혼자 끊고 사라진 타이밍이 정확히 격친다.",
+        "restore_context": "A 아버지의 돈 접근 패턴이 반복되고 있으며 B는 이번에도 혼자 막으려 했다."
+      },
+      "subjectParty": "both",
+      "timing": {
+        "intent": "synthesize",
+        "role": "finish",
+        "bestAtStates": [
+          "S3",
+          "S4",
+          "S5"
+        ],
+        "weakAtStates": [
+          "S0",
+          "S1"
+        ],
+        "preferredQuestionTypes": [
+          "evidence_present",
+          "motive_search"
+        ],
+        "preferredAngles": [
+          "timeline",
+          "context",
+          "responsibility"
+        ],
+        "blockedVectorsHelp": [
+          "timeline",
+          "context"
+        ],
+        "criticalWindows": [
+          {
+            "disputeId": "d-5",
+            "state": "S2",
+            "multiplier": 1.6,
+            "note": "누가 먼저 낙인을 만들었는지, 그리고 왜 같은 구조가 반복됐는지 한 번에 정리한다."
+          },
+          {
+            "disputeId": "d-1",
+            "state": "S3",
+            "multiplier": 1.3,
+            "note": "집착으로 읽혔던 반복 연락을 경고 패턴의 재연으로 바꿔 준다."
+          }
+        ]
+      }
+    }
+  ]
+}
