@@ -6583,6 +6583,13 @@ body.pc-mode .pc-play-timeline-panel .pc-case-timeline-section .sec-h {
   margin-bottom: 10px;
 }
 
+body.pc-mode .pc-play-timeline-panel .sec-content {
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+
 /* New timeline design — vertical line + dots */
 body.pc-mode .pc-timeline-top-btn {
   margin-left: auto;
@@ -6599,7 +6606,6 @@ body.pc-mode .pc-timeline-top-btn {
 body.pc-mode .pc-timeline__scroll {
   flex: 1 1 auto;
   min-height: 0;
-  max-height: 400px;
   overflow-y: auto;
   padding-right: 4px;
   scrollbar-width: thin;
@@ -7674,12 +7680,24 @@ body.pc-mode .pc-play-timeline-panel {
   left: calc(100% + 16px) !important;
   width: 360px !important;
   max-width: 360px !important;
-  z-index: 30 !important;
+  z-index: 60 !important;
   border-radius: 24px !important;
   border: 1px solid rgba(212, 162, 78, 0.16) !important;
   background: linear-gradient(180deg, rgba(18, 19, 29, 0.98), rgba(10, 10, 16, 0.99)) !important;
   box-shadow: 0 28px 60px rgba(0, 0, 0, 0.42) !important;
   overflow: hidden !important;
+}
+
+/* Timeline open: raise left panel above center + blur chat for readability */
+body.pc-mode .pc-play-panel--left:has(.pc-play-left--timeline-host.is-timeline-open) {
+  position: relative !important;
+  z-index: 60 !important;
+}
+body.pc-mode .center.pc-play-center > .pc-play-chat {
+  transition: filter 200ms ease;
+}
+body.pc-mode .pc-play-panel--left:has(.pc-play-left--timeline-host.is-timeline-open) ~ .center.pc-play-center > .pc-play-chat {
+  filter: blur(2.5px) brightness(0.78);
 }
 
 body.pc-mode .pc-play-timeline-panel .pc-case-timeline-section {
