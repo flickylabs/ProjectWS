@@ -154,9 +154,6 @@ export type GameStore = PhaseSlice & AgentSlice & ResourceSlice & EvidenceSlice 
     | { type: 'contradiction'; text: string; disputeId: string; target: PartyId }
     | null
   setPendingMinigame: (mg: GameStore['pendingMinigame']) => void
-  /** V2 끼어들기 대기 — GameEventModal에서 allow/block 선택 */
-  pendingInterjectionV2: import('../engine/interjectionV2').InterjectionOpportunityV2 | null
-  setPendingInterjectionV2: (v: GameStore['pendingInterjectionV2']) => void
   /** 최근 사용된 atom ID (반복 방지, party별 최근 N개) */
   recentAtomIds: Record<string, string[]>
   trackUsedAtoms: (party: 'a' | 'b', atomIds: string[]) => void
@@ -325,8 +322,6 @@ export const useGameStore: import('zustand').UseBoundStore<import('zustand').Sto
     }),
     pendingMinigame: null,
     setPendingMinigame: (mg) => set({ pendingMinigame: mg }),
-    pendingInterjectionV2: null,
-    setPendingInterjectionV2: (v) => set({ pendingInterjectionV2: v }),
 
     recentAtomIds: { a: [], b: [] },
     trackUsedAtoms: (party, atomIds) => set((prev) => {
@@ -706,7 +701,6 @@ export const useGameStore: import('zustand').UseBoundStore<import('zustand').Sto
         interrogationHistory: { a: {}, b: {} },
         recentAtomIds: { a: [], b: [] },
         pendingMinigame: null,
-        pendingInterjectionV2: null,
         questionMeters: { a: createInitialMeterState(), b: createInitialMeterState() },
         gameEventLog: [],
         pendingGameEvent: null,
@@ -830,7 +824,6 @@ export const useGameStore: import('zustand').UseBoundStore<import('zustand').Sto
     questionMeters: state.questionMeters,
     gameEventLog: state.gameEventLog,
     pendingGameEvent: state.pendingGameEvent,
-    pendingInterjectionV2: state.pendingInterjectionV2,
     pendingEvidenceResult: state.pendingEvidenceResult,
     pendingMinigame: state.pendingMinigame,
     disputeBoardAction: state.disputeBoardAction,

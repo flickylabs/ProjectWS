@@ -15,9 +15,10 @@ import {
   getInterjectionEvent,
   getOutburstEvent,
 } from '../../engine/v3GameLoopLoader'
-import { resolveInterjectionV2 } from '../../hooks/useActionDispatch'
 import { getScriptedEmotionalOverload } from '../../engine/scriptedTextLoader'
 import { normalizeCaseKey } from '../../utils/caseHelpers'
+import { applyInterjectionBlockResentment } from '../../engine/interjectionV2'
+import { recordInterjectionChoice } from '../../engine/phase3LogCollector'
 
 function isNarrativeReaction(text: string | undefined): boolean {
   if (!text) return false
@@ -32,40 +33,7 @@ function buildContradictionFallbackLine(lieState: string): string {
 
 export default function GameEventModal() {
   const pendingEvent = useStore(s => s.pendingGameEvent)
-  const pendingV2 = useStore(s => s.pendingInterjectionV2)
   const caseData = useStore(s => s.caseData)
-
-  // V2 끼어들기 선택지 (우선)
-  if (pendingV2 && caseData) {
-    const interruptorName = pendingV2.interruptor === 'a' ? caseData.duo.partyA.name : caseData.duo.partyB.name
-    return (
-      <div className="fixed inset-0 z-50 bg-gray-950/85 flex items-center justify-center px-4">
-        <div className="bg-gray-900 border border-gray-700/60 rounded-2xl w-full max-w-sm overflow-hidden animate-fade-in shadow-2xl">
-          <div className="p-4">
-            <div className="flex items-center gap-2 mb-3">
-              <Emoji char={pendingV2.severity === 'major' ? '💥' : '💬'} size={20} />
-              <h3 className="text-sm font-bold text-gray-200">{interruptorName}의 끼어들기</h3>
-            </div>
-            <p className="text-sm text-gray-300 leading-relaxed mb-4">{pendingV2.line}</p>
-            <div className="flex gap-2">
-              <button
-                onClick={() => resolveInterjectionV2('allow')}
-                className="flex-1 py-2 px-3 rounded-lg bg-blue-600/20 border border-blue-500/40 text-blue-300 text-xs font-semibold hover:bg-blue-600/30 transition-colors"
-              >
-                {pendingV2.choiceLabels[0]}
-              </button>
-              <button
-                onClick={() => resolveInterjectionV2('block')}
-                className="flex-1 py-2 px-3 rounded-lg bg-red-600/20 border border-red-500/40 text-red-300 text-xs font-semibold hover:bg-red-600/30 transition-colors"
-              >
-                {pendingV2.choiceLabels[1]}
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    )
-  }
 
   if (!pendingEvent || !caseData) return null
 
@@ -235,12 +203,16 @@ function InterjectionModal({ event, caseKey, partyName }: { event: GameEventTrig
     })
     trackMetric('interjectionAllowed')
     trackMetric('counterQuestionUsed')
+    recordInterjectionChoice('allow')
     // 권위 감소
     changeTrust(event.party === 'a' ? 'b' : 'a', 'trustTowardJudge', -3)
     dismiss(null)
   }
 
   const handleBlock = () => {
+    // 제지 시 끼어든 당사자에게 resentment 누적 — NPC 반응 가중치에 반영됨
+    applyInterjectionBlockResentment(event.party, turnCount)
+    recordInterjectionChoice('block')
     addDialogue({
       speaker: 'judge',
       text: '발언을 제지합니다. 차례를 기다리십시오.',

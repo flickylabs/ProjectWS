@@ -2,7 +2,9 @@ import { useEffect, useMemo, useState, type ReactNode } from 'react'
 import { useFocusTrap } from '../../../hooks/useFocusTrap'
 import { resetFatigueForDossier } from '../../../engine/questionFatigueEngine'
 import { getContradictionEvent, getInterjectionEvent, getOutburstEvent } from '../../../engine/v3GameLoopLoader'
-import { resolveInterjectionV2, applyWitnessSlot } from '../../../hooks/useActionDispatch'
+import { applyWitnessSlot } from '../../../hooks/useActionDispatch'
+import { applyInterjectionBlockResentment } from '../../../engine/interjectionV2'
+import { recordInterjectionChoice } from '../../../engine/phase3LogCollector'
 import { useGameStore, useStore } from '../../../store/useGameStore'
 import type { TruthJudgment } from '../../../types/discovery'
 
@@ -264,33 +266,6 @@ function EmotionalSlipPanel() {
   )
 }
 
-function PendingInterjectionPanel() {
-  const pendingV2 = useStore((s) => s.pendingInterjectionV2)
-  const caseData = useStore((s) => s.caseData)
-
-  if (!pendingV2 || !caseData) {
-    return null
-  }
-
-  const interruptorName = pendingV2.interruptor === 'a' ? caseData.duo.partyA.name : caseData.duo.partyB.name
-
-  return (
-    <OverlayShell title="끼어들기 발생" subtitle={interruptorName} tone="blue">
-      <div className="pc-discovery-card__body">
-        <div className="pc-discovery-card__quote">“{pendingV2.line}”</div>
-      </div>
-      <ActionRow>
-        <ActionButton onClick={() => resolveInterjectionV2('allow')} tone="blue">
-          {pendingV2.choiceLabels[0]}
-        </ActionButton>
-        <ActionButton onClick={() => resolveInterjectionV2('block')}>
-          {pendingV2.choiceLabels[1]}
-        </ActionButton>
-      </ActionRow>
-    </OverlayShell>
-  )
-}
-
 function GameEventPanel() {
   const pendingEvent = useStore((s) => s.pendingGameEvent)
   const caseData = useStore((s) => s.caseData)
@@ -418,7 +393,21 @@ function GameEventPanel() {
       })
       trackMetric('interjectionAllowed')
       trackMetric('counterQuestionUsed')
+      recordInterjectionChoice('allow')
       changeTrust(pendingEvent.party === 'a' ? 'b' : 'a', 'trustTowardJudge', -3)
+      setPendingGameEvent(null)
+    }
+
+    const handleBlock = () => {
+      // 제지 시 끼어든 당사자에게 resentment 누적 — NPC 반응 가중치에 반영됨
+      applyInterjectionBlockResentment(pendingEvent.party, turnCount)
+      recordInterjectionChoice('block')
+      addDialogue({
+        speaker: 'judge',
+        text: `${partyName} 씨, 지금은 발언 순서가 아닙니다. 심문을 계속합니다.`,
+        relatedDisputes: [pendingEvent.disputeId],
+        turn: turnCount,
+      })
       setPendingGameEvent(null)
     }
 
@@ -428,7 +417,7 @@ function GameEventPanel() {
           <div className="pc-discovery-card__quote">“{interjectionText}”</div>
         </div>
         <ActionRow>
-          <ActionButton onClick={() => setPendingGameEvent(null)}>제지한다</ActionButton>
+          <ActionButton onClick={handleBlock}>제지한다</ActionButton>
           <ActionButton onClick={handleAllow} tone="blue">
             허용한다
           </ActionButton>
@@ -635,7 +624,6 @@ function PerkChoicePanel() {
 
 export default function PCDiscoveryOverlay() {
   const discovery = useStore((s) => s.discovery)
-  const pendingInterjectionV2 = useStore((s) => s.pendingInterjectionV2)
   const pendingGameEvent = useStore((s) => s.pendingGameEvent)
   const pendingPerkChoice = useStore((s) => s.pendingPerkChoice)
   const pendingWitnessChoice = useStore((s) => s.pendingWitnessChoice)
@@ -645,7 +633,6 @@ export default function PCDiscoveryOverlay() {
     if (discovery.pendingEmergence) return 'emergence'
     if (discovery.pendingConfrontation) return 'confrontation'
     if (discovery.pendingConflict) return 'conflict'
-    if (pendingInterjectionV2) return 'interjection_v2'
     if (pendingGameEvent) return 'game_event'
     if (pendingPerkChoice) return 'perk'
     if (pendingWitnessChoice) return 'witness_choice'
@@ -656,7 +643,6 @@ export default function PCDiscoveryOverlay() {
     discovery.pendingEmergence,
     discovery.pendingSlip,
     pendingGameEvent,
-    pendingInterjectionV2,
     pendingPerkChoice,
     pendingWitnessChoice,
   ])
@@ -665,7 +651,6 @@ export default function PCDiscoveryOverlay() {
   if (visibleKind === 'emergence') return <DisputeEmergencePanel />
   if (visibleKind === 'confrontation') return <TruthConfrontationPanel />
   if (visibleKind === 'conflict') return <JudgmentConflictPanel />
-  if (visibleKind === 'interjection_v2') return <PendingInterjectionPanel />
   if (visibleKind === 'game_event') return <GameEventPanel />
   if (visibleKind === 'perk') return <PerkChoicePanel />
   if (visibleKind === 'witness_choice') return <WitnessChoicePanel />

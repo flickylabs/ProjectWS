@@ -43,11 +43,10 @@ import { evaluateQuestionFatigue, commitQuestionFatigue, getSessionFatigueState,
 import { selectTurnPresentation, deriveAngleTag, deriveResponseIntent } from '../engine/beatSelectorV2'
 import { deriveActionQuality, resolveNpcReaction, applyReactionToBlueprint } from '../engine/npcReactionV2'
 import {
-  evaluateInterjectionOpportunity, commitInterjectionFocus, commitInterjectionChoice,
-  getSessionInterjectionTracker, setSessionInterjectionTracker,
-  type InterjectionOpportunityV2, type InterjectionChoice,
+  getSessionInterjectionTracker,
+  applyInterjectionBlockResentment,
 } from '../engine/interjectionV2'
-import { recordRevealedAtom, recordTurnStyle, recordInterjectionChoice as recordInterjectionStyleChoice, recordKeyMoment, recordResolvedLink } from '../engine/phase3LogCollector'
+import { recordRevealedAtom, recordTurnStyle, recordKeyMoment, recordResolvedLink } from '../engine/phase3LogCollector'
 import {
   isMisconceptionDispute, attemptMisconceptionTransition, getMisconceptionState,
   deriveTriggerFromQuestion, deriveTriggerFromEvidence, deriveTriggerFromInterjection,
@@ -102,148 +101,8 @@ function maybeShowArchetypeHint(target: PartyId, turnNumber: number): void {
 }
 
 // V2 피로도 상태는 questionFatigueEngine.ts의 세션 상태에서 관리
-
-/** GameEventModal에서 V2 끼어들기 allow/block 선택 시 호출 */
-export function resolveInterjectionV2(choice: 'allow' | 'block'): void {
-  const store = useGameStore.getState()
-  const opportunity = store.pendingInterjectionV2
-  if (!opportunity) return
-
-  const { tracker: nextTracker, effects } = commitInterjectionChoice(
-    getSessionInterjectionTracker(), opportunity, choice, store.turnCount,
-  )
-  setSessionInterjectionTracker(nextTracker)
-  recordInterjectionStyleChoice(choice)
-  if (choice === 'allow') {
-    store.trackMetric('counterQuestionUsed')
-  }
-
-  // 끼어들기 응답: ScriptedText 우선 → V3 beat 폴백
-  const interjCaseKey = normalizeCaseKey(store.caseData?.caseId ?? '')
-  const interjScripted = getScriptedInterjection(interjCaseKey, opportunity.interruptor, opportunity.disputeId, opportunity.severity ?? 'minor')
-  store.addDialogue({
-    speaker: opportunity.interruptor,
-    text: interjScripted?.text ?? opportunity.line,
-    behaviorHint: interjScripted?.behaviorHint,
-    relatedDisputes: [opportunity.disputeId],
-    turn: store.turnCount,
-  })
-
-  // 효과 적용
-  const caseId = normalizeCaseKey(store.caseData?.caseId ?? '')
-  const runtimeState = getBeatRuntimeState(caseId)
-
-  for (const eff of effects) {
-    if (eff.type === 'reset_fatigue') {
-      setSessionFatigueState(commitQuestionFatigue({
-        turn: store.turnCount,
-        party: opportunity.target,
-        disputeId: opportunity.disputeId,
-        questionType: 'fact_pursuit',
-        angleTag: 'context',
-        resetReason: 'interjection_allow',
-      }, getSessionFatigueState()))
-    }
-    if (eff.type === 'authority_delta') {
-      store.changeTrust(opportunity.target, 'trustTowardJudge', eff.amount * 3)
-    }
-    if (eff.type === 'reveal_atom') {
-      recordRevealedAtom(eff.atomId)
-      store.addDialogue({
-        speaker: 'system',
-        text: `새로운 사실이 드러났습니다.`,
-        relatedDisputes: [opportunity.disputeId],
-        turn: store.turnCount,
-      })
-    }
-    if (eff.type === 'reveal_link') {
-      recordResolvedLink(eff.linkId)
-    }
-    if (eff.type === 'trap_signal') {
-      store.addDialogue({
-        speaker: 'system',
-        text: `단서 발견: ${eff.signal}`,
-        relatedDisputes: [opportunity.disputeId],
-        turn: store.turnCount,
-      })
-    }
-    if (eff.type === 'set_flag') {
-      runtimeState.flags.add(eff.flag)
-    }
-    if (eff.type === 'set_resentment') {
-      // resentment는 commitInterjectionChoice에서 이미 tracker에 반영됨
-    }
-    if (eff.type === 'readiness_nudge') {
-      // readiness nudge — 향후 readiness engine과 연결
-    }
-  }
-
-  // Misconception 트리거 (allow 시 infoLevel에 따라 전이 시도)
-  if (choice === 'allow' && isMisconceptionDispute(opportunity.disputeId)) {
-    const mcTrigger = deriveTriggerFromInterjection({
-      disputeId: opportunity.disputeId,
-      turn: store.turnCount,
-      infoLevel: opportunity.infoLevel as any,
-      trapSignal: effects.find(e => e.type === 'trap_signal')?.signal,
-    })
-    if (mcTrigger) {
-      const mcResult = applyMisconceptionTrigger(opportunity.disputeId, mcTrigger)
-      if (mcResult?.changed) {
-        console.log(`[V2 Misconception via Interjection] ${opportunity.disputeId}: ${mcResult.from}→${mcResult.to}`)
-        for (const eff of mcResult.effects) {
-          if (eff.type === 'set_flag') runtimeState.flags.add(eff.flag)
-          if (eff.type === 'clear_flag') runtimeState.flags.delete(eff.flag)
-        }
-      }
-    }
-  }
-
-  // 재판관 후속 코멘트 — 끼어들기 허용/차단 후 흐름 이어가기
-  const interruptorName = opportunity.interruptor === 'a'
-    ? store.caseData?.duo.partyA.name ?? 'A'
-    : store.caseData?.duo.partyB.name ?? 'B'
-  if (choice === 'allow') {
-    // 끼어든 사람에게 추가 발언 기회 — 관련 쟁점의 진술을 생성
-    const dispute = store.caseData?.disputes.find(d => d.id === opportunity.disputeId)
-    if (dispute) {
-      const interruptorAgent = opportunity.interruptor === 'a' ? store.agentA : store.agentB
-      const lieState = interruptorAgent.lieStateMap[opportunity.disputeId]?.currentState ?? 'S0'
-      // 끼어든 사람의 현재 심리 상태에 따른 추가 발언
-      const interruptorName = opportunity.interruptor === 'a' ? store.caseData?.duo.partyA.name : store.caseData?.duo.partyB.name
-      const otherName = opportunity.interruptor === 'a' ? store.caseData?.duo.partyB.name : store.caseData?.duo.partyA.name
-      const followUp = lieState >= 'S3'
-        ? `저도 할 말이 있습니다. ${dispute.name} 건에서 — 사실 제가 숨긴 부분이 있었습니다.`
-        : `잠깐요. ${dispute.name} 건에서 ${otherName ?? '상대'} 씨가 빠뜨린 얘기가 있습니다.`
-      store.addDialogue({
-        speaker: opportunity.interruptor,
-        text: interjScripted?.text ? followUp : followUp,
-        relatedDisputes: [opportunity.disputeId],
-        turn: store.turnCount,
-      })
-    }
-    store.addDialogue({
-      speaker: 'judge',
-      text: `${interruptorName} 씨의 발언을 기록했습니다. 심문을 계속하겠습니다.`,
-      relatedDisputes: [opportunity.disputeId],
-      turn: store.turnCount,
-    })
-  } else {
-    store.addDialogue({
-      speaker: 'judge',
-      text: `${interruptorName} 씨, 지금은 발언 순서가 아닙니다. 심문을 계속합니다.`,
-      relatedDisputes: [opportunity.disputeId],
-      turn: store.turnCount,
-    })
-  }
-
-  // 심문 대상을 원래 target(끼어들기 당한 쪽)으로 복원
-  // 끼어든 사람(interruptor)이 아닌, 원래 심문 중이던 사람(target)
-  store.setPcTargetParty(opportunity.target)
-
-  // 대기 해제
-  store.setPendingInterjectionV2(null)
-  console.log(`[V2 Interjection] resolved: ${choice}`, effects.map(e => e.type).join(', '))
-}
+// V2 끼어들기 opportunity/모달/resolveInterjectionV2 경로는 제거됨 —
+// 끼어들기는 gameEventTriggerEngine의 V3 경로(PCDiscoveryOverlay interjection 분기)로 일원화.
 
 export function useActionDispatch() {
   const dispatch = useCallback((action: PlayerAction) => {
@@ -1263,65 +1122,7 @@ async function handleQuestion(action: Extract<PlayerAction, { type: 'question' }
         }
       }
 
-      // 6. 끼어들기 V2 (D) — focus streak 갱신 + 기회 평가
-      if (v2BeatUsed) {
-        // focus streak 갱신
-        setSessionInterjectionTracker(
-          commitInterjectionFocus(getSessionInterjectionTracker(), state.turnCount, action.target),
-        )
-
-        // 끼어들기 기회 평가
-        const opponent = action.target === 'a' ? 'b' : 'a'
-        const freshState = useGameStore.getState()
-        const isSeparated = freshState.separationTarget === action.target
-        const opponentAgent = opponent === 'a' ? freshState.agentA : freshState.agentB
-        const disputeV2 = getDisputeV2(v2CaseId, action.disputeId)
-
-        if (!isSeparated && disputeV2) {
-          const prevLieState2 = _lieStateBeforeTransition[`${action.target}:${action.disputeId}`] ?? 'S0'
-          const targetLie = v2Agent.lieStateMap[action.disputeId]
-          const targetTransition = prevLieState2 !== targetLie?.currentState
-            ? { from: prevLieState2, to: targetLie?.currentState ?? prevLieState2 }
-            : null
-
-          const opponentProfile = opponent === 'a' ? freshState.caseData?.duo.partyA : freshState.caseData?.duo.partyB
-          const opportunity = evaluateInterjectionOpportunity({
-            caseId: v2CaseId,
-            turn: state.turnCount,
-            target: action.target,
-            dispute: disputeV2,
-            questionType: action.questionType,
-            currentLayer: layer,
-            interruptor: opponent,
-            interruptorEmotionValue: opponentAgent.emotionalState.internalValue,
-            interruptorEmotionPhase: opponentAgent.emotionalState.phase,
-            targetTransition,
-            isSeparated,
-            flags: runtimeState.flags,
-            tracker: getSessionInterjectionTracker(),
-            interruptorArchetype: opponentProfile?.archetype,
-          })
-
-          if (opportunity) {
-            const opponentName = opponent === 'a' ? freshState.caseData?.duo.partyA.name : freshState.caseData?.duo.partyB.name
-            const interruptMsg = opportunity.severity === 'major'
-              ? `💥 ${iga(opponentName)} 참지 못하고 강하게 끼어든다!`
-              : `💬 ${iga(opponentName)} 참지 못하고 끼어든다!`
-
-            freshState.addDialogue({
-              speaker: 'system',
-              text: interruptMsg,
-              relatedDisputes: [action.disputeId],
-              turn: freshState.turnCount,
-            })
-
-            // pendingInterjectionV2에 저장 → GameEventModal에서 allow/block 선택
-            useGameStore.getState().setPendingInterjectionV2(opportunity)
-            console.log('[V2 Interjection]', opportunity.triggerReason, opportunity.infoLevel,
-              `streak:${opportunity.focusStreak}`, `chance:${opportunity.chanceApplied}`)
-          }
-        }
-      }
+      // 끼어들기는 gameEventTriggerEngine.checkInterjection 경로(V3)로 일원화됨
     }
   }
 
