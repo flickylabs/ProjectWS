@@ -2464,7 +2464,7 @@
         "id": "w-1-angle",
         "type": "witness_angle",
         "label": "w-1 김세라 증언 축",
-        "sourceRef": "w-1-angle",
+        "sourceRef": "w-1",
         "linkedDisputeIds": [
           "d-5"
         ],
@@ -2474,7 +2474,7 @@
         "id": "w-2-angle",
         "type": "witness_angle",
         "label": "w-2 박준혁 증언 축",
-        "sourceRef": "w-2-angle",
+        "sourceRef": "w-2",
         "linkedDisputeIds": [
           "d-2"
         ],
@@ -2484,7 +2484,7 @@
         "id": "w-3-angle",
         "type": "witness_angle",
         "label": "w-3 오미경 증언 축",
-        "sourceRef": "w-3-angle",
+        "sourceRef": "w-3",
         "linkedDisputeIds": [
           "d-4"
         ],

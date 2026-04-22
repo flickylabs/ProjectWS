@@ -15,9 +15,9 @@
     ],
     "twistModule": "TW-spouse-v3-1",
     "difficulty": "hard",
-    "anchorTruth": "박지연은 남편이 딴살림을 차렸다고 확신한 뒤 위임장을 조작하여 공동 적금 2,000만원을 해지했고, 투자 사기로 전액 손실했다. 이준호는 외도가 아니라 개인회생 중인 친형의 조카(중2)를 돌보고 있었고, 비자금에서 3,000만원을 현금으로 형에게 전달했다.",
+    "anchorTruth": "박지연은 남편이 딴살림을 차렸다고 확신한 뒤 위임장을 조작하여 공동 적금 3,000만원을 해지했고, 투자 사기로 전액 손실했다. 이준호는 외도가 아니라 개인회생 중인 친형의 조카(중2)를 돌보고 있었고, 개인 비자금에서 2,000만원을 현금으로 형에게 전달했다.",
     "emotionalBait": "매일 퇴근 후 같은 오피스텔에 들렀다 오는 남편. 차에서 발견된 여성용품 영수증. 새벽의 통화. 아내는 남편의 딴 살림을 확신한다.",
-    "resolutionDilemma": "개인회생 중인 형과 조카를 지키려다 비자금 3,000만원을 현금으로 전달한 남편과, 배신당했다고 확신하고 위임장을 조작하여 공동 적금 2,000만원을 해지한 뒤 투자 사기로 날린 아내 중 누가 더 무거운 책임을 져야 하는가. 숨김은 남편이 먼저, 계좌 감시는 아내가 먼저, 범죄 행위는 아내가 저질렀다.",
+    "resolutionDilemma": "개인회생 중인 형과 조카를 지키려다 개인 비자금 2,000만원을 현금으로 전달한 남편과, 배신당했다고 확신하고 위임장을 조작하여 공동 적금 3,000만원을 해지한 뒤 투자 사기로 날린 아내 중 누가 더 무거운 책임을 져야 하는가. 숨김은 남편이 먼저, 계좌 감시는 아내가 먼저, 범죄 행위는 아내가 저질렀다.",
     "title": "매일 아내 몰래 오피스텔에 머물다 오는 남편"
   },
   "duo": {
@@ -38,7 +38,7 @@
       "dailyRoutine": "학원 마감 뒤 집에 돌아와 카드 내역과 통화기록을 반복해 확인하며 남편이 먼저 가정을 버릴지 모른다는 불안을 키웠다.",
       "sensitivePoints": [
         "오피스텔 방문과 새벽 전화는 딴살림 흔적인가",
-        "위임장 조작으로 공동 적금 2,000만원을 해지한 것은 범죄인가",
+        "위임장 조작으로 공동 적금 3,000만원을 해지한 것은 범죄인가",
         "은폐와 선제행동의 순서"
       ],
       "verbalTells": [
@@ -80,7 +80,7 @@
       "dailyRoutine": "매장 마감 뒤 형네 오피스텔에 들러 조카 저녁과 생필품을 챙기고 새벽에는 형 사정을 확인한 뒤 집으로 돌아왔다.",
       "sensitivePoints": [
         "오피스텔 방문과 새벽 전화는 딴살림 흔적인가",
-        "비자금에서 3,000만원을 현금으로 형에게 전달한 것은 배우자 동의 없는 독단인가",
+        "개인 비자금에서 2,000만원을 현금으로 형에게 전달한 것은 배우자 동의 없는 독단인가",
         "은폐와 선제행동의 순서"
       ],
       "verbalTells": [
@@ -135,7 +135,7 @@
       {
         "id": "ledger-3",
         "category": "silenced",
-        "description": "B는 비자금에서 3,000만원을 형에게 현금 전달했고, A는 위임장을 조작해 2,000만원을 해지한 뒤 투자방에 넣었다가 잃었다.",
+        "description": "B는 개인 비자금에서 2,000만원을 형에게 현금 전달했고, A는 위임장을 조작해 공동 적금 3,000만원을 해지한 뒤 투자방에 넣었다가 잃었다.",
         "isReal": true,
         "whoRemembersAccurately": "both",
         "whoDistorts": "none",
@@ -259,7 +259,7 @@
     "description": "매일 퇴근 후 같은 오피스텔에 들렀다 오는 남편. 차에서 발견된 여성용품 영수증. 새벽의 통화. 아내는 남편의 딴 살림을 확신한다.",
     "emotionalPressure": 9,
     "affects": "both",
-    "triggerAmplifier": "초반에는 영수증(머리끈/틴트), 오피스텔 GPS, 새벽 통화가 한 방향으로만 겹쳐 외도처럼 보인다. 그러나 참고서(중2용)와 형 문자가 열리면 그 패턴은 조카 돌봄으로 재맥락화되고, 비자금 3,000만원 현금 출금과 위임장 조작 2,000만원 해지가 연달아 드러나면서 사건의 중심은 외도가 아니라 서로 말하지 못한 가족 공포와 비밀 자금 이동 순서로 뒤집힌다.",
+    "triggerAmplifier": "초반에는 영수증(머리끈/틴트), 오피스텔 GPS, 새벽 통화가 한 방향으로만 겹쳐 외도처럼 보인다. 그러나 참고서(중2용)와 형 문자가 열리면 그 패턴은 조카 돌봄으로 재맥락화되고, 개인 비자금 2,000만원 현금 출금과 위임장 조작 공동 적금 3,000만원 해지가 연달아 드러나면서 사건의 중심은 외도가 아니라 서로 말하지 못한 가족 공포와 비밀 자금 이동 순서로 뒤집힌다.",
     "caseNumber": "TE-SpouseV301",
     "caseName": "새벽 통화기록"
   },
@@ -310,7 +310,7 @@
       "weight": "high",
       "mediationLink": "비자금 현금 전달과 개인회생",
       "legitimacyIssue": true,
-      "judgmentStatement": "비자금 3,000만원 현금 전달은 남편 책임이 더 크다.",
+      "judgmentStatement": "개인 비자금 2,000만원 현금 전달은 남편 책임이 더 크다.",
       "hidden": false,
       "v3Visibility": "hidden",
       "unlockCondition": {
@@ -325,9 +325,9 @@
         "authoredRule": "A가 d-1 심문에서 S3에 도달하면 목돈 출금 발견으로 새 쟁점 부상"
       },
       "verdictOptions": {
-        "wrong": "비자금 3,000만원은 이준호가 개인 유흥에 쓴 돈이다.",
+        "wrong": "개인 비자금 2,000만원은 이준호가 개인 유흥에 쓴 돈이다.",
         "partial": "비자금 출금은 사실이지만, 정확한 사용처는 불확실하다.",
-        "truth": "비자금 3,000만원은 개인회생 중인 형에게 현금으로 전달한 돈이었다.",
+        "truth": "개인 비자금 2,000만원은 개인회생 중인 형에게 현금으로 전달한 돈이었다.",
         "defer": "사용처를 단정할 수 없다. 판단을 유보한다."
       }
     },
@@ -348,7 +348,7 @@
       "weight": "high",
       "mediationLink": "위임장 조작과 투자 사기",
       "legitimacyIssue": true,
-      "judgmentStatement": "공동 적금 2,000만원 위임장 조작 해지는 아내 책임이 더 크다.",
+      "judgmentStatement": "공동 적금 3,000만원 위임장 조작 해지는 아내 책임이 더 크다.",
       "hidden": true,
       "v3Visibility": "hidden",
       "unlockCondition": {
@@ -363,7 +363,7 @@
         "authoredRule": "d-2 발견 후 B가 \"그쪽도 적금 건드린 거 아니냐\" 역공하면 생성"
       },
       "verdictOptions": {
-        "wrong": "공동 적금 2,000만원은 이준호가 몰래 해지하여 비자금으로 빼돌렸다.",
+        "wrong": "공동 적금 3,000만원은 이준호가 몰래 해지하여 비자금으로 빼돌렸다.",
         "partial": "공동 적금이 해지된 건 맞지만, 누가 해지했는지는 불분명하다.",
         "truth": "박지연이 위임장을 조작하여 해지했고, 그 돈을 투자 사기로 전액 잃었다.",
         "defer": "해지 경위가 불분명하다. 판단을 유보한다."
@@ -954,6 +954,197 @@
               "subtotal": "43,500",
               "tax": "3,954",
               "total": "43,500",
+              "paymentMethod": "신한카드 (일시불) ****-3892",
+              "suspicious": true
+            }
+          ]
+        },
+        "2": {
+          "meta": {
+            "name": "영수증 묶음 5장",
+            "type": "log",
+            "viewerType": "log",
+            "trustLevel": "mid",
+            "trustLabel": "보통",
+            "source": "org",
+            "sourceLabel": "기관",
+            "legality": "ok",
+            "legalLabel": "적법",
+            "stage": 1,
+            "stageLabel": "초기 공개",
+            "sourceNote": "institutional / original",
+            "redactions": []
+          },
+          "receipt": [
+            {
+              "storeName": "CU 관악봉천점",
+              "storeAddr": "서울 관악구 봉천로 234",
+              "date": "2026.02.18 (화) 19:23",
+              "items": [
+                {
+                  "name": "빙그레 바나나맛우유",
+                  "code": "880104",
+                  "unitPrice": "1,500",
+                  "qty": 1,
+                  "amount": "1,500"
+                },
+                {
+                  "name": "삼각김밥 불고기",
+                  "code": "880211",
+                  "unitPrice": "1,500",
+                  "qty": 2,
+                  "amount": "3,000"
+                },
+                {
+                  "name": "핫식스 250ml",
+                  "code": "880309",
+                  "unitPrice": "900",
+                  "qty": 1,
+                  "amount": "900"
+                }
+              ],
+              "subtotal": "5,400",
+              "tax": "491",
+              "total": "5,400",
+              "paymentMethod": "신한카드 (일시불) ****-3892",
+              "suspicious": false
+            },
+            {
+              "storeName": "올리브영 봉천역점",
+              "storeAddr": "서울 관악구 봉천로 212 2F",
+              "date": "2026.02.15 (토) 14:07",
+              "items": [
+                {
+                  "name": "이니스프리 그린티씨드세럼",
+                  "code": "410752",
+                  "unitPrice": "28,000",
+                  "qty": 1,
+                  "amount": "28,000"
+                },
+                {
+                  "name": "에뛰드 픽싱틴트 #05",
+                  "code": "410381",
+                  "unitPrice": "12,000",
+                  "qty": 1,
+                  "amount": "12,000"
+                },
+                {
+                  "name": "쏘내추럴 코튼패드 80매",
+                  "code": "410104",
+                  "unitPrice": "3,500",
+                  "qty": 1,
+                  "amount": "3,500"
+                }
+              ],
+              "subtotal": "43,500",
+              "tax": "3,954",
+              "total": "43,500",
+              "paymentMethod": "신한카드 (일시불) ****-3892",
+              "suspicious": true
+            },
+            {
+              "storeName": "교보문고 강남점",
+              "storeAddr": "서울 서초구 강남대로 465",
+              "date": "2026.02.12 (수) 18:30",
+              "items": [
+                {
+                  "name": "초등 수학 6-1 기본+응용",
+                  "code": "978890",
+                  "unitPrice": "16,000",
+                  "qty": 1,
+                  "amount": "16,000"
+                },
+                {
+                  "name": "독해력 비타민 6단계",
+                  "code": "978891",
+                  "unitPrice": "13,000",
+                  "qty": 1,
+                  "amount": "13,000"
+                }
+              ],
+              "subtotal": "29,000",
+              "tax": "0",
+              "total": "29,000",
+              "paymentMethod": "신한카드 (일시불) ****-3892",
+              "suspicious": true
+            },
+            {
+              "storeName": "GS25 관악중앙점",
+              "storeAddr": "서울 관악구 관악로 142",
+              "date": "2026.02.08 (토) 21:45",
+              "items": [
+                {
+                  "name": "컵라면 진라면매운맛",
+                  "code": "880022",
+                  "unitPrice": "1,200",
+                  "qty": 1,
+                  "amount": "1,200"
+                },
+                {
+                  "name": "삼각김밥 참치마요",
+                  "code": "880215",
+                  "unitPrice": "1,500",
+                  "qty": 1,
+                  "amount": "1,500"
+                },
+                {
+                  "name": "코카콜라 500ml",
+                  "code": "880301",
+                  "unitPrice": "1,800",
+                  "qty": 1,
+                  "amount": "1,800"
+                },
+                {
+                  "name": "핫도그 클래식",
+                  "code": "880401",
+                  "unitPrice": "2,000",
+                  "qty": 1,
+                  "amount": "2,000"
+                }
+              ],
+              "subtotal": "6,500",
+              "tax": "591",
+              "total": "6,500",
+              "paymentMethod": "신한카드 (일시불) ****-3892",
+              "suspicious": false
+            },
+            {
+              "storeName": "다이소 봉천점",
+              "storeAddr": "서울 관악구 봉천로 201 1F",
+              "date": "2026.02.05 (수) 16:12",
+              "items": [
+                {
+                  "name": "미니 손거울",
+                  "code": "530101",
+                  "unitPrice": "2,000",
+                  "qty": 1,
+                  "amount": "2,000"
+                },
+                {
+                  "name": "머리끈 세트",
+                  "code": "530205",
+                  "unitPrice": "1,000",
+                  "qty": 2,
+                  "amount": "2,000"
+                },
+                {
+                  "name": "캐릭터 스티커",
+                  "code": "530310",
+                  "unitPrice": "1,000",
+                  "qty": 3,
+                  "amount": "3,000"
+                },
+                {
+                  "name": "어린이 지우개 세트",
+                  "code": "530408",
+                  "unitPrice": "1,000",
+                  "qty": 1,
+                  "amount": "1,000"
+                }
+              ],
+              "subtotal": "8,000",
+              "tax": "727",
+              "total": "8,000",
               "paymentMethod": "신한카드 (일시불) ****-3892",
               "suspicious": true
             }
@@ -1626,7 +1817,7 @@
         {
           "id": "challenged",
           "label": "이의 제기됨",
-          "summary": "형네 문자라고 해서 3,000만 원까지 정당화되진 않는다는 이의"
+          "summary": "형네 문자라고 해서 2,000만 원까지 정당화되진 않는다는 이의"
         },
         {
           "id": "misread",
@@ -1870,6 +2061,96 @@
               }
             ]
           }
+        },
+        "2": {
+          "meta": {
+            "name": "형 문자 스레드",
+            "type": "chat",
+            "viewerType": "chat",
+            "trustLevel": "mid",
+            "trustLabel": "보통",
+            "source": "b",
+            "sourceLabel": "B측",
+            "legality": "ok",
+            "legalLabel": "적법",
+            "stage": 4,
+            "stageLabel": "핵심 공개",
+            "sourceNote": "self_possessed / original",
+            "redactions": [
+              "조카 이름 비공개",
+              "학교명 및 학년 마스킹",
+              "생리 관련 직접 표현 봉인"
+            ]
+          },
+          "chat": {
+            "header": "이준호 ↔ 010-****-3847 문자 기록 — 2026.01~02",
+            "messages": [
+              {
+                "side": "right",
+                "sender": "이준호",
+                "text": "형, 오늘도 7시춤 갈게"
+              },
+              {
+                "side": "left",
+                "sender": "형",
+                "text": "고마워. 가은이 학원 숙제 좀 봐줘"
+              },
+              {
+                "side": "right",
+                "sender": "이준호",
+                "text": "참고서 사갈까? 수학 어디까지 했어?"
+              },
+              {
+                "side": "left",
+                "sender": "형",
+                "text": "2학기 함수 들어갔대. 부탁한다"
+              },
+              {
+                "side": "right",
+                "sender": "이준호",
+                "text": "알겠어. 밥은?"
+              },
+              {
+                "side": "left",
+                "sender": "형",
+                "text": "냉장고에 있는 걸로 해줘. 미안하다"
+              },
+              {
+                "type": "read",
+                "text": "이준호 — 읽음"
+              },
+              {
+                "side": "left",
+                "sender": "형",
+                "text": "오늘 혼자 있으니 밥 좀 부탁"
+              },
+              {
+                "side": "right",
+                "sender": "이준호",
+                "text": "가은이 감기 괜찮아?"
+              },
+              {
+                "side": "left",
+                "sender": "형",
+                "text": "좀 나아졌어. 스타킹 하나만 사다 줘, 학교에 신고 갈 거래"
+              },
+              {
+                "side": "right",
+                "sender": "이준호",
+                "text": "알겠어 올리브영 들를게"
+              },
+              {
+                "side": "left",
+                "sender": "형",
+                "text": "지연이한테는 아직 말하지 마. 내 사정 알려지면..."
+              },
+              {
+                "side": "right",
+                "sender": "이준호",
+                "text": "알아. 걱정 마"
+              }
+            ]
+          }
         }
       }
     },
@@ -1913,11 +2194,11 @@
           "stage": 1,
           "revealKey": "check_metadata",
           "question": {
-            "text": "왜 3,000만원을 현금으로 출금했습니까?",
+            "text": "왜 2,000만원을 현금으로 출금했습니까?",
             "attackVector": "context"
           },
           "label": "금액대조",
-          "unlockHint": "내역을 확인하면 3,000만원 현금 출금 시점과 방문 시작 시점을 대조할 수 있습니다."
+          "unlockHint": "내역을 확인하면 2,000만원 현금 출금 시점과 방문 시작 시점을 대조할 수 있습니다."
         },
         {
           "stage": 2,
@@ -1949,7 +2230,7 @@
         {
           "id": "excerpt",
           "label": "Excerpt",
-          "summary": "3,000만원 현금 출금 기록"
+          "summary": "2,000만원 현금 출금 기록"
         },
         {
           "id": "original",
@@ -2156,11 +2437,11 @@
           "stage": 2,
           "revealKey": "restore_context",
           "question": {
-            "text": "이 2,000만원은 현재 어디에 있습니까?",
+            "text": "이 3,000만원은 현재 어디에 있습니까?",
             "attackVector": "responsibility"
           },
           "label": "손실복원",
-          "unlockHint": "가입 경로와 시점을 대조하면 2,000만원이 어떻게 사기로 사라졌는지 복원할 수 있습니다."
+          "unlockHint": "가입 경로와 시점을 대조하면 3,000만원이 어떻게 사기로 사라졌는지 복원할 수 있습니다."
         }
       ],
       "partyContext": {
@@ -2182,7 +2463,7 @@
         {
           "id": "excerpt",
           "label": "Excerpt",
-          "summary": "2,000만원 송금 내역 보임"
+          "summary": "3,000만원 송금 내역 보임"
         },
         {
           "id": "original",
@@ -2279,7 +2560,7 @@
             {
               "side": "right",
               "sender": "박지연",
-              "text": "2,000만원 입금하려면 어디로 보내면 되나요?"
+              "text": "3,000만원 입금하려면 어디로 보내면 되나요?"
             },
             {
               "side": "left",
@@ -2404,7 +2685,7 @@
         {
           "id": "excerpt",
           "label": "Excerpt",
-          "summary": "위임장 + 2,000만원 해지 기록"
+          "summary": "위임장 + 3,000만원 해지 기록"
         },
         {
           "id": "original",
@@ -2613,14 +2894,14 @@
     },
     {
       "id": "t-2",
-      "fact": "B는 공동 적금 3,000만 원을 배우자 동의 없이 형에게 보냈다.",
+      "fact": "B는 개인 비자금 2,000만 원을 배우자에게 숨기고 형에게 현금으로 전달했다.",
       "isTrue": true,
       "weight": 10,
       "quadrant": "b_only"
     },
     {
       "id": "t-3",
-      "fact": "A는 남편 외도를 확신한 뒤 2,000만 원을 따로 송금했다.",
+      "fact": "A는 남편 외도를 확신한 뒤 위임장을 조작해 공동 적금 3,000만 원을 투자방에 송금했다.",
       "isTrue": true,
       "weight": 9,
       "quadrant": "a_only"
@@ -2916,7 +3197,7 @@
   ],
   "solutions": {
     "공동재산회복": [
-      "공동 적금 3,000만 원과 2,000만 원 송금의 흐름을 분리 정리하고 회수 가능 금액과 손실액을 다시 맞춘다.",
+      "개인 비자금 2,000만 원 출금과 공동 적금 3,000만 원 송금의 흐름을 분리 정리하고 회수 가능 금액과 손실액을 다시 맞춘다.",
       "형네 지원은 부부 공동재산과 분리된 별도 합의 절차로만 허용한다."
     ],
     "신뢰순서분리": [
@@ -3022,7 +3303,7 @@
       {
         "id": "e-6",
         "type": "evidence",
-        "label": "e-6 투자방 카톡 + 2,000만 원 송금",
+        "label": "e-6 투자방 카톡 + 3,000만 원 송금",
         "sourceRef": "e-6",
         "linkedDisputeIds": [
           "h-d3",
@@ -3080,7 +3361,7 @@
         "id": "w-1-angle",
         "type": "witness_angle",
         "label": "w-1 이성호 증언 축",
-        "sourceRef": "w-1-angle",
+        "sourceRef": "w-1",
         "linkedDisputeIds": [
           "d-1",
           "d-2"
@@ -3091,7 +3372,7 @@
         "id": "w-3-angle",
         "type": "witness_angle",
         "label": "w-3 박미라 증언 축",
-        "sourceRef": "w-3-angle",
+        "sourceRef": "w-3",
         "linkedDisputeIds": [
           "h-d3"
         ],
@@ -3129,7 +3410,7 @@
         "type": "derived_note",
         "label": "dc-3 3,000만 원의 권한",
         "linkedDisputeIds": [
-          "d-2"
+          "h-d3"
         ],
         "linkedEvidenceIds": [
           "e-4",
@@ -3142,7 +3423,7 @@
         "type": "derived_note",
         "label": "dc-4 2,000만 원의 수치",
         "linkedDisputeIds": [
-          "h-d3"
+          "d-2"
         ],
         "linkedEvidenceIds": [
           "e-6"
@@ -3407,7 +3688,7 @@
     "hiddenDisputes": [
       {
         "id": "h-d3",
-        "name": "2,000만원 이체의 목적",
+        "name": "공동 적금 3,000만원 해지의 목적",
         "unlockPlan": {
           "runtimeRule": "e-6 제시 시 해금",
           "authoredRule": "e-6이 Excerpt 이상이 되거나 A에게 동기탐색 2회가 누적되면 생성"
@@ -3580,12 +3861,12 @@
       {
         "action": "원본 제출 명령",
         "recommendedMoment": "h-d3 등장 직후 e-6 축",
-        "purpose": "A의 2,000만 원 송금을 확정"
+        "purpose": "A의 공동 적금 3,000만 원 송금을 확정"
       },
       {
         "action": "정확히 답변하십시오",
         "recommendedMoment": "B가 \"가족 쪽 일\" 같은 모호어를 반복할 때",
-        "purpose": "형, 조카, 3,000만 원 같은 실체 명사 강제"
+        "purpose": "형, 조카, 2,000만 원 같은 실체 명사 강제"
       },
       {
         "action": "분리심문",
@@ -3605,12 +3886,12 @@
       {
         "action": "잠정 인정",
         "recommendedMoment": "e-5 인증 후",
-        "purpose": "공동 적금 3,000만 원 이동 기록"
+        "purpose": "개인 비자금 2,000만 원 현금 출금 기록"
       },
       {
         "action": "잠정 인정",
         "recommendedMoment": "e-6 인증 후",
-        "purpose": "A의 2,000만 원 송금 기록"
+        "purpose": "A의 공동 적금 3,000만 원 송금 기록"
       },
       {
         "action": "잠정 인정",
@@ -3647,8 +3928,8 @@
     ],
     "officialRecordRecommendations": [
       "B의 오피스텔 방문 대상은 형과 조카였다.",
-      "B는 공동 적금 3,000만 원을 배우자 동의 없이 형에게 보냈다.",
-      "A는 남편 외도를 확신한 뒤 2,000만 원을 따로 송금했다.",
+      "B는 개인 비자금 2,000만 원을 배우자에게 숨기고 형에게 현금으로 전달했다.",
+      "A는 남편 외도를 확신한 뒤 위임장을 조작해 공동 적금 3,000만 원을 투자방에 송금했다.",
       "숨김은 B가 먼저 시작했고 실제 비밀 송금은 A가 먼저 실행했다.",
       "두 사람 모두 말 못할 이유가 있었지만 둘 다 공동 재산을 혼자 움직였다."
     ]

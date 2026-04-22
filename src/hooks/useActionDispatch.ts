@@ -2463,7 +2463,7 @@ export function applyWitnessSlot(slotId: string): void {
 
   if (slot.effect.emergenceTrigger) {
     // Hidden 쟁점 발현 트리거
-    state.emergeDispute(slot.effect.emergenceTrigger, state.turnCount, 'witness_testimony')
+    state.emergeDispute(slot.effect.emergenceTrigger, 'witness_testimony', state.turnCount, '증인 진술로 숨겨진 쟁점이 드러났습니다.')
     state.addDialogue({
       speaker: 'system',
       text: '💡 새로운 쟁점이 발견되었습니다.',
