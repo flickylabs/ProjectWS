@@ -217,10 +217,12 @@ export default function PCLeftPanel() {
         className={`pc-play-timeline-panel${timelineOpen ? ' is-open' : ''}`}
         aria-hidden={!timelineOpen}
         style={{
-          // CSS cascade 경합 방지 — inline으로 완전 불투명 강제.
+          // CSS cascade 경합 방지 — inline으로 완전 불투명 + 최상단 보장.
           // 과거 `transparent !important` 규칙이 다른 곳에서 튀어나오는 것 차단.
+          // 채팅창(z-index auto/9)보다 위에 떠야 가독성 확보 (모달 9000+ 보다는 아래).
           background: '#0a0a10',
           backgroundImage: 'none',
+          zIndex: 80,
         }}
       >
         <PCCaseTimelineSection />
