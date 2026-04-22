@@ -6,7 +6,8 @@ const fs = require('fs');
 const path = require('path');
 
 // ─── Config ───
-const CASE_IDS = ['spouse-01', 'family-01', 'friend-01', 'neighbor-01', 'partnership-01', 'tenant-01', 'workplace-01'];
+// 활성 3건만 검증. 레거시 4종(neighbor/partnership/tenant/workplace-01)은 기본 템플릿 미비로 폐기됨 (2026-04-23).
+const CASE_IDS = ['spouse-01', 'family-01', 'friend-01'];
 const BASE = path.resolve(__dirname, '..');
 const CASES_DIR = path.join(BASE, 'src/data/cases/generated');
 const PHASE1_DIR = path.join(BASE, 'src/data/dialogues/phase1');
