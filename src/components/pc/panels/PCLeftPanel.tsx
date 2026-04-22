@@ -138,14 +138,17 @@ export default function PCLeftPanel() {
   }, [])
 
   const hostRef = useRef<HTMLDivElement>(null)
-  const [portalAnchor, setPortalAnchor] = useState<{ left: number; top: number; height: number } | null>(null)
+  const [portalAnchor, setPortalAnchor] = useState<{ left: number; top: number; height: number }>({
+    // 첫 클릭 시에도 즉시 렌더되도록 합리적 기본값 제공.
+    // useLayoutEffect에서 실제 좌측 패널 경계로 재측정됨.
+    left: 380,
+    top: 80,
+    height: Math.max(400, (typeof window !== 'undefined' ? window.innerHeight : 800) - 160),
+  })
 
   // 좌측 패널의 우측 경계 + 16px 지점이 타임라인 토스트 시작점. 뷰포트 기준.
   useLayoutEffect(() => {
-    if (!timelineOpen) {
-      setPortalAnchor(null)
-      return
-    }
+    if (!timelineOpen) return
     const host = hostRef.current
     if (!host) return
     const update = () => {
@@ -183,6 +186,22 @@ export default function PCLeftPanel() {
     return () => window.removeEventListener('scroll', onScroll, true)
   }, [timelineOpen])
 
+  // 토글 버튼 클릭 시 열기 전에 즉시 anchor 측정 (첫 렌더에도 정확한 위치 보장)
+  const handleToggleTimeline = useCallback(() => {
+    if (!timelineOpen) {
+      const host = hostRef.current
+      if (host) {
+        const rect = host.getBoundingClientRect()
+        setPortalAnchor({
+          left: Math.round(rect.right + 16),
+          top: Math.round(rect.top + 8),
+          height: Math.round(rect.height - 16),
+        })
+      }
+    }
+    setTimelineOpen((current) => !current)
+  }, [timelineOpen])
+
   return (
     <div
       ref={hostRef}
@@ -191,7 +210,7 @@ export default function PCLeftPanel() {
       <button
         aria-expanded={timelineOpen}
         className={`pc-play-timeline-toggle${timelineOpen ? ' is-open' : ''}`}
-        onClick={() => setTimelineOpen((current) => !current)}
+        onClick={handleToggleTimeline}
         title={timelineOpen ? '타임라인 닫기' : '타임라인 열기'}
         type="button"
       >
@@ -265,7 +284,7 @@ export default function PCLeftPanel() {
 
       {/* 타임라인은 Portal로 body에 mount. 좌측 패널 stacking context를 완전히 벗어나
           채팅·발언대 등 어떤 요소에도 가려지지 않음 (모달 9000+보다는 아래로 유지). */}
-      {timelineOpen && portalAnchor && createPortal(
+      {timelineOpen && createPortal(
         <aside
           className="pc-play-timeline-panel is-open is-portal"
           style={{
