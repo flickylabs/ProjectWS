@@ -6,8 +6,7 @@ import SettingsPanel from './SettingsPanel'
 import Emoji from '../common/Emoji'
 import { checkConnection } from '../../engine/llmClient'
 import { MAX_TURNS } from '../../utils/constants'
-
-const StateTransitionToast = lazy(() => import('../discovery/StateTransitionFeedback').then(m => ({ default: m.StateTransitionToast })))
+import { StateTransitionToast } from '../discovery/StateTransitionFeedback'
 const GameEventModal = lazy(() => import('../discovery/GameEventModal'))
 const PerkChoiceModal = lazy(() => import('../discovery/PerkChoiceModal'))
 const TransitionChoiceModal = lazy(() => import('../discovery/TransitionChoiceModal'))
