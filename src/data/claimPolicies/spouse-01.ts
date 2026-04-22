@@ -8,6 +8,7 @@ import runtimeCase from '../cases/generated/spouse-01.json'
 import v3GameLoopData from '../../../docs/ref/리뉴얼참고/spouse-v3-01-v3-game-loop-data.json'
 import structureV2 from './spouse-01-structure-v2.json'
 import gameEvents from './spouse-01-game-events.json'
+import v2Atoms from './spouse-01-v2-atoms.json'
 import { buildV3FallbackClaimPolicies } from './v3FallbackClaimPolicies'
 import { ensureV3RuntimeGameLoopData } from './v3FallbackGameLoopData'
 
@@ -17,6 +18,8 @@ export function registerSpouse01Data(): void {
   const v3WithEvents = { ...v3GameLoopData, events: gameEvents } as any
   const runtimeV3Data = ensureV3RuntimeGameLoopData(runtimeCase as any, v3WithEvents)
   registerClaimPolicies('spouse-01', buildV3FallbackClaimPolicies(runtimeCase as any, runtimeV3Data as any))
+  // v2-atoms 신규 데이터로 fallback을 덮어씀 (R5 WARN 해소)
+  registerClaimPolicies('spouse-01', (v2Atoms as any).claimPolicies)
   registerV3GameLoopData(runtimeV3Data as any)
 
   registerStructureV2(structureV2 as any)

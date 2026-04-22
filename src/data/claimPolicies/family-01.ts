@@ -10,6 +10,7 @@ import dossierData from './family-01-dossier-cards.json'
 import { buildV3FallbackClaimPolicies } from './v3FallbackClaimPolicies'
 import { ensureV3RuntimeGameLoopData } from './v3FallbackGameLoopData'
 import gameEvents from './family-01-game-events.json'
+import v2Atoms from './family-01-v2-atoms.json'
 
 export function registerFamily01Data(): void {
   console.log('[Renewal] family-01 data registration start')
@@ -21,6 +22,8 @@ export function registerFamily01Data(): void {
     transitionBeats: (gameEvents as any).transitionBeats,
   } as any)
   registerClaimPolicies('family-01', buildV3FallbackClaimPolicies(runtimeCase as any, runtimeV3Data as any))
+  // v2-atoms 신규 데이터로 fallback을 덮어씀 (R5 WARN 해소)
+  registerClaimPolicies('family-01', (v2Atoms as any).claimPolicies)
   registerV3GameLoopData(runtimeV3Data as any)
 
   registerStructureV2(structureV2 as any)
