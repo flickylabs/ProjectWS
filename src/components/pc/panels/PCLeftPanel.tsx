@@ -226,6 +226,7 @@ export default function PCLeftPanel() {
       <aside
         className={`pc-play-timeline-panel${timelineOpen ? ' is-open' : ''}`}
         aria-hidden={!timelineOpen}
+        data-v="timeline-fix-4d86b08"
         style={{
           // CSS cascade 경합 방지 — inline으로 완전 불투명 강제.
           // 부모 .pc-play-left가 zIndex 80 stacking context를 만들므로
@@ -233,6 +234,9 @@ export default function PCLeftPanel() {
           background: '#0a0a10',
           backgroundImage: 'none',
           zIndex: 100,
+          // HMR 반영 확인용 임시 border — 눈에 보이면 최신 번들이 로드된 것.
+          outline: '2px solid #ff3355',
+          outlineOffset: '-2px',
         }}
       >
         <PCCaseTimelineSection />
