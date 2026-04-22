@@ -213,7 +213,16 @@ export default function PCLeftPanel() {
 
       <PCImportantNotesSection />
 
-      <aside className={`pc-play-timeline-panel${timelineOpen ? ' is-open' : ''}`} aria-hidden={!timelineOpen}>
+      <aside
+        className={`pc-play-timeline-panel${timelineOpen ? ' is-open' : ''}`}
+        aria-hidden={!timelineOpen}
+        style={{
+          // CSS cascade 경합 방지 — inline으로 완전 불투명 강제.
+          // 과거 `transparent !important` 규칙이 다른 곳에서 튀어나오는 것 차단.
+          background: '#0a0a10',
+          backgroundImage: 'none',
+        }}
+      >
         <PCCaseTimelineSection />
       </aside>
     </div>
