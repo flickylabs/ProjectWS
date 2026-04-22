@@ -457,8 +457,8 @@ body.pc-mode .pc-discovery-card {
   min-width: 480px;
   border-radius: 16px;
   border: 1px solid rgba(255, 255, 255, 0.08);
-  background: #0c0c14;
-  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.7);
+  background: linear-gradient(180deg, #18181f, #0c0c14);
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.55);
   color: #dcdce0;
 }
 
@@ -6553,17 +6553,15 @@ body.pc-mode .pc-play-timeline-panel {
   left: calc(100% + 14px);
   bottom: 0;
   width: 336px;
-  visibility: hidden;
+  opacity: 0;
   pointer-events: none;
   transform: translateX(-16px);
-  transition: transform 180ms ease;
-  z-index: 50;
-  background: #0a0a10;
-  border-radius: 24px;
+  transition: opacity 160ms ease, transform 180ms ease;
+  z-index: 6;
 }
 
 body.pc-mode .pc-play-timeline-panel.is-open {
-  visibility: visible;
+  opacity: 1;
   pointer-events: auto;
   transform: translateX(0);
 }
@@ -6575,8 +6573,8 @@ body.pc-mode .pc-play-timeline-panel .pc-case-timeline-section {
   padding: 18px 20px 16px;
   border-radius: 24px;
   border: 1px solid rgba(255, 255, 255, 0.08);
-  background: #0a0a10;
-  box-shadow: 0 22px 42px rgba(0, 0, 0, 0.6);
+  background: linear-gradient(180deg, #0f0f18, #0a0a10);
+  box-shadow: 0 22px 42px rgba(0, 0, 0, 0.5);
 }
 
 body.pc-mode .pc-play-timeline-panel .pc-case-timeline-section .sec-h {
@@ -7677,19 +7675,15 @@ body.pc-mode .pc-play-timeline-panel {
   z-index: 30 !important;
   border-radius: 24px !important;
   border: 1px solid rgba(212, 162, 78, 0.16) !important;
-  /* 타임라인은 대화 위에 겹쳐 떠오르는 오버레이 — 완전 불투명 solid 배경.
-     뒤 대화 내용이 비치지 않아야 가독성 보장. */
-  background: #0a0a10 !important;
-  box-shadow: 0 28px 60px rgba(0, 0, 0, 0.58) !important;
+  background: linear-gradient(180deg, rgba(18, 19, 29, 0.98), rgba(10, 10, 16, 0.99)) !important;
+  box-shadow: 0 28px 60px rgba(0, 0, 0, 0.42) !important;
   overflow: hidden !important;
 }
 
 body.pc-mode .pc-play-timeline-panel .pc-case-timeline-section {
   padding: 18px 18px 16px !important;
   border: 0 !important;
-  /* outer가 이미 solid이지만 cascade 안전을 위해 동일 solid 유지.
-     이전 "transparent !important"는 버그로 제거됨 (2026-04-23). */
-  background: #0a0a10 !important;
+  background: transparent !important;
   box-shadow: none !important;
 }
 

@@ -1,5 +1,4 @@
-import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState, type DragEvent, type CSSProperties } from 'react'
-import { createPortal } from 'react-dom'
+import { useCallback, useMemo, useState, type DragEvent } from 'react'
 import { GamePhase, type CaseData, type EvidenceNode, type PartyId } from '../../../types'
 import { computeSurfacedEvidence } from '../../../engine/evidenceEngine'
 import { useStore } from '../../../store/useGameStore'
@@ -137,80 +136,12 @@ export default function PCLeftPanel() {
     event.dataTransfer.setData('text/plain', label)
   }, [])
 
-  const hostRef = useRef<HTMLDivElement>(null)
-  const [portalAnchor, setPortalAnchor] = useState<{ left: number; top: number; height: number }>({
-    // 첫 클릭 시에도 즉시 렌더되도록 합리적 기본값 제공.
-    // useLayoutEffect에서 실제 좌측 패널 경계로 재측정됨.
-    left: 380,
-    top: 80,
-    height: Math.max(400, (typeof window !== 'undefined' ? window.innerHeight : 800) - 160),
-  })
-
-  // 좌측 패널의 우측 경계 + 16px 지점이 타임라인 토스트 시작점. 뷰포트 기준.
-  useLayoutEffect(() => {
-    if (!timelineOpen) return
-    const host = hostRef.current
-    if (!host) return
-    const update = () => {
-      const rect = host.getBoundingClientRect()
-      setPortalAnchor({
-        left: Math.round(rect.right + 16),
-        top: Math.round(rect.top + 8),
-        height: Math.round(rect.height - 16),
-      })
-    }
-    update()
-    window.addEventListener('resize', update)
-    const ro = typeof ResizeObserver !== 'undefined' ? new ResizeObserver(update) : null
-    if (ro) ro.observe(host)
-    return () => {
-      window.removeEventListener('resize', update)
-      if (ro) ro.disconnect()
-    }
-  }, [timelineOpen])
-
-  // 스크롤 시에도 재측정 (좌측 패널이 스크롤 컨테이너 안이면 대응)
-  useEffect(() => {
-    if (!timelineOpen) return
-    const onScroll = () => {
-      const host = hostRef.current
-      if (!host) return
-      const rect = host.getBoundingClientRect()
-      setPortalAnchor({
-        left: Math.round(rect.right + 16),
-        top: Math.round(rect.top + 8),
-        height: Math.round(rect.height - 16),
-      })
-    }
-    window.addEventListener('scroll', onScroll, true)
-    return () => window.removeEventListener('scroll', onScroll, true)
-  }, [timelineOpen])
-
-  // 토글 버튼 클릭 시 열기 전에 즉시 anchor 측정 (첫 렌더에도 정확한 위치 보장)
-  const handleToggleTimeline = useCallback(() => {
-    if (!timelineOpen) {
-      const host = hostRef.current
-      if (host) {
-        const rect = host.getBoundingClientRect()
-        setPortalAnchor({
-          left: Math.round(rect.right + 16),
-          top: Math.round(rect.top + 8),
-          height: Math.round(rect.height - 16),
-        })
-      }
-    }
-    setTimelineOpen((current) => !current)
-  }, [timelineOpen])
-
   return (
-    <div
-      ref={hostRef}
-      className={`pc-play-left pc-play-left--timeline-host${timelineOpen ? ' is-timeline-open' : ''}`}
-    >
+    <div className={`pc-play-left pc-play-left--timeline-host${timelineOpen ? ' is-timeline-open' : ''}`}>
       <button
         aria-expanded={timelineOpen}
         className={`pc-play-timeline-toggle${timelineOpen ? ' is-open' : ''}`}
-        onClick={handleToggleTimeline}
+        onClick={() => setTimelineOpen((current) => !current)}
         title={timelineOpen ? '타임라인 닫기' : '타임라인 열기'}
         type="button"
       >
@@ -282,31 +213,9 @@ export default function PCLeftPanel() {
 
       <PCImportantNotesSection />
 
-      {/* 타임라인은 Portal로 body에 mount. 좌측 패널 stacking context를 완전히 벗어나
-          채팅·발언대 등 어떤 요소에도 가려지지 않음 (모달 9000+보다는 아래로 유지). */}
-      {timelineOpen && createPortal(
-        <aside
-          className="pc-play-timeline-panel is-open is-portal"
-          style={{
-            position: 'fixed',
-            left: portalAnchor.left,
-            top: portalAnchor.top,
-            height: portalAnchor.height,
-            width: 360,
-            maxWidth: 360,
-            zIndex: 80,
-            background: '#0a0a10',
-            backgroundImage: 'none',
-            borderRadius: 24,
-            border: '1px solid rgba(212, 162, 78, 0.16)',
-            boxShadow: '0 28px 60px rgba(0, 0, 0, 0.58)',
-            overflow: 'hidden',
-          } as CSSProperties}
-        >
-          <PCCaseTimelineSection />
-        </aside>,
-        document.body,
-      )}
+      <aside className={`pc-play-timeline-panel${timelineOpen ? ' is-open' : ''}`} aria-hidden={!timelineOpen}>
+        <PCCaseTimelineSection />
+      </aside>
     </div>
   )
 }

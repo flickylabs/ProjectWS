@@ -85,14 +85,7 @@ export default function PCCaseTimelineSection() {
   }, [dialogueLog])
 
   return (
-    <section
-      className="sec pc-case-timeline-section"
-      style={{
-        // CSS cascade 경합 방지 — inner도 완전 불투명 강제.
-        background: '#0a0a10',
-        backgroundImage: 'none',
-      }}
-    >
+    <section className="sec pc-case-timeline-section">
       <div className="sec-h">
         <PCSvgIcon id="i-clock" size={14} />
         <span>사건 타임라인</span>
