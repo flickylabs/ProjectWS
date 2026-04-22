@@ -137,7 +137,17 @@ export default function PCLeftPanel() {
   }, [])
 
   return (
-    <div className={`pc-play-left pc-play-left--timeline-host${timelineOpen ? ' is-timeline-open' : ''}`}>
+    <div
+      className={`pc-play-left pc-play-left--timeline-host${timelineOpen ? ' is-timeline-open' : ''}`}
+      style={{
+        // 타임라인이 열렸을 때 좌측 패널 전체를 채팅 영역 위로 올리기 위해
+        // stacking context 최상위로 끌어올림. 증거 수첩 등은 원래 좌측 영역에만 있어
+        // 채팅과 겹치지 않으므로 항상 높은 z-index여도 무해.
+        position: 'relative',
+        zIndex: timelineOpen ? 80 : 1,
+        isolation: 'isolate',
+      }}
+    >
       <button
         aria-expanded={timelineOpen}
         className={`pc-play-timeline-toggle${timelineOpen ? ' is-open' : ''}`}
@@ -217,12 +227,12 @@ export default function PCLeftPanel() {
         className={`pc-play-timeline-panel${timelineOpen ? ' is-open' : ''}`}
         aria-hidden={!timelineOpen}
         style={{
-          // CSS cascade 경합 방지 — inline으로 완전 불투명 + 최상단 보장.
-          // 과거 `transparent !important` 규칙이 다른 곳에서 튀어나오는 것 차단.
-          // 채팅창(z-index auto/9)보다 위에 떠야 가독성 확보 (모달 9000+ 보다는 아래).
+          // CSS cascade 경합 방지 — inline으로 완전 불투명 강제.
+          // 부모 .pc-play-left가 zIndex 80 stacking context를 만들므로
+          // 여기는 그 context 내 최상위로 100이면 충분.
           background: '#0a0a10',
           backgroundImage: 'none',
-          zIndex: 80,
+          zIndex: 100,
         }}
       >
         <PCCaseTimelineSection />
