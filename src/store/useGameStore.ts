@@ -11,6 +11,7 @@ import { createDiscoverySlice, type DiscoverySlice } from './slices/discoverySli
 import { createCombinationLabSlice, type CombinationLabSlice } from './slices/combinationLabSlice'
 import { createMinigameSlice, type MinigameSlice } from './slices/minigameSlice'
 import { createCharacterTagSlice, type CharacterTagSlice } from './slices/characterTagSlice'
+import { createEventFeedbackSlice, type EventFeedbackSlice } from './slices/eventFeedbackSlice'
 import type { CaseData, ProcessMetrics, PartyId } from '../types'
 import type { TestimonyAnalysis } from '../engine/llmTestimonyAnalysis'
 import { GamePhase } from '../types'
@@ -118,7 +119,7 @@ function applyPerks(set: (partial: any) => void): void {
   })
 }
 
-export type GameStore = PhaseSlice & AgentSlice & ResourceSlice & EvidenceSlice & DialogueSlice & VerdictSlice & DiscoverySlice & CombinationLabSlice & MinigameSlice & CharacterTagSlice & {
+export type GameStore = PhaseSlice & AgentSlice & ResourceSlice & EvidenceSlice & DialogueSlice & VerdictSlice & DiscoverySlice & CombinationLabSlice & MinigameSlice & CharacterTagSlice & EventFeedbackSlice & {
   caseData: CaseData | null
   lieConfigs: { a: CaseData['lieConfigA']; b: CaseData['lieConfigB'] } | null
   isLLMLoading: boolean
@@ -285,6 +286,7 @@ export const useGameStore: import('zustand').UseBoundStore<import('zustand').Sto
     ...createCombinationLabSlice(...args),
     ...createMinigameSlice(...args),
     ...createCharacterTagSlice(...args),
+    ...createEventFeedbackSlice(...args),
 
     caseData: null,
     lieConfigs: null,
@@ -709,6 +711,9 @@ export const useGameStore: import('zustand').UseBoundStore<import('zustand').Sto
         disputeBoardAction: null,
         pendingPerkChoice: null,
         pendingTransitionChoice: null,
+        feedbackQueue: [],
+        activeFeedback: null,
+        minorStream: [],
         lastFocusedDisputeId: null,
         pcTargetParty: 'a',
         pcSummaryUnlocked: false,

@@ -216,7 +216,7 @@ function buildDisputePayload(disputeId: string): PcInteractionPayload | null {
   }
 }
 
-function buildEvidenceSelectionPayload(disputeId: string, party: PartyId): PcInteractionPayload | null {
+export function buildEvidenceSelectionPayload(disputeId: string, party: PartyId): PcInteractionPayload | null {
   const state = useGameStore.getState()
   const caseData = state.caseData
   if (!caseData) {
@@ -313,7 +313,7 @@ function buildEvidencePromptPayload(evidenceId: string, disputeId: string, party
   }
 }
 
-function buildDisputePickerPayload(currentDisputeId: string): PcInteractionPayload | null {
+export function buildDisputePickerPayload(currentDisputeId: string): PcInteractionPayload | null {
   const state = useGameStore.getState()
   const caseData = state.caseData
   if (!caseData) {

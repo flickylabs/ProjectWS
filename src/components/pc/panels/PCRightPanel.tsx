@@ -717,12 +717,23 @@ function MeterRow({
   width: number
   tone: 'blue' | 'red' | 'gold'
 }) {
+  // gold tone (대상 미터/누설)만 4단계 노랑→빨강 그라데이션 적용
+  let levelClass = ''
+  if (tone === 'gold') {
+    if (width < 25) levelClass = ' level-1'
+    else if (width < 50) levelClass = ' level-2'
+    else if (width < 75) levelClass = ' level-3'
+    else levelClass = ' level-4'
+  }
   return (
     <div className="meter pc-target-meter">
       <span className="pc-target-meter__icon">{icon}</span>
       <span className="pc-target-meter__label">{label}</span>
       <div className="meter-track">
-        <div className={`meter-fill mf-${tone}`} style={{ width: `${Math.max(0, Math.min(width, 100))}%` }} />
+        <div
+          className={`meter-fill mf-${tone}${levelClass}`}
+          style={{ width: `${Math.max(0, Math.min(width, 100))}%` }}
+        />
       </div>
       <span className="meter-val">{valueText}</span>
     </div>

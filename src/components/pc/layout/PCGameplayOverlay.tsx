@@ -1,9 +1,14 @@
 import { useEffect } from 'react'
-import { useStore } from '../../../store/useGameStore'
+import { useStore, useGameStore } from '../../../store/useGameStore'
 import CutsceneOverlay from '../../discovery/CutsceneOverlay'
 import PCMinigameOverlay from './PCMinigameOverlay'
 import PCDiscoveryOverlay from './PCDiscoveryOverlay'
-import { openPcInteractionPanel } from './PCInteractionPanel'
+import {
+  openPcInteractionPanel,
+  buildEvidenceSelectionPayload,
+  buildDisputePickerPayload,
+} from './PCInteractionPanel'
+import { useActionDispatch } from '../../../hooks/useActionDispatch'
 
 type TransitionLabel = 'cracked' | 'cornered' | 'opening'
 
@@ -31,23 +36,11 @@ export default function PCGameplayOverlay() {
   const setPendingEvidenceResult = useStore((s) => s.setPendingEvidenceResult)
   const pendingTransitionChoice = useStore((s) => s.pendingTransitionChoice)
   const setPendingTransitionChoice = useStore((s) => s.setPendingTransitionChoice)
-  // Discovery/Confrontation 팝업 활성 여부 — 활성 시 transition / evidence-result 팝업은 대기
-  const discoveryActive = useStore((s) => Boolean(
-    s.discovery.pendingSlip
-    || s.discovery.pendingEmergence
-    || s.discovery.pendingConfrontation
-    || s.discovery.pendingConflict
-    || (s as any).pendingGameEvent
-    || (s as any).pendingPerkChoice
-    || (s as any).pendingWitnessChoice,
-  ))
+  const dispatch = useActionDispatch()
 
+  // 증거 제시 결과: 자동 소멸 카드로 (선택지 없음)
   useEffect(() => {
-    if (!pendingEvidenceResult) {
-      return
-    }
-    // Discovery 팝업 활성 중이면 대기 (닫힌 후 재실행)
-    if (discoveryActive) return
+    if (!pendingEvidenceResult) return
 
     const descriptor =
       pendingEvidenceResult.type === 'collapse'
@@ -71,109 +64,79 @@ export default function PCGameplayOverlay() {
               tone: 'blue' as const,
             }
 
-    openPcInteractionPanel({
-      ...descriptor,
-      variant: 'feature',
+    useGameStore.getState().enqueueFeedback({
+      kind: 'evidence_result',
+      title: descriptor.title,
+      subtitle: descriptor.subtitle,
+      body: descriptor.body,
+      tone: descriptor.tone,
+      autoDismissMs: 3200,
     })
     setPendingEvidenceResult(null)
-  }, [pendingEvidenceResult, setPendingEvidenceResult, discoveryActive])
+  }, [pendingEvidenceResult, setPendingEvidenceResult])
 
+  // 상태 전이 선택지 (cracked / cornered / opening)
   useEffect(() => {
-    if (!pendingTransitionChoice || !caseData) {
-      return
-    }
-    // Discovery 팝업 활성 중이면 대기 (닫힌 후 재실행)
-    if (discoveryActive) return
+    if (!pendingTransitionChoice || !caseData) return
 
+    const choice = pendingTransitionChoice
     const partyName =
-      pendingTransitionChoice.party === 'a'
-        ? caseData.duo.partyA.name
-        : caseData.duo.partyB.name
+      choice.party === 'a' ? caseData.duo.partyA.name : caseData.duo.partyB.name
     const disputeName =
-      caseData.disputes.find((dispute) => dispute.id === pendingTransitionChoice.disputeId)?.name
-      ?? pendingTransitionChoice.disputeId
-    const meta = TRANSITION_META[pendingTransitionChoice.label]
+      caseData.disputes.find((dispute) => dispute.id === choice.disputeId)?.name
+      ?? choice.disputeId
+    const meta = TRANSITION_META[choice.label]
+
+    const runQuestion = (questionType: 'fact_pursuit' | 'motive_search' | 'empathy_approach') => {
+      dispatch({
+        type: 'question',
+        questionType,
+        target: choice.party,
+        disputeId: choice.disputeId,
+      } as any)
+    }
+
+    const openEvidenceSelection = () => {
+      const payload = buildEvidenceSelectionPayload(choice.disputeId, choice.party)
+      if (payload) openPcInteractionPanel(payload)
+    }
+
+    const openDisputePicker = () => {
+      const payload = buildDisputePickerPayload(choice.disputeId)
+      if (payload) openPcInteractionPanel(payload)
+    }
 
     const actions =
-      pendingTransitionChoice.label === 'cracked'
+      choice.label === 'cracked'
         ? [
-            {
-              kind: 'run_question' as const,
-              label: `"그 말, 아까와 다릅니다" — 사실 추궁`,
-              party: pendingTransitionChoice.party,
-              disputeId: pendingTransitionChoice.disputeId,
-              questionType: 'fact_pursuit' as const,
-            },
-            {
-              kind: 'run_question' as const,
-              label: `"왜 숨기셨습니까?" — 동기 탐색`,
-              party: pendingTransitionChoice.party,
-              disputeId: pendingTransitionChoice.disputeId,
-              questionType: 'motive_search' as const,
-            },
-            {
-              kind: 'open_evidence_selection' as const,
-              label: `"이 증거를 보십시오" — 증거 제시`,
-              party: pendingTransitionChoice.party,
-              disputeId: pendingTransitionChoice.disputeId,
-            },
+            { label: `"그 말, 아까와 다릅니다" — 사실 추궁`, tone: 'gold' as const, onSelect: () => runQuestion('fact_pursuit') },
+            { label: `"왜 숨기셨습니까?" — 동기 탐색`,       tone: 'gold' as const, onSelect: () => runQuestion('motive_search') },
+            { label: `"이 증거를 보십시오" — 증거 제시`,      tone: 'gold' as const, onSelect: openEvidenceSelection },
           ]
-        : pendingTransitionChoice.label === 'cornered'
+        : choice.label === 'cornered'
           ? [
-              {
-                kind: 'run_question' as const,
-                label: `"더 숨길 게 있습니까?" — 정면 추궁`,
-                party: pendingTransitionChoice.party,
-                disputeId: pendingTransitionChoice.disputeId,
-                questionType: 'fact_pursuit' as const,
-              },
-              {
-                kind: 'run_question' as const,
-                label: `"사정이 있었겠지요" — 공감 접근`,
-                party: pendingTransitionChoice.party,
-                disputeId: pendingTransitionChoice.disputeId,
-                questionType: 'empathy_approach' as const,
-              },
-              {
-                kind: 'open_dispute_picker' as const,
-                label: '다른 쟁점으로 화제 전환',
-                disputeId: pendingTransitionChoice.disputeId,
-              },
+              { label: `"더 숨길 게 있습니까?" — 정면 추궁`, tone: 'red' as const, onSelect: () => runQuestion('fact_pursuit') },
+              { label: `"사정이 있었겠지요" — 공감 접근`,     tone: 'gold' as const, onSelect: () => runQuestion('empathy_approach') },
+              { label: '다른 쟁점으로 화제 전환',                 tone: 'gold' as const, onSelect: openDisputePicker },
             ]
           : [
-              {
-                kind: 'run_question' as const,
-                label: `"마지막으로 묻겠습니다" — 결정적 질문`,
-                party: pendingTransitionChoice.party,
-                disputeId: pendingTransitionChoice.disputeId,
-                questionType: 'fact_pursuit' as const,
-              },
-              {
-                kind: 'open_evidence_selection' as const,
-                label: `"이것으로 끝내겠습니다" — 증거 제시`,
-                party: pendingTransitionChoice.party,
-                disputeId: pendingTransitionChoice.disputeId,
-              },
-              {
-                kind: 'run_question' as const,
-                label: `"솔직히 말씀하시지요" — 자백 유도`,
-                party: pendingTransitionChoice.party,
-                disputeId: pendingTransitionChoice.disputeId,
-                questionType: 'empathy_approach' as const,
-              },
+              { label: `"마지막으로 묻겠습니다" — 결정적 질문`, tone: 'gold' as const, onSelect: () => runQuestion('fact_pursuit') },
+              { label: `"이것으로 끝내겠습니다" — 증거 제시`,    tone: 'gold' as const, onSelect: openEvidenceSelection },
+              { label: `"솔직히 말씀하시지요" — 자백 유도`,       tone: 'green' as const, onSelect: () => runQuestion('empathy_approach') },
             ]
 
-    openPcInteractionPanel({
+    useGameStore.getState().enqueueFeedback({
+      kind: 'transition_choice',
       title: `${partyName} — ${meta.title}`,
       subtitle: disputeName,
       body: meta.body,
       tone: meta.tone,
-      variant: 'feature',
+      party: choice.party,
+      disputeId: choice.disputeId,
       actions,
-      backdrop: false, // 뒤 채팅을 가리지 않는 소프트 상단 팝업으로 렌더
     })
     setPendingTransitionChoice(null)
-  }, [caseData, pendingTransitionChoice, setPendingTransitionChoice, discoveryActive])
+  }, [caseData, pendingTransitionChoice, setPendingTransitionChoice, dispatch])
 
   return (
     <>

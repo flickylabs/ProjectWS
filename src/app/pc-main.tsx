@@ -7,7 +7,8 @@ import ErrorBoundary from '../components/layout/ErrorBoundary'
 import ToastContainer from '../components/common/Toast'
 import PCPrototypeStyle from '../components/pc/prototype/PCPrototypeStyle'
 import PCSvgDefs from '../components/pc/icons/PCSvgDefs'
-import ArchetypeObservationPopup from '../components/pc/tags/ArchetypeObservationPopup'
+import EventFeedbackCard from '../components/pc/feedback/EventFeedbackCard'
+import MinorFeedbackStream from '../components/pc/feedback/MinorFeedbackStream'
 
 // PC 모드 — body 클래스 추가
 document.body.classList.add('pc-mode')
@@ -19,7 +20,8 @@ createRoot(document.getElementById('root')!).render(
       <PCSvgDefs />
       <PCApp />
       <ToastContainer />
-      <ArchetypeObservationPopup />
+      <EventFeedbackCard />
+      <MinorFeedbackStream />
     </ErrorBoundary>
   </StrictMode>,
 )

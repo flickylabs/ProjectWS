@@ -52,7 +52,7 @@ import { evaluateLinkEdges } from '../engine/linkEdgeEngine'
 import type { BeatScriptV2 } from '../types'
 import { toTrustWindowBand } from '../types'
 import { getAllTransitionBeats } from '../engine/v3GameLoopLoader'
-import { selectHint, markHintShown } from '../engine/archetypeHintEngine'
+import { selectHint, markHintShown, ARCHETYPE_META } from '../engine/archetypeHintEngine'
 
 /** LLM 모드 — AI 필수: 항상 true */
 const useLLMMode = true
@@ -100,16 +100,18 @@ function maybeShowArchetypeHint(target: PartyId, turnNumber: number): void {
   markHintShown(target)
   // 관찰 기록 + glow (최초 관찰이면 태그 신규 등장)
   state.observeArchetype(target, archetype)
-  // 채팅 addDialogue 제거 — 팝업 + 캐릭터 태그로만 처리
-  window.dispatchEvent(new CustomEvent<ArchetypeObservationDetail>(ARCHETYPE_OBSERVATION_EVENT, {
-    detail: {
-      party: target,
-      archetype,
-      hintText: hint.text,
-      effectiveApproach: hint.effectiveApproach,
-      turn: state.turnCount,
-    },
-  }))
+  // 통합 피드백 카드(observation)로 수렴 — 기존 커스텀 이벤트 경로는 유지(레거시 수신자 있을 시 호환)
+  const meta = ARCHETYPE_META[archetype]
+  state.enqueueFeedback({
+    kind: 'observation',
+    eyebrow: '재판관의 관찰',
+    body: hint.text,
+    tag: meta?.tagLabel,
+    tone: 'gold',
+    party: target,
+    archetype,
+    convergeToTag: true,
+  })
 }
 
 // V2 피로도 상태는 questionFatigueEngine.ts의 세션 상태에서 관리
@@ -716,10 +718,15 @@ async function handleQuestion(action: Extract<PlayerAction, { type: 'question' }
         }
       }
     } else {
-      // 토큰 축적 중 — 상태 피드백을 Toast로 (채팅 비삽입)
+      // 토큰 축적 중 — 통합 피드백 카드(info)로 (채팅 비삽입)
       const remaining = Math.ceil(threshold - newTokens)
       void remaining
-      showToast('모순이 쌓이고 있습니다. 조금 더 추궁하면 균열이 생길 것 같습니다.', 'info')
+      useGameStore.getState().enqueueFeedback({
+        kind: 'info',
+        eyebrow: '모순 감지',
+        body: '모순이 쌓이고 있습니다. 조금 더 추궁하면 균열이 생길 것 같습니다.',
+        tone: 'gold',
+      })
     }
 
   } else if (action.questionType === 'motive_search') {
@@ -1775,19 +1782,24 @@ function notifyLieTransition(party: PartyId, disputeId: string) {
     if (newState === 'S5') {
       playLieCollapse()
       v4Effects.confession(party, name)
-    } else {
-      v4Effects.newFact(`${name} — ${labels[newState]}`, disputeId)
     }
-    const icon = newState >= 'S4' ? '💥' : '⚡'
-    const text = newState === 'S5'
-      ? `🔥 결정적 순간 — ${name}의 진술 태도가 크게 변했다!`
-      : `${icon} ${name} — ${labels[newState]}`
+    // S1~S4: v4 newFact 배너 제거 — 통합 피드백 카드가 대체 (사운드 필요 시 이후 개별 추가)
     if (newState === 'S5') {
       // 결정적 순간은 영구 기록으로 채팅에 남김
+      const text = `🔥 결정적 순간 — ${name}의 진술 태도가 크게 변했다!`
       state.addDialogue({ speaker: 'system', text, relatedDisputes: [disputeId], turn: state.turnCount })
     } else {
-      // S1~S4 상태 변화는 Toast 팝업으로 — NPC 말풍선 읽은 뒤 등장하도록 지연
-      setTimeout(() => showToast(text, 'info'), 1500)
+      // S1~S4 상태 변화는 통합 피드백 카드로 — NPC 말풍선 읽은 뒤 등장하도록 1.5초 지연
+      setTimeout(() => {
+        useGameStore.getState().enqueueFeedback({
+          kind: 'state_change',
+          eyebrow: `${name}의 변화`,
+          body: labels[newState],
+          tone: 'gold',
+          party,
+          disputeId,
+        })
+      }, 1500)
     }
 
     // S5 도달 시 재판관이 계속 진술을 유도
