@@ -434,14 +434,14 @@
       "isTrap": false,
       "requires": [],
       "investigationResults": {
-        "request_original": "5장의 영수증 중, 올리브영 영수증이 눈에 들어온다. 머리끈, 틴트, 헤어롤 등 여성용 물품이다.",
-        "check_metadata": "다른 영수증 항목도 확인했다. 주유소 — 5만원 주유, 편의점 — 라면과 즉석밥 등 1만원, 꽃집 — 화분 3만원, 서점 — 참고서 2만원.",
-        "restore_context": "서점에서 구입한 참고서가 눈에 띈다. 30대 남성이 구입할 이유가 없는 물품이다."
+        "request_original": "틴트, 헤어롤 등 여성용 물건들이 눈에 띈다.",
+        "check_metadata": "머리끈, 손거울 등이 눈에 띈다. 샤프와 노트 같은 학용품도 함께 구매되어 있다.",
+        "restore_context": "중학생 대상 참고서를 구입한 것이 눈에 띈다."
       },
       "subjectParty": "b",
       "investigationStages": [
         {
-          "stage": 0,
+          "stage": 1,
           "revealKey": "request_original",
           "question": {
             "text": "이 영수증들, 누가 무엇을 산 것입니까?",
@@ -451,20 +451,20 @@
           "unlockHint": null
         },
         {
-          "stage": 1,
+          "stage": 2,
           "revealKey": "check_metadata",
           "question": {
-            "text": "서점에서 산 중학교 참고서는 누구를 위한 것입니까?",
+            "text": "이 품목들이 가리키는 상대는 누구입니까?",
             "attackVector": "context"
           },
           "label": "품목대조",
-          "unlockHint": "영수증을 확인하면 여성용품과 참고서 같은 품목 구성을 함께 대조할 수 있습니다."
+          "unlockHint": "영수증을 한 번 더 조사하면 다른 매장 품목까지 대조할 수 있습니다."
         },
         {
-          "stage": 2,
+          "stage": 3,
           "revealKey": "restore_context",
           "question": {
-            "text": "이 참고서가 중학교 2학년용이라는 것은 무엇을 의미합니까?",
+            "text": "중학생용 참고서는 누구를 위해 산 것입니까?",
             "attackVector": "responsibility"
           },
           "label": "대상복원",
@@ -561,8 +561,8 @@
           "sourceLabel": "기관",
           "legality": "ok",
           "legalLabel": "적법",
-          "stage": 1,
-          "stageLabel": "초기 공개",
+          "stage": 3,
+          "stageLabel": "전체 공개 (기본)",
           "sourceNote": "institutional / original",
           "redactions": []
         },
@@ -572,27 +572,9 @@
             "storeAddr": "서울 관악구 봉천로 234",
             "date": "2026.02.18 (화) 19:23",
             "items": [
-              {
-                "name": "빙그레 바나나맛우유",
-                "code": "880104",
-                "unitPrice": "1,500",
-                "qty": 1,
-                "amount": "1,500"
-              },
-              {
-                "name": "삼각김밥 불고기",
-                "code": "880211",
-                "unitPrice": "1,500",
-                "qty": 2,
-                "amount": "3,000"
-              },
-              {
-                "name": "핫식스 250ml",
-                "code": "880309",
-                "unitPrice": "900",
-                "qty": 1,
-                "amount": "900"
-              }
+              { "name": "빙그레 바나나맛우유", "code": "880104", "unitPrice": "1,500", "qty": 1, "amount": "1,500" },
+              { "name": "삼각김밥 불고기", "code": "880211", "unitPrice": "1,500", "qty": 2, "amount": "3,000" },
+              { "name": "핫식스 250ml", "code": "880309", "unitPrice": "900", "qty": 1, "amount": "900" }
             ],
             "subtotal": "5,400",
             "tax": "491",
@@ -605,57 +587,14 @@
             "storeAddr": "서울 관악구 봉천로 212 2F",
             "date": "2026.02.15 (토) 14:07",
             "items": [
-              {
-                "name": "이니스프리 그린티씨드세럼",
-                "code": "410752",
-                "unitPrice": "28,000",
-                "qty": 1,
-                "amount": "28,000"
-              },
-              {
-                "name": "에뛰드 픽싱틴트 #05",
-                "code": "410381",
-                "unitPrice": "12,000",
-                "qty": 1,
-                "amount": "12,000"
-              },
-              {
-                "name": "쏘내추럴 코튼패드 80매",
-                "code": "410104",
-                "unitPrice": "3,500",
-                "qty": 1,
-                "amount": "3,500"
-              }
+              { "name": "에뛰드 픽싱틴트 #05", "code": "410381", "unitPrice": "12,000", "qty": 1, "amount": "12,000" },
+              { "name": "매직 헤어롤 32mm 세트", "code": "410552", "unitPrice": "9,500", "qty": 1, "amount": "9,500" },
+              { "name": "이니스프리 그린티씨드세럼", "code": "410752", "unitPrice": "28,000", "qty": 1, "amount": "28,000" },
+              { "name": "쏘내추럴 코튼패드 80매", "code": "410104", "unitPrice": "3,500", "qty": 1, "amount": "3,500" }
             ],
-            "subtotal": "43,500",
-            "tax": "3,954",
-            "total": "43,500",
-            "paymentMethod": "신한카드 (일시불) ****-3892",
-            "suspicious": true
-          },
-          {
-            "storeName": "교보문고 강남점",
-            "storeAddr": "서울 서초구 강남대로 465",
-            "date": "2026.02.12 (수) 18:30",
-            "items": [
-              {
-                "name": "초등 수학 6-1 기본+응용",
-                "code": "978890",
-                "unitPrice": "16,000",
-                "qty": 1,
-                "amount": "16,000"
-              },
-              {
-                "name": "독해력 비타민 6단계",
-                "code": "978891",
-                "unitPrice": "13,000",
-                "qty": 1,
-                "amount": "13,000"
-              }
-            ],
-            "subtotal": "29,000",
-            "tax": "0",
-            "total": "29,000",
+            "subtotal": "53,000",
+            "tax": "4,818",
+            "total": "53,000",
             "paymentMethod": "신한카드 (일시불) ****-3892",
             "suspicious": true
           },
@@ -664,34 +603,10 @@
             "storeAddr": "서울 관악구 관악로 142",
             "date": "2026.02.08 (토) 21:45",
             "items": [
-              {
-                "name": "컵라면 진라면매운맛",
-                "code": "880022",
-                "unitPrice": "1,200",
-                "qty": 1,
-                "amount": "1,200"
-              },
-              {
-                "name": "삼각김밥 참치마요",
-                "code": "880215",
-                "unitPrice": "1,500",
-                "qty": 1,
-                "amount": "1,500"
-              },
-              {
-                "name": "코카콜라 500ml",
-                "code": "880301",
-                "unitPrice": "1,800",
-                "qty": 1,
-                "amount": "1,800"
-              },
-              {
-                "name": "핫도그 클래식",
-                "code": "880401",
-                "unitPrice": "2,000",
-                "qty": 1,
-                "amount": "2,000"
-              }
+              { "name": "컵라면 진라면매운맛", "code": "880022", "unitPrice": "1,200", "qty": 1, "amount": "1,200" },
+              { "name": "삼각김밥 참치마요", "code": "880215", "unitPrice": "1,500", "qty": 1, "amount": "1,500" },
+              { "name": "코카콜라 500ml", "code": "880301", "unitPrice": "1,800", "qty": 1, "amount": "1,800" },
+              { "name": "핫도그 클래식", "code": "880401", "unitPrice": "2,000", "qty": 1, "amount": "2,000" }
             ],
             "subtotal": "6,500",
             "tax": "591",
@@ -704,136 +619,34 @@
             "storeAddr": "서울 관악구 봉천로 201 1F",
             "date": "2026.02.05 (수) 16:12",
             "items": [
-              {
-                "name": "미니 손거울",
-                "code": "530101",
-                "unitPrice": "2,000",
-                "qty": 1,
-                "amount": "2,000"
-              },
-              {
-                "name": "머리끈 세트",
-                "code": "530205",
-                "unitPrice": "1,000",
-                "qty": 2,
-                "amount": "2,000"
-              },
-              {
-                "name": "캐릭터 스티커",
-                "code": "530310",
-                "unitPrice": "1,000",
-                "qty": 3,
-                "amount": "3,000"
-              },
-              {
-                "name": "어린이 지우개 세트",
-                "code": "530408",
-                "unitPrice": "1,000",
-                "qty": 1,
-                "amount": "1,000"
-              }
+              { "name": "미니 손거울", "code": "530101", "unitPrice": "2,000", "qty": 1, "amount": "2,000" },
+              { "name": "머리끈 세트", "code": "530205", "unitPrice": "1,000", "qty": 2, "amount": "2,000" },
+              { "name": "제도 샤프 0.5mm", "code": "530610", "unitPrice": "2,000", "qty": 1, "amount": "2,000" },
+              { "name": "스프링 노트 B5", "code": "530712", "unitPrice": "2,000", "qty": 1, "amount": "2,000" }
             ],
             "subtotal": "8,000",
             "tax": "727",
             "total": "8,000",
             "paymentMethod": "신한카드 (일시불) ****-3892",
             "suspicious": true
+          },
+          {
+            "storeName": "교보문고 강남점",
+            "storeAddr": "서울 서초구 강남대로 465",
+            "date": "2026.02.12 (수) 18:30",
+            "items": [
+              { "name": "중등 수학 1-1 기본+응용", "code": "978891", "unitPrice": "16,000", "qty": 1, "amount": "16,000" },
+              { "name": "중학 국어 독해력 1단계", "code": "978892", "unitPrice": "13,000", "qty": 1, "amount": "13,000" }
+            ],
+            "subtotal": "29,000",
+            "tax": "0",
+            "total": "29,000",
+            "paymentMethod": "신한카드 (일시불) ****-3892",
+            "suspicious": true
           }
         ]
       },
       "viewerDataByStage": {
-        "0": {
-          "meta": {
-            "name": "영수증 묶음 5장",
-            "type": "log",
-            "viewerType": "log",
-            "trustLevel": "mid",
-            "trustLabel": "보통",
-            "source": "org",
-            "sourceLabel": "기관",
-            "legality": "ok",
-            "legalLabel": "적법",
-            "stage": 1,
-            "stageLabel": "Stub — 편의점 영수증 2장만 확인",
-            "sourceNote": "institutional / original",
-            "redactions": []
-          },
-          "receipt": [
-            {
-              "storeName": "CU 관악봉천점",
-              "storeAddr": "서울 관악구 봉천로 234",
-              "date": "2026.02.18 (화) 19:23",
-              "items": [
-                {
-                  "name": "빙그레 바나나맛우유",
-                  "code": "880104",
-                  "unitPrice": "1,500",
-                  "qty": 1,
-                  "amount": "1,500"
-                },
-                {
-                  "name": "삼각김밥 불고기",
-                  "code": "880211",
-                  "unitPrice": "1,500",
-                  "qty": 2,
-                  "amount": "3,000"
-                },
-                {
-                  "name": "핫식스 250ml",
-                  "code": "880309",
-                  "unitPrice": "900",
-                  "qty": 1,
-                  "amount": "900"
-                }
-              ],
-              "subtotal": "5,400",
-              "tax": "491",
-              "total": "5,400",
-              "paymentMethod": "신한카드 (일시불) ****-3892",
-              "suspicious": false
-            },
-            {
-              "storeName": "GS25 관악중앙점",
-              "storeAddr": "서울 관악구 관악로 142",
-              "date": "2026.02.08 (토) 21:45",
-              "items": [
-                {
-                  "name": "컵라면 진라면매운맛",
-                  "code": "880022",
-                  "unitPrice": "1,200",
-                  "qty": 1,
-                  "amount": "1,200"
-                },
-                {
-                  "name": "삼각김밥 참치마요",
-                  "code": "880215",
-                  "unitPrice": "1,500",
-                  "qty": 1,
-                  "amount": "1,500"
-                },
-                {
-                  "name": "코카콜라 500ml",
-                  "code": "880301",
-                  "unitPrice": "1,800",
-                  "qty": 1,
-                  "amount": "1,800"
-                },
-                {
-                  "name": "핫도그 클래식",
-                  "code": "880401",
-                  "unitPrice": "2,000",
-                  "qty": 1,
-                  "amount": "2,000"
-                }
-              ],
-              "subtotal": "6,500",
-              "tax": "591",
-              "total": "6,500",
-              "paymentMethod": "신한카드 (일시불) ****-3892",
-              "suspicious": false
-            }
-          ]
-        },
         "1": {
           "meta": {
             "name": "영수증 묶음 5장",
@@ -846,7 +659,7 @@
             "legality": "ok",
             "legalLabel": "적법",
             "stage": 1,
-            "stageLabel": "Excerpt — 의심스러운 여성용품 포함 3장",
+            "stageLabel": "1단계 — 편의점·뷰티 2장",
             "sourceNote": "institutional / original",
             "redactions": []
           },
@@ -856,27 +669,9 @@
               "storeAddr": "서울 관악구 봉천로 234",
               "date": "2026.02.18 (화) 19:23",
               "items": [
-                {
-                  "name": "빙그레 바나나맛우유",
-                  "code": "880104",
-                  "unitPrice": "1,500",
-                  "qty": 1,
-                  "amount": "1,500"
-                },
-                {
-                  "name": "삼각김밥 불고기",
-                  "code": "880211",
-                  "unitPrice": "1,500",
-                  "qty": 2,
-                  "amount": "3,000"
-                },
-                {
-                  "name": "핫식스 250ml",
-                  "code": "880309",
-                  "unitPrice": "900",
-                  "qty": 1,
-                  "amount": "900"
-                }
+                { "name": "빙그레 바나나맛우유", "code": "880104", "unitPrice": "1,500", "qty": 1, "amount": "1,500" },
+                { "name": "삼각김밥 불고기", "code": "880211", "unitPrice": "1,500", "qty": 2, "amount": "3,000" },
+                { "name": "핫식스 250ml", "code": "880309", "unitPrice": "900", "qty": 1, "amount": "900" }
               ],
               "subtotal": "5,400",
               "tax": "491",
@@ -885,75 +680,18 @@
               "suspicious": false
             },
             {
-              "storeName": "GS25 관악중앙점",
-              "storeAddr": "서울 관악구 관악로 142",
-              "date": "2026.02.08 (토) 21:45",
-              "items": [
-                {
-                  "name": "컵라면 진라면매운맛",
-                  "code": "880022",
-                  "unitPrice": "1,200",
-                  "qty": 1,
-                  "amount": "1,200"
-                },
-                {
-                  "name": "삼각김밥 참치마요",
-                  "code": "880215",
-                  "unitPrice": "1,500",
-                  "qty": 1,
-                  "amount": "1,500"
-                },
-                {
-                  "name": "코카콜라 500ml",
-                  "code": "880301",
-                  "unitPrice": "1,800",
-                  "qty": 1,
-                  "amount": "1,800"
-                },
-                {
-                  "name": "핫도그 클래식",
-                  "code": "880401",
-                  "unitPrice": "2,000",
-                  "qty": 1,
-                  "amount": "2,000"
-                }
-              ],
-              "subtotal": "6,500",
-              "tax": "591",
-              "total": "6,500",
-              "paymentMethod": "신한카드 (일시불) ****-3892",
-              "suspicious": false
-            },
-            {
               "storeName": "올리브영 봉천역점",
               "storeAddr": "서울 관악구 봉천로 212 2F",
               "date": "2026.02.15 (토) 14:07",
               "items": [
-                {
-                  "name": "이니스프리 그린티씨드세럼",
-                  "code": "410752",
-                  "unitPrice": "28,000",
-                  "qty": 1,
-                  "amount": "28,000"
-                },
-                {
-                  "name": "에뛰드 픽싱틴트 #05",
-                  "code": "410381",
-                  "unitPrice": "12,000",
-                  "qty": 1,
-                  "amount": "12,000"
-                },
-                {
-                  "name": "쏘내추럴 코튼패드 80매",
-                  "code": "410104",
-                  "unitPrice": "3,500",
-                  "qty": 1,
-                  "amount": "3,500"
-                }
+                { "name": "에뛰드 픽싱틴트 #05", "code": "410381", "unitPrice": "12,000", "qty": 1, "amount": "12,000" },
+                { "name": "매직 헤어롤 32mm 세트", "code": "410552", "unitPrice": "9,500", "qty": 1, "amount": "9,500" },
+                { "name": "이니스프리 그린티씨드세럼", "code": "410752", "unitPrice": "28,000", "qty": 1, "amount": "28,000" },
+                { "name": "쏘내추럴 코튼패드 80매", "code": "410104", "unitPrice": "3,500", "qty": 1, "amount": "3,500" }
               ],
-              "subtotal": "43,500",
-              "tax": "3,954",
-              "total": "43,500",
+              "subtotal": "53,000",
+              "tax": "4,818",
+              "total": "53,000",
               "paymentMethod": "신한카드 (일시불) ****-3892",
               "suspicious": true
             }
@@ -970,8 +708,8 @@
             "sourceLabel": "기관",
             "legality": "ok",
             "legalLabel": "적법",
-            "stage": 1,
-            "stageLabel": "초기 공개",
+            "stage": 2,
+            "stageLabel": "2단계 — 편의점·생활용품 추가 (4장)",
             "sourceNote": "institutional / original",
             "redactions": []
           },
@@ -981,27 +719,9 @@
               "storeAddr": "서울 관악구 봉천로 234",
               "date": "2026.02.18 (화) 19:23",
               "items": [
-                {
-                  "name": "빙그레 바나나맛우유",
-                  "code": "880104",
-                  "unitPrice": "1,500",
-                  "qty": 1,
-                  "amount": "1,500"
-                },
-                {
-                  "name": "삼각김밥 불고기",
-                  "code": "880211",
-                  "unitPrice": "1,500",
-                  "qty": 2,
-                  "amount": "3,000"
-                },
-                {
-                  "name": "핫식스 250ml",
-                  "code": "880309",
-                  "unitPrice": "900",
-                  "qty": 1,
-                  "amount": "900"
-                }
+                { "name": "빙그레 바나나맛우유", "code": "880104", "unitPrice": "1,500", "qty": 1, "amount": "1,500" },
+                { "name": "삼각김밥 불고기", "code": "880211", "unitPrice": "1,500", "qty": 2, "amount": "3,000" },
+                { "name": "핫식스 250ml", "code": "880309", "unitPrice": "900", "qty": 1, "amount": "900" }
               ],
               "subtotal": "5,400",
               "tax": "491",
@@ -1014,57 +734,14 @@
               "storeAddr": "서울 관악구 봉천로 212 2F",
               "date": "2026.02.15 (토) 14:07",
               "items": [
-                {
-                  "name": "이니스프리 그린티씨드세럼",
-                  "code": "410752",
-                  "unitPrice": "28,000",
-                  "qty": 1,
-                  "amount": "28,000"
-                },
-                {
-                  "name": "에뛰드 픽싱틴트 #05",
-                  "code": "410381",
-                  "unitPrice": "12,000",
-                  "qty": 1,
-                  "amount": "12,000"
-                },
-                {
-                  "name": "쏘내추럴 코튼패드 80매",
-                  "code": "410104",
-                  "unitPrice": "3,500",
-                  "qty": 1,
-                  "amount": "3,500"
-                }
+                { "name": "에뛰드 픽싱틴트 #05", "code": "410381", "unitPrice": "12,000", "qty": 1, "amount": "12,000" },
+                { "name": "매직 헤어롤 32mm 세트", "code": "410552", "unitPrice": "9,500", "qty": 1, "amount": "9,500" },
+                { "name": "이니스프리 그린티씨드세럼", "code": "410752", "unitPrice": "28,000", "qty": 1, "amount": "28,000" },
+                { "name": "쏘내추럴 코튼패드 80매", "code": "410104", "unitPrice": "3,500", "qty": 1, "amount": "3,500" }
               ],
-              "subtotal": "43,500",
-              "tax": "3,954",
-              "total": "43,500",
-              "paymentMethod": "신한카드 (일시불) ****-3892",
-              "suspicious": true
-            },
-            {
-              "storeName": "교보문고 강남점",
-              "storeAddr": "서울 서초구 강남대로 465",
-              "date": "2026.02.12 (수) 18:30",
-              "items": [
-                {
-                  "name": "초등 수학 6-1 기본+응용",
-                  "code": "978890",
-                  "unitPrice": "16,000",
-                  "qty": 1,
-                  "amount": "16,000"
-                },
-                {
-                  "name": "독해력 비타민 6단계",
-                  "code": "978891",
-                  "unitPrice": "13,000",
-                  "qty": 1,
-                  "amount": "13,000"
-                }
-              ],
-              "subtotal": "29,000",
-              "tax": "0",
-              "total": "29,000",
+              "subtotal": "53,000",
+              "tax": "4,818",
+              "total": "53,000",
               "paymentMethod": "신한카드 (일시불) ****-3892",
               "suspicious": true
             },
@@ -1073,34 +750,10 @@
               "storeAddr": "서울 관악구 관악로 142",
               "date": "2026.02.08 (토) 21:45",
               "items": [
-                {
-                  "name": "컵라면 진라면매운맛",
-                  "code": "880022",
-                  "unitPrice": "1,200",
-                  "qty": 1,
-                  "amount": "1,200"
-                },
-                {
-                  "name": "삼각김밥 참치마요",
-                  "code": "880215",
-                  "unitPrice": "1,500",
-                  "qty": 1,
-                  "amount": "1,500"
-                },
-                {
-                  "name": "코카콜라 500ml",
-                  "code": "880301",
-                  "unitPrice": "1,800",
-                  "qty": 1,
-                  "amount": "1,800"
-                },
-                {
-                  "name": "핫도그 클래식",
-                  "code": "880401",
-                  "unitPrice": "2,000",
-                  "qty": 1,
-                  "amount": "2,000"
-                }
+                { "name": "컵라면 진라면매운맛", "code": "880022", "unitPrice": "1,200", "qty": 1, "amount": "1,200" },
+                { "name": "삼각김밥 참치마요", "code": "880215", "unitPrice": "1,500", "qty": 1, "amount": "1,500" },
+                { "name": "코카콜라 500ml", "code": "880301", "unitPrice": "1,800", "qty": 1, "amount": "1,800" },
+                { "name": "핫도그 클래식", "code": "880401", "unitPrice": "2,000", "qty": 1, "amount": "2,000" }
               ],
               "subtotal": "6,500",
               "tax": "591",
@@ -1113,38 +766,110 @@
               "storeAddr": "서울 관악구 봉천로 201 1F",
               "date": "2026.02.05 (수) 16:12",
               "items": [
-                {
-                  "name": "미니 손거울",
-                  "code": "530101",
-                  "unitPrice": "2,000",
-                  "qty": 1,
-                  "amount": "2,000"
-                },
-                {
-                  "name": "머리끈 세트",
-                  "code": "530205",
-                  "unitPrice": "1,000",
-                  "qty": 2,
-                  "amount": "2,000"
-                },
-                {
-                  "name": "캐릭터 스티커",
-                  "code": "530310",
-                  "unitPrice": "1,000",
-                  "qty": 3,
-                  "amount": "3,000"
-                },
-                {
-                  "name": "어린이 지우개 세트",
-                  "code": "530408",
-                  "unitPrice": "1,000",
-                  "qty": 1,
-                  "amount": "1,000"
-                }
+                { "name": "미니 손거울", "code": "530101", "unitPrice": "2,000", "qty": 1, "amount": "2,000" },
+                { "name": "머리끈 세트", "code": "530205", "unitPrice": "1,000", "qty": 2, "amount": "2,000" },
+                { "name": "제도 샤프 0.5mm", "code": "530610", "unitPrice": "2,000", "qty": 1, "amount": "2,000" },
+                { "name": "스프링 노트 B5", "code": "530712", "unitPrice": "2,000", "qty": 1, "amount": "2,000" }
               ],
               "subtotal": "8,000",
               "tax": "727",
               "total": "8,000",
+              "paymentMethod": "신한카드 (일시불) ****-3892",
+              "suspicious": true
+            }
+          ]
+        },
+        "3": {
+          "meta": {
+            "name": "영수증 묶음 5장",
+            "type": "log",
+            "viewerType": "log",
+            "trustLevel": "mid",
+            "trustLabel": "보통",
+            "source": "org",
+            "sourceLabel": "기관",
+            "legality": "ok",
+            "legalLabel": "적법",
+            "stage": 3,
+            "stageLabel": "3단계 — 전체 5장 (서점 포함)",
+            "sourceNote": "institutional / original",
+            "redactions": []
+          },
+          "receipt": [
+            {
+              "storeName": "CU 관악봉천점",
+              "storeAddr": "서울 관악구 봉천로 234",
+              "date": "2026.02.18 (화) 19:23",
+              "items": [
+                { "name": "빙그레 바나나맛우유", "code": "880104", "unitPrice": "1,500", "qty": 1, "amount": "1,500" },
+                { "name": "삼각김밥 불고기", "code": "880211", "unitPrice": "1,500", "qty": 2, "amount": "3,000" },
+                { "name": "핫식스 250ml", "code": "880309", "unitPrice": "900", "qty": 1, "amount": "900" }
+              ],
+              "subtotal": "5,400",
+              "tax": "491",
+              "total": "5,400",
+              "paymentMethod": "신한카드 (일시불) ****-3892",
+              "suspicious": false
+            },
+            {
+              "storeName": "올리브영 봉천역점",
+              "storeAddr": "서울 관악구 봉천로 212 2F",
+              "date": "2026.02.15 (토) 14:07",
+              "items": [
+                { "name": "에뛰드 픽싱틴트 #05", "code": "410381", "unitPrice": "12,000", "qty": 1, "amount": "12,000" },
+                { "name": "매직 헤어롤 32mm 세트", "code": "410552", "unitPrice": "9,500", "qty": 1, "amount": "9,500" },
+                { "name": "이니스프리 그린티씨드세럼", "code": "410752", "unitPrice": "28,000", "qty": 1, "amount": "28,000" },
+                { "name": "쏘내추럴 코튼패드 80매", "code": "410104", "unitPrice": "3,500", "qty": 1, "amount": "3,500" }
+              ],
+              "subtotal": "53,000",
+              "tax": "4,818",
+              "total": "53,000",
+              "paymentMethod": "신한카드 (일시불) ****-3892",
+              "suspicious": true
+            },
+            {
+              "storeName": "GS25 관악중앙점",
+              "storeAddr": "서울 관악구 관악로 142",
+              "date": "2026.02.08 (토) 21:45",
+              "items": [
+                { "name": "컵라면 진라면매운맛", "code": "880022", "unitPrice": "1,200", "qty": 1, "amount": "1,200" },
+                { "name": "삼각김밥 참치마요", "code": "880215", "unitPrice": "1,500", "qty": 1, "amount": "1,500" },
+                { "name": "코카콜라 500ml", "code": "880301", "unitPrice": "1,800", "qty": 1, "amount": "1,800" },
+                { "name": "핫도그 클래식", "code": "880401", "unitPrice": "2,000", "qty": 1, "amount": "2,000" }
+              ],
+              "subtotal": "6,500",
+              "tax": "591",
+              "total": "6,500",
+              "paymentMethod": "신한카드 (일시불) ****-3892",
+              "suspicious": false
+            },
+            {
+              "storeName": "다이소 봉천점",
+              "storeAddr": "서울 관악구 봉천로 201 1F",
+              "date": "2026.02.05 (수) 16:12",
+              "items": [
+                { "name": "미니 손거울", "code": "530101", "unitPrice": "2,000", "qty": 1, "amount": "2,000" },
+                { "name": "머리끈 세트", "code": "530205", "unitPrice": "1,000", "qty": 2, "amount": "2,000" },
+                { "name": "제도 샤프 0.5mm", "code": "530610", "unitPrice": "2,000", "qty": 1, "amount": "2,000" },
+                { "name": "스프링 노트 B5", "code": "530712", "unitPrice": "2,000", "qty": 1, "amount": "2,000" }
+              ],
+              "subtotal": "8,000",
+              "tax": "727",
+              "total": "8,000",
+              "paymentMethod": "신한카드 (일시불) ****-3892",
+              "suspicious": true
+            },
+            {
+              "storeName": "교보문고 강남점",
+              "storeAddr": "서울 서초구 강남대로 465",
+              "date": "2026.02.12 (수) 18:30",
+              "items": [
+                { "name": "중등 수학 1-1 기본+응용", "code": "978891", "unitPrice": "16,000", "qty": 1, "amount": "16,000" },
+                { "name": "중학 국어 독해력 1단계", "code": "978892", "unitPrice": "13,000", "qty": 1, "amount": "13,000" }
+              ],
+              "subtotal": "29,000",
+              "tax": "0",
+              "total": "29,000",
               "paymentMethod": "신한카드 (일시불) ****-3892",
               "suspicious": true
             }
@@ -1169,14 +894,14 @@
       "isTrap": false,
       "requires": [],
       "investigationResults": {
-        "request_original": "블랙박스 GPS에 매일 같은 좌표에 정차한 기록이 남아 있다. 네비 즐겨찾기에도 같은 주소가 저장되어 있다.",
-        "check_metadata": "정차 빈도는 주 2~3회 이상이며, 체류 시간은 2~3시간이다. 오피스텔 주소로 확인된다.",
-        "restore_context": "GPS 정차 기록을 시간대로 분류하면, 방문은 평일 저녁 식사 시간대(19~21시)에만 집중되어 있다. 주말·심야 방문은 없다. 외박이나 장시간 체류도 없는 짧은 단기 체류 패턴이다."
+        "request_original": "매일 비슷한 시각에 동일한 좌표로 이동한 흔적이 보인다.",
+        "check_metadata": "방문 장소를 연계했다. 비슷한 시각에 오피스텔에 반복 방문한 것이 확실하다.",
+        "restore_context": "좀 이상하다. 외도로 보기에는 방문 시각이 짧은 듯하다."
       },
       "subjectParty": "b",
       "investigationStages": [
         {
-          "stage": 0,
+          "stage": 1,
           "revealKey": "request_original",
           "question": {
             "text": "이 GPS 기록, 본인 차 맞습니까?",
@@ -1186,24 +911,24 @@
           "unlockHint": null
         },
         {
-          "stage": 1,
+          "stage": 2,
           "revealKey": "check_metadata",
           "question": {
-            "text": "왜 같은 오피스텔에 매일 갔습니까?",
+            "text": "왜 같은 오피스텔에 반복해서 갔습니까?",
             "attackVector": "context"
           },
           "label": "동선대조",
-          "unlockHint": "기록을 확인하면 반복 정차 좌표와 체류 시간을 대조할 수 있습니다."
+          "unlockHint": "기록을 한 번 더 조사하면 좌표가 어느 장소인지 연계할 수 있습니다."
         },
         {
-          "stage": 2,
+          "stage": 3,
           "revealKey": "restore_context",
           "question": {
-            "text": "그 방문 사실을 왜 배우자에게 말하지 않았습니까?",
+            "text": "매번 2~3시간만 머물렀습니다. 어떤 목적의 방문이었습니까?",
             "attackVector": "responsibility"
           },
-          "label": "숨김추궁",
-          "unlockHint": "동선을 대조하면 왜 같은 오피스텔 방문을 배우자에게 숨겼는지 추궁할 수 있습니다."
+          "label": "시간패턴",
+          "unlockHint": "동선을 대조하면 체류 시간의 패턴이 드러납니다."
         }
       ],
       "partyContext": {
@@ -1447,6 +1172,77 @@
             "suspicious": true
           }
         ]
+      },
+      "viewerDataByStage": {
+        "1": {
+          "meta": { "name": "블랙박스 GPS 기록", "type": "device", "viewerType": "device", "trustLevel": "mid", "trustLabel": "보통", "source": "org", "sourceLabel": "기관", "legality": "ok", "legalLabel": "적법", "stage": 1, "stageLabel": "1단계 — 시각/속도/좌표만", "sourceNote": "institutional / original", "redactions": ["location"] },
+          "gps_log": [
+            { "timestamp": "02.18 18:32", "lat": "37.5565", "lng": "126.9097", "speed": "0 km/h", "location": "??", "suspicious": false },
+            { "timestamp": "02.18 18:45", "lat": "37.5412", "lng": "126.9119", "speed": "42 km/h", "location": "??", "suspicious": false },
+            { "timestamp": "02.18 18:58", "lat": "37.5185", "lng": "126.9278", "speed": "35 km/h", "location": "??", "suspicious": false },
+            { "timestamp": "02.18 19:05", "lat": "37.5092", "lng": "126.9310", "speed": "28 km/h", "location": "??", "suspicious": false },
+            { "timestamp": "02.18 19:12", "lat": "37.4985", "lng": "126.9448", "speed": "15 km/h", "location": "??", "suspicious": false },
+            { "timestamp": "02.18 19:14", "lat": "37.4962", "lng": "126.9461", "speed": "0 km/h", "location": "??", "suspicious": false },
+            { "timestamp": "02.18 21:47", "lat": "37.4962", "lng": "126.9461", "speed": "0 km/h", "location": "??", "suspicious": false },
+            { "timestamp": "02.18 21:48", "lat": "37.4968", "lng": "126.9455", "speed": "8 km/h", "location": "??", "suspicious": false },
+            { "timestamp": "02.18 22:02", "lat": "37.5092", "lng": "126.9310", "speed": "45 km/h", "location": "??", "suspicious": false },
+            { "timestamp": "02.18 22:15", "lat": "37.5258", "lng": "126.9138", "speed": "38 km/h", "location": "??", "suspicious": false },
+            { "timestamp": "02.18 22:28", "lat": "37.5565", "lng": "126.9097", "speed": "0 km/h", "location": "??", "suspicious": false },
+            { "timestamp": "02.15 14:01", "lat": "37.5565", "lng": "126.9097", "speed": "0 km/h", "location": "??", "suspicious": false },
+            { "timestamp": "02.15 14:18", "lat": "37.4962", "lng": "126.9461", "speed": "0 km/h", "location": "??", "suspicious": false },
+            { "timestamp": "02.15 16:42", "lat": "37.4962", "lng": "126.9461", "speed": "0 km/h", "location": "??", "suspicious": false },
+            { "timestamp": "02.12 18:05", "lat": "37.5565", "lng": "126.9097", "speed": "0 km/h", "location": "??", "suspicious": false },
+            { "timestamp": "02.12 18:22", "lat": "37.4962", "lng": "126.9461", "speed": "0 km/h", "location": "??", "suspicious": false },
+            { "timestamp": "02.12 20:55", "lat": "37.4962", "lng": "126.9461", "speed": "0 km/h", "location": "??", "suspicious": false },
+            { "timestamp": "02.08 21:20", "lat": "37.4962", "lng": "126.9461", "speed": "0 km/h", "location": "??", "suspicious": false }
+          ]
+        },
+        "2": {
+          "meta": { "name": "블랙박스 GPS 기록", "type": "device", "viewerType": "device", "trustLevel": "mid", "trustLabel": "보통", "source": "org", "sourceLabel": "기관", "legality": "ok", "legalLabel": "적법", "stage": 2, "stageLabel": "2단계 — 위치 연계 공개", "sourceNote": "institutional / original", "redactions": [] },
+          "gps_log": [
+            { "timestamp": "02.18 18:32", "lat": "37.5565", "lng": "126.9097", "speed": "0 km/h", "location": "자택 (마포구 망원동)", "suspicious": false },
+            { "timestamp": "02.18 18:45", "lat": "37.5412", "lng": "126.9119", "speed": "42 km/h", "location": "여의대로 합류", "suspicious": false },
+            { "timestamp": "02.18 18:58", "lat": "37.5185", "lng": "126.9278", "speed": "35 km/h", "location": "노량진역 부근", "suspicious": false },
+            { "timestamp": "02.18 19:05", "lat": "37.5092", "lng": "126.9310", "speed": "28 km/h", "location": "상도터널 진입", "suspicious": false },
+            { "timestamp": "02.18 19:12", "lat": "37.4985", "lng": "126.9448", "speed": "15 km/h", "location": "관악구 봉천동 진입", "suspicious": false },
+            { "timestamp": "02.18 19:14", "lat": "37.4962", "lng": "126.9461", "speed": "0 km/h", "location": "봉천동 엔젤오피스텔 앞 (주차)", "suspicious": false },
+            { "timestamp": "02.18 21:47", "lat": "37.4962", "lng": "126.9461", "speed": "0 km/h", "location": "(주차 유지)", "suspicious": false },
+            { "timestamp": "02.18 21:48", "lat": "37.4968", "lng": "126.9455", "speed": "8 km/h", "location": "봉천동 출발", "suspicious": false },
+            { "timestamp": "02.18 22:02", "lat": "37.5092", "lng": "126.9310", "speed": "45 km/h", "location": "상도터널 통과", "suspicious": false },
+            { "timestamp": "02.18 22:15", "lat": "37.5258", "lng": "126.9138", "speed": "38 km/h", "location": "여의도 방면", "suspicious": false },
+            { "timestamp": "02.18 22:28", "lat": "37.5565", "lng": "126.9097", "speed": "0 km/h", "location": "자택 도착", "suspicious": false },
+            { "timestamp": "02.15 14:01", "lat": "37.5565", "lng": "126.9097", "speed": "0 km/h", "location": "자택 출발", "suspicious": false },
+            { "timestamp": "02.15 14:18", "lat": "37.4962", "lng": "126.9461", "speed": "0 km/h", "location": "봉천동 엔젤오피스텔 앞 (주차)", "suspicious": false },
+            { "timestamp": "02.15 16:42", "lat": "37.4962", "lng": "126.9461", "speed": "0 km/h", "location": "(주차 유지)", "suspicious": false },
+            { "timestamp": "02.12 18:05", "lat": "37.5565", "lng": "126.9097", "speed": "0 km/h", "location": "자택 출발", "suspicious": false },
+            { "timestamp": "02.12 18:22", "lat": "37.4962", "lng": "126.9461", "speed": "0 km/h", "location": "봉천동 엔젤오피스텔 앞 (주차)", "suspicious": false },
+            { "timestamp": "02.12 20:55", "lat": "37.4962", "lng": "126.9461", "speed": "0 km/h", "location": "(주차 유지)", "suspicious": false },
+            { "timestamp": "02.08 21:20", "lat": "37.4962", "lng": "126.9461", "speed": "0 km/h", "location": "봉천동 엔젤오피스텔 앞 (주차)", "suspicious": false }
+          ]
+        },
+        "3": {
+          "meta": { "name": "블랙박스 GPS 기록", "type": "device", "viewerType": "device", "trustLevel": "mid", "trustLabel": "보통", "source": "org", "sourceLabel": "기관", "legality": "ok", "legalLabel": "적법", "stage": 3, "stageLabel": "3단계 — 시간 패턴 강조", "sourceNote": "institutional / original", "redactions": [] },
+          "gps_log": [
+            { "timestamp": "02.18 18:32", "lat": "37.5565", "lng": "126.9097", "speed": "0 km/h", "location": "자택 (마포구 망원동)", "suspicious": false },
+            { "timestamp": "02.18 18:45", "lat": "37.5412", "lng": "126.9119", "speed": "42 km/h", "location": "여의대로 합류", "suspicious": false },
+            { "timestamp": "02.18 18:58", "lat": "37.5185", "lng": "126.9278", "speed": "35 km/h", "location": "노량진역 부근", "suspicious": false },
+            { "timestamp": "02.18 19:05", "lat": "37.5092", "lng": "126.9310", "speed": "28 km/h", "location": "상도터널 진입", "suspicious": false },
+            { "timestamp": "02.18 19:12", "lat": "37.4985", "lng": "126.9448", "speed": "15 km/h", "location": "관악구 봉천동 진입", "suspicious": true },
+            { "timestamp": "02.18 19:14", "lat": "37.4962", "lng": "126.9461", "speed": "0 km/h", "location": "★ 봉천동 엔젤오피스텔 앞 (주차)", "suspicious": true },
+            { "timestamp": "02.18 21:47", "lat": "37.4962", "lng": "126.9461", "speed": "0 km/h", "location": "(주차 유지 — 2시간 32분)", "suspicious": true },
+            { "timestamp": "02.18 21:48", "lat": "37.4968", "lng": "126.9455", "speed": "8 km/h", "location": "봉천동 출발", "suspicious": true },
+            { "timestamp": "02.18 22:02", "lat": "37.5092", "lng": "126.9310", "speed": "45 km/h", "location": "상도터널 통과", "suspicious": false },
+            { "timestamp": "02.18 22:15", "lat": "37.5258", "lng": "126.9138", "speed": "38 km/h", "location": "여의도 방면", "suspicious": false },
+            { "timestamp": "02.18 22:28", "lat": "37.5565", "lng": "126.9097", "speed": "0 km/h", "location": "자택 도착", "suspicious": false },
+            { "timestamp": "02.15 14:01", "lat": "37.5565", "lng": "126.9097", "speed": "0 km/h", "location": "자택 출발", "suspicious": false },
+            { "timestamp": "02.15 14:18", "lat": "37.4962", "lng": "126.9461", "speed": "0 km/h", "location": "★ 봉천동 엔젤오피스텔 앞 (주차)", "suspicious": true },
+            { "timestamp": "02.15 16:42", "lat": "37.4962", "lng": "126.9461", "speed": "0 km/h", "location": "(주차 유지 — 2시간 24분)", "suspicious": true },
+            { "timestamp": "02.12 18:05", "lat": "37.5565", "lng": "126.9097", "speed": "0 km/h", "location": "자택 출발", "suspicious": false },
+            { "timestamp": "02.12 18:22", "lat": "37.4962", "lng": "126.9461", "speed": "0 km/h", "location": "★ 봉천동 엔젤오피스텔 앞 (주차)", "suspicious": true },
+            { "timestamp": "02.12 20:55", "lat": "37.4962", "lng": "126.9461", "speed": "0 km/h", "location": "(주차 유지 — 2시간 32분)", "suspicious": true },
+            { "timestamp": "02.08 21:20", "lat": "37.4962", "lng": "126.9461", "speed": "0 km/h", "location": "★ 봉천동 엔젤오피스텔 앞 (주차)", "suspicious": true }
+          ]
+        }
       }
     },
     {
@@ -1466,41 +1262,41 @@
       "isTrap": false,
       "requires": [],
       "investigationResults": {
-        "request_original": "새벽 시간대에 같은 번호로 반복 통화한 기록이다. 낮에도 짧은 통화가 다수 있다.",
-        "check_metadata": "통화 상대는 1명이다. 새벽과 낮 모두 같은 번호이며, 긴급 연락 패턴이다.",
-        "restore_context": "통화 시간을 집계하면 대부분 2~3분, 가장 긴 통화도 4분 30초를 넘지 않는다. 외도 관계에서 흔한 장시간 새벽 통화 패턴이 아니다. 용건만 짧게 주고받는 실용적 연락에 가깝다."
+        "request_original": "통화 목록을 조회했다. 반복적으로 통화를 한 흔적이 보인다.",
+        "check_metadata": "저장된 번호들과 매핑했다. 등록되지 않은 번호와 자주 통화를 한 것이 확인된다.",
+        "restore_context": "좀 이상하다. 외도로 보기에는 통화 시간이 짧은 듯하다."
       },
       "subjectParty": "b",
       "investigationStages": [
         {
-          "stage": 0,
+          "stage": 1,
           "revealKey": "request_original",
           "question": {
-            "text": "이 통화기록의 상대는 누구입니까?",
+            "text": "이 통화기록은 본인 명의가 맞습니까?",
             "attackVector": "authenticity"
           },
           "label": "기록확인",
           "unlockHint": null
         },
         {
-          "stage": 1,
+          "stage": 2,
           "revealKey": "check_metadata",
           "question": {
-            "text": "왜 새벽에 반복적으로 같은 번호에 전화했습니까?",
+            "text": "이 미등록 번호의 상대는 누구입니까?",
             "attackVector": "context"
           },
-          "label": "패턴대조",
-          "unlockHint": "기록을 확인하면 새벽 통화와 낮 통화가 같은 번호인지 패턴을 대조할 수 있습니다."
+          "label": "상대매핑",
+          "unlockHint": "기록을 한 번 더 조사하면 저장된 번호들과 대조해 상대를 특정할 수 있습니다."
         },
         {
-          "stage": 2,
+          "stage": 3,
           "revealKey": "restore_context",
           "question": {
-            "text": "이 통화 내용을 왜 배우자에게 숨겼습니까?",
+            "text": "통화 시간이 매번 짧습니다. 어떤 용건이었습니까?",
             "attackVector": "responsibility"
           },
-          "label": "숨김추궁",
-          "unlockHint": "통화 패턴을 대조하면 왜 이 연락의 상대와 내용을 숨겼는지 추궁할 수 있습니다."
+          "label": "시간패턴",
+          "unlockHint": "통화 길이를 집계하면 연락의 성격이 드러납니다."
         }
       ],
       "partyContext": {
@@ -1600,88 +1396,90 @@
         },
         "log": {
           "rows": [
-            {
-              "date": "02.05 00:12",
-              "type": "out",
-              "typeLabel": "발신",
-              "target": "010-****-3847",
-              "duration": "3분 12초",
-              "suspicious": true
-            },
-            {
-              "date": "02.04 22:35",
-              "type": "in",
-              "typeLabel": "수신",
-              "target": "010-****-7720 (아내)",
-              "duration": "1분 05초",
-              "suspicious": false
-            },
-            {
-              "date": "02.04 19:08",
-              "type": "out",
-              "typeLabel": "발신",
-              "target": "010-****-3847",
-              "duration": "4분 28초",
-              "suspicious": true
-            },
-            {
-              "date": "02.04 14:22",
-              "type": "miss",
-              "typeLabel": "부재중",
-              "target": "070-7892-3310",
-              "duration": "-",
-              "suspicious": false
-            },
-            {
-              "date": "02.03 21:15",
-              "type": "out",
-              "typeLabel": "발신",
-              "target": "010-****-3847",
-              "duration": "2분 47초",
-              "suspicious": true
-            },
-            {
-              "date": "02.03 18:40",
-              "type": "in",
-              "typeLabel": "수신",
-              "target": "02-3441-**** (직장)",
-              "duration": "2분 10초",
-              "suspicious": false
-            },
-            {
-              "date": "02.02 20:50",
-              "type": "out",
-              "typeLabel": "발신",
-              "target": "010-****-3847",
-              "duration": "3분 55초",
-              "suspicious": true
-            },
-            {
-              "date": "02.01 12:15",
-              "type": "miss",
-              "typeLabel": "부재중",
-              "target": "070-8855-1120",
-              "duration": "-",
-              "suspicious": false
-            },
-            {
-              "date": "02.01 09:30",
-              "type": "out",
-              "typeLabel": "발신",
-              "target": "010-****-3847",
-              "duration": "1분 48초",
-              "suspicious": true
-            },
-            {
-              "date": "01.31 23:48",
-              "type": "out",
-              "typeLabel": "발신",
-              "target": "010-****-3847",
-              "duration": "4분 12초",
-              "suspicious": true
-            }
+            { "date": "02.05 00:12", "type": "out", "typeLabel": "발신", "target": "010-****-3847", "duration": "3분 12초", "suspicious": true },
+            { "date": "02.04 22:35", "type": "in", "typeLabel": "수신", "target": "010-****-7720 (아내)", "duration": "1분 05초", "suspicious": false },
+            { "date": "02.04 19:08", "type": "out", "typeLabel": "발신", "target": "010-****-3847", "duration": "4분 28초", "suspicious": true },
+            { "date": "02.04 14:22", "type": "miss", "typeLabel": "부재중", "target": "070-****-3310", "duration": "-", "suspicious": false },
+            { "date": "02.04 08:15", "type": "out", "typeLabel": "발신", "target": "02-****-3441 (직장)", "duration": "1분 30초", "suspicious": false },
+            { "date": "02.03 21:15", "type": "out", "typeLabel": "발신", "target": "010-****-3847", "duration": "2분 47초", "suspicious": true },
+            { "date": "02.03 18:40", "type": "in", "typeLabel": "수신", "target": "02-****-3441 (직장)", "duration": "2분 10초", "suspicious": false },
+            { "date": "02.03 12:10", "type": "out", "typeLabel": "발신", "target": "010-****-7720 (아내)", "duration": "0분 45초", "suspicious": false },
+            { "date": "02.02 20:50", "type": "out", "typeLabel": "발신", "target": "010-****-3847", "duration": "3분 55초", "suspicious": true },
+            { "date": "02.02 07:32", "type": "in", "typeLabel": "수신", "target": "010-****-7720 (아내)", "duration": "1분 20초", "suspicious": false },
+            { "date": "02.01 12:15", "type": "miss", "typeLabel": "부재중", "target": "070-****-1120", "duration": "-", "suspicious": false },
+            { "date": "02.01 10:45", "type": "in", "typeLabel": "수신", "target": "02-****-3441 (직장)", "duration": "3분 05초", "suspicious": false },
+            { "date": "02.01 09:30", "type": "out", "typeLabel": "발신", "target": "010-****-3847", "duration": "1분 48초", "suspicious": true },
+            { "date": "01.31 23:48", "type": "out", "typeLabel": "발신", "target": "010-****-3847", "duration": "4분 12초", "suspicious": true }
           ],
           "note": "010-****-3847 번호로의 야간 통화가 반복적으로 확인됨. 다만 통화 시간은 대부분 3분 이하, 최장도 5분 미만."
+        }
+      },
+      "viewerDataByStage": {
+        "1": {
+          "meta": { "name": "통화기록", "type": "log", "viewerType": "log", "trustLevel": "mid", "trustLabel": "보통", "source": "org", "sourceLabel": "기관", "legality": "ok", "legalLabel": "적법", "stage": 1, "stageLabel": "1단계 — 시각·번호·통화시간만", "sourceNote": "institutional / original", "redactions": ["target_label"] },
+          "log": {
+            "rows": [
+              { "date": "02.05 00:12", "type": "out", "typeLabel": "발신", "target": "010-****-3847", "duration": "3분 12초", "suspicious": false },
+              { "date": "02.04 22:35", "type": "in", "typeLabel": "수신", "target": "010-****-7720", "duration": "1분 05초", "suspicious": false },
+              { "date": "02.04 19:08", "type": "out", "typeLabel": "발신", "target": "010-****-3847", "duration": "4분 28초", "suspicious": false },
+              { "date": "02.04 14:22", "type": "miss", "typeLabel": "부재중", "target": "070-****-3310", "duration": "-", "suspicious": false },
+              { "date": "02.04 08:15", "type": "out", "typeLabel": "발신", "target": "02-****-3441", "duration": "1분 30초", "suspicious": false },
+              { "date": "02.03 21:15", "type": "out", "typeLabel": "발신", "target": "010-****-3847", "duration": "2분 47초", "suspicious": false },
+              { "date": "02.03 18:40", "type": "in", "typeLabel": "수신", "target": "02-****-3441", "duration": "2분 10초", "suspicious": false },
+              { "date": "02.03 12:10", "type": "out", "typeLabel": "발신", "target": "010-****-7720", "duration": "0분 45초", "suspicious": false },
+              { "date": "02.02 20:50", "type": "out", "typeLabel": "발신", "target": "010-****-3847", "duration": "3분 55초", "suspicious": false },
+              { "date": "02.02 07:32", "type": "in", "typeLabel": "수신", "target": "010-****-7720", "duration": "1분 20초", "suspicious": false },
+              { "date": "02.01 12:15", "type": "miss", "typeLabel": "부재중", "target": "070-****-1120", "duration": "-", "suspicious": false },
+              { "date": "02.01 10:45", "type": "in", "typeLabel": "수신", "target": "02-****-3441", "duration": "3분 05초", "suspicious": false },
+              { "date": "02.01 09:30", "type": "out", "typeLabel": "발신", "target": "010-****-3847", "duration": "1분 48초", "suspicious": false },
+              { "date": "01.31 23:48", "type": "out", "typeLabel": "발신", "target": "010-****-3847", "duration": "4분 12초", "suspicious": false }
+            ],
+            "note": "반복 통화 흔적이 보인다."
+          }
+        },
+        "2": {
+          "meta": { "name": "통화기록", "type": "log", "viewerType": "log", "trustLevel": "mid", "trustLabel": "보통", "source": "org", "sourceLabel": "기관", "legality": "ok", "legalLabel": "적법", "stage": 2, "stageLabel": "2단계 — 상대 매핑 + 미등록 강조", "sourceNote": "institutional / original", "redactions": [] },
+          "log": {
+            "rows": [
+              { "date": "02.05 00:12", "type": "out", "typeLabel": "발신", "target": "010-****-3847", "duration": "3분 12초", "suspicious": true },
+              { "date": "02.04 22:35", "type": "in", "typeLabel": "수신", "target": "010-****-7720 (아내)", "duration": "1분 05초", "suspicious": false },
+              { "date": "02.04 19:08", "type": "out", "typeLabel": "발신", "target": "010-****-3847", "duration": "4분 28초", "suspicious": true },
+              { "date": "02.04 14:22", "type": "miss", "typeLabel": "부재중", "target": "070-****-3310", "duration": "-", "suspicious": false },
+              { "date": "02.04 08:15", "type": "out", "typeLabel": "발신", "target": "02-****-3441 (직장)", "duration": "1분 30초", "suspicious": false },
+              { "date": "02.03 21:15", "type": "out", "typeLabel": "발신", "target": "010-****-3847", "duration": "2분 47초", "suspicious": true },
+              { "date": "02.03 18:40", "type": "in", "typeLabel": "수신", "target": "02-****-3441 (직장)", "duration": "2분 10초", "suspicious": false },
+              { "date": "02.03 12:10", "type": "out", "typeLabel": "발신", "target": "010-****-7720 (아내)", "duration": "0분 45초", "suspicious": false },
+              { "date": "02.02 20:50", "type": "out", "typeLabel": "발신", "target": "010-****-3847", "duration": "3분 55초", "suspicious": true },
+              { "date": "02.02 07:32", "type": "in", "typeLabel": "수신", "target": "010-****-7720 (아내)", "duration": "1분 20초", "suspicious": false },
+              { "date": "02.01 12:15", "type": "miss", "typeLabel": "부재중", "target": "070-****-1120", "duration": "-", "suspicious": false },
+              { "date": "02.01 10:45", "type": "in", "typeLabel": "수신", "target": "02-****-3441 (직장)", "duration": "3분 05초", "suspicious": false },
+              { "date": "02.01 09:30", "type": "out", "typeLabel": "발신", "target": "010-****-3847", "duration": "1분 48초", "suspicious": true },
+              { "date": "01.31 23:48", "type": "out", "typeLabel": "발신", "target": "010-****-3847", "duration": "4분 12초", "suspicious": true }
+            ],
+            "note": "등록되지 않은 번호(010-****-3847)와 반복 통화가 확인된다."
+          }
+        },
+        "3": {
+          "meta": { "name": "통화기록", "type": "log", "viewerType": "log", "trustLevel": "mid", "trustLabel": "보통", "source": "org", "sourceLabel": "기관", "legality": "ok", "legalLabel": "적법", "stage": 3, "stageLabel": "3단계 — 통화 길이 패턴 강조", "sourceNote": "institutional / original", "redactions": [] },
+          "log": {
+            "rows": [
+              { "date": "02.05 00:12", "type": "out", "typeLabel": "발신", "target": "010-****-3847", "duration": "3분 12초", "suspicious": true },
+              { "date": "02.04 22:35", "type": "in", "typeLabel": "수신", "target": "010-****-7720 (아내)", "duration": "1분 05초", "suspicious": false },
+              { "date": "02.04 19:08", "type": "out", "typeLabel": "발신", "target": "010-****-3847", "duration": "4분 28초", "suspicious": true },
+              { "date": "02.04 14:22", "type": "miss", "typeLabel": "부재중", "target": "070-****-3310", "duration": "-", "suspicious": false },
+              { "date": "02.04 08:15", "type": "out", "typeLabel": "발신", "target": "02-****-3441 (직장)", "duration": "1분 30초", "suspicious": false },
+              { "date": "02.03 21:15", "type": "out", "typeLabel": "발신", "target": "010-****-3847", "duration": "2분 47초", "suspicious": true },
+              { "date": "02.03 18:40", "type": "in", "typeLabel": "수신", "target": "02-****-3441 (직장)", "duration": "2분 10초", "suspicious": false },
+              { "date": "02.03 12:10", "type": "out", "typeLabel": "발신", "target": "010-****-7720 (아내)", "duration": "0분 45초", "suspicious": false },
+              { "date": "02.02 20:50", "type": "out", "typeLabel": "발신", "target": "010-****-3847", "duration": "3분 55초", "suspicious": true },
+              { "date": "02.02 07:32", "type": "in", "typeLabel": "수신", "target": "010-****-7720 (아내)", "duration": "1분 20초", "suspicious": false },
+              { "date": "02.01 12:15", "type": "miss", "typeLabel": "부재중", "target": "070-****-1120", "duration": "-", "suspicious": false },
+              { "date": "02.01 10:45", "type": "in", "typeLabel": "수신", "target": "02-****-3441 (직장)", "duration": "3분 05초", "suspicious": false },
+              { "date": "02.01 09:30", "type": "out", "typeLabel": "발신", "target": "010-****-3847", "duration": "1분 48초", "suspicious": true },
+              { "date": "01.31 23:48", "type": "out", "typeLabel": "발신", "target": "010-****-3847", "duration": "4분 12초", "suspicious": true }
+            ],
+            "note": "010-****-3847 번호 통화가 반복적이지만, 통화 시간이 대부분 3분 이하. 외도로 보기에는 짧다."
+          }
         }
       }
     },
@@ -1712,7 +1510,7 @@
       "subjectParty": "b",
       "investigationStages": [
         {
-          "stage": 0,
+          "stage": 1,
           "revealKey": "request_original",
           "question": {
             "text": "이 문자의 발신자는 누구입니까?",
@@ -1722,7 +1520,7 @@
           "unlockHint": null
         },
         {
-          "stage": 1,
+          "stage": 2,
           "revealKey": "check_metadata",
           "question": {
             "text": "이 번호는 왜 번호부에 저장해두지 않으셨습니까?",
@@ -1732,7 +1530,7 @@
           "unlockHint": "대화 내용을 확인하면 번호 주인의 정체를 좁혀볼 수 있습니다."
         },
         {
-          "stage": 2,
+          "stage": 3,
           "revealKey": "restore_context",
           "question": {
             "text": "이 문자 스레드가 오피스텔 방문과 어떤 관계입니까?",
@@ -2181,7 +1979,7 @@
       "subjectParty": "both",
       "investigationStages": [
         {
-          "stage": 0,
+          "stage": 1,
           "revealKey": "request_original",
           "question": {
             "text": "이 출금 기록은 본인 계좌 맞습니까?",
@@ -2191,7 +1989,7 @@
           "unlockHint": null
         },
         {
-          "stage": 1,
+          "stage": 2,
           "revealKey": "check_metadata",
           "question": {
             "text": "왜 2,000만원을 현금으로 출금했습니까?",
@@ -2201,7 +1999,7 @@
           "unlockHint": "내역을 확인하면 2,000만원 현금 출금 시점과 방문 시작 시점을 대조할 수 있습니다."
         },
         {
-          "stage": 2,
+          "stage": 3,
           "revealKey": "restore_context",
           "question": {
             "text": "현금 출금 후 그 돈은 어디로 갔습니까?",
@@ -2414,7 +2212,7 @@
       "subjectParty": "a",
       "investigationStages": [
         {
-          "stage": 0,
+          "stage": 1,
           "revealKey": "request_original",
           "question": {
             "text": "이 송금 기록은 본인이 보낸 것 맞습니까?",
@@ -2424,7 +2222,7 @@
           "unlockHint": null
         },
         {
-          "stage": 1,
+          "stage": 2,
           "revealKey": "check_metadata",
           "question": {
             "text": "이 투자방에 어떻게 가입하게 되었습니까?",
@@ -2434,7 +2232,7 @@
           "unlockHint": "송금을 확인하면 투자방 가입 경로와 송금 시점을 함께 대조할 수 있습니다."
         },
         {
-          "stage": 2,
+          "stage": 3,
           "revealKey": "restore_context",
           "question": {
             "text": "이 3,000만원은 현재 어디에 있습니까?",
@@ -2636,7 +2434,7 @@
       "subjectParty": "a",
       "investigationStages": [
         {
-          "stage": 0,
+          "stage": 1,
           "revealKey": "request_original",
           "question": {
             "text": "이 해지 서류에 있는 서명은 누구 것입니까?",
@@ -2646,7 +2444,7 @@
           "unlockHint": null
         },
         {
-          "stage": 1,
+          "stage": 2,
           "revealKey": "check_metadata",
           "question": {
             "text": "이 위임장의 서명이 본인 것이 아니라면 누가 쓴 것입니까?",
@@ -2656,7 +2454,7 @@
           "unlockHint": "서류를 확인하면 해지 기록과 위임장 서명을 함께 대조할 수 있습니다."
         },
         {
-          "stage": 2,
+          "stage": 3,
           "revealKey": "restore_context",
           "question": {
             "text": "위임장 조작은 범죄입니다. 이에 대해 어떻게 생각하십니까?",

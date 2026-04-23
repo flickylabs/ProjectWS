@@ -31,7 +31,7 @@ export default function ToastContainer() {
   const addToast = useCallback((msg: Omit<ToastMessage, 'id'>) => {
     const id = nextId++
     setToasts((prev) => [...prev.slice(-4), { ...msg, id }])
-    setTimeout(() => setToasts((prev) => prev.filter((t) => t.id !== id)), 3500)
+    setTimeout(() => setToasts((prev) => prev.filter((t) => t.id !== id)), 2000)
   }, [])
 
   const dismissToast = useCallback((id: number) => {
@@ -72,19 +72,36 @@ export default function ToastContainer() {
         <div className="fixed inset-0 z-[9999] flex items-center justify-center pointer-events-none px-6">
           <div className="flex flex-col gap-2 w-full max-w-xs">
             {toasts.map((t) => {
-              const colors = t.type === 'error'
+              const isPc = typeof document !== 'undefined' && document.body.classList.contains('pc-mode')
+              const mobileColors = t.type === 'error'
                 ? 'bg-red-950/95 text-red-200 border-red-700/50 shadow-red-900/30'
                 : t.type === 'warn'
                   ? 'bg-amber-950/95 text-amber-200 border-amber-700/50 shadow-amber-900/30'
                   : t.type === 'success'
                     ? 'bg-emerald-950/95 text-emerald-200 border-emerald-700/50 shadow-emerald-900/30'
                     : 'bg-gray-900/95 text-gray-200 border-gray-700/50 shadow-black/30'
+              const pcStyle: React.CSSProperties | undefined = isPc ? (() => {
+                const palette = t.type === 'error'
+                  ? { bg: 'rgba(30,14,14,0.96)', color: '#e06060', border: 'rgba(224,96,96,0.4)' }
+                  : t.type === 'warn'
+                    ? { bg: 'rgba(30,22,10,0.96)', color: '#e8c172', border: 'rgba(212,162,78,0.45)' }
+                    : t.type === 'success'
+                      ? { bg: 'rgba(20,16,8,0.96)', color: '#e8c172', border: 'rgba(212,162,78,0.35)' }
+                      : { bg: 'rgba(14,14,20,0.96)', color: '#c0bdb6', border: 'rgba(255,255,255,0.1)' }
+                return {
+                  background: palette.bg,
+                  color: palette.color,
+                  borderColor: palette.border,
+                  boxShadow: '0 20px 50px rgba(0,0,0,0.55), 0 0 0 1px rgba(212,162,78,0.08) inset',
+                }
+              })() : undefined
               const icon = t.type === 'error' ? '⚠️' : t.type === 'warn' ? '💡' : t.type === 'success' ? '✅' : 'ℹ️'
               return (
                 <div
                   key={t.id}
                   onClick={() => dismissToast(t.id)}
-                  className={`pointer-events-auto cursor-pointer px-5 py-3.5 rounded-2xl text-sm font-medium shadow-xl border backdrop-blur-sm animate-scale-in flex items-center gap-3 ${colors}`}
+                  className={`pointer-events-auto cursor-pointer px-5 py-3.5 rounded-2xl text-sm font-medium shadow-xl border backdrop-blur-sm animate-scale-in flex items-center gap-3 ${isPc ? '' : mobileColors}`}
+                  style={pcStyle}
                 >
                   <Emoji char={icon} size={20} />
                   <span className="flex-1 leading-snug">{t.text}</span>

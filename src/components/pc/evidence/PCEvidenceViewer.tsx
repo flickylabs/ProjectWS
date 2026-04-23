@@ -91,7 +91,13 @@ export default function PCEvidenceViewer() {
 
         {/* Body — SVG sub-viewer only */}
         <div className="pc-ev-body">
-          {hasSubViewer ? (
+          {currentStage === 0 ? (
+            <div className="pc-ev-placeholder is-locked">
+              <PCSvgIcon id={getPcEvidenceSymbolId(evidence.type)} size={64} />
+              <p>아직 열람할 수 없습니다</p>
+              <span>증거를 <b>조사</b>하면 내용이 공개됩니다 (첫 조사는 토큰 소모 없음)</span>
+            </div>
+          ) : hasSubViewer ? (
             <EvidenceSubContent type={evidence.type} viewerData={viewerData!} />
           ) : (
             <div className="pc-ev-placeholder">

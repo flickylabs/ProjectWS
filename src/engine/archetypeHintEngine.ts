@@ -43,6 +43,39 @@ const ARCHETYPE_HINTS: Record<string, ArchetypeHint[]> = {
   ],
 }
 
+/** archetype별 태그 라벨 + 공략법 힌트 (태그 UI / 툴팁용) */
+export interface ArchetypeMeta {
+  tagLabel: string
+  strategyHint: string
+}
+
+export const ARCHETYPE_META: Record<string, ArchetypeMeta> = {
+  avoidant: {
+    tagLabel: '회피형',
+    strategyHint: '핵심을 피하고 절차로 비껴갑니다. 사실 추궁으로 구체성을 끌어내세요.',
+  },
+  confrontational: {
+    tagLabel: '대립형',
+    strategyHint: '방어적으로 반격합니다. 공감 접근으로 긴장을 먼저 풀어주세요.',
+  },
+  victim_cosplay: {
+    tagLabel: '피해자 서사',
+    strategyHint: '모든 답변을 자신의 피해로 연결합니다. 동기 탐색으로 내면을 열어보세요.',
+  },
+  cold_logic: {
+    tagLabel: '냉철 논리',
+    strategyHint: '감정 없이 사실만 읊습니다. 공감 접근으로 균열을 만들어 보세요.',
+  },
+  affect_flattening: {
+    tagLabel: '감정 둔화',
+    strategyHint: '감정 표현이 희미합니다. 공감 접근이나 동기 탐색으로 내면을 끌어내세요.',
+  },
+  premature_summary: {
+    tagLabel: '성급한 정리',
+    strategyHint: '결론부터 요약합니다. 사실 추궁으로 세부에 붙들어 두세요.',
+  },
+}
+
 /** verbal tell별 부가 힌트 */
 const TELL_HINTS: Record<string, string> = {
   over_precision: '시간/숫자를 과하게 정확히 말합니다 — 감추고 싶은 것이 있을 수 있습니다',
@@ -64,27 +97,21 @@ export function resetHintTracker(): void {
 
 /**
  * 현재 턴에서 보여줄 힌트를 선택한다.
- * 턴 1-2: subtle, 턴 3+: clear (한 번만)
+ * 정책: archetype이 감지되면 매번 짧게 팝업으로 표시 (2초 자동 소실).
+ * subtle / clear 두 버전을 번갈아 사용해 반복감을 줄인다.
  */
 export function selectHint(
   archetype: string,
-  tell: string,
+  _tell: string,
   turnNumber: number,
   party: 'a' | 'b',
 ): ArchetypeHint | null {
-  const hintsAlreadyShown = _hintsShownCount[party] ?? 0
-  if (hintsAlreadyShown >= 2) return null  // 최대 2회
-
   const hints = ARCHETYPE_HINTS[archetype]
-  if (!hints) return null
-
-  if (turnNumber <= 2 && hintsAlreadyShown === 0) {
-    return hints[0]  // subtle hint
-  }
-  if (turnNumber >= 3 && hintsAlreadyShown === 1) {
-    return hints[1]  // clear hint
-  }
-  return null
+  if (!hints || hints.length === 0) return null
+  // 턴 1-2: subtle, 턴 3+ 매회 subtle/clear alternating
+  if (turnNumber <= 2) return hints[0]
+  const shown = _hintsShownCount[party] ?? 0
+  return hints[shown % hints.length] ?? hints[0]
 }
 
 /** 힌트 표시 후 카운트 증가 */

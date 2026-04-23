@@ -10,6 +10,7 @@ import { createVerdictSlice, type VerdictSlice } from './slices/verdictSlice'
 import { createDiscoverySlice, type DiscoverySlice } from './slices/discoverySlice'
 import { createCombinationLabSlice, type CombinationLabSlice } from './slices/combinationLabSlice'
 import { createMinigameSlice, type MinigameSlice } from './slices/minigameSlice'
+import { createCharacterTagSlice, type CharacterTagSlice } from './slices/characterTagSlice'
 import type { CaseData, ProcessMetrics, PartyId } from '../types'
 import type { TestimonyAnalysis } from '../engine/llmTestimonyAnalysis'
 import { GamePhase } from '../types'
@@ -117,7 +118,7 @@ function applyPerks(set: (partial: any) => void): void {
   })
 }
 
-export type GameStore = PhaseSlice & AgentSlice & ResourceSlice & EvidenceSlice & DialogueSlice & VerdictSlice & DiscoverySlice & CombinationLabSlice & MinigameSlice & {
+export type GameStore = PhaseSlice & AgentSlice & ResourceSlice & EvidenceSlice & DialogueSlice & VerdictSlice & DiscoverySlice & CombinationLabSlice & MinigameSlice & CharacterTagSlice & {
   caseData: CaseData | null
   lieConfigs: { a: CaseData['lieConfigA']; b: CaseData['lieConfigB'] } | null
   isLLMLoading: boolean
@@ -283,6 +284,7 @@ export const useGameStore: import('zustand').UseBoundStore<import('zustand').Sto
     ...createDiscoverySlice(...args),
     ...createCombinationLabSlice(...args),
     ...createMinigameSlice(...args),
+    ...createCharacterTagSlice(...args),
 
     caseData: null,
     lieConfigs: null,
@@ -427,7 +429,7 @@ export const useGameStore: import('zustand').UseBoundStore<import('zustand').Sto
           case 'timeline_lock': {
             // 사실 추궁: 부정 시점 고정
             // → 해당 당사자의 가장 최근 부정 발언을 즐겨찾기에 자동 등록
-            // → 시스템 메시지는 알림용(autoPin 아님)
+            // → 독립 시스템 메시지는 제거 (말풍선 외부 핀 메모로 통합)
             const lockParty = effect.party as 'a' | 'b'
             const recentDialogue = [...state.dialogueLog]
               .reverse()
@@ -443,12 +445,6 @@ export const useGameStore: import('zustand').UseBoundStore<import('zustand').Sto
                 ),
               }))
             }
-            state.addDialogue({
-              speaker: 'system',
-              text: '📌 [진술 시점 고정] — 이 부정은 향후 모순 추궁의 근거가 됩니다',
-              relatedDisputes: [effect.disputeId],
-              turn: state.turnCount,
-            })
             break
           }
           case 'hidden_dispute_hook':

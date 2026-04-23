@@ -62,6 +62,8 @@ export interface PcInteractionPayload {
   dialogueSpeaker?: string
   dialogueSpeakerName?: string
   dialogueDisputeIds?: string[]
+  /** backdrop (화면 덮는 어두운 배경) 여부. 기본 true. false이면 상단 중앙 소프트 팝업으로 렌더 */
+  backdrop?: boolean
 }
 
 const COPY = {
@@ -633,10 +635,14 @@ export default function PCInteractionPanel() {
     return null
   }
 
+  const softPopup = payload.backdrop === false
+  const wrapperClass = softPopup ? 'pc-interaction-softpop' : 'pc-interaction-overlay'
+  const cardExtra = softPopup ? ' pc-interaction-card--softpop' : ''
+
   return createPortal(
-    <div className="pc-interaction-overlay" onClick={closePanel}>
+    <div className={wrapperClass} onClick={softPopup ? undefined : closePanel}>
       <div
-        className={`pc-interaction-card tone-${payload.tone ?? 'neutral'}${payload.variant === 'feature' ? ' pc-interaction-card--feature' : ''}`}
+        className={`pc-interaction-card tone-${payload.tone ?? 'neutral'}${payload.variant === 'feature' ? ' pc-interaction-card--feature' : ''}${cardExtra}`}
         onClick={(event) => event.stopPropagation()}
       >
         {payload.variant === 'dialogue' ? null : payload.variant === 'evidence' ? (
@@ -723,7 +729,6 @@ function EvidenceDetailSection({ evidenceId }: { evidenceId: string }) {
   const dispatch = useActionDispatch()
   const caseData = useStore((s) => s.caseData)
   const evidenceStates = useStore((s) => s.evidenceStates)
-  const investigateEvidence = useStore((s) => s.investigateEvidence)
   const lastFocusedDisputeId = useStore((s) => s.lastFocusedDisputeId)
 
   if (!caseData) return null
@@ -746,8 +751,11 @@ function EvidenceDetailSection({ evidenceId }: { evidenceId: string }) {
   })
 
   const handleInvestigate = (revealKey: string) => {
-    investigateEvidence(evidenceId, revealKey)
+    dispatch({ type: 'evidence_investigate', evidenceId, subAction: revealKey } as any)
   }
+
+  // 첫 조사(0→1)는 무료 열람, 2·3회차는 토큰 1 소비
+  const investigateCostLabel = investigatedKeys.size === 0 ? '-0' : '-1'
 
   const nameA = caseData.duo.partyA.name
   const nameB = caseData.duo.partyB.name
@@ -782,7 +790,7 @@ function EvidenceDetailSection({ evidenceId }: { evidenceId: string }) {
                   <span className="pc-ev-detail__stage-a">{evidence.investigationResults[stage.revealKey]}</span>
                 ) : stage.unlockable ? (
                   <button className="pc-ev-detail__investigate-btn" onClick={() => handleInvestigate(stage.revealKey)} type="button">
-                    <span className="pc-ev-detail__investigate-cost"><PCSvgIcon id="i-search" size={14} /> -1</span> 조사 시도
+                    <span className="pc-ev-detail__investigate-cost"><PCSvgIcon id="i-search" size={14} /> {investigateCostLabel}</span> 조사 시도
                   </button>
                 ) : (
                   <span className="pc-ev-detail__stage-lock">조사 단계 {stage.stage} — 해금 필요</span>

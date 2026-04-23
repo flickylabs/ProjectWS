@@ -74,7 +74,17 @@ let globalDispatchLock = false
 const _contradictionTokens: Record<string, number> = {}
 const _empathyAttempts: Record<string, number> = {}
 
-// ── Archetype 힌트: NPC 응답 후 재판관의 관찰을 system 메시지로 추가 ──
+// ── Archetype 힌트: NPC 응답 후 재판관 관찰 팝업 (채팅 미삽입) ──
+// 해당 캐릭터 태그로 수렴되는 2초 팝업. 커스텀 이벤트로 UI 컴포넌트가 구독.
+export const ARCHETYPE_OBSERVATION_EVENT = 'pc:archetype-observation'
+export interface ArchetypeObservationDetail {
+  party: PartyId
+  archetype: string
+  hintText: string
+  effectiveApproach: 'fact_pursuit' | 'motive_search' | 'empathy_approach'
+  turn: number
+}
+
 function maybeShowArchetypeHint(target: PartyId, turnNumber: number): void {
   const state = useGameStore.getState()
   const caseData = state.caseData
@@ -88,12 +98,18 @@ function maybeShowArchetypeHint(target: PartyId, turnNumber: number): void {
   if (!hint) return
 
   markHintShown(target)
-  state.addDialogue({
-    speaker: 'system',
-    text: `💡 재판관의 관찰: ${hint.text}`,
-    relatedDisputes: [],
-    turn: state.turnCount,
-  })
+  // 관찰 기록 + glow (최초 관찰이면 태그 신규 등장)
+  state.observeArchetype(target, archetype)
+  // 채팅 addDialogue 제거 — 팝업 + 캐릭터 태그로만 처리
+  window.dispatchEvent(new CustomEvent<ArchetypeObservationDetail>(ARCHETYPE_OBSERVATION_EVENT, {
+    detail: {
+      party: target,
+      archetype,
+      hintText: hint.text,
+      effectiveApproach: hint.effectiveApproach,
+      turn: state.turnCount,
+    },
+  }))
 }
 
 // V2 피로도 상태는 questionFatigueEngine.ts의 세션 상태에서 관리
@@ -574,9 +590,13 @@ async function handleCallWitness(action: Extract<PlayerAction, { type: 'call_wit
 // ── 증거 조사 ──
 async function handleEvidenceInvestigate(action: Extract<PlayerAction, { type: 'evidence_investigate' }>) {
   const state = useGameStore.getState()
-  if (!state.spend('investigationTokens', 1)) {
-    state.addDialogue({ speaker: 'system', text: '조사 토큰이 부족합니다.', relatedDisputes: [], turn: state.turnCount })
-    return
+  // 토큰 경제: 첫 조사(투자한 횟수 0)는 무료 열람용, 2·3회차는 토큰 1 소비
+  const prevInvestigations = state.evidenceStates[action.evidenceId]?.investigatedActions.length ?? 0
+  if (prevInvestigations >= 1) {
+    if (!state.spend('investigationTokens', 1)) {
+      state.addDialogue({ speaker: 'system', text: '조사 토큰이 부족합니다.', relatedDisputes: [], turn: state.turnCount })
+      return
+    }
   }
   const result = state.investigateEvidence(action.evidenceId, action.subAction)
   if (result) state.addDialogue({ speaker: 'system', text: `${result}`, relatedDisputes: [], turn: state.turnCount })
@@ -696,14 +716,10 @@ async function handleQuestion(action: Extract<PlayerAction, { type: 'question' }
         }
       }
     } else {
-      // 토큰 축적 중 — 시스템 피드백
+      // 토큰 축적 중 — 상태 피드백을 Toast로 (채팅 비삽입)
       const remaining = Math.ceil(threshold - newTokens)
-      state.addDialogue({
-        speaker: 'system',
-        text: `모순이 쌓이고 있습니다. 조금 더 추궁하면 균열이 생길 것 같습니다.`,
-        relatedDisputes: [action.disputeId],
-        turn: state.turnCount,
-      })
+      void remaining
+      showToast('모순이 쌓이고 있습니다. 조금 더 추궁하면 균열이 생길 것 같습니다.', 'info')
     }
 
   } else if (action.questionType === 'motive_search') {
@@ -1286,15 +1302,19 @@ async function handleQuestion(action: Extract<PlayerAction, { type: 'question' }
       emitStateTransitionEvent(action.target, action.disputeId, prevState, newState, v3State.turnCount, pName ?? '')
 
       // 상태 전이 후 전략 선택 모달 (cracked/cornered/opening만, 턴당 1회)
+      // 플레이어가 NPC 응답 메시지를 읽을 시간 확보 후 등장 (~2.5초)
       const transLabel = getTransitionLabel(prevState, newState)
       if ((transLabel === 'cracked' || transLabel === 'cornered' || transLabel === 'opening') && !_suppressTransitionChoice) {
-        v3State.setPendingTransitionChoice({
+        const payload = {
           label: transLabel,
           party: action.target,
           disputeId: action.disputeId,
           from: prevState,
           to: newState,
-        })
+        } as const
+        setTimeout(() => {
+          useGameStore.getState().setPendingTransitionChoice(payload)
+        }, 2500)
       }
     }
   }
@@ -1558,19 +1578,10 @@ function discoverEvidenceFromQuestioning(party: PartyId, disputeId: string) {
 
   const ev = lockedRelated[0]
 
-  // 미니게임 트리거 — 성공 시 증거 해금
-  const clues: [string, string, string] = [
-    ev.description?.slice(0, 30) ?? '단서 1',
-    dispute?.name ?? '단서 2',
-    name + '의 진술에서 발견',
-  ]
-  const lieState = lieEntry?.currentState ?? 'S0'
-
-  // 증거 발견 → MemoryPuzzle(순서 맞추기) 고정
-  const minigameVariant = 'memory' as const
-
-  state.setPendingMinigame({ type: 'evidence_discovery', evidenceId: ev.id, clues, npcName: name, lieState, party, minigameVariant })
-  return // 미니게임 결과에서 actuallyDiscoverEvidence 호출
+  // 미니게임 자동 트리거 차단 — 증거 즉시 해금 (유저 결정)
+  // 사용되지 않는 값들이지만 향후 복원 가능성 고려해 주석으로 보존
+  void lieEntry; void name; void dispute
+  actuallyDiscoverEvidence(ev.id)
 }
 
 /** 미니게임 성공 시 실제 증거 해금 — 5단 대화 연출 */
@@ -1771,7 +1782,13 @@ function notifyLieTransition(party: PartyId, disputeId: string) {
     const text = newState === 'S5'
       ? `🔥 결정적 순간 — ${name}의 진술 태도가 크게 변했다!`
       : `${icon} ${name} — ${labels[newState]}`
-    state.addDialogue({ speaker: 'system', text, relatedDisputes: [disputeId], turn: state.turnCount })
+    if (newState === 'S5') {
+      // 결정적 순간은 영구 기록으로 채팅에 남김
+      state.addDialogue({ speaker: 'system', text, relatedDisputes: [disputeId], turn: state.turnCount })
+    } else {
+      // S1~S4 상태 변화는 Toast 팝업으로 — NPC 말풍선 읽은 뒤 등장하도록 지연
+      setTimeout(() => showToast(text, 'info'), 1500)
+    }
 
     // S5 도달 시 재판관이 계속 진술을 유도
     if (newState === 'S5') {

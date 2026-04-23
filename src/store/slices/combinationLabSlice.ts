@@ -79,7 +79,7 @@ export interface CombinationLabSlice {
   getCombinationNode: (nodeId: string) => CombinationLabNode | undefined
   getCombinationOutput: (outputId: string) => CombinationLabOutput | undefined
   canRunCombinationRecipe: (recipeId: string) => boolean
-  runCombinationRecipe: (recipeId: string) => { ok: boolean; reason?: string; outputId?: string }
+  runCombinationRecipe: (recipeId: string) => { ok: boolean; reason?: string; outputId?: string; newlyUnlockedWitnesses?: { id: string; name: string }[] }
   /** 대화에서 statement 노드의 따옴표 문구가 실제 발화될 때 discoveredNodeIds에 추가 */
   syncStatementsFromDialogue: (text: string) => void
 }
@@ -364,28 +364,21 @@ export const createCombinationLabSlice: StateCreator<any, [], [], CombinationLab
     }
 
     // 증인 해금 — socialGraph의 unlockedByDossier가 이 dc-*를 포함하면 해금
+    // dialog는 호출자에서 순서 제어 (시스템 결과 → 재판관 코멘트 → 시스템 증인 알림)
+    const newlyUnlockedWitnesses: { id: string; name: string }[] = []
     if (output.id.startsWith('dc-')) {
       const freshRoot = get() as any
       const currentUnlocked = new Set<string>(freshRoot.unlockedWitnessIds ?? [])
-      const newlyUnlocked: { id: string; name: string }[] = []
       for (const tp of caseData!.duo.socialGraph ?? []) {
         if (currentUnlocked.has(tp.id)) continue
         const gate = tp.unlockedByDossier ?? []
         if (gate.includes(output.id)) {
           freshRoot.addUnlockedWitness?.(tp.id)
-          newlyUnlocked.push({ id: tp.id, name: tp.name })
+          newlyUnlockedWitnesses.push({ id: tp.id, name: tp.name })
         }
-      }
-      for (const w of newlyUnlocked) {
-        freshRoot.addDialogue?.({
-          speaker: 'system',
-          text: `🧑‍⚖️ 새 증인 '${w.name}' 소환 가능해졌습니다.`,
-          relatedDisputes: [],
-          turn: freshRoot.turnCount ?? 0,
-        })
       }
     }
 
-    return { ok: true, outputId: output.id }
+    return { ok: true, outputId: output.id, newlyUnlockedWitnesses }
   },
 })

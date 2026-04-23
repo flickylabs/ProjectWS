@@ -43,11 +43,15 @@ export function ReceiptViewer({ sheets }: { sheets: ReceiptSheet[] }) {
 
       {/* Receipt paper */}
       <div
-        className="rounded-xl px-5 py-4 mb-3"
+        className="rounded-xl px-5 mb-3"
         style={{
           background: sheet.suspicious ? 'rgba(224,96,96,0.04)' : 'rgba(255,255,255,0.02)',
           border: sheet.suspicious ? '1px solid rgba(224,96,96,0.15)' : '1px solid rgba(255,255,255,0.06)',
-          fontFamily: 'monospace',
+          paddingTop: 20,
+          paddingBottom: 20,
+          maxWidth: 420,
+          marginLeft: 'auto',
+          marginRight: 'auto',
         }}
       >
         {/* Store name */}
@@ -63,7 +67,7 @@ export function ReceiptViewer({ sheets }: { sheets: ReceiptSheet[] }) {
         <div className="mb-2" style={{ borderTop: '1px dashed rgba(255,255,255,0.1)' }} />
 
         {/* Items header */}
-        <div className="flex text-xs font-semibold mb-1 px-1" style={{ color: '#4e4e5c' }}>
+        <div className="flex text-xs font-semibold mb-2 px-1" style={{ color: '#4e4e5c', paddingTop: 6, paddingBottom: 6 }}>
           <span className="flex-1">상품명</span>
           <span className="w-14 text-right">단가</span>
           <span className="w-8 text-center">수량</span>
@@ -72,7 +76,7 @@ export function ReceiptViewer({ sheets }: { sheets: ReceiptSheet[] }) {
 
         {/* Items */}
         {sheet.items.map((item, i) => (
-          <div key={i} className="flex text-sm py-1 px-1" style={{ color: '#8b8b9a', borderBottom: '1px solid rgba(255,255,255,0.03)' }}>
+          <div key={i} className="flex text-sm px-1" style={{ color: '#8b8b9a', borderBottom: '1px solid rgba(255,255,255,0.03)', paddingTop: 12, paddingBottom: 12 }}>
             <div className="flex-1 min-w-0">
               <div className="truncate">{item.name}</div>
               {item.code ? <div className="text-xs" style={{ color: '#3a3a48' }}>{item.code}</div> : null}
@@ -87,13 +91,13 @@ export function ReceiptViewer({ sheets }: { sheets: ReceiptSheet[] }) {
         <div className="my-2" style={{ borderTop: '1px dashed rgba(255,255,255,0.1)' }} />
 
         {/* Totals */}
-        <div className="flex justify-between text-sm px-1 mb-1" style={{ color: '#8b8b9a' }}>
+        <div className="flex justify-between text-sm px-1" style={{ color: '#8b8b9a', paddingTop: 8, paddingBottom: 8 }}>
           <span>합계</span><span className="tabular-nums">{sheet.subtotal}</span>
         </div>
-        <div className="flex justify-between text-sm px-1 mb-1" style={{ color: '#4e4e5c' }}>
+        <div className="flex justify-between text-sm px-1" style={{ color: '#4e4e5c', paddingTop: 8, paddingBottom: 8 }}>
           <span>부가세</span><span className="tabular-nums">{sheet.tax}</span>
         </div>
-        <div className="flex justify-between text-sm font-bold px-1 mb-2" style={{ color: '#dcdce0' }}>
+        <div className="flex justify-between text-sm font-bold px-1" style={{ color: '#dcdce0', paddingTop: 10, paddingBottom: 10 }}>
           <span>결제금액</span><span className="tabular-nums">{sheet.total}</span>
         </div>
 
@@ -178,8 +182,8 @@ export function GpsLogViewer({ entries }: { entries: GpsLogEntry[] }) {
             {['시각', '위치', '위도/경도', '속도'].map((h) => (
               <th
                 key={h}
-                className="text-left text-xs font-semibold py-2 px-2"
-                style={{ color: '#4e4e5c', borderBottom: '1px solid rgba(255,255,255,0.06)' }}
+                className="text-left text-xs font-semibold px-2"
+                style={{ color: '#4e4e5c', borderBottom: '1px solid rgba(255,255,255,0.06)', paddingTop: 12, paddingBottom: 12 }}
               >
                 {h}
               </th>
@@ -194,16 +198,16 @@ export function GpsLogViewer({ entries }: { entries: GpsLogEntry[] }) {
                 background: e.suspicious ? 'rgba(212,162,78,0.06)' : 'transparent',
               }}
             >
-              <td className="py-1.5 px-2 tabular-nums whitespace-nowrap" style={{ color: e.suspicious ? 'var(--pc-gold-light, #e8c172)' : '#8b8b9a', borderBottom: '1px solid rgba(255,255,255,0.03)', fontSize: 12 }}>
+              <td className="px-2 tabular-nums whitespace-nowrap" style={{ color: e.suspicious ? 'var(--pc-gold-light, #e8c172)' : '#8b8b9a', borderBottom: '1px solid rgba(255,255,255,0.03)', fontSize: 12, paddingTop: 14, paddingBottom: 14 }}>
                 {e.timestamp}
               </td>
-              <td className="py-1.5 px-2" style={{ color: e.suspicious ? '#dcdce0' : '#8b8b9a', borderBottom: '1px solid rgba(255,255,255,0.03)', fontWeight: e.suspicious ? 600 : 400 }}>
+              <td className="px-2" style={{ color: e.suspicious ? '#dcdce0' : '#8b8b9a', borderBottom: '1px solid rgba(255,255,255,0.03)', fontWeight: e.suspicious ? 600 : 400, paddingTop: 14, paddingBottom: 14 }}>
                 {e.location}
               </td>
-              <td className="py-1.5 px-2 tabular-nums" style={{ color: '#4e4e5c', borderBottom: '1px solid rgba(255,255,255,0.03)', fontSize: 11 }}>
+              <td className="px-2 tabular-nums" style={{ color: '#4e4e5c', borderBottom: '1px solid rgba(255,255,255,0.03)', fontSize: 12, paddingTop: 14, paddingBottom: 14 }}>
                 {e.lat}, {e.lng}
               </td>
-              <td className="py-1.5 px-2 tabular-nums" style={{ color: '#8b8b9a', borderBottom: '1px solid rgba(255,255,255,0.03)' }}>
+              <td className="px-2 tabular-nums" style={{ color: '#8b8b9a', borderBottom: '1px solid rgba(255,255,255,0.03)', paddingTop: 14, paddingBottom: 14 }}>
                 {e.speed}
               </td>
             </tr>
@@ -695,8 +699,8 @@ export function LogViewer({ rows, note }: { rows: LogRow[]; note: string }) {
             {['시각', '유형', '상대', '통화시간'].map((h) => (
               <th
                 key={h}
-                className="text-left text-xs font-semibold py-2 px-3"
-                style={{ color: '#4e4e5c', borderBottom: '1px solid rgba(255,255,255,0.06)' }}
+                className="text-left text-xs font-semibold px-3"
+                style={{ color: '#4e4e5c', borderBottom: '1px solid rgba(255,255,255,0.06)', paddingTop: 12, paddingBottom: 12 }}
               >
                 {h}
               </th>
@@ -711,21 +715,21 @@ export function LogViewer({ rows, note }: { rows: LogRow[]; note: string }) {
                 key={i}
                 style={{ background: r.suspicious ? 'rgba(212,162,78,0.06)' : 'transparent' }}
               >
-                <td className="py-2 px-3 tabular-nums" style={{ color: r.suspicious ? 'var(--pc-gold-light, #e8c172)' : '#8b8b9a', borderBottom: '1px solid rgba(255,255,255,0.03)' }}>
+                <td className="px-3 tabular-nums" style={{ color: r.suspicious ? 'var(--pc-gold-light, #e8c172)' : '#8b8b9a', borderBottom: '1px solid rgba(255,255,255,0.03)', paddingTop: 14, paddingBottom: 14 }}>
                   {r.date}
                 </td>
-                <td className="py-2 px-3" style={{ borderBottom: '1px solid rgba(255,255,255,0.03)' }}>
+                <td className="px-3" style={{ borderBottom: '1px solid rgba(255,255,255,0.03)', paddingTop: 14, paddingBottom: 14 }}>
                   <span
-                    className="text-xs font-semibold px-2 py-0.5 rounded-full whitespace-nowrap"
-                    style={{ background: typeStyle.bg, color: typeStyle.color }}
+                    className="text-xs font-semibold rounded-full whitespace-nowrap"
+                    style={{ background: typeStyle.bg, color: typeStyle.color, paddingLeft: 8, paddingRight: 8, paddingTop: 3, paddingBottom: 3 }}
                   >
                     {r.typeLabel}
                   </span>
                 </td>
-                <td className="py-2 px-3" style={{ color: r.suspicious ? 'var(--pc-gold-light, #e8c172)' : '#8b8b9a', borderBottom: '1px solid rgba(255,255,255,0.03)' }}>
+                <td className="px-3" style={{ color: r.suspicious ? 'var(--pc-gold-light, #e8c172)' : '#8b8b9a', borderBottom: '1px solid rgba(255,255,255,0.03)', paddingTop: 14, paddingBottom: 14 }}>
                   {r.target}
                 </td>
-                <td className="py-2 px-3 tabular-nums" style={{ color: '#8b8b9a', borderBottom: '1px solid rgba(255,255,255,0.03)' }}>
+                <td className="px-3 tabular-nums" style={{ color: r.suspicious ? 'var(--pc-gold-light, #e8c172)' : '#8b8b9a', borderBottom: '1px solid rgba(255,255,255,0.03)', paddingTop: 14, paddingBottom: 14, fontWeight: r.suspicious ? 600 : 400 }}>
                   {r.duration}
                 </td>
               </tr>

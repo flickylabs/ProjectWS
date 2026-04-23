@@ -20,6 +20,7 @@ import { getCombinationComment } from '../../../data/combinationComments'
 import { PC_ADD_COMBINATION_NOTE_EVENT, type PcCombinationPanelEventDetail, type PcPinnedNote } from './PCImportantNotesSection'
 import { playCombinationSuccess } from '../../../engine/soundEngine'
 import { cleanOutputLabel, cleanOutputSummary } from '../../../utils/combinationLabels'
+import ArchetypeTag from '../tags/ArchetypeTag'
 
 const LIE_STATES: LieState[] = ['S0', 'S1', 'S2', 'S3', 'S4', 'S5']
 
@@ -43,6 +44,7 @@ export default function PCRightPanel() {
   const agentB = useStore((s) => s.agentB)
   const archetypeA = useStore((s) => s.archetypeA)
   const archetypeB = useStore((s) => s.archetypeB)
+  const observedArchetypes = useStore((s) => s.observedArchetypes)
   const combinationLabRuntime = useStore((s) => s.combinationLabRuntime)
   const pcSummaryUnlocked = useStore((s) => s.pcSummaryUnlocked)
   const globalSkillPoints = useStore((s) => s.resources.skillPoints)
@@ -427,25 +429,31 @@ export default function PCRightPanel() {
         .map((disputeId) => ({ kind: 'focus_dispute' as const, label: '\uAD00\uB828 \uC7C1\uC810 \uBCF4\uAE30', disputeId })),
     })
 
-    // 재판관 조합 코멘트
+    // 2) 재판관: 순수 판단 코멘트만 (judgeComment)
     const caseKey = store.caseData?.caseId ?? ''
     const judgeComment = matchingRecipe ? getCombinationComment(caseKey, matchingRecipe.id) : null
     if (judgeComment) {
       store.addDialogue({
         speaker: 'judge',
-        text: judgeComment,
-        relatedDisputes: [],
-        turn: store.turnCount,
-      })
-    }
-    // 재판관 후속 가이드 — judgeHint로 구체적 다음 액션 제안
-    if (matchingOutput.judgeHint) {
-      store.addDialogue({
-        speaker: 'judge',
-        text: matchingOutput.judgeHint,
+        text: judgeComment.trim(),
         relatedDisputes: matchingOutput.effects
           .map((e) => e.disputeUpgrade?.disputeId ?? e.unlockNodeId ?? e.targetId)
           .filter((v): v is string => Boolean(v)),
+        turn: store.turnCount,
+      })
+    }
+
+    // 3) Toast: 플레이 가이드 (judgeHint — 채팅 비삽입, 짧은 힌트만)
+    if (matchingOutput.judgeHint) {
+      showToast(matchingOutput.judgeHint.trim(), 'info')
+    }
+
+    // 4) 시스템: 새 증인 소환 알림 (runCombinationRecipe가 반환한 newly unlocked)
+    for (const w of result.newlyUnlockedWitnesses ?? []) {
+      store.addDialogue({
+        speaker: 'system',
+        text: `🧑‍⚖️ 새 증인 '${w.name}' 소환 가능해졌습니다.`,
+        relatedDisputes: [],
         turn: store.turnCount,
       })
     }
@@ -524,7 +532,9 @@ export default function PCRightPanel() {
             <div className="pc-target-copy__main">
               <div className="tgt-meta">{`${targetProfile.age}\uC138 \u00B7 ${targetProfile.occupation}`}</div>
               <div className="tgt-tags">
-                <span className="tag tag-arch">{getPcArchetypeLabel(targetArchetype)}</span>
+                {(observedArchetypes[pcTargetParty] ?? []).map((arch) => (
+                  <ArchetypeTag key={arch} archetype={arch} party={pcTargetParty} />
+                ))}
               </div>
             </div>
 

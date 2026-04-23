@@ -166,8 +166,8 @@ export default function TransitionChoiceModal() {
   }
 
   return (
-    <div className="fixed inset-0 z-50 bg-gray-950/85 flex items-center justify-center px-4">
-      <div className="bg-gray-900 border border-gray-700/60 rounded-2xl w-full max-w-lg overflow-hidden animate-fade-in shadow-2xl">
+    <div className="fixed top-24 left-1/2 -translate-x-1/2 z-50 pointer-events-none w-full max-w-md px-4">
+      <div className="pc-transition-popup pointer-events-auto bg-gray-900 border border-gray-700/60 rounded-2xl overflow-hidden animate-fade-in shadow-2xl">
         {/* 헤더 */}
         <div className={`bg-gradient-to-b ${config.gradient} border-b ${config.borderColor} px-4 py-3`}>
           <div className="flex items-center gap-2">

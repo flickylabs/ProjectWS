@@ -31,11 +31,23 @@ export default function PCGameplayOverlay() {
   const setPendingEvidenceResult = useStore((s) => s.setPendingEvidenceResult)
   const pendingTransitionChoice = useStore((s) => s.pendingTransitionChoice)
   const setPendingTransitionChoice = useStore((s) => s.setPendingTransitionChoice)
+  // Discovery/Confrontation 팝업 활성 여부 — 활성 시 transition / evidence-result 팝업은 대기
+  const discoveryActive = useStore((s) => Boolean(
+    s.discovery.pendingSlip
+    || s.discovery.pendingEmergence
+    || s.discovery.pendingConfrontation
+    || s.discovery.pendingConflict
+    || (s as any).pendingGameEvent
+    || (s as any).pendingPerkChoice
+    || (s as any).pendingWitnessChoice,
+  ))
 
   useEffect(() => {
     if (!pendingEvidenceResult) {
       return
     }
+    // Discovery 팝업 활성 중이면 대기 (닫힌 후 재실행)
+    if (discoveryActive) return
 
     const descriptor =
       pendingEvidenceResult.type === 'collapse'
@@ -64,12 +76,14 @@ export default function PCGameplayOverlay() {
       variant: 'feature',
     })
     setPendingEvidenceResult(null)
-  }, [pendingEvidenceResult, setPendingEvidenceResult])
+  }, [pendingEvidenceResult, setPendingEvidenceResult, discoveryActive])
 
   useEffect(() => {
     if (!pendingTransitionChoice || !caseData) {
       return
     }
+    // Discovery 팝업 활성 중이면 대기 (닫힌 후 재실행)
+    if (discoveryActive) return
 
     const partyName =
       pendingTransitionChoice.party === 'a'
@@ -156,9 +170,10 @@ export default function PCGameplayOverlay() {
       tone: meta.tone,
       variant: 'feature',
       actions,
+      backdrop: false, // 뒤 채팅을 가리지 않는 소프트 상단 팝업으로 렌더
     })
     setPendingTransitionChoice(null)
-  }, [caseData, pendingTransitionChoice, setPendingTransitionChoice])
+  }, [caseData, pendingTransitionChoice, setPendingTransitionChoice, discoveryActive])
 
   return (
     <>

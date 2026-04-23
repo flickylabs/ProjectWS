@@ -438,8 +438,7 @@ body.pc-mode .fixed.inset-0.z-50 .text-xs {
 }
 
 /* PC interaction / discovery overlays */
-body.pc-mode .pc-interaction-overlay,
-body.pc-mode .pc-discovery-overlay {
+body.pc-mode .pc-interaction-overlay {
   position: fixed;
   inset: 0;
   z-index: 1200;
@@ -449,6 +448,23 @@ body.pc-mode .pc-discovery-overlay {
   padding: 24px;
   background: rgba(7, 7, 12, 0.78);
   backdrop-filter: blur(8px);
+}
+
+/* discovery overlay — backdrop 제거하여 뒤 채팅이 계속 보이도록. 카드만 띄움 */
+body.pc-mode .pc-discovery-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  pointer-events: none;
+  background: transparent;
+}
+
+body.pc-mode .pc-discovery-overlay > .pc-discovery-card {
+  pointer-events: auto;
 }
 
 body.pc-mode .pc-interaction-card,
@@ -9436,6 +9452,37 @@ body.pc-mode .pc-ev-placeholder span {
   font-size: 12px; color: #5a5e70;
 }
 
+body.pc-mode .pc-ev-placeholder.is-locked {
+  gap: 14px;
+  padding: 64px 24px;
+  border-radius: 14px;
+  border: 1px dashed rgba(212,162,78,0.18);
+  background: linear-gradient(180deg, rgba(212,162,78,0.03), rgba(212,162,78,0.01));
+}
+
+body.pc-mode .pc-ev-placeholder.is-locked > svg,
+body.pc-mode .pc-ev-placeholder.is-locked .pc-svg-icon {
+  opacity: 0.35;
+  color: var(--pc-gold-light, #e8c172);
+}
+
+body.pc-mode .pc-ev-placeholder.is-locked p {
+  font-size: 16px;
+  color: var(--pc-gold-light, #e8c172);
+  letter-spacing: 0.02em;
+}
+
+body.pc-mode .pc-ev-placeholder.is-locked span {
+  font-size: 13px;
+  color: #8a8e9e;
+  line-height: 1.6;
+}
+
+body.pc-mode .pc-ev-placeholder.is-locked span b {
+  color: var(--pc-gold-light, #e8c172);
+  font-weight: 700;
+}
+
 /* Evidence detail in InteractionPanel */
 body.pc-mode .pc-ev-detail {
   margin-top: 10px; padding: 10px 24px 0;
@@ -14267,4 +14314,219 @@ body.pc-mode .pc-ev-detail__investigate-cost {
   font-size: 12px; opacity: 0.7;
 }
 body.pc-mode .pc-ev-detail__investigate-cost svg { color: #60a5fa; }
+
+/* ━━━ Archetype 관찰 태그 (캐릭터 카드) ━━━ */
+body.pc-mode .tag-arch.tag-arch--observed {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  border-radius: 12px;
+  border: 1px solid rgba(212, 162, 78, 0.35);
+  background: linear-gradient(180deg, rgba(212, 162, 78, 0.14), rgba(212, 162, 78, 0.06));
+  color: #e8c172;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  transition: box-shadow 0.2s ease, transform 0.2s ease, background 0.2s ease;
+  animation: pc-arch-tag-enter 0.35s ease-out;
+  z-index: 60;
+}
+
+body.pc-mode .tag-arch.tag-arch--observed.is-active {
+  z-index: 120;
+}
+
+body.pc-mode .tag-arch--observed:hover {
+  background: linear-gradient(180deg, rgba(212, 162, 78, 0.22), rgba(212, 162, 78, 0.1));
+  transform: translateY(-1px);
+}
+
+body.pc-mode .tag-arch--observed.is-glowing {
+  animation:
+    pc-arch-tag-enter 0.35s ease-out,
+    pc-arch-tag-glow 1.4s ease-in-out infinite 0.35s;
+  box-shadow: 0 0 12px rgba(232, 193, 114, 0.55), 0 0 0 1px rgba(232, 193, 114, 0.4);
+}
+
+body.pc-mode .tag-arch--observed.is-active {
+  background: linear-gradient(180deg, rgba(212, 162, 78, 0.3), rgba(212, 162, 78, 0.14));
+}
+
+@keyframes pc-arch-tag-enter {
+  from { opacity: 0; transform: translateY(-4px) scale(0.85); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes pc-arch-tag-glow {
+  0%, 100% { box-shadow: 0 0 6px rgba(232, 193, 114, 0.35), 0 0 0 1px rgba(232, 193, 114, 0.35); }
+  50% { box-shadow: 0 0 18px rgba(232, 193, 114, 0.75), 0 0 0 1px rgba(232, 193, 114, 0.55); }
+}
+
+body.pc-mode .tag-arch__tip {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  min-width: 220px;
+  max-width: 280px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(212, 162, 78, 0.45);
+  background: rgba(14, 14, 22, 0.99);
+  color: #d6d3ca;
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1.55;
+  display: grid;
+  gap: 4px;
+  text-align: left;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(212, 162, 78, 0.12) inset;
+  z-index: 200;
+  animation: pc-arch-tip-enter 0.18s ease-out;
+  cursor: default;
+}
+
+body.pc-mode .pc-play-right .target.pc-target-profile {
+  position: relative;
+  z-index: 10;
+}
+
+body.pc-mode .tag-arch__tip-label {
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #e8c172;
+  font-weight: 800;
+}
+
+body.pc-mode .tag-arch__tip-body {
+  color: #d6d3ca;
+}
+
+@keyframes pc-arch-tip-enter {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ━━━ Archetype 관찰 팝업 ━━━ */
+body.pc-mode .pc-archetype-popup-root {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9997;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+body.pc-mode .pc-archetype-popup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 22px 34px;
+  border-radius: 18px;
+  border: 1px solid rgba(212, 162, 78, 0.5);
+  background: linear-gradient(180deg, rgba(26, 22, 12, 0.97), rgba(14, 12, 8, 0.97));
+  box-shadow: 0 28px 64px rgba(0, 0, 0, 0.65), 0 0 0 1px rgba(212, 162, 78, 0.22) inset, 0 0 28px rgba(212, 162, 78, 0.25);
+  color: #e8c172;
+  opacity: 0;
+  transform: translate(0, -16px) scale(0.9);
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s ease;
+  will-change: transform, opacity;
+  max-width: 560px;
+  min-width: 360px;
+  text-align: center;
+}
+
+body.pc-mode .pc-archetype-popup.is-phase-appearing {
+  opacity: 0;
+  transform: translate(0, -16px) scale(0.9);
+}
+
+body.pc-mode .pc-archetype-popup.is-phase-visible {
+  opacity: 1;
+  transform: translate(0, 0) scale(1);
+  transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+}
+
+body.pc-mode .pc-archetype-popup.is-phase-converging {
+  /* inline style이 transform 덮어씀 — transition만 제공 */
+}
+
+body.pc-mode .pc-archetype-popup.is-phase-done {
+  opacity: 0;
+}
+
+body.pc-mode .pc-archetype-popup__eyebrow {
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: 800;
+  color: rgba(232, 193, 114, 0.75);
+}
+
+body.pc-mode .pc-archetype-popup__hint {
+  font-size: 17px;
+  font-weight: 700;
+  color: #f3e9cf;
+  line-height: 1.5;
+}
+
+body.pc-mode .pc-archetype-popup__tag {
+  margin-top: 4px;
+  padding: 5px 14px;
+  border-radius: 12px;
+  background: rgba(212, 162, 78, 0.16);
+  border: 1px solid rgba(212, 162, 78, 0.4);
+  font-size: 12px;
+  font-weight: 700;
+  color: #e8c172;
+  letter-spacing: 0.06em;
+}
+
+/* ━━━ 전이 선택 팝업 (backdrop 없는 비침습 상단 카드) ━━━ */
+body.pc-mode .pc-transition-popup {
+  animation: pc-transition-popup-enter 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 22px 50px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(212, 162, 78, 0.14) inset;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+@keyframes pc-transition-popup-enter {
+  0% { opacity: 0; transform: translateY(-12px) scale(0.95); }
+  60% { opacity: 1; transform: translateY(2px) scale(1.01); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* ━━━ InteractionPanel 소프트 팝업 모드 (backdrop: false) ━━━ */
+body.pc-mode .pc-interaction-softpop {
+  position: fixed;
+  top: 72px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10200;
+  pointer-events: none;
+  width: auto;
+  max-width: min(560px, calc(100vw - 32px));
+  display: flex;
+  justify-content: center;
+}
+
+body.pc-mode .pc-interaction-card--softpop {
+  pointer-events: auto;
+  width: 100%;
+  animation: pc-softpop-enter 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 28px 60px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(212, 162, 78, 0.18) inset, 0 0 36px rgba(212, 162, 78, 0.18);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+@keyframes pc-softpop-enter {
+  0% { opacity: 0; transform: translateY(-14px) scale(0.94); }
+  55% { opacity: 1; transform: translateY(3px) scale(1.015); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
 
