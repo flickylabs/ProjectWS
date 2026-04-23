@@ -66,6 +66,14 @@ export default function DiscoveryFeedbackWatcher() {
 
     const judgments: TruthJudgment[] = ['believe_a', 'believe_b', 'both_partial', 'undetermined']
 
+    state.addJudgeObservation({
+      turnCount: state.turnCount,
+      category: 'event',
+      iconId: 'i-scale',
+      title: '진실 공방이 열렸다. 양측 주장을 비교해 판결을 내려야 한다.',
+      summary: `${dispute?.name ?? pendingConfrontation.disputeId}`,
+      disputeId: pendingConfrontation.disputeId,
+    })
     state.enqueueFeedback({
       kind: 'confrontation',
       eyebrow: '진실 공방',
@@ -133,6 +141,14 @@ export default function DiscoveryFeedbackWatcher() {
       leftText = '추가 자료가 더 필요하다고 보았습니다.'
     }
 
+    state.addJudgeObservation({
+      turnCount: state.turnCount,
+      category: 'event',
+      iconId: 'i-conflict',
+      title: '기존 판단과 새 정보가 충돌하고 있다.',
+      summary: `${dispute?.name ?? pendingConflict.disputeId}`,
+      disputeId: pendingConflict.disputeId,
+    })
     state.enqueueFeedback({
       kind: 'conflict',
       eyebrow: '판단 충돌',
@@ -179,6 +195,14 @@ export default function DiscoveryFeedbackWatcher() {
     if (!caseData) return
     const dispute = caseData.disputes.find((d) => d.id === pendingEmergence.disputeId)
 
+    state.addJudgeObservation({
+      turnCount: state.turnCount,
+      category: 'event',
+      iconId: 'i-plus',
+      title: ROUTE_LABELS[pendingEmergence.route] ?? '새 단서가 갈래를 바꿨다.',
+      summary: `${dispute?.name ?? pendingEmergence.disputeId}`,
+      disputeId: pendingEmergence.disputeId,
+    })
     state.enqueueFeedback({
       kind: 'emergence',
       eyebrow: '새 쟁점 발견',
@@ -219,6 +243,15 @@ export default function DiscoveryFeedbackWatcher() {
     if (sourceDispute) meta.push(`관련 쟁점: ${sourceDispute.name}`)
     if (linkedDispute) meta.push(`연결 쟁점: ${linkedDispute.name}`)
 
+    state.addJudgeObservation({
+      turnCount: state.turnCount,
+      category: 'slip',
+      iconId: 'i-heart',
+      title: pendingSlip.slipText,
+      summary: `${partyData.name} · 감정 실수 포착`,
+      party: pendingSlip.party,
+      disputeId: pendingSlip.sourceDisputeId,
+    })
     state.enqueueFeedback({
       kind: 'emotional_slip',
       eyebrow: '감정 실수 포착',
@@ -299,13 +332,17 @@ export default function DiscoveryFeedbackWatcher() {
         if (reactionIsNarrative && v3Event?.npcReaction) {
           s.addDialogue({ speaker: 'system', text: v3Event.npcReaction, relatedDisputes: [ev.disputeId], turn: s.turnCount })
         }
-        s.addDialogue({
-          speaker: 'system',
-          text: ev.severity === 'critical'
+        // 결과 메시지 — 채팅 success 배너 대신 관찰 패널로 (확인 버튼 작동 안 하던 문제 해결)
+        s.addJudgeObservation({
+          turnCount: s.turnCount,
+          category: 'contradiction',
+          iconId: 'i-bolt',
+          title: ev.severity === 'critical'
             ? `결정적 모순이 드러났다. ${partyName}의 방어가 크게 흔들린다.`
-            : `진술이 엇갈리기 시작했다. 지금 압박하면 효과적이다.`,
-          relatedDisputes: [ev.disputeId],
-          turn: s.turnCount,
+            : '진술이 엇갈리기 시작했다. 지금 압박하면 효과적이다.',
+          summary: `${partyName} · 모순 추궁 결과`,
+          party: ev.party,
+          disputeId: ev.disputeId,
         })
         s.setPendingGameEvent(null)
         releaseKey()
@@ -318,6 +355,15 @@ export default function DiscoveryFeedbackWatcher() {
           }
         : undefined
 
+      state.addJudgeObservation({
+        turnCount: state.turnCount,
+        category: 'contradiction',
+        iconId: 'i-bolt',
+        title: '이전 진술과 지금 진술이 어긋난다. 모순을 찌를 기회다.',
+        summary: `${partyName} · ${disputeName}`,
+        party: ev.party,
+        disputeId: ev.disputeId,
+      })
       state.enqueueFeedback({
         kind: 'contradiction',
         eyebrow: '모순 감지',
@@ -365,6 +411,15 @@ export default function DiscoveryFeedbackWatcher() {
         releaseKey()
       }
 
+      state.addJudgeObservation({
+        turnCount: state.turnCount,
+        category: 'event',
+        iconId: 'i-bolt',
+        title: interjectionText,
+        summary: `${partyName} · 끼어들기 시도`,
+        party: ev.party,
+        disputeId: ev.disputeId,
+      })
       state.enqueueFeedback({
         kind: 'contradiction',
         eyebrow: '끼어들기',
@@ -422,6 +477,15 @@ export default function DiscoveryFeedbackWatcher() {
         releaseKey()
       }
 
+      state.addJudgeObservation({
+        turnCount: state.turnCount,
+        category: 'slip',
+        iconId: 'i-heart',
+        title: outburstText,
+        summary: `${partyName} · 감정 폭발`,
+        party: ev.party,
+        disputeId: ev.disputeId,
+      })
       state.enqueueFeedback({
         kind: 'emotional_slip',
         eyebrow: '감정 폭발',
@@ -455,6 +519,14 @@ export default function DiscoveryFeedbackWatcher() {
       const evidence = caseData.evidence.find((e) => e.id === pp.evidenceId)
       const evidenceName = evidence?.name ?? pp.evidenceId
 
+      state.addJudgeObservation({
+        turnCount: state.turnCount,
+        category: 'event',
+        iconId: 'i-shield',
+        title: '증거 제시가 충분히 먹히지 않았다. 완충 스킬을 쓸 수 있다.',
+        summary: `${evidenceName} · 판결 완충`,
+        evidenceId: pp.evidenceId,
+      })
       state.enqueueFeedback({
         kind: 'perk_choice',
         eyebrow: '판결 완충',
@@ -505,6 +577,15 @@ export default function DiscoveryFeedbackWatcher() {
       const disputeName = caseData.disputes.find((d) => d.id === pp.disputeId)?.name ?? pp.disputeId
       const partyName = pp.party === 'a' ? caseData.duo.partyA.name : caseData.duo.partyB.name
 
+      state.addJudgeObservation({
+        turnCount: state.turnCount,
+        category: 'event',
+        iconId: 'i-search',
+        title: '같은 쟁점을 너무 오래 밀었다. 질문 각도를 초기화할 수 있다.',
+        summary: `${partyName} · ${disputeName}`,
+        party: pp.party,
+        disputeId: pp.disputeId,
+      })
       state.enqueueFeedback({
         kind: 'perk_choice',
         eyebrow: '집요함 추가',
@@ -553,6 +634,15 @@ export default function DiscoveryFeedbackWatcher() {
     const state = useGameStore.getState()
     const releaseKey = () => enqueuedRef.current.delete(key)
 
+    state.addJudgeObservation({
+      turnCount: state.turnCount,
+      category: 'event',
+      iconId: 'i-witness',
+      title: pc.isResummon
+        ? `${pc.witnessName}에게 추가 질문을 할 기회가 생겼다.`
+        : `${pc.witnessName}이(가) 증언대에 섰다.`,
+      summary: pc.isResummon ? '증인 재심문' : '증인 심문',
+    })
     state.enqueueFeedback({
       kind: 'witness_choice',
       eyebrow: pc.isResummon ? '추가 질문' : '증인 심문',

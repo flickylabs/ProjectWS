@@ -12,6 +12,7 @@ import { createCombinationLabSlice, type CombinationLabSlice } from './slices/co
 import { createMinigameSlice, type MinigameSlice } from './slices/minigameSlice'
 import { createCharacterTagSlice, type CharacterTagSlice } from './slices/characterTagSlice'
 import { createEventFeedbackSlice, type EventFeedbackSlice } from './slices/eventFeedbackSlice'
+import { createJudgeObservationSlice, type JudgeObservationSlice } from './slices/judgeObservationSlice'
 import type { CaseData, ProcessMetrics, PartyId } from '../types'
 import type { TestimonyAnalysis } from '../engine/llmTestimonyAnalysis'
 import { GamePhase } from '../types'
@@ -119,7 +120,7 @@ function applyPerks(set: (partial: any) => void): void {
   })
 }
 
-export type GameStore = PhaseSlice & AgentSlice & ResourceSlice & EvidenceSlice & DialogueSlice & VerdictSlice & DiscoverySlice & CombinationLabSlice & MinigameSlice & CharacterTagSlice & EventFeedbackSlice & {
+export type GameStore = PhaseSlice & AgentSlice & ResourceSlice & EvidenceSlice & DialogueSlice & VerdictSlice & DiscoverySlice & CombinationLabSlice & MinigameSlice & CharacterTagSlice & EventFeedbackSlice & JudgeObservationSlice & {
   caseData: CaseData | null
   lieConfigs: { a: CaseData['lieConfigA']; b: CaseData['lieConfigB'] } | null
   isLLMLoading: boolean
@@ -287,6 +288,7 @@ export const useGameStore: import('zustand').UseBoundStore<import('zustand').Sto
     ...createMinigameSlice(...args),
     ...createCharacterTagSlice(...args),
     ...createEventFeedbackSlice(...args),
+    ...createJudgeObservationSlice(...args),
 
     caseData: null,
     lieConfigs: null,
@@ -471,7 +473,7 @@ export const useGameStore: import('zustand').UseBoundStore<import('zustand').Sto
             // 동기 탐색: 책임 회피 문구 노출 → 대화 로그에 시스템 노트
             state.addDialogue({
               speaker: 'system',
-              text: '📋 책임 회피 문구가 기록되었습니다',
+              text: '책임 회피 문구가 기록되었습니다',
               relatedDisputes: [disputeId],
               turn: state.turnCount,
             })
@@ -484,8 +486,8 @@ export const useGameStore: import('zustand').UseBoundStore<import('zustand').Sto
                 turn: prev.turnCount,
                 type: 'question_effect' as const,
                 message: effect.privatePath
-                  ? '💛 비공개 확인 경로가 열렸습니다 — 공감 접근으로 자백을 이끌어낼 수 있습니다'
-                  : '💛 비공개 확인 경로가 열렸습니다',
+                  ? '비공개 확인 경로가 열렸습니다 — 공감 접근으로 자백을 이끌어낼 수 있습니다'
+                  : '비공개 확인 경로가 열렸습니다',
                 timestamp: Date.now(),
               }],
             }))
@@ -497,7 +499,7 @@ export const useGameStore: import('zustand').UseBoundStore<import('zustand').Sto
                 id: prev.gameEventLog.length + 1,
                 turn: prev.turnCount,
                 type: 'question_effect' as const,
-                message: `🛡 상대의 반격 의지가 ${effect.turns}턴간 약화됩니다`,
+                message: `상대의 반격 의지가 ${effect.turns}턴간 약화됩니다`,
                 timestamp: Date.now(),
               }],
             }))
@@ -714,6 +716,10 @@ export const useGameStore: import('zustand').UseBoundStore<import('zustand').Sto
         feedbackQueue: [],
         activeFeedback: null,
         minorStream: [],
+        judgeObservations: [],
+        observationHistoryOpen: false,
+        pendingResonances: [],
+        pendingAuras: [],
         lastFocusedDisputeId: null,
         pcTargetParty: 'a',
         pcSummaryUnlocked: false,
@@ -859,5 +865,8 @@ export const useGameStore: import('zustand').UseBoundStore<import('zustand').Sto
     recentAtomIds: state.recentAtomIds,
     pcTargetParty: state.pcTargetParty,
     pcSummaryUnlocked: state.pcSummaryUnlocked,
+    // 재판관의 관찰 — 세션 내 유지 (리로드 시 복원)
+    judgeObservations: state.judgeObservations,
+    observationHistoryOpen: state.observationHistoryOpen,
   }),
 }))

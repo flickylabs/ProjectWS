@@ -7,6 +7,7 @@ import type {
   CombinationLabResultKind,
 } from '../../types'
 import { showToast } from '../common/Toast'
+import { showGuideCutscene } from '../common/guideCutscene'
 import Emoji from '../common/Emoji'
 import {
   PC_ADD_COMBINATION_NOTE_EVENT,
@@ -253,7 +254,7 @@ export default function CombinationLabPanel() {
       },
     }))
 
-    showToast(`조합 성공: ${cleanOutputLabel(matchingOutput.label)}`, 'success')
+    showGuideCutscene(`조합 성공: ${cleanOutputLabel(matchingOutput.label)}`, '.pc-combination-card')
     clearAll()
   }
 

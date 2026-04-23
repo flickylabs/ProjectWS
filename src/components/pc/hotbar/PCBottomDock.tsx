@@ -402,14 +402,14 @@ export default function PCBottomDock() {
               </button>
 
               {/* 5: 증거 제시 */}
-              <button className="slot" onClick={openEvidenceChoice} title="증거 제시" type="button">
+              <button className="slot" data-guide-target="evidence-present" onClick={openEvidenceChoice} title="증거 제시" type="button">
                 <span className="slot-key">5</span>
                 <span className="slot-ico"><PCSvgIcon id="i-doc" size={24} /></span>
                 <span className="slot-nm">증거 제시</span>
               </button>
 
               {/* 6: 증인 소환 */}
-              <button className={`slot${!hasWitness ? ' slot-locked' : ''}`} disabled={!hasWitness} onClick={openWitnessPanel} title="증인 소환" type="button">
+              <button className={`slot${!hasWitness ? ' slot-locked' : ''}`} data-guide-target="witness-summon" disabled={!hasWitness} onClick={openWitnessPanel} title="증인 소환" type="button">
                 <span className="slot-key">6</span>
                 <span className="slot-ico"><PCSvgIcon id="i-witness" size={24} /></span>
                 <span className="slot-nm">증인 소환</span>
@@ -439,7 +439,7 @@ function CharacterCard({
   caseId: string; name: string; emotion: EmotionalPhase; faceId: string; isActive: boolean; onClick: () => void; side: PartyId
 }) {
   return (
-    <button className={`char char-${side}${isActive ? ' spk' : ''}`} onClick={onClick} type="button">
+    <button className={`char char-${side}${isActive ? ' spk' : ''}`} data-character-card={side} onClick={onClick} type="button">
       <div className="char-face">
         <PCCharacterPortrait
           alt={name}

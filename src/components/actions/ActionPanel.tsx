@@ -17,6 +17,7 @@ import { getDossierCards, getDossierCard, resolveDossierQuestion } from '../../e
 import { resolveInvestigation } from '../../engine/evidenceChallengeEngine'
 import { evaluateDossierUnlock } from '../../engine/meterStagingV2'
 import { showToast } from '../common/Toast'
+import { showGuideCutscene } from '../common/guideCutscene'
 
 import Emoji from '../common/Emoji'
 
@@ -177,7 +178,7 @@ export default function ActionPanel() {
   const showcaseTriggeredRef = useRef(false)
   if (dossierUnlockResult.newlyUnlocked && dossierCardsExist) {
     dossierUnlockPrevRef.current = true
-    showToast(dossierUnlockResult.label, 'success')
+    showGuideCutscene(dossierUnlockResult.label, '[data-guide-target="evidence-present"]')
     v4Effects.dossierUnlock(dossierUnlockResult.label)
     // 최초 해금 시 auto-showcase 트리거
     if (!showcaseTriggeredRef.current) {
@@ -771,7 +772,7 @@ function PrecedentSenseButton({ target }: { target: PartyId }) {
       turn: store.turnCount,
     })
 
-    showToast('선례 감각 힌트가 제공되었습니다', 'info')
+    showGuideCutscene('선례 감각 힌트가 제공되었습니다', '.pc-dispute-ribbon')
   }
 
   return (
@@ -828,7 +829,7 @@ function ReorganizeDeclareButton({ target }: { target: PartyId }) {
       turn: store.turnCount,
     })
 
-    showToast('쟁점 현황이 정리되었습니다', 'info')
+    showGuideCutscene('쟁점 현황이 정리되었습니다', '.pc-dispute-ribbon')
   }
 
   return (

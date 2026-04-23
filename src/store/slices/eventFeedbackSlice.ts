@@ -76,12 +76,14 @@ export interface EventFeedbackItem {
   autoDismissMs?: number
   /** observation 전용: 해당 파티의 archetype 태그로 수렴 애니메이션 재생 */
   convergeToTag?: boolean
+  /** 가이드 컷씬: 임의의 타겟 selector로 수렴 + 수렴 완료 후 타겟 2번 깜빡 */
+  convergeTargetSelector?: string
   /** 액션 레이아웃: 기본 horizontal, 긴 리스트(증인 주제 등)는 vertical */
   actionsLayout?: 'horizontal' | 'vertical'
 }
 
-/** 자잘 알림 kind — 우측 상단 카드 스택으로 동시 표시 (큐 거치지 않음) */
-export const MINOR_FEEDBACK_KINDS: EventFeedbackKind[] = ['state_change', 'info']
+/** 자잘 알림 kind — Minor 티커 폐기 (관찰 패널로 흡수). 호환용 빈 배열 유지 */
+export const MINOR_FEEDBACK_KINDS: EventFeedbackKind[] = []
 
 export interface EventFeedbackSlice {
   /** Major 큐 (중요 알림 — 한 번에 하나씩 순차) */

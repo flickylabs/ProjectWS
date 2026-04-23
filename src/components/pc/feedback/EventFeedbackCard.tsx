@@ -11,9 +11,9 @@ interface KindMeta {
 }
 
 const KIND_META: Record<EventFeedbackKind, KindMeta> = {
-  observation:        { tone: 'gold',    defaultAutoMs: 4800 },
-  state_change:       { tone: 'gold',    defaultAutoMs: 3800 },
-  transition_choice:  { tone: 'gold' },
+  observation:        { tone: 'gold',    defaultAutoMs: 2000 },
+  state_change:       { tone: 'gold',    defaultAutoMs: 2000 },
+  transition_choice:  { tone: 'gold',    defaultAutoMs: 2000 },
   contradiction:      { tone: 'gold' },
   emergence:          { tone: 'gold' },
   confrontation:      { tone: 'gold' },
@@ -21,22 +21,20 @@ const KIND_META: Record<EventFeedbackKind, KindMeta> = {
   emotional_slip:     { tone: 'red' },
   perk_choice:        { tone: 'blue' },
   witness_choice:     { tone: 'green' },
-  evidence_result:    { tone: 'gold',    defaultAutoMs: 4200 },
-  info:               { tone: 'gold',    defaultAutoMs: 3800 },
+  evidence_result:    { tone: 'gold',    defaultAutoMs: 2000 },
+  info:               { tone: 'gold',    defaultAutoMs: 2000 },
 }
 
-/** 컷씬 스타일 대상 kind — 자동소멸이지만 중앙 대형 노출 (state_change / info 는 MinorStream으로 분리됨) */
-const CUTSCENE_KINDS: EventFeedbackKind[] = ['observation', 'evidence_result']
+/** 컷씬 스타일 대상 kind — 얇은 검정 띠, 자동 소멸, 좌측 하단 관찰 패널로 수렴 */
+const CUTSCENE_KINDS: EventFeedbackKind[] = ['observation', 'evidence_result', 'transition_choice']
 
 /**
  * Modal 모드 판정:
- * - 선택지 있는 카드: 항상 Modal (유저 선택 필수)
- * - 컷씬 kind (observation/state_change/info/evidence_result): Modal (blur backdrop + 중앙 대형)
+ * - 선택지 있는 카드만 Modal (유저 선택 필수 — backdrop blur로 게임 정지 느낌)
+ * - 컷씬 kind는 Alert 모드 (띠만 뜨고 게임 UI 계속 보임, backdrop 없음)
  */
-function isModalKind(kind: EventFeedbackKind, hasActions: boolean): boolean {
-  if (hasActions) return true
-  if (CUTSCENE_KINDS.includes(kind)) return true
-  return false
+function isModalKind(_kind: EventFeedbackKind, hasActions: boolean): boolean {
+  return hasActions
 }
 
 function isCutsceneKind(kind: EventFeedbackKind, hasActions: boolean): boolean {
@@ -85,35 +83,45 @@ export default function EventFeedbackCard() {
     if (autoMs == null) return
 
     const timer = window.setTimeout(() => {
-      // observation: 해당 파티 태그로 수렴 애니메이션
-      if (active.kind === 'observation' && active.convergeToTag && active.party && active.archetype) {
-        const tagKey = `${active.party}:${active.archetype}`
-        const targetEl = document.querySelector<HTMLElement>(`[data-archetype-tag="${tagKey}"]`)
-        const cardEl = cardRef.current
-        if (targetEl && cardEl) {
-          const tr = targetEl.getBoundingClientRect()
-          const cr = cardEl.getBoundingClientRect()
-          const dx = (tr.left + tr.width / 2) - (cr.left + cr.width / 2)
-          const dy = (tr.top + tr.height / 2) - (cr.top + cr.height / 2)
-          setConvergeTransform(`translate(${dx}px, ${dy}px) scale(0.15)`)
-          setPhase('converging')
-          return
-        }
+      // 수렴 타겟 우선순위: convergeTargetSelector(가이드 컷씬) > convergeToTag(archetype)
+      let targetEl: HTMLElement | null = null
+      if (active.convergeTargetSelector) {
+        targetEl = document.querySelector<HTMLElement>(active.convergeTargetSelector)
+      } else if (active.kind === 'observation' && active.convergeToTag && active.party && active.archetype) {
+        targetEl = document.querySelector<HTMLElement>(`[data-archetype-tag="${active.party}:${active.archetype}"]`)
+      }
+      const cardEl = cardRef.current
+      if (targetEl && cardEl) {
+        const tr = targetEl.getBoundingClientRect()
+        const cr = cardEl.getBoundingClientRect()
+        const dx = (tr.left + tr.width / 2) - (cr.left + cr.width / 2)
+        const dy = (tr.top + tr.height / 2) - (cr.top + cr.height / 2)
+        setConvergeTransform(`translate(${dx}px, ${dy}px) scale(0.15)`)
+        setPhase('converging')
+        return
       }
       setPhase('leaving')
     }, autoMs)
     return () => window.clearTimeout(timer)
   }, [active, phase, minigameActive])
 
-  // converging/leaving 종료 후 실제 dismiss
+  // converging/leaving 종료 후 실제 dismiss + 수렴 타겟 2번 깜빡
   useEffect(() => {
     if (phase !== 'converging' && phase !== 'leaving') return
     const duration = phase === 'converging' ? 520 : 260
     const timer = window.setTimeout(() => {
+      // 수렴 타겟이 있으면 2번 깜빡 트리거
+      if (phase === 'converging' && active?.convergeTargetSelector) {
+        const target = document.querySelector<HTMLElement>(active.convergeTargetSelector)
+        if (target) {
+          target.classList.add('pc-dialogue-jump-pulse')
+          window.setTimeout(() => target.classList.remove('pc-dialogue-jump-pulse'), 1400)
+        }
+      }
       dismiss()
     }, duration)
     return () => window.clearTimeout(timer)
-  }, [phase, dismiss])
+  }, [phase, dismiss, active])
 
   if (!active) return null
   // 미니게임 활성 시 카드 대기 (미니게임 모달이 우선)
@@ -147,6 +155,7 @@ export default function EventFeedbackCard() {
       <div
         ref={cardRef}
         className={`pc-event-feedback-card tone-${tone} kind-${active.kind} is-phase-${phase}${modal ? ' is-modal' : ' is-alert'}${cutscene ? ' is-cutscene' : ''}`}
+        data-resonance-target={cutscene ? 'cutscene-center' : undefined}
         style={cardStyle}
       >
         {/* kind-observation: 상단 Eye SVG (포착 순간 강조, 작게) */}

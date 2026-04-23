@@ -16,6 +16,7 @@ import { getPcArchetypeLabel, getPcTellDescription, getPcTellLabel } from '../pc
 import { HOTBAR_DRAG_TYPE } from '../hotbar/pcHotbarConfig'
 import { openPcInteractionPanel } from '../layout/PCInteractionPanel'
 import { showToast } from '../../common/Toast'
+import { showGuideCutscene } from '../../common/guideCutscene'
 import { getCombinationComment } from '../../../data/combinationComments'
 import { PC_ADD_COMBINATION_NOTE_EVENT, type PcCombinationPanelEventDetail, type PcPinnedNote } from './PCImportantNotesSection'
 import { playCombinationSuccess } from '../../../engine/soundEngine'
@@ -97,7 +98,7 @@ export default function PCRightPanel() {
   const prevReadyCount = useRef(-1)
   useEffect(() => {
     if (prevReadyCount.current >= 0 && readyComboCount > prevReadyCount.current) {
-      showToast('🔗 조합 가능한 쌍이 준비되었습니다!', 'success')
+      showGuideCutscene('조합 가능한 쌍이 준비되었습니다', '.pc-combination-card')
     }
     prevReadyCount.current = readyComboCount
   }, [readyComboCount])
@@ -172,7 +173,7 @@ export default function PCRightPanel() {
     setComboSlots([a ?? null, b ?? null])
     setAutoMatchPanelOpen(false)
     setAutoMatchConfirming(false)
-    showToast('🔎 조합 대상이 슬롯에 자동 배치됐습니다.', 'success')
+    showGuideCutscene('조합 대상이 슬롯에 자동 배치되었습니다', '.pc-combination-card')
   }, [canAutoMatch, readyLabRecipes, store])
 
   // config가 null이면 caseData에서 직접 초기화 시도
@@ -445,14 +446,17 @@ export default function PCRightPanel() {
 
     // 3) Toast: 플레이 가이드 (judgeHint — 채팅 비삽입, 짧은 힌트만)
     if (matchingOutput.judgeHint) {
-      showToast(matchingOutput.judgeHint.trim(), 'info')
+      // 조합 결과 종류에 따라 타겟 분기: 증인 해금이면 증인 소환, 아니면 조합 카드
+      const hint = matchingOutput.judgeHint.trim()
+      const target = /증인/.test(hint) ? '[data-guide-target="witness-summon"]' : '.pc-combination-card'
+      showGuideCutscene(hint, target)
     }
 
     // 4) 시스템: 새 증인 소환 알림 (runCombinationRecipe가 반환한 newly unlocked)
     for (const w of result.newlyUnlockedWitnesses ?? []) {
       store.addDialogue({
         speaker: 'system',
-        text: `🧑‍⚖️ 새 증인 '${w.name}' 소환 가능해졌습니다.`,
+        text: `새 증인 '${w.name}' 소환 가능해졌습니다.`,
         relatedDisputes: [],
         turn: store.turnCount,
       })
@@ -551,7 +555,11 @@ export default function PCRightPanel() {
               }
 
               return (
-                <div className={className} key={state}>
+                <div
+                  className={className}
+                  data-resonance-target={`liestate-${pcTargetParty}-${state}`}
+                  key={state}
+                >
                   {state}
                 </div>
               )

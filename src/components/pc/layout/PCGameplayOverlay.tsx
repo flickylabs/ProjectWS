@@ -8,7 +8,7 @@ import {
   buildEvidenceSelectionPayload,
   buildDisputePickerPayload,
 } from './PCInteractionPanel'
-import { useActionDispatch } from '../../../hooks/useActionDispatch'
+import { useActionDispatch, findLinkedDialogueId } from '../../../hooks/useActionDispatch'
 
 type TransitionLabel = 'cracked' | 'cornered' | 'opening'
 
@@ -64,14 +64,41 @@ export default function PCGameplayOverlay() {
               tone: 'blue' as const,
             }
 
-    useGameStore.getState().enqueueFeedback({
-      kind: 'evidence_result',
-      title: descriptor.title,
-      subtitle: descriptor.subtitle,
-      body: descriptor.body,
-      tone: descriptor.tone,
-      autoDismissMs: 3200,
+    const resultType = pendingEvidenceResult.type
+    const evidenceName = pendingEvidenceResult.evidenceName
+    const state = useGameStore.getState()
+
+    // Tier 1: collapse/crack은 컷씬 유지 + 공명 발사 (증거 카드로)
+    if (resultType === 'collapse' || resultType === 'crack') {
+      state.enqueueFeedback({
+        kind: 'evidence_result',
+        title: descriptor.title,
+        subtitle: descriptor.subtitle,
+        body: descriptor.body,
+        tone: descriptor.tone,
+        autoDismissMs: 3200,
+      })
+      // 컷씬 중앙 → 해당 증거 카드
+      const evidenceId = pendingEvidenceResult.evidenceName // 임시: name이 id와 다르면 S8에서 보강
+      window.setTimeout(() => {
+        useGameStore.getState().enqueueResonance({
+          fromSelector: '[data-resonance-target="cutscene-center"]',
+          toSelector: `[data-resonance-target^="evidence-"]:first-of-type`,
+        })
+        void evidenceId
+      }, 600)
+    }
+
+    // 관찰 패널 기록 — 모든 결과(collapse/crack/hold)
+    state.addJudgeObservation({
+      turnCount: state.turnCount,
+      category: 'evidence',
+      iconId: 'i-doc',
+      title: descriptor.body,
+      summary: `${evidenceName} · ${descriptor.subtitle}`,
+      linkedDialogueId: findLinkedDialogueId(),
     })
+
     setPendingEvidenceResult(null)
   }, [pendingEvidenceResult, setPendingEvidenceResult])
 
@@ -125,15 +152,27 @@ export default function PCGameplayOverlay() {
               { label: `"솔직히 말씀하시지요" — 자백 유도`,       tone: 'green' as const, onSelect: () => runQuestion('empathy_approach') },
             ]
 
-    useGameStore.getState().enqueueFeedback({
+    // 컷씬 띠 알림 (actions 없이 자동 소멸) — 선택지는 핫바에서 직접
+    void actions
+
+    const ovState = useGameStore.getState()
+    ovState.enqueueFeedback({
       kind: 'transition_choice',
-      title: `${partyName} — ${meta.title}`,
-      subtitle: disputeName,
-      body: meta.body,
+      body: `${partyName} — ${meta.title}`,
       tone: meta.tone,
       party: choice.party,
       disputeId: choice.disputeId,
-      actions,
+    })
+    // 관찰 패널 기록 — 전환 상황 발생
+    ovState.addJudgeObservation({
+      turnCount: ovState.turnCount,
+      category: 'event',
+      iconId: 'i-bolt',
+      title: meta.title,
+      summary: `${partyName} · ${disputeName}`,
+      party: choice.party,
+      disputeId: choice.disputeId,
+      linkedDialogueId: findLinkedDialogueId(choice.party),
     })
     setPendingTransitionChoice(null)
   }, [caseData, pendingTransitionChoice, setPendingTransitionChoice, dispatch])

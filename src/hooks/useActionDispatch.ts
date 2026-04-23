@@ -98,19 +98,42 @@ function maybeShowArchetypeHint(target: PartyId, turnNumber: number): void {
   if (!hint) return
 
   markHintShown(target)
-  // 관찰 기록 + glow (최초 관찰이면 태그 신규 등장)
-  state.observeArchetype(target, archetype)
-  // 통합 피드백 카드(observation)로 수렴 — 기존 커스텀 이벤트 경로는 유지(레거시 수신자 있을 시 호환)
+  // 관찰 기록 + glow (최초 관찰이면 태그 신규 등장 — Tier 1 분기의 근거)
+  const isFirstObservation = state.observeArchetype(target, archetype)
   const meta = ARCHETYPE_META[archetype]
-  state.enqueueFeedback({
-    kind: 'observation',
-    eyebrow: '재판관의 관찰',
-    body: hint.text,
-    tag: meta?.tagLabel,
-    tone: 'gold',
+  const partyName = target === 'a' ? caseData.duo.partyA.name : caseData.duo.partyB.name
+
+  // Tier 1: 사건당 archetype별 첫 감지만 컷씬 + 공명 애니메이션
+  if (isFirstObservation) {
+    state.enqueueFeedback({
+      kind: 'observation',
+      eyebrow: '재판관의 관찰',
+      body: hint.text,
+      tag: meta?.tagLabel,
+      tone: 'gold',
+      party: target,
+      archetype,
+      convergeToTag: true,
+    })
+    // 컷씬 렌더 후 공명 발사 (컷씬 중앙 → 캐릭터 archetype 태그)
+    window.setTimeout(() => {
+      useGameStore.getState().enqueueResonance({
+        fromSelector: '[data-resonance-target="cutscene-center"]',
+        toSelector: `[data-resonance-target="archetype-${target}"]`,
+      })
+    }, 600)
+  }
+
+  // 관찰 패널 기록 — 메시지 자체가 타이틀, 파티/태그는 서브
+  state.addJudgeObservation({
+    turnCount: state.turnCount,
+    category: 'archetype',
+    iconId: 'i-eye',
+    title: hint.text,
+    summary: `${partyName} · ${meta?.tagLabel ?? archetype}`,
     party: target,
     archetype,
-    convergeToTag: true,
+    linkedDialogueId: findLinkedDialogueId(target),
   })
 }
 
@@ -196,7 +219,7 @@ async function handleEvidencePresent(action: Extract<PlayerAction, { type: 'evid
   const reliabilityLabel = evDef.reliability === 'hard' ? 'Hard' : 'Soft'
   state.addDialogue({
     speaker: 'system',
-    text: `📋 증거 제시: ${evDef.name} [${reliabilityLabel}] → "${disputeNames}"`,
+    text: `증거 제시: ${evDef.name} [${reliabilityLabel}] → "${disputeNames}"`,
     relatedDisputes: visibleEvProves,
     turn: state.turnCount,
   })
@@ -204,7 +227,7 @@ async function handleEvidencePresent(action: Extract<PlayerAction, { type: 'evid
     id: state.gameEventLog.length + 1,
     turn: state.turnCount,
     type: 'event_trigger',
-    message: `📋 증거 제시: ${evDef.name}`,
+    message: `증거 제시: ${evDef.name}`,
     timestamp: Date.now(),
   })
 
@@ -284,7 +307,7 @@ async function handleEvidencePresent(action: Extract<PlayerAction, { type: 'evid
     const def = state.evidenceDefinitions.find((e) => e.id === id)
     if (def) {
       playEvidenceUnlock()
-      state.addDialogue({ speaker: 'system', text: `🔓 새로운 증거를 손에 넣었다 — ${def.name}`, relatedDisputes: def.proves, turn: state.turnCount })
+      state.addDialogue({ speaker: 'system', text: `새로운 증거를 손에 넣었다 — ${def.name}`, relatedDisputes: def.proves, turn: state.turnCount })
     }
   }
 
@@ -307,7 +330,7 @@ async function handleEvidencePresent(action: Extract<PlayerAction, { type: 'evid
           v4Effects.combineSuccess('upgrade', `${names} → ${comboDisputeNames}`)
           freshState.addDialogue({
             speaker: 'system',
-            text: `🔗 증거 조합 격상! ${names} → "${comboDisputeNames}" 신뢰도 Hard 확정`,
+            text: `증거 조합 격상! ${names} → "${comboDisputeNames}" 신뢰도 Hard 확정`,
             relatedDisputes: visibleComboProves,
             turn: freshState.turnCount,
           })
@@ -423,8 +446,8 @@ async function handleCallWitness(action: Extract<PlayerAction, { type: 'call_wit
     state.addDialogue({
       speaker: 'system',
       text: isResummon
-        ? `🧑‍⚖️ 증인 ${witness.name}에게 추가 질문을 합니다.`
-        : `🧑‍⚖️ 증인 ${witness.name} 소환 — 증언이 시작됩니다.`,
+        ? `증인 ${witness.name}에게 추가 질문을 합니다.`
+        : `증인 ${witness.name} 소환 — 증언이 시작됩니다.`,
       relatedDisputes: [],
       turn: state.turnCount,
     })
@@ -444,7 +467,7 @@ async function handleCallWitness(action: Extract<PlayerAction, { type: 'call_wit
   // 소환 연출
   state.addDialogue({
     speaker: 'system',
-    text: `🧑‍⚖️ 증인 ${witness.name} 소환 — 증언이 시작된다.`,
+    text: `증인 ${witness.name} 소환 — 증언이 시작된다.`,
     relatedDisputes: [],
     turn: state.turnCount,
   })
@@ -718,14 +741,20 @@ async function handleQuestion(action: Extract<PlayerAction, { type: 'question' }
         }
       }
     } else {
-      // 토큰 축적 중 — 통합 피드백 카드(info)로 (채팅 비삽입)
+      // 토큰 축적 중 — 관찰 패널에 기록 (Minor 티커/info 큐 폐기)
       const remaining = Math.ceil(threshold - newTokens)
       void remaining
-      useGameStore.getState().enqueueFeedback({
-        kind: 'info',
-        eyebrow: '모순 감지',
-        body: '모순이 쌓이고 있습니다. 조금 더 추궁하면 균열이 생길 것 같습니다.',
-        tone: 'gold',
+      const s = useGameStore.getState()
+      const tgtName = action.target === 'a' ? s.caseData?.duo.partyA.name : s.caseData?.duo.partyB.name
+      s.addJudgeObservation({
+        turnCount: s.turnCount,
+        category: 'contradiction',
+        iconId: 'i-bolt',
+        title: '모순이 쌓이고 있다. 조금 더 추궁하면 균열이 생길 것 같다.',
+        summary: tgtName ? `${tgtName} · 모순 축적` : '모순 축적',
+        party: action.target,
+        disputeId: action.disputeId,
+        linkedDialogueId: findLinkedDialogueId(action.target),
       })
     }
 
@@ -1084,7 +1113,7 @@ async function handleQuestion(action: Extract<PlayerAction, { type: 'question' }
             if (beatHint) {
               state.addDialogue({
                 speaker: 'system',
-                text: `🎭 ${beatHint}`,
+                text: beatHint,
                 relatedDisputes: [action.disputeId],
                 turn: state.turnCount,
               })
@@ -1208,7 +1237,7 @@ async function handleQuestion(action: Extract<PlayerAction, { type: 'question' }
       // 끼어들기 유형에 따른 시스템 메시지
       let interruptMsg: string
       if (secretRevealed) {
-        interruptMsg = `💥 ${iga(opponentName)} 충격을 받고 끼어든다!`
+        interruptMsg = `${iga(opponentName)} 충격을 받고 끼어든다!`
       } else if (blameShifted) {
         interruptMsg = `${iga(opponentName)} 참지 못하고 반박한다!`
       } else {
@@ -1529,20 +1558,25 @@ function changeEmotionWithPhaseTracking(party: PartyId, delta: number) {
         emotionText = `${iga(name ?? '')} 흔들리고 있다...`
         break
       case 'resigned':
-        emotionText = `😞 ${iga(name ?? '')} 지쳐 보인다.`
+        emotionText = `${iga(name ?? '')} 지쳐 보인다.`
         break
       case 'confident':
         emotionText = `${iga(name ?? '')} 자신감을 되찾았다.`
         break
       default:
-        emotionText = `🎭 ${name}의 감정 변화: ${prevLabel} → ${newLabel}`
+        emotionText = `${name}의 감정 변화: ${prevLabel} → ${newLabel}`
     }
 
-    useGameStore.getState().addDialogue({
-      speaker: 'system',
-      text: emotionText,
-      relatedDisputes: [],
-      turn: useGameStore.getState().turnCount,
+    // 감정 페이즈 변화 — 채팅 배너 대신 관찰 패널에 기록 (재판관이 관찰하는 감정 변화)
+    const s = useGameStore.getState()
+    s.addJudgeObservation({
+      turnCount: s.turnCount,
+      category: 'slip',
+      iconId: 'i-heart',
+      title: emotionText,
+      summary: `${name ?? ''} · ${prevLabel} → ${newLabel}`,
+      party,
+      linkedDialogueId: findLinkedDialogueId(party),
     })
   }
 }
@@ -1635,7 +1669,7 @@ export function actuallyDiscoverEvidence(evidenceId: string) {
   state.trackMetric('evidenceDiscovered')
   state.addDialogue({
     speaker: 'system',
-    text: `🔓 새 증거: ${ev.name}`,
+    text: `새 증거: ${ev.name}`,
     relatedDisputes: ev.proves,
     turn: state.turnCount,
   })
@@ -1759,6 +1793,20 @@ export function snapshotLieState(party: PartyId, disputeId: string) {
   _lieStateBeforeTransition[`${party}:${disputeId}`] = current
 }
 
+/** 관찰 엔트리와 연결할 직전 NPC 발언 id 찾기 (party 우선, 없으면 any NPC) */
+export function findLinkedDialogueId(party?: PartyId): string | undefined {
+  const log = useGameStore.getState().dialogueLog
+  for (let i = log.length - 1; i >= 0; i -= 1) {
+    const e = log[i]
+    if (party) {
+      if (e.speaker === party) return e.id
+    } else {
+      if (e.speaker === 'a' || e.speaker === 'b') return e.id
+    }
+  }
+  return undefined
+}
+
 function notifyLieTransition(party: PartyId, disputeId: string) {
   const state = useGameStore.getState()
   const agent = party === 'a' ? state.agentA : state.agentB
@@ -1782,22 +1830,32 @@ function notifyLieTransition(party: PartyId, disputeId: string) {
     if (newState === 'S5') {
       playLieCollapse()
       v4Effects.confession(party, name)
+      // Tier 1: S5 자백 공명 — 캐릭터 태그 → S5 dot
+      window.setTimeout(() => {
+        useGameStore.getState().enqueueResonance({
+          fromSelector: `[data-resonance-target="archetype-${party}"]`,
+          toSelector: `[data-resonance-target="liestate-${party}-S5"]`,
+        })
+      }, 300)
     }
     // S1~S4: v4 newFact 배너 제거 — 통합 피드백 카드가 대체 (사운드 필요 시 이후 개별 추가)
     if (newState === 'S5') {
       // 결정적 순간은 영구 기록으로 채팅에 남김
-      const text = `🔥 결정적 순간 — ${name}의 진술 태도가 크게 변했다!`
+      const text = `결정적 순간 — ${name}의 진술 태도가 크게 변했다!`
       state.addDialogue({ speaker: 'system', text, relatedDisputes: [disputeId], turn: state.turnCount })
     } else {
-      // S1~S4 상태 변화는 통합 피드백 카드로 — NPC 말풍선 읽은 뒤 등장하도록 1.5초 지연
+      // S1~S4 상태 변화 — NPC 말풍선 읽은 뒤 관찰 패널에 기록 (Minor 티커 폐기)
       setTimeout(() => {
-        useGameStore.getState().enqueueFeedback({
-          kind: 'state_change',
-          eyebrow: `${name}의 변화`,
-          body: labels[newState],
-          tone: 'gold',
+        const current = useGameStore.getState()
+        current.addJudgeObservation({
+          turnCount: current.turnCount,
+          category: 'state',
+          iconId: 'i-person',
+          title: labels[newState],
+          summary: name ? `${name} · ${prevState} → ${newState}` : `${prevState} → ${newState}`,
           party,
           disputeId,
+          linkedDialogueId: findLinkedDialogueId(party),
         })
       }, 1500)
     }
@@ -1830,7 +1888,7 @@ function notifyLieTransition(party: PartyId, disputeId: string) {
             // 시스템 메시지: 진실 발견 (구체 내용은 증거 게시판에서 확인)
             state.addDialogue({
               speaker: 'system',
-              text: `✅ 결정적 진술이 확보되었습니다. 증거 게시판에서 확인하십시오.`,
+              text: `결정적 진술이 확보되었습니다. 증거 게시판에서 확인하십시오.`,
               relatedDisputes: [disputeId],
               turn: state.turnCount,
             })
@@ -1872,7 +1930,7 @@ function notifyLieTransition(party: PartyId, disputeId: string) {
       v4Effects.contradiction(party, previousClaim, desc, disputeId)
       state.addDialogue({
         speaker: 'system',
-        text: `⚡ ${name}의 진술에서 이전과 다른 점이 발견되었다 — 탭하여 추궁`,
+        text: `${name}의 진술에서 이전과 다른 점이 발견되었다 — 탭하여 추궁`,
         relatedDisputes: [disputeId],
         turn: state.turnCount,
         contradictionMeta: {
@@ -1906,14 +1964,14 @@ export function applyLieCollapseSuccess(disputeId: string, party: PartyId) {
     playEvidenceUnlock()
     state.addDialogue({
       speaker: 'system',
-      text: `🔥 완벽하게 간파했다! 새 증거가 해금된다 — ${lockedEv.name}`,
+      text: `완벽하게 간파했다! 새 증거가 해금된다 — ${lockedEv.name}`,
       relatedDisputes: lockedEv.proves,
       turn: state.turnCount,
     })
   } else {
     state.addDialogue({
       speaker: 'system',
-      text: `🔥 완벽하게 간파했다! 결정적 순간을 놓치지 않았다.`,
+      text: `완벽하게 간파했다! 결정적 순간을 놓치지 않았다.`,
       relatedDisputes: [disputeId],
       turn: state.turnCount,
     })
@@ -1940,7 +1998,7 @@ export function applyContradictionSuccess(disputeId: string, target: PartyId) {
   // 모순 짚어냄 메시지
   state.addDialogue({
     speaker: 'system',
-    text: `⚡ 모순을 정확히 짚어냈다!`,
+    text: `모순을 정확히 짚어냈다!`,
     relatedDisputes: disputeId ? [disputeId] : [],
     turn: state.turnCount,
   })
@@ -1954,7 +2012,7 @@ export function applyContradictionSuccess(disputeId: string, target: PartyId) {
     notifyLieTransition(target, disputeId)
     state.addDialogue({
       speaker: 'system',
-      text: `🔓 ${name}의 방어가 흔들렸다! 진술이 달라지기 시작한다.`,
+      text: `${name}의 방어가 흔들렸다! 진술이 달라지기 시작한다.`,
       relatedDisputes: [disputeId],
       turn: state.turnCount,
     })
@@ -2327,7 +2385,7 @@ export function applyWitnessSlot(slotId: string): void {
   if (remaining.length > 0) {
     state.addDialogue({
       speaker: 'system',
-      text: `📋 ${pending.witnessName}에게 추가 질문이 가능합니다. (재소환 시)`,
+      text: `${pending.witnessName}에게 추가 질문이 가능합니다. (재소환 시)`,
       relatedDisputes: [],
       turn: state.turnCount,
     })

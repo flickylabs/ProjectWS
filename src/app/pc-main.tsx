@@ -8,7 +8,7 @@ import ToastContainer from '../components/common/Toast'
 import PCPrototypeStyle from '../components/pc/prototype/PCPrototypeStyle'
 import PCSvgDefs from '../components/pc/icons/PCSvgDefs'
 import EventFeedbackCard from '../components/pc/feedback/EventFeedbackCard'
-import MinorFeedbackStream from '../components/pc/feedback/MinorFeedbackStream'
+import ResonanceLayer from '../components/pc/observation/ResonanceLayer'
 
 // PC 모드 — body 클래스 추가
 document.body.classList.add('pc-mode')
@@ -21,7 +21,7 @@ createRoot(document.getElementById('root')!).render(
       <PCApp />
       <ToastContainer />
       <EventFeedbackCard />
-      <MinorFeedbackStream />
+      <ResonanceLayer />
     </ErrorBoundary>
   </StrictMode>,
 )

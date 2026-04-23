@@ -32,6 +32,7 @@ export default function ArchetypeTag({ party, archetype }: ArchetypeTagProps) {
     <span
       className={`tag tag-arch tag-arch--observed${isGlowing ? ' is-glowing' : ''}${tipOpen ? ' is-active' : ''}`}
       data-archetype-tag={`${party}:${archetype}`}
+      data-resonance-target={`archetype-${party}`}
       onClick={handleClick}
       role="button"
       tabIndex={0}

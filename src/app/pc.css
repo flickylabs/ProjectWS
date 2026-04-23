@@ -7704,15 +7704,17 @@ body.pc-mode .pc-play-timeline-panel {
   overflow: hidden !important;
 }
 
-/* Timeline open: raise left panel above center + blur chat for readability */
-body.pc-mode .pc-play-panel--left:has(.pc-play-left--timeline-host.is-timeline-open) {
+/* Timeline / Observation drawer open: raise left panel above center + blur chat for readability */
+body.pc-mode .pc-play-panel--left:has(.pc-play-left--timeline-host.is-timeline-open),
+body.pc-mode .pc-play-panel--left:has(.pc-jobs-drawer.is-open) {
   position: relative !important;
   z-index: 60 !important;
 }
 body.pc-mode .center.pc-play-center > .pc-play-chat {
   transition: filter 200ms ease;
 }
-body.pc-mode .pc-play-panel--left:has(.pc-play-left--timeline-host.is-timeline-open) ~ .center.pc-play-center > .pc-play-chat {
+body.pc-mode .pc-play-panel--left:has(.pc-play-left--timeline-host.is-timeline-open) ~ .center.pc-play-center > .pc-play-chat,
+body.pc-mode .pc-play-panel--left:has(.pc-jobs-drawer.is-open) ~ .center.pc-play-center > .pc-play-chat {
   filter: blur(2.5px) brightness(0.78);
 }
 
@@ -10745,7 +10747,7 @@ body.pc-mode .pc-ev-notebook__header {
   align-items: center;
   gap: 8px;
   width: 100%;
-  padding: 8px 10px;
+  padding: 7px 10px;
   border: 0;
   background: transparent;
   color: #e0ddd6;
@@ -14590,19 +14592,18 @@ body.pc-mode .pc-event-feedback-root.is-alert {
   to   { background-color: rgba(0,0,0,0); backdrop-filter: blur(0); }
 }
 
+/* PCInteractionPanel(자백 유도하기) 기준 톤 통일 */
 body.pc-mode .pc-event-feedback-card {
   pointer-events: auto;
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  gap: 12px;
-  border-radius: 14px;
-  border: 1px solid rgba(43, 46, 52, 0.8);
-  background: linear-gradient(180deg, rgba(20, 22, 28, 0.98), rgba(14, 16, 20, 0.99));
-  color: #e8e2d2;
+  gap: 14px;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: #0c0c14;
+  color: #dcdce0;
   text-align: left;
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
   will-change: transform, opacity;
   transition: none;
 }
@@ -14615,19 +14616,20 @@ body.pc-mode .pc-event-feedback-card.is-alert {
   box-shadow: 0 24px 56px rgba(0, 0, 0, 0.6);
 }
 
-/* Modal: 차분한 스탠다드 모달 */
+/* Modal: 자백 유도하기 스타일 */
 body.pc-mode .pc-event-feedback-card.is-modal {
-  padding: 28px 32px;
-  min-width: 420px;
-  max-width: min(680px, calc(100vw - 48px));
-  box-shadow: 0 36px 80px rgba(0, 0, 0, 0.7);
+  padding: 24px 28px 22px;
+  min-width: 480px;
+  max-width: min(640px, calc(100vw - 64px));
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.7);
 }
 
-/* Modal tone 변형 — 테두리만 살짝 색조 (과한 glow 제거) */
-body.pc-mode .pc-event-feedback-card.tone-red     { border-color: rgba(120, 60, 60, 0.6); }
-body.pc-mode .pc-event-feedback-card.tone-green   { border-color: rgba(60, 100, 70, 0.6); }
-body.pc-mode .pc-event-feedback-card.tone-blue    { border-color: rgba(60, 80, 120, 0.6); }
-body.pc-mode .pc-event-feedback-card.tone-neutral { border-color: rgba(60, 64, 74, 0.6); }
+/* Modal tone 변형 — 테두리만 은은한 색조 */
+body.pc-mode .pc-event-feedback-card.tone-gold    { border-color: rgba(212, 162, 78, 0.2); }
+body.pc-mode .pc-event-feedback-card.tone-red     { border-color: rgba(224, 96, 96, 0.2); }
+body.pc-mode .pc-event-feedback-card.tone-green   { border-color: rgba(92, 201, 122, 0.2); }
+body.pc-mode .pc-event-feedback-card.tone-blue    { border-color: rgba(91, 141, 239, 0.2); }
+body.pc-mode .pc-event-feedback-card.tone-neutral { border-color: rgba(255, 255, 255, 0.08); }
 
 body.pc-mode .pc-event-feedback-card.is-phase-appearing {
   opacity: 0;
@@ -14654,11 +14656,11 @@ body.pc-mode .pc-event-feedback-card.is-phase-leaving {
 }
 
 body.pc-mode .pc-event-feedback__eyebrow {
-  font-size: 12px;
-  letter-spacing: 0;
-  text-transform: none;
-  font-weight: 500;
-  color: #8a8d95;
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #d9a654;
   margin-bottom: 2px;
 }
 body.pc-mode .pc-event-feedback-card.tone-red .pc-event-feedback__eyebrow    { color: #a08080; }
@@ -14718,44 +14720,64 @@ body.pc-mode .pc-event-feedback__actions {
 }
 body.pc-mode .pc-event-feedback__action,
 body.pc-mode .pc-event-feedback__dismiss {
-  flex: 1 1 auto;
-  min-width: 140px;
-  padding: 14px 20px;
-  border-radius: 10px;
-  border: 1px solid rgba(43, 46, 52, 0.9);
-  background: rgba(28, 30, 36, 0.95);
-  color: #bfc2c8;
-  font-size: 14px;
-  font-weight: 500;
+  flex: 1 1 180px;
+  min-width: 180px;
+  min-height: 52px;
+  padding: 14px 24px;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: var(--pc-p3, rgba(28, 30, 36, 0.95));
+  color: #dcdce0;
+  font-size: 15px;
+  font-weight: 700;
   letter-spacing: 0;
   cursor: pointer;
-  transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease, transform 0.1s ease;
+  transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease, box-shadow 0.2s ease, transform 0.1s ease;
 }
 body.pc-mode .pc-event-feedback__action:hover,
 body.pc-mode .pc-event-feedback__dismiss:hover {
-  background: rgba(40, 43, 50, 0.98);
-  border-color: rgba(70, 75, 85, 0.95);
-  color: #dedfdc;
+  border-color: rgba(212, 162, 78, 0.22);
+  background: rgba(212, 162, 78, 0.1);
+  transform: translateY(-1px);
 }
 body.pc-mode .pc-event-feedback__action:active,
 body.pc-mode .pc-event-feedback__dismiss:active {
   transform: scale(0.98);
 }
-/* primary(gold) — 스크린샷 "새 정보 기준으로 수정" 팔레트 */
+/* primary(gold) — 증거 제시 스타일: 테두리 + 깜빡 glow, 배경 채움 없음 */
 body.pc-mode .pc-event-feedback__action.tone-gold {
-  background: rgba(90, 62, 40, 0.95);
+  border-color: rgba(212, 162, 78, 0.5);
+  background: var(--pc-p3, rgba(28, 30, 36, 0.95));
   color: #e8c089;
-  border-color: rgba(122, 88, 58, 0.85);
+  animation: pc-efb-action-pulse-gold 2.4s ease-in-out infinite;
 }
 body.pc-mode .pc-event-feedback__action.tone-gold:hover {
-  background: rgba(112, 78, 50, 0.98);
-  border-color: rgba(150, 110, 72, 0.95);
+  border-color: rgba(212, 162, 78, 0.85);
+  background: rgba(40, 43, 50, 0.98);
   color: #f0d099;
+  animation: none;
+  box-shadow: 0 0 0 1px rgba(212, 162, 78, 0.4), 0 0 24px rgba(212, 162, 78, 0.4);
+}
+@keyframes pc-efb-action-pulse-gold {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(212, 162, 78, 0); }
+  50%      { box-shadow: 0 0 20px rgba(212, 162, 78, 0.35); }
 }
 body.pc-mode .pc-event-feedback__action.tone-red {
-  background: rgba(50, 30, 30, 0.88);
-  color: #d48888;
-  border-color: rgba(100, 60, 60, 0.8);
+  border-color: rgba(224, 96, 96, 0.45);
+  background: var(--pc-p3, rgba(28, 30, 36, 0.95));
+  color: #e29a9a;
+  animation: pc-efb-action-pulse-red 2.4s ease-in-out infinite;
+}
+@keyframes pc-efb-action-pulse-red {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(224, 96, 96, 0); }
+  50%      { box-shadow: 0 0 18px rgba(224, 96, 96, 0.3); }
+}
+body.pc-mode .pc-event-feedback__action.tone-red:hover {
+  border-color: rgba(224, 96, 96, 0.7);
+  background: rgba(40, 43, 50, 0.98);
+  color: #efb0b0;
+  animation: none;
+  box-shadow: 0 0 0 1px rgba(224, 96, 96, 0.35), 0 0 22px rgba(224, 96, 96, 0.35);
 }
 body.pc-mode .pc-event-feedback__action.tone-red:hover {
   background: rgba(70, 40, 40, 0.95);
@@ -14763,26 +14785,50 @@ body.pc-mode .pc-event-feedback__action.tone-red:hover {
   color: #e89e9e;
 }
 body.pc-mode .pc-event-feedback__action.tone-green {
-  background: rgba(30, 50, 36, 0.88);
-  color: #8dc896;
-  border-color: rgba(60, 100, 70, 0.8);
+  border-color: rgba(92, 201, 122, 0.45);
+  background: var(--pc-p3, rgba(28, 30, 36, 0.95));
+  color: #9cd8a8;
+  animation: pc-efb-action-pulse-green 2.4s ease-in-out infinite;
+}
+@keyframes pc-efb-action-pulse-green {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(92, 201, 122, 0); }
+  50%      { box-shadow: 0 0 18px rgba(92, 201, 122, 0.3); }
 }
 body.pc-mode .pc-event-feedback__action.tone-green:hover {
-  background: rgba(40, 66, 48, 0.95);
-  border-color: rgba(80, 130, 92, 0.9);
-  color: #a4dcb0;
+  border-color: rgba(92, 201, 122, 0.7);
+  background: rgba(40, 43, 50, 0.98);
+  color: #b4e6c0;
+  animation: none;
+  box-shadow: 0 0 0 1px rgba(92, 201, 122, 0.3), 0 0 22px rgba(92, 201, 122, 0.35);
 }
 body.pc-mode .pc-event-feedback__action.tone-blue {
-  background: rgba(30, 38, 56, 0.88);
-  color: #8ea6c8;
-  border-color: rgba(60, 76, 112, 0.8);
+  border-color: rgba(91, 141, 239, 0.45);
+  background: var(--pc-p3, rgba(28, 30, 36, 0.95));
+  color: #9ebde4;
+  animation: pc-efb-action-pulse-blue 2.4s ease-in-out infinite;
+}
+@keyframes pc-efb-action-pulse-blue {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(91, 141, 239, 0); }
+  50%      { box-shadow: 0 0 18px rgba(91, 141, 239, 0.3); }
 }
 body.pc-mode .pc-event-feedback__action.tone-blue:hover {
-  background: rgba(40, 50, 72, 0.95);
-  border-color: rgba(80, 100, 144, 0.9);
-  color: #a8bdd8;
+  border-color: rgba(91, 141, 239, 0.7);
+  background: rgba(40, 43, 50, 0.98);
+  color: #b4cdf0;
+  animation: none;
+  box-shadow: 0 0 0 1px rgba(91, 141, 239, 0.3), 0 0 22px rgba(91, 141, 239, 0.35);
 }
-body.pc-mode .pc-event-feedback__action.tone-gray  { border-color: rgba(60, 64, 74, 0.6); color: #9a9da3; }
+body.pc-mode .pc-event-feedback__action.tone-gray {
+  border-color: rgba(255, 255, 255, 0.08);
+  background: var(--pc-p3, rgba(28, 30, 36, 0.95));
+  color: #9a9da3;
+  box-shadow: none;
+}
+body.pc-mode .pc-event-feedback__action.tone-gray:hover {
+  border-color: rgba(255, 255, 255, 0.14);
+  background: rgba(40, 43, 50, 0.98);
+  color: #bfc2c8;
+}
 body.pc-mode .pc-event-feedback__dismiss {
   flex: 0 0 auto;
   min-width: 120px;
@@ -14790,15 +14836,19 @@ body.pc-mode .pc-event-feedback__dismiss {
   padding: 12px 24px;
 }
 
-/* 세로 레이아웃 액션 (증인 주제 리스트 등) */
+/* 세로 레이아웃 액션 (증인 주제 리스트 / 진실 공방 판결 등) */
 body.pc-mode .pc-event-feedback__actions.layout-vertical {
   flex-direction: column;
   align-items: stretch;
+  gap: 8px;
 }
 body.pc-mode .pc-event-feedback__actions.layout-vertical .pc-event-feedback__action {
+  flex: 0 0 auto;
   text-align: left;
   min-width: 0;
   width: 100%;
+  min-height: 0;
+  padding: 12px 18px;
 }
 
 /* bodyLines */
@@ -15390,5 +15440,776 @@ body.pc-mode .pc-event-feedback-card.kind-contradiction.is-phase-visible .pc-eve
   0%   { opacity: 0; transform: scale(0.4) rotate(-30deg); }
   70%  { opacity: 1; transform: scale(1.15) rotate(4deg); }
   100% { opacity: 1; transform: scale(1) rotate(0); }
+}
+
+/* ──────────────────────────────────────────────────────────────
+ * Judge Observation Section (재판관의 관찰) — S1 껍데기
+ * 좌측 패널 구조 재분배 (세 영역 모두 고정 세로):
+ *  - 증거 수첩:      240px (카드 원본 높이 유지, 섹션 내부 스크롤)
+ *  - 발언노트:       330px (현재 × 1.5, 카드+드롭존 공유, 내부 스크롤)
+ *  - 재판관의 관찰: 220px (기본 스크롤 없이 4개 내외 노출, 초과 시 스크롤)
+ * ────────────────────────────────────────────────────────────── */
+body.pc-mode .pc-play-left {
+  gap: 10px !important;
+}
+
+/* 증거 수첩 — 카드 원본 높이 유지 + 섹션 내부 스크롤 */
+body.pc-mode .pc-play-evidence-section {
+  flex: 0 0 auto !important;
+  max-height: 240px;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+body.pc-mode .pc-play-evidence-section .pc-play-evidence-list {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  padding-right: 4px;
+  gap: 4px !important;
+}
+body.pc-mode .pc-play-evidence-section .pc-play-ev-card,
+body.pc-mode .pc-play-evidence-section .pc-ev-notebook {
+  flex-shrink: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+/* 발언노트 — 고정 세로 + 내부 (카드 + 드롭존) 공유 + 스크롤 */
+body.pc-mode .pc-play-left .pc-important-notes-section {
+  flex: 0 0 330px !important;
+  height: 330px !important;
+  max-height: 330px !important;
+  min-height: 330px !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+body.pc-mode .pc-play-left .pc-important-notes-section .sec-content {
+  flex: 1 1 auto !important;
+  min-height: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  overflow: hidden !important;
+}
+body.pc-mode .pc-play-left .pc-important-notes-section .pc-important-notes__scroll {
+  flex: 1 1 auto !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  overflow-y: auto !important;
+}
+
+/* 재판관의 관찰 — 고정 세로, 기본 스크롤 없이 */
+body.pc-mode .pc-judge-observation-section {
+  flex: 0 0 220px !important;
+  height: 220px !important;
+  max-height: 220px !important;
+  min-height: 220px !important;
+  display: flex;
+  flex-direction: column;
+  padding-top: 10px;
+  border-top: 1px solid rgba(43, 46, 52, 0.6);
+  gap: 6px;
+}
+body.pc-mode .pc-judge-observation-section .sec-h {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+body.pc-mode .pc-judge-observation-section .sec-h > span:nth-of-type(1) {
+  color: #ebe5d5;
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 0.02em;
+}
+
+body.pc-mode .pc-jobs-badge {
+  font-size: 10px;
+  font-weight: 700;
+  padding: 1px 7px;
+  border-radius: 999px;
+  background: rgba(90, 62, 40, 0.95);
+  color: #e8c089;
+  border: 1px solid rgba(122, 88, 58, 0.85);
+  line-height: 1.4;
+  transition: transform 0.2s ease, box-shadow 0.25s ease;
+}
+body.pc-mode .pc-jobs-badge.is-flash {
+  animation: pc-jobs-badge-flash 0.7s cubic-bezier(0.3, 1.3, 0.5, 1);
+}
+@keyframes pc-jobs-badge-flash {
+  0%   { transform: scale(1); box-shadow: 0 0 0 0 rgba(232, 192, 137, 0); }
+  30%  { transform: scale(1.35); box-shadow: 0 0 14px 2px rgba(232, 192, 137, 0.7); }
+  100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(232, 192, 137, 0); }
+}
+
+body.pc-mode .pc-jobs-history-btn {
+  margin-left: auto;
+  background: rgba(28, 30, 36, 0.95);
+  color: #bfc2c8;
+  border: 1px solid rgba(43, 46, 52, 0.9);
+  border-radius: 8px;
+  padding: 3px 6px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.18s ease, border-color 0.18s ease, color 0.18s ease;
+}
+body.pc-mode .pc-jobs-history-btn:hover {
+  background: rgba(40, 42, 48, 0.98);
+  border-color: rgba(122, 88, 58, 0.85);
+  color: #e8c089;
+}
+
+/* 카테고리 컬러 변수 */
+body.pc-mode .pc-judge-observation-section {
+  --jobs-cat-archetype: #d4a672;
+  --jobs-cat-state: #e8c172;
+  --jobs-cat-contradiction: #dc6e66;
+  --jobs-cat-slip: #e39a6d;
+  --jobs-cat-evidence: #b8cb9d;
+  --jobs-cat-event: #bfc2c8;
+}
+
+/* ── 미니 타임라인 아이콘 줄 (가로, 좌 과거 → 우 최근) ── */
+body.pc-mode .pc-jobs-mini-timeline {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 2px;
+  min-height: 22px;
+}
+body.pc-mode .pc-jobs-mini-timeline__empty {
+  color: #5e6066;
+  font-size: 14px;
+  letter-spacing: 4px;
+  opacity: 0.6;
+}
+
+body.pc-mode .pc-jobs-mini-dot {
+  width: 18px;
+  height: 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 1px solid rgba(43, 46, 52, 0.8);
+  background: rgba(22, 24, 30, 0.9);
+  color: #6d7078;
+  cursor: pointer;
+  flex-shrink: 0;
+  padding: 0;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, color 0.18s ease;
+  opacity: 0.55;
+}
+body.pc-mode .pc-jobs-mini-dot:hover {
+  transform: translateY(-1px);
+  opacity: 0.85;
+}
+body.pc-mode .pc-jobs-mini-dot.is-active {
+  width: 20px;
+  height: 20px;
+  opacity: 1;
+  box-shadow: 0 0 0 1px rgba(232, 193, 114, 0.5), 0 0 8px rgba(232, 193, 114, 0.35);
+}
+body.pc-mode .pc-jobs-mini-dot.is-archetype    { color: var(--jobs-cat-archetype); }
+body.pc-mode .pc-jobs-mini-dot.is-state        { color: var(--jobs-cat-state); }
+body.pc-mode .pc-jobs-mini-dot.is-contradiction { color: var(--jobs-cat-contradiction); }
+body.pc-mode .pc-jobs-mini-dot.is-slip         { color: var(--jobs-cat-slip); }
+body.pc-mode .pc-jobs-mini-dot.is-evidence     { color: var(--jobs-cat-evidence); }
+body.pc-mode .pc-jobs-mini-dot.is-event        { color: var(--jobs-cat-event); }
+
+/* ── 메인 슬롯 — 라이브 쇼케이스 (좌측 테두리로 카테고리 강조) ── */
+body.pc-mode .pc-jobs-main {
+  flex: 1 1 auto;
+  display: grid;
+  grid-template-columns: 40px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  border-radius: 14px;
+  border: 1px solid rgba(43, 46, 52, 0.6);
+  border-left-width: 3px;
+  border-left-color: rgba(212, 162, 78, 0.55);
+  background: rgba(20, 22, 28, 0.45);
+  cursor: pointer;
+  text-align: left;
+  font: inherit;
+  color: inherit;
+  position: relative;
+  min-height: 0;
+  transition: border-color 0.24s ease, background 0.24s ease;
+}
+
+/* DOM의 좌측 컬러바 span은 더 이상 사용하지 않음 (border-left가 대신) */
+body.pc-mode .pc-jobs-main__bar {
+  display: none;
+}
+
+/* 카테고리별 — 좌측 테두리 색만 부여, 배경/오버레이 없음 */
+body.pc-mode .pc-jobs-main.is-archetype    { border-left-color: var(--jobs-cat-archetype); }
+body.pc-mode .pc-jobs-main.is-state        { border-left-color: var(--jobs-cat-state); }
+body.pc-mode .pc-jobs-main.is-contradiction { border-left-color: var(--jobs-cat-contradiction); }
+body.pc-mode .pc-jobs-main.is-slip         { border-left-color: var(--jobs-cat-slip); }
+body.pc-mode .pc-jobs-main.is-evidence     { border-left-color: var(--jobs-cat-evidence); }
+body.pc-mode .pc-jobs-main.is-event        { border-left-color: var(--jobs-cat-event); }
+
+body.pc-mode .pc-jobs-main.is-empty {
+  grid-template-columns: 1fr;
+  justify-items: center;
+  align-items: center;
+  padding: 16px;
+  border-left-width: 1px;
+  border-left-color: rgba(43, 46, 52, 0.4);
+  border-style: dashed;
+  background: transparent;
+  cursor: default;
+}
+body.pc-mode .pc-jobs-main__empty-text {
+  color: #6d7078;
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+/* 큰 아이콘 — 박스 없이 아이콘만 */
+body.pc-mode .pc-jobs-main__icon {
+  width: 36px;
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+  transition: color 0.4s ease;
+}
+body.pc-mode .pc-jobs-main.is-archetype    .pc-jobs-main__icon { color: var(--jobs-cat-archetype); }
+body.pc-mode .pc-jobs-main.is-state        .pc-jobs-main__icon { color: var(--jobs-cat-state); }
+body.pc-mode .pc-jobs-main.is-contradiction .pc-jobs-main__icon { color: var(--jobs-cat-contradiction); }
+body.pc-mode .pc-jobs-main.is-slip         .pc-jobs-main__icon { color: var(--jobs-cat-slip); }
+body.pc-mode .pc-jobs-main.is-evidence     .pc-jobs-main__icon { color: var(--jobs-cat-evidence); }
+body.pc-mode .pc-jobs-main.is-event        .pc-jobs-main__icon { color: var(--jobs-cat-event); }
+
+/* 본문 */
+body.pc-mode .pc-jobs-main__body {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+  position: relative;
+  z-index: 1;
+}
+body.pc-mode .pc-jobs-main__title {
+  font-size: 13px;
+  font-weight: 600;
+  color: #f4ecd8;
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  word-break: keep-all;
+  transition: color 0.4s ease;
+}
+body.pc-mode .pc-jobs-main__summary {
+  font-size: 11px;
+  color: #8a8d95;
+  line-height: 1.4;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  opacity: 0.85;
+  transition: color 0.4s ease;
+}
+body.pc-mode .pc-jobs-main__time {
+  font-size: 10px;
+  color: #8a8d95;
+  padding-top: 2px;
+  white-space: nowrap;
+  flex-shrink: 0;
+  align-self: flex-start;
+  position: relative;
+  z-index: 1;
+  transition: color 0.4s ease;
+}
+
+/* 신선(is-fresh) — 등장 직후 scale + 좌측 테두리 glow */
+body.pc-mode .pc-jobs-main.is-fresh {
+  animation: pc-jobs-main-enter 0.45s cubic-bezier(0.22, 0.9, 0.32, 1.1),
+             pc-jobs-left-glow 2s ease-out;
+}
+
+/* Dim(is-dim) — 몇 초 후 비활성 느낌. 색 바래짐 + 테두리 흐려짐 */
+body.pc-mode .pc-jobs-main.is-dim { border-left-color: rgba(80, 82, 88, 0.5); }
+body.pc-mode .pc-jobs-main.is-dim .pc-jobs-main__title { color: #8a8d95; }
+body.pc-mode .pc-jobs-main.is-dim .pc-jobs-main__summary { color: #6d7078; }
+body.pc-mode .pc-jobs-main.is-dim .pc-jobs-main__time { color: #5e6066; }
+body.pc-mode .pc-jobs-main.is-dim .pc-jobs-main__icon { color: rgba(154, 157, 164, 0.55); }
+
+body.pc-mode .pc-jobs-main:hover:not(.is-empty) {
+  border-color: rgba(122, 88, 58, 0.55);
+  background: rgba(26, 28, 34, 0.6);
+}
+
+@keyframes pc-jobs-main-enter {
+  0%   { transform: scale(0.94); opacity: 0.0; }
+  60%  { transform: scale(1.015); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+}
+@keyframes pc-jobs-left-glow {
+  0%   { box-shadow: -3px 0 10px -2px rgba(212, 162, 78, 0); }
+  25%  { box-shadow: -3px 0 14px -1px rgba(212, 162, 78, 0.55); }
+  100% { box-shadow: -3px 0 0 -2px rgba(212, 162, 78, 0); }
+}
+
+/* Incoming — 컷씬이 아직 수렴 중. 카드는 숨겨진 상태 (등장 대기) */
+body.pc-mode .pc-jobs-main.is-incoming {
+  opacity: 0 !important;
+  transform: scale(0.3) !important;
+  pointer-events: none !important;
+  animation: none !important;
+  transition: none !important;
+}
+
+/* Hero flash — 말풍선 jump-pulse와 동일 리듬 (1.4s 2번 깜빡) */
+body.pc-mode .pc-jobs-main.is-hero-flash {
+  animation: pc-jobs-main-hero-flash 1.4s ease-out !important;
+}
+@keyframes pc-jobs-main-hero-flash {
+  0%   { box-shadow: 0 0 0 0 rgba(232, 193, 114, 0); }
+  14%  { box-shadow: 0 0 0 3px rgba(232, 193, 114, 0.7), 0 0 24px 6px rgba(212, 162, 78, 0.4); }
+  30%  { box-shadow: 0 0 0 0 rgba(232, 193, 114, 0); }
+  48%  { box-shadow: 0 0 0 0 rgba(232, 193, 114, 0); }
+  62%  { box-shadow: 0 0 0 3px rgba(232, 193, 114, 0.6), 0 0 20px 5px rgba(212, 162, 78, 0.32); }
+  78%  { box-shadow: 0 0 0 0 rgba(232, 193, 114, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(232, 193, 114, 0); }
+}
+
+/* ── Observation / Transition 컷씬 — 얇은 검정 띠 + flash + 관찰 패널 수렴 ── */
+/* 배경 blur 제거, padding 축소, 한 줄 간결화 */
+body.pc-mode .pc-event-feedback-card.kind-observation.is-cutscene,
+body.pc-mode .pc-event-feedback-card.kind-transition_choice.is-cutscene {
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  padding: 14px 0 !important;
+  gap: 2px !important;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.92) 22%,
+    rgba(0, 0, 0, 0.96) 50%,
+    rgba(0, 0, 0, 0.92) 78%,
+    rgba(0, 0, 0, 0) 100%
+  ) !important;
+  background-image: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.92) 22%,
+    rgba(0, 0, 0, 0.96) 50%,
+    rgba(0, 0, 0, 0.92) 78%,
+    rgba(0, 0, 0, 0) 100%
+  ) !important;
+}
+
+/* Eye SVG / eyebrow / title / ornament 숨김 — body 한 줄만 */
+body.pc-mode .pc-event-feedback-card.kind-observation.is-cutscene .pc-event-feedback__eye,
+body.pc-mode .pc-event-feedback-card.kind-observation.is-cutscene .pc-event-feedback__eyebrow,
+body.pc-mode .pc-event-feedback-card.kind-observation.is-cutscene .pc-event-feedback__title,
+body.pc-mode .pc-event-feedback-card.kind-observation.is-cutscene .pc-event-feedback__ornament,
+body.pc-mode .pc-event-feedback-card.kind-observation.is-cutscene .pc-event-feedback__tag,
+body.pc-mode .pc-event-feedback-card.kind-transition_choice.is-cutscene .pc-event-feedback__eye,
+body.pc-mode .pc-event-feedback-card.kind-transition_choice.is-cutscene .pc-event-feedback__eyebrow,
+body.pc-mode .pc-event-feedback-card.kind-transition_choice.is-cutscene .pc-event-feedback__title,
+body.pc-mode .pc-event-feedback-card.kind-transition_choice.is-cutscene .pc-event-feedback__ornament,
+body.pc-mode .pc-event-feedback-card.kind-transition_choice.is-cutscene .pc-event-feedback__subtitle,
+body.pc-mode .pc-event-feedback-card.kind-transition_choice.is-cutscene .pc-event-feedback__tag {
+  display: none !important;
+}
+
+/* body 한 줄 작은 글씨 */
+body.pc-mode .pc-event-feedback-card.kind-observation.is-cutscene .pc-event-feedback__body,
+body.pc-mode .pc-event-feedback-card.kind-transition_choice.is-cutscene .pc-event-feedback__body {
+  font-size: 13.5px !important;
+  line-height: 1.35 !important;
+  text-align: center !important;
+  color: #f4ecd8 !important;
+  padding: 0 16% !important;
+  margin: 0 !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  font-weight: 400 !important;
+  letter-spacing: 0.01em !important;
+}
+
+/* 등장 시 flash — 번쩍 */
+body.pc-mode .pc-event-feedback-card.kind-observation.is-cutscene.is-phase-appearing,
+body.pc-mode .pc-event-feedback-card.kind-transition_choice.is-cutscene.is-phase-appearing {
+  animation: pc-obs-cutscene-flash 0.5s cubic-bezier(0.22, 0.9, 0.32, 1) !important;
+}
+@keyframes pc-obs-cutscene-flash {
+  0%   { opacity: 0; transform: scaleY(0.3); filter: brightness(2.2); }
+  25%  { opacity: 1; transform: scaleY(1.2); filter: brightness(2.6); }
+  55%  { transform: scaleY(0.95); filter: brightness(1.5); }
+  100% { opacity: 1; transform: scaleY(1); filter: brightness(1); }
+}
+
+/* Visible 상태에서 body만 등장 (기존 is-cutscene의 0 opacity 애니메이션 오버라이드) */
+body.pc-mode .pc-event-feedback-card.kind-observation.is-cutscene.is-phase-visible .pc-event-feedback__body,
+body.pc-mode .pc-event-feedback-card.kind-transition_choice.is-cutscene.is-phase-visible .pc-event-feedback__body {
+  animation: pc-obs-body-in 0.35s 0.1s ease-out backwards !important;
+  opacity: 1 !important;
+}
+@keyframes pc-obs-body-in {
+  from { opacity: 0; transform: translateY(4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* 수렴 — 좌측 하단(관찰 패널 방향)으로 축소되며 빨려들어감 (뚜렷한 모션) */
+body.pc-mode .pc-event-feedback-card.kind-observation.is-cutscene.is-phase-leaving,
+body.pc-mode .pc-event-feedback-card.kind-observation.is-cutscene.is-phase-converging,
+body.pc-mode .pc-event-feedback-card.kind-transition_choice.is-cutscene.is-phase-leaving,
+body.pc-mode .pc-event-feedback-card.kind-transition_choice.is-cutscene.is-phase-converging {
+  animation: pc-obs-converge 0.7s cubic-bezier(0.55, 0, 0.85, 0.05) forwards !important;
+  transform-origin: 14vw 78vh !important;
+}
+@keyframes pc-obs-converge {
+  0%   { transform: translate(0, 0) scale(1); opacity: 1; filter: brightness(1.1); }
+  35%  { transform: translate(-12vw, 14vh) scale(0.55); opacity: 0.9; filter: brightness(1.6); }
+  70%  { transform: translate(-26vw, 28vh) scale(0.22); opacity: 0.6; filter: brightness(1.4); }
+  100% { transform: translate(-36vw, 34vh) scale(0.06); opacity: 0; filter: brightness(1); }
+}
+
+/* observation 컷씬은 root backdrop도 최소화 (이미 alert라 blur 없음) */
+body.pc-mode .pc-event-feedback-root.is-alert:has(.kind-observation.is-cutscene) {
+  padding-top: 14vh !important;
+}
+
+/* ── Judge Observation History Drawer — 좌측 패널 오른쪽 확장 토스트 ── */
+/* 사건 히스토리(pc-play-timeline-panel)와 동일 패턴 */
+body.pc-mode .pc-jobs-drawer {
+  position: absolute;
+  top: 0;
+  left: calc(100% + 14px);
+  bottom: 0;
+  width: 360px;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateX(-16px);
+  transition: transform 180ms ease, visibility 180ms ease, opacity 180ms ease;
+  opacity: 0;
+  z-index: 50;
+  background: #0a0a10;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  box-shadow: 0 22px 42px rgba(0, 0, 0, 0.6);
+  display: flex;
+  flex-direction: column;
+  padding: 18px 20px 16px;
+  color: #ebe5d5;
+}
+body.pc-mode .pc-jobs-drawer.is-open {
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateX(0);
+  opacity: 1;
+}
+
+body.pc-mode .pc-jobs-drawer__header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 0 10px;
+  margin-bottom: 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+body.pc-mode .pc-jobs-drawer__title {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #ebe5d5;
+  letter-spacing: 0.02em;
+}
+body.pc-mode .pc-jobs-drawer__close {
+  margin-left: auto;
+  background: transparent;
+  color: #9ea1a8;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 6px;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+body.pc-mode .pc-jobs-drawer__close:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: #e8c089;
+}
+
+body.pc-mode .pc-jobs-drawer__filter-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  padding: 2px 0 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  margin-bottom: 4px;
+}
+body.pc-mode .pc-jobs-drawer__filter {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(43, 46, 52, 0.75);
+  background: rgba(28, 30, 36, 0.8);
+  color: #9ea1a8;
+  font-size: 11px;
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+body.pc-mode .pc-jobs-drawer__filter:hover {
+  background: rgba(40, 42, 48, 0.9);
+  color: #e8c089;
+}
+body.pc-mode .pc-jobs-drawer__filter.is-active {
+  background: rgba(90, 62, 40, 0.95);
+  border-color: rgba(122, 88, 58, 0.9);
+  color: #e8c089;
+}
+body.pc-mode .pc-jobs-drawer__filter-count {
+  font-size: 10px;
+  font-weight: 700;
+  opacity: 0.8;
+}
+body.pc-mode .pc-jobs-drawer__mark-all {
+  margin-left: auto;
+  padding: 4px 10px;
+  border-radius: 6px;
+  border: 1px solid rgba(43, 46, 52, 0.75);
+  background: transparent;
+  color: #9ea1a8;
+  font-size: 11px;
+  cursor: pointer;
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+body.pc-mode .pc-jobs-drawer__mark-all:hover {
+  border-color: rgba(122, 88, 58, 0.85);
+  color: #e8c089;
+}
+
+body.pc-mode .pc-jobs-drawer__timeline {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  list-style: none;
+  margin: 0;
+  padding: 8px 4px 16px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+body.pc-mode .pc-jobs-drawer__empty {
+  color: #6d7078;
+  font-size: 12px;
+  padding: 32px 10px;
+  text-align: center;
+  opacity: 0.7;
+}
+
+body.pc-mode .pc-jobs-drawer__item {
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+body.pc-mode .pc-jobs-drawer__item-btn {
+  display: grid;
+  grid-template-columns: 24px minmax(0, 1fr);
+  align-items: start;
+  gap: 10px;
+  width: 100%;
+  padding: 8px 2px 8px 0;
+  background: transparent;
+  border: none;
+  cursor: default;
+  text-align: left;
+  font: inherit;
+  color: inherit;
+}
+body.pc-mode .pc-jobs-drawer__item.is-linked .pc-jobs-drawer__item-btn {
+  cursor: pointer;
+}
+body.pc-mode .pc-jobs-drawer__item.is-linked:hover .pc-jobs-drawer__item-title {
+  color: #f4ecd8;
+}
+
+body.pc-mode .pc-jobs-drawer__rail {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: 24px;
+  min-height: 100%;
+}
+body.pc-mode .pc-jobs-drawer__rail::before {
+  content: '';
+  position: absolute;
+  top: -8px;
+  bottom: -14px;
+  left: 50%;
+  width: 2px;
+  transform: translateX(-50%);
+  background: rgba(255, 255, 255, 0.06);
+}
+body.pc-mode .pc-jobs-drawer__timeline > li:first-child .pc-jobs-drawer__rail::before { top: 16px; }
+body.pc-mode .pc-jobs-drawer__timeline > li:last-child .pc-jobs-drawer__rail::before { bottom: 16px; }
+
+body.pc-mode .pc-jobs-drawer__dot {
+  position: relative;
+  z-index: 1;
+  width: 18px;
+  height: 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 1px solid rgba(43, 46, 52, 0.9);
+  background: rgba(20, 22, 28, 0.95);
+  color: #6d7078;
+  margin-top: 2px;
+  transition: color 0.18s ease, border-color 0.18s ease;
+}
+body.pc-mode .pc-jobs-drawer__item.is-archetype    .pc-jobs-drawer__dot { color: var(--jobs-cat-archetype, #d4a672); }
+body.pc-mode .pc-jobs-drawer__item.is-state        .pc-jobs-drawer__dot { color: var(--jobs-cat-state, #e8c172); }
+body.pc-mode .pc-jobs-drawer__item.is-contradiction .pc-jobs-drawer__dot { color: var(--jobs-cat-contradiction, #dc6e66); }
+body.pc-mode .pc-jobs-drawer__item.is-slip         .pc-jobs-drawer__dot { color: var(--jobs-cat-slip, #e39a6d); }
+body.pc-mode .pc-jobs-drawer__item.is-evidence     .pc-jobs-drawer__dot { color: var(--jobs-cat-evidence, #b8cb9d); }
+body.pc-mode .pc-jobs-drawer__item.is-event        .pc-jobs-drawer__dot { color: var(--jobs-cat-event, #bfc2c8); }
+body.pc-mode .pc-jobs-drawer__item.is-unread .pc-jobs-drawer__dot {
+  border-color: rgba(232, 192, 137, 0.7);
+  box-shadow: 0 0 6px rgba(232, 192, 137, 0.35);
+}
+
+body.pc-mode .pc-jobs-drawer__item-body {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+}
+body.pc-mode .pc-jobs-drawer__item-meta {
+  display: inline-flex;
+  gap: 8px;
+  font-size: 10px;
+  color: #8a8d95;
+}
+body.pc-mode .pc-jobs-drawer__item-turn { font-weight: 600; }
+body.pc-mode .pc-jobs-drawer__item-cat { opacity: 0.8; }
+body.pc-mode .pc-jobs-drawer__item-title {
+  font-size: 12px;
+  color: #cfd2d8;
+  line-height: 1.45;
+  word-break: keep-all;
+}
+body.pc-mode .pc-jobs-drawer__item.is-unread .pc-jobs-drawer__item-title {
+  color: #f4ecd8;
+  font-weight: 500;
+}
+body.pc-mode .pc-jobs-drawer__item-summary {
+  font-size: 11px;
+  color: #6d7078;
+  opacity: 0.85;
+}
+
+@keyframes pc-jobs-drawer-backdrop-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes pc-jobs-drawer-in {
+  from { transform: translateX(100%); }
+  to   { transform: translateX(0); }
+}
+
+/* ── ResonanceLayer — 번개 공명선 오버레이 ── */
+body.pc-mode .pc-resonance-layer {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 10000;
+  overflow: visible;
+}
+/* 전기 테두리(aura) — 요소 주변 3겹 zigzag border */
+body.pc-mode .pc-aura-bolt {
+  fill: none;
+  stroke: #fff6cc;
+  stroke-linecap: round;
+  stroke-linejoin: miter;
+  stroke-miterlimit: 6;
+  filter:
+    drop-shadow(0 0 3px rgba(255, 255, 220, 0.9))
+    drop-shadow(0 0 8px rgba(252, 217, 128, 0.8))
+    drop-shadow(0 0 18px rgba(232, 193, 114, 0.55));
+  animation: pc-aura-flicker 1.2s steps(16, end) forwards;
+}
+body.pc-mode .pc-aura-bolt--layer-0 { stroke-width: 2; opacity: 0.95; }
+body.pc-mode .pc-aura-bolt--layer-1 { stroke-width: 1.4; opacity: 0.7; }
+body.pc-mode .pc-aura-bolt--layer-2 { stroke-width: 1; opacity: 0.45; }
+
+@keyframes pc-aura-flicker {
+  0%   { opacity: 0; }
+  6%   { opacity: 1; }
+  12%  { opacity: 0.4; }
+  20%  { opacity: 0.95; }
+  30%  { opacity: 0.55; }
+  45%  { opacity: 0.85; }
+  60%  { opacity: 0.6; }
+  75%  { opacity: 0.7; }
+  88%  { opacity: 0.4; }
+  100% { opacity: 0; }
+}
+
+body.pc-mode .pc-resonance-bolt {
+  stroke: #fff6cc;
+  stroke-width: 4;
+  stroke-linecap: round;
+  stroke-linejoin: miter;
+  stroke-miterlimit: 6;
+  fill: none;
+  filter:
+    drop-shadow(0 0 4px rgba(255, 255, 220, 1))
+    drop-shadow(0 0 10px rgba(252, 217, 128, 1))
+    drop-shadow(0 0 22px rgba(232, 193, 114, 0.9))
+    drop-shadow(0 0 40px rgba(184, 140, 70, 0.7));
+  animation:
+    pc-resonance-draw 0.25s ease-out forwards,
+    pc-resonance-flicker 0.6s 0.25s steps(8, end) forwards;
+}
+@keyframes pc-resonance-draw {
+  from { stroke-dashoffset: var(--bolt-length, 1000); }
+  to   { stroke-dashoffset: 0; }
+}
+@keyframes pc-resonance-flicker {
+  0%   { opacity: 1; }
+  20%  { opacity: 0.55; }
+  40%  { opacity: 1; }
+  60%  { opacity: 0.45; }
+  80%  { opacity: 0.95; }
+  100% { opacity: 0; }
+}
+
+/* 관찰 엔트리/히스토리 클릭 시 해당 dialogue로 jump + 2번 깜빡 (말풍선 + 관찰 카드 + 뱃지 공용) */
+body.pc-mode .pc-dialogue-jump-pulse {
+  animation: pc-dialogue-jump-pulse 1.4s ease-out;
+  border-radius: 10px;
+}
+@keyframes pc-dialogue-jump-pulse {
+  0%   { box-shadow: 0 0 0 0 rgba(232, 193, 114, 0); }
+  14%  { box-shadow: 0 0 0 3px rgba(232, 193, 114, 0.7), 0 0 24px 6px rgba(212, 162, 78, 0.4); }
+  30%  { box-shadow: 0 0 0 0 rgba(232, 193, 114, 0); }
+  48%  { box-shadow: 0 0 0 0 rgba(232, 193, 114, 0); }
+  62%  { box-shadow: 0 0 0 3px rgba(232, 193, 114, 0.6), 0 0 20px 5px rgba(212, 162, 78, 0.32); }
+  78%  { box-shadow: 0 0 0 0 rgba(232, 193, 114, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(232, 193, 114, 0); }
 }
 

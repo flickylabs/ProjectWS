@@ -136,7 +136,7 @@ function MessageBubble({ entry, animate, combinableTexts, combinationHintMap, is
             type="button"
           >
             <span className="pc-log-system-card__icon">
-              <PCSvgIcon id={iconId} size={16} />
+              <PCSvgIcon id={iconId} size={20} />
             </span>
             <span className="pc-log-system-card__text">{displayText.trim()}</span>
             <span className="pc-log-system-card__action-badge">{used ? '추궁 완료' : '추궁하기'}</span>
@@ -151,7 +151,7 @@ function MessageBubble({ entry, animate, combinableTexts, combinationHintMap, is
       return (
         <div className="pc-log-system-row is-success">
           <button className={`pc-log-system-card is-success${checked ? ' is-used' : ''}`} onClick={() => { _usedContradictions.add(entry.id); openEntryDetail() }} type="button">
-            <span className="pc-log-system-card__icon"><PCSvgIcon id={iconId} size={16} /></span>
+            <span className="pc-log-system-card__icon"><PCSvgIcon id={iconId} size={20} /></span>
             <span className="pc-log-system-card__text">{displayText}</span>
             {!checked ? <span className="pc-log-system-card__action-badge">확인</span> : null}
           </button>
@@ -179,7 +179,7 @@ function MessageBubble({ entry, animate, combinableTexts, combinationHintMap, is
     return (
       <div className={`pc-log-system-row is-${category}`}>
         <button className={`pc-log-system-card is-${category}`} onClick={() => openEntryDetail()} type="button">
-          <span className="pc-log-system-card__icon"><PCSvgIcon id={iconId} size={15} /></span>
+          <span className="pc-log-system-card__icon"><PCSvgIcon id={iconId} size={20} /></span>
           <span className="pc-log-system-card__text">{displayText}</span>
         </button>
       </div>

@@ -8,6 +8,8 @@ import { HOTBAR_DRAG_TYPE } from '../hotbar/pcHotbarConfig'
 import { openPcInteractionPanel, type PcInteractionAction } from '../layout/PCInteractionPanel'
 import PCImportantNotesSection, { PC_ADD_COMBINATION_NOTE_EVENT, type PcCombinationPanelEventDetail } from './PCImportantNotesSection'
 import PCCaseTimelineSection from './PCCaseTimelineSection'
+import JudgeObservationSection from '../observation/JudgeObservationSection'
+import JudgeObservationHistoryDrawer from '../observation/JudgeObservationHistoryDrawer'
 
 const TYPE_LABELS: Record<string, string> = {
   bank: '금융',
@@ -169,6 +171,7 @@ export default function PCLeftPanel() {
             return (
               <div
                 className={`pc-ev-notebook${combinableIds.has(evidence.id) ? ' is-combinable' : ''}`}
+                data-resonance-target={`evidence-${evidence.id}`}
                 draggable
                 key={evidence.id}
                 onDragStart={(event) => startEvidenceDrag(event, evidence.id, label)}
@@ -213,9 +216,13 @@ export default function PCLeftPanel() {
 
       <PCImportantNotesSection />
 
+      <JudgeObservationSection />
+
       <aside className={`pc-play-timeline-panel${timelineOpen ? ' is-open' : ''}`} aria-hidden={!timelineOpen}>
         <PCCaseTimelineSection />
       </aside>
+
+      <JudgeObservationHistoryDrawer />
     </div>
   )
 }
