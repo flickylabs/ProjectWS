@@ -453,7 +453,6 @@ function CharacterCard({
       <div className="char-info">
         <span className="char-nm">{name}</span>
         <span className={`char-emo ${emotion === 'angry' ? 'ce-sh' : 'ce-cf'}`}>{EMOTION_LABELS[emotion]}</span>
-        <span className="char-hp"><span className="char-hp-f" /></span>
       </div>
     </button>
   )

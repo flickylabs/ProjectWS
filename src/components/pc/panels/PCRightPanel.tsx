@@ -25,6 +25,7 @@ import ArchetypeTag from '../tags/ArchetypeTag'
 
 const LIE_STATES: LieState[] = ['S0', 'S1', 'S2', 'S3', 'S4', 'S5']
 
+
 const EMOTION_LABELS: Record<EmotionalPhase, string> = {
   defensive: '\uACBD\uACC4',
   confident: '\uC790\uC2E0\uAC10',
@@ -39,6 +40,8 @@ export default function PCRightPanel() {
   const pcTargetParty = useStore((s) => s.pcTargetParty)
   const setPcTargetParty = useStore((s) => s.setPcTargetParty)
   const lastFocusedDisputeId = useStore((s) => s.lastFocusedDisputeId)
+  const setLastFocusedDisputeId = useStore((s) => s.setLastFocusedDisputeId)
+  const disputeVisibility = useStore((s) => s.discovery?.disputeVisibility)
   const questionMeters = useStore((s) => s.questionMeters)
   const evidenceStates = useStore((s) => s.evidenceStates)
   const agentA = useStore((s) => s.agentA)
@@ -56,6 +59,7 @@ export default function PCRightPanel() {
   const [comboSlots, setComboSlots] = useState<[string | null, string | null]>([null, null])
   const [autoMatchPanelOpen, setAutoMatchPanelOpen] = useState(false)
   const [autoMatchConfirming, setAutoMatchConfirming] = useState(false)
+  const [infoDrawer, setInfoDrawer] = useState<'emotion' | 'trust' | 'leak' | null>(null)
 
   if (!caseData) {
     return null
@@ -66,10 +70,27 @@ export default function PCRightPanel() {
   const targetAgent = pcTargetParty === 'a' ? agentA : agentB
   const targetArchetype = pcTargetParty === 'a' ? archetypeA : archetypeB
   const targetMeters = questionMeters[pcTargetParty]
+  const visibleDisputes = caseData.disputes.filter((d) => {
+    const v = disputeVisibility?.[d.id]
+    return !v || v.visibility !== 'hidden'
+  })
   const activeDispute =
-    caseData.disputes.find((dispute) => dispute.id === lastFocusedDisputeId) ?? caseData.disputes[0] ?? null
+    visibleDisputes.find((dispute) => dispute.id === lastFocusedDisputeId) ?? visibleDisputes[0] ?? null
   const activeLieState = activeDispute ? targetAgent.lieStateMap[activeDispute.id]?.currentState ?? 'S0' : 'S0'
   const activeLieIndex = LIE_STATES.indexOf(activeLieState)
+  const activeDisputeIdx = activeDispute ? visibleDisputes.findIndex((d) => d.id === activeDispute.id) : -1
+  // 루프(순환) 네비게이션: 끝에서 반대쪽으로 돌아감
+  const canCycleDispute = visibleDisputes.length > 1
+  const goPrevDispute = () => {
+    if (!canCycleDispute || activeDisputeIdx < 0) return
+    const next = (activeDisputeIdx - 1 + visibleDisputes.length) % visibleDisputes.length
+    setLastFocusedDisputeId(visibleDisputes[next].id)
+  }
+  const goNextDispute = () => {
+    if (!canCycleDispute || activeDisputeIdx < 0) return
+    const next = (activeDisputeIdx + 1) % visibleDisputes.length
+    setLastFocusedDisputeId(visibleDisputes[next].id)
+  }
   const tellType = targetProfile.verbalTells[0]?.type ?? ''
   const faceId = getPcFaceSymbolId(pcTargetParty, targetProfile, targetAgent.emotionalState.phase)
   const trustStateLabel = getTrustStateLabel(targetAgent.trustState.trustTowardJudge)
@@ -544,60 +565,230 @@ export default function PCRightPanel() {
 
           </div>
 
-          <div className="lie-bar">
-            {LIE_STATES.map((state, index) => {
-              let className = 'lie-s ls-lock'
-              if (index < activeLieIndex) {
-                className = 'lie-s ls-done'
-              }
-              if (index === activeLieIndex) {
-                className = 'lie-s ls-now'
-              }
-
-              return (
-                <div
-                  className={className}
-                  data-resonance-target={`liestate-${pcTargetParty}-${state}`}
-                  key={state}
-                >
-                  {state}
-                </div>
-              )
-            })}
-          </div>
-
-          <div className="pc-target-state-row">
-            <span>{'\uC2E0\uB8B0 \uC0C1\uD0DC'}</span>
-            <strong>{trustStateLabel}</strong>
-          </div>
-
-          <div className="sec-h pc-target-meter-title">
-            <PCSvgIcon id="i-drop" size={14} />
-            <span>{'\uB300\uC0C1 \uBBF8\uD130'}</span>
-            <span className="sub">{EMOTION_LABELS[targetAgent.emotionalState.phase]}</span>
-          </div>
-
-          <div className="meter-group pc-target-meters">
+          {/* 공통 섹션 — 감정 / 신뢰 / 누설 한 묶음 (클릭 시 안내 드로어) */}
+          <div className="pc-target-common">
+            <div
+              className="pc-target-state-row is-interactive"
+              role="button"
+              tabIndex={0}
+              onClick={() => setInfoDrawer('emotion')}
+              onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setInfoDrawer('emotion') } }}
+            >
+              <span>감정</span>
+              <strong>{EMOTION_LABELS[targetAgent.emotionalState.phase]}</strong>
+            </div>
+            <div
+              className="pc-target-state-row is-interactive"
+              role="button"
+              tabIndex={0}
+              onClick={() => setInfoDrawer('trust')}
+              onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setInfoDrawer('trust') } }}
+            >
+              <span>신뢰 상태</span>
+              <strong>{trustStateLabel}</strong>
+            </div>
             <MeterRow
               icon={<PCSvgIcon id="i-drop" size={15} />}
-              label={'\uB204\uC124'}
+              label="누설"
               valueText={`${targetMeters.leakMeter}%`}
               width={targetMeters.leakMeter}
               tone="gold"
-            />
-            <MeterRow
-              icon={<PCSvgIcon id="i-conflict" size={15} />}
-              label={'\uBAA8\uC21C'}
-              valueText={`${targetMeters.contradictionTokens}/5`}
-              width={(targetMeters.contradictionTokens / 5) * 100}
-              tone="red"
+              onClick={() => setInfoDrawer('leak')}
             />
           </div>
+
+          <div className="pc-target-divider" aria-hidden="true" />
+
+          {/* 쟁점 카드 — nav + 도달 단계 + lie-bar + 이 쟁점의 모순 */}
+          <div className="pc-target-dispute-card">
+            <div className="pc-target-dispute-nav">
+              <button
+                type="button"
+                className="pc-target-dispute-nav__arrow"
+                onClick={goPrevDispute}
+                disabled={!canCycleDispute}
+                aria-label="이전 쟁점"
+              >
+                ◀
+              </button>
+              <div className="pc-target-dispute-nav__label">
+                <span className="pc-target-dispute-nav__name">
+                  {activeDispute?.name ?? '쟁점 없음'}
+                </span>
+                {visibleDisputes.length > 0 ? (
+                  <span className="pc-target-dispute-nav__counter">
+                    {activeDisputeIdx + 1} / {visibleDisputes.length}
+                  </span>
+                ) : null}
+              </div>
+              <button
+                type="button"
+                className="pc-target-dispute-nav__arrow"
+                onClick={goNextDispute}
+                disabled={!canCycleDispute}
+                aria-label="다음 쟁점"
+              >
+                ▶
+              </button>
+            </div>
+
+            <div className="pc-target-lie-status">
+              <span className="pc-target-lie-status__big">진실파악 단계</span>
+              <span className="pc-target-lie-status__step">{activeLieIndex} / 5</span>
+            </div>
+
+            <div className="lie-bar">
+              {LIE_STATES.map((state, index) => {
+                let className = 'lie-s ls-lock'
+                if (index < activeLieIndex) {
+                  className = 'lie-s ls-done'
+                }
+                if (index === activeLieIndex) {
+                  className = 'lie-s ls-now'
+                }
+
+                return (
+                  <div
+                    className={className}
+                    data-resonance-target={`liestate-${pcTargetParty}-${state}`}
+                    key={state}
+                  >
+                    {index}
+                  </div>
+                )
+              })}
+            </div>
+
+            {/* 이 쟁점의 모순 — 한 칸씩 */}
+            <div className="pc-target-contradiction">
+              <span className="pc-target-contradiction__label">
+                <PCSvgIcon id="i-conflict" size={12} />
+                모순
+              </span>
+              <div className="pc-target-contradiction__pips">
+                {[0, 1, 2, 3, 4].map((i) => (
+                  <span
+                    key={i}
+                    className={`pc-target-contradiction__pip${i < targetMeters.contradictionTokens ? ' is-filled' : ''}`}
+                  />
+                ))}
+              </div>
+              <span className="pc-target-contradiction__count">
+                {targetMeters.contradictionTokens} / 5
+              </span>
+            </div>
+          </div>
+
+          {/* 정보 드로어 — 감정 / 신뢰 / 누설 안내 (프로필 카드 왼쪽으로 확장) */}
+          <aside
+            className={`pc-target-info-drawer${infoDrawer ? ' is-open' : ''}`}
+            aria-hidden={!infoDrawer}
+            aria-label="프로필 팩터 안내"
+          >
+            <header className="pc-target-info-drawer__header">
+              <div className="pc-target-info-drawer__title">
+                {infoDrawer === 'emotion' && '감정 상태'}
+                {infoDrawer === 'trust' && '신뢰 상태'}
+                {infoDrawer === 'leak' && '누설 미터'}
+              </div>
+              <button
+                type="button"
+                className="pc-target-info-drawer__close"
+                onClick={() => setInfoDrawer(null)}
+                aria-label="닫기"
+              >
+                ✕
+              </button>
+            </header>
+
+            {infoDrawer === 'emotion' ? (
+              <>
+                <p className="pc-target-info-drawer__lede">
+                  재판관의 심문에 대한 NPC의 현재 감정. 각 감정에 <strong>효과적인 액션이 다릅니다</strong>.
+                </p>
+                <ul className="pc-target-info-drawer__list">
+                  <li><strong>경계</strong> — 방어가 견고합니다. <em>사실 추궁</em>으로 구체성을 끌어내세요.</li>
+                  <li><strong>자신감</strong> — 모순을 숨기기 쉬운 상태. <em>사실 추궁</em>이 효과적입니다.</li>
+                  <li><strong>동요</strong> — 실수가 잦아집니다. <em>공감 접근 · 동기 탐색</em>이 효과적입니다.</li>
+                  <li><strong>격앙</strong> — 감정 폭발 직전. <em>공감 접근</em>이 큰 신뢰 변화를 만듭니다.</li>
+                  <li><strong>체념</strong> — 자백 직전. 어떤 액션도 큰 전이를 일으킵니다.</li>
+                </ul>
+                <div className="pc-target-info-drawer__now">
+                  <span>지금:</span>
+                  <strong>{EMOTION_LABELS[targetAgent.emotionalState.phase]}</strong>
+                </div>
+              </>
+            ) : null}
+
+            {infoDrawer === 'trust' ? (
+              <>
+                <p className="pc-target-info-drawer__lede">
+                  재판관을 NPC가 얼마나 신뢰하는지. 신뢰가 높으면 <strong>증거 없이 공감만으로 자백</strong>을 유도할 수 있습니다.
+                </p>
+                <div className="pc-target-info-drawer__columns">
+                  <div>
+                    <div className="pc-target-info-drawer__col-h">올리기</div>
+                    <ul>
+                      <li>공감 접근</li>
+                      <li>경청</li>
+                      <li>비공개 보호</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <div className="pc-target-info-drawer__col-h">내리기</div>
+                    <ul>
+                      <li>모순 찌르기</li>
+                      <li>반격</li>
+                      <li>반복 압박</li>
+                    </ul>
+                  </div>
+                </div>
+                <p className="pc-target-info-drawer__tip">
+                  높을수록 <strong>신뢰 경로 자백</strong>이 열리고, NPC가 자발적으로 진실 단서를 제공합니다.
+                </p>
+                <div className="pc-target-info-drawer__now">
+                  <span>지금:</span>
+                  <strong>{trustStateLabel}</strong>
+                </div>
+              </>
+            ) : null}
+
+            {infoDrawer === 'leak' ? (
+              <>
+                <p className="pc-target-info-drawer__lede">
+                  NPC가 실수로 흘린 진실 단서의 누적량. 높을수록 <strong>진실파악 단계 전이가 쉬워집니다</strong>.
+                </p>
+                <div className="pc-target-info-drawer__columns">
+                  <div>
+                    <div className="pc-target-info-drawer__col-h">쌓는 법</div>
+                    <ul>
+                      <li>동기 탐색</li>
+                      <li>공감 접근</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <div className="pc-target-info-drawer__col-h">효과</div>
+                    <ul>
+                      <li>단계 전이 임계값 ↓</li>
+                      <li>작은 모순으로 큰 붕괴</li>
+                    </ul>
+                  </div>
+                </div>
+                <p className="pc-target-info-drawer__tip">
+                  ※ 이 미터는 <strong>사람 전체 공통</strong>입니다. 쟁점과 무관하게 누적됩니다.
+                </p>
+                <div className="pc-target-info-drawer__now">
+                  <span>지금:</span>
+                  <strong>{targetMeters.leakMeter}%</strong>
+                </div>
+              </>
+            ) : null}
+          </aside>
         </div>
       </section>
 
       {showCombination ? (
-        <section className="sec pc-right-block">
+        <section className="sec pc-right-block pc-right-block--combination">
           <div
             className={`pc-skill-card pc-combination-card pc-right-card${hasReadyCombos ? ' is-combinable' : ''}`}
             onDragOver={(event) => event.preventDefault()}
@@ -722,7 +913,7 @@ export default function PCRightPanel() {
         </section>
       ) : null}
 
-      <section className="sec pc-right-block">
+      <section className="sec pc-right-block pc-right-block--summary">
         <div className="pc-skill-card pc-summary-card pc-right-card">
           <div className="pc-skill-card__eyebrow">{'요약'}</div>
           <button className="pc-summary-button" onClick={openSummaryPanel} type="button">
@@ -740,12 +931,14 @@ function MeterRow({
   valueText,
   width,
   tone,
+  onClick,
 }: {
   icon: ReactNode
   label: string
   valueText: string
   width: number
   tone: 'blue' | 'red' | 'gold'
+  onClick?: () => void
 }) {
   // gold tone (대상 미터/누설)만 4단계 노랑→빨강 그라데이션 적용
   let levelClass = ''
@@ -755,8 +948,15 @@ function MeterRow({
     else if (width < 75) levelClass = ' level-3'
     else levelClass = ' level-4'
   }
+  const interactive = Boolean(onClick)
   return (
-    <div className="meter pc-target-meter">
+    <div
+      className={`meter pc-target-meter${interactive ? ' is-interactive' : ''}`}
+      role={interactive ? 'button' : undefined}
+      tabIndex={interactive ? 0 : undefined}
+      onClick={onClick}
+      onKeyDown={interactive ? (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); onClick?.() } } : undefined}
+    >
       <span className="pc-target-meter__icon">{icon}</span>
       <span className="pc-target-meter__label">{label}</span>
       <div className="meter-track">

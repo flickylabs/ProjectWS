@@ -2833,6 +2833,8 @@ body.pc-mode .pc-play-right {
   display: flex;
   flex-direction: column;
   min-height: 0;
+  flex: 1 1 auto;
+  height: 100%;
 }
 
 body.pc-mode .pc-play-evidence-section {
@@ -6429,7 +6431,7 @@ body.pc-mode .pc-play-right .pc-combination-card {
   border-top: 2px solid rgba(212, 162, 78, 0.6) !important;
   background: var(--pc-panel-bg-soft) !important;
   box-shadow: none !important;
-  padding: 14px 16px 12px !important;
+  padding: 14px 18px 12px !important;
   border-radius: 16px !important;
 }
 
@@ -6555,6 +6557,63 @@ body.pc-mode .pc-play-right .pc-combination-slot__text {
 
 body.pc-mode .pc-play-right .pc-summary-card {
   padding-top: 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+  height: 100%;
+}
+
+/* 우측 패널 — 프로필 고정 / 조합이 남은 세로 흡수 / 요약은 바닥 정렬 + 핫바 영역 높이 */
+body.pc-mode .pc-play-right > .pc-target-block {
+  flex: 0 0 auto;
+}
+body.pc-mode .pc-play-right .pc-right-block--combination {
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+body.pc-mode .pc-play-right .pc-right-block--combination > .pc-combination-card {
+  flex: 1 1 auto;
+  min-height: 0;
+}
+/* 캐릭터 카드/핫바 영역과 요약 section 높이 동기화용 변수 */
+body.pc-mode {
+  --pc-dock-area-h: 140px;
+}
+/* 핫바 중앙(hb-center)과 캐릭터 카드에 min-height 고정 — 동기화 기준 */
+body.pc-mode .pc-play-hbar .hb-center {
+  min-height: var(--pc-dock-area-h);
+}
+body.pc-mode .pc-play-hbar .char {
+  min-height: var(--pc-dock-area-h) !important;
+}
+
+body.pc-mode .pc-play-right .pc-right-block--summary {
+  flex: 0 0 var(--pc-dock-area-h);
+  height: var(--pc-dock-area-h);
+  margin-top: auto;
+}
+
+/* summary section 상하 padding 제거 — 카드가 section 상단~하단을 완전히 채워 핫바와 y축 일치 */
+body.pc-mode .pc-play-panel--right .sec.pc-right-block.pc-right-block--summary {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+/* 기록 정리 버튼 세로폭 확장 — 카드 내부에서 적절히 채움 */
+body.pc-mode .pc-play-right .pc-summary-button {
+  min-height: 72px !important;
+  width: 100%;
+}
+
+/* 우측 패널 주요 버튼/행 가로 너비 통일 — 전부 100% (카드 padding이 동일해서 실제 너비 일치) */
+body.pc-mode .pc-target-common .pc-target-state-row,
+body.pc-mode .pc-target-dispute-nav,
+body.pc-mode .pc-play-right .pc-combination-card__ready-indicator {
+  width: 100%;
+  box-sizing: border-box;
 }
 
 body.pc-mode .pc-play-right .pc-summary-button {
@@ -15699,20 +15758,19 @@ body.pc-mode .pc-event-feedback-card.kind-contradiction.is-phase-visible .pc-eve
 }
 
 /* ──────────────────────────────────────────────────────────────
- * Judge Observation Section (재판관의 관찰) — S1 껍데기
- * 좌측 패널 구조 재분배 (세 영역 모두 고정 세로):
- *  - 증거 수첩:      240px (카드 원본 높이 유지, 섹션 내부 스크롤)
- *  - 발언노트:       330px (현재 × 1.5, 카드+드롭존 공유, 내부 스크롤)
- *  - 재판관의 관찰: 220px (기본 스크롤 없이 4개 내외 노출, 초과 시 스크롤)
+ * 좌측 패널 구조 (1920×1080 기준):
+ *  - 증거 수첩:      380px (카드 5개 풀 노출, 초과 시 내부 스크롤)
+ *  - 발언노트:       유동 (증거/관찰 확정 후 남은 공간 전부, min 320px)
+ *  - 재판관의 관찰: 220px (기본 스크롤 없이 라이브 쇼케이스)
  * ────────────────────────────────────────────────────────────── */
 body.pc-mode .pc-play-left {
   gap: 10px !important;
 }
 
-/* 증거 수첩 — 카드 원본 높이 유지 + 섹션 내부 스크롤 */
+/* 증거 수첩 — 5개 풀 노출, 초과 시 내부 스크롤 */
 body.pc-mode .pc-play-evidence-section {
   flex: 0 0 auto !important;
-  max-height: 240px;
+  max-height: 380px;
   display: flex;
   flex-direction: column;
   min-height: 0;
@@ -15730,12 +15788,12 @@ body.pc-mode .pc-play-evidence-section .pc-ev-notebook {
   margin-bottom: 0 !important;
 }
 
-/* 발언노트 — 고정 세로 + 내부 (카드 + 드롭존) 공유 + 스크롤 */
+/* 발언노트 — 유동: 증거/관찰 고정 후 남은 세로 전부 흡수 */
 body.pc-mode .pc-play-left .pc-important-notes-section {
-  flex: 0 0 330px !important;
-  height: 330px !important;
-  max-height: 330px !important;
-  min-height: 330px !important;
+  flex: 1 1 auto !important;
+  height: auto !important;
+  max-height: none !important;
+  min-height: 320px !important;
   display: flex !important;
   flex-direction: column !important;
 }
@@ -16634,5 +16692,453 @@ body.pc-mode .pc-phase-cutscene__subtitle {
   19%  { opacity: 1; transform: translateY(0); filter: blur(0); }
   76%  { opacity: 1; transform: translateY(0); filter: blur(0); }
   100% { opacity: 0; transform: translateY(-4px); filter: blur(3px); }
+}
+
+/* ──────────────────────────────────────────────────────────────
+ * 캐릭터 프로필 — 공통(위) / 쟁점별(아래) 2섹션 구조
+ * ────────────────────────────────────────────────────────────── */
+/* 공통 섹션 — 감정 / 신뢰 / 누설 한 묶음 박스 (쟁점 카드와 동일 스타일) */
+body.pc-mode .pc-target-common {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* 공통 섹션 내부 state-row는 카드 gap에 의존 — 기본 margin-bottom 14px 제거 */
+body.pc-mode .pc-target-common .pc-target-state-row {
+  margin-bottom: 0;
+  padding: 6px 10px;
+}
+
+/* 공통 섹션 내부 누설 라벨 — 모순 라벨과 동일 톤 */
+body.pc-mode .pc-target-common .pc-target-meter__label {
+  font-size: 11px;
+  font-weight: 700;
+  color: rgba(235, 229, 213, 0.65);
+  letter-spacing: 0.02em;
+}
+
+/* 구분선 — 카드 사이 여백 축소 */
+body.pc-mode .pc-target-divider {
+  height: 8px;
+}
+
+body.pc-mode .pc-target-dispute {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* 쟁점 카드 — nav + 도달 단계 + lie-bar + 모순 pip 한 묶음 */
+body.pc-mode .pc-target-dispute-card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* 프로필 내 클릭 가능한 state-row / meter — hover 피드백 */
+body.pc-mode .pc-target-state-row.is-interactive,
+body.pc-mode .pc-target-meter.is-interactive {
+  cursor: pointer;
+  transition: background-color 140ms ease, border-color 140ms ease;
+  border-radius: 6px;
+}
+body.pc-mode .pc-target-state-row.is-interactive:hover,
+body.pc-mode .pc-target-meter.is-interactive:hover {
+  background-color: rgba(255, 255, 255, 0.035);
+}
+
+/* 프로필 팩터 안내 드로어 — 감정 / 신뢰 / 누설 (프로필 shell 왼쪽으로 확장) */
+body.pc-mode .pc-target-shell {
+  position: relative;
+}
+body.pc-mode .pc-target-info-drawer {
+  position: absolute;
+  top: 0;
+  right: calc(100% + 14px);
+  width: 320px;
+  max-height: calc(100vh - 180px);
+  overflow-y: auto;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateX(16px);
+  transition: transform 180ms ease, visibility 180ms ease, opacity 180ms ease;
+  opacity: 0;
+  z-index: 55;
+  background: #0a0a10;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  box-shadow: 0 22px 42px rgba(0, 0, 0, 0.6);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 14px 18px 14px;
+  color: #ebe5d5;
+}
+body.pc-mode .pc-target-info-drawer.is-open {
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateX(0);
+  opacity: 1;
+}
+body.pc-mode .pc-target-info-drawer__header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 0 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+body.pc-mode .pc-target-info-drawer__title {
+  flex: 1;
+  font-size: 13px;
+  font-weight: 600;
+  color: #ebe5d5;
+  letter-spacing: 0.02em;
+}
+body.pc-mode .pc-target-info-drawer__close {
+  flex-shrink: 0;
+  width: 26px;
+  height: 26px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  background: transparent;
+  color: rgba(235, 229, 213, 0.75);
+  font-size: 13px;
+  line-height: 1;
+  cursor: pointer;
+  transition: background-color 140ms ease, border-color 140ms ease, color 140ms ease;
+}
+body.pc-mode .pc-target-info-drawer__close:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.2);
+  color: #ebe5d5;
+}
+body.pc-mode .pc-target-info-drawer__lede {
+  margin: 0;
+  font-size: 12.5px;
+  line-height: 1.6;
+  color: rgba(235, 229, 213, 0.85);
+}
+body.pc-mode .pc-target-info-drawer__lede strong {
+  color: #e8c172;
+  font-weight: 700;
+}
+body.pc-mode .pc-target-info-drawer__list {
+  list-style: none;
+  padding: 10px 12px;
+  margin: 0;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 12px;
+  line-height: 1.5;
+  color: rgba(213, 216, 225, 0.88);
+}
+body.pc-mode .pc-target-info-drawer__list strong {
+  color: #f5f0e2;
+  font-weight: 700;
+}
+body.pc-mode .pc-target-info-drawer__list em {
+  color: #e8c172;
+  font-style: normal;
+  font-weight: 700;
+}
+body.pc-mode .pc-target-info-drawer__columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+body.pc-mode .pc-target-info-drawer__columns > div {
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+body.pc-mode .pc-target-info-drawer__col-h {
+  font-size: 11px;
+  font-weight: 700;
+  color: #e8c172;
+  letter-spacing: 0.02em;
+  margin-bottom: 6px;
+}
+body.pc-mode .pc-target-info-drawer__columns ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  font-size: 12px;
+  color: rgba(213, 216, 225, 0.88);
+}
+body.pc-mode .pc-target-info-drawer__tip {
+  margin: 0;
+  padding: 8px 10px;
+  border-left: 2px solid rgba(232, 193, 114, 0.5);
+  font-size: 11.5px;
+  line-height: 1.5;
+  color: rgba(235, 229, 213, 0.72);
+}
+body.pc-mode .pc-target-info-drawer__tip strong {
+  color: #e8c172;
+  font-weight: 700;
+}
+body.pc-mode .pc-target-info-drawer__now {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: auto;
+  padding: 8px 10px;
+  border-radius: 8px;
+  background: rgba(212, 162, 78, 0.08);
+  border: 1px solid rgba(212, 162, 78, 0.2);
+  font-size: 12px;
+}
+body.pc-mode .pc-target-info-drawer__now span {
+  color: rgba(235, 229, 213, 0.6);
+  font-weight: 600;
+}
+body.pc-mode .pc-target-info-drawer__now strong {
+  color: #e8c172;
+  font-weight: 800;
+  font-size: 13px;
+}
+
+/* 모순 pip row — 이 쟁점 기준 한 칸씩 채움 */
+body.pc-mode .pc-target-contradiction {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 2px;
+  padding-top: 8px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+body.pc-mode .pc-target-contradiction__label {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  font-weight: 700;
+  color: rgba(235, 229, 213, 0.65);
+  letter-spacing: 0.02em;
+  flex: 0 0 auto;
+}
+body.pc-mode .pc-target-contradiction__label svg {
+  color: rgba(224, 96, 96, 0.7);
+}
+body.pc-mode .pc-target-contradiction__pips {
+  display: flex;
+  gap: 4px;
+  flex: 1 1 auto;
+}
+body.pc-mode .pc-target-contradiction__pip {
+  flex: 1 1 0;
+  height: 10px;
+  min-width: 16px;
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: background-color 140ms ease, border-color 140ms ease, box-shadow 140ms ease;
+}
+body.pc-mode .pc-target-contradiction__pip.is-filled {
+  background: rgba(224, 96, 96, 0.72);
+  border-color: rgba(224, 96, 96, 0.95);
+  box-shadow: 0 0 6px rgba(224, 96, 96, 0.35);
+}
+body.pc-mode .pc-target-contradiction__count {
+  flex: 0 0 auto;
+  font-size: 11px;
+  font-weight: 600;
+  color: rgba(235, 229, 213, 0.55);
+  letter-spacing: 0.02em;
+}
+
+/* 쟁점 네비게이션 — 좌우 화살표 + 쟁점 이름 + 카운터 */
+body.pc-mode .pc-target-dispute-nav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+body.pc-mode .pc-target-dispute-nav__arrow {
+  flex: 0 0 auto;
+  width: 26px;
+  height: 26px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 7px;
+  background: transparent;
+  color: rgba(235, 229, 213, 0.7);
+  font-size: 11px;
+  cursor: pointer;
+  transition: background-color 140ms ease, border-color 140ms ease, color 140ms ease;
+}
+body.pc-mode .pc-target-dispute-nav__arrow:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.2);
+  color: #ebe5d5;
+}
+body.pc-mode .pc-target-dispute-nav__arrow:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+body.pc-mode .pc-target-dispute-nav__label {
+  flex: 1 1 auto;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  text-align: center;
+}
+body.pc-mode .pc-target-dispute-nav__name {
+  font-size: 13px;
+  font-weight: 700;
+  color: #ebe5d5;
+  letter-spacing: 0.01em;
+  line-height: 1.25;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+body.pc-mode .pc-target-dispute-nav__counter {
+  font-size: 10px;
+  font-weight: 600;
+  color: rgba(235, 229, 213, 0.5);
+  letter-spacing: 0.04em;
+}
+
+/* lie-status — 자연어 큰 단계명 + 서브 "3/5 단계" */
+body.pc-mode .pc-target-lie-status {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 4px 2px 0;
+}
+body.pc-mode .pc-target-lie-status__big {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--t2);
+  letter-spacing: 0;
+  line-height: 1.25;
+}
+body.pc-mode .pc-target-lie-status__step {
+  font-size: 11px;
+  font-weight: 600;
+  color: rgba(235, 229, 213, 0.55);
+  letter-spacing: 0.02em;
+}
+
+/* lie-labels — 가로 단계명 리스트 (부정 · 인정 · 핑계 · 책임전가 · 감정 · 자백) */
+body.pc-mode .pc-target-lie-labels {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 10px;
+  padding: 2px 2px 0;
+  font-size: 10.5px;
+  letter-spacing: 0.01em;
+}
+body.pc-mode .pc-target-lie-labels > span {
+  position: relative;
+  color: rgba(235, 229, 213, 0.32);
+  font-weight: 500;
+  transition: color 140ms ease, font-weight 140ms ease;
+}
+body.pc-mode .pc-target-lie-labels > span.is-past {
+  color: rgba(235, 229, 213, 0.55);
+  font-weight: 500;
+}
+body.pc-mode .pc-target-lie-labels > span.is-current {
+  color: #e8c172;
+  font-weight: 800;
+}
+body.pc-mode .pc-target-lie-labels > span.is-current::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -3px;
+  height: 1px;
+  background: rgba(232, 193, 114, 0.5);
+}
+body.pc-mode .pc-target-lie-labels > span.is-future {
+  color: rgba(235, 229, 213, 0.25);
+  font-weight: 400;
+}
+
+/* ──────────────────────────────────────────────────────────────
+ * 해상도 반응형 (1920×1080 기준 풀, 이하부터 단계별 축소)
+ *
+ *  - 좌측 우선순위: 발언노트(1차) → 증거(2차)
+ *  - 우측 우선순위: 요약(1차) → 조합(2차)
+ *  - 관찰, 프로필은 최후까지 유지
+ * ────────────────────────────────────────────────────────────── */
+
+/* 1차 축소 — 1920 미만 */
+@media (max-width: 1919px) {
+  /* 좌측: 발언노트 min-height 축소 */
+  body.pc-mode .pc-play-left .pc-important-notes-section {
+    min-height: 240px !important;
+  }
+  /* 우측: 요약 카드 padding 축소 */
+  body.pc-mode .pc-play-right .pc-summary-card {
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+  }
+  body.pc-mode .pc-play-right .pc-summary-button {
+    min-height: 36px !important;
+    font-size: 13px !important;
+  }
+}
+
+/* 2차 축소 — 1600 미만 */
+@media (max-width: 1599px) {
+  /* 좌측: 증거 영역 축소(3~4개), 발언노트 추가 축소 */
+  body.pc-mode .pc-play-evidence-section {
+    max-height: 260px;
+  }
+  body.pc-mode .pc-play-left .pc-important-notes-section {
+    min-height: 200px !important;
+  }
+  /* 우측: 조합 카드 padding 축소 + 요약 추가 축소 */
+  body.pc-mode .pc-play-right .pc-combination-card {
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+  }
+  body.pc-mode .pc-play-right .pc-combination-card__slots {
+    margin-top: 6px !important;
+  }
+  body.pc-mode .pc-play-right .pc-summary-card {
+    padding-top: 8px !important;
+    padding-bottom: 8px !important;
+  }
+  body.pc-mode .pc-play-right .pc-summary-button {
+    min-height: 32px !important;
+    font-size: 12px !important;
+  }
+  /* 프로필 lie-labels 폰트 축소(좁은 폭에서 줄바꿈 억제) */
+  body.pc-mode .pc-target-lie-labels {
+    gap: 3px 8px;
+    font-size: 9.5px;
+  }
 }
 
