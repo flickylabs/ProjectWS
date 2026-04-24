@@ -469,7 +469,7 @@
       "subjectParty": "b",
       "investigationStages": [
         {
-          "stage": 0,
+          "stage": 1,
           "revealKey": "request_original",
           "question": {
             "text": "이 연락 기록, 최수민 씨가 먼저 보낸 것 맞습니까?",
@@ -479,7 +479,7 @@
           "unlockHint": null
         },
         {
-          "stage": 1,
+          "stage": 2,
           "revealKey": "check_metadata",
           "question": {
             "text": "왜 손절한 친구의 예비신랑에게 이렇게까지 연락했습니까?",
@@ -489,7 +489,7 @@
           "unlockHint": "기록을 확인하면 연락 횟수와 문구의 시간대를 대조할 수 있습니다."
         },
         {
-          "stage": 2,
+          "stage": 3,
           "revealKey": "restore_context",
           "question": {
             "text": "차단당한 상태였다고 해도, 왜 공통 친구가 아니라 예비신랑을 직접 붙잡으려 했습니까?",
@@ -737,7 +737,7 @@
       "subjectParty": "a",
       "investigationStages": [
         {
-          "stage": 0,
+          "stage": 1,
           "revealKey": "request_original",
           "question": {
             "text": "이 말들을 단톡방에 올린 사람은 A 맞습니까?",
@@ -747,7 +747,7 @@
           "unlockHint": null
         },
         {
-          "stage": 1,
+          "stage": 2,
           "revealKey": "check_metadata",
           "question": {
             "text": "직접 확인하기 전에 최수민 씨를 이런 식으로 설명한 이유가 무엇입니까?",
@@ -757,7 +757,7 @@
           "unlockHint": "대화를 확인하면 직접 확인보다 단톡방 공개가 먼저였는지 순서를 대조할 수 있습니다."
         },
         {
-          "stage": 2,
+          "stage": 3,
           "revealKey": "restore_context",
           "question": {
             "text": "예전 일까지 끌어와 최수민 씨를 같은 사람으로 못 박은 건, 화가 나서였습니까 아니면 확신이 있어서였습니까?",
@@ -948,7 +948,7 @@
       "subjectParty": "both",
       "investigationStages": [
         {
-          "stage": 0,
+          "stage": 1,
           "revealKey": "request_original",
           "question": {
             "text": "당시 두 사람이 크게 틀어진 대화 맞습니까?",
@@ -958,7 +958,7 @@
           "unlockHint": null
         },
         {
-          "stage": 1,
+          "stage": 2,
           "revealKey": "check_metadata",
           "question": {
             "text": "최수민 씨가 숨긴 '돈 문제'는 무엇이었다고 생각했습니까?",
@@ -968,7 +968,7 @@
           "unlockHint": "대화를 확인하면 손절 직전의 말과 그 직후 침묵의 맥락을 대조할 수 있습니다."
         },
         {
-          "stage": 2,
+          "stage": 3,
           "revealKey": "restore_context",
           "question": {
             "text": "송다은 씨는 왜 최수민 씨가 끝까지 말하지 않은 이유를 한 번도 다시 묻지 않았습니까?",
@@ -1165,7 +1165,7 @@
       "subjectParty": "b",
       "investigationStages": [
         {
-          "stage": 0,
+          "stage": 1,
           "revealKey": "request_original",
           "question": {
             "text": "이 메시지를 먼저 보낸 건 예비신랑 맞습니까?",
@@ -1175,7 +1175,7 @@
           "unlockHint": null
         },
         {
-          "stage": 1,
+          "stage": 2,
           "revealKey": "check_metadata",
           "question": {
             "text": "그런데도 최수민 씨가 집착한 쪽처럼 보이게 된 이유는 무엇입니까?",
@@ -1185,7 +1185,7 @@
           "unlockHint": "대화를 확인하면 누가 먼저 선을 넘었는지 선후를 대조할 수 있습니다."
         },
         {
-          "stage": 2,
+          "stage": 3,
           "revealKey": "restore_context",
           "question": {
             "text": "최수민 씨가 예비신랑에게 연락한 건 꼬시려는 게 아니라 경고였다는 해석을 부정할 수 있습니까?",
@@ -1368,7 +1368,7 @@
       "subjectParty": "both",
       "investigationStages": [
         {
-          "stage": 0,
+          "stage": 1,
           "revealKey": "request_original",
           "question": {
             "text": "A 아버지가 예비신랑에게 먼저 돈 얘기를 꺼낸 사실 맞습니까?",
@@ -1378,7 +1378,7 @@
           "unlockHint": null
         },
         {
-          "stage": 1,
+          "stage": 2,
           "revealKey": "check_metadata",
           "question": {
             "text": "최수민 씨가 이 흐름을 보고 예비신랑에게 경고하려 했다고 볼 수 있습니까?",
@@ -1388,7 +1388,7 @@
           "unlockHint": "대화를 확인하면 돈 요구 시점과 B의 연락 시점을 대조할 수 있습니다."
         },
         {
-          "stage": 2,
+          "stage": 3,
           "revealKey": "restore_context",
           "question": {
             "text": "송다은 씨에게 직접 말할 수 없었다면, 최수민 씨에게 남은 다른 길이 정말 있었습니까?",
@@ -1576,7 +1576,7 @@
       "subjectParty": "b",
       "investigationStages": [
         {
-          "stage": 0,
+          "stage": 1,
           "revealKey": "request_original",
           "question": {
             "text": "이 돈을 최수민 씨가 송다은 씨 아버지에게 보낸 사실 맞습니까?",
@@ -1586,7 +1586,7 @@
           "unlockHint": null
         },
         {
-          "stage": 1,
+          "stage": 2,
           "revealKey": "check_metadata",
           "question": {
             "text": "그때도 송다은 씨는 아무것도 몰랐습니까?",
@@ -1596,7 +1596,7 @@
           "unlockHint": "내역을 확인하면 송금 시점과 미상환 문자를 함께 대조할 수 있습니다."
         },
         {
-          "stage": 2,
+          "stage": 3,
           "revealKey": "restore_context",
           "question": {
             "text": "왜 최수민 씨는 '네 아버지가 내 돈을 가져갔다'는 말을 끝내 하지 않았습니까?",
@@ -1784,7 +1784,7 @@
       "subjectParty": "both",
       "investigationStages": [
         {
-          "stage": 0,
+          "stage": 1,
           "revealKey": "request_original",
           "question": {
             "text": "과거와 현재의 문구와 시점이 이렇게 겹치는 것, 우연이라고 보십니까?",
@@ -1794,7 +1794,7 @@
           "unlockHint": null
         },
         {
-          "stage": 1,
+          "stage": 2,
           "revealKey": "check_metadata",
           "question": {
             "text": "최수민 씨가 이번 연락을 집착이 아니라 반복되는 패턴을 막으려 한 시도로 볼 수 있습니까?",
@@ -1804,7 +1804,7 @@
           "unlockHint": "대조표를 확인하면 과거와 현재의 문구와 시점을 나란히 대조할 수 있습니다."
         },
         {
-          "stage": 2,
+          "stage": 3,
           "revealKey": "restore_context",
           "question": {
             "text": "그렇다면 이번 사건에서 가장 먼저 잘못된 사람으로 낙인찍힌 건 누구였습니까?",
