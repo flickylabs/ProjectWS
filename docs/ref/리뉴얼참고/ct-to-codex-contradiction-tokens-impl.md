@@ -4,7 +4,7 @@
 > 수신: **Codex** (신규 세션)
 > 일시: 2026-04-28
 > 베이스 커밋: `3410680`
-> 선행 설계 문서: [tmp/plan-contradiction-tokens-split.md](../../../tmp/plan-contradiction-tokens-split.md) — **정독 필수**
+> 선행 설계 문서: [docs/ref/리뉴얼참고/plan-contradiction-tokens-split.md](../../../docs/ref/리뉴얼참고/plan-contradiction-tokens-split.md) — **정독 필수**
 
 ---
 
@@ -44,7 +44,7 @@ UI의 "쟁점별 모순 pip 5칸"은 이미 완성인데, 데이터는 사람(pa
 
 ## 참고 자료
 
-- **[tmp/plan-contradiction-tokens-split.md](../../../tmp/plan-contradiction-tokens-split.md)** — 500줄 설계 문서. 각 섹션의 라인 인용 모두 정확함. **구현 시 이 문서가 우선 참조**
+- **[docs/ref/리뉴얼참고/plan-contradiction-tokens-split.md](../../../docs/ref/리뉴얼참고/plan-contradiction-tokens-split.md)** — 500줄 설계 문서. 각 섹션의 라인 인용 모두 정확함. **구현 시 이 문서가 우선 참조**
 - [CLAUDE.md](../../../CLAUDE.md)
 - 메모리 [backlog_deferred.md](../../../C:\Users\user\.claude\projects\d--ProjectWS\memory\backlog_deferred.md) 2순위 섹션
 
@@ -372,7 +372,7 @@ Plan 리포트 섹션 6 기반:
 
 - [ ] `git status` clean 확인 (Modified 없음)
 - [ ] `git log --oneline -5` — 베이스가 `3410680` 이상인지 확인
-- [ ] [tmp/plan-contradiction-tokens-split.md](../../../tmp/plan-contradiction-tokens-split.md) 전체 정독
+- [ ] [docs/ref/리뉴얼참고/plan-contradiction-tokens-split.md](../../../docs/ref/리뉴얼참고/plan-contradiction-tokens-split.md) 전체 정독
 - [ ] 이 지시서 + [CLAUDE.md](../../../CLAUDE.md) 정독
 - [ ] `src/engine/questionEffectEngine.ts` 현 구조 파악 (QuestionMeterState, createInitialMeterState, resolveFactPursuit, applyMeterUpdate, getMeterEffects)
 - [ ] `src/store/useGameStore.ts`의 persist 미들웨어 사용 형태 확인
