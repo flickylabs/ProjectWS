@@ -763,34 +763,39 @@ export default function PCRightPanel() {
               </button>
             </header>
 
-            {infoDrawer === 'emotion' ? (
-              <>
-                <p className="pc-target-info-drawer__lede">
-                  현재의 감정 상태. 감정 상태에 따라 <Em>효과적인 액션</Em>이 다릅니다.
-                </p>
-                <ul className="pc-target-info-drawer__list">
-                  <li>
-                    <strong>경계</strong> — 방어가 견고합니다. <ActionEm targets={ACTION_TARGETS.fact}>사실 추궁</ActionEm>으로 구체적인 상황 파악을 시도해보세요.
-                  </li>
-                  <li>
-                    <strong>자신감</strong> — 모순을 숨기고 있습니다. <ActionEm targets={ACTION_TARGETS.fact}>사실추궁</ActionEm>으로 허점을 공략해보세요.
-                  </li>
-                  <li>
-                    <strong>동요</strong> — 실수가 잦아집니다. <ActionEm targets={[...ACTION_TARGETS.empathy, ...ACTION_TARGETS.motive]}>공감접근·동기탐색</ActionEm>으로 마음을 열어보세요.
-                  </li>
-                  <li>
-                    <strong>격앙</strong> — 감정이 폭발하기 직전입니다. <ActionEm targets={ACTION_TARGETS.empathy}>공감 접근</ActionEm>으로 신뢰를 얻어 마음을 공략해보세요.
-                  </li>
-                  <li>
-                    <strong>체념</strong> — 자백이 예상됩니다. <ActionEm targets={ACTION_TARGETS.allInterrogation}>모든 액션</ActionEm>이 각각 효과적이니, 적극 공략해보세요.
-                  </li>
-                </ul>
-                <div className="pc-target-info-drawer__now">
-                  <span>현재 상태:</span>
-                  <strong>{EMOTION_LABELS[targetAgent.emotionalState.phase]}</strong>
-                </div>
-              </>
-            ) : null}
+            {infoDrawer === 'emotion' ? (() => {
+              const currentPhase = targetAgent.emotionalState.phase
+              const rows = [
+                { phase: 'defensive' as const, label: '경계', desc: <>방어가 견고합니다. <ActionEm targets={ACTION_TARGETS.fact}>사실 추궁</ActionEm>으로 구체적인 상황 파악을 시도해보세요.</> },
+                { phase: 'confident' as const, label: '자신감', desc: <>모순을 숨기고 있습니다. <ActionEm targets={ACTION_TARGETS.fact}>사실추궁</ActionEm>으로 허점을 공략해보세요.</> },
+                { phase: 'shaken' as const, label: '동요', desc: <>실수가 잦아집니다. <ActionEm targets={[...ACTION_TARGETS.empathy, ...ACTION_TARGETS.motive]}>공감접근·동기탐색</ActionEm>으로 마음을 열어보세요.</> },
+                { phase: 'angry' as const, label: '격앙', desc: <>감정이 폭발하기 직전입니다. <ActionEm targets={ACTION_TARGETS.empathy}>공감 접근</ActionEm>으로 신뢰를 얻어 마음을 공략해보세요.</> },
+                { phase: 'resigned' as const, label: '체념', desc: <>자백이 예상됩니다. <ActionEm targets={ACTION_TARGETS.allInterrogation}>모든 액션</ActionEm>이 각각 효과적이니, 적극 공략해보세요.</> },
+              ]
+              return (
+                <>
+                  <p className="pc-target-info-drawer__lede">
+                    현재의 감정 상태. 감정 상태에 따라 <Em>효과적인 액션</Em>이 다릅니다.
+                  </p>
+                  <ul className="pc-target-info-drawer__list">
+                    {rows.map((row) => {
+                      const isCurrent = currentPhase === row.phase
+                      const dimStyle = !isCurrent ? { color: '#4b5563', opacity: 0.55 } : undefined
+                      const selStyle = isCurrent ? { background: 'rgba(251, 191, 36, 0.12)', borderLeft: '2px solid #fbbf24', paddingLeft: '8px', borderRadius: '4px' } : undefined
+                      return (
+                        <li key={row.phase} style={{ ...(dimStyle ?? {}), ...(selStyle ?? {}) }}>
+                          <strong>{row.label}</strong> — {row.desc}
+                        </li>
+                      )
+                    })}
+                  </ul>
+                  <div className="pc-target-info-drawer__now">
+                    <span>현재 상태:</span>
+                    <strong>{EMOTION_LABELS[currentPhase]}</strong>
+                  </div>
+                </>
+              )
+            })() : null}
 
             {infoDrawer === 'trust' ? (
               <>
@@ -870,10 +875,10 @@ export default function PCRightPanel() {
                     { idx: 4, label: '감정적', desc: '논리가 무너지고 감정이 앞섭니다. 자백 직전입니다.' },
                     { idx: 5, label: '자백', desc: '사실을 그대로 인정합니다. 구체적인 정보가 모두 공개됩니다.' },
                   ].map((row) => {
-                    const hasSelection = selectedLieStageIdx !== null
-                    const isSel = selectedLieStageIdx === row.idx
-                    const dimStyle = hasSelection && !isSel ? { color: '#4b5563', opacity: 0.55 } : undefined
-                    const selStyle = isSel ? { background: 'rgba(251, 191, 36, 0.12)', borderLeft: '2px solid #fbbf24', paddingLeft: '8px', borderRadius: '4px' } : undefined
+                    // 클릭한 단계와 무관하게 항상 현재 단계(activeLieIndex)를 강조
+                    const isCurrent = activeLieIndex === row.idx
+                    const dimStyle = !isCurrent ? { color: '#4b5563', opacity: 0.55 } : undefined
+                    const selStyle = isCurrent ? { background: 'rgba(251, 191, 36, 0.12)', borderLeft: '2px solid #fbbf24', paddingLeft: '8px', borderRadius: '4px' } : undefined
                     return (
                       <li key={row.idx} style={{ ...(dimStyle ?? {}), ...(selStyle ?? {}) }}>
                         <strong>{row.idx} · {row.label}</strong> — {row.desc}
@@ -937,7 +942,7 @@ export default function PCRightPanel() {
                 <p className="pc-target-info-drawer__lede">
                   같은 쟁점에서 NPC가 앞뒤가 맞지 않는 진술을 할 때 누적되는 압박치입니다.
                 </p>
-                <div className="pc-target-info-drawer__columns">
+                <div className="pc-target-info-drawer__columns" style={{ gridTemplateColumns: '0.85fr 1.15fr' }}>
                   <div>
                     <div className="pc-target-info-drawer__col-h">발생 경로</div>
                     <ul>
@@ -948,7 +953,7 @@ export default function PCRightPanel() {
                   </div>
                   <div>
                     <div className="pc-target-info-drawer__col-h">효과</div>
-                    <ul>
+                    <ul style={{ whiteSpace: 'nowrap' }}>
                       <li>진실파악 단계 전이 가속</li>
                       <li>임계 도달 시 방어 붕괴</li>
                     </ul>
