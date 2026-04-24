@@ -20,6 +20,7 @@ import { playBgm } from '../engine/soundEngine'
 import PCResultScreen from '../components/pc/result/PCResultScreen'
 import PCVerdictScreen from '../components/pc/verdict/PCVerdictScreen'
 import { useActionDispatch } from '../hooks/useActionDispatch'
+import { useScreenPreset } from '../hooks/useScreenPreset'
 import { useGameStore, useStore } from '../store/useGameStore'
 
 try {
@@ -36,6 +37,8 @@ export default function PCApp() {
   const [sessionReady, setSessionReady] = useState(false)
   const [splashDone, setSplashDone] = useState(false)
   const dispatch = useActionDispatch()
+  // 해상도 프리셋 전역 바인딩 (body[data-screen-bucket] 자동 갱신)
+  useScreenPreset()
 
   // 인트로 스플래시: 최소 1.2초 표시 후 fade out
   useEffect(() => {

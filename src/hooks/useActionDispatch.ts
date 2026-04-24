@@ -115,13 +115,6 @@ function maybeShowArchetypeHint(target: PartyId, turnNumber: number): void {
       archetype,
       convergeToTag: true,
     })
-    // 컷씬 렌더 후 공명 발사 (컷씬 중앙 → 캐릭터 archetype 태그)
-    window.setTimeout(() => {
-      useGameStore.getState().enqueueResonance({
-        fromSelector: '[data-resonance-target="cutscene-center"]',
-        toSelector: `[data-resonance-target="archetype-${target}"]`,
-      })
-    }, 600)
   }
 
   // 관찰 패널 기록 — 메시지 자체가 타이틀, 파티/태그는 서브
@@ -1830,13 +1823,6 @@ function notifyLieTransition(party: PartyId, disputeId: string) {
     if (newState === 'S5') {
       playLieCollapse()
       v4Effects.confession(party, name)
-      // Tier 1: S5 자백 공명 — 캐릭터 태그 → S5 dot
-      window.setTimeout(() => {
-        useGameStore.getState().enqueueResonance({
-          fromSelector: `[data-resonance-target="archetype-${party}"]`,
-          toSelector: `[data-resonance-target="liestate-${party}-S5"]`,
-        })
-      }, 300)
     }
     // S1~S4: v4 newFact 배너 제거 — 통합 피드백 카드가 대체 (사운드 필요 시 이후 개별 추가)
     if (newState === 'S5') {

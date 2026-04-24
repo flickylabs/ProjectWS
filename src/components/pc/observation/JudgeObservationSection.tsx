@@ -157,13 +157,13 @@ export default function JudgeObservationSection() {
           }, 140)
         }
 
-        // archetype 카테고리는 캐릭터 뱃지도 함께 깜빡
+        // archetype 카테고리는 캐릭터 뱃지도 함께 천천히 1회 깜빡 (번개/공명 없음)
         if (latest.category === 'archetype' && latest.party && latest.archetype) {
           const tagKey = `${latest.party}:${latest.archetype}`
           const tag = document.querySelector<HTMLElement>(`[data-archetype-tag="${tagKey}"]`)
           if (tag) {
-            tag.classList.add('pc-dialogue-jump-pulse')
-            window.setTimeout(() => tag.classList.remove('pc-dialogue-jump-pulse'), flashMs + 200)
+            tag.classList.add('pc-archetype-badge-slow-pulse')
+            window.setTimeout(() => tag.classList.remove('pc-archetype-badge-slow-pulse'), 3400)
           }
         }
 

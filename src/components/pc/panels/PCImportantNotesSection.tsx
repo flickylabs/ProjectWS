@@ -4,6 +4,7 @@ import type { DialogueEntry } from '../../../types'
 import { HOTBAR_DRAG_TYPE } from '../hotbar/pcHotbarConfig'
 import PCSvgIcon from '../icons/PCSvgIcon'
 import { openPcInteractionPanel } from '../layout/PCInteractionPanel'
+import { jumpToDialogue } from '../observation/JudgeObservationSection'
 
 export const PC_ADD_COMBINATION_NOTE_EVENT = 'pc:add-combination-note'
 
@@ -222,8 +223,15 @@ export default function PCImportantNotesSection() {
       dialogueSpeaker: note.speaker,
       dialogueSpeakerName: speakerNameMap.get(note.speaker) ?? '발언',
       dialogueDisputeIds: note.relatedDisputes,
+      dialogueId: note.dialogueId,
     })
   }, [speakerNameMap])
+
+  // 확장 드로어 내부 카드 클릭 → 드로어 닫고 해당 대화로 이동 (관찰/타임라인 드로어와 동일 패턴)
+  const jumpFromDrawer = useCallback((dialogueId: string) => {
+    setExpanded(false)
+    window.setTimeout(() => jumpToDialogue(dialogueId), 220)
+  }, [])
 
   /* ━━━ Drag: from note cards (both favorites area and popup) ━━━ */
   const startNoteDrag = useCallback((event: DragEvent<HTMLDivElement>, note: PcPinnedNote) => {
@@ -299,7 +307,12 @@ export default function PCImportantNotesSection() {
           <StarIcon size={14} filled />
           <span>발언노트 즐겨찾기</span>
           <span className="cnt">{favorites.length}</span>
-          <button className="pc-notes-expand-btn" onClick={() => setExpanded(true)} title="발언 노트 전체 보기" type="button">
+          <button
+            className={`pc-notes-expand-btn${expanded ? ' is-open' : ''}`}
+            onClick={() => setExpanded((v) => !v)}
+            title={expanded ? '발언 노트 전체 닫기' : '발언 노트 전체 보기'}
+            type="button"
+          >
             <PCSvgIcon id="i-eye" size={12} />
           </button>
         </div>
@@ -349,95 +362,96 @@ export default function PCImportantNotesSection() {
         </div>
       </section>
 
-      {/* ━━━ Expanded popup: full note list with star toggle ━━━ */}
-      {expanded ? (
-        <div className="pc-notes-expanded-backdrop" onClick={() => setExpanded(false)}>
-          <div className="pc-notes-expanded" onClick={(e) => e.stopPropagation()}>
-            <div className="pc-notes-expanded__header">
-              <span className="pc-notes-expanded__title">발언 노트</span>
-              <button className="pc-notes-expanded__close" onClick={() => setExpanded(false)} type="button">
-                <PCSvgIcon id="i-plus" size={14} />
-              </button>
+      {/* ━━━ Drawer: full note list — 좌측 패널 우측으로 튀어나오는 토스트 (관찰/타임라인 드로어와 동일 패턴) ━━━ */}
+      <aside
+        className={`pc-fav-notes-drawer${expanded ? ' is-open' : ''}`}
+        role="dialog"
+        aria-label="발언 노트 전체"
+        aria-hidden={!expanded}
+      >
+        <div className="pc-notes-expanded__header">
+          <span className="pc-notes-expanded__title">발언 노트</span>
+          <button className="pc-notes-expanded__close" onClick={() => setExpanded(false)} type="button" aria-label="닫기">
+            ✕
+          </button>
+        </div>
+
+        {/* Dispute tabs */}
+        <div className="pc-notes-tabs">
+          <button className={`pc-notes-tab${disputeTab === null ? ' is-active' : ''}`} onClick={() => setDisputeTab(null)} type="button">
+            전체
+          </button>
+          {visibleDisputes.map((d) => (
+            <button
+              className={`pc-notes-tab${disputeTab === d.id ? ' is-active' : ''}`}
+              key={d.id}
+              onClick={() => setDisputeTab(disputeTab === d.id ? null : d.id)}
+              type="button"
+            >
+              {d.name.length > 10 ? d.name.slice(0, 10) + '\u2026' : d.name}
+            </button>
+          ))}
+        </div>
+
+        {/* Content */}
+        <div className="pc-notes-expanded__content">
+          {disputeTab ? (
+            <div className="pc-notes-compare">
+              <div className="pc-notes-compare__col is-a">
+                <span className="pc-notes-compare__header">{caseData?.duo.partyA.name ?? 'A'}</span>
+                {filteredNotes.filter((n) => n.speaker === 'a').map((n) => (
+                  <ExpandedNoteEntry
+                    key={n.id}
+                    note={n}
+                    isFav={isFavorited(n.dialogueId)}
+                    onClickNote={() => jumpFromDrawer(n.dialogueId)}
+                    onToggleFav={() => toggleFavorite(n)}
+                    onDragStart={(e) => startNoteDrag(e, n)}
+                    onDragEnd={() => setDraggingNoteId(null)}
+
+                  />
+                ))}
+              </div>
+              <div className="pc-notes-compare__col is-b">
+                <span className="pc-notes-compare__header">{caseData?.duo.partyB.name ?? 'B'}</span>
+                {filteredNotes.filter((n) => n.speaker === 'b').map((n) => (
+                  <ExpandedNoteEntry
+                    key={n.id}
+                    note={n}
+                    isFav={isFavorited(n.dialogueId)}
+                    onClickNote={() => jumpFromDrawer(n.dialogueId)}
+                    onToggleFav={() => toggleFavorite(n)}
+                    onDragStart={(e) => startNoteDrag(e, n)}
+                    onDragEnd={() => setDraggingNoteId(null)}
+
+                  />
+                ))}
+              </div>
             </div>
-
-            {/* Dispute tabs */}
-            <div className="pc-notes-tabs">
-              <button className={`pc-notes-tab${disputeTab === null ? ' is-active' : ''}`} onClick={() => setDisputeTab(null)} type="button">
-                전체
-              </button>
-              {visibleDisputes.map((d) => (
-                <button
-                  className={`pc-notes-tab${disputeTab === d.id ? ' is-active' : ''}`}
-                  key={d.id}
-                  onClick={() => setDisputeTab(disputeTab === d.id ? null : d.id)}
-                  type="button"
-                >
-                  {d.name.length > 10 ? d.name.slice(0, 10) + '\u2026' : d.name}
-                </button>
-              ))}
-            </div>
-
-            {/* Content */}
-            <div className="pc-notes-expanded__content">
-              {disputeTab ? (
-                <div className="pc-notes-compare">
-                  <div className="pc-notes-compare__col is-a">
-                    <span className="pc-notes-compare__header">{caseData?.duo.partyA.name ?? 'A'}</span>
-                    {filteredNotes.filter((n) => n.speaker === 'a').map((n) => (
-                      <ExpandedNoteEntry
-                        key={n.id}
-                        note={n}
-                        isFav={isFavorited(n.dialogueId)}
-                        onClickNote={() => openNotePanel(n, n.pinned)}
-                        onToggleFav={() => toggleFavorite(n)}
-                        onDragStart={(e) => startNoteDrag(e, n)}
-                        onDragEnd={() => setDraggingNoteId(null)}
-
-                      />
-                    ))}
-                  </div>
-                  <div className="pc-notes-compare__col is-b">
-                    <span className="pc-notes-compare__header">{caseData?.duo.partyB.name ?? 'B'}</span>
-                    {filteredNotes.filter((n) => n.speaker === 'b').map((n) => (
-                      <ExpandedNoteEntry
-                        key={n.id}
-                        note={n}
-                        isFav={isFavorited(n.dialogueId)}
-                        onClickNote={() => openNotePanel(n, n.pinned)}
-                        onToggleFav={() => toggleFavorite(n)}
-                        onDragStart={(e) => startNoteDrag(e, n)}
-                        onDragEnd={() => setDraggingNoteId(null)}
-
-                      />
-                    ))}
-                  </div>
-                </div>
-              ) : (
-                <div className="pc-notes-expanded__list">
-                  {groupedByTurn.map((group) => (
-                    <div className="pc-notes-turn-group" key={group.turn}>
-                      <div className="pc-notes-turn-group__label">Turn {group.turn}</div>
-                      {group.notes.map((n) => (
-                        <ExpandedNoteCard
-                          key={n.id}
-                          note={n}
-                          speakerName={speakerNameMap.get(n.speaker) ?? ''}
-                          disputeIndices={n.relatedDisputes.map((id) => disputeIndexMap.get(id)).filter((v): v is number => v != null)}
-                          isFav={isFavorited(n.dialogueId)}
-                          onClickNote={() => openNotePanel(n, n.pinned)}
-                          onToggleFav={() => toggleFavorite(n)}
-                          onDragStart={(e) => startNoteDrag(e, n)}
-                          onDragEnd={() => setDraggingNoteId(null)}
-                        />
-                      ))}
-                    </div>
+          ) : (
+            <div className="pc-notes-expanded__list">
+              {groupedByTurn.map((group) => (
+                <div className="pc-notes-turn-group" key={group.turn}>
+                  <div className="pc-notes-turn-group__label">Turn {group.turn}</div>
+                  {group.notes.map((n) => (
+                    <ExpandedNoteCard
+                      key={n.id}
+                      note={n}
+                      speakerName={speakerNameMap.get(n.speaker) ?? ''}
+                      disputeIndices={n.relatedDisputes.map((id) => disputeIndexMap.get(id)).filter((v): v is number => v != null)}
+                      isFav={isFavorited(n.dialogueId)}
+                      onClickNote={() => jumpFromDrawer(n.dialogueId)}
+                      onToggleFav={() => toggleFavorite(n)}
+                      onDragStart={(e) => startNoteDrag(e, n)}
+                      onDragEnd={() => setDraggingNoteId(null)}
+                    />
                   ))}
                 </div>
-              )}
+              ))}
             </div>
-          </div>
+          )}
         </div>
-      ) : null}
+      </aside>
     </>
   )
 }

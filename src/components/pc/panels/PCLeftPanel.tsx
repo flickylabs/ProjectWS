@@ -195,12 +195,12 @@ export default function PCLeftPanel() {
                     <span className="pc-ev-notebook__combo-wrap" title={comboTitle}>
                       {hint.readyCount > 0 ? (
                         <span className="pc-ev-notebook__combo-badge is-ready">
-                          🔗 {hint.readyCount}
+                          <PCSvgIcon id="i-link" size={12} /> {hint.readyCount}
                         </span>
                       ) : null}
                       {hint.recipeCount - hint.readyCount > 0 ? (
                         <span className="pc-ev-notebook__combo-badge is-potential">
-                          🔍 {hint.recipeCount - hint.readyCount}
+                          <PCSvgIcon id="i-search" size={12} /> {hint.recipeCount - hint.readyCount}
                         </span>
                       ) : null}
                     </span>

@@ -567,25 +567,27 @@ export default function PCRightPanel() {
 
           {/* 공통 섹션 — 감정 / 신뢰 / 누설 한 묶음 (클릭 시 안내 드로어) */}
           <div className="pc-target-common">
-            <div
-              className="pc-target-state-row is-interactive"
-              role="button"
-              tabIndex={0}
-              onClick={() => setInfoDrawer('emotion')}
-              onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setInfoDrawer('emotion') } }}
-            >
-              <span>감정</span>
-              <strong>{EMOTION_LABELS[targetAgent.emotionalState.phase]}</strong>
-            </div>
-            <div
-              className="pc-target-state-row is-interactive"
-              role="button"
-              tabIndex={0}
-              onClick={() => setInfoDrawer('trust')}
-              onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setInfoDrawer('trust') } }}
-            >
-              <span>신뢰 상태</span>
-              <strong>{trustStateLabel}</strong>
+            <div className="pc-target-state-row-group">
+              <div
+                className="pc-target-state-row is-interactive"
+                role="button"
+                tabIndex={0}
+                onClick={() => setInfoDrawer('emotion')}
+                onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setInfoDrawer('emotion') } }}
+              >
+                <span>감정</span>
+                <strong>{EMOTION_LABELS[targetAgent.emotionalState.phase]}</strong>
+              </div>
+              <div
+                className="pc-target-state-row is-interactive"
+                role="button"
+                tabIndex={0}
+                onClick={() => setInfoDrawer('trust')}
+                onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setInfoDrawer('trust') } }}
+              >
+                <span>신뢰 상태</span>
+                <strong>{trustStateLabel}</strong>
+              </div>
             </div>
             <MeterRow
               icon={<PCSvgIcon id="i-drop" size={15} />}
@@ -611,16 +613,9 @@ export default function PCRightPanel() {
               >
                 ◀
               </button>
-              <div className="pc-target-dispute-nav__label">
-                <span className="pc-target-dispute-nav__name">
-                  {activeDispute?.name ?? '쟁점 없음'}
-                </span>
-                {visibleDisputes.length > 0 ? (
-                  <span className="pc-target-dispute-nav__counter">
-                    {activeDisputeIdx + 1} / {visibleDisputes.length}
-                  </span>
-                ) : null}
-              </div>
+              <span className="pc-target-dispute-nav__name">
+                {activeDispute?.name ?? '쟁점 없음'}
+              </span>
               <button
                 type="button"
                 className="pc-target-dispute-nav__arrow"
@@ -633,7 +628,7 @@ export default function PCRightPanel() {
             </div>
 
             <div className="pc-target-lie-status">
-              <span className="pc-target-lie-status__big">진실파악 단계</span>
+              <span className="pc-target-lie-status__big">쟁점별 진실파악 단계</span>
               <span className="pc-target-lie-status__step">{activeLieIndex} / 5</span>
             </div>
 

@@ -16,6 +16,7 @@ import MiniGameOverlay from '../minigame/MiniGameOverlay'
 import { MINIGAME_MAX_ROUNDS } from '../../../types/minigame'
 import PCInteractionPanel, { openPcInteractionPanel } from './PCInteractionPanel'
 import PCRecordSummary from './PCRecordSummary'
+import PCSettingsPanel from '../settings/PCSettingsPanel'
 import { playCourtControl } from '../../../engine/soundEngine'
 
 interface Props {
@@ -97,6 +98,7 @@ export default function PCCourtLayout({ actionPanel, onDialogueTap, isDialoguePh
 
   const [tokenPopup, setTokenPopup] = useState<'invest' | 'skill' | 'court' | null>(null)
   const [recordSummaryOpen, setRecordSummaryOpen] = useState(false)
+  const [settingsOpen, setSettingsOpen] = useState(false)
   const [combinationOverlay, setCombinationOverlay] = useState<CombinationOverlayState | null>(null)
   const [dossierUnlockText, setDossierUnlockText] = useState<string | null>(null)
   const [courtControlFlash, setCourtControlFlash] = useState<{ id: number; label: string } | null>(null)
@@ -373,7 +375,7 @@ export default function PCCourtLayout({ actionPanel, onDialogueTap, isDialoguePh
               <span>Turn</span>
               <b>{turnCount}</b>
             </button>
-            <button className="pc-play-tool" onClick={() => openHeaderPanel('timeline')} title="사건 타임라인" type="button">
+            <button className="pc-play-tool" onClick={() => setSettingsOpen(true)} title="설정" type="button">
               <PCSvgIcon id="i-gear" size={16} />
             </button>
           </nav>
@@ -412,6 +414,15 @@ export default function PCCourtLayout({ actionPanel, onDialogueTap, isDialoguePh
         </main>
 
         <aside className="panel panel-r pc-play-panel pc-play-panel--right">
+          <button
+            type="button"
+            className="pc-summary-floating-toggle"
+            onClick={() => window.dispatchEvent(new Event('pc:open-record-summary'))}
+            title="기록 정리"
+            aria-label="기록 정리"
+          >
+            <PCSvgIcon id="i-doc" size={14} />
+          </button>
           <PCRightPanel />
         </aside>
       </div>
@@ -421,6 +432,7 @@ export default function PCCourtLayout({ actionPanel, onDialogueTap, isDialoguePh
       <PCGameplayOverlay />
       <TokenSpendEffect />
       <MiniGameOverlay />
+      <PCSettingsPanel open={settingsOpen} onClose={() => setSettingsOpen(false)} />
       {combinationOverlay ? (
         <div className="pc-combination-success" key={combinationOverlay.id}>
           <div className="pc-combination-success__card">

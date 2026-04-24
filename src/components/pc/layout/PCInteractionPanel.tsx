@@ -6,6 +6,7 @@ import type { PartyId, QuestionType } from '../../../types'
 import { showToast } from '../../common/Toast'
 import PCSvgIcon from '../icons/PCSvgIcon'
 import PCCharacterPortrait from '../icons/PCCharacterPortrait'
+import { jumpToDialogue } from '../observation/JudgeObservationSection'
 
 export const PC_OPEN_INTERACTION_PANEL_EVENT = 'pc:open-interaction-panel'
 
@@ -62,6 +63,8 @@ export interface PcInteractionPayload {
   dialogueSpeaker?: string
   dialogueSpeakerName?: string
   dialogueDisputeIds?: string[]
+  /** dialogue variant: 실제 대화 id — 있으면 '바로가기' 버튼 노출 */
+  dialogueId?: string
   /** backdrop (화면 덮는 어두운 배경) 여부. 기본 true. false이면 상단 중앙 소프트 팝업으로 렌더 */
   backdrop?: boolean
 }
@@ -700,7 +703,7 @@ export default function PCInteractionPanel() {
         )}
 
         {payload.variant === 'evidence' && payload.evidenceId ? (
-          <EvidenceDetailSection evidenceId={payload.evidenceId} />
+          <EvidenceDetailSection evidenceId={payload.evidenceId} onClose={() => setPayload(null)} />
         ) : null}
 
         {payload.variant !== 'witness' && payload.actions && payload.actions.length > 0 ? (
@@ -725,7 +728,7 @@ export default function PCInteractionPanel() {
   )
 }
 
-function EvidenceDetailSection({ evidenceId }: { evidenceId: string }) {
+function EvidenceDetailSection({ evidenceId, onClose }: { evidenceId: string; onClose?: () => void }) {
   const dispatch = useActionDispatch()
   const caseData = useStore((s) => s.caseData)
   const evidenceStates = useStore((s) => s.evidenceStates)
@@ -808,7 +811,10 @@ function EvidenceDetailSection({ evidenceId }: { evidenceId: string }) {
           disabled={presentedToA}
           onClick={() => {
             if (!presentedToA) {
-              dispatch({ type: 'evidence_present', evidenceId, target: 'a' })
+              onClose?.()
+              window.setTimeout(() => {
+                dispatch({ type: 'evidence_present', evidenceId, target: 'a' })
+              }, 220)
             }
           }}
           type="button"
@@ -823,7 +829,10 @@ function EvidenceDetailSection({ evidenceId }: { evidenceId: string }) {
           disabled={presentedToB}
           onClick={() => {
             if (!presentedToB) {
-              dispatch({ type: 'evidence_present', evidenceId, target: 'b' })
+              onClose?.()
+              window.setTimeout(() => {
+                dispatch({ type: 'evidence_present', evidenceId, target: 'b' })
+              }, 220)
             }
           }}
           type="button"
@@ -860,11 +869,27 @@ function DialogueDetailSection({ payload, onClose }: { payload: PcInteractionPay
 
   return (
     <div className="pc-dialogue-popup">
-      {/* Header: 발언 기록 - Turn N  +  X */}
+      {/* Header: 발언 기록 - Turn N  +  바로가기  +  X */}
       <div className="pc-dialogue-popup__header-row">
         <span className="pc-dialogue-popup__label">발언 기록</span>
         <span className="pc-dialogue-popup__dash">-</span>
         <span className="pc-dialogue-popup__turn">Turn {payload.dialogueTurn ?? 0}</span>
+        {payload.dialogueId ? (
+          <button
+            className="pc-dialogue-popup__goto"
+            onClick={() => {
+              const id = payload.dialogueId
+              onClose()
+              if (id) {
+                window.setTimeout(() => jumpToDialogue(id), 220)
+              }
+            }}
+            type="button"
+            title="해당 메시지로 이동"
+          >
+            바로가기
+          </button>
+        ) : null}
         <button className="pc-dialogue-popup__close" onClick={onClose} type="button">&times;</button>
       </div>
 

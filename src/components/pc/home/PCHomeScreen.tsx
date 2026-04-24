@@ -7,6 +7,8 @@ import { checkConnection } from '../../../engine/llmClient'
 import { isBgmEnabled, isSoundEnabled, playBgm as playBgmFn, setBgmEnabled, setSoundEnabled, stopBgm as stopBgmFn } from '../../../engine/soundEngine'
 import { getSettings, updateSettings } from '../../../hooks/useLocalStorage'
 import { setLLMMode } from '../../../hooks/useActionDispatch'
+import { useScreenPreset } from '../../../hooks/useScreenPreset'
+import { SCREEN_PRESETS, type ScreenPresetId } from '../../../utils/screenPresets'
 import { useGameStore, useStore } from '../../../store/useGameStore'
 import { GamePhase, type CaseData, type ExtendedHistoryEntry, type SortCategory } from '../../../types'
 import PCSvgIcon from '../icons/PCSvgIcon'
@@ -31,6 +33,7 @@ const SORTS: { id: SortCategory; label: string }[] = [
 ]
 
 export default function PCHomeScreen() {
+  const { preset: screenPreset, setPreset: setScreenPreset } = useScreenPreset()
   const [showIntro, setShowIntro] = useState(() => !hasSeenPcIntro())
   const [view, setView] = useState<HomeView>('home')
   const [judgeDeskTab, setJudgeDeskTab] = useState<JudgeDeskTab>('profile')
@@ -309,6 +312,24 @@ export default function PCHomeScreen() {
         <section className="pc-depth-shell">
           <DepthHeader eyebrow="SETTINGS" title="설정" description="오디오, 텍스트 속도, AI 연결 상태를 관리합니다." onBack={() => setView('home')} />
           <div className="pc-settings-grid-v2">
+            <Card eyebrow="DISPLAY" title="화면">
+              <div className="pc-settings-select-row">
+                <div>
+                  <strong>해상도 프리셋</strong>
+                  <p>선택한 해상도에 맞춰 좌우 패널이 단계적으로 조정됩니다</p>
+                </div>
+                <select
+                  className="pc-settings-select"
+                  value={screenPreset}
+                  onChange={(event) => setScreenPreset(event.target.value as ScreenPresetId)}
+                >
+                  <option value="auto">Auto (자동 감지)</option>
+                  {SCREEN_PRESETS.map((p) => (
+                    <option key={p.id} value={p.id}>{p.label}{p.note ? ` (${p.note})` : ''}</option>
+                  ))}
+                </select>
+              </div>
+            </Card>
             <Card eyebrow="AUDIO" title="오디오"><ToggleRow checked={bgmOn} label="배경음" description="타이틀과 플레이 배경음" onToggle={toggleBgm} /><ToggleRow checked={sfxOn} label="효과음" description="상호작용과 판결 효과음" onToggle={toggleSfx} /></Card>
             <Card eyebrow="GAMEPLAY" title="게임 플레이"><SummaryRow label="행동 힌트" value={settings.showBehaviorHints ? '켜짐' : '꺼짐'} /><SummaryRow label="대사 자동 진행" value={settings.autoAdvanceDialogue ? '켜짐' : '꺼짐'} /><div className="pc-settings-select-row"><div><strong>텍스트 속도</strong><p>대사 표시와 타이핑 속도</p></div><select className="pc-settings-select" onChange={(event) => updateTypingSpeed(event.target.value as HomeSettings['typingSpeed'])} value={settings.typingSpeed}><option value="fast">빠르게</option><option value="normal">보통</option><option value="slow">느리게</option></select></div></Card>
             <Card eyebrow="LIVE" title="라이브 상태"><SummaryRow label="AI 연결" value={llmConnected == null ? '확인 중' : llmConnected ? '정상' : '오프라인'} /><SummaryRow label="다음 충전" value={formatCountdown(countdown)} /><button className="pc-inline-button" disabled={checkingConnection} onClick={refreshConnection} type="button">{checkingConnection ? '확인 중…' : '연결 다시 확인'}</button></Card>

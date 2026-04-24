@@ -232,6 +232,22 @@ export default function PCBottomDock() {
     return () => window.removeEventListener('keydown', onKeyDown)
   }, [closeAll, hasWitness, openEvidenceChoice, openFreeQuestion, openQuestionChoice, openWitnessPanel])
 
+  // hotbar body 실제 높이 측정 → CSS 변수 --pc-dock-area-h 주입
+  // 이 변수는 캐릭터 카드(.char)와 우측 '요약' 섹션이 참조해 세로 크기를 동기화함
+  const hotbarRef = useRef<HTMLDivElement>(null)
+  useEffect(() => {
+    const el = hotbarRef.current
+    if (!el) return
+    const update = () => {
+      const h = el.offsetHeight
+      if (h > 0) document.body.style.setProperty('--pc-dock-area-h', `${h}px`)
+    }
+    update()
+    const ro = new ResizeObserver(update)
+    ro.observe(el)
+    return () => ro.disconnect()
+  }, [caseData])
+
   if (!caseData) return null
 
   const contradiction = questionMeters[pcTargetParty].contradictionTokens
@@ -356,7 +372,7 @@ export default function PCBottomDock() {
 
         {/* 6-slot single bar */}
         <div className="hb-center hb-center--compact">
-          <div className="hotbar hotbar--compact hotbar--v4">
+          <div className="hotbar hotbar--compact hotbar--v4" ref={hotbarRef}>
             <div className="hotbar-topbar">
               <div className="hotbar-special-row">
                 <button className="hotbar-special-btn" onClick={() => openSpecialAction('separation')} title="분리 심문 (Q)" type="button">
