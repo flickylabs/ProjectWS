@@ -155,7 +155,13 @@ export default function PCGameplayOverlay() {
             ]
 
     // 컷씬 띠 알림 (actions 없이 자동 소멸) — 선택지는 핫바에서 직접
-    void actions
+    // 단, 관찰 패널에는 "제시된 선택지" 요약을 함께 기록 (Modal 세부 기록)
+    const choicesSummary = actions
+      .map((a) => {
+        const parts = a.label.split('—')
+        return (parts.length > 1 ? parts.pop() : a.label)?.trim() ?? a.label
+      })
+      .join(' / ')
 
     const ovState = useGameStore.getState()
     ovState.enqueueFeedback({
@@ -165,13 +171,13 @@ export default function PCGameplayOverlay() {
       party: choice.party,
       disputeId: choice.disputeId,
     })
-    // 관찰 패널 기록 — 전환 상황 발생
+    // 관찰 패널 기록 — 전환 상황 발생 + 제시된 선택지
     ovState.addJudgeObservation({
       turnCount: ovState.turnCount,
       category: 'event',
       iconId: 'i-bolt',
       title: meta.title,
-      summary: `${partyName} · ${disputeName}`,
+      summary: `${partyName} · ${disputeName} — 선택지: ${choicesSummary}`,
       party: choice.party,
       disputeId: choice.disputeId,
       linkedDialogueId: findLinkedDialogueId(choice.party),
