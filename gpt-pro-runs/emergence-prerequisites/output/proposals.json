@@ -1,0 +1,150 @@
+{
+  "spouse-01": {
+    "d-2": {
+      "name": "개인 비자금 2,000만원 출금",
+      "currentState": "현재 unlockCondition 있음: d-1 / party=a / minState=S3. 기본 방향은 적절하나 hidden v3 쟁점이므로 명시 조건을 유지해 자동 약한 routes를 차단한다.",
+      "proposedUnlockCondition": {
+        "requireDispute": {
+          "id": "d-1",
+          "party": "a",
+          "minState": "S3"
+        }
+      },
+      "reasoning": "오피스텔 방문과 새벽 전화 의혹이 어느 정도 책임 전가 단계까지 진행된 뒤에야 금전 출금 문제가 자연스럽게 별도 쟁점으로 확장된다. d-1 초반 증거 1개만으로 비자금 쟁점이 튀어나오는 것을 막되, 초기 핵심 쟁점만 충분히 밀면 도달 가능하다."
+    },
+    "h-d3": {
+      "name": "공동 적금 3,000만원 해지 (위임장 조작)",
+      "currentState": "현재 unlockCondition 있음: d-2 / minState=S1. d-2 발견 직후 너무 이르게 emerge될 수 있어 S3로 강화한다.",
+      "proposedUnlockCondition": {
+        "requireDispute": {
+          "id": "d-2",
+          "minState": "S3"
+        }
+      },
+      "reasoning": "개인 출금 쟁점에서 자금 출처와 사용처 공방이 충분히 진행된 뒤에야 상대 측의 공동 적금 문제를 역으로 제기하는 흐름이 자연스럽다. S3는 d-2가 단순 노출을 넘어 책임 전가 국면에 들어간 시점이라 h-d3의 반격성 쟁점을 너무 빠르지 않게 연다."
+    },
+    "h-d4": {
+      "name": "은폐와 선제행동의 순서",
+      "currentState": "현재 unlockCondition 있음: d-2 / minState=S1 AND h-d3 / minState=S1. 양쪽 금전 쟁점이 표면화만 되어도 emerge되어 너무 빠르므로 둘 다 S3로 강화한다.",
+      "proposedUnlockCondition": {
+        "requireDispute": [
+          {
+            "id": "d-2",
+            "minState": "S3"
+          },
+          {
+            "id": "h-d3",
+            "minState": "S3"
+          }
+        ]
+      },
+      "reasoning": "이 쟁점은 양측의 은폐와 선제행동을 시간순으로 비교하는 메타 쟁점이므로, 개인 출금과 공동 적금 해지 양쪽이 모두 책임 전가 단계까지 전개된 뒤 등장해야 자연스럽다. 두 선행 쟁점 모두 앞선 체인에 있으므로 순환 참조 없이 후반 정리 쟁점으로 기능한다."
+    }
+  },
+  "family-01": {
+    "d-2": {
+      "name": "60:40 유서의 진짜 의도",
+      "currentState": "현재 unlockCondition 있음: d-1 / party=b / minState=S2. 판단 능력 쟁점 초중반에 너무 빨리 emerge될 수 있어 S3로 강화한다.",
+      "proposedUnlockCondition": {
+        "requireDispute": {
+          "id": "d-1",
+          "party": "b",
+          "minState": "S3"
+        }
+      },
+      "reasoning": "유서 작성 과정과 판단 능력에 대한 B측 설명이 충분히 압박받은 뒤에야 60:40 비율의 숨은 의도라는 더 깊은 쟁점이 자연스럽게 열린다. S3는 초기 의혹 제시만으로 비율 쟁점이 점프하는 것을 막으면서도 첫 핵심 쟁점 진행만으로 도달 가능하다."
+    },
+    "d-3": {
+      "name": "20년 송금의 실체",
+      "currentState": "현재 unlockCondition 있음: d-2 / minState=S3. 선행 쟁점의 책임 전가 이후 등장하는 구조가 적절하므로 유지한다.",
+      "proposedUnlockCondition": {
+        "requireDispute": {
+          "id": "d-2",
+          "minState": "S3"
+        }
+      },
+      "reasoning": "유서 비율의 의도가 충분히 흔들린 뒤에야 장기간 생활비와 금전 지원의 맥락이 왜 중요한지 납득된다. d-2를 S3까지 요구하면 단순한 유서 진위 논쟁 초반에 20년 송금 쟁점이 과도하게 빨리 등장하지 않는다."
+    },
+    "d-4": {
+      "name": "출생 비밀과 침묵의 이유",
+      "currentState": "현재 unlockCondition 있음: d-3 / minState=S2. 장기 송금 쟁점이 충분히 전개되기 전에 가족 비밀이 emerge될 수 있어 S3로 강화한다.",
+      "proposedUnlockCondition": {
+        "requireDispute": {
+          "id": "d-3",
+          "minState": "S3"
+        }
+      },
+      "reasoning": "20년 송금의 실체가 책임 전가 단계까지 진행되어야, 침묵의 이유와 가족 내부의 더 깊은 비밀이 이야기상 설득력 있게 이어진다. d-3는 이미 d-2 뒤에 열리는 쟁점이므로 별도 AND 없이도 순차 체인이 유지된다."
+    },
+    "d-5": {
+      "name": "어머니 이용의 진짜 주체",
+      "currentState": "현재 unlockCondition 있음: d-3 / minState=S3 AND d-4 / minState=S2. 결론성 shared 쟁점이므로 d-4도 S3로 강화한다.",
+      "proposedUnlockCondition": {
+        "requireDispute": [
+          {
+            "id": "d-3",
+            "minState": "S3"
+          },
+          {
+            "id": "d-4",
+            "minState": "S3"
+          }
+        ]
+      },
+      "reasoning": "이 쟁점은 돈의 흐름과 침묵의 이유를 함께 재해석하는 결론부 쟁점이므로 두 선행 축이 모두 책임 전가 단계에 도달해야 자연스럽다. S5까지 요구하지 않아 자백 전에도 emerge될 수 있어 너무 늦게 잠기는 위험은 낮다."
+    }
+  },
+  "friend-01": {
+    "d-2": {
+      "name": "예비신랑의 선넘는 접근",
+      "currentState": "현재 unlockCondition 있음: d-1 / party=b / minState=S2. 9일간 연락 의도 쟁점 초중반에 너무 빠르게 emerge될 수 있어 S3로 강화한다.",
+      "proposedUnlockCondition": {
+        "requireDispute": {
+          "id": "d-1",
+          "party": "b",
+          "minState": "S3"
+        }
+      },
+      "reasoning": "9일간 연락의 의도에 관한 B측 설명이 충분히 드러난 뒤에야 예비신랑 쪽 선넘는 접근이라는 반전성 쟁점이 자연스럽게 따라온다. S3 요구는 연락 기록 한두 개만으로 d-2가 갑자기 열리는 문제를 줄인다."
+    },
+    "d-3": {
+      "name": "아버지의 돈 접근 패턴",
+      "currentState": "현재 unlockCondition 있음: d-2 / minState=S3. 선행 쟁점의 책임 전가 이후 현재 금전 패턴이 열리는 구조가 적절하므로 유지한다.",
+      "proposedUnlockCondition": {
+        "requireDispute": {
+          "id": "d-2",
+          "minState": "S3"
+        }
+      },
+      "reasoning": "예비신랑과의 접촉 경위가 충분히 진행된 뒤에야 그 연락이 왜 경고였는지, 그리고 금전 접근 패턴이 왜 핵심인지 자연스럽게 확장된다. d-2 S3는 선넘는 접근의 의미가 정리된 뒤 다음 층위를 열어 주는 안정적인 조건이다."
+    },
+    "d-4": {
+      "name": "과거 손절과 아버지의 사기",
+      "currentState": "현재 unlockCondition 있음: d-3 / minState=S2. 현재 돈 접근 패턴만 초중반에 보인 상태에서 과거 손절 원인까지 너무 빨리 열릴 수 있어 S3로 강화한다.",
+      "proposedUnlockCondition": {
+        "requireDispute": {
+          "id": "d-3",
+          "minState": "S3"
+        }
+      },
+      "reasoning": "현재의 돈 접근 패턴이 책임 전가 단계까지 드러나야 과거 손절의 원인을 같은 패턴의 반복으로 이해할 수 있다. S3는 현재 사건과 과거 사건 사이의 연결감을 확보하면서도 d-5 이전에는 충분히 열리게 한다."
+    },
+    "d-5": {
+      "name": "단톡방 매도와 명예훼손",
+      "currentState": "현재 unlockCondition 있음: d-3 / minState=S3 AND d-4 / minState=S3. 결론성 shared 쟁점으로 적절하므로 유지한다.",
+      "proposedUnlockCondition": {
+        "requireDispute": [
+          {
+            "id": "d-3",
+            "minState": "S3"
+          },
+          {
+            "id": "d-4",
+            "minState": "S3"
+          }
+        ]
+      },
+      "reasoning": "현재의 경고 맥락과 과거 손절 원인이 모두 책임 전가 단계까지 밝혀진 뒤에야 단톡방 매도와 명예훼손을 양측 책임의 반복 구조로 볼 수 있다. 두 조건은 같은 방향의 순차 체인에 있어 순환 참조가 없고, S5를 요구하지 않아 결말 전에 emerge 가능하다."
+    }
+  }
+}

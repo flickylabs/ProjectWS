@@ -316,7 +316,7 @@
         "requireDispute": {
           "id": "d-1",
           "party": "b",
-          "minState": "S2"
+          "minState": "S3"
         }
       },
       "v3UnlockPlan": {
@@ -390,7 +390,7 @@
       "unlockCondition": {
         "requireDispute": {
           "id": "d-3",
-          "minState": "S2"
+          "minState": "S3"
         }
       },
       "v3UnlockPlan": {
@@ -433,7 +433,7 @@
           },
           {
             "id": "d-4",
-            "minState": "S2"
+            "minState": "S3"
           }
         ]
       },

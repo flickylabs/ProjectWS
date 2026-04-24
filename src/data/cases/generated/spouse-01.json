@@ -354,9 +354,9 @@
       "unlockCondition": {
         "requireDispute": {
           "id": "d-2",
-          "minState": "S1"
+          "minState": "S3"
         },
-        "note": "d-2 발견 후 B가 역공 시"
+        "note": "d-2 책임 전가 단계 후 B 역공 시"
       },
       "v3UnlockPlan": {
         "runtimeRule": "d-2 발견 후 B 역공 시 해금",
@@ -395,14 +395,14 @@
         "requireDispute": [
           {
             "id": "d-2",
-            "minState": "S1"
+            "minState": "S3"
           },
           {
             "id": "h-d3",
-            "minState": "S1"
+            "minState": "S3"
           }
         ],
-        "note": "d-2 + h-d3 모두 공개 후 자동"
+        "note": "d-2 + h-d3 모두 책임 전가 단계 후 자동"
       },
       "v3UnlockPlan": {
         "runtimeRule": "d-2 + h-d3 모두 공개 후 자동 해금",
