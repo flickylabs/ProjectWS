@@ -55,6 +55,17 @@ const EMPTY_METRICS: ProcessMetrics = {
   collapseViaTrustOrEmpathy: 0,
 }
 
+function ensureQuestionMeterState(meter?: Partial<QuestionMeterState>): QuestionMeterState {
+  return {
+    contradictionTokens: meter?.contradictionTokens ?? 0,
+    contradictionTokensByDispute: meter?.contradictionTokensByDispute ?? {},
+    leakMeter: meter?.leakMeter ?? 0,
+    trustWindow: meter?.trustWindow ?? 0,
+    lastQuestionType: meter?.lastQuestionType ?? null,
+    consecutiveSameType: meter?.consecutiveSameType ?? 0,
+  }
+}
+
 /** 퍼크 효과를 게임 초기 상태에 반영 */
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 function applyPerks(set: (partial: any) => void): void {
@@ -201,7 +212,7 @@ export type GameStore = PhaseSlice & AgentSlice & ResourceSlice & EvidenceSlice 
   pendingGameEvent: GameEventTrigger | null
   setPendingGameEvent: (event: GameEventTrigger | null) => void
   /** V3: 증거 결과 토스트 */
-  pendingEvidenceResult: { type: 'hold' | 'crack' | 'collapse'; evidenceName: string } | null
+  pendingEvidenceResult: { type: 'hold' | 'crack' | 'collapse'; evidenceName: string; evidenceId?: string } | null
   setPendingEvidenceResult: (r: GameStore['pendingEvidenceResult']) => void
   /** V3: DisputeBoard → ActionPanel 라우팅 */
   disputeBoardAction: { disputeId: string; party: 'a' | 'b' } | null
@@ -803,6 +814,20 @@ export const useGameStore: import('zustand').UseBoundStore<import('zustand').Sto
     },
     setItem: (name, value) => sessionStorage.setItem(name, JSON.stringify(value)),
     removeItem: (name) => sessionStorage.removeItem(name),
+  },
+  merge: (persistedState, currentState) => {
+    const persisted = persistedState as Partial<GameStore> | undefined
+    const merged = { ...currentState, ...persisted } as GameStore
+    const persistedMeters = persisted?.questionMeters
+
+    if (persistedMeters) {
+      merged.questionMeters = {
+        a: ensureQuestionMeterState({ ...currentState.questionMeters.a, ...persistedMeters.a }),
+        b: ensureQuestionMeterState({ ...currentState.questionMeters.b, ...persistedMeters.b }),
+      }
+    }
+
+    return merged
   },
   partialize: (state): any => ({
     // phase

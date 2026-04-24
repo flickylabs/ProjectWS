@@ -282,7 +282,7 @@ async function handleEvidencePresent(action: Extract<PlayerAction, { type: 'evid
     const toastState = useGameStore.getState()
     const resultType = !evDidTransition ? 'hold'
       : evDef.reliability === 'hard' ? 'collapse' : 'crack'
-    toastState.setPendingEvidenceResult({ type: resultType, evidenceName: evDef.name })
+    toastState.setPendingEvidenceResult({ type: resultType, evidenceName: evDef.name, evidenceId: evDef.id })
 
     // penalty_buffer 퍼크: hold(증거 무효) 시 철회/재프레이밍 선택지
     if (resultType === 'hold' && toastState.activePerks.penaltyBufferUsesRemaining > 0) {
