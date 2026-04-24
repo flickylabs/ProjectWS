@@ -76,6 +76,9 @@ export default function PCRightPanel() {
   })
   const activeDispute =
     visibleDisputes.find((dispute) => dispute.id === lastFocusedDisputeId) ?? visibleDisputes[0] ?? null
+  const disputeTokens = activeDispute
+    ? (targetMeters.contradictionTokensByDispute[activeDispute.id] ?? 0)
+    : 0
   const activeLieState = activeDispute ? targetAgent.lieStateMap[activeDispute.id]?.currentState ?? 'S0' : 'S0'
   const activeLieIndex = LIE_STATES.indexOf(activeLieState)
   const activeDisputeIdx = activeDispute ? visibleDisputes.findIndex((d) => d.id === activeDispute.id) : -1
@@ -580,6 +583,7 @@ export default function PCRightPanel() {
               </div>
               <div
                 className="pc-target-state-row is-interactive"
+                data-resonance-target={`trust-${pcTargetParty}`}
                 role="button"
                 tabIndex={0}
                 onClick={() => setInfoDrawer('trust')}
@@ -664,12 +668,12 @@ export default function PCRightPanel() {
                 {[0, 1, 2, 3, 4].map((i) => (
                   <span
                     key={i}
-                    className={`pc-target-contradiction__pip${i < targetMeters.contradictionTokens ? ' is-filled' : ''}`}
+                    className={`pc-target-contradiction__pip${i < disputeTokens ? ' is-filled' : ''}`}
                   />
                 ))}
               </div>
               <span className="pc-target-contradiction__count">
-                {targetMeters.contradictionTokens} / 5
+                {disputeTokens} / 5
               </span>
             </div>
           </div>
