@@ -122,6 +122,10 @@ const INTENT_LEXICON: Record<string, string[]> = {
   trap_clarify: ['아버지가 무슨 뜻', '그 한 줄 뜻', '상속 뜻', '수첩 뜻'],
   procedural_reframe: ['다른 방법', '다른 경로', '정말 다른 루트 없', '절차'],
   relation_rule: ['왜 규칙 지킴이', '왜 그렇게 규칙'],
+  // V6 추가 (spouse-01 freeQ hook 3종: 배우자 상의 경계 / 위임 서명 / 투자 손실)
+  spouse_consent_boundary: ['상의', '동의', '배우자', '혼자 결정', '큰돈', '비자금', '말 안 했'],
+  proxy_signature: ['위임장', '서명', '해지 서류', '적금 해지', '조작', '본인 서명'],
+  investment_loss: ['투자방', '송금', '손실', '잃었', '사기', '전액'],
 }
 
 /**
