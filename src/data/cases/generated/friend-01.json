@@ -472,7 +472,7 @@
           "stage": 1,
           "revealKey": "request_original",
           "question": {
-            "text": "이 연락 기록, 최수민 씨가 먼저 보낸 것 맞습니까?",
+            "text": "이 연락 기록은 실제 발신 내역입니까?",
             "attackVector": "authenticity"
           },
           "label": "기록확인",
@@ -482,21 +482,21 @@
           "stage": 2,
           "revealKey": "check_metadata",
           "question": {
-            "text": "왜 손절한 친구의 예비신랑에게 이렇게까지 연락했습니까?",
+            "text": "연락 시간대와 문구를 대조해 주십시오.",
             "attackVector": "context"
           },
           "label": "시간대조",
-          "unlockHint": "기록을 확인하면 연락 횟수와 문구의 시간대를 대조할 수 있습니다."
+          "unlockHint": "원본을 더 확인하면 연락 시간대와 반복 문구를 함께 볼 수 있습니다."
         },
         {
           "stage": 3,
           "revealKey": "restore_context",
           "question": {
-            "text": "차단당한 상태였다고 해도, 왜 공통 친구가 아니라 예비신랑을 직접 붙잡으려 했습니까?",
+            "text": "이 연락이 경고였는지 집착이었는지 따져 주십시오.",
             "attackVector": "responsibility"
           },
-          "label": "의도추궁",
-          "unlockHint": "시간대를 대조하면 이 연락이 집착이었는지 경고였는지 추궁할 수 있습니다."
+          "label": "의도복원",
+          "unlockHint": "문구를 대조하면 연락의 의도를 더 분명히 물을 수 있습니다."
         }
       ],
       "partyContext": {
@@ -589,8 +589,8 @@
           "sourceLabel": "A측",
           "legality": "ok",
           "legalLabel": "적법",
-          "stage": 1,
-          "stageLabel": "초기 공개",
+          "stage": 3,
+          "stageLabel": "3단계 — 전체 공개",
           "sourceNote": "self_possessed / original",
           "redactions": []
         },
@@ -709,7 +709,305 @@
               "suspicious": false
             }
           ],
-          "note": "9일간 발신 전화 6회 (연결 1회), 문자 11회. 답장 0건. 최종일 차단 추정. 문자 내용상 “다은이 아버지” “예전에 같은 일” 등 경고성 언급이 반복됨."
+          "note": "9일간 발신 전화 6회, 문자 11회. 답장 0건. 원문에는 “다은이 아버지”, “예전에 같은 일” 같은 경고성 문구가 반복된다."
+        }
+      },
+      "viewerDataByStage": {
+        "1": {
+          "meta": {
+            "name": "연락 기록",
+            "type": "log",
+            "viewerType": "log",
+            "trustLevel": "mid",
+            "trustLabel": "보통",
+            "source": "a",
+            "sourceLabel": "A측",
+            "legality": "ok",
+            "legalLabel": "적법",
+            "stage": 1,
+            "stageLabel": "1단계 — 발신 횟수와 일부 문자",
+            "sourceNote": "self_possessed / original",
+            "redactions": [
+              "수신자 이름 일부 마스킹",
+              "문자 원문 축약"
+            ]
+          },
+          "log": {
+            "rows": [
+              {
+                "date": "03.01 저녁",
+                "type": "out",
+                "typeLabel": "발신",
+                "target": "김○○ (예비신랑)",
+                "duration": "0분대 통화",
+                "suspicious": true
+              },
+              {
+                "date": "03.01 저녁",
+                "type": "out",
+                "typeLabel": "문자",
+                "target": "김○○",
+                "duration": "통화 요청 문구",
+                "suspicious": false
+              },
+              {
+                "date": "03.02 오전",
+                "type": "out",
+                "typeLabel": "문자",
+                "target": "김○○",
+                "duration": "중요한 이야기 요청",
+                "suspicious": true
+              },
+              {
+                "date": "03.02 저녁",
+                "type": "out",
+                "typeLabel": "발신",
+                "target": "김○○",
+                "duration": "부재중",
+                "suspicious": false
+              },
+              {
+                "date": "03.03 오전",
+                "type": "out",
+                "typeLabel": "문자",
+                "target": "김○○",
+                "duration": "결혼 전 확인 요청",
+                "suspicious": true
+              }
+            ],
+            "note": "9일 동안 전화와 문자가 반복됐다. 내용 원문은 아직 제한되어 있다."
+          }
+        },
+        "2": {
+          "meta": {
+            "name": "연락 기록",
+            "type": "log",
+            "viewerType": "log",
+            "trustLevel": "mid",
+            "trustLabel": "보통",
+            "source": "a",
+            "sourceLabel": "A측",
+            "legality": "ok",
+            "legalLabel": "적법",
+            "stage": 2,
+            "stageLabel": "2단계 — 시간대와 문구 일부",
+            "sourceNote": "self_possessed / original",
+            "redactions": [
+              "수신자 이름 일부 마스킹",
+              "핵심 원인 문구 봉인"
+            ]
+          },
+          "log": {
+            "rows": [
+              {
+                "date": "03.01 19시대",
+                "type": "out",
+                "typeLabel": "발신",
+                "target": "김태○ (예비신랑)",
+                "duration": "0분 12초 (끊김)",
+                "suspicious": true
+              },
+              {
+                "date": "03.01 19시대",
+                "type": "out",
+                "typeLabel": "문자",
+                "target": "김태○",
+                "duration": "\"잠깐만 통화할 수 있을까요\"",
+                "suspicious": false
+              },
+              {
+                "date": "03.02 10시대",
+                "type": "out",
+                "typeLabel": "문자",
+                "target": "김태○",
+                "duration": "\"중요한 얘기가 있어요\"",
+                "suspicious": true
+              },
+              {
+                "date": "03.03 09시대",
+                "type": "out",
+                "typeLabel": "문자",
+                "target": "김태○",
+                "duration": "\"결혼 전에 꼭 아셔야 할 게 있어요\"",
+                "suspicious": true
+              },
+              {
+                "date": "03.04 12시대",
+                "type": "out",
+                "typeLabel": "발신",
+                "target": "김태○",
+                "duration": "0분 08초 (끊김)",
+                "suspicious": false
+              },
+              {
+                "date": "03.05 21시대",
+                "type": "out",
+                "typeLabel": "문자",
+                "target": "김태○",
+                "duration": "\"한 번만 만나서 얘기하면…\"",
+                "suspicious": true
+              },
+              {
+                "date": "03.06 08시대",
+                "type": "out",
+                "typeLabel": "발신",
+                "target": "김태○",
+                "duration": "1분 42초",
+                "suspicious": true
+              },
+              {
+                "date": "03.08 17시대",
+                "type": "out",
+                "typeLabel": "문자",
+                "target": "김태○",
+                "duration": "\"마지막으로 부탁드려요\"",
+                "suspicious": true
+              },
+              {
+                "date": "03.09 11시대",
+                "type": "out",
+                "typeLabel": "발신",
+                "target": "김태○",
+                "duration": "부재중 (차단 추정)",
+                "suspicious": true
+              }
+            ],
+            "note": "저녁부터 밤 사이 연락이 많고, “중요한 얘기”, “결혼 전” 같은 표현이 반복된다."
+          }
+        },
+        "3": {
+          "meta": {
+            "name": "연락 기록",
+            "type": "log",
+            "viewerType": "log",
+            "trustLevel": "mid",
+            "trustLabel": "보통",
+            "source": "a",
+            "sourceLabel": "A측",
+            "legality": "ok",
+            "legalLabel": "적법",
+            "stage": 3,
+            "stageLabel": "3단계 — 전체 연락 원문",
+            "sourceNote": "self_possessed / original",
+            "redactions": []
+          },
+          "log": {
+            "rows": [
+              {
+                "date": "03.01 19:22",
+                "type": "out",
+                "typeLabel": "발신",
+                "target": "김태윤 (예비신랑)",
+                "duration": "0분 12초 (끊김)",
+                "suspicious": true
+              },
+              {
+                "date": "03.01 19:35",
+                "type": "out",
+                "typeLabel": "문자",
+                "target": "김태윤",
+                "duration": "\"태윤 씨, 수민입니다. 잠깐만 통화할 수 있을까요\"",
+                "suspicious": false
+              },
+              {
+                "date": "03.02 10:15",
+                "type": "out",
+                "typeLabel": "문자",
+                "target": "김태윤",
+                "duration": "\"중요한 얘기가 있어요. 다은이 아버지 건으로요\"",
+                "suspicious": true
+              },
+              {
+                "date": "03.02 18:40",
+                "type": "out",
+                "typeLabel": "발신",
+                "target": "김태윤",
+                "duration": "부재중",
+                "suspicious": false
+              },
+              {
+                "date": "03.03 09:08",
+                "type": "out",
+                "typeLabel": "문자",
+                "target": "김태윤",
+                "duration": "\"전화 좀 받아주세요. 결혼 전에 꼭 아셔야 할 게 있어요\"",
+                "suspicious": true
+              },
+              {
+                "date": "03.04 12:30",
+                "type": "out",
+                "typeLabel": "발신",
+                "target": "김태윤",
+                "duration": "0분 08초 (끊김)",
+                "suspicious": false
+              },
+              {
+                "date": "03.04 12:45",
+                "type": "out",
+                "typeLabel": "문자",
+                "target": "김태윤",
+                "duration": "\"피하지 마세요. 다은이한테 못 하는 말이라 이러는 거예요\"",
+                "suspicious": true
+              },
+              {
+                "date": "03.05 21:10",
+                "type": "out",
+                "typeLabel": "문자",
+                "target": "김태윤",
+                "duration": "\"한 번만 만나서 얘기하면 다 이해할 거예요\"",
+                "suspicious": true
+              },
+              {
+                "date": "03.06 08:50",
+                "type": "out",
+                "typeLabel": "발신",
+                "target": "김태윤",
+                "duration": "1분 42초",
+                "suspicious": true
+              },
+              {
+                "date": "03.07 14:20",
+                "type": "out",
+                "typeLabel": "문자",
+                "target": "김태윤",
+                "duration": "\"저도 이러고 싶지 않아요. 제발 한 번만\"",
+                "suspicious": false
+              },
+              {
+                "date": "03.08 17:30",
+                "type": "out",
+                "typeLabel": "발신",
+                "target": "김태윤",
+                "duration": "부재중",
+                "suspicious": false
+              },
+              {
+                "date": "03.08 17:45",
+                "type": "out",
+                "typeLabel": "문자",
+                "target": "김태윤",
+                "duration": "\"마지막으로 부탁드려요. 예전에 같은 일이 있었거든요\"",
+                "suspicious": true
+              },
+              {
+                "date": "03.09 11:00",
+                "type": "out",
+                "typeLabel": "발신",
+                "target": "김태윤",
+                "duration": "부재중 (차단 추정)",
+                "suspicious": true
+              },
+              {
+                "date": "03.09 11:15",
+                "type": "out",
+                "typeLabel": "문자",
+                "target": "김태윤",
+                "duration": "\"차단하셨나 봐요. 다은이 때문에 그런 거 이해해요. 미안해요\"",
+                "suspicious": false
+              }
+            ],
+            "note": "9일간 발신 전화 6회, 문자 11회. 답장 0건. 원문에는 “다은이 아버지”, “예전에 같은 일” 같은 경고성 문구가 반복된다."
+          }
         }
       }
     },
@@ -740,7 +1038,7 @@
           "stage": 1,
           "revealKey": "request_original",
           "question": {
-            "text": "이 말들을 단톡방에 올린 사람은 A 맞습니까?",
+            "text": "단톡방에 처음 올린 사람은 누구입니까?",
             "attackVector": "authenticity"
           },
           "label": "대화확인",
@@ -750,21 +1048,21 @@
           "stage": 2,
           "revealKey": "check_metadata",
           "question": {
-            "text": "직접 확인하기 전에 최수민 씨를 이런 식으로 설명한 이유가 무엇입니까?",
+            "text": "친구들이 어떤 말로 동조했는지 확인해 주십시오.",
             "attackVector": "context"
           },
-          "label": "순서대조",
-          "unlockHint": "대화를 확인하면 직접 확인보다 단톡방 공개가 먼저였는지 순서를 대조할 수 있습니다."
+          "label": "확산대조",
+          "unlockHint": "대화 원문을 더 보면 최초 발언 뒤 반응이 이어진 순서를 볼 수 있습니다."
         },
         {
           "stage": 3,
           "revealKey": "restore_context",
           "question": {
-            "text": "예전 일까지 끌어와 최수민 씨를 같은 사람으로 못 박은 건, 화가 나서였습니까 아니면 확신이 있어서였습니까?",
+            "text": "직접 확인보다 공개가 먼저였는지 따져 주십시오.",
             "attackVector": "responsibility"
           },
           "label": "책임추궁",
-          "unlockHint": "순서를 대조하면 누가 먼저 낙인을 만들었는지 추궁할 수 있습니다."
+          "unlockHint": "확산 순서를 대조하면 누가 먼저 낙인을 만들었는지 물을 수 있습니다."
         }
       ],
       "partyContext": {
@@ -857,8 +1155,8 @@
           "sourceLabel": "양측",
           "legality": "ok",
           "legalLabel": "적법",
-          "stage": 1,
-          "stageLabel": "초기 공개",
+          "stage": 3,
+          "stageLabel": "3단계 — 전체 공개",
           "sourceNote": "self_possessed / excerpt",
           "redactions": []
         },
@@ -922,6 +1220,189 @@
             }
           ]
         }
+      },
+      "viewerDataByStage": {
+        "1": {
+          "meta": {
+            "name": "단톡방 캡처",
+            "type": "chat",
+            "viewerType": "chat",
+            "trustLevel": "mid",
+            "trustLabel": "보통",
+            "source": "both",
+            "sourceLabel": "양측",
+            "legality": "ok",
+            "legalLabel": "적법",
+            "stage": 1,
+            "stageLabel": "1단계 — 최초 발언 공개",
+            "sourceNote": "self_possessed / excerpt",
+            "redactions": [
+              "친구 이름 마스킹",
+              "일부 발언 축약"
+            ]
+          },
+          "chat": {
+            "header": "카카오톡 단체채팅 \"우리반 여자들\" — 2026.03.06 (발췌)",
+            "messages": [
+              {
+                "side": "right",
+                "sender": "송다은",
+                "text": "얘들아 나 진짜 미치겠어"
+              },
+              {
+                "side": "right",
+                "sender": "송다은",
+                "text": "수민이가 또 내 남자한테 연락하고 있어"
+              },
+              {
+                "side": "left",
+                "sender": "친구 A",
+                "text": "뭐?? 진짜??"
+              },
+              {
+                "side": "right",
+                "sender": "송다은",
+                "text": "전화기 보니까 전화랑 문자가 많았어"
+              }
+            ]
+          }
+        },
+        "2": {
+          "meta": {
+            "name": "단톡방 캡처",
+            "type": "chat",
+            "viewerType": "chat",
+            "trustLevel": "mid",
+            "trustLabel": "보통",
+            "source": "both",
+            "sourceLabel": "양측",
+            "legality": "ok",
+            "legalLabel": "적법",
+            "stage": 2,
+            "stageLabel": "2단계 — 동조 반응 추가",
+            "sourceNote": "self_possessed / excerpt",
+            "redactions": [
+              "친구 이름 일부 마스킹"
+            ]
+          },
+          "chat": {
+            "header": "카카오톡 단체채팅 \"우리반 여자들\" — 2026.03.06 (확대 발췌)",
+            "messages": [
+              {
+                "side": "right",
+                "sender": "송다은",
+                "text": "얘들아 나 진짜 미치겠어"
+              },
+              {
+                "side": "right",
+                "sender": "송다은",
+                "text": "수민이가 또 내 남자한테 연락하고 있어"
+              },
+              {
+                "side": "left",
+                "sender": "유○",
+                "text": "뭐?? 진짜??"
+              },
+              {
+                "side": "right",
+                "sender": "송다은",
+                "text": "태윤이 전화기 보니까 수민이가 전화 문자 엄청 했더라고"
+              },
+              {
+                "side": "left",
+                "sender": "하○",
+                "text": "아 걔 진짜 또?"
+              },
+              {
+                "side": "right",
+                "sender": "송다은",
+                "text": "예전에 내 소개팅남한테도 그랬잖아"
+              },
+              {
+                "side": "left",
+                "sender": "친구 B",
+                "text": "결혼 준비하는데 방해만 되지"
+              }
+            ]
+          }
+        },
+        "3": {
+          "meta": {
+            "name": "단톡방 캡처",
+            "type": "chat",
+            "viewerType": "chat",
+            "trustLevel": "mid",
+            "trustLabel": "보통",
+            "source": "both",
+            "sourceLabel": "양측",
+            "legality": "ok",
+            "legalLabel": "적법",
+            "stage": 3,
+            "stageLabel": "3단계 — 전체 대화 공개",
+            "sourceNote": "self_possessed / excerpt",
+            "redactions": []
+          },
+          "chat": {
+            "header": "카카오톡 단체채팅 \"우리반 여자들\" — 2026.03.06",
+            "messages": [
+              {
+                "side": "right",
+                "sender": "송다은",
+                "text": "얘들아 나 진짜 미치겠어"
+              },
+              {
+                "side": "right",
+                "sender": "송다은",
+                "text": "수민이가 또 내 남자한테 연락하고 있어"
+              },
+              {
+                "side": "left",
+                "sender": "유진",
+                "text": "뭐?? 진짜??"
+              },
+              {
+                "side": "right",
+                "sender": "송다은",
+                "text": "태윤이 전화기 보니까 수민이가 전화 문자 엄청 했더라고"
+              },
+              {
+                "side": "left",
+                "sender": "하은",
+                "text": "아 걔 진짜 또?"
+              },
+              {
+                "side": "right",
+                "sender": "송다은",
+                "text": "예전에 내 소개팅남한테도 그랬잖아. 그때도 정리 안 됐었는데"
+              },
+              {
+                "side": "left",
+                "sender": "유진",
+                "text": "수민이는 왜 맨날 남의 남자한테 집착하는 건지"
+              },
+              {
+                "side": "left",
+                "sender": "소연",
+                "text": "차단하게 해. 결혼 준비하는데 방해만 되지"
+              },
+              {
+                "side": "right",
+                "sender": "송다은",
+                "text": "벌써 차단함. 근데 진짜 열받아서 여기 쓴다"
+              },
+              {
+                "side": "left",
+                "sender": "하은",
+                "text": "그냥 걔 완전 손절해. 예전 일이랑 똑같은 패턴이잖아"
+              },
+              {
+                "side": "left",
+                "sender": "소연",
+                "text": "맞아 걔는 진짜 변하질 않네"
+              }
+            ]
+          }
+        }
       }
     },
     {
@@ -951,7 +1432,7 @@
           "stage": 1,
           "revealKey": "request_original",
           "question": {
-            "text": "당시 두 사람이 크게 틀어진 대화 맞습니까?",
+            "text": "손절 직전 대화 원문을 확인해 주십시오.",
             "attackVector": "authenticity"
           },
           "label": "대화확인",
@@ -961,21 +1442,21 @@
           "stage": 2,
           "revealKey": "check_metadata",
           "question": {
-            "text": "최수민 씨가 숨긴 '돈 문제'는 무엇이었다고 생각했습니까?",
+            "text": "돈 문제 뒤 연락이 끊긴 순서를 대조해 주십시오.",
             "attackVector": "context"
           },
           "label": "맥락대조",
-          "unlockHint": "대화를 확인하면 손절 직전의 말과 그 직후 침묵의 맥락을 대조할 수 있습니다."
+          "unlockHint": "대화 전후를 보면 돈 문제 언급과 손절 시점을 함께 볼 수 있습니다."
         },
         {
           "stage": 3,
           "revealKey": "restore_context",
           "question": {
-            "text": "송다은 씨는 왜 최수민 씨가 끝까지 말하지 않은 이유를 한 번도 다시 묻지 않았습니까?",
+            "text": "왜 끝까지 아버지 일을 말하지 않았습니까?",
             "attackVector": "responsibility"
           },
           "label": "침묵추궁",
-          "unlockHint": "맥락을 대조하면 왜 돈 문제의 실체를 끝내 말하지 않았는지 추궁할 수 있습니다."
+          "unlockHint": "맥락을 대조하면 숨긴 돈 문제의 상대를 물을 수 있습니다."
         }
       ],
       "partyContext": {
@@ -1068,8 +1549,8 @@
           "sourceLabel": "양측",
           "legality": "ok",
           "legalLabel": "적법",
-          "stage": 1,
-          "stageLabel": "초기 공개",
+          "stage": 3,
+          "stageLabel": "3단계 — 전체 공개",
           "sourceNote": "self_possessed / original",
           "redactions": []
         },
@@ -1136,6 +1617,199 @@
             }
           ]
         }
+      },
+      "viewerDataByStage": {
+        "1": {
+          "meta": {
+            "name": "과거 카톡",
+            "type": "chat",
+            "viewerType": "chat",
+            "trustLevel": "mid",
+            "trustLabel": "보통",
+            "source": "both",
+            "sourceLabel": "양측",
+            "legality": "ok",
+            "legalLabel": "적법",
+            "stage": 1,
+            "stageLabel": "1단계 — 돈 문제 발췌",
+            "sourceNote": "self_possessed / original",
+            "redactions": [
+              "앞뒤 대화 일부 봉인"
+            ]
+          },
+          "chat": {
+            "header": "송다은 ↔ 최수민 1:1 카톡 — 2024.08 (핵심 발췌)",
+            "messages": [
+              {
+                "side": "right",
+                "sender": "송다은",
+                "text": "뭘 숨기는 건데? 똑바로 말해"
+              },
+              {
+                "side": "left",
+                "sender": "최수민",
+                "text": "돈 문제는 내가 알아서 정리할게"
+              },
+              {
+                "side": "right",
+                "sender": "송다은",
+                "text": "넌 돈만 엮이면 사람이 달라진다"
+              },
+              {
+                "side": "left",
+                "sender": "최수민",
+                "text": "그게 아니라..."
+              }
+            ]
+          }
+        },
+        "2": {
+          "meta": {
+            "name": "과거 카톡",
+            "type": "chat",
+            "viewerType": "chat",
+            "trustLevel": "mid",
+            "trustLabel": "보통",
+            "source": "both",
+            "sourceLabel": "양측",
+            "legality": "ok",
+            "legalLabel": "적법",
+            "stage": 2,
+            "stageLabel": "2단계 — 손절 전후 대조",
+            "sourceNote": "self_possessed / original",
+            "redactions": [
+              "돈 거래 세부 봉인"
+            ]
+          },
+          "chat": {
+            "header": "송다은 ↔ 최수민 1:1 카톡 — 2024.08 (확대 발췌)",
+            "messages": [
+              {
+                "side": "right",
+                "sender": "송다은",
+                "text": "수민아, 아빠가 너한테 돈 얘기를 했다는 게 무슨 뜻이야?"
+              },
+              {
+                "side": "left",
+                "sender": "최수민",
+                "text": "..."
+              },
+              {
+                "side": "right",
+                "sender": "송다은",
+                "text": "뭘 숨기는 건데? 똑바로 말해"
+              },
+              {
+                "side": "left",
+                "sender": "최수민",
+                "text": "돈 문제는 내가 알아서 정리할게"
+              },
+              {
+                "side": "right",
+                "sender": "송다은",
+                "text": "뭘 정리해? 아빠가 뭘 했는데?"
+              },
+              {
+                "side": "left",
+                "sender": "최수민",
+                "text": "그냥... 나한테 급하다고 빌린 거야"
+              },
+              {
+                "side": "right",
+                "sender": "송다은",
+                "text": "넌 돈만 엮이면 사람이 달라진다"
+              },
+              {
+                "type": "note",
+                "text": "이 대화 뒤 두 사람의 연락은 약 2년 동안 끊긴다."
+              }
+            ]
+          }
+        },
+        "3": {
+          "meta": {
+            "name": "과거 카톡",
+            "type": "chat",
+            "viewerType": "chat",
+            "trustLevel": "mid",
+            "trustLabel": "보통",
+            "source": "both",
+            "sourceLabel": "양측",
+            "legality": "ok",
+            "legalLabel": "적법",
+            "stage": 3,
+            "stageLabel": "3단계 — 전체 대화와 맥락",
+            "sourceNote": "self_possessed / original",
+            "redactions": []
+          },
+          "chat": {
+            "header": "송다은 ↔ 최수민 1:1 카톡 — 2024.08 (과거 기록)",
+            "messages": [
+              {
+                "side": "right",
+                "sender": "송다은",
+                "text": "수민아, 아빠가 너한테 돈 얘기를 했다는 게 무슨 뜻이야?"
+              },
+              {
+                "side": "left",
+                "sender": "최수민",
+                "text": "..."
+              },
+              {
+                "side": "right",
+                "sender": "송다은",
+                "text": "뭘 숨기는 건데? 똑바로 말해"
+              },
+              {
+                "side": "left",
+                "sender": "최수민",
+                "text": "돈 문제는 내가 알아서 정리할게"
+              },
+              {
+                "side": "right",
+                "sender": "송다은",
+                "text": "뭘 정리해? 아빠가 뭘 했는데?"
+              },
+              {
+                "side": "left",
+                "sender": "최수민",
+                "text": "그냥... 나한테 급하다고 빌린 거야"
+              },
+              {
+                "side": "right",
+                "sender": "송다은",
+                "text": "넌 돈만 엮이면 사람이 달라진다"
+              },
+              {
+                "side": "left",
+                "sender": "최수민",
+                "text": "그게 아니라..."
+              },
+              {
+                "side": "right",
+                "sender": "송다은",
+                "text": "됐어. 더 이상 무슨 말을 해도 믿기 힘들어"
+              },
+              {
+                "type": "read",
+                "text": "최수민 — 읽음"
+              },
+              {
+                "side": "left",
+                "sender": "최수민",
+                "text": "미안해 다은아. 진짜 너한테 말하고 싶었는데..."
+              },
+              {
+                "type": "read",
+                "text": "송다은 — 읽음 (답장 없음)"
+              },
+              {
+                "type": "note",
+                "text": "숨긴 돈 문제의 상대가 송다은 아버지였고, 과거 송금 기록과 맞물린다."
+              }
+            ]
+          }
+        }
       }
     },
     {
@@ -1168,7 +1842,7 @@
           "stage": 1,
           "revealKey": "request_original",
           "question": {
-            "text": "이 메시지를 먼저 보낸 건 예비신랑 맞습니까?",
+            "text": "이 메시지를 먼저 보낸 사람이 누구입니까?",
             "attackVector": "authenticity"
           },
           "label": "대화확인",
@@ -1178,21 +1852,21 @@
           "stage": 2,
           "revealKey": "check_metadata",
           "question": {
-            "text": "그런데도 최수민 씨가 집착한 쪽처럼 보이게 된 이유는 무엇입니까?",
+            "text": "누가 선을 넘었는지 선후를 대조해 주십시오.",
             "attackVector": "context"
           },
           "label": "선후대조",
-          "unlockHint": "대화를 확인하면 누가 먼저 선을 넘었는지 선후를 대조할 수 있습니다."
+          "unlockHint": "대화를 더 보면 예비신랑의 추가 문구와 B의 거절 답장이 함께 보입니다."
         },
         {
           "stage": 3,
           "revealKey": "restore_context",
           "question": {
-            "text": "최수민 씨가 예비신랑에게 연락한 건 꼬시려는 게 아니라 경고였다는 해석을 부정할 수 있습니까?",
+            "text": "B의 이후 연락이 왜 이어졌는지 따져 주십시오.",
             "attackVector": "responsibility"
           },
           "label": "의도복원",
-          "unlockHint": "선후를 대조하면 B의 연락이 꼬임이 아니라 경고였는지 복원할 수 있습니다."
+          "unlockHint": "선후를 대조하면 B의 연락이 접근인지 경고인지 물을 수 있습니다."
         }
       ],
       "partyContext": {
@@ -1269,8 +1943,8 @@
         "sourceLabel": "B측",
         "legality": "ok",
         "legalLabel": "적법",
-        "stage": 4,
-        "stageLabel": "핵심 공개",
+        "stage": 1,
+        "stageLabel": "초기 공개",
         "sourceNote": "self_possessed / original",
         "redactions": []
       },
@@ -1285,8 +1959,8 @@
           "sourceLabel": "B측",
           "legality": "ok",
           "legalLabel": "적법",
-          "stage": 4,
-          "stageLabel": "핵심 공개",
+          "stage": 3,
+          "stageLabel": "3단계 — 전체 공개",
           "sourceNote": "self_possessed / original",
           "redactions": []
         },
@@ -1339,6 +2013,158 @@
             }
           ]
         }
+      },
+      "viewerDataByStage": {
+        "1": {
+          "meta": {
+            "name": "예비신랑 메시지",
+            "type": "chat",
+            "viewerType": "chat",
+            "trustLevel": "mid",
+            "trustLabel": "보통",
+            "source": "b",
+            "sourceLabel": "B측",
+            "legality": "ok",
+            "legalLabel": "적법",
+            "stage": 1,
+            "stageLabel": "1단계 — 첫 접근 문구",
+            "sourceNote": "self_possessed / original",
+            "redactions": [
+              "예비신랑 이름 일부 마스킹",
+              "대화 일부 봉인"
+            ]
+          },
+          "chat": {
+            "header": "예비신랑 ↔ 최수민 카톡 — 2026.02 (첫 발췌)",
+            "messages": [
+              {
+                "side": "left",
+                "sender": "김○○",
+                "text": "다은이 몰래 커피 한 번 보자. 물어볼 게 있어서"
+              },
+              {
+                "side": "right",
+                "sender": "최수민",
+                "text": "무슨 얘긴지 여기서 하시면 될 것 같은데요"
+              }
+            ]
+          }
+        },
+        "2": {
+          "meta": {
+            "name": "예비신랑 메시지",
+            "type": "chat",
+            "viewerType": "chat",
+            "trustLevel": "mid",
+            "trustLabel": "보통",
+            "source": "b",
+            "sourceLabel": "B측",
+            "legality": "ok",
+            "legalLabel": "적법",
+            "stage": 2,
+            "stageLabel": "2단계 — 거절 답장 추가",
+            "sourceNote": "self_possessed / original",
+            "redactions": [
+              "예비신랑 이름 일부 마스킹"
+            ]
+          },
+          "chat": {
+            "header": "김태○ ↔ 최수민 카톡 — 2026.02 (확대 발췌)",
+            "messages": [
+              {
+                "side": "left",
+                "sender": "김태○",
+                "text": "다은이 몰래 커피 한 번 보자. 물어볼 게 있어서"
+              },
+              {
+                "side": "right",
+                "sender": "최수민",
+                "text": "무슨 얘긴지 여기서 하시면 될 것 같은데요"
+              },
+              {
+                "side": "left",
+                "sender": "김태○",
+                "text": "너 같은 스타일이 원래 내 이상형이야 ㅋㅋ 농담이고"
+              },
+              {
+                "side": "right",
+                "sender": "최수민",
+                "text": "태윤 씨, 다은이 예비신랑이잖아요. 이러지 마세요"
+              },
+              {
+                "side": "right",
+                "sender": "최수민",
+                "text": "친구 남자친구한테 이런 말 듣고 싶지 않아요. 여기까지 할게요"
+              }
+            ]
+          }
+        },
+        "3": {
+          "meta": {
+            "name": "예비신랑 메시지",
+            "type": "chat",
+            "viewerType": "chat",
+            "trustLevel": "mid",
+            "trustLabel": "보통",
+            "source": "b",
+            "sourceLabel": "B측",
+            "legality": "ok",
+            "legalLabel": "적법",
+            "stage": 3,
+            "stageLabel": "3단계 — 전체 대화 공개",
+            "sourceNote": "self_possessed / original",
+            "redactions": []
+          },
+          "chat": {
+            "header": "김태윤(예비신랑) ↔ 최수민 카톡 — 2026.02",
+            "messages": [
+              {
+                "side": "left",
+                "sender": "김태윤",
+                "text": "수민 씨 인스타 잘 봤어요. 필라테스 강사시구나"
+              },
+              {
+                "side": "right",
+                "sender": "최수민",
+                "text": "네 감사합니다. 다은이 친구분이시죠?"
+              },
+              {
+                "side": "left",
+                "sender": "김태윤",
+                "text": "다은이 몰래 커피 한 번 보자. 물어볼 게 있어서"
+              },
+              {
+                "side": "right",
+                "sender": "최수민",
+                "text": "무슨 얘긴지 여기서 하시면 될 것 같은데요"
+              },
+              {
+                "side": "left",
+                "sender": "김태윤",
+                "text": "너 같은 스타일이 원래 내 이상형이야 ㅋㅋ 농담이고"
+              },
+              {
+                "side": "right",
+                "sender": "최수민",
+                "text": "태윤 씨, 다은이 예비신랑이잖아요. 이러지 마세요"
+              },
+              {
+                "side": "left",
+                "sender": "김태윤",
+                "text": "너무 딱딱하네. 그냥 가볍게 얘기하자고"
+              },
+              {
+                "side": "right",
+                "sender": "최수민",
+                "text": "친구 남자친구한테 이런 말 듣고 싶지 않아요. 여기까지 할게요"
+              },
+              {
+                "type": "read",
+                "text": "김태윤 — 읽음 (답장 없음)"
+              }
+            ]
+          }
+        }
       }
     },
     {
@@ -1371,7 +2197,7 @@
           "stage": 1,
           "revealKey": "request_original",
           "question": {
-            "text": "A 아버지가 예비신랑에게 먼저 돈 얘기를 꺼낸 사실 맞습니까?",
+            "text": "A 아버지가 먼저 돈 얘기를 꺼냈습니까?",
             "attackVector": "authenticity"
           },
           "label": "대화확인",
@@ -1381,21 +2207,21 @@
           "stage": 2,
           "revealKey": "check_metadata",
           "question": {
-            "text": "최수민 씨가 이 흐름을 보고 예비신랑에게 경고하려 했다고 볼 수 있습니까?",
+            "text": "돈 요구 시점과 B의 연락을 대조해 주십시오.",
             "attackVector": "context"
           },
           "label": "시점대조",
-          "unlockHint": "대화를 확인하면 돈 요구 시점과 B의 연락 시점을 대조할 수 있습니다."
+          "unlockHint": "문자 원문을 더 보면 돈 요구 시점과 B의 연락 시점이 맞물리는지 볼 수 있습니다."
         },
         {
           "stage": 3,
           "revealKey": "restore_context",
           "question": {
-            "text": "송다은 씨에게 직접 말할 수 없었다면, 최수민 씨에게 남은 다른 길이 정말 있었습니까?",
+            "text": "B가 왜 예비신랑에게 경고했는지 따져 주십시오.",
             "attackVector": "responsibility"
           },
           "label": "경고복원",
-          "unlockHint": "시점을 대조하면 B가 왜 예비신랑을 붙잡으려 했는지 복원할 수 있습니다."
+          "unlockHint": "시점을 대조하면 B가 직접 A에게 말하지 못한 이유를 물을 수 있습니다."
         }
       ],
       "partyContext": {
@@ -1472,8 +2298,8 @@
         "sourceLabel": "B측",
         "legality": "ok",
         "legalLabel": "적법",
-        "stage": 4,
-        "stageLabel": "핵심 공개",
+        "stage": 1,
+        "stageLabel": "초기 공개",
         "sourceNote": "self_possessed / original",
         "redactions": []
       },
@@ -1488,8 +2314,8 @@
           "sourceLabel": "B측",
           "legality": "ok",
           "legalLabel": "적법",
-          "stage": 4,
-          "stageLabel": "핵심 공개",
+          "stage": 3,
+          "stageLabel": "3단계 — 전체 공개",
           "sourceNote": "self_possessed / original",
           "redactions": []
         },
@@ -1547,6 +2373,174 @@
             }
           ]
         }
+      },
+      "viewerDataByStage": {
+        "1": {
+          "meta": {
+            "name": "A 아버지 문자",
+            "type": "chat",
+            "viewerType": "chat",
+            "trustLevel": "mid",
+            "trustLabel": "보통",
+            "source": "b",
+            "sourceLabel": "B측",
+            "legality": "ok",
+            "legalLabel": "적법",
+            "stage": 1,
+            "stageLabel": "1단계 — 돈 부탁 첫 문구",
+            "sourceNote": "self_possessed / original",
+            "redactions": [
+              "발신자 이름 일부 마스킹",
+              "금액 봉인"
+            ]
+          },
+          "chat": {
+            "header": "송○○ ↔ 예비신랑 문자 — 2026.02~03 (첫 발췌)",
+            "messages": [
+              {
+                "side": "left",
+                "sender": "송○○",
+                "text": "사위 될 사람한테 부탁하기 좀 그렇지만"
+              },
+              {
+                "side": "left",
+                "sender": "송○○",
+                "text": "결혼 전에 잠깐만 도와주면 금방 돌려준다"
+              },
+              {
+                "side": "right",
+                "sender": "김○○",
+                "text": "네? 무슨 말씀이신지..."
+              }
+            ]
+          }
+        },
+        "2": {
+          "meta": {
+            "name": "A 아버지 문자",
+            "type": "chat",
+            "viewerType": "chat",
+            "trustLevel": "mid",
+            "trustLabel": "보통",
+            "source": "b",
+            "sourceLabel": "B측",
+            "legality": "ok",
+            "legalLabel": "적법",
+            "stage": 2,
+            "stageLabel": "2단계 — 금액과 시기 공개",
+            "sourceNote": "self_possessed / original",
+            "redactions": [
+              "예비신랑 이름 일부 마스킹",
+              "금액 근사 공개"
+            ]
+          },
+          "chat": {
+            "header": "송 아버지 ↔ 김태○ 문자 — 2026.02~03 (확대 발췌)",
+            "messages": [
+              {
+                "side": "left",
+                "sender": "송 아버지",
+                "text": "사위 될 사람한테 부탁하기 좀 그렇지만"
+              },
+              {
+                "side": "left",
+                "sender": "송 아버지",
+                "text": "결혼 전에 잠깐만 도와주면 금방 돌려준다"
+              },
+              {
+                "side": "right",
+                "sender": "김태○",
+                "text": "네? 무슨 말씀이신지..."
+              },
+              {
+                "side": "left",
+                "sender": "송 아버지",
+                "text": "사위 될 사람이면 이 정도는 믿어야지. 약 3천만 원만 잠깐"
+              },
+              {
+                "side": "left",
+                "sender": "송 아버지",
+                "text": "사업 자금이 급해서 그래"
+              },
+              {
+                "side": "right",
+                "sender": "김태○",
+                "text": "좀 생각해볼게요..."
+              }
+            ]
+          }
+        },
+        "3": {
+          "meta": {
+            "name": "A 아버지 문자",
+            "type": "chat",
+            "viewerType": "chat",
+            "trustLevel": "mid",
+            "trustLabel": "보통",
+            "source": "b",
+            "sourceLabel": "B측",
+            "legality": "ok",
+            "legalLabel": "적법",
+            "stage": 3,
+            "stageLabel": "3단계 — 전체 문자 공개",
+            "sourceNote": "self_possessed / original",
+            "redactions": []
+          },
+          "chat": {
+            "header": "송 아버지 ↔ 김태윤(예비신랑) 문자 — 2026.02~03",
+            "messages": [
+              {
+                "side": "left",
+                "sender": "송 아버지",
+                "text": "태윤아, 결혼 준비 잘 되고 있지?"
+              },
+              {
+                "side": "right",
+                "sender": "김태윤",
+                "text": "네 아버님, 잘 진행 중입니다"
+              },
+              {
+                "side": "left",
+                "sender": "송 아버지",
+                "text": "사위 될 사람한테 부탁하기 좀 그렇지만"
+              },
+              {
+                "side": "left",
+                "sender": "송 아버지",
+                "text": "결혼 전에 잠깐만 도와주면 금방 돌려준다"
+              },
+              {
+                "side": "right",
+                "sender": "김태윤",
+                "text": "네? 무슨 말씀이신지..."
+              },
+              {
+                "side": "left",
+                "sender": "송 아버지",
+                "text": "사위 될 사람이면 이 정도는 믿어야지. 3천만 원만 잠깐"
+              },
+              {
+                "side": "left",
+                "sender": "송 아버지",
+                "text": "2달이면 갚을 수 있어. 사업 자금이 급해서 그래"
+              },
+              {
+                "side": "right",
+                "sender": "김태윤",
+                "text": "좀 생각해볼게요..."
+              },
+              {
+                "side": "left",
+                "sender": "송 아버지",
+                "text": "다은이한테는 아직 말하지 마. 걱정시키기 싫으니까"
+              },
+              {
+                "type": "read",
+                "text": "김태윤 — 읽음"
+              }
+            ]
+          }
+        }
       }
     },
     {
@@ -1579,7 +2573,7 @@
           "stage": 1,
           "revealKey": "request_original",
           "question": {
-            "text": "이 돈을 최수민 씨가 송다은 씨 아버지에게 보낸 사실 맞습니까?",
+            "text": "이 돈이 B 계좌에서 나간 내역입니까?",
             "attackVector": "authenticity"
           },
           "label": "내역확인",
@@ -1589,21 +2583,21 @@
           "stage": 2,
           "revealKey": "check_metadata",
           "question": {
-            "text": "그때도 송다은 씨는 아무것도 몰랐습니까?",
+            "text": "상환 약속과 미상환 흐름을 대조해 주십시오.",
             "attackVector": "context"
           },
           "label": "상환대조",
-          "unlockHint": "내역을 확인하면 송금 시점과 미상환 문자를 함께 대조할 수 있습니다."
+          "unlockHint": "이체 내역을 더 보면 차용 문구와 미상환 문자가 함께 보입니다."
         },
         {
           "stage": 3,
           "revealKey": "restore_context",
           "question": {
-            "text": "왜 최수민 씨는 '네 아버지가 내 돈을 가져갔다'는 말을 끝내 하지 않았습니까?",
+            "text": "B가 왜 이 사실을 A에게 숨겼는지 물어 주십시오.",
             "attackVector": "responsibility"
           },
           "label": "침묵추궁",
-          "unlockHint": "상환 흐름을 대조하면 왜 A에게 이 일을 끝내 말하지 못했는지 추궁할 수 있습니다."
+          "unlockHint": "상환 흐름을 대조하면 과거 손절의 진짜 이유를 물을 수 있습니다."
         }
       ],
       "partyContext": {
@@ -1680,8 +2674,8 @@
         "sourceLabel": "기관",
         "legality": "ok",
         "legalLabel": "적법",
-        "stage": 4,
-        "stageLabel": "핵심 공개",
+        "stage": 1,
+        "stageLabel": "초기 공개",
         "sourceNote": "institutional / original",
         "redactions": []
       },
@@ -1696,8 +2690,8 @@
           "sourceLabel": "기관",
           "legality": "ok",
           "legalLabel": "적법",
-          "stage": 4,
-          "stageLabel": "핵심 공개",
+          "stage": 3,
+          "stageLabel": "3단계 — 전체 공개",
           "sourceNote": "institutional / original",
           "redactions": []
         },
@@ -1752,6 +2746,184 @@
             "suspicious": true
           }
         ]
+      },
+      "viewerDataByStage": {
+        "1": {
+          "meta": {
+            "name": "과거 송금 기록",
+            "type": "bank",
+            "viewerType": "bank",
+            "trustLevel": "mid",
+            "trustLabel": "보통",
+            "source": "org",
+            "sourceLabel": "기관",
+            "legality": "ok",
+            "legalLabel": "적법",
+            "stage": 1,
+            "stageLabel": "1단계 — 이체 흐름만 공개",
+            "sourceNote": "institutional / original",
+            "redactions": [
+              "수취인 일부 마스킹",
+              "금액 범위 공개",
+              "잔액 마스킹"
+            ]
+          },
+          "bank": [
+            {
+              "date": "2024.05.12",
+              "desc": "최수민 → 송○○ 이체",
+              "amount": "300~500만원대",
+              "balance": "마스킹",
+              "suspicious": true
+            },
+            {
+              "date": "2024.06.15",
+              "desc": "최수민 → 송○○ 추가 이체",
+              "amount": "300만원대",
+              "balance": "마스킹",
+              "suspicious": true
+            },
+            {
+              "date": "2024.07~12",
+              "desc": "송○○ → 최수민 상환 기록",
+              "amount": "확인 안 됨",
+              "balance": "",
+              "suspicious": true
+            }
+          ]
+        },
+        "2": {
+          "meta": {
+            "name": "과거 송금 기록",
+            "type": "bank",
+            "viewerType": "bank",
+            "trustLevel": "mid",
+            "trustLabel": "보통",
+            "source": "org",
+            "sourceLabel": "기관",
+            "legality": "ok",
+            "legalLabel": "적법",
+            "stage": 2,
+            "stageLabel": "2단계 — 차용 문구 추가",
+            "sourceNote": "institutional / original",
+            "redactions": [
+              "수취인 일부 마스킹",
+              "금액 근사 공개"
+            ]
+          },
+          "bank": [
+            {
+              "date": "2024.05.12",
+              "desc": "최수민 → 송○○ 이체",
+              "amount": "약 500만원",
+              "balance": "300만원대",
+              "suspicious": true
+            },
+            {
+              "date": "2024.05.12",
+              "desc": "비고: \"급한 투자금이니 한 달만 쓰고 갚겠다\"",
+              "amount": "",
+              "balance": "",
+              "suspicious": false
+            },
+            {
+              "date": "2024.06.15",
+              "desc": "최수민 → 송○○ 추가 이체",
+              "amount": "약 300만원",
+              "balance": "20만원대",
+              "suspicious": true
+            },
+            {
+              "date": "2024.06.15",
+              "desc": "비고: \"조금만 더 부탁한다. 다음 달에 함께 돌려줄게\"",
+              "amount": "",
+              "balance": "",
+              "suspicious": false
+            },
+            {
+              "date": "2024.07~12",
+              "desc": "송○○ → 최수민 상환 기록",
+              "amount": "없음",
+              "balance": "",
+              "suspicious": true
+            },
+            {
+              "date": "2024.10.05",
+              "desc": "비고: \"다은이한테는 말하지 마\"",
+              "amount": "",
+              "balance": "",
+              "suspicious": true
+            }
+          ]
+        },
+        "3": {
+          "meta": {
+            "name": "과거 송금 기록",
+            "type": "bank",
+            "viewerType": "bank",
+            "trustLevel": "mid",
+            "trustLabel": "보통",
+            "source": "org",
+            "sourceLabel": "기관",
+            "legality": "ok",
+            "legalLabel": "적법",
+            "stage": 3,
+            "stageLabel": "3단계 — 전체 송금과 문자",
+            "sourceNote": "institutional / original",
+            "redactions": []
+          },
+          "bank": [
+            {
+              "date": "2024.05.12",
+              "desc": "최수민 → 송○○ (송 아버지) 이체",
+              "amount": "-500만원",
+              "balance": "320만",
+              "suspicious": true
+            },
+            {
+              "date": "2024.05.12",
+              "desc": "비고: \"급한 투자금이니 한 달만 쓰고 갑겠다\"",
+              "amount": "",
+              "balance": "",
+              "suspicious": false
+            },
+            {
+              "date": "2024.06.15",
+              "desc": "최수민 → 송○○ 이체 (2차)",
+              "amount": "-300만원",
+              "balance": "20만",
+              "suspicious": true
+            },
+            {
+              "date": "2024.06.15",
+              "desc": "비고: \"조금만 더 부탁한다. 다음 달에 함께 돌려줄게\"",
+              "amount": "",
+              "balance": "",
+              "suspicious": false
+            },
+            {
+              "date": "2024.07~12",
+              "desc": "송 아버지 → 최수민 상환 기록",
+              "amount": "없음",
+              "balance": "",
+              "suspicious": true
+            },
+            {
+              "date": "2024.08.20",
+              "desc": "비고: \"조금만 기다려라. 사업이 좋아지면 바로 갑는다\"",
+              "amount": "",
+              "balance": "",
+              "suspicious": false
+            },
+            {
+              "date": "2024.10.05",
+              "desc": "비고: \"수민아 미안하다. 조금만 더. 다은이한테는 말하지 마\"",
+              "amount": "",
+              "balance": "",
+              "suspicious": true
+            }
+          ]
+        }
       }
     },
     {
@@ -1787,7 +2959,7 @@
           "stage": 1,
           "revealKey": "request_original",
           "question": {
-            "text": "과거와 현재의 문구와 시점이 이렇게 겹치는 것, 우연이라고 보십니까?",
+            "text": "과거와 현재 문구가 같은 흐름입니까?",
             "attackVector": "authenticity"
           },
           "label": "패턴확인",
@@ -1797,21 +2969,21 @@
           "stage": 2,
           "revealKey": "check_metadata",
           "question": {
-            "text": "최수민 씨가 이번 연락을 집착이 아니라 반복되는 패턴을 막으려 한 시도로 볼 수 있습니까?",
+            "text": "B가 사라진 시점까지 함께 대조해 주십시오.",
             "attackVector": "context"
           },
           "label": "시점대조",
-          "unlockHint": "대조표를 확인하면 과거와 현재의 문구와 시점을 나란히 대조할 수 있습니다."
+          "unlockHint": "대조표를 더 보면 과거와 현재의 문구, 금액, 침묵 시점이 나란히 보입니다."
         },
         {
           "stage": 3,
           "revealKey": "restore_context",
           "question": {
-            "text": "그렇다면 이번 사건에서 가장 먼저 잘못된 사람으로 낙인찍힌 건 누구였습니까?",
+            "text": "누가 먼저 B를 잘못된 사람으로 몰았습니까?",
             "attackVector": "responsibility"
           },
           "label": "낙인추궁",
-          "unlockHint": "패턴을 대조하면 이번 사건에서 누가 먼저 B를 낙인찍었는지 추궁할 수 있습니다."
+          "unlockHint": "패턴을 대조하면 이번 사건에서 낙인이 생긴 순서를 물을 수 있습니다."
         }
       ],
       "partyContext": {
@@ -1888,8 +3060,8 @@
         "sourceLabel": "양측",
         "legality": "ok",
         "legalLabel": "적법",
-        "stage": 5,
-        "stageLabel": "최종 공개",
+        "stage": 1,
+        "stageLabel": "초기 공개",
         "sourceNote": "self_possessed / original",
         "redactions": []
       },
@@ -1904,8 +3076,8 @@
           "sourceLabel": "양측",
           "legality": "ok",
           "legalLabel": "적법",
-          "stage": 5,
-          "stageLabel": "최종 공개",
+          "stage": 3,
+          "stageLabel": "3단계 — 전체 공개",
           "sourceNote": "self_possessed / original",
           "redactions": []
         },
@@ -1960,7 +3132,176 @@
               "suspicious": true
             }
           ],
-          "note": "과거와 현재의 패턴이 거의 동일. \"급한 돈, 다은이한테 말하지 마\" → \"사위 될 사람이면, 다은이한테 말하지 마.\" B는 두 번 다 말하지 못하고 악역을 자처했다."
+          "note": "과거와 현재의 패턴이 거의 동일하다. “급한 돈, 다은이한테 말하지 마”가 과거와 현재에 반복되고, B는 두 번 모두 말하지 못하고 악역이 되었다."
+        }
+      },
+      "viewerDataByStage": {
+        "1": {
+          "meta": {
+            "name": "대조표",
+            "type": "log",
+            "viewerType": "log",
+            "trustLevel": "mid",
+            "trustLabel": "보통",
+            "source": "both",
+            "sourceLabel": "양측",
+            "legality": "ok",
+            "legalLabel": "적법",
+            "stage": 1,
+            "stageLabel": "1단계 — 문구 패턴 발췌",
+            "sourceNote": "self_possessed / original",
+            "redactions": [
+              "실명 일부 마스킹",
+              "금액 범위 공개"
+            ]
+          },
+          "log": {
+            "rows": [
+              {
+                "date": "과거",
+                "type": "out",
+                "typeLabel": "과거",
+                "target": "송○○ → B: 급한 돈 부탁",
+                "duration": "수백만원대",
+                "suspicious": true
+              },
+              {
+                "date": "현재",
+                "type": "in",
+                "typeLabel": "현재",
+                "target": "송○○ → 예비신랑: 결혼 전 도움 요청",
+                "duration": "수천만원대",
+                "suspicious": true
+              }
+            ],
+            "note": "과거와 현재에 돈 부탁 문구가 비슷하게 반복된다."
+          }
+        },
+        "2": {
+          "meta": {
+            "name": "대조표",
+            "type": "log",
+            "viewerType": "log",
+            "trustLevel": "mid",
+            "trustLabel": "보통",
+            "source": "both",
+            "sourceLabel": "양측",
+            "legality": "ok",
+            "legalLabel": "적법",
+            "stage": 2,
+            "stageLabel": "2단계 — 시점과 금액 추가",
+            "sourceNote": "self_possessed / original",
+            "redactions": [
+              "금액 근사 공개"
+            ]
+          },
+          "log": {
+            "rows": [
+              {
+                "date": "2024.05",
+                "type": "out",
+                "typeLabel": "과거",
+                "target": "송 아버지 → B: \"급한 투자금, 한 달만\"",
+                "duration": "약 500만원",
+                "suspicious": true
+              },
+              {
+                "date": "2026.02",
+                "type": "in",
+                "typeLabel": "현재",
+                "target": "송 아버지 → 예비신랑: \"사위 될 사람이면\"",
+                "duration": "약 3,000만원 요청",
+                "suspicious": true
+              },
+              {
+                "date": "2024.08",
+                "type": "miss",
+                "typeLabel": "과거",
+                "target": "B, 송다은에게 말 못 하고 손절당함",
+                "duration": "—",
+                "suspicious": true
+              },
+              {
+                "date": "2026.03",
+                "type": "miss",
+                "typeLabel": "현재",
+                "target": "B, 예비신랑에게 경고 시도 후 오해받음",
+                "duration": "—",
+                "suspicious": true
+              }
+            ],
+            "note": "돈 부탁 뒤 B가 말하지 못하고 관계가 끊기거나 오해받은 시점이 겹친다."
+          }
+        },
+        "3": {
+          "meta": {
+            "name": "대조표",
+            "type": "log",
+            "viewerType": "log",
+            "trustLevel": "mid",
+            "trustLabel": "보통",
+            "source": "both",
+            "sourceLabel": "양측",
+            "legality": "ok",
+            "legalLabel": "적법",
+            "stage": 3,
+            "stageLabel": "3단계 — 전체 패턴 대조",
+            "sourceNote": "self_possessed / original",
+            "redactions": []
+          },
+          "log": {
+            "rows": [
+              {
+                "date": "2024.05",
+                "type": "out",
+                "typeLabel": "과거",
+                "target": "송 아버지 → B에게 \"급한 투자금, 한 달만\"",
+                "duration": "500만원",
+                "suspicious": true
+              },
+              {
+                "date": "2026.02",
+                "type": "in",
+                "typeLabel": "현재",
+                "target": "송 아버지 → 예비신랑에게 \"사위 될 사람이면 이 정도는\"",
+                "duration": "3,000만원 요청",
+                "suspicious": true
+              },
+              {
+                "date": "2024.06",
+                "type": "out",
+                "typeLabel": "과거",
+                "target": "B 추가 송금 요청받음",
+                "duration": "300만원",
+                "suspicious": false
+              },
+              {
+                "date": "2026.03",
+                "type": "in",
+                "typeLabel": "현재",
+                "target": "예비신랑 \"좀 생각해볼게요\" 답변",
+                "duration": "미정",
+                "suspicious": false
+              },
+              {
+                "date": "2024.08",
+                "type": "miss",
+                "typeLabel": "과거",
+                "target": "B, 송다은에게 말 못 하고 손절당함",
+                "duration": "—",
+                "suspicious": true
+              },
+              {
+                "date": "2026.03",
+                "type": "miss",
+                "typeLabel": "현재",
+                "target": "B, 예비신랑에게 경고 시도 → 집착으로 오해받음",
+                "duration": "—",
+                "suspicious": true
+              }
+            ],
+            "note": "과거와 현재의 패턴이 거의 동일하다. “급한 돈, 다은이한테 말하지 마”가 과거와 현재에 반복되고, B는 두 번 모두 말하지 못하고 악역이 되었다."
+          }
         }
       }
     }
