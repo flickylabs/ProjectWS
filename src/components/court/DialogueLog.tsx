@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useStore } from '../../store/useGameStore'
 import DialogueEntry from './DialogueEntry'
 import type { DialogueEntry as DialogueEntryType } from '../../types'
@@ -23,6 +23,16 @@ export default function DialogueLog({ onTestimonyClick }: Props) {
   const caseData = useStore((s) => s.caseData)
   const [pendingContradiction, setPendingContradiction] = useState<PendingContradiction | null>(null)
   const [, setContradictionVersion] = useState(0)
+
+  useEffect(() => {
+    _usedContradictions.clear()
+  }, [caseData?.caseId])
+
+  useEffect(() => {
+    if (dialogueLog.length === 0) {
+      _usedContradictions.clear()
+    }
+  }, [dialogueLog.length])
 
   const handleContradictionClick = (entryId: string, meta: NonNullable<DialogueEntryType['contradictionMeta']>) => {
     if (_usedContradictions.has(entryId)) return

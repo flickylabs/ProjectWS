@@ -213,67 +213,51 @@ console.log('\n─── 테스트 6: spouse-01 structure-v2 데이터 구조 �
   const structure = JSON.parse(fs.readFileSync(structurePath, 'utf-8'))
 
   test('caseId === spouse-01', () => assert(structure.caseId === 'spouse-01', structure.caseId))
-  test('disputes 5개', () => assert(structure.disputes.length === 5, `got ${structure.disputes.length}`))
-  test('evidence 6개', () => assert(structure.evidence.length === 6, `got ${structure.evidence.length}`))
+  test('disputes 4개', () => assert(structure.disputes.length === 4, `got ${structure.disputes.length}`))
+  test('evidence 7개', () => assert(structure.evidence.length === 7, `got ${structure.evidence.length}`))
 
-  // d-3 red_herring 확인
-  const d3 = structure.disputes.find(d => d.id === 'd-3')
-  test('d-3 disputeKind === red_herring', () => assert(d3.disputeKind === 'red_herring', d3.disputeKind))
-  test('d-3 misconception 존재', () => assert(d3.misconception != null, 'no misconception'))
-  test('d-3 misconception stages 5개 (M0~M4)', () => assert(d3.misconception.stages.length === 5, d3.misconception.stages.length))
-
-  // depthLayers 확인
   const d1 = structure.disputes.find(d => d.id === 'd-1')
+  const hD4 = structure.disputes.find(d => d.id === 'h-d4')
+  test('h-d4 disputeKind === shared_misconception', () => assert(hD4?.disputeKind === 'shared_misconception', hD4?.disputeKind))
   test('d-1 depthLayers 3층', () => assert(d1.depthLayers.length === 3, d1.depthLayers.length))
   test('d-1 layers = surface/motive/core', () => {
     const ids = d1.depthLayers.map(l => l.id)
     assert(ids.includes('surface') && ids.includes('motive') && ids.includes('core'), ids.join(','))
   })
 
-  // linkEdges 확인
   const allLinks = structure.disputes.flatMap(d => d.linkEdges || [])
   test('linkEdges 3~6개', () => assert(allLinks.length >= 3 && allLinks.length <= 6, `got ${allLinks.length}`))
 
-  // evidence timing 확인
   const e1 = structure.evidence.find(e => e.id === 'e-1')
   test('e-1 timing 존재', () => assert(e1.timing != null, 'no timing'))
-  test('e-1 timing.intent 존재', () => assert(e1.timing.intent != null, 'no intent'))
-  test('e-1 timing.role 존재', () => assert(e1.timing.role != null, 'no role'))
+  test('e-1 timing.bestPhase 존재', () => assert(e1.timing.bestPhase != null, 'no bestPhase'))
+  test('e-1 timing.impactCurve 존재', () => assert(e1.timing.impactCurve != null, 'no impactCurve'))
 
-  // freeQuestionHooks 확인
-  test('freeQuestionHooks 존재', () => assert(structure.freeQuestionHooks != null && structure.freeQuestionHooks.length > 0, 'no hooks'))
+  test('freeQuestionHooks는 structure-v2에 포함되지 않음', () => assert(structure.freeQuestionHooks == null, 'expected hooks to be absent'))
 }
 
-console.log('\n─── 테스트 7: spouse-01 beats-v2-full 데이터 구조 ───')
+console.log('\n─── 테스트 7: spouse-01 game-events 데이터 구조 ───')
 {
   const fs = require('fs')
   const path = require('path')
-  const beatsPath = path.join(__dirname, '..', 'src', 'data', 'claimPolicies', 'spouse-01-beats-v2-full.json')
-  const beats = JSON.parse(fs.readFileSync(beatsPath, 'utf-8'))
+  const eventsPath = path.join(__dirname, '..', 'src', 'data', 'claimPolicies', 'spouse-01-game-events.json')
+  const events = JSON.parse(fs.readFileSync(eventsPath, 'utf-8'))
 
-  test('caseId === spouse-01', () => assert(beats.caseId === 'spouse-01', beats.caseId))
-  test('beats 40개 이상', () => assert(beats.beats.length >= 40, `got ${beats.beats.length}`))
+  test('contradictions 1개 이상', () => assert(events.contradictions.length >= 1, `got ${events.contradictions.length}`))
+  test('interjections 1개 이상', () => assert(events.interjections.length >= 1, `got ${events.interjections.length}`))
+  test('emotionalOutbursts 1개 이상', () => assert(events.emotionalOutbursts.length >= 1, `got ${events.emotionalOutbursts.length}`))
+  test('transitionBeats 8개 이상', () => assert(events.transitionBeats.length >= 8, `got ${events.transitionBeats.length}`))
 
-  // 필수 필드 확인
-  const first = beats.beats[0]
-  test('beat에 id 존재', () => assert(first.id != null, 'no id'))
-  test('beat에 responseIntent 존재', () => assert(first.responseIntent != null, 'no responseIntent'))
-  test('beat에 angleTag 존재', () => assert(first.angleTag != null, 'no angleTag'))
-  test('beat에 layer 존재', () => assert(first.layer != null, 'no layer'))
-  test('beat에 issueRole 존재', () => assert(first.issueRole != null, 'no issueRole'))
-  test('beat에 actionFamily 존재', () => assert(first.actionFamily != null, 'no actionFamily'))
+  const first = events.transitionBeats[0]
+  test('transitionBeat에 id 존재', () => assert(first.id != null, 'no id'))
+  test('transitionBeat에 caseId 존재', () => assert(first.caseId === 'spouse-01', first.caseId))
+  test('transitionBeat에 party/disputeId 존재', () => assert(first.party && first.disputeId, 'missing party/disputeId'))
+  test('transitionBeat에 fromState/toState 존재', () => assert(first.fromState && first.toState, 'missing state range'))
+  test('transitionBeat에 line 존재', () => assert(first.line != null, 'no line'))
+  test('transitionBeat에 behaviorHint 존재', () => assert(first.behaviorHint != null, 'no behaviorHint'))
 
-  // fatigue beat 존재 확인
-  const fatigueBeats = beats.beats.filter(b => b.actionFamily === 'fatigue' || b.responseIntent === 'fatigue_response')
-  test('fatigue beats 3개 이상', () => assert(fatigueBeats.length >= 3, `got ${fatigueBeats.length}`))
-
-  // red_herring beat 존재 확인
-  const rhBeats = beats.beats.filter(b => b.issueRole === 'red_herring')
-  test('red_herring beats 존재', () => assert(rhBeats.length > 0, 'no red_herring beats'))
-
-  // coverageSummary 확인
-  test('coverageSummary 존재', () => assert(beats.coverageSummary != null, 'no coverageSummary'))
-  test('totalBeats >= 40', () => assert(beats.coverageSummary.totalBeats >= 40, `got ${beats.coverageSummary.totalBeats}`))
+  const confessionBeats = events.transitionBeats.filter(b => b.toState === 'S5')
+  test('S5 confession transitionBeats 존재', () => assert(confessionBeats.length >= 2, `got ${confessionBeats.length}`))
 }
 
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━

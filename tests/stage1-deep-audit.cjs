@@ -165,6 +165,18 @@ function searchText(text, pattern) {
   }
 }
 
+function getSupportedStageSequence(stageNums) {
+  const unique = [...new Set(stageNums)].sort((a, b) => a - b);
+  if (unique.length !== 3) return null;
+  if (unique.every((value, index) => value === index)) {
+    return { base: 0, label: '0/1/2' };
+  }
+  if (unique.every((value, index) => value === index + 1)) {
+    return { base: 1, label: '1/2/3' };
+  }
+  return null;
+}
+
 function deepStringSearch(obj, pattern) {
   const results = [];
   function walk(o, path) {
@@ -575,33 +587,35 @@ for (const caseId of CASE_IDS) {
     }
   }
 
-  // E2. 각 증거에 stage 0/1/2 완전 존재
+  // E2. 각 증거에 stage 0/1/2 또는 1/2/3 완전 존재
   for (const ev of evidence) {
     if (!ev.investigationStages) continue;
     const stageNums = ev.investigationStages.map(s => s.stage);
-    for (const needed of [0, 1, 2]) {
-      if (stageNums.includes(needed)) {
-        pass(caseId, `E2: evidence ${ev.id} stage ${needed} 존재`);
-      } else {
-        fail(caseId, `E2: evidence ${ev.id} stage ${needed} 누락`);
-      }
+    const sequence = getSupportedStageSequence(stageNums);
+    if (sequence) {
+      pass(caseId, `E2: evidence ${ev.id} stage ${sequence.label} 완전 존재`);
+    } else {
+      fail(caseId, `E2: evidence ${ev.id} stage sequence 비정상 (${[...new Set(stageNums)].sort((a, b) => a - b).join(', ')})`);
     }
   }
 
-  // E3. stage 0 질문에 수동 표현 잔존
+  // E3. 첫 stage 질문에 수동 표현 잔존
   let e3Issues = 0;
   for (const ev of evidence) {
     if (!ev.investigationStages) continue;
-    const stage0 = ev.investigationStages.find(s => s.stage === 0);
-    if (!stage0?.question?.text) continue;
+    const stageNums = ev.investigationStages.map(s => s.stage);
+    const sequence = getSupportedStageSequence(stageNums);
+    const firstStageNum = sequence?.base ?? Math.min(...stageNums);
+    const firstStage = ev.investigationStages.find(s => s.stage === firstStageNum);
+    if (!firstStage?.question?.text) continue;
     for (const pattern of PASSIVE_PATTERNS) {
-      if (stage0.question.text.includes(pattern)) {
-        fail(caseId, `E3: evidence ${ev.id} stage0 질문에 수동 표현: "${pattern}" → "${stage0.question.text}"`);
+      if (firstStage.question.text.includes(pattern)) {
+        fail(caseId, `E3: evidence ${ev.id} stage ${firstStageNum} 질문에 수동 표현: "${pattern}" → "${firstStage.question.text}"`);
         e3Issues++;
       }
     }
   }
-  if (e3Issues === 0) pass(caseId, `E3: stage 0 질문 수동 표현 미검출`);
+  if (e3Issues === 0) pass(caseId, `E3: 첫 stage 질문 수동 표현 미검출`);
 
   // E4. "특정 X" 패턴 잔존 (investigationStages 내)
   let e4Issues = 0;

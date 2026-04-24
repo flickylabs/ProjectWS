@@ -339,6 +339,16 @@ export default function PCDialogueLog() {
   const bottomRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
+    _usedContradictions.clear()
+  }, [caseData?.caseId])
+
+  useEffect(() => {
+    if (dialogueLog.length === 0) {
+      _usedContradictions.clear()
+    }
+  }, [dialogueLog.length])
+
+  useEffect(() => {
     const timer = window.setTimeout(() => {
       bottomRef.current?.scrollIntoView({ behavior: 'smooth' })
     }, 60)
