@@ -1,6 +1,6 @@
 import { useState, useEffect, lazy, Suspense } from 'react'
 import { useGameStore, useStore } from '../../store/useGameStore'
-import { GamePhase, Phase } from '../../types'
+import { Phase } from '../../types'
 import PhaseIndicator from './PhaseIndicator'
 import SettingsPanel from './SettingsPanel'
 import Emoji from '../common/Emoji'
@@ -43,22 +43,14 @@ export default function TopBar() {
   const verdictMode = useStore((s) => s.verdictMode)
   const pendingEvidenceResult = useStore((s) => s.pendingEvidenceResult)
   const setPendingEvidenceResult = useStore((s) => s.setPendingEvidenceResult)
+  const recentlyEmergedDisputeId = useStore((s) => s.recentlyEmergedDisputeId)
 
-  // Phase3 이후 단계 여부
-  const LATE_PHASES = [
-    Phase.Interrogation,
-    GamePhase.Phase4_Evidence,
-    GamePhase.Phase5_ReExamination,
-    Phase.Mediation,
-    Phase.Verdict,
-    Phase.Result,
-  ]
-  const isLatePhase = LATE_PHASES.includes(currentPhase)
-  const isInterrogation = [
-    Phase.Interrogation,
-    GamePhase.Phase4_Evidence,
-    GamePhase.Phase5_ReExamination,
-  ].includes(currentPhase)
+  // Phase 2(심문) 이후 단계 여부. 활성 체계: 0 → 1 → 2 → 3a → 3b → R
+  const isLatePhase = currentPhase === Phase.Interrogation
+    || currentPhase === Phase.Mediation
+    || currentPhase === Phase.Verdict
+    || currentPhase === Phase.Result
+  const isInterrogation = currentPhase === Phase.Interrogation
 
   // 예상 점수 (기존 호환) 또는 readinessScore
   const estimatedScore = readinessState
@@ -112,11 +104,11 @@ export default function TopBar() {
               <span className={`text-xs font-semibold ${remainingTurns <= 5 ? 'text-red-400' : 'text-gray-400'}`}>
                 {turnCount}/{MAX_TURNS}
               </span>
-              {/* 쟁점 현황 보드 버튼 */}
+              {/* 쟁점 현황 보드 버튼 — emergence 시 깜빡 강조 */}
               {isInterrogation && (
                 <button
                   onClick={() => setShowDisputeBoard(true)}
-                  className="text-[10px] px-1.5 py-0.5 rounded bg-amber-900/40 text-amber-400 hover:bg-amber-900/60 font-semibold transition-colors"
+                  className={`text-[10px] px-1.5 py-0.5 rounded bg-amber-900/40 text-amber-400 hover:bg-amber-900/60 font-semibold transition-colors${recentlyEmergedDisputeId ? ' pc-hotbar-slot-pulse' : ''}`}
                 >
                   쟁점
                 </button>

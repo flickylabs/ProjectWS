@@ -42,11 +42,11 @@ function isEvidenceLocked(_phase: GamePhase): boolean {
   return false
 }
 
-/** 액티브 스킬별 해금 Phase */
+/** 액티브 스킬별 해금 Phase. 활성 체계: Phase 2(심문 = Phase.Interrogation)부터 모두 해금 */
 const SKILL_UNLOCK: Record<string, GamePhase> = {
-  obj: Phase.Interrogation,  // 이의 제기: Phase 3~
-  sep: Phase.Interrogation,  // 분리 심문: Phase 3~
-  imm: GamePhase.Phase4_Evidence,       // 즉답 요구: Phase 4~
+  obj: Phase.Interrogation,  // 이의 제기
+  sep: Phase.Interrogation,  // 분리 심문
+  imm: Phase.Interrogation,  // 즉답 요구 — Phase4 deprecated로 Phase 2부터 해금
 }
 
 /** 다음 단계 설명 */
@@ -190,15 +190,15 @@ export default function ActionPanel() {
   if (dossierUnlockResult.unlocked) dossierUnlockPrevRef.current = true
   const hasDossierCards = dossierCardsExist && dossierUnlockResult.unlocked
 
-  // ── 토글 스킬 해금 상태 ──
+  // ── 토글 스킬 해금 상태 ── (Phase4/5 deprecated로 Phase 2(심문)부터 모두 해금)
   const toggles: QuestionToggles = {
     evasionReading: {
-      unlocked: phaseAtLeast(currentPhase, GamePhase.Phase4_Evidence),
+      unlocked: phaseAtLeast(currentPhase, Phase.Interrogation),
       on: evasionReadingOn,
       affordable: resources.skillPoints >= 1,
     },
     confidential: {
-      unlocked: phaseAtLeast(currentPhase, GamePhase.Phase5_ReExamination),
+      unlocked: phaseAtLeast(currentPhase, Phase.Interrogation),
       on: confidentialOn,
     },
   }
@@ -648,7 +648,8 @@ function SkillPanel({ target, disputes, resources, canUseSkill, onObj, onSkill, 
     { id:'imm', label:'즉답 요구', icon:'⚡', desc:'특정 쟁점 즉시 붕괴', costIcon:'⚡', costNum:'1', type:'skill' as const, st:'immediate_answer' as SkillType, nd:true },
   ]
 
-  const isPhase5 = phaseAtLeast(currentPhase, GamePhase.Phase5_ReExamination)
+  // Phase5 deprecated → 진술 분석도 Phase 2(심문)부터 가능
+  const isPhase5 = phaseAtLeast(currentPhase, Phase.Interrogation)
   const llm = isLLMMode()
 
   const handleAnalyze = async () => {

@@ -201,9 +201,8 @@ export default function PCCourtLayout({ actionPanel, onDialogueTap, isDialoguePh
     }
   }, [isDialoguePhase, onDialogueTap])
 
+  // Phase 2 (심문) 에서만 핫바 노출. Phase4/5는 deprecated.
   const showDock = currentPhase === Phase.Interrogation
-    || currentPhase === GamePhase.Phase4_Evidence
-    || currentPhase === GamePhase.Phase5_ReExamination
 
   const timelineBody = useMemo(() => {
     const lines = dialogueLog
@@ -414,15 +413,17 @@ export default function PCCourtLayout({ actionPanel, onDialogueTap, isDialoguePh
         </main>
 
         <aside className="panel panel-r pc-play-panel pc-play-panel--right">
-          <button
-            type="button"
-            className="pc-summary-floating-toggle"
-            onClick={() => window.dispatchEvent(new Event('pc:open-record-summary'))}
-            title="기록 정리"
-            aria-label="기록 정리"
-          >
-            <PCSvgIcon id="i-doc" size={14} />
-          </button>
+          {showDock ? (
+            <button
+              type="button"
+              className="pc-summary-floating-toggle"
+              onClick={() => window.dispatchEvent(new Event('pc:open-record-summary'))}
+              title="기록 정리"
+              aria-label="기록 정리"
+            >
+              <PCSvgIcon id="i-doc" size={14} />
+            </button>
+          ) : null}
           <PCRightPanel />
         </aside>
       </div>

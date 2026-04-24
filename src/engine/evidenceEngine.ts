@@ -83,12 +83,37 @@ export function checkUnlocks(
   return { updated, newlyUnlocked }
 }
 
+/**
+ * 증거가 모든 investigationStages를 완료했는지 판정.
+ * 조합 발동/힌트 게이팅 공통 사용.
+ * - investigationStages가 정의되지 않은 증거는 항상 true (구식 데이터 호환)
+ */
+export function isEvidenceFullyInvestigated(
+  state: EvidenceRuntimeState | undefined,
+  def: EvidenceNode | undefined,
+): boolean {
+  if (!state) return false
+  const stageCount = def?.investigationStages?.length ?? 0
+  if (stageCount === 0) return true
+  return (state.investigatedActions?.length ?? 0) >= stageCount
+}
+
 export function checkCombinations(
   states: Record<string, EvidenceRuntimeState>,
   combinations: EvidenceCombination[],
+  evidenceDefinitions?: EvidenceNode[],
 ): EvidenceCombination[] {
   return combinations.filter((combo) =>
-    combo.requires.every((id) => states[id]?.presented),
+    combo.requires.every((id) => {
+      const state = states[id]
+      if (!state?.presented) return false
+      // investigationStages 미완료 시 조합 차단 (surface 단계에서 결론 도출 방지)
+      if (evidenceDefinitions) {
+        const def = evidenceDefinitions.find((e) => e.id === id)
+        if (!isEvidenceFullyInvestigated(state, def)) return false
+      }
+      return true
+    }),
   )
 }
 

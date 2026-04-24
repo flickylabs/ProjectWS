@@ -327,6 +327,16 @@ async function handleEvidencePresent(action: Extract<PlayerAction, { type: 'evid
             relatedDisputes: visibleComboProves,
             turn: freshState.turnCount,
           })
+          // 조합 결과로 다음 액션을 가리키는 임팩트 효과 — 핫바의 증인 소환 슬롯 깜빡 (조합→증인 패턴 가정)
+          if (typeof document !== 'undefined') {
+            const witnessSlot = document.querySelector<HTMLElement>('[data-guide-target="witness-summon"]')
+            if (witnessSlot) {
+              witnessSlot.classList.remove('pc-hotbar-slot-pulse')
+              void witnessSlot.offsetWidth
+              witnessSlot.classList.add('pc-hotbar-slot-pulse')
+              window.setTimeout(() => witnessSlot.classList.remove('pc-hotbar-slot-pulse'), 3000)
+            }
+          }
         }
       }
     }
@@ -366,7 +376,10 @@ async function handleEvidencePresent(action: Extract<PlayerAction, { type: 'evid
         }
       }
     }
-    v3State.evaluateTurnEvents('evidence_present', evDef.proves[0], transitions)
+    // [차단] 자동 이벤트 트리거 — 한 턴에 끼어들기/모순/감정폭발/새쟁점이 자동 발동되어
+    // NPC 발화 매핑 혼란 + 모달 동시 출현 + 발화 순서 혼선을 유발. 명시적 사용자 액션으로만 이벤트 발생.
+    // v3State.evaluateTurnEvents('evidence_present', evDef.proves[0], transitions)
+    void transitions
   }
 
   useGameStore.getState().incrementTurn()
@@ -619,18 +632,8 @@ async function handleEvidenceInvestigate(action: Extract<PlayerAction, { type: '
   const result = state.investigateEvidence(action.evidenceId, action.subAction)
   if (result) state.addDialogue({ speaker: 'system', text: `${result}`, relatedDisputes: [], turn: state.turnCount })
 
-  // NPC 반응 — 조사 결과에 대해 반응하도록 LLM 호출
-  const evDef = state.evidenceDefinitions.find(e => e.id === action.evidenceId)
-  if (evDef?.proves.length) {
-    // 증거의 첫 번째 관련 쟁점에서 책임이 더 큰 당사자에게 질문
-    const caseData = state.caseData
-    const disputeId = evDef.proves[0]
-    const dispute = caseData?.disputes.find(d => d.id === disputeId)
-    const target: PartyId = (dispute?.correctResponsibility?.a ?? 50) >= 50 ? 'a' : 'b'
-
-    await resolveAndApply(action, target)
-  }
-
+  // [차단] 증거 조사 후 자동 NPC 심문 — 의도되지 않은 액션. 사용자가 명시적으로 심문할 때만 발화.
+  // 조사는 정보 획득 액션. 심문은 별개. 자동 심문은 사용자 흐름을 끊고 잘못된 캐릭터에 메시지 발생.
   // 증거 조사는 토큰만 소비, 턴 소비 없음
 }
 
@@ -1200,7 +1203,9 @@ async function handleQuestion(action: Extract<PlayerAction, { type: 'question' }
   }
 
   // ── 상대방 끼어들기 (구조적 반응 시스템) — V2에서 이미 처리했으면 스킵 ──
-  if (!v2BeatUsed) {
+  // [차단 P-4 후속] 자동 끼어들기 별도 경로(V2 구조적 반응)도 자동 발동되어 시각 혼란 유발.
+  // gameEventTriggerEngine 차단(L369·L1326)과 함께 V2 경로도 차단. 명시적 사용자 액션으로만 끼어들기 발생.
+  if (false && !v2BeatUsed) {
   const opponent: PartyId = action.target === 'a' ? 'b' : 'a'
   const freshState = useGameStore.getState()
   const isSeparated = freshState.separationTarget === action.target
@@ -1323,7 +1328,9 @@ async function handleQuestion(action: Extract<PlayerAction, { type: 'question' }
     const transitions = prevState !== newState
       ? [{ party: action.target, disputeId: action.disputeId, from: prevState, to: newState }]
       : []
-    v3State.evaluateTurnEvents(action.questionType, action.disputeId, transitions)
+    // [차단] 자동 이벤트 트리거 — handleEvidencePresent와 동일 사유로 차단.
+    // v3State.evaluateTurnEvents(action.questionType, action.disputeId, transitions)
+    void transitions
 
     // ── V3: lieState 전이 시각 피드백 + 전략 선택 모달 ──
     if (prevState !== newState) {
@@ -1479,6 +1486,12 @@ async function resolveAndApply(action: PlayerAction, target: PartyId, isConfiden
 
 function applyDialogueNode(node: DialogueNode, target: PartyId, isConfidential = false) {
   const state = useGameStore.getState()
+  // node.id 패턴으로 출처 구분 — 디버그 배지용
+  const source: 'script' | 'llm' | 'fallback' =
+    node.id?.startsWith('scripted-') ? 'script'
+    : node.id?.startsWith('llm-') ? 'llm'
+    : node.id?.startsWith('fallback-') ? 'fallback'
+    : 'llm'
 
   state.addDialogue({
     speaker: node.speaker,
@@ -1487,6 +1500,7 @@ function applyDialogueNode(node: DialogueNode, target: PartyId, isConfidential =
     turn: state.turnCount,
     behaviorHint: node.behaviorHint,
     isConfidential,
+    source,
   })
 
   const effects = node.effects

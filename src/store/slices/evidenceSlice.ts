@@ -4,6 +4,7 @@ import {
   createInitialEvidenceStates,
   checkUnlocks,
   checkCombinations,
+  isEvidenceFullyInvestigated,
   presentEvidence as presentEv,
   investigateEvidence as investigateEv,
   type EvidenceRuntimeState,
@@ -99,8 +100,8 @@ export const createEvidenceSlice: StateCreator<EvidenceSlice, [], [], EvidenceSl
     }
     const { updated, newlyUnlocked } = checkUnlocks(afterPresent, evidenceDefinitions, lieStates)
 
-    // 조합 체크 (이미 발동된 조합은 제외)
-    const combos = checkCombinations(updated, evidenceCombinations)
+    // 조합 체크 (이미 발동된 조합은 제외) — investigationStages 미완료 시 조합 차단
+    const combos = checkCombinations(updated, evidenceCombinations, evidenceDefinitions)
     const existing = new Set(get().triggeredCombinations)
     const newComboIds = combos.map((c) => c.requires.join('+')).filter(id => !existing.has(id))
 
@@ -183,20 +184,25 @@ export const createEvidenceSlice: StateCreator<EvidenceSlice, [], [], EvidenceSl
   },
 
   getCombinableEvidenceIds: () => {
-    const { evidenceStates, evidenceCombinations, triggeredCombinations } = get()
+    const { evidenceStates, evidenceCombinations, triggeredCombinations, evidenceDefinitions } = get()
     const triggered = new Set(triggeredCombinations)
     const ids = new Set<string>()
-    // 1) evidenceCombinations (구 시스템) — ALL requires 해금 시에만 shimmer
+    const defById = new Map(evidenceDefinitions.map((d) => [d.id, d]))
+    // 1) evidenceCombinations (구 시스템) — ALL requires 해금 + investigationStages 완료 시에만 shimmer
     for (const combo of evidenceCombinations) {
       const comboKey = combo.requires.join('+')
       if (triggered.has(comboKey)) continue
-      const allUnlocked = combo.requires.every((eid) => evidenceStates[eid]?.unlocked)
-      if (!allUnlocked) continue
+      const allReady = combo.requires.every((eid) => {
+        const st = evidenceStates[eid]
+        if (!st?.unlocked) return false
+        return isEvidenceFullyInvestigated(st, defById.get(eid))
+      })
+      if (!allReady) continue
       for (const eid of combo.requires) {
         ids.add(eid)
       }
     }
-    // 2) combinationLab.recipes (신 시스템) — ALL inputs 준비 시에만 shimmer
+    // 2) combinationLab.recipes (신 시스템) — ALL inputs 준비 + 증거는 investigationStages 완료 시에만 shimmer
     const labRuntime = (get() as any).combinationLabRuntime as { config: any; appliedRecipeIds: string[]; discoveredNodeIds: string[] } | undefined
     if (labRuntime?.config?.recipes) {
       const applied = new Set(labRuntime.appliedRecipeIds ?? [])
@@ -207,7 +213,9 @@ export const createEvidenceSlice: StateCreator<EvidenceSlice, [], [], EvidenceSl
         const allReady = recipe.inputs.every((inputId: string) => {
           const node = nodes.find((n: any) => n.id === inputId)
           if (node?.type === 'evidence' || node?.type === 'derived_evidence') {
-            return !!evidenceStates[inputId]?.unlocked
+            const st = evidenceStates[inputId]
+            if (!st?.unlocked) return false
+            return isEvidenceFullyInvestigated(st, defById.get(inputId))
           }
           return discovered.has(inputId)
         })
@@ -221,7 +229,7 @@ export const createEvidenceSlice: StateCreator<EvidenceSlice, [], [], EvidenceSl
   },
 
   getCombinationPartnerHints: () => {
-    const { evidenceStates } = get()
+    const { evidenceStates, evidenceDefinitions } = get()
     const hints = new Map<string, CombinationPartnerHint>()
     const labRuntime = (get() as any).combinationLabRuntime as { config: any; appliedRecipeIds: string[]; discoveredNodeIds: string[] } | undefined
     if (!labRuntime?.config?.recipes) return hints
@@ -230,13 +238,16 @@ export const createEvidenceSlice: StateCreator<EvidenceSlice, [], [], EvidenceSl
     const discovered = new Set(labRuntime.discoveredNodeIds ?? [])
     const nodes: Array<{ id: string; type: string }> = labRuntime.config.nodes ?? []
     const nodeTypeById = new Map(nodes.map((n) => [n.id, n.type]))
+    const defById = new Map(evidenceDefinitions.map((d) => [d.id, d]))
     // 노드별로 만난 파트너 id 집합 (중복 방지)
     const partnersByNode = new Map<string, Set<string>>()
 
     const isInputReady = (inputId: string): boolean => {
       const type = nodeTypeById.get(inputId)
       if (type === 'evidence' || type === 'derived_evidence') {
-        return !!evidenceStates[inputId]?.unlocked
+        const st = evidenceStates[inputId]
+        if (!st?.unlocked) return false
+        return isEvidenceFullyInvestigated(st, defById.get(inputId))
       }
       return discovered.has(inputId)
     }

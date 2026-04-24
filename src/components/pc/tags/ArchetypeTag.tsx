@@ -1,6 +1,7 @@
 import { Fragment, useCallback, useState, type ReactNode } from 'react'
 import { useStore } from '../../../store/useGameStore'
 import { ARCHETYPE_META } from '../../../engine/archetypeHintEngine'
+import { pulseHotbarSlot } from './hotbarHighlight'
 
 interface ArchetypeTagProps {
   party: 'a' | 'b'
@@ -13,20 +14,6 @@ const ACTION_KEYWORDS: { text: string; target: string }[] = [
   { text: '동기 탐색', target: 'question-motive' },
   { text: '공감 접근', target: 'question-empathy' },
 ]
-
-/** 핫바 슬롯 버튼을 잠깐 깜빡이게 만든다 */
-function pulseHotbarSlot(target: string): void {
-  if (typeof document === 'undefined') return
-  const el = document.querySelector<HTMLElement>(`[data-guide-target="${target}"]`)
-  if (!el) return
-  el.classList.remove('pc-hotbar-slot-pulse')
-  // reflow 유도하여 애니메이션 재시작
-  void el.offsetWidth
-  el.classList.add('pc-hotbar-slot-pulse')
-  window.setTimeout(() => {
-    el.classList.remove('pc-hotbar-slot-pulse')
-  }, 2400)
-}
 
 /** 문자열을 키워드 기준으로 분리하여 [텍스트, 액션버튼, 텍스트, ...] React 노드 배열 생성 */
 function renderStrategyHint(hint: string): ReactNode[] {

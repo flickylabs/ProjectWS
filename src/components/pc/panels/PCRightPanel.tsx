@@ -1,6 +1,5 @@
 import { useCallback, useEffect, useMemo, useRef, useState, type DragEvent, type ReactNode } from 'react'
 import {
-  GamePhase,
   Phase,
   type CombinationLabNode,
   type CombinationLabOutput,
@@ -9,6 +8,7 @@ import {
   type LieState,
 } from '../../../types'
 import { useGameStore, useStore } from '../../../store/useGameStore'
+import { isEvidenceFullyInvestigated } from '../../../engine/evidenceEngine'
 import PCSvgIcon from '../icons/PCSvgIcon'
 import PCCharacterPortrait from '../icons/PCCharacterPortrait'
 import { getPcFaceSymbolId } from '../icons/pcIconUtils'
@@ -22,6 +22,7 @@ import { PC_ADD_COMBINATION_NOTE_EVENT, type PcCombinationPanelEventDetail, type
 import { playCombinationSuccess } from '../../../engine/soundEngine'
 import { cleanOutputLabel, cleanOutputSummary } from '../../../utils/combinationLabels'
 import ArchetypeTag from '../tags/ArchetypeTag'
+import { ACTION_TARGETS, ActionEm, Em } from '../tags/hotbarHighlight'
 
 const LIE_STATES: LieState[] = ['S0', 'S1', 'S2', 'S3', 'S4', 'S5']
 
@@ -55,11 +56,18 @@ export default function PCRightPanel() {
 
   const evidenceCombinations = useStore((s) => s.evidenceCombinations)
   const triggeredCombinations = useStore((s) => s.triggeredCombinations)
+  const evidenceDefinitions = useStore((s) => s.evidenceDefinitions)
+  const recentlyEmergedDisputeId = useStore((s) => s.recentlyEmergedDisputeId)
 
   const [comboSlots, setComboSlots] = useState<[string | null, string | null]>([null, null])
   const [autoMatchPanelOpen, setAutoMatchPanelOpen] = useState(false)
   const [autoMatchConfirming, setAutoMatchConfirming] = useState(false)
-  const [infoDrawer, setInfoDrawer] = useState<'emotion' | 'trust' | 'leak' | null>(null)
+  const [infoDrawer, setInfoDrawer] = useState<'emotion' | 'trust' | 'leak' | 'lieStages' | 'contradiction' | 'profile' | null>(null)
+  const [selectedLieStageIdx, setSelectedLieStageIdx] = useState<number | null>(null)
+
+  // Phase 1 (사전진술) 등에서는 심문/증거 액션 자체가 의미 없음 — 기록 정리도 차단.
+  // 활성 Phase 체계: 0 → 1 → 2(Phase.Interrogation) → 3a → 3b
+  const isInterrogationPhase = currentPhase === Phase.Interrogation
 
   if (!caseData) {
     return null
@@ -97,27 +105,30 @@ export default function PCRightPanel() {
   const tellType = targetProfile.verbalTells[0]?.type ?? ''
   const faceId = getPcFaceSymbolId(pcTargetParty, targetProfile, targetAgent.emotionalState.phase)
   const trustStateLabel = getTrustStateLabel(targetAgent.trustState.trustTowardJudge)
-  const showCombination =
-    currentPhase === Phase.Interrogation
-    || currentPhase === GamePhase.Phase4_Evidence
-    || currentPhase === GamePhase.Phase5_ReExamination
+  const showCombination = currentPhase === Phase.Interrogation
 
   // 조합 준비 완료 감지 — 양쪽 모두 해금된 미완료 레시피 수 변화 → 얼럿 + shimmer
   const readyComboCount = useMemo(() => {
     const triggered = new Set(triggeredCombinations)
+    const defById = new Map(evidenceDefinitions.map((d) => [d.id, d]))
+    const isEvReady = (eid: string) => {
+      const st = evidenceStates[eid]
+      if (!st?.unlocked) return false
+      return isEvidenceFullyInvestigated(st, defById.get(eid))
+    }
     const fromEvCombo = (evidenceCombinations ?? []).filter((combo) => {
       const key = combo.requires.join('+')
       if (triggered.has(key)) return false
-      return combo.requires.every((eid) => evidenceStates[eid]?.unlocked)
+      return combo.requires.every((eid) => isEvReady(eid))
     }).length
     const applied = new Set(combinationLabRuntime.appliedRecipeIds ?? [])
     const discovered = new Set(combinationLabRuntime.discoveredNodeIds ?? [])
     const fromLab = (combinationLabRuntime.config?.recipes ?? []).filter((recipe) => {
       if (applied.has(recipe.id) && !recipe.repeatable) return false
-      return recipe.inputs.every((id) => evidenceStates[id]?.unlocked || discovered.has(id))
+      return recipe.inputs.every((id) => isEvReady(id) || discovered.has(id))
     }).length
     return fromEvCombo + fromLab
-  }, [evidenceCombinations, triggeredCombinations, evidenceStates, combinationLabRuntime])
+  }, [evidenceCombinations, triggeredCombinations, evidenceStates, combinationLabRuntime, evidenceDefinitions])
 
   const prevReadyCount = useRef(-1)
   useEffect(() => {
@@ -130,21 +141,27 @@ export default function PCRightPanel() {
   const hasReadyCombos = readyComboCount > 0
 
   // 자동 매칭 대상: combinationLab 레시피 중 모든 입력이 준비됐고 아직 적용되지 않은 것
+  // (증거는 unlocked + investigationStages 모두 완료 시에만 ready)
   const readyLabRecipes = useMemo(() => {
     const config = combinationLabRuntime.config
     if (!config?.recipes) return [] as CombinationLabRecipe[]
     const applied = new Set(combinationLabRuntime.appliedRecipeIds ?? [])
     const discovered = new Set(combinationLabRuntime.discoveredNodeIds ?? [])
     const nodeTypeById = new Map<string, string>(config.nodes.map((n: CombinationLabNode) => [n.id, n.type]))
+    const defById = new Map(evidenceDefinitions.map((d) => [d.id, d]))
     return config.recipes.filter((recipe: CombinationLabRecipe) => {
       if (applied.has(recipe.id) && !recipe.repeatable) return false
       return recipe.inputs.every((id) => {
         const type = nodeTypeById.get(id)
-        if (type === 'evidence' || type === 'derived_evidence') return !!evidenceStates[id]?.unlocked
+        if (type === 'evidence' || type === 'derived_evidence') {
+          const st = evidenceStates[id]
+          if (!st?.unlocked) return false
+          return isEvidenceFullyInvestigated(st, defById.get(id))
+        }
         return discovered.has(id)
       })
     })
-  }, [combinationLabRuntime, evidenceStates])
+  }, [combinationLabRuntime, evidenceStates, evidenceDefinitions])
 
   // 레시피 카테고리 breakdown (증거+증거 / 증거+발언 / 발언+발언) — ready vs potential
   const recipeBreakdown = useMemo(() => {
@@ -158,9 +175,14 @@ export default function PCRightPanel() {
     const applied = new Set(combinationLabRuntime.appliedRecipeIds ?? [])
     const discovered = new Set(combinationLabRuntime.discoveredNodeIds ?? [])
     const nodeTypeById = new Map<string, string>(config.nodes.map((n: CombinationLabNode) => [n.id, n.type]))
+    const defById = new Map(evidenceDefinitions.map((d) => [d.id, d]))
     const isReady = (id: string) => {
       const t = nodeTypeById.get(id)
-      if (t === 'evidence' || t === 'derived_evidence') return !!evidenceStates[id]?.unlocked
+      if (t === 'evidence' || t === 'derived_evidence') {
+        const st = evidenceStates[id]
+        if (!st?.unlocked) return false
+        return isEvidenceFullyInvestigated(st, defById.get(id))
+      }
       return discovered.has(id)
     }
     const isEvidence = (id: string) => {
@@ -178,7 +200,7 @@ export default function PCRightPanel() {
       else out[cat].potential += 1
     }
     return out
-  }, [combinationLabRuntime, evidenceStates])
+  }, [combinationLabRuntime, evidenceStates, evidenceDefinitions])
 
   const autoMatchCost = 1
   const canAutoMatch = readyLabRecipes.length > 0 && globalSkillPoints >= autoMatchCost
@@ -551,7 +573,15 @@ export default function PCRightPanel() {
           </div>
 
           <div className="target pc-target-profile">
-            <div className="tgt-face">
+            <div
+              className="tgt-face"
+              role="button"
+              tabIndex={0}
+              style={{ cursor: 'pointer' }}
+              onClick={() => setInfoDrawer('profile')}
+              onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setInfoDrawer('profile') } }}
+              title={`${targetProfile.name} 상세 정보 보기`}
+            >
               <PCCharacterPortrait
                 alt={targetProfile.name}
                 caseId={caseData.caseId}
@@ -612,7 +642,9 @@ export default function PCRightPanel() {
           <div className="pc-target-divider" aria-hidden="true" />
 
           {/* 쟁점 카드 — nav + 도달 단계 + lie-bar + 이 쟁점의 모순 */}
-          <div className="pc-target-dispute-card">
+          <div
+            className={`pc-target-dispute-card${activeDispute && recentlyEmergedDisputeId === activeDispute.id ? ' pc-hotbar-slot-pulse' : ''}`}
+          >
             <div className="pc-target-dispute-nav">
               <button
                 type="button"
@@ -623,7 +655,15 @@ export default function PCRightPanel() {
               >
                 ◀
               </button>
-              <span className="pc-target-dispute-nav__name">
+              <span
+                className="pc-target-dispute-nav__name"
+                role="button"
+                tabIndex={0}
+                style={{ cursor: 'pointer' }}
+                onClick={() => { setSelectedLieStageIdx(null); setInfoDrawer('lieStages') }}
+                onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setSelectedLieStageIdx(null); setInfoDrawer('lieStages') } }}
+                title="진실파악 단계 안내 보기"
+              >
                 {activeDispute?.name ?? '쟁점 없음'}
               </span>
               <button
@@ -657,6 +697,12 @@ export default function PCRightPanel() {
                     className={className}
                     data-resonance-target={`liestate-${pcTargetParty}-${state}`}
                     key={state}
+                    role="button"
+                    tabIndex={0}
+                    style={{ cursor: 'pointer' }}
+                    onClick={() => { setSelectedLieStageIdx(index); setInfoDrawer('lieStages') }}
+                    onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setSelectedLieStageIdx(index); setInfoDrawer('lieStages') } }}
+                    title={`진실파악 단계 ${index} 안내`}
                   >
                     {index}
                   </div>
@@ -665,7 +711,15 @@ export default function PCRightPanel() {
             </div>
 
             {/* 이 쟁점의 모순 — 한 칸씩 */}
-            <div className="pc-target-contradiction">
+            <div
+              className="pc-target-contradiction"
+              role="button"
+              tabIndex={0}
+              style={{ cursor: 'pointer' }}
+              onClick={() => setInfoDrawer('contradiction')}
+              onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setInfoDrawer('contradiction') } }}
+              title="모순이 무엇인지 안내 보기"
+            >
               <span className="pc-target-contradiction__label">
                 <PCSvgIcon id="i-conflict" size={12} />
                 모순
@@ -694,7 +748,10 @@ export default function PCRightPanel() {
               <div className="pc-target-info-drawer__title">
                 {infoDrawer === 'emotion' && '감정 상태'}
                 {infoDrawer === 'trust' && '신뢰 상태'}
-                {infoDrawer === 'leak' && '누설 미터'}
+                {infoDrawer === 'leak' && '누설 바로미터'}
+                {infoDrawer === 'lieStages' && '쟁점별 진실파악 단계'}
+                {infoDrawer === 'contradiction' && '모순'}
+                {infoDrawer === 'profile' && `${targetProfile.name} 상세`}
               </div>
               <button
                 type="button"
@@ -709,17 +766,27 @@ export default function PCRightPanel() {
             {infoDrawer === 'emotion' ? (
               <>
                 <p className="pc-target-info-drawer__lede">
-                  재판관의 심문에 대한 NPC의 현재 감정. 각 감정에 <strong>효과적인 액션이 다릅니다</strong>.
+                  현재의 감정 상태. 감정 상태에 따라 <Em>효과적인 액션</Em>이 다릅니다.
                 </p>
                 <ul className="pc-target-info-drawer__list">
-                  <li><strong>경계</strong> — 방어가 견고합니다. <em>사실 추궁</em>으로 구체성을 끌어내세요.</li>
-                  <li><strong>자신감</strong> — 모순을 숨기기 쉬운 상태. <em>사실 추궁</em>이 효과적입니다.</li>
-                  <li><strong>동요</strong> — 실수가 잦아집니다. <em>공감 접근 · 동기 탐색</em>이 효과적입니다.</li>
-                  <li><strong>격앙</strong> — 감정 폭발 직전. <em>공감 접근</em>이 큰 신뢰 변화를 만듭니다.</li>
-                  <li><strong>체념</strong> — 자백 직전. 어떤 액션도 큰 전이를 일으킵니다.</li>
+                  <li>
+                    <strong>경계</strong> — 방어가 견고합니다. <ActionEm targets={ACTION_TARGETS.fact}>사실 추궁</ActionEm>으로 구체적인 상황 파악을 시도해보세요.
+                  </li>
+                  <li>
+                    <strong>자신감</strong> — 모순을 숨기고 있습니다. <ActionEm targets={ACTION_TARGETS.fact}>사실추궁</ActionEm>으로 허점을 공략해보세요.
+                  </li>
+                  <li>
+                    <strong>동요</strong> — 실수가 잦아집니다. <ActionEm targets={[...ACTION_TARGETS.empathy, ...ACTION_TARGETS.motive]}>공감접근·동기탐색</ActionEm>으로 마음을 열어보세요.
+                  </li>
+                  <li>
+                    <strong>격앙</strong> — 감정이 폭발하기 직전입니다. <ActionEm targets={ACTION_TARGETS.empathy}>공감 접근</ActionEm>으로 신뢰를 얻어 마음을 공략해보세요.
+                  </li>
+                  <li>
+                    <strong>체념</strong> — 자백이 예상됩니다. <ActionEm targets={ACTION_TARGETS.allInterrogation}>모든 액션</ActionEm>이 각각 효과적이니, 적극 공략해보세요.
+                  </li>
                 </ul>
                 <div className="pc-target-info-drawer__now">
-                  <span>지금:</span>
+                  <span>현재 상태:</span>
                   <strong>{EMOTION_LABELS[targetAgent.emotionalState.phase]}</strong>
                 </div>
               </>
@@ -728,11 +795,11 @@ export default function PCRightPanel() {
             {infoDrawer === 'trust' ? (
               <>
                 <p className="pc-target-info-drawer__lede">
-                  재판관을 NPC가 얼마나 신뢰하는지. 신뢰가 높으면 <strong>증거 없이 공감만으로 자백</strong>을 유도할 수 있습니다.
+                  재판관에 대한 신뢰도.
                 </p>
                 <div className="pc-target-info-drawer__columns">
                   <div>
-                    <div className="pc-target-info-drawer__col-h">올리기</div>
+                    <div className="pc-target-info-drawer__col-h">신뢰 상승</div>
                     <ul>
                       <li>공감 접근</li>
                       <li>경청</li>
@@ -740,7 +807,7 @@ export default function PCRightPanel() {
                     </ul>
                   </div>
                   <div>
-                    <div className="pc-target-info-drawer__col-h">내리기</div>
+                    <div className="pc-target-info-drawer__col-h">신뢰 하락</div>
                     <ul>
                       <li>모순 찌르기</li>
                       <li>반격</li>
@@ -749,10 +816,10 @@ export default function PCRightPanel() {
                   </div>
                 </div>
                 <p className="pc-target-info-drawer__tip">
-                  높을수록 <strong>신뢰 경로 자백</strong>이 열리고, NPC가 자발적으로 진실 단서를 제공합니다.
+                  신뢰가 높으면 <Em>자백</Em>이나 <Em>자발적인 진실 단서 제공</Em> 가능성이 높아집니다.
                 </p>
                 <div className="pc-target-info-drawer__now">
-                  <span>지금:</span>
+                  <span>현재 상태:</span>
                   <strong>{trustStateLabel}</strong>
                 </div>
               </>
@@ -761,11 +828,11 @@ export default function PCRightPanel() {
             {infoDrawer === 'leak' ? (
               <>
                 <p className="pc-target-info-drawer__lede">
-                  NPC가 실수로 흘린 진실 단서의 누적량. 높을수록 <strong>진실파악 단계 전이가 쉬워집니다</strong>.
+                  실수로 흘린 단서의 누적량. 높을수록 <Em>진실파악 단계가 빠르게 상승</Em>할 수 있습니다.
                 </p>
                 <div className="pc-target-info-drawer__columns">
                   <div>
-                    <div className="pc-target-info-drawer__col-h">쌓는 법</div>
+                    <div className="pc-target-info-drawer__col-h">발생 경로</div>
                     <ul>
                       <li>동기 탐색</li>
                       <li>공감 접근</li>
@@ -774,17 +841,125 @@ export default function PCRightPanel() {
                   <div>
                     <div className="pc-target-info-drawer__col-h">효과</div>
                     <ul>
-                      <li>단계 전이 임계값 ↓</li>
-                      <li>작은 모순으로 큰 붕괴</li>
+                      <li>진실파악 단계 전이 임계 ↓</li>
+                      <li>모순 기반 공략 가능성 ↑</li>
                     </ul>
                   </div>
                 </div>
                 <p className="pc-target-info-drawer__tip">
-                  ※ 이 미터는 <strong>사람 전체 공통</strong>입니다. 쟁점과 무관하게 누적됩니다.
+                  개방된 모든 쟁점에 <Em>공통으로 적용</Em>됩니다.
                 </p>
                 <div className="pc-target-info-drawer__now">
-                  <span>지금:</span>
+                  <span>현재 상태:</span>
                   <strong>{targetMeters.leakMeter}%</strong>
+                </div>
+              </>
+            ) : null}
+
+            {infoDrawer === 'lieStages' ? (
+              <>
+                <p className="pc-target-info-drawer__lede">
+                  쟁점별로 NPC가 진실에 얼마나 다가갔는지 나타내는 6단계 지표입니다. 단계가 높을수록 진실이 드러납니다.
+                </p>
+                <ul className="pc-target-info-drawer__list">
+                  {[
+                    { idx: 0, label: '완전 부정', desc: '사실 자체를 부인합니다. 모순이 거의 없어 공략이 어렵습니다.' },
+                    { idx: 1, label: '일부 인정', desc: '사소한 부분만 인정합니다. 핵심은 여전히 숨깁니다.' },
+                    { idx: 2, label: '핑계', desc: '인정하되 정황·이유를 들어 해명합니다.' },
+                    { idx: 3, label: '책임 전가', desc: '상대 또는 외부 탓으로 돌립니다.' },
+                    { idx: 4, label: '감정적', desc: '논리가 무너지고 감정이 앞섭니다. 자백 직전입니다.' },
+                    { idx: 5, label: '자백', desc: '사실을 그대로 인정합니다. 구체적인 정보가 모두 공개됩니다.' },
+                  ].map((row) => {
+                    const hasSelection = selectedLieStageIdx !== null
+                    const isSel = selectedLieStageIdx === row.idx
+                    const dimStyle = hasSelection && !isSel ? { color: '#4b5563', opacity: 0.55 } : undefined
+                    const selStyle = isSel ? { background: 'rgba(251, 191, 36, 0.12)', borderLeft: '2px solid #fbbf24', paddingLeft: '8px', borderRadius: '4px' } : undefined
+                    return (
+                      <li key={row.idx} style={{ ...(dimStyle ?? {}), ...(selStyle ?? {}) }}>
+                        <strong>{row.idx} · {row.label}</strong> — {row.desc}
+                      </li>
+                    )
+                  })}
+                </ul>
+                <p className="pc-target-info-drawer__tip">
+                  <Em>사실 추궁·증거 제시·공감 접근</Em> 등 액션의 효과로 단계가 상승합니다.
+                </p>
+              </>
+            ) : null}
+
+            {infoDrawer === 'profile' ? (() => {
+              // 해금 기반 정보 노출 — 스포일러 방지
+              const observedSet = new Set(observedArchetypes[pcTargetParty] ?? [])
+              const archetypeRevealed = observedSet.has(targetArchetype)
+              // 진실 오픈 판정: 임의 한 쟁점이라도 S4+면 일상까지 단편 공개
+              const lieStates = Object.values(targetAgent.lieStateMap ?? {}).map((e) => e?.currentState ?? 'S0')
+              const truthMostlyRevealed = lieStates.some((s) => s === 'S4' || s === 'S5')
+              return (
+                <>
+                  <p className="pc-target-info-drawer__lede">
+                    <strong>{targetProfile.name}</strong> · {targetProfile.age}세 · {targetProfile.occupation}
+                  </p>
+                  <div className="pc-target-info-drawer__columns">
+                    <div>
+                      <div className="pc-target-info-drawer__col-h">성향</div>
+                      <ul>
+                        <li>{archetypeRevealed ? getPcArchetypeLabel(targetArchetype) : '관찰 전'}</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <div className="pc-target-info-drawer__col-h">소개</div>
+                      <ul>
+                        <li>{targetProfile.age}세 · {targetProfile.occupation}</li>
+                      </ul>
+                    </div>
+                  </div>
+                  {targetProfile.speechStyle ? (
+                    <p className="pc-target-info-drawer__tip">
+                      <strong>말투</strong> — {targetProfile.speechStyle}
+                    </p>
+                  ) : null}
+                  {truthMostlyRevealed && targetProfile.dailyRoutine ? (
+                    <p className="pc-target-info-drawer__tip">
+                      <strong>일상</strong> — {targetProfile.dailyRoutine}
+                    </p>
+                  ) : (
+                    <p className="pc-target-info-drawer__tip" style={{ opacity: 0.55 }}>
+                      <strong>일상</strong> — 진실파악 단계 4 이상에서 공개됩니다
+                    </p>
+                  )}
+                  {/* verbalTells / 관찰 포인트는 게임 진행 중 발견 대상이므로 프로필에 미리 노출하지 않음 */}
+                </>
+              )
+            })() : null}
+
+            {infoDrawer === 'contradiction' ? (
+              <>
+                <p className="pc-target-info-drawer__lede">
+                  같은 쟁점에서 NPC가 앞뒤가 맞지 않는 진술을 할 때 누적되는 압박치입니다.
+                </p>
+                <div className="pc-target-info-drawer__columns">
+                  <div>
+                    <div className="pc-target-info-drawer__col-h">발생 경로</div>
+                    <ul>
+                      <li>사실 추궁 반복</li>
+                      <li>모순된 증거 제시</li>
+                      <li>증인 증언과의 충돌</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <div className="pc-target-info-drawer__col-h">효과</div>
+                    <ul>
+                      <li>진실파악 단계 전이 가속</li>
+                      <li>임계 도달 시 방어 붕괴</li>
+                    </ul>
+                  </div>
+                </div>
+                <p className="pc-target-info-drawer__tip">
+                  쟁점마다 별도로 누적됩니다. <Em>최대 5/5</Em>에 도달하면 결정적 모순으로 자백을 끌어냅니다.
+                </p>
+                <div className="pc-target-info-drawer__now">
+                  <span>현재 상태:</span>
+                  <strong>{disputeTokens} / 5</strong>
                 </div>
               </>
             ) : null}
@@ -918,14 +1093,16 @@ export default function PCRightPanel() {
         </section>
       ) : null}
 
-      <section className="sec pc-right-block pc-right-block--summary">
-        <div className="pc-skill-card pc-summary-card pc-right-card">
-          <div className="pc-skill-card__eyebrow">{'요약'}</div>
-          <button className="pc-summary-button" onClick={openSummaryPanel} type="button">
-            <span className="pc-summary-button__text">{'기록 정리'}</span>
-          </button>
-        </div>
-      </section>
+      {isInterrogationPhase ? (
+        <section className="sec pc-right-block pc-right-block--summary">
+          <div className="pc-skill-card pc-summary-card pc-right-card">
+            <div className="pc-skill-card__eyebrow">{'요약'}</div>
+            <button className="pc-summary-button" onClick={openSummaryPanel} type="button">
+              <span className="pc-summary-button__text">{'기록 정리'}</span>
+            </button>
+          </div>
+        </section>
+      ) : null}
     </div>
   )
 }

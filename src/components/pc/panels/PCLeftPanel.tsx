@@ -1,5 +1,5 @@
 import { useCallback, useMemo, useState, type DragEvent } from 'react'
-import { GamePhase, type CaseData, type EvidenceNode, type PartyId } from '../../../types'
+import { Phase, type CaseData, type EvidenceNode, type PartyId } from '../../../types'
 import { computeSurfacedEvidence } from '../../../engine/evidenceEngine'
 import { useStore } from '../../../store/useGameStore'
 import PCSvgIcon from '../icons/PCSvgIcon'
@@ -53,6 +53,10 @@ export default function PCLeftPanel() {
   const partnerHints = useMemo(() => getCombinationPartnerHints(), [getCombinationPartnerHints, evidenceStates, combinationLabRuntime])
   const lastFocusedDisputeId = useStore((s) => s.lastFocusedDisputeId)
   const [timelineOpen, setTimelineOpen] = useState(false)
+
+  // Phase 1 (사전진술) 등에서는 증거 인터랙션 차단 — 스크립트 흐름 보존.
+  // 활성 Phase 체계: 0(브리핑) → 1(사전진술) → 2(심문 = Phase.Interrogation) → 3a(중재) → 3b(판결)
+  const evidenceInteractionAllowed = currentPhase === Phase.Interrogation
 
   const surfaceResult = useMemo(() => {
     if (!caseData || evidenceDefinitions.length === 0) {
@@ -150,7 +154,12 @@ export default function PCLeftPanel() {
         <PCSvgIcon id="i-clock" size={14} />
       </button>
 
-      <section className="sec pc-play-evidence-section">
+      <section
+        className="sec pc-play-evidence-section"
+        style={!evidenceInteractionAllowed ? { opacity: 0.4, pointerEvents: 'none' } : undefined}
+        aria-disabled={!evidenceInteractionAllowed}
+        title={!evidenceInteractionAllowed ? '심문 단계부터 증거를 다룰 수 있습니다.' : undefined}
+      >
         <div className="sec-h">
           <PCSvgIcon id="i-doc" size={14} />
           <span>증거 수첩</span>

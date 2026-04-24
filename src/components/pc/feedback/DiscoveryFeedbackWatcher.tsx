@@ -185,6 +185,13 @@ export default function DiscoveryFeedbackWatcher() {
     if (!caseData) return
     const dispute = caseData.disputes.find((d) => d.id === pendingEmergence.disputeId)
 
+    // 쟁점 발견 시 시스템 메시지로 흐름 표시 — 모달이 닫힌 뒤에도 채팅 로그에 흔적 남김
+    state.addDialogue({
+      speaker: 'system',
+      text: `새 쟁점이 등장했다 — ${dispute?.name ?? pendingEmergence.disputeId}`,
+      relatedDisputes: [pendingEmergence.disputeId],
+      turn: state.turnCount,
+    })
     state.addJudgeObservation({
       turnCount: state.turnCount,
       category: 'event',
@@ -206,8 +213,29 @@ export default function DiscoveryFeedbackWatcher() {
           label: '쟁점 보드에 반영',
           tone: 'gold',
           onSelect: () => {
-            useGameStore.getState().acknowledgeEmergence(pendingEmergence.disputeId)
+            const s = useGameStore.getState()
+            s.acknowledgeEmergence(pendingEmergence.disputeId)
             enqueuedRef.current.delete(key)
+            // 모달 닫힘 후 강조 시작 — 우측 쟁점 카드 + 상단 쟁점 영역 깜빡 (4초)
+            s.setLastFocusedDisputeId(pendingEmergence.disputeId)
+            s.setRecentlyEmergedDispute(pendingEmergence.disputeId)
+            window.setTimeout(() => {
+              useGameStore.getState().setRecentlyEmergedDispute(null)
+            }, 4000)
+            // [B-16-B] 화제 전환 NPC hook 발화 — 새 쟁점이 emerge되었음을 NPC 시점에서 자연스럽게 인지.
+            // 데이터 측 hook atom (B-16-A 후속)이 도입되기 전까지 임시 generic 텍스트.
+            const emergedDispute = s.caseData?.disputes.find((d) => d.id === pendingEmergence.disputeId)
+            const targetParty = s.pcTargetParty
+            const emergedName = emergedDispute?.name ?? ''
+            s.addDialogue({
+              speaker: targetParty,
+              text: emergedName
+                ? `…사실, ${emergedName} 건도 함께 봐주셔야 합니다.`
+                : '…사실, 그것만이 아니었습니다.',
+              relatedDisputes: [pendingEmergence.disputeId],
+              turn: s.turnCount,
+              behaviorHint: '시선이 흔들리며 잠시 멈춘다. 숨겼던 사실 한 조각을 내놓는다.',
+            })
           },
         },
       ],
@@ -380,8 +408,8 @@ export default function DiscoveryFeedbackWatcher() {
 
       const handleAllow = () => {
         const s = useGameStore.getState()
-        s.addDialogue({ speaker: ev.party, text: interjectionText, relatedDisputes: [ev.disputeId], turn: s.turnCount })
         s.addDialogue({ speaker: 'judge', text: '발언을 허용합니다.', relatedDisputes: [ev.disputeId], turn: s.turnCount })
+        s.addDialogue({ speaker: ev.party, text: interjectionText, relatedDisputes: [ev.disputeId], turn: s.turnCount })
         s.trackMetric('interjectionAllowed')
         s.trackMetric('counterQuestionUsed')
         recordInterjectionChoice('allow')
@@ -402,15 +430,7 @@ export default function DiscoveryFeedbackWatcher() {
         releaseKey()
       }
 
-      state.addJudgeObservation({
-        turnCount: state.turnCount,
-        category: 'event',
-        iconId: 'i-bolt',
-        title: interjectionText,
-        summary: `${partyName} · 끼어들기 시도`,
-        party: ev.party,
-        disputeId: ev.disputeId,
-      })
+      // 끼어들기는 모달로만 표출 — 관찰 패널에 추가하지 않음 (시스템 관찰과 NPC 발화 경계 보존)
       state.enqueueFeedback({
         kind: 'contradiction',
         eyebrow: '끼어들기',

@@ -297,6 +297,12 @@ function MessageBubble({ entry, animate, combinableTexts, combinationHintMap, is
           })()}
           <div className="pc-log-bubble__text">{displayText}</div>
           {entry.behaviorHint ? <div className="pc-log-bubble__hint">{entry.behaviorHint}</div> : null}
+          {/* 개발 모드 디버그 배지 — 발화 출처 (script / llm / fallback) */}
+          {import.meta.env.DEV && entry.source && (entry.speaker === 'a' || entry.speaker === 'b') ? (
+            <div style={{ marginTop: 4, fontSize: 10, opacity: 0.5, color: entry.source === 'script' ? '#60a5fa' : entry.source === 'llm' ? '#a78bfa' : '#9ca3af' }}>
+              [{entry.source.toUpperCase()}]
+            </div>
+          ) : null}
         </button>
       </div>
     </div>

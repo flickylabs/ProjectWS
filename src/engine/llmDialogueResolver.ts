@@ -438,8 +438,10 @@ function buildSystemPrompt(
       S4: `감정적으로 호소하세요. 논리보다 감정으로.\n★ "그때 얼마나 힘들었는지", "다 이유가 있었다"는 식.\n★ 이전에 거짓말한 것에 대해 "말하기 두려웠다", "숨기고 싶었다"고 인정할 수 있습니다.`,
       S5: `인정합니다. 사실을 인정하되 자기 입장에서 재해석하세요.\n★ 진실을 말하되, 자신의 동기와 사정을 설명하세요.`,
     }
+    // ★ 이 라벨은 LLM 시스템 프롬프트에 들어가는 메타 정보 — 발화에 그대로 옮기면 안 됨.
+    // 특히 "자기"는 NPC가 재판관 앞에서 쓰면 부적절(자기 = 상대 직접 호칭). "스스로" 등으로 풀어 씀.
     const motiveHints: Record<string, string> = {
-      self_protection: '자기를 보호하려는 마음',
+      self_protection: '스스로를 지키려는 마음',
       face_saving: '체면을 지키려는 마음',
       shame_avoidance: '수치심을 피하려는 마음 — 공감 질문에 약함',
       relationship_maintenance: '관계를 지키려는 마음 — 비공개 보장에 약함',
@@ -765,7 +767,7 @@ function buildUserPrompt(
   const callFormOut = myCallTerms?.toPartner ? (myCallTerms.toPartner === '자기' ? '자기야' : myCallTerms.toPartner) : opName + '씨'
 
   const isJudgeOnly = responseMode === 'answer_only' || responseMode === 'private_confession' || responseMode === 'yes_no_first'
-  const honorificRule = `\n★★ 호칭 규칙 (절대 위반 금지):\n- 재판관에게 ${opName}${pp을를(opName)} 언급할 때: 반드시 "${judgeRefOut}"로 지칭\n  ✅ "${judgeRefOut}${pp이가(judgeRefOut)} 그렇게 했습니다", "${judgeRefOut}${pp은는(judgeRefOut)} 알고 있었습니다"\n  ❌ "${callFormOut}가~", "${callFormOut}도~" (애칭을 재판관 앞에서 쓰지 마라)\n- ${opName}에게 직접 말할 때만: "${callFormOut}" 사용 가능\n`
+  const honorificRule = `\n★★ 호칭 규칙 (절대 위반 금지):\n- 재판관에게 ${opName}${pp을를(opName)} 언급할 때: 반드시 "${judgeRefOut}"로 지칭\n  ✅ "${judgeRefOut}${pp이가(judgeRefOut)} 그렇게 했습니다", "${judgeRefOut}${pp은는(judgeRefOut)} 알고 있었습니다"\n  ❌ "${callFormOut}가~", "${callFormOut}도~" (애칭을 재판관 앞에서 쓰지 마라)\n- ${opName}에게 직접 말할 때만: "${callFormOut}" 사용 가능\n★★ 재판관에게 의문 표현 (절대 위반 금지):\n- 재판관에게 직접 답을 요구하는 질문 금지. 재판관은 답할 수 없다.\n  ❌ "재판관님, ~ 뭐였어?", "재판관님, ~ 알려주십시오", "재판관님, ~ 말해줄 수 없습니까?"\n  ✅ 자기 회의/숙고 어조로: "저도 모르겠습니다", "이유가 무엇이었을지...", "왜 그랬는지 저도 모릅니다"\n★★ 자기 지칭 (절대 위반 금지):\n- "자기"로 자기 자신 지칭 금지 ("자기"는 상대 직접 호칭에만 사용).\n  ❌ "자기를 보호하려고", "자기 자신이"  ✅ "스스로를 지키려고", "본인이"\n`
   const addressRule = isJudgeOnly
     ? `★ 당신은 "${myName}"이다. 지금 재판관에게만 답한다. ${opName}에게 말하는 것이 아니다.\n★ 상대 호칭("${callFormOut}" 등)으로 시작 금지. 호칭 없이 바로 답하거나 "재판관님"으로 시작.\n★ npcResponse 전체가 재판관을 향한 존댓말(~습니다, ~요)이어야 한다.\n★ "${opName}"에게 직접 말하는 문장을 넣지 마라.\n${honorificRule}`
     : `★ 당신은 "${myName}"이다. 재판관에게 답한 뒤, ${opName}에게 짧게 1문장만 덧붙일 수 있다.\n★ 재판관에게는 반드시 존댓말. 상대에게는 관계에 맞는 말투.\n★ 답변의 주 대상은 재판관이다. 상대에게 직접 말하는 비중이 50%를 넘지 마라.\n${honorificRule}`
@@ -1023,8 +1025,26 @@ export function fixMisdirectedAddress(
     // 문장 중간에서도 "자기야," 등을 제거
     result = result.replace(new RegExp(`\\. ${addr.replace(',', ',')}`, 'g'), '. 재판관님, ')
   }
+  // 따옴표 안의 직접 인용은 보존 (인용된 발화의 호칭 의미를 깨뜨리지 않음).
+  // 예: '제 남편은 늘 "네가 예민한 거야"라고...' — 인용 안 "네가"는 그대로.
+  const quotedSegments: string[] = []
+  result = result.replace(/"[^"]*"|'[^']*'|“[^”]*”|‘[^’]*’/g, (m) => {
+    quotedSegments.push(m)
+    return ` Q${quotedSegments.length - 1} `
+  })
+
   result = result.replace(/네가\s/g, '상대방이 ')
   result = result.replace(/니가\s/g, '상대방이 ')
+
+  // "자기"로 자기 자신 지칭 (재판관 앞 부적절). 정확한 컨텍스트 패턴만 변환.
+  // ※ "자기야" 같은 호격은 위에서 이미 처리됨.
+  result = result.replace(/자기를 보호하려/g, '스스로를 지키려')
+  result = result.replace(/자기를 지키려/g, '스스로를 지키려')
+  result = result.replace(/자기 자신을/g, '스스로를')
+  result = result.replace(/자기 자신이/g, '본인이')
+
+  // 인용 복원
+  result = result.replace(/ Q(\d+) /g, (_m, i) => quotedSegments[Number(i)] ?? '')
 
   // ── 이름 직접 호칭 교정 ("세린아,", "지석아," 등) ──
   // Thread E에서 "이름직접호칭 WARN 5건" 보고됨
@@ -1177,6 +1197,23 @@ export function enforceHonorifics(text: string): string {
       [/인 거야\?$/, '인 겁니까?'],
       [/은 거야\?$/, '은 겁니까?'],
       [/인 거잖아\?$/, '인 거잖아요?'],
+      // 부정 의문문 — "아니야?/아닌가?" 누락 (스샷6 박지연 발화 결함 재현)
+      [/아니야\?$/, '아닙니까?'],
+      [/아닌가\?$/, '아닙니까?'],
+      [/아니지\?$/, '아니죠?'],
+      // 추가 누락 의문문 패턴
+      [/이지\?$/, '이죠?'],
+      [/봐\?$/, '봅니까?'],
+      [/돼\?$/, '됩니까?'],
+      [/해\?$/, '합니까?'],
+      // 의문문 — 과거형 "뭐였어?/이었어?" 누락 (스샷7 박지연 발화 결함 재현)
+      [/뭐였어\?$/, '뭐였습니까?'],
+      [/이었어\?$/, '이었습니까?'],
+      [/었어\?$/, '었습니까?'],
+      [/이야\?$/, '인가요?'],
+      [/이냐\?$/, '인가요?'],
+      [/이래\?$/, '인가요?'],
+      [/하네\?$/, '하네요?'],
       // 감탄/강조
       [/잖아!$/, '잖아요!'],
       [/거야!$/, '겁니다!'],
@@ -2096,6 +2133,12 @@ async function tryBlueprintPath(
       currentLieState: lieEntry.currentState,
       preferAmountSlotAtS5: requiresConcreteAmountDetail(dispute),
     })
+    // [B-18 픽스] 회피 로직 활성화 — 선택된 atom IDs를 store에 기록.
+    // 이전에는 trackUsedAtoms가 어디서도 호출되지 않아 같은 atom 무한 반복 선택 결함이 있었음.
+    const usedAtomIds = atomPlan.selectedAtoms.map(s => s.atomId)
+    if (usedAtomIds.length > 0) {
+      store.trackUsedAtoms(target, usedAtomIds)
+    }
     blueprintAmountHint = atomPlan.slotSelections.find((selection) => selection.family === 'amount')?.value
     systemPrompt = buildBlueprintSystemPromptV2(
       blueprint, normalizedPolicy, atomPlan, caseData, target, recentDialogues, lieEntry.currentState, hasMonetaryDisputeDetail(dispute),

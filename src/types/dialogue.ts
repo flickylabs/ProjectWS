@@ -19,6 +19,8 @@ export interface DialogueEntry {
   isHidden?: boolean
   /** 자동 즐겨찾기 대상 — timeline_lock 등에서 사용 */
   autoPin?: boolean
+  /** 발화 출처 — 개발 모드에서 디버그 배지 표시용 ('script' | 'llm' | 'fallback') */
+  source?: 'script' | 'llm' | 'fallback'
   /** 모순 감지 전용: 클릭하면 추궁 가능 */
   contradictionMeta?: {
     party: PartyId

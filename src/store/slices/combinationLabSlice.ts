@@ -9,6 +9,7 @@ import type {
   EvidenceNode,
 } from '../../types'
 import { stripOutputCodename } from '../../utils/combinationLabels'
+import { isEvidenceFullyInvestigated } from '../../engine/evidenceEngine'
 
 export interface CombinationLabHistoryEntry {
   recipeId: string
@@ -156,11 +157,16 @@ export const createCombinationLabSlice: StateCreator<any, [], [], CombinationLab
     const root = get() as any
     // 스킬 포인트 1 이상 필요
     if ((root.resources?.skillPoints ?? 0) < 1) return false
+    const evidenceDefinitions = (root.evidenceDefinitions ?? []) as EvidenceNode[]
+    const defById = new Map(evidenceDefinitions.map((d) => [d.id, d]))
     return recipe.inputs.every((inputId: string) => {
       const node = config.nodes.find((item: CombinationLabNode) => item.id === inputId)
       if (!node) return false
       if (node.type === 'evidence' || node.type === 'derived_evidence') {
-        return !!root.evidenceStates?.[inputId]?.unlocked
+        const st = root.evidenceStates?.[inputId]
+        if (!st?.unlocked) return false
+        // investigationStages 미완료 시 조합 차단
+        return isEvidenceFullyInvestigated(st, defById.get(inputId))
       }
       return state.discoveredNodeIds.includes(inputId)
     })

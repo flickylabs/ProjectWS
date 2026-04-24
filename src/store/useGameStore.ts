@@ -220,6 +220,10 @@ export type GameStore = PhaseSlice & AgentSlice & ResourceSlice & EvidenceSlice 
   /** 최근 집중한 쟁점 ID (심문/증거 제시 시 갱신) */
   lastFocusedDisputeId: string | null
   setLastFocusedDisputeId: (id: string | null) => void
+  /** 가장 최근 emerge된 쟁점 ID + 시각 — UI 깜빡 강조용. setRecentlyEmergedDispute 호출 후 일정 시간 후 자동 해제 */
+  recentlyEmergedDisputeId: string | null
+  recentlyEmergedAt: number | null
+  setRecentlyEmergedDispute: (id: string | null) => void
   pcTargetParty: PartyId
   setPcTargetParty: (party: PartyId) => void
   pcSummaryUnlocked: boolean
@@ -552,6 +556,12 @@ export const useGameStore: import('zustand').UseBoundStore<import('zustand').Sto
     setDisputeBoardAction: (a: GameStore['disputeBoardAction']) => set({ disputeBoardAction: a }),
     lastFocusedDisputeId: null,
     setLastFocusedDisputeId: (id: string | null) => set({ lastFocusedDisputeId: id }),
+    recentlyEmergedDisputeId: null,
+    recentlyEmergedAt: null,
+    setRecentlyEmergedDispute: (id: string | null) => set({
+      recentlyEmergedDisputeId: id,
+      recentlyEmergedAt: id ? Date.now() : null,
+    }),
     pcTargetParty: 'a',
     setPcTargetParty: (party: PartyId) => set({ pcTargetParty: party }),
     pcSummaryUnlocked: false,
