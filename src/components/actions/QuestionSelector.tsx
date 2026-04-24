@@ -64,6 +64,7 @@ export default function QuestionSelector({ target, onSelect, llmMode, onFreeResu
   const archetypeA = useStore((s) => s.archetypeA)
   const archetypeB = useStore((s) => s.archetypeB)
   const questionMeters = useStore((s) => s.questionMeters)
+  const lastFocusedDisputeId = useStore((s) => s.lastFocusedDisputeId)
 
   // target의 가장 방어적인 dispute 기준으로 보수적 추정
   const effectivenessMap = useMemo(() => {
@@ -72,6 +73,13 @@ export default function QuestionSelector({ target, onSelect, llmMode, onFreeResu
     const archetype = target === 'a' ? archetypeA : archetypeB
     const meters = questionMeters[target]
     const emotionTier = getEmotionTier(agent.emotionalState.internalValue).tier
+    const focusDisputeId =
+      (lastFocusedDisputeId && agent.lieStateMap[lastFocusedDisputeId] ? lastFocusedDisputeId : null)
+      ?? Object.keys(agent.lieStateMap)[0]
+      ?? ''
+    const contradictionTokens = focusDisputeId
+      ? (meters.contradictionTokensByDispute[focusDisputeId] ?? 0)
+      : meters.contradictionTokens
 
     // 가장 방어적인(= 가장 낮은) lieState를 찾아 보수적 추정
     let worstLieState = 'S5'
@@ -84,10 +92,10 @@ export default function QuestionSelector({ target, onSelect, llmMode, onFreeResu
     const types = ['fact_pursuit', 'motive_search', 'empathy_approach'] as const
     const map: Record<string, ReturnType<typeof computeEffectiveness>> = {}
     for (const t of types) {
-      map[t] = computeEffectiveness(t, worstLieState, emotionTier, archetype, meters.contradictionTokens, meters.trustWindow)
+      map[t] = computeEffectiveness(t, worstLieState, emotionTier, archetype, contradictionTokens, meters.trustWindow)
     }
     return map
-  }, [target, agentA, agentB, archetypeA, archetypeB, questionMeters])
+  }, [target, agentA, agentB, archetypeA, archetypeB, questionMeters, lastFocusedDisputeId])
 
   if (!target) return null
 

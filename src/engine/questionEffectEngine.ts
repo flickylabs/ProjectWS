@@ -43,8 +43,10 @@ export type QuestionGameEffect =
 
 /** 질문 효과 누적 상태 (파티별) */
 export interface QuestionMeterState {
-  /** 모순토큰: 사실추궁 연속 성공 횟수 (0~5) */
+  /** 모순토큰: 쟁점별 토큰의 글로벌 집계값 (0~5) */
   contradictionTokens: number
+  /** 모순토큰 쟁점별 SoT (Single Source of Truth) */
+  contradictionTokensByDispute: Record<string, number>
   /** 누설미터: 동기탐색 누적 압박 (0~100) */
   leakMeter: number
   /** 신뢰창구: 공감접근 누적 신뢰 (0~100) */
@@ -100,11 +102,19 @@ const DIMINISHING_FACTOR = 0.6
 export function createInitialMeterState(): QuestionMeterState {
   return {
     contradictionTokens: 0,
+    contradictionTokensByDispute: {},
     leakMeter: 0,
     trustWindow: 0,
     lastQuestionType: null,
     consecutiveSameType: 0,
   }
+}
+
+/** byDispute -> 글로벌 파생값 (max) */
+export function deriveGlobalContradictionTokens(byDispute: Record<string, number>): number {
+  const values = Object.values(byDispute)
+  if (values.length === 0) return 0
+  return Math.max(...values, 0)
 }
 
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -179,7 +189,7 @@ export function resolveQuestionEffect(
   }
 
   // 미터 업데이트
-  const updatedMeter = applyMeterUpdate(meterState, questionType, result.delta, consecutive)
+  const updatedMeter = applyMeterUpdate(meterState, questionType, result.delta, consecutive, disputeId)
 
   return { result, updatedMeter }
 }
@@ -188,14 +198,18 @@ export function resolveQuestionEffect(
  * 미터 상태에서 현재 활성 효과를 조회한다.
  * UI에서 표시할 때 사용.
  */
-export function getMeterEffects(meter: QuestionMeterState): {
+export function getMeterEffects(meter: QuestionMeterState, disputeId?: string): {
   contradictionActive: boolean
   leakWarning: boolean
   leakCritical: boolean
   trustWindowOpen: boolean
 } {
+  const contradictionTokens = disputeId
+    ? (meter.contradictionTokensByDispute[disputeId] ?? 0)
+    : meter.contradictionTokens
+
   return {
-    contradictionActive: meter.contradictionTokens >= 2,
+    contradictionActive: contradictionTokens >= 2,
     leakWarning: meter.leakMeter >= LEAK_THRESHOLD_SUPPRESSION,
     leakCritical: meter.leakMeter >= LEAK_THRESHOLD_EXPLOSION,
     trustWindowOpen: meter.trustWindow >= TRUST_WINDOW_THRESHOLD,
@@ -230,7 +244,8 @@ function resolveFactPursuit(
   }
   tokenGain = Math.round(tokenGain * diminish)
 
-  const newTokens = Math.min(meter.contradictionTokens + tokenGain, CONTRADICTION_MAX)
+  const prevDisputeTokens = meter.contradictionTokensByDispute[disputeId] ?? 0
+  const newTokens = Math.min(prevDisputeTokens + tokenGain, CONTRADICTION_MAX)
 
   // ── 확정적 기본 효과: deny + S0-S2 → 시점 고정 ──
   const stateRank = STATE_RANK[lieState]
@@ -447,28 +462,41 @@ function applyMeterUpdate(
   questionType: QuestionType,
   delta: number,
   consecutive: number,
+  disputeId: string,
 ): QuestionMeterState {
   const updated = { ...prev }
   updated.lastQuestionType = questionType
   updated.consecutiveSameType = consecutive
 
   switch (questionType) {
-    case 'fact_pursuit':
-      updated.contradictionTokens = Math.min(prev.contradictionTokens + delta, CONTRADICTION_MAX)
+    case 'fact_pursuit': {
+      const nextDisputeTokens = Math.min((prev.contradictionTokensByDispute[disputeId] ?? 0) + delta, CONTRADICTION_MAX)
+      updated.contradictionTokensByDispute = {
+        ...prev.contradictionTokensByDispute,
+        [disputeId]: nextDisputeTokens,
+      }
+      updated.contradictionTokens = deriveGlobalContradictionTokens(updated.contradictionTokensByDispute)
       // 다른 유형 사용 안 하면 누설/신뢰 자연 감소
       updated.leakMeter = Math.max(prev.leakMeter - 3, 0)
       updated.trustWindow = Math.max(prev.trustWindow - 2, 0)
       break
+    }
     case 'motive_search':
       updated.leakMeter = Math.min(prev.leakMeter + delta, 100)
       // 모순토큰은 유지, 신뢰 약간 감소
       updated.trustWindow = Math.max(prev.trustWindow - 3, 0)
       break
-    case 'empathy_approach':
+    case 'empathy_approach': {
       updated.trustWindow = Math.min(prev.trustWindow + delta, 100)
-      // 모순토큰 자연 감소 (공감하면 긴장 풀림)
-      updated.contradictionTokens = Math.max(prev.contradictionTokens - 1, 0)
+      // 공감은 현재 쟁점의 모순토큰만 낮춘다.
+      const nextDisputeTokens = Math.max((prev.contradictionTokensByDispute[disputeId] ?? 0) - 1, 0)
+      updated.contradictionTokensByDispute = {
+        ...prev.contradictionTokensByDispute,
+        [disputeId]: nextDisputeTokens,
+      }
+      updated.contradictionTokens = deriveGlobalContradictionTokens(updated.contradictionTokensByDispute)
       break
+    }
   }
 
   return updated

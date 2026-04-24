@@ -194,10 +194,11 @@ function checkContradiction(snapshot: TurnSnapshot): GameEventTrigger | null {
   if (snapshot.focusDisputeId === lastContradictionDisputeId && snapshot.turn - lastContradictionTurn < 6) return null
 
   const party = snapshot.activeParty
-  const meterEffects = getMeterEffects(snapshot.meters[party])
+  const focusTokens = snapshot.meters[party].contradictionTokensByDispute[snapshot.focusDisputeId] ?? 0
+  const meterEffects = getMeterEffects(snapshot.meters[party], snapshot.focusDisputeId)
 
   // 조건 1: 모순토큰 3개 이상 축적
-  if (snapshot.meters[party].contradictionTokens < CONTRADICTION_MIN_TOKENS) return null
+  if (focusTokens < CONTRADICTION_MIN_TOKENS) return null
 
   // 조건 2: 현재 쟁점에서 deny/hedge 상태
   const lieEntry = snapshot.lieStates[party][snapshot.focusDisputeId]
@@ -205,8 +206,8 @@ function checkContradiction(snapshot: TurnSnapshot): GameEventTrigger | null {
   const rank = STATE_RANK[lieEntry.currentState]
   if (rank > 2) return null // partial 이상이면 이미 모순 관련 없음
 
-  const severity = snapshot.meters[party].contradictionTokens >= 5 ? 'critical'
-    : snapshot.meters[party].contradictionTokens >= 4 ? 'major' : 'minor'
+  const severity = focusTokens >= 5 ? 'critical'
+    : focusTokens >= 4 ? 'major' : 'minor'
 
   // 모순 효과는 플레이어 선택(지적/넘어간다)에 따라 지연 적용
   const deferredEffects: TriggerEffect[] = [
@@ -225,7 +226,7 @@ function checkContradiction(snapshot: TurnSnapshot): GameEventTrigger | null {
   const events = getEventTexts(snapshot.caseId)
   const contradictions = events?.contradictions ?? []
   // 토큰 수에 따라 적절한 모순 이벤트 선택
-  const eventIdx = Math.min(snapshot.meters[party].contradictionTokens - CONTRADICTION_MIN_TOKENS, contradictions.length - 1)
+  const eventIdx = Math.min(focusTokens - CONTRADICTION_MIN_TOKENS, contradictions.length - 1)
   const v3Event = contradictions[Math.max(0, eventIdx)]
 
   return {
