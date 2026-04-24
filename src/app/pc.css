@@ -5697,6 +5697,45 @@ body.pc-mode .pc-log-bubble {
   position: relative;
 }
 
+/* autoPin 발언 외부 모서리 핀 배지 */
+body.pc-mode .pc-log-bubble__pin-badge {
+  position: absolute;
+  top: -7px;
+  right: -7px;
+  width: 20px;
+  height: 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--pc-gold-light, #d4a24e);
+  color: #1a1a1f;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.45), 0 0 0 2px var(--pc-bg-panel, #1a1a1f);
+  pointer-events: auto;
+  cursor: help;
+  z-index: 2;
+  animation: pc-log-bubble-pin-in 0.4s cubic-bezier(0.2, 0.9, 0.3, 1.1);
+}
+
+body.pc-mode .pc-log-bubble__pin-badge svg {
+  display: block;
+}
+
+@keyframes pc-log-bubble-pin-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.4) rotate(-18deg);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1.12) rotate(4deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
+
 body.pc-mode .pc-log-bubble__combo-badge {
   font-size: 11px;
   line-height: 1;

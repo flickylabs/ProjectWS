@@ -263,6 +263,15 @@ function MessageBubble({ entry, animate, combinableTexts, combinationHintMap, is
           onClick={() => openEntryDetail()}
           type="button"
         >
+          {entry.autoPin ? (
+            <span
+              aria-label="자동 핀된 발언"
+              className="pc-log-bubble__pin-badge"
+              title={entry.behaviorHint ?? '발언노트에 자동 핀됨'}
+            >
+              <PCSvgIcon id="i-pin" size={11} />
+            </span>
+          ) : null}
           {entry.isConfidential ? (
             <div className="pc-log-bubble__confidential">
               <PCSvgIcon id="i-lock" size={12} />
