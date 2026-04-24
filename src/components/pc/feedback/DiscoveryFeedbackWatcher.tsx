@@ -6,6 +6,7 @@ import { applyWitnessSlot } from '../../../hooks/useActionDispatch'
 import { recordInterjectionChoice } from '../../../engine/phase3LogCollector'
 import { pp이가 } from '../../../engine/koreanPostposition'
 import type { TruthJudgment } from '../../../types/discovery'
+import { getEmergenceHook, getEmergenceHookSpeaker } from '../../../data/emergenceHooks'
 
 /**
  * Discovery 9종 pending 상태를 감시해 통합 피드백 큐로 보내는 Watcher.
@@ -222,20 +223,36 @@ export default function DiscoveryFeedbackWatcher() {
             window.setTimeout(() => {
               useGameStore.getState().setRecentlyEmergedDispute(null)
             }, 4000)
-            // [B-16-B] 화제 전환 NPC hook 발화 — 새 쟁점이 emerge되었음을 NPC 시점에서 자연스럽게 인지.
-            // 데이터 측 hook atom (B-16-A 후속)이 도입되기 전까지 임시 generic 텍스트.
+            // [B-16-A·B] 화제 전환 NPC hook 발화 — 사전 작성된 데이터 (emergenceHooks.ts) 활용.
+            // 화자 lieState 기반으로 톤 선택 (S0~S2: attack / S3~S4: confession / S5: resignation).
             const emergedDispute = s.caseData?.disputes.find((d) => d.id === pendingEmergence.disputeId)
-            const targetParty = s.pcTargetParty
-            const emergedName = emergedDispute?.name ?? ''
-            s.addDialogue({
-              speaker: targetParty,
-              text: emergedName
-                ? `…사실, ${emergedName} 건도 함께 봐주셔야 합니다.`
-                : '…사실, 그것만이 아니었습니다.',
-              relatedDisputes: [pendingEmergence.disputeId],
-              turn: s.turnCount,
-              behaviorHint: '시선이 흔들리며 잠시 멈춘다. 숨겼던 사실 한 조각을 내놓는다.',
-            })
+            const hookCaseId = (s.caseData?.caseId ?? '').replace(/^case-/, '')
+            const hookSpeaker = getEmergenceHookSpeaker(hookCaseId, pendingEmergence.disputeId)
+            const speakerLieState = hookSpeaker
+              ? (hookSpeaker === 'a' ? s.agentA : s.agentB).lieStateMap[pendingEmergence.disputeId]?.currentState
+              : undefined
+            const hook = getEmergenceHook(hookCaseId, pendingEmergence.disputeId, speakerLieState)
+            if (hook) {
+              s.addDialogue({
+                speaker: hook.speaker,
+                text: hook.text,
+                behaviorHint: hook.behaviorHint,
+                relatedDisputes: [pendingEmergence.disputeId],
+                turn: s.turnCount,
+              })
+            } else {
+              // 폴백 — 데이터 없는 경우 (Legacy 사건 등) generic 발화
+              const emergedName = emergedDispute?.name ?? ''
+              s.addDialogue({
+                speaker: s.pcTargetParty,
+                text: emergedName
+                  ? `…사실, ${emergedName} 건도 함께 봐주셔야 합니다.`
+                  : '…사실, 그것만이 아니었습니다.',
+                relatedDisputes: [pendingEmergence.disputeId],
+                turn: s.turnCount,
+                behaviorHint: '시선이 흔들리며 잠시 멈춘다.',
+              })
+            }
           },
         },
       ],

@@ -2080,6 +2080,84 @@ function applyTrustEffect(actionType: string, target: PartyId) {
   }
 }
 
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+// 재판관 질문 풀 — 6 풀 × 10개 (GPT Pro 작성, 변수: ${myName} ${topic} ${opName})
+// 출처: gpt-pro-runs/npc-hook-and-judge-questions/output/proposals-B-judge-questions.json
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+const FACT_POOL_SOFT = [
+  '${myName} 씨, ${topic} 당시 처음 확인한 사실부터 차례대로 말씀해 주십시오.',
+  '${myName} 씨, ${topic}에 대해 처음 어떻게 알게 되었는지 경위를 설명해 주십시오.',
+  '${myName} 씨, ${topic} 직전에는 어떤 일이 있었습니까?',
+  '${myName} 씨, ${topic} 당시 옆에 있었거나 내용을 들은 사람이 있었습니까?',
+  '${myName} 씨, ${topic} 이후에 누구에게 먼저 말했는지 말씀해 주십시오.',
+  '${myName} 씨, ${topic}에 관해 직접 본 것과 나중에 들은 것을 나누어 말씀해 주십시오.',
+  '${myName} 씨, ${topic}에서 시간 순서가 중요합니다. 먼저 일어난 일부터 짚어 주십시오.',
+  '${myName} 씨, ${topic} 관련해서 확인할 수 있는 메시지나 계좌 기록이 있습니까?',
+  '${myName} 씨, ${topic}에 대해 ${opName} 씨의 말과 다른 부분이 있습니다. 어느 쪽이 사실입니까?',
+  '${myName} 씨, ${topic} 당시 본인이 직접 한 행동만 분명히 말씀해 주십시오.',
+]
+const FACT_POOL_HARD = [
+  '${myName} 씨, ${topic}에 대한 말씀이 앞뒤가 맞지 않습니다. 지금 확인된 사실만 답하십시오.',
+  '${myName} 씨, ${topic} 당시의 시간을 더 흐리지 마십시오. 직전과 직후의 행동을 분명히 말하십시오.',
+  '${myName} 씨에게 묻습니다, ${topic}에 대해 직접 본 사실과 추측을 섞지 말고 구분하십시오.',
+  '${myName} 씨, ${topic} 관련 기록이 남아 있다면 무엇이 남아 있는지 바로 말씀하십시오.',
+  '${myName} 씨, ${opName} 씨의 설명과 충돌하는 부분이 있습니다. ${topic}에서 어느 대목을 부인하십니까?',
+  '${myName} 씨, ${topic}에 대해 말을 바꾼 이유부터 설명하십시오.',
+  '${myName} 씨, ${topic} 당시 누가 있었는지 숨김없이 밝히십시오.',
+  '${myName} 씨, ${topic} 전후로 연락한 사람과 내용을 빠짐없이 말씀하십시오.',
+  '${myName} 씨, ${topic}에서 본인에게 불리한 부분을 피하고 있습니다. 그 부분까지 답하십시오.',
+  '${myName} 씨, ${topic}에 관해 지금 모른다고 넘길 수 없습니다. 알고 있는 사실을 끝까지 말하십시오.',
+]
+const MOTIVE_POOL_SOFT = [
+  '${myName} 씨, ${topic}에 대해 그렇게 판단한 결정적 이유가 무엇이었습니까?',
+  '${myName} 씨, ${topic} 당시 다른 선택지를 생각해 보셨습니까?',
+  '${myName} 씨, ${topic}에서 왜 하필 그 시점에 움직였는지 설명해 주십시오.',
+  '${myName} 씨, ${topic} 관련해서 가장 먼저 지키려 했던 것은 무엇입니까?',
+  '${myName} 씨, ${topic}에 대해 누구의 말을 가장 크게 의식했습니까?',
+  '${myName} 씨, ${topic} 당시 ${opName} 씨에게 바로 말하지 않은 이유가 있습니까?',
+  '${myName} 씨, ${topic}에서 손해를 감수하고도 그렇게 한 이유를 말씀해 주십시오.',
+  '${myName} 씨, ${topic}에 대해 숨기거나 미룬 이유가 있었다면 지금 말씀하십시오.',
+  '${myName} 씨, ${topic}에 대해 본인이 옳다고 믿은 근거는 무엇이었습니까?',
+  '${myName} 씨, ${topic} 당시 가장 피하고 싶었던 결과가 무엇이었습니까?',
+]
+const MOTIVE_POOL_HARD = [
+  '${myName} 씨, ${topic}에 대한 이유를 계속 피해 가고 있습니다. 왜 그렇게 했는지 직접 답하십시오.',
+  '${myName} 씨, ${topic}에서 본인을 보호하려 한 겁니까, ${opName} 씨를 속이려 한 겁니까?',
+  '${myName} 씨, ${topic} 관련 사실을 숨긴 목적이 무엇이었는지 분명히 말씀하십시오.',
+  '${myName} 씨, ${topic} 당시 불리해질 것을 알고도 진행한 이유가 무엇입니까?',
+  '${myName} 씨에게 묻습니다, ${topic}에서 책임을 피하려 한 의도가 있었습니까?',
+  '${myName} 씨, ${topic}에 대해 선의였다고만 말하지 마십시오. 실제로 얻으려 한 것이 무엇입니까?',
+  '${myName} 씨, ${topic}에 대해 지금까지 말하지 않은 이유가 변명인지 사정인지 구분해 말씀하십시오.',
+  '${myName} 씨, ${topic}에서 가장 먼저 계산한 것은 돈입니까, 관계입니까, 체면입니까?',
+  '${myName} 씨, ${topic} 관련해서 상대가 알면 불리하다고 판단한 대목이 무엇입니까?',
+  '${myName} 씨, ${topic}에 대해 지금도 같은 선택을 했을 거라고 보십니까? 그 이유까지 답하십시오.',
+]
+const EMPATHY_POOL_SOFT = [
+  '${myName} 씨, ${topic} 당시 가장 먼저 든 감정이 무엇이었습니까?',
+  '${myName} 씨, ${topic} 이후에 밤에는 잠을 제대로 주무셨습니까?',
+  '${myName} 씨, ${topic}에 대해 말하지 못한 마음이 있었다면 말씀해 주십시오.',
+  '${myName} 씨, ${topic} 당시 누구에게 가장 서운했습니까?',
+  '${myName} 씨, ${topic}에서 가장 두려웠던 일이 무엇이었습니까?',
+  '${myName} 씨, ${topic} 이야기를 떠올리면 지금도 후회되는 장면이 있습니까?',
+  '${myName} 씨, ${topic}에 대해 ${opName} 씨가 알아주길 바랐던 마음이 있었습니까?',
+  '${myName} 씨, ${topic} 당시 혼자 감당하려 했던 이유가 있습니까?',
+  '${myName} 씨, ${topic} 이야기를 하는 지금 가장 힘든 부분은 무엇입니까?',
+  '${myName} 씨, ${topic}에 대해 스스로도 인정하기 어려웠던 감정이 있었습니까?',
+]
+const EMPATHY_POOL_HARD = [
+  '${myName} 씨, ${topic}에 대해 마음이 힘들다는 점은 알겠습니다. 그래도 어떤 감정이 행동으로 이어졌는지 말씀하십시오.',
+  '${myName} 씨, ${topic}에 대해 두려웠다는 말만으로는 부족합니다. 무엇이 가장 두려웠는지 정확히 답하십시오.',
+  '${myName} 씨, ${topic}에서 상처받은 마음과 숨긴 사실을 나누어 말씀하십시오.',
+  '${myName} 씨, ${topic} 때문에 ${opName} 씨를 원망했다면 그 이유를 분명히 말하십시오.',
+  '${myName} 씨에게 묻습니다, ${topic} 당시 죄책감이 있었습니까, 아니면 억울함이 더 컸습니까?',
+  '${myName} 씨, ${topic}에 대해 감정 뒤에 숨어서는 안 됩니다. 그 감정이 어떤 선택을 낳았습니까?',
+  '${myName} 씨, ${topic} 이야기를 떠올리기 싫더라도 지금은 답해야 합니다. 가장 후회되는 대목을 말하십시오.',
+  '${myName} 씨, ${topic}에서 본인이 상처받은 만큼 상대도 다쳤다는 점을 알고 있었습니까?',
+  '${myName} 씨, ${topic}에 대해 미안함이 있었다면 왜 그때 말하지 않았습니까?',
+  '${myName} 씨, ${topic} 당시의 마음을 말하되, 책임질 부분을 흐리지 말고 답하십시오.',
+]
+
 function buildQuestionText(type: QuestionType, target: PartyId, disputeId: string): string {
   const s = useGameStore.getState()
   if (!s.caseData) return '말씀해 주십시오.'
@@ -2092,54 +2170,30 @@ function buildQuestionText(type: QuestionType, target: PartyId, disputeId: strin
   const turn = s.turnCount
 
   // 쟁점명에서 대상 이름을 제거하고 자연스러운 주제로 변환
-  // "세린의 새벽 휴대폰 열람" → 대상이 세린이면 "새벽에 휴대폰을 보신 것"
-  // "지석의 비밀 송금 280만원" → 대상이 지석이면 "비밀 송금 280만원"
   const rawTopic = dispute?.name ?? '해당 사안'
-  const myGiven = myName.slice(1)  // 성 제거
+  const myGiven = myName.slice(1)
   const opGiven = opName.slice(1)
   let topic = extractDisputeSubject(rawTopic)
-  // 대상 본인의 이름이 쟁점에 있으면 제거 → "~에 대해"가 자연스러움
   if (topic.includes(myGiven + '의 ')) {
     topic = topic.replace(myGiven + '의 ', '')
   } else if (topic.includes(myGiven + '이 ') || topic.includes(myGiven + '가 ')) {
     topic = topic.replace(new RegExp(myGiven + '[이가] '), '')
   }
-  // 상대 이름은 "OOO 씨의"로 치환
   if (topic.includes(opGiven + '의 ')) {
     topic = topic.replace(opGiven + '의 ', `${opName} 씨의 `)
   }
 
-  // 질문 유형별 + lieState별 질문
-  if (type === 'fact_pursuit') {
-    if (lieState >= 'S3') return `${myName} 씨, 계속 돌려 말씀하시는데 — ${topic}, 정직하게 답해 주십시오.`
-    const pool = [
-      `${myName} 씨, ${topic}에 대해 사실대로 말씀해 주십시오.`,
-      `${myName} 씨, ${topic} 당시 정확히 어떤 일이 있었습니까?`,
-      `${myName} 씨, ${topic}에 대해 빠뜨린 부분이 있지 않습니까?`,
-      `${myName} 씨, 아까 말씀하신 내용 중 ${topic}${pp과와(topic)} 맞지 않는 부분이 있습니다. 설명해 주시겠습니까?`,
-    ]
-    return pool[(turn + disputeId.charCodeAt(disputeId.length - 1)) % pool.length]
-  }
+  // soft (S0-S2) / hard (S3+) 풀 선택
+  const isHard = lieState >= 'S3'
+  const pool = type === 'fact_pursuit' ? (isHard ? FACT_POOL_HARD : FACT_POOL_SOFT)
+    : type === 'motive_search' ? (isHard ? MOTIVE_POOL_HARD : MOTIVE_POOL_SOFT)
+    : (isHard ? EMPATHY_POOL_HARD : EMPATHY_POOL_SOFT)
 
-  if (type === 'motive_search') {
-    if (lieState >= 'S3') return `${myName} 씨, 상대방 탓만 하지 마시고 ${topic}에 대한 본인의 생각을 말씀해 주십시오.`
-    const pool = [
-      `${myName} 씨, ${topic}${pp을를(topic)} 왜 그렇게 하셨습니까?`,
-      `${myName} 씨, ${topic} 당시 어떤 사정이 있었습니까?`,
-      `${myName} 씨, 다른 방법도 있었을 텐데 왜 하필 그렇게 하셨는지 말씀해 주십시오.`,
-      `${myName} 씨, ${topic}의 배경을 좀 더 설명해 주시겠습니까?`,
-    ]
-    return pool[(turn + disputeId.charCodeAt(disputeId.length - 1)) % pool.length]
-  }
-
-  // 공감 접근 — 부드럽지만 동정이 아닌 진심으로
-  const pool = [
-    `${myName} 씨, ${topic}에 대해서 — 그때 어떤 마음이셨는지 솔직하게 말씀해 주시겠습니까.`,
-    `${myName} 씨, ${topic} 당시 심정이 어떠셨습니까? 편하게 말씀해 주세요.`,
-    `${myName} 씨, ${topic}에 대한 솔직한 마음을 듣고 싶습니다.`,
-    `${myName} 씨, 이 부분이 쉽지 않으시겠지만 — ${topic}에 대한 본심을 말씀해 주시겠습니까.`,
-  ]
-  return pool[(turn + disputeId.charCodeAt(disputeId.length - 1)) % pool.length]
+  const template = pool[(turn + disputeId.charCodeAt(disputeId.length - 1)) % pool.length]
+  return template
+    .replace(/\$\{myName\}/g, myName)
+    .replace(/\$\{topic\}/g, topic)
+    .replace(/\$\{opName\}/g, opName)
 }
 
 function buildTrustActionText(actionType: string, target: PartyId): string {
