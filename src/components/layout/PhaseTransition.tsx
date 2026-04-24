@@ -1,9 +1,40 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
+import { createPortal } from 'react-dom'
 import { GamePhase, Phase } from '../../types'
 import { useStore } from '../../store/useGameStore'
-import { playPhaseTransition, playBgm, stopBgm } from '../../engine/soundEngine'
+import { playPhaseTransition, playBgm } from '../../engine/soundEngine'
 
-/** V4 Phase별 BGM 매핑 */
+interface CutsceneSpec {
+  label: string
+  title: string
+  subtitle: string
+}
+
+/** Phase 전환 시 컷씬에 노출할 3단 카피. 정의되지 않은 Phase는 컷씬 없이 조용히 전환. */
+const PHASE_CUTSCENE: Partial<Record<GamePhase, CutsceneSpec>> = {
+  [Phase.Pretrial]: {
+    label: 'Phase 1',
+    title: '초기 진술',
+    subtitle: '초기 진술을 주의깊게 관찰해주세요.',
+  },
+  [Phase.Interrogation]: {
+    label: 'Phase 2',
+    title: '심문',
+    subtitle: '직접 심문을 통해 진실을 파악해주세요.',
+  },
+  [Phase.Mediation]: {
+    label: 'Phase 3',
+    title: '중재',
+    subtitle: '사건에 대한 중재안을 제시해주세요.',
+  },
+  [Phase.Verdict]: {
+    label: 'Phase 4',
+    title: '판결',
+    subtitle: '판단 내용을 기준으로 판결을 내려주세요.',
+  },
+}
+
+/** Phase 진입 시 전환할 BGM 트랙. 이전 Phase와 같은 트랙이면 playBgm 내부에서 no-op. */
 const PHASE_BGM: Partial<Record<GamePhase, string>> = {
   [Phase.Briefing]: '/bgm/court.mp3',
   [Phase.Pretrial]: '/bgm/court.mp3',
@@ -12,80 +43,64 @@ const PHASE_BGM: Partial<Record<GamePhase, string>> = {
   [Phase.Verdict]: '/bgm/verdict.mp3',
   [Phase.Result]: '/bgm/result.mp3',
 }
-import PCSvgIcon from '../pc/icons/PCSvgIcon'
 
-const PHASE_INFO: Record<GamePhase, { title: string; subtitle: string; iconId: string; unlocks?: string[] } | null> = {
-  [Phase.Briefing]: null,
-  [Phase.Pretrial]: { title: '초기 진술', subtitle: '양측의 주장을 들어봅니다', iconId: 'i-person' },
-  [GamePhase.Phase2_Rebuttal]: { title: '즉각 반박', subtitle: '양측이 서로의 진술에 반박합니다', iconId: 'i-bolt' },
-  [Phase.Interrogation]: { title: '심문 개시', subtitle: '질문을 통해 진실을 파헤치세요', iconId: 'i-search' },
-  [GamePhase.Phase4_Evidence]: { title: '증거 심리', subtitle: '확보한 증거를 공개하세요', iconId: 'i-doc', unlocks: ['증거 제시 해금', '즉답 요구 해금'] },
-  [GamePhase.Phase5_ReExamination]: { title: '최종 심문', subtitle: '붕괴된 쟁점을 깊이 파고드세요', iconId: 'i-eye', unlocks: ['비공개 보호 해금'] },
-  [Phase.Mediation]: { title: '중재안', subtitle: '판결 방식을 선택하세요', iconId: 'i-heart' },
-  [Phase.Verdict]: { title: '최종 판결', subtitle: '사실과 책임, 해결책을 결정하세요', iconId: 'i-scale' },
-  [Phase.Result]: null,
-}
+const CUTSCENE_DURATION_MS = 2300
 
 export default function PhaseTransition() {
   const currentPhase = useStore((s) => s.currentPhase)
-  const caseData = useStore((s) => s.caseData)
   const [visible, setVisible] = useState(false)
-  const [lastPhase, setLastPhase] = useState<GamePhase | null>(null)
+  const [activeSpec, setActiveSpec] = useState<CutsceneSpec | null>(null)
+  // ref 기반 추적 — state로 두면 dep 재실행이 타이머 cleanup을 유발함
+  const lastPhaseRef = useRef<GamePhase | null>(null)
+  // timer를 ref로 유지 — StrictMode의 cleanup 이중 실행이 타이머를 취소하지 않도록
+  const timerRef = useRef<number | null>(null)
 
   useEffect(() => {
-    if (currentPhase !== lastPhase) {
-      const info = PHASE_INFO[currentPhase]
-      if (info) {
-        setVisible(true)
-        playPhaseTransition()
-        // Phase별 BGM 전환
-        const bgmTrack = PHASE_BGM[currentPhase]
-        if (bgmTrack) playBgm(bgmTrack)
-        const timer = setTimeout(() => setVisible(false), 1800)
-        setLastPhase(currentPhase)
-        return () => clearTimeout(timer)
-      }
-      // BGM 전환 (info가 없는 Phase — Result 등)
-      const bgmTrack = PHASE_BGM[currentPhase]
-      if (bgmTrack) playBgm(bgmTrack)
-      setLastPhase(currentPhase)
+    if (currentPhase === lastPhaseRef.current) return
+    lastPhaseRef.current = currentPhase
+
+    const bgmTrack = PHASE_BGM[currentPhase]
+    if (bgmTrack) playBgm(bgmTrack)
+
+    const spec = PHASE_CUTSCENE[currentPhase]
+    if (!spec) return
+
+    // Phase 변경 시에만 이전 타이머 명시적으로 취소 (StrictMode cleanup에서는 취소 안 함)
+    if (timerRef.current !== null) {
+      clearTimeout(timerRef.current)
+      timerRef.current = null
     }
-  }, [currentPhase, lastPhase])
 
-  if (!visible) return null
+    setActiveSpec(spec)
+    setVisible(true)
+    playPhaseTransition()
+    timerRef.current = window.setTimeout(() => {
+      setVisible(false)
+      timerRef.current = null
+    }, CUTSCENE_DURATION_MS)
+  }, [currentPhase])
 
-  const info = PHASE_INFO[currentPhase]
-  if (!info) return null
+  // unmount 시에만 타이머 정리
+  useEffect(() => {
+    return () => {
+      if (timerRef.current !== null) {
+        clearTimeout(timerRef.current)
+        timerRef.current = null
+      }
+    }
+  }, [])
 
-  const nameA = caseData?.duo.partyA.name
-  const nameB = caseData?.duo.partyB.name
+  if (!visible || !activeSpec) return null
 
-  return (
-    <div className="pc-phase-transition">
-      <div className="pc-phase-transition__card">
-        <span className="pc-phase-transition__icon">
-          <PCSvgIcon id={info.iconId} size={48} />
-        </span>
-        <h2 className="pc-phase-transition__title">{info.title}</h2>
-        <p className="pc-phase-transition__subtitle">{info.subtitle}</p>
-        {info.unlocks && info.unlocks.length > 0 ? (
-          <div className="pc-phase-transition__unlocks">
-            {info.unlocks.map((u, i) => (
-              <span className="pc-phase-transition__unlock" key={i}>
-                <PCSvgIcon id="i-bolt" size={12} />
-                <span>{u}</span>
-              </span>
-            ))}
-          </div>
-        ) : null}
-        {nameA && nameB ? (
-          <div className="pc-phase-transition__parties">
-            <span className="pc-phase-transition__party-a">{nameA}</span>
-            <span className="pc-phase-transition__vs">vs</span>
-            <span className="pc-phase-transition__party-b">{nameB}</span>
-          </div>
-        ) : null}
+  // key={activeSpec.label} — Phase가 바뀌면 DOM 교체되어 CSS animation 재시작
+  return createPortal(
+    <div className="pc-phase-cutscene" role="presentation" key={activeSpec.label}>
+      <div className="pc-phase-cutscene__band">
+        <div className="pc-phase-cutscene__label">{activeSpec.label}</div>
+        <h2 className="pc-phase-cutscene__title">{activeSpec.title}</h2>
+        <p className="pc-phase-cutscene__subtitle">{activeSpec.subtitle}</p>
       </div>
-    </div>
+    </div>,
+    document.body,
   )
 }

@@ -2,7 +2,7 @@ import { useEffect, useRef, useState, useCallback } from 'react'
 import { createPortal } from 'react-dom'
 import { consumePrefetchedPhase1, consumePrefetchedPhase2 } from './Phase0_CaseIntro'
 import { useGameStore, useStore } from '../../store/useGameStore'
-import { playPhaseTransition, playClick } from '../../engine/soundEngine'
+import { playClick } from '../../engine/soundEngine'
 import type { DialogueEntry } from '../../types'
 import type { GamePhase } from '../../types'
 
@@ -26,17 +26,15 @@ interface Props {
   dialogues: BranchDialogue[]
   llmGenerator?: () => Promise<Omit<DialogueEntry, 'id'>[]>
   nextPhase: GamePhase
-  nextLabel: string
   phaseKey?: 'phase1' | 'phase2'
 }
 
-export default function AutoDialoguePhase({ dialogues, llmGenerator, nextPhase, nextLabel, phaseKey }: Props) {
+export default function AutoDialoguePhase({ dialogues, llmGenerator, nextPhase, phaseKey }: Props) {
   const advancePhase = useStore((s) => s.advancePhase)
   const [allDone, setAllDone] = useState(false)
   const [displayCount, setDisplayCount] = useState(0)
   const [loading, setLoading] = useState(false)
   const [totalCount, setTotalCount] = useState(0)
-  const [transitioning, setTransitioning] = useState(false)
   const [activeChoice, setActiveChoice] = useState<{ choiceId: string; options: ChoiceOption[] } | null>(null)
 
   const indexRef = useRef(0)
@@ -189,13 +187,10 @@ export default function AutoDialoguePhase({ dialogues, llmGenerator, nextPhase, 
     init()
   }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
-  // 대사 완료 → 자동 전환
+  // 대사 완료 → 즉시 Phase 전환. PhaseTransition 컷씬이 "XX이 시작됩니다" 역할 담당.
   useEffect(() => {
     if (!allDone) return
-    setTransitioning(true)
-    playPhaseTransition()
-    const timer = setTimeout(() => advancePhase(nextPhase), 1500)
-    return () => clearTimeout(timer)
+    advancePhase(nextPhase)
   }, [allDone, advancePhase, nextPhase])
 
   // 선택지 처리
@@ -267,14 +262,6 @@ export default function AutoDialoguePhase({ dialogues, llmGenerator, nextPhase, 
       <div className="pc-dialogue-loading">
         <div className="pc-dialogue-loading__spinner" />
         <span>AI가 진술을 준비하고 있습니다...</span>
-      </div>
-    )
-  }
-
-  if (transitioning) {
-    return (
-      <div className="pc-dialogue-transition">
-        <span>{nextLabel}...</span>
       </div>
     )
   }

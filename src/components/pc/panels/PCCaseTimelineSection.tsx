@@ -2,6 +2,12 @@ import { useCallback, useEffect, useMemo, useRef } from 'react'
 import { useStore } from '../../../store/useGameStore'
 import type { GameEvent } from '../../../store/useGameStore'
 import PCSvgIcon from '../icons/PCSvgIcon'
+import { jumpToDialogue } from '../observation/JudgeObservationSection'
+
+interface Props {
+  /** 타임라인 항목 클릭 시 호출 (패널 닫기 등) */
+  onItemClick?: () => void
+}
 
 type TimelineItem = GameEvent & { summary: string; iconId: string; tone: 'gold' | 'red' | 'blue' | 'green' | 'neutral' }
 
@@ -25,7 +31,7 @@ function summarizeEvent(event: GameEvent): string {
   return `${msg.slice(0, 39).trim()}…`
 }
 
-export default function PCCaseTimelineSection() {
+export default function PCCaseTimelineSection({ onItemClick }: Props = {}) {
   const gameEventLog = useStore((s) => s.gameEventLog)
   const dialogueLog = useStore((s) => s.dialogueLog)
   const caseData = useStore((s) => s.caseData)
@@ -69,20 +75,13 @@ export default function PCCaseTimelineSection() {
     }
   }, [])
 
-  const scrollChatToTurn = useCallback((turn: number) => {
+  const handleItemClick = useCallback((turn: number) => {
     const entry = dialogueLog.find((d) => d.turn === turn && !d.isHidden)
     if (!entry) return
-
-    const chatArea = document.querySelector('.pc-play-chat')
-    if (!chatArea) return
-
-    const messageEl = chatArea.querySelector(`[data-dialogue-id="${entry.id}"]`)
-    if (messageEl) {
-      messageEl.scrollIntoView({ behavior: 'smooth', block: 'center' })
-      messageEl.classList.add('is-highlight')
-      setTimeout(() => messageEl.classList.remove('is-highlight'), 1500)
-    }
-  }, [dialogueLog])
+    // 패널 닫기 애니메이션과 jump pulse 타이밍 맞춤 — 관찰 드로어와 동일 패턴(220ms)
+    if (onItemClick) onItemClick()
+    window.setTimeout(() => jumpToDialogue(entry.id), 220)
+  }, [dialogueLog, onItemClick])
 
   return (
     <section className="sec pc-case-timeline-section">
@@ -111,7 +110,7 @@ export default function PCCaseTimelineSection() {
                 <button
                   className={`pc-timeline__item is-${item.tone}`}
                   key={item.id}
-                  onClick={() => scrollChatToTurn(item.turn)}
+                  onClick={() => handleItemClick(item.turn)}
                   title="클릭하면 해당 시점으로 이동합니다"
                   type="button"
                 >

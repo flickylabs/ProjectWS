@@ -608,73 +608,15 @@ export default function PCRightPanel() {
               <button className="pc-skill-card__info-button" onClick={toggleCombinationPanel} type="button" title="조합 정보">?</button>
             </div>
 
-            {autoMatchPanelOpen ? (
-              <div className="pc-combination-card__auto-panel">
-                {!autoMatchConfirming ? (
-                  <>
-                    <div className="pc-combination-card__auto-status">
-                      <span className="pc-combination-card__auto-mask">분석 포인트 {combinationLabRuntime.analysisPoints}</span>
-                      <span className="pc-combination-card__auto-hint">조합 대상은 가려져 있습니다 — 카테고리·잠금 상태만 공개</span>
-                    </div>
-                    <div className="pc-combination-card__auto-breakdown">
-                      <CategoryRow label="증거 + 증거" ready={recipeBreakdown.ee.ready} potential={recipeBreakdown.ee.potential} />
-                      <CategoryRow label="증거 + 발언" ready={recipeBreakdown.es.ready} potential={recipeBreakdown.es.potential} />
-                      <CategoryRow label="발언 + 발언" ready={recipeBreakdown.ss.ready} potential={recipeBreakdown.ss.potential} />
-                    </div>
-                    <button
-                      className="pc-combination-card__auto-cta"
-                      disabled={!canAutoMatch}
-                      onClick={() => setAutoMatchConfirming(true)}
-                      type="button"
-                    >
-                      <span>✨ 자동 매칭</span>
-                      <span className="pc-combination-card__auto-cost" title={`스킬 포인트 ${autoMatchCost} 소비`}>
-                        ⚡ {autoMatchCost}
-                      </span>
-                    </button>
-                    {readyLabRecipes.length === 0 ? (
-                      <p className="pc-combination-card__auto-warn">지금은 자동 매칭할 준비된 조합이 없습니다.</p>
-                    ) : globalSkillPoints < autoMatchCost ? (
-                      <p className="pc-combination-card__auto-warn">스킬 포인트가 부족합니다.</p>
-                    ) : null}
-                  </>
-                ) : (
-                  <>
-                    <p className="pc-combination-card__auto-confirm-text">
-                      조합 실행과 <strong>별개로</strong> 조합 대상 매칭에
-                      스킬 포인트 <strong>{autoMatchCost}</strong>이 소비됩니다.<br />
-                      매칭을 진행할까요?
-                    </p>
-                    <div className="pc-combination-card__auto-confirm-actions">
-                      <button
-                        className="pc-combination-card__auto-cta is-danger"
-                        onClick={() => setAutoMatchConfirming(false)}
-                        type="button"
-                      >
-                        아니오
-                      </button>
-                      <button
-                        className="pc-combination-card__auto-cta is-primary"
-                        onClick={handleAutoMatchConfirm}
-                        type="button"
-                      >
-                        예, 매칭합니다
-                      </button>
-                    </div>
-                  </>
-                )}
-              </div>
-            ) : null}
-
             <div className="pc-combination-card__body">
               {comboReady ? (
                 <button className="pc-combination-card__attempt pc-combination-card__attempt--center" onClick={handleCombinationAttempt} type="button">
                   <PCSvgIcon id="i-bolt" size={20} />
                   <span>조합 실행</span>
                 </button>
-              ) : readyLabRecipes.length > 0 && !autoMatchPanelOpen ? (
+              ) : readyLabRecipes.length > 0 ? (
                 <button
-                  className="pc-combination-card__ready-indicator"
+                  className={`pc-combination-card__ready-indicator${autoMatchPanelOpen ? ' is-open' : ''}`}
                   onClick={toggleCombinationPanel}
                   type="button"
                 >
@@ -691,6 +633,86 @@ export default function PCRightPanel() {
                 </div>
               )}
             </div>
+
+            {/* 조합 가능 항목 상세 — 카드 왼쪽으로 확장되는 드로어 */}
+            <aside
+              className={`pc-combination-drawer${autoMatchPanelOpen ? ' is-open' : ''}`}
+              aria-hidden={!autoMatchPanelOpen}
+              aria-label="조합 가능 항목 상세"
+            >
+              <header className="pc-combination-drawer__header">
+                <div className="pc-combination-drawer__title">
+                  <span>조합 가능한 재료가 <strong>{readyLabRecipes.length}개</strong> 준비되었습니다</span>
+                </div>
+                <button
+                  type="button"
+                  className="pc-combination-drawer__close"
+                  onClick={() => { setAutoMatchPanelOpen(false); setAutoMatchConfirming(false) }}
+                  aria-label="닫기"
+                >
+                  ✕
+                </button>
+              </header>
+
+              {!autoMatchConfirming ? (
+                <>
+                  <div className="pc-combination-drawer__breakdown">
+                    <CategoryRow label="증거 + 증거" ready={recipeBreakdown.ee.ready} potential={recipeBreakdown.ee.potential} />
+                    <CategoryRow label="증거 + 발언" ready={recipeBreakdown.es.ready} potential={recipeBreakdown.es.potential} />
+                    <CategoryRow label="발언 + 발언" ready={recipeBreakdown.ss.ready} potential={recipeBreakdown.ss.potential} />
+                  </div>
+
+                  <p className="pc-combination-drawer__lede">
+                    증거 수첩과 발언 노트에 <strong>하이라이트</strong>된 항목들 사이에 숨겨진 조합이 있습니다.
+                  </p>
+
+                  <div className="pc-combination-drawer__auto">
+                    <p className="pc-combination-drawer__auto-desc">
+                      <strong>스킬 포인트</strong>를 소비해 조합이 가능한 재료를 자동 배치할 수 있습니다.
+                    </p>
+                    <button
+                      className="pc-combination-drawer__auto-cta"
+                      disabled={!canAutoMatch}
+                      onClick={() => setAutoMatchConfirming(true)}
+                      type="button"
+                    >
+                      <span>✨ 자동 매칭</span>
+                      <span className="pc-combination-drawer__auto-cost" title={`스킬 포인트 ${autoMatchCost} 소비`}>
+                        ⚡ {autoMatchCost}
+                      </span>
+                    </button>
+                    {readyLabRecipes.length === 0 ? (
+                      <p className="pc-combination-drawer__warn">지금은 자동 매칭할 준비된 조합이 없습니다.</p>
+                    ) : globalSkillPoints < autoMatchCost ? (
+                      <p className="pc-combination-drawer__warn">스킬 포인트가 부족합니다.</p>
+                    ) : null}
+                  </div>
+                </>
+              ) : (
+                <>
+                  <p className="pc-combination-drawer__confirm-text">
+                    자동 매칭에 스킬 포인트 <strong>{autoMatchCost}</strong>이 소비됩니다.<br />
+                    매칭을 진행할까요?
+                  </p>
+                  <div className="pc-combination-drawer__confirm-actions">
+                    <button
+                      className="pc-combination-drawer__auto-cta is-danger"
+                      onClick={() => setAutoMatchConfirming(false)}
+                      type="button"
+                    >
+                      아니오
+                    </button>
+                    <button
+                      className="pc-combination-drawer__auto-cta is-primary"
+                      onClick={handleAutoMatchConfirm}
+                      type="button"
+                    >
+                      예, 매칭합니다
+                    </button>
+                  </div>
+                </>
+              )}
+            </aside>
             <div className="pc-combination-card__slots">
               <CombinationSlot label="A" node={comboNodeA} displayText={comboNodeADisplay} onClear={() => setComboSlots((c) => [null, c[1]])} />
               <span className="pc-combination-card__plus">+</span>

@@ -381,7 +381,6 @@ function getActionPanel(phase: GamePhase) {
         <AutoDialoguePhase
           dialogues={fallback}
           nextPhase={Phase.Interrogation}
-          nextLabel="심문 시작"
           phaseKey="phase1"
         />
       )
@@ -395,7 +394,6 @@ function getActionPanel(phase: GamePhase) {
           dialogues={fallback}
           llmGenerator={caseData && !caseScript ? () => generatePhase2Dialogues(caseData) : undefined}
           nextPhase={Phase.Interrogation}
-          nextLabel="심문 시작"
           phaseKey="phase2"
         />
       )

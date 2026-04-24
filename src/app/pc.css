@@ -6140,6 +6140,187 @@ body.pc-mode .pc-play-right .pc-combination-card__auto-panel {
   gap: 8px;
 }
 
+/* ── 조합 드로어 — 조합 카드 왼쪽으로 횡확장 (관찰 드로어와 동일 패턴) ── */
+body.pc-mode .pc-combination-card {
+  position: relative;
+}
+body.pc-mode .pc-combination-drawer {
+  position: absolute;
+  top: 0;
+  right: calc(100% + 14px);
+  width: 340px;
+  max-height: calc(100vh - 160px);
+  overflow-y: auto;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateX(16px);
+  transition: transform 180ms ease, visibility 180ms ease, opacity 180ms ease;
+  opacity: 0;
+  z-index: 55;
+  background: #0a0a10;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  box-shadow: 0 22px 42px rgba(0, 0, 0, 0.6);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 14px 18px 14px;
+  color: #ebe5d5;
+}
+body.pc-mode .pc-combination-drawer.is-open {
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateX(0);
+  opacity: 1;
+}
+body.pc-mode .pc-combination-drawer__header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 0 8px;
+  margin-bottom: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+body.pc-mode .pc-combination-drawer__title {
+  flex: 1;
+  font-size: 13px;
+  font-weight: 600;
+  color: #ebe5d5;
+  letter-spacing: 0.02em;
+  line-height: 1.45;
+}
+body.pc-mode .pc-combination-drawer__title strong {
+  color: #e8c172;
+  font-weight: 800;
+}
+body.pc-mode .pc-combination-drawer__close {
+  flex-shrink: 0;
+  width: 26px;
+  height: 26px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  background: transparent;
+  color: rgba(235, 229, 213, 0.75);
+  font-size: 14px;
+  line-height: 1;
+  cursor: pointer;
+  transition: background-color 140ms ease, border-color 140ms ease, color 140ms ease;
+}
+body.pc-mode .pc-combination-drawer__close:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.16);
+  color: #ebe5d5;
+}
+body.pc-mode .pc-combination-drawer__breakdown {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 8px 12px;
+  border-radius: 10px;
+  background: rgba(212, 162, 78, 0.06);
+  border: 1px solid rgba(212, 162, 78, 0.18);
+}
+body.pc-mode .pc-combination-drawer__lede {
+  margin: 0;
+  font-size: 12.5px;
+  line-height: 1.6;
+  color: rgba(235, 229, 213, 0.78);
+}
+body.pc-mode .pc-combination-drawer__lede strong {
+  color: #e8c172;
+  font-weight: 700;
+}
+body.pc-mode .pc-combination-drawer__auto {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+body.pc-mode .pc-combination-drawer__auto-desc {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.6;
+  color: rgba(213, 216, 225, 0.88);
+}
+body.pc-mode .pc-combination-drawer__auto-desc strong {
+  color: #ffd06b;
+  font-weight: 700;
+}
+body.pc-mode .pc-combination-drawer__auto-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 208, 107, 0.5);
+  background: rgba(255, 208, 107, 0.14);
+  color: #f5f0e2;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 140ms ease, border-color 140ms ease;
+}
+body.pc-mode .pc-combination-drawer__auto-cta:hover:not(:disabled) {
+  background: rgba(255, 208, 107, 0.24);
+  border-color: rgba(255, 208, 107, 0.7);
+  color: #ffffff;
+}
+body.pc-mode .pc-combination-drawer__auto-cta:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+body.pc-mode .pc-combination-drawer__auto-cta.is-primary {
+  flex: 1;
+  justify-content: center;
+  background: rgba(212, 162, 78, 0.3);
+  color: #fff3d9;
+  border-color: rgba(212, 162, 78, 0.5);
+}
+body.pc-mode .pc-combination-drawer__auto-cta.is-danger {
+  flex: 1;
+  justify-content: center;
+  border-color: rgba(150, 150, 160, 0.3);
+  background: rgba(150, 150, 160, 0.1);
+  color: #b0b4c0;
+}
+body.pc-mode .pc-combination-drawer__auto-cost {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  font-size: 11px;
+  color: #fff3d9;
+  background: rgba(0, 0, 0, 0.25);
+  padding: 2px 7px;
+  border-radius: 6px;
+}
+body.pc-mode .pc-combination-drawer__warn {
+  margin: 0;
+  font-size: 11px;
+  color: #e08a6b;
+}
+body.pc-mode .pc-combination-drawer__confirm-text {
+  margin: 0;
+  padding: 12px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  font-size: 12.5px;
+  line-height: 1.6;
+  color: #d5d8e1;
+}
+body.pc-mode .pc-combination-drawer__confirm-text strong {
+  color: #ffd06b;
+  font-weight: 700;
+}
+body.pc-mode .pc-combination-drawer__confirm-actions {
+  display: flex;
+  gap: 8px;
+}
+
 body.pc-mode .pc-play-right .pc-combination-card__auto-status {
   display: flex;
   flex-direction: column;
@@ -6595,8 +6776,44 @@ body.pc-mode .pc-play-timeline-panel .pc-case-timeline-section {
   box-shadow: 0 22px 42px rgba(0, 0, 0, 0.6);
 }
 
+/* 타임라인 패널 헤더 — 재판관의 관찰 드로어 헤더와 톤 일치 */
 body.pc-mode .pc-play-timeline-panel .pc-case-timeline-section .sec-h {
-  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 0 10px;
+  margin-bottom: 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+body.pc-mode .pc-play-timeline-panel .pc-case-timeline-section .sec-h > span {
+  font-size: 13px;
+  font-weight: 600;
+  color: #ebe5d5;
+  letter-spacing: 0.02em;
+}
+body.pc-mode .pc-play-timeline-panel .pc-case-timeline-section .sec-h .cnt {
+  font-size: 12px;
+  font-weight: 500;
+  color: rgba(235, 229, 213, 0.55);
+  letter-spacing: 0;
+}
+body.pc-mode .pc-play-timeline-panel .pc-case-timeline-section .sec-h .pc-timeline-top-btn {
+  margin-left: auto;
+  font-size: 11px;
+  font-weight: 500;
+  color: rgba(235, 229, 213, 0.7);
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  padding: 4px 8px;
+  cursor: pointer;
+  letter-spacing: 0.02em;
+  transition: background-color 140ms ease, border-color 140ms ease, color 140ms ease;
+}
+body.pc-mode .pc-play-timeline-panel .pc-case-timeline-section .sec-h .pc-timeline-top-btn:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.16);
+  color: #ebe5d5;
 }
 
 body.pc-mode .pc-play-timeline-panel .sec-content {
@@ -7596,20 +7813,30 @@ body.pc-mode .pc-play-panel {
 body.pc-mode .pc-play-panel--left {
   grid-column: 1 !important;
   grid-row: 2 !important;
+  min-height: calc(100vh - 64px) !important;
   border-right: 1px solid var(--pc-panel-border-soft) !important;
-  background: var(--pc-panel-bg) !important;
-  backdrop-filter: blur(8px) !important;
-  -webkit-backdrop-filter: blur(8px) !important;
+  background: linear-gradient(180deg,
+    rgba(18, 19, 24, 0.48) 0%,
+    rgba(13, 14, 18, 0.62) 55%,
+    rgba(5, 6, 10, 0.94) 100%
+  ) !important;
+  backdrop-filter: blur(10px) saturate(0.9) !important;
+  -webkit-backdrop-filter: blur(10px) saturate(0.9) !important;
   overflow: visible !important;
 }
 
 body.pc-mode .pc-play-panel--right {
   grid-column: 3 !important;
   grid-row: 2 !important;
+  min-height: calc(100vh - 64px) !important;
   border-left: 1px solid var(--pc-panel-border-soft) !important;
-  background: var(--pc-panel-bg) !important;
-  backdrop-filter: blur(8px) !important;
-  -webkit-backdrop-filter: blur(8px) !important;
+  background: linear-gradient(180deg,
+    rgba(18, 19, 24, 0.48) 0%,
+    rgba(13, 14, 18, 0.62) 55%,
+    rgba(5, 6, 10, 0.94) 100%
+  ) !important;
+  backdrop-filter: blur(10px) saturate(0.9) !important;
+  -webkit-backdrop-filter: blur(10px) saturate(0.9) !important;
   overflow: visible !important;
 }
 
@@ -7619,10 +7846,14 @@ body.pc-mode .center.pc-play-center {
   display: grid !important;
   grid-template-rows: auto minmax(0, 1fr) auto !important;
   min-width: 0 !important;
-  min-height: 0 !important;
+  min-height: calc(100vh - 64px) !important;
   overflow: hidden !important;
   position: relative !important;
-  background: linear-gradient(180deg, rgba(18, 19, 24, 0.25), rgba(14, 15, 20, 0.35)) !important;
+  background: linear-gradient(180deg,
+    rgba(18, 19, 24, 0.28) 0%,
+    rgba(14, 15, 20, 0.42) 55%,
+    rgba(5, 6, 10, 0.9) 100%
+  ) !important;
 }
 
 body.pc-mode .pc-play-ribbon-wrap {
@@ -8064,38 +8295,6 @@ body.pc-mode .pc-log-bubble {
   max-width: 100% !important;
   padding: 20px 26px !important;
   border-radius: 14px !important;
-}
-
-/* Phase change banner — center overlay */
-body.pc-mode .pc-phase-banner {
-  position: absolute !important;
-  top: 50% !important;
-  left: 50% !important;
-  transform: translate(-50%, -50%) !important;
-  z-index: 20 !important;
-  padding: 18px 48px !important;
-  border-radius: 16px !important;
-  background: rgba(212, 162, 78, 0.14) !important;
-  border: 1px solid rgba(212, 162, 78, 0.28) !important;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4) !important;
-  pointer-events: none !important;
-  animation: pc-phase-fade 2.8s ease-out forwards !important;
-}
-
-body.pc-mode .pc-phase-banner__text {
-  font-size: 28px !important;
-  font-weight: 900 !important;
-  letter-spacing: -0.02em !important;
-  color: var(--pc-gold-light) !important;
-  text-shadow: 0 2px 12px rgba(212, 162, 78, 0.3) !important;
-  white-space: nowrap !important;
-}
-
-@keyframes pc-phase-fade {
-  0% { opacity: 0; transform: translate(-50%, -50%) scale(0.9); }
-  15% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
-  75% { opacity: 1; }
-  100% { opacity: 0; }
 }
 
 /* ═══════════════════════════════════════════════════
@@ -9553,14 +9752,16 @@ body.pc-mode .pc-ev-detail__stages-label {
 }
 
 body.pc-mode .pc-ev-detail__stage {
-  display: flex; align-items: flex-start; gap: 12px;
+  display: flex; align-items: center; gap: 12px;
   padding: 10px 14px; margin-bottom: 6px; min-height: 52px;
   border-radius: 10px; border: 1px solid rgba(255,255,255,0.04);
   background: rgba(255,255,255,0.015);
 }
 
+/* 해금된 stage — 녹색 → 흰색 (중립 톤) */
 body.pc-mode .pc-ev-detail__stage.is-open {
-  border-color: rgba(92,201,122,0.1); background: rgba(92,201,122,0.02);
+  border-color: rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.025);
 }
 
 body.pc-mode .pc-ev-detail__stage-num {
@@ -9570,7 +9771,8 @@ body.pc-mode .pc-ev-detail__stage-num {
 }
 
 body.pc-mode .pc-ev-detail__stage.is-open .pc-ev-detail__stage-num {
-  background: rgba(92,201,122,0.1); color: var(--pc-green);
+  background: rgba(255, 255, 255, 0.1);
+  color: #f5f0e2;
 }
 
 body.pc-mode .pc-ev-detail__stage-body { display: grid; gap: 4px; min-width: 0; flex: 1; }
@@ -9587,20 +9789,38 @@ body.pc-mode .pc-ev-detail__stage.is-ready .pc-ev-detail__stage-num {
   background: rgba(212,162,78,0.12); color: var(--pc-gold);
 }
 
+/* 조사 시도 버튼 — '증거 제시' tone-gold 스타일: 테두리 pulse + 흰색 텍스트 + 투명 배경 */
 body.pc-mode .pc-ev-detail__investigate-btn {
-  display: flex; align-items: center; justify-content: center; gap: 8px;
-  width: 100%; min-height: 48px; padding: 12px 20px; border-radius: 12px;
-  border: 1.5px solid rgba(212,162,78,0.3);
-  background: rgba(212,162,78,0.1);
-  color: var(--pc-gold-light); font-size: 15px; font-weight: 800;
-  cursor: pointer; transition: all 0.15s ease;
+  display: flex; align-items: center; justify-content: center; gap: 10px;
+  width: 100%; min-height: 30px; padding: 4px 16px;
+  border-radius: 10px;
+  border: 1px solid rgba(212, 162, 78, 0.5);
+  background: transparent;
+  color: #f5f0e2; font-size: 14px; font-weight: 700;
+  cursor: pointer;
+  animation: pc-efb-action-pulse-gold 2.4s ease-in-out infinite;
+  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
 }
-
+body.pc-mode .pc-ev-detail__investigate-btn .pc-ev-detail__investigate-cost {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: #e8c172;
+  font-weight: 700;
+}
+body.pc-mode .pc-ev-detail__investigate-btn .pc-ev-detail__investigate-cost svg {
+  color: #e8c172;
+}
 body.pc-mode .pc-ev-detail__investigate-btn:hover {
-  background: rgba(212,162,78,0.18);
-  border-color: rgba(212,162,78,0.45);
-  transform: scale(1.02);
-  box-shadow: 0 6px 18px rgba(212,162,78,0.12);
+  border-color: rgba(212, 162, 78, 0.85);
+  background: rgba(212, 162, 78, 0.08);
+  color: #ffffff;
+  animation: none;
+  box-shadow: 0 0 0 1px rgba(212, 162, 78, 0.4), 0 0 24px rgba(212, 162, 78, 0.4);
+}
+body.pc-mode .pc-ev-detail__investigate-btn:hover .pc-ev-detail__investigate-cost,
+body.pc-mode .pc-ev-detail__investigate-btn:hover .pc-ev-detail__investigate-cost svg {
+  color: #f3d488;
 }
 
 /* Present buttons — A/B split */
@@ -9610,47 +9830,63 @@ body.pc-mode .pc-ev-detail__present {
   border-top: 1px solid rgba(255,255,255,0.04);
 }
 
+/* 제시 버튼 — 말풍선(pc-log-bubble.is-a/is-b) 스타일 그대로 이식:
+   말풍선 base(panel-bg-strong + panel-shadow + panel-inset) + 방향 edge 컬러 라인 + 바깥 glow */
 body.pc-mode .pc-ev-detail__present-btn {
+  position: relative;
   display: flex; align-items: center; justify-content: center; gap: 12px;
   min-height: 56px; padding: 14px 20px;
-  border-radius: 14px; border: 1.5px solid rgba(255,255,255,0.08);
+  border-radius: 14px;
+  border: 1.5px solid var(--pc-panel-border);
+  background:
+    var(--pc-paint-grain),
+    var(--pc-panel-bg-strong);
+  background-size: 320px 320px, 100% 100%;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  box-shadow:
+    var(--pc-panel-shadow),
+    var(--pc-panel-inset);
+  color: #f5f0e2;
   font-size: 16px; font-weight: 700; cursor: pointer;
-  transition: all 0.15s ease;
+  transition: border-color 0.15s ease, color 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
 }
 
-/* A측 — 차분한 블루 (플레이 톤과 동일) */
+/* A(박지연, 왼쪽 버튼) — 좌측 파란 3px 라인 + 왼쪽으로 퍼지는 파란 glow */
 body.pc-mode .pc-ev-detail__present-btn.is-a {
-  background: rgba(74, 111, 165, 0.12);
-  color: #7b9bcb;
-  border-color: rgba(74, 111, 165, 0.35);
+  border-left: 3px solid rgba(91, 141, 239, 0.85);
+  box-shadow:
+    var(--pc-panel-shadow),
+    var(--pc-panel-inset),
+    -3px 0 18px -2px rgba(91, 141, 239, 0.28);
 }
-
 body.pc-mode .pc-ev-detail__present-btn.is-a:hover:not(:disabled) {
-  background: rgba(74, 111, 165, 0.2);
-  border-color: rgba(74, 111, 165, 0.55);
-  color: #a0bde0;
+  color: #ffffff;
+  box-shadow:
+    var(--pc-panel-shadow),
+    var(--pc-panel-inset),
+    -3px 0 26px -2px rgba(91, 141, 239, 0.5);
   transform: scale(1.02);
 }
 
-body.pc-mode .pc-ev-detail__present-btn.is-a:active:not(:disabled) {
-  transform: scale(0.98);
-}
-
-/* B측 — 차분한 레드 (플레이 톤과 동일) */
+/* B(이준호, 오른쪽 버튼) — 우측 빨간 3px 라인 + 오른쪽으로 퍼지는 빨간 glow */
 body.pc-mode .pc-ev-detail__present-btn.is-b {
-  background: rgba(168, 79, 79, 0.12);
-  color: #c27a7a;
-  border-color: rgba(168, 79, 79, 0.35);
+  border-right: 3px solid rgba(224, 96, 96, 0.85);
+  box-shadow:
+    var(--pc-panel-shadow),
+    var(--pc-panel-inset),
+    3px 0 18px -2px rgba(224, 96, 96, 0.28);
 }
-
 body.pc-mode .pc-ev-detail__present-btn.is-b:hover:not(:disabled) {
-  background: rgba(168, 79, 79, 0.2);
-  border-color: rgba(168, 79, 79, 0.55);
-  color: #dda0a0;
+  color: #ffffff;
+  box-shadow:
+    var(--pc-panel-shadow),
+    var(--pc-panel-inset),
+    3px 0 26px -2px rgba(224, 96, 96, 0.5);
   transform: scale(1.02);
 }
 
-body.pc-mode .pc-ev-detail__present-btn.is-b:active:not(:disabled) {
+body.pc-mode .pc-ev-detail__present-btn:active:not(:disabled) {
   transform: scale(0.98);
 }
 
@@ -14422,6 +14658,31 @@ body.pc-mode .tag-arch__tip-label {
   font-weight: 800;
 }
 
+body.pc-mode .tag-arch__tip-close {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  width: 22px;
+  height: 22px;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 6px;
+  background: transparent;
+  color: rgba(235, 229, 213, 0.75);
+  font-size: 11px;
+  line-height: 1;
+  cursor: pointer;
+  transition: background-color 140ms ease, border-color 140ms ease, color 140ms ease;
+}
+body.pc-mode .tag-arch__tip-close:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.18);
+  color: #ebe5d5;
+}
+
 body.pc-mode .tag-arch__tip-body {
   color: #d6d3ca;
 }
@@ -14744,17 +15005,17 @@ body.pc-mode .pc-event-feedback__action:active,
 body.pc-mode .pc-event-feedback__dismiss:active {
   transform: scale(0.98);
 }
-/* primary(gold) — 증거 제시 스타일: 테두리 + 깜빡 glow, 배경 채움 없음 */
+/* primary(gold) — 증거 제시 스타일: 테두리 + 깜빡 glow, 배경 채움 없음. 텍스트는 흰색 통일. */
 body.pc-mode .pc-event-feedback__action.tone-gold {
   border-color: rgba(212, 162, 78, 0.5);
   background: var(--pc-p3, rgba(28, 30, 36, 0.95));
-  color: #e8c089;
+  color: #f5f0e2;
   animation: pc-efb-action-pulse-gold 2.4s ease-in-out infinite;
 }
 body.pc-mode .pc-event-feedback__action.tone-gold:hover {
   border-color: rgba(212, 162, 78, 0.85);
   background: rgba(40, 43, 50, 0.98);
-  color: #f0d099;
+  color: #ffffff;
   animation: none;
   box-shadow: 0 0 0 1px rgba(212, 162, 78, 0.4), 0 0 24px rgba(212, 162, 78, 0.4);
 }
@@ -14765,7 +15026,7 @@ body.pc-mode .pc-event-feedback__action.tone-gold:hover {
 body.pc-mode .pc-event-feedback__action.tone-red {
   border-color: rgba(224, 96, 96, 0.45);
   background: var(--pc-p3, rgba(28, 30, 36, 0.95));
-  color: #e29a9a;
+  color: #f5f0e2;
   animation: pc-efb-action-pulse-red 2.4s ease-in-out infinite;
 }
 @keyframes pc-efb-action-pulse-red {
@@ -14775,19 +15036,14 @@ body.pc-mode .pc-event-feedback__action.tone-red {
 body.pc-mode .pc-event-feedback__action.tone-red:hover {
   border-color: rgba(224, 96, 96, 0.7);
   background: rgba(40, 43, 50, 0.98);
-  color: #efb0b0;
+  color: #ffffff;
   animation: none;
   box-shadow: 0 0 0 1px rgba(224, 96, 96, 0.35), 0 0 22px rgba(224, 96, 96, 0.35);
-}
-body.pc-mode .pc-event-feedback__action.tone-red:hover {
-  background: rgba(70, 40, 40, 0.95);
-  border-color: rgba(140, 80, 80, 0.9);
-  color: #e89e9e;
 }
 body.pc-mode .pc-event-feedback__action.tone-green {
   border-color: rgba(92, 201, 122, 0.45);
   background: var(--pc-p3, rgba(28, 30, 36, 0.95));
-  color: #9cd8a8;
+  color: #f5f0e2;
   animation: pc-efb-action-pulse-green 2.4s ease-in-out infinite;
 }
 @keyframes pc-efb-action-pulse-green {
@@ -14797,14 +15053,14 @@ body.pc-mode .pc-event-feedback__action.tone-green {
 body.pc-mode .pc-event-feedback__action.tone-green:hover {
   border-color: rgba(92, 201, 122, 0.7);
   background: rgba(40, 43, 50, 0.98);
-  color: #b4e6c0;
+  color: #ffffff;
   animation: none;
   box-shadow: 0 0 0 1px rgba(92, 201, 122, 0.3), 0 0 22px rgba(92, 201, 122, 0.35);
 }
 body.pc-mode .pc-event-feedback__action.tone-blue {
   border-color: rgba(91, 141, 239, 0.45);
   background: var(--pc-p3, rgba(28, 30, 36, 0.95));
-  color: #9ebde4;
+  color: #f5f0e2;
   animation: pc-efb-action-pulse-blue 2.4s ease-in-out infinite;
 }
 @keyframes pc-efb-action-pulse-blue {
@@ -14814,7 +15070,7 @@ body.pc-mode .pc-event-feedback__action.tone-blue {
 body.pc-mode .pc-event-feedback__action.tone-blue:hover {
   border-color: rgba(91, 141, 239, 0.7);
   background: rgba(40, 43, 50, 0.98);
-  color: #b4cdf0;
+  color: #ffffff;
   animation: none;
   box-shadow: 0 0 0 1px rgba(91, 141, 239, 0.3), 0 0 22px rgba(91, 141, 239, 0.35);
 }
@@ -15771,9 +16027,9 @@ body.pc-mode .pc-jobs-main.is-incoming {
   transition: none !important;
 }
 
-/* Hero flash — 말풍선 jump-pulse와 동일 리듬 (1.4s 2번 깜빡) */
+/* Hero flash — 말풍선 jump-pulse와 동일 리듬 (2.4s 2번 깜빡 — 핫바 pulse와 속도 통일) */
 body.pc-mode .pc-jobs-main.is-hero-flash {
-  animation: pc-jobs-main-hero-flash 1.4s ease-out !important;
+  animation: pc-jobs-main-hero-flash 2.4s ease-out !important;
 }
 @keyframes pc-jobs-main-hero-flash {
   0%   { box-shadow: 0 0 0 0 rgba(232, 193, 114, 0); }
@@ -16200,7 +16456,7 @@ body.pc-mode .pc-resonance-bolt {
 
 /* 관찰 엔트리/히스토리 클릭 시 해당 dialogue로 jump + 2번 깜빡 (말풍선 + 관찰 카드 + 뱃지 공용) */
 body.pc-mode .pc-dialogue-jump-pulse {
-  animation: pc-dialogue-jump-pulse 1.4s ease-out;
+  animation: pc-dialogue-jump-pulse 2.4s ease-out;
   border-radius: 10px;
 }
 @keyframes pc-dialogue-jump-pulse {
@@ -16211,5 +16467,172 @@ body.pc-mode .pc-dialogue-jump-pulse {
   62%  { box-shadow: 0 0 0 3px rgba(232, 193, 114, 0.6), 0 0 20px 5px rgba(212, 162, 78, 0.32); }
   78%  { box-shadow: 0 0 0 0 rgba(232, 193, 114, 0); }
   100% { box-shadow: 0 0 0 0 rgba(232, 193, 114, 0); }
+}
+
+/* ArchetypeTag 툴팁 내 액션 키워드(사실 추궁 / 동기 탐색 / 공감 접근) — 금색 인라인 버튼 */
+body.pc-mode .tag-arch__tip-action {
+  display: inline;
+  padding: 0 2px;
+  margin: 0;
+  background: transparent;
+  border: 0;
+  color: #e8c172;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  text-shadow: 0 0 6px rgba(212, 162, 78, 0.35);
+  transition: color 140ms ease, text-shadow 140ms ease;
+}
+body.pc-mode .tag-arch__tip-action:hover,
+body.pc-mode .tag-arch__tip-action:focus-visible {
+  color: #f3d488;
+  text-shadow: 0 0 10px rgba(232, 193, 114, 0.6);
+  outline: none;
+}
+
+/* 핫바 슬롯 강조 pulse — Archetype 힌트 내 액션 키워드 클릭 시 해당 슬롯 테두리를 느긋하게 깜빡 */
+/* pseudo-element 오버레이 사용: 기존 .slot의 box-shadow !important를 피하면서 금색 테두리+글로우 노출 */
+body.pc-mode .slot.pc-hotbar-slot-pulse {
+  position: relative;
+}
+body.pc-mode .slot.pc-hotbar-slot-pulse::after {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  border-radius: 13px;
+  border: 2px solid transparent;
+  pointer-events: none;
+  z-index: 3;
+  animation: pc-hotbar-slot-pulse 2.4s cubic-bezier(0.22, 0.9, 0.32, 1) 1 both;
+}
+@keyframes pc-hotbar-slot-pulse {
+  0%,
+  100% { border-color: transparent; box-shadow: 0 0 0 0 rgba(232, 193, 114, 0); }
+  18%  { border-color: rgba(232, 193, 114, 0.95); box-shadow: 0 0 26px 7px rgba(212, 162, 78, 0.55); }
+  42%  { border-color: rgba(232, 193, 114, 0.28); box-shadow: 0 0 10px 3px rgba(212, 162, 78, 0.18); }
+  66%  { border-color: rgba(232, 193, 114, 0.85); box-shadow: 0 0 22px 6px rgba(212, 162, 78, 0.45); }
+}
+
+/* 네비게이션 pulse — 타임라인 / 관찰 패널 항목 클릭으로 말풍선 점프 시 사용. 공명 효과보다 훨씬 느리게. */
+body.pc-mode .pc-dialogue-nav-pulse {
+  animation: pc-dialogue-nav-pulse 3s ease-in-out 1 both;
+}
+@keyframes pc-dialogue-nav-pulse {
+  0%   { box-shadow: 0 0 0 0 rgba(232, 193, 114, 0); }
+  18%  { box-shadow: 0 0 0 4px rgba(232, 193, 114, 0.78), 0 0 30px 8px rgba(212, 162, 78, 0.48); }
+  40%  { box-shadow: 0 0 0 0 rgba(232, 193, 114, 0); }
+  58%  { box-shadow: 0 0 0 0 rgba(232, 193, 114, 0); }
+  72%  { box-shadow: 0 0 0 3px rgba(232, 193, 114, 0.6), 0 0 24px 7px rgba(212, 162, 78, 0.38); }
+  92%  { box-shadow: 0 0 0 0 rgba(232, 193, 114, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(232, 193, 114, 0); }
+}
+
+/* ── Phase 전환 컷씬 — 중앙 가로 띠(blur+dark) + 위아래 그라데이션 라인 ── */
+/* 컨테이너는 완전 투명, 띠만 어두움/blur 적용. 띠 바깥은 뒤 화면 그대로 보임. */
+/* body.pc-mode 없이도 매칭 — Portal로 body 직접 마운트 시 pc-mode 클래스 내부 셀렉터 충돌 회피 */
+.pc-phase-cutscene {
+  position: fixed !important;
+  inset: 0 !important;
+  z-index: 99999 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  pointer-events: none !important;
+  background: transparent !important;
+}
+body.pc-mode .pc-phase-cutscene__band {
+  position: relative;
+  width: 100%;
+  padding: 7vh 6vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  background: linear-gradient(
+    to right,
+    rgba(4, 4, 8, 0) 0%,
+    rgba(4, 4, 8, 0.94) 22%,
+    rgba(4, 4, 8, 0.94) 78%,
+    rgba(4, 4, 8, 0) 100%
+  );
+  backdrop-filter: blur(22px) saturate(0.9);
+  -webkit-backdrop-filter: blur(22px) saturate(0.9);
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 12%,
+    black 88%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 12%,
+    black 88%,
+    transparent 100%
+  );
+  animation: pc-phase-cutscene-band 2.3s cubic-bezier(0.22, 0.9, 0.32, 1) forwards;
+}
+/* 띠 위/아래 그라데이션 라인 — 양 끝 페이드 */
+body.pc-mode .pc-phase-cutscene__band::before,
+body.pc-mode .pc-phase-cutscene__band::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    rgba(217, 166, 84, 0) 0%,
+    rgba(217, 166, 84, 0.75) 50%,
+    rgba(217, 166, 84, 0) 100%
+  );
+  pointer-events: none;
+}
+body.pc-mode .pc-phase-cutscene__band::before { top: 0; }
+body.pc-mode .pc-phase-cutscene__band::after { bottom: 0; }
+
+body.pc-mode .pc-phase-cutscene__label {
+  color: #d9a654;
+  font-size: clamp(14px, 1.15vw, 18px);
+  font-weight: 700;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.5);
+  animation: pc-phase-cutscene-fade 2.3s cubic-bezier(0.22, 0.9, 0.32, 1) forwards;
+}
+body.pc-mode .pc-phase-cutscene__title {
+  margin: 0;
+  color: #f5f0e2;
+  font-size: clamp(44px, 5.4vw, 68px);
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  text-align: center;
+  text-shadow: 0 2px 24px rgba(0, 0, 0, 0.6);
+  animation: pc-phase-cutscene-fade 2.3s cubic-bezier(0.22, 0.9, 0.32, 1) 60ms forwards;
+}
+body.pc-mode .pc-phase-cutscene__subtitle {
+  margin: 0;
+  color: rgba(201, 201, 212, 0.78);
+  font-size: clamp(12px, 0.95vw, 14px);
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  text-align: center;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.55);
+  animation: pc-phase-cutscene-fade 2.3s cubic-bezier(0.22, 0.9, 0.32, 1) 120ms forwards;
+}
+
+@keyframes pc-phase-cutscene-band {
+  0%   { opacity: 0; clip-path: inset(45% 0 45% 0); }
+  19%  { opacity: 1; clip-path: inset(0 0 0 0); }   /* 0.45s 페이드인 + 세로 확장 */
+  76%  { opacity: 1; clip-path: inset(0 0 0 0); }   /* 1.3s hold */
+  100% { opacity: 0; clip-path: inset(45% 0 45% 0); } /* 0.55s 페이드아웃 + 세로 수축 */
+}
+@keyframes pc-phase-cutscene-fade {
+  0%   { opacity: 0; transform: translateY(6px); filter: blur(4px); }
+  19%  { opacity: 1; transform: translateY(0); filter: blur(0); }
+  76%  { opacity: 1; transform: translateY(0); filter: blur(0); }
+  100% { opacity: 0; transform: translateY(-4px); filter: blur(3px); }
 }
 

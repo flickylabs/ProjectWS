@@ -783,14 +783,14 @@ function EvidenceDetailSection({ evidenceId }: { evidenceId: string }) {
           {stages.map((stage) => (
             <div className={`pc-ev-detail__stage ${stage.revealed ? 'is-open' : stage.unlockable ? 'is-ready' : 'is-locked'}`} key={stage.index}>
               <span className="pc-ev-detail__stage-num">
-                {stage.revealed ? '✓' : stage.unlockable ? '?' : '🔒'}
+                {stage.revealed ? '✓' : stage.unlockable ? '?' : <PCSvgIcon id="i-lock" size={14} />}
               </span>
               <div className="pc-ev-detail__stage-body">
                 {stage.revealed ? (
                   <span className="pc-ev-detail__stage-a">{evidence.investigationResults[stage.revealKey]}</span>
                 ) : stage.unlockable ? (
                   <button className="pc-ev-detail__investigate-btn" onClick={() => handleInvestigate(stage.revealKey)} type="button">
-                    <span className="pc-ev-detail__investigate-cost"><PCSvgIcon id="i-search" size={14} /> {investigateCostLabel}</span> 조사 시도
+                    <span className="pc-ev-detail__investigate-cost"><PCSvgIcon id="i-search" size={18} /> {investigateCostLabel}</span> 조사 시도
                   </button>
                 ) : (
                   <span className="pc-ev-detail__stage-lock">조사 단계 {stage.stage} — 해금 필요</span>

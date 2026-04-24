@@ -4,7 +4,6 @@ import { resetFatigueForDossier } from '../../../engine/questionFatigueEngine'
 import { getContradictionEvent, getInterjectionEvent, getOutburstEvent } from '../../../engine/v3GameLoopLoader'
 import { applyWitnessSlot } from '../../../hooks/useActionDispatch'
 import { recordInterjectionChoice } from '../../../engine/phase3LogCollector'
-import { stripOutputCodename } from '../../../utils/combinationLabels'
 import type { TruthJudgment } from '../../../types/discovery'
 
 /**
@@ -24,7 +23,7 @@ const JUDGMENT_LABELS: Record<TruthJudgment, string> = {
   believe_a: 'A의 주장이 더 설득력 있습니다',
   believe_b: 'B의 주장이 더 설득력 있습니다',
   both_partial: '양쪽 모두 일부만 사실입니다',
-  undetermined: '아직 보류하겠습니다',
+  undetermined: '판단을 보류하겠습니다.',
 }
 
 function isNarrativeReaction(text: string | undefined): boolean {
@@ -84,24 +83,14 @@ export default function DiscoveryFeedbackWatcher() {
       },
       tone: 'gold',
       actionsLayout: 'vertical',
-      actions: [
-        ...judgments.map((value) => ({
-          label: JUDGMENT_LABELS[value].replace('A의', `${partyA}의`).replace('B의', `${partyB}의`),
-          tone: 'gold' as const,
-          onSelect: () => {
-            useGameStore.getState().submitJudgment(pendingConfrontation.disputeId, value, useGameStore.getState().turnCount)
-            enqueuedRef.current.delete(key)
-          },
-        })),
-        {
-          label: '지금은 보류',
-          tone: 'gray',
-          onSelect: () => {
-            useGameStore.getState().setPendingConfrontation(null)
-            enqueuedRef.current.delete(key)
-          },
+      actions: judgments.map((value) => ({
+        label: JUDGMENT_LABELS[value].replace('A의', `${partyA}의`).replace('B의', `${partyB}의`),
+        tone: 'gold' as const,
+        onSelect: () => {
+          useGameStore.getState().submitJudgment(pendingConfrontation.disputeId, value, useGameStore.getState().turnCount)
+          enqueuedRef.current.delete(key)
         },
-      ],
+      })),
     })
   }, [pendingConfrontation])
 
@@ -208,7 +197,8 @@ export default function DiscoveryFeedbackWatcher() {
       eyebrow: '새 쟁점 발견',
       subtitle: ROUTE_LABELS[pendingEmergence.route] ?? '새 단서가 갈래를 바꿨습니다.',
       title: dispute?.name ?? pendingEmergence.disputeId,
-      body: stripOutputCodename(pendingEmergence.description),
+      // body 제거: description은 dispute.truthDescription(진실 설명)이라 스포일러.
+      // 쟁점 이름(title)과 발견 경로(subtitle)만 노출하고, 구체 내용은 플레이어가 심문/증거로 밝혀내도록.
       tone: 'gold',
       actions: [
         {

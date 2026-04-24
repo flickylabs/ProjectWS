@@ -25,6 +25,7 @@ export default function JudgeObservationSection() {
   const observations = useStore((s) => s.judgeObservations ?? [])
   const turnCount = useStore((s) => s.turnCount)
   const setHistoryOpen = useStore((s) => s.setObservationHistoryOpen)
+  const historyOpen = useStore((s) => s.observationHistoryOpen)
 
   // 가장 최근 관찰 (내부 latest)
   const latest = useMemo<JudgeObservation | null>(() => {
@@ -85,9 +86,13 @@ export default function JudgeObservationSection() {
     const active = useGameStore.getState().activeFeedback
     const cutsceneKinds = ['observation', 'evidence_result', 'transition_choice']
     const hasCutscene = !!(active && cutsceneKinds.includes(active.kind))
-    const arriveDelay = hasCutscene ? 2300 : 1200
-    // flash duration — 관찰 카드 is-hero-flash와 말풍선 pc-dialogue-jump-pulse 모두 1.4s 리듬 공유
-    const flashMs = 1400
+    // archetype 카테고리는 observation 컷씬과 묶여 발동되므로, 컷씬 수렴이 완전히 끝난 후 뱃지 pulse 시작
+    // (컷씬 2.3s 중 수렴 꼬리 ~0.7s 추가 고려)
+    const archetypeExtraDelay = latest.category === 'archetype' && hasCutscene ? 900 : 0
+    const arriveDelay = (hasCutscene ? 2300 : 1200) + archetypeExtraDelay
+    // flash duration — 관찰 카드 is-hero-flash와 말풍선 pc-dialogue-jump-pulse 모두 2.4s 리듬 공유
+    // (핫바 슬롯 pulse와 속도 통일, 유저 체감 속도 완화)
+    const flashMs = 2400
     // 이벤트만 번개 연결, 나머지는 깜빡 공명
     const useLightning = latest.category === 'event'
 
@@ -228,10 +233,11 @@ export default function JudgeObservationSection() {
         ) : null}
         <button
           type="button"
-          className="pc-jobs-history-btn"
-          onClick={() => setHistoryOpen(true)}
-          title="전체 히스토리 열기"
-          aria-label="관찰 히스토리 열기"
+          className={`pc-jobs-history-btn${historyOpen ? ' is-open' : ''}`}
+          onClick={() => setHistoryOpen(!historyOpen)}
+          title={historyOpen ? '전체 히스토리 닫기' : '전체 히스토리 열기'}
+          aria-label="관찰 히스토리 토글"
+          aria-pressed={historyOpen}
         >
           <PCSvgIcon id="i-doc" size={12} />
         </button>
@@ -297,7 +303,8 @@ function formatTurnGap(now: number, then: number): string {
   return `${gap}턴 전`
 }
 
-/** 관찰 엔트리 클릭 시 채팅의 해당 발언으로 스크롤 + 갈색 pulse (말풍선 범위에만) */
+/** 관찰 엔트리 / 타임라인 클릭 시 채팅의 해당 발언으로 스크롤 + 느린 pulse.
+ *  공명 효과(jump-pulse, 1.4s)와 분리된 네비게이션 전용 클래스(nav-pulse, 3s). */
 export function jumpToDialogue(dialogueId: string | undefined): void {
   if (!dialogueId) return
   if (typeof document === 'undefined') return
@@ -310,8 +317,8 @@ export function jumpToDialogue(dialogueId: string | undefined): void {
     row.querySelector<HTMLElement>('.pc-log-system-explainer') ??
     row
   row.scrollIntoView({ behavior: 'smooth', block: 'center' })
-  bubble.classList.add('pc-dialogue-jump-pulse')
+  bubble.classList.add('pc-dialogue-nav-pulse')
   window.setTimeout(() => {
-    bubble.classList.remove('pc-dialogue-jump-pulse')
-  }, 1400)
+    bubble.classList.remove('pc-dialogue-nav-pulse')
+  }, 3000)
 }

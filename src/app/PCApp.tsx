@@ -140,7 +140,7 @@ function getActionPanel(phase: GamePhase) {
     case Phase.Pretrial: {
       const script = caseData ? loadPhase1Script(caseData.caseId) : null
       const fallback = script ?? (caseData ? buildGenericPhase1(caseData) : phase1Dialogues)
-      return <AutoDialoguePhase dialogues={fallback} nextLabel="심문 시작" nextPhase={Phase.Interrogation} phaseKey="phase1" />
+      return <AutoDialoguePhase dialogues={fallback} nextPhase={Phase.Interrogation} phaseKey="phase1" />
     }
     case GamePhase.Phase2_Rebuttal: {
       const script = caseData ? loadPhase2Script(caseData.caseId) : null
@@ -149,7 +149,6 @@ function getActionPanel(phase: GamePhase) {
         <AutoDialoguePhase
           dialogues={fallback}
           llmGenerator={caseData ? () => generatePhase2Dialogues(caseData) : undefined}
-          nextLabel="심문 시작"
           nextPhase={Phase.Interrogation}
           phaseKey="phase2"
         />

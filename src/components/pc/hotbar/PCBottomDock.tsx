@@ -373,7 +373,7 @@ export default function PCBottomDock() {
 
             <div className="hotbar-slots">
               {/* 1: 사실 추궁 */}
-              <button className="slot" onClick={() => openQuestionChoice('fact_pursuit')} title="모순에 집중하기" type="button">
+              <button className="slot" data-guide-target="question-fact" onClick={() => openQuestionChoice('fact_pursuit')} title="모순에 집중하기" type="button">
                 <span className="slot-key">1</span>
                 <span className="slot-ico"><PCSvgIcon id="i-gavel" size={24} /></span>
                 <span className="slot-nm">사실 추궁</span>
@@ -381,14 +381,14 @@ export default function PCBottomDock() {
               </button>
 
               {/* 2: 동기 탐색 */}
-              <button className="slot" onClick={() => openQuestionChoice('motive_search')} title="숨겨진 쟁점찾기" type="button">
+              <button className="slot" data-guide-target="question-motive" onClick={() => openQuestionChoice('motive_search')} title="숨겨진 쟁점찾기" type="button">
                 <span className="slot-key">2</span>
                 <span className="slot-ico"><PCSvgIcon id="i-eye" size={24} /></span>
                 <span className="slot-nm">동기 탐색</span>
               </button>
 
               {/* 3: 공감 접근 */}
-              <button className="slot" onClick={() => openQuestionChoice('empathy_approach')} title="자백 유도하기" type="button">
+              <button className="slot" data-guide-target="question-empathy" onClick={() => openQuestionChoice('empathy_approach')} title="자백 유도하기" type="button">
                 <span className="slot-key">3</span>
                 <span className="slot-ico"><PCSvgIcon id="i-heart" size={24} /></span>
                 <span className="slot-nm">공감 접근</span>

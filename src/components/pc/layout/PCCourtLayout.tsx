@@ -16,7 +16,7 @@ import MiniGameOverlay from '../minigame/MiniGameOverlay'
 import { MINIGAME_MAX_ROUNDS } from '../../../types/minigame'
 import PCInteractionPanel, { openPcInteractionPanel } from './PCInteractionPanel'
 import PCRecordSummary from './PCRecordSummary'
-import { playBgm, playCourtControl } from '../../../engine/soundEngine'
+import { playCourtControl } from '../../../engine/soundEngine'
 
 interface Props {
   actionPanel?: ReactNode
@@ -96,34 +96,10 @@ export default function PCCourtLayout({ actionPanel, onDialogueTap, isDialoguePh
   const startMinigame = useStore((s) => s.startMinigame)
 
   const [tokenPopup, setTokenPopup] = useState<'invest' | 'skill' | 'court' | null>(null)
-  const [phaseBanner, setPhaseBanner] = useState<string | null>(null)
   const [recordSummaryOpen, setRecordSummaryOpen] = useState(false)
   const [combinationOverlay, setCombinationOverlay] = useState<CombinationOverlayState | null>(null)
   const [dossierUnlockText, setDossierUnlockText] = useState<string | null>(null)
   const [courtControlFlash, setCourtControlFlash] = useState<{ id: number; label: string } | null>(null)
-  const prevPhaseRef = useRef(currentPhase)
-
-  useEffect(() => {
-    if (currentPhase !== prevPhaseRef.current) {
-      prevPhaseRef.current = currentPhase
-      const label = PHASE_LABELS[currentPhase]
-      const num = getPhaseNumber(currentPhase)
-      setPhaseBanner(`Phase ${num} — ${label}`)
-      // BGM 전환
-      const BGM_MAP: Partial<Record<GamePhase, string>> = {
-        [Phase.Briefing]: '/bgm/court.mp3',
-        [Phase.Pretrial]: '/bgm/court.mp3',
-        [Phase.Interrogation]: '/bgm/court.mp3',
-        [Phase.Mediation]: '/bgm/verdict.mp3',
-        [Phase.Verdict]: '/bgm/verdict.mp3',
-        [Phase.Result]: '/bgm/result.mp3',
-      }
-      const bgm = BGM_MAP[currentPhase]
-      if (bgm) playBgm(bgm)
-      const timer = window.setTimeout(() => setPhaseBanner(null), 2800)
-      return () => window.clearTimeout(timer)
-    }
-  }, [currentPhase])
 
   useEffect(() => {
     return () => {
@@ -421,12 +397,6 @@ export default function PCCourtLayout({ actionPanel, onDialogueTap, isDialoguePh
           <div className="pc-play-ribbon-wrap">
             <PCDisputeRibbon />
           </div>
-
-          {phaseBanner ? (
-            <div className="pc-phase-banner">
-              <span className="pc-phase-banner__text">{phaseBanner}</span>
-            </div>
-          ) : null}
 
           <div className="chat-area pc-play-chat" onClick={handleChatClick} ref={chatRef}>
             <PCDialogueLog />

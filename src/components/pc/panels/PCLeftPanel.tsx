@@ -219,7 +219,7 @@ export default function PCLeftPanel() {
       <JudgeObservationSection />
 
       <aside className={`pc-play-timeline-panel${timelineOpen ? ' is-open' : ''}`} aria-hidden={!timelineOpen}>
-        <PCCaseTimelineSection />
+        <PCCaseTimelineSection onItemClick={() => setTimelineOpen(false)} />
       </aside>
 
       <JudgeObservationHistoryDrawer />
