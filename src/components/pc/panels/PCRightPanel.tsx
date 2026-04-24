@@ -470,9 +470,15 @@ export default function PCRightPanel() {
 
     // 3) Toast: 플레이 가이드 (judgeHint — 채팅 비삽입, 짧은 힌트만)
     if (matchingOutput.judgeHint) {
-      // 조합 결과 종류에 따라 타겟 분기: 증인 해금이면 증인 소환, 아니면 조합 카드
+      // 힌트 키워드별 타겟 분기 (우선순위: 증인 > 증거/제시 > 자백/공감 > 추궁/모순 > 쟁점/숨김 > 조합 카드)
       const hint = matchingOutput.judgeHint.trim()
-      const target = /증인/.test(hint) ? '[data-guide-target="witness-summon"]' : '.pc-combination-card'
+      const target =
+        /증인/.test(hint) ? '[data-guide-target="witness-summon"]'
+        : /증거|제시/.test(hint) ? '[data-guide-target="evidence-present"]'
+        : /자백|솔직/.test(hint) ? '[data-guide-target="question-empathy"]'
+        : /추궁|모순|사실\s*추궁/.test(hint) ? '[data-guide-target="question-fact"]'
+        : /쟁점|숨[긴겨]|동기\s*탐색/.test(hint) ? '[data-guide-target="question-motive"]'
+        : '.pc-combination-card'
       showGuideCutscene(hint, target)
     }
 
