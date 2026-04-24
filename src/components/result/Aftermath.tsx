@@ -5,6 +5,7 @@ import { isLLMMode } from '../../hooks/useActionDispatch'
 import { updateLatestAftermath } from '../../data/leaderboard'
 import { buildResultSystemPrompt, buildResultUserPrompt, formatResultAsNarrative } from '../../engine/phase6ResultPromptV2'
 import { resolveScriptedAftermath } from '../../engine/aftermathResolver'
+import { pp과와, pp은는 } from '../../engine/koreanPostposition'
 import type { VerdictData, ResultV2Response, CaseMeta } from '../../engine/phase6ResultPromptV2'
 
 function wrapText(ctx: CanvasRenderingContext2D, text: string, maxWidth: number): string[] {
@@ -196,13 +197,15 @@ export default function Aftermath() {
     const nameB = caseData.duo.partyB.name
     const total = verdictScore.total
 
+    const pA = pp과와(nameA)
+    const pB = pp은는(nameB)
     if (total >= 75) {
-      return `${nameA}와 ${nameB}는 판결 직후에는 여전히 굳은 표정이었지만, 적어도 무엇이 문제였는지는 같은 문장으로 말할 수 있게 되었다.\n\n일주일쯤 지나자 서로를 향한 비난은 조금 줄었고, 대신 앞으로 지켜야 할 선과 절차를 다시 확인하는 대화가 시작됐다.\n\n완전한 화해는 아니어도, 이번에는 같은 실수를 반복하지 않겠다는 말만은 남았다.`
+      return `${nameA}${pA} ${nameB}${pB} 판결 직후에는 여전히 굳은 표정이었지만, 적어도 무엇이 문제였는지는 같은 문장으로 말할 수 있게 되었다.\n\n일주일쯤 지나자 서로를 향한 비난은 조금 줄었고, 대신 앞으로 지켜야 할 선과 절차를 다시 확인하는 대화가 시작됐다.\n\n완전한 화해는 아니어도, 이번에는 같은 실수를 반복하지 않겠다는 말만은 남았다.`
     }
     if (total >= 50) {
-      return `${nameA}와 ${nameB}는 판결을 받아들였지만, 누구도 완전히 만족한 얼굴은 아니었다.\n\n한 달이 지나도 억울함과 불만은 남았지만, 적어도 무엇을 다시 건드리면 같은 싸움이 반복되는지는 서로 알고 있었다.\n\n정리가 곧 화해는 아니지만, 더 크게 무너지는 일은 막아 낸 결말이었다.`
+      return `${nameA}${pA} ${nameB}${pB} 판결을 받아들였지만, 누구도 완전히 만족한 얼굴은 아니었다.\n\n한 달이 지나도 억울함과 불만은 남았지만, 적어도 무엇을 다시 건드리면 같은 싸움이 반복되는지는 서로 알고 있었다.\n\n정리가 곧 화해는 아니지만, 더 크게 무너지는 일은 막아 낸 결말이었다.`
     }
-    return `${nameA}와 ${nameB}는 판결 뒤에도 쉽게 자리를 뜨지 못했다.\n\n사실이 드러났다고 해서 감정이 정리된 것은 아니었고, 남은 말들은 대부분 다음 갈등의 씨앗처럼 방 안에 남아 있었다.\n\n이번 결말은 봉합보다 경고에 가까웠다.`
+    return `${nameA}${pA} ${nameB}${pB} 판결 뒤에도 쉽게 자리를 뜨지 못했다.\n\n사실이 드러났다고 해서 감정이 정리된 것은 아니었고, 남은 말들은 대부분 다음 갈등의 씨앗처럼 방 안에 남아 있었다.\n\n이번 결말은 봉합보다 경고에 가까웠다.`
   }
 
   if (loading) {

@@ -14,7 +14,7 @@ import { useGameStore, useStore } from '../../../store/useGameStore'
 import { saveCaseProgress } from '../../phase/CaseMap'
 import { resetAftermathCache } from '../../result/Aftermath'
 import { playClick } from '../../../engine/soundEngine'
-import { pp과와 } from '../../../engine/koreanPostposition'
+import { pp과와, pp은는 } from '../../../engine/koreanPostposition'
 import CharacterFaceSvg from '../icons/CharacterFaceSvg'
 import PCClearanceDetailPopup from './PCClearanceDetailPopup'
 import { evaluateClearance } from '../../../engine/clearanceTracker'
@@ -1064,13 +1064,15 @@ function AftermathInline() {
 function buildFallback(caseData: { duo: { partyA: { name: string }; partyB: { name: string } } }, total: number): string {
   const nameA = caseData.duo.partyA.name
   const nameB = caseData.duo.partyB.name
+  const pA = pp과와(nameA)
+  const pB = pp은는(nameB)
   if (total >= 75) {
-    return `${nameA}와 ${nameB}는 적어도 무엇이 문제였는지 같은 문장으로 말할 수 있게 되었다.\n\n서로를 향한 비난은 줄었고, 앞으로 지켜야 할 선을 다시 확인하는 대화가 시작됐다.\n\n완전한 화해는 아니어도, 같은 실수를 반복하지 않겠다는 말만은 남았다.`
+    return `${nameA}${pA} ${nameB}${pB} 적어도 무엇이 문제였는지 같은 문장으로 말할 수 있게 되었다.\n\n서로를 향한 비난은 줄었고, 앞으로 지켜야 할 선을 다시 확인하는 대화가 시작됐다.\n\n완전한 화해는 아니어도, 같은 실수를 반복하지 않겠다는 말만은 남았다.`
   }
   if (total >= 50) {
-    return `${nameA}와 ${nameB}는 판결을 받아들였지만, 완전히 만족한 얼굴은 아니었다.\n\n한 달이 지나도 불만은 남았지만, 같은 싸움이 반복되는 지점은 서로 알고 있었다.\n\n정리가 곧 화해는 아니지만, 더 크게 무너지는 일은 막아 낸 결말이었다.`
+    return `${nameA}${pA} ${nameB}${pB} 판결을 받아들였지만, 완전히 만족한 얼굴은 아니었다.\n\n한 달이 지나도 불만은 남았지만, 같은 싸움이 반복되는 지점은 서로 알고 있었다.\n\n정리가 곧 화해는 아니지만, 더 크게 무너지는 일은 막아 낸 결말이었다.`
   }
-  return `${nameA}와 ${nameB}는 판결 뒤에도 쉽게 자리를 뜨지 못했다.\n\n감정이 정리된 것은 아니었고, 남은 말들은 다음 갈등의 씨앗처럼 남아 있었다.\n\n이번 결말은 봉합보다 경고에 가까웠다.`
+  return `${nameA}${pA} ${nameB}${pB} 판결 뒤에도 쉽게 자리를 뜨지 못했다.\n\n감정이 정리된 것은 아니었고, 남은 말들은 다음 갈등의 씨앗처럼 남아 있었다.\n\n이번 결말은 봉합보다 경고에 가까웠다.`
 }
 
 /* ─── Profile inline ─── */

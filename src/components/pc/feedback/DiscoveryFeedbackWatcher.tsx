@@ -4,6 +4,7 @@ import { resetFatigueForDossier } from '../../../engine/questionFatigueEngine'
 import { getContradictionEvent, getInterjectionEvent, getOutburstEvent } from '../../../engine/v3GameLoopLoader'
 import { applyWitnessSlot } from '../../../hooks/useActionDispatch'
 import { recordInterjectionChoice } from '../../../engine/phase3LogCollector'
+import { pp이가 } from '../../../engine/koreanPostposition'
 import type { TruthJudgment } from '../../../types/discovery'
 
 /**
@@ -630,7 +631,7 @@ export default function DiscoveryFeedbackWatcher() {
       iconId: 'i-witness',
       title: pc.isResummon
         ? `${pc.witnessName}에게 추가 질문을 할 기회가 생겼다.`
-        : `${pc.witnessName}이(가) 증언대에 섰다.`,
+        : `${pc.witnessName}${pp이가(pc.witnessName)} 증언대에 섰다.`,
       summary: pc.isResummon ? '증인 재심문' : '증인 심문',
     })
     state.enqueueFeedback({

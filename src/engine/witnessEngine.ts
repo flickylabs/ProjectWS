@@ -13,6 +13,7 @@ import { buildWitnessFewShotBlock, buildHiddenAgendaPatternBlock, type WitnessSl
 import { normalizeCaseKey } from '../utils/caseHelpers'
 import { getWitnessSpeechSamples } from '../data/caseEnrichment'
 import { getScriptedWitness } from './scriptedTextLoader'
+import { pp과와 } from './koreanPostposition'
 import type { CaseData } from '../types'
 import type { AgentState } from '../types'
 import type { LieState } from '../types/agent'
@@ -354,8 +355,8 @@ function buildFallbackWitnessPrompt(
 ## 증인 프로필
 - 이름: ${vars.witnessName}
 - 나이/직업: ${vars.witnessAge}, ${vars.witnessOccupation}
-- ${vars.nameA}와의 관계: ${vars.witnessRelationToA}
-- ${vars.nameB}와의 관계: ${vars.witnessRelationToB}
+- ${vars.nameA}${pp과와(vars.nameA)}의 관계: ${vars.witnessRelationToA}
+- ${vars.nameB}${pp과와(vars.nameB)}의 관계: ${vars.witnessRelationToB}
 - 직접 목격: ${vars.witnessWitnessedDirectly}
 - 아는 내용: ${vars.witnessKnowledgeScope}
 

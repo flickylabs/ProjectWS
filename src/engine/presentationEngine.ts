@@ -17,6 +17,7 @@ import {
   playPhaseTransition,
   playEvidenceUnlock,
 } from './soundEngine'
+import { pp이가 } from './koreanPostposition'
 
 // ── 타입 ──
 
@@ -174,7 +175,7 @@ async function handleConfession(e: ConfessionEvent) {
   overlay.classList.add('v4-confession-overlay--active')
   // 시스템 메시지
   window.dispatchEvent(new CustomEvent('v4:system-message', {
-    detail: { text: `${e.partyName}가 모든 것을 인정했습니다` }
+    detail: { text: `${e.partyName}${pp이가(e.partyName)} 모든 것을 인정했습니다` }
   }))
   await delay(3000)
   overlay.classList.remove('v4-confession-overlay--active')
