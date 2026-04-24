@@ -1128,8 +1128,10 @@
       "answerEnvelope": {
         "disputeId": "d-1",
         "allowAtomIds": [
-          "family-01:b:d-1:unlock:s2:0",
-          "family-01:b:d-1:unlock:s3:0"
+          "d1.junghu_paper_reading_ack",
+          "d1.junghu_intent_transfer_only",
+          "d1.junghu_caregiver_statement_limited",
+          "d1.junghu_records_show_influence"
         ],
         "preferredAngleTags": [
           "timeline",
@@ -1156,10 +1158,14 @@
       "answerEnvelope": {
         "disputeId": "d-1",
         "allowAtomIds": [
-          "family-01:b:d-1:unlock:s3:0"
+          "d1.junghu_finish_before_brother_ack",
+          "d1.junghu_avoid_collision_not_exclusion",
+          "d1.junghu_line_crossing_discomfort"
         ],
         "forbidAtomIds": [
-          "family-01:b:d-4:unlock:s4:0"
+          "d4.junghu_birth_gap_indirect",
+          "d4.junghu_identity_collapse_prevent",
+          "d4.junghu_mother_record_secret_edge"
         ],
         "preferredAngleTags": [
           "context",
@@ -1187,11 +1193,15 @@
       "answerEnvelope": {
         "disputeId": "d-2",
         "allowAtomIds": [
-          "family-01:b:d-2:unlock:s3:0",
-          "family-01:b:d-2:unlock:s4:0"
+          "d2.junghu_ratio_shift_partial_admit",
+          "d2.junghu_my_share_reduction_context",
+          "d2.junghu_forgery_responsibility_accept",
+          "d2.junghu_bigger_breakdown_prevent"
         ],
         "forbidAtomIds": [
-          "family-01:b:d-4:unlock:s4:0"
+          "d4.junghu_birth_gap_indirect",
+          "d4.junghu_identity_collapse_prevent",
+          "d4.junghu_mother_record_secret_edge"
         ],
         "preferredAngleTags": [
           "context",
@@ -1219,8 +1229,10 @@
       "answerEnvelope": {
         "disputeId": "d-3",
         "allowAtomIds": [
-          "family-01:b:d-3:unlock:s2:0",
-          "family-01:b:d-3:unlock:s3:0"
+          "d3.junghu_living_cost_flow_ack",
+          "d3.junghu_factory_money_same_flow",
+          "d3.junghu_monthly_twenty_year_ack",
+          "d3.junghu_mother_money_mask_shame"
         ],
         "preferredAngleTags": [
           "context",
@@ -1248,7 +1260,10 @@
       "answerEnvelope": {
         "disputeId": "d-4",
         "allowAtomIds": [
-          "family-01:b:d-4:unlock:s2:0"
+          "d4.junghu_material_exists_only",
+          "d4.junghu_known_family_core_alone",
+          "d4.junghu_record_points_to_silence",
+          "d4.junghu_mother_record_secret_edge"
         ],
         "preferredAngleTags": [
           "timeline",
@@ -1275,8 +1290,10 @@
       "answerEnvelope": {
         "disputeId": "d-4",
         "allowAtomIds": [
-          "family-01:b:d-4:unlock:s3:0",
-          "family-01:b:d-4:unlock:s4:0"
+          "d4.junghu_kept_it_from_brother",
+          "d4.junghu_court_exposure_fear",
+          "d4.junghu_identity_collapse_prevent",
+          "d4.junghu_quiet_crack_for_brother"
         ],
         "preferredAngleTags": [
           "emotion",
@@ -1305,7 +1322,9 @@
       "answerEnvelope": {
         "disputeId": "d-5",
         "allowAtomIds": [
-          "family-01:a:d-5:unlock:s2:0"
+          "d5.taesung_eldest_right_exposed",
+          "d5.taesung_mother_state_use_suspect",
+          "d5.taesung_anger_repositioned"
         ],
         "preferredAngleTags": [
           "context",
@@ -1331,9 +1350,10 @@
       "answerEnvelope": {
         "disputeId": "d-5",
         "allowAtomIds": [
-          "family-01:b:d-5:unlock:s2:0",
-          "family-01:both:d-5:unlock:s3:0",
-          "family-01:both:d-5:unlock:s4:0"
+          "d5.junghu_protective_purpose_tilt",
+          "d5.junghu_forgery_and_care_conflict",
+          "d5.junghu_birth_secret_trial_block",
+          "d5.junghu_final_evidence_shared_fault"
         ],
         "preferredAngleTags": [
           "relationship",

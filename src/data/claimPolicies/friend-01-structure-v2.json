@@ -944,5 +944,291 @@
         ]
       }
     }
-  ]
+  ],
+  "freeQuestionHooks": [
+    {
+      "id": "fq.d1.warning_route",
+      "intentTag": "motive_hidden",
+      "description": "최수민이 왜 송다은이 아니라 예비신랑에게 경고를 우회했는지 묻는 훅.",
+      "allowedAtStates": [
+        "S3",
+        "S4",
+        "S5"
+      ],
+      "allowedIssueRoles": [
+        "core_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-1",
+        "allowAtomIds": [
+          "d1.sumin_s2_no_direct_path",
+          "d1.sumin_s2_daieun_hurt_silence",
+          "d1.sumin_s3_ask_fiance_first_choice",
+          "d1.sumin_s3_worry_check_attempt"
+        ],
+        "forbidAtomIds": [
+          "d3.sumin_s5_same_method_full_confess",
+          "d4.sumin_s5_fraud_victim_full_confess"
+        ],
+        "preferredAngleTags": [
+          "motive",
+          "relationship",
+          "context"
+        ]
+      },
+      "refusalTemplates": [
+        "제가 왜 그 사람을 붙잡았는지는 아직 다 말하기 어렵습니다.",
+        "제 친구에게 바로 말하지 못한 이유를 지금 꺼내면 상처가 커집니다."
+      ]
+    },
+    {
+      "id": "fq.d1.obsession_frame",
+      "intentTag": "trap_read",
+      "description": "연락 횟수와 긴급 문구가 왜 집착 프레임으로 읽혔는지 묻는 훅.",
+      "allowedAtStates": [
+        "S3",
+        "S4",
+        "S5"
+      ],
+      "allowedIssueRoles": [
+        "core_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-1",
+        "allowAtomIds": [
+          "d1.daeun_s1_count_only_basis",
+          "d1.daeun_s2_urgent_words_as_cling",
+          "d1.daeun_s3_no_affection_shaken",
+          "d1.sumin_s2_no_cling_in_messages"
+        ],
+        "forbidAtomIds": [
+          "d3.sumin_s5_same_method_full_confess",
+          "d4.sumin_s5_fraud_victim_full_confess"
+        ],
+        "preferredAngleTags": [
+          "context",
+          "responsibility",
+          "identity"
+        ]
+      },
+      "refusalTemplates": [
+        "제가 한 연락을 집착으로만 말하면 의도까지 틀어집니다.",
+        "횟수와 의도를 한 줄로 묶어 제가 답하면 너무 거칠어집니다."
+      ]
+    },
+    {
+      "id": "fq.d2.who_crossed_first",
+      "intentTag": "timeline_probe",
+      "description": "예비신랑과 최수민 사이에서 누가 먼저 선을 넘었는지 선후관계를 묻는 훅.",
+      "allowedAtStates": [
+        "S2",
+        "S3",
+        "S4",
+        "S5"
+      ],
+      "allowedIssueRoles": [
+        "core_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-2",
+        "allowAtomIds": [
+          "d2.sumin_s1_first_msg_received",
+          "d2.sumin_s2_friend_boyfriend_boundary",
+          "d2.sumin_s2_refusal_quote_core",
+          "d2.daeun_s1_full_chat_unseen_ack"
+        ],
+        "preferredAngleTags": [
+          "timeline",
+          "responsibility",
+          "authenticity"
+        ]
+      },
+      "refusalTemplates": [
+        "누가 먼저였는지만 말하면 제가 왜 멈췄는지는 빠집니다.",
+        "제가 그 순서를 지금 잘라 말하면 남는 말이 왜곡됩니다."
+      ]
+    },
+    {
+      "id": "fq.d2.why_hide_capture",
+      "intentTag": "privacy_motive",
+      "description": "거절 답장과 원본 캡처를 왜 바로 보여 주지 않았는지 묻는 훅.",
+      "allowedAtStates": [
+        "S3",
+        "S4",
+        "S5"
+      ],
+      "allowedIssueRoles": [
+        "core_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-2",
+        "allowAtomIds": [
+          "d2.sumin_s1_full_capture_hesitate",
+          "d2.sumin_s2_late_tell_guilt",
+          "d2.daeun_s2_not_showing_blame",
+          "d2.sumin_s3_reversed_blame_resent"
+        ],
+        "forbidAtomIds": [
+          "d3.sumin_s5_same_method_full_confess",
+          "d4.sumin_s5_fraud_victim_full_confess"
+        ],
+        "preferredAngleTags": [
+          "motive",
+          "emotion",
+          "relationship"
+        ]
+      },
+      "refusalTemplates": [
+        "제가 캡처를 못 보인 이유는 죄책감 하나로 끝나지 않습니다.",
+        "그걸 바로 안 보여 준 일은 제가 아직 쉽게 말하기 어렵습니다."
+      ]
+    },
+    {
+      "id": "fq.d3.money_pattern",
+      "intentTag": "motive_hidden",
+      "description": "아버지의 현재 돈 부탁과 최수민의 연락 시점이 어떻게 겹쳤는지 묻는 훅.",
+      "allowedAtStates": [
+        "S4",
+        "S5"
+      ],
+      "allowedIssueRoles": [
+        "core_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-3",
+        "allowAtomIds": [
+          "d3.sumin_s3_repeat_pattern_recognized",
+          "d3.sumin_s3_timing_and_contact_link",
+          "d3.sumin_s4_father_money_request_leak",
+          "d3.sumin_s4_keep_from_daieun_quote"
+        ],
+        "forbidAtomIds": [
+          "d4.sumin_s5_fraud_victim_full_confess",
+          "d4.sumin_s5_could_not_name_father"
+        ],
+        "preferredAngleTags": [
+          "timeline",
+          "context",
+          "motive"
+        ]
+      },
+      "refusalTemplates": [
+        "그 돈 얘기 시점을 말하면 아직 못 꺼낸 과거까지 따라옵니다.",
+        "제가 왜 같은 흐름이라 봤는지는 지금 바로 다 말하기 어렵습니다."
+      ]
+    },
+    {
+      "id": "fq.d4.past_silence",
+      "intentTag": "motive_hidden",
+      "description": "과거 손절 때 최수민이 왜 돈 문제의 속을 말하지 못했는지 묻는 훅.",
+      "allowedAtStates": [
+        "S3",
+        "S4",
+        "S5"
+      ],
+      "allowedIssueRoles": [
+        "core_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-4",
+        "allowAtomIds": [
+          "d4.sumin_s3_unspoken_reason_ack",
+          "d4.sumin_s3_protected_daieun_indirect",
+          "d4.sumin_s3_villain_role_accept",
+          "d4.sumin_s3_severance_not_simple"
+        ],
+        "preferredAngleTags": [
+          "motive",
+          "emotion",
+          "relationship"
+        ]
+      },
+      "refusalTemplates": [
+        "제가 그때 침묵한 이유는 변명처럼 들릴까 봐 조심스럽습니다.",
+        "그 손절의 속을 지금 열면 제 친구가 먼저 다칠까 두렵습니다."
+      ]
+    },
+    {
+      "id": "fq.d5.group_chat_public",
+      "intentTag": "third_party_share",
+      "description": "송다은이 직접 확인보다 단톡방 공개를 먼저 택한 책임을 묻는 훅.",
+      "allowedAtStates": [
+        "S2",
+        "S3",
+        "S4",
+        "S5"
+      ],
+      "allowedIssueRoles": [
+        "core_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-5",
+        "allowAtomIds": [
+          "d5.daeun_s1_public_before_check_ack",
+          "d5.daeun_s2_knew_group_would_see",
+          "d5.daeun_s2_group_phrase_as_fact",
+          "d5.sumin_s1_label_before_check"
+        ],
+        "preferredAngleTags": [
+          "timeline",
+          "responsibility",
+          "context"
+        ]
+      },
+      "refusalTemplates": [
+        "제가 단톡방에 올린 순서를 지금 가볍게 말하긴 어렵습니다.",
+        "그 글을 쓴 마음과 책임을 한 줄로 묶으면 제가 숨게 됩니다."
+      ]
+    },
+    {
+      "id": "fq.core.villain_repeat",
+      "intentTag": "relation_core",
+      "description": "최수민이 왜 두 번이나 악역이 되었고, 그 침묵이 무엇을 망가뜨렸는지 묻는 핵심 훅.",
+      "allowedAtStates": [
+        "S4",
+        "S5"
+      ],
+      "allowedIssueRoles": [
+        "core_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-5",
+        "allowAtomIds": [
+          "d5.sumin_s3_silence_grew_stigma",
+          "d5.sumin_s4_alone_again_habit",
+          "d5.sumin_s4_public_stigma_repeat",
+          "d5.daeun_s4_public_stigma_partial"
+        ],
+        "preferredAngleTags": [
+          "relationship",
+          "emotion",
+          "responsibility"
+        ]
+      },
+      "refusalTemplates": [
+        "제가 무엇을 지키려 했는지 말하면 망가뜨린 것도 인정해야 합니다.",
+        "두 번 악역이 된 이유를 지금 꺼내면 제 침묵까지 물어야 합니다."
+      ]
+    }
+  ],
+  "phase3LogHints": {
+    "relationCoreDisputes": [
+      "d-4",
+      "d-5"
+    ],
+    "playerStyleTagCandidates": [
+      "presses_timeline",
+      "presses_responsibility",
+      "builds_context_before_finishing",
+      "shows_empathy_when_open",
+      "loops_same_angle",
+      "switches_targets_well",
+      "allows_interjection",
+      "blocks_interjection",
+      "challenges_obsession_frame",
+      "follows_money_pattern",
+      "probes_group_chat_publicity",
+      "relation_core_hunter"
+    ]
+  }
 }
