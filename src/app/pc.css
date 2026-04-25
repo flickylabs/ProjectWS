@@ -19379,3 +19379,132 @@ body.pc-mode .pc-depth-header__copy h2 {
   font-size: clamp(26px, 2.4vw, 32px) !important;
 }
 
+/* ──────────────────────────────────────────────────
+   사건 선택씬 — 게임스러운 hero 레이아웃 (배지 폐기)
+   ────────────────────────────────────────────────── */
+body.pc-mode .cb__brief {
+  display: flex !important;
+  flex-direction: column;
+  height: 100%;
+  overflow-y: auto;
+}
+
+/* ── HERO: portraits 양 끝 + 가운데 사건 제목 (3-column flex) ── */
+body.pc-mode .cb__brief-hero {
+  display: grid !important;
+  grid-template-columns: 96px 1fr 96px;
+  align-items: center;
+  gap: 24px;
+  padding: 32px 28px 28px;
+  border-bottom: 1px solid rgba(212, 162, 78, 0.12);
+}
+
+body.pc-mode .cb__brief-character {
+  display: flex !important;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  text-align: center;
+}
+
+body.pc-mode .cb__brief-portrait {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.10);
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.02);
+  margin-bottom: 4px;
+}
+body.pc-mode .cb__brief-portrait.is-a {
+  border-color: rgba(91, 141, 239, 0.55);
+  box-shadow: 0 0 18px rgba(91, 141, 239, 0.18);
+}
+body.pc-mode .cb__brief-portrait.is-b {
+  border-color: rgba(224, 96, 96, 0.55);
+  box-shadow: 0 0 18px rgba(224, 96, 96, 0.18);
+}
+
+body.pc-mode .cb__brief-character .cb__brief-name {
+  font-size: 14px !important;
+  font-weight: 800;
+  letter-spacing: -0.005em;
+}
+body.pc-mode .cb__brief-character .cb__brief-name.is-a { color: var(--pc-blue); }
+body.pc-mode .cb__brief-character .cb__brief-name.is-b { color: var(--pc-red); }
+body.pc-mode .cb__brief-character .cb__brief-meta {
+  font-size: 11px !important;
+  color: var(--pc-text-muted);
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+/* 가운데 — 사건 제목 + bait */
+body.pc-mode .cb__brief-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 0 8px;
+}
+body.pc-mode .cb__brief-headline {
+  margin: 0 !important;
+  font-size: clamp(22px, 2vw, 28px) !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.025em !important;
+  line-height: 1.2 !important;
+  color: var(--pc-text) !important;
+  text-align: center;
+}
+body.pc-mode .cb__brief-bait {
+  margin: 0 !important;
+  font-size: 14px !important;
+  color: var(--pc-text-dim) !important;
+  font-style: italic;
+  line-height: 1.55;
+  text-align: center;
+  max-width: 360px;
+}
+
+/* 폐기된 archetype/VS 배지 — 명시적으로 숨김 */
+body.pc-mode .cb__brief-archetype,
+body.pc-mode .cb__brief-vs-badge { display: none !important; }
+
+/* 폐기된 옛 cb__brief-vs / cb__brief-party / cb__brief-face 잔재 — hero로 대체됨 */
+body.pc-mode .cb__brief > .cb__brief-vs { display: none; }
+body.pc-mode .cb__brief > .cb__brief-title { display: none; }
+
+/* ── 쟁점 + 증거 grid (조정) ── */
+body.pc-mode .cb__brief-grid {
+  padding: 22px 28px !important;
+  gap: 20px !important;
+  flex: 1;
+}
+body.pc-mode .cb__brief-section h4 {
+  font-size: 11px !important;
+  letter-spacing: 0.18em !important;
+  text-transform: uppercase;
+  color: var(--pc-gold-light) !important;
+  margin: 0 0 12px !important;
+  font-weight: 800 !important;
+}
+
+/* ── 푸터 (기록 + CTA) ── */
+body.pc-mode .cb__brief-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 18px 28px 24px;
+  border-top: 1px solid rgba(212, 162, 78, 0.12);
+}
+body.pc-mode .cb__brief-footer .cb__brief-record {
+  margin: 0 !important;
+}
+body.pc-mode .cb__brief-footer .cb__brief-start {
+  margin: 0 !important;
+  padding: 16px 0;
+  font-size: 17px;
+}
+

@@ -7,12 +7,6 @@ import { getDifficultyLabel, sortCasesForBrowser } from './pcHomeShared'
 
 const CLEAR_SCORE_THRESHOLD = 40
 
-const ARCHETYPE_LABELS: Record<string, string> = {
-  avoidant: '회피형', confrontational: '정면돌파형',
-  victim_cosplay: '피해자형', cold_logic: '냉정논리형',
-  affect_flattening: '감정억제형', premature_summary: '조기결론형',
-}
-
 interface Props {
   accentIconId?: string
   eyebrow?: string
@@ -177,48 +171,41 @@ function CaseBriefPanel({ caseData, stageNum, score, onStart }: {
 
   return (
     <div className="cb__brief">
-      {/* 사건 제목 */}
-      <div className="cb__brief-title">
-        <h3>{caseTitle}</h3>
-        {bait && <p>{bait}</p>}
-      </div>
-
-      {/* 캐릭터 VS */}
-      <div className="cb__brief-vs">
-        <div className="cb__brief-party">
-          <div className="cb__brief-party-text is-right">
-            <span className="cb__brief-name is-a">{duo?.partyA?.name ?? 'A'}</span>
-            <span className="cb__brief-meta">{duo?.partyA?.age ?? '?'}세 · {duo?.partyA?.occupation ?? ''}</span>
-            <span className="cb__brief-archetype">{ARCHETYPE_LABELS[duo?.partyA?.archetype ?? ''] ?? ''}</span>
-          </div>
-          <div className="cb__brief-face is-a">
+      {/* HERO: 양측 인물 portraits + 가운데 사건 제목 */}
+      <div className="cb__brief-hero">
+        <div className="cb__brief-character is-a">
+          <div className="cb__brief-portrait is-a">
             <PCCharacterPortrait
               alt={duo?.partyA?.name}
               caseId={caseData.caseId}
               emotion="defensive"
               fallbackSymbolId={faceA}
               party="a"
-              size={44}
+              size={72}
             />
           </div>
+          <span className="cb__brief-name is-a">{duo?.partyA?.name ?? 'A'}</span>
+          <span className="cb__brief-meta">{duo?.partyA?.age ?? '?'}세 · {duo?.partyA?.occupation ?? ''}</span>
         </div>
-        <span className="cb__brief-vs-badge">VS</span>
-        <div className="cb__brief-party">
-          <div className="cb__brief-face is-b">
+
+        <div className="cb__brief-center">
+          <h3 className="cb__brief-headline">{caseTitle}</h3>
+          {bait && <p className="cb__brief-bait">{bait}</p>}
+        </div>
+
+        <div className="cb__brief-character is-b">
+          <div className="cb__brief-portrait is-b">
             <PCCharacterPortrait
               alt={duo?.partyB?.name}
               caseId={caseData.caseId}
               emotion="defensive"
               fallbackSymbolId={faceB}
               party="b"
-              size={44}
+              size={72}
             />
           </div>
-          <div className="cb__brief-party-text is-left">
-            <span className="cb__brief-name is-b">{duo?.partyB?.name ?? 'B'}</span>
-            <span className="cb__brief-meta">{duo?.partyB?.age ?? '?'}세 · {duo?.partyB?.occupation ?? ''}</span>
-            <span className="cb__brief-archetype">{ARCHETYPE_LABELS[duo?.partyB?.archetype ?? ''] ?? ''}</span>
-          </div>
+          <span className="cb__brief-name is-b">{duo?.partyB?.name ?? 'B'}</span>
+          <span className="cb__brief-meta">{duo?.partyB?.age ?? '?'}세 · {duo?.partyB?.occupation ?? ''}</span>
         </div>
       </div>
 
@@ -247,15 +234,17 @@ function CaseBriefPanel({ caseData, stageNum, score, onStart }: {
         </div>
       </div>
 
-      {/* 기록 + 입장 */}
-      {score > 0 && (
-        <div className="cb__brief-record">최고 기록 <strong>{score}점</strong></div>
-      )}
-      <button className="cb__brief-start" onClick={onStart} type="button">
-        <PCSvgIcon id="i-gavel" size={18} />
-        <span>사건 입장하기</span>
-        <kbd>Enter</kbd>
-      </button>
+      {/* 푸터: 기록 + CTA */}
+      <div className="cb__brief-footer">
+        {score > 0 && (
+          <div className="cb__brief-record">최고 기록 <strong>{score}점</strong></div>
+        )}
+        <button className="cb__brief-start" onClick={onStart} type="button">
+          <PCSvgIcon id="i-gavel" size={18} />
+          <span>사건 입장하기</span>
+          <kbd>Enter</kbd>
+        </button>
+      </div>
     </div>
   )
 }
