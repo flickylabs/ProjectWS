@@ -2938,13 +2938,13 @@ body.pc-mode .pc-judge-observation-section {
   height: 200px !important;
 }
 
-/* 수첩: drawer portal 완료 → grow 1로 캐릭터 카드 끝까지 확장.
- * 좌측 패널 overflow: hidden 안전 장치 + min 0으로 작은 viewport에서도 fit. */
+/* 수첩: 관찰과 비슷한 폭 (~220px) 고정 (사용자 요청 04-27).
+ * 발언노트 max를 줄여 수첩 영역 확보. grow 제거로 너무 길어지지 않게. */
 body.pc-mode .pc-play-left .pc-judge-observation-section--notebook {
-  flex: 1 1 200px !important;
-  min-height: 0 !important;
-  max-height: none !important;
-  height: auto !important;
+  flex: 0 0 220px !important;
+  min-height: 220px !important;
+  max-height: 220px !important;
+  height: 220px !important;
 }
 
 /* (legacy) 기존 .pc-play-notebook-section 남겨둠 — 다른 위치에서 참조 가능 */
@@ -8513,11 +8513,11 @@ body.pc-mode .pc-play-evidence-section {
   flex: 0 0 auto !important;
 }
 
-/* 발언노트: grow 1 (남는 공간 차지) + 콘텐츠 상한 280 (수첩 영역 보장) */
+/* 발언노트: 콘텐츠 상한 200 (수첩 영역 더 보장 — 사용자 요청 04-27) */
 body.pc-mode .pc-important-notes-section {
-  flex: 1 1 auto !important;
+  flex: 0 1 auto !important;
   min-height: 0 !important;
-  max-height: 280px !important;
+  max-height: 200px !important;
 }
 
 body.pc-mode .pc-important-notes__scroll {
