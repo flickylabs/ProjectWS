@@ -436,12 +436,23 @@ export default function DiscoveryFeedbackWatcher() {
         releaseKey()
       }
 
-      const contrastPayload = v3Event
+      // [TC-A1·A2·A4 즉시 완화] 모달 statementA/B는 lieState S3+ (부분 인정 단계)에서만 노출.
+      // S0~S2 단계에서는 statementB가 자백 본문/스포일러를 그대로 노출하는 결함이 있음
+      // (data 모델 결함 — ContradictionEvent에 spoilerLevel 메타 없음. M1~M7에서 ContradictionEventV2 도입 예정).
+      // 단기 픽스: S0~S2일 때 contrast 미노출 → body로 폴백 (안전한 단순 메시지).
+      const accusedAgent = ev.party === 'a' ? state.agentA : state.agentB
+      const accusedLieState = accusedAgent.lieStateMap[ev.disputeId]?.currentState ?? 'S0'
+      const lieRank: Record<string, number> = { S0: 0, S1: 1, S2: 2, S3: 3, S4: 4, S5: 5 }
+      const isSpoilerSafeStage = (lieRank[accusedLieState] ?? 0) >= 3
+      const contrastPayload = v3Event && isSpoilerSafeStage
         ? {
             left:  { label: '이전 진술', text: v3Event.statementA },
             right: { label: '지금 진술', text: v3Event.statementB },
           }
         : undefined
+      const safeFallbackBody = !isSpoilerSafeStage
+        ? `${partyName}의 진술 흐름에서 어긋남이 감지되었습니다. 모순을 찌르면 다음 단서가 열릴 수 있습니다.`
+        : null
 
       state.addJudgeObservation({
         turnCount: state.turnCount,
@@ -463,9 +474,11 @@ export default function DiscoveryFeedbackWatcher() {
         kind: 'contradiction',
         eyebrow: '모순 감지',
         subtitle: `${disputeName} · ${partyName}`,
-        body: contrastPayload ? undefined : ev.description,
+        body: contrastPayload ? undefined : (safeFallbackBody ?? ev.description),
         contrast: contrastPayload,
-        tone: 'gold',
+        // [TC-A2 픽스] '진술이 엇갈렸다' 시스템 메시지는 빨강 톤(공격/모순)으로 통일
+        // — '추궁하기' 시스템 메시지(.is-action)와 의미·시각 모두 일치
+        tone: 'alert',
         actions: [
           {
             label: '지금은 넘긴다',
@@ -478,7 +491,7 @@ export default function DiscoveryFeedbackWatcher() {
           },
           {
             label: '모순을 찌른다',
-            tone: 'gold',
+            tone: 'alert',
             onSelect: () => {
               handlePointOut()
               useGameStore.getState().consumeDialoguePendingFeedback(sysMsgId)

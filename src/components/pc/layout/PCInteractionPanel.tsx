@@ -48,11 +48,16 @@ export interface PcInteractionAction {
 export interface PcInteractionPayload {
   title: string
   subtitle?: string
-  body: string
+  body?: string
   tone?: InteractionTone
   variant?: 'default' | 'feature' | 'evidence' | 'dialogue' | 'witness'
   tags?: string[]
   actions?: PcInteractionAction[]
+  /** [TC-A1 D1] vs 구도 — 모순 추궁 모달 등에서 좌/우 진술 비교 표시 */
+  contrast?: {
+    left:  { label: string; text: string }
+    right: { label: string; text: string }
+  }
   evidenceId?: string
   /** evidence variant: 타입 레이블 (기기, 기록 등) */
   evidenceTypeLabel?: string
@@ -697,6 +702,24 @@ export default function PCInteractionPanel() {
                 증거 열람
               </button>
             ) : null}
+          </div>
+        ) : payload.contrast ? (
+          // [TC-A1 D1] vs 구도 — 모순 추궁 모달이 모순 감지 모달과 동일한 좌/우 + VS 형태로 통일
+          <div className="pc-interaction-card__contrast-wrap">
+            {payload.body ? <div className="pc-interaction-card__contrast-intro">{payload.body}</div> : null}
+            <div className="pc-interaction-card__contrast">
+              <div className="pc-interaction-card__contrast-side is-left">
+                <div className="pc-interaction-card__contrast-label">{payload.contrast.left.label}</div>
+                <div className="pc-interaction-card__contrast-text">"{payload.contrast.left.text}"</div>
+              </div>
+              <div className="pc-interaction-card__contrast-vs" aria-hidden="true">
+                <span>VS</span>
+              </div>
+              <div className="pc-interaction-card__contrast-side is-right">
+                <div className="pc-interaction-card__contrast-label">{payload.contrast.right.label}</div>
+                <div className="pc-interaction-card__contrast-text">"{payload.contrast.right.text}"</div>
+              </div>
+            </div>
           </div>
         ) : (
           <div className="pc-interaction-card__body">{payload.body}</div>

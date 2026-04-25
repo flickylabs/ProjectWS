@@ -27,7 +27,7 @@ export type EventFeedbackKind =
   | 'evidence_result'    // 증거 제시 결과 (선택 or 자동)
   | 'info'               // 일반 알림 (자동)
 
-export type EventFeedbackTone = 'gold' | 'red' | 'green' | 'blue' | 'neutral'
+export type EventFeedbackTone = 'gold' | 'red' | 'green' | 'blue' | 'neutral' | 'alert'
 
 export interface EventFeedbackAction {
   label: string

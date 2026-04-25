@@ -92,7 +92,10 @@ function MessageBubble({ entry, animate, combinableTexts, combinationHintMap, is
       const isConsumed = !!pendingFeedback.consumed
       const isActive = !isConsumed && !isExpired
       const badge = isConsumed ? '처리됨' : isExpired ? '만료' : '지금 확인'
-      const stateClass = isConsumed ? ' is-consumed' : isExpired ? ' is-expired' : ' is-urgent'
+      // [TC-A2 픽스] tone 기반 클래스 분기 — 'alert'는 빨강(모순/공격), 기본은 골드(권위/주의 환기)
+      const tone = (pendingFeedback.payload as any)?.tone
+      const activeClass = tone === 'alert' ? ' is-alert' : ' is-urgent'
+      const stateClass = isConsumed ? ' is-consumed' : isExpired ? ' is-expired' : activeClass
 
       return (
         <div className="pc-log-system-row is-action">
@@ -147,23 +150,31 @@ function MessageBubble({ entry, animate, combinableTexts, combinationHintMap, is
             onClick={() => {
               if (used) return
               _usedContradictions.add(entry.id)
+              // [TC-A1 D1] 모순 추궁 모달도 모순 감지 모달과 동일한 vs 구도로 통일
+              // [TC-A2·A4 안전 가드] lieState ≤ S2일 때는 자백 본문 노출 위험이 있어 contrast 미노출
+              const store = useGameStore.getState()
+              const accusedAgent = contradiction.party === 'a' ? store.agentA : store.agentB
+              const accusedLie = accusedAgent.lieStateMap[contradiction.disputeId]?.currentState ?? 'S0'
+              const lieRank: Record<string, number> = { S0: 0, S1: 1, S2: 2, S3: 3, S4: 4, S5: 5 }
+              const isSpoilerSafe = (lieRank[accusedLie] ?? 0) >= 3
+              const accusedName = contradiction.party === 'a' ? nameA : nameB
               openPcInteractionPanel({
                 title: '모순 감지',
-                subtitle: `${contradiction.party === 'a' ? nameA : nameB} 진술 비교`,
+                subtitle: `${accusedName} 진술 비교`,
                 tone: 'gold',
                 variant: 'feature',
-                body: [
-                  '이전 진술과 현재 진술 사이에서 모순이 감지되었습니다.',
-                  '',
-                  `이전 주장: ${contradiction.previousClaim}`,
-                  `현재 주장: ${contradiction.currentClaim}`,
-                  '',
-                  '모순을 누적하면 거짓 상태가 흔들리고, 새로운 진술이나 단서가 열릴 수 있습니다.',
-                ].join('\n'),
+                body: isSpoilerSafe
+                  ? '이전 진술과 현재 진술 사이에서 모순이 감지되었습니다. 모순을 누적하면 거짓 상태가 흔들리고, 새로운 진술이나 단서가 열릴 수 있습니다.'
+                  : `${accusedName}의 진술 흐름에서 어긋남이 감지되었습니다. 모순을 찌르면 다음 단서가 열릴 수 있습니다.`,
+                contrast: isSpoilerSafe ? {
+                  left:  { label: '이전 진술', text: contradiction.previousClaim },
+                  right: { label: '지금 진술', text: contradiction.currentClaim },
+                } : undefined,
                 actions: [
+                  { kind: 'close', label: '지금은 넘긴다' },
                   {
                     kind: 'run_contradiction',
-                    label: '모순 추궁 실행',
+                    label: '모순을 찌른다',
                     party: contradiction.party,
                     disputeId: contradiction.disputeId,
                     previousClaim: contradiction.previousClaim,
@@ -303,15 +314,6 @@ function MessageBubble({ entry, animate, combinableTexts, combinationHintMap, is
           onClick={() => openEntryDetail()}
           type="button"
         >
-          {entry.autoPin ? (
-            <span
-              aria-label="자동 핀된 발언"
-              className="pc-log-bubble__pin-badge"
-              title={entry.behaviorHint ?? '발언노트에 자동 핀됨'}
-            >
-              <PCSvgIcon id="i-pin" size={11} />
-            </span>
-          ) : null}
           {entry.isConfidential ? (
             <div className="pc-log-bubble__confidential">
               <PCSvgIcon id="i-lock" size={12} />

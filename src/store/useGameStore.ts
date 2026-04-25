@@ -631,14 +631,18 @@ export const useGameStore: import('zustand').UseBoundStore<import('zustand').Sto
     pendingTransitionChoice: null,
     setPendingTransitionChoice: (choice) => set({ pendingTransitionChoice: choice }),
 
-    evaluateTurnEvents: (questionType: QuestionType, focusDisputeId: string, transitionsThisTurn: { party: 'a' | 'b'; disputeId: string; from: import('../types').LieState; to: import('../types').LieState }[]) => {
+    evaluateTurnEvents: (questionType: QuestionType, focusDisputeId: string, transitionsThisTurn: { party: 'a' | 'b'; disputeId: string; from: import('../types').LieState; to: import('../types').LieState }[], actionTarget?: 'a' | 'b') => {
       const s = useGameStore.getState()
       if (!s.caseData) return null
 
+      // [B3 픽스] activeParty 결정 우선순위:
+      //   1) 분리심문 중이면 separationTarget (강제)
+      //   2) 이번 액션의 실제 target (호출자가 명시한 경우 — 추궁/질문 대상자)
+      //   3) UI 탭의 pcTargetParty (폴백)
       const snapshot: TurnSnapshot = {
         caseId: normalizeCaseKey(s.caseData),
         turn: s.turnCount,
-        activeParty: s.separationTarget ?? s.pcTargetParty ?? 'a',
+        activeParty: s.separationTarget ?? actionTarget ?? s.pcTargetParty ?? 'a',
         questionType,
         lieStates: { a: s.agentA.lieStateMap, b: s.agentB.lieStateMap },
         emotions: {

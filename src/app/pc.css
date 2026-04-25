@@ -2928,19 +2928,21 @@ body.pc-mode .pc-play-left .pc-important-notes__scroll {
 /* ═══════════════════════════════════════════════════════════
    [Phase D] 재판관의 수첩 — 좌측 패널 하단 섹션
    '재판관의 관찰' 아래 위치. 자백·결정적 모순·핵심 발화 누적
+   [TC-D 픽스] 영역 사이즈 확대 — '재판관의 관찰'과 비슷한 비중
    ═══════════════════════════════════════════════════════════ */
 body.pc-mode .pc-play-left .pc-play-notebook-section {
   flex: 0 0 auto;
   display: flex;
   flex-direction: column;
-  max-height: 260px;
+  max-height: 360px;
+  min-height: 180px;
 }
 body.pc-mode .pc-play-notebook-list {
   display: flex;
   flex-direction: column;
   gap: 4px;
   overflow-y: auto;
-  max-height: 220px;
+  max-height: 320px;
   padding-right: 4px;
 }
 body.pc-mode .pc-play-notebook-empty {
@@ -5813,29 +5815,8 @@ body.pc-mode .pc-log-bubble {
   position: relative;
 }
 
-/* autoPin 발언 외부 모서리 핀 배지 */
-body.pc-mode .pc-log-bubble__pin-badge {
-  position: absolute;
-  top: -7px;
-  right: -7px;
-  width: 20px;
-  height: 20px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  background: var(--pc-gold-light, #d4a24e);
-  color: #1a1a1f;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.45), 0 0 0 2px var(--pc-bg-panel, #1a1a1f);
-  pointer-events: auto;
-  cursor: help;
-  z-index: 2;
-  animation: pc-log-bubble-pin-in 0.4s cubic-bezier(0.2, 0.9, 0.3, 1.1);
-}
-
-body.pc-mode .pc-log-bubble__pin-badge svg {
-  display: block;
-}
+/* [백로그 폐기] autoPin 메모 핀 + 메모 배지 시스템 — 사용자 의도와 다름. 완전 제거.
+   pin-in keyframes도 다른 곳에서 안 쓰여 함께 제거 가능 */
 
 @keyframes pc-log-bubble-pin-in {
   0% {
@@ -6017,6 +5998,41 @@ body.pc-mode .pc-log-system-card.is-pending-feedback.is-urgent:hover {
 }
 body.pc-mode .pc-log-system-card.is-pending-feedback.is-urgent:active {
   transform: translateY(0);
+}
+
+/* [TC-A2 픽스] 모순 감지(빨강) tone — '진술이 엇갈렸다' 같이
+   진실 충돌·즉시 추궁 권유 메시지에 사용. '추궁하기' 형태와 통일.
+   골드(authority) vs 빨강(action/contradiction) 구분: 의미 일관성 가이드 */
+body.pc-mode .pc-log-system-card.is-pending-feedback.is-alert {
+  border-top-color: rgba(224, 96, 96, 0.85) !important;
+  border-bottom-color: rgba(224, 96, 96, 0.85) !important;
+  background: linear-gradient(90deg,
+    rgba(224, 96, 96, 0.06),
+    rgba(224, 96, 96, 0.22) 50%,
+    rgba(224, 96, 96, 0.06)) !important;
+  color: #ffb5b5 !important;
+  box-shadow: 0 0 24px rgba(224, 96, 96, 0.30) inset;
+  animation:
+    pc-log-urgent-enter 0.65s cubic-bezier(0.2, 0.9, 0.1, 1.1) 1 both,
+    pc-log-alert-pulse 1.6s ease-in-out 0.65s infinite !important;
+}
+body.pc-mode .pc-log-system-card.is-pending-feedback.is-alert:hover {
+  background: linear-gradient(90deg,
+    rgba(224, 96, 96, 0.12),
+    rgba(224, 96, 96, 0.34) 50%,
+    rgba(224, 96, 96, 0.12)) !important;
+  transform: translateY(-1px);
+}
+body.pc-mode .pc-log-system-card.is-pending-feedback.is-alert:active {
+  transform: translateY(0);
+}
+body.pc-mode .pc-log-system-card.is-pending-feedback.is-alert .pc-log-system-card__bolt {
+  color: #ffaaaa;
+  filter: drop-shadow(0 0 6px rgba(255, 130, 130, 0.6));
+}
+@keyframes pc-log-alert-pulse {
+  0%, 100% { box-shadow: 0 0 22px rgba(224, 96, 96, 0.30) inset; }
+  50%      { box-shadow: 0 0 44px rgba(224, 96, 96, 0.55) inset; }
 }
 body.pc-mode .pc-log-system-card__bolt {
   display: inline-flex;
@@ -9010,6 +9026,71 @@ body.pc-mode .pc-play-hbar .char-face {
   background: rgba(18, 19, 24, 0.6) !important;
   flex-shrink: 0 !important;
   overflow: hidden !important;
+}
+
+/* [감정 도넛] 캐릭터 프로필 외곽 ring + 감정 단계별 색상 + 격앙·체념 펄스
+   char-face의 정적 골드 border를 SVG 도넛이 대체. char-face와 SVG가 정확히 같은 66×66 사이즈로 정렬.
+   overflow visible로 stroke가 외곽으로 살짝 돌출되어도 잘리지 않게. */
+body.pc-mode .pc-play-hbar .char-face--ring {
+  position: relative !important;
+  overflow: visible !important;
+  border: none !important;
+  background: rgba(18, 19, 24, 0.6) !important;
+}
+body.pc-mode .char-emo-donut {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+body.pc-mode .char-emo-donut__bg {
+  stroke: rgba(255, 255, 255, 0.07);
+}
+body.pc-mode .char-emo-donut__fg {
+  stroke: var(--pc-gold-light, #d4a24e);
+  transition: stroke 0.3s ease, stroke-dasharray 0.4s ease;
+}
+
+/* 감정 단계별 색상 */
+body.pc-mode .char-face--ring.is-emo-defensive .char-emo-donut__fg { stroke: #b59070; }
+body.pc-mode .char-face--ring.is-emo-confident .char-emo-donut__fg { stroke: #d4a24e; }
+body.pc-mode .char-face--ring.is-emo-shaken    .char-emo-donut__fg { stroke: #e89968; }
+body.pc-mode .char-face--ring.is-emo-angry     .char-emo-donut__fg { stroke: #e06060; }
+body.pc-mode .char-face--ring.is-emo-resigned  .char-emo-donut__fg { stroke: #6e7080; }
+
+/* 격앙·체념 — 위급 신호 펄스 */
+body.pc-mode .char-face--ring.is-critical .char-emo-donut__fg {
+  animation: pc-char-emo-pulse 1.6s ease-in-out infinite;
+}
+@keyframes pc-char-emo-pulse {
+  0%, 100% { opacity: 0.85; filter: drop-shadow(0 0 2px currentColor); }
+  50%      { opacity: 1; filter: drop-shadow(0 0 6px currentColor); }
+}
+
+/* 감정 수치 — hover 시 얼굴 가득 차는 큰 수치 (사용자 요청) */
+body.pc-mode .char-face__value {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(13, 14, 18, 0.88);
+  color: var(--pc-gold-light, #e8c172);
+  font-size: 22px;
+  font-weight: 900;
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity 0.18s ease;
+  pointer-events: none;
+  z-index: 5;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+}
+body.pc-mode .char:hover .char-face__value {
+  opacity: 1;
 }
 
 /* 초상화 이미지 꽉 채움 */
@@ -16184,11 +16265,12 @@ body.pc-mode .pc-play-left .pc-important-notes-section .pc-important-notes__scro
 }
 
 /* 재판관의 관찰 — 고정 세로, 기본 스크롤 없이 */
+/* [TC-D 픽스] 200px로 약간 축소 — 수첩 영역 확대를 위한 재배분 */
 body.pc-mode .pc-judge-observation-section {
-  flex: 0 0 220px !important;
-  height: 220px !important;
-  max-height: 220px !important;
-  min-height: 220px !important;
+  flex: 0 0 200px !important;
+  height: 200px !important;
+  max-height: 200px !important;
+  min-height: 200px !important;
   display: flex;
   flex-direction: column;
   padding-top: 10px;
@@ -17835,5 +17917,105 @@ body.pc-mode[data-screen-bucket="XS"] .pc-summary-floating-toggle:hover {
   background: rgba(212, 162, 78, 0.14);
   border-color: rgba(212, 162, 78, 0.55);
   transform: translateX(-2px);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   [TC-A1 D1] PCInteractionPanel — vs 구도 (모순 추궁 모달)
+   EventFeedbackCard의 .pc-event-feedback__contrast* 패턴을 재현.
+   '추궁하기' 클릭 시 떠오르는 모달이 '모순 감지' 모달과 동일한 시각으로 통일.
+   ═══════════════════════════════════════════════════════════ */
+body.pc-mode .pc-interaction-card__contrast-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 4px 0 8px;
+}
+body.pc-mode .pc-interaction-card__contrast-intro {
+  font-size: 13px;
+  color: var(--pc-text-dim, #b5a888);
+  line-height: 1.6;
+  text-align: center;
+}
+body.pc-mode .pc-interaction-card__contrast {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 18px;
+  align-items: stretch;
+  width: 100%;
+  margin-top: 4px;
+}
+body.pc-mode .pc-interaction-card__contrast-side {
+  padding: 18px 20px;
+  border-radius: 10px;
+  background: rgba(26, 28, 34, 0.85);
+  border: 1px solid rgba(43, 46, 52, 0.7);
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+body.pc-mode .pc-interaction-card__contrast-side.is-left {
+  border-left: 3px solid rgba(75, 80, 88, 0.8);
+}
+body.pc-mode .pc-interaction-card__contrast-side.is-right {
+  border-left: 3px solid rgba(122, 88, 58, 0.85);
+}
+body.pc-mode .pc-interaction-card__contrast-label {
+  font-size: 12px;
+  font-weight: 500;
+  color: #8a8d95;
+}
+body.pc-mode .pc-interaction-card__contrast-side.is-right .pc-interaction-card__contrast-label {
+  color: #b59070;
+}
+body.pc-mode .pc-interaction-card__contrast-text {
+  font-size: 15px;
+  font-weight: 400;
+  color: #d6d3cb;
+  line-height: 1.6;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+body.pc-mode .pc-interaction-card__contrast-vs {
+  align-self: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 1px solid rgba(96, 72, 44, 0.7);
+  background: rgba(29, 31, 37, 0.95);
+  box-shadow:
+    0 0 0 3px rgba(22, 24, 30, 0.6),
+    inset 0 0 10px rgba(59, 42, 28, 0.3);
+  flex-shrink: 0;
+  position: relative;
+}
+body.pc-mode .pc-interaction-card__contrast-vs::before,
+body.pc-mode .pc-interaction-card__contrast-vs::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 20px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(96, 72, 44, 0.6));
+  pointer-events: none;
+}
+body.pc-mode .pc-interaction-card__contrast-vs::before {
+  right: 100%;
+  margin-right: 6px;
+}
+body.pc-mode .pc-interaction-card__contrast-vs::after {
+  left: 100%;
+  margin-left: 6px;
+  background: linear-gradient(90deg, rgba(96, 72, 44, 0.6), transparent);
+}
+body.pc-mode .pc-interaction-card__contrast-vs span {
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  color: #d4a672;
+  text-shadow: 0 0 8px rgba(212, 166, 114, 0.4);
 }
 

@@ -83,7 +83,7 @@ export const SPOUSE_01_TESTIMONY: TestimonySlot[] = [
     topic: '302호 거주자에 대해 묻는다',
     question: '302호에 사는 분에 대해 좀 더 자세히 알려주시겠습니까?',
     depth: 3,
-    testimony: '302호는 남자분 혼자 사시는데, 가끔 이준호 씨가 오시면 그 집에서 아이 웃음소리가 들렸어요. 밥 냄새도 나고요. 그래서 저는 외도가 아니라 친척 집인가 싶었습니다.',
+    testimony: '302호는 남자분 혼자 사시는데, 가끔 이준호 씨가 오시면 그 집에서 아이 웃음소리가 들렸어요. 밥 냄새도 나고요. 그래서 저는 친구 분이나 친척 분인가보다 생각하고 있었습니다.',
     behaviorHint: '조심스럽지만 확신',
     conditions: {
       disputeState: { id: 'd-1', minLieState: 'S2', visibility: 'any' },

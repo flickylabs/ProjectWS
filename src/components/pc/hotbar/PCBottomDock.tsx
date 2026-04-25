@@ -41,6 +41,8 @@ export default function PCBottomDock() {
   const agentA = useStore((s) => s.agentA)
   const agentB = useStore((s) => s.agentB)
   const calledWitnesses = useStore((s) => s.calledWitnesses)
+  // [기타2 픽스] LLM 응답 진행 중 핫바 + 단축키 차단 — 답변 도중 추가 질문 들어가는 결함 방지
+  const isLLMLoading = useStore((s) => s.isLLMLoading)
   const disputeVisibility = useStore((s) => s.discovery.disputeVisibility)
   const turnCount = useStore((s) => s.turnCount)
   // canAdvancePhase()와 getCombinableEvidenceIds()는 매번 새 값을 반환하여 무한 루프 유발
@@ -215,6 +217,11 @@ export default function PCBottomDock() {
   useEffect(() => {
     const onKeyDown = (event: KeyboardEvent) => {
       if ((event.target as HTMLElement)?.tagName === 'INPUT') return
+      // [기타2 픽스] LLM 응답 진행 중에는 단축키 무시 — 다중 액션 발사 방지
+      if (isLLMLoading) {
+        if (event.key === 'Escape') closeAll()
+        return
+      }
       const key = event.key.toLowerCase()
       const num = Number(event.key)
       if (num === 1) { event.preventDefault(); openQuestionChoice('fact_pursuit') }
@@ -230,7 +237,7 @@ export default function PCBottomDock() {
     }
     window.addEventListener('keydown', onKeyDown)
     return () => window.removeEventListener('keydown', onKeyDown)
-  }, [closeAll, hasWitness, openEvidenceChoice, openFreeQuestion, openQuestionChoice, openWitnessPanel])
+  }, [closeAll, hasWitness, isLLMLoading, openEvidenceChoice, openFreeQuestion, openQuestionChoice, openWitnessPanel])
 
   // hotbar body 실제 높이 측정 → CSS 변수 --pc-dock-area-h 주입
   // 이 변수는 캐릭터 카드(.char)와 우측 '요약' 섹션이 참조해 세로 크기를 동기화함
@@ -364,6 +371,7 @@ export default function PCBottomDock() {
           caseId={caseData.caseId}
           name={caseData.duo.partyA.name}
           emotion={agentA.emotionalState.phase}
+          emotionValue={agentA.emotionalState.internalValue}
           faceId={getPcFaceSymbolId('a', caseData.duo.partyA, agentA.emotionalState.phase)}
           isActive={pcTargetParty === 'a'}
           side="a"
@@ -387,9 +395,9 @@ export default function PCBottomDock() {
               </div>
             </div>
 
-            <div className="hotbar-slots">
+            <div className={`hotbar-slots${isLLMLoading ? ' hotbar-slots--locked' : ''}`}>
               {/* 1: 사실 추궁 */}
-              <button className="slot" data-guide-target="question-fact" onClick={() => openQuestionChoice('fact_pursuit')} title="모순에 집중하기" type="button">
+              <button className="slot" data-guide-target="question-fact" disabled={isLLMLoading} onClick={() => openQuestionChoice('fact_pursuit')} title={isLLMLoading ? '응답 대기 중' : '모순에 집중하기'} type="button">
                 <span className="slot-key">1</span>
                 <span className="slot-ico"><PCSvgIcon id="i-gavel" size={24} /></span>
                 <span className="slot-nm">사실 추궁</span>
@@ -397,35 +405,35 @@ export default function PCBottomDock() {
               </button>
 
               {/* 2: 동기 탐색 */}
-              <button className="slot" data-guide-target="question-motive" onClick={() => openQuestionChoice('motive_search')} title="숨겨진 쟁점찾기" type="button">
+              <button className="slot" data-guide-target="question-motive" disabled={isLLMLoading} onClick={() => openQuestionChoice('motive_search')} title={isLLMLoading ? '응답 대기 중' : '숨겨진 쟁점찾기'} type="button">
                 <span className="slot-key">2</span>
                 <span className="slot-ico"><PCSvgIcon id="i-eye" size={24} /></span>
                 <span className="slot-nm">동기 탐색</span>
               </button>
 
               {/* 3: 공감 접근 */}
-              <button className="slot" data-guide-target="question-empathy" onClick={() => openQuestionChoice('empathy_approach')} title="자백 유도하기" type="button">
+              <button className="slot" data-guide-target="question-empathy" disabled={isLLMLoading} onClick={() => openQuestionChoice('empathy_approach')} title={isLLMLoading ? '응답 대기 중' : '자백 유도하기'} type="button">
                 <span className="slot-key">3</span>
                 <span className="slot-ico"><PCSvgIcon id="i-heart" size={24} /></span>
                 <span className="slot-nm">공감 접근</span>
               </button>
 
               {/* 4: 자유 질문 */}
-              <button className="slot" onClick={openFreeQuestion} title="자유 질문" type="button">
+              <button className="slot" disabled={isLLMLoading} onClick={openFreeQuestion} title={isLLMLoading ? '응답 대기 중' : '자유 질문'} type="button">
                 <span className="slot-key">4</span>
                 <span className="slot-ico"><PCSvgIcon id="i-chat" size={24} /></span>
                 <span className="slot-nm">자유 질문</span>
               </button>
 
               {/* 5: 증거 제시 */}
-              <button className="slot" data-guide-target="evidence-present" onClick={openEvidenceChoice} title="증거 제시" type="button">
+              <button className="slot" data-guide-target="evidence-present" disabled={isLLMLoading} onClick={openEvidenceChoice} title={isLLMLoading ? '응답 대기 중' : '증거 제시'} type="button">
                 <span className="slot-key">5</span>
                 <span className="slot-ico"><PCSvgIcon id="i-doc" size={24} /></span>
                 <span className="slot-nm">증거 제시</span>
               </button>
 
               {/* 6: 증인 소환 */}
-              <button className={`slot${!hasWitness ? ' slot-locked' : ''}`} data-guide-target="witness-summon" disabled={!hasWitness} onClick={openWitnessPanel} title="증인 소환" type="button">
+              <button className={`slot${!hasWitness ? ' slot-locked' : ''}`} data-guide-target="witness-summon" disabled={!hasWitness || isLLMLoading} onClick={openWitnessPanel} title={isLLMLoading ? '응답 대기 중' : '증인 소환'} type="button">
                 <span className="slot-key">6</span>
                 <span className="slot-ico"><PCSvgIcon id="i-witness" size={24} /></span>
                 <span className="slot-nm">증인 소환</span>
@@ -439,6 +447,7 @@ export default function PCBottomDock() {
           caseId={caseData.caseId}
           name={caseData.duo.partyB.name}
           emotion={agentB.emotionalState.phase}
+          emotionValue={agentB.emotionalState.internalValue}
           faceId={getPcFaceSymbolId('b', caseData.duo.partyB, agentB.emotionalState.phase)}
           isActive={pcTargetParty === 'b'}
           side="b"
@@ -450,13 +459,18 @@ export default function PCBottomDock() {
 }
 
 function CharacterCard({
-  caseId, name, emotion, faceId, isActive, onClick, side,
+  caseId, name, emotion, emotionValue, faceId, isActive, onClick, side,
 }: {
-  caseId: string; name: string; emotion: EmotionalPhase; faceId: string; isActive: boolean; onClick: () => void; side: PartyId
+  caseId: string; name: string; emotion: EmotionalPhase; emotionValue: number;
+  faceId: string; isActive: boolean; onClick: () => void; side: PartyId
 }) {
+  // 감정 도넛 — 격앙/체념 단계는 펄스 애니메이션으로 위급 신호
+  const isCritical = emotion === 'angry' || emotion === 'resigned'
+  const safeValue = Math.max(0, Math.min(100, Math.round(emotionValue || 0)))
   return (
     <button className={`char char-${side}${isActive ? ' spk' : ''}`} data-character-card={side} onClick={onClick} type="button">
-      <div className="char-face">
+      <div className={`char-face char-face--ring is-emo-${emotion}${isCritical ? ' is-critical' : ''}`}>
+        <EmotionDonut value={safeValue} />
         <PCCharacterPortrait
           alt={name}
           caseId={caseId}
@@ -465,11 +479,39 @@ function CharacterCard({
           party={side}
           size={52}
         />
+        <span className="char-face__value" aria-label={`감정 수치 ${safeValue}`}>{safeValue}</span>
       </div>
       <div className="char-info">
         <span className="char-nm">{name}</span>
         <span className={`char-emo ${emotion === 'angry' ? 'ce-sh' : 'ce-cf'}`}>{EMOTION_LABELS[emotion]}</span>
       </div>
     </button>
+  )
+}
+
+/** 감정 도넛 그래프 — 캐릭터 프로필 외곽 ring.
+ *  값 0~100 비율로 stroke-dasharray 채움. 색상은 부모(.char-face--ring.is-emo-*)가 결정.
+ *  viewBox는 char-face와 동일 사이즈(66×66) — char-face의 정적 border를 도넛이 대체. */
+function EmotionDonut({ value }: { value: number }) {
+  // 도넛 stroke 중심이 외경 -1.5px 위치(원 외접). char-face 66×66, stroke 3 → r=31.5
+  const radius = 31.5
+  const circumference = 2 * Math.PI * radius
+  const dash = (value / 100) * circumference
+  return (
+    <svg className="char-emo-donut" viewBox="0 0 66 66" aria-hidden="true">
+      <circle
+        className="char-emo-donut__bg"
+        cx="33" cy="33" r={radius}
+        fill="none" strokeWidth="3"
+      />
+      <circle
+        className="char-emo-donut__fg"
+        cx="33" cy="33" r={radius}
+        fill="none" strokeWidth="3"
+        strokeDasharray={`${dash.toFixed(2)} ${circumference.toFixed(2)}`}
+        transform="rotate(-90 33 33)"
+        strokeLinecap="round"
+      />
+    </svg>
   )
 }

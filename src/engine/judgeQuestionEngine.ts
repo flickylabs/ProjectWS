@@ -230,12 +230,13 @@ export function generateJudgeQuestion(
   lieState?: LieState,
 ): string {
   // ScriptedText 우선: 사건별 맞춤 질문
+  // [B1·B2 픽스] target 인자 전달 — 추궁 대상자와 변종 호명이 일치하도록 강제
   try {
     const { getScriptedJudgeQuestion } = require('./scriptedTextLoader')
     const { normalizeCaseKey } = require('../utils/caseHelpers')
     const caseKey = normalizeCaseKey(caseData.caseId ?? '')
     const depth = Math.min(Math.max(interrogationDepth, 1), 4)
-    const scripted = getScriptedJudgeQuestion(caseKey, disputeId, questionType, depth)
+    const scripted = getScriptedJudgeQuestion(caseKey, disputeId, questionType, depth, target)
     if (scripted) return scripted.text
   } catch { /* 폴백 */ }
 

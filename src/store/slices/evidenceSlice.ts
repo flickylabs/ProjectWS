@@ -20,6 +20,9 @@ export interface EvidenceSlice {
   initEvidence: (evidence: EvidenceNode[], combinations: EvidenceCombination[], baseEvidenceIds?: string[]) => void
   presentEvidence: (evidenceId: string, target: 'a' | 'b') => string[]
   investigateEvidence: (evidenceId: string, subAction: string) => string | null
+  /** [TC-F C2 픽스] 마지막 investigateEvidence 호출에서 자동 해금된 증거 ID. handleEvidenceInvestigate가 시스템 메시지 출력에 사용 후 clear */
+  lastInvestigateUnlocks: string[]
+  consumeLastInvestigateUnlocks: () => string[]
   markEvidenceConfidential: (evidenceId: string) => void
   recommendedEvidenceIds: string[]
   setRecommendedEvidence: (ids: string[]) => void
@@ -134,12 +137,20 @@ export const createEvidenceSlice: StateCreator<EvidenceSlice, [], [], EvidenceSl
         lieStates[dId] = (LIE_RANK[st] ?? 0) >= (LIE_RANK[lieStates[dId] ?? 'S0'] ?? 0) ? st : lieStates[dId]
       }
     }
-    const { updated } = checkUnlocks(afterInvestigate, evidenceDefinitions, lieStates)
+    const { updated, newlyUnlocked } = checkUnlocks(afterInvestigate, evidenceDefinitions, lieStates)
 
-    set({ evidenceStates: updated })
+    // [TC-F C2 픽스] 자동 해금된 증거 ID를 transient state에 보관 (handleEvidenceInvestigate가 소비)
+    set({ evidenceStates: updated, lastInvestigateUnlocks: newlyUnlocked ?? [] })
 
     const def = evidenceDefinitions.find((e) => e.id === evidenceId)
     return def?.investigationResults[subAction] ?? null
+  },
+
+  lastInvestigateUnlocks: [],
+  consumeLastInvestigateUnlocks: () => {
+    const ids = get().lastInvestigateUnlocks
+    if (ids.length > 0) set({ lastInvestigateUnlocks: [] })
+    return ids
   },
 
   setRecommendedEvidence: (ids) => {

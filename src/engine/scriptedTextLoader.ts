@@ -60,6 +60,8 @@ interface VariantSelectionContext {
   witnessId?: string
   archetype?: string
   emotion?: string
+  /** [B1·B2 픽스] 호명 라우팅 — judge_question 등 발화의 대상 당사자 */
+  targetParty?: 'a' | 'b'
 }
 
 type ScriptedLookupChannel = SelectedScriptContext['channel']
@@ -170,6 +172,14 @@ function scoreVariant(
   const last = history[history.length - 1]
   const recentWindow = history.slice(-3)
   const tags = parseTags(variant.tags)
+
+  // [B1·B2 픽스] 호명 라우팅 강제 필터 — judge_question 등에서
+  // tags.targetParty와 호출자 context.targetParty가 다르면 사실상 제외.
+  // 박지연 추궁 시 "이준호 씨, ~" 변종이 무차별 선택되는 결함 차단.
+  if (tags.targetParty && context.targetParty) {
+    if (tags.targetParty !== context.targetParty) return -1000
+    score += 30 // 강한 선호 — 일치 변종 우선 채택
+  }
 
   if (!recentIds.includes(variant.id)) score += 10
   else score -= recentIds.lastIndexOf(variant.id) === recentIds.length - 1 ? 6 : 2
@@ -594,12 +604,14 @@ export function getScriptedMediation(
   return getFromChannel(caseId, 'mediation', key)
 }
 
-/** 재판관 심문 질문 (사건별) */
+/** 재판관 심문 질문 (사건별)
+ *  [B1·B2 픽스] target 인자 추가 — 호명 라우팅 강제 필터링용.
+ *  scriptedTextLoader.scoreVariant가 tags.targetParty와 매칭. */
 export function getScriptedJudgeQuestion(
-  caseId: string, disputeId: string, questionType: string, depth: number,
+  caseId: string, disputeId: string, questionType: string, depth: number, target?: 'a' | 'b',
 ): { text: string; behaviorHint: string } | null {
   const key = `${disputeId}|${questionType}|${depth}`
-  return getFromChannel(caseId, 'judge_question', key)
+  return getFromChannel(caseId, 'judge_question', key, { targetParty: target })
 }
 
 /** 재판관 모순 추궁 질문 (사건별) */
@@ -610,9 +622,11 @@ export function getScriptedJudgeContradiction(
   return getFromChannel(caseId, 'judge_contradiction', key)
 }
 
-/** 범용 채널 조회 헬퍼 */
+/** 범용 채널 조회 헬퍼
+ *  [B1·B2 픽스] extraContext 옵셔널 — targetParty 등 selector 가중치 제공 */
 function getFromChannel(
   caseId: string, channel: string, key: string,
+  extraContext?: Partial<VariantSelectionContext>,
 ): { text: string; behaviorHint: string } | null {
   const bundle = loadBundle(caseId)
   if (!bundle) return null
@@ -620,7 +634,7 @@ function getFromChannel(
   if (!ch?.entries) return null
   const entry = ch.entries.find((e: any) => e.key === key)
   if (!entry?.variants?.length) return null
-  const variant = selectVariant(entry.variants, caseId, { channel, key } as any)
+  const variant = selectVariant(entry.variants, caseId, { channel, key, ...(extraContext ?? {}) } as any)
   if (!variant) return null
   logScriptedHit(caseId, channel as any, key)
   return { text: variant.text, behaviorHint: variant.behaviorHint }

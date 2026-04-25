@@ -656,6 +656,24 @@ async function handleEvidenceInvestigate(action: Extract<PlayerAction, { type: '
   const result = state.investigateEvidence(action.evidenceId, action.subAction)
   if (result) state.addDialogue({ speaker: 'system', text: `${result}`, relatedDisputes: [], turn: state.turnCount })
 
+  // [TC-F C2 픽스] 조사 결과로 자동 해금된 증거를 시스템 메시지로 알림
+  // — '발신자 미상 문자' 같은 신규 해금이 사용자에게 전혀 표시되지 않던 결함 해소
+  const newlyUnlocked = state.consumeLastInvestigateUnlocks()
+  if (newlyUnlocked.length > 0) {
+    const evidenceDefs = state.evidenceDefinitions
+    for (const unlockedId of newlyUnlocked) {
+      const def = evidenceDefs.find((e) => e.id === unlockedId)
+      if (!def) continue
+      const displayName = (def as any).surfaceName || def.name || unlockedId
+      state.addDialogue({
+        speaker: 'system',
+        text: `🔓 새로운 증거를 손에 넣었다 — ${displayName}`,
+        relatedDisputes: [],
+        turn: state.turnCount,
+      })
+    }
+  }
+
   // [차단] 증거 조사 후 자동 NPC 심문 — 의도되지 않은 액션. 사용자가 명시적으로 심문할 때만 발화.
   // 조사는 정보 획득 액션. 심문은 별개. 자동 심문은 사용자 흐름을 끊고 잘못된 캐릭터에 메시지 발생.
   // 증거 조사는 토큰만 소비, 턴 소비 없음
@@ -1424,7 +1442,8 @@ async function handleQuestion(action: Extract<PlayerAction, { type: 'question' }
       : []
     // [결함 26·27 부활] 자동 이벤트 트리거 — D 옵션(시스템 메시지 + 클릭형)으로 모달 자동 표출이 차단된 상태라 안전.
     // 끼어들기 트리거 자체가 호출 안 되던 회귀 결함 해소. DiscoveryFeedbackWatcher가 pendingGameEvent를 D 옵션 클릭형으로 처리.
-    v3State.evaluateTurnEvents(action.questionType, action.disputeId, transitions)
+    // [B3 픽스] action.target을 명시 전달 — UI 탭(pcTargetParty)이 아닌 실제 추궁 대상자 기준으로 evaluateTurnEvents 평가
+    v3State.evaluateTurnEvents(action.questionType, action.disputeId, transitions, action.target)
 
     // ── V3: lieState 전이 시각 피드백 + 전략 선택 모달 ──
     if (prevState !== newState) {
