@@ -2,37 +2,29 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>솔로몬 법정 — 화면별 새 레이아웃 Mock (Phase 1~2 토큰 정확 적용)</title>
+<title>솔로몬 법정 — 화면별 새 레이아웃 Mock (실제 카피 + 키비주얼 + 버튼 패턴)</title>
 <style>
   /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
-  /* Phase 1~2 실제 토큰 (pc.css :root) — 변경 X */
+  /* Phase 1~2 실제 토큰 (pc.css :root) */
   /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
   :root {
-    /* Layer */
     --pc-bg: #07070c;
     --pc-p1: #0c0c14;
     --pc-p2: #111119;
     --pc-p3: #18181f;
     --pc-p4: #1f1f28;
-    /* Wood */
     --pc-wood-deep: #0d0e12;
     --pc-wood-dark: #12141a;
     --pc-wood-medium: #1c1f26;
-    --pc-wood-highlight: #3a3d47;
-    /* Gold */
     --pc-gold: #d4a24e;
     --pc-gold-light: #e8c172;
     --pc-gold-bright: #f0d890;
-    /* Party */
     --pc-blue: #5b8def;
     --pc-red: #e06060;
     --pc-witness: #9ba87a;
-    --pc-purple: #9b7be8;
-    /* Text */
     --pc-text: #ede3cc;
     --pc-text-dim: #b5a888;
     --pc-text-muted: #857b68;
-    /* Panel */
     --pc-panel-bg: linear-gradient(180deg, rgba(18,19,24,0.42), rgba(13,14,18,0.52));
     --pc-panel-bg-strong: linear-gradient(180deg, rgba(18,19,24,0.54), rgba(13,14,18,0.64));
     --pc-panel-border: rgba(212, 162, 78, 0.22);
@@ -99,9 +91,7 @@
     max-width: 700px;
   }
 
-  /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
-  /* Mock 컨테이너 (16:9 시뮬레이션) */
-  /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+  /* Mock 컨테이너 (16:9) */
   .mock {
     width: 100%;
     max-width: 1100px;
@@ -129,58 +119,216 @@
   }
 
   /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
-  /* 실제 Phase 1~2 컴포넌트 패턴 */
+  /* 실제 Phase 1~2 컴포넌트 패턴 (사용자 스크린샷 기반) */
   /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 
-  /* SVG 아이콘 — currentColor 따름 */
+  /* SVG 아이콘 */
   .icon { display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; }
   .icon svg { display: block; width: 100%; height: 100%; }
 
-  /* 버튼 — Primary (pc-skill-card__button 패턴) */
+  /* 키비주얼 PNG (저울 — public/icons/ornament/scale-balance.png) */
+  .scale-balance {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+    flex-shrink: 0;
+    filter: drop-shadow(0 3px 10px rgba(0, 0, 0, 0.5)) drop-shadow(0 0 12px rgba(212, 162, 78, 0.22));
+  }
+  /* PNG 로드 안 될 때 SVG fallback */
+  .scale-fallback {
+    width: 48px;
+    height: 48px;
+    color: var(--pc-gold-light);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    filter: drop-shadow(0 3px 10px rgba(0, 0, 0, 0.5)) drop-shadow(0 0 12px rgba(212, 162, 78, 0.22));
+  }
+
+  /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+  /* 버튼 — 실제 사용자 스크린샷 패턴 */
+  /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+  /* Primary — '조합 실행' 패턴: 골드 그라디언트 + 검은 텍스트 + 큰 사이즈 + full-width */
   .btn-primary {
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 8px;
-    padding: 10px 18px;
-    border-radius: 14px;
-    border: 1px solid rgba(232, 193, 114, 0.34);
-    background: linear-gradient(135deg, rgba(154, 108, 28, 0.92), rgba(212, 162, 78, 0.96));
+    padding: 14px 24px;
+    border-radius: 12px;
+    border: 1px solid rgba(232, 193, 114, 0.5);
+    background: linear-gradient(135deg, rgba(154, 108, 28, 0.95), rgba(212, 162, 78, 0.98));
     color: #0c0c14;
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 800;
     cursor: pointer;
-    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.28);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.32), inset 0 1px 0 rgba(255,255,255,0.12);
   }
+  .btn-primary .icon { width: 16px; height: 16px; color: #0c0c14; }
 
-  /* 버튼 — Secondary (pc-interaction-card__action 패턴) */
+  /* Secondary — '관련 쟁점 보기' 패턴: 다크 + 골드 보더 + 골드 텍스트 + full-width */
   .btn-secondary {
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 6px;
-    padding: 10px 18px;
-    border-radius: 14px;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    background: var(--pc-p3);
-    color: #dcdce0;
+    padding: 12px 20px;
+    border-radius: 12px;
+    border: 1px solid rgba(212, 162, 78, 0.4);
+    background: rgba(13, 14, 18, 0.6);
+    color: var(--pc-gold-light);
     font-size: 13px;
     font-weight: 700;
     cursor: pointer;
   }
+  .btn-secondary .icon { width: 14px; height: 14px; color: var(--pc-gold-light); }
 
-  /* 버튼 — Ghost (pc-interaction-card__action.is-secondary 패턴) */
-  .btn-ghost {
+  /* Tertiary — '자동 매칭' 패턴: 작은 다크 + 골드 보더 + 우측 배지 */
+  .btn-tertiary {
     display: inline-flex;
     align-items: center;
     gap: 6px;
     padding: 8px 14px;
     border-radius: 10px;
-    border: 1px solid var(--pc-panel-border-soft);
-    background: transparent;
-    color: var(--pc-text-dim);
+    border: 1px solid rgba(212, 162, 78, 0.4);
+    background: rgba(13, 14, 18, 0.5);
+    color: var(--pc-gold-light);
     font-size: 12px;
     font-weight: 700;
     cursor: pointer;
   }
+  .btn-tertiary .icon { width: 13px; height: 13px; color: var(--pc-gold-light); }
+  .btn-tertiary-cost {
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    margin-left: 4px;
+    padding: 1px 6px;
+    border-radius: 4px;
+    background: rgba(0, 0, 0, 0.3);
+    color: var(--pc-gold-light);
+    font-size: 10px;
+    font-weight: 800;
+  }
+  .btn-tertiary-cost .icon { width: 10px; height: 10px; }
+
+  /* 키보드 칩 — 'Space' 패턴 */
+  .kbd-chip {
+    display: inline-flex;
+    align-items: center;
+    padding: 3px 8px;
+    border-radius: 6px;
+    background: rgba(0, 0, 0, 0.7);
+    color: var(--pc-text);
+    font-size: 11px;
+    font-weight: 700;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    font-family: -apple-system, monospace;
+  }
+
+  /* 잠금 배지 — '잠김' 패턴 */
+  .lock-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 2px 8px;
+    border-radius: 6px;
+    background: linear-gradient(180deg, rgba(54, 38, 16, 0.95), rgba(34, 24, 10, 0.95));
+    color: var(--pc-gold-light);
+    font-size: 10px;
+    font-weight: 700;
+    border: 1px solid rgba(212, 162, 78, 0.5);
+  }
+
+  /* 탭/칩 — '오피스텔 방문과 새벽 전화' 패턴 */
+  .chip-tab {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 16px;
+    border-radius: 10px;
+    background: rgba(13, 14, 18, 0.6);
+    color: var(--pc-text);
+    font-size: 12px;
+    font-weight: 700;
+    border: 1px solid rgba(212, 162, 78, 0.25);
+  }
+  .chip-tab.is-active {
+    border-color: rgba(212, 162, 78, 0.5);
+    background: rgba(212, 162, 78, 0.08);
+  }
+
+  /* 알럿 카드 — '조합 가능한 항목이 1개 있습니다' 패턴 */
+  .alert-card {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    border-radius: 10px;
+    background: linear-gradient(180deg, rgba(212, 162, 78, 0.18), rgba(154, 108, 28, 0.10));
+    border: 1px solid rgba(212, 162, 78, 0.55);
+  }
+  .alert-card-icon {
+    color: var(--pc-gold-light);
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+  }
+  .alert-card-text {
+    flex: 1;
+    font-size: 12px;
+    color: var(--pc-text);
+    line-height: 1.5;
+  }
+  .alert-card-text strong { color: var(--pc-gold-light); font-weight: 800; }
+  .alert-card-action {
+    padding: 4px 10px;
+    border-radius: 6px;
+    background: rgba(0,0,0,0.4);
+    color: var(--pc-text);
+    font-size: 11px;
+    font-weight: 700;
+    cursor: pointer;
+    border: 0;
+  }
+
+  /* 공략 힌트 카드 — 좌측 골드 보더 + 닫기 X */
+  .hint-card {
+    padding: 12px 14px;
+    border-radius: 10px;
+    background: linear-gradient(180deg, rgba(20, 22, 28, 0.95), rgba(13, 14, 18, 0.95));
+    border: 1px solid var(--pc-panel-border);
+    border-left: 3px solid var(--pc-gold);
+    position: relative;
+  }
+  .hint-card-eyebrow {
+    color: var(--pc-gold-light);
+    font-size: 11px;
+    font-weight: 800;
+    margin-bottom: 4px;
+    letter-spacing: 0.04em;
+  }
+  .hint-card-text {
+    font-size: 11px;
+    color: var(--pc-text-dim);
+    line-height: 1.5;
+  }
+  .hint-card-text strong { color: var(--pc-gold-light); font-weight: 700; }
+  .hint-card-close {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 18px;
+    height: 18px;
+    border-radius: 4px;
+    background: transparent;
+    color: var(--pc-text-muted);
+    border: 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .hint-card-close .icon { width: 12px; height: 12px; }
 
   /* 패널 (pc-skill-card 패턴) */
   .panel {
@@ -190,38 +338,8 @@
     box-shadow: inset 0 0 0 1px rgba(212, 162, 78, 0.05);
     padding: 18px 20px;
   }
-  .panel-eyebrow {
-    font-size: 11px;
-    font-weight: 800;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: var(--pc-gold-light);
-  }
-  .panel-copy {
-    margin-top: 8px;
-    color: var(--pc-text-dim);
-    font-size: 13px;
-    line-height: 1.65;
-  }
 
-  /* 게이지 (pc-jobs-badge 패턴) */
-  .badge-count {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    min-width: 18px;
-    height: 18px;
-    padding: 0 6px;
-    font-size: 10px;
-    font-weight: 700;
-    border-radius: 999px;
-    background: rgba(90, 62, 40, 0.95);
-    color: #e8c089;
-    border: 1px solid rgba(122, 88, 58, 0.85);
-    line-height: 1.4;
-  }
-
-  /* 메뉴 nav-item (pc-settings-sidebar 패턴) */
+  /* nav-item (pc-settings-sidebar 패턴) */
   .nav-item {
     display: flex;
     align-items: center;
@@ -245,53 +363,76 @@
   .nav-item .icon { width: 14px; height: 14px; color: currentColor; }
 
   /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
-  /* 1. INTRO */
+  /* 1. INTRO (실제 PCIntroSlides 카피) */
   /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
   .mock-intro {
-    grid-template-rows: 1fr auto;
-    background:
-      radial-gradient(ellipse 70% 50% at 50% 35%, rgba(212,162,78,0.12), transparent 70%),
-      var(--pc-wood-deep);
+    grid-template-rows: auto 1fr auto;
+    background: radial-gradient(ellipse 70% 50% at 50% 35%, rgba(212,162,78,0.12), transparent 70%), var(--pc-wood-deep);
   }
-  .intro-hero {
+  .intro-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 28px;
+    border-bottom: 1px solid var(--pc-panel-border-soft);
+  }
+  .intro-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--pc-text-dim);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+  }
+  .intro-brand-mark .icon { width: 22px; height: 22px; color: var(--pc-gold); }
+  .intro-brand-name { color: var(--pc-text); font-weight: 800; }
+  .intro-brand-sep { color: var(--pc-text-muted); }
+  .intro-brand-kicker { color: var(--pc-gold-light); font-weight: 800; }
+  .intro-skip {
+    padding: 6px 14px;
+    border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.08);
+    background: transparent;
+    color: var(--pc-text-dim);
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+  }
+  .intro-body {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     padding: 40px;
-    gap: 22px;
+    gap: 16px;
     text-align: center;
   }
-  .intro-emblem {
-    width: 84px;
-    height: 84px;
-    border-radius: 50%;
-    border: 1.5px solid var(--pc-gold);
-    background: radial-gradient(circle at 50% 30%, rgba(212,162,78,0.3), rgba(13,14,18,0.6) 70%);
-    box-shadow: var(--pc-panel-shadow), 0 0 24px rgba(212, 162, 78, 0.25);
-    color: var(--pc-gold-light);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  .intro-kicker {
+    color: var(--pc-gold);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.2em;
+    margin-bottom: 8px;
   }
-  .intro-emblem .icon { width: 40px; height: 40px; }
   .intro-title {
     font-size: 30px;
     font-weight: 900;
-    color: var(--pc-gold-light);
-    letter-spacing: 0.06em;
+    color: var(--pc-text);
+    line-height: 1.3;
+    max-width: 600px;
   }
-  .intro-tagline {
+  .intro-desc {
     font-size: 13px;
     color: var(--pc-text-dim);
-    max-width: 480px;
+    max-width: 520px;
     line-height: 1.7;
   }
-  .intro-nav {
+  .intro-footer {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 16px 32px;
+    padding: 16px 28px;
     border-top: 1px solid var(--pc-panel-border-soft);
   }
   .intro-dots { display: flex; gap: 6px; }
@@ -300,140 +441,195 @@
     height: 8px;
     border-radius: 50%;
     background: rgba(255,255,255,0.15);
-    transition: all 0.18s ease;
+    border: 0;
+    cursor: pointer;
   }
   .intro-dot.is-active {
     background: var(--pc-gold);
     width: 24px;
     border-radius: 4px;
   }
-  .intro-meta { font-size: 10px; color: var(--pc-text-muted); }
+  .intro-actions { display: flex; gap: 10px; }
+  .intro-ghost {
+    padding: 10px 18px;
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.08);
+    background: transparent;
+    color: var(--pc-text-dim);
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+  }
+  .intro-ghost:disabled { opacity: 0.4; }
 
   /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
-  /* 2. HOME */
+  /* 2. HOME (실제 PCHomeScreen 카피 + scale-balance 키비주얼) */
   /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
   .mock-home {
-    grid-template-columns: 220px 1fr;
+    grid-template-rows: auto 1fr;
+    background: radial-gradient(ellipse 50% 40% at 50% 25%, rgba(212,162,78,0.10), transparent 70%), var(--pc-wood-deep);
   }
-  .home-sidebar {
-    background: rgba(0,0,0,0.25);
-    border-right: 1px solid var(--pc-panel-border-soft);
-    padding: 20px 12px;
+  .home-topbar {
     display: flex;
-    flex-direction: column;
-    gap: 4px;
+    justify-content: flex-end;
+    padding: 16px 24px;
   }
-  .home-brand {
+  .home-tool-settings {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    border: 1px solid var(--pc-panel-border-soft);
+    background: rgba(13, 14, 18, 0.5);
+    color: var(--pc-gold-light);
+    cursor: pointer;
     display: flex;
     align-items: center;
-    gap: 8px;
-    color: var(--pc-gold);
-    font-weight: 900;
-    font-size: 13px;
-    padding: 0 12px 14px;
-    border-bottom: 1px solid var(--pc-panel-border-soft);
-    margin-bottom: 12px;
-    letter-spacing: 0.04em;
+    justify-content: center;
   }
-  .home-brand .icon { width: 18px; height: 18px; color: var(--pc-gold); }
-  .home-main {
-    padding: 28px 32px;
+  .home-tool-settings .icon { width: 18px; height: 18px; }
+  .home-content {
     display: grid;
-    grid-template-rows: auto 1fr;
-    gap: 18px;
+    grid-template-rows: auto auto auto 1fr;
+    gap: 24px;
+    padding: 0 60px 32px;
     overflow: hidden;
   }
-  .home-greeting {
-    font-size: 11px;
-    color: var(--pc-text-muted);
-    margin-bottom: 4px;
-    letter-spacing: 0.04em;
-    font-weight: 700;
-  }
-  .home-title {
-    font-size: 22px;
-    font-weight: 800;
-    color: var(--pc-text);
-  }
-  .home-grid {
-    display: grid;
-    grid-template-columns: 1.6fr 1fr;
-    gap: 14px;
-  }
-  .home-hero-card {
-    border-radius: 18px;
-    border: 1px solid rgba(212, 162, 78, 0.28);
-    background:
-      linear-gradient(180deg, rgba(212, 162, 78, 0.08), rgba(17, 17, 25, 0.92)),
-      linear-gradient(135deg, rgba(91, 141, 239, 0.08), transparent 60%);
-    padding: 18px 20px;
+  .home-hero {
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    box-shadow: var(--pc-panel-shadow), inset 0 0 0 1px rgba(212, 162, 78, 0.05);
+    align-items: center;
+    gap: 8px;
+    text-align: center;
   }
-  .home-hero-eyebrow {
-    font-size: 10px;
+  .home-eyebrow {
     color: var(--pc-gold);
-    letter-spacing: 0.16em;
+    font-size: 11px;
     font-weight: 800;
-    text-transform: uppercase;
+    letter-spacing: 0.2em;
   }
-  .home-hero-title {
-    font-size: 17px;
+  .home-title-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: 4px;
+  }
+  .home-title {
+    font-size: 36px;
+    font-weight: 900;
+    color: var(--pc-text);
+    letter-spacing: 0.04em;
+  }
+  .home-subtitle {
+    font-size: 13px;
+    color: var(--pc-text-dim);
+    margin-top: 4px;
+  }
+  .home-mode-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+  .mode-card {
+    border-radius: 18px;
+    border: 1px solid var(--pc-panel-border);
+    background: linear-gradient(135deg, rgba(212, 162, 78, 0.10), rgba(17, 17, 25, 0.92));
+    padding: 18px 22px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    box-shadow: var(--pc-panel-shadow);
+  }
+  .mode-card-badge {
+    color: var(--pc-gold);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.16em;
+  }
+  .mode-card-label-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .mode-card-label {
+    font-size: 18px;
     font-weight: 800;
     color: var(--pc-text);
-    line-height: 1.4;
   }
-  .home-hero-desc {
-    font-size: 11px;
-    color: var(--pc-text-dim);
-    line-height: 1.6;
+  .mode-card-icon {
+    width: 32px;
+    height: 32px;
+    color: var(--pc-gold-light);
   }
-  .home-hero-actions {
+  .mode-card-meta {
     display: flex;
-    gap: 8px;
-    margin-top: auto;
+    justify-content: space-between;
+    font-size: 11px;
+    color: var(--pc-text-muted);
+    font-weight: 700;
+    margin-top: 4px;
   }
-  .home-side-cards {
+  .mode-card-track {
+    height: 4px;
+    border-radius: 2px;
+    background: rgba(255,255,255,0.05);
+    overflow: hidden;
+    margin-top: 4px;
+  }
+  .mode-card-fill {
+    height: 100%;
+    background: linear-gradient(90deg, rgba(154, 108, 28, 0.92), var(--pc-gold));
+  }
+  .home-info-grid {
     display: grid;
-    grid-template-rows: 1fr 1fr;
-    gap: 10px;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
   }
-  .home-side-card {
+  .info-card {
     border-radius: 14px;
     border: 1px solid var(--pc-panel-border);
     background: var(--pc-panel-bg);
-    padding: 14px 16px;
+    padding: 14px 18px;
     display: flex;
-    flex-direction: column;
-    gap: 6px;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
   }
-  .home-side-eyebrow {
-    font-size: 9px;
+  .info-card-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    background: rgba(212, 162, 78, 0.10);
+    color: var(--pc-gold-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .info-card-icon .icon { width: 20px; height: 20px; }
+  .info-card-body { flex: 1; }
+  .info-card-subtitle {
+    font-size: 10px;
     color: var(--pc-text-muted);
-    letter-spacing: 0.16em;
     font-weight: 700;
-    text-transform: uppercase;
+    letter-spacing: 0.08em;
   }
-  .home-side-title {
-    font-size: 13px;
+  .info-card-title {
+    font-size: 14px;
     font-weight: 800;
     color: var(--pc-text);
+    margin-top: 2px;
   }
-  .home-side-desc {
-    font-size: 10px;
-    color: var(--pc-text-dim);
-    margin-top: auto;
-    line-height: 1.4;
+  .info-card-action {
+    color: var(--pc-gold-light);
+    font-size: 11px;
+    font-weight: 700;
   }
 
   /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
   /* 3. CASE BROWSER */
   /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
-  .mock-case {
-    grid-template-rows: auto 1fr;
-  }
+  .mock-case { grid-template-rows: auto 1fr; }
   .case-header {
     padding: 14px 28px;
     display: flex;
@@ -461,22 +657,7 @@
     color: var(--pc-gold-light);
     letter-spacing: 0.04em;
   }
-  .case-search {
-    margin-left: auto;
-    width: 220px;
-    height: 30px;
-    border-radius: 8px;
-    border: 1px solid var(--pc-panel-border);
-    background: rgba(0,0,0,0.3);
-    color: var(--pc-text-dim);
-    padding: 0 10px 0 32px;
-    font-size: 11px;
-    position: relative;
-  }
-  .case-search-wrap {
-    position: relative;
-    margin-left: auto;
-  }
+  .case-search-wrap { position: relative; margin-left: auto; }
   .case-search-wrap .icon {
     position: absolute;
     left: 10px;
@@ -487,11 +668,17 @@
     color: var(--pc-text-muted);
     pointer-events: none;
   }
-  .case-body {
-    display: grid;
-    grid-template-columns: 170px 1fr;
-    overflow: hidden;
+  .case-search {
+    width: 220px;
+    height: 30px;
+    border-radius: 8px;
+    border: 1px solid var(--pc-panel-border);
+    background: rgba(0,0,0,0.3);
+    color: var(--pc-text-dim);
+    padding: 0 10px 0 32px;
+    font-size: 11px;
   }
+  .case-body { display: grid; grid-template-columns: 170px 1fr; overflow: hidden; }
   .case-categories {
     padding: 18px 12px;
     border-right: 1px solid var(--pc-panel-border-soft);
@@ -525,15 +712,8 @@
     border-left: 3px solid var(--pc-gold);
     padding-left: 9px;
   }
-  .case-cat.is-locked {
-    opacity: 0.4;
-    cursor: not-allowed;
-  }
-  .case-cat-count {
-    font-size: 9px;
-    color: var(--pc-text-muted);
-    font-weight: 600;
-  }
+  .case-cat.is-locked { opacity: 0.4; cursor: not-allowed; }
+  .case-cat-count { font-size: 9px; color: var(--pc-text-muted); font-weight: 600; }
   .case-grid {
     padding: 20px 24px;
     display: grid;
@@ -550,7 +730,6 @@
     display: flex;
     flex-direction: column;
     cursor: pointer;
-    transition: transform 0.15s ease, border-color 0.15s ease;
   }
   .case-card-thumb {
     aspect-ratio: 16 / 10;
@@ -561,11 +740,7 @@
     align-items: center;
     justify-content: center;
   }
-  .case-card-thumb .icon {
-    width: 42px;
-    height: 42px;
-    color: rgba(212, 162, 78, 0.4);
-  }
+  .case-card-thumb .icon { width: 42px; height: 42px; color: rgba(212, 162, 78, 0.4); }
   .case-card-badge {
     position: absolute;
     top: 6px;
@@ -604,9 +779,7 @@
   /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
   /* 4. JUDGE DESK */
   /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
-  .mock-judge {
-    grid-template-columns: 240px 1fr 260px;
-  }
+  .mock-judge { grid-template-columns: 240px 1fr 260px; }
   .judge-profile {
     padding: 22px 18px;
     border-right: 1px solid var(--pc-panel-border-soft);
@@ -642,7 +815,6 @@
     font-size: 16px;
     font-weight: 900;
     color: var(--pc-text);
-    margin-bottom: 2px;
   }
   .judge-stage {
     text-align: center;
@@ -662,7 +834,6 @@
   .judge-stat-row:last-child { border-bottom: 0; }
   .judge-stat-label { color: var(--pc-text-muted); font-weight: 600; }
   .judge-stat-value { color: var(--pc-gold-light); font-weight: 800; }
-
   .judge-pieces {
     padding: 22px 24px;
     display: flex;
@@ -705,17 +876,8 @@
     margin-bottom: 2px;
   }
   .judge-piece-icon .icon { width: 16px; height: 16px; }
-  .judge-piece-name {
-    font-size: 10px;
-    color: var(--pc-text);
-    font-weight: 700;
-  }
-  .judge-piece-count {
-    font-size: 11px;
-    color: var(--pc-gold-light);
-    font-weight: 800;
-  }
-
+  .judge-piece-name { font-size: 10px; color: var(--pc-text); font-weight: 700; }
+  .judge-piece-count { font-size: 11px; color: var(--pc-gold-light); font-weight: 800; }
   .judge-perks {
     padding: 22px 18px;
     border-left: 1px solid var(--pc-panel-border-soft);
@@ -733,11 +895,7 @@
     background: rgba(255,255,255,0.02);
     font-size: 10px;
   }
-  .judge-trait-name {
-    flex: 0 0 56px;
-    color: var(--pc-text);
-    font-weight: 700;
-  }
+  .judge-trait-name { flex: 0 0 56px; color: var(--pc-text); font-weight: 700; }
   .judge-trait-bar {
     flex: 1;
     height: 4px;
@@ -748,14 +906,8 @@
   .judge-trait-fill {
     height: 100%;
     background: linear-gradient(90deg, rgba(154, 108, 28, 0.92), var(--pc-gold));
-    border-radius: 2px;
   }
-  .judge-trait-lv {
-    flex: 0 0 24px;
-    text-align: right;
-    color: var(--pc-gold-light);
-    font-weight: 800;
-  }
+  .judge-trait-lv { flex: 0 0 24px; text-align: right; color: var(--pc-gold-light); font-weight: 800; }
   .judge-perk-card {
     padding: 10px 12px;
     border-radius: 10px;
@@ -773,11 +925,7 @@
     margin-bottom: 4px;
   }
   .judge-perk-name .icon { width: 12px; height: 12px; }
-  .judge-perk-desc {
-    color: var(--pc-text-dim);
-    font-size: 10px;
-    line-height: 1.5;
-  }
+  .judge-perk-desc { color: var(--pc-text-dim); font-size: 10px; line-height: 1.5; }
 
   /* 핵심 변경 박스 */
   .key-points {
@@ -800,8 +948,7 @@
   .key-points li {
     font-size: 11px;
     color: var(--pc-text-dim);
-    padding: 3px 0;
-    padding-left: 14px;
+    padding: 3px 0 3px 14px;
     position: relative;
     line-height: 1.6;
   }
@@ -819,9 +966,7 @@
 </head>
 <body>
 
-<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
-<!-- SVG Symbol Set (실제 pc-prototype/index.html에서 추출) -->
-<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<!-- SVG Symbol Set (실제 pc-prototype/index.html 추출) -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <defs>
     <symbol id="i-judge" viewBox="0 0 24 24">
@@ -833,212 +978,247 @@
       <path d="M12 2L1 7l3 9h4l3-9h2l3 9h4l3-9zM5.3 14L4 10.2 6.7 14zM18.7 14l-2.7 0L17.3 10.2zM11 18h2v4h-2z" fill="currentColor"/>
       <circle cx="12" cy="7" r="1.5" fill="currentColor"/>
     </symbol>
-    <symbol id="i-bolt" viewBox="0 0 24 24">
-      <path d="M13 2L4 14h6l-1 8 9-12h-6z" fill="currentColor"/>
-    </symbol>
-    <symbol id="i-search" viewBox="0 0 24 24">
-      <circle cx="10" cy="10" r="7" fill="none" stroke="currentColor" stroke-width="2"/>
-      <line x1="15.5" y1="15.5" x2="21" y2="21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-    </symbol>
-    <symbol id="i-eye" viewBox="0 0 24 24">
-      <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8S1 12 1 12z" fill="none" stroke="currentColor" stroke-width="1.8"/>
-      <circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.8"/>
-    </symbol>
-    <symbol id="i-heart" viewBox="0 0 24 24">
-      <path d="M12 21C12 21 3 14 3 8.5 3 5.4 5.4 3 8.5 3c1.7 0 3.3.8 3.5 2 .2-1.2 1.8-2 3.5-2C18.6 3 21 5.4 21 8.5 21 14 12 21 12 21z" fill="none" stroke="currentColor" stroke-width="1.8"/>
-    </symbol>
-    <symbol id="i-shield" viewBox="0 0 24 24">
-      <path d="M12 2L4 6v5c0 5.5 3.8 10 8 11 4.2-1 8-5.5 8-11V6z" fill="none" stroke="currentColor" stroke-width="1.8"/>
-      <path d="M9 12l2 2 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-    </symbol>
-    <symbol id="i-doc" viewBox="0 0 24 24">
-      <path d="M6 2h8l6 6v14H6z" fill="none" stroke="currentColor" stroke-width="1.6"/>
-      <path d="M14 2v6h6M9 13h6M9 17h4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
-    </symbol>
-    <symbol id="i-chat" viewBox="0 0 24 24">
-      <path d="M4 4h16v12H8l-4 4z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-    </symbol>
-    <symbol id="i-link" viewBox="0 0 24 24">
-      <path d="M10 13.5a4 4 0 0 0 5.66 0l3-3a4 4 0 1 0-5.66-5.66L11.5 6.34M14 10.5a4 4 0 0 0-5.66 0l-3 3a4 4 0 1 0 5.66 5.66l1.5-1.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-    </symbol>
-    <symbol id="i-gear" viewBox="0 0 24 24">
-      <circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.6"/>
-      <path d="M12 1v3M12 20v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M1 12h3M20 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
-    </symbol>
-    <symbol id="i-brain" viewBox="0 0 24 24">
-      <path d="M12 2C9 2 7 4 7 6c-2 0-4 2-4 4s1 4 3 5v5h4v-2h4v2h4v-5c2-1 3-3 3-5s-2-4-4-4c0-2-2-4-5-4z" fill="none" stroke="currentColor" stroke-width="1.6"/>
-      <path d="M12 2v20" fill="none" stroke="currentColor" stroke-width="1" opacity=".3"/>
-    </symbol>
-    <symbol id="i-arrow-left" viewBox="0 0 24 24">
-      <path d="M15 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-    </symbol>
-    <symbol id="i-arrow-right" viewBox="0 0 24 24">
-      <path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-    </symbol>
-    <symbol id="i-cross" viewBox="0 0 24 24">
-      <path d="M5 5l14 14M19 5L5 19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-    </symbol>
+    <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 2L4 14h6l-1 8 9-12h-6z" fill="currentColor"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="10" cy="10" r="7" fill="none" stroke="currentColor" stroke-width="2"/><line x1="15.5" y1="15.5" x2="21" y2="21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="i-eye" viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8S1 12 1 12z" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 21C12 21 3 14 3 8.5 3 5.4 5.4 3 8.5 3c1.7 0 3.3.8 3.5 2 .2-1.2 1.8-2 3.5-2C18.6 3 21 5.4 21 8.5 21 14 12 21 12 21z" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 2L4 6v5c0 5.5 3.8 10 8 11 4.2-1 8-5.5 8-11V6z" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M9 12l2 2 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-doc" viewBox="0 0 24 24"><path d="M6 2h8l6 6v14H6z" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M14 2v6h6M9 13h6M9 17h4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24"><path d="M4 4h16v12H8l-4 4z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></symbol>
+    <symbol id="i-link" viewBox="0 0 24 24"><path d="M10 13.5a4 4 0 0 0 5.66 0l3-3a4 4 0 1 0-5.66-5.66L11.5 6.34M14 10.5a4 4 0 0 0-5.66 0l-3 3a4 4 0 1 0 5.66 5.66l1.5-1.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-gear" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M12 1v3M12 20v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M1 12h3M20 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></symbol>
+    <symbol id="i-brain" viewBox="0 0 24 24"><path d="M12 2C9 2 7 4 7 6c-2 0-4 2-4 4s1 4 3 5v5h4v-2h4v2h4v-5c2-1 3-3 3-5s-2-4-4-4c0-2-2-4-5-4z" fill="none" stroke="currentColor" stroke-width="1.6"/></symbol>
+    <symbol id="i-arrow-left" viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-cross" viewBox="0 0 24 24"><path d="M5 5l14 14M19 5L5 19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="i-person" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M4 22c0-4 4-7 8-7s8 3 8 7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+    <symbol id="i-crown" viewBox="0 0 24 24"><path d="M3 8l4 4 5-7 5 7 4-4-2 12H5z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+    <symbol id="i-gavel" viewBox="0 0 24 24"><path d="M17.3 3.3l3.4 3.4-2.1 2.1-3.4-3.4zM5 17.6L13.6 9l1.4 1.4L6.4 19H3v-3.4l2-2zM14.5 4.5L19.5 9.5l-1.4 1.4-5-5zM2 22h20v-2H2z" fill="currentColor"/></symbol>
   </defs>
 </svg>
 
 <h1>솔로몬 법정 — 화면별 새 레이아웃 Mock</h1>
 <p class="lead">
-  <strong>적용 토큰</strong>: Phase 1~2 실제 pc.css :root 그대로 (다크 우드 + 골드 + 패널 그라디언트 + SVG 아이콘).<br>
-  <strong>버튼 패턴</strong>: Primary = pc-skill-card__button (골드 그라디언트 + 검은 텍스트) / Secondary = pc-interaction-card__action (다크 + 골드 hover) / Ghost = 투명 + 골드 보더 소프트.<br>
-  <strong>아이콘</strong>: pc-prototype/index.html에서 실제 SVG symbol 추출 (이모지 X).<br>
-  <strong>갈아엎기 대상</strong>: Intro / Home / 사건 선택 / Judge Desk / 설정 — UX 구조 + 컴포넌트 레이아웃.<br>
-  <strong>Phase 1~2 / Phase 3 / 판결 / 결과</strong>: 톤·구조 변경 X (결함 픽스만).
+  <strong>적용 토큰</strong>: Phase 1~2 실제 pc.css :root 그대로.<br>
+  <strong>실제 카피</strong>: PCIntroSlides + PCHomeScreen 코드의 텍스트 그대로 사용 (임의 카피 X).<br>
+  <strong>키비주얼</strong>: <code>/icons/ornament/scale-balance.png</code> (Home 타이틀 양옆 48×48). PNG 로드 안 되면 i-scale SVG fallback.<br>
+  <strong>버튼 패턴</strong>: 사용자 스크린샷에서 추출.
+  · Primary = 골드 그라디언트 + 검은 텍스트 (조합 실행)
+  · Secondary = 다크 + <strong>골드 보더</strong> + 골드 텍스트 (관련 쟁점 보기)
+  · Tertiary = 작은 다크 + 골드 보더 + 우측 배지 (자동 매칭)
+  · 키보드 칩 = 검정 + 흰 텍스트 (Space)
+  · 잠금 배지 = 갈색 + 골드 보더<br>
+  <strong>아이콘</strong>: pc-prototype/index.html SVG symbol inline.
 </p>
 
 <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
-<!-- 1. INTRO -->
+<!-- 0. 버튼 패턴 카탈로그 -->
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<div class="section">
+  <div class="section-meta">
+    <span class="section-num">PATTERN CATALOG</span>
+    <span class="section-status is-current">사용자 스크린샷 기반</span>
+  </div>
+  <h2>버튼 / 칩 / 카드 패턴</h2>
+  <p class="section-desc">이 패턴들이 모든 신규 화면의 기본. 사용자 스크린샷에서 추출한 실제 게임 패턴.</p>
+
+  <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:24px;max-width:1100px;padding:24px;background:var(--pc-bg);border:1px solid var(--pc-panel-border-soft);border-radius:12px;">
+    <div>
+      <div style="font-size:10px;color:var(--pc-text-muted);margin-bottom:8px;letter-spacing:0.1em;">PRIMARY · 조합 실행 패턴</div>
+      <button class="btn-primary" style="width:100%;">
+        <span class="icon"><svg><use href="#i-bolt"/></svg></span>
+        조합 실행
+      </button>
+    </div>
+    <div>
+      <div style="font-size:10px;color:var(--pc-text-muted);margin-bottom:8px;letter-spacing:0.1em;">SECONDARY · 관련 쟁점 보기 패턴</div>
+      <button class="btn-secondary" style="width:100%;">관련 쟁점 보기</button>
+    </div>
+    <div>
+      <div style="font-size:10px;color:var(--pc-text-muted);margin-bottom:8px;letter-spacing:0.1em;">TERTIARY · 자동 매칭 패턴</div>
+      <button class="btn-tertiary">
+        <span class="icon"><svg><use href="#i-link"/></svg></span>
+        자동 매칭
+        <span class="btn-tertiary-cost">
+          <span class="icon"><svg><use href="#i-bolt"/></svg></span>
+          1
+        </span>
+      </button>
+    </div>
+    <div>
+      <div style="font-size:10px;color:var(--pc-text-muted);margin-bottom:8px;letter-spacing:0.1em;">키보드 칩 + 잠금 배지</div>
+      <div style="display:flex;gap:10px;align-items:center;">
+        <span class="kbd-chip">Space</span>
+        <span class="kbd-chip">Esc</span>
+        <span class="lock-badge">잠김</span>
+      </div>
+    </div>
+    <div style="grid-column:1/-1;">
+      <div style="font-size:10px;color:var(--pc-text-muted);margin-bottom:8px;letter-spacing:0.1em;">알럿 카드 + 공략 힌트 카드</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+        <div class="alert-card">
+          <span class="icon alert-card-icon"><svg><use href="#i-link"/></svg></span>
+          <span class="alert-card-text">조합 가능한 항목이 <strong>1개</strong> 있습니다</span>
+          <button class="alert-card-action">확인</button>
+        </div>
+        <div class="hint-card">
+          <button class="hint-card-close"><span class="icon"><svg><use href="#i-cross"/></svg></span></button>
+          <div class="hint-card-eyebrow">공략 힌트</div>
+          <div class="hint-card-text">모든 답변을 자신의 피해로 연결합니다. <strong>동기 탐색</strong> 으로 내면을 열어보세요.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<!-- 1. INTRO (실제 카피 사용) -->
 <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
 <div class="section">
   <div class="section-meta">
     <span class="section-num">SCREEN 01 — INTRO</span>
-    <span class="section-status">신규 레이아웃 제안</span>
+    <span class="section-status">실제 카피 + 새 레이아웃</span>
   </div>
   <h2>인트로 슬라이드</h2>
-  <p class="section-desc">최초 진입 시 1회 노출. 게임 컨셉 + 핵심 메커니즘 3~5개 슬라이드.</p>
+  <p class="section-desc">PC_HOME_INTRO_SLIDES 4종 카피 그대로 사용.</p>
 
   <div class="mock mock-intro">
     <div class="mock-label">SLIDE 2 / 4</div>
-    <div class="intro-hero">
-      <div class="intro-emblem"><span class="icon"><svg><use href="#i-judge"/></svg></span></div>
-      <div class="intro-title">솔로몬 법정</div>
-      <div class="intro-tagline">
-        AI 둘의 싸움을 인간의 지혜로 재판하는 리플레이형 추리 게임.<br>
-        매 사건마다 새로운 진실이 숨어 있습니다.
+
+    <header class="intro-header">
+      <div class="intro-brand">
+        <span class="intro-brand-mark icon"><svg><use href="#i-scale"/></svg></span>
+        <span class="intro-brand-name">솔로몬의 딜레마</span>
+        <span class="intro-brand-sep">|</span>
+        <span>COURT SIMULATION GAME</span>
+        <span class="intro-brand-sep">|</span>
+        <span class="intro-brand-kicker">CONFLICT</span>
       </div>
-      <div style="display:flex;gap:10px;margin-top:6px;">
-        <button class="btn-secondary">건너뛰기</button>
-        <button class="btn-primary">
-          다음
-          <span class="icon" style="width:14px;height:14px;"><svg><use href="#i-arrow-right"/></svg></span>
-        </button>
-      </div>
+      <button class="intro-skip">건너뛰기</button>
+    </header>
+
+    <div class="intro-body">
+      <span class="intro-kicker">CONFLICT</span>
+      <h1 class="intro-title">옳고 그름 보다 어긋난 진실에 집중하세요.</h1>
+      <p class="intro-desc">감정과 기록, 침묵과 변명, 계산과 오해가 서로 다른 얼굴을 드러냅니다.</p>
     </div>
-    <div class="intro-nav">
-      <span class="intro-meta">0:30 / 2:00</span>
+
+    <footer class="intro-footer">
       <div class="intro-dots">
-        <div class="intro-dot"></div>
-        <div class="intro-dot is-active"></div>
-        <div class="intro-dot"></div>
-        <div class="intro-dot"></div>
+        <button class="intro-dot"></button>
+        <button class="intro-dot is-active"></button>
+        <button class="intro-dot"></button>
+        <button class="intro-dot"></button>
       </div>
-      <span class="intro-meta">ESC로 건너뛰기</span>
-    </div>
+      <div class="intro-actions">
+        <button class="intro-ghost">이전</button>
+        <button class="btn-primary">다음</button>
+      </div>
+    </footer>
   </div>
 
   <div class="key-points">
-    <h3>핵심 변경</h3>
+    <h3>핵심 (실제 카피)</h3>
     <ul>
-      <li><strong>Hero 영역</strong>: 골드 엠블럼(SVG i-judge) + 타이틀 + 한 줄 태그라인 — 시선 집중</li>
-      <li><strong>버튼 2종</strong>: Secondary(건너뛰기, 다크) + Primary(다음, 골드 그라디언트 + i-arrow-right SVG)</li>
-      <li><strong>슬라이드 인디케이터</strong>: 활성 슬라이드는 골드 막대 (pc-jobs-mini-dot 패턴 변형)</li>
-      <li><strong>ESC 키 힌트</strong> 우측 하단 명시 — 키보드 학습 유도</li>
+      <li><strong>슬라이드 1 (DIGITAL COURT)</strong>: "현대판 솔로몬이 되어 갈등을 해결해주세요." / "질문, 증거, 판단을 연결하며 서로 다른 진실을 가려내는 모의 재판 게임입니다."</li>
+      <li><strong>슬라이드 2 (CONFLICT)</strong>: "옳고 그름 보다 어긋난 진실에 집중하세요." / "감정과 기록, 침묵과 변명, 계산과 오해가 서로 다른 얼굴을 드러냅니다."</li>
+      <li><strong>슬라이드 3 (INTERROGATION)</strong>: "질문하고, 증거를 제시하고, 흐름에 집중해주세요." / "중요한 것은 정보의 양이 아니라, 파편화 된 단서의 연결입니다."</li>
+      <li><strong>슬라이드 4 (READY)</strong>: "첫 사건이 당신을 기다리고 있습니다!" / "원하는 사건을 선택하여 지금 바로 재판을 시작할 수 있습니다."</li>
+      <li>버튼: 건너뛰기 / 이전 / 다음 / (마지막) 로비 입장</li>
+      <li>헤더 brand: <strong>솔로몬의 딜레마 | COURT SIMULATION GAME | {kicker}</strong></li>
     </ul>
   </div>
 </div>
 
 <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
-<!-- 2. HOME -->
+<!-- 2. HOME (실제 카피 + scale-balance.png 키비주얼) -->
 <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
 <div class="section">
   <div class="section-meta">
-    <span class="section-num">SCREEN 02 — HOME (메인 메뉴)</span>
-    <span class="section-status">신규 레이아웃 제안</span>
+    <span class="section-num">SCREEN 02 — HOME</span>
+    <span class="section-status">실제 카피 + 키비주얼</span>
   </div>
   <h2>홈 / 메인 메뉴</h2>
-  <p class="section-desc">사이드바(주요 메뉴 nav) + 메인(Hero 카드 + 사이드 카드 2종).</p>
+  <p class="section-desc">현재 PCHomeScreen.tsx 카피 그대로. 양옆 scale-balance.png 키비주얼.</p>
 
   <div class="mock mock-home">
     <div class="mock-label">HOME</div>
 
-    <aside class="home-sidebar">
-      <div class="home-brand">
-        <span class="icon"><svg><use href="#i-scale"/></svg></span>
-        <span>솔로몬 법정</span>
-      </div>
-      <button class="nav-item is-active">
-        <span class="icon"><svg><use href="#i-judge"/></svg></span>
-        <span>사건 진행</span>
+    <header class="home-topbar">
+      <button class="home-tool-settings" aria-label="설정">
+        <span class="icon"><svg><use href="#i-gear"/></svg></span>
       </button>
-      <button class="nav-item">
-        <span class="icon"><svg><use href="#i-doc"/></svg></span>
-        <span>사건 선택</span>
-      </button>
-      <button class="nav-item">
-        <span class="icon"><svg><use href="#i-bolt"/></svg></span>
-        <span>시즌</span>
-      </button>
-      <button class="nav-item">
-        <span class="icon"><svg><use href="#i-shield"/></svg></span>
-        <span>Judge Desk</span>
-      </button>
-      <button class="nav-item">
-        <span class="icon"><svg><use href="#i-eye"/></svg></span>
-        <span>리더보드</span>
-      </button>
-      <div style="margin-top:auto;display:flex;flex-direction:column;gap:2px;">
-        <button class="nav-item">
-          <span class="icon"><svg><use href="#i-gear"/></svg></span>
-          <span>설정</span>
-        </button>
-        <button class="nav-item">
-          <span class="icon"><svg><use href="#i-cross"/></svg></span>
-          <span>종료</span>
-        </button>
-      </div>
-    </aside>
+    </header>
 
-    <main class="home-main">
-      <div>
-        <div class="home-greeting">안녕하세요, 재판관님</div>
-        <div class="home-title">오늘의 법정으로 들어가시겠습니까?</div>
-      </div>
-
-      <div class="home-grid">
-        <div class="home-hero-card">
-          <span class="home-hero-eyebrow">진행 중인 사건</span>
-          <div class="home-hero-title">매일 아내 몰래 오피스텔에 머무르는 남편</div>
-          <p class="home-hero-desc">
-            박지연(아내) × 이준호(남편) — 외도 의심으로 시작한 사건. Phase 2 심문 단계.<br>
-            현재 쟁점 1개 활성, 모순 토큰 5개 누적.
-          </p>
-          <div class="home-hero-actions">
-            <button class="btn-primary">
-              <span class="icon" style="width:14px;height:14px;"><svg><use href="#i-arrow-right"/></svg></span>
-              이어서 진행
-            </button>
-            <button class="btn-secondary">사건 정보</button>
-          </div>
+    <div class="home-content">
+      <div class="home-hero">
+        <span class="home-eyebrow">COURT SIMULATION GAME</span>
+        <div class="home-title-row">
+          <img src="/icons/ornament/scale-balance.png" class="scale-balance" alt="" onerror="this.outerHTML='&lt;span class=&quot;scale-fallback&quot;&gt;&lt;svg width=48 height=48&gt;&lt;use href=&quot;#i-scale&quot;/&gt;&lt;/svg&gt;&lt;/span&gt;'">
+          <h1 class="home-title">솔로몬의 딜레마</h1>
+          <img src="/icons/ornament/scale-balance.png" class="scale-balance" alt="" onerror="this.outerHTML='&lt;span class=&quot;scale-fallback&quot;&gt;&lt;svg width=48 height=48&gt;&lt;use href=&quot;#i-scale&quot;/&gt;&lt;/svg&gt;&lt;/span&gt;'">
         </div>
+        <p class="home-subtitle">현대판 솔로몬이 되어 판결을 내려보세요.</p>
+      </div>
 
-        <div class="home-side-cards">
-          <div class="home-side-card">
-            <span class="home-side-eyebrow">JUDGE PROGRESSION</span>
-            <div class="home-side-title">균형의 현자</div>
-            <div class="home-side-desc">5건 진행 · 9조각 27개 · 6성향 평균 Lv2</div>
+      <div class="home-mode-grid">
+        <div class="mode-card">
+          <span class="mode-card-badge">NORMAL MODE</span>
+          <div class="mode-card-label-row">
+            <span class="mode-card-label">일반 모드 ›</span>
+            <span class="icon mode-card-icon"><svg><use href="#i-gavel"/></svg></span>
           </div>
-          <div class="home-side-card">
-            <span class="home-side-eyebrow">최근 활동</span>
-            <div class="home-side-title">spouse-01 · Phase 2</div>
-            <div class="home-side-desc">2시간 전 · 통찰 +12 / 권위 +8</div>
+          <div class="mode-card-meta">
+            <span>세션 7개</span>
+            <span>진척 12 / 84</span>
           </div>
+          <div class="mode-card-track"><div class="mode-card-fill" style="width:14%;"></div></div>
+        </div>
+        <div class="mode-card">
+          <span class="mode-card-badge">SEASON 01 · 봄의 법정</span>
+          <div class="mode-card-label-row">
+            <span class="mode-card-label">시즌 모드 ›</span>
+            <span class="icon mode-card-icon"><svg><use href="#i-crown"/></svg></span>
+          </div>
+          <div class="mode-card-meta">
+            <span>3건 배정</span>
+            <span>14일 남음</span>
+          </div>
+          <div class="mode-card-track"><div class="mode-card-fill" style="width:33%;"></div></div>
         </div>
       </div>
-    </main>
+
+      <div class="home-info-grid">
+        <button class="info-card">
+          <span class="info-card-icon"><span class="icon"><svg><use href="#i-person"/></svg></span></span>
+          <div class="info-card-body">
+            <div class="info-card-subtitle">균형의 현자</div>
+            <div class="info-card-title">재판관 솔로몬</div>
+          </div>
+          <span class="info-card-action">내 정보 ›</span>
+        </button>
+        <button class="info-card">
+          <span class="info-card-icon"><span class="icon"><svg><use href="#i-crown"/></svg></span></span>
+          <div class="info-card-body">
+            <div class="info-card-subtitle">SEASON 01 · 봄의 법정</div>
+            <div class="info-card-title">리더보드</div>
+          </div>
+          <span class="info-card-action">상세 보기 ›</span>
+        </button>
+      </div>
+    </div>
   </div>
 
   <div class="key-points">
-    <h3>핵심 변경</h3>
+    <h3>핵심 (실제 카피 + 키비주얼)</h3>
     <ul>
-      <li><strong>좌측 사이드바</strong>: 메뉴 6종 + 하단 설정/종료 (pc-settings-sidebar 패턴 동일)</li>
-      <li><strong>모든 nav-item에 SVG 아이콘</strong>: i-judge / i-doc / i-bolt / i-shield / i-eye / i-gear / i-cross (이모지 X)</li>
-      <li><strong>Hero 카드</strong>: 진행 중인 사건이 메인. Primary(이어서 진행) + Secondary(사건 정보) 버튼</li>
-      <li><strong>사이드 카드 2종</strong>: pc-skill-card 그라디언트 + 골드 eyebrow + 실제 데이터</li>
-      <li>인사 + 질문 — "오늘의 법정으로 들어가시겠습니까?" 게임 톤 강화</li>
+      <li><strong>eyebrow</strong>: COURT SIMULATION GAME</li>
+      <li><strong>title</strong>: 솔로몬의 딜레마 (양옆에 scale-balance.png 48×48)</li>
+      <li><strong>subtitle</strong>: 현대판 솔로몬이 되어 판결을 내려보세요.</li>
+      <li><strong>모드 카드 2종</strong>: 일반 모드 (NORMAL MODE + i-gavel) / 시즌 모드 (시즌명 + i-crown). 진척 트랙 골드 그라디언트</li>
+      <li><strong>정보 카드 2종</strong>: 내 정보 (i-person + 칭호 + 이름) / 리더보드 (i-crown + 시즌명 + 리더보드)</li>
+      <li><strong>설정 아이콘</strong>: 우측 상단 톱바 (i-gear, 36×36)</li>
+      <li>모든 텍스트는 PCHomeScreen.tsx 코드와 일치 — 임의 카피 X</li>
     </ul>
   </div>
 </div>
@@ -1048,15 +1228,14 @@
 <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
 <div class="section">
   <div class="section-meta">
-    <span class="section-num">SCREEN 03 — CASE BROWSER (사건 선택)</span>
-    <span class="section-status">신규 레이아웃 제안</span>
+    <span class="section-num">SCREEN 03 — CASE BROWSER</span>
+    <span class="section-status">레이아웃 제안</span>
   </div>
   <h2>사건 선택</h2>
-  <p class="section-desc">상단 헤더(검색) + 좌측 카테고리 필터 + 우측 사건 카드 그리드.</p>
+  <p class="section-desc">상단 헤더 + 좌측 카테고리 + 우측 카드 그리드. 카피는 사용자 검토 시 정확화.</p>
 
   <div class="mock mock-case">
     <div class="mock-label">CASE BROWSER</div>
-
     <div class="case-header">
       <button class="case-back">
         <span class="icon"><svg><use href="#i-arrow-left"/></svg></span>
@@ -1065,10 +1244,9 @@
       <span class="case-title">사건 선택</span>
       <div class="case-search-wrap">
         <span class="icon"><svg><use href="#i-search"/></svg></span>
-        <input class="case-search" placeholder="사건 이름·번호 검색" disabled>
+        <input class="case-search" placeholder="사건 검색" disabled>
       </div>
     </div>
-
     <div class="case-body">
       <aside class="case-categories">
         <div class="case-cat-eyebrow">CATEGORIES</div>
@@ -1076,12 +1254,11 @@
         <div class="case-cat">부부 <span class="case-cat-count">1</span></div>
         <div class="case-cat">가족 <span class="case-cat-count">1</span></div>
         <div class="case-cat">친구 <span class="case-cat-count">1</span></div>
-        <div class="case-cat is-locked">이웃 <span class="case-cat-count">잠금</span></div>
-        <div class="case-cat is-locked">동업 <span class="case-cat-count">잠금</span></div>
-        <div class="case-cat is-locked">세입 <span class="case-cat-count">잠금</span></div>
-        <div class="case-cat is-locked">직장 <span class="case-cat-count">잠금</span></div>
+        <div class="case-cat is-locked">이웃 <span class="lock-badge">잠김</span></div>
+        <div class="case-cat is-locked">동업 <span class="lock-badge">잠김</span></div>
+        <div class="case-cat is-locked">세입 <span class="lock-badge">잠김</span></div>
+        <div class="case-cat is-locked">직장 <span class="lock-badge">잠김</span></div>
       </aside>
-
       <div class="case-grid">
         <div class="case-card">
           <div class="case-card-thumb" style="background:linear-gradient(135deg, rgba(91,141,239,0.18), rgba(224,96,96,0.18));">
@@ -1090,7 +1267,7 @@
           </div>
           <div class="case-card-body">
             <div class="case-card-title">매일 아내 몰래 오피스텔에 머무르는 남편</div>
-            <div class="case-card-meta"><span>박지연 × 이준호</span><span>· 진행 중</span></div>
+            <div class="case-card-meta"><span>박지연 × 이준호</span></div>
           </div>
         </div>
         <div class="case-card">
@@ -1100,7 +1277,7 @@
           </div>
           <div class="case-card-body">
             <div class="case-card-title">유서 위조를 두고 다투는 형제</div>
-            <div class="case-card-meta"><span>윤정후 × 윤태성</span><span>· 미시작</span></div>
+            <div class="case-card-meta"><span>윤정후 × 윤태성</span></div>
           </div>
         </div>
         <div class="case-card">
@@ -1110,7 +1287,7 @@
           </div>
           <div class="case-card-body">
             <div class="case-card-title">예비신랑에 접근한 절친</div>
-            <div class="case-card-meta"><span>송다은 × 최수민</span><span>· 미시작</span></div>
+            <div class="case-card-meta"><span>송다은 × 최수민</span></div>
           </div>
         </div>
       </div>
@@ -1118,13 +1295,13 @@
   </div>
 
   <div class="key-points">
-    <h3>핵심 변경</h3>
+    <h3>핵심</h3>
     <ul>
-      <li><strong>3-column 그리드</strong>: 사건 카드 한눈에. 활성 3건 + 추후 81건 확장</li>
-      <li><strong>좌측 카테고리 필터</strong>: 활성 4(전체/부부/가족/친구) + 잠금 4 — pc-settings-sidebar 동일 패턴</li>
-      <li><strong>카드 썸네일에 SVG 카테고리 아이콘</strong>: i-heart / i-doc / i-chat — 카테고리 식별 + 톤 일관</li>
-      <li><strong>카드 배지</strong>: 카테고리 + 난이도 (SPOUSE · HARD), 골드 보더 + 검은 배경</li>
-      <li><strong>검색바 SVG i-search 아이콘</strong> 좌측 인셋</li>
+      <li>3-column 카드 그리드 + 좌측 카테고리 필터</li>
+      <li>잠긴 카테고리에 <strong>잠김 배지</strong> (실제 게임 패턴)</li>
+      <li>카드 썸네일에 SVG 카테고리 아이콘 (i-heart / i-doc / i-chat)</li>
+      <li>검색바에 i-search SVG 인셋</li>
+      <li>사건 카피는 src/data/cases/generated/{caseId}.json의 실제 brief.title 기반 (Mock에선 spouse/family/friend-01 활성 3건)</li>
     </ul>
   </div>
 </div>
@@ -1135,18 +1312,17 @@
 <div class="section">
   <div class="section-meta">
     <span class="section-num">SCREEN 04 — JUDGE DESK</span>
-    <span class="section-status">신규 레이아웃 제안</span>
+    <span class="section-status">레이아웃 제안</span>
   </div>
-  <h2>Judge Desk (재판관 데스크)</h2>
-  <p class="section-desc">3섹션 풀스크린 — 좌(프로필+통계) + 중(9조각 인벤토리) + 우(6성향 게이지+장착 퍼크).</p>
+  <h2>Judge Desk</h2>
+  <p class="section-desc">3섹션 풀스크린. 카피는 사용자 검토 후 정확화 (현재 코드의 PCJudgeProgressionPanel 텍스트 기반).</p>
 
   <div class="mock mock-judge">
     <div class="mock-label">JUDGE DESK</div>
-
     <aside class="judge-profile">
       <div class="judge-avatar"><span class="icon"><svg><use href="#i-judge"/></svg></span></div>
       <div class="judge-title-name">균형의 현자</div>
-      <div class="judge-rank">재판관 5단계</div>
+      <div class="judge-rank">재판관 솔로몬</div>
       <div class="judge-stage">VETERAN · 10건 완료</div>
       <div class="judge-stat-row"><span class="judge-stat-label">통찰</span><span class="judge-stat-value">142</span></div>
       <div class="judge-stat-row"><span class="judge-stat-label">권위</span><span class="judge-stat-value">98</span></div>
@@ -1154,7 +1330,6 @@
       <div class="judge-stat-row"><span class="judge-stat-label">완료 사건</span><span class="judge-stat-value">10 / 84</span></div>
       <div class="judge-stat-row"><span class="judge-stat-label">자백 유도</span><span class="judge-stat-value">7회</span></div>
     </aside>
-
     <main class="judge-pieces">
       <div class="judge-section-title">9조각 인벤토리</div>
       <div class="judge-piece-grid">
@@ -1168,74 +1343,40 @@
         <div class="judge-piece"><div class="judge-piece-icon"><span class="icon"><svg><use href="#i-shield"/></svg></span></div><div class="judge-piece-name">균형</div><div class="judge-piece-count">×4</div></div>
         <div class="judge-piece"><div class="judge-piece-icon"><span class="icon"><svg><use href="#i-doc"/></svg></span></div><div class="judge-piece-name">봉합</div><div class="judge-piece-count">×3</div></div>
       </div>
-
       <div class="judge-section-title" style="margin-top:6px;">강화 / 변환</div>
       <div style="display:flex;gap:10px;">
-        <button class="btn-secondary">조각 강화 (Lv0→1)</button>
-        <button class="btn-ghost">중립 변환 3:1</button>
+        <button class="btn-secondary" style="font-size:12px;padding:10px 16px;">조각 강화</button>
+        <button class="btn-tertiary">중립 변환 3:1</button>
       </div>
     </main>
-
     <aside class="judge-perks">
       <div class="judge-section-title">6 성향 레벨</div>
-      <div class="judge-trait-row">
-        <span class="judge-trait-name">탐구+</span>
-        <div class="judge-trait-bar"><div class="judge-trait-fill" style="width:60%;"></div></div>
-        <span class="judge-trait-lv">Lv2</span>
-      </div>
-      <div class="judge-trait-row">
-        <span class="judge-trait-name">탐구−</span>
-        <div class="judge-trait-bar"><div class="judge-trait-fill" style="width:30%;"></div></div>
-        <span class="judge-trait-lv">Lv1</span>
-      </div>
-      <div class="judge-trait-row">
-        <span class="judge-trait-name">심판+</span>
-        <div class="judge-trait-bar"><div class="judge-trait-fill" style="width:90%;"></div></div>
-        <span class="judge-trait-lv">Lv3</span>
-      </div>
-      <div class="judge-trait-row">
-        <span class="judge-trait-name">심판−</span>
-        <div class="judge-trait-bar"><div class="judge-trait-fill" style="width:20%;"></div></div>
-        <span class="judge-trait-lv">Lv0</span>
-      </div>
-      <div class="judge-trait-row">
-        <span class="judge-trait-name">해결+</span>
-        <div class="judge-trait-bar"><div class="judge-trait-fill" style="width:50%;"></div></div>
-        <span class="judge-trait-lv">Lv1</span>
-      </div>
-      <div class="judge-trait-row">
-        <span class="judge-trait-name">해결−</span>
-        <div class="judge-trait-bar"><div class="judge-trait-fill" style="width:40%;"></div></div>
-        <span class="judge-trait-lv">Lv1</span>
-      </div>
+      <div class="judge-trait-row"><span class="judge-trait-name">탐구+</span><div class="judge-trait-bar"><div class="judge-trait-fill" style="width:60%;"></div></div><span class="judge-trait-lv">Lv2</span></div>
+      <div class="judge-trait-row"><span class="judge-trait-name">탐구−</span><div class="judge-trait-bar"><div class="judge-trait-fill" style="width:30%;"></div></div><span class="judge-trait-lv">Lv1</span></div>
+      <div class="judge-trait-row"><span class="judge-trait-name">심판+</span><div class="judge-trait-bar"><div class="judge-trait-fill" style="width:90%;"></div></div><span class="judge-trait-lv">Lv3</span></div>
+      <div class="judge-trait-row"><span class="judge-trait-name">심판−</span><div class="judge-trait-bar"><div class="judge-trait-fill" style="width:20%;"></div></div><span class="judge-trait-lv">Lv0</span></div>
+      <div class="judge-trait-row"><span class="judge-trait-name">해결+</span><div class="judge-trait-bar"><div class="judge-trait-fill" style="width:50%;"></div></div><span class="judge-trait-lv">Lv1</span></div>
+      <div class="judge-trait-row"><span class="judge-trait-name">해결−</span><div class="judge-trait-bar"><div class="judge-trait-fill" style="width:40%;"></div></div><span class="judge-trait-lv">Lv1</span></div>
 
       <div class="judge-section-title" style="margin-top:10px;">장착 퍼크</div>
       <div class="judge-perk-card">
-        <div class="judge-perk-name">
-          <span class="icon"><svg><use href="#i-eye"/></svg></span>
-          냉정한 관찰 (Major)
-        </div>
-        <div class="judge-perk-desc">감정 동요 시에도 정확한 발화 분석. lieState 전이 정확도 +25%</div>
+        <div class="judge-perk-name"><span class="icon"><svg><use href="#i-eye"/></svg></span> 냉정한 관찰 (Major)</div>
+        <div class="judge-perk-desc">감정 동요 시에도 정확한 발화 분석.</div>
       </div>
       <div class="judge-perk-card">
-        <div class="judge-perk-name">
-          <span class="icon"><svg><use href="#i-bolt"/></svg></span>
-          모순 감각 (Minor)
-        </div>
+        <div class="judge-perk-name"><span class="icon"><svg><use href="#i-bolt"/></svg></span> 모순 감각 (Minor)</div>
         <div class="judge-perk-desc">모순 토큰 +1 보너스</div>
       </div>
     </aside>
   </div>
 
   <div class="key-points">
-    <h3>핵심 변경</h3>
+    <h3>핵심</h3>
     <ul>
-      <li><strong>3섹션 풀스크린</strong>: 좌(프로필 240px) + 중(9조각) + 우(6성향+퍼크 260px)</li>
-      <li><strong>좌측 프로필</strong>: pc-skill-card 그라디언트 아바타 + i-judge SVG + 5개 통계 (골드 라인)</li>
-      <li><strong>9조각 인벤토리</strong>: 3×3 그리드, 각 조각마다 SVG 아이콘 + 이름 + 카운트 (골드)</li>
-      <li><strong>6성향 게이지</strong>: 진행 바 (linear-gradient 골드) + Lv 표시 — pc-jobs-mini 패턴 변형</li>
-      <li><strong>장착 퍼크 카드</strong>: pc-skill-card 미니 변형 + 아이콘 + 골드 이름 + 디스크립션</li>
-      <li><strong>버튼 3종 모두 SVG 또는 텍스트</strong>: btn-secondary(강화) + btn-ghost(변환). 이모지 X</li>
+      <li>3섹션 풀스크린 (좌 240 / 중 / 우 260)</li>
+      <li>9조각 그리드 — 각 조각 SVG (실제 카피는 design_judge_progression_v2.md 참고)</li>
+      <li>6성향 게이지 — 골드 그라디언트 진행 바 + Lv 표시</li>
+      <li>장착 퍼크 카드 — 메모리 design_judge_progression_v2.md의 15퍼크 명단 활용</li>
     </ul>
   </div>
 </div>
@@ -1249,27 +1390,13 @@
     <span class="section-status is-current">1차 구조 적용 완료</span>
   </div>
   <h2>설정 — 풀스크린 + 9 카테고리</h2>
-  <p class="section-desc">
-    이미 1차 구조 적용됨 ([PCSettingsPanel.tsx](src/components/pc/settings/PCSettingsPanel.tsx)).
-    실제 dev 화면에서 ESC 키로 진입 + 동작 확인 가능.
-  </p>
-  <div class="key-points">
-    <h3>1차 적용 완료 (이번 사이클)</h3>
-    <ul>
-      <li>모달 → 풀스크린 (사이드바 + 메인 영역) — pc-settings-sidebar 신규 패턴</li>
-      <li>9 카테고리: 화면 / 오디오 / 게임플레이 / 데이터 / 언어 / 접근성 / 키보드 / 계정 / 정보</li>
-      <li><strong>모든 카테고리 nav-item에 SVG 아이콘</strong>: i-eye / i-bolt / i-gavel / i-doc / i-chat / i-heart / i-hand / i-person / i-bulb</li>
-      <li><strong>화면</strong>: 기존 해상도 + 5개 예정 옵션 placeholder</li>
-      <li><strong>정보</strong>: 버전 / 크레딧 / 라이선스 (실제 정보 row 패턴)</li>
-      <li>나머지 7개: '준비 중' placeholder + i-clock SVG (다음 사이클 옵션 추가)</li>
-      <li>ESC 키 + 닫기 힌트 (kbd 태그)</li>
-    </ul>
-  </div>
+  <p class="section-desc">PCSettingsPanel.tsx에 1차 적용 완료. dev 서버에서 확인 가능.</p>
 </div>
 
 <p style="margin-top:20px; color:var(--pc-text-muted); font-size:11px; text-align:center;">
-  이 Mock은 Phase 1~2 실제 토큰(pc.css :root) + 실제 SVG symbol(pc-prototype/index.html) + 실제 컴포넌트 패턴(pc-skill-card / pc-interaction-card__action / pc-settings-sidebar)을 정확히 반영했습니다.<br>
-  사용자 검토 후 실제 컴포넌트로 구현됩니다.
+  실제 텍스트는 PCIntroSlides + PCHomeScreen 코드의 카피를 그대로 사용했습니다.<br>
+  버튼 패턴은 사용자 스크린샷에서 직접 추출 (조합 실행 / 관련 쟁점 보기 / 자동 매칭).<br>
+  키비주얼은 /icons/ornament/scale-balance.png — file:// 로 열면 PNG 로드 안 될 수 있어 SVG fallback 적용.
 </p>
 
 </body>
