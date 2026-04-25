@@ -75,6 +75,36 @@ let globalDispatchLock = false
 const _contradictionTokens: Record<string, number> = {}
 const _empathyAttempts: Record<string, number> = {}
 
+// ── ScriptedText 모드 핫바 락 ──
+// LLM 모드는 resolveLLMDialogue 호출 동안 isLLMLoading=true로 핫바 차단.
+// ScriptedText 분기는 dialogue 추가가 동기적이므로 LLM 락이 안 걸림 →
+// 타이핑 reveal(useRevealText, 14ms/char) 동안 핫바를 잠그기 위해
+// 텍스트 길이 기반 시간만큼 isLLMLoading을 true로 유지한 뒤 자동 해제.
+// (LLM 모드 자체 동작은 변경하지 않음 — ScriptedText 분기에서만 호출)
+const TYPING_INTERVAL_MS = 14   // PCDialogueLog.useRevealText와 동일
+const TYPING_BUFFER_MS = 220     // 안전 버퍼 (렌더 지연 + 사용자 인지)
+const TYPING_MIN_MS = 350        // 최소 락 시간 (짧은 텍스트도 클릭 한 번 막음)
+const TYPING_MAX_MS = 4000       // 최대 락 시간 (이상 시 강제 해제 — 영구 락 방지)
+let _scriptedLockTimer: ReturnType<typeof setTimeout> | null = null
+
+function lockHotbarForScriptedReveal(text: string, target?: PartyId): void {
+  const len = (text ?? '').length
+  const computed = len * TYPING_INTERVAL_MS + TYPING_BUFFER_MS
+  const lockMs = Math.max(TYPING_MIN_MS, Math.min(TYPING_MAX_MS, computed))
+  // 기존 타이머가 있으면 클리어 (중첩 호출 시 가장 최근 reveal 기준)
+  if (_scriptedLockTimer) {
+    clearTimeout(_scriptedLockTimer)
+    _scriptedLockTimer = null
+  }
+  useGameStore.getState().setLLMLoading(true, target)
+  _scriptedLockTimer = setTimeout(() => {
+    _scriptedLockTimer = null
+    // 그 사이 LLM 흐름이 락을 잡았다면 덮어쓰지 않도록 — 단순화: 항상 false 처리.
+    // (이 분기는 LLM 호출 직후가 아니므로 충돌 가능성 거의 없음)
+    useGameStore.getState().setLLMLoading(false)
+  }, lockMs)
+}
+
 // ── Archetype 힌트: NPC 응답 후 재판관 관찰 팝업 (채팅 미삽입) ──
 // 해당 캐릭터 태그로 수렴되는 2초 팝업. 커스텀 이벤트로 UI 컴포넌트가 구독.
 export const ARCHETYPE_OBSERVATION_EVENT = 'pc:archetype-observation'
@@ -1522,6 +1552,8 @@ async function handleTrustAction(action: Extract<PlayerAction, { type: 'trust_ac
       turn: v3State.turnCount,
       isConfidential,
     })
+    // ScriptedText 분기: 타이핑 reveal 동안 핫바 락
+    lockHotbarForScriptedReveal(trustScripted.text, action.target)
   } else {
     await resolveAndApply(action, action.target, isConfidential)
   }
@@ -2406,6 +2438,8 @@ export async function handleContradictionPursue(
         relatedDisputes: [disputeId],
         turn: state.turnCount,
       })
+      // ScriptedText 분기: 타이핑 reveal 동안 핫바 락
+      lockHotbarForScriptedReveal(scripted.text, party)
     } else {
       setSkipNextJudgeQuestion(true)
       const action: PlayerAction = {
