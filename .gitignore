@@ -1,3 +1,6 @@
+# Legacy 84건 격리 폴더 (절대 참조 금지)
+_LEGACY_84CASES_DO_NOT_REFERENCE/
+
 # 압축 파일
 *.zip
 

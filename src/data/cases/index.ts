@@ -1,17 +1,12 @@
 /**
  * 사건 로더.
- * 하드코딩 사건 + JSON 파일로 생성된 사건을 모두 관리한다.
- * 반복 방지 태그를 추적하여 최근 플레이한 사건과 겹치지 않도록 선택한다.
+ * JSON 파일로 생성된 활성 사건만 관리한다 (spouse-01 / family-01 / friend-01).
  */
 import type { CaseData } from '../../types'
-import { minjunSeoyeonCase } from './minjun-seoyeon'
 import { loadGeneratedCases, loadCaseMetas, type CaseMeta } from './caseLoader'
 
-// 모든 사건 등록소
-const allCases: CaseData[] = [
-  minjunSeoyeonCase,
-  ...loadGeneratedCases(),
-]
+// 활성 사건 등록소 (manifest.json refined 목록 기준)
+const allCases: CaseData[] = loadGeneratedCases()
 
 // 최근 플레이한 사건 ID (반복 방지)
 const recentCaseIds: string[] = []
@@ -58,7 +53,9 @@ export function getRandomCase(relationshipType?: string): CaseData {
       : allCases
   }
 
-  if (candidates.length === 0) return minjunSeoyeonCase
+  if (candidates.length === 0) {
+    throw new Error('활성 사건이 등록되지 않았습니다.')
+  }
 
   const selected = candidates[Math.floor(Math.random() * candidates.length)]
 
@@ -92,15 +89,7 @@ export function getCasesByType(type: string): CaseData[] {
 
 /** 모든 사건 메타 정보 (CaseMap용) */
 export function getAllCaseMetas(): CaseMeta[] {
-  // 하드코딩 사건에 대한 메타도 포함
-  const hardcodedMeta: CaseMeta = {
-    caseId: minjunSeoyeonCase.caseId,
-    relationshipType: minjunSeoyeonCase.duo.relationshipType,
-    difficulty: 'medium',
-    anchorTruth: '민준이 비밀 계좌에 넣은 돈은 외도 자금이 아닌 서연 생일 깜짝 선물 자금이었다.',
-    disputeNames: minjunSeoyeonCase.disputes.map((d) => d.name),
-  }
-  return [hardcodedMeta, ...loadCaseMetas()]
+  return loadCaseMetas()
 }
 
 export type { CaseMeta }

@@ -4,6 +4,21 @@
 
 ---
 
+## ⚠️ 절대 참조 금지: `_LEGACY_84CASES_DO_NOT_REFERENCE/`
+
+**활성 사건 = spouse-01 / family-01 / friend-01 3건만.**
+
+- Glob/Grep 결과에 `_LEGACY` 폴더 또는 그 하위 파일이 나오면 **즉시 무시**
+- Legacy 데이터는 어떤 작업에도 참조 X (atom / scriptedText / dialogue / structure / docs/ref/리뉴얼참고 등 모두 _LEGACY 안)
+- 활성 데이터 정확 위치:
+  - `src/data/cases/generated/{spouse-01, family-01, friend-01}.json`
+  - `src/data/claimPolicies/` (활성 3건의 v2-atoms / structure-v2 / game-events 등 19 파일)
+  - `src/data/dialogues/phase1,2/{caseId}.json`
+  - `src/data/scriptedText/{caseId}.json`
+  - `src/data/cases/refined/manifest.json` + 활성 3건 _backup/_texts
+
+---
+
 ## 빌드 & 실행
 
 ```bash

@@ -14953,9 +14953,9 @@ body.pc-mode .cb__toggle-label {
 }
 body.pc-mode .cb__toggle:hover .cb__toggle-label { color: var(--pc-text); }
 
-/* ── 좌우 분할 ── */
+/* ── 좌우 분할 (B 중립안: 440/1fr — brief 우선) ── */
 body.pc-mode .cb__split {
-  display: grid; grid-template-columns: 560px 1fr; gap: 20px;
+  display: grid; grid-template-columns: 440px 1fr; gap: 20px;
   flex: 1; min-height: 0;
 }
 
@@ -14971,7 +14971,7 @@ body.pc-mode .cb__zigzag {
 }
 body.pc-mode .cb__zigzag-line {
   position: absolute; left: 50%; top: 20px; bottom: 20px;
-  width: 2px; background: rgba(212,162,78,0.12);
+  width: 1px; background: rgba(212,162,78,0.16);
   transform: translateX(-50%);
 }
 body.pc-mode .cb__zigzag-row {
