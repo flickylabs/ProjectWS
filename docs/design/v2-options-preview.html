@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>솔로몬 법정 — 디자인 v2.0 시각 옵션 4종 비교</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: #0a0a0d;
+    color: #e0e0e0;
+    padding: 24px;
+    line-height: 1.5;
+  }
+  h1 { color: #d4a24e; margin-bottom: 8px; font-size: 22px; }
+  .intro { color: #999; margin-bottom: 20px; font-size: 13px; }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+  }
+  @media (max-width: 1400px) {
+    .grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  .option {
+    border-radius: 14px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .option-head {
+    padding: 16px 18px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .option-num {
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    color: #888;
+    margin-bottom: 4px;
+  }
+  .option-title { font-size: 18px; font-weight: 800; margin-bottom: 6px; }
+  .option-keywords { font-size: 12px; color: #aaa; }
+  .option-body { padding: 16px 18px; flex: 1; display: flex; flex-direction: column; gap: 14px; }
+
+  .palette {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 4px;
+  }
+  .swatch {
+    aspect-ratio: 1;
+    border-radius: 6px;
+    border: 1px solid rgba(255,255,255,0.08);
+    position: relative;
+  }
+  .swatch span {
+    position: absolute;
+    bottom: -16px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 8px;
+    color: #777;
+  }
+
+  .preview {
+    border-radius: 10px;
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 8px;
+  }
+
+  /* 미리보기 — 재판관 발화 */
+  .bubble {
+    padding: 12px 16px;
+    border-radius: 10px;
+    border-width: 1.5px;
+    border-style: solid;
+    font-size: 12px;
+    line-height: 1.5;
+    max-width: 90%;
+  }
+  .bubble.judge { align-self: center; max-width: 80%; text-align: center; }
+  .bubble.party-a { align-self: flex-start; }
+  .bubble.party-b { align-self: flex-end; }
+  .name { font-size: 10px; font-weight: 700; margin-bottom: 4px; }
+  .hint { font-size: 10px; font-style: italic; opacity: 0.7; margin-top: 4px; }
+
+  /* 시스템 메시지 띠 */
+  .system-band {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 6px 10px;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    border-style: solid;
+    font-size: 11px;
+    text-align: center;
+  }
+  .system-band.alert { animation: pulse-alert 1.6s ease-in-out infinite; }
+  @keyframes pulse-alert { 0%,100% { box-shadow: 0 0 8px rgba(255,80,80,0.2) inset; } 50% { box-shadow: 0 0 16px rgba(255,80,80,0.4) inset; } }
+
+  /* 버튼 */
+  .btns { display: flex; gap: 8px; }
+  .btn {
+    padding: 8px 16px;
+    border-radius: 8px;
+    border: 1.5px solid;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: filter 0.15s ease;
+  }
+  .btn:hover { filter: brightness(1.15); }
+  .btn-primary { color: #07070c; }
+  .btn-secondary { background: transparent; }
+
+  /* 캐릭터 카드 (도넛 + 프로필) */
+  .char-card {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 14px;
+    border-radius: 10px;
+    border-width: 1px;
+    border-style: solid;
+  }
+  .char-face-wrap {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    flex-shrink: 0;
+  }
+  .char-face-wrap svg {
+    position: absolute;
+    inset: -4px;
+    width: 58px;
+    height: 58px;
+  }
+  .char-portrait {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: 800;
+    color: rgba(255,255,255,0.5);
+  }
+  .char-info { flex: 1; }
+  .char-name { font-size: 13px; font-weight: 800; margin-bottom: 4px; }
+  .char-emo {
+    display: inline-block;
+    padding: 2px 9px;
+    border-radius: 999px;
+    font-size: 10px;
+    font-weight: 700;
+  }
+
+  .meta-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    color: #888;
+    padding-top: 12px;
+    border-top: 1px solid rgba(255,255,255,0.06);
+  }
+
+  /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+  /* 옵션 1 — Polished Wood (현재 톤 정밀화) */
+  .opt1 {
+    background: linear-gradient(180deg, #12141a, #0d0e12);
+    border: 1px solid rgba(212,162,78,0.25);
+  }
+  .opt1 .option-title { color: #d4a24e; }
+  .opt1 .preview {
+    background: linear-gradient(180deg, rgba(18,19,24,0.8), rgba(13,14,18,0.9));
+    border: 1px solid rgba(212,162,78,0.2);
+  }
+  .opt1 .bubble.judge {
+    background: rgba(212,162,78,0.08);
+    border-color: rgba(212,162,78,0.45);
+    color: #ede3cc;
+  }
+  .opt1 .bubble.party-a {
+    background: rgba(91,141,239,0.08);
+    border-color: rgba(91,141,239,0.45);
+    border-left: 3px solid #5b8def;
+    color: #ede3cc;
+  }
+  .opt1 .bubble.party-a .name { color: #8db4ff; }
+  .opt1 .bubble.party-b {
+    background: rgba(224,96,96,0.08);
+    border-color: rgba(224,96,96,0.45);
+    border-right: 3px solid #e06060;
+    color: #ede3cc;
+  }
+  .opt1 .bubble.party-b .name { color: #ff9d9d; }
+  .opt1 .system-band.alert {
+    background: linear-gradient(90deg, rgba(224,96,96,0.06), rgba(224,96,96,0.22) 50%, rgba(224,96,96,0.06));
+    border-color: rgba(224,96,96,0.85);
+    color: #ffb5b5;
+  }
+  .opt1 .btn-primary { background: rgba(212,162,78,0.7); border-color: rgba(212,162,78,0.7); }
+  .opt1 .btn-secondary { color: #b5a888; border-color: rgba(212,162,78,0.3); }
+  .opt1 .char-card { background: rgba(18,19,24,0.6); border-color: rgba(212,162,78,0.3); }
+  .opt1 .char-portrait { color: #d4a24e; }
+  .opt1 .char-emo-donut-fg { stroke: #e89968; }
+  .opt1 .char-name { color: #ede3cc; }
+  .opt1 .char-emo { background: rgba(212,162,78,0.14); color: #e8c172; }
+
+  /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+  /* 옵션 2 — Cinematic Court (콘트라스트 강화) */
+  .opt2 {
+    background: linear-gradient(180deg, #15161e, #070811);
+    border: 1px solid rgba(255,200,87,0.35);
+  }
+  .opt2 .option-title { color: #ffc857; }
+  .opt2 .preview {
+    background: linear-gradient(180deg, rgba(15,16,24,0.95), rgba(7,8,17,0.98));
+    border: 1px solid rgba(255,200,87,0.3);
+    box-shadow: inset 0 0 30px rgba(0,0,0,0.5);
+  }
+  .opt2 .bubble.judge {
+    background: rgba(255,200,87,0.10);
+    border-color: rgba(255,200,87,0.6);
+    color: #f4ecd5;
+    box-shadow: 0 4px 16px rgba(255,200,87,0.15);
+  }
+  .opt2 .bubble.party-a {
+    background: rgba(74,127,255,0.12);
+    border-color: rgba(74,127,255,0.6);
+    border-left: 3px solid #4a7fff;
+    color: #f4ecd5;
+    box-shadow: 0 4px 12px rgba(74,127,255,0.2);
+  }
+  .opt2 .bubble.party-a .name { color: #7da9ff; }
+  .opt2 .bubble.party-b {
+    background: rgba(255,82,82,0.12);
+    border-color: rgba(255,82,82,0.6);
+    border-right: 3px solid #ff5252;
+    color: #f4ecd5;
+    box-shadow: 0 4px 12px rgba(255,82,82,0.2);
+  }
+  .opt2 .bubble.party-b .name { color: #ff8585; }
+  .opt2 .system-band.alert {
+    background: linear-gradient(90deg, rgba(255,82,82,0.08), rgba(255,82,82,0.3) 50%, rgba(255,82,82,0.08));
+    border-color: rgba(255,82,82,0.95);
+    color: #ffb0b0;
+  }
+  .opt2 .btn-primary { background: #ffc857; border-color: #ffc857; }
+  .opt2 .btn-secondary { color: #c08a2a; border-color: rgba(255,200,87,0.4); }
+  .opt2 .char-card { background: rgba(7,8,17,0.85); border-color: rgba(255,200,87,0.4); box-shadow: inset 0 0 20px rgba(0,0,0,0.6); }
+  .opt2 .char-portrait { color: #ffc857; }
+  .opt2 .char-name { color: #f4ecd5; }
+  .opt2 .char-emo { background: rgba(255,200,87,0.18); color: #ffd97a; }
+
+  /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+  /* 옵션 3 — Western Court (차가운 법정 톤) */
+  .opt3 {
+    background: linear-gradient(180deg, #1c2845, #0e1730);
+    border: 1px solid rgba(164,36,59,0.35);
+  }
+  .opt3 .option-title { color: #d4a24e; }
+  .opt3 .preview {
+    background: linear-gradient(180deg, rgba(28,40,69,0.9), rgba(14,23,48,0.95));
+    border: 1px solid rgba(164,36,59,0.3);
+  }
+  .opt3 .bubble.judge {
+    background: rgba(164,36,59,0.12);
+    border-color: rgba(164,36,59,0.55);
+    color: #eef0f5;
+  }
+  .opt3 .bubble.party-a {
+    background: rgba(100,136,212,0.10);
+    border-color: rgba(100,136,212,0.5);
+    border-left: 3px solid #6488d4;
+    color: #eef0f5;
+  }
+  .opt3 .bubble.party-a .name { color: #8aa6e8; }
+  .opt3 .bubble.party-b {
+    background: rgba(192,98,94,0.10);
+    border-color: rgba(192,98,94,0.5);
+    border-right: 3px solid #c0625e;
+    color: #eef0f5;
+  }
+  .opt3 .bubble.party-b .name { color: #d68a87; }
+  .opt3 .system-band.alert {
+    background: linear-gradient(90deg, rgba(164,36,59,0.10), rgba(164,36,59,0.28) 50%, rgba(164,36,59,0.10));
+    border-color: rgba(164,36,59,0.85);
+    color: #d68a96;
+  }
+  .opt3 .btn-primary { background: #a4243b; border-color: #a4243b; color: #fff; }
+  .opt3 .btn-secondary { color: #d4a24e; border-color: rgba(212,162,78,0.4); }
+  .opt3 .char-card { background: rgba(14,23,48,0.7); border-color: rgba(164,36,59,0.35); }
+  .opt3 .char-portrait { color: #d4a24e; }
+  .opt3 .char-name { color: #eef0f5; }
+  .opt3 .char-emo { background: rgba(164,36,59,0.18); color: #d68a96; }
+
+  /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+  /* 옵션 4 — Quiet Authority (미니멀) */
+  .opt4 {
+    background: #1a1b1f;
+    border: 1px solid rgba(212,162,78,0.18);
+  }
+  .opt4 .option-title { color: #d4a24e; }
+  .opt4 .preview {
+    background: #08090c;
+    border: 1px solid rgba(255,255,255,0.06);
+  }
+  .opt4 .bubble.judge {
+    background: rgba(212,162,78,0.06);
+    border-color: rgba(212,162,78,0.3);
+    color: #e5e0d3;
+  }
+  .opt4 .bubble.party-a {
+    background: transparent;
+    border-color: rgba(122,144,184,0.4);
+    border-left: 2px solid #7a90b8;
+    color: #e5e0d3;
+  }
+  .opt4 .bubble.party-a .name { color: #9aabd0; }
+  .opt4 .bubble.party-b {
+    background: transparent;
+    border-color: rgba(176,122,122,0.4);
+    border-right: 2px solid #b07a7a;
+    color: #e5e0d3;
+  }
+  .opt4 .bubble.party-b .name { color: #c89595; }
+  .opt4 .system-band.alert {
+    background: transparent;
+    border-color: rgba(212,162,78,0.4);
+    color: #b5a888;
+  }
+  .opt4 .btn-primary { background: transparent; border-color: #d4a24e; color: #d4a24e; }
+  .opt4 .btn-secondary { color: #888; border-color: rgba(255,255,255,0.15); }
+  .opt4 .char-card { background: transparent; border-color: rgba(255,255,255,0.08); }
+  .opt4 .char-portrait { color: #888; background: transparent; border: 1px solid rgba(255,255,255,0.1); }
+  .opt4 .char-name { color: #e5e0d3; }
+  .opt4 .char-emo { background: transparent; color: #d4a24e; border: 1px solid rgba(212,162,78,0.3); }
+</style>
+</head>
+<body>
+  <h1>솔로몬 법정 — 디자인 v2.0 시각 스타일 옵션 4종 비교</h1>
+  <p class="intro">한 옵션을 선택하면 토큰 값만 교체되어 전체 화면에 일관 적용됩니다. 컴포넌트 구조는 변경 없음.</p>
+
+  <div class="grid">
+
+    <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+    <!-- 옵션 1 — Polished Wood -->
+    <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+    <div class="option opt1">
+      <div class="option-head">
+        <div class="option-num">옵션 1 · 작업량 S · 회귀 위험 0</div>
+        <div class="option-title">⭐ Polished Wood</div>
+        <div class="option-keywords">현재 톤 정밀화 · 무게감 · 권위 · 안정감</div>
+      </div>
+      <div class="option-body">
+        <div class="palette">
+          <div class="swatch" style="background:#0d0e12"></div>
+          <div class="swatch" style="background:#1c1f26"></div>
+          <div class="swatch" style="background:#d4a24e"></div>
+          <div class="swatch" style="background:#5b8def"></div>
+          <div class="swatch" style="background:#e06060"></div>
+          <div class="swatch" style="background:#9ba87a"></div>
+          <div class="swatch" style="background:#ede3cc"></div>
+        </div>
+
+        <div class="preview">
+          <div class="bubble judge">박지연 씨, 처음 말씀과 지금 말씀이 다릅니다.</div>
+          <div class="bubble party-a">
+            <div class="name">박지연 · 동요</div>
+            제 남편이 새벽에 자주 사라졌습니다.
+            <div class="hint">목소리가 떨린다.</div>
+          </div>
+          <div class="bubble party-b">
+            <div class="name">이준호 · 자신감</div>
+            저희 형 전화번호입니다. 조카 일이라서요.
+          </div>
+          <div class="system-band alert">⚡ 진술이 엇갈렸다 — 박지연</div>
+          <div class="btns">
+            <button class="btn btn-secondary">지금은 넘긴다</button>
+            <button class="btn btn-primary">모순을 찌른다</button>
+          </div>
+          <div class="char-card">
+            <div class="char-face-wrap">
+              <svg viewBox="0 0 58 58">
+                <circle cx="29" cy="29" r="27" fill="none" stroke="rgba(255,255,255,0.07)" stroke-width="3"/>
+                <circle cx="29" cy="29" r="27" fill="none" stroke="#e89968" stroke-width="3" stroke-dasharray="120 170" stroke-linecap="round" transform="rotate(-90 29 29)"/>
+              </svg>
+              <div class="char-portrait">박</div>
+            </div>
+            <div class="char-info">
+              <div class="char-name">박지연</div>
+              <span class="char-emo">동요</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="meta-row"><span>적합: 시리어스 추리물</span><span>현재 톤 유지</span></div>
+      </div>
+    </div>
+
+    <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+    <!-- 옵션 2 — Cinematic Court -->
+    <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+    <div class="option opt2">
+      <div class="option-head">
+        <div class="option-num">옵션 2 · 작업량 M · 회귀 위험 낮음</div>
+        <div class="option-title">🎬 Cinematic Court</div>
+        <div class="option-keywords">콘트라스트 강화 · 영화적 · 극적 · 긴장감</div>
+      </div>
+      <div class="option-body">
+        <div class="palette">
+          <div class="swatch" style="background:#070811"></div>
+          <div class="swatch" style="background:#15161e"></div>
+          <div class="swatch" style="background:#ffc857"></div>
+          <div class="swatch" style="background:#4a7fff"></div>
+          <div class="swatch" style="background:#ff5252"></div>
+          <div class="swatch" style="background:#c1d27a"></div>
+          <div class="swatch" style="background:#f4ecd5"></div>
+        </div>
+
+        <div class="preview">
+          <div class="bubble judge">박지연 씨, 처음 말씀과 지금 말씀이 다릅니다.</div>
+          <div class="bubble party-a">
+            <div class="name">박지연 · 동요</div>
+            제 남편이 새벽에 자주 사라졌습니다.
+            <div class="hint">목소리가 떨린다.</div>
+          </div>
+          <div class="bubble party-b">
+            <div class="name">이준호 · 자신감</div>
+            저희 형 전화번호입니다. 조카 일이라서요.
+          </div>
+          <div class="system-band alert">⚡ 진술이 엇갈렸다 — 박지연</div>
+          <div class="btns">
+            <button class="btn btn-secondary">지금은 넘긴다</button>
+            <button class="btn btn-primary">모순을 찌른다</button>
+          </div>
+          <div class="char-card">
+            <div class="char-face-wrap">
+              <svg viewBox="0 0 58 58">
+                <circle cx="29" cy="29" r="27" fill="none" stroke="rgba(255,255,255,0.07)" stroke-width="3"/>
+                <circle cx="29" cy="29" r="27" fill="none" stroke="#ff8a4a" stroke-width="3" stroke-dasharray="120 170" stroke-linecap="round" transform="rotate(-90 29 29)"/>
+              </svg>
+              <div class="char-portrait">박</div>
+            </div>
+            <div class="char-info">
+              <div class="char-name">박지연</div>
+              <span class="char-emo">동요</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="meta-row"><span>적합: 현대 추리/스릴러</span><span>비주얼 임팩트↑</span></div>
+      </div>
+    </div>
+
+    <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+    <!-- 옵션 3 — Western Court -->
+    <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+    <div class="option opt3">
+      <div class="option-head">
+        <div class="option-num">옵션 3 · 작업량 L · 회귀 위험 중간</div>
+        <div class="option-title">⚖️ Western Court</div>
+        <div class="option-keywords">차가운 법정 톤 · 격식 · 냉정 · 클래식</div>
+      </div>
+      <div class="option-body">
+        <div class="palette">
+          <div class="swatch" style="background:#0e1730"></div>
+          <div class="swatch" style="background:#1c2845"></div>
+          <div class="swatch" style="background:#a4243b"></div>
+          <div class="swatch" style="background:#6488d4"></div>
+          <div class="swatch" style="background:#c0625e"></div>
+          <div class="swatch" style="background:#9c9aaf"></div>
+          <div class="swatch" style="background:#eef0f5"></div>
+        </div>
+
+        <div class="preview">
+          <div class="bubble judge">박지연 씨, 처음 말씀과 지금 말씀이 다릅니다.</div>
+          <div class="bubble party-a">
+            <div class="name">박지연 · 동요</div>
+            제 남편이 새벽에 자주 사라졌습니다.
+            <div class="hint">목소리가 떨린다.</div>
+          </div>
+          <div class="bubble party-b">
+            <div class="name">이준호 · 자신감</div>
+            저희 형 전화번호입니다. 조카 일이라서요.
+          </div>
+          <div class="system-band alert">⚡ 진술이 엇갈렸다 — 박지연</div>
+          <div class="btns">
+            <button class="btn btn-secondary">지금은 넘긴다</button>
+            <button class="btn btn-primary">모순을 찌른다</button>
+          </div>
+          <div class="char-card">
+            <div class="char-face-wrap">
+              <svg viewBox="0 0 58 58">
+                <circle cx="29" cy="29" r="27" fill="none" stroke="rgba(255,255,255,0.07)" stroke-width="3"/>
+                <circle cx="29" cy="29" r="27" fill="none" stroke="#a4243b" stroke-width="3" stroke-dasharray="120 170" stroke-linecap="round" transform="rotate(-90 29 29)"/>
+              </svg>
+              <div class="char-portrait">박</div>
+            </div>
+            <div class="char-info">
+              <div class="char-name">박지연</div>
+              <span class="char-emo">동요</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="meta-row"><span>적합: 서양 법정 영화 톤</span><span>한국→글로벌</span></div>
+      </div>
+    </div>
+
+    <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+    <!-- 옵션 4 — Quiet Authority -->
+    <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+    <div class="option opt4">
+      <div class="option-head">
+        <div class="option-num">옵션 4 · 작업량 L · 회귀 위험 중간</div>
+        <div class="option-title">🪞 Quiet Authority</div>
+        <div class="option-keywords">미니멀 · 여백 · 절제 · 고요</div>
+      </div>
+      <div class="option-body">
+        <div class="palette">
+          <div class="swatch" style="background:#08090c"></div>
+          <div class="swatch" style="background:#1a1b1f"></div>
+          <div class="swatch" style="background:#d4a24e"></div>
+          <div class="swatch" style="background:#7a90b8"></div>
+          <div class="swatch" style="background:#b07a7a"></div>
+          <div class="swatch" style="background:#888"></div>
+          <div class="swatch" style="background:#e5e0d3"></div>
+        </div>
+
+        <div class="preview">
+          <div class="bubble judge">박지연 씨, 처음 말씀과 지금 말씀이 다릅니다.</div>
+          <div class="bubble party-a">
+            <div class="name">박지연 · 동요</div>
+            제 남편이 새벽에 자주 사라졌습니다.
+            <div class="hint">목소리가 떨린다.</div>
+          </div>
+          <div class="bubble party-b">
+            <div class="name">이준호 · 자신감</div>
+            저희 형 전화번호입니다. 조카 일이라서요.
+          </div>
+          <div class="system-band alert">⚡ 진술이 엇갈렸다 — 박지연</div>
+          <div class="btns">
+            <button class="btn btn-secondary">지금은 넘긴다</button>
+            <button class="btn btn-primary">모순을 찌른다</button>
+          </div>
+          <div class="char-card">
+            <div class="char-face-wrap">
+              <svg viewBox="0 0 58 58">
+                <circle cx="29" cy="29" r="27" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="2"/>
+                <circle cx="29" cy="29" r="27" fill="none" stroke="#d4a24e" stroke-width="2" stroke-dasharray="120 170" stroke-linecap="round" transform="rotate(-90 29 29)"/>
+              </svg>
+              <div class="char-portrait">박</div>
+            </div>
+            <div class="char-info">
+              <div class="char-name">박지연</div>
+              <span class="char-emo">동요</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="meta-row"><span>적합: 모던 미니멀 선호</span><span>여백/공간 강조</span></div>
+      </div>
+    </div>
+
+  </div>
+
+  <p style="margin-top:20px; color:#888; font-size:11px; text-align:center;">
+    원하는 옵션을 선택하면 전체 PC UI 토큰이 그 톤으로 교체됩니다. (Phase 3a/판결/결과는 컬러·버튼만 치환)
+  </p>
+</body>
+</html>

@@ -17826,6 +17826,285 @@ body.pc-mode .pc-settings-backdrop {
   from { opacity: 0; }
   to { opacity: 1; }
 }
+
+/* ═══════════════════════════════════════════════════════════
+   [v2.0] 설정 풀스크린 — 사이드바(9 카테고리) + 메인 옵션 영역
+   사용자 결정: 모달 → 풀스크린, 9 카테고리 신설
+   ═══════════════════════════════════════════════════════════ */
+body.pc-mode .pc-settings-fullscreen {
+  position: fixed;
+  inset: 0;
+  z-index: 9000;
+  background: linear-gradient(180deg, #0d0e12 0%, #07080a 100%);
+  display: flex;
+  flex-direction: column;
+  animation: pc-settings-fade-in 0.24s ease-out;
+}
+body.pc-mode .pc-settings-fullscreen__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 32px;
+  border-bottom: 1px solid rgba(212, 162, 78, 0.18);
+  background: linear-gradient(180deg, rgba(22, 23, 30, 0.6), rgba(12, 13, 18, 0.4));
+  flex-shrink: 0;
+}
+body.pc-mode .pc-settings-fullscreen__title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 20px;
+  font-weight: 800;
+  color: #ede3cc;
+  letter-spacing: 0.02em;
+}
+body.pc-mode .pc-settings-fullscreen__title svg {
+  color: var(--pc-gold-light, #d4a24e);
+}
+body.pc-mode .pc-settings-fullscreen__close {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  height: 36px;
+  padding: 0 14px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.04);
+  color: #b5a888;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+body.pc-mode .pc-settings-fullscreen__close:hover {
+  background: rgba(212, 162, 78, 0.1);
+  border-color: rgba(212, 162, 78, 0.4);
+  color: #ede3cc;
+}
+body.pc-mode .pc-settings-fullscreen__close kbd {
+  font-family: inherit;
+  font-size: 10px;
+  padding: 2px 6px;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #888;
+}
+body.pc-mode .pc-settings-fullscreen__body {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  min-height: 0;
+}
+
+/* 사이드바 */
+body.pc-mode .pc-settings-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 24px 16px;
+  border-right: 1px solid rgba(255, 255, 255, 0.06);
+  background: rgba(0, 0, 0, 0.2);
+  overflow-y: auto;
+}
+body.pc-mode .pc-settings-sidebar__item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 0;
+  background: transparent;
+  color: #8a8f9f;
+  font-size: 13px;
+  font-weight: 600;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+body.pc-mode .pc-settings-sidebar__item:hover {
+  background: rgba(212, 162, 78, 0.06);
+  color: #ede3cc;
+}
+body.pc-mode .pc-settings-sidebar__item.is-active {
+  background: rgba(212, 162, 78, 0.12);
+  color: var(--pc-gold-light, #e8c172);
+  border-left: 3px solid var(--pc-gold-light, #d4a24e);
+  padding-left: 11px;
+}
+body.pc-mode .pc-settings-sidebar__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+body.pc-mode .pc-settings-sidebar__label {
+  flex: 1;
+}
+body.pc-mode .pc-settings-sidebar__badge {
+  font-size: 9px;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.05);
+  color: #6a6e80;
+  letter-spacing: 0.04em;
+}
+
+/* 메인 콘텐츠 */
+body.pc-mode .pc-settings-main {
+  overflow-y: auto;
+  padding: 32px 48px;
+}
+body.pc-mode .pc-settings-content {
+  max-width: 720px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+body.pc-mode .pc-settings-content__title {
+  font-size: 26px;
+  font-weight: 800;
+  color: #ede3cc;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+body.pc-mode .pc-settings-content__desc {
+  font-size: 13px;
+  color: #8a8f9f;
+  margin: 0;
+}
+
+/* 옵션 그룹 */
+body.pc-mode .pc-settings-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px 22px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+body.pc-mode .pc-settings-group__title {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--pc-gold-light, #e8c172);
+  margin: 0;
+  letter-spacing: 0.02em;
+}
+body.pc-mode .pc-settings-group__desc {
+  font-size: 12px;
+  color: #8a8f9f;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* 예정 옵션 (placeholder) */
+body.pc-mode .pc-settings-pending {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 6px;
+}
+body.pc-mode .pc-settings-pending-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px dashed rgba(255, 255, 255, 0.08);
+}
+body.pc-mode .pc-settings-pending-row__main {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+body.pc-mode .pc-settings-pending-row__label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #b5a888;
+}
+body.pc-mode .pc-settings-pending-row__desc {
+  font-size: 11px;
+  color: #6a6e80;
+}
+body.pc-mode .pc-settings-pending-row__badge {
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: rgba(212, 162, 78, 0.08);
+  color: #b5a888;
+  letter-spacing: 0.04em;
+}
+
+/* "다음 사이클" placeholder 화면 */
+body.pc-mode .pc-settings-preview-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 48px 24px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px dashed rgba(255, 255, 255, 0.08);
+  color: #6a6e80;
+  text-align: center;
+}
+body.pc-mode .pc-settings-preview-empty svg {
+  color: rgba(212, 162, 78, 0.5);
+}
+body.pc-mode .pc-settings-preview-empty p {
+  margin: 0;
+  font-size: 13px;
+}
+body.pc-mode .pc-settings-preview-empty__sub {
+  font-size: 11px;
+  color: #5a5e70;
+  font-style: italic;
+}
+
+/* About — 정보 row */
+body.pc-mode .pc-settings-info-row {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  font-size: 13px;
+}
+body.pc-mode .pc-settings-info-row:last-child {
+  border-bottom: 0;
+}
+body.pc-mode .pc-settings-info-row__label {
+  flex: 0 0 80px;
+  color: #8a8f9f;
+  font-weight: 600;
+}
+body.pc-mode .pc-settings-info-row__value {
+  color: #ede3cc;
+}
+
+/* 좁은 화면 — 사이드바 가로 스크롤 (모바일 브라우저 폴백) */
+@media (max-width: 720px) {
+  body.pc-mode .pc-settings-fullscreen__body {
+    grid-template-columns: 1fr;
+  }
+  body.pc-mode .pc-settings-sidebar {
+    flex-direction: row;
+    overflow-x: auto;
+    border-right: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    padding: 12px;
+  }
+  body.pc-mode .pc-settings-sidebar__item {
+    flex: 0 0 auto;
+  }
+  body.pc-mode .pc-settings-main {
+    padding: 24px 20px;
+  }
+}
 body.pc-mode .pc-settings-panel {
   width: min(580px, calc(100vw - 80px));
   max-height: calc(100vh - 120px);
