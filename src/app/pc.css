@@ -19339,3 +19339,43 @@ body.pc-mode .pc-home-info-card:hover .pc-home-info-card__arrow {
 /* 폐기된 inline action 버튼 (TSX에서 제거됨, 잔여 alias) */
 body.pc-mode .pc-home-info-card__action { display: none !important; }
 
+/* ── Session 잠금 자물쇠 SVG 오버레이 ── */
+body.pc-mode .pc-session-card-v2__lock-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border-radius: 18px;
+  background: linear-gradient(180deg, rgba(8, 9, 12, 0.55), rgba(8, 9, 12, 0.78));
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  color: var(--pc-gold-light);
+  z-index: 2;
+  pointer-events: none;
+}
+body.pc-mode .pc-session-card-v2__lock-overlay span {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--pc-text-dim);
+}
+body.pc-mode .pc-session-card-v2__lock-overlay svg {
+  filter: drop-shadow(0 0 12px rgba(212, 162, 78, 0.32));
+  opacity: 0.85;
+}
+
+/* 잠긴 카드는 inner content fade, lock overlay만 풀 가시성 */
+body.pc-mode .pc-session-card-v2.is-disabled .pc-session-card-v2__inner > * {
+  opacity: 0.18 !important;
+}
+
+/* ── DepthHeader title 살짝 더 강조 (28 → 32px, 짧은 타이틀에 적합) ── */
+body.pc-mode .pc-depth-header__copy h1,
+body.pc-mode .pc-depth-header__copy h2 {
+  font-size: clamp(26px, 2.4vw, 32px) !important;
+}
+

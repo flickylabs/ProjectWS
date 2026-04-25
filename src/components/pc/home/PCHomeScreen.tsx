@@ -226,10 +226,15 @@ export default function PCHomeScreen() {
                 <button className={`pc-session-card-v2 pc-session-card-v2--${session.accent}${disabled ? ' is-disabled' : ''}`} disabled={disabled} key={session.id} onClick={() => { setSelectedSession(session.id); setView('generalCases') }} type="button">
                   <div className="pc-session-card-v2__inner">
                     <div className="pc-session-card-v2__top"><span>{`SESSION ${String(index + 1).padStart(2, '0')}`}</span><strong>{disabled ? '준비 중' : `${progress.completedCount}/${progress.totalCount}`}</strong></div>
-                    {disabled && <span className="pc-session-card-v2__lock">잠김</span>}
                     <div className="pc-session-card-v2__main"><span className="pc-session-card-v2__icon"><PCSessionIcon sessionId={session.id} size={80} fallbackSymbolId={session.iconId} alt={session.label} /></span><div className="pc-session-card-v2__body"><h3>{session.label}</h3><p className="pc-session-card-v2__tagline">{session.tagline}</p>{progress.averageScore != null ? <span className="pc-session-card-v2__avg">{`평균 ${progress.averageScore}점`}</span> : null}</div></div>
                     <div className="pc-session-card-v2__track"><i style={{ width: `${progress.progressRate}%` }} /></div>
                   </div>
+                  {disabled && (
+                    <div className="pc-session-card-v2__lock-overlay" aria-label="잠김">
+                      <PCSvgIcon id="i-lock" size={56} />
+                      <span>준비 중</span>
+                    </div>
+                  )}
                 </button>
               )
             })}
