@@ -19508,3 +19508,261 @@ body.pc-mode .cb__brief-footer .cb__brief-start {
   font-size: 17px;
 }
 
+/* ──────────────────────────────────────────────────
+   프로필 / 설정 페이지 — 통일된 카드·탭·로우 스타일
+   ────────────────────────────────────────────────── */
+
+/* Desk tabs — 이미지 배경 폐기 → 텍스트 + underline indicator */
+body.pc-mode .pc-desk-tabs {
+  display: inline-flex !important;
+  gap: 4px !important;
+  margin-bottom: 24px !important;
+  padding: 4px !important;
+  border-radius: 14px !important;
+  border: 1px solid rgba(255, 255, 255, 0.06) !important;
+  background: rgba(20, 22, 28, 0.5) !important;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+body.pc-mode .pc-desk-tab {
+  min-width: auto !important;
+  height: 40px !important;
+  padding: 0 20px !important;
+  border-radius: 10px !important;
+  border: 1px solid transparent !important;
+  background: transparent !important;
+  color: var(--pc-text-dim) !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition: all 160ms ease !important;
+  filter: none !important;
+}
+body.pc-mode .pc-desk-tab:hover {
+  background: rgba(212, 162, 78, 0.06) !important;
+  color: var(--pc-text) !important;
+  filter: none !important;
+}
+body.pc-mode .pc-desk-tab.is-active {
+  background: rgba(212, 162, 78, 0.12) !important;
+  border-color: rgba(212, 162, 78, 0.40) !important;
+  color: var(--pc-gold-light) !important;
+  box-shadow: 0 0 14px rgba(212, 162, 78, 0.15) !important;
+  filter: none !important;
+}
+
+/* Mini stat — 통일 (radius 14, 패널 표준) */
+body.pc-mode .pc-mini-stat,
+body.pc-mode .pc-mini-action-card,
+body.pc-mode .pc-achievement-card,
+body.pc-mode .pc-history-case-card {
+  border-radius: 12px !important;
+  border: 1px solid rgba(212, 162, 78, 0.12) !important;
+  background: rgba(212, 162, 78, 0.04) !important;
+  padding: 14px 16px !important;
+  transition: border-color 160ms ease, background 160ms ease;
+}
+body.pc-mode .pc-mini-stat:hover,
+body.pc-mode .pc-history-case-card:hover {
+  border-color: rgba(212, 162, 78, 0.32) !important;
+  background: rgba(212, 162, 78, 0.07) !important;
+}
+
+body.pc-mode .pc-mini-stat span {
+  font-size: 11px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--pc-text-tertiary, #857b68) !important;
+  color: var(--pc-text-muted) !important;
+}
+body.pc-mode .pc-mini-stat strong {
+  font-size: 22px !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.02em;
+  color: var(--pc-text) !important;
+  margin-top: 4px;
+  display: block;
+}
+
+body.pc-mode .pc-mini-action-card {
+  display: flex !important;
+  flex-direction: column;
+  gap: 4px;
+  min-width: auto !important;
+}
+body.pc-mode .pc-mini-action-card__icon {
+  width: 28px; height: 28px;
+  border-radius: 8px;
+  background: rgba(212, 162, 78, 0.10);
+  border: 1px solid rgba(212, 162, 78, 0.22);
+  display: grid;
+  place-items: center;
+  margin-bottom: 6px;
+}
+body.pc-mode .pc-mini-action-card strong {
+  font-size: 14px !important;
+  color: var(--pc-text) !important;
+}
+body.pc-mode .pc-mini-action-card small {
+  font-size: 11px !important;
+  color: var(--pc-text-muted) !important;
+}
+
+/* Toggle row — 통일 (구분선 + spacing) */
+body.pc-mode .pc-toggle-row {
+  padding: 14px 0 !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+  margin-top: 0 !important;
+}
+body.pc-mode .pc-toggle-row:first-child {
+  border-top: none;
+  padding-top: 0;
+}
+body.pc-mode .pc-toggle-row strong {
+  font-size: 14px !important;
+  color: var(--pc-text) !important;
+  font-weight: 700 !important;
+}
+body.pc-mode .pc-toggle-row p {
+  font-size: 12px !important;
+  color: var(--pc-text-muted) !important;
+}
+
+/* Summary row — divider 추가 */
+body.pc-mode .pc-summary-row {
+  padding: 12px 0 !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.04) !important;
+  margin-top: 0 !important;
+}
+body.pc-mode .pc-summary-row:first-child {
+  border-top: none;
+  padding-top: 0;
+}
+body.pc-mode .pc-summary-row strong {
+  font-size: 13px !important;
+  color: var(--pc-text-dim) !important;
+  font-weight: 700 !important;
+}
+body.pc-mode .pc-summary-row span {
+  font-size: 13px !important;
+  color: var(--pc-text) !important;
+}
+
+/* Settings select row */
+body.pc-mode .pc-settings-select-row {
+  padding: 14px 0 !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+  margin-top: 0 !important;
+  flex-wrap: wrap !important;
+  gap: 12px !important;
+}
+body.pc-mode .pc-settings-select-row:first-child {
+  border-top: none;
+  padding-top: 0;
+}
+body.pc-mode .pc-settings-select-row strong {
+  font-size: 14px !important;
+  color: var(--pc-text) !important;
+  font-weight: 700 !important;
+}
+body.pc-mode .pc-settings-select-row p {
+  font-size: 12px !important;
+  color: var(--pc-text-muted) !important;
+}
+body.pc-mode .pc-settings-select {
+  min-height: 36px !important;
+  padding: 0 12px !important;
+  border-radius: 10px !important;
+  border: 1px solid rgba(212, 162, 78, 0.22) !important;
+  background: rgba(212, 162, 78, 0.06) !important;
+  color: var(--pc-text) !important;
+  font-size: 13px !important;
+  font-family: inherit !important;
+  cursor: pointer;
+  transition: border-color 160ms ease;
+}
+body.pc-mode .pc-settings-select:hover,
+body.pc-mode .pc-settings-select:focus {
+  border-color: rgba(212, 162, 78, 0.45) !important;
+  outline: none;
+}
+
+/* Inline button — Main outline 표준 */
+body.pc-mode .pc-inline-button {
+  height: 40px !important;
+  padding: 0 18px !important;
+  border-radius: 12px !important;
+  background: rgba(212, 162, 78, 0.10) !important;
+  border: 1px solid rgba(212, 162, 78, 0.45) !important;
+  color: var(--pc-gold-light) !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  cursor: pointer;
+  transition: all 160ms ease !important;
+}
+body.pc-mode .pc-inline-button:hover {
+  background: rgba(212, 162, 78, 0.16) !important;
+  border-color: rgba(212, 162, 78, 0.65) !important;
+  transform: translateY(-1px);
+  box-shadow: 0 0 0 3px rgba(212, 162, 78, 0.10);
+}
+body.pc-mode .pc-inline-button.is-ghost {
+  background: rgba(255, 255, 255, 0.03) !important;
+  border-color: rgba(255, 255, 255, 0.10) !important;
+  color: var(--pc-text-dim) !important;
+}
+body.pc-mode .pc-inline-button.is-ghost:hover {
+  border-color: rgba(212, 162, 78, 0.32) !important;
+  color: var(--pc-text) !important;
+  background: rgba(255, 255, 255, 0.05) !important;
+  box-shadow: none;
+}
+
+/* Player card actions */
+body.pc-mode .pc-player-card__actions {
+  margin-top: 16px !important;
+  padding-top: 16px !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  gap: 10px !important;
+}
+
+/* Achievement strip */
+body.pc-mode .pc-achievement-strip__track {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 12px !important;
+}
+
+/* Filter pills v2 — Settings/Leaderboard에서 사용 */
+body.pc-mode .pc-filter-pills-v2 {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+body.pc-mode .pc-filter-pill-v2 {
+  height: 36px !important;
+  padding: 0 16px !important;
+  border-radius: 999px !important;
+  background: rgba(255, 255, 255, 0.03) !important;
+  border: 1px solid rgba(255, 255, 255, 0.10) !important;
+  color: var(--pc-text-dim) !important;
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition: all 160ms ease !important;
+}
+body.pc-mode .pc-filter-pill-v2:hover {
+  border-color: rgba(212, 162, 78, 0.32) !important;
+  color: var(--pc-text) !important;
+}
+body.pc-mode .pc-filter-pill-v2.is-active {
+  background: rgba(212, 162, 78, 0.12) !important;
+  border-color: rgba(212, 162, 78, 0.45) !important;
+  color: var(--pc-gold-light) !important;
+}
+
