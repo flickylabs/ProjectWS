@@ -4605,21 +4605,24 @@ body.pc-mode .pc-home-v2__title-scale {
   opacity: 0.95;
 }
 
+/* v3: Hero — display-xl 64px 800 + subtle gold text-shadow */
 body.pc-mode .pc-home-v2__hero h1 {
   margin: 0;
-  font-size: clamp(42px, 4.5vw, 64px);
+  font-size: clamp(44px, 4.6vw, 64px);
+  font-weight: 800;
   line-height: 1;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.04em;
   color: var(--pc-text);
-  text-shadow: 0 2px 20px rgba(212, 162, 78, 0.22);
+  text-shadow: 0 2px 18px rgba(212, 162, 78, 0.18);
   white-space: nowrap;
 }
 
 body.pc-mode .pc-home-v2__hero p {
-  margin: 0;
-  font-size: 16px;
+  margin: 14px 0 0;
+  font-size: 18px;
   color: var(--pc-text-dim);
-  letter-spacing: 0.02em;
+  letter-spacing: 0.01em;
+  line-height: 1.5;
 }
 
 body.pc-mode .pc-home-v2__mode-grid {
@@ -4631,36 +4634,42 @@ body.pc-mode .pc-home-v2__mode-grid {
   margin-top: 28px;
 }
 
+/* v3: Main Page mode card — 1px border, gold .22 idle → .40 hover, 4px track */
 body.pc-mode .pc-mode-card {
   width: 100%;
-  padding: 28px 32px 26px;
-  border-radius: 16px;
-  border: 1.5px solid rgba(212, 162, 78, 0.22);
-  background: linear-gradient(180deg, rgba(30, 28, 22, 0.72), rgba(18, 17, 14, 0.82));
+  padding: 30px 34px 28px;
+  border-radius: 18px;
+  border: 1px solid rgba(212, 162, 78, 0.22);
+  background: linear-gradient(180deg, rgba(28, 30, 38, 0.85), rgba(13, 14, 18, 0.94));
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.42), inset 0 1px 0 rgba(212,162,78,0.08);
+  box-shadow:
+    0 14px 34px rgba(0, 0, 0, 0.42),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
   text-align: left;
-  color: #f3efe8;
-  transition: border-color 0.2s, transform 0.15s, box-shadow 0.2s;
+  color: var(--pc-text);
+  transition: border-color 200ms ease, transform 200ms ease, box-shadow 200ms ease;
 }
 
 body.pc-mode .pc-mode-card:hover {
-  border-color: rgba(212, 162, 78, 0.4);
+  border-color: rgba(212, 162, 78, 0.40);
   transform: translateY(-2px);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(212,162,78,0.06);
+  box-shadow:
+    0 22px 48px rgba(0, 0, 0, 0.5),
+    0 0 28px rgba(212, 162, 78, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
 }
 
 body.pc-mode .pc-mode-card__badge-row {
   display: flex;
   justify-content: flex-end;
-  margin-bottom: 16px;
+  margin-bottom: 18px;
 }
 
 body.pc-mode .pc-mode-card__content {
   display: grid;
   grid-template-columns: 56px minmax(0, 1fr);
-  gap: 18px;
+  gap: 20px;
   align-items: center;
 }
 
@@ -4669,18 +4678,22 @@ body.pc-mode .pc-mode-card__icon {
   height: 56px;
   display: grid;
   place-items: center;
-  border-radius: 20px;
+  border-radius: 16px;
   color: var(--pc-gold-light);
-  background: rgba(212, 162, 78, 0.09);
-  border: 1px solid rgba(212, 162, 78, 0.16);
+  background: rgba(212, 162, 78, 0.10);
+  border: 1px solid rgba(212, 162, 78, 0.22);
+}
+
+body.pc-mode .pc-mode-card:hover .pc-mode-card__icon {
+  border-color: rgba(212, 162, 78, 0.40);
 }
 
 body.pc-mode .pc-mode-card__copy strong {
   display: block;
   margin-bottom: 12px;
-  font-size: clamp(28px, 2vw, 38px);
-  line-height: 1;
-  letter-spacing: -0.03em;
+  font-size: clamp(28px, 2vw, 36px);
+  line-height: 1.05;
+  letter-spacing: -0.025em;
   color: var(--pc-text);
 }
 
@@ -4688,7 +4701,7 @@ body.pc-mode .pc-mode-card__meta {
   display: flex;
   justify-content: space-between;
   gap: 20px;
-  font-size: 15px;
+  font-size: 14px;
   color: var(--pc-text-dim);
 }
 
@@ -4696,10 +4709,10 @@ body.pc-mode .pc-mode-card__track,
 body.pc-mode .pc-progress-bar {
   position: relative;
   overflow: hidden;
-  height: 10px;
-  margin-top: 18px;
+  height: 4px;
+  margin-top: 22px;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.06);
 }
 
 body.pc-mode .pc-mode-card__track i,
@@ -4707,8 +4720,8 @@ body.pc-mode .pc-progress-bar i {
   position: absolute;
   inset: 0 auto 0 0;
   border-radius: inherit;
-  /* 코랄(붉은끼) → 골드 그라데이션 (Phase 1~2 톤 일관) */
-  background: linear-gradient(90deg, rgba(196, 92, 76, 0.92), rgba(212, 162, 78, 0.96));
+  background: linear-gradient(90deg, rgba(212, 162, 78, 0.7), rgba(232, 193, 114, 0.95));
+  box-shadow: 0 0 8px rgba(212, 162, 78, 0.4);
 }
 
 body.pc-mode .pc-home-v2__resource-row,
@@ -4742,21 +4755,23 @@ body.pc-mode .pc-home-v2__info-grid {
   max-width: 1200px;
 }
 
+/* v3: Info card — LIGHT .42 + blur 8px, gold .18 idle → .40 hover */
 body.pc-mode .pc-home-info-card {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 18px;
-  padding: 22px 28px;
+  padding: 22px 26px;
   border-radius: 14px;
-  border: 1px solid rgba(212, 162, 78, 0.16);
-  background: linear-gradient(180deg, rgba(30, 28, 22, 0.68), rgba(18, 17, 14, 0.78));
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-  transition: border-color 0.2s;
+  border: 1px solid rgba(212, 162, 78, 0.18);
+  background: linear-gradient(180deg, rgba(20, 22, 28, 0.45), rgba(13, 14, 18, 0.55));
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: border-color 160ms ease, transform 160ms ease;
 }
 body.pc-mode .pc-home-info-card:hover {
-  border-color: rgba(212, 162, 78, 0.25);
+  border-color: rgba(212, 162, 78, 0.40);
+  transform: translateY(-1px);
 }
 
 body.pc-mode .pc-home-info-card__head {
@@ -4766,26 +4781,36 @@ body.pc-mode .pc-home-info-card__head {
 }
 
 body.pc-mode .pc-home-info-card__icon {
-  width: 54px;
-  height: 54px;
+  width: 48px;
+  height: 48px;
   display: grid;
   place-items: center;
-  border-radius: 18px;
+  border-radius: 14px;
   color: var(--pc-gold-light);
-  background: rgba(212, 162, 78, 0.08);
+  background: rgba(212, 162, 78, 0.10);
+  border: 1px solid rgba(212, 162, 78, 0.22);
+  transition: border-color 160ms ease;
+}
+
+body.pc-mode .pc-home-info-card:hover .pc-home-info-card__icon {
+  border-color: rgba(212, 162, 78, 0.40);
 }
 
 body.pc-mode .pc-home-info-card__head strong {
   display: block;
-  margin-bottom: 6px;
-  font-size: 22px;
-  line-height: 1.15;
+  margin-bottom: 4px;
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
   white-space: nowrap;
+  color: var(--pc-text);
 }
 
 body.pc-mode .pc-home-info-card__head p {
   margin: 0;
-  color: #afb3c2;
+  font-size: 13px;
+  color: var(--pc-text-dim);
 }
 
 body.pc-mode .pc-home-info-card__action,
