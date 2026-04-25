@@ -2931,11 +2931,13 @@ body.pc-mode .pc-play-left .pc-important-notes__scroll {
    시각 100% 통일. 수첩 전용 modifier(--notebook)로 height만 확장.
    ═══════════════════════════════════════════════════════════ */
 body.pc-mode .pc-play-left .pc-judge-observation-section--notebook {
-  /* 관찰의 200px 기본을 약간 키움 — flex grow는 사용 X (부모 overflow → 탑바 밀림 방지) */
-  flex: 0 0 240px !important;
-  min-height: 240px !important;
-  max-height: 240px !important;
-  height: 240px !important;
+  /* 관찰과 정확히 동일한 200px 고정 — 좌측 패널 자식 합이 viewport 초과하지 않도록.
+   * 수첩을 더 크게 하려면 다른 섹션을 줄이거나 좌측 패널 자체 overflow 정책을
+   * 변경해야 하므로 별도 사이클로 처리. 현재는 시각 통일까지만. */
+  flex: 0 0 200px !important;
+  min-height: 200px !important;
+  max-height: 200px !important;
+  height: 200px !important;
 }
 
 /* (legacy) 기존 .pc-play-notebook-section 남겨둠 — 다른 위치에서 참조 가능 */
