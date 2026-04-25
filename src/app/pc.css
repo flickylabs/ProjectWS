@@ -14980,24 +14980,36 @@ body.pc-mode .cb__zigzag-row {
 body.pc-mode .cb__zigzag-row--left { justify-content: flex-start; padding-left: 10%; }
 body.pc-mode .cb__zigzag-row--right { justify-content: flex-end; padding-right: 10%; }
 
-/* 스테이지 노드 */
+/* 스테이지 노드 (B 중립안: 필 형태 + dot indicator) */
 body.pc-mode .cb__stage {
+  position: relative;
   display: flex; align-items: center; gap: 10px;
-  padding: 10px 16px; border-radius: 12px;
-  border: 1.5px solid rgba(255,255,255,0.06);
-  background: rgba(20,20,28,0.85);
+  padding: 10px 12px; border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(15,16,22,0.85);
   color: #e6d9b8; cursor: pointer;
   transition: border-color 0.15s, background 0.15s, transform 0.1s;
-  min-width: 100px;
+  min-width: 84px;
 }
 body.pc-mode .cb__stage:hover {
-  border-color: rgba(212,162,78,0.2);
+  border-color: rgba(212,162,78,0.24);
   transform: scale(1.03);
 }
 body.pc-mode .cb__stage.is-active {
   border-color: rgba(212,162,78,0.5);
   background: rgba(212,162,78,0.1);
-  box-shadow: 0 0 16px rgba(212,162,78,0.1);
+  box-shadow: 0 0 18px rgba(212,162,78,0.18);
+  padding-left: 18px;
+}
+body.pc-mode .cb__stage.is-active::before {
+  content: '';
+  position: absolute;
+  left: 8px; top: 50%;
+  width: 4px; height: 4px;
+  border-radius: 50%;
+  background: var(--pc-gold-light);
+  transform: translateY(-50%);
+  box-shadow: 0 0 6px rgba(232,193,114,0.6);
 }
 body.pc-mode .cb__stage.is-cleared { border-color: rgba(212, 162, 78, 0.4); background: rgba(212, 162, 78, 0.08); }
 body.pc-mode .cb__stage.is-locked { opacity: 0.3; cursor: default; }
@@ -15010,13 +15022,26 @@ body.pc-mode .cb__stage-score {
 }
 body.pc-mode .cb__stage.is-cleared .cb__stage-score { color: var(--pc-gold-light); }
 
-/* ── 우: 상세 패널 ── */
+/* ── 우: 상세 패널 (B 중립안: 좌측 골드 라인 액센트) ── */
 body.pc-mode .cb__detail {
+  position: relative;
   display: flex; flex-direction: column;
   border-radius: 14px;
-  border: 1px solid rgba(255,255,255,0.06);
-  background: rgba(20,20,28,0.8);
+  border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(15,16,22,0.85);
   overflow: hidden;
+}
+body.pc-mode .cb__detail::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 4px;
+  background: linear-gradient(180deg,
+    rgba(212,162,78,0) 0%,
+    rgba(212,162,78,0.6) 18%,
+    rgba(212,162,78,0.6) 82%,
+    rgba(212,162,78,0) 100%);
+  pointer-events: none;
 }
 body.pc-mode .cb__detail-banner {
   padding: 28px 24px 20px;
@@ -15083,10 +15108,10 @@ body.pc-mode .cb__brief-title p {
   margin: 10px 0 0; font-size: 18px; color: rgba(255,255,255,0.45); line-height: 1.6;
 }
 
-/* VS 레이아웃 */
+/* VS 레이아웃 (B 중립안: 양옆 패딩 + gap 확장) */
 body.pc-mode .cb__brief-vs {
-  display: flex; align-items: center; justify-content: center; gap: 24px;
-  padding: 24px 28px;
+  display: flex; align-items: center; justify-content: center; gap: 32px;
+  padding: 24px 36px;
   border-bottom: 1px solid rgba(255,255,255,0.04);
 }
 body.pc-mode .cb__brief-party {
@@ -15123,8 +15148,8 @@ body.pc-mode .cb__brief-section h4 {
 }
 body.pc-mode .cb__brief-item {
   display: flex; align-items: center; gap: 10px;
-  padding: 12px 16px; margin-bottom: 8px; border-radius: 10px;
-  background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.04);
+  padding: 12px 16px; margin-bottom: 8px; border-radius: 12px;
+  background: rgba(255,255,255,0.04); border: 1px solid rgba(212,162,78,0.18);
   font-size: 18px; color: rgba(255,255,255,0.7);
 }
 body.pc-mode .cb__brief-item-num {
