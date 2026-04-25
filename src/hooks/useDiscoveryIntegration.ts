@@ -31,13 +31,23 @@ export function runDiscoveryChecks(party: PartyId, disputeId?: string) {
   const agent = party === 'a' ? agentA : agentB
 
   // ── 1. 감정 셧다운 체크 ──
+  // [결함 2 픽스] 셧다운 첫 진입 시에만 lockout 시작 + 메시지. 이미 lockout 중이면 메시지 안 띄움.
+  // handleQuestion에서 emotionalLockoutUntil 가드로 실제 차단 적용.
   if (!canInterrogate(agent.emotionalState.internalValue)) {
-    state.addDialogue({
-      speaker: 'system',
-      text: (() => { const n = party === 'a' ? caseData.duo.partyA.name : caseData.duo.partyB.name; return `🔒 ${n}${pp이가(n)} 감정 과부하로 응답을 거부합니다. (2턴간 질문 불가)` })(),
-      relatedDisputes: disputeId ? [disputeId] : [],
-      turn: turnCount,
-    })
+    const currentLockout = state.emotionalLockoutUntil?.[party] ?? 0
+    if (currentLockout <= turnCount) {
+      // [Phase B-1] 새로 진입 — 2턴 차단 시작.
+      // lockoutUntil = "이 턴부터 다시 가능". turnCount + 3 = T+1, T+2 차단 → T+3부터 가능 (정확히 2턴).
+      state.setEmotionalLockout(party, turnCount + 3)
+      const n = party === 'a' ? caseData.duo.partyA.name : caseData.duo.partyB.name
+      state.addDialogue({
+        speaker: 'system',
+        text: `🔒 ${n}${pp이가(n)} 체념 상태에 빠져 답변을 거부합니다. (2턴간 질문 불가)`,
+        relatedDisputes: disputeId ? [disputeId] : [],
+        turn: turnCount,
+      })
+    }
+    // 이미 lockout 중이면 메시지 출력 안 함 (중복 방지)
   }
 
   // ── 2. 감정 실수 자백 체크 (격앙 상태일 때) ──

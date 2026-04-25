@@ -216,8 +216,8 @@ function EmotionGuideContent({ emotionValue, emotionPhase }: { emotionValue: num
   const TIERS = [
     { tier: 'calm', min: 0, max: 30, label: '침착', icon: '🛡️', desc: '방어력이 높아 거짓말을 흔들기 어렵습니다. 논리적으로 답변하여 빈틈이 적습니다.', bg: 'bg-blue-950/40', border: 'border-blue-700/40', text: 'text-blue-400', slipInfo: '' },
     { tier: 'agitated', min: 30, max: 60, label: '동요', icon: '😰', desc: '균형 상태입니다. 질문 효과가 보통이며, 안정적으로 심문을 진행할 수 있습니다.', bg: 'bg-yellow-950/40', border: 'border-yellow-700/40', text: 'text-yellow-400', slipInfo: '' },
-    { tier: 'explosive', min: 60, max: 85, label: '격앙', icon: '💢', desc: '방어력이 약해져 거짓말 전이가 쉬워집니다. 흥분 상태에서 실수로 자백할 수 있지만, 더 밀면 셧다운될 수 있습니다.', bg: 'bg-red-950/40', border: 'border-red-700/40', text: 'text-red-400', slipInfo: '실수 자백 확률: 30% | 거짓말 전이 1.5배' },
-    { tier: 'shutdown', min: 85, max: 100, label: '셧다운', icon: '🔒', desc: '응답을 거부합니다. 2턴간 이 당사자에게 질문할 수 없습니다. 공감 접근으로 감정을 낮춰야 합니다.', bg: 'bg-gray-800/40', border: 'border-gray-600/40', text: 'text-gray-400', slipInfo: '' },
+    { tier: 'explosive', min: 60, max: 85, label: '격앙', icon: '💢', desc: '방어력이 약해져 거짓말 전이가 쉬워집니다. 흥분 상태에서 실수로 자백할 수 있지만, 더 밀면 체념 상태에 빠집니다.', bg: 'bg-red-950/40', border: 'border-red-700/40', text: 'text-red-400', slipInfo: '실수 자백 확률: 30% | 거짓말 전이 1.5배' },
+    { tier: 'shutdown', min: 85, max: 100, label: '체념', icon: '🔒', desc: '응답을 거부합니다. 2턴간 이 당사자에게 질문할 수 없습니다. 공감 접근으로 감정을 낮춰야 합니다.', bg: 'bg-gray-800/40', border: 'border-gray-600/40', text: 'text-gray-400', slipInfo: '' },
   ]
   const currentTier = TIERS.find(t => emotionValue >= t.min && emotionValue < t.max) ?? TIERS[TIERS.length - 1]
 
@@ -242,7 +242,7 @@ function EmotionGuideContent({ emotionValue, emotionPhase }: { emotionValue: num
           <span className="text-[10px] text-blue-500">침착</span>
           <span className="text-[10px] text-yellow-500">동요</span>
           <span className="text-[10px] text-red-500">격앙</span>
-          <span className="text-[10px] text-gray-500">셧다운</span>
+          <span className="text-[10px] text-gray-500">체념</span>
         </div>
       </div>
 

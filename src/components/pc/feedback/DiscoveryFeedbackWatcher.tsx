@@ -186,10 +186,11 @@ export default function DiscoveryFeedbackWatcher() {
     if (!caseData) return
     const dispute = caseData.disputes.find((d) => d.id === pendingEmergence.disputeId)
 
-    // 쟁점 발견 시 시스템 메시지로 흐름 표시 — 모달이 닫힌 뒤에도 채팅 로그에 흔적 남김
-    state.addDialogue({
+    // 쟁점 발견 시 시스템 메시지로 흐름 표시 — 모달은 자동으로 띄우지 않고 (B-17 D 옵션),
+    // 시스템 메시지 클릭 시 수동 트리거되도록 pendingFeedback 부착.
+    const sysMsgId = state.addDialogue({
       speaker: 'system',
-      text: `새 쟁점이 등장했다 — ${dispute?.name ?? pendingEmergence.disputeId}`,
+      text: `새 쟁점이 드러났다 — ${dispute?.name ?? pendingEmergence.disputeId}`,
       relatedDisputes: [pendingEmergence.disputeId],
       turn: state.turnCount,
     })
@@ -201,25 +202,40 @@ export default function DiscoveryFeedbackWatcher() {
       summary: `${dispute?.name ?? pendingEmergence.disputeId}`,
       disputeId: pendingEmergence.disputeId,
     })
-    state.enqueueFeedback({
+    state.attachDialoguePendingFeedback(sysMsgId, {
       kind: 'emergence',
       eyebrow: '새 쟁점 발견',
       subtitle: ROUTE_LABELS[pendingEmergence.route] ?? '새 단서가 갈래를 바꿨습니다.',
       title: dispute?.name ?? pendingEmergence.disputeId,
-      // body 제거: description은 dispute.truthDescription(진실 설명)이라 스포일러.
-      // 쟁점 이름(title)과 발견 경로(subtitle)만 노출하고, 구체 내용은 플레이어가 심문/증거로 밝혀내도록.
+      // [Phase E] 모달 내용 정정 — 이미 쟁점 보드에 추가된 상태에서 모달이 뜨므로,
+      // "발견" 알림이 아니라 "이제 이 쟁점을 본격 공략할 수 있습니다" 안내 톤으로 변경.
+      body: '이 쟁점에 대한 심문과 증거 제시가 본격적으로 가능합니다. 새 단서를 활용해 진실을 추궁해 보세요.',
       tone: 'gold',
       actions: [
         {
-          label: '쟁점 보드에 반영',
+          label: '확인했습니다',
           tone: 'gold',
           onSelect: () => {
             const s = useGameStore.getState()
             s.acknowledgeEmergence(pendingEmergence.disputeId)
+            s.consumeDialoguePendingFeedback(sysMsgId)
             enqueuedRef.current.delete(key)
-            // 모달 닫힘 후 강조 시작 — 우측 쟁점 카드 + 상단 쟁점 영역 깜빡 (4초)
+            // [Phase E] 모달 닫힘 후 강조 시작 — 우측 쟁점 카드 + 상단 쟁점 영역 깜빡 (4초)
+            // 번개 이펙트도 모달 dismiss 직후로 이동 (모달 블러로 가려지는 결함 해소).
             s.setLastFocusedDisputeId(pendingEmergence.disputeId)
             s.setRecentlyEmergedDispute(pendingEmergence.disputeId)
+            // 메시지 → 탑바 쟁점 chip 으로 번개 3가닥 + 오라 발사
+            const escape = typeof CSS !== 'undefined' && typeof CSS.escape === 'function' ? CSS.escape : (v: string) => v
+            const fromSelector = `[data-dialogue-id="${escape(sysMsgId)}"] .pc-log-system-card`
+            const toSelector = `[data-dispute-id="${escape(pendingEmergence.disputeId)}"]`
+            s.enqueueResonance({ fromSelector, toSelector })
+            window.setTimeout(() => {
+              useGameStore.getState().enqueueResonance({ fromSelector, toSelector })
+            }, 60)
+            window.setTimeout(() => {
+              useGameStore.getState().enqueueResonance({ fromSelector, toSelector })
+            }, 140)
+            s.enqueueAura({ targetSelector: toSelector })
             window.setTimeout(() => {
               useGameStore.getState().setRecentlyEmergedDispute(null)
             }, 4000)
@@ -239,6 +255,7 @@ export default function DiscoveryFeedbackWatcher() {
                 behaviorHint: hook.behaviorHint,
                 relatedDisputes: [pendingEmergence.disputeId],
                 turn: s.turnCount,
+                source: 'script',
               })
             } else {
               // 폴백 — 데이터 없는 경우 (Legacy 사건 등) generic 발화
@@ -251,12 +268,13 @@ export default function DiscoveryFeedbackWatcher() {
                 relatedDisputes: [pendingEmergence.disputeId],
                 turn: s.turnCount,
                 behaviorHint: '시선이 흔들리며 잠시 멈춘다.',
+                source: 'fallback',
               })
             }
           },
         },
       ],
-    })
+    }, state.turnCount)
   }, [pendingEmergence])
 
   // 감정 실수 포착
@@ -400,7 +418,14 @@ export default function DiscoveryFeedbackWatcher() {
         party: ev.party,
         disputeId: ev.disputeId,
       })
-      state.enqueueFeedback({
+      // [B-17 D] 자동 모달 X — 시스템 메시지 클릭 시 수동 트리거.
+      const sysMsgId = state.addDialogue({
+        speaker: 'system',
+        text: `진술이 엇갈렸다 — ${partyName} · ${disputeName}`,
+        relatedDisputes: [ev.disputeId],
+        turn: state.turnCount,
+      })
+      state.attachDialoguePendingFeedback(sysMsgId, {
         kind: 'contradiction',
         eyebrow: '모순 감지',
         subtitle: `${disputeName} · ${partyName}`,
@@ -408,10 +433,25 @@ export default function DiscoveryFeedbackWatcher() {
         contrast: contrastPayload,
         tone: 'gold',
         actions: [
-          { label: '지금은 넘긴다', tone: 'gray', onSelect: () => { useGameStore.getState().setPendingGameEvent(null); releaseKey() } },
-          { label: '모순을 찌른다', tone: 'gold', onSelect: handlePointOut },
+          {
+            label: '지금은 넘긴다',
+            tone: 'gray',
+            onSelect: () => {
+              useGameStore.getState().setPendingGameEvent(null)
+              useGameStore.getState().consumeDialoguePendingFeedback(sysMsgId)
+              releaseKey()
+            },
+          },
+          {
+            label: '모순을 찌른다',
+            tone: 'gold',
+            onSelect: () => {
+              handlePointOut()
+              useGameStore.getState().consumeDialoguePendingFeedback(sysMsgId)
+            },
+          },
         ],
-      })
+      }, state.turnCount)
       return
     }
 
@@ -447,18 +487,39 @@ export default function DiscoveryFeedbackWatcher() {
         releaseKey()
       }
 
-      // 끼어들기는 모달로만 표출 — 관찰 패널에 추가하지 않음 (시스템 관찰과 NPC 발화 경계 보존)
-      state.enqueueFeedback({
+      // [B-17 D] 자동 모달 X — 시스템 메시지 클릭 시 수동 트리거.
+      // 끼어들기는 관찰 패널엔 추가하지 않음 (시스템 관찰과 NPC 발화 경계 보존).
+      const sysMsgId = state.addDialogue({
+        speaker: 'system',
+        text: `${partyName}${pp이가(partyName)} 끼어들려 한다 — ${disputeName}`,
+        relatedDisputes: [ev.disputeId],
+        turn: state.turnCount,
+      })
+      state.attachDialoguePendingFeedback(sysMsgId, {
         kind: 'contradiction',
         eyebrow: '끼어들기',
         subtitle: `${partyName} · ${disputeName}`,
         quote: interjectionText,
         tone: 'blue',
         actions: [
-          { label: '제지한다', tone: 'gray', onSelect: handleBlock },
-          { label: '허용한다', tone: 'blue', onSelect: handleAllow },
+          {
+            label: '제지한다',
+            tone: 'gray',
+            onSelect: () => {
+              handleBlock()
+              useGameStore.getState().consumeDialoguePendingFeedback(sysMsgId)
+            },
+          },
+          {
+            label: '허용한다',
+            tone: 'blue',
+            onSelect: () => {
+              handleAllow()
+              useGameStore.getState().consumeDialoguePendingFeedback(sysMsgId)
+            },
+          },
         ],
-      })
+      }, state.turnCount)
       return
     }
 
@@ -514,7 +575,14 @@ export default function DiscoveryFeedbackWatcher() {
         party: ev.party,
         disputeId: ev.disputeId,
       })
-      state.enqueueFeedback({
+      // [B-17 D] 자동 모달 X — 시스템 메시지 클릭 시 수동 트리거.
+      const sysMsgId = state.addDialogue({
+        speaker: 'system',
+        text: `${partyName}의 감정이 무너진다 — ${disputeName}`,
+        relatedDisputes: [ev.disputeId],
+        turn: state.turnCount,
+      })
+      state.attachDialoguePendingFeedback(sysMsgId, {
         kind: 'emotional_slip',
         eyebrow: '감정 폭발',
         subtitle: `${partyName} · ${disputeName}`,
@@ -522,10 +590,24 @@ export default function DiscoveryFeedbackWatcher() {
         body: outburstLine ? undefined : outburstText,
         tone: 'red',
         actions: [
-          { label: '진정시킨다', tone: 'gray', onSelect: handleCalm },
-          { label: '밀어붙인다', tone: 'red', onSelect: handlePress },
+          {
+            label: '진정시킨다',
+            tone: 'gray',
+            onSelect: () => {
+              handleCalm()
+              useGameStore.getState().consumeDialoguePendingFeedback(sysMsgId)
+            },
+          },
+          {
+            label: '밀어붙인다',
+            tone: 'red',
+            onSelect: () => {
+              handlePress()
+              useGameStore.getState().consumeDialoguePendingFeedback(sysMsgId)
+            },
+          },
         ],
-      })
+      }, state.turnCount)
       return
     }
   }, [pendingGameEvent])

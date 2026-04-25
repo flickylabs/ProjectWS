@@ -51,6 +51,8 @@ function MessageBubble({ entry, animate, combinableTexts, combinationHintMap, is
   const caseData = useStore((s) => s.caseData)
   const agentA = useStore((s) => s.agentA)
   const agentB = useStore((s) => s.agentB)
+  const pendingFeedback = useStore((s) => s.dialoguePendingFeedback[entry.id])
+  const currentTurn = useStore((s) => s.turnCount)
   const rawText = entry.text ?? ''
   const displayText = useRevealText(rawText, animate)
   const fullText = rawText.trim()
@@ -79,6 +81,43 @@ function MessageBubble({ entry, animate, combinableTexts, combinationHintMap, is
 
   if (entry.speaker === 'system') {
     const contradiction = entry.contradictionMeta
+
+    // ── [B-17 D] pending feedback (수동 트리거 모달) ──
+    // emergence/contradiction/interjection/emotional_burst 4종은 자동 모달 대신
+    // 시스템 메시지에 pending payload 부착 → 클릭 시 enqueueFeedback.
+    if (pendingFeedback) {
+      const expireAfter = pendingFeedback.expireAfterTurns ?? 5
+      const turnsPassed = currentTurn - pendingFeedback.createdTurn
+      const isExpired = turnsPassed >= expireAfter
+      const isConsumed = !!pendingFeedback.consumed
+      const isActive = !isConsumed && !isExpired
+      const badge = isConsumed ? '처리됨' : isExpired ? '만료' : '지금 확인'
+      const stateClass = isConsumed ? ' is-consumed' : isExpired ? ' is-expired' : ' is-urgent'
+
+      return (
+        <div className="pc-log-system-row is-action">
+          <button
+            aria-disabled={!isActive}
+            className={`pc-log-system-card is-action is-pending-feedback${stateClass}`}
+            disabled={!isActive}
+            onClick={() => {
+              if (!isActive) return
+              const s = useGameStore.getState()
+              // 클릭 시 모달 큐에 payload 주입. consume + 번개 이펙트는 action onSelect 내부 (모달 닫힌 후)에서 발사.
+              // [Phase E] 모달이 띄워진 직후 번개를 발사하면 모달 블러에 가려져 이펙트가 보이지 않음 → 모달 dismiss 후로 이동.
+              s.enqueueFeedback(pendingFeedback.payload)
+            }}
+            type="button"
+          >
+            <span aria-hidden className="pc-log-system-card__bolt">
+              <PCSvgIcon id="i-bolt" size={22} />
+            </span>
+            <span className="pc-log-system-card__text">{displayText.trim()}</span>
+            <span className="pc-log-system-card__action-badge">{badge}</span>
+          </button>
+        </div>
+      )
+    }
 
     // ── 카테고리 분류 ──
     const category = contradiction ? 'action'
@@ -145,7 +184,9 @@ function MessageBubble({ entry, animate, combinableTexts, combinationHintMap, is
       )
     }
 
-    // ── 성공/발견 (클릭 가능 강조, 1회) ──
+    // ── 성공/발견 (클릭 시 본문 상세, 1회 강조 후 dim) ──
+    // [결함 17 픽스] '확인' 배지 제거 — 메시지 본문이 이미 보이는 상태에서 '확인' 클릭 시
+    // 동일 메시지 팝업만 뜨던 결함. 클릭 자체는 유지하되 배지만 제거.
     if (category === 'success') {
       const checked = _usedContradictions.has(entry.id)
       return (
@@ -153,7 +194,6 @@ function MessageBubble({ entry, animate, combinableTexts, combinationHintMap, is
           <button className={`pc-log-system-card is-success${checked ? ' is-used' : ''}`} onClick={() => { _usedContradictions.add(entry.id); openEntryDetail() }} type="button">
             <span className="pc-log-system-card__icon"><PCSvgIcon id={iconId} size={20} /></span>
             <span className="pc-log-system-card__text">{displayText}</span>
-            {!checked ? <span className="pc-log-system-card__action-badge">확인</span> : null}
           </button>
         </div>
       )

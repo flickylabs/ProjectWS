@@ -55,7 +55,7 @@ export const EMOTION_TIER_CONFIG: EmotionTierConfig[] = [
     lieTransitionMultiplier: 1.5,
     slipChance: 0.3,
     label: '격앙',
-    description: '방어력이 약해져 거짓말 전이가 쉬워집니다. 흥분 상태에서 실수로 자백할 수 있지만, 더 밀면 셧다운될 수 있습니다.',
+    description: '방어력이 약해져 거짓말 전이가 쉬워집니다. 흥분 상태에서 실수로 자백할 수 있지만, 더 밀면 체념 상태에 빠집니다.',
   },
   {
     tier: 'shutdown',
@@ -63,7 +63,7 @@ export const EMOTION_TIER_CONFIG: EmotionTierConfig[] = [
     max: 100,
     lieTransitionMultiplier: 0,
     slipChance: 0,
-    label: '셧다운',
+    label: '체념',
     description: '응답을 거부합니다. 2턴간 이 당사자에게 질문할 수 없습니다. 공감 접근으로 감정을 낮춰야 합니다.',
   },
 ]

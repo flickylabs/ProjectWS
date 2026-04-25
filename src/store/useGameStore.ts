@@ -13,6 +13,7 @@ import { createMinigameSlice, type MinigameSlice } from './slices/minigameSlice'
 import { createCharacterTagSlice, type CharacterTagSlice } from './slices/characterTagSlice'
 import { createEventFeedbackSlice, type EventFeedbackSlice } from './slices/eventFeedbackSlice'
 import { createJudgeObservationSlice, type JudgeObservationSlice } from './slices/judgeObservationSlice'
+import { createJudgeNotebookSlice, type JudgeNotebookSlice } from './slices/judgeNotebookSlice'
 import type { CaseData, ProcessMetrics, PartyId } from '../types'
 import type { TestimonyAnalysis } from '../engine/llmTestimonyAnalysis'
 import { GamePhase } from '../types'
@@ -131,7 +132,7 @@ function applyPerks(set: (partial: any) => void): void {
   })
 }
 
-export type GameStore = PhaseSlice & AgentSlice & ResourceSlice & EvidenceSlice & DialogueSlice & VerdictSlice & DiscoverySlice & CombinationLabSlice & MinigameSlice & CharacterTagSlice & EventFeedbackSlice & JudgeObservationSlice & {
+export type GameStore = PhaseSlice & AgentSlice & ResourceSlice & EvidenceSlice & DialogueSlice & VerdictSlice & DiscoverySlice & CombinationLabSlice & MinigameSlice & CharacterTagSlice & EventFeedbackSlice & JudgeObservationSlice & JudgeNotebookSlice & {
   caseData: CaseData | null
   lieConfigs: { a: CaseData['lieConfigA']; b: CaseData['lieConfigB'] } | null
   isLLMLoading: boolean
@@ -167,10 +168,13 @@ export type GameStore = PhaseSlice & AgentSlice & ResourceSlice & EvidenceSlice 
     | { type: 'contradiction'; text: string; disputeId: string; target: PartyId }
     | null
   setPendingMinigame: (mg: GameStore['pendingMinigame']) => void
-  /** 최근 사용된 atom ID (반복 방지, party별 최근 N개) */
-  recentAtomIds: Record<string, string[]>
-  trackUsedAtoms: (party: 'a' | 'b', atomIds: string[]) => void
-  getRecentAtomIds: (party: 'a' | 'b') => string[]
+  /** [TC-B1] 최근 사용된 atom ID — party × disputeId 별 분리. 같은 쟁점 내에서만 회피 페널티 적용 */
+  recentAtomIds: Record<'a' | 'b', Record<string, string[]>>
+  trackUsedAtoms: (party: 'a' | 'b', disputeId: string, atomIds: string[]) => void
+  getRecentAtomIds: (party: 'a' | 'b', disputeId: string) => string[]
+  /** [감정 과부하 lockout] 셧다운 진입 시 차단 만료 turn 번호. 0 = no lockout. turnCount < lockoutUntil 인 동안 질문 차단 */
+  emotionalLockoutUntil: Record<'a' | 'b', number>
+  setEmotionalLockout: (party: 'a' | 'b', untilTurn: number) => void
   /** 심문 이력: party → disputeId → 질문 기록 */
   interrogationHistory: Record<string, Record<string, { questionTypes: string[]; turns: number[]; revealed: boolean }>>
   trackInterrogation: (party: 'a' | 'b', disputeId: string, questionType: string, turn: number) => void
@@ -304,6 +308,7 @@ export const useGameStore: import('zustand').UseBoundStore<import('zustand').Sto
     ...createCharacterTagSlice(...args),
     ...createEventFeedbackSlice(...args),
     ...createJudgeObservationSlice(...args),
+    ...createJudgeNotebookSlice(...args),
 
     caseData: null,
     lieConfigs: null,
@@ -343,14 +348,32 @@ export const useGameStore: import('zustand').UseBoundStore<import('zustand').Sto
     pendingMinigame: null,
     setPendingMinigame: (mg) => set({ pendingMinigame: mg }),
 
-    recentAtomIds: { a: [], b: [] },
-    trackUsedAtoms: (party, atomIds) => set((prev) => {
-      const current = prev.recentAtomIds[party] ?? []
-      // 최근 20개만 유지 (약 5턴 × 4 atoms)
-      const updated = [...current, ...atomIds].slice(-20)
-      return { recentAtomIds: { ...prev.recentAtomIds, [party]: updated } }
+    recentAtomIds: { a: {}, b: {} },
+    trackUsedAtoms: (party, disputeId, atomIds) => set((prev) => {
+      // 기존 localStorage에 배열로 저장된 경우 object로 migration
+      const rawPartyMap = prev.recentAtomIds[party]
+      const partyMap = rawPartyMap && !Array.isArray(rawPartyMap) ? rawPartyMap : {}
+      const current = Array.isArray(partyMap[disputeId]) ? partyMap[disputeId] : []
+      // 쟁점별 최근 12개만 유지 (같은 쟁점 반복 추궁 시 3~4턴치)
+      const updated = [...current, ...atomIds].slice(-12)
+      return {
+        recentAtomIds: {
+          ...prev.recentAtomIds,
+          [party]: { ...partyMap, [disputeId]: updated },
+        },
+      }
     }),
-    getRecentAtomIds: (party): string[] => useGameStore.getState().recentAtomIds[party] ?? [],
+    getRecentAtomIds: (party, disputeId): string[] => {
+      const partyMap = useGameStore.getState().recentAtomIds[party]
+      if (!partyMap || Array.isArray(partyMap)) return []
+      const list = partyMap[disputeId]
+      return Array.isArray(list) ? list : []
+    },
+
+    emotionalLockoutUntil: { a: 0, b: 0 },
+    setEmotionalLockout: (party, untilTurn) => set((prev) => ({
+      emotionalLockoutUntil: { ...prev.emotionalLockoutUntil, [party]: untilTurn },
+    })),
 
     interrogationHistory: { a: {}, b: {} },
     trackInterrogation: (party: 'a' | 'b', disputeId: string, questionType: string, turn: number) => set((prev) => {
@@ -725,7 +748,8 @@ export const useGameStore: import('zustand').UseBoundStore<import('zustand').Sto
         witnessSessions: {},
         pendingWitnessChoice: null,
         interrogationHistory: { a: {}, b: {} },
-        recentAtomIds: { a: [], b: [] },
+        recentAtomIds: { a: {}, b: {} },
+        emotionalLockoutUntil: { a: 0, b: 0 },
         pendingMinigame: null,
         questionMeters: { a: createInitialMeterState(), b: createInitialMeterState() },
         gameEventLog: [],

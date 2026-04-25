@@ -9,6 +9,7 @@ import { openPcInteractionPanel, type PcInteractionAction } from '../layout/PCIn
 import PCImportantNotesSection, { PC_ADD_COMBINATION_NOTE_EVENT, type PcCombinationPanelEventDetail } from './PCImportantNotesSection'
 import PCCaseTimelineSection from './PCCaseTimelineSection'
 import JudgeObservationSection from '../observation/JudgeObservationSection'
+import JudgeNotebookSection from '../observation/JudgeNotebookSection'
 import JudgeObservationHistoryDrawer from '../observation/JudgeObservationHistoryDrawer'
 
 const TYPE_LABELS: Record<string, string> = {
@@ -226,6 +227,8 @@ export default function PCLeftPanel() {
       <PCImportantNotesSection />
 
       <JudgeObservationSection />
+
+      <JudgeNotebookSection />
 
       <aside className={`pc-play-timeline-panel${timelineOpen ? ' is-open' : ''}`} aria-hidden={!timelineOpen}>
         <PCCaseTimelineSection onItemClick={() => setTimelineOpen(false)} />

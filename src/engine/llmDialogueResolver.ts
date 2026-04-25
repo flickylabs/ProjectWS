@@ -1521,6 +1521,17 @@ function enforceClicheFilter(text: string): string {
   // 추가 클리셰: "사전 상의/협의" (S0-S2 금지이지만 후처리에서 일괄 필터)
   result = result.replace(/사전\s?(?:상의|협의)(?:가\s?(?:없었|부족했|누락됐))?/g, '미리 얘기')
 
+  // [atom 식별 루프] LLM 발화 중 자주 보이는 번역체 중복·기계어 — 안전 치환
+  // 결함 3 대응: "그 문구의 의미가 정확히 무엇을 뜻하는지" (의미/뜻 중복)
+  result = result.replace(/의미가\s*정확히\s*무엇을\s*뜻하는지/g, '정확히 어떤 뜻인지')
+  result = result.replace(/의미가\s*무엇을\s*뜻하는지/g, '무엇을 뜻하는지')
+  // 결함 4 대응: "혼란과 불안으로 가득 차" — 감정 번역체
+  result = result.replace(/혼란과\s*불안으로\s*가득\s*차\s*있었습니다/g, '정말 혼란스럽고 불안했습니다')
+  result = result.replace(/혼란과\s*불안으로\s*가득\s*차\s*있었/g, '정말 혼란스럽고 불안했')
+  // 결함 5 보강: "자기를 보호하려는" 외 변이형 (fixMisdirectedAddress 이후 잔존 대응)
+  result = result.replace(/자기를\s*보호하려는/g, '스스로를 지키려는')
+  result = result.replace(/자기\s*보호/g, '스스로 보호')
+
   return result
 }
 
@@ -2125,7 +2136,8 @@ async function tryBlueprintPath(
       subAction: questionType,
       stance: blueprint.stance,
       mustUseTell: blueprint.mustUseTell,
-      recentlyUsedAtomIds: store.getRecentAtomIds(target),
+      // [TC-B1] 같은 쟁점 내 회피만 페널티. 다른 쟁점 atom이 "회피 회피"로 끌려오지 않도록 disputeId 단위로 분리.
+      recentlyUsedAtomIds: store.getRecentAtomIds(target, disputeId!),
       evidenceId: action.type === 'evidence_present' ? action.evidenceId : undefined,
       isJudgeAudience: true,
       caseId: caseKey,
@@ -2134,10 +2146,10 @@ async function tryBlueprintPath(
       preferAmountSlotAtS5: requiresConcreteAmountDetail(dispute),
     })
     // [B-18 픽스] 회피 로직 활성화 — 선택된 atom IDs를 store에 기록.
-    // 이전에는 trackUsedAtoms가 어디서도 호출되지 않아 같은 atom 무한 반복 선택 결함이 있었음.
+    // [TC-B1] disputeId 단위로 분리 저장 (같은 쟁점 내에서만 회피 페널티).
     const usedAtomIds = atomPlan.selectedAtoms.map(s => s.atomId)
     if (usedAtomIds.length > 0) {
-      store.trackUsedAtoms(target, usedAtomIds)
+      store.trackUsedAtoms(target, disputeId!, usedAtomIds)
     }
     blueprintAmountHint = atomPlan.slotSelections.find((selection) => selection.family === 'amount')?.value
     systemPrompt = buildBlueprintSystemPromptV2(
@@ -2146,8 +2158,8 @@ async function tryBlueprintPath(
     // 직전 NPC 응답 추출 (반복 방지용)
     const lastNpcEntry = [...recentDialogues].reverse().find(d => d.speaker === target)
     userPrompt = buildBlueprintUserPromptV2(blueprint, judgeQuestion, lastNpcEntry?.text)
-    // 사용된 atom ID 기록 (반복 방지)
-    store.trackUsedAtoms(target, atomPlan.selectedAtoms.map(a => a.atomId))
+    // 사용된 atom ID 기록 (반복 방지) — [TC-B1] disputeId 단위로 저장
+    store.trackUsedAtoms(target, disputeId!, atomPlan.selectedAtoms.map(a => a.atomId))
     console.log(`[Blueprint V2] atom 경로: ${atomPlan.selectedAtoms.map(a => a.atomId).join(', ')}`)
     console.log(`[Blueprint V2] slots: ${atomPlan.slotSelections.map(s => `${s.family}=${s.value}`).join(', ')}`)
     console.log(`[Blueprint V2] system prompt (처음 200자):`, systemPrompt.slice(0, 200))

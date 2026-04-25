@@ -14,6 +14,7 @@ import { getAffinityScore, getAffinityGrade } from '../data/actionAffinity'
 import { getOptimalPath, getNarrativeExpansion } from '../data/caseEnrichment'
 import { normalizeCaseKey } from '../utils/caseHelpers'
 import { detectStatementChange } from '../engine/contradictionEngine'
+import { getScriptedEvidenceDiscovery } from '../engine/scriptedTextLoader'
 import { extractDisputeSubject } from '../engine/judgeQuestionEngine'
 import {
   getScriptedContradictionPursuit,
@@ -188,6 +189,24 @@ async function handleEvidencePresent(action: Extract<PlayerAction, { type: 'evid
   try {
   const state = useGameStore.getState()
   if (!state.isUnlocked(action.evidenceId)) { evidencePresentLock = false; return }
+  // [Phase B-3] 체념(셧다운) 상태에서 증거 제시도 차단. 카운팅도 안 됨.
+  const lockoutUntil = state.emotionalLockoutUntil?.[action.target] ?? 0
+  if (lockoutUntil > state.turnCount) {
+    const targetName = action.target === 'a'
+      ? state.caseData?.duo.partyA.name ?? '당사자'
+      : state.caseData?.duo.partyB.name ?? '당사자'
+    const otherName = action.target === 'a'
+      ? state.caseData?.duo.partyB.name ?? '상대방'
+      : state.caseData?.duo.partyA.name ?? '상대방'
+    state.addDialogue({
+      speaker: 'system',
+      text: `🔒 ${targetName}${pp이가(targetName)} 체념 상태입니다. ${lockoutUntil - state.turnCount}턴 후 증거를 제시할 수 있습니다. ${otherName}에게 증거를 제시하거나 다른 행동을 취해주세요.`,
+      relatedDisputes: [],
+      turn: state.turnCount,
+    })
+    evidencePresentLock = false
+    return
+  }
 
   const evDef = state.evidenceDefinitions.find((e) => e.id === action.evidenceId)
   if (!evDef) { evidencePresentLock = false; return }
@@ -210,9 +229,12 @@ async function handleEvidencePresent(action: Extract<PlayerAction, { type: 'evid
     ? visibleEvProves.map(dId => state.caseData?.disputes.find(d => d.id === dId)?.name ?? dId).join(', ')
     : '관련 쟁점'
   const reliabilityLabel = evDef.reliability === 'hard' ? 'Hard' : 'Soft'
+  // [Phase F] 증거 시스템 메시지 명칭 — deepInvestigated 전엔 surfaceName(잠금 명칭) 사용.
+  const evStateForName = state.evidenceStates[evDef.id]
+  const displayName = evStateForName?.deepInvestigated ? evDef.name : (evDef.surfaceName ?? evDef.name)
   state.addDialogue({
     speaker: 'system',
-    text: `증거 제시: ${evDef.name} [${reliabilityLabel}] → "${disputeNames}"`,
+    text: `증거 제시: ${displayName} [${reliabilityLabel}] → "${disputeNames}"`,
     relatedDisputes: visibleEvProves,
     turn: state.turnCount,
   })
@@ -220,7 +242,7 @@ async function handleEvidencePresent(action: Extract<PlayerAction, { type: 'evid
     id: state.gameEventLog.length + 1,
     turn: state.turnCount,
     type: 'event_trigger',
-    message: `증거 제시: ${evDef.name}`,
+    message: `증거 제시: ${displayName}`,
     timestamp: Date.now(),
   })
 
@@ -300,7 +322,10 @@ async function handleEvidencePresent(action: Extract<PlayerAction, { type: 'evid
     const def = state.evidenceDefinitions.find((e) => e.id === id)
     if (def) {
       playEvidenceUnlock()
-      state.addDialogue({ speaker: 'system', text: `새로운 증거를 손에 넣었다 — ${def.name}`, relatedDisputes: def.proves, turn: state.turnCount })
+      // [Phase F] 새 증거 메시지 — deepInvestigated 전엔 surfaceName(잠금 명칭) 사용
+      const newEvState = state.evidenceStates[def.id]
+      const newDisplayName = newEvState?.deepInvestigated ? def.name : (def.surfaceName ?? def.name)
+      state.addDialogue({ speaker: 'system', text: `새로운 증거를 손에 넣었다 — ${newDisplayName}`, relatedDisputes: def.proves, turn: state.turnCount })
     }
   }
 
@@ -644,6 +669,24 @@ async function handleQuestion(action: Extract<PlayerAction, { type: 'question' }
   questionLock = true
   try {
   const state = useGameStore.getState()
+  // [감정 과부하 lockout] 차단 만료 turn 까지 질문 거부 — 메시지 1회만 출력
+  const lockoutUntil = state.emotionalLockoutUntil?.[action.target] ?? 0
+  if (lockoutUntil > state.turnCount) {
+    const targetName = action.target === 'a'
+      ? state.caseData?.duo.partyA.name ?? '당사자'
+      : state.caseData?.duo.partyB.name ?? '당사자'
+    // [Phase B] 우회 안내 강화 — 다른 당사자 / 다른 행동 명시
+    const otherName = action.target === 'a'
+      ? state.caseData?.duo.partyB.name ?? '상대방'
+      : state.caseData?.duo.partyA.name ?? '상대방'
+    state.addDialogue({
+      speaker: 'system',
+      text: `🔒 ${targetName}${pp이가(targetName)} 체념 상태입니다. ${lockoutUntil - state.turnCount}턴 후 다시 질문할 수 있습니다. ${otherName}에게 질문하거나 다른 행동을 취해주세요.`,
+      relatedDisputes: [action.disputeId],
+      turn: state.turnCount,
+    })
+    return
+  }
   state.setLastFocusedDisputeId(action.disputeId)
 
   // ── 토글 모디파이어 소비 ──
@@ -1647,7 +1690,6 @@ export function actuallyDiscoverEvidence(evidenceId: string) {
 
   const { probe, slip, confirm } = getDiscoveryLines(ev, name, lieState)
   const discoverCaseKey = normalizeCaseKey(state.caseData?.caseId ?? '')
-  const { getScriptedEvidenceDiscovery } = require('../engine/scriptedTextLoader')
 
   // 1) 재판관 유도 질문
   const sProbe = getScriptedEvidenceDiscovery(discoverCaseKey, party, evidenceId, 'probe')

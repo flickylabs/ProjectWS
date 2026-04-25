@@ -62,7 +62,7 @@ export default function EmotionGuidePopup({ partyName, emotionValue, onClose }: 
             <span className="text-[10px] text-blue-500">침착</span>
             <span className="text-[10px] text-yellow-500">동요</span>
             <span className="text-[10px] text-red-500">격앙</span>
-            <span className="text-[10px] text-gray-500">셧다운</span>
+            <span className="text-[10px] text-gray-500">체념</span>
           </div>
         </div>
 

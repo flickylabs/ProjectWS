@@ -1,10 +1,28 @@
 import type { StateCreator } from 'zustand'
 import type { DialogueEntry, ClaimNode, ClaimStatus } from '../../types'
+import type { EventFeedbackItem } from './eventFeedbackSlice'
+
+/**
+ * [B-17 D 옵션] 시스템 메시지 기반 수동 트리거 모달
+ *
+ * 4종 이벤트(emergence/contradiction/interjection/emotional_burst)는
+ * 모달을 자동 띄우지 않고, 시스템 메시지에 붙은 pending payload를
+ * 플레이어가 직접 클릭했을 때만 enqueueFeedback을 호출한다.
+ */
+export interface DialoguePendingFeedback {
+  payload: Omit<EventFeedbackItem, 'id'>
+  createdTurn: number
+  /** 5턴 초과 후 자동 비활성화. 명시적 설정 없으면 5 */
+  expireAfterTurns?: number
+  consumed?: boolean
+}
 
 export interface DialogueSlice {
   dialogueLog: DialogueEntry[]
   claimGraph: ClaimNode[]
   nextDialogueId: number
+  /** [B-17 D] dialogueId → pendingFeedback 매핑. 시스템 메시지 클릭 시 모달 트리거 */
+  dialoguePendingFeedback: Record<string, DialoguePendingFeedback>
 
   addDialogue: (entry: Omit<DialogueEntry, 'id'>) => string
   addClaim: (claim: Omit<ClaimNode, 'id'>) => string
@@ -12,12 +30,17 @@ export interface DialogueSlice {
   markConflict: (disputeId: string) => void
   getClaimsForDispute: (disputeId: string) => ClaimNode[]
   clearDialogue: () => void
+  /** [B-17 D] 시스템 메시지에 수동 트리거용 pending feedback 부착 */
+  attachDialoguePendingFeedback: (dialogueId: string, payload: Omit<EventFeedbackItem, 'id'>, createdTurn: number, expireAfterTurns?: number) => void
+  /** [B-17 D] pending feedback 소모 (클릭 or 턴 경과 만료) */
+  consumeDialoguePendingFeedback: (dialogueId: string) => void
 }
 
 export const createDialogueSlice: StateCreator<DialogueSlice, [], [], DialogueSlice> = (set, get) => ({
   dialogueLog: [],
   claimGraph: [],
   nextDialogueId: 1,
+  dialoguePendingFeedback: {},
 
   addDialogue: (entry) => {
     const id = `dlg-${get().nextDialogueId}`
@@ -81,6 +104,28 @@ export const createDialogueSlice: StateCreator<DialogueSlice, [], [], DialogueSl
   },
 
   clearDialogue: () => {
-    set({ dialogueLog: [], claimGraph: [], nextDialogueId: 1 })
+    set({ dialogueLog: [], claimGraph: [], nextDialogueId: 1, dialoguePendingFeedback: {} })
+  },
+
+  attachDialoguePendingFeedback: (dialogueId, payload, createdTurn, expireAfterTurns = 5) => {
+    set((state) => ({
+      dialoguePendingFeedback: {
+        ...state.dialoguePendingFeedback,
+        [dialogueId]: { payload, createdTurn, expireAfterTurns, consumed: false },
+      },
+    }))
+  },
+
+  consumeDialoguePendingFeedback: (dialogueId) => {
+    set((state) => {
+      const current = state.dialoguePendingFeedback[dialogueId]
+      if (!current || current.consumed) return state
+      return {
+        dialoguePendingFeedback: {
+          ...state.dialoguePendingFeedback,
+          [dialogueId]: { ...current, consumed: true },
+        },
+      }
+    })
   },
 })

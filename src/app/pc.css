@@ -803,6 +803,24 @@ body.pc-mode .pc-dispute-ribbon__chip.is-flash {
   box-shadow: 0 0 0 1px rgba(212, 162, 78, 0.2), 0 0 16px rgba(212, 162, 78, 0.12);
 }
 
+/* [B-17 D-5] pending feedback 관련 쟁점 — 탑바 chip 지속 번쩍 */
+body.pc-mode .pc-dispute-ribbon__chip.is-pending-urgent {
+  border-color: rgba(255, 217, 122, 0.7) !important;
+  background: rgba(232, 193, 114, 0.18) !important;
+  animation: pc-dispute-chip-urgent 1.4s ease-in-out infinite;
+}
+@keyframes pc-dispute-chip-urgent {
+  0%, 100% {
+    box-shadow: 0 0 0 1px rgba(232, 193, 114, 0.35),
+                0 0 12px rgba(232, 193, 114, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 0 1px rgba(255, 217, 122, 1),
+                0 0 22px rgba(255, 217, 122, 0.6),
+                0 0 36px rgba(255, 217, 122, 0.3);
+  }
+}
+
 body.pc-mode .pc-dispute-ribbon__chip-index {
   font-size: 12px;
   font-weight: 800;
@@ -2905,6 +2923,104 @@ body.pc-mode .pc-play-left .pc-important-notes__scroll {
   overflow-y: auto;
   max-height: none;
   padding-right: 4px;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   [Phase D] 재판관의 수첩 — 좌측 패널 하단 섹션
+   '재판관의 관찰' 아래 위치. 자백·결정적 모순·핵심 발화 누적
+   ═══════════════════════════════════════════════════════════ */
+body.pc-mode .pc-play-left .pc-play-notebook-section {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  max-height: 260px;
+}
+body.pc-mode .pc-play-notebook-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  overflow-y: auto;
+  max-height: 220px;
+  padding-right: 4px;
+}
+body.pc-mode .pc-play-notebook-empty {
+  font-size: 11px;
+  color: #6a6e80;
+  padding: 8px 4px;
+  text-align: center;
+  font-style: italic;
+}
+body.pc-mode .pc-notebook-item {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 6px 8px;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.02);
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+body.pc-mode .pc-notebook-item:hover {
+  background: rgba(232, 193, 114, 0.08);
+  border-color: rgba(232, 193, 114, 0.25);
+}
+body.pc-mode .pc-notebook-item.is-confession {
+  border-left: 3px solid rgba(232, 193, 114, 0.65);
+}
+body.pc-mode .pc-notebook-item.is-critical_contradiction {
+  border-left: 3px solid rgba(224, 96, 96, 0.65);
+}
+body.pc-mode .pc-notebook-item.is-key_statement {
+  border-left: 3px solid rgba(91, 141, 239, 0.65);
+}
+body.pc-mode .pc-notebook-item.is-unread {
+  background: rgba(232, 193, 114, 0.06);
+}
+body.pc-mode .pc-notebook-item.is-read {
+  opacity: 0.6;
+}
+body.pc-mode .pc-notebook-item__head {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 10px;
+  color: #8c8fa0;
+}
+body.pc-mode .pc-notebook-item__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+body.pc-mode .pc-notebook-item__category {
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: #b8a86a;
+}
+body.pc-mode .pc-notebook-item__turn {
+  margin-left: auto;
+  color: #6a6e80;
+}
+body.pc-mode .pc-notebook-item__title {
+  font-size: 12px;
+  font-weight: 600;
+  color: #e6e1d5;
+  line-height: 1.35;
+}
+body.pc-mode .pc-notebook-item__sub {
+  font-size: 10px;
+  color: #8c8fa0;
+  display: flex;
+  gap: 4px;
+}
+body.pc-mode .pc-notebook-item__party {
+  color: #b8a86a;
+  font-weight: 600;
+}
+body.pc-mode .pc-notebook-item__summary {
+  color: #8c8fa0;
 }
 
 body.pc-mode .pc-play-center {
@@ -5868,6 +5984,116 @@ body.pc-mode .pc-log-system-card.is-used .pc-log-system-card__action-badge {
   background: rgba(255,255,255,0.04);
   color: #5a5e70;
   border-color: rgba(255,255,255,0.06);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   [B-17 D] pending feedback — 수동 트리거 모달 (번개 강조)
+   4종 (emergence/contradiction/interjection/emotional_burst)
+   자동 모달 폐기 → 클릭을 유도하는 강력한 시각 효과
+   ═══════════════════════════════════════════════════════════ */
+body.pc-mode .pc-log-system-card.is-pending-feedback {
+  position: relative;
+  transition: transform 0.18s ease, background 0.2s ease;
+}
+body.pc-mode .pc-log-system-card.is-pending-feedback.is-urgent {
+  border-top-color: rgba(232, 193, 114, 0.85) !important;
+  border-bottom-color: rgba(232, 193, 114, 0.85) !important;
+  background: linear-gradient(90deg,
+    rgba(232, 193, 114, 0.08),
+    rgba(232, 193, 114, 0.22) 50%,
+    rgba(232, 193, 114, 0.08)) !important;
+  color: #fbe6a8 !important;
+  box-shadow: 0 0 24px rgba(232, 193, 114, 0.35) inset;
+  animation:
+    pc-log-urgent-enter 0.65s cubic-bezier(0.2, 0.9, 0.1, 1.1) 1 both,
+    pc-log-urgent-pulse 1.6s ease-in-out 0.65s infinite !important;
+}
+body.pc-mode .pc-log-system-card.is-pending-feedback.is-urgent:hover {
+  background: linear-gradient(90deg,
+    rgba(232, 193, 114, 0.14),
+    rgba(232, 193, 114, 0.34) 50%,
+    rgba(232, 193, 114, 0.14)) !important;
+  transform: translateY(-1px);
+}
+body.pc-mode .pc-log-system-card.is-pending-feedback.is-urgent:active {
+  transform: translateY(0);
+}
+body.pc-mode .pc-log-system-card__bolt {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffd97a;
+  filter: drop-shadow(0 0 6px rgba(255, 217, 122, 0.6));
+}
+body.pc-mode .pc-log-system-card.is-pending-feedback.is-urgent .pc-log-system-card__bolt {
+  animation: pc-log-urgent-bolt 0.9s ease-in-out infinite;
+}
+body.pc-mode .pc-log-system-card.is-pending-feedback.is-urgent .pc-log-system-card__action-badge {
+  background: rgba(232, 193, 114, 0.22);
+  color: #fde4a0;
+  border: 1px solid rgba(232, 193, 114, 0.55);
+  box-shadow: 0 0 12px rgba(232, 193, 114, 0.25);
+  animation: pc-log-urgent-badge 1.2s ease-in-out infinite;
+}
+
+/* 만료·처리 — 비활성화 회색 */
+body.pc-mode .pc-log-system-card.is-pending-feedback.is-expired,
+body.pc-mode .pc-log-system-card.is-pending-feedback.is-consumed {
+  opacity: 0.45;
+  pointer-events: none;
+  background: linear-gradient(90deg,
+    rgba(90, 94, 112, 0.05),
+    rgba(90, 94, 112, 0.1) 50%,
+    rgba(90, 94, 112, 0.05)) !important;
+  color: #7a7e8c !important;
+  border-top-color: rgba(90, 94, 112, 0.25) !important;
+  border-bottom-color: rgba(90, 94, 112, 0.25) !important;
+  box-shadow: none;
+  animation: none !important;
+}
+body.pc-mode .pc-log-system-card.is-pending-feedback.is-expired .pc-log-system-card__bolt,
+body.pc-mode .pc-log-system-card.is-pending-feedback.is-consumed .pc-log-system-card__bolt {
+  color: #6b6e7a;
+  filter: none;
+  animation: none !important;
+}
+body.pc-mode .pc-log-system-card.is-pending-feedback.is-expired .pc-log-system-card__action-badge,
+body.pc-mode .pc-log-system-card.is-pending-feedback.is-consumed .pc-log-system-card__action-badge {
+  background: rgba(255, 255, 255, 0.04);
+  color: #5a5e70;
+  border-color: rgba(255, 255, 255, 0.08);
+  animation: none !important;
+  box-shadow: none;
+}
+
+@keyframes pc-log-urgent-enter {
+  0%   { transform: translateY(-12px) scale(0.92); opacity: 0; box-shadow: 0 0 60px rgba(255, 217, 122, 0.9) inset; }
+  45%  { transform: translateY(0) scale(1.035); opacity: 1; box-shadow: 0 0 42px rgba(255, 217, 122, 0.6) inset; }
+  100% { transform: translateY(0) scale(1); opacity: 1; box-shadow: 0 0 24px rgba(232, 193, 114, 0.35) inset; }
+}
+@keyframes pc-log-urgent-pulse {
+  0%, 100% {
+    border-top-color: rgba(232, 193, 114, 0.55) !important;
+    border-bottom-color: rgba(232, 193, 114, 0.55) !important;
+    box-shadow: 0 0 20px rgba(232, 193, 114, 0.28) inset;
+  }
+  50% {
+    border-top-color: rgba(255, 217, 122, 1) !important;
+    border-bottom-color: rgba(255, 217, 122, 1) !important;
+    box-shadow: 0 0 40px rgba(255, 217, 122, 0.55) inset,
+                0 0 14px rgba(255, 217, 122, 0.4);
+  }
+}
+@keyframes pc-log-urgent-bolt {
+  0%, 60%, 100% { opacity: 1; transform: scale(1) rotate(0deg); filter: drop-shadow(0 0 6px rgba(255, 217, 122, 0.6)); }
+  25%           { opacity: 0.45; transform: scale(0.9) rotate(-7deg); }
+  50%           { opacity: 1; transform: scale(1.18) rotate(7deg); filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.9)); }
+  80%           { opacity: 0.6; transform: scale(0.96) rotate(2deg); }
+}
+@keyframes pc-log-urgent-badge {
+  0%, 100% { box-shadow: 0 0 10px rgba(232, 193, 114, 0.2); }
+  50%      { box-shadow: 0 0 18px rgba(232, 193, 114, 0.55),
+                         0 0 30px rgba(232, 193, 114, 0.3); }
 }
 
 body.pc-mode .pc-log-system-explainer {

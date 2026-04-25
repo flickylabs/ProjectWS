@@ -71,6 +71,33 @@ export const createPhaseSlice: StateCreator<PhaseSlice, [], [], PhaseSlice> = (s
       phaseTurnCount: state.phaseTurnCount + 1,
     }))
 
+    // [Phase B-2] 셧다운(체념) 만료 시 emotion 자동 격앙으로 전환.
+    // 만료 직후에도 emotion ≥ 85 유지되면 다음 질문 즉시 다시 셧다운 진입 → 무한 루프.
+    // → 만료 턴에 emotion을 격앙 범위(75)로 자동 조정 + 시스템 메시지로 안내.
+    const after = get() as any
+    for (const party of ['a', 'b'] as const) {
+      const lockoutUntil = after.emotionalLockoutUntil?.[party] ?? 0
+      if (lockoutUntil > 0 && lockoutUntil === after.turnCount) {
+        const agent = party === 'a' ? after.agentA : after.agentB
+        const emotionVal = agent?.emotionalState?.internalValue ?? 0
+        if (emotionVal >= 85 && after.changeEmotion) {
+          // 격앙 영역(75)으로 떨어뜨려 즉시 재진입 방지
+          after.changeEmotion(party, -(emotionVal - 75))
+          const partyName = party === 'a'
+            ? after.caseData?.duo?.partyA?.name ?? '당사자'
+            : after.caseData?.duo?.partyB?.name ?? '당사자'
+          if (after.addDialogue) {
+            after.addDialogue({
+              speaker: 'system',
+              text: `${partyName}이(가) 호흡을 가라앉히고 다시 답할 수 있는 상태가 되었습니다.`,
+              relatedDisputes: [],
+              turn: after.turnCount,
+            })
+          }
+        }
+      }
+    }
+
     // 매 턴 끝: readiness 자동 갱신
     const fullState = get() as any
     if (fullState.updateReadiness) fullState.updateReadiness()

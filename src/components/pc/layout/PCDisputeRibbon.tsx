@@ -23,6 +23,21 @@ export default function PCDisputeRibbon() {
   const setLastFocusedDisputeId = useStore((s) => s.setLastFocusedDisputeId)
   const setPendingEvidenceView = useStore((s) => s.setPendingEvidenceView)
   const disputeVisibility = useStore((s) => s.discovery.disputeVisibility)
+  // [B-17 D-5] 아직 처리 안 된 pending feedback 메시지의 관련 쟁점 → 탑바 chip 깜빡 유도
+  const dialogueLog = useStore((s) => s.dialogueLog)
+  const dialoguePendingFeedback = useStore((s) => s.dialoguePendingFeedback)
+  const turnCount = useStore((s) => s.turnCount)
+  const urgentPendingDisputeIds = useMemo(() => {
+    const ids = new Set<string>()
+    for (const dlg of dialogueLog) {
+      const pf = dialoguePendingFeedback[dlg.id]
+      if (!pf || pf.consumed) continue
+      const expireAfter = pf.expireAfterTurns ?? 5
+      if (turnCount - pf.createdTurn >= expireAfter) continue
+      for (const dId of dlg.relatedDisputes ?? []) ids.add(dId)
+    }
+    return ids
+  }, [dialogueLog, dialoguePendingFeedback, turnCount])
 
   const [pinnedId, setPinnedId] = useState<string | null>(null)
   const [hoveredId, setHoveredId] = useState<string | null>(null)
@@ -95,9 +110,12 @@ export default function PCDisputeRibbon() {
             const isFocused = lastFocusedDisputeId === dispute.id
             const lieState = getMaxLieState(dispute.id)
 
+            const isUrgentPending = urgentPendingDisputeIds.has(dispute.id)
+
             return (
               <button
-                className={`pc-dispute-ribbon__chip${isActive ? ' is-active' : ''}${isPinned ? ' is-pinned' : ''}${isFocused ? ' is-focused' : ''}${flashId === dispute.id ? ' is-flash' : ''}`}
+                className={`pc-dispute-ribbon__chip${isActive ? ' is-active' : ''}${isPinned ? ' is-pinned' : ''}${isFocused ? ' is-focused' : ''}${flashId === dispute.id ? ' is-flash' : ''}${isUrgentPending ? ' is-pending-urgent' : ''}`}
+                data-dispute-id={dispute.id}
                 key={dispute.id}
                 onClick={() => {
                   setLastFocusedDisputeId(dispute.id)

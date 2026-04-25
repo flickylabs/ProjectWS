@@ -104,9 +104,32 @@ export const createJudgeObservationSlice: StateCreator<JudgeObservationSlice, []
       createdAt: Date.now(),
       read: false,
     }
-    set((state) => ({
-      judgeObservations: [...state.judgeObservations, entry],
-    }))
+    set((state) => {
+      // [결함 3 픽스] 관찰 과다 발동 dedup + 통합
+      // 1) 완전 중복 (turn+category+title+party 동일) → 무시, 기존 id 그대로 반환
+      const exactDuplicate = state.judgeObservations.find((o) =>
+        o.turnCount === entry.turnCount &&
+        o.category === entry.category &&
+        o.title === entry.title &&
+        (o.party ?? null) === (entry.party ?? null),
+      )
+      if (exactDuplicate) {
+        return state
+      }
+      // 2) 같은 턴 + 같은 party + 같은 category 가 이미 있으면 최신 것으로 교체 (통합)
+      //    예: contradiction 카테고리에 "변화 감지" + "방어 흔들" 동시 발생 → 마지막 1개만
+      const sameTurnSameCategoryIdx = state.judgeObservations.findIndex((o) =>
+        o.turnCount === entry.turnCount &&
+        o.category === entry.category &&
+        (o.party ?? null) === (entry.party ?? null),
+      )
+      if (sameTurnSameCategoryIdx >= 0) {
+        const updated = [...state.judgeObservations]
+        updated[sameTurnSameCategoryIdx] = entry
+        return { judgeObservations: updated }
+      }
+      return { judgeObservations: [...state.judgeObservations, entry] }
+    })
     return id
   },
 
