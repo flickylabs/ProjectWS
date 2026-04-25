@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>솔로몬 법정 — 화면별 새 레이아웃 Mock (Phase 1~2 톤 적용)</title>
+<style>
+  /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+  /* 토큰 — Phase 1~2와 동일 (사용자 결정: 일관 통일) */
+  /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+  :root {
+    --bg-deep: #0d0e12;
+    --bg-mid:  #1c1f26;
+    --bg-soft: #2a2d36;
+    --gold: #d4a24e;
+    --gold-light: #e8c172;
+    --gold-bright: #f0d890;
+    --party-a: #5b8def;
+    --party-b: #e06060;
+    --witness: #9ba87a;
+    --confession: #9b7be8;
+    --text: #ede3cc;
+    --text-dim: #b5a888;
+    --text-muted: #857b68;
+    --border-soft: rgba(212, 162, 78, 0.12);
+    --border: rgba(212, 162, 78, 0.22);
+    --border-strong: rgba(212, 162, 78, 0.4);
+    --panel-bg: linear-gradient(180deg, rgba(18,19,24,0.42), rgba(13,14,18,0.52));
+    --panel-bg-strong: linear-gradient(180deg, rgba(18,19,24,0.54), rgba(13,14,18,0.64));
+    --shadow: 0 14px 34px rgba(0,0,0,0.42);
+    --inset: inset 0 1px 0 rgba(255,255,255,0.06);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: var(--bg-deep);
+    color: var(--text);
+    padding: 32px;
+    line-height: 1.5;
+    word-break: keep-all;
+  }
+  h1 { color: var(--gold); font-size: 22px; margin-bottom: 8px; }
+  h2 { color: var(--gold-light); font-size: 18px; margin-bottom: 10px; }
+  .lead { color: var(--text-dim); font-size: 13px; margin-bottom: 32px; max-width: 800px; }
+  .lead strong { color: var(--gold-light); }
+
+  .section {
+    margin-bottom: 48px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid var(--border-soft);
+  }
+  .section-meta {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    margin-bottom: 4px;
+  }
+  .section-num {
+    font-size: 11px;
+    color: var(--text-muted);
+    letter-spacing: 0.1em;
+  }
+  .section-status {
+    font-size: 10px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    background: rgba(212, 162, 78, 0.12);
+    color: var(--gold-light);
+    letter-spacing: 0.04em;
+    font-weight: 700;
+  }
+  .section-status.is-current { background: rgba(91, 141, 239, 0.12); color: #8db4ff; }
+  .section-desc { color: var(--text-dim); font-size: 12px; margin-bottom: 18px; max-width: 700px; }
+
+  /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+  /* Mock — 공통 컨테이너 (16:9 비율 시뮬레이션) */
+  /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+  .mock {
+    width: 100%;
+    max-width: 1100px;
+    aspect-ratio: 16 / 9;
+    background: var(--bg-deep);
+    border: 1px solid var(--border-strong);
+    border-radius: 12px;
+    box-shadow: var(--shadow), var(--inset);
+    overflow: hidden;
+    position: relative;
+    display: grid;
+  }
+  .mock-label {
+    position: absolute;
+    top: 8px;
+    right: 12px;
+    font-size: 9px;
+    color: var(--text-muted);
+    letter-spacing: 0.1em;
+    background: rgba(0,0,0,0.4);
+    padding: 2px 6px;
+    border-radius: 3px;
+    z-index: 10;
+  }
+
+  /* 공통 패널 */
+  .panel {
+    background: var(--panel-bg);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 12px;
+    backdrop-filter: blur(6px);
+  }
+  .panel-strong {
+    background: var(--panel-bg-strong);
+    border-color: var(--border-strong);
+  }
+
+  /* 버튼 */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 16px;
+    border-radius: 8px;
+    border: 1.5px solid var(--gold);
+    background: rgba(212, 162, 78, 0.7);
+    color: #07070c;
+    font-size: 12px;
+    font-weight: 800;
+    cursor: pointer;
+  }
+  .btn-secondary {
+    background: transparent;
+    color: var(--text-dim);
+    border-color: var(--border);
+  }
+
+  /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+  /* 1. INTRO */
+  /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+  .mock-intro {
+    grid-template-rows: 1fr auto;
+    background: radial-gradient(ellipse at 50% 30%, rgba(212,162,78,0.12), transparent 60%), var(--bg-deep);
+  }
+  .intro-hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    gap: 24px;
+    text-align: center;
+  }
+  .intro-emblem {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 2px solid var(--gold);
+    background: radial-gradient(circle at 50% 30%, rgba(212,162,78,0.3), transparent 70%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gold);
+    font-size: 36px;
+    font-weight: 900;
+  }
+  .intro-title {
+    font-size: 32px;
+    font-weight: 900;
+    color: var(--gold-light);
+    letter-spacing: 0.04em;
+  }
+  .intro-tagline {
+    font-size: 13px;
+    color: var(--text-dim);
+    max-width: 480px;
+    line-height: 1.7;
+  }
+  .intro-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 32px;
+    border-top: 1px solid var(--border-soft);
+  }
+  .intro-dots {
+    display: flex;
+    gap: 6px;
+  }
+  .intro-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.15);
+  }
+  .intro-dot.is-active {
+    background: var(--gold);
+    width: 24px;
+    border-radius: 4px;
+  }
+
+  /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+  /* 2. HOME */
+  /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+  .mock-home {
+    grid-template-columns: 200px 1fr;
+  }
+  .home-sidebar {
+    background: rgba(0,0,0,0.25);
+    border-right: 1px solid var(--border-soft);
+    padding: 24px 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .home-brand {
+    color: var(--gold);
+    font-weight: 900;
+    font-size: 14px;
+    padding: 0 12px 16px;
+    border-bottom: 1px solid var(--border-soft);
+    margin-bottom: 12px;
+    letter-spacing: 0.04em;
+  }
+  .home-nav-item {
+    padding: 10px 14px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--text-dim);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .home-nav-item.is-active {
+    background: rgba(212,162,78,0.12);
+    color: var(--gold-light);
+    border-left: 3px solid var(--gold);
+    padding-left: 11px;
+  }
+  .home-main {
+    padding: 28px 32px;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    gap: 18px;
+    overflow: hidden;
+  }
+  .home-greeting {
+    font-size: 11px;
+    color: var(--text-muted);
+    margin-bottom: 4px;
+  }
+  .home-title {
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--gold-light);
+    margin-bottom: 4px;
+  }
+  .home-grid {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr;
+    gap: 14px;
+  }
+  .home-hero-card {
+    background: var(--panel-bg-strong);
+    border: 1px solid var(--border-strong);
+    border-radius: 12px;
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    box-shadow: var(--shadow), var(--inset);
+    background-image: linear-gradient(135deg, rgba(212,162,78,0.08) 0%, transparent 50%);
+  }
+  .home-hero-eyebrow { font-size: 10px; color: var(--gold); letter-spacing: 0.1em; font-weight: 700; }
+  .home-hero-title { font-size: 18px; font-weight: 800; color: var(--text); }
+  .home-hero-desc { font-size: 11px; color: var(--text-dim); line-height: 1.5; }
+  .home-hero-cta { margin-top: 4px; align-self: flex-start; }
+  .home-side-cards {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    gap: 10px;
+  }
+  .home-side-card {
+    background: var(--panel-bg);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .home-side-eyebrow { font-size: 9px; color: var(--text-muted); letter-spacing: 0.1em; }
+  .home-side-title { font-size: 12px; font-weight: 700; color: var(--text); }
+  .home-side-desc { font-size: 10px; color: var(--text-dim); margin-top: auto; }
+
+  /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+  /* 3. CASE BROWSER (사건 선택) */
+  /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+  .mock-case {
+    grid-template-rows: auto 1fr;
+  }
+  .case-header {
+    padding: 16px 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--border-soft);
+    background: rgba(0,0,0,0.2);
+  }
+  .case-back { font-size: 11px; color: var(--text-dim); cursor: pointer; }
+  .case-title { font-size: 16px; font-weight: 800; color: var(--gold-light); }
+  .case-search {
+    width: 200px;
+    height: 28px;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    background: rgba(0,0,0,0.3);
+    color: var(--text-dim);
+    padding: 0 10px;
+    font-size: 11px;
+  }
+  .case-body {
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    overflow: hidden;
+  }
+  .case-categories {
+    padding: 20px 12px;
+    border-right: 1px solid var(--border-soft);
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .case-cat-eyebrow { font-size: 9px; color: var(--text-muted); padding: 0 10px 8px; letter-spacing: 0.1em; }
+  .case-cat {
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 11px;
+    color: var(--text-dim);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+  }
+  .case-cat.is-active { background: rgba(212,162,78,0.1); color: var(--gold-light); }
+  .case-cat-count { font-size: 9px; color: var(--text-muted); }
+  .case-grid {
+    padding: 20px 28px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    overflow-y: auto;
+    align-content: start;
+  }
+  .case-card {
+    background: var(--panel-bg);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    transition: transform 0.15s ease;
+  }
+  .case-card-thumb {
+    aspect-ratio: 16 / 10;
+    background: linear-gradient(135deg, rgba(91,141,239,0.2), rgba(224,96,96,0.2));
+    border-bottom: 1px solid var(--border-soft);
+    position: relative;
+  }
+  .case-card-badge {
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    font-size: 8px;
+    padding: 2px 6px;
+    border-radius: 3px;
+    background: rgba(0,0,0,0.5);
+    color: var(--gold-light);
+    letter-spacing: 0.05em;
+    font-weight: 700;
+  }
+  .case-card-body { padding: 10px 12px; flex: 1; display: flex; flex-direction: column; gap: 4px; }
+  .case-card-title { font-size: 12px; font-weight: 700; color: var(--text); }
+  .case-card-meta { font-size: 9px; color: var(--text-muted); margin-top: auto; display: flex; gap: 6px; }
+
+  /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+  /* 4. JUDGE DESK (프로필) */
+  /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+  .mock-judge {
+    grid-template-columns: 220px 1fr 240px;
+  }
+  .judge-profile {
+    padding: 24px 18px;
+    border-right: 1px solid var(--border-soft);
+    background: rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .judge-avatar {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+    border-radius: 50%;
+    border: 2px solid var(--gold);
+    background: radial-gradient(circle, rgba(212,162,78,0.3), transparent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gold);
+    font-size: 36px;
+    font-weight: 900;
+  }
+  .judge-title-name {
+    text-align: center;
+    color: var(--gold-light);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+  }
+  .judge-rank {
+    text-align: center;
+    font-size: 14px;
+    font-weight: 800;
+    color: var(--text);
+    margin-bottom: 4px;
+  }
+  .judge-stage { text-align: center; font-size: 10px; color: var(--text-muted); margin-bottom: 12px; }
+  .judge-stat-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 6px 0;
+    font-size: 10px;
+    border-bottom: 1px solid var(--border-soft);
+  }
+  .judge-stat-label { color: var(--text-muted); }
+  .judge-stat-value { color: var(--text); font-weight: 700; }
+
+  .judge-pieces {
+    padding: 24px 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    overflow-y: auto;
+  }
+  .judge-section-title { color: var(--gold-light); font-size: 13px; font-weight: 800; letter-spacing: 0.02em; }
+  .judge-piece-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+  }
+  .judge-piece {
+    background: var(--panel-bg);
+    border: 1px solid var(--border-soft);
+    border-radius: 8px;
+    padding: 10px 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    text-align: center;
+  }
+  .judge-piece-icon {
+    width: 28px;
+    height: 28px;
+    margin: 0 auto;
+    border-radius: 50%;
+    background: rgba(212,162,78,0.12);
+    color: var(--gold-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+  }
+  .judge-piece-name { font-size: 9px; color: var(--text); font-weight: 700; }
+  .judge-piece-count { font-size: 11px; color: var(--gold-light); font-weight: 800; }
+
+  .judge-perks {
+    padding: 24px 18px;
+    border-left: 1px solid var(--border-soft);
+    background: rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .judge-trait-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 8px;
+    border-radius: 4px;
+    background: rgba(255,255,255,0.02);
+    font-size: 10px;
+  }
+  .judge-trait-bar {
+    flex: 1;
+    height: 4px;
+    border-radius: 2px;
+    background: rgba(255,255,255,0.05);
+    margin: 0 8px;
+    overflow: hidden;
+  }
+  .judge-trait-fill {
+    height: 100%;
+    background: var(--gold);
+    border-radius: 2px;
+  }
+  .judge-perk-card {
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    background: rgba(212,162,78,0.06);
+    font-size: 10px;
+    margin-top: 8px;
+  }
+  .judge-perk-name { color: var(--gold-light); font-weight: 800; }
+  .judge-perk-desc { color: var(--text-dim); margin-top: 2px; line-height: 1.4; }
+
+  .key-points {
+    margin-top: 16px;
+    padding: 16px 20px;
+    background: rgba(212,162,78,0.06);
+    border-radius: 10px;
+    border-left: 3px solid var(--gold);
+    max-width: 1100px;
+  }
+  .key-points h3 { color: var(--gold-light); font-size: 12px; margin-bottom: 8px; letter-spacing: 0.04em; }
+  .key-points ul { list-style: none; padding: 0; }
+  .key-points li {
+    font-size: 11px;
+    color: var(--text-dim);
+    padding: 3px 0;
+    padding-left: 14px;
+    position: relative;
+  }
+  .key-points li:before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: var(--gold);
+  }
+  .key-points li strong { color: var(--text); }
+</style>
+</head>
+<body>
+  <h1>솔로몬 법정 — 화면별 새 레이아웃 Mock</h1>
+  <p class="lead">
+    <strong>적용 톤</strong>: Phase 1~2와 동일 (다크 우드 + 골드, 옵션 1 Polished Wood) — 사용자 결정 일관 통일.<br>
+    <strong>갈아엎기 대상</strong>: Intro / Home / 사건 선택 / Judge Desk(프로필) / 설정 — UX 구조 + 컴포넌트 레이아웃 새로 설계.<br>
+    <strong>Phase 1~2 / Phase 3 / 판결 / 결과</strong>: <strong>건드리지 않음</strong>. 결함 픽스만 진행.
+  </p>
+
+  <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+  <div class="section">
+    <div class="section-meta">
+      <span class="section-num">SCREEN 01 — INTRO</span>
+      <span class="section-status">신규 레이아웃 제안</span>
+    </div>
+    <h2>인트로 슬라이드</h2>
+    <p class="section-desc">최초 진입 시 1회 노출. 게임 컨셉 + 핵심 메커니즘 3~5개 슬라이드.</p>
+
+    <div class="mock mock-intro">
+      <div class="mock-label">SLIDE 2/4</div>
+      <div class="intro-hero">
+        <div class="intro-emblem">⚖</div>
+        <div class="intro-title">솔로몬 법정</div>
+        <div class="intro-tagline">
+          AI 둘의 싸움을 인간의 지혜로 재판하는 리플레이형 추리 게임.<br>
+          매 사건마다 새로운 진실이 숨어 있습니다.
+        </div>
+        <div style="display:flex;gap:8px;margin-top:8px;">
+          <button class="btn btn-secondary">건너뛰기</button>
+          <button class="btn">다음</button>
+        </div>
+      </div>
+      <div class="intro-nav">
+        <span style="font-size:10px;color:var(--text-muted);">0:30 / 2:00</span>
+        <div class="intro-dots">
+          <div class="intro-dot"></div>
+          <div class="intro-dot is-active"></div>
+          <div class="intro-dot"></div>
+          <div class="intro-dot"></div>
+        </div>
+        <span style="font-size:10px;color:var(--text-muted);">ESC로 건너뛰기</span>
+      </div>
+    </div>
+
+    <div class="key-points">
+      <h3>핵심 변경</h3>
+      <ul>
+        <li><strong>Hero 영역</strong>: 게임 엠블럼 + 타이틀 + 한 줄 태그라인 (집중)</li>
+        <li><strong>슬라이드 인디케이터</strong>: 하단 가운데, 활성 슬라이드는 골드 막대 (현재 PCIntroSlides 패턴 유지)</li>
+        <li><strong>건너뛰기 + 다음</strong>: 우측 하단이 아닌 Hero 안쪽 (시선 자연스러운 흐름)</li>
+        <li>ESC 키 힌트 명시 — 사용자 키보드 학습 유도</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+  <div class="section">
+    <div class="section-meta">
+      <span class="section-num">SCREEN 02 — HOME (메인 메뉴)</span>
+      <span class="section-status">신규 레이아웃 제안</span>
+    </div>
+    <h2>홈 / 메인 메뉴</h2>
+    <p class="section-desc">사이드바(주요 메뉴) + 메인(현재 진행 사건 Hero + 사이드 카드 2종).</p>
+
+    <div class="mock mock-home">
+      <div class="mock-label">HOME</div>
+
+      <aside class="home-sidebar">
+        <div class="home-brand">⚖ 솔로몬 법정</div>
+        <div class="home-nav-item is-active">▸ 사건 진행</div>
+        <div class="home-nav-item">▸ 사건 선택</div>
+        <div class="home-nav-item">▸ 시즌</div>
+        <div class="home-nav-item">▸ Judge Desk</div>
+        <div class="home-nav-item">▸ 리더보드</div>
+        <div style="margin-top:auto;">
+          <div class="home-nav-item">⚙ 설정</div>
+          <div class="home-nav-item">↩ 종료</div>
+        </div>
+      </aside>
+
+      <main class="home-main">
+        <div>
+          <div class="home-greeting">안녕하세요, 재판관님</div>
+          <div class="home-title">오늘의 법정으로 들어가시겠습니까?</div>
+        </div>
+
+        <div class="home-grid">
+          <div class="home-hero-card">
+            <span class="home-hero-eyebrow">진행 중인 사건</span>
+            <div class="home-hero-title">매일 아내 몰래 오피스텔에 머무르는 남편</div>
+            <p class="home-hero-desc">
+              박지연(아내) × 이준호(남편) — 외도 의심으로 시작한 사건. Phase 2 심문 단계.
+              현재 쟁점 1개 활성, 모순 토큰 5개 누적.
+            </p>
+            <div style="display:flex;gap:8px;margin-top:auto;">
+              <button class="btn">▸ 이어서 진행</button>
+              <button class="btn btn-secondary">사건 정보</button>
+            </div>
+          </div>
+
+          <div class="home-side-cards">
+            <div class="home-side-card">
+              <span class="home-side-eyebrow">JUDGE PROGRESSION</span>
+              <div class="home-side-title">균형의 현자</div>
+              <div class="home-side-desc">5건 진행 · 9조각 27개 · 6성향 평균 Lv2</div>
+            </div>
+            <div class="home-side-card">
+              <span class="home-side-eyebrow">최근 활동</span>
+              <div class="home-side-title">spouse-01 · Phase 2</div>
+              <div class="home-side-desc">2시간 전 · 통찰 +12 / 권위 +8</div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <div class="key-points">
+      <h3>핵심 변경</h3>
+      <ul>
+        <li><strong>좌측 사이드바</strong>: 주요 메뉴 6종 + 하단 설정/종료 (현재 카드형 메뉴 → 사이드바 nav 형태)</li>
+        <li><strong>Hero 카드</strong>: 진행 중인 사건이 메인. 즉시 이어서 가능</li>
+        <li><strong>사이드 카드 2종</strong>: Judge 성장 요약 + 최근 활동 (정보 우선순위 명확)</li>
+        <li><strong>인사 + 질문</strong>: "오늘의 법정으로 들어가시겠습니까?" — 게임 톤 강화</li>
+        <li>현재 PCHomeScreen은 모드 카드/메뉴 카드 혼재 → 사이드바로 단순화</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+  <div class="section">
+    <div class="section-meta">
+      <span class="section-num">SCREEN 03 — CASE BROWSER (사건 선택)</span>
+      <span class="section-status">신규 레이아웃 제안</span>
+    </div>
+    <h2>사건 선택</h2>
+    <p class="section-desc">상단 헤더 + 좌측 카테고리 필터 + 우측 사건 카드 그리드 (3 column).</p>
+
+    <div class="mock mock-case">
+      <div class="mock-label">CASE BROWSER</div>
+
+      <div class="case-header">
+        <span class="case-back">← 홈</span>
+        <span class="case-title">사건 선택</span>
+        <input class="case-search" placeholder="사건 이름·번호 검색…" disabled>
+      </div>
+
+      <div class="case-body">
+        <aside class="case-categories">
+          <div class="case-cat-eyebrow">CATEGORIES</div>
+          <div class="case-cat is-active">전체 <span class="case-cat-count">3</span></div>
+          <div class="case-cat">부부 <span class="case-cat-count">1</span></div>
+          <div class="case-cat">가족 <span class="case-cat-count">1</span></div>
+          <div class="case-cat">친구 <span class="case-cat-count">1</span></div>
+          <div class="case-cat" style="opacity:0.4;">이웃 <span class="case-cat-count">잠금</span></div>
+          <div class="case-cat" style="opacity:0.4;">동업 <span class="case-cat-count">잠금</span></div>
+          <div class="case-cat" style="opacity:0.4;">세입 <span class="case-cat-count">잠금</span></div>
+          <div class="case-cat" style="opacity:0.4;">직장 <span class="case-cat-count">잠금</span></div>
+        </aside>
+
+        <div class="case-grid">
+          <div class="case-card">
+            <div class="case-card-thumb" style="background:linear-gradient(135deg, rgba(91,141,239,0.3), rgba(224,96,96,0.3));">
+              <span class="case-card-badge">SPOUSE · Hard</span>
+            </div>
+            <div class="case-card-body">
+              <div class="case-card-title">매일 아내 몰래 오피스텔에 머무르는 남편</div>
+              <div class="case-card-meta"><span>박지연 × 이준호</span><span>· 진행 중</span></div>
+            </div>
+          </div>
+          <div class="case-card">
+            <div class="case-card-thumb" style="background:linear-gradient(135deg, rgba(155,168,122,0.3), rgba(212,162,78,0.3));">
+              <span class="case-card-badge">FAMILY · Medium</span>
+            </div>
+            <div class="case-card-body">
+              <div class="case-card-title">유서 위조를 두고 다투는 형제</div>
+              <div class="case-card-meta"><span>윤정후 × 윤태성</span><span>· 미시작</span></div>
+            </div>
+          </div>
+          <div class="case-card">
+            <div class="case-card-thumb" style="background:linear-gradient(135deg, rgba(155,123,232,0.3), rgba(212,162,78,0.3));">
+              <span class="case-card-badge">FRIEND · Easy</span>
+            </div>
+            <div class="case-card-body">
+              <div class="case-card-title">예비신랑에 접근한 절친</div>
+              <div class="case-card-meta"><span>송다은 × 최수민</span><span>· 미시작</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="key-points">
+      <h3>핵심 변경</h3>
+      <ul>
+        <li><strong>3-column 그리드</strong>: 사건 카드가 한눈에. 활성 3건 + 추후 81건 확장 가능</li>
+        <li><strong>좌측 카테고리 필터</strong>: 7개 카테고리 (활성 3 + 잠금 4). 잠금은 흐림 처리 + 잠금 표시</li>
+        <li><strong>카드 썸네일</strong>: 카테고리별 컬러 그라디언트 (캐릭터 초상화 추가 가능)</li>
+        <li><strong>카드 메타</strong>: 카테고리 + 난이도 + 진행 상태 (진행 중/미시작/완료)</li>
+        <li>상단 검색바 — 신규 (현재 미구현)</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+  <div class="section">
+    <div class="section-meta">
+      <span class="section-num">SCREEN 04 — JUDGE DESK (프로필)</span>
+      <span class="section-status">신규 레이아웃 제안</span>
+    </div>
+    <h2>Judge Desk (재판관 데스크 / 프로필)</h2>
+    <p class="section-desc">3섹션: 좌(프로필/통계) + 중(9조각 인벤토리) + 우(6성향+15퍼크).</p>
+
+    <div class="mock mock-judge">
+      <div class="mock-label">JUDGE DESK</div>
+
+      <aside class="judge-profile">
+        <div class="judge-avatar">⚖</div>
+        <div class="judge-title-name">균형의 현자</div>
+        <div class="judge-rank">재판관 5단계</div>
+        <div class="judge-stage">VETERAN · 10건 완료</div>
+        <div class="judge-stat-row"><span class="judge-stat-label">통찰</span><span class="judge-stat-value">142</span></div>
+        <div class="judge-stat-row"><span class="judge-stat-label">권위</span><span class="judge-stat-value">98</span></div>
+        <div class="judge-stat-row"><span class="judge-stat-label">지혜</span><span class="judge-stat-value">115</span></div>
+        <div class="judge-stat-row"><span class="judge-stat-label">완료 사건</span><span class="judge-stat-value">10 / 84</span></div>
+        <div class="judge-stat-row"><span class="judge-stat-label">자백 유도</span><span class="judge-stat-value">7회</span></div>
+      </aside>
+
+      <main class="judge-pieces">
+        <div class="judge-section-title">9조각 인벤토리</div>
+        <div class="judge-piece-grid">
+          <div class="judge-piece"><div class="judge-piece-icon">🔍</div><div class="judge-piece-name">추론</div><div class="judge-piece-count">×3</div></div>
+          <div class="judge-piece"><div class="judge-piece-icon">○</div><div class="judge-piece-name">탐구(중립)</div><div class="judge-piece-count">×5</div></div>
+          <div class="judge-piece"><div class="judge-piece-icon">💗</div><div class="judge-piece-name">공감</div><div class="judge-piece-count">×2</div></div>
+          <div class="judge-piece"><div class="judge-piece-icon">⚔</div><div class="judge-piece-name">준엄</div><div class="judge-piece-count">×4</div></div>
+          <div class="judge-piece"><div class="judge-piece-icon">○</div><div class="judge-piece-name">심리(중립)</div><div class="judge-piece-count">×6</div></div>
+          <div class="judge-piece"><div class="judge-piece-icon">🤝</div><div class="judge-piece-name">이해</div><div class="judge-piece-count">×1</div></div>
+          <div class="judge-piece"><div class="judge-piece-icon">⚖</div><div class="judge-piece-name">법리</div><div class="judge-piece-count">×2</div></div>
+          <div class="judge-piece"><div class="judge-piece-icon">○</div><div class="judge-piece-name">균형(중립)</div><div class="judge-piece-count">×4</div></div>
+          <div class="judge-piece"><div class="judge-piece-icon">🪡</div><div class="judge-piece-name">봉합</div><div class="judge-piece-count">×3</div></div>
+        </div>
+
+        <div class="judge-section-title" style="margin-top:8px;">강화 / 변환</div>
+        <div style="display:flex;gap:8px;">
+          <button class="btn btn-secondary" style="font-size:11px;padding:6px 12px;">조각 강화 (Lv0→1)</button>
+          <button class="btn btn-secondary" style="font-size:11px;padding:6px 12px;">중립 변환 (3:1)</button>
+        </div>
+      </main>
+
+      <aside class="judge-perks">
+        <div class="judge-section-title">6 성향 레벨</div>
+        <div class="judge-trait-row"><span style="color:var(--gold-light);">탐구+</span><div class="judge-trait-bar"><div class="judge-trait-fill" style="width:60%;"></div></div><span>Lv2</span></div>
+        <div class="judge-trait-row"><span style="color:var(--gold-light);">탐구−</span><div class="judge-trait-bar"><div class="judge-trait-fill" style="width:30%;"></div></div><span>Lv1</span></div>
+        <div class="judge-trait-row"><span style="color:var(--gold-light);">심판+</span><div class="judge-trait-bar"><div class="judge-trait-fill" style="width:90%;"></div></div><span>Lv3</span></div>
+        <div class="judge-trait-row"><span style="color:var(--gold-light);">심판−</span><div class="judge-trait-bar"><div class="judge-trait-fill" style="width:20%;"></div></div><span>Lv0</span></div>
+        <div class="judge-trait-row"><span style="color:var(--gold-light);">해결+</span><div class="judge-trait-bar"><div class="judge-trait-fill" style="width:50%;"></div></div><span>Lv1</span></div>
+        <div class="judge-trait-row"><span style="color:var(--gold-light);">해결−</span><div class="judge-trait-bar"><div class="judge-trait-fill" style="width:40%;"></div></div><span>Lv1</span></div>
+
+        <div class="judge-section-title" style="margin-top:12px;">장착 퍼크</div>
+        <div class="judge-perk-card">
+          <div class="judge-perk-name">⭐ 냉정한 관찰 (Major)</div>
+          <div class="judge-perk-desc">감정 동요 시에도 정확한 발화 분석. lieState 전이 정확도 +25%</div>
+        </div>
+        <div class="judge-perk-card">
+          <div class="judge-perk-name">○ 모순 감각 (Minor)</div>
+          <div class="judge-perk-desc">모순 토큰 +1 보너스</div>
+        </div>
+      </aside>
+    </div>
+
+    <div class="key-points">
+      <h3>핵심 변경</h3>
+      <ul>
+        <li><strong>3섹션 풀스크린</strong>: 좌(프로필) + 중(9조각) + 우(6성향+퍼크) — 한 화면에 모든 정보</li>
+        <li><strong>좌측 프로필</strong>: 아바타 + 칭호 + 단계 + 5개 통계 (현재 모달 형태 → 풀스크린)</li>
+        <li><strong>9조각 인벤토리</strong>: 3×3 그리드, 카운트 표시. 강화/변환 버튼 하단</li>
+        <li><strong>6성향 게이지</strong>: 6줄 진행 바 (Lv0~3 시각화)</li>
+        <li><strong>장착 퍼크</strong>: Major 1 + Minor 1 카드 형태</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+  <div class="section" style="border-bottom:0;">
+    <div class="section-meta">
+      <span class="section-num">SCREEN 05 — SETTINGS (설정)</span>
+      <span class="section-status is-current">1차 구조 적용 완료</span>
+    </div>
+    <h2>설정 — 풀스크린 + 9 카테고리</h2>
+    <p class="section-desc">사이드바(9 카테고리) + 우측 옵션 영역. 이미 1차 구조 적용됨 (PCSettingsPanel.tsx). 사용자가 dev에서 확인 가능.</p>
+    <div class="key-points">
+      <h3>1차 적용 완료 (이번 사이클)</h3>
+      <ul>
+        <li>모달 → 풀스크린 (사이드바 + 메인 영역)</li>
+        <li>9 카테고리: 화면 / 오디오 / 게임플레이 / 데이터 / 언어 / 접근성 / 키보드 / 계정 / 정보</li>
+        <li><strong>화면</strong>: 기존 해상도 + 5개 예정 옵션 placeholder</li>
+        <li><strong>정보</strong>: 버전 / 크레딧 / 라이선스</li>
+        <li>나머지 7개: '준비 중' placeholder (다음 사이클 옵션 추가)</li>
+        <li>ESC 키 + 닫기 힌트</li>
+      </ul>
+    </div>
+  </div>
+
+  <p style="margin-top:20px; color:var(--text-muted); font-size:11px; text-align:center;">
+    이 Mock은 **레이아웃 구조** 시안입니다. 실제 색상/폰트/그림자는 Phase 1~2와 동일한 토큰을 적용합니다.<br>
+    사용자 검토 후 실제 컴포넌트로 구현됩니다.
+  </p>
+</body>
+</html>
