@@ -1,4 +1,5 @@
 import { useMemo, useState } from 'react'
+import { createPortal } from 'react-dom'
 import { useGameStore, useStore } from '../../../store/useGameStore'
 import PCSvgIcon from '../icons/PCSvgIcon'
 import type { JudgeObservation, JudgeObservationCategory } from '../../../store/slices/judgeObservationSlice'
@@ -60,7 +61,9 @@ export default function JudgeObservationHistoryDrawer() {
     useGameStore.getState().markAllObservationsRead()
   }
 
-  return (
+  if (typeof document === 'undefined') return null
+
+  return createPortal(
     <aside
       className={`pc-jobs-drawer${open ? ' is-open' : ''}`}
       role="dialog"
@@ -139,6 +142,7 @@ export default function JudgeObservationHistoryDrawer() {
             ))
           )}
         </ol>
-    </aside>
+    </aside>,
+    document.body,
   )
 }

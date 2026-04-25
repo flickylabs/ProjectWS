@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useMemo, useState, type DragEvent } from 'react'
+import { createPortal } from 'react-dom'
 import { useStore, useGameStore } from '../../../store/useGameStore'
 import type { DialogueEntry } from '../../../types'
 import { HOTBAR_DRAG_TYPE } from '../hotbar/pcHotbarConfig'
@@ -362,7 +363,8 @@ export default function PCImportantNotesSection() {
         </div>
       </section>
 
-      {/* ━━━ Drawer: full note list — 좌측 패널 우측으로 튀어나오는 토스트 (관찰/타임라인 드로어와 동일 패턴) ━━━ */}
+      {/* ━━━ Drawer: full note list — Portal로 body 마운트 (좌측 패널 overflow:hidden 안 잘리게) ━━━ */}
+      {typeof document !== 'undefined' && createPortal(
       <aside
         className={`pc-fav-notes-drawer${expanded ? ' is-open' : ''}`}
         role="dialog"
@@ -451,7 +453,9 @@ export default function PCImportantNotesSection() {
             </div>
           )}
         </div>
-      </aside>
+      </aside>,
+      document.body,
+      )}
     </>
   )
 }

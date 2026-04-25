@@ -1,4 +1,5 @@
 import { useCallback, useMemo, useState, type DragEvent } from 'react'
+import { createPortal } from 'react-dom'
 import { Phase, type CaseData, type EvidenceNode, type PartyId } from '../../../types'
 import { computeSurfacedEvidence } from '../../../engine/evidenceEngine'
 import { useStore } from '../../../store/useGameStore'
@@ -230,9 +231,12 @@ export default function PCLeftPanel() {
 
       <JudgeNotebookSection />
 
-      <aside className={`pc-play-timeline-panel${timelineOpen ? ' is-open' : ''}`} aria-hidden={!timelineOpen}>
-        <PCCaseTimelineSection onItemClick={() => setTimelineOpen(false)} />
-      </aside>
+      {typeof document !== 'undefined' && createPortal(
+        <aside className={`pc-play-timeline-panel${timelineOpen ? ' is-open' : ''}`} aria-hidden={!timelineOpen}>
+          <PCCaseTimelineSection onItemClick={() => setTimelineOpen(false)} />
+        </aside>,
+        document.body,
+      )}
 
       <JudgeObservationHistoryDrawer />
     </div>
