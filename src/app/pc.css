@@ -19339,7 +19339,7 @@ body.pc-mode .pc-home-info-card:hover .pc-home-info-card__arrow {
 /* 폐기된 inline action 버튼 (TSX에서 제거됨, 잔여 alias) */
 body.pc-mode .pc-home-info-card__action { display: none !important; }
 
-/* ── Session 잠금 자물쇠 SVG 오버레이 ── */
+/* ── Session 잠금 자물쇠 SVG 오버레이 (반투명, 뒤가 보이게) ── */
 body.pc-mode .pc-session-card-v2__lock-overlay {
   position: absolute;
   inset: 0;
@@ -19349,9 +19349,10 @@ body.pc-mode .pc-session-card-v2__lock-overlay {
   justify-content: center;
   gap: 10px;
   border-radius: 18px;
-  background: linear-gradient(180deg, rgba(8, 9, 12, 0.55), rgba(8, 9, 12, 0.78));
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
+  /* 반투명 dim — 뒤의 세션 정보가 비치되 자물쇠가 우선 ID 신호 */
+  background: linear-gradient(180deg, rgba(8, 9, 12, 0.32), rgba(8, 9, 12, 0.55));
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
   color: var(--pc-gold-light);
   z-index: 2;
   pointer-events: none;
@@ -19362,15 +19363,16 @@ body.pc-mode .pc-session-card-v2__lock-overlay span {
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--pc-text-dim);
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
 }
 body.pc-mode .pc-session-card-v2__lock-overlay svg {
-  filter: drop-shadow(0 0 12px rgba(212, 162, 78, 0.32));
-  opacity: 0.85;
+  filter: drop-shadow(0 0 12px rgba(212, 162, 78, 0.45));
+  opacity: 0.92;
 }
 
-/* 잠긴 카드는 inner content fade, lock overlay만 풀 가시성 */
+/* 잠긴 카드 inner content — 살짝 흐림 (.18 → .55, 뭐가 잠겨있는지 보임) */
 body.pc-mode .pc-session-card-v2.is-disabled .pc-session-card-v2__inner > * {
-  opacity: 0.18 !important;
+  opacity: 0.55 !important;
 }
 
 /* ── DepthHeader title 살짝 더 강조 (28 → 32px, 짧은 타이틀에 적합) ── */
@@ -19734,6 +19736,85 @@ body.pc-mode .pc-achievement-strip__track {
   display: grid !important;
   grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
   gap: 12px !important;
+}
+
+/* ──────────────────────────────────────────────────
+   페이지 상단 spacing 확보 + 컨텐츠 max-width 통일
+   "텍스트 적은 페이지가 너무 위에 붙지 않도록"
+   ────────────────────────────────────────────────── */
+body.pc-mode .pc-depth-shell {
+  margin-top: 0 !important;
+  margin-bottom: 32px !important;
+  padding: 64px 48px 48px !important;
+  max-width: 1280px;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  min-height: calc(100vh - 32px) !important;
+}
+
+/* 사건 선택 (Case Browser) 도 동일 padding — pc-depth-shell 안에서 한번 더 잡지 않게 */
+body.pc-mode .pc-depth-shell > .cb {
+  height: 100%;
+}
+
+/* ──────────────────────────────────────────────────
+   사건 선택씬 — brief 패널 가로폭 축소 + 가운데 정렬
+   ────────────────────────────────────────────────── */
+body.pc-mode .cb__split {
+  display: grid !important;
+  grid-template-columns: 360px minmax(0, 540px) !important;
+  gap: 32px !important;
+  flex: 1;
+  min-height: 0;
+  max-width: 980px;
+  margin: 0 auto !important;
+  width: 100%;
+}
+
+/* 좌측 stage 리스트도 max-height 조정 */
+body.pc-mode .cb__stages {
+  max-height: calc(100vh - 280px) !important;
+}
+
+/* HERO — 가운데 사건 제목 영역 디자인스럽게 */
+body.pc-mode .cb__brief-hero {
+  grid-template-columns: 80px 1fr 80px !important;
+  gap: 18px !important;
+  padding: 36px 24px 28px !important;
+}
+body.pc-mode .cb__brief-portrait {
+  width: 72px !important;
+  height: 72px !important;
+}
+/* 인물 이름 위치 정렬 — portrait 아래 */
+body.pc-mode .cb__brief-character {
+  gap: 8px !important;
+}
+body.pc-mode .cb__brief-headline {
+  font-size: clamp(20px, 1.8vw, 24px) !important;
+  line-height: 1.25 !important;
+}
+body.pc-mode .cb__brief-bait {
+  font-size: 13px !important;
+  max-width: 320px;
+}
+
+/* brief grid spacing */
+body.pc-mode .cb__brief-grid {
+  padding: 22px 24px !important;
+  gap: 18px !important;
+}
+body.pc-mode .cb__brief-section h4 {
+  margin: 0 0 10px !important;
+}
+body.pc-mode .cb__brief-item {
+  padding: 11px 14px !important;
+  font-size: 14px !important;
+}
+
+/* 푸터 spacing */
+body.pc-mode .cb__brief-footer {
+  padding: 16px 24px 20px !important;
 }
 
 /* Filter pills v2 — Settings/Leaderboard에서 사용 */

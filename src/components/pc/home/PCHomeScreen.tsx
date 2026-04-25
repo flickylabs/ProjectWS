@@ -226,7 +226,7 @@ export default function PCHomeScreen() {
                 <button className={`pc-session-card-v2 pc-session-card-v2--${session.accent}${disabled ? ' is-disabled' : ''}`} disabled={disabled} key={session.id} onClick={() => { setSelectedSession(session.id); setView('generalCases') }} type="button">
                   <div className="pc-session-card-v2__inner">
                     <div className="pc-session-card-v2__top"><span>{`SESSION ${String(index + 1).padStart(2, '0')}`}</span><strong>{disabled ? '준비 중' : `${progress.completedCount}/${progress.totalCount}`}</strong></div>
-                    <div className="pc-session-card-v2__main"><span className="pc-session-card-v2__icon"><PCSessionIcon sessionId={session.id} size={80} fallbackSymbolId={session.iconId} alt={session.label} /></span><div className="pc-session-card-v2__body"><h3>{session.label}</h3><p className="pc-session-card-v2__tagline">{session.tagline}</p>{progress.averageScore != null ? <span className="pc-session-card-v2__avg">{`평균 ${progress.averageScore}점`}</span> : null}</div></div>
+                    <div className="pc-session-card-v2__main"><span className="pc-session-card-v2__icon"><PCSessionIcon sessionId={session.id} size={56} fallbackSymbolId={session.iconId} alt={session.label} /></span><div className="pc-session-card-v2__body"><h3>{session.label}</h3><p className="pc-session-card-v2__tagline">{session.tagline}</p>{progress.averageScore != null ? <span className="pc-session-card-v2__avg">{`평균 ${progress.averageScore}점`}</span> : null}</div></div>
                     <div className="pc-session-card-v2__track"><i style={{ width: `${progress.progressRate}%` }} /></div>
                   </div>
                   {disabled && (
@@ -243,11 +243,11 @@ export default function PCHomeScreen() {
       )}
 
       {view === 'generalCases' && selectedSessionMeta && (
-        <PCCaseBrowser accentIconId={selectedSessionMeta.iconId} cases={selectedSessionCases} description={`${selectedSessionMeta.tagline}. 선택한 사건은 브리핑을 거쳐 바로 재판으로 이어집니다.`} eyebrow="일반 모드" onBack={() => setView('general')} onSelectCase={startCase} progressLabel={`${sessionProgress[selectedSessionMeta.id].completedCount}/${sessionProgress[selectedSessionMeta.id].totalCount}`} showCompletedFilter title={`${selectedSessionMeta.label} · ${selectedSessionCases.length}건`} />
+        <section className="pc-depth-shell"><PCCaseBrowser accentIconId={selectedSessionMeta.iconId} cases={selectedSessionCases} description={`${selectedSessionMeta.tagline}. 선택한 사건은 브리핑을 거쳐 바로 재판으로 이어집니다.`} eyebrow="일반 모드" onBack={() => setView('general')} onSelectCase={startCase} progressLabel={`${sessionProgress[selectedSessionMeta.id].completedCount}/${sessionProgress[selectedSessionMeta.id].totalCount}`} showCompletedFilter title={`${selectedSessionMeta.label} · ${selectedSessionCases.length}건`} /></section>
       )}
 
       {view === 'season' && (
-        <PCCaseBrowser accentIconId="i-crown" cases={seasonCases} description={`${season.name}에 배정된 사건들입니다. 시즌 전용 사건은 추후 선별 배정됩니다.`} emptyDescription="시즌 배정이 열리면 이곳에 자동으로 반영됩니다." emptyTitle="현재 시즌 사건이 아직 배정되지 않았습니다." eyebrow={season.name} onBack={() => setView('home')} onSelectCase={startCase} progressLabel={`${seasonProgress.completedCount}/${seasonProgress.totalCount}`} title="시즌 모드" />
+        <section className="pc-depth-shell"><PCCaseBrowser accentIconId="i-crown" cases={seasonCases} description={`${season.name}에 배정된 사건들입니다. 시즌 전용 사건은 추후 선별 배정됩니다.`} emptyDescription="시즌 배정이 열리면 이곳에 자동으로 반영됩니다." emptyTitle="현재 시즌 사건이 아직 배정되지 않았습니다." eyebrow={season.name} onBack={() => setView('home')} onSelectCase={startCase} progressLabel={`${seasonProgress.completedCount}/${seasonProgress.totalCount}`} title="시즌 모드" /></section>
       )}
 
       {view === 'profile' && (

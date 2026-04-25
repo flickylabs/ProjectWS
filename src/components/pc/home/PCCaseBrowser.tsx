@@ -25,7 +25,7 @@ export default function PCCaseBrowser({
   eyebrow,
   title,
   description,
-  progressLabel,
+  progressLabel: _progressLabel,
   cases,
   onBack,
   onSelectCase,
@@ -73,12 +73,13 @@ export default function PCCaseBrowser({
 
   return (
     <div className="cb">
-      {/* ── 헤더 ── */}
-      <header className="cb__header">
-        <button className="pc-depth-back" onClick={onBack} type="button"><span aria-hidden="true">‹</span> 뒤로</button>
-        <div className="cb__header-info">
+      {/* ── 헤더 (DepthHeader와 동일한 위치 패턴) ── */}
+      <header className="cb__header pc-depth-header">
+        <button className="pc-depth-back" onClick={onBack} type="button"><span aria-hidden="true">‹</span>뒤로</button>
+        <div className="cb__header-info pc-depth-header__copy">
           <span className="cb__eyebrow">{eyebrow ?? 'CASE BROWSER'}</span>
           <h2>{title}</h2>
+          {description && <p>{description}</p>}
         </div>
         <div className="cb__header-tools">
           {showCompletedFilter && (
@@ -92,7 +93,7 @@ export default function PCCaseBrowser({
               ><i /></button>
             </label>
           )}
-          <span className="cb__count">{progressLabel ?? `${filteredCases.length}건`}</span>
+          <span className="cb__count">{filteredCases.length}건</span>
         </div>
       </header>
 
