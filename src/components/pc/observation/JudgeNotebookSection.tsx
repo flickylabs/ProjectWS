@@ -1,6 +1,7 @@
 import { useMemo, useState, useEffect, useRef } from 'react'
 import { useStore } from '../../../store/useGameStore'
 import PCSvgIcon from '../icons/PCSvgIcon'
+import { showToast } from '../../common/Toast'
 import { openPcInteractionPanel } from '../layout/PCInteractionPanel'
 import { jumpToDialogue } from './JudgeObservationSection'
 import type { JudgeNotebookEntry, JudgeNotebookCategory } from '../../../store/slices/judgeNotebookSlice'
@@ -21,6 +22,13 @@ const CATEGORY_TONE: Record<JudgeNotebookCategory, 'gold' | 'red' | 'blue'> = {
   confession: 'gold',
   critical_contradiction: 'red',
   key_statement: 'blue',
+}
+
+/** 관찰 카테고리 시각 매핑 — 수첩 카테고리를 관찰 CSS 변수에 맞춰 재사용 */
+const CATEGORY_TO_OBS: Record<JudgeNotebookCategory, string> = {
+  confession: 'event',
+  critical_contradiction: 'contradiction',
+  key_statement: 'state',
 }
 
 /** 미니 타임라인 표시 개수 */
@@ -81,16 +89,22 @@ export default function JudgeNotebookSection() {
         ...(entry.linkedDialogueId ? [{ kind: 'close' as const, label: '발화로 이동' }] : []),
       ],
     })
-    // 발화 점프 (관찰 동일 패턴 — 별도 함수 호출)
     if (entry.linkedDialogueId) {
       window.setTimeout(() => jumpToDialogue(entry.linkedDialogueId), 100)
     }
   }
 
+  const openHelpToast = () => {
+    showToast('자백·결정적 모순·핵심 발화 등 게임에 영향을 주는 결정적 사건이 자동 기록됩니다.', 'info')
+  }
+
   const isFresh = main ? turnCount - main.turnCount <= 1 : false
 
   return (
-    <section className="sec pc-play-notebook-section" aria-label="재판관의 수첩">
+    <section
+      className="sec pc-judge-observation-section pc-judge-observation-section--notebook"
+      aria-label="재판관의 수첩"
+    >
       <div className="sec-h">
         <PCSvgIcon id="i-doc" size={14} />
         <span>재판관의 수첩</span>
@@ -99,22 +113,31 @@ export default function JudgeNotebookSection() {
         ) : entries.length > 0 ? (
           <span className="cnt">{entries.length}</span>
         ) : null}
-        <span className="pc-evidence-help" title="자백·결정적 모순·핵심 발화 등 게임에 영향을 주는 결정적 사건이 기록됩니다">?</span>
+        <button
+          type="button"
+          className="pc-jobs-history-btn"
+          onClick={openHelpToast}
+          title="수첩 도움말"
+          aria-label="수첩 도움말"
+        >
+          <PCSvgIcon id="i-bulb" size={12} />
+        </button>
       </div>
 
-      {/* 미니 타임라인 — 최근 항목 도트 */}
-      <div className="pc-notebook-mini-timeline" role="list" aria-label="최근 수첩 흐름">
+      {/* 미니 타임라인 — 관찰과 동일 클래스 (.pc-jobs-mini-timeline) */}
+      <div className="pc-jobs-mini-timeline" role="list" aria-label="최근 수첩 흐름">
         {timeline.length === 0 ? (
-          <span className="pc-notebook-mini-timeline__empty" aria-hidden="true">···</span>
+          <span className="pc-jobs-mini-timeline__empty" aria-hidden="true">···</span>
         ) : (
           timeline.map((entry, idx) => {
             const isActive = idx === timeline.length - 1
+            const obsCategory = CATEGORY_TO_OBS[entry.category]
             return (
               <button
                 key={entry.id}
                 type="button"
                 role="listitem"
-                className={`pc-notebook-mini-dot is-${entry.category}${isActive ? ' is-active' : ''}${entry.read ? '' : ' is-unread'}`}
+                className={`pc-jobs-mini-dot is-${obsCategory}${isActive ? ' is-active' : ''}${entry.read ? '' : ' is-unread'}`}
                 onClick={() => openEntryDetail(entry)}
                 title={entry.title}
               >
@@ -125,31 +148,31 @@ export default function JudgeNotebookSection() {
         )}
       </div>
 
-      {/* 메인 슬롯 — 가장 최근 결정적 사건 (관찰 동일 구조) */}
+      {/* 메인 슬롯 — 관찰과 동일 클래스 (.pc-jobs-main) */}
       {main ? (
         <button
           type="button"
           key={main.id}
-          className={`pc-notebook-main is-${main.category}${isFresh ? ' is-fresh' : ' is-dim'}${main.read ? '' : ' is-unread'}`}
+          className={`pc-jobs-main is-${CATEGORY_TO_OBS[main.category]}${isFresh ? ' is-fresh' : ' is-dim'}`}
           onClick={() => openEntryDetail(main)}
         >
-          <span className="pc-notebook-main__bar" aria-hidden="true" />
-          <span className="pc-notebook-main__icon">
+          <span className="pc-jobs-main__bar" aria-hidden="true" />
+          <span className="pc-jobs-main__icon">
             <PCSvgIcon id={main.iconId ?? CATEGORY_ICON[main.category]} size={20} />
           </span>
-          <span className="pc-notebook-main__body">
-            <span className="pc-notebook-main__title">{main.title}</span>
+          <span className="pc-jobs-main__body">
+            <span className="pc-jobs-main__title">{main.title}</span>
             {main.summary ? (
-              <span className="pc-notebook-main__summary">{main.summary}</span>
+              <span className="pc-jobs-main__summary">{main.summary}</span>
             ) : (
-              <span className="pc-notebook-main__summary">{CATEGORY_LABEL[main.category]} · 턴 {main.turnCount}</span>
+              <span className="pc-jobs-main__summary">{CATEGORY_LABEL[main.category]} · 턴 {main.turnCount}</span>
             )}
           </span>
-          <span className="pc-notebook-main__time">{formatTurnGap(turnCount, main.turnCount)}</span>
+          <span className="pc-jobs-main__time">{formatTurnGap(turnCount, main.turnCount)}</span>
         </button>
       ) : (
-        <div className="pc-notebook-main is-empty" aria-hidden="true">
-          <span className="pc-notebook-main__empty-text">결정적 사건이 일어나면 여기에 기록됩니다.</span>
+        <div className="pc-jobs-main is-empty" aria-hidden="true">
+          <span className="pc-jobs-main__empty-text">결정적 사건이 일어나면 여기에 기록됩니다.</span>
         </div>
       )}
     </section>

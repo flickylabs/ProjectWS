@@ -2927,9 +2927,18 @@ body.pc-mode .pc-play-left .pc-important-notes__scroll {
 
 /* ═══════════════════════════════════════════════════════════
    [Phase D + N9] 재판관의 수첩 — 좌측 패널 하단 섹션
-   재판관의 관찰과 동일 구조 (헤더 + 미니 타임라인 + 메인 슬롯)
-   클릭 시 PCInteractionPanel 토스트 + 발화 점프
+   재판관의 관찰과 동일 클래스(.pc-judge-observation-section)를 사용해
+   시각 100% 통일. 수첩 전용 modifier(--notebook)로 height만 확장.
    ═══════════════════════════════════════════════════════════ */
+body.pc-mode .pc-play-left .pc-judge-observation-section--notebook {
+  /* 관찰의 200px 기본을 약간 키움 — flex grow는 사용 X (부모 overflow → 탑바 밀림 방지) */
+  flex: 0 0 240px !important;
+  min-height: 240px !important;
+  max-height: 240px !important;
+  height: 240px !important;
+}
+
+/* (legacy) 기존 .pc-play-notebook-section 남겨둠 — 다른 위치에서 참조 가능 */
 body.pc-mode .pc-play-left .pc-play-notebook-section {
   flex: 0 0 200px !important;
   height: 200px !important;
