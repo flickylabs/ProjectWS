@@ -8494,13 +8494,11 @@ body.pc-mode .pc-play-left {
   position: relative !important;
   display: flex !important;
   flex-direction: column !important;
-  gap: 8px !important;
+  gap: 6px !important;
   min-height: 0 !important;
   height: 100% !important;
   max-height: 100% !important;
-  padding: 12px 18px 8px !important;
-  /* drawer 3종은 createPortal로 document.body 마운트 → 좌측 패널 overflow hidden 안전.
-   * 수첩 grow 1로 캐릭터 카드 끝까지 확장되어도 자식 합 viewport 초과 시 잘림으로 처리. */
+  padding: 10px 18px 6px !important;
   overflow: hidden !important;
 }
 
@@ -8509,9 +8507,17 @@ body.pc-mode .pc-play-left .sec {
   min-width: 0 !important;
 }
 
-/* 좌측 패널 4 섹션 헤더-콘텐츠 gap 압축 (사용자 요청 04-27 — 라인 맞춤) */
+/* 섹션 헤더-콘텐츠 gap 압축 */
 body.pc-mode .pc-play-left .sec > .sec-h {
-  margin-bottom: 4px !important;
+  margin-bottom: 3px !important;
+}
+
+/* 위/아래 그룹 정렬 분리 (사용자 요청 04-27):
+ * - 증거수첩 + 발언노트: 위쪽 정렬 (top-anchored, 자연 흐름)
+ * - 관찰 + 수첩: 아래쪽 정렬 (bottom-anchored, 캐릭터 카드 끝선 기준)
+ * 발언노트에 margin-bottom: auto → 그 아래 자식들이 패널 하단에 붙음 */
+body.pc-mode .pc-play-left .pc-important-notes-section {
+  margin-bottom: auto !important;
 }
 
 body.pc-mode .pc-play-evidence-section {
