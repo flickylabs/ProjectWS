@@ -1,0 +1,108 @@
+{
+  "spouse-01": {
+    "totalDisputes": 4,
+    "hiddenCount": 3,
+    "hiddenDisputes": [
+      {
+        "id": "d-2",
+        "name": "개인 비자금 2,000만원 출금",
+        "truthDescription": "이준호는 본인 명의 개인 계좌의 비자금에서 2,000만원을 현금으로 출금하여 형에게 전달했다. 형이 개인회생 중이라 계좌 입금이 불가능했다. 공동 적금과는 무관한 개인 자금이다.",
+        "v3Visibility": "hidden",
+        "hidden": false,
+        "emergenceRoutes": []
+      },
+      {
+        "id": "h-d3",
+        "name": "공동 적금 3,000만원 해지 (위임장 조작)",
+        "truthDescription": "박지연은 이준호 명의 위임장을 조작하여 공동 적금 3,000만원을 해지했다. 이는 범죄 행위이며, 해지한 돈을 투자방에 전액 송금했다가 사기로 손실했다.",
+        "v3Visibility": "hidden",
+        "hidden": true,
+        "emergenceRoutes": []
+      },
+      {
+        "id": "h-d4",
+        "name": "은폐와 선제행동의 순서",
+        "truthDescription": "숨김은 B가 먼저(개인 비자금 2천만+형 상황 은폐), 계좌 감시는 A가 먼저(신혼 초), 돈 실행은 동시기(B 4개월 전 2천만 현금 출금, A 6주 전 공동 적금 3천만 위임장 조작 해지), 범죄 행위는 A(위임장 조작).",
+        "v3Visibility": "hidden",
+        "hidden": true,
+        "emergenceRoutes": []
+      }
+    ]
+  },
+  "family-01": {
+    "totalDisputes": 5,
+    "hiddenCount": 4,
+    "hiddenDisputes": [
+      {
+        "id": "d-2",
+        "name": "60:40 유서의 진짜 의도",
+        "truthDescription": "윤정후는 어머니가 90:10으로 남긴 원본 유서를 60:40으로 조작했다. 자기 몫을 줄인 조작이었지만 위조는 위조다.",
+        "v3Visibility": "hidden",
+        "hidden": false,
+        "emergenceRoutes": []
+      },
+      {
+        "id": "d-3",
+        "name": "20년 송금의 실체",
+        "truthDescription": "윤정후는 20년간 매달 어머니에게 생활비를 보냈고, 형의 공장 부도 위기 때 큰돈도 대신 갚았다. 어머니 돈처럼 보였던 것의 상당수가 사실 윤정후의 돈이었다.",
+        "v3Visibility": "hidden",
+        "hidden": true,
+        "emergenceRoutes": []
+      },
+      {
+        "id": "d-4",
+        "name": "출생 비밀과 침묵의 이유",
+        "truthDescription": "윤태성은 어머니와 아버지가 완전히 같은 사람의 자식이 아니다. 윤정후는 일기장에서 이 사실을 알게 됐고, 형이 알면 삶의 기반이 무너질까 봐 유서를 90에서 60으로 줄여 법정까지 안 가게 하려 했다.",
+        "v3Visibility": "hidden",
+        "hidden": true,
+        "emergenceRoutes": []
+      },
+      {
+        "id": "d-5",
+        "name": "어머니 이용의 진짜 주체",
+        "truthDescription": "A는 B가 어머니를 이용했다고 단정했지만, 진실은 둘 다 어머니를 있는 그대로 두지 못했다. A는 유산을 당연시했고, B는 어머니 뜻을 고쳐 형을 보호하려 했다.",
+        "v3Visibility": "hidden",
+        "hidden": true,
+        "emergenceRoutes": []
+      }
+    ]
+  },
+  "friend-01": {
+    "totalDisputes": 5,
+    "hiddenCount": 4,
+    "hiddenDisputes": [
+      {
+        "id": "d-2",
+        "name": "예비신랑의 선넘는 접근",
+        "truthDescription": "예비신랑이 먼저 B에게 선넘는 메시지를 보냈고, B는 거절했다. B가 이후 연락한 건 이 상황의 연장선이었다.",
+        "v3Visibility": "hidden",
+        "hidden": false,
+        "emergenceRoutes": []
+      },
+      {
+        "id": "d-3",
+        "name": "아버지의 돈 접근 패턴",
+        "truthDescription": "A 아버지가 예비신랑에게 돈 얘기를 꺼내고 있었고, B는 과거에 같은 패턴을 당한 적이 있어 예비신랑에게 경고하려 했다.",
+        "v3Visibility": "hidden",
+        "hidden": true,
+        "emergenceRoutes": []
+      },
+      {
+        "id": "d-4",
+        "name": "과거 손절과 아버지의 사기",
+        "truthDescription": "과거 손절의 진짜 원인은 A 아버지가 B에게 투자 명목으로 돈을 받아간 사기였다. B는 A에게 말하면 아버지가 사기꾼이라는 뜻이 되므로 차마 말하지 못하고 악역을 자처했다.",
+        "v3Visibility": "hidden",
+        "hidden": true,
+        "emergenceRoutes": []
+      },
+      {
+        "id": "d-5",
+        "name": "단톡방 매도와 명예훼손",
+        "truthDescription": "A가 확인 없이 단톡방에서 B를 매도했고, B는 또 악역을 자처하는 구조가 반복됐다. 두 사람 모두 확인 전에 단정한 책임이 있다.",
+        "v3Visibility": "hidden",
+        "hidden": true,
+        "emergenceRoutes": []
+      }
+    ]
+  }
+}

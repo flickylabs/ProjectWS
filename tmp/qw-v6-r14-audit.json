@@ -1,0 +1,28 @@
+{
+  "round": "14",
+  "caseId": "spouse-01",
+  "scenario": "R14 spouse-01 re-run regex v2",
+  "sourceTranscript": "tests/transcripts/spouse-01.json",
+  "totalTurns": 40,
+  "counts": {
+    "8-a": 0,
+    "8-b": 0,
+    "8-c": 0,
+    "8-d": 0,
+    "9-a": 0,
+    "9-b": 0,
+    "9-c": 0,
+    "9-d": 0,
+    "9-e": 0,
+    "9-f": 0,
+    "9-g": 0,
+    "10-a": 0,
+    "10-b": 0,
+    "10-c": 0,
+    "10-d": 0,
+    "10-e": 0,
+    "forbid": 0
+  },
+  "issues": [],
+  "generatedAt": "2026-04-24T07:45:09.361Z"
+}
