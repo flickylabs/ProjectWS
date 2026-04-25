@@ -6,6 +6,11 @@ import PCCharacterPortrait from '../icons/PCCharacterPortrait'
 import { getDifficultyLabel, sortCasesForBrowser } from './pcHomeShared'
 
 const CLEAR_SCORE_THRESHOLD = 40
+const TOTAL_SLOTS = 12
+
+type StageEntry =
+  | { caseData: CaseData; num: string; score: number; cleared: boolean; unlocked: boolean; placeholder: false }
+  | { caseData: null; num: string; score: 0; cleared: false; unlocked: false; placeholder: true }
 
 interface Props {
   accentIconId?: string
@@ -49,37 +54,46 @@ export default function PCCaseBrowser({
     return sorted.filter(c => (progressMap[c.caseId]?.bestScore ?? 0) >= CLEAR_SCORE_THRESHOLD)
   }, [cases, progressMap, showCompletedFilter, showCompletedOnly])
 
-  const stages = useMemo(() => {
+  const stages = useMemo<StageEntry[]>(() => {
     let prevCleared = true
-    return filteredCases.map((caseData, i) => {
+    const result: StageEntry[] = []
+    for (let i = 0; i < TOTAL_SLOTS; i++) {
+      const caseData = filteredCases[i]
+      const num = String(i + 1).padStart(2, '0')
+      if (!caseData) {
+        result.push({ caseData: null, num, score: 0, cleared: false, unlocked: false, placeholder: true })
+        continue
+      }
       const score = progressMap[caseData.caseId]?.bestScore ?? 0
       const cleared = score >= CLEAR_SCORE_THRESHOLD
       const unlocked = i === 0 || prevCleared
       prevCleared = cleared
-      return { caseData, num: String(i + 1).padStart(2, '0'), score, cleared, unlocked }
-    })
+      result.push({ caseData, num, score, cleared, unlocked, placeholder: false })
+    }
+    return result
   }, [filteredCases, progressMap])
 
+  const realStages = stages.filter((s): s is Extract<StageEntry, { placeholder: false }> => !s.placeholder)
+
   const defaultId = useMemo(() => {
-    if (stages.length === 0) return null
-    let latest = stages[0].caseData.caseId
-    for (const s of stages) { if (!s.unlocked) break; latest = s.caseData.caseId }
+    if (realStages.length === 0) return null
+    let latest = realStages[0].caseData.caseId
+    for (const s of realStages) { if (!s.unlocked) break; latest = s.caseData.caseId }
     return latest
-  }, [stages])
+  }, [realStages])
 
   const activeId = selectedCaseId ?? defaultId
-  const activeStage = stages.find(s => s.caseData.caseId === activeId)
+  const activeStage = realStages.find(s => s.caseData.caseId === activeId)
   const activeCase = activeStage?.caseData ?? null
 
   return (
     <div className="cb">
-      {/* ── 헤더 (DepthHeader와 동일한 위치 패턴) ── */}
+      {/* ── 헤더 (DepthHeader와 동일한 위치 패턴, description 폐기로 깔끔하게) ── */}
       <header className="cb__header pc-depth-header">
         <button className="pc-depth-back" onClick={onBack} type="button"><span aria-hidden="true">‹</span>뒤로</button>
         <div className="cb__header-info pc-depth-header__copy">
           <span className="cb__eyebrow">{eyebrow ?? 'CASE BROWSER'}</span>
           <h2>{title}</h2>
-          {description && <p>{description}</p>}
         </div>
         <div className="cb__header-tools">
           {showCompletedFilter && (
@@ -97,7 +111,7 @@ export default function PCCaseBrowser({
         </div>
       </header>
 
-      {stages.length === 0 ? (
+      {realStages.length === 0 ? (
         <div className="cb__empty">
           <PCSvgIcon id="i-doc" size={28} />
           <strong>{emptyTitle}</strong>
@@ -105,15 +119,31 @@ export default function PCCaseBrowser({
         </div>
       ) : (
         <div className="cb__split">
-          {/* ── 좌: 지그재그 스테이지맵 ── */}
+          {/* ── 좌: 지그재그 스테이지맵 (12 슬롯, 미정은 ???) ── */}
           <div className="cb__stages">
             <div className="cb__zigzag">
               <div className="cb__zigzag-line" />
               {stages.map((s, i) => {
-                const active = activeId === s.caseData.caseId
+                const active = !s.placeholder && activeId === s.caseData.caseId
                 const side = i % 2 === 0 ? 'left' : 'right'
+                const key = s.placeholder ? `placeholder-${i}` : s.caseData.caseId
+                if (s.placeholder) {
+                  return (
+                    <div className={`cb__zigzag-row cb__zigzag-row--${side}`} key={key}>
+                      <button
+                        className="cb__stage is-locked is-placeholder"
+                        disabled
+                        type="button"
+                        aria-label={`${s.num} 미정`}
+                      >
+                        <span className="cb__stage-num">{s.num}</span>
+                        <span className="cb__stage-score">???</span>
+                      </button>
+                    </div>
+                  )
+                }
                 return (
-                  <div className={`cb__zigzag-row cb__zigzag-row--${side}`} key={s.caseData.caseId}>
+                  <div className={`cb__zigzag-row cb__zigzag-row--${side}`} key={key}>
                     <button
                       className={`cb__stage${active ? ' is-active' : ''}${s.cleared ? ' is-cleared' : ''}${!s.unlocked ? ' is-locked' : ''}`}
                       disabled={!s.unlocked}
@@ -210,35 +240,40 @@ function CaseBriefPanel({ caseData, stageNum, score, onStart }: {
         </div>
       </div>
 
-      {/* 쟁점 + 증거 2열 */}
-      <div className="cb__brief-grid">
-        <div className="cb__brief-section">
-          <h4><PCSvgIcon id="i-gavel" size={13} /> 주요 쟁점</h4>
-          {initialDisputes.map((d, i) => (
-            <div className="cb__brief-item" key={d.id}>
-              <span className="cb__brief-item-num">{i + 1}</span>
-              <span>{d.name}</span>
-            </div>
-          ))}
-          {hiddenCount > 0 && (
-            <p className="cb__brief-hint"><PCSvgIcon id="i-lock" size={10} /> 심문 과정에서 추가 쟁점이 드러날 수 있습니다</p>
-          )}
-        </div>
-        <div className="cb__brief-section">
-          <h4><PCSvgIcon id="i-doc" size={13} /> 초기 증거</h4>
-          {baseEvidence.length > 0 ? baseEvidence.map(ev => (
-            <div className="cb__brief-item" key={ev.id}>
-              <span className="cb__brief-item-icon"><PCSvgIcon id={getPcEvidenceSymbolId(ev.type)} size={14} /></span>
-              <span>{ev.surfaceName ?? ev.name}</span>
-            </div>
-          )) : <p className="cb__brief-hint">초기 증거 미지정</p>}
+      {/* 상세 영역 — 별도 panel로 분리 (쟁점 + 증거) */}
+      <div className="cb__brief-detail">
+        <div className="cb__brief-grid">
+          <div className="cb__brief-section">
+            <h4><PCSvgIcon id="i-gavel" size={13} /> 주요 쟁점</h4>
+            {initialDisputes.map((d, i) => (
+              <div className="cb__brief-item" key={d.id}>
+                <span className="cb__brief-item-num">{i + 1}</span>
+                <span>{d.name}</span>
+              </div>
+            ))}
+            {hiddenCount > 0 && (
+              <p className="cb__brief-hint"><PCSvgIcon id="i-lock" size={10} /> 심문 과정에서 추가 쟁점이 드러날 수 있습니다</p>
+            )}
+          </div>
+          <div className="cb__brief-section">
+            <h4><PCSvgIcon id="i-doc" size={13} /> 초기 증거</h4>
+            {baseEvidence.length > 0 ? baseEvidence.map(ev => (
+              <div className="cb__brief-item" key={ev.id}>
+                <span className="cb__brief-item-icon"><PCSvgIcon id={getPcEvidenceSymbolId(ev.type)} size={14} /></span>
+                <span>{ev.surfaceName ?? ev.name}</span>
+              </div>
+            )) : <p className="cb__brief-hint">초기 증거 미지정</p>}
+          </div>
         </div>
       </div>
 
       {/* 푸터: 기록 + CTA */}
       <div className="cb__brief-footer">
         {score > 0 && (
-          <div className="cb__brief-record">최고 기록 <strong>{score}점</strong></div>
+          <div className="cb__brief-record">
+            <span>최고 기록</span>
+            <strong>{score}점</strong>
+          </div>
         )}
         <button className="cb__brief-start" onClick={onStart} type="button">
           <PCSvgIcon id="i-gavel" size={18} />

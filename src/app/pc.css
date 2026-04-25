@@ -19817,6 +19817,75 @@ body.pc-mode .cb__brief-footer {
   padding: 16px 24px 20px !important;
 }
 
+/* ──────────────────────────────────────────────────
+   사건 선택 — 상세영역 별도 카드 / 12 슬롯 placeholder / 최고기록 골드
+   ────────────────────────────────────────────────── */
+
+/* 상세영역 컨테이너 — HERO와 푸터 사이의 분리된 카드 */
+body.pc-mode .cb__brief-detail {
+  margin: 16px 20px 0;
+  border-radius: 14px;
+  border: 1px solid rgba(212, 162, 78, 0.14);
+  background: rgba(212, 162, 78, 0.03);
+}
+body.pc-mode .cb__brief-detail .cb__brief-grid {
+  padding: 18px 18px !important;
+  gap: 16px !important;
+  margin: 0 !important;
+}
+
+/* Placeholder stage (??? 미정 슬롯) — locked보다 더 흐림 */
+body.pc-mode .cb__stage.is-placeholder {
+  opacity: 0.16 !important;
+  background: rgba(15, 16, 22, 0.5) !important;
+  border-color: rgba(255, 255, 255, 0.04) !important;
+  cursor: default;
+}
+body.pc-mode .cb__stage.is-placeholder .cb__stage-num {
+  color: rgba(255, 255, 255, 0.20) !important;
+}
+body.pc-mode .cb__stage.is-placeholder .cb__stage-score {
+  color: var(--pc-text-muted) !important;
+  letter-spacing: 0.08em;
+  font-size: 11px;
+}
+body.pc-mode .cb__stage.is-placeholder:hover {
+  transform: none !important;
+  border-color: rgba(255, 255, 255, 0.04) !important;
+}
+
+/* 최고 기록 — 녹색 폐기, 골드 톤으로 + 더 컴팩트 */
+body.pc-mode .cb__brief-record {
+  margin: 0 !important;
+  padding: 8px 14px !important;
+  border-radius: 999px !important;
+  background: rgba(212, 162, 78, 0.08) !important;
+  border: 1px solid rgba(212, 162, 78, 0.30) !important;
+  font-size: 12px !important;
+  color: var(--pc-text-dim) !important;
+  display: inline-flex !important;
+  align-items: center;
+  gap: 8px;
+  align-self: flex-start;
+  letter-spacing: 0.02em;
+}
+body.pc-mode .cb__brief-record span {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--pc-text-tertiary, var(--pc-text-muted));
+}
+body.pc-mode .cb__brief-record strong {
+  margin: 0 !important;
+  color: var(--pc-gold-light) !important;
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+
+
+
 /* Filter pills v2 — Settings/Leaderboard에서 사용 */
 body.pc-mode .pc-filter-pills-v2 {
   display: flex;
