@@ -1,19 +1,32 @@
 # CT 이관 — 04-27 (사용자용 진행 가이드)
 
 > **이 문서**: 사용자가 다음 CT와 작업 시작할 때 직접 검토용
-> **메모리 버전**: `memory/session_handoff_20260427.md` (CT 자동 인지)
+> **메모리 버전**: `memory/session_handoff_20260427_drawer.md` (CT 자동 인지)
+> **갱신**: 04-27 evening — 드로어 5건 + layout 정밀 조정 추가 (8 커밋 더)
 
 ---
 
-## 🎯 현재 상태 (2026-04-27 세션 종료 시점)
+## 🎯 현재 상태 (2026-04-27 세션 종료 시점, evening 갱신)
 
 ### Git
-- HEAD: `b38461a`
+- HEAD: `a395a18`
 - 워킹 트리: clean
 - 빌드 + tsc: ✅ 통과
-- **12 커밋 로컬** — push 신호 시에만 진행
+- **20 커밋 로컬** (12 + 8) — push 신호 시에만 진행
 
-### 최근 12 커밋 (이번 세션)
+### 추가 8 커밋 (drawer + layout 정밀 조정)
+```
+a395a18 feat(pc-drawer): 4 드로어 시각 통일 — 헤더/제목/패딩/색상/폰트
+e84436a feat(pc-drawer): 4 결함 일괄 — X 버튼 + 가로폭 통일 + 상호 배타 + 카드 화자색
+f569c17 fix(pc-layout): 관찰 200→180 + 수첩 220→200 — 라인 미세조정
+7667f13 fix(pc-layout): 좌측 패널 위/아래 그룹 정렬 분리 + 간격 추가 압축
+6e1a926 fix(pc-layout): 발언노트 130 + overflow hidden 강제 — 라인 맞춤
+6397b4e fix(pc-layout): 좌측 패널 섹션 gap 압축 — 라인 맞춤
+801b87b fix(pc-layout): 발언노트 max 200→150 — 수첩 잘림 픽스
+9bfbeaf fix(pc-layout): 수첩 ~ 관찰 비슷한 폭(220) + 발언노트 max 200 축소
+```
+
+### 기존 12 커밋 (이번 세션 1차)
 ```
 b38461a feat(pc-layout): drawer Portal 마이그레이션 → 수첩 캐릭터 끝까지 확장
 1be92e8 docs(plan): 재판관 메시지 전체 재작성 작업 계획서
@@ -74,7 +87,7 @@ GPT V2 데이터 3건 적용 완료. 엔진 어댑터 미연동.
 
 ---
 
-## 🚨 절대 금기 (11가지)
+## 🚨 절대 금기 (15가지)
 
 1. Phase 1~2 톤 변경 X
 2. 임의 카피 사용 X
@@ -87,6 +100,10 @@ GPT V2 데이터 3건 적용 완료. 엔진 어댑터 미연동.
 9. **PCCaseBrowser zigzag/브리핑 시스템 갈아엎기 X** (사용자 04-26 명시)
 10. **drawer를 좌측 패널 자식으로 다시 옮기기 X** (Portal 패턴 유지)
 11. **재판관 메시지를 V2 패턴(단발 entry)으로 의뢰 X** (scene 기반 v3 사용)
+12. **좌측 패널 자식에 flex-grow:1 X** (04-27 evening 검증 — overflow hidden + grow → 콘텐츠 잘림)
+13. **좌측 패널 overflow: visible 다시 X** (drawer Portal 후 hidden 유지 — overflow visible은 grid 밀림)
+14. **드로어 상호 배타 패턴 'pc-drawer-open' 이벤트 폐기 X** (4 드로어 토글 동기화 핵심)
+15. **드로어 가로폭 360/420 혼용 X** (4종 모두 420 통일)
 
 ---
 
@@ -98,22 +115,48 @@ GPT V2 데이터 3건 적용 완료. 엔진 어댑터 미연동.
 - `tmp/TC-master-index.md` — 누적 30+건 TC 인덱스
 - `tmp/TC-design-renewal-20260426.md` — 이번 세션 TC
 
-### 핵심 코드 (이번 세션)
+### 04-27 evening 추가 변경 (drawer + layout)
+
+**좌측 패널 정렬 (위/아래 그룹 분리)**:
+- 위 그룹: 증거수첩 + 발언노트 (top-anchored, 자연 흐름)
+- 아래 그룹: 관찰(180px) + 수첩(200px) (bottom-anchored, 캐릭터 카드 끝선)
+- 발언노트에 `margin-bottom: auto` → 가운데 빈공간 자동 흡수
+
+**4 드로어 통일 (가로 420 / 위치 fixed / 시각)**:
+- 컨테이너: gradient 배경 + 골드 22% 보더 + radius 16
+- 헤더 padding 14/18/10/50, 골드 18% 보더
+- 제목 14px 700 var(--pc-gold-light)
+- 카운트 배지 11px var(--pc-text-muted)
+- X 버튼 30×30 (4 드로어 공유)
+- 카드 제목 13px / 메타 11px / 서머리 12px
+
+**드로어 상호 배타 (window event 'pc-drawer-open')**:
+- 한 드로어 열 때 emit (detail: 'name')
+- 다른 drawer는 useEffect listen + setState(false)
+- 같은 드로어 다시 클릭 시 토글 닫기
+
+**발언노트 카드 화자별 색**:
+- A: var(--pc-blue) / B: var(--pc-red)
+- 재판관: var(--pc-gold) / 시스템: #e69ad7
+
+### 핵심 코드 (이번 세션 — 누적)
 - `src/components/pc/icons/PCSvgIcon.tsx` — i-scale PNG 분기
 - `src/components/pc/observation/JudgeNotebookSection.tsx` — 관찰 동일 클래스
-- `src/components/pc/observation/JudgeObservationHistoryDrawer.tsx` — Portal
-- `src/components/pc/panels/PCLeftPanel.tsx` — Portal (timeline)
-- `src/components/pc/panels/PCImportantNotesSection.tsx` — Portal (fav-notes)
+- `src/components/pc/observation/JudgeObservationSection.tsx` — broadcast emit
+- `src/components/pc/observation/JudgeObservationHistoryDrawer.tsx` — Portal + listen
+- `src/components/pc/panels/PCLeftPanel.tsx` — Portal + toggleTimeline + listen + X 버튼
+- `src/components/pc/panels/PCImportantNotesSection.tsx` — Portal + toggleExpanded + listen + 카드 is-speaker-{x}
 - `src/components/pc/settings/PCSettingsPanel.tsx` — 9 카테고리
 - `src/components/phase/Phase6_Mediation.tsx` — Phase 3a CSS만
 - `src/hooks/useActionDispatch.ts` — 호명 라우팅 + 'B측' + ScriptedText 락
 - `src/engine/scriptedTextLoader.ts` — getScriptedJudgeContradiction target
 - `src/data/claimPolicies/{spouse|family|friend}-01-game-events-v2.json`
 - `pc-prototype/index.html` — i-gear SVG
-- `src/app/pc.css` — 다수 영역 정비
+- `src/app/pc.css` — 다수 영역 정비 + 드로어 시각 통일 + 위/아래 그룹 정렬 + 카드 화자색
 
 ### 메모리 (이번 세션)
-- `memory/session_handoff_20260427.md` — CT 이관 (현재 최신)
+- `memory/session_handoff_20260427_drawer.md` — CT 이관 (drawer + layout 정밀 추가)
+- `memory/session_handoff_20260427.md` — 이전 (Apr 24 작성, 다른 맥락)
 - `memory/MEMORY.md` 인덱스 갱신
 
 ---
