@@ -4918,25 +4918,41 @@ body.pc-mode .pc-session-grid-v2 {
   max-width: 100%;
 }
 
-/* BT-5 card-session — 차콜 오버레이 (갈색기 제거) */
+/* v3: Session card — NESTED 패턴 (outer 18 / inner 14, radius 차 4px) */
 body.pc-mode .pc-session-card-v2 {
   position: relative;
+  display: block;
+  padding: 10px;
+  aspect-ratio: 1 / 1;
+  border-radius: 18px;
+  border: 1px solid rgba(212, 162, 78, 0.18);
+  background: linear-gradient(180deg, rgba(24, 26, 32, 0.88), rgba(13, 14, 18, 0.94));
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow:
+    0 14px 32px rgba(0, 0, 0, 0.36),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  color: var(--pc-text);
+  text-align: center;
+  cursor: pointer;
+  transition: border-color 200ms ease, transform 200ms ease, box-shadow 200ms ease;
+}
+
+/* Inner — NESTED 안쪽 카드 (radius 14, gold tint .04) */
+body.pc-mode .pc-session-card-v2__inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 12px;
   padding: 22px 16px 18px;
-  aspect-ratio: 1 / 1;
-  border-radius: 0;
-  border: none;
-  background:
-    linear-gradient(180deg, rgba(10, 11, 15, 0.72), rgba(6, 7, 10, 0.82)),
-    url('/assets/button/card-session.png') center/100% 100% no-repeat;
-  color: var(--pc-text);
-  text-align: center;
-  cursor: pointer;
-  transition: transform 140ms ease, filter 140ms ease;
+  border-radius: 14px;
+  border: 1px solid rgba(212, 162, 78, 0.14);
+  background: rgba(212, 162, 78, 0.04);
+  transition: border-color 200ms ease, background 200ms ease;
 }
 
 /* 잠금 배지 (cb-v2-card__lock과 동일 패턴 — 일관성) */
@@ -4956,16 +4972,28 @@ body.pc-mode .pc-session-card-v2__lock {
 }
 
 body.pc-mode .pc-session-card-v2:hover {
+  border-color: rgba(212, 162, 78, 0.40);
   transform: translateY(-2px);
-  filter: brightness(1.2) drop-shadow(0 4px 20px rgba(212, 162, 78, 0.28));
+  box-shadow:
+    0 22px 48px rgba(0, 0, 0, 0.48),
+    0 0 28px rgba(212, 162, 78, 0.10),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+body.pc-mode .pc-session-card-v2:hover .pc-session-card-v2__inner {
+  border-color: rgba(212, 162, 78, 0.28);
+  background: rgba(212, 162, 78, 0.07);
 }
 
 body.pc-mode .pc-session-card-v2.is-disabled {
   pointer-events: none;
 }
-/* 잠금 배지는 선명 유지, 다른 자식들만 흐리게 */
-body.pc-mode .pc-session-card-v2.is-disabled > *:not(.pc-session-card-v2__lock) {
-  opacity: 0.4;
+body.pc-mode .pc-session-card-v2.is-disabled .pc-session-card-v2__inner > *:not(.pc-session-card-v2__lock) {
+  opacity: 0.32;
+}
+body.pc-mode .pc-session-card-v2.is-disabled .pc-session-card-v2__inner {
+  background: rgba(255, 255, 255, 0.02);
+  border-color: rgba(255, 255, 255, 0.06);
 }
 
 body.pc-mode .pc-session-card-v2__top,
