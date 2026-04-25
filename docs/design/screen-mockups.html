@@ -126,24 +126,54 @@
   .icon { display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; }
   .icon svg { display: block; width: 100%; height: 100%; }
 
-  /* 키비주얼 PNG (저울 — public/icons/ornament/scale-balance.png) */
+  /* 키비주얼 PNG (저울 — 상대 경로로 file:// 로 열어도 로드) */
   .scale-balance {
-    width: 48px;
-    height: 48px;
+    width: 56px;
+    height: 56px;
     object-fit: contain;
     flex-shrink: 0;
     filter: drop-shadow(0 3px 10px rgba(0, 0, 0, 0.5)) drop-shadow(0 0 12px rgba(212, 162, 78, 0.22));
   }
-  /* PNG 로드 안 될 때 SVG fallback */
-  .scale-fallback {
-    width: 48px;
-    height: 48px;
-    color: var(--pc-gold-light);
+
+  /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+  /* 주요 단어 배지 (eyebrow / mode badge / meta badge) */
+  /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+  .badge {
     display: inline-flex;
     align-items: center;
-    justify-content: center;
-    filter: drop-shadow(0 3px 10px rgba(0, 0, 0, 0.5)) drop-shadow(0 0 12px rgba(212, 162, 78, 0.22));
+    gap: 4px;
+    padding: 4px 10px;
+    border-radius: 999px;
+    background: rgba(212, 162, 78, 0.10);
+    border: 1px solid rgba(212, 162, 78, 0.35);
+    color: var(--pc-gold-light);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    white-space: nowrap;
   }
+  .badge-large {
+    padding: 6px 14px;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+  }
+  .badge-soft {
+    background: rgba(255, 255, 255, 0.04);
+    border-color: rgba(255, 255, 255, 0.08);
+    color: var(--pc-text-dim);
+  }
+  .badge-meta {
+    padding: 3px 8px;
+    font-size: 10px;
+    letter-spacing: 0.04em;
+    text-transform: none;
+    background: rgba(0, 0, 0, 0.4);
+    border-color: rgba(255, 255, 255, 0.06);
+    color: var(--pc-text);
+    font-weight: 700;
+  }
+  .badge-meta strong { color: var(--pc-gold-light); margin-left: 4px; }
 
   /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
   /* 버튼 — 실제 사용자 스크린샷 패턴 */
@@ -627,7 +657,165 @@
   }
 
   /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
-  /* 3. CASE BROWSER */
+  /* 3a. SESSION SELECT (여정 카드 그리드 — 게임 여정 느낌) */
+  /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+  .mock-session {
+    grid-template-rows: auto 1fr;
+    background: radial-gradient(ellipse 60% 40% at 50% 30%, rgba(212,162,78,0.10), transparent 70%), var(--pc-wood-deep);
+  }
+  .session-header {
+    padding: 18px 32px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    border-bottom: 1px solid var(--pc-panel-border-soft);
+    background: rgba(0,0,0,0.2);
+  }
+  .session-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11px;
+    color: var(--pc-text-dim);
+    cursor: pointer;
+    padding: 6px 10px;
+    border-radius: 6px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.06);
+  }
+  .session-back .icon { width: 12px; height: 12px; }
+  .session-eyebrow {
+    color: var(--pc-text-muted);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+  }
+  .session-title-group {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .session-title {
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--pc-gold-light);
+    letter-spacing: 0.04em;
+  }
+  .session-progress {
+    margin-left: auto;
+    color: var(--pc-text-dim);
+    font-size: 11px;
+    font-weight: 700;
+  }
+  .session-progress strong { color: var(--pc-gold-light); }
+
+  .session-grid {
+    padding: 28px 32px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    overflow-y: auto;
+    align-content: start;
+  }
+  .session-card {
+    border-radius: 16px;
+    border: 1px solid var(--pc-panel-border);
+    background: linear-gradient(180deg, rgba(212, 162, 78, 0.08), rgba(13, 14, 18, 0.92));
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    box-shadow: var(--pc-panel-shadow);
+    transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
+    position: relative;
+  }
+  .session-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--pc-panel-border-strong);
+    box-shadow: 0 22px 40px rgba(0,0,0,0.5), 0 0 24px rgba(212,162,78,0.18);
+  }
+  .session-card.is-locked {
+    opacity: 0.45;
+    cursor: not-allowed;
+    filter: grayscale(0.4);
+  }
+  .session-card.is-locked:hover {
+    transform: none;
+  }
+  .session-card-num {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 2;
+  }
+  .session-card-lock {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 2;
+  }
+  .session-card-art {
+    aspect-ratio: 1 / 1;
+    width: 100%;
+    background: radial-gradient(circle at 50% 60%, rgba(212,162,78,0.12), transparent 70%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid var(--pc-panel-border-soft);
+    padding: 20px;
+  }
+  .session-card-art img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 4px 12px rgba(0,0,0,0.55)) drop-shadow(0 0 16px rgba(212,162,78,0.18));
+  }
+  .session-card-body {
+    padding: 14px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    flex: 1;
+  }
+  .session-card-name {
+    font-size: 16px;
+    font-weight: 800;
+    color: var(--pc-text);
+    letter-spacing: 0.02em;
+  }
+  .session-card-tagline {
+    font-size: 11px;
+    color: var(--pc-text-dim);
+    line-height: 1.5;
+    flex: 1;
+  }
+  .session-card-progress-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    margin-top: 6px;
+  }
+  .session-card-progress-bar {
+    flex: 1;
+    height: 4px;
+    border-radius: 2px;
+    background: rgba(255,255,255,0.06);
+    overflow: hidden;
+  }
+  .session-card-progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, rgba(154,108,28,0.92), var(--pc-gold));
+  }
+  .session-card-progress-label {
+    font-size: 10px;
+    font-weight: 800;
+    color: var(--pc-gold-light);
+    white-space: nowrap;
+  }
+
+  /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+  /* 3b. CASE BROWSER (선택된 세션 안의 사건 목록) */
   /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
   .mock-case { grid-template-rows: auto 1fr; }
   .case-header {
@@ -1152,37 +1340,37 @@
 
     <div class="home-content">
       <div class="home-hero">
-        <span class="home-eyebrow">COURT SIMULATION GAME</span>
+        <span class="badge badge-large">COURT SIMULATION GAME</span>
         <div class="home-title-row">
-          <img src="/icons/ornament/scale-balance.png" class="scale-balance" alt="" onerror="this.outerHTML='&lt;span class=&quot;scale-fallback&quot;&gt;&lt;svg width=48 height=48&gt;&lt;use href=&quot;#i-scale&quot;/&gt;&lt;/svg&gt;&lt;/span&gt;'">
+          <img src="../../public/icons/ornament/scale-balance.png" class="scale-balance" alt="">
           <h1 class="home-title">솔로몬의 딜레마</h1>
-          <img src="/icons/ornament/scale-balance.png" class="scale-balance" alt="" onerror="this.outerHTML='&lt;span class=&quot;scale-fallback&quot;&gt;&lt;svg width=48 height=48&gt;&lt;use href=&quot;#i-scale&quot;/&gt;&lt;/svg&gt;&lt;/span&gt;'">
+          <img src="../../public/icons/ornament/scale-balance.png" class="scale-balance" alt="">
         </div>
         <p class="home-subtitle">현대판 솔로몬이 되어 판결을 내려보세요.</p>
       </div>
 
       <div class="home-mode-grid">
         <div class="mode-card">
-          <span class="mode-card-badge">NORMAL MODE</span>
+          <span class="badge">NORMAL MODE</span>
           <div class="mode-card-label-row">
             <span class="mode-card-label">일반 모드 ›</span>
             <span class="icon mode-card-icon"><svg><use href="#i-gavel"/></svg></span>
           </div>
           <div class="mode-card-meta">
-            <span>세션 7개</span>
-            <span>진척 12 / 84</span>
+            <span class="badge-meta">세션 <strong>7</strong></span>
+            <span class="badge-meta">진척 <strong>12 / 84</strong></span>
           </div>
           <div class="mode-card-track"><div class="mode-card-fill" style="width:14%;"></div></div>
         </div>
         <div class="mode-card">
-          <span class="mode-card-badge">SEASON 01 · 봄의 법정</span>
+          <span class="badge">SEASON 01 · 봄의 법정</span>
           <div class="mode-card-label-row">
             <span class="mode-card-label">시즌 모드 ›</span>
             <span class="icon mode-card-icon"><svg><use href="#i-crown"/></svg></span>
           </div>
           <div class="mode-card-meta">
-            <span>3건 배정</span>
-            <span>14일 남음</span>
+            <span class="badge-meta">배정 <strong>3건</strong></span>
+            <span class="badge-meta">남은 <strong>14일</strong></span>
           </div>
           <div class="mode-card-track"><div class="mode-card-fill" style="width:33%;"></div></div>
         </div>
@@ -1224,24 +1412,192 @@
 </div>
 
 <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
-<!-- 3. CASE BROWSER -->
+<!-- 3a. SESSION SELECT (여정 카드 그리드) -->
 <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
 <div class="section">
   <div class="section-meta">
-    <span class="section-num">SCREEN 03 — CASE BROWSER</span>
-    <span class="section-status">레이아웃 제안</span>
+    <span class="section-num">SCREEN 03a — SESSION SELECT</span>
+    <span class="section-status">신규 분리 + 게임 여정 느낌</span>
   </div>
-  <h2>사건 선택</h2>
-  <p class="section-desc">상단 헤더 + 좌측 카테고리 + 우측 카드 그리드. 카피는 사용자 검토 시 정확화.</p>
+  <h2>일반 모드 — 세션 선택 (여정)</h2>
+  <p class="section-desc">홈에서 '일반 모드' 클릭 → 12개 카테고리(세션) 카드 그리드. 각 세션의 일러스트(/icons/session/*.png) + 진행도. 잠긴 세션은 흐림 + 자물쇠.</p>
 
-  <div class="mock mock-case">
-    <div class="mock-label">CASE BROWSER</div>
-    <div class="case-header">
-      <button class="case-back">
+  <div class="mock mock-session">
+    <div class="mock-label">SESSION SELECT</div>
+
+    <header class="session-header">
+      <button class="session-back">
         <span class="icon"><svg><use href="#i-arrow-left"/></svg></span>
         <span>홈</span>
       </button>
-      <span class="case-title">사건 선택</span>
+      <div class="session-title-group">
+        <span class="session-eyebrow">NORMAL MODE</span>
+        <span class="session-title">일반 모드</span>
+      </div>
+      <span class="session-progress">총 진척 <strong>12 / 84</strong></span>
+    </header>
+
+    <div class="session-grid">
+      <button class="session-card">
+        <span class="session-card-num badge">SESSION 01</span>
+        <div class="session-card-art">
+          <img src="../../public/icons/session/spouse.png" alt="">
+        </div>
+        <div class="session-card-body">
+          <div class="session-card-name">부부</div>
+          <div class="session-card-tagline">결혼 생활의 균열, 신뢰가 무너지는 순간</div>
+          <div class="session-card-progress-row">
+            <div class="session-card-progress-bar"><div class="session-card-progress-fill" style="width:33%;"></div></div>
+            <span class="session-card-progress-label">4 / 12</span>
+          </div>
+        </div>
+      </button>
+
+      <button class="session-card">
+        <span class="session-card-num badge">SESSION 02</span>
+        <div class="session-card-art">
+          <img src="../../public/icons/session/family.png" alt="">
+        </div>
+        <div class="session-card-body">
+          <div class="session-card-name">가족</div>
+          <div class="session-card-tagline">유산, 부양, 침묵 — 핏줄이 만든 갈등</div>
+          <div class="session-card-progress-row">
+            <div class="session-card-progress-bar"><div class="session-card-progress-fill" style="width:25%;"></div></div>
+            <span class="session-card-progress-label">3 / 12</span>
+          </div>
+        </div>
+      </button>
+
+      <button class="session-card">
+        <span class="session-card-num badge">SESSION 03</span>
+        <div class="session-card-art">
+          <img src="../../public/icons/session/friend.png" alt="">
+        </div>
+        <div class="session-card-body">
+          <div class="session-card-name">친구</div>
+          <div class="session-card-tagline">우정의 경계, 한 번의 선택이 남긴 거리</div>
+          <div class="session-card-progress-row">
+            <div class="session-card-progress-bar"><div class="session-card-progress-fill" style="width:42%;"></div></div>
+            <span class="session-card-progress-label">5 / 12</span>
+          </div>
+        </div>
+      </button>
+
+      <button class="session-card is-locked">
+        <span class="session-card-num badge badge-soft">SESSION 04</span>
+        <span class="session-card-lock lock-badge">잠김</span>
+        <div class="session-card-art">
+          <img src="../../public/icons/session/neighbor.png" alt="">
+        </div>
+        <div class="session-card-body">
+          <div class="session-card-name">이웃</div>
+          <div class="session-card-tagline">담장 너머의 목격, 사소한 마찰의 그림자</div>
+          <div class="session-card-progress-row">
+            <div class="session-card-progress-bar"><div class="session-card-progress-fill" style="width:0%;"></div></div>
+            <span class="session-card-progress-label">— / 12</span>
+          </div>
+        </div>
+      </button>
+
+      <button class="session-card is-locked">
+        <span class="session-card-num badge badge-soft">SESSION 05</span>
+        <span class="session-card-lock lock-badge">잠김</span>
+        <div class="session-card-art">
+          <img src="../../public/icons/session/partnership.png" alt="">
+        </div>
+        <div class="session-card-body">
+          <div class="session-card-name">동업</div>
+          <div class="session-card-tagline">자본과 신의, 계약 한 줄의 무게</div>
+          <div class="session-card-progress-row">
+            <div class="session-card-progress-bar"><div class="session-card-progress-fill" style="width:0%;"></div></div>
+            <span class="session-card-progress-label">— / 12</span>
+          </div>
+        </div>
+      </button>
+
+      <button class="session-card is-locked">
+        <span class="session-card-num badge badge-soft">SESSION 06</span>
+        <span class="session-card-lock lock-badge">잠김</span>
+        <div class="session-card-art">
+          <img src="../../public/icons/session/tenant.png" alt="">
+        </div>
+        <div class="session-card-body">
+          <div class="session-card-name">세입</div>
+          <div class="session-card-tagline">월세, 보증금, 계약 — 거주의 권리</div>
+          <div class="session-card-progress-row">
+            <div class="session-card-progress-bar"><div class="session-card-progress-fill" style="width:0%;"></div></div>
+            <span class="session-card-progress-label">— / 12</span>
+          </div>
+        </div>
+      </button>
+
+      <button class="session-card is-locked">
+        <span class="session-card-num badge badge-soft">SESSION 07</span>
+        <span class="session-card-lock lock-badge">잠김</span>
+        <div class="session-card-art">
+          <img src="../../public/icons/session/workplace.png" alt="">
+        </div>
+        <div class="session-card-body">
+          <div class="session-card-name">직장</div>
+          <div class="session-card-tagline">위계와 평가, 사무실 안의 진실</div>
+          <div class="session-card-progress-row">
+            <div class="session-card-progress-bar"><div class="session-card-progress-fill" style="width:0%;"></div></div>
+            <span class="session-card-progress-label">— / 12</span>
+          </div>
+        </div>
+      </button>
+
+      <button class="session-card is-locked">
+        <span class="session-card-num badge badge-soft">SESSION 08</span>
+        <span class="session-card-lock lock-badge">잠김</span>
+        <div class="session-card-art">
+          <img src="../../public/icons/session/lover.png" alt="">
+        </div>
+        <div class="session-card-body">
+          <div class="session-card-name">연인</div>
+          <div class="session-card-tagline">결혼 전후의 약속, 마음의 계약</div>
+          <div class="session-card-progress-row">
+            <div class="session-card-progress-bar"><div class="session-card-progress-fill" style="width:0%;"></div></div>
+            <span class="session-card-progress-label">— / 12</span>
+          </div>
+        </div>
+      </button>
+    </div>
+  </div>
+
+  <div class="key-points">
+    <h3>여정 느낌 핵심</h3>
+    <ul>
+      <li><strong>각 세션 카드에 PNG 일러스트</strong> (1:1 비율, public/icons/session/{type}.png) — 큰 시각 임팩트</li>
+      <li><strong>SESSION 번호 배지</strong> (좌상단) + <strong>이름</strong> + <strong>한 줄 태그라인</strong> + <strong>진행 바</strong></li>
+      <li><strong>잠긴 세션</strong>: 흐림 + grayscale + 우상단 잠김 배지 → 점진적 해금 = 게임 여정 진행감</li>
+      <li><strong>호버 효과</strong>: translateY(-3px) + 골드 글로우 → 카드가 '떠오르는' 게임 인터랙션</li>
+      <li><strong>4-column 그리드</strong>: 12개 세션을 한눈에 — 마치 '여정 지도'처럼</li>
+      <li>홈 → 일반 모드 → <strong>이 화면</strong> → 세션 클릭 → 다음 화면(사건 목록)</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<!-- 3b. CASE BROWSER (선택된 세션의 사건들) -->
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<div class="section">
+  <div class="section-meta">
+    <span class="section-num">SCREEN 03b — CASE BROWSER</span>
+    <span class="section-status">선택된 세션 진입</span>
+  </div>
+  <h2>부부 — 사건 선택</h2>
+  <p class="section-desc">세션 카드 클릭 → 해당 세션 안의 12개 사건 그리드. 헤더에 세션 일러스트 + 정렬/필터.</p>
+
+  <div class="mock mock-case">
+    <div class="mock-label">CASE BROWSER · SPOUSE</div>
+    <div class="case-header">
+      <button class="case-back">
+        <span class="icon"><svg><use href="#i-arrow-left"/></svg></span>
+        <span>일반 모드</span>
+      </button>
+      <span class="case-title">부부 · 12건</span>
+      <span class="badge badge-meta" style="margin-left:8px;">진행 <strong>4 / 12</strong></span>
       <div class="case-search-wrap">
         <span class="icon"><svg><use href="#i-search"/></svg></span>
         <input class="case-search" placeholder="사건 검색" disabled>
@@ -1249,45 +1605,53 @@
     </div>
     <div class="case-body">
       <aside class="case-categories">
-        <div class="case-cat-eyebrow">CATEGORIES</div>
-        <div class="case-cat is-active">전체 <span class="case-cat-count">3</span></div>
-        <div class="case-cat">부부 <span class="case-cat-count">1</span></div>
-        <div class="case-cat">가족 <span class="case-cat-count">1</span></div>
-        <div class="case-cat">친구 <span class="case-cat-count">1</span></div>
-        <div class="case-cat is-locked">이웃 <span class="lock-badge">잠김</span></div>
-        <div class="case-cat is-locked">동업 <span class="lock-badge">잠김</span></div>
-        <div class="case-cat is-locked">세입 <span class="lock-badge">잠김</span></div>
-        <div class="case-cat is-locked">직장 <span class="lock-badge">잠김</span></div>
+        <div class="case-cat-eyebrow">FILTER</div>
+        <div class="case-cat is-active">전체 <span class="case-cat-count">12</span></div>
+        <div class="case-cat">진행 중 <span class="case-cat-count">1</span></div>
+        <div class="case-cat">완료 <span class="case-cat-count">3</span></div>
+        <div class="case-cat">미시작 <span class="case-cat-count">8</span></div>
+        <div class="case-cat-eyebrow" style="margin-top:14px;">DIFFICULTY</div>
+        <div class="case-cat">EASY <span class="case-cat-count">4</span></div>
+        <div class="case-cat">MEDIUM <span class="case-cat-count">5</span></div>
+        <div class="case-cat">HARD <span class="case-cat-count">3</span></div>
       </aside>
       <div class="case-grid">
         <div class="case-card">
           <div class="case-card-thumb" style="background:linear-gradient(135deg, rgba(91,141,239,0.18), rgba(224,96,96,0.18));">
-            <span class="case-card-badge">SPOUSE · HARD</span>
+            <span class="case-card-badge">CASE 01 · HARD</span>
             <span class="icon"><svg><use href="#i-heart"/></svg></span>
           </div>
           <div class="case-card-body">
             <div class="case-card-title">매일 아내 몰래 오피스텔에 머무르는 남편</div>
-            <div class="case-card-meta"><span>박지연 × 이준호</span></div>
+            <div class="case-card-meta">
+              <span class="badge badge-meta">진행 중</span>
+              <span class="badge badge-meta">박지연 × 이준호</span>
+            </div>
           </div>
         </div>
         <div class="case-card">
-          <div class="case-card-thumb" style="background:linear-gradient(135deg, rgba(155,168,122,0.18), rgba(212,162,78,0.18));">
-            <span class="case-card-badge">FAMILY · MEDIUM</span>
-            <span class="icon"><svg><use href="#i-doc"/></svg></span>
+          <div class="case-card-thumb" style="background:linear-gradient(135deg, rgba(91,141,239,0.18), rgba(224,96,96,0.18));">
+            <span class="case-card-badge">CASE 02 · MEDIUM</span>
+            <span class="icon"><svg><use href="#i-heart"/></svg></span>
           </div>
           <div class="case-card-body">
-            <div class="case-card-title">유서 위조를 두고 다투는 형제</div>
-            <div class="case-card-meta"><span>윤정후 × 윤태성</span></div>
+            <div class="case-card-title">결혼 전 빚을 숨긴 배우자</div>
+            <div class="case-card-meta">
+              <span class="badge badge-meta">완료 · 87점</span>
+            </div>
           </div>
         </div>
         <div class="case-card">
-          <div class="case-card-thumb" style="background:linear-gradient(135deg, rgba(155,123,232,0.18), rgba(212,162,78,0.18));">
-            <span class="case-card-badge">FRIEND · EASY</span>
-            <span class="icon"><svg><use href="#i-chat"/></svg></span>
+          <div class="case-card-thumb" style="background:linear-gradient(135deg, rgba(91,141,239,0.10), rgba(224,96,96,0.10));opacity:0.5;">
+            <span class="case-card-badge">CASE 03 · EASY</span>
+            <span class="lock-badge" style="position:absolute;top:6px;right:6px;">잠김</span>
+            <span class="icon"><svg><use href="#i-heart"/></svg></span>
           </div>
-          <div class="case-card-body">
-            <div class="case-card-title">예비신랑에 접근한 절친</div>
-            <div class="case-card-meta"><span>송다은 × 최수민</span></div>
+          <div class="case-card-body" style="opacity:0.5;">
+            <div class="case-card-title">자녀 양육비를 둘러싼 다툼</div>
+            <div class="case-card-meta">
+              <span class="badge badge-meta">미시작</span>
+            </div>
           </div>
         </div>
       </div>
@@ -1297,11 +1661,11 @@
   <div class="key-points">
     <h3>핵심</h3>
     <ul>
-      <li>3-column 카드 그리드 + 좌측 카테고리 필터</li>
-      <li>잠긴 카테고리에 <strong>잠김 배지</strong> (실제 게임 패턴)</li>
-      <li>카드 썸네일에 SVG 카테고리 아이콘 (i-heart / i-doc / i-chat)</li>
-      <li>검색바에 i-search SVG 인셋</li>
-      <li>사건 카피는 src/data/cases/generated/{caseId}.json의 실제 brief.title 기반 (Mock에선 spouse/family/friend-01 활성 3건)</li>
+      <li><strong>헤더 컨텍스트</strong>: '← 일반 모드' + '부부 · 12건' + 진행도 배지 (어디서 왔는지 명확)</li>
+      <li><strong>좌측 필터</strong>: 진행 상태 (전체/진행 중/완료/미시작) + 난이도 (EASY/MEDIUM/HARD)</li>
+      <li><strong>카드 메타도 모두 배지</strong> (진행 중 / 완료 · 87점 / 미시작 / 박지연 × 이준호)</li>
+      <li><strong>잠긴 사건</strong>: 카드 자체 흐림 + 잠김 배지 (점진 해금)</li>
+      <li>사건 데이터: src/data/cases/generated/spouse-{01~12}.json (활성 spouse-01만, 나머지는 Legacy)</li>
     </ul>
   </div>
 </div>
