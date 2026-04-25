@@ -103,16 +103,24 @@
 
 ---
 
-## TC-7. GPT spouse-01 V2 데이터 (백그라운드 작업)
+## TC-7. GPT V2 데이터 3건 (모두 R1~R7 PASS)
 
-**위치**: `src/data/claimPolicies/spouse-01-game-events-v2.json`
+**위치**: `src/data/claimPolicies/{caseId}-game-events-v2.json`
+
+| 사건 | 크기 | contradictions | conflicts | 보정 |
+|---|---|---|---|---|
+| **spouse-01** | 31.9 KB | 24 | 6 | 8건 (중복 강조어/군더더기) |
+| **family-01** | 30.7 KB | 24 | 6 | 8건 (특정X 제거/어순/반말 톤) |
+| **friend-01** | 32.1 KB | 24 | 6 | 9건 (시제·문체/호칭/options 한글화) |
 
 체크 (수동):
-- [ ] 파일 존재 (~32 KB)
+- [ ] 3 파일 모두 존재
 - [ ] JSON parse OK (DevTools 또는 외부 도구)
-- [ ] `contradictions` 배열 24개
-- [ ] `conflicts` 배열 6개
+- [ ] `contradictions` 배열 24개 / `conflicts` 배열 6개 (각각)
 - [ ] R1~R7 lint 모두 PASS (Agent 보고 기준)
+- [ ] **id 100% 보존** (GPT 산출 → 보정 후 변경 0)
+- [ ] 호칭 규칙 (재판관 → "OOO 씨", 당사자 직접 → callTerms.angry)
+- [ ] archetype 톤 보존 (avoidant/victim_cosplay/cold_logic/confrontational)
 
 ⚠ **현재 게임 엔진은 V2 어댑터 미연동**. 데이터만 적용된 상태로 게임 동작에 영향 없음. M1~M7 마이그레이션 별도 사이클.
 
