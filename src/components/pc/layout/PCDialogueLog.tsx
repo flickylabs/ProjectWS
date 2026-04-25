@@ -91,7 +91,7 @@ function MessageBubble({ entry, animate, combinableTexts, combinationHintMap, is
       const isExpired = turnsPassed >= expireAfter
       const isConsumed = !!pendingFeedback.consumed
       const isActive = !isConsumed && !isExpired
-      const badge = isConsumed ? '처리됨' : isExpired ? '만료' : '지금 확인'
+      const badge = isConsumed ? '확인 완료' : isExpired ? '만료' : '지금 확인'
       // [TC-A2 픽스] tone 기반 클래스 분기 — 'alert'는 빨강(모순/공격), 기본은 골드(권위/주의 환기)
       const tone = (pendingFeedback.payload as any)?.tone
       const activeClass = tone === 'alert' ? ' is-alert' : ' is-urgent'

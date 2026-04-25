@@ -187,6 +187,11 @@ export function getEventEffects(trigger: GameEventTrigger): TriggerEffect[] {
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 function checkContradiction(snapshot: TurnSnapshot): GameEventTrigger | null {
+  // [3차 사이클 N1·N4 통합] Path A 비활성화 — 사용자 결정으로 '모순' 정의는 단일 캐릭터 진술 변화만(Path B).
+  // 양측 주장 충돌은 '의견 충돌' 카테고리로 추후 분리 예정 (M1~M7 진입 시 ConflictEventV2 도입).
+  // 현재는 양측 사전 작성 statementA/B가 스포일러 누설 + false positive 원인이라 비활성화 안전.
+  return null
+  // ───── 이하는 V2 도입 후 'opinion_conflict' 트리거로 재활용 예정 (보존) ─────
   // 최소 3턴 경과 후에만 모순 감지 (초반 즉시 발화 방지)
   if (snapshot.turn < 3) return null
   // 쿨다운 체크 (4턴) + 같은 쟁점 연속 방지 (6턴)

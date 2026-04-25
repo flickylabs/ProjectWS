@@ -1052,9 +1052,13 @@ export default function PCRightPanel() {
                       onClick={() => setAutoMatchConfirming(true)}
                       type="button"
                     >
-                      <span>✨ 자동 매칭</span>
+                      <span className="pc-combination-drawer__auto-cta-label">
+                        <PCSvgIcon id="i-link" size={14} />
+                        <span>자동 매칭</span>
+                      </span>
                       <span className="pc-combination-drawer__auto-cost" title={`스킬 포인트 ${autoMatchCost} 소비`}>
-                        ⚡ {autoMatchCost}
+                        <PCSvgIcon id="i-bolt" size={12} />
+                        <span>{autoMatchCost}</span>
                       </span>
                     </button>
                     {readyLabRecipes.length === 0 ? (

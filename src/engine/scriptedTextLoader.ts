@@ -287,13 +287,17 @@ function selectVariant(
 ): ScriptedVariant | null {
   if (!variants.length) return null
 
-  // 하이브리드 반복 방지: variant 4개 이상이면 최근 3턴 hard block
+  // [기타1 픽스] hard block 완화 — 사용자 결정: "동일 답변 반복이 스포일러보다 나음"
+  // 기존: variant 4개 이상이면 최근 3턴 hard block → 다음 변종이 강제 선택되며 점진적 진실 누설
+  // 변경: hard block은 최근 1턴(직전)만 — score 패널티(-6/-2)로 자연스러운 다양성 확보
   let candidates = variants
-  if (variants.length >= 4) {
+  if (variants.length >= 2) {
     const recentIds = recentScriptIds.get(caseId) ?? []
-    const recentWindow = recentIds.slice(-3)
-    const filtered = variants.filter(v => !recentWindow.includes(v.id))
-    if (filtered.length > 0) candidates = filtered
+    const lastUsed = recentIds[recentIds.length - 1]
+    if (lastUsed) {
+      const filtered = variants.filter(v => v.id !== lastUsed)
+      if (filtered.length > 0) candidates = filtered
+    }
   }
 
   const scored = candidates.map((variant, index) => ({

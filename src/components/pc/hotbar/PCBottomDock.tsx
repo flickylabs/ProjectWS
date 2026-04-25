@@ -489,27 +489,28 @@ function CharacterCard({
   )
 }
 
-/** 감정 도넛 그래프 — 캐릭터 프로필 외곽 ring.
+/** 감정 도넛 그래프 — 캐릭터 프로필 **외부** ring.
  *  값 0~100 비율로 stroke-dasharray 채움. 색상은 부모(.char-face--ring.is-emo-*)가 결정.
- *  viewBox는 char-face와 동일 사이즈(66×66) — char-face의 정적 border를 도넛이 대체. */
+ *  도넛 외경(74) > char-face 외경(66) — portrait를 가리지 않고 외곽 ring만 표시. */
 function EmotionDonut({ value }: { value: number }) {
-  // 도넛 stroke 중심이 외경 -1.5px 위치(원 외접). char-face 66×66, stroke 3 → r=31.5
-  const radius = 31.5
+  // viewBox 74×74, char-face는 66×66 + inset -4px → 도넛 외경 정확히 char-face 외부 4px
+  // r=35.5 + stroke=3 → 외경 37 (직경 74) = viewBox 끝과 일치
+  const radius = 35.5
   const circumference = 2 * Math.PI * radius
   const dash = (value / 100) * circumference
   return (
-    <svg className="char-emo-donut" viewBox="0 0 66 66" aria-hidden="true">
+    <svg className="char-emo-donut" viewBox="0 0 74 74" aria-hidden="true">
       <circle
         className="char-emo-donut__bg"
-        cx="33" cy="33" r={radius}
+        cx="37" cy="37" r={radius}
         fill="none" strokeWidth="3"
       />
       <circle
         className="char-emo-donut__fg"
-        cx="33" cy="33" r={radius}
+        cx="37" cy="37" r={radius}
         fill="none" strokeWidth="3"
         strokeDasharray={`${dash.toFixed(2)} ${circumference.toFixed(2)}`}
-        transform="rotate(-90 33 33)"
+        transform="rotate(-90 37 37)"
         strokeLinecap="round"
       />
     </svg>

@@ -1,0 +1,97 @@
+# package: contradiction-events-v2-spouse-01
+# 목적: V2 모순/충돌 이벤트 생성. 단일 캐릭터 진술 변화 = 모순, 양측 주장 충돌 = 의견 충돌.
+
+context:
+  caseId: spouse-01
+  parties:
+    a:
+      name: 박지연
+      archetype: victim_cosplay
+      callTerms:
+        toJudge: "제 남편"
+        angry: "이준호!"
+    b:
+      name: 이준호
+      archetype: avoidant
+      callTerms:
+        toJudge: "제 아내"
+        angry: "지연아!"
+  disputes:
+    visible:
+      - { id: d-1, name: "오피스텔 방문과 새벽 전화" }
+      - { id: d-2, name: "개인 비자금 2,000만원 출금" }
+    hidden:
+      - { id: h-d3, name: "공동 적금 3,000만원 해지(위임장 조작)" }
+      - { id: h-d4, name: "은폐와 선제행동의 순서" }
+  truths_to_protect:                # safe spoilerLevel에서 절대 출력 금지
+    - "이준호 형 부양 + 조카(중2) 돌봄"
+    - "이준호 비자금 2,000만원 → 형 현금 전달"
+    - "박지연 위임장 조작으로 공동 적금 3,000만원 해지"
+    - "박지연 투자 사기로 3,000만원 전액 손실"
+    - "형 개인회생"
+  banned_lexemes_safe:              # safe에서 직접 등장 금지 단어
+    - 위임장
+    - 조작
+    - 사기
+    - 개인회생
+    - 조카
+    - 형
+    - 비자금
+
+spec:
+  contradictionEventV2:
+    quantity: 24                    # 4 dispute × 2 party × 3 spoilerLevel
+    per_item:
+      previousStatement:    "30~60자, 같은 캐릭터의 이전 발화 요약 (직접 인용 금지)"
+      currentStatement:     "30~60자, 변화 신호만. safe면 truth 키워드 0"
+      judgePursuitLine:     "30~60자, ${defenderParty.name} 호명 + 모호한 모순 지적"
+      defenderReactionLine: "40~80자, lieState/archetype 부합. S0~S2=얼버무림, S3~S4=부분 인정, S5=시인"
+      spoilerLevel: ['safe', 'partial', 'full']
+      defenderLieState:
+        safe:    [S0, S1, S2]
+        partial: [S3, S4]
+        full:    [S5]
+    distribution_per_dispute:
+      a: { safe: 1, partial: 1, full: 1 }
+      b: { safe: 1, partial: 1, full: 1 }
+
+  conflictEventV2:
+    quantity: 6                     # dispute별 가시 2개에 각 2~3개
+    only_for: [d-1, d-2]            # 가시 쟁점만, 숨김 쟁점 X
+    triggerCondition: extreme_only
+    per_item:
+      partyA.statement: "60~100자, 박지연 입장 명확 진술"
+      partyB.statement: "60~100자, 이준호 입장 명확 진술"
+      judgeMediationLine: "50~90자, 충돌을 중재하며 양측 책임 환기"
+      effect:
+        emotionDelta: { a: "-8 ~ -15", b: "-8 ~ -15" }
+        trustDelta:   { a: "-3 ~ -5",  b: "-3 ~ -5" }
+
+constraints:
+  - "previousStatement/currentStatement는 같은 캐릭터의 발화 변화여야 함."
+  - "ContradictionEventV2에 두 캐릭터 발화를 섞지 말 것."
+  - "safe spoilerLevel에서 banned_lexemes_safe 단어가 등장하면 LINT 실패."
+  - "judgePursuitLine은 ${name}을(를) 직접 호명하거나 callTerms.toJudge 사용."
+  - "defenderReactionLine은 verbalTells와 archetype에 일관."
+
+output_schema:
+  type: object
+  properties:
+    contradictions: { type: array, items: ContradictionEventV2, minItems: 24, maxItems: 24 }
+    conflicts:      { type: array, items: ConflictEventV2,      minItems: 6,  maxItems: 8 }
+  required: [contradictions, conflicts]
+
+example_safe_contradiction:        # GPT 톤 가이드
+  id: "spouse-01-d1-b-S1-c1"
+  caseId: "spouse-01"
+  disputeId: "d-1"
+  defenderParty: "b"
+  defenderLieState: "S1"
+  spoilerLevel: "safe"
+  previousStatement: "퇴근하면 곧장 집에 들어왔다고 처음에 말씀드렸습니다."
+  currentStatement: "...요즘은 일이 많아 동선이 복잡해졌습니다."
+  judgePursuitLine: "이준호 씨, 처음 말씀과 지금 말씀이 다릅니다. 어느 쪽이 사실입니까?"
+  defenderReactionLine: "그건… 매일 다르긴 합니다. 일찍 들어온 날도 있고 늦은 날도 있어서…요."
+  options:
+    point_out: { label: "기록 맞대기", effect: "동선 변화의 모순이 떠오르며 다음 추궁이 강해진다." }
+    let_go:    { label: "그냥 듣기", effect: "변명이 정리되며 의심은 미뤄진다." }
