@@ -1,0 +1,1342 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<title>Solomon Court — PC Style Guide v1 (플레이 UI 기반 통합 토큰)</title>
+<style>
+  :root {
+    /* ── Gold ── */
+    --gold:        #d4a24e;
+    --gold-light:  #e8c172;
+    --gold-bright: #f0d890;
+    --gold-dim:    #8b6914;
+
+    /* ── Dark surfaces ── */
+    --wood-deep:    #0d0e12;
+    --wood-dark:    #12141a;
+    --wood-medium:  #1c1f26;
+    --wood-warm:    #5a5f6c;
+
+    /* ── Speakers ── */
+    --blue:    #5b8def;   /* 당사자 A */
+    --red:     #e06060;   /* 당사자 B */
+    --amber:   #d4a24e;   /* 재판관 */
+    --witness: #9ba87a;   /* 증인 */
+    --green:   #5cc97a;   /* 성공·완료 */
+
+    /* ── Text ── */
+    --text:       #ede3cc;
+    --text-dim:   #b5a888;
+    --text-muted: #857b68;
+
+    /* ── Panel ── */
+    --panel-bg:        linear-gradient(180deg, rgba(18,19,24,0.42), rgba(13,14,18,0.52));
+    --panel-bg-strong: linear-gradient(180deg, rgba(18,19,24,0.54), rgba(13,14,18,0.64));
+    --panel-bg-soft:   linear-gradient(180deg, rgba(26,28,34,0.30), rgba(18,19,24,0.42));
+    --panel-border:        rgba(212,162,78,0.22);
+    --panel-border-strong: rgba(212,162,78,0.40);
+    --panel-border-soft:   rgba(212,162,78,0.12);
+    --panel-shadow: 0 14px 34px rgba(0,0,0,0.42);
+    --panel-inset:  inset 0 1px 0 rgba(255,255,255,0.06);
+
+    /* ── Background grain (플레이 화면처럼 약한 vignette) ── */
+    --bg-glow: radial-gradient(ellipse 80% 60% at 50% 35%, rgba(255,255,255,0.025) 0%, transparent 70%);
+  }
+
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: var(--wood-deep);
+    background-image:
+      var(--bg-glow),
+      radial-gradient(ellipse 50% 30% at 30% 20%, rgba(212,162,78,0.04), transparent 70%),
+      radial-gradient(ellipse 40% 30% at 70% 80%, rgba(212,162,78,0.025), transparent 70%);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Pretendard', 'Apple SD Gothic Neo', sans-serif;
+    font-size: 15px;
+    line-height: 1.55;
+  }
+  .wrap { max-width: 1200px; margin: 0 auto; padding: 60px 40px; }
+  h1 {
+    font-size: 38px; font-weight: 800; letter-spacing: -0.04em;
+    margin: 0 0 8px; color: var(--text);
+  }
+  h1 .accent { color: var(--gold-light); }
+  h2 {
+    font-size: 22px; font-weight: 800; letter-spacing: -0.02em;
+    margin: 56px 0 18px; color: var(--gold-light);
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--panel-border-soft);
+  }
+  h3 {
+    font-size: 14px; font-weight: 800; letter-spacing: 0.16em;
+    text-transform: uppercase; color: var(--gold);
+    margin: 28px 0 14px;
+  }
+  p { color: var(--text-dim); margin: 0 0 12px; }
+  code {
+    font-family: 'SF Mono', Menlo, Consolas, monospace;
+    font-size: 12.5px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.06);
+    padding: 1px 6px; border-radius: 4px;
+    color: var(--gold-light);
+  }
+  .lede { font-size: 16px; color: var(--text-muted); margin-bottom: 28px; }
+  .grid { display: grid; gap: 14px; }
+  .grid.cols-3 { grid-template-columns: repeat(3, 1fr); }
+  .grid.cols-4 { grid-template-columns: repeat(4, 1fr); }
+  .grid.cols-6 { grid-template-columns: repeat(6, 1fr); }
+
+  /* ── Color swatch ── */
+  .swatch {
+    border-radius: 12px; padding: 16px;
+    border: 1px solid rgba(255,255,255,0.06);
+    background: var(--panel-bg-soft);
+    backdrop-filter: blur(10px);
+  }
+  .swatch .chip {
+    height: 64px; border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.06);
+    margin-bottom: 12px;
+  }
+  .swatch .name { font-size: 13px; font-weight: 700; color: var(--text); }
+  .swatch .var  { font-size: 11px; color: var(--text-muted); margin-top: 2px; }
+  .swatch .hex  { font-size: 11px; color: var(--gold); font-family: 'SF Mono', monospace; margin-top: 2px; }
+
+  /* ── Showcase frame ── */
+  .frame {
+    padding: 28px;
+    border-radius: 16px;
+    border: 1px solid var(--panel-border-soft);
+    background: var(--panel-bg);
+    box-shadow: var(--panel-shadow), var(--panel-inset);
+    margin-bottom: 16px;
+  }
+  .frame .label {
+    font-size: 11px; font-weight: 800; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--text-muted);
+    margin-bottom: 18px;
+  }
+
+  /* ═══════════════════════════════════════════════════════
+     COMPONENT TOKENS
+     ═══════════════════════════════════════════════════════ */
+
+  /* Buttons */
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    height: 42px; padding: 0 20px;
+    border-radius: 12px; cursor: pointer;
+    font-size: 14px; font-weight: 700;
+    transition: transform 140ms ease, filter 140ms ease,
+                border-color 140ms ease, background 140ms ease,
+                box-shadow 140ms ease;
+    border: 1px solid transparent;
+    font-family: inherit;
+  }
+  .btn:hover { transform: translateY(-1px); }
+
+  .btn--primary {
+    background: linear-gradient(180deg, rgba(232,193,114,0.95), rgba(180,130,50,0.98));
+    border-color: rgba(232,193,114,0.55);
+    color: #1a120a;
+    box-shadow: 0 8px 18px rgba(0,0,0,0.32), inset 0 1px 0 rgba(255,255,255,0.18);
+  }
+  .btn--primary:hover { filter: brightness(1.08); }
+
+  .btn--secondary {
+    background: rgba(212,162,78,0.10);
+    border-color: rgba(212,162,78,0.42);
+    color: var(--gold-light);
+  }
+  .btn--secondary:hover {
+    background: rgba(212,162,78,0.16);
+    border-color: rgba(212,162,78,0.6);
+    box-shadow: 0 0 0 3px rgba(212,162,78,0.10);
+  }
+
+  .btn--ghost {
+    background: rgba(255,255,255,0.03);
+    border-color: rgba(255,255,255,0.10);
+    color: var(--text-dim);
+  }
+  .btn--ghost:hover {
+    background: rgba(255,255,255,0.06);
+    border-color: rgba(212,162,78,0.28);
+    color: var(--text);
+  }
+
+  .btn--pill { border-radius: 999px; height: 36px; padding: 0 16px; font-size: 13px; }
+
+  .btn--cta {
+    height: 56px; padding: 0 28px; font-size: 16px;
+    border-radius: 14px;
+  }
+  .btn .kbd {
+    margin-left: 10px;
+    font-size: 11px; font-weight: 700;
+    padding: 3px 8px; border-radius: 6px;
+    background: rgba(0,0,0,0.22);
+    border: 1px solid rgba(255,255,255,0.16);
+    color: rgba(255,255,255,0.7);
+    letter-spacing: 0.06em;
+  }
+  .btn--primary .kbd { background: rgba(0,0,0,0.18); color: rgba(0,0,0,0.62); border-color: rgba(0,0,0,0.18); }
+
+  /* Highlight rules (Active state) */
+  .hi-card {
+    padding: 18px 22px;
+    border-radius: 14px;
+    background: rgba(15,16,22,0.7);
+    border: 1px solid rgba(255,255,255,0.06);
+    color: var(--text-dim);
+    transition: all 140ms ease;
+  }
+  .hi-card.is-active {
+    background: rgba(212,162,78,0.10);
+    border-color: rgba(212,162,78,0.50);
+    color: var(--text);
+    box-shadow: 0 0 0 1px rgba(212,162,78,0.18), 0 6px 20px rgba(212,162,78,0.10);
+  }
+  .hi-card.is-cleared {
+    border-color: rgba(212,162,78,0.36);
+    background: rgba(212,162,78,0.06);
+    color: var(--text);
+  }
+  .hi-card.is-locked { opacity: 0.32; }
+
+  .hi-card .title { font-weight: 700; font-size: 15px; margin-bottom: 4px; }
+  .hi-card .meta  { font-size: 12px; color: var(--text-muted); }
+
+  /* Lines */
+  .line-demo { padding: 14px 0; }
+  .line-hairline { height: 1px; background: rgba(255,255,255,0.06); }
+  .line-soft     { height: 1px; background: rgba(212,162,78,0.12); }
+  .line-strong   { height: 1px; background: rgba(212,162,78,0.40); }
+  .line-glow {
+    height: 1px;
+    background: linear-gradient(90deg, transparent 0%, rgba(212,162,78,0.6) 50%, transparent 100%);
+  }
+  .line-vert-accent {
+    width: 4px; height: 120px;
+    background: linear-gradient(180deg,
+      rgba(212,162,78,0) 0%,
+      rgba(212,162,78,0.85) 12%,
+      rgba(212,162,78,0.85) 88%,
+      rgba(212,162,78,0) 100%);
+    border-radius: 2px;
+  }
+
+  /* Toggle */
+  .toggle-row { display: flex; align-items: center; gap: 12px; }
+  .toggle-label { font-size: 13px; font-weight: 700; color: var(--text-dim); }
+  .toggle {
+    position: relative;
+    width: 60px; height: 32px;
+    border-radius: 999px;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.10);
+    cursor: pointer;
+    transition: background 140ms ease, border-color 140ms ease;
+  }
+  .toggle::after {
+    content: '';
+    position: absolute;
+    left: 3px; top: 3px;
+    width: 24px; height: 24px;
+    border-radius: 999px;
+    background: #f5f1ea;
+    transition: left 160ms cubic-bezier(0.45, 0, 0.25, 1);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  }
+  .toggle.is-on {
+    background: rgba(212,162,78,0.32);
+    border-color: rgba(212,162,78,0.5);
+    box-shadow: 0 0 12px rgba(212,162,78,0.18);
+  }
+  .toggle.is-on::after { left: 31px; background: var(--gold-light); }
+
+  /* Modal */
+  .modal {
+    width: 480px;
+    padding: 28px 30px;
+    border-radius: 18px;
+    background: linear-gradient(180deg, rgba(22,22,30,0.96), rgba(14,14,20,0.98));
+    border: 1px solid rgba(212,162,78,0.28);
+    box-shadow: 0 28px 60px rgba(0,0,0,0.56), 0 0 0 1px rgba(212,162,78,0.06), inset 0 1px 0 rgba(255,255,255,0.04);
+  }
+  .modal__eyebrow {
+    font-size: 11px; font-weight: 800; letter-spacing: 0.22em;
+    text-transform: uppercase; color: var(--gold);
+    text-align: center; margin-bottom: 14px;
+  }
+  .modal__title {
+    font-size: 24px; font-weight: 800; color: var(--text);
+    margin: 0 0 18px;
+  }
+  .modal__choices { display: grid; gap: 10px; }
+  .modal__choice {
+    display: flex; align-items: center; gap: 14px;
+    padding: 14px 18px;
+    border-radius: 12px;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.06);
+    cursor: pointer;
+    transition: all 140ms ease;
+  }
+  .modal__choice:hover, .modal__choice.is-hover {
+    border-color: rgba(212,162,78,0.42);
+    background: rgba(212,162,78,0.08);
+  }
+  .modal__choice .num {
+    width: 22px; height: 22px;
+    border-radius: 6px;
+    display: grid; place-items: center;
+    background: rgba(212,162,78,0.18);
+    color: var(--gold-light);
+    font-weight: 800; font-size: 12px;
+  }
+  .modal__choice .text { font-size: 14px; color: var(--text); flex: 1; }
+
+  /* Speech bubble */
+  .bubble-row { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 14px; }
+  .bubble-row.is-right { flex-direction: row-reverse; }
+  .avatar {
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.04);
+    border: 2px solid rgba(255,255,255,0.10);
+    display: grid; place-items: center;
+    color: var(--text-muted);
+    font-size: 11px; font-weight: 700;
+    flex-shrink: 0;
+  }
+  .avatar.is-a { border-color: rgba(91,141,239,0.45); color: var(--blue); }
+  .avatar.is-b { border-color: rgba(224,96,96,0.45); color: var(--red); }
+  .bubble {
+    max-width: 540px;
+    padding: 14px 18px;
+    border-radius: 14px;
+    background: rgba(20,20,28,0.7);
+    border: 1px solid rgba(255,255,255,0.06);
+    color: var(--text);
+    font-size: 15px; line-height: 1.6;
+  }
+  .bubble.is-a { border-color: rgba(91,141,239,0.30); background: rgba(91,141,239,0.06); }
+  .bubble.is-b { border-color: rgba(224,96,96,0.30); background: rgba(224,96,96,0.06); }
+  .bubble .helper {
+    margin-top: 8px;
+    font-size: 12.5px; font-style: italic;
+    color: var(--text-muted);
+  }
+  .bubble-judge {
+    margin: 14px auto;
+    max-width: 560px;
+    padding: 12px 22px;
+    border-radius: 14px;
+    background: rgba(212,162,78,0.06);
+    border: 1px solid rgba(212,162,78,0.22);
+    color: var(--gold-light);
+    text-align: center;
+    font-size: 15px;
+    font-weight: 600;
+  }
+
+  /* Chip */
+  .chip-set { display: flex; gap: 8px; flex-wrap: wrap; }
+  .chip-pill {
+    display: inline-flex; align-items: center; gap: 6px;
+    height: 26px; padding: 0 12px;
+    border-radius: 999px;
+    font-size: 11px; font-weight: 800;
+    letter-spacing: 0.06em;
+    background: rgba(212,162,78,0.10);
+    border: 1px solid rgba(212,162,78,0.32);
+    color: var(--gold-light);
+  }
+  .chip-pill.is-blue {
+    background: rgba(91,141,239,0.10); border-color: rgba(91,141,239,0.32); color: var(--blue);
+  }
+  .chip-pill.is-red {
+    background: rgba(224,96,96,0.10); border-color: rgba(224,96,96,0.32); color: var(--red);
+  }
+  .chip-pill.is-neutral {
+    background: rgba(255,255,255,0.04); border-color: rgba(255,255,255,0.10); color: var(--text-dim);
+  }
+
+  /* Stage / numbered indicator */
+  .stage-row { display: flex; gap: 14px; flex-wrap: wrap; }
+  .stage-pill {
+    position: relative;
+    display: inline-flex; align-items: center; gap: 10px;
+    height: 44px; padding: 0 18px;
+    border-radius: 999px;
+    background: rgba(15,16,22,0.85);
+    border: 1px solid rgba(255,255,255,0.08);
+    cursor: pointer;
+    transition: all 140ms ease;
+  }
+  .stage-pill .num { font-size: 18px; font-weight: 900; color: rgba(255,255,255,0.32); }
+  .stage-pill .score { font-size: 12px; color: var(--text-muted); font-weight: 600; }
+  .stage-pill:hover { border-color: rgba(212,162,78,0.28); transform: scale(1.03); }
+  .stage-pill.is-active {
+    background: rgba(212,162,78,0.12);
+    border-color: rgba(212,162,78,0.55);
+    box-shadow: 0 0 18px rgba(212,162,78,0.20), inset 0 1px 0 rgba(255,255,255,0.06);
+    padding-left: 26px;
+  }
+  .stage-pill.is-active::before {
+    content: ''; position: absolute;
+    left: 12px; top: 50%;
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--gold-light);
+    transform: translateY(-50%);
+    box-shadow: 0 0 8px rgba(232,193,114,0.85);
+  }
+  .stage-pill.is-active .num { color: var(--gold-light); }
+  .stage-pill.is-cleared {
+    border-color: rgba(212,162,78,0.40);
+    background: rgba(212,162,78,0.06);
+  }
+  .stage-pill.is-cleared .score { color: var(--gold); }
+
+  /* Hotbar slot (Phase 2 reference) */
+  .hotbar { display: flex; gap: 12px; }
+  .hotslot {
+    width: 96px; height: 96px;
+    border-radius: 14px;
+    background: linear-gradient(180deg, rgba(28,31,38,0.9), rgba(18,20,26,0.95));
+    border: 1px solid rgba(212,162,78,0.18);
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    gap: 6px;
+    position: relative;
+    cursor: pointer;
+    transition: all 140ms ease;
+  }
+  .hotslot:hover {
+    border-color: rgba(212,162,78,0.5);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4), 0 0 0 1px rgba(212,162,78,0.12);
+  }
+  .hotslot .ico { color: var(--gold-light); font-size: 22px; line-height: 1; }
+  .hotslot .lab { font-size: 12px; color: var(--text); font-weight: 700; }
+  .hotslot .num {
+    position: absolute; top: 8px; left: 8px;
+    width: 18px; height: 18px;
+    border-radius: 5px;
+    background: rgba(212,162,78,0.22);
+    color: var(--gold-light);
+    display: grid; place-items: center;
+    font-size: 11px; font-weight: 800;
+  }
+
+  /* Brief item card (사건 선택 씬 적용 대상) */
+  .brief-item {
+    display: flex; align-items: center; gap: 12px;
+    padding: 14px 18px;
+    border-radius: 12px;
+    background: rgba(212,162,78,0.04);
+    border: 1px solid rgba(212,162,78,0.16);
+    transition: all 140ms ease;
+  }
+  .brief-item:hover {
+    background: rgba(212,162,78,0.08);
+    border-color: rgba(212,162,78,0.32);
+  }
+  .brief-item .num {
+    width: 24px; height: 24px;
+    border-radius: 7px;
+    background: rgba(212,162,78,0.18);
+    color: var(--gold-light);
+    display: grid; place-items: center;
+    font-size: 12px; font-weight: 800;
+  }
+  .brief-item .lab { font-size: 15px; color: var(--text); }
+
+  /* ───────────────────────────────────
+     Glow effects (빛나는 효과)
+     ─────────────────────────────────── */
+  .glow-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+  .glow-demo {
+    height: 110px;
+    border-radius: 14px;
+    background: rgba(15,16,22,0.85);
+    border: 1px solid rgba(255,255,255,0.06);
+    display: grid; place-items: center;
+    color: var(--text-dim); font-size: 13px;
+    position: relative;
+  }
+  .glow-demo .label-mini {
+    position: absolute; top: 10px; left: 14px;
+    font-size: 10px; font-weight: 800; letter-spacing: 0.16em;
+    text-transform: uppercase; color: var(--gold);
+  }
+  .glow-soft {
+    border-color: rgba(212,162,78,0.45);
+    box-shadow: 0 0 18px rgba(212,162,78,0.18);
+  }
+  .glow-strong {
+    border-color: rgba(232,193,114,0.6);
+    box-shadow:
+      0 0 0 1px rgba(212,162,78,0.18),
+      0 0 24px rgba(212,162,78,0.32),
+      0 0 48px rgba(212,162,78,0.12);
+  }
+  .glow-inset {
+    border-color: rgba(212,162,78,0.32);
+    box-shadow:
+      inset 0 0 24px rgba(212,162,78,0.10),
+      inset 0 1px 0 rgba(255,255,255,0.06);
+  }
+  .glow-pulse {
+    border-color: rgba(212,162,78,0.5);
+    animation: pulseGold 2.4s ease-in-out infinite;
+  }
+  @keyframes pulseGold {
+    0%, 100% { box-shadow: 0 0 12px rgba(212,162,78,0.16); }
+    50%      { box-shadow: 0 0 28px rgba(212,162,78,0.42); }
+  }
+  .glow-rim {
+    border-color: transparent;
+    background:
+      linear-gradient(rgba(15,16,22,0.85), rgba(15,16,22,0.85)) padding-box,
+      linear-gradient(135deg, rgba(232,193,114,0.6), rgba(212,162,78,0.10), rgba(232,193,114,0.45)) border-box;
+    border: 1px solid transparent;
+    box-shadow: 0 0 22px rgba(212,162,78,0.18);
+  }
+  .glow-halo {
+    background:
+      radial-gradient(ellipse 100% 80% at 50% 50%, rgba(212,162,78,0.18), transparent 60%),
+      rgba(15,16,22,0.85);
+    border-color: rgba(212,162,78,0.4);
+  }
+
+  /* ───────────────────────────────────
+     Painterly / 왼쪽 덧칠
+     ─────────────────────────────────── */
+  .paint-demo {
+    position: relative;
+    padding: 28px 24px 24px 36px;
+    border-radius: 14px;
+    background: var(--panel-bg);
+    border: 1px solid var(--panel-border-soft);
+    overflow: hidden;
+  }
+  .paint-demo h4 {
+    margin: 0 0 6px;
+    font-size: 13px; font-weight: 800; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--gold-light);
+  }
+  .paint-demo p { margin: 0; font-size: 14px; color: var(--text-dim); }
+
+  /* Variant A: solid bar */
+  .paint-a::before {
+    content: ''; position: absolute;
+    left: 0; top: 14px; bottom: 14px;
+    width: 4px; border-radius: 2px;
+    background: linear-gradient(180deg,
+      rgba(212,162,78,0) 0%,
+      rgba(232,193,114,0.85) 14%,
+      rgba(232,193,114,0.85) 86%,
+      rgba(212,162,78,0) 100%);
+  }
+
+  /* Variant B: brush/wash bleed */
+  .paint-b::before {
+    content: ''; position: absolute;
+    left: 0; top: 0; bottom: 0; width: 80px;
+    background: linear-gradient(90deg,
+      rgba(212,162,78,0.16) 0%,
+      rgba(212,162,78,0.06) 40%,
+      transparent 100%);
+    pointer-events: none;
+  }
+  .paint-b::after {
+    content: ''; position: absolute;
+    left: 0; top: 0; bottom: 0; width: 2px;
+    background: rgba(232,193,114,0.5);
+  }
+
+  /* Variant C: scribble accent (svg fractal) */
+  .paint-c {
+    background:
+      var(--panel-bg),
+      linear-gradient(90deg, rgba(212,162,78,0.04) 0%, transparent 30%);
+    background-blend-mode: normal;
+  }
+  .paint-c::before {
+    content: ''; position: absolute;
+    left: 0; top: 0; width: 24px; height: 100%;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='1.4' numOctaves='2' seed='9'/><feColorMatrix values='0 0 0 0 0.83  0 0 0 0 0.63  0 0 0 0 0.31  0 0 0 0.18 0'/></filter><rect width='24' height='200' filter='url(%23n)'/></svg>");
+    opacity: 0.7;
+    pointer-events: none;
+  }
+
+  /* Variant D: tab indicator (active tab) */
+  .paint-d-row { display: flex; gap: 0; border-bottom: 1px solid var(--panel-border-soft); margin-bottom: 14px; }
+  .paint-tab {
+    position: relative;
+    padding: 10px 18px;
+    font-size: 13px; font-weight: 700;
+    color: var(--text-muted);
+    cursor: pointer;
+  }
+  .paint-tab.is-active { color: var(--gold-light); }
+  .paint-tab.is-active::after {
+    content: '';
+    position: absolute;
+    left: 8px; right: 8px; bottom: -1px;
+    height: 2px;
+    background: linear-gradient(90deg,
+      transparent 0%,
+      var(--gold-light) 20%,
+      var(--gold-light) 80%,
+      transparent 100%);
+    box-shadow: 0 0 8px rgba(232,193,114,0.6);
+  }
+
+  /* ───────────────────────────────────
+     Panel hierarchy (패널 구분)
+     ─────────────────────────────────── */
+  .panel-l1 {
+    padding: 22px;
+    border-radius: 16px;
+    background: linear-gradient(180deg, rgba(22,22,30,0.82), rgba(13,14,18,0.92));
+    border: 1px solid var(--panel-border);
+    box-shadow: var(--panel-shadow), var(--panel-inset);
+  }
+  .panel-l2 {
+    padding: 18px;
+    border-radius: 12px;
+    background: rgba(28,30,38,0.5);
+    border: 1px solid rgba(255,255,255,0.06);
+  }
+  .panel-l3 {
+    padding: 12px 14px;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.05);
+  }
+  .panel-head {
+    display: flex; align-items: center; gap: 10px;
+    margin-bottom: 14px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--panel-border-soft);
+  }
+  .panel-head .icon {
+    width: 28px; height: 28px;
+    border-radius: 8px;
+    background: rgba(212,162,78,0.10);
+    border: 1px solid rgba(212,162,78,0.28);
+    color: var(--gold-light);
+    display: grid; place-items: center;
+    font-size: 13px;
+  }
+  .panel-head .title {
+    font-size: 13px; font-weight: 800; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--text);
+  }
+  .panel-head .count {
+    margin-left: auto;
+    font-size: 11px; font-weight: 800;
+    padding: 2px 10px; border-radius: 999px;
+    background: rgba(212,162,78,0.14);
+    color: var(--gold-light);
+  }
+
+  /* ───────────────────────────────────
+     Border system (영역 구분 테두리)
+     ─────────────────────────────────── */
+  .border-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  .border-cell {
+    padding: 22px 18px;
+    border-radius: 12px;
+    background: rgba(15,16,22,0.7);
+    text-align: center;
+  }
+  .border-cell .name {
+    font-size: 12px; font-weight: 800;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .border-cell .meta { font-size: 11px; color: var(--text-muted); }
+
+  .b-functional { border: 1px solid rgba(212,162,78,0.40); }
+  .b-functional .name { color: var(--gold-light); }
+  .b-active     { border: 1px solid rgba(232,193,114,0.6); box-shadow: 0 0 18px rgba(212,162,78,0.18); }
+  .b-active .name { color: var(--gold-bright); }
+  .b-soft       { border: 1px solid rgba(212,162,78,0.18); }
+  .b-soft .name { color: var(--gold); }
+  .b-hairline   { border: 1px solid rgba(255,255,255,0.06); }
+  .b-hairline .name { color: var(--text-dim); }
+  .b-party-a    { border: 1px solid rgba(91,141,239,0.40); }
+  .b-party-a .name { color: var(--blue); }
+  .b-party-b    { border: 1px solid rgba(224,96,96,0.40); }
+  .b-party-b .name { color: var(--red); }
+  .b-witness    { border: 1px solid rgba(155,168,122,0.4); }
+  .b-witness .name { color: var(--witness); }
+  .b-success    { border: 1px solid rgba(92,201,122,0.4); }
+  .b-success .name { color: var(--green); }
+  .b-warning    { border: 1px solid rgba(228,168,84,0.5); background: rgba(228,168,84,0.06); }
+  .b-warning .name { color: #e4a854; }
+
+  /* ───────────────────────────────────
+     Translucency layers
+     ─────────────────────────────────── */
+  .alpha-bg {
+    background-image:
+      url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='400' height='160' viewBox='0 0 400 160'><defs><radialGradient id='g' cx='30%25' cy='40%25' r='60%25'><stop offset='0%25' stop-color='%23d4a24e' stop-opacity='0.35'/><stop offset='100%25' stop-color='%231a1a22'/></radialGradient></defs><rect width='400' height='160' fill='url(%23g)'/><text x='30' y='90' fill='%23d4a24e' font-family='monospace' font-size='13' opacity='0.5'>BACKGROUND IMAGE / GRADIENT</text></svg>");
+    background-size: cover;
+    border-radius: 14px;
+    padding: 14px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+  }
+  .alpha-cell {
+    height: 110px;
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.08);
+    padding: 12px;
+    color: var(--text-dim);
+    font-size: 11px;
+    line-height: 1.5;
+  }
+  .alpha-cell .nm {
+    font-size: 11px; font-weight: 800;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    margin-bottom: 6px; color: var(--gold-light);
+  }
+  .alpha-heavy    { background: rgba(15,16,22,0.96); }
+  .alpha-standard { background: rgba(15,16,22,0.85); }
+  .alpha-medium   { background: rgba(15,16,22,0.70); }
+  .alpha-light    {
+    background: rgba(15,16,22,0.42);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+  .alpha-tint {
+    background: rgba(212,162,78,0.10);
+    border-color: rgba(212,162,78,0.32);
+  }
+  .alpha-tint .nm { color: var(--gold-bright); }
+
+  /* ───────────────────────────────────
+     Neon effects
+     ─────────────────────────────────── */
+  .neon-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+  .neon-cell {
+    padding: 22px 18px;
+    border-radius: 12px;
+    background: rgba(8,8,12,0.92);
+    border: 1px solid rgba(255,255,255,0.05);
+    text-align: center;
+  }
+  .neon-cell .lab {
+    font-size: 11px; font-weight: 800;
+    letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--text-muted); margin-bottom: 12px;
+  }
+
+  .neon-soft {
+    color: var(--gold-light);
+    font-size: 22px; font-weight: 800; letter-spacing: 0.05em;
+    text-shadow: 0 0 8px rgba(232,193,114,0.5);
+  }
+  .neon-strong {
+    color: #fff;
+    font-size: 22px; font-weight: 800; letter-spacing: 0.05em;
+    text-shadow:
+      0 0 4px var(--gold-bright),
+      0 0 12px rgba(232,193,114,0.7),
+      0 0 24px rgba(212,162,78,0.4);
+  }
+  .neon-sharp {
+    color: transparent;
+    font-size: 22px; font-weight: 900; letter-spacing: 0.06em;
+    -webkit-text-stroke: 1px var(--gold-light);
+    text-stroke: 1px var(--gold-light);
+    text-shadow:
+      0 0 6px rgba(232,193,114,0.6),
+      0 0 16px rgba(212,162,78,0.4);
+  }
+  .neon-warn {
+    color: #ffb347;
+    font-size: 22px; font-weight: 800; letter-spacing: 0.05em;
+    text-shadow: 0 0 10px rgba(255,179,71,0.7), 0 0 22px rgba(255,140,40,0.4);
+  }
+  .neon-box {
+    display: inline-block;
+    padding: 8px 18px;
+    border-radius: 8px;
+    color: var(--gold-light);
+    font-size: 12px; font-weight: 800;
+    letter-spacing: 0.16em; text-transform: uppercase;
+    border: 1px solid var(--gold-light);
+    box-shadow:
+      inset 0 0 8px rgba(232,193,114,0.3),
+      0 0 12px rgba(212,162,78,0.4);
+    text-shadow: 0 0 6px rgba(232,193,114,0.5);
+  }
+  .neon-line {
+    display: inline-block;
+    width: 100%;
+    height: 1px;
+    background: var(--gold-light);
+    box-shadow: 0 0 6px rgba(232,193,114,0.7), 0 0 14px rgba(212,162,78,0.4);
+    margin: 10px 0;
+  }
+
+  /* ───────────────────────────────────
+     Line thickness
+     ─────────────────────────────────── */
+  .lt-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+  .lt-cell {
+    padding: 22px 16px;
+    border-radius: 12px;
+    background: rgba(15,16,22,0.7);
+    text-align: center;
+  }
+  .lt-cell .nm { font-size: 11px; font-weight: 800; letter-spacing: 0.14em; color: var(--gold-light); margin-bottom: 8px; text-transform: uppercase; }
+  .lt-cell .meta { font-size: 11px; color: var(--text-muted); margin-top: 8px; }
+  .lt-1 { border: 1px solid rgba(212,162,78,0.5); }
+  .lt-2 { border: 2px solid rgba(212,162,78,0.5); }
+  .lt-4 { border: 4px solid rgba(212,162,78,0.5); }
+  .lt-x { border: 1.5px solid rgba(224,96,96,0.5); position: relative; }
+  .lt-x::after {
+    content: '✕';
+    position: absolute;
+    top: 6px; right: 8px;
+    color: #e06060;
+    font-weight: 800;
+    font-size: 14px;
+  }
+
+  /* ───────────────────────────────────
+     Context map table
+     ─────────────────────────────────── */
+  .ctx-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+  .ctx-table th {
+    padding: 10px 12px;
+    text-align: left;
+    font-size: 11px; font-weight: 800;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--gold-light);
+    border-bottom: 1px solid var(--panel-border);
+    background: rgba(212,162,78,0.04);
+  }
+  .ctx-table td {
+    padding: 12px 12px;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+    color: var(--text-dim);
+    vertical-align: top;
+  }
+  .ctx-table tr:hover td { background: rgba(212,162,78,0.03); }
+  .ctx-table .ctx { color: var(--text); font-weight: 700; }
+  .ctx-table code {
+    font-size: 11.5px;
+    padding: 1px 5px;
+  }
+  .ctx-pill {
+    display: inline-block;
+    padding: 1px 8px;
+    border-radius: 999px;
+    font-size: 10px; font-weight: 800;
+    letter-spacing: 0.06em;
+  }
+  .ctx-gold { background: rgba(212,162,78,0.16); color: var(--gold-light); border: 1px solid rgba(212,162,78,0.32); }
+  .ctx-blue { background: rgba(91,141,239,0.16); color: var(--blue); border: 1px solid rgba(91,141,239,0.32); }
+  .ctx-red  { background: rgba(224,96,96,0.16); color: var(--red); border: 1px solid rgba(224,96,96,0.32); }
+  .ctx-green{ background: rgba(92,201,122,0.16); color: var(--green); border: 1px solid rgba(92,201,122,0.32); }
+  .ctx-amber{ background: rgba(255,179,71,0.16); color: #ffb347; border: 1px solid rgba(255,179,71,0.32); }
+  .ctx-neut { background: rgba(255,255,255,0.04); color: var(--text-dim); border: 1px solid rgba(255,255,255,0.10); }
+
+  .note {
+    margin-top: 10px;
+    font-size: 12.5px; color: var(--text-muted);
+  }
+  .note b { color: var(--gold-light); font-weight: 700; }
+
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<h1>솔로몬 법정 — <span class="accent">PC 통합 디자인 가이드 v1</span></h1>
+<p class="lede">
+  플레이 화면 (Phase 1 사전진술 / Phase 2 심문 / 모달 / 핫바) 스크린샷과 기존 <code>pc.css</code> 토큰을 기준으로 정리.<br>
+  사건 선택 씬은 본 가이드를 그대로 적용해 톤을 통일한다.
+</p>
+
+<!-- ════════════════════════════════════════ -->
+<h2>1. 컬러 팔레트</h2>
+<p>플레이 화면의 다크 우드 + 골드 + 화자색 시스템. 앰버 톤은 제거하고 차콜 베이스 유지.</p>
+
+<h3>Gold — 메인 액센트</h3>
+<div class="grid cols-4">
+  <div class="swatch"><div class="chip" style="background:#d4a24e"></div><div class="name">Gold</div><div class="var">--gold</div><div class="hex">#d4a24e</div></div>
+  <div class="swatch"><div class="chip" style="background:#e8c172"></div><div class="name">Gold Light</div><div class="var">--gold-light</div><div class="hex">#e8c172</div></div>
+  <div class="swatch"><div class="chip" style="background:#f0d890"></div><div class="name">Gold Bright</div><div class="var">--gold-bright</div><div class="hex">#f0d890</div></div>
+  <div class="swatch"><div class="chip" style="background:#8b6914"></div><div class="name">Gold Dim</div><div class="var">--gold-dim</div><div class="hex">#8b6914</div></div>
+</div>
+
+<h3>Dark — 배경 / 표면</h3>
+<div class="grid cols-4">
+  <div class="swatch"><div class="chip" style="background:#0d0e12"></div><div class="name">Wood Deep</div><div class="var">--wood-deep</div><div class="hex">#0d0e12</div></div>
+  <div class="swatch"><div class="chip" style="background:#12141a"></div><div class="name">Wood Dark</div><div class="var">--wood-dark</div><div class="hex">#12141a</div></div>
+  <div class="swatch"><div class="chip" style="background:#1c1f26"></div><div class="name">Wood Medium</div><div class="var">--wood-medium</div><div class="hex">#1c1f26</div></div>
+  <div class="swatch"><div class="chip" style="background:#5a5f6c"></div><div class="name">Wood Warm</div><div class="var">--wood-warm</div><div class="hex">#5a5f6c</div></div>
+</div>
+
+<h3>Speakers — 화자별 색</h3>
+<div class="grid cols-4">
+  <div class="swatch"><div class="chip" style="background:#5b8def"></div><div class="name">Blue (당사자 A)</div><div class="var">--blue</div><div class="hex">#5b8def</div></div>
+  <div class="swatch"><div class="chip" style="background:#e06060"></div><div class="name">Red (당사자 B)</div><div class="var">--red</div><div class="hex">#e06060</div></div>
+  <div class="swatch"><div class="chip" style="background:#9ba87a"></div><div class="name">Witness (증인)</div><div class="var">--witness</div><div class="hex">#9ba87a</div></div>
+  <div class="swatch"><div class="chip" style="background:#5cc97a"></div><div class="name">Green (성공)</div><div class="var">--green</div><div class="hex">#5cc97a</div></div>
+</div>
+
+<h3>Text</h3>
+<div class="grid cols-3">
+  <div class="swatch"><div class="chip" style="background:#ede3cc"></div><div class="name">Text Primary</div><div class="var">--text</div><div class="hex">#ede3cc</div></div>
+  <div class="swatch"><div class="chip" style="background:#b5a888"></div><div class="name">Text Dim</div><div class="var">--text-dim</div><div class="hex">#b5a888</div></div>
+  <div class="swatch"><div class="chip" style="background:#857b68"></div><div class="name">Text Muted</div><div class="var">--text-muted</div><div class="hex">#857b68</div></div>
+</div>
+
+<h3>Panel — 패널 토큰 (rgba 기반)</h3>
+<div class="frame">
+  <div style="display: grid; gap: 10px; font-family: 'SF Mono', monospace; font-size: 12.5px; color: var(--text-dim);">
+    <div><b style="color: var(--gold-light)">--panel-bg</b> · linear-gradient(180deg, rgba(18,19,24,.42), rgba(13,14,18,.52))</div>
+    <div><b style="color: var(--gold-light)">--panel-bg-strong</b> · linear-gradient(180deg, rgba(18,19,24,.54), rgba(13,14,18,.64))</div>
+    <div><b style="color: var(--gold-light)">--panel-bg-soft</b> · linear-gradient(180deg, rgba(26,28,34,.30), rgba(18,19,24,.42))</div>
+    <div><b style="color: var(--gold-light)">--panel-border</b> · rgba(212,162,78, <span style="color:var(--gold-bright)">.22</span>) — 표준 패널 테두리</div>
+    <div><b style="color: var(--gold-light)">--panel-border-strong</b> · rgba(212,162,78, <span style="color:var(--gold-bright)">.40</span>) — active/hover</div>
+    <div><b style="color: var(--gold-light)">--panel-border-soft</b> · rgba(212,162,78, <span style="color:var(--gold-bright)">.12</span>) — divider</div>
+    <div><b style="color: var(--gold-light)">--panel-shadow</b> · 0 14px 34px rgba(0,0,0,.42)</div>
+    <div><b style="color: var(--gold-light)">--panel-inset</b> · inset 0 1px 0 rgba(255,255,255,.06)</div>
+  </div>
+</div>
+
+
+<!-- ════════════════════════════════════════ -->
+<h2>2. 버튼</h2>
+<p>모든 버튼은 transition 140ms ease + hover시 translateY(-1px). Primary CTA만 골드 그라디언트, 나머지는 outline 패턴.</p>
+
+<h3>Primary — 골드 그라디언트 (메인 CTA, 결정 액션)</h3>
+<div class="frame">
+  <div style="display:flex; gap:12px; flex-wrap:wrap; align-items:center;">
+    <button class="btn btn--primary">사건 입장하기</button>
+    <button class="btn btn--primary btn--cta">⚖️ 사건 입장하기 <span class="kbd">Enter</span></button>
+    <button class="btn btn--primary btn--pill">모순을 찌른다</button>
+  </div>
+  <div class="note"><b>Use:</b> 사건 입장 · 모순 찌르기 · 판결 · "다음 진술" 진행. 한 화면에 1개만.</div>
+</div>
+
+<h3>Secondary — 골드 outline (기본 액션, 자주 쓰는 토글성 버튼)</h3>
+<div class="frame">
+  <div style="display:flex; gap:12px; flex-wrap:wrap; align-items:center;">
+    <button class="btn btn--secondary">증거 열람</button>
+    <button class="btn btn--secondary btn--pill">Phase 1 - 사전진술</button>
+    <button class="btn btn--secondary btn--pill">다음 진술 6/13 <span class="kbd">Space</span></button>
+  </div>
+  <div class="note"><b>Use:</b> 모달 액션 · phase pill · Space 진행 표시. <b>Primary 1개 + Secondary 0~3개</b> 권장.</div>
+</div>
+
+<h3>Ghost — 중립 액션 (취소 · 뒤로 · 부가)</h3>
+<div class="frame">
+  <div style="display:flex; gap:12px; flex-wrap:wrap; align-items:center;">
+    <button class="btn btn--ghost">‹ 뒤로</button>
+    <button class="btn btn--ghost">지금은 넘긴다</button>
+    <button class="btn btn--ghost btn--pill">완료 기록만</button>
+  </div>
+  <div class="note"><b>Use:</b> 뒤로/취소/스킵. 색은 죽이고 hover시 골드 0.28로 살짝 깨운다.</div>
+</div>
+
+<h3>Party CTA — 화자 색 outline (당사자에게 제시)</h3>
+<div class="frame">
+  <div style="display:flex; gap:12px;">
+    <button class="btn" style="background:rgba(91,141,239,0.08); border-color:rgba(91,141,239,0.45); color:var(--blue); height:48px; padding:0 24px; font-size:14px;">박지연에게 제시</button>
+    <button class="btn" style="background:rgba(224,96,96,0.08); border-color:rgba(224,96,96,0.45); color:var(--red); height:48px; padding:0 24px; font-size:14px;">이준호에게 제시</button>
+  </div>
+  <div class="note"><b>Use:</b> 증거 제시 모달 · 분리 심문. <b>화자 색 outline</b>으로 즉시 구분.</div>
+</div>
+
+
+<!-- ════════════════════════════════════════ -->
+<h2>3. 하이라이트 / Active 효과</h2>
+<p>플레이 화면의 모든 active state는 동일 패턴: <b>골드 border 0.5 + 골드 bg 0.10 + 외곽 glow shadow</b>.</p>
+
+<div class="frame">
+  <div class="grid cols-3">
+    <div class="hi-card"><div class="title">기본 (idle)</div><div class="meta">border 0.06 · bg 0.7</div></div>
+    <div class="hi-card is-active"><div class="title">Active</div><div class="meta">border .50 · bg .10 · glow .18</div></div>
+    <div class="hi-card is-cleared"><div class="title">Cleared</div><div class="meta">border .36 · bg .06</div></div>
+  </div>
+  <div class="note">3가지 외 추가 상태 만들지 않는다. is-locked는 opacity 0.32만 적용.</div>
+</div>
+
+
+<!-- ════════════════════════════════════════ -->
+<h2>4. 라인 / 디바이더</h2>
+<p>라인은 4가지로 한정. 두께는 항상 1px (수직 액센트만 4px).</p>
+
+<div class="frame">
+  <div style="display: grid; gap: 24px;">
+    <div>
+      <div style="font-size:11px; font-weight:800; letter-spacing:0.16em; color:var(--text-muted); margin-bottom:8px;">HAIRLINE — 같은 영역 내 항목 분리</div>
+      <div class="line-hairline"></div>
+      <div class="note"><code>rgba(255,255,255,0.06)</code></div>
+    </div>
+    <div>
+      <div style="font-size:11px; font-weight:800; letter-spacing:0.16em; color:var(--text-muted); margin-bottom:8px;">SOFT — 섹션 간 구분</div>
+      <div class="line-soft"></div>
+      <div class="note"><code>rgba(212,162,78,0.12)</code></div>
+    </div>
+    <div>
+      <div style="font-size:11px; font-weight:800; letter-spacing:0.16em; color:var(--text-muted); margin-bottom:8px;">STRONG — 활성 영역 경계</div>
+      <div class="line-strong"></div>
+      <div class="note"><code>rgba(212,162,78,0.40)</code></div>
+    </div>
+    <div>
+      <div style="font-size:11px; font-weight:800; letter-spacing:0.16em; color:var(--text-muted); margin-bottom:8px;">GLOW — 장식적 페이드</div>
+      <div class="line-glow"></div>
+      <div class="note">linear-gradient(90deg, transparent, gold .60, transparent) — 모달 head/footer divider에만</div>
+    </div>
+    <div>
+      <div style="font-size:11px; font-weight:800; letter-spacing:0.16em; color:var(--text-muted); margin-bottom:8px;">VERTICAL ACCENT — 패널 좌측 강조 (4px)</div>
+      <div style="display:flex; gap:14px; align-items:center;">
+        <div class="line-vert-accent"></div>
+        <div class="note">linear-gradient(180deg, transparent 0%, gold .85 12%, gold .85 88%, transparent 100%)<br>현재 사건 선택 씬은 <b style="color:var(--gold-light)">.85 + 페이드 12%</b>로 강화 적용 예정</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ════════════════════════════════════════ -->
+<h2>5. 토글 / 스위치</h2>
+<p>전 화면 동일 — 60×32 pill, 24×24 indicator. ON시 골드 .32 bg + .50 border + glow.</p>
+
+<div class="frame">
+  <div style="display:flex; gap:40px; align-items:center;">
+    <div class="toggle-row">
+      <span class="toggle-label">완료 기록만</span>
+      <div class="toggle"></div>
+    </div>
+    <div class="toggle-row">
+      <span class="toggle-label">완료 기록만</span>
+      <div class="toggle is-on"></div>
+    </div>
+  </div>
+  <div class="note">라벨은 좌측, 스위치는 우측. <b>OFF일 때도 완전 어둡지 않게</b> (alpha .06) 형태가 보이도록.</div>
+</div>
+
+
+<!-- ════════════════════════════════════════ -->
+<h2>6. 모달 / 다이얼로그</h2>
+<p>radius 18, padding 28/30, 골드 border .28, 큰 drop shadow + 미세 inset highlight.</p>
+
+<div class="frame">
+  <div style="display:flex; gap:24px; flex-wrap:wrap;">
+    <div class="modal" style="width:420px;">
+      <div class="modal__eyebrow">재판관의 판단</div>
+      <div class="modal__choices">
+        <div class="modal__choice"><div class="num">1</div><div class="text">이준호 씨, '아는 사람'이 누구입니까. 구체적으로 답하십시오.</div></div>
+        <div class="modal__choice is-hover"><div class="num">2</div><div class="text">이준호 씨, 말하기 어려운 사정이 있는 것 같습니다.</div></div>
+        <div class="modal__choice"><div class="num">3</div><div class="text">이 부분은 심문에서 자세히 확인하겠습니다.</div></div>
+      </div>
+    </div>
+    <div class="modal" style="width:380px;">
+      <div class="modal__title" style="font-size:14px; font-weight:800; letter-spacing:0.18em; text-transform:uppercase; color:var(--gold); margin-bottom:8px;">박지연 진술 비교</div>
+      <div class="modal__title">모순 감지</div>
+      <p style="color:var(--text-dim); font-size:14px; line-height:1.65; margin:0 0 22px;">박지연의 진술 흐름에서 어긋남이 감지되었습니다. 모순을 찌르면 다음 단서가 열릴 수 있습니다.</p>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px;">
+        <button class="btn btn--ghost" style="height:46px; justify-content:center;">지금은 넘긴다</button>
+        <button class="btn btn--secondary" style="height:46px; justify-content:center; border-color:rgba(212,162,78,0.55); background:rgba(212,162,78,0.14);">모순을 찌른다</button>
+      </div>
+    </div>
+  </div>
+  <div class="note">선택지 모달은 hover시 border 0.42 + bg .08. 단순 dialog는 좌(ghost) 우(secondary) 2버튼 그리드.</div>
+</div>
+
+
+<!-- ════════════════════════════════════════ -->
+<h2>7. 칩 / 배지</h2>
+<p>26px 높이 pill. 화자 색 + 골드 + 중립 4가지.</p>
+
+<div class="frame">
+  <div class="chip-set">
+    <span class="chip-pill">PHASE 1 · 사전진술</span>
+    <span class="chip-pill is-blue">피해자 서사</span>
+    <span class="chip-pill is-blue">대립형</span>
+    <span class="chip-pill is-red">회피형</span>
+    <span class="chip-pill is-neutral">SO</span>
+    <span class="chip-pill is-neutral">기록 보통</span>
+    <span class="chip-pill">증거 열람</span>
+  </div>
+  <div class="note">archetype/phase는 골드, 화자 라벨은 화자색, meta는 neutral.</div>
+</div>
+
+
+<!-- ════════════════════════════════════════ -->
+<h2>8. 말풍선</h2>
+<p>화자 색 .30 border + 화자 색 .06 bg. 헬퍼 텍스트는 italic + muted. 재판관 발언만 가운데 정렬 + 골드 border.</p>
+
+<div class="frame">
+  <div class="bubble-row">
+    <div class="avatar is-a">A</div>
+    <div class="bubble is-a">
+      재판관님, 제 남편은 매일 퇴근하면 집으로 바로 돌아오지 않습니다. 처음엔 야근이겠거니 했습니다.
+      <div class="helper">참아온 시간의 무게를 강조하듯 천천히, 또렷하게 말한다.</div>
+    </div>
+  </div>
+  <div class="bubble-row is-right">
+    <div class="avatar is-b">B</div>
+    <div class="bubble is-b">
+      재판관님, 그건 오해입니다.
+      <div class="helper">짧게 끊고 입을 다문다. 시선을 피한다.</div>
+    </div>
+  </div>
+  <div class="bubble-judge">박지연 씨, 좀 더 말씀해 보십시오.</div>
+</div>
+
+
+<!-- ════════════════════════════════════════ -->
+<h2>9. Stage Pill — 사건 선택 씬 핵심</h2>
+<p>플레이 핫바 슬롯과 동일 톤의 둥근 pill. Active는 좌측 dot indicator + 골드 글로우.</p>
+
+<div class="frame">
+  <div class="stage-row">
+    <div class="stage-pill"><span class="num">01</span><span class="score">—</span></div>
+    <div class="stage-pill is-active"><span class="num">02</span><span class="score">82점</span></div>
+    <div class="stage-pill is-cleared"><span class="num">03</span><span class="score">76점</span></div>
+    <div class="stage-pill is-cleared"><span class="num">04</span><span class="score">68점</span></div>
+    <div class="stage-pill" style="opacity:0.32"><span class="num">05</span><span class="score">🔒</span></div>
+  </div>
+  <div class="note">기존 박스(radius 12)에서 pill로 전환. dot 6×6 + glow 8px. score는 <b>cleared 시에만 골드</b>.</div>
+</div>
+
+
+<!-- ════════════════════════════════════════ -->
+<h2>10. Hotbar Slot — 핫바 슬롯 (Phase 2 reference)</h2>
+<p>96×96 정사각형, 골드 border 0.18, hover시 translateY(-2px) + glow.</p>
+
+<div class="frame">
+  <div class="hotbar">
+    <div class="hotslot"><span class="num">1</span><div class="ico">⚖️</div><div class="lab">사실 추궁</div></div>
+    <div class="hotslot"><span class="num">2</span><div class="ico">👁</div><div class="lab">동기 탐색</div></div>
+    <div class="hotslot"><span class="num">3</span><div class="ico">♥</div><div class="lab">공감 접근</div></div>
+    <div class="hotslot"><span class="num">4</span><div class="ico">💬</div><div class="lab">자유 질문</div></div>
+    <div class="hotslot"><span class="num">5</span><div class="ico">📄</div><div class="lab">증거 제시</div></div>
+    <div class="hotslot"><span class="num">6</span><div class="ico">👤</div><div class="lab">증인 소환</div></div>
+  </div>
+  <div class="note">사건 선택 씬에는 직접 안 쓰지만 <b>외곽 패널 톤(border .18 + gradient bg)</b>은 brief 패널 항목과 동일하게 맞춘다.</div>
+</div>
+
+
+<!-- ════════════════════════════════════════ -->
+<h2>11. Brief Item — 사건 브리핑 패널 항목</h2>
+<p>플레이 화면의 발언노트/관찰 카드와 동일 톤으로. 골드 .04 bg + 골드 .16 border.</p>
+
+<div class="frame">
+  <div style="display:grid; gap:8px; max-width:480px;">
+    <div class="brief-item"><div class="num">1</div><div class="lab">오피스텔 방문과 새벽 전화</div></div>
+    <div class="brief-item"><div class="num">2</div><div class="lab">체크카드 결제 내역</div></div>
+    <div class="brief-item"><div class="num">3</div><div class="lab">차량 블랙박스 GPS 기록</div></div>
+  </div>
+  <div class="note">기존 흰색 .03 bg → <b>골드 .04 bg + .16 border</b>로 변경. hover시 .08 bg + .32 border.</div>
+</div>
+
+
+<!-- ════════════════════════════════════════ -->
+<h2>12. 빛나는 효과 (Glow)</h2>
+<p>전 화면 동일 — Active/Hover에는 항상 골드 계열 빛이 약하게 깔린다. 6가지 변형으로 한정.</p>
+
+<h3>6가지 변형</h3>
+<div class="frame">
+  <div class="glow-grid">
+    <div class="glow-demo glow-soft"><span class="label-mini">SOFT</span>0 0 18px gold .18</div>
+    <div class="glow-demo glow-strong"><span class="label-mini">STRONG (CTA hover)</span>다중 레이어 (0/24/48px)</div>
+    <div class="glow-demo glow-inset"><span class="label-mini">INSET (active panel)</span>inset 0 0 24px gold .10</div>
+    <div class="glow-demo glow-pulse"><span class="label-mini">PULSE (지속)</span>2.4s 사이클 .16↔.42</div>
+    <div class="glow-demo glow-rim"><span class="label-mini">RIM (gradient border)</span>border-image gradient</div>
+    <div class="glow-demo glow-halo"><span class="label-mini">HALO (radial bg)</span>radial gradient inside</div>
+  </div>
+  <div class="note">
+    <b>SOFT</b> = 일반 active state (stage pill, brief item hover)<br>
+    <b>STRONG</b> = Primary CTA hover, 결정적 모달<br>
+    <b>INSET</b> = 패널 내부 강조 (active 캐릭터 프로필)<br>
+    <b>PULSE</b> = 모순 알림 / 진행 가능 신호 — 절제해서 한 번에 1개만<br>
+    <b>RIM</b> = 모달/카드 가장자리 강조 (전체 윤곽)<br>
+    <b>HALO</b> = 인물 초상화 뒤 / 결정적 카드 (시즌 모드, MVP)
+  </div>
+</div>
+
+<h3>레이어 조합 — 결정적 카드 (예: 사건 입장하기 CTA)</h3>
+<div class="frame">
+  <button class="btn btn--primary btn--cta" style="
+    box-shadow:
+      0 0 0 1px rgba(232,193,114,0.32),
+      0 8px 24px rgba(0,0,0,0.4),
+      0 0 32px rgba(212,162,78,0.28),
+      inset 0 1px 0 rgba(255,255,255,0.18);
+  ">⚖️ 사건 입장하기 <span class="kbd">Enter</span></button>
+  <div class="note">기본 그림자(0 8 24) + 골드 외곽 글로우(0 0 32) + 1px 골드 stroke + 상단 inset 흰빛. <b>레이어 4단</b>이 표준.</div>
+</div>
+
+
+<!-- ════════════════════════════════════════ -->
+<h2>13. 왼쪽 덧칠 / 페인터리 (Left Accent / Painterly)</h2>
+<p>플레이 화면 좌측 패널들의 시각적 무게감 — "그림 같은 느낌"을 주는 핵심. 4가지 변형.</p>
+
+<h3>A. SOLID BAR — 4px 골드 수직 바 (현재 사건 선택 씬에 약하게 적용된 것)</h3>
+<div class="frame">
+  <div class="paint-demo paint-a">
+    <h4>증거 수집</h4>
+    <p>골드 4px 수직 바 + 위·아래 14% 페이드. <b>활성 패널 좌측 식별자</b>로 사용.</p>
+  </div>
+  <div class="note">사용처: 사건 브리핑 패널, active 우측 패널, 선택된 캐릭터 프로필.</div>
+</div>
+
+<h3>B. BRUSH WASH — 좌측 그라디언트 덧칠 (페인트가 번진 듯한 느낌)</h3>
+<div class="frame">
+  <div class="paint-demo paint-b">
+    <h4>재판관의 관찰</h4>
+    <p>좌측 80px 영역에 골드 .16 → .06 → 0 그라디언트 + 좌측 가장자리 2px 골드 라인. <b>덧칠 + 경계선</b> 조합으로 회화적 느낌.</p>
+  </div>
+  <div class="note">사용처: <b>이게 사용자가 의도한 "왼쪽 편에 덧칠"의 정답</b>. 패널 좌측이 그림자/잉크가 번진 듯 보임.</div>
+</div>
+
+<h3>C. SCRIBBLE / FRACTAL NOISE — 거친 페인터리 결</h3>
+<div class="frame">
+  <div class="paint-demo paint-c">
+    <h4>발언노트 즐겨찾기</h4>
+    <p>좌측 24px에 SVG fractalNoise 오버레이 (골드 톤). <b>거친 페인트 결</b>이 보이는 가장 회화적인 변형.</p>
+  </div>
+  <div class="note">사용처: 사건 선택 씬의 brief 패널 좌측, 핵심 모달 상단 등 <b>강한 인상</b>이 필요한 곳에 한정.</div>
+</div>
+
+<h3>D. TAB INDICATOR — 활성 탭 하단 골드 라인 + glow</h3>
+<div class="frame">
+  <div class="paint-d-row">
+    <div class="paint-tab">기본 탭</div>
+    <div class="paint-tab is-active">박지연</div>
+    <div class="paint-tab">이준호</div>
+  </div>
+  <div class="note">사용처: 우측 패널 박지연/이준호 탭, 재판관 데스크 탭. <b>2px 골드 + 양 끝 페이드 + glow 8px</b>.</div>
+</div>
+
+
+<!-- ════════════════════════════════════════ -->
+<h2>14. 패널 위계 (3-Level Panel System)</h2>
+<p>플레이 화면은 항상 <b>3단 위계</b>로 구성. L1 panel → L2 section → L3 item card. 각 단계는 bg/border가 점점 약해짐.</p>
+
+<div class="frame">
+  <div class="panel-l1">
+    <div class="panel-head">
+      <div class="icon">⚖️</div>
+      <div class="title">현재 대상</div>
+      <div class="count">2명</div>
+    </div>
+
+    <div class="panel-l2" style="margin-bottom: 12px;">
+      <div style="font-size: 11px; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 10px;">박지연 · 36세 · 학원 데스크</div>
+      <div style="display:grid; gap:8px;">
+        <div class="panel-l3">감정 — 경계</div>
+        <div class="panel-l3">신뢰 상태 — 의심</div>
+        <div class="panel-l3">누설 — 0%</div>
+      </div>
+    </div>
+
+    <div class="panel-l2">
+      <div style="font-size: 11px; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 10px;">쟁점별 진실파악 단계</div>
+      <div style="display:flex; gap:6px;">
+        <span class="chip-pill is-neutral" style="background:rgba(212,162,78,0.18); border-color:rgba(212,162,78,0.5); color:var(--gold-light);">0</span>
+        <span class="chip-pill is-neutral">1</span>
+        <span class="chip-pill is-neutral">2</span>
+        <span class="chip-pill is-neutral">3</span>
+        <span class="chip-pill is-neutral">4</span>
+        <span class="chip-pill is-neutral">5</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="note">
+    <b>L1 (panel)</b> = 골드 border .22 + 큰 그림자 + inset highlight + 헤더(아이콘 + 제목 + 카운트)<br>
+    <b>L2 (section)</b> = 흰 border .06 + 반투명 배경 — 같은 L1 안의 카테고리<br>
+    <b>L3 (item)</b> = 흰 border .05 + 흰 bg .03 — 가장 안쪽 단위 (목록 항목)<br>
+    <br>
+    헤더 패턴: <b>좌측 28×28 골드 아이콘 박스</b> + <b>제목 (uppercase 0.14em)</b> + <b>우측 카운트 chip</b>. 모든 L1에 통일.
+  </div>
+</div>
+
+
+<!-- ════════════════════════════════════════ -->
+<h2>15. 영역 구분 테두리 (Border System by Function)</h2>
+<p>테두리 색은 <b>그 영역의 기능</b>을 즉시 알린다. 자의적으로 섞지 말 것.</p>
+
+<div class="frame">
+  <div class="border-grid">
+    <div class="border-cell b-functional"><div class="name">FUNCTIONAL</div><div class="meta">gold .40 — 메인 패널/모달</div></div>
+    <div class="border-cell b-active"><div class="name">ACTIVE</div><div class="meta">gold .60 + glow — 선택됨</div></div>
+    <div class="border-cell b-soft"><div class="name">SOFT</div><div class="meta">gold .18 — 부속 카드</div></div>
+    <div class="border-cell b-hairline"><div class="name">HAIRLINE</div><div class="meta">white .06 — 같은 영역 안 분리</div></div>
+    <div class="border-cell b-party-a"><div class="name">PARTY A</div><div class="meta">blue .40 — 당사자 A 발언/카드</div></div>
+    <div class="border-cell b-party-b"><div class="name">PARTY B</div><div class="meta">red .40 — 당사자 B 발언/카드</div></div>
+    <div class="border-cell b-witness"><div class="name">WITNESS</div><div class="meta">witness-green .40 — 증인</div></div>
+    <div class="border-cell b-success"><div class="name">SUCCESS</div><div class="meta">green .40 — 모순 잡힘 / 해결</div></div>
+    <div class="border-cell b-warning"><div class="name">WARNING</div><div class="meta">amber .50 — 경고 (모순 감지 등)</div></div>
+  </div>
+  <div class="note">
+    <b>규칙</b>: 한 화면에 ACTIVE는 1개만. 화자 색 테두리는 화자 발언/카드에만. 골드 .40 = 일반 활성, 골드 .60+glow = 선택됨. <b>화자 색과 골드 절대 섞지 말 것</b> (예: 박지연 카드에 골드 active 두지 마라 — 파란색 .60으로 강화).
+  </div>
+</div>
+
+<h3>화자별 active 강화 패턴</h3>
+<div class="frame">
+  <div style="display:flex; gap:14px;">
+    <div class="border-cell b-party-a" style="border-width:1px; border-color:rgba(91,141,239,0.6); box-shadow: 0 0 18px rgba(91,141,239,0.18); flex:1;">
+      <div class="name">박지연 (선택됨)</div><div class="meta">blue .60 + blue glow .18</div>
+    </div>
+    <div class="border-cell b-party-b" style="border-width:1px; border-color:rgba(224,96,96,0.6); box-shadow: 0 0 18px rgba(224,96,96,0.18); flex:1;">
+      <div class="name">이준호 (선택됨)</div><div class="meta">red .60 + red glow .18</div>
+    </div>
+  </div>
+  <div class="note">화자가 선택되면 <b>해당 화자색의 .60 + glow</b>로 강화. 골드로 가지 않음.</div>
+</div>
+
+
+<!-- ════════════════════════════════════════ -->
+<h2>16. 적용 우선순위 (사건 선택 씬 리뉴얼 시)</h2>
+
+<div class="frame" style="border-color:rgba(212,162,78,0.42); background:rgba(212,162,78,0.04);">
+  <ol style="margin:0; padding-left:24px; color:var(--text); line-height:2;">
+    <li><b style="color:var(--gold-light)">전체 배경</b>에 vignette + 미세 골드 radial glow 2겹 추가 (현재 평면 다크)</li>
+    <li><b style="color:var(--gold-light)">brief 패널</b>을 모달 표준(radius 18, golden border .28, big shadow + inset)으로 격상 + <b>RIM 글로우</b> 적용</li>
+    <li><b style="color:var(--gold-light)">brief 패널 좌측</b>에 <b>BRUSH WASH</b>(13.B 패턴) — 80px 골드 그라디언트 덧칠 + 2px 라인</li>
+    <li><b style="color:var(--gold-light)">brief 항목</b>을 <b>L3 item</b> 표준으로 (흰 .05 → 골드 .04 bg + .16 border, hover시 SOFT glow)</li>
+    <li><b style="color:var(--gold-light)">사건 입장하기 CTA</b>를 <b>STRONG glow 4단 레이어</b>로 강화 (그림자 + 외곽 글로우 + stroke + inset)</li>
+    <li><b style="color:var(--gold-light)">Stage pill</b> active = SOFT glow + 6×6 dot + pulse(2.4s) <b>한 번만</b></li>
+    <li><b style="color:var(--gold-light)">VS 영역</b>에 화자 색 chip 추가 — 박지연(피해자 서사·대립형) blue, 이준호(회피형) red</li>
+    <li><b style="color:var(--gold-light)">캐릭터 카드</b> active시 <b>화자색 .60 + 화자색 glow .18</b> (골드 X)</li>
+    <li><b style="color:var(--gold-light)">eyebrow/title 위계</b> 모달 표준 (eyebrow 11px 800 0.22em / title 24px 800)</li>
+    <li><b style="color:var(--gold-light)">패널 헤더</b>에 28×28 골드 아이콘 박스 + uppercase 제목 + 카운트 chip 도입 (현재 카운트 chip 없음)</li>
+    <li><b style="color:var(--gold-light)">뒤로 버튼</b> Ghost 표준</li>
+    <li><b style="color:var(--gold-light)">완료 기록만 토글</b> ON시 골드 glow 12px (현재 평범한 색 변화만)</li>
+  </ol>
+</div>
+
+<p style="margin-top: 40px; color: var(--text-muted); font-size: 13px;">
+  ─ 끝. 이 문서를 검수 후 사건 선택 씬에 일괄 적용한다.
+</p>
+
+</div>
+</body>
+</html>
