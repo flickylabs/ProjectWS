@@ -1,4 +1,4 @@
-import { useCallback, useMemo, useState, type DragEvent } from 'react'
+import { useCallback, useEffect, useMemo, useState, type DragEvent } from 'react'
 import { createPortal } from 'react-dom'
 import { Phase, type CaseData, type EvidenceNode, type PartyId } from '../../../types'
 import { computeSurfacedEvidence } from '../../../engine/evidenceEngine'
@@ -144,12 +144,32 @@ export default function PCLeftPanel() {
     event.dataTransfer.setData('text/plain', label)
   }, [])
 
+  // 드로어 상호 배타 — 다른 drawer 열리면 timeline 닫기
+  useEffect(() => {
+    const handler = (e: Event) => {
+      const detail = (e as CustomEvent).detail
+      if (detail !== 'timeline') setTimelineOpen(false)
+    }
+    window.addEventListener('pc-drawer-open', handler)
+    return () => window.removeEventListener('pc-drawer-open', handler)
+  }, [])
+
+  const toggleTimeline = useCallback(() => {
+    setTimelineOpen((prev) => {
+      const next = !prev
+      if (next) {
+        window.dispatchEvent(new CustomEvent('pc-drawer-open', { detail: 'timeline' }))
+      }
+      return next
+    })
+  }, [])
+
   return (
     <div className={`pc-play-left pc-play-left--timeline-host${timelineOpen ? ' is-timeline-open' : ''}`}>
       <button
         aria-expanded={timelineOpen}
         className={`pc-play-timeline-toggle${timelineOpen ? ' is-open' : ''}`}
-        onClick={() => setTimelineOpen((current) => !current)}
+        onClick={toggleTimeline}
         title={timelineOpen ? '타임라인 닫기' : '타임라인 열기'}
         type="button"
       >
@@ -233,6 +253,14 @@ export default function PCLeftPanel() {
 
       {typeof document !== 'undefined' && createPortal(
         <aside className={`pc-play-timeline-panel${timelineOpen ? ' is-open' : ''}`} aria-hidden={!timelineOpen}>
+          <button
+            className="pc-drawer-close"
+            onClick={() => setTimelineOpen(false)}
+            type="button"
+            aria-label="닫기"
+          >
+            ✕
+          </button>
           <PCCaseTimelineSection onItemClick={() => setTimelineOpen(false)} />
         </aside>,
         document.body,

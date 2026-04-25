@@ -7736,6 +7736,20 @@ body.pc-mode .pc-play-left .pc-note-card.is-pinned {
   background: rgba(255, 255, 255, 0.035);
 }
 
+/* 카드 좌측 선 화자별 색 (사용자 요청 04-27 — A/B/재판관/시스템 구분) */
+body.pc-mode .pc-play-left .pc-note-card.is-speaker-a {
+  border-left: 2px solid var(--pc-blue) !important;
+}
+body.pc-mode .pc-play-left .pc-note-card.is-speaker-b {
+  border-left: 2px solid var(--pc-red) !important;
+}
+body.pc-mode .pc-play-left .pc-note-card.is-speaker-judge {
+  border-left: 2px solid var(--pc-gold) !important;
+}
+body.pc-mode .pc-play-left .pc-note-card.is-speaker-system {
+  border-left: 2px solid #e69ad7 !important;
+}
+
 /* Indicator: speaker name + turn number + left border */
 body.pc-mode .pc-play-left .pc-note-card__indicator {
   display: flex;
@@ -8549,8 +8563,8 @@ body.pc-mode .pc-play-timeline-panel {
   top: 76px !important;
   bottom: 140px !important;
   left: 396px !important;
-  width: 360px !important;
-  max-width: 360px !important;
+  width: 420px !important;
+  max-width: 420px !important;
   z-index: 60 !important;
   border-radius: 24px !important;
   border: 1px solid rgba(212, 162, 78, 0.16) !important;
@@ -16924,7 +16938,7 @@ body.pc-mode .pc-jobs-drawer {
   top: 76px;
   left: 396px;
   bottom: 140px;
-  width: 360px;
+  width: 420px;
   visibility: hidden;
   pointer-events: none;
   transform: translateX(-16px);
@@ -18746,5 +18760,32 @@ body.pc-mode .pc-interaction-card__contrast-vs span {
   letter-spacing: 0.06em;
   color: #d4a672;
   text-shadow: 0 0 8px rgba(212, 166, 114, 0.4);
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+/* 드로어 공통 X 버튼 (timeline / fav-notes / observation-history) — 04-27 */
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+body.pc-mode .pc-drawer-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 5;
+  width: 30px;
+  height: 30px;
+  display: grid;
+  place-items: center;
+  background: rgba(20, 22, 28, 0.92);
+  border: 1px solid rgba(212, 162, 78, 0.28);
+  color: var(--pc-text-dim);
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 700;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+body.pc-mode .pc-drawer-close:hover {
+  background: rgba(212, 162, 78, 0.12);
+  color: var(--pc-gold-light);
+  border-color: rgba(212, 162, 78, 0.5);
 }
 

@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { createPortal } from 'react-dom'
 import { useGameStore, useStore } from '../../../store/useGameStore'
 import PCSvgIcon from '../icons/PCSvgIcon'
@@ -33,6 +33,16 @@ export default function JudgeObservationHistoryDrawer() {
   const observations = useStore((s) => s.judgeObservations ?? [])
   const setOpen = useStore((s) => s.setObservationHistoryOpen)
   const [filter, setFilter] = useState<FilterKey>('all')
+
+  // 드로어 상호 배타 — 다른 drawer 열리면 닫기
+  useEffect(() => {
+    const handler = (e: Event) => {
+      const detail = (e as CustomEvent).detail
+      if (detail !== 'observation-history') setOpen(false)
+    }
+    window.addEventListener('pc-drawer-open', handler)
+    return () => window.removeEventListener('pc-drawer-open', handler)
+  }, [setOpen])
 
   const sorted = useMemo(() => {
     const reversed = [...observations].reverse()

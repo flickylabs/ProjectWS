@@ -234,7 +234,13 @@ export default function JudgeObservationSection() {
         <button
           type="button"
           className={`pc-jobs-history-btn${historyOpen ? ' is-open' : ''}`}
-          onClick={() => setHistoryOpen(!historyOpen)}
+          onClick={() => {
+            const next = !historyOpen
+            if (next) {
+              window.dispatchEvent(new CustomEvent('pc-drawer-open', { detail: 'observation-history' }))
+            }
+            setHistoryOpen(next)
+          }}
           title={historyOpen ? '전체 히스토리 닫기' : '전체 히스토리 열기'}
           aria-label="관찰 히스토리 토글"
           aria-pressed={historyOpen}

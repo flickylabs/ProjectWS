@@ -61,6 +61,26 @@ export default function PCImportantNotesSection() {
 
   // Expanded popup
   const [expanded, setExpanded] = useState(false)
+
+  // 드로어 상호 배타 — 다른 drawer 열리면 fav-notes 닫기
+  useEffect(() => {
+    const handler = (e: Event) => {
+      const detail = (e as CustomEvent).detail
+      if (detail !== 'fav-notes') setExpanded(false)
+    }
+    window.addEventListener('pc-drawer-open', handler)
+    return () => window.removeEventListener('pc-drawer-open', handler)
+  }, [])
+
+  const toggleExpanded = useCallback(() => {
+    setExpanded((prev) => {
+      const next = !prev
+      if (next) {
+        window.dispatchEvent(new CustomEvent('pc-drawer-open', { detail: 'fav-notes' }))
+      }
+      return next
+    })
+  }, [])
   const [disputeTab, setDisputeTab] = useState<string | null>(null)
 
   const speakerNameMap = useMemo(() => {
@@ -310,7 +330,7 @@ export default function PCImportantNotesSection() {
           <span className="cnt">{favorites.length}</span>
           <button
             className={`pc-notes-expand-btn${expanded ? ' is-open' : ''}`}
-            onClick={() => setExpanded((v) => !v)}
+            onClick={toggleExpanded}
             title={expanded ? '발언 노트 전체 닫기' : '발언 노트 전체 보기'}
             type="button"
           >
@@ -485,7 +505,7 @@ function FavoriteCard({
 
   return (
     <div
-      className={`pc-note-card is-pinned${dragging ? ' is-dragging' : ''}${reorderTarget ? ' is-reorder-target' : ''}${note.contradictionMeta ? ' is-contradiction' : ''}${isCombinable ? ' is-combinable' : ''}`}
+      className={`pc-note-card is-pinned is-speaker-${note.speaker}${dragging ? ' is-dragging' : ''}${reorderTarget ? ' is-reorder-target' : ''}${note.contradictionMeta ? ' is-contradiction' : ''}${isCombinable ? ' is-combinable' : ''}`}
       draggable
       onClick={(event) => { if (event.shiftKey) { onShiftClick(); return }; onClickNote() }}
       onDragEnd={onDragEnd}
