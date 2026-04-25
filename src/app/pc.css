@@ -18765,27 +18765,121 @@ body.pc-mode .pc-interaction-card__contrast-vs span {
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 /* 드로어 공통 X 버튼 (timeline / fav-notes / observation-history) — 04-27 */
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
-body.pc-mode .pc-drawer-close {
-  position: absolute;
-  top: 12px;
-  right: 12px;
-  z-index: 5;
-  width: 30px;
-  height: 30px;
-  display: grid;
-  place-items: center;
-  background: rgba(20, 22, 28, 0.92);
-  border: 1px solid rgba(212, 162, 78, 0.28);
-  color: var(--pc-text-dim);
-  border-radius: 8px;
-  cursor: pointer;
-  font-size: 14px;
-  font-weight: 700;
-  transition: background 0.15s, color 0.15s, border-color 0.15s;
+body.pc-mode .pc-drawer-close,
+body.pc-mode .pc-jobs-drawer .pc-jobs-drawer__close,
+body.pc-mode .pc-fav-notes-drawer .pc-notes-expanded__close {
+  position: absolute !important;
+  top: 12px !important;
+  right: 12px !important;
+  z-index: 5 !important;
+  width: 30px !important;
+  height: 30px !important;
+  display: grid !important;
+  place-items: center !important;
+  background: rgba(20, 22, 28, 0.92) !important;
+  border: 1px solid rgba(212, 162, 78, 0.28) !important;
+  color: var(--pc-text-dim) !important;
+  border-radius: 8px !important;
+  cursor: pointer !important;
+  font-size: 14px !important;
+  font-weight: 700 !important;
+  transition: background 0.15s, color 0.15s, border-color 0.15s !important;
 }
-body.pc-mode .pc-drawer-close:hover {
-  background: rgba(212, 162, 78, 0.12);
-  color: var(--pc-gold-light);
-  border-color: rgba(212, 162, 78, 0.5);
+body.pc-mode .pc-drawer-close:hover,
+body.pc-mode .pc-jobs-drawer .pc-jobs-drawer__close:hover,
+body.pc-mode .pc-fav-notes-drawer .pc-notes-expanded__close:hover {
+  background: rgba(212, 162, 78, 0.12) !important;
+  color: var(--pc-gold-light) !important;
+  border-color: rgba(212, 162, 78, 0.5) !important;
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+/* 4 드로어 시각 통일 — 04-27 (헤더/제목/카운트/패딩/배경) */
+/* timeline / fav-notes / observation-history / (수첩/관찰은 패널 안 섹션이라 별도) */
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+/* 드로어 컨테이너 배경/보더 통일 */
+body.pc-mode .pc-fav-notes-drawer,
+body.pc-mode .pc-jobs-drawer,
+body.pc-mode .pc-play-timeline-panel {
+  background: linear-gradient(180deg, rgba(18, 19, 29, 0.98), rgba(10, 10, 16, 0.99)) !important;
+  border: 1px solid rgba(212, 162, 78, 0.22) !important;
+  border-radius: 16px !important;
+  padding: 0 !important;
+}
+
+/* 헤더 영역 통일 */
+body.pc-mode .pc-jobs-drawer__header,
+body.pc-mode .pc-fav-notes-drawer .pc-notes-expanded__header,
+body.pc-mode .pc-play-timeline-panel .pc-case-timeline-section > .sec-h {
+  padding: 14px 50px 10px 18px !important;
+  margin: 0 !important;
+  border-bottom: 1px solid rgba(212, 162, 78, 0.18) !important;
+  background: rgba(20, 22, 28, 0.55) !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  flex-shrink: 0 !important;
+}
+
+/* 헤더 제목 폰트 통일 */
+body.pc-mode .pc-jobs-drawer__title,
+body.pc-mode .pc-fav-notes-drawer .pc-notes-expanded__title,
+body.pc-mode .pc-play-timeline-panel .pc-case-timeline-section > .sec-h > span:nth-of-type(1) {
+  font-size: 14px !important;
+  font-weight: 700 !important;
+  color: var(--pc-gold-light) !important;
+  letter-spacing: 0.02em !important;
+  margin: 0 !important;
+}
+
+/* 카운트 배지 통일 */
+body.pc-mode .pc-fav-notes-drawer .pc-notes-expanded__header .cnt,
+body.pc-mode .pc-play-timeline-panel .pc-case-timeline-section > .sec-h .cnt {
+  font-size: 11px !important;
+  color: var(--pc-text-muted) !important;
+  font-weight: 700 !important;
+  margin-left: 2px !important;
+  letter-spacing: 0.04em !important;
+}
+
+/* 필터/탭 영역 패딩 통일 */
+body.pc-mode .pc-jobs-drawer__filter-row,
+body.pc-mode .pc-fav-notes-drawer .pc-notes-tabs {
+  padding: 10px 18px !important;
+  flex-shrink: 0 !important;
+}
+
+/* 콘텐츠 영역 통일 */
+body.pc-mode .pc-jobs-drawer__timeline,
+body.pc-mode .pc-fav-notes-drawer .pc-notes-expanded__content,
+body.pc-mode .pc-play-timeline-panel .pc-case-timeline-section .sec-content {
+  padding: 14px 18px !important;
+}
+
+/* 콘텐츠 카드 폰트 통일 */
+body.pc-mode .pc-jobs-drawer__item-title,
+body.pc-mode .pc-timeline__summary {
+  font-size: 13px !important;
+  line-height: 1.45 !important;
+  color: var(--pc-text) !important;
+}
+body.pc-mode .pc-jobs-drawer__item-meta,
+body.pc-mode .pc-timeline__turn {
+  font-size: 11px !important;
+  color: var(--pc-text-muted) !important;
+}
+body.pc-mode .pc-jobs-drawer__item-summary {
+  font-size: 12px !important;
+  color: var(--pc-text-dim) !important;
+}
+
+/* 빈 상태 통일 */
+body.pc-mode .pc-jobs-drawer__empty,
+body.pc-mode .pc-timeline__empty {
+  padding: 28px 18px !important;
+  font-size: 13px !important;
+  color: var(--pc-text-muted) !important;
+  text-align: center !important;
 }
 
