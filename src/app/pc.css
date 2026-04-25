@@ -9115,7 +9115,8 @@ body.pc-mode .pc-play-hbar .slot-eff {
   justify-self: center !important;
 }
 
-/* Character cards — 마호가니 베이스 + 골드 액센트 (전체 UI와 일치) */
+/* Character cards — 마호가니 베이스 + 골드 액센트 (전체 UI와 일치)
+   [사용자 요청] 캐릭터 이미지를 양쪽 끝이 아닌 안쪽으로. 이름도 안쪽으로 정렬. */
 body.pc-mode .pc-play-hbar .char {
   min-height: var(--pc-dock-area-h) !important;
   max-height: var(--pc-dock-area-h) !important;
@@ -9123,10 +9124,10 @@ body.pc-mode .pc-play-hbar .char {
   min-width: 0 !important;
   max-width: 100% !important;
   width: 100% !important;
-  padding: 8px 10px !important;
+  padding: 8px 18px !important;
   display: flex !important;
   align-items: center !important;
-  gap: 10px !important;
+  gap: 14px !important;
   border-radius: 12px !important;
   border: 1px solid var(--pc-panel-border) !important;
   background: var(--pc-panel-bg-strong) !important;
@@ -9249,7 +9250,8 @@ body.pc-mode .pc-play-hbar .char-face > img {
   border-radius: 50% !important;
 }
 
-body.pc-mode .pc-play-hbar .char-face svg {
+/* 폴백 SVG 아이콘 (PCSvgIcon)만 45×45로 강제. 감정 도넛(.char-emo-donut)은 제외. */
+body.pc-mode .pc-play-hbar .char-face svg:not(.char-emo-donut) {
   width: 45px !important;
   height: 45px !important;
 }
@@ -9276,17 +9278,19 @@ body.pc-mode .pc-play-hbar .char-nm {
   text-overflow: ellipsis !important;
 }
 
-/* Emotion badge — 중립 마호가니 톤 (감정 상태별 색은 ce-* 클래스가 덮어씀) */
+/* Emotion badge — 중립 마호가니 톤 (감정 상태별 색은 ce-* 클래스가 덮어씀)
+   [사용자 요청] 사이즈 키움 (9px → 12px, padding 확대) */
 body.pc-mode .pc-play-hbar .char-emo {
   display: inline-flex !important;
   align-items: center !important;
-  min-height: 16px !important;
-  padding: 0 7px !important;
+  min-height: 22px !important;
+  padding: 2px 11px !important;
   border-radius: 999px !important;
   background: rgba(212, 162, 78, 0.14) !important;
   color: var(--pc-gold-light) !important;
-  font-size: 9px !important;
+  font-size: 12px !important;
   font-weight: 700 !important;
+  letter-spacing: 0.02em !important;
   width: fit-content !important;
 }
 
