@@ -14941,8 +14941,17 @@ body.pc-mode .cb__eyebrow {
 }
 body.pc-mode .cb__header-info h2 { margin: 4px 0 0; font-size: 22px; color: #f3efe8; }
 body.pc-mode .cb__header-info p { margin: 4px 0 0; font-size: 13px; color: rgba(255,255,255,0.4); }
-body.pc-mode .cb__header-tools { display: flex; align-items: center; gap: 10px; }
+body.pc-mode .cb__header-tools { display: flex; align-items: center; gap: 14px; }
 body.pc-mode .cb__count { font-size: 14px; font-weight: 700; color: var(--pc-gold-light); }
+body.pc-mode .cb__toggle {
+  display: inline-flex; align-items: center; gap: 10px;
+  cursor: pointer; user-select: none;
+}
+body.pc-mode .cb__toggle-label {
+  font-size: 12px; font-weight: 700; letter-spacing: 0.06em;
+  color: var(--pc-text-muted);
+}
+body.pc-mode .cb__toggle:hover .cb__toggle-label { color: var(--pc-text); }
 
 /* ── 좌우 분할 ── */
 body.pc-mode .cb__split {

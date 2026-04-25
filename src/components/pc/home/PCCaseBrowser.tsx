@@ -88,9 +88,15 @@ export default function PCCaseBrowser({
         </div>
         <div className="cb__header-tools">
           {showCompletedFilter && (
-            <button className={`pc-filter-pill-v2${showCompletedOnly ? ' is-active' : ''}`} onClick={() => setShowCompletedOnly(v => !v)} type="button">
-              완료 기록만
-            </button>
+            <label className="cb__toggle">
+              <span className="cb__toggle-label">완료 기록만</span>
+              <button
+                aria-pressed={showCompletedOnly}
+                className={`pc-toggle${showCompletedOnly ? ' active' : ''}`}
+                onClick={() => setShowCompletedOnly(v => !v)}
+                type="button"
+              ><i /></button>
+            </label>
           )}
           <span className="cb__count">{progressLabel ?? `${filteredCases.length}건`}</span>
         </div>
