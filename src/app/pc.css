@@ -19000,3 +19000,146 @@ body.pc-mode .pc-timeline__empty {
   text-align: center !important;
 }
 
+/* ═══════════════════════════════════════════════════════════════════
+   v3 통합 표준 — 페이지 헤더 / 뒤로 버튼 / 카드 (style-guide-v1 기준)
+   여기 정의가 최우선. 위쪽 모든 정의를 덮어씀.
+   ═══════════════════════════════════════════════════════════════════ */
+
+/* ── 표준 뒤로 버튼 (모든 페이지 동일 위치 · 동일 디자인) ── */
+body.pc-mode .pc-depth-back {
+  flex: 0 0 auto !important;
+  display: inline-flex !important;
+  align-items: center;
+  gap: 6px;
+  height: 40px !important;
+  padding: 0 16px !important;
+  border-radius: 12px !important;
+  background: rgba(255, 255, 255, 0.03) !important;
+  border: 1px solid rgba(255, 255, 255, 0.10) !important;
+  color: var(--pc-text-dim) !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition: border-color 160ms ease, background 160ms ease, color 160ms ease, transform 160ms ease !important;
+}
+body.pc-mode .pc-depth-back:hover {
+  border-color: rgba(212, 162, 78, 0.40) !important;
+  background: rgba(212, 162, 78, 0.06) !important;
+  color: var(--pc-text) !important;
+  transform: translateY(-1px);
+}
+body.pc-mode .pc-depth-back > span[aria-hidden="true"] {
+  font-size: 16px;
+  line-height: 1;
+  margin-top: -2px;
+}
+
+/* ── 표준 페이지 헤더 (3-column grid: back · copy · tools) ── */
+body.pc-mode .pc-depth-header {
+  display: grid !important;
+  grid-template-columns: auto 1fr auto !important;
+  align-items: flex-start !important;
+  gap: 24px !important;
+  padding-bottom: 20px !important;
+  margin-bottom: 24px !important;
+  border-bottom: 1px solid rgba(212, 162, 78, 0.12);
+}
+
+body.pc-mode .pc-depth-header__copy {
+  padding-top: 2px;
+}
+
+body.pc-mode .pc-depth-header__copy > span,
+body.pc-mode .pc-depth-header__copy span:first-child {
+  display: block;
+  font-size: 11px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.22em !important;
+  text-transform: uppercase;
+  color: var(--pc-gold-light) !important;
+  margin-bottom: 8px;
+}
+
+body.pc-mode .pc-depth-header__copy h1,
+body.pc-mode .pc-depth-header__copy h2 {
+  margin: 0 0 6px !important;
+  font-size: 28px !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.025em !important;
+  color: var(--pc-text) !important;
+  line-height: 1.1 !important;
+}
+
+body.pc-mode .pc-depth-header__copy p {
+  margin: 0 !important;
+  max-width: 720px;
+  font-size: 15px !important;
+  color: var(--pc-text-dim) !important;
+  line-height: 1.55 !important;
+}
+
+/* ── Case Browser 헤더도 동일 표준 적용 ── */
+body.pc-mode .cb__header {
+  display: grid !important;
+  grid-template-columns: auto 1fr auto !important;
+  align-items: flex-start;
+  gap: 24px;
+  padding-bottom: 20px;
+  margin-bottom: 24px;
+  border-bottom: 1px solid rgba(212, 162, 78, 0.12);
+}
+body.pc-mode .cb__header-info {
+  padding-top: 2px;
+}
+body.pc-mode .cb__eyebrow {
+  display: block;
+  font-size: 11px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.22em !important;
+  text-transform: uppercase;
+  color: var(--pc-gold-light) !important;
+  margin-bottom: 8px !important;
+}
+body.pc-mode .cb__header-info h2 {
+  margin: 0 !important;
+  font-size: 28px !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.025em !important;
+  color: var(--pc-text) !important;
+  line-height: 1.1;
+}
+body.pc-mode .cb__header-tools {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding-top: 4px;
+}
+
+/* ── 표준 패널 카드 (Card 컴포넌트 — pc-panel-card-v2) ── */
+body.pc-mode .pc-panel-card-v2 {
+  padding: 22px 24px !important;
+  border-radius: 16px !important;
+  border: 1px solid rgba(212, 162, 78, 0.18) !important;
+  background: linear-gradient(180deg, rgba(24, 26, 32, 0.85), rgba(13, 14, 18, 0.92)) !important;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.36), inset 0 1px 0 rgba(255, 255, 255, 0.04) !important;
+}
+body.pc-mode .pc-panel-card-v2__eyebrow {
+  display: block !important;
+  font-size: 11px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.22em !important;
+  text-transform: uppercase;
+  color: var(--pc-gold-light) !important;
+  margin-bottom: 4px !important;
+}
+body.pc-mode .pc-panel-card-v2 > h3 {
+  margin: 0 0 16px !important;
+  font-size: 18px !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.01em;
+  color: var(--pc-text) !important;
+}
+
