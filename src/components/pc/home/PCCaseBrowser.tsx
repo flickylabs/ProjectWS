@@ -202,7 +202,7 @@ function CaseBriefPanel({ caseData, stageNum, score, onStart }: {
 
   return (
     <div className="cb__brief">
-      {/* HERO: 양측 인물 portraits + 가운데 사건 제목 */}
+      {/* HERO: 양측 인물 portraits + 가운데 사건 제목 (제목만, bait는 아래로 분리) */}
       <div className="cb__brief-hero">
         <div className="cb__brief-character is-a">
           <div className="cb__brief-portrait is-a">
@@ -221,7 +221,6 @@ function CaseBriefPanel({ caseData, stageNum, score, onStart }: {
 
         <div className="cb__brief-center">
           <h3 className="cb__brief-headline">{caseTitle}</h3>
-          {bait && <p className="cb__brief-bait">{bait}</p>}
         </div>
 
         <div className="cb__brief-character is-b">
@@ -240,30 +239,35 @@ function CaseBriefPanel({ caseData, stageNum, score, onStart }: {
         </div>
       </div>
 
-      {/* 상세 영역 — 별도 panel로 분리 (쟁점 + 증거) */}
-      <div className="cb__brief-detail">
-        <div className="cb__brief-grid">
-          <div className="cb__brief-section">
-            <h4><PCSvgIcon id="i-gavel" size={13} /> 주요 쟁점</h4>
-            {initialDisputes.map((d, i) => (
-              <div className="cb__brief-item" key={d.id}>
-                <span className="cb__brief-item-num">{i + 1}</span>
-                <span>{d.name}</span>
-              </div>
-            ))}
-            {hiddenCount > 0 && (
-              <p className="cb__brief-hint"><PCSvgIcon id="i-lock" size={10} /> 심문 과정에서 추가 쟁점이 드러날 수 있습니다</p>
-            )}
-          </div>
-          <div className="cb__brief-section">
-            <h4><PCSvgIcon id="i-doc" size={13} /> 초기 증거</h4>
-            {baseEvidence.length > 0 ? baseEvidence.map(ev => (
-              <div className="cb__brief-item" key={ev.id}>
-                <span className="cb__brief-item-icon"><PCSvgIcon id={getPcEvidenceSymbolId(ev.type)} size={14} /></span>
-                <span>{ev.surfaceName ?? ev.name}</span>
-              </div>
-            )) : <p className="cb__brief-hint">초기 증거 미지정</p>}
-          </div>
+      {/* SUMMARY: HERO와 상세 사이의 별도 영역 (사건 요약/bait) */}
+      {bait && (
+        <div className="cb__brief-summary">
+          <p>{bait}</p>
+        </div>
+      )}
+
+      {/* 쟁점 + 증거 — 바깥 wrap 없이 직접 grid */}
+      <div className="cb__brief-grid">
+        <div className="cb__brief-section">
+          <h4><PCSvgIcon id="i-gavel" size={13} /> 주요 쟁점</h4>
+          {initialDisputes.map((d, i) => (
+            <div className="cb__brief-item" key={d.id}>
+              <span className="cb__brief-item-num">{i + 1}</span>
+              <span>{d.name}</span>
+            </div>
+          ))}
+          {hiddenCount > 0 && (
+            <p className="cb__brief-hint"><PCSvgIcon id="i-lock" size={10} /> 심문 과정에서 추가 쟁점이 드러날 수 있습니다</p>
+          )}
+        </div>
+        <div className="cb__brief-section">
+          <h4><PCSvgIcon id="i-doc" size={13} /> 초기 증거</h4>
+          {baseEvidence.length > 0 ? baseEvidence.map(ev => (
+            <div className="cb__brief-item" key={ev.id}>
+              <span className="cb__brief-item-icon"><PCSvgIcon id={getPcEvidenceSymbolId(ev.type)} size={14} /></span>
+              <span>{ev.surfaceName ?? ev.name}</span>
+            </div>
+          )) : <p className="cb__brief-hint">초기 증거 미지정</p>}
         </div>
       </div>
 
@@ -272,7 +276,7 @@ function CaseBriefPanel({ caseData, stageNum, score, onStart }: {
         {score > 0 && (
           <div className="cb__brief-record">
             <span>최고 기록</span>
-            <strong>{score}점</strong>
+            <strong>{score}<em>점</em></strong>
           </div>
         )}
         <button className="cb__brief-start" onClick={onStart} type="button">

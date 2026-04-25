@@ -19758,15 +19758,15 @@ body.pc-mode .pc-depth-shell > .cb {
 }
 
 /* ──────────────────────────────────────────────────
-   사건 선택씬 — brief 패널 가로폭 축소 + 가운데 정렬
+   사건 선택씬 — 우측 패널 더 넓게, HERO/SUMMARY/GRID/FOOTER 4 영역
    ────────────────────────────────────────────────── */
 body.pc-mode .cb__split {
   display: grid !important;
-  grid-template-columns: 360px minmax(0, 540px) !important;
+  grid-template-columns: 320px minmax(0, 720px) !important;
   gap: 32px !important;
   flex: 1;
   min-height: 0;
-  max-width: 980px;
+  max-width: 1140px;
   margin: 0 auto !important;
   width: 100%;
 }
@@ -19776,33 +19776,67 @@ body.pc-mode .cb__stages {
   max-height: calc(100vh - 280px) !important;
 }
 
-/* HERO — 가운데 사건 제목 영역 디자인스럽게 */
+/* HERO — 큰 사건 제목 가운데, portraits 양 끝 (bait는 아래 SUMMARY로 분리됨) */
 body.pc-mode .cb__brief-hero {
-  grid-template-columns: 80px 1fr 80px !important;
-  gap: 18px !important;
-  padding: 36px 24px 28px !important;
+  grid-template-columns: 84px 1fr 84px !important;
+  gap: 24px !important;
+  padding: 40px 28px 28px !important;
 }
 body.pc-mode .cb__brief-portrait {
-  width: 72px !important;
-  height: 72px !important;
+  width: 76px !important;
+  height: 76px !important;
 }
-/* 인물 이름 위치 정렬 — portrait 아래 */
 body.pc-mode .cb__brief-character {
   gap: 8px !important;
 }
-body.pc-mode .cb__brief-headline {
-  font-size: clamp(20px, 1.8vw, 24px) !important;
-  line-height: 1.25 !important;
+/* 사건 제목 — 더 큰 글씨, 가운데 강조 */
+body.pc-mode .cb__brief-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 76px;
 }
-body.pc-mode .cb__brief-bait {
-  font-size: 13px !important;
-  max-width: 320px;
+body.pc-mode .cb__brief-headline {
+  font-size: clamp(22px, 2.2vw, 30px) !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.025em !important;
+  line-height: 1.25 !important;
+  text-align: center;
+  max-width: 100%;
 }
 
-/* brief grid spacing */
+/* SUMMARY — HERO와 상세 사이의 별도 영역 (bait 텍스트) */
+body.pc-mode .cb__brief-summary {
+  margin: 4px 28px 8px;
+  padding: 16px 20px;
+  border-radius: 12px;
+  border: 1px solid rgba(212, 162, 78, 0.14);
+  background: rgba(212, 162, 78, 0.04);
+}
+body.pc-mode .cb__brief-summary p {
+  margin: 0;
+  font-size: 14px;
+  color: var(--pc-text-dim);
+  line-height: 1.65;
+  font-style: italic;
+}
+
+/* 폐기된 HERO 안 bait — 안전 */
+body.pc-mode .cb__brief-hero .cb__brief-bait { display: none !important; }
+
+/* 폐기된 cb__brief-detail 카드 wrap (바깥 wrap 없이 직접 grid 노출) */
+body.pc-mode .cb__brief-detail {
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+  background: transparent !important;
+}
+
+/* brief grid spacing — wrap 없이 직접 */
 body.pc-mode .cb__brief-grid {
-  padding: 22px 24px !important;
-  gap: 18px !important;
+  padding: 18px 28px !important;
+  gap: 24px !important;
+  margin: 0 !important;
 }
 body.pc-mode .cb__brief-section h4 {
   margin: 0 0 10px !important;
@@ -19812,9 +19846,21 @@ body.pc-mode .cb__brief-item {
   font-size: 14px !important;
 }
 
-/* 푸터 spacing */
+/* 푸터 — 최고 기록을 박스 밖으로 빼서 크게 */
 body.pc-mode .cb__brief-footer {
-  padding: 16px 24px 20px !important;
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 24px;
+  padding: 18px 28px 24px !important;
+  border-top: 1px solid rgba(212, 162, 78, 0.12);
+}
+body.pc-mode .cb__brief-footer .cb__brief-start {
+  flex: 1;
+  margin: 0 !important;
+  padding: 14px 0 !important;
+  font-size: 16px !important;
 }
 
 /* ──────────────────────────────────────────────────
@@ -19854,34 +19900,42 @@ body.pc-mode .cb__stage.is-placeholder:hover {
   border-color: rgba(255, 255, 255, 0.04) !important;
 }
 
-/* 최고 기록 — 녹색 폐기, 골드 톤으로 + 더 컴팩트 */
+/* 최고 기록 — 박스/pill 폐기, 큰 인라인 텍스트 (라벨 위 + 점수 크게) */
 body.pc-mode .cb__brief-record {
   margin: 0 !important;
-  padding: 8px 14px !important;
-  border-radius: 999px !important;
-  background: rgba(212, 162, 78, 0.08) !important;
-  border: 1px solid rgba(212, 162, 78, 0.30) !important;
-  font-size: 12px !important;
-  color: var(--pc-text-dim) !important;
-  display: inline-flex !important;
-  align-items: center;
-  gap: 8px;
-  align-self: flex-start;
-  letter-spacing: 0.02em;
+  padding: 0 !important;
+  background: transparent !important;
+  border: none !important;
+  display: flex !important;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  flex-shrink: 0;
 }
 body.pc-mode .cb__brief-record span {
   font-size: 10px;
   font-weight: 800;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--pc-text-tertiary, var(--pc-text-muted));
+  color: var(--pc-text-muted);
 }
 body.pc-mode .cb__brief-record strong {
   margin: 0 !important;
   color: var(--pc-gold-light) !important;
+  font-size: 28px;
+  font-weight: 900;
+  letter-spacing: -0.025em;
+  line-height: 1;
+  display: inline-flex;
+  align-items: baseline;
+  gap: 2px;
+}
+body.pc-mode .cb__brief-record strong em {
+  font-style: normal;
   font-size: 14px;
-  font-weight: 800;
-  letter-spacing: -0.01em;
+  font-weight: 700;
+  color: var(--pc-text-dim);
+  margin-left: 2px;
 }
 
 
