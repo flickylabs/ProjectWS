@@ -356,15 +356,26 @@ export default function DiscoveryFeedbackWatcher() {
 
       const handlePointOut = () => {
         const s = useGameStore.getState()
+        // [결함 24] 모순 추궁 효과 누적 추적 — 사용자에게 명시적 시각화 메시지 출력용
+        const effectSummary: string[] = []
         for (const effect of (ev.deferredEffects ?? [])) {
           switch (effect.type) {
-            case 'lie_advance':
+            case 'lie_advance': {
+              const beforeAgent = effect.party === 'a' ? s.agentA : s.agentB
+              const beforeState = beforeAgent.lieStateMap[effect.disputeId]?.currentState ?? 'S0'
               for (let i = 0; i < effect.steps; i += 1) {
                 s.transitionLie(effect.party, effect.disputeId, 'event_contradiction_pointout')
               }
+              const afterAgent = effect.party === 'a' ? useGameStore.getState().agentA : useGameStore.getState().agentB
+              const afterState = afterAgent.lieStateMap[effect.disputeId]?.currentState ?? beforeState
+              if (beforeState !== afterState) {
+                effectSummary.push(`거짓말 단계 ${beforeState} → ${afterState}`)
+              }
               break
+            }
             case 'emotion_spike':
               s.changeEmotion(effect.party, effect.delta)
+              effectSummary.push(`감정 ${effect.delta > 0 ? '+' : ''}${effect.delta}`)
               break
           }
         }
@@ -398,6 +409,29 @@ export default function DiscoveryFeedbackWatcher() {
           party: ev.party,
           disputeId: ev.disputeId,
         })
+        // [결함 24] 모순 추궁 효과 명시적 시각화 메시지
+        if (effectSummary.length > 0) {
+          useGameStore.getState().addDialogue({
+            speaker: 'system',
+            text: `💥 모순 추궁이 통했습니다 — ${effectSummary.join(' / ')}`,
+            relatedDisputes: [ev.disputeId],
+            turn: s.turnCount,
+          })
+        }
+        // [Phase C-2 새 기획] 모순 추궁 직후 + emotion ≥ 75 + < 85 → 셧다운 진입 (2턴 응답 거부)
+        // emotion ≥ 85는 이미 체념(자백 모드)이라 셧다운 안 함.
+        const updatedAgent = ev.party === 'a' ? useGameStore.getState().agentA : useGameStore.getState().agentB
+        const emotion = updatedAgent.emotionalState.internalValue
+        const currentLockout = useGameStore.getState().emotionalLockoutUntil?.[ev.party] ?? 0
+        if (emotion >= 75 && emotion < 85 && currentLockout <= s.turnCount) {
+          useGameStore.getState().setEmotionalLockout(ev.party, s.turnCount + 3)
+          useGameStore.getState().addDialogue({
+            speaker: 'system',
+            text: `🔒 ${partyName}${pp이가(partyName)} 모순 추궁의 충격으로 답변을 거부합니다. (2턴간 질문 불가)`,
+            relatedDisputes: [ev.disputeId],
+            turn: s.turnCount,
+          })
+        }
         s.setPendingGameEvent(null)
         releaseKey()
       }

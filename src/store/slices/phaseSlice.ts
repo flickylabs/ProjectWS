@@ -4,6 +4,7 @@ import type { VerdictMode } from '../../types'
 import { PHASE_ORDER } from '../../utils/constants'
 import { checkVerdictEligible, checkForcedVerdict } from '../../engine/readinessEngine'
 import { normalizeCaseKey } from '../../utils/caseHelpers'
+import { triggerConfessionModalIfReady } from '../../engine/confessionTrigger'
 
 export type MediationChoice = 'immediate' | 'conditional' | 'postpone' | 'fact_first' | null
 
@@ -71,29 +72,30 @@ export const createPhaseSlice: StateCreator<PhaseSlice, [], [], PhaseSlice> = (s
       phaseTurnCount: state.phaseTurnCount + 1,
     }))
 
-    // [Phase B-2] 셧다운(체념) 만료 시 emotion 자동 격앙으로 전환.
-    // 만료 직후에도 emotion ≥ 85 유지되면 다음 질문 즉시 다시 셧다운 진입 → 무한 루프.
-    // → 만료 턴에 emotion을 격앙 범위(75)로 자동 조정 + 시스템 메시지로 안내.
+    // [Phase C-2 새 기획] 셧다운 만료 시 emotion 자동 체념(85+)으로 진입 + 자백 유도 모달.
     const after = get() as any
     for (const party of ['a', 'b'] as const) {
       const lockoutUntil = after.emotionalLockoutUntil?.[party] ?? 0
       if (lockoutUntil > 0 && lockoutUntil === after.turnCount) {
         const agent = party === 'a' ? after.agentA : after.agentB
         const emotionVal = agent?.emotionalState?.internalValue ?? 0
-        if (emotionVal >= 85 && after.changeEmotion) {
-          // 격앙 영역(75)으로 떨어뜨려 즉시 재진입 방지
-          after.changeEmotion(party, -(emotionVal - 75))
-          const partyName = party === 'a'
-            ? after.caseData?.duo?.partyA?.name ?? '당사자'
-            : after.caseData?.duo?.partyB?.name ?? '당사자'
+        const partyName = party === 'a'
+          ? after.caseData?.duo?.partyA?.name ?? '당사자'
+          : after.caseData?.duo?.partyB?.name ?? '당사자'
+        if (emotionVal < 85 && after.changeEmotion) {
+          // 셧다운 만료 → 체념(87)으로 자동 진입
+          after.changeEmotion(party, 87 - emotionVal)
           if (after.addDialogue) {
             after.addDialogue({
               speaker: 'system',
-              text: `${partyName}이(가) 호흡을 가라앉히고 다시 답할 수 있는 상태가 되었습니다.`,
+              text: `${partyName}의 저항이 무너졌습니다. 자백을 유도할 수 있는 상태입니다.`,
               relatedDisputes: [],
               turn: after.turnCount,
             })
           }
+          // [Phase C-3] 자백 유도 모달 enqueue
+          // 체념 진입 시점에 lastFocusedDisputeId 기준 자백 가능한지 확인 + 모달 1회 트리거
+          triggerConfessionModalIfReady(party, after)
         }
       }
     }

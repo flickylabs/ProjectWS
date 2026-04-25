@@ -31,24 +31,11 @@ export function runDiscoveryChecks(party: PartyId, disputeId?: string) {
   const agent = party === 'a' ? agentA : agentB
 
   // ── 1. 감정 셧다운 체크 ──
-  // [결함 2 픽스] 셧다운 첫 진입 시에만 lockout 시작 + 메시지. 이미 lockout 중이면 메시지 안 띄움.
-  // handleQuestion에서 emotionalLockoutUntil 가드로 실제 차단 적용.
-  if (!canInterrogate(agent.emotionalState.internalValue)) {
-    const currentLockout = state.emotionalLockoutUntil?.[party] ?? 0
-    if (currentLockout <= turnCount) {
-      // [Phase B-1] 새로 진입 — 2턴 차단 시작.
-      // lockoutUntil = "이 턴부터 다시 가능". turnCount + 3 = T+1, T+2 차단 → T+3부터 가능 (정확히 2턴).
-      state.setEmotionalLockout(party, turnCount + 3)
-      const n = party === 'a' ? caseData.duo.partyA.name : caseData.duo.partyB.name
-      state.addDialogue({
-        speaker: 'system',
-        text: `🔒 ${n}${pp이가(n)} 체념 상태에 빠져 답변을 거부합니다. (2턴간 질문 불가)`,
-        relatedDisputes: disputeId ? [disputeId] : [],
-        turn: turnCount,
-      })
-    }
-    // 이미 lockout 중이면 메시지 출력 안 함 (중복 방지)
-  }
+  // [Phase C-2 새 기획] 셧다운 진입을 'emotion ≥ 85 자동' 트리거에서 '모순 추궁 직후 + emotion ≥ 75' 트리거로 이동
+  // (DiscoveryFeedbackWatcher contradiction handlePointOut). 여기서는 셧다운 진입 처리 X.
+  // emotion ≥ 85 = 체념(자백 모드) — 응답 가능. 자백 모달 트리거는 별도 로직(Phase C-3).
+  void canInterrogate
+  void agent
 
   // ── 2. 감정 실수 자백 체크 (격앙 상태일 때) ──
   if (disputeId) {

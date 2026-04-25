@@ -175,6 +175,12 @@ export type GameStore = PhaseSlice & AgentSlice & ResourceSlice & EvidenceSlice 
   /** [감정 과부하 lockout] 셧다운 진입 시 차단 만료 turn 번호. 0 = no lockout. turnCount < lockoutUntil 인 동안 질문 차단 */
   emotionalLockoutUntil: Record<'a' | 'b', number>
   setEmotionalLockout: (party: 'a' | 'b', untilTurn: number) => void
+  /** [Phase C-4] 자백 dispatch 추적 — party × disputeId. 자백 1회 제한 + 재진술 분기용 */
+  confessionDispatched: Record<'a' | 'b', Record<string, boolean>>
+  markConfessionDispatched: (party: 'a' | 'b', disputeId: string) => void
+  /** [Phase C-3] 체념 진입 시 자백 모달 1회 트리거 — 이미 트리거된 (party, disputeId)는 다시 띄우지 않음 */
+  confessionModalShown: Record<'a' | 'b', Record<string, boolean>>
+  markConfessionModalShown: (party: 'a' | 'b', disputeId: string) => void
   /** 심문 이력: party → disputeId → 질문 기록 */
   interrogationHistory: Record<string, Record<string, { questionTypes: string[]; turns: number[]; revealed: boolean }>>
   trackInterrogation: (party: 'a' | 'b', disputeId: string, questionType: string, turn: number) => void
@@ -373,6 +379,22 @@ export const useGameStore: import('zustand').UseBoundStore<import('zustand').Sto
     emotionalLockoutUntil: { a: 0, b: 0 },
     setEmotionalLockout: (party, untilTurn) => set((prev) => ({
       emotionalLockoutUntil: { ...prev.emotionalLockoutUntil, [party]: untilTurn },
+    })),
+
+    confessionDispatched: { a: {}, b: {} },
+    markConfessionDispatched: (party, disputeId) => set((prev) => ({
+      confessionDispatched: {
+        ...prev.confessionDispatched,
+        [party]: { ...prev.confessionDispatched[party], [disputeId]: true },
+      },
+    })),
+
+    confessionModalShown: { a: {}, b: {} },
+    markConfessionModalShown: (party, disputeId) => set((prev) => ({
+      confessionModalShown: {
+        ...prev.confessionModalShown,
+        [party]: { ...prev.confessionModalShown[party], [disputeId]: true },
+      },
     })),
 
     interrogationHistory: { a: {}, b: {} },
@@ -750,6 +772,8 @@ export const useGameStore: import('zustand').UseBoundStore<import('zustand').Sto
         interrogationHistory: { a: {}, b: {} },
         recentAtomIds: { a: {}, b: {} },
         emotionalLockoutUntil: { a: 0, b: 0 },
+        confessionDispatched: { a: {}, b: {} },
+        confessionModalShown: { a: {}, b: {} },
         pendingMinigame: null,
         questionMeters: { a: createInitialMeterState(), b: createInitialMeterState() },
         gameEventLog: [],

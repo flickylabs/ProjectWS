@@ -3,7 +3,7 @@ import { useCallback } from 'react'
 import { useGameStore } from '../store/useGameStore'
 import { resolveDialogue, generateDynamicFallback } from '../engine/dialogueResolver'
 import { resolveLLMDialogue } from '../engine/llmDialogueResolver'
-import { pp을를, pp과와, pp이가 } from '../engine/koreanPostposition'
+import { pp을를, pp과와, pp이가, pp은는 } from '../engine/koreanPostposition'
 import { generateWitnessTestimony, canCallWitness, determineTestimonyDepth, getDepthSystemMessage } from '../engine/witnessEngine'
 import type { PlayerAction, PartyId, QuestionType, DialogueNode } from '../types'
 import { playEvidencePresent, playLieCollapse, playEvidenceUnlock, playEvidenceUpgrade, playSeparation } from '../engine/soundEngine'
@@ -401,10 +401,9 @@ async function handleEvidencePresent(action: Extract<PlayerAction, { type: 'evid
         }
       }
     }
-    // [차단] 자동 이벤트 트리거 — 한 턴에 끼어들기/모순/감정폭발/새쟁점이 자동 발동되어
-    // NPC 발화 매핑 혼란 + 모달 동시 출현 + 발화 순서 혼선을 유발. 명시적 사용자 액션으로만 이벤트 발생.
-    // v3State.evaluateTurnEvents('evidence_present', evDef.proves[0], transitions)
-    void transitions
+    // [결함 26·27 부활] 자동 이벤트 트리거 — D 옵션 시스템 메시지 + 클릭형 패턴이 자동 모달을 막아주므로 안전.
+    // 모순/끼어들기/감정폭발/새쟁점 모두 시스템 메시지로 등장 → 사용자 클릭 시점에만 모달.
+    v3State.evaluateTurnEvents('evidence_present', evDef.proves[0], transitions)
   }
 
   useGameStore.getState().incrementTurn()
@@ -664,6 +663,27 @@ async function handleEvidenceInvestigate(action: Extract<PlayerAction, { type: '
 
 // ── 질문 ──
 let questionLock = false
+
+/**
+ * [Phase C-4] 자백 후 동일 쟁점 재추궁 시 짧은 재진술/회피 발화 선택.
+ * 캐릭터 archetype에 따라 톤 분기.
+ */
+function pickConfessionRecapLine(caseId: string, party: 'a' | 'b'): string {
+  // 사건·party별 archetype 매핑 (간단)
+  // spouse-01: A victim_cosplay, B avoidant
+  // family-01: A confrontational, B affect_flattening
+  // friend-01: A premature_summary, B affect_flattening
+  const key = `${caseId.replace(/^case-/, '')}:${party}`
+  const map: Record<string, string> = {
+    'spouse-01:a': '이미 인정했습니다. 더 무엇을 더 말씀드려야 하나요.',
+    'spouse-01:b': '…더 드릴 말씀이 없습니다.',
+    'family-01:a': '이미 다 얘기했습니다. 같은 말 반복하고 싶지 않습니다.',
+    'family-01:b': '…전에 말씀드린 그대로입니다.',
+    'friend-01:a': '그 부분은 이미 말씀드린 그대로입니다.',
+    'friend-01:b': '…더 보탤 말이 없습니다.',
+  }
+  return map[key] ?? '이미 자백한 부분입니다. 더 드릴 말씀이 없습니다.'
+}
 async function handleQuestion(action: Extract<PlayerAction, { type: 'question' }>) {
   if (questionLock) return
   questionLock = true
@@ -685,6 +705,37 @@ async function handleQuestion(action: Extract<PlayerAction, { type: 'question' }
       relatedDisputes: [action.disputeId],
       turn: state.turnCount,
     })
+    return
+  }
+  // [Phase C-4] 자백 후 동일 쟁점 재추궁 — 짧은 재진술/회피로 응답. LLM 호출 안 함.
+  const alreadyConfessed = state.confessionDispatched?.[action.target]?.[action.disputeId]
+  if (alreadyConfessed) {
+    const targetName = action.target === 'a'
+      ? state.caseData?.duo.partyA.name ?? '당사자'
+      : state.caseData?.duo.partyB.name ?? '당사자'
+    // 캐릭터별 짧은 재진술 발화
+    const recapText = pickConfessionRecapLine(state.caseData?.caseId ?? '', action.target)
+    state.addDialogue({
+      speaker: 'judge',
+      text: buildQuestionText(action.questionType, action.target, action.disputeId),
+      relatedDisputes: [action.disputeId],
+      turn: state.turnCount,
+    })
+    state.addDialogue({
+      speaker: action.target,
+      text: recapText,
+      relatedDisputes: [action.disputeId],
+      turn: state.turnCount,
+      behaviorHint: '이미 자백한 사항이라 더 보탤 말이 없는 듯하다.',
+      source: 'fallback',
+    })
+    state.addDialogue({
+      speaker: 'system',
+      text: `${targetName}${pp은는(targetName)} 이 쟁점에 대해 이미 자백했습니다. 다른 쟁점이나 다른 당사자로 진행해 주세요.`,
+      relatedDisputes: [action.disputeId],
+      turn: state.turnCount,
+    })
+    state.incrementTurn()
     return
   }
   state.setLastFocusedDisputeId(action.disputeId)
@@ -1371,9 +1422,9 @@ async function handleQuestion(action: Extract<PlayerAction, { type: 'question' }
     const transitions = prevState !== newState
       ? [{ party: action.target, disputeId: action.disputeId, from: prevState, to: newState }]
       : []
-    // [차단] 자동 이벤트 트리거 — handleEvidencePresent와 동일 사유로 차단.
-    // v3State.evaluateTurnEvents(action.questionType, action.disputeId, transitions)
-    void transitions
+    // [결함 26·27 부활] 자동 이벤트 트리거 — D 옵션(시스템 메시지 + 클릭형)으로 모달 자동 표출이 차단된 상태라 안전.
+    // 끼어들기 트리거 자체가 호출 안 되던 회귀 결함 해소. DiscoveryFeedbackWatcher가 pendingGameEvent를 D 옵션 클릭형으로 처리.
+    v3State.evaluateTurnEvents(action.questionType, action.disputeId, transitions)
 
     // ── V3: lieState 전이 시각 피드백 + 전략 선택 모달 ──
     if (prevState !== newState) {
@@ -1927,10 +1978,27 @@ function notifyLieTransition(party: PartyId, disputeId: string) {
           // 진실 발견 기록
           if (!state.discovery.discoveredTruths.includes(truthId)) {
             state.addDiscoveredTruth(truthId)
-            // 시스템 메시지: 진실 발견 (구체 내용은 증거 게시판에서 확인)
+            // [Phase C-5] 결정적 진술 → 자백은 증거 아닌 발화. 증거 게시판 안내 결함.
+            // 재판관의 수첩(JudgeNotebookSlice)에 핵심 발화 등록 + 안내 메시지 변경.
+            const truthDispute = caseData.disputes.find((d: { id: string }) => d.id === disputeId)
+            const partyName = action.target === 'a'
+              ? caseData.duo.partyA.name
+              : caseData.duo.partyB.name
+            // 마지막 NPC 발화 id 추출 (수첩 jump용)
+            const lastNpcDialogue = [...state.dialogueLog].reverse().find((d: { speaker: string }) => d.speaker === action.target)
+            state.addNotebookEntry?.({
+              turnCount: state.turnCount,
+              category: 'key_statement',
+              iconId: 'i-flame',
+              title: `${partyName}의 결정적 진술 — ${truthDispute?.name ?? disputeId}`,
+              summary: truth?.summary ?? '',
+              party: action.target,
+              disputeId,
+              linkedDialogueId: lastNpcDialogue?.id,
+            })
             state.addDialogue({
               speaker: 'system',
-              text: `결정적 진술이 확보되었습니다. 증거 게시판에서 확인하십시오.`,
+              text: `📔 재판관의 수첩에 결정적 진술이 기록되었습니다 — ${truthDispute?.name ?? disputeId}`,
               relatedDisputes: [disputeId],
               turn: state.turnCount,
             })
