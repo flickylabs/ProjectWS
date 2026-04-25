@@ -344,11 +344,36 @@ export default function PCHomeScreen() {
 }
 
 function ModeCard({ badge, iconId, label, metaLeft, metaRight, onClick, progressRate, season = false }: { badge: string; iconId: string; label: string; metaLeft: string; metaRight: string; onClick: () => void; progressRate: number; season?: boolean }) {
-  return <button className={`pc-mode-card${season ? ' is-season' : ''}`} onClick={onClick} type="button"><div className="pc-mode-card__badge-row"><span className="pc-mode-card__badge">{badge}</span></div><div className="pc-mode-card__content"><span className="pc-mode-card__icon"><PCSvgIcon id={iconId} size={38} /></span><div className="pc-mode-card__copy"><strong>{label}</strong><div className="pc-mode-card__meta"><span>{metaLeft}</span><span>{metaRight}</span></div></div></div><div className="pc-mode-card__track"><i style={{ width: `${progressRate}%` }} /></div></button>
+  return (
+    <button className={`pc-mode-card${season ? ' is-season' : ''}`} onClick={onClick} type="button">
+      <div className="pc-mode-card__head">
+        <span className="pc-mode-card__icon"><PCSvgIcon id={iconId} size={36} /></span>
+        <div className="pc-mode-card__head-text">
+          <span className="pc-mode-card__eyebrow">{badge}</span>
+          <strong className="pc-mode-card__title">{label.replace(/\s*>$/, '')}</strong>
+        </div>
+        <span className="pc-mode-card__arrow" aria-hidden="true">›</span>
+      </div>
+      <div className="pc-mode-card__meta">
+        <span>{metaLeft}</span>
+        <span>{metaRight}</span>
+      </div>
+      <div className="pc-mode-card__track"><i style={{ width: `${progressRate}%` }} /></div>
+    </button>
+  )
 }
 
-function InfoCard({ actionLabel, iconId, onClick, subtitle, title }: { actionLabel: string; iconId: string; onClick: () => void; subtitle: string; title: string }) {
-  return <div className="pc-home-info-card"><div className="pc-home-info-card__head"><span className="pc-home-info-card__icon"><PCSvgIcon id={iconId} size={26} /></span><div><strong>{title}</strong><p>{subtitle}</p></div></div><button className="pc-home-info-card__action" onClick={onClick} type="button">{actionLabel}</button></div>
+function InfoCard({ iconId, onClick, subtitle, title }: { actionLabel?: string; iconId: string; onClick: () => void; subtitle: string; title: string }) {
+  return (
+    <button className="pc-home-info-card" onClick={onClick} type="button">
+      <span className="pc-home-info-card__icon"><PCSvgIcon id={iconId} size={22} /></span>
+      <div className="pc-home-info-card__copy">
+        <strong>{title}</strong>
+        <p>{subtitle}</p>
+      </div>
+      <span className="pc-home-info-card__arrow" aria-hidden="true">›</span>
+    </button>
+  )
 }
 
 function DepthHeader({ eyebrow, title, description, onBack }: { eyebrow: string; title: string; description: string; onBack: () => void }) {
