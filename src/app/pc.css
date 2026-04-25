@@ -19739,22 +19739,41 @@ body.pc-mode .pc-achievement-strip__track {
 }
 
 /* ──────────────────────────────────────────────────
-   페이지 상단 spacing 확보 + 컨텐츠 max-width 통일
-   "텍스트 적은 페이지가 너무 위에 붙지 않도록"
+   페이지 상단 spacing + 헤더 dark band edge-to-edge
    ────────────────────────────────────────────────── */
 body.pc-mode .pc-depth-shell {
   margin-top: 0 !important;
   margin-bottom: 32px !important;
-  padding: 64px 48px 48px !important;
+  padding: 0 0 48px !important;
   max-width: 1280px;
   margin-left: auto !important;
   margin-right: auto !important;
   min-height: calc(100vh - 32px) !important;
 }
 
-/* 사건 선택 (Case Browser) 도 동일 padding — pc-depth-shell 안에서 한번 더 잡지 않게 */
+/* 헤더 dark band — pc-depth-shell 끝-끝까지 (전체 폭) */
+body.pc-mode .pc-depth-header {
+  background: linear-gradient(180deg, rgba(13, 14, 18, 0.72), rgba(13, 14, 18, 0.55)) !important;
+  border-bottom: 1px solid rgba(212, 162, 78, 0.18) !important;
+  padding: 32px 48px 24px !important;
+  margin: 0 0 40px !important;
+  border-radius: 0 !important;
+}
+
+/* 사건 선택 (Case Browser) — 본문은 padding 적용 */
 body.pc-mode .pc-depth-shell > .cb {
   height: 100%;
+}
+body.pc-mode .pc-depth-shell > .cb > .cb__split,
+body.pc-mode .pc-depth-shell > .cb > .cb__empty,
+body.pc-mode .pc-depth-shell > .pc-session-grid-v2,
+body.pc-mode .pc-depth-shell > .pc-desk-tabs,
+body.pc-mode .pc-depth-shell > .pc-desk-tab-content,
+body.pc-mode .pc-depth-shell > .pc-settings-grid-v2,
+body.pc-mode .pc-depth-shell > .pc-leaderboard-grid,
+body.pc-mode .pc-depth-shell > .pc-filter-pills-v2 {
+  padding-left: 48px;
+  padding-right: 48px;
 }
 
 /* ──────────────────────────────────────────────────
@@ -19776,42 +19795,46 @@ body.pc-mode .cb__stages {
   max-height: calc(100vh - 280px) !important;
 }
 
-/* HERO — 큰 사건 제목 가운데, portraits 양 끝 (bait는 아래 SUMMARY로 분리됨) */
+/* HERO — 큰 사건 제목 가운데, portraits 안쪽으로 이동 (padding-x 키움) */
 body.pc-mode .cb__brief-hero {
   grid-template-columns: 84px 1fr 84px !important;
-  gap: 24px !important;
-  padding: 40px 28px 28px !important;
+  gap: 36px !important;
+  padding: 56px 64px 32px !important;
 }
 body.pc-mode .cb__brief-portrait {
-  width: 76px !important;
-  height: 76px !important;
+  width: 80px !important;
+  height: 80px !important;
 }
 body.pc-mode .cb__brief-character {
   gap: 8px !important;
 }
-/* 사건 제목 — 더 큰 글씨, 가운데 강조 */
+/* 사건 제목 — 더 큰 글씨, 자연 줄바꿈 (text-wrap balance) */
 body.pc-mode .cb__brief-center {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 76px;
+  min-height: 80px;
 }
 body.pc-mode .cb__brief-headline {
-  font-size: clamp(22px, 2.2vw, 30px) !important;
+  font-size: clamp(28px, 2.8vw, 38px) !important;
   font-weight: 800 !important;
-  letter-spacing: -0.025em !important;
-  line-height: 1.25 !important;
+  letter-spacing: -0.03em !important;
+  line-height: 1.18 !important;
   text-align: center;
-  max-width: 100%;
+  text-wrap: balance;
+  max-width: 360px;
 }
 
-/* SUMMARY — HERO와 상세 사이의 별도 영역 (bait 텍스트) */
+/* SUMMARY — 음영 폐기, 가로선 hairline으로만 영역 구분 */
 body.pc-mode .cb__brief-summary {
-  margin: 4px 28px 8px;
-  padding: 16px 20px;
-  border-radius: 12px;
-  border: 1px solid rgba(212, 162, 78, 0.14);
-  background: rgba(212, 162, 78, 0.04);
+  margin: 0 !important;
+  padding: 18px 32px !important;
+  border-top: 1px solid rgba(212, 162, 78, 0.14);
+  border-bottom: 1px solid rgba(212, 162, 78, 0.14);
+  background: transparent !important;
+  border-radius: 0 !important;
+  border-left: none !important;
+  border-right: none !important;
 }
 body.pc-mode .cb__brief-summary p {
   margin: 0;
@@ -19819,6 +19842,7 @@ body.pc-mode .cb__brief-summary p {
   color: var(--pc-text-dim);
   line-height: 1.65;
   font-style: italic;
+  text-align: center;
 }
 
 /* 폐기된 HERO 안 bait — 안전 */
@@ -19846,21 +19870,19 @@ body.pc-mode .cb__brief-item {
   font-size: 14px !important;
 }
 
-/* 푸터 — 최고 기록을 박스 밖으로 빼서 크게 */
+/* 푸터 — 세로 구조 + 가로선으로 record/CTA 분리 */
 body.pc-mode .cb__brief-footer {
   display: flex !important;
-  flex-direction: row !important;
-  align-items: center !important;
-  justify-content: space-between !important;
-  gap: 24px;
-  padding: 18px 28px 24px !important;
-  border-top: 1px solid rgba(212, 162, 78, 0.12);
+  flex-direction: column !important;
+  gap: 0 !important;
+  padding: 0 !important;
+  border-top: 1px solid rgba(212, 162, 78, 0.14);
 }
 body.pc-mode .cb__brief-footer .cb__brief-start {
-  flex: 1;
-  margin: 0 !important;
-  padding: 14px 0 !important;
-  font-size: 16px !important;
+  flex: none !important;
+  margin: 16px 28px 24px !important;
+  padding: 16px 0 !important;
+  font-size: 17px !important;
 }
 
 /* ──────────────────────────────────────────────────
@@ -19900,26 +19922,28 @@ body.pc-mode .cb__stage.is-placeholder:hover {
   border-color: rgba(255, 255, 255, 0.04) !important;
 }
 
-/* 최고 기록 — 박스/pill 폐기, 큰 인라인 텍스트 (라벨 위 + 점수 크게) */
+/* 최고 기록 — CTA 위에 자체 영역, 가로선으로 영역 구분 */
 body.pc-mode .cb__brief-record {
   margin: 0 !important;
-  padding: 0 !important;
+  padding: 16px 28px !important;
   background: transparent !important;
   border: none !important;
+  border-bottom: 1px solid rgba(212, 162, 78, 0.14) !important;
   display: flex !important;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 2px;
-  flex-shrink: 0;
+  flex-direction: row !important;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
 }
-body.pc-mode .cb__brief-record span {
-  font-size: 10px;
+body.pc-mode .cb__brief-record > span {
+  font-size: 11px;
   font-weight: 800;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.20em;
   text-transform: uppercase;
   color: var(--pc-text-muted);
+  flex-shrink: 0;
 }
-body.pc-mode .cb__brief-record strong {
+body.pc-mode .cb__brief-record > strong {
   margin: 0 !important;
   color: var(--pc-gold-light) !important;
   font-size: 28px;
@@ -19930,12 +19954,19 @@ body.pc-mode .cb__brief-record strong {
   align-items: baseline;
   gap: 2px;
 }
-body.pc-mode .cb__brief-record strong em {
+body.pc-mode .cb__brief-record > strong em {
   font-style: normal;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 700;
   color: var(--pc-text-dim);
   margin-left: 2px;
+}
+body.pc-mode .cb__brief-record > strong small {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--pc-text-muted);
+  margin-left: 6px;
+  letter-spacing: 0.04em;
 }
 
 

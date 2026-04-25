@@ -271,12 +271,15 @@ function CaseBriefPanel({ caseData, stageNum, score, onStart }: {
         </div>
       </div>
 
-      {/* 푸터: 기록 + CTA */}
+      {/* 푸터: 기록 영역 (가로선으로 분리) + CTA */}
       <div className="cb__brief-footer">
         {score > 0 && (
           <div className="cb__brief-record">
             <span>최고 기록</span>
-            <strong>{score}<em>점</em></strong>
+            <strong>
+              {score}<em>점</em>
+              <small>/ 100</small>
+            </strong>
           </div>
         )}
         <button className="cb__brief-start" onClick={onStart} type="button">
