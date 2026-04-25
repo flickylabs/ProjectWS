@@ -2932,13 +2932,11 @@ body.pc-mode .pc-play-left .pc-important-notes__scroll {
    ═══════════════════════════════════════════════════════════ */
 body.pc-mode .pc-judge-observation-section,
 body.pc-mode .pc-play-left .pc-judge-observation-section--notebook {
-  /* 관찰/수첩 둘 다 200px 고정. drawer overflow: visible 보존 우선 — grow 사용 시
-   * 자식 overflow → drawer 잘림(직전 사이클 결함) 또는 탑바 밀림(그 전 사이클 결함).
-   * "캐릭터 끝까지 확장"은 drawer portal 마운트 등 큰 변경이 필요한 별도 사이클. */
-  flex: 0 0 200px !important;
-  min-height: 200px !important;
+  /* 관찰/수첩 둘 다 basis 200px + shrink 1 — 패널 부족 시 줄어들어 잘림 방지.
+   * "캐릭터 끝까지 확장"은 drawer portal 마이그레이션 후 별도 사이클. */
+  flex: 0 1 200px !important;
+  min-height: 0 !important;
   max-height: 200px !important;
-  height: 200px !important;
 }
 
 /* (legacy) 기존 .pc-play-notebook-section 남겨둠 — 다른 위치에서 참조 가능 */
@@ -6189,24 +6187,27 @@ body.pc-mode .pc-log-system-card.is-pending-feedback {
   position: relative;
   transition: transform 0.18s ease, background 0.2s ease;
 }
+/* 사용자 디자인 통일 요청 — is-urgent(emergence/새 쟁점)도 is-alert(모순)와
+ * 정확히 동일한 빨강 톤으로 통일. modifier 의미(authority/contradiction)
+ * 구분보다 시각 일관성 우선. */
 body.pc-mode .pc-log-system-card.is-pending-feedback.is-urgent {
-  border-top-color: rgba(232, 193, 114, 0.85) !important;
-  border-bottom-color: rgba(232, 193, 114, 0.85) !important;
+  border-top-color: rgba(224, 96, 96, 0.85) !important;
+  border-bottom-color: rgba(224, 96, 96, 0.85) !important;
   background: linear-gradient(90deg,
-    rgba(232, 193, 114, 0.08),
-    rgba(232, 193, 114, 0.22) 50%,
-    rgba(232, 193, 114, 0.08)) !important;
-  color: #fbe6a8 !important;
-  box-shadow: 0 0 24px rgba(232, 193, 114, 0.35) inset;
+    rgba(224, 96, 96, 0.06),
+    rgba(224, 96, 96, 0.22) 50%,
+    rgba(224, 96, 96, 0.06)) !important;
+  color: #ffb5b5 !important;
+  box-shadow: 0 0 24px rgba(224, 96, 96, 0.30) inset;
   animation:
     pc-log-urgent-enter 0.65s cubic-bezier(0.2, 0.9, 0.1, 1.1) 1 both,
-    pc-log-urgent-pulse 1.6s ease-in-out 0.65s infinite !important;
+    pc-log-alert-pulse 1.6s ease-in-out 0.65s infinite !important;
 }
 body.pc-mode .pc-log-system-card.is-pending-feedback.is-urgent:hover {
   background: linear-gradient(90deg,
-    rgba(232, 193, 114, 0.14),
-    rgba(232, 193, 114, 0.34) 50%,
-    rgba(232, 193, 114, 0.14)) !important;
+    rgba(224, 96, 96, 0.12),
+    rgba(224, 96, 96, 0.34) 50%,
+    rgba(224, 96, 96, 0.12)) !important;
   transform: translateY(-1px);
 }
 body.pc-mode .pc-log-system-card.is-pending-feedback.is-urgent:active {
