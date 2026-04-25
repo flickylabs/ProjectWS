@@ -8513,11 +8513,12 @@ body.pc-mode .pc-play-evidence-section {
   flex: 0 0 auto !important;
 }
 
-/* 발언노트: 콘텐츠 상한 200 (수첩 영역 더 보장 — 사용자 요청 04-27) */
+/* 발언노트: 콘텐츠 상한 150 (수첩 영역 더 확보 — 사용자 요청 04-27 후속).
+ * 5건 이상이면 .pc-fav-notes__scroll에서 내부 스크롤. */
 body.pc-mode .pc-important-notes-section {
   flex: 0 1 auto !important;
   min-height: 0 !important;
-  max-height: 200px !important;
+  max-height: 150px !important;
 }
 
 body.pc-mode .pc-important-notes__scroll {
