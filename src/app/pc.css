@@ -2930,13 +2930,15 @@ body.pc-mode .pc-play-left .pc-important-notes__scroll {
    재판관의 관찰과 동일 클래스(.pc-judge-observation-section)를 사용해
    시각 100% 통일. 수첩 전용 modifier(--notebook)로 height만 확장.
    ═══════════════════════════════════════════════════════════ */
+body.pc-mode .pc-judge-observation-section,
 body.pc-mode .pc-play-left .pc-judge-observation-section--notebook {
-  /* C안 근본 픽스: grow 1로 남은 공간 차지 (캐릭터 버튼 끝까지 확장).
-   * 부모(.pc-play-left)에 overflow: hidden + max-height: 100% 안전 장치 적용됨. */
-  flex: 1 1 200px !important;
+  /* 관찰/수첩 둘 다 200px 고정. drawer overflow: visible 보존 우선 — grow 사용 시
+   * 자식 overflow → drawer 잘림(직전 사이클 결함) 또는 탑바 밀림(그 전 사이클 결함).
+   * "캐릭터 끝까지 확장"은 drawer portal 마운트 등 큰 변경이 필요한 별도 사이클. */
+  flex: 0 0 200px !important;
   min-height: 200px !important;
-  max-height: none !important;
-  height: auto !important;
+  max-height: 200px !important;
+  height: 200px !important;
 }
 
 /* (legacy) 기존 .pc-play-notebook-section 남겨둠 — 다른 위치에서 참조 가능 */
@@ -8488,9 +8490,11 @@ body.pc-mode .pc-play-left {
   height: 100% !important;
   max-height: 100% !important;
   padding: 14px 18px 8px !important;
-  /* C안 근본 픽스: 자식 합이 viewport 초과해도 grid item 안 늘어나도록 hidden.
-   * 수첩 grow로 남은 공간 다 차지하므로 일반 동작에서는 overflow 발생 안 함. */
-  overflow: hidden !important;
+  /* drawer (timeline/fav-notes/observation-history)는 position: absolute로
+   * 패널 우측에 튀어나오는 구조 — overflow: visible 필수.
+   * grid 부모(.app.pc-play-app)에 height:100vh + overflow:hidden이 있어
+   * grid 자체는 viewport에 fit (자식 overflow 발생해도 페이지 스크롤 X). */
+  overflow: visible !important;
 }
 
 body.pc-mode .pc-play-left .sec {
@@ -8502,9 +8506,9 @@ body.pc-mode .pc-play-evidence-section {
   flex: 0 0 auto !important;
 }
 
-/* 발언노트: grow 제거 — 수첩이 남은 공간 차지하도록 양보. shrink는 유지(콘텐츠 많으면 줄어듦). */
+/* 발언노트: grow 1 (남는 공간 차지) + 콘텐츠 상한 280 (수첩 영역 보장) */
 body.pc-mode .pc-important-notes-section {
-  flex: 0 1 auto !important;
+  flex: 1 1 auto !important;
   min-height: 0 !important;
   max-height: 280px !important;
 }
