@@ -8494,11 +8494,11 @@ body.pc-mode .pc-play-left {
   position: relative !important;
   display: flex !important;
   flex-direction: column !important;
-  gap: 12px !important;
+  gap: 8px !important;
   min-height: 0 !important;
   height: 100% !important;
   max-height: 100% !important;
-  padding: 14px 18px 8px !important;
+  padding: 12px 18px 8px !important;
   /* drawer 3종은 createPortal로 document.body 마운트 → 좌측 패널 overflow hidden 안전.
    * 수첩 grow 1로 캐릭터 카드 끝까지 확장되어도 자식 합 viewport 초과 시 잘림으로 처리. */
   overflow: hidden !important;
@@ -8507,6 +8507,11 @@ body.pc-mode .pc-play-left {
 body.pc-mode .pc-play-left .sec {
   width: 100% !important;
   min-width: 0 !important;
+}
+
+/* 좌측 패널 4 섹션 헤더-콘텐츠 gap 압축 (사용자 요청 04-27 — 라인 맞춤) */
+body.pc-mode .pc-play-left .sec > .sec-h {
+  margin-bottom: 4px !important;
 }
 
 body.pc-mode .pc-play-evidence-section {
