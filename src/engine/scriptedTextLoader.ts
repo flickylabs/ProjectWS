@@ -618,12 +618,13 @@ export function getScriptedJudgeQuestion(
   return getFromChannel(caseId, 'judge_question', key, { targetParty: target })
 }
 
-/** 재판관 모순 추궁 질문 (사건별) */
+/** 재판관 모순 추궁 질문 (사건별)
+ *  target 인자 추가 — 호명 라우팅 (judgeQuestion과 동일 패턴, B1·B2 픽스 연동) */
 export function getScriptedJudgeContradiction(
-  caseId: string, disputeId: string, tone: string,
+  caseId: string, disputeId: string, tone: string, target?: 'a' | 'b',
 ): { text: string; behaviorHint: string } | null {
   const key = `${disputeId}|${tone}`
-  return getFromChannel(caseId, 'judge_contradiction', key)
+  return getFromChannel(caseId, 'judge_contradiction', key, { targetParty: target })
 }
 
 /** 범용 채널 조회 헬퍼

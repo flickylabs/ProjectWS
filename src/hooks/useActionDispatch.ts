@@ -1121,10 +1121,13 @@ async function handleQuestion(action: Extract<PlayerAction, { type: 'question' }
         const targetName = action.target === 'a'
           ? (state.caseData?.duo.partyA.name ?? 'A')
           : (state.caseData?.duo.partyB.name ?? 'B')
-        const otherParty = action.target === 'a' ? 'B' : 'A'
+        const otherPartyName = action.target === 'a'
+          ? (state.caseData?.duo.partyB.name ?? '상대')
+          : (state.caseData?.duo.partyA.name ?? '상대')
+        void targetName
         state.addDialogue({
           speaker: 'system',
-          text: `이 접근으로는 더 이상 진전이 어렵습니다. ${alternatives.join(' 또는 ')}으로 전환하거나, ${otherParty}측을 심문하거나, 다른 쟁점을 시도해 보세요.`,
+          text: `이 접근으로는 더 이상 진전이 어렵습니다. ${alternatives.join(' 또는 ')}으로 전환하거나, ${otherPartyName} 씨를 심문하거나, 다른 쟁점을 시도해 보세요.`,
           relatedDisputes: [action.disputeId],
           turn: state.turnCount,
         })
@@ -2406,9 +2409,10 @@ export async function handleContradictionPursue(
     const currentLieState = lieEntry?.currentState ?? 'S0'
 
     // 사건별 스크립트 우선 → 일반 템플릿 폴백
+    // target(party) 라우팅 — 추궁 대상에 따라 호명 정확
     const caseKeyForJudge = normalizeCaseKey(state.caseData?.caseId ?? '')
     const tone = resolveContradictionTone(currentLieState)
-    const scriptedJudge = getScriptedJudgeContradiction(caseKeyForJudge, disputeId, tone)
+    const scriptedJudge = getScriptedJudgeContradiction(caseKeyForJudge, disputeId, tone, party)
     const judgeQuestion = scriptedJudge?.text ?? buildContradictionQuestion(npcName, previousClaim, currentClaim, currentLieState)
 
     state.addDialogue({
