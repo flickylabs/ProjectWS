@@ -1610,7 +1610,7 @@ body.pc-mode .pc-home-board__modes {
 
 body.pc-mode .pc-home-board__mode {
   position: relative;
-  border-radius: 34px;
+  border-radius: 24px;
   border: 1px solid rgba(255, 255, 255, 0.06);
   background: linear-gradient(180deg, rgba(24, 24, 34, 0.96), rgba(15, 15, 23, 0.98));
   padding: 24px 26px 22px;
@@ -3694,7 +3694,7 @@ body.pc-mode .pc-home-board__modes {
 body.pc-mode .pc-home-board__mode {
   min-height: 208px;
   padding: 20px 22px 18px;
-  border-radius: 30px;
+  border-radius: 24px;
 }
 
 body.pc-mode .pc-home-board__mode-head {
