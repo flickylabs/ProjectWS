@@ -8518,12 +8518,14 @@ body.pc-mode .pc-play-evidence-section {
   flex: 0 0 auto !important;
 }
 
-/* 발언노트: 콘텐츠 상한 150 (수첩 영역 더 확보 — 사용자 요청 04-27 후속).
- * 5건 이상이면 .pc-fav-notes__scroll에서 내부 스크롤. */
+/* 발언노트: 콘텐츠 상한 130 + overflow hidden 강제 (사용자 요청 04-27 후속2).
+ * 자식 콘텐츠가 max-height를 무시하지 않도록 overflow 명시.
+ * 안쪽 .pc-fav-notes__scroll이 overflow-y: auto 처리. */
 body.pc-mode .pc-important-notes-section {
   flex: 0 1 auto !important;
   min-height: 0 !important;
-  max-height: 150px !important;
+  max-height: 130px !important;
+  overflow: hidden !important;
 }
 
 body.pc-mode .pc-important-notes__scroll {
