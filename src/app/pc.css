@@ -4501,7 +4501,7 @@ body.pc-mode .pc-home-v2 {
   align-items: center;
   justify-content: center;
   position: relative;
-  overflow: hidden;
+  overflow: visible;
   background: transparent;
   border: none;
 }
@@ -4573,11 +4573,12 @@ body.pc-mode .pc-home-v2__hero::before {
   bottom: 0;
   transform: translateX(-50%);
   width: 100vw;
+  /* depth-header와 100% 동일한 색·알파·페이드 */
   background: linear-gradient(90deg,
     transparent 0%,
-    rgba(10, 8, 6, 0.55) 12%,
-    rgba(10, 8, 6, 0.72) 50%,
-    rgba(10, 8, 6, 0.55) 88%,
+    rgba(13, 14, 18, 0.72) 12%,
+    rgba(13, 14, 18, 0.78) 50%,
+    rgba(13, 14, 18, 0.72) 88%,
     transparent 100%);
   z-index: 0;
   pointer-events: none;
