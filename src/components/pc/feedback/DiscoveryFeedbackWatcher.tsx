@@ -25,7 +25,7 @@ const JUDGMENT_LABELS: Record<TruthJudgment, string> = {
   believe_a: 'A의 주장이 더 설득력 있습니다',
   believe_b: 'B의 주장이 더 설득력 있습니다',
   both_partial: '양쪽 모두 일부만 사실입니다',
-  undetermined: '판단을 보류하겠습니다.',
+  undetermined: '지금은 보류 (나중에 다시 판단)',
 }
 
 function isNarrativeReaction(text: string | undefined): boolean {
@@ -75,6 +75,11 @@ export default function DiscoveryFeedbackWatcher() {
       summary: `${dispute?.name ?? pendingConfrontation.disputeId}`,
       disputeId: pendingConfrontation.disputeId,
     })
+    const handleDefer = () => {
+      useGameStore.getState().deferVerdict(pendingConfrontation)
+      enqueuedRef.current.delete(key)
+    }
+
     state.enqueueFeedback({
       kind: 'confrontation',
       eyebrow: '진실 공방',
@@ -87,12 +92,20 @@ export default function DiscoveryFeedbackWatcher() {
       actionsLayout: 'vertical',
       actions: judgments.map((value) => ({
         label: JUDGMENT_LABELS[value].replace('A의', `${partyA}의`).replace('B의', `${partyB}의`),
-        tone: 'gold' as const,
+        // '지금은 보류'는 회색 톤으로 분리 (영구 판결 3종과 시각 구분)
+        tone: value === 'undetermined' ? 'gray' as const : 'gold' as const,
         onSelect: () => {
-          useGameStore.getState().submitJudgment(pendingConfrontation.disputeId, value, useGameStore.getState().turnCount)
-          enqueuedRef.current.delete(key)
+          if (value === 'undetermined') {
+            // 일시 보류 — 핫바 위 미니 아이콘으로 복귀 가능
+            handleDefer()
+          } else {
+            useGameStore.getState().submitJudgment(pendingConfrontation.disputeId, value, useGameStore.getState().turnCount)
+            enqueuedRef.current.delete(key)
+          }
         },
       })),
+      // X 버튼 — 보류 액션과 동일 동작 (일시 보류)
+      onDefer: handleDefer,
     })
   }, [pendingConfrontation])
 

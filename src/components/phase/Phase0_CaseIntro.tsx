@@ -167,7 +167,6 @@ export default function Phase0_CaseIntro() {
                   <div className="text-xs text-gray-500 mb-2"><Emoji char="👥" size={12} /> 관련 인물</div>
                   <div className="flex flex-wrap gap-2">
                     {duo.socialGraph
-                      .filter(tp => tp.slot === 'family_1' || tp.slot === 'family_2' || tp.slot === 'acquaintance_1')
                       .slice(0, 3)
                       .map((tp) => {
                         // 이름에서 역할/직업 제거 (진실 스포일러 방지)

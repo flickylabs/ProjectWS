@@ -973,9 +973,9 @@ function WitnessDetailSection({ onAction }: { onAction: (action: PcInteractionAc
 
   if (!caseData) return null
 
-  const witnesses = caseData.duo.socialGraph.filter(
-    (tp) => tp.slot === 'institutional' || tp.slot.startsWith('acquaintance_') || tp.slot.startsWith('family_'),
-  )
+  // socialGraph entries 모두 표시. slot whitelist 제거 — 신규 사건의
+  // close_friend / neutral_observer / community_witness 등이 누락되던 결함 fix.
+  const witnesses = caseData.duo.socialGraph
 
   return (
     <div className="pc-witness-panel">

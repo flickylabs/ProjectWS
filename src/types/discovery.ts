@@ -155,6 +155,8 @@ export interface DiscoveryState {
 
   /** 진실 공방 대기 이벤트 (UI 모달 트리거) */
   pendingConfrontation: TruthConfrontationEvent | null
+  /** 판결을 일시 보류한 진실 공방 이벤트들 — 핫바 위 미니 아이콘으로 복귀 가능 */
+  deferredVerdicts: Record<string, TruthConfrontationEvent>
   /** 판단 충돌 대기 이벤트 (UI 모달 트리거) */
   pendingConflict: JudgmentConflictEvent | null
   /** 숨겨진 쟁점 발현 대기 이벤트 */

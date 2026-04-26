@@ -507,6 +507,7 @@ export function createInitialDiscoveryState(caseData: CaseData): DiscoveryState 
     emotionalSlips: [],
     discoveredTruths: [],
     pendingConfrontation: null,
+    deferredVerdicts: {},
     pendingConflict: null,
     pendingEmergence: null,
     pendingSlip: null,

@@ -80,6 +80,8 @@ export interface EventFeedbackItem {
   convergeTargetSelector?: string
   /** 액션 레이아웃: 기본 horizontal, 긴 리스트(증인 주제 등)는 vertical */
   actionsLayout?: 'horizontal' | 'vertical'
+  /** 카드 우상단 X 버튼 — 클릭 시 호출 (확정 액션 없이 나중에 다시 처리할 때) */
+  onDefer?: () => void
 }
 
 /** 자잘 알림 kind — Minor 티커 폐기 (관찰 패널로 흡수). 호환용 빈 배열 유지 */

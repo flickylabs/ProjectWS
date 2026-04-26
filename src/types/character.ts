@@ -50,7 +50,11 @@ export interface LedgerEntry {
   connectionToCurrent: 'direct' | 'indirect' | 'none'
 }
 
-export type ThirdPartySlot = 'family_1' | 'family_2' | 'acquaintance_1' | 'acquaintance_2' | 'institutional'
+export type ThirdPartySlot =
+  | 'family_1' | 'family_2'
+  | 'acquaintance_1' | 'acquaintance_2' | 'acquaintance_3'
+  | 'institutional'
+  | 'close_friend' | 'neutral_observer' | 'community_witness'
 
 export interface ThirdParty {
   id: string

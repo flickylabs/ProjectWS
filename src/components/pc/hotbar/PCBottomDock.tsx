@@ -11,6 +11,7 @@ import { useGameStore, useStore } from '../../../store/useGameStore'
 import { openPcInteractionPanel } from '../layout/PCInteractionPanel'
 import PCSvgIcon from '../icons/PCSvgIcon'
 import PCCharacterPortrait from '../icons/PCCharacterPortrait'
+import PCDeferredVerdictIcon from './PCDeferredVerdictIcon'
 import { getPcFaceSymbolId, getPcEvidenceSymbolId } from '../icons/pcIconUtils'
 
 const EMOTION_LABELS: Record<EmotionalPhase, string> = {
@@ -166,12 +167,11 @@ export default function PCBottomDock() {
   }, [evidenceDefinitions, evidenceStates])
 
   // --- Witness (slot 6) ---
+  // socialGraph entries 모두를 증인으로 인식. slot whitelist 제거 — 신규 사건의
+  // close_friend / neutral_observer / community_witness 등이 누락되던 결함 fix.
   const availableWitnesses = useMemo(() => {
     if (!caseData) return []
-    return caseData.duo.socialGraph.filter(
-      (tp) => tp.slot === 'institutional' || tp.slot === 'acquaintance_1' || tp.slot === 'acquaintance_2'
-        || tp.slot === 'family_1' || tp.slot === 'family_2',
-    )
+    return caseData.duo.socialGraph
   }, [caseData])
 
   const hasWitness = availableWitnesses.length > 0
@@ -261,6 +261,9 @@ export default function PCBottomDock() {
 
   return (
     <div className="bottom pc-play-dock">
+      {/* --- 보류된 판결 미니 아이콘 (핫바 위 floating) --- */}
+      <PCDeferredVerdictIcon />
+
       {/* --- Advance phase auto-suggestion banner (B-7) --- */}
       {canAdvance && !advanceDismissed ? (
         <div className="pc-advance-banner">

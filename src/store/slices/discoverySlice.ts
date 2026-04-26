@@ -27,6 +27,7 @@ const EMPTY_DISCOVERY: DiscoveryState = {
   emotionalSlips: [],
   discoveredTruths: [],
   pendingConfrontation: null,
+  deferredVerdicts: {},
   pendingConflict: null,
   pendingEmergence: null,
   pendingSlip: null,
@@ -41,6 +42,12 @@ export interface DiscoverySlice {
   // ── 진실 공방 ──
   /** 진실 공방 모달 트리거 */
   setPendingConfrontation: (event: TruthConfrontationEvent | null) => void
+  /** 판결을 일시 보류 — pendingConfrontation에서 deferredVerdicts로 이동 */
+  deferVerdict: (event: TruthConfrontationEvent) => void
+  /** 보류된 판결 복원 — deferredVerdicts에서 빼서 pendingConfrontation으로 */
+  restoreDeferredVerdict: (disputeId: string) => TruthConfrontationEvent | null
+  /** 보류 항목 정리 (판결 완료 시) */
+  clearDeferredVerdict: (disputeId: string) => void
   /** 판단 기록 */
   submitJudgment: (disputeId: string, judgment: TruthJudgment, turn: number) => void
   /** 판단 수정 */
@@ -90,6 +97,41 @@ export const createDiscoverySlice: StateCreator<DiscoverySlice, [], [], Discover
     set((prev) => ({
       discovery: { ...prev.discovery, pendingConfrontation: event },
     }))
+  },
+
+  deferVerdict: (event) => {
+    set((prev) => ({
+      discovery: {
+        ...prev.discovery,
+        pendingConfrontation: null,
+        deferredVerdicts: { ...prev.discovery.deferredVerdicts, [event.disputeId]: event },
+      },
+    }))
+  },
+
+  restoreDeferredVerdict: (disputeId) => {
+    const current = get().discovery.deferredVerdicts[disputeId]
+    if (!current) return null
+    set((prev) => {
+      const next = { ...prev.discovery.deferredVerdicts }
+      delete next[disputeId]
+      return {
+        discovery: {
+          ...prev.discovery,
+          pendingConfrontation: current,
+          deferredVerdicts: next,
+        },
+      }
+    })
+    return current
+  },
+
+  clearDeferredVerdict: (disputeId) => {
+    set((prev) => {
+      const next = { ...prev.discovery.deferredVerdicts }
+      delete next[disputeId]
+      return { discovery: { ...prev.discovery, deferredVerdicts: next } }
+    })
   },
 
   submitJudgment: (disputeId, judgment, turn) => {

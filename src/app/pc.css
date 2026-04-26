@@ -12694,6 +12694,59 @@ body.pc-mode .pc-advance-banner__dismiss:hover {
   color: #c0bdb6;
 }
 
+/* ━━━ Deferred verdict mini icon (보류된 판결 — 핫바 위 floating) ━━━ */
+body.pc-mode .pc-deferred-verdict {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  margin: 0 8px 6px;
+  background: linear-gradient(180deg, rgba(40, 32, 22, 0.92), rgba(28, 22, 16, 0.92));
+  border: 1px solid rgba(212, 162, 78, 0.35);
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(232, 193, 114, 0.08);
+  font-size: 12px;
+  color: #d4c89a;
+  flex-wrap: wrap;
+}
+
+body.pc-mode .pc-deferred-verdict__label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: rgba(212, 162, 78, 0.85);
+  margin-right: 4px;
+}
+
+body.pc-mode .pc-deferred-verdict__chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  background: rgba(212, 162, 78, 0.12);
+  border: 1px solid rgba(212, 162, 78, 0.4);
+  border-radius: 14px;
+  color: #e8c172;
+  font-size: 12px;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s, transform 0.15s;
+}
+
+body.pc-mode .pc-deferred-verdict__chip:hover:not(:disabled) {
+  background: rgba(212, 162, 78, 0.22);
+  border-color: rgba(212, 162, 78, 0.65);
+  transform: translateY(-1px);
+}
+
+body.pc-mode .pc-deferred-verdict__chip:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+body.pc-mode .pc-deferred-verdict__chip-name {
+  font-weight: 500;
+}
+
 /* ━━━ Slot 4: Free question input ━━━ */
 body.pc-mode .pc-free-question-form {
   display: flex;
@@ -15779,6 +15832,33 @@ body.pc-mode .pc-event-feedback-root.is-modal {
   -webkit-backdrop-filter: blur(6px);
   animation: pc-efb-backdrop-in 0.25s ease both;
 }
+
+/* X 버튼 — 카드 우상단. onDefer 정의된 카드만 표시 (예: 진실 공방 일시 보류). */
+body.pc-mode .pc-event-feedback__close {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(212, 162, 78, 0.25);
+  border-radius: 50%;
+  color: rgba(212, 200, 154, 0.75);
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
+  z-index: 1;
+}
+
+body.pc-mode .pc-event-feedback__close:hover {
+  background: rgba(0, 0, 0, 0.55);
+  border-color: rgba(212, 162, 78, 0.55);
+  color: #e8c172;
+}
 body.pc-mode .pc-event-feedback-root.is-modal.is-phase-leaving,
 body.pc-mode .pc-event-feedback-root.is-modal.is-phase-converging {
   animation: pc-efb-backdrop-out 0.25s ease forwards;
@@ -15803,6 +15883,7 @@ body.pc-mode .pc-event-feedback-root.is-alert {
 /* PCInteractionPanel(자백 유도하기) 기준 톤 통일 */
 body.pc-mode .pc-event-feedback-card {
   pointer-events: auto;
+  position: relative; /* X 버튼(.pc-event-feedback__close) 절대 위치 기준 */
   display: flex;
   flex-direction: column;
   align-items: stretch;

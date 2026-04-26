@@ -158,6 +158,19 @@ export default function EventFeedbackCard() {
         data-resonance-target={cutscene ? 'cutscene-center' : undefined}
         style={cardStyle}
       >
+        {/* X 버튼 — onDefer 정의된 카드만 (예: 진실 공방 일시 보류). 클릭 시 onDefer 후 카드 닫음. */}
+        {active.onDefer ? (
+          <button
+            type="button"
+            className="pc-event-feedback__close"
+            aria-label="일시 보류"
+            onClick={() => {
+              try { active.onDefer!() } finally { setPhase('leaving') }
+            }}
+          >
+            ×
+          </button>
+        ) : null}
         {/* kind-observation: 상단 Eye SVG (포착 순간 강조, 작게) */}
         {cutscene && active.kind === 'observation' ? (
           <div className="pc-event-feedback__eye" aria-hidden="true">
