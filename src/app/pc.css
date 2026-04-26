@@ -20001,12 +20001,17 @@ body.pc-mode .pc-ev-detail__stage {
   border: 1px solid rgba(255, 255, 255, 0.06) !important;
   padding: 12px 14px !important;
 }
+/* 조사 완료 (is-open) — 녹색 폐기, 차분한 골드 톤 + ✓ 마크만 (모달 색 통일) */
 body.pc-mode .pc-ev-detail__stage.is-open {
-  border-color: rgba(92, 201, 122, 0.30) !important;
-  background: rgba(92, 201, 122, 0.04) !important;
+  border-color: rgba(212, 162, 78, 0.18) !important;
+  background: rgba(212, 162, 78, 0.03) !important;
+}
+body.pc-mode .pc-ev-detail__stage.is-open .pc-ev-detail__stage-num {
+  background: rgba(212, 162, 78, 0.18) !important;
+  color: var(--pc-gold-light) !important;
 }
 body.pc-mode .pc-ev-detail__stage.is-ready {
-  border-color: rgba(212, 162, 78, 0.30) !important;
+  border-color: rgba(212, 162, 78, 0.40) !important;
   background: rgba(212, 162, 78, 0.06) !important;
 }
 body.pc-mode .pc-ev-detail__investigate-btn {
@@ -20022,30 +20027,50 @@ body.pc-mode .pc-ev-detail__investigate-btn:hover {
   transform: translateY(-1px);
 }
 
-/* 증거 제시 버튼 — 화자색 (의도적 — 보존) — radius/transition만 통일 */
+/* 증거 제시 버튼 — 화자색 outline (side glow 폐기, 깔끔한 단일 패턴) */
 body.pc-mode .pc-ev-detail__present-btn {
   border-radius: 12px !important;
+  min-height: 52px !important;
+  padding: 12px 18px !important;
+  background: transparent !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  box-shadow: none !important;
   transition: all 160ms ease !important;
 }
 body.pc-mode .pc-ev-detail__present-btn.is-a {
   border: 1px solid rgba(91, 141, 239, 0.45) !important;
-  background: rgba(91, 141, 239, 0.10) !important;
+  background: rgba(91, 141, 239, 0.08) !important;
   color: var(--pc-blue) !important;
 }
 body.pc-mode .pc-ev-detail__present-btn.is-a:hover:not(:disabled) {
   border-color: rgba(91, 141, 239, 0.65) !important;
-  background: rgba(91, 141, 239, 0.16) !important;
+  background: rgba(91, 141, 239, 0.14) !important;
   box-shadow: 0 0 0 3px rgba(91, 141, 239, 0.10) !important;
+  transform: translateY(-1px) !important;
 }
 body.pc-mode .pc-ev-detail__present-btn.is-b {
   border: 1px solid rgba(224, 96, 96, 0.45) !important;
-  background: rgba(224, 96, 96, 0.10) !important;
+  background: rgba(224, 96, 96, 0.08) !important;
   color: var(--pc-red) !important;
 }
 body.pc-mode .pc-ev-detail__present-btn.is-b:hover:not(:disabled) {
   border-color: rgba(224, 96, 96, 0.65) !important;
-  background: rgba(224, 96, 96, 0.16) !important;
+  background: rgba(224, 96, 96, 0.14) !important;
   box-shadow: 0 0 0 3px rgba(224, 96, 96, 0.10) !important;
+  transform: translateY(-1px) !important;
+}
+
+/* is-done — dashed 보더 폐기, 단순 opacity + 색 그대로 (지저분함 제거) */
+body.pc-mode .pc-ev-detail__present-btn.is-done {
+  opacity: 0.5 !important;
+  cursor: default !important;
+  border-style: solid !important;
+  pointer-events: none;
+}
+body.pc-mode .pc-ev-detail__present-btn.is-done:hover {
+  transform: none !important;
+  box-shadow: none !important;
 }
 
 /* ── 증인 카드 ── */
