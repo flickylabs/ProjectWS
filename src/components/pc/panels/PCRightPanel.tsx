@@ -835,7 +835,7 @@ export default function PCRightPanel() {
                 <p className="pc-target-info-drawer__lede">
                   실수로 흘린 단서의 누적량. 높을수록 <Em>진실파악 단계가 빠르게 상승</Em>할 수 있습니다.
                 </p>
-                <div className="pc-target-info-drawer__columns">
+                <div className="pc-target-info-drawer__columns" style={{ gridTemplateColumns: '0.85fr 1.15fr' }}>
                   <div>
                     <div className="pc-target-info-drawer__col-h">발생 경로</div>
                     <ul>
@@ -904,7 +904,7 @@ export default function PCRightPanel() {
                   <p className="pc-target-info-drawer__lede">
                     <strong>{targetProfile.name}</strong> · {targetProfile.age}세 · {targetProfile.occupation}
                   </p>
-                  <div className="pc-target-info-drawer__columns">
+                  <div className="pc-target-info-drawer__columns" style={{ gridTemplateColumns: '0.85fr 1.15fr' }}>
                     <div>
                       <div className="pc-target-info-drawer__col-h">성향</div>
                       <ul>
@@ -942,7 +942,7 @@ export default function PCRightPanel() {
                 <p className="pc-target-info-drawer__lede">
                   같은 쟁점에서 NPC가 앞뒤가 맞지 않는 진술을 할 때 누적되는 압박치입니다.
                 </p>
-                <div className="pc-target-info-drawer__columns" style={{ gridTemplateColumns: '0.85fr 1.15fr' }}>
+                <div className="pc-target-info-drawer__columns" style={{ gridTemplateColumns: '1.15fr 0.85fr' }}>
                   <div>
                     <div className="pc-target-info-drawer__col-h">발생 경로</div>
                     <ul>
@@ -953,7 +953,7 @@ export default function PCRightPanel() {
                   </div>
                   <div>
                     <div className="pc-target-info-drawer__col-h">효과</div>
-                    <ul style={{ whiteSpace: 'nowrap' }}>
+                    <ul>
                       <li>진실파악 단계 전이 가속</li>
                       <li>임계 도달 시 방어 붕괴</li>
                     </ul>
@@ -1167,8 +1167,8 @@ function CategoryRow({ label, ready, potential }: { label: string; ready: number
     <div className="pc-combination-card__cat-row">
       <span className="pc-combination-card__cat-label">{label}</span>
       <span className="pc-combination-card__cat-counts">
-        {ready > 0 ? <span className="pc-combination-card__cat-ready">🔗 준비 {ready}</span> : null}
-        {potential > 0 ? <span className="pc-combination-card__cat-potential">🔍 실마리 {potential}</span> : null}
+        {ready > 0 ? <span className="pc-combination-card__cat-ready"><PCSvgIcon id="i-link" size={12} /> 준비 {ready}</span> : null}
+        {potential > 0 ? <span className="pc-combination-card__cat-potential"><PCSvgIcon id="i-search" size={12} /> 실마리 {potential}</span> : null}
       </span>
     </div>
   )

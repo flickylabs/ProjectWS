@@ -6719,11 +6719,21 @@ body.pc-mode .pc-play-right .pc-combination-card__cat-counts {
 body.pc-mode .pc-play-right .pc-combination-card__cat-ready {
   color: #ffd06b;
   font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
 }
 
 body.pc-mode .pc-play-right .pc-combination-card__cat-potential {
   color: #8a8f9f;
   font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+/* 돋보기 아이콘만 흰색 (다른 텍스트 색상 유지) */
+body.pc-mode .pc-play-right .pc-combination-card__cat-potential svg {
+  color: #ffffff;
 }
 
 body.pc-mode .pc-play-right .pc-combination-card__auto-panel {
@@ -12137,8 +12147,8 @@ body.pc-mode .pc-record-summary__item {
   margin-bottom: 4px;
 }
 
-body.pc-mode .pc-record-summary__item.is-confirmed { border-color: rgba(92,201,122,0.12); }
-body.pc-mode .pc-record-summary__item.is-confirmed span:first-child { color: var(--pc-green); font-weight: 800; }
+body.pc-mode .pc-record-summary__item.is-confirmed { border-color: rgba(255,255,255,0.10); }
+body.pc-mode .pc-record-summary__item.is-confirmed span:first-child { color: #ffffff; font-weight: 800; }
 body.pc-mode .pc-record-summary__item.is-partial span:first-child { color: var(--pc-gold); font-weight: 800; }
 body.pc-mode .pc-record-summary__item.is-question span:first-child { color: #6a6e80; }
 body.pc-mode .pc-record-summary__item.is-contradiction { border-color: rgba(224,96,96,0.12); background: rgba(224,96,96,0.03); }
