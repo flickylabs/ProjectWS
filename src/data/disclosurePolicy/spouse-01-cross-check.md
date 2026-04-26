@@ -97,6 +97,19 @@ Sampled `src/data/scriptedText/spouse-01.json`:
 
 This supports the draft rule that early `d-1` truthStage should not advance by repeated questioning alone. It needs evidence depth or a clean contradiction/rapport route.
 
+## Source Conflict Found During Full Progression Draft
+
+While expanding `issueProgression` for `d-2`, `h-d3`, and `h-d4`, the policy draft followed `docs/disclosure-policy.md` and `src/data/cases/generated/spouse-01.json` as the current truth source. The older loop data below still contains amount-axis wording that conflicts with that source.
+
+| Source field | Existing wording | Conflict | Policy handling |
+|---|---|---|---|
+| `dossierCards.dc-3.description` / `challenge` | `공동 적금 3,000만 원을 형에게 줄 권리` | Confirmed B money axis is personal 비자금 2,000만 원 sent toward his brother, not joint savings 3,000만 원. | `d-2` progression treats B's money as personal cash/비자금 2,000만 원 and does not use this stale joint-savings wording. |
+| `dossierCards.dc-4.description` | `A가 ... 2,000만 원을 옮긴 이유` | Confirmed A hidden money axis is 공동 적금 3,000만 원 해지, 위임장 조작, and investment loss. | `h-d3` progression treats A's axis as 공동 적금 3,000만 원 plus authorization/document misconduct. |
+| `officialRecordRecommendations` | `B가 배우자 동의 없이 3,000만 원을 형에게 보냈다.` | Confirmed B delivered/used 2,000만 원 personal cash toward family support; the 3,000만 원 figure belongs to A's joint-savings axis. | Official-record wording should be considered a stale source candidate before any UI or dossier rendering. |
+| `hiddenDisputePlans.h-d3.name` | `아내의 2,000만 원 송금...` | Confirmed `h-d3` is 공동 적금 3,000만 원 해지 / 위임장 조작 / 투자 사기. | `h-d3` title and truth stages use the confirmed 3,000만 원 axis. |
+
+No source data was changed in this Tier 1 draft. If any of the stale v3 loop-data fields are rendered, they should become a later P4/P7-safe cleanup task after UI exposure is confirmed.
+
 ## Open Questions for CT/User
 
 1. Whether `combinationLab.nodes.*.label` is rendered in the current PC UI. If yes, this becomes a P7 UI fix candidate.
@@ -106,18 +119,22 @@ This supports the draft rule that early `d-1` truthStage should not advance by r
 
 ## Result
 
-Cross-check is sufficient for a Tier 1 schema draft. It is not sufficient for runtime guard or UI fix work. Next step after CT/user approval should be either:
+Cross-check is sufficient for a Tier 1 schema draft and the spouse-01 `issueProgression` full draft. It is not sufficient for runtime guard or UI fix work. Next step after CT/user approval should be either:
 
-- complete `issueProgression` for `d-2`, `h-d3`, `h-d4`, or
-- start Tier 2 policy-vs-data cross-check scripts.
+- start Tier 2 policy-vs-data cross-check scripts, or
+- schedule a separate stale v3 loop-data cleanup only if the conflicted fields are confirmed to render in player-facing UI.
 
 ## Validation Run
 
-Executed after drafting:
+Executed after the full `d-2` / `h-d3` / `h-d4` progression redraft:
 
 | Check | Result | Note |
 |---|---|---|
 | JSON parse | PASS | `spouse-01.json` is valid JSON. |
+| `d-1` preservation | PASS | `issueProgression.disputes.d-1` hash matches `19e4c4e` exactly: `0b39d43fdf20b9872b55704a103ad2ff3c15abfd802861f7d328200f0f8006f6`. |
+| Korean field presence | PASS | `d-2`, `h-d3`, and `h-d4` all have Korean text in `title`, every stage `name`, and every stage `surfaceClaim`. |
+| literal question mark check | PASS | Quoted `"?"` count 0, quoted `"??"` count 0; total `?` count remains 1, identical to `19e4c4e`. |
+| UTF-8 hex sample | PASS | `d-2` stage 0 `surfaceClaim` starts with `EA B0 9C EC 9D B8...`; no `0x3F` replacement byte in the sampled Korean text. |
 | Runtime import search | PASS | No `disclosurePolicy` imports found in `src/engine`, `src/components`, `src/hooks`, `src/app`, or `src/store`. |
 | ScriptedText checksum sample | PASS | `src/data/scriptedText/spouse-01.json` remains `8298ead7a41c5245998808e03cc87ad3c4b3c534860bcb04470081493f0bc4f7`. |
 | caseData checksum sample | PASS | `src/data/cases/generated/spouse-01.json` remains `d3c1377fd8ec0222c4f5761e0ff46c31117be4d097d31b905dff82f40d25e48a`. |
