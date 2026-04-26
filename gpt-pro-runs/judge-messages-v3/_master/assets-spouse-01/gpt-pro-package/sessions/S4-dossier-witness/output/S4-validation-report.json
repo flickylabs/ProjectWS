@@ -1,0 +1,24 @@
+{
+  "dossierCells": 24,
+  "dossierVariants": 240,
+  "witnessCells": 9,
+  "witnessVariants": 90,
+  "dossierAllTen": true,
+  "witnessAllTen": true,
+  "dossierKeysMatchPrompt": true,
+  "witnessKeysMatchPrompt": true,
+  "noForbiddenPatterns": true,
+  "forbiddenViolations": {},
+  "w3NoOfficetel": true,
+  "noArbitraryNieceName": true,
+  "dossierRequiredFields": true,
+  "witnessRequiredFields": true,
+  "allVariantsHaveTagsAndSourceRefs": true,
+  "allVariantsHaveRapportAndContradictToken": true,
+  "textLengthStats": {
+    "min": 32,
+    "max": 60,
+    "avg": 46.3
+  },
+  "allVariantsUniqueWithinCell": true
+}

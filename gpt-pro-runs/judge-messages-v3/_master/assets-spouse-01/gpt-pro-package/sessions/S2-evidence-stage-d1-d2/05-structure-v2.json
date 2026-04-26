@@ -1,0 +1,684 @@
+{
+  "caseId": "spouse-01",
+  "schemaVersion": "structure_v2",
+  "disputes": [
+    {
+      "id": "d-1",
+      "name": "오피스텔 방문과 새벽 전화",
+      "truth": true,
+      "truthDescription": "오피스텔 방문과 새벽 전화의 실체는 외도가 아니라 형네 오피스텔에서 조카를 돌보던 동선과 긴급 연락이었다. 다만 이준호가 형의 사정과 시댁 갈등을 숨기면서, 외도처럼 보이게 만든 책임은 남는다.",
+      "quadrant": "both",
+      "requiredEvidence": [
+        "e-1",
+        "e-2",
+        "e-3",
+        "e-4"
+      ],
+      "correctResponsibility": {
+        "a": 25,
+        "b": 75
+      },
+      "ambiguity": "low",
+      "weight": "high",
+      "mediationLink": "외도 오해 정리",
+      "legitimacyIssue": false,
+      "judgmentStatement": "오피스텔 방문과 새벽 전화는 외도가 아니라 가족 돌봄과 긴급 연락이었다.",
+      "disputeKind": "core_truth",
+      "hidden": false,
+      "v3Visibility": "initial",
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "겹쳐진 정황",
+          "summary": "반복된 오피스텔 방문, 새벽 통화, 차 안 영수증이 한 방향으로 붙으면서 박지연이 딴살림으로 오해한 층이다.",
+          "lockedSummary": "장소와 시간, 영수증은 보이지만 누구를 위한 동선인지는 아직 잠겨 있다.",
+          "revealAtomIds": [],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "숨긴 이유",
+          "summary": "이준호는 형의 개인회생과 시댁 갈등이 다시 터질까 두려워 설명보다 침묵을 택했다. 그 침묵이 외도 프레임을 더 단단하게 만들었다.",
+          "lockedSummary": "방문 사실은 잡히지만 왜 끝까지 말을 아꼈는지는 아직 접혀 있다.",
+          "revealAtomIds": [],
+          "uiStyle": "card_expand",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-1",
+                "minState": "S2"
+              }
+            ]
+          }
+        },
+        {
+          "id": "core",
+          "label": "돌봄의 실체",
+          "summary": "실제 방문 대상은 형과 조카였고, 영수증과 연락 패턴도 그 돌봄을 가리킨다. 문제의 중심은 외도가 아니라 왜 그렇게 보이게 숨겼는가다.",
+          "lockedSummary": "이 쟁점의 안쪽에는 외도 여부보다, 왜 그런 오해를 부를 방식으로 숨겼는지가 남아 있다.",
+          "revealAtomIds": [],
+          "uiStyle": "relation_core",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-1",
+                "minState": "S3"
+              }
+            ]
+          }
+        }
+      ],
+      "linkEdges": [
+        {
+          "target": "d-2",
+          "relation": "unlocks_layer",
+          "note": "박지연의 d-1이 S3에 도달하면, 외도 의심 뒤에 있던 2,000만원 출금 쟁점이 열린다."
+        }
+      ]
+    },
+    {
+      "id": "d-2",
+      "name": "비자금 2,000만원 출금",
+      "truth": true,
+      "truthDescription": "이준호는 배우자와 상의 없이 개인 비자금에서 2,000만원을 현금으로 빼 개인회생 중인 형에게 전달했다. 형을 돕겠다는 선의가 있었다 해도, 공동 재정 신뢰를 깨고 혼자 결정한 책임은 분명하다.",
+      "quadrant": "b_only",
+      "requiredEvidence": [
+        "e-5"
+      ],
+      "correctResponsibility": {
+        "a": 20,
+        "b": 80
+      },
+      "ambiguity": "low",
+      "weight": "high",
+      "mediationLink": "가족지원 합의",
+      "legitimacyIssue": true,
+      "judgmentStatement": "비자금 2,000만원 현금 전달은 남편이 혼자 감당하려 한 선의이자 동시에 월권이었다.",
+      "disputeKind": "core_truth",
+      "hidden": false,
+      "v3Visibility": "hidden",
+      "unlockCondition": {
+        "requireDisputes": [
+          {
+            "id": "d-1",
+            "party": "a",
+            "minState": "S3"
+          }
+        ]
+      },
+      "v3UnlockPlan": {
+        "runtimeRule": "박지연의 d-1이 S3에 도달하면 d-2가 열린다.",
+        "authoredRule": "오피스텔 방문의 실체를 확인한 직후, 외도 대신 목돈 출금의 의미가 새 쟁점으로 떠오른다."
+      },
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "목돈의 흔적",
+          "summary": "외도 의심을 쫓던 흐름이 2,000만원 현금 출금으로 꺾이는 층이다. 큰돈이 빠졌다는 사실 자체가 먼저 충격으로 남는다.",
+          "lockedSummary": "돈이 빠진 건 보이지만 누구에게 왜 갔는지는 아직 닫혀 있다.",
+          "revealAtomIds": [],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "혼자 짊어진 선의",
+          "summary": "이준호는 형 사정을 말하면 집안 싸움이 커질까 봐, 선의와 체면을 핑계로 단독 결정을 정당화한다.",
+          "lockedSummary": "출금 사실은 잡히지만 왜 배우자를 배제했는지는 아직 남아 있다.",
+          "revealAtomIds": [],
+          "uiStyle": "card_expand",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-2",
+                "minState": "S2"
+              }
+            ]
+          }
+        },
+        {
+          "id": "core",
+          "label": "월권의 책임",
+          "summary": "개인회생이라는 사정을 알아도, 배우자 동의 없이 2,000만원을 현금으로 움직인 건 월권이다. 선의와 절차 위반은 따로 판단돼야 한다.",
+          "lockedSummary": "이 쟁점의 안쪽에는 '왜 도왔나'보다 '왜 혼자 결정했나'가 남아 있다.",
+          "revealAtomIds": [],
+          "uiStyle": "relation_core",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "d-2",
+                "minState": "S3"
+              }
+            ]
+          }
+        }
+      ],
+      "linkEdges": [
+        {
+          "target": "h-d3",
+          "relation": "retaliation",
+          "note": "d-2가 S1에 도달하면 이준호는 '그쪽도 적금을 건드린 것 아니냐'는 역공으로 h-d3를 열 수 있다."
+        },
+        {
+          "target": "h-d4",
+          "relation": "supports",
+          "note": "d-2가 열린 뒤 h-d3까지 드러나면, 선후와 책임을 분리하는 h-d4로 이어진다."
+        }
+      ]
+    },
+    {
+      "id": "h-d3",
+      "name": "공동 적금 3,000만원 해지",
+      "truth": true,
+      "truthDescription": "박지연은 남편의 외도를 확신한 뒤 이준호 동의 없이 위임장을 꾸며 공동 적금 3,000만원을 해지했고, 그 돈을 투자방에 넣었다가 전액 잃었다. 배신 공포가 동기였더라도 위임장 조작과 독단 집행은 별개의 책임이다.",
+      "quadrant": "b_only",
+      "requiredEvidence": [
+        "e-6",
+        "e-7"
+      ],
+      "correctResponsibility": {
+        "a": 75,
+        "b": 25
+      },
+      "ambiguity": "high",
+      "weight": "high",
+      "mediationLink": "공동재산 경계",
+      "legitimacyIssue": true,
+      "judgmentStatement": "공동 적금 3,000만원 해지는 박지연의 위임장 조작과 투자 사기 손실로 이어졌다.",
+      "disputeKind": "sub_truth",
+      "hidden": true,
+      "v3Visibility": "hidden",
+      "unlockCondition": {
+        "requireDisputes": [
+          {
+            "id": "d-2",
+            "minState": "S1"
+          }
+        ],
+        "note": "d-2가 열린 뒤 이준호의 역공으로 공개"
+      },
+      "v3UnlockPlan": {
+        "runtimeRule": "d-2가 S1에 도달한 뒤 이준호가 역공하면 h-d3가 열린다.",
+        "authoredRule": "비자금 2,000만원이 드러난 직후, 이준호가 공동 적금 해지 정황을 되받아치며 숨은 축을 노출한다."
+      },
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "사라진 적금",
+          "summary": "공동 적금이 깨졌고 돈이 박지연 쪽으로 흘렀다는 사실이 먼저 보이는 층이다. 이준호의 역공은 이 지점에서 시작된다.",
+          "lockedSummary": "돈이 움직였다는 건 보이지만, 해지 방식과 최종 행방은 아직 남아 있다.",
+          "revealAtomIds": [],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "배신 공포",
+          "summary": "박지연은 남편이 먼저 가정을 버렸다고 믿고, '내 몫이라도 지켜야 한다'는 불안 속에서 계산된 선택을 했다.",
+          "lockedSummary": "해지 사실은 잡히지만 왜 그 선을 넘었는지는 아직 접혀 있다.",
+          "revealAtomIds": [],
+          "uiStyle": "card_expand",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "h-d3",
+                "minState": "S2"
+              }
+            ]
+          }
+        },
+        {
+          "id": "core",
+          "label": "조작의 대가",
+          "summary": "위임장 조작은 범죄이고, 투자방 송금은 자기방어가 아니라 또 다른 독단이었다. 수치심 때문에 숨겼다는 말로 없어지지 않는 층이다.",
+          "lockedSummary": "이 쟁점의 안쪽에는 피해자 프레임으로 덮이지 않는 조작과 손실의 책임이 남아 있다.",
+          "revealAtomIds": [],
+          "uiStyle": "relation_core",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "h-d3",
+                "minState": "S3"
+              }
+            ]
+          }
+        }
+      ],
+      "linkEdges": [
+        {
+          "target": "h-d4",
+          "relation": "supports",
+          "note": "h-d3가 S1 이상 공개되면 d-2와 함께 h-d4의 선후 분리 판단을 지지한다."
+        }
+      ]
+    },
+    {
+      "id": "h-d4",
+      "name": "은폐와 선제행동의 순서",
+      "truth": true,
+      "truthDescription": "먼저 숨긴 것은 이준호의 비자금과 형 사정이었고, 먼저 계좌를 감시한 것은 박지연이었다. 실제 자금 실행은 이준호 쪽이 먼저 시작됐지만, 위임장 조작이라는 범죄 행위는 박지연 쪽에서 발생했다.",
+      "quadrant": "both",
+      "requiredEvidence": [
+        "e-5",
+        "e-6",
+        "e-7"
+      ],
+      "correctResponsibility": {
+        "a": 50,
+        "b": 50
+      },
+      "ambiguity": "high",
+      "weight": "high",
+      "mediationLink": "선후 책임 분리",
+      "legitimacyIssue": true,
+      "judgmentStatement": "숨김의 시작, 자금 실행의 순서, 범죄 행위의 유무는 한 덩어리로 묶어 판단할 일이 아니다.",
+      "disputeKind": "shared_misconception",
+      "hidden": true,
+      "v3Visibility": "hidden",
+      "unlockCondition": {
+        "requireDisputes": [
+          {
+            "id": "d-2",
+            "minState": "S1"
+          },
+          {
+            "id": "h-d3",
+            "minState": "S1"
+          }
+        ],
+        "note": "d-2와 h-d3가 모두 공개되면 자동 해금"
+      },
+      "v3UnlockPlan": {
+        "runtimeRule": "d-2와 h-d3가 모두 S1 이상이 되면 h-d4가 자동으로 열린다.",
+        "authoredRule": "양쪽의 숨은 자금 이동이 모두 드러나야, 누가 먼저 무엇을 숨기고 실제로 어떤 선을 넘었는지 분리해서 볼 수 있다."
+      },
+      "depthLayers": [
+        {
+          "id": "surface",
+          "label": "엇갈린 선후",
+          "summary": "누가 먼저 숨겼는지, 누가 먼저 돈을 움직였는지 서로 다른 기억이 충돌하는 층이다. 각자 자기에게 유리한 선후만 먼저 꺼낸다.",
+          "lockedSummary": "둘 다 상대가 먼저였다고 말하지만, 무엇을 기준으로 먼저라고 하는지는 아직 흐리다.",
+          "revealAtomIds": [],
+          "uiStyle": "card_expand"
+        },
+        {
+          "id": "motive",
+          "label": "각자의 예외",
+          "summary": "이준호는 가족 구제를, 박지연은 자기 방어를 내세우며 각자 자기 행동만 예외로 분리한다.",
+          "lockedSummary": "누가 먼저였는지 다투지만, 왜 각자 자기 행동을 정당화하는지는 아직 안쪽에 남아 있다.",
+          "revealAtomIds": [],
+          "uiStyle": "card_expand",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "h-d4",
+                "minState": "S2"
+              }
+            ]
+          }
+        },
+        {
+          "id": "core",
+          "label": "분리할 책임",
+          "summary": "숨김의 시작, 계좌 감시, 자금 집행, 위임장 조작은 서로 다른 축이다. 이 사건의 핵심은 한 문장으로 승패를 내는 게 아니라 각 책임을 분리해 기록하는 데 있다.",
+          "lockedSummary": "이 쟁점의 안쪽에는 누가 더 나쁘냐보다 무엇을 같은 축으로 보면 안 되는지가 남아 있다.",
+          "revealAtomIds": [],
+          "uiStyle": "relation_core",
+          "unlockCondition": {
+            "requireDisputes": [
+              {
+                "id": "h-d4",
+                "minState": "S3"
+              }
+            ]
+          }
+        }
+      ],
+      "linkEdges": []
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e-1",
+      "name": "영수증 묶음 (5장)",
+      "type": "log",
+      "timing": {
+        "bestPhase": "phase3",
+        "impactCurve": "early"
+      }
+    },
+    {
+      "id": "e-2",
+      "name": "블랙박스 GPS 기록",
+      "type": "device",
+      "timing": {
+        "bestPhase": "phase3",
+        "impactCurve": "early"
+      }
+    },
+    {
+      "id": "e-3",
+      "name": "통화기록",
+      "type": "log",
+      "timing": {
+        "bestPhase": "phase3",
+        "impactCurve": "mid"
+      }
+    },
+    {
+      "id": "e-4",
+      "name": "형 문자 스레드",
+      "type": "chat",
+      "timing": {
+        "bestPhase": "phase4",
+        "impactCurve": "late"
+      }
+    },
+    {
+      "id": "e-5",
+      "name": "이준호의 계좌 출금 내역",
+      "type": "bank",
+      "timing": {
+        "bestPhase": "phase4",
+        "impactCurve": "mid"
+      }
+    },
+    {
+      "id": "e-6",
+      "name": "투자방 카톡 + 송금 기록",
+      "type": "chat",
+      "timing": {
+        "bestPhase": "phase5",
+        "impactCurve": "late"
+      }
+    },
+    {
+      "id": "e-7",
+      "name": "공동 적금 해지 서류",
+      "type": "contract",
+      "timing": {
+        "bestPhase": "phase5",
+        "impactCurve": "late"
+      }
+    }
+  ],
+  "freeQuestionHooks": [
+    {
+      "id": "fq.d1.affair_read",
+      "intentTag": "trap_read",
+      "description": "오피스텔 동선과 새벽 통화, 영수증이 왜 외도처럼 읽혔는지 묻는 훅.",
+      "allowedAtStates": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "allowedIssueRoles": [
+        "core_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-1",
+        "allowAtomIds": [
+          "d1.jiyeon_visit_frequency_focus",
+          "d1.jiyeon_receipt_items_context",
+          "d1.jiyeon_abandonment_fear",
+          "d1.jiyeon_silence_counter"
+        ],
+        "forbidAtomIds": [
+          "d1.junho_full_care_confess",
+          "d1.junho_dawn_call_full"
+        ],
+        "preferredAngleTags": [
+          "context",
+          "emotion",
+          "relationship"
+        ]
+      },
+      "refusalTemplates": [
+        "그때 제가 뭘 봤는지까지 한꺼번에 말하긴 정말 어렵습니다.",
+        "외도처럼 보인 이유를 말하면 제 불안도 같이 드러납니다."
+      ]
+    },
+    {
+      "id": "fq.d1.care_identity",
+      "intentTag": "identity_check",
+      "description": "오피스텔의 실제 방문 대상과 발신자 미상 번호의 정체를 묻는 훅.",
+      "allowedAtStates": [
+        "S3",
+        "S4",
+        "S5"
+      ],
+      "allowedIssueRoles": [
+        "core_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-1",
+        "allowAtomIds": [
+          "d1.junho_brother_home_ack",
+          "d1.junho_unknown_number_brother",
+          "d1.junho_niece_scope_guard",
+          "d1.junho_brother_call_explain"
+        ],
+        "forbidAtomIds": [
+          "d2.junho_full_cash_confess",
+          "hd3.jiyeon_full_forgery_confess"
+        ],
+        "preferredAngleTags": [
+          "identity",
+          "context",
+          "timeline"
+        ]
+      },
+      "refusalTemplates": [
+        "그 사람이 누구인지 말하면 제 형 사정까지 같이 열립니다.",
+        "아이 얘기까지 이어져서 지금은 최소한만 말씀드리고 싶습니다."
+      ]
+    },
+    {
+      "id": "fq.d2.cash_route",
+      "intentTag": "motive_hidden",
+      "description": "2,000만원을 왜 현금으로 뺐고 누구를 위해 썼는지 묻는 훅.",
+      "allowedAtStates": [
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "allowedIssueRoles": [
+        "core_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-2",
+        "allowAtomIds": [
+          "d2.junho_two_thousand_round_ack",
+          "d2.junho_family_support_motive",
+          "d2.junho_no_account_transfer_reason",
+          "d2.junho_spouse_exclusion_fault_blur"
+        ],
+        "forbidAtomIds": [
+          "d1.junho_full_care_confess",
+          "hd3.jiyeon_invest_loss_confess"
+        ],
+        "preferredAngleTags": [
+          "motive",
+          "context",
+          "responsibility"
+        ]
+      },
+      "refusalTemplates": [
+        "현금으로 뺀 이유를 말하면 가족 사정까지 같이 나옵니다.",
+        "그 돈 얘기는 제 가족 문제와 붙어 있어 지금은 어렵습니다."
+      ]
+    },
+    {
+      "id": "fq.d2.consent_boundary",
+      "intentTag": "spouse_consent_boundary",
+      "description": "개인 비자금이어도 배우자에게 말하지 않고 큰돈을 움직인 책임을 묻는 훅.",
+      "allowedAtStates": [
+        "S3",
+        "S4",
+        "S5"
+      ],
+      "allowedIssueRoles": [
+        "core_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "d-2",
+        "allowAtomIds": [
+          "d2.junho_private_fund_defense",
+          "d2.junho_two_thousand_hid_ack",
+          "d2.junho_good_intent_not_clean"
+        ],
+        "preferredAngleTags": [
+          "responsibility",
+          "relationship",
+          "context"
+        ]
+      },
+      "refusalTemplates": [
+        "개인 돈이었다는 말로 제 책임이 사라지진 않는 걸 압니다.",
+        "그 부분은 제 선의와 제 월권을 함께 분명히 말해야 합니다."
+      ]
+    },
+    {
+      "id": "fq.hd3.proxy_signature",
+      "intentTag": "proxy_signature",
+      "description": "공동 적금 해지 과정에서 위임장 서명과 절차를 어떻게 넘었는지 묻는 훅.",
+      "allowedAtStates": [
+        "S3",
+        "S4",
+        "S5"
+      ],
+      "allowedIssueRoles": [
+        "core_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "h-d3",
+        "allowAtomIds": [
+          "hd3.jiyeon_savings_cancel_ack",
+          "hd3.jiyeon_proxy_signature_partial",
+          "hd3.jiyeon_forgery_word_shame"
+        ],
+        "forbidAtomIds": [
+          "d2.junho_full_cash_confess",
+          "hd3.jiyeon_invest_loss_confess"
+        ],
+        "preferredAngleTags": [
+          "authenticity",
+          "responsibility",
+          "timeline"
+        ]
+      },
+      "refusalTemplates": [
+        "그 서류 절차를 말하면 제가 넘은 선까지 같이 나옵니다.",
+        "지금은 그 서명을 어떻게 처리했는지 바로 말하기 어렵습니다."
+      ]
+    },
+    {
+      "id": "fq.hd3.invest_loss",
+      "intentTag": "investment_loss",
+      "description": "해지된 3,000만원이 투자방으로 흘러간 경위와 손실을 묻는 훅.",
+      "allowedAtStates": [
+        "S5"
+      ],
+      "allowedIssueRoles": [
+        "core_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "h-d3",
+        "allowAtomIds": [
+          "hd3.jiyeon_invest_loss_confess",
+          "hd3.jiyeon_self_defense_motive_full",
+          "hd3.jiyeon_crime_responsibility"
+        ],
+        "preferredAngleTags": [
+          "motive",
+          "responsibility",
+          "emotion"
+        ]
+      },
+      "refusalTemplates": [
+        "그 돈이 어디로 갔는지 말하면 제 실패까지 같이 드러납니다.",
+        "잃은 돈 얘기는 아직 입 밖으로 내기가 너무 두렵습니다."
+      ]
+    },
+    {
+      "id": "fq.hd4.sequence_split",
+      "intentTag": "timeline_probe",
+      "description": "누가 먼저 숨겼고 누가 먼저 돈을 움직였는지 선후를 분리해 묻는 훅.",
+      "allowedAtStates": [
+        "S3",
+        "S4",
+        "S5"
+      ],
+      "allowedIssueRoles": [
+        "core_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "h-d4",
+        "allowAtomIds": [
+          "hd4.junho_hide_first_ack",
+          "hd4.junho_cash_before_savings",
+          "hd4.jiyeon_account_watch_ack",
+          "hd4.jiyeon_savings_action_partial"
+        ],
+        "preferredAngleTags": [
+          "timeline",
+          "context",
+          "responsibility"
+        ]
+      },
+      "refusalTemplates": [
+        "순서를 나누면 제 책임도 같이 드러나서 바로 말하기 어렵습니다.",
+        "먼저라는 말을 꺼내면 제 잘못도 같이 보일까 두렵습니다."
+      ]
+    },
+    {
+      "id": "fq.core.shared_breach",
+      "intentTag": "relation_core",
+      "description": "외도 오해와 돈 문제를 지나 부부 신뢰가 어떻게 무너졌는지 묻는 관계 핵심 훅.",
+      "allowedAtStates": [
+        "S4",
+        "S5"
+      ],
+      "allowedIssueRoles": [
+        "core_truth"
+      ],
+      "answerEnvelope": {
+        "disputeId": "h-d4",
+        "allowAtomIds": [
+          "hd4.junho_first_hide_shame",
+          "hd4.junho_two_actions_split",
+          "hd4.junho_spouse_trust_collapse",
+          "hd4.jiyeon_all_axes_breakdown"
+        ],
+        "preferredAngleTags": [
+          "relationship",
+          "responsibility",
+          "emotion"
+        ]
+      },
+      "refusalTemplates": [
+        "그 질문은 제가 뭘 지켰는지보다 뭘 깼는지를 묻습니다.",
+        "제 책임도 같이 남아서 지금은 한쪽 말로 끝내기 어렵습니다."
+      ]
+    }
+  ],
+  "phase3LogHints": {
+    "relationCoreDisputes": [
+      "d-1",
+      "h-d4"
+    ],
+    "playerStyleTagCandidates": [
+      "presses_timeline",
+      "presses_responsibility",
+      "builds_context_before_finishing",
+      "shows_empathy_when_open",
+      "loops_same_angle",
+      "switches_targets_well",
+      "allows_interjection",
+      "blocks_interjection",
+      "challenges_affair_frame",
+      "chases_money_trail",
+      "probes_privacy_boundary",
+      "relation_core_hunter"
+    ]
+  }
+}

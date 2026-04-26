@@ -1,0 +1,1976 @@
+{
+  "patchCount": 102,
+  "skippedCount": 67,
+  "patches": [
+    {
+      "id": "a-d-1-S3-fact-pursuit-v8",
+      "channel": "s1",
+      "key": "a|d-1|S3|fact_pursuit",
+      "session": "S1",
+      "before": "재판관님, 조카 돌봄이라는 문자를 보고도 바로 받아들이기 어려웠습니다. 그래서 그냥 넘길 수 없었습니다.",
+      "after": "재판관님, 조카를 돌본 것이라는 문자를 보고도 바로 받아들이기 어려웠습니다. 그래서 그냥 넘길 수 없었습니다.",
+      "reasons": [
+        "조카 돌봄이 → 조카를 돌본 것이"
+      ],
+      "hits": [
+        "noun_action"
+      ]
+    },
+    {
+      "id": "a-d-1-S3-motive-search-v8",
+      "channel": "s1",
+      "key": "a|d-1|S3|motive_search",
+      "session": "S1",
+      "before": "재판관님, 조카 돌봄이라는 문자를 보고도 바로 받아들이기 어려웠습니다. 그때는 설명보다 대비가 먼저라고 느꼈습니다.",
+      "after": "재판관님, 조카를 돌본 것이라는 문자를 보고도 바로 받아들이기 어려웠습니다. 그때는 설명보다 대비가 먼저라고 느꼈습니다.",
+      "reasons": [
+        "조카 돌봄이 → 조카를 돌본 것이"
+      ],
+      "hits": [
+        "noun_action"
+      ]
+    },
+    {
+      "id": "a-d-1-S3-empathy-approach-v8",
+      "channel": "s1",
+      "key": "a|d-1|S3|empathy_approach",
+      "session": "S1",
+      "before": "재판관님, 조카 돌봄이라는 문자를 보고도 바로 받아들이기 어려웠습니다. 제가 너무 예민해진 것도 압니다.",
+      "after": "재판관님, 조카를 돌본 것이라는 문자를 보고도 바로 받아들이기 어려웠습니다. 제가 너무 예민해진 것도 압니다.",
+      "reasons": [
+        "조카 돌봄이 → 조카를 돌본 것이"
+      ],
+      "hits": [
+        "noun_action"
+      ]
+    },
+    {
+      "id": "a-d-1-S4-fact-pursuit-v7",
+      "channel": "s1",
+      "key": "a|d-1|S4|fact_pursuit",
+      "session": "S1",
+      "before": "재판관님, 조카 돌봄이었다는 말을 듣는 순간 창피함이 밀려왔습니다. 그 부분만큼은 분명히 말씀드릴 수 있습니다.",
+      "after": "재판관님, 조카를 돌본 것이었다는 말을 듣는 순간 창피함이 밀려왔습니다. 그 부분만큼은 분명히 말씀드릴 수 있습니다.",
+      "reasons": [
+        "조카 돌봄이 → 조카를 돌본 것이"
+      ],
+      "hits": [
+        "noun_action"
+      ]
+    },
+    {
+      "id": "a-d-1-S4-motive-search-v7",
+      "channel": "s1",
+      "key": "a|d-1|S4|motive_search",
+      "session": "S1",
+      "before": "재판관님, 조카 돌봄이었다는 말을 듣는 순간 창피함이 밀려왔습니다. 제 마음이 그쪽으로 기운 건 그 이유 때문입니다.",
+      "after": "재판관님, 조카를 돌본 것이었다는 말을 듣는 순간 창피함이 밀려왔습니다. 제 마음이 그쪽으로 기운 건 그 이유 때문입니다.",
+      "reasons": [
+        "조카 돌봄이 → 조카를 돌본 것이"
+      ],
+      "hits": [
+        "weak_쪽",
+        "noun_action"
+      ]
+    },
+    {
+      "id": "a-d-1-S4-empathy-approach-v7",
+      "channel": "s1",
+      "key": "a|d-1|S4|empathy_approach",
+      "session": "S1",
+      "before": "재판관님, 조카 돌봄이었다는 말을 듣는 순간 창피함이 밀려왔습니다. 말을 차분하게 꺼내기 어려웠습니다.",
+      "after": "재판관님, 조카를 돌본 것이었다는 말을 듣는 순간 창피함이 밀려왔습니다. 말을 차분하게 꺼내기 어려웠습니다.",
+      "reasons": [
+        "조카 돌봄이 → 조카를 돌본 것이"
+      ],
+      "hits": [
+        "noun_action"
+      ]
+    },
+    {
+      "id": "b-d-1-S5-fact-pursuit-v10",
+      "channel": "s1",
+      "key": "b|d-1|S5|fact_pursuit",
+      "session": "S1",
+      "before": "재판관님, 외도가 아니라 가족 돌봄이었지만 숨긴 책임은 제게 있습니다. 외도는 아니었지만 침묵은 제 잘못입니다.",
+      "after": "재판관님, 외도가 아니라 가족을 돌본 것이었지만 숨긴 책임은 제게 있습니다. 외도는 아니었지만 침묵은 제 잘못입니다.",
+      "reasons": [
+        "가족 돌봄이 → 가족을 돌본 것이"
+      ],
+      "hits": [
+        "noun_action"
+      ]
+    },
+    {
+      "id": "b-d-1-S5-motive-search-v10",
+      "channel": "s1",
+      "key": "b|d-1|S5|motive_search",
+      "session": "S1",
+      "before": "재판관님, 외도가 아니라 가족 돌봄이었지만 숨긴 책임은 제게 있습니다. 외도는 아니었지만 침묵은 제 잘못입니다.",
+      "after": "재판관님, 외도가 아니라 가족을 돌본 것이었지만 숨긴 책임은 제게 있습니다. 외도는 아니었지만 침묵은 제 잘못입니다.",
+      "reasons": [
+        "가족 돌봄이 → 가족을 돌본 것이"
+      ],
+      "hits": [
+        "noun_action"
+      ]
+    },
+    {
+      "id": "b-d-1-S5-empathy-approach-v10",
+      "channel": "s1",
+      "key": "b|d-1|S5|empathy_approach",
+      "session": "S1",
+      "before": "재판관님… 외도가 아니라 가족 돌봄이었지만 숨긴 책임은 제게 있습니다. 외도는 아니었지만 침묵은 제 잘못입니다.",
+      "after": "재판관님… 외도가 아니라 가족을 돌본 것이었지만 숨긴 책임은 제게 있습니다. 외도는 아니었지만 침묵은 제 잘못입니다.",
+      "reasons": [
+        "가족 돌봄이 → 가족을 돌본 것이"
+      ],
+      "hits": [
+        "noun_action"
+      ]
+    },
+    {
+      "id": "b-h-d3-S5-fact-pursuit-v8",
+      "channel": "s1",
+      "key": "b|h-d3|S5|fact_pursuit",
+      "session": "S1",
+      "before": "재판관님, 아내의 위임장 조작과 제 은폐는 따로 봐야 합니다. 제 아내에게 말하지 않은 잘못까지 인정합니다.",
+      "after": "재판관님, 아내의 위임장 조작과 제를 숨긴 것는 따로 봐야 합니다. 제 아내에게 말하지 않은 잘못까지 인정합니다.",
+      "reasons": [
+        "제 은폐는 → 제를 숨긴 것는"
+      ],
+      "hits": [
+        "noun_action"
+      ]
+    },
+    {
+      "id": "b-h-d3-S5-motive-search-v8",
+      "channel": "s1",
+      "key": "b|h-d3|S5|motive_search",
+      "session": "S1",
+      "before": "재판관님, 아내의 위임장 조작과 제 은폐는 따로 봐야 합니다. 제 아내에게 말하지 않은 잘못까지 인정합니다.",
+      "after": "재판관님, 아내의 위임장 조작과 제를 숨긴 것는 따로 봐야 합니다. 제 아내에게 말하지 않은 잘못까지 인정합니다.",
+      "reasons": [
+        "제 은폐는 → 제를 숨긴 것는"
+      ],
+      "hits": [
+        "noun_action"
+      ]
+    },
+    {
+      "id": "b-h-d3-S5-empathy-approach-v8",
+      "channel": "s1",
+      "key": "b|h-d3|S5|empathy_approach",
+      "session": "S1",
+      "before": "재판관님… 아내의 위임장 조작과 제 은폐는 따로 봐야 합니다. 제 아내에게 말하지 않은 잘못까지 인정합니다.",
+      "after": "재판관님… 아내의 위임장 조작과 제를 숨긴 것는 따로 봐야 합니다. 제 아내에게 말하지 않은 잘못까지 인정합니다.",
+      "reasons": [
+        "제 은폐는 → 제를 숨긴 것는"
+      ],
+      "hits": [
+        "noun_action"
+      ]
+    },
+    {
+      "id": "b-h-d4-S5-fact-pursuit-v8",
+      "channel": "s1",
+      "key": "b|h-d4|S5|fact_pursuit",
+      "session": "S1",
+      "before": "재판관님, 오피스텔 방문은 조카 돌봄이었지만 숨긴 건 제 잘못입니다. 제 아내에게 말하지 않은 잘못까지 인정합니다.",
+      "after": "재판관님, 오피스텔 방문은 조카를 돌본 것이었지만 숨긴 건 제 잘못입니다. 제 아내에게 말하지 않은 잘못까지 인정합니다.",
+      "reasons": [
+        "조카 돌봄이 → 조카를 돌본 것이"
+      ],
+      "hits": [
+        "noun_action"
+      ]
+    },
+    {
+      "id": "b-h-d4-S5-motive-search-v8",
+      "channel": "s1",
+      "key": "b|h-d4|S5|motive_search",
+      "session": "S1",
+      "before": "재판관님, 오피스텔 방문은 조카 돌봄이었지만 숨긴 건 제 잘못입니다. 제 아내에게 말하지 않은 잘못까지 인정합니다.",
+      "after": "재판관님, 오피스텔 방문은 조카를 돌본 것이었지만 숨긴 건 제 잘못입니다. 제 아내에게 말하지 않은 잘못까지 인정합니다.",
+      "reasons": [
+        "조카 돌봄이 → 조카를 돌본 것이"
+      ],
+      "hits": [
+        "noun_action"
+      ]
+    },
+    {
+      "id": "b-h-d4-S5-empathy-approach-v8",
+      "channel": "s1",
+      "key": "b|h-d4|S5|empathy_approach",
+      "session": "S1",
+      "before": "재판관님… 오피스텔 방문은 조카 돌봄이었지만 숨긴 건 제 잘못입니다. 제 아내에게 말하지 않은 잘못까지 인정합니다.",
+      "after": "재판관님… 오피스텔 방문은 조카를 돌본 것이었지만 숨긴 건 제 잘못입니다. 제 아내에게 말하지 않은 잘못까지 인정합니다.",
+      "reasons": [
+        "조카 돌봄이 → 조카를 돌본 것이"
+      ],
+      "hits": [
+        "noun_action"
+      ]
+    },
+    {
+      "id": "a-e-1-early-stage3-v6",
+      "channel": "evidence_present",
+      "key": "a|e-1|early|3",
+      "session": "S2",
+      "before": "그 단서를 바로 돌봄으로 읽기는 어려웠습니다. 이미 너무 많이 숨겨져 있었습니다.",
+      "after": "그 단서를 바로를 돌본 것으로 읽기는 어려웠습니다. 이미 너무 많이 숨겨져 있었습니다.",
+      "reasons": [
+        "바로 돌봄으로 → 바로를 돌본 것으로"
+      ],
+      "hits": [
+        "noun_action"
+      ]
+    },
+    {
+      "id": "b-e-1-mid-stage3-v4",
+      "channel": "evidence_present",
+      "key": "b|e-1|mid|3",
+      "session": "S2",
+      "before": "최종 목적은 돌봄과 수습이었습니다. 다만 제 아내에게 말하지 않은 건 잘못입니다.",
+      "after": "최종 목적은을 돌본 것과 수습이었습니다. 다만 제 아내에게 말하지 않은 건 잘못입니다.",
+      "reasons": [
+        "목적은 돌봄과 → 목적은을 돌본 것과"
+      ],
+      "hits": [
+        "noun_action"
+      ]
+    },
+    {
+      "id": "b-e-1-late-stage2-v3",
+      "channel": "evidence_present",
+      "key": "b|e-1|late|2",
+      "session": "S2",
+      "before": "이 자료들이 이어지는 이유는 가족 돌봄입니다. 제 아내가 생각한 관계가 아닙니다.",
+      "after": "이 자료들이 이어지는 이유는 가족을 돌본 것입니다. 제 아내가 생각한 관계가 아닙니다.",
+      "reasons": [
+        "가족 돌봄 → 가족을 돌본 것"
+      ],
+      "hits": [
+        "noun_action"
+      ]
+    },
+    {
+      "id": "b-e-1-late-stage3-v1",
+      "channel": "evidence_present",
+      "key": "b|e-1|late|3",
+      "session": "S2",
+      "before": "그 참고서는 조카에게 사 준 겁니다. 외도 상대가 아니라 돌봄을 숨긴 책임입니다.",
+      "after": "그 참고서는 조카에게 사 준 겁니다. 외도 상대가 아니라를 돌본 것을 숨긴 책임입니다.",
+      "reasons": [
+        "아니라 돌봄을 → 아니라를 돌본 것을"
+      ],
+      "hits": [
+        "noun_action"
+      ]
+    },
+    {
+      "id": "b-e-1-late-stage3-v2",
+      "channel": "evidence_present",
+      "key": "b|e-1|late|3",
+      "session": "S2",
+      "before": "최종 목적은 외도가 아니라 가족 돌봄이었습니다. 외도 상대가 아니라 돌봄을 숨긴 책임입니다.",
+      "after": "최종 목적은 외도가 아니라 가족을 돌본 것이었습니다. 외도 상대가 아니라를 돌본 것을 숨긴 책임입니다.",
+      "reasons": [
+        "가족 돌봄이 → 가족을 돌본 것이",
+        "아니라 돌봄을 → 아니라를 돌본 것을"
+      ],
+      "hits": [
+        "noun_action"
+      ]
+    },
+    {
+      "id": "b-e-1-late-stage3-v9",
+      "channel": "evidence_present",
+      "key": "b|e-1|late|3",
+      "session": "S2",
+      "before": "제 행동의 목적은 돌봄이었지만, 배우자를 배제한 방식은 잘못이었습니다.",
+      "after": "제 행동의 목적은을 돌본 것이었지만, 배우자를 배제한 방식은 잘못이었습니다.",
+      "reasons": [
+        "목적은 돌봄이 → 목적은을 돌본 것이"
+      ],
+      "hits": [
+        "noun_action"
+      ]
+    },
+    {
+      "id": "a-e-2-early-stage3-v6",
+      "channel": "evidence_present",
+      "key": "a|e-2|early|3",
+      "session": "S2",
+      "before": "그 단서를 바로 돌봄으로 읽기는 어려웠습니다. 이미 너무 많이 숨겨져 있었습니다.",
+      "after": "그 단서를 바로를 돌본 것으로 읽기는 어려웠습니다. 이미 너무 많이 숨겨져 있었습니다.",
+      "reasons": [
+        "바로 돌봄으로 → 바로를 돌본 것으로"
+      ],
+      "hits": [
+        "noun_action"
+      ]
+    },
+    {
+      "id": "a-e-2-late-stage1-v1",
+      "channel": "evidence_present",
+      "key": "a|e-2|late|1",
+      "session": "S2",
+      "before": "처음에는 같은 주소가 반복돼서 외도 동선으로 봤습니다. 지금은 방문 목적이 돌봄일 수 있다는 틈은 뒤늦게 봤습니다.",
+      "after": "처음에는 같은 주소가 반복돼서 외도 동선으로 봤습니다. 지금은 방문 목적이를 돌본 것일 수 있다는 틈은 뒤늦게 봤습니다.",
+      "reasons": [
+        "목적이 돌봄 → 목적이를 돌본 것"
+      ],
+      "hits": [
+        "noun_action"
+      ]
+    },
+    {
+      "id": "b-e-2-mid-stage3-v4",
+      "channel": "evidence_present",
+      "key": "b|e-2|mid|3",
+      "session": "S2",
+      "before": "최종 목적은 돌봄과 수습이었습니다. 다만 제 아내에게 말하지 않은 건 잘못입니다.",
+      "after": "최종 목적은을 돌본 것과 수습이었습니다. 다만 제 아내에게 말하지 않은 건 잘못입니다.",
+      "reasons": [
+        "목적은 돌봄과 → 목적은을 돌본 것과"
+      ],
+      "hits": [
+        "noun_action"
+      ]
+    },
+    {
+      "id": "b-e-2-late-stage2-v3",
+      "channel": "evidence_present",
+      "key": "b|e-2|late|2",
+      "session": "S2",
+      "before": "이 자료들이 이어지는 이유는 가족 돌봄입니다. 제 아내가 생각한 관계가 아닙니다.",
+      "after": "이 자료들이 이어지는 이유는 가족을 돌본 것입니다. 제 아내가 생각한 관계가 아닙니다.",
+      "reasons": [
+        "가족 돌봄 → 가족을 돌본 것"
+      ],
+      "hits": [
+        "noun_action"
+      ]
+    },
+    {
+      "id": "b-e-2-late-stage3-v2",
+      "channel": "evidence_present",
+      "key": "b|e-2|late|3",
+      "session": "S2",
+      "before": "최종 목적은 외도가 아니라 가족 돌봄이었습니다. 말하지 않고 다닌 점은 제 책임입니다.",
+      "after": "최종 목적은 외도가 아니라 가족을 돌본 것이었습니다. 말하지 않고 다닌 점은 제 책임입니다.",
+      "reasons": [
+        "가족 돌봄이 → 가족을 돌본 것이"
+      ],
+      "hits": [
+        "noun_action"
+      ]
+    },
+    {
+      "id": "b-e-2-late-stage3-v9",
+      "channel": "evidence_present",
+      "key": "b|e-2|late|3",
+      "session": "S2",
+      "before": "제 행동의 목적은 돌봄이었지만, 배우자를 배제한 방식은 잘못이었습니다.",
+      "after": "제 행동의 목적은을 돌본 것이었지만, 배우자를 배제한 방식은 잘못이었습니다.",
+      "reasons": [
+        "목적은 돌봄이 → 목적은을 돌본 것이"
+      ],
+      "hits": [
+        "noun_action"
+      ]
+    },
+    {
+      "id": "a-e-3-early-stage3-v6",
+      "channel": "evidence_present",
+      "key": "a|e-3|early|3",
+      "session": "S2",
+      "before": "그 단서를 바로 돌봄으로 읽기는 어려웠습니다. 이미 너무 많이 숨겨져 있었습니다.",
+      "after": "그 단서를 바로를 돌본 것으로 읽기는 어려웠습니다. 이미 너무 많이 숨겨져 있었습니다.",
+      "reasons": [
+        "바로 돌봄으로 → 바로를 돌본 것으로"
+      ],
+      "hits": [
+        "noun_action"
+      ]
+    },
+    {
+      "id": "b-e-3-mid-stage3-v4",
+      "channel": "evidence_present",
+      "key": "b|e-3|mid|3",
+      "session": "S2",
+      "before": "최종 목적은 돌봄과 수습이었습니다. 다만 제 아내에게 말하지 않은 건 잘못입니다.",
+      "after": "최종 목적은을 돌본 것과 수습이었습니다. 다만 제 아내에게 말하지 않은 건 잘못입니다.",
+      "reasons": [
+        "목적은 돌봄과 → 목적은을 돌본 것과"
+      ],
+      "hits": [
+        "noun_action"
+      ]
+    },
+    {
+      "id": "b-e-3-late-stage2-v3",
+      "channel": "evidence_present",
+      "key": "b|e-3|late|2",
+      "session": "S2",
+      "before": "이 자료들이 이어지는 이유는 가족 돌봄입니다. 제 아내가 생각한 관계가 아닙니다.",
+      "after": "이 자료들이 이어지는 이유는 가족을 돌본 것입니다. 제 아내가 생각한 관계가 아닙니다.",
+      "reasons": [
+        "가족 돌봄 → 가족을 돌본 것"
+      ],
+      "hits": [
+        "noun_action"
+      ]
+    },
+    {
+      "id": "b-e-3-late-stage3-v2",
+      "channel": "evidence_present",
+      "key": "b|e-3|late|3",
+      "session": "S2",
+      "before": "최종 목적은 외도가 아니라 가족 돌봄이었습니다. 상대를 숨겨서 외도처럼 보이게 만든 건 제 잘못입니다.",
+      "after": "최종 목적은 외도가 아니라 가족을 돌본 것이었습니다. 상대를 숨겨서 외도처럼 보이게 만든 건 제 잘못입니다.",
+      "reasons": [
+        "가족 돌봄이 → 가족을 돌본 것이"
+      ],
+      "hits": [
+        "noun_action"
+      ]
+    },
+    {
+      "id": "b-e-3-late-stage3-v9",
+      "channel": "evidence_present",
+      "key": "b|e-3|late|3",
+      "session": "S2",
+      "before": "제 행동의 목적은 돌봄이었지만, 배우자를 배제한 방식은 잘못이었습니다.",
+      "after": "제 행동의 목적은을 돌본 것이었지만, 배우자를 배제한 방식은 잘못이었습니다.",
+      "reasons": [
+        "목적은 돌봄이 → 목적은을 돌본 것이"
+      ],
+      "hits": [
+        "noun_action"
+      ]
+    },
+    {
+      "id": "a-e-4-early-stage3-v6",
+      "channel": "evidence_present",
+      "key": "a|e-4|early|3",
+      "session": "S2",
+      "before": "그 단서를 바로 돌봄으로 읽기는 어려웠습니다. 이미 너무 많이 숨겨져 있었습니다.",
+      "after": "그 단서를 바로를 돌본 것으로 읽기는 어려웠습니다. 이미 너무 많이 숨겨져 있었습니다.",
+      "reasons": [
+        "바로 돌봄으로 → 바로를 돌본 것으로"
+      ],
+      "hits": [
+        "noun_action"
+      ]
+    },
+    {
+      "id": "a-e-4-late-stage1-v1",
+      "channel": "evidence_present",
+      "key": "a|e-4|late|1",
+      "session": "S2",
+      "before": "처음에는 반복된 부탁 문구가 다른 관계처럼 보였습니다. 지금은 돌봄 맥락을 의심보다 늦게 받아들였습니다.",
+      "after": "처음에는 반복된 부탁 문구가 다른 관계처럼 보였습니다. 지금은을 돌본 것 맥락을 의심보다 늦게 받아들였습니다.",
+      "reasons": [
+        "지금은 돌봄 → 지금은을 돌본 것"
+      ],
+      "hits": [
+        "noun_action"
+      ]
+    },
+    {
+      "id": "b-e-4-mid-stage3-v4",
+      "channel": "evidence_present",
+      "key": "b|e-4|mid|3",
+      "session": "S2",
+      "before": "최종 목적은 돌봄과 수습이었습니다. 다만 제 아내에게 말하지 않은 건 잘못입니다.",
+      "after": "최종 목적은을 돌본 것과 수습이었습니다. 다만 제 아내에게 말하지 않은 건 잘못입니다.",
+      "reasons": [
+        "목적은 돌봄과 → 목적은을 돌본 것과"
+      ],
+      "hits": [
+        "noun_action"
+      ]
+    },
+    {
+      "id": "b-e-4-late-stage2-v3",
+      "channel": "evidence_present",
+      "key": "b|e-4|late|2",
+      "session": "S2",
+      "before": "이 자료들이 이어지는 이유는 가족 돌봄입니다. 제 아내가 생각한 관계가 아닙니다.",
+      "after": "이 자료들이 이어지는 이유는 가족을 돌본 것입니다. 제 아내가 생각한 관계가 아닙니다.",
+      "reasons": [
+        "가족 돌봄 → 가족을 돌본 것"
+      ],
+      "hits": [
+        "noun_action"
+      ]
+    },
+    {
+      "id": "b-e-4-late-stage3-v2",
+      "channel": "evidence_present",
+      "key": "b|e-4|late|3",
+      "session": "S2",
+      "before": "최종 목적은 외도가 아니라 가족 돌봄이었습니다. 시댁 갈등이 두려워 숨긴 것이 제 책임입니다.",
+      "after": "최종 목적은 외도가 아니라 가족을 돌본 것이었습니다. 시댁 갈등이 두려워 숨긴 것이 제 책임입니다.",
+      "reasons": [
+        "가족 돌봄이 → 가족을 돌본 것이"
+      ],
+      "hits": [
+        "noun_action"
+      ]
+    },
+    {
+      "id": "b-e-4-late-stage3-v9",
+      "channel": "evidence_present",
+      "key": "b|e-4|late|3",
+      "session": "S2",
+      "before": "제 행동의 목적은 돌봄이었지만, 배우자를 배제한 방식은 잘못이었습니다.",
+      "after": "제 행동의 목적은을 돌본 것이었지만, 배우자를 배제한 방식은 잘못이었습니다.",
+      "reasons": [
+        "목적은 돌봄이 → 목적은을 돌본 것이"
+      ],
+      "hits": [
+        "noun_action"
+      ]
+    },
+    {
+      "id": "a-e-5-early-stage3-v6",
+      "channel": "evidence_present",
+      "key": "a|e-5|early|3",
+      "session": "S2",
+      "before": "그 단서를 바로 돌봄으로 읽기는 어려웠습니다. 이미 너무 많이 숨겨져 있었습니다.",
+      "after": "그 단서를 바로를 돌본 것으로 읽기는 어려웠습니다. 이미 너무 많이 숨겨져 있었습니다.",
+      "reasons": [
+        "바로 돌봄으로 → 바로를 돌본 것으로"
+      ],
+      "hits": [
+        "noun_action"
+      ]
+    },
+    {
+      "id": "a-e-5-late-stage3-v6",
+      "channel": "evidence_present",
+      "key": "a|e-5|late|3",
+      "session": "S2",
+      "before": "가족 지원의 목적이 있었다면, 제가 외도라고 몰아붙인 건 성급했습니다.",
+      "after": "가족을 도운 것의 목적이 있었다면, 제가 외도라고 몰아붙인 건 성급했습니다.",
+      "reasons": [
+        "가족 지원 → 가족을 도운 것"
+      ],
+      "hits": [
+        "noun_action"
+      ]
+    },
+    {
+      "id": "b-e-5-mid-stage3-v4",
+      "channel": "evidence_present",
+      "key": "b|e-5|mid|3",
+      "session": "S2",
+      "before": "최종 목적은 돌봄과 수습이었습니다. 다만 제 아내에게 말하지 않은 건 잘못입니다.",
+      "after": "최종 목적은을 돌본 것과 수습이었습니다. 다만 제 아내에게 말하지 않은 건 잘못입니다.",
+      "reasons": [
+        "목적은 돌봄과 → 목적은을 돌본 것과"
+      ],
+      "hits": [
+        "noun_action"
+      ]
+    },
+    {
+      "id": "b-e-5-late-stage2-v3",
+      "channel": "evidence_present",
+      "key": "b|e-5|late|2",
+      "session": "S2",
+      "before": "이 자료들이 이어지는 이유는 가족 돌봄입니다. 제 아내가 생각한 관계가 아닙니다.",
+      "after": "이 자료들이 이어지는 이유는 가족을 돌본 것입니다. 제 아내가 생각한 관계가 아닙니다.",
+      "reasons": [
+        "가족 돌봄 → 가족을 돌본 것"
+      ],
+      "hits": [
+        "noun_action"
+      ]
+    },
+    {
+      "id": "b-e-5-late-stage3-v2",
+      "channel": "evidence_present",
+      "key": "b|e-5|late|3",
+      "session": "S2",
+      "before": "최종 목적은 외도가 아니라 가족 지원이었습니다. 배우자에게 말하지 않고 혼자 처리한 건 제 월권입니다.",
+      "after": "최종 목적은 외도가 아니라 가족을 도운 것이었습니다. 배우자에게 말하지 않고 혼자 처리한 건 제 월권입니다.",
+      "reasons": [
+        "가족 지원이 → 가족을 도운 것이"
+      ],
+      "hits": [
+        "noun_action"
+      ]
+    },
+    {
+      "id": "b-e-5-late-stage3-v9",
+      "channel": "evidence_present",
+      "key": "b|e-5|late|3",
+      "session": "S2",
+      "before": "제 행동의 목적은 돌봄이었지만, 배우자를 배제한 방식은 잘못이었습니다.",
+      "after": "제 행동의 목적은을 돌본 것이었지만, 배우자를 배제한 방식은 잘못이었습니다.",
+      "reasons": [
+        "목적은 돌봄이 → 목적은을 돌본 것이"
+      ],
+      "hits": [
+        "noun_action"
+      ]
+    },
+    {
+      "id": "b-e-6-late-restore_context-v10",
+      "channel": "s3",
+      "key": "b|e-6|late|restore_context",
+      "session": "S3",
+      "before": "이제는 제 은폐와 아내의 투자 사기 손실을 따로 기록해야 합니다.",
+      "after": "이제는 제를 숨긴 것와 아내의 투자 사기 손실을 따로 기록해야 합니다.",
+      "reasons": [
+        "제 은폐와 → 제를 숨긴 것와"
+      ],
+      "hits": [
+        "noun_action"
+      ]
+    },
+    {
+      "id": "a-e-7-early-check_metadata-v6",
+      "channel": "s3",
+      "key": "a|e-7|early|check_metadata",
+      "session": "S3",
+      "before": "서류 처리 과정에서 직원이 확인한 부분도 있었을 겁니다.",
+      "after": "서류를 처리한 것 과정에서 직원이 확인한 부분도 있었을 겁니다.",
+      "reasons": [
+        "서류 처리 → 서류를 처리한 것"
+      ],
+      "hits": [
+        "noun_action"
+      ]
+    },
+    {
+      "id": "a-e-7-early-restore_context-v7",
+      "channel": "s3",
+      "key": "a|e-7|early|restore_context",
+      "session": "S3",
+      "before": "위임장 문제를 그렇게 부르면, 제 입장에서는 모든 게 끝나는 것 같습니다.",
+      "after": "그 서류 문제를 그렇게 부르면, 제 입장에서는 모든 게 끝나는 것 같습니다.",
+      "reasons": [
+        "위임장 → 그 서류"
+      ],
+      "hits": [
+        "s0_s2_lexeme_위임장"
+      ]
+    },
+    {
+      "id": "b-e-7-early-request_original-v7",
+      "channel": "s3",
+      "key": "b|e-7|early|request_original",
+      "session": "S3",
+      "before": "위임장이 붙어 있어도, 저는 그런 위임을 한 적이 없습니다.",
+      "after": "그 서류이 붙어 있어도, 저는 그런 위임을 한 적이 없습니다.",
+      "reasons": [
+        "위임장 → 그 서류"
+      ],
+      "hits": [
+        "s0_s2_lexeme_위임장"
+      ]
+    },
+    {
+      "id": "b-e-7-early-check_metadata-v3",
+      "channel": "s3",
+      "key": "b|e-7|early|check_metadata",
+      "session": "S3",
+      "before": "저는 위임장을 써 준 기억이 없습니다. 서명도 낯섭니다.",
+      "after": "저는 그 서류을 써 준 기억이 없습니다. 서명도 낯섭니다.",
+      "reasons": [
+        "위임장 → 그 서류"
+      ],
+      "hits": [
+        "s0_s2_lexeme_위임장"
+      ]
+    },
+    {
+      "id": "b-e-7-late-restore_context-v6",
+      "channel": "s3",
+      "key": "b|e-7|late|restore_context",
+      "session": "S3",
+      "before": "저는 제 은폐를 인정합니다. 아내는 위임장 조작을 인정해야 합니다.",
+      "after": "저는 제를 숨긴 것를 인정합니다. 아내는 위임장 조작을 인정해야 합니다.",
+      "reasons": [
+        "제 은폐를 → 제를 숨긴 것를"
+      ],
+      "hits": [
+        "noun_action"
+      ]
+    },
+    {
+      "id": "dc-1-b-q1-late-v7",
+      "channel": "dossier",
+      "key": "dc-1.b.q1|late",
+      "session": "S4",
+      "before": "제 침묵 때문에 가족 돌봄이 외도처럼 보였습니다. 그 책임은 제가 지겠습니다.",
+      "after": "제 침묵 때문에 가족을 돌본 것이 외도처럼 보였습니다. 그 책임은 제가 지겠습니다.",
+      "reasons": [
+        "가족 돌봄이 → 가족을 돌본 것이"
+      ],
+      "hits": [
+        "noun_action"
+      ]
+    },
+    {
+      "id": "dc-2-b-q1-early-v6",
+      "channel": "dossier",
+      "key": "dc-2.b.q1|early",
+      "session": "S4",
+      "before": "외도 은폐는 아닙니다. 하지만 시댁 문제를 덮으려 한 건 사실입니다.",
+      "after": "외도를 숨긴 것는 아닙니다. 하지만 시댁 문제를 덮으려 한 건 사실입니다.",
+      "reasons": [
+        "외도 은폐는 → 외도를 숨긴 것는"
+      ],
+      "hits": [
+        "noun_action"
+      ]
+    },
+    {
+      "id": "dc-2-b-q1-late-v4",
+      "channel": "dossier",
+      "key": "dc-2.b.q1|late",
+      "session": "S4",
+      "before": "형네 사정이 알려지면 예전 시댁 상처가 다시 터질까 봐, 저는 진실보다 회피를 골랐습니다.",
+      "after": "형네 사정이 알려지면 예전 시댁 상처가 다시 터질까 봐, 저는 진실보다를 피한 것를 골랐습니다.",
+      "reasons": [
+        "진실보다 회피를 → 진실보다를 피한 것를"
+      ],
+      "hits": [
+        "noun_action"
+      ]
+    },
+    {
+      "id": "dc-4-a-q2-late-v1",
+      "channel": "dossier",
+      "key": "dc-4.a.q2|late",
+      "session": "S4",
+      "before": "맞습니다. 2,000만 원을 보내고 사기당한 사실을 숨긴 건 수치심과 책임 회피 때문이었습니다.",
+      "after": "맞습니다. 2,000만 원을 보내고 사기당한 사실을 숨긴 건 수치심과 책임을 피한 것 때문이었습니다.",
+      "reasons": [
+        "책임 회피 → 책임을 피한 것"
+      ],
+      "hits": [
+        "noun_action"
+      ]
+    },
+    {
+      "id": "dc-5-b-q1-late-v7",
+      "channel": "dossier",
+      "key": "dc-5.b.q1|late",
+      "session": "S4",
+      "before": "제 책임은 침묵과 은폐입니다. 아내 쪽 책임은 먼저 돈을 움직인 실행입니다.",
+      "after": "제 책임은 침묵과를 숨긴 것입니다. 아내 쪽 책임은 먼저 돈을 움직인 실행입니다.",
+      "reasons": [
+        "침묵과 은폐 → 침묵과를 숨긴 것"
+      ],
+      "hits": [
+        "noun_action"
+      ]
+    },
+    {
+      "id": "dc-5-a-q1-late-v2",
+      "channel": "dossier",
+      "key": "dc-5.a.q1|late",
+      "session": "S4",
+      "before": "저는 남편의 은폐를 이유로 제 송금을 덮으려 했습니다. 하지만 순서는 숨길 수 없습니다.",
+      "after": "저는 남편의를 숨긴 것를 이유로 제 송금을 덮으려 했습니다. 하지만 순서는 숨길 수 없습니다.",
+      "reasons": [
+        "남편의 은폐를 → 남편의를 숨긴 것를"
+      ],
+      "hits": [
+        "noun_action"
+      ]
+    },
+    {
+      "id": "w-2-vague-v2",
+      "channel": "witness",
+      "key": "w-2|vague",
+      "session": "S4",
+      "before": "서류가 들어온 적은 있습니다. 지금 단계에서는 처리 사실 정도만 말씀드릴 수 있습니다.",
+      "after": "서류가 들어온 적은 있습니다. 지금 단계에서는을 처리한 것 사실 정도만 말씀드릴 수 있습니다.",
+      "reasons": [
+        "단계에서는 처리 → 단계에서는을 처리한 것"
+      ],
+      "hits": [
+        "noun_action"
+      ]
+    },
+    {
+      "id": "w-2-partial-v1",
+      "channel": "witness",
+      "key": "w-2|partial",
+      "session": "S4",
+      "before": "위임장이 첨부돼 있었습니다. 서명이 조금 낯설었지만 서류 형식은 맞아 보였습니다.",
+      "after": "그 서류이 첨부돼 있었습니다. 서명이 조금 낯설었지만 서류 형식은 맞아 보였습니다.",
+      "reasons": [
+        "위임장 → 그 서류"
+      ],
+      "hits": [
+        "s0_s2_lexeme_위임장"
+      ]
+    },
+    {
+      "id": "w-2-partial-v4",
+      "channel": "witness",
+      "key": "w-2|partial",
+      "session": "S4",
+      "before": "고객님이 직접 오셨고, 명의자분 위임장이라고 설명했습니다. 저는 요건부터 확인했습니다.",
+      "after": "고객님이 직접 오셨고, 명의자분 그 서류이라고 설명했습니다. 저는 요건부터 확인했습니다.",
+      "reasons": [
+        "위임장 → 그 서류"
+      ],
+      "hits": [
+        "s0_s2_lexeme_위임장"
+      ]
+    },
+    {
+      "id": "w-2-partial-v7",
+      "channel": "witness",
+      "key": "w-2|partial",
+      "session": "S4",
+      "before": "위임장과 사본이 같이 제출됐습니다. 저는 그 형식을 보고 해지 절차를 진행했습니다.",
+      "after": "그 서류과 사본이 같이 제출됐습니다. 저는 그 형식을 보고 해지 절차를 진행했습니다.",
+      "reasons": [
+        "위임장 → 그 서류"
+      ],
+      "hits": [
+        "s0_s2_lexeme_위임장"
+      ]
+    },
+    {
+      "id": "w-2-full-v2",
+      "channel": "witness",
+      "key": "w-2|full",
+      "session": "S4",
+      "before": "위임장이 있었지만 의심은 들었습니다. 저는 서류 요건이 맞다는 쪽에 기대서 처리했습니다.",
+      "after": "그 서류이 있었지만 의심은 들었습니다. 저는 서류 요건이 맞다는 쪽에 기대서 처리했습니다.",
+      "reasons": [
+        "위임장 → 그 서류"
+      ],
+      "hits": [
+        "s0_s2_lexeme_위임장"
+      ]
+    },
+    {
+      "id": "w-2-full-v4",
+      "channel": "witness",
+      "key": "w-2|full",
+      "session": "S4",
+      "before": "신분증 사본과 위임장이 있어서 진행했습니다. 하지만 필체 차이를 그냥 넘긴 건 제 부담입니다.",
+      "after": "신분증 사본과 그 서류이 있어서 진행했습니다. 하지만 필체 차이를 그냥 넘긴 건 제 부담입니다.",
+      "reasons": [
+        "위임장 → 그 서류"
+      ],
+      "hits": [
+        "s0_s2_lexeme_위임장"
+      ]
+    },
+    {
+      "id": "w-2-full-v8",
+      "channel": "witness",
+      "key": "w-2|full",
+      "session": "S4",
+      "before": "위임 서류는 있었고 처리는 됐습니다. 다만 서명 진정성 확인은 충분하지 않았습니다.",
+      "after": "위임 서류는 있었고를 처리한 것는 됐습니다. 다만 서명 진정성 확인은 충분하지 않았습니다.",
+      "reasons": [
+        "있었고 처리는 → 있었고를 처리한 것는"
+      ],
+      "hits": [
+        "noun_action"
+      ]
+    },
+    {
+      "id": "w-2-full-v9",
+      "channel": "witness",
+      "key": "w-2|full",
+      "session": "S4",
+      "before": "재판관님, 절차상 근거는 있었지만 안전한 처리는 아니었습니다. 그 점은 인정합니다.",
+      "after": "재판관님, 절차상 근거는 있었지만 안전한을 처리한 것는 아니었습니다. 그 점은 인정합니다.",
+      "reasons": [
+        "안전한 처리는 → 안전한을 처리한 것는"
+      ],
+      "hits": [
+        "noun_action"
+      ]
+    },
+    {
+      "id": "contra-a-d-2-S1-v7",
+      "channel": "contradiction_pursuit",
+      "key": "a|d-2|S1",
+      "session": "S5",
+      "before": "제가 의심한 건 돈 자체보다 설명 없는 처리였습니다. 그 차이는 분명히 봐주셔야 합니다.",
+      "after": "제가 의심한 건 돈 자체보다 설명 없는을 처리한 것였습니다. 그 차이는 분명히 봐주셔야 합니다.",
+      "reasons": [
+        "없는 처리 → 없는을 처리한 것"
+      ],
+      "hits": [
+        "noun_action"
+      ]
+    },
+    {
+      "id": "contra-a-h-d3-S1-v7",
+      "channel": "contradiction_pursuit",
+      "key": "a|h-d3|S1",
+      "session": "S5",
+      "before": "그건 단순한 처리 과정이었습니다. 제가 집을 지키려면 최소한 확인은 해야 한다고 봤습니다.",
+      "after": "그건 단순한을 처리한 것 과정이었습니다. 제가 집을 지키려면 최소한 확인은 해야 한다고 봤습니다.",
+      "reasons": [
+        "단순한 처리 → 단순한을 처리한 것"
+      ],
+      "hits": [
+        "noun_action"
+      ]
+    },
+    {
+      "id": "contra-a-h-d4-S3-v7",
+      "channel": "contradiction_pursuit",
+      "key": "a|h-d4|S3",
+      "session": "S5",
+      "before": "남편의 2,000만 원 은폐와 제 3,000만 원 해지는 서로 다른 축이라는 걸 받아들이겠습니다.",
+      "after": "남편의 2,000만 원을 숨긴 것와 제 3,000만 원 해지는 서로 다른 축이라는 걸 받아들이겠습니다.",
+      "reasons": [
+        "원 은폐와 → 원을 숨긴 것와"
+      ],
+      "hits": [
+        "noun_action"
+      ]
+    },
+    {
+      "id": "contra-a-h-d4-S4-v9",
+      "channel": "contradiction_pursuit",
+      "key": "a|h-d4|S4",
+      "session": "S5",
+      "before": "위임장 조작이라는 축은 제 몫입니다. 남편의 은폐와 섞어서 흐릴 수 없습니다.",
+      "after": "위임장 조작이라는 축은 제 몫입니다. 남편의를 숨긴 것와 섞어서 흐릴 수 없습니다.",
+      "reasons": [
+        "남편의 은폐와 → 남편의를 숨긴 것와"
+      ],
+      "hits": [
+        "noun_action"
+      ]
+    },
+    {
+      "id": "contra-b-d-1-S2-v10",
+      "channel": "contradiction_pursuit",
+      "key": "b|d-1|S2",
+      "session": "S5",
+      "before": "설명을 줄이다 보니 모순처럼 들린 것 같습니다. 그건 제 회피 탓입니다.",
+      "after": "설명을 줄이다 보니 모순처럼 들린 것 같습니다. 그건 제를 피한 것 탓입니다.",
+      "reasons": [
+        "제 회피 → 제를 피한 것"
+      ],
+      "hits": [
+        "noun_action"
+      ]
+    },
+    {
+      "id": "contra-b-d-2-S1-v7",
+      "channel": "contradiction_pursuit",
+      "key": "b|d-2|S1",
+      "session": "S5",
+      "before": "그 부분은 단순한 은폐와는 다릅니다. 쓰임을 빼고 말하면 사실이 반쪽이 됩니다.",
+      "after": "그 부분은 단순한을 숨긴 것와는 다릅니다. 쓰임을 빼고 말하면 사실이 반쪽이 됩니다.",
+      "reasons": [
+        "단순한 은폐와 → 단순한을 숨긴 것와"
+      ],
+      "hits": [
+        "noun_action"
+      ]
+    },
+    {
+      "id": "contra-b-h-d3-S1-v9",
+      "channel": "contradiction_pursuit",
+      "key": "b|h-d3|S1",
+      "session": "S5",
+      "before": "그 적금 문제를 나중에 알았다고만 말한 건 제 회피였습니다. 일부는 먼저 눈치챘습니다.",
+      "after": "그 적금 문제를 나중에 알았다고만 말한 건 제를 피한 것였습니다. 일부는 먼저 눈치챘습니다.",
+      "reasons": [
+        "제 회피 → 제를 피한 것"
+      ],
+      "hits": [
+        "noun_action"
+      ]
+    },
+    {
+      "id": "contra-b-h-d3-S3-v8",
+      "channel": "contradiction_pursuit",
+      "key": "b|h-d3|S3",
+      "session": "S5",
+      "before": "하지만 제 은폐와 서류 처리는 같은 무게가 아닙니다. 그 부분은 분리해 주셨으면 합니다.",
+      "after": "하지만 제를 숨긴 것와 서류를 처리한 것는 같은 무게가 아닙니다. 그 부분은 분리해 주셨으면 합니다.",
+      "reasons": [
+        "제 은폐와 → 제를 숨긴 것와",
+        "서류 처리는 → 서류를 처리한 것는"
+      ],
+      "hits": [
+        "noun_action"
+      ]
+    },
+    {
+      "id": "contra-b-h-d4-S2-v4",
+      "channel": "contradiction_pursuit",
+      "key": "b|h-d4|S2",
+      "session": "S5",
+      "before": "침묵의 시작이 제 쪽일 수 있습니다. 하지만 아내의 서류 처리는 또 다른 축입니다.",
+      "after": "침묵의 시작이 제 쪽일 수 있습니다. 하지만 아내의 서류를 처리한 것는 또 다른 축입니다.",
+      "reasons": [
+        "서류 처리는 → 서류를 처리한 것는"
+      ],
+      "hits": [
+        "noun_action"
+      ]
+    },
+    {
+      "id": "contra-b-h-d4-S2-v8",
+      "channel": "contradiction_pursuit",
+      "key": "b|h-d4|S2",
+      "session": "S5",
+      "before": "먼저 숨긴 건 제 잘못입니다. 그래도 아내가 한 처리를 제가 동의한 건 아닙니다.",
+      "after": "먼저 숨긴 건 제 잘못입니다. 그래도 아내가 한을 처리한 것를 제가 동의한 건 아닙니다.",
+      "reasons": [
+        "한 처리를 → 한을 처리한 것를"
+      ],
+      "hits": [
+        "noun_action"
+      ]
+    },
+    {
+      "id": "interject-b-h-d3-minor-v3",
+      "channel": "interjection",
+      "key": "b|h-d3|minor",
+      "session": "S5",
+      "before": "잠깐 말씀드리겠습니다. 제 침묵이 단초가 된 건 인정하지만, 서류 처리까지 같은 책임은 아닙니다.",
+      "after": "잠깐 말씀드리겠습니다. 제 침묵이 단초가 된 건 인정하지만, 서류를 처리한 것까지 같은 책임은 아닙니다.",
+      "reasons": [
+        "서류 처리까지 → 서류를 처리한 것까지"
+      ],
+      "hits": [
+        "noun_action"
+      ]
+    },
+    {
+      "id": "interject-b-h-d3-minor-v8",
+      "channel": "interjection",
+      "key": "b|h-d3|minor",
+      "session": "S5",
+      "before": "제가 먼저 숨긴 일은 있습니다. 그래도 공동 적금 처리까지 제 뜻이었다고 들리면 안 됩니다.",
+      "after": "제가 먼저 숨긴 일은 있습니다. 그래도 공동 적금을 처리한 것까지 제 뜻이었다고 들리면 안 됩니다.",
+      "reasons": [
+        "적금 처리까지 → 적금을 처리한 것까지"
+      ],
+      "hits": [
+        "noun_action"
+      ]
+    },
+    {
+      "id": "interject-b-h-d4-major-v2",
+      "channel": "interjection",
+      "key": "b|h-d4|major",
+      "session": "S5",
+      "before": "박지연! 내가 말 못 한 건 잘못이지만, 당신이 한 서류 처리는 다른 문제야!",
+      "after": "박지연! 내가 말 못 한 건 잘못이지만, 당신이 한 서류를 처리한 것는 다른 문제야!",
+      "reasons": [
+        "서류 처리는 → 서류를 처리한 것는"
+      ],
+      "hits": [
+        "noun_action"
+      ]
+    },
+    {
+      "id": "overload-a-h-d3-v2",
+      "channel": "emotional_overload",
+      "key": "a|h-d3",
+      "session": "S5",
+      "before": "위임장이라는 말만 나오면 숨이 막힙니다. 잠깐 멈추겠습니다. (두 턴 후) …감정 추스렀습니다. 이어가겠습니다.",
+      "after": "그 서류이라는 말만 나오면 숨이 막힙니다. 잠깐 멈추겠습니다. (두 턴 후) …감정 추스렀습니다. 이어가겠습니다.",
+      "reasons": [
+        "위임장 → 그 서류"
+      ],
+      "hits": [
+        "s0_s2_lexeme_위임장"
+      ]
+    },
+    {
+      "id": "overload-a-h-d4-v5",
+      "channel": "emotional_overload",
+      "key": "a|h-d4",
+      "session": "S5",
+      "before": "그 축을 나누면 제 위임장 문제가 바로 보입니다. 지금은 바로 못 하겠습니다. (두 턴 후) …말씀드리겠습니다.",
+      "after": "그 축을 나누면 제 그 서류 문제가 바로 보입니다. 지금은 바로 못 하겠습니다. (두 턴 후) …말씀드리겠습니다.",
+      "reasons": [
+        "위임장 → 그 서류"
+      ],
+      "hits": [
+        "s0_s2_lexeme_위임장"
+      ]
+    },
+    {
+      "id": "judgeq-d-1-fact_pursuit-4-v3",
+      "channel": "judge_question",
+      "key": "d-1|fact_pursuit|4",
+      "session": "S6",
+      "before": "이준호 씨, 가족 돌봄을 숨긴 책임까지 함께 인정하십니까.",
+      "after": "이준호 씨, 가족을 돌본 것을 숨긴 책임까지 함께 인정하십니까.",
+      "reasons": [
+        "가족 돌봄을 → 가족을 돌본 것을"
+      ],
+      "hits": [
+        "noun_action"
+      ]
+    },
+    {
+      "id": "judgeq-d-1-motive_search-3-v4",
+      "channel": "judge_question",
+      "key": "d-1|motive_search|3",
+      "session": "S6",
+      "before": "박지연 씨, 돌봄 가능성을 밀어낸 두려움이 무엇이었습니까.",
+      "after": "박지연 씨,를 돌본 것 가능성을 밀어낸 두려움이 무엇이었습니까.",
+      "reasons": [
+        "씨, 돌봄 → 씨,를 돌본 것"
+      ],
+      "hits": [
+        "noun_action"
+      ]
+    },
+    {
+      "id": "judgeq-d-1-empathy_approach-3-v4",
+      "channel": "judge_question",
+      "key": "d-1|empathy_approach|3",
+      "session": "S6",
+      "before": "박지연 씨, 돌봄이라는 말을 들었을 때 수치심도 함께 올라왔습니까.",
+      "after": "박지연 씨,를 돌본 것이라는 말을 들었을 때 수치심도 함께 올라왔습니까.",
+      "reasons": [
+        "씨, 돌봄이 → 씨,를 돌본 것이"
+      ],
+      "hits": [
+        "noun_action"
+      ]
+    },
+    {
+      "id": "judgeq-h-d4-fact_pursuit-2-v4",
+      "channel": "judge_question",
+      "key": "h-d4|fact_pursuit|2",
+      "session": "S6",
+      "before": "두 분, 범죄 행위와 단순 은폐를 같은 말로 묶지 않겠습니다.",
+      "after": "두 분, 범죄 행위와 단순을 숨긴 것를 같은 말로 묶지 않겠습니다.",
+      "reasons": [
+        "단순 은폐를 → 단순을 숨긴 것를"
+      ],
+      "hits": [
+        "noun_action"
+      ]
+    },
+    {
+      "id": "judgec-h-d3-hard-v3",
+      "channel": "judge_contradiction",
+      "key": "h-d3|hard",
+      "session": "S6",
+      "before": "이준호 씨, 조작 정황을 알고도 침묵했다면 본인에게도 은폐 책임이 있습니다. 그 이유를 바로 말하십시오.",
+      "after": "이준호 씨, 조작 정황을 알고도 침묵했다면 본인에게도를 숨긴 것 책임이 있습니다. 그 이유를 바로 말하십시오.",
+      "reasons": [
+        "본인에게도 은폐 → 본인에게도를 숨긴 것"
+      ],
+      "hits": [
+        "noun_action"
+      ]
+    },
+    {
+      "id": "judgecombo-dc-1-b-q1-mid-v3",
+      "channel": "judge_evidence_combo",
+      "key": "dc-1.b.q1|mid",
+      "session": "S6",
+      "before": "이준호 씨, 외도 정황이 가족 돌봄 정황으로 바뀝니다. 이제 핵심을 말해야 합니다.",
+      "after": "이준호 씨, 외도 정황이 가족을 돌본 것 정황으로 바뀝니다. 이제 핵심을 말해야 합니다.",
+      "reasons": [
+        "가족 돌봄 → 가족을 돌본 것"
+      ],
+      "hits": [
+        "noun_action"
+      ]
+    },
+    {
+      "id": "judgecombo-dc-1-b-q1-hard-v4",
+      "channel": "judge_evidence_combo",
+      "key": "dc-1.b.q1|hard",
+      "session": "S6",
+      "before": "이준호 씨, 외도 정황이 가족 돌봄 정황으로 바뀝니다. 회피하지 말고 답하십시오.",
+      "after": "이준호 씨, 외도 정황이 가족을 돌본 것 정황으로 바뀝니다. 회피하지 말고 답하십시오.",
+      "reasons": [
+        "가족 돌봄 → 가족을 돌본 것"
+      ],
+      "hits": [
+        "noun_action"
+      ]
+    },
+    {
+      "id": "judgecombo-dc-4-a-q2-mid-v3",
+      "channel": "judge_evidence_combo",
+      "key": "dc-4.a.q2|mid",
+      "session": "S6",
+      "before": "박지연 씨, 사기 피해와 은폐 동기가 함께 드러납니다. 이제 핵심을 말해야 합니다.",
+      "after": "박지연 씨, 사기 피해와를 숨긴 것 동기가 함께 드러납니다. 이제 핵심을 말해야 합니다.",
+      "reasons": [
+        "피해와 은폐 → 피해와를 숨긴 것"
+      ],
+      "hits": [
+        "noun_action"
+      ]
+    },
+    {
+      "id": "judgecombo-dc-4-a-q2-hard-v4",
+      "channel": "judge_evidence_combo",
+      "key": "dc-4.a.q2|hard",
+      "session": "S6",
+      "before": "박지연 씨, 사기 피해와 은폐 동기가 함께 드러납니다. 회피하지 말고 답하십시오.",
+      "after": "박지연 씨, 사기 피해와를 숨긴 것 동기가 함께 드러납니다. 회피하지 말고 답하십시오.",
+      "reasons": [
+        "피해와 은폐 → 피해와를 숨긴 것"
+      ],
+      "hits": [
+        "noun_action"
+      ]
+    },
+    {
+      "id": "judgewit-w-1-mid-v4",
+      "channel": "judge_witness_summon",
+      "key": "w-1|mid",
+      "session": "S6",
+      "before": "외도 해석과 돌봄 해석이 부딪힙니다. 경비 증언으로 장소를 좁히겠습니다.",
+      "after": "외도 해석과를 돌본 것 해석이 부딪힙니다. 경비 증언으로 장소를 좁히겠습니다.",
+      "reasons": [
+        "해석과 돌봄 → 해석과를 돌본 것"
+      ],
+      "hits": [
+        "noun_action"
+      ]
+    },
+    {
+      "id": "judgewit-w-2-mid-v2",
+      "channel": "judge_witness_summon",
+      "key": "w-2|mid",
+      "session": "S6",
+      "before": "해지 서류가 어떻게 처리됐는지 더 미룰 수 없습니다. 은행 직원을 부르겠습니다.",
+      "after": "해지 서류가 어떻게를 처리한 것됐는지 더 미룰 수 없습니다. 은행 직원을 부르겠습니다.",
+      "reasons": [
+        "어떻게 처리 → 어떻게를 처리한 것"
+      ],
+      "hits": [
+        "noun_action"
+      ]
+    },
+    {
+      "id": "judgewit-w-2-hard-v2",
+      "channel": "judge_witness_summon",
+      "key": "w-2|hard",
+      "session": "S6",
+      "before": "서류 처리 과정이 핵심입니다. 은행 직원은 확인 미흡까지 답해야 합니다.",
+      "after": "서류를 처리한 것 과정이 핵심입니다. 은행 직원은 확인 미흡까지 답해야 합니다.",
+      "reasons": [
+        "서류 처리 → 서류를 처리한 것"
+      ],
+      "hits": [
+        "noun_action"
+      ]
+    },
+    {
+      "id": "trust-b-separation-S3-v9",
+      "channel": "trust_action",
+      "key": "b|separation|S3",
+      "session": "S7-trust",
+      "before": "네, 제가 숨겼습니다. 외도가 아니라 돌봄이었지만, 숨긴 방식은 변명할 수 없습니다.",
+      "after": "네, 제가 숨겼습니다. 외도가 아니라를 돌본 것이었지만, 숨긴 방식은 변명할 수 없습니다.",
+      "reasons": [
+        "아니라 돌봄이 → 아니라를 돌본 것이"
+      ],
+      "hits": [
+        "noun_action"
+      ]
+    },
+    {
+      "id": "trust-b-confidential-S3-v5",
+      "channel": "trust_action",
+      "key": "b|confidential|S3",
+      "session": "S7-trust",
+      "before": "재판관님께는 밝히겠습니다. 외도가 아니라 형네 돌봄이었지만, 숨긴 건 제 선택입니다.",
+      "after": "재판관님께는 밝히겠습니다. 외도가 아니라 형네를 돌본 것이었지만, 숨긴 건 제 선택입니다.",
+      "reasons": [
+        "형네 돌봄이 → 형네를 돌본 것이"
+      ],
+      "hits": [
+        "noun_action"
+      ]
+    },
+    {
+      "id": "mediation-conditional-a-v4",
+      "channel": "mediation",
+      "key": "conditional|a",
+      "session": "S7-trust",
+      "before": "제가 적금 쪽 책임을 듣겠습니다. 다만 남편의 가족 사정 은폐가 먼저였다는 점도 같이 봐주십시오.",
+      "after": "제가 적금 쪽 책임을 듣겠습니다. 다만 남편의 가족 사정을 숨긴 것가 먼저였다는 점도 같이 봐주십시오.",
+      "reasons": [
+        "사정 은폐가 → 사정을 숨긴 것가"
+      ],
+      "hits": [
+        "noun_action"
+      ]
+    },
+    {
+      "id": "mediation-conditional-b-v3",
+      "channel": "mediation",
+      "key": "conditional|b",
+      "session": "S7-trust",
+      "before": "조건을 세우신다면, 제 가족 지원과 제 아내의 위임장 문제를 같은 말로 섞지 말아주십시오.",
+      "after": "조건을 세우신다면, 제 가족을 도운 것과 제 아내의 위임장 문제를 같은 말로 섞지 말아주십시오.",
+      "reasons": [
+        "가족 지원과 → 가족을 도운 것과"
+      ],
+      "hits": [
+        "noun_action"
+      ]
+    },
+    {
+      "id": "contradict-b-1-v2",
+      "channel": "contradict_milestone",
+      "key": "b|1",
+      "session": "S7-trust",
+      "before": "앞서 한 말과 다르게 들렸다면 제 회피 때문입니다. 그건 인정합니다.",
+      "after": "앞서 한 말과 다르게 들렸다면 제를 피한 것 때문입니다. 그건 인정합니다.",
+      "reasons": [
+        "제 회피 → 제를 피한 것"
+      ],
+      "hits": [
+        "noun_action"
+      ]
+    },
+    {
+      "id": "a_primary_fault-v4",
+      "channel": "aftermath",
+      "key": "a_primary_fault",
+      "session": "S8-aftermath",
+      "before": "판결 뒤 박지연에게 남은 건 잃은 돈보다 서명 한 줄의 무게였다. 재판관은 이준호의 회피와 가족 사정 은폐를 짚었지만, 공동 적금을 해지하려고 위임장을 꾸민 선택을 더 무겁게 기록했다. 이준호는 형 문제를 더는 부부 밖에 숨기지 않겠다고 약속했고, 박지연은 사과와 피해 회복 계획을 먼저 내놓아야 했다.",
+      "after": "판결 뒤 박지연에게 남은 건 잃은 돈보다 서명 한 줄의 무게였다. 재판관은 이준호의를 피한 것와 가족 사정을 숨긴 것를 짚었지만, 공동 적금을 해지하려고 위임장을 꾸민 선택을 더 무겁게 기록했다. 이준호는 형 문제를 더는 부부 밖에 숨기지 않겠다고 약속했고, 박지연은 사과와 피해 회복 계획을 먼저 내놓아야 했다.",
+      "reasons": [
+        "이준호의 회피와 → 이준호의를 피한 것와",
+        "사정 은폐를 → 사정을 숨긴 것를"
+      ],
+      "hits": [
+        "noun_action"
+      ]
+    },
+    {
+      "id": "b_primary_fault-v3",
+      "channel": "aftermath",
+      "key": "b_primary_fault",
+      "session": "S8-aftermath",
+      "before": "이 결과에서 재판관은 사건의 시작을 이준호의 침묵과 비자금 은폐로 보았다. 박지연의 적금 문제는 별도 책임으로 남았지만, 이준호가 형 사정과 현금 전달을 계속 숨기며 외도처럼 보이게 만든 점이 더 크게 잡혔다. 그는 뒤늦게 형과 조카 이야기를 모두 꺼냈고, 박지연은 그 설명을 들으면서도 이미 무너진 신뢰 앞에서 쉽게 고개를 들지 못했다.",
+      "after": "이 결과에서 재판관은 사건의 시작을 이준호의 침묵과 비자금을 숨긴 것로 보았다. 박지연의 적금 문제는 별도 책임으로 남았지만, 이준호가 형 사정과 현금 전달을 계속 숨기며 외도처럼 보이게 만든 점이 더 크게 잡혔다. 그는 뒤늦게 형과 조카 이야기를 모두 꺼냈고, 박지연은 그 설명을 들으면서도 이미 무너진 신뢰 앞에서 쉽게 고개를 들지 못했다.",
+      "reasons": [
+        "비자금 은폐 → 비자금을 숨긴 것"
+      ],
+      "hits": [
+        "noun_action"
+      ]
+    },
+    {
+      "id": "shared_fault-v4",
+      "channel": "aftermath",
+      "key": "shared_fault",
+      "session": "S8-aftermath",
+      "before": "한 사람만 피해자라고 부르기 어려운 결말이었다. 이준호의 침묵은 외도 오해를 키웠고, 박지연의 선제행동은 범죄와 손실로 이어졌다. 두 사람은 합의 이혼과 관계 회복 상담을 모두 열어 둔 채, 먼저 형 가족 지원과 공동재산 관리를 문서로 정리하기로 했다.",
+      "after": "한 사람만 피해자라고 부르기 어려운 결말이었다. 이준호의 침묵은 외도 오해를 키웠고, 박지연의 선제행동은 범죄와 손실로 이어졌다. 두 사람은 합의 이혼과 관계 회복 상담을 모두 열어 둔 채, 먼저 형 가족을 도운 것과 공동재산 관리를 문서로 정리하기로 했다.",
+      "reasons": [
+        "가족 지원과 → 가족을 도운 것과"
+      ],
+      "hits": [
+        "noun_action"
+      ]
+    },
+    {
+      "id": "protective_resolution-v3",
+      "channel": "aftermath",
+      "key": "protective_resolution",
+      "session": "S8-aftermath",
+      "before": "재판관은 조카와 형의 사정을 공개 기록에 모두 남기지 않기로 했다. 대신 이준호에게는 가족 지원 내역을 박지연에게 투명하게 설명하게 하고, 박지연에게는 적금 해지와 투자방 손실 회복 절차를 별도로 밟게 했다. 두 사람은 책임을 가볍게 넘기지 않되, 아이의 생활이 더 흔들리지 않도록 절차를 단순화했다.",
+      "after": "재판관은 조카와 형의 사정을 공개 기록에 모두 남기지 않기로 했다. 대신 이준호에게는 가족을 도운 것 내역을 박지연에게 투명하게 설명하게 하고, 박지연에게는 적금 해지와 투자방 손실 회복 절차를 별도로 밟게 했다. 두 사람은 책임을 가볍게 넘기지 않되, 아이의 생활이 더 흔들리지 않도록 절차를 단순화했다.",
+      "reasons": [
+        "가족 지원 → 가족을 도운 것"
+      ],
+      "hits": [
+        "noun_action"
+      ]
+    },
+    {
+      "id": "protective_resolution-v5",
+      "channel": "aftermath",
+      "key": "protective_resolution",
+      "session": "S8-aftermath",
+      "before": "법정은 민감한 가족 사정을 모두 드러내는 대신, 확인된 책임만 남기는 방식을 택했다. 이준호의 현금 전달, 박지연의 적금 해지와 손실은 기록하되 조카의 일상은 보호했다. 부부는 공개 다툼을 더 키우기보다, 피해 회복과 가족 지원 기준을 같은 문서 안에서 다시 세우기로 했다.",
+      "after": "법정은 민감한 가족 사정을 모두 드러내는 대신, 확인된 책임만 남기는 방식을 택했다. 이준호의 현금 전달, 박지연의 적금 해지와 손실은 기록하되 조카의 일상은 보호했다. 부부는 공개 다툼을 더 키우기보다, 피해 회복과 가족을 도운 것 기준을 같은 문서 안에서 다시 세우기로 했다.",
+      "reasons": [
+        "가족 지원 → 가족을 도운 것"
+      ],
+      "hits": [
+        "noun_action"
+      ]
+    },
+    {
+      "id": "procedural_caution-v4",
+      "channel": "aftermath",
+      "key": "procedural_caution",
+      "session": "S8-aftermath",
+      "before": "이 사건은 판결문 한 장으로 끝나지 않았다. 박지연의 서류 조작, 이준호의 현금 전달, 조카 생활 정보가 서로 얽혀 있었기 때문이다. 재판관은 민감한 정보는 봉인하고, 부부에게는 공동재산 관리 기준과 가족 지원 절차를 다시 제출하라고 했다.",
+      "after": "이 사건은 판결문 한 장으로 끝나지 않았다. 박지연의 서류 조작, 이준호의 현금 전달, 조카 생활 정보가 서로 얽혀 있었기 때문이다. 재판관은 민감한 정보는 봉인하고, 부부에게는 공동재산 관리 기준과 가족을 도운 것 절차를 다시 제출하라고 했다.",
+      "reasons": [
+        "가족 지원 → 가족을 도운 것"
+      ],
+      "hits": [
+        "noun_action"
+      ]
+    }
+  ],
+  "skipped": [
+    {
+      "id": "a-d-1-S0-motive-search-v7",
+      "channel": "s1",
+      "text": "재판관님, 새벽 시간대 연락이 이어진 것도 제가 본 기록입니다. 제 마음이 그쪽으로 기운 건 그 이유 때문입니다.",
+      "reasonsSkipped": [
+        "weak_쪽"
+      ]
+    },
+    {
+      "id": "a-d-1-S1-motive-search-v7",
+      "channel": "s1",
+      "text": "재판관님, 그곳이 여러 번 찍힌 기록은 그냥 넘기기 어려웠습니다. 제 마음이 그쪽으로 기운 건 그 이유 때문입니다.",
+      "reasonsSkipped": [
+        "weak_쪽"
+      ]
+    },
+    {
+      "id": "a-d-1-S2-fact-pursuit-v10",
+      "channel": "s1",
+      "text": "재판관님, 저는 답을 못 들을수록 더 나쁜 쪽으로 보게 됐습니다. 제 판단은 그 흔적들에 매여 있었습니다.",
+      "reasonsSkipped": [
+        "weak_쪽"
+      ]
+    },
+    {
+      "id": "a-d-1-S2-motive-search-v7",
+      "channel": "s1",
+      "text": "재판관님, 그 영수증 품목은 제 일상과 맞지 않았습니다. 제 마음이 그쪽으로 기운 건 그 이유 때문입니다.",
+      "reasonsSkipped": [
+        "weak_쪽"
+      ]
+    },
+    {
+      "id": "a-d-1-S2-motive-search-v10",
+      "channel": "s1",
+      "text": "재판관님, 저는 답을 못 들을수록 더 나쁜 쪽으로 보게 됐습니다. 결국 그 두려움이 제 선택을 끌고 갔습니다.",
+      "reasonsSkipped": [
+        "weak_쪽"
+      ]
+    },
+    {
+      "id": "a-d-1-S2-empathy-approach-v10",
+      "channel": "s1",
+      "text": "재판관님, 저는 답을 못 들을수록 더 나쁜 쪽으로 보게 됐습니다. 그래서 작은 단서에도 무너졌습니다.",
+      "reasonsSkipped": [
+        "weak_쪽"
+      ]
+    },
+    {
+      "id": "a-d-1-S3-motive-search-v7",
+      "channel": "s1",
+      "text": "재판관님, 형네 오피스텔을 숨긴 건 오해를 키운 원인이었습니다. 제 마음이 그쪽으로 기운 건 그 이유 때문입니다.",
+      "reasonsSkipped": [
+        "weak_쪽"
+      ]
+    },
+    {
+      "id": "a-d-2-S0-motive-search-v7",
+      "channel": "s1",
+      "text": "재판관님, 그곳 동선과 큰돈 흐름이 같은 시기에 겹쳤습니다. 제 마음이 그쪽으로 기운 건 그 이유 때문입니다.",
+      "reasonsSkipped": [
+        "weak_쪽"
+      ]
+    },
+    {
+      "id": "a-d-2-S1-motive-search-v7",
+      "channel": "s1",
+      "text": "재판관님, 현금으로 뺀 방식이 더 수상하게 느껴졌습니다. 제 마음이 그쪽으로 기운 건 그 이유 때문입니다.",
+      "reasonsSkipped": [
+        "weak_쪽"
+      ]
+    },
+    {
+      "id": "a-d-2-S2-motive-search-v7",
+      "channel": "s1",
+      "text": "재판관님, 개인 돈이라도 배우자를 완전히 배제할 일은 아닙니다. 제 마음이 그쪽으로 기운 건 그 이유 때문입니다.",
+      "reasonsSkipped": [
+        "weak_쪽"
+      ]
+    },
+    {
+      "id": "a-d-2-S3-motive-search-v7",
+      "channel": "s1",
+      "text": "재판관님, 배우자에게 말하지 않고 돈을 움직인 건 분명한 문제입니다. 제 마음이 그쪽으로 기운 건 그 이유 때문입니다.",
+      "reasonsSkipped": [
+        "weak_쪽"
+      ]
+    },
+    {
+      "id": "a-d-2-S4-motive-search-v7",
+      "channel": "s1",
+      "text": "재판관님, 개인 돈이었다고 해도 부부 신뢰 밖에서 움직인 겁니다. 제 마음이 그쪽으로 기운 건 그 이유 때문입니다.",
+      "reasonsSkipped": [
+        "weak_쪽"
+      ]
+    },
+    {
+      "id": "a-h-d3-S0-motive-search-v7",
+      "channel": "s1",
+      "text": "재판관님, 돈의 흐름을 제가 전부 안다는 식으로 보시면 곤란합니다. 제 마음이 그쪽으로 기운 건 그 이유 때문입니다.",
+      "reasonsSkipped": [
+        "weak_쪽"
+      ]
+    },
+    {
+      "id": "a-h-d3-S1-motive-search-v7",
+      "channel": "s1",
+      "text": "재판관님, 돈이 움직인 건 맞지만 전부 제 뜻이었다고는 못 합니다. 제 마음이 그쪽으로 기운 건 그 이유 때문입니다.",
+      "reasonsSkipped": [
+        "weak_쪽"
+      ]
+    },
+    {
+      "id": "a-h-d3-S2-motive-search-v7",
+      "channel": "s1",
+      "text": "재판관님, 배신당했다는 공포가 제 행동을 밀었습니다. 제 마음이 그쪽으로 기운 건 그 이유 때문입니다.",
+      "reasonsSkipped": [
+        "weak_쪽"
+      ]
+    },
+    {
+      "id": "a-h-d3-S3-motive-search-v7",
+      "channel": "s1",
+      "text": "재판관님, 위임장 서명 문제에 제가 일부 손댄 건 맞습니다. 제 마음이 그쪽으로 기운 건 그 이유 때문입니다.",
+      "reasonsSkipped": [
+        "weak_쪽"
+      ]
+    },
+    {
+      "id": "a-h-d3-S4-motive-search-v7",
+      "channel": "s1",
+      "text": "재판관님, 위임장 조작이라는 단어를 듣는 순간 제가 무너졌습니다. 제 마음이 그쪽으로 기운 건 그 이유 때문입니다.",
+      "reasonsSkipped": [
+        "weak_쪽"
+      ]
+    },
+    {
+      "id": "a-h-d4-S0-motive-search-v7",
+      "channel": "s1",
+      "text": "재판관님, 먼저 숨긴 쪽은 제 남편이라고 봅니다. 제 마음이 그쪽으로 기운 건 그 이유 때문입니다.",
+      "reasonsSkipped": [
+        "weak_쪽"
+      ]
+    },
+    {
+      "id": "a-h-d4-S1-motive-search-v7",
+      "channel": "s1",
+      "text": "재판관님, 숨김의 시작은 남편 쪽이었다고 생각합니다. 제 마음이 그쪽으로 기운 건 그 이유 때문입니다.",
+      "reasonsSkipped": [
+        "weak_쪽"
+      ]
+    },
+    {
+      "id": "a-h-d4-S2-motive-search-v7",
+      "channel": "s1",
+      "text": "재판관님, 서로 자기 행동만 예외로 보려 했던 것 같습니다. 제 마음이 그쪽으로 기운 건 그 이유 때문입니다.",
+      "reasonsSkipped": [
+        "weak_쪽"
+      ]
+    },
+    {
+      "id": "a-h-d4-S3-motive-search-v7",
+      "channel": "s1",
+      "text": "재판관님, 계좌를 먼저 본 건 제 쪽이라는 점도 인정합니다. 제 마음이 그쪽으로 기운 건 그 이유 때문입니다.",
+      "reasonsSkipped": [
+        "weak_쪽"
+      ]
+    },
+    {
+      "id": "a-h-d4-S4-motive-search-v7",
+      "channel": "s1",
+      "text": "재판관님, 3,000만 원을 실제로 움직인 건 제 쪽이었습니다. 제 마음이 그쪽으로 기운 건 그 이유 때문입니다.",
+      "reasonsSkipped": [
+        "weak_쪽"
+      ]
+    },
+    {
+      "id": "a-e-1-early-stage1-v1",
+      "channel": "evidence_present",
+      "text": "제가 남편 차에서 영수증 묶음을 찾았습니다. 틴트와 헤어롤이 보여서 딴살림 쪽으로 읽었습니다.",
+      "reasonsSkipped": [
+        "weak_쪽"
+      ]
+    },
+    {
+      "id": "a-e-1-early-stage1-v2",
+      "channel": "evidence_present",
+      "text": "그 자료를 처음 본 사람은 저입니다. 틴트와 헤어롤이 보여서 딴살림 쪽으로 읽었습니다.",
+      "reasonsSkipped": [
+        "weak_쪽"
+      ]
+    },
+    {
+      "id": "a-e-1-early-stage2-v7",
+      "channel": "evidence_present",
+      "text": "같은 흐름이 반복되니, 저는 더 나쁜 쪽으로 읽을 수밖에 없었습니다.",
+      "reasonsSkipped": [
+        "weak_쪽"
+      ]
+    },
+    {
+      "id": "a-e-1-early-stage3-v5",
+      "channel": "evidence_present",
+      "text": "최종 목적까지는 제가 알 수 없었습니다. 그래서 보이는 쪽으로 판단했습니다.",
+      "reasonsSkipped": [
+        "weak_쪽"
+      ]
+    },
+    {
+      "id": "a-e-1-mid-stage1-v1",
+      "channel": "evidence_present",
+      "text": "제가 확인한 건 맞습니다. 틴트와 헤어롤이 보여서 딴살림 쪽으로 읽었습니다.",
+      "reasonsSkipped": [
+        "weak_쪽"
+      ]
+    },
+    {
+      "id": "a-e-1-late-stage1-v1",
+      "channel": "evidence_present",
+      "text": "처음에는 틴트와 헤어롤이 보여서 딴살림 쪽으로 읽었습니다. 지금은 그 책이 단정의 틈을 흔든 것도 맞습니다.",
+      "reasonsSkipped": [
+        "weak_쪽"
+      ]
+    },
+    {
+      "id": "a-e-1-late-stage2-v6",
+      "channel": "evidence_present",
+      "text": "제가 그 맥락을 외도 쪽으로 굳힌 건 맞습니다. 하지만 남편이 왜 샀는지 끝까지 말하지 않은 책임도 남습니다.",
+      "reasonsSkipped": [
+        "weak_쪽"
+      ]
+    },
+    {
+      "id": "a-e-2-early-stage2-v7",
+      "channel": "evidence_present",
+      "text": "같은 흐름이 반복되니, 저는 더 나쁜 쪽으로 읽을 수밖에 없었습니다.",
+      "reasonsSkipped": [
+        "weak_쪽"
+      ]
+    },
+    {
+      "id": "a-e-2-early-stage3-v5",
+      "channel": "evidence_present",
+      "text": "최종 목적까지는 제가 알 수 없었습니다. 그래서 보이는 쪽으로 판단했습니다.",
+      "reasonsSkipped": [
+        "weak_쪽"
+      ]
+    },
+    {
+      "id": "a-e-2-late-stage2-v6",
+      "channel": "evidence_present",
+      "text": "제가 그 맥락을 외도 쪽으로 굳힌 건 맞습니다. 하지만 남편이 장소를 숨긴 책임은 사라지지 않습니다.",
+      "reasonsSkipped": [
+        "weak_쪽"
+      ]
+    },
+    {
+      "id": "a-e-3-early-stage2-v7",
+      "channel": "evidence_present",
+      "text": "같은 흐름이 반복되니, 저는 더 나쁜 쪽으로 읽을 수밖에 없었습니다.",
+      "reasonsSkipped": [
+        "weak_쪽"
+      ]
+    },
+    {
+      "id": "a-e-3-early-stage3-v5",
+      "channel": "evidence_present",
+      "text": "최종 목적까지는 제가 알 수 없었습니다. 그래서 보이는 쪽으로 판단했습니다.",
+      "reasonsSkipped": [
+        "weak_쪽"
+      ]
+    },
+    {
+      "id": "a-e-3-late-stage2-v6",
+      "channel": "evidence_present",
+      "text": "제가 그 맥락을 외도 쪽으로 굳힌 건 맞습니다. 하지만 남편이 상대를 숨긴 책임은 남습니다.",
+      "reasonsSkipped": [
+        "weak_쪽"
+      ]
+    },
+    {
+      "id": "a-e-4-early-stage2-v7",
+      "channel": "evidence_present",
+      "text": "같은 흐름이 반복되니, 저는 더 나쁜 쪽으로 읽을 수밖에 없었습니다.",
+      "reasonsSkipped": [
+        "weak_쪽"
+      ]
+    },
+    {
+      "id": "a-e-4-early-stage3-v5",
+      "channel": "evidence_present",
+      "text": "최종 목적까지는 제가 알 수 없었습니다. 그래서 보이는 쪽으로 판단했습니다.",
+      "reasonsSkipped": [
+        "weak_쪽"
+      ]
+    },
+    {
+      "id": "a-e-4-late-stage2-v6",
+      "channel": "evidence_present",
+      "text": "제가 그 맥락을 외도 쪽으로 굳힌 건 맞습니다. 하지만 이런 문자를 숨긴 남편 책임은 큽니다.",
+      "reasonsSkipped": [
+        "weak_쪽"
+      ]
+    },
+    {
+      "id": "a-e-5-early-stage2-v7",
+      "channel": "evidence_present",
+      "text": "같은 흐름이 반복되니, 저는 더 나쁜 쪽으로 읽을 수밖에 없었습니다.",
+      "reasonsSkipped": [
+        "weak_쪽"
+      ]
+    },
+    {
+      "id": "a-e-5-early-stage3-v5",
+      "channel": "evidence_present",
+      "text": "최종 목적까지는 제가 알 수 없었습니다. 그래서 보이는 쪽으로 판단했습니다.",
+      "reasonsSkipped": [
+        "weak_쪽"
+      ]
+    },
+    {
+      "id": "a-e-5-late-stage2-v6",
+      "channel": "evidence_present",
+      "text": "제가 그 맥락을 외도 쪽으로 굳힌 건 맞습니다. 하지만 배우자에게 말하지 않고 돈을 움직인 책임은 남편에게 있습니다.",
+      "reasonsSkipped": [
+        "weak_쪽"
+      ]
+    },
+    {
+      "id": "a-e-6-mid-request_original-v8",
+      "channel": "s3",
+      "text": "그때는 공동 돈이 남편 쪽으로 사라질까 봐 급하게 움직였습니다.",
+      "reasonsSkipped": [
+        "weak_쪽"
+      ]
+    },
+    {
+      "id": "a-e-7-mid-check_metadata-v8",
+      "channel": "s3",
+      "text": "필체가 제 쪽으로 보이는 이유는 있습니다. 제가 적은 부분이 있으니까요.",
+      "reasonsSkipped": [
+        "weak_쪽"
+      ]
+    },
+    {
+      "id": "dc-4-a-q1-early-v8",
+      "channel": "dossier",
+      "text": "돈을 움직인 이유가 예쁘진 않습니다. 그래도 그때는 살아남는 쪽으로 보였습니다.",
+      "reasonsSkipped": [
+        "weak_쪽"
+      ]
+    },
+    {
+      "id": "dc-4-a-q1-mid-v7",
+      "channel": "dossier",
+      "text": "끝날 결혼이라고 믿었고, 그 믿음이 저를 송금 쪽으로 밀었습니다.",
+      "reasonsSkipped": [
+        "weak_쪽"
+      ]
+    },
+    {
+      "id": "contra-a-d-1-S3-v1",
+      "channel": "contradiction_pursuit",
+      "text": "…맞습니다. 저는 이미 제 남편이 저를 속이고 있다고 믿고 있었습니다. 그래서 모든 흔적이 그쪽으로만 보였습니다.",
+      "reasonsSkipped": [
+        "weak_쪽"
+      ]
+    },
+    {
+      "id": "contra-a-d-1-S4-v3",
+      "channel": "contradiction_pursuit",
+      "text": "제가 끝까지 그쪽으로 본 건 진실보다 제 불안을 붙들기 쉬웠기 때문입니다. 그 점은 인정합니다.",
+      "reasonsSkipped": [
+        "weak_쪽"
+      ]
+    },
+    {
+      "id": "contra-a-d-1-S4-v8",
+      "channel": "contradiction_pursuit",
+      "text": "이제 와서 보면 제가 보고 싶은 쪽으로만 붙든 것도 있습니다. 인정하겠습니다.",
+      "reasonsSkipped": [
+        "weak_쪽"
+      ]
+    },
+    {
+      "id": "contra-a-h-d4-S1-v8",
+      "channel": "contradiction_pursuit",
+      "text": "저는 혼자 결론을 만든 게 아닙니다. 남편이 남긴 빈칸을 제가 나쁜 쪽으로 읽은 겁니다.",
+      "reasonsSkipped": [
+        "weak_쪽"
+      ]
+    },
+    {
+      "id": "contra-a-h-d4-S2-v6",
+      "channel": "contradiction_pursuit",
+      "text": "저도 제 행동을 가볍게 말하려는 건 아닙니다. 다만 시작을 제 쪽으로만 돌리면 틀립니다.",
+      "reasonsSkipped": [
+        "weak_쪽"
+      ]
+    },
+    {
+      "id": "contra-b-d-1-S2-v2",
+      "channel": "contradiction_pursuit",
+      "text": "새벽 전화도 있었습니다. 그런데 그걸 바로 외도 쪽으로 보시면 설명이 잘립니다.",
+      "reasonsSkipped": [
+        "weak_쪽"
+      ]
+    },
+    {
+      "id": "contra-b-d-1-S2-v6",
+      "channel": "contradiction_pursuit",
+      "text": "새벽 연락도 있었습니다. 그런데 그 연락을 바로 외도 쪽으로 보시면 제 설명이 막힙니다.",
+      "reasonsSkipped": [
+        "weak_쪽"
+      ]
+    },
+    {
+      "id": "contra-b-d-1-S3-v8",
+      "channel": "contradiction_pursuit",
+      "text": "제 침묵 때문에 제 아내가 나쁜 쪽으로 본 것도 압니다. 그래도 외도는 아니었습니다.",
+      "reasonsSkipped": [
+        "weak_쪽"
+      ]
+    },
+    {
+      "id": "contra-b-d-2-S3-v3",
+      "channel": "contradiction_pursuit",
+      "text": "처음 설명을 잘랐습니다. 돈은 형을 살리려던 쪽으로 갔습니다. 그 말 꺼내는 것부터 겁났습니다.",
+      "reasonsSkipped": [
+        "weak_쪽"
+      ]
+    },
+    {
+      "id": "contra-b-d-2-S3-v7",
+      "channel": "contradiction_pursuit",
+      "text": "제가 숨긴 돈은 형 쪽으로 갔습니다. 그걸 말하면 시댁 이야기가 바로 터질 것 같았습니다.",
+      "reasonsSkipped": [
+        "weak_쪽"
+      ]
+    },
+    {
+      "id": "contra-b-h-d3-S3-v7",
+      "channel": "contradiction_pursuit",
+      "text": "제가 피한 만큼 아내는 더 나쁜 쪽으로 갔습니다. 그 책임은 제게도 있습니다.",
+      "reasonsSkipped": [
+        "weak_쪽"
+      ]
+    },
+    {
+      "id": "interject-a-h-d4-major-v4",
+      "channel": "interjection",
+      "text": "재판관님, 제가 잘못한 건 맞지만 시작을 제 쪽으로만 돌리면 억울합니다!",
+      "reasonsSkipped": [
+        "weak_쪽"
+      ]
+    },
+    {
+      "id": "trust-a-separation-S2-v3",
+      "channel": "trust_action",
+      "text": "혼자라면 인정하겠습니다. 제가 본 기록을 제일 나쁜 쪽으로 먼저 읽은 것도 있습니다.",
+      "reasonsSkipped": [
+        "weak_쪽"
+      ]
+    },
+    {
+      "id": "trust-a-separation-S3-v4",
+      "channel": "trust_action",
+      "text": "저도 선을 넘었습니다. 남편이 먼저 숨겼다고 믿고, 저도 돈 쪽으로 움직였습니다.",
+      "reasonsSkipped": [
+        "weak_쪽"
+      ]
+    },
+    {
+      "id": "trust-a-confidential-S2-v3",
+      "channel": "trust_action",
+      "text": "별실이라면 인정하겠습니다. 저는 불안한 쪽으로 먼저 맞춰 놓고 남편을 몰았습니다.",
+      "reasonsSkipped": [
+        "weak_쪽"
+      ]
+    },
+    {
+      "id": "trust-a-confidential-S2-v7",
+      "channel": "trust_action",
+      "text": "재판관님께만은 숨기지 않겠습니다. 저는 흔적을 본 뒤 제 쪽으로 이야기를 밀었습니다.",
+      "reasonsSkipped": [
+        "weak_쪽"
+      ]
+    },
+    {
+      "id": "trust-a-immediate-S1-v6",
+      "channel": "trust_action",
+      "text": "지금 묻는다면, 제가 먼저 나쁜 쪽으로 본 건 맞습니다. 하지만 이유는 있었습니다.",
+      "reasonsSkipped": [
+        "weak_쪽"
+      ]
+    },
+    {
+      "id": "trust-b-separation-S1-v8",
+      "channel": "trust_action",
+      "text": "분리된 자리라면 덜 막힙니다. 집안 쪽으로 번질까 봐 제가 계속 멈췄습니다.",
+      "reasonsSkipped": [
+        "weak_쪽"
+      ]
+    },
+    {
+      "id": "trust-b-confidential-S1-v4",
+      "channel": "trust_action",
+      "text": "비공개라면 한 걸음 더 말하겠습니다. 집안 쪽으로 번지는 게 제일 무서웠습니다.",
+      "reasonsSkipped": [
+        "weak_쪽"
+      ]
+    },
+    {
+      "id": "trust-b-confidential-S1-v8",
+      "channel": "trust_action",
+      "text": "재판관님께는 말씀드리겠습니다. 제 아내가 생각하는 쪽으로 간 일은 아닙니다.",
+      "reasonsSkipped": [
+        "weak_쪽"
+      ]
+    },
+    {
+      "id": "trust-b-confidential-S2-v1",
+      "channel": "trust_action",
+      "text": "비공개라면 이유 쪽은 말씀드리겠습니다. 돈도 방문도 같은 쪽으로 이어집니다.",
+      "reasonsSkipped": [
+        "weak_쪽"
+      ]
+    },
+    {
+      "id": "contradict-a-3plus-v3",
+      "channel": "contradict_milestone",
+      "text": "제가 계속 남편 쪽으로만 돌렸습니다. 이제 제 선택도 말하겠습니다.",
+      "reasonsSkipped": [
+        "weak_쪽"
+      ]
+    }
+  ]
+}

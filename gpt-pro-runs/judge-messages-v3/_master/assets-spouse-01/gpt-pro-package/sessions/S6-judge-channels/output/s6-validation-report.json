@@ -1,0 +1,35 @@
+{
+  "validation": "passed",
+  "summary": {
+    "judge_question": {
+      "oldVariants": 48,
+      "newVariants": 240,
+      "addedVariants": 192,
+      "cells": 48
+    },
+    "judge_contradiction": {
+      "oldVariants": 18,
+      "newVariants": 60,
+      "addedVariants": 42,
+      "cells": 12
+    },
+    "judge_evidence_combo": {
+      "newVariants": 120,
+      "addedVariants": 120,
+      "cells": 24
+    },
+    "judge_witness_summon": {
+      "newVariants": 45,
+      "addedVariants": 45,
+      "cells": 9
+    },
+    "totalAddedVariants": 399
+  },
+  "checks": {
+    "judge channels all 5 variants": true,
+    "tone soft/mid/hard applied": true,
+    "dossier evidence combo tags/sourceRefs present": true,
+    "witness hiddenAgenda tags/sourceRefs present": true,
+    "forbidden Korean patterns scan": "passed"
+  }
+}

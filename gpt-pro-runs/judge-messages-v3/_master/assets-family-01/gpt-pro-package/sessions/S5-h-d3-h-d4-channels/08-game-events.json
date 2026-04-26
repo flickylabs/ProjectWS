@@ -1,0 +1,520 @@
+{
+  "contradictions": [
+    {
+      "id": "family-01-contradiction-1",
+      "statementA": "재판관님, 말기 치매였던 어머니가 갑자기 저를 40으로 두겠다고 또렷하게 판단했다는 건 납득하기 어렵습니다.",
+      "statementB": "재판관님, 어머니는 마지막까지 분배 얘기를 하셨고 60 대 40이라는 숫자도 허공에서 떨어진 건 아닙니다.",
+      "options": {
+        "point_out": {
+          "label": "비율다시묻기",
+          "effect": "요양원 말기 상태와 공증 직전 대화가 함께 올라오며, 그 숫자가 어머니 뜻인지 아닌지가 더 날카로워진다."
+        },
+        "let_go": {
+          "label": "분노그대로",
+          "effect": "윤태성의 모욕감이 먼저 판을 밀고 가며, 유서가 만들어진 과정은 뒤로 밀린다."
+        }
+      },
+      "npcReaction": "같은 60 대 40이 한쪽에겐 조작, 다른 쪽에겐 남겨진 뜻으로 맞선다."
+    },
+    {
+      "id": "family-01-contradiction-2",
+      "statementA": "재판관님, 제가 평생 어머니 통장에서 도움받은 줄 알았던 돈이 다 제 동생 돈이었다는 말은 지금도 쉽게 믿기지 않습니다.",
+      "statementB": "재판관님, 어머니 생활비와 저희 형 공장 막을 돈 상당수는 제가 20년 넘게 보낸 돈입니다.",
+      "options": {
+        "point_out": {
+          "label": "송금기록대조",
+          "effect": "어머니 돈으로만 여겨지던 흐름에 윤정후 송금 내역이 겹치며, 누가 집안을 떠받쳤는지 기억이 갈라진다."
+        },
+        "let_go": {
+          "label": "자존심유지",
+          "effect": "윤태성의 자존심이 판을 끌고 가며, 오래 숨은 생활비의 출처는 늦게 열린다."
+        }
+      },
+      "npcReaction": "오래된 송금 출처가 들춰지며, 누가 누구를 떠받쳤는지 설명이 뒤집힌다."
+    }
+  ],
+  "interjections": [
+    {
+      "id": "family-01-interjection-a",
+      "interruptor": "a",
+      "interjectionLine": "정후야, 말기 치매였던 엄마 입으로 네가 듣고 싶은 말 몇 번 나왔다고 그게 다 뜻이 되냐? 엄마 모시고 산 건 나야.",
+      "options": {
+        "allow": {
+          "label": "분노흐르게",
+          "effect": "윤태성이 돌봄과 상속을 한데 묶어 밀어붙이며, 상처 입은 자존심을 전면에 세운다."
+        },
+        "block": {
+          "label": "말끊고정리",
+          "effect": "목소리는 눌리지만, 왜 40이 모욕으로 들렸는지는 더 진하게 남는다."
+        }
+      }
+    },
+    {
+      "id": "family-01-interjection-b",
+      "interruptor": "b",
+      "interjectionLine": "형, 그 돈 엄마 돈 아니었어. 형 공장 막힐 때 들어간 큰돈도 내가 보낸 거야.",
+      "options": {
+        "allow": {
+          "label": "입열게두기",
+          "effect": "담담한 한마디가 형이 믿어 온 생활비의 출처를 흔들기 시작한다."
+        },
+        "block": {
+          "label": "선정리하기",
+          "effect": "윤정후는 다시 입을 다물고, 20년 송금 얘기는 곧장 열리지 않는다."
+        }
+      }
+    }
+  ],
+  "emotionalOutbursts": [
+    {
+      "id": "family-01-outburst-a",
+      "party": "a",
+      "outburstLine": "모시고 산 건 난데 왜 제가 40이어야 해요. 엄마가 정말 그렇게 남겼다면 저는 지난 이십 년을 뭘로 버틴 건지 모르겠어요.",
+      "options": {
+        "press": {
+          "label": "자존심건드리기",
+          "effect": "분노가 흔들린 틈에서 윤태성이 상속을 돌봄의 보상처럼 붙잡아 온 마음까지 따라 나온다."
+        },
+        "calm": {
+          "label": "감정가라앉히기",
+          "effect": "돌봄의 시간과 상속의 모욕감이 분리되며, 윤태성의 상처가 조금 더 또렷해진다."
+        }
+      }
+    },
+    {
+      "id": "family-01-outburst-b",
+      "party": "b",
+      "outburstLine": "형, 나 그거 뺏으려고 한 거 아니야. 형 무너질까 봐 그 종이까지 바꾼 거야… 이제 와서 말하는 나도 비겁해.",
+      "options": {
+        "press": {
+          "label": "이유끝까지",
+          "effect": "억눌러 둔 이유를 더 밀어붙이면, 유서 숫자 뒤에 숨은 가족사가 빠르게 이어진다."
+        },
+        "calm": {
+          "label": "조용히받기",
+          "effect": "울컥한 감정이 가라앉으면서, 왜 자기 몫을 줄였는지 순서대로 말이 붙는다."
+        }
+      }
+    }
+  ],
+  "transitionBeats": [
+    {
+      "id": "family-01-beat-b-d1-s1-s2",
+      "caseId": "family-01",
+      "party": "b",
+      "disputeId": "d-1",
+      "fromState": "S1",
+      "toState": "S2",
+      "primaryBeatType": "evidence_hit",
+      "line": "윤정후는 어머니가 말년에 늘 헷갈렸던 건 아니라며, 적어도 유서를 읽을 때만큼은 무슨 뜻인지 알고 있었다고 한 발 물러난다.",
+      "behaviorHint": "질문이 들어오자 대답 사이 간격이 길어지고 시선이 서류 끝으로 미끄러진다."
+    },
+    {
+      "id": "family-01-beat-b-d1-s2-s3",
+      "caseId": "family-01",
+      "party": "b",
+      "disputeId": "d-1",
+      "fromState": "S2",
+      "toState": "S3",
+      "primaryBeatType": "partial",
+      "line": "윤정후는 어머니께 같은 내용을 여러 번 읽어드렸고 형이 오기 전에 마치려 했다고 담담하게 인정한다.",
+      "behaviorHint": "짧게 끊어 말하다가 방문 횟수 대목에서만 숨을 길게 내쉰다."
+    },
+    {
+      "id": "family-01-beat-b-d2-s2-s3",
+      "caseId": "family-01",
+      "party": "b",
+      "disputeId": "d-2",
+      "fromState": "S2",
+      "toState": "S3",
+      "primaryBeatType": "confession",
+      "line": "윤정후는 원래 90 대 10이던 유서를 60 대 40으로 고쳐 다시 냈다고 인정하면서도, 더 가져가려던 게 아니라 자기 몫을 줄인 거였다고 말한다.",
+      "behaviorHint": "비율을 말할 때는 또렷하지만 마지막 말끝에서 턱이 한 번 굳는다."
+    },
+    {
+      "id": "family-01-beat-a-d3-s1-s2",
+      "caseId": "family-01",
+      "party": "a",
+      "disputeId": "d-3",
+      "fromState": "S1",
+      "toState": "S2",
+      "primaryBeatType": "evidence_hit",
+      "line": "윤태성은 어머니가 준 줄만 알았던 돈 흐름에 윤정후 돈이 오래 섞여 있었다는 얘기가 나오자 처음으로 언성을 낮춘다.",
+      "behaviorHint": "손바닥으로 책상을 치려다 멈추고 손가락 끝만 탁자에 남긴다."
+    },
+    {
+      "id": "family-01-beat-a-d3-s2-s3",
+      "caseId": "family-01",
+      "party": "a",
+      "disputeId": "d-3",
+      "fromState": "S2",
+      "toState": "S3",
+      "primaryBeatType": "evidence_hit",
+      "line": "윤태성은 공장 문 닫기 직전에 들어온 큰돈까지 윤정후 쪽에서 시작됐다는 사실 앞에서, 그동안 어머니가 자신을 살려준 줄만 알았다고 흔들린다.",
+      "behaviorHint": "반박하려고 들이민 턱이 서류를 보는 순간 천천히 뒤로 물러난다."
+    },
+    {
+      "id": "family-01-beat-b-d4-s2-s3",
+      "caseId": "family-01",
+      "party": "b",
+      "disputeId": "d-4",
+      "fromState": "S2",
+      "toState": "S3",
+      "primaryBeatType": "confession",
+      "line": "윤정후는 어머니 일기장을 보고 형이 같은 아버지 자식이 아니라는 걸 오래전에 알았다고, 처음으로 숨겨온 사정을 꺼낸다.",
+      "behaviorHint": "이름 대신 형이라고만 부르며 시선을 정면에서 끝까지 피하지 않는다."
+    },
+    {
+      "id": "family-01-beat-a-d4-s3-s4",
+      "caseId": "family-01",
+      "party": "a",
+      "disputeId": "d-4",
+      "fromState": "S3",
+      "toState": "S4",
+      "primaryBeatType": "emotional",
+      "line": "윤태성은 유서보다 그 사실을 윤정후가 알고 있었다는 데 더 크게 흔들리며, 왜 자신만 빼고 다 알고 있었느냐는 쪽으로 분노를 돌린다.",
+      "behaviorHint": "허리를 앞으로 숙인 채 팔짱을 풀고 무릎 위 손을 세게 쥔다."
+    },
+    {
+      "id": "family-01-beat-b-d5-s4-s5",
+      "caseId": "family-01",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S4",
+      "toState": "S5",
+      "primaryBeatType": "confession",
+      "line": "윤정후는 원래 비율대로 두면 형이 끝까지 파고들고, 그 끝에서 형이 자기 출생을 알게 될까 봐 법정까지 오기 전에 막으려 했다고 끝내 고백한다.",
+      "behaviorHint": "평평하던 목소리가 마지막 문장에서만 갈라지고 눈꺼풀이 천천히 내려앉는다."
+    },
+    {
+      "id": "family-01-beat-a-d5-s4-s5",
+      "caseId": "family-01",
+      "party": "a",
+      "disputeId": "d-5",
+      "fromState": "S4",
+      "toState": "S5",
+      "primaryBeatType": "counter_shift",
+      "line": "윤태성은 유서를 손댄 일은 끝내 용납 못 한다고 밀어붙이면서도, 어머니를 자기 편 증거처럼 붙들고 있었던 쪽이 자신만은 아니었다는 사실까지는 밀어내지 못한다.",
+      "behaviorHint": "비난을 이어가다가 마지막 대목에서 시선이 바닥으로 꺾이고 말속도가 갑자기 늦어진다."
+    },
+    {
+      "id": "family-01-beat-a-d1-s0-s1",
+      "caseId": "family-01",
+      "party": "a",
+      "disputeId": "d-1",
+      "fromState": "S0",
+      "toState": "S1",
+      "primaryBeatType": "evidence_hit",
+      "line": "윤태성은 요양 기록이 앞에 놓이자 어머니가 늘 흐렸다는 말을 조금 거둔다.",
+      "behaviorHint": "굳게 편 손을 접으며 시선이 기록지 날짜에 걸린다."
+    },
+    {
+      "id": "family-01-beat-a-d1-s1-s2",
+      "caseId": "family-01",
+      "party": "a",
+      "disputeId": "d-1",
+      "fromState": "S1",
+      "toState": "S2",
+      "primaryBeatType": "partial",
+      "line": "윤태성은 어머니가 잠깐 또렷했어도 유서 뜻까지 알았던 건 아니라고 버틴다.",
+      "behaviorHint": "턱을 세운 채 숨을 짧게 끊고 손끝으로 책상 모서리를 누른다."
+    },
+    {
+      "id": "family-01-beat-a-d1-s2-s3",
+      "caseId": "family-01",
+      "party": "a",
+      "disputeId": "d-1",
+      "fromState": "S2",
+      "toState": "S3",
+      "primaryBeatType": "counter_shift",
+      "line": "윤태성은 판단이 흐린 어머니 곁에서 윤정후가 말을 골라 넣었을 거라며 방향을 돌린다.",
+      "behaviorHint": "말끝을 세우며 팔꿈치를 탁자에 박고 정면을 노려본다."
+    },
+    {
+      "id": "family-01-beat-a-d1-s3-s4",
+      "caseId": "family-01",
+      "party": "a",
+      "disputeId": "d-1",
+      "fromState": "S3",
+      "toState": "S4",
+      "primaryBeatType": "emotional",
+      "line": "윤태성은 그날의 어머니를 두고 다투는 일 자체가 돌봄의 시간을 모욕한다고 밀어붙인다.",
+      "behaviorHint": "목소리가 굵어지고 쥔 주먹이 책상 위에서 천천히 떨린다."
+    },
+    {
+      "id": "family-01-beat-a-d1-s4-s5",
+      "caseId": "family-01",
+      "party": "a",
+      "disputeId": "d-1",
+      "fromState": "S4",
+      "toState": "S5",
+      "primaryBeatType": "confession",
+      "line": "윤태성은 어머니 상태를 끝까지 본 사람이라는 자부심 때문에 다른 가능성을 밀어냈다고 인정한다.",
+      "behaviorHint": "벌어진 어깨가 조금 내려가고 시선이 손등 위에 멈춘다."
+    },
+    {
+      "id": "family-01-beat-b-d1-s0-s1",
+      "caseId": "family-01",
+      "party": "b",
+      "disputeId": "d-1",
+      "fromState": "S0",
+      "toState": "S1",
+      "primaryBeatType": "evidence_hit",
+      "line": "윤정후는 진료 메모가 나오자 어머니가 늘 흐렸다는 말만은 맞지 않다고 물러선다.",
+      "behaviorHint": "서류를 넘기는 손이 잠시 멈추고 눈꺼풀이 느리게 내려간다."
+    },
+    {
+      "id": "family-01-beat-b-d1-s3-s4",
+      "caseId": "family-01",
+      "party": "b",
+      "disputeId": "d-1",
+      "fromState": "S3",
+      "toState": "S4",
+      "primaryBeatType": "emotional",
+      "line": "윤정후는 형이 오기 전에 끝내려 한 이유를 묻자 그날을 설명하는 말이 처음 흔들린다.",
+      "behaviorHint": "입술을 한 번 누르고 시선을 문 쪽으로 짧게 돌린다."
+    },
+    {
+      "id": "family-01-beat-b-d1-s4-s5",
+      "caseId": "family-01",
+      "party": "b",
+      "disputeId": "d-1",
+      "fromState": "S4",
+      "toState": "S5",
+      "primaryBeatType": "confession",
+      "line": "윤정후는 어머니가 완전히 판단했다기보다 자신이 그 빈틈을 붙잡았다고 끝내 인정한다.",
+      "behaviorHint": "낮은 목소리가 더 작아지고 손가락이 서류 끝을 접는다."
+    },
+    {
+      "id": "family-01-beat-b-d2-s0-s1",
+      "caseId": "family-01",
+      "party": "b",
+      "disputeId": "d-2",
+      "fromState": "S0",
+      "toState": "S1",
+      "primaryBeatType": "evidence_hit",
+      "line": "윤정후는 공증 전 일정표가 나오자 유서 준비에 자신이 관여한 적은 있다고 물러난다.",
+      "behaviorHint": "무표정한 얼굴 아래 목젖이 한 번 움직이고 손이 무릎으로 내려간다."
+    },
+    {
+      "id": "family-01-beat-b-d2-s1-s2",
+      "caseId": "family-01",
+      "party": "b",
+      "disputeId": "d-2",
+      "fromState": "S1",
+      "toState": "S2",
+      "primaryBeatType": "partial",
+      "line": "윤정후는 서류를 준비한 건 맞지만 어머니 뜻을 옮겼을 뿐이라고 선을 긋는다.",
+      "behaviorHint": "대답은 낮고 일정하지만 손톱이 손바닥 안쪽을 가볍게 누른다."
+    },
+    {
+      "id": "family-01-beat-b-d2-s3-s4",
+      "caseId": "family-01",
+      "party": "b",
+      "disputeId": "d-2",
+      "fromState": "S3",
+      "toState": "S4",
+      "primaryBeatType": "emotional",
+      "line": "윤정후는 90 대 10을 60 대 40으로 바꾼 일이 형의 불신만 키웠다는 데 말끝을 잃는다.",
+      "behaviorHint": "시선이 형 쪽으로 가지 못하고 입가가 아주 작게 굳는다."
+    },
+    {
+      "id": "family-01-beat-b-d2-s4-s5",
+      "caseId": "family-01",
+      "party": "b",
+      "disputeId": "d-2",
+      "fromState": "S4",
+      "toState": "S5",
+      "primaryBeatType": "confession",
+      "line": "윤정후는 더 받으려 한 조작이 아니라 형이 버틸 만한 숫자로 고친 일이었다고 털어놓는다.",
+      "behaviorHint": "고개가 조금 숙여지고 마지막 단어에서 숨이 길게 샌다."
+    },
+    {
+      "id": "family-01-beat-b-d3-s0-s1",
+      "caseId": "family-01",
+      "party": "b",
+      "disputeId": "d-3",
+      "fromState": "S0",
+      "toState": "S1",
+      "primaryBeatType": "evidence_hit",
+      "line": "윤정후는 송금 내역이 펼쳐지자 어머니 생활비에 자신의 돈도 섞였다고 인정한다.",
+      "behaviorHint": "등을 의자에 붙인 채 시선만 천천히 내역 위로 내려간다."
+    },
+    {
+      "id": "family-01-beat-b-d3-s1-s2",
+      "caseId": "family-01",
+      "party": "b",
+      "disputeId": "d-3",
+      "fromState": "S1",
+      "toState": "S2",
+      "primaryBeatType": "partial",
+      "line": "윤정후는 그 돈을 드러내려 한 게 아니라 형이 버티는 데 쓰이길 바랐다고 낮게 말한다.",
+      "behaviorHint": "양손을 포개 쥔 채 엄지 끝만 느리게 문지른다."
+    },
+    {
+      "id": "family-01-beat-b-d3-s2-s3",
+      "caseId": "family-01",
+      "party": "b",
+      "disputeId": "d-3",
+      "fromState": "S2",
+      "toState": "S3",
+      "primaryBeatType": "partial",
+      "line": "윤정후는 공장에 들어간 돈까지 자신이 마련했지만 어머니 이름 뒤에 숨겼다고 털어놓는다.",
+      "behaviorHint": "말을 마친 뒤 입을 다물고 책상 아래로 손을 내린다."
+    },
+    {
+      "id": "family-01-beat-b-d3-s3-s4",
+      "caseId": "family-01",
+      "party": "b",
+      "disputeId": "d-3",
+      "fromState": "S3",
+      "toState": "S4",
+      "primaryBeatType": "emotional",
+      "line": "윤정후는 그 사실을 말하면 형이 무너질까 봐 끝까지 어머니 뒤로 물러났다고 설명한다.",
+      "behaviorHint": "평평하던 목소리가 낮아지고 시선이 잠깐 바닥에 닿는다."
+    },
+    {
+      "id": "family-01-beat-b-d3-s4-s5",
+      "caseId": "family-01",
+      "party": "b",
+      "disputeId": "d-3",
+      "fromState": "S4",
+      "toState": "S5",
+      "primaryBeatType": "confession",
+      "line": "윤정후는 생활비와 공장 돈을 감춘 건 형을 속인 일이기도 했다고 조용히 인정한다.",
+      "behaviorHint": "눈을 감았다 뜨는 사이 어깨가 아주 작게 내려앉는다."
+    },
+    {
+      "id": "family-01-beat-b-d4-s0-s1",
+      "caseId": "family-01",
+      "party": "b",
+      "disputeId": "d-4",
+      "fromState": "S0",
+      "toState": "S1",
+      "primaryBeatType": "evidence_hit",
+      "line": "윤정후는 원본 얘기가 나오자 오래 보관한 낡은 기록이 있었다는 점만 인정한다.",
+      "behaviorHint": "눈동자가 잠시 흔들리고 손끝이 주머니 입구를 스친다."
+    },
+    {
+      "id": "family-01-beat-b-d4-s1-s2",
+      "caseId": "family-01",
+      "party": "b",
+      "disputeId": "d-4",
+      "fromState": "S1",
+      "toState": "S2",
+      "primaryBeatType": "partial",
+      "line": "윤정후는 그 기록을 숨긴 건 맞지만 유서와 바로 이어지는 물건은 아니라고 선을 긋는다.",
+      "behaviorHint": "고개를 거의 움직이지 않은 채 손등의 핏줄이 살짝 도드라진다."
+    },
+    {
+      "id": "family-01-beat-b-d4-s3-s4",
+      "caseId": "family-01",
+      "party": "b",
+      "disputeId": "d-4",
+      "fromState": "S3",
+      "toState": "S4",
+      "primaryBeatType": "emotional",
+      "line": "윤정후는 일기장 이야기가 법정에 올라오자 형의 이름을 부르다 멈추고 입술을 닫는다.",
+      "behaviorHint": "시선은 흔들리지 않지만 목소리가 한 박자 늦게 나온다."
+    },
+    {
+      "id": "family-01-beat-b-d4-s4-s5",
+      "caseId": "family-01",
+      "party": "b",
+      "disputeId": "d-4",
+      "fromState": "S4",
+      "toState": "S5",
+      "primaryBeatType": "confession",
+      "line": "윤정후는 일기장으로 알게 된 출생의 틈을 유서 원본보다 먼저 숨기려 했다고 인정한다.",
+      "behaviorHint": "마른침을 삼킨 뒤 손바닥으로 무릎 위 주름을 편다."
+    },
+    {
+      "id": "family-01-beat-a-d5-s0-s1",
+      "caseId": "family-01",
+      "party": "a",
+      "disputeId": "d-5",
+      "fromState": "S0",
+      "toState": "S1",
+      "primaryBeatType": "evidence_hit",
+      "line": "윤태성은 수정 흔적이 제시되자 유서가 온전했다는 말만은 더 밀지 못한다.",
+      "behaviorHint": "목을 앞으로 내밀다가 멈추고 손가락으로 종이를 세게 짚는다."
+    },
+    {
+      "id": "family-01-beat-a-d5-s1-s2",
+      "caseId": "family-01",
+      "party": "a",
+      "disputeId": "d-5",
+      "fromState": "S1",
+      "toState": "S2",
+      "primaryBeatType": "partial",
+      "line": "윤태성은 손댄 흔적은 인정하면서도 그 방향이 자신에게 불리했다고 다시 못 박는다.",
+      "behaviorHint": "미간을 좁힌 채 숨을 거칠게 내쉬고 팔짱을 세게 낀다."
+    },
+    {
+      "id": "family-01-beat-a-d5-s2-s3",
+      "caseId": "family-01",
+      "party": "a",
+      "disputeId": "d-5",
+      "fromState": "S2",
+      "toState": "S3",
+      "primaryBeatType": "counter_shift",
+      "line": "윤태성은 윤정후가 혼자 움직였다는 점을 붙잡고 숫자보다 절차가 문제라고 몰아간다.",
+      "behaviorHint": "의자 끝에 걸터앉아 손바닥으로 책상 가장자리를 누른다."
+    },
+    {
+      "id": "family-01-beat-a-d5-s3-s4",
+      "caseId": "family-01",
+      "party": "a",
+      "disputeId": "d-5",
+      "fromState": "S3",
+      "toState": "S4",
+      "primaryBeatType": "emotional",
+      "line": "윤태성은 60 대 40이든 90 대 10이든 몰래 바꾼 순간 가족은 끝났다고 목소리를 세운다.",
+      "behaviorHint": "입술이 벌어지고 목에 힘줄이 서며 시선이 윤정후에게 꽂힌다."
+    },
+    {
+      "id": "family-01-beat-b-d5-s0-s1",
+      "caseId": "family-01",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S0",
+      "toState": "S1",
+      "primaryBeatType": "evidence_hit",
+      "line": "윤정후는 단독 수정 정황 앞에서 마지막 서류를 혼자 챙긴 사실만 낮게 인정한다.",
+      "behaviorHint": "눈을 깜빡이지 않은 채 손등 위에 얹은 손가락을 굽힌다."
+    },
+    {
+      "id": "family-01-beat-b-d5-s1-s2",
+      "caseId": "family-01",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S1",
+      "toState": "S2",
+      "primaryBeatType": "partial",
+      "line": "윤정후는 혼자 챙긴 건 맞지만 그때는 법정까지 올 일이라고 여기지 않았다고 피한다.",
+      "behaviorHint": "문장 끝을 낮게 떨어뜨리고 시선을 서류 바깥으로 둔다."
+    },
+    {
+      "id": "family-01-beat-b-d5-s2-s3",
+      "caseId": "family-01",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S2",
+      "toState": "S3",
+      "primaryBeatType": "partial",
+      "line": "윤정후는 바뀐 숫자가 자기 쪽에 더 작게 돌아온다는 점을 처음으로 드러낸다.",
+      "behaviorHint": "비율을 말하려다 멈추고 손끝으로 입가를 한 번 누른다."
+    },
+    {
+      "id": "family-01-beat-b-d5-s3-s4",
+      "caseId": "family-01",
+      "party": "b",
+      "disputeId": "d-5",
+      "fromState": "S3",
+      "toState": "S4",
+      "primaryBeatType": "emotional",
+      "line": "윤정후는 형이 출생 문제에 닿을까 봐 숫자를 고쳤다는 말 앞에서 평정이 무너진다.",
+      "behaviorHint": "숨을 들이쉰 뒤 오래 내놓지 못하고 눈가가 잠깐 굳는다."
+    }
+  ]
+}

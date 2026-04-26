@@ -1,0 +1,55 @@
+## system_message 6 keys × 2v = 12 entries
+
+### interrogation|repeat_warning (context=interrogation, eventType=repeat_warning)
+  [sys-interrogation-repeat_warning-v1] (39자)
+    text: "같은 방향의 질문이 반복되고 있습니다. 다른 각도에서 접근해 보십시오."
+    behavior: "(없음)"
+
+  [sys-interrogation-repeat_warning-v2] (47자)
+    text: "반복 질문으로는 새로운 진술을 얻기 어렵습니다. 증거나 다른 질문을 선택해 보십시오."
+    behavior: "(없음)"
+
+### evidence|new_unlock (context=evidence, eventType=new_unlock)
+  [sys-evidence-new_unlock-v1] (32자)
+    text: "새 증거가 열렸습니다. 기존 진술과 함께 대조해 보십시오."
+    behavior: "(없음)"
+
+  [sys-evidence-new_unlock-v2] (42자)
+    text: "확인 가능한 새 자료가 추가되었습니다. 지금까지의 말과 맞는지 살펴보십시오."
+    behavior: "(없음)"
+
+### evidence|trap_notice (context=evidence, eventType=trap_notice)
+  [sys-evidence-trap_notice-v1] (38자)
+    text: "주의: 이 증거는 제시 대상에 따라 다른 반응을 끌어낼 수 있습니다."
+    behavior: "(없음)"
+
+  [sys-evidence-trap_notice-v2] (41자)
+    text: "주의: 같은 증거라도 누구에게 내미느냐에 따라 판세가 달라질 수 있습니다."
+    behavior: "(없음)"
+
+### dossier|challenge_cleared (context=dossier, eventType=challenge_cleared)
+  [sys-dossier-challenge_cleared-v1] (32자)
+    text: "결정적 질문이 열렸습니다. 지금이 핵심을 찌를 기회입니다."
+    behavior: "(없음)"
+
+  [sys-dossier-challenge_cleared-v2] (40자)
+    text: "새 질문이 준비되었습니다. 방금 드러난 사실을 바로 파고들 수 있습니다."
+    behavior: "(없음)"
+
+### witness|new_available (context=witness, eventType=new_available)
+  [sys-witness-new_available-v1] (39자)
+    text: "새 증인을 부를 수 있습니다. 기존 진술과 충돌하는지 확인해 보십시오."
+    behavior: "(없음)"
+
+  [sys-witness-new_available-v2] (38자)
+    text: "증인 진술이 열렸습니다. 말과 물증 사이의 틈을 확인할 수 있습니다."
+    behavior: "(없음)"
+
+### phase|transition (context=phase, eventType=transition)
+  [sys-phase-transition-v1] (41자)
+    text: "새 단계로 넘어갑니다. 지금까지 나온 진술과 증거를 다시 정리해 보십시오."
+    behavior: "(없음)"
+
+  [sys-phase-transition-v2] (39자)
+    text: "국면이 바뀌었습니다. 확보한 단서들을 연결해 다음 질문을 선택하십시오."
+    behavior: "(없음)"

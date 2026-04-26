@@ -1,0 +1,2544 @@
+{
+  "meta": {
+    "generatedAt": "2026-04-26T01:52:06.239Z",
+    "caseId": "spouse-01"
+  },
+  "channelCounts": {
+    "interrogation": 144,
+    "evidence_present": 168,
+    "dossier": 24,
+    "witness": 9,
+    "aftermath": 5,
+    "system_message": 11,
+    "contradiction_pursuit": 32,
+    "interjection": 16,
+    "emotional_overload": 8,
+    "evidence_discovery": 12,
+    "trust_action": 18,
+    "mediation": 8,
+    "judge_question": 48,
+    "judge_contradiction": 12,
+    "judge_evidence_combo": 24,
+    "judge_witness_summon": 9,
+    "rapport_milestone": 6,
+    "contradict_milestone": 6
+  },
+  "variantTotals": {
+    "interrogation": 1440,
+    "evidence_present": 1470,
+    "dossier": 240,
+    "witness": 90,
+    "aftermath": 25,
+    "system_message": 55,
+    "contradiction_pursuit": 320,
+    "interjection": 160,
+    "emotional_overload": 80,
+    "evidence_discovery": 12,
+    "trust_action": 180,
+    "mediation": 80,
+    "judge_question": 240,
+    "judge_contradiction": 60,
+    "judge_evidence_combo": 120,
+    "judge_witness_summon": 45,
+    "rapport_milestone": 30,
+    "contradict_milestone": 30,
+    "_total": 4677
+  },
+  "findings": [
+    {
+      "section": "A.1",
+      "severity": "OK",
+      "title": "interrogation a/d-1/S0~S2 Truth Throttle (90 variants)",
+      "detail": "직접 단어 위반 없음"
+    },
+    {
+      "section": "A.2",
+      "severity": "WARN",
+      "title": "interrogation b/d-2/S3~S5 자백 줄기 (27 samples)",
+      "detail": {
+        "failures": [
+          {
+            "id": "b-d-2-S5-fact-pursuit-v3",
+            "snippet": "…오늘 처음 들었습니다. 그렇게 오래 알고 있었을 줄은 몰랐습니다."
+          },
+          {
+            "id": "b-d-2-S5-motive-search-v2",
+            "snippet": "남편으로는 틀린 선택이었을지 몰라도, 동생으로는… 외면할 수가 없었습니다."
+          }
+        ],
+        "total": 27
+      }
+    },
+    {
+      "section": "A.3",
+      "severity": "OK",
+      "title": "interrogation v6~v10 다양성 (S1 신규)",
+      "detail": "v1~v5 vs v6~v10 trigram-overlap < 0.6 모두 통과 (검사 cells: 6)"
+    },
+    {
+      "section": "A.4",
+      "severity": "INFO",
+      "title": "evidence_present 기존 subjectRole cells 보존",
+      "detail": {
+        "subjectRole_only": 0,
+        "lieBand_only": 0,
+        "both": 168,
+        "neither": 0,
+        "total": 168
+      }
+    },
+    {
+      "section": "A.5",
+      "severity": "INFO",
+      "title": "evidence_present stage cells: 168 (lieBand 차원)",
+      "detail": {
+        "lieBands": [
+          "early",
+          "mid",
+          "late"
+        ],
+        "sample": [
+          {
+            "key": "b|e-1|early|self",
+            "party": "b",
+            "evidenceId": "e-1",
+            "lieBand": "early",
+            "extraKeys": [],
+            "first": "그건... 제가 산 겁니다."
+          },
+          {
+            "key": "b|e-1|mid|self",
+            "party": "b",
+            "evidenceId": "e-1",
+            "lieBand": "mid",
+            "extraKeys": [],
+            "first": "가족한테 필요한 것들이었습니다."
+          },
+          {
+            "key": "b|e-1|late|self",
+            "party": "b",
+            "evidenceId": "e-1",
+            "lieBand": "late",
+            "extraKeys": [],
+            "first": "조카한테 필요한 거 사다 준 겁니다. 참고서는 중학교 2학년 거예요."
+          },
+          {
+            "key": "a|e-1|early|other",
+            "party": "a",
+            "evidenceId": "e-1",
+            "lieBand": "early",
+            "extraKeys": [],
+            "first": "제가 제 남편 차에서 찾은 겁니다. 제 남편이 설명해야 할 일입니다."
+          },
+          {
+            "key": "a|e-1|mid|other",
+            "party": "a",
+            "evidenceId": "e-1",
+            "lieBand": "mid",
+            "extraKeys": [],
+            "first": "틴트, 머리끈... 제가 안 쓰는 물건들입니다. 누구 건지 남편이 답해야 합니다."
+          },
+          {
+            "key": "a|e-1|late|other",
+            "party": "a",
+            "evidenceId": "e-1",
+            "lieBand": "late",
+            "extraKeys": [],
+            "first": "참고서요? 중학교 참고서가 왜 거기 있습니까?"
+          }
+        ]
+      }
+    },
+    {
+      "section": "A.6",
+      "severity": "OK",
+      "title": "dossier dc-1.b.q1 early vs late 차이 (overlap 0.11)",
+      "detail": {
+        "early": "그 일이 집안 쪽 사정인 건 맞습니다. 다만 제 아내가 다시 크게 상처받을까 봐 입을 닫았습니다.",
+        "late": "맞습니다. 외도가 아니라 형과 조카 일이었고, 시댁 불화가 다시 터질까 봐 끝까지 말하지 못했습니다.",
+        "overlap": "0.11"
+      }
+    },
+    {
+      "section": "A.7",
+      "severity": "OK",
+      "title": "w-3 박미라 hiddenAgenda — 오피스텔 무관",
+      "detail": "w-3 3 cells × 10v 모두 \"오피스텔\" 미언급"
+    },
+    {
+      "section": "A.8",
+      "severity": "INFO",
+      "title": "contradiction_pursuit h-d3/h-d4 (16 cells)",
+      "detail": [
+        {
+          "key": "a|h-d3|S1",
+          "party": "a",
+          "disputeId": "h-d3",
+          "lieState": "S1",
+          "variantCount": 10,
+          "first": "그건 그저 절차를 확인한 겁니다. 제가 그 돈을 마음대로 움직였다는 말로 몰리면 억울합니다."
+        },
+        {
+          "key": "a|h-d3|S2",
+          "party": "a",
+          "disputeId": "h-d3",
+          "lieState": "S2",
+          "variantCount": 10,
+          "first": "남편이 그렇게 숨기지 않았다면 저도 그런 판단을 하지 않았을 겁니다. 저는 동의했을 거라 믿었습니다."
+        },
+        {
+          "key": "a|h-d3|S3",
+          "party": "a",
+          "disputeId": "h-d3",
+          "lieState": "S3",
+          "variantCount": 10,
+          "first": "네, 공동 적금 해지에 제가 관여했습니다. 하지만 제 남편이 먼저 집을 흔들었다고 믿었기 때문입니다."
+        },
+        {
+          "key": "a|h-d3|S4",
+          "party": "a",
+          "disputeId": "h-d3",
+          "lieState": "S4",
+          "variantCount": 10,
+          "first": "그렇게 안 했으면 저는 끝장이었습니다! 3,000만 원이 사라지기 전에 제 몫이라도 붙잡아야 했습니다."
+        },
+        {
+          "key": "a|h-d4|S1",
+          "party": "a",
+          "disputeId": "h-d4",
+          "lieState": "S1",
+          "variantCount": 10,
+          "first": "먼저 숨긴 건 제 남편입니다. 제가 나중에 확인한 일을 같은 시작점처럼 보시면 억울합니다."
+        },
+        {
+          "key": "a|h-d4|S2",
+          "party": "a",
+          "disputeId": "h-d4",
+          "lieState": "S2",
+          "variantCount": 10,
+          "first": "계좌를 먼저 본 건 인정합니다. 하지만 그건 남편이 숨기기 시작한 뒤 제 불안이 커졌기 때문입니다."
+        }
+      ]
+    },
+    {
+      "section": "A.9",
+      "severity": "INFO",
+      "title": "interjection 8 / emotional_overload 4 cells (h-d3/h-d4)",
+      "detail": {
+        "interjection": [
+          {
+            "key": "a|h-d3|minor",
+            "party": "a",
+            "sev": "minor",
+            "first": "잠깐만요, 재판관님. 제 남편이 지금 제가 처음부터 서류를 꾸민 사람처럼 말씀하시는데, 그때는 정말 겁이 났습니다."
+          },
+          {
+            "key": "a|h-d3|major",
+            "party": "a",
+            "sev": "major",
+            "first": "재판관님, 저는 그렇게 한 게 아닙니다! 제 남편이 먼저 저를 벼랑 끝으로 몰았습니다!"
+          },
+          {
+            "key": "a|h-d4|minor",
+            "party": "a",
+            "sev": "minor",
+            "first": "잠깐만요, 재판관님. 선후를 말할 때 무엇을 기준으로 먼저인지부터 나눠야 합니다."
+          },
+          {
+            "key": "a|h-d4|major",
+            "party": "a",
+            "sev": "major",
+            "first": "재판관님, 저만 먼저였다는 식으로 들리면 안 됩니다! 남편이 먼저 숨겼습니다!"
+          },
+          {
+            "key": "b|h-d3|minor",
+            "party": "b",
+            "sev": "minor",
+            "first": "잠깐만요, 재판관님. 제가 그 적금 일을 전부 몰랐다는 말은 아닙니다. 다만 정확한 경위는 몰랐습니다."
+          },
+          {
+            "key": "b|h-d3|major",
+            "party": "b",
+            "sev": "major",
+            "first": "재판관님, 저건 제 이름이 걸린 일입니다! 그냥 불안했다고 넘길 수는 없습니다!"
+          },
+          {
+            "key": "b|h-d4|minor",
+            "party": "b",
+            "sev": "minor",
+            "first": "잠깐만요, 재판관님. 제가 먼저 숨긴 건 인정합니다. 그래도 그 뒤의 행동들은 따로 봐야 합니다."
+          },
+          {
+            "key": "b|h-d4|major",
+            "party": "b",
+            "sev": "major",
+            "first": "재판관님, 제가 먼저 숨겼다는 말은 받겠습니다. 그래도 조작까지 같은 무게로 묶으면 안 됩니다!"
+          }
+        ],
+        "overload": [
+          {
+            "key": "a|h-d3",
+            "party": "a",
+            "first": "…더는 말씀 못 드리겠습니다. 지금은 그 서류와 제 손이 같이 떠오릅니다. (두 턴 후) …죄송합니다. 다시 말씀드리겠습니다."
+          },
+          {
+            "key": "a|h-d4",
+            "party": "a",
+            "first": "…순서를 나누자는 말이 제일 무섭습니다. 그러면 제 책임도 선명해집니다. (두 턴 후) …다시 말씀드리겠습니다."
+          },
+          {
+            "key": "b|h-d3",
+            "party": "b",
+            "first": "…그 적금 얘기가 나오면 제 침묵도 같이 떠오릅니다. 잠깐만 멈추겠습니다. (두 턴 후) …계속하겠습니다."
+          },
+          {
+            "key": "b|h-d4",
+            "party": "b",
+            "first": "…제가 먼저 숨겼다는 말이 맞아서 더 답하기 어렵습니다. 잠깐만 멈추겠습니다. (두 턴 후) …계속하겠습니다."
+          }
+        ]
+      }
+    },
+    {
+      "section": "A.10",
+      "severity": "INFO",
+      "title": "trust_action 18 / mediation 8",
+      "detail": {
+        "trust_sample": [
+          {
+            "key": "a|separation|S1",
+            "party": "a",
+            "type": "separation",
+            "state": "S1",
+            "first": "…둘이서만 말씀드리는 거죠? 그러면 제가 왜 그렇게 예민해졌는지는 조금 말씀드릴 수 있습니다."
+          },
+          {
+            "key": "a|separation|S2",
+            "party": "a",
+            "type": "separation",
+            "state": "S2",
+            "first": "이 자리에서는 숨기지 않겠습니다. 제가 본 건 조각이었지만, 그 조각들이 저를 몰아붙였습니다."
+          },
+          {
+            "key": "a|separation|S3",
+            "party": "a",
+            "type": "separation",
+            "state": "S3",
+            "first": "네. 혼자 말씀드리면 더 피하지 않겠습니다. 저는 동선만 본 게 아니라 돈 움직임까지 붙들고 있었습니다."
+          },
+          {
+            "key": "a|confidential|S1",
+            "party": "a",
+            "type": "confidential",
+            "state": "S1",
+            "first": "비공개라면 하나만 말씀드리겠습니다. 저는 그때 이미 평범한 일이 아니라고 느끼고 있었습니다."
+          }
+        ],
+        "mediation": [
+          {
+            "key": "immediate|a",
+            "path": "immediate",
+            "speaker": "a",
+            "variantCount": 10,
+            "first": "지금 정리하셔도 됩니다. 다만 외도 의심과 제가 공동 적금을 움직인 일은 따로 봐주셨으면 합니다."
+          },
+          {
+            "key": "immediate|b",
+            "path": "immediate",
+            "speaker": "b",
+            "variantCount": 10,
+            "first": "저도 지금 결론을 듣겠습니다. 외도는 아니었지만 제가 먼저 숨긴 책임까지 피하지 않겠습니다."
+          },
+          {
+            "key": "conditional|a",
+            "path": "conditional",
+            "speaker": "a",
+            "variantCount": 10,
+            "first": "조건을 나누신다면 따르겠습니다. 남편의 침묵과 제 위임장 문제를 각각의 책임으로 봐주십시오."
+          },
+          {
+            "key": "conditional|b",
+            "path": "conditional",
+            "speaker": "b",
+            "variantCount": 10,
+            "first": "조건부로 가는 건 괜찮습니다. 대신 2,000만 원 전달과 공동 적금 3,000만 원 해지를 각각 따져야 합니다."
+          },
+          {
+            "key": "postpone|a",
+            "path": "postpone",
+            "speaker": "a",
+            "variantCount": 10,
+            "first": "조금 시간을 주시면 정리해서 말하겠습니다. 지금은 남편의 숨김과 제 잘못이 한꺼번에 올라옵니다."
+          },
+          {
+            "key": "postpone|b",
+            "path": "postpone",
+            "speaker": "b",
+            "variantCount": 10,
+            "first": "시간을 두는 건 알겠습니다. 다만 그 사이에 돈의 순서가 흐려지지 않게 해주십시오."
+          },
+          {
+            "key": "fact_first|a",
+            "path": "fact_first",
+            "speaker": "a",
+            "variantCount": 10,
+            "first": "사실부터 가주시면 좋겠습니다. 외도였는지, 비자금이 어디로 갔는지, 적금은 누가 깼는지 순서대로요."
+          },
+          {
+            "key": "fact_first|b",
+            "path": "fact_first",
+            "speaker": "b",
+            "variantCount": 10,
+            "first": "좋습니다. 사실부터 보겠습니다. 외도는 아니었고, 2,000만 원은 형에게 간 돈입니다."
+          }
+        ]
+      }
+    },
+    {
+      "section": "B.11-13",
+      "severity": "INFO",
+      "title": "judge_evidence_combo 24 entries / tones {\"soft\":8,\"mid\":8,\"hard\":8} / dossier {\"dc-1\":3,\"dc-2\":3,\"dc-3\":6,\"dc-4\":6,\"dc-5\":6}",
+      "detail": {
+        "dc-1": {
+          "soft": {
+            "key": "dc-1.b.q1|soft",
+            "first": "이 자료들을 함께 보겠습니다. 이준호 씨, 그 시각 그 장소에 있던 사람이 누구였는지 설명해 주십시오."
+          },
+          "mid": {
+            "key": "dc-1.b.q1|mid",
+            "first": "GPS 기록과 형 문자 스레드가 같은 방향입니다. 이준호 씨, 더 미루지 마십시오."
+          },
+          "hard": {
+            "key": "dc-1.b.q1|hard",
+            "first": "이 조합의 뜻은 분명합니다. 이준호 씨, 지금 답하십시오."
+          }
+        },
+        "dc-2": {
+          "soft": {
+            "key": "dc-2.b.q1|soft",
+            "first": "이 자료들을 함께 보겠습니다. 이준호 씨, 숨긴 이유가 외도가 아니라 시댁 갈등 공포였는지 설명해 주십시오."
+          },
+          "mid": {
+            "key": "dc-2.b.q1|mid",
+            "first": "통화기록과 형 문자 스레드가 같은 방향입니다. 이준호 씨, 더 미루지 마십시오."
+          },
+          "hard": {
+            "key": "dc-2.b.q1|hard",
+            "first": "이 조합의 뜻은 분명합니다. 이준호 씨, 지금 답하십시오."
+          }
+        },
+        "dc-3": {
+          "soft": {
+            "key": "dc-3.b.q1|soft",
+            "first": "이 자료들을 함께 보겠습니다. 이준호 씨, 큰돈을 혼자 움직일 권한이 있었는지 설명해 주십시오."
+          },
+          "mid": {
+            "key": "dc-3.b.q1|mid",
+            "first": "형 문자와 출금 내역이 같은 방향입니다. 이준호 씨, 더 미루지 마십시오."
+          },
+          "hard": {
+            "key": "dc-3.b.q1|hard",
+            "first": "이 조합의 뜻은 분명합니다. 이준호 씨, 지금 답하십시오."
+          }
+        },
+        "dc-4": {
+          "soft": {
+            "key": "dc-4.a.q1|soft",
+            "first": "이 자료들을 함께 보겠습니다. 박지연 씨, 남편분의 진실을 확인하기 전 돈을 먼저 움직인 이유 설명해 주십시오."
+          },
+          "mid": {
+            "key": "dc-4.a.q1|mid",
+            "first": "투자방 카톡과 송금 기록이 같은 방향입니다. 박지연 씨, 더 미루지 마십시오."
+          },
+          "hard": {
+            "key": "dc-4.a.q1|hard",
+            "first": "이 조합의 뜻은 분명합니다. 박지연 씨, 지금 답하십시오."
+          }
+        },
+        "dc-5": {
+          "soft": {
+            "key": "dc-5.b.q1|soft",
+            "first": "이 자료들을 함께 보겠습니다. 이준호 씨, 숨김의 시작과 돈 실행의 순서 설명해 주십시오."
+          },
+          "mid": {
+            "key": "dc-5.b.q1|mid",
+            "first": "출금 내역, 송금 기록, 적금 해지 서류가 같은 방향입니다. 이준호 씨, 더 미루지 마십시오."
+          },
+          "hard": {
+            "key": "dc-5.b.q1|hard",
+            "first": "이 조합의 뜻은 분명합니다. 이준호 씨, 지금 답하십시오."
+          }
+        }
+      }
+    },
+    {
+      "section": "B.14-16",
+      "severity": "OK",
+      "title": "judge_witness_summon 9 entries",
+      "detail": {
+        "samples": {
+          "w-1": {
+            "soft": {
+              "key": "w-1|soft",
+              "first": "오피스텔 경비를 부르겠습니다. 그날의 차량 출입 기록을 확인해 보겠습니다."
+            },
+            "mid": {
+              "key": "w-1|mid",
+              "first": "양측 진술이 갈리는 만큼 경비의 직접 증언이 필요합니다."
+            },
+            "hard": {
+              "key": "w-1|hard",
+              "first": "경비를 즉시 소환합니다. 더는 정황 해석으로만 시간을 보낼 수 없습니다."
+            }
+          },
+          "w-2": {
+            "soft": {
+              "key": "w-2|soft",
+              "first": "은행 직원을 부르겠습니다. 적금 해지 절차가 어떻게 진행됐는지 확인하겠습니다."
+            },
+            "mid": {
+              "key": "w-2|mid",
+              "first": "위임장 절차가 쟁점입니다. 은행 직원의 업무상 기억을 직접 확인하겠습니다."
+            },
+            "hard": {
+              "key": "w-2|hard",
+              "first": "은행 직원을 즉시 소환합니다. 위임장과 해지 절차를 더 흐릴 수 없습니다."
+            }
+          },
+          "w-3": {
+            "soft": {
+              "key": "w-3|soft",
+              "first": "박미라 씨를 부르겠습니다. 박지연 씨와 가까운 사이로 알고 있습니다."
+            },
+            "mid": {
+              "key": "w-3|mid",
+              "first": "박미라 씨가 알고 있는 부분이 있습니다. 직접 확인하겠습니다."
+            },
+            "hard": {
+              "key": "w-3|hard",
+              "first": "박미라 씨, 들어오십시오. 송금 경로에 대한 증언이 필요합니다."
+            }
+          }
+        },
+        "note": "w-3 박미라 오피스텔 미언급"
+      }
+    },
+    {
+      "section": "B.17-19",
+      "severity": "INFO",
+      "title": "rapport_milestone 6 entries (party A: 3, B: 3)",
+      "detail": {
+        "a": [
+          {
+            "threshold": "low_to_mid",
+            "variantCount": 5,
+            "first": "재판관님께 말씀드리는 게 처음보다는 덜 무섭습니다. 제가 다 풀 자신은 없지만…"
+          },
+          {
+            "threshold": "mid_to_high",
+            "variantCount": 5,
+            "first": "재판관님이 책임을 나눠 보신다는 걸 알겠습니다. 그래서 제 쪽 말도 더 정확히 하겠습니다."
+          },
+          {
+            "threshold": "high_to_open",
+            "variantCount": 5,
+            "first": "재판관님께는 끝까지 말씀드리겠습니다. 제가 숨긴 돈 문제도 더는 피하지 않겠습니다."
+          }
+        ],
+        "b": [
+          {
+            "threshold": "low_to_mid",
+            "variantCount": 5,
+            "first": "재판관님이 몰아붙이기만 하지는 않으셔서… 조금은 말씀드릴 수 있을 것 같습니다."
+          },
+          {
+            "threshold": "mid_to_high",
+            "variantCount": 5,
+            "first": "재판관님이 사정과 책임을 따로 보신다면, 저도 더 정확히 말하겠습니다."
+          },
+          {
+            "threshold": "high_to_open",
+            "variantCount": 5,
+            "first": "재판관님이 끝까지 들어주실 거라는 믿음이 생깁니다. 그래서 한 발 더 말씀드리겠습니다."
+          }
+        ]
+      }
+    },
+    {
+      "section": "B.20-22",
+      "severity": "INFO",
+      "title": "contradict_milestone 6 entries",
+      "detail": [
+        {
+          "key": "a|1",
+          "party": "a",
+          "count": "1",
+          "variantCount": 5,
+          "first": "제가 말이 좀 흔들린 건 인정합니다. 다만 그만큼 놀랐다는 것도 봐주셨으면 합니다."
+        },
+        {
+          "key": "a|2",
+          "party": "a",
+          "count": "2",
+          "variantCount": 5,
+          "first": "두 번이나 달라졌다면 제가 피한 부분이 있는 겁니다. 그래도 바로 다 말하기가 무섭습니다."
+        },
+        {
+          "key": "a|3+",
+          "party": "a",
+          "count": "3+",
+          "variantCount": 5,
+          "first": "이 정도면 제가 피하고 있었다는 걸 인정해야 합니다. 제 불리한 부분도 말하겠습니다."
+        },
+        {
+          "key": "b|1",
+          "party": "b",
+          "count": "1",
+          "variantCount": 5,
+          "first": "제가 말을 늦게 바꾼 건 맞습니다. 바로 말할 용기가 없었습니다."
+        },
+        {
+          "key": "b|2",
+          "party": "b",
+          "count": "2",
+          "variantCount": 5,
+          "first": "두 번이나 말을 고쳤다면 제가 숨긴 게 있다는 뜻입니다. 이제 이유를 말하겠습니다."
+        },
+        {
+          "key": "b|3+",
+          "party": "b",
+          "count": "3+",
+          "variantCount": 5,
+          "first": "…제가 계속 흐리고 있다는 거 압니다. 더는 그러지 않겠습니다."
+        }
+      ]
+    },
+    {
+      "section": "B.23-25",
+      "severity": "WARN",
+      "title": "4 채널 잘못 패턴 #6 (9건)",
+      "detail": [
+        {
+          "channel": "judge_witness_summon",
+          "pattern": "부분있다",
+          "id": "judgewit-w-3-mid-v1",
+          "key": "w-3|mid",
+          "hits": [
+            "부분이 있"
+          ],
+          "snippet": "박미라 씨가 알고 있는 부분이 있습니다. 직접 확인하겠습니다."
+        },
+        {
+          "channel": "rapport_milestone",
+          "pattern": "tag_같다",
+          "id": "rapport-a-low_to_mid-v2",
+          "key": "a|low_to_mid",
+          "hits": [
+            "것 같습니다"
+          ],
+          "snippet": "처음엔 제 말도 안 믿으실까 봐 겁났습니다. 지금은 조금 더 말할 수 있을 것 같습니다."
+        },
+        {
+          "channel": "rapport_milestone",
+          "pattern": "tag_같다",
+          "id": "rapport-a-low_to_mid-v4",
+          "key": "a|low_to_mid",
+          "hits": [
+            "것 같습니다"
+          ],
+          "snippet": "아직 무섭습니다. 그래도 여기서는 제가 본 것만 세게 말하지 않아도 될 것 같습니다."
+        },
+        {
+          "channel": "rapport_milestone",
+          "pattern": "tag_같다",
+          "id": "rapport-b-low_to_mid-v1",
+          "key": "b|low_to_mid",
+          "hits": [
+            "것 같습니다"
+          ],
+          "snippet": "재판관님이 몰아붙이기만 하지는 않으셔서… 조금은 말씀드릴 수 있을 것 같습니다."
+        },
+        {
+          "channel": "rapport_milestone",
+          "pattern": "tag_같다",
+          "id": "rapport-b-low_to_mid-v5",
+          "key": "b|low_to_mid",
+          "hits": [
+            "것 같습니다"
+          ],
+          "snippet": "조금 믿어도 될 것 같습니다. 제가 왜 입을 닫았는지부터 말하겠습니다."
+        },
+        {
+          "channel": "rapport_milestone",
+          "pattern": "tag_같다",
+          "id": "rapport-b-mid_to_high-v3",
+          "key": "b|mid_to_high",
+          "hits": [
+            "것 같아"
+          ],
+          "snippet": "끝까지 들어주실 것 같아서 말씀드립니다. 가족 일이라는 말로만 덮지는 않겠습니다."
+        },
+        {
+          "channel": "contradict_milestone",
+          "pattern": "tag_같다",
+          "id": "contradict-a-1-v5",
+          "key": "a|1",
+          "hits": [
+            "것 같습니다"
+          ],
+          "snippet": "말이 정리되지 않았습니다. 겁이 나면 제가 먼저 단정하는 것 같습니다."
+        },
+        {
+          "channel": "contradict_milestone",
+          "pattern": "부분있다",
+          "id": "contradict-a-2-v1",
+          "key": "a|2",
+          "hits": [
+            "부분이 있"
+          ],
+          "snippet": "두 번이나 달라졌다면 제가 피한 부분이 있는 겁니다. 그래도 바로 다 말하기가 무섭습니다."
+        },
+        {
+          "channel": "contradict_milestone",
+          "pattern": "tag_같다",
+          "id": "contradict-a-2-v2",
+          "key": "a|2",
+          "hits": [
+            "것 같습니다"
+          ],
+          "snippet": "제가 제게 유리한 순서로 말한 것 같습니다. 그건 인정하겠습니다."
+        }
+      ]
+    },
+    {
+      "section": "C.26-30",
+      "severity": "INFO",
+      "title": "박지연 victim_cosplay markers — 채널별 분포",
+      "detail": [
+        {
+          "channel": "interrogation",
+          "totalVariants": 720,
+          "markerHits": {
+            "victim_frame": 126,
+            "helplessness": 0,
+            "soft_confession": 25
+          }
+        },
+        {
+          "channel": "evidence_present",
+          "totalVariants": 735,
+          "markerHits": {
+            "victim_frame": 48,
+            "helplessness": 0,
+            "soft_confession": 32
+          }
+        },
+        {
+          "channel": "dossier",
+          "totalVariants": 90,
+          "markerHits": {
+            "victim_frame": 14,
+            "helplessness": 0,
+            "soft_confession": 3
+          }
+        },
+        {
+          "channel": "contradiction_pursuit",
+          "totalVariants": 160,
+          "markerHits": {
+            "victim_frame": 29,
+            "helplessness": 0,
+            "soft_confession": 14
+          }
+        },
+        {
+          "channel": "aftermath",
+          "totalVariants": 25,
+          "markerHits": {
+            "victim_frame": 8,
+            "helplessness": 0,
+            "soft_confession": 0
+          }
+        }
+      ]
+    },
+    {
+      "section": "C.31-35",
+      "severity": "INFO",
+      "title": "이준호 avoidant markers — 채널별 분포",
+      "detail": [
+        {
+          "channel": "interrogation",
+          "totalVariants": 720,
+          "markerHits": {
+            "answer_delay": 174,
+            "partial_scope": 24,
+            "minimize_harm": 5
+          }
+        },
+        {
+          "channel": "evidence_present",
+          "totalVariants": 735,
+          "markerHits": {
+            "answer_delay": 124,
+            "partial_scope": 22,
+            "minimize_harm": 5
+          }
+        },
+        {
+          "channel": "dossier",
+          "totalVariants": 150,
+          "markerHits": {
+            "answer_delay": 29,
+            "partial_scope": 1,
+            "minimize_harm": 4
+          }
+        },
+        {
+          "channel": "contradiction_pursuit",
+          "totalVariants": 160,
+          "markerHits": {
+            "answer_delay": 38,
+            "partial_scope": 11,
+            "minimize_harm": 7
+          }
+        },
+        {
+          "channel": "aftermath",
+          "totalVariants": 25,
+          "markerHits": {
+            "answer_delay": 12,
+            "partial_scope": 0,
+            "minimize_harm": 1
+          }
+        }
+      ]
+    },
+    {
+      "section": "D.36",
+      "severity": "OK",
+      "title": "judge_contradiction 명시 patch (3/3)",
+      "detail": [
+        {
+          "id": "judgec-d-1-soft-v2",
+          "text": "박지연 씨, 처음에는 외도가 확실하다는 주장이었는데 지금은 정황을 그렇게 읽었다는 의견입니다. 판단이 바뀐 이유를 말씀해 주십시오."
+        },
+        {
+          "id": "judgec-d-1-mid-v1",
+          "text": "이준호 씨, 처음에는 장소와 통화의 의미를 흐리셨고 지금은 가족을 돌본 것이라고 입장을 옮기셨습니다. 왜 처음부터 그 이유를 빼셨습니까."
+        },
+        {
+          "id": "judgec-d-2-soft-v1",
+          "text": "이준호 씨, 처음에는 쓰임을 흐리셨는데 지금은 가족을 도운 것이었다고 말씀하십니다. 어느 설명이 공식기록에 남아야 합니까."
+        }
+      ]
+    },
+    {
+      "section": "D.37",
+      "severity": "OK",
+      "title": "judge_question 메인 patch (2/2)",
+      "detail": [
+        {
+          "id": "judgeq-d-1-empathy_approach-4-v1",
+          "text": "이준호 씨, 가족을 지키려 했다는 마음과 아내를 다치게 했다는 죄책감 중 지금 더 무거운 것은 무엇입니까."
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-4-v2",
+          "text": "박지연 씨, 진실을 찾으려 했던 마음과 버림받지 않으려 버틴 마음 중 어느 마음이 더 컸습니까."
+        }
+      ]
+    },
+    {
+      "section": "D.38",
+      "severity": "OK",
+      "title": "interrogation b-h-d3-S5-fact-pursuit-v5",
+      "detail": [
+        {
+          "id": "b-h-d3-S5-fact-pursuit-v5",
+          "text": "제가 숨긴 현금 전달과 가족 사정을 숨긴 것이 먼저였습니다. 적금 해지는 그다음에 터진 일입니다."
+        }
+      ]
+    },
+    {
+      "section": "D.39",
+      "severity": "OK",
+      "title": "명사형 보정 patch 보존",
+      "detail": "두 patch 모두 보존"
+    },
+    {
+      "section": "D.40",
+      "severity": "OK",
+      "title": "system_message 평서체 narrative (11 cells, 55 variants)",
+      "detail": {
+        "samplesByKey": [
+          {
+            "key": "interrogation|repeat_warning",
+            "eventType": "repeat_warning",
+            "variants": [
+              {
+                "id": "sys-interrogation-repeat_warning-v1",
+                "text": "같은 질문이 맴돈다. 다른 틈을 찾아보자."
+              },
+              {
+                "id": "sys-interrogation-repeat_warning-v2",
+                "text": "반복 추궁은 닫힌 문만 두드린다. 방향을 바꿔라."
+              },
+              {
+                "id": "sys-interrogation-repeat_warning-v3",
+                "text": "비슷한 질문이 이어져 진술이 굳어간다."
+              },
+              {
+                "id": "sys-interrogation-repeat_warning-v4",
+                "text": "같은 길은 막혔다. 증거나 동기로 옮겨가자."
+              },
+              {
+                "id": "sys-interrogation-repeat_warning-v5",
+                "text": "되풀이된 질문 앞에서 상대가 더 잠긴다."
+              }
+            ]
+          },
+          {
+            "key": "evidence|new_unlock",
+            "eventType": "new_unlock",
+            "variants": [
+              {
+                "id": "sys-evidence-new_unlock-v1",
+                "text": "새 증거가 열린다. 진술의 순서가 흔들린다."
+              },
+              {
+                "id": "sys-evidence-new_unlock-v2",
+                "text": "새 자료가 손에 들어왔다. 앞선 말을 다시 보자."
+              },
+              {
+                "id": "sys-evidence-new_unlock-v3",
+                "text": "가려진 단서가 올라오며 판이 넓어진다."
+              },
+              {
+                "id": "sys-evidence-new_unlock-v4",
+                "text": "새 기록이 붙었다. 말과 증거를 맞춰볼 때다."
+              },
+              {
+                "id": "sys-evidence-new_unlock-v5",
+                "text": "닫혀 있던 조각이 열리고 다음 질문이 생긴다."
+              }
+            ]
+          },
+          {
+            "key": "evidence|trap_notice",
+            "eventType": "trap_notice",
+            "variants": [
+              {
+                "id": "sys-evidence-trap_notice-v1",
+                "text": "이 증거는 누구에게 내미느냐에 따라 칼끝이 달라진다."
+              },
+              {
+                "id": "sys-evidence-trap_notice-v2",
+                "text": "같은 증거라도 상대가 바뀌면 반응이 갈린다."
+              },
+              {
+                "id": "sys-evidence-trap_notice-v3",
+                "text": "이 자료는 성급히 내밀면 다른 책임을 덮을 수 있다."
+              },
+              {
+                "id": "sys-evidence-trap_notice-v4",
+                "text": "증거의 방향을 고르자. 한쪽 말만 키울 수 있다."
+              },
+              {
+                "id": "sys-evidence-trap_notice-v5",
+                "text": "조심해서 제시하라. 이 증거는 오독의 틈도 품고 있다."
+              }
+            ]
+          },
+          {
+            "key": "dossier|challenge_cleared",
+            "eventType": "challenge_cleared",
+            "variants": [
+              {
+                "id": "sys-dossier-challenge_cleared-v1",
+                "text": "결정적 질문이 열린다. 숨은 이유를 찌를 때다."
+              },
+              {
+                "id": "sys-dossier-challenge_cleared-v2",
+                "text": "맞물린 단서가 새 질문을 밀어 올린다."
+              },
+              {
+                "id": "sys-dossier-challenge_cleared-v3",
+                "text": "도망치던 핵심을 겨눌 질문이 준비된다."
+              },
+              {
+                "id": "sys-dossier-challenge_cleared-v4",
+                "text": "카드의 조건이 맞았다. 이제 정면으로 물을 수 있다."
+              },
+              {
+                "id": "sys-dossier-challenge_cleared-v5",
+                "text": "가려진 층이 열리며 더 깊은 추궁이 가능해진다."
+              }
+            ]
+          },
+          {
+            "key": "witness|new_available",
+            "eventType": "new_available",
+            "variants": [
+              {
+                "id": "sys-witness-new_available-v1",
+                "text": "증인을 부를 수 있다. 말의 빈틈이 밖에서 메워진다."
+              },
+              {
+                "id": "sys-witness-new_available-v2",
+                "text": "새 증인이 열린다. 부부의 말 밖에 있던 장면이 나온다."
+              },
+              {
+                "id": "sys-witness-new_available-v3",
+                "text": "제3자의 기억이 사건의 방향을 흔들 준비를 한다."
+              },
+              {
+                "id": "sys-witness-new_available-v4",
+                "text": "증인 호출이 가능하다. 숨은 사실이 다른 입으로 나온다."
+              },
+              {
+                "id": "sys-witness-new_available-v5",
+                "text": "바깥의 눈이 들어오며 진술의 무게가 달라진다."
+              }
+            ]
+          },
+          {
+            "key": "phase|transition",
+            "eventType": "transition",
+            "variants": [
+              {
+                "id": "sys-phase-transition-v1",
+                "text": "국면이 바뀐다. 흩어진 단서를 다시 엮을 때다."
+              },
+              {
+                "id": "sys-phase-transition-v2",
+                "text": "다음 단계가 열린다. 방금 나온 말이 새 길을 만든다."
+              },
+              {
+                "id": "sys-phase-transition-v3",
+                "text": "판의 중심이 옮겨간다. 질문의 순서도 달라진다."
+              },
+              {
+                "id": "sys-phase-transition-v4",
+                "text": "새 단계로 들어선다. 이전 진술이 다른 뜻을 얻는다."
+              },
+              {
+                "id": "sys-phase-transition-v5",
+                "text": "숨은 축이 올라오며 사건의 결이 바뀐다."
+              }
+            ]
+          },
+          {
+            "key": "interrogation|judge_contradiction_trigger",
+            "eventType": "judge_contradiction_trigger",
+            "variants": [
+              {
+                "id": "sys-interrogation-judge_contradiction_trigger-v1",
+                "text": "양측 진술 사이에 갈라진 지점이 보인다."
+              },
+              {
+                "id": "sys-interrogation-judge_contradiction_trigger-v2",
+                "text": "앞선 말과 지금 말이 어긋나며 재판관이 멈춘다."
+              },
+              {
+                "id": "sys-interrogation-judge_contradiction_trigger-v3",
+                "text": "진술의 틈이 벌어진다. 재판관이 그 지점을 짚는다."
+              },
+              {
+                "id": "sys-interrogation-judge_contradiction_trigger-v4",
+                "text": "말의 방향이 달라졌다. 이제 그 이유를 물을 수 있다."
+              },
+              {
+                "id": "sys-interrogation-judge_contradiction_trigger-v5",
+                "text": "서로 다른 기억이 같은 장면 위에서 충돌한다."
+              }
+            ]
+          },
+          {
+            "key": "evidence|judge_combo_trigger",
+            "eventType": "judge_combo_trigger",
+            "variants": [
+              {
+                "id": "sys-evidence-judge_combo_trigger-v1",
+                "text": "두 증거가 맞물리며 숨은 그림이 앞으로 나온다."
+              },
+              {
+                "id": "sys-evidence-judge_combo_trigger-v2",
+                "text": "따로 있던 기록이 하나의 장면으로 붙는다."
+              },
+              {
+                "id": "sys-evidence-judge_combo_trigger-v3",
+                "text": "증거 두 조각이 겹치자 가려진 순서가 보인다."
+              },
+              {
+                "id": "sys-evidence-judge_combo_trigger-v4",
+                "text": "카드가 맞물리며 사건의 안쪽이 열린다."
+              },
+              {
+                "id": "sys-evidence-judge_combo_trigger-v5",
+                "text": "흩어진 단서가 한 줄로 이어지며 추궁점이 생긴다."
+              }
+            ]
+          },
+          {
+            "key": "witness|judge_summon_trigger",
+            "eventType": "judge_summon_trigger",
+            "variants": [
+              {
+                "id": "sys-witness-judge_summon_trigger-v1",
+                "text": "증인을 불러야 할 지점이 열린다."
+              },
+              {
+                "id": "sys-witness-judge_summon_trigger-v2",
+                "text": "재판관이 바깥의 기억을 법정 안으로 부른다."
+              },
+              {
+                "id": "sys-witness-judge_summon_trigger-v3",
+                "text": "당사자 말만으로는 모자라 증인 쪽 문이 열린다."
+              },
+              {
+                "id": "sys-witness-judge_summon_trigger-v4",
+                "text": "제3자의 장면이 필요해진다. 소환이 가능하다."
+              },
+              {
+                "id": "sys-witness-judge_summon_trigger-v5",
+                "text": "증인 호출로 진술의 빈칸을 메울 수 있다."
+              }
+            ]
+          },
+          {
+            "key": "meta|rapport_milestone_trigger",
+            "eventType": "rapport_milestone_trigger",
+            "variants": [
+              {
+                "id": "sys-meta-rapport_milestone_trigger-v1",
+                "text": "경계가 조금 풀리고 더 깊은 말이 따라붙는다."
+              },
+              {
+                "id": "sys-meta-rapport_milestone_trigger-v2",
+                "text": "재판관을 향한 신뢰가 쌓이며 말문이 넓어진다."
+              },
+              {
+                "id": "sys-meta-rapport_milestone_trigger-v3",
+                "text": "상대의 방어가 내려가고 숨은 이유가 가까워진다."
+              },
+              {
+                "id": "sys-meta-rapport_milestone_trigger-v4",
+                "text": "조심스러운 신뢰가 생기며 고백의 문이 열린다."
+              },
+              {
+                "id": "sys-meta-rapport_milestone_trigger-v5",
+                "text": "날 선 대답 뒤에서 조금 더 솔직한 말이 나온다."
+              }
+            ]
+          },
+          {
+            "key": "meta|emotion_phase_shift_trigger",
+            "eventType": "emotion_phase_shift_trigger",
+            "variants": [
+              {
+                "id": "sys-meta-emotion_phase_shift_trigger-v1",
+                "text": "붙들던 표정이 무너지며 말의 결이 바뀐다."
+              },
+              {
+                "id": "sys-meta-emotion_phase_shift_trigger-v2",
+                "text": "감정이 한계에 닿고 진술의 속도가 흔들린다."
+              },
+              {
+                "id": "sys-meta-emotion_phase_shift_trigger-v3",
+                "text": "버티던 목소리가 꺾이며 다른 말이 새어 나온다."
+              },
+              {
+                "id": "sys-meta-emotion_phase_shift_trigger-v4",
+                "text": "분노 뒤에 있던 두려움이 앞으로 나온다."
+              },
+              {
+                "id": "sys-meta-emotion_phase_shift_trigger-v5",
+                "text": "차갑던 대답이 흔들리고 속내가 드러나기 시작한다."
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "section": "E.41-43",
+      "severity": "OK",
+      "title": "evidence_present 키 충돌 검사",
+      "detail": {
+        "subj_count": 0,
+        "stage_count": 0,
+        "both_count": 168,
+        "total": 168,
+        "keyCollisions": [],
+        "duplicateKeys": []
+      }
+    },
+    {
+      "section": "E.44-46",
+      "severity": "OK",
+      "title": "mediation entries: 8, 베팅 inconsistency 정정 검증",
+      "detail": "베팅 미언급 — d-3 inconsistency 정정 OK"
+    },
+    {
+      "section": "E.47-48",
+      "severity": "INFO",
+      "title": "evidence_discovery 12 cells",
+      "detail": {
+        "count": 12,
+        "sample": [
+          {
+            "key": "b|e-1|probe",
+            "party": "b",
+            "evidenceId": "e-1",
+            "step": "probe",
+            "first": "그날 지출 목록을 보면 생활용품 말고도 다른 물건이 보입니다. 그 부분까지 함께 설명해 주시겠습니까."
+          },
+          {
+            "key": "b|e-1|slip",
+            "party": "b",
+            "evidenceId": "e-1",
+            "step": "slip",
+            "first": "아, 그날은 참고서도… 아닙니다. 그건 지금 말씀드릴 얘기가 아닙니다."
+          },
+          {
+            "key": "b|e-1|capture",
+            "party": "b",
+            "evidenceId": "e-1",
+            "step": "capture",
+            "first": "방금 참고서라고 하셨습니다. 누구를 위한 물건이었는지 분명하게 말씀해 주십시오."
+          }
+        ]
+      }
+    },
+    {
+      "section": "E.49-50",
+      "severity": "OK",
+      "title": "aftermath 5 resultClass — 실명 (박미라/이성호) 미언급",
+      "detail": "5 resultClass × 5v 모두 실명 위반 없음"
+    }
+  ],
+  "A1_sample": [
+    {
+      "key": "a|d-1|S0|fact_pursuit",
+      "id": "a-d-1-S0-fact-pursuit-v1",
+      "text": "블랙박스를 열어봤을 때, 저는 이미 답을 알고 있었습니다. 매일, 같은 시간, 같은 오피스텔. 그래도 아닐 수 있다고, 한 달을 더 참았습니다."
+    },
+    {
+      "key": "a|d-1|S0|fact_pursuit",
+      "id": "a-d-1-S0-fact-pursuit-v2",
+      "text": "퇴근 시간만 되면 같은 곳에서 멈추는 차 기록. 한두 번이면 제가 예민한 거겠죠. 그런데 석 달이었습니다."
+    },
+    {
+      "key": "a|d-1|S0|fact_pursuit",
+      "id": "a-d-1-S0-fact-pursuit-v3",
+      "text": "내비 기록을 맞춰봤습니다. 같은 주소가 반복되는 걸 보는데 손끝이 싸해졌습니다. 그런데도 한번 더 확인했습니다. 세 번째까지."
+    }
+  ],
+  "A2_sample": [
+    {
+      "key": "b|d-2|S3|fact_pursuit",
+      "id": "b-d-2-S3-fact-pursuit-v1",
+      "text": "…형에게 이천만 원을 현금으로 줬습니다. 개인회생 중이라 계좌로는 보낼 수가 없었습니다.",
+      "state": "S3"
+    },
+    {
+      "key": "b|d-2|S3|fact_pursuit",
+      "id": "b-d-2-S3-fact-pursuit-v2",
+      "text": "통장에서 뺀 돈은 제 손을 거쳐 바로 형한테 갔습니다. …현금이어야 했습니다.",
+      "state": "S3"
+    },
+    {
+      "key": "b|d-2|S3|fact_pursuit",
+      "id": "b-d-2-S3-fact-pursuit-v3",
+      "text": "형 계좌로 넣으면 바로 문제가 생기는 상태였습니다. 직접 만나서 건넸습니다.",
+      "state": "S3"
+    },
+    {
+      "key": "b|d-2|S3|motive_search",
+      "id": "b-d-2-S3-motive-search-v1",
+      "text": "형이 빚 독촉에 시달리는데… 제가 가진 게 그것뿐이었습니다.",
+      "state": "S3"
+    },
+    {
+      "key": "b|d-2|S3|motive_search",
+      "id": "b-d-2-S3-motive-search-v2",
+      "text": "손 놓고 있으면 형은 더 아래로 내려갈 것 같았습니다.",
+      "state": "S3"
+    }
+  ],
+  "A3_variantCounts": {
+    "a|d-1|S1": "NOT_FOUND",
+    "b|d-1|S1": "NOT_FOUND",
+    "a|d-2|S1": "NOT_FOUND",
+    "b|h-d3|S1": "NOT_FOUND",
+    "a|h-d4|S1": "NOT_FOUND",
+    "b|h-d4|S1": "NOT_FOUND"
+  },
+  "A4_breakdown": {
+    "subjectRole_only": 0,
+    "lieBand_only": 0,
+    "both": 168,
+    "neither": 0,
+    "total": 168
+  },
+  "A4_subj_sample": [],
+  "A5_count": 168,
+  "A5_lieBands": [
+    "early",
+    "mid",
+    "late"
+  ],
+  "A5_sample": [
+    {
+      "key": "b|e-1|early|self",
+      "party": "b",
+      "evidenceId": "e-1",
+      "lieBand": "early",
+      "extraKeys": [],
+      "first": "그건... 제가 산 겁니다."
+    },
+    {
+      "key": "b|e-1|mid|self",
+      "party": "b",
+      "evidenceId": "e-1",
+      "lieBand": "mid",
+      "extraKeys": [],
+      "first": "가족한테 필요한 것들이었습니다."
+    },
+    {
+      "key": "b|e-1|late|self",
+      "party": "b",
+      "evidenceId": "e-1",
+      "lieBand": "late",
+      "extraKeys": [],
+      "first": "조카한테 필요한 거 사다 준 겁니다. 참고서는 중학교 2학년 거예요."
+    },
+    {
+      "key": "a|e-1|early|other",
+      "party": "a",
+      "evidenceId": "e-1",
+      "lieBand": "early",
+      "extraKeys": [],
+      "first": "제가 제 남편 차에서 찾은 겁니다. 제 남편이 설명해야 할 일입니다."
+    },
+    {
+      "key": "a|e-1|mid|other",
+      "party": "a",
+      "evidenceId": "e-1",
+      "lieBand": "mid",
+      "extraKeys": [],
+      "first": "틴트, 머리끈... 제가 안 쓰는 물건들입니다. 누구 건지 남편이 답해야 합니다."
+    },
+    {
+      "key": "a|e-1|late|other",
+      "party": "a",
+      "evidenceId": "e-1",
+      "lieBand": "late",
+      "extraKeys": [],
+      "first": "참고서요? 중학교 참고서가 왜 거기 있습니까?"
+    }
+  ],
+  "A6_byCard": {
+    "dc-1": {
+      "total": 3,
+      "byBand": {
+        "early": 1,
+        "mid": 1,
+        "late": 1
+      },
+      "byQuestion": {
+        "dc-1.b.q1": 3
+      }
+    },
+    "dc-2": {
+      "total": 3,
+      "byBand": {
+        "early": 1,
+        "mid": 1,
+        "late": 1
+      },
+      "byQuestion": {
+        "dc-2.b.q1": 3
+      }
+    },
+    "dc-3": {
+      "total": 6,
+      "byBand": {
+        "early": 2,
+        "mid": 2,
+        "late": 2
+      },
+      "byQuestion": {
+        "dc-3.b.q1": 3,
+        "dc-3.b.q2": 3
+      }
+    },
+    "dc-4": {
+      "total": 6,
+      "byBand": {
+        "early": 2,
+        "mid": 2,
+        "late": 2
+      },
+      "byQuestion": {
+        "dc-4.a.q1": 3,
+        "dc-4.a.q2": 3
+      }
+    },
+    "dc-5": {
+      "total": 6,
+      "byBand": {
+        "early": 2,
+        "mid": 2,
+        "late": 2
+      },
+      "byQuestion": {
+        "dc-5.b.q1": 3,
+        "dc-5.a.q1": 3
+      }
+    }
+  },
+  "A6_dc1bq1": {
+    "early": "그 일이 집안 쪽 사정인 건 맞습니다. 다만 제 아내가 다시 크게 상처받을까 봐 입을 닫았습니다.",
+    "late": "맞습니다. 외도가 아니라 형과 조카 일이었고, 시댁 불화가 다시 터질까 봐 끝까지 말하지 못했습니다.",
+    "overlap": "0.11"
+  },
+  "A7_witnesses": [
+    {
+      "key": "w-1|vague",
+      "witnessId": "w-1",
+      "witnessName": "오피스텔 경비",
+      "depth": "vague",
+      "variantCount": 10,
+      "first": "그 차 주인분을 본 적은 있습니다. 다만 정확한 호수까지는 제가 확인하지 않습니다."
+    },
+    {
+      "key": "w-1|partial",
+      "witnessId": "w-1",
+      "witnessName": "오피스텔 경비",
+      "depth": "partial",
+      "variantCount": 10,
+      "first": "1주일에 2~3번 정도는 봤습니다. 보통 저녁에 들어와 한동안 머물렀습니다."
+    },
+    {
+      "key": "w-1|full",
+      "witnessId": "w-1",
+      "witnessName": "오피스텔 경비",
+      "depth": "full",
+      "variantCount": 10,
+      "first": "그 층에 여자 혼자 사는 집은 없는 걸로 압니다. 가족이 사는 세대는 있습니다."
+    },
+    {
+      "key": "w-2|vague",
+      "witnessId": "w-2",
+      "witnessName": "은행 직원",
+      "depth": "vague",
+      "variantCount": 10,
+      "first": "그 해지 건은 기억납니다. 다만 자세한 내용은 개인정보라 조심해서 말씀드려야 합니다."
+    },
+    {
+      "key": "w-2|partial",
+      "witnessId": "w-2",
+      "witnessName": "은행 직원",
+      "depth": "partial",
+      "variantCount": 10,
+      "first": "그 서류이 첨부돼 있었습니다. 서명이 조금 낯설었지만 서류 형식은 맞아 보였습니다."
+    },
+    {
+      "key": "w-2|full",
+      "witnessId": "w-2",
+      "witnessName": "은행 직원",
+      "depth": "full",
+      "variantCount": 10,
+      "first": "솔직히 서명 필체가 달라 보였습니다. 그때 본인 확인을 더 했어야 했습니다."
+    },
+    {
+      "key": "w-3|vague",
+      "witnessId": "w-3",
+      "witnessName": "박미라",
+      "depth": "vague",
+      "variantCount": 10,
+      "first": "지연 씨가 많이 불안해한 건 봤습니다. 저는 친구로서 걱정이 됐습니다."
+    },
+    {
+      "key": "w-3|partial",
+      "witnessId": "w-3",
+      "witnessName": "박미라",
+      "depth": "partial",
+      "variantCount": 10,
+      "first": "지연 씨가 남편이 바람이면 자기 돈부터 지키겠다고 했습니다. 제가 아는 투자방 링크를 보냈습니다."
+    },
+    {
+      "key": "w-3|full",
+      "witnessId": "w-3",
+      "witnessName": "박미라",
+      "depth": "full",
+      "variantCount": 10,
+      "first": "투자방 링크는 제가 보냈습니다. 사기인 줄 몰랐지만, 지연 씨를 그 방으로 보낸 건 저입니다."
+    }
+  ],
+  "A8_count": 16,
+  "A8_sample": [
+    {
+      "key": "a|h-d3|S1",
+      "party": "a",
+      "disputeId": "h-d3",
+      "lieState": "S1",
+      "variantCount": 10,
+      "first": "그건 그저 절차를 확인한 겁니다. 제가 그 돈을 마음대로 움직였다는 말로 몰리면 억울합니다."
+    },
+    {
+      "key": "a|h-d3|S2",
+      "party": "a",
+      "disputeId": "h-d3",
+      "lieState": "S2",
+      "variantCount": 10,
+      "first": "남편이 그렇게 숨기지 않았다면 저도 그런 판단을 하지 않았을 겁니다. 저는 동의했을 거라 믿었습니다."
+    },
+    {
+      "key": "a|h-d3|S3",
+      "party": "a",
+      "disputeId": "h-d3",
+      "lieState": "S3",
+      "variantCount": 10,
+      "first": "네, 공동 적금 해지에 제가 관여했습니다. 하지만 제 남편이 먼저 집을 흔들었다고 믿었기 때문입니다."
+    },
+    {
+      "key": "a|h-d3|S4",
+      "party": "a",
+      "disputeId": "h-d3",
+      "lieState": "S4",
+      "variantCount": 10,
+      "first": "그렇게 안 했으면 저는 끝장이었습니다! 3,000만 원이 사라지기 전에 제 몫이라도 붙잡아야 했습니다."
+    },
+    {
+      "key": "a|h-d4|S1",
+      "party": "a",
+      "disputeId": "h-d4",
+      "lieState": "S1",
+      "variantCount": 10,
+      "first": "먼저 숨긴 건 제 남편입니다. 제가 나중에 확인한 일을 같은 시작점처럼 보시면 억울합니다."
+    },
+    {
+      "key": "a|h-d4|S2",
+      "party": "a",
+      "disputeId": "h-d4",
+      "lieState": "S2",
+      "variantCount": 10,
+      "first": "계좌를 먼저 본 건 인정합니다. 하지만 그건 남편이 숨기기 시작한 뒤 제 불안이 커졌기 때문입니다."
+    }
+  ],
+  "A9_inj": [
+    {
+      "key": "a|h-d3|minor",
+      "party": "a",
+      "sev": "minor",
+      "first": "잠깐만요, 재판관님. 제 남편이 지금 제가 처음부터 서류를 꾸민 사람처럼 말씀하시는데, 그때는 정말 겁이 났습니다."
+    },
+    {
+      "key": "a|h-d3|major",
+      "party": "a",
+      "sev": "major",
+      "first": "재판관님, 저는 그렇게 한 게 아닙니다! 제 남편이 먼저 저를 벼랑 끝으로 몰았습니다!"
+    },
+    {
+      "key": "a|h-d4|minor",
+      "party": "a",
+      "sev": "minor",
+      "first": "잠깐만요, 재판관님. 선후를 말할 때 무엇을 기준으로 먼저인지부터 나눠야 합니다."
+    },
+    {
+      "key": "a|h-d4|major",
+      "party": "a",
+      "sev": "major",
+      "first": "재판관님, 저만 먼저였다는 식으로 들리면 안 됩니다! 남편이 먼저 숨겼습니다!"
+    },
+    {
+      "key": "b|h-d3|minor",
+      "party": "b",
+      "sev": "minor",
+      "first": "잠깐만요, 재판관님. 제가 그 적금 일을 전부 몰랐다는 말은 아닙니다. 다만 정확한 경위는 몰랐습니다."
+    },
+    {
+      "key": "b|h-d3|major",
+      "party": "b",
+      "sev": "major",
+      "first": "재판관님, 저건 제 이름이 걸린 일입니다! 그냥 불안했다고 넘길 수는 없습니다!"
+    },
+    {
+      "key": "b|h-d4|minor",
+      "party": "b",
+      "sev": "minor",
+      "first": "잠깐만요, 재판관님. 제가 먼저 숨긴 건 인정합니다. 그래도 그 뒤의 행동들은 따로 봐야 합니다."
+    },
+    {
+      "key": "b|h-d4|major",
+      "party": "b",
+      "sev": "major",
+      "first": "재판관님, 제가 먼저 숨겼다는 말은 받겠습니다. 그래도 조작까지 같은 무게로 묶으면 안 됩니다!"
+    }
+  ],
+  "A9_ovl": [
+    {
+      "key": "a|h-d3",
+      "party": "a",
+      "first": "…더는 말씀 못 드리겠습니다. 지금은 그 서류와 제 손이 같이 떠오릅니다. (두 턴 후) …죄송합니다. 다시 말씀드리겠습니다."
+    },
+    {
+      "key": "a|h-d4",
+      "party": "a",
+      "first": "…순서를 나누자는 말이 제일 무섭습니다. 그러면 제 책임도 선명해집니다. (두 턴 후) …다시 말씀드리겠습니다."
+    },
+    {
+      "key": "b|h-d3",
+      "party": "b",
+      "first": "…그 적금 얘기가 나오면 제 침묵도 같이 떠오릅니다. 잠깐만 멈추겠습니다. (두 턴 후) …계속하겠습니다."
+    },
+    {
+      "key": "b|h-d4",
+      "party": "b",
+      "first": "…제가 먼저 숨겼다는 말이 맞아서 더 답하기 어렵습니다. 잠깐만 멈추겠습니다. (두 턴 후) …계속하겠습니다."
+    }
+  ],
+  "A10_trust_count": 18,
+  "A10_med_count": 8,
+  "A10_trust_sample": [
+    {
+      "key": "a|separation|S1",
+      "party": "a",
+      "type": "separation",
+      "state": "S1",
+      "first": "…둘이서만 말씀드리는 거죠? 그러면 제가 왜 그렇게 예민해졌는지는 조금 말씀드릴 수 있습니다."
+    },
+    {
+      "key": "a|separation|S2",
+      "party": "a",
+      "type": "separation",
+      "state": "S2",
+      "first": "이 자리에서는 숨기지 않겠습니다. 제가 본 건 조각이었지만, 그 조각들이 저를 몰아붙였습니다."
+    },
+    {
+      "key": "a|separation|S3",
+      "party": "a",
+      "type": "separation",
+      "state": "S3",
+      "first": "네. 혼자 말씀드리면 더 피하지 않겠습니다. 저는 동선만 본 게 아니라 돈 움직임까지 붙들고 있었습니다."
+    },
+    {
+      "key": "a|confidential|S1",
+      "party": "a",
+      "type": "confidential",
+      "state": "S1",
+      "first": "비공개라면 하나만 말씀드리겠습니다. 저는 그때 이미 평범한 일이 아니라고 느끼고 있었습니다."
+    }
+  ],
+  "A10_med_all": [
+    {
+      "key": "immediate|a",
+      "path": "immediate",
+      "speaker": "a",
+      "variantCount": 10,
+      "first": "지금 정리하셔도 됩니다. 다만 외도 의심과 제가 공동 적금을 움직인 일은 따로 봐주셨으면 합니다."
+    },
+    {
+      "key": "immediate|b",
+      "path": "immediate",
+      "speaker": "b",
+      "variantCount": 10,
+      "first": "저도 지금 결론을 듣겠습니다. 외도는 아니었지만 제가 먼저 숨긴 책임까지 피하지 않겠습니다."
+    },
+    {
+      "key": "conditional|a",
+      "path": "conditional",
+      "speaker": "a",
+      "variantCount": 10,
+      "first": "조건을 나누신다면 따르겠습니다. 남편의 침묵과 제 위임장 문제를 각각의 책임으로 봐주십시오."
+    },
+    {
+      "key": "conditional|b",
+      "path": "conditional",
+      "speaker": "b",
+      "variantCount": 10,
+      "first": "조건부로 가는 건 괜찮습니다. 대신 2,000만 원 전달과 공동 적금 3,000만 원 해지를 각각 따져야 합니다."
+    },
+    {
+      "key": "postpone|a",
+      "path": "postpone",
+      "speaker": "a",
+      "variantCount": 10,
+      "first": "조금 시간을 주시면 정리해서 말하겠습니다. 지금은 남편의 숨김과 제 잘못이 한꺼번에 올라옵니다."
+    },
+    {
+      "key": "postpone|b",
+      "path": "postpone",
+      "speaker": "b",
+      "variantCount": 10,
+      "first": "시간을 두는 건 알겠습니다. 다만 그 사이에 돈의 순서가 흐려지지 않게 해주십시오."
+    },
+    {
+      "key": "fact_first|a",
+      "path": "fact_first",
+      "speaker": "a",
+      "variantCount": 10,
+      "first": "사실부터 가주시면 좋겠습니다. 외도였는지, 비자금이 어디로 갔는지, 적금은 누가 깼는지 순서대로요."
+    },
+    {
+      "key": "fact_first|b",
+      "path": "fact_first",
+      "speaker": "b",
+      "variantCount": 10,
+      "first": "좋습니다. 사실부터 보겠습니다. 외도는 아니었고, 2,000만 원은 형에게 간 돈입니다."
+    }
+  ],
+  "B11_combo": {
+    "count": 24,
+    "tones": {
+      "soft": 8,
+      "mid": 8,
+      "hard": 8
+    },
+    "dossierIds": {
+      "dc-1": 3,
+      "dc-2": 3,
+      "dc-3": 6,
+      "dc-4": 6,
+      "dc-5": 6
+    },
+    "samples": {
+      "dc-1": {
+        "soft": {
+          "key": "dc-1.b.q1|soft",
+          "first": "이 자료들을 함께 보겠습니다. 이준호 씨, 그 시각 그 장소에 있던 사람이 누구였는지 설명해 주십시오."
+        },
+        "mid": {
+          "key": "dc-1.b.q1|mid",
+          "first": "GPS 기록과 형 문자 스레드가 같은 방향입니다. 이준호 씨, 더 미루지 마십시오."
+        },
+        "hard": {
+          "key": "dc-1.b.q1|hard",
+          "first": "이 조합의 뜻은 분명합니다. 이준호 씨, 지금 답하십시오."
+        }
+      },
+      "dc-2": {
+        "soft": {
+          "key": "dc-2.b.q1|soft",
+          "first": "이 자료들을 함께 보겠습니다. 이준호 씨, 숨긴 이유가 외도가 아니라 시댁 갈등 공포였는지 설명해 주십시오."
+        },
+        "mid": {
+          "key": "dc-2.b.q1|mid",
+          "first": "통화기록과 형 문자 스레드가 같은 방향입니다. 이준호 씨, 더 미루지 마십시오."
+        },
+        "hard": {
+          "key": "dc-2.b.q1|hard",
+          "first": "이 조합의 뜻은 분명합니다. 이준호 씨, 지금 답하십시오."
+        }
+      },
+      "dc-3": {
+        "soft": {
+          "key": "dc-3.b.q1|soft",
+          "first": "이 자료들을 함께 보겠습니다. 이준호 씨, 큰돈을 혼자 움직일 권한이 있었는지 설명해 주십시오."
+        },
+        "mid": {
+          "key": "dc-3.b.q1|mid",
+          "first": "형 문자와 출금 내역이 같은 방향입니다. 이준호 씨, 더 미루지 마십시오."
+        },
+        "hard": {
+          "key": "dc-3.b.q1|hard",
+          "first": "이 조합의 뜻은 분명합니다. 이준호 씨, 지금 답하십시오."
+        }
+      },
+      "dc-4": {
+        "soft": {
+          "key": "dc-4.a.q1|soft",
+          "first": "이 자료들을 함께 보겠습니다. 박지연 씨, 남편분의 진실을 확인하기 전 돈을 먼저 움직인 이유 설명해 주십시오."
+        },
+        "mid": {
+          "key": "dc-4.a.q1|mid",
+          "first": "투자방 카톡과 송금 기록이 같은 방향입니다. 박지연 씨, 더 미루지 마십시오."
+        },
+        "hard": {
+          "key": "dc-4.a.q1|hard",
+          "first": "이 조합의 뜻은 분명합니다. 박지연 씨, 지금 답하십시오."
+        }
+      },
+      "dc-5": {
+        "soft": {
+          "key": "dc-5.b.q1|soft",
+          "first": "이 자료들을 함께 보겠습니다. 이준호 씨, 숨김의 시작과 돈 실행의 순서 설명해 주십시오."
+        },
+        "mid": {
+          "key": "dc-5.b.q1|mid",
+          "first": "출금 내역, 송금 기록, 적금 해지 서류가 같은 방향입니다. 이준호 씨, 더 미루지 마십시오."
+        },
+        "hard": {
+          "key": "dc-5.b.q1|hard",
+          "first": "이 조합의 뜻은 분명합니다. 이준호 씨, 지금 답하십시오."
+        }
+      }
+    }
+  },
+  "B14_summon": {
+    "count": 9,
+    "samples": {
+      "w-1": {
+        "soft": {
+          "key": "w-1|soft",
+          "first": "오피스텔 경비를 부르겠습니다. 그날의 차량 출입 기록을 확인해 보겠습니다."
+        },
+        "mid": {
+          "key": "w-1|mid",
+          "first": "양측 진술이 갈리는 만큼 경비의 직접 증언이 필요합니다."
+        },
+        "hard": {
+          "key": "w-1|hard",
+          "first": "경비를 즉시 소환합니다. 더는 정황 해석으로만 시간을 보낼 수 없습니다."
+        }
+      },
+      "w-2": {
+        "soft": {
+          "key": "w-2|soft",
+          "first": "은행 직원을 부르겠습니다. 적금 해지 절차가 어떻게 진행됐는지 확인하겠습니다."
+        },
+        "mid": {
+          "key": "w-2|mid",
+          "first": "위임장 절차가 쟁점입니다. 은행 직원의 업무상 기억을 직접 확인하겠습니다."
+        },
+        "hard": {
+          "key": "w-2|hard",
+          "first": "은행 직원을 즉시 소환합니다. 위임장과 해지 절차를 더 흐릴 수 없습니다."
+        }
+      },
+      "w-3": {
+        "soft": {
+          "key": "w-3|soft",
+          "first": "박미라 씨를 부르겠습니다. 박지연 씨와 가까운 사이로 알고 있습니다."
+        },
+        "mid": {
+          "key": "w-3|mid",
+          "first": "박미라 씨가 알고 있는 부분이 있습니다. 직접 확인하겠습니다."
+        },
+        "hard": {
+          "key": "w-3|hard",
+          "first": "박미라 씨, 들어오십시오. 송금 경로에 대한 증언이 필요합니다."
+        }
+      }
+    }
+  },
+  "B17_rapport": {
+    "a": [
+      {
+        "threshold": "low_to_mid",
+        "variantCount": 5,
+        "first": "재판관님께 말씀드리는 게 처음보다는 덜 무섭습니다. 제가 다 풀 자신은 없지만…"
+      },
+      {
+        "threshold": "mid_to_high",
+        "variantCount": 5,
+        "first": "재판관님이 책임을 나눠 보신다는 걸 알겠습니다. 그래서 제 쪽 말도 더 정확히 하겠습니다."
+      },
+      {
+        "threshold": "high_to_open",
+        "variantCount": 5,
+        "first": "재판관님께는 끝까지 말씀드리겠습니다. 제가 숨긴 돈 문제도 더는 피하지 않겠습니다."
+      }
+    ],
+    "b": [
+      {
+        "threshold": "low_to_mid",
+        "variantCount": 5,
+        "first": "재판관님이 몰아붙이기만 하지는 않으셔서… 조금은 말씀드릴 수 있을 것 같습니다."
+      },
+      {
+        "threshold": "mid_to_high",
+        "variantCount": 5,
+        "first": "재판관님이 사정과 책임을 따로 보신다면, 저도 더 정확히 말하겠습니다."
+      },
+      {
+        "threshold": "high_to_open",
+        "variantCount": 5,
+        "first": "재판관님이 끝까지 들어주실 거라는 믿음이 생깁니다. 그래서 한 발 더 말씀드리겠습니다."
+      }
+    ]
+  },
+  "B20_contradict": [
+    {
+      "key": "a|1",
+      "party": "a",
+      "count": "1",
+      "variantCount": 5,
+      "first": "제가 말이 좀 흔들린 건 인정합니다. 다만 그만큼 놀랐다는 것도 봐주셨으면 합니다."
+    },
+    {
+      "key": "a|2",
+      "party": "a",
+      "count": "2",
+      "variantCount": 5,
+      "first": "두 번이나 달라졌다면 제가 피한 부분이 있는 겁니다. 그래도 바로 다 말하기가 무섭습니다."
+    },
+    {
+      "key": "a|3+",
+      "party": "a",
+      "count": "3+",
+      "variantCount": 5,
+      "first": "이 정도면 제가 피하고 있었다는 걸 인정해야 합니다. 제 불리한 부분도 말하겠습니다."
+    },
+    {
+      "key": "b|1",
+      "party": "b",
+      "count": "1",
+      "variantCount": 5,
+      "first": "제가 말을 늦게 바꾼 건 맞습니다. 바로 말할 용기가 없었습니다."
+    },
+    {
+      "key": "b|2",
+      "party": "b",
+      "count": "2",
+      "variantCount": 5,
+      "first": "두 번이나 말을 고쳤다면 제가 숨긴 게 있다는 뜻입니다. 이제 이유를 말하겠습니다."
+    },
+    {
+      "key": "b|3+",
+      "party": "b",
+      "count": "3+",
+      "variantCount": 5,
+      "first": "…제가 계속 흐리고 있다는 거 압니다. 더는 그러지 않겠습니다."
+    }
+  ],
+  "B23_weakPattern": [
+    {
+      "channel": "judge_witness_summon",
+      "pattern": "부분있다",
+      "id": "judgewit-w-3-mid-v1",
+      "key": "w-3|mid",
+      "hits": [
+        "부분이 있"
+      ],
+      "snippet": "박미라 씨가 알고 있는 부분이 있습니다. 직접 확인하겠습니다."
+    },
+    {
+      "channel": "rapport_milestone",
+      "pattern": "tag_같다",
+      "id": "rapport-a-low_to_mid-v2",
+      "key": "a|low_to_mid",
+      "hits": [
+        "것 같습니다"
+      ],
+      "snippet": "처음엔 제 말도 안 믿으실까 봐 겁났습니다. 지금은 조금 더 말할 수 있을 것 같습니다."
+    },
+    {
+      "channel": "rapport_milestone",
+      "pattern": "tag_같다",
+      "id": "rapport-a-low_to_mid-v4",
+      "key": "a|low_to_mid",
+      "hits": [
+        "것 같습니다"
+      ],
+      "snippet": "아직 무섭습니다. 그래도 여기서는 제가 본 것만 세게 말하지 않아도 될 것 같습니다."
+    },
+    {
+      "channel": "rapport_milestone",
+      "pattern": "tag_같다",
+      "id": "rapport-b-low_to_mid-v1",
+      "key": "b|low_to_mid",
+      "hits": [
+        "것 같습니다"
+      ],
+      "snippet": "재판관님이 몰아붙이기만 하지는 않으셔서… 조금은 말씀드릴 수 있을 것 같습니다."
+    },
+    {
+      "channel": "rapport_milestone",
+      "pattern": "tag_같다",
+      "id": "rapport-b-low_to_mid-v5",
+      "key": "b|low_to_mid",
+      "hits": [
+        "것 같습니다"
+      ],
+      "snippet": "조금 믿어도 될 것 같습니다. 제가 왜 입을 닫았는지부터 말하겠습니다."
+    },
+    {
+      "channel": "rapport_milestone",
+      "pattern": "tag_같다",
+      "id": "rapport-b-mid_to_high-v3",
+      "key": "b|mid_to_high",
+      "hits": [
+        "것 같아"
+      ],
+      "snippet": "끝까지 들어주실 것 같아서 말씀드립니다. 가족 일이라는 말로만 덮지는 않겠습니다."
+    },
+    {
+      "channel": "contradict_milestone",
+      "pattern": "tag_같다",
+      "id": "contradict-a-1-v5",
+      "key": "a|1",
+      "hits": [
+        "것 같습니다"
+      ],
+      "snippet": "말이 정리되지 않았습니다. 겁이 나면 제가 먼저 단정하는 것 같습니다."
+    },
+    {
+      "channel": "contradict_milestone",
+      "pattern": "부분있다",
+      "id": "contradict-a-2-v1",
+      "key": "a|2",
+      "hits": [
+        "부분이 있"
+      ],
+      "snippet": "두 번이나 달라졌다면 제가 피한 부분이 있는 겁니다. 그래도 바로 다 말하기가 무섭습니다."
+    },
+    {
+      "channel": "contradict_milestone",
+      "pattern": "tag_같다",
+      "id": "contradict-a-2-v2",
+      "key": "a|2",
+      "hits": [
+        "것 같습니다"
+      ],
+      "snippet": "제가 제게 유리한 순서로 말한 것 같습니다. 그건 인정하겠습니다."
+    }
+  ],
+  "C26_victim": [
+    {
+      "channel": "interrogation",
+      "totalVariants": 720,
+      "markerHits": {
+        "victim_frame": 126,
+        "helplessness": 0,
+        "soft_confession": 25
+      }
+    },
+    {
+      "channel": "evidence_present",
+      "totalVariants": 735,
+      "markerHits": {
+        "victim_frame": 48,
+        "helplessness": 0,
+        "soft_confession": 32
+      }
+    },
+    {
+      "channel": "dossier",
+      "totalVariants": 90,
+      "markerHits": {
+        "victim_frame": 14,
+        "helplessness": 0,
+        "soft_confession": 3
+      }
+    },
+    {
+      "channel": "contradiction_pursuit",
+      "totalVariants": 160,
+      "markerHits": {
+        "victim_frame": 29,
+        "helplessness": 0,
+        "soft_confession": 14
+      }
+    },
+    {
+      "channel": "aftermath",
+      "totalVariants": 25,
+      "markerHits": {
+        "victim_frame": 8,
+        "helplessness": 0,
+        "soft_confession": 0
+      }
+    }
+  ],
+  "C31_avoidant": [
+    {
+      "channel": "interrogation",
+      "totalVariants": 720,
+      "markerHits": {
+        "answer_delay": 174,
+        "partial_scope": 24,
+        "minimize_harm": 5
+      }
+    },
+    {
+      "channel": "evidence_present",
+      "totalVariants": 735,
+      "markerHits": {
+        "answer_delay": 124,
+        "partial_scope": 22,
+        "minimize_harm": 5
+      }
+    },
+    {
+      "channel": "dossier",
+      "totalVariants": 150,
+      "markerHits": {
+        "answer_delay": 29,
+        "partial_scope": 1,
+        "minimize_harm": 4
+      }
+    },
+    {
+      "channel": "contradiction_pursuit",
+      "totalVariants": 160,
+      "markerHits": {
+        "answer_delay": 38,
+        "partial_scope": 11,
+        "minimize_harm": 7
+      }
+    },
+    {
+      "channel": "aftermath",
+      "totalVariants": 25,
+      "markerHits": {
+        "answer_delay": 12,
+        "partial_scope": 0,
+        "minimize_harm": 1
+      }
+    }
+  ],
+  "D36_jc": {
+    "totalIds": 60,
+    "found": 3,
+    "expected": 3,
+    "details": [
+      {
+        "id": "judgec-d-1-soft-v2",
+        "text": "박지연 씨, 처음에는 외도가 확실하다는 주장이었는데 지금은 정황을 그렇게 읽었다는 의견입니다. 판단이 바뀐 이유를 말씀해 주십시오."
+      },
+      {
+        "id": "judgec-d-1-mid-v1",
+        "text": "이준호 씨, 처음에는 장소와 통화의 의미를 흐리셨고 지금은 가족을 돌본 것이라고 입장을 옮기셨습니다. 왜 처음부터 그 이유를 빼셨습니까."
+      },
+      {
+        "id": "judgec-d-2-soft-v1",
+        "text": "이준호 씨, 처음에는 쓰임을 흐리셨는데 지금은 가족을 도운 것이었다고 말씀하십니다. 어느 설명이 공식기록에 남아야 합니까."
+      }
+    ]
+  },
+  "D37_jq": [
+    {
+      "id": "judgeq-d-1-empathy_approach-4-v1",
+      "text": "이준호 씨, 가족을 지키려 했다는 마음과 아내를 다치게 했다는 죄책감 중 지금 더 무거운 것은 무엇입니까."
+    },
+    {
+      "id": "judgeq-d-1-empathy_approach-4-v2",
+      "text": "박지연 씨, 진실을 찾으려 했던 마음과 버림받지 않으려 버틴 마음 중 어느 마음이 더 컸습니까."
+    }
+  ],
+  "D38_int": [
+    {
+      "id": "b-h-d3-S5-fact-pursuit-v5",
+      "text": "제가 숨긴 현금 전달과 가족 사정을 숨긴 것이 먼저였습니다. 적금 해지는 그다음에 터진 일입니다."
+    }
+  ],
+  "D39_nominal": {
+    "v1": "이준호 씨, 처음에는 장소와 통화의 의미를 흐리셨고 지금은 가족을 돌본 것이라고 입장을 옮기셨습니다. 왜 처음부터 그 이유를 빼셨습니까.",
+    "v2": "이준호 씨, 처음에는 쓰임을 흐리셨는데 지금은 가족을 도운 것이었다고 말씀하십니다. 어느 설명이 공식기록에 남아야 합니까."
+  },
+  "D40_system": [
+    {
+      "key": "interrogation|repeat_warning",
+      "eventType": "repeat_warning",
+      "variants": [
+        {
+          "id": "sys-interrogation-repeat_warning-v1",
+          "text": "같은 질문이 맴돈다. 다른 틈을 찾아보자."
+        },
+        {
+          "id": "sys-interrogation-repeat_warning-v2",
+          "text": "반복 추궁은 닫힌 문만 두드린다. 방향을 바꿔라."
+        },
+        {
+          "id": "sys-interrogation-repeat_warning-v3",
+          "text": "비슷한 질문이 이어져 진술이 굳어간다."
+        },
+        {
+          "id": "sys-interrogation-repeat_warning-v4",
+          "text": "같은 길은 막혔다. 증거나 동기로 옮겨가자."
+        },
+        {
+          "id": "sys-interrogation-repeat_warning-v5",
+          "text": "되풀이된 질문 앞에서 상대가 더 잠긴다."
+        }
+      ]
+    },
+    {
+      "key": "evidence|new_unlock",
+      "eventType": "new_unlock",
+      "variants": [
+        {
+          "id": "sys-evidence-new_unlock-v1",
+          "text": "새 증거가 열린다. 진술의 순서가 흔들린다."
+        },
+        {
+          "id": "sys-evidence-new_unlock-v2",
+          "text": "새 자료가 손에 들어왔다. 앞선 말을 다시 보자."
+        },
+        {
+          "id": "sys-evidence-new_unlock-v3",
+          "text": "가려진 단서가 올라오며 판이 넓어진다."
+        },
+        {
+          "id": "sys-evidence-new_unlock-v4",
+          "text": "새 기록이 붙었다. 말과 증거를 맞춰볼 때다."
+        },
+        {
+          "id": "sys-evidence-new_unlock-v5",
+          "text": "닫혀 있던 조각이 열리고 다음 질문이 생긴다."
+        }
+      ]
+    },
+    {
+      "key": "evidence|trap_notice",
+      "eventType": "trap_notice",
+      "variants": [
+        {
+          "id": "sys-evidence-trap_notice-v1",
+          "text": "이 증거는 누구에게 내미느냐에 따라 칼끝이 달라진다."
+        },
+        {
+          "id": "sys-evidence-trap_notice-v2",
+          "text": "같은 증거라도 상대가 바뀌면 반응이 갈린다."
+        },
+        {
+          "id": "sys-evidence-trap_notice-v3",
+          "text": "이 자료는 성급히 내밀면 다른 책임을 덮을 수 있다."
+        },
+        {
+          "id": "sys-evidence-trap_notice-v4",
+          "text": "증거의 방향을 고르자. 한쪽 말만 키울 수 있다."
+        },
+        {
+          "id": "sys-evidence-trap_notice-v5",
+          "text": "조심해서 제시하라. 이 증거는 오독의 틈도 품고 있다."
+        }
+      ]
+    },
+    {
+      "key": "dossier|challenge_cleared",
+      "eventType": "challenge_cleared",
+      "variants": [
+        {
+          "id": "sys-dossier-challenge_cleared-v1",
+          "text": "결정적 질문이 열린다. 숨은 이유를 찌를 때다."
+        },
+        {
+          "id": "sys-dossier-challenge_cleared-v2",
+          "text": "맞물린 단서가 새 질문을 밀어 올린다."
+        },
+        {
+          "id": "sys-dossier-challenge_cleared-v3",
+          "text": "도망치던 핵심을 겨눌 질문이 준비된다."
+        },
+        {
+          "id": "sys-dossier-challenge_cleared-v4",
+          "text": "카드의 조건이 맞았다. 이제 정면으로 물을 수 있다."
+        },
+        {
+          "id": "sys-dossier-challenge_cleared-v5",
+          "text": "가려진 층이 열리며 더 깊은 추궁이 가능해진다."
+        }
+      ]
+    },
+    {
+      "key": "witness|new_available",
+      "eventType": "new_available",
+      "variants": [
+        {
+          "id": "sys-witness-new_available-v1",
+          "text": "증인을 부를 수 있다. 말의 빈틈이 밖에서 메워진다."
+        },
+        {
+          "id": "sys-witness-new_available-v2",
+          "text": "새 증인이 열린다. 부부의 말 밖에 있던 장면이 나온다."
+        },
+        {
+          "id": "sys-witness-new_available-v3",
+          "text": "제3자의 기억이 사건의 방향을 흔들 준비를 한다."
+        },
+        {
+          "id": "sys-witness-new_available-v4",
+          "text": "증인 호출이 가능하다. 숨은 사실이 다른 입으로 나온다."
+        },
+        {
+          "id": "sys-witness-new_available-v5",
+          "text": "바깥의 눈이 들어오며 진술의 무게가 달라진다."
+        }
+      ]
+    },
+    {
+      "key": "phase|transition",
+      "eventType": "transition",
+      "variants": [
+        {
+          "id": "sys-phase-transition-v1",
+          "text": "국면이 바뀐다. 흩어진 단서를 다시 엮을 때다."
+        },
+        {
+          "id": "sys-phase-transition-v2",
+          "text": "다음 단계가 열린다. 방금 나온 말이 새 길을 만든다."
+        },
+        {
+          "id": "sys-phase-transition-v3",
+          "text": "판의 중심이 옮겨간다. 질문의 순서도 달라진다."
+        },
+        {
+          "id": "sys-phase-transition-v4",
+          "text": "새 단계로 들어선다. 이전 진술이 다른 뜻을 얻는다."
+        },
+        {
+          "id": "sys-phase-transition-v5",
+          "text": "숨은 축이 올라오며 사건의 결이 바뀐다."
+        }
+      ]
+    },
+    {
+      "key": "interrogation|judge_contradiction_trigger",
+      "eventType": "judge_contradiction_trigger",
+      "variants": [
+        {
+          "id": "sys-interrogation-judge_contradiction_trigger-v1",
+          "text": "양측 진술 사이에 갈라진 지점이 보인다."
+        },
+        {
+          "id": "sys-interrogation-judge_contradiction_trigger-v2",
+          "text": "앞선 말과 지금 말이 어긋나며 재판관이 멈춘다."
+        },
+        {
+          "id": "sys-interrogation-judge_contradiction_trigger-v3",
+          "text": "진술의 틈이 벌어진다. 재판관이 그 지점을 짚는다."
+        },
+        {
+          "id": "sys-interrogation-judge_contradiction_trigger-v4",
+          "text": "말의 방향이 달라졌다. 이제 그 이유를 물을 수 있다."
+        },
+        {
+          "id": "sys-interrogation-judge_contradiction_trigger-v5",
+          "text": "서로 다른 기억이 같은 장면 위에서 충돌한다."
+        }
+      ]
+    },
+    {
+      "key": "evidence|judge_combo_trigger",
+      "eventType": "judge_combo_trigger",
+      "variants": [
+        {
+          "id": "sys-evidence-judge_combo_trigger-v1",
+          "text": "두 증거가 맞물리며 숨은 그림이 앞으로 나온다."
+        },
+        {
+          "id": "sys-evidence-judge_combo_trigger-v2",
+          "text": "따로 있던 기록이 하나의 장면으로 붙는다."
+        },
+        {
+          "id": "sys-evidence-judge_combo_trigger-v3",
+          "text": "증거 두 조각이 겹치자 가려진 순서가 보인다."
+        },
+        {
+          "id": "sys-evidence-judge_combo_trigger-v4",
+          "text": "카드가 맞물리며 사건의 안쪽이 열린다."
+        },
+        {
+          "id": "sys-evidence-judge_combo_trigger-v5",
+          "text": "흩어진 단서가 한 줄로 이어지며 추궁점이 생긴다."
+        }
+      ]
+    },
+    {
+      "key": "witness|judge_summon_trigger",
+      "eventType": "judge_summon_trigger",
+      "variants": [
+        {
+          "id": "sys-witness-judge_summon_trigger-v1",
+          "text": "증인을 불러야 할 지점이 열린다."
+        },
+        {
+          "id": "sys-witness-judge_summon_trigger-v2",
+          "text": "재판관이 바깥의 기억을 법정 안으로 부른다."
+        },
+        {
+          "id": "sys-witness-judge_summon_trigger-v3",
+          "text": "당사자 말만으로는 모자라 증인 쪽 문이 열린다."
+        },
+        {
+          "id": "sys-witness-judge_summon_trigger-v4",
+          "text": "제3자의 장면이 필요해진다. 소환이 가능하다."
+        },
+        {
+          "id": "sys-witness-judge_summon_trigger-v5",
+          "text": "증인 호출로 진술의 빈칸을 메울 수 있다."
+        }
+      ]
+    },
+    {
+      "key": "meta|rapport_milestone_trigger",
+      "eventType": "rapport_milestone_trigger",
+      "variants": [
+        {
+          "id": "sys-meta-rapport_milestone_trigger-v1",
+          "text": "경계가 조금 풀리고 더 깊은 말이 따라붙는다."
+        },
+        {
+          "id": "sys-meta-rapport_milestone_trigger-v2",
+          "text": "재판관을 향한 신뢰가 쌓이며 말문이 넓어진다."
+        },
+        {
+          "id": "sys-meta-rapport_milestone_trigger-v3",
+          "text": "상대의 방어가 내려가고 숨은 이유가 가까워진다."
+        },
+        {
+          "id": "sys-meta-rapport_milestone_trigger-v4",
+          "text": "조심스러운 신뢰가 생기며 고백의 문이 열린다."
+        },
+        {
+          "id": "sys-meta-rapport_milestone_trigger-v5",
+          "text": "날 선 대답 뒤에서 조금 더 솔직한 말이 나온다."
+        }
+      ]
+    },
+    {
+      "key": "meta|emotion_phase_shift_trigger",
+      "eventType": "emotion_phase_shift_trigger",
+      "variants": [
+        {
+          "id": "sys-meta-emotion_phase_shift_trigger-v1",
+          "text": "붙들던 표정이 무너지며 말의 결이 바뀐다."
+        },
+        {
+          "id": "sys-meta-emotion_phase_shift_trigger-v2",
+          "text": "감정이 한계에 닿고 진술의 속도가 흔들린다."
+        },
+        {
+          "id": "sys-meta-emotion_phase_shift_trigger-v3",
+          "text": "버티던 목소리가 꺾이며 다른 말이 새어 나온다."
+        },
+        {
+          "id": "sys-meta-emotion_phase_shift_trigger-v4",
+          "text": "분노 뒤에 있던 두려움이 앞으로 나온다."
+        },
+        {
+          "id": "sys-meta-emotion_phase_shift_trigger-v5",
+          "text": "차갑던 대답이 흔들리고 속내가 드러나기 시작한다."
+        }
+      ]
+    }
+  ],
+  "E41_keys": {
+    "subj_count": 0,
+    "stage_count": 0,
+    "both_count": 168,
+    "total": 168,
+    "keyCollisions": [],
+    "duplicateKeys": []
+  },
+  "E44_mediation": [
+    {
+      "key": "immediate|a",
+      "path": "immediate",
+      "speaker": "a",
+      "variantCount": 10,
+      "first": "지금 정리하셔도 됩니다. 다만 외도 의심과 제가 공동 적금을 움직인 일은 따로 봐주셨으면 합니다."
+    },
+    {
+      "key": "immediate|b",
+      "path": "immediate",
+      "speaker": "b",
+      "variantCount": 10,
+      "first": "저도 지금 결론을 듣겠습니다. 외도는 아니었지만 제가 먼저 숨긴 책임까지 피하지 않겠습니다."
+    },
+    {
+      "key": "conditional|a",
+      "path": "conditional",
+      "speaker": "a",
+      "variantCount": 10,
+      "first": "조건을 나누신다면 따르겠습니다. 남편의 침묵과 제 위임장 문제를 각각의 책임으로 봐주십시오."
+    },
+    {
+      "key": "conditional|b",
+      "path": "conditional",
+      "speaker": "b",
+      "variantCount": 10,
+      "first": "조건부로 가는 건 괜찮습니다. 대신 2,000만 원 전달과 공동 적금 3,000만 원 해지를 각각 따져야 합니다."
+    },
+    {
+      "key": "postpone|a",
+      "path": "postpone",
+      "speaker": "a",
+      "variantCount": 10,
+      "first": "조금 시간을 주시면 정리해서 말하겠습니다. 지금은 남편의 숨김과 제 잘못이 한꺼번에 올라옵니다."
+    },
+    {
+      "key": "postpone|b",
+      "path": "postpone",
+      "speaker": "b",
+      "variantCount": 10,
+      "first": "시간을 두는 건 알겠습니다. 다만 그 사이에 돈의 순서가 흐려지지 않게 해주십시오."
+    },
+    {
+      "key": "fact_first|a",
+      "path": "fact_first",
+      "speaker": "a",
+      "variantCount": 10,
+      "first": "사실부터 가주시면 좋겠습니다. 외도였는지, 비자금이 어디로 갔는지, 적금은 누가 깼는지 순서대로요."
+    },
+    {
+      "key": "fact_first|b",
+      "path": "fact_first",
+      "speaker": "b",
+      "variantCount": 10,
+      "first": "좋습니다. 사실부터 보겠습니다. 외도는 아니었고, 2,000만 원은 형에게 간 돈입니다."
+    }
+  ],
+  "E47_discovery": {
+    "count": 12,
+    "sample": [
+      {
+        "key": "b|e-1|probe",
+        "party": "b",
+        "evidenceId": "e-1",
+        "step": "probe",
+        "first": "그날 지출 목록을 보면 생활용품 말고도 다른 물건이 보입니다. 그 부분까지 함께 설명해 주시겠습니까."
+      },
+      {
+        "key": "b|e-1|slip",
+        "party": "b",
+        "evidenceId": "e-1",
+        "step": "slip",
+        "first": "아, 그날은 참고서도… 아닙니다. 그건 지금 말씀드릴 얘기가 아닙니다."
+      },
+      {
+        "key": "b|e-1|capture",
+        "party": "b",
+        "evidenceId": "e-1",
+        "step": "capture",
+        "first": "방금 참고서라고 하셨습니다. 누구를 위한 물건이었는지 분명하게 말씀해 주십시오."
+      }
+    ]
+  },
+  "E49_aftermath": [
+    {
+      "key": "a_primary_fault",
+      "resultClass": "a_primary_fault",
+      "variantCount": 5,
+      "first": "판결 뒤 박지연은 오래 고개를 들지 못했다. 이준호의 숨김이 가벼운 잘못은 아니었지만, 재판관은 위임장 조작과 투자 사기 송금을 더 무겁게 보았다. 이준호는 형과 조카 이야기를 더는 숨기지 않겠다고 했고, 박지연은 잃은 돈보다 먼저 무너진 신뢰를 어떻게 감당할지 마주하게 되었다."
+    },
+    {
+      "key": "b_primary_fault",
+      "resultClass": "b_primary_fault",
+      "variantCount": 5,
+      "first": "재판관은 이준호가 비자금과 형 문제, 2,000만원 출금을 계속 숨긴 점을 더 큰 파열로 판단했다. 박지연의 위임장 조작은 명백한 잘못이었지만, 그 이전부터 이어진 침묵이 가정을 무너뜨렸다고 본 것이다. 판결 뒤 이준호는 처음으로 형과 조카의 사정을 모두 설명했고, 박지연은 울음을 삼키며 그 말을 들었다."
+    },
+    {
+      "key": "shared_fault",
+      "resultClass": "shared_fault",
+      "variantCount": 5,
+      "first": "두 사람은 각자 다른 방식으로 먼저 선을 넘었다. 이준호는 숨기고, 박지연은 들여다보고, 결국 둘은 돈으로 서로를 벌했다. 사라진 5,000만원보다 무겁게 남은 것은 서로의 말보다 기록을 더 믿게 된 결혼의 흔적이었다."
+    },
+    {
+      "key": "protective_resolution",
+      "resultClass": "protective_resolution",
+      "variantCount": 5,
+      "first": "재판관은 승패보다 회복을 먼저 말했다. 형과 조카 문제는 더는 비밀로 둘 수 없고, 투자 사기 피해도 부부가 함께 수습해야 할 일이라고 했다. 법정을 나서는 두 사람 사이엔 여전히 서늘함이 남았지만, 처음으로 같은 방향을 봐야 한다는 말 앞에서는 둘 다 오래 침묵했다."
+    },
+    {
+      "key": "procedural_caution",
+      "resultClass": "procedural_caution",
+      "variantCount": 5,
+      "first": "재판관은 위임장 조작이 관계 다툼으로 덮일 수 없는 범죄라고 분명히 경고했다. 동시에 이준호의 침묵 역시 박지연을 벼랑 끝으로 몰았다는 점을 짚으며, 처벌과 별개로 관계 회복의 문은 닫지 않았다. 두 사람은 각자 잘못을 인정하는 서류보다 먼저, 서로에게 설명해야 할 말을 떠안고 돌아갔다."
+    }
+  ]
+}

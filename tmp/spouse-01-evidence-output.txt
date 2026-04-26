@@ -1,0 +1,282 @@
+=== evidence_present 전수 매트릭스 ===
+  key (42종): [a|e-1|early|other, a|e-1|late|other, a|e-1|mid|other, a|e-2|early|other, a|e-2|late|other, a|e-2|mid|other, a|e-3|early|other, a|e-3|late|other, a|e-3|mid|other, a|e-4|early|other, a|e-4|late|other, a|e-4|mid|other, a|e-5|early|both, a|e-5|late|both, a|e-5|mid|both, a|e-6|early|self, a|e-6|late|self, a|e-6|mid|self, a|e-7|early|self, a|e-7|late|self, a|e-7|mid|self, b|e-1|early|self, b|e-1|late|self, b|e-1|mid|self, b|e-2|early|self, b|e-2|late|self, b|e-2|mid|self, b|e-3|early|self, b|e-3|late|self, b|e-3|mid|self, b|e-4|early|self, b|e-4|late|self, b|e-4|mid|self, b|e-5|early|self, b|e-5|late|self, b|e-5|mid|self, b|e-6|early|other, b|e-6|late|other, b|e-6|mid|other, b|e-7|early|other, b|e-7|late|other, b|e-7|mid|other]
+  party (2종): [a, b]
+  evidenceId (7종): [e-1, e-2, e-3, e-4, e-5, e-6, e-7]
+  lieBand (3종): [early, late, mid]
+  subjectRole (3종): [both, other, self]
+  stanceHint (5종): [answer, confess, emotional, hedge, partial]
+  truthLevel (3종): [full, hint, partial]
+
+## 42 evidence_present entries 전체:
+  b|e-1|early|self | party=b evi=e-1 band=early subjectRole=self stance=hedge truth=hint
+  b|e-1|mid|self | party=b evi=e-1 band=mid subjectRole=self stance=partial truth=partial
+  b|e-1|late|self | party=b evi=e-1 band=late subjectRole=self stance=confess truth=full
+  a|e-1|early|other | party=a evi=e-1 band=early subjectRole=other stance=answer truth=hint
+  a|e-1|mid|other | party=a evi=e-1 band=mid subjectRole=other stance=answer truth=partial
+  a|e-1|late|other | party=a evi=e-1 band=late subjectRole=other stance=emotional truth=partial
+  b|e-2|early|self | party=b evi=e-2 band=early subjectRole=self stance=hedge truth=hint
+  b|e-2|mid|self | party=b evi=e-2 band=mid subjectRole=self stance=partial truth=partial
+  b|e-2|late|self | party=b evi=e-2 band=late subjectRole=self stance=confess truth=full
+  a|e-2|early|other | party=a evi=e-2 band=early subjectRole=other stance=answer truth=hint
+  a|e-2|mid|other | party=a evi=e-2 band=mid subjectRole=other stance=answer truth=partial
+  a|e-2|late|other | party=a evi=e-2 band=late subjectRole=other stance=emotional truth=partial
+  b|e-3|early|self | party=b evi=e-3 band=early subjectRole=self stance=hedge truth=hint
+  b|e-3|mid|self | party=b evi=e-3 band=mid subjectRole=self stance=partial truth=partial
+  b|e-3|late|self | party=b evi=e-3 band=late subjectRole=self stance=confess truth=full
+  a|e-3|early|other | party=a evi=e-3 band=early subjectRole=other stance=answer truth=hint
+  a|e-3|mid|other | party=a evi=e-3 band=mid subjectRole=other stance=answer truth=partial
+  a|e-3|late|other | party=a evi=e-3 band=late subjectRole=other stance=emotional truth=partial
+  b|e-4|early|self | party=b evi=e-4 band=early subjectRole=self stance=hedge truth=hint
+  b|e-4|mid|self | party=b evi=e-4 band=mid subjectRole=self stance=partial truth=partial
+  b|e-4|late|self | party=b evi=e-4 band=late subjectRole=self stance=confess truth=full
+  a|e-4|early|other | party=a evi=e-4 band=early subjectRole=other stance=answer truth=hint
+  a|e-4|mid|other | party=a evi=e-4 band=mid subjectRole=other stance=answer truth=partial
+  a|e-4|late|other | party=a evi=e-4 band=late subjectRole=other stance=emotional truth=partial
+  b|e-5|early|self | party=b evi=e-5 band=early subjectRole=self stance=hedge truth=hint
+  b|e-5|mid|self | party=b evi=e-5 band=mid subjectRole=self stance=partial truth=partial
+  b|e-5|late|self | party=b evi=e-5 band=late subjectRole=self stance=confess truth=full
+  a|e-5|early|both | party=a evi=e-5 band=early subjectRole=both stance=hedge truth=hint
+  a|e-5|mid|both | party=a evi=e-5 band=mid subjectRole=both stance=emotional truth=partial
+  a|e-5|late|both | party=a evi=e-5 band=late subjectRole=both stance=confess truth=full
+  a|e-6|early|self | party=a evi=e-6 band=early subjectRole=self stance=hedge truth=hint
+  a|e-6|mid|self | party=a evi=e-6 band=mid subjectRole=self stance=partial truth=partial
+  a|e-6|late|self | party=a evi=e-6 band=late subjectRole=self stance=confess truth=full
+  b|e-6|early|other | party=b evi=e-6 band=early subjectRole=other stance=answer truth=hint
+  b|e-6|mid|other | party=b evi=e-6 band=mid subjectRole=other stance=answer truth=partial
+  b|e-6|late|other | party=b evi=e-6 band=late subjectRole=other stance=emotional truth=partial
+  a|e-7|early|self | party=a evi=e-7 band=early subjectRole=self stance=hedge truth=hint
+  a|e-7|mid|self | party=a evi=e-7 band=mid subjectRole=self stance=partial truth=partial
+  a|e-7|late|self | party=a evi=e-7 band=late subjectRole=self stance=confess truth=full
+  b|e-7|early|other | party=b evi=e-7 band=early subjectRole=other stance=answer truth=hint
+  b|e-7|mid|other | party=b evi=e-7 band=mid subjectRole=other stance=answer truth=partial
+  b|e-7|late|other | party=b evi=e-7 band=late subjectRole=other stance=emotional truth=partial
+
+## subjectRole 분포 (편향성 매핑 단서)
+  e-1|other: a/early, a/mid, a/late
+  e-1|self: b/early, b/mid, b/late
+  e-2|other: a/early, a/mid, a/late
+  e-2|self: b/early, b/mid, b/late
+  e-3|other: a/early, a/mid, a/late
+  e-3|self: b/early, b/mid, b/late
+  e-4|other: a/early, a/mid, a/late
+  e-4|self: b/early, b/mid, b/late
+  e-5|both: a/early, a/mid, a/late
+  e-5|self: b/early, b/mid, b/late
+  e-6|other: b/early, b/mid, b/late
+  e-6|self: a/early, a/mid, a/late
+  e-7|other: b/early, b/mid, b/late
+  e-7|self: a/early, a/mid, a/late
+
+=== 사건 정의 (cases/generated/spouse-01.json) — evidences ===
+evidences 수: 7
+
+--- e-1 ---
+  id: e-1
+  name: 영수증 묶음 (5장)
+  surfaceName: 영수증 묶음 5장
+  description: 남편의 차에서 발견한 영수증 목록이다. 영수증 내역 중 여성용 물품이 있어 아내의 의심이 시작됐다.
+  surfaceDescription: 남편의 차에서 발견한 영수증 묶음이다.
+  type: log
+  reliability: hard
+  completeness: original
+  provenance: institutional
+  legitimacy: lawful
+  proves: [1 items]
+  isTrap: false
+  requires: [0 items]
+  investigationResults: {"request_original":"틴트, 헤어롤 등 여성용 물건들이 눈에 띈다.","check_metadata":"머리끈, 손거울 등이 눈에 띈다. 샤프와 노트 같은 학용품도 함께 구매되어 있다.","restore_context":"중학생 대상 참고서를 구입한 것이 눈에 띈다."}
+  subjectParty: b
+  partyContext: {"a":{"questionAngle":"이 영수증들이 왜 딴살림 확신으로 이어졌는지 설명해 주십시오.","implication":"머리끈/틴트가 외도 의심의 출발점이다."},"b":{"questionAngle":"이 영수증의 물품들은 누구를 위해 구매한 것인지 설명해 주십시오.","implication":"참고서가 조카 돌봄의 결정적 단서가 된다."}}
+  v3DepthPlan: [5 items]
+  v3TrustStates: [5 items]
+  meta: {"name":"영수증 묶음 5장","type":"log","viewerType":"log","trustLevel":"mid","trustLabel":"보통","source":"org","sourceLabel":"기관","legality":"ok","legalLabel":"적법","stage":1,"stageLabel":"초기 공개","sourceNote"
+  viewerData: {"meta":{"name":"영수증 묶음 5장","type":"log","viewerType":"log","trustLevel":"mid","trustLabel":"보통","source":"org","sourceLabel":"기관","legality":"ok","legalLabel":"적법","stage":3,"stageLabel":"전체 공개 (기본)"
+  viewerDataByStage: {"1":{"meta":{"name":"영수증 묶음 5장","type":"log","viewerType":"log","trustLevel":"mid","trustLabel":"보통","source":"org","sourceLabel":"기관","legality":"ok","legalLabel":"적법","stage":1,"stageLabel":"1단계 — 
+  investigationStages (3):
+    stage 1: {"stage":1,"revealKey":"request_original","question":{"text":"이 영수증들, 누가 무엇을 산 것입니까?","attackVector":"authenticity"},"label":"영수확인","unlockHint":null}
+    stage 2: {"stage":2,"revealKey":"check_metadata","question":{"text":"이 품목들이 가리키는 상대는 누구입니까?","attackVector":"context"},"label":"품목대조","unlockHint":"영수증을 한 번 더 조사하면 다른 매장 품목까지 대조할 수 있습니다."}
+    stage 3: {"stage":3,"revealKey":"restore_context","question":{"text":"중학생용 참고서는 누구를 위해 산 것입니까?","attackVector":"responsibility"},"label":"대상복원","unlockHint":"품목을 대조하면 이 구매가 누구를 위한 것이었는지 복원할 수 있습니다."}
+
+--- e-2 ---
+  id: e-2
+  name: 블랙박스 GPS / 네비 즐겨찾기
+  surfaceName: 블랙박스 GPS 기록
+  description: 매일 같은 좌표에 정차. 오피스텔 주소 확인. A가 B 차에서 확인.
+  surfaceDescription: 차량 GPS에 같은 좌표 반복 정차 기록이 있다.
+  type: device
+  reliability: hard
+  completeness: original
+  provenance: institutional
+  legitimacy: lawful
+  proves: [1 items]
+  isTrap: false
+  requires: [0 items]
+  investigationResults: {"request_original":"매일 비슷한 시각에 동일한 좌표로 이동한 흔적이 보인다.","check_metadata":"방문 장소를 연계했다. 비슷한 시각에 오피스텔에 반복 방문한 것이 확실하다.","restore_context":"좀 이상하다. 외도로 보기에는 방문 시각이 짧은 듯하다."}
+  subjectParty: b
+  partyContext: {"a":{"questionAngle":"이 GPS 기록이 왜 외도 동선처럼 보였는지 설명해 주십시오.","implication":"장소와 빈도가 의심을 굳혔다."},"b":{"questionAngle":"이 GPS 기록의 목적지가 어디인지 설명해 주십시오.","implication":"침묵이 더 큰 오해를 만들었다."}}
+  v3DepthPlan: [5 items]
+  v3TrustStates: [5 items]
+  meta: {"name":"블랙박스 GPS 기록","type":"device","viewerType":"device","trustLevel":"mid","trustLabel":"보통","source":"org","sourceLabel":"기관","legality":"ok","legalLabel":"적법","stage":2,"stageLabel":"중간 공개","sou
+  viewerData: {"meta":{"name":"블랙박스 GPS 기록","type":"device","viewerType":"device","trustLevel":"mid","trustLabel":"보통","source":"org","sourceLabel":"기관","legality":"ok","legalLabel":"적법","stage":2,"stageLabel":"중간 
+  viewerDataByStage: {"1":{"meta":{"name":"블랙박스 GPS 기록","type":"device","viewerType":"device","trustLevel":"mid","trustLabel":"보통","source":"org","sourceLabel":"기관","legality":"ok","legalLabel":"적법","stage":1,"stageLabel"
+  investigationStages (3):
+    stage 1: {"stage":1,"revealKey":"request_original","question":{"text":"이 GPS 기록, 본인 차 맞습니까?","attackVector":"authenticity"},"label":"기록확인","unlockHint":null}
+    stage 2: {"stage":2,"revealKey":"check_metadata","question":{"text":"왜 같은 오피스텔에 반복해서 갔습니까?","attackVector":"context"},"label":"동선대조","unlockHint":"기록을 한 번 더 조사하면 좌표가 어느 장소인지 연계할 수 있습니다."}
+    stage 3: {"stage":3,"revealKey":"restore_context","question":{"text":"매번 2~3시간만 머물렀습니다. 어떤 목적의 방문이었습니까?","attackVector":"responsibility"},"label":"시간패턴","unlockHint":"동선을 대조하면 체류 시간의 패턴이 드러납니다."}
+
+--- e-3 ---
+  id: e-3
+  name: 통화기록
+  surfaceName: 통화기록
+  description: 새벽 시간대 같은 번호 반복. 낮에도 짧은 통화 다수. 통화 상대=1명.
+  surfaceDescription: 새벽 시간대 같은 번호 반복 통화 기록이 있다.
+  type: log
+  reliability: hard
+  completeness: original
+  provenance: institutional
+  legitimacy: lawful
+  proves: [1 items]
+  isTrap: false
+  requires: [0 items]
+  investigationResults: {"request_original":"통화 목록을 조회했다. 반복적으로 통화를 한 흔적이 보인다.","check_metadata":"저장된 번호들과 매핑했다. 등록되지 않은 번호와 자주 통화를 한 것이 확인된다.","restore_context":"좀 이상하다. 외도로 보기에는 통화 시간이 짧은 듯하다."}
+  subjectParty: b
+  partyContext: {"a":{"questionAngle":"새벽 통화가 왜 외도 증거처럼 보였는지 설명해 주십시오.","implication":"새벽 시간대가 의심을 키웠다."},"b":{"questionAngle":"이 통화 상대가 누구인지, 왜 새벽에 전화했는지 설명해 주십시오.","implication":"형과의 긴급 연락이었다."}}
+  v3DepthPlan: [5 items]
+  v3TrustStates: [5 items]
+  meta: {"name":"통화기록","type":"log","viewerType":"log","trustLevel":"mid","trustLabel":"보통","source":"org","sourceLabel":"기관","legality":"ok","legalLabel":"적법","stage":3,"stageLabel":"핵심 공개","sourceNote":"ins
+  viewerData: {"meta":{"name":"통화기록","type":"log","viewerType":"log","trustLevel":"mid","trustLabel":"보통","source":"org","sourceLabel":"기관","legality":"ok","legalLabel":"적법","stage":3,"stageLabel":"핵심 공개","sourceNo
+  viewerDataByStage: {"1":{"meta":{"name":"통화기록","type":"log","viewerType":"log","trustLevel":"mid","trustLabel":"보통","source":"org","sourceLabel":"기관","legality":"ok","legalLabel":"적법","stage":1,"stageLabel":"1단계 — 시각·번호
+  investigationStages (3):
+    stage 1: {"stage":1,"revealKey":"request_original","question":{"text":"이 통화기록은 본인 명의가 맞습니까?","attackVector":"authenticity"},"label":"기록확인","unlockHint":null}
+    stage 2: {"stage":2,"revealKey":"check_metadata","question":{"text":"이 미등록 번호의 상대는 누구입니까?","attackVector":"context"},"label":"상대매핑","unlockHint":"기록을 한 번 더 조사하면 저장된 번호들과 대조해 상대를 특정할 수 있습니다."}
+    stage 3: {"stage":3,"revealKey":"restore_context","question":{"text":"통화 시간이 매번 짧습니다. 어떤 용건이었습니까?","attackVector":"responsibility"},"label":"시간패턴","unlockHint":"통화 길이를 집계하면 연락의 성격이 드러납니다."}
+
+--- e-4 ---
+  id: e-4
+  name: 형 문자 스레드
+  surfaceName: 발신자 미상 문자
+  description: 발신자 불명의 문자 스레드. 지역번호는 익숙하지만 명의가 확인되지 않는 번호와의 반복 교신.
+  surfaceDescription: 문자 스레드가 존재한다.
+  type: chat
+  reliability: hard
+  completeness: original
+  provenance: self_possessed
+  legitimacy: lawful
+  proves: [1 items]
+  isTrap: false
+  requires: [1 items]
+  requiredLieState: S1
+  investigationResults: {"request_original":"스레드에 반복되는 문구: '나야. 당분간 이 번호로 연락할께.', '내 이름으로 저장은 하지마. 나중에 문제가 될 수 있어.', '오늘도 부탁해.', '항상 고마워.' 수신 시각은 주로 저녁에서 밤 사이.","check_metadata":"발신 번호는 이준호 씨가 주로 쓰는 번호부에 저장되어 있지 않다. 지역번호와 앞자
+  subjectParty: b
+  partyContext: {"a":{"questionAngle":"이 문자를 처음 보십니까? 어떤 의미라고 생각하십니까?","implication":"돌봄 관계의 직접 증거이다."},"b":{"questionAngle":"이 문자가 형에게 온 것이 맞다면 왜 숨겼습니까?","implication":"시댁 갈등 때문에 숨긴 것이다."}}
+  meta: {"name":"형 문자 스레드","type":"chat","viewerType":"chat","trustLevel":"mid","trustLabel":"보통","source":"b","sourceLabel":"B측","legality":"ok","legalLabel":"적법","stage":4,"stageLabel":"핵심 공개","sourceNote":
+  v3DepthPlan: [5 items]
+  v3TrustStates: [5 items]
+  v3SealTargets: [4 items]
+  viewerData: {"meta":{"name":"형 문자 스레드","type":"chat","viewerType":"chat","trustLevel":"mid","trustLabel":"보통","source":"b","sourceLabel":"B측","legality":"ok","legalLabel":"적법","stage":4,"stageLabel":"핵심 공개","sour
+  viewerDataByStage: {"0":{"meta":{"name":"형 문자 스레드","type":"chat","viewerType":"chat","trustLevel":"mid","trustLabel":"보통","source":"b","sourceLabel":"B측","legality":"ok","legalLabel":"적법","stage":4,"stageLabel":"Stub — 
+  investigationStages (3):
+    stage 1: {"stage":1,"revealKey":"request_original","question":{"text":"이 문자의 발신자는 누구입니까?","attackVector":"authenticity"},"label":"대화확인","unlockHint":null}
+    stage 2: {"stage":2,"revealKey":"check_metadata","question":{"text":"이 번호는 왜 번호부에 저장해두지 않으셨습니까?","attackVector":"context"},"label":"관계대조","unlockHint":"대화 내용을 확인하면 번호 주인의 정체를 좁혀볼 수 있습니다."}
+    stage 3: {"stage":3,"revealKey":"restore_context","question":{"text":"이 문자 스레드가 오피스텔 방문과 어떤 관계입니까?","attackVector":"responsibility"},"label":"맥락복원","unlockHint":"관계를 대조하면 오피스텔 방문이 외도가 아니라 무엇이었는지 복원할 수 있습니다."}
+
+--- e-5 ---
+  id: e-5
+  name: 이준호의 개인 계좌 출금 내역
+  surfaceName: 개인 계좌 출금 내역
+  description: 이준호 본인 명의 개인 비자금 계좌에서 2,000만원 현금 출금 기록. 공동 적금과는 별개.
+  surfaceDescription: 대규모 출금 기록이 있다.
+  type: bank
+  reliability: hard
+  completeness: original
+  provenance: institutional
+  legitimacy: lawful
+  proves: [1 items]
+  isTrap: false
+  requires: [1 items]
+  requiredLieState: S2
+  investigationResults: {"request_original":"이준호 명의 개인 계좌의 비자금에서 2,000만원이 현금으로 출금된 기록이다.","check_metadata":"출금 시점은 4개월 전이며, 오피스텔 방문 시작 시점과 일치한다. 해당 계좌는 이준호 단독 명의.","restore_context":"형에게 현금으로 전달하기 위한 출금이었다. 형은 개인회생 중이라 계좌 입금
+  subjectParty: both
+  partyContext: {"a":{"questionAngle":"이 출금을 어떻게 알게 되었습니까?","implication":"계좌 감시 사실이 노출될 위험이 있다."},"b":{"questionAngle":"이 돈을 누구에게 왜 전달했습니까?","implication":"형에게 현금 전달한 경위 설명이 필요하다."}}
+  v3DepthPlan: [5 items]
+  v3TrustStates: [5 items]
+  meta: {"name":"이준호의 계좌 출금 내역","type":"bank","viewerType":"bank","trustLevel":"mid","trustLabel":"보통","source":"org","sourceLabel":"기관","legality":"ok","legalLabel":"적법","stage":5,"stageLabel":"핵심 공개","sourc
+  viewerData: {"meta":{"name":"이준호의 계좌 출금 내역","type":"bank","viewerType":"bank","trustLevel":"mid","trustLabel":"보통","source":"org","sourceLabel":"기관","legality":"ok","legalLabel":"적법","stage":5,"stageLabel":"핵심 공개
+  investigationStages (3):
+    stage 1: {"stage":1,"revealKey":"request_original","question":{"text":"이 출금 기록은 본인 계좌 맞습니까?","attackVector":"authenticity"},"label":"내역확인","unlockHint":null}
+    stage 2: {"stage":2,"revealKey":"check_metadata","question":{"text":"왜 2,000만원을 현금으로 출금했습니까?","attackVector":"context"},"label":"금액대조","unlockHint":"내역을 확인하면 2,000만원 현금 출금 시점과 방문 시작 시점을 대조할 수 있습니다."}
+    stage 3: {"stage":3,"revealKey":"restore_context","question":{"text":"현금 출금 후 그 돈은 어디로 갔습니까?","attackVector":"responsibility"},"label":"사용추궁","unlockHint":"금액과 시점을 대조하면 그 현금이 실제로 어디로 갔는지 추궁할 수 있습니다."}
+
+--- e-6 ---
+  id: e-6
+  name: 투자방 카톡 + 송금 기록
+  surfaceName: 투자방 카톡 기록
+  description: 박지연의 3,000만원 투자방 송금 내역 + 투자방 대화. 사기 경위.
+  surfaceDescription: 투자방 카톡 대화와 송금 기록이 있다.
+  type: chat
+  reliability: hard
+  completeness: original
+  provenance: self_possessed
+  legitimacy: lawful
+  proves: [1 items]
+  isTrap: false
+  requires: [1 items]
+  requiredLieState: S2
+  investigationResults: {"request_original":"박지연이 투자방에 3,000만원을 송금한 내역과 카톡 대화 기록이다.","check_metadata":"송금 시점은 5주 전이며, 친구 박미라가 보내준 링크를 통해 가입했다. 송금액은 공동 적금 해지액과 정확히 일치한다.","restore_context":"투자방은 사기였으며, 4주 전에 3,000만원 전액 손실이 확정
+  subjectParty: a
+  partyContext: {"a":{"questionAngle":"이 송금 기록에 대해 설명해 주십시오.","implication":"투자 사기 피해 경위가 드러난다."},"b":{"questionAngle":"이 기록을 처음 보십니까? 아내가 이런 일을 한 것을 알고 있었습니까?","implication":"B도 모르던 A의 비밀 행동이다."}}
+  v3DepthPlan: [5 items]
+  v3TrustStates: [5 items]
+  meta: {"name":"투자방 카톡 기록","type":"chat","viewerType":"chat","trustLevel":"mid","trustLabel":"보통","source":"a","sourceLabel":"A측","legality":"ok","legalLabel":"적법","stage":6,"stageLabel":"핵심 공개","sourceNote"
+  viewerData: {"meta":{"name":"투자방 카톡 기록","type":"chat","viewerType":"chat","trustLevel":"mid","trustLabel":"보통","source":"a","sourceLabel":"A측","legality":"ok","legalLabel":"적법","stage":6,"stageLabel":"핵심 공개","sou
+  investigationStages (3):
+    stage 1: {"stage":1,"revealKey":"request_original","question":{"text":"이 송금 기록은 본인이 보낸 것 맞습니까?","attackVector":"authenticity"},"label":"송금확인","unlockHint":null}
+    stage 2: {"stage":2,"revealKey":"check_metadata","question":{"text":"이 투자방에 어떻게 가입하게 되었습니까?","attackVector":"context"},"label":"가입대조","unlockHint":"송금을 확인하면 투자방 가입 경로와 송금 시점을 함께 대조할 수 있습니다."}
+    stage 3: {"stage":3,"revealKey":"restore_context","question":{"text":"이 3,000만원은 현재 어디에 있습니까?","attackVector":"responsibility"},"label":"손실복원","unlockHint":"가입 경로와 시점을 대조하면 3,000만원이 어떻게 사기로 사라졌는지 복원할 수 있습니다."}
+
+--- e-7 ---
+  id: e-7
+  name: 공동 적금 해지 서류
+  surfaceName: 공동 적금 해지 서류
+  description: 위임장 + 해지 기록. A의 위임장 조작 증거.
+  surfaceDescription: 공동 적금 해지 서류가 존재한다.
+  type: contract
+  reliability: hard
+  completeness: original
+  provenance: institutional
+  legitimacy: lawful
+  proves: [2 items]
+  isTrap: false
+  requires: [1 items]
+  requiredLieState: S3
+  investigationResults: {"request_original":"공동 적금 해지 서류와 위임장이다. 해지 금액은 3,000만원.","check_metadata":"위임장의 이준호 서명이 본인 필적이 아닌 것으로 의심된다. 박지연이 대필한 흔적이 있다.","restore_context":"박지연이 위임장을 조작하여 이준호 동의 없이 공동 적금 3,000만원을 해지한 범죄 행위의 증거이
+  subjectParty: a
+  partyContext: {"a":{"questionAngle":"이 위임장의 서명에 대해 설명해 주십시오.","implication":"위임장 조작 범죄 사실이 드러난다."},"b":{"questionAngle":"이 서류를 보신 적이 있습니까? 해지에 동의한 적이 있습니까?","implication":"B 동의 없는 해지가 확인된다."}}
+  v3DepthPlan: [5 items]
+  v3TrustStates: [5 items]
+  meta: {"name":"공동 적금 해지 서류","type":"contract","viewerType":"contract","trustLevel":"mid","trustLabel":"보통","source":"org","sourceLabel":"기관","legality":"ok","legalLabel":"적법","stage":7,"stageLabel":"핵심 공개",
+  viewerData: {"meta":{"name":"공동 적금 해지 서류","type":"contract","viewerType":"contract","trustLevel":"mid","trustLabel":"보통","source":"org","sourceLabel":"기관","legality":"ok","legalLabel":"적법","stage":7,"stageLabel":
+  investigationStages (3):
+    stage 1: {"stage":1,"revealKey":"request_original","question":{"text":"이 해지 서류에 있는 서명은 누구 것입니까?","attackVector":"authenticity"},"label":"서류확인","unlockHint":null}
+    stage 2: {"stage":2,"revealKey":"check_metadata","question":{"text":"이 위임장의 서명이 본인 것이 아니라면 누가 쓴 것입니까?","attackVector":"context"},"label":"필체대조","unlockHint":"서류를 확인하면 해지 기록과 위임장 서명을 함께 대조할 수 있습니다."}
+    stage 3: {"stage":3,"revealKey":"restore_context","question":{"text":"위임장 조작은 범죄입니다. 이에 대해 어떻게 생각하십니까?","attackVector":"responsibility"},"label":"책임추궁","unlockHint":"필체를 대조하면 누가 동의 없이 공동 적금을 움직였는지 추궁할 수 있습니다."
+
+=== 사건 top-level 메타 ===
+  caseId: case-spouse-01
+  sensitivityTags: [array, 4]
+  meta: {object, keys=relationshipType,conflictSeed,variableModules,twistModule,difficulty,anchorTruth,emotionalBait,resolutionDilemma,title}
+  duo: {object, keys=duoId,relationshipType,partyA,partyB,relationshipLedger,socialGraph}
+  context: {object, keys=contextType,description,emotionalPressure,affects,triggerAmplifier,caseNumber,caseName}
+  disputes: [array, 4]
+  evidence: [array, 7]
+  evidenceCombinations: [array, 5]
+  truthTable: [array, 5]
+  lieConfigA: [array, 4]
+  lieConfigB: [array, 4]
+  solutions: {object, keys=공동재산회복,신뢰순서분리,봉인정보경계}
+  activeLedgerEntries: [array, 4]
+  activeThirdParties: [array, 3]
+  baseEvidenceIds: [array, 3]
+  monetaryDisputeIds: [array, 3]
+  combinationLab: {object, keys=analysisPointsBase,analysisPointRefundOnFirstHidden,nodes,outputs,recipes}
+  v3Design: {object, keys=evidenceAxisLegend,hiddenDisputes,leadLines,authorityPlacements,sensitiveSealTargets,officialRecordRecommendations}
