@@ -1,0 +1,53 @@
+{
+  "baselineTargetSha": "a10b801",
+  "baselineTargetFullSha": "a10b8011c3311d2a6ab20dd4a06edb29a4ac48e3",
+  "generatedAt": "2026-04-26T19:43:01.651Z",
+  "method": "git-show",
+  "files": {
+    "src/data/cases/generated/spouse-01.json": {
+      "sha256": "d3c1377fd8ec0222c4f5761e0ff46c31117be4d097d31b905dff82f40d25e48a",
+      "sizeBytes": 159466,
+      "topLevelKeyCount": 18,
+      "caseId": "case-spouse-01",
+      "title": null,
+      "relationshipType": "spouse",
+      "characterCount": 2,
+      "disputeCount": 4,
+      "hiddenDisputeCount": 3,
+      "evidenceCount": 7,
+      "witnessCount": 0,
+      "dossierCardCount": 0,
+      "combinationRecipeCount": 0
+    },
+    "src/data/cases/generated/family-01.json": {
+      "sha256": "281b8741eee0c6fa6198be0f034f33eb3ca7ae679511e680bd0f875391f172ff",
+      "sizeBytes": 148641,
+      "topLevelKeyCount": 18,
+      "caseId": "case-family-01",
+      "title": null,
+      "relationshipType": "family",
+      "characterCount": 2,
+      "disputeCount": 5,
+      "hiddenDisputeCount": 4,
+      "evidenceCount": 7,
+      "witnessCount": 0,
+      "dossierCardCount": 0,
+      "combinationRecipeCount": 0
+    },
+    "src/data/cases/generated/friend-01.json": {
+      "sha256": "4b742b920ee1572bd577ddefc496e4b7be5e2f764cd3f642253b3af29a0be911",
+      "sizeBytes": 145172,
+      "topLevelKeyCount": 18,
+      "caseId": "case-friend-01",
+      "title": null,
+      "relationshipType": "friend",
+      "characterCount": 2,
+      "disputeCount": 5,
+      "hiddenDisputeCount": 4,
+      "evidenceCount": 7,
+      "witnessCount": 0,
+      "dossierCardCount": 0,
+      "combinationRecipeCount": 0
+    }
+  }
+}

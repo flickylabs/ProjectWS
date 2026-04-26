@@ -1,0 +1,2836 @@
+{
+  "baselineTargetSha": "a10b801",
+  "baselineTargetFullSha": "a10b8011c3311d2a6ab20dd4a06edb29a4ac48e3",
+  "executedAt": "2026-04-26T19:43:40.250Z",
+  "checks": [
+    {
+      "name": "v6-liestate-flow",
+      "scriptPath": "tmp/codex-recovery-v6/precheck-liestate-flow.cjs",
+      "expectedJsonPath": "tmp/codex-recovery-v6/precheck-liestate-flow.json",
+      "startedAt": "2026-04-26T19:43:40.251Z",
+      "finishedAt": "2026-04-26T19:43:41.532Z",
+      "exitCode": 0,
+      "result": "PASS",
+      "stdout": "{\n  \"passed\": true,\n  \"issueCount\": 0,\n  \"candidateIssueCount\": 772\n}\n",
+      "stderr": "",
+      "details": {
+        "generatedAt": "2026-04-26T19:43:41.509Z",
+        "passed": true,
+        "hardIssueCount": 0,
+        "candidateIssueCount": 772,
+        "byCase": {
+          "spouse-01": {
+            "semanticTotal": 3697,
+            "semanticSummary": {
+              "FAIL": 2541,
+              "WARN": 1156
+            },
+            "hardIssueCount": 0,
+            "candidateIssueCount": 209
+          },
+          "family-01": {
+            "semanticTotal": 3947,
+            "semanticSummary": {
+              "FAIL": 3443,
+              "WARN": 504
+            },
+            "hardIssueCount": 0,
+            "candidateIssueCount": 242
+          },
+          "friend-01": {
+            "semanticTotal": 4371,
+            "semanticSummary": {
+              "FAIL": 3538,
+              "WARN": 833
+            },
+            "hardIssueCount": 0,
+            "candidateIssueCount": 321
+          }
+        },
+        "hardIssues": [],
+        "candidateSamples": [
+          {
+            "caseId": "spouse-01",
+            "severity": "FAIL",
+            "code": "T1",
+            "message": "interrogation:a-d-1-S0-motive-search-v6 reads confessional for S0 (guarded)",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T2",
+            "message": "interrogation:a-d-1-S0-empathy-approach-v6 may soften too abruptly for S0",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "FAIL",
+            "code": "T1",
+            "message": "interrogation:a-d-1-S1-motive-search-v6 reads confessional for S1 (guarded)",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:a-d-1-S5-fact-pursuit-v2 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:a-d-1-S5-fact-pursuit-v3 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:a-d-1-S5-fact-pursuit-v4 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:a-d-1-S5-fact-pursuit-v5 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:a-d-1-S5-fact-pursuit-v6 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:a-d-1-S5-fact-pursuit-v7 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:a-d-1-S5-fact-pursuit-v8 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:a-d-1-S5-fact-pursuit-v9 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:a-d-1-S5-fact-pursuit-v10 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:a-d-1-S5-motive-search-v1 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:a-d-1-S5-motive-search-v2 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:a-d-1-S5-motive-search-v3 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:a-d-1-S5-motive-search-v4 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:a-d-1-S5-motive-search-v5 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:a-d-1-S5-motive-search-v6 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:a-d-1-S5-motive-search-v7 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:a-d-1-S5-motive-search-v8 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:a-d-1-S5-motive-search-v9 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:a-d-1-S5-motive-search-v10 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:a-d-1-S5-empathy-approach-v1 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:a-d-1-S5-empathy-approach-v2 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:a-d-1-S5-empathy-approach-v3 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:a-d-1-S5-empathy-approach-v4 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:a-d-1-S5-empathy-approach-v5 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:a-d-1-S5-empathy-approach-v6 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:a-d-1-S5-empathy-approach-v7 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:a-d-1-S5-empathy-approach-v8 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:a-d-1-S5-empathy-approach-v9 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:a-d-1-S5-empathy-approach-v10 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T2",
+            "message": "interrogation:b-d-1-S1-fact-pursuit-v8 may soften too abruptly for S1",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:b-d-1-S5-fact-pursuit-v2 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:b-d-1-S5-fact-pursuit-v3 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:b-d-1-S5-fact-pursuit-v4 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:b-d-1-S5-fact-pursuit-v5 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:b-d-1-S5-fact-pursuit-v7 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:b-d-1-S5-fact-pursuit-v9 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:b-d-1-S5-motive-search-v2 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:b-d-1-S5-motive-search-v3 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:b-d-1-S5-motive-search-v4 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:b-d-1-S5-motive-search-v5 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:b-d-1-S5-motive-search-v7 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:b-d-1-S5-motive-search-v9 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:b-d-1-S5-empathy-approach-v1 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:b-d-1-S5-empathy-approach-v2 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:b-d-1-S5-empathy-approach-v3 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:b-d-1-S5-empathy-approach-v4 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:b-d-1-S5-empathy-approach-v5 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:b-d-1-S5-empathy-approach-v7 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:b-d-1-S5-empathy-approach-v9 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T2",
+            "message": "interrogation:a-d-2-S0-motive-search-v6 may soften too abruptly for S0",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "FAIL",
+            "code": "T1",
+            "message": "interrogation:a-d-2-S1-motive-search-v6 reads confessional for S1 (guarded)",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T2",
+            "message": "interrogation:a-d-2-S1-empathy-approach-v1 may soften too abruptly for S1",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T2",
+            "message": "interrogation:a-d-2-S1-empathy-approach-v6 may soften too abruptly for S1",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:a-d-2-S5-fact-pursuit-v1 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:a-d-2-S5-fact-pursuit-v2 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:a-d-2-S5-fact-pursuit-v3 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:a-d-2-S5-fact-pursuit-v4 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:a-d-2-S5-fact-pursuit-v5 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:a-d-2-S5-fact-pursuit-v6 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:a-d-2-S5-fact-pursuit-v7 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:a-d-2-S5-fact-pursuit-v8 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:a-d-2-S5-fact-pursuit-v9 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:a-d-2-S5-fact-pursuit-v10 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:a-d-2-S5-motive-search-v1 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:a-d-2-S5-motive-search-v2 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:a-d-2-S5-motive-search-v3 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:a-d-2-S5-motive-search-v4 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:a-d-2-S5-motive-search-v5 lacks an admission/resigned contour for S5",
+            "protectedByV5": true,
+            "candidateReason": "v5-protected-field"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:a-d-2-S5-motive-search-v6 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:a-d-2-S5-motive-search-v7 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:a-d-2-S5-motive-search-v8 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:a-d-2-S5-motive-search-v9 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:a-d-2-S5-motive-search-v10 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:a-d-2-S5-empathy-approach-v2 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:a-d-2-S5-empathy-approach-v3 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:a-d-2-S5-empathy-approach-v4 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:a-d-2-S5-empathy-approach-v5 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:a-d-2-S5-empathy-approach-v6 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:a-d-2-S5-empathy-approach-v7 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:a-d-2-S5-empathy-approach-v8 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:a-d-2-S5-empathy-approach-v9 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:a-d-2-S5-empathy-approach-v10 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "FAIL",
+            "code": "T1",
+            "message": "interrogation:b-d-2-S0-fact-pursuit-v4 reads confessional for S0 (guarded)",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T2",
+            "message": "interrogation:b-d-2-S0-empathy-approach-v1 may soften too abruptly for S0",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T2",
+            "message": "interrogation:b-d-2-S1-fact-pursuit-v8 may soften too abruptly for S1",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T2",
+            "message": "interrogation:b-d-2-S1-motive-search-v6 may soften too abruptly for S1",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T2",
+            "message": "interrogation:b-d-2-S1-empathy-approach-v6 may soften too abruptly for S1",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:b-d-2-S5-fact-pursuit-v1 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:b-d-2-S5-fact-pursuit-v2 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:b-d-2-S5-fact-pursuit-v3 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:b-d-2-S5-fact-pursuit-v4 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:b-d-2-S5-fact-pursuit-v5 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:b-d-2-S5-fact-pursuit-v7 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:b-d-2-S5-motive-search-v1 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:b-d-2-S5-motive-search-v2 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:b-d-2-S5-motive-search-v3 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:b-d-2-S5-motive-search-v4 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:b-d-2-S5-motive-search-v7 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:b-d-2-S5-empathy-approach-v1 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:b-d-2-S5-empathy-approach-v2 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:b-d-2-S5-empathy-approach-v3 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:b-d-2-S5-empathy-approach-v5 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:b-d-2-S5-empathy-approach-v7 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T2",
+            "message": "interrogation:a-h-d3-S0-fact-pursuit-v4 may soften too abruptly for S0",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T2",
+            "message": "interrogation:a-h-d3-S0-motive-search-v4 may soften too abruptly for S0",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T2",
+            "message": "interrogation:a-h-d3-S0-motive-search-v6 may soften too abruptly for S0",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T2",
+            "message": "interrogation:a-h-d3-S1-fact-pursuit-v4 may soften too abruptly for S1",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T2",
+            "message": "interrogation:a-h-d3-S1-motive-search-v6 may soften too abruptly for S1",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:a-h-d3-S5-fact-pursuit-v2 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:a-h-d3-S5-fact-pursuit-v3 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:a-h-d3-S5-fact-pursuit-v4 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:a-h-d3-S5-fact-pursuit-v5 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:a-h-d3-S5-fact-pursuit-v6 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:a-h-d3-S5-fact-pursuit-v7 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:a-h-d3-S5-fact-pursuit-v9 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:a-h-d3-S5-fact-pursuit-v10 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:a-h-d3-S5-motive-search-v1 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:a-h-d3-S5-motive-search-v2 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:a-h-d3-S5-motive-search-v3 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:a-h-d3-S5-motive-search-v4 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:a-h-d3-S5-motive-search-v6 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:a-h-d3-S5-motive-search-v7 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:a-h-d3-S5-motive-search-v9 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:a-h-d3-S5-motive-search-v10 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:a-h-d3-S5-empathy-approach-v1 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:a-h-d3-S5-empathy-approach-v2 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:a-h-d3-S5-empathy-approach-v3 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:a-h-d3-S5-empathy-approach-v4 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:a-h-d3-S5-empathy-approach-v5 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:a-h-d3-S5-empathy-approach-v6 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:a-h-d3-S5-empathy-approach-v7 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:a-h-d3-S5-empathy-approach-v9 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:a-h-d3-S5-empathy-approach-v10 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T4",
+            "message": "interrogation:b-h-d3-S3-motive-search-v9 does not sound blame-forward enough for S3",
+            "protectedByV5": true,
+            "candidateReason": "v5-protected-field"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T4",
+            "message": "interrogation:b-h-d3-S3-empathy-approach-v9 does not sound blame-forward enough for S3",
+            "protectedByV5": true,
+            "candidateReason": "v5-protected-field"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:b-h-d3-S5-fact-pursuit-v1 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:b-h-d3-S5-fact-pursuit-v3 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:b-h-d3-S5-fact-pursuit-v4 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:b-h-d3-S5-fact-pursuit-v5 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:b-h-d3-S5-fact-pursuit-v7 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:b-h-d3-S5-motive-search-v1 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:b-h-d3-S5-motive-search-v2 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:b-h-d3-S5-motive-search-v3 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:b-h-d3-S5-motive-search-v5 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:b-h-d3-S5-motive-search-v7 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:b-h-d3-S5-empathy-approach-v1 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:b-h-d3-S5-empathy-approach-v2 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:b-h-d3-S5-empathy-approach-v3 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:b-h-d3-S5-empathy-approach-v4 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:b-h-d3-S5-empathy-approach-v5 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:b-h-d3-S5-empathy-approach-v7 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T2",
+            "message": "interrogation:a-h-d4-S1-fact-pursuit-v1 may soften too abruptly for S1",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "FAIL",
+            "code": "T1",
+            "message": "interrogation:a-h-d4-S1-fact-pursuit-v3 reads confessional for S1 (guarded)",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T2",
+            "message": "interrogation:a-h-d4-S1-fact-pursuit-v10 may soften too abruptly for S1",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "FAIL",
+            "code": "T1",
+            "message": "interrogation:a-h-d4-S1-motive-search-v6 reads confessional for S1 (guarded)",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T2",
+            "message": "interrogation:a-h-d4-S1-motive-search-v10 may soften too abruptly for S1",
+            "protectedByV5": true,
+            "candidateReason": "v5-protected-field"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T2",
+            "message": "interrogation:a-h-d4-S1-empathy-approach-v10 may soften too abruptly for S1",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:a-h-d4-S5-fact-pursuit-v1 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:a-h-d4-S5-fact-pursuit-v2 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:a-h-d4-S5-fact-pursuit-v3 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:a-h-d4-S5-fact-pursuit-v4 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:a-h-d4-S5-fact-pursuit-v5 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:a-h-d4-S5-fact-pursuit-v7 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:a-h-d4-S5-fact-pursuit-v8 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:a-h-d4-S5-fact-pursuit-v10 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:a-h-d4-S5-motive-search-v1 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:a-h-d4-S5-motive-search-v2 lacks an admission/resigned contour for S5",
+            "protectedByV5": true,
+            "candidateReason": "v5-protected-field"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:a-h-d4-S5-motive-search-v4 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:a-h-d4-S5-motive-search-v7 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:a-h-d4-S5-motive-search-v8 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:a-h-d4-S5-motive-search-v10 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:a-h-d4-S5-empathy-approach-v1 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:a-h-d4-S5-empathy-approach-v4 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:a-h-d4-S5-empathy-approach-v7 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:a-h-d4-S5-empathy-approach-v8 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:a-h-d4-S5-empathy-approach-v10 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "FAIL",
+            "code": "T1",
+            "message": "interrogation:b-h-d4-S1-empathy-approach-v2 reads confessional for S1 (guarded)",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T2",
+            "message": "interrogation:b-h-d4-S1-empathy-approach-v5 may soften too abruptly for S1",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:b-h-d4-S5-fact-pursuit-v5 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:b-h-d4-S5-fact-pursuit-v9 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:b-h-d4-S5-motive-search-v1 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:b-h-d4-S5-motive-search-v2 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:b-h-d4-S5-motive-search-v3 lacks an admission/resigned contour for S5",
+            "protectedByV5": true,
+            "candidateReason": "v5-protected-field"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:b-h-d4-S5-motive-search-v4 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:b-h-d4-S5-motive-search-v5 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:b-h-d4-S5-motive-search-v9 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:b-h-d4-S5-empathy-approach-v3 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:b-h-d4-S5-empathy-approach-v4 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:b-h-d4-S5-empathy-approach-v5 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:b-h-d4-S5-empathy-approach-v9 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T2",
+            "message": "contradiction_pursuit:contra-a-d-2-S1-v9 may soften too abruptly for S1",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T2",
+            "message": "contradiction_pursuit:contra-a-h-d4-S1-v4 may soften too abruptly for S1",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T2",
+            "message": "contradiction_pursuit:contra-a-h-d4-S1-v5 may soften too abruptly for S1",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T2",
+            "message": "contradiction_pursuit:contra-b-d-1-S1-v7 may soften too abruptly for S1",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T2",
+            "message": "contradiction_pursuit:contra-b-d-2-S1-v8 may soften too abruptly for S1",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T2",
+            "message": "contradiction_pursuit:contra-b-h-d3-S1-v6 may soften too abruptly for S1",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T2",
+            "message": "contradiction_pursuit:contra-b-h-d4-S1-v3 may soften too abruptly for S1",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T2",
+            "message": "contradiction_pursuit:contra-b-h-d4-S1-v5 may soften too abruptly for S1",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T2",
+            "message": "contradiction_pursuit:contra-b-h-d4-S1-v10 may soften too abruptly for S1",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T2",
+            "message": "trust_action:trust-a-confidential-S1-v7 may soften too abruptly for S1",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "FAIL",
+            "code": "T1",
+            "message": "trust_action:trust-a-immediate-S1-v6 reads confessional for S1 (guarded)",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T2",
+            "message": "trust_action:trust-b-confidential-S1-v9 may soften too abruptly for S1",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T2",
+            "message": "trust_action:trust-b-immediate-S1-v1 may soften too abruptly for S1",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T2",
+            "message": "trust_action:trust-b-immediate-S1-v3 may soften too abruptly for S1",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T2",
+            "message": "trust_action:trust-b-immediate-S1-v7 may soften too abruptly for S1",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "spouse-01",
+            "severity": "WARN",
+            "code": "T2",
+            "message": "trust_action:trust-b-immediate-S1-v9 may soften too abruptly for S1",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "family-01",
+            "severity": "WARN",
+            "code": "T2",
+            "message": "interrogation:a-d-1-S1-motive-search-v9 may soften too abruptly for S1",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "family-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:a-d-1-S5-fact-pursuit-v2 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "family-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:a-d-1-S5-fact-pursuit-v3 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "family-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:a-d-1-S5-fact-pursuit-v4 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "family-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:a-d-1-S5-fact-pursuit-v5 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "family-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:a-d-1-S5-fact-pursuit-v8 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "family-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:a-d-1-S5-motive-search-v1 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "family-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:a-d-1-S5-motive-search-v2 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "family-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:a-d-1-S5-motive-search-v3 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "family-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:a-d-1-S5-motive-search-v5 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "family-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:a-d-1-S5-motive-search-v7 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "family-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:a-d-1-S5-motive-search-v10 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "family-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:a-d-1-S5-empathy-approach-v1 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "family-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:a-d-1-S5-empathy-approach-v2 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "family-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:a-d-1-S5-empathy-approach-v4 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "family-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:a-d-1-S5-empathy-approach-v7 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "family-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:a-d-1-S5-empathy-approach-v10 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "family-01",
+            "severity": "WARN",
+            "code": "T2",
+            "message": "interrogation:b-d-1-S0-fact-pursuit-v8 may soften too abruptly for S0",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "family-01",
+            "severity": "WARN",
+            "code": "T2",
+            "message": "interrogation:b-d-1-S1-fact-pursuit-v1 may soften too abruptly for S1",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "family-01",
+            "severity": "WARN",
+            "code": "T2",
+            "message": "interrogation:b-d-1-S1-fact-pursuit-v2 may soften too abruptly for S1",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "family-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:b-d-1-S5-fact-pursuit-v2 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "family-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:b-d-1-S5-fact-pursuit-v5 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "family-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:b-d-1-S5-fact-pursuit-v8 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "family-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:b-d-1-S5-fact-pursuit-v9 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "family-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:b-d-1-S5-motive-search-v2 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "family-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:b-d-1-S5-motive-search-v3 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "family-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:b-d-1-S5-motive-search-v4 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "family-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:b-d-1-S5-motive-search-v5 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "family-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:b-d-1-S5-motive-search-v10 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "family-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:b-d-1-S5-empathy-approach-v1 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "family-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:b-d-1-S5-empathy-approach-v2 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "family-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:b-d-1-S5-empathy-approach-v3 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "family-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:b-d-1-S5-empathy-approach-v4 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "family-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:b-d-1-S5-empathy-approach-v10 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "family-01",
+            "severity": "WARN",
+            "code": "T2",
+            "message": "interrogation:a-d-2-S1-motive-search-v9 may soften too abruptly for S1",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "family-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:a-d-2-S5-fact-pursuit-v1 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "family-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:a-d-2-S5-fact-pursuit-v2 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "family-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:a-d-2-S5-fact-pursuit-v3 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "family-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:a-d-2-S5-fact-pursuit-v7 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "family-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:a-d-2-S5-fact-pursuit-v8 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "family-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:a-d-2-S5-fact-pursuit-v10 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "family-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:a-d-2-S5-motive-search-v1 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "family-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:a-d-2-S5-motive-search-v2 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "family-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:a-d-2-S5-motive-search-v3 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "family-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:a-d-2-S5-motive-search-v4 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "family-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:a-d-2-S5-motive-search-v5 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "family-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:a-d-2-S5-motive-search-v7 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "family-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:a-d-2-S5-motive-search-v10 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "family-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:a-d-2-S5-empathy-approach-v1 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "family-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:a-d-2-S5-empathy-approach-v2 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "family-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:a-d-2-S5-empathy-approach-v3 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "family-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:a-d-2-S5-empathy-approach-v4 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "family-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:a-d-2-S5-empathy-approach-v5 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "family-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:a-d-2-S5-empathy-approach-v7 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "family-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:a-d-2-S5-empathy-approach-v10 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "family-01",
+            "severity": "WARN",
+            "code": "T2",
+            "message": "interrogation:b-d-2-S0-fact-pursuit-v6 may soften too abruptly for S0",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "family-01",
+            "severity": "FAIL",
+            "code": "T1",
+            "message": "interrogation:b-d-2-S0-fact-pursuit-v8 reads confessional for S0 (guarded)",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "family-01",
+            "severity": "WARN",
+            "code": "T2",
+            "message": "interrogation:b-d-2-S0-fact-pursuit-v9 may soften too abruptly for S0",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "family-01",
+            "severity": "WARN",
+            "code": "T2",
+            "message": "interrogation:b-d-2-S0-motive-search-v8 may soften too abruptly for S0",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "family-01",
+            "severity": "WARN",
+            "code": "T2",
+            "message": "interrogation:b-d-2-S1-fact-pursuit-v6 may soften too abruptly for S1",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "family-01",
+            "severity": "WARN",
+            "code": "T2",
+            "message": "interrogation:b-d-2-S1-fact-pursuit-v9 may soften too abruptly for S1",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "family-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:b-d-2-S5-fact-pursuit-v1 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "family-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:b-d-2-S5-fact-pursuit-v2 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "family-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:b-d-2-S5-fact-pursuit-v3 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "family-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:b-d-2-S5-fact-pursuit-v4 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "family-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:b-d-2-S5-fact-pursuit-v5 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "family-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:b-d-2-S5-fact-pursuit-v6 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "family-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:b-d-2-S5-fact-pursuit-v8 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "family-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:b-d-2-S5-fact-pursuit-v9 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "family-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:b-d-2-S5-fact-pursuit-v10 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "family-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:b-d-2-S5-motive-search-v1 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "family-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:b-d-2-S5-motive-search-v2 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "family-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:b-d-2-S5-motive-search-v3 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "family-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:b-d-2-S5-motive-search-v4 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "family-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:b-d-2-S5-motive-search-v5 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "family-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:b-d-2-S5-motive-search-v6 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "family-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:b-d-2-S5-motive-search-v8 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "family-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:b-d-2-S5-motive-search-v10 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "family-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:b-d-2-S5-empathy-approach-v1 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "family-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:b-d-2-S5-empathy-approach-v2 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "family-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:b-d-2-S5-empathy-approach-v3 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "family-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:b-d-2-S5-empathy-approach-v4 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "family-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:b-d-2-S5-empathy-approach-v5 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "family-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:b-d-2-S5-empathy-approach-v6 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "family-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:b-d-2-S5-empathy-approach-v8 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "family-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:b-d-2-S5-empathy-approach-v9 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "family-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:b-d-2-S5-empathy-approach-v10 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "family-01",
+            "severity": "WARN",
+            "code": "T2",
+            "message": "interrogation:a-d-3-S1-fact-pursuit-v4 may soften too abruptly for S1",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "family-01",
+            "severity": "WARN",
+            "code": "T2",
+            "message": "interrogation:a-d-3-S1-motive-search-v9 may soften too abruptly for S1",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "family-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:a-d-3-S5-fact-pursuit-v1 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          },
+          {
+            "caseId": "family-01",
+            "severity": "WARN",
+            "code": "T7",
+            "message": "interrogation:a-d-3-S5-fact-pursuit-v2 lacks an admission/resigned contour for S5",
+            "protectedByV5": false,
+            "candidateReason": "style-or-ambiguous-flow-candidate"
+          }
+        ],
+        "note": "T1/T2/T7 and C/A voice warnings are candidate-only because v6 protects archetype voice and avoids broad naturalness rewrites."
+      }
+    },
+    {
+      "name": "v6-evidence-unlock",
+      "scriptPath": "tmp/codex-recovery-v6/precheck-evidence-unlock.cjs",
+      "expectedJsonPath": "tmp/codex-recovery-v6/precheck-evidence-unlock.json",
+      "startedAt": "2026-04-26T19:43:41.533Z",
+      "finishedAt": "2026-04-26T19:43:41.754Z",
+      "exitCode": 0,
+      "result": "PASS",
+      "stdout": "{\n  \"passed\": true,\n  \"issueCount\": 0,\n  \"candidateIssueCount\": 0\n}\n",
+      "stderr": "",
+      "details": {
+        "generatedAt": "2026-04-26T19:43:41.737Z",
+        "passed": true,
+        "issueCount": 0,
+        "issues": []
+      }
+    },
+    {
+      "name": "v6-archetype-quant",
+      "scriptPath": "tmp/codex-recovery-v6/precheck-archetype-quant.cjs",
+      "expectedJsonPath": "tmp/codex-recovery-v6/precheck-archetype-quant.json",
+      "startedAt": "2026-04-26T19:43:41.754Z",
+      "finishedAt": "2026-04-26T19:43:41.990Z",
+      "exitCode": 0,
+      "result": "PASS",
+      "stdout": "{\n  \"passed\": true,\n  \"issueCount\": 0,\n  \"candidateIssueCount\": 0\n}\n",
+      "stderr": "",
+      "details": {
+        "generatedAt": "2026-04-26T19:43:41.821Z",
+        "passed": true,
+        "metrics": [
+          {
+            "caseId": "spouse-01",
+            "party": "a",
+            "name": "박지연",
+            "archetype": "victim_cosplay",
+            "totalNpcVariants": 1855,
+            "markerHits": 78,
+            "hitRate": 0.042048517520215635,
+            "lateSelfTermMentions": 19,
+            "verbalTells": [
+              {
+                "type": "victim_frame",
+                "trigger": "cornered",
+                "pattern": "자신도 이미 배신당한 사람처럼 먼저 위치를 잡는다."
+              },
+              {
+                "type": "helplessness",
+                "trigger": "shame",
+                "pattern": "그때는 다른 선택이 없었다는 말로 계산된 선택의 각도를 흐린다."
+              },
+              {
+                "type": "soft_confession",
+                "trigger": "shame",
+                "pattern": "작은 인정부터 꺼내고 가장 수치스러운 사실은 마지막에 말한다."
+              }
+            ]
+          },
+          {
+            "caseId": "spouse-01",
+            "party": "b",
+            "name": "이준호",
+            "archetype": "avoidant",
+            "totalNpcVariants": 1855,
+            "markerHits": 372,
+            "hitRate": 0.20053908355795147,
+            "lateSelfTermMentions": 216,
+            "verbalTells": [
+              {
+                "type": "answer_delay",
+                "trigger": "avoiding",
+                "pattern": "질문을 바로 받지 않고 한 박자 늦게 받아 핵심어를 피한다."
+              },
+              {
+                "type": "partial_scope",
+                "trigger": "cornered",
+                "pattern": "큰 사실은 인정하되 가장 아픈 이유는 마지막까지 자른다."
+              },
+              {
+                "type": "minimize_harm",
+                "trigger": "defensive",
+                "pattern": "선의였다는 말로 절차 위반의 무게를 먼저 낮추려 한다."
+              }
+            ]
+          },
+          {
+            "caseId": "family-01",
+            "party": "a",
+            "name": "윤태성",
+            "archetype": "confrontational",
+            "totalNpcVariants": 2035,
+            "markerHits": 1105,
+            "hitRate": 0.542997542997543,
+            "lateSelfTermMentions": 480,
+            "verbalTells": [
+              {
+                "type": "rank_pull",
+                "trigger": "cornered",
+                "pattern": "불리해지면 '형인 내가 모시고 살았다'며 서열을 내세워 논점을 돌린다."
+              },
+              {
+                "type": "character_attack",
+                "trigger": "lying",
+                "pattern": "동생의 성격이나 과거를 꺼내며 상대 신뢰도를 먼저 깎으려 한다."
+              },
+              {
+                "type": "volume_escalation",
+                "trigger": "emotional",
+                "pattern": "감정이 올라오면 목소리부터 커지며 상대가 말을 잇지 못하게 만든다."
+              }
+            ]
+          },
+          {
+            "caseId": "family-01",
+            "party": "b",
+            "name": "윤정후",
+            "archetype": "affect_flattening",
+            "totalNpcVariants": 2035,
+            "markerHits": 815,
+            "hitRate": 0.4004914004914005,
+            "lateSelfTermMentions": 497,
+            "verbalTells": [
+              {
+                "type": "flat_deflection",
+                "trigger": "cornered",
+                "pattern": "핵심 질문에 '그건 제가 말할 수 있는 부분이 아닙니다' 식으로 감정 없이 차단한다."
+              },
+              {
+                "type": "silence_shield",
+                "trigger": "lying",
+                "pattern": "거짓보다는 침묵을 택하며, 말하지 않는 것으로 진실을 숨긴다."
+              },
+              {
+                "type": "delayed_crack",
+                "trigger": "emotional",
+                "pattern": "오래 참다가 한 번에 무너지듯 말하며, 그때 가장 깊은 진실이 나온다."
+              }
+            ]
+          },
+          {
+            "caseId": "friend-01",
+            "party": "a",
+            "name": "송다은",
+            "archetype": "premature_summary",
+            "totalNpcVariants": 2035,
+            "markerHits": 184,
+            "hitRate": 0.09041769041769042,
+            "lateSelfTermMentions": 351,
+            "verbalTells": [
+              {
+                "type": "premature_conclusion",
+                "trigger": "cornered",
+                "pattern": "상대 말이 끝나기 전에 '그러니까 결국~'으로 결론을 먼저 내려버린다."
+              },
+              {
+                "type": "pattern_citation",
+                "trigger": "defensive",
+                "pattern": "'예전에도 그랬잖아'라며 과거 사례를 현재 판단의 근거로 가져온다."
+              },
+              {
+                "type": "scope_narrowing",
+                "trigger": "shame",
+                "pattern": "불리한 지점이 나오면 '그건 지금 얘기가 아니다'라며 범위를 좁힌다."
+              }
+            ]
+          },
+          {
+            "caseId": "friend-01",
+            "party": "b",
+            "name": "최수민",
+            "archetype": "affect_flattening",
+            "totalNpcVariants": 2035,
+            "markerHits": 872,
+            "hitRate": 0.4285012285012285,
+            "lateSelfTermMentions": 335,
+            "verbalTells": [
+              {
+                "type": "flat_delivery",
+                "trigger": "emotional",
+                "pattern": "가장 아픈 이야기를 할 때 오히려 톤이 더 평평해지고 감정이 사라진다."
+              },
+              {
+                "type": "self_blame_shield",
+                "trigger": "cornered",
+                "pattern": "'제가 그냥 참았어야 했는데'라며 책임을 먼저 가져가 상대의 추궁을 무력화한다."
+              },
+              {
+                "type": "third_party_protection",
+                "trigger": "avoiding",
+                "pattern": "핵심 인물의 행동을 직접 말하지 않고 '그쪽 상황이 있었다'로 에둘러 말한다."
+              }
+            ]
+          }
+        ],
+        "hardIssues": [],
+        "candidateIssues": []
+      }
+    },
+    {
+      "name": "v6-meter-timing",
+      "scriptPath": "tmp/codex-recovery-v6/precheck-meter-timing.cjs",
+      "expectedJsonPath": "tmp/codex-recovery-v6/precheck-meter-timing.json",
+      "startedAt": "2026-04-26T19:43:41.990Z",
+      "finishedAt": "2026-04-26T19:43:42.208Z",
+      "exitCode": 0,
+      "result": "PASS",
+      "stdout": "{\n  \"passed\": true,\n  \"issueCount\": 0,\n  \"candidateIssueCount\": 0\n}\n",
+      "stderr": "",
+      "details": {
+        "generatedAt": "2026-04-26T19:43:42.191Z",
+        "passed": true,
+        "issueCount": 0,
+        "issues": []
+      }
+    },
+    {
+      "name": "legacy-precheck-matrix",
+      "scriptPath": "tmp/precheck-matrix.cjs",
+      "expectedJsonPath": null,
+      "startedAt": "2026-04-26T19:43:42.208Z",
+      "finishedAt": "2026-04-26T19:43:42.458Z",
+      "exitCode": 0,
+      "result": "PASS",
+      "stdout": "=== 사전 검증 결과 ===\n\n## CRITICAL: 0\n  ✓ 0건\n\n## HIGH: 10\n  - missing_disputeId_in_channel: 10\n    sample: {\"caseId\":\"family-01\",\"type\":\"missing_disputeId_in_channel\",\"channel\":\"contradiction_pursuit\",\"disputeId\":\"d-5\"}\n    sample: {\"caseId\":\"family-01\",\"type\":\"missing_disputeId_in_channel\",\"channel\":\"interjection\",\"disputeId\":\"d-5\"}\n\n## MEDIUM: 0\n  ✓ 0건\n\n## INFO: 0\n  ✓ 0건\n\n\n>>> ✗ FAIL — 적용 보류 + fix 필요\n상세: tmp/precheck-result.json\n",
+      "stderr": "",
+      "details": null
+    },
+    {
+      "name": "v3-stage-aware",
+      "scriptPath": "tmp/codex-recovery-v3/precheck-stage-aware.cjs",
+      "expectedJsonPath": "tmp/codex-recovery-v3/precheck-stage-aware.json",
+      "startedAt": "2026-04-26T19:43:42.458Z",
+      "finishedAt": "2026-04-26T19:43:43.342Z",
+      "exitCode": 0,
+      "result": "PASS",
+      "stdout": "{\n  \"passed\": true,\n  \"totalVariants\": 14931,\n  \"remainingChanges\": {\n    \"total\": 0,\n    \"byCategory\": {},\n    \"samples\": []\n  },\n  \"unnaturalHits\": 0,\n  \"failCount\": 0\n}\n",
+      "stderr": "",
+      "details": {
+        "generatedAt": "2026-04-26T19:43:43.317Z",
+        "passed": true,
+        "counts": {
+          "spouse-01": {
+            "total": 4677,
+            "byChannel": {
+              "interrogation": 1440,
+              "evidence_present": 1470,
+              "dossier": 240,
+              "witness": 90,
+              "aftermath": 25,
+              "system_message": 55,
+              "contradiction_pursuit": 320,
+              "interjection": 160,
+              "emotional_overload": 80,
+              "evidence_discovery": 12,
+              "trust_action": 180,
+              "mediation": 80,
+              "judge_question": 240,
+              "judge_contradiction": 60,
+              "judge_evidence_combo": 120,
+              "judge_witness_summon": 45,
+              "rapport_milestone": 30,
+              "contradict_milestone": 30
+            }
+          },
+          "family-01": {
+            "total": 5172,
+            "byChannel": {
+              "interrogation": 1800,
+              "evidence_present": 1470,
+              "dossier": 330,
+              "witness": 90,
+              "aftermath": 25,
+              "system_message": 55,
+              "mediation": 80,
+              "contradiction_pursuit": 320,
+              "interjection": 160,
+              "emotional_overload": 80,
+              "evidence_discovery": 12,
+              "trust_action": 180,
+              "judge_question": 240,
+              "judge_contradiction": 60,
+              "judge_evidence_combo": 165,
+              "judge_witness_summon": 45,
+              "rapport_milestone": 30,
+              "contradict_milestone": 30
+            }
+          },
+          "friend-01": {
+            "total": 5082,
+            "byChannel": {
+              "interrogation": 1800,
+              "evidence_present": 1470,
+              "dossier": 270,
+              "witness": 90,
+              "aftermath": 25,
+              "system_message": 55,
+              "mediation": 80,
+              "contradiction_pursuit": 320,
+              "interjection": 160,
+              "emotional_overload": 80,
+              "evidence_discovery": 12,
+              "trust_action": 180,
+              "judge_question": 240,
+              "judge_contradiction": 60,
+              "judge_evidence_combo": 135,
+              "judge_witness_summon": 45,
+              "rapport_milestone": 30,
+              "contradict_milestone": 30
+            }
+          },
+          "total": 14931
+        },
+        "remainingChanges": {
+          "total": 0,
+          "byCategory": {},
+          "samples": []
+        },
+        "unnaturalHits": [],
+        "issues": []
+      }
+    },
+    {
+      "name": "v4-qa-coherence",
+      "scriptPath": "tmp/codex-recovery-v4/precheck-qa-coherence.cjs",
+      "expectedJsonPath": "tmp/codex-recovery-v4/precheck-qa-coherence-v4.json",
+      "startedAt": "2026-04-26T19:43:43.343Z",
+      "finishedAt": "2026-04-26T19:43:43.599Z",
+      "exitCode": 0,
+      "result": "PASS",
+      "stdout": "{\n  \"passed\": true,\n  \"issueCount\": 0,\n  \"checkedDimensions\": [\n    \"사용자 spot-check exact bad patterns removed\",\n    \"high-risk judge angle patterns absent from strict channels\",\n    \"target scriptedText text-like fields have no A/B code residual\"\n  ]\n}\n",
+      "stderr": "",
+      "details": null
+    },
+    {
+      "name": "v5-broad-detection",
+      "scriptPath": "tmp/codex-recovery-v5/precheck-broad-detection.cjs",
+      "expectedJsonPath": "tmp/codex-recovery-v5/precheck-broad-detection.json",
+      "startedAt": "2026-04-26T19:43:43.599Z",
+      "finishedAt": "2026-04-26T19:43:43.827Z",
+      "exitCode": 0,
+      "result": "PASS",
+      "stdout": "{\n  \"passed\": true,\n  \"matrix\": {\n    \"P2_CharacterRegister\": {\n      \"detected\": 1,\n      \"patchedOrClean\": 1,\n      \"protectedByV4\": 1,\n      \"residual\": 0\n    },\n    \"P1_QACoherence\": {\n      \"detected\": 0,\n      \"patchedOrClean\": 0,\n      \"protectedByV4\": 0,\n      \"residual\": 0\n    },\n    \"P3_JudgeAngle\": {\n      \"detected\": 1,\n      \"patchedOrClean\": 1,\n      \"protectedByV4\": 1,\n      \"residual\": 0\n    },\n    \"P4_NarrativeDetail\": {\n      \"detected\": 0,\n      \"patchedOrClean\": 0,\n      \"protectedByV4\": 0,\n      \"residual\": 0,\n      \"appliedRate\": 1\n    }\n  }\n}\n",
+      "stderr": "",
+      "details": {
+        "generatedAt": "2026-04-26T19:43:43.667Z",
+        "matrix": {
+          "P2_CharacterRegister": {
+            "detected": 1,
+            "patchedOrClean": 1,
+            "residual": 0,
+            "protectedByV4": 1,
+            "residuals": []
+          },
+          "P1_QACoherence": {
+            "detected": 0,
+            "patchedOrClean": 0,
+            "residual": 0,
+            "residuals": [],
+            "note": "No high-confidence dimension mismatch remained after v4 QA coherence precheck."
+          },
+          "P3_JudgeAngle": {
+            "detected": 1,
+            "patchedOrClean": 1,
+            "residual": 0,
+            "protectedByV4": 1,
+            "residuals": []
+          },
+          "P4_NarrativeDetail": {
+            "detected": 0,
+            "patchedOrClean": 0,
+            "residual": 0,
+            "appliedRate": 1,
+            "residuals": []
+          }
+        },
+        "passed": true
+      }
+    }
+  ],
+  "allPass": true
+}

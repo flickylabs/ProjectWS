@@ -1,0 +1,260 @@
+{
+  "baselineTargetSha": "a10b801",
+  "baselineTargetFullSha": "a10b8011c3311d2a6ab20dd4a06edb29a4ac48e3",
+  "generatedAt": "2026-04-26T19:43:01.651Z",
+  "method": "git-show",
+  "files": {
+    "src/data/scriptedText/spouse-01.json": {
+      "sha256": "8298ead7a41c5245998808e03cc87ad3c4b3c534860bcb04470081493f0bc4f7",
+      "sizeBytes": 8677560,
+      "topLevelKeyCount": 6,
+      "schemaVersion": 1,
+      "caseId": "spouse-01",
+      "sourceGeneratedAt": "2026-04-26T04:41:50.620Z",
+      "entryCount": 560,
+      "variantCount": 4677,
+      "channelCounts": {
+        "interrogation": {
+          "entryCount": 144,
+          "variantCount": 1440
+        },
+        "evidence_present": {
+          "entryCount": 168,
+          "variantCount": 1470
+        },
+        "dossier": {
+          "entryCount": 24,
+          "variantCount": 240
+        },
+        "witness": {
+          "entryCount": 9,
+          "variantCount": 90
+        },
+        "aftermath": {
+          "entryCount": 5,
+          "variantCount": 25
+        },
+        "system_message": {
+          "entryCount": 11,
+          "variantCount": 55
+        },
+        "contradiction_pursuit": {
+          "entryCount": 32,
+          "variantCount": 320
+        },
+        "interjection": {
+          "entryCount": 16,
+          "variantCount": 160
+        },
+        "emotional_overload": {
+          "entryCount": 8,
+          "variantCount": 80
+        },
+        "evidence_discovery": {
+          "entryCount": 12,
+          "variantCount": 12
+        },
+        "trust_action": {
+          "entryCount": 18,
+          "variantCount": 180
+        },
+        "mediation": {
+          "entryCount": 8,
+          "variantCount": 80
+        },
+        "judge_question": {
+          "entryCount": 48,
+          "variantCount": 240
+        },
+        "judge_contradiction": {
+          "entryCount": 12,
+          "variantCount": 60
+        },
+        "judge_evidence_combo": {
+          "entryCount": 24,
+          "variantCount": 120
+        },
+        "judge_witness_summon": {
+          "entryCount": 9,
+          "variantCount": 45
+        },
+        "rapport_milestone": {
+          "entryCount": 6,
+          "variantCount": 30
+        },
+        "contradict_milestone": {
+          "entryCount": 6,
+          "variantCount": 30
+        }
+      }
+    },
+    "src/data/scriptedText/family-01.json": {
+      "sha256": "c0393287b94b282c56b445f8b278350715e4b0c4ff65d9e56dc623696dbcd940",
+      "sizeBytes": 9210447,
+      "topLevelKeyCount": 6,
+      "schemaVersion": 1,
+      "caseId": "family-01",
+      "sourceGeneratedAt": "2026-04-26T04:41:50.621Z",
+      "entryCount": 614,
+      "variantCount": 5172,
+      "channelCounts": {
+        "interrogation": {
+          "entryCount": 180,
+          "variantCount": 1800
+        },
+        "evidence_present": {
+          "entryCount": 168,
+          "variantCount": 1470
+        },
+        "dossier": {
+          "entryCount": 33,
+          "variantCount": 330
+        },
+        "witness": {
+          "entryCount": 9,
+          "variantCount": 90
+        },
+        "aftermath": {
+          "entryCount": 5,
+          "variantCount": 25
+        },
+        "system_message": {
+          "entryCount": 11,
+          "variantCount": 55
+        },
+        "mediation": {
+          "entryCount": 8,
+          "variantCount": 80
+        },
+        "contradiction_pursuit": {
+          "entryCount": 32,
+          "variantCount": 320
+        },
+        "interjection": {
+          "entryCount": 16,
+          "variantCount": 160
+        },
+        "emotional_overload": {
+          "entryCount": 8,
+          "variantCount": 80
+        },
+        "evidence_discovery": {
+          "entryCount": 12,
+          "variantCount": 12
+        },
+        "trust_action": {
+          "entryCount": 18,
+          "variantCount": 180
+        },
+        "judge_question": {
+          "entryCount": 48,
+          "variantCount": 240
+        },
+        "judge_contradiction": {
+          "entryCount": 12,
+          "variantCount": 60
+        },
+        "judge_evidence_combo": {
+          "entryCount": 33,
+          "variantCount": 165
+        },
+        "judge_witness_summon": {
+          "entryCount": 9,
+          "variantCount": 45
+        },
+        "rapport_milestone": {
+          "entryCount": 6,
+          "variantCount": 30
+        },
+        "contradict_milestone": {
+          "entryCount": 6,
+          "variantCount": 30
+        }
+      }
+    },
+    "src/data/scriptedText/friend-01.json": {
+      "sha256": "4135dfb8d90c9c9b40fcbeb3815e668029ab35723af725d699f22a2f4831db97",
+      "sizeBytes": 9162583,
+      "topLevelKeyCount": 6,
+      "schemaVersion": 1,
+      "caseId": "friend-01",
+      "sourceGeneratedAt": "2026-04-26T04:41:50.621Z",
+      "entryCount": 602,
+      "variantCount": 5082,
+      "channelCounts": {
+        "interrogation": {
+          "entryCount": 180,
+          "variantCount": 1800
+        },
+        "evidence_present": {
+          "entryCount": 168,
+          "variantCount": 1470
+        },
+        "dossier": {
+          "entryCount": 27,
+          "variantCount": 270
+        },
+        "witness": {
+          "entryCount": 9,
+          "variantCount": 90
+        },
+        "aftermath": {
+          "entryCount": 5,
+          "variantCount": 25
+        },
+        "system_message": {
+          "entryCount": 11,
+          "variantCount": 55
+        },
+        "mediation": {
+          "entryCount": 8,
+          "variantCount": 80
+        },
+        "contradiction_pursuit": {
+          "entryCount": 32,
+          "variantCount": 320
+        },
+        "interjection": {
+          "entryCount": 16,
+          "variantCount": 160
+        },
+        "emotional_overload": {
+          "entryCount": 8,
+          "variantCount": 80
+        },
+        "evidence_discovery": {
+          "entryCount": 12,
+          "variantCount": 12
+        },
+        "trust_action": {
+          "entryCount": 18,
+          "variantCount": 180
+        },
+        "judge_question": {
+          "entryCount": 48,
+          "variantCount": 240
+        },
+        "judge_contradiction": {
+          "entryCount": 12,
+          "variantCount": 60
+        },
+        "judge_evidence_combo": {
+          "entryCount": 27,
+          "variantCount": 135
+        },
+        "judge_witness_summon": {
+          "entryCount": 9,
+          "variantCount": 45
+        },
+        "rapport_milestone": {
+          "entryCount": 6,
+          "variantCount": 30
+        },
+        "contradict_milestone": {
+          "entryCount": 6,
+          "variantCount": 30
+        }
+      }
+    }
+  }
+}

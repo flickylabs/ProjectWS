@@ -1,0 +1,32 @@
+{
+  "baselineTargetSha": "a10b801",
+  "baselineTargetFullSha": "a10b8011c3311d2a6ab20dd4a06edb29a4ac48e3",
+  "scriptPath": "tmp/detect-truth-leak.cjs",
+  "executedAt": "2026-04-26T19:43:21.694Z",
+  "result": "PASS",
+  "leakCount": 0,
+  "perCase": {
+    "spouse-01": {
+      "leakCount": 0,
+      "scannedVariants": 4677,
+      "scannedEntries": 560
+    },
+    "family-01": {
+      "leakCount": 0,
+      "scannedVariants": 5172,
+      "scannedEntries": 614
+    },
+    "friend-01": {
+      "leakCount": 0,
+      "scannedVariants": 5082,
+      "scannedEntries": 602
+    }
+  },
+  "rawOutput": "=== 진실 누설 검출 결과 (재판관 4채널 + system_message) ===\n\n### spouse-01 (0건)\n  ✓ 0건\n### family-01 (0건)\n  ✓ 0건\n### friend-01 (0건)\n  ✓ 0건\n\n총 누설 의심 entries: 0\n상세: tmp/truth-leak-detection.json\n",
+  "rawJsonPath": "tmp/truth-leak-detection.json",
+  "rawJson": {
+    "spouse-01": [],
+    "family-01": [],
+    "friend-01": []
+  }
+}
