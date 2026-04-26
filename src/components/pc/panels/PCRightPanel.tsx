@@ -835,7 +835,7 @@ export default function PCRightPanel() {
                 <p className="pc-target-info-drawer__lede">
                   실수로 흘린 단서의 누적량. 높을수록 <Em>진실파악 단계가 빠르게 상승</Em>할 수 있습니다.
                 </p>
-                <div className="pc-target-info-drawer__columns" style={{ gridTemplateColumns: '0.85fr 1.15fr' }}>
+                <div className="pc-target-info-drawer__columns" style={{ gridTemplateColumns: '0.7fr 1.3fr' }}>
                   <div>
                     <div className="pc-target-info-drawer__col-h">발생 경로</div>
                     <ul>
@@ -864,7 +864,8 @@ export default function PCRightPanel() {
             {infoDrawer === 'lieStages' ? (
               <>
                 <p className="pc-target-info-drawer__lede">
-                  쟁점별로 NPC가 진실에 얼마나 다가갔는지 나타내는 6단계 지표입니다. 단계가 높을수록 진실이 드러납니다.
+                  쟁점별 6단계 진실 접근 지표.<br />
+                  단계가 높을수록 더 많은 진실이 드러납니다.
                 </p>
                 <ul className="pc-target-info-drawer__list">
                   {[

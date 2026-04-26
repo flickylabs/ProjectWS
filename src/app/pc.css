@@ -20212,6 +20212,147 @@ body.pc-mode .pc-interaction-card__header--evidence {
   border-bottom: 1px solid rgba(212, 162, 78, 0.12) !important;
 }
 
+/* ── 정보 드로어 통일 양식 (target-info / combination / 기타 info drawers) ── */
+body.pc-mode .pc-target-info-drawer,
+body.pc-mode .pc-combination-drawer {
+  background: linear-gradient(180deg, rgba(24, 26, 32, 0.96), rgba(13, 14, 18, 0.98)) !important;
+  border: 1px solid rgba(212, 162, 78, 0.22) !important;
+  border-radius: 18px !important;
+  box-shadow: 0 22px 48px rgba(0, 0, 0, 0.50), inset 0 1px 0 rgba(255, 255, 255, 0.04) !important;
+  color: var(--pc-text) !important;
+  padding: 16px 18px !important;
+  gap: 12px !important;
+}
+body.pc-mode .pc-target-info-drawer__header,
+body.pc-mode .pc-combination-drawer__header {
+  border-bottom: 1px solid rgba(212, 162, 78, 0.18) !important;
+  padding: 0 0 10px !important;
+}
+body.pc-mode .pc-target-info-drawer__title,
+body.pc-mode .pc-combination-drawer__title {
+  font-size: 13px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.04em !important;
+  color: var(--pc-text) !important;
+}
+body.pc-mode .pc-target-info-drawer__title strong,
+body.pc-mode .pc-combination-drawer__title strong {
+  color: var(--pc-gold-light) !important;
+}
+body.pc-mode .pc-target-info-drawer__close,
+body.pc-mode .pc-combination-drawer__close {
+  width: 28px !important;
+  height: 28px !important;
+  border-radius: 10px !important;
+  border: 1px solid rgba(255, 255, 255, 0.10) !important;
+  background: rgba(255, 255, 255, 0.03) !important;
+  color: var(--pc-text-dim) !important;
+  transition: all 160ms ease !important;
+}
+body.pc-mode .pc-target-info-drawer__close:hover,
+body.pc-mode .pc-combination-drawer__close:hover {
+  border-color: rgba(212, 162, 78, 0.40) !important;
+  background: rgba(212, 162, 78, 0.08) !important;
+  color: var(--pc-gold-light) !important;
+}
+body.pc-mode .pc-target-info-drawer__lede,
+body.pc-mode .pc-combination-drawer__lede {
+  font-size: 13px !important;
+  line-height: 1.6 !important;
+  color: var(--pc-text-dim) !important;
+}
+body.pc-mode .pc-target-info-drawer__lede strong,
+body.pc-mode .pc-combination-drawer__lede strong {
+  color: var(--pc-gold-light) !important;
+  font-weight: 700;
+}
+body.pc-mode .pc-target-info-drawer__columns > div {
+  border-radius: 12px !important;
+  border: 1px solid rgba(212, 162, 78, 0.14) !important;
+  background: rgba(212, 162, 78, 0.04) !important;
+  padding: 12px 14px !important;
+}
+body.pc-mode .pc-target-info-drawer__col-h {
+  font-size: 11px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.16em !important;
+  text-transform: uppercase;
+  color: var(--pc-gold-light) !important;
+  margin-bottom: 8px !important;
+}
+body.pc-mode .pc-target-info-drawer__columns ul {
+  font-size: 12.5px !important;
+  color: var(--pc-text) !important;
+  line-height: 1.55 !important;
+}
+body.pc-mode .pc-target-info-drawer__list {
+  border-radius: 12px !important;
+  border: 1px solid rgba(255, 255, 255, 0.06) !important;
+  background: rgba(255, 255, 255, 0.025) !important;
+  padding: 10px 12px !important;
+  font-size: 12.5px !important;
+  color: var(--pc-text) !important;
+}
+body.pc-mode .pc-target-info-drawer__list strong {
+  color: var(--pc-text) !important;
+}
+body.pc-mode .pc-target-info-drawer__list em {
+  color: var(--pc-gold-light) !important;
+}
+body.pc-mode .pc-target-info-drawer__tip {
+  padding: 10px 12px !important;
+  border-left: 2px solid rgba(212, 162, 78, 0.45) !important;
+  background: rgba(212, 162, 78, 0.04) !important;
+  border-radius: 0 8px 8px 0 !important;
+  font-size: 12px !important;
+  line-height: 1.55 !important;
+  color: var(--pc-text-dim) !important;
+}
+body.pc-mode .pc-target-info-drawer__tip strong {
+  color: var(--pc-gold-light) !important;
+}
+body.pc-mode .pc-target-info-drawer__now {
+  padding: 10px 14px !important;
+  border-radius: 10px !important;
+  background: rgba(212, 162, 78, 0.08) !important;
+  border: 1px solid rgba(212, 162, 78, 0.30) !important;
+  font-size: 12px !important;
+}
+body.pc-mode .pc-target-info-drawer__now span {
+  color: var(--pc-text-muted) !important;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-size: 10px !important;
+}
+body.pc-mode .pc-target-info-drawer__now strong {
+  color: var(--pc-gold-light) !important;
+  font-weight: 800 !important;
+  font-size: 14px !important;
+}
+
+/* 기록 정리 모달도 동일 양식 (드로어 형태는 아니지만 통일 톤) */
+body.pc-mode .pc-record-summary__panel {
+  background: linear-gradient(180deg, rgba(24, 26, 32, 0.96), rgba(13, 14, 18, 0.98)) !important;
+  border: 1px solid rgba(212, 162, 78, 0.22) !important;
+  border-radius: 18px !important;
+  box-shadow: 0 28px 60px rgba(0, 0, 0, 0.56), inset 0 1px 0 rgba(255, 255, 255, 0.04) !important;
+}
+body.pc-mode .pc-record-summary__section h3 {
+  font-size: 11px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.16em !important;
+  text-transform: uppercase;
+  color: var(--pc-gold-light) !important;
+}
+body.pc-mode .pc-record-summary__item {
+  border-radius: 10px !important;
+  border: 1px solid rgba(255, 255, 255, 0.06) !important;
+  background: rgba(255, 255, 255, 0.025) !important;
+  font-size: 13px !important;
+  color: var(--pc-text) !important;
+}
+
 /* ── 최상단 헤더 — 로고/제목/Phase pill 컬러 통일 (gold-alt) ── */
 body.pc-mode .pc-play-logo .logo-text {
   color: var(--pc-gold-light) !important;
