@@ -20038,6 +20038,7 @@ body.pc-mode button.pc-ev-detail__stage.is-ready:hover {
 body.pc-mode button.pc-ev-detail__stage.is-ready .pc-ev-detail__stage-body {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 10px;
   flex: 1;
 }
@@ -20045,16 +20046,22 @@ body.pc-mode .pc-ev-detail__investigate-cost {
   display: inline-flex;
   align-items: center;
   gap: 4px;
-  color: var(--pc-gold-light);
+  color: var(--pc-gold-light) !important;
+  font-size: 13px;
+  font-weight: 700;
+}
+body.pc-mode .pc-ev-detail__investigate-cost svg {
+  color: var(--pc-gold-light) !important;
 }
 body.pc-mode .pc-ev-detail__investigate-label {
   color: var(--pc-gold-light);
+  font-size: 13px;
   font-weight: 700;
 }
 /* 폐기된 inner button 잔재 — 안전 */
 body.pc-mode .pc-ev-detail__investigate-btn { display: none !important; }
 
-/* 증거 제시 버튼 — 한쪽 edge만 컬러 + glow는 inset (밖으로 새지 않음) */
+/* 증거 제시 버튼 — 한쪽 edge만 컬러 + 바깥쪽 좁은 glow (한정된 범위) */
 body.pc-mode .pc-ev-detail__present-btn {
   border-radius: 12px !important;
   min-height: 52px !important;
@@ -20064,27 +20071,26 @@ body.pc-mode .pc-ev-detail__present-btn {
   color: var(--pc-text) !important;
   backdrop-filter: none !important;
   -webkit-backdrop-filter: none !important;
-  overflow: hidden;
   transition: border-color 160ms ease, background 160ms ease, transform 160ms ease, box-shadow 160ms ease !important;
 }
-/* A (박지연, 왼쪽 버튼) — 좌측 edge 파란색 + 안쪽 좌측에서 퍼지는 inset blue glow */
+/* A (박지연, 왼쪽 버튼) — 좌측 edge 파란색 + 좁은 outward blue glow (~8px) */
 body.pc-mode .pc-ev-detail__present-btn.is-a {
   border-left: 3px solid var(--pc-blue) !important;
-  box-shadow: inset 18px 0 28px -10px rgba(91, 141, 239, 0.32) !important;
+  box-shadow: -2px 0 10px -2px rgba(91, 141, 239, 0.50) !important;
 }
 body.pc-mode .pc-ev-detail__present-btn.is-a:hover:not(:disabled) {
   border-left-color: rgba(91, 141, 239, 1) !important;
-  box-shadow: inset 22px 0 36px -10px rgba(91, 141, 239, 0.50) !important;
+  box-shadow: -2px 0 14px -2px rgba(91, 141, 239, 0.70) !important;
   transform: translateY(-1px) !important;
 }
-/* B (이준호, 오른쪽 버튼) — 우측 edge 빨간색 + 안쪽 우측에서 퍼지는 inset red glow */
+/* B (이준호, 오른쪽 버튼) — 우측 edge 빨간색 + 좁은 outward red glow (~8px) */
 body.pc-mode .pc-ev-detail__present-btn.is-b {
   border-right: 3px solid var(--pc-red) !important;
-  box-shadow: inset -18px 0 28px -10px rgba(224, 96, 96, 0.32) !important;
+  box-shadow: 2px 0 10px -2px rgba(224, 96, 96, 0.50) !important;
 }
 body.pc-mode .pc-ev-detail__present-btn.is-b:hover:not(:disabled) {
   border-right-color: rgba(224, 96, 96, 1) !important;
-  box-shadow: inset -22px 0 36px -10px rgba(224, 96, 96, 0.50) !important;
+  box-shadow: 2px 0 14px -2px rgba(224, 96, 96, 0.70) !important;
   transform: translateY(-1px) !important;
 }
 
