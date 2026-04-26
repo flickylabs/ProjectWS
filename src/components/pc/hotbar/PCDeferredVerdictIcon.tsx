@@ -17,12 +17,15 @@ import PCSvgIcon from '../icons/PCSvgIcon'
 
 export default function PCDeferredVerdictIcon() {
   // 안전 가드 — store rehydration 전 또는 dev hot reload 직후 deferredVerdicts undefined 가능
-  const deferredVerdicts = useStore((s) => s.discovery?.deferredVerdicts ?? {})
-  const pendingConfrontation = useStore((s) => s.discovery?.pendingConfrontation ?? null)
+  // ★ 절대 `?? {}` selector 사용 X — 매 select마다 새 객체 인스턴스 생성으로 무한 리렌더 발생.
+  // selector는 raw 값만 반환, fallback은 컴포넌트 내부에서 처리.
+  const deferredVerdicts = useStore((s) => s.discovery?.deferredVerdicts)
+  const pendingConfrontation = useStore((s) => s.discovery?.pendingConfrontation)
   const caseData = useStore((s) => s.caseData)
 
+  if (!deferredVerdicts || !caseData) return null
   const entries = Object.values(deferredVerdicts)
-  if (entries.length === 0 || !caseData) return null
+  if (entries.length === 0) return null
 
   return (
     <div className="pc-deferred-verdict" role="region" aria-label="보류된 판결">
