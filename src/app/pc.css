@@ -19901,14 +19901,14 @@ body.pc-mode .pc-depth-shell {
   overflow: visible !important;
 }
 
-/* 헤더 dark band — 양 끝 그라데이션 fade-out */
+/* 헤더 dark band — 양 끝까지 fade 밀어내기 (1.5% / 98.5% 페이드) */
 body.pc-mode .pc-depth-header {
   position: relative;
   background: linear-gradient(90deg,
     transparent 0%,
-    rgba(13, 14, 18, 0.72) 6%,
+    rgba(13, 14, 18, 0.72) 1.5%,
     rgba(13, 14, 18, 0.78) 50%,
-    rgba(13, 14, 18, 0.72) 94%,
+    rgba(13, 14, 18, 0.72) 98.5%,
     transparent 100%) !important;
   border: none !important;
   border-bottom: none !important;
@@ -19916,7 +19916,7 @@ body.pc-mode .pc-depth-header {
   margin: 0 0 0 !important;
   border-radius: 0 !important;
 }
-/* 띠 하단 라인도 양 끝 페이드 (gold .18) */
+/* 띠 하단 라인도 양 끝까지 (3% / 97% 페이드) */
 body.pc-mode .pc-depth-header::after {
   content: '';
   position: absolute;
@@ -19924,8 +19924,8 @@ body.pc-mode .pc-depth-header::after {
   height: 1px;
   background: linear-gradient(90deg,
     transparent 0%,
-    rgba(212, 162, 78, 0.20) 10%,
-    rgba(212, 162, 78, 0.20) 90%,
+    rgba(212, 162, 78, 0.20) 3%,
+    rgba(212, 162, 78, 0.20) 97%,
     transparent 100%);
   pointer-events: none;
 }
