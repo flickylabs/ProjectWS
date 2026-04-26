@@ -1,0 +1,29 @@
+{
+  "total_variants": 465,
+  "channel_counts": {
+    "judge_question": [
+      48,
+      240
+    ],
+    "judge_contradiction": [
+      12,
+      60
+    ],
+    "judge_evidence_combo": [
+      24,
+      120
+    ],
+    "judge_witness_summon": [
+      9,
+      45
+    ]
+  },
+  "metadata_issues": [],
+  "unchanged_texts": [],
+  "forbidden_hits": [],
+  "witness_bad_address": [],
+  "contradiction_quote_marks": [],
+  "combo_less_than_two_material_terms": [],
+  "combo_all_have_two_plus_material_terms": true,
+  "witness_name_missing": []
+}

@@ -1,0 +1,27 @@
+{
+  "caseId": "spouse-01",
+  "session": "S4-w2-angle",
+  "operation": "add_witness_angle",
+  "target": "src/data/cases/generated/spouse-01.json",
+  "patch": {
+    "path": "combinationLab.nodes",
+    "operation": "insert",
+    "insertBefore": "w-3-angle",
+    "newNode": {
+      "id": "w-2-angle",
+      "type": "witness_angle",
+      "label": "w-2 은행 직원 증언 축",
+      "sourceRef": "w-2",
+      "linkedDisputeIds": [
+        "d-2",
+        "h-d4"
+      ],
+      "visibility": "base"
+    }
+  },
+  "additionalChanges": {
+    "recipes": [],
+    "outputs": []
+  },
+  "rationale": "은행 직원(w-2)은 위임장으로 공동 적금이 해지된 절차와 그 돈의 선후관계를 확인해 주는 중립 증인입니다. 현재 combinationLab.nodes에는 오피스텔 경비(w-1)와 박미라(w-3) 증언 축만 있어, 은행 절차 증언이 조합 축에서 빠져 있습니다. w-2-angle을 w-3-angle 앞에 넣어 증인 순서를 w-1, w-2, w-3으로 맞추고, d-2의 비밀 자금 흐름과 h-d4의 5,000만 원 선후관계를 함께 추적할 수 있게 합니다. 기존 nodes, recipes, outputs는 건드리지 않습니다."
+}

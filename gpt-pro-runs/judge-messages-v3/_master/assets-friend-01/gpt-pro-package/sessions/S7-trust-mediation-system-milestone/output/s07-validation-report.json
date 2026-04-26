@@ -1,0 +1,68 @@
+{
+  "counts": {
+    "trust_action": {
+      "entries": 18,
+      "variants": 180
+    },
+    "mediation": {
+      "entries": 8,
+      "variants": 80
+    },
+    "system_message": {
+      "entries": 11,
+      "variants": 55
+    },
+    "rapport_milestone": {
+      "entries": 6,
+      "variants": 30
+    },
+    "contradict_milestone": {
+      "entries": 6,
+      "variants": 30
+    }
+  },
+  "variant_delta": {
+    "trust_action": 144,
+    "mediation": 72,
+    "system_message": 43,
+    "rapport_milestone": 30,
+    "contradict_milestone": 30
+  },
+  "variant_delta_total": 319,
+  "checks": [
+    {
+      "name": "trust_action_18x10",
+      "passed": true
+    },
+    {
+      "name": "mediation_8x10_entries",
+      "passed": true
+    },
+    {
+      "name": "system_message_11x5",
+      "passed": true
+    },
+    {
+      "name": "rapport_6x5",
+      "passed": true
+    },
+    {
+      "name": "contradict_6x5",
+      "passed": true
+    },
+    {
+      "name": "delta_total_319",
+      "passed": true
+    },
+    {
+      "name": "mediation_no_paths",
+      "passed": true
+    },
+    {
+      "name": "no_banned_terms_full_output",
+      "passed": true
+    }
+  ],
+  "violations": [],
+  "passed": true
+}

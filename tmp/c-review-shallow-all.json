@@ -1,0 +1,650 @@
+[
+  {
+    "caseId": "spouse-01",
+    "channel": "judge_evidence_combo",
+    "key": "dc-1.b.q1|hard",
+    "id": "judgecombo-dc-1-b-q1-hard-v4",
+    "len": 57,
+    "text": "이준호 씨, 오피스텔 기록과 조카 관련 문자가 동시에 놓였습니다. 숨긴 사람의 정체를 지금 말하십시오."
+  },
+  {
+    "caseId": "spouse-01",
+    "channel": "judge_evidence_combo",
+    "key": "dc-2.b.q1|mid",
+    "id": "judgecombo-dc-2-b-q1-mid-v2",
+    "len": 59,
+    "text": "이준호 씨, 통화 상대와 문자 내용이 형의 사정으로 모입니다. 더는 단순 연락이라고만 정리할 수 없습니다."
+  },
+  {
+    "caseId": "spouse-01",
+    "channel": "judge_evidence_combo",
+    "key": "dc-2.b.q1|hard",
+    "id": "judgecombo-dc-2-b-q1-hard-v4",
+    "len": 59,
+    "text": "이준호 씨, 통화와 문자 앞에서 더 이상 모호하게 말할 수 없습니다. 형 사정을 숨긴 이유를 인정하십시오."
+  },
+  {
+    "caseId": "spouse-01",
+    "channel": "judge_evidence_combo",
+    "key": "dc-3.b.q1|hard",
+    "id": "judgecombo-dc-3-b-q1-hard-v3",
+    "len": 57,
+    "text": "이준호 씨, 개인 비자금이라는 말만으로 절차 위반을 덮을 수 없습니다. 현금 출금의 목적을 밝히십시오."
+  },
+  {
+    "caseId": "spouse-01",
+    "channel": "judge_evidence_combo",
+    "key": "dc-3.b.q1|hard",
+    "id": "judgecombo-dc-3-b-q1-hard-v4",
+    "len": 63,
+    "text": "이준호 씨, 형 문자와 출금 내역 앞에서 형에게 간 돈이라는 사실과 숨긴 책임을 분리하지 말고 함께 인정하십시오."
+  },
+  {
+    "caseId": "spouse-01",
+    "channel": "judge_evidence_combo",
+    "key": "dc-3.b.q2|soft",
+    "id": "judgecombo-dc-3-b-q2-soft-v5",
+    "len": 71,
+    "text": "이준호 씨, 형 문자와 현금 출금이 형을 돕는 마음을 보여준다면 그 마음이 왜 숨기는 방식으로 나갔는지 차분히 말씀해 주십시오."
+  },
+  {
+    "caseId": "spouse-01",
+    "channel": "judge_evidence_combo",
+    "key": "dc-3.b.q2|mid",
+    "id": "judgecombo-dc-3-b-q2-mid-v2",
+    "len": 59,
+    "text": "이준호 씨, 문자와 출금 기록이 가족 사정을 뒷받침합니다. 그래서 더더욱 왜 혼자 처리했는지가 문제입니다."
+  },
+  {
+    "caseId": "spouse-01",
+    "channel": "judge_evidence_combo",
+    "key": "dc-3.b.q2|hard",
+    "id": "judgecombo-dc-3-b-q2-hard-v2",
+    "len": 57,
+    "text": "이준호 씨, 형 문자와 출금 내역이 본인의 결정을 보여줍니다. 선의와 절차 위반을 분리해 인정하십시오."
+  },
+  {
+    "caseId": "spouse-01",
+    "channel": "judge_evidence_combo",
+    "key": "dc-3.b.q2|hard",
+    "id": "judgecombo-dc-3-b-q2-hard-v4",
+    "len": 65,
+    "text": "이준호 씨, 형 문자와 출금 내역이 놓인 지금 가족을 돕는다는 이유로 부부 사이 동의를 건너뛴 부분을 말해야 합니다."
+  },
+  {
+    "caseId": "spouse-01",
+    "channel": "judge_evidence_combo",
+    "key": "dc-4.a.q1|mid",
+    "id": "judgecombo-dc-4-a-q1-mid-v2",
+    "len": 58,
+    "text": "박지연 씨, 카톡 권유만 있었던 것이 아니라 송금까지 이어졌습니다. 단순한 불안으로 정리할 수 없습니다."
+  },
+  {
+    "caseId": "spouse-01",
+    "channel": "judge_evidence_combo",
+    "key": "dc-4.a.q1|mid",
+    "id": "judgecombo-dc-4-a-q1-mid-v5",
+    "len": 57,
+    "text": "박지연 씨, 이준호 씨의 출금을 의심하면서 본인의 송금은 숨겼습니다. 그 순서를 더 미룰 수 없습니다."
+  },
+  {
+    "caseId": "spouse-01",
+    "channel": "judge_evidence_combo",
+    "key": "dc-4.a.q1|hard",
+    "id": "judgecombo-dc-4-a-q1-hard-v3",
+    "len": 57,
+    "text": "박지연 씨, 투자방 기록 앞에서 더는 피해자 위치만 내세울 수 없습니다. 본인이 한 송금을 밝히십시오."
+  },
+  {
+    "caseId": "spouse-01",
+    "channel": "judge_evidence_combo",
+    "key": "dc-4.a.q1|hard",
+    "id": "judgecombo-dc-4-a-q1-hard-v5",
+    "len": 50,
+    "text": "박지연 씨, 카톡과 송금 내역이 같은 결론으로 모입니다. 본인의 선제 행동을 인정하십시오."
+  },
+  {
+    "caseId": "spouse-01",
+    "channel": "judge_evidence_combo",
+    "key": "dc-4.a.q2|soft",
+    "id": "judgecombo-dc-4-a-q2-soft-v2",
+    "len": 68,
+    "text": "박지연 씨, 투자방 카톡과 송금 기록이 나빠진 결과까지 이어졌을 때 이준호 씨에게 말하지 못한 마음을 차분히 들려주십시오."
+  },
+  {
+    "caseId": "spouse-01",
+    "channel": "judge_evidence_combo",
+    "key": "dc-4.a.q2|soft",
+    "id": "judgecombo-dc-4-a-q2-soft-v4",
+    "len": 68,
+    "text": "박지연 씨, 투자방 카톡과 송금 기록 앞에서 손실을 인정하기 어려웠던 마음과 피해자 위치에 서려는 마음이 함께 있었습니까."
+  },
+  {
+    "caseId": "spouse-01",
+    "channel": "judge_evidence_combo",
+    "key": "dc-4.a.q2|soft",
+    "id": "judgecombo-dc-4-a-q2-soft-v5",
+    "len": 63,
+    "text": "박지연 씨, 투자방 카톡과 송금 기록을 보면서 수치심과 두려움 중 어느 마음이 더 크게 남았는지 말씀해 주십시오."
+  },
+  {
+    "caseId": "spouse-01",
+    "channel": "judge_evidence_combo",
+    "key": "dc-4.a.q2|mid",
+    "id": "judgecombo-dc-4-a-q2-mid-v2",
+    "len": 58,
+    "text": "박지연 씨, 송금 기록이 남아 있는데도 이준호 씨의 출금만 앞세웠습니다. 본인의 손실을 왜 빼두셨습니까."
+  },
+  {
+    "caseId": "spouse-01",
+    "channel": "judge_evidence_combo",
+    "key": "dc-4.a.q2|hard",
+    "id": "judgecombo-dc-4-a-q2-hard-v5",
+    "len": 49,
+    "text": "박지연 씨, 투자방 기록과 송금 내역이 한 흐름입니다. 숨긴 손실을 인정하고 답하십시오."
+  },
+  {
+    "caseId": "spouse-01",
+    "channel": "judge_evidence_combo",
+    "key": "dc-5.b.q1|mid",
+    "id": "judgecombo-dc-5-b-q1-mid-v2",
+    "len": 64,
+    "text": "이준호 씨, 박지연 씨의 위임장 조작을 말하기 전에 형과 조카 일을 먼저 숨긴 사실도 같은 시간표에 놓아야 합니다."
+  },
+  {
+    "caseId": "spouse-01",
+    "channel": "judge_evidence_combo",
+    "key": "dc-5.a.q1|hard",
+    "id": "judgecombo-dc-5-a-q1-hard-v2",
+    "len": 57,
+    "text": "박지연 씨, 실제 송금과 위임장 조작은 본인 행위입니다. 세 자료 앞에서 그 순서를 지금 인정하십시오."
+  },
+  {
+    "caseId": "family-01",
+    "channel": "judge_evidence_combo",
+    "key": "dc-2.b.q2|mid",
+    "id": "judgeec-dc-2-b-q2-mid-v5",
+    "len": 57,
+    "text": "윤정후 씨, 공증 기록은 위조를 묻고 원본은 동기를 묻습니다. 두 질문을 분리하지 말고 답해 주십시오."
+  },
+  {
+    "caseId": "family-01",
+    "channel": "judge_evidence_combo",
+    "key": "dc-3.b.q1|mid",
+    "id": "judgeec-dc-3-b-q1-mid-v5",
+    "len": 59,
+    "text": "윤정후 씨, 송금 내역은 작은 도움을 넘어선 흐름입니다. 원본 유서와 맞물린 의미를 지금 설명해 주십시오."
+  },
+  {
+    "caseId": "family-01",
+    "channel": "judge_evidence_combo",
+    "key": "dc-3.b.q2|mid",
+    "id": "judgeec-dc-3-b-q2-mid-v3",
+    "len": 55,
+    "text": "윤태성 씨의 체면을 지키려 했다는 말이 사실이라면, 왜 그 체면을 유서 조작으로까지 이어 갔습니까."
+  },
+  {
+    "caseId": "family-01",
+    "channel": "judge_evidence_combo",
+    "key": "dc-3.b.q2|mid",
+    "id": "judgeec-dc-3-b-q2-mid-v4",
+    "len": 58,
+    "text": "원본 유서와 송금 자료가 맞물리면 윤정후 씨의 침묵은 보호이면서 왜곡이 됩니다. 어느 쪽이 더 컸습니까."
+  },
+  {
+    "caseId": "friend-01",
+    "channel": "judge_evidence_combo",
+    "key": "dc-1.a.q1|soft",
+    "id": "judgecombo-dc-1.a.q1-soft-v3",
+    "len": 57,
+    "text": "연락의 겉모습과 단톡방의 공개 발언을 함께 보겠습니다. 송다은 씨, 왜 먼저 집착이라고 못 박았습니까."
+  },
+  {
+    "caseId": "friend-01",
+    "channel": "judge_evidence_combo",
+    "key": "dc-1.a.q1|soft",
+    "id": "judgecombo-dc-1.a.q1-soft-v5",
+    "len": 59,
+    "text": "연락 기록과 단톡방 발언을 나란히 놓으면 확인보다 공개가 앞섰습니다. 송다은 씨, 그 선택을 설명하십시오."
+  },
+  {
+    "caseId": "friend-01",
+    "channel": "judge_evidence_combo",
+    "key": "dc-1.a.q1|mid",
+    "id": "judgecombo-dc-1.a.q1-mid-v3",
+    "len": 49,
+    "text": "연락의 숫자와 공개 발언의 무게는 다릅니다. 송다은 씨, 왜 확인 절차를 건너뛰었습니까."
+  },
+  {
+    "caseId": "friend-01",
+    "channel": "judge_evidence_combo",
+    "key": "dc-1.a.q1|hard",
+    "id": "judgecombo-dc-1.a.q1-hard-v1",
+    "len": 58,
+    "text": "연락 기록만으로 목적을 단정했고, 단톡방 캡처로 그 단정을 퍼뜨렸습니다. 송다은 씨, 책임을 답하십시오."
+  },
+  {
+    "caseId": "friend-01",
+    "channel": "judge_evidence_combo",
+    "key": "dc-1.a.q1|hard",
+    "id": "judgecombo-dc-1.a.q1-hard-v2",
+    "len": 54,
+    "text": "기록에는 연락이 있을 뿐이고, 단톡방에는 송다은 씨의 결론이 있습니다. 왜 사람부터 규정했습니까."
+  },
+  {
+    "caseId": "friend-01",
+    "channel": "judge_evidence_combo",
+    "key": "dc-1.b.q1|soft",
+    "id": "judgecombo-dc-1.b.q1-soft-v2",
+    "len": 58,
+    "text": "전화와 문자가 이어진 기록 옆에 단톡방의 낙인이 놓여 있습니다. 최수민 씨, 그 연락이 왜 필요했습니까."
+  },
+  {
+    "caseId": "friend-01",
+    "channel": "judge_evidence_combo",
+    "key": "dc-1.b.q1|soft",
+    "id": "judgecombo-dc-1.b.q1-soft-v3",
+    "len": 58,
+    "text": "연락의 겉모습과 공개된 오해를 함께 보겠습니다. 최수민 씨, 감정이 아니라 경고였다는 근거를 말하십시오."
+  },
+  {
+    "caseId": "friend-01",
+    "channel": "judge_evidence_combo",
+    "key": "dc-1.b.q1|soft",
+    "id": "judgecombo-dc-1.b.q1-soft-v5",
+    "len": 50,
+    "text": "연락 기록과 단톡방 반응이 함께 있습니다. 최수민 씨, 꼭 전하려던 위험이 무엇이었습니까."
+  },
+  {
+    "caseId": "friend-01",
+    "channel": "judge_evidence_combo",
+    "key": "dc-1.b.q1|mid",
+    "id": "judgecombo-dc-1.b.q1-mid-v5",
+    "len": 57,
+    "text": "두 자료는 최수민 씨에게 같은 질문을 합니다. 반복 연락의 목적과 공개 오해의 책임을 함께 답하십시오."
+  },
+  {
+    "caseId": "friend-01",
+    "channel": "judge_evidence_combo",
+    "key": "dc-2.b.q1|soft",
+    "id": "judgecombo-dc-2.b.q1-soft-v4",
+    "len": 56,
+    "text": "연락의 양만 보던 장면에 예비신랑의 메시지가 들어왔습니다. 최수민 씨, 그때 어떻게 선을 그었습니까."
+  },
+  {
+    "caseId": "friend-01",
+    "channel": "judge_evidence_combo",
+    "key": "dc-2.b.q1|mid",
+    "id": "judgecombo-dc-2.b.q1-mid-v1",
+    "len": 58,
+    "text": "연락 기록은 반복을, 예비신랑 메시지는 선후를 보여줍니다. 최수민 씨, 왜 원본을 바로 내지 않았습니까."
+  },
+  {
+    "caseId": "friend-01",
+    "channel": "judge_evidence_combo",
+    "key": "dc-2.b.q1|hard",
+    "id": "judgecombo-dc-2.b.q1-hard-v5",
+    "len": 54,
+    "text": "반복 연락의 설명은 예비신랑 메시지 없이는 성립하지 않습니다. 최수민 씨, 왜 핵심을 감췄습니까."
+  },
+  {
+    "caseId": "friend-01",
+    "channel": "judge_evidence_combo",
+    "key": "dc-3.b.q1|soft",
+    "id": "judgecombo-dc-3.b.q1-soft-v5",
+    "len": 56,
+    "text": "현재 문자와 과거 돈 흐름이 같은 방향을 가리킵니다. 최수민 씨, 왜 이번에도 혼자 막으려 했습니까."
+  },
+  {
+    "caseId": "friend-01",
+    "channel": "judge_evidence_combo",
+    "key": "dc-3.b.q1|mid",
+    "id": "judgecombo-dc-3.b.q1-mid-v1",
+    "len": 55,
+    "text": "현재 문자와 과거 송금 기록이 같은 부탁의 모양을 보입니다. 최수민 씨, 왜 또 혼자 감당했습니까."
+  },
+  {
+    "caseId": "friend-01",
+    "channel": "judge_evidence_combo",
+    "key": "dc-3.b.q1|mid",
+    "id": "judgecombo-dc-3.b.q1-mid-v2",
+    "len": 58,
+    "text": "지금 예비신랑에게 간 말과 예전 최수민 씨에게 남은 돈 흐름이 겹칩니다. 경고 판단을 분명히 말하십시오."
+  },
+  {
+    "caseId": "friend-01",
+    "channel": "judge_evidence_combo",
+    "key": "dc-3.b.q1|mid",
+    "id": "judgecombo-dc-3.b.q1-mid-v4",
+    "len": 57,
+    "text": "현재의 부탁과 과거의 송금이 이어지면, 연락의 목적도 달라집니다. 최수민 씨, 왜 공개하지 않았습니까."
+  },
+  {
+    "caseId": "friend-01",
+    "channel": "judge_evidence_combo",
+    "key": "dc-3.b.q1|mid",
+    "id": "judgecombo-dc-3.b.q1-mid-v5",
+    "len": 51,
+    "text": "문자와 송금 기록이 반복된 방식을 세웁니다. 최수민 씨, 그걸 보고도 왜 혼자 판단했습니까."
+  },
+  {
+    "caseId": "friend-01",
+    "channel": "judge_evidence_combo",
+    "key": "dc-3.b.q1|hard",
+    "id": "judgecombo-dc-3.b.q1-hard-v3",
+    "len": 52,
+    "text": "지금의 부탁과 과거의 피해가 맞물렸습니다. 최수민 씨, 경고를 우회한 이유를 바로 답하십시오."
+  },
+  {
+    "caseId": "friend-01",
+    "channel": "judge_evidence_combo",
+    "key": "dc-3.a.q1|soft",
+    "id": "judgecombo-dc-3.a.q1-soft-v4",
+    "len": 58,
+    "text": "지금의 문자와 과거의 송금이 나란히 놓였습니다. 송다은 씨, 최수민 씨의 경고 가능성을 어떻게 보십니까."
+  },
+  {
+    "caseId": "friend-01",
+    "channel": "judge_evidence_combo",
+    "key": "dc-3.a.q1|soft",
+    "id": "judgecombo-dc-3.a.q1-soft-v5",
+    "len": 49,
+    "text": "현재 부탁과 과거 피해가 같은 방향을 보입니다. 송다은 씨, 판단을 차분히 말씀하십시오."
+  },
+  {
+    "caseId": "friend-01",
+    "channel": "judge_evidence_combo",
+    "key": "dc-3.a.q1|mid",
+    "id": "judgecombo-dc-3.a.q1-mid-v1",
+    "len": 58,
+    "text": "현재 문자와 과거 송금 기록이 같은 방식의 부탁을 보여줍니다. 송다은 씨, 오해라는 주장을 유지하십니까."
+  },
+  {
+    "caseId": "friend-01",
+    "channel": "judge_evidence_combo",
+    "key": "dc-3.a.q1|mid",
+    "id": "judgecombo-dc-3.a.q1-mid-v3",
+    "len": 57,
+    "text": "지금 예비신랑에게 간 말과 과거 최수민 씨에게 남은 흐름이 맞물립니다. 아버지 책임을 어떻게 보십니까."
+  },
+  {
+    "caseId": "friend-01",
+    "channel": "judge_evidence_combo",
+    "key": "dc-3.a.q1|hard",
+    "id": "judgecombo-dc-3.a.q1-hard-v1",
+    "len": 53,
+    "text": "현재 문자와 과거 송금 기록이 같은 흐름을 보입니다. 송다은 씨, 오해라는 말로 덮지 마십시오."
+  },
+  {
+    "caseId": "friend-01",
+    "channel": "judge_evidence_combo",
+    "key": "dc-3.a.q1|hard",
+    "id": "judgecombo-dc-3.a.q1-hard-v3",
+    "len": 50,
+    "text": "지금과 과거가 맞물렸습니다. 송다은 씨, 가족을 감싸느라 자료를 밀어낸 판단을 답하십시오."
+  },
+  {
+    "caseId": "friend-01",
+    "channel": "judge_evidence_combo",
+    "key": "dc-3.a.q1|hard",
+    "id": "judgecombo-dc-3.a.q1-hard-v5",
+    "len": 49,
+    "text": "문자와 송금 기록이 경고의 근거를 세웁니다. 송다은 씨, 왜 먼저 상대를 몰아붙였습니까."
+  },
+  {
+    "caseId": "friend-01",
+    "channel": "judge_evidence_combo",
+    "key": "dc-4.b.q1|soft",
+    "id": "judgecombo-dc-4.b.q1-soft-v2",
+    "len": 59,
+    "text": "손절 직전의 끊긴 말과 과거 송금 기록을 함께 보겠습니다. 최수민 씨, 변심이 아니라면 무엇이 있었습니까."
+  },
+  {
+    "caseId": "friend-01",
+    "channel": "judge_evidence_combo",
+    "key": "dc-4.b.q1|soft",
+    "id": "judgecombo-dc-4.b.q1-soft-v5",
+    "len": 48,
+    "text": "과거 대화의 빈칸과 송금 기록이 이어집니다. 최수민 씨, 그때 왜 악역으로 남았습니까."
+  },
+  {
+    "caseId": "friend-01",
+    "channel": "judge_evidence_combo",
+    "key": "dc-4.b.q1|mid",
+    "id": "judgecombo-dc-4.b.q1-mid-v2",
+    "len": 53,
+    "text": "카톡의 끊긴 설명과 기록의 돈 흐름이 맞물렸습니다. 최수민 씨, 보호하려던 사람은 누구였습니까."
+  },
+  {
+    "caseId": "friend-01",
+    "channel": "judge_evidence_combo",
+    "key": "dc-4.b.q1|mid",
+    "id": "judgecombo-dc-4.b.q1-mid-v4",
+    "len": 48,
+    "text": "과거 대화는 말이 끊겼고, 송금 기록은 실체를 보입니다. 최수민 씨, 바로 답하십시오."
+  },
+  {
+    "caseId": "friend-01",
+    "channel": "judge_evidence_combo",
+    "key": "dc-4.b.q1|hard",
+    "id": "judgecombo-dc-4.b.q1-hard-v1",
+    "len": 52,
+    "text": "과거 카톡과 송금 기록은 손절의 실제 원인을 가리킵니다. 최수민 씨, 숨긴 책임을 답하십시오."
+  },
+  {
+    "caseId": "friend-01",
+    "channel": "judge_evidence_combo",
+    "key": "dc-4.b.q1|hard",
+    "id": "judgecombo-dc-4.b.q1-hard-v3",
+    "len": 54,
+    "text": "카톡의 빈칸과 송금 기록 앞에서 더는 변심으로 흐릴 수 없습니다. 최수민 씨, 핵심을 말하십시오."
+  },
+  {
+    "caseId": "friend-01",
+    "channel": "judge_evidence_combo",
+    "key": "dc-4.a.q1|soft",
+    "id": "judgecombo-dc-4.a.q1-soft-v2",
+    "len": 50,
+    "text": "손절 직전 대화와 송금 기록을 함께 보겠습니다. 송다은 씨, 그때 무엇을 물었어야 합니까."
+  },
+  {
+    "caseId": "friend-01",
+    "channel": "judge_evidence_combo",
+    "key": "dc-4.a.q1|soft",
+    "id": "judgecombo-dc-4.a.q1-soft-v5",
+    "len": 53,
+    "text": "과거 대화와 송금 기록이 이어집니다. 송다은 씨, 왜 최수민 씨를 먼저 변한 사람으로 봤습니까."
+  },
+  {
+    "caseId": "friend-01",
+    "channel": "judge_evidence_combo",
+    "key": "dc-4.a.q1|mid",
+    "id": "judgecombo-dc-4.a.q1-mid-v1",
+    "len": 52,
+    "text": "과거 카톡과 송금 기록 앞에서 변심이라는 결론은 부족합니다. 송다은 씨, 왜 묻지 않았습니까."
+  },
+  {
+    "caseId": "friend-01",
+    "channel": "judge_evidence_combo",
+    "key": "dc-4.a.q1|mid",
+    "id": "judgecombo-dc-4.a.q1-mid-v2",
+    "len": 52,
+    "text": "카톡의 끊긴 말과 돈 흐름이 맞물립니다. 송다은 씨, 확인하지 않고 결론낸 이유를 답하십시오."
+  },
+  {
+    "caseId": "friend-01",
+    "channel": "judge_evidence_combo",
+    "key": "dc-4.a.q1|mid",
+    "id": "judgecombo-dc-4.a.q1-mid-v4",
+    "len": 56,
+    "text": "과거 대화는 질문이 멈춘 곳을, 송금 기록은 실제 돈 흐름을 보입니다. 송다은 씨, 어떻게 보십니까."
+  },
+  {
+    "caseId": "friend-01",
+    "channel": "judge_evidence_combo",
+    "key": "dc-4.a.q1|hard",
+    "id": "judgecombo-dc-4.a.q1-hard-v1",
+    "len": 54,
+    "text": "과거 카톡과 송금 기록이 변심 판단을 무너뜨립니다. 송다은 씨, 확인하지 않은 책임을 답하십시오."
+  },
+  {
+    "caseId": "friend-01",
+    "channel": "judge_evidence_combo",
+    "key": "dc-4.a.q1|hard",
+    "id": "judgecombo-dc-4.a.q1-hard-v3",
+    "len": 53,
+    "text": "카톡의 빈칸과 송금 기록 앞에서 과거 손절을 다시 판단하겠습니다. 송다은 씨, 바로 답하십시오."
+  },
+  {
+    "caseId": "friend-01",
+    "channel": "judge_evidence_combo",
+    "key": "dc-5.a.q1|soft",
+    "id": "judgecombo-dc-5.a.q1-soft-v2",
+    "len": 57,
+    "text": "단톡방의 말과 과거·현재 대조표를 함께 보겠습니다. 송다은 씨, 먼저 퍼진 판단의 순서를 설명하십시오."
+  },
+  {
+    "caseId": "friend-01",
+    "channel": "judge_evidence_combo",
+    "key": "dc-5.a.q1|mid",
+    "id": "judgecombo-dc-5.a.q1-mid-v1",
+    "len": 48,
+    "text": "단톡방 캡처와 대조표가 낙인의 순서를 보여줍니다. 송다은 씨, 왜 공개가 먼저였습니까."
+  },
+  {
+    "caseId": "friend-01",
+    "channel": "judge_evidence_combo",
+    "key": "dc-5.a.q1|mid",
+    "id": "judgecombo-dc-5.a.q1-mid-v2",
+    "len": 54,
+    "text": "캡처는 퍼진 말을, 대조표는 반복된 방식을 보입니다. 송다은 씨, 사실 확인을 왜 건너뛰었습니까."
+  },
+  {
+    "caseId": "friend-01",
+    "channel": "judge_evidence_combo",
+    "key": "dc-5.a.q1|mid",
+    "id": "judgecombo-dc-5.a.q1-mid-v3",
+    "len": 59,
+    "text": "분노만으로는 단톡방에 올린 선택을 설명할 수 없습니다. 대조표까지 본 지금, 송다은 씨 책임을 말하십시오."
+  },
+  {
+    "caseId": "friend-01",
+    "channel": "judge_evidence_combo",
+    "key": "dc-5.a.q1|mid",
+    "id": "judgecombo-dc-5.a.q1-mid-v4",
+    "len": 54,
+    "text": "공개 발언과 반복 패턴이 맞물렸습니다. 송다은 씨, 최수민 씨에게 묻기 전에 왜 결론을 냈습니까."
+  },
+  {
+    "caseId": "friend-01",
+    "channel": "judge_evidence_combo",
+    "key": "dc-5.a.q1|hard",
+    "id": "judgecombo-dc-5.a.q1-hard-v1",
+    "len": 52,
+    "text": "단톡방 캡처와 대조표 앞에서 먼저 낙인찍은 순서가 드러납니다. 송다은 씨, 책임을 답하십시오."
+  },
+  {
+    "caseId": "friend-01",
+    "channel": "judge_evidence_combo",
+    "key": "dc-5.a.q1|hard",
+    "id": "judgecombo-dc-5.a.q1-hard-v3",
+    "len": 43,
+    "text": "낙인의 순서가 분명합니다. 캡처와 대조표가 함께 묻는 책임을 피하지 마십시오."
+  },
+  {
+    "caseId": "friend-01",
+    "channel": "judge_evidence_combo",
+    "key": "dc-5.a.q1|hard",
+    "id": "judgecombo-dc-5.a.q1-hard-v4",
+    "len": 50,
+    "text": "공개 발언과 반복 패턴이 맞물려 최종 쟁점이 됐습니다. 송다은 씨, 왜 먼저 공격했습니까."
+  },
+  {
+    "caseId": "friend-01",
+    "channel": "judge_evidence_combo",
+    "key": "dc-5.a.q1|hard",
+    "id": "judgecombo-dc-5.a.q1-hard-v5",
+    "len": 53,
+    "text": "단톡방 캡처와 대조표를 함께 보면, 송다은 씨, 확인 없이 퍼뜨린 말 중 무엇을 바로잡겠습니까."
+  },
+  {
+    "caseId": "friend-01",
+    "channel": "judge_evidence_combo",
+    "key": "dc-5.b.q1|soft",
+    "id": "judgecombo-dc-5.b.q1-soft-v2",
+    "len": 59,
+    "text": "단톡방의 공개 발언과 과거·현재 대조표를 함께 보겠습니다. 최수민 씨, 또 악역이 된 이유를 설명하십시오."
+  },
+  {
+    "caseId": "friend-01",
+    "channel": "judge_evidence_combo",
+    "key": "dc-5.b.q1|soft",
+    "id": "judgecombo-dc-5.b.q1-soft-v5",
+    "len": 57,
+    "text": "단톡방 낙인과 대조표의 반복 흐름을 보겠습니다. 최수민 씨, 이번에도 혼자 감당한 마음을 말씀하십시오."
+  },
+  {
+    "caseId": "friend-01",
+    "channel": "judge_evidence_combo",
+    "key": "dc-5.b.q1|mid",
+    "id": "judgecombo-dc-5.b.q1-mid-v1",
+    "len": 50,
+    "text": "단톡방 캡처와 대조표가 반복된 악역 구조를 보여줍니다. 최수민 씨, 왜 혼자 감당했습니까."
+  },
+  {
+    "caseId": "friend-01",
+    "channel": "judge_evidence_combo",
+    "key": "dc-5.b.q1|mid",
+    "id": "judgecombo-dc-5.b.q1-mid-v2",
+    "len": 59,
+    "text": "캡처는 최수민 씨가 받은 낙인을, 대조표는 그 낙인이 다시 만들어진 이유를 보입니다. 선택을 설명하십시오."
+  },
+  {
+    "caseId": "friend-01",
+    "channel": "judge_evidence_combo",
+    "key": "dc-5.b.q1|mid",
+    "id": "judgecombo-dc-5.b.q1-mid-v3",
+    "len": 41,
+    "text": "단톡방 낙인과 반복 패턴이 맞물립니다. 최수민 씨, 왜 반박을 늦췄습니까."
+  },
+  {
+    "caseId": "friend-01",
+    "channel": "judge_evidence_combo",
+    "key": "dc-5.b.q1|mid",
+    "id": "judgecombo-dc-5.b.q1-mid-v5",
+    "len": 45,
+    "text": "공개된 오해와 반복된 침묵이 같은 방향으로 갑니다. 최수민 씨, 바로 답하십시오."
+  },
+  {
+    "caseId": "friend-01",
+    "channel": "judge_evidence_combo",
+    "key": "dc-5.b.q1|hard",
+    "id": "judgecombo-dc-5.b.q1-hard-v1",
+    "len": 48,
+    "text": "단톡방 캡처와 대조표 앞에서 침묵은 낙인을 키웠습니다. 최수민 씨, 책임을 답하십시오."
+  },
+  {
+    "caseId": "friend-01",
+    "channel": "judge_evidence_combo",
+    "key": "dc-5.b.q1|hard",
+    "id": "judgecombo-dc-5.b.q1-hard-v3",
+    "len": 44,
+    "text": "낙인의 순서가 최종 쟁점입니다. 캡처와 대조표가 남긴 침묵의 대가를 말하십시오."
+  },
+  {
+    "caseId": "friend-01",
+    "channel": "judge_evidence_combo",
+    "key": "dc-5.b.q1|hard",
+    "id": "judgecombo-dc-5.b.q1-hard-v4",
+    "len": 58,
+    "text": "단톡방의 공개 낙인과 대조표의 반복 흐름 앞에서 더는 숨길 수 없습니다. 최수민 씨, 핵심을 답하십시오."
+  },
+  {
+    "caseId": "friend-01",
+    "channel": "judge_evidence_combo",
+    "key": "dc-5.b.q1|hard",
+    "id": "judgecombo-dc-5.b.q1-hard-v5",
+    "len": 57,
+    "text": "단톡방 캡처와 대조표를 함께 보면, 최수민 씨, 끝까지 혼자 버틴 이유와 그 책임을 분명히 말하십시오."
+  }
+]

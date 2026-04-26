@@ -1,0 +1,36 @@
+{
+  "current_interrogation_entries": 180,
+  "prompt_scope_entries": 144,
+  "prompt_scope_new_variants": 720,
+  "full_source_entries": 180,
+  "full_source_new_variants": 900,
+  "variants_per_entry_after_patch": [
+    10
+  ],
+  "disputes_in_current_source": [
+    "d-1",
+    "d-2",
+    "d-3",
+    "d-4",
+    "d-5"
+  ],
+  "prompt_scope_disputes_used": [
+    "d-1",
+    "d-2",
+    "d-3",
+    "d-4"
+  ],
+  "preserved_existing_variants": true,
+  "duplicate_texts_within_key_count": 0,
+  "banned_lexeme_violation_count": 0,
+  "tag_missing_count": 0,
+  "source_ref_missing_count": 0,
+  "entry_variant_count_bad": 0,
+  "sample_violations": [],
+  "files": {
+    "prompt_scope_full_entries_v1_to_v10": "/mnt/data/S01_entries_144_prompt_scope.json",
+    "prompt_scope_new_variants_only": "/mnt/data/S01_new_variants_only_144_prompt_scope.json",
+    "full_source_full_entries_v1_to_v10": "/mnt/data/S01_entries_180_full_source_scope.json",
+    "full_source_new_variants_only": "/mnt/data/S01_new_variants_only_180_full_source_scope.json"
+  }
+}

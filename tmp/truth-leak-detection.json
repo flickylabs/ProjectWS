@@ -1,0 +1,928 @@
+{
+  "spouse-01": [
+    {
+      "channel": "judge_question",
+      "key": "d-1|fact_pursuit|3",
+      "id": "judgeq-d-1-fact_pursuit-3-v4",
+      "text": "박지연 씨, 형의 문자 내용까지 확인하고도 왜 외도 가능성에서 생각이 벗어나지 않았는지 말씀해 주십시오.",
+      "hits": [
+        {
+          "pattern": "e4_real",
+          "matches": [
+            "형의 문자"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "judge_question",
+      "key": "d-1|motive_search|1",
+      "id": "judgeq-d-1-motive_search-1-v3",
+      "text": "이준호 씨, 그 일을 가족을 돌본 것이라고 생각하면서도 왜 가족 이야기 자체를 뒤로 미루셨습니까.",
+      "hits": [
+        {
+          "pattern": "family_real",
+          "matches": [
+            "가족을 돌본"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "judge_question",
+      "key": "d-1|motive_search|4",
+      "id": "judgeq-d-1-motive_search-4-v1",
+      "text": "이준호 씨, 가족을 돌본 것이라고 해도 박지연 씨에게 끝까지 말하지 않은 책임까지 함께 설명해 주십시오.",
+      "hits": [
+        {
+          "pattern": "family_real",
+          "matches": [
+            "가족을 돌본"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "judge_question",
+      "key": "h-d3|fact_pursuit|3",
+      "id": "judgeq-h-d3-fact_pursuit-3-v4",
+      "text": "두 분, 위임장 조작 의심과 투자방 송금 기록이 어디서 처음 맞물렸는지 정리해 주십시오.",
+      "hits": [
+        {
+          "pattern": "e7_real",
+          "matches": [
+            "위임장 조작"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "judge_question",
+      "key": "h-d3|fact_pursuit|4",
+      "id": "judgeq-h-d3-fact_pursuit-4-v4",
+      "text": "두 분, 이준호 씨의 침묵과 박지연 씨의 위임장 조작을 같은 책임으로 볼 수 있는지 따로 답해 주십시오.",
+      "hits": [
+        {
+          "pattern": "e7_real",
+          "matches": [
+            "위임장 조작"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "judge_question",
+      "key": "h-d3|motive_search|4",
+      "id": "judgeq-h-d3-motive_search-4-v3",
+      "text": "이준호 씨, 숨긴 돌봄이 있었다 해도 위임장 조작까지 정당화될 수 없다는 점에 동의하십니까.",
+      "hits": [
+        {
+          "pattern": "family_real",
+          "matches": [
+            "돌봄"
+          ]
+        },
+        {
+          "pattern": "e7_real",
+          "matches": [
+            "위임장 조작"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "judge_question",
+      "key": "h-d4|fact_pursuit|3",
+      "id": "judgeq-h-d4-fact_pursuit-3-v5",
+      "text": "두 분, 숨긴 돌봄은 누구에게서 먼저 시작됐고 돈을 빼낸 실행은 어디서 먼저 확인되는지 답하십시오.",
+      "hits": [
+        {
+          "pattern": "family_real",
+          "matches": [
+            "돌봄"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "judge_question",
+      "key": "h-d4|fact_pursuit|4",
+      "id": "judgeq-h-d4-fact_pursuit-4-v2",
+      "text": "박지연 씨, 이준호 씨의 침묵이 있었다 해도 위임장 조작과 송금 실행은 본인 행동이라는 점을 인정하십니까.",
+      "hits": [
+        {
+          "pattern": "e7_real",
+          "matches": [
+            "위임장 조작"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "judge_question",
+      "key": "h-d4|motive_search|3",
+      "id": "judgeq-h-d4-motive_search-3-v1",
+      "text": "박지연 씨, 이준호 씨가 먼저 숨긴 사실을 위임장 조작의 이유로 삼은 마음을 설명해 주십시오.",
+      "hits": [
+        {
+          "pattern": "e7_real",
+          "matches": [
+            "위임장 조작"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "judge_question",
+      "key": "h-d4|motive_search|4",
+      "id": "judgeq-h-d4-motive_search-4-v2",
+      "text": "이준호 씨, 가족을 돌본 것이라고 해도 배우자를 계속 배제한 책임을 어디까지 인정하십니까.",
+      "hits": [
+        {
+          "pattern": "family_real",
+          "matches": [
+            "가족을 돌본"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "judge_contradiction",
+      "key": "d-1|soft",
+      "id": "judgec-d-1-soft-v3",
+      "text": "두 분, 한쪽은 가족을 돌본 것이라고 말하고 한쪽은 외도 정황으로 읽었다고 말합니다. 같은 자료를 왜 다르게 보게 됐는지 정리해 주십시오.",
+      "hits": [
+        {
+          "pattern": "family_real",
+          "matches": [
+            "가족을 돌본"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "judge_contradiction",
+      "key": "d-1|mid",
+      "id": "judgec-d-1-mid-v1",
+      "text": "이준호 씨, 가족을 돌본 것이라고 말하려면 왜 그 가족을 끝까지 숨겼는지까지 함께 답해야 합니다. 숨긴 이유를 비워두지 마십시오.",
+      "hits": [
+        {
+          "pattern": "family_real",
+          "matches": [
+            "가족을 돌본"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "judge_contradiction",
+      "key": "d-1|hard",
+      "id": "judgec-d-1-hard-v4",
+      "text": "이준호 씨, 가족을 돌본 것이라고 하면서도 박지연 씨를 배제한 책임은 남습니다. 그 책임을 인정하고 답하십시오.",
+      "hits": [
+        {
+          "pattern": "family_real",
+          "matches": [
+            "가족을 돌본"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "judge_contradiction",
+      "key": "d-1|hard",
+      "id": "judgec-d-1-hard-v5",
+      "text": "박지연 씨, 형 문자와 조카 사정이 드러난 뒤에도 외도 프레임을 붙잡은 이유를 지금 분명히 말씀하십시오.",
+      "hits": [
+        {
+          "pattern": "e4_real",
+          "matches": [
+            "형 문자"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "judge_contradiction",
+      "key": "h-d3|soft",
+      "id": "judgec-h-d3-soft-v4",
+      "text": "두 분, 외도 의심과 위임장 조작은 같은 감정에서 시작됐더라도 다른 행동입니다. 이 차이를 먼저 정리해 주십시오.",
+      "hits": [
+        {
+          "pattern": "e7_real",
+          "matches": [
+            "위임장 조작"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "judge_contradiction",
+      "key": "h-d3|mid",
+      "id": "judgec-h-d3-mid-v4",
+      "text": "두 분, 이준호 씨의 침묵이 박지연 씨의 위임장 조작을 정당화하지는 않습니다. 각자의 책임을 따로 답하십시오.",
+      "hits": [
+        {
+          "pattern": "e7_real",
+          "matches": [
+            "위임장 조작"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "judge_contradiction",
+      "key": "h-d3|hard",
+      "id": "judgec-h-d3-hard-v4",
+      "text": "두 분, 숨김과 범죄 행위는 무게가 다릅니다. 위임장 조작의 책임을 다른 쟁점 뒤로 돌리지 마십시오.",
+      "hits": [
+        {
+          "pattern": "e7_real",
+          "matches": [
+            "위임장 조작"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "judge_contradiction",
+      "key": "h-d3|hard",
+      "id": "judgec-h-d3-hard-v5",
+      "text": "박지연 씨, 두려웠다는 말만으로 위임장 조작을 설명할 수 없습니다. 왜 범죄가 될 수 있는 행동을 했습니까.",
+      "hits": [
+        {
+          "pattern": "e7_real",
+          "matches": [
+            "위임장 조작"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "judge_contradiction",
+      "key": "h-d4|mid",
+      "id": "judgec-h-d4-mid-v2",
+      "text": "박지연 씨, 먼저 배신당했다는 감정이 위임장 조작의 책임을 없애지는 못합니다. 왜 두 문제를 하나로 묶었습니까.",
+      "hits": [
+        {
+          "pattern": "e7_real",
+          "matches": [
+            "위임장 조작"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "judge_contradiction",
+      "key": "h-d4|hard",
+      "id": "judgec-h-d4-hard-v2",
+      "text": "박지연 씨, 이준호 씨의 침묵이 있었다 해도 위임장 조작은 본인 행위입니다. 더 돌리지 말고 인정하십시오.",
+      "hits": [
+        {
+          "pattern": "e7_real",
+          "matches": [
+            "위임장 조작"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "judge_evidence_combo",
+      "key": "dc-1.b.q1|soft",
+      "id": "judgecombo-dc-1-b-q1-soft-v1",
+      "text": "이준호 씨, GPS 좌표와 형의 문자 내용을 함께 놓고 보겠습니다. 같은 시간대에 같은 오피스텔을 가리키는 만큼 그 안에 누가 있었는지 차분히 들려주시겠습니까.",
+      "hits": [
+        {
+          "pattern": "e4_real",
+          "matches": [
+            "형의 문자"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "judge_evidence_combo",
+      "key": "dc-1.b.q1|soft",
+      "id": "judgecombo-dc-1-b-q1-soft-v2",
+      "text": "이준호 씨, GPS가 찍은 정차 주소와 형 쪽에서 온 조카 학교 알림이 한 장소로 모입니다. 그날 그곳에서 누구를 챙기고 있었습니까.",
+      "hits": [
+        {
+          "pattern": "e4_real",
+          "matches": [
+            "조카 학교 알림"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "judge_evidence_combo",
+      "key": "dc-1.b.q1|soft",
+      "id": "judgecombo-dc-1-b-q1-soft-v5",
+      "text": "이준호 씨, 오피스텔 출입 기록과 형 문자 스레드를 나란히 보니 장소와 사람이 함께 좁혀집니다. 그 흐름을 처음부터 말씀해 주십시오.",
+      "hits": [
+        {
+          "pattern": "e4_real",
+          "matches": [
+            "형 문자"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "judge_evidence_combo",
+      "key": "dc-1.b.q1|mid",
+      "id": "judgecombo-dc-1-b-q1-mid-v1",
+      "text": "이준호 씨, GPS 좌표와 형의 문자 시각이 맞물립니다. 더는 가족 이야기를 빼두고 오피스텔 방문을 말할 수 없습니다.",
+      "hits": [
+        {
+          "pattern": "e4_real",
+          "matches": [
+            "형의 문자"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "judge_evidence_combo",
+      "key": "dc-1.b.q1|mid",
+      "id": "judgecombo-dc-1-b-q1-mid-v3",
+      "text": "이준호 씨, 오피스텔 기록만 따로 말하면 외도 의심이 남고, 형 문자까지 보면 돌본 사람이 드러납니다. 이제 연결해서 말하십시오.",
+      "hits": [
+        {
+          "pattern": "e4_real",
+          "matches": [
+            "형 문자"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "judge_evidence_combo",
+      "key": "dc-1.b.q1|mid",
+      "id": "judgecombo-dc-1-b-q1-mid-v4",
+      "text": "이준호 씨, GPS의 같은 주소와 형 문자의 같은 시간대 앞에서 단순한 방문이라고만 할 수 없습니다. 누구를 위해 간 것인지 답해 주십시오.",
+      "hits": [
+        {
+          "pattern": "e4_real",
+          "matches": [
+            "형 문자"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "judge_evidence_combo",
+      "key": "dc-1.b.q1|mid",
+      "id": "judgecombo-dc-1-b-q1-mid-v5",
+      "text": "이준호 씨, GPS 기록과 형 문자는 오피스텔에 숨긴 생활이 있었음을 보여줍니다. 그 생활이 누구의 것이었는지 밝혀야 합니다.",
+      "hits": [
+        {
+          "pattern": "e4_real",
+          "matches": [
+            "형 문자"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "judge_evidence_combo",
+      "key": "dc-1.b.q1|hard",
+      "id": "judgecombo-dc-1-b-q1-hard-v1",
+      "text": "이준호 씨, GPS와 형 문자 스레드가 한 사실을 가리키고 있습니다. 그 오피스텔에 누가 있었는지 지금 답하십시오.",
+      "hits": [
+        {
+          "pattern": "e4_real",
+          "matches": [
+            "형 문자"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "judge_evidence_combo",
+      "key": "dc-1.b.q1|hard",
+      "id": "judgecombo-dc-1-b-q1-hard-v2",
+      "text": "이준호 씨, 좌표와 문자 내용이 형과 조카 쪽으로 맞물립니다. 외도인지 가족을 돌본 것인지 더 미루지 말고 말하십시오.",
+      "hits": [
+        {
+          "pattern": "family_real",
+          "matches": [
+            "가족을 돌본"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "judge_evidence_combo",
+      "key": "dc-1.b.q1|hard",
+      "id": "judgecombo-dc-1-b-q1-hard-v3",
+      "text": "이준호 씨, GPS 좌표와 형 문자 앞에서는 장소만 말하고 사람을 빼둘 수 없습니다. 그 자리에 누가 있었는지 밝히십시오.",
+      "hits": [
+        {
+          "pattern": "e4_real",
+          "matches": [
+            "형 문자"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "judge_evidence_combo",
+      "key": "dc-1.b.q1|hard",
+      "id": "judgecombo-dc-1-b-q1-hard-v4",
+      "text": "이준호 씨, 오피스텔 기록과 조카 관련 문자가 동시에 놓였습니다. 숨긴 사람의 정체를 지금 말하십시오.",
+      "hits": [
+        {
+          "pattern": "e4_real",
+          "matches": [
+            "조카 관련 문자"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "judge_evidence_combo",
+      "key": "dc-2.b.q1|soft",
+      "id": "judgecombo-dc-2-b-q1-soft-v1",
+      "text": "이준호 씨, 새벽 통화기록과 형 문자 스레드를 함께 보겠습니다. 급한 연락이 외도보다 가족 사정에 가까웠다면 왜 그 말을 삼켰는지 들려주시겠습니까.",
+      "hits": [
+        {
+          "pattern": "e4_real",
+          "matches": [
+            "형 문자"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "judge_evidence_combo",
+      "key": "dc-2.b.q1|soft",
+      "id": "judgecombo-dc-2-b-q1-soft-v4",
+      "text": "이준호 씨, 새벽 통화기록만 보면 의심스럽지만 형 문자까지 보면 가족 문제가 보입니다. 그럼에도 박지연 씨에게 말하지 못한 마음을 들려주십시오.",
+      "hits": [
+        {
+          "pattern": "e4_real",
+          "matches": [
+            "형 문자"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "judge_evidence_combo",
+      "key": "dc-2.b.q1|soft",
+      "id": "judgecombo-dc-2-b-q1-soft-v5",
+      "text": "이준호 씨, 통화기록과 형 문자를 나란히 놓으면 외도보다 시댁 갈등 공포가 먼저 보입니다. 그 공포가 어느 정도였습니까.",
+      "hits": [
+        {
+          "pattern": "e4_real",
+          "matches": [
+            "형 문자"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "judge_evidence_combo",
+      "key": "dc-2.b.q1|mid",
+      "id": "judgecombo-dc-2-b-q1-mid-v1",
+      "text": "이준호 씨, 새벽 통화와 형 문자가 같은 가족 문제를 가리킵니다. 시댁 갈등이 두려웠다는 이유로 계속 숨긴 부분을 말해야 합니다.",
+      "hits": [
+        {
+          "pattern": "e4_real",
+          "matches": [
+            "형 문자"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "judge_evidence_combo",
+      "key": "dc-2.b.q1|mid",
+      "id": "judgecombo-dc-2-b-q1-mid-v3",
+      "text": "이준호 씨, 통화기록의 새벽 연락이 형 문자의 급한 사정과 맞물린다면 박지연 씨에게 감춘 이유가 핵심입니다. 그 이유를 밝히십시오.",
+      "hits": [
+        {
+          "pattern": "e4_real",
+          "matches": [
+            "형 문자"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "judge_evidence_combo",
+      "key": "dc-2.b.q1|mid",
+      "id": "judgecombo-dc-2-b-q1-mid-v4",
+      "text": "이준호 씨, 형 문자와 통화기록 앞에서 외도는 아니었다는 말만으로는 부족합니다. 왜 가족 이야기를 빼두셨습니까.",
+      "hits": [
+        {
+          "pattern": "e4_real",
+          "matches": [
+            "형 문자"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "judge_evidence_combo",
+      "key": "dc-2.b.q1|mid",
+      "id": "judgecombo-dc-2-b-q1-mid-v5",
+      "text": "이준호 씨, 통화기록과 형 문자는 숨김의 이유가 시댁 갈등과 연결됐음을 보입니다. 그 두려움이 설명을 대신할 수는 없습니다.",
+      "hits": [
+        {
+          "pattern": "e4_real",
+          "matches": [
+            "형 문자"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "judge_evidence_combo",
+      "key": "dc-2.b.q1|hard",
+      "id": "judgecombo-dc-2-b-q1-hard-v1",
+      "text": "이준호 씨, 통화기록과 형 문자가 가족 사정을 직접 가리키고 있습니다. 시댁 갈등을 이유로 무엇을 숨겼는지 지금 답하십시오.",
+      "hits": [
+        {
+          "pattern": "e4_real",
+          "matches": [
+            "형 문자"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "judge_evidence_combo",
+      "key": "dc-2.b.q1|hard",
+      "id": "judgecombo-dc-2-b-q1-hard-v3",
+      "text": "이준호 씨, 통화기록과 형 문자 앞에서 가족을 돌본 것이라고 하려면 그 가족을 왜 숨겼는지까지 밝혀야 합니다. 바로 답하십시오.",
+      "hits": [
+        {
+          "pattern": "e4_real",
+          "matches": [
+            "형 문자"
+          ]
+        },
+        {
+          "pattern": "family_real",
+          "matches": [
+            "가족을 돌본"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "judge_evidence_combo",
+      "key": "dc-2.b.q1|hard",
+      "id": "judgecombo-dc-2-b-q1-hard-v5",
+      "text": "이준호 씨, 형 문자와 새벽 통화기록이 놓인 지금 시댁 이야기가 두려웠다는 말만으로 은폐가 사라지지 않습니다. 무엇을 두려워했는지 지금 말하십시오.",
+      "hits": [
+        {
+          "pattern": "e4_real",
+          "matches": [
+            "형 문자"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "judge_evidence_combo",
+      "key": "dc-3.b.q1|soft",
+      "id": "judgecombo-dc-3-b-q1-soft-v1",
+      "text": "이준호 씨, 형 문자와 개인 계좌 출금 내역을 함께 보겠습니다. 형에게 돈이 갔다는 흐름과 공동 적금 권한 문제를 어떻게 구분하셨는지 말씀해 주십시오.",
+      "hits": [
+        {
+          "pattern": "e4_real",
+          "matches": [
+            "형 문자"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "judge_evidence_combo",
+      "key": "dc-3.b.q1|soft",
+      "id": "judgecombo-dc-3-b-q1-soft-v3",
+      "text": "이준호 씨, 형 문자에 보이는 가족 사정과 개인 계좌 출금은 부부가 함께 쌓은 돈의 권한 문제와 성격이 다릅니다. 이 차이를 왜 설명하지 못했습니까.",
+      "hits": [
+        {
+          "pattern": "e4_real",
+          "matches": [
+            "형 문자"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "judge_evidence_combo",
+      "key": "dc-3.b.q1|soft",
+      "id": "judgecombo-dc-3-b-q1-soft-v5",
+      "text": "이준호 씨, 형 문자와 출금 내역을 보면 형을 도운 사정은 보이지만 큰돈을 혼자 움직인 문제도 남습니다. 그 경계를 차분히 말씀해 주십시오.",
+      "hits": [
+        {
+          "pattern": "e4_real",
+          "matches": [
+            "형 문자"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "judge_evidence_combo",
+      "key": "dc-3.b.q1|mid",
+      "id": "judgecombo-dc-3-b-q1-mid-v1",
+      "text": "이준호 씨, 형 문자와 출금 기록이 가족 쪽 돈 흐름을 보입니다. 그렇다고 배우자에게 숨긴 권한 문제가 사라지는 것은 아닙니다.",
+      "hits": [
+        {
+          "pattern": "e4_real",
+          "matches": [
+            "형 문자"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "judge_evidence_combo",
+      "key": "dc-3.b.q1|mid",
+      "id": "judgecombo-dc-3-b-q1-mid-v5",
+      "text": "이준호 씨, 형 문자와 개인 계좌 출금은 돈을 혼자 판단한 과정을 보여줍니다. 박지연 씨를 배제한 이유를 더 미룰 수 없습니다.",
+      "hits": [
+        {
+          "pattern": "e4_real",
+          "matches": [
+            "형 문자"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "judge_evidence_combo",
+      "key": "dc-3.b.q1|hard",
+      "id": "judgecombo-dc-3-b-q1-hard-v1",
+      "text": "이준호 씨, 형 문자와 출금 내역이 같은 돈의 흐름을 가리킵니다. 그 돈이 누구에게 왜 갔는지 지금 답하십시오.",
+      "hits": [
+        {
+          "pattern": "e4_real",
+          "matches": [
+            "형 문자"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "judge_evidence_combo",
+      "key": "dc-3.b.q1|hard",
+      "id": "judgecombo-dc-3-b-q1-hard-v2",
+      "text": "이준호 씨, 형 문자와 출금 내역이 가족 사정을 보인다 해도 배우자 몰래 큰돈을 움직인 사실은 남습니다. 그 권한을 어떻게 보셨는지 말하십시오.",
+      "hits": [
+        {
+          "pattern": "e4_real",
+          "matches": [
+            "형 문자"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "judge_evidence_combo",
+      "key": "dc-3.b.q1|hard",
+      "id": "judgecombo-dc-3-b-q1-hard-v4",
+      "text": "이준호 씨, 형 문자와 출금 내역 앞에서 형에게 간 돈이라는 사실과 숨긴 책임을 분리하지 말고 함께 인정하십시오.",
+      "hits": [
+        {
+          "pattern": "e4_real",
+          "matches": [
+            "형 문자"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "judge_evidence_combo",
+      "key": "dc-3.b.q1|hard",
+      "id": "judgecombo-dc-3-b-q1-hard-v5",
+      "text": "이준호 씨, 형 문자와 개인 계좌 출금 앞에서 더는 개인 돈이라는 말로 비켜갈 수 없습니다. 돈의 행선지를 바로 말하십시오.",
+      "hits": [
+        {
+          "pattern": "e4_real",
+          "matches": [
+            "형 문자"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "judge_evidence_combo",
+      "key": "dc-3.b.q2|soft",
+      "id": "judgecombo-dc-3-b-q2-soft-v1",
+      "text": "이준호 씨, 형 문자와 출금 내역을 함께 놓으면 가족을 도운 흐름은 보입니다. 다만 박지연 씨를 배제한 책임을 어떻게 보시는지 들려주시겠습니까.",
+      "hits": [
+        {
+          "pattern": "e4_real",
+          "matches": [
+            "형 문자"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "judge_evidence_combo",
+      "key": "dc-3.b.q2|soft",
+      "id": "judgecombo-dc-3-b-q2-soft-v3",
+      "text": "이준호 씨, 형 문자와 출금 내역이 가족을 도운 흐름을 보여도 부부 사이 큰돈 문제는 따로 남습니다. 그 선을 어디서 그으셨습니까.",
+      "hits": [
+        {
+          "pattern": "e4_real",
+          "matches": [
+            "형 문자"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "judge_evidence_combo",
+      "key": "dc-3.b.q2|soft",
+      "id": "judgecombo-dc-3-b-q2-soft-v5",
+      "text": "이준호 씨, 형 문자와 현금 출금이 형을 돕는 마음을 보여준다면 그 마음이 왜 숨기는 방식으로 나갔는지 차분히 말씀해 주십시오.",
+      "hits": [
+        {
+          "pattern": "e4_real",
+          "matches": [
+            "형 문자"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "judge_evidence_combo",
+      "key": "dc-3.b.q2|mid",
+      "id": "judgecombo-dc-3-b-q2-mid-v1",
+      "text": "이준호 씨, 형 문자와 출금 내역은 형을 도운 사정을 보이지만 배우자를 배제한 선택까지 설명하지는 못합니다. 그 부분을 답하십시오.",
+      "hits": [
+        {
+          "pattern": "e4_real",
+          "matches": [
+            "형 문자"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "judge_evidence_combo",
+      "key": "dc-3.b.q2|mid",
+      "id": "judgecombo-dc-3-b-q2-mid-v3",
+      "text": "이준호 씨, 형 문자와 출금 내역 앞에서 선의였다는 말만 반복하면 권한 문제는 남습니다. 박지연 씨에게 말하지 않은 이유를 밝히십시오.",
+      "hits": [
+        {
+          "pattern": "e4_real",
+          "matches": [
+            "형 문자"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "judge_evidence_combo",
+      "key": "dc-3.b.q2|mid",
+      "id": "judgecombo-dc-3-b-q2-mid-v4",
+      "text": "이준호 씨, 형 문자와 출금 기록이 가족을 도운 일을 보여도 부부 돈의 신뢰를 깬 것은 다른 문제입니다. 그 차이를 인정하고 말하십시오.",
+      "hits": [
+        {
+          "pattern": "e4_real",
+          "matches": [
+            "형 문자"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "judge_evidence_combo",
+      "key": "dc-3.b.q2|mid",
+      "id": "judgecombo-dc-3-b-q2-mid-v5",
+      "text": "이준호 씨, 형 문자와 출금 내역이 형에게 간 흐름을 보이는 만큼 숨김의 의도도 더 선명해졌습니다. 책임을 피해 가지 마십시오.",
+      "hits": [
+        {
+          "pattern": "e4_real",
+          "matches": [
+            "형 문자"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "judge_evidence_combo",
+      "key": "dc-3.b.q2|hard",
+      "id": "judgecombo-dc-3-b-q2-hard-v1",
+      "text": "이준호 씨, 형 문자와 출금 내역이 가족을 도운 것이라고 보여도 박지연 씨를 배제한 책임은 사라지지 않습니다. 왜 혼자 결정했는지 지금 답하십시오.",
+      "hits": [
+        {
+          "pattern": "e4_real",
+          "matches": [
+            "형 문자"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "judge_evidence_combo",
+      "key": "dc-3.b.q2|hard",
+      "id": "judgecombo-dc-3-b-q2-hard-v2",
+      "text": "이준호 씨, 형 문자와 출금 내역이 본인의 결정을 보여줍니다. 선의와 절차 위반을 분리해 인정하십시오.",
+      "hits": [
+        {
+          "pattern": "e4_real",
+          "matches": [
+            "형 문자"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "judge_evidence_combo",
+      "key": "dc-3.b.q2|hard",
+      "id": "judgecombo-dc-3-b-q2-hard-v3",
+      "text": "이준호 씨, 형 문자와 개인 출금 앞에서 배우자 몰래 큰돈을 움직인 사실을 더는 형 사정만으로 말할 수 없습니다. 본인 판단을 밝히십시오.",
+      "hits": [
+        {
+          "pattern": "e4_real",
+          "matches": [
+            "형 문자"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "judge_evidence_combo",
+      "key": "dc-3.b.q2|hard",
+      "id": "judgecombo-dc-3-b-q2-hard-v4",
+      "text": "이준호 씨, 형 문자와 출금 내역이 놓인 지금 가족을 돕는다는 이유로 부부 사이 동의를 건너뛴 부분을 말해야 합니다.",
+      "hits": [
+        {
+          "pattern": "e4_real",
+          "matches": [
+            "형 문자"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "judge_evidence_combo",
+      "key": "dc-3.b.q2|hard",
+      "id": "judgecombo-dc-3-b-q2-hard-v5",
+      "text": "이준호 씨, 형 문자와 출금 기록은 본인이 알고 움직였다는 쪽으로 모입니다. 책임을 낮추지 말고 답하십시오.",
+      "hits": [
+        {
+          "pattern": "e4_real",
+          "matches": [
+            "형 문자"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "judge_evidence_combo",
+      "key": "dc-5.b.q1|mid",
+      "id": "judgecombo-dc-5-b-q1-mid-v2",
+      "text": "이준호 씨, 박지연 씨의 위임장 조작을 말하기 전에 형과 조카 일을 먼저 숨긴 사실도 같은 시간표에 놓아야 합니다.",
+      "hits": [
+        {
+          "pattern": "e7_real",
+          "matches": [
+            "위임장 조작"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "judge_evidence_combo",
+      "key": "dc-5.a.q1|hard",
+      "id": "judgecombo-dc-5-a-q1-hard-v2",
+      "text": "박지연 씨, 실제 송금과 위임장 조작은 본인 행위입니다. 세 자료 앞에서 그 순서를 지금 인정하십시오.",
+      "hits": [
+        {
+          "pattern": "e7_real",
+          "matches": [
+            "위임장 조작"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "judge_witness_summon",
+      "key": "w-3|mid",
+      "id": "judgewit-w-3-mid-v5",
+      "text": "박미라 씨 증언으로 투자 사기 경위와 박지연 씨의 선제 행동을 좁히겠습니다.",
+      "hits": [
+        {
+          "pattern": "investment_real",
+          "matches": [
+            "투자 사기"
+          ]
+        }
+      ]
+    }
+  ],
+  "family-01": [],
+  "friend-01": []
+}

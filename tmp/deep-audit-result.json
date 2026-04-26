@@ -1,0 +1,32 @@
+{
+  "spouse-01": {
+    "caseId": "spouse-01",
+    "variants": 4677,
+    "issues": {
+      "critical": [],
+      "high": [],
+      "medium": [],
+      "low": []
+    }
+  },
+  "family-01": {
+    "caseId": "family-01",
+    "variants": 4936,
+    "issues": {
+      "critical": [],
+      "high": [],
+      "medium": [],
+      "low": []
+    }
+  },
+  "friend-01": {
+    "caseId": "friend-01",
+    "variants": 5082,
+    "issues": {
+      "critical": [],
+      "high": [],
+      "medium": [],
+      "low": []
+    }
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "passed": false,
+  "issues": {
+    "critical": [],
+    "high": [
+      {
+        "caseId": "family-01",
+        "type": "missing_disputeId_in_channel",
+        "channel": "contradiction_pursuit",
+        "disputeId": "d-5"
+      },
+      {
+        "caseId": "family-01",
+        "type": "missing_disputeId_in_channel",
+        "channel": "interjection",
+        "disputeId": "d-5"
+      },
+      {
+        "caseId": "family-01",
+        "type": "missing_disputeId_in_channel",
+        "channel": "emotional_overload",
+        "disputeId": "d-5"
+      },
+      {
+        "caseId": "family-01",
+        "type": "missing_disputeId_in_channel",
+        "channel": "judge_question",
+        "disputeId": "d-5"
+      },
+      {
+        "caseId": "family-01",
+        "type": "missing_disputeId_in_channel",
+        "channel": "judge_contradiction",
+        "disputeId": "d-5"
+      },
+      {
+        "caseId": "friend-01",
+        "type": "missing_disputeId_in_channel",
+        "channel": "contradiction_pursuit",
+        "disputeId": "d-5"
+      },
+      {
+        "caseId": "friend-01",
+        "type": "missing_disputeId_in_channel",
+        "channel": "interjection",
+        "disputeId": "d-5"
+      },
+      {
+        "caseId": "friend-01",
+        "type": "missing_disputeId_in_channel",
+        "channel": "emotional_overload",
+        "disputeId": "d-5"
+      },
+      {
+        "caseId": "friend-01",
+        "type": "missing_disputeId_in_channel",
+        "channel": "judge_question",
+        "disputeId": "d-5"
+      },
+      {
+        "caseId": "friend-01",
+        "type": "missing_disputeId_in_channel",
+        "channel": "judge_contradiction",
+        "disputeId": "d-5"
+      }
+    ],
+    "medium": [],
+    "info": []
+  }
+}

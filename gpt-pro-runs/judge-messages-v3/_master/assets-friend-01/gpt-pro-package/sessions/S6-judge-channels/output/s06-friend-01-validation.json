@@ -1,0 +1,98 @@
+{
+  "caseId": "friend-01",
+  "session": "S06",
+  "coverage": {
+    "judge_question": {
+      "disputes": [
+        "d-1",
+        "d-2",
+        "d-3",
+        "d-4"
+      ],
+      "questionTypes": [
+        "fact_pursuit",
+        "motive_search",
+        "empathy_approach"
+      ],
+      "depths": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "entries": 48,
+      "variantsPerKey": 5,
+      "variantCount": 240
+    },
+    "judge_contradiction": {
+      "disputes": [
+        "d-1",
+        "d-2",
+        "d-3",
+        "d-4"
+      ],
+      "tones": [
+        "soft",
+        "mid",
+        "hard"
+      ],
+      "entries": 12,
+      "variantsPerKey": 5,
+      "variantCount": 60
+    },
+    "judge_evidence_combo": {
+      "dossierQuestions": [
+        "dc-1.a.q1",
+        "dc-1.b.q1",
+        "dc-2.b.q1",
+        "dc-3.b.q1",
+        "dc-3.a.q1",
+        "dc-4.b.q1",
+        "dc-4.a.q1",
+        "dc-5.a.q1",
+        "dc-5.b.q1"
+      ],
+      "tones": [
+        "soft",
+        "mid",
+        "hard"
+      ],
+      "entries": 27,
+      "variantsPerKey": 5,
+      "variantCount": 135
+    },
+    "judge_witness_summon": {
+      "witnessIds": [
+        "w-1",
+        "w-2",
+        "w-3"
+      ],
+      "tones": [
+        "soft",
+        "mid",
+        "hard"
+      ],
+      "entries": 9,
+      "variantsPerKey": 5,
+      "variantCount": 45
+    }
+  },
+  "totalEntries": 96,
+  "totalVariants": 480,
+  "variantCountErrors": [],
+  "forbiddenPatternHits": [],
+  "quoteHits": [],
+  "lengthStats": {
+    "min": 30,
+    "max": 58,
+    "over_90": 0,
+    "under_25": 0
+  },
+  "lengthOutliers": [],
+  "duplicateKeys": [],
+  "duplicateVariantIds": [],
+  "notes": [
+    "friend-01 dossier question은 Knowledge 기준 9개이므로 prompt.md의 spouse-01 8개보다 15 variants가 많다.",
+    "현재 10-scripted-text-current.json에는 judge d-3가 이미 있어 실제 patch-only count는 prompt의 base count와 다를 수 있다."
+  ]
+}

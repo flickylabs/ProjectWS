@@ -1,0 +1,290 @@
+[
+  {
+    "caseId": "spouse-01",
+    "channel": "interrogation",
+    "key": "a|d-1|S0|empathy_approach",
+    "id": "a-d-1-S0-empathy-approach-v6",
+    "text": "재판관님, 평일 저녁마다 그곳이 반복된 건 사실입니다. 그 순간에는 몸이 먼저 얼었습니다.",
+    "abstract_count": 2,
+    "concrete_count": 0
+  },
+  {
+    "caseId": "spouse-01",
+    "channel": "interrogation",
+    "key": "a|d-1|S1|fact_pursuit",
+    "id": "a-d-1-S1-fact-pursuit-v7",
+    "text": "재판관님, 그곳이 여러 번 찍힌 기록은 그냥 넘기기 어려웠습니다. 그 부분만큼은 분명히 말씀드릴 수 있습니다.",
+    "abstract_count": 2,
+    "concrete_count": 0
+  },
+  {
+    "caseId": "spouse-01",
+    "channel": "interrogation",
+    "key": "a|d-1|S1|motive_search",
+    "id": "a-d-1-S1-motive-search-v7",
+    "text": "재판관님, 그곳이 여러 번 찍힌 기록은 그냥 넘기기 어려웠습니다. 제 마음이 그쪽으로 기운 건 그 이유 때문입니다.",
+    "abstract_count": 2,
+    "concrete_count": 0
+  },
+  {
+    "caseId": "spouse-01",
+    "channel": "interrogation",
+    "key": "a|d-2|S0|fact_pursuit",
+    "id": "a-d-2-S0-fact-pursuit-v7",
+    "text": "재판관님, 그곳 동선과 큰돈 흐름이 같은 시기에 겹쳤습니다. 그 부분만큼은 분명히 말씀드릴 수 있습니다.",
+    "abstract_count": 2,
+    "concrete_count": 0
+  },
+  {
+    "caseId": "spouse-01",
+    "channel": "interrogation",
+    "key": "a|d-2|S0|motive_search",
+    "id": "a-d-2-S0-motive-search-v7",
+    "text": "재판관님, 그곳 동선과 큰돈 흐름이 같은 시기에 겹쳤습니다. 제 마음이 그쪽으로 기운 건 그 이유 때문입니다.",
+    "abstract_count": 2,
+    "concrete_count": 0
+  },
+  {
+    "caseId": "spouse-01",
+    "channel": "contradiction_pursuit",
+    "key": "a|d-1|S4",
+    "id": "contra-a-d-1-S4-v3",
+    "text": "제가 끝까지 그쪽으로 본 건 진실보다 제 불안을 붙들기 쉬웠기 때문입니다. 그 점은 인정합니다.",
+    "abstract_count": 2,
+    "concrete_count": 0
+  },
+  {
+    "caseId": "family-01",
+    "channel": "interrogation",
+    "key": "a|d-1|S4|empathy_approach",
+    "id": "a-d-1-S4-empathy-approach-v7",
+    "text": "그 말 한 줄이 제 자부심을 무너뜨렸습니다. 그래서 제 말이 세게 나갔습니다. 그 말을 하면서도 제 책임이 보입니다.",
+    "abstract_count": 2,
+    "concrete_count": 0
+  },
+  {
+    "caseId": "family-01",
+    "channel": "interrogation",
+    "key": "b|d-2|S4|motive_search",
+    "id": "b-d-2-S4-motive-search-v9",
+    "text": "제 몫을 줄이는 방향으로 바꾼 이유가 있었습니다. 그 부분은 감정으로 설명하기 어렵습니다. 그 말이 제 안에서 계속 걸립니다.",
+    "abstract_count": 2,
+    "concrete_count": 0
+  },
+  {
+    "caseId": "family-01",
+    "channel": "interrogation",
+    "key": "b|d-3|S4|motive_search",
+    "id": "b-d-3-S4-motive-search-v9",
+    "text": "2018년 공장에 들어간 큰돈도 같은 흐름이었습니다. 그 부분은 감정으로 설명하기 어렵습니다. 그 말이 제 안에서 계속 걸립니다.",
+    "abstract_count": 2,
+    "concrete_count": 0
+  },
+  {
+    "caseId": "family-01",
+    "channel": "interrogation",
+    "key": "a|d-4|S2|fact_pursuit",
+    "id": "a-d-4-S2-fact-pursuit-v10",
+    "text": "그 기록이 무엇을 뜻하는지 아직 단정할 수 없습니다. 그 흐름은 지금도 설명이 필요합니다. 저도 그 부분은 흔들립니다.",
+    "abstract_count": 2,
+    "concrete_count": 0
+  },
+  {
+    "caseId": "family-01",
+    "channel": "interrogation",
+    "key": "a|d-5|S2|fact_pursuit",
+    "id": "a-d-5-S2-fact-pursuit-v10",
+    "text": "조작 가능성은 인정하지만 방향은 아직 제 눈에 다 풀리지 않았습니다. 그 흐름은 지금도 설명이 필요합니다. 저도 그 부분은 흔들립니다.",
+    "abstract_count": 2,
+    "concrete_count": 0
+  },
+  {
+    "caseId": "family-01",
+    "channel": "interrogation",
+    "key": "b|d-5|S4|motive_search",
+    "id": "b-d-5-S4-motive-search-v9",
+    "text": "탐욕 프레임은 틀렸습니다. 그 부분은 감정으로 설명하기 어렵습니다. 그 말이 제 안에서 계속 걸립니다.",
+    "abstract_count": 2,
+    "concrete_count": 0
+  },
+  {
+    "caseId": "family-01",
+    "channel": "evidence_present",
+    "key": "a|e-1|mid|2",
+    "id": "a-e-1-mid-stage2-v8",
+    "text": "자료가 흐름을 보여 줍니다. 저는 그 흐름을 조작으로 읽었습니다. 그 부분이 제일 걸립니다.",
+    "abstract_count": 2,
+    "concrete_count": 0
+  },
+  {
+    "caseId": "family-01",
+    "channel": "evidence_present",
+    "key": "a|e-2|mid|2",
+    "id": "a-e-2-mid-stage2-v8",
+    "text": "자료가 흐름을 보여 줍니다. 저는 그 흐름을 조작으로 읽었습니다. 그 부분이 제일 걸립니다.",
+    "abstract_count": 2,
+    "concrete_count": 0
+  },
+  {
+    "caseId": "family-01",
+    "channel": "evidence_present",
+    "key": "a|e-3|mid|2",
+    "id": "a-e-3-mid-stage2-v8",
+    "text": "자료가 흐름을 보여 줍니다. 저는 그 흐름을 조작으로 읽었습니다. 그 부분이 제일 걸립니다.",
+    "abstract_count": 2,
+    "concrete_count": 0
+  },
+  {
+    "caseId": "family-01",
+    "channel": "evidence_present",
+    "key": "b|e-3|early|2",
+    "id": "b-e-3-early-stage2-v4",
+    "text": "그 흐름이 수상해 보일 수는 있습니다. 하지만 그 말의 뜻을 배제로만 보면 안 됩니다.",
+    "abstract_count": 2,
+    "concrete_count": 0
+  },
+  {
+    "caseId": "family-01",
+    "channel": "evidence_present",
+    "key": "a|e-4|mid|2",
+    "id": "a-e-4-mid-stage2-v8",
+    "text": "자료가 흐름을 보여 줍니다. 저는 그 흐름을 조작으로 읽었습니다. 그 부분이 제일 걸립니다.",
+    "abstract_count": 2,
+    "concrete_count": 0
+  },
+  {
+    "caseId": "family-01",
+    "channel": "evidence_present",
+    "key": "a|e-5|mid|2",
+    "id": "a-e-5-mid-stage2-v8",
+    "text": "자료가 흐름을 보여 줍니다. 저는 그 흐름을 조작으로 읽었습니다. 그 부분이 제일 걸립니다.",
+    "abstract_count": 2,
+    "concrete_count": 0
+  },
+  {
+    "caseId": "family-01",
+    "channel": "contradiction_pursuit",
+    "key": "b|d-4|S2",
+    "id": "contra-b-d-4-S2-v7",
+    "text": "그 말은 돈보다 더 무서웠습니다. 그래서 저는 돈 얘기보다도 그 이야기를 더 피했습니다.",
+    "abstract_count": 2,
+    "concrete_count": 0
+  },
+  {
+    "caseId": "friend-01",
+    "channel": "interrogation",
+    "key": "b|d-1|S0|fact_pursuit",
+    "id": "b-d-1-S0-fact-pursuit-v8",
+    "text": "그 부분은 짧게 말씀드리겠습니다. 제 마음이 그쪽이었다는 해석에는 동의하지 않습니다.",
+    "abstract_count": 2,
+    "concrete_count": 0
+  },
+  {
+    "caseId": "friend-01",
+    "channel": "interrogation",
+    "key": "a|d-2|S2|motive_search",
+    "id": "a-d-2-S2-motive-search-v7",
+    "text": "저는 처음부터 그쪽으로 읽었습니다. 그 말을 바로 꺼내지 않은 이유가 의심스러웠습니다.",
+    "abstract_count": 2,
+    "concrete_count": 0
+  },
+  {
+    "caseId": "friend-01",
+    "channel": "interrogation",
+    "key": "b|d-2|S0|fact_pursuit",
+    "id": "b-d-2-S0-fact-pursuit-v8",
+    "text": "그 부분은 짧게 말씀드리겠습니다. 그쪽으로 마음을 둔 적은 없습니다.",
+    "abstract_count": 2,
+    "concrete_count": 0
+  },
+  {
+    "caseId": "friend-01",
+    "channel": "interrogation",
+    "key": "b|d-2|S2|fact_pursuit",
+    "id": "b-d-2-S2-fact-pursuit-v8",
+    "text": "그 부분은 짧게 말씀드리겠습니다. 그 말을 그대로 받아준 적은 없습니다.",
+    "abstract_count": 2,
+    "concrete_count": 0
+  },
+  {
+    "caseId": "friend-01",
+    "channel": "interrogation",
+    "key": "b|d-4|S5|empathy_approach",
+    "id": "b-d-4-S5-empathy-approach-v7",
+    "text": "그 말을 꺼내는 게 쉽지 않습니다. 그 말을 하면 네가 무너질까 봐 내가 나쁜 애가 됐습니다.",
+    "abstract_count": 2,
+    "concrete_count": 0
+  },
+  {
+    "caseId": "friend-01",
+    "channel": "evidence_present",
+    "key": "b|e-5|mid|3",
+    "id": "b-e-5-mid-stage3-v1",
+    "text": "저는 그 흐름을 보고 그냥 넘기기 어려웠다고 설명할 수 있습니다. 말하지 못한 사정이 있었고, 그 부분을 계속 줄여 말했습니다.",
+    "abstract_count": 2,
+    "concrete_count": 0
+  },
+  {
+    "caseId": "friend-01",
+    "channel": "contradiction_pursuit",
+    "key": "a|d-3|S1",
+    "id": "contra-a-d-3-S1-v5",
+    "text": "그 부분은 제 표현이 달랐을 뿐입니다. 그 흐름을 수민 씨가 책임 회피에 쓰는 것처럼 느꼈습니다.",
+    "abstract_count": 2,
+    "concrete_count": 0
+  },
+  {
+    "caseId": "spouse-01",
+    "channel": "dossier",
+    "key": "dc-1.b.q1|early",
+    "id": "dc-1-b-q1-early-v6",
+    "text": "그쪽 사정을 말하면 형 이야기까지 나와야 했습니다. 저는 그 순간을 감당할 자신이 없었습니다.",
+    "abstract_count": 2,
+    "concrete_count": 1
+  },
+  {
+    "caseId": "family-01",
+    "channel": "interrogation",
+    "key": "b|d-1|S4|motive_search",
+    "id": "b-d-1-S4-motive-search-v9",
+    "text": "저희 형을 배제하려던 게 아니라 충돌을 피하려 했습니다. 그 부분은 감정으로 설명하기 어렵습니다. 그 말이 제 안에서 계속 걸립니다.",
+    "abstract_count": 2,
+    "concrete_count": 1
+  },
+  {
+    "caseId": "family-01",
+    "channel": "interrogation",
+    "key": "a|d-2|S2|fact_pursuit",
+    "id": "a-d-2-S2-fact-pursuit-v10",
+    "text": "공증 당일 문서 처리 흐름을 그냥 넘길 수 없습니다. 그 흐름은 지금도 설명이 필요합니다. 저도 그 부분은 흔들립니다.",
+    "abstract_count": 2,
+    "concrete_count": 1
+  },
+  {
+    "caseId": "family-01",
+    "channel": "interrogation",
+    "key": "a|d-3|S2|fact_pursuit",
+    "id": "a-d-3-S2-fact-pursuit-v10",
+    "text": "오래된 돈 흐름에 제 동생 쪽 흔적이 있다는 건 낯섭니다. 그 흐름은 지금도 설명이 필요합니다. 저도 그 부분은 흔들립니다.",
+    "abstract_count": 2,
+    "concrete_count": 1
+  },
+  {
+    "caseId": "family-01",
+    "channel": "interrogation",
+    "key": "b|d-4|S4|motive_search",
+    "id": "b-d-4-S4-motive-search-v9",
+    "text": "저희 형에게 숨긴 건 삶의 기반이 무너질까 봐서였습니다. 그 부분은 감정으로 설명하기 어렵습니다. 그 말이 제 안에서 계속 걸립니다.",
+    "abstract_count": 2,
+    "concrete_count": 1
+  },
+  {
+    "caseId": "friend-01",
+    "channel": "contradiction_pursuit",
+    "key": "a|d-3|S4",
+    "id": "contra-a-d-3-S4-v10",
+    "text": "그 말이 나오면 제 결혼까지 무너지는 것 같았습니다. 그 흐름이 사실이면 제가 외면한 책임까지 같이 올라옵니다.",
+    "abstract_count": 2,
+    "concrete_count": 1
+  }
+]

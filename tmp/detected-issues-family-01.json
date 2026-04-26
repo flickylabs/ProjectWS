@@ -1,0 +1,3357 @@
+{
+  "totalVariants": 5172,
+  "detected": [
+    {
+      "channel": "interrogation",
+      "cellKey": "a|d-1|S3|motive_search",
+      "variantId": "a-d-1-S3-motive-search-v6",
+      "text": "재판관님, 제 동생이 제가 들어오면 흔들릴 일을 막으려 했다고 봅니다. 그 급함은 돌봄보다 배제에 가까워 보였습니다. 이제는 일부 정황을 인정할 수밖에 없습니다.",
+      "meta": {
+        "party": "a",
+        "disputeId": "d-1",
+        "lieState": "S3",
+        "questionType": "motive_search"
+      },
+      "hits": [
+        {
+          "pattern": "noun_action",
+          "matches": [
+            "급함은 돌봄"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "interrogation",
+      "cellKey": "a|d-1|S3|motive_search",
+      "variantId": "a-d-1-S3-motive-search-v7",
+      "text": "그 급함은 돌봄보다 배제에 가까워 보였습니다. 그래서 저는 그 동기를 그냥 넘기지 못합니다. 하지만 책임 방향은 여전히 제 동생에게 있습니다.",
+      "meta": {
+        "party": "a",
+        "disputeId": "d-1",
+        "lieState": "S3",
+        "questionType": "motive_search"
+      },
+      "hits": [
+        {
+          "pattern": "noun_action",
+          "matches": [
+            "급함은 돌봄"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "interrogation",
+      "cellKey": "a|d-1|S3|motive_search",
+      "variantId": "a-d-1-S3-motive-search-v8",
+      "text": "제 동생의 행동을 보면 제 동생이 제가 들어오면 흔들릴 일을 막으려 했다고 봅니다. 그 급함은 돌봄보다 배제에 가까워 보였습니다. 그 한마디가 제 안에서 크게 남았습니다.",
+      "meta": {
+        "party": "a",
+        "disputeId": "d-1",
+        "lieState": "S3",
+        "questionType": "motive_search"
+      },
+      "hits": [
+        {
+          "pattern": "noun_action",
+          "matches": [
+            "급함은 돌봄"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "interrogation",
+      "cellKey": "a|d-1|S4|motive_search",
+      "variantId": "a-d-1-S4-motive-search-v6",
+      "text": "재판관님, 제 동생이 제가 들어오면 흔들릴 일을 막으려 했다고 봅니다. 그 급함은 돌봄보다 배제에 가까워 보였습니다. 이 대목에서는 감정이 앞서는 걸 숨기기 어렵습니다.",
+      "meta": {
+        "party": "a",
+        "disputeId": "d-1",
+        "lieState": "S4",
+        "questionType": "motive_search"
+      },
+      "hits": [
+        {
+          "pattern": "noun_action",
+          "matches": [
+            "급함은 돌봄"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "interrogation",
+      "cellKey": "a|d-1|S4|motive_search",
+      "variantId": "a-d-1-S4-motive-search-v7",
+      "text": "그 급함은 돌봄보다 배제에 가까워 보였습니다. 그래서 저는 그 동기를 그냥 넘기지 못합니다. 그 말을 하면서도 제 책임이 보입니다.",
+      "meta": {
+        "party": "a",
+        "disputeId": "d-1",
+        "lieState": "S4",
+        "questionType": "motive_search"
+      },
+      "hits": [
+        {
+          "pattern": "noun_action",
+          "matches": [
+            "급함은 돌봄"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "interrogation",
+      "cellKey": "a|d-1|S4|motive_search",
+      "variantId": "a-d-1-S4-motive-search-v8",
+      "text": "제 동생의 행동을 보면 제 동생이 제가 들어오면 흔들릴 일을 막으려 했다고 봅니다. 그 급함은 돌봄보다 배제에 가까워 보였습니다. 처음으로 제 빈칸도 같이 보입니다.",
+      "meta": {
+        "party": "a",
+        "disputeId": "d-1",
+        "lieState": "S4",
+        "questionType": "motive_search"
+      },
+      "hits": [
+        {
+          "pattern": "noun_action",
+          "matches": [
+            "급함은 돌봄"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "interrogation",
+      "cellKey": "b|d-1|S0|motive_search",
+      "variantId": "b-d-1-S0-motive-search-v6",
+      "text": "재판관님, 말년 방문은 돌봄의 일부였습니다. 다른 계산이 있었다고 보시면 곤란합니다. 제 답은 여기까지입니다.",
+      "meta": {
+        "party": "b",
+        "disputeId": "d-1",
+        "lieState": "S0",
+        "questionType": "motive_search"
+      },
+      "hits": [
+        {
+          "pattern": "noun_action",
+          "matches": [
+            "방문은 돌봄"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "interrogation",
+      "cellKey": "b|d-1|S0|motive_search",
+      "variantId": "b-d-1-S0-motive-search-v8",
+      "text": "제가 이유를 길게 말하지 않은 건 맞습니다. 말년 방문은 돌봄의 일부였습니다. 지금은 그 선에서 말하겠습니다.",
+      "meta": {
+        "party": "b",
+        "disputeId": "d-1",
+        "lieState": "S0",
+        "questionType": "motive_search"
+      },
+      "hits": [
+        {
+          "pattern": "noun_action",
+          "matches": [
+            "방문은 돌봄"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "interrogation",
+      "cellKey": "b|d-1|S0|motive_search",
+      "variantId": "b-d-1-S0-motive-search-v9",
+      "text": "말년 방문은 돌봄의 일부였습니다. 그 부분은 감정으로 설명하기 어렵습니다. 그래서 짧게 답합니다.",
+      "meta": {
+        "party": "b",
+        "disputeId": "d-1",
+        "lieState": "S0",
+        "questionType": "motive_search"
+      },
+      "hits": [
+        {
+          "pattern": "noun_action",
+          "matches": [
+            "방문은 돌봄"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "interrogation",
+      "cellKey": "b|d-1|S1|motive_search",
+      "variantId": "b-d-1-S1-motive-search-v6",
+      "text": "재판관님, 말년 방문은 돌봄의 일부였습니다. 다른 계산이 있었다고 보시면 곤란합니다. 제가 인정한 범위는 거기까지입니다.",
+      "meta": {
+        "party": "b",
+        "disputeId": "d-1",
+        "lieState": "S1",
+        "questionType": "motive_search"
+      },
+      "hits": [
+        {
+          "pattern": "noun_action",
+          "matches": [
+            "방문은 돌봄"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "interrogation",
+      "cellKey": "b|d-1|S1|motive_search",
+      "variantId": "b-d-1-S1-motive-search-v8",
+      "text": "제가 이유를 길게 말하지 않은 건 맞습니다. 말년 방문은 돌봄의 일부였습니다. 다만 전부를 연 건 아닙니다.",
+      "meta": {
+        "party": "b",
+        "disputeId": "d-1",
+        "lieState": "S1",
+        "questionType": "motive_search"
+      },
+      "hits": [
+        {
+          "pattern": "noun_action",
+          "matches": [
+            "방문은 돌봄"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "interrogation",
+      "cellKey": "b|d-1|S1|motive_search",
+      "variantId": "b-d-1-S1-motive-search-v9",
+      "text": "말년 방문은 돌봄의 일부였습니다. 그 부분은 감정으로 설명하기 어렵습니다. 그 선은 지키겠습니다.",
+      "meta": {
+        "party": "b",
+        "disputeId": "d-1",
+        "lieState": "S1",
+        "questionType": "motive_search"
+      },
+      "hits": [
+        {
+          "pattern": "noun_action",
+          "matches": [
+            "방문은 돌봄"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "interrogation",
+      "cellKey": "b|d-1|S5|motive_search",
+      "variantId": "b-d-1-S5-motive-search-v6",
+      "text": "재판관님, 제가 유서 과정에 영향을 준 건 맞습니다. 그걸 돌봄이라고만 말할 수 없다는 점도 압니다. 이제는 피하지 않겠습니다.",
+      "meta": {
+        "party": "b",
+        "disputeId": "d-1",
+        "lieState": "S5",
+        "questionType": "motive_search"
+      },
+      "hits": [
+        {
+          "pattern": "noun_action",
+          "matches": [
+            "그걸 돌봄"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "interrogation",
+      "cellKey": "b|d-1|S5|motive_search",
+      "variantId": "b-d-1-S5-motive-search-v7",
+      "text": "그걸 돌봄이라고만 말할 수 없다는 점도 압니다. 그 책임을 인정합니다.",
+      "meta": {
+        "party": "b",
+        "disputeId": "d-1",
+        "lieState": "S5",
+        "questionType": "motive_search"
+      },
+      "hits": [
+        {
+          "pattern": "noun_action",
+          "matches": [
+            "그걸 돌봄"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "interrogation",
+      "cellKey": "b|d-1|S5|motive_search",
+      "variantId": "b-d-1-S5-motive-search-v10",
+      "text": "그걸 돌봄이라고만 말할 수 없다는 점도 압니다. 제 말이 늦어진 이유도 그 때문입니다. 그 말까지 감당하겠습니다.",
+      "meta": {
+        "party": "b",
+        "disputeId": "d-1",
+        "lieState": "S5",
+        "questionType": "motive_search"
+      },
+      "hits": [
+        {
+          "pattern": "noun_action",
+          "matches": [
+            "그걸 돌봄"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "interrogation",
+      "cellKey": "a|d-2|S0|fact_pursuit",
+      "variantId": "a-d-2-S0-fact-pursuit-v6",
+      "text": "재판관님, 공증본의 그 숫자는 제 동생에게 유리하게 끝난 결과입니다. 저는 그 처리를 어머니 뜻만으로 받아들이기 어렵습니다. 제 입장은 아직 달라지지 않았습니다.",
+      "meta": {
+        "party": "a",
+        "disputeId": "d-2",
+        "lieState": "S0",
+        "questionType": "fact_pursuit"
+      },
+      "hits": [
+        {
+          "pattern": "noun_action",
+          "matches": [
+            "그 처리"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "interrogation",
+      "cellKey": "a|d-2|S0|fact_pursuit",
+      "variantId": "a-d-2-S0-fact-pursuit-v7",
+      "text": "형인 제가 보기엔 저는 그 처리를 어머니 뜻만으로 받아들이기 어렵습니다. 그래서 공증본의 그 숫자는 제 동생에게 유리하게 끝난 결과입니다. 저는 그 선에서 물러서지 않습니다.",
+      "meta": {
+        "party": "a",
+        "disputeId": "d-2",
+        "lieState": "S0",
+        "questionType": "fact_pursuit"
+      },
+      "hits": [
+        {
+          "pattern": "noun_action",
+          "matches": [
+            "그 처리"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "interrogation",
+      "cellKey": "a|d-2|S0|fact_pursuit",
+      "variantId": "a-d-2-S0-fact-pursuit-v8",
+      "text": "저는 그 처리를 어머니 뜻만으로 받아들이기 어렵습니다. 그 점을 빼면 공증본의 그 숫자는 제 동생에게 유리하게 끝난 결과입니다. 지금은 그 사실부터 봐야 합니다.",
+      "meta": {
+        "party": "a",
+        "disputeId": "d-2",
+        "lieState": "S0",
+        "questionType": "fact_pursuit"
+      },
+      "hits": [
+        {
+          "pattern": "noun_action",
+          "matches": [
+            "그 처리"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "interrogation",
+      "cellKey": "a|d-2|S1|fact_pursuit",
+      "variantId": "a-d-2-S1-fact-pursuit-v4",
+      "text": "문서만 보면 멀쩡해 보여도, 서류를 처리한 흔적을 보면 자꾸 걸립니다. 너무 급했고, 너무 조용했습니다.",
+      "meta": {
+        "party": "a",
+        "disputeId": "d-2",
+        "lieState": "S1",
+        "questionType": "fact_pursuit"
+      },
+      "hits": [
+        {
+          "pattern": "noun_action",
+          "matches": [
+            "서류를 처리"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "interrogation",
+      "cellKey": "a|d-2|S1|fact_pursuit",
+      "variantId": "a-d-2-S1-fact-pursuit-v6",
+      "text": "재판관님, 공증본의 그 숫자는 제 동생에게 유리하게 끝난 결과입니다. 저는 그 처리를 어머니 뜻만으로 받아들이기 어렵습니다. 다만 전부를 단정하진 않겠습니다.",
+      "meta": {
+        "party": "a",
+        "disputeId": "d-2",
+        "lieState": "S1",
+        "questionType": "fact_pursuit"
+      },
+      "hits": [
+        {
+          "pattern": "noun_action",
+          "matches": [
+            "그 처리"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "interrogation",
+      "cellKey": "a|d-2|S1|fact_pursuit",
+      "variantId": "a-d-2-S1-fact-pursuit-v7",
+      "text": "형인 제가 보기엔 저는 그 처리를 어머니 뜻만으로 받아들이기 어렵습니다. 그래서 공증본의 그 숫자는 제 동생에게 유리하게 끝난 결과입니다. 그래도 제 의심은 남아 있습니다.",
+      "meta": {
+        "party": "a",
+        "disputeId": "d-2",
+        "lieState": "S1",
+        "questionType": "fact_pursuit"
+      },
+      "hits": [
+        {
+          "pattern": "noun_action",
+          "matches": [
+            "그 처리"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "interrogation",
+      "cellKey": "a|d-2|S1|fact_pursuit",
+      "variantId": "a-d-2-S1-fact-pursuit-v8",
+      "text": "저는 그 처리를 어머니 뜻만으로 받아들이기 어렵습니다. 그 점을 빼면 공증본의 그 숫자는 제 동생에게 유리하게 끝난 결과입니다. 한 발 물러서도 핵심은 같습니다.",
+      "meta": {
+        "party": "a",
+        "disputeId": "d-2",
+        "lieState": "S1",
+        "questionType": "fact_pursuit"
+      },
+      "hits": [
+        {
+          "pattern": "noun_action",
+          "matches": [
+            "그 처리"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "interrogation",
+      "cellKey": "a|d-2|S2|fact_pursuit",
+      "variantId": "a-d-2-S2-fact-pursuit-v6",
+      "text": "재판관님, 공증 당일 문서 처리 흐름을 그냥 넘길 수 없습니다. 같은 자리에서 숫자가 달라진 흔적이 제 의심을 키웠습니다. 그 시점부터 의심이 더 선명해졌습니다.",
+      "meta": {
+        "party": "a",
+        "disputeId": "d-2",
+        "lieState": "S2",
+        "questionType": "fact_pursuit"
+      },
+      "hits": [
+        {
+          "pattern": "noun_action",
+          "matches": [
+            "문서 처리"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "interrogation",
+      "cellKey": "a|d-2|S2|fact_pursuit",
+      "variantId": "a-d-2-S2-fact-pursuit-v7",
+      "text": "형인 제가 보기엔 같은 자리에서 숫자가 달라진 흔적이 제 의심을 키웠습니다. 그래서 공증 당일 문서 처리 흐름을 그냥 넘길 수 없습니다. 그냥 우연으로 넘기기 어렵습니다.",
+      "meta": {
+        "party": "a",
+        "disputeId": "d-2",
+        "lieState": "S2",
+        "questionType": "fact_pursuit"
+      },
+      "hits": [
+        {
+          "pattern": "noun_action",
+          "matches": [
+            "문서 처리"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "interrogation",
+      "cellKey": "a|d-2|S2|fact_pursuit",
+      "variantId": "a-d-2-S2-fact-pursuit-v8",
+      "text": "같은 자리에서 숫자가 달라진 흔적이 제 의심을 키웠습니다. 그 점을 빼면 공증 당일 문서 처리 흐름을 그냥 넘길 수 없습니다. 그 대목에서 제 말도 거칠어졌습니다.",
+      "meta": {
+        "party": "a",
+        "disputeId": "d-2",
+        "lieState": "S2",
+        "questionType": "fact_pursuit"
+      },
+      "hits": [
+        {
+          "pattern": "noun_action",
+          "matches": [
+            "문서 처리"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "interrogation",
+      "cellKey": "a|d-2|S2|fact_pursuit",
+      "variantId": "a-d-2-S2-fact-pursuit-v9",
+      "text": "저는 이 대목을 가볍게 넘길 수 없습니다. 공증 당일 문서 처리 흐름을 그냥 넘길 수 없습니다. 여전히 설명이 필요합니다.",
+      "meta": {
+        "party": "a",
+        "disputeId": "d-2",
+        "lieState": "S2",
+        "questionType": "fact_pursuit"
+      },
+      "hits": [
+        {
+          "pattern": "noun_action",
+          "matches": [
+            "문서 처리"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "interrogation",
+      "cellKey": "a|d-2|S2|fact_pursuit",
+      "variantId": "a-d-2-S2-fact-pursuit-v10",
+      "text": "공증 당일 문서 처리 흐름을 그냥 넘길 수 없습니다. 그 흐름은 지금도 설명이 필요합니다. 저도 그 부분은 흔들립니다.",
+      "meta": {
+        "party": "a",
+        "disputeId": "d-2",
+        "lieState": "S2",
+        "questionType": "fact_pursuit"
+      },
+      "hits": [
+        {
+          "pattern": "noun_action",
+          "matches": [
+            "문서 처리"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "interrogation",
+      "cellKey": "a|d-2|S4|empathy_approach",
+      "variantId": "a-d-2-S4-empathy-approach-v3",
+      "text": "제 동생을 미워하던 말들이 한꺼번에 제 쪽으로 돌아옵니다. 혹시 제가 정말 아무것도 못 보고 살았던 건가 싶습니다.",
+      "meta": {
+        "party": "a",
+        "disputeId": "d-2",
+        "lieState": "S4",
+        "questionType": "empathy_approach"
+      },
+      "hits": [
+        {
+          "pattern": "weak_쪽",
+          "matches": [
+            "제 쪽으로"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "interrogation",
+      "cellKey": "b|d-2|S2|fact_pursuit",
+      "variantId": "b-d-2-S2-fact-pursuit-v6",
+      "text": "재판관님, 서류 처리에 관여한 건 맞습니다. 내용을 바꾸려 했다는 말과는 다릅니다. 그보다 깊은 말은 아직 어렵습니다.",
+      "meta": {
+        "party": "b",
+        "disputeId": "d-2",
+        "lieState": "S2",
+        "questionType": "fact_pursuit"
+      },
+      "hits": [
+        {
+          "pattern": "noun_action",
+          "matches": [
+            "서류 처리"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "interrogation",
+      "cellKey": "b|d-2|S2|fact_pursuit",
+      "variantId": "b-d-2-S2-fact-pursuit-v8",
+      "text": "말을 아낀 건 맞습니다. 서류 처리에 관여한 건 맞습니다. 말을 고르는 이유가 있습니다.",
+      "meta": {
+        "party": "b",
+        "disputeId": "d-2",
+        "lieState": "S2",
+        "questionType": "fact_pursuit"
+      },
+      "hits": [
+        {
+          "pattern": "noun_action",
+          "matches": [
+            "서류 처리"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "interrogation",
+      "cellKey": "b|d-2|S2|fact_pursuit",
+      "variantId": "b-d-2-S2-fact-pursuit-v9",
+      "text": "서류 처리에 관여한 건 맞습니다. 그 이상으로 몰아가시면 제 의도와 어긋납니다. 그 대목에서 제가 늦어집니다.",
+      "meta": {
+        "party": "b",
+        "disputeId": "d-2",
+        "lieState": "S2",
+        "questionType": "fact_pursuit"
+      },
+      "hits": [
+        {
+          "pattern": "noun_action",
+          "matches": [
+            "서류 처리"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "interrogation",
+      "cellKey": "b|d-2|S4|fact_pursuit",
+      "variantId": "b-d-2-S4-fact-pursuit-v4",
+      "text": "좋은 선택이었다고 주장하진 않겠습니다. 다만 탐욕 쪽으로는 한 발도 가지 않았습니다.",
+      "meta": {
+        "party": "b",
+        "disputeId": "d-2",
+        "lieState": "S4",
+        "questionType": "fact_pursuit"
+      },
+      "hits": [
+        {
+          "pattern": "weak_쪽",
+          "matches": [
+            "탐욕 쪽으로"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "interrogation",
+      "cellKey": "a|d-3|S0|fact_pursuit",
+      "variantId": "a-d-3-S0-fact-pursuit-v6",
+      "text": "재판관님, 저는 그 돈이 어머니 쪽에서 나온 지원이라고 믿었습니다. 제 동생 돈이라는 말은 처음부터 받아들이기 어려웠습니다. 제 입장은 아직 달라지지 않았습니다.",
+      "meta": {
+        "party": "a",
+        "disputeId": "d-3",
+        "lieState": "S0",
+        "questionType": "fact_pursuit"
+      },
+      "hits": [
+        {
+          "pattern": "noun_action",
+          "matches": [
+            "나온 지원"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "interrogation",
+      "cellKey": "a|d-3|S0|fact_pursuit",
+      "variantId": "a-d-3-S0-fact-pursuit-v7",
+      "text": "형인 제가 보기엔 제 동생 돈이라는 말은 처음부터 받아들이기 어려웠습니다. 그래서 저는 그 돈이 어머니 쪽에서 나온 지원이라고 믿었습니다. 저는 그 선에서 물러서지 않습니다.",
+      "meta": {
+        "party": "a",
+        "disputeId": "d-3",
+        "lieState": "S0",
+        "questionType": "fact_pursuit"
+      },
+      "hits": [
+        {
+          "pattern": "noun_action",
+          "matches": [
+            "나온 지원"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "interrogation",
+      "cellKey": "a|d-3|S0|fact_pursuit",
+      "variantId": "a-d-3-S0-fact-pursuit-v8",
+      "text": "제 동생 돈이라는 말은 처음부터 받아들이기 어려웠습니다. 그 점을 빼면 저는 그 돈이 어머니 쪽에서 나온 지원이라고 믿었습니다. 지금은 그 사실부터 봐야 합니다.",
+      "meta": {
+        "party": "a",
+        "disputeId": "d-3",
+        "lieState": "S0",
+        "questionType": "fact_pursuit"
+      },
+      "hits": [
+        {
+          "pattern": "noun_action",
+          "matches": [
+            "나온 지원"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "interrogation",
+      "cellKey": "a|d-3|S0|fact_pursuit",
+      "variantId": "a-d-3-S0-fact-pursuit-v9",
+      "text": "저는 이 대목을 가볍게 넘길 수 없습니다. 저는 그 돈이 어머니 쪽에서 나온 지원이라고 믿었습니다. 그 의심은 그대로입니다.",
+      "meta": {
+        "party": "a",
+        "disputeId": "d-3",
+        "lieState": "S0",
+        "questionType": "fact_pursuit"
+      },
+      "hits": [
+        {
+          "pattern": "noun_action",
+          "matches": [
+            "나온 지원"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "interrogation",
+      "cellKey": "a|d-3|S0|fact_pursuit",
+      "variantId": "a-d-3-S0-fact-pursuit-v10",
+      "text": "저는 그 돈이 어머니 쪽에서 나온 지원이라고 믿었습니다. 그 흐름은 지금도 설명이 필요합니다. 그래서 더 묻고 싶은 겁니다.",
+      "meta": {
+        "party": "a",
+        "disputeId": "d-3",
+        "lieState": "S0",
+        "questionType": "fact_pursuit"
+      },
+      "hits": [
+        {
+          "pattern": "noun_action",
+          "matches": [
+            "나온 지원"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "interrogation",
+      "cellKey": "a|d-3|S1|fact_pursuit",
+      "variantId": "a-d-3-S1-fact-pursuit-v6",
+      "text": "재판관님, 저는 그 돈이 어머니 쪽에서 나온 지원이라고 믿었습니다. 제 동생 돈이라는 말은 처음부터 받아들이기 어려웠습니다. 다만 전부를 단정하진 않겠습니다.",
+      "meta": {
+        "party": "a",
+        "disputeId": "d-3",
+        "lieState": "S1",
+        "questionType": "fact_pursuit"
+      },
+      "hits": [
+        {
+          "pattern": "noun_action",
+          "matches": [
+            "나온 지원"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "interrogation",
+      "cellKey": "a|d-3|S1|fact_pursuit",
+      "variantId": "a-d-3-S1-fact-pursuit-v7",
+      "text": "형인 제가 보기엔 제 동생 돈이라는 말은 처음부터 받아들이기 어려웠습니다. 그래서 저는 그 돈이 어머니 쪽에서 나온 지원이라고 믿었습니다. 그래도 제 의심은 남아 있습니다.",
+      "meta": {
+        "party": "a",
+        "disputeId": "d-3",
+        "lieState": "S1",
+        "questionType": "fact_pursuit"
+      },
+      "hits": [
+        {
+          "pattern": "noun_action",
+          "matches": [
+            "나온 지원"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "interrogation",
+      "cellKey": "a|d-3|S1|fact_pursuit",
+      "variantId": "a-d-3-S1-fact-pursuit-v8",
+      "text": "제 동생 돈이라는 말은 처음부터 받아들이기 어려웠습니다. 그 점을 빼면 저는 그 돈이 어머니 쪽에서 나온 지원이라고 믿었습니다. 한 발 물러서도 핵심은 같습니다.",
+      "meta": {
+        "party": "a",
+        "disputeId": "d-3",
+        "lieState": "S1",
+        "questionType": "fact_pursuit"
+      },
+      "hits": [
+        {
+          "pattern": "noun_action",
+          "matches": [
+            "나온 지원"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "interrogation",
+      "cellKey": "a|d-3|S1|fact_pursuit",
+      "variantId": "a-d-3-S1-fact-pursuit-v9",
+      "text": "저는 이 대목을 가볍게 넘길 수 없습니다. 저는 그 돈이 어머니 쪽에서 나온 지원이라고 믿었습니다. 그 차이는 인정하겠습니다.",
+      "meta": {
+        "party": "a",
+        "disputeId": "d-3",
+        "lieState": "S1",
+        "questionType": "fact_pursuit"
+      },
+      "hits": [
+        {
+          "pattern": "noun_action",
+          "matches": [
+            "나온 지원"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "interrogation",
+      "cellKey": "a|d-3|S1|fact_pursuit",
+      "variantId": "a-d-3-S1-fact-pursuit-v10",
+      "text": "저는 그 돈이 어머니 쪽에서 나온 지원이라고 믿었습니다. 그 흐름은 지금도 설명이 필요합니다. 그래서 더 조심스럽게 보려 합니다.",
+      "meta": {
+        "party": "a",
+        "disputeId": "d-3",
+        "lieState": "S1",
+        "questionType": "fact_pursuit"
+      },
+      "hits": [
+        {
+          "pattern": "noun_action",
+          "matches": [
+            "나온 지원"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "interrogation",
+      "cellKey": "a|d-3|S1|empathy_approach",
+      "variantId": "a-d-3-S1-empathy-approach-v5",
+      "text": "그 돈의 시작보다 어머니 체면을 먼저 본 겁니다. 지금 와서는 그게 제 회피였다는 생각도 듭니다.",
+      "meta": {
+        "party": "a",
+        "disputeId": "d-3",
+        "lieState": "S1",
+        "questionType": "empathy_approach"
+      },
+      "hits": [
+        {
+          "pattern": "noun_action",
+          "matches": [
+            "제 회피"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "interrogation",
+      "cellKey": "a|d-3|S2|motive_search",
+      "variantId": "a-d-3-S2-motive-search-v1",
+      "text": "어머니 수입으로 생각했는데, 지금 보니 맞지 않는 부분이 있습니다. 제가 너무 편한 쪽으로 이해한 것 같습니다.",
+      "meta": {
+        "party": "a",
+        "disputeId": "d-3",
+        "lieState": "S2",
+        "questionType": "motive_search"
+      },
+      "hits": [
+        {
+          "pattern": "weak_쪽",
+          "matches": [
+            "편한 쪽으로"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "interrogation",
+      "cellKey": "b|d-3|S0|fact_pursuit",
+      "variantId": "b-d-3-S0-fact-pursuit-v2",
+      "text": "제 형 쪽으로 제가 따로 보낸 돈은 없다고 말씀드리겠습니다.",
+      "meta": {
+        "party": "b",
+        "disputeId": "d-3",
+        "lieState": "S0",
+        "questionType": "fact_pursuit"
+      },
+      "hits": [
+        {
+          "pattern": "weak_쪽",
+          "matches": [
+            "형 쪽으로"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "interrogation",
+      "cellKey": "b|d-3|S3|fact_pursuit",
+      "variantId": "b-d-3-S3-fact-pursuit-v4",
+      "text": "어머니 통장을 거쳐 제 형 쪽으로 간 큰돈도 있었습니다. 그 시점은 공장이 가장 위태로울 때였습니다.",
+      "meta": {
+        "party": "b",
+        "disputeId": "d-3",
+        "lieState": "S3",
+        "questionType": "fact_pursuit"
+      },
+      "hits": [
+        {
+          "pattern": "weak_쪽",
+          "matches": [
+            "형 쪽으로"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "interrogation",
+      "cellKey": "b|d-3|S4|fact_pursuit",
+      "variantId": "b-d-3-S4-fact-pursuit-v3",
+      "text": "돈의 출처가 제 이름으로 보이는 순간 일이 틀어질 거라고 생각했습니다. 어머니 쪽으로 보이는 편이 더 안전했습니다.",
+      "meta": {
+        "party": "b",
+        "disputeId": "d-3",
+        "lieState": "S4",
+        "questionType": "fact_pursuit"
+      },
+      "hits": [
+        {
+          "pattern": "weak_쪽",
+          "matches": [
+            "어머니 쪽으로"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "interrogation",
+      "cellKey": "a|d-4|S0|fact_pursuit",
+      "variantId": "a-d-4-S0-fact-pursuit-v4",
+      "text": "또 이렇게 입을 다무시면 저는 더 나쁜 쪽으로밖에 생각 못 합니다. 숨기는 게 뭡니까.",
+      "meta": {
+        "party": "a",
+        "disputeId": "d-4",
+        "lieState": "S0",
+        "questionType": "fact_pursuit"
+      },
+      "hits": [
+        {
+          "pattern": "weak_쪽",
+          "matches": [
+            "나쁜 쪽으로"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "interrogation",
+      "cellKey": "a|d-4|S5|fact_pursuit",
+      "variantId": "a-d-4-S5-fact-pursuit-v2",
+      "text": "유서를 줄인 것도, 돈의 출처를 숨긴 것도, 그 말을 묻어둔 것도 전부 저를 무너지지 않게 하려던 거였습니다.",
+      "meta": {
+        "party": "a",
+        "disputeId": "d-4",
+        "lieState": "S5",
+        "questionType": "fact_pursuit"
+      },
+      "hits": [
+        {
+          "pattern": "particle_error",
+          "matches": [
+            "출처를 숨긴 것"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "interrogation",
+      "cellKey": "a|d-4|S5|motive_search",
+      "variantId": "a-d-4-S5-motive-search-v1",
+      "text": "유서를 바꾼 것도, 돈을 숨긴 것도, 비밀을 안 말한 것도 전부 저 때문이었습니다.",
+      "meta": {
+        "party": "a",
+        "disputeId": "d-4",
+        "lieState": "S5",
+        "questionType": "motive_search"
+      },
+      "hits": [
+        {
+          "pattern": "particle_error",
+          "matches": [
+            "돈을 숨긴 것"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "interrogation",
+      "cellKey": "b|d-4|S2|motive_search",
+      "variantId": "b-d-4-S2-motive-search-v6",
+      "text": "재판관님, 제 침묵은 회피이기도 했지만 보호이기도 했습니다. 그렇게 믿고 버텼습니다. 그보다 깊은 말은 아직 어렵습니다.",
+      "meta": {
+        "party": "b",
+        "disputeId": "d-4",
+        "lieState": "S2",
+        "questionType": "motive_search"
+      },
+      "hits": [
+        {
+          "pattern": "noun_action",
+          "matches": [
+            "침묵은 회피"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "interrogation",
+      "cellKey": "b|d-4|S2|motive_search",
+      "variantId": "b-d-4-S2-motive-search-v8",
+      "text": "제가 이유를 길게 말하지 않은 건 맞습니다. 제 침묵은 회피이기도 했지만 보호이기도 했습니다. 말을 고르는 이유가 있습니다.",
+      "meta": {
+        "party": "b",
+        "disputeId": "d-4",
+        "lieState": "S2",
+        "questionType": "motive_search"
+      },
+      "hits": [
+        {
+          "pattern": "noun_action",
+          "matches": [
+            "침묵은 회피"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "interrogation",
+      "cellKey": "b|d-4|S2|motive_search",
+      "variantId": "b-d-4-S2-motive-search-v9",
+      "text": "제 침묵은 회피이기도 했지만 보호이기도 했습니다. 그 부분은 감정으로 설명하기 어렵습니다. 그 대목에서 제가 늦어집니다.",
+      "meta": {
+        "party": "b",
+        "disputeId": "d-4",
+        "lieState": "S2",
+        "questionType": "motive_search"
+      },
+      "hits": [
+        {
+          "pattern": "noun_action",
+          "matches": [
+            "침묵은 회피"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "interrogation",
+      "cellKey": "b|d-5|S0|motive_search",
+      "variantId": "b-d-5-S0-motive-search-v5",
+      "text": "제가 나쁜 쪽으로 남아도 형이 모르는 게 덜 잔인하다고 봤습니다.",
+      "meta": {
+        "party": "b",
+        "disputeId": "d-5",
+        "lieState": "S0",
+        "questionType": "motive_search"
+      },
+      "hits": [
+        {
+          "pattern": "weak_쪽",
+          "matches": [
+            "나쁜 쪽으로"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "interrogation",
+      "cellKey": "b|d-5|S0|empathy_approach",
+      "variantId": "b-d-5-S0-empathy-approach-v6",
+      "text": "재판관님, 저희 형의 단정을 조용히 견디려 했습니다. 말을 열면 어머니가 숨긴 것까지 무너질까 봐요. 제 답은 여기까지입니다.",
+      "meta": {
+        "party": "b",
+        "disputeId": "d-5",
+        "lieState": "S0",
+        "questionType": "empathy_approach"
+      },
+      "hits": [
+        {
+          "pattern": "particle_error",
+          "matches": [
+            "어머니가 숨긴 것"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "interrogation",
+      "cellKey": "b|d-5|S0|empathy_approach",
+      "variantId": "b-d-5-S0-empathy-approach-v7",
+      "text": "말을 열면 어머니가 숨긴 것까지 무너질까 봐요. 그래도 그걸 죄로 정해 놓고 묻지는 말아 주십시오. 더 보태면 오해가 커질 겁니다.",
+      "meta": {
+        "party": "b",
+        "disputeId": "d-5",
+        "lieState": "S0",
+        "questionType": "empathy_approach"
+      },
+      "hits": [
+        {
+          "pattern": "particle_error",
+          "matches": [
+            "어머니가 숨긴 것"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "interrogation",
+      "cellKey": "b|d-5|S0|empathy_approach",
+      "variantId": "b-d-5-S0-empathy-approach-v10",
+      "text": "말을 열면 어머니가 숨긴 것까지 무너질까 봐요. 그게 제가 침묵을 택한 이유입니다. 그 이상은 맞지 않습니다.",
+      "meta": {
+        "party": "b",
+        "disputeId": "d-5",
+        "lieState": "S0",
+        "questionType": "empathy_approach"
+      },
+      "hits": [
+        {
+          "pattern": "particle_error",
+          "matches": [
+            "어머니가 숨긴 것"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "interrogation",
+      "cellKey": "b|d-5|S1|fact_pursuit",
+      "variantId": "b-d-5-S1-fact-pursuit-v3",
+      "text": "어머니가 부탁하신 일과 제가 앞서 처리한 일이 섞여 있습니다.",
+      "meta": {
+        "party": "b",
+        "disputeId": "d-5",
+        "lieState": "S1",
+        "questionType": "fact_pursuit"
+      },
+      "hits": [
+        {
+          "pattern": "noun_action",
+          "matches": [
+            "앞서 처리"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "interrogation",
+      "cellKey": "b|d-5|S1|motive_search",
+      "variantId": "b-d-5-S1-motive-search-v3",
+      "text": "형한테 바로 말하면 더 복잡해질 것 같아서 혼자 처리한 게 많았습니다.",
+      "meta": {
+        "party": "b",
+        "disputeId": "d-5",
+        "lieState": "S1",
+        "questionType": "motive_search"
+      },
+      "hits": [
+        {
+          "pattern": "noun_action",
+          "matches": [
+            "혼자 처리"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "interrogation",
+      "cellKey": "b|d-5|S1|empathy_approach",
+      "variantId": "b-d-5-S1-empathy-approach-v6",
+      "text": "재판관님, 저희 형의 단정을 조용히 견디려 했습니다. 말을 열면 어머니가 숨긴 것까지 무너질까 봐요. 제가 인정한 범위는 거기까지입니다.",
+      "meta": {
+        "party": "b",
+        "disputeId": "d-5",
+        "lieState": "S1",
+        "questionType": "empathy_approach"
+      },
+      "hits": [
+        {
+          "pattern": "particle_error",
+          "matches": [
+            "어머니가 숨긴 것"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "interrogation",
+      "cellKey": "b|d-5|S1|empathy_approach",
+      "variantId": "b-d-5-S1-empathy-approach-v7",
+      "text": "말을 열면 어머니가 숨긴 것까지 무너질까 봐요. 그래도 제가 인정한 범위는 거기까지입니다. 그보다 크게 읽지는 말아 주십시오.",
+      "meta": {
+        "party": "b",
+        "disputeId": "d-5",
+        "lieState": "S1",
+        "questionType": "empathy_approach"
+      },
+      "hits": [
+        {
+          "pattern": "particle_error",
+          "matches": [
+            "어머니가 숨긴 것"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "interrogation",
+      "cellKey": "b|d-5|S1|empathy_approach",
+      "variantId": "b-d-5-S1-empathy-approach-v10",
+      "text": "말을 열면 어머니가 숨긴 것까지 무너질까 봐요. 그게 제가 침묵을 택한 이유입니다. 그래서 말을 줄이는 겁니다.",
+      "meta": {
+        "party": "b",
+        "disputeId": "d-5",
+        "lieState": "S1",
+        "questionType": "empathy_approach"
+      },
+      "hits": [
+        {
+          "pattern": "particle_error",
+          "matches": [
+            "어머니가 숨긴 것"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "interrogation",
+      "cellKey": "b|d-5|S2|motive_search",
+      "variantId": "b-d-5-S2-motive-search-v2",
+      "text": "형이 알면 감당 못 할 걸 미리 봤다고 생각했습니다. 그래서 설명보다 막는 쪽으로 갔습니다.",
+      "meta": {
+        "party": "b",
+        "disputeId": "d-5",
+        "lieState": "S2",
+        "questionType": "motive_search"
+      },
+      "hits": [
+        {
+          "pattern": "weak_쪽",
+          "matches": [
+            "막는 쪽으로"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "interrogation",
+      "cellKey": "b|d-5|S4|motive_search",
+      "variantId": "b-d-5-S4-motive-search-v5",
+      "text": "어머니 마음을 제 쪽으로 해석해 버린 순간부터, 저는 이미 선을 넘고 있었던 것 같습니다.",
+      "meta": {
+        "party": "b",
+        "disputeId": "d-5",
+        "lieState": "S4",
+        "questionType": "motive_search"
+      },
+      "hits": [
+        {
+          "pattern": "weak_쪽",
+          "matches": [
+            "제 쪽으로"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "evidence_present",
+      "cellKey": "a|e-5|mid|both",
+      "variantId": "a-e-5-mid-both-v1",
+      "text": "어머니가 왜 제 동생 쪽으로 그렇게 많이 남기려 하셨는지 모르겠습니다.",
+      "meta": {
+        "party": "a",
+        "evidenceId": "e-5",
+        "lieBand": "mid"
+      },
+      "hits": [
+        {
+          "pattern": "weak_쪽",
+          "matches": [
+            "동생 쪽으로"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "evidence_present",
+      "cellKey": "a|e-5|late|both",
+      "variantId": "a-e-5-late-both-v4",
+      "text": "제 동생이 뭔가를 숨긴 건 맞더라도, 어머니가 왜 그쪽으로 더 기울었는지는 제 몫으로 돌아오는 질문입니다.",
+      "meta": {
+        "party": "a",
+        "evidenceId": "e-5",
+        "lieBand": "late"
+      },
+      "hits": [
+        {
+          "pattern": "weak_쪽",
+          "matches": [
+            "그쪽으로"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "evidence_present",
+      "cellKey": "b|e-6|early|self",
+      "variantId": "b-e-6-early-self-v3",
+      "text": "어머니 쪽으로 간 돈은 제 돈이 맞습니다.",
+      "meta": {
+        "party": "b",
+        "evidenceId": "e-6",
+        "lieBand": "early"
+      },
+      "hits": [
+        {
+          "pattern": "weak_쪽",
+          "matches": [
+            "어머니 쪽으로"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "evidence_present",
+      "cellKey": "b|e-6|early|self",
+      "variantId": "b-e-6-early-self-v4",
+      "text": "생활 쪽으로 보낸 돈이라면 제가 보낸 게 맞습니다.",
+      "meta": {
+        "party": "b",
+        "evidenceId": "e-6",
+        "lieBand": "early"
+      },
+      "hits": [
+        {
+          "pattern": "weak_쪽",
+          "matches": [
+            "생활 쪽으로"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "evidence_present",
+      "cellKey": "b|e-6|mid|self",
+      "variantId": "b-e-6-mid-self-v4",
+      "text": "생활비 흐름이 계속된 건 맞습니다. 제가 보내고, 어머니가 집 쪽으로 쓰시는 구조였습니다.",
+      "meta": {
+        "party": "b",
+        "evidenceId": "e-6",
+        "lieBand": "mid"
+      },
+      "hits": [
+        {
+          "pattern": "weak_쪽",
+          "matches": [
+            "집 쪽으로"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "evidence_present",
+      "cellKey": "a|e-1|early|1",
+      "variantId": "a-e-1-early-stage1-v1",
+      "text": "이 공증 유서 사본부터 이상했습니다. 제 동생이 어머니 뜻을 자기 쪽으로 끌었다고 봤습니다.",
+      "meta": {
+        "party": "a",
+        "evidenceId": "e-1",
+        "lieBand": "early"
+      },
+      "hits": [
+        {
+          "pattern": "weak_쪽",
+          "matches": [
+            "자기 쪽으로"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "evidence_present",
+      "cellKey": "a|e-1|early|1",
+      "variantId": "a-e-1-early-stage1-v2",
+      "text": "공증 도장과 상속 비율이 적힌 문면을 보자마자 장남으로 지켜 온 시간이 문면 한 줄로 밀린 것 같았습니다. 그래서 제 동생이 어머니 뜻을 자기 쪽으로 끌었다고 봤습니다.",
+      "meta": {
+        "party": "a",
+        "evidenceId": "e-1",
+        "lieBand": "early"
+      },
+      "hits": [
+        {
+          "pattern": "weak_쪽",
+          "matches": [
+            "자기 쪽으로"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "evidence_present",
+      "cellKey": "a|e-1|early|1",
+      "variantId": "a-e-1-early-stage1-v3",
+      "text": "처음엔 공증 유서 사본의 출처보다 결과가 먼저 보였습니다. 제 동생이 어머니 뜻을 자기 쪽으로 끌었다고 봤습니다.",
+      "meta": {
+        "party": "a",
+        "evidenceId": "e-1",
+        "lieBand": "early"
+      },
+      "hits": [
+        {
+          "pattern": "weak_쪽",
+          "matches": [
+            "자기 쪽으로"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "evidence_present",
+      "cellKey": "a|e-1|early|1",
+      "variantId": "a-e-1-early-stage1-v4",
+      "text": "저는 공증 도장과 상속 비율이 적힌 문면을 그냥 넘길 수 없었습니다. 제 동생이 어머니 뜻을 자기 쪽으로 끌었다고 봤습니다.",
+      "meta": {
+        "party": "a",
+        "evidenceId": "e-1",
+        "lieBand": "early"
+      },
+      "hits": [
+        {
+          "pattern": "weak_쪽",
+          "matches": [
+            "자기 쪽으로"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "evidence_present",
+      "cellKey": "a|e-1|early|1",
+      "variantId": "a-e-1-early-stage1-v6",
+      "text": "재판관님, 공증 도장과 상속 비율이 적힌 문면 자체가 제겐 충격이었습니다. 제 동생이 어머니 뜻을 자기 쪽으로 끌었다고 봤습니다.",
+      "meta": {
+        "party": "a",
+        "evidenceId": "e-1",
+        "lieBand": "early"
+      },
+      "hits": [
+        {
+          "pattern": "weak_쪽",
+          "matches": [
+            "자기 쪽으로"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "evidence_present",
+      "cellKey": "a|e-1|early|1",
+      "variantId": "a-e-1-early-stage1-v7",
+      "text": "이 자료를 처음 본 때부터 제 생각은 한쪽으로 기울었습니다. 제 동생이 어머니 뜻을 자기 쪽으로 끌었다고 봤습니다.",
+      "meta": {
+        "party": "a",
+        "evidenceId": "e-1",
+        "lieBand": "early"
+      },
+      "hits": [
+        {
+          "pattern": "weak_쪽",
+          "matches": [
+            "자기 쪽으로"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "evidence_present",
+      "cellKey": "a|e-1|early|1",
+      "variantId": "a-e-1-early-stage1-v9",
+      "text": "저는 이 자료를 단순한 종이로 못 봤습니다. 제 동생이 어머니 뜻을 자기 쪽으로 끌었다고 봤습니다.",
+      "meta": {
+        "party": "a",
+        "evidenceId": "e-1",
+        "lieBand": "early"
+      },
+      "hits": [
+        {
+          "pattern": "weak_쪽",
+          "matches": [
+            "자기 쪽으로"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "evidence_present",
+      "cellKey": "a|e-1|early|1",
+      "variantId": "a-e-1-early-stage1-v10",
+      "text": "공증 도장과 상속 비율이 적힌 문면이 남아 있는데 그냥 가족 일로 넘기긴 어렵습니다. 제 동생이 어머니 뜻을 자기 쪽으로 끌었다고 봤습니다.",
+      "meta": {
+        "party": "a",
+        "evidenceId": "e-1",
+        "lieBand": "early"
+      },
+      "hits": [
+        {
+          "pattern": "weak_쪽",
+          "matches": [
+            "자기 쪽으로"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "evidence_present",
+      "cellKey": "a|e-1|mid|1",
+      "variantId": "a-e-1-mid-stage1-v1",
+      "text": "공증 유서 사본 자체는 확인됐습니다. 다만 제 동생이 어머니 뜻을 자기 쪽으로 끌었다고 봤습니다.",
+      "meta": {
+        "party": "a",
+        "evidenceId": "e-1",
+        "lieBand": "mid"
+      },
+      "hits": [
+        {
+          "pattern": "weak_쪽",
+          "matches": [
+            "자기 쪽으로"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "evidence_present",
+      "cellKey": "a|e-1|mid|1",
+      "variantId": "a-e-1-mid-stage1-v4",
+      "text": "공증 유서 사본을 두고 제 감정이 앞선 건 맞습니다. 그래도 제 동생이 어머니 뜻을 자기 쪽으로 끌었다고 봤습니다.",
+      "meta": {
+        "party": "a",
+        "evidenceId": "e-1",
+        "lieBand": "mid"
+      },
+      "hits": [
+        {
+          "pattern": "weak_쪽",
+          "matches": [
+            "자기 쪽으로"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "evidence_present",
+      "cellKey": "a|e-1|mid|1",
+      "variantId": "a-e-1-mid-stage1-v9",
+      "text": "자료가 있는 이상 감정만으로 말하진 않겠습니다. 제 동생이 어머니 뜻을 자기 쪽으로 끌었다고 봤습니다.",
+      "meta": {
+        "party": "a",
+        "evidenceId": "e-1",
+        "lieBand": "mid"
+      },
+      "hits": [
+        {
+          "pattern": "weak_쪽",
+          "matches": [
+            "자기 쪽으로"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "evidence_present",
+      "cellKey": "a|e-1|mid|2",
+      "variantId": "a-e-1-mid-stage2-v8",
+      "text": "자료가 흐름을 보여 줍니다. 저는 그 흐름을 조작 쪽으로 읽었습니다. 그 부분이 제일 걸립니다.",
+      "meta": {
+        "party": "a",
+        "evidenceId": "e-1",
+        "lieBand": "mid"
+      },
+      "hits": [
+        {
+          "pattern": "weak_쪽",
+          "matches": [
+            "조작 쪽으로"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "evidence_present",
+      "cellKey": "a|e-2|early|3",
+      "variantId": "a-e-2-early-stage3-v4",
+      "text": "저는 돌봄인지 개입인지 갈리는 지점에서 제 동생 책임이 드러난다고 봅니다.",
+      "meta": {
+        "party": "a",
+        "evidenceId": "e-2",
+        "lieBand": "early"
+      },
+      "hits": [
+        {
+          "pattern": "noun_action",
+          "matches": [
+            "저는 돌봄"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "evidence_present",
+      "cellKey": "a|e-2|early|3",
+      "variantId": "a-e-2-early-stage3-v9",
+      "text": "저는 아직도 돌봄인지 개입인지 갈리는 지점이 제일 걸립니다. 거기에 책임이 있다고 봅니다.",
+      "meta": {
+        "party": "a",
+        "evidenceId": "e-2",
+        "lieBand": "early"
+      },
+      "hits": [
+        {
+          "pattern": "noun_action",
+          "matches": [
+            "아직도 돌봄"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "evidence_present",
+      "cellKey": "a|e-2|mid|2",
+      "variantId": "a-e-2-mid-stage2-v8",
+      "text": "자료가 흐름을 보여 줍니다. 저는 그 흐름을 조작 쪽으로 읽었습니다. 그 부분이 제일 걸립니다.",
+      "meta": {
+        "party": "a",
+        "evidenceId": "e-2",
+        "lieBand": "mid"
+      },
+      "hits": [
+        {
+          "pattern": "weak_쪽",
+          "matches": [
+            "조작 쪽으로"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "evidence_present",
+      "cellKey": "a|e-2|mid|3",
+      "variantId": "a-e-2-mid-stage3-v2",
+      "text": "제가 결과만 보고 몰아간 부분은 있습니다. 하지만 돌봄인지 개입인지 갈리는 지점은 가볍지 않습니다.",
+      "meta": {
+        "party": "a",
+        "evidenceId": "e-2",
+        "lieBand": "mid"
+      },
+      "hits": [
+        {
+          "pattern": "noun_action",
+          "matches": [
+            "하지만 돌봄"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "evidence_present",
+      "cellKey": "a|e-2|mid|3",
+      "variantId": "a-e-2-mid-stage3-v7",
+      "text": "제 의심이 전부 맞다고는 못 하겠습니다. 하지만 돌봄인지 개입인지 갈리는 지점은 제 동생에게 닿아 있습니다.",
+      "meta": {
+        "party": "a",
+        "evidenceId": "e-2",
+        "lieBand": "mid"
+      },
+      "hits": [
+        {
+          "pattern": "noun_action",
+          "matches": [
+            "하지만 돌봄"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "evidence_present",
+      "cellKey": "b|e-2|early|3",
+      "variantId": "b-e-2-early-stage3-v1",
+      "text": "유서 작성 과정에 영향을 준 책임까지 묻는다면 쉽게 답하기 어렵습니다. 돌봄과 대신 결정한 일을 같은 말로 묶으면 안 됩니다.",
+      "meta": {
+        "party": "b",
+        "evidenceId": "e-2",
+        "lieBand": "early"
+      },
+      "hits": [
+        {
+          "pattern": "noun_action",
+          "matches": [
+            "어렵습니다. 돌봄"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "evidence_present",
+      "cellKey": "b|e-2|early|3",
+      "variantId": "b-e-2-early-stage3-v7",
+      "text": "책임을 묻는 질문인 건 압니다. 그래도 돌봄과 대신 결정한 일을 같은 말로 묶으면 안 됩니다.",
+      "meta": {
+        "party": "b",
+        "evidenceId": "e-2",
+        "lieBand": "early"
+      },
+      "hits": [
+        {
+          "pattern": "noun_action",
+          "matches": [
+            "그래도 돌봄"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "evidence_present",
+      "cellKey": "b|e-2|mid|3",
+      "variantId": "b-e-2-mid-stage3-v1",
+      "text": "방문이 유서 이야기와 이어진 부분은 피하지 않겠습니다. 다만 돌봄과 대신 결정한 일을 같은 말로 묶으면 안 됩니다.",
+      "meta": {
+        "party": "b",
+        "evidenceId": "e-2",
+        "lieBand": "mid"
+      },
+      "hits": [
+        {
+          "pattern": "noun_action",
+          "matches": [
+            "다만 돌봄"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "evidence_present",
+      "cellKey": "b|e-2|mid|3",
+      "variantId": "b-e-2-mid-stage3-v7",
+      "text": "제가 선을 넘은 부분이 있을 수 있습니다. 그래도 돌봄과 대신 결정한 일을 같은 말로 묶으면 안 됩니다.",
+      "meta": {
+        "party": "b",
+        "evidenceId": "e-2",
+        "lieBand": "mid"
+      },
+      "hits": [
+        {
+          "pattern": "noun_action",
+          "matches": [
+            "그래도 돌봄"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "evidence_present",
+      "cellKey": "b|e-2|late|3",
+      "variantId": "b-e-2-late-stage3-v3",
+      "text": "제가 선을 넘은 건 맞습니다. 다만 돌봄과 대신 결정한 일을 같은 말로 묶으면 안 됩니다.",
+      "meta": {
+        "party": "b",
+        "evidenceId": "e-2",
+        "lieBand": "late"
+      },
+      "hits": [
+        {
+          "pattern": "noun_action",
+          "matches": [
+            "다만 돌봄"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "evidence_present",
+      "cellKey": "a|e-3|mid|2",
+      "variantId": "a-e-3-mid-stage2-v8",
+      "text": "자료가 흐름을 보여 줍니다. 저는 그 흐름을 조작 쪽으로 읽었습니다. 그 부분이 제일 걸립니다.",
+      "meta": {
+        "party": "a",
+        "evidenceId": "e-3",
+        "lieBand": "mid"
+      },
+      "hits": [
+        {
+          "pattern": "weak_쪽",
+          "matches": [
+            "조작 쪽으로"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "evidence_present",
+      "cellKey": "a|e-4|mid|2",
+      "variantId": "a-e-4-mid-stage2-v8",
+      "text": "자료가 흐름을 보여 줍니다. 저는 그 흐름을 조작 쪽으로 읽었습니다. 그 부분이 제일 걸립니다.",
+      "meta": {
+        "party": "a",
+        "evidenceId": "e-4",
+        "lieBand": "mid"
+      },
+      "hits": [
+        {
+          "pattern": "weak_쪽",
+          "matches": [
+            "조작 쪽으로"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "evidence_present",
+      "cellKey": "a|e-5|mid|2",
+      "variantId": "a-e-5-mid-stage2-v8",
+      "text": "자료가 흐름을 보여 줍니다. 저는 그 흐름을 조작 쪽으로 읽었습니다. 그 부분이 제일 걸립니다.",
+      "meta": {
+        "party": "a",
+        "evidenceId": "e-5",
+        "lieBand": "mid"
+      },
+      "hits": [
+        {
+          "pattern": "weak_쪽",
+          "matches": [
+            "조작 쪽으로"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "evidence_present",
+      "cellKey": "b|e-5|mid|2",
+      "variantId": "b-e-5-mid-stage2-v1",
+      "text": "필적과 날짜가 어머니 쪽으로 맞는 점은 인정합니다. 다만 그걸 곧바로 계산으로 보진 말아 주십시오.",
+      "meta": {
+        "party": "b",
+        "evidenceId": "e-5",
+        "lieBand": "mid"
+      },
+      "hits": [
+        {
+          "pattern": "weak_쪽",
+          "matches": [
+            "어머니 쪽으로"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "evidence_present",
+      "cellKey": "b|e-5|mid|2",
+      "variantId": "b-e-5-mid-stage2-v8",
+      "text": "필적과 날짜가 어머니 쪽으로 맞는 점 때문에 의심받는 건 압니다. 그래도 그 원본을 숨긴 이유를 한마디로 줄일 수 없습니다.",
+      "meta": {
+        "party": "b",
+        "evidenceId": "e-5",
+        "lieBand": "mid"
+      },
+      "hits": [
+        {
+          "pattern": "weak_쪽",
+          "matches": [
+            "어머니 쪽으로"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "evidence_present",
+      "cellKey": "b|e-5|late|2",
+      "variantId": "b-e-5-late-stage2-v1",
+      "text": "필적과 날짜가 어머니 쪽으로 맞는 점은 맞습니다. 그때 저는 어머니 뜻과 제 형이 받을 충격을 함께 봐야 했습니다.",
+      "meta": {
+        "party": "b",
+        "evidenceId": "e-5",
+        "lieBand": "late"
+      },
+      "hits": [
+        {
+          "pattern": "weak_쪽",
+          "matches": [
+            "어머니 쪽으로"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "evidence_present",
+      "cellKey": "b|e-5|late|2",
+      "variantId": "b-e-5-late-stage2-v10",
+      "text": "기록을 더 피하지 않겠습니다. 필적과 날짜가 어머니 쪽으로 맞는 점은 인정합니다.",
+      "meta": {
+        "party": "b",
+        "evidenceId": "e-5",
+        "lieBand": "late"
+      },
+      "hits": [
+        {
+          "pattern": "weak_쪽",
+          "matches": [
+            "어머니 쪽으로"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "evidence_present",
+      "cellKey": "a|e-6|early|restore_context",
+      "variantId": "a-e-6-early-restore_context-v1",
+      "text": "어머니 돈으로 알았던 지원이 제 동생 돈이었다는 말은 아직 받아들이기 어렵습니다.",
+      "meta": {
+        "party": "a",
+        "evidenceId": "e-6",
+        "lieBand": "early"
+      },
+      "hits": [
+        {
+          "pattern": "noun_action",
+          "matches": [
+            "알았던 지원"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "evidence_present",
+      "cellKey": "a|e-6|mid|check_metadata",
+      "variantId": "a-e-6-mid-check_metadata-v2",
+      "text": "그 시점에 큰돈이 들어왔고 곧 제 쪽으로 흘렀다면, 제가 모른 흐름이 있었던 겁니다.",
+      "meta": {
+        "party": "a",
+        "evidenceId": "e-6",
+        "lieBand": "mid"
+      },
+      "hits": [
+        {
+          "pattern": "weak_쪽",
+          "matches": [
+            "제 쪽으로"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "evidence_present",
+      "cellKey": "a|e-6|mid|restore_context",
+      "variantId": "a-e-6-mid-restore_context-v1",
+      "text": "어머니 돈이라고 믿은 지원의 상당 부분이 제 동생 돈이었다면, 저는 너무 많은 걸 오해했습니다.",
+      "meta": {
+        "party": "a",
+        "evidenceId": "e-6",
+        "lieBand": "mid"
+      },
+      "hits": [
+        {
+          "pattern": "noun_action",
+          "matches": [
+            "믿은 지원"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "evidence_present",
+      "cellKey": "b|e-6|early|request_original",
+      "variantId": "b-e-6-early-request_original-v2",
+      "text": "어머니 쪽으로 보낸 돈입니다. 제 형에게 들키지 않게 하려던 건 맞습니다.",
+      "meta": {
+        "party": "b",
+        "evidenceId": "e-6",
+        "lieBand": "early"
+      },
+      "hits": [
+        {
+          "pattern": "weak_쪽",
+          "matches": [
+            "어머니 쪽으로"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "evidence_present",
+      "cellKey": "b|e-6|mid|check_metadata",
+      "variantId": "b-e-6-mid-check_metadata-v2",
+      "text": "큰돈이 필요한 시점에 제가 넣었습니다. 어머니가 제 형 쪽으로 보내신 것도 맞습니다.",
+      "meta": {
+        "party": "b",
+        "evidenceId": "e-6",
+        "lieBand": "mid"
+      },
+      "hits": [
+        {
+          "pattern": "weak_쪽",
+          "matches": [
+            "형 쪽으로"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "evidence_present",
+      "cellKey": "b|e-6|mid|restore_context",
+      "variantId": "b-e-6-mid-restore_context-v4",
+      "text": "어머니도 제 형 자존심을 걱정하셨고, 저도 같은 쪽으로 움직였습니다.",
+      "meta": {
+        "party": "b",
+        "evidenceId": "e-6",
+        "lieBand": "mid"
+      },
+      "hits": [
+        {
+          "pattern": "weak_쪽",
+          "matches": [
+            "같은 쪽으로"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "evidence_present",
+      "cellKey": "b|e-6|late|restore_context",
+      "variantId": "b-e-6-late-restore_context-v1",
+      "text": "어머니 돈처럼 보였던 지원의 상당 부분은 제 돈입니다. 이제는 형에게도 말해야 합니다.",
+      "meta": {
+        "party": "b",
+        "evidenceId": "e-6",
+        "lieBand": "late"
+      },
+      "hits": [
+        {
+          "pattern": "noun_action",
+          "matches": [
+            "보였던 지원"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "evidence_present",
+      "cellKey": "a|e-7|mid|check_metadata",
+      "variantId": "a-e-7-mid-check_metadata-v7",
+      "text": "문장과 시점이 붙으니 제 동생 침묵을 단순 회피로만 볼 수 없게 됩니다.",
+      "meta": {
+        "party": "a",
+        "evidenceId": "e-7",
+        "lieBand": "mid"
+      },
+      "hits": [
+        {
+          "pattern": "noun_action",
+          "matches": [
+            "단순 회피"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "evidence_present",
+      "cellKey": "a|e-7|mid|check_metadata",
+      "variantId": "a-e-7-mid-check_metadata-v8",
+      "text": "저를 지키려 했다는 말을 받아들이고 싶지 않은데, 기록은 그쪽으로 밀고 갑니다.",
+      "meta": {
+        "party": "a",
+        "evidenceId": "e-7",
+        "lieBand": "mid"
+      },
+      "hits": [
+        {
+          "pattern": "weak_쪽",
+          "matches": [
+            "그쪽으로"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "evidence_present",
+      "cellKey": "b|e-7|mid|request_original",
+      "variantId": "b-e-7-mid-request_original-v1",
+      "text": "어머니 글씨라는 사실은 분명합니다. 제가 이 자료를 숨긴 것도 사실입니다.",
+      "meta": {
+        "party": "b",
+        "evidenceId": "e-7",
+        "lieBand": "mid"
+      },
+      "hits": [
+        {
+          "pattern": "particle_error",
+          "matches": [
+            "자료를 숨긴 것"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "dossier",
+      "cellKey": "dc-1.b.q2|late",
+      "variantId": "dc-1-b-q2-late-v3",
+      "text": "어머니가 망설일 때마다 제가 결론 쪽으로 끌고 갔습니다. 도움이라고 부르기엔 선을 넘었습니다.",
+      "meta": {
+        "lieBand": "late"
+      },
+      "hits": [
+        {
+          "pattern": "weak_쪽",
+          "matches": [
+            "결론 쪽으로"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "dossier",
+      "cellKey": "dc-2.b.q2|mid",
+      "variantId": "dc-2-b-q2-mid-v3",
+      "text": "돈이 아니라 질문을 막으려 했습니다. 그 질문은 어머니 기록과 제 지원으로 이어질 수밖에 없었습니다.",
+      "meta": {
+        "lieBand": "mid"
+      },
+      "hits": [
+        {
+          "pattern": "noun_action",
+          "matches": [
+            "제 지원"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "dossier",
+      "cellKey": "dc-3.b.q1|early",
+      "variantId": "dc-3-b-q1-early-v1",
+      "text": "제 돈이 어머니 쪽으로 들어간 건 맞습니다. 그 돈이 집안에 쓰인 것도 알고 있었습니다.",
+      "meta": {
+        "lieBand": "early"
+      },
+      "hits": [
+        {
+          "pattern": "weak_쪽",
+          "matches": [
+            "어머니 쪽으로"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "dossier",
+      "cellKey": "dc-3.b.q1|early",
+      "variantId": "dc-3-b-q1-early-v8",
+      "text": "공장 쪽으로 간 돈도 일부는 제 쪽에서 시작됐습니다. 그 사실을 오래 숨겼습니다.",
+      "meta": {
+        "lieBand": "early"
+      },
+      "hits": [
+        {
+          "pattern": "weak_쪽",
+          "matches": [
+            "공장 쪽으로"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "dossier",
+      "cellKey": "dc-3.b.q1|mid",
+      "variantId": "dc-3-b-q1-mid-v9",
+      "text": "형이 모르던 지원이 꽤 오래 이어졌습니다. 그걸 어머니 도움처럼 남겨 둔 사람은 저입니다.",
+      "meta": {
+        "lieBand": "mid"
+      },
+      "hits": [
+        {
+          "pattern": "noun_action",
+          "matches": [
+            "모르던 지원"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "dossier",
+      "cellKey": "dc-3.b.q1|late",
+      "variantId": "dc-3-b-q1-late-v5",
+      "text": "그 지원은 한두 번의 도움이 아니었습니다. 오랜 시간 형의 생활과 공장을 받친 흐름이었습니다.",
+      "meta": {
+        "lieBand": "late"
+      },
+      "hits": [
+        {
+          "pattern": "noun_action",
+          "matches": [
+            "그 지원"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "dossier",
+      "cellKey": "dc-3.b.q2|mid",
+      "variantId": "dc-3-b-q2-mid-v9",
+      "text": "제 지원이 가족을 도운 것이라고 믿고 싶었습니다. 하지만 숨긴 대가는 형이 치렀습니다.",
+      "meta": {
+        "lieBand": "mid"
+      },
+      "hits": [
+        {
+          "pattern": "noun_action",
+          "matches": [
+            "제 지원"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "dossier",
+      "cellKey": "dc-4.b.q2|early",
+      "variantId": "dc-4-b-q2-early-v7",
+      "text": "형에게 말할 방법을 찾지 못했습니다. 그래서 법정에 오지 않게 막는 쪽으로만 생각했습니다.",
+      "meta": {
+        "lieBand": "early"
+      },
+      "hits": [
+        {
+          "pattern": "weak_쪽",
+          "matches": [
+            "막는 쪽으로"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "dossier",
+      "cellKey": "dc-5.a.q1|early",
+      "variantId": "dc-5-a-q1-early-v3",
+      "text": "동생 돈이었다는 말이 나와도 제가 억울하지 않은 건 아닙니다. 저는 제 돌봄을 먼저 봤습니다.",
+      "meta": {
+        "lieBand": "early"
+      },
+      "hits": [
+        {
+          "pattern": "noun_action",
+          "matches": [
+            "제 돌봄"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "dossier",
+      "cellKey": "dc-5.a.q1|early",
+      "variantId": "dc-5-a-q1-early-v9",
+      "text": "형이라는 자리와 돌봄의 시간이 제 마음속에서 섞여 있었습니다. 그 점은 인정합니다.",
+      "meta": {
+        "lieBand": "early"
+      },
+      "hits": [
+        {
+          "pattern": "noun_action",
+          "matches": [
+            "자리와 돌봄"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "dossier",
+      "cellKey": "dc-5.a.q1|mid",
+      "variantId": "dc-5-a-q1-mid-v4",
+      "text": "제가 장남이라는 말을 앞세운 건 사실입니다. 그 말로 동생의 숨은 지원을 밀어낸 부분도 있습니다.",
+      "meta": {
+        "lieBand": "mid"
+      },
+      "hits": [
+        {
+          "pattern": "noun_action",
+          "matches": [
+            "숨은 지원"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "dossier",
+      "cellKey": "dc-5.b.q2|early",
+      "variantId": "dc-5-b-q2-early-v9",
+      "text": "저는 보호를 말했고 형은 돌봄을 말했습니다. 둘 다 어머니를 자기 말 안에 넣었습니다.",
+      "meta": {
+        "lieBand": "early"
+      },
+      "hits": [
+        {
+          "pattern": "noun_action",
+          "matches": [
+            "형은 돌봄"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "dossier",
+      "cellKey": "dc-5.b.q2|late",
+      "variantId": "dc-5-b-q2-late-v4",
+      "text": "저는 형을 지킨다는 말로 어머니의 90대10을 바꿨고, 형은 돌봄의 시간으로 더 받을 권리를 믿었습니다.",
+      "meta": {
+        "lieBand": "late"
+      },
+      "hits": [
+        {
+          "pattern": "noun_action",
+          "matches": [
+            "형은 돌봄"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "witness",
+      "cellKey": "w-2|partial",
+      "variantId": "w-2-partial-v8",
+      "text": "비율이 바뀐 것은 기록으로 남아 있습니다. 다만 당시엔 단순 정정처럼 처리됐습니다.",
+      "meta": {},
+      "hits": [
+        {
+          "pattern": "noun_action",
+          "matches": [
+            "정정처럼 처리"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "witness",
+      "cellKey": "w-3|full",
+      "variantId": "w-3-full-v2",
+      "text": "정후가 어머니 통장으로 돈을 넣고, 그 돈이 태성이 쪽으로 간다는 말을 어머님께 들었습니다.",
+      "meta": {},
+      "hits": [
+        {
+          "pattern": "weak_쪽",
+          "matches": [
+            "태성이 쪽으로"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "witness",
+      "cellKey": "w-3|full",
+      "variantId": "w-3-full-v10",
+      "text": "핵심만 말하면, 태성이가 어머니 돈으로 믿은 지원의 상당 부분은 정후가 보낸 돈이라고 들었습니다.",
+      "meta": {},
+      "hits": [
+        {
+          "pattern": "noun_action",
+          "matches": [
+            "믿은 지원"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "aftermath",
+      "cellKey": "a_primary_fault",
+      "variantId": "a_primary_fault-v1",
+      "text": "판결 뒤 윤태성은 자신이 붙잡은 장남의 자리가 어머니 뜻을 제대로 듣는 데 방해가 되었음을 인정해야 했다. 윤정후가 문서를 손댄 책임은 별도로 남았지만, 태성의 전면 무효 주장과 동생에 대한 단정은 핵심 사실을 오래 가렸다. 재산 정산은 원본 유서와 20년 지원을 함께 확인하는 절차로 넘어갔고, 태성은 더 받아야 한다는 말보다 먼저 자신이 무엇을 당연시했는지 설명해야 했다. 두 형제의 대화는 사과보다 사실 확인에서 다시 시작됐다.",
+      "meta": {},
+      "hits": [
+        {
+          "pattern": "noun_action",
+          "matches": [
+            "20년 지원"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "aftermath",
+      "cellKey": "a_primary_fault",
+      "variantId": "a_primary_fault-v2",
+      "text": "윤태성은 동생이 어머니를 이용했다는 말로 재판을 밀고 왔지만, 마지막에는 그 말이 자신의 상처와 체면에서 출발했다는 판정을 받아들여야 했다. 윤정후의 유서 개입은 위법으로 남았으나, 자기 몫을 줄인 방향과 오래 숨은 지원이 드러나면서 태성의 공격은 힘을 잃었다. 이후 정산 과정에서 태성은 어머니 돈이라고 믿었던 지원의 출처를 다시 확인했고, 동생에게 돌려야 할 말과 돈을 따로 적어 내려갔다. 관계 회복은 즉시 오지 않았지만, 분노만으로는 더 갈 수 없다는 선은 분명해졌다.",
+      "meta": {},
+      "hits": [
+        {
+          "pattern": "noun_action",
+          "matches": [
+            "숨은 지원",
+            "믿었던 지원"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "aftermath",
+      "cellKey": "a_primary_fault",
+      "variantId": "a_primary_fault-v3",
+      "text": "재판은 윤정후의 조작을 가볍게 보지 않았지만, 윤태성이 어머니의 말년을 자기 공로의 증거처럼 붙들어 온 책임을 더 크게 짚었다. 태성은 유산 비율이 모욕처럼 느껴졌다는 말 뒤에, 자신이 동생의 침묵을 곧바로 탐욕으로 읽은 이유를 인정했다. 남은 절차에서는 유서 효력과 20년 지원금 정산이 분리됐고, 태성은 먼저 받은 도움의 실체를 확인하는 자리에 앉게 됐다. 그에게 판결은 패소보다 자기 기억을 다시 쓰는 일에 가까웠다.",
+      "meta": {},
+      "hits": [
+        {
+          "pattern": "noun_action",
+          "matches": [
+            "20년 지원"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "aftermath",
+      "cellKey": "a_primary_fault",
+      "variantId": "a_primary_fault-v4",
+      "text": "윤태성에게 가장 어려웠던 일은 동생을 용서하는 것이 아니라, 자신이 어머니 뜻을 이미 결론 내린 채 싸움을 시작했다는 사실을 보는 일이었다. 윤정후는 문서 책임을 피하지 않았고, 태성은 그 책임만으로 모든 문제를 닫을 수 없다는 판정을 받았다. 형제는 당분간 직접 연락을 줄이고, 변호인과 조정인을 통해 재산과 지원 내역을 맞추기로 했다. 차갑지만, 예전처럼 소리만 높이는 자리로 돌아가지는 않겠다는 최소한의 합의였다.",
+      "meta": {},
+      "hits": [
+        {
+          "pattern": "noun_action",
+          "matches": [
+            "재산과 지원"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "aftermath",
+      "cellKey": "b_primary_fault",
+      "variantId": "b_primary_fault-v2",
+      "text": "윤정후는 법정을 나오며 처음으로 자신의 침묵이 형을 지킨 것이 아니라 형에게 선택권을 빼앗은 일이었다고 받아들였다. 원본 유서와 20년 지원, 출생 비밀의 맥락은 모두 참작됐지만, 문서를 고친 행위와 그 뒤의 은폐는 판결의 중심 책임으로 남았다. 윤태성은 동생을 탐욕으로만 몰아간 부분을 돌아봐야 했지만, 적어도 조작 사실을 문제 삼은 것 자체는 정당하다는 판단을 받았다. 형제 관계는 당분간 회복보다 책임 이행을 먼저 지나가게 됐다.",
+      "meta": {},
+      "hits": [
+        {
+          "pattern": "noun_action",
+          "matches": [
+            "20년 지원",
+            "뒤의 은폐"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "aftermath",
+      "cellKey": "b_primary_fault",
+      "variantId": "b_primary_fault-v4",
+      "text": "윤정후에게 남은 가장 큰 벌은 법적 책임만이 아니었다. 형이 무너질까 봐 숨겼다는 말이, 결국 형을 아무것도 모르는 사람으로 만든 선택이었다는 판단이 남았다. 법원은 유서 변경 효력을 엄격히 다시 보게 했고, 정후에게는 지원금과 가족 비밀을 섞지 않은 별도 설명 절차를 권했다. 윤태성은 여전히 상처를 입었지만, 이제 분노의 초점은 동생의 탐욕이 아니라 동생이 혼자 결정한 보호 방식으로 옮겨갔다.",
+      "meta": {},
+      "hits": [
+        {
+          "pattern": "noun_action",
+          "matches": [
+            "정후에게는 지원"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "aftermath",
+      "cellKey": "shared_fault",
+      "variantId": "shared_fault-v1",
+      "text": "판결이 끝난 뒤 두 형제는 바로 화해하지 못했다. 윤정후는 유서를 손댄 책임을, 윤태성은 장남이라는 이름으로 어머니 뜻을 자기 기준에 맞춰 읽은 책임을 각각 인정해야 했다. 원본 유서, 20년 지원, 출생 비밀은 한 문장으로 정리되지 않았고, 그래서 재산 정산도 관계 회복도 따로 시간을 두기로 했다. 두 사람은 처음으로 같은 사실 위에서 다투기 시작했다는 점만 달라져 있었다.",
+      "meta": {},
+      "hits": [
+        {
+          "pattern": "noun_action",
+          "matches": [
+            "20년 지원"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "aftermath",
+      "cellKey": "shared_fault",
+      "variantId": "shared_fault-v2",
+      "text": "재판은 누구 하나만 나쁜 사람으로 세우지 않았다. 윤정후는 보호를 이유로 어머니 뜻을 고쳐 썼고, 윤태성은 돌봄의 시간을 근거로 어머니 뜻을 이미 자기 편으로 해석했다. 두 사람은 서로 다른 방식으로 어머니를 있는 그대로 두지 못했다는 결론을 받아들였다. 이후 형제는 원본 유서와 지원 내역을 기준으로 정산을 다시 하되, 출생 비밀의 공개 범위는 별도 절차에서 조심스럽게 정하기로 했다.",
+      "meta": {},
+      "hits": [
+        {
+          "pattern": "noun_action",
+          "matches": [
+            "윤태성은 돌봄",
+            "유서와 지원"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "aftermath",
+      "cellKey": "protective_resolution",
+      "variantId": "protective_resolution-v4",
+      "text": "법정의 마지막 권고는 간단했다. 유서의 잘못은 바로잡되, 가족의 가장 민감한 사정까지 공개 처벌처럼 다루지는 말라는 것이었다. 윤정후는 문서 책임을 지고, 윤태성은 동생의 지원과 어머니의 원본 뜻을 인정하는 선에서 절차를 정리했다. 출생 비밀은 공적 기록에서 최소한으로만 남았고, 두 형제는 그 내용을 가족 밖으로 옮기지 않겠다는 약속을 했다. 완전한 화해는 아니었지만, 더 큰 파괴를 막는 결말이었다.",
+      "meta": {},
+      "hits": [
+        {
+          "pattern": "noun_action",
+          "matches": [
+            "동생의 지원"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "aftermath",
+      "cellKey": "procedural_caution",
+      "variantId": "procedural_caution-v1",
+      "text": "재판관은 이 사건을 바로 끝낼 수 없다고 보았다. 유서 변경의 위법성, 어머니의 판단 능력, 원본 유서의 효력, 장기간 지원 내역이 서로 다른 기준으로 확인되어야 했기 때문이다. 윤정후의 선의는 참작될 수 있어도 문서 절차를 대신할 수 없고, 윤태성의 분노도 판단 능력 문제를 곧바로 전면 무효로 만들 수 없었다. 두 형제는 추가 감정과 조정, 비공개 상담 절차를 순서대로 밟게 됐다.",
+      "meta": {},
+      "hits": [
+        {
+          "pattern": "noun_action",
+          "matches": [
+            "장기간 지원"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "aftermath",
+      "cellKey": "procedural_caution",
+      "variantId": "procedural_caution-v2",
+      "text": "판결은 결론보다 절차를 먼저 세웠다. 공증 경위는 다시 확인하고, 원본 유서와 변경본은 별도로 보전하며, 20년 지원금은 상속분과 섞지 않고 정산하도록 했다. 출생 비밀은 상속 다툼의 압박 속에서 즉시 공개하지 말고, 당사자 보호 장치를 둔 뒤 다루라는 권고가 붙었다. 잘못된 절차로 한 번 무너진 가족을, 또 다른 성급한 절차로 다시 무너뜨리지 말라는 뜻이었다.",
+      "meta": {},
+      "hits": [
+        {
+          "pattern": "noun_action",
+          "matches": [
+            "20년 지원"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "aftermath",
+      "cellKey": "procedural_caution",
+      "variantId": "procedural_caution-v5",
+      "text": "재판 뒤 형제에게 주어진 것은 완성된 화해가 아니라 숙제 목록이었다. 유서 효력 확인, 위조 책임 절차, 지원금 정산, 가족 상담, 비공개 열람 약속이 차례로 남았다. 윤태성은 더 받느냐보다 무엇을 알고 주장했는지를 설명해야 했고, 윤정후는 왜 그 절차를 혼자 바꿨는지 책임 있게 말해야 했다. 판결은 두 사람에게 한 번에 끝내려 하지 말고, 순서를 지켜 다시 다루라고 경고했다.",
+      "meta": {},
+      "hits": [
+        {
+          "pattern": "noun_action",
+          "matches": [
+            "절차, 지원"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "system_message",
+      "cellKey": "dossier|challenge_cleared",
+      "variantId": "sys-dossier-challenge_cleared-v5",
+      "text": "막혔던 질문이 열린다. 이제 말의 안쪽으로 들어간다.",
+      "meta": {},
+      "hits": [
+        {
+          "pattern": "weak_쪽",
+          "matches": [
+            "안쪽으로"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "mediation",
+      "cellKey": "immediate|a",
+      "variantId": "mediation-immediate-a-v4",
+      "text": "지금 끝을 잡으신다면, 유서 절차의 잘못과 제가 돌봄을 보상처럼 붙든 마음을 각각 기록해 주십시오.",
+      "meta": {},
+      "hits": [
+        {
+          "pattern": "noun_action",
+          "matches": [
+            "제가 돌봄"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "mediation",
+      "cellKey": "immediate|b",
+      "variantId": "mediation-immediate-b-v5",
+      "text": "지금 끝을 잡으신다면 피하지 않겠습니다. 형이 몰랐던 지원과 어머니 뜻을 제가 고친 일을 같이 올려 주십시오.",
+      "meta": {},
+      "hits": [
+        {
+          "pattern": "noun_action",
+          "matches": [
+            "몰랐던 지원"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "mediation",
+      "cellKey": "immediate|b",
+      "variantId": "mediation-immediate-b-v9",
+      "text": "오늘 정리해도 괜찮습니다. 더 말하지 않는 쪽으로 도망치지 않고 제 책임을 말하겠습니다.",
+      "meta": {},
+      "hits": [
+        {
+          "pattern": "weak_쪽",
+          "matches": [
+            "않는 쪽으로"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "mediation",
+      "cellKey": "conditional|a",
+      "variantId": "mediation-conditional-a-v4",
+      "text": "조건을 세운다면 저는 제 돌봄을 전부 권리로 읽은 부분을 보겠습니다. 대신 문서 변경 책임은 선명해야 합니다.",
+      "meta": {},
+      "hits": [
+        {
+          "pattern": "noun_action",
+          "matches": [
+            "제 돌봄"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "mediation",
+      "cellKey": "conditional|a",
+      "variantId": "mediation-conditional-a-v8",
+      "text": "그 방식이라면 가능합니다. 제가 몰랐던 지원을 인정하더라도, 서류를 고친 일까지 넘어갈 수는 없습니다.",
+      "meta": {},
+      "hits": [
+        {
+          "pattern": "noun_action",
+          "matches": [
+            "몰랐던 지원"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "mediation",
+      "cellKey": "conditional|b",
+      "variantId": "mediation-conditional-b-v6",
+      "text": "조건부 정리라면 좋습니다. 형이 모욕으로 느낀 마음과 제가 숨긴 지원을 한 덩어리로 만들면 안 됩니다.",
+      "meta": {},
+      "hits": [
+        {
+          "pattern": "noun_action",
+          "matches": [
+            "숨긴 지원"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "mediation",
+      "cellKey": "postpone|b",
+      "variantId": "mediation-postpone-b-v10",
+      "text": "시간을 두겠습니다. 다만 이 보류가 형이 모르는 지원을 다시 덮는 시간은 아니어야 합니다.",
+      "meta": {},
+      "hits": [
+        {
+          "pattern": "noun_action",
+          "matches": [
+            "모르는 지원"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "mediation",
+      "cellKey": "fact_first|b",
+      "variantId": "mediation-fact_first-b-v2",
+      "text": "기록부터 보겠습니다. 제가 손댄 부분과 제가 숨긴 지원을 따로 세워야 합니다.",
+      "meta": {},
+      "hits": [
+        {
+          "pattern": "noun_action",
+          "matches": [
+            "숨긴 지원"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "contradiction_pursuit",
+      "cellKey": "a|d-1|S4",
+      "variantId": "contra-a-d-1-S4-v5",
+      "text": "재판관님, 저는 돌봄이 곧 답이라고 믿었습니다. 그래서 제 동생 말은 처음부터 의심했습니다.",
+      "meta": {
+        "party": "a",
+        "disputeId": "d-1",
+        "lieState": "S4"
+      },
+      "hits": [
+        {
+          "pattern": "noun_action",
+          "matches": [
+            "저는 돌봄"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "contradiction_pursuit",
+      "cellKey": "a|d-2|S2",
+      "variantId": "contra-a-d-2-S2-v8",
+      "text": "정후야, 네가 이유를 말하지 않았으니 내가 나쁜 쪽으로 읽은 거다. 그 책임도 생각해야지.",
+      "meta": {
+        "party": "a",
+        "disputeId": "d-2",
+        "lieState": "S2"
+      },
+      "hits": [
+        {
+          "pattern": "weak_쪽",
+          "matches": [
+            "나쁜 쪽으로"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "contradiction_pursuit",
+      "cellKey": "b|d-2|S3",
+      "variantId": "contra-b-d-2-S3-v9",
+      "text": "제가 침묵한 탓에 형은 가장 나쁜 쪽으로 읽었습니다. 그 침묵도 제 책임입니다.",
+      "meta": {
+        "party": "b",
+        "disputeId": "d-2",
+        "lieState": "S3"
+      },
+      "hits": [
+        {
+          "pattern": "weak_쪽",
+          "matches": [
+            "나쁜 쪽으로"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "contradiction_pursuit",
+      "cellKey": "a|h-d3|S1",
+      "variantId": "contra-a-h-d3-S1-v8",
+      "text": "정후야, 네가 조금 도왔다고 해서 내가 한 돌봄까지 가벼워지는 건 아니잖아.",
+      "meta": {
+        "party": "a",
+        "disputeId": "h-d3",
+        "lieState": "S1"
+      },
+      "hits": [
+        {
+          "pattern": "noun_action",
+          "matches": [
+            "한 돌봄"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "contradiction_pursuit",
+      "cellKey": "a|h-d3|S2",
+      "variantId": "contra-a-h-d3-S2-v9",
+      "text": "제가 편하게 믿은 부분이 있습니다. 하지만 그 믿음이 곧 은폐였다고 단정하진 말아 주십시오.",
+      "meta": {
+        "party": "a",
+        "disputeId": "h-d3",
+        "lieState": "S2"
+      },
+      "hits": [
+        {
+          "pattern": "noun_action",
+          "matches": [
+            "곧 은폐"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "contradiction_pursuit",
+      "cellKey": "b|h-d3|S2",
+      "variantId": "contra-b-h-d3-S2-v10",
+      "text": "관여를 작게 말한 건 제 회피입니다. 형을 지킨다는 이유를 붙였지만 침묵은 남았습니다.",
+      "meta": {
+        "party": "b",
+        "disputeId": "h-d3",
+        "lieState": "S2"
+      },
+      "hits": [
+        {
+          "pattern": "noun_action",
+          "matches": [
+            "제 회피"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "interjection",
+      "cellKey": "a|d-1|major",
+      "variantId": "interject-a-d-1-major-v1",
+      "text": "재판관님, 저건 너무 좋은 쪽으로만 말한 겁니다! 어머니 곁에서 누가 말을 얹었는지 봐야 합니다!",
+      "meta": {
+        "party": "a",
+        "disputeId": "d-1"
+      },
+      "hits": [
+        {
+          "pattern": "weak_쪽",
+          "matches": [
+            "좋은 쪽으로"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "interjection",
+      "cellKey": "a|d-1|major",
+      "variantId": "interject-a-d-1-major-v10",
+      "text": "재판관님, 저건 제 돌봄을 의심 많은 형의 분노로만 줄이는 말입니다!",
+      "meta": {
+        "party": "a",
+        "disputeId": "d-1"
+      },
+      "hits": [
+        {
+          "pattern": "noun_action",
+          "matches": [
+            "제 돌봄"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "interjection",
+      "cellKey": "b|d-2|minor",
+      "variantId": "interject-b-d-2-minor-v10",
+      "text": "그 말은 형의 상처를 이해하지만, 사실을 너무 한쪽으로 자릅니다.",
+      "meta": {
+        "party": "b",
+        "disputeId": "d-2"
+      },
+      "hits": [
+        {
+          "pattern": "weak_쪽",
+          "matches": [
+            "한쪽으로"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "interjection",
+      "cellKey": "a|h-d3|minor",
+      "variantId": "interject-a-h-d3-minor-v4",
+      "text": "그 부분은 바로잡고 싶습니다. 제가 모른 돈이 있었다고 제 돌봄까지 빈칸이 되진 않습니다.",
+      "meta": {
+        "party": "a",
+        "disputeId": "h-d3"
+      },
+      "hits": [
+        {
+          "pattern": "noun_action",
+          "matches": [
+            "제 돌봄"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "interjection",
+      "cellKey": "a|h-d3|major",
+      "variantId": "interject-a-h-d3-major-v1",
+      "text": "재판관님, 저건 형인 제 몫을 통째로 깎는 말입니다! 돈만으로 돌봄을 재단하면 안 됩니다!",
+      "meta": {
+        "party": "a",
+        "disputeId": "h-d3"
+      },
+      "hits": [
+        {
+          "pattern": "noun_action",
+          "matches": [
+            "돈만으로 돌봄"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "emotional_overload",
+      "cellKey": "a|d-1",
+      "variantId": "overload-a-d-1-v7",
+      "text": "…제 돌봄이 전부였다고 말하고 싶지만 이제 그 말도 흔들립니다. 잠시 뒤 이어가겠습니다.",
+      "meta": {
+        "party": "a",
+        "disputeId": "d-1"
+      },
+      "hits": [
+        {
+          "pattern": "noun_action",
+          "matches": [
+            "…제 돌봄"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "emotional_overload",
+      "cellKey": "a|h-d3",
+      "variantId": "overload-a-h-d3-v4",
+      "text": "…돈 얘기가 나오면 돌봄까지 빚처럼 느껴집니다. 감정 정리하고 이어가겠습니다.",
+      "meta": {
+        "party": "a",
+        "disputeId": "h-d3"
+      },
+      "hits": [
+        {
+          "pattern": "noun_action",
+          "matches": [
+            "나오면 돌봄"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "evidence_discovery",
+      "cellKey": "b|e-5|probe",
+      "variantId": "discover-b-e-5-probe-v1",
+      "text": "윤정후 씨, 원본을 보면 윤정후 씨 쪽으로 훨씬 크게 적혀 있습니다. 이 문안을 처음 확인했을 때 그대로 두기 어렵다고 느끼신 이유가 있었습니까.",
+      "meta": {
+        "party": "b",
+        "evidenceId": "e-5"
+      },
+      "hits": [
+        {
+          "pattern": "weak_쪽",
+          "matches": [
+            "씨 쪽으로"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "trust_action",
+      "cellKey": "a|separation|S2",
+      "variantId": "trust-a-separation-S2-v6",
+      "text": "제 동생 없는 자리니까 말씀드립니다. 저는 돌봄의 시간을 상속의 답처럼 붙들었습니다.",
+      "meta": {
+        "party": "a",
+        "lieState": "S2"
+      },
+      "hits": [
+        {
+          "pattern": "noun_action",
+          "matches": [
+            "저는 돌봄"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "trust_action",
+      "cellKey": "b|separation|S3",
+      "variantId": "trust-b-separation-S3-v8",
+      "text": "둘이서만이라면 인정하겠습니다. 오래 감춘 지원까지 드러나면 형이 모욕으로 받을까 봐 피했습니다.",
+      "meta": {
+        "party": "b",
+        "lieState": "S3"
+      },
+      "hits": [
+        {
+          "pattern": "noun_action",
+          "matches": [
+            "감춘 지원"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "trust_action",
+      "cellKey": "b|immediate|S1",
+      "variantId": "trust-b-immediate-S1-v10",
+      "text": "바로 말씀드립니다. 제가 감춘 이유는 숫자 하나로 끝나지 않고, 더 안쪽까지 이어집니다.",
+      "meta": {
+        "party": "b",
+        "lieState": "S1"
+      },
+      "hits": [
+        {
+          "pattern": "weak_쪽",
+          "matches": [
+            "쪽까지"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "trust_action",
+      "cellKey": "b|immediate|S2",
+      "variantId": "trust-b-immediate-S2-v2",
+      "text": "지금 인정합니다. 문서 처리 과정에 제가 들어간 부분이 있고, 그 선을 넘었습니다.",
+      "meta": {
+        "party": "b",
+        "lieState": "S2"
+      },
+      "hits": [
+        {
+          "pattern": "noun_action",
+          "matches": [
+            "문서 처리"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "trust_action",
+      "cellKey": "b|immediate|S3",
+      "variantId": "trust-b-immediate-S3-v9",
+      "text": "즉답하겠습니다. 오래 감춘 지원도, 문서 변경도 제가 감당해야 할 일입니다.",
+      "meta": {
+        "party": "b",
+        "lieState": "S3"
+      },
+      "hits": [
+        {
+          "pattern": "noun_action",
+          "matches": [
+            "감춘 지원"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "judge_question",
+      "cellKey": "d-1|motive_search|3",
+      "variantId": "judgeq-d-1-motive_search-3-v2",
+      "text": "윤태성 씨, 말년 돌봄에서 밀려났다는 감정이 판단에 섞였다고 보십니까.",
+      "meta": {
+        "disputeId": "d-1",
+        "questionType": "motive_search"
+      },
+      "hits": [
+        {
+          "pattern": "noun_action",
+          "matches": [
+            "말년 돌봄"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "judge_question",
+      "cellKey": "d-1|motive_search|4",
+      "variantId": "judgeq-d-1-motive-search-4-v4",
+      "text": "윤태성 씨, 돌봄의 자부심이 다른 가능성을 밀어냈는지 답하십시오.",
+      "meta": {
+        "disputeId": "d-1",
+        "questionType": "motive_search"
+      },
+      "hits": [
+        {
+          "pattern": "noun_action",
+          "matches": [
+            "씨, 돌봄"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "judge_question",
+      "cellKey": "d-2|empathy_approach|4",
+      "variantId": "judgeq-d-2-empathy_approach-4-v2",
+      "text": "윤태성 씨, 정후 씨를 용서 못 하는 마음과 자신이 외면당했다는 상처 중 어느 쪽이 더 큽니까.",
+      "meta": {
+        "disputeId": "d-2",
+        "questionType": "empathy_approach"
+      },
+      "hits": [
+        {
+          "pattern": "weak_쪽",
+          "matches": [
+            "어느 쪽이"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "judge_question",
+      "cellKey": "d-3|fact_pursuit|4",
+      "variantId": "judgeq-d-3-fact-pursuit-4-v5",
+      "text": "두 분, 숨겨진 지원이 관계를 어떻게 바꿨는지 마지막으로 답하십시오.",
+      "meta": {
+        "disputeId": "d-3",
+        "questionType": "fact_pursuit"
+      },
+      "hits": [
+        {
+          "pattern": "noun_action",
+          "matches": [
+            "숨겨진 지원"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "judge_question",
+      "cellKey": "d-3|motive_search|3",
+      "variantId": "judgeq-d-3-motive-search-3-v3",
+      "text": "윤정후 씨, 지원을 숨긴 일이 형을 보호한 것이라고 보십니까.",
+      "meta": {
+        "disputeId": "d-3",
+        "questionType": "motive_search"
+      },
+      "hits": [
+        {
+          "pattern": "noun_action",
+          "matches": [
+            "씨, 지원"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "judge_question",
+      "cellKey": "d-3|empathy_approach|4",
+      "variantId": "judgeq-d-3-empathy_approach-4-v2",
+      "text": "윤태성 씨, 진실을 알고 싶은 마음과 끝까지 모른 척하고 싶은 마음 중 어느 쪽이 더 큽니까.",
+      "meta": {
+        "disputeId": "d-3",
+        "questionType": "empathy_approach"
+      },
+      "hits": [
+        {
+          "pattern": "weak_쪽",
+          "matches": [
+            "어느 쪽이"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "judge_contradiction",
+      "cellKey": "d-3|mid",
+      "variantId": "judgec-d-3-mid-v5",
+      "text": "윤정후 씨, 장기간 지원을 숨긴 판단이 보호였는지 회피였는지 분명히 말씀하십시오.",
+      "meta": {
+        "disputeId": "d-3",
+        "tone": "mid"
+      },
+      "hits": [
+        {
+          "pattern": "noun_action",
+          "matches": [
+            "장기간 지원",
+            "보호였는지 회피"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "judge_contradiction",
+      "cellKey": "d-3|hard",
+      "variantId": "judgec-d-3-hard-v5",
+      "text": "윤정후 씨, 숨긴 지원이 형을 지켰다는 말만으로 충분하지 않습니다. 책임을 답하십시오.",
+      "meta": {
+        "disputeId": "d-3",
+        "tone": "hard"
+      },
+      "hits": [
+        {
+          "pattern": "noun_action",
+          "matches": [
+            "숨긴 지원"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "judge_evidence_combo",
+      "cellKey": "dc-3.b.q2|soft",
+      "variantId": "judgeec-dc-3-b-q2-soft-v1",
+      "text": "20년의 돈입니다. e-5·e-6 조합으로 숨긴 지원과 형의 체면이 맞물립니다. 윤정후 씨, 차분히 답하십시오.",
+      "meta": {
+        "tone": "soft"
+      },
+      "hits": [
+        {
+          "pattern": "noun_action",
+          "matches": [
+            "숨긴 지원"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "judge_evidence_combo",
+      "cellKey": "dc-3.b.q2|soft",
+      "variantId": "judgeec-dc-3-b-q2-soft-v5",
+      "text": "20년의 돈 카드의 e-5·e-6 핵심은 숨긴 지원과 형의 체면이 맞물립니다. 윤정후 씨, 순서대로 말씀하십시오.",
+      "meta": {
+        "tone": "soft"
+      },
+      "hits": [
+        {
+          "pattern": "noun_action",
+          "matches": [
+            "숨긴 지원"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "judge_evidence_combo",
+      "cellKey": "dc-3.b.q2|mid",
+      "variantId": "judgeec-dc-3-b-q2-mid-v1",
+      "text": "e-5·e-6 조합은 숨긴 지원과 형의 체면이 맞물립니다. 윤정후 씨, 더 미루지 말고 답하십시오.",
+      "meta": {
+        "tone": "mid"
+      },
+      "hits": [
+        {
+          "pattern": "noun_action",
+          "matches": [
+            "숨긴 지원"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "judge_evidence_combo",
+      "cellKey": "dc-4.b.q2|soft",
+      "variantId": "judgeec-dc-4-b-q2-soft-v1",
+      "text": "감춘 이유입니다. e-6·e-7 조합으로 출생 문제와 법정 회피가 이어집니다. 윤정후 씨, 차분히 답하십시오.",
+      "meta": {
+        "tone": "soft"
+      },
+      "hits": [
+        {
+          "pattern": "noun_action",
+          "matches": [
+            "법정 회피"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "judge_evidence_combo",
+      "cellKey": "dc-4.b.q2|soft",
+      "variantId": "judgeec-dc-4-b-q2-soft-v5",
+      "text": "감춘 이유 카드의 e-6·e-7 핵심은 출생 문제와 법정 회피가 이어집니다. 윤정후 씨, 순서대로 말씀하십시오.",
+      "meta": {
+        "tone": "soft"
+      },
+      "hits": [
+        {
+          "pattern": "noun_action",
+          "matches": [
+            "법정 회피"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "judge_evidence_combo",
+      "cellKey": "dc-4.b.q2|mid",
+      "variantId": "judgeec-dc-4-b-q2-mid-v1",
+      "text": "e-6·e-7 조합은 출생 문제와 법정 회피가 이어집니다. 윤정후 씨, 더 미루지 말고 답하십시오.",
+      "meta": {
+        "tone": "mid"
+      },
+      "hits": [
+        {
+          "pattern": "noun_action",
+          "matches": [
+            "법정 회피"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "judge_witness_summon",
+      "cellKey": "w-3|soft",
+      "variantId": "judgew-w-3-soft-v2",
+      "text": "어머니 친구 박순애 씨의 증언으로 숨은 지원의 맥락을 보겠습니다.",
+      "meta": {
+        "tone": "soft"
+      },
+      "hits": [
+        {
+          "pattern": "noun_action",
+          "matches": [
+            "숨은 지원"
+          ]
+        }
+      ]
+    },
+    {
+      "channel": "judge_witness_summon",
+      "cellKey": "w-3|mid",
+      "variantId": "judgew-w-3-mid-v3",
+      "text": "박순애 씨를 부르겠습니다. 숨은 지원과 어머니 뜻을 함께 묻겠습니다.",
+      "meta": {
+        "tone": "mid"
+      },
+      "hits": [
+        {
+          "pattern": "noun_action",
+          "matches": [
+            "숨은 지원"
+          ]
+        }
+      ]
+    }
+  ],
+  "patternHits": {
+    "noun_action": 120,
+    "weak_쪽": 55,
+    "particle_error": 9
+  },
+  "channelHits": {
+    "interrogation": 64,
+    "evidence_present": 44,
+    "dossier": 13,
+    "witness": 3,
+    "aftermath": 12,
+    "system_message": 1,
+    "mediation": 8,
+    "contradiction_pursuit": 6,
+    "interjection": 5,
+    "emotional_overload": 2,
+    "evidence_discovery": 1,
+    "trust_action": 5,
+    "judge_question": 6,
+    "judge_contradiction": 2,
+    "judge_evidence_combo": 6,
+    "judge_witness_summon": 2
+  }
+}

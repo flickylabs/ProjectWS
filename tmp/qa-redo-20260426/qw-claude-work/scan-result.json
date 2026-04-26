@@ -1,0 +1,825 @@
+{
+  "generatedAt": "2026-04-26T05:04:43.275Z",
+  "summary": {
+    "spouse-01": {
+      "total": 4677,
+      "p0": 0,
+      "p1": 14,
+      "p2": 0,
+      "byChannel": {
+        "interrogation": {
+          "total": 1440,
+          "flagged": 7
+        },
+        "evidence_present": {
+          "total": 1470,
+          "flagged": 0
+        },
+        "dossier": {
+          "total": 240,
+          "flagged": 3
+        },
+        "witness": {
+          "total": 90,
+          "flagged": 0
+        },
+        "aftermath": {
+          "total": 25,
+          "flagged": 0
+        },
+        "system_message": {
+          "total": 55,
+          "flagged": 0
+        },
+        "contradiction_pursuit": {
+          "total": 320,
+          "flagged": 0
+        },
+        "interjection": {
+          "total": 160,
+          "flagged": 2
+        },
+        "emotional_overload": {
+          "total": 80,
+          "flagged": 0
+        },
+        "evidence_discovery": {
+          "total": 12,
+          "flagged": 0
+        },
+        "trust_action": {
+          "total": 180,
+          "flagged": 1
+        },
+        "mediation": {
+          "total": 80,
+          "flagged": 0
+        },
+        "judge_question": {
+          "total": 240,
+          "flagged": 0
+        },
+        "judge_contradiction": {
+          "total": 60,
+          "flagged": 1
+        },
+        "judge_evidence_combo": {
+          "total": 120,
+          "flagged": 0
+        },
+        "judge_witness_summon": {
+          "total": 45,
+          "flagged": 0
+        },
+        "rapport_milestone": {
+          "total": 30,
+          "flagged": 0
+        },
+        "contradict_milestone": {
+          "total": 30,
+          "flagged": 0
+        }
+      },
+      "byKind": {
+        "patch1_weaken": 13,
+        "mechanical": 1
+      }
+    },
+    "family-01": {
+      "total": 5172,
+      "p0": 0,
+      "p1": 3,
+      "p2": 0,
+      "byChannel": {
+        "interrogation": {
+          "total": 1800,
+          "flagged": 0
+        },
+        "evidence_present": {
+          "total": 1470,
+          "flagged": 0
+        },
+        "dossier": {
+          "total": 330,
+          "flagged": 0
+        },
+        "witness": {
+          "total": 90,
+          "flagged": 0
+        },
+        "aftermath": {
+          "total": 25,
+          "flagged": 0
+        },
+        "system_message": {
+          "total": 55,
+          "flagged": 0
+        },
+        "mediation": {
+          "total": 80,
+          "flagged": 0
+        },
+        "contradiction_pursuit": {
+          "total": 320,
+          "flagged": 2
+        },
+        "interjection": {
+          "total": 160,
+          "flagged": 0
+        },
+        "emotional_overload": {
+          "total": 80,
+          "flagged": 0
+        },
+        "evidence_discovery": {
+          "total": 12,
+          "flagged": 0
+        },
+        "trust_action": {
+          "total": 180,
+          "flagged": 0
+        },
+        "judge_question": {
+          "total": 240,
+          "flagged": 0
+        },
+        "judge_contradiction": {
+          "total": 60,
+          "flagged": 0
+        },
+        "judge_evidence_combo": {
+          "total": 165,
+          "flagged": 1
+        },
+        "judge_witness_summon": {
+          "total": 45,
+          "flagged": 0
+        },
+        "rapport_milestone": {
+          "total": 30,
+          "flagged": 0
+        },
+        "contradict_milestone": {
+          "total": 30,
+          "flagged": 0
+        }
+      },
+      "byKind": {
+        "patch1_weaken": 2,
+        "mechanical": 1
+      }
+    },
+    "friend-01": {
+      "total": 5082,
+      "p0": 0,
+      "p1": 16,
+      "p2": 0,
+      "byChannel": {
+        "interrogation": {
+          "total": 1800,
+          "flagged": 5
+        },
+        "evidence_present": {
+          "total": 1470,
+          "flagged": 4
+        },
+        "dossier": {
+          "total": 270,
+          "flagged": 1
+        },
+        "witness": {
+          "total": 90,
+          "flagged": 2
+        },
+        "aftermath": {
+          "total": 25,
+          "flagged": 0
+        },
+        "system_message": {
+          "total": 55,
+          "flagged": 0
+        },
+        "mediation": {
+          "total": 80,
+          "flagged": 0
+        },
+        "contradiction_pursuit": {
+          "total": 320,
+          "flagged": 4
+        },
+        "interjection": {
+          "total": 160,
+          "flagged": 0
+        },
+        "emotional_overload": {
+          "total": 80,
+          "flagged": 0
+        },
+        "evidence_discovery": {
+          "total": 12,
+          "flagged": 0
+        },
+        "trust_action": {
+          "total": 180,
+          "flagged": 0
+        },
+        "judge_question": {
+          "total": 240,
+          "flagged": 0
+        },
+        "judge_contradiction": {
+          "total": 60,
+          "flagged": 0
+        },
+        "judge_evidence_combo": {
+          "total": 135,
+          "flagged": 0
+        },
+        "judge_witness_summon": {
+          "total": 45,
+          "flagged": 0
+        },
+        "rapport_milestone": {
+          "total": 30,
+          "flagged": 0
+        },
+        "contradict_milestone": {
+          "total": 30,
+          "flagged": 0
+        }
+      },
+      "byKind": {
+        "patch1_weaken": 16
+      }
+    }
+  },
+  "flags": [
+    {
+      "caseId": "spouse-01",
+      "channel": "interrogation",
+      "path": "interrogation.entries.111.variants[6]",
+      "id": "a-h-d4-S1-fact-pursuit-v7",
+      "speaker": null,
+      "listener": null,
+      "lieState": null,
+      "lieBand": null,
+      "tone": null,
+      "disputeId": null,
+      "text": "재판관님, 숨김의 시작은 남편 쪽이었다고 생각합니다. 그 부분만큼은 분명히 말씀드릴 수 있습니다.",
+      "priority": "P1",
+      "label": "인지약화: \"쪽\" 표현 (patch 1: \"주장/의견\" 권장)",
+      "kind": "patch1_weaken",
+      "match": null
+    },
+    {
+      "caseId": "spouse-01",
+      "channel": "interrogation",
+      "path": "interrogation.entries.112.variants[6]",
+      "id": "a-h-d4-S1-motive-search-v7",
+      "speaker": null,
+      "listener": null,
+      "lieState": null,
+      "lieBand": null,
+      "tone": null,
+      "disputeId": null,
+      "text": "재판관님, 숨김의 시작은 남편 쪽이었다고 생각합니다. 제 마음이 그쪽으로 기운 건 그 이유 때문입니다.",
+      "priority": "P1",
+      "label": "인지약화: \"쪽\" 표현 (patch 1: \"주장/의견\" 권장)",
+      "kind": "patch1_weaken",
+      "match": null
+    },
+    {
+      "caseId": "spouse-01",
+      "channel": "interrogation",
+      "path": "interrogation.entries.113.variants[6]",
+      "id": "a-h-d4-S1-empathy-approach-v7",
+      "speaker": null,
+      "listener": null,
+      "lieState": null,
+      "lieBand": null,
+      "tone": null,
+      "disputeId": null,
+      "text": "재판관님, 숨김의 시작은 남편 쪽이었다고 생각합니다. 말을 차분하게 꺼내기 어려웠습니다.",
+      "priority": "P1",
+      "label": "인지약화: \"쪽\" 표현 (patch 1: \"주장/의견\" 권장)",
+      "kind": "patch1_weaken",
+      "match": null
+    },
+    {
+      "caseId": "spouse-01",
+      "channel": "interrogation",
+      "path": "interrogation.entries.136.variants[1]",
+      "id": "b-h-d4-S3-motive-search-v2",
+      "speaker": null,
+      "listener": null,
+      "lieState": null,
+      "lieBand": null,
+      "tone": null,
+      "disputeId": null,
+      "text": "저는 먼저 숨긴 쪽이고, 제 아내는 먼저 확인한 쪽입니다. 그래서 시작점을 한 사람으로 못 박는 게 맞지 않습니다.",
+      "priority": "P1",
+      "label": "인지약화: \"쪽\" 표현 (patch 1: \"주장/의견\" 권장)",
+      "kind": "patch1_weaken",
+      "match": null
+    },
+    {
+      "caseId": "spouse-01",
+      "channel": "interrogation",
+      "path": "interrogation.entries.141.variants[9]",
+      "id": "b-h-d4-S5-fact-pursuit-v10",
+      "speaker": null,
+      "listener": null,
+      "lieState": null,
+      "lieBand": null,
+      "tone": null,
+      "disputeId": null,
+      "text": "재판관님, 제가 먼저 숨겼고 부부 신뢰를 무너뜨린 한쪽입니다. 외도는 아니었지만 침묵은 제 잘못입니다.",
+      "priority": "P1",
+      "label": "인지약화: \"쪽\" 표현 (patch 1: \"주장/의견\" 권장)",
+      "kind": "patch1_weaken",
+      "match": null
+    },
+    {
+      "caseId": "spouse-01",
+      "channel": "interrogation",
+      "path": "interrogation.entries.142.variants[9]",
+      "id": "b-h-d4-S5-motive-search-v10",
+      "speaker": null,
+      "listener": null,
+      "lieState": null,
+      "lieBand": null,
+      "tone": null,
+      "disputeId": null,
+      "text": "재판관님, 제가 먼저 숨겼고 부부 신뢰를 무너뜨린 한쪽입니다. 외도는 아니었지만 침묵은 제 잘못입니다.",
+      "priority": "P1",
+      "label": "인지약화: \"쪽\" 표현 (patch 1: \"주장/의견\" 권장)",
+      "kind": "patch1_weaken",
+      "match": null
+    },
+    {
+      "caseId": "spouse-01",
+      "channel": "interrogation",
+      "path": "interrogation.entries.143.variants[9]",
+      "id": "b-h-d4-S5-empathy-approach-v10",
+      "speaker": null,
+      "listener": null,
+      "lieState": null,
+      "lieBand": null,
+      "tone": null,
+      "disputeId": null,
+      "text": "재판관님… 제가 먼저 숨겼고 부부 신뢰를 무너뜨린 한쪽입니다. 외도는 아니었지만 침묵은 제 잘못입니다.",
+      "priority": "P1",
+      "label": "인지약화: \"쪽\" 표현 (patch 1: \"주장/의견\" 권장)",
+      "kind": "patch1_weaken",
+      "match": null
+    },
+    {
+      "caseId": "spouse-01",
+      "channel": "dossier",
+      "path": "dossier.entries.18.variants[5]",
+      "id": "dc-5-b-q1-early-v6",
+      "speaker": null,
+      "listener": null,
+      "lieState": null,
+      "lieBand": null,
+      "tone": null,
+      "disputeId": null,
+      "text": "제가 원인을 만들었다고 볼 수 있습니다. 다만 실행까지 모두 제 쪽이라고 하면 다릅니다.",
+      "priority": "P1",
+      "label": "인지약화: \"쪽\" 표현 (patch 1: \"주장/의견\" 권장)",
+      "kind": "patch1_weaken",
+      "match": null
+    },
+    {
+      "caseId": "spouse-01",
+      "channel": "dossier",
+      "path": "dossier.entries.19.variants[8]",
+      "id": "dc-5-b-q1-mid-v9",
+      "speaker": null,
+      "listener": null,
+      "lieState": null,
+      "lieBand": null,
+      "tone": null,
+      "disputeId": null,
+      "text": "형네 사정을 숨긴 건 저입니다. 그런데 비밀 송금이 먼저 나간 건 제 아내 쪽입니다.",
+      "priority": "P1",
+      "label": "인지약화: \"쪽\" 표현 (patch 1: \"주장/의견\" 권장)",
+      "kind": "patch1_weaken",
+      "match": null
+    },
+    {
+      "caseId": "spouse-01",
+      "channel": "dossier",
+      "path": "dossier.entries.22.variants[0]",
+      "id": "dc-5-a-q1-mid-v1",
+      "speaker": null,
+      "listener": null,
+      "lieState": null,
+      "lieBand": null,
+      "tone": null,
+      "disputeId": null,
+      "text": "인정합니다. 남편이 먼저 숨겼다고 해도, 비밀 송금을 실제로 먼저 한 건 제 쪽입니다.",
+      "priority": "P1",
+      "label": "인지약화: \"쪽\" 표현 (patch 1: \"주장/의견\" 권장)",
+      "kind": "patch1_weaken",
+      "match": null
+    },
+    {
+      "caseId": "spouse-01",
+      "channel": "interjection",
+      "path": "interjection.entries.10.variants[1]",
+      "id": "interject-b-d-2-minor-v2",
+      "speaker": null,
+      "listener": null,
+      "lieState": null,
+      "lieBand": null,
+      "tone": null,
+      "disputeId": null,
+      "text": "제 아내 말에는 출금 이유가 빠져 있습니다. 그걸 빼면 이 얘기는 반쪽입니다.",
+      "priority": "P1",
+      "label": "인지약화: \"쪽\" 표현 (patch 1: \"주장/의견\" 권장)",
+      "kind": "patch1_weaken",
+      "match": null
+    },
+    {
+      "caseId": "spouse-01",
+      "channel": "interjection",
+      "path": "interjection.entries.10.variants[7]",
+      "id": "interject-b-d-2-minor-v8",
+      "speaker": null,
+      "listener": null,
+      "lieState": null,
+      "lieBand": null,
+      "tone": null,
+      "disputeId": null,
+      "text": "출금 방식이 문제라는 건 압니다. 그래도 이유를 듣지 않고 판단하시면 반쪽입니다.",
+      "priority": "P1",
+      "label": "인지약화: \"쪽\" 표현 (patch 1: \"주장/의견\" 권장)",
+      "kind": "patch1_weaken",
+      "match": null
+    },
+    {
+      "caseId": "spouse-01",
+      "channel": "trust_action",
+      "path": "trust_action.entries.13.variants[9]",
+      "id": "trust-b-confidential-S2-v10",
+      "speaker": null,
+      "listener": null,
+      "lieState": null,
+      "lieBand": null,
+      "tone": null,
+      "disputeId": null,
+      "text": "그 사정은 가족 쪽입니다. 제 아내 앞에서 바로 꺼내면 다시 크게 터질까 봐 피했습니다.",
+      "priority": "P1",
+      "label": "인지약화: \"쪽\" 표현 (patch 1: \"주장/의견\" 권장)",
+      "kind": "patch1_weaken",
+      "match": null
+    },
+    {
+      "caseId": "spouse-01",
+      "channel": "judge_contradiction",
+      "path": "judge_contradiction.entries.5.variants[3]",
+      "id": "judgec-d-2-hard-v4",
+      "speaker": null,
+      "listener": null,
+      "lieState": null,
+      "lieBand": null,
+      "tone": null,
+      "disputeId": null,
+      "text": "이준호 씨, 개인회생 중인 형에게 현금을 건넸다는 사실까지 말하십시오. 더 미루지 마십시오.",
+      "priority": "P1",
+      "label": "기계식: 미루지 마",
+      "kind": "mechanical",
+      "match": null
+    },
+    {
+      "caseId": "family-01",
+      "channel": "contradiction_pursuit",
+      "path": "contradiction_pursuit.entries.0.variants[9]",
+      "id": "contra-a-d-1-S1-v10",
+      "speaker": null,
+      "listener": null,
+      "lieState": null,
+      "lieBand": null,
+      "tone": null,
+      "disputeId": null,
+      "text": "재판관님, 제 답이 흔들려 보일 수는 있습니다. 하지만 의심의 방향은 여전히 제 동생 쪽입니다.",
+      "priority": "P1",
+      "label": "인지약화: \"쪽\" 표현 (patch 1: \"주장/의견\" 권장)",
+      "kind": "patch1_weaken",
+      "match": null
+    },
+    {
+      "caseId": "family-01",
+      "channel": "contradiction_pursuit",
+      "path": "contradiction_pursuit.entries.18.variants[3]",
+      "id": "contra-a-h-d3-S3-v4",
+      "speaker": null,
+      "listener": null,
+      "lieState": null,
+      "lieBand": null,
+      "tone": null,
+      "disputeId": null,
+      "text": "공장 위기 때 들어온 큰돈도 어머니 쪽이라고 믿고 싶었습니다. 그 믿음이 편했습니다.",
+      "priority": "P1",
+      "label": "인지약화: \"쪽\" 표현 (patch 1: \"주장/의견\" 권장)",
+      "kind": "patch1_weaken",
+      "match": null
+    },
+    {
+      "caseId": "family-01",
+      "channel": "judge_evidence_combo",
+      "path": "judge_evidence_combo.entries.23.variants[4]",
+      "id": "judgeec-dc-4-b-q2-hard-v5",
+      "speaker": null,
+      "listener": null,
+      "lieState": null,
+      "lieBand": null,
+      "tone": null,
+      "disputeId": null,
+      "text": "송금 내역과 어머니 기록은 윤정후 씨의 보호 명분을 동시에 흔듭니다. 윤태성 씨에게 감춘 진실을 더 미루지 마십시오.",
+      "priority": "P1",
+      "label": "기계식: 미루지 마",
+      "kind": "mechanical",
+      "match": null
+    },
+    {
+      "caseId": "friend-01",
+      "channel": "interrogation",
+      "path": "interrogation.entries.52.variants[3]",
+      "id": "a-d-2-S5-motive-search-v4",
+      "speaker": null,
+      "listener": null,
+      "lieState": null,
+      "lieBand": null,
+      "tone": null,
+      "disputeId": null,
+      "text": "저는 늘 제가 상처받은 쪽이라고만 생각했는데, 그래서 수민이가 말할 자리를 없앴습니다.",
+      "priority": "P1",
+      "label": "인지약화: \"쪽\" 표현 (patch 1: \"주장/의견\" 권장)",
+      "kind": "patch1_weaken",
+      "match": null
+    },
+    {
+      "caseId": "friend-01",
+      "channel": "interrogation",
+      "path": "interrogation.entries.69.variants[5]",
+      "id": "b-d-2-S5-fact-pursuit-v6",
+      "speaker": null,
+      "listener": null,
+      "lieState": null,
+      "lieBand": null,
+      "tone": null,
+      "disputeId": null,
+      "text": "재판관님, 예비신랑의 선넘는 메시지를 전면 공개합니다. 저는 거절한 쪽입니다.",
+      "priority": "P1",
+      "label": "인지약화: \"쪽\" 표현 (patch 1: \"주장/의견\" 권장)",
+      "kind": "patch1_weaken",
+      "match": null
+    },
+    {
+      "caseId": "friend-01",
+      "channel": "interrogation",
+      "path": "interrogation.entries.112.variants[0]",
+      "id": "a-d-4-S1-motive-search-v1",
+      "speaker": null,
+      "listener": null,
+      "lieState": null,
+      "lieBand": null,
+      "tone": null,
+      "disputeId": null,
+      "text": "숨긴 건 제 전 친구 쪽입니다. 저한테 말하지 않은 건 그 사람 선택이었습니다.",
+      "priority": "P1",
+      "label": "인지약화: \"쪽\" 표현 (patch 1: \"주장/의견\" 권장)",
+      "kind": "patch1_weaken",
+      "match": null
+    },
+    {
+      "caseId": "friend-01",
+      "channel": "interrogation",
+      "path": "interrogation.entries.146.variants[9]",
+      "id": "a-d-5-S0-empathy-approach-v10",
+      "speaker": null,
+      "listener": null,
+      "lieState": null,
+      "lieBand": null,
+      "tone": null,
+      "disputeId": null,
+      "text": "재판관님, 부끄럽지만 제 마음은 그랬습니다. 그 순간에는 제가 정의로운 쪽이라고 믿었습니다.",
+      "priority": "P1",
+      "label": "인지약화: \"쪽\" 표현 (patch 1: \"주장/의견\" 권장)",
+      "kind": "patch1_weaken",
+      "match": null
+    },
+    {
+      "caseId": "friend-01",
+      "channel": "interrogation",
+      "path": "interrogation.entries.153.variants[5]",
+      "id": "a-d-5-S3-fact-pursuit-v6",
+      "speaker": null,
+      "listener": null,
+      "lieState": null,
+      "lieBand": null,
+      "tone": null,
+      "disputeId": null,
+      "text": "재판관님, 2026년 3월 6일 저녁 단톡방 글이 먼저 나간 건 제 쪽입니다.",
+      "priority": "P1",
+      "label": "인지약화: \"쪽\" 표현 (patch 1: \"주장/의견\" 권장)",
+      "kind": "patch1_weaken",
+      "match": null
+    },
+    {
+      "caseId": "friend-01",
+      "channel": "evidence_present",
+      "path": "evidence_present.entries.103.variants[3]",
+      "id": "b-e-4-late-stage2-v4",
+      "speaker": null,
+      "listener": null,
+      "lieState": null,
+      "lieBand": null,
+      "tone": null,
+      "disputeId": null,
+      "text": "저는 그 메시지를 받아준 것이 아니라 끊어낸 쪽입니다. 목적은 달랐지만 방식이 사람을 다치게 했습니다.",
+      "priority": "P1",
+      "label": "인지약화: \"쪽\" 표현 (patch 1: \"주장/의견\" 권장)",
+      "kind": "patch1_weaken",
+      "match": null
+    },
+    {
+      "caseId": "friend-01",
+      "channel": "evidence_present",
+      "path": "evidence_present.entries.104.variants[6]",
+      "id": "b-e-4-late-stage3-v7",
+      "speaker": null,
+      "listener": null,
+      "lieState": null,
+      "lieBand": null,
+      "tone": null,
+      "disputeId": null,
+      "text": "거절한 뒤 이어진 연락은 다은이를 흔들기보다 위험을 알리려는 쪽입니다. 그때의 침묵도, 지금의 연락도 같은 두려움에서 나왔습니다.",
+      "priority": "P1",
+      "label": "인지약화: \"쪽\" 표현 (patch 1: \"주장/의견\" 권장)",
+      "kind": "patch1_weaken",
+      "match": null
+    },
+    {
+      "caseId": "friend-01",
+      "channel": "evidence_present",
+      "path": "evidence_present.entries.112.variants[3]",
+      "id": "a-e-4-late-stage2-v4",
+      "speaker": null,
+      "listener": null,
+      "lieState": null,
+      "lieBand": null,
+      "tone": null,
+      "disputeId": null,
+      "text": "제 전 친구는 그 메시지를 받아준 것이 아니라 끊어낸 쪽입니다. 제 전 친구를 나쁜 사람으로 먼저 세운 건 너무 빨랐습니다.",
+      "priority": "P1",
+      "label": "인지약화: \"쪽\" 표현 (patch 1: \"주장/의견\" 권장)",
+      "kind": "patch1_weaken",
+      "match": null
+    },
+    {
+      "caseId": "friend-01",
+      "channel": "evidence_present",
+      "path": "evidence_present.entries.113.variants[6]",
+      "id": "a-e-4-late-stage3-v7",
+      "speaker": null,
+      "listener": null,
+      "lieState": null,
+      "lieBand": null,
+      "tone": null,
+      "disputeId": null,
+      "text": "거절한 뒤 이어진 연락은 저를 흔들기보다 위험을 알리려는 쪽입니다. 제 전 친구의 행동이 전부 변명이라고만 보이진 않습니다.",
+      "priority": "P1",
+      "label": "인지약화: \"쪽\" 표현 (patch 1: \"주장/의견\" 권장)",
+      "kind": "patch1_weaken",
+      "match": null
+    },
+    {
+      "caseId": "friend-01",
+      "channel": "dossier",
+      "path": "dossier.entries.18.variants[3]",
+      "id": "dc-4-a-q1-early-v4",
+      "speaker": null,
+      "listener": null,
+      "lieState": null,
+      "lieBand": null,
+      "tone": null,
+      "disputeId": null,
+      "text": "그때 저는 상처받은 쪽이라고만 느꼈습니다. 그래서 확인을 멈췄습니다.",
+      "priority": "P1",
+      "label": "인지약화: \"쪽\" 표현 (patch 1: \"주장/의견\" 권장)",
+      "kind": "patch1_weaken",
+      "match": null
+    },
+    {
+      "caseId": "friend-01",
+      "channel": "witness",
+      "path": "witness.entries.5.variants[2]",
+      "id": "w-2-full-v3",
+      "speaker": null,
+      "listener": null,
+      "lieState": null,
+      "lieBand": null,
+      "tone": null,
+      "disputeId": null,
+      "text": "이상형이라는 말까지 나온 건 예비신랑분 쪽입니다. 그 여자분이 먼저 유혹한 흐름은 아니었습니다.",
+      "priority": "P1",
+      "label": "인지약화: \"쪽\" 표현 (patch 1: \"주장/의견\" 권장)",
+      "kind": "patch1_weaken",
+      "match": null
+    },
+    {
+      "caseId": "friend-01",
+      "channel": "witness",
+      "path": "witness.entries.5.variants[4]",
+      "id": "w-2-full-v5",
+      "speaker": null,
+      "listener": null,
+      "lieState": null,
+      "lieBand": null,
+      "tone": null,
+      "disputeId": null,
+      "text": "회사 사람이라 말하기 불편하지만, 예비신랑분이 선을 넘은 쪽이었다고 봅니다.",
+      "priority": "P1",
+      "label": "인지약화: \"쪽\" 표현 (patch 1: \"주장/의견\" 권장)",
+      "kind": "patch1_weaken",
+      "match": null
+    },
+    {
+      "caseId": "friend-01",
+      "channel": "contradiction_pursuit",
+      "path": "contradiction_pursuit.entries.13.variants[1]",
+      "id": "contra-b-d-2-S2-v2",
+      "speaker": null,
+      "listener": null,
+      "lieState": null,
+      "lieBand": null,
+      "tone": null,
+      "disputeId": null,
+      "text": "제가 흐린 표현을 쓴 건 인정합니다. 제가 답한 건 받아준 게 아니라 경계를 표시한 쪽입니다.",
+      "priority": "P1",
+      "label": "인지약화: \"쪽\" 표현 (patch 1: \"주장/의견\" 권장)",
+      "kind": "patch1_weaken",
+      "match": null
+    },
+    {
+      "caseId": "friend-01",
+      "channel": "contradiction_pursuit",
+      "path": "contradiction_pursuit.entries.13.variants[6]",
+      "id": "contra-b-d-2-S2-v7",
+      "speaker": null,
+      "listener": null,
+      "lieState": null,
+      "lieBand": null,
+      "tone": null,
+      "disputeId": null,
+      "text": "말을 아끼다 보니 더 이상하게 남았습니다. 제가 답한 건 받아준 게 아니라 경계를 표시한 쪽입니다.",
+      "priority": "P1",
+      "label": "인지약화: \"쪽\" 표현 (patch 1: \"주장/의견\" 권장)",
+      "kind": "patch1_weaken",
+      "match": null
+    },
+    {
+      "caseId": "friend-01",
+      "channel": "contradiction_pursuit",
+      "path": "contradiction_pursuit.entries.24.variants[0]",
+      "id": "contra-a-h-d4-S1-v1",
+      "speaker": null,
+      "listener": null,
+      "lieState": null,
+      "lieBand": null,
+      "tone": null,
+      "disputeId": null,
+      "text": "그건 말을 바꾼 게 아닙니다. 그때 설명이 부족했던 건 수민 씨 쪽이라고 생각했습니다.",
+      "priority": "P1",
+      "label": "인지약화: \"쪽\" 표현 (patch 1: \"주장/의견\" 권장)",
+      "kind": "patch1_weaken",
+      "match": null
+    },
+    {
+      "caseId": "friend-01",
+      "channel": "contradiction_pursuit",
+      "path": "contradiction_pursuit.entries.24.variants[5]",
+      "id": "contra-a-h-d4-S1-v6",
+      "speaker": null,
+      "listener": null,
+      "lieState": null,
+      "lieBand": null,
+      "tone": null,
+      "disputeId": null,
+      "text": "정확히는 제가 본 정황을 말한 겁니다. 그때 설명이 부족했던 건 수민 씨 쪽이라고 생각했습니다.",
+      "priority": "P1",
+      "label": "인지약화: \"쪽\" 표현 (patch 1: \"주장/의견\" 권장)",
+      "kind": "patch1_weaken",
+      "match": null
+    }
+  ],
+  "totals": {
+    "variantsScanned": 14931,
+    "p0": 0,
+    "p1": 33,
+    "p2": 0
+  }
+}
