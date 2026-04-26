@@ -301,22 +301,29 @@ function buildPresentActions(
     return []
   }
 
-  // 양쪽 모두에게 제시 가능 — 대상 교체 허용
+  // subjectParty 분기 — 비매칭 측은 disabled + 사유 표시
   const parties: PartyId[] = ['a', 'b']
+  const subjectParty = evidence.subjectParty ?? 'both'
 
   return parties.map((party) => {
     const partyName = party === 'a' ? caseData.duo.partyA.name : caseData.duo.partyB.name
+    const otherName = party === 'a' ? caseData.duo.partyB.name : caseData.duo.partyA.name
     const alreadyPresented = evidenceStates[evidence.id]?.presentedTo?.includes(party) ?? false
+    const relevant = subjectParty === 'both' || subjectParty === party
 
     return {
       kind: 'open_evidence_selection',
       label: `${partyName}에게 증거 제시`,
       party,
       disputeId: focusDisputeId,
-      disabled: !canPresent || alreadyPresented,
+      disabled: !canPresent || alreadyPresented || !relevant,
       disabledReason: !canPresent
         ? '증거 제시는 증거 정리 단계부터 가능합니다.'
-        : '이미 이 대상에게 제시한 증거입니다.',
+        : alreadyPresented
+          ? '이미 이 대상에게 제시한 증거입니다.'
+          : !relevant
+            ? `${otherName} 측 증거입니다. ${partyName}에게는 추궁 효과가 없습니다.`
+            : undefined,
     }
   })
 }

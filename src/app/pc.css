@@ -10739,6 +10739,13 @@ body.pc-mode .pc-ev-detail__present-btn:active:not(:disabled) {
   transform: scale(0.98);
 }
 
+body.pc-mode .pc-ev-detail__present-btn.is-mismatch {
+  opacity: 0.35;
+  cursor: not-allowed;
+  filter: grayscale(0.8);
+  border-style: dashed;
+}
+
 body.pc-mode .pc-ev-detail__present-btn.is-done {
   opacity: 0.4; cursor: default; border-style: dashed;
 }

@@ -793,6 +793,10 @@ function EvidenceDetailSection({ evidenceId, onClose }: { evidenceId: string; on
   const nameB = caseData.duo.partyB.name
   const presentedToA = state?.presentedTo?.includes('a') ?? false
   const presentedToB = state?.presentedTo?.includes('b') ?? false
+  // subjectParty 분기 — 비매칭 측에 제시 = 게임 메커니즘상 효과 X
+  const subjectParty = evidence.subjectParty ?? 'both'
+  const aRelevant = subjectParty === 'both' || subjectParty === 'a'
+  const bRelevant = subjectParty === 'both' || subjectParty === 'b'
 
   return (
     <div className="pc-ev-detail">
@@ -848,13 +852,14 @@ function EvidenceDetailSection({ evidenceId, onClose }: { evidenceId: string; on
         </div>
       ) : null}
 
-      {/* Present buttons — A/B split */}
+      {/* Present buttons — A/B split. subjectParty 비매칭 측은 disabled + 사유 표시 */}
       <div className="pc-ev-detail__present">
         <button
-          className={`pc-ev-detail__present-btn is-a${presentedToA ? ' is-done' : ''}`}
-          disabled={presentedToA}
+          className={`pc-ev-detail__present-btn is-a${presentedToA ? ' is-done' : ''}${!aRelevant ? ' is-mismatch' : ''}`}
+          disabled={presentedToA || !aRelevant}
+          title={!aRelevant ? `${nameB} 측 증거 — ${nameA}에게 제시 효과 없음` : (presentedToA ? '이미 제시함' : undefined)}
           onClick={() => {
-            if (!presentedToA) {
+            if (!presentedToA && aRelevant) {
               onClose?.()
               window.setTimeout(() => {
                 dispatch({ type: 'evidence_present', evidenceId, target: 'a' })
@@ -866,13 +871,14 @@ function EvidenceDetailSection({ evidenceId, onClose }: { evidenceId: string; on
           <span className="pc-ev-detail__present-avatar">
             <PCCharacterPortrait alt={nameA} caseId={caseData.caseId} emotion="defensive" fallbackSymbolId="i-person" party="a" size={28} />
           </span>
-          <span>{presentedToA ? `${nameA} 제시 완료` : `${nameA}에게 제시`}</span>
+          <span>{presentedToA ? `${nameA} 제시 완료` : !aRelevant ? `${nameA} (대상 아님)` : `${nameA}에게 제시`}</span>
         </button>
         <button
-          className={`pc-ev-detail__present-btn is-b${presentedToB ? ' is-done' : ''}`}
-          disabled={presentedToB}
+          className={`pc-ev-detail__present-btn is-b${presentedToB ? ' is-done' : ''}${!bRelevant ? ' is-mismatch' : ''}`}
+          disabled={presentedToB || !bRelevant}
+          title={!bRelevant ? `${nameA} 측 증거 — ${nameB}에게 제시 효과 없음` : (presentedToB ? '이미 제시함' : undefined)}
           onClick={() => {
-            if (!presentedToB) {
+            if (!presentedToB && bRelevant) {
               onClose?.()
               window.setTimeout(() => {
                 dispatch({ type: 'evidence_present', evidenceId, target: 'b' })
@@ -884,7 +890,7 @@ function EvidenceDetailSection({ evidenceId, onClose }: { evidenceId: string; on
           <span className="pc-ev-detail__present-avatar">
             <PCCharacterPortrait alt={nameB} caseId={caseData.caseId} emotion="defensive" fallbackSymbolId="i-person" party="b" size={28} />
           </span>
-          <span>{presentedToB ? `${nameB} 제시 완료` : `${nameB}에게 제시`}</span>
+          <span>{presentedToB ? `${nameB} 제시 완료` : !bRelevant ? `${nameB} (대상 아님)` : `${nameB}에게 제시`}</span>
         </button>
       </div>
     </div>
