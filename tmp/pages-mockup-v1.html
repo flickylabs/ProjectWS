@@ -1,0 +1,1053 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<title>Solomon Court — Main · Session Page Mockup v1</title>
+<style>
+  :root {
+    /* Primary / Alt 2단 체계 */
+    --gold-primary: #d4a24e;
+    --gold-alt:     #e8c172;
+    --wood-primary: #0d0e12;
+    --wood-alt:     #1c1f26;
+    --text-primary:   #ede3cc;
+    --text-secondary: #b5a888;
+    --text-tertiary:  #857b68;
+    --speaker-a:       #5b8def;
+    --speaker-b:       #e06060;
+    --speaker-witness: #9ba87a;
+    --speaker-success: #5cc97a;
+    --speaker-warning: #ffb347;
+
+    --panel-border:        rgba(212,162,78,0.22);
+    --panel-border-strong: rgba(212,162,78,0.40);
+    --panel-border-soft:   rgba(212,162,78,0.12);
+
+    /* Type scale */
+    --t-display-xl: 64px;
+    --t-display-lg: 36px;
+    --t-display:    28px;
+    --t-title-lg:   24px;
+    --t-title:      20px;
+    --t-body-lg:    16px;
+    --t-body:       15px;
+    --t-caption:    13px;
+    --t-small:      12px;
+    --t-micro:      11px;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #050608;
+    color: var(--text-primary);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Pretendard', 'Apple SD Gothic Neo', sans-serif;
+    font-size: var(--t-body);
+    line-height: 1.55;
+  }
+
+  /* ── Annotation header ── */
+  .doc-head {
+    padding: 40px 48px 28px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    background: #0a0b10;
+  }
+  .doc-head h1 {
+    font-size: var(--t-display-lg);
+    font-weight: 800; letter-spacing: -0.03em;
+    margin: 0 0 8px;
+  }
+  .doc-head .accent { color: var(--gold-alt); }
+  .doc-head p { margin: 0; color: var(--text-tertiary); font-size: var(--t-body); }
+  .doc-section-label {
+    padding: 32px 48px 14px;
+    background: #0a0b10;
+    font-size: var(--t-micro);
+    font-weight: 800; letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold-alt);
+    border-top: 1px solid var(--panel-border-soft);
+  }
+  .doc-section-label small {
+    display: block;
+    margin-top: 4px;
+    font-size: var(--t-caption);
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    text-transform: none;
+    color: var(--text-tertiary);
+  }
+
+  /* ─────────────────────────────────────────
+     VIEWPORT (모의 화면)
+     ───────────────────────────────────────── */
+  .viewport {
+    position: relative;
+    min-height: 920px;
+    background: var(--wood-primary);
+    background-image:
+      radial-gradient(ellipse 60% 40% at 50% 25%, rgba(212,162,78,0.07), transparent 70%),
+      radial-gradient(ellipse 40% 30% at 18% 78%, rgba(212,162,78,0.035), transparent 70%),
+      radial-gradient(ellipse 80% 60% at 50% 50%, rgba(255,255,255,0.018) 0%, transparent 70%);
+    overflow: hidden;
+  }
+  /* 미세한 noise grain */
+  .viewport::after {
+    content: '';
+    position: absolute; inset: 0;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.95' numOctaves='2' seed='3'/><feColorMatrix values='0 0 0 0 0.55  0 0 0 0 0.55  0 0 0 0 0.55  0 0 0 0.05 0'/></filter><rect width='220' height='220' filter='url(%23n)'/></svg>");
+    pointer-events: none;
+    opacity: 0.6;
+  }
+
+  /* ── App bar ── */
+  .app-bar {
+    position: relative;
+    height: 60px;
+    padding: 0 32px;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+    background: linear-gradient(180deg, rgba(8,9,12,0.7), rgba(8,9,12,0.4));
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    z-index: 2;
+  }
+  .app-bar__brand {
+    display: flex; align-items: center; gap: 10px;
+    font-size: var(--t-body-lg); font-weight: 800;
+    letter-spacing: 0.04em; color: var(--gold-alt);
+  }
+  .app-bar__brand .ico {
+    width: 28px; height: 28px;
+    border-radius: 8px;
+    background: rgba(212,162,78,0.10);
+    border: 1px solid var(--panel-border);
+    display: grid; place-items: center;
+    color: var(--gold-alt); font-size: 14px;
+  }
+  .app-bar__center {
+    text-align: center;
+    font-size: var(--t-micro);
+    font-weight: 800; letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--text-tertiary);
+  }
+  .app-bar__tools {
+    display: flex; gap: 6px;
+  }
+  .tool-btn {
+    width: 36px; height: 36px;
+    border-radius: 10px;
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.06);
+    color: var(--text-secondary);
+    display: grid; place-items: center;
+    cursor: pointer;
+    transition: all 140ms ease;
+  }
+  .tool-btn:hover {
+    border-color: var(--panel-border);
+    color: var(--gold-alt);
+  }
+
+  /* ── Container ── */
+  .stage {
+    position: relative;
+    max-width: 1480px;
+    margin: 0 auto;
+    padding: 56px 48px 48px;
+  }
+
+  /* ─────────────────────────────────────────
+     BUTTONS (Secondary as main)
+     ───────────────────────────────────────── */
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    height: 44px; padding: 0 22px;
+    border-radius: 12px; cursor: pointer;
+    font-size: var(--t-body); font-weight: 700;
+    transition: all 160ms ease;
+    border: 1px solid transparent;
+    font-family: inherit;
+    text-decoration: none;
+  }
+  .btn:hover { transform: translateY(-1px); }
+  /* Secondary = MAIN (gold outline) */
+  .btn--main {
+    background: rgba(212,162,78,0.10);
+    border-color: rgba(212,162,78,0.45);
+    color: var(--gold-alt);
+  }
+  .btn--main:hover {
+    background: rgba(212,162,78,0.16);
+    border-color: rgba(212,162,78,0.65);
+    box-shadow: 0 0 0 3px rgba(212,162,78,0.10), 0 0 18px rgba(212,162,78,0.18);
+  }
+  .btn--ghost {
+    background: rgba(255,255,255,0.02);
+    border-color: rgba(255,255,255,0.10);
+    color: var(--text-secondary);
+  }
+  .btn--ghost:hover {
+    border-color: rgba(212,162,78,0.28);
+    color: var(--text-primary);
+  }
+  .btn--lg { height: 52px; padding: 0 28px; font-size: var(--t-body-lg); border-radius: 14px; }
+  .btn--pill { border-radius: 999px; height: 38px; padding: 0 18px; font-size: var(--t-caption); }
+
+  /* ─────────────────────────────────────────
+     MAIN PAGE
+     ───────────────────────────────────────── */
+  /* Hero */
+  .hero {
+    padding: 60px 0 48px;
+    text-align: center;
+  }
+  .hero__eyebrow {
+    display: inline-block;
+    font-size: var(--t-small);
+    font-weight: 800; letter-spacing: 0.26em;
+    text-transform: uppercase;
+    color: var(--gold-alt);
+    margin-bottom: 22px;
+    padding: 6px 14px;
+    border-radius: 999px;
+    background: rgba(212,162,78,0.06);
+    border: 1px solid var(--panel-border-soft);
+  }
+  .hero__title {
+    font-size: var(--t-display-xl);
+    font-weight: 900;
+    line-height: 1.0;
+    letter-spacing: -0.045em;
+    margin: 0 0 24px;
+    display: inline-flex; align-items: center; gap: 24px;
+  }
+  .hero__title-orn {
+    width: 44px; height: 44px;
+    color: var(--gold-primary);
+    opacity: 0.8;
+  }
+  .hero__subtitle {
+    font-size: var(--t-title);
+    color: var(--text-secondary);
+    margin: 0;
+    max-width: 640px;
+    margin-inline: auto;
+  }
+
+  /* Mode cards (STACK pattern · 13.A) */
+  .mode-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 36px;
+    margin-top: 16px;
+  }
+  .mode-card {
+    position: relative;
+    padding: 36px 36px 30px 44px;
+    min-height: 320px;
+    border-radius: 18px;
+    background: linear-gradient(180deg, rgba(28,30,38,0.85), rgba(13,14,18,0.94));
+    border: 1px solid var(--panel-border);
+    box-shadow:
+      0 18px 42px rgba(0,0,0,0.42),
+      inset 0 1px 0 rgba(255,255,255,0.05);
+    transition: all 200ms ease;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+  }
+  /* STACK back layers — 둥근 모서리가 좌·상단으로 빠져나옴 */
+  .mode-card::before,
+  .mode-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 18px;
+    z-index: -1;
+    pointer-events: none;
+    transition: all 220ms ease;
+  }
+  .mode-card::before {
+    transform: translate(-8px, -6px);
+    background: rgba(20,22,28,0.7);
+    border: 1px solid var(--panel-border-soft);
+  }
+  .mode-card::after {
+    transform: translate(-16px, -12px);
+    background: rgba(15,16,22,0.55);
+    border: 1px solid rgba(212,162,78,0.08);
+  }
+  .mode-card:hover {
+    border-color: var(--panel-border-strong);
+    transform: translateY(-2px);
+    box-shadow:
+      0 24px 56px rgba(0,0,0,0.5),
+      0 0 36px rgba(212,162,78,0.12),
+      inset 0 1px 0 rgba(255,255,255,0.08);
+  }
+  .mode-card:hover::before { transform: translate(-12px, -8px); }
+  .mode-card:hover::after {
+    transform: translate(-22px, -16px);
+    border-color: rgba(212,162,78,0.18);
+  }
+
+  .mode-card__head {
+    display: flex; align-items: flex-start;
+    gap: 18px;
+    margin-bottom: 22px;
+  }
+  .mode-card__icon {
+    width: 56px; height: 56px;
+    border-radius: 16px;
+    background: rgba(212,162,78,0.10);
+    border: 1px solid var(--panel-border);
+    display: grid; place-items: center;
+    color: var(--gold-alt);
+    font-size: 28px; line-height: 1;
+    flex-shrink: 0;
+  }
+  .mode-card__head-text { flex: 1; }
+  .mode-card__eyebrow {
+    font-size: var(--t-micro);
+    font-weight: 800; letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold-alt);
+    margin-bottom: 6px;
+  }
+  .mode-card__title {
+    font-size: var(--t-display-lg);
+    font-weight: 900;
+    letter-spacing: -0.025em;
+    margin: 0;
+    color: var(--text-primary);
+    line-height: 1.05;
+  }
+  .mode-card__meta {
+    display: flex; gap: 18px;
+    margin-bottom: 18px;
+    font-size: var(--t-caption);
+    color: var(--text-tertiary);
+  }
+  .mode-card__meta b {
+    color: var(--text-primary); font-weight: 700;
+  }
+  .mode-card__progress {
+    height: 4px; border-radius: 999px;
+    background: rgba(255,255,255,0.06);
+    overflow: hidden;
+    margin-bottom: 18px;
+  }
+  .mode-card__progress i {
+    display: block; height: 100%;
+    background: linear-gradient(90deg, rgba(212,162,78,0.7), rgba(232,193,114,0.95));
+    box-shadow: 0 0 8px rgba(212,162,78,0.4);
+  }
+  .mode-card__desc {
+    font-size: var(--t-body);
+    color: var(--text-secondary);
+    line-height: 1.65;
+    flex: 1;
+    margin: 0 0 22px;
+  }
+  .mode-card__cta {
+    display: inline-flex; align-items: center; gap: 10px;
+    align-self: flex-start;
+  }
+
+  /* Info cards (Ghost-styled) */
+  .info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-top: 28px;
+  }
+  .info-card {
+    padding: 22px 26px;
+    border-radius: 14px;
+    background: linear-gradient(180deg, rgba(20,22,28,0.45), rgba(13,14,18,0.55));
+    border: 1px solid rgba(255,255,255,0.06);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    display: flex; align-items: center; gap: 18px;
+    transition: all 160ms ease;
+    cursor: pointer;
+  }
+  .info-card:hover {
+    border-color: var(--panel-border);
+    transform: translateY(-1px);
+  }
+  .info-card__icon {
+    width: 44px; height: 44px;
+    border-radius: 12px;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.08);
+    display: grid; place-items: center;
+    color: var(--text-secondary);
+    font-size: 18px;
+    flex-shrink: 0;
+  }
+  .info-card:hover .info-card__icon {
+    color: var(--gold-alt);
+    border-color: var(--panel-border);
+  }
+  .info-card__body { flex: 1; }
+  .info-card__eyebrow {
+    font-size: var(--t-micro);
+    font-weight: 800; letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--text-tertiary);
+    margin-bottom: 4px;
+  }
+  .info-card__title {
+    font-size: var(--t-title);
+    font-weight: 800;
+    color: var(--text-primary);
+    margin: 0;
+    letter-spacing: -0.01em;
+  }
+  .info-card__arrow {
+    color: var(--text-tertiary);
+    font-size: 20px;
+    transition: all 160ms ease;
+  }
+  .info-card:hover .info-card__arrow {
+    color: var(--gold-alt);
+    transform: translateX(2px);
+  }
+
+  /* ─────────────────────────────────────────
+     SESSION PAGE
+     ───────────────────────────────────────── */
+  .sub-bar {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: flex-start;
+    gap: 28px;
+    padding: 0 0 36px;
+    border-bottom: 1px solid var(--panel-border-soft);
+    margin-bottom: 36px;
+  }
+  .sub-bar__back .btn--ghost {
+    height: 40px;
+    padding: 0 16px;
+  }
+  .sub-bar__title { padding: 4px 0; }
+  .sub-bar__eyebrow {
+    font-size: var(--t-micro);
+    font-weight: 800; letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold-alt);
+    margin-bottom: 8px;
+  }
+  .sub-bar__h1 {
+    font-size: var(--t-display);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    margin: 0 0 6px;
+    color: var(--text-primary);
+  }
+  .sub-bar__desc {
+    margin: 0;
+    font-size: var(--t-body);
+    color: var(--text-secondary);
+  }
+  .sub-bar__tools {
+    display: flex; align-items: center; gap: 14px;
+    padding: 6px 0;
+  }
+  .toggle-row { display: flex; align-items: center; gap: 10px; }
+  .toggle-label { font-size: var(--t-caption); font-weight: 700; color: var(--text-secondary); }
+  .toggle {
+    position: relative;
+    width: 56px; height: 30px;
+    border-radius: 999px;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.10);
+    cursor: pointer;
+    transition: all 140ms ease;
+  }
+  .toggle::after {
+    content: '';
+    position: absolute;
+    left: 3px; top: 3px;
+    width: 22px; height: 22px;
+    border-radius: 999px;
+    background: #f5f1ea;
+    transition: left 160ms cubic-bezier(0.45, 0, 0.25, 1);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  }
+  .toggle.is-on {
+    background: rgba(212,162,78,0.32);
+    border-color: rgba(212,162,78,0.5);
+    box-shadow: 0 0 12px rgba(212,162,78,0.18);
+  }
+  .toggle.is-on::after { left: 29px; background: var(--gold-alt); }
+
+  /* Session grid (NESTED pattern · 13.B) */
+  .session-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+  }
+  .session-card {
+    position: relative;
+    padding: 12px;                            /* outer wrapper padding */
+    border-radius: 18px;
+    background: linear-gradient(180deg, rgba(24,26,32,0.88), rgba(13,14,18,0.94));
+    border: 1px solid var(--panel-border-soft);
+    box-shadow:
+      0 14px 32px rgba(0,0,0,0.36),
+      inset 0 1px 0 rgba(255,255,255,0.04);
+    cursor: pointer;
+    transition: all 180ms ease;
+  }
+  .session-card:hover {
+    border-color: var(--panel-border);
+    transform: translateY(-2px);
+    box-shadow:
+      0 22px 48px rgba(0,0,0,0.48),
+      0 0 28px rgba(212,162,78,0.08),
+      inset 0 1px 0 rgba(255,255,255,0.06);
+  }
+  .session-card.is-active {
+    border-color: var(--panel-border-strong);
+    box-shadow:
+      0 18px 40px rgba(0,0,0,0.44),
+      0 0 32px rgba(212,162,78,0.18),
+      inset 0 1px 0 rgba(255,255,255,0.06);
+  }
+  .session-card.is-locked {
+    opacity: 0.32;
+    cursor: default;
+    pointer-events: none;
+  }
+
+  /* Inner card (NESTED) */
+  .session-card__inner {
+    position: relative;
+    border-radius: 14px;
+    border: 1px solid rgba(212,162,78,0.14);
+    background: rgba(212,162,78,0.04);
+    padding: 22px 18px 18px;
+    min-height: 256px;
+    display: flex; flex-direction: column;
+  }
+  .session-card.is-active .session-card__inner {
+    background: rgba(212,162,78,0.08);
+    border-color: rgba(212,162,78,0.28);
+  }
+  .session-card__top {
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: var(--t-micro);
+    font-weight: 800; letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--text-tertiary);
+    margin-bottom: 14px;
+  }
+  .session-card__top b {
+    color: var(--gold-alt);
+    font-weight: 800;
+  }
+  .session-card__icon {
+    width: 80px; height: 80px;
+    border-radius: 22px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(212,162,78,0.18);
+    display: grid; place-items: center;
+    color: var(--gold-alt);
+    font-size: 36px; line-height: 1;
+    margin: 6px auto 18px;
+  }
+  .session-card.is-active .session-card__icon {
+    background: rgba(212,162,78,0.10);
+    border-color: rgba(212,162,78,0.4);
+    box-shadow: 0 0 18px rgba(212,162,78,0.12);
+  }
+  .session-card__title {
+    text-align: center;
+    margin: 0 0 6px;
+    font-size: var(--t-title-lg);
+    font-weight: 800;
+    letter-spacing: -0.015em;
+    color: var(--text-primary);
+  }
+  .session-card__tagline {
+    text-align: center;
+    margin: 0 0 14px;
+    font-size: var(--t-caption);
+    color: var(--text-secondary);
+    line-height: 1.5;
+    flex: 1;
+  }
+  .session-card__progress {
+    height: 4px; border-radius: 999px;
+    background: rgba(255,255,255,0.06);
+    overflow: hidden;
+    margin-bottom: 10px;
+  }
+  .session-card__progress i {
+    display: block; height: 100%;
+    background: linear-gradient(90deg, rgba(212,162,78,0.6), rgba(232,193,114,0.95));
+  }
+  .session-card__foot {
+    display: flex; justify-content: space-between;
+    font-size: var(--t-small);
+    color: var(--text-tertiary);
+  }
+  .session-card__foot b { color: var(--gold-alt); font-weight: 800; }
+
+  /* PEEK pattern for active card (13.C) */
+  .session-card.is-active::before {
+    content: '';
+    position: absolute;
+    left: -10px; top: 18px; bottom: 18px;
+    width: 24px;
+    border-radius: 14px;
+    background: rgba(212,162,78,0.14);
+    border: 1px solid rgba(212,162,78,0.32);
+    z-index: -1;
+  }
+
+  /* Locked state */
+  .session-card.is-locked .session-card__icon {
+    color: var(--text-tertiary);
+    border-color: rgba(255,255,255,0.06);
+  }
+  .session-card__lock-pill {
+    display: inline-flex; align-items: center; justify-content: center;
+    gap: 6px;
+    align-self: center;
+    padding: 4px 10px;
+    border-radius: 999px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.10);
+    font-size: var(--t-micro);
+    font-weight: 800; letter-spacing: 0.12em;
+    color: var(--text-tertiary);
+    margin-bottom: 12px;
+  }
+
+  /* ── Annotation pop-out ── */
+  .annot {
+    position: absolute;
+    background: rgba(8,9,12,0.95);
+    border: 1px solid var(--panel-border);
+    border-radius: 10px;
+    padding: 10px 14px;
+    font-size: 11.5px;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    max-width: 230px;
+    box-shadow: 0 12px 28px rgba(0,0,0,0.5);
+    z-index: 10;
+  }
+  .annot b { color: var(--gold-alt); font-weight: 700; display: block; margin-bottom: 2px; font-size: 10.5px; letter-spacing: 0.08em; text-transform: uppercase; }
+  .annot::before {
+    content: '';
+    position: absolute;
+    width: 8px; height: 8px;
+    background: rgba(212,162,78,0.45);
+    border-radius: 50%;
+    box-shadow: 0 0 0 3px rgba(212,162,78,0.10);
+  }
+  .annot--tl::before { left: -22px; top: 14px; }
+  .annot--tr::before { right: -22px; top: 14px; }
+
+  /* Annotation toggle */
+  .annot-toggle {
+    position: fixed;
+    top: 20px; right: 20px;
+    z-index: 100;
+    display: flex; align-items: center; gap: 10px;
+    padding: 8px 14px;
+    border-radius: 999px;
+    background: rgba(8,9,12,0.85);
+    border: 1px solid var(--panel-border);
+    backdrop-filter: blur(8px);
+    cursor: pointer;
+    font-size: 12px;
+    color: var(--text-secondary);
+  }
+  .annot-toggle .toggle { width: 38px; height: 22px; }
+  .annot-toggle .toggle::after { width: 16px; height: 16px; left: 2px; top: 2px; }
+  .annot-toggle .toggle.is-on::after { left: 19px; }
+
+  body.no-annot .annot { display: none; }
+</style>
+</head>
+<body>
+
+<!-- Annotation toggle -->
+<label class="annot-toggle" onclick="document.body.classList.toggle('no-annot')">
+  <span>주석 표시</span>
+  <span class="toggle is-on" id="annotToggle"></span>
+</label>
+
+<!-- ════════════════════════════════════════
+     DOC HEADER
+     ════════════════════════════════════════ -->
+<div class="doc-head">
+  <h1>Main · Session Page <span class="accent">리뉴얼 시안 v1</span></h1>
+  <p>style-guide-v1.html 기준 · Secondary 버튼을 메인 CTA로 사용 · STACK / NESTED / PEEK 패턴 적용 · 폰트 스케일 11px → 64px 11단</p>
+</div>
+
+<!-- ════════════════════════════════════════
+     MAIN PAGE
+     ════════════════════════════════════════ -->
+<div class="doc-section-label">
+  Main Page (홈)
+  <small>Mode 카드 = STACK 패턴 / 정보 카드 = Ghost 카드 / Hero 가운데 정렬 + 64px display title</small>
+</div>
+
+<div class="viewport">
+  <div class="app-bar">
+    <div class="app-bar__brand">
+      <div class="ico">⚖</div>
+      <span>솔로몬 법정</span>
+    </div>
+    <div class="app-bar__center">SEASON 02 · 진행 중</div>
+    <div class="app-bar__tools">
+      <button class="tool-btn" title="설정">⚙</button>
+    </div>
+  </div>
+
+  <div class="stage">
+    <!-- Hero -->
+    <section class="hero" style="position: relative;">
+      <span class="hero__eyebrow">Season 02 · Live</span>
+      <h1 class="hero__title">
+        <svg class="hero__title-orn" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L9 5l-7 4 5 5h8l5-5-7-4-3-3zm0 5.5l1 1h-2l1-1zM6 11l3-1.7L12 11l3-1.7L18 11l-3 3H9l-3-3z"/></svg>
+        솔로몬의 딜레마
+        <svg class="hero__title-orn" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L9 5l-7 4 5 5h8l5-5-7-4-3-3zm0 5.5l1 1h-2l1-1zM6 11l3-1.7L12 11l3-1.7L18 11l-3 3H9l-3-3z"/></svg>
+      </h1>
+      <p class="hero__subtitle">현대판 솔로몬이 되어 두 사람의 진실을 가려보세요</p>
+
+      <div class="annot annot--tr" style="top: 30px; right: 60px;">
+        <b>Eyebrow Pill</b>
+        12px 800 0.26em · 6/14 padding · 골드 .06 bg + .12 border. <b>네온 X</b>.
+      </div>
+    </section>
+
+    <!-- Mode cards -->
+    <section style="position: relative; margin-top: 32px;">
+      <div class="mode-grid">
+        <button class="mode-card" type="button">
+          <div class="mode-card__head">
+            <div class="mode-card__icon">⚖</div>
+            <div class="mode-card__head-text">
+              <div class="mode-card__eyebrow">Normal Mode</div>
+              <h2 class="mode-card__title">일반 모드</h2>
+            </div>
+          </div>
+          <div class="mode-card__meta">
+            <span><b>7</b> 세션</span>
+            <span>진행 <b>1 / 3</b></span>
+            <span>평균 <b>82</b>점</span>
+          </div>
+          <div class="mode-card__progress"><i style="width: 33%"></i></div>
+          <p class="mode-card__desc">누적된 현실 사건들로 구성된 코어 모드. 7개의 인간관계 카테고리를 선택해 진실을 가려냅니다.</p>
+          <span class="btn btn--main mode-card__cta">사건 고르러 가기 <span style="opacity:0.7">→</span></span>
+        </button>
+
+        <button class="mode-card" type="button">
+          <div class="mode-card__head">
+            <div class="mode-card__icon">♔</div>
+            <div class="mode-card__head-text">
+              <div class="mode-card__eyebrow">Season 02 · 27d Left</div>
+              <h2 class="mode-card__title">심판의 계절</h2>
+            </div>
+          </div>
+          <div class="mode-card__meta">
+            <span><b>3</b> 사건 배정</span>
+            <span>진행 <b>0 / 3</b></span>
+            <span>D-<b>27</b></span>
+          </div>
+          <div class="mode-card__progress"><i style="width: 0%"></i></div>
+          <p class="mode-card__desc">시즌 한정 사건이 매주 추가됩니다. 시즌이 끝나기 전 모든 판결을 내려 칭호를 획득하세요.</p>
+          <span class="btn btn--main mode-card__cta">시즌 입장 <span style="opacity:0.7">→</span></span>
+        </button>
+      </div>
+
+      <div class="annot annot--tl" style="top: -20px; left: 0;">
+        <b>STACK · 패턴 13.A</b>
+        같은 카드가 -8/-6, -16/-12 위치로 어긋나서 뒤에 깔림. hover시 더 멀어짐.
+      </div>
+    </section>
+
+    <!-- Info cards -->
+    <section style="position: relative;">
+      <div class="info-grid">
+        <a class="info-card" href="#">
+          <div class="info-card__icon">👤</div>
+          <div class="info-card__body">
+            <div class="info-card__eyebrow">Judge Profile</div>
+            <h3 class="info-card__title">Lv 1 · 견습 재판관</h3>
+          </div>
+          <span class="info-card__arrow">›</span>
+        </a>
+        <a class="info-card" href="#">
+          <div class="info-card__icon">🏆</div>
+          <div class="info-card__body">
+            <div class="info-card__eyebrow">Leaderboard</div>
+            <h3 class="info-card__title">Season 02 순위</h3>
+          </div>
+          <span class="info-card__arrow">›</span>
+        </a>
+      </div>
+
+      <div class="annot annot--tr" style="top: -16px; right: 0;">
+        <b>Ghost Cards</b>
+        Light alpha .42 + blur 8px · 호버시 골드 .22 border로 부드럽게 깨움.
+      </div>
+    </section>
+  </div>
+</div>
+
+
+<!-- ════════════════════════════════════════
+     SESSION PAGE
+     ════════════════════════════════════════ -->
+<div class="doc-section-label">
+  Session Page (세션 선택)
+  <small>NESTED 패턴 · 4×2 그리드 · active 카드는 PEEK 패턴 추가 · 잠금은 opacity 0.32만</small>
+</div>
+
+<div class="viewport">
+  <div class="app-bar">
+    <div class="app-bar__brand">
+      <div class="ico">⚖</div>
+      <span>솔로몬 법정</span>
+    </div>
+    <div class="app-bar__center">SEASON 02 · 진행 중</div>
+    <div class="app-bar__tools">
+      <button class="tool-btn" title="설정">⚙</button>
+    </div>
+  </div>
+
+  <div class="stage">
+    <!-- Sub bar -->
+    <section class="sub-bar" style="position: relative;">
+      <div class="sub-bar__back">
+        <button class="btn btn--ghost">‹ 뒤로</button>
+      </div>
+      <div class="sub-bar__title">
+        <div class="sub-bar__eyebrow">Normal Mode</div>
+        <h1 class="sub-bar__h1">일반 모드 · 7세션</h1>
+        <p class="sub-bar__desc">관계 카테고리를 골라 사건을 시작하세요. 회색 처리된 세션은 향후 잠금 해제됩니다.</p>
+      </div>
+      <div class="sub-bar__tools">
+        <div class="toggle-row">
+          <span class="toggle-label">완료 기록만</span>
+          <div class="toggle"></div>
+        </div>
+      </div>
+
+      <div class="annot annot--tr" style="top: 0; right: 200px;">
+        <b>Sub Bar</b>
+        h1 28px 800 -0.02em · eyebrow 11 800 0.22em · description 15px secondary
+      </div>
+    </section>
+
+    <!-- Session grid -->
+    <section style="position: relative;">
+      <div class="session-grid">
+        <!-- 부부 (active + cleared) -->
+        <button class="session-card is-active" type="button">
+          <div class="session-card__inner">
+            <div class="session-card__top">
+              <span>Session 01</span>
+              <b>1 / 1</b>
+            </div>
+            <div class="session-card__icon">💑</div>
+            <h3 class="session-card__title">부부</h3>
+            <p class="session-card__tagline">말하지 못한 시간을 가려내다</p>
+            <div class="session-card__progress"><i style="width: 100%"></i></div>
+            <div class="session-card__foot">
+              <span>완료</span>
+              <span><b>82</b>점</span>
+            </div>
+          </div>
+        </button>
+
+        <!-- 가족 (cleared, idle) -->
+        <button class="session-card" type="button">
+          <div class="session-card__inner">
+            <div class="session-card__top">
+              <span>Session 02</span>
+              <b>1 / 1</b>
+            </div>
+            <div class="session-card__icon">👨‍👩‍👧</div>
+            <h3 class="session-card__title">가족</h3>
+            <p class="session-card__tagline">핏줄로 묶인 갈등의 결</p>
+            <div class="session-card__progress"><i style="width: 100%"></i></div>
+            <div class="session-card__foot">
+              <span>완료</span>
+              <span><b>76</b>점</span>
+            </div>
+          </div>
+        </button>
+
+        <!-- 친구 (cleared, idle) -->
+        <button class="session-card" type="button">
+          <div class="session-card__inner">
+            <div class="session-card__top">
+              <span>Session 03</span>
+              <b>1 / 1</b>
+            </div>
+            <div class="session-card__icon">🤝</div>
+            <h3 class="session-card__title">친구</h3>
+            <p class="session-card__tagline">닿을 듯 멀어지는 신뢰</p>
+            <div class="session-card__progress"><i style="width: 100%"></i></div>
+            <div class="session-card__foot">
+              <span>완료</span>
+              <span><b>88</b>점</span>
+            </div>
+          </div>
+        </button>
+
+        <!-- 이웃 (locked) -->
+        <button class="session-card is-locked" type="button" disabled>
+          <div class="session-card__inner">
+            <div class="session-card__top">
+              <span>Session 04</span>
+              <b>잠김</b>
+            </div>
+            <div class="session-card__icon">🏠</div>
+            <h3 class="session-card__title">이웃</h3>
+            <p class="session-card__tagline">담장을 사이에 둔 침묵</p>
+            <span class="session-card__lock-pill">🔒 준비 중</span>
+            <div class="session-card__foot">
+              <span>—</span>
+              <span>—</span>
+            </div>
+          </div>
+        </button>
+
+        <!-- 동업자 (locked) -->
+        <button class="session-card is-locked" type="button" disabled>
+          <div class="session-card__inner">
+            <div class="session-card__top">
+              <span>Session 05</span>
+              <b>잠김</b>
+            </div>
+            <div class="session-card__icon">📑</div>
+            <h3 class="session-card__title">동업자</h3>
+            <p class="session-card__tagline">나누지 못한 몫의 무게</p>
+            <span class="session-card__lock-pill">🔒 준비 중</span>
+            <div class="session-card__foot">
+              <span>—</span>
+              <span>—</span>
+            </div>
+          </div>
+        </button>
+
+        <!-- 세입자 (locked) -->
+        <button class="session-card is-locked" type="button" disabled>
+          <div class="session-card__inner">
+            <div class="session-card__top">
+              <span>Session 06</span>
+              <b>잠김</b>
+            </div>
+            <div class="session-card__icon">🔑</div>
+            <h3 class="session-card__title">세입자</h3>
+            <p class="session-card__tagline">살림과 약속이 맞부딪칠 때</p>
+            <span class="session-card__lock-pill">🔒 준비 중</span>
+            <div class="session-card__foot">
+              <span>—</span>
+              <span>—</span>
+            </div>
+          </div>
+        </button>
+
+        <!-- 직장 (locked) -->
+        <button class="session-card is-locked" type="button" disabled>
+          <div class="session-card__inner">
+            <div class="session-card__top">
+              <span>Session 07</span>
+              <b>잠김</b>
+            </div>
+            <div class="session-card__icon">💼</div>
+            <h3 class="session-card__title">직장</h3>
+            <p class="session-card__tagline">위계와 의리가 충돌하는 자리</p>
+            <span class="session-card__lock-pill">🔒 준비 중</span>
+            <div class="session-card__foot">
+              <span>—</span>
+              <span>—</span>
+            </div>
+          </div>
+        </button>
+
+        <!-- 빈 슬롯 (시즌 추가 예정) -->
+        <button class="session-card is-locked" type="button" disabled style="opacity:0.18;">
+          <div class="session-card__inner">
+            <div class="session-card__top">
+              <span>Session 08</span>
+              <b>—</b>
+            </div>
+            <div class="session-card__icon">＋</div>
+            <h3 class="session-card__title">미정</h3>
+            <p class="session-card__tagline">시즌 03에서 추가 예정</p>
+            <span class="session-card__lock-pill">— 미정</span>
+            <div class="session-card__foot">
+              <span>—</span>
+              <span>—</span>
+            </div>
+          </div>
+        </button>
+      </div>
+
+      <div class="annot annot--tl" style="top: -10px; left: 0;">
+        <b>NESTED 패턴 13.B</b>
+        outer 18 · inner 14, radius 차 4px. active 카드는 PEEK 추가 (좌측 24px 골드 카드 반쯤 뒤에).
+      </div>
+      <div class="annot annot--tr" style="top: 320px; right: 8px;">
+        <b>Locked = opacity 0.32</b>
+        색상으로 강조하지 않음. 그냥 어두움 + 잠금 칩.
+      </div>
+    </section>
+  </div>
+</div>
+
+
+<!-- ════════════════════════════════════════
+     SUMMARY / SPEC
+     ════════════════════════════════════════ -->
+<div class="doc-section-label">
+  Spec Summary
+  <small>가이드 매핑표</small>
+</div>
+
+<div style="padding: 32px 48px 80px; max-width: 1480px; margin: 0 auto;">
+  <table style="width:100%; border-collapse: collapse; font-size: 13.5px;">
+    <thead>
+      <tr style="background: rgba(212,162,78,0.04);">
+        <th style="text-align:left; padding:12px; font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:var(--gold-alt); border-bottom:1px solid var(--panel-border); width:24%;">요소</th>
+        <th style="text-align:left; padding:12px; font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:var(--gold-alt); border-bottom:1px solid var(--panel-border); width:18%;">패턴</th>
+        <th style="text-align:left; padding:12px; font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:var(--gold-alt); border-bottom:1px solid var(--panel-border); width:22%;">폰트</th>
+        <th style="text-align:left; padding:12px; font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:var(--gold-alt); border-bottom:1px solid var(--panel-border); width:36%;">메모</th>
+      </tr>
+    </thead>
+    <tbody style="color: var(--text-secondary);">
+      <tr><td style="padding:10px 12px; color:var(--text-primary); font-weight:700;">Hero Title</td><td style="padding:10px 12px;">—</td><td style="padding:10px 12px;">64px 900 -0.045em</td><td style="padding:10px 12px;">좌·우 저울 ornament 32px. 가운데 정렬.</td></tr>
+      <tr><td style="padding:10px 12px; color:var(--text-primary); font-weight:700;">Hero Subtitle</td><td style="padding:10px 12px;">—</td><td style="padding:10px 12px;">20px text-secondary</td><td style="padding:10px 12px;">max-width 640px.</td></tr>
+      <tr><td style="padding:10px 12px; color:var(--text-primary); font-weight:700;">Hero Eyebrow</td><td style="padding:10px 12px;">Pill</td><td style="padding:10px 12px;">12px 800 0.26em</td><td style="padding:10px 12px;">골드 .06 bg + .12 border, padding 6/14.</td></tr>
+      <tr><td style="padding:10px 12px; color:var(--text-primary); font-weight:700;">Mode Card</td><td style="padding:10px 12px;"><b style="color:var(--gold-alt)">STACK 13.A</b></td><td style="padding:10px 12px;">title 36 / eyebrow 11 / body 15</td><td style="padding:10px 12px;">2겹 ::before/::after 어긋남. radius 18.</td></tr>
+      <tr><td style="padding:10px 12px; color:var(--text-primary); font-weight:700;">Mode Card CTA</td><td style="padding:10px 12px;">Btn Main (Sec)</td><td style="padding:10px 12px;">15px 700</td><td style="padding:10px 12px;">골드 .10 bg + .45 border. <b>그라디언트 X</b>.</td></tr>
+      <tr><td style="padding:10px 12px; color:var(--text-primary); font-weight:700;">Info Card</td><td style="padding:10px 12px;">Ghost (Light + blur)</td><td style="padding:10px 12px;">title 20 / eyebrow 11</td><td style="padding:10px 12px;">backdrop blur 8px · radius 14.</td></tr>
+      <tr><td style="padding:10px 12px; color:var(--text-primary); font-weight:700;">Sub Bar Title</td><td style="padding:10px 12px;">—</td><td style="padding:10px 12px;">28px 800 -0.02em</td><td style="padding:10px 12px;">eyebrow + h1 + description 3단.</td></tr>
+      <tr><td style="padding:10px 12px; color:var(--text-primary); font-weight:700;">Session Card (idle)</td><td style="padding:10px 12px;"><b style="color:var(--gold-alt)">NESTED 13.B</b></td><td style="padding:10px 12px;">title 24 / tagline 13</td><td style="padding:10px 12px;">outer 18 / inner 14 (radius 차 4px). 4×2 그리드.</td></tr>
+      <tr><td style="padding:10px 12px; color:var(--text-primary); font-weight:700;">Session Card (active)</td><td style="padding:10px 12px;">NESTED + <b style="color:var(--gold-alt)">PEEK 13.C</b></td><td style="padding:10px 12px;">동일</td><td style="padding:10px 12px;">좌측 -10px에 24px 골드 카드 절반 뒤에.</td></tr>
+      <tr><td style="padding:10px 12px; color:var(--text-primary); font-weight:700;">Session Card (locked)</td><td style="padding:10px 12px;">NESTED + opacity</td><td style="padding:10px 12px;">동일</td><td style="padding:10px 12px;">opacity 0.32. 색 X. lock chip만.</td></tr>
+      <tr><td style="padding:10px 12px; color:var(--text-primary); font-weight:700;">App Bar</td><td style="padding:10px 12px;">Light + blur</td><td style="padding:10px 12px;">brand 16 800 / center 11 800 0.22em</td><td style="padding:10px 12px;">60px 높이. 좌(brand) - 가운데(season) - 우(tools) 3분할.</td></tr>
+      <tr><td style="padding:10px 12px; color:var(--text-primary); font-weight:700;">버튼 (전 화면)</td><td style="padding:10px 12px;">Secondary (Main)</td><td style="padding:10px 12px;">15px 700 / 13px pill</td><td style="padding:10px 12px;"><b>그라디언트 사용 0건</b>. 모두 outline. hover시 glow.</td></tr>
+      <tr><td style="padding:10px 12px; color:var(--text-primary); font-weight:700;">배경</td><td style="padding:10px 12px;">Wood Primary + Glow</td><td style="padding:10px 12px;">—</td><td style="padding:10px 12px;">2-layer radial gold + vignette + 미세 noise.</td></tr>
+      <tr><td style="padding:10px 12px; color:var(--text-primary); font-weight:700;">선 두께</td><td style="padding:10px 12px;">전 영역 1px</td><td style="padding:10px 12px;">—</td><td style="padding:10px 12px;">1.5px / 3px 사용 0건. portrait ring만 2px.</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</body>
+</html>

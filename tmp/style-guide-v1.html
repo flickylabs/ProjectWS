@@ -5,29 +5,45 @@
 <title>Solomon Court — PC Style Guide v1 (플레이 UI 기반 통합 토큰)</title>
 <style>
   :root {
-    /* ── Gold ── */
-    --gold:        #d4a24e;
-    --gold-light:  #e8c172;
-    --gold-bright: #f0d890;
-    --gold-dim:    #8b6914;
+    /* ═══ PRIMARY / ALT 2단 체계 ═══ */
 
-    /* ── Dark surfaces ── */
-    --wood-deep:    #0d0e12;
-    --wood-dark:    #12141a;
-    --wood-medium:  #1c1f26;
-    --wood-warm:    #5a5f6c;
+    /* ── Gold (메인 액센트 — 골드는 무조건 둘 중 하나만 선택) ── */
+    --gold-primary: #d4a24e;     /* Main · idle gold, border, body */
+    --gold-alt:     #e8c172;     /* Alt  · hover/active, glow, light text */
 
-    /* ── Speakers ── */
-    --blue:    #5b8def;   /* 당사자 A */
-    --red:     #e06060;   /* 당사자 B */
-    --amber:   #d4a24e;   /* 재판관 */
-    --witness: #9ba87a;   /* 증인 */
-    --green:   #5cc97a;   /* 성공·완료 */
+    /* ── Wood (어두운 배경 — 둘 중 하나만 선택) ── */
+    --wood-primary: #0d0e12;     /* Main · viewport base */
+    --wood-alt:     #1c1f26;     /* Alt  · elevated panel surface */
 
-    /* ── Text ── */
-    --text:       #ede3cc;
-    --text-dim:   #b5a888;
-    --text-muted: #857b68;
+    /* ── Text (3단 — 의미별 명확) ── */
+    --text-primary:   #ede3cc;   /* 본문 / 제목 / 활성 라벨 */
+    --text-secondary: #b5a888;   /* 보조 / 메타 / 디스크립션 */
+    --text-tertiary:  #857b68;   /* 캡션 / 비활성 / hint */
+
+    /* ── Speakers (각자 고유 의미. Primary/Alt 분리 안 함) ── */
+    --speaker-a:       #5b8def;  /* 당사자 A (blue) */
+    --speaker-b:       #e06060;  /* 당사자 B (red) */
+    --speaker-witness: #9ba87a;  /* 증인 (golden green) */
+    --speaker-success: #5cc97a;  /* 성공/완료 (green) */
+    --speaker-warning: #ffb347;  /* 경고/주의 (amber) */
+
+    /* ═══ LEGACY ALIASES (기존 코드 호환용 — 신규 코드는 위 토큰 사용) ═══ */
+    --gold:        var(--gold-primary);
+    --gold-light:  var(--gold-alt);
+    --gold-bright: var(--gold-alt);   /* gold-bright 폐기 → alt로 일원화 */
+    --gold-dim:    var(--gold-primary); /* gold-dim 폐기 → primary 저투명도로 */
+    --wood-deep:   var(--wood-primary);
+    --wood-dark:   var(--wood-primary);
+    --wood-medium: var(--wood-alt);
+    --wood-warm:   #5a5f6c;            /* 특수 utility — rim light용 */
+    --blue:    var(--speaker-a);
+    --red:     var(--speaker-b);
+    --amber:   var(--gold-primary);
+    --witness: var(--speaker-witness);
+    --green:   var(--speaker-success);
+    --text:       var(--text-primary);
+    --text-dim:   var(--text-secondary);
+    --text-muted: var(--text-tertiary);
 
     /* ── Panel ── */
     --panel-bg:        linear-gradient(180deg, rgba(18,19,24,0.42), rgba(13,14,18,0.52));
@@ -515,76 +531,114 @@
   }
 
   /* ───────────────────────────────────
-     Painterly / 왼쪽 덧칠
+     Layered rounded corners (왼쪽 덧칠 — 둥근 모서리 겹침)
      ─────────────────────────────────── */
-  .paint-demo {
+  .layer-demo {
     position: relative;
-    padding: 28px 24px 24px 36px;
-    border-radius: 14px;
-    background: var(--panel-bg);
-    border: 1px solid var(--panel-border-soft);
-    overflow: hidden;
+    padding: 26px 22px 22px;
+    min-height: 96px;
   }
-  .paint-demo h4 {
+  .layer-demo h4 {
     margin: 0 0 6px;
     font-size: 13px; font-weight: 800; letter-spacing: 0.18em;
-    text-transform: uppercase; color: var(--gold-light);
+    text-transform: uppercase; color: var(--gold-alt);
+    position: relative; z-index: 3;
   }
-  .paint-demo p { margin: 0; font-size: 14px; color: var(--text-dim); }
-
-  /* Variant A: solid bar */
-  .paint-a::before {
-    content: ''; position: absolute;
-    left: 0; top: 14px; bottom: 14px;
-    width: 4px; border-radius: 2px;
-    background: linear-gradient(180deg,
-      rgba(212,162,78,0) 0%,
-      rgba(232,193,114,0.85) 14%,
-      rgba(232,193,114,0.85) 86%,
-      rgba(212,162,78,0) 100%);
+  .layer-demo p {
+    margin: 0; font-size: 14px; color: var(--text-secondary);
+    position: relative; z-index: 3;
   }
 
-  /* Variant B: brush/wash bleed */
-  .paint-b::before {
+  /* Pattern A: STACK — 같은 카드가 살짝씩 어긋나게 뒤로 겹침 */
+  .layer-stack {
+    position: relative;
+    border-radius: 14px;
+    background: rgba(22,24,30,0.92);
+    border: 1px solid var(--panel-border);
+  }
+  .layer-stack::before,
+  .layer-stack::after {
     content: ''; position: absolute;
-    left: 0; top: 0; bottom: 0; width: 80px;
-    background: linear-gradient(90deg,
-      rgba(212,162,78,0.16) 0%,
-      rgba(212,162,78,0.06) 40%,
-      transparent 100%);
+    inset: 0;
+    border-radius: 14px;
+    border: 1px solid var(--panel-border-soft);
+    z-index: -1;
     pointer-events: none;
   }
-  .paint-b::after {
-    content: ''; position: absolute;
-    left: 0; top: 0; bottom: 0; width: 2px;
-    background: rgba(232,193,114,0.5);
+  .layer-stack::before {
+    transform: translate(-6px, -4px);
+    background: rgba(18,20,26,0.85);
+  }
+  .layer-stack::after {
+    transform: translate(-12px, -8px);
+    background: rgba(14,15,20,0.78);
+    border-color: rgba(212,162,78,0.10);
   }
 
-  /* Variant C: scribble accent (svg fractal) */
-  .paint-c {
-    background:
-      var(--panel-bg),
-      linear-gradient(90deg, rgba(212,162,78,0.04) 0%, transparent 30%);
-    background-blend-mode: normal;
+  /* Pattern B: NESTED — outer rounded + inner rounded, 가장자리 겹침 */
+  .layer-nested {
+    position: relative;
+    border-radius: 16px;
+    background: rgba(20,22,28,0.85);
+    border: 1px solid var(--panel-border);
+    padding: 10px;
   }
-  .paint-c::before {
+  .layer-nested-inner {
+    border-radius: 12px;
+    background: rgba(212,162,78,0.04);
+    border: 1px solid rgba(212,162,78,0.18);
+    padding: 18px 16px 16px;
+    position: relative;
+  }
+  .layer-nested-inner h4 { color: var(--gold-alt); margin: 0 0 4px; font-size: 13px; font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase; }
+  .layer-nested-inner p  { margin: 0; font-size: 14px; color: var(--text-secondary); }
+
+  /* Pattern C: PEEK — 좌측 뒤에 둥근 카드가 살짝 비어져 나옴 */
+  .layer-peek {
+    position: relative;
+    margin-left: 14px;
+    border-radius: 14px;
+    background: rgba(22,24,30,0.92);
+    border: 1px solid var(--panel-border);
+  }
+  .layer-peek::before {
     content: ''; position: absolute;
-    left: 0; top: 0; width: 24px; height: 100%;
-    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='1.4' numOctaves='2' seed='9'/><feColorMatrix values='0 0 0 0 0.83  0 0 0 0 0.63  0 0 0 0 0.31  0 0 0 0.18 0'/></filter><rect width='24' height='200' filter='url(%23n)'/></svg>");
-    opacity: 0.7;
-    pointer-events: none;
+    left: -14px; top: 8px; bottom: 8px;
+    width: 36px;
+    border-radius: 14px;
+    background: rgba(212,162,78,0.10);
+    border: 1px solid rgba(212,162,78,0.28);
+    z-index: -1;
   }
 
-  /* Variant D: tab indicator (active tab) */
+  /* Pattern D: OVERLAP — 카드 좌측 모서리에 작은 둥근 칩이 겹침 */
+  .layer-overlap {
+    position: relative;
+    border-radius: 14px;
+    background: rgba(22,24,30,0.92);
+    border: 1px solid var(--panel-border);
+  }
+  .layer-overlap::before {
+    content: ''; position: absolute;
+    left: -10px; top: 50%;
+    transform: translateY(-50%);
+    width: 34px; height: 34px;
+    border-radius: 12px;
+    background: rgba(212,162,78,0.18);
+    border: 1px solid rgba(212,162,78,0.5);
+    box-shadow: 0 0 12px rgba(212,162,78,0.22);
+  }
+
+  /* Tab indicator (former Pattern D, kept for tabs only) */
   .paint-d-row { display: flex; gap: 0; border-bottom: 1px solid var(--panel-border-soft); margin-bottom: 14px; }
   .paint-tab {
     position: relative;
     padding: 10px 18px;
     font-size: 13px; font-weight: 700;
-    color: var(--text-muted);
+    color: var(--text-tertiary);
     cursor: pointer;
   }
-  .paint-tab.is-active { color: var(--gold-light); }
+  .paint-tab.is-active { color: var(--gold-alt); }
   .paint-tab.is-active::after {
     content: '';
     position: absolute;
@@ -592,11 +646,39 @@
     height: 2px;
     background: linear-gradient(90deg,
       transparent 0%,
-      var(--gold-light) 20%,
-      var(--gold-light) 80%,
+      var(--gold-alt) 20%,
+      var(--gold-alt) 80%,
       transparent 100%);
     box-shadow: 0 0 8px rgba(232,193,114,0.6);
   }
+
+  /* Color pair (Primary / Alt) */
+  .pair-row {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+  .pair-card {
+    padding: 16px;
+    border-radius: 14px;
+    border: 1px solid rgba(255,255,255,0.06);
+    background: var(--panel-bg-soft);
+  }
+  .pair-card .role {
+    font-size: 10px; font-weight: 800;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--text-tertiary);
+    margin-bottom: 8px;
+  }
+  .pair-card.is-primary .role { color: var(--gold-alt); }
+  .pair-card.is-alt     .role { color: var(--text-secondary); }
+  .pair-card .swc {
+    height: 56px; border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.05);
+    margin-bottom: 10px;
+  }
+  .pair-card .nm  { font-size: 13px; font-weight: 700; color: var(--text-primary); }
+  .pair-card .hex { font-size: 11px; color: var(--gold-primary); font-family: 'SF Mono', monospace; margin-top: 2px; }
+  .pair-card .use { font-size: 11px; color: var(--text-tertiary); margin-top: 8px; line-height: 1.55; }
 
   /* ───────────────────────────────────
      Panel hierarchy (패널 구분)
@@ -876,38 +958,94 @@
 </p>
 
 <!-- ════════════════════════════════════════ -->
-<h2>1. 컬러 팔레트</h2>
-<p>플레이 화면의 다크 우드 + 골드 + 화자색 시스템. 앰버 톤은 제거하고 차콜 베이스 유지.</p>
+<h2>1. 컬러 팔레트 — Primary / Alt 2단 체계</h2>
+<p>
+  같은 계열의 색은 <b>2개로 한정</b>. 사용자가 매번 "어떤 골드?"를 고민하지 않도록 <b>Primary(기본) / Alt(보조)</b>로 명확히 분리.<br>
+  기존 <code>gold-bright</code> · <code>gold-dim</code>은 폐기. 필요하면 alt를 opacity 조정으로 대체.
+</p>
 
-<h3>Gold — 메인 액센트</h3>
-<div class="grid cols-4">
-  <div class="swatch"><div class="chip" style="background:#d4a24e"></div><div class="name">Gold</div><div class="var">--gold</div><div class="hex">#d4a24e</div></div>
-  <div class="swatch"><div class="chip" style="background:#e8c172"></div><div class="name">Gold Light</div><div class="var">--gold-light</div><div class="hex">#e8c172</div></div>
-  <div class="swatch"><div class="chip" style="background:#f0d890"></div><div class="name">Gold Bright</div><div class="var">--gold-bright</div><div class="hex">#f0d890</div></div>
-  <div class="swatch"><div class="chip" style="background:#8b6914"></div><div class="name">Gold Dim</div><div class="var">--gold-dim</div><div class="hex">#8b6914</div></div>
+<h3>Gold — Primary / Alt</h3>
+<div class="frame">
+  <div class="pair-row">
+    <div class="pair-card is-primary">
+      <div class="role">PRIMARY · MAIN</div>
+      <div class="swc" style="background:#d4a24e"></div>
+      <div class="nm">Gold Primary</div>
+      <div class="hex">#d4a24e · <code>--gold-primary</code></div>
+      <div class="use">
+        <b>언제 쓰나:</b> idle 상태 골드 — 패널 border, 일반 텍스트 강조, archetype chip 외곽선, 비활성 인디케이터.<br>
+        <b>은유:</b> "조용히 있는 황금".
+      </div>
+    </div>
+    <div class="pair-card is-alt">
+      <div class="role">ALT · HOVER · ACTIVE</div>
+      <div class="swc" style="background:#e8c172"></div>
+      <div class="nm">Gold Alt</div>
+      <div class="hex">#e8c172 · <code>--gold-alt</code></div>
+      <div class="use">
+        <b>언제 쓰나:</b> hover/active/focused — eyebrow 텍스트, active 라벨, glow 색상, 패널 헤더 아이콘 색.<br>
+        <b>은유:</b> "빛을 받은 황금".
+      </div>
+    </div>
+  </div>
+  <div class="note">
+    ⚠ <b>Primary와 Alt를 한 요소에 동시에 쓰지 말 것</b>. 한 컴포넌트는 둘 중 하나만 선택. 보색은 항상 opacity 변형(.10~.50)으로 표현.<br>
+    예: 패널 border = Primary <code>.22</code>, hover시 = <b>같은 Primary <code>.40</code></b>로 강화 (Alt로 바꾸지 마라).
+  </div>
 </div>
 
-<h3>Dark — 배경 / 표면</h3>
-<div class="grid cols-4">
-  <div class="swatch"><div class="chip" style="background:#0d0e12"></div><div class="name">Wood Deep</div><div class="var">--wood-deep</div><div class="hex">#0d0e12</div></div>
-  <div class="swatch"><div class="chip" style="background:#12141a"></div><div class="name">Wood Dark</div><div class="var">--wood-dark</div><div class="hex">#12141a</div></div>
-  <div class="swatch"><div class="chip" style="background:#1c1f26"></div><div class="name">Wood Medium</div><div class="var">--wood-medium</div><div class="hex">#1c1f26</div></div>
-  <div class="swatch"><div class="chip" style="background:#5a5f6c"></div><div class="name">Wood Warm</div><div class="var">--wood-warm</div><div class="hex">#5a5f6c</div></div>
+<h3>Dark / Surface — Primary / Alt</h3>
+<div class="frame">
+  <div class="pair-row">
+    <div class="pair-card is-primary">
+      <div class="role">PRIMARY · BASE</div>
+      <div class="swc" style="background:#0d0e12"></div>
+      <div class="nm">Wood Primary</div>
+      <div class="hex">#0d0e12 · <code>--wood-primary</code></div>
+      <div class="use">
+        <b>언제 쓰나:</b> viewport 배경, 가장 깊은 다크. body 기본값.<br>
+        <b>은유:</b> "법정의 어둠".
+      </div>
+    </div>
+    <div class="pair-card is-alt">
+      <div class="role">ALT · ELEVATED</div>
+      <div class="swc" style="background:#1c1f26"></div>
+      <div class="nm">Wood Alt</div>
+      <div class="hex">#1c1f26 · <code>--wood-alt</code></div>
+      <div class="use">
+        <b>언제 쓰나:</b> 패널/카드 표면 — 배경보다 한 단계 위로 떠 있는 표면.<br>
+        <b>은유:</b> "법정의 단상".
+      </div>
+    </div>
+  </div>
+  <div class="note">⚠ 이전 <code>--wood-dark</code> · <code>--wood-medium</code>은 폐기. 패널 배경이 필요하면 <b>Wood Alt를 alpha 변형 (.42 ~ .96)</b>으로.</div>
 </div>
 
-<h3>Speakers — 화자별 색</h3>
-<div class="grid cols-4">
-  <div class="swatch"><div class="chip" style="background:#5b8def"></div><div class="name">Blue (당사자 A)</div><div class="var">--blue</div><div class="hex">#5b8def</div></div>
-  <div class="swatch"><div class="chip" style="background:#e06060"></div><div class="name">Red (당사자 B)</div><div class="var">--red</div><div class="hex">#e06060</div></div>
-  <div class="swatch"><div class="chip" style="background:#9ba87a"></div><div class="name">Witness (증인)</div><div class="var">--witness</div><div class="hex">#9ba87a</div></div>
-  <div class="swatch"><div class="chip" style="background:#5cc97a"></div><div class="name">Green (성공)</div><div class="var">--green</div><div class="hex">#5cc97a</div></div>
-</div>
-
-<h3>Text</h3>
+<h3>Text — 3단 (의미별 명확)</h3>
+<p style="font-size:13px;">텍스트는 의미가 3개라 3단 유지. Primary/Alt 패턴 안 적용.</p>
 <div class="grid cols-3">
-  <div class="swatch"><div class="chip" style="background:#ede3cc"></div><div class="name">Text Primary</div><div class="var">--text</div><div class="hex">#ede3cc</div></div>
-  <div class="swatch"><div class="chip" style="background:#b5a888"></div><div class="name">Text Dim</div><div class="var">--text-dim</div><div class="hex">#b5a888</div></div>
-  <div class="swatch"><div class="chip" style="background:#857b68"></div><div class="name">Text Muted</div><div class="var">--text-muted</div><div class="hex">#857b68</div></div>
+  <div class="swatch"><div class="chip" style="background:#ede3cc"></div><div class="name">Text Primary</div><div class="var">--text-primary</div><div class="hex">#ede3cc · 본문/제목/활성</div></div>
+  <div class="swatch"><div class="chip" style="background:#b5a888"></div><div class="name">Text Secondary</div><div class="var">--text-secondary</div><div class="hex">#b5a888 · 보조/메타</div></div>
+  <div class="swatch"><div class="chip" style="background:#857b68"></div><div class="name">Text Tertiary</div><div class="var">--text-tertiary</div><div class="hex">#857b68 · 캡션/hint</div></div>
+</div>
+
+<h3>Speakers — 화자색 (각자 고유 의미)</h3>
+<p style="font-size:13px;">화자색은 각자 의미가 다르므로 Primary/Alt 적용 안 함. 5개 모두 단일 색. 강조 시 같은 색 alpha 변형(.10~.60).</p>
+<div class="grid cols-3">
+  <div class="swatch"><div class="chip" style="background:#5b8def"></div><div class="name">Speaker A · Blue</div><div class="var">--speaker-a</div><div class="hex">#5b8def · 당사자 A</div></div>
+  <div class="swatch"><div class="chip" style="background:#e06060"></div><div class="name">Speaker B · Red</div><div class="var">--speaker-b</div><div class="hex">#e06060 · 당사자 B</div></div>
+  <div class="swatch"><div class="chip" style="background:#9ba87a"></div><div class="name">Witness · Olive</div><div class="var">--speaker-witness</div><div class="hex">#9ba87a · 증인</div></div>
+  <div class="swatch"><div class="chip" style="background:#5cc97a"></div><div class="name">Success · Green</div><div class="var">--speaker-success</div><div class="hex">#5cc97a · 성공/완료</div></div>
+  <div class="swatch"><div class="chip" style="background:#ffb347"></div><div class="name">Warning · Amber</div><div class="var">--speaker-warning</div><div class="hex">#ffb347 · 경고/주의</div></div>
+</div>
+
+<div class="frame" style="border-color:rgba(224,96,96,0.32); background:rgba(224,96,96,0.04); margin-top:18px;">
+  <div style="font-size:12px; font-weight:800; letter-spacing:0.14em; color:var(--speaker-b); text-transform:uppercase; margin-bottom:10px;">⚠ 폐기된 토큰</div>
+  <ul style="margin:0; padding-left:20px; color:var(--text-secondary); line-height:1.8; font-size:13px;">
+    <li><code>--gold-bright</code> · <code>--gold-dim</code> — 거의 안 쓰이고, 사용자가 어떤 골드를 고를지 혼란만 줌. <b>Alt 또는 Primary opacity 변형으로 대체</b>.</li>
+    <li><code>--wood-dark</code> · <code>--wood-medium</code> — Primary/Alt + alpha로 충분. 중간 톤 필요시 <b>panel-bg gradient</b> 사용.</li>
+    <li>위 토큰들은 alias로 살아있어 기존 코드 작동에는 문제 없음. 신규 코드는 <b>Primary/Alt만</b> 사용.</li>
+  </ul>
 </div>
 
 <h3>Panel — 패널 토큰 (rgba 기반)</h3>
@@ -926,46 +1064,51 @@
 
 
 <!-- ════════════════════════════════════════ -->
-<h2>2. 버튼</h2>
-<p>모든 버튼은 transition 140ms ease + hover시 translateY(-1px). Primary CTA만 골드 그라디언트, 나머지는 outline 패턴.</p>
+<h2>2. 버튼 — Main(Secondary) / Ghost / Party</h2>
+<p>
+  솔로몬 법정의 톤은 차분함. <b>골드 outline (Secondary)이 메인 CTA로 채택</b>됨. 그라디언트 Primary는 폐기 (특수 1~2 케이스만 잔존).<br>
+  모든 버튼 transition 140ms · hover시 translateY(-1px).
+</p>
 
-<h3>Primary — 골드 그라디언트 (메인 CTA, 결정 액션)</h3>
+<h3 style="color: var(--gold-alt);">MAIN — 골드 outline (모든 결정 액션의 기본)</h3>
 <div class="frame">
   <div style="display:flex; gap:12px; flex-wrap:wrap; align-items:center;">
-    <button class="btn btn--primary">사건 입장하기</button>
-    <button class="btn btn--primary btn--cta">⚖️ 사건 입장하기 <span class="kbd">Enter</span></button>
-    <button class="btn btn--primary btn--pill">모순을 찌른다</button>
-  </div>
-  <div class="note"><b>Use:</b> 사건 입장 · 모순 찌르기 · 판결 · "다음 진술" 진행. 한 화면에 1개만.</div>
-</div>
-
-<h3>Secondary — 골드 outline (기본 액션, 자주 쓰는 토글성 버튼)</h3>
-<div class="frame">
-  <div style="display:flex; gap:12px; flex-wrap:wrap; align-items:center;">
-    <button class="btn btn--secondary">증거 열람</button>
+    <button class="btn btn--secondary">사건 입장하기</button>
+    <button class="btn btn--secondary" style="height:52px; padding: 0 28px; font-size: 16px; border-radius: 14px;">사건 입장하기</button>
     <button class="btn btn--secondary btn--pill">Phase 1 - 사전진술</button>
     <button class="btn btn--secondary btn--pill">다음 진술 6/13 <span class="kbd">Space</span></button>
   </div>
-  <div class="note"><b>Use:</b> 모달 액션 · phase pill · Space 진행 표시. <b>Primary 1개 + Secondary 0~3개</b> 권장.</div>
+  <div class="note">
+    <b>Use:</b> 사건 입장 · 모달 결정 액션 · Phase pill · Space 진행 · 모순 찌르기 등 <b>거의 모든 CTA</b>.<br>
+    bg gold .10 / border .45 / hover시 .65 + glow 18px. 그라디언트 X.
+  </div>
 </div>
 
-<h3>Ghost — 중립 액션 (취소 · 뒤로 · 부가)</h3>
+<h3>GHOST — 중립 (뒤로 · 취소 · 스킵)</h3>
 <div class="frame">
   <div style="display:flex; gap:12px; flex-wrap:wrap; align-items:center;">
     <button class="btn btn--ghost">‹ 뒤로</button>
     <button class="btn btn--ghost">지금은 넘긴다</button>
     <button class="btn btn--ghost btn--pill">완료 기록만</button>
   </div>
-  <div class="note"><b>Use:</b> 뒤로/취소/스킵. 색은 죽이고 hover시 골드 0.28로 살짝 깨운다.</div>
+  <div class="note">색은 죽이고 hover시 골드 0.28로 살짝 깨움. <b>Main과 함께 2버튼 다이얼로그</b>에서 좌측에 배치.</div>
 </div>
 
-<h3>Party CTA — 화자 색 outline (당사자에게 제시)</h3>
+<h3>PARTY CTA — 화자색 outline (당사자에게 제시 한정)</h3>
 <div class="frame">
   <div style="display:flex; gap:12px;">
-    <button class="btn" style="background:rgba(91,141,239,0.08); border-color:rgba(91,141,239,0.45); color:var(--blue); height:48px; padding:0 24px; font-size:14px;">박지연에게 제시</button>
-    <button class="btn" style="background:rgba(224,96,96,0.08); border-color:rgba(224,96,96,0.45); color:var(--red); height:48px; padding:0 24px; font-size:14px;">이준호에게 제시</button>
+    <button class="btn" style="background:rgba(91,141,239,0.08); border-color:rgba(91,141,239,0.45); color:var(--speaker-a); height:48px; padding:0 24px; font-size:14px;">박지연에게 제시</button>
+    <button class="btn" style="background:rgba(224,96,96,0.08); border-color:rgba(224,96,96,0.45); color:var(--speaker-b); height:48px; padding:0 24px; font-size:14px;">이준호에게 제시</button>
   </div>
-  <div class="note"><b>Use:</b> 증거 제시 모달 · 분리 심문. <b>화자 색 outline</b>으로 즉시 구분.</div>
+  <div class="note">증거 제시 / 분리 심문에만. 화자색 outline은 즉각적인 대상 식별 신호.</div>
+</div>
+
+<div class="frame" style="border-color:rgba(224,96,96,0.32); background:rgba(224,96,96,0.04);">
+  <div style="font-size:12px; font-weight:800; letter-spacing:0.14em; color:var(--speaker-b); text-transform:uppercase; margin-bottom:10px;">⚠ 폐기된 버튼 변형</div>
+  <ul style="margin:0; padding-left:20px; color:var(--text-secondary); line-height:1.8; font-size:13px;">
+    <li><b>Primary (골드 그라디언트)</b> — 게임 톤과 충돌. 모든 자리를 Main outline이 대체.</li>
+    <li>예외: 판결 모달 최종 확정 버튼 정도만 잔존 가능 (한 게임에 1번).</li>
+  </ul>
 </div>
 
 
@@ -984,38 +1127,31 @@
 
 
 <!-- ════════════════════════════════════════ -->
-<h2>4. 라인 / 디바이더</h2>
-<p>라인은 4가지로 한정. 두께는 항상 1px (수직 액센트만 4px).</p>
+<h2>4. 라인 / 디바이더 — 3종으로 통합</h2>
+<p>모든 라인 1px. 색·alpha만 다름. 4px vertical accent는 13. SOLID BAR 폐기와 함께 폐기.</p>
 
 <div class="frame">
   <div style="display: grid; gap: 24px;">
     <div>
-      <div style="font-size:11px; font-weight:800; letter-spacing:0.16em; color:var(--text-muted); margin-bottom:8px;">HAIRLINE — 같은 영역 내 항목 분리</div>
+      <div style="font-size:11px; font-weight:800; letter-spacing:0.16em; color:var(--gold-alt); margin-bottom:8px; text-transform:uppercase;">HAIRLINE · white .06 — 같은 영역 안 항목 분리</div>
       <div class="line-hairline"></div>
-      <div class="note"><code>rgba(255,255,255,0.06)</code></div>
+      <div class="note">L1 헤더와 본문 분리, list item 사이 세퍼레이터.</div>
     </div>
     <div>
-      <div style="font-size:11px; font-weight:800; letter-spacing:0.16em; color:var(--text-muted); margin-bottom:8px;">SOFT — 섹션 간 구분</div>
+      <div style="font-size:11px; font-weight:800; letter-spacing:0.16em; color:var(--gold-alt); margin-bottom:8px; text-transform:uppercase;">SOFT · gold .12 — 섹션 간 분리</div>
       <div class="line-soft"></div>
-      <div class="note"><code>rgba(212,162,78,0.12)</code></div>
+      <div class="note">brief 패널 head/body 사이, 모달 내부 섹션 구분.</div>
     </div>
     <div>
-      <div style="font-size:11px; font-weight:800; letter-spacing:0.16em; color:var(--text-muted); margin-bottom:8px;">STRONG — 활성 영역 경계</div>
-      <div class="line-strong"></div>
-      <div class="note"><code>rgba(212,162,78,0.40)</code></div>
-    </div>
-    <div>
-      <div style="font-size:11px; font-weight:800; letter-spacing:0.16em; color:var(--text-muted); margin-bottom:8px;">GLOW — 장식적 페이드</div>
+      <div style="font-size:11px; font-weight:800; letter-spacing:0.16em; color:var(--gold-alt); margin-bottom:8px; text-transform:uppercase;">GLOW · gradient fade — 장식적 (모달 head/footer만)</div>
       <div class="line-glow"></div>
-      <div class="note">linear-gradient(90deg, transparent, gold .60, transparent) — 모달 head/footer divider에만</div>
+      <div class="note">linear-gradient(90deg, transparent, gold .60, transparent). 결정적 모달 상단/하단 가벼운 강조.</div>
     </div>
-    <div>
-      <div style="font-size:11px; font-weight:800; letter-spacing:0.16em; color:var(--text-muted); margin-bottom:8px;">VERTICAL ACCENT — 패널 좌측 강조 (4px)</div>
-      <div style="display:flex; gap:14px; align-items:center;">
-        <div class="line-vert-accent"></div>
-        <div class="note">linear-gradient(180deg, transparent 0%, gold .85 12%, gold .85 88%, transparent 100%)<br>현재 사건 선택 씬은 <b style="color:var(--gold-light)">.85 + 페이드 12%</b>로 강화 적용 예정</div>
-      </div>
-    </div>
+  </div>
+  <div class="note" style="margin-top: 16px; padding: 12px 16px; border-radius: 10px; background: rgba(224,96,96,0.06); border: 1px solid rgba(224,96,96,0.18);">
+    <span style="color: var(--speaker-b); font-weight: 700;">⚠ 폐기:</span><br>
+    · <b>STRONG (gold .40)</b> — 패널 외곽 border가 이미 같은 역할. 라인으로 따로 안 그림.<br>
+    · <b>VERTICAL ACCENT (4px)</b> — 13.A SOLID BAR 폐기와 함께. 패널 좌측 강조는 PEEK + GLOW로 대체.
   </div>
 </div>
 
@@ -1156,81 +1292,122 @@
 
 
 <!-- ════════════════════════════════════════ -->
-<h2>12. 빛나는 효과 (Glow)</h2>
-<p>전 화면 동일 — Active/Hover에는 항상 골드 계열 빛이 약하게 깔린다. 6가지 변형으로 한정.</p>
+<h2>12. 빛나는 효과 — Primary / Secondary</h2>
+<p>실제 플레이 화면 분석 결과, 의도된 글로우는 <b>SOFT 한 가지</b>가 거의 전부. 나머지는 특수 상황 한정.</p>
 
-<h3>6가지 변형</h3>
+<h3 style="color: var(--gold-alt);">PRIMARY · SOFT — 모든 active/hover의 표준</h3>
 <div class="frame">
-  <div class="glow-grid">
-    <div class="glow-demo glow-soft"><span class="label-mini">SOFT</span>0 0 18px gold .18</div>
-    <div class="glow-demo glow-strong"><span class="label-mini">STRONG (CTA hover)</span>다중 레이어 (0/24/48px)</div>
-    <div class="glow-demo glow-inset"><span class="label-mini">INSET (active panel)</span>inset 0 0 24px gold .10</div>
-    <div class="glow-demo glow-pulse"><span class="label-mini">PULSE (지속)</span>2.4s 사이클 .16↔.42</div>
-    <div class="glow-demo glow-rim"><span class="label-mini">RIM (gradient border)</span>border-image gradient</div>
-    <div class="glow-demo glow-halo"><span class="label-mini">HALO (radial bg)</span>radial gradient inside</div>
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
+    <div class="glow-demo glow-soft"><span class="label-mini">SOFT (gold)</span>0 0 18px gold .18</div>
+    <div class="glow-demo" style="border-color: rgba(91,141,239,0.5); box-shadow: 0 0 18px rgba(91,141,239,0.22);"><span class="label-mini" style="color:var(--speaker-a);">SOFT (speaker)</span>0 0 18px speaker-a .22</div>
   </div>
   <div class="note">
-    <b>SOFT</b> = 일반 active state (stage pill, brief item hover)<br>
-    <b>STRONG</b> = Primary CTA hover, 결정적 모달<br>
-    <b>INSET</b> = 패널 내부 강조 (active 캐릭터 프로필)<br>
-    <b>PULSE</b> = 모순 알림 / 진행 가능 신호 — 절제해서 한 번에 1개만<br>
-    <b>RIM</b> = 모달/카드 가장자리 강조 (전체 윤곽)<br>
-    <b>HALO</b> = 인물 초상화 뒤 / 결정적 카드 (시즌 모드, MVP)
+    <b>색만 바꿔서</b> 사용 — 일반 active = gold, 화자 카드 active = 화자색.<br>
+    <b>사용처:</b> stage pill active, brief item hover, 캐릭터 카드 PEEK glow, 핫바 슬롯 hover, 토글 ON.
   </div>
 </div>
 
-<h3>레이어 조합 — 결정적 카드 (예: 사건 입장하기 CTA)</h3>
+<h3 style="color: var(--text-tertiary);">SECONDARY — 특수 상황</h3>
 <div class="frame">
-  <button class="btn btn--primary btn--cta" style="
-    box-shadow:
-      0 0 0 1px rgba(232,193,114,0.32),
-      0 8px 24px rgba(0,0,0,0.4),
-      0 0 32px rgba(212,162,78,0.28),
-      inset 0 1px 0 rgba(255,255,255,0.18);
-  ">⚖️ 사건 입장하기 <span class="kbd">Enter</span></button>
-  <div class="note">기본 그림자(0 8 24) + 골드 외곽 글로우(0 0 32) + 1px 골드 stroke + 상단 inset 흰빛. <b>레이어 4단</b>이 표준.</div>
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
+    <div class="glow-demo glow-pulse"><span class="label-mini">PULSE</span>2.4s 사이클 .16↔.42</div>
+    <div class="glow-demo glow-inset"><span class="label-mini">INSET</span>inset 0 0 24px .10</div>
+  </div>
+  <div class="note">
+    <b>PULSE:</b> 모순 5/5 가득 찼을 때, 자백 직전 — <b>한 화면에 1개만</b>. 평소 0.<br>
+    <b>INSET:</b> 패널 내부 자체가 빛나는 느낌 — brief 패널 등 결정적 카드. 평소 0.<br>
+    <span style="color: var(--speaker-b);">⚠ 폐기:</span> STRONG (다중 레이어) · RIM (border-image) · HALO (radial bg) — 실제 사용 0건. SOFT로 대체.
+  </div>
 </div>
 
 
 <!-- ════════════════════════════════════════ -->
-<h2>13. 왼쪽 덧칠 / 페인터리 (Left Accent / Painterly)</h2>
-<p>플레이 화면 좌측 패널들의 시각적 무게감 — "그림 같은 느낌"을 주는 핵심. 4가지 변형.</p>
+<h2>13. 둥근 모서리 겹침 — Primary / Secondary</h2>
+<p>
+  플레이 스크린샷에서 실제로 관찰되는 형태:<br>
+  ① <b>안쪽 카드가 바깥 카드 안에서 자기만의 둥근 모서리를 가짐</b> (frame-within-frame),<br>
+  ② <b>아바타·아이콘(원형)이 카드 좌측에 위치하면서 같은 색 측면 글로우가 카드 가장자리에 깔림</b>.<br>
+  이 두 가지가 Primary다. 나머지는 Secondary로 분리.
+</p>
 
-<h3>A. SOLID BAR — 4px 골드 수직 바 (현재 사건 선택 씬에 약하게 적용된 것)</h3>
+<h3 style="color: var(--gold-alt);">PRIMARY 1 · NESTED — 바깥 둥근 박스 안에 안쪽 둥근 카드</h3>
 <div class="frame">
-  <div class="paint-demo paint-a">
-    <h4>증거 수집</h4>
-    <p>골드 4px 수직 바 + 위·아래 14% 페이드. <b>활성 패널 좌측 식별자</b>로 사용.</p>
+  <div class="layer-demo layer-nested" style="padding: 10px;">
+    <div class="layer-nested-inner">
+      <h4>오피스텔 방문과 새벽 전화</h4>
+      <p>바깥 패널 (radius 16) 안에 안쪽 카드 (radius 12). <b>radius 차 4px 유지</b>가 핵심 — 두 둥근 모서리가 평행 곡선으로 보여 frame-within-frame 효과.</p>
+    </div>
   </div>
-  <div class="note">사용처: 사건 브리핑 패널, active 우측 패널, 선택된 캐릭터 프로필.</div>
+  <div class="note">
+    <b>구조:</b> outer radius 16 · padding 10 · inner radius 12. radius 차는 항상 4px (또는 14/10).<br>
+    <b>사용처:</b> brief 패널 안 항목, 모달 선택지, 발언노트, 증거 카드 본문. <b>가장 자주 쓰이는 표준</b>.
+  </div>
 </div>
 
-<h3>B. BRUSH WASH — 좌측 그라디언트 덧칠 (페인트가 번진 듯한 느낌)</h3>
+<h3 style="color: var(--gold-alt);">PRIMARY 2 · PEEK + SIDE GLOW — 아바타가 카드 가장자리에 + 측면 글로우</h3>
 <div class="frame">
-  <div class="paint-demo paint-b">
-    <h4>재판관의 관찰</h4>
-    <p>좌측 80px 영역에 골드 .16 → .06 → 0 그라디언트 + 좌측 가장자리 2px 골드 라인. <b>덧칠 + 경계선</b> 조합으로 회화적 느낌.</p>
+  <div class="layer-demo layer-peek" style="padding-left: 38px;">
+    <h4>박지연 (active)</h4>
+    <p>아바타가 카드 좌측 가장자리에 위치하면서 같은 화자색의 글로우가 카드 좌측 edge에 깔린다. <b>원형 아바타 + 카드 둥근 모서리 + 측면 글로우</b> 3요소가 만나는 패턴 (실제 캐릭터 카드/발언 카드/관찰 카드의 정답).</p>
   </div>
-  <div class="note">사용처: <b>이게 사용자가 의도한 "왼쪽 편에 덧칠"의 정답</b>. 패널 좌측이 그림자/잉크가 번진 듯 보임.</div>
+  <div class="note">
+    <b>구조:</b> 카드 좌측 안쪽에 원형 아바타·아이콘. 카드 좌측 edge에 같은 색 vertical glow (box-shadow inset 또는 ::before 12px 골드/화자색 fade).<br>
+    <b>사용처:</b> 캐릭터 프로필, 발언 말풍선, 관찰 카드, 증거 카드. <b>"왼쪽 덧칠"의 정답</b>.<br>
+    <b>색 매핑:</b> 박지연 = blue glow / 이준호 = red glow / 재판관·관찰 = gold glow.
+  </div>
 </div>
 
-<h3>C. SCRIBBLE / FRACTAL NOISE — 거친 페인터리 결</h3>
-<div class="frame">
-  <div class="paint-demo paint-c">
-    <h4>발언노트 즐겨찾기</h4>
-    <p>좌측 24px에 SVG fractalNoise 오버레이 (골드 톤). <b>거친 페인트 결</b>이 보이는 가장 회화적인 변형.</p>
-  </div>
-  <div class="note">사용처: 사건 선택 씬의 brief 패널 좌측, 핵심 모달 상단 등 <b>강한 인상</b>이 필요한 곳에 한정.</div>
-</div>
-
-<h3>D. TAB INDICATOR — 활성 탭 하단 골드 라인 + glow</h3>
+<h3>BORDER · TAB INDICATOR — 활성 탭 하단 골드 라인 (별개, 둥근 겹침 아님)</h3>
 <div class="frame">
   <div class="paint-d-row">
     <div class="paint-tab">기본 탭</div>
     <div class="paint-tab is-active">박지연</div>
     <div class="paint-tab">이준호</div>
   </div>
-  <div class="note">사용처: 우측 패널 박지연/이준호 탭, 재판관 데스크 탭. <b>2px 골드 + 양 끝 페이드 + glow 8px</b>.</div>
+  <div class="note">탭 active = 2px gold-alt + 양 끝 페이드 + glow 8px. 둥근 겹침 패턴 아님.</div>
+</div>
+
+<details style="margin-top: 18px;">
+  <summary style="cursor: pointer; padding: 14px 18px; border-radius: 12px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06); color: var(--text-secondary); font-size: 13px; font-weight: 700; letter-spacing: 0.06em;">
+    SECONDARY 패턴 (특수 상황 — 평소엔 사용 안 함) ▾
+  </summary>
+  <div style="margin-top: 14px;">
+    <h3 style="color: var(--text-tertiary); margin-top: 18px;">SECONDARY · STACK — 같은 카드가 어긋나서 뒤로 쌓임</h3>
+    <div class="frame">
+      <div class="layer-demo layer-stack">
+        <h4>증거 수집</h4>
+        <p>실제 플레이에선 안 쓰임. <b>특별한 무게감</b>이 필요한 곳에만 (예: 시즌 모드 입장 카드, 칭호 획득 모달). 평소는 Primary 사용.</p>
+      </div>
+      <div class="note">::before / ::after 두 겹 어긋남. <b>한 화면에 1개만</b> 허용.</div>
+    </div>
+
+    <h3 style="color: var(--text-tertiary); margin-top: 18px;">SECONDARY · OVERLAP — 둥근 칩이 카드 좌측 모서리에 박힘</h3>
+    <div class="frame">
+      <div class="layer-demo layer-overlap" style="padding-left: 38px;">
+        <h4>결정적 증거</h4>
+        <p>실제 플레이에선 안 쓰임. <b>강한 시각 앵커</b>가 필요한 결정적 순간만. 평소엔 PEEK으로 충분.</p>
+      </div>
+      <div class="note">::before로 34×34 골드 칩 left: -10px. 결정적 모순 마커, 자백 카드 등 한정.</div>
+    </div>
+  </div>
+</details>
+
+<h3>패턴 매핑</h3>
+<div class="frame" style="border-color:rgba(212,162,78,0.42); background:rgba(212,162,78,0.04);">
+  <table class="ctx-table" style="margin: 0;">
+    <thead><tr><th style="width:30%;">상황</th><th style="width:24%;">패턴</th><th>이유</th></tr></thead>
+    <tbody>
+      <tr><td class="ctx">brief 패널 안 항목</td><td><span class="ctx-pill ctx-gold">PRIMARY · NESTED</span></td><td>frame-within-frame 표준</td></tr>
+      <tr><td class="ctx">모달 선택지 카드</td><td><span class="ctx-pill ctx-gold">PRIMARY · NESTED</span></td><td>위와 동일</td></tr>
+      <tr><td class="ctx">발언노트 / 증거 카드</td><td><span class="ctx-pill ctx-gold">PRIMARY · NESTED</span></td><td>위와 동일</td></tr>
+      <tr><td class="ctx">캐릭터 프로필 (active)</td><td><span class="ctx-pill ctx-gold">PRIMARY · PEEK + GLOW</span></td><td>아바타 + 화자색 측면 글로우</td></tr>
+      <tr><td class="ctx">발언 말풍선</td><td><span class="ctx-pill ctx-gold">PRIMARY · PEEK + GLOW</span></td><td>아바타가 좌/우에 + 화자색 글로우</td></tr>
+      <tr><td class="ctx">재판관의 관찰 카드</td><td><span class="ctx-pill ctx-gold">PRIMARY · PEEK + GLOW</span></td><td>아이콘 + gold 측면 글로우</td></tr>
+      <tr><td class="ctx">탭 (박지연/이준호)</td><td><span class="ctx-pill ctx-neut">BORDER · TAB</span></td><td>방향성 (수평 라인)</td></tr>
+      <tr><td class="ctx">시즌 입장, 칭호 획득 모달</td><td><span class="ctx-pill ctx-neut">SECONDARY · STACK</span></td><td>특별한 무게감 (드물게)</td></tr>
+      <tr><td class="ctx">자백·결정적 증거 마커</td><td><span class="ctx-pill ctx-neut">SECONDARY · OVERLAP</span></td><td>강한 시각 앵커 (드물게)</td></tr>
+    </tbody>
+  </table>
 </div>
 
 
@@ -1295,42 +1472,504 @@
     <div class="border-cell b-warning"><div class="name">WARNING</div><div class="meta">amber .50 — 경고 (모순 감지 등)</div></div>
   </div>
   <div class="note">
-    <b>규칙</b>: 한 화면에 ACTIVE는 1개만. 화자 색 테두리는 화자 발언/카드에만. 골드 .40 = 일반 활성, 골드 .60+glow = 선택됨. <b>화자 색과 골드 절대 섞지 말 것</b> (예: 박지연 카드에 골드 active 두지 마라 — 파란색 .60으로 강화).
+    한 컴포넌트는 <b>.18 → .40 → .60 진행</b>만 (idle/hover/active 3단). 두께는 1px 유지, 색만 진해진다.
   </div>
 </div>
 
-<h3>화자별 active 강화 패턴</h3>
+<h3>화자색 active 강화</h3>
 <div class="frame">
   <div style="display:flex; gap:14px;">
     <div class="border-cell b-party-a" style="border-width:1px; border-color:rgba(91,141,239,0.6); box-shadow: 0 0 18px rgba(91,141,239,0.18); flex:1;">
-      <div class="name">박지연 (선택됨)</div><div class="meta">blue .60 + blue glow .18</div>
+      <div class="name">박지연 (선택됨)</div><div class="meta">blue .60 + SOFT glow</div>
     </div>
     <div class="border-cell b-party-b" style="border-width:1px; border-color:rgba(224,96,96,0.6); box-shadow: 0 0 18px rgba(224,96,96,0.18); flex:1;">
-      <div class="name">이준호 (선택됨)</div><div class="meta">red .60 + red glow .18</div>
+      <div class="name">이준호 (선택됨)</div><div class="meta">red .60 + SOFT glow</div>
     </div>
   </div>
-  <div class="note">화자가 선택되면 <b>해당 화자색의 .60 + glow</b>로 강화. 골드로 가지 않음.</div>
+  <div class="note"><span style="color: var(--speaker-b);">⚠ 절대 금지:</span> 화자 카드에 골드 active 두는 것. 같은 화자색 .60 + SOFT glow로 강화한다.</div>
 </div>
 
 
 <!-- ════════════════════════════════════════ -->
-<h2>16. 적용 우선순위 (사건 선택 씬 리뉴얼 시)</h2>
+<h2>16. 반투명 — Primary / Secondary</h2>
+<p>실제 사용되는 것 위주로 정리. <b>Primary 2단</b>이 95% 케이스, Secondary 2단은 특수 상황만. MEDIUM 폐기.</p>
+
+<h3 style="color: var(--gold-alt);">PRIMARY — 거의 모든 표면이 둘 중 하나</h3>
+<div class="frame">
+  <div class="alpha-bg" style="grid-template-columns: repeat(2, 1fr);">
+    <div class="alpha-cell alpha-standard">
+      <div class="nm">PRIMARY 1 · STANDARD .85</div>
+      <b>모든 일반 패널·카드·brief·모달</b><br>
+      배경이 살짝 비치되 본문은 충분히 또렷.
+    </div>
+    <div class="alpha-cell alpha-light">
+      <div class="nm">PRIMARY 2 · LIGHT .42 + blur</div>
+      <b>플로팅 표면 — app bar, hotbar, 우측 패널, 정보 카드</b><br>
+      backdrop-filter blur(8px) 동반.
+    </div>
+  </div>
+  <div class="note">
+    <b>STANDARD</b>는 viewport에 "박혀 있는" 패널. <b>LIGHT+blur</b>는 viewport 위에 "떠 있는" 표면. 이 두 개로 95% 커버.
+  </div>
+</div>
+
+<h3 style="color: var(--text-tertiary);">SECONDARY — 특수 상황만</h3>
+<div class="frame">
+  <div class="alpha-bg" style="grid-template-columns: repeat(2, 1fr);">
+    <div class="alpha-cell alpha-heavy">
+      <div class="nm">SECONDARY 1 · HEAVY .96</div>
+      <b>결정적 다이얼로그만</b> (재판관의 판단, 모순 감지)<br>
+      배경 거의 가림. 흐름 정지의 신호.
+    </div>
+    <div class="alpha-cell alpha-tint">
+      <div class="nm">SECONDARY 2 · TINT .10</div>
+      <b>색이 영역의 의미일 때만</b><br>
+      골드/화자색 강조 chip, active 영역.
+    </div>
+  </div>
+  <div class="note">
+    SECONDARY는 정말 필요할 때만. 평소는 PRIMARY 두 개 중 하나로 끝.<br>
+    <span style="color: var(--speaker-b);">⚠ 폐기:</span> MEDIUM .70 — STANDARD으로 충분히 대체됨.
+  </div>
+</div>
+
+<h3>backdrop-filter — 단일 값 8px로 통일</h3>
+<div class="frame">
+  <div style="padding:18px; border-radius:12px; background:rgba(15,16,22,0.42); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); border:1px solid rgba(212,162,78,0.18);">
+    <div style="font-size:11px; font-weight:800; letter-spacing:0.16em; color:var(--gold-alt); text-transform:uppercase; margin-bottom:8px;">FROST · blur(8px) · 단일 값</div>
+    <div style="color:var(--text-secondary); font-size:13px;">app bar / 우측 패널 / 정보 카드 / hotbar / 플로팅 카드 — 전부 동일하게 8px.</div>
+  </div>
+  <div class="note">
+    <span style="color: var(--speaker-b);">⚠ 폐기:</span> blur(14px) — 결정적 다이얼로그 배경 dim에 쓰려 했으나 8px로도 충분, 더 흐려지면 어지러움. <b>blur는 무조건 8px 한 가지만</b>.
+  </div>
+</div>
+
+
+<!-- ════════════════════════════════════════ -->
+<h2>17. 네온 효과 — 사실상 폐기</h2>
+<p>
+  실제 플레이 화면을 다시 분석한 결과 <b>의도된 네온 효과는 사용되지 않음</b>. 모든 강조는 12. GLOW로 충분.<br>
+  단 하나의 예외만 남긴다 — <b>WARNING NEON</b> (모순 감지 등 amber 경고).
+</p>
+
+<h3>유일한 잔존 — WARNING (text-shadow only)</h3>
+<div class="frame">
+  <div style="display: flex; gap: 24px; align-items: center;">
+    <div style="padding: 22px 28px; border-radius: 12px; background: rgba(8,8,12,0.92); border: 1px solid rgba(255,179,71,0.28);">
+      <div class="neon-warn">모순 감지</div>
+    </div>
+    <div style="flex: 1; font-size: 13px; color: var(--text-secondary); line-height: 1.7;">
+      <b style="color: var(--speaker-warning);">언제만 사용:</b><br>
+      ① 모순 감지 알림의 핵심 단어 ("모순 감지")<br>
+      ② 결정적 자백 순간 ("자백")<br>
+      <b style="color: var(--speaker-warning);">색:</b> amber (#ffb347)만. 골드 아님.<br>
+      <b style="color: var(--speaker-warning);">스펙:</b> text-shadow 0 0 10px amber .70, 0 0 22px .40<br>
+      <b style="color: var(--speaker-warning);">한 화면에:</b> 0개 (기본) / 1개 (특수 이벤트 시)
+    </div>
+  </div>
+</div>
+
+<div class="frame" style="border-color:rgba(224,96,96,0.32); background:rgba(224,96,96,0.04);">
+  <div style="font-size:12px; font-weight:800; letter-spacing:0.14em; color:var(--speaker-b); text-transform:uppercase; margin-bottom:10px;">⚠ 폐기된 네온 변형</div>
+  <ul style="margin:0; padding-left:20px; color:var(--text-secondary); line-height:1.8; font-size:13px;">
+    <li><b>SOFT NEON</b> — active 라벨에 쓰려 했으나, 12. GLOW (text-shadow 없는 box-shadow)로 충분.</li>
+    <li><b>STRONG NEON</b> — phase 표시는 그냥 골드 outline pill로.</li>
+    <li><b>SHARP NEON (stroke)</b> — 판결 화면도 SHARP 안 씀. 큰 폰트 + GLOW로 처리.</li>
+    <li><b>네온 박스 / 네온 라인</b> — 둘 다 폐기. 강조 필요 시 GLOW + 두께·color로.</li>
+  </ul>
+  <div style="margin-top: 12px; font-size: 12.5px; color: var(--text-tertiary);">
+    <b style="color: var(--text-secondary);">결론:</b> 솔로몬 법정의 시각 언어는 <b>차분한 골드 + 절제된 GLOW</b>다. 네온은 게임 톤과 충돌.
+  </div>
+</div>
+
+
+<!-- ════════════════════════════════════════ -->
+<h2>18. 선 두께 — 1px / 2px만</h2>
+<p>
+  통합 결과: <b>1px (기본) + 2px (특수 둘레)</b> 둘만 사용. 4px는 13. SOLID BAR가 폐기되면서 같이 폐기됨.
+</p>
+
+<div class="frame">
+  <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px;">
+    <div class="lt-cell lt-1">
+      <div class="nm">1px (PRIMARY · 기본)</div>
+      <div>모든 패널·카드·버튼·divider·hover/active 보더.</div>
+      <div class="meta">99% 케이스 — hover/active 강조도 1px 유지하고 색·alpha·glow로</div>
+    </div>
+    <div class="lt-cell lt-2">
+      <div class="nm">2px (SECONDARY · 둘레)</div>
+      <div>원형 둘레만 — portrait ring, 아이콘 박스 강조 ring.</div>
+      <div class="meta">1px 둘레는 시각적으로 "안 보이는" 원형 한정</div>
+    </div>
+  </div>
+  <div class="note">
+    <b>핵심 규칙:</b> hover나 active로 더 강조하고 싶을 때도 <b>두께는 1px 유지</b>하고 <b>색을 진하게(.22 → .40 → .60)</b> 또는 <b>glow를 추가</b>한다. 두께를 2px로 올리면 위계가 깨진다.
+  </div>
+  <div class="note" style="margin-top: 14px; padding: 12px 16px; border-radius: 10px; background: rgba(224,96,96,0.06); border: 1px solid rgba(224,96,96,0.18);">
+    <span style="color: var(--speaker-b); font-weight: 700;">⚠ 폐기:</span> 4px (수직 액센트), 1.5px, 3px. <b>4px는 13.A SOLID BAR 폐기와 함께 폐기</b>.
+  </div>
+</div>
+
+
+<!-- ════════════════════════════════════════ -->
+<h2>19. 상황별 색·디자인 매핑 (Context Map)</h2>
+<p>플레이 화면에서 <b>각 요소가 어떤 색·두께·글로우·이유로 그렇게 디자인되었는지</b> 분석.<br>이 표가 본 가이드의 핵심 — 신규 컴포넌트는 이 표의 패턴 중 하나에 매핑되어야 한다.</p>
+
+<h3>A. 상태 표시 영역 (status / phase / counter)</h3>
+<div class="frame" style="padding: 0; overflow: hidden;">
+<table class="ctx-table">
+  <thead>
+    <tr>
+      <th style="width:18%;">상황</th>
+      <th style="width:14%;">색</th>
+      <th style="width:18%;">두께·radius</th>
+      <th style="width:20%;">글로우/덧칠</th>
+      <th>이유</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="ctx">현재 Phase</td>
+      <td><span class="ctx-pill ctx-gold">GOLD</span></td>
+      <td><code>1px · 999</code></td>
+      <td>없음 (idle), neon-box (전환 시 1.5s)</td>
+      <td>항상 보이는 신호 — 상시 빛나면 피로. 전환 순간만 임팩트.</td>
+    </tr>
+    <tr>
+      <td class="ctx">자원 카운터<br>(단서 20 / 직감 10)</td>
+      <td><span class="ctx-pill ctx-gold">GOLD</span> 아이콘 + <span class="ctx-pill ctx-neut">NEUT</span> 숫자</td>
+      <td><code>icon 18px</code></td>
+      <td>없음</td>
+      <td>읽기 정보. 강조하면 "쓸 수 없을 때 빛나야 한다"는 잘못된 신호.</td>
+    </tr>
+    <tr>
+      <td class="ctx">Turn 표시</td>
+      <td><span class="ctx-pill ctx-neut">TEXT-DIM</span></td>
+      <td><code>—</code></td>
+      <td>없음</td>
+      <td>참고용. 강조 0.</td>
+    </tr>
+    <tr>
+      <td class="ctx">진실파악 단계 0~5</td>
+      <td>active <span class="ctx-pill ctx-gold">GOLD</span> · idle <span class="ctx-pill ctx-neut">NEUT</span></td>
+      <td><code>1px · 999</code></td>
+      <td>active만 SOFT glow</td>
+      <td>5칸 동시에 빛나면 흐름 깨짐. 현재 단계 1개만.</td>
+    </tr>
+    <tr>
+      <td class="ctx">모순 미터</td>
+      <td><span class="ctx-pill ctx-red">RED</span> 채워진 칸</td>
+      <td><code>1px · 4px</code></td>
+      <td>5/5 시 PULSE</td>
+      <td>red = 위협/실패의 가능성. 가득 차야만 PULSE로 결정 유도.</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<h3>B. 화자별 표시 (speaker tagging)</h3>
+<div class="frame" style="padding: 0; overflow: hidden;">
+<table class="ctx-table">
+  <thead>
+    <tr><th style="width:18%;">상황</th><th style="width:14%;">색</th><th style="width:18%;">두께·radius</th><th style="width:20%;">글로우/덧칠</th><th>이유</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="ctx">박지연 (당사자 A) 발언</td>
+      <td><span class="ctx-pill ctx-blue">BLUE .30</span> border + .06 bg</td>
+      <td><code>1px · 14</code></td>
+      <td>없음</td>
+      <td>화자 식별. 글로우 추가하면 "박지연이 정답"이라는 잘못된 신호.</td>
+    </tr>
+    <tr>
+      <td class="ctx">이준호 (당사자 B) 발언</td>
+      <td><span class="ctx-pill ctx-red">RED .30</span> border + .06 bg</td>
+      <td><code>1px · 14</code></td>
+      <td>없음</td>
+      <td>위와 동일. red는 단지 화자색이지 적대 표시 아님.</td>
+    </tr>
+    <tr>
+      <td class="ctx">선택된 화자 (탭 active)</td>
+      <td>화자색 .60 border + glow .18</td>
+      <td><code>1px</code></td>
+      <td>SOFT glow (해당 화자색)</td>
+      <td>"지금 이 화자에게 묻는 중"의 명확한 시각 신호.</td>
+    </tr>
+    <tr>
+      <td class="ctx">재판관(판사) 발언</td>
+      <td><span class="ctx-pill ctx-gold">GOLD .22</span> border + .06 bg, 가운데 정렬</td>
+      <td><code>1px · 14</code></td>
+      <td>없음</td>
+      <td>재판관은 메타-화자. 화자색에 끼지 않음. 가운데 정렬로 위계 분리.</td>
+    </tr>
+    <tr>
+      <td class="ctx">증인 발언</td>
+      <td><span class="ctx-pill" style="background:rgba(155,168,122,0.16); color:var(--witness); border:1px solid rgba(155,168,122,0.32);">WITNESS .30</span> border</td>
+      <td><code>1px · 14</code></td>
+      <td>없음</td>
+      <td>당사자도 재판관도 아닌 제3자 — 골드-그린으로 객관성 표현.</td>
+    </tr>
+    <tr>
+      <td class="ctx">화자 portrait ring</td>
+      <td>active = 화자색 .60, idle = white .10</td>
+      <td><code>2px · 999</code></td>
+      <td>active만 inset glow</td>
+      <td>portrait ring은 항상 2px (1px은 작아서 안 보임).</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<h3>C. 패널 / 모달 / 카드</h3>
+<div class="frame" style="padding: 0; overflow: hidden;">
+<table class="ctx-table">
+  <thead>
+    <tr><th style="width:18%;">상황</th><th style="width:14%;">색</th><th style="width:18%;">두께·radius</th><th style="width:20%;">글로우/덧칠</th><th>이유</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="ctx">L1 메인 패널<br>(증거 수집, 현재 대상)</td>
+      <td><span class="ctx-pill ctx-gold">GOLD .22</span> border, STANDARD .85 bg</td>
+      <td><code>1px · 16</code></td>
+      <td>좌측 BRUSH WASH (13.B), 큰 그림자, inset highlight</td>
+      <td>"여기는 메인 정보다"의 신호. 헤더+카운트 chip 동반.</td>
+    </tr>
+    <tr>
+      <td class="ctx">L2 섹션</td>
+      <td><span class="ctx-pill ctx-neut">WHITE .06</span> border, MEDIUM .50 bg</td>
+      <td><code>1px · 12</code></td>
+      <td>없음</td>
+      <td>L1 안의 sub-카테고리. L1보다 약하게.</td>
+    </tr>
+    <tr>
+      <td class="ctx">L3 item 카드</td>
+      <td><span class="ctx-pill ctx-neut">WHITE .05</span> border, .03 bg</td>
+      <td><code>1px · 10</code></td>
+      <td>없음, hover시 SOFT</td>
+      <td>가장 안쪽 단위. 평소 조용히 있다가 hover로 응답.</td>
+    </tr>
+    <tr>
+      <td class="ctx">brief 패널<br>(사건 선택)</td>
+      <td><span class="ctx-pill ctx-gold">GOLD .28</span> border, HEAVY .96 bg</td>
+      <td><code>1px · 18</code></td>
+      <td>RIM glow, 좌측 BRUSH WASH</td>
+      <td>모달과 동급의 비중. "지금 사건의 얼굴".</td>
+    </tr>
+    <tr>
+      <td class="ctx">결정 모달<br>(재판관의 판단)</td>
+      <td><span class="ctx-pill ctx-gold">GOLD .28</span> border, HEAVY .96 bg + DEEP FROST 배경</td>
+      <td><code>1px · 18</code></td>
+      <td>큰 drop shadow + outer 1px gold .06 stroke</td>
+      <td>흐름 정지. 결정 강요. backdrop blur로 후방 영역 dim.</td>
+    </tr>
+    <tr>
+      <td class="ctx">증거 카드 modal</td>
+      <td>위와 동일</td>
+      <td><code>1px · 18</code></td>
+      <td>RIM glow</td>
+      <td>위와 동일하나, 좌측 BRUSH WASH 없음 (좌우 대칭 CTA 때문).</td>
+    </tr>
+    <tr>
+      <td class="ctx">hotbar 슬롯</td>
+      <td><span class="ctx-pill ctx-gold">GOLD .18</span> border, gradient bg</td>
+      <td><code>1px · 14</code></td>
+      <td>hover시 SOFT + translateY(-2px)</td>
+      <td>6개가 항상 보이는 영역. idle은 묵직, 액션 가능 시 응답.</td>
+    </tr>
+    <tr>
+      <td class="ctx">발언노트 / 즐겨찾기 항목</td>
+      <td><span class="ctx-pill ctx-neut">WHITE .04</span> border, TINT .03 bg</td>
+      <td><code>1px · 8</code></td>
+      <td>없음</td>
+      <td>축적된 정보 단위. 작고 많이 보이는 영역.</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<h3>D. 상태/이벤트 표시 (state / event)</h3>
+<div class="frame" style="padding: 0; overflow: hidden;">
+<table class="ctx-table">
+  <thead>
+    <tr><th style="width:18%;">상황</th><th style="width:14%;">색</th><th style="width:18%;">두께·radius</th><th style="width:20%;">글로우/덧칠</th><th>이유</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="ctx">모순 감지 (judge)</td>
+      <td><span class="ctx-pill ctx-amber">AMBER</span></td>
+      <td><code>1px · 18</code></td>
+      <td>WARNING NEON 텍스트 + 모달 RIM</td>
+      <td>경고 — 골드 아닌 amber. 골드는 "좋은 것", amber는 "주의".</td>
+    </tr>
+    <tr>
+      <td class="ctx">모순 찌르기 성공</td>
+      <td><span class="ctx-pill ctx-green">GREEN</span></td>
+      <td><code>1px · 12</code></td>
+      <td>SOFT glow (green) 1.2s</td>
+      <td>해결 신호. 길어야 1.2s 후 idle로.</td>
+    </tr>
+    <tr>
+      <td class="ctx">새 증거 확보</td>
+      <td><span class="ctx-pill ctx-green">GREEN .40</span> border bottom</td>
+      <td><code>1px</code></td>
+      <td>SOFT glow + slide-in 240ms</td>
+      <td>신규 발견 신호. 발견 직후 깜빡, 그 후 평범한 카드로.</td>
+    </tr>
+    <tr>
+      <td class="ctx">잠금 (locked)</td>
+      <td><span class="ctx-pill ctx-neut">opacity 0.32</span></td>
+      <td><code>—</code></td>
+      <td>없음</td>
+      <td>색 안 씀. 그냥 어두움. 잠금 아이콘으로만 표시.</td>
+    </tr>
+    <tr>
+      <td class="ctx">자백 / 결정적 순간</td>
+      <td><span class="ctx-pill ctx-gold">GOLD BRIGHT</span></td>
+      <td><code>2px · 18</code></td>
+      <td>STRONG glow 다중 + PULSE</td>
+      <td>게임 정점. 한 사건에 1~2회만. 절대 남발 금지.</td>
+    </tr>
+    <tr>
+      <td class="ctx">판결 화면</td>
+      <td><span class="ctx-pill ctx-gold">GOLD BRIGHT</span></td>
+      <td><code>—</code></td>
+      <td>SHARP NEON 제목 + RIM bg</td>
+      <td>최종 화면. SHARP NEON은 여기 외엔 거의 안 씀.</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<h3>E. 사건 선택 씬 (이번 리뉴얼 대상)</h3>
+<div class="frame" style="padding: 0; overflow: hidden;">
+<table class="ctx-table">
+  <thead>
+    <tr><th style="width:18%;">상황</th><th style="width:14%;">색</th><th style="width:18%;">두께·radius</th><th style="width:20%;">글로우/덧칠</th><th>이유</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="ctx">전체 배경</td>
+      <td><span class="ctx-pill ctx-neut">WOOD-DEEP</span> + 미세 골드 radial</td>
+      <td><code>—</code></td>
+      <td>배경 vignette 2겹</td>
+      <td>플레이 화면과 동일 톤. 평면 다크 X.</td>
+    </tr>
+    <tr>
+      <td class="ctx">stage pill (idle)</td>
+      <td><span class="ctx-pill ctx-neut">WHITE .08</span> border, MEDIUM .85 bg</td>
+      <td><code>1px · 999</code></td>
+      <td>없음</td>
+      <td>핫바 슬롯과 같은 위계 — 평소 조용한 액션 슬롯.</td>
+    </tr>
+    <tr>
+      <td class="ctx">stage pill (active)</td>
+      <td><span class="ctx-pill ctx-gold">GOLD .55</span> border + .12 bg</td>
+      <td><code>1px · 999</code></td>
+      <td>SOFT glow + 6×6 dot + 미세 PULSE</td>
+      <td>현재 선택 신호. 동시 active는 1개만.</td>
+    </tr>
+    <tr>
+      <td class="ctx">stage pill (cleared)</td>
+      <td><span class="ctx-pill ctx-gold">GOLD .40</span> border + .06 bg</td>
+      <td><code>1px · 999</code></td>
+      <td>없음 (점수 텍스트만 골드)</td>
+      <td>완료된 항목. 빛나지 않음 — 강조하면 active와 혼동.</td>
+    </tr>
+    <tr>
+      <td class="ctx">brief 패널</td>
+      <td><span class="ctx-pill ctx-gold">GOLD .28</span> border, HEAVY .96 bg</td>
+      <td><code>1px · 18</code></td>
+      <td>RIM glow + STACK (13.A) 2겹 (★)</td>
+      <td>모달과 동급. 사건의 얼굴. STACK으로 무게감.</td>
+    </tr>
+    <tr>
+      <td class="ctx">사건 제목 (brief title)</td>
+      <td><span class="ctx-pill ctx-neut">TEXT</span></td>
+      <td><code>32px · 800</code></td>
+      <td>없음 (또는 SOFT NEON 0.5 절제)</td>
+      <td>읽는 정보. 네온 강조하면 "흥분된 톤"이 됨.</td>
+    </tr>
+    <tr>
+      <td class="ctx">VS 영역 (인물)</td>
+      <td>각 인물 portrait ring 화자색 .45</td>
+      <td><code>2px · 999</code></td>
+      <td>없음</td>
+      <td>portrait ring은 항상 2px. 화자 식별만.</td>
+    </tr>
+    <tr>
+      <td class="ctx">archetype chip</td>
+      <td>화자색 TINT .10 bg + .32 border</td>
+      <td><code>1px · 999</code></td>
+      <td>없음</td>
+      <td>화자 메타 정보. Phase 1 우측 패널과 동일 패턴.</td>
+    </tr>
+    <tr>
+      <td class="ctx">brief item (쟁점/증거)</td>
+      <td><span class="ctx-pill ctx-gold">GOLD .16</span> border, TINT .04 bg</td>
+      <td><code>1px · 12</code></td>
+      <td>NESTED (13.B) — outer 16 / inner 12, hover SOFT</td>
+      <td>둥근 모서리 겹침. radius 차 4px 유지.</td>
+    </tr>
+    <tr>
+      <td class="ctx">사건 입장하기 CTA</td>
+      <td><span class="ctx-pill ctx-gold">GOLD GRADIENT</span></td>
+      <td><code>1px · 14</code></td>
+      <td>STRONG glow 4단 레이어</td>
+      <td>주인공 액션. 화면 내 가장 빛나는 단 1개.</td>
+    </tr>
+    <tr>
+      <td class="ctx">완료 기록만 토글</td>
+      <td>OFF white .06 / ON <span class="ctx-pill ctx-gold">GOLD .32</span></td>
+      <td><code>1px · 999</code></td>
+      <td>ON시 SOFT glow 12px</td>
+      <td>플레이 화면 토글과 100% 동일.</td>
+    </tr>
+    <tr>
+      <td class="ctx">뒤로 버튼</td>
+      <td><span class="ctx-pill ctx-neut">GHOST</span></td>
+      <td><code>1px · 12</code></td>
+      <td>없음, hover시 골드 .28 border</td>
+      <td>탈출 동선. 강조 0.</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+<!-- ════════════════════════════════════════ -->
+<h2>20. 적용 우선순위 (사건 선택 씬 리뉴얼 시)</h2>
 
 <div class="frame" style="border-color:rgba(212,162,78,0.42); background:rgba(212,162,78,0.04);">
   <ol style="margin:0; padding-left:24px; color:var(--text); line-height:2;">
-    <li><b style="color:var(--gold-light)">전체 배경</b>에 vignette + 미세 골드 radial glow 2겹 추가 (현재 평면 다크)</li>
-    <li><b style="color:var(--gold-light)">brief 패널</b>을 모달 표준(radius 18, golden border .28, big shadow + inset)으로 격상 + <b>RIM 글로우</b> 적용</li>
-    <li><b style="color:var(--gold-light)">brief 패널 좌측</b>에 <b>BRUSH WASH</b>(13.B 패턴) — 80px 골드 그라디언트 덧칠 + 2px 라인</li>
-    <li><b style="color:var(--gold-light)">brief 항목</b>을 <b>L3 item</b> 표준으로 (흰 .05 → 골드 .04 bg + .16 border, hover시 SOFT glow)</li>
-    <li><b style="color:var(--gold-light)">사건 입장하기 CTA</b>를 <b>STRONG glow 4단 레이어</b>로 강화 (그림자 + 외곽 글로우 + stroke + inset)</li>
-    <li><b style="color:var(--gold-light)">Stage pill</b> active = SOFT glow + 6×6 dot + pulse(2.4s) <b>한 번만</b></li>
-    <li><b style="color:var(--gold-light)">VS 영역</b>에 화자 색 chip 추가 — 박지연(피해자 서사·대립형) blue, 이준호(회피형) red</li>
-    <li><b style="color:var(--gold-light)">캐릭터 카드</b> active시 <b>화자색 .60 + 화자색 glow .18</b> (골드 X)</li>
-    <li><b style="color:var(--gold-light)">eyebrow/title 위계</b> 모달 표준 (eyebrow 11px 800 0.22em / title 24px 800)</li>
-    <li><b style="color:var(--gold-light)">패널 헤더</b>에 28×28 골드 아이콘 박스 + uppercase 제목 + 카운트 chip 도입 (현재 카운트 chip 없음)</li>
-    <li><b style="color:var(--gold-light)">뒤로 버튼</b> Ghost 표준</li>
-    <li><b style="color:var(--gold-light)">완료 기록만 토글</b> ON시 골드 glow 12px (현재 평범한 색 변화만)</li>
+    <li><b style="color:var(--gold-alt)">전체 배경</b>에 vignette + 미세 골드 radial glow 2겹 추가 (현재 평면 다크)</li>
+    <li><b style="color:var(--gold-alt)">brief 패널</b>을 STANDARD .85 표준 패널로 — backdrop-filter blur(8px) 옵션</li>
+    <li><b style="color:var(--gold-alt)">brief 항목</b>을 <b>NESTED 13.B</b> — outer 16 / inner 12, radius 차 4px</li>
+    <li><b style="color:var(--gold-alt)">사건 입장하기 CTA</b>를 <b>Main(Secondary)</b> — 골드 outline + hover SOFT glow (그라디언트 X)</li>
+    <li><b style="color:var(--gold-alt)">Stage pill</b> active = 골드 .60 border + SOFT glow (PULSE는 0건, 사건 선택은 정적인 호흡)</li>
+    <li><b style="color:var(--gold-alt)">VS 영역</b>에 화자색 archetype chip — 박지연 blue, 이준호 red</li>
+    <li><b style="color:var(--gold-alt)">캐릭터 active</b> = <b>PEEK + GLOW 13.B</b> — 아바타 가까이에 화자색 측면 글로우 (골드 X)</li>
+    <li><b style="color:var(--gold-alt)">선 두께</b> 전 영역 1px (1.5px / 3px / 4px 모두 폐기, portrait ring만 2px)</li>
+    <li><b style="color:var(--gold-alt)">eyebrow/title</b> 모달 표준 (eyebrow 11~12px 800 0.22em / title 24~32px 800)</li>
+    <li><b style="color:var(--gold-alt)">완료 기록만 토글</b> ON시 SOFT glow 12px</li>
+    <li><b style="color:var(--gold-alt)">뒤로 버튼</b> Ghost 표준</li>
+    <li><b style="color:var(--gold-alt)">네온 0건</b>, <b>STACK 0건</b>, <b>STRONG glow 0건</b> — 사건 선택은 차분한 호흡. 강조는 SOFT glow + 색·alpha만.</li>
   </ol>
+</div>
+
+<div class="frame" style="margin-top: 18px; border-color: rgba(155,168,122,0.32); background: rgba(155,168,122,0.04);">
+  <div style="font-size:12px; font-weight:800; letter-spacing:0.14em; color:var(--speaker-witness); text-transform:uppercase; margin-bottom:10px;">📋 v3 통합 변경 요약</div>
+  <ul style="margin:0; padding-left:20px; color:var(--text-secondary); line-height:1.85; font-size:13px;">
+    <li>컬러 팔레트 → <b>Primary / Alt 2단</b> (gold-bright/dim 폐기)</li>
+    <li>버튼 → <b>Main (Sec outline)</b>이 모든 CTA 표준 (Primary 그라디언트 폐기)</li>
+    <li>글로우 → <b>SOFT 1개</b>만 표준, PULSE/INSET은 특수 (STRONG/RIM/HALO 폐기)</li>
+    <li>둥근 겹침 → <b>NESTED + PEEK</b> 2개 Primary (STACK/OVERLAP은 Secondary)</li>
+    <li>라인 → <b>HAIRLINE / SOFT / GLOW 3개</b> (STRONG/VERTICAL 폐기)</li>
+    <li>테두리 → 골드 <b>.18 → .40 → .60 3단</b> + 화자색 + amber/green</li>
+    <li>반투명 → <b>STANDARD .85 + LIGHT .42</b> Primary, MEDIUM 폐기</li>
+    <li>backdrop-filter → <b>blur(8px) 단일값</b> (14px 폐기)</li>
+    <li>네온 → <b>WARNING amber 1개</b>만 잔존, 나머지 폐기</li>
+    <li>선 두께 → <b>1px + 2px(원형 ring만)</b> (4px / 1.5px / 3px 폐기)</li>
+  </ul>
 </div>
 
 <p style="margin-top: 40px; color: var(--text-muted); font-size: 13px;">
