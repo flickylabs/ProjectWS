@@ -4573,12 +4573,11 @@ body.pc-mode .pc-home-v2__hero::before {
   bottom: 0;
   transform: translateX(-50%);
   width: 100vw;
-  max-width: 1440px;
   background: linear-gradient(90deg,
     transparent 0%,
-    rgba(10, 8, 6, 0.55) 8%,
+    rgba(10, 8, 6, 0.55) 12%,
     rgba(10, 8, 6, 0.72) 50%,
-    rgba(10, 8, 6, 0.55) 92%,
+    rgba(10, 8, 6, 0.55) 88%,
     transparent 100%);
   z-index: 0;
   pointer-events: none;
@@ -19908,33 +19907,55 @@ body.pc-mode .pc-depth-shell {
   overflow: visible !important;
 }
 
-/* 헤더 dark band — 양 끝까지 fade 밀어내기 (1.5% / 98.5% 페이드) */
+/* 헤더 dark band — viewport 끝까지 확장 (max-width 무시하고 100vw) */
 body.pc-mode .pc-depth-header {
   position: relative;
-  background: linear-gradient(90deg,
-    transparent 0%,
-    rgba(13, 14, 18, 0.72) 1.5%,
-    rgba(13, 14, 18, 0.78) 50%,
-    rgba(13, 14, 18, 0.72) 98.5%,
-    transparent 100%) !important;
+  background: transparent !important;
   border: none !important;
   border-bottom: none !important;
   padding: 24px 48px 32px !important;
   margin: 0 0 0 !important;
   border-radius: 0 !important;
+  overflow: visible;
 }
-/* 띠 하단 라인도 양 끝까지 (3% / 97% 페이드) */
+/* 다크 띠 자체 — ::before로 100vw 확장 + 부드러운 그라데이션 (12%/88%) */
+body.pc-mode .pc-depth-header::before {
+  content: '';
+  position: absolute;
+  top: 0; bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    rgba(13, 14, 18, 0.72) 12%,
+    rgba(13, 14, 18, 0.78) 50%,
+    rgba(13, 14, 18, 0.72) 88%,
+    transparent 100%);
+  z-index: 0;
+  pointer-events: none;
+}
+/* 띠 하단 라인도 100vw 확장 (14% / 86% 페이드) */
 body.pc-mode .pc-depth-header::after {
   content: '';
   position: absolute;
-  left: 0; right: 0; bottom: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;
   height: 1px;
   background: linear-gradient(90deg,
     transparent 0%,
-    rgba(212, 162, 78, 0.20) 3%,
-    rgba(212, 162, 78, 0.20) 97%,
+    rgba(212, 162, 78, 0.20) 14%,
+    rgba(212, 162, 78, 0.20) 86%,
     transparent 100%);
+  z-index: 0;
   pointer-events: none;
+}
+/* 헤더 콘텐츠는 띠 위에 */
+body.pc-mode .pc-depth-header > * {
+  position: relative;
+  z-index: 1;
 }
 
 /* 헤더 아래 — 본문 시작 전 spacing */
