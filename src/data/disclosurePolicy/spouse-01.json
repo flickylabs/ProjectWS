@@ -1,0 +1,1096 @@
+{
+  "caseId": "spouse-01",
+  "sourceCaseId": "case-spouse-01",
+  "schemaVersion": "tier1-disclosure-policy-draft-v1",
+  "baselineTargetSha": "a10b8011c3311d2a6ab20dd4a06edb29a4ac48e3",
+  "generatedAt": "2026-04-27",
+  "runtimeImportAllowed": false,
+  "draftStatus": "schema-draft-d1-sample",
+  "sourcePolicy": "docs/disclosure-policy.md",
+  "surfaceMap": {
+    "evidence": {
+      "e-1": {
+        "evidenceId": "e-1",
+        "name": "영수증 묶음 (5장)",
+        "surfaceName": "영수증 묶음 5장",
+        "surfaceDescription": "차 안에서 발견된 여러 영수증. 일부 품목 때문에 외도 의심이 시작된다.",
+        "descriptionTruth": [
+          "조카 학용품",
+          "삼촌이 챙겨주는",
+          "중학교 2학년용 참고서"
+        ],
+        "truthLexemes": [
+          "조카",
+          "중2",
+          "학용품",
+          "돌봄"
+        ],
+        "sourceRefs": [
+          "src/data/cases/generated/spouse-01.json:evidence.e-1"
+        ]
+      },
+      "e-2": {
+        "evidenceId": "e-2",
+        "name": "블랙박스 GPS / 네비 즐겨찾기",
+        "surfaceName": "블랙박스 GPS 기록",
+        "surfaceDescription": "반복된 정차 좌표와 이동 패턴을 보여주는 차량 기록.",
+        "descriptionTruth": [
+          "형 오피스텔",
+          "친형 거주지",
+          "형네 주소"
+        ],
+        "truthLexemes": [
+          "형",
+          "친형",
+          "형의 오피스텔",
+          "형네"
+        ],
+        "sourceRefs": [
+          "src/data/cases/generated/spouse-01.json:evidence.e-2"
+        ]
+      },
+      "e-3": {
+        "evidenceId": "e-3",
+        "name": "통화기록",
+        "surfaceName": "통화기록",
+        "surfaceDescription": "새벽 시간대 같은 번호와 반복 통화가 남아 있는 기록.",
+        "descriptionTruth": [
+          "형과의 새벽 통화",
+          "친형 명의",
+          "긴급 연락"
+        ],
+        "truthLexemes": [
+          "형",
+          "친형",
+          "형 명의"
+        ],
+        "sourceRefs": [
+          "src/data/cases/generated/spouse-01.json:evidence.e-3"
+        ]
+      },
+      "e-4": {
+        "evidenceId": "e-4",
+        "name": "형 문자 스레드",
+        "surfaceName": "발신자 미상 문자",
+        "surfaceDescription": "발신자가 확인되지 않은 번호와의 반복 교신 기록.",
+        "descriptionTruth": [
+          "형",
+          "조카 학교 알림",
+          "가은이",
+          "돌봄 부탁"
+        ],
+        "truthLexemes": [
+          "형",
+          "친형",
+          "조카",
+          "중학생 조카",
+          "조카 학교 알림",
+          "가은이",
+          "돌봄"
+        ],
+        "sourceRefs": [
+          "src/data/cases/generated/spouse-01.json:evidence.e-4"
+        ]
+      },
+      "e-5": {
+        "evidenceId": "e-5",
+        "name": "이준호의 개인 계좌 출금 내역",
+        "surfaceName": "개인 계좌 출금 내역",
+        "surfaceDescription": "이준호 명의 개인 계좌에서 큰 금액이 현금으로 출금된 기록.",
+        "descriptionTruth": [
+          "비자금",
+          "형에게 전달",
+          "형 빚"
+        ],
+        "truthLexemes": [
+          "비자금",
+          "형에게 전달",
+          "형 빚",
+          "형"
+        ],
+        "sourceRefs": [
+          "src/data/cases/generated/spouse-01.json:evidence.e-5"
+        ]
+      },
+      "e-6": {
+        "evidenceId": "e-6",
+        "name": "투자방 카톡 + 송금 기록",
+        "surfaceName": "투자방 카톡 기록",
+        "surfaceDescription": "박지연이 참여한 투자방 대화와 송금 흐름을 보여주는 기록.",
+        "descriptionTruth": [
+          "박지연 사기",
+          "투자 사기",
+          "위임장 조작 자금"
+        ],
+        "truthLexemes": [
+          "투자 사기",
+          "위임장 조작",
+          "사기 피해",
+          "전액 손실"
+        ],
+        "sourceRefs": [
+          "src/data/cases/generated/spouse-01.json:evidence.e-6"
+        ]
+      },
+      "e-7": {
+        "evidenceId": "e-7",
+        "name": "공동 적금 해지 서류",
+        "surfaceName": "공동 적금 해지 서류",
+        "surfaceDescription": "공동 적금 해지 절차와 제출 서류의 흔적.",
+        "descriptionTruth": [
+          "위임장 조작",
+          "박지연 단독 해지",
+          "서명 대필"
+        ],
+        "truthLexemes": [
+          "위임장 조작",
+          "대필",
+          "박지연 단독 해지",
+          "범죄"
+        ],
+        "sourceRefs": [
+          "src/data/cases/generated/spouse-01.json:evidence.e-7"
+        ]
+      }
+    },
+    "disputes": {
+      "d-1": {
+        "surface": "오피스텔 방문과 새벽 전화",
+        "truth": "형의 오피스텔 방문 / 조카 돌봄 / 형과의 긴급 연락",
+        "protectedSurface": "방문 이유와 통화 맥락",
+        "truthLexemes": [
+          "형",
+          "조카",
+          "돌봄",
+          "형의 오피스텔"
+        ],
+        "sourceRefs": [
+          "src/data/cases/generated/spouse-01.json:disputes.d-1"
+        ]
+      },
+      "d-2": {
+        "surface": "개인 비자금 출금",
+        "truth": "형 빚을 돕기 위한 개인 비자금 2,000만원 현금 전달",
+        "protectedSurface": "개인 계좌 출금의 사용처",
+        "truthLexemes": [
+          "형 빚",
+          "형에게 전달",
+          "개인회생"
+        ],
+        "sourceRefs": [
+          "src/data/cases/generated/spouse-01.json:disputes.d-2"
+        ]
+      },
+      "h-d3": {
+        "surface": "공동 적금 3,000만원 해지",
+        "truth": "박지연의 위임장 조작과 투자 사기 손실",
+        "protectedSurface": "공동 적금 해지 경위",
+        "truthLexemes": [
+          "위임장 조작",
+          "투자 사기",
+          "전액 손실"
+        ],
+        "sourceRefs": [
+          "src/data/cases/generated/spouse-01.json:disputes.h-d3"
+        ]
+      },
+      "h-d4": {
+        "surface": "은폐와 선제행동의 순서",
+        "truth": "숨김은 B 먼저, 계좌 감시는 A 먼저, 범죄 행위는 A의 위임장 조작",
+        "protectedSurface": "누가 무엇을 먼저 숨겼는지",
+        "truthLexemes": [
+          "위임장 조작",
+          "형 상황 은폐",
+          "개인 비자금",
+          "계좌 감시"
+        ],
+        "sourceRefs": [
+          "src/data/cases/generated/spouse-01.json:disputes.h-d4"
+        ]
+      }
+    },
+    "witnesses": {
+      "w-1": {
+        "name": "오피스텔 경비",
+        "surfaceKnowledge": "반복 방문과 출입 동선",
+        "truthProtected": [
+          "그 층에 형이 산다는 사실",
+          "조카 출입"
+        ],
+        "sourceStatus": "policy-defined; dedicated witnesses array not present in generated caseData"
+      },
+      "w-2": {
+        "name": "은행 직원",
+        "surfaceKnowledge": "공동 적금 해지 절차와 서류 확인",
+        "truthProtected": [
+          "위임장 조작 정황",
+          "절차상 이상한 점"
+        ],
+        "sourceStatus": "policy-defined; dedicated witnesses array not present in generated caseData"
+      },
+      "w-3": {
+        "name": "박미라",
+        "surfaceKnowledge": "투자방 링크 전달 경위",
+        "truthProtected": [
+          "투자 사기 연결 경위",
+          "박지연의 송금 심리"
+        ],
+        "sourceStatus": "policy-defined; generated caseData uses v3Design authority placement references"
+      }
+    }
+  },
+  "forbiddenLexemes": {
+    "globalTruthLexemes": [
+      "형",
+      "친형",
+      "형네",
+      "조카",
+      "조카딸",
+      "중2",
+      "중학생 조카",
+      "가은이",
+      "돌봄",
+      "가족을 돌본",
+      "가족 사정",
+      "가족 지원",
+      "위임장 조작",
+      "위조된 위임장",
+      "투자 사기",
+      "형 빚",
+      "형의 오피스텔",
+      "형 명의",
+      "형에게 전달",
+      "학용품",
+      "조카 학교 알림",
+      "서명 대필",
+      "전액 손실"
+    ],
+    "surfaceOnlyChannels": {
+      "judge_question": "globalTruthLexemes",
+      "judge_contradiction": "globalTruthLexemes",
+      "judge_evidence_combo": "globalTruthLexemes",
+      "judge_witness_summon": "globalTruthLexemes",
+      "system_message": "globalTruthLexemes",
+      "dossier": "globalTruthLexemes"
+    },
+    "nonConfessionNpcBeforeS5": {
+      "S0": "globalTruthLexemes",
+      "S1": "globalTruthLexemes",
+      "S2": "globalTruthLexemes",
+      "S3": [
+        "위임장 조작",
+        "투자 사기",
+        "전액 손실"
+      ],
+      "S4": [
+        "전액 손실"
+      ],
+      "S5": []
+    },
+    "allowedSurfaceSubstitutes": {
+      "형": "상대방",
+      "친형": "가족",
+      "형네": "해당 장소",
+      "조카": "아이",
+      "조카 학교 알림": "일정 알림",
+      "형 문자 스레드": "발신자 미상 문자",
+      "위임장 조작": "서류 처리 경위",
+      "투자 사기": "투자 손실 경위",
+      "형에게 전달": "제3자에게 이동"
+    }
+  },
+  "channelAuthority": {
+    "surfaceOnly": [
+      {
+        "channel": "judge_question",
+        "authority": "surface-only",
+        "truthLexemePolicy": "blocked",
+        "evidenceStagePolicy": "does-not-expand-authority"
+      },
+      {
+        "channel": "judge_contradiction",
+        "authority": "surface-only",
+        "truthLexemePolicy": "blocked",
+        "evidenceStagePolicy": "does-not-expand-authority"
+      },
+      {
+        "channel": "judge_evidence_combo",
+        "authority": "surface-only",
+        "truthLexemePolicy": "blocked",
+        "evidenceStagePolicy": "does-not-expand-authority"
+      },
+      {
+        "channel": "judge_witness_summon",
+        "authority": "surface-only",
+        "truthLexemePolicy": "blocked",
+        "evidenceStagePolicy": "does-not-expand-authority"
+      },
+      {
+        "channel": "system_message",
+        "authority": "surface-only",
+        "truthLexemePolicy": "blocked",
+        "evidenceStagePolicy": "does-not-expand-authority"
+      },
+      {
+        "channel": "dossier",
+        "authority": "surface-only",
+        "truthLexemePolicy": "blocked",
+        "evidenceStagePolicy": "does-not-expand-authority"
+      }
+    ],
+    "lieStateDriven": [
+      "interrogation",
+      "contradiction_pursuit",
+      "interjection",
+      "emotional_overload",
+      "evidence_present",
+      "mediation",
+      "trust_action",
+      "rapport_milestone",
+      "contradict_milestone"
+    ],
+    "playerDiscovered": [
+      {
+        "channel": "evidence_discovery",
+        "authority": "stage-gated",
+        "truthLexemePolicy": "allowed-only-through-evidence-stage-gate"
+      },
+      {
+        "channel": "discoveryText",
+        "authority": "route-and-stage-gated",
+        "truthLexemePolicy": "blocked-unless-gate-satisfied"
+      }
+    ],
+    "freeAfterVerdict": [
+      {
+        "channel": "aftermath",
+        "authority": "free-after-verdict",
+        "truthLexemePolicy": "allowed"
+      }
+    ]
+  },
+  "lieStateGate": {
+    "truthThrottle": {
+      "S0": {
+        "label": "완전 부정",
+        "amount": "해당 금액",
+        "person": "그 사람",
+        "institution": "그곳",
+        "truthLexemeAccess": "none"
+      },
+      "S1": {
+        "label": "일부 인정",
+        "amount": "해당 금액",
+        "person": "그 사람",
+        "institution": "그곳",
+        "truthLexemeAccess": "none"
+      },
+      "S2": {
+        "label": "핑계",
+        "amount": "200만원대",
+        "person": "김 씨",
+        "institution": "약칭",
+        "truthLexemeAccess": "none"
+      },
+      "S3": {
+        "label": "책임 전가",
+        "amount": "specific",
+        "person": "specific",
+        "institution": "specific",
+        "truthLexemeAccess": "partial-responsibility-context"
+      },
+      "S4": {
+        "label": "감정적",
+        "amount": "specific",
+        "person": "specific",
+        "institution": "specific",
+        "truthLexemeAccess": "partial-emotional-context"
+      },
+      "S5": {
+        "label": "자백",
+        "amount": "all",
+        "person": "all",
+        "institution": "all",
+        "truthLexemeAccess": "all"
+      }
+    },
+    "channelMatrix": {
+      "judge_question": {
+        "S0": "blocked",
+        "S1": "blocked",
+        "S2": "blocked",
+        "S3": "blocked",
+        "S4": "blocked",
+        "S5": "blocked"
+      },
+      "system_message": {
+        "S0": "blocked",
+        "S1": "blocked",
+        "S2": "blocked",
+        "S3": "blocked",
+        "S4": "blocked",
+        "S5": "blocked"
+      },
+      "dossier": {
+        "S0": "blocked",
+        "S1": "blocked",
+        "S2": "blocked",
+        "S3": "blocked",
+        "S4": "blocked",
+        "S5": "blocked"
+      },
+      "interrogation": {
+        "S0": "blocked",
+        "S1": "blocked",
+        "S2": "blocked",
+        "S3": "partial",
+        "S4": "partial",
+        "S5": "allowed"
+      },
+      "contradiction_pursuit": {
+        "S0": "blocked",
+        "S1": "blocked",
+        "S2": "blocked",
+        "S3": "partial",
+        "S4": "partial",
+        "S5": "allowed"
+      },
+      "emotional_overload": {
+        "S0": "not-applicable",
+        "S1": "not-applicable",
+        "S2": "not-applicable",
+        "S3": "not-applicable",
+        "S4": "partial",
+        "S5": "allowed"
+      },
+      "aftermath": {
+        "S0": "allowed",
+        "S1": "allowed",
+        "S2": "allowed",
+        "S3": "allowed",
+        "S4": "allowed",
+        "S5": "allowed"
+      }
+    },
+    "npcPolicies": {
+      "partyA": {
+        "name": "박지연",
+        "archetype": "victim_cosplay",
+        "states": {
+          "S0": {
+            "allowed": "외도 의심 프레임과 반복 동선 주장",
+            "blocked": [
+              "위임장",
+              "투자 사기"
+            ]
+          },
+          "S1": {
+            "allowed": "영수증 발견 시점과 의심 강화",
+            "blocked": [
+              "위임장",
+              "투자 사기"
+            ]
+          },
+          "S2": {
+            "allowed": "자기 몫을 지키려 했다는 모호한 방어",
+            "blocked": [
+              "조작",
+              "투자 사기"
+            ]
+          },
+          "S3": {
+            "allowed": "남편의 숨김을 우선 책임으로 돌리는 진술",
+            "blocked": [
+              "전액 손실 단정"
+            ]
+          },
+          "S4": {
+            "allowed": "배신감과 수치심 속 일부 진실 노출",
+            "blocked": []
+          },
+          "S5": {
+            "allowed": "위임장 조작과 투자 사기 인정",
+            "blocked": []
+          }
+        }
+      },
+      "partyB": {
+        "name": "이준호",
+        "archetype": "avoidant",
+        "states": {
+          "S0": {
+            "allowed": "복잡하다는 회피",
+            "blocked": [
+              "형",
+              "조카"
+            ]
+          },
+          "S1": {
+            "allowed": "사정이 있다는 범위",
+            "blocked": [
+              "형",
+              "조카"
+            ]
+          },
+          "S2": {
+            "allowed": "가족 일이라는 일반화",
+            "blocked": [
+              "친형",
+              "조카"
+            ]
+          },
+          "S3": {
+            "allowed": "가족 사정 일부 인정",
+            "blocked": [
+              "조카 학교 알림"
+            ]
+          },
+          "S4": {
+            "allowed": "시댁 갈등과 숨김 이유 노출",
+            "blocked": []
+          },
+          "S5": {
+            "allowed": "형·조카 돌봄 자백과 개인 비자금 2,000만원 인정",
+            "blocked": []
+          }
+        }
+      }
+    }
+  },
+  "uiSurfaceMap": {
+    "fieldPolicy": {
+      "dossierLabel": "surface-only",
+      "dossierSummary": "surface-or-abstract",
+      "dossierNoteText": "surface-or-abstract",
+      "evidenceCardLabel": "surface-only",
+      "evidenceCardName": "use-surfaceName",
+      "evidenceCardStageSummary": "stage-gated; protected channels use surface alternatives",
+      "judgeHint": "surface-only",
+      "recommendedMoment": "surface-only-if-rendered",
+      "purpose": "surface-only-if-rendered",
+      "successConditionSummary": "surface-only-if-rendered",
+      "successEffects": "surface-only-if-rendered"
+    },
+    "entries": {
+      "combinationLab.nodes.e-4.label": {
+        "sourceText": "e-4 형 문자 + 조카 학교 알림",
+        "surfaceText": "e-4 발신자 미상 문자",
+        "exposure": "ui-candidate",
+        "policy": "replace-before-ui"
+      },
+      "combinationLab.nodes.e-5.label": {
+        "sourceText": "e-5 공동 적금 해지 + 형 계좌 이체",
+        "surfaceText": "e-5 개인 계좌 출금 내역",
+        "exposure": "ui-candidate",
+        "policy": "replace-before-ui"
+      },
+      "combinationLab.outputs.dc-1.summary": {
+        "sourceText": "외도 오해를 형네 돌봄으로 뒤집는 카드",
+        "surfaceText": "외도 오해를 다른 동선으로 재검토하는 카드",
+        "exposure": "ui-candidate",
+        "policy": "replace-before-ui"
+      },
+      "combinationLab.outputs.dc-2.judgeHint": {
+        "sourceText": "이 감정 패턴을 이준호 씨에게 직접 추궁하시거나 형 문자(e-4)를 제시하면 구체적 사연이 드러날 것입니다.",
+        "surfaceText": "이 감정 패턴을 이준호 씨에게 직접 추궁하시거나 해당 문자 기록(e-4)을 제시하면 숨긴 사정이 드러날 것입니다.",
+        "exposure": "ui-candidate",
+        "policy": "replace-before-ui"
+      },
+      "combinationLab.outputs.dc-4.judgeHint": {
+        "sourceText": "이제 이준호 씨 형의 상황을 직접 확인하거나 동기 탐색으로 숨긴 이유를 물어볼 수 있습니다.",
+        "surfaceText": "이제 이준호 씨가 숨긴 사정을 직접 확인하거나 동기 탐색으로 이유를 물어볼 수 있습니다.",
+        "exposure": "ui-candidate",
+        "policy": "replace-before-ui"
+      },
+      "v3Design.authorityPlacements[1].purpose": {
+        "sourceText": "형 문자와 조카 알림을 원본으로 확보",
+        "surfaceText": "발신자 미상 문자와 일정 알림을 원본으로 확보",
+        "exposure": "unknown-internal-candidate",
+        "policy": "confirm-ui-path-before-runtime-fix"
+      },
+      "v3Design.authorityPlacements[3].purpose": {
+        "sourceText": "형, 조카, 2,000만 원 같은 실체 명사 강제",
+        "surfaceText": "숨긴 관계와 금액 같은 실체 명사 강제",
+        "exposure": "unknown-internal-candidate",
+        "policy": "confirm-ui-path-before-runtime-fix"
+      },
+      "v3Design.authorityPlacements[6].purpose": {
+        "sourceText": "오피스텔 방문 대상은 형네였다고 기록",
+        "surfaceText": "오피스텔 방문 대상이 외도 상대가 아니었음을 기록",
+        "exposure": "unknown-internal-candidate",
+        "policy": "confirm-ui-path-before-runtime-fix"
+      },
+      "evidence.e-1.v3DepthPlan.Established.summary": {
+        "sourceText": "조카 돌봄을 위한 구매로 확인됨",
+        "surfaceText": "구매 목적이 기존 의심과 다를 가능성 확인",
+        "exposure": "ui-candidate",
+        "policy": "stage-gated-player-discovered-only"
+      },
+      "evidence.e-2.v3DepthPlan.Context.summary": {
+        "sourceText": "오피스텔 동선과 형네 주소 일치",
+        "surfaceText": "오피스텔 동선과 특정 주소의 반복 일치",
+        "exposure": "ui-candidate",
+        "policy": "stage-gated-player-discovered-only"
+      },
+      "evidence.e-4.v3DepthPlan.Established.summary": {
+        "sourceText": "조카 돌봄 관계 직접 증명",
+        "surfaceText": "문자 관계의 실제 맥락 확인",
+        "exposure": "ui-candidate",
+        "policy": "stage-gated-player-discovered-only"
+      }
+    },
+    "stageSummaryDefaults": {
+      "stage0": "존재만 보임",
+      "stage1": "일부 정황만 확인",
+      "stage2": "원본과 맥락 확인",
+      "deepContext": "플레이어 직접 조사 결과로만 진실 일부 허용"
+    },
+    "unresolvedExposure": [
+      "combinationLab.nodes.*.label",
+      "combinationLab.outputs.*.summary",
+      "v3Design.authorityPlacements.*.recommendedMoment",
+      "v3Design.authorityPlacements.*.purpose",
+      "src/data/claimPolicies/spouse-01-v3-game-loop-data.json:dossierCards.*.successConditionSummary",
+      "src/data/claimPolicies/spouse-01-v3-game-loop-data.json:dossierCards.*.successEffects"
+    ]
+  },
+  "discoveryText": {
+    "gatePolicy": "route-and-stage-gated-player-discovered-only",
+    "entries": {
+      "combine-1": {
+        "sourceText": "영수증 구매 위치와 블랙박스 정차 좌표가 일치한다. 오피스텔 근처에서만 구매한 패턴이 확정된다.",
+        "truthLexemes": [],
+        "gate": {
+          "allowedChannels": [
+            "player_discovered"
+          ],
+          "route": "evidence_combine",
+          "requiredEvidenceStages": {
+            "e-1": "Excerpt",
+            "e-2": "Excerpt"
+          },
+          "autoSurfaceAllowed": false
+        },
+        "surfaceFallback": "구매 위치와 차량 동선의 반복 패턴이 맞물립니다."
+      },
+      "combine-2": {
+        "sourceText": "영수증의 중학교 참고서 + 형 문자의 '가은이 학교 알림'... 중학생 조카가 있다?!",
+        "truthLexemes": [
+          "형",
+          "가은이",
+          "중학생 조카",
+          "조카 학교 알림"
+        ],
+        "gate": {
+          "allowedChannels": [
+            "player_discovered"
+          ],
+          "route": "evidence_combine",
+          "requiredEvidenceStages": {
+            "e-1": "Context",
+            "e-4": "Original"
+          },
+          "requiredTruthStage": {
+            "d-1": 3
+          },
+          "autoSurfaceAllowed": false
+        },
+        "surfaceFallback": "영수증의 품목과 문자 일정이 같은 생활 맥락을 가리킵니다."
+      },
+      "combine-3": {
+        "sourceText": "새벽 통화 상대로 나간 돈의 흐름이 맞물린다. 이준호 개인 비자금 2,000만원이 형 쪽으로 움직인 경로가 드러난다.",
+        "truthLexemes": [
+          "형 쪽",
+          "비자금"
+        ],
+        "gate": {
+          "allowedChannels": [
+            "player_discovered"
+          ],
+          "route": "evidence_combine",
+          "requiredEvidenceStages": {
+            "e-3": "Original",
+            "e-5": "Original"
+          },
+          "requiredTruthStage": {
+            "d-2": 2
+          },
+          "autoSurfaceAllowed": false
+        },
+        "surfaceFallback": "새벽 통화와 개인 계좌 출금의 시점이 맞물립니다."
+      },
+      "combine-4": {
+        "sourceText": "공동 적금 해지 서류의 3,000만원과 투자방 송금 내역의 3,000만원이 정확히 일치한다. 위임장 조작으로 빠진 돈의 행선지가 확정된다.",
+        "truthLexemes": [
+          "위임장 조작"
+        ],
+        "gate": {
+          "allowedChannels": [
+            "player_discovered"
+          ],
+          "route": "evidence_combine",
+          "requiredEvidenceStages": {
+            "e-6": "Original",
+            "e-7": "Original"
+          },
+          "requiredTruthStage": {
+            "h-d3": 3
+          },
+          "autoSurfaceAllowed": false
+        },
+        "surfaceFallback": "공동 적금 해지 금액과 투자방 송금 금액이 맞물립니다."
+      },
+      "combine-5": {
+        "sourceText": "박지연의 '제 몫을 지키려 했다'는 말과 위조된 위임장이 같은 방향을 가리킨다. 3,000만원 해지가 자각된 행위였음이 드러난다.",
+        "truthLexemes": [
+          "위조된 위임장"
+        ],
+        "gate": {
+          "allowedChannels": [
+            "player_discovered"
+          ],
+          "route": "statement_evidence_combine",
+          "requiredEvidenceStages": {
+            "e-7": "Context"
+          },
+          "requiredTruthStage": {
+            "h-d3": 3
+          },
+          "autoSurfaceAllowed": false
+        },
+        "surfaceFallback": "박지연의 방어 발언과 공동 적금 해지 서류가 같은 방향을 가리킵니다."
+      },
+      "combine-6": {
+        "sourceText": "이준호가 말한 '가족'이 형이었다. 문자 내용이 돌봄 관계를 증명한다.",
+        "truthLexemes": [
+          "형",
+          "돌봄"
+        ],
+        "gate": {
+          "allowedChannels": [
+            "player_discovered"
+          ],
+          "route": "statement_evidence_combine",
+          "requiredEvidenceStages": {
+            "e-4": "Original"
+          },
+          "requiredLieState": {
+            "partyB": "S3"
+          },
+          "requiredTruthStage": {
+            "d-1": 3
+          },
+          "autoSurfaceAllowed": false
+        },
+        "surfaceFallback": "이준호가 말한 가족 사정과 문자 내용이 같은 맥락을 가리킵니다."
+      },
+      "combine-7": {
+        "sourceText": "\"가족 쪽 일\"이라는 말과 \"제 몫을 지키려 했다\"는 말을 나란히 놓으면, 서로에게 먼저 말하지 않은 이유가 겹친다.",
+        "truthLexemes": [],
+        "gate": {
+          "allowedChannels": [
+            "player_discovered"
+          ],
+          "route": "statement_statement_combine",
+          "requiredTruthStage": {
+            "d-1": 2,
+            "h-d3": 2
+          },
+          "autoSurfaceAllowed": false
+        },
+        "surfaceFallback": "두 사람의 방어 발언이 서로 숨긴 이유를 비춥니다."
+      }
+    }
+  },
+  "issueProgression": {
+    "principles": {
+      "primaryAxis": "statementFracture + truthStage",
+      "truthStageIsNotLieState": true,
+      "meterRole": {
+        "emotion": "short-term vulnerability signal",
+        "trust": "cooperation posture",
+        "leak": "conditional result, not a separate progression resource"
+      }
+    },
+    "disputes": {
+      "d-1": {
+        "title": "오피스텔 방문과 새벽 전화",
+        "draftCompleteness": "sample-complete",
+        "statementFracture": [
+          "A는 반복 동선과 새벽 통화를 외도로 단정한다.",
+          "B는 같은 패턴을 설명하지 못하고 가족 일이라는 모호어로 회피한다.",
+          "e-4와 e-1/e-2/e-3가 결합되면 외도 프레임이 가족 돌봄 프레임으로 재맥락화된다."
+        ],
+        "truthStages": [
+          {
+            "stage": 0,
+            "name": "외도 의심 표면",
+            "surfaceClaim": "반복 오피스텔 방문과 새벽 통화가 외도처럼 보인다.",
+            "hiddenTruth": "오피스텔 방문은 형네 돌봄 동선이고 새벽 통화는 긴급 연락이다.",
+            "entryConditions": [
+              "case start",
+              "d-1 visible"
+            ],
+            "allowedDisclosure": [
+              "오피스텔",
+              "새벽 통화",
+              "반복 동선",
+              "영수증"
+            ],
+            "forbiddenDisclosure": [
+              "형",
+              "조카",
+              "돌봄",
+              "형의 오피스텔"
+            ],
+            "validActions": [
+              "fact_pursuit",
+              "empathy_approach"
+            ],
+            "requiredEvidence": [],
+            "requiredWitness": [],
+            "meterTriggers": {
+              "emotion": "A pressure rises if fact_pursuit repeats without evidence.",
+              "trust": "B trust drops if accused before any surface evidence is established.",
+              "leak": "none"
+            },
+            "failureResponse": {
+              "npc": "A repeats suspicion; B avoids detail.",
+              "gameplay": "No truthStage advance. Prompt should point to evidence investigation, not repeat-button progress."
+            },
+            "successUnlocks": [
+              "stage 1 when e-1/e-2/e-3 surface patterns are identified"
+            ]
+          },
+          {
+            "stage": 1,
+            "name": "정황 패턴 고정",
+            "surfaceClaim": "영수증, GPS, 통화 기록이 한 방향으로 겹친다.",
+            "hiddenTruth": "같은 패턴은 외도가 아니라 특정 가족 돌봄 루틴일 수 있다.",
+            "entryConditions": [
+              "e-1 stage >= Excerpt or investigationStage >= 1",
+              "e-2 stage >= Excerpt or investigationStage >= 1",
+              "e-3 stage >= Excerpt or investigationStage >= 1"
+            ],
+            "allowedDisclosure": [
+              "같은 좌표",
+              "반복 통화",
+              "차 안 영수증",
+              "미등록 번호"
+            ],
+            "forbiddenDisclosure": [
+              "형",
+              "조카",
+              "가은이",
+              "돌봄 관계"
+            ],
+            "validActions": [
+              "fact_pursuit",
+              "motive_search"
+            ],
+            "requiredEvidence": [
+              "e-1",
+              "e-2",
+              "e-3"
+            ],
+            "requiredWitness": [],
+            "meterTriggers": {
+              "emotion": "A becomes more certain; B becomes defensive.",
+              "trust": "B cooperation improves if judge separates facts from accusation.",
+              "leak": "B may say '가족 일' only after pressure + rapport threshold."
+            },
+            "failureResponse": {
+              "npc": "B says it is complicated but does not name the family member.",
+              "gameplay": "Suggest motive_search or e-4 investigation instead of allowing direct truth."
+            },
+            "successUnlocks": [
+              "stage 2 when B uses a generic family excuse or e-4 appears"
+            ]
+          },
+          {
+            "stage": 2,
+            "name": "모호한 가족 사정",
+            "surfaceClaim": "B has a family-related reason but refuses detail.",
+            "hiddenTruth": "The family member is his brother and the protected child is his niece.",
+            "entryConditions": [
+              "partyB lieState >= S2 on d-1",
+              "or e-4 stage >= Excerpt",
+              "or dc-2 lead line available"
+            ],
+            "allowedDisclosure": [
+              "가족 일",
+              "사정",
+              "설명하기 어려운 이유",
+              "반복 교신"
+            ],
+            "forbiddenDisclosure": [
+              "친형",
+              "조카",
+              "조카 학교 알림",
+              "돌봄 부탁"
+            ],
+            "validActions": [
+              "motive_search",
+              "empathy_approach",
+              "evidence_present"
+            ],
+            "requiredEvidence": [
+              "e-4"
+            ],
+            "requiredWitness": [],
+            "meterTriggers": {
+              "emotion": "B anxiety rises on direct accusation; A anger rises if family excuse sounds evasive.",
+              "trust": "empathy_approach can preserve B cooperation.",
+              "leak": "If pressure is high and e-4 is at Excerpt, B may leak '가족 쪽 일' but not '형/조카'."
+            },
+            "failureResponse": {
+              "npc": "B retreats into '복잡합니다' or '가족 일입니다'.",
+              "gameplay": "No direct reveal. UI should indicate that the issue needs evidence depth, not more button presses."
+            },
+            "successUnlocks": [
+              "stage 3 when e-4 Original/Context is reached or dc-1 challenge succeeds"
+            ]
+          },
+          {
+            "stage": 3,
+            "name": "돌봄 프레임 반전",
+            "surfaceClaim": "The suspected affair route can be explained by protected family care.",
+            "hiddenTruth": "B hid care for his brother's child because of conflict with in-laws.",
+            "entryConditions": [
+              "e-4 stage >= Original",
+              "e-1 stage >= Context",
+              "e-2 stage >= Context or e-3 stage >= Original",
+              "partyB lieState >= S3"
+            ],
+            "allowedDisclosure": [
+              "player-discovered route may mention brother/niece terms",
+              "NPC B may partially acknowledge family care in interrogation",
+              "judge/system/dossier remain surface-only"
+            ],
+            "forbiddenDisclosure": [
+              "surface-only channels still block 형/조카/돌봄 lexemes",
+              "d-2 money purpose remains blocked unless d-2 gate opens"
+            ],
+            "validActions": [
+              "evidence_present",
+              "contradiction_pursuit",
+              "empathy_approach"
+            ],
+            "requiredEvidence": [
+              "e-1",
+              "e-2",
+              "e-3",
+              "e-4"
+            ],
+            "requiredWitness": [
+              "w-1"
+            ],
+            "meterTriggers": {
+              "emotion": "A shock replaces certainty; B guilt becomes visible.",
+              "trust": "B cooperation rises if the judge protects the child's privacy.",
+              "leak": "B can reveal hidden reason if trust is sufficient or contradiction is clean."
+            },
+            "failureResponse": {
+              "npc": "B admits only that the accusation is wrong, not the protected person.",
+              "gameplay": "Require witness or deeper evidence before final truthStage."
+            },
+            "successUnlocks": [
+              "dc-1",
+              "w-1",
+              "d-2 visibility candidate",
+              "stage 4"
+            ]
+          },
+          {
+            "stage": 4,
+            "name": "핵심 진실 확정",
+            "surfaceClaim": "The visit and call pattern no longer supports the affair claim.",
+            "hiddenTruth": "The pattern was brother/niece care and urgent contact, while B still bears responsibility for hiding it.",
+            "entryConditions": [
+              "partyB lieState >= S5 or dc-1 challenge success",
+              "w-1 confirms route or evidence combination combine-2/combine-6 is gated true"
+            ],
+            "allowedDisclosure": [
+              "player-discovered detail can state family care",
+              "NPC confession can state 형/조카",
+              "after verdict free disclosure"
+            ],
+            "forbiddenDisclosure": [
+              "surface-only channels must still avoid direct truth lexemes in prompts and generic UI labels"
+            ],
+            "validActions": [
+              "confession_attempt",
+              "witness_summon",
+              "contradiction_pursuit"
+            ],
+            "requiredEvidence": [
+              "e-4"
+            ],
+            "requiredWitness": [
+              "w-1"
+            ],
+            "meterTriggers": {
+              "emotion": "A shame and betrayal conflict becomes the next pressure point.",
+              "trust": "B can cooperate on d-2 if privacy was protected.",
+              "leak": "Additional issue hint: money movement, d-2."
+            },
+            "failureResponse": {
+              "npc": "If pushed without privacy handling, B becomes defensive and d-2 unlock should be delayed.",
+              "gameplay": "Truth established only for d-1; do not auto-solve d-2/h-d3."
+            },
+            "successUnlocks": [
+              "d-1 truth judgment option becomes reliable",
+              "d-2 unlock path becomes available",
+              "mediation can separate affair mistake from hiding responsibility"
+            ]
+          }
+        ]
+      },
+      "d-2": {
+        "title": "개인 비자금 출금",
+        "draftCompleteness": "skeleton-only",
+        "truthStages": [],
+        "requiredForFullDraft": [
+          "e-5 stage mapping",
+          "partyB money lieState mapping",
+          "d-1 stage 4 or B S3 unlock route"
+        ]
+      },
+      "h-d3": {
+        "title": "공동 적금 3,000만원 해지",
+        "draftCompleteness": "skeleton-only",
+        "truthStages": [],
+        "requiredForFullDraft": [
+          "e-6/e-7 deep investigation gate",
+          "partyA victim_cosplay breakpoints",
+          "B counterattack route"
+        ]
+      },
+      "h-d4": {
+        "title": "은폐와 선제행동의 순서",
+        "draftCompleteness": "skeleton-only",
+        "truthStages": [],
+        "requiredForFullDraft": [
+          "d-2 and h-d3 stage >= 3",
+          "timeline evidence synthesis",
+          "verdict deferral interaction"
+        ]
+      }
+    }
+  },
+  "crossCheck": {
+    "caseData": "src/data/cases/generated/spouse-01.json",
+    "claimPolicies": [
+      "src/data/claimPolicies/spouse-01-v2-atoms.json",
+      "src/data/claimPolicies/spouse-01-structure-v2.json",
+      "src/data/claimPolicies/spouse-01-game-events-v2.json",
+      "src/data/claimPolicies/spouse-01-v3-game-loop-data.json"
+    ],
+    "notes": [
+      "This file is a schema draft, not a runtime source.",
+      "Several UI candidate fields include truth lexemes in caseData; see spouse-01-cross-check.md.",
+      "Dedicated witnesses array is not present in generated spouse caseData; witness policy is mapped from v3 design references and policy docs."
+    ]
+  }
+}
+
