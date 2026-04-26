@@ -13,7 +13,7 @@
 - HEAD before Tier 2 commit: `396b9fa`
 - Tier 2 commit: `9036a60 chore(policy): add Tier 2 validation wrappers`
 - Latest known HEAD after CT handoff refresh: `acf0c5e chore(handoff): refresh CT-NEXT-START-MESSAGE for Tier 0-2 completion`
-- Final Codex handoff update: `013ea3a docs(handoff): update Codex dev handoff for next session`
+- Final Codex handoff update: this file's latest `origin/main` version, at least `013ea3a` or later
 - Baseline anchor: `baseline-pre-policy-v1` = `a10b8011c3311d2a6ab20dd4a06edb29a4ac48e3`
 - Tier 1 완료 commits:
   - `19e4c4e` spouse-01 schema draft
@@ -154,7 +154,7 @@ family/friend 정책 JSON의 `surfaceName`은 caseData exact match가 아니라 
 
 1. Tier 2는 `9036a60`에서 commit/push 완료.
 2. ClaudeCode CT가 `acf0c5e`에서 `tmp/CT-NEXT-START-MESSAGE.md`를 갱신함.
-3. Codex가 `013ea3a`에서 이 인계 문서를 최신화함.
+3. Codex가 `013ea3a` 이후 이 인계 문서를 최신화함.
 4. 다음 작업은 새 Codex-Dev 세션에서 시작 권장.
 5. QA/playtest 세션과 Codex-Dev 세션은 분리한다.
 
@@ -237,7 +237,7 @@ QA에서 나온 사례는 바로 개발 세션으로 던지지 않는다. CT 또
 5. package.json의 check:* scripts
 
 현재 기준:
-- 최신 HEAD는 `013ea3a` 근처여야 함.
+- 최신 HEAD는 `013ea3a` 이후의 `origin/main`이어야 함.
 - Tier 0 baseline freeze 완료.
 - Tier 1 disclosure policy 3 active case 완료.
 - Tier 2 validation wrappers 완료.
