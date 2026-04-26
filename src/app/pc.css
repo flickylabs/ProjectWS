@@ -19872,6 +19872,276 @@ body.pc-mode .pc-depth-shell > .cb > .cb__header-tools {
   margin-bottom: 8px;
 }
 
+/* ═══════════════════════════════════════════════════════════════════
+   v3 PLAY SCENE 통합 정리 — 색상/선/글로우 표준화
+   재판/심문 화면의 모달, 패널, 버튼 등을 v3 가이드로 통일
+   (의도적 차이는 보존: 화자색 보더 / amber warning / phase pill)
+   ═══════════════════════════════════════════════════════════════════ */
+
+/* ── 인터랙션 모달 (재판관의 판단, 모순 감지 등) ── */
+body.pc-mode .pc-interaction-card {
+  border-radius: 18px !important;
+  border: 1px solid rgba(212, 162, 78, 0.22) !important;
+  background: linear-gradient(180deg, rgba(24, 26, 32, 0.96), rgba(13, 14, 18, 0.98)) !important;
+  box-shadow:
+    0 28px 60px rgba(0, 0, 0, 0.56),
+    0 0 0 1px rgba(212, 162, 78, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04) !important;
+}
+
+/* 화자색 / 상태색 모달 보더는 의도적 — 강도만 통일 (.20 → .30) */
+body.pc-mode .pc-interaction-card.tone-blue {
+  border-color: rgba(91, 141, 239, 0.30) !important;
+}
+body.pc-mode .pc-interaction-card.tone-red {
+  border-color: rgba(224, 96, 96, 0.30) !important;
+}
+body.pc-mode .pc-interaction-card.tone-green {
+  border-color: rgba(92, 201, 122, 0.30) !important;
+}
+body.pc-mode .pc-interaction-card.tone-gold {
+  border-color: rgba(212, 162, 78, 0.30) !important;
+}
+
+/* 헤더 — 11px eyebrow 통일 */
+body.pc-mode .pc-interaction-card__header {
+  padding: 22px 26px 16px !important;
+  border-bottom: 1px solid rgba(212, 162, 78, 0.12) !important;
+}
+body.pc-mode .pc-interaction-card__subtitle {
+  font-size: 11px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.22em !important;
+  color: var(--pc-gold-light) !important;
+  text-transform: uppercase;
+}
+body.pc-mode .pc-interaction-card__title {
+  font-size: 22px !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.02em !important;
+  color: var(--pc-text) !important;
+}
+
+/* 닫기 버튼 통일 */
+body.pc-mode .pc-interaction-card__close {
+  width: 36px !important;
+  height: 36px !important;
+  border-radius: 12px !important;
+  border: 1px solid rgba(255, 255, 255, 0.10) !important;
+  background: rgba(255, 255, 255, 0.03) !important;
+  color: var(--pc-text-dim) !important;
+  transition: all 160ms ease !important;
+}
+body.pc-mode .pc-interaction-card__close:hover {
+  border-color: rgba(212, 162, 78, 0.40) !important;
+  background: rgba(212, 162, 78, 0.08) !important;
+  color: var(--pc-gold-light) !important;
+}
+
+/* 메타 chip — gold .10 / .22 표준 */
+body.pc-mode .pc-interaction-card__tag {
+  padding: 4px 12px !important;
+  font-size: 11px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.06em !important;
+  background: rgba(212, 162, 78, 0.10) !important;
+  border: 1px solid rgba(212, 162, 78, 0.22) !important;
+  color: var(--pc-gold-light) !important;
+}
+
+/* 액션 버튼 — Main outline 표준 */
+body.pc-mode .pc-interaction-card__action {
+  min-height: 48px !important;
+  border-radius: 12px !important;
+  border: 1px solid rgba(212, 162, 78, 0.45) !important;
+  background: rgba(212, 162, 78, 0.10) !important;
+  color: var(--pc-gold-light) !important;
+  font-size: 14px !important;
+  font-weight: 700 !important;
+  padding: 12px 20px !important;
+  transition: all 160ms ease !important;
+}
+body.pc-mode .pc-interaction-card__action:hover:not(.is-disabled) {
+  border-color: rgba(212, 162, 78, 0.65) !important;
+  background: rgba(212, 162, 78, 0.16) !important;
+  transform: translateY(-1px);
+  box-shadow: 0 0 0 3px rgba(212, 162, 78, 0.10) !important;
+}
+body.pc-mode .pc-interaction-card__action.is-disabled {
+  opacity: 0.32 !important;
+}
+
+/* ── Discovery card (모순 감지 등) — interaction-card와 동일 표준 ── */
+body.pc-mode .pc-discovery-card__claim,
+body.pc-mode .pc-discovery-card__block,
+body.pc-mode .pc-discovery-card__option,
+body.pc-mode .pc-discovery-card__quote,
+body.pc-mode .pc-discovery-card__meta-list {
+  border-radius: 12px !important;
+  border: 1px solid rgba(212, 162, 78, 0.16) !important;
+  background: rgba(212, 162, 78, 0.04) !important;
+  padding: 14px 16px !important;
+}
+body.pc-mode .pc-discovery-card__claim.party-a {
+  border-color: rgba(91, 141, 239, 0.30) !important;
+  background: rgba(91, 141, 239, 0.06) !important;
+}
+body.pc-mode .pc-discovery-card__claim.party-b {
+  border-color: rgba(224, 96, 96, 0.30) !important;
+  background: rgba(224, 96, 96, 0.06) !important;
+}
+body.pc-mode .pc-discovery-card__option.is-selected {
+  border-color: rgba(212, 162, 78, 0.45) !important;
+  background: rgba(212, 162, 78, 0.10) !important;
+}
+
+/* ── 증거 디테일 (영수증 묶음 5장 모달) ── */
+body.pc-mode .pc-ev-detail__stage {
+  border-radius: 12px !important;
+  border: 1px solid rgba(255, 255, 255, 0.06) !important;
+  padding: 12px 14px !important;
+}
+body.pc-mode .pc-ev-detail__stage.is-open {
+  border-color: rgba(92, 201, 122, 0.30) !important;
+  background: rgba(92, 201, 122, 0.04) !important;
+}
+body.pc-mode .pc-ev-detail__stage.is-ready {
+  border-color: rgba(212, 162, 78, 0.30) !important;
+  background: rgba(212, 162, 78, 0.06) !important;
+}
+body.pc-mode .pc-ev-detail__investigate-btn {
+  border-radius: 10px !important;
+  border: 1px solid rgba(212, 162, 78, 0.45) !important;
+  background: rgba(212, 162, 78, 0.10) !important;
+  color: var(--pc-gold-light) !important;
+  transition: all 160ms ease !important;
+}
+body.pc-mode .pc-ev-detail__investigate-btn:hover {
+  border-color: rgba(212, 162, 78, 0.65) !important;
+  background: rgba(212, 162, 78, 0.16) !important;
+  transform: translateY(-1px);
+}
+
+/* 증거 제시 버튼 — 화자색 (의도적 — 보존) — radius/transition만 통일 */
+body.pc-mode .pc-ev-detail__present-btn {
+  border-radius: 12px !important;
+  transition: all 160ms ease !important;
+}
+body.pc-mode .pc-ev-detail__present-btn.is-a {
+  border: 1px solid rgba(91, 141, 239, 0.45) !important;
+  background: rgba(91, 141, 239, 0.10) !important;
+  color: var(--pc-blue) !important;
+}
+body.pc-mode .pc-ev-detail__present-btn.is-a:hover:not(:disabled) {
+  border-color: rgba(91, 141, 239, 0.65) !important;
+  background: rgba(91, 141, 239, 0.16) !important;
+  box-shadow: 0 0 0 3px rgba(91, 141, 239, 0.10) !important;
+}
+body.pc-mode .pc-ev-detail__present-btn.is-b {
+  border: 1px solid rgba(224, 96, 96, 0.45) !important;
+  background: rgba(224, 96, 96, 0.10) !important;
+  color: var(--pc-red) !important;
+}
+body.pc-mode .pc-ev-detail__present-btn.is-b:hover:not(:disabled) {
+  border-color: rgba(224, 96, 96, 0.65) !important;
+  background: rgba(224, 96, 96, 0.16) !important;
+  box-shadow: 0 0 0 3px rgba(224, 96, 96, 0.10) !important;
+}
+
+/* ── 증인 카드 ── */
+body.pc-mode .pc-witness-card {
+  border-radius: 12px !important;
+  border: 1px solid rgba(212, 162, 78, 0.18) !important;
+  background: rgba(212, 162, 78, 0.04) !important;
+}
+body.pc-mode .pc-witness-card.is-called {
+  border-color: rgba(92, 201, 122, 0.30) !important;
+  background: rgba(92, 201, 122, 0.06) !important;
+}
+body.pc-mode .pc-witness-card.is-locked {
+  opacity: 0.32;
+}
+body.pc-mode .pc-witness-card__btn {
+  border-radius: 10px !important;
+  border: 1px solid rgba(212, 162, 78, 0.45) !important;
+  background: rgba(212, 162, 78, 0.10) !important;
+  color: var(--pc-gold-light) !important;
+  transition: all 160ms ease !important;
+}
+body.pc-mode .pc-witness-card__btn:hover:not(:disabled) {
+  border-color: rgba(212, 162, 78, 0.65) !important;
+  background: rgba(212, 162, 78, 0.16) !important;
+  transform: translateY(-1px);
+}
+body.pc-mode .pc-witness-card__btn.is-done {
+  border-color: rgba(92, 201, 122, 0.45) !important;
+  background: rgba(92, 201, 122, 0.10) !important;
+  color: var(--pc-green) !important;
+}
+
+/* ── 발언 popup ── */
+body.pc-mode .pc-dialogue-popup {
+  border-radius: 14px !important;
+  border: 1px solid rgba(212, 162, 78, 0.22) !important;
+  background: linear-gradient(180deg, rgba(24, 26, 32, 0.92), rgba(13, 14, 18, 0.96)) !important;
+  box-shadow:
+    0 18px 40px rgba(0, 0, 0, 0.42),
+    0 0 0 1px rgba(212, 162, 78, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04) !important;
+}
+body.pc-mode .pc-dialogue-popup__close {
+  border-radius: 10px !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  background: transparent !important;
+  color: var(--pc-text-dim) !important;
+  transition: all 160ms ease !important;
+}
+body.pc-mode .pc-dialogue-popup__close:hover {
+  border-color: rgba(212, 162, 78, 0.40) !important;
+  background: rgba(212, 162, 78, 0.08) !important;
+  color: var(--pc-gold-light) !important;
+}
+body.pc-mode .pc-dialogue-popup__divider {
+  background: linear-gradient(90deg, transparent, rgba(212, 162, 78, 0.18), transparent) !important;
+  height: 1px !important;
+}
+
+/* ── 증거 열람 버튼 (기타 잔재) ── */
+body.pc-mode .pc-ev-viewer-btn {
+  padding: 5px 12px !important;
+  border-radius: 8px !important;
+  border: 1px solid rgba(212, 162, 78, 0.45) !important;
+  background: rgba(212, 162, 78, 0.10) !important;
+  color: var(--pc-gold-light) !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  transition: all 160ms ease !important;
+}
+body.pc-mode .pc-ev-viewer-btn:hover {
+  border-color: rgba(212, 162, 78, 0.65) !important;
+  background: rgba(212, 162, 78, 0.16) !important;
+}
+
+/* ── tag 통일 ── */
+body.pc-mode .pc-ev-detail__tag {
+  padding: 3px 10px !important;
+  border-radius: 999px !important;
+  font-size: 10px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.08em !important;
+  background: rgba(255, 255, 255, 0.04) !important;
+  border: 1px solid rgba(255, 255, 255, 0.10) !important;
+  color: var(--pc-text-dim) !important;
+}
+
+/* ── 모달 헤더 — evidence variant도 동일 표준 ── */
+body.pc-mode .pc-interaction-card__header--evidence {
+  padding: 22px 26px 16px !important;
+  border-bottom: 1px solid rgba(212, 162, 78, 0.12) !important;
+}
+
+
+
 /* ──────────────────────────────────────────────────
    사건 선택씬 — 우측 패널 더 넓게, HERO/SUMMARY/GRID/FOOTER 4 영역
    ────────────────────────────────────────────────── */
