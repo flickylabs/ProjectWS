@@ -6,7 +6,7 @@ import PCCharacterPortrait from '../icons/PCCharacterPortrait'
 import { getDifficultyLabel, sortCasesForBrowser } from './pcHomeShared'
 
 const CLEAR_SCORE_THRESHOLD = 40
-const TOTAL_SLOTS = 12
+const TOTAL_SLOTS = 10
 
 type StageEntry =
   | { caseData: CaseData; num: string; score: number; cleared: boolean; unlocked: boolean; placeholder: false }
@@ -88,28 +88,30 @@ export default function PCCaseBrowser({
 
   return (
     <div className="cb">
-      {/* ── 헤더 (DepthHeader와 동일한 위치 패턴, description 폐기로 깔끔하게) ── */}
+      {/* ── 헤더 (검정 띠 안: 뒤로 + 제목만) ── */}
       <header className="cb__header pc-depth-header">
         <button className="pc-depth-back" onClick={onBack} type="button"><span aria-hidden="true">‹</span>뒤로</button>
         <div className="cb__header-info pc-depth-header__copy">
           <span className="cb__eyebrow">{eyebrow ?? 'CASE BROWSER'}</span>
           <h2>{title}</h2>
         </div>
-        <div className="cb__header-tools">
-          {showCompletedFilter && (
-            <label className="cb__toggle">
-              <span className="cb__toggle-label">완료 기록만</span>
-              <button
-                aria-pressed={showCompletedOnly}
-                className={`pc-toggle${showCompletedOnly ? ' active' : ''}`}
-                onClick={() => setShowCompletedOnly(v => !v)}
-                type="button"
-              ><i /></button>
-            </label>
-          )}
-          <span className="cb__count">{filteredCases.length}건</span>
-        </div>
       </header>
+
+      {/* ── 헤더 띠 아래: tools (완료 기록만 + 1건) ── */}
+      <div className="cb__header-tools">
+        {showCompletedFilter && (
+          <label className="cb__toggle">
+            <span className="cb__toggle-label">완료 기록만</span>
+            <button
+              aria-pressed={showCompletedOnly}
+              className={`pc-toggle${showCompletedOnly ? ' active' : ''}`}
+              onClick={() => setShowCompletedOnly(v => !v)}
+              type="button"
+            ><i /></button>
+          </label>
+        )}
+        <span className="cb__count">{filteredCases.length}건</span>
+      </div>
 
       {realStages.length === 0 ? (
         <div className="cb__empty">

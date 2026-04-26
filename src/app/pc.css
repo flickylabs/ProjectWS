@@ -4918,12 +4918,14 @@ body.pc-mode .pc-session-grid-v2 {
   max-width: 100%;
 }
 
-/* v3: Session card — NESTED 패턴 (outer 18 / inner 14, radius 차 4px) */
+/* v3: Session card — outer 세로 길게, top/inner/bottom 3-row 구조 */
 body.pc-mode .pc-session-card-v2 {
   position: relative;
-  display: block;
-  padding: 10px;
-  aspect-ratio: 1 / 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 14px 12px 12px;
+  aspect-ratio: 4 / 5;
   border-radius: 18px;
   border: 1px solid rgba(212, 162, 78, 0.18);
   background: linear-gradient(180deg, rgba(24, 26, 32, 0.88), rgba(13, 14, 18, 0.94));
@@ -4938,17 +4940,16 @@ body.pc-mode .pc-session-card-v2 {
   transition: border-color 200ms ease, transform 200ms ease, box-shadow 200ms ease;
 }
 
-/* Inner — NESTED 안쪽 카드 (radius 14, gold tint .04) */
+/* Inner — 메인 컨텐츠 (icon + body + track) */
 body.pc-mode .pc-session-card-v2__inner {
   position: relative;
-  width: 100%;
-  height: 100%;
+  flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 12px;
-  padding: 22px 16px 18px;
+  padding: 18px 14px 16px;
   border-radius: 14px;
   border: 1px solid rgba(212, 162, 78, 0.14);
   background: rgba(212, 162, 78, 0.04);
@@ -4988,15 +4989,15 @@ body.pc-mode .pc-session-card-v2:hover .pc-session-card-v2__inner {
 body.pc-mode .pc-session-card-v2.is-disabled {
   pointer-events: none;
 }
-body.pc-mode .pc-session-card-v2.is-disabled .pc-session-card-v2__inner > *:not(.pc-session-card-v2__lock) {
-  opacity: 0.32;
-}
 body.pc-mode .pc-session-card-v2.is-disabled .pc-session-card-v2__inner {
   background: rgba(255, 255, 255, 0.02);
   border-color: rgba(255, 255, 255, 0.06);
 }
+/* lock-overlay 외 모든 outer 자식 (top/inner/bottom) 흐리게 */
+body.pc-mode .pc-session-card-v2.is-disabled > *:not(.pc-session-card-v2__lock-overlay) {
+  opacity: 0.32;
+}
 
-body.pc-mode .pc-session-card-v2__top,
 body.pc-mode .pc-case-browser-v2__header-tools {
   display: flex;
   align-items: center;
@@ -5004,18 +5005,51 @@ body.pc-mode .pc-case-browser-v2__header-tools {
   gap: 12px;
 }
 
+/* outer top — Session 01 / 1/1 (inner 위) */
 body.pc-mode .pc-session-card-v2__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   width: 100%;
+  padding: 0 4px;
   font-size: 10px;
   letter-spacing: 0.1em;
   color: var(--pc-text-muted);
   font-weight: 700;
   text-transform: uppercase;
+  flex-shrink: 0;
 }
 
 body.pc-mode .pc-session-card-v2__top strong {
   color: var(--pc-gold-light);
   font-weight: 800;
+  font-size: 11px;
+}
+
+/* outer bottom — [평균 76점] chip (inner 아래) */
+body.pc-mode .pc-session-card-v2__bottom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  min-height: 26px;
+}
+body.pc-mode .pc-session-card-v2__avg {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: rgba(212, 162, 78, 0.10);
+  border: 1px solid rgba(212, 162, 78, 0.22);
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--pc-gold-light);
+  letter-spacing: 0.02em;
+}
+body.pc-mode .pc-session-card-v2__avg--empty {
+  background: transparent;
+  border-color: rgba(255, 255, 255, 0.06);
+  color: var(--pc-text-muted);
 }
 
 body.pc-mode .pc-session-card-v2__main {
@@ -19756,25 +19790,60 @@ body.pc-mode .pc-achievement-strip__track {
 }
 
 /* ──────────────────────────────────────────────────
-   페이지 상단 spacing + 헤더 dark band edge-to-edge
+   페이지 상단 spacing — 바깥 패널(border/bg/shadow) 폐기
    ────────────────────────────────────────────────── */
 body.pc-mode .pc-depth-shell {
   margin-top: 32px !important;
   margin-bottom: 32px !important;
   padding: 0 0 48px !important;
   max-width: 1280px;
+  width: 100% !important;
   margin-left: auto !important;
   margin-right: auto !important;
   min-height: calc(100vh - 64px) !important;
+  /* 바깥 패널 제거 */
+  border: none !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  box-shadow: none !important;
+  overflow: visible !important;
 }
 
-/* 헤더 dark band — pc-depth-shell 끝-끝까지, top 24 + 컨텐츠 아래로 내림 */
+/* 헤더 dark band — 양 끝 그라데이션 fade-out */
 body.pc-mode .pc-depth-header {
-  background: linear-gradient(180deg, rgba(13, 14, 18, 0.72), rgba(13, 14, 18, 0.55)) !important;
-  border-bottom: 1px solid rgba(212, 162, 78, 0.18) !important;
+  position: relative;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    rgba(13, 14, 18, 0.72) 6%,
+    rgba(13, 14, 18, 0.78) 50%,
+    rgba(13, 14, 18, 0.72) 94%,
+    transparent 100%) !important;
+  border: none !important;
+  border-bottom: none !important;
   padding: 24px 48px 32px !important;
-  margin: 0 0 40px !important;
+  margin: 0 0 0 !important;
   border-radius: 0 !important;
+}
+/* 띠 하단 라인도 양 끝 페이드 (gold .18) */
+body.pc-mode .pc-depth-header::after {
+  content: '';
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  height: 1px;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    rgba(212, 162, 78, 0.20) 10%,
+    rgba(212, 162, 78, 0.20) 90%,
+    transparent 100%);
+  pointer-events: none;
+}
+
+/* 헤더 아래 — 본문 시작 전 spacing */
+body.pc-mode .pc-depth-shell > .pc-depth-header + *,
+body.pc-mode .pc-depth-shell > .cb > .cb__header + * {
+  margin-top: 24px;
 }
 
 /* 사건 선택 (Case Browser) — 본문은 padding 적용 */
@@ -19793,6 +19862,16 @@ body.pc-mode .pc-depth-shell > .pc-filter-pills-v2 {
   padding-right: 48px;
 }
 
+/* Case Browser tools — 검정 띠 아래로 위치 */
+body.pc-mode .pc-depth-shell > .cb > .cb__header-tools {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  justify-content: flex-end;
+  padding: 16px 48px 8px;
+  margin-bottom: 8px;
+}
+
 /* ──────────────────────────────────────────────────
    사건 선택씬 — 우측 패널 더 넓게, HERO/SUMMARY/GRID/FOOTER 4 영역
    ────────────────────────────────────────────────── */
@@ -19807,9 +19886,27 @@ body.pc-mode .cb__split {
   width: 100%;
 }
 
-/* 좌측 stage 리스트도 max-height 조정 */
+/* 좌측 stage 영역 — 둥근 모서리 반투명 패널 (brief 패널과 같은 높이 stretch) */
 body.pc-mode .cb__stages {
-  max-height: calc(100vh - 280px) !important;
+  max-height: none !important;
+  border-radius: 18px !important;
+  border: 1px solid rgba(212, 162, 78, 0.18) !important;
+  background: linear-gradient(180deg, rgba(24, 26, 32, 0.45), rgba(13, 14, 18, 0.55)) !important;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.32), inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  padding: 28px 16px !important;
+  overflow-y: auto !important;
+}
+body.pc-mode .cb__split {
+  align-items: stretch !important;
+}
+body.pc-mode .cb__zigzag {
+  padding: 0 !important;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 /* HERO — 사건 제목 가운데, portraits 안쪽으로 이동 (padding-x 키움) */
