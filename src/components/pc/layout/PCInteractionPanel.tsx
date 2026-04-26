@@ -237,12 +237,13 @@ export function buildEvidenceSelectionPayload(disputeId: string, party: PartyId)
   }
 
   const partyName = party === 'a' ? caseData.duo.partyA.name : caseData.duo.partyB.name
+  const otherPartyName = party === 'a' ? caseData.duo.partyB.name : caseData.duo.partyA.name
+  // 모든 unlocked + related + 미제시 증거를 표시. subjectParty 비매칭은 disabled로 표시.
   const linkedEvidence = state.evidenceDefinitions.filter((evidence) => {
     const unlocked = state.evidenceStates[evidence.id]?.unlocked
     const related = evidence.proves.includes(disputeId)
-    const relevant = !evidence.subjectParty || evidence.subjectParty === 'both' || evidence.subjectParty === party
     const alreadyPresented = state.evidenceStates[evidence.id]?.presentedTo?.includes(party) ?? false
-    return Boolean(unlocked && related && relevant && !alreadyPresented)
+    return Boolean(unlocked && related && !alreadyPresented)
   })
 
   if (linkedEvidence.length === 0) {
@@ -265,13 +266,18 @@ export function buildEvidenceSelectionPayload(disputeId: string, party: PartyId)
     body: COPY.selectEvidenceBody,
     tone: 'gold',
     tags: [partyName, dispute.name],
-    actions: linkedEvidence.map((evidence) => ({
-      kind: 'prepare_evidence_present' as const,
-      label: evidence.surfaceName ?? evidence.name,
-      evidenceId: evidence.id,
-      disputeId,
-      party,
-    })),
+    actions: linkedEvidence.map((evidence) => {
+      const relevant = !evidence.subjectParty || evidence.subjectParty === 'both' || evidence.subjectParty === party
+      return {
+        kind: 'prepare_evidence_present' as const,
+        label: evidence.surfaceName ?? evidence.name,
+        evidenceId: evidence.id,
+        disputeId,
+        party,
+        disabled: !relevant,
+        disabledReason: !relevant ? `${otherPartyName} 측 증거입니다. ${partyName}에게는 추궁 효과가 없습니다.` : undefined,
+      }
+    }),
   }
 }
 

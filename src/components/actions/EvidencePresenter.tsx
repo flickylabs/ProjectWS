@@ -101,16 +101,16 @@ export default function EvidencePresenter({ target, onPresent, onConfront, onWit
   const surfacedSet = useMemo(() => new Set(surfaceResult.surfacedIds), [surfaceResult.surfacedIds])
   const dimmedSet = useMemo(() => new Set(surfaceResult.dimmedIds), [surfaceResult.dimmedIds])
 
-  const { available, presented, locked, dimmed } = useMemo(() => {
-    // 대상 캐릭터와 관련된 증거만 필터링 (subjectParty 기준)
+  const { available, presented, locked, dimmed, unrelated } = useMemo(() => {
+    // subjectParty 기준 매칭 — 비매칭은 unrelated 카테고리로 분리해 disabled로 표시
     const isRelevant = (e: any) => !e.subjectParty || e.subjectParty === 'both' || e.subjectParty === target
-    // 이 캐릭터에게 이미 제시했는지 확인 (presentedTo에 target 포함 여부)
     const isPresentedToTarget = (e: any) => (target && evidenceStates[e.id]?.presentedTo?.includes(target)) ?? false
     const avail = evidenceDefinitions.filter((e) => isRelevant(e) && evidenceStates[e.id]?.unlocked && !isPresentedToTarget(e) && surfacedSet.has(e.id))
     const dim = evidenceDefinitions.filter((e) => isRelevant(e) && evidenceStates[e.id]?.unlocked && !isPresentedToTarget(e) && dimmedSet.has(e.id))
     const pres = evidenceDefinitions.filter((e) => isRelevant(e) && isPresentedToTarget(e))
     const lock = evidenceDefinitions.filter((e) => isRelevant(e) && !evidenceStates[e.id]?.unlocked)
-    return { available: avail, presented: pres, locked: lock, dimmed: dim }
+    const unrel = evidenceDefinitions.filter((e) => !isRelevant(e) && evidenceStates[e.id]?.unlocked)
+    return { available: avail, presented: pres, locked: lock, dimmed: dim, unrelated: unrel }
   }, [evidenceDefinitions, evidenceStates, target, surfacedSet, dimmedSet])
 
   const handleInvestigate = (evidenceId: string) => {
@@ -248,6 +248,29 @@ export default function EvidencePresenter({ target, onPresent, onConfront, onWit
           ))}
         </>
       )}
+      {/* 다른 쪽 증거 (subjectParty 비매칭 — 제시 불가) */}
+      {unrelated.length > 0 && target && caseData && (() => {
+        const otherPartyName = target === 'a' ? caseData.duo.partyB.name : caseData.duo.partyA.name
+        const partyName = target === 'a' ? caseData.duo.partyA.name : caseData.duo.partyB.name
+        return (
+          <>
+            <div className="text-xs text-gray-500 mt-1">{otherPartyName} 측 증거 ({unrelated.length})</div>
+            <div className="text-[10px] text-gray-600 px-1 mb-1">{partyName}에게는 추궁 효과가 없습니다.</div>
+            {unrelated.map((ev) => (
+              <div
+                key={ev.id}
+                className="border border-gray-800/30 rounded-xl bg-gray-900/20 px-3 py-2 opacity-50"
+                title={`${otherPartyName} 측 증거입니다. ${partyName}에게는 추궁 효과가 없습니다.`}
+              >
+                <div className="flex items-center gap-2">
+                  <Emoji char="🔒" size={12} />
+                  <span className="text-xs text-gray-500">{ev.surfaceName ?? ev.name}</span>
+                </div>
+              </div>
+            ))}
+          </>
+        )
+      })()}
       {locked.length > 0 && (
         <div className="text-xs text-gray-600 bg-gray-800/20 rounded-xl px-3 py-2">
           <Emoji char="🔒" size={14} /> 미확보 증거 {locked.length}개 (선행 증거 필요)

@@ -1789,9 +1789,10 @@ export function actuallyDiscoverEvidence(evidenceId: string) {
   if (!ev) return
 
   const mg = state.pendingMinigame
-  const name = mg?.npcName ?? '증인'
   const lieState = mg?.lieState ?? 'S2'
   const party = mg?.party ?? 'a'
+  const fallbackPartyName = party === 'a' ? state.caseData.duo.partyA.name : state.caseData.duo.partyB.name
+  const name = mg?.npcName ?? fallbackPartyName
 
   const { probe, slip, confirm } = getDiscoveryLines(ev, name, lieState)
   const discoverCaseKey = normalizeCaseKey(state.caseData?.caseId ?? '')

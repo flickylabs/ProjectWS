@@ -572,9 +572,27 @@
             "storeAddr": "서울 관악구 봉천로 234",
             "date": "2026.02.18 (화) 19:23",
             "items": [
-              { "name": "빙그레 바나나맛우유", "code": "880104", "unitPrice": "1,500", "qty": 1, "amount": "1,500" },
-              { "name": "삼각김밥 불고기", "code": "880211", "unitPrice": "1,500", "qty": 2, "amount": "3,000" },
-              { "name": "핫식스 250ml", "code": "880309", "unitPrice": "900", "qty": 1, "amount": "900" }
+              {
+                "name": "빙그레 바나나맛우유",
+                "code": "880104",
+                "unitPrice": "1,500",
+                "qty": 1,
+                "amount": "1,500"
+              },
+              {
+                "name": "삼각김밥 불고기",
+                "code": "880211",
+                "unitPrice": "1,500",
+                "qty": 2,
+                "amount": "3,000"
+              },
+              {
+                "name": "핫식스 250ml",
+                "code": "880309",
+                "unitPrice": "900",
+                "qty": 1,
+                "amount": "900"
+              }
             ],
             "subtotal": "5,400",
             "tax": "491",
@@ -587,10 +605,34 @@
             "storeAddr": "서울 관악구 봉천로 212 2F",
             "date": "2026.02.15 (토) 14:07",
             "items": [
-              { "name": "에뛰드 픽싱틴트 #05", "code": "410381", "unitPrice": "12,000", "qty": 1, "amount": "12,000" },
-              { "name": "매직 헤어롤 32mm 세트", "code": "410552", "unitPrice": "9,500", "qty": 1, "amount": "9,500" },
-              { "name": "이니스프리 그린티씨드세럼", "code": "410752", "unitPrice": "28,000", "qty": 1, "amount": "28,000" },
-              { "name": "쏘내추럴 코튼패드 80매", "code": "410104", "unitPrice": "3,500", "qty": 1, "amount": "3,500" }
+              {
+                "name": "에뛰드 픽싱틴트 #05",
+                "code": "410381",
+                "unitPrice": "12,000",
+                "qty": 1,
+                "amount": "12,000"
+              },
+              {
+                "name": "매직 헤어롤 32mm 세트",
+                "code": "410552",
+                "unitPrice": "9,500",
+                "qty": 1,
+                "amount": "9,500"
+              },
+              {
+                "name": "이니스프리 그린티씨드세럼",
+                "code": "410752",
+                "unitPrice": "28,000",
+                "qty": 1,
+                "amount": "28,000"
+              },
+              {
+                "name": "쏘내추럴 코튼패드 80매",
+                "code": "410104",
+                "unitPrice": "3,500",
+                "qty": 1,
+                "amount": "3,500"
+              }
             ],
             "subtotal": "53,000",
             "tax": "4,818",
@@ -603,10 +645,34 @@
             "storeAddr": "서울 관악구 관악로 142",
             "date": "2026.02.08 (토) 21:45",
             "items": [
-              { "name": "컵라면 진라면매운맛", "code": "880022", "unitPrice": "1,200", "qty": 1, "amount": "1,200" },
-              { "name": "삼각김밥 참치마요", "code": "880215", "unitPrice": "1,500", "qty": 1, "amount": "1,500" },
-              { "name": "코카콜라 500ml", "code": "880301", "unitPrice": "1,800", "qty": 1, "amount": "1,800" },
-              { "name": "핫도그 클래식", "code": "880401", "unitPrice": "2,000", "qty": 1, "amount": "2,000" }
+              {
+                "name": "컵라면 진라면매운맛",
+                "code": "880022",
+                "unitPrice": "1,200",
+                "qty": 1,
+                "amount": "1,200"
+              },
+              {
+                "name": "삼각김밥 참치마요",
+                "code": "880215",
+                "unitPrice": "1,500",
+                "qty": 1,
+                "amount": "1,500"
+              },
+              {
+                "name": "코카콜라 500ml",
+                "code": "880301",
+                "unitPrice": "1,800",
+                "qty": 1,
+                "amount": "1,800"
+              },
+              {
+                "name": "핫도그 클래식",
+                "code": "880401",
+                "unitPrice": "2,000",
+                "qty": 1,
+                "amount": "2,000"
+              }
             ],
             "subtotal": "6,500",
             "tax": "591",
@@ -619,10 +685,34 @@
             "storeAddr": "서울 관악구 봉천로 201 1F",
             "date": "2026.02.05 (수) 16:12",
             "items": [
-              { "name": "미니 손거울", "code": "530101", "unitPrice": "2,000", "qty": 1, "amount": "2,000" },
-              { "name": "머리끈 세트", "code": "530205", "unitPrice": "1,000", "qty": 2, "amount": "2,000" },
-              { "name": "제도 샤프 0.5mm", "code": "530610", "unitPrice": "2,000", "qty": 1, "amount": "2,000" },
-              { "name": "스프링 노트 B5", "code": "530712", "unitPrice": "2,000", "qty": 1, "amount": "2,000" }
+              {
+                "name": "미니 손거울",
+                "code": "530101",
+                "unitPrice": "2,000",
+                "qty": 1,
+                "amount": "2,000"
+              },
+              {
+                "name": "머리끈 세트",
+                "code": "530205",
+                "unitPrice": "1,000",
+                "qty": 2,
+                "amount": "2,000"
+              },
+              {
+                "name": "제도 샤프 0.5mm",
+                "code": "530610",
+                "unitPrice": "2,000",
+                "qty": 1,
+                "amount": "2,000"
+              },
+              {
+                "name": "스프링 노트 B5",
+                "code": "530712",
+                "unitPrice": "2,000",
+                "qty": 1,
+                "amount": "2,000"
+              }
             ],
             "subtotal": "8,000",
             "tax": "727",
@@ -635,8 +725,20 @@
             "storeAddr": "서울 서초구 강남대로 465",
             "date": "2026.02.12 (수) 18:30",
             "items": [
-              { "name": "중등 수학 1-1 기본+응용", "code": "978891", "unitPrice": "16,000", "qty": 1, "amount": "16,000" },
-              { "name": "중학 국어 독해력 1단계", "code": "978892", "unitPrice": "13,000", "qty": 1, "amount": "13,000" }
+              {
+                "name": "중등 수학 1-1 기본+응용",
+                "code": "978891",
+                "unitPrice": "16,000",
+                "qty": 1,
+                "amount": "16,000"
+              },
+              {
+                "name": "중학 국어 독해력 1단계",
+                "code": "978892",
+                "unitPrice": "13,000",
+                "qty": 1,
+                "amount": "13,000"
+              }
             ],
             "subtotal": "29,000",
             "tax": "0",
@@ -669,9 +771,27 @@
               "storeAddr": "서울 관악구 봉천로 234",
               "date": "2026.02.18 (화) 19:23",
               "items": [
-                { "name": "빙그레 바나나맛우유", "code": "880104", "unitPrice": "1,500", "qty": 1, "amount": "1,500" },
-                { "name": "삼각김밥 불고기", "code": "880211", "unitPrice": "1,500", "qty": 2, "amount": "3,000" },
-                { "name": "핫식스 250ml", "code": "880309", "unitPrice": "900", "qty": 1, "amount": "900" }
+                {
+                  "name": "빙그레 바나나맛우유",
+                  "code": "880104",
+                  "unitPrice": "1,500",
+                  "qty": 1,
+                  "amount": "1,500"
+                },
+                {
+                  "name": "삼각김밥 불고기",
+                  "code": "880211",
+                  "unitPrice": "1,500",
+                  "qty": 2,
+                  "amount": "3,000"
+                },
+                {
+                  "name": "핫식스 250ml",
+                  "code": "880309",
+                  "unitPrice": "900",
+                  "qty": 1,
+                  "amount": "900"
+                }
               ],
               "subtotal": "5,400",
               "tax": "491",
@@ -684,10 +804,34 @@
               "storeAddr": "서울 관악구 봉천로 212 2F",
               "date": "2026.02.15 (토) 14:07",
               "items": [
-                { "name": "에뛰드 픽싱틴트 #05", "code": "410381", "unitPrice": "12,000", "qty": 1, "amount": "12,000" },
-                { "name": "매직 헤어롤 32mm 세트", "code": "410552", "unitPrice": "9,500", "qty": 1, "amount": "9,500" },
-                { "name": "이니스프리 그린티씨드세럼", "code": "410752", "unitPrice": "28,000", "qty": 1, "amount": "28,000" },
-                { "name": "쏘내추럴 코튼패드 80매", "code": "410104", "unitPrice": "3,500", "qty": 1, "amount": "3,500" }
+                {
+                  "name": "에뛰드 픽싱틴트 #05",
+                  "code": "410381",
+                  "unitPrice": "12,000",
+                  "qty": 1,
+                  "amount": "12,000"
+                },
+                {
+                  "name": "매직 헤어롤 32mm 세트",
+                  "code": "410552",
+                  "unitPrice": "9,500",
+                  "qty": 1,
+                  "amount": "9,500"
+                },
+                {
+                  "name": "이니스프리 그린티씨드세럼",
+                  "code": "410752",
+                  "unitPrice": "28,000",
+                  "qty": 1,
+                  "amount": "28,000"
+                },
+                {
+                  "name": "쏘내추럴 코튼패드 80매",
+                  "code": "410104",
+                  "unitPrice": "3,500",
+                  "qty": 1,
+                  "amount": "3,500"
+                }
               ],
               "subtotal": "53,000",
               "tax": "4,818",
@@ -719,9 +863,27 @@
               "storeAddr": "서울 관악구 봉천로 234",
               "date": "2026.02.18 (화) 19:23",
               "items": [
-                { "name": "빙그레 바나나맛우유", "code": "880104", "unitPrice": "1,500", "qty": 1, "amount": "1,500" },
-                { "name": "삼각김밥 불고기", "code": "880211", "unitPrice": "1,500", "qty": 2, "amount": "3,000" },
-                { "name": "핫식스 250ml", "code": "880309", "unitPrice": "900", "qty": 1, "amount": "900" }
+                {
+                  "name": "빙그레 바나나맛우유",
+                  "code": "880104",
+                  "unitPrice": "1,500",
+                  "qty": 1,
+                  "amount": "1,500"
+                },
+                {
+                  "name": "삼각김밥 불고기",
+                  "code": "880211",
+                  "unitPrice": "1,500",
+                  "qty": 2,
+                  "amount": "3,000"
+                },
+                {
+                  "name": "핫식스 250ml",
+                  "code": "880309",
+                  "unitPrice": "900",
+                  "qty": 1,
+                  "amount": "900"
+                }
               ],
               "subtotal": "5,400",
               "tax": "491",
@@ -734,10 +896,34 @@
               "storeAddr": "서울 관악구 봉천로 212 2F",
               "date": "2026.02.15 (토) 14:07",
               "items": [
-                { "name": "에뛰드 픽싱틴트 #05", "code": "410381", "unitPrice": "12,000", "qty": 1, "amount": "12,000" },
-                { "name": "매직 헤어롤 32mm 세트", "code": "410552", "unitPrice": "9,500", "qty": 1, "amount": "9,500" },
-                { "name": "이니스프리 그린티씨드세럼", "code": "410752", "unitPrice": "28,000", "qty": 1, "amount": "28,000" },
-                { "name": "쏘내추럴 코튼패드 80매", "code": "410104", "unitPrice": "3,500", "qty": 1, "amount": "3,500" }
+                {
+                  "name": "에뛰드 픽싱틴트 #05",
+                  "code": "410381",
+                  "unitPrice": "12,000",
+                  "qty": 1,
+                  "amount": "12,000"
+                },
+                {
+                  "name": "매직 헤어롤 32mm 세트",
+                  "code": "410552",
+                  "unitPrice": "9,500",
+                  "qty": 1,
+                  "amount": "9,500"
+                },
+                {
+                  "name": "이니스프리 그린티씨드세럼",
+                  "code": "410752",
+                  "unitPrice": "28,000",
+                  "qty": 1,
+                  "amount": "28,000"
+                },
+                {
+                  "name": "쏘내추럴 코튼패드 80매",
+                  "code": "410104",
+                  "unitPrice": "3,500",
+                  "qty": 1,
+                  "amount": "3,500"
+                }
               ],
               "subtotal": "53,000",
               "tax": "4,818",
@@ -750,10 +936,34 @@
               "storeAddr": "서울 관악구 관악로 142",
               "date": "2026.02.08 (토) 21:45",
               "items": [
-                { "name": "컵라면 진라면매운맛", "code": "880022", "unitPrice": "1,200", "qty": 1, "amount": "1,200" },
-                { "name": "삼각김밥 참치마요", "code": "880215", "unitPrice": "1,500", "qty": 1, "amount": "1,500" },
-                { "name": "코카콜라 500ml", "code": "880301", "unitPrice": "1,800", "qty": 1, "amount": "1,800" },
-                { "name": "핫도그 클래식", "code": "880401", "unitPrice": "2,000", "qty": 1, "amount": "2,000" }
+                {
+                  "name": "컵라면 진라면매운맛",
+                  "code": "880022",
+                  "unitPrice": "1,200",
+                  "qty": 1,
+                  "amount": "1,200"
+                },
+                {
+                  "name": "삼각김밥 참치마요",
+                  "code": "880215",
+                  "unitPrice": "1,500",
+                  "qty": 1,
+                  "amount": "1,500"
+                },
+                {
+                  "name": "코카콜라 500ml",
+                  "code": "880301",
+                  "unitPrice": "1,800",
+                  "qty": 1,
+                  "amount": "1,800"
+                },
+                {
+                  "name": "핫도그 클래식",
+                  "code": "880401",
+                  "unitPrice": "2,000",
+                  "qty": 1,
+                  "amount": "2,000"
+                }
               ],
               "subtotal": "6,500",
               "tax": "591",
@@ -766,10 +976,34 @@
               "storeAddr": "서울 관악구 봉천로 201 1F",
               "date": "2026.02.05 (수) 16:12",
               "items": [
-                { "name": "미니 손거울", "code": "530101", "unitPrice": "2,000", "qty": 1, "amount": "2,000" },
-                { "name": "머리끈 세트", "code": "530205", "unitPrice": "1,000", "qty": 2, "amount": "2,000" },
-                { "name": "제도 샤프 0.5mm", "code": "530610", "unitPrice": "2,000", "qty": 1, "amount": "2,000" },
-                { "name": "스프링 노트 B5", "code": "530712", "unitPrice": "2,000", "qty": 1, "amount": "2,000" }
+                {
+                  "name": "미니 손거울",
+                  "code": "530101",
+                  "unitPrice": "2,000",
+                  "qty": 1,
+                  "amount": "2,000"
+                },
+                {
+                  "name": "머리끈 세트",
+                  "code": "530205",
+                  "unitPrice": "1,000",
+                  "qty": 2,
+                  "amount": "2,000"
+                },
+                {
+                  "name": "제도 샤프 0.5mm",
+                  "code": "530610",
+                  "unitPrice": "2,000",
+                  "qty": 1,
+                  "amount": "2,000"
+                },
+                {
+                  "name": "스프링 노트 B5",
+                  "code": "530712",
+                  "unitPrice": "2,000",
+                  "qty": 1,
+                  "amount": "2,000"
+                }
               ],
               "subtotal": "8,000",
               "tax": "727",
@@ -801,9 +1035,27 @@
               "storeAddr": "서울 관악구 봉천로 234",
               "date": "2026.02.18 (화) 19:23",
               "items": [
-                { "name": "빙그레 바나나맛우유", "code": "880104", "unitPrice": "1,500", "qty": 1, "amount": "1,500" },
-                { "name": "삼각김밥 불고기", "code": "880211", "unitPrice": "1,500", "qty": 2, "amount": "3,000" },
-                { "name": "핫식스 250ml", "code": "880309", "unitPrice": "900", "qty": 1, "amount": "900" }
+                {
+                  "name": "빙그레 바나나맛우유",
+                  "code": "880104",
+                  "unitPrice": "1,500",
+                  "qty": 1,
+                  "amount": "1,500"
+                },
+                {
+                  "name": "삼각김밥 불고기",
+                  "code": "880211",
+                  "unitPrice": "1,500",
+                  "qty": 2,
+                  "amount": "3,000"
+                },
+                {
+                  "name": "핫식스 250ml",
+                  "code": "880309",
+                  "unitPrice": "900",
+                  "qty": 1,
+                  "amount": "900"
+                }
               ],
               "subtotal": "5,400",
               "tax": "491",
@@ -816,10 +1068,34 @@
               "storeAddr": "서울 관악구 봉천로 212 2F",
               "date": "2026.02.15 (토) 14:07",
               "items": [
-                { "name": "에뛰드 픽싱틴트 #05", "code": "410381", "unitPrice": "12,000", "qty": 1, "amount": "12,000" },
-                { "name": "매직 헤어롤 32mm 세트", "code": "410552", "unitPrice": "9,500", "qty": 1, "amount": "9,500" },
-                { "name": "이니스프리 그린티씨드세럼", "code": "410752", "unitPrice": "28,000", "qty": 1, "amount": "28,000" },
-                { "name": "쏘내추럴 코튼패드 80매", "code": "410104", "unitPrice": "3,500", "qty": 1, "amount": "3,500" }
+                {
+                  "name": "에뛰드 픽싱틴트 #05",
+                  "code": "410381",
+                  "unitPrice": "12,000",
+                  "qty": 1,
+                  "amount": "12,000"
+                },
+                {
+                  "name": "매직 헤어롤 32mm 세트",
+                  "code": "410552",
+                  "unitPrice": "9,500",
+                  "qty": 1,
+                  "amount": "9,500"
+                },
+                {
+                  "name": "이니스프리 그린티씨드세럼",
+                  "code": "410752",
+                  "unitPrice": "28,000",
+                  "qty": 1,
+                  "amount": "28,000"
+                },
+                {
+                  "name": "쏘내추럴 코튼패드 80매",
+                  "code": "410104",
+                  "unitPrice": "3,500",
+                  "qty": 1,
+                  "amount": "3,500"
+                }
               ],
               "subtotal": "53,000",
               "tax": "4,818",
@@ -832,10 +1108,34 @@
               "storeAddr": "서울 관악구 관악로 142",
               "date": "2026.02.08 (토) 21:45",
               "items": [
-                { "name": "컵라면 진라면매운맛", "code": "880022", "unitPrice": "1,200", "qty": 1, "amount": "1,200" },
-                { "name": "삼각김밥 참치마요", "code": "880215", "unitPrice": "1,500", "qty": 1, "amount": "1,500" },
-                { "name": "코카콜라 500ml", "code": "880301", "unitPrice": "1,800", "qty": 1, "amount": "1,800" },
-                { "name": "핫도그 클래식", "code": "880401", "unitPrice": "2,000", "qty": 1, "amount": "2,000" }
+                {
+                  "name": "컵라면 진라면매운맛",
+                  "code": "880022",
+                  "unitPrice": "1,200",
+                  "qty": 1,
+                  "amount": "1,200"
+                },
+                {
+                  "name": "삼각김밥 참치마요",
+                  "code": "880215",
+                  "unitPrice": "1,500",
+                  "qty": 1,
+                  "amount": "1,500"
+                },
+                {
+                  "name": "코카콜라 500ml",
+                  "code": "880301",
+                  "unitPrice": "1,800",
+                  "qty": 1,
+                  "amount": "1,800"
+                },
+                {
+                  "name": "핫도그 클래식",
+                  "code": "880401",
+                  "unitPrice": "2,000",
+                  "qty": 1,
+                  "amount": "2,000"
+                }
               ],
               "subtotal": "6,500",
               "tax": "591",
@@ -848,10 +1148,34 @@
               "storeAddr": "서울 관악구 봉천로 201 1F",
               "date": "2026.02.05 (수) 16:12",
               "items": [
-                { "name": "미니 손거울", "code": "530101", "unitPrice": "2,000", "qty": 1, "amount": "2,000" },
-                { "name": "머리끈 세트", "code": "530205", "unitPrice": "1,000", "qty": 2, "amount": "2,000" },
-                { "name": "제도 샤프 0.5mm", "code": "530610", "unitPrice": "2,000", "qty": 1, "amount": "2,000" },
-                { "name": "스프링 노트 B5", "code": "530712", "unitPrice": "2,000", "qty": 1, "amount": "2,000" }
+                {
+                  "name": "미니 손거울",
+                  "code": "530101",
+                  "unitPrice": "2,000",
+                  "qty": 1,
+                  "amount": "2,000"
+                },
+                {
+                  "name": "머리끈 세트",
+                  "code": "530205",
+                  "unitPrice": "1,000",
+                  "qty": 2,
+                  "amount": "2,000"
+                },
+                {
+                  "name": "제도 샤프 0.5mm",
+                  "code": "530610",
+                  "unitPrice": "2,000",
+                  "qty": 1,
+                  "amount": "2,000"
+                },
+                {
+                  "name": "스프링 노트 B5",
+                  "code": "530712",
+                  "unitPrice": "2,000",
+                  "qty": 1,
+                  "amount": "2,000"
+                }
               ],
               "subtotal": "8,000",
               "tax": "727",
@@ -864,8 +1188,20 @@
               "storeAddr": "서울 서초구 강남대로 465",
               "date": "2026.02.12 (수) 18:30",
               "items": [
-                { "name": "중등 수학 1-1 기본+응용", "code": "978891", "unitPrice": "16,000", "qty": 1, "amount": "16,000" },
-                { "name": "중학 국어 독해력 1단계", "code": "978892", "unitPrice": "13,000", "qty": 1, "amount": "13,000" }
+                {
+                  "name": "중등 수학 1-1 기본+응용",
+                  "code": "978891",
+                  "unitPrice": "16,000",
+                  "qty": 1,
+                  "amount": "16,000"
+                },
+                {
+                  "name": "중학 국어 독해력 1단계",
+                  "code": "978892",
+                  "unitPrice": "13,000",
+                  "qty": 1,
+                  "amount": "13,000"
+                }
               ],
               "subtotal": "29,000",
               "tax": "0",
@@ -1175,72 +1511,494 @@
       },
       "viewerDataByStage": {
         "1": {
-          "meta": { "name": "블랙박스 GPS 기록", "type": "device", "viewerType": "device", "trustLevel": "mid", "trustLabel": "보통", "source": "org", "sourceLabel": "기관", "legality": "ok", "legalLabel": "적법", "stage": 1, "stageLabel": "1단계 — 시각/속도/좌표만", "sourceNote": "institutional / original", "redactions": ["location"] },
+          "meta": {
+            "name": "블랙박스 GPS 기록",
+            "type": "device",
+            "viewerType": "device",
+            "trustLevel": "mid",
+            "trustLabel": "보통",
+            "source": "org",
+            "sourceLabel": "기관",
+            "legality": "ok",
+            "legalLabel": "적법",
+            "stage": 1,
+            "stageLabel": "1단계 — 시각/속도/좌표만",
+            "sourceNote": "institutional / original",
+            "redactions": [
+              "location"
+            ]
+          },
           "gps_log": [
-            { "timestamp": "02.18 18:32", "lat": "37.5565", "lng": "126.9097", "speed": "0 km/h", "location": "??", "suspicious": false },
-            { "timestamp": "02.18 18:45", "lat": "37.5412", "lng": "126.9119", "speed": "42 km/h", "location": "??", "suspicious": false },
-            { "timestamp": "02.18 18:58", "lat": "37.5185", "lng": "126.9278", "speed": "35 km/h", "location": "??", "suspicious": false },
-            { "timestamp": "02.18 19:05", "lat": "37.5092", "lng": "126.9310", "speed": "28 km/h", "location": "??", "suspicious": false },
-            { "timestamp": "02.18 19:12", "lat": "37.4985", "lng": "126.9448", "speed": "15 km/h", "location": "??", "suspicious": false },
-            { "timestamp": "02.18 19:14", "lat": "37.4962", "lng": "126.9461", "speed": "0 km/h", "location": "??", "suspicious": false },
-            { "timestamp": "02.18 21:47", "lat": "37.4962", "lng": "126.9461", "speed": "0 km/h", "location": "??", "suspicious": false },
-            { "timestamp": "02.18 21:48", "lat": "37.4968", "lng": "126.9455", "speed": "8 km/h", "location": "??", "suspicious": false },
-            { "timestamp": "02.18 22:02", "lat": "37.5092", "lng": "126.9310", "speed": "45 km/h", "location": "??", "suspicious": false },
-            { "timestamp": "02.18 22:15", "lat": "37.5258", "lng": "126.9138", "speed": "38 km/h", "location": "??", "suspicious": false },
-            { "timestamp": "02.18 22:28", "lat": "37.5565", "lng": "126.9097", "speed": "0 km/h", "location": "??", "suspicious": false },
-            { "timestamp": "02.15 14:01", "lat": "37.5565", "lng": "126.9097", "speed": "0 km/h", "location": "??", "suspicious": false },
-            { "timestamp": "02.15 14:18", "lat": "37.4962", "lng": "126.9461", "speed": "0 km/h", "location": "??", "suspicious": false },
-            { "timestamp": "02.15 16:42", "lat": "37.4962", "lng": "126.9461", "speed": "0 km/h", "location": "??", "suspicious": false },
-            { "timestamp": "02.12 18:05", "lat": "37.5565", "lng": "126.9097", "speed": "0 km/h", "location": "??", "suspicious": false },
-            { "timestamp": "02.12 18:22", "lat": "37.4962", "lng": "126.9461", "speed": "0 km/h", "location": "??", "suspicious": false },
-            { "timestamp": "02.12 20:55", "lat": "37.4962", "lng": "126.9461", "speed": "0 km/h", "location": "??", "suspicious": false },
-            { "timestamp": "02.08 21:20", "lat": "37.4962", "lng": "126.9461", "speed": "0 km/h", "location": "??", "suspicious": false }
+            {
+              "timestamp": "02.18 18:32",
+              "lat": "37.5565",
+              "lng": "126.9097",
+              "speed": "0 km/h",
+              "location": "??",
+              "suspicious": false
+            },
+            {
+              "timestamp": "02.18 18:45",
+              "lat": "37.5412",
+              "lng": "126.9119",
+              "speed": "42 km/h",
+              "location": "??",
+              "suspicious": false
+            },
+            {
+              "timestamp": "02.18 18:58",
+              "lat": "37.5185",
+              "lng": "126.9278",
+              "speed": "35 km/h",
+              "location": "??",
+              "suspicious": false
+            },
+            {
+              "timestamp": "02.18 19:05",
+              "lat": "37.5092",
+              "lng": "126.9310",
+              "speed": "28 km/h",
+              "location": "??",
+              "suspicious": false
+            },
+            {
+              "timestamp": "02.18 19:12",
+              "lat": "37.4985",
+              "lng": "126.9448",
+              "speed": "15 km/h",
+              "location": "??",
+              "suspicious": false
+            },
+            {
+              "timestamp": "02.18 19:14",
+              "lat": "37.4962",
+              "lng": "126.9461",
+              "speed": "0 km/h",
+              "location": "??",
+              "suspicious": false
+            },
+            {
+              "timestamp": "02.18 21:47",
+              "lat": "37.4962",
+              "lng": "126.9461",
+              "speed": "0 km/h",
+              "location": "??",
+              "suspicious": false
+            },
+            {
+              "timestamp": "02.18 21:48",
+              "lat": "37.4968",
+              "lng": "126.9455",
+              "speed": "8 km/h",
+              "location": "??",
+              "suspicious": false
+            },
+            {
+              "timestamp": "02.18 22:02",
+              "lat": "37.5092",
+              "lng": "126.9310",
+              "speed": "45 km/h",
+              "location": "??",
+              "suspicious": false
+            },
+            {
+              "timestamp": "02.18 22:15",
+              "lat": "37.5258",
+              "lng": "126.9138",
+              "speed": "38 km/h",
+              "location": "??",
+              "suspicious": false
+            },
+            {
+              "timestamp": "02.18 22:28",
+              "lat": "37.5565",
+              "lng": "126.9097",
+              "speed": "0 km/h",
+              "location": "??",
+              "suspicious": false
+            },
+            {
+              "timestamp": "02.15 14:01",
+              "lat": "37.5565",
+              "lng": "126.9097",
+              "speed": "0 km/h",
+              "location": "??",
+              "suspicious": false
+            },
+            {
+              "timestamp": "02.15 14:18",
+              "lat": "37.4962",
+              "lng": "126.9461",
+              "speed": "0 km/h",
+              "location": "??",
+              "suspicious": false
+            },
+            {
+              "timestamp": "02.15 16:42",
+              "lat": "37.4962",
+              "lng": "126.9461",
+              "speed": "0 km/h",
+              "location": "??",
+              "suspicious": false
+            },
+            {
+              "timestamp": "02.12 18:05",
+              "lat": "37.5565",
+              "lng": "126.9097",
+              "speed": "0 km/h",
+              "location": "??",
+              "suspicious": false
+            },
+            {
+              "timestamp": "02.12 18:22",
+              "lat": "37.4962",
+              "lng": "126.9461",
+              "speed": "0 km/h",
+              "location": "??",
+              "suspicious": false
+            },
+            {
+              "timestamp": "02.12 20:55",
+              "lat": "37.4962",
+              "lng": "126.9461",
+              "speed": "0 km/h",
+              "location": "??",
+              "suspicious": false
+            },
+            {
+              "timestamp": "02.08 21:20",
+              "lat": "37.4962",
+              "lng": "126.9461",
+              "speed": "0 km/h",
+              "location": "??",
+              "suspicious": false
+            }
           ]
         },
         "2": {
-          "meta": { "name": "블랙박스 GPS 기록", "type": "device", "viewerType": "device", "trustLevel": "mid", "trustLabel": "보통", "source": "org", "sourceLabel": "기관", "legality": "ok", "legalLabel": "적법", "stage": 2, "stageLabel": "2단계 — 위치 연계 공개", "sourceNote": "institutional / original", "redactions": [] },
+          "meta": {
+            "name": "블랙박스 GPS 기록",
+            "type": "device",
+            "viewerType": "device",
+            "trustLevel": "mid",
+            "trustLabel": "보통",
+            "source": "org",
+            "sourceLabel": "기관",
+            "legality": "ok",
+            "legalLabel": "적법",
+            "stage": 2,
+            "stageLabel": "2단계 — 위치 연계 공개",
+            "sourceNote": "institutional / original",
+            "redactions": []
+          },
           "gps_log": [
-            { "timestamp": "02.18 18:32", "lat": "37.5565", "lng": "126.9097", "speed": "0 km/h", "location": "자택 (마포구 망원동)", "suspicious": false },
-            { "timestamp": "02.18 18:45", "lat": "37.5412", "lng": "126.9119", "speed": "42 km/h", "location": "여의대로 합류", "suspicious": false },
-            { "timestamp": "02.18 18:58", "lat": "37.5185", "lng": "126.9278", "speed": "35 km/h", "location": "노량진역 부근", "suspicious": false },
-            { "timestamp": "02.18 19:05", "lat": "37.5092", "lng": "126.9310", "speed": "28 km/h", "location": "상도터널 진입", "suspicious": false },
-            { "timestamp": "02.18 19:12", "lat": "37.4985", "lng": "126.9448", "speed": "15 km/h", "location": "관악구 봉천동 진입", "suspicious": false },
-            { "timestamp": "02.18 19:14", "lat": "37.4962", "lng": "126.9461", "speed": "0 km/h", "location": "봉천동 엔젤오피스텔 앞 (주차)", "suspicious": false },
-            { "timestamp": "02.18 21:47", "lat": "37.4962", "lng": "126.9461", "speed": "0 km/h", "location": "(주차 유지)", "suspicious": false },
-            { "timestamp": "02.18 21:48", "lat": "37.4968", "lng": "126.9455", "speed": "8 km/h", "location": "봉천동 출발", "suspicious": false },
-            { "timestamp": "02.18 22:02", "lat": "37.5092", "lng": "126.9310", "speed": "45 km/h", "location": "상도터널 통과", "suspicious": false },
-            { "timestamp": "02.18 22:15", "lat": "37.5258", "lng": "126.9138", "speed": "38 km/h", "location": "여의도 방면", "suspicious": false },
-            { "timestamp": "02.18 22:28", "lat": "37.5565", "lng": "126.9097", "speed": "0 km/h", "location": "자택 도착", "suspicious": false },
-            { "timestamp": "02.15 14:01", "lat": "37.5565", "lng": "126.9097", "speed": "0 km/h", "location": "자택 출발", "suspicious": false },
-            { "timestamp": "02.15 14:18", "lat": "37.4962", "lng": "126.9461", "speed": "0 km/h", "location": "봉천동 엔젤오피스텔 앞 (주차)", "suspicious": false },
-            { "timestamp": "02.15 16:42", "lat": "37.4962", "lng": "126.9461", "speed": "0 km/h", "location": "(주차 유지)", "suspicious": false },
-            { "timestamp": "02.12 18:05", "lat": "37.5565", "lng": "126.9097", "speed": "0 km/h", "location": "자택 출발", "suspicious": false },
-            { "timestamp": "02.12 18:22", "lat": "37.4962", "lng": "126.9461", "speed": "0 km/h", "location": "봉천동 엔젤오피스텔 앞 (주차)", "suspicious": false },
-            { "timestamp": "02.12 20:55", "lat": "37.4962", "lng": "126.9461", "speed": "0 km/h", "location": "(주차 유지)", "suspicious": false },
-            { "timestamp": "02.08 21:20", "lat": "37.4962", "lng": "126.9461", "speed": "0 km/h", "location": "봉천동 엔젤오피스텔 앞 (주차)", "suspicious": false }
+            {
+              "timestamp": "02.18 18:32",
+              "lat": "37.5565",
+              "lng": "126.9097",
+              "speed": "0 km/h",
+              "location": "자택 (마포구 망원동)",
+              "suspicious": false
+            },
+            {
+              "timestamp": "02.18 18:45",
+              "lat": "37.5412",
+              "lng": "126.9119",
+              "speed": "42 km/h",
+              "location": "여의대로 합류",
+              "suspicious": false
+            },
+            {
+              "timestamp": "02.18 18:58",
+              "lat": "37.5185",
+              "lng": "126.9278",
+              "speed": "35 km/h",
+              "location": "노량진역 부근",
+              "suspicious": false
+            },
+            {
+              "timestamp": "02.18 19:05",
+              "lat": "37.5092",
+              "lng": "126.9310",
+              "speed": "28 km/h",
+              "location": "상도터널 진입",
+              "suspicious": false
+            },
+            {
+              "timestamp": "02.18 19:12",
+              "lat": "37.4985",
+              "lng": "126.9448",
+              "speed": "15 km/h",
+              "location": "관악구 봉천동 진입",
+              "suspicious": false
+            },
+            {
+              "timestamp": "02.18 19:14",
+              "lat": "37.4962",
+              "lng": "126.9461",
+              "speed": "0 km/h",
+              "location": "봉천동 엔젤오피스텔 앞 (주차)",
+              "suspicious": false
+            },
+            {
+              "timestamp": "02.18 21:47",
+              "lat": "37.4962",
+              "lng": "126.9461",
+              "speed": "0 km/h",
+              "location": "(주차 유지)",
+              "suspicious": false
+            },
+            {
+              "timestamp": "02.18 21:48",
+              "lat": "37.4968",
+              "lng": "126.9455",
+              "speed": "8 km/h",
+              "location": "봉천동 출발",
+              "suspicious": false
+            },
+            {
+              "timestamp": "02.18 22:02",
+              "lat": "37.5092",
+              "lng": "126.9310",
+              "speed": "45 km/h",
+              "location": "상도터널 통과",
+              "suspicious": false
+            },
+            {
+              "timestamp": "02.18 22:15",
+              "lat": "37.5258",
+              "lng": "126.9138",
+              "speed": "38 km/h",
+              "location": "여의도 방면",
+              "suspicious": false
+            },
+            {
+              "timestamp": "02.18 22:28",
+              "lat": "37.5565",
+              "lng": "126.9097",
+              "speed": "0 km/h",
+              "location": "자택 도착",
+              "suspicious": false
+            },
+            {
+              "timestamp": "02.15 14:01",
+              "lat": "37.5565",
+              "lng": "126.9097",
+              "speed": "0 km/h",
+              "location": "자택 출발",
+              "suspicious": false
+            },
+            {
+              "timestamp": "02.15 14:18",
+              "lat": "37.4962",
+              "lng": "126.9461",
+              "speed": "0 km/h",
+              "location": "봉천동 엔젤오피스텔 앞 (주차)",
+              "suspicious": false
+            },
+            {
+              "timestamp": "02.15 16:42",
+              "lat": "37.4962",
+              "lng": "126.9461",
+              "speed": "0 km/h",
+              "location": "(주차 유지)",
+              "suspicious": false
+            },
+            {
+              "timestamp": "02.12 18:05",
+              "lat": "37.5565",
+              "lng": "126.9097",
+              "speed": "0 km/h",
+              "location": "자택 출발",
+              "suspicious": false
+            },
+            {
+              "timestamp": "02.12 18:22",
+              "lat": "37.4962",
+              "lng": "126.9461",
+              "speed": "0 km/h",
+              "location": "봉천동 엔젤오피스텔 앞 (주차)",
+              "suspicious": false
+            },
+            {
+              "timestamp": "02.12 20:55",
+              "lat": "37.4962",
+              "lng": "126.9461",
+              "speed": "0 km/h",
+              "location": "(주차 유지)",
+              "suspicious": false
+            },
+            {
+              "timestamp": "02.08 21:20",
+              "lat": "37.4962",
+              "lng": "126.9461",
+              "speed": "0 km/h",
+              "location": "봉천동 엔젤오피스텔 앞 (주차)",
+              "suspicious": false
+            }
           ]
         },
         "3": {
-          "meta": { "name": "블랙박스 GPS 기록", "type": "device", "viewerType": "device", "trustLevel": "mid", "trustLabel": "보통", "source": "org", "sourceLabel": "기관", "legality": "ok", "legalLabel": "적법", "stage": 3, "stageLabel": "3단계 — 시간 패턴 강조", "sourceNote": "institutional / original", "redactions": [] },
+          "meta": {
+            "name": "블랙박스 GPS 기록",
+            "type": "device",
+            "viewerType": "device",
+            "trustLevel": "mid",
+            "trustLabel": "보통",
+            "source": "org",
+            "sourceLabel": "기관",
+            "legality": "ok",
+            "legalLabel": "적법",
+            "stage": 3,
+            "stageLabel": "3단계 — 시간 패턴 강조",
+            "sourceNote": "institutional / original",
+            "redactions": []
+          },
           "gps_log": [
-            { "timestamp": "02.18 18:32", "lat": "37.5565", "lng": "126.9097", "speed": "0 km/h", "location": "자택 (마포구 망원동)", "suspicious": false },
-            { "timestamp": "02.18 18:45", "lat": "37.5412", "lng": "126.9119", "speed": "42 km/h", "location": "여의대로 합류", "suspicious": false },
-            { "timestamp": "02.18 18:58", "lat": "37.5185", "lng": "126.9278", "speed": "35 km/h", "location": "노량진역 부근", "suspicious": false },
-            { "timestamp": "02.18 19:05", "lat": "37.5092", "lng": "126.9310", "speed": "28 km/h", "location": "상도터널 진입", "suspicious": false },
-            { "timestamp": "02.18 19:12", "lat": "37.4985", "lng": "126.9448", "speed": "15 km/h", "location": "관악구 봉천동 진입", "suspicious": true },
-            { "timestamp": "02.18 19:14", "lat": "37.4962", "lng": "126.9461", "speed": "0 km/h", "location": "★ 봉천동 엔젤오피스텔 앞 (주차)", "suspicious": true },
-            { "timestamp": "02.18 21:47", "lat": "37.4962", "lng": "126.9461", "speed": "0 km/h", "location": "(주차 유지 — 2시간 32분)", "suspicious": true },
-            { "timestamp": "02.18 21:48", "lat": "37.4968", "lng": "126.9455", "speed": "8 km/h", "location": "봉천동 출발", "suspicious": true },
-            { "timestamp": "02.18 22:02", "lat": "37.5092", "lng": "126.9310", "speed": "45 km/h", "location": "상도터널 통과", "suspicious": false },
-            { "timestamp": "02.18 22:15", "lat": "37.5258", "lng": "126.9138", "speed": "38 km/h", "location": "여의도 방면", "suspicious": false },
-            { "timestamp": "02.18 22:28", "lat": "37.5565", "lng": "126.9097", "speed": "0 km/h", "location": "자택 도착", "suspicious": false },
-            { "timestamp": "02.15 14:01", "lat": "37.5565", "lng": "126.9097", "speed": "0 km/h", "location": "자택 출발", "suspicious": false },
-            { "timestamp": "02.15 14:18", "lat": "37.4962", "lng": "126.9461", "speed": "0 km/h", "location": "★ 봉천동 엔젤오피스텔 앞 (주차)", "suspicious": true },
-            { "timestamp": "02.15 16:42", "lat": "37.4962", "lng": "126.9461", "speed": "0 km/h", "location": "(주차 유지 — 2시간 24분)", "suspicious": true },
-            { "timestamp": "02.12 18:05", "lat": "37.5565", "lng": "126.9097", "speed": "0 km/h", "location": "자택 출발", "suspicious": false },
-            { "timestamp": "02.12 18:22", "lat": "37.4962", "lng": "126.9461", "speed": "0 km/h", "location": "★ 봉천동 엔젤오피스텔 앞 (주차)", "suspicious": true },
-            { "timestamp": "02.12 20:55", "lat": "37.4962", "lng": "126.9461", "speed": "0 km/h", "location": "(주차 유지 — 2시간 32분)", "suspicious": true },
-            { "timestamp": "02.08 21:20", "lat": "37.4962", "lng": "126.9461", "speed": "0 km/h", "location": "★ 봉천동 엔젤오피스텔 앞 (주차)", "suspicious": true }
+            {
+              "timestamp": "02.18 18:32",
+              "lat": "37.5565",
+              "lng": "126.9097",
+              "speed": "0 km/h",
+              "location": "자택 (마포구 망원동)",
+              "suspicious": false
+            },
+            {
+              "timestamp": "02.18 18:45",
+              "lat": "37.5412",
+              "lng": "126.9119",
+              "speed": "42 km/h",
+              "location": "여의대로 합류",
+              "suspicious": false
+            },
+            {
+              "timestamp": "02.18 18:58",
+              "lat": "37.5185",
+              "lng": "126.9278",
+              "speed": "35 km/h",
+              "location": "노량진역 부근",
+              "suspicious": false
+            },
+            {
+              "timestamp": "02.18 19:05",
+              "lat": "37.5092",
+              "lng": "126.9310",
+              "speed": "28 km/h",
+              "location": "상도터널 진입",
+              "suspicious": false
+            },
+            {
+              "timestamp": "02.18 19:12",
+              "lat": "37.4985",
+              "lng": "126.9448",
+              "speed": "15 km/h",
+              "location": "관악구 봉천동 진입",
+              "suspicious": true
+            },
+            {
+              "timestamp": "02.18 19:14",
+              "lat": "37.4962",
+              "lng": "126.9461",
+              "speed": "0 km/h",
+              "location": "★ 봉천동 엔젤오피스텔 앞 (주차)",
+              "suspicious": true
+            },
+            {
+              "timestamp": "02.18 21:47",
+              "lat": "37.4962",
+              "lng": "126.9461",
+              "speed": "0 km/h",
+              "location": "(주차 유지 — 2시간 32분)",
+              "suspicious": true
+            },
+            {
+              "timestamp": "02.18 21:48",
+              "lat": "37.4968",
+              "lng": "126.9455",
+              "speed": "8 km/h",
+              "location": "봉천동 출발",
+              "suspicious": true
+            },
+            {
+              "timestamp": "02.18 22:02",
+              "lat": "37.5092",
+              "lng": "126.9310",
+              "speed": "45 km/h",
+              "location": "상도터널 통과",
+              "suspicious": false
+            },
+            {
+              "timestamp": "02.18 22:15",
+              "lat": "37.5258",
+              "lng": "126.9138",
+              "speed": "38 km/h",
+              "location": "여의도 방면",
+              "suspicious": false
+            },
+            {
+              "timestamp": "02.18 22:28",
+              "lat": "37.5565",
+              "lng": "126.9097",
+              "speed": "0 km/h",
+              "location": "자택 도착",
+              "suspicious": false
+            },
+            {
+              "timestamp": "02.15 14:01",
+              "lat": "37.5565",
+              "lng": "126.9097",
+              "speed": "0 km/h",
+              "location": "자택 출발",
+              "suspicious": false
+            },
+            {
+              "timestamp": "02.15 14:18",
+              "lat": "37.4962",
+              "lng": "126.9461",
+              "speed": "0 km/h",
+              "location": "★ 봉천동 엔젤오피스텔 앞 (주차)",
+              "suspicious": true
+            },
+            {
+              "timestamp": "02.15 16:42",
+              "lat": "37.4962",
+              "lng": "126.9461",
+              "speed": "0 km/h",
+              "location": "(주차 유지 — 2시간 24분)",
+              "suspicious": true
+            },
+            {
+              "timestamp": "02.12 18:05",
+              "lat": "37.5565",
+              "lng": "126.9097",
+              "speed": "0 km/h",
+              "location": "자택 출발",
+              "suspicious": false
+            },
+            {
+              "timestamp": "02.12 18:22",
+              "lat": "37.4962",
+              "lng": "126.9461",
+              "speed": "0 km/h",
+              "location": "★ 봉천동 엔젤오피스텔 앞 (주차)",
+              "suspicious": true
+            },
+            {
+              "timestamp": "02.12 20:55",
+              "lat": "37.4962",
+              "lng": "126.9461",
+              "speed": "0 km/h",
+              "location": "(주차 유지 — 2시간 32분)",
+              "suspicious": true
+            },
+            {
+              "timestamp": "02.08 21:20",
+              "lat": "37.4962",
+              "lng": "126.9461",
+              "speed": "0 km/h",
+              "location": "★ 봉천동 엔젤오피스텔 앞 (주차)",
+              "suspicious": true
+            }
           ]
         }
       }
@@ -1396,87 +2154,523 @@
         },
         "log": {
           "rows": [
-            { "date": "02.05 00:12", "type": "out", "typeLabel": "발신", "target": "010-****-3847", "duration": "3분 12초", "suspicious": true },
-            { "date": "02.04 22:35", "type": "in", "typeLabel": "수신", "target": "010-****-7720 (아내)", "duration": "1분 05초", "suspicious": false },
-            { "date": "02.04 19:08", "type": "out", "typeLabel": "발신", "target": "010-****-3847", "duration": "4분 28초", "suspicious": true },
-            { "date": "02.04 14:22", "type": "miss", "typeLabel": "부재중", "target": "070-****-3310", "duration": "-", "suspicious": false },
-            { "date": "02.04 08:15", "type": "out", "typeLabel": "발신", "target": "02-****-3441 (직장)", "duration": "1분 30초", "suspicious": false },
-            { "date": "02.03 21:15", "type": "out", "typeLabel": "발신", "target": "010-****-3847", "duration": "2분 47초", "suspicious": true },
-            { "date": "02.03 18:40", "type": "in", "typeLabel": "수신", "target": "02-****-3441 (직장)", "duration": "2분 10초", "suspicious": false },
-            { "date": "02.03 12:10", "type": "out", "typeLabel": "발신", "target": "010-****-7720 (아내)", "duration": "0분 45초", "suspicious": false },
-            { "date": "02.02 20:50", "type": "out", "typeLabel": "발신", "target": "010-****-3847", "duration": "3분 55초", "suspicious": true },
-            { "date": "02.02 07:32", "type": "in", "typeLabel": "수신", "target": "010-****-7720 (아내)", "duration": "1분 20초", "suspicious": false },
-            { "date": "02.01 12:15", "type": "miss", "typeLabel": "부재중", "target": "070-****-1120", "duration": "-", "suspicious": false },
-            { "date": "02.01 10:45", "type": "in", "typeLabel": "수신", "target": "02-****-3441 (직장)", "duration": "3분 05초", "suspicious": false },
-            { "date": "02.01 09:30", "type": "out", "typeLabel": "발신", "target": "010-****-3847", "duration": "1분 48초", "suspicious": true },
-            { "date": "01.31 23:48", "type": "out", "typeLabel": "발신", "target": "010-****-3847", "duration": "4분 12초", "suspicious": true }
+            {
+              "date": "02.05 00:12",
+              "type": "out",
+              "typeLabel": "발신",
+              "target": "010-****-3847",
+              "duration": "3분 12초",
+              "suspicious": true
+            },
+            {
+              "date": "02.04 22:35",
+              "type": "in",
+              "typeLabel": "수신",
+              "target": "010-****-7720 (아내)",
+              "duration": "1분 05초",
+              "suspicious": false
+            },
+            {
+              "date": "02.04 19:08",
+              "type": "out",
+              "typeLabel": "발신",
+              "target": "010-****-3847",
+              "duration": "4분 28초",
+              "suspicious": true
+            },
+            {
+              "date": "02.04 14:22",
+              "type": "miss",
+              "typeLabel": "부재중",
+              "target": "070-****-3310",
+              "duration": "-",
+              "suspicious": false
+            },
+            {
+              "date": "02.04 08:15",
+              "type": "out",
+              "typeLabel": "발신",
+              "target": "02-****-3441 (직장)",
+              "duration": "1분 30초",
+              "suspicious": false
+            },
+            {
+              "date": "02.03 21:15",
+              "type": "out",
+              "typeLabel": "발신",
+              "target": "010-****-3847",
+              "duration": "2분 47초",
+              "suspicious": true
+            },
+            {
+              "date": "02.03 18:40",
+              "type": "in",
+              "typeLabel": "수신",
+              "target": "02-****-3441 (직장)",
+              "duration": "2분 10초",
+              "suspicious": false
+            },
+            {
+              "date": "02.03 12:10",
+              "type": "out",
+              "typeLabel": "발신",
+              "target": "010-****-7720 (아내)",
+              "duration": "0분 45초",
+              "suspicious": false
+            },
+            {
+              "date": "02.02 20:50",
+              "type": "out",
+              "typeLabel": "발신",
+              "target": "010-****-3847",
+              "duration": "3분 55초",
+              "suspicious": true
+            },
+            {
+              "date": "02.02 07:32",
+              "type": "in",
+              "typeLabel": "수신",
+              "target": "010-****-7720 (아내)",
+              "duration": "1분 20초",
+              "suspicious": false
+            },
+            {
+              "date": "02.01 12:15",
+              "type": "miss",
+              "typeLabel": "부재중",
+              "target": "070-****-1120",
+              "duration": "-",
+              "suspicious": false
+            },
+            {
+              "date": "02.01 10:45",
+              "type": "in",
+              "typeLabel": "수신",
+              "target": "02-****-3441 (직장)",
+              "duration": "3분 05초",
+              "suspicious": false
+            },
+            {
+              "date": "02.01 09:30",
+              "type": "out",
+              "typeLabel": "발신",
+              "target": "010-****-3847",
+              "duration": "1분 48초",
+              "suspicious": true
+            },
+            {
+              "date": "01.31 23:48",
+              "type": "out",
+              "typeLabel": "발신",
+              "target": "010-****-3847",
+              "duration": "4분 12초",
+              "suspicious": true
+            }
           ],
           "note": "010-****-3847 번호로의 야간 통화가 반복적으로 확인됨. 다만 통화 시간은 대부분 3분 이하, 최장도 5분 미만."
         }
       },
       "viewerDataByStage": {
         "1": {
-          "meta": { "name": "통화기록", "type": "log", "viewerType": "log", "trustLevel": "mid", "trustLabel": "보통", "source": "org", "sourceLabel": "기관", "legality": "ok", "legalLabel": "적법", "stage": 1, "stageLabel": "1단계 — 시각·번호·통화시간만", "sourceNote": "institutional / original", "redactions": ["target_label"] },
+          "meta": {
+            "name": "통화기록",
+            "type": "log",
+            "viewerType": "log",
+            "trustLevel": "mid",
+            "trustLabel": "보통",
+            "source": "org",
+            "sourceLabel": "기관",
+            "legality": "ok",
+            "legalLabel": "적법",
+            "stage": 1,
+            "stageLabel": "1단계 — 시각·번호·통화시간만",
+            "sourceNote": "institutional / original",
+            "redactions": [
+              "target_label"
+            ]
+          },
           "log": {
             "rows": [
-              { "date": "02.05 00:12", "type": "out", "typeLabel": "발신", "target": "010-****-3847", "duration": "3분 12초", "suspicious": false },
-              { "date": "02.04 22:35", "type": "in", "typeLabel": "수신", "target": "010-****-7720", "duration": "1분 05초", "suspicious": false },
-              { "date": "02.04 19:08", "type": "out", "typeLabel": "발신", "target": "010-****-3847", "duration": "4분 28초", "suspicious": false },
-              { "date": "02.04 14:22", "type": "miss", "typeLabel": "부재중", "target": "070-****-3310", "duration": "-", "suspicious": false },
-              { "date": "02.04 08:15", "type": "out", "typeLabel": "발신", "target": "02-****-3441", "duration": "1분 30초", "suspicious": false },
-              { "date": "02.03 21:15", "type": "out", "typeLabel": "발신", "target": "010-****-3847", "duration": "2분 47초", "suspicious": false },
-              { "date": "02.03 18:40", "type": "in", "typeLabel": "수신", "target": "02-****-3441", "duration": "2분 10초", "suspicious": false },
-              { "date": "02.03 12:10", "type": "out", "typeLabel": "발신", "target": "010-****-7720", "duration": "0분 45초", "suspicious": false },
-              { "date": "02.02 20:50", "type": "out", "typeLabel": "발신", "target": "010-****-3847", "duration": "3분 55초", "suspicious": false },
-              { "date": "02.02 07:32", "type": "in", "typeLabel": "수신", "target": "010-****-7720", "duration": "1분 20초", "suspicious": false },
-              { "date": "02.01 12:15", "type": "miss", "typeLabel": "부재중", "target": "070-****-1120", "duration": "-", "suspicious": false },
-              { "date": "02.01 10:45", "type": "in", "typeLabel": "수신", "target": "02-****-3441", "duration": "3분 05초", "suspicious": false },
-              { "date": "02.01 09:30", "type": "out", "typeLabel": "발신", "target": "010-****-3847", "duration": "1분 48초", "suspicious": false },
-              { "date": "01.31 23:48", "type": "out", "typeLabel": "발신", "target": "010-****-3847", "duration": "4분 12초", "suspicious": false }
+              {
+                "date": "02.05 00:12",
+                "type": "out",
+                "typeLabel": "발신",
+                "target": "010-****-3847",
+                "duration": "3분 12초",
+                "suspicious": false
+              },
+              {
+                "date": "02.04 22:35",
+                "type": "in",
+                "typeLabel": "수신",
+                "target": "010-****-7720",
+                "duration": "1분 05초",
+                "suspicious": false
+              },
+              {
+                "date": "02.04 19:08",
+                "type": "out",
+                "typeLabel": "발신",
+                "target": "010-****-3847",
+                "duration": "4분 28초",
+                "suspicious": false
+              },
+              {
+                "date": "02.04 14:22",
+                "type": "miss",
+                "typeLabel": "부재중",
+                "target": "070-****-3310",
+                "duration": "-",
+                "suspicious": false
+              },
+              {
+                "date": "02.04 08:15",
+                "type": "out",
+                "typeLabel": "발신",
+                "target": "02-****-3441",
+                "duration": "1분 30초",
+                "suspicious": false
+              },
+              {
+                "date": "02.03 21:15",
+                "type": "out",
+                "typeLabel": "발신",
+                "target": "010-****-3847",
+                "duration": "2분 47초",
+                "suspicious": false
+              },
+              {
+                "date": "02.03 18:40",
+                "type": "in",
+                "typeLabel": "수신",
+                "target": "02-****-3441",
+                "duration": "2분 10초",
+                "suspicious": false
+              },
+              {
+                "date": "02.03 12:10",
+                "type": "out",
+                "typeLabel": "발신",
+                "target": "010-****-7720",
+                "duration": "0분 45초",
+                "suspicious": false
+              },
+              {
+                "date": "02.02 20:50",
+                "type": "out",
+                "typeLabel": "발신",
+                "target": "010-****-3847",
+                "duration": "3분 55초",
+                "suspicious": false
+              },
+              {
+                "date": "02.02 07:32",
+                "type": "in",
+                "typeLabel": "수신",
+                "target": "010-****-7720",
+                "duration": "1분 20초",
+                "suspicious": false
+              },
+              {
+                "date": "02.01 12:15",
+                "type": "miss",
+                "typeLabel": "부재중",
+                "target": "070-****-1120",
+                "duration": "-",
+                "suspicious": false
+              },
+              {
+                "date": "02.01 10:45",
+                "type": "in",
+                "typeLabel": "수신",
+                "target": "02-****-3441",
+                "duration": "3분 05초",
+                "suspicious": false
+              },
+              {
+                "date": "02.01 09:30",
+                "type": "out",
+                "typeLabel": "발신",
+                "target": "010-****-3847",
+                "duration": "1분 48초",
+                "suspicious": false
+              },
+              {
+                "date": "01.31 23:48",
+                "type": "out",
+                "typeLabel": "발신",
+                "target": "010-****-3847",
+                "duration": "4분 12초",
+                "suspicious": false
+              }
             ],
             "note": "반복 통화 흔적이 보인다."
           }
         },
         "2": {
-          "meta": { "name": "통화기록", "type": "log", "viewerType": "log", "trustLevel": "mid", "trustLabel": "보통", "source": "org", "sourceLabel": "기관", "legality": "ok", "legalLabel": "적법", "stage": 2, "stageLabel": "2단계 — 상대 매핑 + 미등록 강조", "sourceNote": "institutional / original", "redactions": [] },
+          "meta": {
+            "name": "통화기록",
+            "type": "log",
+            "viewerType": "log",
+            "trustLevel": "mid",
+            "trustLabel": "보통",
+            "source": "org",
+            "sourceLabel": "기관",
+            "legality": "ok",
+            "legalLabel": "적법",
+            "stage": 2,
+            "stageLabel": "2단계 — 상대 매핑 + 미등록 강조",
+            "sourceNote": "institutional / original",
+            "redactions": []
+          },
           "log": {
             "rows": [
-              { "date": "02.05 00:12", "type": "out", "typeLabel": "발신", "target": "010-****-3847", "duration": "3분 12초", "suspicious": true },
-              { "date": "02.04 22:35", "type": "in", "typeLabel": "수신", "target": "010-****-7720 (아내)", "duration": "1분 05초", "suspicious": false },
-              { "date": "02.04 19:08", "type": "out", "typeLabel": "발신", "target": "010-****-3847", "duration": "4분 28초", "suspicious": true },
-              { "date": "02.04 14:22", "type": "miss", "typeLabel": "부재중", "target": "070-****-3310", "duration": "-", "suspicious": false },
-              { "date": "02.04 08:15", "type": "out", "typeLabel": "발신", "target": "02-****-3441 (직장)", "duration": "1분 30초", "suspicious": false },
-              { "date": "02.03 21:15", "type": "out", "typeLabel": "발신", "target": "010-****-3847", "duration": "2분 47초", "suspicious": true },
-              { "date": "02.03 18:40", "type": "in", "typeLabel": "수신", "target": "02-****-3441 (직장)", "duration": "2분 10초", "suspicious": false },
-              { "date": "02.03 12:10", "type": "out", "typeLabel": "발신", "target": "010-****-7720 (아내)", "duration": "0분 45초", "suspicious": false },
-              { "date": "02.02 20:50", "type": "out", "typeLabel": "발신", "target": "010-****-3847", "duration": "3분 55초", "suspicious": true },
-              { "date": "02.02 07:32", "type": "in", "typeLabel": "수신", "target": "010-****-7720 (아내)", "duration": "1분 20초", "suspicious": false },
-              { "date": "02.01 12:15", "type": "miss", "typeLabel": "부재중", "target": "070-****-1120", "duration": "-", "suspicious": false },
-              { "date": "02.01 10:45", "type": "in", "typeLabel": "수신", "target": "02-****-3441 (직장)", "duration": "3분 05초", "suspicious": false },
-              { "date": "02.01 09:30", "type": "out", "typeLabel": "발신", "target": "010-****-3847", "duration": "1분 48초", "suspicious": true },
-              { "date": "01.31 23:48", "type": "out", "typeLabel": "발신", "target": "010-****-3847", "duration": "4분 12초", "suspicious": true }
+              {
+                "date": "02.05 00:12",
+                "type": "out",
+                "typeLabel": "발신",
+                "target": "010-****-3847",
+                "duration": "3분 12초",
+                "suspicious": true
+              },
+              {
+                "date": "02.04 22:35",
+                "type": "in",
+                "typeLabel": "수신",
+                "target": "010-****-7720 (아내)",
+                "duration": "1분 05초",
+                "suspicious": false
+              },
+              {
+                "date": "02.04 19:08",
+                "type": "out",
+                "typeLabel": "발신",
+                "target": "010-****-3847",
+                "duration": "4분 28초",
+                "suspicious": true
+              },
+              {
+                "date": "02.04 14:22",
+                "type": "miss",
+                "typeLabel": "부재중",
+                "target": "070-****-3310",
+                "duration": "-",
+                "suspicious": false
+              },
+              {
+                "date": "02.04 08:15",
+                "type": "out",
+                "typeLabel": "발신",
+                "target": "02-****-3441 (직장)",
+                "duration": "1분 30초",
+                "suspicious": false
+              },
+              {
+                "date": "02.03 21:15",
+                "type": "out",
+                "typeLabel": "발신",
+                "target": "010-****-3847",
+                "duration": "2분 47초",
+                "suspicious": true
+              },
+              {
+                "date": "02.03 18:40",
+                "type": "in",
+                "typeLabel": "수신",
+                "target": "02-****-3441 (직장)",
+                "duration": "2분 10초",
+                "suspicious": false
+              },
+              {
+                "date": "02.03 12:10",
+                "type": "out",
+                "typeLabel": "발신",
+                "target": "010-****-7720 (아내)",
+                "duration": "0분 45초",
+                "suspicious": false
+              },
+              {
+                "date": "02.02 20:50",
+                "type": "out",
+                "typeLabel": "발신",
+                "target": "010-****-3847",
+                "duration": "3분 55초",
+                "suspicious": true
+              },
+              {
+                "date": "02.02 07:32",
+                "type": "in",
+                "typeLabel": "수신",
+                "target": "010-****-7720 (아내)",
+                "duration": "1분 20초",
+                "suspicious": false
+              },
+              {
+                "date": "02.01 12:15",
+                "type": "miss",
+                "typeLabel": "부재중",
+                "target": "070-****-1120",
+                "duration": "-",
+                "suspicious": false
+              },
+              {
+                "date": "02.01 10:45",
+                "type": "in",
+                "typeLabel": "수신",
+                "target": "02-****-3441 (직장)",
+                "duration": "3분 05초",
+                "suspicious": false
+              },
+              {
+                "date": "02.01 09:30",
+                "type": "out",
+                "typeLabel": "발신",
+                "target": "010-****-3847",
+                "duration": "1분 48초",
+                "suspicious": true
+              },
+              {
+                "date": "01.31 23:48",
+                "type": "out",
+                "typeLabel": "발신",
+                "target": "010-****-3847",
+                "duration": "4분 12초",
+                "suspicious": true
+              }
             ],
             "note": "등록되지 않은 번호(010-****-3847)와 반복 통화가 확인된다."
           }
         },
         "3": {
-          "meta": { "name": "통화기록", "type": "log", "viewerType": "log", "trustLevel": "mid", "trustLabel": "보통", "source": "org", "sourceLabel": "기관", "legality": "ok", "legalLabel": "적법", "stage": 3, "stageLabel": "3단계 — 통화 길이 패턴 강조", "sourceNote": "institutional / original", "redactions": [] },
+          "meta": {
+            "name": "통화기록",
+            "type": "log",
+            "viewerType": "log",
+            "trustLevel": "mid",
+            "trustLabel": "보통",
+            "source": "org",
+            "sourceLabel": "기관",
+            "legality": "ok",
+            "legalLabel": "적법",
+            "stage": 3,
+            "stageLabel": "3단계 — 통화 길이 패턴 강조",
+            "sourceNote": "institutional / original",
+            "redactions": []
+          },
           "log": {
             "rows": [
-              { "date": "02.05 00:12", "type": "out", "typeLabel": "발신", "target": "010-****-3847", "duration": "3분 12초", "suspicious": true },
-              { "date": "02.04 22:35", "type": "in", "typeLabel": "수신", "target": "010-****-7720 (아내)", "duration": "1분 05초", "suspicious": false },
-              { "date": "02.04 19:08", "type": "out", "typeLabel": "발신", "target": "010-****-3847", "duration": "4분 28초", "suspicious": true },
-              { "date": "02.04 14:22", "type": "miss", "typeLabel": "부재중", "target": "070-****-3310", "duration": "-", "suspicious": false },
-              { "date": "02.04 08:15", "type": "out", "typeLabel": "발신", "target": "02-****-3441 (직장)", "duration": "1분 30초", "suspicious": false },
-              { "date": "02.03 21:15", "type": "out", "typeLabel": "발신", "target": "010-****-3847", "duration": "2분 47초", "suspicious": true },
-              { "date": "02.03 18:40", "type": "in", "typeLabel": "수신", "target": "02-****-3441 (직장)", "duration": "2분 10초", "suspicious": false },
-              { "date": "02.03 12:10", "type": "out", "typeLabel": "발신", "target": "010-****-7720 (아내)", "duration": "0분 45초", "suspicious": false },
-              { "date": "02.02 20:50", "type": "out", "typeLabel": "발신", "target": "010-****-3847", "duration": "3분 55초", "suspicious": true },
-              { "date": "02.02 07:32", "type": "in", "typeLabel": "수신", "target": "010-****-7720 (아내)", "duration": "1분 20초", "suspicious": false },
-              { "date": "02.01 12:15", "type": "miss", "typeLabel": "부재중", "target": "070-****-1120", "duration": "-", "suspicious": false },
-              { "date": "02.01 10:45", "type": "in", "typeLabel": "수신", "target": "02-****-3441 (직장)", "duration": "3분 05초", "suspicious": false },
-              { "date": "02.01 09:30", "type": "out", "typeLabel": "발신", "target": "010-****-3847", "duration": "1분 48초", "suspicious": true },
-              { "date": "01.31 23:48", "type": "out", "typeLabel": "발신", "target": "010-****-3847", "duration": "4분 12초", "suspicious": true }
+              {
+                "date": "02.05 00:12",
+                "type": "out",
+                "typeLabel": "발신",
+                "target": "010-****-3847",
+                "duration": "3분 12초",
+                "suspicious": true
+              },
+              {
+                "date": "02.04 22:35",
+                "type": "in",
+                "typeLabel": "수신",
+                "target": "010-****-7720 (아내)",
+                "duration": "1분 05초",
+                "suspicious": false
+              },
+              {
+                "date": "02.04 19:08",
+                "type": "out",
+                "typeLabel": "발신",
+                "target": "010-****-3847",
+                "duration": "4분 28초",
+                "suspicious": true
+              },
+              {
+                "date": "02.04 14:22",
+                "type": "miss",
+                "typeLabel": "부재중",
+                "target": "070-****-3310",
+                "duration": "-",
+                "suspicious": false
+              },
+              {
+                "date": "02.04 08:15",
+                "type": "out",
+                "typeLabel": "발신",
+                "target": "02-****-3441 (직장)",
+                "duration": "1분 30초",
+                "suspicious": false
+              },
+              {
+                "date": "02.03 21:15",
+                "type": "out",
+                "typeLabel": "발신",
+                "target": "010-****-3847",
+                "duration": "2분 47초",
+                "suspicious": true
+              },
+              {
+                "date": "02.03 18:40",
+                "type": "in",
+                "typeLabel": "수신",
+                "target": "02-****-3441 (직장)",
+                "duration": "2분 10초",
+                "suspicious": false
+              },
+              {
+                "date": "02.03 12:10",
+                "type": "out",
+                "typeLabel": "발신",
+                "target": "010-****-7720 (아내)",
+                "duration": "0분 45초",
+                "suspicious": false
+              },
+              {
+                "date": "02.02 20:50",
+                "type": "out",
+                "typeLabel": "발신",
+                "target": "010-****-3847",
+                "duration": "3분 55초",
+                "suspicious": true
+              },
+              {
+                "date": "02.02 07:32",
+                "type": "in",
+                "typeLabel": "수신",
+                "target": "010-****-7720 (아내)",
+                "duration": "1분 20초",
+                "suspicious": false
+              },
+              {
+                "date": "02.01 12:15",
+                "type": "miss",
+                "typeLabel": "부재중",
+                "target": "070-****-1120",
+                "duration": "-",
+                "suspicious": false
+              },
+              {
+                "date": "02.01 10:45",
+                "type": "in",
+                "typeLabel": "수신",
+                "target": "02-****-3441 (직장)",
+                "duration": "3분 05초",
+                "suspicious": false
+              },
+              {
+                "date": "02.01 09:30",
+                "type": "out",
+                "typeLabel": "발신",
+                "target": "010-****-3847",
+                "duration": "1분 48초",
+                "suspicious": true
+              },
+              {
+                "date": "01.31 23:48",
+                "type": "out",
+                "typeLabel": "발신",
+                "target": "010-****-3847",
+                "duration": "4분 12초",
+                "suspicious": true
+              }
             ],
             "note": "010-****-3847 번호 통화가 반복적이지만, 통화 시간이 대부분 3분 이하. 외도로 보기에는 짧다."
           }
@@ -3158,11 +4352,22 @@
       {
         "id": "w-1-angle",
         "type": "witness_angle",
-        "label": "w-1 이성호 증언 축",
+        "label": "w-1 오피스텔 경비 증언 축",
         "sourceRef": "w-1",
         "linkedDisputeIds": [
           "d-1",
           "d-2"
+        ],
+        "visibility": "base"
+      },
+      {
+        "id": "w-2-angle",
+        "type": "witness_angle",
+        "label": "w-2 은행 직원 증언 축",
+        "sourceRef": "w-2",
+        "linkedDisputeIds": [
+          "d-2",
+          "h-d4"
         ],
         "visibility": "base"
       },
