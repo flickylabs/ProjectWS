@@ -20216,6 +20216,48 @@ body.pc-mode .pc-interaction-card__header--evidence {
   border-bottom: 1px solid rgba(212, 162, 78, 0.12) !important;
 }
 
+/* ── 시스템 띠 (pending feedback alert) — is-urgent / is-alert 완전 통일 ── */
+/* 띠 자체: 반투명 빨간 그라데이션 + 위아래 빨간 테두리 (모순 띠 표준) */
+body.pc-mode .pc-log-system-card.is-pending-feedback.is-urgent,
+body.pc-mode .pc-log-system-card.is-pending-feedback.is-alert {
+  border-top: 1px solid rgba(224, 96, 96, 0.65) !important;
+  border-bottom: 1px solid rgba(224, 96, 96, 0.65) !important;
+  background: linear-gradient(90deg,
+    rgba(224, 96, 96, 0.04),
+    rgba(224, 96, 96, 0.18) 50%,
+    rgba(224, 96, 96, 0.04)) !important;
+  color: #ffd0d0 !important;
+  box-shadow: inset 0 0 22px rgba(224, 96, 96, 0.22) !important;
+}
+body.pc-mode .pc-log-system-card.is-pending-feedback.is-urgent:hover,
+body.pc-mode .pc-log-system-card.is-pending-feedback.is-alert:hover {
+  background: linear-gradient(90deg,
+    rgba(224, 96, 96, 0.10),
+    rgba(224, 96, 96, 0.28) 50%,
+    rgba(224, 96, 96, 0.10)) !important;
+  transform: translateY(-1px);
+}
+
+/* 번개 아이콘 — 빨간 톤 통일 */
+body.pc-mode .pc-log-system-card.is-pending-feedback.is-urgent .pc-log-system-card__bolt,
+body.pc-mode .pc-log-system-card.is-pending-feedback.is-alert .pc-log-system-card__bolt {
+  color: #ffaaaa !important;
+  filter: drop-shadow(0 0 6px rgba(255, 130, 130, 0.6)) !important;
+}
+
+/* '지금 확인' 배지 — 골드 폐기 → 빨간 톤 (띠 색과 통일) */
+body.pc-mode .pc-log-system-card.is-pending-feedback.is-urgent .pc-log-system-card__action-badge,
+body.pc-mode .pc-log-system-card.is-pending-feedback.is-alert .pc-log-system-card__action-badge {
+  background: rgba(224, 96, 96, 0.18) !important;
+  color: #ffd0d0 !important;
+  border: 1px solid rgba(224, 96, 96, 0.55) !important;
+  box-shadow: 0 0 10px rgba(224, 96, 96, 0.20) !important;
+  animation: none !important;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+}
+
 /* ── 정보 드로어 통일 양식 (target-info / combination / 기타 info drawers) ── */
 body.pc-mode .pc-target-info-drawer,
 body.pc-mode .pc-combination-drawer {
