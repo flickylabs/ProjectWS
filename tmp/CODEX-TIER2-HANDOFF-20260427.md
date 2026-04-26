@@ -11,6 +11,8 @@
 ## 현재 기준
 
 - HEAD before Tier 2 commit: `396b9fa`
+- Tier 2 commit: `9036a60 chore(policy): add Tier 2 validation wrappers`
+- Latest known HEAD after CT handoff refresh: `acf0c5e chore(handoff): refresh CT-NEXT-START-MESSAGE for Tier 0-2 completion`
 - Baseline anchor: `baseline-pre-policy-v1` = `a10b8011c3311d2a6ab20dd4a06edb29a4ac48e3`
 - Tier 1 완료 commits:
   - `19e4c4e` spouse-01 schema draft
@@ -149,11 +151,10 @@ family/friend 정책 JSON의 `surfaceName`은 caseData exact match가 아니라 
 
 ## 다음 액션
 
-1. CT 재검수 결과가 이미 PASS라면 단일 commit:
-   - `chore(policy): add Tier 2 validation wrappers`
-2. Push to `origin/main`.
-3. Tier 2 완료 선언.
-4. 다음 작업은 새 세션에서 시작 권장.
+1. Tier 2는 `9036a60`에서 commit/push 완료.
+2. ClaudeCode CT가 `acf0c5e`에서 `tmp/CT-NEXT-START-MESSAGE.md`를 갱신함.
+3. 다음 작업은 새 Codex-Dev 세션에서 시작 권장.
+4. QA/playtest 세션과 Codex-Dev 세션은 분리한다.
 
 다음 후보:
 
@@ -174,3 +175,91 @@ family/friend 정책 JSON의 `surfaceName`은 caseData exact match가 아니라 
 - 결정 4: A + 인계 파일 갱신 포함
 
 즉, CT PASS 수용 후 단일 commit/push를 진행하고, 이후 작업은 컨텍스트 리스크 때문에 새 세션에서 시작한다.
+
+---
+
+## 세션 분리 원칙
+
+다음부터는 개발 세션과 QA 세션을 분리한다.
+
+- Codex-Dev 세션:
+  - 구현, 검증, commit/push 전용
+  - Tier 3 LLM/Fallback Guard
+  - stale identifier cleanup
+  - policy wrapper 조정
+  - ClaudeCode CT 검수 대응
+- QA / Thread-Q / Thread-QW:
+  - 플레이 테스트
+  - spot check 수집
+  - UX 감상, 이상한 대사, 누설 의심 사례 기록
+  - `docs/spot-check-format.md`에 맞춘 사례 정리
+
+QA에서 나온 사례는 바로 개발 세션으로 던지지 않는다. CT 또는 QW에서 분류한 뒤 Codex-Dev에는 정리된 작업 요청만 전달한다.
+
+---
+
+## 현재 완료/미완료 구분
+
+완료:
+
+- Tier 0 baseline freeze
+- Tier 1 disclosure policy + 3 case schema/progression
+- Tier 2 validation wrappers
+
+미완료:
+
+- 런타임 중앙 컨트롤러 적용
+- Tier 3 LLM/Fallback Guard
+- `blockHiddenTruthLexemes(...)`
+- feature flag default-off runtime guard
+- stale identifier cleanup
+- 사용자 playtest 기반 spot check 처리
+
+따라서 현재 상태는 "중앙 기준과 검증망 완성"이지 "런타임 중앙 컨트롤러 적용 완료"가 아니다.
+
+---
+
+## 다음 Codex-Dev 세션 첫 메시지
+
+아래 메시지를 새 Codex 개발 전용 세션 첫 메시지로 사용한다.
+
+```md
+이 세션은 Codex-Dev 전용 세션이야. QA/플레이테스트 로그를 직접 처리하는 세션이 아니라, 정리된 개발 작업만 수행해줘.
+
+먼저 다음 파일을 읽고 현재 상태를 복원해줘:
+
+1. tmp/CODEX-TIER2-HANDOFF-20260427.md
+2. tmp/CT-NEXT-START-MESSAGE.md
+3. docs/disclosure-policy.md
+4. docs/spot-check-format.md
+5. package.json의 check:* scripts
+
+현재 기준:
+- 최신 HEAD는 `acf0c5e` 근처여야 함.
+- Tier 0 baseline freeze 완료.
+- Tier 1 disclosure policy 3 active case 완료.
+- Tier 2 validation wrappers 완료.
+- `npm run check:all` PASS가 기준.
+- Tier 3 runtime guard는 아직 미진입.
+
+시작 시 반드시:
+- `git status --short --branch`
+- `git log --oneline -6`
+- `npm run check:all`
+을 실행해서 상태를 확인해줘.
+
+중요한 판단:
+- Tier 2의 warning 157건은 hard fail이 아님.
+- `forbiddenLexemes.surfaceOnly`는 기본 WARN이고, 필요 시 `--strict-lexeme`로 승격 가능.
+- surfaceName alias는 정책상 보호 alias일 수 있으므로 hard fail 아님.
+- 런타임 코드, ScriptedText, caseData는 사용자 승인 없이 건드리지 말 것.
+- `useActionDispatch`, `scriptedTextLoader`, `judgeQuestionEngine` 대형 리팩터는 금지선 유지.
+
+다음 작업 후보는 CT/사용자 지시에 따라 하나만 선택:
+1. Tier 2 안정 운영 시작 및 warning triage 계획 수립
+2. stale identifier cleanup 의뢰 처리
+3. 사용자 spot check 사례를 정책/검증 작업으로 번역
+4. Tier 3 LLM/Fallback Guard 설계 의뢰 검토
+
+작업 전에는 항상 범위와 금지선을 짧게 확인하고, 구현 후에는 CT 검수용 보고를 남겨줘.
+```
