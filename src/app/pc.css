@@ -19958,25 +19958,29 @@ body.pc-mode .pc-interaction-card__tag {
   color: var(--pc-gold-light) !important;
 }
 
-/* 액션 버튼 — Main outline 표준 */
-body.pc-mode .pc-interaction-card__action {
+/* 액션 버튼 — 모든 팝업 모달 통일 (텍스트 흰색 + Main outline) */
+body.pc-mode .pc-interaction-card__action,
+body.pc-mode .pc-discovery-card__action {
   min-height: 48px !important;
   border-radius: 12px !important;
   border: 1px solid rgba(212, 162, 78, 0.45) !important;
   background: rgba(212, 162, 78, 0.10) !important;
-  color: var(--pc-gold-light) !important;
+  color: #ffffff !important;
   font-size: 14px !important;
   font-weight: 700 !important;
   padding: 12px 20px !important;
   transition: all 160ms ease !important;
 }
-body.pc-mode .pc-interaction-card__action:hover:not(.is-disabled) {
+body.pc-mode .pc-interaction-card__action:hover:not(.is-disabled),
+body.pc-mode .pc-discovery-card__action:hover:not(.is-disabled) {
   border-color: rgba(212, 162, 78, 0.65) !important;
   background: rgba(212, 162, 78, 0.16) !important;
+  color: #ffffff !important;
   transform: translateY(-1px);
   box-shadow: 0 0 0 3px rgba(212, 162, 78, 0.10) !important;
 }
-body.pc-mode .pc-interaction-card__action.is-disabled {
+body.pc-mode .pc-interaction-card__action.is-disabled,
+body.pc-mode .pc-discovery-card__action.is-disabled {
   opacity: 0.32 !important;
 }
 
