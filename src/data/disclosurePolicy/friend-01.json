@@ -1,0 +1,290 @@
+{
+  "caseId": "friend-01",
+  "sourceCaseId": "case-friend-01",
+  "schemaVersion": "tier1-disclosure-policy-draft-v1",
+  "baselineTargetSha": "a10b8011c3311d2a6ab20dd4a06edb29a4ac48e3",
+  "generatedAt": "2026-04-27",
+  "runtimeImportAllowed": false,
+  "draftStatus": "schema-draft-full-progression",
+  "sourcePolicy": "docs/disclosure-policy.md",
+  "surfaceMap": {
+    "evidence": {
+      "e-1": {"evidenceId": "e-1", "name": "B→예비신랑 연락 기록", "surfaceName": "예비신랑 연락 기록", "surfaceDescription": "최근 며칠 동안 이어진 전화와 문자 기록. 횟수와 시간대가 먼저 보인다.", "descriptionTruth": ["최수민이 예비신랑에게 9일간 연락", "경고 목적", "집착이 아님"], "truthLexemes": ["경고", "집착이 아니라", "송다은 아버지", "돈 접근"], "sourceRefs": ["src/data/cases/generated/friend-01.json:evidence.e-1"]},
+      "e-2": {"evidenceId": "e-2", "name": "공통 친구 단톡방 캡처", "surfaceName": "공통 친구 단톡방 캡처", "surfaceDescription": "송다은의 최초 발언과 친구들의 반응이 남은 단톡방 기록.", "descriptionTruth": ["확인 없이 매도", "집착 프레임 확산", "명예훼손"], "truthLexemes": ["확인 없이", "매도", "명예훼손", "먼저 낙인"], "sourceRefs": ["src/data/cases/generated/friend-01.json:evidence.e-2"]},
+      "e-3": {"evidenceId": "e-3", "name": "과거 손절 직전 카톡", "surfaceName": "과거 손절 직전 카톡", "surfaceDescription": "과거 손절 직전 두 사람이 돈 문제를 두고 나눈 대화 기록.", "descriptionTruth": ["돈 문제의 실체 은폐", "A 아버지 문제", "B가 설명을 피함"], "truthLexemes": ["돈 문제", "A 아버지", "손절의 진짜 이유", "B가 숨김"], "sourceRefs": ["src/data/cases/generated/friend-01.json:evidence.e-3"]},
+      "e-4": {"evidenceId": "e-4", "name": "예비신랑의 선넘는 메시지와 B의 거절 답장", "surfaceName": "예비신랑 메시지와 답장", "surfaceDescription": "예비신랑과 최수민 사이의 메시지. 누가 먼저 선을 넘었는지 확인해야 한다.", "descriptionTruth": ["예비신랑이 먼저 선넘는 메시지", "B가 거절", "이후 연락은 경고의 연장"], "truthLexemes": ["예비신랑이 먼저", "선넘는 메시지", "B의 거절", "친구 남자친구니까 이러지 마"], "sourceRefs": ["src/data/cases/generated/friend-01.json:evidence.e-4"]},
+      "e-5": {"evidenceId": "e-5", "name": "송다은 아버지와 예비신랑의 문자", "surfaceName": "아버지와 예비신랑의 문자", "surfaceDescription": "송다은 아버지가 예비신랑에게 돈 이야기를 꺼낸 문자 기록.", "descriptionTruth": ["A 아버지의 돈 접근", "결혼 전 잠깐 도와달라는 문구", "사위 될 사람 압박"], "truthLexemes": ["아버지의 돈 접근", "돈 부탁", "사위 될 사람", "같은 패턴"], "sourceRefs": ["src/data/cases/generated/friend-01.json:evidence.e-5"]},
+      "e-6": {"evidenceId": "e-6", "name": "과거 송금 영수증 + 문자", "surfaceName": "과거 송금 기록과 문자", "surfaceDescription": "과거 송금 내역과 갚지 않은 문자 흐름이 남아 있는 은행·메신저 자료.", "descriptionTruth": ["A 아버지가 B에게 투자 명목으로 돈을 받아감", "미상환", "과거 손절 원인"], "truthLexemes": ["아버지의 사기", "아버지 돈 갈취", "투자 명목", "미상환", "과거 손절"], "sourceRefs": ["src/data/cases/generated/friend-01.json:evidence.e-6"]},
+      "e-7": {"evidenceId": "e-7", "name": "과거·현재 대조표", "surfaceName": "과거·현재 대조표", "surfaceDescription": "과거와 현재의 문구와 시점을 나란히 놓은 대조표.", "descriptionTruth": ["같은 패턴 반복", "B가 두 번 악역을 자처", "경고 의도와 침묵 반복"], "truthLexemes": ["같은 패턴 반복", "또 당하게 놔둘 수 없다", "또 악역", "반복 침묵"], "sourceRefs": ["src/data/cases/generated/friend-01.json:evidence.e-7"]}
+    },
+    "disputes": {
+      "d-1": {"surface": "9일간의 연락 의도", "truth": "최수민의 연락은 집착이 아니라 송다은 아버지의 돈 접근 패턴을 경고하려는 것이었다.", "protectedSurface": "반복 연락의 목적과 방식", "truthLexemes": ["경고 의도", "꼬시려 한 게 아니라 경고", "아버지 돈 접근", "집착 아님"], "sourceRefs": ["src/data/cases/generated/friend-01.json:disputes.d-1"]},
+      "d-2": {"surface": "예비신랑의 선넘는 접근", "truth": "예비신랑이 먼저 최수민에게 선넘는 메시지를 보냈고 최수민은 거절했다.", "protectedSurface": "예비신랑과 최수민 사이의 선후관계", "truthLexemes": ["예비신랑이 먼저", "예비신랑이 접근", "예비신랑이 찝쩍", "B가 거절"], "sourceRefs": ["src/data/cases/generated/friend-01.json:disputes.d-2"]},
+      "d-3": {"surface": "아버지의 돈 접근 패턴", "truth": "송다은 아버지가 예비신랑에게 돈 이야기를 꺼냈고, 최수민은 과거 같은 패턴을 당해 경고하려 했다.", "protectedSurface": "아버지의 현재 돈 부탁과 과거와의 유사성", "truthLexemes": ["아버지의 돈 접근", "같은 패턴 반복", "또 당하게 놔둘 수 없다", "경고하려 했다"], "sourceRefs": ["src/data/cases/generated/friend-01.json:disputes.d-3"]},
+      "d-4": {"surface": "과거 손절과 아버지의 사기", "truth": "과거 손절의 진짜 원인은 송다은 아버지가 최수민에게 투자 명목으로 돈을 받아간 사기였다.", "protectedSurface": "과거 손절의 진짜 원인", "truthLexemes": ["아버지의 사기", "아버지 돈 갈취", "과거 손절 = A 아버지 원인", "B 차마 못 말함"], "sourceRefs": ["src/data/cases/generated/friend-01.json:disputes.d-4"]},
+      "d-5": {"surface": "단톡방 매도와 명예훼손", "truth": "송다은은 확인 없이 단톡방에서 최수민을 매도했고, 최수민은 또 악역을 자처하는 구조가 반복됐다.", "protectedSurface": "단톡방 발언의 확인 여부와 확산 책임", "truthLexemes": ["확인 없이 매도", "명예훼손", "또 악역", "낙인의 순서"], "sourceRefs": ["src/data/cases/generated/friend-01.json:disputes.d-5"]}
+    },
+    "witnesses": {
+      "w-1": {"name": "김세라", "surfaceKnowledge": "단톡방 분위기와 송다은의 최초 발언 경위를 아는 공통 친구.", "truthProtected": ["확인 없이 비난에 동조", "B 매도 확산"], "sourceStatus": "caseData socialGraph witness", "sourceRefs": ["src/data/cases/generated/friend-01.json:duo.socialGraph.w-1"]},
+      "w-2": {"name": "박준혁", "surfaceKnowledge": "예비신랑의 행동 패턴을 아는 회사 후배.", "truthProtected": ["예비신랑이 먼저 접근", "최수민에게 선넘는 메시지"], "sourceStatus": "caseData socialGraph witness", "sourceRefs": ["src/data/cases/generated/friend-01.json:duo.socialGraph.w-2"]},
+      "w-3": {"name": "오미경", "surfaceKnowledge": "과거 송다은 아버지와 최수민 사이의 돈 거래를 목격한 동네 지인.", "truthProtected": ["A 아버지의 과거 돈 거래", "최수민의 피해와 손절 원인"], "sourceStatus": "caseData socialGraph witness", "sourceRefs": ["src/data/cases/generated/friend-01.json:duo.socialGraph.w-3"]}
+    }
+  },
+  "forbiddenLexemes": {
+    "globalTruthLexemes": [
+      "예비신랑이 먼저",
+      "예비신랑이 찝쩍",
+      "예비신랑이 접근",
+      "선넘는 메시지",
+      "B의 거절",
+      "아버지의 사기",
+      "아버지 돈 갈취",
+      "A 아버지가 사기",
+      "투자 명목 사기",
+      "미상환",
+      "같은 패턴 반복",
+      "또 당하게 놔둘 수 없다",
+      "B 경고 의도",
+      "꼬시려 한 게 아니라 경고",
+      "과거 손절 = A 아버지 원인",
+      "B 차마 못 말함",
+      "B 또 악역",
+      "확인 없이 매도",
+      "명예훼손"
+    ],
+    "surfaceOnlyChannels": {
+      "judge_question": ["예비신랑이 먼저", "아버지의 사기", "아버지 돈 갈취", "같은 패턴 반복", "B 경고 의도", "꼬시려 한 게 아니라 경고", "과거 손절 = A 아버지 원인"],
+      "judge_contradiction": ["예비신랑이 먼저", "아버지의 사기", "아버지 돈 갈취", "같은 패턴 반복", "B 경고 의도", "꼬시려 한 게 아니라 경고", "과거 손절 = A 아버지 원인"],
+      "judge_evidence_combo": ["예비신랑이 먼저", "아버지의 사기", "아버지 돈 갈취", "같은 패턴 반복", "B 경고 의도", "꼬시려 한 게 아니라 경고", "과거 손절 = A 아버지 원인"],
+      "judge_witness_summon": ["예비신랑이 먼저", "아버지의 사기", "아버지 돈 갈취", "같은 패턴 반복", "B 경고 의도", "꼬시려 한 게 아니라 경고", "과거 손절 = A 아버지 원인"],
+      "system_message": ["예비신랑이 먼저", "아버지의 사기", "아버지 돈 갈취", "같은 패턴 반복", "B 경고 의도", "꼬시려 한 게 아니라 경고", "과거 손절 = A 아버지 원인"],
+      "dossier": ["예비신랑이 먼저", "아버지의 사기", "아버지 돈 갈취", "같은 패턴 반복", "B 경고 의도", "꼬시려 한 게 아니라 경고", "과거 손절 = A 아버지 원인"]
+    },
+    "nonConfessionNpcBeforeS5": {
+      "partyA": {
+        "S0": ["예비신랑이 먼저", "아버지의 사기", "같은 패턴 반복", "B 경고 의도"],
+        "S1": ["예비신랑이 먼저", "아버지의 사기", "같은 패턴 반복", "B 경고 의도"],
+        "S2": ["아버지의 사기", "아버지 돈 갈취", "과거 손절 = A 아버지 원인"],
+        "S3": ["아버지의 사기", "B 차마 못 말함"],
+        "S4": ["구체적 피해액", "아버지 실명 외 세부"],
+        "S5": []
+      },
+      "partyB": {
+        "S0": ["예비신랑이 먼저", "아버지의 사기", "B 경고 의도", "과거 손절 = A 아버지 원인"],
+        "S1": ["예비신랑이 먼저", "아버지의 사기", "B 경고 의도", "과거 손절 = A 아버지 원인"],
+        "S2": ["아버지의 사기", "아버지 돈 갈취", "같은 패턴 반복"],
+        "S3": ["과거 손절 = A 아버지 원인", "구체적 피해액"],
+        "S4": ["구체적 피해액", "불필요한 가족 세부"],
+        "S5": []
+      }
+    },
+    "allowedSurfaceSubstitutes": {
+      "예비신랑이 먼저": "선후관계",
+      "예비신랑이 찝쩍": "상대의 부적절한 접근",
+      "예비신랑이 접근": "상대 쪽의 먼저 온 연락",
+      "아버지의 사기": "과거 돈 문제",
+      "아버지 돈 갈취": "해결되지 않은 금전 문제",
+      "같은 패턴 반복": "과거와 닮은 흐름",
+      "또 당하게 놔둘 수 없다": "다시 문제가 생길까 봐",
+      "B 경고 의도": "연락의 다른 목적",
+      "꼬시려 한 게 아니라 경고": "감정이 아닌 전달 목적",
+      "과거 손절 = A 아버지 원인": "과거 손절의 말하지 못한 이유",
+      "B 차마 못 말함": "말하지 못한 사정"
+    }
+  },
+  "channelAuthority": {
+    "surfaceOnly": [
+      {"channel": "judge_question", "authority": "surface-only", "truthLexemePolicy": "blocked", "evidenceStagePolicy": "does-not-expand-authority"},
+      {"channel": "judge_contradiction", "authority": "surface-only", "truthLexemePolicy": "blocked", "evidenceStagePolicy": "does-not-expand-authority"},
+      {"channel": "judge_evidence_combo", "authority": "surface-only", "truthLexemePolicy": "blocked", "evidenceStagePolicy": "does-not-expand-authority"},
+      {"channel": "judge_witness_summon", "authority": "surface-only", "truthLexemePolicy": "blocked", "evidenceStagePolicy": "does-not-expand-authority"},
+      {"channel": "system_message", "authority": "surface-only", "truthLexemePolicy": "blocked", "evidenceStagePolicy": "does-not-expand-authority"},
+      {"channel": "dossier", "authority": "surface-only", "truthLexemePolicy": "blocked", "evidenceStagePolicy": "does-not-expand-authority"}
+    ],
+    "lieStateDriven": ["interrogation", "contradiction_pursuit", "interjection", "emotional_overload", "evidence_present", "mediation", "trust_action", "rapport_milestone", "contradict_milestone"],
+    "playerDiscovered": [
+      {"channel": "evidence_discovery", "authority": "stage-gated", "truthLexemePolicy": "allowed-only-through-evidence-stage-gate"},
+      {"channel": "discoveryText", "authority": "route-and-stage-gated", "truthLexemePolicy": "blocked-unless-gate-satisfied"}
+    ],
+    "freeAfterVerdict": [
+      {"channel": "aftermath", "authority": "free-after-verdict", "truthLexemePolicy": "allowed"}
+    ]
+  },
+  "lieStateGate": {
+    "truthThrottle": {
+      "S0": {"label": "완전 부정", "amount": "해당 횟수", "person": "그 사람", "institution": "그 대화방", "truthLexemeAccess": "none"},
+      "S1": {"label": "일부 인정", "amount": "해당 횟수", "person": "그 사람", "institution": "그 대화방", "truthLexemeAccess": "none"},
+      "S2": {"label": "핑계", "amount": "일부 기간 또는 횟수", "person": "상대", "institution": "자료명", "truthLexemeAccess": "none"},
+      "S3": {"label": "책임 전가", "amount": "specific", "person": "specific", "institution": "specific", "truthLexemeAccess": "partial-responsibility-context"},
+      "S4": {"label": "감정적", "amount": "specific", "person": "specific", "institution": "specific", "truthLexemeAccess": "partial-emotional-context"},
+      "S5": {"label": "자백", "amount": "all", "person": "all", "institution": "all", "truthLexemeAccess": "all"}
+    },
+    "channelMatrix": {
+      "judge_question": {"S0": "blocked", "S1": "blocked", "S2": "blocked", "S3": "blocked", "S4": "blocked", "S5": "blocked"},
+      "system_message": {"S0": "blocked", "S1": "blocked", "S2": "blocked", "S3": "blocked", "S4": "blocked", "S5": "blocked"},
+      "dossier": {"S0": "blocked", "S1": "blocked", "S2": "blocked", "S3": "blocked", "S4": "blocked", "S5": "blocked"},
+      "interrogation": {"S0": "blocked", "S1": "blocked", "S2": "blocked", "S3": "partial", "S4": "partial", "S5": "allowed"},
+      "contradiction_pursuit": {"S0": "blocked", "S1": "blocked", "S2": "blocked", "S3": "partial", "S4": "partial", "S5": "allowed"},
+      "emotional_overload": {"S0": "not-applicable", "S1": "not-applicable", "S2": "not-applicable", "S3": "not-applicable", "S4": "partial", "S5": "allowed"},
+      "aftermath": {"S0": "allowed", "S1": "allowed", "S2": "allowed", "S3": "allowed", "S4": "allowed", "S5": "allowed"}
+    },
+    "npcPolicies": {
+      "partyA": {
+        "name": "송다은",
+        "archetype": "premature_summary",
+        "states": {
+          "S0": {"allowed": "연락 횟수와 집착 프레임 단정", "blocked": ["예비신랑이 먼저", "아버지의 사기", "경고 의도"]},
+          "S1": {"allowed": "불안과 단톡방 판단의 일부 인정", "blocked": ["예비신랑이 먼저", "아버지의 사기", "같은 패턴 반복"]},
+          "S2": {"allowed": "확인 없이 결론 낸 점을 방어", "blocked": ["아버지의 사기", "과거 손절의 원인"]},
+          "S3": {"allowed": "아버지 문구와 과거 문제를 일부 연결", "blocked": ["구체적 피해액", "B의 전체 보호 동기"]},
+          "S4": {"allowed": "아버지 문제와 자기 매도 책임 일부 인정", "blocked": ["불필요한 가족 세부"]},
+          "S5": {"allowed": "확인 없이 단톡방에 올린 책임과 성급한 단정 인정", "blocked": []}
+        }
+      },
+      "partyB": {
+        "name": "최수민",
+        "archetype": "affect_flattening",
+        "states": {
+          "S0": {"allowed": "연락은 했다는 최소 인정 또는 자책", "blocked": ["예비신랑이 먼저", "아버지의 사기", "경고 의도"]},
+          "S1": {"allowed": "가벼운 안부가 아니었다는 모호한 진술", "blocked": ["아버지의 사기", "같은 패턴 반복"]},
+          "S2": {"allowed": "경고할 일이 있었다는 제한적 인정", "blocked": ["아버지 돈 갈취", "과거 손절 원인"]},
+          "S3": {"allowed": "예비신랑 선후관계와 현재 돈 접근 일부 인정", "blocked": ["과거 사기 전체", "구체적 피해액"]},
+          "S4": {"allowed": "아버지 패턴과 또 악역이 된 구조 일부 노출", "blocked": ["구체적 피해액", "불필요한 가족 세부"]},
+          "S5": {"allowed": "경고 의도, 과거 사기, 또 악역이 된 이유 자백", "blocked": []}
+        }
+      }
+    }
+  },
+  "uiSurfaceMap": {
+    "fieldPolicy": {
+      "dossierLabel": "surface-only",
+      "dossierSummary": "surface-or-abstract",
+      "dossierNoteText": "surface-or-abstract",
+      "evidenceCardLabel": "surface-only",
+      "evidenceCardName": "use-surfaceName",
+      "evidenceCardStageSummary": "stage-gated; protected channels use surface alternatives",
+      "judgeHint": "surface-only",
+      "recommendedMoment": "surface-only-if-rendered",
+      "purpose": "surface-only-if-rendered",
+      "successConditionSummary": "surface-only-if-rendered",
+      "successEffects": "surface-only-if-rendered"
+    },
+    "entries": [
+      {"path": "combinationLab.outputs.dc-1.summary", "currentText": "예비신랑이 먼저 선을 넘었다면 왜 바로 송다은에게 말하지 않았는가", "truthTerms": ["예비신랑이 먼저"], "surfaceText": "선후관계가 다르다면 왜 바로 알리지 않았는가", "exposure": "high-if-rendered-before-gate"},
+      {"path": "combinationLab.outputs.dc-2.summary", "currentText": "송다은 아버지가 또 같은 방식으로 돈 얘기를 꺼냈다면", "truthTerms": ["아버지", "같은 방식", "돈 얘기"], "surfaceText": "과거와 닮은 부탁이 다시 보였다면", "exposure": "high-if-rendered-before-gate"},
+      {"path": "combinationLab.outputs.dc-4.summary", "currentText": "과거 손절이 변심이 아니라 사기 피해와 침묵의 결과", "truthTerms": ["사기 피해", "침묵"], "surfaceText": "과거 손절의 말하지 못한 사정", "exposure": "high-if-rendered-before-gate"},
+      {"path": "combinationLab.outputs.dc-5.summary", "currentText": "두 번 다 말하지 못해 악역이 된 구조", "truthTerms": ["두 번", "악역"], "surfaceText": "반복된 오해와 낙인의 구조", "exposure": "unknown-internal-candidate"},
+      {"path": "v3Design.authorityPlacements[3].purpose", "currentText": "A 아버지의 문자 원본 확보", "truthTerms": ["A 아버지"], "surfaceText": "가족 쪽 문자 원본 확보", "exposure": "unknown-internal-candidate"},
+      {"path": "v3Design.authorityPlacements[8].purpose", "currentText": "A 아버지의 돈 접근 패턴이 반복됨을 공식 기록", "truthTerms": ["A 아버지", "돈 접근 패턴"], "surfaceText": "과거와 현재 자금 부탁의 유사성을 공식 기록", "exposure": "unknown-internal-candidate"},
+      {"path": "friend-01-dossier-cards.dc-2.description", "currentText": "예비신랑이 먼저 경계를 넘었다는 반전", "truthTerms": ["예비신랑이 먼저"], "surfaceText": "선후관계를 다시 확인하는 반전", "exposure": "dossier-card-gated"},
+      {"path": "friend-01-dossier-cards.dc-3.description", "currentText": "아버지의 반복 패턴을 확정", "truthTerms": ["아버지", "반복 패턴"], "surfaceText": "반복된 자금 부탁 흐름을 확인", "exposure": "dossier-card-gated"},
+      {"path": "friend-01-dossier-cards.dc-4.successEffects", "currentText": "과거 손절의 빈칸이 사기 피해 맥락으로 채워진다", "truthTerms": ["사기 피해"], "surfaceText": "과거 손절의 빈칸이 금전 문제 맥락으로 채워진다", "exposure": "dossier-card-gated"},
+      {"path": "evidence.e-6.v3DepthPlan.Established.summary", "currentText": "A 아버지의 사기 패턴 확정", "truthTerms": ["A 아버지", "사기 패턴"], "surfaceText": "과거 금전 문제의 반복성 확인", "exposure": "player-discovered-stage-gated"},
+      {"path": "evidence.e-7.v3DepthPlan.Established.summary", "currentText": "A 아버지의 반복 패턴과 B의 반복 침묵 확정", "truthTerms": ["A 아버지", "반복 패턴", "B의 반복 침묵"], "surfaceText": "과거와 현재 흐름의 반복성 확인", "exposure": "player-discovered-stage-gated"}
+    ],
+    "stageSummaryDefaults": {
+      "stage0": "존재만 보임",
+      "stage1": "일부 정황만 확인",
+      "stage2": "원본과 맥락 확인",
+      "deepContext": "플레이어 직접 조사 결과로만 진실 일부 허용"
+    },
+    "unresolvedExposure": [
+      "combinationLab.nodes.*.label rendered 여부",
+      "combinationLab.outputs.*.judgeHint rendered 여부",
+      "v3Design.authorityPlacements.*.purpose rendered 여부",
+      "friend-01-dossier-cards successEffects rendered 시점",
+      "evidence v3DepthPlan Context/Established summary의 UI channel",
+      "game-events-v2 h-d3/h-d4 stale disputeId rendered 여부"
+    ]
+  },
+  "discoveryText": {
+    "defaultPolicy": {"autoSurfaceAllowed": false, "protectedChannelsUseSurfaceFallback": true, "playerDiscoveredRequiresRouteGate": true},
+    "entries": [
+      {"id": "combine-1", "inputs": ["e-1", "e-2"], "truthTerms": ["집착 프레임", "확인 없이 프레이밍"], "gate": {"allowedChannels": ["player_discovered"], "requiredEvidenceStages": {"e-1": "Original", "e-2": "Excerpt"}, "requiredTruthStage": {"d-1": 1, "d-5": 1}, "autoSurfaceAllowed": false}, "surfaceFallback": "연락 기록과 단톡방 발언의 순서가 맞물린다."},
+      {"id": "combine-2", "inputs": ["e-1", "e-4"], "truthTerms": ["예비신랑이 먼저", "선넘는 메시지"], "gate": {"allowedChannels": ["player_discovered"], "requiredEvidenceStages": {"e-1": "Original", "e-4": "Original"}, "requiredTruthStage": {"d-2": 2}, "autoSurfaceAllowed": false}, "surfaceFallback": "연락 기록과 상대 메시지의 선후관계를 확인해야 한다."},
+      {"id": "combine-3", "inputs": ["e-5", "e-6"], "truthTerms": ["같은 패턴", "아버지 돈 접근", "과거 송금"], "gate": {"allowedChannels": ["player_discovered"], "requiredEvidenceStages": {"e-5": "Original", "e-6": "Original"}, "requiredTruthStage": {"d-3": 3}, "autoSurfaceAllowed": false}, "surfaceFallback": "현재 문자와 과거 송금 기록의 문구가 닮아 있다."},
+      {"id": "combine-4", "inputs": ["e-4", "e-7"], "truthTerms": ["경고였다는 결론", "예비신랑의 접근"], "gate": {"allowedChannels": ["player_discovered"], "requiredEvidenceStages": {"e-4": "Context", "e-7": "Original"}, "requiredTruthStage": {"d-1": 3, "d-2": 3}, "autoSurfaceAllowed": false}, "surfaceFallback": "선후관계와 대조표를 함께 보면 연락 의도가 다시 보인다."},
+      {"id": "combine-5", "inputs": ["stmt-a-accusation", "e-2"], "truthTerms": ["단톡방 확산", "먼저 매도"], "gate": {"allowedChannels": ["player_discovered"], "requiredEvidenceStages": {"e-2": "Original"}, "requiredTruthStage": {"d-5": 2}, "autoSurfaceAllowed": false}, "surfaceFallback": "송다은의 최초 발언이 단톡방에서 확산된 흐름을 본다."},
+      {"id": "combine-6", "inputs": ["e-3", "e-7"], "truthTerms": ["두 번 다 악역", "반복 침묵"], "gate": {"allowedChannels": ["player_discovered"], "requiredEvidenceStages": {"e-3": "Context", "e-7": "Original"}, "requiredTruthStage": {"d-4": 3, "d-5": 2}, "autoSurfaceAllowed": false}, "surfaceFallback": "과거 카톡과 대조표를 함께 보면 비슷한 침묵이 반복된다."},
+      {"id": "combine-7", "inputs": ["e-3", "e-6"], "truthTerms": ["사기 피해", "손절의 진짜 원인"], "gate": {"allowedChannels": ["player_discovered"], "requiredEvidenceStages": {"e-3": "Original", "e-6": "Original"}, "requiredTruthStage": {"d-4": 2}, "autoSurfaceAllowed": false}, "surfaceFallback": "과거 돈 문제와 손절 시점을 함께 확인한다."},
+      {"id": "combine-8", "inputs": ["stmt-b-silence", "e-4"], "truthTerms": ["먼저 선을 넘은 쪽", "B가 참음"], "gate": {"allowedChannels": ["player_discovered"], "requiredEvidenceStages": {"e-4": "Original"}, "requiredTruthStage": {"d-2": 2}, "autoSurfaceAllowed": false}, "surfaceFallback": "자책 발언과 메시지 선후관계를 함께 본다."},
+      {"id": "combine-9", "inputs": ["stmt-b-silence", "e-5"], "truthTerms": ["아버지의 돈 접근 패턴", "처음이 아님"], "gate": {"allowedChannels": ["player_discovered"], "requiredEvidenceStages": {"e-5": "Original"}, "requiredTruthStage": {"d-3": 2}, "autoSurfaceAllowed": false}, "surfaceFallback": "자책 발언과 가족 쪽 문자 사이의 관련성을 확인한다."},
+      {"id": "combine-10", "inputs": ["stmt-a-accusation", "stmt-b-silence"], "truthTerms": ["다르게 겪은 같은 사건"], "gate": {"allowedChannels": ["player_discovered"], "requiredTruthStage": {"d-1": 2}, "requiredLieState": {"partyA": "S2", "partyB": "S2"}, "autoSurfaceAllowed": false}, "surfaceFallback": "단정과 자책이 같은 사건을 서로 다르게 가리킨다."}
+    ]
+  },
+  "issueProgression": {
+    "principles": {"primaryAxis": "statementFracture + truthStage", "truthStageIsNotLieState": true, "meterRole": {"emotion": "short-term vulnerability signal", "trust": "cooperation posture", "leak": "conditional result, not a separate progression resource"}},
+    "disputes": {
+      "d-1": {
+        "title": "9일간의 연락 의도",
+        "draftCompleteness": "sample-complete",
+        "statementFracture": ["송다은은 연락 횟수를 집착 증거로 단정한다.", "최수민은 연락 목적을 말하지 못한 채 자책으로 막는다.", "쟁점은 연락 횟수보다 왜 예비신랑에게 향했는지다."],
+        "truthStages": [
+          {"stage": 0, "name": "집착 프레임 표면", "surfaceClaim": "최수민이 예비신랑에게 여러 차례 연락했다는 사실만 보인다.", "hiddenTruth": "연락은 집착이 아니라 돈 접근 패턴을 경고하려는 시도였다.", "entryConditions": ["case start"], "allowedDisclosure": ["연락 횟수", "9일간 기록", "예비신랑 대상 연락"], "forbiddenDisclosure": ["경고 의도", "아버지 돈 접근", "예비신랑이 먼저"], "validActions": ["fact_pursuit", "empathy_approach"], "requiredEvidence": ["e-1"], "requiredWitness": [], "meterTriggers": {"emotion": "A anxiety rises because wedding trust is threatened.", "trust": "B closes down if called obsessive without evidence.", "leak": "No truth leak; repeat questioning should stall."}, "failureResponse": {"npc": "A repeats the contact count; B says she should have stayed quiet.", "gameplay": "No truthStage advance. Point the player toward message content and timing."}, "successUnlocks": ["stage 1 when e-1 Excerpt or e-2 Excerpt appears"]},
+          {"stage": 1, "name": "연락 방식 고정", "surfaceClaim": "전화와 문자 횟수, 끊긴 답장, 이어진 시점이 구체화된다.", "hiddenTruth": "연락 방식은 서툴렀지만 감정적 유혹보다는 긴급 전달에 가깝다.", "entryConditions": ["e-1 stage >= Excerpt"], "allowedDisclosure": ["전화 6번", "문자 11번", "답이 짧게 끊김"], "forbiddenDisclosure": ["돈 접근 경고", "아버지 패턴", "예비신랑의 선넘는 메시지"], "validActions": ["evidence_present", "contradiction_pursuit", "fact_pursuit"], "requiredEvidence": ["e-1"], "requiredWitness": [], "meterTriggers": {"emotion": "A grows more certain from the count.", "trust": "B may admit the count if not framed as seduction.", "leak": "B can say the matter was urgent, not why."}, "failureResponse": {"npc": "B admits the record but not the reason.", "gameplay": "Require e-4 or timing comparison; do not let count alone solve intent."}, "successUnlocks": ["stage 2 with e-4 Excerpt or dc-1 path"]},
+          {"stage": 2, "name": "경고 가능성", "surfaceClaim": "최수민이 전하려던 말이 단순 안부나 집착이 아닐 가능성이 열린다.", "hiddenTruth": "최수민은 송다은 아버지가 예비신랑에게 접근하는 흐름을 보고 경고하려 했다.", "entryConditions": ["partyB lieState >= S2 on d-1", "or e-4 stage >= Excerpt"], "allowedDisclosure": ["급한 전달", "직접 말하기 어려운 사정", "연락의 다른 목적"], "forbiddenDisclosure": ["아버지의 사기", "같은 패턴 반복", "과거 손절 원인"], "validActions": ["motive_search", "empathy_approach", "evidence_present"], "requiredEvidence": ["e-1", "e-4"], "requiredWitness": [], "meterTriggers": {"emotion": "A resists because the simple frame weakens.", "trust": "B trust rises if the judge asks what she feared, not who she wanted.", "leak": "B may mention a warning without naming the father pattern."}, "failureResponse": {"npc": "B says she had to warn someone but cannot explain yet.", "gameplay": "Open d-2 route; do not reveal father pattern before e-5/e-6."}, "successUnlocks": ["d-2 visibility candidate", "stage 3"]},
+          {"stage": 3, "name": "경고와 방식 분리", "surfaceClaim": "연락 의도와 연락 방식의 책임을 따로 봐야 한다.", "hiddenTruth": "B의 목적은 경고였지만, A에게 직접 말하지 않고 예비신랑에게 반복 연락한 방식은 오해를 키웠다.", "entryConditions": ["d-2 truthStage >= 2", "partyB lieState >= S3"], "allowedDisclosure": ["경고 목적 일부", "방식의 부적절성", "직접 말하지 못한 부담"], "forbiddenDisclosure": ["아버지의 과거 사기", "같은 패턴의 전체"], "validActions": ["contradiction_pursuit", "motive_search", "mediation"], "requiredEvidence": ["e-1", "e-4"], "requiredWitness": [], "meterTriggers": {"emotion": "B shame rises because good intent did not prevent harm.", "trust": "A trust can recover if the judge keeps method responsibility alive.", "leak": "B may hint that A's family was involved."}, "failureResponse": {"npc": "A says warning does not excuse contacting her fiance; B accepts the method problem.", "gameplay": "Establish intent direction only. Unlock d-3 via e-5; do not auto-solve d-5."}, "successUnlocks": ["d-3 readiness flag", "stage 4"]},
+          {"stage": 4, "name": "연락 의도 확정", "surfaceClaim": "반복 연락은 집착 단정만으로 설명되지 않는다.", "hiddenTruth": "최수민은 예비신랑을 꼬시려 한 것이 아니라 송다은 아버지의 돈 접근을 경고하려 했다.", "entryConditions": ["e-4 stage >= Context", "e-5 stage >= Excerpt", "partyB lieState >= S4"], "allowedDisclosure": ["경고 의도", "집착 아님", "돈 접근을 막으려 함"], "forbiddenDisclosure": ["d-4 과거 사기 final truth until gate", "A 매도 책임 자동 면책"], "validActions": ["mediation", "evidence_present", "motive_search"], "requiredEvidence": ["e-1", "e-4", "e-5"], "requiredWitness": [], "meterTriggers": {"emotion": "A confusion replaces certainty.", "trust": "B cooperation improves if method fault remains named.", "leak": "Full d-1 truth allowed only through player-discovered/confession route."}, "failureResponse": {"npc": "A still objects to the method; B says warning was all she could do.", "gameplay": "Mark d-1 established. B's protection motive does not erase A's later broadcast responsibility."}, "successUnlocks": ["d-1 established", "d-3 active"]}
+        ]
+      },
+      "d-2": {
+        "title": "예비신랑의 선넘는 접근",
+        "draftCompleteness": "sample-complete",
+        "statementFracture": ["A는 최수민이 먼저 예비신랑에게 접근했다고 본다.", "B는 예비신랑의 선넘는 메시지를 숨겨 자신이 먼저 접근한 사람처럼 보인다.", "쟁점은 누가 먼저 선을 넘었고 왜 바로 공유하지 못했는지다."],
+        "truthStages": [
+          {"stage": 0, "name": "선후 미확정 표면", "surfaceClaim": "최수민과 예비신랑 사이에 사적인 메시지가 있었다.", "hiddenTruth": "예비신랑이 먼저 부적절한 메시지를 보냈고 B는 거절했다.", "entryConditions": ["d-1 truthStage >= 2"], "allowedDisclosure": ["사적 메시지", "예비신랑과 B의 대화", "선후관계 미확정"], "forbiddenDisclosure": ["예비신랑이 먼저", "B의 거절 답장", "선넘는 접근"], "validActions": ["fact_pursuit", "evidence_present"], "requiredEvidence": ["e-4"], "requiredWitness": [], "meterTriggers": {"emotion": "A anger intensifies around fiance loyalty.", "trust": "B avoids details to avoid hurting A.", "leak": "No reveal before e-4."}, "failureResponse": {"npc": "B says the messages were not what A thinks.", "gameplay": "Require message original; repeat accusation keeps truthStage fixed."}, "successUnlocks": ["stage 1 with e-4 Excerpt"]},
+          {"stage": 1, "name": "첫 메시지의 방향", "surfaceClaim": "예비신랑 쪽에서 먼저 온 사적인 문장이 보인다.", "hiddenTruth": "예비신랑이 커피와 이상형을 언급하며 먼저 선을 넘었다.", "entryConditions": ["e-4 stage >= Excerpt"], "allowedDisclosure": ["먼저 온 메시지", "부적절한 뉘앙스", "경계 확인"], "forbiddenDisclosure": ["B의 전체 거절", "아버지 패턴과 연결", "경고 의도 확정"], "validActions": ["evidence_present", "contradiction_pursuit"], "requiredEvidence": ["e-4"], "requiredWitness": ["w-2"], "meterTriggers": {"emotion": "A shock appears but quickly turns defensive.", "trust": "B trust rises if not asked to humiliate A publicly.", "leak": "B may say she stopped the line there."}, "failureResponse": {"npc": "A says one message does not excuse nine days of contact.", "gameplay": "Prompt full thread and witness route; do not jump to father pattern."}, "successUnlocks": ["stage 2 with e-4 Original or w-2"]},
+          {"stage": 2, "name": "거절 답장 확인", "surfaceClaim": "최수민이 예비신랑의 접근을 받아주지 않았다는 답장이 붙는다.", "hiddenTruth": "B는 친구 남자친구라며 선을 그었고 유혹한 쪽이 아니었다.", "entryConditions": ["e-4 stage >= Original", "or witness w-2 summoned"], "allowedDisclosure": ["B의 거절", "친구 남자친구라 선을 그음", "유혹 프레임 약화"], "forbiddenDisclosure": ["아버지의 돈 접근", "과거 사기", "반복 패턴"], "validActions": ["evidence_present", "witness_summon", "contradiction_pursuit"], "requiredEvidence": ["e-4"], "requiredWitness": ["w-2"], "meterTriggers": {"emotion": "A's accusation weakens but shame turns into anger.", "trust": "B can explain method if the rejection is acknowledged.", "leak": "B can admit she should have shown A sooner."}, "failureResponse": {"npc": "B says she rejected him but still should have handled it differently.", "gameplay": "Separate fiance fault from B's later contact method."}, "successUnlocks": ["dc-2", "stage 3"]},
+          {"stage": 3, "name": "왜 바로 못 보였나", "surfaceClaim": "예비신랑이 먼저였는데도 최수민은 송다은에게 바로 보여주지 않았다.", "hiddenTruth": "B는 이 문제를 말하면 송다은의 가족 문제까지 건드리게 될까 봐 예비신랑에게 우회 경고했다.", "entryConditions": ["partyB lieState >= S3 on d-2", "dc-2 challenge success"], "allowedDisclosure": ["바로 보여주지 못한 이유", "우회 경고", "A가 받을 충격"], "forbiddenDisclosure": ["아버지 사기 전체", "과거 손절의 진짜 원인"], "validActions": ["motive_search", "empathy_approach", "contradiction_pursuit"], "requiredEvidence": ["e-4"], "requiredWitness": ["w-2"], "meterTriggers": {"emotion": "B's flat delivery thins around A's name.", "trust": "Trust improves if the judge names both fiance fault and B silence.", "leak": "B may mention A's father without the past fraud yet."}, "failureResponse": {"npc": "B says showing the thread would not have ended with the thread.", "gameplay": "Unlock d-3 route via e-5; do not auto-solve d-4."}, "successUnlocks": ["d-3 visibility candidate", "stage 4"]},
+          {"stage": 4, "name": "선후관계 확정", "surfaceClaim": "예비신랑이 먼저 선을 넘었고 최수민은 거절한 쪽이었다.", "hiddenTruth": "B의 뒤이은 연락은 예비신랑을 빼앗으려는 시도가 아니라 위험 신호를 전하려는 연장선이었다.", "entryConditions": ["e-4 stage >= Context", "partyB lieState >= S4"], "allowedDisclosure": ["예비신랑이 먼저", "B의 거절", "연락의 재맥락화"], "forbiddenDisclosure": ["d-3/d-4 final truth auto-solve", "A 단톡방 책임 면책"], "validActions": ["mediation", "evidence_present", "motive_search"], "requiredEvidence": ["e-4"], "requiredWitness": ["w-2"], "meterTriggers": {"emotion": "A must face fiance fault before father's pattern.", "trust": "B cooperation rises but guilt stays high.", "leak": "B may point toward why the warning mattered."}, "failureResponse": {"npc": "A says fiance fault does not explain public silence; B agrees.", "gameplay": "Establish d-2. Unlock d-3; do not clear B's method responsibility."}, "successUnlocks": ["d-2 established", "d-3 active"]}
+        ]
+      },
+      "d-3": {
+        "title": "아버지의 돈 접근 패턴",
+        "draftCompleteness": "sample-complete",
+        "statementFracture": ["A는 아버지의 연락을 단순 부탁이나 가족 사정으로 축소한다.", "B는 같은 흐름을 과거 피해와 연결해 보지만 직접 말하지 못한다.", "쟁점은 현재 돈 부탁이 과거와 같은 패턴인지다."],
+        "truthStages": [
+          {"stage": 0, "name": "돈 부탁 표면", "surfaceClaim": "송다은 아버지가 예비신랑에게 돈 이야기를 꺼낸 정황이 있다.", "hiddenTruth": "그 문구는 과거 최수민에게 돈을 받아갈 때와 닮아 있었다.", "entryConditions": ["d-2 truthStage >= 3"], "allowedDisclosure": ["돈 부탁", "결혼 전 도움 요청", "가족 쪽 문자"], "forbiddenDisclosure": ["같은 패턴 반복", "과거 사기", "B가 당한 일"], "validActions": ["fact_pursuit", "evidence_present"], "requiredEvidence": ["e-5"], "requiredWitness": [], "meterTriggers": {"emotion": "A narrows scope to protect father.", "trust": "B stays flat and indirect.", "leak": "No pattern reveal without e-5/e-6 comparison."}, "failureResponse": {"npc": "A says it was only a family request; B says the wording mattered.", "gameplay": "Require current text original; repeated father accusation stalls."}, "successUnlocks": ["stage 1 with e-5 Excerpt"]},
+          {"stage": 1, "name": "현재 문자 고정", "surfaceClaim": "결혼 전 잠깐 도와달라는 문구와 숨기라는 뉘앙스가 보인다.", "hiddenTruth": "A 아버지는 예비신랑에게 돈을 요구하기 시작했고 B의 연락 시점과 겹쳤다.", "entryConditions": ["e-5 stage >= Excerpt"], "allowedDisclosure": ["결혼 전 돈 부탁", "잠깐 도와달라는 문구", "연락 시점 겹침"], "forbiddenDisclosure": ["과거 사기", "같은 문구 반복", "B의 과거 피해"], "validActions": ["evidence_present", "contradiction_pursuit"], "requiredEvidence": ["e-5"], "requiredWitness": [], "meterTriggers": {"emotion": "A defends father reflexively.", "trust": "B can say the timing was why she moved.", "leak": "B may say this was not the first time."}, "failureResponse": {"npc": "B says the current text looked familiar but stops there.", "gameplay": "Prompt e-6 or e-7; do not reveal past fraud from e-5 alone."}, "successUnlocks": ["stage 2 with e-6 Excerpt or e-7 Excerpt"]},
+          {"stage": 2, "name": "과거와 현재의 겹침", "surfaceClaim": "현재 문자와 과거 돈 문제 사이에 닮은 문구가 보인다.", "hiddenTruth": "A 아버지는 과거에도 투자 명목으로 B에게 돈을 받아갔고 같은 방식이 반복됐다.", "entryConditions": ["e-5 stage >= Original", "e-6 stage >= Excerpt"], "allowedDisclosure": ["과거와 닮은 문구", "반복된 부탁", "연락 시점의 이유"], "forbiddenDisclosure": ["사기 확정", "구체적 피해액", "손절의 전체 원인"], "validActions": ["evidence_present", "witness_summon", "contradiction_pursuit"], "requiredEvidence": ["e-5", "e-6"], "requiredWitness": [], "meterTriggers": {"emotion": "A's premature conclusion starts to fracture.", "trust": "B trust rises if the judge distinguishes father from A.", "leak": "B may say she had seen the pattern before."}, "failureResponse": {"npc": "A calls it coincidence; B asks to compare the wording.", "gameplay": "Need Original/Context comparison; do not auto-open d-4 final truth."}, "successUnlocks": ["dc-3", "stage 3", "d-4 visibility candidate"]},
+          {"stage": 3, "name": "반복 패턴 확정", "surfaceClaim": "현재 예비신랑에게 향한 돈 접근이 과거 최수민에게 향한 방식과 거의 같다.", "hiddenTruth": "B는 같은 패턴이 반복된다고 보고 예비신랑이 또 당하지 않게 하려 했다.", "entryConditions": ["e-5 stage >= Context", "e-6 stage >= Original", "dc-3 challenge success"], "allowedDisclosure": ["같은 패턴 반복", "또 당하게 놔둘 수 없음", "경고 근거"], "forbiddenDisclosure": ["과거 사기 피해 전체", "A의 단톡방 최종 책임 자동 확정"], "validActions": ["motive_search", "evidence_present", "contradiction_pursuit"], "requiredEvidence": ["e-5", "e-6", "e-7"], "requiredWitness": [], "meterTriggers": {"emotion": "A shame and denial compete.", "trust": "B can explain warning without claiming perfect method.", "leak": "B may describe the repeat pattern but not every past detail."}, "failureResponse": {"npc": "A says father and friend must be separated; B says the pattern is why she moved.", "gameplay": "Unlock d-4 but keep B's silence responsibility active."}, "successUnlocks": ["d-4 active", "stage 4"]},
+          {"stage": 4, "name": "경고 근거 확정", "surfaceClaim": "최수민의 경고에는 현재와 과거를 잇는 구체적 근거가 있었다.", "hiddenTruth": "A 아버지의 돈 접근 패턴이 반복됐고 B는 같은 피해를 막으려 예비신랑에게 연락했다.", "entryConditions": ["e-7 stage >= Context", "partyB lieState >= S4"], "allowedDisclosure": ["아버지의 돈 접근 패턴", "반복 구조", "경고 근거"], "forbiddenDisclosure": ["d-4 과거 사기 final truth until gate", "A 매도 책임 면책"], "validActions": ["mediation", "evidence_present", "motive_search"], "requiredEvidence": ["e-5", "e-6", "e-7"], "requiredWitness": [], "meterTriggers": {"emotion": "A father-defense weakens but does not disappear.", "trust": "B cooperation depends on not making A inherit father's fault wholesale.", "leak": "Full pattern allowed through player-discovered route."}, "failureResponse": {"npc": "A says warning was still not B's role; B accepts the risk of the method.", "gameplay": "Establish d-3. B's protection motive does not absolve A's public accusation or B's silence."}, "successUnlocks": ["d-3 established", "d-4 active", "d-5 readiness flag"]}
+        ]
+      },
+      "d-4": {
+        "title": "과거 손절과 아버지의 사기",
+        "draftCompleteness": "sample-complete",
+        "statementFracture": ["A는 과거 손절을 B의 변심이나 돈 앞에서 달라진 성격으로 기억한다.", "B는 A 아버지의 사기 피해를 말하지 못해 악역으로 남았다.", "쟁점은 과거 손절의 원인이 누구에게 있었는지다."],
+        "truthStages": [
+          {"stage": 0, "name": "변심 기억 표면", "surfaceClaim": "과거 손절은 돈 문제를 두고 두 친구가 멀어진 일로 남아 있다.", "hiddenTruth": "손절의 진짜 원인은 A 아버지가 B에게 돈을 받아간 사건이었다.", "entryConditions": ["d-3 truthStage >= 3"], "allowedDisclosure": ["과거 카톡", "돈 문제", "손절 시점"], "forbiddenDisclosure": ["아버지의 사기", "아버지 돈 갈취", "B 피해"], "validActions": ["fact_pursuit", "empathy_approach"], "requiredEvidence": ["e-3"], "requiredWitness": [], "meterTriggers": {"emotion": "A protects the old story that B changed.", "trust": "B avoids accusing A's father directly.", "leak": "No fraud reveal without e-6."}, "failureResponse": {"npc": "B says she left because she could not explain; A says that is the same as abandoning.", "gameplay": "Require past chat and remittance evidence; repeat blame stalls."}, "successUnlocks": ["stage 1 with e-3 Original"]},
+          {"stage": 1, "name": "돈 문제의 빈칸", "surfaceClaim": "과거 카톡에는 돈 문제라는 말만 있고 실체가 비어 있다.", "hiddenTruth": "B는 A 아버지에게 돈을 빼앗긴 일을 A에게 말하지 못했다.", "entryConditions": ["e-3 stage >= Original"], "allowedDisclosure": ["돈 문제", "설명 회피", "손절 직전의 공백"], "forbiddenDisclosure": ["A 아버지 사기", "투자 명목", "미상환"], "validActions": ["evidence_present", "contradiction_pursuit"], "requiredEvidence": ["e-3"], "requiredWitness": [], "meterTriggers": {"emotion": "A asks why B hid it until now.", "trust": "B can stay present if not forced to insult A's father immediately.", "leak": "B may say the money involved A's family."}, "failureResponse": {"npc": "B says naming it would have hurt A more.", "gameplay": "Prompt e-6 investigation or w-3; do not reveal fraud from chat alone."}, "successUnlocks": ["stage 2 with e-6 Original or w-3"]},
+          {"stage": 2, "name": "과거 송금 확인", "surfaceClaim": "과거 송금 기록과 차용 문자가 돈 문제의 실체를 보여준다.", "hiddenTruth": "A 아버지가 투자 명목으로 B 돈을 받아가고 갚지 않았다.", "entryConditions": ["e-6 stage >= Original", "or witness w-3 summoned"], "allowedDisclosure": ["과거 송금", "투자 명목", "갚지 않은 문자"], "forbiddenDisclosure": ["사기 단정 before context", "구체적 피해액", "A 책임 자동 전가"], "validActions": ["evidence_present", "witness_summon", "contradiction_pursuit"], "requiredEvidence": ["e-6"], "requiredWitness": ["w-3"], "meterTriggers": {"emotion": "A's father-defense turns into shock.", "trust": "B trust rises if A is not treated as the fraud actor.", "leak": "B can state she was harmed but not every detail."}, "failureResponse": {"npc": "A says she did not know; B says that was why she stayed silent.", "gameplay": "Separate father fault from A's later judgment. Do not auto-clear d-5."}, "successUnlocks": ["dc-4", "stage 3"]},
+          {"stage": 3, "name": "말하지 못한 이유", "surfaceClaim": "최수민은 사기 피해를 말하면 송다은이 아버지를 직면해야 했기 때문에 침묵했다.", "hiddenTruth": "B는 친구가 아버지를 사기꾼으로 봐야 한다는 사실을 차마 말하지 못하고 악역을 자처했다.", "entryConditions": ["partyB lieState >= S3 on d-4", "dc-4 challenge success"], "allowedDisclosure": ["차마 못 말함", "아버지 문제를 친구에게 말하지 못함", "악역을 자처"], "forbiddenDisclosure": ["구체적 피해액", "불필요한 가족 세부"], "validActions": ["motive_search", "empathy_approach", "contradiction_pursuit"], "requiredEvidence": ["e-3", "e-6"], "requiredWitness": ["w-3"], "meterTriggers": {"emotion": "B becomes flatter as the pain deepens.", "trust": "A may begin to listen if father fault and B silence are both named.", "leak": "B can confess the protection motive."}, "failureResponse": {"npc": "A asks why silence was better than truth; B says she chose the wrong protection.", "gameplay": "Open d-5 route; do not let B's sacrifice erase silence cost."}, "successUnlocks": ["stage 4", "d-5 visibility candidate"]},
+          {"stage": 4, "name": "손절 원인 확정", "surfaceClaim": "과거 손절은 최수민의 변심이 아니라 아버지의 돈 문제와 침묵의 결과였다.", "hiddenTruth": "A 아버지의 사기가 손절의 핵심 원인이었고 B는 A를 보호하려다 또 나쁜 사람으로 남았다.", "entryConditions": ["e-6 stage >= Context", "partyB lieState >= S4"], "allowedDisclosure": ["아버지의 사기", "손절의 진짜 원인", "B의 침묵과 보호 동기"], "forbiddenDisclosure": ["A 단톡방 책임 면책", "B 방식 책임 면책"], "validActions": ["mediation", "evidence_present", "motive_search"], "requiredEvidence": ["e-3", "e-6"], "requiredWitness": ["w-3"], "meterTriggers": {"emotion": "A's old resentment breaks open.", "trust": "B can accept that silence also harmed A.", "leak": "Full truth allowed through confession/player-discovered route."}, "failureResponse": {"npc": "A struggles with father fault; B admits silence kept the wound alive.", "gameplay": "Establish d-4. Move to d-5 only after both past and current axes are present."}, "successUnlocks": ["d-4 established", "d-5 active"]}
+        ]
+      },
+      "d-5": {
+        "title": "단톡방 매도와 명예훼손",
+        "draftCompleteness": "sample-complete",
+        "statementFracture": ["A는 단톡방 발언을 사실 공유라고 말하지만 확인 없이 낙인을 찍었다.", "B는 또 악역이 되는 구조를 알면서도 설명을 미뤘다.", "최종 쟁점은 B의 보호 동기와 A의 매도 책임을 분리하는 데 있다."],
+        "truthStages": [
+          {"stage": 0, "name": "공개 매도 표면", "surfaceClaim": "송다은의 단톡방 발언과 친구들의 동조가 남아 있다.", "hiddenTruth": "A는 연락 의도를 확인하기 전에 B를 공개적으로 매도했다.", "entryConditions": ["d-3 truthStage >= 3", "d-4 truthStage >= 3"], "allowedDisclosure": ["단톡방 발언", "친구들의 반응", "확인 여부"], "forbiddenDisclosure": ["명예훼손 확정", "B 경고 의도 final", "A 최종 책임 단정"], "validActions": ["fact_pursuit", "evidence_present"], "requiredEvidence": ["e-2"], "requiredWitness": ["w-1"], "meterTriggers": {"emotion": "A defends the post as warning others.", "trust": "B expects to be blamed again.", "leak": "No final conclusion until source order is compared."}, "failureResponse": {"npc": "A says anyone would have read it the same way; B stays quiet.", "gameplay": "Require e-2 timeline and w-1; repeat accusation only raises emotion."}, "successUnlocks": ["stage 1 with e-2 Original or w-1"]},
+          {"stage": 1, "name": "확인 없는 결론", "surfaceClaim": "송다은은 최수민에게 직접 확인하기 전에 공통 친구들에게 먼저 말했다.", "hiddenTruth": "A의 premature_summary 패턴이 현재 사건을 집착과 배신으로 빠르게 닫았다.", "entryConditions": ["e-2 stage >= Original", "or witness w-1 summoned"], "allowedDisclosure": ["직접 확인 전 게시", "친구들의 동조", "빠른 결론"], "forbiddenDisclosure": ["A 단독 최종 책임", "B 보호 동기 면책"], "validActions": ["contradiction_pursuit", "witness_summon", "empathy_approach"], "requiredEvidence": ["e-2"], "requiredWitness": ["w-1"], "meterTriggers": {"emotion": "A shame appears as defensiveness.", "trust": "A may admit speed if not told she invented everything.", "leak": "A can admit she concluded too fast."}, "failureResponse": {"npc": "A says the record looked obvious at the time.", "gameplay": "Point to missing intent evidence; do not close final judgment yet."}, "successUnlocks": ["dc-5.a.q1", "stage 2"]},
+          {"stage": 2, "name": "낙인의 확산", "surfaceClaim": "단톡방에서 최수민은 연락한 사람을 넘어 친구의 예비신랑을 노린 사람으로 굳어졌다.", "hiddenTruth": "A의 발언은 확인 전 단정을 공통 친구들에게 퍼뜨린 명예훼손 위험을 만든다.", "entryConditions": ["w-1 testimony or e-2 stage >= Context"], "allowedDisclosure": ["낙인 확산", "공통 친구 동조", "확인 전 단정"], "forbiddenDisclosure": ["B의 과거 피해로 A 책임 면책", "A 아버지 책임으로 A 발언 면책"], "validActions": ["witness_summon", "contradiction_pursuit", "mediation"], "requiredEvidence": ["e-2"], "requiredWitness": ["w-1"], "meterTriggers": {"emotion": "A's fear of social blame rises.", "trust": "B trust rises if public harm is named separately from her silence.", "leak": "Witness can reveal atmosphere but not resolve all intent."}, "failureResponse": {"npc": "A says she was protecting herself; B says the label stuck before she could speak.", "gameplay": "Require both current public harm and prior silence axes."}, "successUnlocks": ["stage 3"]},
+          {"stage": 3, "name": "반복된 악역 구조", "surfaceClaim": "과거 손절과 현재 단톡방 모두 최수민이 말하지 못해 악역이 되는 구조를 반복한다.", "hiddenTruth": "B의 보호 침묵은 반복됐고, A의 성급한 결론은 그 침묵을 다시 공개 낙인으로 만들었다.", "entryConditions": ["d-4 established", "e-7 stage >= Original"], "allowedDisclosure": ["또 악역", "반복 침묵", "성급한 결론"], "forbiddenDisclosure": ["A 매도 책임 면책", "B 침묵 책임 면책"], "validActions": ["mediation", "motive_search", "contradiction_pursuit"], "requiredEvidence": ["e-2", "e-7"], "requiredWitness": ["w-1"], "meterTriggers": {"emotion": "Both parties are vulnerable: A ashamed, B resigned.", "trust": "Balanced framing keeps both in the conversation.", "leak": "The repeated structure can surface only after d-3/d-4 gates."}, "failureResponse": {"npc": "A points to B's silence; B points to A's public post.", "gameplay": "Require both responsibility axes. B's protection motive is not A's exemption."}, "successUnlocks": ["stage 4"]},
+          {"stage": 4, "name": "최종 책임 분리", "surfaceClaim": "경고 의도, 과거 피해, 단톡방 매도 책임이 분리되어 정리된다.", "hiddenTruth": "B는 보호하려 했지만 침묵과 우회 연락으로 오해를 키웠고, A는 확인 없이 공개 매도로 B의 명예를 훼손했다.", "entryConditions": ["d-1 established", "d-2 established", "d-3 established", "d-4 established", "e-2 stage >= Context"], "allowedDisclosure": ["B 경고 의도", "B 침묵 책임", "A 매도 책임", "명예 회복 필요"], "forbiddenDisclosure": ["한쪽 면책", "아버지 세부를 불필요하게 공개"], "validActions": ["mediation", "final_argument", "confession_attempt"], "requiredEvidence": ["e-2", "e-7"], "requiredWitness": ["w-1"], "meterTriggers": {"emotion": "A and B both move from accusation to consequence.", "trust": "Final trust is the willingness to correct the record, not reconciliation.", "leak": "No hidden issue remains except sealed private details."}, "failureResponse": {"npc": "One party tries to make the other's fault erase their own.", "gameplay": "Close d-5 only if B's protection motive and A's broadcast responsibility are both established."}, "successUnlocks": ["d-5 established", "public correction mediation frame"]}
+        ]
+      }
+    }
+  },
+  "crossCheck": {
+    "status": "drafted-with-cross-check",
+    "file": "src/data/disclosurePolicy/friend-01-cross-check.md",
+    "notes": [
+      "Actual generated caseData uses top-level disputes/evidence, not p.disputes or p.evidence.",
+      "No friend-01-v3-game-loop-data.json exists; dossier cards are in friend-01-dossier-cards.json.",
+      "friend-01-game-events-v2 still contains stale h-d3/h-d4 dispute IDs; policy follows generated d-3/d-4.",
+      "This file is human-authored policy data and is not imported by runtime code."
+    ]
+  }
+}
