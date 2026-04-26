@@ -1,0 +1,740 @@
+{
+  "generatedAt": "2026-04-26T16:38:47.896Z",
+  "passed": true,
+  "counts": {
+    "spouse-01": {
+      "total": 4677,
+      "byChannel": {
+        "interrogation": 1440,
+        "evidence_present": 1470,
+        "dossier": 240,
+        "witness": 90,
+        "aftermath": 25,
+        "system_message": 55,
+        "contradiction_pursuit": 320,
+        "interjection": 160,
+        "emotional_overload": 80,
+        "evidence_discovery": 12,
+        "trust_action": 180,
+        "mediation": 80,
+        "judge_question": 240,
+        "judge_contradiction": 60,
+        "judge_evidence_combo": 120,
+        "judge_witness_summon": 45,
+        "rapport_milestone": 30,
+        "contradict_milestone": 30
+      }
+    },
+    "family-01": {
+      "total": 5172,
+      "byChannel": {
+        "interrogation": 1800,
+        "evidence_present": 1470,
+        "dossier": 330,
+        "witness": 90,
+        "aftermath": 25,
+        "system_message": 55,
+        "mediation": 80,
+        "contradiction_pursuit": 320,
+        "interjection": 160,
+        "emotional_overload": 80,
+        "evidence_discovery": 12,
+        "trust_action": 180,
+        "judge_question": 240,
+        "judge_contradiction": 60,
+        "judge_evidence_combo": 165,
+        "judge_witness_summon": 45,
+        "rapport_milestone": 30,
+        "contradict_milestone": 30
+      }
+    },
+    "friend-01": {
+      "total": 5082,
+      "byChannel": {
+        "interrogation": 1800,
+        "evidence_present": 1470,
+        "dossier": 270,
+        "witness": 90,
+        "aftermath": 25,
+        "system_message": 55,
+        "mediation": 80,
+        "contradiction_pursuit": 320,
+        "interjection": 160,
+        "emotional_overload": 80,
+        "evidence_discovery": 12,
+        "trust_action": 180,
+        "judge_question": 240,
+        "judge_contradiction": 60,
+        "judge_evidence_combo": 135,
+        "judge_witness_summon": 45,
+        "rapport_milestone": 30,
+        "contradict_milestone": 30
+      }
+    },
+    "total": 14931
+  },
+  "remainingChanges": {
+    "total": 437,
+    "byCategory": {
+      "C": 8,
+      "A": 422,
+      "B": 7
+    },
+    "v4LoggedNonStrict": 15,
+    "samples": [
+      {
+        "variantKey": "spouse-01::interrogation::a|d-1|S0|fact_pursuit::a-d-1-S0-fact-pursuit-v10",
+        "caseId": "spouse-01",
+        "channel": "interrogation",
+        "entryKey": "a|d-1|S0|fact_pursuit",
+        "variantId": "a-d-1-S0-fact-pursuit-v10",
+        "changedFields": [
+          "text"
+        ],
+        "category": "C",
+        "matrixCell": "npc_early_strict_review",
+        "v4Logged": true
+      },
+      {
+        "variantKey": "spouse-01::interrogation::a|d-1|S0|motive_search::a-d-1-S0-motive-search-v4",
+        "caseId": "spouse-01",
+        "channel": "interrogation",
+        "entryKey": "a|d-1|S0|motive_search",
+        "variantId": "a-d-1-S0-motive-search-v4",
+        "changedFields": [
+          "text"
+        ],
+        "category": "C",
+        "matrixCell": "npc_early_strict_review",
+        "v4Logged": true
+      },
+      {
+        "variantKey": "spouse-01::interrogation::a|d-1|S0|motive_search::a-d-1-S0-motive-search-v10",
+        "caseId": "spouse-01",
+        "channel": "interrogation",
+        "entryKey": "a|d-1|S0|motive_search",
+        "variantId": "a-d-1-S0-motive-search-v10",
+        "changedFields": [
+          "text"
+        ],
+        "category": "C",
+        "matrixCell": "npc_early_strict_review",
+        "v4Logged": true
+      },
+      {
+        "variantKey": "spouse-01::interrogation::a|d-1|S0|empathy_approach::a-d-1-S0-empathy-approach-v10",
+        "caseId": "spouse-01",
+        "channel": "interrogation",
+        "entryKey": "a|d-1|S0|empathy_approach",
+        "variantId": "a-d-1-S0-empathy-approach-v10",
+        "changedFields": [
+          "text"
+        ],
+        "category": "C",
+        "matrixCell": "npc_early_strict_review",
+        "v4Logged": true
+      },
+      {
+        "variantKey": "spouse-01::interrogation::a|d-1|S1|fact_pursuit::a-d-1-S1-fact-pursuit-v4",
+        "caseId": "spouse-01",
+        "channel": "interrogation",
+        "entryKey": "a|d-1|S1|fact_pursuit",
+        "variantId": "a-d-1-S1-fact-pursuit-v4",
+        "changedFields": [
+          "text"
+        ],
+        "category": "C",
+        "matrixCell": "npc_early_strict_review",
+        "v4Logged": true
+      },
+      {
+        "variantKey": "spouse-01::interrogation::a|d-1|S1|motive_search::a-d-1-S1-motive-search-v4",
+        "caseId": "spouse-01",
+        "channel": "interrogation",
+        "entryKey": "a|d-1|S1|motive_search",
+        "variantId": "a-d-1-S1-motive-search-v4",
+        "changedFields": [
+          "text"
+        ],
+        "category": "C",
+        "matrixCell": "npc_early_strict_review",
+        "v4Logged": true
+      },
+      {
+        "variantKey": "spouse-01::interrogation::a|d-1|S2|motive_search::a-d-1-S2-motive-search-v4",
+        "caseId": "spouse-01",
+        "channel": "interrogation",
+        "entryKey": "a|d-1|S2|motive_search",
+        "variantId": "a-d-1-S2-motive-search-v4",
+        "changedFields": [
+          "text"
+        ],
+        "category": "C",
+        "matrixCell": "npc_partial_review",
+        "v4Logged": true
+      },
+      {
+        "variantKey": "spouse-01::contradiction_pursuit::a|d-1|S2::contra-a-d-1-S2-v8",
+        "caseId": "spouse-01",
+        "channel": "contradiction_pursuit",
+        "entryKey": "a|d-1|S2",
+        "variantId": "contra-a-d-1-S2-v8",
+        "changedFields": [
+          "text"
+        ],
+        "category": "C",
+        "matrixCell": "npc_partial_review",
+        "v4Logged": true
+      },
+      {
+        "variantKey": "spouse-01::evidence_discovery::b|e-3|confirm::discover-b-e-3-confirm-v1",
+        "caseId": "spouse-01",
+        "channel": "evidence_discovery",
+        "entryKey": "b|e-3|confirm",
+        "variantId": "discover-b-e-3-confirm-v1",
+        "changedFields": [
+          "text"
+        ],
+        "category": "A",
+        "matrixCell": "strict_always_patchable",
+        "v4Logged": false
+      },
+      {
+        "variantKey": "spouse-01::evidence_discovery::a|e-5|confirm::discover-a-e-5-confirm-v1",
+        "caseId": "spouse-01",
+        "channel": "evidence_discovery",
+        "entryKey": "a|e-5|confirm",
+        "variantId": "discover-a-e-5-confirm-v1",
+        "changedFields": [
+          "text"
+        ],
+        "category": "A",
+        "matrixCell": "strict_always_patchable",
+        "v4Logged": false
+      },
+      {
+        "variantKey": "spouse-01::mediation::immediate|b::mediation-immediate-b-v2",
+        "caseId": "spouse-01",
+        "channel": "mediation",
+        "entryKey": "immediate|b",
+        "variantId": "mediation-immediate-b-v2",
+        "changedFields": [
+          "text"
+        ],
+        "category": "A",
+        "matrixCell": "strict_always_patchable",
+        "v4Logged": false
+      },
+      {
+        "variantKey": "spouse-01::mediation::immediate|b::mediation-immediate-b-v3",
+        "caseId": "spouse-01",
+        "channel": "mediation",
+        "entryKey": "immediate|b",
+        "variantId": "mediation-immediate-b-v3",
+        "changedFields": [
+          "text"
+        ],
+        "category": "A",
+        "matrixCell": "strict_always_patchable",
+        "v4Logged": false
+      },
+      {
+        "variantKey": "spouse-01::mediation::immediate|b::mediation-immediate-b-v4",
+        "caseId": "spouse-01",
+        "channel": "mediation",
+        "entryKey": "immediate|b",
+        "variantId": "mediation-immediate-b-v4",
+        "changedFields": [
+          "text"
+        ],
+        "category": "A",
+        "matrixCell": "strict_always_patchable",
+        "v4Logged": false
+      },
+      {
+        "variantKey": "spouse-01::mediation::immediate|b::mediation-immediate-b-v6",
+        "caseId": "spouse-01",
+        "channel": "mediation",
+        "entryKey": "immediate|b",
+        "variantId": "mediation-immediate-b-v6",
+        "changedFields": [
+          "text"
+        ],
+        "category": "A",
+        "matrixCell": "strict_always_patchable",
+        "v4Logged": false
+      },
+      {
+        "variantKey": "spouse-01::mediation::conditional|a::mediation-conditional-a-v1",
+        "caseId": "spouse-01",
+        "channel": "mediation",
+        "entryKey": "conditional|a",
+        "variantId": "mediation-conditional-a-v1",
+        "changedFields": [
+          "text"
+        ],
+        "category": "A",
+        "matrixCell": "strict_always_patchable",
+        "v4Logged": false
+      },
+      {
+        "variantKey": "spouse-01::mediation::conditional|a::mediation-conditional-a-v2",
+        "caseId": "spouse-01",
+        "channel": "mediation",
+        "entryKey": "conditional|a",
+        "variantId": "mediation-conditional-a-v2",
+        "changedFields": [
+          "text"
+        ],
+        "category": "A",
+        "matrixCell": "strict_always_patchable",
+        "v4Logged": false
+      },
+      {
+        "variantKey": "spouse-01::mediation::conditional|a::mediation-conditional-a-v7",
+        "caseId": "spouse-01",
+        "channel": "mediation",
+        "entryKey": "conditional|a",
+        "variantId": "mediation-conditional-a-v7",
+        "changedFields": [
+          "text"
+        ],
+        "category": "A",
+        "matrixCell": "strict_always_patchable",
+        "v4Logged": false
+      },
+      {
+        "variantKey": "spouse-01::mediation::conditional|b::mediation-conditional-b-v1",
+        "caseId": "spouse-01",
+        "channel": "mediation",
+        "entryKey": "conditional|b",
+        "variantId": "mediation-conditional-b-v1",
+        "changedFields": [
+          "text"
+        ],
+        "category": "A",
+        "matrixCell": "strict_always_patchable",
+        "v4Logged": true
+      },
+      {
+        "variantKey": "spouse-01::mediation::conditional|b::mediation-conditional-b-v3",
+        "caseId": "spouse-01",
+        "channel": "mediation",
+        "entryKey": "conditional|b",
+        "variantId": "mediation-conditional-b-v3",
+        "changedFields": [
+          "text"
+        ],
+        "category": "A",
+        "matrixCell": "strict_always_patchable",
+        "v4Logged": false
+      },
+      {
+        "variantKey": "spouse-01::mediation::conditional|b::mediation-conditional-b-v5",
+        "caseId": "spouse-01",
+        "channel": "mediation",
+        "entryKey": "conditional|b",
+        "variantId": "mediation-conditional-b-v5",
+        "changedFields": [
+          "text"
+        ],
+        "category": "A",
+        "matrixCell": "strict_always_patchable",
+        "v4Logged": false
+      },
+      {
+        "variantKey": "spouse-01::mediation::postpone|b::mediation-postpone-b-v2",
+        "caseId": "spouse-01",
+        "channel": "mediation",
+        "entryKey": "postpone|b",
+        "variantId": "mediation-postpone-b-v2",
+        "changedFields": [
+          "text"
+        ],
+        "category": "A",
+        "matrixCell": "strict_always_patchable",
+        "v4Logged": false
+      },
+      {
+        "variantKey": "spouse-01::mediation::postpone|b::mediation-postpone-b-v6",
+        "caseId": "spouse-01",
+        "channel": "mediation",
+        "entryKey": "postpone|b",
+        "variantId": "mediation-postpone-b-v6",
+        "changedFields": [
+          "text"
+        ],
+        "category": "A",
+        "matrixCell": "strict_always_patchable",
+        "v4Logged": false
+      },
+      {
+        "variantKey": "spouse-01::mediation::postpone|b::mediation-postpone-b-v10",
+        "caseId": "spouse-01",
+        "channel": "mediation",
+        "entryKey": "postpone|b",
+        "variantId": "mediation-postpone-b-v10",
+        "changedFields": [
+          "text"
+        ],
+        "category": "A",
+        "matrixCell": "strict_always_patchable",
+        "v4Logged": false
+      },
+      {
+        "variantKey": "spouse-01::mediation::fact_first|a::mediation-fact_first-a-v3",
+        "caseId": "spouse-01",
+        "channel": "mediation",
+        "entryKey": "fact_first|a",
+        "variantId": "mediation-fact_first-a-v3",
+        "changedFields": [
+          "text"
+        ],
+        "category": "A",
+        "matrixCell": "strict_always_patchable",
+        "v4Logged": false
+      },
+      {
+        "variantKey": "spouse-01::mediation::fact_first|a::mediation-fact_first-a-v4",
+        "caseId": "spouse-01",
+        "channel": "mediation",
+        "entryKey": "fact_first|a",
+        "variantId": "mediation-fact_first-a-v4",
+        "changedFields": [
+          "text"
+        ],
+        "category": "A",
+        "matrixCell": "strict_always_patchable",
+        "v4Logged": false
+      },
+      {
+        "variantKey": "spouse-01::mediation::fact_first|b::mediation-fact_first-b-v1",
+        "caseId": "spouse-01",
+        "channel": "mediation",
+        "entryKey": "fact_first|b",
+        "variantId": "mediation-fact_first-b-v1",
+        "changedFields": [
+          "text"
+        ],
+        "category": "A",
+        "matrixCell": "strict_always_patchable",
+        "v4Logged": false
+      },
+      {
+        "variantKey": "spouse-01::mediation::fact_first|b::mediation-fact_first-b-v3",
+        "caseId": "spouse-01",
+        "channel": "mediation",
+        "entryKey": "fact_first|b",
+        "variantId": "mediation-fact_first-b-v3",
+        "changedFields": [
+          "text"
+        ],
+        "category": "A",
+        "matrixCell": "strict_always_patchable",
+        "v4Logged": false
+      },
+      {
+        "variantKey": "spouse-01::mediation::fact_first|b::mediation-fact_first-b-v7",
+        "caseId": "spouse-01",
+        "channel": "mediation",
+        "entryKey": "fact_first|b",
+        "variantId": "mediation-fact_first-b-v7",
+        "changedFields": [
+          "text"
+        ],
+        "category": "A",
+        "matrixCell": "strict_always_patchable",
+        "v4Logged": false
+      },
+      {
+        "variantKey": "spouse-01::judge_question::d-1|fact_pursuit|3::judgeq-d-1-fact_pursuit-3-v3",
+        "caseId": "spouse-01",
+        "channel": "judge_question",
+        "entryKey": "d-1|fact_pursuit|3",
+        "variantId": "judgeq-d-1-fact_pursuit-3-v3",
+        "changedFields": [
+          "text"
+        ],
+        "category": "A",
+        "matrixCell": "strict_always_patchable",
+        "v4Logged": false
+      },
+      {
+        "variantKey": "spouse-01::judge_question::d-1|fact_pursuit|3::judgeq-d-1-fact_pursuit-3-v4",
+        "caseId": "spouse-01",
+        "channel": "judge_question",
+        "entryKey": "d-1|fact_pursuit|3",
+        "variantId": "judgeq-d-1-fact_pursuit-3-v4",
+        "changedFields": [
+          "text"
+        ],
+        "category": "A",
+        "matrixCell": "strict_always_patchable",
+        "v4Logged": false
+      },
+      {
+        "variantKey": "spouse-01::judge_question::d-1|fact_pursuit|4::judgeq-d-1-fact_pursuit-4-v1",
+        "caseId": "spouse-01",
+        "channel": "judge_question",
+        "entryKey": "d-1|fact_pursuit|4",
+        "variantId": "judgeq-d-1-fact_pursuit-4-v1",
+        "changedFields": [
+          "text"
+        ],
+        "category": "A",
+        "matrixCell": "strict_always_patchable",
+        "v4Logged": false
+      },
+      {
+        "variantKey": "spouse-01::judge_question::d-1|fact_pursuit|4::judgeq-d-1-fact_pursuit-4-v3",
+        "caseId": "spouse-01",
+        "channel": "judge_question",
+        "entryKey": "d-1|fact_pursuit|4",
+        "variantId": "judgeq-d-1-fact_pursuit-4-v3",
+        "changedFields": [
+          "text"
+        ],
+        "category": "A",
+        "matrixCell": "strict_always_patchable",
+        "v4Logged": false
+      },
+      {
+        "variantKey": "spouse-01::judge_question::d-1|motive_search|1::judgeq-d-1-motive_search-1-v1",
+        "caseId": "spouse-01",
+        "channel": "judge_question",
+        "entryKey": "d-1|motive_search|1",
+        "variantId": "judgeq-d-1-motive_search-1-v1",
+        "changedFields": [
+          "text"
+        ],
+        "category": "A",
+        "matrixCell": "strict_always_patchable",
+        "v4Logged": false
+      },
+      {
+        "variantKey": "spouse-01::judge_question::d-1|motive_search|1::judgeq-d-1-motive_search-1-v3",
+        "caseId": "spouse-01",
+        "channel": "judge_question",
+        "entryKey": "d-1|motive_search|1",
+        "variantId": "judgeq-d-1-motive_search-1-v3",
+        "changedFields": [
+          "text"
+        ],
+        "category": "A",
+        "matrixCell": "strict_always_patchable",
+        "v4Logged": false
+      },
+      {
+        "variantKey": "spouse-01::judge_question::d-1|motive_search|2::judgeq-d-1-motive_search-2-v1",
+        "caseId": "spouse-01",
+        "channel": "judge_question",
+        "entryKey": "d-1|motive_search|2",
+        "variantId": "judgeq-d-1-motive_search-2-v1",
+        "changedFields": [
+          "text"
+        ],
+        "category": "A",
+        "matrixCell": "strict_always_patchable",
+        "v4Logged": false
+      },
+      {
+        "variantKey": "spouse-01::judge_question::d-1|motive_search|2::judgeq-d-1-motive_search-2-v2",
+        "caseId": "spouse-01",
+        "channel": "judge_question",
+        "entryKey": "d-1|motive_search|2",
+        "variantId": "judgeq-d-1-motive_search-2-v2",
+        "changedFields": [
+          "text"
+        ],
+        "category": "A",
+        "matrixCell": "strict_always_patchable",
+        "v4Logged": false
+      },
+      {
+        "variantKey": "spouse-01::judge_question::d-1|motive_search|2::judgeq-d-1-motive_search-2-v3",
+        "caseId": "spouse-01",
+        "channel": "judge_question",
+        "entryKey": "d-1|motive_search|2",
+        "variantId": "judgeq-d-1-motive_search-2-v3",
+        "changedFields": [
+          "text"
+        ],
+        "category": "A",
+        "matrixCell": "strict_always_patchable",
+        "v4Logged": false
+      },
+      {
+        "variantKey": "spouse-01::judge_question::d-1|motive_search|3::judgeq-d-1-motive_search-3-v1",
+        "caseId": "spouse-01",
+        "channel": "judge_question",
+        "entryKey": "d-1|motive_search|3",
+        "variantId": "judgeq-d-1-motive_search-3-v1",
+        "changedFields": [
+          "text",
+          "behaviorHint"
+        ],
+        "category": "A",
+        "matrixCell": "strict_always_patchable",
+        "v4Logged": false
+      },
+      {
+        "variantKey": "spouse-01::judge_question::d-1|motive_search|3::judgeq-d-1-motive_search-3-v2",
+        "caseId": "spouse-01",
+        "channel": "judge_question",
+        "entryKey": "d-1|motive_search|3",
+        "variantId": "judgeq-d-1-motive_search-3-v2",
+        "changedFields": [
+          "behaviorHint"
+        ],
+        "category": "A",
+        "matrixCell": "strict_always_patchable",
+        "v4Logged": false
+      },
+      {
+        "variantKey": "spouse-01::judge_question::d-1|motive_search|3::judgeq-d-1-motive_search-3-v3",
+        "caseId": "spouse-01",
+        "channel": "judge_question",
+        "entryKey": "d-1|motive_search|3",
+        "variantId": "judgeq-d-1-motive_search-3-v3",
+        "changedFields": [
+          "text"
+        ],
+        "category": "A",
+        "matrixCell": "strict_always_patchable",
+        "v4Logged": false
+      },
+      {
+        "variantKey": "spouse-01::judge_question::d-1|motive_search|3::judgeq-d-1-motive_search-3-v5",
+        "caseId": "spouse-01",
+        "channel": "judge_question",
+        "entryKey": "d-1|motive_search|3",
+        "variantId": "judgeq-d-1-motive_search-3-v5",
+        "changedFields": [
+          "text"
+        ],
+        "category": "A",
+        "matrixCell": "strict_always_patchable",
+        "v4Logged": false
+      },
+      {
+        "variantKey": "spouse-01::judge_question::d-1|motive_search|4::judgeq-d-1-motive_search-4-v1",
+        "caseId": "spouse-01",
+        "channel": "judge_question",
+        "entryKey": "d-1|motive_search|4",
+        "variantId": "judgeq-d-1-motive_search-4-v1",
+        "changedFields": [
+          "text"
+        ],
+        "category": "A",
+        "matrixCell": "strict_always_patchable",
+        "v4Logged": false
+      },
+      {
+        "variantKey": "spouse-01::judge_question::d-1|motive_search|4::judgeq-d-1-motive_search-4-v3",
+        "caseId": "spouse-01",
+        "channel": "judge_question",
+        "entryKey": "d-1|motive_search|4",
+        "variantId": "judgeq-d-1-motive_search-4-v3",
+        "changedFields": [
+          "text"
+        ],
+        "category": "A",
+        "matrixCell": "strict_always_patchable",
+        "v4Logged": false
+      },
+      {
+        "variantKey": "spouse-01::judge_question::d-1|motive_search|4::judgeq-d-1-motive_search-4-v4",
+        "caseId": "spouse-01",
+        "channel": "judge_question",
+        "entryKey": "d-1|motive_search|4",
+        "variantId": "judgeq-d-1-motive_search-4-v4",
+        "changedFields": [
+          "text"
+        ],
+        "category": "A",
+        "matrixCell": "strict_always_patchable",
+        "v4Logged": false
+      },
+      {
+        "variantKey": "spouse-01::judge_question::d-1|empathy_approach|1::judgeq-d-1-empathy_approach-1-v1",
+        "caseId": "spouse-01",
+        "channel": "judge_question",
+        "entryKey": "d-1|empathy_approach|1",
+        "variantId": "judgeq-d-1-empathy_approach-1-v1",
+        "changedFields": [
+          "text"
+        ],
+        "category": "A",
+        "matrixCell": "strict_always_patchable",
+        "v4Logged": false
+      },
+      {
+        "variantKey": "spouse-01::judge_question::d-1|empathy_approach|1::judgeq-d-1-empathy_approach-1-v3",
+        "caseId": "spouse-01",
+        "channel": "judge_question",
+        "entryKey": "d-1|empathy_approach|1",
+        "variantId": "judgeq-d-1-empathy_approach-1-v3",
+        "changedFields": [
+          "text"
+        ],
+        "category": "A",
+        "matrixCell": "strict_always_patchable",
+        "v4Logged": false
+      },
+      {
+        "variantKey": "spouse-01::judge_question::d-1|empathy_approach|2::judgeq-d-1-empathy_approach-2-v3",
+        "caseId": "spouse-01",
+        "channel": "judge_question",
+        "entryKey": "d-1|empathy_approach|2",
+        "variantId": "judgeq-d-1-empathy_approach-2-v3",
+        "changedFields": [
+          "text"
+        ],
+        "category": "A",
+        "matrixCell": "strict_always_patchable",
+        "v4Logged": false
+      },
+      {
+        "variantKey": "spouse-01::judge_question::d-1|empathy_approach|3::judgeq-d-1-empathy_approach-3-v1",
+        "caseId": "spouse-01",
+        "channel": "judge_question",
+        "entryKey": "d-1|empathy_approach|3",
+        "variantId": "judgeq-d-1-empathy_approach-3-v1",
+        "changedFields": [
+          "text"
+        ],
+        "category": "A",
+        "matrixCell": "strict_always_patchable",
+        "v4Logged": false
+      },
+      {
+        "variantKey": "spouse-01::judge_question::d-1|empathy_approach|3::judgeq-d-1-empathy_approach-3-v3",
+        "caseId": "spouse-01",
+        "channel": "judge_question",
+        "entryKey": "d-1|empathy_approach|3",
+        "variantId": "judgeq-d-1-empathy_approach-3-v3",
+        "changedFields": [
+          "text"
+        ],
+        "category": "A",
+        "matrixCell": "strict_always_patchable",
+        "v4Logged": false
+      },
+      {
+        "variantKey": "spouse-01::judge_question::d-1|empathy_approach|4::judgeq-d-1-empathy_approach-4-v2",
+        "caseId": "spouse-01",
+        "channel": "judge_question",
+        "entryKey": "d-1|empathy_approach|4",
+        "variantId": "judgeq-d-1-empathy_approach-4-v2",
+        "changedFields": [
+          "text"
+        ],
+        "category": "A",
+        "matrixCell": "strict_always_patchable",
+        "v4Logged": false
+      }
+    ]
+  },
+  "unnaturalHits": [],
+  "issues": []
+}

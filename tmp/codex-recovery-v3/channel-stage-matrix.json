@@ -1,0 +1,826 @@
+{
+  "generatedAt": "2026-04-26T15:18:50.277Z",
+  "matrix": {
+    "spouse-01": {
+      "interrogation": {
+        "npc_early_strict_review": {
+          "total": 480,
+          "changedFromOriginal": 0,
+          "stages": {
+            "S0": 240,
+            "S1": 240
+          }
+        },
+        "npc_partial_review": {
+          "total": 240,
+          "changedFromOriginal": 0,
+          "stages": {
+            "S2": 240
+          }
+        },
+        "npc_confession_ok_preserve": {
+          "total": 720,
+          "changedFromOriginal": 0,
+          "stages": {
+            "S3": 240,
+            "S4": 240,
+            "S5": 240
+          }
+        }
+      },
+      "evidence_present": {
+        "npc_early_strict_review": {
+          "total": 430,
+          "changedFromOriginal": 0,
+          "stages": {
+            "early": 310,
+            "S1": 80,
+            "S2": 40
+          }
+        },
+        "npc_partial_review": {
+          "total": 350,
+          "changedFromOriginal": 0,
+          "stages": {
+            "mid": 310,
+            "S2": 40
+          }
+        },
+        "npc_confession_ok_preserve": {
+          "total": 690,
+          "changedFromOriginal": 0,
+          "stages": {
+            "late": 370,
+            "early": 60,
+            "mid": 60,
+            "S1": 100,
+            "S2": 100
+          }
+        }
+      },
+      "dossier": {
+        "npc_early_strict_review": {
+          "total": 40,
+          "changedFromOriginal": 0,
+          "stages": {
+            "S2": 40
+          }
+        },
+        "npc_partial_review": {
+          "total": 40,
+          "changedFromOriginal": 0,
+          "stages": {
+            "S2": 40
+          }
+        },
+        "npc_confession_ok_preserve": {
+          "total": 160,
+          "changedFromOriginal": 0,
+          "stages": {
+            "S2": 40,
+            "S3": 90,
+            "S4": 30
+          }
+        }
+      },
+      "witness": {
+        "unmapped_review": {
+          "total": 90,
+          "changedFromOriginal": 0,
+          "stages": {
+            "mid": 90
+          }
+        }
+      },
+      "aftermath": {
+        "after_final_narrative_preserve": {
+          "total": 25,
+          "changedFromOriginal": 0,
+          "stages": {
+            "full": 25
+          }
+        }
+      },
+      "system_message": {
+        "strict_always_patchable": {
+          "total": 55,
+          "changedFromOriginal": 0,
+          "stages": {
+            "full": 55
+          }
+        }
+      },
+      "contradiction_pursuit": {
+        "npc_early_strict_review": {
+          "total": 80,
+          "changedFromOriginal": 0,
+          "stages": {
+            "S1": 80
+          }
+        },
+        "npc_partial_review": {
+          "total": 80,
+          "changedFromOriginal": 0,
+          "stages": {
+            "S2": 80
+          }
+        },
+        "npc_confession_ok_preserve": {
+          "total": 160,
+          "changedFromOriginal": 0,
+          "stages": {
+            "S3": 80,
+            "S4": 80
+          }
+        }
+      },
+      "interjection": {
+        "npc_partial_review": {
+          "total": 80,
+          "changedFromOriginal": 0,
+          "stages": {
+            "mid": 80
+          }
+        },
+        "npc_unmarked_review": {
+          "total": 80,
+          "changedFromOriginal": 0,
+          "stages": {
+            "hint": 80
+          }
+        }
+      },
+      "emotional_overload": {
+        "npc_unmarked_review": {
+          "total": 80,
+          "changedFromOriginal": 0,
+          "stages": {
+            "hint": 80
+          }
+        }
+      },
+      "evidence_discovery": {
+        "strict_always_patchable": {
+          "total": 12,
+          "changedFromOriginal": 2,
+          "stages": {
+            "none": 6,
+            "hint": 3,
+            "partial": 1,
+            "full": 2
+          }
+        }
+      },
+      "trust_action": {
+        "npc_early_strict_review": {
+          "total": 60,
+          "changedFromOriginal": 0,
+          "stages": {
+            "S1": 60
+          }
+        },
+        "npc_partial_review": {
+          "total": 60,
+          "changedFromOriginal": 0,
+          "stages": {
+            "S2": 60
+          }
+        },
+        "npc_confession_ok_preserve": {
+          "total": 60,
+          "changedFromOriginal": 0,
+          "stages": {
+            "S3": 60
+          }
+        }
+      },
+      "mediation": {
+        "strict_always_patchable": {
+          "total": 80,
+          "changedFromOriginal": 18,
+          "stages": {
+            "partial": 60,
+            "hint": 20
+          }
+        }
+      },
+      "judge_question": {
+        "strict_always_patchable": {
+          "total": 240,
+          "changedFromOriginal": 58,
+          "stages": {
+            "none": 240
+          }
+        }
+      },
+      "judge_contradiction": {
+        "strict_always_patchable": {
+          "total": 60,
+          "changedFromOriginal": 31,
+          "stages": {
+            "none": 40,
+            "mid": 20
+          }
+        }
+      },
+      "judge_evidence_combo": {
+        "strict_always_patchable": {
+          "total": 120,
+          "changedFromOriginal": 119,
+          "stages": {
+            "partial": 80,
+            "mid": 40
+          }
+        }
+      },
+      "judge_witness_summon": {
+        "strict_always_patchable": {
+          "total": 45,
+          "changedFromOriginal": 16,
+          "stages": {
+            "hint": 30,
+            "mid": 15
+          }
+        }
+      },
+      "rapport_milestone": {
+        "npc_partial_review": {
+          "total": 10,
+          "changedFromOriginal": 0,
+          "stages": {
+            "mid": 10
+          }
+        },
+        "npc_unmarked_review": {
+          "total": 10,
+          "changedFromOriginal": 0,
+          "stages": {
+            "partial": 10
+          }
+        },
+        "npc_confession_ok_preserve": {
+          "total": 10,
+          "changedFromOriginal": 0,
+          "stages": {
+            "full": 10
+          }
+        }
+      },
+      "contradict_milestone": {
+        "npc_partial_review": {
+          "total": 20,
+          "changedFromOriginal": 0,
+          "stages": {
+            "mid": 20
+          }
+        },
+        "npc_confession_ok_preserve": {
+          "total": 10,
+          "changedFromOriginal": 0,
+          "stages": {
+            "mid": 10
+          }
+        }
+      }
+    },
+    "family-01": {
+      "interrogation": {
+        "npc_early_strict_review": {
+          "total": 600,
+          "changedFromOriginal": 0,
+          "stages": {
+            "S0": 300,
+            "S1": 300
+          }
+        },
+        "npc_partial_review": {
+          "total": 300,
+          "changedFromOriginal": 0,
+          "stages": {
+            "S2": 300
+          }
+        },
+        "npc_confession_ok_preserve": {
+          "total": 900,
+          "changedFromOriginal": 0,
+          "stages": {
+            "S3": 300,
+            "S4": 300,
+            "S5": 300
+          }
+        }
+      },
+      "evidence_present": {
+        "npc_early_strict_review": {
+          "total": 390,
+          "changedFromOriginal": 0,
+          "stages": {
+            "early": 390
+          }
+        },
+        "npc_partial_review": {
+          "total": 390,
+          "changedFromOriginal": 0,
+          "stages": {
+            "mid": 390
+          }
+        },
+        "npc_confession_ok_preserve": {
+          "total": 690,
+          "changedFromOriginal": 0,
+          "stages": {
+            "late": 490,
+            "early": 100,
+            "mid": 100
+          }
+        }
+      },
+      "dossier": {
+        "npc_early_strict_review": {
+          "total": 110,
+          "changedFromOriginal": 0,
+          "stages": {
+            "early": 110
+          }
+        },
+        "npc_partial_review": {
+          "total": 110,
+          "changedFromOriginal": 0,
+          "stages": {
+            "mid": 110
+          }
+        },
+        "npc_confession_ok_preserve": {
+          "total": 110,
+          "changedFromOriginal": 0,
+          "stages": {
+            "late": 110
+          }
+        }
+      },
+      "witness": {
+        "unmapped_review": {
+          "total": 90,
+          "changedFromOriginal": 0,
+          "stages": {
+            "mid": 30,
+            "partial": 30,
+            "full": 30
+          }
+        }
+      },
+      "aftermath": {
+        "after_final_narrative_preserve": {
+          "total": 25,
+          "changedFromOriginal": 0,
+          "stages": {
+            "unmarked": 25
+          }
+        }
+      },
+      "system_message": {
+        "strict_always_patchable": {
+          "total": 55,
+          "changedFromOriginal": 2,
+          "stages": {
+            "full": 55
+          }
+        }
+      },
+      "mediation": {
+        "strict_always_patchable": {
+          "total": 80,
+          "changedFromOriginal": 0,
+          "stages": {
+            "partial": 60,
+            "hint": 20
+          }
+        }
+      },
+      "contradiction_pursuit": {
+        "npc_early_strict_review": {
+          "total": 80,
+          "changedFromOriginal": 0,
+          "stages": {
+            "S1": 80
+          }
+        },
+        "npc_partial_review": {
+          "total": 80,
+          "changedFromOriginal": 0,
+          "stages": {
+            "S2": 80
+          }
+        },
+        "npc_confession_ok_preserve": {
+          "total": 160,
+          "changedFromOriginal": 0,
+          "stages": {
+            "S3": 80,
+            "S4": 80
+          }
+        }
+      },
+      "interjection": {
+        "npc_unmarked_review": {
+          "total": 160,
+          "changedFromOriginal": 0,
+          "stages": {
+            "hint": 160
+          }
+        }
+      },
+      "emotional_overload": {
+        "npc_unmarked_review": {
+          "total": 80,
+          "changedFromOriginal": 0,
+          "stages": {
+            "hint": 80
+          }
+        }
+      },
+      "evidence_discovery": {
+        "strict_always_patchable": {
+          "total": 12,
+          "changedFromOriginal": 1,
+          "stages": {
+            "none": 6,
+            "hint": 3,
+            "partial": 1,
+            "full": 2
+          }
+        }
+      },
+      "trust_action": {
+        "npc_early_strict_review": {
+          "total": 60,
+          "changedFromOriginal": 0,
+          "stages": {
+            "S1": 60
+          }
+        },
+        "npc_partial_review": {
+          "total": 60,
+          "changedFromOriginal": 0,
+          "stages": {
+            "S2": 60
+          }
+        },
+        "npc_confession_ok_preserve": {
+          "total": 60,
+          "changedFromOriginal": 0,
+          "stages": {
+            "S3": 60
+          }
+        }
+      },
+      "judge_question": {
+        "strict_always_patchable": {
+          "total": 240,
+          "changedFromOriginal": 6,
+          "stages": {
+            "none": 240
+          }
+        }
+      },
+      "judge_contradiction": {
+        "strict_always_patchable": {
+          "total": 60,
+          "changedFromOriginal": 3,
+          "stages": {
+            "none": 40,
+            "mid": 20
+          }
+        }
+      },
+      "judge_evidence_combo": {
+        "strict_always_patchable": {
+          "total": 165,
+          "changedFromOriginal": 77,
+          "stages": {
+            "partial": 110,
+            "mid": 55
+          }
+        }
+      },
+      "judge_witness_summon": {
+        "strict_always_patchable": {
+          "total": 45,
+          "changedFromOriginal": 0,
+          "stages": {
+            "hint": 30,
+            "mid": 15
+          }
+        }
+      },
+      "rapport_milestone": {
+        "npc_partial_review": {
+          "total": 10,
+          "changedFromOriginal": 0,
+          "stages": {
+            "mid": 10
+          }
+        },
+        "npc_unmarked_review": {
+          "total": 10,
+          "changedFromOriginal": 0,
+          "stages": {
+            "partial": 10
+          }
+        },
+        "npc_confession_ok_preserve": {
+          "total": 10,
+          "changedFromOriginal": 0,
+          "stages": {
+            "full": 10
+          }
+        }
+      },
+      "contradict_milestone": {
+        "npc_unmarked_review": {
+          "total": 30,
+          "changedFromOriginal": 0,
+          "stages": {
+            "hint": 10,
+            "partial": 20
+          }
+        }
+      }
+    },
+    "friend-01": {
+      "interrogation": {
+        "npc_early_strict_review": {
+          "total": 600,
+          "changedFromOriginal": 0,
+          "stages": {
+            "S0": 300,
+            "S1": 300
+          }
+        },
+        "npc_partial_review": {
+          "total": 300,
+          "changedFromOriginal": 0,
+          "stages": {
+            "S2": 300
+          }
+        },
+        "npc_confession_ok_preserve": {
+          "total": 900,
+          "changedFromOriginal": 0,
+          "stages": {
+            "S3": 300,
+            "S4": 300,
+            "S5": 300
+          }
+        }
+      },
+      "evidence_present": {
+        "npc_early_strict_review": {
+          "total": 350,
+          "changedFromOriginal": 0,
+          "stages": {
+            "early": 270,
+            "S2": 80
+          }
+        },
+        "npc_partial_review": {
+          "total": 350,
+          "changedFromOriginal": 0,
+          "stages": {
+            "mid": 270,
+            "S2": 80
+          }
+        },
+        "npc_confession_ok_preserve": {
+          "total": 770,
+          "changedFromOriginal": 0,
+          "stages": {
+            "late": 370,
+            "early": 100,
+            "mid": 100,
+            "S2": 200
+          }
+        }
+      },
+      "dossier": {
+        "npc_early_strict_review": {
+          "total": 110,
+          "changedFromOriginal": 0,
+          "stages": {
+            "S1": 60,
+            "S2": 50
+          }
+        },
+        "npc_confession_ok_preserve": {
+          "total": 110,
+          "changedFromOriginal": 0,
+          "stages": {
+            "S1": 30,
+            "S2": 50,
+            "S3": 30
+          }
+        },
+        "npc_partial_review": {
+          "total": 50,
+          "changedFromOriginal": 0,
+          "stages": {
+            "S2": 50
+          }
+        }
+      },
+      "witness": {
+        "unmapped_review": {
+          "total": 90,
+          "changedFromOriginal": 0,
+          "stages": {
+            "mid": 30,
+            "partial": 30,
+            "full": 30
+          }
+        }
+      },
+      "aftermath": {
+        "after_final_narrative_preserve": {
+          "total": 25,
+          "changedFromOriginal": 0,
+          "stages": {
+            "unmarked": 25
+          }
+        }
+      },
+      "system_message": {
+        "strict_always_patchable": {
+          "total": 55,
+          "changedFromOriginal": 3,
+          "stages": {
+            "full": 55
+          }
+        }
+      },
+      "mediation": {
+        "strict_always_patchable": {
+          "total": 80,
+          "changedFromOriginal": 1,
+          "stages": {
+            "partial": 60,
+            "mid": 20
+          }
+        }
+      },
+      "contradiction_pursuit": {
+        "npc_early_strict_review": {
+          "total": 80,
+          "changedFromOriginal": 0,
+          "stages": {
+            "S1": 80
+          }
+        },
+        "npc_partial_review": {
+          "total": 80,
+          "changedFromOriginal": 0,
+          "stages": {
+            "S2": 80
+          }
+        },
+        "npc_confession_ok_preserve": {
+          "total": 160,
+          "changedFromOriginal": 0,
+          "stages": {
+            "S3": 80,
+            "S4": 80
+          }
+        }
+      },
+      "interjection": {
+        "npc_partial_review": {
+          "total": 160,
+          "changedFromOriginal": 0,
+          "stages": {
+            "mid": 160
+          }
+        }
+      },
+      "emotional_overload": {
+        "npc_unmarked_review": {
+          "total": 80,
+          "changedFromOriginal": 0,
+          "stages": {
+            "hint": 80
+          }
+        }
+      },
+      "evidence_discovery": {
+        "strict_always_patchable": {
+          "total": 12,
+          "changedFromOriginal": 1,
+          "stages": {
+            "none": 6,
+            "hint": 3,
+            "partial": 1,
+            "full": 2
+          }
+        }
+      },
+      "trust_action": {
+        "npc_early_strict_review": {
+          "total": 60,
+          "changedFromOriginal": 0,
+          "stages": {
+            "S1": 60
+          }
+        },
+        "npc_partial_review": {
+          "total": 60,
+          "changedFromOriginal": 0,
+          "stages": {
+            "S2": 60
+          }
+        },
+        "npc_confession_ok_preserve": {
+          "total": 60,
+          "changedFromOriginal": 0,
+          "stages": {
+            "S3": 60
+          }
+        }
+      },
+      "judge_question": {
+        "strict_always_patchable": {
+          "total": 240,
+          "changedFromOriginal": 27,
+          "stages": {
+            "mid": 240
+          }
+        }
+      },
+      "judge_contradiction": {
+        "strict_always_patchable": {
+          "total": 60,
+          "changedFromOriginal": 6,
+          "stages": {
+            "mid": 60
+          }
+        }
+      },
+      "judge_evidence_combo": {
+        "strict_always_patchable": {
+          "total": 135,
+          "changedFromOriginal": 17,
+          "stages": {
+            "hint": 45,
+            "mid": 45,
+            "full": 45
+          }
+        }
+      },
+      "judge_witness_summon": {
+        "strict_always_patchable": {
+          "total": 45,
+          "changedFromOriginal": 8,
+          "stages": {
+            "mid": 45
+          }
+        }
+      },
+      "rapport_milestone": {
+        "npc_partial_review": {
+          "total": 10,
+          "changedFromOriginal": 0,
+          "stages": {
+            "mid": 10
+          }
+        },
+        "npc_unmarked_review": {
+          "total": 10,
+          "changedFromOriginal": 0,
+          "stages": {
+            "partial": 10
+          }
+        },
+        "npc_confession_ok_preserve": {
+          "total": 10,
+          "changedFromOriginal": 0,
+          "stages": {
+            "full": 10
+          }
+        }
+      },
+      "contradict_milestone": {
+        "npc_partial_review": {
+          "total": 10,
+          "changedFromOriginal": 0,
+          "stages": {
+            "mid": 10
+          }
+        },
+        "npc_unmarked_review": {
+          "total": 20,
+          "changedFromOriginal": 0,
+          "stages": {
+            "partial": 20
+          }
+        }
+      }
+    }
+  }
+}

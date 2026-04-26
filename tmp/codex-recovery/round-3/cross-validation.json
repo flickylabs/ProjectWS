@@ -1,0 +1,19 @@
+{
+  "round": 3,
+  "checkedSpecialists": [
+    "A_TruthLeak",
+    "B_JudgeTone",
+    "C_FactCheck",
+    "D_KoreanQ",
+    "E_UserPattern"
+  ],
+  "newIssues": 2,
+  "residualBySpecialist": {
+    "A_TruthLeak": 1,
+    "B_JudgeTone": 1,
+    "C_FactCheck": 0,
+    "D_KoreanQ": 0,
+    "E_UserPattern": 0
+  },
+  "note": "Resume round after detector rule refinement."
+}

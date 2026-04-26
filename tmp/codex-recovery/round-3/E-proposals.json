@@ -1,0 +1,28 @@
+[
+  {
+    "variantKey": "spouse-01::judge_contradiction::h-d4|hard::judgec-h-d4-hard-v1",
+    "caseId": "spouse-01",
+    "channel": "judge_contradiction",
+    "entryKey": "h-d4|hard",
+    "variantId": "judgec-h-d4-hard-v1",
+    "before": "두 분 모두 자기 책임을 분리하려 하고 있습니다. 숨김과 실행은 다른 축입니다. 누가 먼저 무엇을 했는지 답하십시오.",
+    "suggested": "두 분 모두 자기 책임을 분리하려 하고 있습니다. 숨김과 실행은 다른 축입니다. 누가 먼저 왜 그렇게 행동했는지 답하십시오.",
+    "reason": "patch2_motive",
+    "archetypeGuard": null,
+    "skipped": false,
+    "specialist": "E_UserPattern"
+  },
+  {
+    "variantKey": "spouse-01::judge_evidence_combo::dc-5.a.q1|mid::judgecombo-dc-5-a-q1-mid-v2",
+    "caseId": "spouse-01",
+    "channel": "judge_evidence_combo",
+    "entryKey": "dc-5.a.q1|mid",
+    "variantId": "judgecombo-dc-5-a-q1-mid-v2",
+    "before": "박지연 씨, 출금 내역과 송금 기록과 해지 서류는 감정의 선후가 아니라 돈의 선후를 묻고 있습니다. 본인이 언제 무엇을 했는지 말씀해 주십시오.",
+    "suggested": "박지연 씨, 출금 내역과 송금 기록과 해지 서류는 감정의 선후가 아니라 돈의 선후를 묻고 있습니다. 본인이 언제 왜 그렇게 행동했는지 말씀해 주십시오.",
+    "reason": "patch2_motive",
+    "archetypeGuard": null,
+    "skipped": false,
+    "specialist": "E_UserPattern"
+  }
+]

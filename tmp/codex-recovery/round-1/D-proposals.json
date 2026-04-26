@@ -1,0 +1,15 @@
+[
+  {
+    "variantKey": "family-01::interrogation::b|d-5|S4|empathy_approach::b-d-5-S4-empathy-approach-v4",
+    "caseId": "family-01",
+    "channel": "interrogation",
+    "entryKey": "b|d-5|S4|empathy_approach",
+    "variantId": "b-d-5-S4-empathy-approach-v4",
+    "before": "이제 와서 보면 저는 지키려는 마음과 오만을 구분하지 못했습니다.",
+    "suggested": "이제 와서 보면 저는 지키려는 마음과 오만 구분하지 못했습니다.",
+    "reason": "translationese",
+    "archetypeGuard": "affect_flattening",
+    "skipped": false,
+    "specialist": "D_KoreanQ"
+  }
+]

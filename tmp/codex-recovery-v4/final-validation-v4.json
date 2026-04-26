@@ -1,0 +1,27 @@
+{
+  "generatedAt": "2026-04-26T16:38:49.812Z",
+  "passed": true,
+  "stageAware": {
+    "passed": true,
+    "issueCount": 0
+  },
+  "qaCoherence": {
+    "passed": true,
+    "issueCount": 0
+  },
+  "archetypeVoice": {
+    "passed": true,
+    "issueCount": 0
+  },
+  "channelStageMatrixGenerated": true,
+  "caseDataUntouched": true,
+  "caseFilesChanged": [],
+  "build": {
+    "status": "passed_external",
+    "passed": true
+  },
+  "tsc": {
+    "status": "passed_external",
+    "passed": true
+  }
+}

@@ -1,0 +1,186 @@
+{
+  "rounds": [
+    {
+      "round": 1,
+      "startedAt": "2026-04-26T07:05:10.378Z",
+      "endedAt": "2026-04-26T07:05:10.560Z",
+      "durationSeconds": 0,
+      "detections": {
+        "A_TruthLeak": 411,
+        "B_JudgeTone": 32,
+        "C_FactCheck": 0,
+        "D_KoreanQ": 1,
+        "E_UserPattern": 5
+      },
+      "coordinated": 511,
+      "applied": 511,
+      "crossValidationNewIssues": 20,
+      "residual": 20,
+      "convergence": false
+    },
+    {
+      "round": 2,
+      "startedAt": "2026-04-26T07:05:10.560Z",
+      "endedAt": "2026-04-26T07:05:10.692Z",
+      "durationSeconds": 0,
+      "detections": {
+        "A_TruthLeak": 8,
+        "B_JudgeTone": 10,
+        "C_FactCheck": 0,
+        "D_KoreanQ": 0,
+        "E_UserPattern": 2
+      },
+      "coordinated": 0,
+      "applied": 0,
+      "crossValidationNewIssues": 20,
+      "residual": 20,
+      "convergence": true
+    },
+    {
+      "round": 3,
+      "startedAt": "2026-04-26T07:06:29.813Z",
+      "endedAt": "2026-04-26T07:06:29.997Z",
+      "durationSeconds": 0,
+      "detections": {
+        "A_TruthLeak": 8,
+        "B_JudgeTone": 10,
+        "C_FactCheck": 0,
+        "D_KoreanQ": 0,
+        "E_UserPattern": 2
+      },
+      "coordinated": 18,
+      "applied": 18,
+      "crossValidationNewIssues": 2,
+      "residual": 2,
+      "convergence": false
+    },
+    {
+      "round": 4,
+      "startedAt": "2026-04-26T07:06:29.997Z",
+      "endedAt": "2026-04-26T07:06:30.146Z",
+      "durationSeconds": 0,
+      "detections": {
+        "A_TruthLeak": 1,
+        "B_JudgeTone": 1,
+        "C_FactCheck": 0,
+        "D_KoreanQ": 0,
+        "E_UserPattern": 0
+      },
+      "coordinated": 0,
+      "applied": 0,
+      "crossValidationNewIssues": 2,
+      "residual": 2,
+      "convergence": true
+    },
+    {
+      "round": 5,
+      "startedAt": "2026-04-26T07:06:51.002Z",
+      "endedAt": "2026-04-26T07:06:51.186Z",
+      "durationSeconds": 0,
+      "detections": {
+        "A_TruthLeak": 1,
+        "B_JudgeTone": 1,
+        "C_FactCheck": 0,
+        "D_KoreanQ": 0,
+        "E_UserPattern": 0
+      },
+      "coordinated": 2,
+      "applied": 2,
+      "crossValidationNewIssues": 0,
+      "residual": 0,
+      "convergence": true
+    }
+  ],
+  "totalRounds": 5,
+  "totalApplied": 877,
+  "convergedAt": 5,
+  "terminationReason": "all_zero_after_final_hardening",
+  "finalHardening": {
+    "runs": 5,
+    "applied": 346,
+    "residual": 0,
+    "lastRunEndedAt": "2026-04-26T07:14:45.318Z"
+  },
+  "finalHardeningRuns": [
+    {
+      "startedAt": "2026-04-26T07:11:31.650Z",
+      "endedAt": "2026-04-26T07:11:32.165Z",
+      "durationSeconds": 1,
+      "detections": {
+        "A_TruthLeak": 54,
+        "B_JudgeTone": 0,
+        "C_FactCheck": 0,
+        "D_KoreanQ": 36,
+        "E_UserPattern": 0
+      },
+      "coordinated": 297,
+      "applied": 297,
+      "residual": 3,
+      "scope": "detector hardening for spouse strict-channel leaks, generated Korean particles, and direct behaviorHint leaks"
+    },
+    {
+      "startedAt": "2026-04-26T07:12:24.045Z",
+      "endedAt": "2026-04-26T07:12:24.549Z",
+      "durationSeconds": 1,
+      "detections": {
+        "A_TruthLeak": 3,
+        "B_JudgeTone": 0,
+        "C_FactCheck": 0,
+        "D_KoreanQ": 0,
+        "E_UserPattern": 0
+      },
+      "coordinated": 2,
+      "applied": 2,
+      "residual": 1,
+      "scope": "detector hardening for spouse strict-channel leaks, generated Korean particles, and direct behaviorHint leaks"
+    },
+    {
+      "startedAt": "2026-04-26T07:12:51.649Z",
+      "endedAt": "2026-04-26T07:12:52.181Z",
+      "durationSeconds": 1,
+      "detections": {
+        "A_TruthLeak": 1,
+        "B_JudgeTone": 0,
+        "C_FactCheck": 0,
+        "D_KoreanQ": 0,
+        "E_UserPattern": 0
+      },
+      "coordinated": 1,
+      "applied": 1,
+      "residual": 0,
+      "scope": "detector hardening for spouse strict-channel leaks, generated Korean particles, and direct behaviorHint leaks"
+    },
+    {
+      "startedAt": "2026-04-26T07:14:00.379Z",
+      "endedAt": "2026-04-26T07:14:00.921Z",
+      "durationSeconds": 1,
+      "detections": {
+        "A_TruthLeak": 26,
+        "B_JudgeTone": 0,
+        "C_FactCheck": 0,
+        "D_KoreanQ": 0,
+        "E_UserPattern": 0
+      },
+      "coordinated": 43,
+      "applied": 43,
+      "residual": 0,
+      "scope": "detector hardening for spouse strict-channel leaks, generated Korean particles, and direct behaviorHint leaks"
+    },
+    {
+      "startedAt": "2026-04-26T07:14:44.801Z",
+      "endedAt": "2026-04-26T07:14:45.318Z",
+      "durationSeconds": 1,
+      "detections": {
+        "A_TruthLeak": 3,
+        "B_JudgeTone": 0,
+        "C_FactCheck": 0,
+        "D_KoreanQ": 0,
+        "E_UserPattern": 0
+      },
+      "coordinated": 3,
+      "applied": 3,
+      "residual": 0,
+      "scope": "detector hardening for spouse strict-channel leaks, generated Korean particles, and direct behaviorHint leaks"
+    }
+  ]
+}

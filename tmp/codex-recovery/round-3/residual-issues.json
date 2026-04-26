@@ -1,0 +1,10 @@
+{
+  "detections": {
+    "A_TruthLeak": 1,
+    "B_JudgeTone": 1,
+    "C_FactCheck": 0,
+    "D_KoreanQ": 0,
+    "E_UserPattern": 0
+  },
+  "total": 2
+}

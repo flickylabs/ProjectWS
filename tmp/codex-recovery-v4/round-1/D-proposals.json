@@ -1,0 +1,21 @@
+{
+  "generatedAt": "2026-04-26T16:37:53.334Z",
+  "round": 1,
+  "count": 1,
+  "proposals": [
+    {
+      "caseId": "spouse-01",
+      "channel": "judge_question",
+      "entryKey": "d-1|motive_search|3",
+      "variantId": "judgeq-d-1-motive_search-3-v2",
+      "field": "text",
+      "scope": "variant",
+      "key": "spouse-01::judge_question::d-1|motive_search|3::judgeq-d-1-motive_search-3-v2",
+      "matrixCell": "strict_always_patchable",
+      "text": "박지연 씨, 오피스텔 기록을 볼 때마다 가장 먼저 떠오른 두려움이 배신이었는지, 버려짐이었는지 말씀해 주십시오.",
+      "alreadyPatched": false,
+      "pattern": "P1_QACoherence",
+      "issue": "질문 의도 차원 확인 후보"
+    }
+  ]
+}

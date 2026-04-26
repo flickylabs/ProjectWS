@@ -24,7 +24,7 @@
 
 최근 commit (이번 세션):
 - `5de8d72` feat(script-redo): 9세션 적용 + disputeId fix + null 복구 + UI + 버그 fix
-- (commit 2 hash, GPT 패키지 + Codex 의뢰 + audit + CT 인계)
+- `8b7866a` chore(gpt-pro/codex/qa): script-redo 패키지 + Codex 의뢰 + QA + 검증 시스템 + CT 인계
 - ⚠ push 안 함. 누설 70건 P0 / d-5 누락 미해결 상태. Codex 수습 + 검증 PASS 후 push.
 
 현재 상태 (Codex 수습 진행 전 baseline):

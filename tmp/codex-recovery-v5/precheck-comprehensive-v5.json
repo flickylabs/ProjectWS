@@ -1,0 +1,80 @@
+{
+  "generatedAt": "2026-04-26T17:04:39.185Z",
+  "passed": true,
+  "stageAware": {
+    "passed": true,
+    "issueCount": 0
+  },
+  "qaCoherence": {
+    "passed": true,
+    "issueCount": 0
+  },
+  "metadata": {
+    "passed": true,
+    "counts": {
+      "spouse-01": 4677,
+      "family-01": 5172,
+      "friend-01": 5082
+    },
+    "total": 14931,
+    "issueCount": 0,
+    "skippedIssueCount": 0,
+    "issues": [],
+    "skippedIssues": []
+  },
+  "v4Preservation": {
+    "passed": true,
+    "baselinePatchCount": 81,
+    "baselineFinalFieldCount": 75,
+    "issueCount": 0,
+    "issues": []
+  },
+  "broad": {
+    "generatedAt": "2026-04-26T17:04:38.749Z",
+    "matrix": {
+      "P2_CharacterRegister": {
+        "detected": 1,
+        "patchedOrClean": 1,
+        "residual": 0,
+        "protectedByV4": 1,
+        "residuals": []
+      },
+      "P1_QACoherence": {
+        "detected": 0,
+        "patchedOrClean": 0,
+        "residual": 0,
+        "residuals": [],
+        "note": "No high-confidence dimension mismatch remained after v4 QA coherence precheck."
+      },
+      "P3_JudgeAngle": {
+        "detected": 1,
+        "patchedOrClean": 1,
+        "residual": 0,
+        "protectedByV4": 1,
+        "residuals": []
+      },
+      "P4_NarrativeDetail": {
+        "detected": 0,
+        "patchedOrClean": 0,
+        "residual": 0,
+        "appliedRate": 1,
+        "residuals": []
+      }
+    },
+    "passed": true
+  },
+  "archetypeVoice": {
+    "passed": true,
+    "protectedMentions": 1922
+  },
+  "caseDataUntouched": true,
+  "caseFilesChanged": [],
+  "build": {
+    "status": "passed_external",
+    "passed": true
+  },
+  "tsc": {
+    "status": "passed_external",
+    "passed": true
+  }
+}

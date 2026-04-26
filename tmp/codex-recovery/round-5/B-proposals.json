@@ -1,0 +1,15 @@
+[
+  {
+    "variantKey": "spouse-01::judge_question::d-1|empathy_approach|1::judgeq-d-1-empathy_approach-1-v3",
+    "caseId": "spouse-01",
+    "channel": "judge_question",
+    "entryKey": "d-1|empathy_approach|1",
+    "variantId": "judgeq-d-1-empathy_approach-1-v3",
+    "before": "이준호 씨, 그 가족의 생활을 챙기던 장면과 집에 돌아와 침묵하던 장면 중 어느 쪽이 더 무겁게 남습니까.",
+    "suggested": "이준호 씨, 그 가족의 생활을 챙기던 장면과 집에 돌아와 침묵하던 장면 중 무엇이 더 무겁게 남습니까.",
+    "reason": "ambiguous_side",
+    "archetypeGuard": null,
+    "skipped": false,
+    "specialist": "B_JudgeTone"
+  }
+]

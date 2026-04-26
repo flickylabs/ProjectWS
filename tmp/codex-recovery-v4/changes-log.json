@@ -1,0 +1,2514 @@
+{
+  "generatedAt": "2026-04-26T16:37:52.656Z",
+  "totalPatches": 81,
+  "byCase": {
+    "spouse-01": 11,
+    "family-01": 10,
+    "friend-01": 60
+  },
+  "byPattern": {
+    "P1_QACoherence": 1,
+    "P2_CharacterRegister": 7,
+    "P3_JudgeAngle": 5,
+    "P4_NarrativeDetail": 1,
+    "P5_CodeNameResolve": 68,
+    "P6_SystemTrigger": 1
+  },
+  "patches": [
+    {
+      "caseId": "spouse-01",
+      "channel": "interrogation",
+      "entryKey": "a|d-1|S0|fact_pursuit",
+      "variantId": "a-d-1-S0-fact-pursuit-v10",
+      "variantKey": "spouse-01::interrogation::a|d-1|S0|fact_pursuit::a-d-1-S0-fact-pursuit-v10",
+      "field": "text",
+      "before": "재판관님, 기록과 물건이 같은 방향으로 겹쳤습니다. 제 판단은 그 흔적들에 매여 있었습니다.",
+      "after": "재판관님, 상황과 증거가 한쪽으로 모여 보였습니다. 그래서 제 판단도 그 흔적들에 묶여 있었습니다.",
+      "pattern": [
+        "P2_CharacterRegister"
+      ],
+      "specialist": "B_RegisterAngle",
+      "matrixCell": "npc_early_strict_review",
+      "stage": {
+        "lieState": "S0",
+        "lieStateNumber": 0,
+        "lieBand": null,
+        "truthLevel": "none",
+        "investigationStage": null
+      },
+      "rationale": "시적 표현 '기록과 물건이 겹쳤다'를 일상적 인지 표현으로 낮추되, 박지연의 victim_cosplay 방어 위치는 보존.",
+      "claudeAreaIssue": null,
+      "safety": {
+        "skippedChecked": true,
+        "archetypeVoiceChecked": true,
+        "truthThrottleChecked": true
+      }
+    },
+    {
+      "caseId": "spouse-01",
+      "channel": "interrogation",
+      "entryKey": "a|d-1|S0|motive_search",
+      "variantId": "a-d-1-S0-motive-search-v4",
+      "variantKey": "spouse-01::interrogation::a|d-1|S0|motive_search::a-d-1-S0-motive-search-v4",
+      "field": "text",
+      "before": "의심하고 싶어서 의심한 게 아닙니다. 제 남편이 문을 닫고 전화를 받으니까 제가 문 앞에 서게 된 겁니다.",
+      "after": "의심하고 싶어서 의심한 게 아닙니다. 제 남편이 문을 닫고 작게 통화하고, 설명 없이 반복해서 나가니 이상하게 생각할 수밖에 없었습니다.",
+      "pattern": [
+        "P4_NarrativeDetail"
+      ],
+      "specialist": "B_RegisterAngle",
+      "matrixCell": "npc_early_strict_review",
+      "stage": {
+        "lieState": "S0",
+        "lieStateNumber": 0,
+        "lieBand": null,
+        "truthLevel": "none",
+        "investigationStage": null
+      },
+      "rationale": "단순 인과를 행동 정황과 인지 결론으로 풀어써 질문-답변 맥락을 보강.",
+      "claudeAreaIssue": null,
+      "safety": {
+        "skippedChecked": true,
+        "archetypeVoiceChecked": true,
+        "truthThrottleChecked": true
+      }
+    },
+    {
+      "caseId": "spouse-01",
+      "channel": "interrogation",
+      "entryKey": "a|d-1|S0|motive_search",
+      "variantId": "a-d-1-S0-motive-search-v10",
+      "variantKey": "spouse-01::interrogation::a|d-1|S0|motive_search::a-d-1-S0-motive-search-v10",
+      "field": "text",
+      "before": "재판관님, 기록과 물건이 같은 방향으로 겹쳤습니다. 결국 그 두려움이 제 선택을 끌고 갔습니다.",
+      "after": "재판관님, 모든 상황과 증거가 한쪽을 가리킨다고 느꼈습니다. 두려웠지만 그냥 넘기기는 어려웠습니다.",
+      "pattern": [
+        "P2_CharacterRegister"
+      ],
+      "specialist": "B_RegisterAngle",
+      "matrixCell": "npc_early_strict_review",
+      "stage": {
+        "lieState": "S0",
+        "lieStateNumber": 0,
+        "lieBand": null,
+        "truthLevel": "none",
+        "investigationStage": null
+      },
+      "rationale": "추상 주어와 의인화된 동기 표현을 직접 판단/감정 표현으로 보정.",
+      "claudeAreaIssue": null,
+      "safety": {
+        "skippedChecked": true,
+        "archetypeVoiceChecked": true,
+        "truthThrottleChecked": true
+      }
+    },
+    {
+      "caseId": "spouse-01",
+      "channel": "interrogation",
+      "entryKey": "a|d-1|S0|empathy_approach",
+      "variantId": "a-d-1-S0-empathy-approach-v10",
+      "variantKey": "spouse-01::interrogation::a|d-1|S0|empathy_approach::a-d-1-S0-empathy-approach-v10",
+      "field": "text",
+      "before": "재판관님, 기록과 물건이 같은 방향으로 겹쳤습니다. 그래서 작은 단서에도 무너졌습니다.",
+      "after": "재판관님, 상황과 증거가 한쪽으로 모여 보였습니다. 그래서 작은 단서도 그냥 넘기기 어려웠습니다.",
+      "pattern": [
+        "P2_CharacterRegister"
+      ],
+      "specialist": "B_RegisterAngle",
+      "matrixCell": "npc_early_strict_review",
+      "stage": {
+        "lieState": "S0",
+        "lieStateNumber": 0,
+        "lieBand": null,
+        "truthLevel": "none",
+        "investigationStage": null
+      },
+      "rationale": "은유적 붕괴 표현을 의심이 강화되는 인지 흐름으로 보정.",
+      "claudeAreaIssue": null,
+      "safety": {
+        "skippedChecked": true,
+        "archetypeVoiceChecked": true,
+        "truthThrottleChecked": true
+      }
+    },
+    {
+      "caseId": "spouse-01",
+      "channel": "interrogation",
+      "entryKey": "a|d-1|S1|fact_pursuit",
+      "variantId": "a-d-1-S1-fact-pursuit-v4",
+      "variantKey": "spouse-01::interrogation::a|d-1|S1|fact_pursuit::a-d-1-S1-fact-pursuit-v4",
+      "field": "text",
+      "before": "그 종이 한 장이 더 무서웠습니다. 제가 안 쓰는 색의 틴트 이름이 찍혀 있는데, 갑자기 다리에 힘이 빠졌습니다.",
+      "after": "영수증 한 장이 더 크게 보였습니다. 제가 안 쓰는 색의 틴트 이름이 찍혀 있는데, 갑자기 다리에 힘이 빠졌습니다.",
+      "pattern": [
+        "P2_CharacterRegister"
+      ],
+      "specialist": "B_RegisterAngle",
+      "matrixCell": "npc_early_strict_review",
+      "stage": {
+        "lieState": "S1",
+        "lieStateNumber": 1,
+        "lieBand": null,
+        "truthLevel": "hint",
+        "investigationStage": null
+      },
+      "rationale": "'그 종이 한 장'을 사건 맥락상 영수증으로 구체화. '안 쓰는' 자연체는 Claude 후보로만 남김.",
+      "claudeAreaIssue": "C3_lexicon_naturalize: '안 쓰는 색' → '사용하지 않는 색깔' 후보",
+      "safety": {
+        "skippedChecked": true,
+        "archetypeVoiceChecked": true,
+        "truthThrottleChecked": true
+      }
+    },
+    {
+      "caseId": "spouse-01",
+      "channel": "interrogation",
+      "entryKey": "a|d-1|S1|motive_search",
+      "variantId": "a-d-1-S1-motive-search-v4",
+      "variantKey": "spouse-01::interrogation::a|d-1|S1|motive_search::a-d-1-S1-motive-search-v4",
+      "field": "text",
+      "before": "마음이 한 번 무너지면 종이 한 장도 그냥 못 넘깁니다. 확인하면서도 매번 더 무서웠습니다. 그래도 안 볼 수가 없었습니다.",
+      "after": "한 번 의심이 시작되면 종이 한 장도 그냥 못 넘깁니다. 확인하면서도 매번 더 무서웠습니다. 그래도 안 볼 수가 없었습니다.",
+      "pattern": [
+        "P2_CharacterRegister"
+      ],
+      "specialist": "B_RegisterAngle",
+      "matrixCell": "npc_early_strict_review",
+      "stage": {
+        "lieState": "S1",
+        "lieStateNumber": 1,
+        "lieBand": null,
+        "truthLevel": "hint",
+        "investigationStage": null
+      },
+      "rationale": "시적 심리 표현 '마음이 무너지면'을 의심의 시작이라는 일상적 인지 표현으로 보정.",
+      "claudeAreaIssue": null,
+      "safety": {
+        "skippedChecked": true,
+        "archetypeVoiceChecked": true,
+        "truthThrottleChecked": true
+      }
+    },
+    {
+      "caseId": "spouse-01",
+      "channel": "interrogation",
+      "entryKey": "a|d-1|S2|motive_search",
+      "variantId": "a-d-1-S2-motive-search-v4",
+      "variantKey": "spouse-01::interrogation::a|d-1|S2|motive_search::a-d-1-S2-motive-search-v4",
+      "field": "text",
+      "before": "이미 한 번 크게 속은 느낌이었는데, 또 비슷한 냄새가 났습니다. 이번에는 더 집요해질 수밖에 없었습니다.",
+      "after": "제가 지키고 싶었던 건 결국 가정이었습니다. 이미 한 번 크게 속은 느낌이 남아 있어서, 이번에는 그냥 넘기기 어려웠습니다.",
+      "pattern": [
+        "P1_QACoherence",
+        "P2_CharacterRegister"
+      ],
+      "specialist": "D_QACoherence",
+      "matrixCell": "npc_partial_review",
+      "stage": {
+        "lieState": "S2",
+        "lieStateNumber": 2,
+        "lieBand": null,
+        "truthLevel": "hint",
+        "investigationStage": null
+      },
+      "rationale": "동기 답변이 '왜 집요했는가'에만 머물던 것을 '무엇을 지키려 했는가' 차원까지 맞춤. 진실 lexeme 추가 없음.",
+      "claudeAreaIssue": null,
+      "safety": {
+        "skippedChecked": true,
+        "archetypeVoiceChecked": true,
+        "truthThrottleChecked": true
+      }
+    },
+    {
+      "caseId": "spouse-01",
+      "channel": "contradiction_pursuit",
+      "entryKey": "a|d-1|S2",
+      "variantId": "contra-a-d-1-S2-v8",
+      "variantKey": "spouse-01::contradiction_pursuit::a|d-1|S2::contra-a-d-1-S2-v8",
+      "field": "text",
+      "before": "제가 해석을 앞세운 건 사실입니다. 그래도 그 해석이 생긴 이유를 빼면 제 말만 이상해집니다.",
+      "after": "심증만으로 결론을 낸 건 사실입니다. 그래도 그렇게 판단한 이유를 빼면 제 말만 이상해집니다.",
+      "pattern": [
+        "P2_CharacterRegister"
+      ],
+      "specialist": "B_RegisterAngle",
+      "matrixCell": "npc_partial_review",
+      "stage": {
+        "lieState": "S2",
+        "lieStateNumber": 2,
+        "lieBand": "mid",
+        "truthLevel": "partial",
+        "investigationStage": null
+      },
+      "rationale": "추상 명사 '해석' 반복을 판단 과정으로 명료화.",
+      "claudeAreaIssue": null,
+      "safety": {
+        "skippedChecked": true,
+        "archetypeVoiceChecked": true,
+        "truthThrottleChecked": true
+      }
+    },
+    {
+      "caseId": "spouse-01",
+      "channel": "judge_contradiction",
+      "entryKey": "d-1|mid",
+      "variantId": "judgec-d-1-mid-v2",
+      "variantKey": "spouse-01::judge_contradiction::d-1|mid::judgec-d-1-mid-v2",
+      "field": "text",
+      "before": "박지연 씨, 외도라는 확신에서 정황 해석으로 물러섰다면 그 확신으로 밀어붙인 행동도 함께 설명해야 합니다.",
+      "after": "박지연 씨, 정황 해석만으로 외도라고 확신했다면 그 근거와 행동을 함께 설명해야 합니다.",
+      "pattern": [
+        "P3_JudgeAngle"
+      ],
+      "specialist": "B_RegisterAngle",
+      "matrixCell": "strict_always_patchable",
+      "stage": {
+        "lieState": null,
+        "lieStateNumber": null,
+        "lieBand": "mid",
+        "truthLevel": "none",
+        "investigationStage": null
+      },
+      "rationale": "재판관 추궁 각도를 '확신에서 물러섬'이라는 추상 구문에서 근거와 행동 설명 요구로 정리.",
+      "claudeAreaIssue": null,
+      "safety": {
+        "skippedChecked": true,
+        "archetypeVoiceChecked": true,
+        "truthThrottleChecked": true
+      }
+    },
+    {
+      "caseId": "family-01",
+      "channel": "aftermath",
+      "entryKey": "a_primary_fault",
+      "variantId": "a_primary_fault-v2",
+      "variantKey": "family-01::aftermath::a_primary_fault::a_primary_fault-v2",
+      "entryFieldKey": null,
+      "scope": "variant",
+      "field": "behaviorHint",
+      "before": "A의 과잉 단정과 장남 당연시를 후일담 중심축으로 둔다.",
+      "after": "윤태성의 과잉 단정과 장남 당연시를 후일담 중심축으로 둔다.",
+      "pattern": [
+        "P5_CodeNameResolve"
+      ],
+      "specialist": "E_SystemAlignment",
+      "matrixCell": "after_final_narrative_preserve",
+      "stage": {
+        "lieState": null,
+        "lieStateNumber": null,
+        "lieBand": null,
+        "truthLevel": null,
+        "investigationStage": null
+      },
+      "rationale": "잔여 코드명 A/B를 사건 당사자 실명(윤태성/윤정후)으로 치환.",
+      "claudeAreaIssue": null,
+      "safety": {
+        "skippedChecked": true,
+        "archetypeVoiceChecked": true,
+        "truthThrottleChecked": true
+      }
+    },
+    {
+      "caseId": "family-01",
+      "channel": "aftermath",
+      "entryKey": "a_primary_fault",
+      "variantId": "a_primary_fault-v3",
+      "variantKey": "family-01::aftermath::a_primary_fault::a_primary_fault-v3",
+      "entryFieldKey": null,
+      "scope": "variant",
+      "field": "behaviorHint",
+      "before": "법적 위조보다 A의 해석 왜곡이 더 큰 후일담이다.",
+      "after": "법적 위조보다 윤태성의 해석 왜곡이 더 큰 후일담이다.",
+      "pattern": [
+        "P5_CodeNameResolve"
+      ],
+      "specialist": "E_SystemAlignment",
+      "matrixCell": "after_final_narrative_preserve",
+      "stage": {
+        "lieState": null,
+        "lieStateNumber": null,
+        "lieBand": null,
+        "truthLevel": null,
+        "investigationStage": null
+      },
+      "rationale": "잔여 코드명 A/B를 사건 당사자 실명(윤태성/윤정후)으로 치환.",
+      "claudeAreaIssue": null,
+      "safety": {
+        "skippedChecked": true,
+        "archetypeVoiceChecked": true,
+        "truthThrottleChecked": true
+      }
+    },
+    {
+      "caseId": "family-01",
+      "channel": "aftermath",
+      "entryKey": "b_primary_fault",
+      "variantId": "b_primary_fault-v1",
+      "variantKey": "family-01::aftermath::b_primary_fault::b_primary_fault-v1",
+      "entryFieldKey": null,
+      "scope": "variant",
+      "field": "behaviorHint",
+      "before": "B의 위법 행위가 중심인 결말이다.",
+      "after": "윤정후의 위법 행위가 중심인 결말이다.",
+      "pattern": [
+        "P5_CodeNameResolve"
+      ],
+      "specialist": "E_SystemAlignment",
+      "matrixCell": "after_final_narrative_preserve",
+      "stage": {
+        "lieState": null,
+        "lieStateNumber": null,
+        "lieBand": null,
+        "truthLevel": null,
+        "investigationStage": null
+      },
+      "rationale": "잔여 코드명 A/B를 사건 당사자 실명(윤태성/윤정후)으로 치환.",
+      "claudeAreaIssue": null,
+      "safety": {
+        "skippedChecked": true,
+        "archetypeVoiceChecked": true,
+        "truthThrottleChecked": true
+      }
+    },
+    {
+      "caseId": "family-01",
+      "channel": "aftermath",
+      "entryKey": "b_primary_fault",
+      "variantId": "b_primary_fault-v2",
+      "variantKey": "family-01::aftermath::b_primary_fault::b_primary_fault-v2",
+      "entryFieldKey": null,
+      "scope": "variant",
+      "field": "behaviorHint",
+      "before": "B의 침묵과 문서 개입을 함께 묶어 후일담을 만든다.",
+      "after": "윤정후의 침묵과 문서 개입을 함께 묶어 후일담을 만든다.",
+      "pattern": [
+        "P5_CodeNameResolve"
+      ],
+      "specialist": "E_SystemAlignment",
+      "matrixCell": "after_final_narrative_preserve",
+      "stage": {
+        "lieState": null,
+        "lieStateNumber": null,
+        "lieBand": null,
+        "truthLevel": null,
+        "investigationStage": null
+      },
+      "rationale": "잔여 코드명 A/B를 사건 당사자 실명(윤태성/윤정후)으로 치환.",
+      "claudeAreaIssue": null,
+      "safety": {
+        "skippedChecked": true,
+        "archetypeVoiceChecked": true,
+        "truthThrottleChecked": true
+      }
+    },
+    {
+      "caseId": "family-01",
+      "channel": "aftermath",
+      "entryKey": "b_primary_fault",
+      "variantId": "b_primary_fault-v4",
+      "variantKey": "family-01::aftermath::b_primary_fault::b_primary_fault-v4",
+      "entryFieldKey": null,
+      "scope": "variant",
+      "field": "behaviorHint",
+      "before": "B의 보호 명분이 실패한 방식에 초점을 둔다.",
+      "after": "윤정후의 보호 명분이 실패한 방식에 초점을 둔다.",
+      "pattern": [
+        "P5_CodeNameResolve"
+      ],
+      "specialist": "E_SystemAlignment",
+      "matrixCell": "after_final_narrative_preserve",
+      "stage": {
+        "lieState": null,
+        "lieStateNumber": null,
+        "lieBand": null,
+        "truthLevel": null,
+        "investigationStage": null
+      },
+      "rationale": "잔여 코드명 A/B를 사건 당사자 실명(윤태성/윤정후)으로 치환.",
+      "claudeAreaIssue": null,
+      "safety": {
+        "skippedChecked": true,
+        "archetypeVoiceChecked": true,
+        "truthThrottleChecked": true
+      }
+    },
+    {
+      "caseId": "friend-01",
+      "channel": "evidence_present",
+      "entryKey": "b|e-4|early|3",
+      "variantId": null,
+      "variantKey": null,
+      "entryFieldKey": "friend-01::evidence_present::b|e-4|early|3::entry.stageQuestion",
+      "scope": "entry",
+      "field": "stageQuestion",
+      "before": "B의 이후 연락이 왜 이어졌는지 따져 주십시오.",
+      "after": "최수민의 이후 연락이 왜 이어졌는지 따져 주십시오.",
+      "pattern": [
+        "P5_CodeNameResolve"
+      ],
+      "specialist": "E_SystemAlignment",
+      "matrixCell": "npc_early_strict_review",
+      "stage": {
+        "lieState": null,
+        "lieStateNumber": null,
+        "lieBand": "early",
+        "truthLevel": "hint",
+        "investigationStage": null
+      },
+      "rationale": "잔여 코드명 A/B를 사건 당사자 실명(송다은/최수민)으로 치환.",
+      "claudeAreaIssue": null,
+      "safety": {
+        "skippedChecked": true,
+        "archetypeVoiceChecked": true,
+        "truthThrottleChecked": true
+      }
+    },
+    {
+      "caseId": "friend-01",
+      "channel": "evidence_present",
+      "entryKey": "b|e-4|mid|3",
+      "variantId": null,
+      "variantKey": null,
+      "entryFieldKey": "friend-01::evidence_present::b|e-4|mid|3::entry.stageQuestion",
+      "scope": "entry",
+      "field": "stageQuestion",
+      "before": "B의 이후 연락이 왜 이어졌는지 따져 주십시오.",
+      "after": "최수민의 이후 연락이 왜 이어졌는지 따져 주십시오.",
+      "pattern": [
+        "P5_CodeNameResolve"
+      ],
+      "specialist": "E_SystemAlignment",
+      "matrixCell": "npc_partial_review",
+      "stage": {
+        "lieState": null,
+        "lieStateNumber": null,
+        "lieBand": "mid",
+        "truthLevel": "partial",
+        "investigationStage": null
+      },
+      "rationale": "잔여 코드명 A/B를 사건 당사자 실명(송다은/최수민)으로 치환.",
+      "claudeAreaIssue": null,
+      "safety": {
+        "skippedChecked": true,
+        "archetypeVoiceChecked": true,
+        "truthThrottleChecked": true
+      }
+    },
+    {
+      "caseId": "friend-01",
+      "channel": "evidence_present",
+      "entryKey": "b|e-4|late|3",
+      "variantId": null,
+      "variantKey": null,
+      "entryFieldKey": "friend-01::evidence_present::b|e-4|late|3::entry.stageQuestion",
+      "scope": "entry",
+      "field": "stageQuestion",
+      "before": "B의 이후 연락이 왜 이어졌는지 따져 주십시오.",
+      "after": "최수민의 이후 연락이 왜 이어졌는지 따져 주십시오.",
+      "pattern": [
+        "P5_CodeNameResolve"
+      ],
+      "specialist": "E_SystemAlignment",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": null,
+        "lieStateNumber": null,
+        "lieBand": "late",
+        "truthLevel": "full",
+        "investigationStage": null
+      },
+      "rationale": "잔여 코드명 A/B를 사건 당사자 실명(송다은/최수민)으로 치환.",
+      "claudeAreaIssue": null,
+      "safety": {
+        "skippedChecked": true,
+        "archetypeVoiceChecked": true,
+        "truthThrottleChecked": true
+      }
+    },
+    {
+      "caseId": "friend-01",
+      "channel": "evidence_present",
+      "entryKey": "a|e-4|early|3",
+      "variantId": null,
+      "variantKey": null,
+      "entryFieldKey": "friend-01::evidence_present::a|e-4|early|3::entry.stageQuestion",
+      "scope": "entry",
+      "field": "stageQuestion",
+      "before": "B의 이후 연락이 왜 이어졌는지 따져 주십시오.",
+      "after": "최수민의 이후 연락이 왜 이어졌는지 따져 주십시오.",
+      "pattern": [
+        "P5_CodeNameResolve"
+      ],
+      "specialist": "E_SystemAlignment",
+      "matrixCell": "npc_early_strict_review",
+      "stage": {
+        "lieState": null,
+        "lieStateNumber": null,
+        "lieBand": "early",
+        "truthLevel": "hint",
+        "investigationStage": null
+      },
+      "rationale": "잔여 코드명 A/B를 사건 당사자 실명(송다은/최수민)으로 치환.",
+      "claudeAreaIssue": null,
+      "safety": {
+        "skippedChecked": true,
+        "archetypeVoiceChecked": true,
+        "truthThrottleChecked": true
+      }
+    },
+    {
+      "caseId": "friend-01",
+      "channel": "evidence_present",
+      "entryKey": "a|e-4|mid|3",
+      "variantId": null,
+      "variantKey": null,
+      "entryFieldKey": "friend-01::evidence_present::a|e-4|mid|3::entry.stageQuestion",
+      "scope": "entry",
+      "field": "stageQuestion",
+      "before": "B의 이후 연락이 왜 이어졌는지 따져 주십시오.",
+      "after": "최수민의 이후 연락이 왜 이어졌는지 따져 주십시오.",
+      "pattern": [
+        "P5_CodeNameResolve"
+      ],
+      "specialist": "E_SystemAlignment",
+      "matrixCell": "npc_partial_review",
+      "stage": {
+        "lieState": null,
+        "lieStateNumber": null,
+        "lieBand": "mid",
+        "truthLevel": "partial",
+        "investigationStage": null
+      },
+      "rationale": "잔여 코드명 A/B를 사건 당사자 실명(송다은/최수민)으로 치환.",
+      "claudeAreaIssue": null,
+      "safety": {
+        "skippedChecked": true,
+        "archetypeVoiceChecked": true,
+        "truthThrottleChecked": true
+      }
+    },
+    {
+      "caseId": "friend-01",
+      "channel": "evidence_present",
+      "entryKey": "a|e-4|late|3",
+      "variantId": null,
+      "variantKey": null,
+      "entryFieldKey": "friend-01::evidence_present::a|e-4|late|3::entry.stageQuestion",
+      "scope": "entry",
+      "field": "stageQuestion",
+      "before": "B의 이후 연락이 왜 이어졌는지 따져 주십시오.",
+      "after": "최수민의 이후 연락이 왜 이어졌는지 따져 주십시오.",
+      "pattern": [
+        "P5_CodeNameResolve"
+      ],
+      "specialist": "E_SystemAlignment",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": null,
+        "lieStateNumber": null,
+        "lieBand": "late",
+        "truthLevel": "partial",
+        "investigationStage": null
+      },
+      "rationale": "잔여 코드명 A/B를 사건 당사자 실명(송다은/최수민)으로 치환.",
+      "claudeAreaIssue": null,
+      "safety": {
+        "skippedChecked": true,
+        "archetypeVoiceChecked": true,
+        "truthThrottleChecked": true
+      }
+    },
+    {
+      "caseId": "friend-01",
+      "channel": "evidence_present",
+      "entryKey": "b|e-5|early|2",
+      "variantId": null,
+      "variantKey": null,
+      "entryFieldKey": "friend-01::evidence_present::b|e-5|early|2::entry.stageQuestion",
+      "scope": "entry",
+      "field": "stageQuestion",
+      "before": "돈 요구 시점과 B의 연락을 대조해 주십시오.",
+      "after": "돈 요구 시점과 최수민의 연락을 대조해 주십시오.",
+      "pattern": [
+        "P5_CodeNameResolve"
+      ],
+      "specialist": "E_SystemAlignment",
+      "matrixCell": "npc_early_strict_review",
+      "stage": {
+        "lieState": null,
+        "lieStateNumber": null,
+        "lieBand": "early",
+        "truthLevel": "hint",
+        "investigationStage": null
+      },
+      "rationale": "잔여 코드명 A/B를 사건 당사자 실명(송다은/최수민)으로 치환.",
+      "claudeAreaIssue": null,
+      "safety": {
+        "skippedChecked": true,
+        "archetypeVoiceChecked": true,
+        "truthThrottleChecked": true
+      }
+    },
+    {
+      "caseId": "friend-01",
+      "channel": "evidence_present",
+      "entryKey": "b|e-5|early|3",
+      "variantId": null,
+      "variantKey": null,
+      "entryFieldKey": "friend-01::evidence_present::b|e-5|early|3::entry.stageQuestion",
+      "scope": "entry",
+      "field": "stageQuestion",
+      "before": "B가 왜 예비신랑에게 경고했는지 따져 주십시오.",
+      "after": "최수민가 왜 예비신랑에게 경고했는지 따져 주십시오.",
+      "pattern": [
+        "P5_CodeNameResolve"
+      ],
+      "specialist": "E_SystemAlignment",
+      "matrixCell": "npc_early_strict_review",
+      "stage": {
+        "lieState": null,
+        "lieStateNumber": null,
+        "lieBand": "early",
+        "truthLevel": "hint",
+        "investigationStage": null
+      },
+      "rationale": "잔여 코드명 A/B를 사건 당사자 실명(송다은/최수민)으로 치환.",
+      "claudeAreaIssue": null,
+      "safety": {
+        "skippedChecked": true,
+        "archetypeVoiceChecked": true,
+        "truthThrottleChecked": true
+      }
+    },
+    {
+      "caseId": "friend-01",
+      "channel": "evidence_present",
+      "entryKey": "b|e-5|mid|2",
+      "variantId": null,
+      "variantKey": null,
+      "entryFieldKey": "friend-01::evidence_present::b|e-5|mid|2::entry.stageQuestion",
+      "scope": "entry",
+      "field": "stageQuestion",
+      "before": "돈 요구 시점과 B의 연락을 대조해 주십시오.",
+      "after": "돈 요구 시점과 최수민의 연락을 대조해 주십시오.",
+      "pattern": [
+        "P5_CodeNameResolve"
+      ],
+      "specialist": "E_SystemAlignment",
+      "matrixCell": "npc_partial_review",
+      "stage": {
+        "lieState": null,
+        "lieStateNumber": null,
+        "lieBand": "mid",
+        "truthLevel": "partial",
+        "investigationStage": null
+      },
+      "rationale": "잔여 코드명 A/B를 사건 당사자 실명(송다은/최수민)으로 치환.",
+      "claudeAreaIssue": null,
+      "safety": {
+        "skippedChecked": true,
+        "archetypeVoiceChecked": true,
+        "truthThrottleChecked": true
+      }
+    },
+    {
+      "caseId": "friend-01",
+      "channel": "evidence_present",
+      "entryKey": "b|e-5|mid|3",
+      "variantId": null,
+      "variantKey": null,
+      "entryFieldKey": "friend-01::evidence_present::b|e-5|mid|3::entry.stageQuestion",
+      "scope": "entry",
+      "field": "stageQuestion",
+      "before": "B가 왜 예비신랑에게 경고했는지 따져 주십시오.",
+      "after": "최수민가 왜 예비신랑에게 경고했는지 따져 주십시오.",
+      "pattern": [
+        "P5_CodeNameResolve"
+      ],
+      "specialist": "E_SystemAlignment",
+      "matrixCell": "npc_partial_review",
+      "stage": {
+        "lieState": null,
+        "lieStateNumber": null,
+        "lieBand": "mid",
+        "truthLevel": "partial",
+        "investigationStage": null
+      },
+      "rationale": "잔여 코드명 A/B를 사건 당사자 실명(송다은/최수민)으로 치환.",
+      "claudeAreaIssue": null,
+      "safety": {
+        "skippedChecked": true,
+        "archetypeVoiceChecked": true,
+        "truthThrottleChecked": true
+      }
+    },
+    {
+      "caseId": "friend-01",
+      "channel": "evidence_present",
+      "entryKey": "b|e-5|late|2",
+      "variantId": null,
+      "variantKey": null,
+      "entryFieldKey": "friend-01::evidence_present::b|e-5|late|2::entry.stageQuestion",
+      "scope": "entry",
+      "field": "stageQuestion",
+      "before": "돈 요구 시점과 B의 연락을 대조해 주십시오.",
+      "after": "돈 요구 시점과 최수민의 연락을 대조해 주십시오.",
+      "pattern": [
+        "P5_CodeNameResolve"
+      ],
+      "specialist": "E_SystemAlignment",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": null,
+        "lieStateNumber": null,
+        "lieBand": "late",
+        "truthLevel": "full",
+        "investigationStage": null
+      },
+      "rationale": "잔여 코드명 A/B를 사건 당사자 실명(송다은/최수민)으로 치환.",
+      "claudeAreaIssue": null,
+      "safety": {
+        "skippedChecked": true,
+        "archetypeVoiceChecked": true,
+        "truthThrottleChecked": true
+      }
+    },
+    {
+      "caseId": "friend-01",
+      "channel": "evidence_present",
+      "entryKey": "b|e-5|late|3",
+      "variantId": null,
+      "variantKey": null,
+      "entryFieldKey": "friend-01::evidence_present::b|e-5|late|3::entry.stageQuestion",
+      "scope": "entry",
+      "field": "stageQuestion",
+      "before": "B가 왜 예비신랑에게 경고했는지 따져 주십시오.",
+      "after": "최수민가 왜 예비신랑에게 경고했는지 따져 주십시오.",
+      "pattern": [
+        "P5_CodeNameResolve"
+      ],
+      "specialist": "E_SystemAlignment",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": null,
+        "lieStateNumber": null,
+        "lieBand": "late",
+        "truthLevel": "full",
+        "investigationStage": null
+      },
+      "rationale": "잔여 코드명 A/B를 사건 당사자 실명(송다은/최수민)으로 치환.",
+      "claudeAreaIssue": null,
+      "safety": {
+        "skippedChecked": true,
+        "archetypeVoiceChecked": true,
+        "truthThrottleChecked": true
+      }
+    },
+    {
+      "caseId": "friend-01",
+      "channel": "evidence_present",
+      "entryKey": "a|e-5|early|2",
+      "variantId": null,
+      "variantKey": null,
+      "entryFieldKey": "friend-01::evidence_present::a|e-5|early|2::entry.stageQuestion",
+      "scope": "entry",
+      "field": "stageQuestion",
+      "before": "돈 요구 시점과 B의 연락을 대조해 주십시오.",
+      "after": "돈 요구 시점과 최수민의 연락을 대조해 주십시오.",
+      "pattern": [
+        "P5_CodeNameResolve"
+      ],
+      "specialist": "E_SystemAlignment",
+      "matrixCell": "npc_early_strict_review",
+      "stage": {
+        "lieState": null,
+        "lieStateNumber": null,
+        "lieBand": "early",
+        "truthLevel": "hint",
+        "investigationStage": null
+      },
+      "rationale": "잔여 코드명 A/B를 사건 당사자 실명(송다은/최수민)으로 치환.",
+      "claudeAreaIssue": null,
+      "safety": {
+        "skippedChecked": true,
+        "archetypeVoiceChecked": true,
+        "truthThrottleChecked": true
+      }
+    },
+    {
+      "caseId": "friend-01",
+      "channel": "evidence_present",
+      "entryKey": "a|e-5|early|3",
+      "variantId": null,
+      "variantKey": null,
+      "entryFieldKey": "friend-01::evidence_present::a|e-5|early|3::entry.stageQuestion",
+      "scope": "entry",
+      "field": "stageQuestion",
+      "before": "B가 왜 예비신랑에게 경고했는지 따져 주십시오.",
+      "after": "최수민가 왜 예비신랑에게 경고했는지 따져 주십시오.",
+      "pattern": [
+        "P5_CodeNameResolve"
+      ],
+      "specialist": "E_SystemAlignment",
+      "matrixCell": "npc_early_strict_review",
+      "stage": {
+        "lieState": null,
+        "lieStateNumber": null,
+        "lieBand": "early",
+        "truthLevel": "hint",
+        "investigationStage": null
+      },
+      "rationale": "잔여 코드명 A/B를 사건 당사자 실명(송다은/최수민)으로 치환.",
+      "claudeAreaIssue": null,
+      "safety": {
+        "skippedChecked": true,
+        "archetypeVoiceChecked": true,
+        "truthThrottleChecked": true
+      }
+    },
+    {
+      "caseId": "friend-01",
+      "channel": "evidence_present",
+      "entryKey": "a|e-5|mid|2",
+      "variantId": null,
+      "variantKey": null,
+      "entryFieldKey": "friend-01::evidence_present::a|e-5|mid|2::entry.stageQuestion",
+      "scope": "entry",
+      "field": "stageQuestion",
+      "before": "돈 요구 시점과 B의 연락을 대조해 주십시오.",
+      "after": "돈 요구 시점과 최수민의 연락을 대조해 주십시오.",
+      "pattern": [
+        "P5_CodeNameResolve"
+      ],
+      "specialist": "E_SystemAlignment",
+      "matrixCell": "npc_partial_review",
+      "stage": {
+        "lieState": null,
+        "lieStateNumber": null,
+        "lieBand": "mid",
+        "truthLevel": "partial",
+        "investigationStage": null
+      },
+      "rationale": "잔여 코드명 A/B를 사건 당사자 실명(송다은/최수민)으로 치환.",
+      "claudeAreaIssue": null,
+      "safety": {
+        "skippedChecked": true,
+        "archetypeVoiceChecked": true,
+        "truthThrottleChecked": true
+      }
+    },
+    {
+      "caseId": "friend-01",
+      "channel": "evidence_present",
+      "entryKey": "a|e-5|mid|3",
+      "variantId": null,
+      "variantKey": null,
+      "entryFieldKey": "friend-01::evidence_present::a|e-5|mid|3::entry.stageQuestion",
+      "scope": "entry",
+      "field": "stageQuestion",
+      "before": "B가 왜 예비신랑에게 경고했는지 따져 주십시오.",
+      "after": "최수민가 왜 예비신랑에게 경고했는지 따져 주십시오.",
+      "pattern": [
+        "P5_CodeNameResolve"
+      ],
+      "specialist": "E_SystemAlignment",
+      "matrixCell": "npc_partial_review",
+      "stage": {
+        "lieState": null,
+        "lieStateNumber": null,
+        "lieBand": "mid",
+        "truthLevel": "partial",
+        "investigationStage": null
+      },
+      "rationale": "잔여 코드명 A/B를 사건 당사자 실명(송다은/최수민)으로 치환.",
+      "claudeAreaIssue": null,
+      "safety": {
+        "skippedChecked": true,
+        "archetypeVoiceChecked": true,
+        "truthThrottleChecked": true
+      }
+    },
+    {
+      "caseId": "friend-01",
+      "channel": "evidence_present",
+      "entryKey": "a|e-5|late|2",
+      "variantId": null,
+      "variantKey": null,
+      "entryFieldKey": "friend-01::evidence_present::a|e-5|late|2::entry.stageQuestion",
+      "scope": "entry",
+      "field": "stageQuestion",
+      "before": "돈 요구 시점과 B의 연락을 대조해 주십시오.",
+      "after": "돈 요구 시점과 최수민의 연락을 대조해 주십시오.",
+      "pattern": [
+        "P5_CodeNameResolve"
+      ],
+      "specialist": "E_SystemAlignment",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": null,
+        "lieStateNumber": null,
+        "lieBand": "late",
+        "truthLevel": "partial",
+        "investigationStage": null
+      },
+      "rationale": "잔여 코드명 A/B를 사건 당사자 실명(송다은/최수민)으로 치환.",
+      "claudeAreaIssue": null,
+      "safety": {
+        "skippedChecked": true,
+        "archetypeVoiceChecked": true,
+        "truthThrottleChecked": true
+      }
+    },
+    {
+      "caseId": "friend-01",
+      "channel": "evidence_present",
+      "entryKey": "a|e-5|late|3",
+      "variantId": null,
+      "variantKey": null,
+      "entryFieldKey": "friend-01::evidence_present::a|e-5|late|3::entry.stageQuestion",
+      "scope": "entry",
+      "field": "stageQuestion",
+      "before": "B가 왜 예비신랑에게 경고했는지 따져 주십시오.",
+      "after": "최수민가 왜 예비신랑에게 경고했는지 따져 주십시오.",
+      "pattern": [
+        "P5_CodeNameResolve"
+      ],
+      "specialist": "E_SystemAlignment",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": null,
+        "lieStateNumber": null,
+        "lieBand": "late",
+        "truthLevel": "partial",
+        "investigationStage": null
+      },
+      "rationale": "잔여 코드명 A/B를 사건 당사자 실명(송다은/최수민)으로 치환.",
+      "claudeAreaIssue": null,
+      "safety": {
+        "skippedChecked": true,
+        "archetypeVoiceChecked": true,
+        "truthThrottleChecked": true
+      }
+    },
+    {
+      "caseId": "friend-01",
+      "channel": "judge_witness_summon",
+      "entryKey": "w-1|soft",
+      "variantId": "judgewitness-w-1-soft-v1",
+      "variantKey": "friend-01::judge_witness_summon::w-1|soft::judgewitness-w-1-soft-v1",
+      "entryFieldKey": null,
+      "scope": "variant",
+      "field": "behaviorHint",
+      "before": "김세라: 단톡방 분위기와 A의 최초 발언 경위를 아는 공통 친구 증인이다. hiddenAgenda=자신도 B를 비난하는 데 가담한 것이 부끄럽다.",
+      "after": "김세라: 단톡방 분위기와 송다은의 최초 발언 경위를 아는 공통 친구 증인이다. hiddenAgenda=자신도 최수민를 비난하는 데 가담한 것이 부끄럽다.",
+      "pattern": [
+        "P5_CodeNameResolve"
+      ],
+      "specialist": "E_SystemAlignment",
+      "matrixCell": "strict_always_patchable",
+      "stage": {
+        "lieState": null,
+        "lieStateNumber": null,
+        "lieBand": "mid",
+        "truthLevel": "hint",
+        "investigationStage": null
+      },
+      "rationale": "잔여 코드명 A/B를 사건 당사자 실명(송다은/최수민)으로 치환.",
+      "claudeAreaIssue": null,
+      "safety": {
+        "skippedChecked": true,
+        "archetypeVoiceChecked": true,
+        "truthThrottleChecked": true
+      }
+    },
+    {
+      "caseId": "friend-01",
+      "channel": "judge_witness_summon",
+      "entryKey": "w-1|soft",
+      "variantId": "judgewitness-w-1-soft-v2",
+      "variantKey": "friend-01::judge_witness_summon::w-1|soft::judgewitness-w-1-soft-v2",
+      "entryFieldKey": null,
+      "scope": "variant",
+      "field": "behaviorHint",
+      "before": "김세라: 단톡방 분위기와 A의 최초 발언 경위를 아는 공통 친구 증인이다. hiddenAgenda=자신도 B를 비난하는 데 가담한 것이 부끄럽다.",
+      "after": "김세라: 단톡방 분위기와 송다은의 최초 발언 경위를 아는 공통 친구 증인이다. hiddenAgenda=자신도 최수민를 비난하는 데 가담한 것이 부끄럽다.",
+      "pattern": [
+        "P5_CodeNameResolve"
+      ],
+      "specialist": "E_SystemAlignment",
+      "matrixCell": "strict_always_patchable",
+      "stage": {
+        "lieState": null,
+        "lieStateNumber": null,
+        "lieBand": "mid",
+        "truthLevel": "hint",
+        "investigationStage": null
+      },
+      "rationale": "잔여 코드명 A/B를 사건 당사자 실명(송다은/최수민)으로 치환.",
+      "claudeAreaIssue": null,
+      "safety": {
+        "skippedChecked": true,
+        "archetypeVoiceChecked": true,
+        "truthThrottleChecked": true
+      }
+    },
+    {
+      "caseId": "friend-01",
+      "channel": "judge_witness_summon",
+      "entryKey": "w-1|soft",
+      "variantId": "judgewitness-w-1-soft-v3",
+      "variantKey": "friend-01::judge_witness_summon::w-1|soft::judgewitness-w-1-soft-v3",
+      "entryFieldKey": null,
+      "scope": "variant",
+      "field": "behaviorHint",
+      "before": "김세라: 단톡방 분위기와 A의 최초 발언 경위를 아는 공통 친구 증인이다. hiddenAgenda=자신도 B를 비난하는 데 가담한 것이 부끄럽다.",
+      "after": "김세라: 단톡방 분위기와 송다은의 최초 발언 경위를 아는 공통 친구 증인이다. hiddenAgenda=자신도 최수민를 비난하는 데 가담한 것이 부끄럽다.",
+      "pattern": [
+        "P5_CodeNameResolve"
+      ],
+      "specialist": "E_SystemAlignment",
+      "matrixCell": "strict_always_patchable",
+      "stage": {
+        "lieState": null,
+        "lieStateNumber": null,
+        "lieBand": "mid",
+        "truthLevel": "hint",
+        "investigationStage": null
+      },
+      "rationale": "잔여 코드명 A/B를 사건 당사자 실명(송다은/최수민)으로 치환.",
+      "claudeAreaIssue": null,
+      "safety": {
+        "skippedChecked": true,
+        "archetypeVoiceChecked": true,
+        "truthThrottleChecked": true
+      }
+    },
+    {
+      "caseId": "friend-01",
+      "channel": "judge_witness_summon",
+      "entryKey": "w-1|soft",
+      "variantId": "judgewitness-w-1-soft-v4",
+      "variantKey": "friend-01::judge_witness_summon::w-1|soft::judgewitness-w-1-soft-v4",
+      "entryFieldKey": null,
+      "scope": "variant",
+      "field": "behaviorHint",
+      "before": "김세라: 단톡방 분위기와 A의 최초 발언 경위를 아는 공통 친구 증인이다. hiddenAgenda=자신도 B를 비난하는 데 가담한 것이 부끄럽다.",
+      "after": "김세라: 단톡방 분위기와 송다은의 최초 발언 경위를 아는 공통 친구 증인이다. hiddenAgenda=자신도 최수민를 비난하는 데 가담한 것이 부끄럽다.",
+      "pattern": [
+        "P5_CodeNameResolve"
+      ],
+      "specialist": "E_SystemAlignment",
+      "matrixCell": "strict_always_patchable",
+      "stage": {
+        "lieState": null,
+        "lieStateNumber": null,
+        "lieBand": "mid",
+        "truthLevel": "hint",
+        "investigationStage": null
+      },
+      "rationale": "잔여 코드명 A/B를 사건 당사자 실명(송다은/최수민)으로 치환.",
+      "claudeAreaIssue": null,
+      "safety": {
+        "skippedChecked": true,
+        "archetypeVoiceChecked": true,
+        "truthThrottleChecked": true
+      }
+    },
+    {
+      "caseId": "friend-01",
+      "channel": "judge_witness_summon",
+      "entryKey": "w-1|soft",
+      "variantId": "judgewitness-w-1-soft-v5",
+      "variantKey": "friend-01::judge_witness_summon::w-1|soft::judgewitness-w-1-soft-v5",
+      "entryFieldKey": null,
+      "scope": "variant",
+      "field": "behaviorHint",
+      "before": "김세라: 단톡방 분위기와 A의 최초 발언 경위를 아는 공통 친구 증인이다. hiddenAgenda=자신도 B를 비난하는 데 가담한 것이 부끄럽다.",
+      "after": "김세라: 단톡방 분위기와 송다은의 최초 발언 경위를 아는 공통 친구 증인이다. hiddenAgenda=자신도 최수민를 비난하는 데 가담한 것이 부끄럽다.",
+      "pattern": [
+        "P5_CodeNameResolve"
+      ],
+      "specialist": "E_SystemAlignment",
+      "matrixCell": "strict_always_patchable",
+      "stage": {
+        "lieState": null,
+        "lieStateNumber": null,
+        "lieBand": "mid",
+        "truthLevel": "hint",
+        "investigationStage": null
+      },
+      "rationale": "잔여 코드명 A/B를 사건 당사자 실명(송다은/최수민)으로 치환.",
+      "claudeAreaIssue": null,
+      "safety": {
+        "skippedChecked": true,
+        "archetypeVoiceChecked": true,
+        "truthThrottleChecked": true
+      }
+    },
+    {
+      "caseId": "friend-01",
+      "channel": "judge_witness_summon",
+      "entryKey": "w-1|mid",
+      "variantId": "judgewitness-w-1-mid-v1",
+      "variantKey": "friend-01::judge_witness_summon::w-1|mid::judgewitness-w-1-mid-v1",
+      "entryFieldKey": null,
+      "scope": "variant",
+      "field": "behaviorHint",
+      "before": "김세라: 단톡방 분위기와 A의 최초 발언 경위를 아는 공통 친구 증인이다. hiddenAgenda=자신도 B를 비난하는 데 가담한 것이 부끄럽다.",
+      "after": "김세라: 단톡방 분위기와 송다은의 최초 발언 경위를 아는 공통 친구 증인이다. hiddenAgenda=자신도 최수민를 비난하는 데 가담한 것이 부끄럽다.",
+      "pattern": [
+        "P5_CodeNameResolve"
+      ],
+      "specialist": "E_SystemAlignment",
+      "matrixCell": "strict_always_patchable",
+      "stage": {
+        "lieState": null,
+        "lieStateNumber": null,
+        "lieBand": "mid",
+        "truthLevel": "partial",
+        "investigationStage": null
+      },
+      "rationale": "잔여 코드명 A/B를 사건 당사자 실명(송다은/최수민)으로 치환.",
+      "claudeAreaIssue": null,
+      "safety": {
+        "skippedChecked": true,
+        "archetypeVoiceChecked": true,
+        "truthThrottleChecked": true
+      }
+    },
+    {
+      "caseId": "friend-01",
+      "channel": "judge_witness_summon",
+      "entryKey": "w-1|mid",
+      "variantId": "judgewitness-w-1-mid-v2",
+      "variantKey": "friend-01::judge_witness_summon::w-1|mid::judgewitness-w-1-mid-v2",
+      "entryFieldKey": null,
+      "scope": "variant",
+      "field": "behaviorHint",
+      "before": "김세라: 단톡방 분위기와 A의 최초 발언 경위를 아는 공통 친구 증인이다. hiddenAgenda=자신도 B를 비난하는 데 가담한 것이 부끄럽다.",
+      "after": "김세라: 단톡방 분위기와 송다은의 최초 발언 경위를 아는 공통 친구 증인이다. hiddenAgenda=자신도 최수민를 비난하는 데 가담한 것이 부끄럽다.",
+      "pattern": [
+        "P5_CodeNameResolve"
+      ],
+      "specialist": "E_SystemAlignment",
+      "matrixCell": "strict_always_patchable",
+      "stage": {
+        "lieState": null,
+        "lieStateNumber": null,
+        "lieBand": "mid",
+        "truthLevel": "partial",
+        "investigationStage": null
+      },
+      "rationale": "잔여 코드명 A/B를 사건 당사자 실명(송다은/최수민)으로 치환.",
+      "claudeAreaIssue": null,
+      "safety": {
+        "skippedChecked": true,
+        "archetypeVoiceChecked": true,
+        "truthThrottleChecked": true
+      }
+    },
+    {
+      "caseId": "friend-01",
+      "channel": "judge_witness_summon",
+      "entryKey": "w-1|mid",
+      "variantId": "judgewitness-w-1-mid-v3",
+      "variantKey": "friend-01::judge_witness_summon::w-1|mid::judgewitness-w-1-mid-v3",
+      "entryFieldKey": null,
+      "scope": "variant",
+      "field": "behaviorHint",
+      "before": "김세라: 단톡방 분위기와 A의 최초 발언 경위를 아는 공통 친구 증인이다. hiddenAgenda=자신도 B를 비난하는 데 가담한 것이 부끄럽다.",
+      "after": "김세라: 단톡방 분위기와 송다은의 최초 발언 경위를 아는 공통 친구 증인이다. hiddenAgenda=자신도 최수민를 비난하는 데 가담한 것이 부끄럽다.",
+      "pattern": [
+        "P5_CodeNameResolve"
+      ],
+      "specialist": "E_SystemAlignment",
+      "matrixCell": "strict_always_patchable",
+      "stage": {
+        "lieState": null,
+        "lieStateNumber": null,
+        "lieBand": "mid",
+        "truthLevel": "partial",
+        "investigationStage": null
+      },
+      "rationale": "잔여 코드명 A/B를 사건 당사자 실명(송다은/최수민)으로 치환.",
+      "claudeAreaIssue": null,
+      "safety": {
+        "skippedChecked": true,
+        "archetypeVoiceChecked": true,
+        "truthThrottleChecked": true
+      }
+    },
+    {
+      "caseId": "friend-01",
+      "channel": "judge_witness_summon",
+      "entryKey": "w-1|mid",
+      "variantId": "judgewitness-w-1-mid-v4",
+      "variantKey": "friend-01::judge_witness_summon::w-1|mid::judgewitness-w-1-mid-v4",
+      "entryFieldKey": null,
+      "scope": "variant",
+      "field": "behaviorHint",
+      "before": "김세라: 단톡방 분위기와 A의 최초 발언 경위를 아는 공통 친구 증인이다. hiddenAgenda=자신도 B를 비난하는 데 가담한 것이 부끄럽다.",
+      "after": "김세라: 단톡방 분위기와 송다은의 최초 발언 경위를 아는 공통 친구 증인이다. hiddenAgenda=자신도 최수민를 비난하는 데 가담한 것이 부끄럽다.",
+      "pattern": [
+        "P5_CodeNameResolve"
+      ],
+      "specialist": "E_SystemAlignment",
+      "matrixCell": "strict_always_patchable",
+      "stage": {
+        "lieState": null,
+        "lieStateNumber": null,
+        "lieBand": "mid",
+        "truthLevel": "partial",
+        "investigationStage": null
+      },
+      "rationale": "잔여 코드명 A/B를 사건 당사자 실명(송다은/최수민)으로 치환.",
+      "claudeAreaIssue": null,
+      "safety": {
+        "skippedChecked": true,
+        "archetypeVoiceChecked": true,
+        "truthThrottleChecked": true
+      }
+    },
+    {
+      "caseId": "friend-01",
+      "channel": "judge_witness_summon",
+      "entryKey": "w-1|mid",
+      "variantId": "judgewitness-w-1-mid-v5",
+      "variantKey": "friend-01::judge_witness_summon::w-1|mid::judgewitness-w-1-mid-v5",
+      "entryFieldKey": null,
+      "scope": "variant",
+      "field": "behaviorHint",
+      "before": "김세라: 단톡방 분위기와 A의 최초 발언 경위를 아는 공통 친구 증인이다. hiddenAgenda=자신도 B를 비난하는 데 가담한 것이 부끄럽다.",
+      "after": "김세라: 단톡방 분위기와 송다은의 최초 발언 경위를 아는 공통 친구 증인이다. hiddenAgenda=자신도 최수민를 비난하는 데 가담한 것이 부끄럽다.",
+      "pattern": [
+        "P5_CodeNameResolve"
+      ],
+      "specialist": "E_SystemAlignment",
+      "matrixCell": "strict_always_patchable",
+      "stage": {
+        "lieState": null,
+        "lieStateNumber": null,
+        "lieBand": "mid",
+        "truthLevel": "partial",
+        "investigationStage": null
+      },
+      "rationale": "잔여 코드명 A/B를 사건 당사자 실명(송다은/최수민)으로 치환.",
+      "claudeAreaIssue": null,
+      "safety": {
+        "skippedChecked": true,
+        "archetypeVoiceChecked": true,
+        "truthThrottleChecked": true
+      }
+    },
+    {
+      "caseId": "friend-01",
+      "channel": "judge_witness_summon",
+      "entryKey": "w-1|hard",
+      "variantId": "judgewitness-w-1-hard-v1",
+      "variantKey": "friend-01::judge_witness_summon::w-1|hard::judgewitness-w-1-hard-v1",
+      "entryFieldKey": null,
+      "scope": "variant",
+      "field": "behaviorHint",
+      "before": "김세라: 단톡방 분위기와 A의 최초 발언 경위를 아는 공통 친구 증인이다. hiddenAgenda=자신도 B를 비난하는 데 가담한 것이 부끄럽다.",
+      "after": "김세라: 단톡방 분위기와 송다은의 최초 발언 경위를 아는 공통 친구 증인이다. hiddenAgenda=자신도 최수민를 비난하는 데 가담한 것이 부끄럽다.",
+      "pattern": [
+        "P5_CodeNameResolve"
+      ],
+      "specialist": "E_SystemAlignment",
+      "matrixCell": "strict_always_patchable",
+      "stage": {
+        "lieState": null,
+        "lieStateNumber": null,
+        "lieBand": "mid",
+        "truthLevel": "full",
+        "investigationStage": null
+      },
+      "rationale": "잔여 코드명 A/B를 사건 당사자 실명(송다은/최수민)으로 치환.",
+      "claudeAreaIssue": null,
+      "safety": {
+        "skippedChecked": true,
+        "archetypeVoiceChecked": true,
+        "truthThrottleChecked": true
+      }
+    },
+    {
+      "caseId": "friend-01",
+      "channel": "judge_witness_summon",
+      "entryKey": "w-1|hard",
+      "variantId": "judgewitness-w-1-hard-v2",
+      "variantKey": "friend-01::judge_witness_summon::w-1|hard::judgewitness-w-1-hard-v2",
+      "entryFieldKey": null,
+      "scope": "variant",
+      "field": "behaviorHint",
+      "before": "김세라: 단톡방 분위기와 A의 최초 발언 경위를 아는 공통 친구 증인이다. hiddenAgenda=자신도 B를 비난하는 데 가담한 것이 부끄럽다.",
+      "after": "김세라: 단톡방 분위기와 송다은의 최초 발언 경위를 아는 공통 친구 증인이다. hiddenAgenda=자신도 최수민를 비난하는 데 가담한 것이 부끄럽다.",
+      "pattern": [
+        "P5_CodeNameResolve"
+      ],
+      "specialist": "E_SystemAlignment",
+      "matrixCell": "strict_always_patchable",
+      "stage": {
+        "lieState": null,
+        "lieStateNumber": null,
+        "lieBand": "mid",
+        "truthLevel": "full",
+        "investigationStage": null
+      },
+      "rationale": "잔여 코드명 A/B를 사건 당사자 실명(송다은/최수민)으로 치환.",
+      "claudeAreaIssue": null,
+      "safety": {
+        "skippedChecked": true,
+        "archetypeVoiceChecked": true,
+        "truthThrottleChecked": true
+      }
+    },
+    {
+      "caseId": "friend-01",
+      "channel": "judge_witness_summon",
+      "entryKey": "w-1|hard",
+      "variantId": "judgewitness-w-1-hard-v3",
+      "variantKey": "friend-01::judge_witness_summon::w-1|hard::judgewitness-w-1-hard-v3",
+      "entryFieldKey": null,
+      "scope": "variant",
+      "field": "behaviorHint",
+      "before": "김세라: 단톡방 분위기와 A의 최초 발언 경위를 아는 공통 친구 증인이다. hiddenAgenda=자신도 B를 비난하는 데 가담한 것이 부끄럽다.",
+      "after": "김세라: 단톡방 분위기와 송다은의 최초 발언 경위를 아는 공통 친구 증인이다. hiddenAgenda=자신도 최수민를 비난하는 데 가담한 것이 부끄럽다.",
+      "pattern": [
+        "P5_CodeNameResolve"
+      ],
+      "specialist": "E_SystemAlignment",
+      "matrixCell": "strict_always_patchable",
+      "stage": {
+        "lieState": null,
+        "lieStateNumber": null,
+        "lieBand": "mid",
+        "truthLevel": "full",
+        "investigationStage": null
+      },
+      "rationale": "잔여 코드명 A/B를 사건 당사자 실명(송다은/최수민)으로 치환.",
+      "claudeAreaIssue": null,
+      "safety": {
+        "skippedChecked": true,
+        "archetypeVoiceChecked": true,
+        "truthThrottleChecked": true
+      }
+    },
+    {
+      "caseId": "friend-01",
+      "channel": "judge_witness_summon",
+      "entryKey": "w-1|hard",
+      "variantId": "judgewitness-w-1-hard-v4",
+      "variantKey": "friend-01::judge_witness_summon::w-1|hard::judgewitness-w-1-hard-v4",
+      "entryFieldKey": null,
+      "scope": "variant",
+      "field": "behaviorHint",
+      "before": "김세라: 단톡방 분위기와 A의 최초 발언 경위를 아는 공통 친구 증인이다. hiddenAgenda=자신도 B를 비난하는 데 가담한 것이 부끄럽다.",
+      "after": "김세라: 단톡방 분위기와 송다은의 최초 발언 경위를 아는 공통 친구 증인이다. hiddenAgenda=자신도 최수민를 비난하는 데 가담한 것이 부끄럽다.",
+      "pattern": [
+        "P5_CodeNameResolve"
+      ],
+      "specialist": "E_SystemAlignment",
+      "matrixCell": "strict_always_patchable",
+      "stage": {
+        "lieState": null,
+        "lieStateNumber": null,
+        "lieBand": "mid",
+        "truthLevel": "full",
+        "investigationStage": null
+      },
+      "rationale": "잔여 코드명 A/B를 사건 당사자 실명(송다은/최수민)으로 치환.",
+      "claudeAreaIssue": null,
+      "safety": {
+        "skippedChecked": true,
+        "archetypeVoiceChecked": true,
+        "truthThrottleChecked": true
+      }
+    },
+    {
+      "caseId": "friend-01",
+      "channel": "judge_witness_summon",
+      "entryKey": "w-1|hard",
+      "variantId": "judgewitness-w-1-hard-v5",
+      "variantKey": "friend-01::judge_witness_summon::w-1|hard::judgewitness-w-1-hard-v5",
+      "entryFieldKey": null,
+      "scope": "variant",
+      "field": "behaviorHint",
+      "before": "김세라: 단톡방 분위기와 A의 최초 발언 경위를 아는 공통 친구 증인이다. hiddenAgenda=자신도 B를 비난하는 데 가담한 것이 부끄럽다.",
+      "after": "김세라: 단톡방 분위기와 송다은의 최초 발언 경위를 아는 공통 친구 증인이다. hiddenAgenda=자신도 최수민를 비난하는 데 가담한 것이 부끄럽다.",
+      "pattern": [
+        "P5_CodeNameResolve"
+      ],
+      "specialist": "E_SystemAlignment",
+      "matrixCell": "strict_always_patchable",
+      "stage": {
+        "lieState": null,
+        "lieStateNumber": null,
+        "lieBand": "mid",
+        "truthLevel": "full",
+        "investigationStage": null
+      },
+      "rationale": "잔여 코드명 A/B를 사건 당사자 실명(송다은/최수민)으로 치환.",
+      "claudeAreaIssue": null,
+      "safety": {
+        "skippedChecked": true,
+        "archetypeVoiceChecked": true,
+        "truthThrottleChecked": true
+      }
+    },
+    {
+      "caseId": "family-01",
+      "channel": "aftermath",
+      "entryKey": "a_primary_fault",
+      "variantId": "a_primary_fault-v5",
+      "variantKey": "family-01::aftermath::a_primary_fault::a_primary_fault-v5",
+      "entryFieldKey": null,
+      "scope": "variant",
+      "field": "behaviorHint",
+      "before": "어머니 뜻을 두 형제가 어떻게 왜곡했는지 A 중심으로 정리한다.",
+      "after": "어머니 뜻을 두 형제가 어떻게 왜곡했는지 윤태성 중심으로 정리한다.",
+      "pattern": [
+        "P5_CodeNameResolve"
+      ],
+      "specialist": "E_SystemAlignment",
+      "matrixCell": "after_final_narrative_preserve",
+      "stage": {
+        "lieState": null,
+        "lieStateNumber": null,
+        "lieBand": null,
+        "truthLevel": null,
+        "investigationStage": null
+      },
+      "rationale": "잔여 코드명 A/B를 사건 당사자 실명(윤태성/윤정후)으로 치환.",
+      "claudeAreaIssue": null,
+      "safety": {
+        "skippedChecked": true,
+        "archetypeVoiceChecked": true,
+        "truthThrottleChecked": true
+      }
+    },
+    {
+      "caseId": "family-01",
+      "channel": "aftermath",
+      "entryKey": "b_primary_fault",
+      "variantId": "b_primary_fault-v3",
+      "variantKey": "family-01::aftermath::b_primary_fault::b_primary_fault-v3",
+      "entryFieldKey": null,
+      "scope": "variant",
+      "field": "behaviorHint",
+      "before": "선의와 위법의 충돌을 B 책임 우세로 정리한다.",
+      "after": "선의와 위법의 충돌을 윤정후 책임 우세로 정리한다.",
+      "pattern": [
+        "P5_CodeNameResolve"
+      ],
+      "specialist": "E_SystemAlignment",
+      "matrixCell": "after_final_narrative_preserve",
+      "stage": {
+        "lieState": null,
+        "lieStateNumber": null,
+        "lieBand": null,
+        "truthLevel": null,
+        "investigationStage": null
+      },
+      "rationale": "잔여 코드명 A/B를 사건 당사자 실명(윤태성/윤정후)으로 치환.",
+      "claudeAreaIssue": null,
+      "safety": {
+        "skippedChecked": true,
+        "archetypeVoiceChecked": true,
+        "truthThrottleChecked": true
+      }
+    },
+    {
+      "caseId": "friend-01",
+      "channel": "evidence_present",
+      "entryKey": "b|e-5|early|1",
+      "variantId": null,
+      "variantKey": null,
+      "entryFieldKey": "friend-01::evidence_present::b|e-5|early|1::entry.stageQuestion",
+      "scope": "entry",
+      "field": "stageQuestion",
+      "before": "A 아버지가 먼저 돈 얘기를 꺼냈습니까?",
+      "after": "송다은 아버지가 먼저 돈 얘기를 꺼냈습니까?",
+      "pattern": [
+        "P5_CodeNameResolve"
+      ],
+      "specialist": "E_SystemAlignment",
+      "matrixCell": "npc_early_strict_review",
+      "stage": {
+        "lieState": null,
+        "lieStateNumber": null,
+        "lieBand": "early",
+        "truthLevel": "hint",
+        "investigationStage": null
+      },
+      "rationale": "잔여 코드명 A/B를 사건 당사자 실명(송다은/최수민)으로 치환.",
+      "claudeAreaIssue": null,
+      "safety": {
+        "skippedChecked": true,
+        "archetypeVoiceChecked": true,
+        "truthThrottleChecked": true
+      }
+    },
+    {
+      "caseId": "friend-01",
+      "channel": "evidence_present",
+      "entryKey": "b|e-5|mid|1",
+      "variantId": null,
+      "variantKey": null,
+      "entryFieldKey": "friend-01::evidence_present::b|e-5|mid|1::entry.stageQuestion",
+      "scope": "entry",
+      "field": "stageQuestion",
+      "before": "A 아버지가 먼저 돈 얘기를 꺼냈습니까?",
+      "after": "송다은 아버지가 먼저 돈 얘기를 꺼냈습니까?",
+      "pattern": [
+        "P5_CodeNameResolve"
+      ],
+      "specialist": "E_SystemAlignment",
+      "matrixCell": "npc_partial_review",
+      "stage": {
+        "lieState": null,
+        "lieStateNumber": null,
+        "lieBand": "mid",
+        "truthLevel": "partial",
+        "investigationStage": null
+      },
+      "rationale": "잔여 코드명 A/B를 사건 당사자 실명(송다은/최수민)으로 치환.",
+      "claudeAreaIssue": null,
+      "safety": {
+        "skippedChecked": true,
+        "archetypeVoiceChecked": true,
+        "truthThrottleChecked": true
+      }
+    },
+    {
+      "caseId": "friend-01",
+      "channel": "evidence_present",
+      "entryKey": "b|e-5|late|1",
+      "variantId": null,
+      "variantKey": null,
+      "entryFieldKey": "friend-01::evidence_present::b|e-5|late|1::entry.stageQuestion",
+      "scope": "entry",
+      "field": "stageQuestion",
+      "before": "A 아버지가 먼저 돈 얘기를 꺼냈습니까?",
+      "after": "송다은 아버지가 먼저 돈 얘기를 꺼냈습니까?",
+      "pattern": [
+        "P5_CodeNameResolve"
+      ],
+      "specialist": "E_SystemAlignment",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": null,
+        "lieStateNumber": null,
+        "lieBand": "late",
+        "truthLevel": "full",
+        "investigationStage": null
+      },
+      "rationale": "잔여 코드명 A/B를 사건 당사자 실명(송다은/최수민)으로 치환.",
+      "claudeAreaIssue": null,
+      "safety": {
+        "skippedChecked": true,
+        "archetypeVoiceChecked": true,
+        "truthThrottleChecked": true
+      }
+    },
+    {
+      "caseId": "friend-01",
+      "channel": "evidence_present",
+      "entryKey": "a|e-5|early|1",
+      "variantId": null,
+      "variantKey": null,
+      "entryFieldKey": "friend-01::evidence_present::a|e-5|early|1::entry.stageQuestion",
+      "scope": "entry",
+      "field": "stageQuestion",
+      "before": "A 아버지가 먼저 돈 얘기를 꺼냈습니까?",
+      "after": "송다은 아버지가 먼저 돈 얘기를 꺼냈습니까?",
+      "pattern": [
+        "P5_CodeNameResolve"
+      ],
+      "specialist": "E_SystemAlignment",
+      "matrixCell": "npc_early_strict_review",
+      "stage": {
+        "lieState": null,
+        "lieStateNumber": null,
+        "lieBand": "early",
+        "truthLevel": "hint",
+        "investigationStage": null
+      },
+      "rationale": "잔여 코드명 A/B를 사건 당사자 실명(송다은/최수민)으로 치환.",
+      "claudeAreaIssue": null,
+      "safety": {
+        "skippedChecked": true,
+        "archetypeVoiceChecked": true,
+        "truthThrottleChecked": true
+      }
+    },
+    {
+      "caseId": "friend-01",
+      "channel": "evidence_present",
+      "entryKey": "a|e-5|mid|1",
+      "variantId": null,
+      "variantKey": null,
+      "entryFieldKey": "friend-01::evidence_present::a|e-5|mid|1::entry.stageQuestion",
+      "scope": "entry",
+      "field": "stageQuestion",
+      "before": "A 아버지가 먼저 돈 얘기를 꺼냈습니까?",
+      "after": "송다은 아버지가 먼저 돈 얘기를 꺼냈습니까?",
+      "pattern": [
+        "P5_CodeNameResolve"
+      ],
+      "specialist": "E_SystemAlignment",
+      "matrixCell": "npc_partial_review",
+      "stage": {
+        "lieState": null,
+        "lieStateNumber": null,
+        "lieBand": "mid",
+        "truthLevel": "partial",
+        "investigationStage": null
+      },
+      "rationale": "잔여 코드명 A/B를 사건 당사자 실명(송다은/최수민)으로 치환.",
+      "claudeAreaIssue": null,
+      "safety": {
+        "skippedChecked": true,
+        "archetypeVoiceChecked": true,
+        "truthThrottleChecked": true
+      }
+    },
+    {
+      "caseId": "friend-01",
+      "channel": "evidence_present",
+      "entryKey": "a|e-5|late|1",
+      "variantId": null,
+      "variantKey": null,
+      "entryFieldKey": "friend-01::evidence_present::a|e-5|late|1::entry.stageQuestion",
+      "scope": "entry",
+      "field": "stageQuestion",
+      "before": "A 아버지가 먼저 돈 얘기를 꺼냈습니까?",
+      "after": "송다은 아버지가 먼저 돈 얘기를 꺼냈습니까?",
+      "pattern": [
+        "P5_CodeNameResolve"
+      ],
+      "specialist": "E_SystemAlignment",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": null,
+        "lieStateNumber": null,
+        "lieBand": "late",
+        "truthLevel": "partial",
+        "investigationStage": null
+      },
+      "rationale": "잔여 코드명 A/B를 사건 당사자 실명(송다은/최수민)으로 치환.",
+      "claudeAreaIssue": null,
+      "safety": {
+        "skippedChecked": true,
+        "archetypeVoiceChecked": true,
+        "truthThrottleChecked": true
+      }
+    },
+    {
+      "caseId": "friend-01",
+      "channel": "judge_witness_summon",
+      "entryKey": "w-3|soft",
+      "variantId": "judgewitness-w-3-soft-v1",
+      "variantKey": "friend-01::judge_witness_summon::w-3|soft::judgewitness-w-3-soft-v1",
+      "entryFieldKey": null,
+      "scope": "variant",
+      "field": "behaviorHint",
+      "before": "오미경: 과거 A 아버지와 B 사이의 돈 거래를 목격한 제3자 증인이다. hiddenAgenda=없음.",
+      "after": "오미경: 과거 송다은 아버지와 최수민 사이의 돈 거래를 목격한 제3자 증인이다. hiddenAgenda=없음.",
+      "pattern": [
+        "P5_CodeNameResolve"
+      ],
+      "specialist": "E_SystemAlignment",
+      "matrixCell": "strict_always_patchable",
+      "stage": {
+        "lieState": null,
+        "lieStateNumber": null,
+        "lieBand": "mid",
+        "truthLevel": "hint",
+        "investigationStage": null
+      },
+      "rationale": "잔여 코드명 A/B를 사건 당사자 실명(송다은/최수민)으로 치환.",
+      "claudeAreaIssue": null,
+      "safety": {
+        "skippedChecked": true,
+        "archetypeVoiceChecked": true,
+        "truthThrottleChecked": true
+      }
+    },
+    {
+      "caseId": "friend-01",
+      "channel": "judge_witness_summon",
+      "entryKey": "w-3|soft",
+      "variantId": "judgewitness-w-3-soft-v2",
+      "variantKey": "friend-01::judge_witness_summon::w-3|soft::judgewitness-w-3-soft-v2",
+      "entryFieldKey": null,
+      "scope": "variant",
+      "field": "behaviorHint",
+      "before": "오미경: 과거 A 아버지와 B 사이의 돈 거래를 목격한 제3자 증인이다. hiddenAgenda=없음.",
+      "after": "오미경: 과거 송다은 아버지와 최수민 사이의 돈 거래를 목격한 제3자 증인이다. hiddenAgenda=없음.",
+      "pattern": [
+        "P5_CodeNameResolve"
+      ],
+      "specialist": "E_SystemAlignment",
+      "matrixCell": "strict_always_patchable",
+      "stage": {
+        "lieState": null,
+        "lieStateNumber": null,
+        "lieBand": "mid",
+        "truthLevel": "hint",
+        "investigationStage": null
+      },
+      "rationale": "잔여 코드명 A/B를 사건 당사자 실명(송다은/최수민)으로 치환.",
+      "claudeAreaIssue": null,
+      "safety": {
+        "skippedChecked": true,
+        "archetypeVoiceChecked": true,
+        "truthThrottleChecked": true
+      }
+    },
+    {
+      "caseId": "friend-01",
+      "channel": "judge_witness_summon",
+      "entryKey": "w-3|soft",
+      "variantId": "judgewitness-w-3-soft-v3",
+      "variantKey": "friend-01::judge_witness_summon::w-3|soft::judgewitness-w-3-soft-v3",
+      "entryFieldKey": null,
+      "scope": "variant",
+      "field": "behaviorHint",
+      "before": "오미경: 과거 A 아버지와 B 사이의 돈 거래를 목격한 제3자 증인이다. hiddenAgenda=없음.",
+      "after": "오미경: 과거 송다은 아버지와 최수민 사이의 돈 거래를 목격한 제3자 증인이다. hiddenAgenda=없음.",
+      "pattern": [
+        "P5_CodeNameResolve"
+      ],
+      "specialist": "E_SystemAlignment",
+      "matrixCell": "strict_always_patchable",
+      "stage": {
+        "lieState": null,
+        "lieStateNumber": null,
+        "lieBand": "mid",
+        "truthLevel": "hint",
+        "investigationStage": null
+      },
+      "rationale": "잔여 코드명 A/B를 사건 당사자 실명(송다은/최수민)으로 치환.",
+      "claudeAreaIssue": null,
+      "safety": {
+        "skippedChecked": true,
+        "archetypeVoiceChecked": true,
+        "truthThrottleChecked": true
+      }
+    },
+    {
+      "caseId": "friend-01",
+      "channel": "judge_witness_summon",
+      "entryKey": "w-3|soft",
+      "variantId": "judgewitness-w-3-soft-v4",
+      "variantKey": "friend-01::judge_witness_summon::w-3|soft::judgewitness-w-3-soft-v4",
+      "entryFieldKey": null,
+      "scope": "variant",
+      "field": "behaviorHint",
+      "before": "오미경: 과거 A 아버지와 B 사이의 돈 거래를 목격한 제3자 증인이다. hiddenAgenda=없음.",
+      "after": "오미경: 과거 송다은 아버지와 최수민 사이의 돈 거래를 목격한 제3자 증인이다. hiddenAgenda=없음.",
+      "pattern": [
+        "P5_CodeNameResolve"
+      ],
+      "specialist": "E_SystemAlignment",
+      "matrixCell": "strict_always_patchable",
+      "stage": {
+        "lieState": null,
+        "lieStateNumber": null,
+        "lieBand": "mid",
+        "truthLevel": "hint",
+        "investigationStage": null
+      },
+      "rationale": "잔여 코드명 A/B를 사건 당사자 실명(송다은/최수민)으로 치환.",
+      "claudeAreaIssue": null,
+      "safety": {
+        "skippedChecked": true,
+        "archetypeVoiceChecked": true,
+        "truthThrottleChecked": true
+      }
+    },
+    {
+      "caseId": "friend-01",
+      "channel": "judge_witness_summon",
+      "entryKey": "w-3|soft",
+      "variantId": "judgewitness-w-3-soft-v5",
+      "variantKey": "friend-01::judge_witness_summon::w-3|soft::judgewitness-w-3-soft-v5",
+      "entryFieldKey": null,
+      "scope": "variant",
+      "field": "behaviorHint",
+      "before": "오미경: 과거 A 아버지와 B 사이의 돈 거래를 목격한 제3자 증인이다. hiddenAgenda=없음.",
+      "after": "오미경: 과거 송다은 아버지와 최수민 사이의 돈 거래를 목격한 제3자 증인이다. hiddenAgenda=없음.",
+      "pattern": [
+        "P5_CodeNameResolve"
+      ],
+      "specialist": "E_SystemAlignment",
+      "matrixCell": "strict_always_patchable",
+      "stage": {
+        "lieState": null,
+        "lieStateNumber": null,
+        "lieBand": "mid",
+        "truthLevel": "hint",
+        "investigationStage": null
+      },
+      "rationale": "잔여 코드명 A/B를 사건 당사자 실명(송다은/최수민)으로 치환.",
+      "claudeAreaIssue": null,
+      "safety": {
+        "skippedChecked": true,
+        "archetypeVoiceChecked": true,
+        "truthThrottleChecked": true
+      }
+    },
+    {
+      "caseId": "friend-01",
+      "channel": "judge_witness_summon",
+      "entryKey": "w-3|mid",
+      "variantId": "judgewitness-w-3-mid-v1",
+      "variantKey": "friend-01::judge_witness_summon::w-3|mid::judgewitness-w-3-mid-v1",
+      "entryFieldKey": null,
+      "scope": "variant",
+      "field": "behaviorHint",
+      "before": "오미경: 과거 A 아버지와 B 사이의 돈 거래를 목격한 제3자 증인이다. hiddenAgenda=없음.",
+      "after": "오미경: 과거 송다은 아버지와 최수민 사이의 돈 거래를 목격한 제3자 증인이다. hiddenAgenda=없음.",
+      "pattern": [
+        "P5_CodeNameResolve"
+      ],
+      "specialist": "E_SystemAlignment",
+      "matrixCell": "strict_always_patchable",
+      "stage": {
+        "lieState": null,
+        "lieStateNumber": null,
+        "lieBand": "mid",
+        "truthLevel": "partial",
+        "investigationStage": null
+      },
+      "rationale": "잔여 코드명 A/B를 사건 당사자 실명(송다은/최수민)으로 치환.",
+      "claudeAreaIssue": null,
+      "safety": {
+        "skippedChecked": true,
+        "archetypeVoiceChecked": true,
+        "truthThrottleChecked": true
+      }
+    },
+    {
+      "caseId": "friend-01",
+      "channel": "judge_witness_summon",
+      "entryKey": "w-3|mid",
+      "variantId": "judgewitness-w-3-mid-v2",
+      "variantKey": "friend-01::judge_witness_summon::w-3|mid::judgewitness-w-3-mid-v2",
+      "entryFieldKey": null,
+      "scope": "variant",
+      "field": "behaviorHint",
+      "before": "오미경: 과거 A 아버지와 B 사이의 돈 거래를 목격한 제3자 증인이다. hiddenAgenda=없음.",
+      "after": "오미경: 과거 송다은 아버지와 최수민 사이의 돈 거래를 목격한 제3자 증인이다. hiddenAgenda=없음.",
+      "pattern": [
+        "P5_CodeNameResolve"
+      ],
+      "specialist": "E_SystemAlignment",
+      "matrixCell": "strict_always_patchable",
+      "stage": {
+        "lieState": null,
+        "lieStateNumber": null,
+        "lieBand": "mid",
+        "truthLevel": "partial",
+        "investigationStage": null
+      },
+      "rationale": "잔여 코드명 A/B를 사건 당사자 실명(송다은/최수민)으로 치환.",
+      "claudeAreaIssue": null,
+      "safety": {
+        "skippedChecked": true,
+        "archetypeVoiceChecked": true,
+        "truthThrottleChecked": true
+      }
+    },
+    {
+      "caseId": "friend-01",
+      "channel": "judge_witness_summon",
+      "entryKey": "w-3|mid",
+      "variantId": "judgewitness-w-3-mid-v3",
+      "variantKey": "friend-01::judge_witness_summon::w-3|mid::judgewitness-w-3-mid-v3",
+      "entryFieldKey": null,
+      "scope": "variant",
+      "field": "behaviorHint",
+      "before": "오미경: 과거 A 아버지와 B 사이의 돈 거래를 목격한 제3자 증인이다. hiddenAgenda=없음.",
+      "after": "오미경: 과거 송다은 아버지와 최수민 사이의 돈 거래를 목격한 제3자 증인이다. hiddenAgenda=없음.",
+      "pattern": [
+        "P5_CodeNameResolve"
+      ],
+      "specialist": "E_SystemAlignment",
+      "matrixCell": "strict_always_patchable",
+      "stage": {
+        "lieState": null,
+        "lieStateNumber": null,
+        "lieBand": "mid",
+        "truthLevel": "partial",
+        "investigationStage": null
+      },
+      "rationale": "잔여 코드명 A/B를 사건 당사자 실명(송다은/최수민)으로 치환.",
+      "claudeAreaIssue": null,
+      "safety": {
+        "skippedChecked": true,
+        "archetypeVoiceChecked": true,
+        "truthThrottleChecked": true
+      }
+    },
+    {
+      "caseId": "friend-01",
+      "channel": "judge_witness_summon",
+      "entryKey": "w-3|mid",
+      "variantId": "judgewitness-w-3-mid-v4",
+      "variantKey": "friend-01::judge_witness_summon::w-3|mid::judgewitness-w-3-mid-v4",
+      "entryFieldKey": null,
+      "scope": "variant",
+      "field": "behaviorHint",
+      "before": "오미경: 과거 A 아버지와 B 사이의 돈 거래를 목격한 제3자 증인이다. hiddenAgenda=없음.",
+      "after": "오미경: 과거 송다은 아버지와 최수민 사이의 돈 거래를 목격한 제3자 증인이다. hiddenAgenda=없음.",
+      "pattern": [
+        "P5_CodeNameResolve"
+      ],
+      "specialist": "E_SystemAlignment",
+      "matrixCell": "strict_always_patchable",
+      "stage": {
+        "lieState": null,
+        "lieStateNumber": null,
+        "lieBand": "mid",
+        "truthLevel": "partial",
+        "investigationStage": null
+      },
+      "rationale": "잔여 코드명 A/B를 사건 당사자 실명(송다은/최수민)으로 치환.",
+      "claudeAreaIssue": null,
+      "safety": {
+        "skippedChecked": true,
+        "archetypeVoiceChecked": true,
+        "truthThrottleChecked": true
+      }
+    },
+    {
+      "caseId": "friend-01",
+      "channel": "judge_witness_summon",
+      "entryKey": "w-3|mid",
+      "variantId": "judgewitness-w-3-mid-v5",
+      "variantKey": "friend-01::judge_witness_summon::w-3|mid::judgewitness-w-3-mid-v5",
+      "entryFieldKey": null,
+      "scope": "variant",
+      "field": "behaviorHint",
+      "before": "오미경: 과거 A 아버지와 B 사이의 돈 거래를 목격한 제3자 증인이다. hiddenAgenda=없음.",
+      "after": "오미경: 과거 송다은 아버지와 최수민 사이의 돈 거래를 목격한 제3자 증인이다. hiddenAgenda=없음.",
+      "pattern": [
+        "P5_CodeNameResolve"
+      ],
+      "specialist": "E_SystemAlignment",
+      "matrixCell": "strict_always_patchable",
+      "stage": {
+        "lieState": null,
+        "lieStateNumber": null,
+        "lieBand": "mid",
+        "truthLevel": "partial",
+        "investigationStage": null
+      },
+      "rationale": "잔여 코드명 A/B를 사건 당사자 실명(송다은/최수민)으로 치환.",
+      "claudeAreaIssue": null,
+      "safety": {
+        "skippedChecked": true,
+        "archetypeVoiceChecked": true,
+        "truthThrottleChecked": true
+      }
+    },
+    {
+      "caseId": "friend-01",
+      "channel": "judge_witness_summon",
+      "entryKey": "w-3|hard",
+      "variantId": "judgewitness-w-3-hard-v1",
+      "variantKey": "friend-01::judge_witness_summon::w-3|hard::judgewitness-w-3-hard-v1",
+      "entryFieldKey": null,
+      "scope": "variant",
+      "field": "behaviorHint",
+      "before": "오미경: 과거 A 아버지와 B 사이의 돈 거래를 목격한 제3자 증인이다. hiddenAgenda=없음.",
+      "after": "오미경: 과거 송다은 아버지와 최수민 사이의 돈 거래를 목격한 제3자 증인이다. hiddenAgenda=없음.",
+      "pattern": [
+        "P5_CodeNameResolve"
+      ],
+      "specialist": "E_SystemAlignment",
+      "matrixCell": "strict_always_patchable",
+      "stage": {
+        "lieState": null,
+        "lieStateNumber": null,
+        "lieBand": "mid",
+        "truthLevel": "full",
+        "investigationStage": null
+      },
+      "rationale": "잔여 코드명 A/B를 사건 당사자 실명(송다은/최수민)으로 치환.",
+      "claudeAreaIssue": null,
+      "safety": {
+        "skippedChecked": true,
+        "archetypeVoiceChecked": true,
+        "truthThrottleChecked": true
+      }
+    },
+    {
+      "caseId": "friend-01",
+      "channel": "judge_witness_summon",
+      "entryKey": "w-3|hard",
+      "variantId": "judgewitness-w-3-hard-v2",
+      "variantKey": "friend-01::judge_witness_summon::w-3|hard::judgewitness-w-3-hard-v2",
+      "entryFieldKey": null,
+      "scope": "variant",
+      "field": "behaviorHint",
+      "before": "오미경: 과거 A 아버지와 B 사이의 돈 거래를 목격한 제3자 증인이다. hiddenAgenda=없음.",
+      "after": "오미경: 과거 송다은 아버지와 최수민 사이의 돈 거래를 목격한 제3자 증인이다. hiddenAgenda=없음.",
+      "pattern": [
+        "P5_CodeNameResolve"
+      ],
+      "specialist": "E_SystemAlignment",
+      "matrixCell": "strict_always_patchable",
+      "stage": {
+        "lieState": null,
+        "lieStateNumber": null,
+        "lieBand": "mid",
+        "truthLevel": "full",
+        "investigationStage": null
+      },
+      "rationale": "잔여 코드명 A/B를 사건 당사자 실명(송다은/최수민)으로 치환.",
+      "claudeAreaIssue": null,
+      "safety": {
+        "skippedChecked": true,
+        "archetypeVoiceChecked": true,
+        "truthThrottleChecked": true
+      }
+    },
+    {
+      "caseId": "friend-01",
+      "channel": "judge_witness_summon",
+      "entryKey": "w-3|hard",
+      "variantId": "judgewitness-w-3-hard-v3",
+      "variantKey": "friend-01::judge_witness_summon::w-3|hard::judgewitness-w-3-hard-v3",
+      "entryFieldKey": null,
+      "scope": "variant",
+      "field": "behaviorHint",
+      "before": "오미경: 과거 A 아버지와 B 사이의 돈 거래를 목격한 제3자 증인이다. hiddenAgenda=없음.",
+      "after": "오미경: 과거 송다은 아버지와 최수민 사이의 돈 거래를 목격한 제3자 증인이다. hiddenAgenda=없음.",
+      "pattern": [
+        "P5_CodeNameResolve"
+      ],
+      "specialist": "E_SystemAlignment",
+      "matrixCell": "strict_always_patchable",
+      "stage": {
+        "lieState": null,
+        "lieStateNumber": null,
+        "lieBand": "mid",
+        "truthLevel": "full",
+        "investigationStage": null
+      },
+      "rationale": "잔여 코드명 A/B를 사건 당사자 실명(송다은/최수민)으로 치환.",
+      "claudeAreaIssue": null,
+      "safety": {
+        "skippedChecked": true,
+        "archetypeVoiceChecked": true,
+        "truthThrottleChecked": true
+      }
+    },
+    {
+      "caseId": "friend-01",
+      "channel": "judge_witness_summon",
+      "entryKey": "w-3|hard",
+      "variantId": "judgewitness-w-3-hard-v4",
+      "variantKey": "friend-01::judge_witness_summon::w-3|hard::judgewitness-w-3-hard-v4",
+      "entryFieldKey": null,
+      "scope": "variant",
+      "field": "behaviorHint",
+      "before": "오미경: 과거 A 아버지와 B 사이의 돈 거래를 목격한 제3자 증인이다. hiddenAgenda=없음.",
+      "after": "오미경: 과거 송다은 아버지와 최수민 사이의 돈 거래를 목격한 제3자 증인이다. hiddenAgenda=없음.",
+      "pattern": [
+        "P5_CodeNameResolve"
+      ],
+      "specialist": "E_SystemAlignment",
+      "matrixCell": "strict_always_patchable",
+      "stage": {
+        "lieState": null,
+        "lieStateNumber": null,
+        "lieBand": "mid",
+        "truthLevel": "full",
+        "investigationStage": null
+      },
+      "rationale": "잔여 코드명 A/B를 사건 당사자 실명(송다은/최수민)으로 치환.",
+      "claudeAreaIssue": null,
+      "safety": {
+        "skippedChecked": true,
+        "archetypeVoiceChecked": true,
+        "truthThrottleChecked": true
+      }
+    },
+    {
+      "caseId": "friend-01",
+      "channel": "judge_witness_summon",
+      "entryKey": "w-3|hard",
+      "variantId": "judgewitness-w-3-hard-v5",
+      "variantKey": "friend-01::judge_witness_summon::w-3|hard::judgewitness-w-3-hard-v5",
+      "entryFieldKey": null,
+      "scope": "variant",
+      "field": "behaviorHint",
+      "before": "오미경: 과거 A 아버지와 B 사이의 돈 거래를 목격한 제3자 증인이다. hiddenAgenda=없음.",
+      "after": "오미경: 과거 송다은 아버지와 최수민 사이의 돈 거래를 목격한 제3자 증인이다. hiddenAgenda=없음.",
+      "pattern": [
+        "P5_CodeNameResolve"
+      ],
+      "specialist": "E_SystemAlignment",
+      "matrixCell": "strict_always_patchable",
+      "stage": {
+        "lieState": null,
+        "lieStateNumber": null,
+        "lieBand": "mid",
+        "truthLevel": "full",
+        "investigationStage": null
+      },
+      "rationale": "잔여 코드명 A/B를 사건 당사자 실명(송다은/최수민)으로 치환.",
+      "claudeAreaIssue": null,
+      "safety": {
+        "skippedChecked": true,
+        "archetypeVoiceChecked": true,
+        "truthThrottleChecked": true
+      }
+    },
+    {
+      "caseId": "spouse-01",
+      "channel": "mediation",
+      "entryKey": "conditional|b",
+      "variantId": "mediation-conditional-b-v1",
+      "variantKey": "spouse-01::mediation::conditional|b::mediation-conditional-b-v1",
+      "entryFieldKey": null,
+      "scope": "variant",
+      "field": "text",
+      "before": "조건부로 가는 건 괜찮습니다. 대신 다른 큰돈 전달과 공동 적금 큰돈 해지를 각각 따져야 합니다.",
+      "after": "조건부로 가는 건 괜찮습니다. 대신 다른 큰돈 전달과 공동 적금 해지를 각각 따져야 합니다.",
+      "pattern": [
+        "P3_JudgeAngle"
+      ],
+      "specialist": "B_RegisterAngle",
+      "matrixCell": "strict_always_patchable",
+      "stage": {
+        "lieState": null,
+        "lieStateNumber": null,
+        "lieBand": null,
+        "truthLevel": "partial",
+        "investigationStage": null
+      },
+      "rationale": "금액 surface 치환 뒤 중복된 '큰돈 해지'를 쟁점 표현으로 정리.",
+      "claudeAreaIssue": null,
+      "safety": {
+        "skippedChecked": true,
+        "archetypeVoiceChecked": true,
+        "truthThrottleChecked": true
+      }
+    },
+    {
+      "caseId": "spouse-01",
+      "channel": "judge_evidence_combo",
+      "entryKey": "dc-5.a.q1|mid",
+      "variantId": "judgecombo-dc-5-a-q1-mid-v5",
+      "variantKey": "spouse-01::judge_evidence_combo::dc-5.a.q1|mid::judgecombo-dc-5-a-q1-mid-v5",
+      "entryFieldKey": null,
+      "scope": "variant",
+      "field": "text",
+      "before": "박지연 씨, 출금 내역과 해지 서류가 두 큰돈 손실의 양쪽 흐름을 보여줍니다. 본인의 큰돈 해지와 송금을 말씀해 주십시오.",
+      "after": "박지연 씨, 출금 내역과 해지 서류가 두 큰돈 손실의 양쪽 흐름을 보여줍니다. 본인의 공동 적금 해지와 송금을 말씀해 주십시오.",
+      "pattern": [
+        "P3_JudgeAngle"
+      ],
+      "specialist": "B_RegisterAngle",
+      "matrixCell": "strict_always_patchable",
+      "stage": {
+        "lieState": null,
+        "lieStateNumber": null,
+        "lieBand": "mid",
+        "truthLevel": "partial",
+        "investigationStage": null
+      },
+      "rationale": "재판관 질문에서 '큰돈 해지'라는 부자연 결합을 사건 쟁점인 공동 적금 해지로 명료화.",
+      "claudeAreaIssue": null,
+      "safety": {
+        "skippedChecked": true,
+        "archetypeVoiceChecked": true,
+        "truthThrottleChecked": true
+      }
+    },
+    {
+      "caseId": "family-01",
+      "channel": "system_message",
+      "entryKey": "dossier|challenge_cleared",
+      "variantId": "sys-dossier-challenge_cleared-v5",
+      "variantKey": "family-01::system_message::dossier|challenge_cleared::sys-dossier-challenge_cleared-v5",
+      "entryFieldKey": null,
+      "scope": "variant",
+      "field": "text",
+      "before": "막혔던 질문이 열린다. 이제 말의 안방향으로 들어간다.",
+      "after": "막혔던 질문이 열린다. 이제 말의 안쪽으로 들어간다.",
+      "pattern": [
+        "P6_SystemTrigger"
+      ],
+      "specialist": "E_SystemAlignment",
+      "matrixCell": "strict_always_patchable",
+      "stage": {
+        "lieState": null,
+        "lieStateNumber": null,
+        "lieBand": null,
+        "truthLevel": "full",
+        "investigationStage": null
+      },
+      "rationale": "surface 치환 과정에서 생긴 부자연 결합 '안방향'을 원래 의미의 공간 은유로 복구.",
+      "claudeAreaIssue": null,
+      "safety": {
+        "skippedChecked": true,
+        "archetypeVoiceChecked": true,
+        "truthThrottleChecked": true
+      }
+    },
+    {
+      "caseId": "family-01",
+      "channel": "evidence_discovery",
+      "entryKey": "b|e-5|probe",
+      "variantId": "discover-b-e-5-probe-v1",
+      "variantKey": "family-01::evidence_discovery::b|e-5|probe::discover-b-e-5-probe-v1",
+      "entryFieldKey": null,
+      "scope": "variant",
+      "field": "text",
+      "before": "윤정후 씨, 원본을 보면 윤정후 씨 방향으로 훨씬 크게 적혀 있습니다. 이 문안을 처음 확인했을 때 그대로 두기 어렵다고 느끼신 이유가 있었습니까.",
+      "after": "윤정후 씨, 원본을 보면 윤정후 씨 몫이 훨씬 크게 적혀 있습니다. 이 문안을 처음 확인했을 때 그대로 두기 어렵다고 느끼신 이유가 있었습니까.",
+      "pattern": [
+        "P3_JudgeAngle"
+      ],
+      "specialist": "B_RegisterAngle",
+      "matrixCell": "strict_always_patchable",
+      "stage": {
+        "lieState": null,
+        "lieStateNumber": null,
+        "lieBand": null,
+        "truthLevel": "none",
+        "investigationStage": null
+      },
+      "rationale": "비율 쟁점의 의미를 '방향'이 아니라 '몫'으로 명료화.",
+      "claudeAreaIssue": null,
+      "safety": {
+        "skippedChecked": true,
+        "archetypeVoiceChecked": true,
+        "truthThrottleChecked": true
+      }
+    },
+    {
+      "caseId": "family-01",
+      "channel": "judge_question",
+      "entryKey": "d-3|fact_pursuit|1",
+      "variantId": "judgeq-d-3-fact_pursuit-1-v2",
+      "variantKey": "family-01::judge_question::d-3|fact_pursuit|1::judgeq-d-3-fact_pursuit-1-v2",
+      "entryFieldKey": null,
+      "scope": "variant",
+      "field": "text",
+      "before": "윤태성 씨, 공장 위기 때 어머니 입장에서 들어온 돈의 출처를 당시 어떻게 이해하고 계셨습니까.",
+      "after": "윤태성 씨, 공장 위기 때 어머니 명의로 들어온 돈의 출처를 당시 어떻게 이해하고 계셨습니까.",
+      "pattern": [
+        "P3_JudgeAngle",
+        "P5_CodeNameResolve"
+      ],
+      "specialist": "B_RegisterAngle",
+      "matrixCell": "strict_always_patchable",
+      "stage": {
+        "lieState": null,
+        "lieStateNumber": null,
+        "lieBand": null,
+        "truthLevel": "none",
+        "investigationStage": null
+      },
+      "rationale": "부자연한 surface 표현 '어머니 입장에서 들어온 돈'을 자금 출처 질문에 맞는 '어머니 명의'로 보정.",
+      "claudeAreaIssue": null,
+      "safety": {
+        "skippedChecked": true,
+        "archetypeVoiceChecked": true,
+        "truthThrottleChecked": true
+      }
+    },
+    {
+      "caseId": "friend-01",
+      "channel": "evidence_present",
+      "entryKey": "b|e-5|early|3",
+      "variantId": null,
+      "variantKey": null,
+      "entryFieldKey": "friend-01::evidence_present::b|e-5|early|3::entry.stageQuestion",
+      "scope": "entry",
+      "field": "stageQuestion",
+      "before": "최수민가 왜 예비신랑에게 경고했는지 따져 주십시오.",
+      "after": "최수민이 왜 예비신랑에게 경고했는지 따져 주십시오.",
+      "pattern": [
+        "P5_CodeNameResolve"
+      ],
+      "specialist": "E_SystemAlignment",
+      "matrixCell": "npc_early_strict_review",
+      "stage": {
+        "lieState": null,
+        "lieStateNumber": null,
+        "lieBand": "early",
+        "truthLevel": "hint",
+        "investigationStage": null
+      },
+      "rationale": "코드명 치환 후 조사 오류 '최수민가'를 주격 조사에 맞게 보정.",
+      "claudeAreaIssue": null,
+      "safety": {
+        "skippedChecked": true,
+        "archetypeVoiceChecked": true,
+        "truthThrottleChecked": true
+      }
+    },
+    {
+      "caseId": "friend-01",
+      "channel": "evidence_present",
+      "entryKey": "b|e-5|mid|3",
+      "variantId": null,
+      "variantKey": null,
+      "entryFieldKey": "friend-01::evidence_present::b|e-5|mid|3::entry.stageQuestion",
+      "scope": "entry",
+      "field": "stageQuestion",
+      "before": "최수민가 왜 예비신랑에게 경고했는지 따져 주십시오.",
+      "after": "최수민이 왜 예비신랑에게 경고했는지 따져 주십시오.",
+      "pattern": [
+        "P5_CodeNameResolve"
+      ],
+      "specialist": "E_SystemAlignment",
+      "matrixCell": "npc_partial_review",
+      "stage": {
+        "lieState": null,
+        "lieStateNumber": null,
+        "lieBand": "mid",
+        "truthLevel": "partial",
+        "investigationStage": null
+      },
+      "rationale": "코드명 치환 후 조사 오류 '최수민가'를 주격 조사에 맞게 보정.",
+      "claudeAreaIssue": null,
+      "safety": {
+        "skippedChecked": true,
+        "archetypeVoiceChecked": true,
+        "truthThrottleChecked": true
+      }
+    },
+    {
+      "caseId": "friend-01",
+      "channel": "evidence_present",
+      "entryKey": "b|e-5|late|3",
+      "variantId": null,
+      "variantKey": null,
+      "entryFieldKey": "friend-01::evidence_present::b|e-5|late|3::entry.stageQuestion",
+      "scope": "entry",
+      "field": "stageQuestion",
+      "before": "최수민가 왜 예비신랑에게 경고했는지 따져 주십시오.",
+      "after": "최수민이 왜 예비신랑에게 경고했는지 따져 주십시오.",
+      "pattern": [
+        "P5_CodeNameResolve"
+      ],
+      "specialist": "E_SystemAlignment",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": null,
+        "lieStateNumber": null,
+        "lieBand": "late",
+        "truthLevel": "full",
+        "investigationStage": null
+      },
+      "rationale": "코드명 치환 후 조사 오류 '최수민가'를 주격 조사에 맞게 보정.",
+      "claudeAreaIssue": null,
+      "safety": {
+        "skippedChecked": true,
+        "archetypeVoiceChecked": true,
+        "truthThrottleChecked": true
+      }
+    },
+    {
+      "caseId": "friend-01",
+      "channel": "evidence_present",
+      "entryKey": "a|e-5|early|3",
+      "variantId": null,
+      "variantKey": null,
+      "entryFieldKey": "friend-01::evidence_present::a|e-5|early|3::entry.stageQuestion",
+      "scope": "entry",
+      "field": "stageQuestion",
+      "before": "최수민가 왜 예비신랑에게 경고했는지 따져 주십시오.",
+      "after": "최수민이 왜 예비신랑에게 경고했는지 따져 주십시오.",
+      "pattern": [
+        "P5_CodeNameResolve"
+      ],
+      "specialist": "E_SystemAlignment",
+      "matrixCell": "npc_early_strict_review",
+      "stage": {
+        "lieState": null,
+        "lieStateNumber": null,
+        "lieBand": "early",
+        "truthLevel": "hint",
+        "investigationStage": null
+      },
+      "rationale": "코드명 치환 후 조사 오류 '최수민가'를 주격 조사에 맞게 보정.",
+      "claudeAreaIssue": null,
+      "safety": {
+        "skippedChecked": true,
+        "archetypeVoiceChecked": true,
+        "truthThrottleChecked": true
+      }
+    },
+    {
+      "caseId": "friend-01",
+      "channel": "evidence_present",
+      "entryKey": "a|e-5|mid|3",
+      "variantId": null,
+      "variantKey": null,
+      "entryFieldKey": "friend-01::evidence_present::a|e-5|mid|3::entry.stageQuestion",
+      "scope": "entry",
+      "field": "stageQuestion",
+      "before": "최수민가 왜 예비신랑에게 경고했는지 따져 주십시오.",
+      "after": "최수민이 왜 예비신랑에게 경고했는지 따져 주십시오.",
+      "pattern": [
+        "P5_CodeNameResolve"
+      ],
+      "specialist": "E_SystemAlignment",
+      "matrixCell": "npc_partial_review",
+      "stage": {
+        "lieState": null,
+        "lieStateNumber": null,
+        "lieBand": "mid",
+        "truthLevel": "partial",
+        "investigationStage": null
+      },
+      "rationale": "코드명 치환 후 조사 오류 '최수민가'를 주격 조사에 맞게 보정.",
+      "claudeAreaIssue": null,
+      "safety": {
+        "skippedChecked": true,
+        "archetypeVoiceChecked": true,
+        "truthThrottleChecked": true
+      }
+    },
+    {
+      "caseId": "friend-01",
+      "channel": "evidence_present",
+      "entryKey": "a|e-5|late|3",
+      "variantId": null,
+      "variantKey": null,
+      "entryFieldKey": "friend-01::evidence_present::a|e-5|late|3::entry.stageQuestion",
+      "scope": "entry",
+      "field": "stageQuestion",
+      "before": "최수민가 왜 예비신랑에게 경고했는지 따져 주십시오.",
+      "after": "최수민이 왜 예비신랑에게 경고했는지 따져 주십시오.",
+      "pattern": [
+        "P5_CodeNameResolve"
+      ],
+      "specialist": "E_SystemAlignment",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": null,
+        "lieStateNumber": null,
+        "lieBand": "late",
+        "truthLevel": "partial",
+        "investigationStage": null
+      },
+      "rationale": "코드명 치환 후 조사 오류 '최수민가'를 주격 조사에 맞게 보정.",
+      "claudeAreaIssue": null,
+      "safety": {
+        "skippedChecked": true,
+        "archetypeVoiceChecked": true,
+        "truthThrottleChecked": true
+      }
+    }
+  ]
+}

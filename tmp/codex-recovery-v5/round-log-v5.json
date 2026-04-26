@@ -1,0 +1,31 @@
+{
+  "generatedAt": "2026-04-26T17:03:57.912Z",
+  "rounds": [
+    {
+      "round": 1,
+      "applied": 385,
+      "broadPassed": true
+    },
+    {
+      "round": 2,
+      "applied": 0,
+      "broadPassed": true
+    },
+    {
+      "round": 3,
+      "applied": 0,
+      "broadPassed": true
+    },
+    {
+      "round": 4,
+      "applied": 0,
+      "broadPassed": true
+    },
+    {
+      "round": 5,
+      "applied": 0,
+      "broadPassed": true
+    }
+  ],
+  "terminationReason": "v5 broad detection matrix converged after round 1 under v4 preservation priority."
+}

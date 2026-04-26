@@ -1,0 +1,777 @@
+{
+  "spouse-01": {
+    "caseId": "spouse-01",
+    "title": "매일 아내 몰래 오피스텔에 머물다 오는 남편",
+    "anchorTruth": "박지연은 남편이 딴살림을 차렸다고 확신한 뒤 위임장을 조작하여 공동 적금 3,000만원을 해지했고, 투자 사기로 전액 손실했다. 이준호는 외도가 아니라 개인회생 중인 친형의 조카(중2)를 돌보고 있었고, 개인 비자금에서 2,000만원을 현금으로 형에게 전달했다.",
+    "resolutionDilemma": "개인회생 중인 형과 조카를 지키려다 개인 비자금 2,000만원을 현금으로 전달한 남편과, 배신당했다고 확신하고 위임장을 조작하여 공동 적금 3,000만원을 해지한 뒤 투자 사기로 날린 아내 중 누가 더 무거운 책임을 져야 하는가. 숨김은 남편이 먼저, 계좌 감시는 아내가 먼저, 범죄 행위는 아내가 저질렀다.",
+    "relationshipType": "spouse",
+    "parties": {
+      "a": {
+        "name": "박지연",
+        "archetype": "victim_cosplay",
+        "callTerms": {
+          "toPartner": "자기",
+          "toJudge": "제 남편",
+          "angry": "이준호!"
+        },
+        "verbalTells": [
+          {
+            "type": "victim_frame",
+            "trigger": "cornered",
+            "pattern": "자신도 이미 배신당한 사람처럼 먼저 위치를 잡는다."
+          },
+          {
+            "type": "helplessness",
+            "trigger": "shame",
+            "pattern": "그때는 다른 선택이 없었다는 말로 계산된 선택의 각도를 흐린다."
+          },
+          {
+            "type": "soft_confession",
+            "trigger": "shame",
+            "pattern": "작은 인정부터 꺼내고 가장 수치스러운 사실은 마지막에 말한다."
+          }
+        ]
+      },
+      "b": {
+        "name": "이준호",
+        "archetype": "avoidant",
+        "callTerms": {
+          "toPartner": "자기",
+          "toJudge": "제 아내",
+          "angry": "박지연!"
+        },
+        "verbalTells": [
+          {
+            "type": "answer_delay",
+            "trigger": "avoiding",
+            "pattern": "질문을 바로 받지 않고 한 박자 늦게 받아 핵심어를 피한다."
+          },
+          {
+            "type": "partial_scope",
+            "trigger": "cornered",
+            "pattern": "큰 사실은 인정하되 가장 아픈 이유는 마지막까지 자른다."
+          },
+          {
+            "type": "minimize_harm",
+            "trigger": "defensive",
+            "pattern": "선의였다는 말로 절차 위반의 무게를 먼저 낮추려 한다."
+          }
+        ]
+      }
+    },
+    "evidence": [
+      {
+        "id": "e-1",
+        "surfaceName": "영수증 묶음 5장",
+        "name": "영수증 묶음 (5장)"
+      },
+      {
+        "id": "e-2",
+        "surfaceName": "블랙박스 GPS 기록",
+        "name": "블랙박스 GPS / 네비 즐겨찾기"
+      },
+      {
+        "id": "e-3",
+        "surfaceName": "통화기록",
+        "name": "통화기록"
+      },
+      {
+        "id": "e-4",
+        "surfaceName": "발신자 미상 문자",
+        "name": "형 문자 스레드"
+      },
+      {
+        "id": "e-5",
+        "surfaceName": "개인 계좌 출금 내역",
+        "name": "이준호의 개인 계좌 출금 내역"
+      },
+      {
+        "id": "e-6",
+        "surfaceName": "투자방 카톡 기록",
+        "name": "투자방 카톡 + 송금 기록"
+      },
+      {
+        "id": "e-7",
+        "surfaceName": "공동 적금 해지 서류",
+        "name": "공동 적금 해지 서류"
+      }
+    ],
+    "disputes": [
+      {
+        "id": "d-1",
+        "name": "오피스텔 방문과 새벽 전화",
+        "truthDescription": "오피스텔 방문은 친형 오피스텔에서 조카(중2)를 돌보는 것이었다. 새벽 전화는 형과의 긴급 연락.",
+        "judgmentStatement": "오피스텔 방문의 실체는 외도가 아니라 가족 돌봄이었다."
+      },
+      {
+        "id": "d-2",
+        "name": "개인 비자금 2,000만원 출금",
+        "truthDescription": "이준호는 본인 명의 개인 계좌의 비자금에서 2,000만원을 현금으로 출금하여 형에게 전달했다. 형이 개인회생 중이라 계좌 입금이 불가능했다. 공동 적금과는 무관한 개인 자금이다.",
+        "judgmentStatement": "개인 비자금 2,000만원 현금 전달은 남편 책임이 더 크다."
+      },
+      {
+        "id": "h-d3",
+        "name": "공동 적금 3,000만원 해지 (위임장 조작)",
+        "truthDescription": "박지연은 이준호 명의 위임장을 조작하여 공동 적금 3,000만원을 해지했다. 이는 범죄 행위이며, 해지한 돈을 투자방에 전액 송금했다가 사기로 손실했다.",
+        "judgmentStatement": "공동 적금 3,000만원 위임장 조작 해지는 아내 책임이 더 크다."
+      },
+      {
+        "id": "h-d4",
+        "name": "은폐와 선제행동의 순서",
+        "truthDescription": "숨김은 B가 먼저(개인 비자금 2천만+형 상황 은폐), 계좌 감시는 A가 먼저(신혼 초), 돈 실행은 동시기(B 4개월 전 2천만 현금 출금, A 6주 전 공동 적금 3천만 위임장 조작 해지), 범죄 행위는 A(위임장 조작).",
+        "judgmentStatement": "숨김의 선후와 범죄 행위의 유무는 서로 다른 차원이다."
+      }
+    ],
+    "dossierCards": [
+      {
+        "id": "dc-1",
+        "name": "오피스텔의 사람들",
+        "description": "외도 서사를 가족 돌봄 서사로 뒤집는 첫 반전 카드다.",
+        "evidenceIds": [
+          "e-2",
+          "e-4"
+        ],
+        "relatedDisputes": [
+          "d-1",
+          "h-d4"
+        ],
+        "questions": [
+          {
+            "targetParty": "b",
+            "id": "dc-1.b.q1",
+            "text": "그 오피스텔에 있던 사람이 외도 상대가 아니라 형과 조카라면, 왜 지금까지 한마디도 못 했습니까?",
+            "requiredLieState": "S2"
+          }
+        ]
+      },
+      {
+        "id": "dc-2",
+        "name": "시댁 얘기만 나오면 싸움",
+        "description": "왜 숨겼는가를 외도 은폐가 아니라 시댁 불화 공포로 정리하는 카드다.",
+        "evidenceIds": [
+          "e-3",
+          "e-4"
+        ],
+        "relatedDisputes": [
+          "d-1"
+        ],
+        "questions": [
+          {
+            "targetParty": "b",
+            "id": "dc-2.b.q1",
+            "text": "숨긴 이유가 외도가 아니라면, 당신은 아내보다 시댁과의 싸움을 더 두려워한 겁니까?",
+            "requiredLieState": "S3"
+          }
+        ]
+      },
+      {
+        "id": "dc-3",
+        "name": "3,000만 원의 권한",
+        "description": "공동 적금 3,000만 원을 혼자 형에게 보낼 권리가 있었는지 정면으로 묻는 카드다.",
+        "evidenceIds": [
+          "e-4",
+          "e-5"
+        ],
+        "relatedDisputes": [
+          "d-2"
+        ],
+        "questions": [
+          {
+            "targetParty": "b",
+            "id": "dc-3.b.q1",
+            "text": "공동 적금 3,000만 원을 형에게 줄 권리가 정말 당신 혼자에게 있었습니까?",
+            "requiredLieState": "S3"
+          },
+          {
+            "targetParty": "b",
+            "id": "dc-3.b.q2",
+            "text": "가족을 돕는 일이었다 해도, 배우자 동의 없이 공동 적금을 깬 책임은 인정합니까?",
+            "requiredLieState": "S4"
+          }
+        ]
+      },
+      {
+        "id": "dc-4",
+        "name": "2,000만 원의 수치",
+        "description": "A가 남편의 진실을 확인하기도 전에 2,000만 원을 옮긴 이유를 정면으로 묻는 카드다.",
+        "evidenceIds": [
+          "e-6"
+        ],
+        "relatedDisputes": [
+          "h-d3"
+        ],
+        "questions": [
+          {
+            "targetParty": "a",
+            "id": "dc-4.a.q1",
+            "text": "남편의 진실을 확인하기도 전에 2,000만 원을 먼저 움직인 이유가, 결국 이혼 대비였습니까?",
+            "requiredLieState": "S2"
+          },
+          {
+            "targetParty": "a",
+            "id": "dc-4.a.q2",
+            "text": "그 2,000만 원을 보내고 사기당한 사실까지 숨긴 건 결국 수치심 때문이었습니까?",
+            "requiredLieState": "S3"
+          }
+        ]
+      },
+      {
+        "id": "dc-5",
+        "name": "5,000만 원의 순서",
+        "description": "누가 먼저 숨겼는지와 누가 먼저 돈을 움직였는지를 같은 질문 안에서 분리해 묻는 최종 카드다.",
+        "evidenceIds": [
+          "e-5",
+          "e-6",
+          "e-7"
+        ],
+        "relatedDisputes": [
+          "h-d4"
+        ],
+        "questions": [
+          {
+            "targetParty": "b",
+            "id": "dc-5.b.q1",
+            "text": "숨김은 누가 먼저 시작했고, 돈은 누가 먼저 움직였습니까?",
+            "requiredLieState": "S2"
+          },
+          {
+            "targetParty": "a",
+            "id": "dc-5.a.q1",
+            "text": "남편이 먼저 숨겼다고 해도, 실제 비밀 송금 실행은 당신이 먼저였다는 점까지 인정합니까?",
+            "requiredLieState": "S2"
+          }
+        ]
+      }
+    ]
+  },
+  "family-01": {
+    "caseId": "family-01",
+    "title": "치매 어머니의 유서",
+    "anchorTruth": "유서를 직접 손댄 건 분명히 B다. 하지만 그 조작은 자기 몫을 줄인 조작이고, 20년간 형과 어머니를 몰래 떠받쳐 온 것도 B다.",
+    "resolutionDilemma": "유서를 직접 손댄 행위와 그 동기가 충돌한다. 치매 어머니의 의사를 바꾼 위법성과 형의 삶을 지키려 한 선의 사이에서, 형의 출생 비밀까지 고려해야 하는 판결의 무게.",
+    "relationshipType": "family",
+    "parties": {
+      "a": {
+        "name": "윤태성",
+        "archetype": "confrontational",
+        "callTerms": {
+          "toPartner": "정후야",
+          "toJudge": "제 동생",
+          "angry": "윤정후!"
+        },
+        "verbalTells": [
+          {
+            "type": "rank_pull",
+            "trigger": "cornered",
+            "pattern": "불리해지면 '형인 내가 모시고 살았다'며 서열을 내세워 논점을 돌린다."
+          },
+          {
+            "type": "character_attack",
+            "trigger": "lying",
+            "pattern": "동생의 성격이나 과거를 꺼내며 상대 신뢰도를 먼저 깎으려 한다."
+          },
+          {
+            "type": "volume_escalation",
+            "trigger": "emotional",
+            "pattern": "감정이 올라오면 목소리부터 커지며 상대가 말을 잇지 못하게 만든다."
+          }
+        ]
+      },
+      "b": {
+        "name": "윤정후",
+        "archetype": "affect_flattening",
+        "callTerms": {
+          "toPartner": "형",
+          "toJudge": "저희 형",
+          "angry": "윤태성!"
+        },
+        "verbalTells": [
+          {
+            "type": "flat_deflection",
+            "trigger": "cornered",
+            "pattern": "핵심 질문에 '그건 제가 말할 수 있는 부분이 아닙니다' 식으로 감정 없이 차단한다."
+          },
+          {
+            "type": "silence_shield",
+            "trigger": "lying",
+            "pattern": "거짓보다는 침묵을 택하며, 말하지 않는 것으로 진실을 숨긴다."
+          },
+          {
+            "type": "delayed_crack",
+            "trigger": "emotional",
+            "pattern": "오래 참다가 한 번에 무너지듯 말하며, 그때 가장 깊은 진실이 나온다."
+          }
+        ]
+      }
+    },
+    "evidence": [
+      {
+        "id": "e-1",
+        "surfaceName": "60:40 유서 사본",
+        "name": "60:40 유서 사본"
+      },
+      {
+        "id": "e-2",
+        "surfaceName": "요양원 방문기록",
+        "name": "요양원 방문기록"
+      },
+      {
+        "id": "e-3",
+        "surfaceName": "전 요양보호사 음성증언",
+        "name": "전 요양보호사 음성증언"
+      },
+      {
+        "id": "e-4",
+        "surfaceName": "공증사무실 스캔 보관본",
+        "name": "공증사무실 스캔 보관본"
+      },
+      {
+        "id": "e-5",
+        "surfaceName": "어머니 서랍 원본 유서",
+        "name": "어머니 서랍에서 나온 원본 유서"
+      },
+      {
+        "id": "e-6",
+        "surfaceName": "20년 송금 내역",
+        "name": "20년 송금 내역 묶음"
+      },
+      {
+        "id": "e-7",
+        "surfaceName": "어머니 일기장",
+        "name": "어머니 일기장 사진"
+      }
+    ],
+    "disputes": [
+      {
+        "id": "d-1",
+        "name": "유서 작성과 판단 능력",
+        "truthDescription": "윤정후는 어머니 말년에 자주 방문하며 유서 내용을 논의했다. 요양보호사 교체와 공증 시점이 겹치지만, 어머니 의사를 완전히 무시한 것은 아니었다.",
+        "judgmentStatement": "어머니의 판단 능력은 완전히 상실되지 않았으나, B의 개입은 적법성 문제를 남긴다."
+      },
+      {
+        "id": "d-2",
+        "name": "60:40 유서의 진짜 의도",
+        "truthDescription": "윤정후는 어머니가 90:10으로 남긴 원본 유서를 60:40으로 조작했다. 자기 몫을 줄인 조작이었지만 위조는 위조다.",
+        "judgmentStatement": "유서를 조작한 건 명백한 위법이지만, 자기 몫을 줄인 방향이라는 점이 동기 판단을 바꾼다."
+      },
+      {
+        "id": "d-3",
+        "name": "20년 송금의 실체",
+        "truthDescription": "윤정후는 20년간 매달 어머니에게 생활비를 보냈고, 형의 공장 부도 위기 때 큰돈도 대신 갚았다. 어머니 돈처럼 보였던 것의 상당수가 사실 윤정후의 돈이었다.",
+        "judgmentStatement": "어머니 돈으로 알았던 지원의 실체는 B의 돈이었으며, A는 이 사실을 전혀 몰랐다."
+      },
+      {
+        "id": "d-4",
+        "name": "출생 비밀과 침묵의 이유",
+        "truthDescription": "윤태성은 어머니와 아버지가 완전히 같은 사람의 자식이 아니다. 윤정후는 일기장에서 이 사실을 알게 됐고, 형이 알면 삶의 기반이 무너질까 봐 유서를 90에서 60으로 줄여 법정까지 안 가게 하려 했다.",
+        "judgmentStatement": "유서 조작의 진짜 이유는 형의 출생 비밀이 법정에서 드러나는 것을 막기 위한 것이었다."
+      },
+      {
+        "id": "d-5",
+        "name": "어머니 이용의 진짜 주체",
+        "truthDescription": "A는 B가 어머니를 이용했다고 단정했지만, 진실은 둘 다 어머니를 있는 그대로 두지 못했다. A는 유산을 당연시했고, B는 어머니 뜻을 고쳐 형을 보호하려 했다.",
+        "judgmentStatement": "둘 다 어머니의 뜻을 자기 방식으로 해석했고, 어머니를 있는 그대로 두지 못했다."
+      }
+    ],
+    "dossierCards": [
+      {
+        "id": "dc-1",
+        "name": "말년의 종이",
+        "description": "말년의 방문 패턴과 읽어주던 종이가 치매 이용인지, 불안한 보호인지 가르는 첫 카드다.",
+        "evidenceIds": [
+          "e-1",
+          "e-2",
+          "e-3"
+        ],
+        "relatedDisputes": [
+          "d-1"
+        ],
+        "questions": [
+          {
+            "targetParty": "b",
+            "id": "dc-1.b.q1",
+            "text": "윤정후 씨, 공증 직전 방문이 급증했고 어머니에게 종이를 읽어드린 정황까지 있는데, 왜 형이 오기 전에 끝내려 하셨습니까?",
+            "requiredLieState": "S2"
+          },
+          {
+            "targetParty": "b",
+            "id": "dc-1.b.q2",
+            "text": "어머니 판단이 완전히 없었다고까지는 보기 어렵다면, 어디까지는 돕고 어디서부터는 대신 결정한 것입니까?",
+            "requiredLieState": "S3"
+          }
+        ]
+      },
+      {
+        "id": "dc-2",
+        "name": "줄인 유서",
+        "description": "유서 조작의 존재를 넘어서, 왜 자기 몫을 줄이는 방향으로 손댔는지를 찌르는 반전 카드다.",
+        "evidenceIds": [
+          "e-4",
+          "e-5"
+        ],
+        "relatedDisputes": [
+          "d-2"
+        ],
+        "questions": [
+          {
+            "targetParty": "b",
+            "id": "dc-2.b.q1",
+            "text": "윤정후 씨, 같은 날 90대10 원본과 60대40 변경본이 모두 남아 있는데, 왜 자기 몫을 줄인 서류를 다시 제출하셨습니까?",
+            "requiredLieState": "S2"
+          },
+          {
+            "targetParty": "b",
+            "id": "dc-2.b.q2",
+            "text": "위조라는 책임을 감수하면서까지 60대40으로 바꾼 이유가 돈이 아니었다면, 무엇을 막으려 한 겁니까?",
+            "requiredLieState": "S3"
+          }
+        ]
+      },
+      {
+        "id": "dc-3",
+        "name": "20년의 돈",
+        "description": "어머니 돈처럼 보였던 흐름을 윤정후 개인의 희생으로 뒤집는 지원 실체 카드다.",
+        "evidenceIds": [
+          "e-5",
+          "e-6"
+        ],
+        "relatedDisputes": [
+          "d-3"
+        ],
+        "questions": [
+          {
+            "targetParty": "b",
+            "id": "dc-3.b.q1",
+            "text": "윤정후 씨, 20년 생활비와 형 공장 자금 상당수가 실제로는 당신 돈이었다는 점, 이제도 부인하십니까?",
+            "requiredLieState": "S2"
+          },
+          {
+            "targetParty": "b",
+            "id": "dc-3.b.q2",
+            "text": "형이 평생 어머니가 도와준 줄 믿게 둔 이유가, 결국 형 자존심을 먼저 지키려는 것이었습니까?",
+            "requiredLieState": "S3"
+          }
+        ]
+      },
+      {
+        "id": "dc-4",
+        "name": "감춘 이유",
+        "description": "유서 조작과 20년 지원의 끝에 있던 출생 비밀의 이유를 직접 묻는 심층 카드다.",
+        "evidenceIds": [
+          "e-6",
+          "e-7"
+        ],
+        "relatedDisputes": [
+          "d-4"
+        ],
+        "questions": [
+          {
+            "targetParty": "b",
+            "id": "dc-4.b.q1",
+            "text": "윤정후 씨, 형의 출생 비밀을 언제 알게 되었고, 그 뒤 왜 혼자 감당하려 하셨습니까?",
+            "requiredLieState": "S2"
+          },
+          {
+            "targetParty": "b",
+            "id": "dc-4.b.q2",
+            "text": "형이 그 사실을 알면 삶의 기반이 무너질까 두려워, 결국 법정까지 가지 않게 하려 했다는 말입니까?",
+            "requiredLieState": "S3"
+          }
+        ]
+      },
+      {
+        "id": "dc-5",
+        "name": "어머니의 뜻",
+        "description": "장남 당연시와 보호 명분을 한 자리에 올려, 누가 정말 어머니를 이용했는지 정리하는 최종 카드다.",
+        "evidenceIds": [
+          "e-1",
+          "e-6",
+          "e-7"
+        ],
+        "relatedDisputes": [
+          "d-5"
+        ],
+        "questions": [
+          {
+            "targetParty": "a",
+            "id": "dc-5.a.q1",
+            "text": "윤태성 씨, 동생 돈이었다는 사실을 몰랐다 해도 장남이니 더 받아야 한다고 여긴 마음까지는 부인하지 않으십니까?",
+            "requiredLieState": "S2"
+          },
+          {
+            "targetParty": "b",
+            "id": "dc-5.b.q1",
+            "text": "윤정후 씨, 형을 지키려 했다는 이유가 있더라도 어머니가 남긴 90대10 뜻을 당신이 고쳐 쓴 책임까지 없어지는 건 아니지 않습니까?",
+            "requiredLieState": "S2"
+          },
+          {
+            "targetParty": "b",
+            "id": "dc-5.b.q2",
+            "text": "결국 두 형제 모두 어머니를 있는 그대로 두지 못했다는 말, 이제는 인정하십니까?",
+            "requiredLieState": "S3"
+          }
+        ]
+      }
+    ]
+  },
+  "friend-01": {
+    "caseId": "friend-01",
+    "title": "손절한 절친",
+    "anchorTruth": "B는 예비신랑을 꼬시려 한 게 아니라 경고하려 했고, 그보다 오래전에는 A 아버지에게 당한 일을 말하지 못한 채 스스로 악역이 되었다.",
+    "resolutionDilemma": "B의 침묵이 매번 보호에서 비롯됐다 해도, 결과적으로 더 큰 오해와 낙인을 만들었다. A의 성급한 단정은 잔인했지만 아버지의 진실을 모른 채 반응한 것이기도 하다.",
+    "relationshipType": "friend",
+    "parties": {
+      "a": {
+        "name": "송다은",
+        "archetype": "premature_summary",
+        "callTerms": {
+          "toPartner": "수민아",
+          "toJudge": "제 전 친구",
+          "angry": "최수민!"
+        },
+        "verbalTells": [
+          {
+            "type": "premature_conclusion",
+            "trigger": "cornered",
+            "pattern": "상대 말이 끝나기 전에 '그러니까 결국~'으로 결론을 먼저 내려버린다."
+          },
+          {
+            "type": "pattern_citation",
+            "trigger": "defensive",
+            "pattern": "'예전에도 그랬잖아'라며 과거 사례를 현재 판단의 근거로 가져온다."
+          },
+          {
+            "type": "scope_narrowing",
+            "trigger": "shame",
+            "pattern": "불리한 지점이 나오면 '그건 지금 얘기가 아니다'라며 범위를 좁힌다."
+          }
+        ]
+      },
+      "b": {
+        "name": "최수민",
+        "archetype": "affect_flattening",
+        "callTerms": {
+          "toPartner": "다은아",
+          "toJudge": "다은이",
+          "angry": "송다은!"
+        },
+        "verbalTells": [
+          {
+            "type": "flat_delivery",
+            "trigger": "emotional",
+            "pattern": "가장 아픈 이야기를 할 때 오히려 톤이 더 평평해지고 감정이 사라진다."
+          },
+          {
+            "type": "self_blame_shield",
+            "trigger": "cornered",
+            "pattern": "'제가 그냥 참았어야 했는데'라며 책임을 먼저 가져가 상대의 추궁을 무력화한다."
+          },
+          {
+            "type": "third_party_protection",
+            "trigger": "avoiding",
+            "pattern": "핵심 인물의 행동을 직접 말하지 않고 '그쪽 상황이 있었다'로 에둘러 말한다."
+          }
+        ]
+      }
+    },
+    "evidence": [
+      {
+        "id": "e-1",
+        "surfaceName": "연락 기록",
+        "name": "B→예비신랑 연락 기록"
+      },
+      {
+        "id": "e-2",
+        "surfaceName": "단톡방 캡처",
+        "name": "공통 친구 단톡방 캡처"
+      },
+      {
+        "id": "e-3",
+        "surfaceName": "과거 카톡",
+        "name": "과거 손절 직전 카톡"
+      },
+      {
+        "id": "e-4",
+        "surfaceName": "예비신랑 메시지",
+        "name": "예비신랑의 선넘는 메시지와 B의 거절 답장"
+      },
+      {
+        "id": "e-5",
+        "surfaceName": "송다은 씨 아버지 문자",
+        "name": "송다은 아버지와 예비신랑의 문자"
+      },
+      {
+        "id": "e-6",
+        "surfaceName": "과거 송금 기록",
+        "name": "과거 송금 영수증 + 문자"
+      },
+      {
+        "id": "e-7",
+        "surfaceName": "대조표",
+        "name": "과거·현재 대조표"
+      }
+    ],
+    "disputes": [
+      {
+        "id": "d-1",
+        "name": "9일간의 연락 의도",
+        "truthDescription": "최수민은 예비신랑에게 9일간 연락했다. 집착이 아니라 송다은 아버지의 돈 접근 패턴을 경고하려 했지만, 직접 말할 길이 없었다.",
+        "judgmentStatement": "B의 연락은 집착이 아니라 경고였으나 방식의 적절성은 별도 판단이 필요하다."
+      },
+      {
+        "id": "d-2",
+        "name": "예비신랑의 선넘는 접근",
+        "truthDescription": "예비신랑이 먼저 B에게 선넘는 메시지를 보냈고, B는 거절했다. B가 이후 연락한 건 이 상황의 연장선이었다.",
+        "judgmentStatement": "예비신랑이 먼저 선을 넘었고 B는 거절한 쪽이었다."
+      },
+      {
+        "id": "d-3",
+        "name": "아버지의 돈 접근 패턴",
+        "truthDescription": "A 아버지가 예비신랑에게 돈 얘기를 꺼내고 있었고, B는 과거에 같은 패턴을 당한 적이 있어 예비신랑에게 경고하려 했다.",
+        "judgmentStatement": "A 아버지의 돈 접근 패턴은 과거와 현재가 같았다."
+      },
+      {
+        "id": "d-4",
+        "name": "과거 손절과 아버지의 사기",
+        "truthDescription": "과거 손절의 진짜 원인은 A 아버지가 B에게 투자 명목으로 돈을 받아간 사기였다. B는 A에게 말하면 아버지가 사기꾼이라는 뜻이 되므로 차마 말하지 못하고 악역을 자처했다.",
+        "judgmentStatement": "과거 손절의 진짜 원인은 A 아버지의 사기였고 B의 침묵은 보호에서 비롯됐다."
+      },
+      {
+        "id": "d-5",
+        "name": "단톡방 매도와 명예훼손",
+        "truthDescription": "A가 확인 없이 단톡방에서 B를 매도했고, B는 또 악역을 자처하는 구조가 반복됐다. 두 사람 모두 확인 전에 단정한 책임이 있다.",
+        "judgmentStatement": "먼저 단정하고 공개한 쪽의 책임이 더 크지만 침묵으로 반복을 허용한 쪽도 책임이 있다."
+      }
+    ],
+    "dossierCards": [
+      {
+        "id": "dc-1",
+        "name": "집착의 겉면",
+        "description": "반복 연락의 표면을 집착 프레임에서 경고 맥락으로 돌려세우는 첫 카드다.",
+        "evidenceIds": [
+          "e-1",
+          "e-2"
+        ],
+        "relatedDisputes": [
+          "d-1",
+          "d-5"
+        ],
+        "questions": [
+          {
+            "targetParty": "a",
+            "id": "dc-1.a.q1",
+            "text": "연락 횟수만 보고 수민 씨를 집착하는 사람으로 먼저 못 박은 것 아닙니까?",
+            "requiredLieState": "S1"
+          },
+          {
+            "targetParty": "b",
+            "id": "dc-1.b.q1",
+            "text": "그 연락이 감정 때문이 아니라면, 예비신랑에게 꼭 전하려던 말이 무엇이었습니까?",
+            "requiredLieState": "S2"
+          }
+        ]
+      },
+      {
+        "id": "dc-2",
+        "name": "먼저 넘은 선",
+        "description": "예비신랑이 먼저 경계를 넘었다는 반전을 열어 최수민의 연락 해석을 뒤집는 카드다.",
+        "evidenceIds": [
+          "e-1",
+          "e-4"
+        ],
+        "relatedDisputes": [
+          "d-1",
+          "d-2"
+        ],
+        "questions": [
+          {
+            "targetParty": "b",
+            "id": "dc-2.b.q1",
+            "text": "예비신랑이 먼저 선을 넘었다면, 왜 다은이에게 바로 이 대화를 보여주지 않았습니까?",
+            "requiredLieState": "S2"
+          }
+        ]
+      },
+      {
+        "id": "dc-3",
+        "name": "같은 부탁",
+        "description": "현재 문자와 과거 송금 흐름을 붙여 아버지의 반복 패턴을 확정하는 카드다.",
+        "evidenceIds": [
+          "e-5",
+          "e-6"
+        ],
+        "relatedDisputes": [
+          "d-3",
+          "d-4"
+        ],
+        "questions": [
+          {
+            "targetParty": "b",
+            "id": "dc-3.b.q1",
+            "text": "같은 돈 부탁을 다시 봤다면, 왜 이번에도 혼자 막는 쪽을 택했습니까?",
+            "requiredLieState": "S2"
+          },
+          {
+            "targetParty": "a",
+            "id": "dc-3.a.q1",
+            "text": "아버지의 문구가 과거 수민 씨에게 보낸 말과 겹친다면, 여전히 오해라고만 보십니까?",
+            "requiredLieState": "S1"
+          }
+        ]
+      },
+      {
+        "id": "dc-4",
+        "name": "손절의 값",
+        "description": "과거 손절이 변심이 아니라 사기 피해와 침묵의 결과였음을 드러내는 카드다.",
+        "evidenceIds": [
+          "e-3",
+          "e-6"
+        ],
+        "relatedDisputes": [
+          "d-4"
+        ],
+        "questions": [
+          {
+            "targetParty": "b",
+            "id": "dc-4.b.q1",
+            "text": "다은이 아버지가 당신 돈을 가져간 뒤에도, 왜 그 사실만은 다은이에게 끝내 말하지 못했습니까?",
+            "requiredLieState": "S2"
+          },
+          {
+            "targetParty": "a",
+            "id": "dc-4.a.q1",
+            "text": "그때 수민 씨를 변심으로 단정하기 전에, 왜 끝까지 무슨 돈 문제인지 확인하지 않았습니까?",
+            "requiredLieState": "S1"
+          }
+        ]
+      },
+      {
+        "id": "dc-5",
+        "name": "낙인의 순서",
+        "description": "누가 먼저 공개적으로 최수민을 낙인찍었는지와 왜 같은 구조가 반복됐는지를 묻는 최종 카드다.",
+        "evidenceIds": [
+          "e-2",
+          "e-7"
+        ],
+        "relatedDisputes": [
+          "d-1",
+          "d-5"
+        ],
+        "questions": [
+          {
+            "targetParty": "a",
+            "id": "dc-5.a.q1",
+            "text": "수민 씨에게 직접 묻기도 전에 단톡방에 먼저 올린 이유가, 사실 확인보다 분노를 먼저 퍼뜨리고 싶어서였던 것 아닙니까?",
+            "requiredLieState": "S2"
+          },
+          {
+            "targetParty": "b",
+            "id": "dc-5.b.q1",
+            "text": "이번에도 스스로 악역이 되면 또 같은 낙인이 반복된다는 걸 알면서, 왜 끝까지 혼자 버텼습니까?",
+            "requiredLieState": "S3"
+          }
+        ]
+      }
+    ]
+  }
+}

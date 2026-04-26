@@ -499,7 +499,7 @@
             },
             {
               "id": "a-d-1-S0-fact-pursuit-v9",
-              "text": "저는 그 장면을 이렇게 봤습니다. 제가 모르는 대화가 계속 생긴 점을 좋게 볼 수 없었습니다.",
+              "text": "저는 그 일을 이렇게 봤습니다. 제가 모르는 대화가 계속 생긴 점을 좋게 볼 수 없었습니다.",
               "behaviorHint": "결론을 먼저 세우고 기록보다 인상을 앞세운다. 숨을 고르며 입술을 누른다.",
               "tags": [
                 "channel:interrogation",
@@ -1732,7 +1732,7 @@
             },
             {
               "id": "a-d-1-S1-fact-pursuit-v9",
-              "text": "저는 그 장면을 이렇게 봤습니다. 제가 본 숫자는 마음을 가라앉히기 어려웠습니다.",
+              "text": "저는 그 일을 이렇게 봤습니다. 제가 본 숫자는 마음을 가라앉히기 어려웠습니다.",
               "behaviorHint": "일부 사실을 인정하면서도 자기 해석의 틀을 놓지 않는다. 숨을 고르며 입술을 누른다.",
               "tags": [
                 "channel:interrogation",
@@ -2965,7 +2965,7 @@
             },
             {
               "id": "a-d-1-S2-fact-pursuit-v9",
-              "text": "저는 그 장면을 이렇게 봤습니다. 좋은 뜻일 수 있어도 결혼 앞에서는 위협처럼 느꼈습니다.",
+              "text": "저는 그 일을 이렇게 봤습니다. 좋은 뜻일 수 있어도 결혼 앞에서는 위협처럼 느꼈습니다.",
               "behaviorHint": "드러난 조각을 붙든 채 방어와 인정 사이에서 흔들린다. 숨을 고르며 입술을 누른다.",
               "tags": [
                 "channel:interrogation",
@@ -4198,7 +4198,7 @@
             },
             {
               "id": "a-d-1-S3-fact-pursuit-v9",
-              "text": "저는 그 장면을 이렇게 봤습니다. 호감 문구가 없다는 건 보지만 안심되지는 않았습니다.",
+              "text": "저는 그 일을 이렇게 봤습니다. 호감 문구가 없다는 건 보지만 안심되지는 않았습니다.",
               "behaviorHint": "구체 기록 앞에서도 책임의 방향을 상대에게 돌리려 한다. 숨을 고르며 입술을 누른다.",
               "tags": [
                 "channel:interrogation",
@@ -5431,7 +5431,7 @@
             },
             {
               "id": "a-d-1-S4-fact-pursuit-v9",
-              "text": "저는 그 장면을 이렇게 봤습니다. 예비신랑과 아버지 사이 기록이 나오자 제 판단이 흔들렸습니다.",
+              "text": "저는 그 일을 이렇게 봤습니다. 예비신랑과 아버지 사이 기록이 나오자 제 판단이 흔들렸습니다.",
               "behaviorHint": "감정이 먼저 솟구치지만 잘못의 일부를 더는 피하지 못한다. 숨을 고르며 입술을 누른다.",
               "tags": [
                 "channel:interrogation",
@@ -6664,7 +6664,7 @@
             },
             {
               "id": "a-d-1-S5-fact-pursuit-v9",
-              "text": "저는 그 장면을 이렇게 봤습니다. 3월 1일부터 9일까지의 기록을 대조하지 않고 단톡방에 올렸습니다.",
+              "text": "저는 그 일을 이렇게 봤습니다. 3월 1일부터 9일까지의 기록을 대조하지 않고 단톡방에 올렸습니다.",
               "behaviorHint": "프레임을 거두고 자기 단정의 책임을 정면으로 받아들인다. 숨을 고르며 입술을 누른다.",
               "tags": [
                 "channel:interrogation",
@@ -13198,7 +13198,7 @@
             },
             {
               "id": "b-d-1-S4-motive-search-v8",
-              "text": "말을 줄인 이유가 있습니다. 결혼 앞에서 그 흐름을 모른 척할 수 없었습니다.",
+              "text": "말을 줄인 이유가 있습니다. 결혼 앞에서 그렇게 이어진 정황을 모른 척할 수 없었습니다.",
               "behaviorHint": "가장 아픈 말을 평평하게 꺼내며 침묵이 흔들린다. 손끝으로 옷자락을 누른다.",
               "tags": [
                 "channel:interrogation",
@@ -15295,7 +15295,7 @@
             },
             {
               "id": "a-d-2-S0-fact-pursuit-v9",
-              "text": "저는 그 장면을 이렇게 봤습니다. 그 대화가 있었다는 주장 자체가 아직 믿기 어렵습니다.",
+              "text": "저는 그 일을 이렇게 봤습니다. 그 대화가 있었다는 주장 자체가 아직 믿기 어렵습니다.",
               "behaviorHint": "결론을 먼저 세우고 기록보다 인상을 앞세운다. 숨을 고르며 입술을 누른다.",
               "tags": [
                 "channel:interrogation",
@@ -16528,7 +16528,7 @@
             },
             {
               "id": "a-d-2-S1-fact-pursuit-v9",
-              "text": "저는 그 장면을 이렇게 봤습니다. 일부 캡처만으로 판단을 유보한 부분은 있습니다.",
+              "text": "저는 그 일을 이렇게 봤습니다. 일부 캡처만으로 판단을 유보한 부분은 있습니다.",
               "behaviorHint": "일부 사실을 인정하면서도 자기 해석의 틀을 놓지 않는다. 숨을 고르며 입술을 누른다.",
               "tags": [
                 "channel:interrogation",
@@ -17761,7 +17761,7 @@
             },
             {
               "id": "a-d-2-S2-fact-pursuit-v9",
-              "text": "저는 그 장면을 이렇게 봤습니다. 그 대화가 사적인 느낌을 줬다는 점은 부정하기 어렵습니다.",
+              "text": "저는 그 일을 이렇게 봤습니다. 그 대화가 사적인 느낌을 줬다는 점은 부정하기 어렵습니다.",
               "behaviorHint": "드러난 조각을 붙든 채 방어와 인정 사이에서 흔들린다. 숨을 고르며 입술을 누른다.",
               "tags": [
                 "channel:interrogation",
@@ -18457,7 +18457,7 @@
             },
             {
               "id": "a-d-2-S2-empathy-approach-v6",
-              "text": "그때 제 감정은 이랬습니다. 그 장면을 보면 누구라도 흔들렸을 겁니다.",
+              "text": "그때 제 감정은 이랬습니다. 그 일을 보면 누구라도 흔들렸을 겁니다.",
               "behaviorHint": "드러난 조각을 붙든 채 방어와 인정 사이에서 흔들린다. 턱을 세우지만 손끝이 굳는다.",
               "tags": [
                 "channel:interrogation",
@@ -18994,7 +18994,7 @@
             },
             {
               "id": "a-d-2-S3-fact-pursuit-v9",
-              "text": "저는 그 장면을 이렇게 봤습니다. 그 사람이 그런 말을 보냈다는 사실을 이제야 보고 있습니다.",
+              "text": "저는 그 일을 이렇게 봤습니다. 그 사람이 그런 말을 보냈다는 사실을 이제야 보고 있습니다.",
               "behaviorHint": "구체 기록 앞에서도 책임의 방향을 상대에게 돌리려 한다. 숨을 고르며 입술을 누른다.",
               "tags": [
                 "channel:interrogation",
@@ -20227,7 +20227,7 @@
             },
             {
               "id": "a-d-2-S4-fact-pursuit-v9",
-              "text": "저는 그 장면을 이렇게 봤습니다. 거절 답장이 있었다는 점도 확인했습니다.",
+              "text": "저는 그 일을 이렇게 봤습니다. 거절 답장이 있었다는 점도 확인했습니다.",
               "behaviorHint": "감정이 먼저 솟구치지만 잘못의 일부를 더는 피하지 못한다. 숨을 고르며 입술을 누른다.",
               "tags": [
                 "channel:interrogation",
@@ -21460,7 +21460,7 @@
             },
             {
               "id": "a-d-2-S5-fact-pursuit-v9",
-              "text": "저는 그 장면을 이렇게 봤습니다. 수민이가 유혹한 사람이라는 제 결론은 틀렸습니다.",
+              "text": "저는 그 일을 이렇게 봤습니다. 수민이가 유혹한 사람이라는 제 결론은 틀렸습니다.",
               "behaviorHint": "프레임을 거두고 자기 단정의 책임을 정면으로 받아들인다. 숨을 고르며 입술을 누른다.",
               "tags": [
                 "channel:interrogation",
@@ -30091,7 +30091,7 @@
             },
             {
               "id": "a-d-3-S0-fact-pursuit-v9",
-              "text": "저는 그 장면을 이렇게 봤습니다. 저는 이 일을 제 예비신랑 연락 문제로 보고 있습니다.",
+              "text": "저는 그 일을 이렇게 봤습니다. 저는 이 일을 제 예비신랑 연락 문제로 보고 있습니다.",
               "behaviorHint": "결론을 먼저 세우고 기록보다 인상을 앞세운다. 숨을 고르며 입술을 누른다.",
               "tags": [
                 "channel:interrogation",
@@ -31324,7 +31324,7 @@
             },
             {
               "id": "a-d-3-S1-fact-pursuit-v9",
-              "text": "저는 그 장면을 이렇게 봤습니다. 시점이 겹쳤다고 해서 바로 연결할 수는 없습니다.",
+              "text": "저는 그 일을 이렇게 봤습니다. 시점이 겹쳤다고 해서 바로 연결할 수는 없습니다.",
               "behaviorHint": "일부 사실을 인정하면서도 자기 해석의 틀을 놓지 않는다. 숨을 고르며 입술을 누른다.",
               "tags": [
                 "channel:interrogation",
@@ -32557,7 +32557,7 @@
             },
             {
               "id": "a-d-3-S2-fact-pursuit-v9",
-              "text": "저는 그 장면을 이렇게 봤습니다. 구체 내용을 더 봐야 한다는 생각은 했습니다.",
+              "text": "저는 그 일을 이렇게 봤습니다. 구체 내용을 더 봐야 한다는 생각은 했습니다.",
               "behaviorHint": "드러난 조각을 붙든 채 방어와 인정 사이에서 흔들린다. 숨을 고르며 입술을 누른다.",
               "tags": [
                 "channel:interrogation",
@@ -33790,7 +33790,7 @@
             },
             {
               "id": "a-d-3-S3-fact-pursuit-v9",
-              "text": "저는 그 장면을 이렇게 봤습니다. 큰돈 이야기가 겹친다는 점은 그냥 넘기기 어렵습니다.",
+              "text": "저는 그 일을 이렇게 봤습니다. 큰돈 이야기가 겹친다는 점은 그냥 넘기기 어렵습니다.",
               "behaviorHint": "구체 기록 앞에서도 책임의 방향을 상대에게 돌리려 한다. 숨을 고르며 입술을 누른다.",
               "tags": [
                 "channel:interrogation",
@@ -34243,7 +34243,7 @@
             },
             {
               "id": "a-d-3-S3-motive-search-v10",
-              "text": "저는 그 이유를 숨기고 싶지 않습니다. 그 패턴을 인정하는 순간 제 결론도 흔들렸습니다.",
+              "text": "저는 그 이유를 숨기고 싶지 않습니다. 그 반복을 인정하는 순간 제 결론도 흔들렸습니다.",
               "behaviorHint": "구체 기록 앞에서도 책임의 방향을 상대에게 돌리려 한다. 어깨가 굳은 채 말끝이 낮아진다.",
               "tags": [
                 "channel:interrogation",
@@ -34334,7 +34334,7 @@
             },
             {
               "id": "a-d-3-S3-empathy-approach-v2",
-              "text": "저도 그 장면을 생각하면 부끄럽지만, 한편으로는 얼마나 몰렸는지 먼저 떠오릅니다.",
+              "text": "저도 그 일을 생각하면 부끄럽지만, 한편으로는 얼마나 몰렸는지 먼저 떠오릅니다.",
               "behaviorHint": "금전 이야기가 닿자 믿고 싶은 세계가 무너지는 충격이 먼저 올라온다. 눈빛이 잠깐 흔들린다.",
               "tags": [
                 "channel:interrogation",
@@ -35023,7 +35023,7 @@
             },
             {
               "id": "a-d-3-S4-fact-pursuit-v9",
-              "text": "저는 그 장면을 이렇게 봤습니다. 3천만 원 이야기가 나온 흐름을 더는 가볍게 못 봅니다.",
+              "text": "저는 그 일을 이렇게 봤습니다. 3천만 원 이야기가 나온 흐름을 더는 가볍게 못 봅니다.",
               "behaviorHint": "감정이 먼저 솟구치지만 잘못의 일부를 더는 피하지 못한다. 숨을 고르며 입술을 누른다.",
               "tags": [
                 "channel:interrogation",
@@ -35605,7 +35605,7 @@
             },
             {
               "id": "a-d-3-S4-empathy-approach-v3",
-              "text": "화를 내야 하는지, 먼저 붙잡아야 하는지조차 모르겠습니다. 그냥 마음이 무너집니다.",
+              "text": "화를 내야 하는지, 먼저 붙잡아야 하는지조차 모르겠습니다. 그냥 버티기 어렵습니다.",
               "behaviorHint": "숨기던 가족의 패턴을 꺼내며 두려움과 부끄러움이 같이 목을 죈다. 말끝이 거칠게 흔들린다.",
               "tags": [
                 "channel:interrogation",
@@ -36256,7 +36256,7 @@
             },
             {
               "id": "a-d-3-S5-fact-pursuit-v9",
-              "text": "저는 그 장면을 이렇게 봤습니다. 현재 문자와 과거 기록이 같은 방식으로 겹친다는 걸 봅니다.",
+              "text": "저는 그 일을 이렇게 봤습니다. 현재 문자와 과거 기록이 같은 방식으로 겹친다는 걸 봅니다.",
               "behaviorHint": "프레임을 거두고 자기 단정의 책임을 정면으로 받아들인다. 숨을 고르며 입술을 누른다.",
               "tags": [
                 "channel:interrogation",
@@ -39997,7 +39997,7 @@
             },
             {
               "id": "b-d-3-S2-fact-pursuit-v10",
-              "text": "겉으로 보인 것과 달리, 그 흐름이 단순한 부탁인지 계속 걸렸습니다.",
+              "text": "겉으로 보인 것과 달리, 그렇게 이어진 정황이 단순한 부탁인지 계속 걸렸습니다.",
               "behaviorHint": "말할 범위를 좁힌 채 급한 사정만 희미하게 드러낸다. 말끝에서 숨이 짧게 꺾인다.",
               "tags": [
                 "channel:interrogation",
@@ -40537,7 +40537,7 @@
             },
             {
               "id": "b-d-3-S2-empathy-approach-v3",
-              "text": "저는 그 장면을 보고, 누가 또 곤란해질지부터 생각했습니다.",
+              "text": "저는 그 일을 보고, 누가 또 곤란해질지부터 생각했습니다.",
               "behaviorHint": "결정적인 단어를 꺼내는 순간 입 밖으로 나온 사실이 자기 몸을 먼저 굳게 만든다. 낮은 톤이 조금 가빠진다.",
               "tags": [
                 "channel:interrogation",
@@ -40986,7 +40986,7 @@
             },
             {
               "id": "b-d-3-S3-fact-pursuit-v4",
-              "text": "저는 문장을 보는 순간 누가 보낸 건지보다, 아 그 패턴이 또 왔구나부터 느꼈습니다.",
+              "text": "저는 문장을 보는 순간 누가 보낸 건지보다, 아 그 반복이 또 왔구나부터 느꼈습니다.",
               "behaviorHint": "과거와 현재가 겹쳐 보이자 패턴을 말하며 겨우 자신을 붙든다. 경위를 붙들고 버틴다.",
               "tags": [
                 "channel:interrogation",
@@ -41599,7 +41599,7 @@
             },
             {
               "id": "b-d-3-S3-motive-search-v9",
-              "text": "제 선택이 좋았다는 뜻은 아닙니다. 그 흐름을 본 사람으로서 멈춰야 한다고 느꼈습니다.",
+              "text": "제 선택이 좋았다는 뜻은 아닙니다. 그렇게 이어진 정황을 본 사람으로서 멈춰야 한다고 느꼈습니다.",
               "behaviorHint": "숨겨 둔 목적을 꺼내며 억울함보다 체념을 앞세운다. 표정이 더 평평해진다.",
               "tags": [
                 "channel:interrogation",
@@ -42463,7 +42463,7 @@
             },
             {
               "id": "b-d-3-S4-fact-pursuit-v10",
-              "text": "겉으로 보인 것과 달리, 그 흐름은 단순 부탁으로 넘길 수 없었습니다.",
+              "text": "겉으로 보인 것과 달리, 그렇게 이어진 정황은 단순 부탁으로 넘길 수 없었습니다.",
               "behaviorHint": "가장 아픈 말을 평평하게 꺼내며 침묵이 흔들린다. 말끝에서 숨이 짧게 꺾인다.",
               "tags": [
                 "channel:interrogation",
@@ -44887,7 +44887,7 @@
             },
             {
               "id": "a-d-4-S0-fact-pursuit-v9",
-              "text": "저는 그 장면을 이렇게 봤습니다. 설명이 끊긴 뒤 관계가 끝난 건 사실입니다.",
+              "text": "저는 그 일을 이렇게 봤습니다. 설명이 끊긴 뒤 관계가 끝난 건 사실입니다.",
               "behaviorHint": "결론을 먼저 세우고 기록보다 인상을 앞세운다. 숨을 고르며 입술을 누른다.",
               "tags": [
                 "channel:interrogation",
@@ -46120,7 +46120,7 @@
             },
             {
               "id": "a-d-4-S1-fact-pursuit-v9",
-              "text": "저는 그 장면을 이렇게 봤습니다. 수민이가 침묵한 뒤 관계가 멀어진 건 맞습니다.",
+              "text": "저는 그 일을 이렇게 봤습니다. 수민이가 침묵한 뒤 관계가 멀어진 건 맞습니다.",
               "behaviorHint": "일부 사실을 인정하면서도 자기 해석의 틀을 놓지 않는다. 숨을 고르며 입술을 누른다.",
               "tags": [
                 "channel:interrogation",
@@ -47353,7 +47353,7 @@
             },
             {
               "id": "a-d-4-S2-fact-pursuit-v9",
-              "text": "저는 그 장면을 이렇게 봤습니다. 손절 원인을 아직 완전히 받아들이지는 못했습니다.",
+              "text": "저는 그 일을 이렇게 봤습니다. 손절 원인을 아직 완전히 받아들이지는 못했습니다.",
               "behaviorHint": "드러난 조각을 붙든 채 방어와 인정 사이에서 흔들린다. 숨을 고르며 입술을 누른다.",
               "tags": [
                 "channel:interrogation",
@@ -48586,7 +48586,7 @@
             },
             {
               "id": "a-d-4-S3-fact-pursuit-v9",
-              "text": "저는 그 장면을 이렇게 봤습니다. 제가 끊긴 카톡만 붙든 건 맞습니다.",
+              "text": "저는 그 일을 이렇게 봤습니다. 제가 끊긴 카톡만 붙든 건 맞습니다.",
               "behaviorHint": "구체 기록 앞에서도 책임의 방향을 상대에게 돌리려 한다. 숨을 고르며 입술을 누른다.",
               "tags": [
                 "channel:interrogation",
@@ -49819,7 +49819,7 @@
             },
             {
               "id": "a-d-4-S4-fact-pursuit-v9",
-              "text": "저는 그 장면을 이렇게 봤습니다. 수민이가 상처 입은 쪽이었다는 말이 처음으로 무겁게 닿았습니다.",
+              "text": "저는 그 일을 이렇게 봤습니다. 수민이가 상처 입은 쪽이었다는 말이 처음으로 무겁게 닿았습니다.",
               "behaviorHint": "감정이 먼저 솟구치지만 잘못의 일부를 더는 피하지 못한다. 숨을 고르며 입술을 누른다.",
               "tags": [
                 "channel:interrogation",
@@ -51052,7 +51052,7 @@
             },
             {
               "id": "a-d-4-S5-fact-pursuit-v9",
-              "text": "저는 그 장면을 이렇게 봤습니다. 수민이는 변심한 게 아니라 말하지 못한 채 물러난 쪽이었습니다.",
+              "text": "저는 그 일을 이렇게 봤습니다. 수민이는 변심한 게 아니라 말하지 못한 채 물러난 쪽이었습니다.",
               "behaviorHint": "프레임을 거두고 자기 단정의 책임을 정면으로 받아들인다. 숨을 고르며 입술을 누른다.",
               "tags": [
                 "channel:interrogation",
@@ -59683,7 +59683,7 @@
             },
             {
               "id": "a-d-5-S0-fact-pursuit-v9",
-              "text": "저는 그 장면을 이렇게 봤습니다. 그 대화방에서 이름이 나온 건 상황을 설명하기 위해서였습니다.",
+              "text": "저는 그 일을 이렇게 봤습니다. 그 대화방에서 이름이 나온 건 상황을 설명하기 위해서였습니다.",
               "behaviorHint": "결론을 먼저 세우고 기록보다 인상을 앞세운다. 숨을 고르며 입술을 누른다.",
               "tags": [
                 "channel:interrogation",
@@ -60916,7 +60916,7 @@
             },
             {
               "id": "a-d-5-S1-fact-pursuit-v9",
-              "text": "저는 그 장면을 이렇게 봤습니다. 확인 전 감정이 글에 섞였습니다.",
+              "text": "저는 그 일을 이렇게 봤습니다. 확인 전 감정이 글에 섞였습니다.",
               "behaviorHint": "일부 사실을 인정하면서도 자기 해석의 틀을 놓지 않는다. 숨을 고르며 입술을 누른다.",
               "tags": [
                 "channel:interrogation",
@@ -62149,7 +62149,7 @@
             },
             {
               "id": "a-d-5-S2-fact-pursuit-v9",
-              "text": "저는 그 장면을 이렇게 봤습니다. 수민이에게 묻기 전에 이름부터 퍼졌습니다.",
+              "text": "저는 그 일을 이렇게 봤습니다. 수민이에게 묻기 전에 이름부터 퍼졌습니다.",
               "behaviorHint": "드러난 조각을 붙든 채 방어와 인정 사이에서 흔들린다. 숨을 고르며 입술을 누른다.",
               "tags": [
                 "channel:interrogation",
@@ -63382,7 +63382,7 @@
             },
             {
               "id": "a-d-5-S3-fact-pursuit-v9",
-              "text": "저는 그 장면을 이렇게 봤습니다. 반복 자체가 문제라는 프레임을 제가 먼저 세웠습니다.",
+              "text": "저는 그 일을 이렇게 봤습니다. 반복 자체가 문제라는 프레임을 제가 먼저 세웠습니다.",
               "behaviorHint": "구체 기록 앞에서도 책임의 방향을 상대에게 돌리려 한다. 숨을 고르며 입술을 누른다.",
               "tags": [
                 "channel:interrogation",
@@ -64615,7 +64615,7 @@
             },
             {
               "id": "a-d-5-S4-fact-pursuit-v9",
-              "text": "저는 그 장면을 이렇게 봤습니다. 공개 낙인이 반복됐다는 점을 이제 인정합니다.",
+              "text": "저는 그 일을 이렇게 봤습니다. 공개 낙인이 반복됐다는 점을 이제 인정합니다.",
               "behaviorHint": "감정이 먼저 솟구치지만 잘못의 일부를 더는 피하지 못한다. 숨을 고르며 입술을 누른다.",
               "tags": [
                 "channel:interrogation",
@@ -65848,7 +65848,7 @@
             },
             {
               "id": "a-d-5-S5-fact-pursuit-v9",
-              "text": "저는 그 장면을 이렇게 봤습니다. 수민이가 악역이 되는 반복 구조에 제가 다시 불을 붙였습니다.",
+              "text": "저는 그 일을 이렇게 봤습니다. 수민이가 악역이 되는 반복 구조에 제가 다시 불을 붙였습니다.",
               "behaviorHint": "프레임을 거두고 자기 단정의 책임을 정면으로 받아들인다. 숨을 고르며 입술을 누른다.",
               "tags": [
                 "channel:interrogation",
@@ -92475,7 +92475,7 @@
             },
             {
               "id": "b-e-2-early-stage1-v10",
-              "text": "대화의 출발점이 누구였는지는 자료에 남아 있습니다. 그 장면은 제가 통제할 수 없는 쪽으로 갔습니다.",
+              "text": "대화의 출발점이 누구였는지는 자료에 남아 있습니다. 그 일은 제가 통제할 수 없는 쪽으로 갔습니다.",
               "behaviorHint": "말보다 침묵이 길어지며 방어가 드러난다.",
               "tags": [
                 "channel:evidence_present",
@@ -92868,7 +92868,7 @@
             },
             {
               "id": "b-e-2-early-stage2-v8",
-              "text": "같은 방향의 말들이 짧은 간격으로 쌓였습니다. 제가 뭘 말해도 늦겠다는 생각이 먼저 들었습니다.",
+              "text": "비슷한 말들이 짧은 간격으로 쌓였습니다. 제가 뭘 말해도 늦겠다는 생각이 먼저 들었습니다.",
               "behaviorHint": "평평한 말투 뒤에 피로가 늦게 비친다.",
               "tags": [
                 "channel:evidence_present",
@@ -92962,7 +92962,7 @@
             },
             {
               "id": "b-e-2-early-stage2-v10",
-              "text": "동조가 붙으면서 처음 말의 무게가 커졌습니다. 그 장면은 제가 통제할 수 없는 쪽으로 갔습니다.",
+              "text": "동조가 붙으면서 처음 말의 무게가 커졌습니다. 그 일은 제가 통제할 수 없는 쪽으로 갔습니다.",
               "behaviorHint": "말보다 침묵이 길어지며 방어가 드러난다.",
               "tags": [
                 "channel:evidence_present",
@@ -93449,7 +93449,7 @@
             },
             {
               "id": "b-e-2-early-stage3-v10",
-              "text": "공개가 먼저였다는 사실은 책임을 피하기 어렵게 합니다. 그 장면은 제가 통제할 수 없는 쪽으로 갔습니다.",
+              "text": "공개가 먼저였다는 사실은 책임을 피하기 어렵게 합니다. 그 일은 제가 통제할 수 없는 쪽으로 갔습니다.",
               "behaviorHint": "말보다 침묵이 길어지며 방어가 드러난다.",
               "tags": [
                 "channel:evidence_present",
@@ -93560,7 +93560,7 @@
             },
             {
               "id": "b-e-2-mid-stage1-v2",
-              "text": "처음 글은 사실 확인보다 의심을 앞세운 모양입니다. 저도 바로 반박하지 못해 그 흐름을 키운 면이 있습니다.",
+              "text": "처음 글은 사실 확인보다 의심을 앞세운 모양입니다. 저도 바로 반박하지 못해 그렇게 이어진 정황을 키운 면이 있습니다.",
               "behaviorHint": "담담하게 인정하다가 핵심에서 숨을 짧게 끊는다.",
               "tags": [
                 "channel:evidence_present",
@@ -93936,7 +93936,7 @@
             },
             {
               "id": "b-e-2-mid-stage1-v10",
-              "text": "공개된 장면의 시작이 누구였는지 더 분명해집니다. 저도 그 흐름을 끊지 못한 책임은 있습니다.",
+              "text": "공개된 장면의 시작이 누구였는지 더 분명해집니다. 저도 그렇게 이어진 정황을 끊지 못한 책임은 있습니다.",
               "behaviorHint": "오래 참은 피로가 문장 사이에 남는다.",
               "tags": [
                 "channel:evidence_present",
@@ -94047,7 +94047,7 @@
             },
             {
               "id": "b-e-2-mid-stage2-v2",
-              "text": "뒤의 반응은 저를 이미 그런 사람으로 놓고 이어집니다. 저도 바로 반박하지 못해 그 흐름을 키운 면이 있습니다.",
+              "text": "뒤의 반응은 저를 이미 그런 사람으로 놓고 이어집니다. 저도 바로 반박하지 못해 그렇게 이어진 정황을 키운 면이 있습니다.",
               "behaviorHint": "담담하게 인정하다가 핵심에서 숨을 짧게 끊는다.",
               "tags": [
                 "channel:evidence_present",
@@ -94423,7 +94423,7 @@
             },
             {
               "id": "b-e-2-mid-stage2-v10",
-              "text": "처음 글과 뒤의 동조가 한 묶음으로 이어졌습니다. 저도 그 흐름을 끊지 못한 책임은 있습니다.",
+              "text": "처음 글과 뒤의 동조가 한 묶음으로 이어졌습니다. 저도 그렇게 이어진 정황을 끊지 못한 책임은 있습니다.",
               "behaviorHint": "오래 참은 피로가 문장 사이에 남는다.",
               "tags": [
                 "channel:evidence_present",
@@ -94534,7 +94534,7 @@
             },
             {
               "id": "b-e-2-mid-stage3-v2",
-              "text": "확인보다 공개가 앞섰고, 그 순서가 평판을 흔들었습니다. 저도 바로 반박하지 못해 그 흐름을 키운 면이 있습니다.",
+              "text": "확인보다 공개가 앞섰고, 그 순서가 평판을 흔들었습니다. 저도 바로 반박하지 못해 그렇게 이어진 정황을 키운 면이 있습니다.",
               "behaviorHint": "담담하게 인정하다가 핵심에서 숨을 짧게 끊는다.",
               "tags": [
                 "channel:evidence_present",
@@ -94910,7 +94910,7 @@
             },
             {
               "id": "b-e-2-mid-stage3-v10",
-              "text": "먼저 올린 선택이 이후 모든 해석의 출발점이 됐습니다. 저도 그 흐름을 끊지 못한 책임은 있습니다.",
+              "text": "먼저 올린 선택이 이후 모든 해석의 출발점이 됐습니다. 저도 그렇게 이어진 정황을 끊지 못한 책임은 있습니다.",
               "behaviorHint": "오래 참은 피로가 문장 사이에 남는다.",
               "tags": [
                 "channel:evidence_present",
@@ -96623,7 +96623,7 @@
             },
             {
               "id": "a-e-2-early-stage1-v5",
-              "text": "대화방 기록의 첫 줄은 한 사람의 단정에서 시작됩니다. 그 장면을 보고 그냥 넘길 수 없었습니다.",
+              "text": "대화방 기록의 첫 줄은 한 사람의 단정에서 시작됩니다. 그 일을 보고 그냥 넘길 수 없었습니다.",
               "behaviorHint": "분노를 누르려 하지만 문장마다 확신이 먼저 선다.",
               "tags": [
                 "channel:evidence_present",
@@ -97110,7 +97110,7 @@
             },
             {
               "id": "a-e-2-early-stage2-v5",
-              "text": "한 사람의 말이 여러 사람의 판단처럼 번졌습니다. 그 장면을 보고 그냥 넘길 수 없었습니다.",
+              "text": "한 사람의 말이 여러 사람의 판단처럼 번졌습니다. 그 일을 보고 그냥 넘길 수 없었습니다.",
               "behaviorHint": "분노를 누르려 하지만 문장마다 확신이 먼저 선다.",
               "tags": [
                 "channel:evidence_present",
@@ -97251,7 +97251,7 @@
             },
             {
               "id": "a-e-2-early-stage2-v8",
-              "text": "같은 방향의 말들이 짧은 간격으로 쌓였습니다. 그때는 제 행동이 방어라고 생각했습니다.",
+              "text": "비슷한 말들이 짧은 간격으로 쌓였습니다. 그때는 제 행동이 방어라고 생각했습니다.",
               "behaviorHint": "불안과 판단을 구분하지 못한 채 빠르게 답한다.",
               "tags": [
                 "channel:evidence_present",
@@ -97597,7 +97597,7 @@
             },
             {
               "id": "a-e-2-early-stage3-v5",
-              "text": "그 행동은 누가 먼저 낙인을 만들었는지 묻게 합니다. 그 장면을 보고 그냥 넘길 수 없었습니다.",
+              "text": "그 행동은 누가 먼저 낙인을 만들었는지 묻게 합니다. 그 일을 보고 그냥 넘길 수 없었습니다.",
               "behaviorHint": "분노를 누르려 하지만 문장마다 확신이 먼저 선다.",
               "tags": [
                 "channel:evidence_present",
@@ -110598,7 +110598,7 @@
           "revealKey": "restore_context",
           "attackVector": "responsibility",
           "stageLabel": "의도복원",
-          "stageQuestion": "B의 이후 연락이 왜 이어졌는지 따져 주십시오.",
+          "stageQuestion": "최수민의 이후 연락이 왜 이어졌는지 따져 주십시오.",
           "requiredLieState": "S2",
           "unlockGuard": "requireLieState:S2",
           "variants": [
@@ -111720,7 +111720,7 @@
             },
             {
               "id": "b-e-4-mid-stage2-v3",
-              "text": "사적인 말은 이어졌고, 답장은 그 흐름을 끊는 쪽이었습니다. 제가 피한 설명이 있는 건 맞습니다. 그래서 더 꼬였습니다.",
+              "text": "사적인 말은 이어졌고, 답장은 그렇게 이어진 정황을 끊는 쪽이었습니다. 제가 피한 설명이 있는 건 맞습니다. 그래서 더 꼬였습니다.",
               "behaviorHint": "자기 잘못을 먼저 붙여 추궁의 방향을 낮춘다.",
               "tags": [
                 "channel:evidence_present",
@@ -112125,7 +112125,7 @@
           "revealKey": "restore_context",
           "attackVector": "responsibility",
           "stageLabel": "의도복원",
-          "stageQuestion": "B의 이후 연락이 왜 이어졌는지 따져 주십시오.",
+          "stageQuestion": "최수민의 이후 연락이 왜 이어졌는지 따져 주십시오.",
           "requiredLieState": "S2",
           "unlockGuard": "requireLieState:S2",
           "variants": [
@@ -113652,7 +113652,7 @@
           "revealKey": "restore_context",
           "attackVector": "responsibility",
           "stageLabel": "의도복원",
-          "stageQuestion": "B의 이후 연락이 왜 이어졌는지 따져 주십시오.",
+          "stageQuestion": "최수민의 이후 연락이 왜 이어졌는지 따져 주십시오.",
           "requiredLieState": "S2",
           "unlockGuard": "requireLieState:S2",
           "variants": [
@@ -115179,7 +115179,7 @@
           "revealKey": "restore_context",
           "attackVector": "responsibility",
           "stageLabel": "의도복원",
-          "stageQuestion": "B의 이후 연락이 왜 이어졌는지 따져 주십시오.",
+          "stageQuestion": "최수민의 이후 연락이 왜 이어졌는지 따져 주십시오.",
           "requiredLieState": "S2",
           "unlockGuard": "requireLieState:S2",
           "variants": [
@@ -116301,7 +116301,7 @@
             },
             {
               "id": "a-e-4-mid-stage2-v3",
-              "text": "사적인 말은 이어졌고, 답장은 그 흐름을 끊는 쪽이었습니다. 그래도 저는 반복 자체가 문제라고 붙잡았습니다.",
+              "text": "사적인 말은 이어졌고, 답장은 그렇게 이어진 정황을 끊는 쪽이었습니다. 그래도 저는 반복 자체가 문제라고 붙잡았습니다.",
               "behaviorHint": "흔들리는 표정을 감추려 문장을 더 단단히 세운다.",
               "tags": [
                 "channel:evidence_present",
@@ -116706,7 +116706,7 @@
           "revealKey": "restore_context",
           "attackVector": "responsibility",
           "stageLabel": "의도복원",
-          "stageQuestion": "B의 이후 연락이 왜 이어졌는지 따져 주십시오.",
+          "stageQuestion": "최수민의 이후 연락이 왜 이어졌는지 따져 주십시오.",
           "requiredLieState": "S2",
           "unlockGuard": "requireLieState:S2",
           "variants": [
@@ -118233,7 +118233,7 @@
           "revealKey": "restore_context",
           "attackVector": "responsibility",
           "stageLabel": "의도복원",
-          "stageQuestion": "B의 이후 연락이 왜 이어졌는지 따져 주십시오.",
+          "stageQuestion": "최수민의 이후 연락이 왜 이어졌는지 따져 주십시오.",
           "requiredLieState": "S2",
           "unlockGuard": "requireLieState:S2",
           "variants": [
@@ -118742,7 +118742,7 @@
           "revealKey": "request_original",
           "attackVector": "authenticity",
           "stageLabel": "대화확인",
-          "stageQuestion": "A 아버지가 먼저 돈 얘기를 꺼냈습니까?",
+          "stageQuestion": "송다은 아버지가 먼저 돈 얘기를 꺼냈습니까?",
           "requiredLieState": "S2",
           "unlockGuard": "requireLieState:S2",
           "variants": [
@@ -119251,7 +119251,7 @@
           "revealKey": "check_metadata",
           "attackVector": "context",
           "stageLabel": "시점대조",
-          "stageQuestion": "돈 요구 시점과 B의 연락을 대조해 주십시오.",
+          "stageQuestion": "돈 요구 시점과 최수민의 연락을 대조해 주십시오.",
           "requiredLieState": "S2",
           "unlockGuard": "requireLieState:S2",
           "variants": [
@@ -119760,7 +119760,7 @@
           "revealKey": "restore_context",
           "attackVector": "responsibility",
           "stageLabel": "경고복원",
-          "stageQuestion": "B가 왜 예비신랑에게 경고했는지 따져 주십시오.",
+          "stageQuestion": "최수민이 왜 예비신랑에게 경고했는지 따져 주십시오.",
           "requiredLieState": "S2",
           "unlockGuard": "requireLieState:S2",
           "variants": [
@@ -120269,7 +120269,7 @@
           "revealKey": "request_original",
           "attackVector": "authenticity",
           "stageLabel": "대화확인",
-          "stageQuestion": "A 아버지가 먼저 돈 얘기를 꺼냈습니까?",
+          "stageQuestion": "송다은 아버지가 먼저 돈 얘기를 꺼냈습니까?",
           "requiredLieState": "S2",
           "unlockGuard": "requireLieState:S2",
           "variants": [
@@ -120778,7 +120778,7 @@
           "revealKey": "check_metadata",
           "attackVector": "context",
           "stageLabel": "시점대조",
-          "stageQuestion": "돈 요구 시점과 B의 연락을 대조해 주십시오.",
+          "stageQuestion": "돈 요구 시점과 최수민의 연락을 대조해 주십시오.",
           "requiredLieState": "S2",
           "unlockGuard": "requireLieState:S2",
           "variants": [
@@ -121287,13 +121287,13 @@
           "revealKey": "restore_context",
           "attackVector": "responsibility",
           "stageLabel": "경고복원",
-          "stageQuestion": "B가 왜 예비신랑에게 경고했는지 따져 주십시오.",
+          "stageQuestion": "최수민이 왜 예비신랑에게 경고했는지 따져 주십시오.",
           "requiredLieState": "S2",
           "unlockGuard": "requireLieState:S2",
           "variants": [
             {
               "id": "b-e-5-mid-stage3-v1",
-              "text": "저는 그 흐름을 보고 그냥 넘기기 어려웠다고 설명할 수 있습니다. 말하지 못한 사정이 있었고, 그 부분을 계속 줄여 말했습니다.",
+              "text": "저는 그렇게 이어진 정황을 보고 그냥 넘기기 어려웠다고 설명할 수 있습니다. 말하지 못한 사정이 있었고, 그 부분을 계속 줄여 말했습니다.",
               "behaviorHint": "일부 설명을 꺼내지만 제삼자 보호로 말끝을 닫는다.",
               "tags": [
                 "channel:evidence_present",
@@ -121796,7 +121796,7 @@
           "revealKey": "request_original",
           "attackVector": "authenticity",
           "stageLabel": "대화확인",
-          "stageQuestion": "A 아버지가 먼저 돈 얘기를 꺼냈습니까?",
+          "stageQuestion": "송다은 아버지가 먼저 돈 얘기를 꺼냈습니까?",
           "requiredLieState": "S2",
           "unlockGuard": "requireLieState:S2",
           "variants": [
@@ -122305,7 +122305,7 @@
           "revealKey": "check_metadata",
           "attackVector": "context",
           "stageLabel": "시점대조",
-          "stageQuestion": "돈 요구 시점과 B의 연락을 대조해 주십시오.",
+          "stageQuestion": "돈 요구 시점과 최수민의 연락을 대조해 주십시오.",
           "requiredLieState": "S2",
           "unlockGuard": "requireLieState:S2",
           "variants": [
@@ -122814,7 +122814,7 @@
           "revealKey": "restore_context",
           "attackVector": "responsibility",
           "stageLabel": "경고복원",
-          "stageQuestion": "B가 왜 예비신랑에게 경고했는지 따져 주십시오.",
+          "stageQuestion": "최수민이 왜 예비신랑에게 경고했는지 따져 주십시오.",
           "requiredLieState": "S2",
           "unlockGuard": "requireLieState:S2",
           "variants": [
@@ -123323,7 +123323,7 @@
           "revealKey": "request_original",
           "attackVector": "authenticity",
           "stageLabel": "대화확인",
-          "stageQuestion": "A 아버지가 먼저 돈 얘기를 꺼냈습니까?",
+          "stageQuestion": "송다은 아버지가 먼저 돈 얘기를 꺼냈습니까?",
           "requiredLieState": "S2",
           "unlockGuard": "requireLieState:S2",
           "variants": [
@@ -123832,7 +123832,7 @@
           "revealKey": "check_metadata",
           "attackVector": "context",
           "stageLabel": "시점대조",
-          "stageQuestion": "돈 요구 시점과 B의 연락을 대조해 주십시오.",
+          "stageQuestion": "돈 요구 시점과 최수민의 연락을 대조해 주십시오.",
           "requiredLieState": "S2",
           "unlockGuard": "requireLieState:S2",
           "variants": [
@@ -124341,7 +124341,7 @@
           "revealKey": "restore_context",
           "attackVector": "responsibility",
           "stageLabel": "경고복원",
-          "stageQuestion": "B가 왜 예비신랑에게 경고했는지 따져 주십시오.",
+          "stageQuestion": "최수민이 왜 예비신랑에게 경고했는지 따져 주십시오.",
           "requiredLieState": "S2",
           "unlockGuard": "requireLieState:S2",
           "variants": [
@@ -124850,7 +124850,7 @@
           "revealKey": "request_original",
           "attackVector": "authenticity",
           "stageLabel": "대화확인",
-          "stageQuestion": "A 아버지가 먼저 돈 얘기를 꺼냈습니까?",
+          "stageQuestion": "송다은 아버지가 먼저 돈 얘기를 꺼냈습니까?",
           "requiredLieState": "S2",
           "unlockGuard": "requireLieState:S2",
           "variants": [
@@ -125359,7 +125359,7 @@
           "revealKey": "check_metadata",
           "attackVector": "context",
           "stageLabel": "시점대조",
-          "stageQuestion": "돈 요구 시점과 B의 연락을 대조해 주십시오.",
+          "stageQuestion": "돈 요구 시점과 최수민의 연락을 대조해 주십시오.",
           "requiredLieState": "S2",
           "unlockGuard": "requireLieState:S2",
           "variants": [
@@ -125868,13 +125868,13 @@
           "revealKey": "restore_context",
           "attackVector": "responsibility",
           "stageLabel": "경고복원",
-          "stageQuestion": "B가 왜 예비신랑에게 경고했는지 따져 주십시오.",
+          "stageQuestion": "최수민이 왜 예비신랑에게 경고했는지 따져 주십시오.",
           "requiredLieState": "S2",
           "unlockGuard": "requireLieState:S2",
           "variants": [
             {
               "id": "a-e-5-mid-stage3-v1",
-              "text": "제 전 친구는 그 흐름을 보고 그냥 넘기기 어려웠다고 설명할 수 있습니다. 저도 보이는 조각만 제 결론에 붙였습니다.",
+              "text": "제 전 친구는 그렇게 이어진 정황을 보고 그냥 넘기기 어려웠다고 설명할 수 있습니다. 저도 보이는 조각만 제 결론에 붙였습니다.",
               "behaviorHint": "일부를 인정한 뒤에도 자기 결론을 쉽게 놓지 않는다.",
               "tags": [
                 "channel:evidence_present",
@@ -126377,7 +126377,7 @@
           "revealKey": "request_original",
           "attackVector": "authenticity",
           "stageLabel": "대화확인",
-          "stageQuestion": "A 아버지가 먼저 돈 얘기를 꺼냈습니까?",
+          "stageQuestion": "송다은 아버지가 먼저 돈 얘기를 꺼냈습니까?",
           "requiredLieState": "S2",
           "unlockGuard": "requireLieState:S2",
           "variants": [
@@ -126886,7 +126886,7 @@
           "revealKey": "check_metadata",
           "attackVector": "context",
           "stageLabel": "시점대조",
-          "stageQuestion": "돈 요구 시점과 B의 연락을 대조해 주십시오.",
+          "stageQuestion": "돈 요구 시점과 최수민의 연락을 대조해 주십시오.",
           "requiredLieState": "S2",
           "unlockGuard": "requireLieState:S2",
           "variants": [
@@ -127395,7 +127395,7 @@
           "revealKey": "restore_context",
           "attackVector": "responsibility",
           "stageLabel": "경고복원",
-          "stageQuestion": "B가 왜 예비신랑에게 경고했는지 따져 주십시오.",
+          "stageQuestion": "최수민이 왜 예비신랑에게 경고했는지 따져 주십시오.",
           "requiredLieState": "S2",
           "unlockGuard": "requireLieState:S2",
           "variants": [
@@ -141159,7 +141159,7 @@
             },
             {
               "id": "a-e-7-late-stage2-v6",
-              "text": "수민이는 같은 흐름을 보고 움직였고 저는 그 흐름을 끊어 보고 화냈습니다.",
+              "text": "수민이는 같은 흐름을 보고 움직였고 저는 그렇게 이어진 정황을 끊어 보고 화냈습니다.",
               "behaviorHint": "가족의 진실보다 먼저 사람을 밀어낸 책임을 말한다.",
               "tags": [
                 "channel:evidence_present",
@@ -143590,7 +143590,7 @@
             },
             {
               "id": "b-e-7-mid-stage1-v2",
-              "text": "급한 투자금이라는 말과 사위 될 사람이면이라는 말이 같은 방향으로 들렸습니다.",
+              "text": "급한 투자금이라는 말과 사위 될 사람이면이라는 말이 같은 압박처럼 들렸습니다.",
               "behaviorHint": "증거의 세부를 따라가며 감정보다 순서를 먼저 말한다.",
               "tags": [
                 "channel:evidence_present",
@@ -152369,7 +152369,7 @@
             },
             {
               "id": "dc-3-b-q1-late-v4",
-              "text": "그 흐름을 본 순간, 이번에도 누군가 돈을 잃을 수 있다고 생각했습니다.",
+              "text": "그렇게 이어진 정황을 본 순간, 이번에도 누군가 돈을 잃을 수 있다고 생각했습니다.",
               "behaviorHint": "자기 침묵의 대가를 인정하며 고개를 숙인다.",
               "tags": [
                 "channel:dossier",
@@ -155262,7 +155262,7 @@
             },
             {
               "id": "dc-4-b-q1-late-v2",
-              "text": "그 일을 말하면 다은이가 아버지를 의심해야 합니다. 저는 그 장면을 감당하지 못했습니다.",
+              "text": "그 일을 말하면 다은이가 아버지를 의심해야 합니다. 저는 그 일을 감당하지 못했습니다.",
               "behaviorHint": "숨이 한 번 꺾인 뒤 끝까지 말한다.",
               "tags": [
                 "channel:dossier",
@@ -160035,7 +160035,7 @@
             },
             {
               "id": "dc-5-b-q1-late-v8",
-              "text": "제가 말하지 않아 다은이는 같은 프레임을 반복했습니다. 그 흐름을 제가 끊지 못했습니다.",
+              "text": "제가 말하지 않아 다은이는 같은 프레임을 반복했습니다. 그렇게 이어진 정황을 제가 끊지 못했습니다.",
               "behaviorHint": "시선이 흔들리다 한 점에 멈춘다.",
               "tags": [
                 "channel:dossier",
@@ -164367,7 +164367,7 @@
             },
             {
               "id": "sys-interrogation-repeat_warning-v3",
-              "text": "같은 방향으로 몰면 상대는 방어만 굳힌다.",
+              "text": "한쪽으로만 몰면 상대는 방어만 굳힌다.",
               "tags": [
                 "channel:system_message",
                 "speaker:system",
@@ -164685,7 +164685,7 @@
           "variants": [
             {
               "id": "sys-evidence-trap_notice-v1",
-              "text": "초반 그림이 한쪽으로 너무 빠르게 굳는다.",
+              "text": "초반 그림이 한방향으로 너무 빠르게 굳는다.",
               "tags": [
                 "channel:system_message",
                 "speaker:system",
@@ -164799,7 +164799,7 @@
             },
             {
               "id": "sys-evidence-trap_notice-v4",
-              "text": "첫인상이 사건의 안쪽을 가릴 수 있다.",
+              "text": "첫인상이 사건의 안입장을 가릴 수 있다.",
               "tags": [
                 "channel:system_message",
                 "speaker:system",
@@ -165708,7 +165708,7 @@
             },
             {
               "id": "sys-evidence-judge_combo_trigger-v2",
-              "text": "따로 있던 기록이 같은 방향을 가리킨다.",
+              "text": "따로 있던 기록이 한 결론으로 이어진다.",
               "tags": [
                 "channel:system_message",
                 "speaker:system",
@@ -165822,7 +165822,7 @@
             },
             {
               "id": "sys-evidence-judge_combo_trigger-v5",
-              "text": "두 자료가 만나 사건의 안쪽을 연다.",
+              "text": "두 자료가 만나 사건의 안입장을 연다.",
               "tags": [
                 "channel:system_message",
                 "speaker:system",
@@ -166923,7 +166923,7 @@
           "variants": [
             {
               "id": "mediation-immediate-b-v1",
-              "text": "바로 정리하셔도 괜찮습니다. 연락한 방식은 제 책임입니다. 다만 그 연락이 유혹이 아니라 경고였다는 축은 분명히 남겨 주십시오.",
+              "text": "바로 정리하셔도 괜찮습니다. 연락한 방식은 제 책임입니다. 다만 그 연락이 유혹이 아니라 경고였다는 축은 명확히 남겨 주십시오.",
               "behaviorHint": "감정을 누른 채 사실의 순서와 침묵의 이유를 분리해 말한다.",
               "tags": [
                 "channel:mediation",
@@ -167382,7 +167382,7 @@
           "variants": [
             {
               "id": "mediation-conditional-a-v1",
-              "text": "조건부로 가려면 수민이가 왜 저에게 직접 말하지 않았는지부터 분명히 해야 합니다. 그래야 제 공개 책임도 제대로 받아들이겠습니다.",
+              "text": "조건부로 가려면 수민이가 왜 저에게 직접 말하지 않았는지부터 명확히 해야 합니다. 그래야 제 공개 책임도 제대로 받아들이겠습니다.",
               "behaviorHint": "결론부터 세우려는 습관을 누르고 책임을 분리해 말한다.",
               "tags": [
                 "channel:mediation",
@@ -167562,7 +167562,7 @@
             },
             {
               "id": "mediation-conditional-a-v5",
-              "text": "조건부 해결이라면 제가 단톡방 일을 정리하겠습니다. 대신 수민이도 예비신랑에게 간 이유와 방식을 정확히 설명해야 합니다.",
+              "text": "조건부 해결이라면 제가 단톡방 일을 정리하겠습니다. 대신 수민이도 예비신랑에게 간 이유와 방식을 차분히 설명해야 합니다.",
               "behaviorHint": "결론부터 세우려는 습관을 누르고 책임을 분리해 말한다.",
               "tags": [
                 "channel:mediation",
@@ -169145,7 +169145,7 @@
             },
             {
               "id": "mediation-postpone-b-v10",
-              "text": "잠시 뒤로 미루겠습니다. 대신 아버지 돈 접근과 과거 손절의 연결만큼은 흐리지 말아 주십시오.",
+              "text": "잠시 뒤로 미루겠습니다. 대신 그 돈 접근과 과거 손절의 연결만큼은 흐리지 말아 주십시오.",
               "behaviorHint": "감정을 누른 채 사실의 순서와 침묵의 이유를 분리해 말한다.",
               "tags": [
                 "channel:mediation",
@@ -170267,7 +170267,7 @@
             },
             {
               "id": "contra-a-d-1-S1-v4",
-              "text": "저는 처음부터 그 흐름을 본 겁니다. 상대가 답하지 않았는데도 이어진 점이 제 눈엔 컸습니다.",
+              "text": "저는 처음부터 그렇게 이어진 정황을 본 겁니다. 상대가 답하지 않았는데도 이어진 점이 제 눈엔 컸습니다.",
               "behaviorHint": "결론부터 붙잡고 시선을 비킨다.",
               "tags": [
                 "channel:contradiction_pursuit",
@@ -170393,7 +170393,7 @@
             },
             {
               "id": "contra-a-d-1-S1-v7",
-              "text": "저는 아직 그 장면을 다르게 못 봅니다. 끊어진 사이의 반복 연락을 좋게 볼 수 없었습니다.",
+              "text": "저는 아직 그 일을 다르게 못 봅니다. 끊어진 사이의 반복 연락을 좋게 볼 수 없었습니다.",
               "behaviorHint": "결론부터 붙잡고 시선을 비킨다.",
               "tags": [
                 "channel:contradiction_pursuit",
@@ -173747,7 +173747,7 @@
             },
             {
               "id": "contra-a-d-2-S1-v4",
-              "text": "저는 처음부터 그 흐름을 본 겁니다. 저는 처음부터 수민 씨 의도를 더 의심했습니다.",
+              "text": "저는 처음부터 그렇게 이어진 정황을 본 겁니다. 저는 처음부터 수민 씨 의도를 더 의심했습니다.",
               "behaviorHint": "결론부터 붙잡고 시선을 비킨다.",
               "tags": [
                 "channel:contradiction_pursuit",
@@ -173873,7 +173873,7 @@
             },
             {
               "id": "contra-a-d-2-S1-v7",
-              "text": "저는 아직 그 장면을 다르게 못 봅니다. 몇 줄 메시지보다 제 전 친구가 저를 건너뛴 사실이 컸습니다.",
+              "text": "저는 아직 그 일을 다르게 못 봅니다. 몇 줄 메시지보다 제 전 친구가 저를 건너뛴 사실이 컸습니다.",
               "behaviorHint": "결론부터 붙잡고 시선을 비킨다.",
               "tags": [
                 "channel:contradiction_pursuit",
@@ -177230,7 +177230,7 @@
             },
             {
               "id": "contra-a-d-3-S1-v4",
-              "text": "저는 처음부터 그 흐름을 본 겁니다. 부탁처럼 들리는 말만으로 패턴이라고 보긴 싫었습니다.",
+              "text": "저는 처음부터 그렇게 이어진 정황을 본 겁니다. 부탁처럼 들리는 말만으로 패턴이라고 보긴 싫었습니다.",
               "behaviorHint": "결론부터 붙잡고 시선을 비킨다.",
               "tags": [
                 "channel:contradiction_pursuit",
@@ -177273,7 +177273,7 @@
             },
             {
               "id": "contra-a-d-3-S1-v5",
-              "text": "그 부분은 제 표현이 달랐을 뿐입니다. 그 흐름을 수민 씨가 책임 회피에 쓰는 것처럼 느꼈습니다.",
+              "text": "그 부분은 제 표현이 달랐을 뿐입니다. 그렇게 이어진 정황을 수민 씨가 책임 회피에 쓰는 것처럼 느꼈습니다.",
               "behaviorHint": "손끝이 굳은 채 판단을 지키려 한다.",
               "tags": [
                 "channel:contradiction_pursuit",
@@ -177359,7 +177359,7 @@
             },
             {
               "id": "contra-a-d-3-S1-v7",
-              "text": "저는 아직 그 장면을 다르게 못 봅니다. 그 어른의 말이 있었더라도 수민 씨 연락과 바로 묶고 싶지 않았습니다.",
+              "text": "저는 아직 그 일을 다르게 못 봅니다. 그 어른의 말이 있었더라도 수민 씨 연락과 바로 묶고 싶지 않았습니다.",
               "behaviorHint": "결론부터 붙잡고 시선을 비킨다.",
               "tags": [
                 "channel:contradiction_pursuit",
@@ -177488,7 +177488,7 @@
             },
             {
               "id": "contra-a-d-3-S1-v10",
-              "text": "그렇게까지 달라진 말은 아닙니다. 그 흐름을 수민 씨가 책임 회피에 쓰는 것처럼 느꼈습니다.",
+              "text": "그렇게까지 달라진 말은 아닙니다. 그렇게 이어진 정황을 수민 씨가 책임 회피에 쓰는 것처럼 느꼈습니다.",
               "behaviorHint": "결론부터 붙잡고 시선을 비킨다.",
               "tags": [
                 "channel:contradiction_pursuit",
@@ -178607,7 +178607,7 @@
             },
             {
               "id": "contra-a-d-3-S4-v5",
-              "text": "그 사실 앞에서는 숨이 막힙니다. 그 흐름이 사실이면 제가 외면한 책임까지 같이 올라옵니다.",
+              "text": "그 사실 앞에서는 숨이 막힙니다. 그렇게 이어진 정황이 사실이면 제가 외면한 책임까지 같이 올라옵니다.",
               "behaviorHint": "감정을 누르려 하지만 숨이 먼저 흔들린다.",
               "tags": [
                 "channel:contradiction_pursuit",
@@ -178827,7 +178827,7 @@
             },
             {
               "id": "contra-a-d-3-S4-v10",
-              "text": "그 말이 나오면 제 결혼까지 무너지는 것 같았습니다. 그 흐름이 사실이면 제가 외면한 책임까지 같이 올라옵니다.",
+              "text": "그 말이 나오면 제 결혼까지 무너지는 것 같았습니다. 그렇게 이어진 정황이 사실이면 제가 외면한 책임까지 같이 올라옵니다.",
               "behaviorHint": "목소리가 높아졌다가 금세 낮아진다.",
               "tags": [
                 "channel:contradiction_pursuit",
@@ -178924,7 +178924,7 @@
             },
             {
               "id": "contra-b-d-3-S1-v2",
-              "text": "제가 말을 줄인 건 맞지만 뜻이 달라진 건 아닙니다. 그 흐름을 보고도 바로 이름 붙일 수는 없었습니다.",
+              "text": "제가 말을 줄인 건 맞지만 뜻이 달라진 건 아닙니다. 그렇게 이어진 정황을 보고도 바로 이름 붙일 수는 없었습니다.",
               "behaviorHint": "시선이 아래로 떨어진 채 단어를 아낀다.",
               "tags": [
                 "channel:contradiction_pursuit",
@@ -179139,7 +179139,7 @@
             },
             {
               "id": "contra-b-d-3-S1-v7",
-              "text": "말을 아낀 게 오해를 키운 건 압니다. 그 흐름을 보고도 바로 이름 붙일 수는 없었습니다.",
+              "text": "말을 아낀 게 오해를 키운 건 압니다. 그렇게 이어진 정황을 보고도 바로 이름 붙일 수는 없었습니다.",
               "behaviorHint": "감정을 지우고 짧게 답한다.",
               "tags": [
                 "channel:contradiction_pursuit",
@@ -179497,7 +179497,7 @@
             },
             {
               "id": "contra-b-d-3-S2-v5",
-              "text": "제 설명이 부족했습니다. 그 흐름을 말하면 다은이 가족 이야기까지 열려서 조심했습니다.",
+              "text": "제 설명이 부족했습니다. 그렇게 이어진 정황을 말하면 다은이 가족 이야기까지 열려서 조심했습니다.",
               "behaviorHint": "손가락을 맞물고 필요한 말만 고른다.",
               "tags": [
                 "channel:contradiction_pursuit",
@@ -179717,7 +179717,7 @@
             },
             {
               "id": "contra-b-d-3-S2-v10",
-              "text": "제가 편한 길을 택한 건 아닙니다. 그 흐름을 말하면 다은이 가족 이야기까지 열려서 조심했습니다.",
+              "text": "제가 편한 길을 택한 건 아닙니다. 그렇게 이어진 정황을 말하면 다은이 가족 이야기까지 열려서 조심했습니다.",
               "behaviorHint": "조심스럽게 인정하지만 핵심은 아직 닫아 둔다.",
               "tags": [
                 "channel:contradiction_pursuit",
@@ -180299,7 +180299,7 @@
             },
             {
               "id": "contra-b-d-3-S4-v3",
-              "text": "제가 참은 게 답은 아니었습니다. 그 패턴을 알아본 사람이 저라서 더 무거웠습니다.",
+              "text": "제가 참은 게 답은 아니었습니다. 그 반복을 알아본 사람이 저라서 더 무거웠습니다.",
               "behaviorHint": "울음보다 체념이 먼저 올라온다.",
               "tags": [
                 "channel:contradiction_pursuit",
@@ -180519,7 +180519,7 @@
             },
             {
               "id": "contra-b-d-3-S4-v8",
-              "text": "숨기면 덜 아플 줄 알았습니다. 그 패턴을 알아본 사람이 저라서 더 무거웠습니다.",
+              "text": "숨기면 덜 아플 줄 알았습니다. 그 반복을 알아본 사람이 저라서 더 무거웠습니다.",
               "behaviorHint": "숨이 짧게 꺾이고 시선이 바닥에 고정된다.",
               "tags": [
                 "channel:contradiction_pursuit",
@@ -180790,7 +180790,7 @@
             },
             {
               "id": "contra-a-d-4-S1-v4",
-              "text": "저는 처음부터 그 흐름을 본 겁니다. 수민 씨 침묵이 먼저였다고 기억했습니다.",
+              "text": "저는 처음부터 그렇게 이어진 정황을 본 겁니다. 수민 씨 침묵이 먼저였다고 기억했습니다.",
               "behaviorHint": "결론부터 붙잡고 시선을 비킨다.",
               "tags": [
                 "channel:contradiction_pursuit",
@@ -180919,7 +180919,7 @@
             },
             {
               "id": "contra-a-d-4-S1-v7",
-              "text": "저는 아직 그 장면을 다르게 못 봅니다. 돈 문제라는 말만 남기고 사라진 사람을 믿기 어려웠습니다.",
+              "text": "저는 아직 그 일을 다르게 못 봅니다. 돈 문제라는 말만 남기고 사라진 사람을 믿기 어려웠습니다.",
               "behaviorHint": "결론부터 붙잡고 시선을 비킨다.",
               "tags": [
                 "channel:contradiction_pursuit",
@@ -188697,7 +188697,7 @@
             },
             {
               "id": "interject-b-d-3-minor-v7",
-              "text": "잠깐만요, 재판관님. 제가 본 문장들은 같은 방향으로 이어지고 있었습니다.",
+              "text": "잠깐만요, 재판관님. 제가 본 문장들은 한 흐름으로 이어지고 있었습니다.",
               "behaviorHint": "낮은 목소리로 끼어들어 빠진 맥락을 세운다.",
               "tags": [
                 "channel:interjection",
@@ -188781,7 +188781,7 @@
             },
             {
               "id": "interject-b-d-3-minor-v9",
-              "text": "잠깐만요, 재판관님. 그 흐름을 말하지 않으면 제 연락 이유가 사라집니다.",
+              "text": "잠깐만요, 재판관님. 그렇게 이어진 정황을 말하지 않으면 제 연락 이유가 사라집니다.",
               "behaviorHint": "자기 책임을 먼저 인정하며 흐름을 바로잡는다.",
               "tags": [
                 "channel:interjection",
@@ -189043,7 +189043,7 @@
             },
             {
               "id": "interject-b-d-3-major-v5",
-              "text": "재판관님, 그 흐름을 지우면 제 연락은 또 집착처럼만 남습니다!",
+              "text": "재판관님, 그렇게 이어진 정황을 지우면 제 연락은 또 집착처럼만 남습니다!",
               "behaviorHint": "또 악역이 될까 봐 드물게 목소리를 높인다.",
               "tags": [
                 "channel:interjection",
@@ -193088,7 +193088,7 @@
             },
             {
               "id": "overload-a-d-3-v9",
-              "text": "…그 흐름을 인정하면 제 전 친구에게 한 말들이 전부 다시 돌아옵니다. (두 턴 후) …계속하겠습니다.",
+              "text": "…그렇게 이어진 정황을 인정하면 제 전 친구에게 한 말들이 전부 다시 돌아옵니다. (두 턴 후) …계속하겠습니다.",
               "behaviorHint": "피해자 위치를 붙잡다가 책임의 무게에 말이 끊긴다.",
               "tags": [
                 "channel:emotional_overload",
@@ -193527,7 +193527,7 @@
             },
             {
               "id": "overload-b-d-3-v9",
-              "text": "…그 흐름을 말하지 않으면 제 연락 이유가 전부 사라집니다. (두 턴 후) …답하겠습니다.",
+              "text": "…그렇게 이어진 정황을 말하지 않으면 제 연락 이유가 전부 사라집니다. (두 턴 후) …답하겠습니다.",
               "behaviorHint": "스스로 악역이 된 기억이 올라와 시선이 내려간다.",
               "tags": [
                 "channel:emotional_overload",
@@ -196777,7 +196777,7 @@
             },
             {
               "id": "trust-a-confidential-S1-v10",
-              "text": "비공개라면 말하겠습니다. 결혼 앞에서 그 장면을 좋게 볼 여유가 없었습니다.",
+              "text": "비공개라면 말하겠습니다. 결혼 앞에서 그 일을 좋게 볼 여유가 없었습니다.",
               "behaviorHint": "비공개 보장에 경계가 조금 풀린다. 예비신랑과 아버지 문제를 한꺼번에 드러낼까 망설이는 기색이 비친다.",
               "tags": [
                 "channel:trust_action_response",
@@ -202983,7 +202983,7 @@
             },
             {
               "id": "judgeq-d-1-fact_pursuit-1-v4",
-              "text": "최수민 씨, 전화와 문자가 반복된 순서를 구체적으로 설명해 주십시오.",
+              "text": "최수민 씨, 전화와 문자가 반복된 순서를 장면과 순서를 나눠 설명해 주십시오.",
               "behaviorHint": "재판관이 확인 가능한 사실과 시간순서를 먼저 고정한다. depth 1 기준으로 질문 강도를 조절한다.",
               "tags": [
                 "channel:judge_question",
@@ -203991,7 +203991,7 @@
           "variants": [
             {
               "id": "judgeq-d-1-motive_search-2-v1",
-              "text": "최수민 씨, 직접 말하지 않고 우회한 이유를 분명히 말씀하십시오.",
+              "text": "최수민 씨, 직접 말하지 않고 우회한 이유를 명확히 말씀하십시오.",
               "behaviorHint": "재판관이 행동 뒤의 판단과 숨긴 이유를 좁혀 묻는다. depth 2 기준으로 질문 강도를 조절한다.",
               "tags": [
                 "channel:judge_question",
@@ -204263,7 +204263,7 @@
             },
             {
               "id": "judgeq-d-1-motive_search-3-v2",
-              "text": "송다은 씨, 반복 연락만으로 마음의 방향까지 단정한 이유를 말하십시오.",
+              "text": "송다은 씨, 반복 연락만으로 마음의 방향까지 단정한 이유를 말씀해 주십시오.",
               "behaviorHint": "재판관이 행동 뒤의 판단과 숨긴 이유를 좁혀 묻는다. depth 3 기준으로 질문 강도를 조절한다.",
               "tags": [
                 "channel:judge_question",
@@ -204851,7 +204851,7 @@
             },
             {
               "id": "judgeq-d-1-empathy_approach-1-v5",
-              "text": "송다은 씨, 결혼 앞에서 그 장면이 왜 그렇게 크게 다가왔습니까.",
+              "text": "송다은 씨, 결혼 앞에서 그 일이 왜 그렇게 크게 다가왔습니까.",
               "behaviorHint": "재판관이 감정의 압력을 인정하되 책임의 지점을 놓치지 않는다. depth 1 기준으로 질문 강도를 조절한다.",
               "tags": [
                 "channel:judge_question",
@@ -205587,7 +205587,7 @@
           "variants": [
             {
               "id": "judgeq-d-2-fact_pursuit-1-v1",
-              "text": "최수민 씨, 예비신랑과 따로 닿은 첫 대화를 시간순으로 말하십시오.",
+              "text": "최수민 씨, 예비신랑과 따로 닿은 첫 대화를 시간순으로 말씀해 주십시오.",
               "behaviorHint": "재판관이 확인 가능한 사실과 시간순서를 먼저 고정한다. depth 1 기준으로 질문 강도를 조절한다.",
               "tags": [
                 "channel:judge_question",
@@ -205810,7 +205810,7 @@
           "variants": [
             {
               "id": "judgeq-d-2-fact_pursuit-2-v1",
-              "text": "최수민 씨, 선을 넘은 말에 어떻게 거절했는지 정확히 말씀하십시오.",
+              "text": "최수민 씨, 선을 넘은 말에 어떻게 거절했는지 차분히 말씀하십시오.",
               "behaviorHint": "재판관이 확인 가능한 사실과 시간순서를 먼저 고정한다. depth 2 기준으로 질문 강도를 조절한다.",
               "tags": [
                 "channel:judge_question",
@@ -205939,7 +205939,7 @@
             },
             {
               "id": "judgeq-d-2-fact_pursuit-2-v4",
-              "text": "최수민 씨, 거절 뒤에도 기록을 바로 공개하지 않은 이유를 말하십시오.",
+              "text": "최수민 씨, 거절 뒤에도 기록을 바로 공개하지 않은 이유를 말씀해 주십시오.",
               "behaviorHint": "재판관이 확인 가능한 사실과 시간순서를 먼저 고정한다. depth 2 기준으로 질문 강도를 조절한다.",
               "tags": [
                 "channel:judge_question",
@@ -206033,7 +206033,7 @@
           "variants": [
             {
               "id": "judgeq-d-2-fact_pursuit-3-v1",
-              "text": "최수민 씨, 예비신랑이 먼저 넘은 경계를 자료로 설명하십시오.",
+              "text": "최수민 씨, 대화의 선후가 먼저 넘은 경계를 자료로 설명하십시오.",
               "behaviorHint": "재판관이 확인 가능한 사실과 시간순서를 먼저 고정한다. depth 3 기준으로 질문 강도를 조절한다.",
               "tags": [
                 "channel:judge_question",
@@ -206342,7 +206342,7 @@
             },
             {
               "id": "judgeq-d-2-fact_pursuit-4-v3",
-              "text": "두 분, 예비신랑의 행동과 최수민 씨의 대응을 분리해 말하십시오.",
+              "text": "두 분, 예비신랑의 행동과 최수민 씨의 대응을 분리해 말씀해 주십시오.",
               "behaviorHint": "재판관이 확인 가능한 사실과 시간순서를 먼저 고정한다. depth 4 기준으로 질문 강도를 조절한다.",
               "tags": [
                 "channel:judge_question",
@@ -206788,7 +206788,7 @@
             },
             {
               "id": "judgeq-d-2-motive_search-2-v3",
-              "text": "두 분, 침묵과 신뢰가 선후 판단을 어떻게 흐렸는지 말하십시오.",
+              "text": "두 분, 침묵과 신뢰가 선후 판단을 어떻게 흐렸는지 말씀해 주십시오.",
               "behaviorHint": "재판관이 행동 뒤의 판단과 숨긴 이유를 좁혀 묻는다. depth 2 기준으로 질문 강도를 조절한다.",
               "tags": [
                 "channel:judge_question",
@@ -207011,7 +207011,7 @@
             },
             {
               "id": "judgeq-d-2-motive_search-3-v3",
-              "text": "두 분, 누가 관계의 경계를 먼저 흔들었는지 판단 근거를 말하십시오.",
+              "text": "두 분, 누가 관계의 경계를 먼저 흔들었는지 판단 근거를 말씀해 주십시오.",
               "behaviorHint": "재판관이 행동 뒤의 판단과 숨긴 이유를 좁혀 묻는다. depth 3 기준으로 질문 강도를 조절한다.",
               "tags": [
                 "channel:judge_question",
@@ -207277,7 +207277,7 @@
             },
             {
               "id": "judgeq-d-2-motive_search-4-v4",
-              "text": "최수민 씨, 거절한 사실보다 숨긴 사실이 커진 이유를 말하십시오.",
+              "text": "최수민 씨, 거절한 사실보다 숨긴 사실이 커진 이유를 말씀해 주십시오.",
               "behaviorHint": "재판관이 행동 뒤의 판단과 숨긴 이유를 좁혀 묻는다. depth 4 기준으로 질문 강도를 조절한다.",
               "tags": [
                 "channel:judge_question",
@@ -208126,7 +208126,7 @@
             },
             {
               "id": "judgeq-d-2-empathy_approach-4-v3",
-              "text": "두 분, 상처를 피하려다 더 큰 오해를 만든 지점을 말하십시오.",
+              "text": "두 분, 상처를 피하려다 더 큰 오해를 만든 지점을 말씀해 주십시오.",
               "behaviorHint": "재판관이 감정의 압력을 인정하되 책임의 지점을 놓치지 않는다. depth 4 기준으로 질문 강도를 조절한다.",
               "tags": [
                 "channel:judge_question",
@@ -208491,7 +208491,7 @@
           "variants": [
             {
               "id": "judgeq-d-3-fact_pursuit-2-v1",
-              "text": "최수민 씨, 현재의 돈을 빌려 달라는 말과 과거 경험이 닮았다고 본 근거를 말하십시오.",
+              "text": "최수민 씨, 현재의 돈을 빌려 달라는 말과 과거 경험이 닮았다고 본 근거를 말씀해 주십시오.",
               "behaviorHint": "재판관이 확인 가능한 사실과 시간순서를 먼저 고정한다. depth 2 기준으로 질문 강도를 조절한다.",
               "tags": [
                 "channel:judge_question",
@@ -208623,7 +208623,7 @@
             },
             {
               "id": "judgeq-d-3-fact_pursuit-2-v4",
-              "text": "최수민 씨, 예비신랑에게 경고해야 한다고 판단한 시점을 말하십시오.",
+              "text": "최수민 씨, 예비신랑에게 경고해야 한다고 판단한 시점을 말씀해 주십시오.",
               "behaviorHint": "재판관이 확인 가능한 사실과 시간순서를 먼저 고정한다. depth 2 기준으로 질문 강도를 조절한다.",
               "tags": [
                 "channel:judge_question",
@@ -208667,7 +208667,7 @@
             },
             {
               "id": "judgeq-d-3-fact_pursuit-2-v5",
-              "text": "송다은 씨, 아버지 문자와 최수민 씨 연락을 따로 본 이유를 말하십시오.",
+              "text": "송다은 씨, 아버지 문자와 최수민 씨 연락을 따로 본 이유를 말씀해 주십시오.",
               "behaviorHint": "재판관이 확인 가능한 사실과 시간순서를 먼저 고정한다. depth 2 기준으로 질문 강도를 조절한다.",
               "tags": [
                 "channel:judge_question",
@@ -208895,7 +208895,7 @@
             },
             {
               "id": "judgeq-d-3-fact_pursuit-3-v5",
-              "text": "송다은 씨, 아버지의 돈을 요구한 흐름을 이제도 오해라고 보십니까.",
+              "text": "송다은 씨, 아버지의 돈을 요구한 흐름을 지금도 오해라고 보십니까.",
               "behaviorHint": "재판관이 확인 가능한 사실과 시간순서를 먼저 고정한다. depth 3 기준으로 질문 강도를 조절한다.",
               "tags": [
                 "channel:judge_question",
@@ -209035,7 +209035,7 @@
             },
             {
               "id": "judgeq-d-3-fact_pursuit-4-v3",
-              "text": "두 분, 가족 문제와 예비신랑 연락이 만난 지점을 말하십시오.",
+              "text": "두 분, 가족 문제와 예비신랑 연락이 만난 지점을 말씀해 주십시오.",
               "behaviorHint": "재판관이 확인 가능한 사실과 시간순서를 먼저 고정한다. depth 4 기준으로 질문 강도를 조절한다.",
               "tags": [
                 "channel:judge_question",
@@ -209079,7 +209079,7 @@
             },
             {
               "id": "judgeq-d-3-fact_pursuit-4-v4",
-              "text": "최수민 씨, 과거와 같은 흐름을 보고도 혼자 막으려 한 이유를 말하십시오.",
+              "text": "최수민 씨, 과거와 같은 흐름을 보고도 혼자 막으려 한 이유를 말씀해 주십시오.",
               "behaviorHint": "재판관이 확인 가능한 사실과 시간순서를 먼저 고정한다. depth 4 기준으로 질문 강도를 조절한다.",
               "tags": [
                 "channel:judge_question",
@@ -209219,7 +209219,7 @@
             },
             {
               "id": "judgeq-d-3-motive_search-1-v2",
-              "text": "송다은 씨, 아버지 부탁을 의심하기 어려웠던 마음을 말하십시오.",
+              "text": "송다은 씨, 아버지 부탁을 의심하기 어려웠던 마음을 말씀해 주십시오.",
               "behaviorHint": "재판관이 행동 뒤의 판단과 숨긴 이유를 좁혀 묻는다. depth 1 기준으로 질문 강도를 조절한다.",
               "tags": [
                 "channel:judge_question",
@@ -209491,7 +209491,7 @@
             },
             {
               "id": "judgeq-d-3-motive_search-2-v3",
-              "text": "두 분, 돈 문제를 말하지 않거나 듣지 않은 이유를 각각 말하십시오.",
+              "text": "두 분, 돈 문제를 말하지 않거나 듣지 않은 이유를 각각 말씀해 주십시오.",
               "behaviorHint": "재판관이 행동 뒤의 판단과 숨긴 이유를 좁혀 묻는다. depth 2 기준으로 질문 강도를 조절한다.",
               "tags": [
                 "channel:judge_question",
@@ -209947,7 +209947,7 @@
             },
             {
               "id": "judgeq-d-3-motive_search-4-v3",
-              "text": "두 분, 돈을 빌려 달라는 흐름이 반복됐다는 점을 인정한 뒤 각자 숨긴 이유를 말하십시오.",
+              "text": "두 분, 돈을 빌려 달라는 흐름이 반복됐다는 점을 인정한 뒤 각자 숨긴 이유를 말씀해 주십시오.",
               "behaviorHint": "재판관이 행동 뒤의 판단과 숨긴 이유를 좁혀 묻는다. depth 4 기준으로 질문 강도를 조절한다.",
               "tags": [
                 "channel:judge_question",
@@ -210491,7 +210491,7 @@
             },
             {
               "id": "judgeq-d-3-empathy_approach-2-v5",
-              "text": "송다은 씨, 최수민 씨 경고를 받아들이기 어려운 마음을 말하십시오.",
+              "text": "송다은 씨, 최수민 씨 경고를 받아들이기 어려운 마음을 말씀해 주십시오.",
               "behaviorHint": "재판관이 감정의 압력을 인정하되 책임의 지점을 놓치지 않는다. depth 2 기준으로 질문 강도를 조절한다.",
               "tags": [
                 "channel:judge_question",
@@ -210859,7 +210859,7 @@
             },
             {
               "id": "judgeq-d-3-empathy_approach-4-v3",
-              "text": "두 분, 이번 돈 문제에서 서로에게 남긴 상처를 말하십시오.",
+              "text": "두 분, 이번 돈 문제에서 서로에게 남긴 상처를 말씀해 주십시오.",
               "behaviorHint": "재판관이 감정의 압력을 인정하되 책임의 지점을 놓치지 않는다. depth 4 기준으로 질문 강도를 조절한다.",
               "tags": [
                 "channel:judge_question",
@@ -210903,7 +210903,7 @@
             },
             {
               "id": "judgeq-d-3-empathy_approach-4-v4",
-              "text": "최수민 씨, 같은 패턴 앞에서 혼자 버틴 대가를 어떻게 보십니까.",
+              "text": "최수민 씨, 비슷한 구조 앞에서 혼자 버틴 대가를 어떻게 보십니까.",
               "behaviorHint": "재판관이 감정의 압력을 인정하되 책임의 지점을 놓치지 않는다. depth 4 기준으로 질문 강도를 조절한다.",
               "tags": [
                 "channel:judge_question",
@@ -211499,7 +211499,7 @@
             },
             {
               "id": "judgeq-d-4-fact_pursuit-3-v2",
-              "text": "송다은 씨, 아버지의 돈 문제가 손절 원인이라는 자료를 어떻게 보십니까.",
+              "text": "송다은 씨, 송금 흐름의 출처가 손절 원인이라는 자료를 어떻게 보십니까.",
               "behaviorHint": "재판관이 확인 가능한 사실과 시간순서를 먼저 고정한다. depth 3 기준으로 질문 강도를 조절한다.",
               "tags": [
                 "channel:judge_question",
@@ -211543,7 +211543,7 @@
             },
             {
               "id": "judgeq-d-4-fact_pursuit-3-v3",
-              "text": "두 분, 과거 송금과 침묵이 현재 오해로 이어진 순서를 말하십시오.",
+              "text": "두 분, 과거 송금과 침묵이 현재 오해로 이어진 순서를 말씀해 주십시오.",
               "behaviorHint": "재판관이 확인 가능한 사실과 시간순서를 먼저 고정한다. depth 3 기준으로 질문 강도를 조절한다.",
               "tags": [
                 "channel:judge_question",
@@ -212683,7 +212683,7 @@
             },
             {
               "id": "judgeq-d-4-motive_search-4-v3",
-              "text": "두 분, 과거 침묵이 현재 낙인을 만든 이유를 정면으로 말하십시오.",
+              "text": "두 분, 과거 침묵이 현재 낙인을 만든 이유를 정면으로 말씀해 주십시오.",
               "behaviorHint": "재판관이 행동 뒤의 판단과 숨긴 이유를 좁혀 묻는다. depth 4 기준으로 질문 강도를 조절한다.",
               "tags": [
                 "channel:judge_question",
@@ -212911,7 +212911,7 @@
             },
             {
               "id": "judgeq-d-4-empathy_approach-1-v3",
-              "text": "두 분, 말하지 못한 사람과 듣지 못한 사람의 상처를 나눠 말하십시오.",
+              "text": "두 분, 말하지 못한 사람과 듣지 못한 사람의 상처를 나눠 말씀해 주십시오.",
               "behaviorHint": "재판관이 감정의 압력을 인정하되 책임의 지점을 놓치지 않는다. depth 1 기준으로 질문 강도를 조절한다.",
               "tags": [
                 "channel:judge_question",
@@ -213183,7 +213183,7 @@
             },
             {
               "id": "judgeq-d-4-empathy_approach-2-v4",
-              "text": "최수민 씨, 송다은 씨가 받을 충격을 떠올리며 참은 감정을 말하십시오.",
+              "text": "최수민 씨, 송다은 씨가 받을 충격을 떠올리며 참은 감정을 말씀해 주십시오.",
               "behaviorHint": "재판관이 감정의 압력을 인정하되 책임의 지점을 놓치지 않는다. depth 2 기준으로 질문 강도를 조절한다.",
               "tags": [
                 "channel:judge_question",
@@ -213595,7 +213595,7 @@
             },
             {
               "id": "judgeq-d-4-empathy_approach-4-v3",
-              "text": "두 분, 과거의 보호와 단정이 지금 관계에 남긴 값을 말하십시오.",
+              "text": "두 분, 과거의 보호와 단정이 지금 관계에 남긴 값을 말씀해 주십시오.",
               "behaviorHint": "재판관이 감정의 압력을 인정하되 책임의 지점을 놓치지 않는다. depth 4 기준으로 질문 강도를 조절한다.",
               "tags": [
                 "channel:judge_question",
@@ -213781,7 +213781,7 @@
             },
             {
               "id": "judgec-d-1-soft-v2",
-              "text": "송다은 씨, 집착이라고 단정한 주장과 경고 가능성이 함께 남았습니다. 판단 근거를 다시 말하십시오.",
+              "text": "송다은 씨, 집착이라고 단정한 주장과 경고 가능성이 함께 남았습니다. 판단 근거를 다시 말씀해 주십시오.",
               "behaviorHint": "재판관이 진술이 달라진 지점을 낮은 압박으로 정리하게 한다.",
               "tags": [
                 "channel:judge_contradiction",
@@ -214354,7 +214354,7 @@
             },
             {
               "id": "judgec-d-1-hard-v5",
-              "text": "송다은 씨, 집착이라는 결론을 먼저 세운 이유를 지금 분명히 말씀하십시오.",
+              "text": "송다은 씨, 집착이라는 결론을 먼저 세운 이유를 지금 명확히 말씀하십시오.",
               "behaviorHint": "재판관이 회피를 끊고 모순의 핵심을 기준 사실로 좁힌다.",
               "tags": [
                 "channel:judge_contradiction",
@@ -214922,7 +214922,7 @@
             },
             {
               "id": "judgec-d-2-hard-v3",
-              "text": "두 분, 선을 넘은 사람과 침묵한 사람을 분리해 판단하겠습니다. 사실만 말하십시오.",
+              "text": "두 분, 선을 넘은 사람과 침묵한 사람을 분리해 판단하겠습니다. 사실만 말씀해 주십시오.",
               "behaviorHint": "재판관이 회피를 끊고 모순의 핵심을 기준 사실로 좁힌다.",
               "tags": [
                 "channel:judge_contradiction",
@@ -215006,7 +215006,7 @@
             },
             {
               "id": "judgec-d-2-hard-v5",
-              "text": "송다은 씨, 예비신랑을 방어하느라 선후를 밀어낸 것인지 분명히 답하십시오.",
+              "text": "송다은 씨, 예비신랑을 방어하느라 선후를 밀어낸 것인지 명확히 답하십시오.",
               "behaviorHint": "재판관이 회피를 끊고 모순의 핵심을 기준 사실로 좁힌다.",
               "tags": [
                 "channel:judge_contradiction",
@@ -215184,7 +215184,7 @@
             },
             {
               "id": "judgec-d-3-soft-v4",
-              "text": "최수민 씨, 과거와 닮았다는 판단이 어디서 시작됐는지 말하십시오.",
+              "text": "최수민 씨, 과거와 닮았다는 판단이 어디서 시작됐는지 말씀해 주십시오.",
               "behaviorHint": "재판관이 진술이 달라진 지점을 낮은 압박으로 정리하게 한다.",
               "tags": [
                 "channel:judge_contradiction",
@@ -215449,7 +215449,7 @@
             },
             {
               "id": "judgec-d-3-mid-v5",
-              "text": "송다은 씨, 아버지에게 불리한 자료를 외면한 마음을 바로 말하십시오.",
+              "text": "송다은 씨, 아버지에게 불리한 자료를 외면한 마음을 바로 말씀해 주십시오.",
               "behaviorHint": "재판관이 빠진 설명과 바뀐 입장을 분리해 바로 답하게 한다.",
               "tags": [
                 "channel:judge_contradiction",
@@ -215499,7 +215499,7 @@
           "variants": [
             {
               "id": "judgec-d-3-hard-v1",
-              "text": "최수민 씨, 같은 패턴을 봤다는 말로 혼자 판단한 책임까지 덮을 수 없습니다.",
+              "text": "최수민 씨, 비슷한 구조을 봤다는 말로 혼자 판단한 책임까지 덮을 수 없습니다.",
               "behaviorHint": "재판관이 회피를 끊고 모순의 핵심을 기준 사실로 좁힌다.",
               "tags": [
                 "channel:judge_contradiction",
@@ -215671,7 +215671,7 @@
             },
             {
               "id": "judgec-d-3-hard-v5",
-              "text": "송다은 씨, 아버지 문제를 사건 밖으로 밀어낸 이유를 분명히 답하십시오.",
+              "text": "송다은 씨, 아버지 문제를 사건 밖으로 밀어낸 이유를 명확히 답하십시오.",
               "behaviorHint": "재판관이 회피를 끊고 모순의 핵심을 기준 사실로 좁힌다.",
               "tags": [
                 "channel:judge_contradiction",
@@ -216072,7 +216072,7 @@
             },
             {
               "id": "judgec-d-4-mid-v4",
-              "text": "최수민 씨, 악역이 되는 선택이 왜 반복됐는지 구체적으로 말하십시오.",
+              "text": "최수민 씨, 악역이 되는 선택이 왜 반복됐는지 장면과 순서를 나눠 말씀해 주십시오.",
               "behaviorHint": "재판관이 빠진 설명과 바뀐 입장을 분리해 바로 답하게 한다.",
               "tags": [
                 "channel:judge_contradiction",
@@ -216251,7 +216251,7 @@
             },
             {
               "id": "judgec-d-4-hard-v3",
-              "text": "두 분, 과거 투자 명목 피해와 손절의 순서를 기준 사실로 보겠습니다. 정확히 답하십시오.",
+              "text": "두 분, 과거 투자 명목 피해와 손절의 순서를 기준 사실로 보겠습니다. 차분히 답하십시오.",
               "behaviorHint": "재판관이 회피를 끊고 모순의 핵심을 기준 사실로 좁힌다.",
               "tags": [
                 "channel:judge_contradiction",
@@ -217148,7 +217148,7 @@
             },
             {
               "id": "judgecombo-dc-1.a.q1-hard-v5",
-              "text": "연락 기록과 단톡방 캡처를 함께 보면, 횟수를 근거로 사람을 집착으로 몰았습니다. 단톡방까지 번진 그 판단을 지금 책임 있게 말하십시오.",
+              "text": "연락 기록과 단톡방 캡처를 함께 보면, 횟수를 근거로 사람을 집착으로 몰았습니다. 단톡방까지 번진 그 판단을 지금 책임 있게 말씀해 주십시오.",
               "behaviorHint": "연락 기록의 겉모습과 단톡방 낙인을 함께 놓아, 확인 전 단정과 연락 목적을 동시에 묻는 카드다.",
               "tags": [
                 "channel:judge_evidence_combo",
@@ -217321,7 +217321,7 @@
             },
             {
               "id": "judgecombo-dc-1.b.q1-soft-v3",
-              "text": "연락의 겉모습과 공개된 오해를 함께 보겠습니다. 최수민 씨, 감정이 아니라 경고였다는 근거를 말하십시오.",
+              "text": "연락의 겉모습과 공개된 오해를 함께 보겠습니다. 최수민 씨, 감정이 아니라 경고였다는 근거를 말씀해 주십시오.",
               "behaviorHint": "연락 기록의 겉모습과 단톡방 낙인을 함께 놓아, 확인 전 단정과 연락 목적을 동시에 묻는 카드다.",
               "tags": [
                 "channel:judge_evidence_combo",
@@ -217494,7 +217494,7 @@
           "variants": [
             {
               "id": "judgecombo-dc-1.b.q1-mid-v1",
-              "text": "연락 기록만 보면 의심이 생기지만, 단톡방 캡처를 함께 보면 오해가 커진 과정도 보입니다. 최수민 씨, 목적을 분명히 말하십시오.",
+              "text": "연락 기록만 보면 의심이 생기지만, 단톡방 캡처를 함께 보면 오해가 커진 과정도 보입니다. 최수민 씨, 목적을 명확히 말씀해 주십시오.",
               "behaviorHint": "연락 기록의 겉모습과 단톡방 낙인을 함께 놓아, 확인 전 단정과 연락 목적을 동시에 묻는 카드다.",
               "tags": [
                 "channel:judge_evidence_combo",
@@ -217961,7 +217961,7 @@
             },
             {
               "id": "judgecombo-dc-1.b.q1-hard-v5",
-              "text": "연락 기록과 단톡방 캡처를 함께 보면, 단톡방에서 낙인이 붙을 정도로 일이 번졌습니다. 최수민 씨, 그럼에도 숨긴 핵심을 지금 말하십시오.",
+              "text": "연락 기록과 단톡방 캡처를 함께 보면, 단톡방에서 낙인이 붙을 정도로 일이 번졌습니다. 최수민 씨, 그럼에도 숨긴 핵심을 지금 말씀해 주십시오.",
               "behaviorHint": "연락 기록의 겉모습과 단톡방 낙인을 함께 놓아, 확인 전 단정과 연락 목적을 동시에 묻는 카드다.",
               "tags": [
                 "channel:judge_evidence_combo",
@@ -218354,7 +218354,7 @@
             },
             {
               "id": "judgecombo-dc-2.b.q1-mid-v2",
-              "text": "연락 기록과 예비신랑 메시지를 함께 보면, 예비신랑이 먼저 사적인 말을 보낸 기록이 있습니다. 최수민 씨, 거절한 사람인데도 숨긴 이유를 답하십시오.",
+              "text": "연락 기록과 예비신랑 메시지를 함께 보면, 대화의 선후가 먼저 사적인 말을 보낸 기록이 있습니다. 최수민 씨, 거절한 사람인데도 숨긴 이유를 답하십시오.",
               "behaviorHint": "연락 기록과 예비신랑 메시지를 함께 놓아, 먼저 선을 넘은 쪽과 최수민 씨의 침묵 책임을 분리하는 카드다.",
               "tags": [
                 "channel:judge_evidence_combo",
@@ -218993,7 +218993,7 @@
             },
             {
               "id": "judgecombo-dc-3.b.q1-soft-v4",
-              "text": "현재 문자와 과거 송금 기록을 함께 보면, 단순한 우려가 아니라 반복된 방식이 보입니다. 최수민 씨, 차분히 말하십시오.",
+              "text": "현재 문자와 과거 송금 기록을 함께 보면, 단순한 우려가 아니라 반복된 방식이 보입니다. 최수민 씨, 차분히 말씀해 주십시오.",
               "behaviorHint": "현재 문자와 과거 송금 흐름을 함께 놓아, 돈을 빌려 달라는 방식이 반복됐는지 확인하는 카드다.",
               "tags": [
                 "channel:judge_evidence_combo",
@@ -219042,7 +219042,7 @@
             },
             {
               "id": "judgecombo-dc-3.b.q1-soft-v5",
-              "text": "현재 문자와 과거 돈 흐름이 같은 방향을 가리킵니다. 최수민 씨, 왜 이번에도 혼자 막으려 했습니까.",
+              "text": "현재 문자와 과거 돈 흐름이 한 결론으로 이어집니다. 최수민 씨, 왜 이번에도 혼자 막으려 했습니까.",
               "behaviorHint": "현재 문자와 과거 송금 흐름을 함께 놓아, 돈을 빌려 달라는 방식이 반복됐는지 확인하는 카드다.",
               "tags": [
                 "channel:judge_evidence_combo",
@@ -219166,7 +219166,7 @@
             },
             {
               "id": "judgecombo-dc-3.b.q1-mid-v2",
-              "text": "지금 예비신랑에게 간 말과 예전 최수민 씨에게 남은 돈 흐름이 겹칩니다. 경고 판단을 분명히 말하십시오.",
+              "text": "지금 예비신랑에게 간 말과 예전 최수민 씨에게 남은 돈 흐름이 겹칩니다. 경고 판단을 명확히 말씀해 주십시오.",
               "behaviorHint": "현재 문자와 과거 송금 흐름을 함께 놓아, 돈을 빌려 달라는 방식이 반복됐는지 확인하는 카드다.",
               "tags": [
                 "channel:judge_evidence_combo",
@@ -219437,7 +219437,7 @@
             },
             {
               "id": "judgecombo-dc-3.b.q1-hard-v2",
-              "text": "현재 문자와 과거 송금 기록을 함께 보면, 같은 방식이라고 알아봤다면 더 정확히 말했어야 합니다. 최수민 씨, 왜 송다은 씨에게 열지 않았습니까.",
+              "text": "현재 문자와 과거 송금 기록을 함께 보면, 같은 방식이라고 알아봤다면 더 차분히 말했어야 합니다. 최수민 씨, 왜 송다은 씨에게 열지 않았습니까.",
               "behaviorHint": "현재 문자와 과거 송금 흐름을 함께 놓아, 돈을 빌려 달라는 방식이 반복됐는지 확인하는 카드다.",
               "tags": [
                 "channel:judge_evidence_combo",
@@ -219535,7 +219535,7 @@
             },
             {
               "id": "judgecombo-dc-3.b.q1-hard-v4",
-              "text": "현재 문자와 과거 송금 기록을 함께 보면, 침묵은 더 큰 의심을 만듭니다. 최수민 씨, 무엇을 막으려 했는지 분명히 말하십시오.",
+              "text": "현재 문자와 과거 송금 기록을 함께 보면, 침묵은 더 큰 의심을 만듭니다. 최수민 씨, 무엇을 막으려 했는지 명확히 말씀해 주십시오.",
               "behaviorHint": "현재 문자와 과거 송금 흐름을 함께 놓아, 돈을 빌려 달라는 방식이 반복됐는지 확인하는 카드다.",
               "tags": [
                 "channel:judge_evidence_combo",
@@ -219855,7 +219855,7 @@
             },
             {
               "id": "judgecombo-dc-3.a.q1-soft-v5",
-              "text": "현재 부탁과 과거 피해가 같은 방향을 보입니다. 송다은 씨, 판단을 차분히 말씀하십시오.",
+              "text": "현재 부탁과 과거 피해가 한 결론으로 이어집니다. 송다은 씨, 판단을 차분히 말씀하십시오.",
               "behaviorHint": "현재 문자와 과거 송금 흐름을 함께 놓아, 돈을 빌려 달라는 방식이 반복됐는지 확인하는 카드다.",
               "tags": [
                 "channel:judge_evidence_combo",
@@ -220126,7 +220126,7 @@
             },
             {
               "id": "judgecombo-dc-3.a.q1-mid-v5",
-              "text": "현재 문자와 과거 송금 기록을 함께 보면, 반복된 방식을 가리킵니다. 송다은 씨, 아버지를 의심하지 않으려 한 이유를 말하십시오.",
+              "text": "현재 문자와 과거 송금 기록을 함께 보면, 반복된 방식을 가리킵니다. 송다은 씨, 아버지를 의심하지 않으려 한 이유를 말씀해 주십시오.",
               "behaviorHint": "현재 문자와 과거 송금 흐름을 함께 놓아, 돈을 빌려 달라는 방식이 반복됐는지 확인하는 카드다.",
               "tags": [
                 "channel:judge_evidence_combo",
@@ -220615,7 +220615,7 @@
             },
             {
               "id": "judgecombo-dc-4.b.q1-soft-v4",
-              "text": "과거 카톡과 송금 기록을 함께 보면, 손절의 이유가 달라집니다. 최수민 씨, 송다은 씨에게 열지 못한 마음을 말하십시오.",
+              "text": "과거 카톡과 송금 기록을 함께 보면, 손절의 이유가 달라집니다. 최수민 씨, 송다은 씨에게 열지 못한 마음을 말씀해 주십시오.",
               "behaviorHint": "과거 카톡과 송금 기록을 함께 놓아, 손절의 이유가 변심이 아니라 투자 명목 피해와 침묵이었음을 묻는 카드다.",
               "tags": [
                 "channel:judge_evidence_combo",
@@ -220736,7 +220736,7 @@
           "variants": [
             {
               "id": "judgecombo-dc-4.b.q1-mid-v1",
-              "text": "과거 카톡과 송금 기록은 손절의 이유를 변심이 아니라 돈 피해 쪽으로 돌립니다. 최수민 씨, 침묵의 판단을 말하십시오.",
+              "text": "과거 카톡과 송금 기록은 손절의 이유를 변심이 아니라 돈 피해 방향으로 돌립니다. 최수민 씨, 침묵의 판단을 말씀해 주십시오.",
               "behaviorHint": "과거 카톡과 송금 기록을 함께 놓아, 손절의 이유가 변심이 아니라 투자 명목 피해와 침묵이었음을 묻는 카드다.",
               "tags": [
                 "channel:judge_evidence_combo",
@@ -221097,7 +221097,7 @@
             },
             {
               "id": "judgecombo-dc-4.b.q1-hard-v3",
-              "text": "카톡의 빈칸과 송금 기록 앞에서 더는 변심으로 흐릴 수 없습니다. 최수민 씨, 핵심을 말하십시오.",
+              "text": "카톡의 빈칸과 송금 기록 앞에서 더는 변심으로 흐릴 수 없습니다. 최수민 씨, 핵심을 말씀해 주십시오.",
               "behaviorHint": "과거 카톡과 송금 기록을 함께 놓아, 손절의 이유가 변심이 아니라 투자 명목 피해와 침묵이었음을 묻는 카드다.",
               "tags": [
                 "channel:judge_evidence_combo",
@@ -221988,7 +221988,7 @@
             },
             {
               "id": "judgecombo-dc-4.a.q1-hard-v5",
-              "text": "과거 카톡과 송금 기록을 함께 보면, 변심이라고 단정한 기억이 자료 앞에서 무너졌습니다. 송다은 씨, 그 단정을 책임 있게 말하십시오.",
+              "text": "과거 카톡과 송금 기록을 함께 보면, 변심이라고 단정한 기억이 자료 앞에서 무너졌습니다. 송다은 씨, 그 단정을 책임 있게 말씀해 주십시오.",
               "behaviorHint": "과거 카톡과 송금 기록을 함께 놓아, 손절의 이유가 변심이 아니라 투자 명목 피해와 침묵이었음을 묻는 카드다.",
               "tags": [
                 "channel:judge_evidence_combo",
@@ -222209,7 +222209,7 @@
             },
             {
               "id": "judgecombo-dc-5.a.q1-soft-v4",
-              "text": "단톡방 캡처와 대조표를 함께 보면, 누가 먼저 이름을 걸었는지 보여줍니다. 송다은 씨, 공개가 확인보다 앞선 이유를 말하십시오.",
+              "text": "단톡방 캡처와 대조표를 함께 보면, 누가 먼저 이름을 걸었는지 보여줍니다. 송다은 씨, 공개가 확인보다 앞선 이유를 말씀해 주십시오.",
               "behaviorHint": "단톡방 캡처와 대조표를 함께 놓아, 먼저 낙인찍은 순서와 반복된 침묵의 책임을 정리하는 카드다.",
               "tags": [
                 "channel:judge_evidence_combo",
@@ -222431,7 +222431,7 @@
             },
             {
               "id": "judgecombo-dc-5.a.q1-mid-v3",
-              "text": "분노만으로는 단톡방에 올린 선택을 설명할 수 없습니다. 대조표까지 본 지금, 송다은 씨 책임을 말하십시오.",
+              "text": "분노만으로는 단톡방에 올린 선택을 설명할 수 없습니다. 대조표까지 본 지금, 송다은 씨 책임을 말씀해 주십시오.",
               "behaviorHint": "단톡방 캡처와 대조표를 함께 놓아, 먼저 낙인찍은 순서와 반복된 침묵의 책임을 정리하는 카드다.",
               "tags": [
                 "channel:judge_evidence_combo",
@@ -223342,7 +223342,7 @@
             },
             {
               "id": "judgecombo-dc-5.b.q1-mid-v5",
-              "text": "공개된 오해와 반복된 침묵이 같은 방향으로 갑니다. 최수민 씨, 바로 답하십시오.",
+              "text": "공개된 오해와 반복된 침묵이 한 결론으로 이어집니다. 최수민 씨, 바로 답하십시오.",
               "behaviorHint": "단톡방 캡처와 대조표를 함께 놓아, 먼저 낙인찍은 순서와 반복된 침묵의 책임을 정리하는 카드다.",
               "tags": [
                 "channel:judge_evidence_combo",
@@ -223515,7 +223515,7 @@
             },
             {
               "id": "judgecombo-dc-5.b.q1-hard-v3",
-              "text": "낙인의 순서가 최종 쟁점입니다. 캡처와 대조표가 남긴 침묵의 대가를 말하십시오.",
+              "text": "낙인의 순서가 최종 쟁점입니다. 캡처와 대조표가 남긴 침묵의 대가를 말씀해 주십시오.",
               "behaviorHint": "단톡방 캡처와 대조표를 함께 놓아, 먼저 낙인찍은 순서와 반복된 침묵의 책임을 정리하는 카드다.",
               "tags": [
                 "channel:judge_evidence_combo",
@@ -223613,7 +223613,7 @@
             },
             {
               "id": "judgecombo-dc-5.b.q1-hard-v5",
-              "text": "단톡방 캡처와 대조표를 함께 보면, 최수민 씨, 끝까지 혼자 버틴 이유와 그 책임을 분명히 말하십시오.",
+              "text": "단톡방 캡처와 대조표를 함께 보면, 최수민 씨, 끝까지 혼자 버틴 이유와 그 책임을 명확히 말씀해 주십시오.",
               "behaviorHint": "단톡방 캡처와 대조표를 함께 놓아, 먼저 낙인찍은 순서와 반복된 침묵의 책임을 정리하는 카드다.",
               "tags": [
                 "channel:judge_evidence_combo",
@@ -223683,7 +223683,7 @@
             {
               "id": "judgewitness-w-1-soft-v1",
               "text": "김세라 씨를 부르겠습니다. 단톡방에서 누가 먼저 말했는지 듣겠습니다.",
-              "behaviorHint": "김세라: 단톡방 분위기와 A의 최초 발언 경위를 아는 공통 친구 증인이다. hiddenAgenda=자신도 B를 비난하는 데 가담한 것이 부끄럽다.",
+              "behaviorHint": "김세라: 단톡방 분위기와 송다은의 최초 발언 경위를 아는 공통 친구 증인이다. hiddenAgenda=자신도 최수민를 비난하는 데 가담한 것이 부끄럽다.",
               "tags": [
                 "channel:judge_witness_summon",
                 "speaker:judge",
@@ -223728,7 +223728,7 @@
             {
               "id": "judgewitness-w-1-soft-v2",
               "text": "김세라 씨의 증언으로 단톡방 분위기와 최초 발언을 확인하겠습니다.",
-              "behaviorHint": "김세라: 단톡방 분위기와 A의 최초 발언 경위를 아는 공통 친구 증인이다. hiddenAgenda=자신도 B를 비난하는 데 가담한 것이 부끄럽다.",
+              "behaviorHint": "김세라: 단톡방 분위기와 송다은의 최초 발언 경위를 아는 공통 친구 증인이다. hiddenAgenda=자신도 최수민를 비난하는 데 가담한 것이 부끄럽다.",
               "tags": [
                 "channel:judge_witness_summon",
                 "speaker:judge",
@@ -223773,7 +223773,7 @@
             {
               "id": "judgewitness-w-1-soft-v3",
               "text": "공통 친구 김세라 씨를 소환하겠습니다. 동조가 어떻게 번졌는지 보겠습니다.",
-              "behaviorHint": "김세라: 단톡방 분위기와 A의 최초 발언 경위를 아는 공통 친구 증인이다. hiddenAgenda=자신도 B를 비난하는 데 가담한 것이 부끄럽다.",
+              "behaviorHint": "김세라: 단톡방 분위기와 송다은의 최초 발언 경위를 아는 공통 친구 증인이다. hiddenAgenda=자신도 최수민를 비난하는 데 가담한 것이 부끄럽다.",
               "tags": [
                 "channel:judge_witness_summon",
                 "speaker:judge",
@@ -223818,7 +223818,7 @@
             {
               "id": "judgewitness-w-1-soft-v4",
               "text": "김세라 씨에게 묻겠습니다. 송다은 씨 발언 뒤 친구들이 어떻게 반응했습니까.",
-              "behaviorHint": "김세라: 단톡방 분위기와 A의 최초 발언 경위를 아는 공통 친구 증인이다. hiddenAgenda=자신도 B를 비난하는 데 가담한 것이 부끄럽다.",
+              "behaviorHint": "김세라: 단톡방 분위기와 송다은의 최초 발언 경위를 아는 공통 친구 증인이다. hiddenAgenda=자신도 최수민를 비난하는 데 가담한 것이 부끄럽다.",
               "tags": [
                 "channel:judge_witness_summon",
                 "speaker:judge",
@@ -223863,7 +223863,7 @@
             {
               "id": "judgewitness-w-1-soft-v5",
               "text": "김세라 씨를 통해 단톡방 몰아붙임와 동조의 순서를 살피겠습니다.",
-              "behaviorHint": "김세라: 단톡방 분위기와 A의 최초 발언 경위를 아는 공통 친구 증인이다. hiddenAgenda=자신도 B를 비난하는 데 가담한 것이 부끄럽다.",
+              "behaviorHint": "김세라: 단톡방 분위기와 송다은의 최초 발언 경위를 아는 공통 친구 증인이다. hiddenAgenda=자신도 최수민를 비난하는 데 가담한 것이 부끄럽다.",
               "tags": [
                 "channel:judge_witness_summon",
                 "speaker:judge",
@@ -223924,7 +223924,7 @@
             {
               "id": "judgewitness-w-1-mid-v1",
               "text": "김세라 씨를 소환합니다. 본인이 동조한 부분까지 사실대로 말해야 합니다.",
-              "behaviorHint": "김세라: 단톡방 분위기와 A의 최초 발언 경위를 아는 공통 친구 증인이다. hiddenAgenda=자신도 B를 비난하는 데 가담한 것이 부끄럽다.",
+              "behaviorHint": "김세라: 단톡방 분위기와 송다은의 최초 발언 경위를 아는 공통 친구 증인이다. hiddenAgenda=자신도 최수민를 비난하는 데 가담한 것이 부끄럽다.",
               "tags": [
                 "channel:judge_witness_summon",
                 "speaker:judge",
@@ -223969,7 +223969,7 @@
             {
               "id": "judgewitness-w-1-mid-v2",
               "text": "단톡방 최초 발언이 갈립니다. 김세라 씨의 직접 증언이 필요합니다.",
-              "behaviorHint": "김세라: 단톡방 분위기와 A의 최초 발언 경위를 아는 공통 친구 증인이다. hiddenAgenda=자신도 B를 비난하는 데 가담한 것이 부끄럽다.",
+              "behaviorHint": "김세라: 단톡방 분위기와 송다은의 최초 발언 경위를 아는 공통 친구 증인이다. hiddenAgenda=자신도 최수민를 비난하는 데 가담한 것이 부끄럽다.",
               "tags": [
                 "channel:judge_witness_summon",
                 "speaker:judge",
@@ -224014,7 +224014,7 @@
             {
               "id": "judgewitness-w-1-mid-v3",
               "text": "김세라 씨, 들어오십시오. 송다은 씨와 가까운 관계라도 순서를 말해야 합니다.",
-              "behaviorHint": "김세라: 단톡방 분위기와 A의 최초 발언 경위를 아는 공통 친구 증인이다. hiddenAgenda=자신도 B를 비난하는 데 가담한 것이 부끄럽다.",
+              "behaviorHint": "김세라: 단톡방 분위기와 송다은의 최초 발언 경위를 아는 공통 친구 증인이다. hiddenAgenda=자신도 최수민를 비난하는 데 가담한 것이 부끄럽다.",
               "tags": [
                 "channel:judge_witness_summon",
                 "speaker:judge",
@@ -224059,7 +224059,7 @@
             {
               "id": "judgewitness-w-1-mid-v4",
               "text": "김세라 씨 증언으로 d-5의 공개 낙인 과정을 바로 확인하겠습니다.",
-              "behaviorHint": "김세라: 단톡방 분위기와 A의 최초 발언 경위를 아는 공통 친구 증인이다. hiddenAgenda=자신도 B를 비난하는 데 가담한 것이 부끄럽다.",
+              "behaviorHint": "김세라: 단톡방 분위기와 송다은의 최초 발언 경위를 아는 공통 친구 증인이다. hiddenAgenda=자신도 최수민를 비난하는 데 가담한 것이 부끄럽다.",
               "tags": [
                 "channel:judge_witness_summon",
                 "speaker:judge",
@@ -224104,7 +224104,7 @@
             {
               "id": "judgewitness-w-1-mid-v5",
               "text": "김세라 씨를 부르겠습니다. 부끄러운 동조가 있었다면 그 부분도 말해야 합니다.",
-              "behaviorHint": "김세라: 단톡방 분위기와 A의 최초 발언 경위를 아는 공통 친구 증인이다. hiddenAgenda=자신도 B를 비난하는 데 가담한 것이 부끄럽다.",
+              "behaviorHint": "김세라: 단톡방 분위기와 송다은의 최초 발언 경위를 아는 공통 친구 증인이다. hiddenAgenda=자신도 최수민를 비난하는 데 가담한 것이 부끄럽다.",
               "tags": [
                 "channel:judge_witness_summon",
                 "speaker:judge",
@@ -224165,7 +224165,7 @@
             {
               "id": "judgewitness-w-1-hard-v1",
               "text": "김세라 씨, 들어오십시오. 단톡방에서 누가 먼저 낙인을 붙였는지 답하십시오.",
-              "behaviorHint": "김세라: 단톡방 분위기와 A의 최초 발언 경위를 아는 공통 친구 증인이다. hiddenAgenda=자신도 B를 비난하는 데 가담한 것이 부끄럽다.",
+              "behaviorHint": "김세라: 단톡방 분위기와 송다은의 최초 발언 경위를 아는 공통 친구 증인이다. hiddenAgenda=자신도 최수민를 비난하는 데 가담한 것이 부끄럽다.",
               "tags": [
                 "channel:judge_witness_summon",
                 "speaker:judge",
@@ -224210,7 +224210,7 @@
             {
               "id": "judgewitness-w-1-hard-v2",
               "text": "김세라 씨를 즉시 소환합니다. 동조를 줄여 말하면 판단이 흐려집니다.",
-              "behaviorHint": "김세라: 단톡방 분위기와 A의 최초 발언 경위를 아는 공통 친구 증인이다. hiddenAgenda=자신도 B를 비난하는 데 가담한 것이 부끄럽다.",
+              "behaviorHint": "김세라: 단톡방 분위기와 송다은의 최초 발언 경위를 아는 공통 친구 증인이다. hiddenAgenda=자신도 최수민를 비난하는 데 가담한 것이 부끄럽다.",
               "tags": [
                 "channel:judge_witness_summon",
                 "speaker:judge",
@@ -224254,8 +224254,8 @@
             },
             {
               "id": "judgewitness-w-1-hard-v3",
-              "text": "단톡방 몰아붙임는 핵심 쟁점입니다. 김세라 씨, 본인 역할까지 분명히 말하십시오.",
-              "behaviorHint": "김세라: 단톡방 분위기와 A의 최초 발언 경위를 아는 공통 친구 증인이다. hiddenAgenda=자신도 B를 비난하는 데 가담한 것이 부끄럽다.",
+              "text": "단톡방 몰아붙임는 핵심 쟁점입니다. 김세라 씨, 본인 역할까지 명확히 말씀해 주십시오.",
+              "behaviorHint": "김세라: 단톡방 분위기와 송다은의 최초 발언 경위를 아는 공통 친구 증인이다. hiddenAgenda=자신도 최수민를 비난하는 데 가담한 것이 부끄럽다.",
               "tags": [
                 "channel:judge_witness_summon",
                 "speaker:judge",
@@ -224300,7 +224300,7 @@
             {
               "id": "judgewitness-w-1-hard-v4",
               "text": "김세라 씨, 송다은 씨 편이라는 점과 증언의 사실을 분리해 답하십시오.",
-              "behaviorHint": "김세라: 단톡방 분위기와 A의 최초 발언 경위를 아는 공통 친구 증인이다. hiddenAgenda=자신도 B를 비난하는 데 가담한 것이 부끄럽다.",
+              "behaviorHint": "김세라: 단톡방 분위기와 송다은의 최초 발언 경위를 아는 공통 친구 증인이다. hiddenAgenda=자신도 최수민를 비난하는 데 가담한 것이 부끄럽다.",
               "tags": [
                 "channel:judge_witness_summon",
                 "speaker:judge",
@@ -224344,8 +224344,8 @@
             },
             {
               "id": "judgewitness-w-1-hard-v5",
-              "text": "더는 전언으로 넘기지 않겠습니다. 김세라 씨, 단톡방 순서를 직접 말하십시오.",
-              "behaviorHint": "김세라: 단톡방 분위기와 A의 최초 발언 경위를 아는 공통 친구 증인이다. hiddenAgenda=자신도 B를 비난하는 데 가담한 것이 부끄럽다.",
+              "text": "더는 전언으로 넘기지 않겠습니다. 김세라 씨, 단톡방 순서를 직접 말씀해 주십시오.",
+              "behaviorHint": "김세라: 단톡방 분위기와 송다은의 최초 발언 경위를 아는 공통 친구 증인이다. hiddenAgenda=자신도 최수민를 비난하는 데 가담한 것이 부끄럽다.",
               "tags": [
                 "channel:judge_witness_summon",
                 "speaker:judge",
@@ -224736,7 +224736,7 @@
             },
             {
               "id": "judgewitness-w-2-mid-v3",
-              "text": "박준혁 씨, 들어오십시오. 예비신랑이 먼저 선을 넘었는지 확인하겠습니다.",
+              "text": "박준혁 씨, 들어오십시오. 대화의 선후가 뒤집히었는지 확인하겠습니다.",
               "behaviorHint": "박준혁: 예비신랑의 행동 패턴을 아는 제3자 증인이다. hiddenAgenda=예비신랑과의 직장 관계가 불편해질까 봐 조심한다.",
               "tags": [
                 "channel:judge_witness_summon",
@@ -224887,7 +224887,7 @@
           "variants": [
             {
               "id": "judgewitness-w-2-hard-v1",
-              "text": "박준혁 씨, 들어오십시오. 예비신랑과의 직장 관계를 이유로 흐리지 마십시오.",
+              "text": "박준혁 씨, 들어오십시오. 예비신랑과의 직장 관계를 이유로 밝혀 주십시오.",
               "behaviorHint": "박준혁: 예비신랑의 행동 패턴을 아는 제3자 증인이다. hiddenAgenda=예비신랑과의 직장 관계가 불편해질까 봐 조심한다.",
               "tags": [
                 "channel:judge_witness_summon",
@@ -224932,7 +224932,7 @@
             },
             {
               "id": "judgewitness-w-2-hard-v2",
-              "text": "박준혁 씨를 즉시 소환합니다. 누가 먼저 접근했는지 분명히 답해야 합니다.",
+              "text": "박준혁 씨를 즉시 소환합니다. 누가 먼저 접근했는지 명확히 답해야 합니다.",
               "behaviorHint": "박준혁: 예비신랑의 행동 패턴을 아는 제3자 증인이다. hiddenAgenda=예비신랑과의 직장 관계가 불편해질까 봐 조심한다.",
               "tags": [
                 "channel:judge_witness_summon",
@@ -224977,7 +224977,7 @@
             },
             {
               "id": "judgewitness-w-2-hard-v3",
-              "text": "예비신랑의 첫 메시지가 핵심입니다. 박준혁 씨, 본 사실만 말하십시오.",
+              "text": "예비신랑의 첫 메시지가 핵심입니다. 박준혁 씨, 본 사실만 말씀해 주십시오.",
               "behaviorHint": "박준혁: 예비신랑의 행동 패턴을 아는 제3자 증인이다. hiddenAgenda=예비신랑과의 직장 관계가 불편해질까 봐 조심한다.",
               "tags": [
                 "channel:judge_witness_summon",
@@ -225022,7 +225022,7 @@
             },
             {
               "id": "judgewitness-w-2-hard-v4",
-              "text": "박준혁 씨, 불편한 증언이어도 d-2 판단에 필요한 사실을 빠짐없이 말하십시오.",
+              "text": "박준혁 씨, 불편한 증언이어도 d-2 판단에 필요한 사실을 빠짐없이 말씀해 주십시오.",
               "behaviorHint": "박준혁: 예비신랑의 행동 패턴을 아는 제3자 증인이다. hiddenAgenda=예비신랑과의 직장 관계가 불편해질까 봐 조심한다.",
               "tags": [
                 "channel:judge_witness_summon",
@@ -225129,7 +225129,7 @@
             {
               "id": "judgewitness-w-3-soft-v1",
               "text": "오미경 씨를 부르겠습니다. 과거 돈 거래를 본 내용을 듣겠습니다.",
-              "behaviorHint": "오미경: 과거 A 아버지와 B 사이의 돈 거래를 목격한 제3자 증인이다. hiddenAgenda=없음.",
+              "behaviorHint": "오미경: 과거 송다은 아버지와 최수민 사이의 돈 거래를 목격한 제3자 증인이다. hiddenAgenda=없음.",
               "tags": [
                 "channel:judge_witness_summon",
                 "speaker:judge",
@@ -225174,7 +225174,7 @@
             {
               "id": "judgewitness-w-3-soft-v2",
               "text": "오미경 씨 증언으로 손절 전 돈 문제가 실제 있었는지 살피겠습니다.",
-              "behaviorHint": "오미경: 과거 A 아버지와 B 사이의 돈 거래를 목격한 제3자 증인이다. hiddenAgenda=없음.",
+              "behaviorHint": "오미경: 과거 송다은 아버지와 최수민 사이의 돈 거래를 목격한 제3자 증인이다. hiddenAgenda=없음.",
               "tags": [
                 "channel:judge_witness_summon",
                 "speaker:judge",
@@ -225219,7 +225219,7 @@
             {
               "id": "judgewitness-w-3-soft-v3",
               "text": "분식집 사장 오미경 씨를 소환하겠습니다. 과거 송금 전후의 장면을 보겠습니다.",
-              "behaviorHint": "오미경: 과거 A 아버지와 B 사이의 돈 거래를 목격한 제3자 증인이다. hiddenAgenda=없음.",
+              "behaviorHint": "오미경: 과거 송다은 아버지와 최수민 사이의 돈 거래를 목격한 제3자 증인이다. hiddenAgenda=없음.",
               "tags": [
                 "channel:judge_witness_summon",
                 "speaker:judge",
@@ -225264,7 +225264,7 @@
             {
               "id": "judgewitness-w-3-soft-v4",
               "text": "오미경 씨에게 묻겠습니다. 최수민 씨와 가까워도 본 사실만 말해 주십시오.",
-              "behaviorHint": "오미경: 과거 A 아버지와 B 사이의 돈 거래를 목격한 제3자 증인이다. hiddenAgenda=없음.",
+              "behaviorHint": "오미경: 과거 송다은 아버지와 최수민 사이의 돈 거래를 목격한 제3자 증인이다. hiddenAgenda=없음.",
               "tags": [
                 "channel:judge_witness_summon",
                 "speaker:judge",
@@ -225309,7 +225309,7 @@
             {
               "id": "judgewitness-w-3-soft-v5",
               "text": "오미경 씨를 통해 d-4의 과거 손절 원인을 차분히 확인하겠습니다.",
-              "behaviorHint": "오미경: 과거 A 아버지와 B 사이의 돈 거래를 목격한 제3자 증인이다. hiddenAgenda=없음.",
+              "behaviorHint": "오미경: 과거 송다은 아버지와 최수민 사이의 돈 거래를 목격한 제3자 증인이다. hiddenAgenda=없음.",
               "tags": [
                 "channel:judge_witness_summon",
                 "speaker:judge",
@@ -225370,7 +225370,7 @@
             {
               "id": "judgewitness-w-3-mid-v1",
               "text": "오미경 씨를 소환합니다. 송다은 씨 아버지와 최수민 씨 사이 돈 거래를 듣겠습니다.",
-              "behaviorHint": "오미경: 과거 A 아버지와 B 사이의 돈 거래를 목격한 제3자 증인이다. hiddenAgenda=없음.",
+              "behaviorHint": "오미경: 과거 송다은 아버지와 최수민 사이의 돈 거래를 목격한 제3자 증인이다. hiddenAgenda=없음.",
               "tags": [
                 "channel:judge_witness_summon",
                 "speaker:judge",
@@ -225415,7 +225415,7 @@
             {
               "id": "judgewitness-w-3-mid-v2",
               "text": "과거 손절의 원인이 갈립니다. 오미경 씨의 직접 증언이 필요합니다.",
-              "behaviorHint": "오미경: 과거 A 아버지와 B 사이의 돈 거래를 목격한 제3자 증인이다. hiddenAgenda=없음.",
+              "behaviorHint": "오미경: 과거 송다은 아버지와 최수민 사이의 돈 거래를 목격한 제3자 증인이다. hiddenAgenda=없음.",
               "tags": [
                 "channel:judge_witness_summon",
                 "speaker:judge",
@@ -225460,7 +225460,7 @@
             {
               "id": "judgewitness-w-3-mid-v3",
               "text": "오미경 씨, 들어오십시오. 최수민 씨가 울며 찾아온 경위를 말해 주십시오.",
-              "behaviorHint": "오미경: 과거 A 아버지와 B 사이의 돈 거래를 목격한 제3자 증인이다. hiddenAgenda=없음.",
+              "behaviorHint": "오미경: 과거 송다은 아버지와 최수민 사이의 돈 거래를 목격한 제3자 증인이다. hiddenAgenda=없음.",
               "tags": [
                 "channel:judge_witness_summon",
                 "speaker:judge",
@@ -225505,7 +225505,7 @@
             {
               "id": "judgewitness-w-3-mid-v4",
               "text": "오미경 씨 증언으로 d-4의 투자 명목 피해와 침묵 동기를 보겠습니다.",
-              "behaviorHint": "오미경: 과거 A 아버지와 B 사이의 돈 거래를 목격한 제3자 증인이다. hiddenAgenda=없음.",
+              "behaviorHint": "오미경: 과거 송다은 아버지와 최수민 사이의 돈 거래를 목격한 제3자 증인이다. hiddenAgenda=없음.",
               "tags": [
                 "channel:judge_witness_summon",
                 "speaker:judge",
@@ -225550,7 +225550,7 @@
             {
               "id": "judgewitness-w-3-mid-v5",
               "text": "오미경 씨를 부르겠습니다. 정은 있더라도 본 사실을 기준으로 말해야 합니다.",
-              "behaviorHint": "오미경: 과거 A 아버지와 B 사이의 돈 거래를 목격한 제3자 증인이다. hiddenAgenda=없음.",
+              "behaviorHint": "오미경: 과거 송다은 아버지와 최수민 사이의 돈 거래를 목격한 제3자 증인이다. hiddenAgenda=없음.",
               "tags": [
                 "channel:judge_witness_summon",
                 "speaker:judge",
@@ -225610,8 +225610,8 @@
           "variants": [
             {
               "id": "judgewitness-w-3-hard-v1",
-              "text": "오미경 씨, 들어오십시오. 과거 돈 거래와 손절 원인을 분명히 말하십시오.",
-              "behaviorHint": "오미경: 과거 A 아버지와 B 사이의 돈 거래를 목격한 제3자 증인이다. hiddenAgenda=없음.",
+              "text": "오미경 씨, 들어오십시오. 과거 돈 거래와 손절 원인을 명확히 말씀해 주십시오.",
+              "behaviorHint": "오미경: 과거 송다은 아버지와 최수민 사이의 돈 거래를 목격한 제3자 증인이다. hiddenAgenda=없음.",
               "tags": [
                 "channel:judge_witness_summon",
                 "speaker:judge",
@@ -225656,7 +225656,7 @@
             {
               "id": "judgewitness-w-3-hard-v2",
               "text": "오미경 씨를 즉시 소환합니다. 친분보다 목격한 사실이 판단 기준입니다.",
-              "behaviorHint": "오미경: 과거 A 아버지와 B 사이의 돈 거래를 목격한 제3자 증인이다. hiddenAgenda=없음.",
+              "behaviorHint": "오미경: 과거 송다은 아버지와 최수민 사이의 돈 거래를 목격한 제3자 증인이다. hiddenAgenda=없음.",
               "tags": [
                 "channel:judge_witness_summon",
                 "speaker:judge",
@@ -225701,7 +225701,7 @@
             {
               "id": "judgewitness-w-3-hard-v3",
               "text": "과거 투자 명목 피해와 침묵이 핵심입니다. 오미경 씨, 본 장면을 빠짐없이 답하십시오.",
-              "behaviorHint": "오미경: 과거 A 아버지와 B 사이의 돈 거래를 목격한 제3자 증인이다. hiddenAgenda=없음.",
+              "behaviorHint": "오미경: 과거 송다은 아버지와 최수민 사이의 돈 거래를 목격한 제3자 증인이다. hiddenAgenda=없음.",
               "tags": [
                 "channel:judge_witness_summon",
                 "speaker:judge",
@@ -225746,7 +225746,7 @@
             {
               "id": "judgewitness-w-3-hard-v4",
               "text": "오미경 씨, 최수민 씨 편이라는 시선을 넘어 사실만 증언해야 합니다.",
-              "behaviorHint": "오미경: 과거 A 아버지와 B 사이의 돈 거래를 목격한 제3자 증인이다. hiddenAgenda=없음.",
+              "behaviorHint": "오미경: 과거 송다은 아버지와 최수민 사이의 돈 거래를 목격한 제3자 증인이다. hiddenAgenda=없음.",
               "tags": [
                 "channel:judge_witness_summon",
                 "speaker:judge",
@@ -225790,8 +225790,8 @@
             },
             {
               "id": "judgewitness-w-3-hard-v5",
-              "text": "더는 과거 손절을 추측으로 두지 않겠습니다. 오미경 씨, 직접 말하십시오.",
-              "behaviorHint": "오미경: 과거 A 아버지와 B 사이의 돈 거래를 목격한 제3자 증인이다. hiddenAgenda=없음.",
+              "text": "더는 과거 손절을 추측으로 두지 않겠습니다. 오미경 씨, 직접 말씀해 주십시오.",
+              "behaviorHint": "오미경: 과거 송다은 아버지와 최수민 사이의 돈 거래를 목격한 제3자 증인이다. hiddenAgenda=없음.",
               "tags": [
                 "channel:judge_witness_summon",
                 "speaker:judge",

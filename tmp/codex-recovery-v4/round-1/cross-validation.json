@@ -1,0 +1,13 @@
+{
+  "generatedAt": "2026-04-26T16:37:53.338Z",
+  "round": 1,
+  "note": "Round 1 applied only high-confidence semantic/context patches and direct code-name/surface fixes.",
+  "passed": true,
+  "checks": [
+    "status=skipped entries/variants excluded",
+    "variant id/tags/sourceRefs/status preserved",
+    "case data untouched",
+    "NPC S3+/late self terms checked in final precheck",
+    "truth lexeme additions checked in final precheck"
+  ]
+}

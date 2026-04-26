@@ -1,0 +1,40 @@
+{
+  "precheckStageAware": "pass",
+  "totalVariants": 14931,
+  "variantCounts": {
+    "spouse-01": 4677,
+    "family-01": 5172,
+    "friend-01": 5082
+  },
+  "beforeV3EffectiveDiffs": {
+    "A": 397,
+    "B": 257,
+    "C": 97,
+    "total": 751
+  },
+  "rollbackApplied": {
+    "B": 257,
+    "C": 97,
+    "total": 354
+  },
+  "strictSurfaceCleanup": 5,
+  "remainingDiffsAfterV3": {
+    "A": 396,
+    "B": 0,
+    "C": 0,
+    "total": 396
+  },
+  "nonStrictChangedAfterV3": {
+    "spouse-01": 0,
+    "family-01": 0,
+    "friend-01": 0
+  },
+  "archetypeVoiceAudit": "pass",
+  "archetypeVoiceMissing": 0,
+  "unnaturalSurfaceHits": 0,
+  "build": "pass",
+  "tsc": "pass",
+  "caseDataModified": false,
+  "commitOrPush": false,
+  "generatedAt": "2026-04-27T00:19:58.8255412+09:00"
+}

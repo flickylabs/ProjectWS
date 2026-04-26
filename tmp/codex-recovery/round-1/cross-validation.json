@@ -1,0 +1,19 @@
+{
+  "round": 1,
+  "checkedSpecialists": [
+    "A_TruthLeak",
+    "B_JudgeTone",
+    "C_FactCheck",
+    "D_KoreanQ",
+    "E_UserPattern"
+  ],
+  "newIssues": 20,
+  "residualBySpecialist": {
+    "A_TruthLeak": 8,
+    "B_JudgeTone": 10,
+    "C_FactCheck": 0,
+    "D_KoreanQ": 0,
+    "E_UserPattern": 2
+  },
+  "note": "Coordinator patches were re-scanned by all specialist detectors."
+}

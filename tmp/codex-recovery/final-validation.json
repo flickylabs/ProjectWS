@@ -1,0 +1,53 @@
+{
+  "precheckPassed": true,
+  "precheckResidual": 0,
+  "strictKeywordScan": {
+    "status": "pass",
+    "hits": 0,
+    "scope": "judge channels, evidence_discovery, system_message, mediation, dossier early/mid, NPC S0-S2 text and behaviorHint"
+  },
+  "variantCounts": {
+    "spouse-01": 4677,
+    "family-01": 5172,
+    "friend-01": 5082,
+    "total": 14931
+  },
+  "metadataPreservationIssues": 0,
+  "skippedEntries": 0,
+  "skippedVariants": 0,
+  "rounds": 5,
+  "roundApplied": 531,
+  "finalHardeningApplied": 346,
+  "totalApplied": 877,
+  "semanticQuality": {
+    "spouse-01": {
+      "status": "fail",
+      "fail": 2549,
+      "warn": 1214
+    },
+    "family-01": {
+      "status": "fail",
+      "fail": 3444,
+      "warn": 557
+    },
+    "friend-01": {
+      "status": "fail",
+      "fail": 3538,
+      "warn": 875
+    },
+    "note": "Validator failures are broad salutation/archetype/depth rules already outside the recovery scope; scope-aware recovery precheck passed."
+  },
+  "build": "pass",
+  "tsc": "pass",
+  "polishCandidates": 250,
+  "knownIssues": [
+    {
+      "type": "scope_excluded_d5_generation",
+      "cases": [
+        "family-01",
+        "friend-01"
+      ]
+    }
+  ],
+  "generatedAt": "2026-04-26T16:15:52.5101973+09:00"
+}

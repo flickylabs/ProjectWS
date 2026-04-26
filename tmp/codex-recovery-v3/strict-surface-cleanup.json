@@ -1,0 +1,57 @@
+{
+  "generatedAt": "2026-04-26T15:18:34.984Z",
+  "policy": "Strict-channel surface cleanup only; no NPC confession/OK-stage text touched.",
+  "appliedCount": 5,
+  "applied": [
+    {
+      "variantKey": "spouse-01::mediation::conditional|a::mediation-conditional-a-v10",
+      "caseId": "spouse-01",
+      "channel": "mediation",
+      "entryKey": "conditional|a",
+      "variantId": "mediation-conditional-a-v10",
+      "field": "behaviorHint",
+      "before": "재판관에게 균그쪽을 맡기려는 태도다.",
+      "after": "재판관에게 균형을 맡기려는 태도다."
+    },
+    {
+      "variantKey": "spouse-01::judge_question::h-d3|fact_pursuit|2::judgeq-h-d3-fact_pursuit-2-v3",
+      "caseId": "spouse-01",
+      "channel": "judge_question",
+      "entryKey": "h-d3|fact_pursuit|2",
+      "variantId": "judgeq-h-d3-fact_pursuit-2-v3",
+      "field": "text",
+      "before": "두 분, 해지 서류과 해지 서류가 만들어진 과정에서 누가 무엇을 확인했는지 따로 정리해 주십시오.",
+      "after": "두 분, 해지 서류와 해지 서류가 만들어진 과정에서 누가 무엇을 확인했는지 따로 정리해 주십시오."
+    },
+    {
+      "variantKey": "spouse-01::judge_question::h-d3|fact_pursuit|4::judgeq-h-d3-fact_pursuit-4-v1",
+      "caseId": "spouse-01",
+      "channel": "judge_question",
+      "entryKey": "h-d3|fact_pursuit|4",
+      "variantId": "judgeq-h-d3-fact_pursuit-4-v1",
+      "field": "text",
+      "before": "박지연 씨, 해지 서류을 조작하는 일이 범죄가 될 수 있다는 점을 알고도 실행했습니까.",
+      "after": "박지연 씨, 해지 서류를 조작하는 일이 범죄가 될 수 있다는 점을 알고도 실행했습니까."
+    },
+    {
+      "variantKey": "spouse-01::judge_witness_summon::w-2|soft::judgewit-w-2-soft-v4",
+      "caseId": "spouse-01",
+      "channel": "judge_witness_summon",
+      "entryKey": "w-2|soft",
+      "variantId": "judgewit-w-2-soft-v4",
+      "field": "text",
+      "before": "은행 직원님, 들어와 주십시오. 해지 서류과 적금 해지 절차를 순서대로 말씀해 주셔야 합니다.",
+      "after": "은행 직원님, 들어와 주십시오. 해지 서류와 적금 해지 절차를 순서대로 말씀해 주셔야 합니다."
+    },
+    {
+      "variantKey": "spouse-01::judge_witness_summon::w-2|hard::judgewit-w-2-hard-v1",
+      "caseId": "spouse-01",
+      "channel": "judge_witness_summon",
+      "entryKey": "w-2|hard",
+      "variantId": "judgewit-w-2-hard-v1",
+      "field": "text",
+      "before": "은행 직원님을 즉시 모시겠습니다. 해지 서류과 해지 절차를 더 이상 모호하게 둘 수 없습니다.",
+      "after": "은행 직원님을 즉시 모시겠습니다. 해지 서류와 해지 절차를 더 이상 모호하게 둘 수 없습니다."
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "checkedSpecialists": [
+    "A_TruthLeak",
+    "B_JudgeTone",
+    "C_FactCheck",
+    "D_KoreanQ",
+    "E_UserPattern"
+  ],
+  "newIssues": 0,
+  "residualBySpecialist": {
+    "A_TruthLeak": 0,
+    "B_JudgeTone": 0,
+    "C_FactCheck": 0,
+    "D_KoreanQ": 0,
+    "E_UserPattern": 0
+  },
+  "note": "Final hardening keeps the 5-round cap and records detector/patcher safety updates separately."
+}

@@ -1,0 +1,28 @@
+{
+  "generatedAt": "2026-04-26T16:37:53.394Z",
+  "total": 3,
+  "note": "P7 UI surface leak은 별도 코드 fix 범위. 이 파일은 evidence.name이 truth lexeme을 담고 surfaceName과 다른 항목만 수집한다.",
+  "leaks": [
+    {
+      "caseId": "spouse-01",
+      "evidenceId": "e-4",
+      "name": "형 문자 스레드",
+      "surfaceName": "발신자 미상 문자",
+      "issue": "UI 새 증거/증거 목록/알림에서 name 대신 surfaceName 사용 필요. v4 범위에서는 코드 수정하지 않음."
+    },
+    {
+      "caseId": "family-01",
+      "evidenceId": "e-6",
+      "name": "20년 송금 내역 묶음",
+      "surfaceName": "20년 송금 내역",
+      "issue": "UI 새 증거/증거 목록/알림에서 name 대신 surfaceName 사용 필요. v4 범위에서는 코드 수정하지 않음."
+    },
+    {
+      "caseId": "family-01",
+      "evidenceId": "e-7",
+      "name": "어머니 일기장 사진",
+      "surfaceName": "어머니 일기장",
+      "issue": "UI 새 증거/증거 목록/알림에서 name 대신 surfaceName 사용 필요. v4 범위에서는 코드 수정하지 않음."
+    }
+  ]
+}
