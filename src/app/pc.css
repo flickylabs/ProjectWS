@@ -2938,12 +2938,12 @@ body.pc-mode .pc-judge-observation-section {
   height: 180px !important;
 }
 
-/* 수첩: 200px 고정 (관찰과 비슷한 폭 — 사용자 요청 04-27 후속4). */
+/* 수첩: 240px 고정 (텍스트 노출 영역을 관찰만큼 확보 — 항상 summary 2줄 표시). */
 body.pc-mode .pc-play-left .pc-judge-observation-section--notebook {
-  flex: 0 0 200px !important;
-  min-height: 200px !important;
-  max-height: 200px !important;
-  height: 200px !important;
+  flex: 0 0 240px !important;
+  min-height: 240px !important;
+  max-height: 240px !important;
+  height: 240px !important;
 }
 
 /* (legacy) 기존 .pc-play-notebook-section 남겨둠 — 다른 위치에서 참조 가능 */
@@ -20013,24 +20013,48 @@ body.pc-mode .pc-ev-detail__stage.is-open .pc-ev-detail__stage-num {
 body.pc-mode .pc-ev-detail__stage.is-open .pc-ev-detail__stage-a {
   color: #ffffff !important;
 }
-body.pc-mode .pc-ev-detail__stage.is-ready {
-  border-color: rgba(212, 162, 78, 0.40) !important;
-  background: rgba(212, 162, 78, 0.06) !important;
-}
-body.pc-mode .pc-ev-detail__investigate-btn {
-  border-radius: 10px !important;
+
+/* is-ready 는 <button> — 전체 영역 자체가 버튼 (이중 구조 폐기) */
+body.pc-mode button.pc-ev-detail__stage.is-ready {
+  display: flex !important;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  border-radius: 12px !important;
   border: 1px solid rgba(212, 162, 78, 0.45) !important;
   background: rgba(212, 162, 78, 0.10) !important;
   color: var(--pc-gold-light) !important;
-  transition: all 160ms ease !important;
+  cursor: pointer;
+  font-family: inherit;
+  text-align: left;
+  transition: border-color 160ms ease, background 160ms ease, transform 160ms ease, box-shadow 160ms ease !important;
 }
-body.pc-mode .pc-ev-detail__investigate-btn:hover {
+body.pc-mode button.pc-ev-detail__stage.is-ready:hover {
   border-color: rgba(212, 162, 78, 0.65) !important;
   background: rgba(212, 162, 78, 0.16) !important;
   transform: translateY(-1px);
+  box-shadow: 0 0 0 3px rgba(212, 162, 78, 0.10);
 }
+body.pc-mode button.pc-ev-detail__stage.is-ready .pc-ev-detail__stage-body {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+}
+body.pc-mode .pc-ev-detail__investigate-cost {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--pc-gold-light);
+}
+body.pc-mode .pc-ev-detail__investigate-label {
+  color: var(--pc-gold-light);
+  font-weight: 700;
+}
+/* 폐기된 inner button 잔재 — 안전 */
+body.pc-mode .pc-ev-detail__investigate-btn { display: none !important; }
 
-/* 증거 제시 버튼 — 한쪽 edge만 컬러 (캐릭터 카드와 동일한 outward 패턴) */
+/* 증거 제시 버튼 — 한쪽 edge만 컬러 + glow는 inset (밖으로 새지 않음) */
 body.pc-mode .pc-ev-detail__present-btn {
   border-radius: 12px !important;
   min-height: 52px !important;
@@ -20040,26 +20064,27 @@ body.pc-mode .pc-ev-detail__present-btn {
   color: var(--pc-text) !important;
   backdrop-filter: none !important;
   -webkit-backdrop-filter: none !important;
+  overflow: hidden;
   transition: border-color 160ms ease, background 160ms ease, transform 160ms ease, box-shadow 160ms ease !important;
 }
-/* A (박지연, 왼쪽 버튼) — 좌측 edge만 파란색 + 좌측 외곽 blue glow */
+/* A (박지연, 왼쪽 버튼) — 좌측 edge 파란색 + 안쪽 좌측에서 퍼지는 inset blue glow */
 body.pc-mode .pc-ev-detail__present-btn.is-a {
   border-left: 3px solid var(--pc-blue) !important;
-  box-shadow: -4px 0 16px -2px rgba(91, 141, 239, 0.30) !important;
+  box-shadow: inset 18px 0 28px -10px rgba(91, 141, 239, 0.32) !important;
 }
 body.pc-mode .pc-ev-detail__present-btn.is-a:hover:not(:disabled) {
   border-left-color: rgba(91, 141, 239, 1) !important;
-  box-shadow: -4px 0 22px -2px rgba(91, 141, 239, 0.50) !important;
+  box-shadow: inset 22px 0 36px -10px rgba(91, 141, 239, 0.50) !important;
   transform: translateY(-1px) !important;
 }
-/* B (이준호, 오른쪽 버튼) — 우측 edge만 빨간색 + 우측 외곽 red glow */
+/* B (이준호, 오른쪽 버튼) — 우측 edge 빨간색 + 안쪽 우측에서 퍼지는 inset red glow */
 body.pc-mode .pc-ev-detail__present-btn.is-b {
   border-right: 3px solid var(--pc-red) !important;
-  box-shadow: 4px 0 16px -2px rgba(224, 96, 96, 0.30) !important;
+  box-shadow: inset -18px 0 28px -10px rgba(224, 96, 96, 0.32) !important;
 }
 body.pc-mode .pc-ev-detail__present-btn.is-b:hover:not(:disabled) {
   border-right-color: rgba(224, 96, 96, 1) !important;
-  box-shadow: 4px 0 22px -2px rgba(224, 96, 96, 0.50) !important;
+  box-shadow: inset -22px 0 36px -10px rgba(224, 96, 96, 0.50) !important;
   transform: translateY(-1px) !important;
 }
 

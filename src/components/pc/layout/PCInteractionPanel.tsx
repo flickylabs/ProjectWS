@@ -806,24 +806,39 @@ function EvidenceDetailSection({ evidenceId, onClose }: { evidenceId: string; on
       {stages.length > 0 ? (
         <div className="pc-ev-detail__stages">
           <span className="pc-ev-detail__stages-label">조사 단계</span>
-          {stages.map((stage) => (
-            <div className={`pc-ev-detail__stage ${stage.revealed ? 'is-open' : stage.unlockable ? 'is-ready' : 'is-locked'}`} key={stage.index}>
-              <span className="pc-ev-detail__stage-num">
-                {stage.revealed ? '✓' : stage.unlockable ? '?' : <PCSvgIcon id="i-lock" size={14} />}
-              </span>
-              <div className="pc-ev-detail__stage-body">
-                {stage.revealed ? (
-                  <span className="pc-ev-detail__stage-a">{evidence.investigationResults[stage.revealKey]}</span>
-                ) : stage.unlockable ? (
-                  <button className="pc-ev-detail__investigate-btn" onClick={() => handleInvestigate(stage.revealKey)} type="button">
-                    <span className="pc-ev-detail__investigate-cost"><PCSvgIcon id="i-search" size={18} /> {investigateCostLabel}</span> 조사 시도
-                  </button>
-                ) : (
-                  <span className="pc-ev-detail__stage-lock">조사 단계 {stage.stage} — 해금 필요</span>
-                )}
+          {stages.map((stage) => {
+            // is-ready 일 때만 전체 영역을 버튼으로 (전체 클릭 가능, 안쪽 별도 버튼 X)
+            if (stage.unlockable && !stage.revealed) {
+              return (
+                <button
+                  className="pc-ev-detail__stage is-ready"
+                  key={stage.index}
+                  onClick={() => handleInvestigate(stage.revealKey)}
+                  type="button"
+                >
+                  <span className="pc-ev-detail__stage-num">?</span>
+                  <div className="pc-ev-detail__stage-body">
+                    <span className="pc-ev-detail__investigate-cost"><PCSvgIcon id="i-search" size={18} /> {investigateCostLabel}</span>
+                    <span className="pc-ev-detail__investigate-label">조사 시도</span>
+                  </div>
+                </button>
+              )
+            }
+            return (
+              <div className={`pc-ev-detail__stage ${stage.revealed ? 'is-open' : 'is-locked'}`} key={stage.index}>
+                <span className="pc-ev-detail__stage-num">
+                  {stage.revealed ? '✓' : <PCSvgIcon id="i-lock" size={14} />}
+                </span>
+                <div className="pc-ev-detail__stage-body">
+                  {stage.revealed ? (
+                    <span className="pc-ev-detail__stage-a">{evidence.investigationResults[stage.revealKey]}</span>
+                  ) : (
+                    <span className="pc-ev-detail__stage-lock">조사 단계 {stage.stage} — 해금 필요</span>
+                  )}
+                </div>
               </div>
-            </div>
-          ))}
+            )
+          })}
         </div>
       ) : null}
 
