@@ -16,8 +16,9 @@ import { useStore, useGameStore } from '../../../store/useGameStore'
 import PCSvgIcon from '../icons/PCSvgIcon'
 
 export default function PCDeferredVerdictIcon() {
-  const deferredVerdicts = useStore((s) => s.discovery.deferredVerdicts)
-  const pendingConfrontation = useStore((s) => s.discovery.pendingConfrontation)
+  // 안전 가드 — store rehydration 전 또는 dev hot reload 직후 deferredVerdicts undefined 가능
+  const deferredVerdicts = useStore((s) => s.discovery?.deferredVerdicts ?? {})
+  const pendingConfrontation = useStore((s) => s.discovery?.pendingConfrontation ?? null)
   const caseData = useStore((s) => s.caseData)
 
   const entries = Object.values(deferredVerdicts)

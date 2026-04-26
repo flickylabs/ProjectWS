@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-26T16:41:04.304Z",
+  "generatedAt": "2026-04-26T18:08:56.208Z",
   "passed": false,
   "counts": {
     "spouse-01": {
@@ -74,613 +74,612 @@
     "total": 14931
   },
   "remainingChanges": {
-    "total": 437,
+    "total": 163,
     "byCategory": {
-      "C": 8,
-      "A": 422,
-      "B": 7
+      "B": 154,
+      "A": 4,
+      "C": 5
     },
     "samples": [
       {
-        "variantKey": "spouse-01::interrogation::a|d-1|S0|fact_pursuit::a-d-1-S0-fact-pursuit-v10",
+        "variantKey": "spouse-01::interrogation::a|d-1|S3|fact_pursuit::a-d-1-S3-fact-pursuit-v6",
         "caseId": "spouse-01",
         "channel": "interrogation",
-        "entryKey": "a|d-1|S0|fact_pursuit",
-        "variantId": "a-d-1-S0-fact-pursuit-v10",
+        "entryKey": "a|d-1|S3|fact_pursuit",
+        "variantId": "a-d-1-S3-fact-pursuit-v6",
         "changedFields": [
           "text"
         ],
-        "category": "C",
-        "matrixCell": "npc_early_strict_review"
+        "category": "B",
+        "matrixCell": "npc_confession_ok_preserve"
       },
       {
-        "variantKey": "spouse-01::interrogation::a|d-1|S0|motive_search::a-d-1-S0-motive-search-v4",
+        "variantKey": "spouse-01::interrogation::b|d-1|S3|fact_pursuit::b-d-1-S3-fact-pursuit-v8",
         "caseId": "spouse-01",
         "channel": "interrogation",
-        "entryKey": "a|d-1|S0|motive_search",
-        "variantId": "a-d-1-S0-motive-search-v4",
+        "entryKey": "b|d-1|S3|fact_pursuit",
+        "variantId": "b-d-1-S3-fact-pursuit-v8",
         "changedFields": [
           "text"
         ],
-        "category": "C",
-        "matrixCell": "npc_early_strict_review"
+        "category": "B",
+        "matrixCell": "npc_confession_ok_preserve"
       },
       {
-        "variantKey": "spouse-01::interrogation::a|d-1|S0|motive_search::a-d-1-S0-motive-search-v10",
+        "variantKey": "spouse-01::interrogation::b|d-2|S3|fact_pursuit::b-d-2-S3-fact-pursuit-v6",
         "caseId": "spouse-01",
         "channel": "interrogation",
-        "entryKey": "a|d-1|S0|motive_search",
-        "variantId": "a-d-1-S0-motive-search-v10",
+        "entryKey": "b|d-2|S3|fact_pursuit",
+        "variantId": "b-d-2-S3-fact-pursuit-v6",
         "changedFields": [
           "text"
         ],
-        "category": "C",
-        "matrixCell": "npc_early_strict_review"
+        "category": "B",
+        "matrixCell": "npc_confession_ok_preserve"
       },
       {
-        "variantKey": "spouse-01::interrogation::a|d-1|S0|empathy_approach::a-d-1-S0-empathy-approach-v10",
+        "variantKey": "spouse-01::interrogation::b|d-2|S3|fact_pursuit::b-d-2-S3-fact-pursuit-v8",
         "caseId": "spouse-01",
         "channel": "interrogation",
-        "entryKey": "a|d-1|S0|empathy_approach",
-        "variantId": "a-d-1-S0-empathy-approach-v10",
+        "entryKey": "b|d-2|S3|fact_pursuit",
+        "variantId": "b-d-2-S3-fact-pursuit-v8",
         "changedFields": [
           "text"
         ],
-        "category": "C",
-        "matrixCell": "npc_early_strict_review"
+        "category": "B",
+        "matrixCell": "npc_confession_ok_preserve"
       },
       {
-        "variantKey": "spouse-01::interrogation::a|d-1|S1|fact_pursuit::a-d-1-S1-fact-pursuit-v4",
+        "variantKey": "spouse-01::interrogation::b|d-2|S3|motive_search::b-d-2-S3-motive-search-v6",
         "caseId": "spouse-01",
         "channel": "interrogation",
-        "entryKey": "a|d-1|S1|fact_pursuit",
-        "variantId": "a-d-1-S1-fact-pursuit-v4",
+        "entryKey": "b|d-2|S3|motive_search",
+        "variantId": "b-d-2-S3-motive-search-v6",
         "changedFields": [
           "text"
         ],
-        "category": "C",
-        "matrixCell": "npc_early_strict_review"
+        "category": "B",
+        "matrixCell": "npc_confession_ok_preserve"
       },
       {
-        "variantKey": "spouse-01::interrogation::a|d-1|S1|motive_search::a-d-1-S1-motive-search-v4",
+        "variantKey": "spouse-01::interrogation::b|d-2|S3|empathy_approach::b-d-2-S3-empathy-approach-v6",
         "caseId": "spouse-01",
         "channel": "interrogation",
-        "entryKey": "a|d-1|S1|motive_search",
-        "variantId": "a-d-1-S1-motive-search-v4",
+        "entryKey": "b|d-2|S3|empathy_approach",
+        "variantId": "b-d-2-S3-empathy-approach-v6",
         "changedFields": [
           "text"
         ],
-        "category": "C",
-        "matrixCell": "npc_early_strict_review"
+        "category": "B",
+        "matrixCell": "npc_confession_ok_preserve"
       },
       {
-        "variantKey": "spouse-01::interrogation::a|d-1|S2|motive_search::a-d-1-S2-motive-search-v4",
+        "variantKey": "spouse-01::interrogation::a|h-d3|S3|fact_pursuit::a-h-d3-S3-fact-pursuit-v6",
         "caseId": "spouse-01",
         "channel": "interrogation",
-        "entryKey": "a|d-1|S2|motive_search",
-        "variantId": "a-d-1-S2-motive-search-v4",
+        "entryKey": "a|h-d3|S3|fact_pursuit",
+        "variantId": "a-h-d3-S3-fact-pursuit-v6",
         "changedFields": [
           "text"
         ],
-        "category": "C",
-        "matrixCell": "npc_partial_review"
+        "category": "B",
+        "matrixCell": "npc_confession_ok_preserve"
       },
       {
-        "variantKey": "spouse-01::contradiction_pursuit::a|d-1|S2::contra-a-d-1-S2-v8",
+        "variantKey": "spouse-01::interrogation::a|h-d3|S3|fact_pursuit::a-h-d3-S3-fact-pursuit-v7",
+        "caseId": "spouse-01",
+        "channel": "interrogation",
+        "entryKey": "a|h-d3|S3|fact_pursuit",
+        "variantId": "a-h-d3-S3-fact-pursuit-v7",
+        "changedFields": [
+          "text"
+        ],
+        "category": "B",
+        "matrixCell": "npc_confession_ok_preserve"
+      },
+      {
+        "variantKey": "spouse-01::interrogation::a|h-d3|S3|empathy_approach::a-h-d3-S3-empathy-approach-v7",
+        "caseId": "spouse-01",
+        "channel": "interrogation",
+        "entryKey": "a|h-d3|S3|empathy_approach",
+        "variantId": "a-h-d3-S3-empathy-approach-v7",
+        "changedFields": [
+          "text"
+        ],
+        "category": "B",
+        "matrixCell": "npc_confession_ok_preserve"
+      },
+      {
+        "variantKey": "spouse-01::interrogation::a|h-d3|S5|fact_pursuit::a-h-d3-S5-fact-pursuit-v8",
+        "caseId": "spouse-01",
+        "channel": "interrogation",
+        "entryKey": "a|h-d3|S5|fact_pursuit",
+        "variantId": "a-h-d3-S5-fact-pursuit-v8",
+        "changedFields": [
+          "text"
+        ],
+        "category": "B",
+        "matrixCell": "npc_confession_ok_preserve"
+      },
+      {
+        "variantKey": "spouse-01::interrogation::a|h-d3|S5|motive_search::a-h-d3-S5-motive-search-v8",
+        "caseId": "spouse-01",
+        "channel": "interrogation",
+        "entryKey": "a|h-d3|S5|motive_search",
+        "variantId": "a-h-d3-S5-motive-search-v8",
+        "changedFields": [
+          "text"
+        ],
+        "category": "B",
+        "matrixCell": "npc_confession_ok_preserve"
+      },
+      {
+        "variantKey": "spouse-01::interrogation::a|h-d3|S5|empathy_approach::a-h-d3-S5-empathy-approach-v8",
+        "caseId": "spouse-01",
+        "channel": "interrogation",
+        "entryKey": "a|h-d3|S5|empathy_approach",
+        "variantId": "a-h-d3-S5-empathy-approach-v8",
+        "changedFields": [
+          "text"
+        ],
+        "category": "B",
+        "matrixCell": "npc_confession_ok_preserve"
+      },
+      {
+        "variantKey": "spouse-01::interrogation::b|h-d3|S3|fact_pursuit::b-h-d3-S3-fact-pursuit-v8",
+        "caseId": "spouse-01",
+        "channel": "interrogation",
+        "entryKey": "b|h-d3|S3|fact_pursuit",
+        "variantId": "b-h-d3-S3-fact-pursuit-v8",
+        "changedFields": [
+          "text"
+        ],
+        "category": "B",
+        "matrixCell": "npc_confession_ok_preserve"
+      },
+      {
+        "variantKey": "spouse-01::interrogation::b|h-d3|S3|motive_search::b-h-d3-S3-motive-search-v2",
+        "caseId": "spouse-01",
+        "channel": "interrogation",
+        "entryKey": "b|h-d3|S3|motive_search",
+        "variantId": "b-h-d3-S3-motive-search-v2",
+        "changedFields": [
+          "text"
+        ],
+        "category": "B",
+        "matrixCell": "npc_confession_ok_preserve"
+      },
+      {
+        "variantKey": "spouse-01::interrogation::a|h-d4|S3|empathy_approach::a-h-d4-S3-empathy-approach-v1",
+        "caseId": "spouse-01",
+        "channel": "interrogation",
+        "entryKey": "a|h-d4|S3|empathy_approach",
+        "variantId": "a-h-d4-S3-empathy-approach-v1",
+        "changedFields": [
+          "text"
+        ],
+        "category": "B",
+        "matrixCell": "npc_confession_ok_preserve"
+      },
+      {
+        "variantKey": "spouse-01::interrogation::b|h-d4|S3|fact_pursuit::b-h-d4-S3-fact-pursuit-v8",
+        "caseId": "spouse-01",
+        "channel": "interrogation",
+        "entryKey": "b|h-d4|S3|fact_pursuit",
+        "variantId": "b-h-d4-S3-fact-pursuit-v8",
+        "changedFields": [
+          "text"
+        ],
+        "category": "B",
+        "matrixCell": "npc_confession_ok_preserve"
+      },
+      {
+        "variantKey": "spouse-01::interrogation::b|h-d4|S4|fact_pursuit::b-h-d4-S4-fact-pursuit-v3",
+        "caseId": "spouse-01",
+        "channel": "interrogation",
+        "entryKey": "b|h-d4|S4|fact_pursuit",
+        "variantId": "b-h-d4-S4-fact-pursuit-v3",
+        "changedFields": [
+          "text"
+        ],
+        "category": "B",
+        "matrixCell": "npc_confession_ok_preserve"
+      },
+      {
+        "variantKey": "spouse-01::contradiction_pursuit::a|d-1|S3::contra-a-d-1-S3-v3",
         "caseId": "spouse-01",
         "channel": "contradiction_pursuit",
-        "entryKey": "a|d-1|S2",
-        "variantId": "contra-a-d-1-S2-v8",
+        "entryKey": "a|d-1|S3",
+        "variantId": "contra-a-d-1-S3-v3",
         "changedFields": [
           "text"
         ],
-        "category": "C",
-        "matrixCell": "npc_partial_review"
+        "category": "B",
+        "matrixCell": "npc_confession_ok_preserve"
       },
       {
-        "variantKey": "spouse-01::evidence_discovery::b|e-3|confirm::discover-b-e-3-confirm-v1",
+        "variantKey": "spouse-01::contradiction_pursuit::a|d-1|S3::contra-a-d-1-S3-v4",
         "caseId": "spouse-01",
-        "channel": "evidence_discovery",
-        "entryKey": "b|e-3|confirm",
-        "variantId": "discover-b-e-3-confirm-v1",
+        "channel": "contradiction_pursuit",
+        "entryKey": "a|d-1|S3",
+        "variantId": "contra-a-d-1-S3-v4",
         "changedFields": [
           "text"
         ],
-        "category": "A",
-        "matrixCell": "strict_always_patchable"
+        "category": "B",
+        "matrixCell": "npc_confession_ok_preserve"
       },
       {
-        "variantKey": "spouse-01::evidence_discovery::a|e-5|confirm::discover-a-e-5-confirm-v1",
+        "variantKey": "spouse-01::contradiction_pursuit::a|d-1|S3::contra-a-d-1-S3-v8",
         "caseId": "spouse-01",
-        "channel": "evidence_discovery",
-        "entryKey": "a|e-5|confirm",
-        "variantId": "discover-a-e-5-confirm-v1",
+        "channel": "contradiction_pursuit",
+        "entryKey": "a|d-1|S3",
+        "variantId": "contra-a-d-1-S3-v8",
         "changedFields": [
           "text"
         ],
-        "category": "A",
-        "matrixCell": "strict_always_patchable"
+        "category": "B",
+        "matrixCell": "npc_confession_ok_preserve"
       },
       {
-        "variantKey": "spouse-01::mediation::immediate|b::mediation-immediate-b-v2",
+        "variantKey": "spouse-01::contradiction_pursuit::a|d-2|S3::contra-a-d-2-S3-v1",
         "caseId": "spouse-01",
-        "channel": "mediation",
-        "entryKey": "immediate|b",
-        "variantId": "mediation-immediate-b-v2",
+        "channel": "contradiction_pursuit",
+        "entryKey": "a|d-2|S3",
+        "variantId": "contra-a-d-2-S3-v1",
         "changedFields": [
           "text"
         ],
-        "category": "A",
-        "matrixCell": "strict_always_patchable"
+        "category": "B",
+        "matrixCell": "npc_confession_ok_preserve"
       },
       {
-        "variantKey": "spouse-01::mediation::immediate|b::mediation-immediate-b-v3",
+        "variantKey": "spouse-01::contradiction_pursuit::a|d-2|S3::contra-a-d-2-S3-v2",
         "caseId": "spouse-01",
-        "channel": "mediation",
-        "entryKey": "immediate|b",
-        "variantId": "mediation-immediate-b-v3",
+        "channel": "contradiction_pursuit",
+        "entryKey": "a|d-2|S3",
+        "variantId": "contra-a-d-2-S3-v2",
         "changedFields": [
           "text"
         ],
-        "category": "A",
-        "matrixCell": "strict_always_patchable"
+        "category": "B",
+        "matrixCell": "npc_confession_ok_preserve"
       },
       {
-        "variantKey": "spouse-01::mediation::immediate|b::mediation-immediate-b-v4",
+        "variantKey": "spouse-01::contradiction_pursuit::a|d-2|S3::contra-a-d-2-S3-v4",
         "caseId": "spouse-01",
-        "channel": "mediation",
-        "entryKey": "immediate|b",
-        "variantId": "mediation-immediate-b-v4",
+        "channel": "contradiction_pursuit",
+        "entryKey": "a|d-2|S3",
+        "variantId": "contra-a-d-2-S3-v4",
         "changedFields": [
           "text"
         ],
-        "category": "A",
-        "matrixCell": "strict_always_patchable"
+        "category": "B",
+        "matrixCell": "npc_confession_ok_preserve"
       },
       {
-        "variantKey": "spouse-01::mediation::immediate|b::mediation-immediate-b-v6",
+        "variantKey": "spouse-01::contradiction_pursuit::a|d-2|S3::contra-a-d-2-S3-v5",
         "caseId": "spouse-01",
-        "channel": "mediation",
-        "entryKey": "immediate|b",
-        "variantId": "mediation-immediate-b-v6",
+        "channel": "contradiction_pursuit",
+        "entryKey": "a|d-2|S3",
+        "variantId": "contra-a-d-2-S3-v5",
         "changedFields": [
           "text"
         ],
-        "category": "A",
-        "matrixCell": "strict_always_patchable"
+        "category": "B",
+        "matrixCell": "npc_confession_ok_preserve"
       },
       {
-        "variantKey": "spouse-01::mediation::conditional|a::mediation-conditional-a-v1",
+        "variantKey": "spouse-01::contradiction_pursuit::a|h-d3|S3::contra-a-h-d3-S3-v2",
         "caseId": "spouse-01",
-        "channel": "mediation",
-        "entryKey": "conditional|a",
-        "variantId": "mediation-conditional-a-v1",
+        "channel": "contradiction_pursuit",
+        "entryKey": "a|h-d3|S3",
+        "variantId": "contra-a-h-d3-S3-v2",
         "changedFields": [
           "text"
         ],
-        "category": "A",
-        "matrixCell": "strict_always_patchable"
+        "category": "B",
+        "matrixCell": "npc_confession_ok_preserve"
       },
       {
-        "variantKey": "spouse-01::mediation::conditional|a::mediation-conditional-a-v2",
+        "variantKey": "spouse-01::contradiction_pursuit::a|h-d3|S3::contra-a-h-d3-S3-v3",
         "caseId": "spouse-01",
-        "channel": "mediation",
-        "entryKey": "conditional|a",
-        "variantId": "mediation-conditional-a-v2",
+        "channel": "contradiction_pursuit",
+        "entryKey": "a|h-d3|S3",
+        "variantId": "contra-a-h-d3-S3-v3",
         "changedFields": [
           "text"
         ],
-        "category": "A",
-        "matrixCell": "strict_always_patchable"
+        "category": "B",
+        "matrixCell": "npc_confession_ok_preserve"
       },
       {
-        "variantKey": "spouse-01::mediation::conditional|a::mediation-conditional-a-v7",
+        "variantKey": "spouse-01::contradiction_pursuit::a|h-d3|S3::contra-a-h-d3-S3-v4",
         "caseId": "spouse-01",
-        "channel": "mediation",
-        "entryKey": "conditional|a",
-        "variantId": "mediation-conditional-a-v7",
+        "channel": "contradiction_pursuit",
+        "entryKey": "a|h-d3|S3",
+        "variantId": "contra-a-h-d3-S3-v4",
         "changedFields": [
           "text"
         ],
-        "category": "A",
-        "matrixCell": "strict_always_patchable"
+        "category": "B",
+        "matrixCell": "npc_confession_ok_preserve"
       },
       {
-        "variantKey": "spouse-01::mediation::conditional|b::mediation-conditional-b-v1",
+        "variantKey": "spouse-01::contradiction_pursuit::a|h-d3|S3::contra-a-h-d3-S3-v6",
         "caseId": "spouse-01",
-        "channel": "mediation",
-        "entryKey": "conditional|b",
-        "variantId": "mediation-conditional-b-v1",
+        "channel": "contradiction_pursuit",
+        "entryKey": "a|h-d3|S3",
+        "variantId": "contra-a-h-d3-S3-v6",
         "changedFields": [
           "text"
         ],
-        "category": "A",
-        "matrixCell": "strict_always_patchable"
+        "category": "B",
+        "matrixCell": "npc_confession_ok_preserve"
       },
       {
-        "variantKey": "spouse-01::mediation::conditional|b::mediation-conditional-b-v3",
+        "variantKey": "spouse-01::contradiction_pursuit::a|h-d3|S3::contra-a-h-d3-S3-v9",
         "caseId": "spouse-01",
-        "channel": "mediation",
-        "entryKey": "conditional|b",
-        "variantId": "mediation-conditional-b-v3",
+        "channel": "contradiction_pursuit",
+        "entryKey": "a|h-d3|S3",
+        "variantId": "contra-a-h-d3-S3-v9",
         "changedFields": [
           "text"
         ],
-        "category": "A",
-        "matrixCell": "strict_always_patchable"
+        "category": "B",
+        "matrixCell": "npc_confession_ok_preserve"
       },
       {
-        "variantKey": "spouse-01::mediation::conditional|b::mediation-conditional-b-v5",
+        "variantKey": "spouse-01::contradiction_pursuit::b|d-1|S3::contra-b-d-1-S3-v1",
         "caseId": "spouse-01",
-        "channel": "mediation",
-        "entryKey": "conditional|b",
-        "variantId": "mediation-conditional-b-v5",
+        "channel": "contradiction_pursuit",
+        "entryKey": "b|d-1|S3",
+        "variantId": "contra-b-d-1-S3-v1",
         "changedFields": [
           "text"
         ],
-        "category": "A",
-        "matrixCell": "strict_always_patchable"
+        "category": "B",
+        "matrixCell": "npc_confession_ok_preserve"
       },
       {
-        "variantKey": "spouse-01::mediation::postpone|b::mediation-postpone-b-v2",
+        "variantKey": "spouse-01::contradiction_pursuit::b|d-1|S3::contra-b-d-1-S3-v3",
         "caseId": "spouse-01",
-        "channel": "mediation",
-        "entryKey": "postpone|b",
-        "variantId": "mediation-postpone-b-v2",
+        "channel": "contradiction_pursuit",
+        "entryKey": "b|d-1|S3",
+        "variantId": "contra-b-d-1-S3-v3",
         "changedFields": [
           "text"
         ],
-        "category": "A",
-        "matrixCell": "strict_always_patchable"
+        "category": "B",
+        "matrixCell": "npc_confession_ok_preserve"
       },
       {
-        "variantKey": "spouse-01::mediation::postpone|b::mediation-postpone-b-v6",
+        "variantKey": "spouse-01::contradiction_pursuit::b|d-1|S3::contra-b-d-1-S3-v4",
         "caseId": "spouse-01",
-        "channel": "mediation",
-        "entryKey": "postpone|b",
-        "variantId": "mediation-postpone-b-v6",
+        "channel": "contradiction_pursuit",
+        "entryKey": "b|d-1|S3",
+        "variantId": "contra-b-d-1-S3-v4",
         "changedFields": [
           "text"
         ],
-        "category": "A",
-        "matrixCell": "strict_always_patchable"
+        "category": "B",
+        "matrixCell": "npc_confession_ok_preserve"
       },
       {
-        "variantKey": "spouse-01::mediation::postpone|b::mediation-postpone-b-v10",
+        "variantKey": "spouse-01::contradiction_pursuit::b|d-1|S3::contra-b-d-1-S3-v10",
         "caseId": "spouse-01",
-        "channel": "mediation",
-        "entryKey": "postpone|b",
-        "variantId": "mediation-postpone-b-v10",
+        "channel": "contradiction_pursuit",
+        "entryKey": "b|d-1|S3",
+        "variantId": "contra-b-d-1-S3-v10",
         "changedFields": [
           "text"
         ],
-        "category": "A",
-        "matrixCell": "strict_always_patchable"
+        "category": "B",
+        "matrixCell": "npc_confession_ok_preserve"
       },
       {
-        "variantKey": "spouse-01::mediation::fact_first|a::mediation-fact_first-a-v3",
+        "variantKey": "spouse-01::contradiction_pursuit::b|d-2|S3::contra-b-d-2-S3-v1",
         "caseId": "spouse-01",
-        "channel": "mediation",
-        "entryKey": "fact_first|a",
-        "variantId": "mediation-fact_first-a-v3",
+        "channel": "contradiction_pursuit",
+        "entryKey": "b|d-2|S3",
+        "variantId": "contra-b-d-2-S3-v1",
         "changedFields": [
           "text"
         ],
-        "category": "A",
-        "matrixCell": "strict_always_patchable"
+        "category": "B",
+        "matrixCell": "npc_confession_ok_preserve"
       },
       {
-        "variantKey": "spouse-01::mediation::fact_first|a::mediation-fact_first-a-v4",
+        "variantKey": "spouse-01::contradiction_pursuit::b|d-2|S3::contra-b-d-2-S3-v2",
         "caseId": "spouse-01",
-        "channel": "mediation",
-        "entryKey": "fact_first|a",
-        "variantId": "mediation-fact_first-a-v4",
+        "channel": "contradiction_pursuit",
+        "entryKey": "b|d-2|S3",
+        "variantId": "contra-b-d-2-S3-v2",
         "changedFields": [
           "text"
         ],
-        "category": "A",
-        "matrixCell": "strict_always_patchable"
+        "category": "B",
+        "matrixCell": "npc_confession_ok_preserve"
       },
       {
-        "variantKey": "spouse-01::mediation::fact_first|b::mediation-fact_first-b-v1",
+        "variantKey": "spouse-01::contradiction_pursuit::b|d-2|S3::contra-b-d-2-S3-v4",
         "caseId": "spouse-01",
-        "channel": "mediation",
-        "entryKey": "fact_first|b",
-        "variantId": "mediation-fact_first-b-v1",
+        "channel": "contradiction_pursuit",
+        "entryKey": "b|d-2|S3",
+        "variantId": "contra-b-d-2-S3-v4",
         "changedFields": [
           "text"
         ],
-        "category": "A",
-        "matrixCell": "strict_always_patchable"
+        "category": "B",
+        "matrixCell": "npc_confession_ok_preserve"
       },
       {
-        "variantKey": "spouse-01::mediation::fact_first|b::mediation-fact_first-b-v3",
+        "variantKey": "spouse-01::contradiction_pursuit::b|d-2|S3::contra-b-d-2-S3-v5",
         "caseId": "spouse-01",
-        "channel": "mediation",
-        "entryKey": "fact_first|b",
-        "variantId": "mediation-fact_first-b-v3",
+        "channel": "contradiction_pursuit",
+        "entryKey": "b|d-2|S3",
+        "variantId": "contra-b-d-2-S3-v5",
         "changedFields": [
           "text"
         ],
-        "category": "A",
-        "matrixCell": "strict_always_patchable"
+        "category": "B",
+        "matrixCell": "npc_confession_ok_preserve"
       },
       {
-        "variantKey": "spouse-01::mediation::fact_first|b::mediation-fact_first-b-v7",
+        "variantKey": "spouse-01::contradiction_pursuit::b|d-2|S3::contra-b-d-2-S3-v8",
         "caseId": "spouse-01",
-        "channel": "mediation",
-        "entryKey": "fact_first|b",
-        "variantId": "mediation-fact_first-b-v7",
+        "channel": "contradiction_pursuit",
+        "entryKey": "b|d-2|S3",
+        "variantId": "contra-b-d-2-S3-v8",
         "changedFields": [
           "text"
         ],
-        "category": "A",
-        "matrixCell": "strict_always_patchable"
+        "category": "B",
+        "matrixCell": "npc_confession_ok_preserve"
       },
       {
-        "variantKey": "spouse-01::judge_question::d-1|fact_pursuit|3::judgeq-d-1-fact_pursuit-3-v3",
+        "variantKey": "spouse-01::contradiction_pursuit::b|d-2|S3::contra-b-d-2-S3-v10",
         "caseId": "spouse-01",
-        "channel": "judge_question",
-        "entryKey": "d-1|fact_pursuit|3",
-        "variantId": "judgeq-d-1-fact_pursuit-3-v3",
+        "channel": "contradiction_pursuit",
+        "entryKey": "b|d-2|S3",
+        "variantId": "contra-b-d-2-S3-v10",
         "changedFields": [
           "text"
         ],
-        "category": "A",
-        "matrixCell": "strict_always_patchable"
+        "category": "B",
+        "matrixCell": "npc_confession_ok_preserve"
       },
       {
-        "variantKey": "spouse-01::judge_question::d-1|fact_pursuit|3::judgeq-d-1-fact_pursuit-3-v4",
+        "variantKey": "spouse-01::contradiction_pursuit::b|h-d3|S3::contra-b-h-d3-S3-v6",
         "caseId": "spouse-01",
-        "channel": "judge_question",
-        "entryKey": "d-1|fact_pursuit|3",
-        "variantId": "judgeq-d-1-fact_pursuit-3-v4",
+        "channel": "contradiction_pursuit",
+        "entryKey": "b|h-d3|S3",
+        "variantId": "contra-b-h-d3-S3-v6",
         "changedFields": [
           "text"
         ],
-        "category": "A",
-        "matrixCell": "strict_always_patchable"
+        "category": "B",
+        "matrixCell": "npc_confession_ok_preserve"
       },
       {
-        "variantKey": "spouse-01::judge_question::d-1|fact_pursuit|4::judgeq-d-1-fact_pursuit-4-v1",
+        "variantKey": "spouse-01::contradiction_pursuit::b|h-d3|S3::contra-b-h-d3-S3-v10",
         "caseId": "spouse-01",
-        "channel": "judge_question",
-        "entryKey": "d-1|fact_pursuit|4",
-        "variantId": "judgeq-d-1-fact_pursuit-4-v1",
+        "channel": "contradiction_pursuit",
+        "entryKey": "b|h-d3|S3",
+        "variantId": "contra-b-h-d3-S3-v10",
         "changedFields": [
           "text"
         ],
-        "category": "A",
-        "matrixCell": "strict_always_patchable"
+        "category": "B",
+        "matrixCell": "npc_confession_ok_preserve"
       },
       {
-        "variantKey": "spouse-01::judge_question::d-1|fact_pursuit|4::judgeq-d-1-fact_pursuit-4-v3",
+        "variantKey": "spouse-01::contradiction_pursuit::b|h-d4|S3::contra-b-h-d4-S3-v1",
         "caseId": "spouse-01",
-        "channel": "judge_question",
-        "entryKey": "d-1|fact_pursuit|4",
-        "variantId": "judgeq-d-1-fact_pursuit-4-v3",
+        "channel": "contradiction_pursuit",
+        "entryKey": "b|h-d4|S3",
+        "variantId": "contra-b-h-d4-S3-v1",
         "changedFields": [
           "text"
         ],
-        "category": "A",
-        "matrixCell": "strict_always_patchable"
+        "category": "B",
+        "matrixCell": "npc_confession_ok_preserve"
       },
       {
-        "variantKey": "spouse-01::judge_question::d-1|motive_search|1::judgeq-d-1-motive_search-1-v1",
+        "variantKey": "spouse-01::contradiction_pursuit::b|h-d4|S3::contra-b-h-d4-S3-v5",
         "caseId": "spouse-01",
-        "channel": "judge_question",
-        "entryKey": "d-1|motive_search|1",
-        "variantId": "judgeq-d-1-motive_search-1-v1",
+        "channel": "contradiction_pursuit",
+        "entryKey": "b|h-d4|S3",
+        "variantId": "contra-b-h-d4-S3-v5",
         "changedFields": [
           "text"
         ],
-        "category": "A",
-        "matrixCell": "strict_always_patchable"
+        "category": "B",
+        "matrixCell": "npc_confession_ok_preserve"
       },
       {
-        "variantKey": "spouse-01::judge_question::d-1|motive_search|1::judgeq-d-1-motive_search-1-v3",
+        "variantKey": "spouse-01::contradiction_pursuit::b|h-d4|S3::contra-b-h-d4-S3-v7",
         "caseId": "spouse-01",
-        "channel": "judge_question",
-        "entryKey": "d-1|motive_search|1",
-        "variantId": "judgeq-d-1-motive_search-1-v3",
+        "channel": "contradiction_pursuit",
+        "entryKey": "b|h-d4|S3",
+        "variantId": "contra-b-h-d4-S3-v7",
         "changedFields": [
           "text"
         ],
-        "category": "A",
-        "matrixCell": "strict_always_patchable"
+        "category": "B",
+        "matrixCell": "npc_confession_ok_preserve"
       },
       {
-        "variantKey": "spouse-01::judge_question::d-1|motive_search|2::judgeq-d-1-motive_search-2-v1",
+        "variantKey": "spouse-01::trust_action::a|separation|S3::trust-a-separation-S3-v6",
         "caseId": "spouse-01",
-        "channel": "judge_question",
-        "entryKey": "d-1|motive_search|2",
-        "variantId": "judgeq-d-1-motive_search-2-v1",
+        "channel": "trust_action",
+        "entryKey": "a|separation|S3",
+        "variantId": "trust-a-separation-S3-v6",
         "changedFields": [
           "text"
         ],
-        "category": "A",
-        "matrixCell": "strict_always_patchable"
+        "category": "B",
+        "matrixCell": "npc_confession_ok_preserve"
       },
       {
-        "variantKey": "spouse-01::judge_question::d-1|motive_search|2::judgeq-d-1-motive_search-2-v2",
+        "variantKey": "spouse-01::trust_action::a|confidential|S3::trust-a-confidential-S3-v1",
         "caseId": "spouse-01",
-        "channel": "judge_question",
-        "entryKey": "d-1|motive_search|2",
-        "variantId": "judgeq-d-1-motive_search-2-v2",
+        "channel": "trust_action",
+        "entryKey": "a|confidential|S3",
+        "variantId": "trust-a-confidential-S3-v1",
         "changedFields": [
           "text"
         ],
-        "category": "A",
-        "matrixCell": "strict_always_patchable"
+        "category": "B",
+        "matrixCell": "npc_confession_ok_preserve"
       },
       {
-        "variantKey": "spouse-01::judge_question::d-1|motive_search|2::judgeq-d-1-motive_search-2-v3",
+        "variantKey": "spouse-01::trust_action::a|confidential|S3::trust-a-confidential-S3-v3",
         "caseId": "spouse-01",
-        "channel": "judge_question",
-        "entryKey": "d-1|motive_search|2",
-        "variantId": "judgeq-d-1-motive_search-2-v3",
+        "channel": "trust_action",
+        "entryKey": "a|confidential|S3",
+        "variantId": "trust-a-confidential-S3-v3",
         "changedFields": [
           "text"
         ],
-        "category": "A",
-        "matrixCell": "strict_always_patchable"
+        "category": "B",
+        "matrixCell": "npc_confession_ok_preserve"
       },
       {
-        "variantKey": "spouse-01::judge_question::d-1|motive_search|3::judgeq-d-1-motive_search-3-v1",
+        "variantKey": "spouse-01::trust_action::a|immediate|S3::trust-a-immediate-S3-v1",
         "caseId": "spouse-01",
-        "channel": "judge_question",
-        "entryKey": "d-1|motive_search|3",
-        "variantId": "judgeq-d-1-motive_search-3-v1",
-        "changedFields": [
-          "text",
-          "behaviorHint"
-        ],
-        "category": "A",
-        "matrixCell": "strict_always_patchable"
-      },
-      {
-        "variantKey": "spouse-01::judge_question::d-1|motive_search|3::judgeq-d-1-motive_search-3-v2",
-        "caseId": "spouse-01",
-        "channel": "judge_question",
-        "entryKey": "d-1|motive_search|3",
-        "variantId": "judgeq-d-1-motive_search-3-v2",
-        "changedFields": [
-          "behaviorHint"
-        ],
-        "category": "A",
-        "matrixCell": "strict_always_patchable"
-      },
-      {
-        "variantKey": "spouse-01::judge_question::d-1|motive_search|3::judgeq-d-1-motive_search-3-v3",
-        "caseId": "spouse-01",
-        "channel": "judge_question",
-        "entryKey": "d-1|motive_search|3",
-        "variantId": "judgeq-d-1-motive_search-3-v3",
+        "channel": "trust_action",
+        "entryKey": "a|immediate|S3",
+        "variantId": "trust-a-immediate-S3-v1",
         "changedFields": [
           "text"
         ],
-        "category": "A",
-        "matrixCell": "strict_always_patchable"
+        "category": "B",
+        "matrixCell": "npc_confession_ok_preserve"
       },
       {
-        "variantKey": "spouse-01::judge_question::d-1|motive_search|3::judgeq-d-1-motive_search-3-v5",
+        "variantKey": "spouse-01::trust_action::a|immediate|S3::trust-a-immediate-S3-v5",
         "caseId": "spouse-01",
-        "channel": "judge_question",
-        "entryKey": "d-1|motive_search|3",
-        "variantId": "judgeq-d-1-motive_search-3-v5",
+        "channel": "trust_action",
+        "entryKey": "a|immediate|S3",
+        "variantId": "trust-a-immediate-S3-v5",
         "changedFields": [
           "text"
         ],
-        "category": "A",
-        "matrixCell": "strict_always_patchable"
+        "category": "B",
+        "matrixCell": "npc_confession_ok_preserve"
       },
       {
-        "variantKey": "spouse-01::judge_question::d-1|motive_search|4::judgeq-d-1-motive_search-4-v1",
+        "variantKey": "spouse-01::trust_action::a|immediate|S3::trust-a-immediate-S3-v9",
         "caseId": "spouse-01",
-        "channel": "judge_question",
-        "entryKey": "d-1|motive_search|4",
-        "variantId": "judgeq-d-1-motive_search-4-v1",
+        "channel": "trust_action",
+        "entryKey": "a|immediate|S3",
+        "variantId": "trust-a-immediate-S3-v9",
         "changedFields": [
           "text"
         ],
-        "category": "A",
-        "matrixCell": "strict_always_patchable"
-      },
-      {
-        "variantKey": "spouse-01::judge_question::d-1|motive_search|4::judgeq-d-1-motive_search-4-v3",
-        "caseId": "spouse-01",
-        "channel": "judge_question",
-        "entryKey": "d-1|motive_search|4",
-        "variantId": "judgeq-d-1-motive_search-4-v3",
-        "changedFields": [
-          "text"
-        ],
-        "category": "A",
-        "matrixCell": "strict_always_patchable"
-      },
-      {
-        "variantKey": "spouse-01::judge_question::d-1|motive_search|4::judgeq-d-1-motive_search-4-v4",
-        "caseId": "spouse-01",
-        "channel": "judge_question",
-        "entryKey": "d-1|motive_search|4",
-        "variantId": "judgeq-d-1-motive_search-4-v4",
-        "changedFields": [
-          "text"
-        ],
-        "category": "A",
-        "matrixCell": "strict_always_patchable"
-      },
-      {
-        "variantKey": "spouse-01::judge_question::d-1|empathy_approach|1::judgeq-d-1-empathy_approach-1-v1",
-        "caseId": "spouse-01",
-        "channel": "judge_question",
-        "entryKey": "d-1|empathy_approach|1",
-        "variantId": "judgeq-d-1-empathy_approach-1-v1",
-        "changedFields": [
-          "text"
-        ],
-        "category": "A",
-        "matrixCell": "strict_always_patchable"
-      },
-      {
-        "variantKey": "spouse-01::judge_question::d-1|empathy_approach|1::judgeq-d-1-empathy_approach-1-v3",
-        "caseId": "spouse-01",
-        "channel": "judge_question",
-        "entryKey": "d-1|empathy_approach|1",
-        "variantId": "judgeq-d-1-empathy_approach-1-v3",
-        "changedFields": [
-          "text"
-        ],
-        "category": "A",
-        "matrixCell": "strict_always_patchable"
-      },
-      {
-        "variantKey": "spouse-01::judge_question::d-1|empathy_approach|2::judgeq-d-1-empathy_approach-2-v3",
-        "caseId": "spouse-01",
-        "channel": "judge_question",
-        "entryKey": "d-1|empathy_approach|2",
-        "variantId": "judgeq-d-1-empathy_approach-2-v3",
-        "changedFields": [
-          "text"
-        ],
-        "category": "A",
-        "matrixCell": "strict_always_patchable"
-      },
-      {
-        "variantKey": "spouse-01::judge_question::d-1|empathy_approach|3::judgeq-d-1-empathy_approach-3-v1",
-        "caseId": "spouse-01",
-        "channel": "judge_question",
-        "entryKey": "d-1|empathy_approach|3",
-        "variantId": "judgeq-d-1-empathy_approach-3-v1",
-        "changedFields": [
-          "text"
-        ],
-        "category": "A",
-        "matrixCell": "strict_always_patchable"
-      },
-      {
-        "variantKey": "spouse-01::judge_question::d-1|empathy_approach|3::judgeq-d-1-empathy_approach-3-v3",
-        "caseId": "spouse-01",
-        "channel": "judge_question",
-        "entryKey": "d-1|empathy_approach|3",
-        "variantId": "judgeq-d-1-empathy_approach-3-v3",
-        "changedFields": [
-          "text"
-        ],
-        "category": "A",
-        "matrixCell": "strict_always_patchable"
-      },
-      {
-        "variantKey": "spouse-01::judge_question::d-1|empathy_approach|4::judgeq-d-1-empathy_approach-4-v2",
-        "caseId": "spouse-01",
-        "channel": "judge_question",
-        "entryKey": "d-1|empathy_approach|4",
-        "variantId": "judgeq-d-1-empathy_approach-4-v2",
-        "changedFields": [
-          "text"
-        ],
-        "category": "A",
-        "matrixCell": "strict_always_patchable"
+        "category": "B",
+        "matrixCell": "npc_confession_ok_preserve"
       }
     ]
   },
@@ -689,15 +688,15 @@
     {
       "severity": "FAIL",
       "type": "non_strict_patch_remaining",
-      "variantKey": "spouse-01::interrogation::a|d-1|S0|fact_pursuit::a-d-1-S0-fact-pursuit-v10",
+      "variantKey": "spouse-01::interrogation::a|d-1|S3|fact_pursuit::a-d-1-S3-fact-pursuit-v6",
       "caseId": "spouse-01",
       "channel": "interrogation",
-      "matrixCell": "npc_early_strict_review",
+      "matrixCell": "npc_confession_ok_preserve",
       "stage": {
-        "lieState": "S0",
-        "lieStateNumber": 0,
-        "lieBand": null,
-        "truthLevel": "none",
+        "lieState": "S3",
+        "lieStateNumber": 3,
+        "lieBand": "mid",
+        "truthLevel": "partial",
         "investigationStage": null
       },
       "changedFields": [
@@ -707,15 +706,15 @@
     {
       "severity": "FAIL",
       "type": "non_strict_patch_remaining",
-      "variantKey": "spouse-01::interrogation::a|d-1|S0|motive_search::a-d-1-S0-motive-search-v4",
+      "variantKey": "spouse-01::interrogation::b|d-1|S3|fact_pursuit::b-d-1-S3-fact-pursuit-v8",
       "caseId": "spouse-01",
       "channel": "interrogation",
-      "matrixCell": "npc_early_strict_review",
+      "matrixCell": "npc_confession_ok_preserve",
       "stage": {
-        "lieState": "S0",
-        "lieStateNumber": 0,
-        "lieBand": null,
-        "truthLevel": "none",
+        "lieState": "S3",
+        "lieStateNumber": 3,
+        "lieBand": "mid",
+        "truthLevel": "partial",
         "investigationStage": null
       },
       "changedFields": [
@@ -725,15 +724,15 @@
     {
       "severity": "FAIL",
       "type": "non_strict_patch_remaining",
-      "variantKey": "spouse-01::interrogation::a|d-1|S0|motive_search::a-d-1-S0-motive-search-v10",
+      "variantKey": "spouse-01::interrogation::b|d-2|S3|fact_pursuit::b-d-2-S3-fact-pursuit-v6",
       "caseId": "spouse-01",
       "channel": "interrogation",
-      "matrixCell": "npc_early_strict_review",
+      "matrixCell": "npc_confession_ok_preserve",
       "stage": {
-        "lieState": "S0",
-        "lieStateNumber": 0,
-        "lieBand": null,
-        "truthLevel": "none",
+        "lieState": "S3",
+        "lieStateNumber": 3,
+        "lieBand": "mid",
+        "truthLevel": "partial",
         "investigationStage": null
       },
       "changedFields": [
@@ -743,15 +742,15 @@
     {
       "severity": "FAIL",
       "type": "non_strict_patch_remaining",
-      "variantKey": "spouse-01::interrogation::a|d-1|S0|empathy_approach::a-d-1-S0-empathy-approach-v10",
+      "variantKey": "spouse-01::interrogation::b|d-2|S3|fact_pursuit::b-d-2-S3-fact-pursuit-v8",
       "caseId": "spouse-01",
       "channel": "interrogation",
-      "matrixCell": "npc_early_strict_review",
+      "matrixCell": "npc_confession_ok_preserve",
       "stage": {
-        "lieState": "S0",
-        "lieStateNumber": 0,
-        "lieBand": null,
-        "truthLevel": "none",
+        "lieState": "S3",
+        "lieStateNumber": 3,
+        "lieBand": "mid",
+        "truthLevel": "partial",
         "investigationStage": null
       },
       "changedFields": [
@@ -761,15 +760,15 @@
     {
       "severity": "FAIL",
       "type": "non_strict_patch_remaining",
-      "variantKey": "spouse-01::interrogation::a|d-1|S1|fact_pursuit::a-d-1-S1-fact-pursuit-v4",
+      "variantKey": "spouse-01::interrogation::b|d-2|S3|motive_search::b-d-2-S3-motive-search-v6",
       "caseId": "spouse-01",
       "channel": "interrogation",
-      "matrixCell": "npc_early_strict_review",
+      "matrixCell": "npc_confession_ok_preserve",
       "stage": {
-        "lieState": "S1",
-        "lieStateNumber": 1,
-        "lieBand": null,
-        "truthLevel": "hint",
+        "lieState": "S3",
+        "lieStateNumber": 3,
+        "lieBand": "mid",
+        "truthLevel": "partial",
         "investigationStage": null
       },
       "changedFields": [
@@ -779,15 +778,15 @@
     {
       "severity": "FAIL",
       "type": "non_strict_patch_remaining",
-      "variantKey": "spouse-01::interrogation::a|d-1|S1|motive_search::a-d-1-S1-motive-search-v4",
+      "variantKey": "spouse-01::interrogation::b|d-2|S3|empathy_approach::b-d-2-S3-empathy-approach-v6",
       "caseId": "spouse-01",
       "channel": "interrogation",
-      "matrixCell": "npc_early_strict_review",
+      "matrixCell": "npc_confession_ok_preserve",
       "stage": {
-        "lieState": "S1",
-        "lieStateNumber": 1,
-        "lieBand": null,
-        "truthLevel": "hint",
+        "lieState": "S3",
+        "lieStateNumber": 3,
+        "lieBand": "mid",
+        "truthLevel": "partial",
         "investigationStage": null
       },
       "changedFields": [
@@ -797,8 +796,998 @@
     {
       "severity": "FAIL",
       "type": "non_strict_patch_remaining",
-      "variantKey": "spouse-01::interrogation::a|d-1|S2|motive_search::a-d-1-S2-motive-search-v4",
+      "variantKey": "spouse-01::interrogation::a|h-d3|S3|fact_pursuit::a-h-d3-S3-fact-pursuit-v6",
       "caseId": "spouse-01",
+      "channel": "interrogation",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": "S3",
+        "lieStateNumber": 3,
+        "lieBand": "mid",
+        "truthLevel": "partial",
+        "investigationStage": null
+      },
+      "changedFields": [
+        "text"
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "type": "non_strict_patch_remaining",
+      "variantKey": "spouse-01::interrogation::a|h-d3|S3|fact_pursuit::a-h-d3-S3-fact-pursuit-v7",
+      "caseId": "spouse-01",
+      "channel": "interrogation",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": "S3",
+        "lieStateNumber": 3,
+        "lieBand": "mid",
+        "truthLevel": "partial",
+        "investigationStage": null
+      },
+      "changedFields": [
+        "text"
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "type": "non_strict_patch_remaining",
+      "variantKey": "spouse-01::interrogation::a|h-d3|S3|empathy_approach::a-h-d3-S3-empathy-approach-v7",
+      "caseId": "spouse-01",
+      "channel": "interrogation",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": "S3",
+        "lieStateNumber": 3,
+        "lieBand": "mid",
+        "truthLevel": "partial",
+        "investigationStage": null
+      },
+      "changedFields": [
+        "text"
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "type": "non_strict_patch_remaining",
+      "variantKey": "spouse-01::interrogation::a|h-d3|S5|fact_pursuit::a-h-d3-S5-fact-pursuit-v8",
+      "caseId": "spouse-01",
+      "channel": "interrogation",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": "S5",
+        "lieStateNumber": 5,
+        "lieBand": null,
+        "truthLevel": "full",
+        "investigationStage": null
+      },
+      "changedFields": [
+        "text"
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "type": "non_strict_patch_remaining",
+      "variantKey": "spouse-01::interrogation::a|h-d3|S5|motive_search::a-h-d3-S5-motive-search-v8",
+      "caseId": "spouse-01",
+      "channel": "interrogation",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": "S5",
+        "lieStateNumber": 5,
+        "lieBand": null,
+        "truthLevel": "full",
+        "investigationStage": null
+      },
+      "changedFields": [
+        "text"
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "type": "non_strict_patch_remaining",
+      "variantKey": "spouse-01::interrogation::a|h-d3|S5|empathy_approach::a-h-d3-S5-empathy-approach-v8",
+      "caseId": "spouse-01",
+      "channel": "interrogation",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": "S5",
+        "lieStateNumber": 5,
+        "lieBand": null,
+        "truthLevel": "full",
+        "investigationStage": null
+      },
+      "changedFields": [
+        "text"
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "type": "non_strict_patch_remaining",
+      "variantKey": "spouse-01::interrogation::b|h-d3|S3|fact_pursuit::b-h-d3-S3-fact-pursuit-v8",
+      "caseId": "spouse-01",
+      "channel": "interrogation",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": "S3",
+        "lieStateNumber": 3,
+        "lieBand": "mid",
+        "truthLevel": "partial",
+        "investigationStage": null
+      },
+      "changedFields": [
+        "text"
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "type": "non_strict_patch_remaining",
+      "variantKey": "spouse-01::interrogation::b|h-d3|S3|motive_search::b-h-d3-S3-motive-search-v2",
+      "caseId": "spouse-01",
+      "channel": "interrogation",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": "S3",
+        "lieStateNumber": 3,
+        "lieBand": null,
+        "truthLevel": "partial",
+        "investigationStage": null
+      },
+      "changedFields": [
+        "text"
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "type": "non_strict_patch_remaining",
+      "variantKey": "spouse-01::interrogation::a|h-d4|S3|empathy_approach::a-h-d4-S3-empathy-approach-v1",
+      "caseId": "spouse-01",
+      "channel": "interrogation",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": "S3",
+        "lieStateNumber": 3,
+        "lieBand": null,
+        "truthLevel": "partial",
+        "investigationStage": null
+      },
+      "changedFields": [
+        "text"
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "type": "non_strict_patch_remaining",
+      "variantKey": "spouse-01::interrogation::b|h-d4|S3|fact_pursuit::b-h-d4-S3-fact-pursuit-v8",
+      "caseId": "spouse-01",
+      "channel": "interrogation",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": "S3",
+        "lieStateNumber": 3,
+        "lieBand": "mid",
+        "truthLevel": "partial",
+        "investigationStage": null
+      },
+      "changedFields": [
+        "text"
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "type": "non_strict_patch_remaining",
+      "variantKey": "spouse-01::interrogation::b|h-d4|S4|fact_pursuit::b-h-d4-S4-fact-pursuit-v3",
+      "caseId": "spouse-01",
+      "channel": "interrogation",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": "S4",
+        "lieStateNumber": 4,
+        "lieBand": null,
+        "truthLevel": "partial",
+        "investigationStage": null
+      },
+      "changedFields": [
+        "text"
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "type": "non_strict_patch_remaining",
+      "variantKey": "spouse-01::contradiction_pursuit::a|d-1|S3::contra-a-d-1-S3-v3",
+      "caseId": "spouse-01",
+      "channel": "contradiction_pursuit",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": "S3",
+        "lieStateNumber": 3,
+        "lieBand": null,
+        "truthLevel": "partial",
+        "investigationStage": null
+      },
+      "changedFields": [
+        "text"
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "type": "non_strict_patch_remaining",
+      "variantKey": "spouse-01::contradiction_pursuit::a|d-1|S3::contra-a-d-1-S3-v4",
+      "caseId": "spouse-01",
+      "channel": "contradiction_pursuit",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": "S3",
+        "lieStateNumber": 3,
+        "lieBand": null,
+        "truthLevel": "partial",
+        "investigationStage": null
+      },
+      "changedFields": [
+        "text"
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "type": "non_strict_patch_remaining",
+      "variantKey": "spouse-01::contradiction_pursuit::a|d-1|S3::contra-a-d-1-S3-v8",
+      "caseId": "spouse-01",
+      "channel": "contradiction_pursuit",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": "S3",
+        "lieStateNumber": 3,
+        "lieBand": null,
+        "truthLevel": "partial",
+        "investigationStage": null
+      },
+      "changedFields": [
+        "text"
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "type": "non_strict_patch_remaining",
+      "variantKey": "spouse-01::contradiction_pursuit::a|d-2|S3::contra-a-d-2-S3-v1",
+      "caseId": "spouse-01",
+      "channel": "contradiction_pursuit",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": "S3",
+        "lieStateNumber": 3,
+        "lieBand": null,
+        "truthLevel": "partial",
+        "investigationStage": null
+      },
+      "changedFields": [
+        "text"
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "type": "non_strict_patch_remaining",
+      "variantKey": "spouse-01::contradiction_pursuit::a|d-2|S3::contra-a-d-2-S3-v2",
+      "caseId": "spouse-01",
+      "channel": "contradiction_pursuit",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": "S3",
+        "lieStateNumber": 3,
+        "lieBand": null,
+        "truthLevel": "partial",
+        "investigationStage": null
+      },
+      "changedFields": [
+        "text"
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "type": "non_strict_patch_remaining",
+      "variantKey": "spouse-01::contradiction_pursuit::a|d-2|S3::contra-a-d-2-S3-v4",
+      "caseId": "spouse-01",
+      "channel": "contradiction_pursuit",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": "S3",
+        "lieStateNumber": 3,
+        "lieBand": null,
+        "truthLevel": "partial",
+        "investigationStage": null
+      },
+      "changedFields": [
+        "text"
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "type": "non_strict_patch_remaining",
+      "variantKey": "spouse-01::contradiction_pursuit::a|d-2|S3::contra-a-d-2-S3-v5",
+      "caseId": "spouse-01",
+      "channel": "contradiction_pursuit",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": "S3",
+        "lieStateNumber": 3,
+        "lieBand": null,
+        "truthLevel": "partial",
+        "investigationStage": null
+      },
+      "changedFields": [
+        "text"
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "type": "non_strict_patch_remaining",
+      "variantKey": "spouse-01::contradiction_pursuit::a|h-d3|S3::contra-a-h-d3-S3-v2",
+      "caseId": "spouse-01",
+      "channel": "contradiction_pursuit",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": "S3",
+        "lieStateNumber": 3,
+        "lieBand": null,
+        "truthLevel": "partial",
+        "investigationStage": null
+      },
+      "changedFields": [
+        "text"
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "type": "non_strict_patch_remaining",
+      "variantKey": "spouse-01::contradiction_pursuit::a|h-d3|S3::contra-a-h-d3-S3-v3",
+      "caseId": "spouse-01",
+      "channel": "contradiction_pursuit",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": "S3",
+        "lieStateNumber": 3,
+        "lieBand": null,
+        "truthLevel": "partial",
+        "investigationStage": null
+      },
+      "changedFields": [
+        "text"
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "type": "non_strict_patch_remaining",
+      "variantKey": "spouse-01::contradiction_pursuit::a|h-d3|S3::contra-a-h-d3-S3-v4",
+      "caseId": "spouse-01",
+      "channel": "contradiction_pursuit",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": "S3",
+        "lieStateNumber": 3,
+        "lieBand": null,
+        "truthLevel": "partial",
+        "investigationStage": null
+      },
+      "changedFields": [
+        "text"
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "type": "non_strict_patch_remaining",
+      "variantKey": "spouse-01::contradiction_pursuit::a|h-d3|S3::contra-a-h-d3-S3-v6",
+      "caseId": "spouse-01",
+      "channel": "contradiction_pursuit",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": "S3",
+        "lieStateNumber": 3,
+        "lieBand": null,
+        "truthLevel": "partial",
+        "investigationStage": null
+      },
+      "changedFields": [
+        "text"
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "type": "non_strict_patch_remaining",
+      "variantKey": "spouse-01::contradiction_pursuit::a|h-d3|S3::contra-a-h-d3-S3-v9",
+      "caseId": "spouse-01",
+      "channel": "contradiction_pursuit",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": "S3",
+        "lieStateNumber": 3,
+        "lieBand": null,
+        "truthLevel": "partial",
+        "investigationStage": null
+      },
+      "changedFields": [
+        "text"
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "type": "non_strict_patch_remaining",
+      "variantKey": "spouse-01::contradiction_pursuit::b|d-1|S3::contra-b-d-1-S3-v1",
+      "caseId": "spouse-01",
+      "channel": "contradiction_pursuit",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": "S3",
+        "lieStateNumber": 3,
+        "lieBand": null,
+        "truthLevel": "partial",
+        "investigationStage": null
+      },
+      "changedFields": [
+        "text"
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "type": "non_strict_patch_remaining",
+      "variantKey": "spouse-01::contradiction_pursuit::b|d-1|S3::contra-b-d-1-S3-v3",
+      "caseId": "spouse-01",
+      "channel": "contradiction_pursuit",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": "S3",
+        "lieStateNumber": 3,
+        "lieBand": null,
+        "truthLevel": "partial",
+        "investigationStage": null
+      },
+      "changedFields": [
+        "text"
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "type": "non_strict_patch_remaining",
+      "variantKey": "spouse-01::contradiction_pursuit::b|d-1|S3::contra-b-d-1-S3-v4",
+      "caseId": "spouse-01",
+      "channel": "contradiction_pursuit",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": "S3",
+        "lieStateNumber": 3,
+        "lieBand": null,
+        "truthLevel": "partial",
+        "investigationStage": null
+      },
+      "changedFields": [
+        "text"
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "type": "non_strict_patch_remaining",
+      "variantKey": "spouse-01::contradiction_pursuit::b|d-1|S3::contra-b-d-1-S3-v10",
+      "caseId": "spouse-01",
+      "channel": "contradiction_pursuit",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": "S3",
+        "lieStateNumber": 3,
+        "lieBand": null,
+        "truthLevel": "partial",
+        "investigationStage": null
+      },
+      "changedFields": [
+        "text"
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "type": "non_strict_patch_remaining",
+      "variantKey": "spouse-01::contradiction_pursuit::b|d-2|S3::contra-b-d-2-S3-v1",
+      "caseId": "spouse-01",
+      "channel": "contradiction_pursuit",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": "S3",
+        "lieStateNumber": 3,
+        "lieBand": null,
+        "truthLevel": "partial",
+        "investigationStage": null
+      },
+      "changedFields": [
+        "text"
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "type": "non_strict_patch_remaining",
+      "variantKey": "spouse-01::contradiction_pursuit::b|d-2|S3::contra-b-d-2-S3-v2",
+      "caseId": "spouse-01",
+      "channel": "contradiction_pursuit",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": "S3",
+        "lieStateNumber": 3,
+        "lieBand": null,
+        "truthLevel": "partial",
+        "investigationStage": null
+      },
+      "changedFields": [
+        "text"
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "type": "non_strict_patch_remaining",
+      "variantKey": "spouse-01::contradiction_pursuit::b|d-2|S3::contra-b-d-2-S3-v4",
+      "caseId": "spouse-01",
+      "channel": "contradiction_pursuit",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": "S3",
+        "lieStateNumber": 3,
+        "lieBand": null,
+        "truthLevel": "partial",
+        "investigationStage": null
+      },
+      "changedFields": [
+        "text"
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "type": "non_strict_patch_remaining",
+      "variantKey": "spouse-01::contradiction_pursuit::b|d-2|S3::contra-b-d-2-S3-v5",
+      "caseId": "spouse-01",
+      "channel": "contradiction_pursuit",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": "S3",
+        "lieStateNumber": 3,
+        "lieBand": null,
+        "truthLevel": "partial",
+        "investigationStage": null
+      },
+      "changedFields": [
+        "text"
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "type": "non_strict_patch_remaining",
+      "variantKey": "spouse-01::contradiction_pursuit::b|d-2|S3::contra-b-d-2-S3-v8",
+      "caseId": "spouse-01",
+      "channel": "contradiction_pursuit",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": "S3",
+        "lieStateNumber": 3,
+        "lieBand": null,
+        "truthLevel": "partial",
+        "investigationStage": null
+      },
+      "changedFields": [
+        "text"
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "type": "non_strict_patch_remaining",
+      "variantKey": "spouse-01::contradiction_pursuit::b|d-2|S3::contra-b-d-2-S3-v10",
+      "caseId": "spouse-01",
+      "channel": "contradiction_pursuit",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": "S3",
+        "lieStateNumber": 3,
+        "lieBand": null,
+        "truthLevel": "partial",
+        "investigationStage": null
+      },
+      "changedFields": [
+        "text"
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "type": "non_strict_patch_remaining",
+      "variantKey": "spouse-01::contradiction_pursuit::b|h-d3|S3::contra-b-h-d3-S3-v6",
+      "caseId": "spouse-01",
+      "channel": "contradiction_pursuit",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": "S3",
+        "lieStateNumber": 3,
+        "lieBand": null,
+        "truthLevel": "partial",
+        "investigationStage": null
+      },
+      "changedFields": [
+        "text"
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "type": "non_strict_patch_remaining",
+      "variantKey": "spouse-01::contradiction_pursuit::b|h-d3|S3::contra-b-h-d3-S3-v10",
+      "caseId": "spouse-01",
+      "channel": "contradiction_pursuit",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": "S3",
+        "lieStateNumber": 3,
+        "lieBand": null,
+        "truthLevel": "partial",
+        "investigationStage": null
+      },
+      "changedFields": [
+        "text"
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "type": "non_strict_patch_remaining",
+      "variantKey": "spouse-01::contradiction_pursuit::b|h-d4|S3::contra-b-h-d4-S3-v1",
+      "caseId": "spouse-01",
+      "channel": "contradiction_pursuit",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": "S3",
+        "lieStateNumber": 3,
+        "lieBand": null,
+        "truthLevel": "partial",
+        "investigationStage": null
+      },
+      "changedFields": [
+        "text"
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "type": "non_strict_patch_remaining",
+      "variantKey": "spouse-01::contradiction_pursuit::b|h-d4|S3::contra-b-h-d4-S3-v5",
+      "caseId": "spouse-01",
+      "channel": "contradiction_pursuit",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": "S3",
+        "lieStateNumber": 3,
+        "lieBand": null,
+        "truthLevel": "partial",
+        "investigationStage": null
+      },
+      "changedFields": [
+        "text"
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "type": "non_strict_patch_remaining",
+      "variantKey": "spouse-01::contradiction_pursuit::b|h-d4|S3::contra-b-h-d4-S3-v7",
+      "caseId": "spouse-01",
+      "channel": "contradiction_pursuit",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": "S3",
+        "lieStateNumber": 3,
+        "lieBand": null,
+        "truthLevel": "partial",
+        "investigationStage": null
+      },
+      "changedFields": [
+        "text"
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "type": "non_strict_patch_remaining",
+      "variantKey": "spouse-01::trust_action::a|separation|S3::trust-a-separation-S3-v6",
+      "caseId": "spouse-01",
+      "channel": "trust_action",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": "S3",
+        "lieStateNumber": 3,
+        "lieBand": "mid",
+        "truthLevel": "full",
+        "investigationStage": null
+      },
+      "changedFields": [
+        "text"
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "type": "non_strict_patch_remaining",
+      "variantKey": "spouse-01::trust_action::a|confidential|S3::trust-a-confidential-S3-v1",
+      "caseId": "spouse-01",
+      "channel": "trust_action",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": "S3",
+        "lieStateNumber": 3,
+        "lieBand": "mid",
+        "truthLevel": "full",
+        "investigationStage": null
+      },
+      "changedFields": [
+        "text"
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "type": "non_strict_patch_remaining",
+      "variantKey": "spouse-01::trust_action::a|confidential|S3::trust-a-confidential-S3-v3",
+      "caseId": "spouse-01",
+      "channel": "trust_action",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": "S3",
+        "lieStateNumber": 3,
+        "lieBand": "mid",
+        "truthLevel": "full",
+        "investigationStage": null
+      },
+      "changedFields": [
+        "text"
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "type": "non_strict_patch_remaining",
+      "variantKey": "spouse-01::trust_action::a|immediate|S3::trust-a-immediate-S3-v1",
+      "caseId": "spouse-01",
+      "channel": "trust_action",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": "S3",
+        "lieStateNumber": 3,
+        "lieBand": "mid",
+        "truthLevel": "full",
+        "investigationStage": null
+      },
+      "changedFields": [
+        "text"
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "type": "non_strict_patch_remaining",
+      "variantKey": "spouse-01::trust_action::a|immediate|S3::trust-a-immediate-S3-v5",
+      "caseId": "spouse-01",
+      "channel": "trust_action",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": "S3",
+        "lieStateNumber": 3,
+        "lieBand": "mid",
+        "truthLevel": "full",
+        "investigationStage": null
+      },
+      "changedFields": [
+        "text"
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "type": "non_strict_patch_remaining",
+      "variantKey": "spouse-01::trust_action::a|immediate|S3::trust-a-immediate-S3-v9",
+      "caseId": "spouse-01",
+      "channel": "trust_action",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": "S3",
+        "lieStateNumber": 3,
+        "lieBand": "mid",
+        "truthLevel": "full",
+        "investigationStage": null
+      },
+      "changedFields": [
+        "text"
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "type": "non_strict_patch_remaining",
+      "variantKey": "spouse-01::trust_action::a|immediate|S3::trust-a-immediate-S3-v10",
+      "caseId": "spouse-01",
+      "channel": "trust_action",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": "S3",
+        "lieStateNumber": 3,
+        "lieBand": "mid",
+        "truthLevel": "full",
+        "investigationStage": null
+      },
+      "changedFields": [
+        "text"
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "type": "non_strict_patch_remaining",
+      "variantKey": "spouse-01::trust_action::b|separation|S3::trust-b-separation-S3-v2",
+      "caseId": "spouse-01",
+      "channel": "trust_action",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": "S3",
+        "lieStateNumber": 3,
+        "lieBand": "mid",
+        "truthLevel": "full",
+        "investigationStage": null
+      },
+      "changedFields": [
+        "text"
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "type": "non_strict_patch_remaining",
+      "variantKey": "spouse-01::trust_action::b|separation|S3::trust-b-separation-S3-v4",
+      "caseId": "spouse-01",
+      "channel": "trust_action",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": "S3",
+        "lieStateNumber": 3,
+        "lieBand": "mid",
+        "truthLevel": "full",
+        "investigationStage": null
+      },
+      "changedFields": [
+        "text"
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "type": "non_strict_patch_remaining",
+      "variantKey": "spouse-01::trust_action::b|confidential|S3::trust-b-confidential-S3-v3",
+      "caseId": "spouse-01",
+      "channel": "trust_action",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": "S3",
+        "lieStateNumber": 3,
+        "lieBand": "mid",
+        "truthLevel": "full",
+        "investigationStage": null
+      },
+      "changedFields": [
+        "text"
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "type": "non_strict_patch_remaining",
+      "variantKey": "spouse-01::trust_action::b|confidential|S3::trust-b-confidential-S3-v4",
+      "caseId": "spouse-01",
+      "channel": "trust_action",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": "S3",
+        "lieStateNumber": 3,
+        "lieBand": "mid",
+        "truthLevel": "full",
+        "investigationStage": null
+      },
+      "changedFields": [
+        "text"
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "type": "non_strict_patch_remaining",
+      "variantKey": "spouse-01::trust_action::b|confidential|S3::trust-b-confidential-S3-v8",
+      "caseId": "spouse-01",
+      "channel": "trust_action",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": "S3",
+        "lieStateNumber": 3,
+        "lieBand": "mid",
+        "truthLevel": "full",
+        "investigationStage": null
+      },
+      "changedFields": [
+        "text"
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "type": "non_strict_patch_remaining",
+      "variantKey": "spouse-01::trust_action::b|immediate|S3::trust-b-immediate-S3-v1",
+      "caseId": "spouse-01",
+      "channel": "trust_action",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": "S3",
+        "lieStateNumber": 3,
+        "lieBand": "mid",
+        "truthLevel": "full",
+        "investigationStage": null
+      },
+      "changedFields": [
+        "text"
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "type": "non_strict_patch_remaining",
+      "variantKey": "spouse-01::trust_action::b|immediate|S3::trust-b-immediate-S3-v2",
+      "caseId": "spouse-01",
+      "channel": "trust_action",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": "S3",
+        "lieStateNumber": 3,
+        "lieBand": "mid",
+        "truthLevel": "full",
+        "investigationStage": null
+      },
+      "changedFields": [
+        "text"
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "type": "non_strict_patch_remaining",
+      "variantKey": "spouse-01::trust_action::b|immediate|S3::trust-b-immediate-S3-v4",
+      "caseId": "spouse-01",
+      "channel": "trust_action",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": "S3",
+        "lieStateNumber": 3,
+        "lieBand": "mid",
+        "truthLevel": "full",
+        "investigationStage": null
+      },
+      "changedFields": [
+        "text"
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "type": "non_strict_patch_remaining",
+      "variantKey": "spouse-01::trust_action::b|immediate|S3::trust-b-immediate-S3-v7",
+      "caseId": "spouse-01",
+      "channel": "trust_action",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": "S3",
+        "lieStateNumber": 3,
+        "lieBand": "mid",
+        "truthLevel": "full",
+        "investigationStage": null
+      },
+      "changedFields": [
+        "text"
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "type": "non_strict_patch_remaining",
+      "variantKey": "spouse-01::trust_action::b|immediate|S3::trust-b-immediate-S3-v8",
+      "caseId": "spouse-01",
+      "channel": "trust_action",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": "S3",
+        "lieStateNumber": 3,
+        "lieBand": "mid",
+        "truthLevel": "full",
+        "investigationStage": null
+      },
+      "changedFields": [
+        "text"
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "type": "non_strict_patch_remaining",
+      "variantKey": "family-01::interrogation::a|d-1|S2|empathy_approach::a-d-1-S2-empathy-approach-v9",
+      "caseId": "family-01",
       "channel": "interrogation",
       "matrixCell": "npc_partial_review",
       "stage": {
@@ -815,9 +1804,279 @@
     {
       "severity": "FAIL",
       "type": "non_strict_patch_remaining",
-      "variantKey": "spouse-01::contradiction_pursuit::a|d-1|S2::contra-a-d-1-S2-v8",
-      "caseId": "spouse-01",
-      "channel": "contradiction_pursuit",
+      "variantKey": "family-01::interrogation::b|d-1|S3|fact_pursuit::b-d-1-S3-fact-pursuit-v1",
+      "caseId": "family-01",
+      "channel": "interrogation",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": "S3",
+        "lieStateNumber": 3,
+        "lieBand": null,
+        "truthLevel": "partial",
+        "investigationStage": null
+      },
+      "changedFields": [
+        "text"
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "type": "non_strict_patch_remaining",
+      "variantKey": "family-01::interrogation::b|d-1|S3|fact_pursuit::b-d-1-S3-fact-pursuit-v2",
+      "caseId": "family-01",
+      "channel": "interrogation",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": "S3",
+        "lieStateNumber": 3,
+        "lieBand": null,
+        "truthLevel": "partial",
+        "investigationStage": null
+      },
+      "changedFields": [
+        "text"
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "type": "non_strict_patch_remaining",
+      "variantKey": "family-01::interrogation::b|d-1|S3|fact_pursuit::b-d-1-S3-fact-pursuit-v3",
+      "caseId": "family-01",
+      "channel": "interrogation",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": "S3",
+        "lieStateNumber": 3,
+        "lieBand": null,
+        "truthLevel": "partial",
+        "investigationStage": null
+      },
+      "changedFields": [
+        "text"
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "type": "non_strict_patch_remaining",
+      "variantKey": "family-01::interrogation::b|d-1|S3|fact_pursuit::b-d-1-S3-fact-pursuit-v6",
+      "caseId": "family-01",
+      "channel": "interrogation",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": "S3",
+        "lieStateNumber": 3,
+        "lieBand": "mid",
+        "truthLevel": "partial",
+        "investigationStage": null
+      },
+      "changedFields": [
+        "text"
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "type": "non_strict_patch_remaining",
+      "variantKey": "family-01::interrogation::b|d-1|S3|fact_pursuit::b-d-1-S3-fact-pursuit-v9",
+      "caseId": "family-01",
+      "channel": "interrogation",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": "S3",
+        "lieStateNumber": 3,
+        "lieBand": "mid",
+        "truthLevel": "partial",
+        "investigationStage": null
+      },
+      "changedFields": [
+        "text"
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "type": "non_strict_patch_remaining",
+      "variantKey": "family-01::interrogation::b|d-1|S5|fact_pursuit::b-d-1-S5-fact-pursuit-v4",
+      "caseId": "family-01",
+      "channel": "interrogation",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": "S5",
+        "lieStateNumber": 5,
+        "lieBand": null,
+        "truthLevel": "full",
+        "investigationStage": null
+      },
+      "changedFields": [
+        "text"
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "type": "non_strict_patch_remaining",
+      "variantKey": "family-01::interrogation::a|d-2|S3|fact_pursuit::a-d-2-S3-fact-pursuit-v2",
+      "caseId": "family-01",
+      "channel": "interrogation",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": "S3",
+        "lieStateNumber": 3,
+        "lieBand": null,
+        "truthLevel": "partial",
+        "investigationStage": null
+      },
+      "changedFields": [
+        "text"
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "type": "non_strict_patch_remaining",
+      "variantKey": "family-01::interrogation::b|d-2|S3|fact_pursuit::b-d-2-S3-fact-pursuit-v6",
+      "caseId": "family-01",
+      "channel": "interrogation",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": "S3",
+        "lieStateNumber": 3,
+        "lieBand": "mid",
+        "truthLevel": "partial",
+        "investigationStage": null
+      },
+      "changedFields": [
+        "text"
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "type": "non_strict_patch_remaining",
+      "variantKey": "family-01::interrogation::b|d-2|S3|fact_pursuit::b-d-2-S3-fact-pursuit-v9",
+      "caseId": "family-01",
+      "channel": "interrogation",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": "S3",
+        "lieStateNumber": 3,
+        "lieBand": "mid",
+        "truthLevel": "partial",
+        "investigationStage": null
+      },
+      "changedFields": [
+        "text"
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "type": "non_strict_patch_remaining",
+      "variantKey": "family-01::interrogation::b|d-2|S4|fact_pursuit::b-d-2-S4-fact-pursuit-v10",
+      "caseId": "family-01",
+      "channel": "interrogation",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": "S4",
+        "lieStateNumber": 4,
+        "lieBand": null,
+        "truthLevel": "partial",
+        "investigationStage": null
+      },
+      "changedFields": [
+        "text"
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "type": "non_strict_patch_remaining",
+      "variantKey": "family-01::interrogation::b|d-2|S5|motive_search::b-d-2-S5-motive-search-v9",
+      "caseId": "family-01",
+      "channel": "interrogation",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": "S5",
+        "lieStateNumber": 5,
+        "lieBand": null,
+        "truthLevel": "full",
+        "investigationStage": null
+      },
+      "changedFields": [
+        "text"
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "type": "non_strict_patch_remaining",
+      "variantKey": "family-01::interrogation::a|d-3|S3|empathy_approach::a-d-3-S3-empathy-approach-v5",
+      "caseId": "family-01",
+      "channel": "interrogation",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": "S3",
+        "lieStateNumber": 3,
+        "lieBand": null,
+        "truthLevel": "partial",
+        "investigationStage": null
+      },
+      "changedFields": [
+        "text"
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "type": "non_strict_patch_remaining",
+      "variantKey": "family-01::interrogation::a|d-3|S4|empathy_approach::a-d-3-S4-empathy-approach-v9",
+      "caseId": "family-01",
+      "channel": "interrogation",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": "S4",
+        "lieStateNumber": 4,
+        "lieBand": null,
+        "truthLevel": "partial",
+        "investigationStage": null
+      },
+      "changedFields": [
+        "text"
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "type": "non_strict_patch_remaining",
+      "variantKey": "family-01::interrogation::a|d-5|S2|empathy_approach::a-d-5-S2-empathy-approach-v9",
+      "caseId": "family-01",
+      "channel": "interrogation",
+      "matrixCell": "npc_partial_review",
+      "stage": {
+        "lieState": "S2",
+        "lieStateNumber": 2,
+        "lieBand": null,
+        "truthLevel": "partial",
+        "investigationStage": null
+      },
+      "changedFields": [
+        "text"
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "type": "non_strict_patch_remaining",
+      "variantKey": "family-01::interrogation::a|d-5|S4|fact_pursuit::a-d-5-S4-fact-pursuit-v2",
+      "caseId": "family-01",
+      "channel": "interrogation",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": "S4",
+        "lieStateNumber": 4,
+        "lieBand": null,
+        "truthLevel": "partial",
+        "investigationStage": null
+      },
+      "changedFields": [
+        "text"
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "type": "non_strict_patch_remaining",
+      "variantKey": "family-01::interrogation::b|d-5|S2|fact_pursuit::b-d-5-S2-fact-pursuit-v10",
+      "caseId": "family-01",
+      "channel": "interrogation",
       "matrixCell": "npc_partial_review",
       "stage": {
         "lieState": "S2",
@@ -833,127 +2092,1459 @@
     {
       "severity": "FAIL",
       "type": "non_strict_patch_remaining",
-      "variantKey": "family-01::aftermath::a_primary_fault::a_primary_fault-v2",
+      "variantKey": "family-01::interrogation::b|d-5|S3|motive_search::b-d-5-S3-motive-search-v5",
       "caseId": "family-01",
-      "channel": "aftermath",
-      "matrixCell": "after_final_narrative_preserve",
+      "channel": "interrogation",
+      "matrixCell": "npc_confession_ok_preserve",
       "stage": {
-        "lieState": null,
-        "lieStateNumber": null,
+        "lieState": "S3",
+        "lieStateNumber": 3,
         "lieBand": null,
-        "truthLevel": null,
+        "truthLevel": "partial",
         "investigationStage": null
       },
       "changedFields": [
-        "behaviorHint"
+        "text"
       ]
     },
     {
       "severity": "FAIL",
       "type": "non_strict_patch_remaining",
-      "variantKey": "family-01::aftermath::a_primary_fault::a_primary_fault-v3",
+      "variantKey": "family-01::interrogation::b|d-5|S3|empathy_approach::b-d-5-S3-empathy-approach-v6",
       "caseId": "family-01",
-      "channel": "aftermath",
-      "matrixCell": "after_final_narrative_preserve",
+      "channel": "interrogation",
+      "matrixCell": "npc_confession_ok_preserve",
       "stage": {
-        "lieState": null,
-        "lieStateNumber": null,
-        "lieBand": null,
-        "truthLevel": null,
+        "lieState": "S3",
+        "lieStateNumber": 3,
+        "lieBand": "mid",
+        "truthLevel": "partial",
         "investigationStage": null
       },
       "changedFields": [
-        "behaviorHint"
+        "text"
       ]
     },
     {
       "severity": "FAIL",
       "type": "non_strict_patch_remaining",
-      "variantKey": "family-01::aftermath::a_primary_fault::a_primary_fault-v5",
+      "variantKey": "family-01::interrogation::b|d-5|S3|empathy_approach::b-d-5-S3-empathy-approach-v9",
       "caseId": "family-01",
-      "channel": "aftermath",
-      "matrixCell": "after_final_narrative_preserve",
+      "channel": "interrogation",
+      "matrixCell": "npc_confession_ok_preserve",
       "stage": {
-        "lieState": null,
-        "lieStateNumber": null,
-        "lieBand": null,
-        "truthLevel": null,
+        "lieState": "S3",
+        "lieStateNumber": 3,
+        "lieBand": "mid",
+        "truthLevel": "partial",
         "investigationStage": null
       },
       "changedFields": [
-        "behaviorHint"
+        "text"
       ]
     },
     {
       "severity": "FAIL",
       "type": "non_strict_patch_remaining",
-      "variantKey": "family-01::aftermath::b_primary_fault::b_primary_fault-v1",
+      "variantKey": "family-01::interrogation::b|d-5|S4|fact_pursuit::b-d-5-S4-fact-pursuit-v10",
       "caseId": "family-01",
-      "channel": "aftermath",
-      "matrixCell": "after_final_narrative_preserve",
+      "channel": "interrogation",
+      "matrixCell": "npc_confession_ok_preserve",
       "stage": {
-        "lieState": null,
-        "lieStateNumber": null,
+        "lieState": "S4",
+        "lieStateNumber": 4,
         "lieBand": null,
-        "truthLevel": null,
+        "truthLevel": "partial",
         "investigationStage": null
       },
       "changedFields": [
-        "behaviorHint"
+        "text"
       ]
     },
     {
       "severity": "FAIL",
       "type": "non_strict_patch_remaining",
-      "variantKey": "family-01::aftermath::b_primary_fault::b_primary_fault-v2",
+      "variantKey": "family-01::contradiction_pursuit::a|d-1|S2::contra-a-d-1-S2-v4",
       "caseId": "family-01",
-      "channel": "aftermath",
-      "matrixCell": "after_final_narrative_preserve",
+      "channel": "contradiction_pursuit",
+      "matrixCell": "npc_partial_review",
       "stage": {
-        "lieState": null,
-        "lieStateNumber": null,
+        "lieState": "S2",
+        "lieStateNumber": 2,
         "lieBand": null,
-        "truthLevel": null,
+        "truthLevel": "partial",
         "investigationStage": null
       },
       "changedFields": [
-        "behaviorHint"
+        "text"
       ]
     },
     {
       "severity": "FAIL",
       "type": "non_strict_patch_remaining",
-      "variantKey": "family-01::aftermath::b_primary_fault::b_primary_fault-v3",
+      "variantKey": "family-01::contradiction_pursuit::a|d-1|S3::contra-a-d-1-S3-v2",
       "caseId": "family-01",
-      "channel": "aftermath",
-      "matrixCell": "after_final_narrative_preserve",
+      "channel": "contradiction_pursuit",
+      "matrixCell": "npc_confession_ok_preserve",
       "stage": {
-        "lieState": null,
-        "lieStateNumber": null,
+        "lieState": "S3",
+        "lieStateNumber": 3,
         "lieBand": null,
-        "truthLevel": null,
+        "truthLevel": "partial",
         "investigationStage": null
       },
       "changedFields": [
-        "behaviorHint"
+        "text"
       ]
     },
     {
       "severity": "FAIL",
       "type": "non_strict_patch_remaining",
-      "variantKey": "family-01::aftermath::b_primary_fault::b_primary_fault-v4",
+      "variantKey": "family-01::contradiction_pursuit::a|d-1|S3::contra-a-d-1-S3-v3",
       "caseId": "family-01",
-      "channel": "aftermath",
-      "matrixCell": "after_final_narrative_preserve",
+      "channel": "contradiction_pursuit",
+      "matrixCell": "npc_confession_ok_preserve",
       "stage": {
-        "lieState": null,
-        "lieStateNumber": null,
+        "lieState": "S3",
+        "lieStateNumber": 3,
         "lieBand": null,
-        "truthLevel": null,
+        "truthLevel": "partial",
         "investigationStage": null
       },
       "changedFields": [
-        "behaviorHint"
+        "text"
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "type": "non_strict_patch_remaining",
+      "variantKey": "family-01::contradiction_pursuit::a|d-1|S3::contra-a-d-1-S3-v4",
+      "caseId": "family-01",
+      "channel": "contradiction_pursuit",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": "S3",
+        "lieStateNumber": 3,
+        "lieBand": null,
+        "truthLevel": "partial",
+        "investigationStage": null
+      },
+      "changedFields": [
+        "text"
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "type": "non_strict_patch_remaining",
+      "variantKey": "family-01::contradiction_pursuit::a|d-1|S3::contra-a-d-1-S3-v8",
+      "caseId": "family-01",
+      "channel": "contradiction_pursuit",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": "S3",
+        "lieStateNumber": 3,
+        "lieBand": null,
+        "truthLevel": "partial",
+        "investigationStage": null
+      },
+      "changedFields": [
+        "text"
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "type": "non_strict_patch_remaining",
+      "variantKey": "family-01::contradiction_pursuit::b|d-1|S3::contra-b-d-1-S3-v1",
+      "caseId": "family-01",
+      "channel": "contradiction_pursuit",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": "S3",
+        "lieStateNumber": 3,
+        "lieBand": null,
+        "truthLevel": "partial",
+        "investigationStage": null
+      },
+      "changedFields": [
+        "text"
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "type": "non_strict_patch_remaining",
+      "variantKey": "family-01::contradiction_pursuit::b|d-1|S3::contra-b-d-1-S3-v3",
+      "caseId": "family-01",
+      "channel": "contradiction_pursuit",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": "S3",
+        "lieStateNumber": 3,
+        "lieBand": null,
+        "truthLevel": "partial",
+        "investigationStage": null
+      },
+      "changedFields": [
+        "text"
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "type": "non_strict_patch_remaining",
+      "variantKey": "family-01::contradiction_pursuit::b|d-1|S3::contra-b-d-1-S3-v5",
+      "caseId": "family-01",
+      "channel": "contradiction_pursuit",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": "S3",
+        "lieStateNumber": 3,
+        "lieBand": null,
+        "truthLevel": "partial",
+        "investigationStage": null
+      },
+      "changedFields": [
+        "text"
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "type": "non_strict_patch_remaining",
+      "variantKey": "family-01::contradiction_pursuit::a|d-2|S3::contra-a-d-2-S3-v7",
+      "caseId": "family-01",
+      "channel": "contradiction_pursuit",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": "S3",
+        "lieStateNumber": 3,
+        "lieBand": null,
+        "truthLevel": "partial",
+        "investigationStage": null
+      },
+      "changedFields": [
+        "text"
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "type": "non_strict_patch_remaining",
+      "variantKey": "family-01::contradiction_pursuit::b|d-2|S3::contra-b-d-2-S3-v1",
+      "caseId": "family-01",
+      "channel": "contradiction_pursuit",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": "S3",
+        "lieStateNumber": 3,
+        "lieBand": null,
+        "truthLevel": "partial",
+        "investigationStage": null
+      },
+      "changedFields": [
+        "text"
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "type": "non_strict_patch_remaining",
+      "variantKey": "family-01::contradiction_pursuit::b|d-2|S3::contra-b-d-2-S3-v7",
+      "caseId": "family-01",
+      "channel": "contradiction_pursuit",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": "S3",
+        "lieStateNumber": 3,
+        "lieBand": null,
+        "truthLevel": "partial",
+        "investigationStage": null
+      },
+      "changedFields": [
+        "text"
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "type": "non_strict_patch_remaining",
+      "variantKey": "family-01::contradiction_pursuit::a|d-3|S3::contra-a-d-3-S3-v3",
+      "caseId": "family-01",
+      "channel": "contradiction_pursuit",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": "S3",
+        "lieStateNumber": 3,
+        "lieBand": null,
+        "truthLevel": "partial",
+        "investigationStage": null
+      },
+      "changedFields": [
+        "text"
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "type": "non_strict_patch_remaining",
+      "variantKey": "family-01::contradiction_pursuit::a|d-3|S3::contra-a-d-3-S3-v5",
+      "caseId": "family-01",
+      "channel": "contradiction_pursuit",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": "S3",
+        "lieStateNumber": 3,
+        "lieBand": null,
+        "truthLevel": "partial",
+        "investigationStage": null
+      },
+      "changedFields": [
+        "text"
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "type": "non_strict_patch_remaining",
+      "variantKey": "family-01::contradiction_pursuit::b|d-3|S3::contra-b-d-3-S3-v2",
+      "caseId": "family-01",
+      "channel": "contradiction_pursuit",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": "S3",
+        "lieStateNumber": 3,
+        "lieBand": null,
+        "truthLevel": "partial",
+        "investigationStage": null
+      },
+      "changedFields": [
+        "text"
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "type": "non_strict_patch_remaining",
+      "variantKey": "family-01::contradiction_pursuit::b|d-3|S3::contra-b-d-3-S3-v10",
+      "caseId": "family-01",
+      "channel": "contradiction_pursuit",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": "S3",
+        "lieStateNumber": 3,
+        "lieBand": null,
+        "truthLevel": "partial",
+        "investigationStage": null
+      },
+      "changedFields": [
+        "text"
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "type": "non_strict_patch_remaining",
+      "variantKey": "family-01::contradiction_pursuit::a|d-4|S3::contra-a-d-4-S3-v2",
+      "caseId": "family-01",
+      "channel": "contradiction_pursuit",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": "S3",
+        "lieStateNumber": 3,
+        "lieBand": null,
+        "truthLevel": "partial",
+        "investigationStage": null
+      },
+      "changedFields": [
+        "text"
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "type": "non_strict_patch_remaining",
+      "variantKey": "family-01::contradiction_pursuit::a|d-4|S3::contra-a-d-4-S3-v3",
+      "caseId": "family-01",
+      "channel": "contradiction_pursuit",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": "S3",
+        "lieStateNumber": 3,
+        "lieBand": null,
+        "truthLevel": "partial",
+        "investigationStage": null
+      },
+      "changedFields": [
+        "text"
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "type": "non_strict_patch_remaining",
+      "variantKey": "family-01::contradiction_pursuit::b|d-4|S3::contra-b-d-4-S3-v7",
+      "caseId": "family-01",
+      "channel": "contradiction_pursuit",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": "S3",
+        "lieStateNumber": 3,
+        "lieBand": null,
+        "truthLevel": "partial",
+        "investigationStage": null
+      },
+      "changedFields": [
+        "text"
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "type": "non_strict_patch_remaining",
+      "variantKey": "family-01::trust_action::a|separation|S3::trust-a-separation-S3-v1",
+      "caseId": "family-01",
+      "channel": "trust_action",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": "S3",
+        "lieStateNumber": 3,
+        "lieBand": null,
+        "truthLevel": "full",
+        "investigationStage": null
+      },
+      "changedFields": [
+        "text"
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "type": "non_strict_patch_remaining",
+      "variantKey": "family-01::trust_action::a|separation|S3::trust-a-separation-S3-v2",
+      "caseId": "family-01",
+      "channel": "trust_action",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": "S3",
+        "lieStateNumber": 3,
+        "lieBand": null,
+        "truthLevel": "full",
+        "investigationStage": null
+      },
+      "changedFields": [
+        "text"
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "type": "non_strict_patch_remaining",
+      "variantKey": "family-01::trust_action::a|separation|S3::trust-a-separation-S3-v4",
+      "caseId": "family-01",
+      "channel": "trust_action",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": "S3",
+        "lieStateNumber": 3,
+        "lieBand": null,
+        "truthLevel": "full",
+        "investigationStage": null
+      },
+      "changedFields": [
+        "text"
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "type": "non_strict_patch_remaining",
+      "variantKey": "family-01::trust_action::a|separation|S3::trust-a-separation-S3-v9",
+      "caseId": "family-01",
+      "channel": "trust_action",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": "S3",
+        "lieStateNumber": 3,
+        "lieBand": null,
+        "truthLevel": "full",
+        "investigationStage": null
+      },
+      "changedFields": [
+        "text"
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "type": "non_strict_patch_remaining",
+      "variantKey": "family-01::trust_action::a|confidential|S3::trust-a-confidential-S3-v9",
+      "caseId": "family-01",
+      "channel": "trust_action",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": "S3",
+        "lieStateNumber": 3,
+        "lieBand": null,
+        "truthLevel": "full",
+        "investigationStage": null
+      },
+      "changedFields": [
+        "text"
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "type": "non_strict_patch_remaining",
+      "variantKey": "family-01::trust_action::a|immediate|S3::trust-a-immediate-S3-v1",
+      "caseId": "family-01",
+      "channel": "trust_action",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": "S3",
+        "lieStateNumber": 3,
+        "lieBand": null,
+        "truthLevel": "full",
+        "investigationStage": null
+      },
+      "changedFields": [
+        "text"
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "type": "non_strict_patch_remaining",
+      "variantKey": "family-01::trust_action::a|immediate|S3::trust-a-immediate-S3-v5",
+      "caseId": "family-01",
+      "channel": "trust_action",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": "S3",
+        "lieStateNumber": 3,
+        "lieBand": null,
+        "truthLevel": "full",
+        "investigationStage": null
+      },
+      "changedFields": [
+        "text"
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "type": "non_strict_patch_remaining",
+      "variantKey": "family-01::trust_action::a|immediate|S3::trust-a-immediate-S3-v10",
+      "caseId": "family-01",
+      "channel": "trust_action",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": "S3",
+        "lieStateNumber": 3,
+        "lieBand": null,
+        "truthLevel": "full",
+        "investigationStage": null
+      },
+      "changedFields": [
+        "text"
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "type": "non_strict_patch_remaining",
+      "variantKey": "family-01::trust_action::b|separation|S3::trust-b-separation-S3-v3",
+      "caseId": "family-01",
+      "channel": "trust_action",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": "S3",
+        "lieStateNumber": 3,
+        "lieBand": null,
+        "truthLevel": "full",
+        "investigationStage": null
+      },
+      "changedFields": [
+        "text"
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "type": "non_strict_patch_remaining",
+      "variantKey": "family-01::trust_action::b|separation|S3::trust-b-separation-S3-v5",
+      "caseId": "family-01",
+      "channel": "trust_action",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": "S3",
+        "lieStateNumber": 3,
+        "lieBand": null,
+        "truthLevel": "full",
+        "investigationStage": null
+      },
+      "changedFields": [
+        "text"
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "type": "non_strict_patch_remaining",
+      "variantKey": "family-01::trust_action::b|separation|S3::trust-b-separation-S3-v8",
+      "caseId": "family-01",
+      "channel": "trust_action",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": "S3",
+        "lieStateNumber": 3,
+        "lieBand": null,
+        "truthLevel": "full",
+        "investigationStage": null
+      },
+      "changedFields": [
+        "text"
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "type": "non_strict_patch_remaining",
+      "variantKey": "family-01::trust_action::b|confidential|S3::trust-b-confidential-S3-v5",
+      "caseId": "family-01",
+      "channel": "trust_action",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": "S3",
+        "lieStateNumber": 3,
+        "lieBand": null,
+        "truthLevel": "full",
+        "investigationStage": null
+      },
+      "changedFields": [
+        "text"
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "type": "non_strict_patch_remaining",
+      "variantKey": "family-01::trust_action::b|confidential|S3::trust-b-confidential-S3-v8",
+      "caseId": "family-01",
+      "channel": "trust_action",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": "S3",
+        "lieStateNumber": 3,
+        "lieBand": null,
+        "truthLevel": "full",
+        "investigationStage": null
+      },
+      "changedFields": [
+        "text"
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "type": "non_strict_patch_remaining",
+      "variantKey": "family-01::trust_action::b|confidential|S3::trust-b-confidential-S3-v9",
+      "caseId": "family-01",
+      "channel": "trust_action",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": "S3",
+        "lieStateNumber": 3,
+        "lieBand": null,
+        "truthLevel": "full",
+        "investigationStage": null
+      },
+      "changedFields": [
+        "text"
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "type": "non_strict_patch_remaining",
+      "variantKey": "family-01::trust_action::b|immediate|S3::trust-b-immediate-S3-v1",
+      "caseId": "family-01",
+      "channel": "trust_action",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": "S3",
+        "lieStateNumber": 3,
+        "lieBand": null,
+        "truthLevel": "full",
+        "investigationStage": null
+      },
+      "changedFields": [
+        "text"
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "type": "non_strict_patch_remaining",
+      "variantKey": "family-01::trust_action::b|immediate|S3::trust-b-immediate-S3-v5",
+      "caseId": "family-01",
+      "channel": "trust_action",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": "S3",
+        "lieStateNumber": 3,
+        "lieBand": null,
+        "truthLevel": "full",
+        "investigationStage": null
+      },
+      "changedFields": [
+        "text"
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "type": "non_strict_patch_remaining",
+      "variantKey": "family-01::trust_action::b|immediate|S3::trust-b-immediate-S3-v10",
+      "caseId": "family-01",
+      "channel": "trust_action",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": "S3",
+        "lieStateNumber": 3,
+        "lieBand": null,
+        "truthLevel": "full",
+        "investigationStage": null
+      },
+      "changedFields": [
+        "text"
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "type": "non_strict_patch_remaining",
+      "variantKey": "friend-01::interrogation::b|d-1|S2|fact_pursuit::b-d-1-S2-fact-pursuit-v9",
+      "caseId": "friend-01",
+      "channel": "interrogation",
+      "matrixCell": "npc_partial_review",
+      "stage": {
+        "lieState": "S2",
+        "lieStateNumber": 2,
+        "lieBand": "mid",
+        "truthLevel": "hint",
+        "investigationStage": null
+      },
+      "changedFields": [
+        "text"
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "type": "non_strict_patch_remaining",
+      "variantKey": "friend-01::interrogation::a|d-2|S3|motive_search::a-d-2-S3-motive-search-v5",
+      "caseId": "friend-01",
+      "channel": "interrogation",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": "S3",
+        "lieStateNumber": 3,
+        "lieBand": null,
+        "truthLevel": "partial",
+        "investigationStage": null
+      },
+      "changedFields": [
+        "text"
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "type": "non_strict_patch_remaining",
+      "variantKey": "friend-01::interrogation::a|d-2|S4|fact_pursuit::a-d-2-S4-fact-pursuit-v7",
+      "caseId": "friend-01",
+      "channel": "interrogation",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": "S4",
+        "lieStateNumber": 4,
+        "lieBand": null,
+        "truthLevel": "partial",
+        "investigationStage": null
+      },
+      "changedFields": [
+        "text"
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "type": "non_strict_patch_remaining",
+      "variantKey": "friend-01::interrogation::a|d-3|S3|fact_pursuit::a-d-3-S3-fact-pursuit-v3",
+      "caseId": "friend-01",
+      "channel": "interrogation",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": "S3",
+        "lieStateNumber": 3,
+        "lieBand": null,
+        "truthLevel": "partial",
+        "investigationStage": null
+      },
+      "changedFields": [
+        "text"
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "type": "non_strict_patch_remaining",
+      "variantKey": "friend-01::interrogation::a|d-3|S3|fact_pursuit::a-d-3-S3-fact-pursuit-v6",
+      "caseId": "friend-01",
+      "channel": "interrogation",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": "S3",
+        "lieStateNumber": 3,
+        "lieBand": "mid",
+        "truthLevel": "partial",
+        "investigationStage": null
+      },
+      "changedFields": [
+        "text"
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "type": "non_strict_patch_remaining",
+      "variantKey": "friend-01::interrogation::a|d-3|S3|fact_pursuit::a-d-3-S3-fact-pursuit-v7",
+      "caseId": "friend-01",
+      "channel": "interrogation",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": "S3",
+        "lieStateNumber": 3,
+        "lieBand": "mid",
+        "truthLevel": "partial",
+        "investigationStage": null
+      },
+      "changedFields": [
+        "text"
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "type": "non_strict_patch_remaining",
+      "variantKey": "friend-01::interrogation::a|d-3|S3|motive_search::a-d-3-S3-motive-search-v9",
+      "caseId": "friend-01",
+      "channel": "interrogation",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": "S3",
+        "lieStateNumber": 3,
+        "lieBand": "mid",
+        "truthLevel": "partial",
+        "investigationStage": null
+      },
+      "changedFields": [
+        "text"
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "type": "non_strict_patch_remaining",
+      "variantKey": "friend-01::interrogation::a|d-3|S3|empathy_approach::a-d-3-S3-empathy-approach-v9",
+      "caseId": "friend-01",
+      "channel": "interrogation",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": "S3",
+        "lieStateNumber": 3,
+        "lieBand": "mid",
+        "truthLevel": "partial",
+        "investigationStage": null
+      },
+      "changedFields": [
+        "text"
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "type": "non_strict_patch_remaining",
+      "variantKey": "friend-01::interrogation::a|d-4|S3|fact_pursuit::a-d-4-S3-fact-pursuit-v6",
+      "caseId": "friend-01",
+      "channel": "interrogation",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": "S3",
+        "lieStateNumber": 3,
+        "lieBand": "mid",
+        "truthLevel": "partial",
+        "investigationStage": null
+      },
+      "changedFields": [
+        "text"
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "type": "non_strict_patch_remaining",
+      "variantKey": "friend-01::interrogation::a|d-4|S3|motive_search::a-d-4-S3-motive-search-v9",
+      "caseId": "friend-01",
+      "channel": "interrogation",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": "S3",
+        "lieStateNumber": 3,
+        "lieBand": "mid",
+        "truthLevel": "partial",
+        "investigationStage": null
+      },
+      "changedFields": [
+        "text"
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "type": "non_strict_patch_remaining",
+      "variantKey": "friend-01::interrogation::a|d-4|S3|motive_search::a-d-4-S3-motive-search-v10",
+      "caseId": "friend-01",
+      "channel": "interrogation",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": "S3",
+        "lieStateNumber": 3,
+        "lieBand": "mid",
+        "truthLevel": "partial",
+        "investigationStage": null
+      },
+      "changedFields": [
+        "text"
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "type": "non_strict_patch_remaining",
+      "variantKey": "friend-01::interrogation::b|d-4|S3|fact_pursuit::b-d-4-S3-fact-pursuit-v6",
+      "caseId": "friend-01",
+      "channel": "interrogation",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": "S3",
+        "lieStateNumber": 3,
+        "lieBand": "mid",
+        "truthLevel": "partial",
+        "investigationStage": null
+      },
+      "changedFields": [
+        "text"
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "type": "non_strict_patch_remaining",
+      "variantKey": "friend-01::interrogation::a|d-5|S3|empathy_approach::a-d-5-S3-empathy-approach-v5",
+      "caseId": "friend-01",
+      "channel": "interrogation",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": "S3",
+        "lieStateNumber": 3,
+        "lieBand": null,
+        "truthLevel": "partial",
+        "investigationStage": null
+      },
+      "changedFields": [
+        "text"
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "type": "non_strict_patch_remaining",
+      "variantKey": "friend-01::interrogation::a|d-5|S4|fact_pursuit::a-d-5-S4-fact-pursuit-v4",
+      "caseId": "friend-01",
+      "channel": "interrogation",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": "S4",
+        "lieStateNumber": 4,
+        "lieBand": null,
+        "truthLevel": "partial",
+        "investigationStage": null
+      },
+      "changedFields": [
+        "text"
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "type": "non_strict_patch_remaining",
+      "variantKey": "friend-01::interrogation::b|d-5|S3|fact_pursuit::b-d-5-S3-fact-pursuit-v8",
+      "caseId": "friend-01",
+      "channel": "interrogation",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": "S3",
+        "lieStateNumber": 3,
+        "lieBand": "mid",
+        "truthLevel": "partial",
+        "investigationStage": null
+      },
+      "changedFields": [
+        "text"
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "type": "non_strict_patch_remaining",
+      "variantKey": "friend-01::interrogation::b|d-5|S3|fact_pursuit::b-d-5-S3-fact-pursuit-v10",
+      "caseId": "friend-01",
+      "channel": "interrogation",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": "S3",
+        "lieStateNumber": 3,
+        "lieBand": "mid",
+        "truthLevel": "partial",
+        "investigationStage": null
+      },
+      "changedFields": [
+        "text"
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "type": "non_strict_patch_remaining",
+      "variantKey": "friend-01::contradiction_pursuit::b|d-1|S3::contra-b-d-1-S3-v8",
+      "caseId": "friend-01",
+      "channel": "contradiction_pursuit",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": "S3",
+        "lieStateNumber": 3,
+        "lieBand": null,
+        "truthLevel": "partial",
+        "investigationStage": null
+      },
+      "changedFields": [
+        "text"
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "type": "non_strict_patch_remaining",
+      "variantKey": "friend-01::contradiction_pursuit::a|d-2|S3::contra-a-d-2-S3-v5",
+      "caseId": "friend-01",
+      "channel": "contradiction_pursuit",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": "S3",
+        "lieStateNumber": 3,
+        "lieBand": null,
+        "truthLevel": "partial",
+        "investigationStage": null
+      },
+      "changedFields": [
+        "text"
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "type": "non_strict_patch_remaining",
+      "variantKey": "friend-01::contradiction_pursuit::a|d-2|S3::contra-a-d-2-S3-v10",
+      "caseId": "friend-01",
+      "channel": "contradiction_pursuit",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": "S3",
+        "lieStateNumber": 3,
+        "lieBand": null,
+        "truthLevel": "partial",
+        "investigationStage": null
+      },
+      "changedFields": [
+        "text"
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "type": "non_strict_patch_remaining",
+      "variantKey": "friend-01::contradiction_pursuit::b|d-2|S3::contra-b-d-2-S3-v8",
+      "caseId": "friend-01",
+      "channel": "contradiction_pursuit",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": "S3",
+        "lieStateNumber": 3,
+        "lieBand": null,
+        "truthLevel": "partial",
+        "investigationStage": null
+      },
+      "changedFields": [
+        "text"
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "type": "non_strict_patch_remaining",
+      "variantKey": "friend-01::contradiction_pursuit::a|d-3|S3::contra-a-d-3-S3-v1",
+      "caseId": "friend-01",
+      "channel": "contradiction_pursuit",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": "S3",
+        "lieStateNumber": 3,
+        "lieBand": null,
+        "truthLevel": "partial",
+        "investigationStage": null
+      },
+      "changedFields": [
+        "text"
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "type": "non_strict_patch_remaining",
+      "variantKey": "friend-01::contradiction_pursuit::a|d-3|S3::contra-a-d-3-S3-v3",
+      "caseId": "friend-01",
+      "channel": "contradiction_pursuit",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": "S3",
+        "lieStateNumber": 3,
+        "lieBand": null,
+        "truthLevel": "partial",
+        "investigationStage": null
+      },
+      "changedFields": [
+        "text"
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "type": "non_strict_patch_remaining",
+      "variantKey": "friend-01::contradiction_pursuit::a|d-3|S3::contra-a-d-3-S3-v5",
+      "caseId": "friend-01",
+      "channel": "contradiction_pursuit",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": "S3",
+        "lieStateNumber": 3,
+        "lieBand": null,
+        "truthLevel": "partial",
+        "investigationStage": null
+      },
+      "changedFields": [
+        "text"
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "type": "non_strict_patch_remaining",
+      "variantKey": "friend-01::contradiction_pursuit::a|d-3|S3::contra-a-d-3-S3-v6",
+      "caseId": "friend-01",
+      "channel": "contradiction_pursuit",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": "S3",
+        "lieStateNumber": 3,
+        "lieBand": null,
+        "truthLevel": "partial",
+        "investigationStage": null
+      },
+      "changedFields": [
+        "text"
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "type": "non_strict_patch_remaining",
+      "variantKey": "friend-01::contradiction_pursuit::b|d-3|S3::contra-b-d-3-S3-v8",
+      "caseId": "friend-01",
+      "channel": "contradiction_pursuit",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": "S3",
+        "lieStateNumber": 3,
+        "lieBand": null,
+        "truthLevel": "partial",
+        "investigationStage": null
+      },
+      "changedFields": [
+        "text"
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "type": "non_strict_patch_remaining",
+      "variantKey": "friend-01::contradiction_pursuit::a|d-4|S3::contra-a-d-4-S3-v1",
+      "caseId": "friend-01",
+      "channel": "contradiction_pursuit",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": "S3",
+        "lieStateNumber": 3,
+        "lieBand": null,
+        "truthLevel": "partial",
+        "investigationStage": null
+      },
+      "changedFields": [
+        "text"
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "type": "non_strict_patch_remaining",
+      "variantKey": "friend-01::contradiction_pursuit::a|d-4|S3::contra-a-d-4-S3-v3",
+      "caseId": "friend-01",
+      "channel": "contradiction_pursuit",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": "S3",
+        "lieStateNumber": 3,
+        "lieBand": null,
+        "truthLevel": "partial",
+        "investigationStage": null
+      },
+      "changedFields": [
+        "text"
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "type": "non_strict_patch_remaining",
+      "variantKey": "friend-01::contradiction_pursuit::a|d-4|S3::contra-a-d-4-S3-v6",
+      "caseId": "friend-01",
+      "channel": "contradiction_pursuit",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": "S3",
+        "lieStateNumber": 3,
+        "lieBand": null,
+        "truthLevel": "partial",
+        "investigationStage": null
+      },
+      "changedFields": [
+        "text"
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "type": "non_strict_patch_remaining",
+      "variantKey": "friend-01::contradiction_pursuit::b|d-4|S3::contra-b-d-4-S3-v8",
+      "caseId": "friend-01",
+      "channel": "contradiction_pursuit",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": "S3",
+        "lieStateNumber": 3,
+        "lieBand": null,
+        "truthLevel": "partial",
+        "investigationStage": null
+      },
+      "changedFields": [
+        "text"
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "type": "non_strict_patch_remaining",
+      "variantKey": "friend-01::trust_action::a|separation|S3::trust-a-separation-S3-v3",
+      "caseId": "friend-01",
+      "channel": "trust_action",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": "S3",
+        "lieStateNumber": 3,
+        "lieBand": null,
+        "truthLevel": "full",
+        "investigationStage": null
+      },
+      "changedFields": [
+        "text"
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "type": "non_strict_patch_remaining",
+      "variantKey": "friend-01::trust_action::a|separation|S3::trust-a-separation-S3-v9",
+      "caseId": "friend-01",
+      "channel": "trust_action",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": "S3",
+        "lieStateNumber": 3,
+        "lieBand": null,
+        "truthLevel": "full",
+        "investigationStage": null
+      },
+      "changedFields": [
+        "text"
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "type": "non_strict_patch_remaining",
+      "variantKey": "friend-01::trust_action::a|confidential|S3::trust-a-confidential-S3-v1",
+      "caseId": "friend-01",
+      "channel": "trust_action",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": "S3",
+        "lieStateNumber": 3,
+        "lieBand": null,
+        "truthLevel": "full",
+        "investigationStage": null
+      },
+      "changedFields": [
+        "text"
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "type": "non_strict_patch_remaining",
+      "variantKey": "friend-01::trust_action::a|confidential|S3::trust-a-confidential-S3-v5",
+      "caseId": "friend-01",
+      "channel": "trust_action",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": "S3",
+        "lieStateNumber": 3,
+        "lieBand": null,
+        "truthLevel": "full",
+        "investigationStage": null
+      },
+      "changedFields": [
+        "text"
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "type": "non_strict_patch_remaining",
+      "variantKey": "friend-01::trust_action::a|confidential|S3::trust-a-confidential-S3-v7",
+      "caseId": "friend-01",
+      "channel": "trust_action",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": "S3",
+        "lieStateNumber": 3,
+        "lieBand": null,
+        "truthLevel": "full",
+        "investigationStage": null
+      },
+      "changedFields": [
+        "text"
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "type": "non_strict_patch_remaining",
+      "variantKey": "friend-01::trust_action::a|immediate|S3::trust-a-immediate-S3-v6",
+      "caseId": "friend-01",
+      "channel": "trust_action",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": "S3",
+        "lieStateNumber": 3,
+        "lieBand": null,
+        "truthLevel": "full",
+        "investigationStage": null
+      },
+      "changedFields": [
+        "text"
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "type": "non_strict_patch_remaining",
+      "variantKey": "friend-01::trust_action::b|separation|S3::trust-b-separation-S3-v4",
+      "caseId": "friend-01",
+      "channel": "trust_action",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": "S3",
+        "lieStateNumber": 3,
+        "lieBand": null,
+        "truthLevel": "full",
+        "investigationStage": null
+      },
+      "changedFields": [
+        "text"
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "type": "non_strict_patch_remaining",
+      "variantKey": "friend-01::trust_action::b|separation|S3::trust-b-separation-S3-v6",
+      "caseId": "friend-01",
+      "channel": "trust_action",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": "S3",
+        "lieStateNumber": 3,
+        "lieBand": null,
+        "truthLevel": "full",
+        "investigationStage": null
+      },
+      "changedFields": [
+        "text"
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "type": "non_strict_patch_remaining",
+      "variantKey": "friend-01::trust_action::b|confidential|S3::trust-b-confidential-S3-v5",
+      "caseId": "friend-01",
+      "channel": "trust_action",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": "S3",
+        "lieStateNumber": 3,
+        "lieBand": null,
+        "truthLevel": "full",
+        "investigationStage": null
+      },
+      "changedFields": [
+        "text"
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "type": "non_strict_patch_remaining",
+      "variantKey": "friend-01::trust_action::b|confidential|S3::trust-b-confidential-S3-v7",
+      "caseId": "friend-01",
+      "channel": "trust_action",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": "S3",
+        "lieStateNumber": 3,
+        "lieBand": null,
+        "truthLevel": "full",
+        "investigationStage": null
+      },
+      "changedFields": [
+        "text"
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "type": "non_strict_patch_remaining",
+      "variantKey": "friend-01::trust_action::b|immediate|S3::trust-b-immediate-S3-v1",
+      "caseId": "friend-01",
+      "channel": "trust_action",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": "S3",
+        "lieStateNumber": 3,
+        "lieBand": null,
+        "truthLevel": "full",
+        "investigationStage": null
+      },
+      "changedFields": [
+        "text"
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "type": "non_strict_patch_remaining",
+      "variantKey": "friend-01::trust_action::b|immediate|S3::trust-b-immediate-S3-v3",
+      "caseId": "friend-01",
+      "channel": "trust_action",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": "S3",
+        "lieStateNumber": 3,
+        "lieBand": null,
+        "truthLevel": "full",
+        "investigationStage": null
+      },
+      "changedFields": [
+        "text"
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "type": "non_strict_patch_remaining",
+      "variantKey": "friend-01::trust_action::b|immediate|S3::trust-b-immediate-S3-v6",
+      "caseId": "friend-01",
+      "channel": "trust_action",
+      "matrixCell": "npc_confession_ok_preserve",
+      "stage": {
+        "lieState": "S3",
+        "lieStateNumber": 3,
+        "lieBand": null,
+        "truthLevel": "full",
+        "investigationStage": null
+      },
+      "changedFields": [
+        "text"
       ]
     }
   ]

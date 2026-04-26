@@ -1,0 +1,18 @@
+{
+  "generatedAt": "2026-04-26T18:02:04.023Z",
+  "rounds": [
+    {
+      "id": 1,
+      "status": "completed",
+      "description": "9 specialist detection and D1/D2/D4 high-confidence patch application"
+    },
+    {
+      "id": 2,
+      "status": "completed",
+      "description": "post-apply cross-validation and residual hard issue scan"
+    }
+  ],
+  "totalPatches": 627,
+  "v6AddedPatches": 161,
+  "stoppedReason": "hard residuals cleared after round 2"
+}
