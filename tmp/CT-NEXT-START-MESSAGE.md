@@ -1,7 +1,7 @@
 # 새 ClaudeCode CT 첫 메시지 (사용자 복사용)
 
 > **사용 방법**: 새 ClaudeCode 스레드 시작 → 아래 박스 안 내용 그대로 복사 → 첫 메시지로 던짐
-> **상황**: ClaudeCode CT 유지 + Codex가 5 Phase 종합 수습 진행 중
+> **상황**: ScriptedText 폴리싱 v6까지 완료 + UI 3건 fix + 5 commits push (vercel 배포 OK, 플레이 가능 확인됨)
 
 ---
 
@@ -9,110 +9,94 @@
 이전 CT 이관 받아줘. 다음 파일 정독:
 
 1. memory/MEMORY.md (인덱스)
-2. memory/session_handoff_20260426_v3_truth_leak.md (CT 이관 최신 — 진실 누설 70건 + Codex 종합 수습)
-3. memory/feedback_truth_leak_prohibition.md (잘못 패턴 #9 NEW — 진실 누설 금지 / 사건별 surface↔진실 매핑표)
-4. memory/feedback_revision_meaning_over_form.md (잘못 패턴 #6/#7/#8)
-5. memory/story_v2_confirmed_3cases.md (3건 사건 핵심)
-6. memory/project_active_cases.md (활성 3건)
-7. CLAUDE.md (게임 구조 + 핵심 원칙 "진실은 플레이어가 직접 밝혀낸다")
+2. memory/session_handoff_20260427_v6.md (CT 이관 최신 — Codex v4/v5/v6 + UI 3건 fix)
+3. memory/feedback_truth_leak_prohibition.md (잘못 패턴 #9 — 진실 누설 금지)
+4. memory/feedback_broad_homologous_detection.md (잘못 패턴 #11 — 광범위 동형 검출 본질)
+5. memory/feedback_static_analysis_limit.md (잘못 패턴 #12 — 정적 분석 한계 / D1~D4 차원)
+6. memory/feedback_revision_meaning_over_form.md (잘못 패턴 #6/#7/#8)
+7. memory/story_v2_confirmed_3cases.md (3건 사건 핵심)
+8. memory/project_active_cases.md (활성 3건)
+9. CLAUDE.md (게임 구조 + 핵심 원칙 "진실은 플레이어가 직접 밝혀낸다")
 
-⚠️ 중요한 사실 (이전 CT 5번 실수 + 사용자 분노):
-- ClaudeCode CT 유지 결정 (사용자가 ClaudeCode 선호)
-- Codex가 Worker로 5 Phase 종합 수습 진행 중 (`tmp/REQUEST-Codex-comprehensive-recovery.md`)
-- 새 CT는 Codex 회수 후 검증 + 적용 + 다음 작업
-- 향후 모든 GPT/Codex 산출물 적용 전 사전 검증 자동 PASS 필수
+현재 상태 (origin/main = a10b801):
+- ScriptedText 폴리싱 627 patches 누적 (v4 81 + v5 385 + v6 161)
+- v3 매트릭스 (채널 × 시점 × 화자 누설) 보존 / 누설 0건
+- UI 3건 fix 완료: 증인 소환 slot whitelist / 판결 보류 미니 아이콘 / 증거 제시 subjectParty 분기
+- vercel 정상 배포 + 플레이 가능 확인
 
-최근 commit (이번 세션):
-- `5de8d72` feat(script-redo): 9세션 적용 + disputeId fix + null 복구 + UI + 버그 fix
-- `8b7866a` chore(gpt-pro/codex/qa): script-redo 패키지 + Codex 의뢰 + QA + 검증 시스템 + CT 인계
-- ⚠ push 안 함. 누설 70건 P0 / d-5 누락 미해결 상태. Codex 수습 + 검증 PASS 후 push.
-
-현재 상태 (Codex 수습 진행 전 baseline):
-- 진실 누설 70건 P0 (재판관 채널)
-- d-5 cells 누락 family/friend 5채널 × 2 사건
-- 코드 fallback 23건 (?? '당사자' 류)
-- 광범위 누설 가능성 (사용자 우려: 검출 패턴 좁아 더 많을 것)
-- 빌드 + tsc 통과 (단 누설/누락 미해결)
-
-진행 중 (Codex):
-- Phase 1: 진실 누설 70건 fix
-- Phase 2: 광범위 누설 재검출 (NPC 채널 포함 + 모든 evidence/dossier 진실)
-- Phase 3: 9차원 광범위 audit 14,931 variants 전수
-- Phase 4: 코드 fallback 23건 정리
-- Phase 5: 검증 시스템 보강 (precheck-comprehensive.cjs)
-
-진행 중 (사용자 GPT Pro):
-- S10 family-01 d-5 fill (자기완결 패키지)
-- S11 friend-01 d-5 fill (자기완결 패키지)
-- ⚠ S10/S11 prompt에 "진실 누설 금지" 섹션 추가 필요 (현재 누락) — 새 CT가 의뢰 시작 전 수정
+분담 정착 (사용자 명시):
+- Codex = 의미 / 맥락 / 상황 / 게임 흐름 / 메커니즘
+- ClaudeCode = 호칭 / 존칭 / 어법 / 자연체
 
 핵심 강조 (메인 절대 회피):
-- 잘못 패턴 #9 (NEW): 진실 누설 금지 (게임 핵심 원칙)
-- 잘못 패턴 #1~#8 (이전 누적)
-- 사용자 모범 4 patch (인지 / 동기 / 직접 행동 / 동사형)
-- ★ 모든 산출물 적용 전 자동 검증 PASS 필수 (Claude self-검증 X)
+- 잘못 패턴 #1 Agent 보고 무비판 수용 X (자동 검증 PASS = 완료 X — spot check 필수)
+- 잘못 패턴 #6 9차원 의미 정확성 (단순 어휘 교체 X)
+- 잘못 패턴 #9 진실 누설 금지 (v3 매트릭스 절대 보존)
+- 잘못 패턴 #11 사용자 사례 = 예시 (광범위 동형 검출이 본질)
+- 잘못 패턴 #12 정적 분석 한계 (게임 흐름/메커니즘/정량 차원 별개)
 
-다음 메인 우선순위:
-1순위. Codex Phase 1~5 회수 (`tmp/codex-recovery/FINAL-REPORT.md` 확인)
-       → 모든 산출물에 대해 자동 검증 (precheck-comprehensive.cjs) PASS
-       → FAIL시 즉시 보고 + 재의뢰
-2순위. d-5 prompt에 "진실 누설 금지" 추가 (S10/S11 사용자 의뢰 전)
-       — feedback_truth_leak_prohibition.md 내용 + 사건별 surface 매핑표 포함
-3순위. 사용자 C/D 검토 결과 회수 (`tmp/USER-REVIEW-{C,D}-*.md`)
-4순위. d-5 GPT 산출물 회수 → 적용 + 검증
-5순위. commit + push (사용자 명시 후)
+다음 메인 우선순위 (사용자 결정 영역):
+1순위. 사용자 게임 테스트 spot check 사례 수신 → 패턴 추출 + 동형 처리
+2순위. P1 Q-A 정합 잔여 (자동 검출 한계 — 사용자 + 메인 협업 영역)
+3순위. C1/C3 보류 영역 폴리싱 (false positive 의심으로 보류 중)
+4순위. P7 UI 누설 별도 코드 fix 의뢰 (p7-ui-surface-leaks-v6.json 활용)
+5순위. d-5 신규 cell GPT Pro 의뢰 (S10/S11 패키지 + "진실 누설 금지" prompt 추가 후 시작)
+6순위. 코드 fallback 23건 정리
 
 자료 위치:
-- Codex 의뢰: tmp/REQUEST-Codex-comprehensive-recovery.md (5 Phase 종합)
-- Codex 출력: tmp/codex-recovery/ (Phase별 + FINAL-REPORT)
-- 누설 raw: tmp/truth-leak-detection.json
-- d-5 패키지: gpt-pro-runs/script-redo-20260426/sessions/S10-d5-fill-family-01/, S11-d5-fill-friend-01/
-- 사전 검증: tmp/precheck-matrix.cjs, tmp/detect-truth-leak.cjs
-       (Codex Phase 5 후): tmp/codex-recovery/precheck-comprehensive.cjs
-- 사용자 검토 대기: tmp/USER-REVIEW-{C,D}-*.md
-- 이전 QA 결과: tmp/qa-redo-20260426/
+- Codex 산출물: tmp/codex-recovery/{,-v3,-v4,-v5,-v6}/
+- 의뢰서: tmp/REQUEST-Codex-recovery-v[2,4,5,6].md
+- Claude 폴리싱: tmp/polish-c2-narration.cjs / tmp/polish-c3-c4-lexicon.cjs / tmp/fix-v6-truth-leak.cjs
+- 검증: tmp/detect-truth-leak.cjs / tmp/precheck-matrix.cjs / 각 codex-recovery-v*/precheck-*.cjs
 
-현재 진행 안 하기:
-- Claude self-검증으로 PASS 판단 X (검출 패턴 좁아 누락 가능)
-- 사용자 spot check 의존 X (자동 검증 시스템에 모두 포함)
-- 의뢰 메시지에 "사건 핵심 사실 강조"만 X — "진실 누설 금지" 동시 명시 필수
+UI 변경 영역 (이번 세션):
+- src/types/{character,discovery}.ts
+- src/store/slices/{discoverySlice,eventFeedbackSlice}.ts
+- src/components/pc/feedback/{EventFeedbackCard,DiscoveryFeedbackWatcher}.tsx
+- src/components/pc/hotbar/{PCBottomDock,PCDeferredVerdictIcon}.tsx
+- src/components/pc/layout/PCInteractionPanel.tsx (witness whitelist + subjectParty 분기)
+- src/components/pc/panels/PCLeftPanel.tsx
+- src/components/phase/Phase0_CaseIntro.tsx
+- src/engine/discoveryEngine.ts
+- src/app/pc.css
 
-정독 + Codex 회수 상태 확인 후 다음 작업 알려줘.
+정독 + 사용자 다음 명령 대기.
 ```
 
 ---
 
 ## 사용자 참고 (이번 세션 핵심)
 
-### 결정 사항
-- **CT = ClaudeCode 유지** (UX + 도메인 + 메모리 우월)
-- **Worker = Codex** (광범위 검증 + 자동화)
+### 이번 세션 commits (origin/main)
+```
+a10b801 fix(pc-evidence): 증거 제시 모달에 subjectParty 분기 적용
+5a1c587 fix(pc-header-band) ← 사용자 직접
+251116f fix(pc-ui): PCDeferredVerdictIcon selector 무한 루프 fix
+95fda1d feat(script-polish-v6): Codex v6 새 4 차원 (D1~D4) + 누설 회귀 fix + UI 안전 가드
+ae80dfc fix(pc-ui): 증인 소환 slot whitelist 제거 + 판결 보류 미니 아이콘 추가
+df5f7ca feat(script-polish): 3 사건 ScriptedText Codex v4/v5 + Claude C2/C3/C4 폴리싱
+```
 
-### Codex 종합 수습 (5 Phase)
-의뢰서: `tmp/REQUEST-Codex-comprehensive-recovery.md`
+### Codex v4/v5/v6 결과 통계
 
-| Phase | 작업 | 산출물 |
-|---|---|---|
-| 1 | 진실 누설 70건 fix | `tmp/codex-recovery/phase1-*` |
-| 2 | NPC 채널 + 모든 채널 광범위 누설 재검출 | `tmp/codex-recovery/phase2-*` |
-| 3 | 9차원 광범위 audit (14,931 variants 전수) | `tmp/codex-recovery/phase3-*` |
-| 4 | 코드 fallback 23건 정리 | `tmp/codex-recovery/phase4-*` |
-| 5 | 검증 시스템 보강 (precheck-comprehensive.cjs) | `tmp/codex-recovery/phase5-*` |
-| 종합 | 종합 리포트 | `tmp/codex-recovery/FINAL-REPORT.md` |
+| Pattern | v4 | v5 | v6 (누적) | 의미 |
+|---|---:|---:|---:|---|
+| P1 Q-A 정합 | 1 | 1 | 1 | ★ 자동 검출 한계 영역 |
+| P2 캐릭터 화법 | 7 | 263 | 263 | v5 광범위 강화 효과 |
+| P3 추궁 각도 | 5 | 89 | 89 | v5 광범위 강화 효과 |
+| P4 정황 풀어쓰기 | 1 | 46 | 46 | v5 광범위 강화 효과 |
+| P5 코드명 | 68 | 68 | 68 | v4부터 광범위 처리 |
+| P6 시스템 트리거 | 1 | 1 | 1 | known issue 분리 |
+| **D1 LieState Flow** | - | - | **159** | ★ v6 NEW 차원 |
+| D2 Evidence Unlock | - | - | 2 | v6 NEW |
+| D3 Archetype Quant | - | - | 0 | v6 NEW |
+| D4 Meter Timing | - | - | 0 | v6 NEW |
+| **누적 patches** | **81** | **466** | **627** | |
 
-### Codex 의뢰 진행 절차
-1. `tmp/REQUEST-Codex-comprehensive-recovery.md` Codex에 전달
-2. Codex가 Phase별 진행 (자체 빌드/tsc 검증)
-3. FINAL-REPORT 회수 후 새 ClaudeCode CT가 검증 + 적용
+### 새 잘못 패턴 (v5/v6)
+- #11 사용자 사례 = 예시. 광범위 동형 검출이 본질
+- #12 정적 분석 한계 (게임 흐름 / 메커니즘 / 정량 차원 별개)
 
-### 새 CT 운영 약속
-1. 모든 적용 전 `precheck-comprehensive.cjs` 자동 실행 → 0 PASS만 적용
-2. 의뢰 메시지 작성 시 게임 핵심 원칙 (진실 누설 금지) 자동 포함
-3. Claude self-검증 X — 외부 검증 (Codex audit + 사용자 spot check)
-
-### 이전 CT 5가지 실수 (재발 방지)
-1. GPT 산출물 무비판 적용 → Codex 자동 검증 게이트
-2. status 필드 미체크 → 표준 적용 스크립트
-3. 매트릭스 검증 누락 → precheck-matrix.cjs (이미 만듦, Codex Phase 5에서 강화)
-4. 자동 검증에 도메인 원칙 미포함 → detect-truth-leak.cjs (이미 만듦, Codex Phase 5에서 광범위화)
-5. 의뢰 메시지에 게임 핵심 원칙 누락 → 표준 의뢰 템플릿 + feedback_truth_leak_prohibition.md
+### 사용자 게임 테스트 결과
+- vercel 정상 배포 + 플레이 가능 확인 (251116f deploy 후)
+- 추가 spot check 결과는 다음 세션에서 처리
