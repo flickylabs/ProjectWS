@@ -1,0 +1,23 @@
+{
+  "counts": {
+    "contradiction_pursuit": {
+      "cells": 32,
+      "variants": 320
+    },
+    "interjection": {
+      "cells": 16,
+      "variants": 160
+    },
+    "emotional_overload": {
+      "cells": 8,
+      "variants": 80
+    },
+    "totalCells": 56,
+    "totalVariants": 560
+  },
+  "bannedLexemeViolations": 0,
+  "truthThrottleViolations": 0,
+  "hD4DirectSecretViolations": 0,
+  "longTextsOver115chars": 0,
+  "sampleLongTexts": []
+}

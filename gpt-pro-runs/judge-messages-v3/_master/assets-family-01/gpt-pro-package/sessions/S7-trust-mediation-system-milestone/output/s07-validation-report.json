@@ -1,0 +1,39 @@
+{
+  "trust_action": {
+    "entries": 18,
+    "variants_per_entry": [
+      10
+    ],
+    "total_variants": 180
+  },
+  "mediation": {
+    "entries": 8,
+    "variants_per_entry": [
+      10
+    ],
+    "total_variants": 80
+  },
+  "system_message": {
+    "entries": 11,
+    "variants_per_entry": [
+      5
+    ],
+    "total_variants": 55
+  },
+  "rapport_milestone": {
+    "entries": 6,
+    "variants_per_entry": [
+      5
+    ],
+    "total_variants": 30
+  },
+  "contradict_milestone": {
+    "entries": 6,
+    "variants_per_entry": [
+      5
+    ],
+    "total_variants": 30
+  },
+  "pattern_hits": [],
+  "trust_action_early_truth_throttle_hits": []
+}
