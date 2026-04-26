@@ -2930,19 +2930,19 @@ body.pc-mode .pc-play-left .pc-important-notes__scroll {
    재판관의 관찰과 동일 클래스(.pc-judge-observation-section)를 사용해
    시각 100% 통일. 수첩 전용 modifier(--notebook)로 height만 확장.
    ═══════════════════════════════════════════════════════════ */
-/* 관찰 & 수첩 — 동일 높이 220px로 통일 (사용자 요청: 세로 폭 같게) */
+/* 관찰 & 수첩 — 동일 높이 200px로 통일 (사용자 요청: 세로 폭 같게 + 컴팩트하게) */
 body.pc-mode .pc-judge-observation-section {
-  flex: 0 0 220px !important;
-  min-height: 220px !important;
-  max-height: 220px !important;
-  height: 220px !important;
+  flex: 0 0 200px !important;
+  min-height: 200px !important;
+  max-height: 200px !important;
+  height: 200px !important;
 }
 
 body.pc-mode .pc-play-left .pc-judge-observation-section--notebook {
-  flex: 0 0 220px !important;
-  min-height: 220px !important;
-  max-height: 220px !important;
-  height: 220px !important;
+  flex: 0 0 200px !important;
+  min-height: 200px !important;
+  max-height: 200px !important;
+  height: 200px !important;
 }
 
 /* (legacy) 기존 .pc-play-notebook-section 남겨둠 — 다른 위치에서 참조 가능 */
