@@ -20140,6 +20140,23 @@ body.pc-mode .pc-interaction-card__header--evidence {
   border-bottom: 1px solid rgba(212, 162, 78, 0.12) !important;
 }
 
+/* ── 최상단 헤더 — 로고/제목/Phase pill 컬러 통일 (gold-alt) ── */
+body.pc-mode .pc-play-logo .logo-text {
+  color: var(--pc-gold-light) !important;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+body.pc-mode .pc-play-logo__mark,
+body.pc-mode .pc-play-logo__mark svg {
+  color: var(--pc-gold-light) !important;
+}
+body.pc-mode .pc-play-logo .logo-case {
+  color: var(--pc-text-dim) !important;
+}
+body.pc-mode .pc-play-logo .logo-case__ver {
+  color: var(--pc-text-muted) !important;
+}
+
 
 
 /* ──────────────────────────────────────────────────
