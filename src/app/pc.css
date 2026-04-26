@@ -19005,49 +19005,66 @@ body.pc-mode .pc-timeline__empty {
    여기 정의가 최우선. 위쪽 모든 정의를 덮어씀.
    ═══════════════════════════════════════════════════════════════════ */
 
-/* ── 표준 뒤로 버튼 (모든 페이지 동일 위치 · 동일 디자인) ── */
+/* ── 표준 뒤로 버튼 (훨씬 크게: 56px height, 골드 outline 강화) ── */
 body.pc-mode .pc-depth-back {
   flex: 0 0 auto !important;
   display: inline-flex !important;
   align-items: center;
-  gap: 6px;
-  height: 40px !important;
-  padding: 0 16px !important;
-  border-radius: 12px !important;
+  gap: 8px;
+  height: 56px !important;
+  padding: 0 28px !important;
+  border-radius: 14px !important;
   background: rgba(255, 255, 255, 0.03) !important;
-  border: 1px solid rgba(255, 255, 255, 0.10) !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
   color: var(--pc-text-dim) !important;
-  font-size: 13px !important;
-  font-weight: 700 !important;
-  letter-spacing: 0.04em;
+  font-size: 16px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.03em;
   cursor: pointer;
-  transition: border-color 160ms ease, background 160ms ease, color 160ms ease, transform 160ms ease !important;
+  transition: border-color 160ms ease, background 160ms ease, color 160ms ease, transform 160ms ease, box-shadow 160ms ease !important;
 }
 body.pc-mode .pc-depth-back:hover {
-  border-color: rgba(212, 162, 78, 0.40) !important;
-  background: rgba(212, 162, 78, 0.06) !important;
+  border-color: rgba(212, 162, 78, 0.45) !important;
+  background: rgba(212, 162, 78, 0.08) !important;
   color: var(--pc-text) !important;
   transform: translateY(-1px);
+  box-shadow: 0 0 0 3px rgba(212, 162, 78, 0.10);
 }
 body.pc-mode .pc-depth-back > span[aria-hidden="true"] {
-  font-size: 16px;
+  font-size: 22px;
   line-height: 1;
   margin-top: -2px;
+  color: var(--pc-gold-light);
 }
 
-/* ── 표준 페이지 헤더 (3-column grid: back · copy · tools) ── */
+/* ── 표준 페이지 헤더 (2-row grid: back+tools / copy 아래) ── */
 body.pc-mode .pc-depth-header {
   display: grid !important;
-  grid-template-columns: auto 1fr auto !important;
-  align-items: flex-start !important;
-  gap: 24px !important;
-  padding-bottom: 20px !important;
-  margin-bottom: 24px !important;
-  border-bottom: 1px solid rgba(212, 162, 78, 0.12);
+  grid-template-columns: 1fr auto !important;
+  grid-template-areas:
+    'back tools'
+    'copy copy' !important;
+  align-items: center !important;
+  row-gap: 32px !important;
+  column-gap: 16px !important;
+  padding-bottom: 32px !important;
+  margin-bottom: 0 !important;
+  border-bottom: 1px solid rgba(212, 162, 78, 0.18);
 }
 
-body.pc-mode .pc-depth-header__copy {
-  padding-top: 2px;
+body.pc-mode .pc-depth-header > .pc-depth-back {
+  grid-area: back;
+  justify-self: start;
+}
+body.pc-mode .pc-depth-header > .pc-depth-header__copy,
+body.pc-mode .pc-depth-header > .cb__header-info {
+  grid-area: copy;
+  padding-top: 0;
+}
+body.pc-mode .pc-depth-header > .cb__header-tools {
+  grid-area: tools;
+  justify-self: end;
+  align-self: center;
 }
 
 body.pc-mode .pc-depth-header__copy > span,
@@ -19742,20 +19759,20 @@ body.pc-mode .pc-achievement-strip__track {
    페이지 상단 spacing + 헤더 dark band edge-to-edge
    ────────────────────────────────────────────────── */
 body.pc-mode .pc-depth-shell {
-  margin-top: 0 !important;
+  margin-top: 32px !important;
   margin-bottom: 32px !important;
   padding: 0 0 48px !important;
   max-width: 1280px;
   margin-left: auto !important;
   margin-right: auto !important;
-  min-height: calc(100vh - 32px) !important;
+  min-height: calc(100vh - 64px) !important;
 }
 
-/* 헤더 dark band — pc-depth-shell 끝-끝까지 (전체 폭) */
+/* 헤더 dark band — pc-depth-shell 끝-끝까지, top 24 + 컨텐츠 아래로 내림 */
 body.pc-mode .pc-depth-header {
   background: linear-gradient(180deg, rgba(13, 14, 18, 0.72), rgba(13, 14, 18, 0.55)) !important;
   border-bottom: 1px solid rgba(212, 162, 78, 0.18) !important;
-  padding: 32px 48px 24px !important;
+  padding: 24px 48px 32px !important;
   margin: 0 0 40px !important;
   border-radius: 0 !important;
 }
@@ -19795,11 +19812,11 @@ body.pc-mode .cb__stages {
   max-height: calc(100vh - 280px) !important;
 }
 
-/* HERO — 큰 사건 제목 가운데, portraits 안쪽으로 이동 (padding-x 키움) */
+/* HERO — 사건 제목 가운데, portraits 안쪽으로 이동 (padding-x 키움) */
 body.pc-mode .cb__brief-hero {
   grid-template-columns: 84px 1fr 84px !important;
   gap: 36px !important;
-  padding: 56px 64px 32px !important;
+  padding: 48px 64px 32px !important;
 }
 body.pc-mode .cb__brief-portrait {
   width: 80px !important;
@@ -19808,7 +19825,7 @@ body.pc-mode .cb__brief-portrait {
 body.pc-mode .cb__brief-character {
   gap: 8px !important;
 }
-/* 사건 제목 — 더 큰 글씨, 자연 줄바꿈 (text-wrap balance) */
+/* 사건 제목 — 두 줄에 자연스럽게 들어가는 사이즈, 가운데 강조 */
 body.pc-mode .cb__brief-center {
   display: flex;
   align-items: center;
@@ -19816,13 +19833,14 @@ body.pc-mode .cb__brief-center {
   min-height: 80px;
 }
 body.pc-mode .cb__brief-headline {
-  font-size: clamp(28px, 2.8vw, 38px) !important;
+  font-size: clamp(20px, 1.8vw, 24px) !important;
   font-weight: 800 !important;
-  letter-spacing: -0.03em !important;
-  line-height: 1.18 !important;
+  letter-spacing: -0.025em !important;
+  line-height: 1.32 !important;
   text-align: center;
   text-wrap: balance;
-  max-width: 360px;
+  word-break: keep-all;
+  max-width: 280px;
 }
 
 /* SUMMARY — 음영 폐기, 가로선 hairline으로만 영역 구분 */
