@@ -96,7 +96,10 @@ CLAUDE.md에 기재된 `tests/run-84-headless.cjs` **현재 repo 부재** (Legac
 
 ### TC-A3 [Manual+Sim, P0] 재판관 질문 4타입 × depth × tone 모두 트리거
 - **범위**: 3 case × Phase 3, 5
-- **절차**: judge question 84종 (4 type × 4 depth × soft/mid/hard) 다양한 조합 자연 플레이
+- **절차**: judge question 84 templates (4 type × depth × 2 tone) 다양한 조합 자연 플레이
+  - fact_pursuit / motive_search / empathy_approach: depth 0~3 × soft/hard = 24 each
+  - evidence_present: depth 0~2 × soft/hard = 12 (depth 3 미적용)
+  - 합계 84 templates / mid tone 미적용 (Tier 4+ 보류)
 - **합격**:
   - 각 type / depth / tone 조합 발동 시 question entry 정상 + NPC 응답 정상
   - 부조화 entry 발동 X (예: depth 1에서 hard tone 발동)

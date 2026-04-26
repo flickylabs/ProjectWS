@@ -151,6 +151,30 @@ aftermath           ✓   ✓   ✓   ✓   ✓   ✓   (판결 후)
 "학용품", "조카 학교 알림"
 ```
 
+**Paraphrase 우회 lexeme set (Tier 3 guard 입력)**:
+
+출처: S-1 spouse 1건 (`b-d-2-S2-empathy-approach-v7` "가족을 돕는 일이 급했습니다") + 회귀 방지 11건 (현 데이터 미매치 / paraphrase 회귀 차단용). spouse-01 ScriptedText는 정책 lexeme exact-match 단계에서 사실상 정비된 영역.
+
+```
+관계 우회: "어린 친척", "친 가족", "혈육", "친 혈육", "가족의 한 사람"
+돌봄 변형: "돌봐 드", "생필품을 사다", "가족을 돕는"
+대납 우회: "빚 대신"
+비자금 우회: "따로 모은 돈", "몰래 마련한 돈"
+S2 NPC 누설 우회 (TC-D1): "가족을 돕는 일이 급" 류 — S0~S2 영역에서 가족 지원 동기 직접 노출 X
+```
+
+**제거 항목 (CT-Cross 정책 hardening review 결과)**:
+- `가족을 돌본`: 기존 §4.1 globalTruthLexemes 중복
+- `챙겨 주`: `챙겨 주는` / `챙겨 주신` 등 일반 동사 어미와 광역 매치 FP 위험
+
+**Tier 3 guard 적용 조건 (gating) — 3 case 공통**:
+- 차단 대상: `judge_question` / `judge_contradiction` / `judge_evidence_combo` / `judge_witness_summon` / `system_message` / `dossier`(안내) / `evidence_discovery` + NPC `interrogation`·`contradiction_pursuit` lieState ∈ {S0, S1, S2}
+- 통과 대상: `aftermath` / `emotional_overload` / `mediation` / witness `*full*` + NPC S3+ (gated, 책임 분배 맥락만) / NPC S4+ (자유) / S5 자백
+- `evidence_present`: stage 0/1 → 차단 / late stage → gated
+- `dossier`: early → 차단 / mid·late → gated (채널 권한 따라)
+- 단독 lexeme ambiguous (예: `혈연`, `가로`, `같은 패턴`) → context 윈도우 검사 또는 lexeme 자체 좁히기
+- ⚠️ D1 lieState tonal 불일치 (예: `솔직히 말하면 + 의도가 있었다고 인정`)는 별도 차원 — paraphrase set으로 catch X. Tier 4+/LLM review 영역
+
 **Witness 진실 보호**:
 
 | ID | name | 진실 영역 (surfaceKnowledge로 노출 X) |
@@ -181,7 +205,23 @@ case data 곳곳에 진실어가 직접 들어 있어 UI에 그대로 출력되�
 
 → Codex JSON 정책 작성 시 `uiSurfaceMap` 광역 schema 설계 + 각 필드별 surface 표현 정의 + `discoveryText.gate` 분류 + 어떤 필드가 실제로 UI에 노출되는지 사전 점검.
 
-### 4.2 family-01 — 구조만 (본문 보류)
+**uiSurfaceMap surface 텍스트 보강 (S-5 검출 영역 → Tier 3 guard 입력)**:
+
+S-5 보고서 (`tmp/qa-scripted-results/20260427-S-5-summary.md`)에서 발견한 `actual` 진실어 영역. surface 표현으로 정비.
+
+| path | actual (진실어) | surface (UI 허용) |
+|---|---|---|
+| `combinationLab.nodes.e-4.label` | `e-4 형 문자 + 조카 학교 알림` | `e-4 발신자 미상 문자` |
+| `combinationLab.nodes.e-5.label` | `e-5 공동 적금 해지 + 형 계좌 이체` | `e-5 개인 계좌 출금 내역` |
+| `combinationLab.outputs.dc-1.summary` | `외도 오해를 형네 돌봄으로 뒤집는 카드` | `외도 오해를 다른 동선으로 재검토하는 카드` |
+| `combinationLab.outputs.dc-2.judgeHint` | `...이준호 씨에게 직접 추궁하시거나 형 문자(e-4)를 제시하면 구체적 사연이...` | `...이준호 씨에게 직접 추궁하시거나 해당 문자 기록(e-4)을 제시하면 숨긴 사정이...` |
+| `combinationLab.outputs.dc-4.judgeHint` | `이제 이준호 씨 형의 상황을 직접 확인하거나 동기 탐색으로 숨긴 이유를 물어볼 수 있습니다.` | `이제 이준호 씨가 숨긴 사정을 직접 확인하거나 동기 탐색으로 이유를 물어볼 수 있습니다.` |
+| `evidence.e-1.v3DepthPlan.Established.summary` | `조카 돌봄을 위한 구매로 확인됨` | `구매 목적이 기존 의심과 다를 가능성 확인` |
+| `evidence.e-2.v3DepthPlan.Context.summary` | `오피스텔 동선과 형네 주소 일치` | `오피스텔 동선과 특정 주소의 반복 일치` |
+| `evidence.e-4.v3DepthPlan.Established.summary` | `조카 돌봄 관계 직접 증명` | `문자 관계의 실제 맥락 확인` |
+| `v3Design.authorityPlacements[*].purpose` | `형, 조카, 2,000만 원 같은 실체 명사 강제` 등 | `숨긴 관계와 금액 같은 실체 명사 강제` 류 추상화 |
+
+### 4.2 family-01 — paraphrase set + uiSurfaceMap (본문은 후속 작업)
 
 **캐릭터**:
 - A: 윤태성 (48, 주방가구 공장 대표, confrontational)
@@ -190,12 +230,50 @@ case data 곳곳에 진실어가 직접 들어 있어 UI에 그대로 출력되�
 **Anchor Truth 키워드 (금지 lexeme 우선 list, 메모리 #9)**:
 ```
 "출생 비밀", "배다른", "혈연 다른",
-"20년 동안 B 돈", "정후 돈으로 어머니"
+"20년 동안 B 돈", "정후 돈으로 어머니",
+"자기 몫을 줄인 조작", "유서 자기 몫 축소", "공장 부도 대납", "형 공장 자금"
 ```
 
-**본문 작성 시점**: spouse-01 정책 안정 후 (Tier 1 후반 9~13일 중 +2~3일).
+**Paraphrase 우회 lexeme set (Tier 3 guard 입력 / S-1 + CT-Cross 발견 영역)**:
 
-### 4.3 friend-01 — 구조만 (본문 보류)
+S-1 6 P0 (family-01 4건) + CT-Cross 14 P1 (family-01 12건 집중) paraphrase 검출 결과. 가장 위험 영역.
+
+```
+유서 조작 우회: "유서를 손댄", "유서를 고친", "유서를 바꾼", "원본 유서를 고친", "문서를 손으로 고친"
+자기 몫 축소: "자기 몫을 줄"
+공장 자금 변형: "공장 자금" (단독 사용 시 / `공장 자금의 출처` `공장 자금이 같은 흐름` 등)
+20년 송금 변형: "20년 동안 매달 보낸", "20년 간 송금", "어머니 통장으로 정기적으로 돈을 보낸", "어머니 통장으로 꾸준히 돈을 넣었습니다", "정기적이라고 불러도 될 만큼 보낸", "장기 송금"
+출생 비밀 변형: "혈연이 다른", "친생자", "친자 관계", "출생에 관한 사실"
+60:40 비율 변형: "60대 40", "60대40", "40 대 60", "4 대 6"
+S0 NPC 단정 우회 (TC-D2-B): "유서를 손댄", "문서를 손으로 고친" — A의 S0 단정도 진실 단정 톤 X (`그런 정황이 보입니다`, `그렇게 생각합니다`로 hedge)
+S2 NPC 누설 우회 (TC-D1): "어머니 통장으로 꾸준히", "정기적이라고 불러도 될 만큼", "제 형 쪽 생활이 그렇게 이어진 정황" 류 — S2에서 지원 주체·기간 구조 직접 노출 X
+```
+
+**제거 항목 (CT-Cross 검수)**:
+- `혈연` 단독: S5 자백 5건 (`a-d-4-S5` "저는 아버지와 혈연이 다르다는 사실을 받아들입니다") 차단 위험. `혈연이 다른`으로 좁힘
+
+**Tier 3 guard 적용 조건 (gating)**: §4.1 spouse-01 gating 박스 동일 적용 (3 case 공통). 특히 `자기 몫을 줄` (12 P1 + 10 자백) / `공장 자금` (14 P1 + 6 자백) / `20년 동안 매달 보낸` (S4·S5 자백 6건)은 lieState gate 강제 필수.
+
+**uiSurfaceMap surface 텍스트 보강 (S-5 검출 영역)**:
+
+| path | actual (진실어) | surface (UI 허용) |
+|---|---|---|
+| `combinationLab.nodes.dc-2.label` | `dc-2 형이 모르던 20년의 돈` | `dc-2 오래된 지원 흐름` |
+| `combinationLab.nodes.dc-4.label` | `dc-4 감춘 이유` | `dc-4 말하기 어려운 사정` |
+| `combinationLab.outputs.dc-2.judgeHint` | `새 쟁점 '20년 송금의 실체'가 드러났습니다. 누가 실질적으로 보냈는지 확인해보세요.` | `새 쟁점 '오래된 지원의 출처'가 드러났습니다.` |
+| `combinationLab.outputs.dc-3.summary` | `60대 40으로 바꾸지 않았다면, 형이 무엇을 잃게 됐습니까?` | `지금과 다른 비율이었다면 어떤 후폭풍이 있었습니까?` |
+| `combinationLab.outputs.dc-4.summary` | `유서 조작과 20년 지원의 끝에 있던 출생 비밀 — 형의 정체성을 지키려 한 것입니까?` | `유서 변경과 오래된 지원 끝에 있던 가족 사정` |
+| `combinationLab.outputs.dc-5.summary` | `두 형제 모두 어머니를 있는 그대로 두지 못했다 — 누가 정말 어머니를 이용했습니까?` | `두 사람이 어머니의 뜻을 어떻게 다르게 받아들였는지 — 누가 더 멀리 갔습니까?` |
+| `v3Design.authorityPlacements[3].purpose` | `조작 동기, 송금 이유, 일기장 내용 같은 실체 명사 강제` | `말을 피한 이유와 자료의 맥락을 분리해 확인` |
+| `v3Design.authorityPlacements[11].purpose` | `출생 비밀을 확실히 열되 A의 정체성 충격 리스크 관리` | `민감한 가족 사정을 제한적으로 확인` |
+| `evidence.e-7.v3DepthPlan.context.summary` | `출생 비밀, 20년 지원, 유서 변경 이유를 연결한다.` | `민감한 가족 사정과 유서 변경 이유를 연결한다.` |
+
+**Evidence surfaceName alias (S-5 baseline-known WARN, 정합 결정 보류)**:
+- e-1 / e-4 / e-5 / e-6 / e-7 — 정책 surfaceName과 caseData surfaceName이 alias로 다름 (의도된 추상화 vs 정합 — 사용자 결정 영역)
+
+**본문 작성 시점**: 이번 Tier 3 guard MVP 안정 후 (paraphrase set + uiSurfaceMap이 우선 입력).
+
+### 4.3 friend-01 — paraphrase set + uiSurfaceMap (본문은 후속 작업)
 
 **캐릭터**:
 - A: 송다은 (31, 온라인 쇼핑몰 CS, premature_summary)
@@ -204,10 +282,47 @@ case data 곳곳에 진실어가 직접 들어 있어 UI에 그대로 출력되�
 **Anchor Truth 키워드 (금지 lexeme 우선 list, 메모리 #9)**:
 ```
 "예비신랑이 먼저", "아버지의 사기",
-"아버지 돈 갈취", "같은 패턴 반복"
+"아버지 돈 갈취", "같은 패턴 반복",
+"선넘는 메시지", "B의 거절"
 ```
 
-**본문 작성 시점**: family-01 정책 완성 후 (Tier 1 후반 +2~3일).
+**Paraphrase 우회 lexeme set (Tier 3 guard 입력 / S-1 + CT-Cross 발견 영역)**:
+
+S-1 P0 (friend-01 1건) + CT-Cross 4 P1 (friend-01) paraphrase 검출 결과.
+
+```
+접근 변형: "선을 넘는 메시지", "선을 넘은 말", "선을 넘은 메시지", "선 넘는 메시지"
+사기 우회: "다은이 아버지가 ~ 가져간", "뜯", "다은이 아버지가 예비신랑에게 돈 이야기를 꺼낸", "송다은 씨 아버지가 예비신랑에게 돈 이야기를 꺼낸"
+거절 paraphrase 우회 (judge channel 한정 / D2-A-12 catch): "거절했다는", "거절한 사실"
+같은 패턴 변형: "같은 패턴 반복", "같은 방식으로 돈 얘기"
+S2 NPC 자백 톤 우회 (TC-D2-C): "다은이 아버지가 제 돈을 가져간 게 맞습니다" 류 — S2에서 과거 사기 사실 직접 단정 X
+evidence_discovery 누설 우회 (TC-D2-D): "선을 넘는 메시지를 보고도..." — `evidence_discovery` 채널이 진실을 establ된 사실로 단정 X
+```
+
+**제거 항목 (CT-Cross 검수)**:
+- `가로`: 단음절 토큰. `대가로` 등 부분 일치 무한 FP
+- `선을 넘은` 단독: 일반 비유 FP 위험 (좁힌 형태 `선을 넘은 말 / 메시지`로만 등록)
+- `같은 패턴` 단독: 일상 비유 FP 위험 (`같은 패턴 반복` + `같은 방식으로 돈 얘기`로만)
+
+**Tier 3 guard 적용 조건 (gating)**: §4.1 spouse-01 gating 박스 동일 적용. `거절했다는` / `거절한 사실`은 judge_* 채널 한정 (NPC "저는 거절했습니다"는 통과). `선을 넘은`은 좁힌 형태로만 등록되어 있어 FP 안전.
+
+**uiSurfaceMap surface 텍스트 보강 (S-5 검출 영역)**:
+
+| path | actual (진실어) | surface (UI 허용) |
+|---|---|---|
+| `combinationLab.outputs.dc-1.summary` | `예비신랑이 먼저 선을 넘었다면 왜 바로 송다은에게 말하지 않았는가` | `선후관계가 다르다면 왜 바로 알리지 않았는가` |
+| `combinationLab.outputs.dc-2.summary` | `송다은 아버지가 또 같은 방식으로 돈 얘기를 꺼냈다면 왜 또 혼자 막으려 했는가` | `과거와 닮은 부탁이 다시 보였다면` |
+| `combinationLab.outputs.dc-4.summary` | `과거 손절이 변심이 아니라 사기 피해와 침묵의 결과였다면, 왜 끝내 말하지 못했습니까?` | `과거 손절이 단순 변심이 아니었다면 — 왜 끝내 말하지 못했습니까?` |
+| `combinationLab.outputs.dc-5.summary` | `두 번 다 말하지 못해 악역이 된 구조 — 누가 먼저 낙인을 찍었습니까?` | `반복된 오해와 낙인 — 누가 먼저 시작했는지 짚어낼 수 있습니까?` |
+| `v3Design.authorityPlacements[3].purpose` | `A 아버지의 문자 원본 확보` | `가족 쪽 문자 원본 확보` |
+| `v3Design.authorityPlacements[8].purpose` | `A 아버지의 돈 접근 패턴이 반복됨을 공식 기록` | `과거와 현재 자금 부탁의 유사성을 공식 기록` |
+| `evidence.e-6.v3DepthPlan.Established.summary` | `A 아버지의 사기 패턴 확정` | `과거 금전 문제의 반복성 확인` |
+| `evidence.e-7.v3DepthPlan.Established.summary` | `A 아버지의 반복 패턴과 B의 반복 침묵 확정` | `과거와 현재 흐름의 반복성 확인` |
+
+**Evidence surfaceName alias (S-5 baseline-known WARN, 정합 결정 보류)**:
+- e-1 ~ e-7 — 정책 surfaceName과 caseData surfaceName이 alias로 다름 (의도된 추상화 vs 정합 — 사용자 결정 영역)
+
+**본문 작성 시점**: 이번 Tier 3 guard MVP 안정 후 (paraphrase set + uiSurfaceMap이 우선 입력).
 
 ---
 
