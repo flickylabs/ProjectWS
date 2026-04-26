@@ -20069,9 +20069,14 @@ body.pc-mode .pc-ev-detail__present-btn {
   background: rgba(15, 16, 22, 0.85) !important;
   border: 1px solid rgba(212, 162, 78, 0.18) !important;
   color: var(--pc-text) !important;
+  font-weight: 500 !important;
   backdrop-filter: none !important;
   -webkit-backdrop-filter: none !important;
   transition: border-color 160ms ease, background 160ms ease, transform 160ms ease, box-shadow 160ms ease !important;
+}
+/* B 버튼은 사진 우측 (텍스트 ↔ avatar 순서 반전) */
+body.pc-mode .pc-ev-detail__present-btn.is-b {
+  flex-direction: row-reverse !important;
 }
 /* A (박지연, 왼쪽 버튼) — 좌측 edge 파란색 + 좁은 outward blue glow (~8px) */
 body.pc-mode .pc-ev-detail__present-btn.is-a {
