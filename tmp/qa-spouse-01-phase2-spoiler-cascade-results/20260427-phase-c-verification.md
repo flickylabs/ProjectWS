@@ -37,10 +37,6 @@ Playwright captured contradiction/interrogation popup layout in PC flow:
 
 ## Commit Boundary Note
 
-The final hotfix commit includes the surfaceName hardening files required for this session:
-
-- `src/components/layout/CourtLayout.tsx`
-- `src/data/claimPolicies/spouse-01-structure-v2.json`
-- `src/engine/clearanceTracker.ts`
-
-`spouse-01` evidence `e-4` keeps the internal name `형 문자 스레드` and exposes the player-facing `surfaceName` `발신자 미상 문자`.
+- `src/components/layout/CourtLayout.tsx` and `src/engine/clearanceTracker.ts` contain runtime surfaceName hardening and are retained.
+- `src/data/claimPolicies/spouse-01-structure-v2.json` was removed from the final hotfix state because claim policy data edits are outside this session's allowed boundary.
+- `spouse-01` evidence e-4 still keeps the internal truth name `형 문자 스레드`; player-facing runtime paths use generated case data `surfaceName` `발신자 미상 문자`.
