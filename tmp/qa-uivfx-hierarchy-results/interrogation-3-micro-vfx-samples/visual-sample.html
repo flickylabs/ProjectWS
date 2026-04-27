@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Phase A Interrogation Micro VFX Sample</title>
+  <link rel="stylesheet" href="../../../src/app/pc.css" />
+  <style>
+    html,
+    body {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+    }
+
+    body.pc-mode {
+      font-family:
+        "Pretendard",
+        "Noto Sans KR",
+        "Malgun Gothic",
+        system-ui,
+        sans-serif;
+    }
+
+    .sample-stage {
+      --jobs-cat-archetype: #d4a672;
+      --jobs-cat-state: #e8c172;
+      --jobs-cat-contradiction: #dc6e66;
+      --jobs-cat-slip: #e39a6d;
+      --jobs-cat-evidence: #b8cb9d;
+      --jobs-cat-event: #bfc2c8;
+
+      position: relative;
+      width: 1440px;
+      height: 900px;
+      overflow: hidden;
+      color: var(--pc-text);
+      background:
+        radial-gradient(ellipse at 50% 18%, rgba(212, 162, 78, 0.08), transparent 42%),
+        linear-gradient(180deg, #090a0f 0%, #11131a 52%, #07080c 100%);
+    }
+
+    .sample-panel {
+      position: absolute;
+      inset: 70px 120px auto 120px;
+      min-height: 660px;
+      border: 1px solid var(--pc-panel-border-soft);
+      background: var(--pc-panel-bg);
+      box-shadow: var(--pc-panel-shadow), var(--pc-panel-inset);
+    }
+
+    .sample-header {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      padding: 26px 32px 18px;
+      border-bottom: 1px solid rgba(212, 162, 78, 0.12);
+    }
+
+    .sample-title {
+      margin: 0;
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: 0;
+      color: #f4ecd8;
+    }
+
+    .sample-meta {
+      font-size: 11px;
+      color: var(--pc-text-muted);
+    }
+
+    .sample-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 28px;
+      padding: 32px;
+    }
+
+    .sample-dialogue {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .sample-line {
+      padding: 14px 16px;
+      border: 1px solid rgba(255, 255, 255, 0.04);
+      background: rgba(0, 0, 0, 0.22);
+      color: #dcdce0;
+      font-size: 13px;
+      line-height: 1.65;
+    }
+
+    .sample-line strong {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--pc-gold-light);
+      font-size: 12px;
+    }
+
+    .sample-vfx-column {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      padding-top: 6px;
+    }
+
+    .sample-card-note {
+      margin: 0 0 4px;
+      color: var(--pc-text-muted);
+      font-size: 11px;
+      line-height: 1.5;
+    }
+
+    body.pc-mode .sample-stage .pc-jobs-main {
+      width: 100%;
+      box-sizing: border-box;
+      min-height: 76px;
+    }
+
+    body.pc-mode .sample-stage .pc-jobs-main__time {
+      min-width: 36px;
+      text-align: right;
+    }
+
+    body.pc-mode .sample-stage .pc-aura-bolt {
+      animation-delay: -0.72s;
+      animation-play-state: paused;
+    }
+  </style>
+</head>
+<body class="pc-mode">
+  <main class="sample-stage" aria-label="Phase A interrogation micro VFX sample">
+    <section class="sample-panel">
+      <header class="sample-header">
+        <h1 class="sample-title">심문 micro VFX Phase A 샘플</h1>
+        <span class="sample-meta">기존 aura / crack / reveal 계열만 표시, 번개 연결 없음</span>
+      </header>
+      <div class="sample-grid">
+        <div class="sample-dialogue" aria-label="dialogue context">
+          <div class="sample-line">
+            <strong>원고</strong>
+            계약 직후에는 아무 문제도 없었습니다. 나중에 말이 달라진 겁니다.
+          </div>
+          <div class="sample-line">
+            <strong>피고</strong>
+            그날 받은 자료에는 핵심 조건이 빠져 있었습니다.
+          </div>
+          <div class="sample-line">
+            <strong>재판부</strong>
+            답변의 초점이 쟁점에서 벗어나고 있습니다. 관련 단서만 확인합니다.
+          </div>
+        </div>
+
+        <div class="sample-vfx-column">
+          <p class="sample-card-note">실제 런타임처럼 한 액션의 대상 aura만 표시됩니다.</p>
+          <button class="pc-jobs-main is-contradiction is-fresh" data-dispute-id="sample-fact" type="button">
+            <span class="pc-jobs-main__bar" aria-hidden="true"></span>
+            <span class="pc-jobs-main__icon" aria-hidden="true">!</span>
+            <span class="pc-jobs-main__body">
+              <span class="pc-jobs-main__title">모순 생성</span>
+              <span class="pc-jobs-main__summary">진술의 균열만 짧게 강조</span>
+            </span>
+            <span class="pc-jobs-main__time">now</span>
+          </button>
+
+          <button class="pc-jobs-main is-slip is-fresh" data-resonance-target="trust-a" type="button">
+            <span class="pc-jobs-main__bar" aria-hidden="true"></span>
+            <span class="pc-jobs-main__icon" aria-hidden="true">~</span>
+            <span class="pc-jobs-main__body">
+              <span class="pc-jobs-main__title">방어 완화</span>
+              <span class="pc-jobs-main__summary">신뢰/감정 변화는 부드러운 aura로 처리</span>
+            </span>
+            <span class="pc-jobs-main__time">now</span>
+          </button>
+
+          <button class="pc-jobs-main is-event is-fresh" data-dispute-id="sample-motive" type="button">
+            <span class="pc-jobs-main__bar" aria-hidden="true"></span>
+            <span class="pc-jobs-main__icon" aria-hidden="true">?</span>
+            <span class="pc-jobs-main__body">
+              <span class="pc-jobs-main__title">숨은 쟁점 접근</span>
+              <span class="pc-jobs-main__summary">reveal 계열 관찰 + 대상 aura 재사용</span>
+            </span>
+            <span class="pc-jobs-main__time">now</span>
+          </button>
+        </div>
+      </div>
+    </section>
+    <svg class="pc-resonance-layer" aria-hidden="true"></svg>
+  </main>
+
+  <script>
+    const svg = document.querySelector('.pc-resonance-layer');
+    const targets = [
+      { id: 'fact', selector: '[data-dispute-id="sample-fact"]' },
+      { id: 'empathy', selector: '[data-resonance-target="trust-a"]' },
+      { id: 'motive', selector: '[data-dispute-id="sample-motive"]' },
+    ];
+    const focus = new URLSearchParams(window.location.search).get('focus') || 'fact';
+
+    function jitter(index, amp) {
+      return Math.sin(index * 1.618) * amp;
+    }
+
+    function buildAuraRect(rect, offset, amp) {
+      const left = rect.left - offset;
+      const right = rect.right + offset;
+      const top = rect.top - offset;
+      const bottom = rect.bottom + offset;
+      const segPerSide = 8;
+      let step = 1;
+      let d = `M ${left.toFixed(1)} ${top.toFixed(1)}`;
+
+      for (let i = 1; i < segPerSide; i += 1) {
+        const t = i / segPerSide;
+        d += ` L ${(left + (right - left) * t).toFixed(1)} ${(top + jitter(step++, amp)).toFixed(1)}`;
+      }
+      d += ` L ${right.toFixed(1)} ${top.toFixed(1)}`;
+      for (let i = 1; i < segPerSide; i += 1) {
+        const t = i / segPerSide;
+        d += ` L ${(right + jitter(step++, amp)).toFixed(1)} ${(top + (bottom - top) * t).toFixed(1)}`;
+      }
+      d += ` L ${right.toFixed(1)} ${bottom.toFixed(1)}`;
+      for (let i = 1; i < segPerSide; i += 1) {
+        const t = i / segPerSide;
+        d += ` L ${(right - (right - left) * t).toFixed(1)} ${(bottom + jitter(step++, amp)).toFixed(1)}`;
+      }
+      d += ` L ${left.toFixed(1)} ${bottom.toFixed(1)}`;
+      for (let i = 1; i < segPerSide; i += 1) {
+        const t = i / segPerSide;
+        d += ` L ${(left + jitter(step++, amp)).toFixed(1)} ${(bottom - (bottom - top) * t).toFixed(1)}`;
+      }
+      return `${d} Z`;
+    }
+
+    function renderAura(selector) {
+      const target = document.querySelector(selector);
+      if (!target || !svg) return;
+      const group = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+      group.setAttribute('class', 'pc-aura-group');
+      [[5, 3], [9, 5], [13, 7]].forEach(([offset, amp], index) => {
+        const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+        path.setAttribute('class', `pc-aura-bolt pc-aura-bolt--layer-${index}`);
+        path.setAttribute('d', buildAuraRect(target.getBoundingClientRect(), offset, amp));
+        group.appendChild(path);
+      });
+      svg.appendChild(group);
+    }
+
+    window.addEventListener('load', () => {
+      requestAnimationFrame(() => {
+        targets
+          .filter((target) => focus === 'all' || target.id === focus)
+          .forEach((target) => renderAura(target.selector));
+      });
+    });
+  </script>
+</body>
+</html>
