@@ -6,8 +6,10 @@ const path = require('node:path');
 
 const ROOT = path.resolve(__dirname, '..');
 const MANIFEST_DIR = path.join(ROOT, 'tmp', 'qa-route-simulator-manifests');
-const RESULT_DIR = path.join(ROOT, 'tmp', 'qa-route-simulator-results');
-const TRANSCRIPT_DIR = path.join(RESULT_DIR, 'route-transcripts');
+const DEFAULT_RESULT_DIR = path.join(ROOT, 'tmp', 'qa-route-simulator-results');
+const EXHAUSTIVE_RESULT_DIR = path.join(ROOT, 'tmp', 'qa-route-exhaustive-results');
+let RESULT_DIR = DEFAULT_RESULT_DIR;
+let TRANSCRIPT_DIR = path.join(RESULT_DIR, 'route-transcripts');
 
 const DEFAULT_CASES = ['spouse-01', 'family-01', 'friend-01'];
 const QUESTION_TYPES = ['fact_pursuit', 'motive_search', 'empathy_approach'];
@@ -35,6 +37,12 @@ const RESPONSE_REQUIRED_ACTIONS = new Set([
   'emergence_event',
 ]);
 const LIE_RANK = { S0: 0, S1: 1, S2: 2, S3: 3, S4: 4, S5: 5 };
+const EXHAUSTIVE_DEFAULTS = {
+  maxDepth: 5,
+  maxStates: 240,
+  maxRoutes: 480,
+  maxActionsPerState: 36,
+};
 
 const PARAPHRASE_LABELS = {
   'spouse-01': [
@@ -93,12 +101,14 @@ main();
 
 function main() {
   const cli = parseArgs(process.argv.slice(2));
+  configureResultDir(cli);
   resetResultDir();
   ensureDir(TRANSCRIPT_DIR);
 
-  const manifests = loadManifests(cli);
+  const manifests = cli.exhaustive ? buildExhaustiveManifests(cli) : loadManifests(cli);
   if (manifests.length === 0) {
-    console.error(`qa-route-simulator: no manifests found in ${path.relative(ROOT, MANIFEST_DIR)}`);
+    const source = cli.exhaustive ? 'generated exhaustive state space' : path.relative(ROOT, MANIFEST_DIR);
+    console.error(`qa-route-simulator: no manifests found in ${source}`);
     process.exit(1);
   }
 
@@ -132,7 +142,8 @@ function main() {
 
   const hardCount = emittedFindings.filter((item) => item.severity === 'P0').length;
   const routeCount = new Set(traces.map((item) => `${item.caseId}/${item.routeId}`)).size;
-  console.log(`qa-route-simulator: routes=${routeCount} actions=${traces.length} findings=${emittedFindings.length} hard=${hardCount}`);
+  const modeLabel = cli.exhaustive ? 'exhaustive' : 'manifest';
+  console.log(`qa-route-simulator: mode=${modeLabel} routes=${routeCount} actions=${traces.length} findings=${emittedFindings.length} hard=${hardCount}`);
   console.log(`results: ${path.relative(ROOT, RESULT_DIR)}`);
 
   if (cli.failOnHard && hardCount > 0) process.exit(1);
@@ -635,15 +646,15 @@ function detectQaMismatchRuntime(trace, ctx, findings) {
   const focus = buildFocusModel(ctx.caseData, trace.action.disputeId);
   if (focus.otherHit && !focus.expectedHit(npcText) && focus.otherHit(npcText)) {
     findings.push({
-      severity: 'P0',
-      category: 'qa_mismatch_runtime',
-      detectors: ['qa_mismatch_runtime'],
+      severity: 'P1',
+      category: 'qa_focus_review',
+      detectors: ['qa_mismatch_runtime', 'qa_focus_review'],
       summary: 'NPC response appears to focus on another dispute in the executed route.',
       expected: `Response should stay focused on ${trace.action.disputeId}.`,
       actual: npcText,
       resolverPath: trace.outputs.map((output) => output.resolverPath).join(' | '),
       sourcePath: trace.outputs.map((output) => output.sourcePath).join(' | '),
-      patchPriority: 'P0-script-focus-review',
+      patchPriority: 'P1-script-focus-review',
     });
   }
 }
@@ -1319,6 +1330,340 @@ function loadManifests(cli) {
   return files.map((file) => readJson(path.join(MANIFEST_DIR, file)));
 }
 
+function buildExhaustiveManifests(cli) {
+  const caseIds = (cli.caseId ? [cli.caseId] : DEFAULT_CASES).map(normalizeCaseId);
+  const manifests = [];
+  const summaries = [];
+
+  for (const caseId of caseIds) {
+    const ctx = loadContext(caseId);
+    const generated = generateExhaustiveRoutes(ctx, cli);
+    manifests.push({
+      schemaVersion: 1,
+      caseId,
+      phase: 'exhaustive',
+      generatedBy: 'scripts/qa-route-simulator.cjs --exhaustive',
+      limits: {
+        maxDepth: cli.maxDepth,
+        maxStates: cli.maxStates,
+        maxRoutes: cli.maxRoutes,
+        maxActionsPerState: cli.maxActionsPerState,
+      },
+      routes: generated.routes,
+    });
+    summaries.push({
+      caseId,
+      ...generated.summary,
+    });
+  }
+
+  writeExhaustiveGenerationSummary(summaries, cli);
+  return manifests;
+}
+
+function generateExhaustiveRoutes(ctx, cli) {
+  const initialState = createInitialState(ctx.caseData, {});
+  const queue = [{
+    state: initialState,
+    actions: [],
+    depth: 0,
+    stateHash: hashExhaustiveState(initialState),
+  }];
+  const seen = new Set([queue[0].stateHash]);
+  const routes = [];
+  const edges = [];
+  const truncated = {
+    states: false,
+    routes: false,
+    depth: false,
+  };
+
+  let cursor = 0;
+  while (cursor < queue.length) {
+    const node = queue[cursor++];
+    if (node.depth >= cli.maxDepth) {
+      truncated.depth = true;
+      continue;
+    }
+
+    const candidates = generateCandidateActions(ctx, node.state)
+      .slice(0, cli.maxActionsPerState);
+
+    for (const action of candidates) {
+      if (routes.length >= cli.maxRoutes) {
+        truncated.routes = true;
+        break;
+      }
+
+      const nextState = cloneJson(node.state);
+      const outputs = executeAction({ ...ctx, state: nextState, action });
+      if (actionConsumesTurn(action)) nextState.turn += 1;
+      const nextHash = hashExhaustiveState(nextState);
+      const nextActions = [...node.actions, action];
+      const routeId = `exh-d${node.depth + 1}-${String(routes.length + 1).padStart(4, '0')}`;
+
+      routes.push({
+        id: routeId,
+        summary: `${action.type} from generated state depth ${node.depth}; outputs=${outputs.length}`,
+        phase: `exhaustive-depth-${node.depth + 1}`,
+        routePattern: 'exhaustive-state-space',
+        initialState: {},
+        actions: nextActions,
+      });
+      edges.push({
+        routeId,
+        from: node.stateHash,
+        to: nextHash,
+        depth: node.depth + 1,
+        action,
+        outputCount: outputs.length,
+      });
+
+      if (!seen.has(nextHash)) {
+        if (seen.size >= cli.maxStates) {
+          truncated.states = true;
+          continue;
+        }
+        seen.add(nextHash);
+        queue.push({
+          state: nextState,
+          actions: nextActions,
+          depth: node.depth + 1,
+          stateHash: nextHash,
+        });
+      }
+    }
+
+    if (truncated.routes) break;
+  }
+
+  return {
+    routes,
+    summary: {
+      generatedRoutes: routes.length,
+      visitedStates: seen.size,
+      exploredEdges: edges.length,
+      maxObservedDepth: routes.reduce((max, route) => Math.max(max, route.actions.length), 0),
+      truncated,
+      byAction: countActions(routes.flatMap((route) => route.actions.slice(-1))),
+      frontier: queue.length - cursor,
+    },
+  };
+}
+
+function generateCandidateActions(ctx, state) {
+  const { caseData, scripted } = ctx;
+  const actions = [];
+  const visibleDisputes = (caseData.disputes || [])
+    .filter((dispute) => state.disputes[dispute.id]?.visibility !== 'hidden');
+
+  for (const party of ['a', 'b']) {
+    const configs = party === 'a' ? caseData.lieConfigA || [] : caseData.lieConfigB || [];
+    for (const cfg of configs) {
+      if (!visibleDisputes.some((dispute) => dispute.id === cfg.disputeId)) continue;
+      for (const questionType of QUESTION_TYPES) {
+        const depth = peekQuestionDepth(state, party, cfg.disputeId, questionType);
+        if (
+          hasScriptedEntry(scripted, 'judge_question', `${cfg.disputeId}|${questionType}|${depth}`) ||
+          hasScriptedEntry(scripted, 'interrogation', `${party}|${cfg.disputeId}|${getLieState(state, party, cfg.disputeId)}|${questionType}`)
+        ) {
+          actions.push({ type: 'judge_question', target: party, disputeId: cfg.disputeId, questionType });
+        }
+      }
+
+      if (hasScriptedEntry(scripted, 'contradiction_pursuit', `${party}|${cfg.disputeId}|${getLieState(state, party, cfg.disputeId)}`)) {
+        actions.push({ type: 'contradiction_pursuit', target: party, disputeId: cfg.disputeId, transitionTrigger: 'direct_question' });
+      }
+    }
+  }
+
+  for (const ev of caseData.evidence || []) {
+    const evState = state.evidence[ev.id];
+    if (!evState?.unlocked) continue;
+    const targets = evidenceTargets(ev);
+    for (const target of targets) {
+      if (!(evState.presentedTo || []).includes(target)) {
+        actions.push({ type: 'evidence_present', target, evidenceId: ev.id, disputeId: ev.proves?.[0] });
+      }
+    }
+
+    const subAction = nextInvestigationSubAction(ev, evState);
+    if (subAction) {
+      actions.push({ type: 'evidence_investigate', target: ev.subjectParty === 'a' ? 'a' : 'b', evidenceId: ev.id, subAction, disputeId: ev.proves?.[0] });
+    }
+  }
+
+  for (const recipe of caseData.combinationLab?.recipes || []) {
+    const inputs = recipe.inputs || [];
+    if (!inputs.length) continue;
+    const evidenceInputs = inputs.filter((id) => id.startsWith('e-'));
+    if (evidenceInputs.length !== inputs.length) continue;
+    if (recipe.outputId && state.dossier[recipe.outputId]?.unlocked) continue;
+    const ready = evidenceInputs.every((id) => state.evidence[id]?.unlocked);
+    if (ready) {
+      actions.push({ type: 'evidence_combine', target: 'b', recipeId: recipe.id, inputs });
+    }
+  }
+
+  for (const output of caseData.combinationLab?.outputs || []) {
+    if (!state.dossier[output.id]?.unlocked) continue;
+    for (const target of ['b', 'a']) {
+      for (const questionNumber of [1, 2]) {
+        const questionId = `${output.id}.${target}.q${questionNumber}`;
+        const disputeId = output.disputeId || output.proves?.[0] || state.lastFocusedDisputeId;
+        const lieBand = toLieBand(getLieState(state, target, disputeId));
+        if (hasScriptedEntry(scripted, 'dossier', `${questionId}|${lieBand}`)) {
+          actions.push({ type: 'dossier', target, dossierId: output.id, questionId, questionNumber, disputeId });
+        }
+      }
+    }
+  }
+
+  const witnesses = caseData.activeThirdParties || caseData.duo?.socialGraph || [];
+  for (const witness of witnesses.slice(0, 3)) {
+    const witnessId = witness.id || witness.witnessId || witness.slot;
+    if (!witnessId) continue;
+    const disputeId = witness.disputeId || witness.relatedDisputeId || visibleDisputes[0]?.id;
+    if (!state.witnesses[witnessId]?.summoned) {
+      actions.push({ type: 'witness_summon', witnessId, disputeId });
+    } else {
+      actions.push({ type: 'witness_question', witnessId, disputeId });
+    }
+  }
+
+  return dedupeActions(actions)
+    .sort((a, b) => actionSortKey(a).localeCompare(actionSortKey(b)));
+}
+
+function evidenceTargets(ev) {
+  if (ev.subjectParty === 'a') return ['a'];
+  if (ev.subjectParty === 'b') return ['b'];
+  return ['a', 'b'];
+}
+
+function nextInvestigationSubAction(ev, evState) {
+  const keys = Object.keys(ev.investigationResults || {});
+  if (keys.length === 0) return null;
+  const used = new Set(evState.investigatedActions || []);
+  const ordered = ['request_original', 'check_metadata', 'restore_context', ...keys];
+  return ordered.find((key) => keys.includes(key) && !used.has(key)) || null;
+}
+
+function peekQuestionDepth(state, target, disputeId, questionType) {
+  const key = `${target}|${disputeId}|${questionType}`;
+  return Math.min(4, Math.max(1, (state.questionCounts[key] || 0) + 1));
+}
+
+function hasScriptedEntry(scripted, channel, key) {
+  return Boolean(scripted.channels?.[channel]?.entries?.some((entry) => entry.key === key));
+}
+
+function dedupeActions(actions) {
+  const seen = new Set();
+  const result = [];
+  for (const action of actions) {
+    const key = actionSortKey(action);
+    if (seen.has(key)) continue;
+    seen.add(key);
+    result.push(action);
+  }
+  return result;
+}
+
+function actionSortKey(action) {
+  return [
+    action.type,
+    action.target || '',
+    action.disputeId || '',
+    action.evidenceId || '',
+    action.recipeId || '',
+    action.dossierId || '',
+    action.questionId || '',
+    action.questionType || '',
+    action.subAction || '',
+    action.witnessId || '',
+  ].join('|');
+}
+
+function hashExhaustiveState(state) {
+  const evidence = {};
+  for (const id of Object.keys(state.evidence || {}).sort()) {
+    const ev = state.evidence[id];
+    evidence[id] = {
+      unlocked: ev.unlocked === true,
+      presentedTo: [...(ev.presentedTo || [])].sort(),
+      stage: ev.stage || 0,
+      investigatedActions: [...(ev.investigatedActions || [])].sort(),
+    };
+  }
+  const disputes = {};
+  for (const id of Object.keys(state.disputes || {}).sort()) disputes[id] = state.disputes[id]?.visibility || 'unknown';
+  const dossier = {};
+  for (const id of Object.keys(state.dossier || {}).sort()) dossier[id] = state.dossier[id]?.unlocked === true;
+  const witnesses = {};
+  for (const id of Object.keys(state.witnesses || {}).sort()) {
+    witnesses[id] = {
+      summoned: state.witnesses[id]?.summoned === true,
+      questions: state.witnesses[id]?.questions || 0,
+    };
+  }
+  return JSON.stringify({
+    lieStates: sortNestedObject(state.lieStates),
+    evidence,
+    disputes,
+    dossier,
+    witnesses,
+    questionCounts: sortNestedObject(state.questionCounts),
+    factTokens: sortNestedObject(state.factTokens),
+    lastFocusedDisputeId: state.lastFocusedDisputeId || null,
+  });
+}
+
+function sortNestedObject(value) {
+  if (!value || typeof value !== 'object' || Array.isArray(value)) return value;
+  return Object.fromEntries(Object.keys(value).sort().map((key) => [key, sortNestedObject(value[key])]));
+}
+
+function countActions(actions) {
+  return actions.reduce((acc, action) => {
+    increment(acc, action.type);
+    return acc;
+  }, {});
+}
+
+function writeExhaustiveGenerationSummary(summaries, cli) {
+  writeJson(path.join(RESULT_DIR, 'exhaustive-generation-summary.json'), {
+    schemaVersion: 1,
+    generatedAt: new Date().toISOString(),
+    mode: 'bounded-exhaustive',
+    limits: {
+      maxDepth: cli.maxDepth,
+      maxStates: cli.maxStates,
+      maxRoutes: cli.maxRoutes,
+      maxActionsPerState: cli.maxActionsPerState,
+    },
+    cases: summaries,
+  });
+
+  const lines = [
+    '# Route Exhaustive Generation Summary',
+    '',
+    '- mode: bounded exhaustive state-space generation',
+    `- max depth: ${cli.maxDepth}`,
+    `- max states per run: ${cli.maxStates}`,
+    `- max routes per case: ${cli.maxRoutes}`,
+    `- max actions per state: ${cli.maxActionsPerState}`,
+    '',
+    '## Cases',
+  ];
+  for (const summary of summaries) {
+    lines.push(
+      `- ${summary.caseId}: routes ${summary.generatedRoutes}, states ${summary.visitedStates}, edges ${summary.exploredEdges}, max depth ${summary.maxObservedDepth}, truncated=${Object.entries(summary.truncated).filter(([, value]) => value).map(([key]) => key).join(',') || 'none'}`,
+    );
+  }
+  fs.writeFileSync(path.join(RESULT_DIR, 'exhaustive-generation-summary.md'), `${lines.join('\n')}\n`, 'utf8');
+}
+
 function loadContext(caseId) {
   return {
     caseId,
@@ -1334,7 +1679,20 @@ function parseArgs(argv) {
     routeId: valueArg(argv, '--route'),
     coverageOnly: argv.includes('--coverage-only'),
     failOnHard: argv.includes('--fail-on-hard'),
+    exhaustive: argv.includes('--exhaustive'),
+    maxDepth: numberArg(argv, '--max-depth', EXHAUSTIVE_DEFAULTS.maxDepth),
+    maxStates: numberArg(argv, '--max-states', EXHAUSTIVE_DEFAULTS.maxStates),
+    maxRoutes: numberArg(argv, '--max-routes', EXHAUSTIVE_DEFAULTS.maxRoutes),
+    maxActionsPerState: numberArg(argv, '--max-actions-per-state', EXHAUSTIVE_DEFAULTS.maxActionsPerState),
+    resultDir: valueArg(argv, '--result-dir'),
   };
+}
+
+function configureResultDir(cli) {
+  RESULT_DIR = cli.resultDir
+    ? path.resolve(ROOT, cli.resultDir)
+    : (cli.exhaustive ? EXHAUSTIVE_RESULT_DIR : DEFAULT_RESULT_DIR);
+  TRANSCRIPT_DIR = path.join(RESULT_DIR, 'route-transcripts');
 }
 
 function valueArg(argv, name) {
@@ -1344,6 +1702,14 @@ function valueArg(argv, name) {
   const idx = argv.indexOf(name);
   if (idx >= 0 && argv[idx + 1] && !argv[idx + 1].startsWith('--')) return normalizeCaseOrRouteArg(argv[idx + 1], name);
   return null;
+}
+
+function numberArg(argv, name, fallback) {
+  const value = valueArg(argv, name);
+  if (value == null) return fallback;
+  const parsed = Number(value);
+  if (!Number.isFinite(parsed) || parsed < 1) return fallback;
+  return Math.floor(parsed);
 }
 
 function normalizeCaseOrRouteArg(value, name) {

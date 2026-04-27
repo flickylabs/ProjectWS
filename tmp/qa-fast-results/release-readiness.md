@@ -1,21 +1,21 @@
 # Release Readiness Decision
 
-## Status: RELEASE BLOCK
+## Status: RELEASE READY
 
 ## Reasoning
 
-- P0 hard findings present: 87
-- required final tags missing: baseline-pre-policy-v3-stage2, baseline-pre-policy-v3
+- P0 hard count is 0 across static and route runners.
+- Required final tags are present.
 
 ## Tag Verification
 
 - baseline-pre-policy-v3-stage1: de3ad48364a7f85ee2588e8385a4dcc1415a9f9e OK
-- baseline-pre-policy-v3-stage2: MISSING
-- baseline-pre-policy-v3: MISSING
+- baseline-pre-policy-v3-stage2: a7aaec36916b47390c919aad31c16ff625a84307 OK
+- baseline-pre-policy-v3: a7aaec36916b47390c919aad31c16ff625a84307 OK
 
 ## Mode Comparison
 
-- static: total 1757 / P0 87 / P1 1048 / P2 622
+- static: total 1669 / P0 0 / P1 1048 / P2 621
 - route: total 9 / P0 0 / P1 9 / P2 0
 
 ## Notes

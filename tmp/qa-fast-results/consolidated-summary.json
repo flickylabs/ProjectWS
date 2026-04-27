@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "startedAt": "2026-04-27T16:01:34.067Z",
-  "finishedAt": "2026-04-27T16:01:36.115Z",
+  "startedAt": "2026-04-27T16:45:58.914Z",
+  "finishedAt": "2026-04-27T16:46:01.171Z",
   "runs": {
     "static": {
       "mode": "static",
@@ -9,8 +9,8 @@
       "exitCode": 0,
       "signal": null,
       "error": null,
-      "startedAt": "2026-04-27T16:01:34.068Z",
-      "finishedAt": "2026-04-27T16:01:34.929Z"
+      "startedAt": "2026-04-27T16:45:58.917Z",
+      "finishedAt": "2026-04-27T16:45:59.946Z"
     },
     "route": {
       "mode": "route",
@@ -18,8 +18,8 @@
       "exitCode": 0,
       "signal": null,
       "error": null,
-      "startedAt": "2026-04-27T16:01:34.940Z",
-      "finishedAt": "2026-04-27T16:01:35.718Z"
+      "startedAt": "2026-04-27T16:45:59.957Z",
+      "finishedAt": "2026-04-27T16:46:00.779Z"
     }
   },
   "modes": {
@@ -27,28 +27,23 @@
       "mode": "static",
       "file": "tmp/qa-runtime-gate-results/findings.json",
       "readError": null,
-      "total": 1757,
+      "total": 1669,
       "bySeverity": {
-        "P2": 622,
-        "P1": 1048,
-        "P0": 87
+        "P2": 621,
+        "P1": 1048
       },
       "byCategory": {
         "generic_fallback_candidate": 82,
-        "qa_mismatch_candidate": 858,
-        "npc_truth_leak_s0_s2": 9,
-        "korean_polish_candidate": 540,
-        "evidence_stage_truth_description_exposure": 62,
-        "surface_only_channel_truth_leak": 58,
-        "internal_label_or_term_exposed": 128,
-        "truth_lexeme_early_exposure": 20
+        "qa_mismatch_candidate": 859,
+        "korean_polish_candidate": 539,
+        "evidence_stage_truth_description_exposure": 61,
+        "internal_label_or_term_exposed": 128
       },
       "byPatchPriority": {
         "P2-fallback-polish": 82,
-        "P1-script-focus-review": 822,
-        "P0-disclosure-gate": 87,
-        "P2-korean-polish": 540,
-        "P1-evidence-stage-review": 62,
+        "P1-script-focus-review": 823,
+        "P2-korean-polish": 539,
+        "P1-evidence-stage-review": 61,
         "P1-script-metadata-review": 36,
         "P1-surface-copy-hygiene": 128
       }
@@ -70,29 +65,24 @@
     }
   },
   "combined": {
-    "total": 1766,
+    "total": 1678,
     "bySeverity": {
-      "P2": 622,
-      "P1": 1057,
-      "P0": 87
+      "P2": 621,
+      "P1": 1057
     },
     "byCategory": {
       "generic_fallback_candidate": 82,
-      "qa_mismatch_candidate": 858,
-      "npc_truth_leak_s0_s2": 9,
-      "korean_polish_candidate": 540,
-      "evidence_stage_truth_description_exposure": 62,
-      "surface_only_channel_truth_leak": 58,
+      "qa_mismatch_candidate": 859,
+      "korean_polish_candidate": 539,
+      "evidence_stage_truth_description_exposure": 61,
       "internal_label_or_term_exposed": 128,
-      "truth_lexeme_early_exposure": 20,
       "evidence_investigate_no_npc_followup": 9
     },
     "byPatchPriority": {
       "P2-fallback-polish": 82,
-      "P1-script-focus-review": 822,
-      "P0-disclosure-gate": 87,
-      "P2-korean-polish": 540,
-      "P1-evidence-stage-review": 62,
+      "P1-script-focus-review": 823,
+      "P2-korean-polish": 539,
+      "P1-evidence-stage-review": 61,
       "P1-script-metadata-review": 36,
       "P1-surface-copy-hygiene": 128,
       "P1-route-contract-observability": 9
@@ -106,23 +96,20 @@
     },
     {
       "name": "baseline-pre-policy-v3-stage2",
-      "present": false,
-      "sha": null
+      "present": true,
+      "sha": "a7aaec36916b47390c919aad31c16ff625a84307"
     },
     {
       "name": "baseline-pre-policy-v3",
-      "present": false,
-      "sha": null
+      "present": true,
+      "sha": "a7aaec36916b47390c919aad31c16ff625a84307"
     }
   ],
   "release": {
-    "status": "RELEASE BLOCK",
-    "hardP0": 87,
+    "status": "RELEASE READY",
+    "hardP0": 0,
     "p1Informational": 1057,
-    "p2Warning": 622,
-    "reasons": [
-      "P0 hard findings present: 87",
-      "required final tags missing: baseline-pre-policy-v3-stage2, baseline-pre-policy-v3"
-    ]
+    "p2Warning": 621,
+    "reasons": []
   }
 }
