@@ -36,6 +36,9 @@ import { getTransitionBeat, getFallbackBeat } from './v3GameLoopLoader'
 import { emitStateTransitionEvent } from './stateTransitionHelper'
 // ── ScriptedText 우선 경로 (LLM 호출 없이 사전 생성 대사 사용) ──
 import { getScriptedInterrogation, getScriptedEvidencePresent, getScriptedDossier } from './scriptedTextLoader'
+import { blockHiddenTruthLexemes, getDisclosureGuardMode } from './disclosureGuard'
+import { ensureDisclosurePolicyLoaded } from './disclosurePolicyLoader'
+import type { DisclosureCaseId, DisclosureChannelType, GuardContext } from '../types/disclosure'
 
 interface DossierOverrideContext {
   questionId?: string
@@ -55,6 +58,101 @@ function parseDossierOverrideContext(raw: string | null): DossierOverrideContext
   } catch {
     return null
   }
+}
+
+function normalizeDisclosureCaseId(caseData: CaseData): DisclosureCaseId | null {
+  const caseId = normalizeCaseKey(caseData)
+  return caseId === 'spouse-01' || caseId === 'family-01' || caseId === 'friend-01'
+    ? caseId
+    : null
+}
+
+function resolveActionTarget(action: PlayerAction): PartyId {
+  return 'target' in action ? action.target ?? 'a' : 'a'
+}
+
+function resolveActionDisputeId(
+  action: PlayerAction,
+  caseData: CaseData,
+  store: ReturnType<typeof useGameStore.getState>,
+): string | undefined {
+  if ('disputeId' in action) return action.disputeId
+
+  if (action.type === 'evidence_present' || action.type === 'evidence_investigate') {
+    return caseData.evidence.find(e => e.id === action.evidenceId)?.proves?.[0]
+  }
+
+  if (action.type === 'trust_action') {
+    const recentJudgeEntries = store.dialogueLog
+      .filter((d: import('../types').DialogueEntry) => d.speaker === 'judge' && d.relatedDisputes.length > 0)
+    return recentJudgeEntries.at(-1)?.relatedDisputes[0]
+  }
+
+  return undefined
+}
+
+function resolveGuardChannel(action: PlayerAction, dossierContext: DossierOverrideContext | null): DisclosureChannelType {
+  if (dossierContext?.questionId) return 'dossier'
+  if (action.type === 'question') return 'interrogation'
+  if (action.type === 'evidence_present') return 'evidence_present'
+  if (action.type === 'evidence_investigate') return 'evidence_discovery'
+  if (action.type === 'mediation') return 'mediation'
+  return 'interrogation'
+}
+
+function buildDisclosureGuardContext(
+  action: PlayerAction,
+  caseData: CaseData,
+  evidenceStates: Record<string, EvidenceRuntimeState>,
+  agentA: AgentState,
+  agentB: AgentState,
+  store: ReturnType<typeof useGameStore.getState>,
+  dossierContext: DossierOverrideContext | null,
+  variant: string,
+  overrides: Partial<GuardContext> = {},
+): GuardContext | null {
+  const caseId = normalizeDisclosureCaseId(caseData)
+  if (!caseId) return null
+
+  const target = overrides.party ?? resolveActionTarget(action)
+  const disputeId = overrides.disputeId ?? resolveActionDisputeId(action, caseData, store)
+  const agent = target === 'a' ? agentA : agentB
+  const evidenceId = 'evidenceId' in action ? action.evidenceId : undefined
+  const evidenceState = evidenceId ? evidenceStates[evidenceId] : undefined
+
+  return {
+    channel: overrides.channel ?? resolveGuardChannel(action, dossierContext),
+    caseId,
+    lieState: overrides.lieState ?? (disputeId ? agent.lieStateMap[disputeId]?.currentState : undefined),
+    evidenceState: overrides.evidenceState ?? (evidenceId
+      ? {
+          evidenceId,
+          unlocked: evidenceState?.unlocked,
+          presented: evidenceState?.presented,
+          investigationStage: evidenceState?.investigatedActions.length ?? 0,
+        }
+      : undefined),
+    party: target,
+    disputeId,
+    variant,
+    dossierStage: overrides.dossierStage,
+  }
+}
+
+async function applyDisclosureGuardToText(text: string, context: GuardContext | null): Promise<string> {
+  if (!context || getDisclosureGuardMode() === 'off') return text
+  await ensureDisclosurePolicyLoaded(context.caseId)
+  blockHiddenTruthLexemes(text, context)
+  return text
+}
+
+async function applyDisclosureGuardToResolvedDialogue(
+  result: ResolvedDialogue | null,
+  context: GuardContext | null,
+): Promise<ResolvedDialogue | null> {
+  if (!result) return result
+  await applyDisclosureGuardToText(result.node.text, context)
+  return result
 }
 
 export async function resolveLLMDialogue(
@@ -78,7 +176,18 @@ export async function resolveLLMDialogue(
 
   // ── Blueprint 경로 분기: ClaimPolicy가 있는 사건은 새 경로 ──
   const blueprintResult = await tryBlueprintPath(action, agentA, agentB, evidenceStates, caseData, store)
-  if (blueprintResult !== null) return blueprintResult
+  if (blueprintResult !== null) {
+    return applyDisclosureGuardToResolvedDialogue(
+      blueprintResult,
+      buildDisclosureGuardContext(
+        action, caseData, evidenceStates, agentA, agentB, store, dossierContext, 'blueprint-result',
+        {
+          party: blueprintResult.target,
+          disputeId: blueprintResult.node.conditions.disputeId,
+        },
+      ),
+    )
+  }
 
   // ── 기존 경로 (ClaimPolicy 없는 사건) ──
   try {
@@ -315,6 +424,18 @@ export async function resolveLLMDialogue(
         }
       }
       if (finalJudgeQuestion) {
+        finalJudgeQuestion = await applyDisclosureGuardToText(
+          finalJudgeQuestion,
+          buildDisclosureGuardContext(
+            action, caseData, evidenceStates, agentA, agentB, store, dossierContext, 'llm-judge-question',
+            {
+              channel: 'judge_question',
+              party: target,
+              disputeId,
+              lieState: lieEntry?.currentState,
+            },
+          ),
+        )
         store.addDialogue({
           speaker: 'judge',
           text: finalJudgeQuestion,
@@ -326,21 +447,50 @@ export async function resolveLLMDialogue(
 
     // responseMode는 엔진이 강제 (LLM 출력 무시)
     const contractObj2 = JSON.parse(actionContract) as { responseMode?: string; answerStyle?: string }
-    return {
+    return applyDisclosureGuardToResolvedDialogue({
       node: parsed.npcNode, target,
       stance: parsed.stance,
       responseMode: contractObj2.responseMode ?? parsed.responseMode,  // 엔진 값 우선
       answerStyle: contractObj2.answerStyle ?? 'factual',
       mentionedTruthIds: parsed.mentionedTruthIds,
       requestedFollowup: parsed.requestedFollowup,
-    }
+    }, buildDisclosureGuardContext(
+      action, caseData, evidenceStates, agentA, agentB, store, dossierContext, 'llm-npc-response',
+      {
+        party: target,
+        disputeId,
+        lieState: lieEntry?.currentState,
+      },
+    ))
   } catch (error) {
     console.warn('LLM 호출 실패, 폴백:', error)
-    return fallbackResolve(action, agentA, agentB, evidenceStates)
+    const fallbackResult = fallbackResolve(action, agentA, agentB, evidenceStates)
+    return applyDisclosureGuardToResolvedDialogue(
+      fallbackResult,
+      buildDisclosureGuardContext(
+        action, caseData, evidenceStates, agentA, agentB, store, dossierContext, 'legacy-fallback-inner',
+        {
+          party: fallbackResult?.target ?? target,
+          disputeId: fallbackResult?.node.conditions.disputeId ?? disputeId,
+          lieState: fallbackResult?.node.conditions.lieState ?? lieEntry?.currentState,
+        },
+      ),
+    )
   }
   } catch (outerError) {
     console.error('[resolveLLMDialogue] 프롬프트 조립 또는 처리 중 에러:', outerError)
-    return fallbackResolve(action, agentA, agentB, evidenceStates)
+    const fallbackResult = fallbackResolve(action, agentA, agentB, evidenceStates)
+    return applyDisclosureGuardToResolvedDialogue(
+      fallbackResult,
+      buildDisclosureGuardContext(
+        action, caseData, evidenceStates, agentA, agentB, store, dossierContext, 'legacy-fallback-outer',
+        {
+          party: fallbackResult?.target,
+          disputeId: fallbackResult?.node.conditions.disputeId,
+          lieState: fallbackResult?.node.conditions.lieState,
+        },
+      ),
+    )
   }
 }
 
@@ -2225,9 +2375,21 @@ async function tryBlueprintPath(
 
     // 재판관 질문 추가
     if (!shouldSkipJudgeQuestion() && judgeQuestion) {
+      const guardedJudgeQuestion = await applyDisclosureGuardToText(
+        judgeQuestion,
+        buildDisclosureGuardContext(
+          action, caseData, evidenceStates, agentA, agentB, store, null, 'blueprint-judge-question',
+          {
+            channel: 'judge_question',
+            party: target,
+            disputeId,
+            lieState: lieEntry.currentState,
+          },
+        ),
+      )
       store.addDialogue({
         speaker: 'judge',
-        text: judgeQuestion,
+        text: guardedJudgeQuestion,
         relatedDisputes: [disputeId],
         turn: store.turnCount,
       })
@@ -2300,8 +2462,20 @@ async function tryBlueprintPath(
 
       // 재판관 질문은 여전히 삽입
       if (judgeQuestion) {
+        const guardedJudgeQuestion = await applyDisclosureGuardToText(
+          judgeQuestion,
+          buildDisclosureGuardContext(
+            action, caseData, evidenceStates, agentA, agentB, store, null, 'blueprint-fallback-judge-question',
+            {
+              channel: 'judge_question',
+              party: target,
+              disputeId,
+              lieState: lieEntry.currentState,
+            },
+          ),
+        )
         store.addDialogue({
-          speaker: 'judge', text: judgeQuestion,
+          speaker: 'judge', text: guardedJudgeQuestion,
           relatedDisputes: [disputeId], turn: store.turnCount,
         })
       }
