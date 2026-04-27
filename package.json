@@ -16,6 +16,7 @@
     "qa:browser": "node scripts/qa-browser-harness.cjs",
     "qa:fast": "node scripts/qa-fast.cjs",
     "qa:deep": "node scripts/qa-deep.cjs",
+    "qa:visual": "node scripts/qa-visual-report.cjs",
     "check:policy": "node tmp/policy-vs-data-cross-check.cjs",
     "check:sync": "node tmp/policy-md-json-sync-check.cjs",
     "check:all": "node tmp/run-all-checks.cjs && node tmp/policy-vs-data-cross-check.cjs && node tmp/policy-md-json-sync-check.cjs",
