@@ -116,7 +116,9 @@ export default function PCCaseTimelineSection({ onItemClick }: Props = {}) {
                 >
                   <span className="pc-timeline__rail">
                     {index > 0 ? <span className="pc-timeline__line" /> : null}
-                    <span className={`pc-timeline__dot is-${item.tone}`} />
+                    <span className={`pc-timeline__dot is-${item.tone}`}>
+                      <PCSvgIcon id={item.iconId} size={10} />
+                    </span>
                     {index < arr.length - 1 ? <span className="pc-timeline__line" /> : null}
                   </span>
                   <span className="pc-timeline__content">

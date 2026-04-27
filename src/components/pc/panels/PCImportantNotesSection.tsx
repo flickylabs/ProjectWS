@@ -392,7 +392,10 @@ export default function PCImportantNotesSection() {
         aria-hidden={!expanded}
       >
         <div className="pc-notes-expanded__header">
-          <span className="pc-notes-expanded__title">발언 노트</span>
+          <span className="pc-notes-expanded__title">
+            <PCSvgIcon id="i-chat" size={16} />
+            <span>발언 노트</span>
+          </span>
           <button className="pc-notes-expanded__close" onClick={() => setExpanded(false)} type="button" aria-label="닫기">
             ✕
           </button>

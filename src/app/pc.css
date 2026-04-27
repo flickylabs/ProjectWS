@@ -19054,6 +19054,10 @@ body.pc-mode .pc-play-timeline-panel {
   border: 1px solid rgba(212, 162, 78, 0.22) !important;
   border-radius: 16px !important;
   padding: 0 !important;
+  box-shadow: 0 28px 60px rgba(0, 0, 0, 0.42) !important;
+  color: var(--pc-text) !important;
+  overflow: hidden !important;
+  z-index: 60 !important;
 }
 
 /* 헤더 영역 통일 */
@@ -19080,6 +19084,17 @@ body.pc-mode .pc-play-timeline-panel .pc-case-timeline-section > .sec-h > span:n
   letter-spacing: 0.02em !important;
   margin: 0 !important;
 }
+body.pc-mode .pc-jobs-drawer__title svg,
+body.pc-mode .pc-fav-notes-drawer .pc-notes-expanded__title svg,
+body.pc-mode .pc-play-timeline-panel .pc-case-timeline-section > .sec-h svg {
+  color: var(--pc-gold-light) !important;
+  flex: 0 0 auto !important;
+}
+body.pc-mode .pc-fav-notes-drawer .pc-notes-expanded__title {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+}
 
 /* 카운트 배지 통일 */
 body.pc-mode .pc-fav-notes-drawer .pc-notes-expanded__header .cnt,
@@ -19095,6 +19110,7 @@ body.pc-mode .pc-play-timeline-panel .pc-case-timeline-section > .sec-h .cnt {
 body.pc-mode .pc-jobs-drawer__filter-row,
 body.pc-mode .pc-fav-notes-drawer .pc-notes-tabs {
   padding: 10px 18px !important;
+  border-bottom: 1px solid rgba(212, 162, 78, 0.14) !important;
   flex-shrink: 0 !important;
 }
 
@@ -19129,6 +19145,98 @@ body.pc-mode .pc-timeline__empty {
   font-size: 13px !important;
   color: var(--pc-text-muted) !important;
   text-align: center !important;
+}
+
+body.pc-mode .pc-play-timeline-panel .pc-timeline__item {
+  grid-template-columns: 24px minmax(0, 1fr) !important;
+  gap: 10px !important;
+  padding: 8px 0 !important;
+  animation: none !important;
+}
+body.pc-mode .pc-play-timeline-panel .pc-timeline__content {
+  padding: 0 !important;
+  gap: 3px !important;
+}
+body.pc-mode .pc-play-timeline-panel .pc-timeline__rail {
+  width: 24px !important;
+  min-height: 100% !important;
+}
+body.pc-mode .pc-play-timeline-panel .pc-timeline__line {
+  background: rgba(255, 255, 255, 0.06) !important;
+}
+body.pc-mode .pc-play-timeline-panel .pc-timeline__dot {
+  width: 18px !important;
+  height: 18px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border-radius: 50% !important;
+  border: 1px solid rgba(43, 46, 52, 0.9) !important;
+  background: rgba(20, 22, 28, 0.95) !important;
+  color: var(--pc-text-dim) !important;
+}
+body.pc-mode .pc-play-timeline-panel .pc-timeline__dot.is-gold { color: var(--pc-gold-light) !important; }
+body.pc-mode .pc-play-timeline-panel .pc-timeline__dot.is-red { color: var(--pc-red) !important; }
+body.pc-mode .pc-play-timeline-panel .pc-timeline__dot.is-blue { color: var(--pc-blue) !important; }
+body.pc-mode .pc-play-timeline-panel .pc-timeline__dot.is-green { color: var(--pc-green) !important; }
+body.pc-mode .pc-play-timeline-panel .pc-timeline__dot.is-neutral { color: var(--pc-text-muted) !important; }
+body.pc-mode .pc-play-timeline-panel .pc-timeline__dot.is-mystery {
+  color: var(--pc-text-muted) !important;
+  border-style: dashed !important;
+  background: transparent !important;
+}
+
+body.pc-mode .pc-fav-notes-drawer .pc-notes-tab {
+  border-radius: 999px !important;
+  border-color: rgba(43, 46, 52, 0.75) !important;
+  background: rgba(28, 30, 36, 0.8) !important;
+  color: var(--pc-text-muted) !important;
+}
+body.pc-mode .pc-fav-notes-drawer .pc-notes-tab:hover {
+  background: rgba(40, 42, 48, 0.9) !important;
+  color: var(--pc-gold-light) !important;
+}
+body.pc-mode .pc-fav-notes-drawer .pc-notes-tab.is-active {
+  background: rgba(90, 62, 40, 0.95) !important;
+  border-color: rgba(122, 88, 58, 0.9) !important;
+  color: var(--pc-gold-light) !important;
+}
+body.pc-mode .pc-fav-notes-drawer .pc-note-expanded-card,
+body.pc-mode .pc-fav-notes-drawer .pc-notes-compare__entry {
+  border-color: rgba(255, 255, 255, 0.06) !important;
+  background: rgba(20, 22, 28, 0.44) !important;
+}
+body.pc-mode .pc-fav-notes-drawer .pc-note-expanded-card:hover,
+body.pc-mode .pc-fav-notes-drawer .pc-notes-compare__entry:hover {
+  background: rgba(40, 42, 48, 0.64) !important;
+}
+
+@media (max-width: 900px) {
+  body.pc-mode .pc-fav-notes-drawer,
+  body.pc-mode .pc-jobs-drawer,
+  body.pc-mode .pc-play-timeline-panel {
+    top: 64px !important;
+    right: 12px !important;
+    bottom: 18px !important;
+    left: 12px !important;
+    width: auto !important;
+    max-width: none !important;
+  }
+
+  body.pc-mode .pc-jobs-drawer__header,
+  body.pc-mode .pc-fav-notes-drawer .pc-notes-expanded__header,
+  body.pc-mode .pc-play-timeline-panel .pc-case-timeline-section > .sec-h {
+    padding: 12px 46px 10px 14px !important;
+  }
+
+  body.pc-mode .pc-jobs-drawer__filter-row,
+  body.pc-mode .pc-fav-notes-drawer .pc-notes-tabs,
+  body.pc-mode .pc-jobs-drawer__timeline,
+  body.pc-mode .pc-fav-notes-drawer .pc-notes-expanded__content,
+  body.pc-mode .pc-play-timeline-panel .pc-case-timeline-section .sec-content {
+    padding-right: 14px !important;
+    padding-left: 14px !important;
+  }
 }
 
 /* ═══════════════════════════════════════════════════════════════════
@@ -20779,4 +20887,3 @@ body.pc-mode .pc-filter-pill-v2.is-active {
   border-color: rgba(212, 162, 78, 0.45) !important;
   color: var(--pc-gold-light) !important;
 }
-
