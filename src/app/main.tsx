@@ -4,6 +4,7 @@ import './index.css'
 import App from './App'
 import ErrorBoundary from '../components/layout/ErrorBoundary'
 import ToastContainer from '../components/common/Toast'
+import AIReasoningCutscene from '../components/freeInterrogation/AIReasoningCutscene'
 
 // PWA 서비스 워커 등록
 if ('serviceWorker' in navigator) {
@@ -17,6 +18,7 @@ createRoot(document.getElementById('root')!).render(
     <ErrorBoundary>
       <App />
       <ToastContainer />
+      <AIReasoningCutscene />
     </ErrorBoundary>
   </StrictMode>,
 )

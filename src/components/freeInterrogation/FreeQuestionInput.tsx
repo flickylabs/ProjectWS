@@ -1,5 +1,5 @@
 import { useCallback, useMemo, useState, type RefObject } from 'react'
-import type { PartyId } from '../../types'
+import type { CaseData, FreeInterrogationIntent, FreeInterrogationIntentId, PartyId } from '../../types'
 import { useActionDispatch } from '../../hooks/useActionDispatch'
 import { useGameStore, useStore } from '../../store/useGameStore'
 import {
@@ -8,6 +8,11 @@ import {
   resolveFreeInterrogation,
 } from '../../engine/freeInterrogation'
 import { normalizeCaseKey } from '../../utils/caseHelpers'
+import {
+  claimAIReasoningCutsceneFirstSuccess,
+  triggerAIReasoningCutscene,
+  type AIReasoningCutscenePayload,
+} from './AIReasoningCutscene'
 
 interface Props {
   target: PartyId | null
@@ -64,6 +69,10 @@ export default function FreeQuestionInput({
       if (result.status === 'dispatch' && result.action) {
         useGameStore.getState().spend('investigationTokens', 1)
         dispatch(result.action)
+        const cutscenePayload = buildAIReasoningCutscenePayload(trimmed, result.intent, caseData)
+        if (cutscenePayload) {
+          triggerAIReasoningCutscene(cutscenePayload)
+        }
       } else {
         const fallbackTarget = target
         const related = result.intent.mapped.disputeId ? [result.intent.mapped.disputeId] : []
@@ -127,4 +136,60 @@ export default function FreeQuestionInput({
       <span className="text-[11px] text-gray-500">{resources.investigationTokens < 1 ? '토큰 부족' : metaText}</span>
     </form>
   )
+}
+
+const INTENT_LABELS: Record<FreeInterrogationIntentId, string> = {
+  fact_pursuit: '사실 추궁',
+  motive_search: '동기 탐색',
+  empathy_approach: '감정 접근',
+  evidence_query: '관련 증거 확인',
+  relation_query: '관계 확인',
+  pre_verdict_summary: '판결 전 정리',
+  unmapped: '질문 분석',
+}
+
+function buildAIReasoningCutscenePayload(
+  questionText: string,
+  intent: FreeInterrogationIntent,
+  caseData: CaseData,
+): AIReasoningCutscenePayload | null {
+  const target = intent.mapped.target
+  const disputeId = intent.mapped.disputeId
+  if (intent.intent === 'unmapped' || !target || !disputeId) return null
+
+  const dispute = caseData.disputes.find((item) => item.id === disputeId)
+  const evidence = intent.mapped.evidenceRef
+    ? caseData.evidence.find((item) => item.id === intent.mapped.evidenceRef)
+    : null
+  const partyName = target === 'a'
+    ? caseData.duo.partyA.name
+    : caseData.duo.partyB.name
+
+  return {
+    isFirstSuccess: claimAIReasoningCutsceneFirstSuccess(normalizeCaseKey(caseData)),
+    questionText,
+    chips: {
+      target: {
+        label: partyName,
+        selector: `[data-party="${escapeAttributeValue(target)}"]`,
+      },
+      intent: {
+        label: INTENT_LABELS[intent.intent],
+      },
+      dispute: {
+        label: dispute?.name ?? disputeId,
+        selector: `[data-dispute-id="${escapeAttributeValue(disputeId)}"]`,
+      },
+      evidence: evidence
+        ? {
+            label: evidence.surfaceName ?? evidence.name,
+            selector: `[data-evidence-id="${escapeAttributeValue(evidence.id)}"]`,
+          }
+        : undefined,
+    },
+  }
+}
+
+function escapeAttributeValue(value: string): string {
+  return value.replace(/\\/g, '\\\\').replace(/"/g, '\\"')
 }

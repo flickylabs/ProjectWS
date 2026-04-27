@@ -9,6 +9,7 @@ import PCPrototypeStyle from '../components/pc/prototype/PCPrototypeStyle'
 import PCSvgDefs from '../components/pc/icons/PCSvgDefs'
 import EventFeedbackCard from '../components/pc/feedback/EventFeedbackCard'
 import ResonanceLayer from '../components/pc/observation/ResonanceLayer'
+import AIReasoningCutscene from '../components/freeInterrogation/AIReasoningCutscene'
 import { bucketFromPreset, readStoredPreset } from '../utils/screenPresets'
 
 // PC 모드 — body 클래스 추가
@@ -31,6 +32,7 @@ createRoot(document.getElementById('root')!).render(
       <PCApp />
       <ToastContainer />
       <EventFeedbackCard />
+      <AIReasoningCutscene />
       <ResonanceLayer />
     </ErrorBoundary>
   </StrictMode>,

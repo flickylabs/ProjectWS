@@ -554,7 +554,7 @@ export default function PCRightPanel() {
           <span className="sub">{targetProfile.name}</span>
         </div>
 
-        <div className={`pc-target-shell pc-right-card party-${pcTargetParty}`}>
+        <div className={`pc-target-shell pc-right-card party-${pcTargetParty}`} data-party={pcTargetParty}>
           <div className="pc-target-tabs">
             <button
               className={`pc-target-tab${pcTargetParty === 'a' ? ' is-active' : ''}`}

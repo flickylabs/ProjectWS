@@ -202,6 +202,7 @@ export default function PCLeftPanel() {
             return (
               <div
                 className={`pc-ev-notebook${combinableIds.has(evidence.id) ? ' is-combinable' : ''}`}
+                data-evidence-id={evidence.id}
                 data-resonance-target={`evidence-${evidence.id}`}
                 draggable
                 key={evidence.id}
