@@ -1,7 +1,7 @@
-# 새 ClaudeCode CT 첫 메시지 (사용자 복사용)
+# 새 ClaudeCode CT-Main 첫 메시지 (사용자 복사용)
 
 > **사용 방법**: 새 ClaudeCode 스레드 시작 → 아래 박스 안 내용 그대로 복사 → 첫 메시지로 던짐
-> **상황**: 중앙 컨트롤 (Tier 3 Guard 시스템) 개발 완료 + Phase 0 default off 안정 운영 진입 가능 + 출시 전 품질 개선 단계 전환
+> **상황**: 출시 전 Script Runtime QA Gate 진입 영역. #1 Spoiler Cascade 완료 / #2 Free Question Hygiene 재진입 예정 / Route Simulator → P0 Script Runtime QA Gate v2 승격.
 
 ---
 
@@ -10,159 +10,139 @@
 
 [메모리 — 필수]
 1. memory/MEMORY.md (인덱스)
-2. memory/session_handoff_20260427_tier3_phase0_started.md (CT 이관 최신 — 중앙 컨트롤 개발 완료)
-3. memory/feedback_wrapper_baseline_is_head.md (wrapper baseline 본질)
-4. memory/feedback_baseline_anchor_scripted_text.md (ScriptedText 변경 영역)
-5. memory/feedback_qa_session_clean_worktree.md (QA 세션 진입 조건)
-6. memory/feedback_revision_meaning_over_form.md (잘못 패턴 #6/#7/#8)
-7. memory/feedback_truth_leak_prohibition.md (잘못 패턴 #9)
-8. memory/feedback_broad_homologous_detection.md (잘못 패턴 #11)
-9. memory/feedback_static_analysis_limit.md (잘못 패턴 #12)
-10. memory/story_v2_confirmed_3cases.md (3 사건 핵심 사실)
-11. memory/project_active_cases.md (활성 3건)
+2. memory/session_handoff_20260427_pre_launch_qa_gate.md (CT 이관 최신 — Script Runtime QA Gate 진입 영역)
+3. memory/feedback_shared_worktree_no_parallel_with_dirty.md (운영 방식 정정 — 본 세션 학습 영역)
+4. memory/feedback_truth_leak_prohibition.md (잘못 패턴 #9)
+5. memory/feedback_revision_meaning_over_form.md (잘못 패턴 #6/#7/#8)
+6. memory/feedback_broad_homologous_detection.md (잘못 패턴 #11)
+7. memory/feedback_static_analysis_limit.md (잘못 패턴 #12)
+8. memory/feedback_ct_audit_before_request.md (CT 사전 audit 영역)
+9. memory/feedback_git_pull_in_entry_check.md (read/report only도 git pull)
+10. memory/feedback_ephemeral_artifacts_gitignore.md (영구 ephemeral)
+11. memory/feedback_qa_session_clean_worktree.md (QA 세션 진입 조건)
+12. memory/feedback_baseline_anchor_scripted_text.md (ScriptedText baseline 영역)
+13. memory/feedback_wrapper_baseline_is_head.md (wrapper 본질)
+14. memory/story_v2_confirmed_3cases.md (3 사건 핵심 사실)
+15. memory/project_active_cases.md (활성 3 사건)
 
 [프로젝트]
-12. CLAUDE.md (게임 핵심 원칙 "진실은 플레이어가 직접 밝혀낸다")
-13. docs/disclosure-policy.md (Tier 3 정책 입력 — paraphrase set + uiSurfaceMap surface + gating 박스)
+16. CLAUDE.md (게임 핵심 원칙 "진실은 플레이어가 직접 밝혀낸다")
+17. docs/disclosure-policy.md v1.1 (§13 audit 검출 패턴)
+18. docs/information-surface-policy.md v1.1 (7 표면 위상)
+
+[현재 진입 영역 의뢰서 — 정독]
+19. tmp/REQUEST-Codex-FreeQuestion-LLM-Hygiene-Fast-Fix.md v2 (#2 — scope 축소)
+20. tmp/REQUEST-Codex-Route-Simulator.md v2 (Script Runtime QA Gate P0 승격)
+21. tmp/MANUAL-QA-GUIDE-Domain-4-API-Failure-UX.md (사용자 직접 영역)
 
 [참고 — 필요 시]
-- memory/session_handoff_20260427_tier3_mvp_complete.md (Tier 3 MVP 설치 영역)
-- memory/session_handoff_20260427_tier1_tier2_complete.md (Tier 0/1/2 정착 영역)
-- memory/session_handoff_20260427_ui_v3_subthread.md (UI 서브 스레드 영역 — CT 영역 X)
-- memory/design_color_tokens_pc.md (pc.css 토큰 권위 문서)
+- memory/session_handoff_20260427_pre_launch_parallel_tracks.md (이전 영역 — Gate 승격 전)
+- memory/session_handoff_20260427_tier3_phase0_started.md (Tier 3 Phase 0 영역)
+- tmp/REQUEST-Codex-Spouse-01-Phase2-Spoiler-Cascade-Fast-Fix.md (#1 — 완료 영역 / 7a2b693)
+- tmp/REQUEST-Script-Polish-Audit.md (완료 영역 / ea6ff31)
+- tmp/REQUEST-QA-Release.md (완료 영역 / 09a1915)
+- tmp/REQUEST-Codex-API-Proxy-Migration.md (완료 영역 / 596d235)
 
 ═══════════════════════════════════════════════════════
 [현재 상태]
 ═══════════════════════════════════════════════════════
-- HEAD: bd46418 fix(disclosureGuard): catch 보내신 honorific inflection in family-01 paraphrase
-- origin/main sync 완료 (ahead 0)
-- baseline-pre-policy-v1 (a10b801) — 원래 anchor (불변)
-- baseline-pre-policy-v2 (acf5d27) — Dev-A P1 stabilization
-- 운영 단계: Phase 0 default off — 안정 운영 진입 가능
-- feature flag VITE_DISCLOSURE_GUARD_MODE default = 'off' 유지
-- npm run check:all PASS (hard 0 / warnings 157)
+- HEAD: 88042c8 docs(handoff): Script Runtime QA Gate v2 — P0 승격
+- main == origin/main (sync)
+- tracked dirty: 0
+- untracked 영역:
+  - tmp/CODEX-MAIN-HANDOFF-20260427-P0-PARALLEL.md (보존 영역)
+  - tmp/PASTE-Codex-Spouse-01-Phase2-Finalize-FIRST-MESSAGE.md (doubled work / 사용자 결정 영역)
 
 ═══════════════════════════════════════════════════════
-[중앙 컨트롤 개발 완료 — 이전 세션 영역, 사용자 명시 정의]
+[완료 영역 — 이전 세션]
 ═══════════════════════════════════════════════════════
-- Tier 3 Guard MVP 설치 완료 (commit f03f49f)
-- Dev-B follow-up FN 1건 처리 (commit bd46418, 활용형 catch 영역 보강)
-- baseline-pre-policy-v2 tag 생성 (acf5d27)
-- 7 commits 누적 흐름 / origin sync 완료
-- 검증 PASS (build / tsc / check:all 모두)
-
-→ 다음 단계는 중앙 컨트롤 개발 X / 출시 전 품질 개선 영역만
-
-═══════════════════════════════════════════════════════
-[작업 중 영역 — UI 서브 스레드 (CT 영역 X)]
-═══════════════════════════════════════════════════════
-- src/app/pc.css dirty 상태 (656건 토큰 일괄 통일 / 의미 변화 0)
-- CT 영역 X / 사용자 결정 영역
-- CT 임의 stash/discard/commit 절대 금지
-- 산출물: tmp/style-guide-v1.html / tmp/pages-mockup-v1.html / tmp/cutscene-mockup-v1.html
+- API Proxy Migration: 596d235 (출시 차단 P0 해소)
+- P0-A·B Free Interrogation MVP + Guard: 6a4846b
+- P0-E VFX Hierarchy: 995e48a + 773a81a
+- P0-F AI Reasoning Cutscene: 6cf4afa
+- UI Drawer Consistency Fix: 04ac5bf
+- Script Polish Audit: ea6ff31 (25 findings — P0 14 / P1 7 / P2 4)
+- Release QA Domain 1~10: 09a1915 (PASS with caveats / Domain 4 Manual QA)
+- #1 spouse-01 Phase 2 Spoiler Cascade Fast Fix: 7a2b693 (5 commits 영역)
+- 정책 영역 v1.1: dba045d (§13 audit 검출 패턴 + 정보 위상 보정)
 
 ═══════════════════════════════════════════════════════
-[다음 단계 = 출시 전 품질 개선 (사용자 명시 4 영역)]
+[진입 매트릭스 (현재)]
 ═══════════════════════════════════════════════════════
-1. Manual play spot check (즉시 시작 가능 / 사용자 직접)
-   - 기본 mode=off / 필요 시 ?guard=log 또는 localStorage['solomon-disclosure-guard-mode']='log'
-   - 발견 사례 = docs/spot-check-format.md 8필드 기록
-   - P0/P1 = 출시 전 우선 처리 / P2 = 누적 backlog
-2. P1 script polish (Codex-Dev 영역, Dev-A 패턴 정합)
-   - ScriptedText 보정 = Codex-Dev 의뢰 (CT-Main 직접 X — wrapper 회귀)
-   - 9차원 의미 보존 (잘못 패턴 #6)
-3. 제한형 자유 질문 MVP 설계/구현 (CT-Main 설계 + Codex-Dev 구현)
-   - 영역 새로 설계 (별도 의뢰서)
-   - feature flag default off 패턴 권장 (Tier 3 Guard MVP와 정합)
-4. 컷씬/피드백 MVP 설계/구현 (CT-Main 설계 + Codex-Dev + UI 서브 협조)
-   - tmp/cutscene-mockup-v1.html 참조 가능
+| 트랙 | 상태 | 진입 path |
+|---|---|---|
+| #1 Spoiler Cascade Finalize | ✅ 완료 (7a2b693) | - |
+| **#2 Free Question Hygiene v2 (scope 축소)** | 🟢 **재진입 예정** | tmp/PASTE-Codex-FreeQuestion-LLM-Hygiene-Fast-Fix-FIRST-MESSAGE.md |
+| **Script Runtime QA Gate v2 (P0 승격)** | 🟢 준비 완료 — #2 후 진입 권장 | tmp/PASTE-Route-Simulator-FIRST-MESSAGE.md |
+| 통합 Script Patch | ⏸ Gate 결과 후 | (의뢰서 작성 영역 후속) |
+| Domain 4 Manual QA | 🟢 사용자 직접 | tmp/MANUAL-QA-GUIDE-Domain-4-API-Failure-UX.md |
 
 ═══════════════════════════════════════════════════════
-[분담 정착]
+[남은 출시 전 핵심 5 영역 (사용자 명시)]
 ═══════════════════════════════════════════════════════
-- CT-Main = 한국어 자연체 / 의미 정확성 / 정책 검수 / 우선순위 결정 / Codex-Dev 의뢰서 작성 / Manual spot check 분류
-- Codex-Dev = 정책 JSON / 검증 wrapper / runtime guard / ScriptedText 보정 / UI 코드 fix / harness (의뢰 시)
-- CT-Cross = 의미 차원 깊은 review (Codex 결과 교차 검증)
-- UI 서브 스레드 = src/app/pc.css 토큰 통일 / UI 디자인 v3 (CT 영역 X)
-- 사용자 = Manual play spot check / 최종 판단 / 큰 영역 승인
+1. #2 결과 회수 (Free Question Hygiene v2)
+2. Script Runtime QA Gate 실행
+3. Script Polish P0/P1 통합 patch (Gate findings + Audit 25 findings + 동형 영역)
+4. Domain 4 Manual QA caveat (사용자 직접)
+5. 자유 질문 / LLM spot 재검증 (#2 + Gate 결과 후)
+
+═══════════════════════════════════════════════════════
+[운영 방식 정정 (사용자 명시 학습)]
+═══════════════════════════════════════════════════════
+- 같은 shared worktree에서 tracked dirty 0이 아니면 새 세션 진입 X
+- write scope 분리 = commit 영역 충돌 회피 / working tree 영역 공유는 별개
+- 진짜 병렬 영역 = git worktree add 또는 별도 clone 영역만
+- 한 세션 작업 중 (commit X) → 다른 세션 진입 X
+- (학습 메모리: feedback_shared_worktree_no_parallel_with_dirty.md)
 
 ═══════════════════════════════════════════════════════
 [절대 회피선]
 ═══════════════════════════════════════════════════════
-- ScriptedText (src/data/scriptedText/*.json) working tree 직접 수정 X
-  → wrapper hard fail / Codex-Dev 의뢰 영역
-- caseData (src/data/cases/generated/*.json) 직접 수정 X
-- baseline anchor (a10b801 / acf5d27) 회귀 X
-- baseline-pre-policy-v1 / v2 tag 변경 X
-- feature flag default 변경 X (반드시 'off' 유지)
-- log/sanitize/block 자동 진입 X (사용자 명시 승인 영역)
-- harness 신규 작성 X (보류 영역 — 출시 후 또는 단계 진입 시)
-- useActionDispatch.ts / judgeQuestionEngine.ts / scriptedTextLoader.ts 대형 리팩터 X (Tier 4+ 보류)
-- src/app/pc.css 어떤 형태로든 touch X (UI 서브 스레드 영역 보존)
-- 정책 (docs/disclosure-policy.md) 자동 변경 X (CT-Main + CT-Cross 검수 영역)
-- 자동 보고 무비판 수용 X (Codex 보고 = 직접 sample 검증 영역)
-- 단순 어휘 교체 X (9차원 의미 정확성)
-- ScriptedText 자동 일괄 수정 X
-- 사용자 1 사례만 처리 X (동형 광범위 검출)
-
-═══════════════════════════════════════════════════════
-[QA 세션 진입 조건 (학습 영역)]
-═══════════════════════════════════════════════════════
-- tracked file modified/staged 0건만 검사 (untracked 무시)
-- 각 세션 자기 영역 (tmp/qa-{세션}-results/) 결과 파일 = untracked 정상
-- working tree 변경 시 wrapper hard fail = expected (commit으로 들어가야 PASS)
-- wrapper의 실제 baseline = git HEAD (anchor SHA는 표시값)
+- ScriptedText / caseData / 정책 영역 직접 수정 X (Codex-Dev 의뢰 영역)
+- baseline anchor (v1·v2) 회귀 X
+- feature flag global default 변경 X (VITE_DISCLOSURE_GUARD_MODE=off)
+- VITE_OPENAI_API_KEY 재도입 X (596d235 정합)
+- API proxy 구조 변경 X
+- useActionDispatch.ts / judgeQuestionEngine.ts / scriptedTextLoader.ts / llmDialogueResolver.ts 대형 리팩터 X
+- src/app/pc.css 단일 소유 영역 / 다른 UI 세션 병렬 touch X
+- stash / discard / reset destructive 영역 X
+- CT 임의 commit X (소유자 영역 / Codex-Dev 영역)
+- Release QA / Script Polish / Spoiler Cascade 산출물 영역 섞기 X
+- 모르는 untracked 영역 임의 처리 X
 
 ═══════════════════════════════════════════════════════
 [잘못 패턴 종합]
 ═══════════════════════════════════════════════════════
-- #1 자동 보고 무비판 수용 X (직접 검증)
-- #6 9차원 의미 정확성 (단순 어휘 교체 X)
-- #7 사용자 단순 확인 = 짧은 답 (옵션 제시 X)
-- #9 진실 누설 금지 (게임 핵심 원칙)
-- #11 동형 광범위 검출 (사용자 사례 = 시작점)
-- #12 정적 분석 한계 (의미/동적 영역 별개)
+- #1 자동 보고 무비판 수용 X
+- #6 9차원 의미 정확성
+- #7 사용자 단순 확인 = 짧은 답
+- #9 진실 누설 금지
+- #11 동형 광범위 검출
+- #12 정적 분석 한계
 
 ═══════════════════════════════════════════════════════
 [즉시 처리 영역 — 사용자 결정 영역]
 ═══════════════════════════════════════════════════════
-추천 (가): Manual play spot check 시작 (사용자 직접)
-- 기본 mode=off / 필요 시 ?guard=log
-- 발견 사례 받음 → CT-Main이 8필드 분류 → 우선순위 결정
+사용자가 #2 재진입 진행 영역. 결과 회수 후:
+- (a) Gate 진입 (사용자 명시 — 단일 진입 영역 본질 / 같은 shared worktree)
+- (b) 또는 통합 Script Patch 의뢰서 영역 작성 (Gate 결과 후)
 
-또는 (나): 자유 질문 MVP 또는 컷씬 MVP 영역 새로 설계 (CT-Main 영역)
-
-═══════════════════════════════════════════════════════
-[의뢰서 보존 영역]
-═══════════════════════════════════════════════════════
-- tmp/REQUEST-Codex-Tier{0,1,2}-*.md (Tier 0/1/2 7건)
-- tmp/REQUEST-Codex-DevA-P1-Stabilization.md
-- tmp/REQUEST-Codex-DevB-Tier3-Guard-MVP.md
-- tmp/REQUEST-Codex-DevB-followup-fn-fix.md
-→ 향후 docs/handoff/codex-requests/ 영구 위치 이동 결정 영역 (CT-Main 판단)
+CT-Main 즉시 작업 영역 X — 사용자 #2 결과 회수 후 진행 영역 결정 받기.
 
 ═══════════════════════════════════════════════════════
-[QA 결과 영역 (untracked, 보존 가치)]
+[CT-Main 후속 작업 영역]
 ═══════════════════════════════════════════════════════
-- tmp/qa-functional-results/ (Codex Q P-3·P-4·P-5)
-- tmp/qa-scripted-results/ (Codex QW S-1·S-3·S-4·S-5)
-- tmp/qa-ct-cross-results/ (CT-Cross S-2 + 정책 hardening review)
-- tmp/qa-codex-dev-a-results/ (Dev-A spike + Phase 2)
-- tmp/qa-codex-dev-b-results/ (Dev-B spike + MVP)
-- tmp/qa-codex-dev-b-followup-results/ (FN fix)
-- tmp/qa-t3-functional-off-results/ (Phase 0 검증)
-- tmp/qa-t3-guard-log-results/ (log mode 검증)
-
-═══════════════════════════════════════════════════════
-[7 commits 누적 흐름]
-═══════════════════════════════════════════════════════
-bd46418 fix(disclosureGuard): catch 보내신 honorific inflection in family-01 paraphrase
-f03f49f feat(engine): tier-3 disclosure guard MVP — log mode + feature flag default off
-acf5d27 fix(scripted): correct p1 stabilization text variants (← baseline-pre-policy-v2)
-2e527bd fix(ui): stabilize surface labels and archetype fallback
-4e0a1b6 docs(policy): tier-3 guard hardening — paraphrase set + uiSurfaceMap surface
-db0130e docs(qa): tier-2 QA test cases — functional / scripted / index
-5378700 docs(handoff): avoid pinning moving handoff head (← 이전 세션 base)
+- #2 결과 review (read 영역)
+- Gate 결과 review + 통합 Script Patch 의뢰서 영역 작성
+- 통합 Patch 의뢰서 영역 = Script Polish 25 findings + Gate findings + 동형 영역 통합 본질
+- Domain 4 Manual QA 결과 review (사용자 보고 후)
 
 정독 + 사용자 다음 명령 대기.
 ```
+
+---
+
+**메타**:
+- 작성: 2026-04-27 ClaudeCode CT-Main (Script Runtime QA Gate 승격 후 영역)
+- 이전 영역: Tier 3 Guard 중앙 컨트롤 영역 (참고용)
+- 본 영역 본질: 출시 전 영역 / Gate가 자동 검출 영역 본질 / 사용자 spot check 의존 영역 중단
