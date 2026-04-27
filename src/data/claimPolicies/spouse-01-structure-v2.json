@@ -366,6 +366,7 @@
     {
       "id": "e-4",
       "name": "형 문자 스레드",
+      "surfaceName": "발신자 미상 문자",
       "type": "chat",
       "timing": {
         "bestPhase": "phase4",
@@ -375,6 +376,7 @@
     {
       "id": "e-5",
       "name": "이준호의 계좌 출금 내역",
+      "surfaceName": "개인 계좌 출금 내역",
       "type": "bank",
       "timing": {
         "bestPhase": "phase4",
@@ -384,6 +386,7 @@
     {
       "id": "e-6",
       "name": "투자방 카톡 + 송금 기록",
+      "surfaceName": "투자방 카톡 기록",
       "type": "chat",
       "timing": {
         "bestPhase": "phase5",
@@ -393,6 +396,7 @@
     {
       "id": "e-7",
       "name": "공동 적금 해지 서류",
+      "surfaceName": "공동 적금 해지 서류",
       "type": "contract",
       "timing": {
         "bestPhase": "phase5",
