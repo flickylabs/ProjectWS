@@ -1,3 +1,17 @@
+> ## ⚠️ SUPERSEDED — 2026-04-28
+>
+> 본 의뢰서는 다음 commit chain에 의해 superseded 되었습니다 (final P0 closing trace):
+>
+> - `3973ac6` docs(handoff): add all-cases P0 integrated script patch v2 — spouse-01 단일 영역 → All-Cases sweep 14,931 variants 확장
+> - `7eaad2e` docs(handoff): add Stage 1 application request and patched output — Stage 1 (P0-evidence-stage-gate 122 → 0)
+> - `2c062dd` docs(handoff): add Stage 2 application request and patched output (87 → 0) — Stage 2 (P0-disclosure-gate)
+> - `a7aaec3` fix(scripts): close P0-disclosure-gate findings (87 → 0) — Final P0 closing / `baseline-pre-policy-v3` 발행
+>
+> Final P0 closing 완료 (P0 232 → 0). 본 자료는 역사 / 추적 목적으로 보존.
+> 신규 트랙은 [`tmp/REQUEST-Codex-Integrated-Script-Patch-AllCases-P0-v2.md`](REQUEST-Codex-Integrated-Script-Patch-AllCases-P0-v2.md) 또는 [`docs/release-runbook.md`](../docs/release-runbook.md) 참조.
+
+---
+
 # REQUEST — Codex-Dev Integrated Script Patch (Spouse-01 P0 영역 — Gate Phase A + Script Polish Audit 통합)
 
 **의뢰일**: 2026-04-27
