@@ -20,6 +20,24 @@ Find edge-state, ordering, disclosure, and coverage issues that curated normal r
 - impossible state가 섞일 수 있으므로 runtimeReachable 여부를 별도 판단
 - broad count보다 representative defect cluster를 우선 본다
 
+## Exhaustive Reviewer Input Limits
+
+When exhaustive-mode QA scales beyond a single small rerun (Stage 1 onward), the exhaustive reviewer (Agent B in `04-CT-INSTRUCTIONS.md` 짠Sub-Agent Operating Model) operates under input limits, on both runner sides:
+
+- Input is **aggregate exhaustive clusters + representative samples only**, not raw transcripts.
+- Sample limits per cluster follow `01-THREAD-GUIDE-COMMON.md` 짠Representative Sample Rule.
+- Cluster signatures may use `routeShape` instead of literal `routeId` to dedupe state-space variants.
+- An exhaustive reviewer on one runner does not read the other runner's result-dir during execution.
+
+### runtimeReachable Requirement
+
+Exhaustive routes may include impossible state orders (per the `--allow-impossible-states` opt-in). Reviewers must distinguish:
+
+- routes that are reachable in runtime (default ??`runtimeReachable=true`)
+- routes that exist only in the impossible-state opt-in mode (`runtimeReachable=false`)
+
+`runtimeReachable=false` routes must not be classified as runtime release blockers based on simulator transcript alone. They are useful for state-space stress and detector observability, not for runtime severity. Both runners apply the same rule.
+
 Exhaustive mode should answer:
 
 - Do unusual action orders expose hidden information?

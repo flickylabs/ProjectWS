@@ -153,6 +153,28 @@ Source inspection 또는 browser/runtime spot check 전에는 R 또는 S로 둔�
 Detector count는 실행 통계다. 우선순위 판단 근거가 아니다.
 Priority는 source confirmation, runtime reachability, player impact, reproducibility로 정한다.
 
+### Cluster Signature
+
+Bulk findings must be deduplicated before review. The same signature definition is used by both runners (Codex primary, ClaudeCode cross-check) for cross-runner cluster diff.
+
+Recommended cluster key:
+
+```text
+caseId
+mode
+routeId or routeShape
+phase
+actionType
+category
+severity
+sourcePath
+normalizedActual
+normalizedExpected
+policyOrRuntimeFlag
+```
+
+The exact hash can be implementation-defined, but it must be **stable across reruns and across runners**.
+
 For each serious detector finding:
 
 1. Open the transcript for `routeId`.
@@ -168,6 +190,36 @@ For each serious detector finding:
    - low-impact noise
 
 Example: `evidence_investigate_no_npc_followup` may be a route contract observability finding if the intended contract is system-only discovery followed by explicit later NPC questioning. Do not classify it as a dialogue defect unless the user-facing flow is actually confusing or broken.
+
+## Context Limits And Aggregation-First Rule
+
+Run count may be large. Agent input must stay small.
+
+```text
+Bulk execution is machine-owned.
+Cluster review is agent-owned.
+Raw artifact reading is drill-down only.
+Integration reads summaries only.
+Cross-runner merge reads aggregates only.
+```
+
+No agent should be asked to read 2000 raw transcripts or complete action traces directly. The same applies to the cross-check runner side.
+
+### Context Risks To Control
+
+The following risks must be handled before large QA begins:
+
+1. Top-level agent context overflow from managing too many cases, commands, and reports.
+2. Sub-agent context overflow from reading too many raw artifacts.
+3. Context overhead from managing many sub-agents.
+4. Integration overflow when merging results within a runner.
+5. Cross-runner merge overflow when comparing two large aggregate sets.
+6. Overflow while opening generated documents and traces for analysis.
+7. Planning overflow in CT / Codex planning-secretary sessions.
+
+### Aggregation-First Rule
+
+Bulk QA must produce aggregate artifacts before any agent review starts. The required aggregate file list lives in `04-CT-INSTRUCTIONS.md` 짠Required Aggregation Before Agent Review. Agents read aggregates and representative samples; raw artifacts are drill-down only. The cross-runner merge step also follows this rule.
 
 ## Finding Axis (D/R/S/N)
 
@@ -236,6 +288,20 @@ Use for:
 - minor repetition
 - small tone adjustment
 - low-impact label/name cleanup not visible to players
+
+## Representative Sample Rule
+
+Each cluster should expose only a small sample set to agents. The same limits apply to both runners.
+
+Default sample limits:
+
+- max 3 representative routes per cluster
+- max 1 shortest reproduction
+- max 1 highest-severity reproduction
+- max 1 flaky or divergent reproduction
+- max 200 relevant transcript lines per cluster unless explicitly expanded
+
+Agents may request more raw samples only for a named cluster and reason. Cross-runner merge consumes only the per-runner representative samples; it does not request additional raw expansion by default.
 
 ## Finding Format
 

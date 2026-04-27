@@ -18,6 +18,17 @@ Check whether the scripted route flows feel coherent, fair, and safe when read a
 - 대사 흐름, 호칭, witness order, branch continuity에 높은 가중치
 - transcript pollution은 QA 품질 blocker로 취급
 
+## Normal Reviewer Input Limits
+
+When normal-mode QA scales beyond a single small rerun (Stage 1 onward), the normal reviewer (Agent A in `04-CT-INSTRUCTIONS.md` 짠Sub-Agent Operating Model) operates under input limits, on both runner sides:
+
+- Input is **aggregate normal clusters + representative samples only**, not raw run-by-run transcripts.
+- Sample limits per cluster follow `01-THREAD-GUIDE-COMMON.md` 짠Representative Sample Rule.
+- Detector count alone does not set priority; see `01` 짠Detector Count Rule and 짠Aggregation-First Rule.
+- A normal reviewer on one runner does not read the other runner's result-dir during execution.
+
+When normal-mode runs are at single-rerun scale (e.g. the 6-run baseline cadence), full transcript reading remains acceptable.
+
 Normal mode should answer:
 
 - Can a player follow the story without hidden context?
