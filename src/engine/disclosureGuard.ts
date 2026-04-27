@@ -42,7 +42,10 @@ const PARAPHRASE_RULES: Record<DisclosureCaseId, LexemeRule[]> = {
     { label: '공장 자금' },
     { label: '20년 동안 매달 보낸' },
     { label: '20년 간 송금' },
-    { label: '어머니 통장으로 정기적으로 돈을 보낸' },
+    {
+      label: '어머니 통장으로 정기적으로 돈을 보내(신|시는|고|며|었|던)?',
+      matcher: (text) => /어머니\s*통장으로\s*정기적으로\s*돈을\s*보내(신|시는|고|며|었|던)?/.test(text),
+    },
     { label: '어머니 통장으로 꾸준히 돈을 넣었습니다' },
     { label: '정기적이라고 불러도 될 만큼 보낸' },
     { label: '장기 송금' },
