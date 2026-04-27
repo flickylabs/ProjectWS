@@ -35,12 +35,12 @@ Playwright captured contradiction/interrogation popup layout in PC flow:
   - mobile contrast-wrap padding `18px / 18px`
   - mobile card fits inside `390px` viewport with `24px` outer margin on both sides.
 
-## Local Workspace Note
+## Commit Boundary Note
 
-During final verification, unrelated local modifications were observed in:
+The final hotfix commit includes the surfaceName hardening files required for this session:
 
 - `src/components/layout/CourtLayout.tsx`
 - `src/data/claimPolicies/spouse-01-structure-v2.json`
 - `src/engine/clearanceTracker.ts`
 
-They were not part of this hotfix staging set.
+`spouse-01` evidence `e-4` keeps the internal name `형 문자 스레드` and exposes the player-facing `surfaceName` `발신자 미상 문자`.
