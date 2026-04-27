@@ -29,3 +29,9 @@ server/node_modules/
 dist-pc/
 
 .vercel
+
+# Dev server / QA harness ephemeral artifacts (always changing while running)
+tmp/**/vite-ui*.log
+tmp/**/vite-ui*.out.log
+tmp/**/vite-ui*.err.log
+tmp/**/*.pid
