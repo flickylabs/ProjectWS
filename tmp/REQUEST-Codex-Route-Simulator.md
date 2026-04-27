@@ -1,30 +1,31 @@
-# REQUEST — Codex-Dev Route Simulator (P1 — lightweight QA harness)
+# REQUEST — Codex-Dev Script Runtime QA Gate (v2 — P0 승격 / Route Simulator → Gate)
 
-**의뢰일**: 2026-04-27
-**요청자**: ClaudeCode CT-Main
-**우선순위**: P1 (Script Polish Audit / Release QA 보조 영역)
-**병렬**: Release QA / Script Polish Audit / UI Drawer Consistency Fix — 영역 충돌 X (read 영역 + 신규 script + 신규 tmp만)
+**의뢰일**: 2026-04-27 (v2 — P1 보조 툴 → **P0 Script Runtime QA Gate** 승격)
+**요청자**: ClaudeCode CT-Main (사용자 명시 영역)
+**우선순위**: **P0 출시 차단 영역** (사용자 spot check 의존 영역 중단 본질 / Script Patch 대량 영역 진입 전 본 Gate 구축 본질)
+**병렬**: #1 Spoiler Cascade Finalize 완료 후 진입 영역 / Script Polish Audit 영역 정합 / Free Question Hygiene 영역 후속
 
 ---
 
-## 1. 목표
+## 1. 본질 변화 (사용자 명시)
 
-**Lightweight route simulator MVP**. 핵심 루트에 대해 action sequence 실행 + transcript + state delta + surface output 기록 + anomaly candidate 추출.
+기존 영역 = "Lightweight route simulator" P1 보조 툴 영역.
+v2 영역 = **"Script Runtime QA Gate"** P0 승격 영역.
 
-- 자동 pass/fail X / **anomaly candidate 추출** 본질
-- Script Polish Audit / Release QA 보조 영역
-- 출시 전 영역 (browser full playthrough harness 보류)
-
-우선 범위: **spouse-01 핵심 루트 20~30**. 이후 family-01 / friend-01 확장.
+본질:
+- 사용자 직접 P0 누설 / 무응답 / Q-A 불일치 발견 영역 **중단**
+- 자동 검출 영역 본질 (4 검출 영역 hard fail 영역)
+- root cause + resolver path + source path 영역 추적
+- Gate 결과 영역 → 통합 Script Patch 의뢰서 영역 입력 영역 본질
 
 ---
 
 ## 2. 진입 조건
 
-- HEAD: `6ed551a` (또는 그 이후 main 최신)
+- HEAD: 최신 main (#1 Spoiler Cascade Finalize commit + push 완료 영역 후)
 - baseline anchor: `baseline-pre-policy-v1` / `v2` 보존
-- working tree: tracked clean
-- `npm run check:all` PASS / `npm run build` PASS / `npx tsc -b --force` PASS
+- working tree: tracked clean (#1 Finalize 완료 영역 정합)
+- `npm run check:all` PASS / `npm run build:pc` PASS / `npx tsc -b --force` PASS
 
 ---
 
@@ -32,249 +33,238 @@
 
 | 영역 | 담당 |
 |---|---|
-| 정책 / scope / 검출 영역 | CT-Main |
-| **이 세션 (Codex-Dev Route Simulator)** | **신규 시뮬레이터 + manifest + transcript + anomaly summary** |
-| Script Polish Audit | 별도 트랙 — 본 세션 anomaly 후보 list 입력 |
-| Release QA | 별도 트랙 — 본 세션 결과 정합 영역 |
-| 사용자 | 최종 anomaly 우선순위 결정 |
+| 정책 / scope / 검출 기준 | CT-Main |
+| **이 세션 (Codex-Dev Script Runtime QA Gate)** | **Gate 구축 + 4 검출 영역 자동 + 출력 영역 + spouse-01 우선 영역** |
+| 통합 Script Patch | 후속 영역 (Gate 결과 영역 입력 영역) |
+| 사용자 | 최종 P0/P1 영역 우선순위 결정 영역 |
 
 ---
 
-## 4. 정독 자료 (필수)
+## 4. 사전 audit 결과 (CT 영역 — 기존 Route Simulator audit 영역 정합)
 
-| 우선순위 | 파일 |
-|---|---|
-| P0 | `tmp/REQUEST-Codex-Route-Simulator.md` (의뢰서) |
-| P0 | `docs/spot-check-format.md` (8필드 + 분류 카테고리) |
-| P0 | `docs/disclosure-policy.md` (진실 누설 정책) |
-| P0 | `docs/information-surface-policy.md` v1.1 (7 표면 위상 / surface output 영역) |
-| P0 | `CLAUDE.md` (게임 핵심 원칙 / 한국어 품질 / Phase 8단계) |
-| P1 | `src/store/useGameStore.ts` + 슬라이스 13개 (state delta 영역) |
-| P1 | `src/hooks/useActionDispatch.ts` (action dispatch 영역) |
-| P1 | 핵심 engine — `lieStateMachine.ts` / `judgeQuestionEngine.ts` / `evidenceEngine.ts` / `atomSelectionEngine.ts` / `presentationEngine.ts` / `gameEventTriggerEngine.ts` |
-| P1 | `src/engine/scriptedTextLoader.ts` |
-| P1 | `src/data/scriptedText/{spouse-01,family-01,friend-01}.json` |
-| P1 | `src/data/cases/generated/{spouse-01,family-01,friend-01}.json` |
-| P2 | `src/engine/cutsceneTriggerEngine.ts` / `vfxHierarchyEngine.ts` (P0-E·F 영역) |
-| P2 | `src/engine/disclosureGuard.ts` (P0 정합) |
+### 4.1 store / dispatch / engine 영역 위치 (이전 영역 정합)
+- Store: `src/store/useGameStore.ts` + 13 슬라이스
+- Dispatch: `src/hooks/useActionDispatch.ts` (97KB — read only)
+- Engine 60+ 파일 — `lieStateMachine.ts` / `judgeQuestionEngine.ts` / `evidenceEngine.ts` / `atomSelectionEngine.ts` / `presentationEngine.ts` / `gameEventTriggerEngine.ts` / `discoveryEngine.ts` / `meterStagingV2.ts` / `disclosureGuard.ts` / `disclosurePolicyLoader.ts` / freeInterrogation/ 영역
+- ScriptedText: `src/data/scriptedText/{caseId}.json`
+- caseData: `src/data/cases/generated/{caseId}.json`
+- Disclosure: `src/data/disclosurePolicy/{caseId}.json`
+- emergenceHooks: `src/data/emergenceHooks.ts`
 
----
+### 4.2 기술 영역 (Phase A에서 결정 / v1 영역 정합)
+- (A) `.cjs` (CommonJS) + JSON read + 자체 시뮬 / read engine 함수 일부 영역
+- (B) `.mjs` + ts-node / vite-node
+- (C) Vitest 환경
+- (D) 별도 build
 
-## 5. 사전 audit 결과 (CT 영역)
-
-### 5.1 store / dispatch / engine 영역 위치
-
-| 영역 | 위치 |
-|---|---|
-| Store | `src/store/useGameStore.ts` + 13 슬라이스 (`phaseSlice` / `dialogueSlice` / `evidenceSlice` / `judgeNotebookSlice` / `judgeObservationSlice` / `eventFeedbackSlice` / `discoverySlice` / `verdictSlice` / etc.) |
-| Dispatch | `src/hooks/useActionDispatch.ts` (97KB — React hook 영역 / Node 직접 import 어려움) |
-| Engine 60+ 파일 | `src/engine/*.ts` (대부분 .ts pure function — Node import 가능 영역) |
-| ScriptedText | `src/data/scriptedText/{caseId}.json` |
-| caseData | `src/data/cases/generated/{caseId}.json` |
-| LLM | `src/engine/llmClient.ts` / `llmDialogueResolver.ts` (시뮬레이터에서는 **호출 X / mock 또는 fallback** 영역) |
-
-### 5.2 기존 harness 영역 — 미존재
-
-`tests/` 디렉토리에 `.cjs` 영역 없음. CLAUDE.md에 언급된 `tests/stage1-deep-audit.cjs` / `tests/run-84-headless.cjs` 영역은 _LEGACY 영역 또는 폐기 영역. **신규 영역 작성**.
-
-### 5.3 기술 영역 결정 (Phase A에서 Codex-Dev 결정)
-
-`.ts` 영역 import 본질:
-- (A) `scripts/qa-core-route-simulator.cjs` (CommonJS) + `.ts` 영역 직접 import X / `.json` 영역 + 자체 시뮬 본질
-- (B) `scripts/qa-core-route-simulator.mjs` (ESM) + ts-node 영역 / vite-node 영역
-- (C) Vitest 환경 (`vitest run --reporter=...`) + 시뮬레이터 영역 vitest test 영역
-- (D) 별도 build (`vite build --mode test`) + Node 영역 실행
-
-**Codex-Dev 영역 결정** — Phase A에서 옵션 선택 + CT-Main 보고.
-
-권장: (A) 또는 (C) — 가장 lightweight.
+권장 영역: (A) 또는 (C) — lightweight Gate 영역 본질.
 
 ---
 
-## 6. Scope
+## 5. Scope (사용자 명시 4 검출 / 출력 / 원칙 / 우선 대상)
 
-### 6.1 신규 영역 (write OK)
+### 5.1 핵심 루트 자동 실행 영역
+- 우선: **spouse-01 핵심 루트** (특히 Phase 2 영역 — `fact_pursuit` 반복 / evidence unlock / dispute emergence / NPC B response cascade 영역 본질)
+- 후속: family-01 / friend-01
 
-- `scripts/qa-core-route-simulator.{cjs,mjs,ts}` (Phase A에서 결정)
-- `tmp/qa-route-simulator-manifests/{caseId}.json` (route manifest 영역)
-- `tmp/qa-route-simulator-results/` (산출물)
-- 필요 시 helper script 영역 (예: `scripts/qa-route-simulator-helpers/*.cjs`)
+### 5.2 action 이후 영역 trace 기록
+각 action 영역에 다음 영역 기록:
+- dialogue delta (NPC 응답 영역)
+- state delta (lieState / truthStage / meter / unlock 영역)
+- surface delta (채팅창 / 관찰 / 수첩 / 발언노트 / VFX / UI 배지 영역)
+- **resolver path** — `scripted` / `LLM` / `fallback` / `event hook` 영역
+- **source path** — `scriptedText key` / `emergenceHook id` / `evidence id` / `discovery trigger id` 영역
 
-### 6.2 read 영역 (touch X)
+### 5.3 4 검출 영역 (필수 / hard fail)
 
-- `src/store/*` — state slice 영역 read
-- `src/engine/*` — engine 영역 함수 import 또는 자체 시뮬 영역
-- `src/hooks/useActionDispatch.ts` — action dispatch 영역 read (직접 호출 어려움 — 자체 시뮬)
-- `src/data/*` — ScriptedText / caseData JSON read
+#### 검출 1 — 응답 누락 (hard fail)
+다음 action 영역 후 NPC 응답 또는 명시적 safe fallback 영역 0건이면 **hard fail**:
+- judge_question (`fact_pursuit` / `motive_search` / `empathy_approach`)
+- evidence_present / evidence_combine / evidence_investigate
+- contradiction_pursuit
+- witness_summon / witness_question
+- dossier 사용
+- discovery / emergence event
 
-### 6.3 절대 touch X (사용자 명시)
+#### 검출 2 — Q-A 불일치 (candidate 추출)
+다음 영역 비교:
+- action type / questionType / disputeId / target / evidenceId vs NPC response focus
+- 다른 쟁점 답변 / 다른 인물 답변 / 엉뚱한 돈/관계/동기 답변 영역 candidate 추출
+- intent classifier / contextMapper 영역 정합 (P0-A·B / Hygiene Fast Fix v2 영역 정합)
 
-- ScriptedText / caseData 직접 수정 X
-- gameplay runtime 대형 리팩터 X
-- **actual OpenAI 호출 X**
-- LLM sampling harness X
-- browser full playthrough harness X
-- Release QA 산출물 (`tmp/qa-release-results/`)과 섞기 X
-- Script Polish Audit 산출물 (`tmp/qa-script-polish-audit-results/`)과 섞기 X
-- `src/app/pc.css` touch X (UI 서브 영역)
-- baseline anchor / feature flag global default X
+#### 검출 3 — 스포일러 (hard fail)
+다음 영역 위반 시 **hard fail**:
+- `docs/disclosure-policy.md` truth lexeme 영역 노출 (§4.1·4.2·4.3 / §13 audit 패턴)
+- locked evidence `name` 영역 노출 (`surfaceName` 영역 정합 영역 X)
+- evidenceStage 이전 영역 truthDescription / hidden evidence 영역 노출
+- S0~S2 영역 NPC full truth 발화
 
-### 6.4 action 종류 (사용자 명시 8영역)
+#### 검출 4 — 엉뚱한 이야기 / fallback 품질 (candidate 추출)
+- generic fallback ("네, 그렇습니다" / "잘 모르겠습니다" 류 캐릭터 무관 영역)
+- 캐릭터 archetype 무관 답변
+- active dispute 강제 매핑 (Hygiene Fast Fix v2 §5.3 영역 정합)
+- 내부 label `[LLM]` / `[SCRIPT]` / `[FALLBACK]` UI 노출 (Spoiler Cascade #1 §5.4 영역 정합)
+- 내부 용어 노출 (`intent` / `classifier` / `guard` / `policy` / `누설` 영역)
 
-| # | action | engine 영역 |
-|---|---|---|
-| 1·2·3 | `judge_question` 3종 (`fact_pursuit` / `motive_search` / `empathy_approach`) | `judgeQuestionEngine.ts` / `questionEffectEngine.ts` |
-| 4·5·6 | `evidence_present` / `evidence_combine` / `evidence_investigate` | `evidenceEngine.ts` / `evidenceChallengeEngine.ts` / `combinationLabSlice.ts` |
-| 7 | `contradiction_pursuit` | `contradictionEngine.ts` / `lieStateMachine.ts` |
-| 8·9 | `witness_summon` / `witness_question` | `witnessEngine.ts` / `witnessTestimonyResolver.ts` |
-| 10 | `dossier` 사용 | `meterStagingV2.ts` / `judgeNotebookSlice.ts` |
-| 11 | `verdict` / `result` (가능하면) | `verdictEngine.ts` / `aftermathResolver.ts` / `aftermathLLMGenerator.ts` |
+### 5.4 출력 영역 (사용자 명시)
 
-### 6.5 검출 영역 (사용자 명시 7영역)
-
-| # | 검출 |
-|---|---|
-| 1 | 응답 누락 (NPC 답변 빈 / `...` / 1단어) |
-| 2 | fallback / generic fallback (캐릭터 archetype 무관 / lieState 무관) |
-| 3 | target 무관 답변 (다른 NPC tone / 다른 사건) |
-| 4 | action 후 state delta 없음 (`stateDeltaCount = 0`) |
-| 5 | lieState / truthStage 변화가 UI surface로 드러나지 않음 (관찰·수첩·발언노트·이벤트 영역 미동작) |
-| 6 | unlock 발생 / feedback 없음 (evidence·witness·dispute unlock 후 surface 영역 0) |
-| 7 | 판결 / 후일담 누락 또는 너무 일반적 문장 |
-
-### 6.6 spouse-01 핵심 루트 20~30 (사용자 명시)
-
-manifest 영역 (`tmp/qa-route-simulator-manifests/spouse-01.json`):
-
-```json
-{
-  "caseId": "spouse-01",
-  "routes": [
-    {
-      "id": "p3-fact-d1-a",
-      "phase": 3,
-      "actions": [
-        { "type": "fact_pursuit", "target": "a", "disputeId": "d-1" },
-        { "type": "fact_pursuit", "target": "a", "disputeId": "d-1" }
-      ],
-      "expectedSurfaces": ["chat", "observation"],
-      "expectedStateDelta": ["lieState"]
-    },
-    ...
-  ]
-}
+```
+tmp/qa-runtime-gate-results/
+├── findings.json                       (8필드 + severity + category + resolver/source path)
+├── route-transcripts/
+│   ├── spouse-01-{routeId}.md          (action-by-action trace)
+│   ├── family-01-{routeId}.md
+│   └── friend-01-{routeId}.md
+├── action-by-action-trace.json         (action 영역별 dialogue/state/surface delta)
+├── resolver-path-summary.md            (scripted / LLM / fallback / event hook 영역 통계)
+├── source-path-summary.md              (scriptedText key / emergenceHook id / evidence id / discovery trigger id)
+├── 20260427-spouse-01-summary.md
+├── 20260427-family-01-summary.md
+├── 20260427-friend-01-summary.md
+└── 20260427-overall-summary.md         (severity P0/P1/P2 + patch priority)
 ```
 
-→ Phase B에서 manifest 작성 + 시뮬 실행.
+### 5.5 우선 대상 영역 (사용자 명시)
+- **spouse-01 Phase 2 영역 우선** — `fact_pursuit` 반복 / evidence unlock / dispute emergence / NPC B response cascade
+- 이후 family-01 / friend-01 영역 확장
 
-### 6.7 출력 영역 (사용자 명시)
-
-- `findings.json` (8필드 + severity + anomaly 분류 영역)
-- case별 transcript markdown (`tmp/qa-route-simulator-results/spouse-01-transcripts.md`)
-- anomaly summary (`tmp/qa-route-simulator-results/20260427-anomaly-summary.md`)
-- Script Polish Audit 후보 list (`tmp/qa-route-simulator-results/script-polish-candidates.md`)
+### 5.6 원칙 (사용자 명시)
+1. **개별 문장만 덮어쓰는 patch X** (Script Patch 영역 X)
+2. **root cause 없이 ScriptedText 수정 X**
+3. **공통 경로 고정** — surface label resolver / gating / disclosure guard / response coverage 영역
+4. **Route Simulator 결과 없이 Script Patch 대량 진행 X**
 
 ---
 
-## 7. 절대 회피선
+## 6. Write Scope (이 의뢰서 영역)
 
-- ScriptedText / caseData 직접 수정 X
+### 6.1 신규 영역 (write OK)
+- `scripts/qa-runtime-gate.{cjs,mjs,ts}` (Phase A에서 결정)
+- `scripts/qa-runtime-gate-helpers/*.cjs` (필요 영역만)
+- `tmp/qa-runtime-gate-manifests/{caseId}.json` (route manifest 영역)
+- `tmp/qa-runtime-gate-results/` (산출물 영역)
+
+### 6.2 read 영역 (touch X)
+- `src/store/*` / `src/engine/*` / `src/hooks/*` (read only — 함수 import 또는 자체 시뮬)
+- `src/data/*` (ScriptedText / caseData / disclosurePolicy / emergenceHooks 영역 read)
+
+### 6.3 절대 touch X (사용자 명시 + CT 영역)
+- ScriptedText / caseData / 정책 영역 직접 수정 X
 - gameplay runtime 대형 리팩터 X
 - **actual OpenAI 호출 X** (mock / fallback 영역만 / `VITE_OPENAI_API_KEY` 참조 X / `OPENAI_API_KEY` 참조 X)
 - LLM sampling harness X (별도 영역)
 - browser full playthrough harness X (별도 영역)
-- Release QA 산출물 영역 섞기 X
-- Script Polish Audit 산출물 영역 섞기 X
+- Release QA 산출물 (`tmp/qa-release-results/`)과 섞기 X
+- Script Polish Audit 산출물 (`tmp/qa-script-polish-audit-results/`)과 섞기 X
+- Spoiler Cascade Finalize 산출물 (`tmp/qa-spouse-01-phase2-spoiler-cascade-results/`)과 섞기 X
 - `src/app/pc.css` touch X
-- baseline anchor / feature flag global default 변경 X
+- baseline anchor / feature flag global default X
 - `useActionDispatch.ts` / `judgeQuestionEngine.ts` / `scriptedTextLoader.ts` / `llmDialogueResolver.ts` 본체 변경 X (read only)
 - secret / 실제 키 / 사용자 PII 영역 출력 X
+- **개별 문장 덮어쓰는 patch X** (사용자 명시)
+- **root cause 없이 ScriptedText 수정 X** (사용자 명시)
 
 ---
 
-## 8. 진행 순서
+## 7. 진행 순서
 
 ### Phase A — 기술 영역 결정 + spike
 1. 기술 영역 옵션 (.cjs / .mjs / Vitest / build) 결정 — CT-Main 보고
-2. spouse-01 1~3 routes spike
-3. action 1~3종 영역만 (예: `judge_question` × 1~3)
-4. transcript + state delta + surface output 시뮬 검증
-5. 산출물: `tmp/qa-route-simulator-results/20260427-spike-summary.md`
+2. spouse-01 Phase 2 영역 1~3 routes spike (fact_pursuit 반복 영역)
+3. action 1~3종 영역 + 4 검출 영역 1차 검증
+4. resolver path / source path 추적 영역 영역 정식 영역
+5. 산출물: `tmp/qa-runtime-gate-results/20260427-spike-summary.md`
 6. CT-Main 보고
 
-### Phase B — spouse-01 MVP (20~30 routes)
-1. manifest 작성 (`tmp/qa-route-simulator-manifests/spouse-01.json`)
-2. 시뮬레이터 정식 (action 8종 + 검출 7영역)
-3. transcript + anomaly summary
-4. findings.json + Script Polish Audit 후보 list
-5. 산출물: `tmp/qa-route-simulator-results/20260427-spouse-01-summary.md`
+### Phase B — spouse-01 MVP (핵심 루트)
+1. manifest 작성 (`tmp/qa-runtime-gate-manifests/spouse-01.json` — 핵심 routes 영역)
+2. Gate 정식 (action 영역 + 4 검출 영역 + 출력 영역)
+3. **Phase 2 영역 우선** (`fact_pursuit` 반복 / evidence unlock / dispute emergence / NPC B response cascade 영역)
+4. findings.json + transcripts + traces + resolver/source path
+5. 산출물: `tmp/qa-runtime-gate-results/20260427-spouse-01-summary.md`
 6. CT-Main 보고
 
-### Phase C — family-01 / friend-01 확장
-1. 사용자 결정 영역 (Phase B 결과 후)
+### Phase C — family-01 / friend-01 확장 (사용자 결정 후)
+1. spouse-01 결과 영역 정합 영역 후 진입
 2. 동일 절차
 
 ### Phase D — 통합 보고
-1. 3 사건 통합 anomaly summary
-2. Script Polish Audit 후보 list (CT-Main → 별도 patch 의뢰서 입력)
-3. 산출물 commit + push
-4. CT-Main 보고
+1. 3 사건 통합 findings + 동형 패턴 영역 추출
+2. P0/P1/P2 영역 patch priority 영역
+3. **통합 Script Patch 의뢰서 영역 입력 영역**
+4. 산출물: `tmp/qa-runtime-gate-results/20260427-overall-summary.md`
+5. CT-Main 보고
 
 ---
 
-## 9. 종료 조건
+## 8. 종료 조건
 
-- [ ] Phase A 기술 영역 결정 + spike 산출물
-- [ ] Phase B spouse-01 manifest + 20~30 routes 시뮬 + anomaly summary
-- [ ] Phase C family-01 / friend-01 (사용자 결정 후)
+- [ ] Phase A 기술 영역 결정 + spike 영역
+- [ ] Phase B spouse-01 manifest + 핵심 루트 + Phase 2 우선 영역 + 4 검출 영역
+- [ ] Phase C family-01 / friend-01 영역 (사용자 결정 후)
 - [ ] Phase D 통합 보고
-- [ ] findings.json + transcript markdown + anomaly summary + Script Polish 후보 list
+- [ ] findings.json + transcripts + traces + resolver/source path
+- [ ] severity P0/P1/P2 + patch priority
 - [ ] `npm run check:all` PASS
-- [ ] `npm run build` PASS
+- [ ] `npm run build:pc` PASS
 - [ ] `npx tsc -b --force` PASS
 - [ ] commit + push
 - [ ] CT-Main 보고
 
 ---
 
-## 10. 산출물
+## 9. 산출물
 
 ```
 scripts/
-└── qa-core-route-simulator.{cjs|mjs|ts}    (Phase A 결정)
+└── qa-runtime-gate.{cjs|mjs|ts}        (Phase A 결정)
 
-tmp/qa-route-simulator-manifests/
-├── spouse-01.json
-├── family-01.json                           (Phase C)
-└── friend-01.json                           (Phase C)
+tmp/qa-runtime-gate-manifests/
+├── spouse-01.json                       (Phase B)
+├── family-01.json                       (Phase C)
+└── friend-01.json                       (Phase C)
 
-tmp/qa-route-simulator-results/
-├── 20260427-spike-summary.md                (Phase A)
-├── 20260427-spouse-01-summary.md            (Phase B)
-├── 20260427-family-01-summary.md            (Phase C)
-├── 20260427-friend-01-summary.md            (Phase C)
-├── 20260427-overall-summary.md              (Phase D)
-├── findings.json                            (8필드 + severity + anomaly)
-├── spouse-01-transcripts.md
-├── family-01-transcripts.md
-├── friend-01-transcripts.md
-├── 20260427-anomaly-summary.md
-└── script-polish-candidates.md              (Script Polish Audit 입력)
+tmp/qa-runtime-gate-results/
+├── 20260427-spike-summary.md            (Phase A)
+├── 20260427-spouse-01-summary.md        (Phase B)
+├── 20260427-family-01-summary.md        (Phase C)
+├── 20260427-friend-01-summary.md        (Phase C)
+├── 20260427-overall-summary.md          (Phase D)
+├── findings.json                        (8필드 + severity + resolver/source path)
+├── route-transcripts/
+│   ├── spouse-01-{routeId}.md
+│   ├── family-01-{routeId}.md
+│   └── friend-01-{routeId}.md
+├── action-by-action-trace.json
+├── resolver-path-summary.md             (scripted / LLM / fallback / event hook 영역 통계)
+└── source-path-summary.md               (scriptedText key / emergenceHook id / evidence id / discovery trigger id)
 ```
+
+---
+
+## 10. 후속 영역 — 통합 Script Patch 의뢰서
+
+본 Gate 결과 영역을 입력 영역으로 **통합 Script Patch 의뢰서** 영역 작성 본질 (CT-Main 영역):
+- Gate findings.json + Script Polish Audit findings.json + Spoiler Cascade Finalize 결과 영역 통합
+- 동형 패턴 영역 추출 (잘못 패턴 #11 영역 정합)
+- 9차원 의미 정확성 영역 정합 (잘못 패턴 #6)
+- root cause 영역 우선 / 개별 문장 patch 영역 X
+- 공통 경로 영역 정합 (resolver / gating / guard / coverage 영역)
 
 ---
 
 ## 11. 관련 자료
 
-- `docs/spot-check-format.md` (8필드 + 분류)
-- `docs/disclosure-policy.md`
-- `docs/information-surface-policy.md` v1.1
-- `CLAUDE.md`
-- `src/store/useGameStore.ts` + 13 슬라이스
-- `src/engine/*.ts` (60+ 파일)
-- `tmp/REQUEST-Script-Polish-Audit.md` (보조 영역 본질)
-- 본 세션 진입 메시지: `tmp/Route-Simulator-NEXT-START-MESSAGE.md`
+- `docs/disclosure-policy.md` (truth lexeme / §13 audit 패턴 / §3.2 evidenceStage / §3.3 매트릭스)
+- `docs/information-surface-policy.md` v1.1 (§2.1·2.6 surface-only 채널 / §5.1·5.5 자유심문 노출 / §6.3 길이)
+- `docs/spot-check-format.md` (8필드 + 분류 카테고리)
+- `CLAUDE.md` (게임 핵심 / 한국어 품질 / Phase 8단계)
+- `tmp/REQUEST-Codex-Spouse-01-Phase2-Spoiler-Cascade-Fast-Fix.md` (#1 영역 — Gate가 같은 영역 자동 검출 영역 본질)
+- `tmp/REQUEST-Codex-FreeQuestion-LLM-Hygiene-Fast-Fix.md` v2 (#2 영역 정합)
+- `tmp/qa-script-polish-audit-results/findings.json` (Script Polish Audit 25 findings 영역 — 통합 patch 영역 입력)
+- `tmp/qa-release-results/` (Release QA 영역 정합)
+- 본 세션 진입 메시지: `tmp/Route-Simulator-NEXT-START-MESSAGE.md` (v2)
 
 ---
 
-**상태**: 초안 작성 완료. Codex-Dev Route Simulator 검토 + Phase A 진입 대기.
+**상태**: v2 P0 승격 영역 작성 완료. **#1 Spoiler Cascade Finalize commit + push 완료 후** 진입 영역.
