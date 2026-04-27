@@ -1,0 +1,2301 @@
+[
+  {
+    "clusterId": "C1-friend-money-matter",
+    "id": "QARG-01285",
+    "caseId": "friend-01",
+    "evidenceId": "e-3",
+    "evidenceStage": 1,
+    "lieBand": "early",
+    "matchedLexemes": [
+      "돈 문제"
+    ],
+    "sourceKind": "scriptedText",
+    "sourcePath": "src/data/scriptedText/friend-01.json:channels.evidence_present.entries[key=b|e-3|early|1].variants[id=b-e-3-early-stage1-v1]",
+    "textField": "text",
+    "channel": "evidence_present",
+    "speaker": "b",
+    "target": "b",
+    "actual": "stage=1; matched=돈 문제; text=손절 직전 돈 문제를 두고 대화가 끊겼습니다. 그 자료가 제 답변과 이어지는 건 맞지만, 이유는 아직 다 말하기 어렵습니다.",
+    "expected": "Stub/excerpt/request-original surfaces should not expose hidden/truth description terms."
+  },
+  {
+    "clusterId": "C1-friend-money-matter",
+    "id": "QARG-01286",
+    "caseId": "friend-01",
+    "evidenceId": "e-3",
+    "evidenceStage": 1,
+    "lieBand": "early",
+    "matchedLexemes": [
+      "돈 문제"
+    ],
+    "sourceKind": "scriptedText",
+    "sourcePath": "src/data/scriptedText/friend-01.json:channels.evidence_present.entries[key=b|e-3|early|1].variants[id=b-e-3-early-stage1-v2]",
+    "textField": "text",
+    "channel": "evidence_present",
+    "speaker": "b",
+    "target": "b",
+    "actual": "stage=1; matched=돈 문제; text=그 대화에는 돈 문제를 정리하겠다는 말이 남아 있습니다. 겉으로 보이는 부분은 인정합니다. 다만 뜻은 조금 다릅니다.",
+    "expected": "Stub/excerpt/request-original surfaces should not expose hidden/truth description terms."
+  },
+  {
+    "clusterId": "C1-friend-money-matter",
+    "id": "QARG-01287",
+    "caseId": "friend-01",
+    "evidenceId": "e-3",
+    "evidenceStage": 1,
+    "lieBand": "early",
+    "matchedLexemes": [
+      "돈 문제"
+    ],
+    "sourceKind": "scriptedText",
+    "sourcePath": "src/data/scriptedText/friend-01.json:channels.evidence_present.entries[key=b|e-3|early|1].variants[id=b-e-3-early-stage1-v6]",
+    "textField": "text",
+    "channel": "evidence_present",
+    "speaker": "b",
+    "target": "b",
+    "actual": "stage=1; matched=돈 문제; text=손절의 첫 표면은 돈 문제라는 말입니다. 제가 한 행동으로 보이는 건 압니다. 그러나 전부는 아닙니다.",
+    "expected": "Stub/excerpt/request-original surfaces should not expose hidden/truth description terms."
+  },
+  {
+    "clusterId": "C1-friend-money-matter",
+    "id": "QARG-01288",
+    "caseId": "friend-01",
+    "evidenceId": "e-3",
+    "evidenceStage": 1,
+    "lieBand": "early",
+    "matchedLexemes": [
+      "돈 문제"
+    ],
+    "sourceKind": "scriptedText",
+    "sourcePath": "src/data/scriptedText/friend-01.json:channels.evidence_present.entries[key=b|e-3|early|1].variants[id=b-e-3-early-stage1-v7]",
+    "textField": "text",
+    "channel": "evidence_present",
+    "speaker": "b",
+    "target": "b",
+    "actual": "stage=1; matched=돈 문제; text=한 줄의 돈 문제 뒤에 감정이 굳었습니다. 처음 보이는 장면만으로는 제 이유가 빠집니다.",
+    "expected": "Stub/excerpt/request-original surfaces should not expose hidden/truth description terms."
+  },
+  {
+    "clusterId": "C1-friend-money-matter",
+    "id": "QARG-01289",
+    "caseId": "friend-01",
+    "evidenceId": "e-3",
+    "evidenceStage": 1,
+    "lieBand": "early",
+    "matchedLexemes": [
+      "돈 문제"
+    ],
+    "sourceKind": "scriptedText",
+    "sourcePath": "src/data/scriptedText/friend-01.json:channels.evidence_present.entries[key=b|e-3|early|1].variants[id=b-e-3-early-stage1-v10]",
+    "textField": "text",
+    "channel": "evidence_present",
+    "speaker": "b",
+    "target": "b",
+    "actual": "stage=1; matched=돈 문제; text=돈 문제라는 말이 손절의 문턱에 놓여 있습니다. 제가 숨긴 부분이 있어 오해가 커진 것도 압니다.",
+    "expected": "Stub/excerpt/request-original surfaces should not expose hidden/truth description terms."
+  },
+  {
+    "clusterId": "C1-friend-money-matter",
+    "id": "QARG-01291",
+    "caseId": "friend-01",
+    "evidenceId": "e-3",
+    "evidenceStage": 1,
+    "lieBand": "mid",
+    "matchedLexemes": [
+      "돈 문제"
+    ],
+    "sourceKind": "scriptedText",
+    "sourcePath": "src/data/scriptedText/friend-01.json:channels.evidence_present.entries[key=b|e-3|mid|1].variants[id=b-e-3-mid-stage1-v1]",
+    "textField": "text",
+    "channel": "evidence_present",
+    "speaker": "b",
+    "target": "b",
+    "actual": "stage=1; matched=돈 문제; text=돈 문제를 알아서 정리하겠다는 말 뒤로 설명이 끊겼습니다. 말하지 못한 사정이 있었고, 그 부분을 계속 줄여 말했습니다.",
+    "expected": "Stub/excerpt/request-original surfaces should not expose hidden/truth description terms."
+  },
+  {
+    "clusterId": "C1-friend-money-matter",
+    "id": "QARG-01292",
+    "caseId": "friend-01",
+    "evidenceId": "e-3",
+    "evidenceStage": 1,
+    "lieBand": "mid",
+    "matchedLexemes": [
+      "돈 문제"
+    ],
+    "sourceKind": "scriptedText",
+    "sourcePath": "src/data/scriptedText/friend-01.json:channels.evidence_present.entries[key=b|e-3|mid|1].variants[id=b-e-3-mid-stage1-v5]",
+    "textField": "text",
+    "channel": "evidence_present",
+    "speaker": "b",
+    "target": "b",
+    "actual": "stage=1; matched=돈 문제; text=돈 문제라는 말만 남고 상대가 누구인지는 비어 있습니다. 겉으로 나쁜 모양새가 된 건 압니다. 그래도 목적은 달랐습니다.",
+    "expected": "Stub/excerpt/request-original surfaces should not expose hidden/truth description terms."
+  },
+  {
+    "clusterId": "C1-friend-money-matter",
+    "id": "QARG-01293",
+    "caseId": "friend-01",
+    "evidenceId": "e-3",
+    "evidenceStage": 1,
+    "lieBand": "mid",
+    "matchedLexemes": [
+      "돈 문제"
+    ],
+    "sourceKind": "scriptedText",
+    "sourcePath": "src/data/scriptedText/friend-01.json:channels.evidence_present.entries[key=b|e-3|mid|1].variants[id=b-e-3-mid-stage1-v9]",
+    "textField": "text",
+    "channel": "evidence_present",
+    "speaker": "b",
+    "target": "b",
+    "actual": "stage=1; matched=돈 문제; text=돈 문제를 둘러싼 대화가 풀리지 않은 채 멈췄습니다. 부분적으로는 제가 만든 오해입니다. 하지만 이유가 있었습니다.",
+    "expected": "Stub/excerpt/request-original surfaces should not expose hidden/truth description terms."
+  },
+  {
+    "clusterId": "C1-friend-money-matter",
+    "id": "QARG-01298",
+    "caseId": "friend-01",
+    "evidenceId": "e-3",
+    "evidenceStage": 1,
+    "lieBand": "late",
+    "matchedLexemes": [
+      "돈 문제"
+    ],
+    "sourceKind": "scriptedText",
+    "sourcePath": "src/data/scriptedText/friend-01.json:channels.evidence_present.entries[key=b|e-3|late|1].variants[id=b-e-3-late-stage1-v1]",
+    "textField": "text",
+    "channel": "evidence_present",
+    "speaker": "b",
+    "target": "b",
+    "actual": "stage=1; matched=돈 문제; text=돈 문제는 내가 정리하겠다는 말과 다은이의 단정이 함께 남아 있습니다. 제가 숨긴 이유까지 이제 설명드리겠습니다.",
+    "expected": "Stub/excerpt/request-original surfaces should not expose hidden/truth description terms."
+  },
+  {
+    "clusterId": "C1-friend-money-matter",
+    "id": "QARG-01299",
+    "caseId": "friend-01",
+    "evidenceId": "e-3",
+    "evidenceStage": 1,
+    "lieBand": "late",
+    "matchedLexemes": [
+      "돈 문제"
+    ],
+    "sourceKind": "scriptedText",
+    "sourcePath": "src/data/scriptedText/friend-01.json:channels.evidence_present.entries[key=b|e-3|late|1].variants[id=b-e-3-late-stage1-v2]",
+    "textField": "text",
+    "channel": "evidence_present",
+    "speaker": "b",
+    "target": "b",
+    "actual": "stage=1; matched=돈 문제; text=손절 직전 대화는 숨긴 돈 문제와 확인 없는 결론이 맞부딪힌 기록입니다. 다은이를 보호하려다 결국 더 큰 오해를 만든 건 인정합니다.",
+    "expected": "Stub/excerpt/request-original surfaces should not expose hidden/truth description terms."
+  },
+  {
+    "clusterId": "C1-friend-money-matter",
+    "id": "QARG-01300",
+    "caseId": "friend-01",
+    "evidenceId": "e-3",
+    "evidenceStage": 1,
+    "lieBand": "late",
+    "matchedLexemes": [
+      "돈 문제"
+    ],
+    "sourceKind": "scriptedText",
+    "sourcePath": "src/data/scriptedText/friend-01.json:channels.evidence_present.entries[key=b|e-3|late|1].variants[id=b-e-3-late-stage1-v3]",
+    "textField": "text",
+    "channel": "evidence_present",
+    "speaker": "b",
+    "target": "b",
+    "actual": "stage=1; matched=돈 문제; text=원문에는 돈 문제의 상대를 말하지 못한 침묵이 남아 있습니다. 제가 악역처럼 남는 쪽을 택했지만 그 선택도 책임입니다.",
+    "expected": "Stub/excerpt/request-original surfaces should not expose hidden/truth description terms."
+  },
+  {
+    "clusterId": "C1-friend-money-matter",
+    "id": "QARG-01301",
+    "caseId": "friend-01",
+    "evidenceId": "e-3",
+    "evidenceStage": 1,
+    "lieBand": "late",
+    "matchedLexemes": [
+      "돈 문제"
+    ],
+    "sourceKind": "scriptedText",
+    "sourcePath": "src/data/scriptedText/friend-01.json:channels.evidence_present.entries[key=b|e-3|late|1].variants[id=b-e-3-late-stage1-v5]",
+    "textField": "text",
+    "channel": "evidence_present",
+    "speaker": "b",
+    "target": "b",
+    "actual": "stage=1; matched=돈 문제; text=손절의 시작은 변심이 아니라 말하지 못한 돈 문제였습니다. 이제는 숨기면 더 큰 낙인이 반복된다는 걸 압니다.",
+    "expected": "Stub/excerpt/request-original surfaces should not expose hidden/truth description terms."
+  },
+  {
+    "clusterId": "C1-friend-money-matter",
+    "id": "QARG-01302",
+    "caseId": "friend-01",
+    "evidenceId": "e-3",
+    "evidenceStage": 1,
+    "lieBand": "late",
+    "matchedLexemes": [
+      "돈 문제"
+    ],
+    "sourceKind": "scriptedText",
+    "sourcePath": "src/data/scriptedText/friend-01.json:channels.evidence_present.entries[key=b|e-3|late|1].variants[id=b-e-3-late-stage1-v7]",
+    "textField": "text",
+    "channel": "evidence_present",
+    "speaker": "b",
+    "target": "b",
+    "actual": "stage=1; matched=돈 문제; text=돈 문제라는 빈칸을 두고 다은이는 사람을 먼저 정리했습니다. 그때의 침묵도, 지금의 연락도 같은 두려움에서 나왔습니다.",
+    "expected": "Stub/excerpt/request-original surfaces should not expose hidden/truth description terms."
+  },
+  {
+    "clusterId": "C1-friend-money-matter",
+    "id": "QARG-01306",
+    "caseId": "friend-01",
+    "evidenceId": "e-3",
+    "evidenceStage": 1,
+    "lieBand": "early",
+    "matchedLexemes": [
+      "돈 문제"
+    ],
+    "sourceKind": "scriptedText",
+    "sourcePath": "src/data/scriptedText/friend-01.json:channels.evidence_present.entries[key=a|e-3|early|1].variants[id=a-e-3-early-stage1-v1]",
+    "textField": "text",
+    "channel": "evidence_present",
+    "speaker": "a",
+    "target": "a",
+    "actual": "stage=1; matched=돈 문제; text=손절 직전 돈 문제를 두고 대화가 끊겼습니다. 그때는 우리 사이의 오래된 불신이 먼저 올라왔습니다.",
+    "expected": "Stub/excerpt/request-original surfaces should not expose hidden/truth description terms."
+  },
+  {
+    "clusterId": "C1-friend-money-matter",
+    "id": "QARG-01307",
+    "caseId": "friend-01",
+    "evidenceId": "e-3",
+    "evidenceStage": 1,
+    "lieBand": "early",
+    "matchedLexemes": [
+      "돈 문제"
+    ],
+    "sourceKind": "scriptedText",
+    "sourcePath": "src/data/scriptedText/friend-01.json:channels.evidence_present.entries[key=a|e-3|early|1].variants[id=a-e-3-early-stage1-v2]",
+    "textField": "text",
+    "channel": "evidence_present",
+    "speaker": "a",
+    "target": "a",
+    "actual": "stage=1; matched=돈 문제; text=그 대화에는 돈 문제를 정리하겠다는 말이 남아 있습니다. 저는 빈칸을 확인하기보다 제 기억으로 채웠습니다.",
+    "expected": "Stub/excerpt/request-original surfaces should not expose hidden/truth description terms."
+  },
+  {
+    "clusterId": "C1-friend-money-matter",
+    "id": "QARG-01308",
+    "caseId": "friend-01",
+    "evidenceId": "e-3",
+    "evidenceStage": 1,
+    "lieBand": "early",
+    "matchedLexemes": [
+      "돈 문제"
+    ],
+    "sourceKind": "scriptedText",
+    "sourcePath": "src/data/scriptedText/friend-01.json:channels.evidence_present.entries[key=a|e-3|early|1].variants[id=a-e-3-early-stage1-v6]",
+    "textField": "text",
+    "channel": "evidence_present",
+    "speaker": "a",
+    "target": "a",
+    "actual": "stage=1; matched=돈 문제; text=손절의 첫 표면은 돈 문제라는 말입니다. 상대가 숨긴다고 느끼자 바로 단정했습니다.",
+    "expected": "Stub/excerpt/request-original surfaces should not expose hidden/truth description terms."
+  },
+  {
+    "clusterId": "C1-friend-money-matter",
+    "id": "QARG-01309",
+    "caseId": "friend-01",
+    "evidenceId": "e-3",
+    "evidenceStage": 1,
+    "lieBand": "early",
+    "matchedLexemes": [
+      "돈 문제"
+    ],
+    "sourceKind": "scriptedText",
+    "sourcePath": "src/data/scriptedText/friend-01.json:channels.evidence_present.entries[key=a|e-3|early|1].variants[id=a-e-3-early-stage1-v7]",
+    "textField": "text",
+    "channel": "evidence_present",
+    "speaker": "a",
+    "target": "a",
+    "actual": "stage=1; matched=돈 문제; text=한 줄의 돈 문제 뒤에 감정이 굳었습니다. 묻기 전에 제 기억이 결론을 만들었습니다.",
+    "expected": "Stub/excerpt/request-original surfaces should not expose hidden/truth description terms."
+  },
+  {
+    "clusterId": "C1-friend-money-matter",
+    "id": "QARG-01310",
+    "caseId": "friend-01",
+    "evidenceId": "e-3",
+    "evidenceStage": 1,
+    "lieBand": "early",
+    "matchedLexemes": [
+      "돈 문제"
+    ],
+    "sourceKind": "scriptedText",
+    "sourcePath": "src/data/scriptedText/friend-01.json:channels.evidence_present.entries[key=a|e-3|early|1].variants[id=a-e-3-early-stage1-v10]",
+    "textField": "text",
+    "channel": "evidence_present",
+    "speaker": "a",
+    "target": "a",
+    "actual": "stage=1; matched=돈 문제; text=돈 문제라는 말이 손절의 문턱에 놓여 있습니다. 두 사람의 책임을 보기보다 상대 탓이 먼저였습니다.",
+    "expected": "Stub/excerpt/request-original surfaces should not expose hidden/truth description terms."
+  },
+  {
+    "clusterId": "C1-friend-money-matter",
+    "id": "QARG-01312",
+    "caseId": "friend-01",
+    "evidenceId": "e-3",
+    "evidenceStage": 1,
+    "lieBand": "mid",
+    "matchedLexemes": [
+      "돈 문제"
+    ],
+    "sourceKind": "scriptedText",
+    "sourcePath": "src/data/scriptedText/friend-01.json:channels.evidence_present.entries[key=a|e-3|mid|1].variants[id=a-e-3-mid-stage1-v1]",
+    "textField": "text",
+    "channel": "evidence_present",
+    "speaker": "a",
+    "target": "a",
+    "actual": "stage=1; matched=돈 문제; text=돈 문제를 알아서 정리하겠다는 말 뒤로 설명이 끊겼습니다. 저도 보이는 조각만 제 결론에 붙였습니다.",
+    "expected": "Stub/excerpt/request-original surfaces should not expose hidden/truth description terms."
+  },
+  {
+    "clusterId": "C1-friend-money-matter",
+    "id": "QARG-01313",
+    "caseId": "friend-01",
+    "evidenceId": "e-3",
+    "evidenceStage": 1,
+    "lieBand": "mid",
+    "matchedLexemes": [
+      "돈 문제"
+    ],
+    "sourceKind": "scriptedText",
+    "sourcePath": "src/data/scriptedText/friend-01.json:channels.evidence_present.entries[key=a|e-3|mid|1].variants[id=a-e-3-mid-stage1-v5]",
+    "textField": "text",
+    "channel": "evidence_present",
+    "speaker": "a",
+    "target": "a",
+    "actual": "stage=1; matched=돈 문제; text=돈 문제라는 말만 남고 상대가 누구인지는 비어 있습니다. 둘 사이의 공백을 제가 너무 쉽게 배신으로 읽었습니다.",
+    "expected": "Stub/excerpt/request-original surfaces should not expose hidden/truth description terms."
+  },
+  {
+    "clusterId": "C1-friend-money-matter",
+    "id": "QARG-01314",
+    "caseId": "friend-01",
+    "evidenceId": "e-3",
+    "evidenceStage": 1,
+    "lieBand": "mid",
+    "matchedLexemes": [
+      "돈 문제"
+    ],
+    "sourceKind": "scriptedText",
+    "sourcePath": "src/data/scriptedText/friend-01.json:channels.evidence_present.entries[key=a|e-3|mid|1].variants[id=a-e-3-mid-stage1-v9]",
+    "textField": "text",
+    "channel": "evidence_present",
+    "speaker": "a",
+    "target": "a",
+    "actual": "stage=1; matched=돈 문제; text=돈 문제를 둘러싼 대화가 풀리지 않은 채 멈췄습니다. 이 자료는 제 전 친구만이 아니라 저도 묻게 합니다.",
+    "expected": "Stub/excerpt/request-original surfaces should not expose hidden/truth description terms."
+  },
+  {
+    "clusterId": "C1-friend-money-matter",
+    "id": "QARG-01319",
+    "caseId": "friend-01",
+    "evidenceId": "e-3",
+    "evidenceStage": 1,
+    "lieBand": "late",
+    "matchedLexemes": [
+      "돈 문제"
+    ],
+    "sourceKind": "scriptedText",
+    "sourcePath": "src/data/scriptedText/friend-01.json:channels.evidence_present.entries[key=a|e-3|late|1].variants[id=a-e-3-late-stage1-v1]",
+    "textField": "text",
+    "channel": "evidence_present",
+    "speaker": "a",
+    "target": "a",
+    "actual": "stage=1; matched=돈 문제; text=돈 문제는 내가 정리하겠다는 말과 제 단정이 함께 남아 있습니다. 제가 몰랐던 빈칸을 이유로 사람을 먼저 정한 건 제 책임입니다.",
+    "expected": "Stub/excerpt/request-original surfaces should not expose hidden/truth description terms."
+  },
+  {
+    "clusterId": "C1-friend-money-matter",
+    "id": "QARG-01320",
+    "caseId": "friend-01",
+    "evidenceId": "e-3",
+    "evidenceStage": 1,
+    "lieBand": "late",
+    "matchedLexemes": [
+      "돈 문제"
+    ],
+    "sourceKind": "scriptedText",
+    "sourcePath": "src/data/scriptedText/friend-01.json:channels.evidence_present.entries[key=a|e-3|late|1].variants[id=a-e-3-late-stage1-v2]",
+    "textField": "text",
+    "channel": "evidence_present",
+    "speaker": "a",
+    "target": "a",
+    "actual": "stage=1; matched=돈 문제; text=손절 직전 대화는 숨긴 돈 문제와 확인 없는 결론이 맞부딪힌 기록입니다. 제 전 친구의 침묵이 잘못이어도 제 단정이 사라지진 않습니다.",
+    "expected": "Stub/excerpt/request-original surfaces should not expose hidden/truth description terms."
+  },
+  {
+    "clusterId": "C1-friend-money-matter",
+    "id": "QARG-01321",
+    "caseId": "friend-01",
+    "evidenceId": "e-3",
+    "evidenceStage": 1,
+    "lieBand": "late",
+    "matchedLexemes": [
+      "돈 문제"
+    ],
+    "sourceKind": "scriptedText",
+    "sourcePath": "src/data/scriptedText/friend-01.json:channels.evidence_present.entries[key=a|e-3|late|1].variants[id=a-e-3-late-stage1-v3]",
+    "textField": "text",
+    "channel": "evidence_present",
+    "speaker": "a",
+    "target": "a",
+    "actual": "stage=1; matched=돈 문제; text=원문에는 돈 문제의 상대를 말하지 못한 침묵이 남아 있습니다. 둘 사이의 과거를 제가 너무 쉽게 한쪽 잘못으로 닫았습니다.",
+    "expected": "Stub/excerpt/request-original surfaces should not expose hidden/truth description terms."
+  },
+  {
+    "clusterId": "C1-friend-money-matter",
+    "id": "QARG-01322",
+    "caseId": "friend-01",
+    "evidenceId": "e-3",
+    "evidenceStage": 1,
+    "lieBand": "late",
+    "matchedLexemes": [
+      "돈 문제"
+    ],
+    "sourceKind": "scriptedText",
+    "sourcePath": "src/data/scriptedText/friend-01.json:channels.evidence_present.entries[key=a|e-3|late|1].variants[id=a-e-3-late-stage1-v5]",
+    "textField": "text",
+    "channel": "evidence_present",
+    "speaker": "a",
+    "target": "a",
+    "actual": "stage=1; matched=돈 문제; text=손절의 시작은 변심이 아니라 말하지 못한 돈 문제였습니다. 그때 끝까지 물었어야 할 사람도 저였습니다.",
+    "expected": "Stub/excerpt/request-original surfaces should not expose hidden/truth description terms."
+  },
+  {
+    "clusterId": "C1-friend-money-matter",
+    "id": "QARG-01323",
+    "caseId": "friend-01",
+    "evidenceId": "e-3",
+    "evidenceStage": 1,
+    "lieBand": "late",
+    "matchedLexemes": [
+      "돈 문제"
+    ],
+    "sourceKind": "scriptedText",
+    "sourcePath": "src/data/scriptedText/friend-01.json:channels.evidence_present.entries[key=a|e-3|late|1].variants[id=a-e-3-late-stage1-v7]",
+    "textField": "text",
+    "channel": "evidence_present",
+    "speaker": "a",
+    "target": "a",
+    "actual": "stage=1; matched=돈 문제; text=돈 문제라는 빈칸을 두고 저는 사람을 먼저 정리했습니다. 제가 만든 프레임이 현재 사건까지 끌고 왔습니다.",
+    "expected": "Stub/excerpt/request-original surfaces should not expose hidden/truth description terms."
+  },
+  {
+    "clusterId": "C1-friend-money-matter",
+    "id": "QARG-01837",
+    "caseId": "friend-01",
+    "evidenceId": "e-3",
+    "evidenceStage": 0,
+    "matchedLexemes": [
+      "돈 문제"
+    ],
+    "sourceKind": "caseData",
+    "sourcePath": "src/data/cases/generated/friend-01.json:evidence.e-3.description",
+    "textField": "description",
+    "channel": "case_data",
+    "speaker": "system",
+    "target": null,
+    "actual": "stage=0; matched=돈 문제; text=B가 '돈 문제는 내가 알아서 정리할게'라고만 남기고 설명을 피했고, A는 '넌 돈만 엮이면 사람이 달라진다'고 답한 기록.",
+    "expected": "Stub/excerpt/request-original surfaces should not expose hidden/truth description terms."
+  },
+  {
+    "clusterId": "C1-friend-money-matter",
+    "id": "QARG-01839",
+    "caseId": "friend-01",
+    "evidenceId": "e-3",
+    "evidenceStage": 1,
+    "matchedLexemes": [
+      "돈 문제"
+    ],
+    "sourceKind": "caseData",
+    "sourcePath": "src/data/cases/generated/friend-01.json:evidence.e-3.investigationResults.request_original",
+    "textField": "investigationResults.request_original",
+    "channel": "evidence_discovery",
+    "speaker": "system",
+    "target": null,
+    "actual": "stage=1; matched=돈 문제; text=B가 '돈 문제는 내가 알아서 정리할게'라고만 남겼고, A는 '넌 돈만 엮이면 사람이 달라진다'고 답했다.",
+    "expected": "Stub/excerpt/request-original surfaces should not expose hidden/truth description terms."
+  },
+  {
+    "clusterId": "C1-friend-money-matter",
+    "id": "QARG-01844",
+    "caseId": "friend-01",
+    "evidenceId": "e-3",
+    "evidenceStage": 1,
+    "matchedLexemes": [
+      "돈 문제"
+    ],
+    "sourceKind": "caseData",
+    "sourcePath": "src/data/cases/generated/friend-01.json:evidence.e-3.v3DepthPlan.excerpt.summary",
+    "textField": "v3DepthPlan.summary",
+    "channel": "case_data",
+    "speaker": "system",
+    "target": null,
+    "actual": "stage=1; matched=돈 문제; text='돈 문제'와 '사람이 달라진다' 발언만 보임",
+    "expected": "Stub/excerpt/request-original surfaces should not expose hidden/truth description terms."
+  },
+  {
+    "clusterId": "C1-friend-money-matter",
+    "id": "QARG-01849",
+    "caseId": "friend-01",
+    "evidenceId": "e-3",
+    "evidenceStage": 0,
+    "matchedLexemes": [
+      "돈 문제"
+    ],
+    "sourceKind": "caseData",
+    "sourcePath": "src/data/cases/generated/friend-01.json:evidence.e-3.partyContext.b.questionAngle",
+    "textField": "partyContext.questionAngle",
+    "channel": "judge_question",
+    "speaker": "system",
+    "target": "b",
+    "actual": "stage=0; matched=돈 문제; text=왜 '돈 문제'의 실체를 끝까지 말하지 않았습니까?",
+    "expected": "Stub/excerpt/request-original surfaces should not expose hidden/truth description terms."
+  },
+  {
+    "clusterId": "C1-friend-money-matter",
+    "id": "QARG-01910",
+    "caseId": "friend-01",
+    "evidenceId": "e-3",
+    "evidenceStage": 0,
+    "matchedLexemes": [
+      "돈 문제"
+    ],
+    "sourceKind": "disclosurePolicy",
+    "sourcePath": "src/data/disclosurePolicy/friend-01.json:surfaceMap.evidence.e-3.surfaceDescription",
+    "textField": "surfaceDescription",
+    "channel": "system_message",
+    "speaker": "system",
+    "target": null,
+    "actual": "stage=0; matched=돈 문제; text=과거 손절 직전 두 사람이 돈 문제를 두고 나눈 대화 기록.",
+    "expected": "Stub/excerpt/request-original surfaces should not expose hidden/truth description terms."
+  },
+  {
+    "clusterId": "C1-friend-money-matter",
+    "id": "QARG-01913",
+    "caseId": "friend-01",
+    "evidenceId": "e-3",
+    "evidenceStage": 0,
+    "matchedLexemes": [
+      "돈 문제"
+    ],
+    "sourceKind": "disclosurePolicy",
+    "sourcePath": "src/data/disclosurePolicy/friend-01.json:discoveryText.entries.combine-7.surfaceFallback",
+    "textField": "discoveryText.surfaceFallback",
+    "channel": "system_message",
+    "speaker": "system",
+    "target": null,
+    "actual": "stage=0; matched=돈 문제; text=과거 돈 문제와 손절 시점을 함께 확인한다.",
+    "expected": "Stub/excerpt/request-original surfaces should not expose hidden/truth description terms."
+  },
+  {
+    "clusterId": "C2-family-notarized-will",
+    "id": "QARG-00798",
+    "caseId": "family-01",
+    "evidenceId": "e-1",
+    "evidenceStage": 1,
+    "lieBand": "early",
+    "matchedLexemes": [
+      "공증 유서"
+    ],
+    "sourceKind": "scriptedText",
+    "sourcePath": "src/data/scriptedText/family-01.json:channels.evidence_present.entries[key=a|e-1|early|1].variants[id=a-e-1-early-stage1-v1]",
+    "textField": "text",
+    "channel": "evidence_present",
+    "speaker": "a",
+    "target": "a",
+    "actual": "stage=1; matched=공증 유서; text=이 공증 유서 사본부터 이상했습니다. 제 동생이 어머니 뜻을 자기 쪽으로 끌었다고 봤습니다.",
+    "expected": "Stub/excerpt/request-original surfaces should not expose hidden/truth description terms."
+  },
+  {
+    "clusterId": "C2-family-notarized-will",
+    "id": "QARG-00799",
+    "caseId": "family-01",
+    "evidenceId": "e-1",
+    "evidenceStage": 1,
+    "lieBand": "early",
+    "matchedLexemes": [
+      "공증 유서"
+    ],
+    "sourceKind": "scriptedText",
+    "sourcePath": "src/data/scriptedText/family-01.json:channels.evidence_present.entries[key=a|e-1|early|1].variants[id=a-e-1-early-stage1-v3]",
+    "textField": "text",
+    "channel": "evidence_present",
+    "speaker": "a",
+    "target": "a",
+    "actual": "stage=1; matched=공증 유서; text=처음엔 공증 유서 사본의 출처보다 결과가 먼저 보였습니다. 제 동생이 어머니 뜻을 자기 쪽으로 끌었다고 봤습니다.",
+    "expected": "Stub/excerpt/request-original surfaces should not expose hidden/truth description terms."
+  },
+  {
+    "clusterId": "C2-family-notarized-will",
+    "id": "QARG-00800",
+    "caseId": "family-01",
+    "evidenceId": "e-1",
+    "evidenceStage": 1,
+    "lieBand": "early",
+    "matchedLexemes": [
+      "공증 유서"
+    ],
+    "sourceKind": "scriptedText",
+    "sourcePath": "src/data/scriptedText/family-01.json:channels.evidence_present.entries[key=a|e-1|early|1].variants[id=a-e-1-early-stage1-v5]",
+    "textField": "text",
+    "channel": "evidence_present",
+    "speaker": "a",
+    "target": "a",
+    "actual": "stage=1; matched=공증 유서; text=공증 유서 사본이 제 앞에 놓인 순간 의심이 시작됐습니다. 장남으로 지켜 온 시간이 문면 한 줄로 밀린 것 같았습니다.",
+    "expected": "Stub/excerpt/request-original surfaces should not expose hidden/truth description terms."
+  },
+  {
+    "clusterId": "C2-family-notarized-will",
+    "id": "QARG-00801",
+    "caseId": "family-01",
+    "evidenceId": "e-1",
+    "evidenceStage": 1,
+    "lieBand": "early",
+    "matchedLexemes": [
+      "공증 유서"
+    ],
+    "sourceKind": "scriptedText",
+    "sourcePath": "src/data/scriptedText/family-01.json:channels.evidence_present.entries[key=a|e-1|early|1].variants[id=a-e-1-early-stage1-v8]",
+    "textField": "text",
+    "channel": "evidence_present",
+    "speaker": "a",
+    "target": "a",
+    "actual": "stage=1; matched=공증 유서; text=공증 유서 사본을 보면 제 동생의 움직임을 떠올릴 수밖에 없습니다. 장남으로 지켜 온 시간이 문면 한 줄로 밀린 것 같았습니다.",
+    "expected": "Stub/excerpt/request-original surfaces should not expose hidden/truth description terms."
+  },
+  {
+    "clusterId": "C2-family-notarized-will",
+    "id": "QARG-00802",
+    "caseId": "family-01",
+    "evidenceId": "e-1",
+    "evidenceStage": 1,
+    "lieBand": "mid",
+    "matchedLexemes": [
+      "공증 유서"
+    ],
+    "sourceKind": "scriptedText",
+    "sourcePath": "src/data/scriptedText/family-01.json:channels.evidence_present.entries[key=a|e-1|mid|1].variants[id=a-e-1-mid-stage1-v1]",
+    "textField": "text",
+    "channel": "evidence_present",
+    "speaker": "a",
+    "target": "a",
+    "actual": "stage=1; matched=공증 유서; text=공증 유서 사본 자체는 확인됐습니다. 다만 제 동생이 어머니 뜻을 자기 쪽으로 끌었다고 봤습니다.",
+    "expected": "Stub/excerpt/request-original surfaces should not expose hidden/truth description terms."
+  },
+  {
+    "clusterId": "C2-family-notarized-will",
+    "id": "QARG-00803",
+    "caseId": "family-01",
+    "evidenceId": "e-1",
+    "evidenceStage": 1,
+    "lieBand": "mid",
+    "matchedLexemes": [
+      "공증 유서"
+    ],
+    "sourceKind": "scriptedText",
+    "sourcePath": "src/data/scriptedText/family-01.json:channels.evidence_present.entries[key=a|e-1|mid|1].variants[id=a-e-1-mid-stage1-v4]",
+    "textField": "text",
+    "channel": "evidence_present",
+    "speaker": "a",
+    "target": "a",
+    "actual": "stage=1; matched=공증 유서; text=공증 유서 사본을 두고 제 감정이 앞선 건 맞습니다. 그래도 제 동생이 어머니 뜻을 자기 쪽으로 끌었다고 봤습니다.",
+    "expected": "Stub/excerpt/request-original surfaces should not expose hidden/truth description terms."
+  },
+  {
+    "clusterId": "C2-family-notarized-will",
+    "id": "QARG-00804",
+    "caseId": "family-01",
+    "evidenceId": "e-1",
+    "evidenceStage": 1,
+    "lieBand": "mid",
+    "matchedLexemes": [
+      "공증 유서"
+    ],
+    "sourceKind": "scriptedText",
+    "sourcePath": "src/data/scriptedText/family-01.json:channels.evidence_present.entries[key=a|e-1|mid|1].variants[id=a-e-1-mid-stage1-v7]",
+    "textField": "text",
+    "channel": "evidence_present",
+    "speaker": "a",
+    "target": "a",
+    "actual": "stage=1; matched=공증 유서; text=공증 유서 사본을 처음 본 충격이 제 판단을 세게 만들었습니다. 그래도 의심은 남습니다.",
+    "expected": "Stub/excerpt/request-original surfaces should not expose hidden/truth description terms."
+  },
+  {
+    "clusterId": "C2-family-notarized-will",
+    "id": "QARG-00805",
+    "caseId": "family-01",
+    "evidenceId": "e-1",
+    "evidenceStage": 1,
+    "lieBand": "mid",
+    "matchedLexemes": [
+      "공증 유서"
+    ],
+    "sourceKind": "scriptedText",
+    "sourcePath": "src/data/scriptedText/family-01.json:channels.evidence_present.entries[key=a|e-1|mid|1].variants[id=a-e-1-mid-stage1-v10]",
+    "textField": "text",
+    "channel": "evidence_present",
+    "speaker": "a",
+    "target": "a",
+    "actual": "stage=1; matched=공증 유서; text=공증 유서 사본을 보며 제 해석이 앞섰어도, 그 해석이 전부 틀렸다고는 못 하겠습니다.",
+    "expected": "Stub/excerpt/request-original surfaces should not expose hidden/truth description terms."
+  },
+  {
+    "clusterId": "C2-family-notarized-will",
+    "id": "QARG-00806",
+    "caseId": "family-01",
+    "evidenceId": "e-1",
+    "evidenceStage": 1,
+    "lieBand": "late",
+    "matchedLexemes": [
+      "공증 유서"
+    ],
+    "sourceKind": "scriptedText",
+    "sourcePath": "src/data/scriptedText/family-01.json:channels.evidence_present.entries[key=a|e-1|late|1].variants[id=a-e-1-late-stage1-v1]",
+    "textField": "text",
+    "channel": "evidence_present",
+    "speaker": "a",
+    "target": "a",
+    "actual": "stage=1; matched=공증 유서; text=공증 유서 사본을 처음 본 제가 너무 빨리 결론을 냈습니다. 문면만 보고 최종 뜻이라고 단정한 제 분노도 따져야 합니다.",
+    "expected": "Stub/excerpt/request-original surfaces should not expose hidden/truth description terms."
+  },
+  {
+    "clusterId": "C2-family-notarized-will",
+    "id": "QARG-00807",
+    "caseId": "family-01",
+    "evidenceId": "e-1",
+    "evidenceStage": 1,
+    "lieBand": "late",
+    "matchedLexemes": [
+      "공증 유서"
+    ],
+    "sourceKind": "scriptedText",
+    "sourcePath": "src/data/scriptedText/family-01.json:channels.evidence_present.entries[key=a|e-1|late|1].variants[id=a-e-1-late-stage1-v6]",
+    "textField": "text",
+    "channel": "evidence_present",
+    "speaker": "a",
+    "target": "a",
+    "actual": "stage=1; matched=공증 유서; text=공증 유서 사본 자체보다 제가 거기에 붙인 의미가 컸습니다. 제 판단도 함께 보겠습니다.",
+    "expected": "Stub/excerpt/request-original surfaces should not expose hidden/truth description terms."
+  },
+  {
+    "clusterId": "C2-family-notarized-will",
+    "id": "QARG-00808",
+    "caseId": "family-01",
+    "evidenceId": "e-1",
+    "evidenceStage": 1,
+    "lieBand": "early",
+    "matchedLexemes": [
+      "공증 유서"
+    ],
+    "sourceKind": "scriptedText",
+    "sourcePath": "src/data/scriptedText/family-01.json:channels.evidence_present.entries[key=b|e-1|early|1].variants[id=b-e-1-early-stage1-v2]",
+    "textField": "text",
+    "channel": "evidence_present",
+    "speaker": "b",
+    "target": "b",
+    "actual": "stage=1; matched=공증 유서; text=공증 유서 사본을 피하려는 건 아닙니다. 그래도 그 문면만으로 제가 어머니 뜻을 만든 건 아닙니다.",
+    "expected": "Stub/excerpt/request-original surfaces should not expose hidden/truth description terms."
+  },
+  {
+    "clusterId": "C2-family-notarized-will",
+    "id": "QARG-00809",
+    "caseId": "family-01",
+    "evidenceId": "e-1",
+    "evidenceStage": 1,
+    "lieBand": "early",
+    "matchedLexemes": [
+      "공증 유서"
+    ],
+    "sourceKind": "scriptedText",
+    "sourcePath": "src/data/scriptedText/family-01.json:channels.evidence_present.entries[key=b|e-1|early|1].variants[id=b-e-1-early-stage1-v6]",
+    "textField": "text",
+    "channel": "evidence_present",
+    "speaker": "b",
+    "target": "b",
+    "actual": "stage=1; matched=공증 유서; text=공증 유서 사본은 맞지만, 그 다음 해석은 조심해야 합니다. 그래서 말을 더 아꼈습니다.",
+    "expected": "Stub/excerpt/request-original surfaces should not expose hidden/truth description terms."
+  },
+  {
+    "clusterId": "C2-family-notarized-will",
+    "id": "QARG-00810",
+    "caseId": "family-01",
+    "evidenceId": "e-1",
+    "evidenceStage": 1,
+    "lieBand": "early",
+    "matchedLexemes": [
+      "공증 유서"
+    ],
+    "sourceKind": "scriptedText",
+    "sourcePath": "src/data/scriptedText/family-01.json:channels.evidence_present.entries[key=b|e-1|early|1].variants[id=b-e-1-early-stage1-v10]",
+    "textField": "text",
+    "channel": "evidence_present",
+    "speaker": "b",
+    "target": "b",
+    "actual": "stage=1; matched=공증 유서; text=지금은 공증 유서 사본의 존재만 말씀드리겠습니다. 더 큰 뜻으로 몰지는 말아 주십시오.",
+    "expected": "Stub/excerpt/request-original surfaces should not expose hidden/truth description terms."
+  },
+  {
+    "clusterId": "C2-family-notarized-will",
+    "id": "QARG-00812",
+    "caseId": "family-01",
+    "evidenceId": "e-1",
+    "evidenceStage": 1,
+    "lieBand": "mid",
+    "matchedLexemes": [
+      "공증 유서"
+    ],
+    "sourceKind": "scriptedText",
+    "sourcePath": "src/data/scriptedText/family-01.json:channels.evidence_present.entries[key=b|e-1|mid|1].variants[id=b-e-1-mid-stage1-v3]",
+    "textField": "text",
+    "channel": "evidence_present",
+    "speaker": "b",
+    "target": "b",
+    "actual": "stage=1; matched=공증 유서; text=공증 유서 사본이 남은 건 사실입니다. 그 의미는 따로 봐야 합니다. 그래서 말을 더 아꼈습니다.",
+    "expected": "Stub/excerpt/request-original surfaces should not expose hidden/truth description terms."
+  },
+  {
+    "clusterId": "C2-family-notarized-will",
+    "id": "QARG-00813",
+    "caseId": "family-01",
+    "evidenceId": "e-1",
+    "evidenceStage": 1,
+    "lieBand": "mid",
+    "matchedLexemes": [
+      "공증 유서"
+    ],
+    "sourceKind": "scriptedText",
+    "sourcePath": "src/data/scriptedText/family-01.json:channels.evidence_present.entries[key=b|e-1|mid|1].variants[id=b-e-1-mid-stage1-v7]",
+    "textField": "text",
+    "channel": "evidence_present",
+    "speaker": "b",
+    "target": "b",
+    "actual": "stage=1; matched=공증 유서; text=처음엔 피하려 했지만, 공증 유서 사본은 분명히 남아 있습니다. 그래서 말을 더 아꼈습니다.",
+    "expected": "Stub/excerpt/request-original surfaces should not expose hidden/truth description terms."
+  },
+  {
+    "clusterId": "C2-family-notarized-will",
+    "id": "QARG-00814",
+    "caseId": "family-01",
+    "evidenceId": "e-1",
+    "evidenceStage": 1,
+    "lieBand": "mid",
+    "matchedLexemes": [
+      "공증 유서"
+    ],
+    "sourceKind": "scriptedText",
+    "sourcePath": "src/data/scriptedText/family-01.json:channels.evidence_present.entries[key=b|e-1|mid|1].variants[id=b-e-1-mid-stage1-v10]",
+    "textField": "text",
+    "channel": "evidence_present",
+    "speaker": "b",
+    "target": "b",
+    "actual": "stage=1; matched=공증 유서; text=공증 유서 사본 자체를 다투지는 않겠습니다. 이제 경위를 봐야 합니다. 그래서 말을 더 아꼈습니다.",
+    "expected": "Stub/excerpt/request-original surfaces should not expose hidden/truth description terms."
+  },
+  {
+    "clusterId": "C2-family-notarized-will",
+    "id": "QARG-00815",
+    "caseId": "family-01",
+    "evidenceId": "e-1",
+    "evidenceStage": 1,
+    "lieBand": "late",
+    "matchedLexemes": [
+      "공증 유서"
+    ],
+    "sourceKind": "scriptedText",
+    "sourcePath": "src/data/scriptedText/family-01.json:channels.evidence_present.entries[key=b|e-1|late|1].variants[id=b-e-1-late-stage1-v2]",
+    "textField": "text",
+    "channel": "evidence_present",
+    "speaker": "b",
+    "target": "b",
+    "actual": "stage=1; matched=공증 유서; text=공증 유서 사본 앞에서 제가 물러날 수는 없습니다. 그 사본의 작성 과정 가까이에 있었던 건 맞습니다.",
+    "expected": "Stub/excerpt/request-original surfaces should not expose hidden/truth description terms."
+  },
+  {
+    "clusterId": "C2-family-notarized-will",
+    "id": "QARG-00816",
+    "caseId": "family-01",
+    "evidenceId": "e-1",
+    "evidenceStage": 1,
+    "lieBand": "late",
+    "matchedLexemes": [
+      "공증 유서"
+    ],
+    "sourceKind": "scriptedText",
+    "sourcePath": "src/data/scriptedText/family-01.json:channels.evidence_present.entries[key=b|e-1|late|1].variants[id=b-e-1-late-stage1-v8]",
+    "textField": "text",
+    "channel": "evidence_present",
+    "speaker": "b",
+    "target": "b",
+    "actual": "stage=1; matched=공증 유서; text=공증 유서 사본을 두고 제가 아예 밖에 있었다고 말할 수는 없습니다. 그 경위까지 말씀드리겠습니다.",
+    "expected": "Stub/excerpt/request-original surfaces should not expose hidden/truth description terms."
+  },
+  {
+    "clusterId": "C2-family-notarized-will",
+    "id": "QARG-01091",
+    "caseId": "family-01",
+    "evidenceId": "e-1",
+    "evidenceStage": 0,
+    "matchedLexemes": [
+      "공증 유서"
+    ],
+    "sourceKind": "disclosurePolicy",
+    "sourcePath": "src/data/disclosurePolicy/family-01.json:surfaceMap.evidence.e-1.surfaceName",
+    "textField": "surfaceName",
+    "channel": "system_message",
+    "speaker": "system",
+    "target": null,
+    "actual": "stage=0; matched=공증 유서; text=공증 유서 사본",
+    "expected": "Stub/excerpt/request-original surfaces should not expose hidden/truth description terms."
+  },
+  {
+    "clusterId": "C2-family-notarized-will",
+    "id": "QARG-01092",
+    "caseId": "family-01",
+    "evidenceId": "e-1",
+    "evidenceStage": 0,
+    "matchedLexemes": [
+      "공증 유서"
+    ],
+    "sourceKind": "disclosurePolicy",
+    "sourcePath": "src/data/disclosurePolicy/family-01.json:surfaceMap.evidence.e-1.surfaceDescription",
+    "textField": "surfaceDescription",
+    "channel": "system_message",
+    "speaker": "system",
+    "target": null,
+    "actual": "stage=0; matched=공증 유서; text=어머니 사망 전 작성된 공증 유서 사본. 문면상 분배 비율과 공증 절차가 보인다.",
+    "expected": "Stub/excerpt/request-original surfaces should not expose hidden/truth description terms."
+  },
+  {
+    "clusterId": "C3-family-original-will",
+    "id": "QARG-00821",
+    "caseId": "family-01",
+    "evidenceId": "e-5",
+    "evidenceStage": 1,
+    "lieBand": "early",
+    "matchedLexemes": [
+      "원본 유서",
+      "어머니 서랍에서 나온 원본 유서"
+    ],
+    "sourceKind": "scriptedText",
+    "sourcePath": "src/data/scriptedText/family-01.json:channels.evidence_present.entries[key=a|e-5|early|1].variants[id=a-e-5-early-stage1-v1]",
+    "textField": "text",
+    "channel": "evidence_present",
+    "speaker": "a",
+    "target": "a",
+    "actual": "stage=1; matched=원본 유서, 어머니 서랍에서 나온 원본 유서; text=이 어머니 서랍에서 나온 원본 유서부터 이상했습니다. 제가 본 유서가 전부가 아닐 수 있다는 말로 들렸습니다.",
+    "expected": "Stub/excerpt/request-original surfaces should not expose hidden/truth description terms."
+  },
+  {
+    "clusterId": "C3-family-original-will",
+    "id": "QARG-00823",
+    "caseId": "family-01",
+    "evidenceId": "e-5",
+    "evidenceStage": 1,
+    "lieBand": "early",
+    "matchedLexemes": [
+      "원본 유서",
+      "어머니 서랍에서 나온 원본 유서"
+    ],
+    "sourceKind": "scriptedText",
+    "sourcePath": "src/data/scriptedText/family-01.json:channels.evidence_present.entries[key=a|e-5|early|1].variants[id=a-e-5-early-stage1-v3]",
+    "textField": "text",
+    "channel": "evidence_present",
+    "speaker": "a",
+    "target": "a",
+    "actual": "stage=1; matched=원본 유서, 어머니 서랍에서 나온 원본 유서; text=처음엔 어머니 서랍에서 나온 원본 유서의 출처보다 결과가 먼저 보였습니다. 제가 본 유서가 전부가 아닐 수 있다는 말로 들렸습니다.",
+    "expected": "Stub/excerpt/request-original surfaces should not expose hidden/truth description terms."
+  },
+  {
+    "clusterId": "C3-family-original-will",
+    "id": "QARG-00825",
+    "caseId": "family-01",
+    "evidenceId": "e-5",
+    "evidenceStage": 1,
+    "lieBand": "early",
+    "matchedLexemes": [
+      "원본 유서",
+      "어머니 서랍에서 나온 원본 유서"
+    ],
+    "sourceKind": "scriptedText",
+    "sourcePath": "src/data/scriptedText/family-01.json:channels.evidence_present.entries[key=a|e-5|early|1].variants[id=a-e-5-early-stage1-v5]",
+    "textField": "text",
+    "channel": "evidence_present",
+    "speaker": "a",
+    "target": "a",
+    "actual": "stage=1; matched=원본 유서, 어머니 서랍에서 나온 원본 유서; text=어머니 서랍에서 나온 원본 유서가 제 앞에 놓인 순간 의심이 시작됐습니다. 어머니가 다른 뜻을 먼저 남겼다면 판이 달라지기 때문입니다.",
+    "expected": "Stub/excerpt/request-original surfaces should not expose hidden/truth description terms."
+  },
+  {
+    "clusterId": "C3-family-original-will",
+    "id": "QARG-00827",
+    "caseId": "family-01",
+    "evidenceId": "e-5",
+    "evidenceStage": 1,
+    "lieBand": "early",
+    "matchedLexemes": [
+      "원본 유서",
+      "어머니 서랍에서 나온 원본 유서"
+    ],
+    "sourceKind": "scriptedText",
+    "sourcePath": "src/data/scriptedText/family-01.json:channels.evidence_present.entries[key=a|e-5|early|1].variants[id=a-e-5-early-stage1-v8]",
+    "textField": "text",
+    "channel": "evidence_present",
+    "speaker": "a",
+    "target": "a",
+    "actual": "stage=1; matched=원본 유서, 어머니 서랍에서 나온 원본 유서; text=어머니 서랍에서 나온 원본 유서를 보면 제 동생의 움직임을 떠올릴 수밖에 없습니다. 어머니가 다른 뜻을 먼저 남겼다면 판이 달라지기 때문입니다.",
+    "expected": "Stub/excerpt/request-original surfaces should not expose hidden/truth description terms."
+  },
+  {
+    "clusterId": "C3-family-original-will",
+    "id": "QARG-00829",
+    "caseId": "family-01",
+    "evidenceId": "e-5",
+    "evidenceStage": 1,
+    "lieBand": "mid",
+    "matchedLexemes": [
+      "원본 유서",
+      "어머니 서랍에서 나온 원본 유서"
+    ],
+    "sourceKind": "scriptedText",
+    "sourcePath": "src/data/scriptedText/family-01.json:channels.evidence_present.entries[key=a|e-5|mid|1].variants[id=a-e-5-mid-stage1-v1]",
+    "textField": "text",
+    "channel": "evidence_present",
+    "speaker": "a",
+    "target": "a",
+    "actual": "stage=1; matched=원본 유서, 어머니 서랍에서 나온 원본 유서; text=어머니 서랍에서 나온 원본 유서 자체는 확인됐습니다. 다만 제가 본 유서가 전부가 아닐 수 있다는 말로 들렸습니다.",
+    "expected": "Stub/excerpt/request-original surfaces should not expose hidden/truth description terms."
+  },
+  {
+    "clusterId": "C3-family-original-will",
+    "id": "QARG-00831",
+    "caseId": "family-01",
+    "evidenceId": "e-5",
+    "evidenceStage": 1,
+    "lieBand": "mid",
+    "matchedLexemes": [
+      "원본 유서",
+      "어머니 서랍에서 나온 원본 유서"
+    ],
+    "sourceKind": "scriptedText",
+    "sourcePath": "src/data/scriptedText/family-01.json:channels.evidence_present.entries[key=a|e-5|mid|1].variants[id=a-e-5-mid-stage1-v4]",
+    "textField": "text",
+    "channel": "evidence_present",
+    "speaker": "a",
+    "target": "a",
+    "actual": "stage=1; matched=원본 유서, 어머니 서랍에서 나온 원본 유서; text=어머니 서랍에서 나온 원본 유서를 두고 제 감정이 앞선 건 맞습니다. 그래도 제가 본 유서가 전부가 아닐 수 있다는 말로 들렸습니다.",
+    "expected": "Stub/excerpt/request-original surfaces should not expose hidden/truth description terms."
+  },
+  {
+    "clusterId": "C3-family-original-will",
+    "id": "QARG-00833",
+    "caseId": "family-01",
+    "evidenceId": "e-5",
+    "evidenceStage": 1,
+    "lieBand": "mid",
+    "matchedLexemes": [
+      "원본 유서",
+      "어머니 서랍에서 나온 원본 유서"
+    ],
+    "sourceKind": "scriptedText",
+    "sourcePath": "src/data/scriptedText/family-01.json:channels.evidence_present.entries[key=a|e-5|mid|1].variants[id=a-e-5-mid-stage1-v7]",
+    "textField": "text",
+    "channel": "evidence_present",
+    "speaker": "a",
+    "target": "a",
+    "actual": "stage=1; matched=원본 유서, 어머니 서랍에서 나온 원본 유서; text=어머니 서랍에서 나온 원본 유서를 처음 본 충격이 제 판단을 세게 만들었습니다. 그래도 의심은 남습니다.",
+    "expected": "Stub/excerpt/request-original surfaces should not expose hidden/truth description terms."
+  },
+  {
+    "clusterId": "C3-family-original-will",
+    "id": "QARG-00835",
+    "caseId": "family-01",
+    "evidenceId": "e-5",
+    "evidenceStage": 1,
+    "lieBand": "mid",
+    "matchedLexemes": [
+      "원본 유서",
+      "어머니 서랍에서 나온 원본 유서"
+    ],
+    "sourceKind": "scriptedText",
+    "sourcePath": "src/data/scriptedText/family-01.json:channels.evidence_present.entries[key=a|e-5|mid|1].variants[id=a-e-5-mid-stage1-v10]",
+    "textField": "text",
+    "channel": "evidence_present",
+    "speaker": "a",
+    "target": "a",
+    "actual": "stage=1; matched=원본 유서, 어머니 서랍에서 나온 원본 유서; text=어머니 서랍에서 나온 원본 유서를 보며 제 해석이 앞섰어도, 그 해석이 전부 틀렸다고는 못 하겠습니다.",
+    "expected": "Stub/excerpt/request-original surfaces should not expose hidden/truth description terms."
+  },
+  {
+    "clusterId": "C3-family-original-will",
+    "id": "QARG-00837",
+    "caseId": "family-01",
+    "evidenceId": "e-5",
+    "evidenceStage": 1,
+    "lieBand": "late",
+    "matchedLexemes": [
+      "원본 유서",
+      "어머니 서랍에서 나온 원본 유서"
+    ],
+    "sourceKind": "scriptedText",
+    "sourcePath": "src/data/scriptedText/family-01.json:channels.evidence_present.entries[key=a|e-5|late|1].variants[id=a-e-5-late-stage1-v1]",
+    "textField": "text",
+    "channel": "evidence_present",
+    "speaker": "a",
+    "target": "a",
+    "actual": "stage=1; matched=원본 유서, 어머니 서랍에서 나온 원본 유서; text=어머니 서랍에서 나온 원본 유서를 처음 본 제가 너무 빨리 결론을 냈습니다. 처음 본 공증본만으로 분노한 제 반응도 다시 봐야 합니다.",
+    "expected": "Stub/excerpt/request-original surfaces should not expose hidden/truth description terms."
+  },
+  {
+    "clusterId": "C3-family-original-will",
+    "id": "QARG-00839",
+    "caseId": "family-01",
+    "evidenceId": "e-5",
+    "evidenceStage": 1,
+    "lieBand": "late",
+    "matchedLexemes": [
+      "원본 유서",
+      "어머니 서랍에서 나온 원본 유서"
+    ],
+    "sourceKind": "scriptedText",
+    "sourcePath": "src/data/scriptedText/family-01.json:channels.evidence_present.entries[key=a|e-5|late|1].variants[id=a-e-5-late-stage1-v6]",
+    "textField": "text",
+    "channel": "evidence_present",
+    "speaker": "a",
+    "target": "a",
+    "actual": "stage=1; matched=원본 유서, 어머니 서랍에서 나온 원본 유서; text=어머니 서랍에서 나온 원본 유서 자체보다 제가 거기에 붙인 의미가 컸습니다.",
+    "expected": "Stub/excerpt/request-original surfaces should not expose hidden/truth description terms."
+  },
+  {
+    "clusterId": "C3-family-original-will",
+    "id": "QARG-00841",
+    "caseId": "family-01",
+    "evidenceId": "e-5",
+    "evidenceStage": 1,
+    "lieBand": "early",
+    "matchedLexemes": [
+      "원본 유서",
+      "어머니 서랍에서 나온 원본 유서"
+    ],
+    "sourceKind": "scriptedText",
+    "sourcePath": "src/data/scriptedText/family-01.json:channels.evidence_present.entries[key=b|e-5|early|1].variants[id=b-e-5-early-stage1-v2]",
+    "textField": "text",
+    "channel": "evidence_present",
+    "speaker": "b",
+    "target": "b",
+    "actual": "stage=1; matched=원본 유서, 어머니 서랍에서 나온 원본 유서; text=어머니 서랍에서 나온 원본 유서를 피하려는 건 아닙니다. 그래도 그 문서를 바로 꺼내지 못한 데는 사정이 있습니다.",
+    "expected": "Stub/excerpt/request-original surfaces should not expose hidden/truth description terms."
+  },
+  {
+    "clusterId": "C3-family-original-will",
+    "id": "QARG-00843",
+    "caseId": "family-01",
+    "evidenceId": "e-5",
+    "evidenceStage": 1,
+    "lieBand": "early",
+    "matchedLexemes": [
+      "원본 유서",
+      "어머니 서랍에서 나온 원본 유서"
+    ],
+    "sourceKind": "scriptedText",
+    "sourcePath": "src/data/scriptedText/family-01.json:channels.evidence_present.entries[key=b|e-5|early|1].variants[id=b-e-5-early-stage1-v6]",
+    "textField": "text",
+    "channel": "evidence_present",
+    "speaker": "b",
+    "target": "b",
+    "actual": "stage=1; matched=원본 유서, 어머니 서랍에서 나온 원본 유서; text=어머니 서랍에서 나온 원본 유서는 맞지만, 그 다음 해석은 조심해야 합니다.",
+    "expected": "Stub/excerpt/request-original surfaces should not expose hidden/truth description terms."
+  },
+  {
+    "clusterId": "C3-family-original-will",
+    "id": "QARG-00845",
+    "caseId": "family-01",
+    "evidenceId": "e-5",
+    "evidenceStage": 1,
+    "lieBand": "early",
+    "matchedLexemes": [
+      "원본 유서",
+      "어머니 서랍에서 나온 원본 유서"
+    ],
+    "sourceKind": "scriptedText",
+    "sourcePath": "src/data/scriptedText/family-01.json:channels.evidence_present.entries[key=b|e-5|early|1].variants[id=b-e-5-early-stage1-v10]",
+    "textField": "text",
+    "channel": "evidence_present",
+    "speaker": "b",
+    "target": "b",
+    "actual": "stage=1; matched=원본 유서, 어머니 서랍에서 나온 원본 유서; text=지금은 어머니 서랍에서 나온 원본 유서의 존재만 말씀드리겠습니다. 더 큰 뜻으로 몰지는 말아 주십시오.",
+    "expected": "Stub/excerpt/request-original surfaces should not expose hidden/truth description terms."
+  },
+  {
+    "clusterId": "C3-family-original-will",
+    "id": "QARG-00848",
+    "caseId": "family-01",
+    "evidenceId": "e-5",
+    "evidenceStage": 1,
+    "lieBand": "mid",
+    "matchedLexemes": [
+      "원본 유서"
+    ],
+    "sourceKind": "scriptedText",
+    "sourcePath": "src/data/scriptedText/family-01.json:channels.evidence_present.entries[key=b|e-5|mid|1].variants[id=b-e-5-mid-stage1-v1]",
+    "textField": "text",
+    "channel": "evidence_present",
+    "speaker": "b",
+    "target": "b",
+    "actual": "stage=1; matched=원본 유서; text=그 원본 유서가 있었다는 점은 맞습니다. 하지만 그 문서를 바로 꺼내지 못한 데는 사정이 있습니다.",
+    "expected": "Stub/excerpt/request-original surfaces should not expose hidden/truth description terms."
+  },
+  {
+    "clusterId": "C3-family-original-will",
+    "id": "QARG-00849",
+    "caseId": "family-01",
+    "evidenceId": "e-5",
+    "evidenceStage": 1,
+    "lieBand": "mid",
+    "matchedLexemes": [
+      "원본 유서",
+      "어머니 서랍에서 나온 원본 유서"
+    ],
+    "sourceKind": "scriptedText",
+    "sourcePath": "src/data/scriptedText/family-01.json:channels.evidence_present.entries[key=b|e-5|mid|1].variants[id=b-e-5-mid-stage1-v3]",
+    "textField": "text",
+    "channel": "evidence_present",
+    "speaker": "b",
+    "target": "b",
+    "actual": "stage=1; matched=원본 유서, 어머니 서랍에서 나온 원본 유서; text=어머니 서랍에서 나온 원본 유서가 남은 건 사실입니다. 그 의미는 따로 봐야 합니다.",
+    "expected": "Stub/excerpt/request-original surfaces should not expose hidden/truth description terms."
+  },
+  {
+    "clusterId": "C3-family-original-will",
+    "id": "QARG-00851",
+    "caseId": "family-01",
+    "evidenceId": "e-5",
+    "evidenceStage": 1,
+    "lieBand": "mid",
+    "matchedLexemes": [
+      "원본 유서"
+    ],
+    "sourceKind": "scriptedText",
+    "sourcePath": "src/data/scriptedText/family-01.json:channels.evidence_present.entries[key=b|e-5|mid|1].variants[id=b-e-5-mid-stage1-v4]",
+    "textField": "text",
+    "channel": "evidence_present",
+    "speaker": "b",
+    "target": "b",
+    "actual": "stage=1; matched=원본 유서; text=재판관님, 제가 관련된 부분을 모두 피하진 않겠습니다. 그 원본 유서가 있었다는 점은 맞습니다.",
+    "expected": "Stub/excerpt/request-original surfaces should not expose hidden/truth description terms."
+  },
+  {
+    "clusterId": "C3-family-original-will",
+    "id": "QARG-00852",
+    "caseId": "family-01",
+    "evidenceId": "e-5",
+    "evidenceStage": 1,
+    "lieBand": "mid",
+    "matchedLexemes": [
+      "원본 유서"
+    ],
+    "sourceKind": "scriptedText",
+    "sourcePath": "src/data/scriptedText/family-01.json:channels.evidence_present.entries[key=b|e-5|mid|1].variants[id=b-e-5-mid-stage1-v6]",
+    "textField": "text",
+    "channel": "evidence_present",
+    "speaker": "b",
+    "target": "b",
+    "actual": "stage=1; matched=원본 유서; text=그 자료 앞에서는 말을 줄이기 어렵습니다. 그 원본 유서가 있었다는 점은 인정합니다.",
+    "expected": "Stub/excerpt/request-original surfaces should not expose hidden/truth description terms."
+  },
+  {
+    "clusterId": "C3-family-original-will",
+    "id": "QARG-00853",
+    "caseId": "family-01",
+    "evidenceId": "e-5",
+    "evidenceStage": 1,
+    "lieBand": "mid",
+    "matchedLexemes": [
+      "원본 유서",
+      "어머니 서랍에서 나온 원본 유서"
+    ],
+    "sourceKind": "scriptedText",
+    "sourcePath": "src/data/scriptedText/family-01.json:channels.evidence_present.entries[key=b|e-5|mid|1].variants[id=b-e-5-mid-stage1-v7]",
+    "textField": "text",
+    "channel": "evidence_present",
+    "speaker": "b",
+    "target": "b",
+    "actual": "stage=1; matched=원본 유서, 어머니 서랍에서 나온 원본 유서; text=처음엔 피하려 했지만, 어머니 서랍에서 나온 원본 유서는 분명히 남아 있습니다.",
+    "expected": "Stub/excerpt/request-original surfaces should not expose hidden/truth description terms."
+  },
+  {
+    "clusterId": "C3-family-original-will",
+    "id": "QARG-00855",
+    "caseId": "family-01",
+    "evidenceId": "e-5",
+    "evidenceStage": 1,
+    "lieBand": "mid",
+    "matchedLexemes": [
+      "원본 유서",
+      "어머니 서랍에서 나온 원본 유서"
+    ],
+    "sourceKind": "scriptedText",
+    "sourcePath": "src/data/scriptedText/family-01.json:channels.evidence_present.entries[key=b|e-5|mid|1].variants[id=b-e-5-mid-stage1-v10]",
+    "textField": "text",
+    "channel": "evidence_present",
+    "speaker": "b",
+    "target": "b",
+    "actual": "stage=1; matched=원본 유서, 어머니 서랍에서 나온 원본 유서; text=어머니 서랍에서 나온 원본 유서 자체를 다투지는 않겠습니다. 이제 경위를 봐야 합니다.",
+    "expected": "Stub/excerpt/request-original surfaces should not expose hidden/truth description terms."
+  },
+  {
+    "clusterId": "C3-family-original-will",
+    "id": "QARG-00857",
+    "caseId": "family-01",
+    "evidenceId": "e-5",
+    "evidenceStage": 1,
+    "lieBand": "late",
+    "matchedLexemes": [
+      "원본 유서",
+      "어머니 서랍에서 나온 원본 유서"
+    ],
+    "sourceKind": "scriptedText",
+    "sourcePath": "src/data/scriptedText/family-01.json:channels.evidence_present.entries[key=b|e-5|late|1].variants[id=b-e-5-late-stage1-v2]",
+    "textField": "text",
+    "channel": "evidence_present",
+    "speaker": "b",
+    "target": "b",
+    "actual": "stage=1; matched=원본 유서, 어머니 서랍에서 나온 원본 유서; text=어머니 서랍에서 나온 원본 유서 앞에서 제가 물러날 수는 없습니다. 서랍 원본의 존재를 제가 알고 있었던 건 맞습니다.",
+    "expected": "Stub/excerpt/request-original surfaces should not expose hidden/truth description terms."
+  },
+  {
+    "clusterId": "C3-family-original-will",
+    "id": "QARG-00859",
+    "caseId": "family-01",
+    "evidenceId": "e-5",
+    "evidenceStage": 1,
+    "lieBand": "late",
+    "matchedLexemes": [
+      "원본 유서"
+    ],
+    "sourceKind": "scriptedText",
+    "sourcePath": "src/data/scriptedText/family-01.json:channels.evidence_present.entries[key=b|e-5|late|1].variants[id=b-e-5-late-stage1-v3]",
+    "textField": "text",
+    "channel": "evidence_present",
+    "speaker": "b",
+    "target": "b",
+    "actual": "stage=1; matched=원본 유서; text=재판관님, 그 원본 유서가 있었다는 점은 인정합니다. 이제 경위를 말씀드리겠습니다.",
+    "expected": "Stub/excerpt/request-original surfaces should not expose hidden/truth description terms."
+  },
+  {
+    "clusterId": "C3-family-original-will",
+    "id": "QARG-00860",
+    "caseId": "family-01",
+    "evidenceId": "e-5",
+    "evidenceStage": 1,
+    "lieBand": "late",
+    "matchedLexemes": [
+      "원본 유서"
+    ],
+    "sourceKind": "scriptedText",
+    "sourcePath": "src/data/scriptedText/family-01.json:channels.evidence_present.entries[key=b|e-5|late|1].variants[id=b-e-5-late-stage1-v7]",
+    "textField": "text",
+    "channel": "evidence_present",
+    "speaker": "b",
+    "target": "b",
+    "actual": "stage=1; matched=원본 유서; text=저도 더는 모른다고만 하진 않겠습니다. 그 원본 유서가 있었다는 점은 맞습니다.",
+    "expected": "Stub/excerpt/request-original surfaces should not expose hidden/truth description terms."
+  },
+  {
+    "clusterId": "C3-family-original-will",
+    "id": "QARG-00861",
+    "caseId": "family-01",
+    "evidenceId": "e-5",
+    "evidenceStage": 1,
+    "lieBand": "late",
+    "matchedLexemes": [
+      "원본 유서",
+      "어머니 서랍에서 나온 원본 유서"
+    ],
+    "sourceKind": "scriptedText",
+    "sourcePath": "src/data/scriptedText/family-01.json:channels.evidence_present.entries[key=b|e-5|late|1].variants[id=b-e-5-late-stage1-v8]",
+    "textField": "text",
+    "channel": "evidence_present",
+    "speaker": "b",
+    "target": "b",
+    "actual": "stage=1; matched=원본 유서, 어머니 서랍에서 나온 원본 유서; text=어머니 서랍에서 나온 원본 유서를 두고 제가 아예 밖에 있었다고 말할 수는 없습니다.",
+    "expected": "Stub/excerpt/request-original surfaces should not expose hidden/truth description terms."
+  },
+  {
+    "clusterId": "C3-family-original-will",
+    "id": "QARG-01049",
+    "caseId": "family-01",
+    "evidenceId": "e-5",
+    "evidenceStage": 0,
+    "matchedLexemes": [
+      "원본 유서"
+    ],
+    "sourceKind": "caseData",
+    "sourcePath": "src/data/cases/generated/family-01.json:evidence.e-5.surfaceName",
+    "textField": "surfaceName",
+    "channel": "case_data",
+    "speaker": "system",
+    "target": null,
+    "actual": "stage=0; matched=원본 유서; text=어머니 서랍 원본 유서",
+    "expected": "Stub/excerpt/request-original surfaces should not expose hidden/truth description terms."
+  },
+  {
+    "clusterId": "C3-family-original-will",
+    "id": "QARG-01050",
+    "caseId": "family-01",
+    "evidenceId": "e-5",
+    "evidenceStage": 0,
+    "matchedLexemes": [
+      "원본 유서"
+    ],
+    "sourceKind": "caseData",
+    "sourcePath": "src/data/cases/generated/family-01.json:evidence.e-5.surfaceDescription",
+    "textField": "surfaceDescription",
+    "channel": "case_data",
+    "speaker": "system",
+    "target": null,
+    "actual": "stage=0; matched=원본 유서; text=어머니 서랍에서 발견된 원본 유서가 존재한다.",
+    "expected": "Stub/excerpt/request-original surfaces should not expose hidden/truth description terms."
+  },
+  {
+    "clusterId": "C3-family-original-will",
+    "id": "QARG-01093",
+    "caseId": "family-01",
+    "evidenceId": "e-5",
+    "evidenceStage": 0,
+    "matchedLexemes": [
+      "원본 유서"
+    ],
+    "sourceKind": "disclosurePolicy",
+    "sourcePath": "src/data/disclosurePolicy/family-01.json:surfaceMap.evidence.e-5.surfaceName",
+    "textField": "surfaceName",
+    "channel": "system_message",
+    "speaker": "system",
+    "target": null,
+    "actual": "stage=0; matched=원본 유서; text=서랍에서 나온 원본 유서",
+    "expected": "Stub/excerpt/request-original surfaces should not expose hidden/truth description terms."
+  },
+  {
+    "clusterId": "C3-family-original-will",
+    "id": "QARG-01094",
+    "caseId": "family-01",
+    "evidenceId": "e-5",
+    "evidenceStage": 0,
+    "matchedLexemes": [
+      "원본 유서"
+    ],
+    "sourceKind": "disclosurePolicy",
+    "sourcePath": "src/data/disclosurePolicy/family-01.json:surfaceMap.evidence.e-5.surfaceDescription",
+    "textField": "surfaceDescription",
+    "channel": "system_message",
+    "speaker": "system",
+    "target": null,
+    "actual": "stage=0; matched=원본 유서; text=공증본보다 앞선 날짜의 원본 유서. 공증본과 다른 비율이 보인다.",
+    "expected": "Stub/excerpt/request-original surfaces should not expose hidden/truth description terms."
+  },
+  {
+    "clusterId": "C3-family-original-will",
+    "id": "QARG-01098",
+    "caseId": "family-01",
+    "evidenceId": "e-5",
+    "evidenceStage": 0,
+    "matchedLexemes": [
+      "원본 유서"
+    ],
+    "sourceKind": "disclosurePolicy",
+    "sourcePath": "src/data/disclosurePolicy/family-01.json:discoveryText.entries.combine-7.surfaceFallback",
+    "textField": "discoveryText.surfaceFallback",
+    "channel": "system_message",
+    "speaker": "system",
+    "target": null,
+    "actual": "stage=0; matched=원본 유서; text=원본 유서와 일기장 기록을 함께 보면 비율 변경의 위험이 보인다.",
+    "expected": "Stub/excerpt/request-original surfaces should not expose hidden/truth description terms."
+  },
+  {
+    "clusterId": "C4-friend-money-request",
+    "id": "QARG-01329",
+    "caseId": "friend-01",
+    "evidenceId": "e-5",
+    "evidenceStage": 1,
+    "lieBand": "early",
+    "matchedLexemes": [
+      "돈 부탁"
+    ],
+    "sourceKind": "scriptedText",
+    "sourcePath": "src/data/scriptedText/friend-01.json:channels.evidence_present.entries[key=b|e-5|early|1].variants[id=b-e-5-early-stage1-v8]",
+    "textField": "text",
+    "channel": "evidence_present",
+    "speaker": "b",
+    "target": "b",
+    "actual": "stage=1; matched=돈 부탁; text=대화 원문은 단순 안부보다 돈 부탁에 가깝습니다. 제 쪽 사정이 있는 건 맞지만 지금은 짧게만 말씀드립니다.",
+    "expected": "Stub/excerpt/request-original surfaces should not expose hidden/truth description terms."
+  },
+  {
+    "clusterId": "C4-friend-money-request",
+    "id": "QARG-01331",
+    "caseId": "friend-01",
+    "evidenceId": "e-5",
+    "evidenceStage": 1,
+    "lieBand": "mid",
+    "matchedLexemes": [
+      "돈 부탁"
+    ],
+    "sourceKind": "scriptedText",
+    "sourcePath": "src/data/scriptedText/friend-01.json:channels.evidence_present.entries[key=b|e-5|mid|1].variants[id=b-e-5-mid-stage1-v10]",
+    "textField": "text",
+    "channel": "evidence_present",
+    "speaker": "b",
+    "target": "b",
+    "actual": "stage=1; matched=돈 부탁; text=돈 부탁의 출발점이 가족 쪽이라는 점이 보입니다. 제가 설명을 미룬 탓에 자료가 더 나쁘게 보였을 겁니다.",
+    "expected": "Stub/excerpt/request-original surfaces should not expose hidden/truth description terms."
+  },
+  {
+    "clusterId": "C4-friend-money-request",
+    "id": "QARG-01333",
+    "caseId": "friend-01",
+    "evidenceId": "e-5",
+    "evidenceStage": 1,
+    "lieBand": "late",
+    "matchedLexemes": [
+      "돈 부탁"
+    ],
+    "sourceKind": "scriptedText",
+    "sourcePath": "src/data/scriptedText/friend-01.json:channels.evidence_present.entries[key=b|e-5|late|1].variants[id=b-e-5-late-stage1-v2]",
+    "textField": "text",
+    "channel": "evidence_present",
+    "speaker": "b",
+    "target": "b",
+    "actual": "stage=1; matched=돈 부탁; text=다은이 아버지의 문자에는 금방 돌려주겠다는 말과 돈 부탁이 함께 남아 있습니다. 다은이를 보호하려다 결국 더 큰 오해를 만든 건 인정합니다.",
+    "expected": "Stub/excerpt/request-original surfaces should not expose hidden/truth description terms."
+  },
+  {
+    "clusterId": "C4-friend-money-request",
+    "id": "QARG-01335",
+    "caseId": "friend-01",
+    "evidenceId": "e-5",
+    "evidenceStage": 1,
+    "lieBand": "early",
+    "matchedLexemes": [
+      "돈 부탁"
+    ],
+    "sourceKind": "scriptedText",
+    "sourcePath": "src/data/scriptedText/friend-01.json:channels.evidence_present.entries[key=a|e-5|early|1].variants[id=a-e-5-early-stage1-v8]",
+    "textField": "text",
+    "channel": "evidence_present",
+    "speaker": "a",
+    "target": "a",
+    "actual": "stage=1; matched=돈 부탁; text=대화 원문은 단순 안부보다 돈 부탁에 가깝습니다. 그때는 제 상처가 맥락처럼 보였습니다.",
+    "expected": "Stub/excerpt/request-original surfaces should not expose hidden/truth description terms."
+  },
+  {
+    "clusterId": "C4-friend-money-request",
+    "id": "QARG-01337",
+    "caseId": "friend-01",
+    "evidenceId": "e-5",
+    "evidenceStage": 1,
+    "lieBand": "mid",
+    "matchedLexemes": [
+      "돈 부탁"
+    ],
+    "sourceKind": "scriptedText",
+    "sourcePath": "src/data/scriptedText/friend-01.json:channels.evidence_present.entries[key=a|e-5|mid|1].variants[id=a-e-5-mid-stage1-v10]",
+    "textField": "text",
+    "channel": "evidence_present",
+    "speaker": "a",
+    "target": "a",
+    "actual": "stage=1; matched=돈 부탁; text=돈 부탁의 출발점이 가족 쪽이라는 점이 보입니다. 예전 일을 근거처럼 쓴 제 방식도 흔들립니다.",
+    "expected": "Stub/excerpt/request-original surfaces should not expose hidden/truth description terms."
+  },
+  {
+    "clusterId": "C4-friend-money-request",
+    "id": "QARG-01339",
+    "caseId": "friend-01",
+    "evidenceId": "e-5",
+    "evidenceStage": 1,
+    "lieBand": "late",
+    "matchedLexemes": [
+      "돈 부탁"
+    ],
+    "sourceKind": "scriptedText",
+    "sourcePath": "src/data/scriptedText/friend-01.json:channels.evidence_present.entries[key=a|e-5|late|1].variants[id=a-e-5-late-stage1-v2]",
+    "textField": "text",
+    "channel": "evidence_present",
+    "speaker": "a",
+    "target": "a",
+    "actual": "stage=1; matched=돈 부탁; text=제 아버지의 문자에는 금방 돌려주겠다는 말과 돈 부탁이 함께 남아 있습니다. 제 전 친구의 침묵이 잘못이어도 제 단정이 사라지진 않습니다.",
+    "expected": "Stub/excerpt/request-original surfaces should not expose hidden/truth description terms."
+  },
+  {
+    "clusterId": "C5-tail-family-01",
+    "id": "QARG-01022",
+    "caseId": "family-01",
+    "evidenceId": "e-1",
+    "evidenceStage": 0,
+    "matchedLexemes": [
+      "60:40"
+    ],
+    "sourceKind": "caseData",
+    "sourcePath": "src/data/cases/generated/family-01.json:evidence.e-1.surfaceName",
+    "textField": "surfaceName",
+    "channel": "case_data",
+    "speaker": "system",
+    "target": null,
+    "actual": "stage=0; matched=60:40; text=60:40 유서 사본",
+    "expected": "Stub/excerpt/request-original surfaces should not expose hidden/truth description terms."
+  },
+  {
+    "clusterId": "C5-tail-family-01",
+    "id": "QARG-01025",
+    "caseId": "family-01",
+    "evidenceId": "e-1",
+    "evidenceStage": 1,
+    "matchedLexemes": [
+      "60:40"
+    ],
+    "sourceKind": "caseData",
+    "sourcePath": "src/data/cases/generated/family-01.json:evidence.e-1.v3DepthPlan.excerpt.summary",
+    "textField": "v3DepthPlan.summary",
+    "channel": "case_data",
+    "speaker": "system",
+    "target": null,
+    "actual": "stage=1; matched=60:40; text=60:40 상속 비율과 두 상속인 역할이 보인다.",
+    "expected": "Stub/excerpt/request-original surfaces should not expose hidden/truth description terms."
+  },
+  {
+    "clusterId": "C5-tail-family-01",
+    "id": "QARG-01034",
+    "caseId": "family-01",
+    "evidenceId": "e-2",
+    "evidenceStage": 0,
+    "matchedLexemes": [
+      "공증 전 집중 방문"
+    ],
+    "sourceKind": "caseData",
+    "sourcePath": "src/data/cases/generated/family-01.json:evidence.e-2.partyContext.a.implication",
+    "textField": "partyContext.implication",
+    "channel": "case_data",
+    "speaker": "system",
+    "target": "a",
+    "actual": "stage=0; matched=공증 전 집중 방문; text=A는 공증 전 집중 방문을 어머니 압박의 단서로 본다.",
+    "expected": "Stub/excerpt/request-original surfaces should not expose hidden/truth description terms."
+  },
+  {
+    "clusterId": "C5-tail-family-01",
+    "id": "QARG-01045",
+    "caseId": "family-01",
+    "evidenceId": "e-4",
+    "evidenceStage": 0,
+    "matchedLexemes": [
+      "조작"
+    ],
+    "sourceKind": "caseData",
+    "sourcePath": "src/data/cases/generated/family-01.json:evidence.e-4.partyContext.a.implication",
+    "textField": "partyContext.implication",
+    "channel": "case_data",
+    "speaker": "system",
+    "target": "a",
+    "actual": "stage=0; matched=조작; text=A의 조작 주장은 물증을 얻지만 조작 방향이 예상과 다르다.",
+    "expected": "Stub/excerpt/request-original surfaces should not expose hidden/truth description terms."
+  },
+  {
+    "clusterId": "C5-tail-family-01",
+    "id": "QARG-01047",
+    "caseId": "family-01",
+    "evidenceId": "e-4",
+    "evidenceStage": 0,
+    "matchedLexemes": [
+      "자기 몫 축소",
+      "조작"
+    ],
+    "sourceKind": "caseData",
+    "sourcePath": "src/data/cases/generated/family-01.json:evidence.e-4.partyContext.b.implication",
+    "textField": "partyContext.implication",
+    "channel": "case_data",
+    "speaker": "system",
+    "target": "b",
+    "actual": "stage=0; matched=자기 몫 축소, 조작; text=B는 조작 사실과 자기 몫 축소라는 동기를 분리해 답해야 한다.",
+    "expected": "Stub/excerpt/request-original surfaces should not expose hidden/truth description terms."
+  },
+  {
+    "clusterId": "C5-tail-family-01",
+    "id": "QARG-01052",
+    "caseId": "family-01",
+    "evidenceId": "e-5",
+    "evidenceStage": 0,
+    "matchedLexemes": [
+      "정후 90",
+      "태성 10"
+    ],
+    "sourceKind": "caseData",
+    "sourcePath": "src/data/cases/generated/family-01.json:evidence.e-5.description",
+    "textField": "description",
+    "channel": "case_data",
+    "speaker": "system",
+    "target": null,
+    "actual": "stage=0; matched=정후 90, 태성 10; text=날짜는 더 앞서 있지만 내용은 정후 90 / 태성 10. 어머니가 원래 B에게 훨씬 많이 남기려 했다는 사실이 드러난다.",
+    "expected": "Stub/excerpt/request-original surfaces should not expose hidden/truth description terms."
+  },
+  {
+    "clusterId": "C5-tail-family-01",
+    "id": "QARG-01060",
+    "caseId": "family-01",
+    "evidenceId": "e-6",
+    "evidenceStage": 0,
+    "matchedLexemes": [
+      "20년 송금"
+    ],
+    "sourceKind": "caseData",
+    "sourcePath": "src/data/cases/generated/family-01.json:evidence.e-6.surfaceName",
+    "textField": "surfaceName",
+    "channel": "case_data",
+    "speaker": "system",
+    "target": null,
+    "actual": "stage=0; matched=20년 송금; text=20년 송금 내역",
+    "expected": "Stub/excerpt/request-original surfaces should not expose hidden/truth description terms."
+  },
+  {
+    "clusterId": "C5-tail-family-01",
+    "id": "QARG-01061",
+    "caseId": "family-01",
+    "evidenceId": "e-6",
+    "evidenceStage": 0,
+    "matchedLexemes": [
+      "공장 부도"
+    ],
+    "sourceKind": "caseData",
+    "sourcePath": "src/data/cases/generated/family-01.json:evidence.e-6.description",
+    "textField": "description",
+    "channel": "case_data",
+    "speaker": "system",
+    "target": null,
+    "actual": "stage=0; matched=공장 부도; text=B가 어머니 통장으로 매달 생활비를 보낸 내역, 그리고 A가 공장 부도로 주저앉을 뻔한 해에 같은 통장에서 A 쪽으로 큰돈이 나간 기록이 함께 묶여 있다. 어머니 돈처럼 보였던 돈의 상당수가 사실 B 돈이었다.",
+    "expected": "Stub/excerpt/request-original surfaces should not expose hidden/truth description terms."
+  },
+  {
+    "clusterId": "C5-tail-family-01",
+    "id": "QARG-01069",
+    "caseId": "family-01",
+    "evidenceId": "e-6",
+    "evidenceStage": 1,
+    "matchedLexemes": [
+      "20년 송금"
+    ],
+    "sourceKind": "caseData",
+    "sourcePath": "src/data/cases/generated/family-01.json:evidence.e-6.investigationStages.1.question.text",
+    "textField": "investigationStage.question.text",
+    "channel": "judge_question",
+    "speaker": "system",
+    "target": null,
+    "actual": "stage=1; matched=20년 송금; text=20년 송금 내역의 계좌 원본을 확인해 주십시오.",
+    "expected": "Stub/excerpt/request-original surfaces should not expose hidden/truth description terms."
+  },
+  {
+    "clusterId": "C5-tail-family-01",
+    "id": "QARG-01074",
+    "caseId": "family-01",
+    "evidenceId": "e-7",
+    "evidenceStage": 0,
+    "matchedLexemes": [
+      "어머니 일기장 사진"
+    ],
+    "sourceKind": "caseData",
+    "sourcePath": "src/data/cases/generated/family-01.json:evidence.e-7.surfaceDescription",
+    "textField": "surfaceDescription",
+    "channel": "case_data",
+    "speaker": "system",
+    "target": null,
+    "actual": "stage=0; matched=어머니 일기장 사진; text=어머니 일기장 사진이 존재한다.",
+    "expected": "Stub/excerpt/request-original surfaces should not expose hidden/truth description terms."
+  },
+  {
+    "clusterId": "C5-tail-family-01",
+    "id": "QARG-01077",
+    "caseId": "family-01",
+    "evidenceId": "e-7",
+    "evidenceStage": 0,
+    "matchedLexemes": [
+      "아버지 피는 아니다"
+    ],
+    "sourceKind": "caseData",
+    "sourcePath": "src/data/cases/generated/family-01.json:evidence.e-7.description",
+    "textField": "description",
+    "channel": "case_data",
+    "speaker": "system",
+    "target": null,
+    "actual": "stage=0; matched=아버지 피는 아니다; text='태성이도 내 배로 낳았지만 네 아버지 피는 아니다', '정후가 그 사실을 알고도 형 지켜주겠다 했다', '90대 10대로 남기면 태성이 끝까지 파고들 것 같아 무섭다'는 기록이 남아 있다.",
+    "expected": "Stub/excerpt/request-original surfaces should not expose hidden/truth description terms."
+  },
+  {
+    "clusterId": "C5-tail-family-01",
+    "id": "QARG-01096",
+    "caseId": "family-01",
+    "evidenceId": "e-7",
+    "evidenceStage": 0,
+    "matchedLexemes": [
+      "어머니 일기장 사진"
+    ],
+    "sourceKind": "disclosurePolicy",
+    "sourcePath": "src/data/disclosurePolicy/family-01.json:surfaceMap.evidence.e-7.surfaceName",
+    "textField": "surfaceName",
+    "channel": "system_message",
+    "speaker": "system",
+    "target": null,
+    "actual": "stage=0; matched=어머니 일기장 사진; text=어머니 일기장 사진",
+    "expected": "Stub/excerpt/request-original surfaces should not expose hidden/truth description terms."
+  },
+  {
+    "clusterId": "C5-tail-friend-01",
+    "id": "QARG-01327",
+    "caseId": "friend-01",
+    "evidenceId": "e-4",
+    "evidenceStage": 1,
+    "lieBand": "late",
+    "matchedLexemes": [
+      "예비신랑이 먼저"
+    ],
+    "sourceKind": "scriptedText",
+    "sourcePath": "src/data/scriptedText/friend-01.json:channels.evidence_present.entries[key=b|e-4|late|1].variants[id=b-e-4-late-stage1-v4]",
+    "textField": "text",
+    "channel": "evidence_present",
+    "speaker": "b",
+    "target": "b",
+    "actual": "stage=1; matched=예비신랑이 먼저; text=원본에는 예비신랑이 먼저 선을 흐린 문구가 남아 있습니다. 목적은 달랐지만 방식이 사람을 다치게 했습니다.",
+    "expected": "Stub/excerpt/request-original surfaces should not expose hidden/truth description terms."
+  },
+  {
+    "clusterId": "C5-tail-friend-01",
+    "id": "QARG-01328",
+    "caseId": "friend-01",
+    "evidenceId": "e-4",
+    "evidenceStage": 1,
+    "lieBand": "late",
+    "matchedLexemes": [
+      "예비신랑이 먼저"
+    ],
+    "sourceKind": "scriptedText",
+    "sourcePath": "src/data/scriptedText/friend-01.json:channels.evidence_present.entries[key=a|e-4|late|1].variants[id=a-e-4-late-stage1-v4]",
+    "textField": "text",
+    "channel": "evidence_present",
+    "speaker": "a",
+    "target": "a",
+    "actual": "stage=1; matched=예비신랑이 먼저; text=원본에는 예비신랑이 먼저 선을 흐린 문구가 남아 있습니다. 제 전 친구를 나쁜 사람으로 먼저 세운 건 너무 빨랐습니다.",
+    "expected": "Stub/excerpt/request-original surfaces should not expose hidden/truth description terms."
+  },
+  {
+    "clusterId": "C5-tail-friend-01",
+    "id": "QARG-01334",
+    "caseId": "friend-01",
+    "evidenceId": "e-5",
+    "evidenceStage": 1,
+    "lieBand": "late",
+    "matchedLexemes": [
+      "아버지의 돈 접근"
+    ],
+    "sourceKind": "scriptedText",
+    "sourcePath": "src/data/scriptedText/friend-01.json:channels.evidence_present.entries[key=b|e-5|late|1].variants[id=b-e-5-late-stage1-v5]",
+    "textField": "text",
+    "channel": "evidence_present",
+    "speaker": "b",
+    "target": "b",
+    "actual": "stage=1; matched=아버지의 돈 접근; text=문자 원본은 다은이 아버지의 돈 접근이 실제였음을 보여 줍니다. 이제는 숨기면 더 큰 낙인이 반복된다는 걸 압니다.",
+    "expected": "Stub/excerpt/request-original surfaces should not expose hidden/truth description terms."
+  },
+  {
+    "clusterId": "C5-tail-friend-01",
+    "id": "QARG-01340",
+    "caseId": "friend-01",
+    "evidenceId": "e-5",
+    "evidenceStage": 1,
+    "lieBand": "late",
+    "matchedLexemes": [
+      "아버지의 돈 접근"
+    ],
+    "sourceKind": "scriptedText",
+    "sourcePath": "src/data/scriptedText/friend-01.json:channels.evidence_present.entries[key=a|e-5|late|1].variants[id=a-e-5-late-stage1-v5]",
+    "textField": "text",
+    "channel": "evidence_present",
+    "speaker": "a",
+    "target": "a",
+    "actual": "stage=1; matched=아버지의 돈 접근; text=문자 원본은 제 아버지의 돈 접근이 실제였음을 보여 줍니다. 그때 끝까지 물었어야 할 사람도 저였습니다.",
+    "expected": "Stub/excerpt/request-original surfaces should not expose hidden/truth description terms."
+  },
+  {
+    "clusterId": "C5-tail-friend-01",
+    "id": "QARG-01344",
+    "caseId": "friend-01",
+    "evidenceId": "e-6",
+    "evidenceStage": 1,
+    "lieBand": "late",
+    "matchedLexemes": [
+      "과거 손절"
+    ],
+    "sourceKind": "scriptedText",
+    "sourcePath": "src/data/scriptedText/friend-01.json:channels.evidence_present.entries[key=a|e-6|late|stage1].variants[id=a-e-6-late-stage1-v8]",
+    "textField": "text",
+    "channel": "evidence_present",
+    "speaker": "a",
+    "target": "a",
+    "actual": "stage=1; matched=과거 손절; text=송금 내역이 과거 손절의 빈칸을 채웁니다. 제가 그 빈칸을 오해로 채웠습니다.",
+    "expected": "Stub/excerpt/request-original surfaces should not expose hidden/truth description terms."
+  },
+  {
+    "clusterId": "C5-tail-friend-01",
+    "id": "QARG-01345",
+    "caseId": "friend-01",
+    "evidenceId": "e-6",
+    "evidenceStage": 1,
+    "lieBand": "late",
+    "matchedLexemes": [
+      "과거 손절"
+    ],
+    "sourceKind": "scriptedText",
+    "sourcePath": "src/data/scriptedText/friend-01.json:channels.evidence_present.entries[key=a|e-6|late|stage1].variants[id=a-e-6-late-stage1-v8].behaviorHint",
+    "textField": "behaviorHint",
+    "channel": "evidence_present",
+    "speaker": "a",
+    "target": "a",
+    "actual": "stage=1; matched=과거 손절; text=단톡방과 과거 손절을 같은 책임선에 놓는다.",
+    "expected": "Stub/excerpt/request-original surfaces should not expose hidden/truth description terms."
+  },
+  {
+    "clusterId": "C5-tail-friend-01",
+    "id": "QARG-01831",
+    "caseId": "friend-01",
+    "evidenceId": "e-1",
+    "evidenceStage": 0,
+    "matchedLexemes": [
+      "경고"
+    ],
+    "sourceKind": "caseData",
+    "sourcePath": "src/data/cases/generated/friend-01.json:evidence.e-1.partyContext.b.implication",
+    "textField": "partyContext.implication",
+    "channel": "case_data",
+    "speaker": "system",
+    "target": "b",
+    "actual": "stage=0; matched=경고; text=경고 의도를 밝힐 기회를 준다.",
+    "expected": "Stub/excerpt/request-original surfaces should not expose hidden/truth description terms."
+  },
+  {
+    "clusterId": "C5-tail-friend-01",
+    "id": "QARG-01836",
+    "caseId": "friend-01",
+    "evidenceId": "e-2",
+    "evidenceStage": 0,
+    "matchedLexemes": [
+      "확인 없이"
+    ],
+    "sourceKind": "caseData",
+    "sourcePath": "src/data/cases/generated/friend-01.json:evidence.e-2.partyContext.a.implication",
+    "textField": "partyContext.implication",
+    "channel": "case_data",
+    "speaker": "system",
+    "target": "a",
+    "actual": "stage=0; matched=확인 없이; text=확인 없이 공개한 경위를 추궁한다.",
+    "expected": "Stub/excerpt/request-original surfaces should not expose hidden/truth description terms."
+  },
+  {
+    "clusterId": "C5-tail-friend-01",
+    "id": "QARG-01851",
+    "caseId": "friend-01",
+    "evidenceId": "e-4",
+    "evidenceStage": 0,
+    "matchedLexemes": [
+      "친구 남자친구니까 이러지 마"
+    ],
+    "sourceKind": "caseData",
+    "sourcePath": "src/data/cases/generated/friend-01.json:evidence.e-4.description",
+    "textField": "description",
+    "channel": "case_data",
+    "speaker": "system",
+    "target": null,
+    "actual": "stage=0; matched=친구 남자친구니까 이러지 마; text=예비신랑이 '다은이 몰래 커피 한 번 보자', '너 같은 스타일이 원래 내 이상형' 같은 메시지를 보냈고, B는 '친구 남자친구니까 이러지 마'라고 끊어낸 기록.",
+    "expected": "Stub/excerpt/request-original surfaces should not expose hidden/truth description terms."
+  },
+  {
+    "clusterId": "C5-tail-friend-01",
+    "id": "QARG-01865",
+    "caseId": "friend-01",
+    "evidenceId": "e-5",
+    "evidenceStage": 0,
+    "matchedLexemes": [
+      "사위 될 사람"
+    ],
+    "sourceKind": "caseData",
+    "sourcePath": "src/data/cases/generated/friend-01.json:evidence.e-5.description",
+    "textField": "description",
+    "channel": "case_data",
+    "speaker": "system",
+    "target": null,
+    "actual": "stage=0; matched=사위 될 사람; text=A 아버지가 '결혼 전에 잠깐만 도와주면 금방 돌려준다', '사위 될 사람이면 이 정도는 믿어야지'라며 돈 얘기를 꺼낸 기록. B가 연락하던 시기와 격침.",
+    "expected": "Stub/excerpt/request-original surfaces should not expose hidden/truth description terms."
+  },
+  {
+    "clusterId": "C5-tail-friend-01",
+    "id": "QARG-01894",
+    "caseId": "friend-01",
+    "evidenceId": "e-6",
+    "evidenceStage": 0,
+    "matchedLexemes": [
+      "아버지의 사기"
+    ],
+    "sourceKind": "caseData",
+    "sourcePath": "src/data/cases/generated/friend-01.json:evidence.e-6.partyContext.a.implication",
+    "textField": "partyContext.implication",
+    "channel": "case_data",
+    "speaker": "system",
+    "target": "a",
+    "actual": "stage=0; matched=아버지의 사기; text=A가 아버지의 사기를 몰랐음을 확인한다.",
+    "expected": "Stub/excerpt/request-original surfaces should not expose hidden/truth description terms."
+  },
+  {
+    "clusterId": "C5-tail-friend-01",
+    "id": "QARG-01906",
+    "caseId": "friend-01",
+    "evidenceId": "e-2",
+    "evidenceStage": 0,
+    "matchedLexemes": [
+      "공통 친구 단톡방 캡처"
+    ],
+    "sourceKind": "disclosurePolicy",
+    "sourcePath": "src/data/disclosurePolicy/friend-01.json:surfaceMap.evidence.e-2.surfaceName",
+    "textField": "surfaceName",
+    "channel": "system_message",
+    "speaker": "system",
+    "target": null,
+    "actual": "stage=0; matched=공통 친구 단톡방 캡처; text=공통 친구 단톡방 캡처",
+    "expected": "Stub/excerpt/request-original surfaces should not expose hidden/truth description terms."
+  },
+  {
+    "clusterId": "C5-tail-friend-01",
+    "id": "QARG-01908",
+    "caseId": "friend-01",
+    "evidenceId": "e-3",
+    "evidenceStage": 0,
+    "matchedLexemes": [
+      "과거 손절 직전 카톡"
+    ],
+    "sourceKind": "disclosurePolicy",
+    "sourcePath": "src/data/disclosurePolicy/friend-01.json:surfaceMap.evidence.e-3.surfaceName",
+    "textField": "surfaceName",
+    "channel": "system_message",
+    "speaker": "system",
+    "target": null,
+    "actual": "stage=0; matched=과거 손절 직전 카톡; text=과거 손절 직전 카톡",
+    "expected": "Stub/excerpt/request-original surfaces should not expose hidden/truth description terms."
+  },
+  {
+    "clusterId": "C5-tail-friend-01",
+    "id": "QARG-01911",
+    "caseId": "friend-01",
+    "evidenceId": "e-7",
+    "evidenceStage": 0,
+    "matchedLexemes": [
+      "과거·현재 대조표"
+    ],
+    "sourceKind": "disclosurePolicy",
+    "sourcePath": "src/data/disclosurePolicy/friend-01.json:surfaceMap.evidence.e-7.surfaceName",
+    "textField": "surfaceName",
+    "channel": "system_message",
+    "speaker": "system",
+    "target": null,
+    "actual": "stage=0; matched=과거·현재 대조표; text=과거·현재 대조표",
+    "expected": "Stub/excerpt/request-original surfaces should not expose hidden/truth description terms."
+  },
+  {
+    "clusterId": "C5-tail-spouse-01",
+    "id": "QARG-00114",
+    "caseId": "spouse-01",
+    "evidenceId": "e-7",
+    "evidenceStage": 1,
+    "lieBand": "early",
+    "matchedLexemes": [
+      "범죄"
+    ],
+    "sourceKind": "scriptedText",
+    "sourcePath": "src/data/scriptedText/spouse-01.json:channels.evidence_present.entries[key=a|e-7|early|request_original].variants[id=a-e-7-early-request_original-v4]",
+    "textField": "text",
+    "channel": "evidence_present",
+    "speaker": "a",
+    "target": "a",
+    "actual": "stage=1; matched=범죄; text=서류만 보고 제가 범죄를 저질렀다고 몰아가면 너무 가혹합니다.",
+    "expected": "Stub/excerpt/request-original surfaces should not expose hidden/truth description terms."
+  },
+  {
+    "clusterId": "C5-tail-spouse-01",
+    "id": "QARG-00587",
+    "caseId": "spouse-01",
+    "evidenceId": "e-1",
+    "evidenceStage": 0,
+    "matchedLexemes": [
+      "조카",
+      "돌봄"
+    ],
+    "sourceKind": "caseData",
+    "sourcePath": "src/data/cases/generated/spouse-01.json:evidence.e-1.partyContext.b.implication",
+    "textField": "partyContext.implication",
+    "channel": "case_data",
+    "speaker": "system",
+    "target": "b",
+    "actual": "stage=0; matched=조카, 돌봄; text=참고서가 조카 돌봄의 결정적 단서가 된다.",
+    "expected": "Stub/excerpt/request-original surfaces should not expose hidden/truth description terms."
+  },
+  {
+    "clusterId": "C5-tail-spouse-01",
+    "id": "QARG-00589",
+    "caseId": "spouse-01",
+    "evidenceId": "e-3",
+    "evidenceStage": 0,
+    "matchedLexemes": [
+      "긴급 연락"
+    ],
+    "sourceKind": "caseData",
+    "sourcePath": "src/data/cases/generated/spouse-01.json:evidence.e-3.partyContext.b.implication",
+    "textField": "partyContext.implication",
+    "channel": "case_data",
+    "speaker": "system",
+    "target": "b",
+    "actual": "stage=0; matched=긴급 연락; text=형과의 긴급 연락이었다.",
+    "expected": "Stub/excerpt/request-original surfaces should not expose hidden/truth description terms."
+  },
+  {
+    "clusterId": "C5-tail-spouse-01",
+    "id": "QARG-00591",
+    "caseId": "spouse-01",
+    "evidenceId": "e-4",
+    "evidenceStage": 1,
+    "matchedLexemes": [
+      "돌봄"
+    ],
+    "sourceKind": "caseData",
+    "sourcePath": "src/data/cases/generated/spouse-01.json:evidence.e-4.v3DepthPlan.excerpt.summary",
+    "textField": "v3DepthPlan.summary",
+    "channel": "case_data",
+    "speaker": "system",
+    "target": null,
+    "actual": "stage=1; matched=돌봄; text=돌봄 관련 메시지 일부 보임",
+    "expected": "Stub/excerpt/request-original surfaces should not expose hidden/truth description terms."
+  },
+  {
+    "clusterId": "C5-tail-spouse-01",
+    "id": "QARG-00593",
+    "caseId": "spouse-01",
+    "evidenceId": "e-4",
+    "evidenceStage": 0,
+    "matchedLexemes": [
+      "돌봄"
+    ],
+    "sourceKind": "caseData",
+    "sourcePath": "src/data/cases/generated/spouse-01.json:evidence.e-4.partyContext.a.implication",
+    "textField": "partyContext.implication",
+    "channel": "case_data",
+    "speaker": "system",
+    "target": "a",
+    "actual": "stage=0; matched=돌봄; text=돌봄 관계의 직접 증거이다.",
+    "expected": "Stub/excerpt/request-original surfaces should not expose hidden/truth description terms."
+  },
+  {
+    "clusterId": "C5-tail-spouse-01",
+    "id": "QARG-00594",
+    "caseId": "spouse-01",
+    "evidenceId": "e-5",
+    "evidenceStage": 0,
+    "matchedLexemes": [
+      "비자금"
+    ],
+    "sourceKind": "caseData",
+    "sourcePath": "src/data/cases/generated/spouse-01.json:evidence.e-5.description",
+    "textField": "description",
+    "channel": "case_data",
+    "speaker": "system",
+    "target": null,
+    "actual": "stage=0; matched=비자금; text=이준호 본인 명의 개인 비자금 계좌에서 2,000만원 현금 출금 기록. 공동 적금과는 별개.",
+    "expected": "Stub/excerpt/request-original surfaces should not expose hidden/truth description terms."
+  },
+  {
+    "clusterId": "C5-tail-spouse-01",
+    "id": "QARG-00595",
+    "caseId": "spouse-01",
+    "evidenceId": "e-5",
+    "evidenceStage": 1,
+    "matchedLexemes": [
+      "비자금"
+    ],
+    "sourceKind": "caseData",
+    "sourcePath": "src/data/cases/generated/spouse-01.json:evidence.e-5.investigationResults.request_original",
+    "textField": "investigationResults.request_original",
+    "channel": "evidence_discovery",
+    "speaker": "system",
+    "target": null,
+    "actual": "stage=1; matched=비자금; text=이준호 명의 개인 계좌의 비자금에서 2,000만원이 현금으로 출금된 기록이다.",
+    "expected": "Stub/excerpt/request-original surfaces should not expose hidden/truth description terms."
+  },
+  {
+    "clusterId": "C5-tail-spouse-01",
+    "id": "QARG-00597",
+    "caseId": "spouse-01",
+    "evidenceId": "e-6",
+    "evidenceStage": 0,
+    "matchedLexemes": [
+      "투자 사기",
+      "사기 피해"
+    ],
+    "sourceKind": "caseData",
+    "sourcePath": "src/data/cases/generated/spouse-01.json:evidence.e-6.partyContext.a.implication",
+    "textField": "partyContext.implication",
+    "channel": "case_data",
+    "speaker": "system",
+    "target": "a",
+    "actual": "stage=0; matched=투자 사기, 사기 피해; text=투자 사기 피해 경위가 드러난다.",
+    "expected": "Stub/excerpt/request-original surfaces should not expose hidden/truth description terms."
+  },
+  {
+    "clusterId": "C5-tail-spouse-01",
+    "id": "QARG-00600",
+    "caseId": "spouse-01",
+    "evidenceId": "e-7",
+    "evidenceStage": 0,
+    "matchedLexemes": [
+      "위임장 조작"
+    ],
+    "sourceKind": "caseData",
+    "sourcePath": "src/data/cases/generated/spouse-01.json:evidence.e-7.description",
+    "textField": "description",
+    "channel": "case_data",
+    "speaker": "system",
+    "target": null,
+    "actual": "stage=0; matched=위임장 조작; text=위임장 + 해지 기록. A의 위임장 조작 증거.",
+    "expected": "Stub/excerpt/request-original surfaces should not expose hidden/truth description terms."
+  },
+  {
+    "clusterId": "C5-tail-spouse-01",
+    "id": "QARG-00607",
+    "caseId": "spouse-01",
+    "evidenceId": "e-7",
+    "evidenceStage": 0,
+    "matchedLexemes": [
+      "위임장 조작",
+      "범죄"
+    ],
+    "sourceKind": "caseData",
+    "sourcePath": "src/data/cases/generated/spouse-01.json:evidence.e-7.partyContext.a.implication",
+    "textField": "partyContext.implication",
+    "channel": "case_data",
+    "speaker": "system",
+    "target": "a",
+    "actual": "stage=0; matched=위임장 조작, 범죄; text=위임장 조작 범죄 사실이 드러난다.",
+    "expected": "Stub/excerpt/request-original surfaces should not expose hidden/truth description terms."
+  }
+]
