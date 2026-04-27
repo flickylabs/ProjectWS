@@ -109,7 +109,11 @@ export function runDiscoveryChecks(party: PartyId, disputeId?: string) {
       const description = dispute?.truthDescription ?? dispute?.name ?? entry.disputeId
       const title = dispute?.name ?? entry.disputeId
       state.emergeDispute(entry.disputeId, via, turnCount, description)
-      v4Effects.disputeDiscovered(entry.disputeId, title, description)
+      v4Effects.disputeDiscovered(entry.disputeId, title, description, {
+        turn: state.turnCount,
+        caseId: caseData.caseId,
+        phase: state.currentPhase,
+      })
       break  // 한 턴에 하나만 발현
     }
   }

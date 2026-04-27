@@ -1,8 +1,9 @@
 import { useEffect, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
 import { GamePhase, Phase } from '../../types'
-import { useStore } from '../../store/useGameStore'
+import { useGameStore, useStore } from '../../store/useGameStore'
 import { playPhaseTransition, playBgm } from '../../engine/soundEngine'
+import { shouldPlayCutscene } from '../../engine/vfxHierarchyEngine'
 
 interface CutsceneSpec {
   label: string
@@ -64,6 +65,13 @@ export default function PhaseTransition() {
 
     const spec = PHASE_CUTSCENE[currentPhase]
     if (!spec) return
+
+    const runtime = useGameStore.getState()
+    if (!shouldPlayCutscene('phase_transition', {
+      turn: runtime.turnCount,
+      caseId: runtime.caseData?.caseId,
+      phase: currentPhase,
+    })) return
 
     // Phase 변경 시에만 이전 타이머 명시적으로 취소 (StrictMode cleanup에서는 취소 안 함)
     if (timerRef.current !== null) {

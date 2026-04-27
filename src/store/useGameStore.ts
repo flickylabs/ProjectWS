@@ -39,6 +39,7 @@ import { resetPhase3Log } from '../engine/phase3LogCollector'
 import { resetMisconceptionState } from '../engine/misconceptionEngine'
 import { resetActivatedLinks } from '../engine/linkEdgeEngine'
 import { resetQuestionRotation } from '../engine/judgeQuestionEngine'
+import { resetVfxHierarchyState } from '../engine/vfxHierarchyEngine'
 import type { QuestionType, EmotionTier, Stance } from '../types'
 
 const EMPTY_METRICS: ProcessMetrics = {
@@ -845,6 +846,7 @@ export const useGameStore: import('zustand').UseBoundStore<import('zustand').Sto
       resetTellTracker()
       resetHintTracker()
       resetEventTriggerState()
+      resetVfxHierarchyState()
       resetEmergenceCount()
       const caseKey2 = normalizeCaseKey(caseData)
       if (caseKey2) {

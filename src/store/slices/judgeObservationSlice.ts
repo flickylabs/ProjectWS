@@ -1,5 +1,6 @@
 import type { StateCreator } from 'zustand'
 import type { PartyId } from '../../types'
+import { shouldPlayLightning, type LightningReason } from '../../engine/vfxHierarchyEngine'
 
 /**
  * Judge Observation Slice
@@ -45,6 +46,8 @@ export interface ResonanceRequest {
   fromSelector: string
   toSelector: string
   createdAt: number
+  reason?: LightningReason
+  targetKey?: string
 }
 
 /** 요소 주변 전기 테두리(aura) 요청 */
@@ -73,6 +76,12 @@ export interface JudgeObservationSlice {
   dismissAura: (id: string) => void
 }
 
+type JudgeObservationRootState = JudgeObservationSlice & {
+  turnCount?: number
+  currentPhase?: string
+  caseData?: { caseId?: string } | null
+}
+
 let obsIdCounter = 0
 function nextObsId(): string {
   obsIdCounter += 1
@@ -90,7 +99,7 @@ function nextAuraId(): string {
   return `aura-${Date.now().toString(36)}-${auraIdCounter.toString(36)}`
 }
 
-export const createJudgeObservationSlice: StateCreator<JudgeObservationSlice, [], [], JudgeObservationSlice> = (set) => ({
+export const createJudgeObservationSlice: StateCreator<JudgeObservationRootState, [], [], JudgeObservationSlice> = (set) => ({
   judgeObservations: [],
   observationHistoryOpen: false,
   pendingResonances: [],
@@ -158,7 +167,16 @@ export const createJudgeObservationSlice: StateCreator<JudgeObservationSlice, []
   enqueueResonance: (req) => {
     const id = nextResonanceId()
     const entry: ResonanceRequest = { ...req, id, createdAt: Date.now() }
-    set((state) => ({ pendingResonances: [...state.pendingResonances, entry] }))
+    set((state) => {
+      const allowed = shouldPlayLightning({
+        ...req,
+        turn: typeof state.turnCount === 'number' ? state.turnCount : 0,
+        phase: state.currentPhase,
+        caseId: state.caseData?.caseId,
+      })
+      if (!allowed) return {}
+      return { pendingResonances: [...state.pendingResonances, entry] }
+    })
     return id
   },
 

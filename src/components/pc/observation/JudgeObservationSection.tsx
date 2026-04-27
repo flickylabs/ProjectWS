@@ -93,8 +93,8 @@ export default function JudgeObservationSection() {
     // flash duration — 관찰 카드 is-hero-flash와 말풍선 pc-dialogue-jump-pulse 모두 2.4s 리듬 공유
     // (핫바 슬롯 pulse와 속도 통일, 유저 체감 속도 완화)
     const flashMs = 2400
-    // 이벤트만 번개 연결, 나머지는 깜빡 공명
-    const useLightning = latest.category === 'event'
+    // 이벤트 관찰도 micro 강조로 제한한다. 실제 번개 연결은 쟁점 unlock 같은 보상 순간에서만 발동.
+    const useMicroLink = latest.category === 'event'
 
     // Modal(actions 있는 Tier 3)이 떠 있으면 닫힐 때까지 대기 → 순차 진행
     const runArrive = () => {
@@ -135,26 +135,10 @@ export default function JudgeObservationSection() {
           window.setTimeout(() => bubble.classList.remove('pc-dialogue-jump-pulse'), flashMs + 200)
         }
 
-        if (useLightning) {
-          // 이벤트 — 관찰 카드 aura + 말풍선 aura + 번개 연결 (확실한 인지)
+        if (useMicroLink) {
+          // 이벤트 — 관찰 카드 aura + 말풍선 aura
           store.enqueueAura({ targetSelector: '[data-resonance-target="jobs-main"]' })
           store.enqueueAura({ targetSelector: bubbleSelector })
-          store.enqueueResonance({
-            fromSelector: '[data-resonance-target="jobs-main"]',
-            toSelector: bubbleSelector,
-          })
-          window.setTimeout(() => {
-            useGameStore.getState().enqueueResonance({
-              fromSelector: '[data-resonance-target="jobs-main"]',
-              toSelector: bubbleSelector,
-            })
-          }, 60)
-          window.setTimeout(() => {
-            useGameStore.getState().enqueueResonance({
-              fromSelector: '[data-resonance-target="jobs-main"]',
-              toSelector: bubbleSelector,
-            })
-          }, 140)
         }
 
         // archetype 카테고리는 캐릭터 뱃지도 함께 천천히 1회 깜빡 (번개/공명 없음)

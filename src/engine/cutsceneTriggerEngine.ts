@@ -4,8 +4,10 @@
  * shouldTriggerCutscene()으로 이벤트 유형과 데이터를 전달하면
  * CutsceneEvent | null을 반환.
  *
- * 쿨다운: 같은 유형은 5턴 이내 재발동 방지.
+ * 쿨다운/빈도는 vfxHierarchyEngine에서 중앙 관리한다.
  */
+
+import { resetVfxHierarchyState, shouldPlayCutscene } from './vfxHierarchyEngine'
 
 export interface CutsceneEvent {
   type:
@@ -23,6 +25,7 @@ export interface CutsceneEvent {
     phase?: string
     score?: number
     text?: string // 폭발 대사
+    caseId?: string
   }
 }
 
@@ -36,30 +39,9 @@ export const CUTSCENE_DURATION: Record<CutsceneEvent['type'], number> = {
   verdict_gavel: 3000,
 }
 
-// ── 쿨다운 추적 ──────────────────────────────────────
-
-const COOLDOWN_TURNS = 5
-
-/** 유형별 마지막 발동 턴 */
-const lastTriggeredTurn: Partial<Record<CutsceneEvent['type'], number>> = {}
-
-/** 현재 턴 기준 쿨다운 확인 */
-function isOnCooldown(type: CutsceneEvent['type'], currentTurn: number): boolean {
-  const last = lastTriggeredTurn[type]
-  if (last == null) return false
-  return currentTurn - last < COOLDOWN_TURNS
-}
-
-/** 쿨다운 기록 갱신 */
-function markTriggered(type: CutsceneEvent['type'], currentTurn: number): void {
-  lastTriggeredTurn[type] = currentTurn
-}
-
 /** 쿨다운 초기화 (새 사건 시작 시 호출) */
 export function resetCutsceneCooldowns(): void {
-  for (const key of Object.keys(lastTriggeredTurn) as CutsceneEvent['type'][]) {
-    delete lastTriggeredTurn[key]
-  }
+  resetVfxHierarchyState()
 }
 
 // ── 트리거 판정 ──────────────────────────────────────
@@ -83,7 +65,7 @@ export function shouldTriggerCutscene(
     // S5 전이 시
     case 'lie_collapse': {
       const type = 'lie_collapse' as const
-      if (isOnCooldown(type, currentTurn)) return null
+      if (!shouldPlayCutscene(type, { turn: currentTurn, caseId: data?.caseId as string | undefined, phase: data?.phase as string | undefined })) return null
       result = {
         type,
         data: {
@@ -97,7 +79,7 @@ export function shouldTriggerCutscene(
     // 모순 지적 성공 시
     case 'contradiction_hit': {
       const type = 'contradiction_hit' as const
-      if (isOnCooldown(type, currentTurn)) return null
+      if (!shouldPlayCutscene(type, { turn: currentTurn, caseId: data?.caseId as string | undefined, phase: data?.phase as string | undefined })) return null
       result = {
         type,
         data: {
@@ -112,7 +94,7 @@ export function shouldTriggerCutscene(
     // 감정 폭발 이벤트 시
     case 'emotional_burst': {
       const type = 'emotional_burst' as const
-      if (isOnCooldown(type, currentTurn)) return null
+      if (!shouldPlayCutscene(type, { turn: currentTurn, caseId: data?.caseId as string | undefined, phase: data?.phase as string | undefined })) return null
       result = {
         type,
         data: {
@@ -126,7 +108,7 @@ export function shouldTriggerCutscene(
     // 새 쟁점 발현 시
     case 'dispute_emergence': {
       const type = 'dispute_emergence' as const
-      if (isOnCooldown(type, currentTurn)) return null
+      if (!shouldPlayCutscene(type, { turn: currentTurn, caseId: data?.caseId as string | undefined, phase: data?.phase as string | undefined })) return null
       result = {
         type,
         data: {
@@ -139,7 +121,7 @@ export function shouldTriggerCutscene(
     // Phase 전환 시
     case 'phase_transition': {
       const type = 'phase_transition' as const
-      if (isOnCooldown(type, currentTurn)) return null
+      if (!shouldPlayCutscene(type, { turn: currentTurn, caseId: data?.caseId as string | undefined, phase: data?.phase as string | undefined })) return null
       result = {
         type,
         data: {
@@ -152,7 +134,7 @@ export function shouldTriggerCutscene(
     // 최종 판결 시
     case 'verdict_gavel': {
       const type = 'verdict_gavel' as const
-      // 판결은 쿨다운 없이 항상 발동
+      if (!shouldPlayCutscene(type, { turn: currentTurn, caseId: data?.caseId as string | undefined, phase: data?.phase as string | undefined })) return null
       result = {
         type,
         data: {
@@ -164,10 +146,6 @@ export function shouldTriggerCutscene(
 
     default:
       return null
-  }
-
-  if (result) {
-    markTriggered(result.type, currentTurn)
   }
 
   return result

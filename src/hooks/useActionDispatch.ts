@@ -54,6 +54,7 @@ import type { BeatScriptV2 } from '../types'
 import { toTrustWindowBand } from '../types'
 import { getAllTransitionBeats } from '../engine/v3GameLoopLoader'
 import { selectHint, markHintShown, ARCHETYPE_META } from '../engine/archetypeHintEngine'
+import { getInterrogationMicroVfx } from '../engine/vfxHierarchyEngine'
 
 /** LLM 모드 — AI 필수: 항상 true */
 const useLLMMode = true
@@ -1325,6 +1326,8 @@ async function handleQuestion(action: Extract<PlayerAction, { type: 'question' }
     maybeShowArchetypeHint(action.target, state.turnCount)
   }
 
+  emitInterrogationMicroVfx(action.questionType, action.target, action.disputeId, didTransition)
+
   // 증거 발견: NPC 응답 이후 — 진술 내용에서 단서가 포착된 것처럼 연출
   if (didTransition) {
     discoverEvidenceFromQuestioning(action.target, action.disputeId)
@@ -1966,6 +1969,41 @@ export function findLinkedDialogueId(party?: PartyId): string | undefined {
   return undefined
 }
 
+function emitInterrogationMicroVfx(
+  questionType: QuestionType,
+  target: PartyId,
+  disputeId: string,
+  didTransition: boolean,
+): void {
+  const meta = getInterrogationMicroVfx(questionType)
+  if (!meta) return
+
+  const state = useGameStore.getState()
+  const escape = typeof CSS !== 'undefined' && typeof CSS.escape === 'function' ? CSS.escape : (v: string) => v
+  const targetSelector = meta.tone === 'aura'
+    ? `[data-resonance-target="trust-${target}"]`
+    : `[data-dispute-id="${escape(disputeId)}"]`
+  state.enqueueAura({ targetSelector })
+
+  const partyName = target === 'a' ? state.caseData?.duo.partyA.name : state.caseData?.duo.partyB.name
+  const disputeName = state.caseData?.disputes.find((item) => item.id === disputeId)?.name ?? disputeId
+
+  state.addJudgeObservation({
+    turnCount: state.turnCount,
+    category: meta.category,
+    iconId: meta.iconId,
+    title: meta.label,
+    summary: partyName ? `${partyName} · ${disputeName}` : disputeName,
+    party: target,
+    disputeId,
+    linkedDialogueId: findLinkedDialogueId(target),
+  })
+
+  if (didTransition && meta.tone === 'reveal') {
+    state.enqueueAura({ targetSelector: `[data-dispute-id="${escape(disputeId)}"]` })
+  }
+}
+
 function notifyLieTransition(party: PartyId, disputeId: string) {
   const state = useGameStore.getState()
   const agent = party === 'a' ? state.agentA : state.agentB
@@ -1988,7 +2026,11 @@ function notifyLieTransition(party: PartyId, disputeId: string) {
   if (newState && labels[newState]) {
     if (newState === 'S5') {
       playLieCollapse()
-      v4Effects.confession(party, name)
+      v4Effects.confession(party, name, {
+        turn: state.turnCount,
+        caseId: state.caseData?.caseId,
+        phase: state.currentPhase,
+      })
     }
     // S1~S4: v4 newFact 배너 제거 — 통합 피드백 카드가 대체 (사운드 필요 시 이후 개별 추가)
     if (newState === 'S5') {
@@ -2096,7 +2138,11 @@ function notifyLieTransition(party: PartyId, disputeId: string) {
       }
       const desc = transitionDesc[`${prevState}→${newState}`] ?? `처음 하신 말씀과 지금이 다릅니다`
 
-      v4Effects.contradiction(party, previousClaim, desc, disputeId)
+      v4Effects.contradiction(party, previousClaim, desc, disputeId, {
+        turn: state.turnCount,
+        caseId: state.caseData?.caseId,
+        phase: state.currentPhase,
+      })
       state.addDialogue({
         speaker: 'system',
         text: `${name}의 진술에서 이전과 다른 점이 발견되었다 — 탭하여 추궁`,

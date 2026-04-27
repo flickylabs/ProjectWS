@@ -1,0 +1,58 @@
+{
+  "generatedAt": "2026-04-27",
+  "entryHead": "6a4846b",
+  "policyVersion": "docs/information-surface-policy.md v1.1",
+  "cutsceneRules": {
+    "sameCutInCooldownTurns": 5,
+    "emotionalBurstCooldownTurns": 7,
+    "majorHardCapPerCase": 3,
+    "phaseStrongTransitionLimitPerCase": 2,
+    "phaseCutInWarnThreshold": 5
+  },
+  "cutscenes": [
+    {
+      "id": "lie_collapse",
+      "level": "major",
+      "source": ["CutsceneOverlay", "presentationEngine"],
+      "rule": "major hard cap + 5-turn same-type cooldown",
+      "text": "방어 붕괴"
+    },
+    {
+      "id": "contradiction_hit",
+      "level": "cut-in",
+      "source": ["CutsceneOverlay", "presentationEngine"],
+      "rule": "5-turn same-type cooldown",
+      "text": "진술 균열"
+    },
+    {
+      "id": "emotional_burst",
+      "level": "cut-in",
+      "source": ["CutsceneOverlay", "gameEventTriggerEngine"],
+      "rule": "7-turn trigger cooldown",
+      "text": "방어 완화"
+    },
+    {
+      "id": "dispute_emergence",
+      "level": "cut-in",
+      "source": ["CutsceneOverlay", "presentationEngine", "DiscoveryFeedbackWatcher"],
+      "rule": "5-turn same-type cooldown; modal dismiss then one allowed lightning + aura"
+    },
+    {
+      "id": "phase_transition",
+      "level": "cut-in",
+      "source": ["PhaseTransition", "CutsceneOverlay", "presentationEngine"],
+      "rule": "first 2 strong transitions per case only"
+    },
+    {
+      "id": "verdict_gavel",
+      "level": "major",
+      "source": ["CutsceneOverlay", "PCVerdictScreen"],
+      "rule": "major hard cap; triggers before result phase"
+    }
+  ],
+  "warningRules": [
+    "Console warning when a phase reaches 5 cut-ins.",
+    "Console warning when a fourth major cutscene is attempted in the same case.",
+    "Console warning when lightning target cooldown skips a repeated target."
+  ]
+}

@@ -16,6 +16,8 @@ import { recordHistory } from '../../layout/HistoryPanel'
 import CharacterFaceSvg from '../icons/CharacterFaceSvg'
 import PCCharacterPortrait from '../icons/PCCharacterPortrait'
 import { CAMPAIGN_STAGE_MAP, getCampaignStageKey } from '../../verdict/VerdictScreen'
+import { triggerCutscene } from '../../discovery/CutsceneOverlay'
+import { CUTSCENE_DURATION, shouldTriggerCutscene } from '../../../engine/cutsceneTriggerEngine'
 
 type VerdictStep = 'fact' | 'responsibility' | 'solution' | 'confirm'
 type FlatItem = { step: VerdictStep; subIdx: number }
@@ -412,7 +414,17 @@ export default function PCVerdictScreen() {
         }))
       }
     }
-    advancePhase(GamePhase.Result)
+    const verdictCutscene = shouldTriggerCutscene('verdict_gavel', runtimeState.turnCount, {
+      score: score.total,
+      caseId: caseData.caseId,
+      phase: runtimeState.currentPhase,
+    })
+    if (verdictCutscene) {
+      triggerCutscene(verdictCutscene)
+      window.setTimeout(() => advancePhase(GamePhase.Result), CUTSCENE_DURATION.verdict_gavel)
+    } else {
+      advancePhase(GamePhase.Result)
+    }
   }
 
   const summaryDisputes = caseData.disputes.filter((d) => {

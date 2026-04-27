@@ -78,16 +78,13 @@ export default function PCGameplayOverlay() {
         tone: descriptor.tone,
         autoDismissMs: 3200,
       })
-      // 컷씬 중앙 → 해당 증거 카드 (evidenceId 있으면 정확 타겟, 없으면 first-of-type 폴백)
+      // 증거 결과는 카드 micro 강조로 축소한다.
       const evidenceId = pendingEvidenceResult.evidenceId
       const evidenceSelector = evidenceId
         ? `[data-resonance-target="evidence-${evidenceId}"]`
         : `[data-resonance-target^="evidence-"]:first-of-type`
       window.setTimeout(() => {
-        useGameStore.getState().enqueueResonance({
-          fromSelector: '[data-resonance-target="cutscene-center"]',
-          toSelector: evidenceSelector,
-        })
+        useGameStore.getState().enqueueAura({ targetSelector: evidenceSelector })
       }, 600)
     }
 

@@ -18,6 +18,7 @@ import {
   playEvidenceUnlock,
 } from './soundEngine'
 import { pp이가 } from './koreanPostposition'
+import { shouldPlayCutscene, type VfxTurnContext } from './vfxHierarchyEngine'
 
 // ── 타입 ──
 
@@ -25,6 +26,7 @@ export interface NewFactEvent {
   type: 'new_fact'
   text: string                // 배너에 표시할 사실 요약
   disputeId?: string
+  context?: VfxTurnContext
 }
 
 export interface DisputeDiscoveryEvent {
@@ -32,6 +34,7 @@ export interface DisputeDiscoveryEvent {
   disputeId: string           // e.g., 'd-2', 'h-d3', 'h-d4'
   title: string               // e.g., '비자금 3,000만원 출금'
   description: string         // 1줄 설명
+  context?: VfxTurnContext
 }
 
 export interface ContradictionEvent {
@@ -40,28 +43,33 @@ export interface ContradictionEvent {
   previousClaim: string
   currentClaim: string
   disputeId: string
+  context?: VfxTurnContext
 }
 
 export interface ConfessionEvent {
   type: 'confession'
   party: 'a' | 'b'
   partyName: string           // e.g., '박지연'
+  context?: VfxTurnContext
 }
 
 export interface CombineSuccessEvent {
   type: 'combine_success'
   resultType: 'dispute' | 'upgrade' | 'dossier'
   resultTitle: string
+  context?: VfxTurnContext
 }
 
 export interface DossierUnlockEvent {
   type: 'dossier_unlock'
   questionText: string
+  context?: VfxTurnContext
 }
 
 export interface DramaticMomentEvent {
   type: 'dramatic_moment'
   variant: 'account_spy' | 'forgery_reveal' | 'chain_discovery'
+  context?: VfxTurnContext
 }
 
 export interface ScoreCounterEvent {
@@ -69,6 +77,7 @@ export interface ScoreCounterEvent {
   targetValue: number
   label: string               // e.g., '통찰', '권위', '지혜'
   onComplete?: () => void
+  context?: VfxTurnContext
 }
 
 export type PresentationEvent =
@@ -140,32 +149,37 @@ async function handleNewFact(e: NewFactEvent) {
 
 /** #2 숨겨진 쟁점 발견 */
 async function handleDisputeDiscovery(e: DisputeDiscoveryEvent) {
-  playDisputeDiscovery()
-  const overlay = document.createElement('div')
-  overlay.className = 'v4-dispute-card-overlay'
-  overlay.innerHTML = `
-    <div class="v4-dispute-card">
-      <div class="v4-dispute-card__label">새로운 쟁점 발견</div>
-      <div class="v4-dispute-card__title">${escapeHtml(e.title)}</div>
-      <div class="v4-dispute-card__desc">${escapeHtml(e.description)}</div>
-    </div>
-  `
-  document.body.appendChild(overlay)
-  await delay(3000)
-  overlay.remove()
+  if (shouldPlayCutscene('dispute_emergence', normalizeContext(e.context))) {
+    playDisputeDiscovery()
+    const overlay = document.createElement('div')
+    overlay.className = 'v4-dispute-card-overlay'
+    overlay.innerHTML = `
+      <div class="v4-dispute-card">
+        <div class="v4-dispute-card__label">새로운 쟁점 발견</div>
+        <div class="v4-dispute-card__title">${escapeHtml(e.title)}</div>
+        <div class="v4-dispute-card__desc">${escapeHtml(e.description)}</div>
+      </div>
+    `
+    document.body.appendChild(overlay)
+    await delay(3000)
+    overlay.remove()
+  }
   // 커스텀 이벤트로 UI 업데이트 알림
   window.dispatchEvent(new CustomEvent('v4:dispute-discovered', { detail: { disputeId: e.disputeId } }))
 }
 
 /** #4 모순 발견 — React 컴포넌트에서 처리하도록 이벤트만 발행 */
 async function handleContradiction(e: ContradictionEvent) {
-  playContradiction()
+  if (shouldPlayCutscene('contradiction_hit', normalizeContext(e.context))) {
+    playContradiction()
+  }
   window.dispatchEvent(new CustomEvent('v4:contradiction', { detail: e }))
   await delay(500) // 사운드 여유
 }
 
 /** #5 S5 자백 */
 async function handleConfession(e: ConfessionEvent) {
+  if (!shouldPlayCutscene('lie_collapse', normalizeContext(e.context))) return
   playLieCollapse()
   // 배경 오버레이
   const overlay = document.createElement('div')
@@ -223,6 +237,7 @@ async function handleDramaticMoment(e: DramaticMomentEvent) {
       : '중대한 사실이 드러났습니다'
     window.dispatchEvent(new CustomEvent('v4:system-message', { detail: { text: msg } }))
   } else if (e.variant === 'chain_discovery') {
+    if (!shouldPlayCutscene('phase_transition', normalizeContext(e.context))) return
     playPhaseTransition()
     window.dispatchEvent(new CustomEvent('v4:system-message', {
       detail: { text: '사건의 전모가 드러나고 있습니다' }
@@ -261,32 +276,40 @@ function escapeHtml(str: string): string {
   return div.innerHTML
 }
 
+function normalizeContext(context?: VfxTurnContext): VfxTurnContext {
+  return {
+    turn: context?.turn ?? 0,
+    caseId: context?.caseId,
+    phase: context?.phase,
+  }
+}
+
 // ── 외부에서 편하게 쓰는 헬퍼 ──
 
 export const v4Effects = {
-  newFact: (text: string, disputeId?: string) =>
-    emitPresentationEvent({ type: 'new_fact', text, disputeId }),
+  newFact: (text: string, disputeId?: string, context?: VfxTurnContext) =>
+    emitPresentationEvent({ type: 'new_fact', text, disputeId, context }),
 
-  disputeDiscovered: (disputeId: string, title: string, description: string) =>
-    emitPresentationEvent({ type: 'dispute_discovery', disputeId, title, description }),
+  disputeDiscovered: (disputeId: string, title: string, description: string, context?: VfxTurnContext) =>
+    emitPresentationEvent({ type: 'dispute_discovery', disputeId, title, description, context }),
 
-  contradiction: (party: 'a' | 'b', prev: string, curr: string, disputeId: string) =>
-    emitPresentationEvent({ type: 'contradiction', party, previousClaim: prev, currentClaim: curr, disputeId }),
+  contradiction: (party: 'a' | 'b', prev: string, curr: string, disputeId: string, context?: VfxTurnContext) =>
+    emitPresentationEvent({ type: 'contradiction', party, previousClaim: prev, currentClaim: curr, disputeId, context }),
 
-  confession: (party: 'a' | 'b', partyName: string) =>
-    emitPresentationEvent({ type: 'confession', party, partyName }),
+  confession: (party: 'a' | 'b', partyName: string, context?: VfxTurnContext) =>
+    emitPresentationEvent({ type: 'confession', party, partyName, context }),
 
-  combineSuccess: (resultType: 'dispute' | 'upgrade' | 'dossier', title: string) =>
-    emitPresentationEvent({ type: 'combine_success', resultType, resultTitle: title }),
+  combineSuccess: (resultType: 'dispute' | 'upgrade' | 'dossier', title: string, context?: VfxTurnContext) =>
+    emitPresentationEvent({ type: 'combine_success', resultType, resultTitle: title, context }),
 
-  dossierUnlock: (questionText: string) =>
-    emitPresentationEvent({ type: 'dossier_unlock', questionText }),
+  dossierUnlock: (questionText: string, context?: VfxTurnContext) =>
+    emitPresentationEvent({ type: 'dossier_unlock', questionText, context }),
 
-  dramaticMoment: (variant: 'account_spy' | 'forgery_reveal' | 'chain_discovery') =>
-    emitPresentationEvent({ type: 'dramatic_moment', variant }),
+  dramaticMoment: (variant: 'account_spy' | 'forgery_reveal' | 'chain_discovery', context?: VfxTurnContext) =>
+    emitPresentationEvent({ type: 'dramatic_moment', variant, context }),
 
-  scoreCounter: (label: string, target: number, onComplete?: () => void) =>
-    emitPresentationEvent({ type: 'score_counter', label, targetValue: target, onComplete }),
+  scoreCounter: (label: string, target: number, onComplete?: () => void, context?: VfxTurnContext) =>
+    emitPresentationEvent({ type: 'score_counter', label, targetValue: target, onComplete, context }),
 
   /** 증거 해금 — 기존 SFX 활용 */
   evidenceUnlock: () => { playEvidenceUnlock() },

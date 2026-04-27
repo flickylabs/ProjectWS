@@ -240,17 +240,16 @@ export default function DiscoveryFeedbackWatcher() {
             // 번개 이펙트도 모달 dismiss 직후로 이동 (모달 블러로 가려지는 결함 해소).
             s.setLastFocusedDisputeId(pendingEmergence.disputeId)
             s.setRecentlyEmergedDispute(pendingEmergence.disputeId)
-            // 메시지 → 탑바 쟁점 chip 으로 번개 3가닥 + 오라 발사
+            // 메시지 → 탑바 쟁점 chip 으로 연결 1회 + 오라 발사
             const escape = typeof CSS !== 'undefined' && typeof CSS.escape === 'function' ? CSS.escape : (v: string) => v
             const fromSelector = `[data-dialogue-id="${escape(sysMsgId)}"] .pc-log-system-card`
             const toSelector = `[data-dispute-id="${escape(pendingEmergence.disputeId)}"]`
-            s.enqueueResonance({ fromSelector, toSelector })
-            window.setTimeout(() => {
-              useGameStore.getState().enqueueResonance({ fromSelector, toSelector })
-            }, 60)
-            window.setTimeout(() => {
-              useGameStore.getState().enqueueResonance({ fromSelector, toSelector })
-            }, 140)
+            s.enqueueResonance({
+              fromSelector,
+              toSelector,
+              reason: 'system_to_dispute',
+              targetKey: `dispute:${pendingEmergence.disputeId}`,
+            })
             s.enqueueAura({ targetSelector: toSelector })
             window.setTimeout(() => {
               useGameStore.getState().setRecentlyEmergedDispute(null)

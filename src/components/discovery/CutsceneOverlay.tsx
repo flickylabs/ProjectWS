@@ -97,7 +97,7 @@ function LieCollapseScene({ data }: { data?: CutsceneEvent['data'] }) {
           </svg>
         </div>
         <p className="text-2xl font-black text-amber-400 tracking-wider mb-2">
-          방어가 무너졌습니다
+          방어 붕괴
         </p>
         {data?.partyName && (
           <p className="text-sm text-amber-300/70">{data.partyName}</p>
@@ -116,7 +116,7 @@ function ContradictionHitScene({ data }: { data?: CutsceneEvent['data'] }) {
 
       <div className="relative z-10 h-full flex flex-col items-center justify-center px-5">
         <p className="text-3xl font-black text-yellow-400 tracking-widest mb-6 animate-cutscene-fade-in">
-          모순 발견!
+          진술 균열
         </p>
 
         {/* 좌우 대비 레이아웃 */}
@@ -150,6 +150,9 @@ function EmotionalBurstScene({ data }: { data?: CutsceneEvent['data'] }) {
       <div className="absolute inset-0 bg-red-600 cutscene-red-flash pointer-events-none" />
 
       <div className="relative z-10 h-full flex flex-col items-center justify-center px-6 animate-cutscene-pulse">
+        <p className="text-xl font-black text-red-200 tracking-wide mb-3">
+          방어 완화
+        </p>
         {data?.text && (
           <div className="bg-gray-950/70 border border-red-500/40 rounded-2xl px-6 py-4 max-w-sm">
             <p className="text-base text-red-200 font-bold leading-relaxed text-center italic">

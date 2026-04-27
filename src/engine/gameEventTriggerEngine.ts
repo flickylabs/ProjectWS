@@ -107,6 +107,8 @@ const INTERJECTION_MIN_INTERVAL = 6
 const CONTRADICTION_MIN_TOKENS = 3
 /** 새 쟁점 출현 최소 진행 쟁점 */
 const EMERGENCE_MIN_PROGRESS = 2
+/** 감정 폭발은 반복 피로도가 높아 다른 이벤트보다 길게 쉰다. */
+const EMOTIONAL_BURST_MIN_INTERVAL = 7
 
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 // 내부 상태 (이벤트 쿨다운 추적)
@@ -302,8 +304,8 @@ function checkInterjection(snapshot: TurnSnapshot): GameEventTrigger | null {
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 function checkEmotionalBurst(snapshot: TurnSnapshot): GameEventTrigger | null {
-  // 쿨다운 체크 (최소 4턴 간격)
-  if (snapshot.turn - lastEmotionalBurstTurn < 4) return null
+  // 쿨다운 체크 (반복 피로도 완화)
+  if (snapshot.turn - lastEmotionalBurstTurn < EMOTIONAL_BURST_MIN_INTERVAL) return null
 
   const party = snapshot.activeParty
   const emotion = snapshot.emotions[party]
