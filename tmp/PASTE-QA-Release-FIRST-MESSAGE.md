@@ -30,19 +30,22 @@ npx tsc -b --force
 
 ---
 
-## 3. 검증 9 영역 (fail-fast 순서 권장)
+## 3. 검증 영역 (fail-fast 순서 권장)
 
 | 순서 | 영역 | 영역 검증 |
 |---|---|---|
-| 1 | API key / env 노출 | build artifact grep `OPENAI_API_KEY` / network tab 검사 |
+| 1 | API key / env 노출 | build artifact grep `OPENAI_API_KEY` / network tab |
 | 2 | build / packaging | `npm run build` artifact + Vercel 배포 |
 | 3 | Phase 0 guard off 안정성 | console.warn/error 0 / 5분 연속 플레이 |
 | 4 | API 실패 시 게임 멈춤 | DevTools offline / slow 3G / 429 simulation |
-| 5 | 저장 / 로드 | localStorage 영역 + 다른 브라우저 + 빌드 후 |
+| 5 | 저장 / 로드 | localStorage + 다른 브라우저 + 빌드 후 |
 | 6 | 한글 폰트 / 깨짐 | 모든 phase / NPC / 시스템 메시지 |
 | 7 | 해상도 / 창 크기 | 1280×720 / 1920×1080 / 2560×1440 / 4K + resize |
 | 8 | 브라우저 / PC 빌드 차이 | Chrome / Firefox / Safari / Edge / Electron |
-| 9 | Steam | 사용자 결정 영역 (보류 가능) |
+| 9 | **VFX QA (P0-E·F 흡수)** | **빈도/cooldown/위계/한글 텍스트/reduced-motion/내부 용어 0/truth leak 0/AI 게임 인상** |
+| 10 | Steam | 사용자 결정 영역 (보류 가능) |
+
+**§4.10 VFX QA**는 P0-E + P0-F 두 세션 commit + push 후 진행. 그 전에는 다른 영역 우선.
 
 ---
 

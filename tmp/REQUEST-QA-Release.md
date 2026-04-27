@@ -88,6 +88,25 @@
 - Chrome / Firefox / Safari / Edge / Electron (있을 시)
 - 각 브라우저에서 LLM 호출 / localStorage / 폰트 정상
 
+### 4.10 VFX QA (P0-E·P0-F 영역 흡수)
+
+P0-E (VFX Hierarchy) + P0-F (AI Reasoning Cutscene) 결과물 검증. 별도 QA-VFX 세션 신설 X / 본 세션이 흡수.
+
+검증 항목:
+- 번개 / VFX 과다 반복 (cooldown 정합 / 같은 target 5턴 이내 반복 X)
+- modal / overlay / VFX 동시 출력 시 위계 우선순위 정합 (낮은 영역 skip 검증)
+- 해상도 / 창 크기에서 VFX 깨짐 (1280×720 / 1920×1080 / 4K)
+- 한글 텍스트 넘침 (chip label / `심문 경로 확정` 등)
+- `prefers-reduced-motion` 대응 (CSS media query)
+- Steam / PC 빌드 성능 (frame drop / 컷씬 stutter)
+- **첫 자유심문 컷인이 실제로 AI 게임처럼 느껴지는지** (사용자 spot check 영역 — 정량 X / 사용자 인상 영역)
+- 내부 용어 노출 0 (`intent` / `classifier` / `LLM` / `guard` / `policy` / `누설`)
+- truth leak 0 (chip 텍스트 surface 표현만)
+- 한 사건 major cutscene 4회 이상 발생 X (hard cap)
+- 한 phase에 cut-in 5회 이상 발생 시 콘솔 warn 동작
+
+**VFX P0/P1 이슈가 많이 나오면**: 별도 QA-VFX 세션으로 분리 — CT-Main 결정 영역.
+
 ---
 
 ## 5. Out of Scope
@@ -134,12 +153,13 @@
 ## 8. 종료 조건
 
 - [ ] 9 영역 각 P0 0건
+- [ ] §4.10 VFX QA 11 항목 각 P0 0건 (특히 내부 용어 노출 0 / truth leak 0 / hard cap 정합)
 - [ ] P1 발견 → 8필드 분류 → CT-Main 보고
 - [ ] P2 발견 → 누적 backlog (출시 후 처리 영역)
 - [ ] `npm run check:all` PASS
 - [ ] `npm run build` PASS
 - [ ] `npx tsc -b --force` PASS
-- [ ] 산출물: `tmp/qa-release-results/` + 종합 summary.md
+- [ ] 산출물: `tmp/qa-release-results/` + 종합 summary.md (VFX 섹션 포함)
 
 ---
 
@@ -147,6 +167,7 @@
 
 - `tmp/qa-release-results/20260427-overall-summary.md`
 - `tmp/qa-release-results/20260427-domain-{1~9}-summary.md` (각 영역별)
+- `tmp/qa-release-results/20260427-domain-10-vfx.md` (§4.10 VFX QA)
 - `tmp/qa-release-results/screenshots/` (필요 시)
 - `tmp/qa-release-results/findings.json` (8필드 구조화 list)
 

@@ -38,7 +38,7 @@ npx tsc -b --force                       # PASS
 
 ---
 
-## 3. 검증 9 영역 진행 순서
+## 3. 검증 영역 진행 순서
 
 권장: 빠른 fail-fast 영역부터.
 
@@ -52,9 +52,12 @@ npx tsc -b --force                       # PASS
 | 6 | 4.7 한글 폰트 / 깨짐 | 모든 phase / NPC / 시스템 |
 | 7 | 4.8 해상도 / 창 크기 | 4 해상도 + resize |
 | 8 | 4.9 브라우저 / PC 빌드 차이 | Chrome / Firefox / Safari / Edge |
-| 9 | 4.3 Steam 환경 | 사용자 결정 영역 (보류 가능) |
+| 9 | 4.10 VFX QA (P0-E·F 흡수) | 빈도/cooldown/위계/한글/reduced-motion/내부 용어 0/truth leak 0 |
+| 10 | 4.3 Steam 환경 | 사용자 결정 영역 (보류 가능) |
 
 각 영역 종료 시 `tmp/qa-release-results/20260427-domain-{N}-summary.md` 작성.
+
+**§4.10 VFX QA**는 P0-E (Hierarchy) + P0-F (AI Reasoning Cutscene) 결과물 영역. 두 세션이 commit + push 한 후 진행 가능. 그 전에는 다른 영역 우선.
 
 ---
 
