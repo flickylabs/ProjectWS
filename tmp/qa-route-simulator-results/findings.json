@@ -1,0 +1,200 @@
+[
+  {
+    "id": "QARS-0001",
+    "caseId": "family-01",
+    "routeId": "phase3-evidence-heavy-d2-dossier",
+    "phase": "phase3",
+    "actionIndex": 3,
+    "actionType": "evidence_investigate",
+    "target": "b",
+    "evidenceId": "e-4",
+    "localIndex": 1,
+    "severity": "P1",
+    "category": "evidence_investigate_no_npc_followup",
+    "detectors": [
+      "evidence_investigate_no_npc_followup"
+    ],
+    "summary": "evidence_investigate ended as a system-only discovery action with no automatic NPC follow-up.",
+    "expected": "Gate option ii treats evidence_investigate as system-only; any follow-up NPC speech must be a later explicit judge_question.",
+    "actual": "1 system output(s); speakers=system",
+    "resolverPath": "runtime_system",
+    "sourcePath": "src/data/cases/generated/family-01.json:evidence.e-4.investigationResults.request_original",
+    "patchPriority": "P1-route-contract-observability"
+  },
+  {
+    "id": "QARS-0002",
+    "caseId": "family-01",
+    "routeId": "phase4-cascading-d3-emergence",
+    "phase": "phase4",
+    "actionIndex": 2,
+    "actionType": "evidence_investigate",
+    "target": "b",
+    "evidenceId": "e-6",
+    "localIndex": 1,
+    "severity": "P1",
+    "category": "evidence_investigate_no_npc_followup",
+    "detectors": [
+      "evidence_investigate_no_npc_followup"
+    ],
+    "summary": "evidence_investigate ended as a system-only discovery action with no automatic NPC follow-up.",
+    "expected": "Gate option ii treats evidence_investigate as system-only; any follow-up NPC speech must be a later explicit judge_question.",
+    "actual": "1 system output(s); speakers=system",
+    "resolverPath": "runtime_system",
+    "sourcePath": "src/data/cases/generated/family-01.json:evidence.e-6.investigationResults.check_metadata",
+    "patchPriority": "P1-route-contract-observability"
+  },
+  {
+    "id": "QARS-0003",
+    "caseId": "friend-01",
+    "routeId": "phase2-linear-d1-contact",
+    "phase": "phase2",
+    "actionIndex": 4,
+    "actionType": "evidence_investigate",
+    "target": "b",
+    "evidenceId": "e-1",
+    "localIndex": 1,
+    "severity": "P1",
+    "category": "evidence_investigate_no_npc_followup",
+    "detectors": [
+      "evidence_investigate_no_npc_followup"
+    ],
+    "summary": "evidence_investigate ended as a system-only discovery action with no automatic NPC follow-up.",
+    "expected": "Gate option ii treats evidence_investigate as system-only; any follow-up NPC speech must be a later explicit judge_question.",
+    "actual": "1 system output(s); speakers=system",
+    "resolverPath": "runtime_system",
+    "sourcePath": "src/data/cases/generated/friend-01.json:evidence.e-1.investigationResults.request_original",
+    "patchPriority": "P1-route-contract-observability"
+  },
+  {
+    "id": "QARS-0004",
+    "caseId": "friend-01",
+    "routeId": "phase4-cascading-d2-message",
+    "phase": "phase4",
+    "actionIndex": 2,
+    "actionType": "evidence_investigate",
+    "target": "b",
+    "evidenceId": "e-4",
+    "localIndex": 1,
+    "severity": "P1",
+    "category": "evidence_investigate_no_npc_followup",
+    "detectors": [
+      "evidence_investigate_no_npc_followup"
+    ],
+    "summary": "evidence_investigate ended as a system-only discovery action with no automatic NPC follow-up.",
+    "expected": "Gate option ii treats evidence_investigate as system-only; any follow-up NPC speech must be a later explicit judge_question.",
+    "actual": "1 system output(s); speakers=system",
+    "resolverPath": "runtime_system",
+    "sourcePath": "src/data/cases/generated/friend-01.json:evidence.e-4.investigationResults.check_metadata",
+    "patchPriority": "P1-route-contract-observability"
+  },
+  {
+    "id": "QARS-0005",
+    "caseId": "friend-01",
+    "routeId": "phase5-evidence-heavy-d4-late",
+    "phase": "phase5",
+    "actionIndex": 4,
+    "actionType": "evidence_investigate",
+    "target": "b",
+    "evidenceId": "e-6",
+    "localIndex": 1,
+    "severity": "P1",
+    "category": "evidence_investigate_no_npc_followup",
+    "detectors": [
+      "evidence_investigate_no_npc_followup"
+    ],
+    "summary": "evidence_investigate ended as a system-only discovery action with no automatic NPC follow-up.",
+    "expected": "Gate option ii treats evidence_investigate as system-only; any follow-up NPC speech must be a later explicit judge_question.",
+    "actual": "1 system output(s); speakers=system",
+    "resolverPath": "runtime_system",
+    "sourcePath": "src/data/cases/generated/friend-01.json:evidence.e-6.investigationResults.restore_context",
+    "patchPriority": "P1-route-contract-observability"
+  },
+  {
+    "id": "QARS-0006",
+    "caseId": "spouse-01",
+    "routeId": "phase3-baseline",
+    "phase": "phase3",
+    "actionIndex": 4,
+    "actionType": "evidence_investigate",
+    "target": "b",
+    "evidenceId": "e-1",
+    "localIndex": 1,
+    "severity": "P1",
+    "category": "evidence_investigate_no_npc_followup",
+    "detectors": [
+      "evidence_investigate_no_npc_followup"
+    ],
+    "summary": "evidence_investigate ended as a system-only discovery action with no automatic NPC follow-up.",
+    "expected": "Gate option ii treats evidence_investigate as system-only; any follow-up NPC speech must be a later explicit judge_question.",
+    "actual": "1 system output(s); speakers=system",
+    "resolverPath": "runtime_system",
+    "sourcePath": "src/data/cases/generated/spouse-01.json:evidence.e-1.investigationResults.request_original",
+    "patchPriority": "P1-route-contract-observability"
+  },
+  {
+    "id": "QARS-0007",
+    "caseId": "spouse-01",
+    "routeId": "phase4-cascading-d2-to-hidden",
+    "phase": "phase4",
+    "actionIndex": 1,
+    "actionType": "evidence_investigate",
+    "target": "b",
+    "evidenceId": "e-4",
+    "localIndex": 1,
+    "severity": "P1",
+    "category": "evidence_investigate_no_npc_followup",
+    "detectors": [
+      "evidence_investigate_no_npc_followup"
+    ],
+    "summary": "evidence_investigate ended as a system-only discovery action with no automatic NPC follow-up.",
+    "expected": "Gate option ii treats evidence_investigate as system-only; any follow-up NPC speech must be a later explicit judge_question.",
+    "actual": "1 system output(s); speakers=system",
+    "resolverPath": "runtime_system",
+    "sourcePath": "src/data/cases/generated/spouse-01.json:evidence.e-4.investigationResults.request_original",
+    "patchPriority": "P1-route-contract-observability"
+  },
+  {
+    "id": "QARS-0008",
+    "caseId": "spouse-01",
+    "routeId": "phase4-cascading-d2-to-hidden",
+    "phase": "phase4",
+    "actionIndex": 2,
+    "actionType": "evidence_investigate",
+    "target": "b",
+    "evidenceId": "e-4",
+    "localIndex": 1,
+    "severity": "P1",
+    "category": "evidence_investigate_no_npc_followup",
+    "detectors": [
+      "evidence_investigate_no_npc_followup"
+    ],
+    "summary": "evidence_investigate ended as a system-only discovery action with no automatic NPC follow-up.",
+    "expected": "Gate option ii treats evidence_investigate as system-only; any follow-up NPC speech must be a later explicit judge_question.",
+    "actual": "1 system output(s); speakers=system",
+    "resolverPath": "runtime_system",
+    "sourcePath": "src/data/cases/generated/spouse-01.json:evidence.e-4.investigationResults.check_metadata",
+    "patchPriority": "P1-route-contract-observability"
+  },
+  {
+    "id": "QARS-0009",
+    "caseId": "spouse-01",
+    "routeId": "phase4-cascading-d2-to-hidden",
+    "phase": "phase4",
+    "actionIndex": 3,
+    "actionType": "evidence_investigate",
+    "target": "b",
+    "evidenceId": "e-4",
+    "localIndex": 1,
+    "severity": "P1",
+    "category": "evidence_investigate_no_npc_followup",
+    "detectors": [
+      "evidence_investigate_no_npc_followup"
+    ],
+    "summary": "evidence_investigate ended as a system-only discovery action with no automatic NPC follow-up.",
+    "expected": "Gate option ii treats evidence_investigate as system-only; any follow-up NPC speech must be a later explicit judge_question.",
+    "actual": "1 system output(s); speakers=system",
+    "resolverPath": "runtime_system",
+    "sourcePath": "src/data/cases/generated/spouse-01.json:evidence.e-4.investigationResults.restore_context",
+    "patchPriority": "P1-route-contract-observability"
+  }
+]

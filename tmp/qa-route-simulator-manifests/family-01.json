@@ -1,0 +1,97 @@
+{
+  "schemaVersion": 1,
+  "caseId": "family-01",
+  "phase": "phase-b-2",
+  "routes": [
+    {
+      "id": "phase2-interrogation-heavy-d1",
+      "summary": "Interrogation-heavy d-1 route from S0 through question pressure and hard evidence.",
+      "phase": "phase2",
+      "routePattern": "interrogation-heavy",
+      "initialState": {
+        "lieStates": {
+          "b": {
+            "d-1": "S0"
+          }
+        },
+        "unlockedEvidence": ["e-1", "e-2", "e-3"]
+      },
+      "actions": [
+        { "type": "judge_question", "target": "b", "subAction": "fact_pursuit", "disputeId": "d-1" },
+        { "type": "judge_question", "target": "b", "subAction": "fact_pursuit", "disputeId": "d-1" },
+        { "type": "judge_question", "target": "b", "subAction": "motive_search", "disputeId": "d-1" },
+        { "type": "evidence_present", "target": "b", "evidenceId": "e-2", "disputeId": "d-1" },
+        { "type": "contradiction_pursuit", "target": "b", "disputeId": "d-1", "transitionTrigger": "empathy_question" }
+      ]
+    },
+    {
+      "id": "phase3-evidence-heavy-d2-dossier",
+      "summary": "Evidence-heavy d-2 route that combines will evidence and follows with dossier questioning.",
+      "phase": "phase3",
+      "routePattern": "evidence-heavy",
+      "initialState": {
+        "lieStates": {
+          "b": {
+            "d-2": "S2"
+          }
+        },
+        "lastFocusedDisputeId": "d-2",
+        "unlockedEvidence": ["e-1", "e-2", "e-3", "e-4", "e-5"]
+      },
+      "actions": [
+        { "type": "evidence_combine", "target": "b", "recipeId": "combine-2", "inputs": ["e-4", "e-5"] },
+        { "type": "dossier", "target": "b", "dossierId": "dc-1", "questionId": "dc-1.b.q1" },
+        { "type": "evidence_investigate", "target": "b", "evidenceId": "e-4", "subAction": "request_original" },
+        { "type": "evidence_present", "target": "b", "evidenceId": "e-4", "disputeId": "d-2" },
+        { "type": "witness_summon", "witnessId": "w-1", "disputeId": "d-2", "prompt": "w-1 is ready to verify the notary timeline." }
+      ]
+    },
+    {
+      "id": "phase4-cascading-d3-emergence",
+      "summary": "Cascading d-3 route that opens a further hidden dispute through combination and emergence events.",
+      "phase": "phase4",
+      "routePattern": "cascading",
+      "initialState": {
+        "lieStates": {
+          "b": {
+            "d-3": "S2"
+          }
+        },
+        "lastFocusedDisputeId": "d-3",
+        "unlockedEvidence": ["e-5", "e-6"]
+      },
+      "actions": [
+        { "type": "evidence_present", "target": "b", "evidenceId": "e-6", "disputeId": "d-3" },
+        { "type": "evidence_investigate", "target": "b", "evidenceId": "e-6", "subAction": "check_metadata" },
+        { "type": "evidence_combine", "target": "b", "recipeId": "combine-3", "inputs": ["e-5", "e-6"] },
+        { "type": "emergence_event", "eventId": "family-d4-open", "target": "b", "disputeId": "d-4", "unlockDisputes": ["d-4"], "text": "Emergence event opened d-4 after the transfer record route." },
+        { "type": "dossier", "target": "b", "dossierId": "dc-2", "questionId": "dc-2.b.q1" },
+        { "type": "contradiction_pursuit", "target": "b", "disputeId": "d-3", "transitionTrigger": "empathy_question" }
+      ]
+    },
+    {
+      "id": "phase5-branching-d5-late",
+      "summary": "Late branching route that uses e-7, dossier questioning, and witness confirmation for d-5.",
+      "phase": "phase5",
+      "routePattern": "branching",
+      "initialState": {
+        "lieStates": {
+          "b": {
+            "d-5": "S3"
+          }
+        },
+        "lastFocusedDisputeId": "d-5",
+        "unlockedEvidence": ["e-5", "e-6", "e-7"],
+        "disputeVisibility": {
+          "d-5": "visible"
+        }
+      },
+      "actions": [
+        { "type": "evidence_present", "target": "b", "evidenceId": "e-7" },
+        { "type": "dossier", "target": "b", "dossierId": "dc-5", "questionId": "dc-5.b.q1" },
+        { "type": "witness_question", "witnessId": "w-3", "disputeId": "d-5", "answer": "w-3 confirms the final branch should compare care records with the diary route." },
+        { "type": "discovery_event", "eventId": "family-d5-reviewed", "dossierId": "dc-5", "followup": "The d-5 route has enough late-stage material for judgment." }
+      ]
+    }
+  ]
+}
