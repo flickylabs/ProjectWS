@@ -1,0 +1,128 @@
+{
+  "schemaVersion": 1,
+  "startedAt": "2026-04-27T16:01:34.067Z",
+  "finishedAt": "2026-04-27T16:01:36.115Z",
+  "runs": {
+    "static": {
+      "mode": "static",
+      "command": "node scripts/qa-runtime-gate.cjs",
+      "exitCode": 0,
+      "signal": null,
+      "error": null,
+      "startedAt": "2026-04-27T16:01:34.068Z",
+      "finishedAt": "2026-04-27T16:01:34.929Z"
+    },
+    "route": {
+      "mode": "route",
+      "command": "node scripts/qa-route-simulator.cjs",
+      "exitCode": 0,
+      "signal": null,
+      "error": null,
+      "startedAt": "2026-04-27T16:01:34.940Z",
+      "finishedAt": "2026-04-27T16:01:35.718Z"
+    }
+  },
+  "modes": {
+    "static": {
+      "mode": "static",
+      "file": "tmp/qa-runtime-gate-results/findings.json",
+      "readError": null,
+      "total": 1757,
+      "bySeverity": {
+        "P2": 622,
+        "P1": 1048,
+        "P0": 87
+      },
+      "byCategory": {
+        "generic_fallback_candidate": 82,
+        "qa_mismatch_candidate": 858,
+        "npc_truth_leak_s0_s2": 9,
+        "korean_polish_candidate": 540,
+        "evidence_stage_truth_description_exposure": 62,
+        "surface_only_channel_truth_leak": 58,
+        "internal_label_or_term_exposed": 128,
+        "truth_lexeme_early_exposure": 20
+      },
+      "byPatchPriority": {
+        "P2-fallback-polish": 82,
+        "P1-script-focus-review": 822,
+        "P0-disclosure-gate": 87,
+        "P2-korean-polish": 540,
+        "P1-evidence-stage-review": 62,
+        "P1-script-metadata-review": 36,
+        "P1-surface-copy-hygiene": 128
+      }
+    },
+    "route": {
+      "mode": "route",
+      "file": "tmp/qa-route-simulator-results/findings.json",
+      "readError": null,
+      "total": 9,
+      "bySeverity": {
+        "P1": 9
+      },
+      "byCategory": {
+        "evidence_investigate_no_npc_followup": 9
+      },
+      "byPatchPriority": {
+        "P1-route-contract-observability": 9
+      }
+    }
+  },
+  "combined": {
+    "total": 1766,
+    "bySeverity": {
+      "P2": 622,
+      "P1": 1057,
+      "P0": 87
+    },
+    "byCategory": {
+      "generic_fallback_candidate": 82,
+      "qa_mismatch_candidate": 858,
+      "npc_truth_leak_s0_s2": 9,
+      "korean_polish_candidate": 540,
+      "evidence_stage_truth_description_exposure": 62,
+      "surface_only_channel_truth_leak": 58,
+      "internal_label_or_term_exposed": 128,
+      "truth_lexeme_early_exposure": 20,
+      "evidence_investigate_no_npc_followup": 9
+    },
+    "byPatchPriority": {
+      "P2-fallback-polish": 82,
+      "P1-script-focus-review": 822,
+      "P0-disclosure-gate": 87,
+      "P2-korean-polish": 540,
+      "P1-evidence-stage-review": 62,
+      "P1-script-metadata-review": 36,
+      "P1-surface-copy-hygiene": 128,
+      "P1-route-contract-observability": 9
+    }
+  },
+  "tags": [
+    {
+      "name": "baseline-pre-policy-v3-stage1",
+      "present": true,
+      "sha": "de3ad48364a7f85ee2588e8385a4dcc1415a9f9e"
+    },
+    {
+      "name": "baseline-pre-policy-v3-stage2",
+      "present": false,
+      "sha": null
+    },
+    {
+      "name": "baseline-pre-policy-v3",
+      "present": false,
+      "sha": null
+    }
+  ],
+  "release": {
+    "status": "RELEASE BLOCK",
+    "hardP0": 87,
+    "p1Informational": 1057,
+    "p2Warning": 622,
+    "reasons": [
+      "P0 hard findings present: 87",
+      "required final tags missing: baseline-pre-policy-v3-stage2, baseline-pre-policy-v3"
+    ]
+  }
+}
