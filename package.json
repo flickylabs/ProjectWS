@@ -10,6 +10,7 @@
     "preview": "vite preview",
     "dev:pc": "vite --config vite.config.pc.ts",
     "build:pc": "tsc -b --force && vite build --config vite.config.pc.ts",
+    "qa:route": "node scripts/qa-route-simulator.cjs",
     "check:policy": "node tmp/policy-vs-data-cross-check.cjs",
     "check:sync": "node tmp/policy-md-json-sync-check.cjs",
     "check:all": "node tmp/run-all-checks.cjs && node tmp/policy-vs-data-cross-check.cjs && node tmp/policy-md-json-sync-check.cjs",

@@ -1,29 +1,56 @@
 {
   "totals": {
-    "cases": 1,
-    "routes": 1,
-    "actions": 6,
-    "findings": 1,
-    "hardFindings": 1
+    "cases": 3,
+    "routes": 12,
+    "actions": 64,
+    "findings": 9,
+    "hardFindings": 0
   },
   "actions": {
-    "judge_question": 4,
-    "evidence_present": 1,
-    "evidence_investigate": 1
+    "judge_question": 10,
+    "evidence_present": 10,
+    "contradiction_pursuit": 7,
+    "evidence_combine": 6,
+    "dossier": 7,
+    "evidence_investigate": 9,
+    "witness_summon": 3,
+    "emergence_event": 3,
+    "witness_question": 6,
+    "discovery_event": 3
+  },
+  "cases": {
+    "family-01": 20,
+    "friend-01": 20,
+    "spouse-01": 24
+  },
+  "routePatterns": {
+    "interrogation-heavy": 5,
+    "evidence-heavy": 15,
+    "cascading": 18,
+    "branching": 15,
+    "linear": 11
   },
   "phases": {
-    "phase3": 6
+    "phase2": 10,
+    "phase3": 22,
+    "phase4": 18,
+    "phase5": 14
   },
   "lieStates": {
-    "S0": 87,
-    "S1": 6,
-    "S2": 3
+    "S0": 933,
+    "S1": 15,
+    "S2": 30,
+    "S3": 66,
+    "S4": 17,
+    "S5": 3
   },
   "evidenceStages": {
-    "stage-0": 79,
-    "stage-1": 5
+    "stage-0": 851,
+    "stage-1": 34,
+    "stage-2": 2,
+    "stage-3": 9
   },
   "findingsByCategory": {
-    "response_missing": 1
+    "evidence_investigate_no_npc_followup": 9
   }
 }

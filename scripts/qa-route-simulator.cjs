@@ -11,12 +11,22 @@ const TRANSCRIPT_DIR = path.join(RESULT_DIR, 'route-transcripts');
 
 const DEFAULT_CASES = ['spouse-01', 'family-01', 'friend-01'];
 const QUESTION_TYPES = ['fact_pursuit', 'motive_search', 'empathy_approach'];
-const HANDLED_ACTIONS = new Set(['judge_question', 'evidence_present', 'evidence_investigate']);
+const HANDLED_ACTIONS = new Set([
+  'judge_question',
+  'evidence_present',
+  'evidence_investigate',
+  'evidence_combine',
+  'contradiction_pursuit',
+  'witness_summon',
+  'witness_question',
+  'dossier',
+  'discovery_event',
+  'emergence_event',
+]);
 const RESPONSE_REQUIRED_ACTIONS = new Set([
   'judge_question',
   'evidence_present',
   'evidence_combine',
-  'evidence_investigate',
   'contradiction_pursuit',
   'witness_summon',
   'witness_question',
@@ -146,6 +156,7 @@ function runRoute(manifest, route, cli) {
       caseId,
       routeId,
       routeSummary: route.summary || route.description || '',
+      routePattern: route.routePattern || route.pattern || 'unspecified',
       phase: route.phase || manifest.phase || 'unknown',
       actionIndex: index + 1,
       action,
@@ -184,6 +195,13 @@ function executeAction(ctx) {
   if (action.type === 'judge_question') return doJudgeQuestion(ctx);
   if (action.type === 'evidence_present') return doEvidencePresent(ctx);
   if (action.type === 'evidence_investigate') return doEvidenceInvestigate(ctx);
+  if (action.type === 'evidence_combine') return doEvidenceCombine(ctx);
+  if (action.type === 'contradiction_pursuit') return doContradictionPursuit(ctx);
+  if (action.type === 'witness_summon') return doWitnessSummon(ctx);
+  if (action.type === 'witness_question') return doWitnessQuestion(ctx);
+  if (action.type === 'dossier') return doDossier(ctx);
+  if (action.type === 'discovery_event') return doDiscoveryEvent(ctx);
+  if (action.type === 'emergence_event') return doEmergenceEvent(ctx);
   return [];
 }
 
@@ -312,9 +330,216 @@ function doEvidenceInvestigate(ctx) {
   }].filter((output) => output.text);
 }
 
+function doEvidenceCombine(ctx) {
+  const { caseId, caseData, state, action } = ctx;
+  const recipe = findCombinationRecipe(caseData, action);
+  if (!recipe) {
+    return [systemOutput(`Evidence combination recipe not found: ${action.recipeId || (action.inputs || []).join('+')}`, action, 'fallback', missingSource(caseId, 'caseData.combinationLab.recipes', action.recipeId || (action.inputs || []).join('+')), 'evidence_combine')];
+  }
+
+  const missing = (recipe.inputs || []).filter((id) => id.startsWith('e-') && !state.evidence[id]?.unlocked);
+  if (missing.length > 0) {
+    return [systemOutput(`Evidence combination blocked; locked inputs: ${missing.join(', ')}`, action, 'fallback', `src/data/cases/generated/${caseId}.json:combinationLab.recipes[id=${recipe.id}]`, 'evidence_combine')];
+  }
+
+  applyCombinationEffects(state, caseData, recipe, action);
+  checkEvidenceUnlocks(state, caseData);
+  return [
+    {
+      speaker: 'system',
+      text: recipe.discoveryText || `Evidence combination ${recipe.id} resolved.`,
+      channel: 'evidence_combine',
+      resolverPath: 'runtime_system',
+      sourcePath: `src/data/cases/generated/${caseId}.json:combinationLab.recipes[id=${recipe.id}].discoveryText`,
+      actionType: action.type,
+      target: action.target,
+      disputeId: action.disputeId || recipe.proves?.[0],
+      evidenceId: (recipe.inputs || []).find((id) => id.startsWith('e-')),
+      combinationId: recipe.id,
+      dossierCardId: recipe.outputId,
+    },
+    {
+      speaker: 'witness',
+      text: `Analysis note ${recipe.outputId || recipe.id} is ready for follow-up.`,
+      channel: 'evidence_combine',
+      resolverPath: 'route_simulator_facsimile',
+      sourcePath: `src/data/cases/generated/${caseId}.json:combinationLab.outputs[id=${recipe.outputId}]`,
+      actionType: action.type,
+      target: action.target,
+      disputeId: action.disputeId || recipe.proves?.[0],
+      combinationId: recipe.id,
+      dossierCardId: recipe.outputId,
+    },
+  ];
+}
+
+function doContradictionPursuit(ctx) {
+  const { caseId, caseData, scripted, state, action } = ctx;
+  const lieState = getLieState(state, action.target, action.disputeId);
+  const picked = pickEntry(scripted, 'contradiction_pursuit', `${action.target}|${action.disputeId}|${lieState}`, action.variantIds?.npc);
+  const outputs = [];
+  if (picked) {
+    outputs.push(toOutput(action.target, picked, {
+      channel: 'contradiction_pursuit',
+      resolverPath: 'scripted',
+      sourcePath: sourcePath(caseId, 'contradiction_pursuit', picked.entry.key, picked.variant.id),
+      action,
+      disputeId: action.disputeId,
+      target: action.target,
+      lieState,
+    }));
+  } else {
+    outputs.push(systemOutput(`Contradiction script missing for ${action.target}|${action.disputeId}|${lieState}`, action, 'fallback', missingSource(caseId, 'contradiction_pursuit', `${action.target}|${action.disputeId}|${lieState}`), 'contradiction_pursuit'));
+  }
+
+  for (const trigger of action.transitionTriggers || [action.transitionTrigger || 'direct_question']) {
+    if (transitionByTrigger(state, caseData, action.target, action.disputeId, trigger)) break;
+  }
+  checkEvidenceUnlocks(state, caseData);
+  return outputs;
+}
+
+function doWitnessSummon(ctx) {
+  const { caseId, state, action } = ctx;
+  const witnessId = action.witnessId || 'w-1';
+  state.witnesses[witnessId] = { summoned: true, lastDisputeId: action.disputeId || null };
+  return [
+    {
+      speaker: 'system',
+      text: `Witness summoned: ${witnessId}`,
+      channel: 'witness_summon',
+      resolverPath: 'runtime_system',
+      sourcePath: `src/data/cases/generated/${caseId}.json:activeThirdParties[id=${witnessId}]`,
+      actionType: action.type,
+      target: action.target,
+      disputeId: action.disputeId,
+      witnessId,
+    },
+    {
+      speaker: 'witness',
+      text: action.prompt || `${witnessId} is available for a focused route question.`,
+      channel: 'witness_summon',
+      resolverPath: 'route_simulator_facsimile',
+      sourcePath: `tmp/qa-route-simulator-manifests/${caseId}.json:witness_summon.${witnessId}`,
+      actionType: action.type,
+      target: action.target,
+      disputeId: action.disputeId,
+      witnessId,
+    },
+  ];
+}
+
+function doWitnessQuestion(ctx) {
+  const { caseId, state, action } = ctx;
+  const witnessId = action.witnessId || 'w-1';
+  state.witnesses[witnessId] = {
+    ...(state.witnesses[witnessId] || {}),
+    summoned: true,
+    lastDisputeId: action.disputeId || null,
+    questions: (state.witnesses[witnessId]?.questions || 0) + 1,
+  };
+  return [{
+    speaker: 'witness',
+    text: action.answer || `${witnessId} confirms the route focus for ${action.disputeId || action.evidenceId || 'the current issue'}.`,
+    channel: 'witness_question',
+    resolverPath: 'route_simulator_facsimile',
+    sourcePath: `tmp/qa-route-simulator-manifests/${caseId}.json:witness_question.${witnessId}`,
+    actionType: action.type,
+    target: action.target,
+    disputeId: action.disputeId,
+    evidenceId: action.evidenceId,
+    witnessId,
+  }];
+}
+
+function doDossier(ctx) {
+  const { caseId, caseData, scripted, state, action } = ctx;
+  const target = action.target || 'b';
+  const disputeId = action.disputeId || state.lastFocusedDisputeId;
+  const lieState = getLieState(state, target, disputeId);
+  const lieBand = action.lieBand || toLieBand(lieState);
+  const questionId = action.questionId || `${action.dossierId}.${target}.q${action.questionNumber || 1}`;
+  const key = action.dossierKey || `${questionId}|${lieBand}`;
+  const picked = pickEntry(scripted, 'dossier', key, action.variantIds?.npc);
+  const outputs = [];
+
+  if (picked) {
+    outputs.push(toOutput(target, picked, {
+      channel: 'dossier',
+      resolverPath: 'scripted',
+      sourcePath: sourcePath(caseId, 'dossier', picked.entry.key, picked.variant.id),
+      action,
+      disputeId,
+      target,
+      lieState,
+    }));
+  } else {
+    outputs.push(systemOutput(`Dossier script missing for ${key}`, action, 'fallback', missingSource(caseId, 'dossier', key), 'dossier'));
+  }
+
+  for (const trigger of action.transitionTriggers || []) {
+    if (transitionByTrigger(state, caseData, target, disputeId, trigger)) break;
+  }
+  checkEvidenceUnlocks(state, caseData);
+  return outputs;
+}
+
+function doDiscoveryEvent(ctx) {
+  const { caseId, state, action } = ctx;
+  applyRouteUnlocks(state, action);
+  return [
+    {
+      speaker: 'system',
+      text: action.text || `Discovery event applied: ${action.eventId || action.disputeId || action.evidenceId}`,
+      channel: 'discovery_event',
+      resolverPath: 'route_simulator_facsimile',
+      sourcePath: `tmp/qa-route-simulator-manifests/${caseId}.json:discovery_event.${action.eventId || 'inline'}`,
+      actionType: action.type,
+      target: action.target,
+      disputeId: action.disputeId,
+      evidenceId: action.evidenceId,
+    },
+    {
+      speaker: 'witness',
+      text: action.followup || 'The newly discovered route item can now be tested.',
+      channel: 'discovery_event',
+      resolverPath: 'route_simulator_facsimile',
+      sourcePath: `tmp/qa-route-simulator-manifests/${caseId}.json:discovery_event.${action.eventId || 'inline'}.followup`,
+      actionType: action.type,
+      target: action.target,
+      disputeId: action.disputeId,
+      evidenceId: action.evidenceId,
+    },
+  ];
+}
+
+function doEmergenceEvent(ctx) {
+  const { caseId, state, action } = ctx;
+  applyRouteUnlocks(state, action);
+  if (action.disputeId) {
+    state.disputes[action.disputeId] = {
+      ...(state.disputes[action.disputeId] || {}),
+      visibility: 'visible',
+      emergedVia: action.eventId || action.type,
+    };
+  }
+  return [{
+    speaker: 'witness',
+    text: action.text || `Emergence event opened ${action.disputeId || action.evidenceId || 'a route node'}.`,
+    channel: 'emergence_event',
+    resolverPath: 'route_simulator_facsimile',
+    sourcePath: `tmp/qa-route-simulator-manifests/${caseId}.json:emergence_event.${action.eventId || 'inline'}`,
+    actionType: action.type,
+    target: action.target,
+    disputeId: action.disputeId,
+    evidenceId: action.evidenceId,
+  }];
+}
+
 function runDetectors(trace, ctx) {
   const findings = [];
   detectUnhandledAction(trace, findings);
+  detectEvidenceInvestigateNoNpcFollowup(trace, findings);
   detectMissingResponse(trace, findings);
   detectQaMismatchRuntime(trace, ctx, findings);
   detectLieStateRegression(trace, findings);
@@ -368,6 +593,24 @@ function detectMissingResponse(trace, findings) {
     resolverPath: trace.outputs.map((output) => output.resolverPath).filter(Boolean).join(' | ') || 'none',
     sourcePath: trace.outputs.map((output) => output.sourcePath).filter(Boolean).join(' | ') || 'none',
     patchPriority: 'P0-runtime-response-coverage',
+  });
+}
+
+function detectEvidenceInvestigateNoNpcFollowup(trace, findings) {
+  if (trace.action.type !== 'evidence_investigate') return;
+  const npc = trace.outputs.filter((output) => output.speaker === 'a' || output.speaker === 'b' || output.speaker === 'witness');
+  const systemOnly = trace.outputs.some((output) => output.runtimeContract === 'system_only_no_auto_npc');
+  if (!systemOnly || npc.length > 0) return;
+  findings.push({
+    severity: 'P1',
+    category: 'evidence_investigate_no_npc_followup',
+    detectors: ['evidence_investigate_no_npc_followup'],
+    summary: 'evidence_investigate ended as a system-only discovery action with no automatic NPC follow-up.',
+    expected: 'Gate option ii treats evidence_investigate as system-only; any follow-up NPC speech must be a later explicit judge_question.',
+    actual: `${trace.outputs.length} system output(s); speakers=${trace.outputs.map((output) => output.speaker).join(',') || 'none'}`,
+    resolverPath: trace.outputs.map((output) => output.resolverPath).filter(Boolean).join(' | ') || 'none',
+    sourcePath: trace.outputs.map((output) => output.sourcePath).filter(Boolean).join(' | ') || 'none',
+    patchPriority: 'P1-route-contract-observability',
   });
 }
 
@@ -500,6 +743,8 @@ function createInitialState(caseData, initial) {
     lieStates: { a: {}, b: {} },
     evidence: {},
     disputes: {},
+    dossier: {},
+    witnesses: {},
     questionCounts: {},
     factTokens: {},
     lastFocusedDisputeId: initial.lastFocusedDisputeId || null,
@@ -549,12 +794,14 @@ function snapshotState(state) {
     lieStates: cloneJson(state.lieStates),
     evidence: cloneJson(state.evidence),
     disputes: cloneJson(state.disputes),
+    dossier: cloneJson(state.dossier),
+    witnesses: cloneJson(state.witnesses),
     lastFocusedDisputeId: state.lastFocusedDisputeId,
   };
 }
 
 function diffState(before, after) {
-  const diff = { lieStates: [], evidence: [], disputes: [] };
+  const diff = { lieStates: [], evidence: [], disputes: [], dossier: [], witnesses: [] };
   for (const party of ['a', 'b']) {
     const disputeIds = new Set([...Object.keys(before.lieStates[party] || {}), ...Object.keys(after.lieStates[party] || {})]);
     for (const disputeId of disputeIds) {
@@ -575,6 +822,20 @@ function diffState(before, after) {
     const a = after.disputes[disputeId]?.visibility;
     if (b !== a) diff.disputes.push({ disputeId, from: b, to: a, via: after.disputes[disputeId]?.emergedVia });
   }
+  for (const dossierId of Object.keys(after.dossier || {})) {
+    const b = before.dossier[dossierId]?.unlocked;
+    const a = after.dossier[dossierId]?.unlocked;
+    if (b !== a) diff.dossier.push({ dossierId, from: b, to: a });
+  }
+  for (const witnessId of Object.keys(after.witnesses || {})) {
+    const b = before.witnesses[witnessId]?.questions || 0;
+    const a = after.witnesses[witnessId]?.questions || 0;
+    const summonedBefore = before.witnesses[witnessId]?.summoned === true;
+    const summonedAfter = after.witnesses[witnessId]?.summoned === true;
+    if (b !== a || summonedBefore !== summonedAfter) {
+      diff.witnesses.push({ witnessId, summonedFrom: summonedBefore, summonedTo: summonedAfter, questionsFrom: b, questionsTo: a });
+    }
+  }
   return diff;
 }
 
@@ -591,6 +852,8 @@ function normalizeAction(action) {
   const normalized = { ...action };
   if (normalized.type === 'question') normalized.type = 'judge_question';
   if (normalized.type === 'call_witness') normalized.type = 'witness_summon';
+  if (normalized.type === 'combine_evidence') normalized.type = 'evidence_combine';
+  if (normalized.type === 'dossier_card') normalized.type = 'dossier';
   if (normalized.type === 'judge_question') normalized.questionType = normalized.questionType || normalized.subAction || 'fact_pursuit';
   return normalized;
 }
@@ -626,6 +889,61 @@ function trackQuestionAndMaybeTransition(state, caseData, action) {
   for (const trigger of triggers) {
     if (transitionByTrigger(state, caseData, action.target, action.disputeId, trigger)) break;
   }
+}
+
+function findCombinationRecipe(caseData, action) {
+  const recipes = caseData.combinationLab?.recipes || [];
+  if (action.recipeId) return recipes.find((recipe) => recipe.id === action.recipeId);
+  const actionInputs = [...(action.inputs || [])].sort().join('|');
+  return recipes.find((recipe) => [...(recipe.inputs || [])].sort().join('|') === actionInputs);
+}
+
+function findDossierOutput(caseData, dossierId) {
+  return (caseData.combinationLab?.outputs || []).find((output) => output.id === dossierId);
+}
+
+function applyCombinationEffects(state, caseData, recipe, action) {
+  if (recipe.outputId) {
+    state.dossier[recipe.outputId] = { unlocked: true, via: recipe.id };
+    const output = findDossierOutput(caseData, recipe.outputId);
+    for (const effect of output?.effects || []) {
+      if (effect.kind === 'unlock_note' && effect.unlockNodeId) {
+        state.dossier[effect.unlockNodeId] = { unlocked: true, via: recipe.id };
+      }
+      if (effect.kind === 'unlock_dispute' && effect.unlockNodeId) {
+        state.disputes[effect.unlockNodeId] = {
+          ...(state.disputes[effect.unlockNodeId] || {}),
+          visibility: 'visible',
+          emergedVia: recipe.id,
+        };
+      }
+      if (effect.kind === 'upgrade_evidence' && effect.evidenceUpgrade?.evidenceId && state.evidence[effect.evidenceUpgrade.evidenceId]) {
+        state.evidence[effect.evidenceUpgrade.evidenceId].unlocked = true;
+      }
+    }
+  }
+
+  const matchingCombination = (caseData.evidenceCombinations || []).find((item) => (
+    [...(item.requires || [])].sort().join('|') === [...(recipe.inputs || [])].filter((id) => id.startsWith('e-')).sort().join('|')
+  ));
+  const parties = action.target ? [action.target] : ['a', 'b'];
+  for (const disputeId of recipe.proves || matchingCombination?.proves || []) {
+    for (const party of parties) transitionByTrigger(state, caseData, party, disputeId, 'hard_evidence');
+  }
+}
+
+function applyRouteUnlocks(state, action) {
+  for (const evidenceId of action.unlockEvidence || []) {
+    if (state.evidence[evidenceId]) state.evidence[evidenceId].unlocked = true;
+  }
+  for (const disputeId of action.unlockDisputes || []) {
+    state.disputes[disputeId] = {
+      ...(state.disputes[disputeId] || {}),
+      visibility: 'visible',
+      emergedVia: action.eventId || action.type,
+    };
+  }
+  if (action.dossierId) state.dossier[action.dossierId] = { unlocked: true, via: action.eventId || action.type };
 }
 
 function transitionByEvidence(state, caseData, party, ev) {
@@ -799,8 +1117,12 @@ function writeCoverageSummary(routeResults, traces, findings) {
     `- findings: ${coverage.totals.findings}`,
     `- hard findings: ${coverage.totals.hardFindings}`,
     '',
-    '## Action Coverage',
+    '## Case Coverage',
   ];
+  pushCounts(lines, coverage.cases);
+  lines.push('', '## Route Pattern Coverage');
+  pushCounts(lines, coverage.routePatterns);
+  lines.push('', '## Action Coverage');
   pushCounts(lines, coverage.actions);
   lines.push('', '## Phase Coverage');
   pushCounts(lines, coverage.phases);
@@ -823,6 +1145,8 @@ function buildCoverage(routeResults, traces, findings) {
       hardFindings: findings.filter((item) => item.severity === 'P0').length,
     },
     actions: {},
+    cases: {},
+    routePatterns: {},
     phases: {},
     lieStates: {},
     evidenceStages: {},
@@ -831,6 +1155,8 @@ function buildCoverage(routeResults, traces, findings) {
 
   for (const trace of traces) {
     increment(coverage.actions, trace.action.type);
+    increment(coverage.cases, trace.caseId);
+    increment(coverage.routePatterns, trace.routePattern || 'unspecified');
     increment(coverage.phases, trace.phase || 'unknown');
     for (const party of ['a', 'b']) {
       for (const value of Object.values(trace.stateBefore.lieStates[party] || {})) increment(coverage.lieStates, value);
@@ -864,7 +1190,7 @@ function writeCaseSummaries(routeResults, findings) {
       '## Routes',
     ];
     for (const result of results) {
-      lines.push(`- ${result.routeId}: ${result.route.summary || result.route.description || ''}`);
+      lines.push(`- ${result.routeId} [${result.route.routePattern || result.route.pattern || 'unspecified'}]: ${result.route.summary || result.route.description || ''}`);
     }
     lines.push('', '## Findings');
     if (caseFindings.length === 0) lines.push('- none');
@@ -887,7 +1213,7 @@ function writeAllRoutesSummary(routeResults, traces, findings) {
     '## Routes',
   ];
   for (const result of routeResults) {
-    lines.push(`- ${result.manifest.caseId}/${result.routeId} (${result.route.phase || result.manifest.phase || 'unknown'}): ${result.route.summary || result.route.description || ''}`);
+    lines.push(`- ${result.manifest.caseId}/${result.routeId} (${result.route.phase || result.manifest.phase || 'unknown'}, ${result.route.routePattern || result.route.pattern || 'unspecified'}): ${result.route.summary || result.route.description || ''}`);
   }
   lines.push('', '## P0 Findings');
   if (hard.length === 0) lines.push('- none');
@@ -898,6 +1224,7 @@ function writeAllRoutesSummary(routeResults, traces, findings) {
 function writeGateSpecReport(routeResults, traces, findings) {
   const evidenceInvestigateActions = traces.filter((trace) => trace.action.type === 'evidence_investigate');
   const responseMissingFindings = findings.filter((finding) => finding.category === 'response_missing');
+  const evidenceInvestigateNoFollowup = findings.filter((finding) => finding.category === 'evidence_investigate_no_npc_followup');
   const report = {
     phaseB1Spike: {
       spouse01_phase3_baseline: 'tmp/qa-route-simulator-results/route-transcripts/spouse-01-phase3-baseline.md',
@@ -905,12 +1232,16 @@ function writeGateSpecReport(routeResults, traces, findings) {
       actions: traces.length,
       evidenceInvestigateActions: evidenceInvestigateActions.length,
       responseMissingFindings: responseMissingFindings.length,
+      evidenceInvestigateNoNpcFollowupFindings: evidenceInvestigateNoFollowup.length,
       legacyRouteSpotCompare: {
         source: 'tmp/qa-codex-spouse-01-p0-patch-results/20260427-phase-a-audit.md',
         phaseAReference: 'routes=3, actions=10, findings=3, hard=3; QARG-0003 is evidence_investigate system-only response_missing',
-        phaseB1Result: 'evidence_investigate remains system-only and produces response_missing under the current legacy Gate spec',
+        phaseB3Result: 'evidence_investigate remains system-only and is reclassified from P0 response_missing to P1 evidence_investigate_no_npc_followup under Gate option ii',
         note: 'The legacy runner was not executed here because it writes to tmp/qa-runtime-gate-results; Phase B output is kept isolated.',
       },
+    },
+    reclassify: {
+      B1_QARS_0001: 'P0 response_missing -> P1 evidence_investigate_no_npc_followup',
     },
     gateSpecOptions: GATE_SPEC_OPTIONS,
     ctRecommendation: 'Choose option ii for Phase B-3: keep runtime evidence investigation system-only, remove evidence_investigate from response-required, and emit a P1 informational evidence_investigate_no_npc_followup detector. Options i/iii require separate Phase B-6 approval because they change data/runtime behavior.',
@@ -924,6 +1255,7 @@ function writeSpikeSummary(routeResults, traces, findings) {
   for (const finding of findings) increment(byCategory, finding.category);
   const evidenceInvestigateActions = traces.filter((trace) => trace.action.type === 'evidence_investigate').length;
   const responseMissing = byCategory.response_missing || 0;
+  const evidenceInvestigateNoFollowup = byCategory.evidence_investigate_no_npc_followup || 0;
 
   const lines = [
     '# 20260427 Fast Tester Phase B-1 Route Simulator Spike Summary',
@@ -941,11 +1273,12 @@ function writeSpikeSummary(routeResults, traces, findings) {
     `- findings: ${findings.length}`,
     `- hard findings: ${hard.length}`,
     `- response_missing findings: ${responseMissing}`,
+    `- evidence_investigate_no_npc_followup findings: ${evidenceInvestigateNoFollowup}`,
     '',
     '## Legacy Route Spot Compare',
     '- Phase A audit reference: `tmp/qa-codex-spouse-01-p0-patch-results/20260427-phase-a-audit.md`',
     '- Phase A hard areas: e-4 early truth leak twice, evidence_investigate system-only response_missing once.',
-    '- Phase B-1 route covers the evidence_investigate contract path; it matches the Phase A QARG-0003 behavior by producing system-only output and no NPC/safe fallback.',
+    '- Phase B-1 route covers the evidence_investigate contract path; Phase B-3 reclassifies that system-only output to P1 informational under Gate option ii.',
     '- The legacy runner was not executed in this session because it writes to `tmp/qa-runtime-gate-results/`; Phase B output isolation was preserved.',
     '',
     '## P0 Findings',
@@ -1101,7 +1434,13 @@ function writeTranscript(result) {
     lines.push(`## ${trace.actionIndex}. ${trace.action.type}`);
     lines.push('');
     lines.push(`action: \`${JSON.stringify(trace.action)}\``);
-    if (trace.stateDelta.lieStates.length || trace.stateDelta.evidence.length || trace.stateDelta.disputes.length) {
+    if (
+      trace.stateDelta.lieStates.length ||
+      trace.stateDelta.evidence.length ||
+      trace.stateDelta.disputes.length ||
+      trace.stateDelta.dossier.length ||
+      trace.stateDelta.witnesses.length
+    ) {
       lines.push('');
       lines.push('stateDelta:');
       lines.push('```json');

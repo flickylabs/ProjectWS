@@ -7,23 +7,22 @@
 - manifest root: `tmp/qa-route-simulator-manifests/`
 
 ## Spike Result
-- routes: 1
-- actions: 6
-- evidence_investigate actions: 1
-- findings: 1
-- hard findings: 1
-- response_missing findings: 1
+- routes: 12
+- actions: 64
+- evidence_investigate actions: 9
+- findings: 9
+- hard findings: 0
+- response_missing findings: 0
+- evidence_investigate_no_npc_followup findings: 9
 
 ## Legacy Route Spot Compare
 - Phase A audit reference: `tmp/qa-codex-spouse-01-p0-patch-results/20260427-phase-a-audit.md`
 - Phase A hard areas: e-4 early truth leak twice, evidence_investigate system-only response_missing once.
-- Phase B-1 route covers the evidence_investigate contract path; it matches the Phase A QARG-0003 behavior by producing system-only output and no NPC/safe fallback.
+- Phase B-1 route covers the evidence_investigate contract path; Phase B-3 reclassifies that system-only output to P1 informational under Gate option ii.
 - The legacy runner was not executed in this session because it writes to `tmp/qa-runtime-gate-results/`; Phase B output isolation was preserved.
 
 ## P0 Findings
-- QARS-0001 [response_missing] evidence_investigate produced no NPC response and no explicit safe fallback.
-  source: src/data/cases/generated/spouse-01.json:evidence.e-1.investigationResults.request_original
-  actual: 1 visible outputs; speakers=system
+- none
 
 ## Gate Spec Option Check
 - (i) Keep evidence_investigate response-required and add NPC follow-up data

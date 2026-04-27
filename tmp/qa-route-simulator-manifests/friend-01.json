@@ -1,0 +1,96 @@
+{
+  "schemaVersion": 1,
+  "caseId": "friend-01",
+  "phase": "phase-b-2",
+  "routes": [
+    {
+      "id": "phase2-linear-d1-contact",
+      "summary": "Linear d-1 contact route from S0 through basic questioning, hard evidence, and system-only investigation.",
+      "phase": "phase2",
+      "routePattern": "linear",
+      "initialState": {
+        "lieStates": {
+          "b": {
+            "d-1": "S0"
+          }
+        },
+        "unlockedEvidence": ["e-1", "e-2", "e-3"]
+      },
+      "actions": [
+        { "type": "judge_question", "target": "b", "subAction": "fact_pursuit", "disputeId": "d-1" },
+        { "type": "judge_question", "target": "b", "subAction": "fact_pursuit", "disputeId": "d-1" },
+        { "type": "evidence_present", "target": "b", "evidenceId": "e-1" },
+        { "type": "evidence_investigate", "target": "b", "evidenceId": "e-1", "subAction": "request_original" },
+        { "type": "witness_question", "witnessId": "w-1", "disputeId": "d-1", "answer": "w-1 confirms the contact route can be checked against the message log." }
+      ]
+    },
+    {
+      "id": "phase3-branching-d5-dossier",
+      "summary": "Branching d-5 route that combines chat evidence into a dossier card and checks party response.",
+      "phase": "phase3",
+      "routePattern": "branching",
+      "initialState": {
+        "lieStates": {
+          "a": {
+            "d-5": "S2"
+          }
+        },
+        "lastFocusedDisputeId": "d-5",
+        "unlockedEvidence": ["e-1", "e-2", "e-3"]
+      },
+      "actions": [
+        { "type": "evidence_combine", "target": "a", "recipeId": "combine-1", "inputs": ["e-1", "e-2"] },
+        { "type": "dossier", "target": "a", "dossierId": "dc-3", "questionId": "dc-3.a.q1" },
+        { "type": "evidence_present", "target": "a", "evidenceId": "e-2" },
+        { "type": "witness_question", "witnessId": "w-1", "disputeId": "d-5", "answer": "w-1 confirms the group chat branch should stay separate from the contact branch." },
+        { "type": "witness_summon", "witnessId": "w-1", "disputeId": "d-5", "prompt": "w-1 is ready to compare the group chat spread path." }
+      ]
+    },
+    {
+      "id": "phase4-cascading-d2-message",
+      "summary": "Cascading d-2 route that tests fiance-message evidence and witness confirmation.",
+      "phase": "phase4",
+      "routePattern": "cascading",
+      "initialState": {
+        "lieStates": {
+          "b": {
+            "d-2": "S2"
+          }
+        },
+        "unlockedEvidence": ["e-1", "e-4", "e-5"]
+      },
+      "actions": [
+        { "type": "evidence_present", "target": "b", "evidenceId": "e-4", "disputeId": "d-2" },
+        { "type": "evidence_investigate", "target": "b", "evidenceId": "e-4", "subAction": "check_metadata" },
+        { "type": "contradiction_pursuit", "target": "b", "disputeId": "d-2", "transitionTrigger": "empathy_question" },
+        { "type": "witness_question", "witnessId": "w-2", "disputeId": "d-2", "answer": "w-2 confirms the fiance-message branch should be tested against the contact log." },
+        { "type": "emergence_event", "eventId": "friend-d3-open", "target": "b", "disputeId": "d-3", "unlockDisputes": ["d-3"], "text": "Emergence event opened d-3 after the d-2 message branch." }
+      ]
+    },
+    {
+      "id": "phase5-evidence-heavy-d4-late",
+      "summary": "Evidence-heavy late route for d-4 that combines past records and checks the late evidence investigation contract.",
+      "phase": "phase5",
+      "routePattern": "evidence-heavy",
+      "initialState": {
+        "lieStates": {
+          "b": {
+            "d-4": "S3"
+          }
+        },
+        "lastFocusedDisputeId": "d-4",
+        "unlockedEvidence": ["e-3", "e-6", "e-7"],
+        "disputeVisibility": {
+          "d-4": "visible"
+        }
+      },
+      "actions": [
+        { "type": "evidence_combine", "target": "b", "recipeId": "combine-7", "inputs": ["e-3", "e-6"] },
+        { "type": "dossier", "target": "b", "dossierId": "dc-4", "questionId": "dc-4.b.q1" },
+        { "type": "evidence_present", "target": "b", "evidenceId": "e-6" },
+        { "type": "evidence_investigate", "target": "b", "evidenceId": "e-6", "subAction": "restore_context" },
+        { "type": "discovery_event", "eventId": "friend-d4-reviewed", "dossierId": "dc-4", "followup": "The d-4 late branch remains available for judgment." }
+      ]
+    }
+  ]
+}

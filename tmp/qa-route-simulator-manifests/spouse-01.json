@@ -1,12 +1,13 @@
 {
   "schemaVersion": 1,
   "caseId": "spouse-01",
-  "phase": "phase-b-1",
+  "phase": "phase-b-2",
   "routes": [
     {
       "id": "phase3-baseline",
       "summary": "Phase B-1 spouse-01 baseline route for d-1 questioning, e-1 presentation, and evidence_investigate system-only contract verification.",
       "phase": "phase3",
+      "routePattern": "linear",
       "initialState": {
         "lieStates": {
           "b": {
@@ -20,43 +21,100 @@
         ]
       },
       "actions": [
-        {
-          "type": "judge_question",
-          "target": "b",
-          "subAction": "fact_pursuit",
-          "disputeId": "d-1"
+        { "type": "judge_question", "target": "b", "subAction": "fact_pursuit", "disputeId": "d-1" },
+        { "type": "judge_question", "target": "b", "subAction": "fact_pursuit", "disputeId": "d-1" },
+        { "type": "evidence_present", "target": "b", "evidenceId": "e-1", "disputeId": "d-1" },
+        { "type": "evidence_investigate", "target": "b", "evidenceId": "e-1", "subAction": "request_original" },
+        { "type": "judge_question", "target": "b", "subAction": "motive_search", "disputeId": "d-1" },
+        { "type": "judge_question", "target": "b", "subAction": "empathy_approach", "disputeId": "d-1" }
+      ]
+    },
+    {
+      "id": "phase3-branching-dossier-witness",
+      "summary": "Branching route that combines evidence into a dossier card, uses dossier questioning, and checks witness summon flow.",
+      "phase": "phase3",
+      "routePattern": "branching",
+      "initialState": {
+        "lieStates": {
+          "b": {
+            "d-1": "S2",
+            "d-2": "S2"
+          }
         },
-        {
-          "type": "judge_question",
-          "target": "b",
-          "subAction": "fact_pursuit",
-          "disputeId": "d-1"
+        "lastFocusedDisputeId": "d-1",
+        "unlockedEvidence": [
+          "e-1",
+          "e-2",
+          "e-3",
+          "e-4",
+          "e-5"
+        ]
+      },
+      "actions": [
+        { "type": "evidence_combine", "target": "b", "recipeId": "combine-2", "inputs": ["e-1", "e-4"] },
+        { "type": "dossier", "target": "b", "dossierId": "dc-1", "questionId": "dc-1.b.q1" },
+        { "type": "witness_summon", "witnessId": "w-1", "disputeId": "d-1", "prompt": "w-1 is ready to confirm the office-tel route." },
+        { "type": "witness_question", "witnessId": "w-1", "disputeId": "d-1", "answer": "w-1 confirms the route timing can be compared with the receipt and GPS records." },
+        { "type": "contradiction_pursuit", "target": "b", "disputeId": "d-1", "transitionTrigger": "hard_evidence" },
+        { "type": "judge_question", "target": "b", "subAction": "empathy_approach", "disputeId": "d-1" }
+      ]
+    },
+    {
+      "id": "phase4-cascading-d2-to-hidden",
+      "summary": "Cascading route from d-2 evidence pressure into a hidden dispute emergence event.",
+      "phase": "phase4",
+      "routePattern": "cascading",
+      "initialState": {
+        "lieStates": {
+          "b": {
+            "d-2": "S3"
+          }
         },
-        {
-          "type": "evidence_present",
-          "target": "b",
-          "evidenceId": "e-1",
-          "disputeId": "d-1",
-          "lieBand": "early"
+        "unlockedEvidence": [
+          "e-1",
+          "e-2",
+          "e-3",
+          "e-4",
+          "e-5"
+        ]
+      },
+      "actions": [
+        { "type": "evidence_investigate", "target": "b", "evidenceId": "e-4", "subAction": "request_original" },
+        { "type": "evidence_investigate", "target": "b", "evidenceId": "e-4", "subAction": "check_metadata" },
+        { "type": "evidence_investigate", "target": "b", "evidenceId": "e-4", "subAction": "restore_context" },
+        { "type": "evidence_present", "target": "b", "evidenceId": "e-5", "disputeId": "d-2" },
+        { "type": "contradiction_pursuit", "target": "b", "disputeId": "d-2", "transitionTrigger": "direct_question" },
+        { "type": "emergence_event", "eventId": "spouse-hd3-open", "target": "b", "disputeId": "h-d3", "unlockDisputes": ["h-d3"], "text": "Emergence event opened h-d3 after d-2 pressure." },
+        { "type": "witness_question", "witnessId": "w-2", "disputeId": "h-d3", "answer": "w-2 confirms the account path should be tested against the savings paperwork." }
+      ]
+    },
+    {
+      "id": "phase5-evidence-heavy-hidden-dossier",
+      "summary": "Evidence-heavy hidden-dispute route that resolves a dossier card and drives late lieState pressure.",
+      "phase": "phase5",
+      "routePattern": "evidence-heavy",
+      "initialState": {
+        "lieStates": {
+          "b": {
+            "h-d3": "S3"
+          }
         },
-        {
-          "type": "evidence_investigate",
-          "target": "b",
-          "evidenceId": "e-1",
-          "subAction": "request_original"
-        },
-        {
-          "type": "judge_question",
-          "target": "b",
-          "subAction": "motive_search",
-          "disputeId": "d-1"
-        },
-        {
-          "type": "judge_question",
-          "target": "b",
-          "subAction": "empathy_approach",
-          "disputeId": "d-1"
+        "lastFocusedDisputeId": "h-d3",
+        "unlockedEvidence": [
+          "e-5",
+          "e-6",
+          "e-7"
+        ],
+        "disputeVisibility": {
+          "h-d3": "visible"
         }
+      },
+      "actions": [
+        { "type": "evidence_combine", "target": "b", "recipeId": "combine-4", "inputs": ["e-6", "e-7"] },
+        { "type": "dossier", "target": "b", "dossierId": "dc-3", "questionId": "dc-3.b.q1" },
+        { "type": "contradiction_pursuit", "target": "b", "disputeId": "h-d3", "transitionTrigger": "empathy_question" },
+        { "type": "contradiction_pursuit", "target": "b", "disputeId": "h-d3", "transitionTrigger": "direct_question" },
+        { "type": "discovery_event", "eventId": "spouse-dc3-reviewed", "dossierId": "dc-3", "followup": "The dc-3 route card remains available for final judgment." }
       ]
     }
   ]

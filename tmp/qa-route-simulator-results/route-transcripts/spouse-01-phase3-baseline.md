@@ -46,7 +46,9 @@ stateDelta:
       }
     }
   ],
-  "disputes": []
+  "disputes": [],
+  "dossier": [],
+  "witnesses": []
 }
 ```
 
@@ -57,7 +59,7 @@ stateDelta:
 
 ## 3. evidence_present
 
-action: `{"type":"evidence_present","target":"b","evidenceId":"e-1","disputeId":"d-1","lieBand":"early"}`
+action: `{"type":"evidence_present","target":"b","evidenceId":"e-1","disputeId":"d-1"}`
 
 stateDelta:
 ```json
@@ -80,7 +82,9 @@ stateDelta:
       }
     }
   ],
-  "disputes": []
+  "disputes": [],
+  "dossier": [],
+  "witnesses": []
 }
 ```
 
@@ -114,13 +118,15 @@ stateDelta:
       }
     }
   ],
-  "disputes": []
+  "disputes": [],
+  "dossier": [],
+  "witnesses": []
 }
 ```
 
 - system [evidence_discovery/runtime_system] src/data/cases/generated/spouse-01.json:evidence.e-1.investigationResults.request_original
   틴트, 헤어롤 등 여성용 물건들이 눈에 띈다.
-findings: QARS-0001
+findings: QARS-0006
 
 ## 5. judge_question
 
@@ -138,7 +144,9 @@ stateDelta:
     }
   ],
   "evidence": [],
-  "disputes": []
+  "disputes": [],
+  "dossier": [],
+  "witnesses": []
 }
 ```
 
