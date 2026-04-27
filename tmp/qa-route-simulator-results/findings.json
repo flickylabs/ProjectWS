@@ -1,0 +1,24 @@
+[
+  {
+    "id": "QARS-0001",
+    "caseId": "spouse-01",
+    "routeId": "phase3-baseline",
+    "phase": "phase3",
+    "actionIndex": 4,
+    "actionType": "evidence_investigate",
+    "target": "b",
+    "evidenceId": "e-1",
+    "localIndex": 1,
+    "severity": "P0",
+    "category": "response_missing",
+    "detectors": [
+      "response_missing"
+    ],
+    "summary": "evidence_investigate produced no NPC response and no explicit safe fallback.",
+    "expected": "At least one NPC/witness response or an explicit safe fallback after the action under the current legacy Gate spec.",
+    "actual": "1 visible outputs; speakers=system",
+    "resolverPath": "runtime_system",
+    "sourcePath": "src/data/cases/generated/spouse-01.json:evidence.e-1.investigationResults.request_original",
+    "patchPriority": "P0-runtime-response-coverage"
+  }
+]

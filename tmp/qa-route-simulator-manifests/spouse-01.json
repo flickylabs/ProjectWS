@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "caseId": "spouse-01",
+  "phase": "phase-b-1",
+  "routes": [
+    {
+      "id": "phase3-baseline",
+      "summary": "Phase B-1 spouse-01 baseline route for d-1 questioning, e-1 presentation, and evidence_investigate system-only contract verification.",
+      "phase": "phase3",
+      "initialState": {
+        "lieStates": {
+          "b": {
+            "d-1": "S0"
+          }
+        },
+        "unlockedEvidence": [
+          "e-1",
+          "e-2",
+          "e-3"
+        ]
+      },
+      "actions": [
+        {
+          "type": "judge_question",
+          "target": "b",
+          "subAction": "fact_pursuit",
+          "disputeId": "d-1"
+        },
+        {
+          "type": "judge_question",
+          "target": "b",
+          "subAction": "fact_pursuit",
+          "disputeId": "d-1"
+        },
+        {
+          "type": "evidence_present",
+          "target": "b",
+          "evidenceId": "e-1",
+          "disputeId": "d-1",
+          "lieBand": "early"
+        },
+        {
+          "type": "evidence_investigate",
+          "target": "b",
+          "evidenceId": "e-1",
+          "subAction": "request_original"
+        },
+        {
+          "type": "judge_question",
+          "target": "b",
+          "subAction": "motive_search",
+          "disputeId": "d-1"
+        },
+        {
+          "type": "judge_question",
+          "target": "b",
+          "subAction": "empathy_approach",
+          "disputeId": "d-1"
+        }
+      ]
+    }
+  ]
+}

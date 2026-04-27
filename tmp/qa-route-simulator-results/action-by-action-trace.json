@@ -1,0 +1,1885 @@
+[
+  {
+    "schemaVersion": 1,
+    "caseId": "spouse-01",
+    "routeId": "phase3-baseline",
+    "routeSummary": "Phase B-1 spouse-01 baseline route for d-1 questioning, e-1 presentation, and evidence_investigate system-only contract verification.",
+    "phase": "phase3",
+    "actionIndex": 1,
+    "action": {
+      "type": "judge_question",
+      "target": "b",
+      "subAction": "fact_pursuit",
+      "disputeId": "d-1",
+      "questionType": "fact_pursuit"
+    },
+    "stateBefore": {
+      "turn": 0,
+      "lieStates": {
+        "a": {
+          "d-1": "S0",
+          "d-2": "S0",
+          "h-d3": "S0",
+          "h-d4": "S0"
+        },
+        "b": {
+          "d-1": "S0",
+          "d-2": "S0",
+          "h-d3": "S0",
+          "h-d4": "S0"
+        }
+      },
+      "evidence": {
+        "e-1": {
+          "id": "e-1",
+          "unlocked": true,
+          "presented": false,
+          "presentedTo": [],
+          "stage": 0,
+          "deepInvestigated": false,
+          "investigatedActions": []
+        },
+        "e-2": {
+          "id": "e-2",
+          "unlocked": true,
+          "presented": false,
+          "presentedTo": [],
+          "stage": 0,
+          "deepInvestigated": false,
+          "investigatedActions": []
+        },
+        "e-3": {
+          "id": "e-3",
+          "unlocked": true,
+          "presented": false,
+          "presentedTo": [],
+          "stage": 0,
+          "deepInvestigated": false,
+          "investigatedActions": []
+        },
+        "e-4": {
+          "id": "e-4",
+          "unlocked": false,
+          "presented": false,
+          "presentedTo": [],
+          "stage": 0,
+          "deepInvestigated": false,
+          "investigatedActions": []
+        },
+        "e-5": {
+          "id": "e-5",
+          "unlocked": false,
+          "presented": false,
+          "presentedTo": [],
+          "stage": 0,
+          "deepInvestigated": false,
+          "investigatedActions": []
+        },
+        "e-6": {
+          "id": "e-6",
+          "unlocked": false,
+          "presented": false,
+          "presentedTo": [],
+          "stage": 0,
+          "deepInvestigated": false,
+          "investigatedActions": []
+        },
+        "e-7": {
+          "id": "e-7",
+          "unlocked": false,
+          "presented": false,
+          "presentedTo": [],
+          "stage": 0,
+          "deepInvestigated": false,
+          "investigatedActions": []
+        }
+      },
+      "disputes": {
+        "d-1": {
+          "visibility": "visible",
+          "emergedVia": null
+        },
+        "d-2": {
+          "visibility": "hidden",
+          "emergedVia": null
+        },
+        "h-d3": {
+          "visibility": "hidden",
+          "emergedVia": null
+        },
+        "h-d4": {
+          "visibility": "hidden",
+          "emergedVia": null
+        }
+      },
+      "lastFocusedDisputeId": null
+    },
+    "outputs": [
+      {
+        "speaker": "judge",
+        "text": "이준호 씨, 매장 마감 뒤 차가 오피스텔로 향한 날들을 먼저 시간순으로 들려주시겠습니까.",
+        "behaviorHint": "표면 사실부터 고정한다. 누가 어디를 어떻게 봤는지 기초 순서를 세우는 질문이다.",
+        "channel": "judge_question",
+        "resolverPath": "scripted",
+        "sourcePath": "src/data/scriptedText/spouse-01.json:channels.judge_question.entries[key=d-1|fact_pursuit|1].variants[id=judgeq-d-1-fact_pursuit-1-v1]",
+        "actionType": "judge_question",
+        "target": "b",
+        "disputeId": "d-1",
+        "variantId": "judgeq-d-1-fact_pursuit-1-v1",
+        "entryKey": "d-1|fact_pursuit|1",
+        "entryDisputeId": "d-1",
+        "entryQuestionType": "fact_pursuit",
+        "tags": [
+          "channel:judge_question",
+          "speaker:judge",
+          "speakerRole:judge",
+          "listener:party",
+          "listenerRole:party",
+          "address:toParty",
+          "scope:judge_only",
+          "revealScope:judge_only",
+          "register:formal",
+          "honorific:formal",
+          "audience:single",
+          "tense:present",
+          "relationship:spouse",
+          "judgeAddress:none",
+          "judgeAddressState:none",
+          "callTerm:이준호_씨",
+          "callTermState:defined",
+          "counterpartyRef:이준호_씨",
+          "counterpartyRefState:defined",
+          "targetParty:b",
+          "mentionTarget:dispute",
+          "emotion:measured",
+          "continuity:question",
+          "reveal:none",
+          "revealGuard:open",
+          "disclosure:open",
+          "responseMode:judge_formal_prompt",
+          "questionType:fact_pursuit",
+          "depth:1",
+          "disputeId:d-1"
+        ]
+      },
+      {
+        "speaker": "b",
+        "text": "… 아닙니다. 그건… 아닙니다.",
+        "behaviorHint": "시선을 바닥에 둔 채 짧게 부인하고, 더 말할까 말까 입을 열었다 닫는다.",
+        "channel": "interrogation",
+        "resolverPath": "scripted",
+        "sourcePath": "src/data/scriptedText/spouse-01.json:channels.interrogation.entries[key=b|d-1|S0|fact_pursuit].variants[id=b-d-1-S0-fact-pursuit-v1]",
+        "actionType": "judge_question",
+        "target": "b",
+        "disputeId": "d-1",
+        "lieState": "S0",
+        "variantId": "b-d-1-S0-fact-pursuit-v1",
+        "entryKey": "b|d-1|S0|fact_pursuit",
+        "entryDisputeId": "d-1",
+        "entryQuestionType": "fact_pursuit",
+        "tags": [
+          "channel:interrogation",
+          "speaker:b",
+          "speakerRole:party",
+          "listener:judge",
+          "listenerRole:judge",
+          "address:toJudge",
+          "scope:judge_only",
+          "revealScope:judge_only",
+          "register:formal",
+          "honorific:formal",
+          "audience:single",
+          "tense:present",
+          "relationship:spouse",
+          "judgeAddress:재판관님",
+          "judgeAddressState:defined",
+          "callTerm:제_아내",
+          "callTermState:defined",
+          "counterpartyRef:제_아내",
+          "counterpartyRefState:defined",
+          "mentionTarget:dispute",
+          "questionType:fact_pursuit",
+          "stance:deny",
+          "emotion:guarded",
+          "continuity:opening_guard",
+          "reveal:none",
+          "revealGuard:strict",
+          "disclosure:sealed",
+          "responseMode:judge_formal_answer"
+        ]
+      }
+    ],
+    "stateAfter": {
+      "turn": 0,
+      "lieStates": {
+        "a": {
+          "d-1": "S0",
+          "d-2": "S0",
+          "h-d3": "S0",
+          "h-d4": "S0"
+        },
+        "b": {
+          "d-1": "S0",
+          "d-2": "S0",
+          "h-d3": "S0",
+          "h-d4": "S0"
+        }
+      },
+      "evidence": {
+        "e-1": {
+          "id": "e-1",
+          "unlocked": true,
+          "presented": false,
+          "presentedTo": [],
+          "stage": 0,
+          "deepInvestigated": false,
+          "investigatedActions": []
+        },
+        "e-2": {
+          "id": "e-2",
+          "unlocked": true,
+          "presented": false,
+          "presentedTo": [],
+          "stage": 0,
+          "deepInvestigated": false,
+          "investigatedActions": []
+        },
+        "e-3": {
+          "id": "e-3",
+          "unlocked": true,
+          "presented": false,
+          "presentedTo": [],
+          "stage": 0,
+          "deepInvestigated": false,
+          "investigatedActions": []
+        },
+        "e-4": {
+          "id": "e-4",
+          "unlocked": false,
+          "presented": false,
+          "presentedTo": [],
+          "stage": 0,
+          "deepInvestigated": false,
+          "investigatedActions": []
+        },
+        "e-5": {
+          "id": "e-5",
+          "unlocked": false,
+          "presented": false,
+          "presentedTo": [],
+          "stage": 0,
+          "deepInvestigated": false,
+          "investigatedActions": []
+        },
+        "e-6": {
+          "id": "e-6",
+          "unlocked": false,
+          "presented": false,
+          "presentedTo": [],
+          "stage": 0,
+          "deepInvestigated": false,
+          "investigatedActions": []
+        },
+        "e-7": {
+          "id": "e-7",
+          "unlocked": false,
+          "presented": false,
+          "presentedTo": [],
+          "stage": 0,
+          "deepInvestigated": false,
+          "investigatedActions": []
+        }
+      },
+      "disputes": {
+        "d-1": {
+          "visibility": "visible",
+          "emergedVia": null
+        },
+        "d-2": {
+          "visibility": "hidden",
+          "emergedVia": null
+        },
+        "h-d3": {
+          "visibility": "hidden",
+          "emergedVia": null
+        },
+        "h-d4": {
+          "visibility": "hidden",
+          "emergedVia": null
+        }
+      },
+      "lastFocusedDisputeId": "d-1"
+    },
+    "stateDelta": {
+      "lieStates": [],
+      "evidence": [],
+      "disputes": []
+    },
+    "findingIds": []
+  },
+  {
+    "schemaVersion": 1,
+    "caseId": "spouse-01",
+    "routeId": "phase3-baseline",
+    "routeSummary": "Phase B-1 spouse-01 baseline route for d-1 questioning, e-1 presentation, and evidence_investigate system-only contract verification.",
+    "phase": "phase3",
+    "actionIndex": 2,
+    "action": {
+      "type": "judge_question",
+      "target": "b",
+      "subAction": "fact_pursuit",
+      "disputeId": "d-1",
+      "questionType": "fact_pursuit"
+    },
+    "stateBefore": {
+      "turn": 1,
+      "lieStates": {
+        "a": {
+          "d-1": "S0",
+          "d-2": "S0",
+          "h-d3": "S0",
+          "h-d4": "S0"
+        },
+        "b": {
+          "d-1": "S0",
+          "d-2": "S0",
+          "h-d3": "S0",
+          "h-d4": "S0"
+        }
+      },
+      "evidence": {
+        "e-1": {
+          "id": "e-1",
+          "unlocked": true,
+          "presented": false,
+          "presentedTo": [],
+          "stage": 0,
+          "deepInvestigated": false,
+          "investigatedActions": []
+        },
+        "e-2": {
+          "id": "e-2",
+          "unlocked": true,
+          "presented": false,
+          "presentedTo": [],
+          "stage": 0,
+          "deepInvestigated": false,
+          "investigatedActions": []
+        },
+        "e-3": {
+          "id": "e-3",
+          "unlocked": true,
+          "presented": false,
+          "presentedTo": [],
+          "stage": 0,
+          "deepInvestigated": false,
+          "investigatedActions": []
+        },
+        "e-4": {
+          "id": "e-4",
+          "unlocked": false,
+          "presented": false,
+          "presentedTo": [],
+          "stage": 0,
+          "deepInvestigated": false,
+          "investigatedActions": []
+        },
+        "e-5": {
+          "id": "e-5",
+          "unlocked": false,
+          "presented": false,
+          "presentedTo": [],
+          "stage": 0,
+          "deepInvestigated": false,
+          "investigatedActions": []
+        },
+        "e-6": {
+          "id": "e-6",
+          "unlocked": false,
+          "presented": false,
+          "presentedTo": [],
+          "stage": 0,
+          "deepInvestigated": false,
+          "investigatedActions": []
+        },
+        "e-7": {
+          "id": "e-7",
+          "unlocked": false,
+          "presented": false,
+          "presentedTo": [],
+          "stage": 0,
+          "deepInvestigated": false,
+          "investigatedActions": []
+        }
+      },
+      "disputes": {
+        "d-1": {
+          "visibility": "visible",
+          "emergedVia": null
+        },
+        "d-2": {
+          "visibility": "hidden",
+          "emergedVia": null
+        },
+        "h-d3": {
+          "visibility": "hidden",
+          "emergedVia": null
+        },
+        "h-d4": {
+          "visibility": "hidden",
+          "emergedVia": null
+        }
+      },
+      "lastFocusedDisputeId": "d-1"
+    },
+    "outputs": [
+      {
+        "speaker": "judge",
+        "text": "이준호 씨, 새벽마다 같은 번호와 짧게 이어진 통화가 누구의 사정과 연결돼 있었는지 말씀해 주시겠습니까.",
+        "behaviorHint": "정황을 구성하는 세부 조각으로 좁혀 묻는다. 시간과 연락 상대를 분리해 흔들림을 찾는다.",
+        "channel": "judge_question",
+        "resolverPath": "scripted",
+        "sourcePath": "src/data/scriptedText/spouse-01.json:channels.judge_question.entries[key=d-1|fact_pursuit|2].variants[id=judgeq-d-1-fact_pursuit-2-v1]",
+        "actionType": "judge_question",
+        "target": "b",
+        "disputeId": "d-1",
+        "variantId": "judgeq-d-1-fact_pursuit-2-v1",
+        "entryKey": "d-1|fact_pursuit|2",
+        "entryDisputeId": "d-1",
+        "entryQuestionType": "fact_pursuit",
+        "tags": [
+          "channel:judge_question",
+          "speaker:judge",
+          "speakerRole:judge",
+          "listener:party",
+          "listenerRole:party",
+          "address:toParty",
+          "scope:judge_only",
+          "revealScope:judge_only",
+          "register:formal",
+          "honorific:formal",
+          "audience:single",
+          "tense:present",
+          "relationship:spouse",
+          "judgeAddress:none",
+          "judgeAddressState:none",
+          "callTerm:이준호_씨",
+          "callTermState:defined",
+          "counterpartyRef:이준호_씨",
+          "counterpartyRefState:defined",
+          "targetParty:b",
+          "mentionTarget:dispute",
+          "emotion:measured",
+          "continuity:question",
+          "reveal:none",
+          "revealGuard:open",
+          "disclosure:open",
+          "responseMode:judge_formal_prompt",
+          "questionType:fact_pursuit",
+          "depth:2",
+          "disputeId:d-1"
+        ]
+      },
+      {
+        "speaker": "b",
+        "text": "… 아닙니다. 그건… 아닙니다.",
+        "behaviorHint": "시선을 바닥에 둔 채 짧게 부인하고, 더 말할까 말까 입을 열었다 닫는다.",
+        "channel": "interrogation",
+        "resolverPath": "scripted",
+        "sourcePath": "src/data/scriptedText/spouse-01.json:channels.interrogation.entries[key=b|d-1|S0|fact_pursuit].variants[id=b-d-1-S0-fact-pursuit-v1]",
+        "actionType": "judge_question",
+        "target": "b",
+        "disputeId": "d-1",
+        "lieState": "S0",
+        "variantId": "b-d-1-S0-fact-pursuit-v1",
+        "entryKey": "b|d-1|S0|fact_pursuit",
+        "entryDisputeId": "d-1",
+        "entryQuestionType": "fact_pursuit",
+        "tags": [
+          "channel:interrogation",
+          "speaker:b",
+          "speakerRole:party",
+          "listener:judge",
+          "listenerRole:judge",
+          "address:toJudge",
+          "scope:judge_only",
+          "revealScope:judge_only",
+          "register:formal",
+          "honorific:formal",
+          "audience:single",
+          "tense:present",
+          "relationship:spouse",
+          "judgeAddress:재판관님",
+          "judgeAddressState:defined",
+          "callTerm:제_아내",
+          "callTermState:defined",
+          "counterpartyRef:제_아내",
+          "counterpartyRefState:defined",
+          "mentionTarget:dispute",
+          "questionType:fact_pursuit",
+          "stance:deny",
+          "emotion:guarded",
+          "continuity:opening_guard",
+          "reveal:none",
+          "revealGuard:strict",
+          "disclosure:sealed",
+          "responseMode:judge_formal_answer"
+        ]
+      }
+    ],
+    "stateAfter": {
+      "turn": 1,
+      "lieStates": {
+        "a": {
+          "d-1": "S0",
+          "d-2": "S0",
+          "h-d3": "S0",
+          "h-d4": "S0"
+        },
+        "b": {
+          "d-1": "S1",
+          "d-2": "S0",
+          "h-d3": "S0",
+          "h-d4": "S0"
+        }
+      },
+      "evidence": {
+        "e-1": {
+          "id": "e-1",
+          "unlocked": true,
+          "presented": false,
+          "presentedTo": [],
+          "stage": 0,
+          "deepInvestigated": false,
+          "investigatedActions": []
+        },
+        "e-2": {
+          "id": "e-2",
+          "unlocked": true,
+          "presented": false,
+          "presentedTo": [],
+          "stage": 0,
+          "deepInvestigated": false,
+          "investigatedActions": []
+        },
+        "e-3": {
+          "id": "e-3",
+          "unlocked": true,
+          "presented": false,
+          "presentedTo": [],
+          "stage": 0,
+          "deepInvestigated": false,
+          "investigatedActions": []
+        },
+        "e-4": {
+          "id": "e-4",
+          "unlocked": true,
+          "presented": false,
+          "presentedTo": [],
+          "stage": 0,
+          "deepInvestigated": false,
+          "investigatedActions": []
+        },
+        "e-5": {
+          "id": "e-5",
+          "unlocked": false,
+          "presented": false,
+          "presentedTo": [],
+          "stage": 0,
+          "deepInvestigated": false,
+          "investigatedActions": []
+        },
+        "e-6": {
+          "id": "e-6",
+          "unlocked": false,
+          "presented": false,
+          "presentedTo": [],
+          "stage": 0,
+          "deepInvestigated": false,
+          "investigatedActions": []
+        },
+        "e-7": {
+          "id": "e-7",
+          "unlocked": false,
+          "presented": false,
+          "presentedTo": [],
+          "stage": 0,
+          "deepInvestigated": false,
+          "investigatedActions": []
+        }
+      },
+      "disputes": {
+        "d-1": {
+          "visibility": "visible",
+          "emergedVia": null
+        },
+        "d-2": {
+          "visibility": "hidden",
+          "emergedVia": null
+        },
+        "h-d3": {
+          "visibility": "hidden",
+          "emergedVia": null
+        },
+        "h-d4": {
+          "visibility": "hidden",
+          "emergedVia": null
+        }
+      },
+      "lastFocusedDisputeId": "d-1"
+    },
+    "stateDelta": {
+      "lieStates": [
+        {
+          "party": "b",
+          "disputeId": "d-1",
+          "from": "S0",
+          "to": "S1"
+        }
+      ],
+      "evidence": [
+        {
+          "evidenceId": "e-4",
+          "before": {
+            "unlocked": false,
+            "presented": false,
+            "stage": 0,
+            "deepInvestigated": false
+          },
+          "after": {
+            "unlocked": true,
+            "presented": false,
+            "stage": 0,
+            "deepInvestigated": false
+          }
+        }
+      ],
+      "disputes": []
+    },
+    "findingIds": []
+  },
+  {
+    "schemaVersion": 1,
+    "caseId": "spouse-01",
+    "routeId": "phase3-baseline",
+    "routeSummary": "Phase B-1 spouse-01 baseline route for d-1 questioning, e-1 presentation, and evidence_investigate system-only contract verification.",
+    "phase": "phase3",
+    "actionIndex": 3,
+    "action": {
+      "type": "evidence_present",
+      "target": "b",
+      "evidenceId": "e-1",
+      "disputeId": "d-1",
+      "lieBand": "early"
+    },
+    "stateBefore": {
+      "turn": 2,
+      "lieStates": {
+        "a": {
+          "d-1": "S0",
+          "d-2": "S0",
+          "h-d3": "S0",
+          "h-d4": "S0"
+        },
+        "b": {
+          "d-1": "S1",
+          "d-2": "S0",
+          "h-d3": "S0",
+          "h-d4": "S0"
+        }
+      },
+      "evidence": {
+        "e-1": {
+          "id": "e-1",
+          "unlocked": true,
+          "presented": false,
+          "presentedTo": [],
+          "stage": 0,
+          "deepInvestigated": false,
+          "investigatedActions": []
+        },
+        "e-2": {
+          "id": "e-2",
+          "unlocked": true,
+          "presented": false,
+          "presentedTo": [],
+          "stage": 0,
+          "deepInvestigated": false,
+          "investigatedActions": []
+        },
+        "e-3": {
+          "id": "e-3",
+          "unlocked": true,
+          "presented": false,
+          "presentedTo": [],
+          "stage": 0,
+          "deepInvestigated": false,
+          "investigatedActions": []
+        },
+        "e-4": {
+          "id": "e-4",
+          "unlocked": true,
+          "presented": false,
+          "presentedTo": [],
+          "stage": 0,
+          "deepInvestigated": false,
+          "investigatedActions": []
+        },
+        "e-5": {
+          "id": "e-5",
+          "unlocked": false,
+          "presented": false,
+          "presentedTo": [],
+          "stage": 0,
+          "deepInvestigated": false,
+          "investigatedActions": []
+        },
+        "e-6": {
+          "id": "e-6",
+          "unlocked": false,
+          "presented": false,
+          "presentedTo": [],
+          "stage": 0,
+          "deepInvestigated": false,
+          "investigatedActions": []
+        },
+        "e-7": {
+          "id": "e-7",
+          "unlocked": false,
+          "presented": false,
+          "presentedTo": [],
+          "stage": 0,
+          "deepInvestigated": false,
+          "investigatedActions": []
+        }
+      },
+      "disputes": {
+        "d-1": {
+          "visibility": "visible",
+          "emergedVia": null
+        },
+        "d-2": {
+          "visibility": "hidden",
+          "emergedVia": null
+        },
+        "h-d3": {
+          "visibility": "hidden",
+          "emergedVia": null
+        },
+        "h-d4": {
+          "visibility": "hidden",
+          "emergedVia": null
+        }
+      },
+      "lastFocusedDisputeId": "d-1"
+    },
+    "outputs": [
+      {
+        "speaker": "system",
+        "text": "증거 제시: 영수증 묶음 5장 [Hard]",
+        "channel": "system_message",
+        "resolverPath": "runtime_system",
+        "sourcePath": "src/hooks/useActionDispatch.ts:getEvidenceDisplayName:e-1",
+        "actionType": "evidence_present",
+        "disputeId": "d-1",
+        "evidenceId": "e-1",
+        "target": "b",
+        "evidenceStage": 0
+      },
+      {
+        "speaker": "b",
+        "text": "그건... 제가 산 겁니다.",
+        "behaviorHint": "당황해 잠깐 말을 끊고, 인정은 하되 설명은 최대한 줄인다.",
+        "channel": "evidence_present",
+        "resolverPath": "scripted",
+        "sourcePath": "src/data/scriptedText/spouse-01.json:channels.evidence_present.entries[key=b|e-1|early|self].variants[id=b-e-1-early-self-v1]",
+        "actionType": "evidence_present",
+        "target": "b",
+        "disputeId": "d-1",
+        "evidenceId": "e-1",
+        "lieState": "S1",
+        "evidenceStage": 0,
+        "variantId": "b-e-1-early-self-v1",
+        "entryKey": "b|e-1|early|self",
+        "tags": [
+          "channel:evidence_present",
+          "speaker:b",
+          "speakerRole:party",
+          "listener:judge",
+          "listenerRole:judge",
+          "address:toJudge",
+          "scope:judge_only",
+          "revealScope:judge_only",
+          "register:formal",
+          "honorific:formal",
+          "audience:single",
+          "tense:present",
+          "relationship:spouse",
+          "judgeAddress:재판관님",
+          "judgeAddressState:defined",
+          "callTerm:제_아내",
+          "callTermState:defined",
+          "counterpartyRef:제_아내",
+          "counterpartyRefState:defined",
+          "mentionTarget:evidence",
+          "subjectRole:self",
+          "stance:hedge",
+          "emotion:cautious",
+          "continuity:surface",
+          "reveal:hint",
+          "revealGuard:strict",
+          "disclosure:guarded",
+          "responseMode:judge_formal_evidence_answer",
+          "trust:mid",
+          "legality:ok",
+          "source:org"
+        ]
+      }
+    ],
+    "stateAfter": {
+      "turn": 2,
+      "lieStates": {
+        "a": {
+          "d-1": "S0",
+          "d-2": "S0",
+          "h-d3": "S0",
+          "h-d4": "S0"
+        },
+        "b": {
+          "d-1": "S1",
+          "d-2": "S0",
+          "h-d3": "S0",
+          "h-d4": "S0"
+        }
+      },
+      "evidence": {
+        "e-1": {
+          "id": "e-1",
+          "unlocked": true,
+          "presented": true,
+          "presentedTo": [
+            "b"
+          ],
+          "stage": 0,
+          "deepInvestigated": false,
+          "investigatedActions": []
+        },
+        "e-2": {
+          "id": "e-2",
+          "unlocked": true,
+          "presented": false,
+          "presentedTo": [],
+          "stage": 0,
+          "deepInvestigated": false,
+          "investigatedActions": []
+        },
+        "e-3": {
+          "id": "e-3",
+          "unlocked": true,
+          "presented": false,
+          "presentedTo": [],
+          "stage": 0,
+          "deepInvestigated": false,
+          "investigatedActions": []
+        },
+        "e-4": {
+          "id": "e-4",
+          "unlocked": true,
+          "presented": false,
+          "presentedTo": [],
+          "stage": 0,
+          "deepInvestigated": false,
+          "investigatedActions": []
+        },
+        "e-5": {
+          "id": "e-5",
+          "unlocked": false,
+          "presented": false,
+          "presentedTo": [],
+          "stage": 0,
+          "deepInvestigated": false,
+          "investigatedActions": []
+        },
+        "e-6": {
+          "id": "e-6",
+          "unlocked": false,
+          "presented": false,
+          "presentedTo": [],
+          "stage": 0,
+          "deepInvestigated": false,
+          "investigatedActions": []
+        },
+        "e-7": {
+          "id": "e-7",
+          "unlocked": false,
+          "presented": false,
+          "presentedTo": [],
+          "stage": 0,
+          "deepInvestigated": false,
+          "investigatedActions": []
+        }
+      },
+      "disputes": {
+        "d-1": {
+          "visibility": "visible",
+          "emergedVia": null
+        },
+        "d-2": {
+          "visibility": "hidden",
+          "emergedVia": null
+        },
+        "h-d3": {
+          "visibility": "hidden",
+          "emergedVia": null
+        },
+        "h-d4": {
+          "visibility": "hidden",
+          "emergedVia": null
+        }
+      },
+      "lastFocusedDisputeId": "d-1"
+    },
+    "stateDelta": {
+      "lieStates": [],
+      "evidence": [
+        {
+          "evidenceId": "e-1",
+          "before": {
+            "unlocked": true,
+            "presented": false,
+            "stage": 0,
+            "deepInvestigated": false
+          },
+          "after": {
+            "unlocked": true,
+            "presented": true,
+            "stage": 0,
+            "deepInvestigated": false
+          }
+        }
+      ],
+      "disputes": []
+    },
+    "findingIds": []
+  },
+  {
+    "schemaVersion": 1,
+    "caseId": "spouse-01",
+    "routeId": "phase3-baseline",
+    "routeSummary": "Phase B-1 spouse-01 baseline route for d-1 questioning, e-1 presentation, and evidence_investigate system-only contract verification.",
+    "phase": "phase3",
+    "actionIndex": 4,
+    "action": {
+      "type": "evidence_investigate",
+      "target": "b",
+      "evidenceId": "e-1",
+      "subAction": "request_original"
+    },
+    "stateBefore": {
+      "turn": 3,
+      "lieStates": {
+        "a": {
+          "d-1": "S0",
+          "d-2": "S0",
+          "h-d3": "S0",
+          "h-d4": "S0"
+        },
+        "b": {
+          "d-1": "S1",
+          "d-2": "S0",
+          "h-d3": "S0",
+          "h-d4": "S0"
+        }
+      },
+      "evidence": {
+        "e-1": {
+          "id": "e-1",
+          "unlocked": true,
+          "presented": true,
+          "presentedTo": [
+            "b"
+          ],
+          "stage": 0,
+          "deepInvestigated": false,
+          "investigatedActions": []
+        },
+        "e-2": {
+          "id": "e-2",
+          "unlocked": true,
+          "presented": false,
+          "presentedTo": [],
+          "stage": 0,
+          "deepInvestigated": false,
+          "investigatedActions": []
+        },
+        "e-3": {
+          "id": "e-3",
+          "unlocked": true,
+          "presented": false,
+          "presentedTo": [],
+          "stage": 0,
+          "deepInvestigated": false,
+          "investigatedActions": []
+        },
+        "e-4": {
+          "id": "e-4",
+          "unlocked": true,
+          "presented": false,
+          "presentedTo": [],
+          "stage": 0,
+          "deepInvestigated": false,
+          "investigatedActions": []
+        },
+        "e-5": {
+          "id": "e-5",
+          "unlocked": false,
+          "presented": false,
+          "presentedTo": [],
+          "stage": 0,
+          "deepInvestigated": false,
+          "investigatedActions": []
+        },
+        "e-6": {
+          "id": "e-6",
+          "unlocked": false,
+          "presented": false,
+          "presentedTo": [],
+          "stage": 0,
+          "deepInvestigated": false,
+          "investigatedActions": []
+        },
+        "e-7": {
+          "id": "e-7",
+          "unlocked": false,
+          "presented": false,
+          "presentedTo": [],
+          "stage": 0,
+          "deepInvestigated": false,
+          "investigatedActions": []
+        }
+      },
+      "disputes": {
+        "d-1": {
+          "visibility": "visible",
+          "emergedVia": null
+        },
+        "d-2": {
+          "visibility": "hidden",
+          "emergedVia": null
+        },
+        "h-d3": {
+          "visibility": "hidden",
+          "emergedVia": null
+        },
+        "h-d4": {
+          "visibility": "hidden",
+          "emergedVia": null
+        }
+      },
+      "lastFocusedDisputeId": "d-1"
+    },
+    "outputs": [
+      {
+        "speaker": "system",
+        "text": "틴트, 헤어롤 등 여성용 물건들이 눈에 띈다.",
+        "channel": "evidence_discovery",
+        "resolverPath": "runtime_system",
+        "sourcePath": "src/data/cases/generated/spouse-01.json:evidence.e-1.investigationResults.request_original",
+        "actionType": "evidence_investigate",
+        "evidenceId": "e-1",
+        "disputeId": "d-1",
+        "target": "b",
+        "evidenceStage": 0,
+        "runtimeContract": "system_only_no_auto_npc"
+      }
+    ],
+    "stateAfter": {
+      "turn": 3,
+      "lieStates": {
+        "a": {
+          "d-1": "S0",
+          "d-2": "S0",
+          "h-d3": "S0",
+          "h-d4": "S0"
+        },
+        "b": {
+          "d-1": "S1",
+          "d-2": "S0",
+          "h-d3": "S0",
+          "h-d4": "S0"
+        }
+      },
+      "evidence": {
+        "e-1": {
+          "id": "e-1",
+          "unlocked": true,
+          "presented": true,
+          "presentedTo": [
+            "b"
+          ],
+          "stage": 1,
+          "deepInvestigated": true,
+          "investigatedActions": [
+            "request_original"
+          ]
+        },
+        "e-2": {
+          "id": "e-2",
+          "unlocked": true,
+          "presented": false,
+          "presentedTo": [],
+          "stage": 0,
+          "deepInvestigated": false,
+          "investigatedActions": []
+        },
+        "e-3": {
+          "id": "e-3",
+          "unlocked": true,
+          "presented": false,
+          "presentedTo": [],
+          "stage": 0,
+          "deepInvestigated": false,
+          "investigatedActions": []
+        },
+        "e-4": {
+          "id": "e-4",
+          "unlocked": true,
+          "presented": false,
+          "presentedTo": [],
+          "stage": 0,
+          "deepInvestigated": false,
+          "investigatedActions": []
+        },
+        "e-5": {
+          "id": "e-5",
+          "unlocked": false,
+          "presented": false,
+          "presentedTo": [],
+          "stage": 0,
+          "deepInvestigated": false,
+          "investigatedActions": []
+        },
+        "e-6": {
+          "id": "e-6",
+          "unlocked": false,
+          "presented": false,
+          "presentedTo": [],
+          "stage": 0,
+          "deepInvestigated": false,
+          "investigatedActions": []
+        },
+        "e-7": {
+          "id": "e-7",
+          "unlocked": false,
+          "presented": false,
+          "presentedTo": [],
+          "stage": 0,
+          "deepInvestigated": false,
+          "investigatedActions": []
+        }
+      },
+      "disputes": {
+        "d-1": {
+          "visibility": "visible",
+          "emergedVia": null
+        },
+        "d-2": {
+          "visibility": "hidden",
+          "emergedVia": null
+        },
+        "h-d3": {
+          "visibility": "hidden",
+          "emergedVia": null
+        },
+        "h-d4": {
+          "visibility": "hidden",
+          "emergedVia": null
+        }
+      },
+      "lastFocusedDisputeId": "d-1"
+    },
+    "stateDelta": {
+      "lieStates": [],
+      "evidence": [
+        {
+          "evidenceId": "e-1",
+          "before": {
+            "unlocked": true,
+            "presented": true,
+            "stage": 0,
+            "deepInvestigated": false
+          },
+          "after": {
+            "unlocked": true,
+            "presented": true,
+            "stage": 1,
+            "deepInvestigated": true
+          }
+        }
+      ],
+      "disputes": []
+    },
+    "findingIds": [
+      "QARS-0001"
+    ]
+  },
+  {
+    "schemaVersion": 1,
+    "caseId": "spouse-01",
+    "routeId": "phase3-baseline",
+    "routeSummary": "Phase B-1 spouse-01 baseline route for d-1 questioning, e-1 presentation, and evidence_investigate system-only contract verification.",
+    "phase": "phase3",
+    "actionIndex": 5,
+    "action": {
+      "type": "judge_question",
+      "target": "b",
+      "subAction": "motive_search",
+      "disputeId": "d-1",
+      "questionType": "motive_search"
+    },
+    "stateBefore": {
+      "turn": 3,
+      "lieStates": {
+        "a": {
+          "d-1": "S0",
+          "d-2": "S0",
+          "h-d3": "S0",
+          "h-d4": "S0"
+        },
+        "b": {
+          "d-1": "S1",
+          "d-2": "S0",
+          "h-d3": "S0",
+          "h-d4": "S0"
+        }
+      },
+      "evidence": {
+        "e-1": {
+          "id": "e-1",
+          "unlocked": true,
+          "presented": true,
+          "presentedTo": [
+            "b"
+          ],
+          "stage": 1,
+          "deepInvestigated": true,
+          "investigatedActions": [
+            "request_original"
+          ]
+        },
+        "e-2": {
+          "id": "e-2",
+          "unlocked": true,
+          "presented": false,
+          "presentedTo": [],
+          "stage": 0,
+          "deepInvestigated": false,
+          "investigatedActions": []
+        },
+        "e-3": {
+          "id": "e-3",
+          "unlocked": true,
+          "presented": false,
+          "presentedTo": [],
+          "stage": 0,
+          "deepInvestigated": false,
+          "investigatedActions": []
+        },
+        "e-4": {
+          "id": "e-4",
+          "unlocked": true,
+          "presented": false,
+          "presentedTo": [],
+          "stage": 0,
+          "deepInvestigated": false,
+          "investigatedActions": []
+        },
+        "e-5": {
+          "id": "e-5",
+          "unlocked": false,
+          "presented": false,
+          "presentedTo": [],
+          "stage": 0,
+          "deepInvestigated": false,
+          "investigatedActions": []
+        },
+        "e-6": {
+          "id": "e-6",
+          "unlocked": false,
+          "presented": false,
+          "presentedTo": [],
+          "stage": 0,
+          "deepInvestigated": false,
+          "investigatedActions": []
+        },
+        "e-7": {
+          "id": "e-7",
+          "unlocked": false,
+          "presented": false,
+          "presentedTo": [],
+          "stage": 0,
+          "deepInvestigated": false,
+          "investigatedActions": []
+        }
+      },
+      "disputes": {
+        "d-1": {
+          "visibility": "visible",
+          "emergedVia": null
+        },
+        "d-2": {
+          "visibility": "hidden",
+          "emergedVia": null
+        },
+        "h-d3": {
+          "visibility": "hidden",
+          "emergedVia": null
+        },
+        "h-d4": {
+          "visibility": "hidden",
+          "emergedVia": null
+        }
+      },
+      "lastFocusedDisputeId": "d-1"
+    },
+    "outputs": [
+      {
+        "speaker": "judge",
+        "text": "이준호 씨, 그 가족 이야기를 집에서 자연스럽게 꺼내지 못하게 만든 첫 부담이 무엇이었습니까.",
+        "behaviorHint": "사실 자체보다 왜 말을 못 했는지의 입구를 연다. 처음의 주저함을 자극하는 질문이다.",
+        "channel": "judge_question",
+        "resolverPath": "scripted",
+        "sourcePath": "src/data/scriptedText/spouse-01.json:channels.judge_question.entries[key=d-1|motive_search|1].variants[id=judgeq-d-1-motive_search-1-v1]",
+        "actionType": "judge_question",
+        "target": "b",
+        "disputeId": "d-1",
+        "variantId": "judgeq-d-1-motive_search-1-v1",
+        "entryKey": "d-1|motive_search|1",
+        "entryDisputeId": "d-1",
+        "entryQuestionType": "motive_search",
+        "tags": [
+          "channel:judge_question",
+          "speaker:judge",
+          "speakerRole:judge",
+          "listener:party",
+          "listenerRole:party",
+          "address:toParty",
+          "scope:judge_only",
+          "revealScope:judge_only",
+          "register:formal",
+          "honorific:formal",
+          "audience:single",
+          "tense:present",
+          "relationship:spouse",
+          "judgeAddress:none",
+          "judgeAddressState:none",
+          "callTerm:이준호_씨",
+          "callTermState:defined",
+          "counterpartyRef:이준호_씨",
+          "counterpartyRefState:defined",
+          "targetParty:b",
+          "mentionTarget:dispute",
+          "emotion:measured",
+          "continuity:question",
+          "reveal:none",
+          "revealGuard:open",
+          "disclosure:open",
+          "responseMode:judge_formal_prompt",
+          "questionType:motive_search",
+          "depth:1",
+          "disputeId:d-1"
+        ]
+      },
+      {
+        "speaker": "b",
+        "text": "말하면 더 복잡해질 것 같아서… 안 했습니다. 제가 처리하면 되는 일이었습니다.",
+        "behaviorHint": "짧게 정리하고 끝내려 한다. 자기 판단이 최선이었다는 듯하지만 확신은 없다.",
+        "channel": "interrogation",
+        "resolverPath": "scripted",
+        "sourcePath": "src/data/scriptedText/spouse-01.json:channels.interrogation.entries[key=b|d-1|S1|motive_search].variants[id=b-d-1-S1-motive-search-v1]",
+        "actionType": "judge_question",
+        "target": "b",
+        "disputeId": "d-1",
+        "lieState": "S1",
+        "variantId": "b-d-1-S1-motive-search-v1",
+        "entryKey": "b|d-1|S1|motive_search",
+        "entryDisputeId": "d-1",
+        "entryQuestionType": "motive_search",
+        "tags": [
+          "channel:interrogation",
+          "speaker:b",
+          "speakerRole:party",
+          "listener:judge",
+          "listenerRole:judge",
+          "address:toJudge",
+          "scope:judge_only",
+          "revealScope:judge_only",
+          "register:formal",
+          "honorific:formal",
+          "audience:single",
+          "tense:present",
+          "relationship:spouse",
+          "judgeAddress:재판관님",
+          "judgeAddressState:defined",
+          "callTerm:제_아내",
+          "callTermState:defined",
+          "counterpartyRef:제_아내",
+          "counterpartyRefState:defined",
+          "mentionTarget:dispute",
+          "questionType:motive_search",
+          "stance:hedge",
+          "emotion:cautious",
+          "continuity:opening_pressure",
+          "reveal:hint",
+          "revealGuard:strict",
+          "disclosure:guarded",
+          "responseMode:judge_formal_answer"
+        ]
+      }
+    ],
+    "stateAfter": {
+      "turn": 3,
+      "lieStates": {
+        "a": {
+          "d-1": "S0",
+          "d-2": "S0",
+          "h-d3": "S0",
+          "h-d4": "S0"
+        },
+        "b": {
+          "d-1": "S2",
+          "d-2": "S0",
+          "h-d3": "S0",
+          "h-d4": "S0"
+        }
+      },
+      "evidence": {
+        "e-1": {
+          "id": "e-1",
+          "unlocked": true,
+          "presented": true,
+          "presentedTo": [
+            "b"
+          ],
+          "stage": 1,
+          "deepInvestigated": true,
+          "investigatedActions": [
+            "request_original"
+          ]
+        },
+        "e-2": {
+          "id": "e-2",
+          "unlocked": true,
+          "presented": false,
+          "presentedTo": [],
+          "stage": 0,
+          "deepInvestigated": false,
+          "investigatedActions": []
+        },
+        "e-3": {
+          "id": "e-3",
+          "unlocked": true,
+          "presented": false,
+          "presentedTo": [],
+          "stage": 0,
+          "deepInvestigated": false,
+          "investigatedActions": []
+        },
+        "e-4": {
+          "id": "e-4",
+          "unlocked": true,
+          "presented": false,
+          "presentedTo": [],
+          "stage": 0,
+          "deepInvestigated": false,
+          "investigatedActions": []
+        },
+        "e-5": {
+          "id": "e-5",
+          "unlocked": false,
+          "presented": false,
+          "presentedTo": [],
+          "stage": 0,
+          "deepInvestigated": false,
+          "investigatedActions": []
+        },
+        "e-6": {
+          "id": "e-6",
+          "unlocked": false,
+          "presented": false,
+          "presentedTo": [],
+          "stage": 0,
+          "deepInvestigated": false,
+          "investigatedActions": []
+        },
+        "e-7": {
+          "id": "e-7",
+          "unlocked": false,
+          "presented": false,
+          "presentedTo": [],
+          "stage": 0,
+          "deepInvestigated": false,
+          "investigatedActions": []
+        }
+      },
+      "disputes": {
+        "d-1": {
+          "visibility": "visible",
+          "emergedVia": null
+        },
+        "d-2": {
+          "visibility": "hidden",
+          "emergedVia": null
+        },
+        "h-d3": {
+          "visibility": "hidden",
+          "emergedVia": null
+        },
+        "h-d4": {
+          "visibility": "hidden",
+          "emergedVia": null
+        }
+      },
+      "lastFocusedDisputeId": "d-1"
+    },
+    "stateDelta": {
+      "lieStates": [
+        {
+          "party": "b",
+          "disputeId": "d-1",
+          "from": "S1",
+          "to": "S2"
+        }
+      ],
+      "evidence": [],
+      "disputes": []
+    },
+    "findingIds": []
+  },
+  {
+    "schemaVersion": 1,
+    "caseId": "spouse-01",
+    "routeId": "phase3-baseline",
+    "routeSummary": "Phase B-1 spouse-01 baseline route for d-1 questioning, e-1 presentation, and evidence_investigate system-only contract verification.",
+    "phase": "phase3",
+    "actionIndex": 6,
+    "action": {
+      "type": "judge_question",
+      "target": "b",
+      "subAction": "empathy_approach",
+      "disputeId": "d-1",
+      "questionType": "empathy_approach"
+    },
+    "stateBefore": {
+      "turn": 4,
+      "lieStates": {
+        "a": {
+          "d-1": "S0",
+          "d-2": "S0",
+          "h-d3": "S0",
+          "h-d4": "S0"
+        },
+        "b": {
+          "d-1": "S2",
+          "d-2": "S0",
+          "h-d3": "S0",
+          "h-d4": "S0"
+        }
+      },
+      "evidence": {
+        "e-1": {
+          "id": "e-1",
+          "unlocked": true,
+          "presented": true,
+          "presentedTo": [
+            "b"
+          ],
+          "stage": 1,
+          "deepInvestigated": true,
+          "investigatedActions": [
+            "request_original"
+          ]
+        },
+        "e-2": {
+          "id": "e-2",
+          "unlocked": true,
+          "presented": false,
+          "presentedTo": [],
+          "stage": 0,
+          "deepInvestigated": false,
+          "investigatedActions": []
+        },
+        "e-3": {
+          "id": "e-3",
+          "unlocked": true,
+          "presented": false,
+          "presentedTo": [],
+          "stage": 0,
+          "deepInvestigated": false,
+          "investigatedActions": []
+        },
+        "e-4": {
+          "id": "e-4",
+          "unlocked": true,
+          "presented": false,
+          "presentedTo": [],
+          "stage": 0,
+          "deepInvestigated": false,
+          "investigatedActions": []
+        },
+        "e-5": {
+          "id": "e-5",
+          "unlocked": false,
+          "presented": false,
+          "presentedTo": [],
+          "stage": 0,
+          "deepInvestigated": false,
+          "investigatedActions": []
+        },
+        "e-6": {
+          "id": "e-6",
+          "unlocked": false,
+          "presented": false,
+          "presentedTo": [],
+          "stage": 0,
+          "deepInvestigated": false,
+          "investigatedActions": []
+        },
+        "e-7": {
+          "id": "e-7",
+          "unlocked": false,
+          "presented": false,
+          "presentedTo": [],
+          "stage": 0,
+          "deepInvestigated": false,
+          "investigatedActions": []
+        }
+      },
+      "disputes": {
+        "d-1": {
+          "visibility": "visible",
+          "emergedVia": null
+        },
+        "d-2": {
+          "visibility": "hidden",
+          "emergedVia": null
+        },
+        "h-d3": {
+          "visibility": "hidden",
+          "emergedVia": null
+        },
+        "h-d4": {
+          "visibility": "hidden",
+          "emergedVia": null
+        }
+      },
+      "lastFocusedDisputeId": "d-1"
+    },
+    "outputs": [
+      {
+        "speaker": "judge",
+        "text": "이준호 씨, 오피스텔 일을 떠올릴 때 가장 먼저 마음에 걸리는 사람이 형인지 그 가족인지 박지연 씨인지 말씀해 주시겠습니까.",
+        "behaviorHint": "판단보다 감정의 첫 반응을 묻는다. 방어를 조금 낮추고 안쪽 정서를 끌어내는 질문이다.",
+        "channel": "judge_question",
+        "resolverPath": "scripted",
+        "sourcePath": "src/data/scriptedText/spouse-01.json:channels.judge_question.entries[key=d-1|empathy_approach|1].variants[id=judgeq-d-1-empathy_approach-1-v1]",
+        "actionType": "judge_question",
+        "target": "b",
+        "disputeId": "d-1",
+        "variantId": "judgeq-d-1-empathy_approach-1-v1",
+        "entryKey": "d-1|empathy_approach|1",
+        "entryDisputeId": "d-1",
+        "entryQuestionType": "empathy_approach",
+        "tags": [
+          "channel:judge_question",
+          "speaker:judge",
+          "speakerRole:judge",
+          "listener:party",
+          "listenerRole:party",
+          "address:toParty",
+          "scope:judge_only",
+          "revealScope:judge_only",
+          "register:formal",
+          "honorific:formal",
+          "audience:single",
+          "tense:present",
+          "relationship:spouse",
+          "judgeAddress:none",
+          "judgeAddressState:none",
+          "callTerm:이준호_씨",
+          "callTermState:defined",
+          "counterpartyRef:이준호_씨",
+          "counterpartyRefState:defined",
+          "targetParty:b",
+          "mentionTarget:dispute",
+          "emotion:measured",
+          "continuity:question",
+          "reveal:none",
+          "revealGuard:open",
+          "disclosure:open",
+          "responseMode:judge_formal_prompt",
+          "questionType:empathy_approach",
+          "depth:1",
+          "disputeId:d-1"
+        ]
+      },
+      {
+        "speaker": "b",
+        "text": "말하면 더 크게 터질 것 같았습니다. 이미 8개월째 남남처럼 사는데… 더 망치고 싶지 않았습니다.",
+        "behaviorHint": "체념과 두려움이 섞인 채 시선을 바닥에 둔다. 어깨가 안으로 오므라든다.",
+        "channel": "interrogation",
+        "resolverPath": "scripted",
+        "sourcePath": "src/data/scriptedText/spouse-01.json:channels.interrogation.entries[key=b|d-1|S2|empathy_approach].variants[id=b-d-1-S2-empathy-approach-v1]",
+        "actionType": "judge_question",
+        "target": "b",
+        "disputeId": "d-1",
+        "lieState": "S2",
+        "variantId": "b-d-1-S2-empathy-approach-v1",
+        "entryKey": "b|d-1|S2|empathy_approach",
+        "entryDisputeId": "d-1",
+        "entryQuestionType": "empathy_approach",
+        "tags": [
+          "channel:interrogation",
+          "speaker:b",
+          "speakerRole:party",
+          "listener:judge",
+          "listenerRole:judge",
+          "address:toJudge",
+          "scope:judge_only",
+          "revealScope:judge_only",
+          "register:formal",
+          "honorific:formal",
+          "audience:single",
+          "tense:present",
+          "relationship:spouse",
+          "judgeAddress:재판관님",
+          "judgeAddressState:defined",
+          "callTerm:제_아내",
+          "callTermState:defined",
+          "counterpartyRef:제_아내",
+          "counterpartyRefState:defined",
+          "mentionTarget:dispute",
+          "questionType:empathy_approach",
+          "stance:hedge",
+          "emotion:cautious",
+          "continuity:surface",
+          "reveal:hint",
+          "revealGuard:strict",
+          "disclosure:guarded",
+          "responseMode:judge_formal_answer"
+        ]
+      }
+    ],
+    "stateAfter": {
+      "turn": 4,
+      "lieStates": {
+        "a": {
+          "d-1": "S0",
+          "d-2": "S0",
+          "h-d3": "S0",
+          "h-d4": "S0"
+        },
+        "b": {
+          "d-1": "S2",
+          "d-2": "S0",
+          "h-d3": "S0",
+          "h-d4": "S0"
+        }
+      },
+      "evidence": {
+        "e-1": {
+          "id": "e-1",
+          "unlocked": true,
+          "presented": true,
+          "presentedTo": [
+            "b"
+          ],
+          "stage": 1,
+          "deepInvestigated": true,
+          "investigatedActions": [
+            "request_original"
+          ]
+        },
+        "e-2": {
+          "id": "e-2",
+          "unlocked": true,
+          "presented": false,
+          "presentedTo": [],
+          "stage": 0,
+          "deepInvestigated": false,
+          "investigatedActions": []
+        },
+        "e-3": {
+          "id": "e-3",
+          "unlocked": true,
+          "presented": false,
+          "presentedTo": [],
+          "stage": 0,
+          "deepInvestigated": false,
+          "investigatedActions": []
+        },
+        "e-4": {
+          "id": "e-4",
+          "unlocked": true,
+          "presented": false,
+          "presentedTo": [],
+          "stage": 0,
+          "deepInvestigated": false,
+          "investigatedActions": []
+        },
+        "e-5": {
+          "id": "e-5",
+          "unlocked": false,
+          "presented": false,
+          "presentedTo": [],
+          "stage": 0,
+          "deepInvestigated": false,
+          "investigatedActions": []
+        },
+        "e-6": {
+          "id": "e-6",
+          "unlocked": false,
+          "presented": false,
+          "presentedTo": [],
+          "stage": 0,
+          "deepInvestigated": false,
+          "investigatedActions": []
+        },
+        "e-7": {
+          "id": "e-7",
+          "unlocked": false,
+          "presented": false,
+          "presentedTo": [],
+          "stage": 0,
+          "deepInvestigated": false,
+          "investigatedActions": []
+        }
+      },
+      "disputes": {
+        "d-1": {
+          "visibility": "visible",
+          "emergedVia": null
+        },
+        "d-2": {
+          "visibility": "hidden",
+          "emergedVia": null
+        },
+        "h-d3": {
+          "visibility": "hidden",
+          "emergedVia": null
+        },
+        "h-d4": {
+          "visibility": "hidden",
+          "emergedVia": null
+        }
+      },
+      "lastFocusedDisputeId": "d-1"
+    },
+    "stateDelta": {
+      "lieStates": [],
+      "evidence": [],
+      "disputes": []
+    },
+    "findingIds": []
+  }
+]

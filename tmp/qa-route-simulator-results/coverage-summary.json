@@ -1,0 +1,29 @@
+{
+  "totals": {
+    "cases": 1,
+    "routes": 1,
+    "actions": 6,
+    "findings": 1,
+    "hardFindings": 1
+  },
+  "actions": {
+    "judge_question": 4,
+    "evidence_present": 1,
+    "evidence_investigate": 1
+  },
+  "phases": {
+    "phase3": 6
+  },
+  "lieStates": {
+    "S0": 87,
+    "S1": 6,
+    "S2": 3
+  },
+  "evidenceStages": {
+    "stage-0": 79,
+    "stage-1": 5
+  },
+  "findingsByCategory": {
+    "response_missing": 1
+  }
+}
