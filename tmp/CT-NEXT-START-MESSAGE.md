@@ -72,10 +72,12 @@
 | 트랙 | 상태 | 진입 path |
 |---|---|---|
 | #1 Spoiler Cascade Finalize | ✅ 완료 (7a2b693) | - |
-| **#2 Free Question Hygiene v2 (scope 축소)** | 🟢 **재진입 예정** | tmp/PASTE-Codex-FreeQuestion-LLM-Hygiene-Fast-Fix-FIRST-MESSAGE.md |
-| **Script Runtime QA Gate v2 (P0 승격)** | 🟢 준비 완료 — #2 후 진입 권장 | tmp/PASTE-Route-Simulator-FIRST-MESSAGE.md |
+| **#2 Free Question Hygiene v2 (scope 축소)** | 🟡 **재진입 진행 중** (사용자 보고 — 작업 중) | tmp/PASTE-Codex-FreeQuestion-LLM-Hygiene-Fast-Fix-FIRST-MESSAGE.md |
+| **Script Runtime QA Gate v2 (P0 승격)** | 🟢 준비 완료 — **#2 commit + main clean 후 진입** | tmp/PASTE-Route-Simulator-FIRST-MESSAGE.md |
 | 통합 Script Patch | ⏸ Gate 결과 후 | (의뢰서 작성 영역 후속) |
 | Domain 4 Manual QA | 🟢 사용자 직접 | tmp/MANUAL-QA-GUIDE-Domain-4-API-Failure-UX.md |
+
+**사용자 보고 영역 정정**: "LLM 완료" 보고 영역 = #2 Free Question Hygiene 완료 X / #1 hotfix 영역 동일 범위 영역 본질. #2 완료 보고 받기 전 Gate 진입 X.
 
 ═══════════════════════════════════════════════════════
 [남은 출시 전 핵심 5 영역 (사용자 명시)]
@@ -123,11 +125,15 @@
 ═══════════════════════════════════════════════════════
 [즉시 처리 영역 — 사용자 결정 영역]
 ═══════════════════════════════════════════════════════
-사용자가 #2 재진입 진행 영역. 결과 회수 후:
-- (a) Gate 진입 (사용자 명시 — 단일 진입 영역 본질 / 같은 shared worktree)
-- (b) 또는 통합 Script Patch 의뢰서 영역 작성 (Gate 결과 후)
+**현재 상황**: #2 Free Question Hygiene v2 영역 사용자 보고 — **재진입 진행 중**. Gate 진입 X (#2 commit + main clean 영역 후).
 
-CT-Main 즉시 작업 영역 X — 사용자 #2 결과 회수 후 진행 영역 결정 받기.
+진행 순서:
+1. #2 완료 대기 (사용자 보고)
+2. #2 commit + push 영역 확인 → main clean 영역
+3. Gate 진입 (사용자 명시 — 단일 진입 영역 본질 / 같은 shared worktree 영역 정합)
+4. Gate 결과 후 → 통합 Script Patch 의뢰서 영역 작성
+
+CT-Main 즉시 작업 영역 X — 사용자 #2 결과 회수 영역 보고 받기.
 
 ═══════════════════════════════════════════════════════
 [CT-Main 후속 작업 영역]
