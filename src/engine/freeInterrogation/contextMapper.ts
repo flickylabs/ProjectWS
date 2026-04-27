@@ -17,6 +17,22 @@ const INTENT_TO_QUESTION_TYPE: Record<FreeInterrogationIntentId, FreeInterrogati
   unmapped: null,
 }
 
+const MIN_CONTEXT_MAPPING_CONFIDENCE = 0.65
+const MIN_ACTIVE_DISPUTE_CONFIDENCE = 0.7
+const GENERIC_EVIDENCE_TOKENS = new Set([
+  '기록',
+  '자료',
+  '내역',
+  '서류',
+  '문자',
+  '카톡',
+  '사진',
+  '영상',
+  '원본',
+  '스캔',
+  '보관본',
+])
+
 export function mapFreeInterrogationContext(
   intent: FreeInterrogationIntent,
   context: FreeInterrogationRuntimeContext,
@@ -29,6 +45,10 @@ function buildMapping(
   intent: FreeInterrogationIntent,
   context: FreeInterrogationRuntimeContext,
 ): FreeInterrogationMapping {
+  if (intent.intent === 'unmapped' || intent.confidence < MIN_CONTEXT_MAPPING_CONFIDENCE) {
+    return emptyMapping()
+  }
+
   const interrogationType = INTENT_TO_QUESTION_TYPE[intent.intent]
   if (!interrogationType) {
     return emptyMapping()
@@ -39,11 +59,14 @@ function buildMapping(
     return { ...emptyMapping(), interrogationType }
   }
 
-  const evidenceRef = intent.intent === 'evidence_query'
-    ? resolveEvidenceRef(intent.raw, context)
+  const evidenceMention = intent.intent === 'evidence_query'
+    ? resolveEvidenceMention(intent.raw, context)
+    : null
+  const evidenceRef = evidenceMention && isEvidenceUnlocked(evidenceMention, context)
+    ? evidenceMention
     : null
 
-  const disputeId = resolveDisputeId(intent.raw, context, target, evidenceRef)
+  const disputeId = resolveDisputeId(intent, context, target, evidenceRef, evidenceMention)
   if (!disputeId) {
     return {
       target,
@@ -81,10 +104,11 @@ function resolveTarget(context: FreeInterrogationRuntimeContext): PartyId | null
 }
 
 function resolveDisputeId(
-  raw: string,
+  intent: FreeInterrogationIntent,
   context: FreeInterrogationRuntimeContext,
   target: PartyId,
   evidenceRef: string | null,
+  evidenceMention: string | null,
 ): string | null {
   if (evidenceRef) {
     const evidence = context.caseData.evidence.find((item) => item.id === evidenceRef)
@@ -93,11 +117,11 @@ function resolveDisputeId(
     if (evidenceDispute) return evidenceDispute
   }
 
-  const activeDisputeId = context.activeDisputeId ?? null
-  if (activeDisputeId && hasTargetLieState(context, target, activeDisputeId)) {
-    return activeDisputeId
+  if (intent.intent === 'evidence_query' && evidenceMention && !evidenceRef) {
+    return null
   }
 
+  const raw = intent.raw
   const normalizedRaw = normalize(raw)
   const directMatch = context.caseData.disputes.find((dispute) => {
     const candidates = [
@@ -110,22 +134,27 @@ function resolveDisputeId(
   })
   if (directMatch) return directMatch.id
 
-  return Object.keys(target === 'a' ? context.agentA.lieStateMap : context.agentB.lieStateMap)[0] ?? null
+  const activeDisputeId = context.activeDisputeId ?? null
+  if (
+    activeDisputeId &&
+    intent.intent !== 'evidence_query' &&
+    intent.confidence >= MIN_ACTIVE_DISPUTE_CONFIDENCE &&
+    hasTargetLieState(context, target, activeDisputeId)
+  ) {
+    return activeDisputeId
+  }
+
+  return null
 }
 
-function resolveEvidenceRef(raw: string, context: FreeInterrogationRuntimeContext): string | null {
+function resolveEvidenceMention(raw: string, context: FreeInterrogationRuntimeContext): string | null {
   const normalizedRaw = normalize(raw)
-  const unlockedEvidence = context.caseData.evidence.filter((evidence) => {
-    const state = context.evidenceStates[evidence.id]
-    return !state || state.unlocked
-  })
-
-  const found = unlockedEvidence.find((evidence) => {
+  const found = context.caseData.evidence.find((evidence) => {
     const candidates = [
       evidence.id,
       evidence.surfaceName,
       evidence.name,
-      ...splitMeaningfulTokens(evidence.surfaceName ?? evidence.name),
+      ...splitMeaningfulTokens(evidence.surfaceName ?? evidence.name).filter(isSpecificEvidenceToken),
     ].filter((value): value is string => Boolean(value))
       .map(normalize)
       .filter((token) => token.length >= 2)
@@ -133,6 +162,11 @@ function resolveEvidenceRef(raw: string, context: FreeInterrogationRuntimeContex
   })
 
   return found?.id ?? null
+}
+
+function isEvidenceUnlocked(evidenceId: string, context: FreeInterrogationRuntimeContext): boolean {
+  const state = context.evidenceStates[evidenceId]
+  return !state || Boolean(state.unlocked)
 }
 
 function hasTargetLieState(context: FreeInterrogationRuntimeContext, target: PartyId, disputeId: string): boolean {
@@ -145,6 +179,10 @@ function splitMeaningfulTokens(text: string): string[] {
     .split(/[\s/·,()[\]{}"“”'‘’:：\-]+/)
     .map((token) => token.trim())
     .filter((token) => token.length >= 2)
+}
+
+function isSpecificEvidenceToken(token: string): boolean {
+  return !GENERIC_EVIDENCE_TOKENS.has(token)
 }
 
 function normalize(value: string): string {

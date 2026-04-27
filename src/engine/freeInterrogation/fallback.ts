@@ -173,6 +173,39 @@ const BEHAVIOR_HINTS: Record<FreeInterrogationNpcKey, string> = {
   'friend-01:b': '감정을 눌러 담고 필요한 말만 한다.',
 }
 
+const SAFE_CONTEXT_FALLBACKS: Record<FreeInterrogationNpcKey, string[]> = {
+  'spouse-01:a': [
+    '재판관님, 그 질문은 제가 겪은 일과 바로 이어지지 않습니다. 사건에 관한 부분을 물어봐 주세요.',
+    '그건 지금 제가 답할 수 있는 범위를 벗어난 질문입니다. 확인된 일에 대해서만 말씀드리겠습니다.',
+    '재판관님, 그 질문에는 답하기 어렵습니다. 제가 알고 있는 사건 내용으로 물어봐 주세요.',
+  ],
+  'spouse-01:b': [
+    '재판관님, 그 질문은 제가 확인해서 답할 수 있는 범위를 벗어납니다. 사건에 관한 부분만 말씀드리겠습니다.',
+    '그 부분은 지금 답을 보탤 수 없습니다. 확인된 일에 대해서만 차분히 말씀드리겠습니다.',
+    '재판관님, 그 질문에는 조심스럽습니다. 사건과 연결되는 부분을 물어봐 주십시오.',
+  ],
+  'family-01:a': [
+    '재판관님, 그 질문은 이 일과 바로 이어지지 않습니다. 어머니 일에 관한 부분을 물어보십시오.',
+    '그런 질문에는 답할 말이 없습니다. 지금 다룰 문제와 이어지는 부분을 물어봐 주세요.',
+    '재판관님, 저는 이 사건과 관계있는 질문에만 답하겠습니다.',
+  ],
+  'family-01:b': [
+    '재판관님, 그 질문은 제가 답할 수 있는 범위를 벗어납니다. 확인할 수 있는 부분만 말씀드리겠습니다.',
+    '그 질문에는 지금 보탤 말이 없습니다. 이 사건과 연결되는 부분을 물어봐 주세요.',
+    '재판관님, 그건 조심스럽게 선을 긋겠습니다. 기록과 관련된 질문에 답하겠습니다.',
+  ],
+  'friend-01:a': [
+    '재판관님, 그 질문은 지금 다루는 일과 맞지 않습니다. 확인된 이야기로 물어봐 주세요.',
+    '그건 제가 여기서 답할 문제가 아닙니다. 이 사건과 이어지는 부분을 물어봐 주세요.',
+    '재판관님, 그 질문에는 답하지 않겠습니다. 지금 문제와 관련된 질문이면 말씀드리겠습니다.',
+  ],
+  'friend-01:b': [
+    '재판관님, 그 질문은 제가 답할 수 있는 범위를 벗어납니다. 확인된 일만 말씀드리겠습니다.',
+    '그 부분에는 말을 보태지 않겠습니다. 이 사건과 연결되는 질문이면 답하겠습니다.',
+    '재판관님, 그 질문에는 답하기 어렵습니다. 지금 기록된 일에 대해서만 말씀드리겠습니다.',
+  ],
+}
+
 const SYNC_FALLBACK_LEXEMES: Record<FreeInterrogationGuardContext['caseId'], string[]> = {
   'spouse-01': [
     '형', '친형', '형네', '조카', '조카딸', '중2', '중학생 조카', '가은이', '돌봄',
@@ -233,7 +266,9 @@ export function selectFreeInterrogationFallbackText(
 ): FreeInterrogationFallbackResult {
   const npcKey = resolveFreeInterrogationNpcKey(context)
   const bucket = resolveLieStateBucket(context.lieState)
-  const variants = FALLBACK_MATRIX[npcKey]?.[bucket] ?? FALLBACK_MATRIX['spouse-01:a'].S0_S1
+  const variants = isSafeContextFallbackReason(reason)
+    ? SAFE_CONTEXT_FALLBACKS[npcKey] ?? SAFE_CONTEXT_FALLBACKS['spouse-01:a']
+    : FALLBACK_MATRIX[npcKey]?.[bucket] ?? FALLBACK_MATRIX['spouse-01:a'].S0_S1
   const seed = stableSeed([
     context.caseId,
     context.party,
@@ -254,6 +289,12 @@ export function selectFreeInterrogationFallbackText(
     meta,
     behaviorHint: BEHAVIOR_HINTS[npcKey] ?? '잠시 침묵한 뒤 짧게 답한다.',
   }
+}
+
+function isSafeContextFallbackReason(reason: string): boolean {
+  return reason === 'unmapped_intent' ||
+    reason === 'low_confidence_mapping' ||
+    reason === 'evidence_unavailable'
 }
 
 export function freeInterrogationFallback(

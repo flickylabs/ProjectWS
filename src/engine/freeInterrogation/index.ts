@@ -17,6 +17,7 @@ export * from './intentClassifier'
 export * from './contextMapper'
 
 const VALID_MODES: FreeInterrogationMode[] = ['off', 'preview', 'on']
+const MIN_FALLBACK_CONTEXT_CONFIDENCE = 0.65
 
 export function getFreeInterrogationMode(): FreeInterrogationMode {
   const raw = import.meta.env.VITE_FREE_INTERROGATION_MODE
@@ -72,7 +73,7 @@ export async function resolveFreeInterrogation(
   }
 
   const fallbackContext = buildFallbackContext(context, mapped)
-  const fallback = buildMappedFallback(fallbackContext)
+  const fallback = buildMappedFallback(fallbackContext, resolveFallbackReason(mapped))
 
   return {
     status: 'fallback',
@@ -86,15 +87,28 @@ function buildFallbackContext(
   context: FreeInterrogationRuntimeContext,
   mapped: FreeInterrogationResolution['intent'],
 ): FreeInterrogationFallbackContext {
+  const canUseAmbientDispute = mapped.intent !== 'unmapped' &&
+    mapped.intent !== 'evidence_query' &&
+    mapped.confidence >= MIN_FALLBACK_CONTEXT_CONFIDENCE
+  const fallbackDisputeId = mapped.mapped.disputeId ?? (canUseAmbientDispute ? context.activeDisputeId ?? null : null)
+  const fallbackTarget = mapped.mapped.target ?? context.target
+
   return {
     caseId: context.caseId,
-    target: mapped.mapped.target ?? context.target,
-    disputeId: mapped.mapped.disputeId ?? context.activeDisputeId ?? null,
+    target: fallbackTarget,
+    disputeId: fallbackDisputeId,
     intent: mapped.intent,
-    lieState: resolveLieState(context, mapped.mapped.target ?? context.target, mapped.mapped.disputeId ?? context.activeDisputeId),
+    lieState: resolveLieState(context, fallbackTarget, fallbackDisputeId),
     evidenceRef: mapped.mapped.evidenceRef,
     rawText: mapped.raw,
   }
+}
+
+function resolveFallbackReason(mapped: FreeInterrogationResolution['intent']): string {
+  if (mapped.intent === 'unmapped') return 'unmapped_intent'
+  if (mapped.confidence < MIN_FALLBACK_CONTEXT_CONFIDENCE) return 'low_confidence_mapping'
+  if (mapped.intent === 'evidence_query' && !mapped.mapped.evidenceRef) return 'evidence_unavailable'
+  return 'context_mapping_failed'
 }
 
 function buildMappedFallback(context: FreeInterrogationFallbackContext, reason = 'context_mapping_failed') {

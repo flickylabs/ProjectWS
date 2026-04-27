@@ -1,0 +1,22 @@
+{
+  "generatedAt": "2026-04-27",
+  "summary": {
+    "mappedRegression": "10/10 dispatchable",
+    "lockedEvidenceGuard": "영수증 locked case remains evidence_query but is not dispatchable"
+  },
+  "mapped": [
+    { "raw": "상대방과 무슨 관계입니까?", "intent": "relation_query", "target": "a", "disputeId": "d-1", "interrogationType": "motive_search", "evidenceRef": null },
+    { "raw": "영수증이 왜 중요합니까?", "intent": "evidence_query", "target": "a", "disputeId": "d-1", "interrogationType": "fact_pursuit", "evidenceRef": "e-1", "evidenceState": "unlocked" },
+    { "raw": "오피스텔 방문은 언제부터였습니까?", "intent": "fact_pursuit", "target": "a", "disputeId": "d-1", "interrogationType": "fact_pursuit", "evidenceRef": null },
+    { "raw": "왜 새벽에 전화했습니까?", "intent": "motive_search", "target": "a", "disputeId": "d-1", "interrogationType": "motive_search", "evidenceRef": null },
+    { "raw": "그때 마음이 어땠습니까?", "intent": "empathy_approach", "target": "a", "disputeId": "d-1", "interrogationType": "empathy_approach", "evidenceRef": null },
+    { "raw": "공동 적금 해지 서류는 무엇입니까?", "intent": "evidence_query", "target": "a", "disputeId": "h-d3", "interrogationType": "fact_pursuit", "evidenceRef": "e-7", "evidenceState": "unlocked" },
+    { "raw": "개인 비자금 2,000만원 출금은 사실입니까?", "intent": "fact_pursuit", "target": "b", "disputeId": "d-2", "interrogationType": "fact_pursuit", "evidenceRef": null },
+    { "raw": "이준호 씨와 어떤 관계입니까?", "intent": "relation_query", "target": "a", "disputeId": "d-1", "interrogationType": "motive_search", "evidenceRef": null },
+    { "raw": "지금까지 확인된 내용을 정리해 주십시오.", "intent": "pre_verdict_summary", "target": "a", "disputeId": "d-1", "interrogationType": "fact_pursuit", "evidenceRef": null },
+    { "raw": "통화기록은 왜 중요합니까?", "intent": "evidence_query", "target": "a", "disputeId": "d-1", "interrogationType": "fact_pursuit", "evidenceRef": "e-3", "evidenceState": "unlocked" }
+  ],
+  "lockedEvidence": [
+    { "raw": "영수증이 왜 중요합니까?", "intent": "evidence_query", "target": "a", "disputeId": null, "interrogationType": "fact_pursuit", "evidenceRef": null, "dispatchable": false, "evidenceState": "locked" }
+  ]
+}

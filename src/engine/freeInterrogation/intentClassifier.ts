@@ -40,7 +40,7 @@ const RULES: RuleSpec[] = [
   {
     intent: 'relation_query',
     weight: 3,
-    patterns: [/누구|관계|어떻게 알아|아는 사이|사이입니까|호칭|가족|친구|배우자|아버지|어머니|상대방|그 사람/i],
+    patterns: [/관계|어떻게 알아|아는 사이|사이입니까|호칭|가족|친구|배우자|아버지|어머니|상대방|그 사람|누구와|누구랑|누구하고/i],
   },
   {
     intent: 'pre_verdict_summary',
@@ -55,9 +55,20 @@ const RULES: RuleSpec[] = [
 ]
 
 const UNMAPPED_PATTERNS = [
-  /날씨|점심|저녁|농담|게임 밖|메뉴|노래|영화|주식|뉴스|로또/i,
-  /^[ㅋㅎㅠㅜ\s!?.,]+$/,
+  /날씨|점심|저녁|아침|식사|밥|커피|농담|게임 밖|노래|영화|드라마|주식|뉴스|로또/i,
+  /저장|세이브|로드|불러오|메뉴|설정|옵션|단축키|튜토리얼|도움말|버그|에러|오류|렉|ui|화면|닫기|닫습니까|버튼|phase|페이즈/i,
+  /^(안녕|안녕하세요|수고하셨습니다|고생하셨습니다|감사합니다|재판관님|판사님)[\s!?.,]*$/i,
+  /^(음+|흠+|글쎄|모르겠|몰라|그냥|아무거나|테스트|test|asdf|qwer)[\s!?.,]*$/i,
+  /^[ㅋㅎㅠㅜ\s!?.,…·~]+$/,
 ]
+
+const IDENTITY_META_PATTERNS = [
+  /^(당신|너|넌|너는|그쪽|재판관님|판사님)(은|는)?\s*(누구|뭐 하는|무엇을 하는|정체가|사람입니까|사람이십니까)/i,
+  /^(당신|너|넌|너는)(은|는)?.*(ai|인공지능|챗봇|시스템|모델)/i,
+]
+
+const AMBIGUOUS_REFERENCE_PATTERN = /그런|그 의심|그 이유|그 부분|그 일|그 말|그 행동|그거|그것|그게|그렇게/i
+const MIN_LLM_INTENT_CONFIDENCE = 0.65
 
 export async function classifyFreeInterrogationIntent(
   rawText: string,
@@ -72,6 +83,9 @@ export async function classifyFreeInterrogationIntent(
 
   const llmResult = await classifyByLlm(raw, context).catch(() => null)
   if (llmResult) {
+    if (llmResult.intent !== 'unmapped' && llmResult.confidence < MIN_LLM_INTENT_CONFIDENCE) {
+      return toIntent(raw, 'unmapped', llmResult.confidence)
+    }
     return toIntent(raw, llmResult.intent, llmResult.confidence)
   }
 
@@ -86,16 +100,10 @@ export function classifyFreeInterrogationIntentSync(rawText: string, context: Fr
 
 function classifyByRules(raw: string, context: FreeInterrogationRuntimeContext): { intent: FreeInterrogationIntentId; confidence: number } {
   if (!raw || raw.length < 2) return { intent: 'unmapped', confidence: 0 }
-  if (UNMAPPED_PATTERNS.some((pattern) => pattern.test(raw))) return { intent: 'unmapped', confidence: 0.9 }
+  if (isPreflightUnmapped(raw, context)) return { intent: 'unmapped', confidence: 0.9 }
+  if (isAmbiguousReference(raw, context)) return { intent: 'unmapped', confidence: 0.45 }
 
-  const evidenceHit = context.caseData.evidence.some((evidence) => {
-    const candidates = [evidence.id, evidence.surfaceName, evidence.name]
-      .filter((value): value is string => Boolean(value))
-      .map(normalizeToken)
-      .filter((value) => value.length >= 2)
-    const normalizedRaw = normalizeToken(raw)
-    return candidates.some((candidate) => normalizedRaw.includes(candidate))
-  })
+  const evidenceHit = hasEvidenceAnchor(raw, context)
   if (evidenceHit) return { intent: 'evidence_query', confidence: 0.9 }
 
   const scored = RULES.map((rule) => {
@@ -111,6 +119,53 @@ function classifyByRules(raw: string, context: FreeInterrogationRuntimeContext):
   const confidence = Math.min(0.95, 0.55 + top.score * 0.08 + Math.max(0, top.score - second) * 0.04)
 
   return { intent: top.intent, confidence }
+}
+
+function isPreflightUnmapped(raw: string, context: FreeInterrogationRuntimeContext): boolean {
+  if (IDENTITY_META_PATTERNS.some((pattern) => pattern.test(raw))) return true
+  if (UNMAPPED_PATTERNS.some((pattern) => pattern.test(raw)) && !hasCaseAnchor(raw, context)) return true
+  return false
+}
+
+function isAmbiguousReference(raw: string, context: FreeInterrogationRuntimeContext): boolean {
+  if (!AMBIGUOUS_REFERENCE_PATTERN.test(raw)) return false
+  return !hasCaseAnchor(raw, context)
+}
+
+function hasCaseAnchor(raw: string, context: FreeInterrogationRuntimeContext): boolean {
+  if (hasEvidenceAnchor(raw, context)) return true
+  if (hasDisputeAnchor(raw, context)) return true
+
+  const normalizedRaw = normalizeToken(raw)
+  const partyNames = [
+    context.caseData.duo.partyA.name,
+    context.caseData.duo.partyB.name,
+  ].map(normalizeToken)
+
+  return partyNames.some((name) => name.length >= 2 && normalizedRaw.includes(name))
+}
+
+function hasEvidenceAnchor(raw: string, context: FreeInterrogationRuntimeContext): boolean {
+  const normalizedRaw = normalizeToken(raw)
+  return context.caseData.evidence.some((evidence) => {
+    const candidates = [evidence.id, evidence.surfaceName, evidence.name]
+      .filter((value): value is string => Boolean(value))
+      .map(normalizeToken)
+      .filter((value) => value.length >= 2)
+    return candidates.some((candidate) => normalizedRaw.includes(candidate))
+  })
+}
+
+function hasDisputeAnchor(raw: string, context: FreeInterrogationRuntimeContext): boolean {
+  const normalizedRaw = normalizeToken(raw)
+  return context.caseData.disputes.some((dispute) => {
+    const candidates = [
+      dispute.id,
+      dispute.name,
+      ...splitMeaningfulTokens(dispute.name),
+    ].map(normalizeToken).filter((token) => token.length >= 2)
+    return candidates.some((candidate) => normalizedRaw.includes(candidate))
+  })
 }
 
 async function classifyByLlm(
@@ -179,6 +234,13 @@ function normalizeRawText(rawText: string): string {
 
 function normalizeToken(value: string): string {
   return value.toLowerCase().replace(/\s+/g, '')
+}
+
+function splitMeaningfulTokens(text: string): string[] {
+  return text
+    .split(/[\s/·,()[\]{}"“”'‘’:：\-]+/)
+    .map((token) => token.trim())
+    .filter((token) => token.length >= 2)
 }
 
 function clampConfidence(value: unknown): number {
