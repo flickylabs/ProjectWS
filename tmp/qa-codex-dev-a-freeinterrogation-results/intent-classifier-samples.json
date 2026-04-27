@@ -1,0 +1,364 @@
+{
+  "generatedAt": "2026-04-27T00:00:00+09:00",
+  "featureFlag": "VITE_FREE_INTERROGATION_MODE=preview",
+  "strategy": "deterministic rule classifier; LLM fallback enabled only in mode=on",
+  "samples": [
+    {
+      "id": "fact-01",
+      "caseId": "spouse-01",
+      "target": "b",
+      "activeDisputeId": "d-1",
+      "input": "그날 오피스텔에 정말 갔습니까?",
+      "expectedIntent": "fact_pursuit",
+      "mapped": { "target": "b", "disputeId": "d-1", "interrogationType": "fact_pursuit", "evidenceRef": null },
+      "result": "PASS"
+    },
+    {
+      "id": "fact-02",
+      "caseId": "spouse-01",
+      "target": "a",
+      "activeDisputeId": "h-d3",
+      "input": "공동 적금 해지 서류에 직접 서명했습니까?",
+      "expectedIntent": "fact_pursuit",
+      "mapped": { "target": "a", "disputeId": "h-d3", "interrogationType": "fact_pursuit", "evidenceRef": null },
+      "result": "PASS"
+    },
+    {
+      "id": "fact-03",
+      "caseId": "family-01",
+      "target": "a",
+      "activeDisputeId": "d-1",
+      "input": "유서 작성 당시 어머니 상태를 직접 봤습니까?",
+      "expectedIntent": "fact_pursuit",
+      "mapped": { "target": "a", "disputeId": "d-1", "interrogationType": "fact_pursuit", "evidenceRef": null },
+      "result": "PASS"
+    },
+    {
+      "id": "fact-04",
+      "caseId": "friend-01",
+      "target": "b",
+      "activeDisputeId": "d-1",
+      "input": "9일 동안 먼저 연락한 사실이 맞습니까?",
+      "expectedIntent": "fact_pursuit",
+      "mapped": { "target": "b", "disputeId": "d-1", "interrogationType": "fact_pursuit", "evidenceRef": null },
+      "result": "PASS"
+    },
+    {
+      "id": "fact-05",
+      "caseId": "friend-01",
+      "target": "a",
+      "activeDisputeId": "d-5",
+      "input": "단톡방에 그 말을 올린 시점이 언제입니까?",
+      "expectedIntent": "fact_pursuit",
+      "mapped": { "target": "a", "disputeId": "d-5", "interrogationType": "fact_pursuit", "evidenceRef": null },
+      "result": "PASS"
+    },
+    {
+      "id": "motive-01",
+      "caseId": "spouse-01",
+      "target": "b",
+      "activeDisputeId": "d-2",
+      "input": "왜 그 돈을 말하지 않고 움직였습니까?",
+      "expectedIntent": "motive_search",
+      "mapped": { "target": "b", "disputeId": "d-2", "interrogationType": "motive_search", "evidenceRef": null },
+      "result": "PASS"
+    },
+    {
+      "id": "motive-02",
+      "caseId": "spouse-01",
+      "target": "a",
+      "activeDisputeId": "h-d4",
+      "input": "왜 먼저 상대를 몰아붙였습니까?",
+      "expectedIntent": "motive_search",
+      "mapped": { "target": "a", "disputeId": "h-d4", "interrogationType": "motive_search", "evidenceRef": null },
+      "result": "PASS"
+    },
+    {
+      "id": "motive-03",
+      "caseId": "family-01",
+      "target": "b",
+      "activeDisputeId": "d-2",
+      "input": "유서 비율을 그렇게 둔 이유가 뭡니까?",
+      "expectedIntent": "motive_search",
+      "mapped": { "target": "b", "disputeId": "d-2", "interrogationType": "motive_search", "evidenceRef": null },
+      "result": "PASS"
+    },
+    {
+      "id": "motive-04",
+      "caseId": "family-01",
+      "target": "a",
+      "activeDisputeId": "d-5",
+      "input": "왜 어머니 뜻을 그렇게 단정했습니까?",
+      "expectedIntent": "motive_search",
+      "mapped": { "target": "a", "disputeId": "d-5", "interrogationType": "motive_search", "evidenceRef": null },
+      "result": "PASS"
+    },
+    {
+      "id": "motive-05",
+      "caseId": "friend-01",
+      "target": "b",
+      "activeDisputeId": "d-4",
+      "input": "왜 그때 송다은 씨에게 바로 말하지 않았습니까?",
+      "expectedIntent": "motive_search",
+      "mapped": { "target": "b", "disputeId": "d-4", "interrogationType": "motive_search", "evidenceRef": null },
+      "result": "PASS"
+    },
+    {
+      "id": "empathy-01",
+      "caseId": "spouse-01",
+      "target": "a",
+      "activeDisputeId": "d-1",
+      "input": "그때 혼자 의심하면서 많이 힘드셨겠네요.",
+      "expectedIntent": "empathy_approach",
+      "mapped": { "target": "a", "disputeId": "d-1", "interrogationType": "empathy_approach", "evidenceRef": null },
+      "result": "PASS"
+    },
+    {
+      "id": "empathy-02",
+      "caseId": "spouse-01",
+      "target": "b",
+      "activeDisputeId": "d-1",
+      "input": "말 못 한 사정 때문에 두려웠습니까?",
+      "expectedIntent": "empathy_approach",
+      "mapped": { "target": "b", "disputeId": "d-1", "interrogationType": "empathy_approach", "evidenceRef": null },
+      "result": "PASS"
+    },
+    {
+      "id": "empathy-03",
+      "caseId": "family-01",
+      "target": "b",
+      "activeDisputeId": "d-4",
+      "input": "그 이야기를 꺼내기 무서웠던 겁니까?",
+      "expectedIntent": "empathy_approach",
+      "mapped": { "target": "b", "disputeId": "d-4", "interrogationType": "empathy_approach", "evidenceRef": null },
+      "result": "PASS"
+    },
+    {
+      "id": "empathy-04",
+      "caseId": "family-01",
+      "target": "a",
+      "activeDisputeId": "d-3",
+      "input": "오랫동안 몰랐다고 느껴서 상처가 컸습니까?",
+      "expectedIntent": "empathy_approach",
+      "mapped": { "target": "a", "disputeId": "d-3", "interrogationType": "empathy_approach", "evidenceRef": null },
+      "result": "PASS"
+    },
+    {
+      "id": "empathy-05",
+      "caseId": "friend-01",
+      "target": "b",
+      "activeDisputeId": "d-2",
+      "input": "그 연락을 받고 마음이 복잡했습니까?",
+      "expectedIntent": "empathy_approach",
+      "mapped": { "target": "b", "disputeId": "d-2", "interrogationType": "empathy_approach", "evidenceRef": null },
+      "result": "PASS"
+    },
+    {
+      "id": "evidence-01",
+      "caseId": "spouse-01",
+      "target": "b",
+      "activeDisputeId": "d-1",
+      "input": "발신자 미상 문자에 대해 설명해 보십시오.",
+      "expectedIntent": "evidence_query",
+      "mapped": { "target": "b", "disputeId": "d-1", "interrogationType": "fact_pursuit", "evidenceRef": "e-4" },
+      "result": "PASS"
+    },
+    {
+      "id": "evidence-02",
+      "caseId": "spouse-01",
+      "target": "a",
+      "activeDisputeId": "h-d3",
+      "input": "공동 적금 해지 서류를 본 적 있습니까?",
+      "expectedIntent": "evidence_query",
+      "mapped": { "target": "a", "disputeId": "h-d3", "interrogationType": "fact_pursuit", "evidenceRef": "e-7" },
+      "result": "PASS"
+    },
+    {
+      "id": "evidence-03",
+      "caseId": "family-01",
+      "target": "b",
+      "activeDisputeId": "d-2",
+      "input": "공증사무실 스캔 보관본은 어떻게 설명합니까?",
+      "expectedIntent": "evidence_query",
+      "mapped": { "target": "b", "disputeId": "d-2", "interrogationType": "fact_pursuit", "evidenceRef": "e-4" },
+      "result": "PASS"
+    },
+    {
+      "id": "evidence-04",
+      "caseId": "friend-01",
+      "target": "a",
+      "activeDisputeId": "d-5",
+      "input": "단톡방 캡처에 나온 말은 사실입니까?",
+      "expectedIntent": "evidence_query",
+      "mapped": { "target": "a", "disputeId": "d-5", "interrogationType": "fact_pursuit", "evidenceRef": "e-2" },
+      "result": "PASS"
+    },
+    {
+      "id": "evidence-05",
+      "caseId": "friend-01",
+      "target": "b",
+      "activeDisputeId": "d-1",
+      "input": "연락 기록을 보면 먼저 이어간 것 아닙니까?",
+      "expectedIntent": "evidence_query",
+      "mapped": { "target": "b", "disputeId": "d-1", "interrogationType": "fact_pursuit", "evidenceRef": "e-1" },
+      "result": "PASS"
+    },
+    {
+      "id": "relation-01",
+      "caseId": "spouse-01",
+      "target": "b",
+      "activeDisputeId": "d-1",
+      "input": "그 사람과 어떤 관계였습니까?",
+      "expectedIntent": "relation_query",
+      "mapped": { "target": "b", "disputeId": "d-1", "interrogationType": "motive_search", "evidenceRef": null },
+      "result": "PASS"
+    },
+    {
+      "id": "relation-02",
+      "caseId": "family-01",
+      "target": "a",
+      "activeDisputeId": "d-5",
+      "input": "동생과 어머니 사이를 어떻게 보고 있었습니까?",
+      "expectedIntent": "relation_query",
+      "mapped": { "target": "a", "disputeId": "d-5", "interrogationType": "motive_search", "evidenceRef": null },
+      "result": "PASS"
+    },
+    {
+      "id": "relation-03",
+      "caseId": "family-01",
+      "target": "b",
+      "activeDisputeId": "d-4",
+      "input": "형과의 관계를 지키려 한 겁니까?",
+      "expectedIntent": "relation_query",
+      "mapped": { "target": "b", "disputeId": "d-4", "interrogationType": "motive_search", "evidenceRef": null },
+      "result": "PASS"
+    },
+    {
+      "id": "relation-04",
+      "caseId": "friend-01",
+      "target": "b",
+      "activeDisputeId": "d-2",
+      "input": "예비신랑과 원래 어떤 사이였습니까?",
+      "expectedIntent": "relation_query",
+      "mapped": { "target": "b", "disputeId": "d-2", "interrogationType": "motive_search", "evidenceRef": null },
+      "result": "PASS"
+    },
+    {
+      "id": "relation-05",
+      "caseId": "friend-01",
+      "target": "a",
+      "activeDisputeId": "d-3",
+      "input": "아버지와 상대가 어떻게 알게 됐습니까?",
+      "expectedIntent": "relation_query",
+      "mapped": { "target": "a", "disputeId": "d-3", "interrogationType": "motive_search", "evidenceRef": null },
+      "result": "PASS"
+    },
+    {
+      "id": "summary-01",
+      "caseId": "spouse-01",
+      "target": "a",
+      "activeDisputeId": "h-d4",
+      "input": "정리하면 누가 먼저 숨기고 움직인 겁니까?",
+      "expectedIntent": "pre_verdict_summary",
+      "mapped": { "target": "a", "disputeId": "h-d4", "interrogationType": "fact_pursuit", "evidenceRef": null },
+      "result": "PASS"
+    },
+    {
+      "id": "summary-02",
+      "caseId": "spouse-01",
+      "target": "b",
+      "activeDisputeId": "d-2",
+      "input": "마지막으로 본인 책임을 정리해 보십시오.",
+      "expectedIntent": "pre_verdict_summary",
+      "mapped": { "target": "b", "disputeId": "d-2", "interrogationType": "fact_pursuit", "evidenceRef": null },
+      "result": "PASS"
+    },
+    {
+      "id": "summary-03",
+      "caseId": "family-01",
+      "target": "b",
+      "activeDisputeId": "d-5",
+      "input": "판결 전에 어머니 일을 한 문장으로 정리해 보십시오.",
+      "expectedIntent": "pre_verdict_summary",
+      "mapped": { "target": "b", "disputeId": "d-5", "interrogationType": "fact_pursuit", "evidenceRef": null },
+      "result": "PASS"
+    },
+    {
+      "id": "summary-04",
+      "caseId": "friend-01",
+      "target": "a",
+      "activeDisputeId": "d-5",
+      "input": "결론적으로 단톡방 발언의 책임을 어떻게 봅니까?",
+      "expectedIntent": "pre_verdict_summary",
+      "mapped": { "target": "a", "disputeId": "d-5", "interrogationType": "fact_pursuit", "evidenceRef": null },
+      "result": "PASS"
+    },
+    {
+      "id": "summary-05",
+      "caseId": "friend-01",
+      "target": "b",
+      "activeDisputeId": "d-4",
+      "input": "최종적으로 과거 손절의 핵심을 요약해 보십시오.",
+      "expectedIntent": "pre_verdict_summary",
+      "mapped": { "target": "b", "disputeId": "d-4", "interrogationType": "fact_pursuit", "evidenceRef": null },
+      "result": "PASS"
+    },
+    {
+      "id": "unmapped-01",
+      "caseId": "spouse-01",
+      "target": "a",
+      "activeDisputeId": "d-1",
+      "input": "오늘 날씨 어때요?",
+      "expectedIntent": "unmapped",
+      "mapped": { "target": null, "disputeId": null, "interrogationType": null, "evidenceRef": null },
+      "result": "PASS"
+    },
+    {
+      "id": "unmapped-02",
+      "caseId": "family-01",
+      "target": "b",
+      "activeDisputeId": "d-2",
+      "input": "점심 메뉴 추천해 주세요.",
+      "expectedIntent": "unmapped",
+      "mapped": { "target": null, "disputeId": null, "interrogationType": null, "evidenceRef": null },
+      "result": "PASS"
+    },
+    {
+      "id": "unmapped-03",
+      "caseId": "friend-01",
+      "target": "a",
+      "activeDisputeId": "d-1",
+      "input": "ㅋㅋㅋㅋㅋㅋ",
+      "expectedIntent": "unmapped",
+      "mapped": { "target": null, "disputeId": null, "interrogationType": null, "evidenceRef": null },
+      "result": "PASS"
+    },
+    {
+      "id": "unmapped-04",
+      "caseId": "friend-01",
+      "target": "b",
+      "activeDisputeId": "d-3",
+      "input": "다음 게임은 언제 출시됩니까?",
+      "expectedIntent": "unmapped",
+      "mapped": { "target": null, "disputeId": null, "interrogationType": null, "evidenceRef": null },
+      "result": "PASS"
+    },
+    {
+      "id": "unmapped-05",
+      "caseId": "spouse-01",
+      "target": "b",
+      "activeDisputeId": "d-2",
+      "input": "이 재판과 상관없는 농담 하나 해 주세요.",
+      "expectedIntent": "unmapped",
+      "mapped": { "target": null, "disputeId": null, "interrogationType": null, "evidenceRef": null },
+      "result": "PASS"
+    }
+  ],
+  "summary": {
+    "total": 35,
+    "pass": 35,
+    "fail": 0,
+    "intentsCovered": ["fact_pursuit", "motive_search", "empathy_approach", "evidence_query", "relation_query", "pre_verdict_summary", "unmapped"],
+    "casesCovered": ["spouse-01", "family-01", "friend-01"]
+  }
+}

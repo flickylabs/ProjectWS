@@ -6,7 +6,8 @@ import { useGameStore, useStore } from '../../store/useGameStore'
 import { computeEffectiveness } from '../../engine/questionEffectEngine'
 import { getStalemateStatus, getSessionFatigueState } from '../../engine/questionFatigueEngine'
 import { getEmotionTier } from '../../engine/discoveryEngine'
-import FreeQuestionInput from './FreeQuestionInput'
+import FreeQuestionInput from '../freeInterrogation/FreeQuestionInput'
+import { isFreeInterrogationEnabled } from '../../engine/freeInterrogation'
 import Emoji from '../common/Emoji'
 
 export interface QuestionToggles {
@@ -57,6 +58,7 @@ export default function QuestionSelector({ target, onSelect, llmMode, onFreeResu
   const [selectedCard, setSelectedCard] = useState<CardType | null>(null)
   const relationBufferAvailable = useStore(s => s.activePerks.relationBufferQuestionAvailable > 0)
   const privateCheckAvailable = useStore(s => s.activePerks.privateCheckAvailable > 0)
+  const freeInterrogationEnabled = isFreeInterrogationEnabled()
 
   // ── 효과 칩 + 교착 경고용 상태 ──
   const agentA = useStore((s) => s.agentA)
@@ -211,20 +213,24 @@ export default function QuestionSelector({ target, onSelect, llmMode, onFreeResu
   }
 
   // 자유 질문 카드 선택 시
-  if (selectedCard === 'free_question' && onFreeResult) {
+  if (selectedCard === 'free_question') {
     return (
       <div className="space-y-2 animate-fade-in">
         <button onClick={() => setSelectedCard(null)}
           className="text-xs text-gray-500 hover:text-gray-300 flex items-center gap-1">
           ← 다른 질문 선택
         </button>
-        <FreeQuestionInput target={target} onResult={onFreeResult} />
+        <FreeQuestionInput
+          activeDisputeId={lastFocusedDisputeId}
+          onDone={() => setSelectedCard(null)}
+          target={target}
+        />
       </div>
     )
   }
 
   // 정형 질문 카드 선택 → 쟁점 선택 2단계
-  if (selectedCard && selectedCard !== 'free_question') {
+  if (selectedCard) {
     const q = questions.find(q => q.type === selectedCard)
     if (!q) return null
 
@@ -367,8 +373,8 @@ export default function QuestionSelector({ target, onSelect, llmMode, onFreeResu
             <span className="text-[10px] text-emerald-400 mt-1 block">퍼크 1회</span>
           </button>
         )}
-        {/* 자유 질문 카드 — V3 게임 루프에서는 비활성 (Blueprint 우회 방지) */}
-        {false && llmMode && onFreeResult && (
+        {/* 자유 질문 카드 — feature flag preview/on에서만 노출 */}
+        {freeInterrogationEnabled && llmMode && onFreeResult && (
           <button
             onClick={() => setSelectedCard('free_question')}
             className={`text-left rounded-xl border p-3 bg-gradient-to-br transition-all active:scale-95 ${CARD_COLORS.free_question.border} ${CARD_COLORS.free_question.bg} hover:shadow-lg ${CARD_COLORS.free_question.glow} hover:scale-[1.02]`}

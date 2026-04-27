@@ -48,6 +48,7 @@ export interface ClaimNode {
 // QuestionType은 renewal.ts에서 정의 (evidence_present 포함)
 // 이 파일 내부에서만 사용, re-export 안 함
 import type { QuestionType } from './renewal'
+import type { FreeInterrogationActionMeta } from './freeInterrogation'
 
 // 보호 행동 (5종 → 2종)
 export type TrustActionType = 'confidential_protection' | 'separation' | 'emotional_stabilization' | 'retaliation_check'
@@ -73,7 +74,7 @@ export type MediationChoice =
   | 'fact_first_solution_later'
 
 export type PlayerAction =
-  | { type: 'question'; questionType: QuestionType; target: PartyId; disputeId: string }
+  | { type: 'question'; questionType: QuestionType; target: PartyId; disputeId: string; freeInterrogation?: FreeInterrogationActionMeta }
   | { type: 'trust_action'; actionType: TrustActionType; target: PartyId }
   | { type: 'skill'; skillType: SkillType; target?: PartyId; disputeId?: string }
   | { type: 'evidence_present'; evidenceId: string; target: PartyId }

@@ -1,0 +1,97 @@
+{
+  "generatedAt": "2026-04-27T04:33:51.709Z",
+  "sampleCount": 9,
+  "expectedFallbackCount": 9,
+  "samples": [
+    {
+      "id": "h-empty-1",
+      "caseId": "spouse-01",
+      "party": "a",
+      "lieState": "S0",
+      "intent": "fact_pursuit",
+      "input": "...",
+      "expectedDimension": "empty_response",
+      "action": "fallback"
+    },
+    {
+      "id": "h-empty-2",
+      "caseId": "family-01",
+      "party": "b",
+      "lieState": "S1",
+      "intent": "motive_search",
+      "input": "  ",
+      "expectedDimension": "empty_response",
+      "action": "fallback"
+    },
+    {
+      "id": "h-empty-3",
+      "caseId": "friend-01",
+      "party": "b",
+      "lieState": "S2",
+      "intent": "evidence_query",
+      "input": "?.",
+      "expectedDimension": "empty_response",
+      "action": "fallback"
+    },
+    {
+      "id": "h-unmapped-1",
+      "caseId": "spouse-01",
+      "party": "b",
+      "lieState": "S0",
+      "intent": "unmapped",
+      "input": "?? ?? ????",
+      "expectedDimension": "unmapped_intent",
+      "action": "fallback"
+    },
+    {
+      "id": "h-intent-1",
+      "caseId": "spouse-01",
+      "party": "a",
+      "lieState": "S1",
+      "intent": "motive_search",
+      "input": "????. ?? ?? ????.",
+      "expectedDimension": "intent_mismatch",
+      "action": "fallback"
+    },
+    {
+      "id": "h-intent-2",
+      "caseId": "family-01",
+      "party": "a",
+      "lieState": "S1",
+      "intent": "evidence_query",
+      "input": "?? ??? ??? ????.",
+      "expectedDimension": "intent_mismatch",
+      "action": "fallback"
+    },
+    {
+      "id": "h-char-1",
+      "caseId": "spouse-01",
+      "party": "b",
+      "lieState": "S1",
+      "intent": "fact_pursuit",
+      "input": "?????. ?? ?? ???????.",
+      "expectedDimension": "character_mismatch",
+      "action": "fallback"
+    },
+    {
+      "id": "h-char-2",
+      "caseId": "family-01",
+      "party": "b",
+      "lieState": "S2",
+      "intent": "fact_pursuit",
+      "input": "?? ? ?? ???!! ???? ? ?????!!",
+      "expectedDimension": "character_mismatch",
+      "action": "fallback"
+    },
+    {
+      "id": "h-char-3",
+      "caseId": "friend-01",
+      "party": "a",
+      "lieState": "S1",
+      "intent": "fact_pursuit",
+      "input": "???? ??? ??? ?? ???????. ?? ?? ?? ??? ?? ???? ??? ??? ?? ??? ?? ??? ???? ??? ??? ?????. ??? ?? ??? ?? ?? ???? ??? ?????.",
+      "expectedDimension": "character_mismatch",
+      "action": "fallback"
+    }
+  ]
+}

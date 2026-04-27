@@ -13,11 +13,19 @@ import { fixPostpositions } from './koreanPostposition'
 import { buildSpeechGuide, getMyCall, getJudgeReference, getAngryCall, getRelationLabel, canUseInformal } from './llmSpeechGuide'
 import { eunneun } from '../utils/korean'
 import { getTruthThrottle, getArchetypeGuide } from './blueprintPromptBuilderV2'
+import { callFreeInterrogationApiText, evaluateFreeInterrogationResponse } from './freeInterrogation/guard'
+import { selectFreeInterrogationFallbackText } from './freeInterrogation/fallback'
 import type { CaseData, PartyId, QuestionType } from '../types'
 import type { AgentState } from '../types'
 import type { EvidenceRuntimeState } from './evidenceEngine'
 import { useGameStore } from '../store/useGameStore'
-import { getRelationshipType } from '../utils/caseHelpers'
+import { getRelationshipType, normalizeCaseKey } from '../utils/caseHelpers'
+import type {
+  FreeInterrogationFallbackResult,
+  FreeInterrogationGuardContext,
+  FreeInterrogationGuardResult,
+  FreeInterrogationIntent,
+} from '../types/freeInterrogationGuard'
 
 export interface FreeQuestionResult {
   questionType: QuestionType | 'irrelevant'
@@ -137,6 +145,59 @@ function parseClassifierResponse(raw: string): ClassifierResult {
       mentionedEvidenceIds: [],
       confidence: 0,
     }
+  }
+}
+
+function buildFreeQuestionGuardContext(input: {
+  caseData: CaseData
+  target: PartyId
+  question: string
+  classification: ClassifierResult
+  focusedDisputeId: string
+  lieState?: AgentState['lieStateMap'][string]['currentState']
+  evidenceContext?: EvidenceContext
+}): FreeInterrogationGuardContext | null {
+  const caseKey = normalizeCaseKey(input.caseData)
+  if (caseKey !== 'spouse-01' && caseKey !== 'family-01' && caseKey !== 'friend-01') {
+    return null
+  }
+
+  const party = input.target === 'a' ? input.caseData.duo.partyA : input.caseData.duo.partyB
+  return {
+    caseId: caseKey,
+    party: input.target,
+    lieState: input.lieState,
+    disputeId: input.focusedDisputeId || input.classification.primaryDisputeId,
+    intent: mapFreeQuestionIntent(input.classification, input.evidenceContext),
+    question: input.question,
+    evidenceName: input.evidenceContext?.name ?? null,
+    archetype: party.archetype,
+    variant: input.evidenceContext ? 'free-question-evidence' : 'free-question',
+  }
+}
+
+function mapFreeQuestionIntent(
+  classification: ClassifierResult,
+  evidenceContext?: EvidenceContext,
+): FreeInterrogationIntent {
+  if (evidenceContext) return 'evidence_query'
+  if (classification.questionType === 'irrelevant') return 'unmapped'
+  if (classification.questionType === 'fact_pursuit') return 'fact_pursuit'
+  if (classification.questionType === 'motive_search') return 'motive_search'
+  if (classification.questionType === 'empathy_approach') return 'empathy_approach'
+  return 'unmapped'
+}
+
+function buildGuardFallbackFreeQuestionResult(
+  fallback: FreeInterrogationFallbackResult | FreeInterrogationGuardResult,
+  classification: ClassifierResult,
+): FreeQuestionResult {
+  return {
+    questionType: classification.questionType,
+    disputeId: null,
+    secondaryDisputeId: null,
+    response: fallback.text,
+    behaviorHint: 'behaviorHint' in fallback ? fallback.behaviorHint : '잠시 침묵한 뒤 짧게 답한다.',
   }
 }
 
@@ -305,15 +366,45 @@ async function generateResponse(
   }
 
   const userMessage = `분류가 끝난 자유 질문에 캐릭터로서 응답한다.\n원문 질문: "${question}"\nclassifier 결과:\n- questionType: ${classification.questionType}\n- focusedDisputeId: ${classification.primaryDisputeId ?? 'null'}\n- secondaryDisputeId: ${classification.secondaryDisputeId ?? 'null'}\n- confidence: ${classification.confidence}${evidenceBlock}\n\n규칙:\n- 분류 결과를 다시 바꾸지 않는다.\n- focusedDisputeId(${classification.primaryDisputeId ?? 'null'})를 중심으로 답한다.\n- 출력은 JSON 객체 하나만 한다.`
+  const guardContext = buildFreeQuestionGuardContext({
+    caseData,
+    target,
+    question,
+    classification,
+    focusedDisputeId,
+    lieState: lieEntry?.currentState,
+    evidenceContext,
+  })
 
   try {
-    const raw = await chatCompletion(
-      [
-        { role: 'system', content: systemPrompt },
-        { role: 'user', content: userMessage },
-      ],
-      { temperature: config.temperature, maxTokens: config.maxTokens, model: MODEL_DIALOGUE },
-    )
+    const rawResult = guardContext
+      ? await callFreeInterrogationApiText(
+        () => chatCompletion(
+          [
+            { role: 'system', content: systemPrompt },
+            { role: 'user', content: userMessage },
+          ],
+          { temperature: config.temperature, maxTokens: config.maxTokens, model: MODEL_DIALOGUE },
+        ),
+        guardContext,
+        { operation: 'free-question-responder', evaluateResponse: false },
+      )
+      : {
+          action: 'pass' as const,
+          text: await chatCompletion(
+            [
+              { role: 'system', content: systemPrompt },
+              { role: 'user', content: userMessage },
+            ],
+            { temperature: config.temperature, maxTokens: config.maxTokens, model: MODEL_DIALOGUE },
+          ),
+        }
+
+    if (rawResult.action === 'fallback') {
+      return buildGuardFallbackFreeQuestionResult(rawResult, classification)
+    }
+
+    const raw = rawResult.text
 
     const currentLieState = lieEntry?.currentState ?? 'S0'
     const monetaryRe = /송금|이체|금액|원\b|만원|돈|비용|계좌|환급|보증금|월세|정산|예치|납부|수당|급여|계약금|위약금|배상금|합의금|채무|대출|융자|임대료/
@@ -327,6 +418,14 @@ async function generateResponse(
       previousNpcResponse: dialogueLog.filter(d => d.speaker === target).slice(-1)[0]?.text,
     }
     const parsed = parseResponderResponse(raw, ppCtx)
+    if (guardContext) {
+      const guarded = await evaluateFreeInterrogationResponse(parsed.response, guardContext)
+      if (guarded.action === 'fallback') {
+        return buildGuardFallbackFreeQuestionResult(guarded, classification)
+      }
+      parsed.response = guarded.text
+    }
+
     return {
       questionType: classification.questionType,
       disputeId: classification.primaryDisputeId,
@@ -335,6 +434,18 @@ async function generateResponse(
       behaviorHint: parsed.behaviorHint,
     }
   } catch {
+    if (guardContext) {
+      return buildGuardFallbackFreeQuestionResult(
+        selectFreeInterrogationFallbackText(
+          guardContext,
+          'api_failure',
+          '',
+          [{ dimension: 'api_failure', reason: 'free-question-responder threw unexpectedly' }],
+        ),
+        classification,
+      )
+    }
+
     return {
       questionType: classification.questionType,
       disputeId: classification.primaryDisputeId,

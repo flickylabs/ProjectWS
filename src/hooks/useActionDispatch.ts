@@ -737,6 +737,10 @@ async function handleQuestion(action: Extract<PlayerAction, { type: 'question' }
   questionLock = true
   try {
   const state = useGameStore.getState()
+  const freeInterrogation = (action as typeof action & { freeInterrogation?: { rawText?: string } }).freeInterrogation
+  const isFreeInterrogation = Boolean(freeInterrogation?.rawText)
+  const judgeQuestionText = freeInterrogation?.rawText
+    ?? buildQuestionText(action.questionType, action.target, action.disputeId)
   // [감정 과부하 lockout] 차단 만료 turn 까지 질문 거부 — 메시지 1회만 출력
   const lockoutUntil = state.emotionalLockoutUntil?.[action.target] ?? 0
   if (lockoutUntil > state.turnCount) {
@@ -765,7 +769,7 @@ async function handleQuestion(action: Extract<PlayerAction, { type: 'question' }
     const recapText = pickConfessionRecapLine(state.caseData?.caseId ?? '', action.target)
     state.addDialogue({
       speaker: 'judge',
-      text: buildQuestionText(action.questionType, action.target, action.disputeId),
+      text: judgeQuestionText,
       relatedDisputes: [action.disputeId],
       turn: state.turnCount,
     })
@@ -809,7 +813,7 @@ async function handleQuestion(action: Extract<PlayerAction, { type: 'question' }
   // NPC 응답은 ScriptedText 우선 → LLM 폴백 (llmDialogueResolver 내부에서 처리)
   state.addDialogue({
     speaker: 'judge',
-    text: buildQuestionText(action.questionType, action.target, action.disputeId),
+    text: judgeQuestionText,
     relatedDisputes: [action.disputeId],
     turn: state.turnCount,
   })
@@ -1026,7 +1030,7 @@ async function handleQuestion(action: Extract<PlayerAction, { type: 'question' }
   // NPC 응답 — V2 structure가 있으면 V2 메커닉 활성화, beat까지 있으면 스크립트 사용
   const v2CaseId = normalizeCaseKey(state.caseData?.caseId ?? '')
   const { useBeatSelectorV2, useQuestionFatigueV2 } = useGameStore.getState().phase3Flags
-  const v2StructureAvailable = useBeatSelectorV2 && hasStructureV2(v2CaseId)
+  const v2StructureAvailable = !isFreeInterrogation && useBeatSelectorV2 && hasStructureV2(v2CaseId)
   const v2BeatAvailable = v2StructureAvailable && hasV2Data(v2CaseId)
   let v2BeatUsed = false
 

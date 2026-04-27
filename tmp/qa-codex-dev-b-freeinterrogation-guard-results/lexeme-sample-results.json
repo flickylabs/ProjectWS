@@ -1,0 +1,658 @@
+{
+  "generatedAt": "2026-04-27T04:33:51.702Z",
+  "sampleCount": 50,
+  "passCount": 50,
+  "expectedAction": "fallback",
+  "samples": [
+    {
+      "id": "lex-01",
+      "caseId": "spouse-01",
+      "party": "a",
+      "lieState": "S2",
+      "lexeme": "??",
+      "input": "?? ???? ?? ??????.",
+      "detected": true,
+      "matched": [
+        "??"
+      ],
+      "action": "fallback"
+    },
+    {
+      "id": "lex-02",
+      "caseId": "spouse-01",
+      "party": "b",
+      "lieState": "S0",
+      "lexeme": "??",
+      "input": "?? ???? ?? ??????.",
+      "detected": true,
+      "matched": [
+        "??"
+      ],
+      "action": "fallback"
+    },
+    {
+      "id": "lex-03",
+      "caseId": "spouse-01",
+      "party": "a",
+      "lieState": "S0",
+      "lexeme": "??",
+      "input": "?? ???? ?? ??????.",
+      "detected": true,
+      "matched": [
+        "??"
+      ],
+      "action": "fallback"
+    },
+    {
+      "id": "lex-04",
+      "caseId": "spouse-01",
+      "party": "b",
+      "lieState": "S2",
+      "lexeme": "???",
+      "input": "??? ???? ?? ??????.",
+      "detected": true,
+      "matched": [
+        "???"
+      ],
+      "action": "fallback"
+    },
+    {
+      "id": "lex-05",
+      "caseId": "spouse-01",
+      "party": "a",
+      "lieState": "S0",
+      "lexeme": "?2",
+      "input": "?2 ???? ?? ??????.",
+      "detected": true,
+      "matched": [
+        "?2"
+      ],
+      "action": "fallback"
+    },
+    {
+      "id": "lex-06",
+      "caseId": "spouse-01",
+      "party": "b",
+      "lieState": "S0",
+      "lexeme": "??? ??",
+      "input": "??? ?? ???? ?? ??????.",
+      "detected": true,
+      "matched": [
+        "??? ??"
+      ],
+      "action": "fallback"
+    },
+    {
+      "id": "lex-07",
+      "caseId": "spouse-01",
+      "party": "a",
+      "lieState": "S2",
+      "lexeme": "???",
+      "input": "??? ???? ?? ??????.",
+      "detected": true,
+      "matched": [
+        "???"
+      ],
+      "action": "fallback"
+    },
+    {
+      "id": "lex-08",
+      "caseId": "spouse-01",
+      "party": "b",
+      "lieState": "S0",
+      "lexeme": "??? ??",
+      "input": "??? ?? ???? ?? ??????.",
+      "detected": true,
+      "matched": [
+        "??? ??"
+      ],
+      "action": "fallback"
+    },
+    {
+      "id": "lex-09",
+      "caseId": "spouse-01",
+      "party": "a",
+      "lieState": "S0",
+      "lexeme": "??? ???",
+      "input": "??? ??? ???? ?? ??????.",
+      "detected": true,
+      "matched": [
+        "??? ???"
+      ],
+      "action": "fallback"
+    },
+    {
+      "id": "lex-10",
+      "caseId": "spouse-01",
+      "party": "b",
+      "lieState": "S2",
+      "lexeme": "?? ??",
+      "input": "?? ?? ???? ?? ??????.",
+      "detected": true,
+      "matched": [
+        "?? ??"
+      ],
+      "action": "fallback"
+    },
+    {
+      "id": "lex-11",
+      "caseId": "spouse-01",
+      "party": "a",
+      "lieState": "S0",
+      "lexeme": "? ?",
+      "input": "? ? ???? ?? ??????.",
+      "detected": true,
+      "matched": [
+        "? ?"
+      ],
+      "action": "fallback"
+    },
+    {
+      "id": "lex-12",
+      "caseId": "spouse-01",
+      "party": "b",
+      "lieState": "S0",
+      "lexeme": "?? ????",
+      "input": "?? ???? ???? ?? ??????.",
+      "detected": true,
+      "matched": [
+        "?? ????"
+      ],
+      "action": "fallback"
+    },
+    {
+      "id": "lex-13",
+      "caseId": "spouse-01",
+      "party": "a",
+      "lieState": "S2",
+      "lexeme": "? ??",
+      "input": "? ?? ???? ?? ??????.",
+      "detected": true,
+      "matched": [
+        "? ??"
+      ],
+      "action": "fallback"
+    },
+    {
+      "id": "lex-14",
+      "caseId": "spouse-01",
+      "party": "b",
+      "lieState": "S0",
+      "lexeme": "??? ??",
+      "input": "??? ?? ???? ?? ??????.",
+      "detected": true,
+      "matched": [
+        "??? ??"
+      ],
+      "action": "fallback"
+    },
+    {
+      "id": "lex-15",
+      "caseId": "spouse-01",
+      "party": "a",
+      "lieState": "S0",
+      "lexeme": "???",
+      "input": "??? ???? ?? ??????.",
+      "detected": true,
+      "matched": [
+        "???"
+      ],
+      "action": "fallback"
+    },
+    {
+      "id": "lex-16",
+      "caseId": "spouse-01",
+      "party": "b",
+      "lieState": "S2",
+      "lexeme": "?? ?? ??",
+      "input": "?? ?? ?? ???? ?? ??????.",
+      "detected": true,
+      "matched": [
+        "?? ?? ??"
+      ],
+      "action": "fallback"
+    },
+    {
+      "id": "lex-17",
+      "caseId": "spouse-01",
+      "party": "a",
+      "lieState": "S0",
+      "lexeme": "?? ??",
+      "input": "?? ?? ???? ?? ??????.",
+      "detected": true,
+      "matched": [
+        "?? ??"
+      ],
+      "action": "fallback"
+    },
+    {
+      "id": "lex-18",
+      "caseId": "family-01",
+      "party": "a",
+      "lieState": "S2",
+      "lexeme": "?? ??",
+      "input": "?? ?? ???? ?? ??????.",
+      "detected": true,
+      "matched": [
+        "?? ??"
+      ],
+      "action": "fallback"
+    },
+    {
+      "id": "lex-19",
+      "caseId": "family-01",
+      "party": "b",
+      "lieState": "S1",
+      "lexeme": "???",
+      "input": "??? ???? ?? ??????.",
+      "detected": true,
+      "matched": [
+        "???"
+      ],
+      "action": "fallback"
+    },
+    {
+      "id": "lex-20",
+      "caseId": "family-01",
+      "party": "a",
+      "lieState": "S1",
+      "lexeme": "?? ??",
+      "input": "?? ?? ???? ?? ??????.",
+      "detected": true,
+      "matched": [
+        "?? ??"
+      ],
+      "action": "fallback"
+    },
+    {
+      "id": "lex-21",
+      "caseId": "family-01",
+      "party": "b",
+      "lieState": "S2",
+      "lexeme": "??? ?? ???",
+      "input": "??? ?? ??? ???? ?? ??????.",
+      "detected": true,
+      "matched": [
+        "??? ?? ???"
+      ],
+      "action": "fallback"
+    },
+    {
+      "id": "lex-22",
+      "caseId": "family-01",
+      "party": "a",
+      "lieState": "S1",
+      "lexeme": "??? ???",
+      "input": "??? ??? ???? ?? ??????.",
+      "detected": true,
+      "matched": [
+        "??? ???"
+      ],
+      "action": "fallback"
+    },
+    {
+      "id": "lex-23",
+      "caseId": "family-01",
+      "party": "b",
+      "lieState": "S1",
+      "lexeme": "?? ???",
+      "input": "?? ??? ???? ?? ??????.",
+      "detected": true,
+      "matched": [
+        "?? ???"
+      ],
+      "action": "fallback"
+    },
+    {
+      "id": "lex-24",
+      "caseId": "family-01",
+      "party": "a",
+      "lieState": "S2",
+      "lexeme": "20? ?? B ?",
+      "input": "20? ?? B ? ???? ?? ??????.",
+      "detected": true,
+      "matched": [
+        "20? ?? B ?"
+      ],
+      "action": "fallback"
+    },
+    {
+      "id": "lex-25",
+      "caseId": "family-01",
+      "party": "b",
+      "lieState": "S1",
+      "lexeme": "20? ??",
+      "input": "20? ?? ???? ?? ??????.",
+      "detected": true,
+      "matched": [
+        "20? ??"
+      ],
+      "action": "fallback"
+    },
+    {
+      "id": "lex-26",
+      "caseId": "family-01",
+      "party": "a",
+      "lieState": "S1",
+      "lexeme": "20? ??",
+      "input": "20? ?? ???? ?? ??????.",
+      "detected": true,
+      "matched": [
+        "20? ??"
+      ],
+      "action": "fallback"
+    },
+    {
+      "id": "lex-27",
+      "caseId": "family-01",
+      "party": "b",
+      "lieState": "S2",
+      "lexeme": "?? ?",
+      "input": "?? ? ???? ?? ??????.",
+      "detected": true,
+      "matched": [
+        "?? ?"
+      ],
+      "action": "fallback"
+    },
+    {
+      "id": "lex-28",
+      "caseId": "family-01",
+      "party": "a",
+      "lieState": "S1",
+      "lexeme": "??? ?",
+      "input": "??? ? ???? ?? ??????.",
+      "detected": true,
+      "matched": [
+        "??? ?"
+      ],
+      "action": "fallback"
+    },
+    {
+      "id": "lex-29",
+      "caseId": "family-01",
+      "party": "b",
+      "lieState": "S1",
+      "lexeme": "?? ?? ??",
+      "input": "?? ?? ?? ???? ?? ??????.",
+      "detected": true,
+      "matched": [
+        "?? ?? ??"
+      ],
+      "action": "fallback"
+    },
+    {
+      "id": "lex-30",
+      "caseId": "family-01",
+      "party": "a",
+      "lieState": "S2",
+      "lexeme": "? ?? ??",
+      "input": "? ?? ?? ???? ?? ??????.",
+      "detected": true,
+      "matched": [
+        "? ?? ??"
+      ],
+      "action": "fallback"
+    },
+    {
+      "id": "lex-31",
+      "caseId": "family-01",
+      "party": "b",
+      "lieState": "S1",
+      "lexeme": "90:10",
+      "input": "90:10 ???? ?? ??????.",
+      "detected": true,
+      "matched": [
+        "90:10"
+      ],
+      "action": "fallback"
+    },
+    {
+      "id": "lex-32",
+      "caseId": "family-01",
+      "party": "a",
+      "lieState": "S1",
+      "lexeme": "90?10",
+      "input": "90?10 ???? ?? ??????.",
+      "detected": true,
+      "matched": [
+        "90?10"
+      ],
+      "action": "fallback"
+    },
+    {
+      "id": "lex-33",
+      "caseId": "family-01",
+      "party": "b",
+      "lieState": "S2",
+      "lexeme": "?? 90",
+      "input": "?? 90 ???? ?? ??????.",
+      "detected": true,
+      "matched": [
+        "?? 90"
+      ],
+      "action": "fallback"
+    },
+    {
+      "id": "lex-34",
+      "caseId": "family-01",
+      "party": "a",
+      "lieState": "S1",
+      "lexeme": "?? 10",
+      "input": "?? 10 ???? ?? ??????.",
+      "detected": true,
+      "matched": [
+        "?? 10"
+      ],
+      "action": "fallback"
+    },
+    {
+      "id": "lex-35",
+      "caseId": "friend-01",
+      "party": "a",
+      "lieState": "S2",
+      "lexeme": "????? ??",
+      "input": "????? ?? ???? ?? ??????.",
+      "detected": true,
+      "matched": [
+        "????? ??"
+      ],
+      "action": "fallback"
+    },
+    {
+      "id": "lex-36",
+      "caseId": "friend-01",
+      "party": "b",
+      "lieState": "S0",
+      "lexeme": "????? ??",
+      "input": "????? ?? ???? ?? ??????.",
+      "detected": true,
+      "matched": [
+        "????? ??"
+      ],
+      "action": "fallback"
+    },
+    {
+      "id": "lex-37",
+      "caseId": "friend-01",
+      "party": "a",
+      "lieState": "S0",
+      "lexeme": "????? ??",
+      "input": "????? ?? ???? ?? ??????.",
+      "detected": true,
+      "matched": [
+        "????? ??"
+      ],
+      "action": "fallback"
+    },
+    {
+      "id": "lex-38",
+      "caseId": "friend-01",
+      "party": "b",
+      "lieState": "S2",
+      "lexeme": "??? ???",
+      "input": "??? ??? ???? ?? ??????.",
+      "detected": true,
+      "matched": [
+        "??? ???"
+      ],
+      "action": "fallback"
+    },
+    {
+      "id": "lex-39",
+      "caseId": "friend-01",
+      "party": "a",
+      "lieState": "S0",
+      "lexeme": "B? ??",
+      "input": "B? ?? ???? ?? ??????.",
+      "detected": true,
+      "matched": [
+        "B? ??"
+      ],
+      "action": "fallback"
+    },
+    {
+      "id": "lex-40",
+      "caseId": "friend-01",
+      "party": "b",
+      "lieState": "S0",
+      "lexeme": "???? ??",
+      "input": "???? ?? ???? ?? ??????.",
+      "detected": true,
+      "matched": [
+        "???? ??"
+      ],
+      "action": "fallback"
+    },
+    {
+      "id": "lex-41",
+      "caseId": "friend-01",
+      "party": "a",
+      "lieState": "S2",
+      "lexeme": "??? ? ??",
+      "input": "??? ? ?? ???? ?? ??????.",
+      "detected": true,
+      "matched": [
+        "??? ? ??"
+      ],
+      "action": "fallback"
+    },
+    {
+      "id": "lex-42",
+      "caseId": "friend-01",
+      "party": "b",
+      "lieState": "S0",
+      "lexeme": "A ???? ??",
+      "input": "A ???? ?? ???? ?? ??????.",
+      "detected": true,
+      "matched": [
+        "A ???? ??"
+      ],
+      "action": "fallback"
+    },
+    {
+      "id": "lex-43",
+      "caseId": "friend-01",
+      "party": "a",
+      "lieState": "S0",
+      "lexeme": "?? ?? ??",
+      "input": "?? ?? ?? ???? ?? ??????.",
+      "detected": true,
+      "matched": [
+        "?? ?? ??"
+      ],
+      "action": "fallback"
+    },
+    {
+      "id": "lex-44",
+      "caseId": "friend-01",
+      "party": "b",
+      "lieState": "S2",
+      "lexeme": "???",
+      "input": "??? ???? ?? ??????.",
+      "detected": true,
+      "matched": [
+        "???"
+      ],
+      "action": "fallback"
+    },
+    {
+      "id": "lex-45",
+      "caseId": "friend-01",
+      "party": "a",
+      "lieState": "S0",
+      "lexeme": "?? ?? ??",
+      "input": "?? ?? ?? ???? ?? ??????.",
+      "detected": true,
+      "matched": [
+        "?? ?? ??"
+      ],
+      "action": "fallback"
+    },
+    {
+      "id": "lex-46",
+      "caseId": "friend-01",
+      "party": "b",
+      "lieState": "S0",
+      "lexeme": "? ??? ?? ? ??",
+      "input": "? ??? ?? ? ?? ???? ?? ??????.",
+      "detected": true,
+      "matched": [
+        "? ??? ?? ? ??"
+      ],
+      "action": "fallback"
+    },
+    {
+      "id": "lex-47",
+      "caseId": "friend-01",
+      "party": "a",
+      "lieState": "S2",
+      "lexeme": "B ?? ??",
+      "input": "B ?? ?? ???? ?? ??????.",
+      "detected": true,
+      "matched": [
+        "B ?? ??"
+      ],
+      "action": "fallback"
+    },
+    {
+      "id": "lex-48",
+      "caseId": "friend-01",
+      "party": "b",
+      "lieState": "S0",
+      "lexeme": "??? ? ? ??? ??",
+      "input": "??? ? ? ??? ?? ???? ?? ??????.",
+      "detected": true,
+      "matched": [
+        "??? ? ? ??? ??"
+      ],
+      "action": "fallback"
+    },
+    {
+      "id": "lex-49",
+      "caseId": "friend-01",
+      "party": "a",
+      "lieState": "S0",
+      "lexeme": "?? ?? = A ??? ??",
+      "input": "?? ?? = A ??? ?? ???? ?? ??????.",
+      "detected": true,
+      "matched": [
+        "?? ?? = A ??? ??"
+      ],
+      "action": "fallback"
+    },
+    {
+      "id": "lex-50",
+      "caseId": "friend-01",
+      "party": "b",
+      "lieState": "S2",
+      "lexeme": "B ?? ? ??",
+      "input": "B ?? ? ?? ???? ?? ??????.",
+      "detected": true,
+      "matched": [
+        "B ?? ? ??"
+      ],
+      "action": "fallback"
+    }
+  ]
+}

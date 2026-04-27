@@ -13,6 +13,8 @@ import PCSvgIcon from '../icons/PCSvgIcon'
 import PCCharacterPortrait from '../icons/PCCharacterPortrait'
 import PCDeferredVerdictIcon from './PCDeferredVerdictIcon'
 import { getPcFaceSymbolId, getPcEvidenceSymbolId } from '../icons/pcIconUtils'
+import FreeInterrogationInput from '../../freeInterrogation/FreeQuestionInput'
+import { isFreeInterrogationEnabled } from '../../../engine/freeInterrogation'
 
 const EMOTION_LABELS: Record<EmotionalPhase, string> = {
   defensive: '경계',
@@ -59,6 +61,7 @@ export default function PCBottomDock() {
   const [freeQuestionOpen, setFreeQuestionOpen] = useState(false)
   const freeQuestionRef = useRef<HTMLInputElement>(null)
   const [advanceDismissed, setAdvanceDismissed] = useState(false)
+  const freeInterrogationEnabled = isFreeInterrogationEnabled()
 
   // hidden 쟁점 필터
   const visibleDisputes = useMemo(() => {
@@ -101,20 +104,11 @@ export default function PCBottomDock() {
 
   // --- Free question (slot 4) ---
   const openFreeQuestion = useCallback(() => {
-    if (!caseData) return
+    if (!caseData || !freeInterrogationEnabled) return
     closeAll()
     setFreeQuestionOpen(true)
     setTimeout(() => freeQuestionRef.current?.focus(), 50)
-  }, [caseData, closeAll])
-
-  const submitFreeQuestion = useCallback((text: string) => {
-    if (!text.trim()) return
-    setFreeQuestionOpen(false)
-    // 자유 질문은 pc:free-question 커스텀 이벤트로 전달 → PCActionsPanel이 처리
-    window.dispatchEvent(new CustomEvent('pc:free-question', {
-      detail: { question: text.trim(), target: pcTargetParty, disputeId: activeDisputeId },
-    }))
-  }, [pcTargetParty, activeDisputeId])
+  }, [caseData, closeAll, freeInterrogationEnabled])
 
   // --- Evidence choice (slot 5) ---
   const unlockedEvidence = useMemo(() => {
@@ -302,7 +296,7 @@ export default function PCBottomDock() {
       ) : null}
 
       {/* --- Free question overlay (slot 4) --- */}
-      {freeQuestionOpen ? (
+      {freeInterrogationEnabled && freeQuestionOpen ? (
         <div className="pc-question-choice">
           <div className="pc-question-choice__backdrop" onClick={() => setFreeQuestionOpen(false)} />
           <div className="pc-question-choice__panel">
@@ -315,20 +309,13 @@ export default function PCBottomDock() {
             </div>
             <div className="pc-question-choice__disputes">
               <p className="pc-question-choice__hint">질문을 직접 입력하세요</p>
-              <form className="pc-free-question-form" onSubmit={(e) => {
-                e.preventDefault()
-                const input = freeQuestionRef.current
-                if (input) submitFreeQuestion(input.value)
-              }}>
-                <input
-                  ref={freeQuestionRef}
-                  className="pc-free-question-input"
-                  maxLength={200}
-                  placeholder="예: 그 돈은 어디서 났습니까?"
-                  type="text"
-                />
-                <button className="pc-free-question-submit" type="submit">질문하기</button>
-              </form>
+              <FreeInterrogationInput
+                activeDisputeId={activeDisputeId}
+                autoFocusRef={freeQuestionRef}
+                className="pc-free-question-form"
+                onDone={() => setFreeQuestionOpen(false)}
+                target={pcTargetParty}
+              />
             </div>
           </div>
         </div>
@@ -421,12 +408,13 @@ export default function PCBottomDock() {
                 <span className="slot-nm">공감 접근</span>
               </button>
 
-              {/* 4: 자유 질문 */}
-              <button className="slot" disabled={isLLMLoading} onClick={openFreeQuestion} title={isLLMLoading ? '응답 대기 중' : '자유 질문'} type="button">
-                <span className="slot-key">4</span>
-                <span className="slot-ico"><PCSvgIcon id="i-chat" size={24} /></span>
-                <span className="slot-nm">자유 질문</span>
-              </button>
+              {freeInterrogationEnabled ? (
+                <button className="slot" disabled={isLLMLoading} onClick={openFreeQuestion} title={isLLMLoading ? '응답 대기 중' : '자유 질문'} type="button">
+                  <span className="slot-key">4</span>
+                  <span className="slot-ico"><PCSvgIcon id="i-chat" size={24} /></span>
+                  <span className="slot-nm">자유 질문</span>
+                </button>
+              ) : null}
 
               {/* 5: 증거 제시 */}
               <button className="slot" data-guide-target="evidence-present" disabled={isLLMLoading} onClick={openEvidenceChoice} title={isLLMLoading ? '응답 대기 중' : '증거 제시'} type="button">

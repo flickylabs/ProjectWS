@@ -39,6 +39,8 @@ import { getScriptedInterrogation, getScriptedEvidencePresent, getScriptedDossie
 import { blockHiddenTruthLexemes, getDisclosureGuardMode } from './disclosureGuard'
 import { ensureDisclosurePolicyLoaded } from './disclosurePolicyLoader'
 import type { DisclosureCaseId, DisclosureChannelType, GuardContext } from '../types/disclosure'
+import { evaluateFreeInterrogationResponse } from './freeInterrogation/guard'
+import type { FreeInterrogationGuardContext } from '../types/freeInterrogationGuard'
 
 interface DossierOverrideContext {
   questionId?: string
@@ -155,6 +157,73 @@ async function applyDisclosureGuardToResolvedDialogue(
   return result
 }
 
+type FreeInterrogationQuestionMeta = {
+  rawText: string
+  intent?: FreeInterrogationGuardContext['intent']
+  evidenceRef?: string | null
+}
+
+function getFreeInterrogationMeta(action: PlayerAction): FreeInterrogationQuestionMeta | null {
+  if (action.type !== 'question') return null
+  const meta = (action as PlayerAction & { freeInterrogation?: FreeInterrogationQuestionMeta }).freeInterrogation
+  return meta?.rawText ? meta : null
+}
+
+function getFreeInterrogationQuestionText(action: PlayerAction): string | null {
+  return getFreeInterrogationMeta(action)?.rawText ?? null
+}
+
+async function applyFreeInterrogationFallbackToResolvedDialogue(
+  result: ResolvedDialogue | null,
+  action: PlayerAction,
+  caseData: CaseData,
+  target: PartyId | undefined,
+  disputeId: string | undefined,
+  lieState: string | undefined,
+): Promise<ResolvedDialogue | null> {
+  const freeInterrogation = getFreeInterrogationMeta(action)
+  if (!result || action.type !== 'question' || !freeInterrogation) return result
+
+  const caseId = normalizeDisclosureCaseId(caseData)
+  if (!caseId) return result
+
+  const finalTarget = target ?? result.target
+  const finalDisputeId = disputeId ?? result.node.conditions.disputeId ?? null
+  const fallbackResult = await evaluateFreeInterrogationResponse(result.node.text, {
+    caseId,
+    party: finalTarget,
+    disputeId: finalDisputeId,
+    intent: freeInterrogation.intent ?? 'unmapped',
+    lieState: normalizeGuardLieState(lieState),
+    question: freeInterrogation.rawText,
+    evidenceId: freeInterrogation.evidenceRef,
+    archetype: finalTarget === 'a' ? caseData.duo.partyA.archetype : caseData.duo.partyB.archetype,
+    variant: 'free-interrogation-llm-response',
+  })
+
+  if (fallbackResult.action !== 'fallback') return result
+
+  return {
+    ...result,
+    node: {
+      ...result.node,
+      text: fallbackResult.text,
+      behaviorHint: fallbackResult.behaviorHint || result.node.behaviorHint,
+    },
+  }
+}
+
+function normalizeGuardLieState(lieState: string | undefined): GuardContext['lieState'] {
+  return lieState === 'S0' ||
+    lieState === 'S1' ||
+    lieState === 'S2' ||
+    lieState === 'S3' ||
+    lieState === 'S4' ||
+    lieState === 'S5'
+    ? lieState
+    : undefined
+}
+
 export async function resolveLLMDialogue(
   action: PlayerAction,
   agentA: AgentState,
@@ -177,7 +246,7 @@ export async function resolveLLMDialogue(
   // ── Blueprint 경로 분기: ClaimPolicy가 있는 사건은 새 경로 ──
   const blueprintResult = await tryBlueprintPath(action, agentA, agentB, evidenceStates, caseData, store)
   if (blueprintResult !== null) {
-    return applyDisclosureGuardToResolvedDialogue(
+    const guardedBlueprintResult = await applyDisclosureGuardToResolvedDialogue(
       blueprintResult,
       buildDisclosureGuardContext(
         action, caseData, evidenceStates, agentA, agentB, store, dossierContext, 'blueprint-result',
@@ -186,6 +255,14 @@ export async function resolveLLMDialogue(
           disputeId: blueprintResult.node.conditions.disputeId,
         },
       ),
+    )
+    return applyFreeInterrogationFallbackToResolvedDialogue(
+      guardedBlueprintResult,
+      action,
+      caseData,
+      blueprintResult.target,
+      blueprintResult.node.conditions.disputeId,
+      blueprintResult.node.conditions.lieState,
     )
   }
 
@@ -263,7 +340,8 @@ export async function resolveLLMDialogue(
   const agentKey = resolveAgentKey(action, store, target)
 
   // ── 재판관 질문: 폴백용 템플릿 (LLM이 생성 못 하면 사용) ──
-  const fallbackJudgeQuestion = buildJudgeQuestion(action, caseData, target, dispute)
+  const fallbackJudgeQuestion = getFreeInterrogationQuestionText(action)
+    ?? buildJudgeQuestion(action, caseData, target, dispute)
 
   // ── interrogationDepth: 현재 쟁점에 대한 질문 횟수 ──
   const interrogationDepth = disputeId
@@ -447,7 +525,7 @@ export async function resolveLLMDialogue(
 
     // responseMode는 엔진이 강제 (LLM 출력 무시)
     const contractObj2 = JSON.parse(actionContract) as { responseMode?: string; answerStyle?: string }
-    return applyDisclosureGuardToResolvedDialogue({
+    const guardedResult = await applyDisclosureGuardToResolvedDialogue({
       node: parsed.npcNode, target,
       stance: parsed.stance,
       responseMode: contractObj2.responseMode ?? parsed.responseMode,  // 엔진 값 우선
@@ -462,10 +540,18 @@ export async function resolveLLMDialogue(
         lieState: lieEntry?.currentState,
       },
     ))
+    return applyFreeInterrogationFallbackToResolvedDialogue(
+      guardedResult,
+      action,
+      caseData,
+      target,
+      disputeId,
+      lieEntry?.currentState,
+    )
   } catch (error) {
     console.warn('LLM 호출 실패, 폴백:', error)
     const fallbackResult = fallbackResolve(action, agentA, agentB, evidenceStates)
-    return applyDisclosureGuardToResolvedDialogue(
+    const guardedFallback = await applyDisclosureGuardToResolvedDialogue(
       fallbackResult,
       buildDisclosureGuardContext(
         action, caseData, evidenceStates, agentA, agentB, store, dossierContext, 'legacy-fallback-inner',
@@ -476,11 +562,19 @@ export async function resolveLLMDialogue(
         },
       ),
     )
+    return applyFreeInterrogationFallbackToResolvedDialogue(
+      guardedFallback,
+      action,
+      caseData,
+      fallbackResult?.target,
+      fallbackResult?.node.conditions.disputeId ?? disputeId,
+      fallbackResult?.node.conditions.lieState ?? lieEntry?.currentState,
+    )
   }
   } catch (outerError) {
     console.error('[resolveLLMDialogue] 프롬프트 조립 또는 처리 중 에러:', outerError)
     const fallbackResult = fallbackResolve(action, agentA, agentB, evidenceStates)
-    return applyDisclosureGuardToResolvedDialogue(
+    const guardedFallback = await applyDisclosureGuardToResolvedDialogue(
       fallbackResult,
       buildDisclosureGuardContext(
         action, caseData, evidenceStates, agentA, agentB, store, dossierContext, 'legacy-fallback-outer',
@@ -490,6 +584,14 @@ export async function resolveLLMDialogue(
           lieState: fallbackResult?.node.conditions.lieState,
         },
       ),
+    )
+    return applyFreeInterrogationFallbackToResolvedDialogue(
+      guardedFallback,
+      action,
+      caseData,
+      fallbackResult?.target,
+      fallbackResult?.node.conditions.disputeId,
+      fallbackResult?.node.conditions.lieState,
     )
   }
 }
@@ -2046,6 +2148,8 @@ function tryScriptedDialoguePath(
   store: ReturnType<typeof useGameStore.getState>,
   dossierContext: DossierOverrideContext | null,
 ): ResolvedDialogue | null {
+  if (getFreeInterrogationMeta(action)) return null
+
   // question, evidence_present만 스크립트 경로 지원
   if (action.type !== 'question' && action.type !== 'evidence_present') return null
 
@@ -2272,7 +2376,8 @@ async function tryBlueprintPath(
   const interrogationDepth = disputeId
     ? (store.interrogationHistory[target]?.[disputeId]?.questionTypes.length ?? 0) + 1
     : 1
-  const judgeQuestion = generateJudgeQuestion(questionType, caseData, target, disputeId, interrogationDepth)
+  const judgeQuestion = getFreeInterrogationQuestionText(action)
+    ?? generateJudgeQuestion(questionType, caseData, target, disputeId, interrogationDepth)
 
   // V2 경로: claimAtoms가 있으면 atom 기반 프롬프트
   const normalizedPolicy = normalizeClaimPolicy(claimPolicy)
