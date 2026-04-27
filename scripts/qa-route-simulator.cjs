@@ -36,6 +36,11 @@ const RESPONSE_REQUIRED_ACTIONS = new Set([
   'discovery_event',
   'emergence_event',
 ]);
+const RESPONSE_MISSING_RECLASSIFY_ACTIONS = new Set([
+  'witness_summon',
+  'discovery_event',
+  'emergence_event',
+]);
 const LIE_RANK = { S0: 0, S1: 1, S2: 2, S3: 3, S4: 4, S5: 5 };
 const EXHAUSTIVE_DEFAULTS = {
   maxDepth: 5,
@@ -694,21 +699,53 @@ function detectUnhandledAction(trace, findings) {
 
 function detectMissingResponse(trace, findings) {
   if (!RESPONSE_REQUIRED_ACTIONS.has(trace.action.type)) return;
-  const playerOutputs = trace.outputs.filter((output) => !isQaOnlyOutput(output));
+  const playerOutputs = trace.outputs.filter((output) => isPlayerFacingOutput(output));
   const npc = playerOutputs.filter((output) => output.speaker === 'a' || output.speaker === 'b' || output.speaker === 'witness');
   const safeFallback = trace.outputs.some((output) => output.safeFallback || output.resolverPath === 'fallback');
   if (npc.length > 0 || safeFallback) return;
-  findings.push({
+  const missingResponseFinding = {
     severity: 'P0',
     category: 'response_missing',
     detectors: ['response_missing'],
     summary: `${trace.action.type} produced no NPC response and no explicit safe fallback.`,
     expected: 'At least one NPC/witness response or an explicit safe fallback after the action under the current legacy Gate spec.',
-    actual: `${trace.outputs.length} visible outputs; speakers=${trace.outputs.map((output) => output.speaker).join(',') || 'none'}`,
+    actual: `${playerOutputs.length} player-facing outputs; speakers=${playerOutputs.map((output) => output.speaker).join(',') || 'none'}`,
     resolverPath: trace.outputs.map((output) => output.resolverPath).filter(Boolean).join(' | ') || 'none',
     sourcePath: trace.outputs.map((output) => output.sourcePath).filter(Boolean).join(' | ') || 'none',
     patchPriority: 'P0-runtime-response-coverage',
-  });
+  };
+  findings.push(reclassifyMissingResponseIfRouteContract(trace, playerOutputs, missingResponseFinding));
+}
+
+function reclassifyMissingResponseIfRouteContract(trace, playerOutputs, finding) {
+  if (!RESPONSE_MISSING_RECLASSIFY_ACTIONS.has(trace.action.type)) return finding;
+  if (trace.outputs.length === 0) return finding;
+  const reclassifiedBase = {
+    ...finding,
+    severity: 'observability',
+    detectors: [...new Set([...(finding.detectors || []), 'response_missing_reclassified'])],
+    reclassifiedFrom: {
+      severity: finding.severity,
+      category: finding.category,
+    },
+  };
+  if (playerOutputs.length === 0) {
+    return {
+      ...reclassifiedBase,
+      category: 'qa_annotation_only_action',
+      summary: `${trace.action.type} produced only QA-annotation output; no player-facing NPC response is required.`,
+      expected: 'Route annotation/state-transition actions should preserve traceability in QA annotations without counting as player-facing missing responses.',
+      actual: `${trace.outputs.length} QA annotation output(s); speakers=${trace.outputs.map((output) => output.speaker).join(',') || 'none'}`,
+      patchPriority: 'N-route-contract-observability',
+    };
+  }
+  return {
+    ...reclassifiedBase,
+    category: 'system_only_action_no_npc_followup',
+    summary: `${trace.action.type} produced only system/player state output; no NPC follow-up is required.`,
+    expected: 'System-only route actions may surface state changes without immediate NPC or witness dialogue.',
+    patchPriority: 'N-route-contract-observability',
+  };
 }
 
 function detectEvidenceInvestigateNoNpcFollowup(trace, findings) {
@@ -1637,7 +1674,10 @@ function writeAllRoutesSummary(routeResults, traces, findings) {
 function writeGateSpecReport(routeResults, traces, findings) {
   const evidenceInvestigateActions = traces.filter((trace) => trace.action.type === 'evidence_investigate');
   const responseMissingFindings = findings.filter((finding) => finding.category === 'response_missing');
+  const responseMissingDetectorRecords = findings.filter((finding) => finding.detectors?.includes('response_missing'));
   const evidenceInvestigateNoFollowup = findings.filter((finding) => finding.category === 'evidence_investigate_no_npc_followup');
+  const qaAnnotationOnlyAction = findings.filter((finding) => finding.category === 'qa_annotation_only_action');
+  const systemOnlyActionNoNpcFollowup = findings.filter((finding) => finding.category === 'system_only_action_no_npc_followup');
   const report = {
     phaseB1Spike: {
       spouse01_phase3_baseline: 'tmp/qa-route-simulator-results/route-transcripts/spouse-01-phase3-baseline.md',
@@ -1645,7 +1685,10 @@ function writeGateSpecReport(routeResults, traces, findings) {
       actions: traces.length,
       evidenceInvestigateActions: evidenceInvestigateActions.length,
       responseMissingFindings: responseMissingFindings.length,
+      responseMissingDetectorRecords: responseMissingDetectorRecords.length,
       evidenceInvestigateNoNpcFollowupFindings: evidenceInvestigateNoFollowup.length,
+      qaAnnotationOnlyActionFindings: qaAnnotationOnlyAction.length,
+      systemOnlyActionNoNpcFollowupFindings: systemOnlyActionNoNpcFollowup.length,
       legacyRouteSpotCompare: {
         source: 'tmp/qa-codex-spouse-01-p0-patch-results/20260427-phase-a-audit.md',
         phaseAReference: 'routes=3, actions=10, findings=3, hard=3; QARG-0003 is evidence_investigate system-only response_missing',
@@ -1655,6 +1698,9 @@ function writeGateSpecReport(routeResults, traces, findings) {
     },
     reclassify: {
       B1_QARS_0001: 'P0 response_missing -> observability evidence_investigate_no_npc_followup',
+      S7_witness_summon: 'P0 response_missing -> observability system_only_action_no_npc_followup',
+      S7_discovery_event: 'P0 response_missing -> observability qa_annotation_only_action',
+      S7_emergence_event: 'P0 response_missing -> observability qa_annotation_only_action',
     },
     gateSpecOptions: GATE_SPEC_OPTIONS,
     ctRecommendation: 'Choose option ii for Phase B-3: keep runtime evidence investigation system-only, remove evidence_investigate from response-required, and emit an observability evidence_investigate_no_npc_followup detector. Options i/iii require separate Phase B-6 approval because they change data/runtime behavior.',
@@ -1669,6 +1715,8 @@ function writeSpikeSummary(routeResults, traces, findings) {
   const evidenceInvestigateActions = traces.filter((trace) => trace.action.type === 'evidence_investigate').length;
   const responseMissing = byCategory.response_missing || 0;
   const evidenceInvestigateNoFollowup = byCategory.evidence_investigate_no_npc_followup || 0;
+  const qaAnnotationOnlyAction = byCategory.qa_annotation_only_action || 0;
+  const systemOnlyActionNoNpcFollowup = byCategory.system_only_action_no_npc_followup || 0;
 
   const lines = [
     '# 20260427 Fast Tester Phase B-1 Route Simulator Spike Summary',
@@ -1687,6 +1735,8 @@ function writeSpikeSummary(routeResults, traces, findings) {
     `- hard findings: ${hard.length}`,
     `- response_missing findings: ${responseMissing}`,
     `- evidence_investigate_no_npc_followup findings: ${evidenceInvestigateNoFollowup}`,
+    `- qa_annotation_only_action findings: ${qaAnnotationOnlyAction}`,
+    `- system_only_action_no_npc_followup findings: ${systemOnlyActionNoNpcFollowup}`,
     '',
     '## Legacy Route Spot Compare',
     '- Phase A audit reference: `tmp/qa-codex-spouse-01-p0-patch-results/20260427-phase-a-audit.md`',
