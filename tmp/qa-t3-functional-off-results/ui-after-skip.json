@@ -1,0 +1,98 @@
+﻿{
+  "snapshots": [
+    {
+      "label": "00-initial",
+      "url": "http://127.0.0.1:5175/",
+      "bodyText": "건너뛰기\n솔로몬\n\n현대판 솔로몬이 되어\n판결을 내려보세요!",
+      "buttons": [
+        {
+          "i": 0,
+          "text": "건너뛰기",
+          "aria": null,
+          "title": null,
+          "disabled": false,
+          "classes": "text-xs text-gray-600 hover:text-gray-400 transition-colors"
+        },
+        {
+          "i": 1,
+          "text": "",
+          "aria": null,
+          "title": null,
+          "disabled": false,
+          "classes": "w-2.5 h-2.5 rounded-full transition-colors duration-300 bg-amber-500"
+        },
+        {
+          "i": 2,
+          "text": "",
+          "aria": null,
+          "title": null,
+          "disabled": false,
+          "classes": "w-2.5 h-2.5 rounded-full transition-colors duration-300 bg-gray-700"
+        },
+        {
+          "i": 3,
+          "text": "",
+          "aria": null,
+          "title": null,
+          "disabled": false,
+          "classes": "w-2.5 h-2.5 rounded-full transition-colors duration-300 bg-gray-700"
+        },
+        {
+          "i": 4,
+          "text": "",
+          "aria": null,
+          "title": null,
+          "disabled": false,
+          "classes": "w-2.5 h-2.5 rounded-full transition-colors duration-300 bg-gray-700"
+        }
+      ]
+    },
+    {
+      "label": "01-after-skip",
+      "url": "http://127.0.0.1:5175/",
+      "bodyText": "건너뛰기\n솔로몬\n\n현대판 솔로몬이 되어\n판결을 내려보세요!",
+      "buttons": [
+        {
+          "i": 0,
+          "text": "건너뛰기",
+          "aria": null,
+          "title": null,
+          "disabled": false,
+          "classes": "text-xs text-gray-600 hover:text-gray-400 transition-colors"
+        },
+        {
+          "i": 1,
+          "text": "",
+          "aria": null,
+          "title": null,
+          "disabled": false,
+          "classes": "w-2.5 h-2.5 rounded-full transition-colors duration-300 bg-amber-500"
+        },
+        {
+          "i": 2,
+          "text": "",
+          "aria": null,
+          "title": null,
+          "disabled": false,
+          "classes": "w-2.5 h-2.5 rounded-full transition-colors duration-300 bg-gray-700"
+        },
+        {
+          "i": 3,
+          "text": "",
+          "aria": null,
+          "title": null,
+          "disabled": false,
+          "classes": "w-2.5 h-2.5 rounded-full transition-colors duration-300 bg-gray-700"
+        },
+        {
+          "i": 4,
+          "text": "",
+          "aria": null,
+          "title": null,
+          "disabled": false,
+          "classes": "w-2.5 h-2.5 rounded-full transition-colors duration-300 bg-gray-700"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+﻿run=01 exit=0 wrapperHard='True' policyCrossHard0Warnings157='True' sync='True' status=PASS
+run=02 exit=0 wrapperHard='True' policyCrossHard0Warnings157='True' sync='True' status=PASS
+run=03 exit=0 wrapperHard='True' policyCrossHard0Warnings157='True' sync='True' status=PASS
+run=04 exit=0 wrapperHard='True' policyCrossHard0Warnings157='True' sync='True' status=PASS
+run=05 exit=0 wrapperHard='True' policyCrossHard0Warnings157='True' sync='True' status=PASS
+run=06 exit=0 wrapperHard='True' policyCrossHard0Warnings157='True' sync='True' status=PASS
+run=07 exit=0 wrapperHard='True' policyCrossHard0Warnings157='True' sync='True' status=PASS
+run=08 exit=0 wrapperHard='True' policyCrossHard0Warnings157='True' sync='True' status=PASS
+run=09 exit=0 wrapperHard='True' policyCrossHard0Warnings157='True' sync='True' status=PASS
+run=10 exit=0 wrapperHard='True' policyCrossHard0Warnings157='True' sync='True' status=PASS

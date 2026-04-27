@@ -1,0 +1,615 @@
+﻿{
+  "actions": [
+    "home.case_start",
+    "session.spouse",
+    "case.spouse_01_card",
+    "case.challenge",
+    "phase0.next.1",
+    "phase0.next.2",
+    "phase0.next.3",
+    "phase0.next.4",
+    "phase0.start_phase1",
+    "phase1.close_overlay_first_button",
+    "phase1.advance.0",
+    "phase1.advance.1",
+    "phase1.advance.2",
+    "phase1.advance.3",
+    "phase1.choice_first.4",
+    "phase1.advance.5",
+    "phase1.advance.6",
+    "phase1.advance.7",
+    "phase1.advance.8",
+    "phase1.choice_first.9",
+    "phase1.advance.10",
+    "phase1.advance.11",
+    "phase1.advance.12",
+    "phase1.advance.13",
+    "phase1.advance.14",
+    "phase1.advance.15",
+    "phase1.choice_first.16",
+    "phase1.advance.17",
+    "phase1.advance.18",
+    "phase1.no_control.19",
+    "interrogation.select_party_b",
+    "interrogation.open_question_menu"
+  ],
+  "snapshots": [
+    {
+      "label": "16-interrogation-before-action",
+      "url": "http://127.0.0.1:5175/",
+      "bodyText": "← 나가기\n박지연\n심문\n0/16\n이준호\n●\n요약\n0\n20\n10\n결혼 10년차 부부 박지연·이준호. 8개월째 각방을 쓰고 있다. 아내 박지연이 남편의 딴살림을 주장하며 재판을 신청했다.\n박지연\n\n재판관님, 제 남편은 매일 퇴근하면 집으로 바로 돌아오지 않습니다. 처음엔 야근이겠거니 했습니다. 그런데 한 달, 두 달, 석 달… 똑같은 패턴이 반복되니까 저도 가만히 있을 수가 없었습니다.\n\n참아온 시간의 무게를 강조하듯 천천히, 또렷하게 말한다.\n\n박지연\n\n블랙박스를 확인해 보고, 매일 같은 오피스텔에 두세 시간씩 방문하는 것을 알게 되었습니다. 네비 즐겨찾기에는 그 주소가 저장돼 있었습니다.\n\n증거를 하나씩 꺼내듯 정리하며, 이건 추측이 아니라 확인이라는 뉘앙스를 준다.\n\n이준호\n\n재판관님, 그건 오해입니다.\n\n짧게 끊고 입을 다문다. 더 말하고 싶지 않다는 듯 시선을 피한다.\n\n이준호 씨, '오해'라고 하셨는데 — 어떤 부분이 오해라고 하시는 건지 구체적으로 설명해 주십시오.\n\n이준호\n\n… 그곳에 간 건 맞습니다. 근데 제 아내가 생각하는 일은 아닙니다.\n\n긴 침묵 끝에 겨우 입을 연다. 인정은 하되 핵심은 피한다.\n\n박지연\n\n자기야, 뭐가 오해인데? 매일같이 거기를 다녀와놓고 그저 오해라고? 거기서 뭘 하는 건데?\n\n제 남편이 인정하자 바로 물고 늘어진다. 기세가 올라간다.\n\n이준호\n\n… 사정이 있어. 근데 지금은 말하기가 어려워.\n\n움츠러든다. 재판관의 압박에 한 발 물러섰지만 핵심은 여전히 숨긴다.\n\n박지연\n\n재판관님, 제 남편은 항상 저런 식입니다. 사정이 있다, 복잡하다, 나중에 말한다. 시댁 문제 때도 그랬습니다. 부모님 재산을 형이 다 날린 걸 저한테 끝까지 숨기고 있었습니다.\n\n쌓여온 불만이 한꺼번에 쏟아진다. 시댁 갈등이 자연스럽게 언급된다.\n\n박지연 씨, 시댁 문제는 지금 사안과 다릅니다. 오피스텔 건에 집중해 주십시오.\n\n박지연\n\n네... 하지만 재판관님, 제 남편이 숨기는 게 한두 가지가 아니라는 건 꼭 알아주셨으면 합니다.\n\n억울하지만 재판관 지시를 따른다. 입술을 깨문다.\n\n이준호\n\n… 감사합니다, 재판관님.\n\n작은 안도. 가족 얘기가 멈춰서 숨통이 트인다.\n\n박지연\n\n재판관님, 그리고 새벽에 화장실을 가려는데 문틈으로 남편의 목소리가 들렸습니다. 누군가와 한참을 통화하고 있었습니다.\n\n감정을 누르고 다시 사실로 돌아온다. 목소리가 낮아진다.\n\n이준호\n\n재판관님, 통화를 한 건 맞습니다. 하지만 제 아내가 생각하는 그런 전화가 아니었습니다.\n\n조심스럽게, 최소한의 선만 지킨다.\n\n박지연\n\n그것 뿐만이 아닙니다. 확실한 증거도 있습니다. 남편 차에서 발견한 영수증에 머리끈과 틴트, 헤어롤이 있었습니다. 제가 안 쓰는 물건들입니다.\n\n'틴트'를 말할 때 목소리가 떨린다. 서운함이 분노를 앞선다.\n\n이준호\n\n그건… 제가 산 겁니다. 아는 사람한테 그것들이 필요한 상황이었습니다.\n\n잠깐 멈칫한다. 인정은 하지만 그 뒤의 말을 삼킨다.\n\n이준호 씨, '아는 사람'이 누구입니까. 구체적으로 답하십시오.\n\n이준호\n\n… 가족입니다. 그 이상은… 지금은 말씀드리기 어렵습니다.\n\n재판관의 직접 압박에 한 단계 더 인정한다. '가족'이라는 단어가 처음 나온다.\n\n박지연\n\n가족? 무슨 가족? 어머님께서 틴트를 쓰셔? 아니면 당신 형님이 쓰신다는 거야? 재판관님, 거짓말입니다. 제 남편 가족은 부모님과 이혼하고 혼자사는 형 뿐입니다.\n\n'가족'이라는 말에 놀란다. 새로운 정보에 혼란스럽지만 의심은 유지한다.\n\n오피스텔 방문, 새벽 전화, 영수증 — 남편은 모두 인정했지만 상대가 누구인지 끝내 밝히지 않았다. 양측의 주장이 정면으로 엇갈\n심문 개시\n박지연\n대상을 선택하세요\n이준호\n 심문\n 증거\nN\n 스킬\nPhase 2\n심문\n\n직접 심문을 통해 진실을 파악해주세요.",
+      "buttons": [
+        {
+          "i": 0,
+          "text": "← 나가기",
+          "aria": null,
+          "title": null,
+          "disabled": false,
+          "classes": "text-gray-500 hover:text-gray-200 text-xs shrink-0 px-2 py-1.5 rounded-lg hover:bg-white/5 active:scale-95 transition-colors",
+          "guide": null
+        },
+        {
+          "i": 1,
+          "text": "",
+          "aria": null,
+          "title": null,
+          "disabled": false,
+          "classes": "active:scale-90 transition-all",
+          "guide": null
+        },
+        {
+          "i": 2,
+          "text": "박지연",
+          "aria": null,
+          "title": null,
+          "disabled": false,
+          "classes": "active:scale-95 transition-all",
+          "guide": null
+        },
+        {
+          "i": 3,
+          "text": "심문",
+          "aria": null,
+          "title": null,
+          "disabled": false,
+          "classes": "active:scale-95 transition-all",
+          "guide": null
+        },
+        {
+          "i": 4,
+          "text": "0/16",
+          "aria": null,
+          "title": null,
+          "disabled": false,
+          "classes": "active:scale-95 transition-all",
+          "guide": null
+        },
+        {
+          "i": 5,
+          "text": "이준호",
+          "aria": null,
+          "title": null,
+          "disabled": false,
+          "classes": "active:scale-95 transition-all",
+          "guide": null
+        },
+        {
+          "i": 6,
+          "text": "",
+          "aria": null,
+          "title": null,
+          "disabled": false,
+          "classes": "active:scale-90 transition-all",
+          "guide": null
+        },
+        {
+          "i": 7,
+          "text": "",
+          "aria": null,
+          "title": null,
+          "disabled": false,
+          "classes": "text-gray-500 hover:text-gray-200 p-1.5 rounded-lg hover:bg-white/5 active:scale-95 transition-colors",
+          "guide": null
+        },
+        {
+          "i": 8,
+          "text": "요약",
+          "aria": null,
+          "title": null,
+          "disabled": false,
+          "classes": "flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-xs font-semibold active:scale-95 transition-all bg-white/[0.02] text-gray-500 ring-1 ring-white/[0.04] hover:ring-white/10",
+          "guide": null
+        },
+        {
+          "i": 9,
+          "text": "0",
+          "aria": null,
+          "title": null,
+          "disabled": false,
+          "classes": "flex items-center gap-1 px-2 py-1.5 rounded-lg bg-white/[0.03] ring-1 ring-white/5 hover:ring-amber-500/20 active:scale-95 transition-all",
+          "guide": null
+        },
+        {
+          "i": 10,
+          "text": "",
+          "aria": null,
+          "title": null,
+          "disabled": false,
+          "classes": "flex items-center justify-center w-9 h-9 rounded-lg bg-white/[0.03] ring-1 ring-white/5 hover:ring-white/15 active:scale-95 transition-all",
+          "guide": null
+        },
+        {
+          "i": 11,
+          "text": "",
+          "aria": null,
+          "title": null,
+          "disabled": false,
+          "classes": "absolute left-1/2 -translate-x-1/2 -top-3 z-20 px-6 h-3 flex items-center justify-center active:scale-95",
+          "guide": null
+        },
+        {
+          "i": 12,
+          "text": "박지연",
+          "aria": null,
+          "title": null,
+          "disabled": false,
+          "classes": "shrink-0 flex items-center justify-center gap-1 text-xs font-bold transition-all duration-200 active:scale-[0.97] px-2 bg-transparent text-blue-400 rounded-xl ring-2 ring-blue-500/30 hover:bg-blue-500/10",
+          "guide": null
+        },
+        {
+          "i": 13,
+          "text": "이준호",
+          "aria": null,
+          "title": null,
+          "disabled": false,
+          "classes": "shrink-0 flex items-center justify-center gap-1 text-xs font-bold transition-all duration-200 active:scale-[0.97] px-2 bg-transparent text-rose-400 rounded-xl ring-2 ring-rose-500/30 hover:bg-rose-500/10",
+          "guide": null
+        },
+        {
+          "i": 14,
+          "text": "심문",
+          "aria": null,
+          "title": null,
+          "disabled": false,
+          "classes": "flex-1 text-xs rounded-xl font-semibold active:scale-95 transition-all bg-white/[0.03] text-gray-400 ring-1 ring-white/5 hover:text-gray-200 hover:ring-white/10",
+          "guide": null
+        },
+        {
+          "i": 15,
+          "text": "증거\nN",
+          "aria": null,
+          "title": null,
+          "disabled": false,
+          "classes": "flex-1 text-xs rounded-xl font-semibold relative transition-all bg-white/[0.03] text-gray-400 ring-1 ring-white/5 hover:text-gray-200 hover:ring-white/10 active:scale-95",
+          "guide": null
+        },
+        {
+          "i": 16,
+          "text": "스킬",
+          "aria": null,
+          "title": null,
+          "disabled": false,
+          "classes": "flex-1 text-xs rounded-xl font-semibold active:scale-95 transition-all bg-white/[0.03] text-gray-400 ring-1 ring-white/5 hover:text-gray-200 hover:ring-white/10",
+          "guide": null
+        }
+      ]
+    },
+    {
+      "label": "17-question-menu-open",
+      "url": "http://127.0.0.1:5175/",
+      "bodyText": "심문 시작\n\n하단에서 대상(민준/서연)을 선택하고, 질문 유형과 쟁점을 골라 질문하세요. 비활성화된 선택지는 현재 의미 없는 조합입니다.\n\n확인\n← 나가기\n박지연\n심문\n0/16\n이준호\n●\n요약\n0\n20\n10\n결혼 10년차 부부 박지연·이준호. 8개월째 각방을 쓰고 있다. 아내 박지연이 남편의 딴살림을 주장하며 재판을 신청했다.\n박지연\n\n재판관님, 제 남편은 매일 퇴근하면 집으로 바로 돌아오지 않습니다. 처음엔 야근이겠거니 했습니다. 그런데 한 달, 두 달, 석 달… 똑같은 패턴이 반복되니까 저도 가만히 있을 수가 없었습니다.\n\n참아온 시간의 무게를 강조하듯 천천히, 또렷하게 말한다.\n\n박지연\n\n블랙박스를 확인해 보고, 매일 같은 오피스텔에 두세 시간씩 방문하는 것을 알게 되었습니다. 네비 즐겨찾기에는 그 주소가 저장돼 있었습니다.\n\n증거를 하나씩 꺼내듯 정리하며, 이건 추측이 아니라 확인이라는 뉘앙스를 준다.\n\n이준호\n\n재판관님, 그건 오해입니다.\n\n짧게 끊고 입을 다문다. 더 말하고 싶지 않다는 듯 시선을 피한다.\n\n이준호 씨, '오해'라고 하셨는데 — 어떤 부분이 오해라고 하시는 건지 구체적으로 설명해 주십시오.\n\n이준호\n\n… 그곳에 간 건 맞습니다. 근데 제 아내가 생각하는 일은 아닙니다.\n\n긴 침묵 끝에 겨우 입을 연다. 인정은 하되 핵심은 피한다.\n\n박지연\n\n자기야, 뭐가 오해인데? 매일같이 거기를 다녀와놓고 그저 오해라고? 거기서 뭘 하는 건데?\n\n제 남편이 인정하자 바로 물고 늘어진다. 기세가 올라간다.\n\n이준호\n\n… 사정이 있어. 근데 지금은 말하기가 어려워.\n\n움츠러든다. 재판관의 압박에 한 발 물러섰지만 핵심은 여전히 숨긴다.\n\n박지연\n\n재판관님, 제 남편은 항상 저런 식입니다. 사정이 있다, 복잡하다, 나중에 말한다. 시댁 문제 때도 그랬습니다. 부모님 재산을 형이 다 날린 걸 저한테 끝까지 숨기고 있었습니다.\n\n쌓여온 불만이 한꺼번에 쏟아진다. 시댁 갈등이 자연스럽게 언급된다.\n\n박지연 씨, 시댁 문제는 지금 사안과 다릅니다. 오피스텔 건에 집중해 주십시오.\n\n박지연\n\n네... 하지만 재판관님, 제 남편이 숨기는 게 한두 가지가 아니라는 건 꼭 알아주셨으면 합니다.\n\n억울하지만 재판관 지시를 따른다. 입술을 깨문다.\n\n이준호\n\n… 감사합니다, 재판관님.\n\n작은 안도. 가족 얘기가 멈춰서 숨통이 트인다.\n\n박지연\n\n재판관님, 그리고 새벽에 화장실을 가려는데 문틈으로 남편의 목소리가 들렸습니다. 누군가와 한참을 통화하고 있었습니다.\n\n감정을 누르고 다시 사실로 돌아온다. 목소리가 낮아진다.\n\n이준호\n\n재판관님, 통화를 한 건 맞습니다. 하지만 제 아내가 생각하는 그런 전화가 아니었습니다.\n\n조심스럽게, 최소한의 선만 지킨다.\n\n박지연\n\n그것 뿐만이 아닙니다. 확실한 증거도 있습니다. 남편 차에서 발견한 영수증에 머리끈과 틴트, 헤어롤이 있었습니다. 제가 안 쓰는 물건들입니다.\n\n'틴트'를 말할 때 목소리가 떨린다. 서운함이 분노를 앞선다.\n\n이준호\n\n그건… 제가 산 겁니다. 아는 사람한테 그것들이 필요한 상황이었습니다.\n\n잠깐 멈칫한다. 인정은 하지만 그 뒤의 말을 삼킨다.\n\n이준호 씨, '아는 사람'이 누구입니까. 구체적으로 답하십시오.\n\n이준호\n\n… 가족입니다. 그 이상은… 지금은 말씀드리기 어렵습니다.\n\n재판관의 직접 압박에 한 단계 더 인정한다. '가족'이라는 단어가 처음 나온다.\n\n박지연\n\n가족? 무슨 가족? 어머님께서 틴트를 쓰셔? 아니면 당신 형님이 쓰신다는 거야? 재판관님, 거짓말입니다. 제 남편 가족은 부모님과 이혼하고 혼자사는 형 뿐입니다.\n\n'가족'이라는 말에 놀란다. 새로운 정보에 혼란스럽지만 의심은 유지한다.\n\n오피스텔 방문, 새벽 전화, 영수증 — 남편은 모두 인정했지만 상대가 누구인지 끝내 밝히지 않았다. 양측의 주장이 정면으로 엇갈리고 있다. 심문을 통해 진실을 확인해야 한다.\n회피 판독\n1\n비공개\n사실 추궁\n사실을 직접 추궁합니다\n모순 토큰 ↑\n▲ 부정 상태에 효과적\n동기 탐색\n행동의 진짜 이유를 탐색합니다\n누설 미터 ↑\n▼ 신뢰 부족 — 역공 위험\n공감 접근\n공감으로 신뢰를 얻습니다\n신뢰 창구 ↑\n박지연\n모순\n누설\n안정\n신뢰\n닫힘\n이준호\n 심문\n 증거\nN\n 스킬",
+      "buttons": [
+        {
+          "i": 0,
+          "text": "확인",
+          "aria": null,
+          "title": null,
+          "disabled": false,
+          "classes": "bg-amber-600 hover:bg-amber-500 text-gray-950 font-semibold px-6 py-1.5 rounded-lg text-xs transition-colors",
+          "guide": null
+        },
+        {
+          "i": 1,
+          "text": "← 나가기",
+          "aria": null,
+          "title": null,
+          "disabled": false,
+          "classes": "text-gray-500 hover:text-gray-200 text-xs shrink-0 px-2 py-1.5 rounded-lg hover:bg-white/5 active:scale-95 transition-colors",
+          "guide": null
+        },
+        {
+          "i": 2,
+          "text": "",
+          "aria": null,
+          "title": null,
+          "disabled": false,
+          "classes": "active:scale-90 transition-all",
+          "guide": null
+        },
+        {
+          "i": 3,
+          "text": "박지연",
+          "aria": null,
+          "title": null,
+          "disabled": false,
+          "classes": "active:scale-95 transition-all",
+          "guide": null
+        },
+        {
+          "i": 4,
+          "text": "심문",
+          "aria": null,
+          "title": null,
+          "disabled": false,
+          "classes": "active:scale-95 transition-all",
+          "guide": null
+        },
+        {
+          "i": 5,
+          "text": "0/16",
+          "aria": null,
+          "title": null,
+          "disabled": false,
+          "classes": "active:scale-95 transition-all",
+          "guide": null
+        },
+        {
+          "i": 6,
+          "text": "이준호",
+          "aria": null,
+          "title": null,
+          "disabled": false,
+          "classes": "active:scale-95 transition-all",
+          "guide": null
+        },
+        {
+          "i": 7,
+          "text": "",
+          "aria": null,
+          "title": null,
+          "disabled": false,
+          "classes": "active:scale-90 transition-all",
+          "guide": null
+        },
+        {
+          "i": 8,
+          "text": "",
+          "aria": null,
+          "title": null,
+          "disabled": false,
+          "classes": "text-gray-500 hover:text-gray-200 p-1.5 rounded-lg hover:bg-white/5 active:scale-95 transition-colors",
+          "guide": null
+        },
+        {
+          "i": 9,
+          "text": "요약",
+          "aria": null,
+          "title": null,
+          "disabled": false,
+          "classes": "flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-xs font-semibold active:scale-95 transition-all bg-white/[0.02] text-gray-500 ring-1 ring-white/[0.04] hover:ring-white/10",
+          "guide": null
+        },
+        {
+          "i": 10,
+          "text": "0",
+          "aria": null,
+          "title": null,
+          "disabled": false,
+          "classes": "flex items-center gap-1 px-2 py-1.5 rounded-lg bg-white/[0.03] ring-1 ring-white/5 hover:ring-amber-500/20 active:scale-95 transition-all",
+          "guide": null
+        },
+        {
+          "i": 11,
+          "text": "",
+          "aria": null,
+          "title": null,
+          "disabled": false,
+          "classes": "flex items-center justify-center w-9 h-9 rounded-lg bg-white/[0.03] ring-1 ring-white/5 hover:ring-white/15 active:scale-95 transition-all",
+          "guide": null
+        },
+        {
+          "i": 12,
+          "text": "",
+          "aria": null,
+          "title": null,
+          "disabled": false,
+          "classes": "absolute left-1/2 -translate-x-1/2 -top-3 z-20 px-6 h-3 flex items-center justify-center active:scale-95",
+          "guide": null
+        },
+        {
+          "i": 13,
+          "text": "",
+          "aria": null,
+          "title": null,
+          "disabled": false,
+          "classes": "w-10 h-1 rounded-full bg-gray-600/80 hover:bg-gray-400 transition-colors",
+          "guide": null
+        },
+        {
+          "i": 14,
+          "text": "회피 판독\n1",
+          "aria": null,
+          "title": null,
+          "disabled": false,
+          "classes": "flex-1 flex items-center justify-center gap-1.5 py-1.5 rounded-lg text-xs font-semibold border transition-all active:scale-95 bg-gray-800/40 border-gray-700/40 text-gray-400 hover:border-cyan-700",
+          "guide": null
+        },
+        {
+          "i": 15,
+          "text": "비공개",
+          "aria": null,
+          "title": null,
+          "disabled": false,
+          "classes": "flex-1 flex items-center justify-center gap-1.5 py-1.5 rounded-lg text-xs font-semibold border transition-all active:scale-95 bg-gray-800/40 border-gray-700/40 text-gray-400 hover:border-emerald-700",
+          "guide": null
+        },
+        {
+          "i": 16,
+          "text": "사실 추궁\n사실을 직접 추궁합니다\n모순 토큰 ↑\n▲ 부정 상태에 효과적",
+          "aria": null,
+          "title": null,
+          "disabled": false,
+          "classes": "text-left rounded-xl border p-3 bg-gradient-to-br transition-all active:scale-95 border-blue-700/40 from-blue-950/60 to-blue-900/20 hover:shadow-lg shadow-blue-500/10 hover:scale-[1.02]",
+          "guide": null
+        },
+        {
+          "i": 17,
+          "text": "동기 탐색\n행동의 진짜 이유를 탐색합니다\n누설 미터 ↑\n▼ 신뢰 부족 — 역공 위험",
+          "aria": null,
+          "title": null,
+          "disabled": false,
+          "classes": "text-left rounded-xl border p-3 bg-gradient-to-br transition-all active:scale-95 border-purple-700/40 from-purple-950/60 to-purple-900/20 hover:shadow-lg shadow-purple-500/10 hover:scale-[1.02]",
+          "guide": null
+        },
+        {
+          "i": 18,
+          "text": "공감 접근\n공감으로 신뢰를 얻습니다\n신뢰 창구 ↑",
+          "aria": null,
+          "title": null,
+          "disabled": false,
+          "classes": "text-left rounded-xl border p-3 bg-gradient-to-br transition-all active:scale-95 border-pink-700/40 from-pink-950/60 to-pink-900/20 hover:shadow-lg shadow-pink-500/10 hover:scale-[1.02]",
+          "guide": null
+        },
+        {
+          "i": 19,
+          "text": "박지연",
+          "aria": null,
+          "title": null,
+          "disabled": false,
+          "classes": "shrink-0 flex items-center justify-center gap-1 text-xs font-bold transition-all duration-200 active:scale-[0.97] px-2 bg-white/[0.03] text-blue-400/70 rounded-xl ring-1 ring-white/[0.06] hover:ring-blue-500/30 hover:text-blue-400 court-target-idle",
+          "guide": null
+        },
+        {
+          "i": 20,
+          "text": "이준호",
+          "aria": null,
+          "title": null,
+          "disabled": false,
+          "classes": "shrink-0 flex items-center justify-center gap-1 text-xs font-bold transition-all duration-200 active:scale-[0.97] px-2.5 bg-rose-600 text-white rounded-r-xl border-y-2 border-r-2 border-rose-400/60 shadow-lg shadow-rose-600/20",
+          "guide": null
+        },
+        {
+          "i": 21,
+          "text": "심문",
+          "aria": null,
+          "title": null,
+          "disabled": false,
+          "classes": "flex-1 text-xs rounded-xl font-semibold active:scale-95 transition-all bg-amber-500/15 text-amber-400 ring-1 ring-amber-500/25 glow-amber",
+          "guide": null
+        },
+        {
+          "i": 22,
+          "text": "증거\nN",
+          "aria": null,
+          "title": null,
+          "disabled": false,
+          "classes": "flex-1 text-xs rounded-xl font-semibold relative transition-all bg-white/[0.03] text-gray-400 ring-1 ring-white/5 hover:text-gray-200 hover:ring-white/10 active:scale-95",
+          "guide": null
+        },
+        {
+          "i": 23,
+          "text": "스킬",
+          "aria": null,
+          "title": null,
+          "disabled": false,
+          "classes": "flex-1 text-xs rounded-xl font-semibold active:scale-95 transition-all bg-white/[0.03] text-gray-400 ring-1 ring-white/5 hover:text-gray-200 hover:ring-white/10",
+          "guide": null
+        }
+      ]
+    }
+  ],
+  "consoleEvents": [
+    {
+      "type": "debug",
+      "text": "[vite] connecting..."
+    },
+    {
+      "type": "debug",
+      "text": "[vite] connected."
+    },
+    {
+      "type": "info",
+      "text": "%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"
+    },
+    {
+      "type": "log",
+      "text": "[ScriptLoader] Phase 1: 3 scripts, Phase 2: 1 scripts"
+    },
+    {
+      "type": "log",
+      "text": "[Solomon] Script loader — Phase1: 3, Phase2: 1"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 502 (Bad Gateway)"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 502 (Bad Gateway)"
+    },
+    {
+      "type": "log",
+      "text": "[initializeCase] combinationLab config: NULL discoveredNodeIds: 0"
+    },
+    {
+      "type": "log",
+      "text": "[Renewal] spouse-01 data registration start"
+    },
+    {
+      "type": "log",
+      "text": "[Renewal] spouse-01 registration complete"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 502 (Bad Gateway)"
+    },
+    {
+      "type": "warning",
+      "text": "[PromptManager] Server unavailable, using cached/default prompts"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 502 (Bad Gateway)"
+    },
+    {
+      "type": "warning",
+      "text": "[AgentManager] Server unavailable, using cached data"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 502 (Bad Gateway)"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 502 (Bad Gateway)"
+    },
+    {
+      "type": "log",
+      "text": "[Phase1] caseId=case-spouse-01, script=loaded(34 entries)"
+    },
+    {
+      "type": "log",
+      "text": "[Phase1] caseId=case-spouse-01, script=loaded(34 entries)"
+    },
+    {
+      "type": "log",
+      "text": "[AutoDialogue] init: total dialogues: 34 choice nodes: 3"
+    },
+    {
+      "type": "log",
+      "text": "[AutoDialogue] choice at idx 4 choiceId: c1 options: 3"
+    },
+    {
+      "type": "log",
+      "text": "[AutoDialogue] choice at idx 14 choiceId: c2 options: 3"
+    },
+    {
+      "type": "log",
+      "text": "[AutoDialogue] choice at idx 26 choiceId: c3 options: 3"
+    },
+    {
+      "type": "log",
+      "text": "[Phase1] caseId=case-spouse-01, script=loaded(34 entries)"
+    },
+    {
+      "type": "log",
+      "text": "[Phase1] caseId=case-spouse-01, script=loaded(34 entries)"
+    },
+    {
+      "type": "log",
+      "text": "[AutoDialogue] advanceToNext idx: 1 speaker: a choiceId: undefined options: undefined"
+    },
+    {
+      "type": "log",
+      "text": "[AutoDialogue] advanceToNext idx: 2 speaker: a choiceId: undefined options: undefined"
+    },
+    {
+      "type": "log",
+      "text": "[AutoDialogue] advanceToNext idx: 3 speaker: b choiceId: undefined options: undefined"
+    },
+    {
+      "type": "log",
+      "text": "[AutoDialogue] advanceToNext idx: 4 speaker: choice choiceId: c1 options: 3"
+    },
+    {
+      "type": "log",
+      "text": "[AutoDialogue] → SHOWING CHOICE PANEL: c1"
+    },
+    {
+      "type": "log",
+      "text": "[AutoDialogue] advanceToNext idx: 5 speaker: b choiceId: undefined options: undefined"
+    },
+    {
+      "type": "log",
+      "text": "[AutoDialogue] advanceToNext idx: 6 speaker: a choiceId: undefined options: undefined"
+    },
+    {
+      "type": "log",
+      "text": "[AutoDialogue] advanceToNext idx: 7 speaker: b choiceId: undefined options: undefined"
+    },
+    {
+      "type": "log",
+      "text": "[AutoDialogue] advanceToNext idx: 13 speaker: a choiceId: undefined options: undefined"
+    },
+    {
+      "type": "log",
+      "text": "[AutoDialogue] advanceToNext idx: 14 speaker: choice choiceId: c2 options: 3"
+    },
+    {
+      "type": "log",
+      "text": "[AutoDialogue] → SHOWING CHOICE PANEL: c2"
+    },
+    {
+      "type": "log",
+      "text": "[AutoDialogue] advanceToNext idx: 15 speaker: a choiceId: undefined options: undefined"
+    },
+    {
+      "type": "log",
+      "text": "[AutoDialogue] advanceToNext idx: 16 speaker: b choiceId: undefined options: undefined"
+    },
+    {
+      "type": "log",
+      "text": "[AutoDialogue] advanceToNext idx: 22 speaker: a choiceId: undefined options: undefined"
+    },
+    {
+      "type": "log",
+      "text": "[AutoDialogue] advanceToNext idx: 23 speaker: b choiceId: undefined options: undefined"
+    },
+    {
+      "type": "log",
+      "text": "[AutoDialogue] advanceToNext idx: 24 speaker: a choiceId: undefined options: undefined"
+    },
+    {
+      "type": "log",
+      "text": "[AutoDialogue] advanceToNext idx: 25 speaker: b choiceId: undefined options: undefined"
+    },
+    {
+      "type": "log",
+      "text": "[AutoDialogue] advanceToNext idx: 26 speaker: choice choiceId: c3 options: 3"
+    },
+    {
+      "type": "log",
+      "text": "[AutoDialogue] → SHOWING CHOICE PANEL: c3"
+    },
+    {
+      "type": "log",
+      "text": "[AutoDialogue] advanceToNext idx: 27 speaker: b choiceId: undefined options: undefined"
+    },
+    {
+      "type": "log",
+      "text": "[AutoDialogue] advanceToNext idx: 28 speaker: a choiceId: undefined options: undefined"
+    },
+    {
+      "type": "log",
+      "text": "[AutoDialogue] advanceToNext idx: 33 speaker: system choiceId: undefined options: undefined"
+    },
+    {
+      "type": "log",
+      "text": "[Bridge] spouse-01: 브리지 데이터 없음 — 기존 상태 유지"
+    },
+    {
+      "type": "log",
+      "text": "[Bridge] spouse-01: 브리지 데이터 없음 — 기존 상태 유지"
+    }
+  ]
+}

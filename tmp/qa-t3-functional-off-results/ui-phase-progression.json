@@ -1,0 +1,287 @@
+﻿{
+  "snapshots": [
+    {
+      "label": "05-phase0-slide1",
+      "url": "http://127.0.0.1:5175/",
+      "bodyText": "← 나가기\n사건 개요부부\n당사자 소개\n박지연\n36세\n학원 데스크 직원\n피해 호소형\nA측\nVS\n이준호\n38세\n가전매장 직원\n회피형\nB측\n← 이전\n다음 →",
+      "buttons": [
+        {
+          "i": 0,
+          "text": "← 나가기",
+          "aria": null,
+          "title": null,
+          "disabled": false,
+          "classes": "text-gray-500 hover:text-white text-xs mr-2 shrink-0"
+        },
+        {
+          "i": 1,
+          "text": "← 이전",
+          "aria": null,
+          "title": null,
+          "disabled": true,
+          "classes": "text-sm px-4 py-2 rounded-lg text-gray-700"
+        },
+        {
+          "i": 2,
+          "text": "다음 →",
+          "aria": null,
+          "title": null,
+          "disabled": false,
+          "classes": "text-sm px-6 py-2 rounded-lg bg-amber-700 hover:bg-amber-600 text-white font-semibold"
+        }
+      ]
+    },
+    {
+      "label": "05-phase0-next-2-clicked-2",
+      "url": "http://127.0.0.1:5175/",
+      "bodyText": "← 나가기\n사건 개요부부\n배경 상황\n\n매일 퇴근 후 같은 오피스텔에 들렀다 오는 남편. 차에서 발견된 여성용품 영수증. 새벽의 통화. 아내는 남편의 딴 살림을 확신한다.\n\n 초반에는 영수증(머리끈/틴트), 오피스텔 GPS, 새벽 통화가 한 방향으로만 겹쳐 외도처럼 보인다. 그러나 참고서(중2용)와 형 문자가 열리면 그 패턴은 조카 돌봄으로 재맥락화되고, 개인 비자금 2,000만원 현금 출금과 위임장 조작 공동 적금 3,000만원 해지가 연달아 드러나면서 사건의 중심은 외도가 아니라 서로 말하지 못한 가족 공포와 비밀 자금 이동 순서로 뒤집힌다.\n\n 관련 인물\n오피스텔 경비\n(관련인)\n은행 직원\n(관련인)\n박미라\n(박지연 측)\n← 이전\n다음 →",
+      "buttons": [
+        {
+          "i": 0,
+          "text": "← 나가기",
+          "aria": null,
+          "title": null,
+          "disabled": false,
+          "classes": "text-gray-500 hover:text-white text-xs mr-2 shrink-0"
+        },
+        {
+          "i": 1,
+          "text": "← 이전",
+          "aria": null,
+          "title": null,
+          "disabled": false,
+          "classes": "text-sm px-4 py-2 rounded-lg bg-gray-800 text-gray-300 hover:bg-gray-700"
+        },
+        {
+          "i": 2,
+          "text": "다음 →",
+          "aria": null,
+          "title": null,
+          "disabled": false,
+          "classes": "text-sm px-6 py-2 rounded-lg bg-amber-700 hover:bg-amber-600 text-white font-semibold"
+        }
+      ]
+    },
+    {
+      "label": "05-phase0-next-3-clicked-2",
+      "url": "http://127.0.0.1:5175/",
+      "bodyText": "← 나가기\n사건 개요부부\n주요 쟁점\n\n심문을 통해 진실을 밝혀야 합니다\n\n1\n오피스텔 방문과 새벽 전화핵심\n2\n개인 비자금 2,000만원 출금핵심\n\n심문 과정에서 추가 쟁점이 드러날 수 있습니다\n\n← 이전\n다음 →",
+      "buttons": [
+        {
+          "i": 0,
+          "text": "← 나가기",
+          "aria": null,
+          "title": null,
+          "disabled": false,
+          "classes": "text-gray-500 hover:text-white text-xs mr-2 shrink-0"
+        },
+        {
+          "i": 1,
+          "text": "← 이전",
+          "aria": null,
+          "title": null,
+          "disabled": false,
+          "classes": "text-sm px-4 py-2 rounded-lg bg-gray-800 text-gray-300 hover:bg-gray-700"
+        },
+        {
+          "i": 2,
+          "text": "다음 →",
+          "aria": null,
+          "title": null,
+          "disabled": false,
+          "classes": "text-sm px-6 py-2 rounded-lg bg-amber-700 hover:bg-amber-600 text-white font-semibold"
+        }
+      ]
+    },
+    {
+      "label": "05-phase0-next-4-clicked-2",
+      "url": "http://127.0.0.1:5175/",
+      "bodyText": "← 나가기\n사건 개요부부\n과거 이력\n\n두 사람 사이에 쌓인 감정의 역사\n\n?\n영수증(머리끈/틴트), 오피스텔 GPS, 새벽 통화가 겹치며 d-1은 외도 의심 프레임으로 굳어졌다.\n기억이 다름\n…\n시댁 이야기가 나오면 크게 부딪힌다는 기억 때문에 B는 형네 사정을 말하지 않는 쪽을 택했다.\n묻어둔 일\n…\nB는 개인 비자금에서 2,000만원을 형에게 현금 전달했고, A는 위임장을 조작해 공동 적금 3,000만원을 해지한 뒤 투자방에 넣었다가 잃었다.\n묻어둔 일\n← 이전\n다음 →",
+      "buttons": [
+        {
+          "i": 0,
+          "text": "← 나가기",
+          "aria": null,
+          "title": null,
+          "disabled": false,
+          "classes": "text-gray-500 hover:text-white text-xs mr-2 shrink-0"
+        },
+        {
+          "i": 1,
+          "text": "← 이전",
+          "aria": null,
+          "title": null,
+          "disabled": false,
+          "classes": "text-sm px-4 py-2 rounded-lg bg-gray-800 text-gray-300 hover:bg-gray-700"
+        },
+        {
+          "i": 2,
+          "text": "다음 →",
+          "aria": null,
+          "title": null,
+          "disabled": false,
+          "classes": "text-sm px-6 py-2 rounded-lg bg-amber-700 hover:bg-amber-600 text-white font-semibold"
+        }
+      ]
+    },
+    {
+      "label": "05-phase0-next-5-clicked-2",
+      "url": "http://127.0.0.1:5175/",
+      "bodyText": "← 나가기\n사건 개요부부\n재판 준비 완료\n\n박지연과 이준호의\n초기 진술을 들을 준비가 되셨습니까?\n\n초기 진술 듣기 →\n← 사건 정보 다시 보기",
+      "buttons": [
+        {
+          "i": 0,
+          "text": "← 나가기",
+          "aria": null,
+          "title": null,
+          "disabled": false,
+          "classes": "text-gray-500 hover:text-white text-xs mr-2 shrink-0"
+        },
+        {
+          "i": 1,
+          "text": "초기 진술 듣기 →",
+          "aria": null,
+          "title": null,
+          "disabled": false,
+          "classes": "bg-gradient-to-r from-amber-600 to-amber-500 hover:from-amber-500 hover:to-amber-400 text-gray-950 font-bold px-12 py-3.5 rounded-xl transition-all shadow-lg shadow-amber-600/20 active:scale-95 text-base"
+        },
+        {
+          "i": 2,
+          "text": "← 사건 정보 다시 보기",
+          "aria": null,
+          "title": null,
+          "disabled": false,
+          "classes": "w-full text-xs text-gray-600 hover:text-gray-400 py-2"
+        }
+      ]
+    },
+    {
+      "label": "05-phase0-next-6-clicked-2",
+      "url": "http://127.0.0.1:5175/",
+      "bodyText": "← 나가기\n사건 개요부부\n당사자 소개\n박지연\n36세\n학원 데스크 직원\n피해 호소형\nA측\nVS\n이준호\n38세\n가전매장 직원\n회피형\nB측\n← 이전\n다음 →",
+      "buttons": [
+        {
+          "i": 0,
+          "text": "← 나가기",
+          "aria": null,
+          "title": null,
+          "disabled": false,
+          "classes": "text-gray-500 hover:text-white text-xs mr-2 shrink-0"
+        },
+        {
+          "i": 1,
+          "text": "← 이전",
+          "aria": null,
+          "title": null,
+          "disabled": true,
+          "classes": "text-sm px-4 py-2 rounded-lg text-gray-700"
+        },
+        {
+          "i": 2,
+          "text": "다음 →",
+          "aria": null,
+          "title": null,
+          "disabled": false,
+          "classes": "text-sm px-6 py-2 rounded-lg bg-amber-700 hover:bg-amber-600 text-white font-semibold"
+        }
+      ]
+    },
+    {
+      "label": "05-phase0-next-7-clicked-2",
+      "url": "http://127.0.0.1:5175/",
+      "bodyText": "← 나가기\n사건 개요부부\n배경 상황\n\n매일 퇴근 후 같은 오피스텔에 들렀다 오는 남편. 차에서 발견된 여성용품 영수증. 새벽의 통화. 아내는 남편의 딴 살림을 확신한다.\n\n 초반에는 영수증(머리끈/틴트), 오피스텔 GPS, 새벽 통화가 한 방향으로만 겹쳐 외도처럼 보인다. 그러나 참고서(중2용)와 형 문자가 열리면 그 패턴은 조카 돌봄으로 재맥락화되고, 개인 비자금 2,000만원 현금 출금과 위임장 조작 공동 적금 3,000만원 해지가 연달아 드러나면서 사건의 중심은 외도가 아니라 서로 말하지 못한 가족 공포와 비밀 자금 이동 순서로 뒤집힌다.\n\n 관련 인물\n오피스텔 경비\n(관련인)\n은행 직원\n(관련인)\n박미라\n(박지연 측)\n← 이전\n다음 →",
+      "buttons": [
+        {
+          "i": 0,
+          "text": "← 나가기",
+          "aria": null,
+          "title": null,
+          "disabled": false,
+          "classes": "text-gray-500 hover:text-white text-xs mr-2 shrink-0"
+        },
+        {
+          "i": 1,
+          "text": "← 이전",
+          "aria": null,
+          "title": null,
+          "disabled": false,
+          "classes": "text-sm px-4 py-2 rounded-lg bg-gray-800 text-gray-300 hover:bg-gray-700"
+        },
+        {
+          "i": 2,
+          "text": "다음 →",
+          "aria": null,
+          "title": null,
+          "disabled": false,
+          "classes": "text-sm px-6 py-2 rounded-lg bg-amber-700 hover:bg-amber-600 text-white font-semibold"
+        }
+      ]
+    }
+  ],
+  "consoleEvents": [
+    {
+      "type": "debug",
+      "text": "[vite] connecting..."
+    },
+    {
+      "type": "debug",
+      "text": "[vite] connected."
+    },
+    {
+      "type": "info",
+      "text": "%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"
+    },
+    {
+      "type": "log",
+      "text": "[ScriptLoader] Phase 1: 3 scripts, Phase 2: 1 scripts"
+    },
+    {
+      "type": "log",
+      "text": "[Solomon] Script loader — Phase1: 3, Phase2: 1"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 502 (Bad Gateway)"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 502 (Bad Gateway)"
+    },
+    {
+      "type": "log",
+      "text": "[initializeCase] combinationLab config: NULL discoveredNodeIds: 0"
+    },
+    {
+      "type": "log",
+      "text": "[Renewal] spouse-01 data registration start"
+    },
+    {
+      "type": "log",
+      "text": "[Renewal] spouse-01 registration complete"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 502 (Bad Gateway)"
+    },
+    {
+      "type": "warning",
+      "text": "[PromptManager] Server unavailable, using cached/default prompts"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 502 (Bad Gateway)"
+    },
+    {
+      "type": "warning",
+      "text": "[AgentManager] Server unavailable, using cached data"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 502 (Bad Gateway)"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 502 (Bad Gateway)"
+    }
+  ]
+}

@@ -1,0 +1,133 @@
+﻿{
+  "snapshots": [
+    {
+      "label": "03-case-start",
+      "url": "http://127.0.0.1:5175/",
+      "bodyText": "← 홈\n 부부\n0/1 클리어 · 0\n📰\n1\n오피스텔 방문과 새벽 전화\n도전 가능\n오피스텔 방문과 새벽 전화\n\n매일 퇴근 후 같은 오피스텔에 들렀다 오는 남편. 차에서 발견된 여성용품 영수증. 새벽의 통화. 아내는 남편의 딴 살림을 확신한다.\n\n난이도: \n쟁점 4개\n증거 7개\n닫기\n 도전하기",
+      "buttons": [
+        {
+          "i": 0,
+          "text": "← 홈",
+          "aria": null,
+          "title": null,
+          "disabled": false,
+          "classes": "text-gray-400 hover:text-white text-sm"
+        },
+        {
+          "i": 1,
+          "text": "",
+          "aria": null,
+          "title": null,
+          "disabled": false,
+          "classes": "relative text-gray-400 hover:text-white text-lg w-10 text-right"
+        },
+        {
+          "i": 2,
+          "text": "",
+          "aria": null,
+          "title": null,
+          "disabled": false,
+          "classes": "shrink-0 w-10 h-10 rounded-full flex items-center justify-center text-lg transition-all ring-2 ring-amber-400 scale-110 bg-gray-800/60"
+        },
+        {
+          "i": 3,
+          "text": "",
+          "aria": null,
+          "title": null,
+          "disabled": false,
+          "classes": "shrink-0 w-10 h-10 rounded-full flex items-center justify-center text-lg transition-all  bg-gray-800/60"
+        },
+        {
+          "i": 4,
+          "text": "",
+          "aria": null,
+          "title": null,
+          "disabled": false,
+          "classes": "shrink-0 w-10 h-10 rounded-full flex items-center justify-center text-lg transition-all  bg-gray-800/60"
+        },
+        {
+          "i": 5,
+          "text": "",
+          "aria": null,
+          "title": null,
+          "disabled": false,
+          "classes": "shrink-0 w-10 h-10 rounded-full flex items-center justify-center text-lg transition-all  bg-gray-800/60"
+        },
+        {
+          "i": 6,
+          "text": "",
+          "aria": null,
+          "title": null,
+          "disabled": false,
+          "classes": "shrink-0 w-10 h-10 rounded-full flex items-center justify-center text-lg transition-all  bg-gray-800/60"
+        },
+        {
+          "i": 7,
+          "text": "",
+          "aria": null,
+          "title": null,
+          "disabled": false,
+          "classes": "shrink-0 w-10 h-10 rounded-full flex items-center justify-center text-lg transition-all  bg-gray-800/60"
+        },
+        {
+          "i": 8,
+          "text": "",
+          "aria": null,
+          "title": null,
+          "disabled": false,
+          "classes": "shrink-0 w-10 h-10 rounded-full flex items-center justify-center text-lg transition-all  bg-gray-800/60"
+        },
+        {
+          "i": 9,
+          "text": "📰",
+          "aria": null,
+          "title": null,
+          "disabled": false,
+          "classes": "shrink-0 w-10 h-10 rounded-full flex items-center justify-center text-lg transition-all  bg-gray-800/60"
+        },
+        {
+          "i": 10,
+          "text": "1\n오피스텔 방문과 새벽 전화\n도전 가능",
+          "aria": null,
+          "title": null,
+          "disabled": false,
+          "classes": "relative flex items-center gap-3 w-[70%] transition-all active:scale-95 "
+        },
+        {
+          "i": 11,
+          "text": "",
+          "aria": null,
+          "title": null,
+          "disabled": false,
+          "classes": "text-gray-500 text-lg"
+        },
+        {
+          "i": 12,
+          "text": "닫기",
+          "aria": null,
+          "title": null,
+          "disabled": false,
+          "classes": "flex-1 text-xs py-2.5 rounded-xl bg-gray-800 text-gray-400"
+        },
+        {
+          "i": 13,
+          "text": "도전하기",
+          "aria": null,
+          "title": null,
+          "disabled": false,
+          "classes": "flex-1 text-xs py-2.5 rounded-xl font-bold text-white shadow-lg active:scale-95"
+        }
+      ]
+    }
+  ],
+  "errors": [
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 502 (Bad Gateway)"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 502 (Bad Gateway)"
+    }
+  ]
+}

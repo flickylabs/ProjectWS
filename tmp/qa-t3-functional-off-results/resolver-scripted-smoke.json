@@ -1,0 +1,18 @@
+﻿{
+  "testKind": "unit/resolver smoke",
+  "guardMode": "off",
+  "entrypoint": "resolveLLMDialogue(question spouse-01 a|d-1|S0|fact_pursuit)",
+  "resultKind": "scripted",
+  "nodeIdPrefix": "scripted",
+  "speaker": "a",
+  "disputeId": "d-1",
+  "textLength": 51,
+  "policyCacheBefore": null,
+  "policyCacheAfter": null,
+  "consoleLogSamples": [
+    "[Scripted] spouse-01/interrogation/a|d-1|S0|fact_pursuit"
+  ],
+  "consoleWarnCount": 0,
+  "disclosureWarnCount": 0,
+  "pass": true
+}
