@@ -76,6 +76,44 @@ let globalFindingCounter = 1;
 main();
 
 function main() {
+  if (args.has('--legacy-route')) {
+    runLegacyRouteGate();
+    return;
+  }
+
+  runAllCasesFastQa();
+}
+
+function runAllCasesFastQa() {
+  resetResultDir();
+
+  const allFindings = [];
+  const caseResults = [];
+
+  for (const caseId of CASES) {
+    if (wantedCase && caseId !== wantedCase) continue;
+    const ctx = loadCaseScanContext(caseId);
+    const result = scanCaseAllVariants(ctx);
+    allFindings.push(...result.findings);
+    caseResults.push(result);
+    writeCaseSummary(result);
+  }
+
+  writeJson(path.join(RESULT_DIR, 'findings.json'), allFindings);
+  writeAllCasesSummary(caseResults, allFindings);
+  writeChannelSummary(caseResults, allFindings);
+  writePatchPrioritySummary(caseResults, allFindings);
+
+  const hardCount = allFindings.filter((f) => f.severity === 'P0').length;
+  const candidateCount = allFindings.length - hardCount;
+  const variantCount = caseResults.reduce((sum, result) => sum + result.stats.scriptedVariants, 0);
+  console.log(`qa-runtime-gate: mode=all-cases cases=${caseResults.length} scriptedVariants=${variantCount} findings=${allFindings.length} hard=${hardCount} candidates=${candidateCount}`);
+  console.log(`results: ${path.relative(ROOT, RESULT_DIR)}`);
+
+  if (args.has('--fail-on-hard') && hardCount > 0) process.exit(1);
+}
+
+function runLegacyRouteGate() {
   ensureDir(RESULT_DIR);
   ensureDir(TRANSCRIPT_DIR);
 
@@ -106,6 +144,938 @@ function main() {
   console.log(`results: ${path.relative(ROOT, RESULT_DIR)}`);
 
   if (args.has('--fail-on-hard') && hardCount > 0) process.exit(1);
+}
+
+function resetResultDir() {
+  fs.rmSync(RESULT_DIR, { recursive: true, force: true });
+  ensureDir(RESULT_DIR);
+}
+
+function loadCaseScanContext(caseId) {
+  return {
+    caseId,
+    caseData: readJson(path.join(ROOT, 'src', 'data', 'cases', 'generated', `${caseId}.json`)),
+    scripted: readJson(path.join(ROOT, 'src', 'data', 'scriptedText', `${caseId}.json`)),
+    policy: readJson(path.join(ROOT, 'src', 'data', 'disclosurePolicy', `${caseId}.json`)),
+    emergenceHooks: readEmergenceHooks(caseId),
+  };
+}
+
+function scanCaseAllVariants(ctx) {
+  const findings = [];
+  const stats = {
+    caseId: ctx.caseId,
+    scriptedEntries: 0,
+    scriptedVariants: 0,
+    caseTextFields: 0,
+    policyTextFields: 0,
+    emergenceVariants: 0,
+    channels: {},
+  };
+
+  scanScriptedText(ctx, findings, stats);
+  scanGeneratedCaseData(ctx, findings, stats);
+  scanDisclosurePolicy(ctx, findings, stats);
+  scanEmergenceHooks(ctx, findings, stats);
+  scanResponseCoverage(ctx, findings, stats);
+
+  return { caseId: ctx.caseId, stats, findings };
+}
+
+function scanScriptedText(ctx, findings, stats) {
+  for (const [channel, channelData] of Object.entries(ctx.scripted.channels || {})) {
+    const entries = channelData.entries || [];
+    const channelStats = getChannelStats(stats, channel);
+    channelStats.entries += entries.length;
+    stats.scriptedEntries += entries.length;
+
+    entries.forEach((entry, entryIndex) => {
+      const variants = entry.variants || [];
+      if (variants.length === 0) {
+        addFinding(findings, {
+          caseId: ctx.caseId,
+          severity: 'P0',
+          category: 'response_missing',
+          detectors: ['response_missing'],
+          summary: `Scripted entry has no variants in ${channel}.`,
+          expected: 'Every scripted entry must provide at least one visible response variant.',
+          actual: 'variants=[]',
+          sourceKind: 'scriptedText',
+          sourcePath: scriptedEntrySourcePath(ctx.caseId, channel, entry.key || entryIndex),
+          channel,
+          entryKey: entry.key,
+          patchPriority: 'P0-scripted-response-coverage',
+        });
+      }
+
+      variants.forEach((variant, variantIndex) => {
+        stats.scriptedVariants += 1;
+        channelStats.variants += 1;
+        const item = scriptedVariantToScanItem(ctx.caseId, channel, entry, variant, entryIndex, variantIndex);
+        scanVisibleText(ctx, findings, item);
+        if (variant.behaviorHint) {
+          scanVisibleText(ctx, findings, {
+            ...item,
+            text: variant.behaviorHint,
+            textField: 'behaviorHint',
+            sourcePath: `${item.sourcePath}.behaviorHint`,
+            behaviorHint: true,
+          });
+        }
+      });
+    });
+  }
+}
+
+function scriptedVariantToScanItem(caseId, channel, entry, variant, entryIndex, variantIndex) {
+  const tags = tagsToMap(variant.tags || []);
+  const speaker = tags.speaker || entry.party || entry.targetParty || entry.speaker || 'unknown';
+  const party = speaker === 'a' || speaker === 'b' ? speaker : entry.party || tags.targetParty;
+  return {
+    caseId,
+    sourceKind: 'scriptedText',
+    sourcePath: scriptedVariantSourcePath(caseId, channel, entry.key || entryIndex, variant.id || variantIndex),
+    textField: 'text',
+    text: variant.text || '',
+    channel,
+    speaker,
+    party,
+    target: entry.targetParty || tags.targetParty || entry.party,
+    entryKey: entry.key,
+    variantId: variant.id,
+    entry,
+    variant,
+    tags,
+    disputeId: entry.disputeId || tags.disputeId,
+    evidenceId: entry.evidenceId || tags.evidenceId,
+    witnessId: entry.witnessId || tags.witnessId,
+    questionType: entry.questionType || tags.questionType,
+    lieState: entry.lieState || tags.lieState,
+    lieBand: entry.lieBand || tags.lieBand,
+    evidenceStage: normalizeEvidenceStage(entry.investigationStage || entry.stage || tags.stage),
+    reveal: entry.truthLevel || tags.reveal,
+    revealGuard: tags.revealGuard,
+  };
+}
+
+function scanGeneratedCaseData(ctx, findings, stats) {
+  for (const ev of ctx.caseData.evidence || []) {
+    scanCaseTextField(ctx, findings, stats, ev.surfaceName, {
+      sourcePath: `src/data/cases/generated/${ctx.caseId}.json:evidence.${ev.id}.surfaceName`,
+      textField: 'surfaceName',
+      evidenceId: ev.id,
+      evidenceStage: 0,
+      surfaceText: true,
+    });
+    scanCaseTextField(ctx, findings, stats, ev.surfaceDescription, {
+      sourcePath: `src/data/cases/generated/${ctx.caseId}.json:evidence.${ev.id}.surfaceDescription`,
+      textField: 'surfaceDescription',
+      evidenceId: ev.id,
+      evidenceStage: 0,
+      surfaceText: true,
+    });
+    scanCaseTextField(ctx, findings, stats, ev.description, {
+      sourcePath: `src/data/cases/generated/${ctx.caseId}.json:evidence.${ev.id}.description`,
+      textField: 'description',
+      evidenceId: ev.id,
+      evidenceStage: 0,
+      hiddenText: true,
+    });
+
+    for (const [key, value] of Object.entries(ev.investigationResults || {})) {
+      scanCaseTextField(ctx, findings, stats, value, {
+        sourcePath: `src/data/cases/generated/${ctx.caseId}.json:evidence.${ev.id}.investigationResults.${key}`,
+        textField: `investigationResults.${key}`,
+        channel: 'evidence_discovery',
+        evidenceId: ev.id,
+        disputeId: ev.proves?.[0],
+        evidenceStage: stageForInvestigationKey(key),
+      });
+    }
+
+    for (const stage of ev.investigationStages || []) {
+      const stageNumber = normalizeEvidenceStage(stage.stage);
+      scanCaseTextField(ctx, findings, stats, stage.label, {
+        sourcePath: `src/data/cases/generated/${ctx.caseId}.json:evidence.${ev.id}.investigationStages.${stage.stage}.label`,
+        textField: 'investigationStage.label',
+        evidenceId: ev.id,
+        evidenceStage: stageNumber,
+        surfaceText: stageNumber <= 1,
+      });
+      scanCaseTextField(ctx, findings, stats, stage.unlockHint, {
+        sourcePath: `src/data/cases/generated/${ctx.caseId}.json:evidence.${ev.id}.investigationStages.${stage.stage}.unlockHint`,
+        textField: 'investigationStage.unlockHint',
+        evidenceId: ev.id,
+        evidenceStage: stageNumber,
+        surfaceText: stageNumber <= 1,
+      });
+      scanCaseTextField(ctx, findings, stats, stage.question?.text, {
+        sourcePath: `src/data/cases/generated/${ctx.caseId}.json:evidence.${ev.id}.investigationStages.${stage.stage}.question.text`,
+        textField: 'investigationStage.question.text',
+        channel: 'judge_question',
+        evidenceId: ev.id,
+        disputeId: ev.proves?.[0],
+        evidenceStage: stageNumber,
+      });
+    }
+
+    for (const plan of ev.v3DepthPlan || []) {
+      const stageNumber = stageForDepthPlan(plan.id);
+      scanCaseTextField(ctx, findings, stats, plan.summary, {
+        sourcePath: `src/data/cases/generated/${ctx.caseId}.json:evidence.${ev.id}.v3DepthPlan.${plan.id}.summary`,
+        textField: 'v3DepthPlan.summary',
+        evidenceId: ev.id,
+        evidenceStage: stageNumber,
+        surfaceText: stageNumber <= 1,
+      });
+    }
+
+    for (const [party, partyContext] of Object.entries(ev.partyContext || {})) {
+      scanCaseTextField(ctx, findings, stats, partyContext.questionAngle, {
+        sourcePath: `src/data/cases/generated/${ctx.caseId}.json:evidence.${ev.id}.partyContext.${party}.questionAngle`,
+        textField: 'partyContext.questionAngle',
+        channel: 'judge_question',
+        evidenceId: ev.id,
+        disputeId: ev.proves?.[0],
+        target: party,
+        evidenceStage: 0,
+      });
+      scanCaseTextField(ctx, findings, stats, partyContext.implication, {
+        sourcePath: `src/data/cases/generated/${ctx.caseId}.json:evidence.${ev.id}.partyContext.${party}.implication`,
+        textField: 'partyContext.implication',
+        evidenceId: ev.id,
+        disputeId: ev.proves?.[0],
+        target: party,
+        evidenceStage: 0,
+        hiddenText: true,
+      });
+    }
+  }
+
+  for (const [index, recipe] of (ctx.caseData.combinationLab?.recipes || []).entries()) {
+    scanCaseTextField(ctx, findings, stats, recipe.discoveryText, {
+      sourcePath: `src/data/cases/generated/${ctx.caseId}.json:combinationLab.recipes.${recipe.id || index}.discoveryText`,
+      textField: 'discoveryText',
+      channel: 'player_discovered',
+      evidenceId: (recipe.inputs || []).filter((id) => /^e-/.test(id)).join('+') || undefined,
+      playerDiscovered: true,
+    });
+  }
+}
+
+function scanCaseTextField(ctx, findings, stats, text, extra) {
+  if (text === undefined || text === null || text === '') return;
+  stats.caseTextFields += 1;
+  scanVisibleText(ctx, findings, {
+    caseId: ctx.caseId,
+    sourceKind: 'caseData',
+    channel: extra.channel || 'case_data',
+    speaker: 'system',
+    text: String(text),
+    ...extra,
+  });
+}
+
+function scanDisclosurePolicy(ctx, findings, stats) {
+  for (const [evidenceId, ev] of Object.entries(ctx.policy.surfaceMap?.evidence || {})) {
+    for (const field of ['surfaceName', 'surfaceDescription']) {
+      if (!ev[field]) continue;
+      stats.policyTextFields += 1;
+      scanVisibleText(ctx, findings, {
+        caseId: ctx.caseId,
+        sourceKind: 'disclosurePolicy',
+        sourcePath: `src/data/disclosurePolicy/${ctx.caseId}.json:surfaceMap.evidence.${evidenceId}.${field}`,
+        textField: field,
+        channel: 'system_message',
+        speaker: 'system',
+        text: String(ev[field]),
+        evidenceId,
+        evidenceStage: 0,
+        surfaceText: true,
+      });
+    }
+  }
+
+  for (const entry of policyDiscoveryEntries(ctx.policy)) {
+    for (const field of ['surfaceFallback']) {
+      if (!entry.value?.[field]) continue;
+      stats.policyTextFields += 1;
+      scanVisibleText(ctx, findings, {
+        caseId: ctx.caseId,
+        sourceKind: 'disclosurePolicy',
+        sourcePath: `src/data/disclosurePolicy/${ctx.caseId}.json:discoveryText.entries.${entry.id}.${field}`,
+        textField: `discoveryText.${field}`,
+        channel: 'system_message',
+        speaker: 'system',
+        text: String(entry.value[field]),
+        evidenceId: (entry.value.inputs || []).filter((id) => /^e-/.test(id)).join('+') || undefined,
+        evidenceStage: 0,
+        surfaceText: true,
+      });
+    }
+
+    const truthTerms = entry.value?.truthLexemes || entry.value?.truthTerms || [];
+    const sourceText = entry.value?.sourceText;
+    if (sourceText && truthTerms.length > 0 && !entry.value?.gate) {
+      addFinding(findings, {
+        caseId: ctx.caseId,
+        severity: 'P1',
+        category: 'evidence_stage_truth_description_exposure',
+        detectors: ['evidence_stage_before_hidden_truth'],
+        summary: `Policy discovery sourceText contains truth terms without an explicit gate: ${entry.id}.`,
+        expected: 'Truth-bearing discovery text should declare route/evidence/truth-stage gates.',
+        actual: `truthTerms=${truthTerms.join(', ')}; text=${snippet(sourceText)}`,
+        sourceKind: 'disclosurePolicy',
+        sourcePath: `src/data/disclosurePolicy/${ctx.caseId}.json:discoveryText.entries.${entry.id}.sourceText`,
+        channel: 'player_discovered',
+        evidenceId: (entry.value.inputs || []).filter((id) => /^e-/.test(id)).join('+') || undefined,
+        patchPriority: 'P1-discovery-gate-review',
+      });
+    }
+  }
+}
+
+function scanEmergenceHooks(ctx, findings, stats) {
+  for (const [disputeId, hook] of Object.entries(ctx.emergenceHooks || {})) {
+    for (const variant of hook.variants || []) {
+      stats.emergenceVariants += 1;
+      const lieState = variant.tone === 'resignation' ? 'S5' : variant.tone === 'confession' ? 'S3' : 'S0';
+      scanVisibleText(ctx, findings, {
+        caseId: ctx.caseId,
+        sourceKind: 'emergenceHooks',
+        sourcePath: `src/data/emergenceHooks.ts:${ctx.caseId}.${disputeId}.${variant.tone}.text`,
+        textField: 'text',
+        channel: 'emergence_event',
+        speaker: hook.speaker,
+        party: hook.speaker,
+        target: hook.speaker,
+        text: variant.text,
+        disputeId,
+        lieState,
+        variantId: variant.tone,
+      });
+      scanVisibleText(ctx, findings, {
+        caseId: ctx.caseId,
+        sourceKind: 'emergenceHooks',
+        sourcePath: `src/data/emergenceHooks.ts:${ctx.caseId}.${disputeId}.${variant.tone}.behaviorHint`,
+        textField: 'behaviorHint',
+        channel: 'emergence_event',
+        speaker: hook.speaker,
+        party: hook.speaker,
+        target: hook.speaker,
+        text: variant.behaviorHint,
+        disputeId,
+        lieState,
+        variantId: variant.tone,
+        behaviorHint: true,
+      });
+    }
+  }
+}
+
+function scanResponseCoverage(ctx, findings) {
+  for (const [channel, channelData] of Object.entries(ctx.scripted.channels || {})) {
+    for (const entry of channelData.entries || []) {
+      for (const variant of entry.variants || []) {
+        if (String(variant.text || '').trim()) continue;
+        addFinding(findings, {
+          caseId: ctx.caseId,
+          severity: 'P0',
+          category: 'response_missing',
+          detectors: ['response_missing'],
+          summary: `Scripted variant text is empty in ${channel}.`,
+          expected: 'Every selected variant must render visible text.',
+          actual: `variantId=${variant.id || 'unknown'} text is empty`,
+          sourceKind: 'scriptedText',
+          sourcePath: scriptedVariantSourcePath(ctx.caseId, channel, entry.key, variant.id),
+          channel,
+          entryKey: entry.key,
+          variantId: variant.id,
+          patchPriority: 'P0-scripted-response-coverage',
+        });
+      }
+    }
+  }
+
+  for (const ev of ctx.caseData.evidence || []) {
+    const expectedKeys = (ev.investigationStages || [])
+      .map((stage) => stage.revealKey)
+      .filter(Boolean);
+    for (const key of expectedKeys) {
+      if (ev.investigationResults?.[key]) continue;
+      addFinding(findings, {
+        caseId: ctx.caseId,
+        severity: 'P0',
+        category: 'response_missing',
+        detectors: ['response_missing'],
+        summary: `Evidence investigation revealKey is missing response text: ${ev.id}.${key}.`,
+        expected: 'Every investigationStage.revealKey must resolve to investigationResults text.',
+        actual: `missing investigationResults.${key}`,
+        sourceKind: 'caseData',
+        sourcePath: `src/data/cases/generated/${ctx.caseId}.json:evidence.${ev.id}.investigationResults.${key}`,
+        channel: 'evidence_discovery',
+        evidenceId: ev.id,
+        patchPriority: 'P0-case-data-response-coverage',
+      });
+    }
+  }
+}
+
+function scanVisibleText(ctx, findings, item) {
+  const text = String(item.text || '');
+  if (!text) return;
+
+  detectTruthLexemeLeaks(ctx, findings, item, text);
+  detectEvidenceStageLeaks(ctx, findings, item, text);
+  detectLockedEvidenceNameLeaks(ctx, findings, item, text);
+  detectQaMismatchCandidates(ctx, findings, item, text);
+  detectFallbackCandidates(findings, item, text);
+  detectInternalTermLeaks(findings, item, text);
+  detectKoreanPolishCandidates(findings, item, text);
+}
+
+function detectTruthLexemeLeaks(ctx, findings, item, text) {
+  const surfaceLexemes = getSurfaceOnlyLexemes(ctx.policy, item.channel);
+  const surfaceMatches = matchLexemes(text, surfaceLexemes);
+  if (surfaceMatches.length > 0) {
+    addFinding(findings, {
+      ...findingBase(item),
+      severity: 'P0',
+      category: 'surface_only_channel_truth_leak',
+      detectors: ['truth_lexeme_early_exposure', 'surface_only_channel_truth_leak'],
+      summary: `Truth lexeme appears in surface-only channel ${item.channel}.`,
+      expected: 'Surface-only channels must use policy surface substitutes and must not reveal truth lexemes.',
+      actual: matchedActual(surfaceMatches, text),
+      matchedLexemes: surfaceMatches,
+      patchPriority: 'P0-disclosure-gate',
+    });
+  }
+
+  const speakerIsNpc = item.speaker === 'a' || item.speaker === 'b';
+  if (speakerIsNpc && isEarlyLieState(item.lieState)) {
+    const npcLexemes = getNpcBlockedLexemes(ctx.policy, item.speaker, item.lieState, ctx.caseId);
+    const npcMatches = matchLexemes(text, npcLexemes);
+    if (npcMatches.length > 0) {
+      addFinding(findings, {
+        ...findingBase(item),
+        severity: 'P0',
+        category: 'npc_truth_leak_s0_s2',
+        detectors: ['truth_lexeme_early_exposure', 's0_s2_npc_truth_leak'],
+        summary: `NPC truth lexeme appears before confession gate (${item.speaker}/${item.lieState || 'unknown'}).`,
+        expected: 'S0-S2 NPC lines should deny, hedge, or use surface substitutes without truth lexemes.',
+        actual: matchedActual(npcMatches, text),
+        matchedLexemes: npcMatches,
+        patchPriority: 'P0-disclosure-gate',
+      });
+    }
+  }
+
+  if (!surfaceMatches.length && !speakerIsNpc && isEarlyTruthContext(item)) {
+    const globalMatches = matchLexemes(text, getGlobalTruthLexemes(ctx.policy, ctx.caseId));
+    if (globalMatches.length > 0) {
+      addFinding(findings, {
+        ...findingBase(item),
+        severity: 'P0',
+        category: 'truth_lexeme_early_exposure',
+        detectors: ['truth_lexeme_early_exposure'],
+        summary: 'Truth lexeme appears before the context is allowed to reveal it.',
+        expected: 'Pre-reveal text must stay on surface-safe wording.',
+        actual: matchedActual(globalMatches, text),
+        matchedLexemes: globalMatches,
+        patchPriority: 'P0-disclosure-gate',
+      });
+    }
+  }
+}
+
+function detectEvidenceStageLeaks(ctx, findings, item, text) {
+  if (item.playerDiscovered) return;
+  const stage = item.evidenceStage;
+  if (stage === undefined || stage === null || stage >= 3) return;
+
+  const evidenceIds = splitEvidenceIds(item.evidenceId);
+  for (const evidenceId of evidenceIds) {
+    const lexemes = getEvidenceTruthLexemes(ctx, evidenceId);
+    const matches = matchLexemes(text, lexemes);
+    if (matches.length === 0) continue;
+    addFinding(findings, {
+      ...findingBase(item),
+      severity: stage <= 1 ? 'P0' : 'P1',
+      category: 'evidence_stage_truth_description_exposure',
+      detectors: ['evidence_stage_before_hidden_truth'],
+      summary: `Evidence truth text appears before deep investigation stage: ${evidenceId}.`,
+      expected: 'Stub/excerpt/request-original surfaces should not expose hidden/truth description terms.',
+      actual: `stage=${stage}; ${matchedActual(matches, text)}`,
+      matchedLexemes: matches,
+      evidenceId,
+      patchPriority: stage <= 1 ? 'P0-evidence-stage-gate' : 'P1-evidence-stage-review',
+    });
+  }
+}
+
+function detectLockedEvidenceNameLeaks(ctx, findings, item, text) {
+  for (const ev of ctx.caseData.evidence || []) {
+    if (!ev.name || ev.name === ev.surfaceName) continue;
+    if (!text.includes(ev.name)) continue;
+    if (item.sourceKind === 'caseData' && item.textField === 'name') continue;
+
+    const isSurfaceNameField = item.textField === 'surfaceName';
+    const preUnlock = item.surfaceText || SURFACE_ONLY_CHANNELS.has(item.channel) || (item.evidenceStage ?? 0) < 3 || item.lieBand === 'early' || item.lieBand === 'mid';
+    if (!isSurfaceNameField && !preUnlock) continue;
+
+    addFinding(findings, {
+      ...findingBase(item),
+      severity: 'P0',
+      category: isSurfaceNameField ? 'surface_name_violation' : 'locked_evidence_name_exposed',
+      detectors: ['locked_evidence_name_exposed', 'surfaceName_violation'],
+      summary: `Locked evidence name appears where surfaceName should be used: ${ev.id}.`,
+      expected: `Use surfaceName until unlock/deep investigation: ${ev.surfaceName || ev.id}.`,
+      actual: snippet(text),
+      evidenceId: ev.id,
+      patchPriority: 'P0-surface-name-gate',
+    });
+  }
+}
+
+function detectQaMismatchCandidates(ctx, findings, item, text) {
+  if (!item.entry || !item.variant) return;
+  const tags = item.tags || {};
+  const mismatches = [];
+  if (tags.speaker && item.entry.party && tags.speaker !== item.entry.party) mismatches.push(`speaker tag ${tags.speaker} != entry.party ${item.entry.party}`);
+  if (tags.disputeId && item.entry.disputeId && tags.disputeId !== item.entry.disputeId) mismatches.push(`disputeId tag ${tags.disputeId} != entry.disputeId ${item.entry.disputeId}`);
+  if (tags.evidenceId && item.entry.evidenceId && tags.evidenceId !== item.entry.evidenceId) mismatches.push(`evidenceId tag ${tags.evidenceId} != entry.evidenceId ${item.entry.evidenceId}`);
+  if (tags.questionType && item.entry.questionType && tags.questionType !== item.entry.questionType) mismatches.push(`questionType tag ${tags.questionType} != entry.questionType ${item.entry.questionType}`);
+  if (tags.channel && !channelTagMatches(item.channel, tags.channel)) mismatches.push(`channel tag ${tags.channel} != channel ${item.channel}`);
+
+  if (mismatches.length > 0) {
+    addFinding(findings, {
+      ...findingBase(item),
+      severity: 'P1',
+      category: 'qa_mismatch_candidate',
+      detectors: ['qa_mismatch_candidate'],
+      summary: 'Scripted entry metadata and variant tags disagree.',
+      expected: 'Entry fields, tags, and channel should point to the same Q-A context.',
+      actual: mismatches.join('; '),
+      patchPriority: 'P1-script-metadata-review',
+    });
+  }
+
+  if (!item.disputeId || item.behaviorHint) return;
+  const focus = buildFocusModel(ctx.caseData, item.disputeId);
+  if (focus.otherHit(text) && !focus.expectedHit(text)) {
+    addFinding(findings, {
+      ...findingBase(item),
+      severity: 'P1',
+      category: 'qa_mismatch_candidate',
+      detectors: ['qa_mismatch_candidate'],
+      summary: 'Response appears to focus on another dispute.',
+      expected: `Text should stay focused on ${item.disputeId} unless explicitly bridging disputes.`,
+      actual: snippet(text),
+      patchPriority: 'P1-script-focus-review',
+    });
+  }
+}
+
+function detectFallbackCandidates(findings, item, text) {
+  if (GENERIC_FALLBACK_RE.test(text) || /답변을 준비|자료가 없습니다|확인된 일만|사건에 관한 부분/.test(text)) {
+    addFinding(findings, {
+      ...findingBase(item),
+      severity: 'P2',
+      category: 'generic_fallback_candidate',
+      detectors: ['generic_fallback_candidate', 'archetype_irrelevant_fallback_candidate'],
+      summary: 'Generic fallback-like wording found.',
+      expected: 'Fallbacks should be explicit safe fallbacks or character/archetype-specific.',
+      actual: snippet(text),
+      patchPriority: 'P2-fallback-polish',
+    });
+  }
+}
+
+function detectInternalTermLeaks(findings, item, text) {
+  const internalMatches = [];
+  if (INTERNAL_LABEL_RE.test(text)) internalMatches.push('[SCRIPT/FALLBACK/LLM]');
+  if (INTERNAL_TERM_RE.test(text)) internalMatches.push('internal term');
+  const rawMatches = text.match(/\b(?:lieState|truthLexeme|evidenceId|disputeId|DossierCard|fallback|classifier|guard|policy|route|Phase)\b|(?:^|[^\w])(?:S[0-5]|d-\d+|h-d\d+|e-\d+|dc-\d+)(?:$|[^\w])/g) || [];
+  internalMatches.push(...rawMatches.map((m) => m.trim()).filter(Boolean));
+  if (internalMatches.length === 0) return;
+
+  addFinding(findings, {
+    ...findingBase(item),
+    severity: INTERNAL_LABEL_RE.test(text) ? 'P0' : 'P1',
+    category: 'internal_label_or_term_exposed',
+    detectors: ['internal_label_exposed', 'internal_term_exposed'],
+    summary: 'Internal label or implementation term appears in visible text.',
+    expected: 'Visible text should not expose labels, ids, runtime terms, or implementation terminology.',
+    actual: `matched=${unique(internalMatches).join(', ')}; text=${snippet(text)}`,
+    matchedLexemes: unique(internalMatches),
+    patchPriority: 'P1-surface-copy-hygiene',
+  });
+}
+
+function detectKoreanPolishCandidates(findings, item, text) {
+  const issues = [];
+  if (/[�]/.test(text)) issues.push('replacement-character');
+  if (/\?\?/.test(text)) issues.push('double-question-mark');
+  if (/\.\.\./.test(text)) issues.push('ascii-ellipsis');
+  if (/\s+[,.!?]/.test(text)) issues.push('space-before-punctuation');
+  if (/[A-Z]→|→[A-Z]|\b[AB]\b/.test(text)) issues.push('raw-A/B-label');
+  if (/[A-Za-z]{4,}/.test(text) && !/\b(?:SNS|CCTV|GPS|USB|AI)\b/.test(text)) issues.push('english-token-review');
+  if (text.length > 260 && /[가-힣]/.test(text) && !item.behaviorHint) issues.push('long-dialogue-line');
+  if (issues.length === 0) return;
+
+  addFinding(findings, {
+    ...findingBase(item),
+    severity: 'P2',
+    category: 'korean_polish_candidate',
+    detectors: ['korean_polish_candidate'],
+    summary: 'Korean copy polish candidate found.',
+    expected: 'Korean UI/dialogue text should avoid mojibake, raw labels, awkward punctuation, and overly long lines.',
+    actual: `issues=${issues.join(', ')}; text=${snippet(text)}`,
+    patchPriority: 'P2-korean-polish',
+  });
+}
+
+function findingBase(item) {
+  return {
+    caseId: item.caseId,
+    sourceKind: item.sourceKind,
+    sourcePath: item.sourcePath,
+    textField: item.textField,
+    channel: item.channel,
+    speaker: item.speaker,
+    target: item.target,
+    disputeId: item.disputeId,
+    evidenceId: item.evidenceId,
+    witnessId: item.witnessId,
+    lieState: item.lieState,
+    lieBand: item.lieBand,
+    evidenceStage: item.evidenceStage,
+    entryKey: item.entryKey,
+    variantId: item.variantId,
+  };
+}
+
+function addFinding(findings, finding) {
+  findings.push({
+    id: `QARG-${String(globalFindingCounter++).padStart(5, '0')}`,
+    ...finding,
+  });
+}
+
+function getSurfaceOnlyLexemes(policy, channel) {
+  return resolveLexemeRef(policy, policy.forbiddenLexemes?.surfaceOnlyChannels?.[channel] || []);
+}
+
+function getNpcBlockedLexemes(policy, party, lieState, caseId) {
+  const rules = policy.forbiddenLexemes?.nonConfessionNpcBeforeS5 || {};
+  const partyKey = party === 'a' ? 'partyA' : party === 'b' ? 'partyB' : null;
+  const direct = rules[lieState];
+  const partySpecific = partyKey ? rules[partyKey]?.[lieState] : null;
+  return unique([
+    ...resolveLexemeRef(policy, partySpecific || direct || []),
+    ...(PARAPHRASE_LABELS[caseId] || []),
+  ]);
+}
+
+function getGlobalTruthLexemes(policy, caseId) {
+  return unique([
+    ...(policy.forbiddenLexemes?.globalTruthLexemes || []),
+    ...(PARAPHRASE_LABELS[caseId] || []),
+  ]);
+}
+
+function resolveLexemeRef(policy, value) {
+  if (value === 'globalTruthLexemes') return policy.forbiddenLexemes?.globalTruthLexemes || [];
+  if (Array.isArray(value)) return value;
+  return [];
+}
+
+function getEvidenceTruthLexemes(ctx, evidenceId) {
+  if (!evidenceId) return [];
+  const fromPolicy = ctx.policy.surfaceMap?.evidence?.[evidenceId] || {};
+  const ev = findEvidence(ctx.caseData, evidenceId) || {};
+  return unique([
+    ...(fromPolicy.truthLexemes || []),
+    ...(fromPolicy.descriptionTruth || []),
+    ...(ev.descriptionTruth || []),
+    ...(ev.name && ev.name !== ev.surfaceName ? [ev.name] : []),
+  ]);
+}
+
+function isEarlyTruthContext(item) {
+  if (item.surfaceText) return true;
+  if (SURFACE_ONLY_CHANNELS.has(item.channel)) return true;
+  if (isEarlyLieState(item.lieState)) return true;
+  if (item.lieBand === 'early') return true;
+  if ((item.evidenceStage ?? 99) <= 1) return true;
+  return false;
+}
+
+function isEarlyLieState(lieState) {
+  return lieState === 'S0' || lieState === 'S1' || lieState === 'S2';
+}
+
+function normalizeEvidenceStage(stage) {
+  if (stage === undefined || stage === null || stage === '') return undefined;
+  if (typeof stage === 'number') return stage;
+  if (/^\d+$/.test(String(stage))) return Number(stage);
+  return stageForInvestigationKey(String(stage));
+}
+
+function stageForInvestigationKey(key) {
+  if (key === 'request_original') return 1;
+  if (key === 'check_metadata') return 2;
+  if (key === 'restore_context') return 3;
+  return undefined;
+}
+
+function stageForDepthPlan(id) {
+  const order = { stub: 0, excerpt: 1, original: 2, context: 3, established: 4 };
+  return order[id] ?? undefined;
+}
+
+function matchLexemes(text, lexemes) {
+  const normalized = String(text || '').replace(/\s+/g, ' ');
+  return unique((lexemes || [])
+    .filter(Boolean)
+    .map(String)
+    .filter((lexeme) => lexeme.length >= 2)
+    .filter((lexeme) => normalized.includes(lexeme)));
+}
+
+function splitEvidenceIds(value) {
+  return String(value || '')
+    .split('+')
+    .map((item) => item.trim())
+    .filter((item) => /^e-/.test(item));
+}
+
+function policyDiscoveryEntries(policy) {
+  const entries = policy.discoveryText?.entries || {};
+  if (Array.isArray(entries)) return entries.map((value, index) => ({ id: value.id || index, value }));
+  return Object.entries(entries).map(([id, value]) => ({ id, value }));
+}
+
+function channelTagMatches(channel, tagChannel) {
+  if (channel === tagChannel) return true;
+  const aliases = {
+    evidence_discovery: new Set(['evidence_discovery_sequence']),
+    trust_action: new Set(['trust_action_response']),
+  };
+  return aliases[channel]?.has(tagChannel) || false;
+}
+
+function getChannelStats(stats, channel) {
+  if (!stats.channels[channel]) stats.channels[channel] = { entries: 0, variants: 0 };
+  return stats.channels[channel];
+}
+
+function unique(values) {
+  return [...new Set((values || []).filter(Boolean))];
+}
+
+function snippet(text, max = 180) {
+  const value = String(text || '').replace(/\s+/g, ' ').trim();
+  return value.length <= max ? value : `${value.slice(0, max - 1)}…`;
+}
+
+function matchedActual(matches, text) {
+  return `matched=${matches.join(', ')}; text=${snippet(text)}`;
+}
+
+function scriptedEntrySourcePath(caseId, channel, key) {
+  return `src/data/scriptedText/${caseId}.json:channels.${channel}.entries[key=${key}]`;
+}
+
+function scriptedVariantSourcePath(caseId, channel, key, variantId) {
+  return `src/data/scriptedText/${caseId}.json:channels.${channel}.entries[key=${key}].variants[id=${variantId}]`;
+}
+
+function writeAllCasesSummary(caseResults, findings) {
+  const bySeverity = countBy(findings, 'severity');
+  const byCategory = countBy(findings, 'category');
+  const byDetector = countByDetector(findings);
+  const lines = [
+    '# 20260427 All-Cases Runtime QA Gate Summary',
+    '',
+    '## Scope',
+    '- runner: `scripts/qa-runtime-gate.cjs`',
+    '- mode: all-cases fast QA simulator, static/facsimile scan',
+    `- cases: ${caseResults.map((result) => result.caseId).join(', ')}`,
+    `- scripted variants scanned: ${caseResults.reduce((sum, result) => sum + result.stats.scriptedVariants, 0)}`,
+    `- scripted entries scanned: ${caseResults.reduce((sum, result) => sum + result.stats.scriptedEntries, 0)}`,
+    `- case data text fields scanned: ${caseResults.reduce((sum, result) => sum + result.stats.caseTextFields, 0)}`,
+    `- disclosure policy text fields scanned: ${caseResults.reduce((sum, result) => sum + result.stats.policyTextFields, 0)}`,
+    `- emergence hook variants scanned: ${caseResults.reduce((sum, result) => sum + result.stats.emergenceVariants, 0)}`,
+    '',
+    '## Constraints',
+    '- OpenAI calls: none',
+    '- browser full playthrough: none',
+    '- runtime/source patch: none',
+    '- ScriptedText/caseData mutation: none',
+    '- `src/data/emergenceHooks.ts`: read-only scan',
+    '',
+    '## Findings',
+    `- total: ${findings.length}`,
+    `- P0: ${bySeverity.P0 || 0}`,
+    `- P1: ${bySeverity.P1 || 0}`,
+    `- P2: ${bySeverity.P2 || 0}`,
+    '',
+    '## Detector Coverage',
+    `- truth lexeme early exposure: ${byDetector.truth_lexeme_early_exposure || 0}`,
+    `- surface-only channel truth leak: ${byDetector.surface_only_channel_truth_leak || 0}`,
+    `- evidenceStage-before hidden/truth description exposure: ${byDetector.evidence_stage_before_hidden_truth || 0}`,
+    `- locked evidence name / surfaceName violation: ${countFindingsByAnyDetector(findings, ['locked_evidence_name_exposed', 'surfaceName_violation'])}`,
+    `- S0-S2 NPC truth leak: ${byDetector.s0_s2_npc_truth_leak || 0}`,
+    `- response missing: ${byDetector.response_missing || 0}`,
+    `- Q-A mismatch candidate: ${byDetector.qa_mismatch_candidate || 0}`,
+    `- generic/archetype-irrelevant fallback candidate: ${countFindingsByAnyDetector(findings, ['generic_fallback_candidate', 'archetype_irrelevant_fallback_candidate'])}`,
+    `- internal label / internal term exposure: ${countFindingsByAnyDetector(findings, ['internal_label_exposed', 'internal_term_exposed'])}`,
+    `- Korean polish candidate: ${byDetector.korean_polish_candidate || 0}`,
+    '',
+    '## Category Counts',
+    ...formatCountLines(byCategory),
+    '',
+    '## Case Counts',
+    ...caseResults.map((result) => {
+      const counts = countBy(result.findings, 'severity');
+      return `- ${result.caseId}: total ${result.findings.length}, P0 ${counts.P0 || 0}, P1 ${counts.P1 || 0}, P2 ${counts.P2 || 0}`;
+    }),
+    '',
+    '## Outputs',
+    '- `tmp/qa-runtime-gate-results/findings.json`',
+    '- `tmp/qa-runtime-gate-results/20260427-all-cases-summary.md`',
+    '- `tmp/qa-runtime-gate-results/{caseId}-summary.md`',
+    '- `tmp/qa-runtime-gate-results/channel-summary.md`',
+    '- `tmp/qa-runtime-gate-results/patch-priority.md`',
+  ];
+  fs.writeFileSync(path.join(RESULT_DIR, '20260427-all-cases-summary.md'), `${lines.join('\n')}\n`, 'utf8');
+}
+
+function writeCaseSummary(result) {
+  const bySeverity = countBy(result.findings, 'severity');
+  const byCategory = countBy(result.findings, 'category');
+  const byChannel = countBy(result.findings, 'channel');
+  const lines = [
+    `# ${result.caseId} QA Runtime Gate Summary`,
+    '',
+    '## Scan Volume',
+    `- scripted entries: ${result.stats.scriptedEntries}`,
+    `- scripted variants: ${result.stats.scriptedVariants}`,
+    `- case data text fields: ${result.stats.caseTextFields}`,
+    `- disclosure policy text fields: ${result.stats.policyTextFields}`,
+    `- emergence hook variants: ${result.stats.emergenceVariants}`,
+    '',
+    '## Findings',
+    `- total: ${result.findings.length}`,
+    `- P0: ${bySeverity.P0 || 0}`,
+    `- P1: ${bySeverity.P1 || 0}`,
+    `- P2: ${bySeverity.P2 || 0}`,
+    '',
+    '## Category Counts',
+    ...formatCountLines(byCategory),
+    '',
+    '## Channel Counts',
+    ...formatCountLines(byChannel).slice(0, 20),
+    '',
+    '## Top P0 Examples',
+    ...formatFindingExamples(result.findings.filter((finding) => finding.severity === 'P0'), 12),
+  ];
+  fs.writeFileSync(path.join(RESULT_DIR, `${result.caseId}-summary.md`), `${lines.join('\n')}\n`, 'utf8');
+}
+
+function writeChannelSummary(caseResults, findings) {
+  const variantsByChannel = {};
+  for (const result of caseResults) {
+    for (const [channel, stats] of Object.entries(result.stats.channels || {})) {
+      if (!variantsByChannel[channel]) variantsByChannel[channel] = { entries: 0, variants: 0 };
+      variantsByChannel[channel].entries += stats.entries;
+      variantsByChannel[channel].variants += stats.variants;
+    }
+  }
+
+  const findingsByChannel = groupBy(findings, 'channel');
+  const lines = ['# Channel Summary', '', '| Channel | Entries | Variants | Findings | P0 | Top Categories |', '| --- | ---: | ---: | ---: | ---: | --- |'];
+  for (const channel of Object.keys({ ...variantsByChannel, ...findingsByChannel }).sort()) {
+    const channelFindings = findingsByChannel[channel] || [];
+    const categories = formatInlineCounts(countBy(channelFindings, 'category'), 3);
+    lines.push(`| ${channel || 'unknown'} | ${variantsByChannel[channel]?.entries || 0} | ${variantsByChannel[channel]?.variants || 0} | ${channelFindings.length} | ${channelFindings.filter((finding) => finding.severity === 'P0').length} | ${categories || '-'} |`);
+  }
+  fs.writeFileSync(path.join(RESULT_DIR, 'channel-summary.md'), `${lines.join('\n')}\n`, 'utf8');
+}
+
+function writePatchPrioritySummary(caseResults, findings) {
+  const byPriority = groupBy(findings, 'patchPriority');
+  const lines = ['# Patch Priority', ''];
+  for (const [priority, priorityFindings] of Object.entries(byPriority).sort(([a], [b]) => a.localeCompare(b))) {
+    const bySeverity = countBy(priorityFindings, 'severity');
+    lines.push(`## ${priority || 'unclassified'}`);
+    lines.push(`- total: ${priorityFindings.length}`);
+    lines.push(`- severity: P0 ${bySeverity.P0 || 0}, P1 ${bySeverity.P1 || 0}, P2 ${bySeverity.P2 || 0}`);
+    lines.push(`- cases: ${formatInlineCounts(countBy(priorityFindings, 'caseId'), 5)}`);
+    lines.push(`- categories: ${formatInlineCounts(countBy(priorityFindings, 'category'), 5)}`);
+    lines.push('');
+    lines.push(...formatFindingExamples(priorityFindings, 8));
+    lines.push('');
+  }
+  lines.push('## Scan Baseline');
+  for (const result of caseResults) {
+    lines.push(`- ${result.caseId}: ${result.stats.scriptedVariants} scripted variants, ${result.stats.caseTextFields} case text fields`);
+  }
+  fs.writeFileSync(path.join(RESULT_DIR, 'patch-priority.md'), `${lines.join('\n')}\n`, 'utf8');
+}
+
+function formatFindingExamples(findings, limit) {
+  if (findings.length === 0) return ['- none'];
+  return findings.slice(0, limit).map((finding) => `- ${finding.id} [${finding.severity}/${finding.category}] ${finding.summary} (${finding.sourcePath})`);
+}
+
+function formatCountLines(counts) {
+  const entries = Object.entries(counts).sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]));
+  if (entries.length === 0) return ['- none'];
+  return entries.map(([key, count]) => `- ${key || 'unknown'}: ${count}`);
+}
+
+function formatInlineCounts(counts, limit) {
+  return Object.entries(counts)
+    .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
+    .slice(0, limit)
+    .map(([key, count]) => `${key || 'unknown'} ${count}`)
+    .join(', ');
+}
+
+function countBy(values, key) {
+  const counts = {};
+  for (const value of values || []) {
+    const bucket = value?.[key] || 'unknown';
+    counts[bucket] = (counts[bucket] || 0) + 1;
+  }
+  return counts;
+}
+
+function countByDetector(findings) {
+  const counts = {};
+  for (const finding of findings || []) {
+    for (const detector of finding.detectors || []) {
+      counts[detector] = (counts[detector] || 0) + 1;
+    }
+  }
+  return counts;
+}
+
+function countFindingsByAnyDetector(findings, detectors) {
+  const wanted = new Set(detectors);
+  return (findings || []).filter((finding) => (finding.detectors || []).some((detector) => wanted.has(detector))).length;
+}
+
+function groupBy(values, key) {
+  const groups = {};
+  for (const value of values || []) {
+    const bucket = value?.[key] || 'unknown';
+    if (!groups[bucket]) groups[bucket] = [];
+    groups[bucket].push(value);
+  }
+  return groups;
 }
 
 function runRoute(manifest, route) {
