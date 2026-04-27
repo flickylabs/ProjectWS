@@ -12,8 +12,8 @@
       "e-1": {
         "evidenceId": "e-1",
         "name": "60:40 유서 사본",
-        "surfaceName": "공증 유서 사본",
-        "surfaceDescription": "어머니 사망 전 작성된 공증 유서 사본. 문면상 분배 비율과 공증 절차가 보인다.",
+        "surfaceName": "문제의 서류 사본",
+        "surfaceDescription": "어머니 사망 전 작성된 문제의 서류 사본. 문면상 분배 방식과 절차 흔적이 보인다.",
         "descriptionTruth": ["윤정후 60%", "윤태성 40%", "공증 유서"],
         "truthLexemes": ["60:40", "윤정후 60", "윤태성 40"],
         "sourceRefs": ["src/data/cases/generated/family-01.json:evidence.e-1"]
@@ -48,8 +48,8 @@
       "e-5": {
         "evidenceId": "e-5",
         "name": "어머니 서랍에서 나온 원본 유서",
-        "surfaceName": "서랍에서 나온 원본 유서",
-        "surfaceDescription": "공증본보다 앞선 날짜의 원본 유서. 공증본과 다른 비율이 보인다.",
+        "surfaceName": "유품에서 나온 문서",
+        "surfaceDescription": "날짜가 앞선 문서. 현재 확인된 서류와 다른 내용이 보인다.",
         "descriptionTruth": ["정후 90%", "태성 10%", "어머니 원래 뜻"],
         "truthLexemes": ["90:10", "90대10", "정후 90", "태성 10", "원본 유서"],
         "sourceRefs": ["src/data/cases/generated/family-01.json:evidence.e-5"]
@@ -66,7 +66,7 @@
       "e-7": {
         "evidenceId": "e-7",
         "name": "어머니 일기장 사진",
-        "surfaceName": "어머니 일기장 사진",
+        "surfaceName": "어머니 기록 사진",
         "surfaceDescription": "어머니의 오래된 기록과 유서 비율 고민이 담긴 사진 자료.",
         "descriptionTruth": ["태성의 출생 비밀", "아버지 피는 아님", "정후가 형을 지키려 함", "90대10이 드러날 위험"],
         "truthLexemes": ["출생 비밀", "배다른", "아버지 피는 아니다", "친자가 아니다", "형을 지키려", "90대10"],
@@ -319,7 +319,7 @@
       {"id": "combine-4", "inputs": ["e-6", "e-7"], "truthTerms": ["출생 비밀", "형을 지켜왔다"], "gate": {"allowedChannels": ["player_discovered"], "requiredEvidenceStages": {"e-6": "Context", "e-7": "Context"}, "requiredTruthStage": {"d-4": 3}, "autoSurfaceAllowed": false}, "surfaceFallback": "오래된 지원과 일기장 기록 사이에 숨은 이유가 보인다."},
       {"id": "combine-5", "inputs": ["stmt-b-silence", "e-4"], "truthTerms": ["자기 몫을 줄인 이유"], "gate": {"allowedChannels": ["player_discovered"], "requiredEvidenceStages": {"e-4": "Context"}, "requiredTruthStage": {"d-2": 2}, "autoSurfaceAllowed": false}, "surfaceFallback": "윤정후가 말을 피한 이유와 공증 기록이 맞물린다."},
       {"id": "combine-6", "inputs": ["stmt-b-mother", "e-6"], "truthTerms": ["20년간 윤정후가 보낸 돈"], "gate": {"allowedChannels": ["player_discovered"], "requiredEvidenceStages": {"e-6": "Original"}, "requiredTruthStage": {"d-3": 2}, "autoSurfaceAllowed": false}, "surfaceFallback": "어머니의 뜻이라는 말 뒤에 오래된 지원 흐름이 있다."},
-      {"id": "combine-7", "inputs": ["e-5", "e-7"], "truthTerms": ["출생 비밀", "90대10"], "gate": {"allowedChannels": ["player_discovered"], "requiredEvidenceStages": {"e-5": "Original", "e-7": "Context"}, "requiredTruthStage": {"d-4": 3}, "autoSurfaceAllowed": false}, "surfaceFallback": "원본 유서와 일기장 기록을 함께 보면 비율 변경의 위험이 보인다."},
+      {"id": "combine-7", "inputs": ["e-5", "e-7"], "truthTerms": ["출생 비밀", "90대10"], "gate": {"allowedChannels": ["player_discovered"], "requiredEvidenceStages": {"e-5": "Original", "e-7": "Context"}, "requiredTruthStage": {"d-4": 3}, "autoSurfaceAllowed": false}, "surfaceFallback": "유품 문서와 어머니 기록을 함께 보면 변경 과정의 위험이 보인다."},
       {"id": "combine-8", "inputs": ["e-1", "e-7"], "truthTerms": ["장남 당연시", "보호 명분"], "gate": {"allowedChannels": ["player_discovered"], "requiredEvidenceStages": {"e-1": "Context", "e-7": "Context"}, "requiredTruthStage": {"d-5": 2}, "autoSurfaceAllowed": false}, "surfaceFallback": "유서 비율과 어머니 기록을 함께 보면 두 사람의 해석이 갈린다."},
       {"id": "combine-9", "inputs": ["stmt-a-heir", "e-7"], "truthTerms": ["어머니 뜻을 자기 방식으로 바꿈"], "gate": {"allowedChannels": ["player_discovered"], "requiredEvidenceStages": {"e-7": "Context"}, "requiredTruthStage": {"d-5": 2}, "autoSurfaceAllowed": false}, "surfaceFallback": "윤태성의 상속 감정과 어머니 기록이 부딪힌다."},
       {"id": "combine-10", "inputs": ["stmt-a-heir", "e-6"], "truthTerms": ["돈과 비밀을 떠안은 동생"], "gate": {"allowedChannels": ["player_discovered"], "requiredEvidenceStages": {"e-6": "Context"}, "requiredTruthStage": {"d-3": 3}, "autoSurfaceAllowed": false}, "surfaceFallback": "상속 감정과 오래된 자금 흐름을 함께 볼 필요가 있다."},

@@ -1,49 +1,19 @@
 # Patch Priority
 
 ## P0-disclosure-gate
-- total: 98
-- severity: P0 98, P1 0, P2 0
-- cases: spouse-01 54, family-01 37, friend-01 7
-- categories: surface_only_channel_truth_leak 58, truth_lexeme_early_exposure 31, npc_truth_leak_s0_s2 9
+- total: 87
+- severity: P0 87, P1 0, P2 0
+- cases: spouse-01 48, family-01 33, friend-01 6
+- categories: surface_only_channel_truth_leak 58, truth_lexeme_early_exposure 20, npc_truth_leak_s0_s2 9
 
 - QARG-00058 [P0/npc_truth_leak_s0_s2] NPC truth lexeme appears before confession gate (b/S2). (src/data/scriptedText/spouse-01.json:channels.interrogation.entries[key=b|d-2|S2|fact_pursuit].variants[id=b-d-2-S2-fact-pursuit-v7])
 - QARG-00059 [P0/npc_truth_leak_s0_s2] NPC truth lexeme appears before confession gate (b/S2). (src/data/scriptedText/spouse-01.json:channels.interrogation.entries[key=b|d-2|S2|motive_search].variants[id=b-d-2-S2-motive-search-v7])
-- QARG-00121 [P0/surface_only_channel_truth_leak] Truth lexeme appears in surface-only channel dossier. (src/data/scriptedText/spouse-01.json:channels.dossier.entries[key=dc-1.b.q1|mid].variants[id=dc-1-b-q1-mid-v1])
-- QARG-00122 [P0/surface_only_channel_truth_leak] Truth lexeme appears in surface-only channel dossier. (src/data/scriptedText/spouse-01.json:channels.dossier.entries[key=dc-1.b.q1|mid].variants[id=dc-1-b-q1-mid-v2])
-- QARG-00123 [P0/surface_only_channel_truth_leak] Truth lexeme appears in surface-only channel dossier. (src/data/scriptedText/spouse-01.json:channels.dossier.entries[key=dc-1.b.q1|mid].variants[id=dc-1-b-q1-mid-v4])
-- QARG-00124 [P0/surface_only_channel_truth_leak] Truth lexeme appears in surface-only channel dossier. (src/data/scriptedText/spouse-01.json:channels.dossier.entries[key=dc-1.b.q1|mid].variants[id=dc-1-b-q1-mid-v8])
-- QARG-00125 [P0/surface_only_channel_truth_leak] Truth lexeme appears in surface-only channel dossier. (src/data/scriptedText/spouse-01.json:channels.dossier.entries[key=dc-1.b.q1|mid].variants[id=dc-1-b-q1-mid-v9])
-- QARG-00126 [P0/surface_only_channel_truth_leak] Truth lexeme appears in surface-only channel dossier. (src/data/scriptedText/spouse-01.json:channels.dossier.entries[key=dc-1.b.q1|mid].variants[id=dc-1-b-q1-mid-v10])
-
-## P0-evidence-stage-gate
-- total: 122
-- severity: P0 122, P1 0, P2 0
-- cases: family-01 60, friend-01 52, spouse-01 10
-- categories: evidence_stage_truth_description_exposure 122
-
-- QARG-00114 [P0/evidence_stage_truth_description_exposure] Evidence truth text appears before deep investigation stage: e-7. (src/data/scriptedText/spouse-01.json:channels.evidence_present.entries[key=a|e-7|early|request_original].variants[id=a-e-7-early-request_original-v4])
-- QARG-00587 [P0/evidence_stage_truth_description_exposure] Evidence truth text appears before deep investigation stage: e-1. (src/data/cases/generated/spouse-01.json:evidence.e-1.partyContext.b.implication)
-- QARG-00589 [P0/evidence_stage_truth_description_exposure] Evidence truth text appears before deep investigation stage: e-3. (src/data/cases/generated/spouse-01.json:evidence.e-3.partyContext.b.implication)
-- QARG-00591 [P0/evidence_stage_truth_description_exposure] Evidence truth text appears before deep investigation stage: e-4. (src/data/cases/generated/spouse-01.json:evidence.e-4.v3DepthPlan.excerpt.summary)
-- QARG-00593 [P0/evidence_stage_truth_description_exposure] Evidence truth text appears before deep investigation stage: e-4. (src/data/cases/generated/spouse-01.json:evidence.e-4.partyContext.a.implication)
-- QARG-00594 [P0/evidence_stage_truth_description_exposure] Evidence truth text appears before deep investigation stage: e-5. (src/data/cases/generated/spouse-01.json:evidence.e-5.description)
-- QARG-00595 [P0/evidence_stage_truth_description_exposure] Evidence truth text appears before deep investigation stage: e-5. (src/data/cases/generated/spouse-01.json:evidence.e-5.investigationResults.request_original)
-- QARG-00597 [P0/evidence_stage_truth_description_exposure] Evidence truth text appears before deep investigation stage: e-6. (src/data/cases/generated/spouse-01.json:evidence.e-6.partyContext.a.implication)
-
-## P0-surface-name-gate
-- total: 23
-- severity: P0 23, P1 0, P2 0
-- cases: family-01 20, friend-01 3
-- categories: locked_evidence_name_exposed 19, surface_name_violation 4
-
-- QARG-00822 [P0/locked_evidence_name_exposed] Locked evidence name appears where surfaceName should be used: e-5. (src/data/scriptedText/family-01.json:channels.evidence_present.entries[key=a|e-5|early|1].variants[id=a-e-5-early-stage1-v1])
-- QARG-00824 [P0/locked_evidence_name_exposed] Locked evidence name appears where surfaceName should be used: e-5. (src/data/scriptedText/family-01.json:channels.evidence_present.entries[key=a|e-5|early|1].variants[id=a-e-5-early-stage1-v3])
-- QARG-00826 [P0/locked_evidence_name_exposed] Locked evidence name appears where surfaceName should be used: e-5. (src/data/scriptedText/family-01.json:channels.evidence_present.entries[key=a|e-5|early|1].variants[id=a-e-5-early-stage1-v5])
-- QARG-00828 [P0/locked_evidence_name_exposed] Locked evidence name appears where surfaceName should be used: e-5. (src/data/scriptedText/family-01.json:channels.evidence_present.entries[key=a|e-5|early|1].variants[id=a-e-5-early-stage1-v8])
-- QARG-00830 [P0/locked_evidence_name_exposed] Locked evidence name appears where surfaceName should be used: e-5. (src/data/scriptedText/family-01.json:channels.evidence_present.entries[key=a|e-5|mid|1].variants[id=a-e-5-mid-stage1-v1])
-- QARG-00832 [P0/locked_evidence_name_exposed] Locked evidence name appears where surfaceName should be used: e-5. (src/data/scriptedText/family-01.json:channels.evidence_present.entries[key=a|e-5|mid|1].variants[id=a-e-5-mid-stage1-v4])
-- QARG-00834 [P0/locked_evidence_name_exposed] Locked evidence name appears where surfaceName should be used: e-5. (src/data/scriptedText/family-01.json:channels.evidence_present.entries[key=a|e-5|mid|1].variants[id=a-e-5-mid-stage1-v7])
-- QARG-00836 [P0/locked_evidence_name_exposed] Locked evidence name appears where surfaceName should be used: e-5. (src/data/scriptedText/family-01.json:channels.evidence_present.entries[key=a|e-5|mid|1].variants[id=a-e-5-mid-stage1-v10])
+- QARG-00120 [P0/surface_only_channel_truth_leak] Truth lexeme appears in surface-only channel dossier. (src/data/scriptedText/spouse-01.json:channels.dossier.entries[key=dc-1.b.q1|mid].variants[id=dc-1-b-q1-mid-v1])
+- QARG-00121 [P0/surface_only_channel_truth_leak] Truth lexeme appears in surface-only channel dossier. (src/data/scriptedText/spouse-01.json:channels.dossier.entries[key=dc-1.b.q1|mid].variants[id=dc-1-b-q1-mid-v2])
+- QARG-00122 [P0/surface_only_channel_truth_leak] Truth lexeme appears in surface-only channel dossier. (src/data/scriptedText/spouse-01.json:channels.dossier.entries[key=dc-1.b.q1|mid].variants[id=dc-1-b-q1-mid-v4])
+- QARG-00123 [P0/surface_only_channel_truth_leak] Truth lexeme appears in surface-only channel dossier. (src/data/scriptedText/spouse-01.json:channels.dossier.entries[key=dc-1.b.q1|mid].variants[id=dc-1-b-q1-mid-v8])
+- QARG-00124 [P0/surface_only_channel_truth_leak] Truth lexeme appears in surface-only channel dossier. (src/data/scriptedText/spouse-01.json:channels.dossier.entries[key=dc-1.b.q1|mid].variants[id=dc-1-b-q1-mid-v9])
+- QARG-00125 [P0/surface_only_channel_truth_leak] Truth lexeme appears in surface-only channel dossier. (src/data/scriptedText/spouse-01.json:channels.dossier.entries[key=dc-1.b.q1|mid].variants[id=dc-1-b-q1-mid-v10])
 
 ## P1-evidence-stage-review
 - total: 62
@@ -81,14 +51,14 @@
 - cases: family-01 12, friend-01 12, spouse-01 12
 - categories: qa_mismatch_candidate 36
 
-- QARG-00166 [P1/qa_mismatch_candidate] Scripted entry metadata and variant tags disagree. (src/data/scriptedText/spouse-01.json:channels.evidence_discovery.entries[key=b|e-1|probe].variants[id=discover-b-e-1-probe-v1])
-- QARG-00167 [P1/qa_mismatch_candidate] Scripted entry metadata and variant tags disagree. (src/data/scriptedText/spouse-01.json:channels.evidence_discovery.entries[key=b|e-1|probe].variants[id=discover-b-e-1-probe-v1].behaviorHint)
-- QARG-00168 [P1/qa_mismatch_candidate] Scripted entry metadata and variant tags disagree. (src/data/scriptedText/spouse-01.json:channels.evidence_discovery.entries[key=b|e-1|capture].variants[id=discover-b-e-1-capture-v1])
-- QARG-00169 [P1/qa_mismatch_candidate] Scripted entry metadata and variant tags disagree. (src/data/scriptedText/spouse-01.json:channels.evidence_discovery.entries[key=b|e-1|capture].variants[id=discover-b-e-1-capture-v1].behaviorHint)
-- QARG-00170 [P1/qa_mismatch_candidate] Scripted entry metadata and variant tags disagree. (src/data/scriptedText/spouse-01.json:channels.evidence_discovery.entries[key=b|e-3|probe].variants[id=discover-b-e-3-probe-v1])
-- QARG-00171 [P1/qa_mismatch_candidate] Scripted entry metadata and variant tags disagree. (src/data/scriptedText/spouse-01.json:channels.evidence_discovery.entries[key=b|e-3|probe].variants[id=discover-b-e-3-probe-v1].behaviorHint)
-- QARG-00172 [P1/qa_mismatch_candidate] Scripted entry metadata and variant tags disagree. (src/data/scriptedText/spouse-01.json:channels.evidence_discovery.entries[key=b|e-3|capture].variants[id=discover-b-e-3-capture-v1])
-- QARG-00173 [P1/qa_mismatch_candidate] Scripted entry metadata and variant tags disagree. (src/data/scriptedText/spouse-01.json:channels.evidence_discovery.entries[key=b|e-3|capture].variants[id=discover-b-e-3-capture-v1].behaviorHint)
+- QARG-00165 [P1/qa_mismatch_candidate] Scripted entry metadata and variant tags disagree. (src/data/scriptedText/spouse-01.json:channels.evidence_discovery.entries[key=b|e-1|probe].variants[id=discover-b-e-1-probe-v1])
+- QARG-00166 [P1/qa_mismatch_candidate] Scripted entry metadata and variant tags disagree. (src/data/scriptedText/spouse-01.json:channels.evidence_discovery.entries[key=b|e-1|probe].variants[id=discover-b-e-1-probe-v1].behaviorHint)
+- QARG-00167 [P1/qa_mismatch_candidate] Scripted entry metadata and variant tags disagree. (src/data/scriptedText/spouse-01.json:channels.evidence_discovery.entries[key=b|e-1|capture].variants[id=discover-b-e-1-capture-v1])
+- QARG-00168 [P1/qa_mismatch_candidate] Scripted entry metadata and variant tags disagree. (src/data/scriptedText/spouse-01.json:channels.evidence_discovery.entries[key=b|e-1|capture].variants[id=discover-b-e-1-capture-v1].behaviorHint)
+- QARG-00169 [P1/qa_mismatch_candidate] Scripted entry metadata and variant tags disagree. (src/data/scriptedText/spouse-01.json:channels.evidence_discovery.entries[key=b|e-3|probe].variants[id=discover-b-e-3-probe-v1])
+- QARG-00170 [P1/qa_mismatch_candidate] Scripted entry metadata and variant tags disagree. (src/data/scriptedText/spouse-01.json:channels.evidence_discovery.entries[key=b|e-3|probe].variants[id=discover-b-e-3-probe-v1].behaviorHint)
+- QARG-00171 [P1/qa_mismatch_candidate] Scripted entry metadata and variant tags disagree. (src/data/scriptedText/spouse-01.json:channels.evidence_discovery.entries[key=b|e-3|capture].variants[id=discover-b-e-3-capture-v1])
+- QARG-00172 [P1/qa_mismatch_candidate] Scripted entry metadata and variant tags disagree. (src/data/scriptedText/spouse-01.json:channels.evidence_discovery.entries[key=b|e-3|capture].variants[id=discover-b-e-3-capture-v1].behaviorHint)
 
 ## P1-surface-copy-hygiene
 - total: 128
@@ -96,14 +66,14 @@
 - cases: spouse-01 121, friend-01 6, family-01 1
 - categories: internal_label_or_term_exposed 128
 
-- QARG-00179 [P1/internal_label_or_term_exposed] Internal label or implementation term appears in visible text. (src/data/scriptedText/spouse-01.json:channels.mediation.entries[key=fact_first|b].variants[id=mediation-fact_first-b-v5].behaviorHint)
-- QARG-00261 [P1/internal_label_or_term_exposed] Internal label or implementation term appears in visible text. (src/data/scriptedText/spouse-01.json:channels.judge_evidence_combo.entries[key=dc-1.b.q1|soft].variants[id=judgecombo-dc-1-b-q1-soft-v1].behaviorHint)
-- QARG-00264 [P1/internal_label_or_term_exposed] Internal label or implementation term appears in visible text. (src/data/scriptedText/spouse-01.json:channels.judge_evidence_combo.entries[key=dc-1.b.q1|soft].variants[id=judgecombo-dc-1-b-q1-soft-v2].behaviorHint)
-- QARG-00267 [P1/internal_label_or_term_exposed] Internal label or implementation term appears in visible text. (src/data/scriptedText/spouse-01.json:channels.judge_evidence_combo.entries[key=dc-1.b.q1|soft].variants[id=judgecombo-dc-1-b-q1-soft-v3].behaviorHint)
-- QARG-00270 [P1/internal_label_or_term_exposed] Internal label or implementation term appears in visible text. (src/data/scriptedText/spouse-01.json:channels.judge_evidence_combo.entries[key=dc-1.b.q1|soft].variants[id=judgecombo-dc-1-b-q1-soft-v4].behaviorHint)
-- QARG-00273 [P1/internal_label_or_term_exposed] Internal label or implementation term appears in visible text. (src/data/scriptedText/spouse-01.json:channels.judge_evidence_combo.entries[key=dc-1.b.q1|soft].variants[id=judgecombo-dc-1-b-q1-soft-v5].behaviorHint)
-- QARG-00276 [P1/internal_label_or_term_exposed] Internal label or implementation term appears in visible text. (src/data/scriptedText/spouse-01.json:channels.judge_evidence_combo.entries[key=dc-1.b.q1|mid].variants[id=judgecombo-dc-1-b-q1-mid-v1].behaviorHint)
-- QARG-00279 [P1/internal_label_or_term_exposed] Internal label or implementation term appears in visible text. (src/data/scriptedText/spouse-01.json:channels.judge_evidence_combo.entries[key=dc-1.b.q1|mid].variants[id=judgecombo-dc-1-b-q1-mid-v2].behaviorHint)
+- QARG-00178 [P1/internal_label_or_term_exposed] Internal label or implementation term appears in visible text. (src/data/scriptedText/spouse-01.json:channels.mediation.entries[key=fact_first|b].variants[id=mediation-fact_first-b-v5].behaviorHint)
+- QARG-00260 [P1/internal_label_or_term_exposed] Internal label or implementation term appears in visible text. (src/data/scriptedText/spouse-01.json:channels.judge_evidence_combo.entries[key=dc-1.b.q1|soft].variants[id=judgecombo-dc-1-b-q1-soft-v1].behaviorHint)
+- QARG-00263 [P1/internal_label_or_term_exposed] Internal label or implementation term appears in visible text. (src/data/scriptedText/spouse-01.json:channels.judge_evidence_combo.entries[key=dc-1.b.q1|soft].variants[id=judgecombo-dc-1-b-q1-soft-v2].behaviorHint)
+- QARG-00266 [P1/internal_label_or_term_exposed] Internal label or implementation term appears in visible text. (src/data/scriptedText/spouse-01.json:channels.judge_evidence_combo.entries[key=dc-1.b.q1|soft].variants[id=judgecombo-dc-1-b-q1-soft-v3].behaviorHint)
+- QARG-00269 [P1/internal_label_or_term_exposed] Internal label or implementation term appears in visible text. (src/data/scriptedText/spouse-01.json:channels.judge_evidence_combo.entries[key=dc-1.b.q1|soft].variants[id=judgecombo-dc-1-b-q1-soft-v4].behaviorHint)
+- QARG-00272 [P1/internal_label_or_term_exposed] Internal label or implementation term appears in visible text. (src/data/scriptedText/spouse-01.json:channels.judge_evidence_combo.entries[key=dc-1.b.q1|soft].variants[id=judgecombo-dc-1-b-q1-soft-v5].behaviorHint)
+- QARG-00275 [P1/internal_label_or_term_exposed] Internal label or implementation term appears in visible text. (src/data/scriptedText/spouse-01.json:channels.judge_evidence_combo.entries[key=dc-1.b.q1|mid].variants[id=judgecombo-dc-1-b-q1-mid-v1].behaviorHint)
+- QARG-00278 [P1/internal_label_or_term_exposed] Internal label or implementation term appears in visible text. (src/data/scriptedText/spouse-01.json:channels.judge_evidence_combo.entries[key=dc-1.b.q1|mid].variants[id=judgecombo-dc-1-b-q1-mid-v2].behaviorHint)
 
 ## P2-fallback-polish
 - total: 82
@@ -121,10 +91,10 @@
 - QARG-00074 [P2/generic_fallback_candidate] Generic fallback-like wording found. (src/data/scriptedText/spouse-01.json:channels.interrogation.entries[key=b|h-d4|S1|motive_search].variants[id=b-h-d4-S1-motive-search-v2])
 
 ## P2-korean-polish
-- total: 541
-- severity: P0 0, P1 0, P2 541
-- cases: friend-01 351, spouse-01 135, family-01 55
-- categories: korean_polish_candidate 541
+- total: 540
+- severity: P0 0, P1 0, P2 540
+- cases: friend-01 351, spouse-01 135, family-01 54
+- categories: korean_polish_candidate 540
 
 - QARG-00083 [P2/korean_polish_candidate] Korean copy polish candidate found. (src/data/scriptedText/spouse-01.json:channels.evidence_present.entries[key=b|e-1|early|self].variants[id=b-e-1-early-self-v1])
 - QARG-00085 [P2/korean_polish_candidate] Korean copy polish candidate found. (src/data/scriptedText/spouse-01.json:channels.evidence_present.entries[key=a|e-1|mid|other].variants[id=a-e-1-mid-other-v1])

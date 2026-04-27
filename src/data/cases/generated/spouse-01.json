@@ -478,7 +478,7 @@
         },
         "b": {
           "questionAngle": "이 영수증의 물품들은 누구를 위해 구매한 것인지 설명해 주십시오.",
-          "implication": "참고서가 조카 돌봄의 결정적 단서가 된다."
+          "implication": "참고서가 해당 방문의 성격을 가르는 결정적 단서가 된다."
         }
       },
       "v3DepthPlan": [
@@ -2064,7 +2064,7 @@
         },
         "b": {
           "questionAngle": "이 통화 상대가 누구인지, 왜 새벽에 전화했는지 설명해 주십시오.",
-          "implication": "형과의 긴급 연락이었다."
+          "implication": "같은 번호와 반복 통화였다."
         }
       },
       "v3DepthPlan": [
@@ -2737,7 +2737,7 @@
       "partyContext": {
         "a": {
           "questionAngle": "이 문자를 처음 보십니까? 어떤 의미라고 생각하십니까?",
-          "implication": "돌봄 관계의 직접 증거이다."
+          "implication": "방문 목적을 직접 가리키는 증거이다."
         },
         "b": {
           "questionAngle": "이 문자가 형에게 온 것이 맞다면 왜 숨겼습니까?",
@@ -2772,7 +2772,7 @@
         {
           "id": "excerpt",
           "label": "Excerpt",
-          "summary": "돌봄 관련 메시지 일부 보임"
+          "summary": "해당 방문과 관련된 메시지 일부 보임"
         },
         {
           "id": "original",
@@ -3150,7 +3150,7 @@
       "id": "e-5",
       "name": "이준호의 개인 계좌 출금 내역",
       "surfaceName": "개인 계좌 출금 내역",
-      "description": "이준호 본인 명의 개인 비자금 계좌에서 2,000만원 현금 출금 기록. 공동 적금과는 별개.",
+      "description": "이준호 본인 명의 개인 계좌에서 목돈이 현금으로 출금된 기록. 공동 적금과는 별개.",
       "surfaceDescription": "대규모 출금 기록이 있다.",
       "type": "bank",
       "reliability": "hard",
@@ -3166,7 +3166,7 @@
       ],
       "requiredLieState": "S2",
       "investigationResults": {
-        "request_original": "이준호 명의 개인 계좌의 비자금에서 2,000만원이 현금으로 출금된 기록이다.",
+        "request_original": "이준호 명의 개인 계좌의 별도 자금에서 목돈이 현금으로 출금된 기록이다.",
         "check_metadata": "출금 시점은 4개월 전이며, 오피스텔 방문 시작 시점과 일치한다. 해당 계좌는 이준호 단독 명의.",
         "restore_context": "형에게 현금으로 전달하기 위한 출금이었다. 형은 개인회생 중이라 계좌 입금이 불가능했다. 공동 적금과는 무관한 이준호 개인 자금이다."
       },
@@ -3439,7 +3439,7 @@
       "partyContext": {
         "a": {
           "questionAngle": "이 송금 기록에 대해 설명해 주십시오.",
-          "implication": "투자 사기 피해 경위가 드러난다."
+          "implication": "해당 거래로 손해가 난 경위가 드러난다."
         },
         "b": {
           "questionAngle": "이 기록을 처음 보십니까? 아내가 이런 일을 한 것을 알고 있었습니까?",
@@ -3604,7 +3604,7 @@
       "id": "e-7",
       "name": "공동 적금 해지 서류",
       "surfaceName": "공동 적금 해지 서류",
-      "description": "위임장 + 해지 기록. A의 위임장 조작 증거.",
+      "description": "서류와 해지 기록. A의 서류 처리 경위를 가리키는 증거.",
       "surfaceDescription": "공동 적금 해지 서류가 존재한다.",
       "type": "contract",
       "reliability": "hard",
@@ -3661,7 +3661,7 @@
       "partyContext": {
         "a": {
           "questionAngle": "이 위임장의 서명에 대해 설명해 주십시오.",
-          "implication": "위임장 조작 범죄 사실이 드러난다."
+          "implication": "서류 처리와 그 법적 책임이 드러난다."
         },
         "b": {
           "questionAngle": "이 서류를 보신 적이 있습니까? 해지에 동의한 적이 있습니까?",

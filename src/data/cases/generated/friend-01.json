@@ -506,7 +506,7 @@
         },
         "b": {
           "questionAngle": "왜 이렇게까지 연락했는지 설명해 주십시오.",
-          "implication": "경고 의도를 밝힐 기회를 준다."
+          "implication": "연락 의도를 설명할 기회를 준다."
         }
       },
       "v3DepthPlan": [
@@ -1068,7 +1068,7 @@
       "partyContext": {
         "a": {
           "questionAngle": "이 글을 올린 이유를 설명해 주십시오.",
-          "implication": "확인 없이 공개한 경위를 추궁한다."
+          "implication": "사전 확인을 거치지 않고 공개한 경위를 추궁한다."
         },
         "b": {
           "questionAngle": "이 단톡방 내용을 봤을 때 어떤 기분이었습니까?",
@@ -1409,7 +1409,7 @@
       "id": "e-3",
       "name": "과거 손절 직전 카톡",
       "surfaceName": "과거 카톡",
-      "description": "B가 '돈 문제는 내가 알아서 정리할게'라고만 남기고 설명을 피했고, A는 '넌 돈만 엮이면 사람이 달라진다'고 답한 기록.",
+      "description": "B가 그 일은 자신이 정리하겠다는 말만 남기고 설명을 피했고, A는 그 일에 얽히면 사람이 달라진다는 취지로 답한 기록.",
       "surfaceDescription": "과거 손절 직전의 카카오톡 대화 기록이 존재한다.",
       "type": "chat",
       "reliability": "hard",
@@ -1422,7 +1422,7 @@
       "isTrap": false,
       "requires": [],
       "investigationResults": {
-        "request_original": "B가 '돈 문제는 내가 알아서 정리할게'라고만 남겼고, A는 '넌 돈만 엮이면 사람이 달라진다'고 답했다.",
+        "request_original": "B가 그 일은 자신이 정리하겠다는 말만 남겼고, A는 그 일에 얽히면 사람이 달라진다는 취지로 답했다.",
         "check_metadata": "이 대화 직후 두 사람은 연락이 끊겼고 약 2년간 만나지 않았다.",
         "restore_context": "B가 숨긴 '돈 문제'의 실체가 A 아버지의 사기였다는 맥락이 빠져 있다."
       },
@@ -1465,7 +1465,7 @@
           "implication": "A가 확인 없이 단정한 패턴을 드러낸다."
         },
         "b": {
-          "questionAngle": "왜 '돈 문제'의 실체를 끝까지 말하지 않았습니까?",
+          "questionAngle": "왜 그 일의 실체를 끝까지 말하지 않았습니까?",
           "implication": "B의 침묵 동기를 확인한다."
         }
       },
@@ -1478,7 +1478,7 @@
         {
           "id": "excerpt",
           "label": "Excerpt",
-          "summary": "'돈 문제'와 '사람이 달라진다' 발언만 보임"
+          "summary": "'그 일'과 '사람이 달라진다' 발언만 보임"
         },
         {
           "id": "original",
@@ -1816,7 +1816,7 @@
       "id": "e-4",
       "name": "예비신랑의 선넘는 메시지와 B의 거절 답장",
       "surfaceName": "예비신랑 메시지",
-      "description": "예비신랑이 '다은이 몰래 커피 한 번 보자', '너 같은 스타일이 원래 내 이상형' 같은 메시지를 보냈고, B는 '친구 남자친구니까 이러지 마'라고 끊어낸 기록.",
+      "description": "예비신랑과 B 사이에 사적인 표현이 오간 메시지 기록. 접근 방향과 대응 방식은 추가 확인이 필요하다.",
       "surfaceDescription": "예비신랑과 최수민 씨 사이의 메시지 기록이 존재한다.",
       "type": "chat",
       "reliability": "hard",
@@ -2171,7 +2171,7 @@
       "id": "e-5",
       "name": "송다은 아버지와 예비신랑의 문자",
       "surfaceName": "송다은 씨 아버지 문자",
-      "description": "A 아버지가 '결혼 전에 잠깐만 도와주면 금방 돌려준다', '사위 될 사람이면 이 정도는 믿어야지'라며 돈 얘기를 꺼낸 기록. B가 연락하던 시기와 격침.",
+      "description": "A 아버지와 예비신랑 사이에 자금 관련 표현이 오간 기록. B가 연락하던 시기와 겹친다.",
       "surfaceDescription": "송다은 씨 아버지와 예비신랑 사이의 문자 기록이 존재한다.",
       "type": "chat",
       "reliability": "hard",
@@ -2603,7 +2603,7 @@
       "partyContext": {
         "a": {
           "questionAngle": "아버지가 B에게 돈을 빌린 적이 있다는 사실을 알고 있었습니까?",
-          "implication": "A가 아버지의 사기를 몰랐음을 확인한다."
+          "implication": "A가 아버지의 과거 자금 문제를 몰랐음을 확인한다."
         },
         "b": {
           "questionAngle": "왜 이 사실을 A에게 끝까지 숨겼습니까?",

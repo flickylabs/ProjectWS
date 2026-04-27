@@ -453,7 +453,7 @@
     {
       "id": "e-1",
       "name": "60:40 유서 사본",
-      "surfaceName": "60:40 유서 사본",
+      "surfaceName": "분배 비율이 적힌 서류 사본",
       "description": "어머니 사망 두 달 전 작성된 유서 사본. B 60%, A 40%로 적혀 있고 공증 도장이 찍혀 있다.",
       "surfaceDescription": "어머니의 유서 사본이 존재한다.",
       "type": "contract",
@@ -524,7 +524,7 @@
         {
           "id": "excerpt",
           "label": "Excerpt",
-          "summary": "60:40 상속 비율과 두 상속인 역할이 보인다."
+          "summary": "정해진 비율과 두 상속인 역할이 보인다."
         },
         {
           "id": "original",
@@ -894,7 +894,7 @@
       "partyContext": {
         "a": {
           "questionAngle": "동생의 방문이 왜 유서 개입 의심으로 이어졌는지 설명해 주십시오.",
-          "implication": "A는 공증 전 집중 방문을 어머니 압박의 단서로 본다."
+          "implication": "A는 서류 절차 전 잦은 방문을 어머니 압박의 단서로 본다."
         },
         "b": {
           "questionAngle": "그 시기에 어머니를 자주 찾아간 이유를 설명해 주십시오.",
@@ -1676,11 +1676,11 @@
       "partyContext": {
         "a": {
           "questionAngle": "이 스캔 기록을 보면 동생이 유서를 손댔다고 볼 수 있는지 설명해 주십시오.",
-          "implication": "A의 조작 주장은 물증을 얻지만 조작 방향이 예상과 다르다."
+          "implication": "A의 서류 변경 주장은 물증을 얻지만 변경 방향이 예상과 다르다."
         },
         "b": {
           "questionAngle": "왜 서류를 가져갔다가 다른 비율로 다시 냈는지 설명해 주십시오.",
-          "implication": "B는 조작 사실과 자기 몫 축소라는 동기를 분리해 답해야 한다."
+          "implication": "B는 서류 변경 사실과 자기에게 불리한 방향이라는 동기를 분리해 답해야 한다."
         }
       },
       "v3DepthPlan": [
@@ -1988,9 +1988,9 @@
     {
       "id": "e-5",
       "name": "어머니 서랍에서 나온 원본 유서",
-      "surfaceName": "어머니 서랍 원본 유서",
-      "description": "날짜는 더 앞서 있지만 내용은 정후 90 / 태성 10. 어머니가 원래 B에게 훨씬 많이 남기려 했다는 사실이 드러난다.",
-      "surfaceDescription": "어머니 서랍에서 발견된 원본 유서가 존재한다.",
+      "surfaceName": "어머니 유품 문서",
+      "description": "날짜는 더 앞서 있지만 현재 문서와 다른 내용이 남아 있다. 차이가 생긴 경위는 추가 확인이 필요하다.",
+      "surfaceDescription": "어머니 유품에서 발견된 문서가 존재한다.",
       "type": "contract",
       "reliability": "hard",
       "completeness": "original",
@@ -2357,8 +2357,8 @@
     {
       "id": "e-6",
       "name": "20년 송금 내역 묶음",
-      "surfaceName": "20년 송금 내역",
-      "description": "B가 어머니 통장으로 매달 생활비를 보낸 내역, 그리고 A가 공장 부도로 주저앉을 뻔한 해에 같은 통장에서 A 쪽으로 큰돈이 나간 기록이 함께 묶여 있다. 어머니 돈처럼 보였던 돈의 상당수가 사실 B 돈이었다.",
+      "surfaceName": "오래된 계좌 흐름",
+      "description": "어머니 통장과 A 쪽 자금 흐름이 함께 묶인 기록. 겉으로 보이는 출처와 실제 흐름이 다를 수 있음을 시사한다.",
       "surfaceDescription": "20년간의 송금 기록 묶음이 존재한다.",
       "type": "bank",
       "reliability": "hard",
@@ -2385,7 +2385,7 @@
           "stage": 1,
           "revealKey": "request_original",
           "question": {
-            "text": "20년 송금 내역의 계좌 원본을 확인해 주십시오.",
+            "text": "오래된 계좌 흐름의 원본을 확인해 주십시오.",
             "attackVector": "authenticity"
           },
           "label": "내역확인",
@@ -2756,8 +2756,8 @@
       "id": "e-7",
       "name": "어머니 일기장 사진",
       "surfaceName": "어머니 일기장",
-      "description": "'태성이도 내 배로 낳았지만 네 아버지 피는 아니다', '정후가 그 사실을 알고도 형 지켜주겠다 했다', '90대 10대로 남기면 태성이 끝까지 파고들 것 같아 무섭다'는 기록이 남아 있다.",
-      "surfaceDescription": "어머니 일기장 사진이 존재한다.",
+      "description": "어머니가 남긴 사적인 기록에는 가족 사정과 상속 판단을 다시 보게 만드는 민감한 내용이 담겨 있다.",
+      "surfaceDescription": "어머니 기록 사진이 존재한다.",
       "type": "device",
       "reliability": "hard",
       "completeness": "original",
