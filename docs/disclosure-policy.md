@@ -548,4 +548,75 @@ Tier 2 wrapper에서 `issueProgression` ↔ ScriptedText interrogation entries �
 
 ---
 
-**상태**: Tier 1 초안 작성 완료. Codex 검토 + JSON 정책 작성 대기.
+## 13. Audit 검출 패턴 (출시 전 P0 — Script Polish Audit 결과 영역)
+
+2026-04-27 Script Polish Audit (`tmp/qa-script-polish-audit-results/`)에서 검출된 P0 14건 / P1 7건 / P2 4건 영역의 정책 영역 정합 보강. 이 영역은 향후 audit / Patch 의뢰서 / Tier 2 wrapper 영역에서 검출 영역 본질.
+
+### 13.1 위반 패턴 1 — Surface-only Judge 채널 진실어 노출 (P0 본질)
+
+**위반 영역**: §2.1 surface-only 채널 (`judge_question` / `judge_contradiction` / `judge_evidence_combo` / `judge_witness_summon` / `system_message` / `dossier`(안내))에서 NPC 자백 전 진실 lexeme 직접 노출.
+
+**검출 대상 채널**: §2.1 표 영역 6 채널.
+
+**검출 lexeme 영역**:
+- spouse-01: §4.1 globalTruthLexemes + paraphrase set + uiSurfaceMap surface 영역 위반
+- family-01: §4.2 globalTruthLexemes + paraphrase set 영역 위반 (특히 `자기 몫을 줄`, `공장 자금`, `20년 동안 매달 보낸` 영역)
+- friend-01: §4.3 globalTruthLexemes + paraphrase set 영역 위반 (특히 `예비신랑이 먼저`, `아버지 사기`, `같은 패턴 반복` 영역)
+
+**검출 정규식** (Patch 의뢰서 영역 입력):
+```
+case별 §4 globalTruthLexemes + paraphrase set 영역에서 channel = surface-only 영역의 variant text grep
+```
+
+**예외 영역**: NPC 자백 (lieState ≥ S5) / `aftermath` / `emotional_overload` (S4+) — §3.3 매트릭스 정합.
+
+**처리 영역**:
+- Patch 의뢰서 (Codex-Dev 영역) — variant text 보정 + 9차원 의미 정확성 보존 (`memory/feedback_revision_meaning_over_form.md` 정합)
+- baseline anchor 영역 (`baseline-pre-policy-v1` / `v2`) 회귀 검증 후 새 anchor 생성 영역
+
+### 13.2 위반 패턴 2 — Early / Gated Evidence Response 선공개 (P0 본질)
+
+**위반 영역**: §2.3 player-discovered 채널 (`evidence_discovery` / `discoveryText`)에서 evidenceStage gating 미준수 — stage 0 / 1 영역에서 stage 2 진실 영역 노출.
+
+**위반 변형**:
+- (a) `evidenceStage = 0` 영역에서 surfaceName 외 진실 영역 description 노출
+- (b) `evidenceStage = 1` 영역에서 stage 2 deepInvestigated 진실 영역 노출
+- (c) `unlocked: false` 영역에서 evidence 직접 명시
+- (d) NPC 자백보다 먼저 stage 2 진실 영역 노출
+
+**검출 대상**: §3.2 evidenceStage 정합 표 영역.
+
+**검출 정규식 / 키워드** (Patch 의뢰서 영역 입력):
+- 각 사건의 evidence (e-1 ~ e-7) `name` (진실 호칭) vs `surfaceName` (허용) 영역 변별
+- ScriptedText `evidence_*` 영역 entry text + investigationStage 영역 정합 검사
+
+**예외 영역**: §2.3 "stage 2 진실 영역 일부 노출은 플레이어가 deep investigation으로 도달했을 때만 허용" / NPC 자백 후 영역.
+
+**처리 영역**:
+- Patch 의뢰서 (Codex-Dev 영역) — variant text + investigationStage 정합 보정
+- `discoveryText.gate` JSON 영역 사전 명시 (Codex JSON 정책 영역)
+
+### 13.3 향후 자동 검출 (Tier 2 wrapper 영역)
+
+위 두 패턴은 정적 검출 영역으로 Tier 2 wrapper에 추가 영역 본질 (`memory/feedback_static_analysis_limit.md` 정합 — D2 Evidence Unlock 영역 포함):
+
+```bash
+npm run check:policy   # surface-only 채널 진실어 grep + evidenceStage gating 검사
+npm run check:all      # 8 layer + policy + Markdown-JSON sync
+```
+
+검출 결과:
+- hard issue (출시 차단 영역) — 위반 0건 필수
+- warning (출시 후 영역) — baseline-known 영역
+
+---
+
+## 14. 메타
+
+**버전 관리**:
+- v1 (Tier 1 초안 — spouse-01 본문 / family·friend 구조만)
+- **v1.1 (현재 — 2026-04-27 Script Polish Audit 결과 영역 §13 보강)**
+- v2 (예정 — family-01 본문 추가)
+- v3 (예정 — friend-01 본문 추가)
+
+**상태**: Tier 1 초안 + §13 Audit 검출 패턴 영역 보강 완료. Codex 검토 + JSON 정책 작성 + Patch 의뢰서 영역 (Route Simulator 결과 통합 후) 대기.
