@@ -3651,7 +3651,7 @@
           "stage": 3,
           "revealKey": "restore_context",
           "question": {
-            "text": "위임장 조작은 범죄입니다. 이에 대해 어떻게 생각하십니까?",
+            "text": "그 서류 처리는 중대한 법적 책임이 따릅니다. 이에 대해 어떻게 생각하십니까?",
             "attackVector": "responsibility"
           },
           "label": "책임추궁",

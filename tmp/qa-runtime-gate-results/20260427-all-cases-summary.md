@@ -18,37 +18,34 @@
 - `src/data/emergenceHooks.ts`: read-only scan
 
 ## Findings
-- total: 1757
-- P0: 87
+- total: 1669
+- P0: 0
 - P1: 1048
-- P2: 622
+- P2: 621
 
 ## Detector Coverage
-- truth lexeme early exposure: 87
-- surface-only channel truth leak: 58
-- evidenceStage-before hidden/truth description exposure: 62
+- truth lexeme early exposure: 0
+- surface-only channel truth leak: 0
+- evidenceStage-before hidden/truth description exposure: 61
 - locked evidence name / surfaceName violation: 0
-- S0-S2 NPC truth leak: 9
+- S0-S2 NPC truth leak: 0
 - response missing: 0
-- Q-A mismatch candidate: 858
+- Q-A mismatch candidate: 859
 - generic/archetype-irrelevant fallback candidate: 82
 - internal label / internal term exposure: 128
-- Korean polish candidate: 540
+- Korean polish candidate: 539
 
 ## Category Counts
-- qa_mismatch_candidate: 858
-- korean_polish_candidate: 540
+- qa_mismatch_candidate: 859
+- korean_polish_candidate: 539
 - internal_label_or_term_exposed: 128
 - generic_fallback_candidate: 82
-- evidence_stage_truth_description_exposure: 62
-- surface_only_channel_truth_leak: 58
-- truth_lexeme_early_exposure: 20
-- npc_truth_leak_s0_s2: 9
+- evidence_stage_truth_description_exposure: 61
 
 ## Case Counts
-- spouse-01: total 594, P0 48, P1 389, P2 157
-- family-01: total 404, P0 33, P1 272, P2 99
-- friend-01: total 759, P0 6, P1 387, P2 366
+- spouse-01: total 547, P0 0, P1 390, P2 157
+- family-01: total 370, P0 0, P1 272, P2 98
+- friend-01: total 752, P0 0, P1 386, P2 366
 
 ## Outputs
 - `tmp/qa-runtime-gate-results/findings.json`

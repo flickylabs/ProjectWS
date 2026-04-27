@@ -81,7 +81,7 @@ stateDelta:
 action: `{"type":"dossier","target":"b","dossierId":"dc-3","questionId":"dc-3.b.q1"}`
 
 - b [dossier/scripted] src/data/scriptedText/spouse-01.json:channels.dossier.entries[key=dc-3.b.q1|mid].variants[id=dc-3-b-q1-mid-v1]
-  형네가 당장 버티기 어려워 보여서 공동 적금을 먼저 깼습니다. 아내에게 말하지 않은 건 제 잘못입니다.
+  그 댁이 당장 버티기 어려워 보여서 공동 적금을 먼저 깼습니다. 아내에게 말하지 않은 건 제 잘못입니다.
 
 ## 3. contradiction_pursuit
 

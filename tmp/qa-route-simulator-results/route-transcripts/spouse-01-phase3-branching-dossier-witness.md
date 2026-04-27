@@ -35,7 +35,7 @@ stateDelta:
 action: `{"type":"dossier","target":"b","dossierId":"dc-1","questionId":"dc-1.b.q1"}`
 
 - b [dossier/scripted] src/data/scriptedText/spouse-01.json:channels.dossier.entries[key=dc-1.b.q1|mid].variants[id=dc-1-b-q1-mid-v1]
-  형네 사정이 걸려 있었습니다. 조카가 혼자 있는 날이 많았고, 제가 그걸 외면하지 못했습니다.
+  그 댁 사정이 걸려 있었습니다. 친척 아이가 혼자 있는 날이 많았고, 제가 그걸 외면하지 못했습니다.
 
 ## 3. witness_summon
 

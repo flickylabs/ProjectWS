@@ -782,7 +782,7 @@
           },
           "autoSurfaceAllowed": false
         },
-        "surfaceFallback": "이준호가 말한 가족 사정과 문자 내용이 같은 맥락을 가리킵니다."
+        "surfaceFallback": "이준호가 말한 그 사정과 문자 내용이 같은 맥락을 가리킵니다."
       },
       "combine-7": {
         "sourceText": "\"가족 쪽 일\"이라는 말과 \"제 몫을 지키려 했다\"는 말을 나란히 놓으면, 서로에게 먼저 말하지 않은 이유가 겹친다.",

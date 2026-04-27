@@ -2583,7 +2583,7 @@
           "stage": 2,
           "revealKey": "check_metadata",
           "question": {
-            "text": "상환 약속과 미상환 흐름을 대조해 주십시오.",
+            "text": "상환 약속과 갚지 못한 흐름을 대조해 주십시오.",
             "attackVector": "context"
           },
           "label": "상환대조",

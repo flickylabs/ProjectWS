@@ -1619,7 +1619,7 @@
       "id": "e-4",
       "name": "공증사무실 스캔 보관본",
       "surfaceName": "공증사무실 스캔 보관본",
-      "description": "같은 날 같은 문서가 두 번 스캔돼 있는데, 앞 스캔본은 정후 90 / 태성 10, 뒤 스캔본은 정후 60 / 태성 40으로 바뀌어 있고 마지막으로 서류를 다시 낸 사람이 B로 기록돼 있다.",
+      "description": "같은 날 같은 문서가 두 번 스캔돼 있는데, 앞 스캔본은 한쪽에 매우 유리한 비율, 뒤 스캔본은 지금 알려진 비율로 바뀌어 있고 마지막으로 서류를 다시 낸 사람이 B로 기록돼 있다.",
       "surfaceDescription": "공증사무실의 스캔 보관본이 존재한다.",
       "type": "log",
       "reliability": "hard",
@@ -2050,7 +2050,7 @@
         },
         "b": {
           "questionAngle": "이 원본이 있는데 왜 공증본의 비율을 낮췄는지 설명해 주십시오.",
-          "implication": "B가 자기 몫을 줄인 이유가 사건의 방향을 바꾼다."
+          "implication": "B가 자기에게 불리한 방향으로 바꾼 이유가 사건의 방향을 바꾼다."
         }
       },
       "v3DepthPlan": [
@@ -2375,7 +2375,7 @@
       ],
       "requiredLieState": "S2",
       "investigationResults": {
-        "request_original": "B가 어머니 통장으로 매달 생활비를 보낸 장기 송금 기록이다.",
+        "request_original": "어머니 통장에 반복적으로 들어온 생활비 관련 송금 기록이다.",
         "check_metadata": "A의 공장 부도 시점에 B의 특별 입금과 어머니 통장에서 A 쪽으로 나간 큰돈이 맞물린다.",
         "restore_context": "A가 어머니 돈으로 알았던 지원금의 상당 부분은 B가 먼저 넣은 돈이었다."
       },
@@ -2395,7 +2395,7 @@
           "stage": 2,
           "revealKey": "check_metadata",
           "question": {
-            "text": "특별 입금과 공장 자금 출금을 대조해 주십시오.",
+            "text": "특별 입금과 사업 자금 출금을 대조해 주십시오.",
             "attackVector": "context"
           },
           "label": "흐름대조",
