@@ -1,0 +1,68 @@
+[
+  {
+    "id": "QARG-0001",
+    "caseId": "spouse-01",
+    "routeId": "phase2-fact-repeat-b-d1-e4-present",
+    "action": {
+      "type": "evidence_present",
+      "target": "b",
+      "evidenceId": "e-4"
+    },
+    "target": "b",
+    "disputeId": "d-1",
+    "evidenceId": "e-4",
+    "severity": "P0",
+    "category": "truth_lexeme_early_exposure",
+    "summary": "Forbidden truth lexeme exposed in evidence_present.",
+    "expected": "No truth lexeme before allowed lieState/evidenceStage/channel gate.",
+    "actual": "matched=형; text=형한테 온 문자 맞습니다.",
+    "resolverPath": "scripted",
+    "sourcePath": "src/data/scriptedText/spouse-01.json:channels.evidence_present.entries[key=b|e-4|early|self].variants[id=b-e-4-early-self-v1]",
+    "patchPriority": "P0-disclosure-gate",
+    "localIndex": 1
+  },
+  {
+    "id": "QARG-0002",
+    "caseId": "spouse-01",
+    "routeId": "phase2-discovery-e4-cascade",
+    "action": {
+      "type": "evidence_present",
+      "target": "b",
+      "evidenceId": "e-4"
+    },
+    "target": "b",
+    "disputeId": "d-1",
+    "evidenceId": "e-4",
+    "severity": "P0",
+    "category": "truth_lexeme_early_exposure",
+    "summary": "Forbidden truth lexeme exposed in evidence_present.",
+    "expected": "No truth lexeme before allowed lieState/evidenceStage/channel gate.",
+    "actual": "matched=형; text=형한테 온 문자 맞습니다.",
+    "resolverPath": "scripted",
+    "sourcePath": "src/data/scriptedText/spouse-01.json:channels.evidence_present.entries[key=b|e-4|early|self].variants[id=b-e-4-early-self-v1]",
+    "patchPriority": "P0-disclosure-gate",
+    "localIndex": 1
+  },
+  {
+    "id": "QARG-0003",
+    "caseId": "spouse-01",
+    "routeId": "phase2-investigate-gap-and-emergence-hook",
+    "action": {
+      "type": "evidence_investigate",
+      "target": "b",
+      "evidenceId": "e-1",
+      "subAction": "request_original"
+    },
+    "target": "b",
+    "evidenceId": "e-1",
+    "severity": "P0",
+    "category": "response_missing",
+    "summary": "evidence_investigate produced no NPC response and no explicit safe fallback.",
+    "expected": "At least one NPC/witness response or an explicit safe fallback after the action.",
+    "actual": "1 visible outputs; speakers=system",
+    "resolverPath": "runtime_system",
+    "sourcePath": "src/data/cases/generated/spouse-01.json:evidence.e-1.investigationResults.request_original",
+    "patchPriority": "P0-runtime-response-coverage",
+    "localIndex": 1
+  }
+]

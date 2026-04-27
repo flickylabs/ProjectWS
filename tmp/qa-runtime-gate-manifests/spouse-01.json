@@ -1,0 +1,111 @@
+{
+  "schemaVersion": 1,
+  "caseId": "spouse-01",
+  "phase": "A-spike",
+  "routes": [
+    {
+      "routeId": "phase2-fact-repeat-b-d1-e4-present",
+      "description": "Spike route for B d-1 fact_pursuit repetition, e-4 unlock, and early e-4 presentation response.",
+      "actions": [
+        {
+          "type": "judge_question",
+          "target": "b",
+          "disputeId": "d-1",
+          "questionType": "fact_pursuit"
+        },
+        {
+          "type": "judge_question",
+          "target": "b",
+          "disputeId": "d-1",
+          "questionType": "fact_pursuit"
+        },
+        {
+          "type": "evidence_present",
+          "target": "b",
+          "evidenceId": "e-3"
+        },
+        {
+          "type": "evidence_present",
+          "target": "b",
+          "evidenceId": "e-4"
+        }
+      ]
+    },
+    {
+      "routeId": "phase2-discovery-e4-cascade",
+      "description": "Spike route for scripted evidence discovery cascade into e-4 and immediate presentation.",
+      "initial": {
+        "lieStates": {
+          "b": {
+            "d-1": "S1"
+          }
+        },
+        "evidenceStates": {
+          "e-3": {
+            "unlocked": true,
+            "presented": true,
+            "presentedTo": [
+              "b"
+            ],
+            "stage": 1
+          }
+        }
+      },
+      "actions": [
+        {
+          "type": "discovery_event",
+          "target": "b",
+          "evidenceId": "e-4"
+        },
+        {
+          "type": "evidence_present",
+          "target": "b",
+          "evidenceId": "e-4"
+        }
+      ]
+    },
+    {
+      "routeId": "phase2-investigate-gap-and-emergence-hook",
+      "description": "Spike route for evidence_investigate response coverage and authored emergence hook path.",
+      "initial": {
+        "lieStates": {
+          "b": {
+            "d-1": "S2",
+            "d-2": "S2"
+          }
+        }
+      },
+      "actions": [
+        {
+          "type": "evidence_investigate",
+          "target": "b",
+          "evidenceId": "e-1",
+          "subAction": "request_original"
+        },
+        {
+          "type": "emergence_event",
+          "disputeId": "d-2",
+          "via": "runtime_spike"
+        },
+        {
+          "type": "contradiction_pursuit",
+          "target": "b",
+          "disputeId": "d-1"
+        },
+        {
+          "type": "free_interrogation",
+          "target": "b",
+          "disputeId": "d-1",
+          "rawText": "오늘 점심은 무엇을 먹었습니까?",
+          "intent": "unmapped",
+          "surfaceDelta": {
+            "observation": 0,
+            "notebook": 0,
+            "statementNote": 0,
+            "vfx": 0
+          }
+        }
+      ]
+    }
+  ]
+}
