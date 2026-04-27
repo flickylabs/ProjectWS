@@ -9,7 +9,7 @@
  */
 
 import { useState, useMemo } from 'react'
-import type { PartyId, LieState } from '../../types'
+import type { EvidenceNode, PartyId, LieState } from '../../types'
 import { useStore } from '../../store/useGameStore'
 import {
   getDossierCards,
@@ -41,6 +41,41 @@ export function markDossierCombinationUsed(cardId: string, questionId: string) {
   usedCombinations.add(`${cardId}:${questionId}`)
 }
 
+const DOSSIER_SURFACE_LABELS: Record<string, Record<string, string>> = {
+  'spouse-01': {
+    'dc-1': '방문 동선 카드',
+    'dc-2': '숨긴 사정 카드',
+    'dc-3': '공동 적금 권한 카드',
+    'dc-4': '개인 계좌 이동 카드',
+    'dc-5': '숨김과 금전 이동 순서 카드',
+  },
+  'family-01': {
+    'dc-1': '말년의 종이',
+    'dc-2': '유서 변경 방향',
+    'dc-3': '장기 지원 흐름',
+    'dc-4': '민감한 가족 사정',
+    'dc-5': '어머니의 뜻',
+  },
+  'friend-01': {
+    'dc-1': '반복 연락의 겉면',
+    'dc-2': '선후관계 확인',
+    'dc-3': '반복된 부탁 흐름',
+    'dc-4': '과거 손절의 빈칸',
+    'dc-5': '공개 발언의 순서',
+  },
+}
+
+function getEvidenceDisplay(evidence: EvidenceNode, state?: { deepInvestigated?: boolean }) {
+  return {
+    name: state?.deepInvestigated ? evidence.name : (evidence.surfaceName ?? evidence.name),
+    description: state?.deepInvestigated ? evidence.description : (evidence.surfaceDescription ?? evidence.description),
+  }
+}
+
+function getDossierSurfaceLabel(caseKey: string, card: { id: string; name: string }) {
+  return DOSSIER_SURFACE_LABELS[caseKey]?.[card.id] ?? card.name
+}
+
 export default function DossierHint({ target, caseKey, hasDossierCards, onAutoExecute, disabled, usageVersion = 0, showcaseStep = 0 }: Props) {
   const [popupOpen, setPopupOpen] = useState(false)
 
@@ -61,6 +96,7 @@ export default function DossierHint({ target, caseKey, hasDossierCards, onAutoEx
 
   // 증거 정의 (카드별 증거 이름 표시용)
   const evidenceDefs = useStore(s => s.evidenceDefinitions)
+  const evidenceStates = useStore(s => s.evidenceStates)
 
   // 현재 타겟에 대해 사용 가능한 첫 번째 카드+질문 찾기
   const match = useMemo(() => {
@@ -88,11 +124,12 @@ export default function DossierHint({ target, caseKey, hasDossierCards, onAutoEx
   if (!match || !target) return null
 
   const { card, question } = match
+  const dossierLabel = getDossierSurfaceLabel(caseKey, card)
 
   const evidenceLabel = card.evidenceIds
     .map(id => {
       const ev = evidenceDefs.find(e => e.id === id)
-      return ev ? ev.name : `e${id.replace('e-', '')}`
+      return ev ? getEvidenceDisplay(ev, evidenceStates[id]).name : `e${id.replace('e-', '')}`
     })
     .join(' + ')
 
@@ -123,7 +160,7 @@ export default function DossierHint({ target, caseKey, hasDossierCards, onAutoEx
             <div className="flex items-start gap-2">
               <Emoji char="📋" size={16} />
               <div className="flex-1 min-w-0">
-                <div className="text-xs font-semibold text-amber-400">{card.name}</div>
+                <div className="text-xs font-semibold text-amber-400">{dossierLabel}</div>
                 <div className="text-[10px] text-gray-500 mt-0.5 line-clamp-2">{card.description}</div>
               </div>
             </div>

@@ -14,6 +14,13 @@ const SUB_ACTIONS: { key: string; label: string; icon: string }[] = [
   { key: 'question_acquisition', label: '취득 경위', icon: '❓' },
 ]
 
+function getEvidenceDisplay(evidence: EvidenceNode, state?: { deepInvestigated?: boolean }) {
+  return {
+    name: state?.deepInvestigated ? evidence.name : (evidence.surfaceName ?? evidence.name),
+    description: state?.deepInvestigated ? evidence.description : (evidence.surfaceDescription ?? evidence.description),
+  }
+}
+
 export default function EvidenceBoard() {
   const evidenceStates = useStore((s) => s.evidenceStates)
   const evidenceDefinitions = useStore((s) => s.evidenceDefinitions)
@@ -45,6 +52,7 @@ export default function EvidenceBoard() {
 
       {unlocked.map((ev) => {
         const state = evidenceStates[ev.id]
+        const evidenceDisplay = getEvidenceDisplay(ev, state)
         const isExpanded = expandedId === ev.id
         return (
           <div key={ev.id} className="border border-gray-700 rounded-lg bg-gray-800/40 overflow-hidden">
@@ -57,7 +65,7 @@ export default function EvidenceBoard() {
                 <span className={`text-xs px-1 py-0.5 rounded ${ev.reliability === 'hard' ? 'bg-emerald-900/40 text-emerald-400' : 'bg-yellow-900/40 text-yellow-400'}`}>
                   {ev.reliability === 'hard' ? 'H' : 'S'}
                 </span>
-                <span className="text-xs text-gray-200 truncate">{ev.name}</span>
+                <span className="text-xs text-gray-200 truncate">{evidenceDisplay.name}</span>
                 {state?.presented && <Emoji char="✓" size={10} />}
               </div>
               <span className="text-gray-600 text-xs">{isExpanded ? '▲' : '▼'}</span>
@@ -65,7 +73,7 @@ export default function EvidenceBoard() {
 
             {isExpanded && (
               <div className="px-2.5 pb-2 space-y-2 border-t border-gray-800">
-                <p className="text-xs text-gray-400 mt-1.5">{ev.description}</p>
+                <p className="text-xs text-gray-400 mt-1.5">{evidenceDisplay.description}</p>
                 <div className="flex flex-wrap gap-1 text-xs">
                   {ev.legitimacy !== 'lawful' && (
                     <span className="text-orange-400"><Emoji char="⚠" size={12} /> {ev.legitimacy === 'privacy_concern' ? '사생활 침해' : '위법'}</span>

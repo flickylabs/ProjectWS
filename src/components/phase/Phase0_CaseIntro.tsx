@@ -6,6 +6,7 @@ import { isLLMMode } from '../../hooks/useActionDispatch'
 import { generatePhase2Dialogues } from '../../engine/llmPhaseDialogue'
 import { loadPhase2Script } from '../../data/dialogues/phaseScriptLoader'
 import { stopBgm } from '../../engine/soundEngine'
+import { getArchetypeLabel } from '../../utils/archetypeLabel'
 import Emoji from '../common/Emoji'
 
 type Step = 'parties' | 'context' | 'disputes' | 'history' | 'ready'
@@ -345,13 +346,6 @@ function getRelationLabel(type: string) {
   const map: Record<string, string> = {
     spouse: '부부', neighbor: '이웃', boss_employee: '직장', partnership: '동업',
     family: '가족', tenant_landlord: '세입자-집주인', friend: '친구',
-  }
-  return map[type] ?? type
-}
-
-function getArchetypeLabel(type: string) {
-  const map: Record<string, string> = {
-    avoidant: '회피형', confrontational: '정면돌파형', victim_cosplay: '피해자형', cold_logic: '냉정논리형',
   }
   return map[type] ?? type
 }

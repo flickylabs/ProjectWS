@@ -27,6 +27,13 @@ const SUB_ACTION_LABELS: Record<string, string> = {
   question_acquisition: '취득 경위',
 }
 
+function getEvidenceDisplay(evidence: EvidenceNode, state?: { deepInvestigated?: boolean }) {
+  return {
+    name: state?.deepInvestigated ? evidence.name : (evidence.surfaceName ?? evidence.name),
+    description: state?.deepInvestigated ? evidence.description : (evidence.surfaceDescription ?? evidence.description),
+  }
+}
+
 export default function EvidenceAppraisalModal({ evidenceId, onClose }: Props) {
   const { caseData, evidenceStates, submitAppraisal, turnCount } = useStore((s) => s)
   const [verdict, setVerdict] = useState<AppraisalVerdict | null>(null)
@@ -37,6 +44,7 @@ export default function EvidenceAppraisalModal({ evidenceId, onClose }: Props) {
   const evidence = caseData.evidence.find((e) => e.id === evidenceId)
   const state = evidenceStates[evidenceId]
   if (!evidence || !state) return null
+  const evidenceDisplay = getEvidenceDisplay(evidence, state)
 
   // 조사 완료된 항목만 감별 대상
   const investigatedActions = state.investigatedActions
@@ -72,8 +80,8 @@ export default function EvidenceAppraisalModal({ evidenceId, onClose }: Props) {
         {/* 증거 정보 */}
         <div className="px-5 pt-4 pb-2">
           <div className="text-xs text-gray-500 mb-1">증거</div>
-          <div className="text-sm font-medium text-gray-200">{evidence.name}</div>
-          <div className="text-xs text-gray-500 mt-1">{evidence.description}</div>
+          <div className="text-sm font-medium text-gray-200">{evidenceDisplay.name}</div>
+          <div className="text-xs text-gray-500 mt-1">{evidenceDisplay.description}</div>
         </div>
 
         {/* 조사 결과 목록 */}

@@ -6,6 +6,7 @@ import SettingsPanel from './SettingsPanel'
 import Emoji from '../common/Emoji'
 import { checkConnection } from '../../engine/llmClient'
 import { MAX_TURNS } from '../../utils/constants'
+import { getArchetypeLabel } from '../../utils/archetypeLabel'
 import { StateTransitionToast } from '../discovery/StateTransitionFeedback'
 const GameEventModal = lazy(() => import('../discovery/GameEventModal'))
 const PerkChoiceModal = lazy(() => import('../discovery/PerkChoiceModal'))
@@ -475,7 +476,7 @@ function PartyPopupBridge({ party, initialTab, onClose }: { party: 'a' | 'b'; in
       {tab === 'info' && (
         <div className="space-y-1.5 text-xs text-gray-400">
           <div className="py-1.5 border-b border-gray-800/40">
-            <span className="text-gray-300 font-semibold">성격:</span> {({avoidant:'회피형',confrontational:'정면돌파형',victim_cosplay:'피해자형',cold_logic:'냉정논리형'} as Record<string,string>)[profile.archetype] ?? profile.archetype}
+            <span className="text-gray-300 font-semibold">성격:</span> {getArchetypeLabel(profile.archetype)}
           </div>
           <div className="py-1.5 border-b border-gray-800/40">
             <span className="text-gray-300 font-semibold">말투:</span> {profile.speechStyle}

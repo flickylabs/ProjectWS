@@ -37,6 +37,34 @@ interface DisputeCardData {
   isHidden: boolean
 }
 
+const DISPUTE_SURFACE_LABELS: Record<string, Record<string, string>> = {
+  'spouse-01': {
+    'd-1': '방문 이유와 통화 맥락',
+    'd-2': '개인 계좌 출금의 사용처',
+    'h-d3': '공동 적금 해지 경위',
+    'h-d4': '무엇을 먼저 숨겼는지',
+  },
+  'family-01': {
+    'd-1': '말년 유서 작성 경위와 개입 정도',
+    'd-2': '유서 비율 변경의 방향과 동기',
+    'd-3': '장기 지원금의 실제 출처',
+    'd-4': '오래된 가족 사정과 침묵의 이유',
+    'd-5': '누가 어머니의 뜻을 왜곡했는지',
+  },
+  'friend-01': {
+    'd-1': '반복 연락의 목적과 방식',
+    'd-2': '예비신랑과 최수민 사이의 선후관계',
+    'd-3': '아버지의 현재 부탁과 과거 유사성',
+    'd-4': '과거 손절의 진짜 원인',
+    'd-5': '단톡방 발언의 확인 여부와 확산 책임',
+  },
+}
+
+function getDisputeSurfaceLabel(caseData: CaseData, disputeId: string, fallback: string) {
+  const caseKey = normalizeCaseKey(caseData)
+  return DISPUTE_SURFACE_LABELS[caseKey]?.[disputeId] ?? fallback
+}
+
 export default function DisputeBoard({ onClose, onSelectDispute }: {
   onClose: () => void
   onSelectDispute?: (disputeId: string, party: PartyId) => void
@@ -287,15 +315,18 @@ function DisputeCard({
             <div className="mb-2">
               <span className="text-[10px] text-gray-500 block mb-1">관련 증거</span>
               <div className="flex flex-wrap gap-1">
-                {relatedEvidence.map(e => (
-                  <span key={e.id} className={`text-[10px] px-1.5 py-0.5 rounded border ${
-                    e.reliability === 'hard'
-                      ? 'border-amber-600/40 text-amber-400/80 bg-amber-950/20'
-                      : 'border-gray-700/40 text-gray-400/80 bg-gray-900/40'
-                  }`}>
-                    {e.name.slice(0, 12)}{e.name.length > 12 ? '…' : ''}
-                  </span>
-                ))}
+                {relatedEvidence.map(e => {
+                  const label = e.surfaceName ?? e.id
+                  return (
+                    <span key={e.id} className={`text-[10px] px-1.5 py-0.5 rounded border ${
+                      e.reliability === 'hard'
+                        ? 'border-amber-600/40 text-amber-400/80 bg-amber-950/20'
+                        : 'border-gray-700/40 text-gray-400/80 bg-gray-900/40'
+                    }`}>
+                      {label.slice(0, 12)}{label.length > 12 ? '…' : ''}
+                    </span>
+                  )
+                })}
               </div>
             </div>
           )}
@@ -391,9 +422,10 @@ function buildCards(
     else if (maxRank >= 2) status = 'cracked'
     else if (maxRank >= 1) status = 'contested'
 
-    // 양측 주장 요약 (Board용 압축 — publicClaim 첫 번째 항목 또는 truthDescription)
-    const aClaim = d.truthDescription ? `${d.name}에 대해 해명 중` : d.name
-    const bClaim = d.truthDescription ? `${d.name}에 대해 반박 중` : d.name
+    // 양측 주장 요약 (Board용 압축 — surface label만 사용)
+    const displayName = getDisputeSurfaceLabel(caseData, d.id, d.name)
+    const aClaim = d.truthDescription ? `${displayName}에 대해 해명 중` : displayName
+    const bClaim = d.truthDescription ? `${displayName}에 대해 반박 중` : displayName
 
     // 증거 수
     const related = caseData.evidence.filter(e => e.proves.includes(d.id))
@@ -402,7 +434,7 @@ function buildCards(
 
     return {
       disputeId: d.id,
-      name: d.name,
+      name: displayName,
       status,
       aState,
       bState,

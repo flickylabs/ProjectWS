@@ -1209,7 +1209,6 @@ function getNodeDisplayLabel(
     const srcId = node.sourceRef ?? node.linkedEvidenceIds?.[0] ?? node.id
     const ev = caseData?.evidence.find((e) => e.id === srcId)
     if (ev?.surfaceName) return ev.surfaceName
-    if (ev?.name) return ev.name
     return node.label.replace(/^[a-z]+-\d+\s+/i, '').replace(/^note:/, '')
   }
   if (node.type === 'statement') {

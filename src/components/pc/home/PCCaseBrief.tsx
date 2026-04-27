@@ -6,12 +6,7 @@ import { stopBgm } from '../../../engine/soundEngine'
 import PCSvgIcon from '../icons/PCSvgIcon'
 import PCCharacterPortrait from '../icons/PCCharacterPortrait'
 import { getPcFaceSymbolId, getPcEvidenceSymbolId } from '../icons/pcIconUtils'
-
-const ARCHETYPE_LABELS: Record<string, string> = {
-  avoidant: '회피형', confrontational: '정면돌파형',
-  victim_cosplay: '피해자형', cold_logic: '냉정논리형',
-  affect_flattening: '감정억제형', premature_summary: '조기결론형',
-}
+import { getArchetypeLabel } from '../../../utils/archetypeLabel'
 
 const RELATION_LABELS: Record<string, string> = {
   spouse: '부부', neighbor: '이웃', boss_employee: '직장', partnership: '동업',
@@ -93,7 +88,7 @@ export default function PCCaseBrief() {
               <div className="pc-brief__party-text is-right">
                 <span className="pc-brief__party-name is-a">{duo.partyA.name}</span>
                 <span className="pc-brief__party-meta">{duo.partyA.age}세 · {duo.partyA.occupation}</span>
-                <span className="pc-brief__party-trait">{ARCHETYPE_LABELS[duo.partyA.archetype] ?? ''}</span>
+                <span className="pc-brief__party-trait">{getArchetypeLabel(duo.partyA.archetype)}</span>
               </div>
               <div className="pc-brief__party-face is-a">
                 <PCCharacterPortrait
@@ -125,7 +120,7 @@ export default function PCCaseBrief() {
               <div className="pc-brief__party-text is-left">
                 <span className="pc-brief__party-name is-b">{duo.partyB.name}</span>
                 <span className="pc-brief__party-meta">{duo.partyB.age}세 · {duo.partyB.occupation}</span>
-                <span className="pc-brief__party-trait">{ARCHETYPE_LABELS[duo.partyB.archetype] ?? ''}</span>
+                <span className="pc-brief__party-trait">{getArchetypeLabel(duo.partyB.archetype)}</span>
               </div>
             </div>
           </section>

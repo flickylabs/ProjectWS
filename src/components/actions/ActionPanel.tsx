@@ -1,5 +1,5 @@
 import React, { useState, useRef, useCallback, useEffect } from 'react'
-import type { PartyId, QuestionType, TrustActionType, SkillType } from '../../types'
+import type { EvidenceNode, PartyId, QuestionType, TrustActionType, SkillType } from '../../types'
 import { GamePhase, Phase } from '../../types'
 import { useGameStore, useStore } from '../../store/useGameStore'
 import { useActionDispatch, isLLMMode, setNextConfidential, setNextEvasionReading, setSkipNextJudgeQuestion, setDossierQuestionOverride } from '../../hooks/useActionDispatch'
@@ -22,6 +22,41 @@ import { showGuideCutscene } from '../common/guideCutscene'
 import Emoji from '../common/Emoji'
 
 type ActionTab = 'question' | 'evidence' | 'skill' | null
+
+const DOSSIER_SURFACE_LABELS: Record<string, Record<string, string>> = {
+  'spouse-01': {
+    'dc-1': '방문 동선 카드',
+    'dc-2': '숨긴 사정 카드',
+    'dc-3': '공동 적금 권한 카드',
+    'dc-4': '개인 계좌 이동 카드',
+    'dc-5': '숨김과 금전 이동 순서 카드',
+  },
+  'family-01': {
+    'dc-1': '말년의 종이',
+    'dc-2': '유서 변경 방향',
+    'dc-3': '장기 지원 흐름',
+    'dc-4': '민감한 가족 사정',
+    'dc-5': '어머니의 뜻',
+  },
+  'friend-01': {
+    'dc-1': '반복 연락의 겉면',
+    'dc-2': '선후관계 확인',
+    'dc-3': '반복된 부탁 흐름',
+    'dc-4': '과거 손절의 빈칸',
+    'dc-5': '공개 발언의 순서',
+  },
+}
+
+function getEvidenceDisplay(evidence: EvidenceNode, state?: { deepInvestigated?: boolean }) {
+  return {
+    name: state?.deepInvestigated ? evidence.name : (evidence.surfaceName ?? evidence.name),
+    description: state?.deepInvestigated ? evidence.description : (evidence.surfaceDescription ?? evidence.description),
+  }
+}
+
+function getDossierSurfaceLabel(caseKey: string, card: { id: string; name: string }) {
+  return DOSSIER_SURFACE_LABELS[caseKey]?.[card.id] ?? card.name
+}
 
 const EMOTION_EMOJI: Record<string, string> = { defensive: '😐', confident: '😤', shaken: '😰', angry: '😡', resigned: '😞' }
 
@@ -252,13 +287,15 @@ export default function ActionPanel() {
     const s = useGameStore.getState()
     const evDef = s.evidenceDefinitions.find(e => e.id === evidenceId)
     if (!evDef) return
+    const evState = s.evidenceStates[evidenceId]
+    const evDisplay = getEvidenceDisplay(evDef, evState)
 
     // 1. 증거 상태만 업데이트 (LLM 호출 없이)
     s.presentEvidence(evidenceId, target)
     const disputeNames = evDef.proves.map(dId => s.caseData?.disputes.find(d => d.id === dId)?.name ?? dId).join(', ')
     s.addDialogue({
       speaker: 'system',
-      text: `📋 증거 제시: ${evDef.name} [${evDef.reliability === 'hard' ? 'Hard' : 'Soft'}] → "${disputeNames}"`,
+      text: `📋 증거 제시: ${evDisplay.name} [${evDef.reliability === 'hard' ? 'Hard' : 'Soft'}] → "${disputeNames}"`,
       relatedDisputes: evDef.proves,
       turn: s.turnCount,
     })
@@ -270,12 +307,12 @@ export default function ActionPanel() {
     s.changeEmotion(target, evDef.reliability === 'hard' ? 15 : 8)
 
     // 3. 유저의 대질 질문을 자유질문으로 처리 (LLM 1회만, 증거 맥락 포함)
-    const prefixedQuestion = `[증거 "${evDef.name}"] ${question}`
+    const prefixedQuestion = `[증거 "${evDisplay.name}"] ${question}`
     s.addDialogue({ speaker: 'judge', text: question, relatedDisputes: evDef.proves, turn: s.turnCount })
 
     const evCtx = {
-      name: evDef.name,
-      description: evDef.description,
+      name: evDisplay.name,
+      description: evDisplay.description,
       subjectParty: evDef.subjectParty,
       provenance: evDef.provenance,
       reliability: evDef.reliability,
@@ -336,11 +373,12 @@ export default function ActionPanel() {
       if (found) { question = found; break }
     }
     if (!question) { setAutoSequenceActive(false); return }
+    const dossierLabel = getDossierSurfaceLabel(caseKey, card)
 
     // 1. 시스템 연출 메시지
     s.addDialogue({
       speaker: 'system',
-      text: `📋 증거 카드 발동 중... [${card.name}]`,
+      text: `📋 증거 카드 발동 중... [${dossierLabel}]`,
       relatedDisputes: card.relatedDisputes,
       turn: s.turnCount,
     })
@@ -390,13 +428,15 @@ export default function ActionPanel() {
     if (disputeId) {
       const evidenceDetails = card.evidenceIds.map(evId => {
         const ev = s.evidenceDefinitions.find(e => e.id === evId)
-        return ev ? `[${ev.name}] ${ev.description}` : ''
+        if (!ev) return ''
+        const display = getEvidenceDisplay(ev, s.evidenceStates[evId])
+        return `[${display.name}] ${display.description}`
       }).filter(Boolean).join('\n')
 
       const dossierContext = {
         questionId: question.id,
         questionText: question.text,
-        cardName: card.name,
+        cardName: dossierLabel,
         cardDescription: card.description,
         attackVector: question.attackVector,
         evidenceDetails,

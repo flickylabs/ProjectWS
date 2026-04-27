@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { useGameStore, useStore } from '../../store/useGameStore'
 import { MAX_TURNS } from '../../utils/constants'
+import { getArchetypeLabel } from '../../utils/archetypeLabel'
 import { Phase } from '../../types'
 import Emoji from '../common/Emoji'
 import PhaseIndicator from '../layout/PhaseIndicator'
@@ -283,13 +284,6 @@ function LockedRow({ label, hint }: { label: string; hint: string }) {
       <span className="font-semibold">{label}:</span> <Emoji char="🔒" size={12} /> <span className="text-gray-700">{hint}</span>
     </div>
   )
-}
-
-function getArchetypeLabel(type: string) {
-  const map: Record<string, string> = {
-    avoidant: '회피형', confrontational: '정면돌파형', victim_cosplay: '피해자형', cold_logic: '냉정논리형',
-  }
-  return map[type] ?? type
 }
 
 function getEmotionLabel(phase: string) {

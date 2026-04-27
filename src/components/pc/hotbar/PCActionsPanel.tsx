@@ -219,11 +219,16 @@ export default function PCActionsPanel({
     if (!evidence) {
       return
     }
+    const evidenceState = state.evidenceStates[evidenceId]
+    const evidenceDisplay = {
+      name: evidenceState?.deepInvestigated ? evidence.name : (evidence.surfaceName ?? evidence.name),
+      description: evidenceState?.deepInvestigated ? evidence.description : (evidence.surfaceDescription ?? evidence.description),
+    }
 
     state.presentEvidence(evidenceId, targetParty)
     state.addDialogue({
       speaker: 'system',
-      text: `증거 제시: ${evidence.name}`,
+      text: `증거 제시: ${evidenceDisplay.name}`,
       relatedDisputes: evidence.proves,
       turn: state.turnCount,
     })
@@ -241,8 +246,8 @@ export default function PCActionsPanel({
     })
 
     const evidenceContext = {
-      name: evidence.name,
-      description: evidence.description,
+      name: evidenceDisplay.name,
+      description: evidenceDisplay.description,
       subjectParty: evidence.subjectParty,
       provenance: evidence.provenance,
       reliability: evidence.reliability,
@@ -250,7 +255,7 @@ export default function PCActionsPanel({
 
     state.setLLMLoading(true, targetParty)
     try {
-      const result = await processFreeQuestion(`[증거 "${evidence.name}"] ${question}`, targetParty, state.agentA, state.agentB, caseData, undefined, evidenceContext)
+      const result = await processFreeQuestion(`[증거 "${evidenceDisplay.name}"] ${question}`, targetParty, state.agentA, state.agentB, caseData, undefined, evidenceContext)
       const freshState = useGameStore.getState()
       freshState.setLLMLoading(false)
       freshState.addDialogue({

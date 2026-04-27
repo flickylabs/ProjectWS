@@ -1,5 +1,13 @@
 import { useStore } from '../../store/useGameStore'
 import Emoji from '../common/Emoji'
+import type { EvidenceNode } from '../../types'
+
+function getEvidenceDisplay(evidence: EvidenceNode, state?: { deepInvestigated?: boolean }) {
+  return {
+    name: state?.deepInvestigated ? evidence.name : (evidence.surfaceName ?? evidence.name),
+    description: state?.deepInvestigated ? evidence.description : (evidence.surfaceDescription ?? evidence.description),
+  }
+}
 
 export default function EvidenceLegality() {
   const caseData = useStore((s) => s.caseData)
@@ -29,15 +37,16 @@ export default function EvidenceLegality() {
       <div className="space-y-2">
         {confidentialEvidence.map((ev) => {
           const allowed = verdictInput.evidenceLegality[ev.id]
+          const evidenceDisplay = getEvidenceDisplay(ev, evidenceStates[ev.id])
           return (
             <div key={ev.id} className="bg-gray-800/60 border border-purple-800/50 rounded-lg p-3">
               <div className="flex items-center gap-2 mb-2">
                 <span className="text-xs px-1.5 py-0.5 rounded bg-purple-900/50 text-purple-400">
                   비공개 보호 약속
                 </span>
-                <span className="text-sm font-semibold text-gray-200">{ev.name}</span>
+                <span className="text-sm font-semibold text-gray-200">{evidenceDisplay.name}</span>
               </div>
-              <p className="text-xs text-gray-400 mb-3">{ev.description}</p>
+              <p className="text-xs text-gray-400 mb-3">{evidenceDisplay.description}</p>
               <p className="text-xs text-purple-400/80 mb-3">이 증거는 비공개를 약속하고 얻은 진술에서 나왔습니다.</p>
 
               <div className="flex gap-2">
@@ -71,15 +80,16 @@ export default function EvidenceLegality() {
 
         {questionableEvidence.map((ev) => {
           const allowed = verdictInput.evidenceLegality[ev.id]
+          const evidenceDisplay = getEvidenceDisplay(ev, evidenceStates[ev.id])
           return (
             <div key={ev.id} className="bg-gray-800/60 border border-orange-800/50 rounded-lg p-3">
               <div className="flex items-center gap-2 mb-2">
                 <span className="text-xs px-1.5 py-0.5 rounded bg-orange-900/50 text-orange-400">
                   {ev.legitimacy === 'privacy_concern' ? '사생활 침해 소지' : '위법 취득'}
                 </span>
-                <span className="text-sm font-semibold text-gray-200">{ev.name}</span>
+                <span className="text-sm font-semibold text-gray-200">{evidenceDisplay.name}</span>
               </div>
-              <p className="text-xs text-gray-400 mb-3">{ev.description}</p>
+              <p className="text-xs text-gray-400 mb-3">{evidenceDisplay.description}</p>
 
               <div className="flex gap-2">
                 <button

@@ -7,7 +7,7 @@
 
 import { useState } from 'react'
 import { useGameStore, useStore } from '../../store/useGameStore'
-import type { PartyId } from '../../types'
+import type { EvidenceNode, PartyId } from '../../types'
 import type { DossierCard, DossierChallengeQuestion } from '../../types'
 import {
   getDossierCards,
@@ -23,6 +23,41 @@ interface Props {
   onQuestionAsked: () => void
   /** 사건카드 질문 후 NPC 응답을 위한 dispatch (disputeId, target, questionText) */
   onDispatchDossier?: (disputeId: string, target: PartyId, questionText: string) => void
+}
+
+const DOSSIER_SURFACE_LABELS: Record<string, Record<string, string>> = {
+  'spouse-01': {
+    'dc-1': '방문 동선 카드',
+    'dc-2': '숨긴 사정 카드',
+    'dc-3': '공동 적금 권한 카드',
+    'dc-4': '개인 계좌 이동 카드',
+    'dc-5': '숨김과 금전 이동 순서 카드',
+  },
+  'family-01': {
+    'dc-1': '말년의 종이',
+    'dc-2': '유서 변경 방향',
+    'dc-3': '장기 지원 흐름',
+    'dc-4': '민감한 가족 사정',
+    'dc-5': '어머니의 뜻',
+  },
+  'friend-01': {
+    'dc-1': '반복 연락의 겉면',
+    'dc-2': '선후관계 확인',
+    'dc-3': '반복된 부탁 흐름',
+    'dc-4': '과거 손절의 빈칸',
+    'dc-5': '공개 발언의 순서',
+  },
+}
+
+function getEvidenceDisplay(evidence: EvidenceNode, state?: { deepInvestigated?: boolean }) {
+  return {
+    name: state?.deepInvestigated ? evidence.name : (evidence.surfaceName ?? evidence.name),
+    description: state?.deepInvestigated ? evidence.description : (evidence.surfaceDescription ?? evidence.description),
+  }
+}
+
+function getDossierSurfaceLabel(caseKey: string, card: DossierCard) {
+  return DOSSIER_SURFACE_LABELS[caseKey]?.[card.id] ?? card.name
 }
 
 export default function DossierCardPanel({ target, onQuestionAsked, onDispatchDossier }: Props) {
@@ -59,6 +94,7 @@ export default function DossierCardPanel({ target, onQuestionAsked, onDispatchDo
           const available = getAvailableDossierQuestions(caseKey, card.id, target, lieStates)
           const locked = getLockedDossierQuestions(caseKey, card.id, target, lieStates)
           const exhausted = available.length === 0 && locked.length === 0
+          const dossierLabel = getDossierSurfaceLabel(caseKey, card)
           return (
             <button
               key={card.id}
@@ -72,7 +108,7 @@ export default function DossierCardPanel({ target, onQuestionAsked, onDispatchDo
                     : 'border-gray-700/40 bg-gray-800/40 text-gray-300 hover:border-amber-600/40'
               }`}
             >
-              <div className="text-xs font-semibold">{card.name}</div>
+              <div className="text-xs font-semibold">{dossierLabel}</div>
               <div className="text-[10px] text-gray-500 mt-0.5 line-clamp-2">{card.description}</div>
               <div className="flex items-center gap-1 mt-1">
                 <span className="text-[9px] text-gray-600">
@@ -169,16 +205,19 @@ function DossierQuestionList({ caseKey, dossierId, target, partyName, lieStates,
     if (onDispatchDossier && card) {
       const disputeId = card.relatedDisputes[0] ?? ''
       if (disputeId) {
+        const dossierLabel = getDossierSurfaceLabel(caseKey, card)
         // 증거 상세 정보 수집
         const evidenceDetails = card.evidenceIds.map(evId => {
           const ev = store.evidenceDefinitions.find(e => e.id === evId)
-          return ev ? `[${ev.name}] ${ev.description}` : ''
+          if (!ev) return ''
+          const display = getEvidenceDisplay(ev, store.evidenceStates[evId])
+          return `[${display.name}] ${display.description}`
         }).filter(Boolean).join('\n')
 
         const dossierContext = {
           questionId: question.id,
           questionText: question.text,
-          cardName: card.name,
+          cardName: dossierLabel,
           cardDescription: card.description,
           attackVector: question.attackVector,
           evidenceDetails,

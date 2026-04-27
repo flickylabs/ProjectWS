@@ -8,6 +8,9 @@ import { pp이가 } from '../../../engine/koreanPostposition'
 import type { TruthJudgment } from '../../../types/discovery'
 import { getEmergenceHook, getEmergenceHookSpeaker } from '../../../data/emergenceHooks'
 
+const CONTRADICTION_SURFACE_FALLBACK = '진술 흐름에서 확인할 지점이 생겼습니다. 추가 질문으로 맥락을 확인하세요.'
+const EMOTIONAL_BURST_SURFACE_FALLBACK = '감정이 격해졌습니다. 반응을 더 밀어붙일지, 잠시 정리할지 판단하세요.'
+
 /**
  * Discovery 9종 pending 상태를 감시해 통합 피드백 큐로 보내는 Watcher.
  * 기존 PCDiscoveryOverlay 의 각 Panel 을 큐 기반 카드로 치환.
@@ -487,7 +490,7 @@ export default function DiscoveryFeedbackWatcher() {
         kind: 'contradiction',
         eyebrow: '모순 감지',
         subtitle: `${disputeName} · ${partyName}`,
-        body: contrastPayload ? undefined : (safeFallbackBody ?? ev.description),
+        body: contrastPayload ? undefined : (safeFallbackBody ?? CONTRADICTION_SURFACE_FALLBACK),
         contrast: contrastPayload,
         // [TC-A2 픽스] '진술이 엇갈렸다' 시스템 메시지는 빨강 톤(공격/모순)으로 통일
         // — '추궁하기' 시스템 메시지(.is-action)와 의미·시각 모두 일치
@@ -586,14 +589,14 @@ export default function DiscoveryFeedbackWatcher() {
     if (ev.type === 'emotional_burst') {
       const v3Event = ev.scriptSlot?.textId ? getOutburstEvent(caseKey, ev.scriptSlot.textId) : null
       const outburstLine = v3Event?.outburstLine
-      const outburstText = outburstLine ?? ev.description
+      const outburstText = outburstLine ?? EMOTIONAL_BURST_SURFACE_FALLBACK
 
       const emitOutburst = () => {
         const s = useGameStore.getState()
         if (outburstLine) {
           s.addDialogue({ speaker: ev.party, text: outburstLine, relatedDisputes: [ev.disputeId], turn: s.turnCount })
         } else {
-          s.addDialogue({ speaker: 'system', text: ev.description, relatedDisputes: [ev.disputeId], turn: s.turnCount })
+          s.addDialogue({ speaker: 'system', text: EMOTIONAL_BURST_SURFACE_FALLBACK, relatedDisputes: [ev.disputeId], turn: s.turnCount })
         }
       }
       const handlePress = () => {
