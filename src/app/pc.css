@@ -18919,7 +18919,8 @@ body.pc-mode .pc-interaction-card__contrast-wrap {
   display: flex;
   flex-direction: column;
   gap: 14px;
-  padding: 4px 0 8px;
+  padding: 14px 28px 18px;
+  box-sizing: border-box;
 }
 body.pc-mode .pc-interaction-card__contrast-intro {
   font-size: 13px;
@@ -19008,6 +19009,52 @@ body.pc-mode .pc-interaction-card__contrast-vs span {
   letter-spacing: 0.06em;
   color: #d4a672;
   text-shadow: 0 0 8px rgba(212, 166, 114, 0.4);
+}
+
+@media (max-width: 720px) {
+  body.pc-mode .pc-interaction-card,
+  body.pc-mode .pc-discovery-card,
+  body.pc-mode .pc-event-feedback-card.is-modal,
+  body.pc-mode .pc-event-feedback-card.kind-contradiction,
+  body.pc-mode .pc-event-feedback-card.kind-conflict {
+    width: calc(100vw - 32px) !important;
+    min-width: 0 !important;
+    max-width: calc(100vw - 32px) !important;
+  }
+
+  body.pc-mode .pc-interaction-card__header,
+  body.pc-mode .pc-interaction-card__tags,
+  body.pc-mode .pc-interaction-card__body,
+  body.pc-mode .pc-interaction-card__actions,
+  body.pc-mode .pc-interaction-card__contrast-wrap {
+    padding-left: 18px !important;
+    padding-right: 18px !important;
+  }
+
+  body.pc-mode .pc-interaction-card__contrast,
+  body.pc-mode .pc-event-feedback__contrast {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  body.pc-mode .pc-interaction-card__contrast-side,
+  body.pc-mode .pc-event-feedback__contrast-side {
+    padding: 14px 16px;
+  }
+
+  body.pc-mode .pc-interaction-card__contrast-vs,
+  body.pc-mode .pc-event-feedback__contrast-vs {
+    justify-self: center;
+    width: 44px;
+    height: 44px;
+  }
+
+  body.pc-mode .pc-interaction-card__contrast-vs::before,
+  body.pc-mode .pc-interaction-card__contrast-vs::after,
+  body.pc-mode .pc-event-feedback__contrast-vs::before,
+  body.pc-mode .pc-event-feedback__contrast-vs::after {
+    display: none;
+  }
 }
 
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
@@ -20128,6 +20175,12 @@ body.pc-mode .pc-interaction-card.tone-green {
 }
 body.pc-mode .pc-interaction-card.tone-gold {
   border-color: rgba(212, 162, 78, 0.3) !important;
+}
+
+body.pc-mode .pc-interaction-card,
+body.pc-mode .pc-discovery-card {
+  box-sizing: border-box !important;
+  max-width: calc(100vw - 32px) !important;
 }
 
 /* 헤더 — 11px eyebrow 통일 */

@@ -18,6 +18,39 @@ import type { PartyId } from '../types'
 import type { DisputeVisibilityEntry, EmotionalSlipEvent } from '../types/discovery'
 import { v4Effects } from '../engine/presentationEngine'
 
+function hasEvidenceStage(state: any, evidenceId: string): boolean {
+  const evidenceState = state.evidenceStates?.[evidenceId]
+  return Boolean(
+    evidenceState?.presented ||
+    evidenceState?.deepInvestigated ||
+    (evidenceState?.investigatedActions?.length ?? 0) > 0,
+  )
+}
+
+function isVisibleOrEmerged(state: any, disputeId: string): boolean {
+  const visibility = state.discovery?.disputeVisibility?.[disputeId]?.visibility
+  return visibility === 'visible' || visibility === 'emerged'
+}
+
+function passesSpouse01EmergenceGate(state: any, disputeId: string): boolean {
+  const caseId = String(state.caseData?.caseId ?? '').replace(/^case-/, '')
+  if (caseId !== 'spouse-01') return true
+
+  if (disputeId === 'd-2') {
+    return hasEvidenceStage(state, 'e-4')
+  }
+  if (disputeId === 'h-d3') {
+    return isVisibleOrEmerged(state, 'd-2') && hasEvidenceStage(state, 'e-5')
+  }
+  if (disputeId === 'h-d4') {
+    return isVisibleOrEmerged(state, 'd-2') &&
+      isVisibleOrEmerged(state, 'h-d3') &&
+      hasEvidenceStage(state, 'e-6') &&
+      hasEvidenceStage(state, 'e-7')
+  }
+  return true
+}
+
 /**
  * 질문/증거/증인 액션 후 discovery 체크를 실행.
  * useActionDispatch의 각 핸들러 끝에서 호출한다.
@@ -105,6 +138,7 @@ export function runDiscoveryChecks(party: PartyId, disputeId?: string) {
     })
 
     if (via) {
+      if (!passesSpouse01EmergenceGate(state, entry.disputeId)) continue
       const dispute = caseData.disputes.find((d: import('../types').Dispute) => d.id === entry.disputeId)
       const description = dispute?.truthDescription ?? dispute?.name ?? entry.disputeId
       const title = dispute?.name ?? entry.disputeId

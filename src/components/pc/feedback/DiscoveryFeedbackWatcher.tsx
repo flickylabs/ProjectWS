@@ -689,7 +689,10 @@ export default function DiscoveryFeedbackWatcher() {
 
     if (pp.type === 'penalty_buffer') {
       const evidence = caseData.evidence.find((e) => e.id === pp.evidenceId)
-      const evidenceName = evidence?.name ?? pp.evidenceId
+      const evidenceState = state.evidenceStates[pp.evidenceId]
+      const evidenceName = evidenceState?.deepInvestigated
+        ? (evidence?.name ?? pp.evidenceId)
+        : (evidence?.surfaceName ?? evidence?.name ?? pp.evidenceId)
 
       state.addJudgeObservation({
         turnCount: state.turnCount,

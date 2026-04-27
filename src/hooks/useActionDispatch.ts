@@ -76,6 +76,19 @@ let globalDispatchLock = false
 const _contradictionTokens: Record<string, number> = {}
 const _empathyAttempts: Record<string, number> = {}
 
+const LIE_STATE_RANK_FOR_UNLOCK: Record<string, number> = { S0: 0, S1: 1, S2: 2, S3: 3, S4: 4, S5: 5 }
+
+function getEvidenceDisplayName(def: any, runtimeState?: { deepInvestigated?: boolean } | null): string {
+  if (!def) return ''
+  return runtimeState?.deepInvestigated ? (def.name ?? def.id) : (def.surfaceName ?? def.name ?? def.id)
+}
+
+function getEvidenceCurrentLieRank(evidence: any, lieStates: Record<string, { currentState?: string }> | undefined): number {
+  const proves = Array.isArray(evidence?.proves) && evidence.proves.length > 0 ? evidence.proves : []
+  const ranks = proves.map((id: string) => LIE_STATE_RANK_FOR_UNLOCK[lieStates?.[id]?.currentState ?? 'S0'] ?? 0)
+  return ranks.length > 0 ? Math.max(...ranks) : 0
+}
+
 // ── ScriptedText 모드 핫바 락 ──
 // LLM 모드는 resolveLLMDialogue 호출 동안 isLLMLoading=true로 핫바 차단.
 // ScriptedText 분기는 dialogue 추가가 동기적이므로 LLM 락이 안 걸림 →
@@ -262,7 +275,7 @@ async function handleEvidencePresent(action: Extract<PlayerAction, { type: 'evid
   const reliabilityLabel = evDef.reliability === 'hard' ? 'Hard' : 'Soft'
   // [Phase F] 증거 시스템 메시지 명칭 — deepInvestigated 전엔 surfaceName(잠금 명칭) 사용.
   const evStateForName = state.evidenceStates[evDef.id]
-  const displayName = evStateForName?.deepInvestigated ? evDef.name : (evDef.surfaceName ?? evDef.name)
+  const displayName = getEvidenceDisplayName(evDef, evStateForName)
   state.addDialogue({
     speaker: 'system',
     text: `증거 제시: ${displayName} [${reliabilityLabel}] → "${disputeNames}"`,
@@ -335,7 +348,7 @@ async function handleEvidencePresent(action: Extract<PlayerAction, { type: 'evid
     const toastState = useGameStore.getState()
     const resultType = !evDidTransition ? 'hold'
       : evDef.reliability === 'hard' ? 'collapse' : 'crack'
-    toastState.setPendingEvidenceResult({ type: resultType, evidenceName: evDef.name, evidenceId: evDef.id })
+    toastState.setPendingEvidenceResult({ type: resultType, evidenceName: displayName, evidenceId: evDef.id })
 
     // penalty_buffer 퍼크: hold(증거 무효) 시 철회/재프레이밍 선택지
     if (resultType === 'hold' && toastState.activePerks.penaltyBufferUsesRemaining > 0) {
@@ -355,7 +368,7 @@ async function handleEvidencePresent(action: Extract<PlayerAction, { type: 'evid
       playEvidenceUnlock()
       // [Phase F] 새 증거 메시지 — deepInvestigated 전엔 surfaceName(잠금 명칭) 사용
       const newEvState = state.evidenceStates[def.id]
-      const newDisplayName = newEvState?.deepInvestigated ? def.name : (def.surfaceName ?? def.name)
+      const newDisplayName = getEvidenceDisplayName(def, newEvState)
       state.addDialogue({ speaker: 'system', text: `새로운 증거를 손에 넣었다 — ${newDisplayName}`, relatedDisputes: def.proves, turn: state.turnCount })
     }
   }
@@ -369,7 +382,10 @@ async function handleEvidencePresent(action: Extract<PlayerAction, { type: 'evid
       for (const comboKey of newlyTriggered) {
         const combo = caseData.evidenceCombinations.find((c) => c.requires.join('+') === comboKey)
         if (combo) {
-          const names = combo.requires.map((id) => caseData.evidence.find((e) => e.id === id)?.name ?? id).join(' + ')
+          const names = combo.requires.map((id) => {
+            const comboEvidence = caseData.evidence.find((e) => e.id === id)
+            return comboEvidence ? getEvidenceDisplayName(comboEvidence, freshState.evidenceStates[id]) : id
+          }).join(' + ')
           const comboVis = freshState.discovery.disputeVisibility
           const visibleComboProves = combo.proves.filter(dId => { const v = comboVis[dId]; return !v || v.visibility !== 'hidden' })
           const comboDisputeNames = visibleComboProves.length > 0
@@ -695,7 +711,7 @@ async function handleEvidenceInvestigate(action: Extract<PlayerAction, { type: '
     for (const unlockedId of newlyUnlocked) {
       const def = evidenceDefs.find((e) => e.id === unlockedId)
       if (!def) continue
-      const displayName = (def as any).surfaceName || def.name || unlockedId
+      const displayName = getEvidenceDisplayName(def, state.evidenceStates[def.id])
       state.addDialogue({
         speaker: 'system',
         text: `🔓 새로운 증거를 손에 넣었다 — ${displayName}`,
@@ -1330,7 +1346,7 @@ async function handleQuestion(action: Extract<PlayerAction, { type: 'question' }
 
   // 증거 발견: NPC 응답 이후 — 진술 내용에서 단서가 포착된 것처럼 연출
   if (didTransition) {
-    discoverEvidenceFromQuestioning(action.target, action.disputeId)
+    discoverEvidenceFromQuestioning(action.target, action.disputeId, action.questionType)
   }
 
   // ── 회피 판독: 응답 후 거짓말 불안정도 표시 ──
@@ -1748,9 +1764,13 @@ function changeEmotionWithPhaseTracking(party: PartyId, delta: number) {
  * NPC 응답 이후 호출 — 진술 내용에서 증거 단서가 포착된 것처럼 연출.
  * 거짓말 상태, 감정, 쟁점에 따라 발견 확률과 메시지가 달라짐.
  */
-function discoverEvidenceFromQuestioning(party: PartyId, disputeId: string) {
+function discoverEvidenceFromQuestioning(party: PartyId, disputeId: string, questionType: QuestionType | 'contradiction_pursuit') {
   const state = useGameStore.getState()
   if (!state.caseData) return
+
+  // 단순 사실 추궁 반복은 증거 자동 발견 경로를 열지 않는다.
+  // 명시적인 증거 조사/제시, 동기 탐색, 공감 접근, 모순 추궁만 별도 조건에서 진행한다.
+  if (questionType === 'fact_pursuit') return
 
   const name = party === 'a' ? state.caseData.duo.partyA.name : state.caseData.duo.partyB.name
   const agent = party === 'a' ? state.agentA : state.agentB
@@ -1766,6 +1786,11 @@ function discoverEvidenceFromQuestioning(party: PartyId, disputeId: string) {
     if (e.requires && e.requires.length > 0) {
       const allRequiresMet = e.requires.every(reqId => state.evidenceStates[reqId]?.unlocked)
       if (!allRequiresMet) return false
+    }
+    if (e.requiredLieState) {
+      const currentRank = getEvidenceCurrentLieRank(e, agent.lieStateMap)
+      const requiredRank = LIE_STATE_RANK_FOR_UNLOCK[e.requiredLieState] ?? 0
+      if (currentRank < requiredRank) return false
     }
     return true
   })
@@ -1831,7 +1856,7 @@ export function actuallyDiscoverEvidence(evidenceId: string) {
   state.trackMetric('evidenceDiscovered')
   state.addDialogue({
     speaker: 'system',
-    text: `새 증거: ${ev.name}`,
+    text: `새 증거: ${getEvidenceDisplayName(ev, useGameStore.getState().evidenceStates[ev.id])}`,
     relatedDisputes: ev.proves,
     turn: state.turnCount,
   })
@@ -2170,6 +2195,7 @@ export function applyLieCollapseSuccess(disputeId: string, party: PartyId) {
   )
 
   if (lockedEv) {
+    const displayName = getEvidenceDisplayName(lockedEv, state.evidenceStates[lockedEv.id])
     useGameStore.setState((prev) => ({
       evidenceStates: {
         ...prev.evidenceStates,
@@ -2179,7 +2205,7 @@ export function applyLieCollapseSuccess(disputeId: string, party: PartyId) {
     playEvidenceUnlock()
     state.addDialogue({
       speaker: 'system',
-      text: `완벽하게 간파했다! 새 증거가 해금된다 — ${lockedEv.name}`,
+      text: `완벽하게 간파했다! 새 증거가 해금된다 — ${displayName}`,
       relatedDisputes: lockedEv.proves,
       turn: state.turnCount,
     })
@@ -2516,6 +2542,7 @@ export async function handleContradictionPursue(
       if (freshAgent.lieStateMap[disputeId]?.currentState === 'S5') {
         state.trackMetric('liesCollapsed')
       }
+      discoverEvidenceFromQuestioning(party, disputeId, 'contradiction_pursuit')
     }
 
     // 감정 상승 (모순 추궁은 압박이 강함)

@@ -41,9 +41,11 @@ function PenaltyBufferChoice({ evidenceId, target }: { evidenceId: string; targe
   const turnCount = useStore(s => s.turnCount)
   const setPendingEvidenceResult = useStore(s => s.setPendingEvidenceResult)
   const caseData = useStore(s => s.caseData)
+  const evidenceStates = useStore(s => s.evidenceStates)
 
   const evDef = caseData?.evidence.find(e => e.id === evidenceId)
-  const evidenceName = evDef?.name ?? evidenceId
+  const evState = evidenceStates[evidenceId]
+  const evidenceName = evState?.deepInvestigated ? (evDef?.name ?? evidenceId) : (evDef?.surfaceName ?? evDef?.name ?? evidenceId)
 
   const handleWithdraw = () => {
     consumePerk('penaltyBufferUsesRemaining')

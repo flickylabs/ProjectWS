@@ -162,9 +162,8 @@ export function evaluateEventTriggers(snapshot: TurnSnapshot): GameEventTrigger 
     return burst
   }
 
-  // 3순위: 새 쟁점 출현
-  const emergence = checkDisputeEmergence(snapshot)
-  if (emergence) return emergence
+  // 3순위: 새 쟁점 출현은 Discovery Engine의 authored route/gating만 사용한다.
+  // 여기의 generic fallback은 fact_pursuit 전이만으로 숨겨진 쟁점을 연쇄 해금할 수 있어 비활성화한다.
 
   // 4순위: 끼어들기
   const interjection = checkInterjection(snapshot)

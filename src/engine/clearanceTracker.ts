@@ -101,7 +101,7 @@ function buildMissedConnections(state: ClearanceTrackerState): ClearanceResult['
   const caseData = state.caseData
   if (!caseData) return []
 
-  const evidenceNameById = new Map(caseData.evidence.map((item) => [item.id, item.name]))
+  const evidenceNameById = new Map(caseData.evidence.map((item) => [item.id, item.surfaceName ?? item.name]))
   const missed: ClearanceResult['missedConnections'] = []
 
   const triggeredKeys = new Set(state.triggeredCombinations)

@@ -213,6 +213,16 @@ function splitToWords(text: string): string[] {
   return words
 }
 
+function getEvidenceDisplayName(
+  evidence: { id?: string; name?: string; surfaceName?: string },
+  state?: { deepInvestigated?: boolean },
+  fallback = '증거',
+): string {
+  return state?.deepInvestigated
+    ? (evidence.name ?? evidence.id ?? fallback)
+    : (evidence.surfaceName ?? evidence.name ?? evidence.id ?? fallback)
+}
+
 function MinigameOverlay() {
   const mg = useStore((s) => s.pendingMinigame)
   const clearMg = useStore((s) => s.setPendingMinigame)
@@ -242,7 +252,7 @@ function MinigameOverlay() {
 
     if (minigameVariant === 'word_scramble') {
       const evDef = evidenceDefinitions.find(e => e.id === evidenceId)
-      const evName = evDef?.name ?? '새로운 증거 확보'
+      const evName = evDef ? getEvidenceDisplayName(evDef, evidenceStates[evidenceId], '새로운 증거 확보') : '새로운 증거 확보'
       const words = splitToWords(evName)
       return <WordScramble words={words} onSuccess={handleSuccess} onFail={handleFail} />
     }
@@ -281,13 +291,14 @@ function MinigameOverlay() {
     if (!chosenMethod) {
       const depthLabel = depth === 1 ? '1단계: 원본 확보' : depth === 2 ? '2단계: 맥락 복원' : '3단계: 편집 검증'
       const miniLabel = depth === 1 ? '하트 맞추기' : depth === 2 ? '그림 짝 맞추기' : '글자 순서 맞추기'
+      const displayName = evDef ? getEvidenceDisplayName(evDef, evState, '증거') : '증거'
       return (
         <div className="fixed inset-0 z-50 bg-gray-950 flex flex-col items-center justify-center px-6"
           style={{ paddingTop: 'env(safe-area-inset-top)', paddingBottom: 'env(safe-area-inset-bottom)' }}>
           <div className="text-center mb-6">
             <Emoji char="🔍" size={48} />
             <div className="text-lg font-bold text-amber-400 mt-3">{depthLabel}</div>
-            <div className="text-xs text-gray-500 mt-1">"{evDef?.name ?? '증거'}" 조사</div>
+            <div className="text-xs text-gray-500 mt-1">"{displayName}" 조사</div>
           </div>
           <div className="w-full max-w-xs space-y-3">
             <button onClick={() => setChosenMethod('minigame')}
@@ -314,7 +325,7 @@ function MinigameOverlay() {
     if (depth === 2) {
       return <MatchingPuzzle onSuccess={() => { setChosenMethod(null); handleSuccess() }} onFail={() => { setChosenMethod(null); handleFail() }} />
     }
-    const evName3 = evDef?.name ?? '증거 조사'
+    const evName3 = evDef ? getEvidenceDisplayName(evDef, evState, '증거 조사') : '증거 조사'
     const words3 = splitToWords(evName3)
     return <WordScramble words={words3} onSuccess={() => { setChosenMethod(null); handleSuccess() }} onFail={() => { setChosenMethod(null); handleFail() }} />
   }

@@ -83,7 +83,11 @@ export default function PCMinigameOverlay() {
       return <PCMinigameFrame title="증거 발견"><MatchingPuzzle onFail={handleFail} onSuccess={handleSuccess} /></PCMinigameFrame>
     }
     if (minigameVariant === 'word_scramble') {
-      const evidenceName = evidenceDefinitions.find((item) => item.id === evidenceId)?.name ?? '새 증거'
+      const evidence = evidenceDefinitions.find((item) => item.id === evidenceId)
+      const evidenceState = evidenceStates[evidenceId]
+      const evidenceName = evidenceState?.deepInvestigated
+        ? (evidence?.name ?? '새 증거')
+        : (evidence?.surfaceName ?? evidence?.name ?? '새 증거')
       return <PCMinigameFrame title="증거 발견"><WordScramble words={splitToWords(evidenceName)} onFail={handleFail} onSuccess={handleSuccess} /></PCMinigameFrame>
     }
     return <PCMinigameFrame title="증거 발견"><MemoryPuzzle clues={clues} onFail={handleFail} onSuccess={handleSuccess} /></PCMinigameFrame>
@@ -93,6 +97,9 @@ export default function PCMinigameOverlay() {
     const { depth, evidenceId } = pendingMinigame
     const evidence = evidenceDefinitions.find((item) => item.id === evidenceId)
     const evidenceState = evidenceStates[evidenceId]
+    const evidenceDisplayName = evidenceState?.deepInvestigated
+      ? (evidence?.name ?? '선택한 증거')
+      : (evidence?.surfaceName ?? evidence?.name ?? '선택한 증거')
     const nextKey = (['request_original', 'restore_context', 'check_edits'] as const)
       .find((key) => !evidenceState?.investigatedActions?.includes(key)) ?? 'check_edits'
 
@@ -125,7 +132,7 @@ export default function PCMinigameOverlay() {
             <div className="text-center">
               <div className="text-[11px] font-bold uppercase tracking-[0.28em] text-[rgba(232,193,114,0.72)]">Evidence Depth</div>
               <h2 className="mt-4 text-[30px] font-black tracking-[-0.04em] text-[#f4ede1]">{depthLabel}</h2>
-              <p className="mt-2 text-sm text-[#8f8f9c]">{evidence?.name ?? '선택한 증거'}의 조사 방식을 선택하세요.</p>
+              <p className="mt-2 text-sm text-[#8f8f9c]">{evidenceDisplayName}의 조사 방식을 선택하세요.</p>
             </div>
             <div className="mt-8 space-y-3">
               <button className="w-full rounded-2xl border border-[rgba(212,162,78,0.2)] bg-[rgba(212,162,78,0.12)] px-4 py-4 text-sm font-bold text-[#f2d08d]" onClick={() => setChosenMethod('minigame')} type="button">
@@ -144,7 +151,7 @@ export default function PCMinigameOverlay() {
     const depthTitle = depth === 1 ? '원본 확보' : depth === 2 ? '맥락 복원' : '편집 검증'
     if (depth === 1) return <PCMinigameFrame title={depthTitle}><HeartbeatDetector onFail={handleFail} onSuccess={handleSuccess} /></PCMinigameFrame>
     if (depth === 2) return <PCMinigameFrame title={depthTitle}><MatchingPuzzle onFail={handleFail} onSuccess={handleSuccess} /></PCMinigameFrame>
-    return <PCMinigameFrame title={depthTitle}><WordScramble words={splitToWords(evidence?.name ?? '증거 조사')} onFail={handleFail} onSuccess={handleSuccess} /></PCMinigameFrame>
+    return <PCMinigameFrame title={depthTitle}><WordScramble words={splitToWords(evidenceDisplayName)} onFail={handleFail} onSuccess={handleSuccess} /></PCMinigameFrame>
   }
 
   if (pendingMinigame.type === 'lie_collapse') {
