@@ -82,7 +82,7 @@ const GATE_SPEC_OPTIONS = [
     dataChanges: 'none',
     runtimeImpact: 'none',
     uxFit: 'strong - evidence investigation remains an information-acquisition action; follow-up NPC speech happens through a later explicit judge_question',
-    recommendation: 'Recommended. Reclassify the current P0 response_missing to a P1 informational evidence_investigate_no_npc_followup detector.',
+    recommendation: 'Recommended. Reclassify the current P0 response_missing to an observability evidence_investigate_no_npc_followup detector.',
   },
   {
     id: 'iii',
@@ -95,7 +95,11 @@ const GATE_SPEC_OPTIONS = [
   },
 ];
 
+const RAW_ID_PATTERN = /\b(?:dc|w|e|d|h-d|combine)-\d+\b|\b(?:spouse|family|friend)-[a-z0-9-]*d\d[a-z0-9-]*\b/i;
+
 let globalFindingCounter = 1;
+let globalManifestValidationCounter = 1;
+const manifestValidationFindings = [];
 
 main();
 
@@ -133,6 +137,7 @@ function main() {
 
   const emittedFindings = cli.coverageOnly ? [] : findings;
   writeJson(path.join(RESULT_DIR, 'findings.json'), emittedFindings);
+  writeJson(path.join(RESULT_DIR, 'manifest_validation_findings.json'), manifestValidationFindings);
   writeJson(path.join(RESULT_DIR, 'action-by-action-trace.json'), traces);
   writeCoverageSummary(routeResults, traces, emittedFindings);
   writeCaseSummaries(routeResults, emittedFindings);
@@ -160,8 +165,18 @@ function runRoute(manifest, route, cli) {
   (route.actions || []).forEach((rawAction, index) => {
     const action = normalizeAction(rawAction);
     const before = snapshotState(state);
-    const outputs = executeAction({ ...ctx, state, action });
+    const outputs = executeAction({
+      ...ctx,
+      state,
+      action,
+      route,
+      routeId,
+      actionIndex: index + 1,
+      cli,
+      recordManifestFindings: true,
+    });
     const after = snapshotState(state);
+    const transcript = splitTranscriptOutputs(outputs);
     const trace = {
       schemaVersion: 1,
       caseId,
@@ -173,6 +188,8 @@ function runRoute(manifest, route, cli) {
       action,
       stateBefore: before,
       outputs,
+      playerTranscript: transcript.playerTranscript,
+      qaAnnotations: transcript.qaAnnotations,
       stateAfter: after,
       stateDelta: diffState(before, after),
     };
@@ -221,7 +238,9 @@ function doJudgeQuestion(ctx) {
   const outputs = [];
   const questionType = action.questionType;
   const depth = action.depth || getQuestionDepth(state, action);
-  const judge = pickEntry(scripted, 'judge_question', `${action.disputeId}|${questionType}|${depth}`, action.variantIds?.judge);
+  const judge = pickEntry(scripted, 'judge_question', `${action.disputeId}|${questionType}|${depth}`, action.variantIds?.judge, {
+    targetParty: action.target,
+  });
 
   if (judge) {
     outputs.push(toOutput('judge', judge, {
@@ -232,6 +251,24 @@ function doJudgeQuestion(ctx) {
       disputeId: action.disputeId,
       target: action.target,
     }));
+    const targetPartyTag = tagsToMap(judge.variant.tags || []).targetParty;
+    if (!action.target && targetPartyTag) {
+      outputs.push(qaAnnotationOutput(
+        `Judge question selected without action target; variant targetParty=${targetPartyTag}.`,
+        action,
+        'route_simulator_target_annotation',
+        sourcePath(caseId, 'judge_question', judge.entry.key, judge.variant.id),
+        'judge_question',
+      ));
+    } else if (action.target && targetPartyTag && targetPartyTag !== action.target) {
+      outputs.push(qaAnnotationOutput(
+        `Judge question variant targetParty=${targetPartyTag} does not match action target=${action.target}.`,
+        action,
+        'route_simulator_target_annotation',
+        sourcePath(caseId, 'judge_question', judge.entry.key, judge.variant.id),
+        'judge_question',
+      ));
+    }
   } else {
     outputs.push(systemOutput('재판관 질문 스크립트가 없습니다.', action, 'fallback', missingSource(caseId, 'judge_question', `${action.disputeId}|${questionType}|${depth}`), 'judge_question'));
   }
@@ -348,9 +385,37 @@ function doEvidenceCombine(ctx) {
     return [systemOutput(`Evidence combination recipe not found: ${action.recipeId || (action.inputs || []).join('+')}`, action, 'fallback', missingSource(caseId, 'caseData.combinationLab.recipes', action.recipeId || (action.inputs || []).join('+')), 'evidence_combine')];
   }
 
-  const missing = (recipe.inputs || []).filter((id) => id.startsWith('e-') && !state.evidence[id]?.unlocked);
-  if (missing.length > 0) {
-    return [systemOutput(`Evidence combination blocked; locked inputs: ${missing.join(', ')}`, action, 'fallback', `src/data/cases/generated/${caseId}.json:combinationLab.recipes[id=${recipe.id}]`, 'evidence_combine')];
+  const gate = canRunCombinationRecipeInSimulator(caseData, state, recipe, {
+    allowImpossibleStates: ctx.cli?.allowImpossibleStates === true,
+  });
+  if (!gate.ok) {
+    const reason = formatCombinationGateReason(gate);
+    recordManifestValidation(ctx, {
+      axis: 'S',
+      severity: 'warning',
+      category: 'combination_runtime_unreachable',
+      summary: `Combination route skipped by runtime parity gate: ${recipe.id}.`,
+      expected: 'Combination actions require unlocked and fully investigated evidence inputs unless --allow-impossible-states is set.',
+      actual: reason,
+      sourcePath: `src/data/cases/generated/${caseId}.json:combinationLab.recipes[id=${recipe.id}]`,
+      combinationId: recipe.id,
+      evidenceIds: gate.evidenceIds,
+      recommendation: 'Move the combine action after required evidence investigation, or run explicitly with --allow-impossible-states for stress exploration.',
+    });
+    return [qaAnnotationOutput(
+      `Evidence combination skipped by runtime parity gate: ${recipe.id}; ${reason}`,
+      action,
+      'route_simulator_runtime_gate',
+      `src/data/cases/generated/${caseId}.json:combinationLab.recipes[id=${recipe.id}]`,
+      'evidence_combine',
+      {
+        safeFallback: true,
+        combinationId: recipe.id,
+        dossierCardId: recipe.outputId,
+        runtimeReachable: false,
+        gate,
+      },
+    )];
   }
 
   applyCombinationEffects(state, caseData, recipe, action);
@@ -380,6 +445,8 @@ function doEvidenceCombine(ctx) {
       disputeId: action.disputeId || recipe.proves?.[0],
       combinationId: recipe.id,
       dossierCardId: recipe.outputId,
+      qaOnly: true,
+      visibility: 'qa_annotation',
     },
   ];
 }
@@ -411,13 +478,17 @@ function doContradictionPursuit(ctx) {
 }
 
 function doWitnessSummon(ctx) {
-  const { caseId, state, action } = ctx;
+  const { caseId, caseData, state, action } = ctx;
   const witnessId = action.witnessId || 'w-1';
+  const violations = validateWitnessAction(ctx, witnessId, 'witness_summon');
+  if (violations.length > 0) return blockedWitnessOutputs(ctx, witnessId, violations);
+
+  const witness = findWitnessDefinition(caseData, witnessId);
   state.witnesses[witnessId] = { summoned: true, lastDisputeId: action.disputeId || null };
-  return [
+  const outputs = [
     {
       speaker: 'system',
-      text: `Witness summoned: ${witnessId}`,
+      text: `증인 ${witness?.name || witnessId} 소환 - 증언이 시작됩니다.`,
       channel: 'witness_summon',
       resolverPath: 'runtime_system',
       sourcePath: `src/data/cases/generated/${caseId}.json:activeThirdParties[id=${witnessId}]`,
@@ -425,42 +496,68 @@ function doWitnessSummon(ctx) {
       target: action.target,
       disputeId: action.disputeId,
       witnessId,
+      witnessName: witness?.name,
     },
-    {
-      speaker: 'witness',
-      text: action.prompt || `${witnessId} is available for a focused route question.`,
-      channel: 'witness_summon',
-      resolverPath: 'route_simulator_facsimile',
-      sourcePath: `tmp/qa-route-simulator-manifests/${caseId}.json:witness_summon.${witnessId}`,
-      actionType: action.type,
-      target: action.target,
-      disputeId: action.disputeId,
-      witnessId,
-    },
+    qaAnnotationOutput(
+      `Witness summoned: ${witnessId}`,
+      action,
+      'route_simulator_facsimile',
+      `tmp/qa-route-simulator-manifests/${caseId}.json:witness_summon.${witnessId}`,
+      'witness_summon',
+      { witnessId, witnessName: witness?.name },
+    ),
   ];
+  if (action.prompt) {
+    outputs.push(qaAnnotationOutput(
+      `Manifest witness prompt: ${action.prompt}`,
+      action,
+      'route_simulator_facsimile',
+      `tmp/qa-route-simulator-manifests/${caseId}.json:witness_summon.${witnessId}.prompt`,
+      'witness_summon',
+      { witnessId, witnessName: witness?.name },
+    ));
+  }
+  return outputs;
 }
 
 function doWitnessQuestion(ctx) {
-  const { caseId, state, action } = ctx;
+  const { caseId, caseData, state, action } = ctx;
   const witnessId = action.witnessId || 'w-1';
+  const violations = validateWitnessAction(ctx, witnessId, 'witness_question');
+  if (violations.length > 0) return blockedWitnessOutputs(ctx, witnessId, violations);
+
+  const witness = findWitnessDefinition(caseData, witnessId);
   state.witnesses[witnessId] = {
     ...(state.witnesses[witnessId] || {}),
     summoned: true,
     lastDisputeId: action.disputeId || null,
     questions: (state.witnesses[witnessId]?.questions || 0) + 1,
   };
-  return [{
+  const playerText = buildWitnessQuestionText(action, witness);
+  const outputs = [{
     speaker: 'witness',
-    text: action.answer || `${witnessId} confirms the route focus for ${action.disputeId || action.evidenceId || 'the current issue'}.`,
+    text: playerText,
     channel: 'witness_question',
-    resolverPath: 'route_simulator_facsimile',
-    sourcePath: `tmp/qa-route-simulator-manifests/${caseId}.json:witness_question.${witnessId}`,
+    resolverPath: 'runtime_witness_facsimile',
+    sourcePath: `src/data/cases/generated/${caseId}.json:duo.socialGraph[id=${witnessId}]`,
     actionType: action.type,
     target: action.target,
     disputeId: action.disputeId,
     evidenceId: action.evidenceId,
     witnessId,
+    witnessName: witness?.name,
   }];
+  if (action.answer) {
+    outputs.push(qaAnnotationOutput(
+      `Manifest witness answer: ${action.answer}`,
+      action,
+      'route_simulator_facsimile',
+      `tmp/qa-route-simulator-manifests/${caseId}.json:witness_question.${witnessId}.answer`,
+      'witness_question',
+      { witnessId, witnessName: witness?.name },
+    ));
+  }
+  return outputs;
 }
 
 function doDossier(ctx) {
@@ -509,6 +606,8 @@ function doDiscoveryEvent(ctx) {
       target: action.target,
       disputeId: action.disputeId,
       evidenceId: action.evidenceId,
+      qaOnly: true,
+      visibility: 'qa_annotation',
     },
     {
       speaker: 'witness',
@@ -520,6 +619,8 @@ function doDiscoveryEvent(ctx) {
       target: action.target,
       disputeId: action.disputeId,
       evidenceId: action.evidenceId,
+      qaOnly: true,
+      visibility: 'qa_annotation',
     },
   ];
 }
@@ -544,6 +645,8 @@ function doEmergenceEvent(ctx) {
     target: action.target,
     disputeId: action.disputeId,
     evidenceId: action.evidenceId,
+    qaOnly: true,
+    visibility: 'qa_annotation',
   }];
 }
 
@@ -591,7 +694,8 @@ function detectUnhandledAction(trace, findings) {
 
 function detectMissingResponse(trace, findings) {
   if (!RESPONSE_REQUIRED_ACTIONS.has(trace.action.type)) return;
-  const npc = trace.outputs.filter((output) => output.speaker === 'a' || output.speaker === 'b' || output.speaker === 'witness');
+  const playerOutputs = trace.outputs.filter((output) => !isQaOnlyOutput(output));
+  const npc = playerOutputs.filter((output) => output.speaker === 'a' || output.speaker === 'b' || output.speaker === 'witness');
   const safeFallback = trace.outputs.some((output) => output.safeFallback || output.resolverPath === 'fallback');
   if (npc.length > 0 || safeFallback) return;
   findings.push({
@@ -609,11 +713,11 @@ function detectMissingResponse(trace, findings) {
 
 function detectEvidenceInvestigateNoNpcFollowup(trace, findings) {
   if (trace.action.type !== 'evidence_investigate') return;
-  const npc = trace.outputs.filter((output) => output.speaker === 'a' || output.speaker === 'b' || output.speaker === 'witness');
+  const npc = trace.outputs.filter((output) => !isQaOnlyOutput(output) && (output.speaker === 'a' || output.speaker === 'b' || output.speaker === 'witness'));
   const systemOnly = trace.outputs.some((output) => output.runtimeContract === 'system_only_no_auto_npc');
   if (!systemOnly || npc.length > 0) return;
   findings.push({
-    severity: 'P1',
+    severity: 'observability',
     category: 'evidence_investigate_no_npc_followup',
     detectors: ['evidence_investigate_no_npc_followup'],
     summary: 'evidence_investigate ended as a system-only discovery action with no automatic NPC follow-up.',
@@ -621,12 +725,13 @@ function detectEvidenceInvestigateNoNpcFollowup(trace, findings) {
     actual: `${trace.outputs.length} system output(s); speakers=${trace.outputs.map((output) => output.speaker).join(',') || 'none'}`,
     resolverPath: trace.outputs.map((output) => output.resolverPath).filter(Boolean).join(' | ') || 'none',
     sourcePath: trace.outputs.map((output) => output.sourcePath).filter(Boolean).join(' | ') || 'none',
-    patchPriority: 'P1-route-contract-observability',
+    patchPriority: 'N-route-contract-observability',
   });
 }
 
 function detectQaMismatchRuntime(trace, ctx, findings) {
   for (const output of trace.outputs) {
+    if (isQaOnlyOutput(output)) continue;
     if ((output.speaker === 'a' || output.speaker === 'b') && trace.action.target && output.speaker !== trace.action.target) {
       findings.push(makeP0(output, 'qa_mismatch_runtime', 'NPC speaker does not match action target.', `target=${trace.action.target}`, `speaker=${output.speaker}`, 'P0-route-source-path'));
     }
@@ -694,6 +799,7 @@ function detectEvidenceStageSkip(trace, findings) {
 
 function detectTruthLeakRuntime(trace, ctx, findings) {
   for (const output of trace.outputs) {
+    if (isQaOnlyOutput(output)) continue;
     if (!(output.speaker === 'a' || output.speaker === 'b' || output.speaker === 'witness')) continue;
     const matched = findForbiddenNpcLexemes(output, trace, ctx.policy, ctx.caseId);
     if (matched.length === 0) continue;
@@ -990,6 +1096,40 @@ function checkEvidenceUnlocks(state, caseData) {
   }
 }
 
+function canRunCombinationRecipeInSimulator(caseData, state, recipe, options = {}) {
+  const evidenceIds = (recipe.inputs || []).filter((id) => String(id).startsWith('e-'));
+  const locked = evidenceIds.filter((id) => !state.evidence[id]?.unlocked);
+  const uninvestigated = options.allowImpossibleStates
+    ? []
+    : evidenceIds.filter((id) => {
+      const evState = state.evidence[id];
+      const ev = findEvidence(caseData, id);
+      return evState?.unlocked && !isEvidenceFullyInvestigatedInSimulator(evState, ev);
+    });
+  return {
+    ok: locked.length === 0 && uninvestigated.length === 0,
+    evidenceIds,
+    locked,
+    uninvestigated,
+    allowImpossibleStates: options.allowImpossibleStates === true,
+  };
+}
+
+function isEvidenceFullyInvestigatedInSimulator(evState, ev) {
+  if (!evState) return false;
+  const stageCount = ev?.investigationStages?.length ?? 0;
+  if (stageCount === 0) return true;
+  return (evState.investigatedActions?.length ?? 0) >= stageCount;
+}
+
+function formatCombinationGateReason(gate) {
+  const parts = [];
+  if (gate.locked?.length) parts.push(`locked inputs=${gate.locked.join(', ')}`);
+  if (gate.uninvestigated?.length) parts.push(`not fully investigated=${gate.uninvestigated.join(', ')}`);
+  if (parts.length === 0) return 'runtime parity gate passed';
+  return parts.join('; ');
+}
+
 function getLieState(state, party, disputeId) {
   return state.lieStates?.[party]?.[disputeId] || 'S0';
 }
@@ -1007,12 +1147,45 @@ function resolveSubjectRole(ev, target) {
   return 'other';
 }
 
-function pickEntry(scripted, channel, key, variantId) {
+function pickEntry(scripted, channel, key, variantId, context = {}) {
   const entry = scripted.channels?.[channel]?.entries?.find((item) => item.key === key);
   if (!entry) return null;
-  const variant = variantId ? entry.variants.find((item) => item.id === variantId) : entry.variants[0];
+  const variant = variantId
+    ? pickVariantById(entry.variants, variantId, context)
+    : pickBestVariant(entry.variants, context);
   if (!variant) return null;
   return { entry, variant };
+}
+
+function pickVariantById(variants, variantId, context) {
+  const exact = variants.find((item) => item.id === variantId);
+  if (!exact) return null;
+  const tags = tagsToMap(exact.tags || []);
+  if (context.targetParty && tags.targetParty && tags.targetParty !== context.targetParty) {
+    return pickBestVariant(variants, context);
+  }
+  return exact;
+}
+
+function pickBestVariant(variants, context = {}) {
+  if (!variants?.length) return null;
+  const scored = variants.map((variant, index) => ({
+    variant,
+    index,
+    score: scoreVariantForSimulator(variant, context),
+  }));
+  scored.sort((a, b) => b.score - a.score || a.index - b.index);
+  return scored[0]?.variant || null;
+}
+
+function scoreVariantForSimulator(variant, context = {}) {
+  const tags = tagsToMap(variant.tags || []);
+  let score = 0;
+  if (context.targetParty && tags.targetParty) {
+    if (tags.targetParty !== context.targetParty) score -= 1000;
+    else score += 30;
+  }
+  return score;
 }
 
 function toOutput(speaker, picked, extra) {
@@ -1034,7 +1207,9 @@ function toOutput(speaker, picked, extra) {
     entryKey: picked.entry.key,
     entryDisputeId: picked.entry.disputeId,
     entryQuestionType: picked.entry.questionType || tags.questionType,
+    targetPartyTag: tags.targetParty,
     tags: picked.variant.tags || [],
+    visibility: 'player',
   };
 }
 
@@ -1049,7 +1224,234 @@ function systemOutput(text, action, resolverPath, sourcePath, channel = 'system_
     target: action.target,
     disputeId: action.disputeId,
     evidenceId: action.evidenceId,
+    visibility: 'player',
   };
+}
+
+function qaAnnotationOutput(text, action, resolverPath, sourcePath, channel = 'qa_annotation', extra = {}) {
+  return {
+    speaker: 'system',
+    text,
+    channel,
+    resolverPath,
+    sourcePath,
+    actionType: action.type,
+    target: action.target,
+    disputeId: action.disputeId,
+    evidenceId: action.evidenceId,
+    qaOnly: true,
+    visibility: 'qa_annotation',
+    ...extra,
+  };
+}
+
+function splitTranscriptOutputs(outputs) {
+  return {
+    playerTranscript: outputs
+      .filter((output) => isPlayerFacingOutput(output))
+      .map((output) => ({
+        speaker: output.speaker,
+        channel: output.channel,
+        text: output.text,
+      })),
+    qaAnnotations: outputs
+      .filter((output) => !isPlayerFacingOutput(output))
+      .map((output) => ({
+        speaker: output.speaker,
+        channel: output.channel,
+        resolverPath: output.resolverPath,
+        sourcePath: output.sourcePath,
+        text: output.text,
+        target: output.target,
+        disputeId: output.disputeId,
+        evidenceId: output.evidenceId,
+        witnessId: output.witnessId,
+        combinationId: output.combinationId,
+        dossierCardId: output.dossierCardId,
+      })),
+  };
+}
+
+function isPlayerFacingOutput(output) {
+  if (isQaOnlyOutput(output)) return false;
+  if (output.resolverPath === 'route_simulator_facsimile') return false;
+  if (output.resolverPath === 'fallback') return false;
+  if (containsRawId(output.text)) return false;
+  return true;
+}
+
+function isQaOnlyOutput(output) {
+  return output.qaOnly === true || output.visibility === 'qa_annotation';
+}
+
+function containsRawId(text) {
+  return RAW_ID_PATTERN.test(String(text || ''));
+}
+
+function validateWitnessAction(ctx, witnessId, actionKind) {
+  if (ctx.cli?.exhaustive) return [];
+  const { caseId, caseData, state, action, route } = ctx;
+  const witness = findWitnessDefinition(caseData, witnessId);
+  const findings = [];
+  if (!witness) {
+    findings.push({
+      axis: 'S',
+      severity: 'warning',
+      category: 'witness_unknown',
+      summary: `Manifest references unknown witness ${witnessId}.`,
+      expected: 'Witness actions should reference a defined case witness.',
+      actual: `witnessId=${witnessId}`,
+      sourcePath: `tmp/qa-route-simulator-manifests/${caseId}.json:${actionKind}.${witnessId}`,
+      witnessId,
+      recommendation: 'Use a witness id from caseData.duo.socialGraph.',
+    });
+    return findings;
+  }
+
+  if (actionKind === 'witness_question' && state.witnesses[witnessId]?.summoned !== true) {
+    findings.push({
+      axis: 'S',
+      severity: 'warning',
+      category: 'witness_question_before_summon',
+      summary: `Witness question occurs before witness summon: ${witnessId}.`,
+      expected: 'witness_question requires a prior witness_summon for the same witness in the route.',
+      actual: `${witnessId} summoned=${state.witnesses[witnessId]?.summoned === true}`,
+      sourcePath: `tmp/qa-route-simulator-manifests/${caseId}.json:${actionKind}.${witnessId}`,
+      witnessId,
+      recommendation: 'Move witness_summon before witness_question or remove the witness question from this manifest route.',
+    });
+  }
+
+  const related = getWitnessRelatedDisputes(witness);
+  if (action.disputeId && related.length > 0 && !related.includes(action.disputeId)) {
+    findings.push({
+      axis: 'S',
+      severity: 'warning',
+      category: 'witness_scope_mismatch',
+      summary: `Witness ${witnessId} is not scoped to dispute ${action.disputeId}.`,
+      expected: `Witness related disputes should include ${action.disputeId}.`,
+      actual: `relatedDisputeIds=${related.join(', ') || 'none'}`,
+      sourcePath: `src/data/cases/generated/${caseId}.json:duo.socialGraph[id=${witnessId}].relatedDisputeIds`,
+      witnessId,
+      disputeId: action.disputeId,
+      recommendation: 'Use a witness whose relatedDisputeIds match the route dispute, or move this to Track A4 manifest content fixes.',
+    });
+  }
+
+  const domain = detectRouteDomain(route, action);
+  if (domain && !witnessMatchesDomain(witness, domain)) {
+    findings.push({
+      axis: 'S',
+      severity: 'warning',
+      category: 'witness_domain_mismatch',
+      summary: `Witness ${witnessId} knowledge does not match route domain ${domain}.`,
+      expected: `Witness knowledge surface should support the route domain ${domain}.`,
+      actual: witness.knowledgeScope || witness.surfaceKnowledge || '',
+      sourcePath: `src/data/cases/generated/${caseId}.json:duo.socialGraph[id=${witnessId}].knowledgeScope`,
+      witnessId,
+      disputeId: action.disputeId,
+      routeDomain: domain,
+      recommendation: 'Use a domain-compatible witness or move this to Track A4 manifest content fixes.',
+    });
+  }
+
+  return findings;
+}
+
+function blockedWitnessOutputs(ctx, witnessId, violations) {
+  for (const finding of violations) recordManifestValidation(ctx, finding);
+  return violations.map((finding) => qaAnnotationOutput(
+    `Witness action skipped by manifest validation: ${finding.category}; ${finding.summary}`,
+    ctx.action,
+    'route_simulator_manifest_validation',
+    finding.sourcePath,
+    ctx.action.type,
+    {
+      safeFallback: true,
+      witnessId,
+      manifestValidationCategory: finding.category,
+    },
+  ));
+}
+
+function recordManifestValidation(ctx, finding) {
+  if (ctx.recordManifestFindings === false) return;
+  if (ctx.cli?.exhaustive && finding.category?.startsWith('witness_')) return;
+  manifestValidationFindings.push({
+    id: `QAMV-${String(globalManifestValidationCounter++).padStart(4, '0')}`,
+    caseId: ctx.caseId,
+    routeId: ctx.routeId || getRouteId(ctx.route || {}),
+    phase: ctx.route?.phase || 'unknown',
+    actionIndex: ctx.actionIndex,
+    actionType: ctx.action?.type,
+    target: ctx.action?.target,
+    disputeId: ctx.action?.disputeId,
+    evidenceId: ctx.action?.evidenceId,
+    ...finding,
+  });
+}
+
+function findWitnessDefinition(caseData, witnessId) {
+  return getWitnessDefinitions(caseData).find((witness) => witness.id === witnessId);
+}
+
+function getWitnessDefinitions(caseData) {
+  const definitions = [];
+  for (const witness of caseData.duo?.socialGraph || []) {
+    if (witness && typeof witness === 'object' && witness.id) definitions.push(witness);
+  }
+  for (const witness of caseData.activeThirdParties || []) {
+    if (witness && typeof witness === 'object' && witness.id && !definitions.some((item) => item.id === witness.id)) {
+      definitions.push(witness);
+    }
+  }
+  return definitions;
+}
+
+function getWitnessRelatedDisputes(witness) {
+  return [
+    ...(witness.relatedDisputeIds || []),
+    ...(witness.relatedDisputes || []),
+    witness.disputeId,
+    witness.relatedDisputeId,
+  ].filter(Boolean);
+}
+
+function detectRouteDomain(route, action) {
+  const text = [
+    route?.id,
+    route?.summary,
+    route?.description,
+    route?.routePattern,
+    action.prompt,
+    action.answer,
+  ].filter(Boolean).join(' ').toLowerCase();
+  if (/(notary|공증|scan|스캔)/i.test(text)) return 'notary_timeline';
+  if (/(contact log|message log|연락 기록|통화 기록|문자 기록)/i.test(text)) return 'contact_log';
+  if (/(bank|은행|account|계좌|적금|savings)/i.test(text)) return 'bank_account';
+  if (/(group chat|단톡|chat spread|group-chat)/i.test(text)) return 'group_chat';
+  if (/(care records|caregiver|요양|돌봄|간병)/i.test(text)) return 'care_record';
+  return null;
+}
+
+function witnessMatchesDomain(witness, domain) {
+  const text = [witness.knowledgeScope, witness.surfaceKnowledge, witness.witnessProfile?.occupation].filter(Boolean).join(' ');
+  const tests = {
+    notary_timeline: /(공증|서류|스캔|문서|유서)/,
+    contact_log: /(연락|메시지|문자|전화|접근|예비신랑)/,
+    bank_account: /(은행|계좌|적금|송금|위임장)/,
+    group_chat: /(단톡|글|비난|공통 친구|친구)/,
+    care_record: /(요양|돌봄|방문|간병|보호사)/,
+  };
+  return tests[domain]?.test(text) ?? true;
+}
+
+function buildWitnessQuestionText(action, witness) {
+  if (action.answer && /[가-힣]/.test(action.answer) && !containsRawId(action.answer)) return action.answer;
+  if (!witness) return '재판관님, 이 부분은 제가 확인한 범위 안에서만 말씀드리겠습니다.';
+  const scope = String(witness.knowledgeScope || witness.surfaceKnowledge || '').trim();
+  if (!scope) return `재판관님, ${witness.name || '증인'}으로서 확인한 범위 안에서만 말씀드리겠습니다.`;
+  return `재판관님, 제가 아는 범위에서는 ${scope}`;
 }
 
 function findForbiddenNpcLexemes(output, trace, policy, caseId) {
@@ -1247,15 +1649,15 @@ function writeGateSpecReport(routeResults, traces, findings) {
       legacyRouteSpotCompare: {
         source: 'tmp/qa-codex-spouse-01-p0-patch-results/20260427-phase-a-audit.md',
         phaseAReference: 'routes=3, actions=10, findings=3, hard=3; QARG-0003 is evidence_investigate system-only response_missing',
-        phaseB3Result: 'evidence_investigate remains system-only and is reclassified from P0 response_missing to P1 evidence_investigate_no_npc_followup under Gate option ii',
+        phaseB3Result: 'evidence_investigate remains system-only and is reclassified from P0 response_missing to observability evidence_investigate_no_npc_followup under Gate option ii',
         note: 'The legacy runner was not executed here because it writes to tmp/qa-runtime-gate-results; Phase B output is kept isolated.',
       },
     },
     reclassify: {
-      B1_QARS_0001: 'P0 response_missing -> P1 evidence_investigate_no_npc_followup',
+      B1_QARS_0001: 'P0 response_missing -> observability evidence_investigate_no_npc_followup',
     },
     gateSpecOptions: GATE_SPEC_OPTIONS,
-    ctRecommendation: 'Choose option ii for Phase B-3: keep runtime evidence investigation system-only, remove evidence_investigate from response-required, and emit a P1 informational evidence_investigate_no_npc_followup detector. Options i/iii require separate Phase B-6 approval because they change data/runtime behavior.',
+    ctRecommendation: 'Choose option ii for Phase B-3: keep runtime evidence investigation system-only, remove evidence_investigate from response-required, and emit an observability evidence_investigate_no_npc_followup detector. Options i/iii require separate Phase B-6 approval because they change data/runtime behavior.',
   };
   writeJson(path.join(RESULT_DIR, 'phase-b-1-gate-spec-report.json'), report);
 }
@@ -1289,7 +1691,7 @@ function writeSpikeSummary(routeResults, traces, findings) {
     '## Legacy Route Spot Compare',
     '- Phase A audit reference: `tmp/qa-codex-spouse-01-p0-patch-results/20260427-phase-a-audit.md`',
     '- Phase A hard areas: e-4 early truth leak twice, evidence_investigate system-only response_missing once.',
-    '- Phase B-1 route covers the evidence_investigate contract path; Phase B-3 reclassifies that system-only output to P1 informational under Gate option ii.',
+    '- Phase B-1 route covers the evidence_investigate contract path; Phase B-3 reclassifies that system-only output to observability under Gate option ii.',
     '- The legacy runner was not executed in this session because it writes to `tmp/qa-runtime-gate-results/`; Phase B output isolation was preserved.',
     '',
     '## P0 Findings',
@@ -1386,7 +1788,7 @@ function generateExhaustiveRoutes(ctx, cli) {
       continue;
     }
 
-    const candidates = generateCandidateActions(ctx, node.state)
+    const candidates = generateCandidateActions(ctx, node.state, cli)
       .slice(0, cli.maxActionsPerState);
 
     for (const action of candidates) {
@@ -1396,7 +1798,7 @@ function generateExhaustiveRoutes(ctx, cli) {
       }
 
       const nextState = cloneJson(node.state);
-      const outputs = executeAction({ ...ctx, state: nextState, action });
+      const outputs = executeAction({ ...ctx, state: nextState, action, cli, recordManifestFindings: false });
       if (actionConsumesTurn(action)) nextState.turn += 1;
       const nextHash = hashExhaustiveState(nextState);
       const nextActions = [...node.actions, action];
@@ -1451,7 +1853,7 @@ function generateExhaustiveRoutes(ctx, cli) {
   };
 }
 
-function generateCandidateActions(ctx, state) {
+function generateCandidateActions(ctx, state, cli = {}) {
   const { caseData, scripted } = ctx;
   const actions = [];
   const visibleDisputes = (caseData.disputes || [])
@@ -1499,8 +1901,10 @@ function generateCandidateActions(ctx, state) {
     const evidenceInputs = inputs.filter((id) => id.startsWith('e-'));
     if (evidenceInputs.length !== inputs.length) continue;
     if (recipe.outputId && state.dossier[recipe.outputId]?.unlocked) continue;
-    const ready = evidenceInputs.every((id) => state.evidence[id]?.unlocked);
-    if (ready) {
+    const gate = canRunCombinationRecipeInSimulator(caseData, state, recipe, {
+      allowImpossibleStates: cli.allowImpossibleStates === true,
+    });
+    if (gate.ok) {
       actions.push({ type: 'evidence_combine', target: 'b', recipeId: recipe.id, inputs });
     }
   }
@@ -1519,11 +1923,12 @@ function generateCandidateActions(ctx, state) {
     }
   }
 
-  const witnesses = caseData.activeThirdParties || caseData.duo?.socialGraph || [];
+  const witnesses = getWitnessDefinitions(caseData);
   for (const witness of witnesses.slice(0, 3)) {
     const witnessId = witness.id || witness.witnessId || witness.slot;
     if (!witnessId) continue;
-    const disputeId = witness.disputeId || witness.relatedDisputeId || visibleDisputes[0]?.id;
+    const related = getWitnessRelatedDisputes(witness);
+    const disputeId = related.find((id) => visibleDisputes.some((dispute) => dispute.id === id)) || related[0] || visibleDisputes[0]?.id;
     if (!state.witnesses[witnessId]?.summoned) {
       actions.push({ type: 'witness_summon', witnessId, disputeId });
     } else {
@@ -1641,6 +2046,7 @@ function writeExhaustiveGenerationSummary(summaries, cli) {
       maxStates: cli.maxStates,
       maxRoutes: cli.maxRoutes,
       maxActionsPerState: cli.maxActionsPerState,
+      allowImpossibleStates: cli.allowImpossibleStates,
     },
     cases: summaries,
   });
@@ -1684,6 +2090,7 @@ function parseArgs(argv) {
     maxStates: numberArg(argv, '--max-states', EXHAUSTIVE_DEFAULTS.maxStates),
     maxRoutes: numberArg(argv, '--max-routes', EXHAUSTIVE_DEFAULTS.maxRoutes),
     maxActionsPerState: numberArg(argv, '--max-actions-per-state', EXHAUSTIVE_DEFAULTS.maxActionsPerState),
+    allowImpossibleStates: argv.includes('--allow-impossible-states'),
     resultDir: valueArg(argv, '--result-dir'),
   };
 }
@@ -1799,6 +2206,19 @@ function writeTranscript(result) {
   for (const trace of result.traces) {
     lines.push(`## ${trace.actionIndex}. ${trace.action.type}`);
     lines.push('');
+    lines.push('### Player');
+    lines.push('');
+    if (!trace.playerTranscript?.length) {
+      lines.push('- none');
+    } else {
+      for (const output of trace.playerTranscript) {
+        lines.push(`- ${output.speaker} [${output.channel}]`);
+        lines.push(`  ${output.text}`);
+      }
+    }
+    lines.push('');
+    lines.push('### QA Annotations');
+    lines.push('');
     lines.push(`action: \`${JSON.stringify(trace.action)}\``);
     if (
       trace.stateDelta.lieStates.length ||
@@ -1814,7 +2234,10 @@ function writeTranscript(result) {
       lines.push('```');
     }
     lines.push('');
-    for (const output of trace.outputs) {
+    if (!trace.qaAnnotations?.length) {
+      lines.push('- none');
+    }
+    for (const output of trace.qaAnnotations || []) {
       lines.push(`- ${output.speaker} [${output.channel}/${output.resolverPath}] ${output.sourcePath}`);
       lines.push(`  ${output.text}`);
     }
