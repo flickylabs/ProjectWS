@@ -5,15 +5,11 @@
 const fs = require('fs')
 const path = require('path')
 
-let API_KEY = process.env.VITE_OPENAI_API_KEY
+const API_KEY = process.env.OPENAI_API_KEY
 if (!API_KEY) {
-  try {
-    const env = fs.readFileSync(path.join(__dirname, '..', '.env'), 'utf8')
-    const match = env.match(/VITE_OPENAI_API_KEY=(.+)/)
-    if (match) API_KEY = match[1].trim()
-  } catch {}
+  console.error('OPENAI_API_KEY required')
+  process.exit(1)
 }
-if (!API_KEY) { console.error('API key required'); process.exit(1) }
 
 const casesDir = path.join(__dirname, '..', 'src', 'data', 'cases', 'generated')
 const files = fs.readdirSync(casesDir).filter(f => f.endsWith('.json')).sort()

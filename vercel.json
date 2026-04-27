@@ -3,6 +3,6 @@
   "outputDirectory": "dist-pc",
   "framework": "vite",
   "rewrites": [
-    { "source": "/((?!assets|sfx|emoji|evidence|favicon|icon|manifest).*)", "destination": "/index-pc.html" }
+    { "source": "/((?!api|assets|sfx|emoji|evidence|favicon|icon|manifest).*)", "destination": "/index-pc.html" }
   ]
 }

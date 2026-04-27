@@ -230,8 +230,6 @@ export default function PCResultScreen() {
   useEffect(() => {
     if (_aftermathCache) return // 이미 캐시됨
     if (!caseData || !verdictScore) return
-    const apiKey = (import.meta as any).env?.VITE_OPENAI_API_KEY as string | undefined
-    if (!apiKey) return
 
     void (async () => {
       try {
@@ -263,7 +261,7 @@ export default function PCResultScreen() {
         console.log('[후일담] 결과 화면 진입 — LLM 즉시 호출 시작')
         const response = await chatCompletion(
           [{ role: 'user', content: prompt }],
-          { temperature: 0.9, maxTokens: 900, model: 'gpt-4o-mini' },
+          { temperature: 0.9, maxTokens: 900, model: 'gpt-4o-mini', endpoint: 'aftermath' },
         )
         if (response) {
           const processed = postProcessAftermath(response, { a: caseData.duo.partyA.name, b: caseData.duo.partyB.name })
@@ -956,16 +954,6 @@ function AftermathInline() {
     if (!caseData || !verdictScore) return
 
     void (async () => {
-      // API 키 유무를 직접 확인
-      const apiKey = (import.meta as any).env?.VITE_OPENAI_API_KEY as string | undefined
-      if (!apiKey) {
-        console.warn('[후일담] VITE_OPENAI_API_KEY 없음 — fallback 사용')
-        const fb = buildFallback(caseData, verdictScore.total)
-        _aftermathCache = fb
-        setAftermath(fb)
-        return
-      }
-
       setLoading(true)
       setError(null)
       try {
@@ -1009,10 +997,10 @@ function AftermathInline() {
           keyDiscoveries,
         })
 
-        console.log('[후일담] LLM 호출 시작 (API key:', apiKey.slice(0, 10) + '...)')
+        console.log('[후일담] LLM 호출 시작')
         const response = await chatCompletion(
           [{ role: 'user', content: prompt }],
-          { temperature: 0.9, maxTokens: 900, model: 'gpt-4o-mini' },
+          { temperature: 0.9, maxTokens: 900, model: 'gpt-4o-mini', endpoint: 'aftermath' },
         )
         console.log('[후일담] LLM 응답 길이:', response.length)
         const result = postProcessAftermath(response, { a: caseData.duo.partyA.name, b: caseData.duo.partyB.name }) || buildFallback(caseData, verdictScore.total)

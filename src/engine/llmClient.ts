@@ -1,7 +1,7 @@
 /**
  * LLM API 클라이언트.
- * 로컬 LM Studio 또는 OpenAI API를 지원한다.
- * 환경변수 VITE_OPENAI_API_KEY가 있으면 OpenAI, 없으면 로컬.
+ * 프로덕션에서는 서버 프록시를 통해 OpenAI를 호출하고,
+ * 로컬 개발에서는 LM Studio를 사용한다.
  */
 
 /** 대화/심문/증언 등 NPC 대사 생성용 — 품질 우선 */
@@ -21,25 +21,25 @@ interface ChatCompletionResponse {
 interface LLMConfig {
   provider: 'openai' | 'local'
   baseUrl: string
-  apiKey: string
   modelId: string
 }
 
 function getRuntimeEnv(name: string): string | undefined {
-  const viteEnv = (import.meta as ImportMeta & { env?: Record<string, string | undefined> }).env?.[name]
-  if (viteEnv) return viteEnv
+  const viteEnv = (import.meta as ImportMeta & { env?: Record<string, string | boolean | undefined> }).env?.[name]
+  if (typeof viteEnv === 'string' && viteEnv) return viteEnv
   if (typeof process !== 'undefined') return process.env?.[name]
   return undefined
 }
 
 function getConfig(): LLMConfig {
-  const apiKey = getRuntimeEnv('VITE_OPENAI_API_KEY')
+  const providerOverride = getRuntimeEnv('VITE_LLM_PROVIDER')?.toLowerCase()
+  const isProd = Boolean((import.meta as ImportMeta & { env?: { PROD?: boolean } }).env?.PROD)
+  const useLocal = providerOverride === 'local' || (!isProd && providerOverride !== 'openai' && providerOverride !== 'proxy')
 
-  if (apiKey) {
+  if (!useLocal) {
     return {
       provider: 'openai',
-      baseUrl: 'https://api.openai.com/v1',
-      apiKey,
+      baseUrl: '/api/llm',
       modelId: MODEL_DIALOGUE,
     }
   }
@@ -47,7 +47,6 @@ function getConfig(): LLMConfig {
   return {
     provider: 'local',
     baseUrl: 'http://localhost:1234/v1',
-    apiKey: '',
     modelId: 'local-model',
   }
 }
@@ -71,23 +70,24 @@ async function resolveModelId(config: LLMConfig): Promise<string> {
 
 export async function chatCompletion(
   messages: ChatMessage[],
-  options: { temperature?: number; maxTokens?: number; model?: string } = {},
+  options: { temperature?: number; maxTokens?: number; model?: string; endpoint?: 'dialogue' | 'aftermath' } = {},
 ): Promise<string> {
   const config = getConfig()
-  if (!config.apiKey && config.provider === 'local') {
-    console.warn('[LLM] VITE_OPENAI_API_KEY 미설정 — 로컬 LM Studio 모드로 동작합니다.')
+  if (config.provider === 'local') {
+    console.warn('[LLM] 로컬 LM Studio 모드로 동작합니다.')
   }
   const modelId = options.model && config.provider === 'openai'
     ? options.model
     : await resolveModelId(config)
 
   const headers: Record<string, string> = { 'Content-Type': 'application/json' }
-  if (config.apiKey) {
-    headers['Authorization'] = `Bearer ${config.apiKey}`
-  }
+  const endpoint = options.endpoint === 'aftermath' ? 'aftermath' : 'dialogue'
+  const url = config.provider === 'openai'
+    ? `${config.baseUrl}/${endpoint}`
+    : `${config.baseUrl}/chat/completions`
 
   const timeout = options.maxTokens && options.maxTokens >= 400 ? 90000 : 60000
-  const res = await fetch(`${config.baseUrl}/chat/completions`, {
+  const res = await fetch(url, {
     method: 'POST',
     headers,
     signal: AbortSignal.timeout(timeout),
@@ -120,15 +120,11 @@ export async function checkConnection(): Promise<{
 
   if (config.provider === 'openai') {
     try {
-      // OpenAI는 간단한 테스트 요청으로 확인
-      const res = await fetch(`${config.baseUrl}/models`, {
-        headers: { Authorization: `Bearer ${config.apiKey}` },
-        signal: AbortSignal.timeout(5000),
-      })
-      if (!res.ok) return { connected: false, error: `OpenAI API 오류: ${res.status}` }
+      const res = await fetch(`${config.baseUrl}/dialogue`, { signal: AbortSignal.timeout(5000) })
+      if (!res.ok) return { connected: false, error: `OpenAI 프록시 오류: ${res.status}` }
       return { connected: true, provider: 'openai', modelId: config.modelId }
     } catch (e) {
-      return { connected: false, error: 'OpenAI API에 연결할 수 없습니다.' }
+      return { connected: false, error: 'OpenAI 프록시에 연결할 수 없습니다.' }
     }
   }
 
@@ -149,5 +145,5 @@ export async function checkConnection(): Promise<{
 
 export function getProviderName(): string {
   const config = getConfig()
-  return config.provider === 'openai' ? 'OpenAI GPT-4o' : 'LM Studio (로컬)'
+  return config.provider === 'openai' ? 'OpenAI GPT-4o (서버 프록시)' : 'LM Studio (로컬)'
 }

@@ -18,7 +18,7 @@ http://localhost:5173 접속
 
 - **프론트엔드**: React + TypeScript + Vite + Tailwind CSS v4
 - **상태 관리**: Zustand (슬라이스 패턴)
-- **LLM**: OpenAI GPT-4o-mini (실시간 대화) — `.env`에 `VITE_OPENAI_API_KEY` 설정
+- **LLM**: OpenAI GPT-4o-mini (실시간 대화) — 서버 환경변수 `OPENAI_API_KEY` 설정
 - **사건 데이터**: ChatGPT Pro 사전 생성 JSON
 - **사운드**: Web Audio API 합성음
 
@@ -52,7 +52,7 @@ docs/
 ## 환경 변수
 
 ```env
-VITE_OPENAI_API_KEY=sk-your-key    # GPT-4o-mini 대화용 (없으면 대사 트리 폴백)
+OPENAI_API_KEY=<server-only-openai-key>    # 서버 프록시에서만 사용
 ```
 
 ## 사건 추가

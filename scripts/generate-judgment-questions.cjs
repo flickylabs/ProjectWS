@@ -4,22 +4,16 @@
  *
  * 결과를 각 사건 JSON의 disputes[].judgmentStatement 필드에 저장.
  *
- * 사용법: OPENAI_API_KEY=sk-... node scripts/generate-judgment-questions.cjs
+ * 사용법: OPENAI_API_KEY=<server-only-openai-key> node scripts/generate-judgment-questions.cjs
  */
 const fs = require('fs')
 const path = require('path')
 
-const API_KEY = process.env.OPENAI_API_KEY || process.env.VITE_OPENAI_API_KEY
+const API_KEY = process.env.OPENAI_API_KEY
 if (!API_KEY) {
-  // .env에서 읽기
-  try {
-    const env = fs.readFileSync(path.join(__dirname, '..', '.env'), 'utf8')
-    const match = env.match(/VITE_OPENAI_API_KEY=(.+)/)
-    if (match) process.env.VITE_OPENAI_API_KEY = match[1].trim()
-  } catch {}
+  console.error('OPENAI_API_KEY required')
+  process.exit(1)
 }
-const FINAL_KEY = process.env.OPENAI_API_KEY || process.env.VITE_OPENAI_API_KEY
-if (!FINAL_KEY) { console.error('API key required'); process.exit(1) }
 
 const casesDir = path.join(__dirname, '..', 'src', 'data', 'cases', 'generated')
 const files = fs.readdirSync(casesDir).filter(f => f.endsWith('.json')).sort()
@@ -42,7 +36,7 @@ async function generateStatement(disputeName, truthDescription) {
 
   const res = await fetch('https://api.openai.com/v1/chat/completions', {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${FINAL_KEY}` },
+    headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${API_KEY}` },
     body: JSON.stringify({
       model: 'gpt-4o-mini',
       messages: [{ role: 'user', content: prompt }],

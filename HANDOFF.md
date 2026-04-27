@@ -11,7 +11,7 @@
 
 - **저장소**: https://github.com/flickylabs/ProjectWS
 - **기술 스택**: React + TypeScript + Vite 8 + Tailwind CSS v4 + Zustand
-- **LLM**: OpenAI GPT-4o-mini (실시간 대화) — `.env`에 `VITE_OPENAI_API_KEY` 설정 필요
+- **LLM**: OpenAI GPT-4o-mini (실시간 대화) — 서버 환경변수 `OPENAI_API_KEY` 설정 필요
 - **사건 데이터**: ChatGPT 5.4 Pro 확장모드로 사전 생성 → JSON 파일
 - **배포 준비**: Vercel (vercel.json 설정 완료, 아직 미배포)
 
@@ -120,7 +120,7 @@ npm install
 
 ### .env 파일 생성 (gitignore됨)
 ```
-VITE_OPENAI_API_KEY=sk-proj-...  # OpenAI API 키
+OPENAI_API_KEY=<server-only-openai-key>  # 서버 전용 OpenAI API 키
 ```
 **API 키 확인**: 유저에게 직접 물어보세요. 또는 https://platform.openai.com → API keys에서 발급.
 기존 키는 이전 대화에서 노출되어 교체가 필요할 수 있습니다.

@@ -103,7 +103,7 @@ router.post('/run', async (req, res) => {
     }
 
     // 2. LLM 호출
-    const apiKey = process.env.OPENAI_API_KEY || process.env.VITE_OPENAI_API_KEY;
+    const apiKey = process.env.OPENAI_API_KEY;
     if (!apiKey) return res.status(500).json({ error: 'OPENAI_API_KEY not set' });
 
     const llmRes = await fetch('https://api.openai.com/v1/chat/completions', {
@@ -201,7 +201,7 @@ async function runSingleCase(evalCase, db) {
     systemPrompt = systemPrompt.replaceAll(`{${k}}`, v);
   }
 
-  const apiKey = process.env.OPENAI_API_KEY || process.env.VITE_OPENAI_API_KEY;
+  const apiKey = process.env.OPENAI_API_KEY;
   if (!apiKey) return { id: evalCase.id, passed: false, error: 'No API key' };
 
   const llmRes = await fetch('https://api.openai.com/v1/chat/completions', {
@@ -604,7 +604,7 @@ router.post('/custom-run', async (req, res) => {
     }
 
     // LLM 호출
-    const apiKey = process.env.OPENAI_API_KEY || process.env.VITE_OPENAI_API_KEY;
+    const apiKey = process.env.OPENAI_API_KEY;
     if (!apiKey) return res.status(500).json({ error: 'OPENAI_API_KEY not set' });
 
     const llmRes = await fetch('https://api.openai.com/v1/chat/completions', {
