@@ -1,8 +1,29 @@
 # UI/VFX Dev (AIReasoningCutscene) 진입 메시지 — 두뇌 풀가동 컷인 (P0-F)
 
 **세션 영역**: P0-F AI 자유심문 대표 컷인 prototype
-**병렬**: P0-E (UI/VFX Dev — Hierarchy) — write scope 엄격 분리
-**의뢰서 본문**: `tmp/REQUEST-UIVFX-Dev-AIReasoningCutscene.md`
+**병렬**: P0-E 완료 (`995e48a`·`773a81a`) / API Proxy Migration P0 진행 중 — **이 의뢰서는 범위 제한**
+**의뢰서 본문**: `tmp/REQUEST-UIVFX-Dev-AIReasoningCutscene.md` (§1.1 범위 제한 + §8 회피선 영역 정독 필수)
+
+---
+
+## ⚠️ 범위 제한 (사용자 명시 — API Proxy Migration P0 동안)
+
+### 허용
+- UI prototype (Major + Compact 비주얼)
+- cutscene / overlay / visual sample
+- P0-E cooldown / hard cap 정합 (`995e48a`·`773a81a`)
+- "두뇌 풀가동" 체감 연출
+- mock / state 기반 preview (실제 LLM 호출 X)
+- `triggerAIReasoningCutscene` hook signature 정의
+
+### 금지
+- 실제 OpenAI 호출 / LLM·API fetch 신규
+- `VITE_OPENAI_API_KEY` 참조
+- API Proxy Migration 영역 수정 (`api/llm/*` / `llmClient.ts`)
+- secret / env 코드 수정
+- `useActionDispatch.ts` / `llmFreeQuestion.ts` / `llmDialogueResolver.ts` 자유심문 흐름 변경
+
+LLM/API 정합은 **API Proxy Migration commit 이후 별도 영역**.
 
 ---
 

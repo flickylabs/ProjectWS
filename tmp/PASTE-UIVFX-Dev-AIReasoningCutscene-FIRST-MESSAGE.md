@@ -2,6 +2,12 @@
 
 ClaudeCode CT-Main에서 의뢰합니다. AI 적용 유료 게임의 사업적 차별점 **대표 연출** prototype 영역입니다.
 
+⚠️ **범위 제한 (사용자 명시 — API Proxy Migration P0 동안)**:
+
+- **허용**: UI prototype / cutscene·overlay·visual sample / P0-E cooldown 정합 / 두뇌 풀가동 체감 / **mock·state preview** / hook signature 정의
+- **금지**: 실제 OpenAI 호출 / `VITE_OPENAI_API_KEY` 참조 / LLM·API fetch 신규 / API Proxy Migration 영역 수정 / secret·env 코드 수정 / `useActionDispatch.ts`·`llmFreeQuestion.ts`·`llmDialogueResolver.ts` 자유심문 흐름 변경
+- LLM/API 정합은 **API Proxy Migration commit 이후 별도 영역**.
+
 ---
 
 ## 1. git pull + 진입 조건 검사

@@ -11,6 +11,29 @@
 
 AI 적용 유료 게임의 사업적 차별점을 보여주는 **대표 연출** prototype 구현. 자유심문 입력이 기존 쟁점/심문 타입/증거에 매핑되어 NPC 응답이 만들어지는 순간을 **두뇌 풀가동 / 질문 분석** 컷인으로 시각화.
 
+## 1.1 범위 제한 (사용자 명시 — API Proxy Migration P0 동안 영역)
+
+⚠️ **현재 API key 노출 P0 (API Proxy Migration 영역)가 진행 중이므로 이 의뢰서는 범위를 제한**한다.
+
+### 허용
+- UI prototype (Major + Compact 비주얼 sequence)
+- cutscene / overlay / visual sample
+- 기존 P0-E cooldown / hard cap 규칙 준수 (commit `995e48a`·`773a81a` 정합)
+- "두뇌 풀가동" 체감 연출
+- **mock / state 기반 preview** (실제 LLM 호출 X / 가상 데이터로 체감 영역)
+- `triggerAIReasoningCutscene` hook signature 정의 (실제 연결 X / placeholder)
+
+### 금지
+- 실제 OpenAI 호출 추가
+- `VITE_OPENAI_API_KEY` 참조
+- LLM / API fetch 신규 구현
+- API Proxy Migration 영역 수정 (`api/llm/*` / `llmClient.ts` LLM 호출 영역 / 환경 변수)
+- secret / env 관련 코드 수정
+
+### 후속 영역 (이 의뢰서 외)
+- LLM / API 정합은 **API Proxy Migration commit 이후 별도 연결** (사용자 명시 영역)
+- 이 의뢰서에서는 hook signature 정의 + mock 데이터 체감 검증까지만
+
 ---
 
 ## 2. 진입 조건
@@ -107,8 +130,10 @@ AI 적용 유료 게임의 사업적 차별점을 보여주는 **대표 연출**
 ```
 총 ~1.4s. Skip X (짧음).
 
-### 5.4 트리거 hook
-P0-A 자유심문 매핑 결과 → 이 세션 컷인 trigger:
+### 5.4 트리거 hook (signature 정의만 / 실제 연결 X)
+
+⚠️ 이 의뢰서 영역에서는 **hook signature 정의 + mock 호출까지만**. 실제 자유심문 영역과의 연결은 API Proxy Migration commit 후 별도 영역.
+
 ```ts
 import { triggerAIReasoningCutscene } from '@/components/freeInterrogation/AIReasoningCutscene';
 
@@ -124,7 +149,11 @@ triggerAIReasoningCutscene({
 });
 ```
 
-P0-A 의뢰서와 합의: `triggerAIReasoningCutscene` 호출은 `intent ≠ unmapped` 일 때만 + Phase 0-A의 분석 성공 직후.
+이 의뢰서 영역에서는:
+- signature 정의 OK
+- **mock 데이터로 dev preview 영역에서 직접 호출하여 체감 검증** OK
+- 실제 `useActionDispatch.ts` / `llmFreeQuestion.ts` 등 자유심문 흐름과 연결 X (API Proxy Migration 후 별도 영역)
+- 향후 합의 영역: `intent ≠ unmapped` 일 때만 호출.
 
 ---
 
@@ -173,6 +202,9 @@ P0-A 의뢰서와 합의: `triggerAIReasoningCutscene` 호출은 `intent ≠ unm
 ## 8. 절대 회피선
 
 - **`src/app/pc.css` touch X** (UI 서브 스레드 영역 — 신규 CSS 별도 모듈)
+- **실제 OpenAI 호출 / LLM·API fetch 신규 X** (사용자 명시 — API Proxy Migration 후 영역)
+- **`VITE_OPENAI_API_KEY` 참조 X / secret·env 코드 수정 X**
+- **API Proxy Migration 영역 수정 X** (`api/llm/*` / `llmClient.ts` LLM 호출 영역 / 환경 변수)
 - 내부 용어 노출 X (`intent` / `classifier` / `LLM` / `guard` / `policy` / `누설`)
 - truth leak X (chip 텍스트 surface 표현만)
 - ScriptedText / caseData / baseline 회귀 X
@@ -180,6 +212,7 @@ P0-A 의뢰서와 합의: `triggerAIReasoningCutscene` 호출은 `intent ≠ unm
 - 새 큐 X
 - 신규 cutscene id 등록 외 기존 6 cutscene 본체 touch X (P0-E 영역)
 - feature flag global default 변경 X
+- `useActionDispatch.ts` / `llmFreeQuestion.ts` / `llmDialogueResolver.ts` 자유심문 흐름 영역 변경 X (API Proxy 후 영역)
 
 ---
 
