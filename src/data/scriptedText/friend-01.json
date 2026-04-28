@@ -74167,7 +74167,7 @@
           "variants": [
             {
               "id": "b-e-1-early-self-v1",
-              "text": "연락한 건 맞습니다.",
+              "text": "최근 9일 동안 전화도 했고 문자도 보냈습니다. 기록 그대로입니다.",
               "behaviorHint": "짧은 문장으로 사실만 인정하고 이유는 닫아 둔다.",
               "tags": [
                 "channel:evidence_present",
