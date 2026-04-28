@@ -184,7 +184,7 @@
           "hiddenAgenda": "자신도 B를 비난하는 데 가담한 것이 부끄럽다."
         },
         "unlockedByDossier": [
-          "dc-3"
+          "dc-1"
         ]
       },
       {
@@ -3832,9 +3832,9 @@
         "visibility": "base"
       },
       {
-        "id": "dc-1",
+        "id": "dc-2",
         "type": "derived_note",
-        "label": "dc-1 왜 바로 말하지 않았는가",
+        "label": "dc-2 왜 바로 말하지 않았는가",
         "linkedDisputeIds": [
           "d-2",
           "d-4"
@@ -3846,9 +3846,9 @@
         "visibility": "derived"
       },
       {
-        "id": "dc-2",
+        "id": "dc-3",
         "type": "derived_note",
-        "label": "dc-2 또 혼자 막으려 했는가",
+        "label": "dc-3 또 혼자 막으려 했는가",
         "linkedDisputeIds": [
           "d-3",
           "d-4"
@@ -3860,9 +3860,9 @@
         "visibility": "derived"
       },
       {
-        "id": "dc-3",
+        "id": "dc-1",
         "type": "derived_note",
-        "label": "dc-3 확인 없이 매도한 건 누구인가",
+        "label": "dc-1 확인 없이 매도한 건 누구인가",
         "linkedDisputeIds": [
           "d-5"
         ],
@@ -3901,15 +3901,15 @@
     ],
     "outputs": [
       {
-        "id": "dc-1",
-        "label": "dc-1 왜 바로 말하지 않았는가",
+        "id": "dc-2",
+        "label": "dc-2 왜 바로 말하지 않았는가",
         "summary": "예비신랑이 먼저 선을 넘었다면 왜 바로 송다은에게 말하지 않았는가",
         "nodeType": "derived_note",
         "noteText": "예비신랑이 먼저 선을 넘었다면, 왜 그때 바로 송다은에게 말하지 않았습니까?",
         "effects": [
           {
             "kind": "unlock_note",
-            "unlockNodeId": "dc-1"
+            "unlockNodeId": "dc-2"
           },
           {
             "kind": "upgrade_dispute",
@@ -3922,15 +3922,15 @@
         "judgeHint": "수민 씨에게 왜 바로 말하지 않았는지 직접 물어볼 수 있습니다."
       },
       {
-        "id": "dc-2",
-        "label": "dc-2 또 혼자 막으려 했는가",
+        "id": "dc-3",
+        "label": "dc-3 또 혼자 막으려 했는가",
         "summary": "송다은 아버지가 또 같은 방식으로 돈 얘기를 꺼냈다면 왜 또 혼자 막으려 했는가",
         "nodeType": "derived_note",
         "noteText": "송다은 아버지가 또 같은 방식으로 돈 얘기를 꺼냈다면, 당신은 이번에도 왜 혼자 막으려 했습니까?",
         "effects": [
           {
             "kind": "unlock_note",
-            "unlockNodeId": "dc-2"
+            "unlockNodeId": "dc-3"
           },
           {
             "kind": "upgrade_dispute",
@@ -3943,15 +3943,15 @@
         "judgeHint": "아버지의 과거 돈 접근 패턴에 초점을 맞춰 추궁해보시지요."
       },
       {
-        "id": "dc-3",
-        "label": "dc-3 확인 없이 매도한 건 누구인가",
+        "id": "dc-1",
+        "label": "dc-1 확인 없이 매도한 건 누구인가",
         "summary": "직접 확인도 하지 않고 친구를 단톡방에서 먼저 매도한 건 누구인가",
         "nodeType": "derived_note",
         "noteText": "직접 확인도 하지 않고 친구를 단톡방에서 먼저 매도한 건 당신 아닙니까?",
         "effects": [
           {
             "kind": "unlock_note",
-            "unlockNodeId": "dc-3"
+            "unlockNodeId": "dc-1"
           },
           {
             "kind": "unlock_dispute",
@@ -4006,7 +4006,7 @@
         ],
         "cost": 1,
         "discoveryText": "연락 기록과 단톡방 캡처를 대조하면, 최수민의 연락 사실이 확인도 없이 '집착'으로 프레이밍된 과정이 보인다.",
-        "outputId": "dc-3",
+        "outputId": "dc-1",
         "resultType": "upgrade"
       },
       {
@@ -4017,7 +4017,7 @@
         ],
         "cost": 1,
         "discoveryText": "연락 기록과 예비신랑의 선넘는 메시지를 대조하면, 먼저 선을 넘은 건 예비신랑이었다는 반전이 나온다.",
-        "outputId": "dc-1",
+        "outputId": "dc-2",
         "resultType": "dossier"
       },
       {
@@ -4028,7 +4028,7 @@
         ],
         "cost": 1,
         "discoveryText": "송다은 아버지가 예비신랑에게 보낸 문자와 과거 최수민에게 보낸 차용 문자의 패턴이 거의 동일하다.",
-        "outputId": "dc-2",
+        "outputId": "dc-3",
         "resultType": "dossier"
       },
       {
@@ -4039,7 +4039,7 @@
         ],
         "cost": 1,
         "discoveryText": "예비신랑의 접근과 대조표를 합치면, 최수민의 연락이 경고였다는 결론이 강화된다.",
-        "outputId": "dc-3",
+        "outputId": "dc-1",
         "resultType": "upgrade"
       },
       {
@@ -4050,7 +4050,7 @@
         ],
         "cost": 1,
         "discoveryText": "송다은의 '또 내 남자한테 연락한다'는 발언이 단톡방에서 어떻게 확산됐는지 경로가 확인된다.",
-        "outputId": "dc-3",
+        "outputId": "dc-1",
         "resultType": "dossier"
       },
       {
@@ -4083,7 +4083,7 @@
         ],
         "cost": 1,
         "discoveryText": "수민이 '참았어야 했다'는 말과 예비신랑 메시지를 대조하면, 먼저 선을 넘은 쪽이 예비신랑이었다는 반전이 나온다.",
-        "outputId": "dc-1",
+        "outputId": "dc-2",
         "resultType": "upgrade"
       },
       {
@@ -4094,7 +4094,7 @@
         ],
         "cost": 1,
         "discoveryText": "수민이 참으려 했다는 말과 다은 아버지의 문자를 합치면, 아버지의 돈 접근 패턴이 처음이 아니라는 사실이 드러난다.",
-        "outputId": "dc-2",
+        "outputId": "dc-3",
         "resultType": "upgrade"
       },
       {
@@ -4105,7 +4105,7 @@
         ],
         "cost": 1,
         "discoveryText": "\"또 내 남자한테 연락한다\"는 단정과 \"참았어야 했는데\"라는 자책을 나란히 놓으면, 같은 사건을 전혀 다르게 겪고 있다는 점이 드러난다.",
-        "outputId": "dc-3",
+        "outputId": "dc-1",
         "resultType": "upgrade"
       }
     ]
@@ -4206,7 +4206,7 @@
           "L-1",
           "e-7"
         ],
-        "dossierCardId": "dc-3",
+        "dossierCardId": "dc-1",
         "interpretationChoices": [
           {
             "id": "L-1-A",
@@ -4237,7 +4237,7 @@
           "L-2",
           "e-5"
         ],
-        "dossierCardId": "dc-1",
+        "dossierCardId": "dc-2",
         "interpretationChoices": [
           {
             "id": "L-2-A",
@@ -4268,7 +4268,7 @@
           "L-3",
           "e-7"
         ],
-        "dossierCardId": "dc-2",
+        "dossierCardId": "dc-3",
         "interpretationChoices": [
           {
             "id": "L-3-A",
