@@ -110,6 +110,71 @@ Current registry status: NONE.
 
 `family-01` shares the same stale assembler scope and historical input-dir absence risk as `friend-01`. Any future `family-01` manual fix must be registered here with the same metadata shape: file, channel/key/variant, before, after, source, reason, commit/date, validation result, baseline tag if applicable, and result docs.
 
+#### §5.2.1 Known generated-artifact gap (non-fix / no apply)
+
+**This is not a manual fix.** No new content was authored or applied. This subsection documents a known generated-artifact gap for traceability and to anchor a future content/scope decision.
+
+| Field | Value |
+|---|---|
+| Case | `family-01` |
+| Status | known generated-artifact gap (no manual fix applied) |
+| Decision input value | `family-01-scope=delta-carry-forward-known-gap` |
+| Baseline | `8e6e302 fix(case-data): friend-01 dossier id three-way alignment via cyclic relink` |
+| Date | 2026-04-29 |
+| Investigation result | `tmp/qa-thread-guides/42-FAMILY-01-SCOPE-DECISION-REDO-RESULT.md` |
+| Investigation prior | `tmp/qa-thread-guides/34-TRACK-A-A1-C3-DOSSIER-ID-ALIGNMENT-RESULT.md` (§2 family-01) |
+| Generated source surfaces | `src/data/cases/generated/family-01.json:combinationLab.{outputs,recipes,nodes}`, `v3Design.{leadLines,authorityPlacements}`, `duo.socialGraph` |
+| Source-of-truth side | `src/data/claimPolicies/family-01-dossier-cards.json` (`dc-1` ~ `dc-5`), `src/data/scriptedText/family-01.json:channels.dossier` |
+
+##### Gap description
+
+- Source `dc-1` `말년의 종이` (evidence `e-1+e-2+e-3`, dispute `d-1`) has **no generated `combinationLab.outputs[]` entry** that matches its content. The closest recipe-level inputs are `combine-11 e-2+e-3`, but its current output target is generated `dc-2` `형이 모르던 20년의 돈` content.
+- Generated `dc-3` `60대 40이 아니었다면` is an **extra bridge note with no exact claim/script dossier-card counterpart**. It is reachable through `combine-7`, `combine-10`, and `combine-12`; it is referenced by `duo.socialGraph` `w-2` and `v3Design.leadLines` `L-4`; and it unlocks dispute `d-4`.
+- Generated `dc-1` is conceptually source `dc-2` `줄인 유서`. Generated `dc-2` is conceptually source `dc-3` `20년의 돈`. The dossier id namespace is offset against the source-of-truth.
+- Generated `dc-4` (`감춘 이유`) and `dc-5` (`어머니의 뜻`) already align with their source counterparts.
+- `v3Design.leadLines` `L-2` / `L-3` / `L-4` carry semantic offsets that mirror the generated id offset.
+
+##### Why this is not a pure cyclic relink (unlike `friend-01`)
+
+`friend-01` dossier id misalignment was a pure 3-way cyclic relink (commit `8e6e302`, packet 37/38). `family-01` misalignment is a **content + multi-surface change** because:
+
+- No generated output contains `말년의 종이` content. An id-only relink cannot fix `combine-11` (`e-2+e-3` paper/visit/caregiver evidence currently opens generated money-note id).
+- The extra generated `dc-3` `60대 40이 아니었다면` has no source counterpart, so no straightforward target id is available.
+- Generated `dc-4` and `dc-5` already align, so a γ remap (extra `dc-3` → `dc-4` or `dc-5`) would create duplicate or displace collisions with already-aligned outputs.
+- Internal `dc-*` references span `combinationLab.outputs / nodes / recipes / effects.unlockNodeId`, `duo.socialGraph`, `v3Design.leadLines`, and `v3Design.authorityPlacements`.
+
+##### Future recommended path
+
+If a future round elects to complete the 4-way alignment, the recommended option is:
+
+**Option-ε: `family-01-scope=epsilon-alpha-new-dc1-plus-retire-or-park-extra-generated-dc3`**
+
+- α stage — author a new generated output that matches source `dc-1` `말년의 종이` (evidence family `e-1+e-2+e-3`).
+- mechanical relink — remap current generated `dc-1` concept onto source `dc-2`, current generated `dc-2` concept onto source `dc-3`.
+- β stage — retire, park, or explicitly reclassify the extra generated `dc-3` `60대 40이 아니었다면`. Retarget `combine-7` / `combine-10` / `combine-12` / `duo.socialGraph` `w-2` / `v3Design.leadLines` `L-4` consistently.
+- Generated `dc-4` and `dc-5` remain as-is.
+
+##### Boundary requirements for the future ε round
+
+- The α stage requires new dialogue/narrative content. Per project policy (`feedback_use_gpt_pro`, `feedback_gpt_pro_claude_review`, `feedback_revision_meaning_over_form`), the content-authoring step must go through a GPT Pro session, then Claude Korean review and correction, before any generated-data apply.
+- Apply must be split into a dedicated apply packet after content authoring is reviewed and approved by the user.
+- Static validation (`node --check scripts/qa-route-simulator.cjs` / `npx eslint <changed file>` / `npx tsc -b --force` / `npm run build:pc`) before commit approval.
+- Optional bulk QA rerun after apply to confirm no regression against the documented round baseline.
+
+##### Why Option-γ alone is not recommended
+
+Generated `dc-4` (`감춘 이유`) and `dc-5` (`어머니의 뜻`) already align with their source counterparts. Remapping the extra generated `dc-3` to `dc-4` or `dc-5` would duplicate or displace already-aligned outputs. γ is therefore not viable as a standalone next action.
+
+##### Why Option-β alone is not recommended
+
+Retiring extra generated `dc-3` reduces the bridge-note problem but does not provide any generated output for source `dc-1` `말년의 종이`. β alone leaves `combine-11` mismatch and the generated `dc-1` / `dc-2` offset unresolved.
+
+##### Carry-forward expectations
+
+- This entry is a known-gap declaration, not a manual fix. The §5.2 manual fix registry status remains NONE for `family-01`.
+- QA bulk runs may surface findings derived from this gap (for example, `combine-11` paper/visit/caregiver evidence opening the generated money-note id, or `v3Design.leadLines` semantic offset). Such findings are baseline-explainable. Per `tmp/qa-thread-guides/04-CT-INSTRUCTIONS.md` Stop Rules (clarified in commit `d217df0`), a documented baseline-allow-listed cluster signature is a known signal and does not by itself fire the new-P0/P1 stop rule.
+- Future regeneration must continue to honor the §6 5-step regeneration process. If the assembler is ever revived with current canonical input, this gap declaration must be reread before any regeneration commit.
+
 ### §5.3 `spouse-01` manual fixes
 
 Current registry status: NONE.
