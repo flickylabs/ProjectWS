@@ -322,11 +322,19 @@ tmp/qa-bulk-runs/integrated/<stage-id>-<UTC-timestamp>/   (merge output, written
 ### Stop Rules (per runner)
 
 - Stop the batch immediately on `hard > 0`.
+- Each packet/round must declare the documented baseline allow-list for the launched round, separated by mode when normal and exhaustive baselines differ.
+- New P0/P1 means any cluster or finding category whose representative findings include severity `P0` or `P1` and whose cluster signature/category is absent from the documented baseline allow-list for the launched round. Do not infer P0/P1 status from category-name patterns alone.
 - Stop after the current batch and summarize the cluster on any new `P0` or `P1` cluster appearance.
+- A cluster/finding category on the launched round's baseline allow-list is a known signal and does not fire the new-P0/P1 stop rule by itself. Other stop rules still apply, including `hard > 0`.
 - On flaky or new-category appearance, preserve representative samples (run ids, seed/timing/log) before stopping or holding.
 - If only known clusters repeat, the stage may proceed to the next stage.
 - Hard failures must be summarized before any further stage is launched.
 - A runner that stops must not block the other runner; merge waits for the actually-completed coverage from each runner.
+
+Historical post-S7 baseline (round-20260428):
+
+- Normal mode: `safe_fallback_used`, `evidence_investigate_no_npc_followup`, `qa_annotation_only_action`, `system_only_action_no_npc_followup`
+- Exhaustive mode: `evidence_investigate_no_npc_followup`, `system_only_action_no_npc_followup`
 
 ### Result Accumulation
 
