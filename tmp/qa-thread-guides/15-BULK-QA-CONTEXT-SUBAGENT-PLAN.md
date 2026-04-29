@@ -1,5 +1,7 @@
 # 15-BULK-QA-CONTEXT-SUBAGENT-PLAN
 
+> 2026-04-28 operational correction: staging is a checkpoint/autoadvance structure, not a default hard stop after Stage 1. The active worker PASTEs are the four fresh-run `PASTE-*-STAGE-1-FIRST-MESSAGE.md` files, rewritten to start from `run-000001` under `tmp/qa-bulk-runs/restart-20260428/` and run to the final planned target unless a stop rule fires.
+
 ## Purpose
 
 This document defines how large QA runs should be planned so that execution scale does not overload agent context.

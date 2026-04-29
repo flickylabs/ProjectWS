@@ -1,5 +1,7 @@
 # 19-GUIDE-UPDATES-BULK-QA-PROPOSAL
 
+> 2026-04-28 operational correction: any wording that implies one PASTE per stage is superseded by the four rewritten fresh-run `PASTE-*-STAGE-1-FIRST-MESSAGE.md` files. Bulk QA worker PASTEs start from `run-000001` under `tmp/qa-bulk-runs/restart-20260428/` and run to the final planned target with stage-local checkpoints unless a stop rule fires.
+
 Bulk-QA guide-update proposal — 15-driven application to guide 4 files, with parallel Codex-primary + ClaudeCode-cross-check structure.
 
 ## Scope
@@ -522,6 +524,6 @@ Read-only checks; no rerun required:
 2. Codex-Dev entry per 21 (PASTE separate from this proposal).
 3. Codex-Dev applies guide edits + commits 19 / 20 / 21 + edited guide files.
 4. CT reviews diff; if PASS, CT requests user push approval for the docs commit.
-5. Subsequent rounds: Stage 1 (per runner) PASTE generation per 20 template (separate user-coordinated rounds, parallel launches).
+5. Subsequent active rounds: use the four rewritten fresh-run `PASTE-*-STAGE-1-FIRST-MESSAGE.md` files; do not generate Stage 1-only PASTEs from the superseded 20 template unless CT/user explicitly chooses a manual stage gate.
 
 CT did not modify any guide file in this proposal. No commit. No additional QA executed.

@@ -1,5 +1,7 @@
 # 21-REQUEST-CODEX-DEV-BULK-QA-GUIDES
 
+> 2026-04-28 operational correction: this historical request produced a per-stage PASTE template that is no longer active. Use the four rewritten fresh-run `PASTE-*-STAGE-1-FIRST-MESSAGE.md` files for current execution.
+
 Codex-Dev request packet for applying bulk-QA guide updates and adding the future bulk PASTE template (parallel Codex-primary + ClaudeCode-cross-check structure).
 
 ## Scope
@@ -16,7 +18,7 @@ Codex-Dev request packet for applying bulk-QA guide updates and adding the futur
 - out of scope:
   - any code change (`scripts/qa-route-simulator.cjs` / `src/**` / runtime — all forbidden)
   - any data change (Track A surfaces forbidden)
-  - actual bulk QA execution (Stages 1–4 per runner are separate user-coordinated rounds, each with their own PASTE generated from 20)
+  - actual bulk QA execution (historical wording superseded on 2026-04-28: active execution now uses fresh-run-to-final PASTEs with stage-local checkpoints)
   - baseline tag bump
   - new judgment beyond what 15 / 19 / 20 already specify
 
@@ -118,7 +120,7 @@ Build / lint:
 - baseline tag bump
 - A2-engine / S5 (still deferred — see 17 §S5 Deferred Trace + 18 §S5 Deferred Trace)
 - 11 / 12 / 13 / 14 / 15 / 16 / 17 / 18 packet body edits (read-only on prior packet history; 19 / 20 / 21 are the only writable docs in this round, and 20's body remains unchanged per §Item — Commit 20)
-- actual bulk QA runs on either runner (Stages 1–4 are separate rounds with their own PASTE per 20, generated **once per runner per stage** so each Stage 1 launch produces 2 PASTEs)
+- actual bulk QA runs on either runner (historical wording superseded on 2026-04-28: do not generate once per runner per stage; use the four rewritten fresh-run-to-final PASTEs unless CT/user explicitly chooses manual gates)
 - introducing new variables in 20 placeholders or new operating constraints beyond what 19 specifies
 
 ## Push Strategy
@@ -156,7 +158,7 @@ User-confirmed decisions for round 19/20/21:
 2. **Baseline**: `344e686` (current main HEAD).
 3. **Baseline tag**: no bump in this round.
 4. **Worktree retention**: `D:/ProjectWS-main-temp` retained until at least Stage 1 entry decision; do not remove.
-5. **Bulk QA**: not started this round; **Stage 1 (per runner) is a separate user-coordinated round** — each runner gets its own PASTE generated from 20, both running in parallel under the Cross-Check Common Execution Contract.
+5. **Bulk QA**: not started this round; historical Stage 1-only launch wording is superseded on 2026-04-28 by fresh-run-to-final worker PASTEs with stage-local checkpoints.
 6. **Application actor**: Codex-Dev applies 19's additions to guide files and commits 19 / 20 / 21 (CT does not Edit guide files in this round).
 7. **Commit grouping**: default single commit; up to 2 commits split (`guide` / `template`) allowed if diff grows; no further per-file split.
 8. **20 body modification**: Codex-Dev does not edit 20's body in this round (concerns surface in 22 instead).
@@ -168,7 +170,7 @@ User-confirmed decisions for round 19/20/21:
 
 12. **Commit policy for 15 / 17 / earlier untracked operational docs**: 15 (`15-BULK-QA-CONTEXT-SUBAGENT-PLAN.md`) is included in this docs commit as the bulk QA staging source. 17 (`17-REQUEST-CODEX-DEV-S7-RESPONSE-MISSING-PARITY.md`) is also included, but the commit summary tags it as **"historical S7 request trace"** so it remains distinguishable from the active bulk QA guide round files. Earlier docs (07–13 except 14 which is already committed; 16; 18) remain untracked operational artifacts in this round.
 13. **22 result doc filename**: `22-CODEX-DEV-BULK-QA-GUIDES-RESULT.md` (confirmed).
-14. **Stage 1 launch sequencing**: **staggered launch**. Codex primary 2 workers (normal + exhaustive) start first; after 10–15 minutes or after Stage 1 initial artifact production is confirmed, ClaudeCode cross-check 2 workers (normal + exhaustive) start. Reason: shared worktree / result-root directory or schema errors and stop-rule errors should not crash all four workers simultaneously. Once started, workers run independently and do not read each other's results during execution. The Stage 1 launch round (separate from this guide-application round) will produce 4 PASTEs from the 20 template; CT will coordinate the staggered timing.
+14. **Launch sequencing**: **staggered launch** remains valid, but the Stage 1-only PASTE generation is superseded on 2026-04-28. Codex primary 2 workers (normal + exhaustive) start first; after 10–15 minutes or after initial artifact production is confirmed, ClaudeCode cross-check 2 workers (normal + exhaustive) start. Once started, workers run independently to their final targets unless a stop rule fires and do not read each other's results during execution.
 
 ## Hand-off
 
@@ -179,6 +181,6 @@ Per §Resolved Decisions (all decisions confirmed; no Open Items remain):
 3. Codex-Dev applies 19's additions, commits per §Item — Commit 19 / 20 / 21 / 15 / 17 (per §Commit Strategy).
 4. Codex-Dev reports back via `22-CODEX-DEV-BULK-QA-GUIDES-RESULT.md` (per §Resolved Decisions #13).
 5. CT reviews diff; if PASS, CT requests user push approval for the docs commit.
-6. CT resumes coordination: Stage 1 PASTE generation per 20 (4 PASTEs total — 2 per runner; staggered launch per §Resolved Decisions #14), Track A entry decision, baseline-tag decision.
+6. CT resumes coordination: use the 2026-04-28 fresh-run-to-final corrected PASTEs (4 PASTEs total — 2 per runner; staggered launch per §Resolved Decisions #14), Track A entry decision, baseline-tag decision.
 
 CT did not modify code, did not commit, did not change packet artifacts, did not run additional QA.

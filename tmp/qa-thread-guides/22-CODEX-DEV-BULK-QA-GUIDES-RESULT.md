@@ -1,5 +1,7 @@
 # 22-CODEX-DEV-BULK-QA-GUIDES-RESULT
 
+> 2026-04-28 operational correction: this historical result references the now-superseded per-stage template. Current execution must use the four rewritten fresh-run `PASTE-*-STAGE-1-FIRST-MESSAGE.md` files.
+
 Codex-Dev bulk QA guide-application result.
 
 ## Baseline / Entry
@@ -30,7 +32,7 @@ Committed packet/template/source docs:
 
 Preserved and not committed in this round:
 
-- Stage 1 launch candidate artifacts: `CODEX-QA-A-NORMAL-PRIMARY.md`, `CODEX-QA-B-EXHAUSTIVE-PRIMARY.md`, `CLAUDE-QA-A-NORMAL-CROSSCHECK.md`, `CLAUDE-QA-B-EXHAUSTIVE-CROSSCHECK.md`
+- Historical Stage 1 launch candidate artifacts: `CODEX-QA-A-NORMAL-PRIMARY.md`, `CODEX-QA-B-EXHAUSTIVE-PRIMARY.md`, `CLAUDE-QA-A-NORMAL-CROSSCHECK.md`, `CLAUDE-QA-B-EXHAUSTIVE-CROSSCHECK.md` (superseded for active execution by the four rewritten fresh-run PASTEs)
 - Earlier untracked operational docs and packet artifacts outside the requested 15 / 17 / 19 / 20 / 21 / 22 set
 - Existing rerun/result directories under `tmp/`
 

@@ -1,5 +1,7 @@
 # 20-FUTURE-BULK-PASTE-TEMPLATE
 
+> SUPERSEDED FOR ACTIVE OPERATIONS as of 2026-04-28. This template encodes per-stage PASTE generation and can cause workers to stop after the smoke stage. Do not instantiate it as-is. Use the four rewritten fresh-run `PASTE-*-STAGE-1-FIRST-MESSAGE.md` files, which start under `tmp/qa-bulk-runs/restart-20260428/` and run to final targets with stage-local checkpoints.
+
 Future bulk-QA session entry PASTE template — supports parallel Codex-primary + ClaudeCode-cross-check rounds.
 
 ## Scope
@@ -292,7 +294,7 @@ CT must not decide that a cluster is benign or release-blocking from detector co
 
 ## End Of Template Body
 
-The above body (everything between `## Template Body (copy below this line)` and `## End Of Template Body`) is the canonical PASTE form for any future bulk-QA round (per runner × per stage). Do not edit the body in this template file unless 15 / 19 / user instruction explicitly changes the underlying rule.
+The above body (everything between `## Template Body (copy below this line)` and `## End Of Template Body`) is superseded for active use. Do not instantiate it without applying the 2026-04-28 fresh-run-to-final correction used in the four active `PASTE-*-STAGE-1-FIRST-MESSAGE.md` files.
 
 ## Resolved Decisions (this template)
 
@@ -305,4 +307,4 @@ The above body (everything between `## Template Body (copy below this line)` and
 
 ## Hand-off
 
-This template file is added by round 21 (`21-REQUEST-CODEX-DEV-BULK-QA-GUIDES.md` §Item — Commit 20). When future bulk-QA rounds begin, instantiate per §How To Use, **once per runner per stage** (so a single Stage 1 launch produces 2 PASTEs — one for `codex-primary`, one for `claudecode-crosscheck`).
+This template file was added by round 21 (`21-REQUEST-CODEX-DEV-BULK-QA-GUIDES.md` §Item — Commit 20), but active operation has been corrected. Future bulk-QA rounds should instantiate per worker/mode run-to-final, not once per runner per stage, unless CT/user explicitly chooses manual stage gates.
