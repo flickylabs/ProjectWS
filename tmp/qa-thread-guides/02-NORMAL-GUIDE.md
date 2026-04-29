@@ -3,7 +3,7 @@
 Normal mode uses curated manifest routes from:
 
 ```text
-D:/ProjectWS-main-temp/tmp/qa-route-simulator-manifests/<caseId>.json
+D:/ProjectWS/tmp/qa-route-simulator-manifests/<caseId>.json
 ```
 
 Normal mode is the closest proxy for intended player-facing QA routes.

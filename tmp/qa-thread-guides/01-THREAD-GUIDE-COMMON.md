@@ -359,19 +359,19 @@ Use fast targeted search first.
 Recommended commands:
 
 ```powershell
-rg -n "routeId|evidenceId|disputeId|speaker|exact phrase" D:/ProjectWS-main-temp
+rg -n "routeId|evidenceId|disputeId|speaker|exact phrase" D:/ProjectWS
 ```
 
 Useful files:
 
 ```text
-D:/ProjectWS-main-temp/src/data/cases/generated/<caseId>.json
-D:/ProjectWS-main-temp/src/data/scriptedText/<caseId>.json
-D:/ProjectWS-main-temp/src/data/disclosurePolicy/<caseId>.json
-D:/ProjectWS-main-temp/tmp/qa-route-simulator-manifests/<caseId>.json
-D:/ProjectWS-main-temp/tmp/qa-warmup-packet/<caseId>-<mode>/findings.json
-D:/ProjectWS-main-temp/tmp/qa-warmup-packet/<caseId>-<mode>/action-by-action-trace.json
-D:/ProjectWS-main-temp/tmp/qa-warmup-packet/<caseId>-<mode>/route-transcripts/
+D:/ProjectWS/src/data/cases/generated/<caseId>.json
+D:/ProjectWS/src/data/scriptedText/<caseId>.json
+D:/ProjectWS/src/data/disclosurePolicy/<caseId>.json
+D:/ProjectWS/tmp/qa-route-simulator-manifests/<caseId>.json
+D:/ProjectWS/tmp/qa-warmup-packet/<caseId>-<mode>/findings.json
+D:/ProjectWS/tmp/qa-warmup-packet/<caseId>-<mode>/action-by-action-trace.json
+D:/ProjectWS/tmp/qa-warmup-packet/<caseId>-<mode>/route-transcripts/
 ```
 
 ## Required Final Report Format

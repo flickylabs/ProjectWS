@@ -57,19 +57,20 @@ ClaudeCode CT-Main에서 Bulk QA <runner-id> <stage-id> 라운드를 의뢰합�
 
 ## CRITICAL Worktree Guard
 
-작업 cwd는 반드시 `D:/ProjectWS-main-temp`입니다.
+작업 cwd는 반드시 `D:/ProjectWS`입니다.
 
-`D:/ProjectWS`는 보존 중인 wip worktree입니다. Bulk QA 작업에 사용하지 마세요.
+`D:/ProjectWS`는 현재 canonical main/Live-QA worktree입니다. Bulk QA 작업은 여기에서 실행하세요.
+`D:/ProjectWS-dev`는 보존 중인 wip worktree입니다. Bulk QA 작업에 사용하지 마세요.
 
 금지:
-- `D:/ProjectWS`에서 `git pull origin main` 실행 금지
-- `D:/ProjectWS/tmp/PASTE-*` 파일 사용 금지
+- `D:/ProjectWS-dev`에서 `git pull origin main` 실행 금지
+- `D:/ProjectWS-dev/tmp/PASTE-*` 파일 사용 금지
 - `wip/phase-b-route-simulator-20260427` branch에서 conflict resolve 금지
 
 진입 직후 아래 조건 확인:
-- current directory = `D:/ProjectWS-main-temp`
+- current directory = `D:/ProjectWS`
 - `git log --oneline -1`이 `<main-HEAD>` 정확히 일치 (양쪽 runner 동일 commit pin)
-- `git status --short --branch`가 `D:/ProjectWS-main-temp` 기준 상태
+- `git status --short --branch`가 `D:/ProjectWS` 기준 상태
 
 만약 HEAD가 `8f7ca75` 또는 branch가 `wip/phase-b-route-simulator-20260427`이면 즉시 중단 + 보고. 진행 중인 merge가 있으면 `git merge --abort`만 수행한 뒤 멈춥니다.
 

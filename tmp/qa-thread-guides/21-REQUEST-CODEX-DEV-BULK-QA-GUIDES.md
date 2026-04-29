@@ -9,7 +9,7 @@ Codex-Dev request packet for applying bulk-QA guide updates and adding the futur
 - requester: ClaudeCode CT-Main (no code authority on this packet)
 - recipient: Codex-Dev
 - baseline commit: `344e686` (post-Track-B + S7 / origin/main HEAD)
-- baseline worktree: `D:/ProjectWS-main-temp` (Track B Resolved Decision carry-over)
+- baseline worktree: `D:/ProjectWS` (canonical main/Live-QA worktree)
 - baseline tag: `baseline-pre-policy-v3` → `a7aaec3` (no bump in this round)
 - in scope:
   - **apply** `19-GUIDE-UPDATES-BULK-QA-PROPOSAL.md` to guide 4 files (`01-…`, `02-…`, `03-…`, `04-…`) — including the per-runner Stage Plan, the Cross-Check Common Execution Contract, and the Cross-Runner Merge section
@@ -37,8 +37,8 @@ Per `19-GUIDE-UPDATES-BULK-QA-PROPOSAL.md` and `15-BULK-QA-CONTEXT-SUBAGENT-PLAN
 ## Pre-Conditions
 
 - **Critical worktree guard** (same as 12 / 17):
-  - cwd must be `D:/ProjectWS-main-temp`. Do not use `D:/ProjectWS` (preserved wip worktree on `wip/phase-b-route-simulator-20260427`).
-  - Do not use stale paste files under `D:/ProjectWS/tmp/`.
+  - cwd must be `D:/ProjectWS`. Do not use `D:/ProjectWS-dev` (preserved wip worktree on `wip/phase-b-route-simulator-20260427`).
+  - Do not use stale paste files under `D:/ProjectWS-dev/tmp/`.
   - If HEAD is `8f7ca75 wip: complete Phase B route simulator continuation` or branch is `wip/phase-b-route-simulator-20260427`, stop immediately. Do not resolve merge conflicts there. If a merge is in progress, only run `git merge --abort`, then report.
 - `git pull origin main` then verify HEAD = `344e686` (current main HEAD per round-2 push).
 - tracked clean before entry; existing untracked artifacts under `tmp/qa-warmup-packet/`, `tmp/qa-warmup-trial/`, `tmp/qa-small-rerun-track-b-*`, `tmp/codex-dev-track-b/`, and other `tmp/qa-thread-guides/*.md` packet docs are baseline-frozen — do not regenerate or move them.
@@ -154,10 +154,10 @@ Per Track B / S7 push pattern:
 
 User-confirmed decisions for round 19/20/21:
 
-1. **Worktree**: `D:/ProjectWS-main-temp` (Track B / S7 carry-over).
+1. **Worktree**: `D:/ProjectWS` (canonical main/Live-QA worktree).
 2. **Baseline**: `344e686` (current main HEAD).
 3. **Baseline tag**: no bump in this round.
-4. **Worktree retention**: `D:/ProjectWS-main-temp` retained until at least Stage 1 entry decision; do not remove.
+4. **Worktree retention**: `D:/ProjectWS` retained until at least Stage 1 entry decision; do not remove.
 5. **Bulk QA**: not started this round; historical Stage 1-only launch wording is superseded on 2026-04-28 by fresh-run-to-final worker PASTEs with stage-local checkpoints.
 6. **Application actor**: Codex-Dev applies 19's additions to guide files and commits 19 / 20 / 21 (CT does not Edit guide files in this round).
 7. **Commit grouping**: default single commit; up to 2 commits split (`guide` / `template`) allowed if diff grows; no further per-file split.

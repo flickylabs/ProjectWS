@@ -60,25 +60,25 @@ If planning requires raw inspection, it must name the cluster, runner, and sampl
 Use:
 
 ```text
-D:/ProjectWS-main-temp
+D:/ProjectWS
 ```
 
 Baseline commit:
 
 ```text
-ff3f9a1
+b809ccc
 ```
 
 Before running, confirm:
 
 ```powershell
-git -C D:/ProjectWS-main-temp status --short --branch
-git -C D:/ProjectWS-main-temp log --oneline -5
+git -C D:/ProjectWS status --short --branch
+git -C D:/ProjectWS log --oneline -5
 ```
 
-Do not remove `D:/ProjectWS-main-temp` until all packets are generated, reviewed, and backed up if needed.
+Do not remove or rename `D:/ProjectWS`; it is now the canonical main/Live-QA worktree.
 
-Do not touch `D:/ProjectWS` wip worktree.
+Do not touch `D:/ProjectWS-dev` WIP worktree.
 
 Do not use `D:/ProjectWS-stage1` for these QA runs unless explicitly instructed.
 
@@ -87,8 +87,8 @@ Do not use `D:/ProjectWS-stage1` for these QA runs unless explicitly instructed.
 Existing trial artifacts:
 
 ```text
-D:/ProjectWS-main-temp/tmp/qa-warmup-trial/spouse-01-normal
-D:/ProjectWS-main-temp/tmp/qa-warmup-trial/spouse-01-exhaustive
+D:/ProjectWS/tmp/qa-warmup-trial/spouse-01-normal
+D:/ProjectWS/tmp/qa-warmup-trial/spouse-01-exhaustive
 ```
 
 They are pre-warmup trial artifacts. Do not delete them.
@@ -96,7 +96,7 @@ They are pre-warmup trial artifacts. Do not delete them.
 If useful, add a marker README:
 
 ```text
-D:/ProjectWS-main-temp/tmp/qa-warmup-trial/README-PRE-WARMUP-TRIAL.md
+D:/ProjectWS/tmp/qa-warmup-trial/README-PRE-WARMUP-TRIAL.md
 ```
 
 The marker should state that these artifacts are reference-only and not the canonical six-thread packet result.
@@ -106,7 +106,7 @@ The marker should state that these artifacts are reference-only and not the cano
 Canonical packet result root:
 
 ```text
-D:/ProjectWS-main-temp/tmp/qa-warmup-packet
+D:/ProjectWS/tmp/qa-warmup-packet
 ```
 
 Create six result directories:
@@ -122,7 +122,7 @@ tmp/qa-warmup-packet/friend-01-exhaustive
 
 ## Commands
 
-Run from `D:/ProjectWS-main-temp`.
+Run from `D:/ProjectWS`.
 
 ### T1
 
@@ -165,12 +165,12 @@ node scripts/qa-route-simulator.cjs --exhaustive --case friend-01 --max-depth=5 
 Update only the marked CT sections in:
 
 ```text
-D:/ProjectWS-main-temp/tmp/qa-thread-guides/PACKET-T1-spouse-01-normal.md
-D:/ProjectWS-main-temp/tmp/qa-thread-guides/PACKET-T2-spouse-01-exhaustive.md
-D:/ProjectWS-main-temp/tmp/qa-thread-guides/PACKET-T3-family-01-normal.md
-D:/ProjectWS-main-temp/tmp/qa-thread-guides/PACKET-T4-family-01-exhaustive.md
-D:/ProjectWS-main-temp/tmp/qa-thread-guides/PACKET-T5-friend-01-normal.md
-D:/ProjectWS-main-temp/tmp/qa-thread-guides/PACKET-T6-friend-01-exhaustive.md
+D:/ProjectWS/tmp/qa-thread-guides/PACKET-T1-spouse-01-normal.md
+D:/ProjectWS/tmp/qa-thread-guides/PACKET-T2-spouse-01-exhaustive.md
+D:/ProjectWS/tmp/qa-thread-guides/PACKET-T3-family-01-normal.md
+D:/ProjectWS/tmp/qa-thread-guides/PACKET-T4-family-01-exhaustive.md
+D:/ProjectWS/tmp/qa-thread-guides/PACKET-T5-friend-01-normal.md
+D:/ProjectWS/tmp/qa-thread-guides/PACKET-T6-friend-01-exhaustive.md
 ```
 
 For each packet, fill:
@@ -234,8 +234,8 @@ After packet generation, report with this structure:
 6-thread QA packet generation complete.
 
 Baseline:
-- worktree: D:/ProjectWS-main-temp
-- commit: ff3f9a1
+- worktree: D:/ProjectWS
+- commit: b809ccc
 
 Generated result dirs:
 - tmp/qa-warmup-packet/spouse-01-normal
