@@ -1,7 +1,7 @@
 const fs = require('fs')
 const path = require('path')
 
-const ROOT = 'D:/ProjectWS'
+const ROOT = path.resolve(__dirname, '..')
 const MANIFEST_PATH = path.join(ROOT, 'src', 'data', 'cases', 'refined', 'manifest.json')
 const OUTPUT_PATH = path.join(ROOT, 'tmp', 'phase-dialogue-quality-report-2026-04-10.json')
 

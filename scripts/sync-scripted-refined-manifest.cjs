@@ -1,7 +1,7 @@
 const fs = require('fs')
 const path = require('path')
 
-const ROOT = 'D:/ProjectWS'
+const ROOT = path.resolve(__dirname, '..')
 const SCRIPTED_DIR = path.join(ROOT, 'src', 'data', 'scriptedText')
 const GENERATED_DIR = path.join(ROOT, 'src', 'data', 'cases', 'generated')
 const MANIFEST_PATH = path.join(ROOT, 'src', 'data', 'cases', 'refined', 'manifest.json')

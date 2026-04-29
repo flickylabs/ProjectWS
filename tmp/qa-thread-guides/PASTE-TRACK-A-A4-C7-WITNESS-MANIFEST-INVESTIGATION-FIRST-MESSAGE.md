@@ -93,9 +93,9 @@ echo "CWD GUARD: OK ($pwd_check)"
 - **다른 file / dir 영역 영역 영역 영역 X** (사용자 명시 / read-only).
 - **모든 read 영역 absolute path 영역 영역** (`D:/ProjectWS/...`).
 - **66 result doc write 영역 즉시 verify**:
-  - PowerShell: `Test-Path D:/ProjectWS/tmp/qa-thread-guides/66-...md` → True / `Test-Path D:/ProjectWS/tmp/qa-thread-guides/66-...md` → False.
+  - PowerShell: `Test-Path D:/ProjectWS/tmp/qa-thread-guides/66-...md` -> True.
   - Bash: `[[ -f D:/ProjectWS/tmp/qa-thread-guides/66-...md ]]`.
-- **D:/ProjectWS 영역 결과 영역 발견 영역 영역 즉시 stop / 66 boundary report**.
+- **D:/ProjectWS-dev / D:/ProjectWS-stage1 / D:/ProjectWS-live-qa-archive-20260429 result found -> stop / 66 boundary report**.
 - 66 result doc §Entry Guard 영역 영역 cwd guard 완료 영역 명시.
 
 ## 진입 자료 (필수)
@@ -194,7 +194,7 @@ ls tmp/qa-thread-guides/56-ROUND-20260429-CLAUDECODE-CROSS-CHECK-INTEGRATED-SUMM
 - local HEAD = `b809ccc`
 - origin/main = `b809ccc` (= local HEAD)
 - `origin/main..HEAD` = empty (완전 동기화)
-- branch is not `main` / local HEAD is detached
+- branch = `main`
 - 5 baseline tags (변동 X / `a7aaec3` / `de3ad48` / `a7aaec3` / `8e07b0a` / `a386a8a` peeled)
 - **tracked working tree clean** (no M / 5 known-dirty cleanup 완료)
 - preserved untracked 영역 영역 (124+ / 본 65 packet+PASTE / 66 placeholder 영역 / handoff 영역)

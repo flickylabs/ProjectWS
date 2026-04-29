@@ -1,7 +1,7 @@
 const fs = require('fs')
 const path = require('path')
 
-const ROOT = 'D:/ProjectWS'
+const ROOT = path.resolve(__dirname, '..')
 const MANIFEST_PATH = path.join(ROOT, 'src', 'data', 'cases', 'refined', 'manifest.json')
 const PHASE1_DIR = path.join(ROOT, 'src', 'data', 'dialogues', 'phase1')
 const PHASE2_DIR = path.join(ROOT, 'src', 'data', 'dialogues', 'phase2')
