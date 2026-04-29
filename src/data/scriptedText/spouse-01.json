@@ -63244,7 +63244,7 @@
           "variants": [
             {
               "id": "b-e-4-early-self-v1",
-              "text": "형한테 온 문자 맞습니다.",
+              "text": "상대방한테 온 문자 맞습니다.",
               "behaviorHint": "문자의 출처는 인정하지만, 부탁의 내용은 끝까지 짧게 접어 둔다.",
               "tags": [
                 "channel:evidence_present",
