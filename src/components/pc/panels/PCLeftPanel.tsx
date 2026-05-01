@@ -295,7 +295,7 @@ function buildPresentActions(
   evidence: EvidenceNode,
   focusDisputeId: string | null,
   canPresent: boolean,
-  evidenceStates: Record<string, { presentedTo?: PartyId[] }>,
+  evidenceStates: Record<string, { presentedTo?: PartyId[]; investigatedActions?: string[]; presentedStagesByParty?: Partial<Record<PartyId, number[]>> }>,
   caseData: CaseData | null,
 ): PcInteractionAction[] {
   if (!caseData || !focusDisputeId) {
@@ -309,19 +309,23 @@ function buildPresentActions(
   return parties.map((party) => {
     const partyName = party === 'a' ? caseData.duo.partyA.name : caseData.duo.partyB.name
     const otherName = party === 'a' ? caseData.duo.partyB.name : caseData.duo.partyA.name
-    const alreadyPresented = evidenceStates[evidence.id]?.presentedTo?.includes(party) ?? false
+    const evidenceState = evidenceStates[evidence.id]
+    const currentStage = evidenceState?.investigatedActions?.length ?? 0
+    const alreadyPresented = currentStage > 0 && (evidenceState?.presentedStagesByParty?.[party] ?? []).includes(currentStage)
     const relevant = subjectParty === 'both' || subjectParty === party
 
     return {
       kind: 'open_evidence_selection',
-      label: `${partyName}에게 증거 제시`,
+      label: `${partyName}에게 증거 제시${currentStage > 0 ? ` · 조사 ${currentStage}단계` : ''}`,
       party,
       disputeId: focusDisputeId,
-      disabled: !canPresent || alreadyPresented || !relevant,
+      disabled: !canPresent || currentStage <= 0 || alreadyPresented || !relevant,
       disabledReason: !canPresent
         ? '증거 제시는 증거 정리 단계부터 가능합니다.'
+        : currentStage <= 0
+          ? '증거를 1단계 이상 조사한 뒤 제시할 수 있습니다.'
         : alreadyPresented
-          ? '이미 이 대상에게 제시한 증거입니다.'
+          ? `조사 ${currentStage}단계 답변은 이미 받았습니다. 다음 조사 단계가 열리면 다시 제시할 수 있습니다.`
           : !relevant
             ? `${otherName} 측 증거입니다. ${partyName}에게는 추궁 효과가 없습니다.`
             : undefined,

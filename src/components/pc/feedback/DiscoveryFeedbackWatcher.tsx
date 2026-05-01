@@ -914,13 +914,13 @@ export default function DiscoveryFeedbackWatcher() {
       category: 'event',
       iconId: 'i-witness',
       title: pc.isResummon
-        ? `${pc.witnessName}에게 ${depth}단계 추가 질문을 할 수 있다.`
+        ? `${pc.witnessName}에게 이어 물을 지점이 열렸다.`
         : `${pc.witnessName}${pp이가(pc.witnessName)} 증언대에 섰다.`,
       summary: pc.isResummon ? '증인 재심문' : '증인 심문',
     })
     state.enqueueFeedback({
       kind: 'witness_choice',
-      eyebrow: pc.isResummon ? `${depth}단계 질문` : '증인 심문',
+      eyebrow: '증인 심문',
       title: pc.witnessName,
       body: pc.isResummon
         ? '앞선 답변을 바탕으로 더 좁혀 물어볼 질문을 선택하세요.'
@@ -928,7 +928,7 @@ export default function DiscoveryFeedbackWatcher() {
       tone: 'green',
       actionsLayout: 'vertical',
       actions: pc.slots.map((slot) => ({
-        label: `${slot.depth}단계 · ${slot.topic}`,
+        label: slot.topic,
         tone: 'green',
         onSelect: () => {
           applyWitnessSlot(slot.id)

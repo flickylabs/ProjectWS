@@ -11,7 +11,7 @@ import {
 import type { JudgeProgressionState } from '../engine/judgeProgressionEngine'
 import { createDefaultTitleLevels, createDefaultLoadout } from '../engine/judgeTitleEngine'
 // 하위 호환: 기존 소비자가 import하는 타입/함수를 re-export
-import { deriveJudgeProfile, createDefaultDriftState, applyDriftUpdate } from '../engine/judgeProfileEngine'
+import { deriveJudgeProfile, createDefaultDriftState, applyDriftUpdate, advanceAxis, toDelta } from '../engine/judgeProfileEngine'
 import type { JudgeProfile, JudgeDriftState } from '../engine/judgeProfileEngine'
 export { deriveJudgeProfile, applyDriftUpdate, createDefaultDriftState }
 export type { JudgeProfile, JudgeDriftState }
@@ -288,6 +288,21 @@ export function getJudgeProgressionSummary() {
 
 export function loadDriftState(): JudgeDriftState {
   const prog = loadProgressionState()
+  try {
+    const raw = localStorage.getItem(LEGACY_DRIFT_KEY)
+    if (raw) {
+      const drift = JSON.parse(raw) as JudgeDriftState
+      if (drift.schemaVersion === 2 && (drift.casesProcessed ?? 0) >= prog.casesCompleted) {
+        return drift
+      }
+    }
+  } catch { /* ignore */ }
+
+  const historyDrift = buildDriftStateFromHistory()
+  if (historyDrift && historyDrift.casesProcessed >= prog.casesCompleted) {
+    return historyDrift
+  }
+
   // v3 traits → v2 drift 형식으로 변환
   function toLegacyAxis(negTrait: keyof typeof prog.traits, posTrait: keyof typeof prog.traits) {
     const neg = prog.traits[negTrait].level
@@ -306,7 +321,30 @@ export function loadDriftState(): JudgeDriftState {
   }
 }
 
+function buildDriftStateFromHistory(): JudgeDriftState | null {
+  const history = loadExtendedHistory()
+    .filter((entry) => entry.caseTelemetry)
+    .slice()
+    .reverse()
+  if (history.length === 0) return null
+
+  let drift = createDefaultDriftState()
+  for (const entry of history) {
+    const telemetry = entry.caseTelemetry!
+    drift = {
+      inquiry: advanceAxis(drift.inquiry, toDelta(telemetry.inquiry)),
+      judgment: advanceAxis(drift.judgment, toDelta(telemetry.judgment)),
+      resolution: advanceAxis(drift.resolution, toDelta(telemetry.resolution)),
+      casesProcessed: drift.casesProcessed + 1,
+      lastUpdated: entry.date,
+      schemaVersion: 2,
+    }
+  }
+  return drift
+}
+
 export function saveDriftState(state: JudgeDriftState): void {
+  localStorage.setItem(LEGACY_DRIFT_KEY, JSON.stringify(state))
   // v2 drift 저장 요청을 v3로 변환하여 저장
   const prog = loadProgressionState()
   function updateTraits(axis: { level: number }, negKey: keyof typeof prog.traits, posKey: keyof typeof prog.traits) {
@@ -331,31 +369,10 @@ export function saveDriftState(state: JudgeDriftState): void {
 
 export function getJudgeProfile(): JudgeProfile {
   const prog = loadProgressionState()
-  const titleId = resolveTitle(prog.traits)
-  const titleLabel = TITLE_LABELS[titleId]
-  const maxLevel = Math.max(...Object.values(prog.traits).map(t => t.level))
-  const tier = computeTier(prog.casesCompleted, maxLevel)
-
-  function traitToAxis(negKey: keyof typeof prog.traits, posKey: keyof typeof prog.traits): number {
-    const neg = prog.traits[negKey].level
-    const pos = prog.traits[posKey].level
-    if (neg > pos) return -neg * 33
-    if (pos > neg) return pos * 33
-    return 0
-  }
-
-  return {
-    inquiryAxis: traitToAxis('logical', 'intuitive'),
-    judgmentAxis: traitToAxis('strict', 'lenient'),
-    resolutionAxis: traitToAxis('principled', 'reconciling'),
-    titleId,
-    subtags: [],
-    casesCompleted: prog.casesCompleted,
-    tier: tier as any,
-    majorPerk: prog.equippedMajor as any,
-    minorPerk: prog.equippedMinor as any,
-    isStabilized: maxLevel >= 1 && prog.casesCompleted >= 4,
-  }
+  return deriveJudgeProfile(loadDriftState(), undefined, {
+    major: prog.equippedMajor as any,
+    minor: prog.equippedMinor as any,
+  })
 }
 
 // ── 명예의 전당 ──

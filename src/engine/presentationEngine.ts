@@ -17,7 +17,6 @@ import {
   playPhaseTransition,
   playEvidenceUnlock,
 } from './soundEngine'
-import { pp이가 } from './koreanPostposition'
 import { shouldPlayCutscene, type VfxTurnContext } from './vfxHierarchyEngine'
 
 // ── 타입 ──
@@ -184,13 +183,15 @@ async function handleConfession(e: ConfessionEvent) {
   // 배경 오버레이
   const overlay = document.createElement('div')
   overlay.className = 'v4-confession-overlay'
+  overlay.innerHTML = `
+    <div class="v4-confession-message">
+      <div class="v4-confession-message__label">진실파악 5단계 도달</div>
+      <div class="v4-confession-message__title">${escapeHtml(e.partyName)}의 방어가 무너졌습니다</div>
+    </div>
+  `
   document.body.appendChild(overlay)
   await delay(50)
   overlay.classList.add('v4-confession-overlay--active')
-  // 시스템 메시지
-  window.dispatchEvent(new CustomEvent('v4:system-message', {
-    detail: { text: `${e.partyName}${pp이가(e.partyName)} 모든 것을 인정했습니다` }
-  }))
   await delay(3000)
   overlay.classList.remove('v4-confession-overlay--active')
   await delay(1500)

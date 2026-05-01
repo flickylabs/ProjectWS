@@ -170,6 +170,9 @@ export function advanceAxis(state: AxisLevelState, delta: number): AxisLevelStat
   const currentDirection = level > 0 ? 1 : level < 0 ? -1 : 0
 
   if (currentDirection === 0 || currentDirection === deltaDirection) {
+    if (level === 0) {
+      level = deltaDirection
+    }
     // ── 같은 방향 (또는 Lv0) → progress 증가 ──
     progress += absDelta
 

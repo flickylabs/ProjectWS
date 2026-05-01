@@ -27,7 +27,6 @@ export interface DispatchConfessionResult {
  * - preConfession: 자백자 발화
  * - confessionMain: 자백자 발화 (핵심)
  * - postConfession: 자백자 발화 (책임 인정)
- * - 시스템 메시지: 재판관의 수첩 등록 안내
  * - addNotebookEntry: 수첩에 자백 카테고리 등록
  */
 export function dispatchConfession(party: PartyId, disputeId: string): DispatchConfessionResult {
@@ -92,18 +91,10 @@ export function dispatchConfession(party: PartyId, disputeId: string): DispatchC
   // 5. lieState 강제 S5 (자백 = 진실 도달)
   state.transitionLie?.(party, disputeId, 'confession_dispatched')
 
-  // 6. 시스템 메시지 — 수첩 등록 안내 (이전 "결정적 진술 → 증거 게시판" 결함 정리)
-  state.addDialogue({
-    speaker: 'system',
-    text: `📔 재판관의 수첩에 자백이 기록되었습니다 — ${disputeName}`,
-    relatedDisputes: [disputeId],
-    turn: state.turnCount,
-  })
-
-  // 7. confessionDispatched flag 설정 (1회 제한)
+  // 6. confessionDispatched flag 설정 (1회 제한)
   state.markConfessionDispatched?.(party, disputeId)
 
-  // 8. preDialogue/main jump 표시용 추가 처리
+  // 7. preDialogue/main jump 표시용 추가 처리
   void preDialogueId
 
   return { ok: true }

@@ -226,12 +226,11 @@ export default function PCActionsPanel({
     }
 
     state.presentEvidence(evidenceId, targetParty)
-    state.addDialogue({
-      speaker: 'system',
-      text: `증거 제시: ${evidenceDisplay.name}`,
-      relatedDisputes: evidence.proves,
-      turn: state.turnCount,
-    })
+    const targetName = targetParty === 'a' ? caseData.duo.partyA.name : caseData.duo.partyB.name
+    const reliabilityLabel = evidence.reliability === 'hard' ? '강한 증거' : '보조 증거'
+    const disputeNames = evidence.proves
+      .map((disputeId) => caseData.disputes.find((item) => item.id === disputeId)?.name ?? disputeId)
+      .join(', ')
 
     for (const disputeId of evidence.proves) {
       state.transitionLie(targetParty, disputeId, evidence.reliability === 'hard' ? 'hard_evidence' : 'soft_evidence')
@@ -240,7 +239,7 @@ export default function PCActionsPanel({
     state.changeEmotion(targetParty, evidence.reliability === 'hard' ? 15 : 8)
     state.addDialogue({
       speaker: 'judge',
-      text: question,
+      text: `${targetName} 씨, ${evidenceDisplay.name}(${reliabilityLabel})를 제시합니다. "${disputeNames}" 쟁점과 관련해 ${question}`,
       relatedDisputes: evidence.proves,
       turn: state.turnCount,
     })

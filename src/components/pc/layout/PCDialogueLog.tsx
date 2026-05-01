@@ -8,6 +8,7 @@ import { openPcInteractionPanel } from './PCInteractionPanel'
 import { HOTBAR_DRAG_TYPE } from '../hotbar/pcHotbarConfig'
 import { hasContradictionComparison } from '../../../utils/contradiction'
 import { isLowValueSystemDialogueText } from '../../../utils/systemLogPolicy'
+import { getWitnessPortraitPath } from '../../../utils/witnessPortraits'
 
 const CHAT_NOTE_DRAG_TYPE = 'application/x-pc-note'
 
@@ -251,6 +252,11 @@ function MessageBubble({ entry, animate, combinableTexts, combinationHintMap, is
         </button>
         <button className="pc-log-bubble is-judge" onClick={() => openEntryDetail()} type="button">
           <div className="pc-log-bubble__text">{displayText}</div>
+          {entry.evidencePresentation ? (
+            <div className="pc-log-bubble__evidence-presentation">
+              {entry.evidencePresentation.label}
+            </div>
+          ) : null}
         </button>
       </div>
     )
@@ -259,6 +265,8 @@ function MessageBubble({ entry, animate, combinableTexts, combinationHintMap, is
   if (entry.speaker === 'witness') {
     const witnessFavor = entry.witnessFavor === 'pro_b' ? 'is-right' : 'is-left'
     const witnessName = entry.witnessName ?? '증인'
+    const witness = caseData?.duo.socialGraph.find((item) => item.name === witnessName)
+    const witnessPortrait = getWitnessPortraitPath(caseData?.caseId, witness?.id, witnessName)
     const depthLabel = entry.behaviorHint?.includes('모호') ? '모호'
       : entry.behaviorHint?.includes('부분') ? '부분'
       : entry.behaviorHint?.includes('핵심') ? '핵심'
@@ -268,7 +276,11 @@ function MessageBubble({ entry, animate, combinableTexts, combinationHintMap, is
       <div className={`pc-log-row ${witnessFavor}`}>
         <div className="pc-log-speaker is-witness">
           <button className="pc-log-avatar is-witness" onClick={() => openEntryDetail()} type="button">
-            <PCSvgIcon id="i-witness" size={22} />
+            {witnessPortrait ? (
+              <img alt={witnessName} src={witnessPortrait} />
+            ) : (
+              <PCSvgIcon id="i-witness" size={22} />
+            )}
           </button>
           <button className="pc-log-speaker__name is-witness pc-log-name--button" onClick={() => openEntryDetail()} type="button">
             <span>{witnessName}</span>

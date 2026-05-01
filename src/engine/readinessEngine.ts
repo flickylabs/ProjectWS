@@ -29,7 +29,7 @@ export const MAX_INTERROGATION_TURNS_FN = () => BASE_MAX_INTERROGATION_TURNS + (
 export const MAX_INTERROGATION_TURNS = BASE_MAX_INTERROGATION_TURNS
 
 /** 판결 가능 최소 턴 */
-const MIN_TURNS_FOR_VERDICT = 8
+const MIN_TURNS_FOR_VERDICT = 12
 
 /** 조기 종료 가능 최소 턴 */
 const EARLY_FINISH_MIN_TURNS = 6
@@ -39,6 +39,9 @@ const MIN_READINESS_SCORE = 5
 
 /** 판결 가능 최소 진행 쟁점 수 (S2+) */
 const MIN_PROGRESSED_DISPUTES = 2
+
+/** 판결 가능 최소 핵심 정리 쟁점 수 (S4+) */
+const MIN_RESOLVED_DISPUTES_FOR_VERDICT = 2
 
 /** 판결 가능 최소 major breakthrough 수 */
 const MIN_MAJOR_BREAKTHROUGHS = 1
@@ -86,6 +89,7 @@ export function checkVerdictEligible(
     turn >= MIN_TURNS_FOR_VERDICT &&
     score >= MIN_READINESS_SCORE &&
     progressedDisputes >= MIN_PROGRESSED_DISPUTES &&
+    state.resolvedDisputeCount >= MIN_RESOLVED_DISPUTES_FOR_VERDICT &&
     evidenceProgress >= MIN_EVIDENCE_PROGRESS &&
     majorBreakthroughs >= MIN_MAJOR_BREAKTHROUGHS
   ) {
@@ -170,9 +174,6 @@ function getMajorBreakthroughCount(state: ReadinessState): number {
  * 아래 중 하나라도 만족하면 turn >= 6부터 판결 가능.
  */
 function checkEarlyFinish(state: ReadinessState): boolean {
-  // 고백 1회 발생
-  if (state.confessionCount >= 1) return true
-
   // resolved dispute 2개
   if (state.resolvedDisputeCount >= 2) return true
 

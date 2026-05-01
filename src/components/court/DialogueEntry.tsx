@@ -3,6 +3,7 @@ import type { DialogueEntry as DialogueEntryType } from '../../types'
 import { useStore } from '../../store/useGameStore'
 import Emoji, { replaceEmojisInText } from '../common/Emoji'
 import { hasContradictionComparison } from '../../utils/contradiction'
+import { getWitnessPortraitPath } from '../../utils/witnessPortraits'
 
 interface Props {
   entry: DialogueEntryType
@@ -141,12 +142,18 @@ export default function DialogueEntry({
     const favor = entry.witnessFavor
     const witnessAlign = favor === 'pro_a' ? 'items-start' : favor === 'pro_b' ? 'items-end' : 'items-center'
     const witnessName = entry.witnessName ?? '증인'
+    const witness = caseData?.duo.socialGraph.find((item) => item.name === witnessName)
+    const witnessPortrait = getWitnessPortraitPath(caseData?.caseId, witness?.id, witnessName)
     return (
       <div className={`flex flex-col ${witnessAlign} my-2 ${!done ? 'opacity-90' : ''}`}>
         {/* 증인 이름 + 아이콘 */}
         <div className={`flex items-center gap-1.5 mb-1 ${favor === 'pro_b' ? 'flex-row-reverse' : ''}`}>
           <div className="w-7 h-7 rounded-full bg-gray-800 ring-2 ring-emerald-500/40 flex items-center justify-center text-sm">
-            <Emoji char="🧑‍⚖️" size={18} />
+            {witnessPortrait ? (
+              <img alt={witnessName} className="h-full w-full rounded-full object-cover" src={witnessPortrait} />
+            ) : (
+              <Emoji char="🧑‍⚖️" size={18} />
+            )}
           </div>
           <span className="text-xs font-semibold text-emerald-400">{witnessName}</span>
           <span className="text-[10px] text-emerald-600">증인</span>
@@ -172,6 +179,11 @@ export default function DialogueEntry({
         <div className="flex justify-center">
           <div className="bg-amber-950/40 border border-amber-800/30 rounded-2xl px-4 py-2.5 max-w-[85%]">
             <p className="text-[15px] text-gray-200 leading-relaxed">{displayText}{!done && <span className="animate-pulse text-amber-400">|</span>}</p>
+            {entry.evidencePresentation ? (
+              <p className="mt-2 border-t border-amber-700/20 pt-2 text-xs italic text-amber-200/65">
+                {entry.evidencePresentation.label}
+              </p>
+            ) : null}
           </div>
         </div>
       </div>

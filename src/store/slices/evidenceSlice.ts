@@ -315,6 +315,7 @@ export const createEvidenceSlice: StateCreator<EvidenceSlice, [], [], EvidenceSl
           unlocked: unlock,
           presented: false,
           presentedTo: [],
+          presentedStagesByParty: { a: [], b: [] },
           investigatedActions: [],
         },
       },

@@ -21,6 +21,7 @@ import { type PCGeneralSessionId, PC_GENERAL_SESSIONS, formatCountdown, getCases
 
 type HomeView = 'home' | 'general' | 'generalCases' | 'season' | 'profile' | 'leaderboard' | 'settings'
 type JudgeDeskTab = 'profile' | 'history' | 'progression'
+type HistoryMode = 'general' | 'season'
 type HistoryTrackId = PCGeneralSessionId | 'season'
 type HomeSettings = ReturnType<typeof getSettings>
 type SessionProgress = { completedCount: number; totalCount: number; averageScore: number | null; progressRate: number }
@@ -38,6 +39,7 @@ export default function PCHomeScreen() {
   const [view, setView] = useState<HomeView>('home')
   const [judgeDeskTab, setJudgeDeskTab] = useState<JudgeDeskTab>('profile')
   const [selectedSession, setSelectedSession] = useState<PCGeneralSessionId | null>(null)
+  const [historyMode, setHistoryMode] = useState<HistoryMode>('general')
   const [selectedTrack, setSelectedTrack] = useState<HistoryTrackId>('spouse')
   const [selectedHistoryKey, setSelectedHistoryKey] = useState<string | null>(null)
   const [leaderboardSort, setLeaderboardSort] = useState<SortCategory>('total')
@@ -111,6 +113,16 @@ export default function PCHomeScreen() {
     return history.filter((entry) => ids.has(entry.caseId))
   }, [allCases, history, seasonHistory, selectedTrack])
   const selectedHistory = selectedTrackEntries.find((entry) => getHistoryKey(entry) === selectedHistoryKey) ?? selectedTrackEntries[0] ?? null
+
+  const setHistoryModeAndTrack = (mode: HistoryMode) => {
+    setHistoryMode(mode)
+    setSelectedHistoryKey(null)
+    if (mode === 'season') {
+      setSelectedTrack('season')
+    } else if (selectedTrack === 'season') {
+      setSelectedTrack('spouse')
+    }
+  }
 
   useEffect(() => {
     if (!selectedTrackEntries.length) return
@@ -300,19 +312,71 @@ export default function PCHomeScreen() {
           ) : judgeDeskTab === 'progression' ? (
             <PCJudgeProgressionPanel onChange={refreshProgression} syncKey={refreshKey} />
           ) : (
-            <div className="pc-history-board">
-              <Card eyebrow="GENERAL MODE" title="일반 모드">
-                <div className="pc-history-chip-row">{PC_GENERAL_SESSIONS.map((session) => <button className={`pc-history-chip${selectedTrack === session.id ? ' is-active' : ''}`} key={session.id} onClick={() => setSelectedTrack(session.id)} type="button"><strong>{session.label}</strong><span>{`${sessionProgress[session.id].completedCount}/${sessionProgress[session.id].totalCount}`}</span></button>)}</div>
+            <div className="pc-history-board pc-history-board--select">
+              <div className="pc-history-mode-tabs" role="tablist" aria-label="판결 기록 모드">
+                <button className={`pc-history-mode-tab${historyMode === 'general' ? ' is-active' : ''}`} onClick={() => setHistoryModeAndTrack('general')} type="button">일반 모드</button>
+                <button className={`pc-history-mode-tab${historyMode === 'season' ? ' is-active' : ''}`} onClick={() => setHistoryModeAndTrack('season')} type="button">시즌 모드</button>
+              </div>
+              <Card eyebrow={historyMode === 'general' ? 'GENERAL MODE' : 'SEASON MODE'} title={historyMode === 'general' ? '세션 선택' : '시즌 선택'}>
+                {historyMode === 'general' ? (
+                  <div className="pc-history-session-grid">
+                    {PC_GENERAL_SESSIONS.map((session) => (
+                      <button className={`pc-history-session-card${selectedTrack === session.id ? ' is-active' : ''}`} key={session.id} onClick={() => { setSelectedTrack(session.id); setSelectedHistoryKey(null) }} type="button">
+                        <span className="pc-history-session-card__icon"><PCSessionIcon sessionId={session.id} size={42} fallbackSymbolId={session.iconId} alt="" /></span>
+                        <span className="pc-history-session-card__copy">
+                          <strong>{session.label}</strong>
+                          <small>{`${sessionProgress[session.id].completedCount}/${sessionProgress[session.id].totalCount}`}</small>
+                        </span>
+                      </button>
+                    ))}
+                  </div>
+                ) : (
+                  <div className="pc-history-session-grid pc-history-session-grid--season">
+                    <button className={`pc-history-session-card${selectedTrack === 'season' ? ' is-active' : ''}`} onClick={() => { setSelectedTrack('season'); setSelectedHistoryKey(null) }} type="button">
+                      <span className="pc-history-session-card__icon is-season"><PCSvgIcon id="i-crown" size={30} /></span>
+                      <span className="pc-history-session-card__copy">
+                        <strong>{season.name}</strong>
+                        <small>{`${seasonProgress.completedCount}/${seasonProgress.totalCount}`}</small>
+                      </span>
+                    </button>
+                  </div>
+                )}
               </Card>
-              <Card eyebrow="SEASON MODE" title="시즌 모드">
-                <div className="pc-history-chip-row"><button className={`pc-history-chip${selectedTrack === 'season' ? ' is-active' : ''}`} onClick={() => setSelectedTrack('season')} type="button"><strong>{season.name}</strong><span>{`${seasonProgress.completedCount}/${seasonProgress.totalCount}`}</span></button></div>
-              </Card>
-              <Card eyebrow="TRACK RECORD" title={selectedTrack === 'season' ? season.name : PC_GENERAL_SESSIONS.find((session) => session.id === selectedTrack)?.label ?? '기록'}>
-                <div className="pc-history-strip">{selectedTrackEntries.length === 0 ? <Empty title="표시할 기록이 없습니다." description="해당 트랙의 플레이 기록이 아직 없습니다." /> : selectedTrackEntries.map((entry) => <button className={`pc-history-case-card${selectedHistoryKey === getHistoryKey(entry) ? ' is-active' : ''}`} key={getHistoryKey(entry)} onClick={() => setSelectedHistoryKey(getHistoryKey(entry))} type="button"><span>{entry.date.slice(0, 10)}</span><strong>{entry.score}점</strong><small>{entry.nameA} vs {entry.nameB}</small></button>)}</div>
-              </Card>
-              <Card eyebrow="DETAIL" title={selectedHistory ? `${selectedHistory.nameA} vs ${selectedHistory.nameB}` : '기록 상세'}>
-                {selectedHistory ? <div className="pc-history-focus"><div className="pc-history-focus__meta"><MiniStat label="총점" value={`${selectedHistory.score}점`} /><MiniStat label="탐구" value={`${selectedHistory.insight}`} /><MiniStat label="판결" value={`${selectedHistory.authority}`} /><MiniStat label="해결" value={`${selectedHistory.wisdom}`} /></div><div className="pc-history-focus__body"><div className="pc-history-focus__line"><strong>관계</strong><span>{getRelationshipLabel(selectedHistory.relationshipType)}</span></div><div className="pc-history-focus__line"><strong>일시</strong><span>{new Date(selectedHistory.date).toLocaleString('ko-KR')}</span></div><div className="pc-history-focus__line"><strong>해결</strong><span>{selectedHistory.verdictDetail?.selectedSolutions?.join(', ') || '기록 없음'}</span></div></div></div> : <Empty title="선택된 기록이 없습니다." description="기록을 선택하면 상세 정보가 표시됩니다." />}
-              </Card>
+              <div className="pc-history-record-layout">
+                <Card eyebrow="TRACK RECORD" title={selectedTrack === 'season' ? season.name : PC_GENERAL_SESSIONS.find((session) => session.id === selectedTrack)?.label ?? '기록'}>
+                  {selectedTrackEntries.length === 0 ? (
+                    <Empty title="표시할 기록이 없습니다." description="해당 트랙의 플레이 기록이 아직 없습니다." />
+                  ) : (
+                    <div className="pc-history-record-picker">
+                      <label className="pc-history-record-select-label" htmlFor="pc-history-record-select">기록 선택</label>
+                      <select
+                        className="pc-history-record-select"
+                        id="pc-history-record-select"
+                        value={selectedHistory ? getHistoryKey(selectedHistory) : ''}
+                        onChange={(event) => setSelectedHistoryKey(event.target.value)}
+                      >
+                        {selectedTrackEntries.map((entry) => (
+                          <option key={getHistoryKey(entry)} value={getHistoryKey(entry)}>
+                            {`${entry.date.slice(0, 10)} · ${entry.score}점 · ${entry.nameA} vs ${entry.nameB}`}
+                          </option>
+                        ))}
+                      </select>
+                      <div className="pc-history-record-list" role="list">
+                        {selectedTrackEntries.map((entry) => (
+                          <button className={`pc-history-case-card${selectedHistoryKey === getHistoryKey(entry) ? ' is-active' : ''}`} key={getHistoryKey(entry)} onClick={() => setSelectedHistoryKey(getHistoryKey(entry))} type="button">
+                            <span>{entry.date.slice(0, 10)}</span>
+                            <strong>{entry.score}점</strong>
+                            <small>{entry.nameA} vs {entry.nameB}</small>
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </Card>
+                <Card eyebrow="DETAIL" title={selectedHistory ? `${selectedHistory.nameA} vs ${selectedHistory.nameB}` : '기록 상세'}>
+                  {selectedHistory ? <div className="pc-history-focus"><div className="pc-history-focus__meta"><MiniStat label="총점" value={`${selectedHistory.score}점`} /><MiniStat label="탐구" value={`${selectedHistory.insight}`} /><MiniStat label="판결" value={`${selectedHistory.authority}`} /><MiniStat label="해결" value={`${selectedHistory.wisdom}`} /></div><div className="pc-history-focus__body"><div className="pc-history-focus__line"><strong>관계</strong><span>{getRelationshipLabel(selectedHistory.relationshipType)}</span></div><div className="pc-history-focus__line"><strong>일시</strong><span>{new Date(selectedHistory.date).toLocaleString('ko-KR')}</span></div><div className="pc-history-focus__line"><strong>해결</strong><span>{selectedHistory.verdictDetail?.selectedSolutions?.join(', ') || '기록 없음'}</span></div></div></div> : <Empty title="선택된 기록이 없습니다." description="기록을 선택하면 상세 정보가 표시됩니다." />}
+                </Card>
+              </div>
             </div>
           )}
           </div>

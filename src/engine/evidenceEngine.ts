@@ -6,6 +6,8 @@ export interface EvidenceRuntimeState {
   unlocked: boolean
   presented: boolean
   presentedTo: ('a' | 'b')[]
+  /** Investigation stages at which each party has already answered this evidence. */
+  presentedStagesByParty?: Partial<Record<'a' | 'b', number[]>>
   investigatedActions: string[]
   confidentialSource?: boolean
   /** 심층 조사 완료 여부 — 1회 이상 조사 시 true, surface→real 전환 */
@@ -35,6 +37,7 @@ export function createInitialEvidenceStates(
         : fallbackBaseIds?.has(e.id) ?? false,
       presented: false,
       presentedTo: [],
+      presentedStagesByParty: { a: [], b: [] },
       investigatedActions: [],
     }
   }
@@ -124,6 +127,11 @@ export function presentEvidence(
 ): Record<string, EvidenceRuntimeState> {
   const state = states[evidenceId]
   if (!state || !state.unlocked) return states
+  const currentStage = state.investigatedActions?.length ?? 0
+  if (currentStage <= 0) return states
+
+  const previousStages = state.presentedStagesByParty?.[target] ?? []
+  const nextStages = [...new Set([...previousStages, currentStage])].sort((a, b) => a - b)
 
   return {
     ...states,
@@ -131,6 +139,10 @@ export function presentEvidence(
       ...state,
       presented: true,
       presentedTo: [...new Set([...state.presentedTo, target])],
+      presentedStagesByParty: {
+        ...(state.presentedStagesByParty ?? {}),
+        [target]: nextStages,
+      },
     },
   }
 }

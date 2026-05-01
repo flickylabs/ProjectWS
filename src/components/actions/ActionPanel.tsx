@@ -292,13 +292,8 @@ export default function ActionPanel() {
 
     // 1. 증거 상태만 업데이트 (LLM 호출 없이)
     s.presentEvidence(evidenceId, target)
-    const disputeNames = evDef.proves.map(dId => s.caseData?.disputes.find(d => d.id === dId)?.name ?? dId).join(', ')
-    s.addDialogue({
-      speaker: 'system',
-      text: `📋 증거 제시: ${evDisplay.name} [${evDef.reliability === 'hard' ? 'Hard' : 'Soft'}] → "${disputeNames}"`,
-      relatedDisputes: evDef.proves,
-      turn: s.turnCount,
-    })
+    const targetName = target === 'a' ? caseData.duo.partyA.name : caseData.duo.partyB.name
+    const reliabilityLabel = evDef.reliability === 'hard' ? '강한 증거' : '보조 증거'
 
     // 2. lie 전이 + 감정 변화
     for (const dId of evDef.proves) {
@@ -308,7 +303,17 @@ export default function ActionPanel() {
 
     // 3. 유저의 대질 질문을 자유질문으로 처리 (LLM 1회만, 증거 맥락 포함)
     const prefixedQuestion = `[증거 "${evDisplay.name}"] ${question}`
-    s.addDialogue({ speaker: 'judge', text: question, relatedDisputes: evDef.proves, turn: s.turnCount })
+    s.addDialogue({
+      speaker: 'judge',
+      text: `${targetName} 씨, ${question}`,
+      relatedDisputes: evDef.proves,
+      turn: s.turnCount,
+      evidencePresentation: {
+        evidenceName: evDisplay.name,
+        stageLabel: reliabilityLabel,
+        label: `${evDisplay.name} - ${reliabilityLabel}를 제시합니다.`,
+      },
+    })
 
     const evCtx = {
       name: evDisplay.name,

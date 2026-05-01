@@ -9,6 +9,7 @@ import Emoji from '../common/Emoji'
 import EvidenceVisual from '../common/EvidenceVisual'
 import { EvidenceAppraisalModal } from '../discovery'
 import { getDossierCards, getAvailableDossierQuestions, resolveDossierQuestion } from '../../engine/v3GameLoopLoader'
+import { getWitnessPortraitPath } from '../../utils/witnessPortraits'
 
 interface Props {
   target: PartyId | null
@@ -104,7 +105,12 @@ export default function EvidencePresenter({ target, onPresent, onConfront, onWit
   const { available, presented, locked, dimmed, unrelated } = useMemo(() => {
     // subjectParty 기준 매칭 — 비매칭은 unrelated 카테고리로 분리해 disabled로 표시
     const isRelevant = (e: any) => !e.subjectParty || e.subjectParty === 'both' || e.subjectParty === target
-    const isPresentedToTarget = (e: any) => (target && evidenceStates[e.id]?.presentedTo?.includes(target)) ?? false
+    const isPresentedToTarget = (e: any) => {
+      if (!target) return false
+      const state = evidenceStates[e.id]
+      const currentStage = state?.investigatedActions?.length ?? 0
+      return currentStage > 0 && (state?.presentedStagesByParty?.[target] ?? []).includes(currentStage)
+    }
     const avail = evidenceDefinitions.filter((e) => isRelevant(e) && evidenceStates[e.id]?.unlocked && !isPresentedToTarget(e) && surfacedSet.has(e.id))
     const dim = evidenceDefinitions.filter((e) => isRelevant(e) && evidenceStates[e.id]?.unlocked && !isPresentedToTarget(e) && dimmedSet.has(e.id))
     const pres = evidenceDefinitions.filter((e) => isRelevant(e) && isPresentedToTarget(e))
@@ -121,9 +127,11 @@ export default function EvidencePresenter({ target, onPresent, onConfront, onWit
     const nextKey = KEY_ORDER.find(k => !state.investigatedActions.includes(k))
     if (!nextKey) return
 
-    if (globalInvest < 1) {
+    const depth = state.investigatedActions.length + 1 // 1, 2, 3
+    const investigationCost = depth <= 1 ? 0 : (depth === 2 ? 2 : 1)
+    if (globalInvest < investigationCost) {
       useGameStore.getState().addDialogue({
-        speaker: 'system', text: '조사 토큰이 모두 소진되었습니다.', relatedDisputes: [], turn: useGameStore.getState().turnCount,
+        speaker: 'system', text: `조사 ${depth}단계에는 조사 토큰 ${investigationCost}개가 필요합니다.`, relatedDisputes: [], turn: useGameStore.getState().turnCount,
       })
       return
     }
@@ -131,8 +139,9 @@ export default function EvidencePresenter({ target, onPresent, onConfront, onWit
     playClick()
 
     // 모든 조사 단계에서 미니게임/광고/아이템 선택지 제공
-    const depth = state.investigatedActions.length + 1 // 1, 2, 3
-    useGameStore.getState().spend('investigationTokens', 1)
+    if (investigationCost > 0) {
+      useGameStore.getState().spend('investigationTokens', investigationCost)
+    }
     useGameStore.getState().setPendingMinigame({ type: 'evidence_depth', evidenceId, depth })
   }
 
@@ -333,11 +342,16 @@ function WitnessSection({ dispatch, resources, onCalled }: { dispatch: (a: any) 
             const wp = w.witnessProfile
             const shortName = w.name.split('(')[0].trim()
             const role = w.name.match(/\(([^)]+)\)/)?.[1] ?? ''
+            const portrait = getWitnessPortraitPath(caseData.caseId, w.id, w.name)
             return (
               <div key={w.id} className="border border-purple-800/30 rounded-lg bg-purple-950/10 px-3 py-2">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-2">
-                    <Emoji char={biasChar(w.bias)} size={12} />
+                    {portrait ? (
+                      <img alt={shortName} className="h-8 w-8 rounded-full border border-purple-400/40 object-cover" src={portrait} />
+                    ) : (
+                      <Emoji char={biasChar(w.bias)} size={12} />
+                    )}
                     <div>
                       <div className="text-xs font-semibold text-purple-200">{shortName}</div>
                       <div className="text-xs text-gray-500">{role}{wp ? ` · ${wp.age}세 · ${wp.occupation}` : ''}</div>
@@ -368,12 +382,20 @@ function WitnessSection({ dispatch, resources, onCalled }: { dispatch: (a: any) 
           {called.length > 0 && (
             <>
               <div className="text-xs text-gray-600 mt-1">소환 완료 ({called.length})</div>
-              {called.map(w => (
-                <div key={w.id} className="text-xs text-gray-500 px-3 py-1 bg-gray-900/20 rounded-lg flex items-center gap-2">
-                  <Emoji char="✓" size={12} />
-                  <span>{w.name.split('(')[0].trim()}</span>
-                </div>
-              ))}
+              {called.map(w => {
+                const shortName = w.name.split('(')[0].trim()
+                const portrait = getWitnessPortraitPath(caseData.caseId, w.id, w.name)
+                return (
+                  <div key={w.id} className="text-xs text-gray-500 px-3 py-1 bg-gray-900/20 rounded-lg flex items-center gap-2">
+                    {portrait ? (
+                      <img alt={shortName} className="h-6 w-6 rounded-full border border-emerald-400/30 object-cover" src={portrait} />
+                    ) : (
+                      <Emoji char="✓" size={12} />
+                    )}
+                    <span>{shortName}</span>
+                  </div>
+                )
+              })}
             </>
           )}
 

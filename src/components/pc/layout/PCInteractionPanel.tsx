@@ -7,6 +7,7 @@ import { showToast } from '../../common/Toast'
 import PCSvgIcon from '../icons/PCSvgIcon'
 import PCCharacterPortrait from '../icons/PCCharacterPortrait'
 import { jumpToDialogue } from '../observation/JudgeObservationSection'
+import { getWitnessPortraitPath } from '../../../utils/witnessPortraits'
 
 export const PC_OPEN_INTERACTION_PANEL_EVENT = 'pc:open-interaction-panel'
 export const PC_CLOSE_INTERACTION_PANEL_EVENT = 'pc:close-interaction-panel'
@@ -237,6 +238,50 @@ function buildDisputePayload(disputeId: string): PcInteractionPayload | null {
   }
 }
 
+function getEvidenceInvestigationStage(state?: { investigatedActions?: string[] }): number {
+  return state?.investigatedActions?.length ?? 0
+}
+
+function getEvidencePresentedStages(
+  state: { presentedStagesByParty?: Partial<Record<PartyId, number[]>> } | undefined,
+  party: PartyId,
+): number[] {
+  return state?.presentedStagesByParty?.[party] ?? []
+}
+
+function isEvidencePresentedForCurrentStage(
+  state: { investigatedActions?: string[]; presentedStagesByParty?: Partial<Record<PartyId, number[]>> } | undefined,
+  party: PartyId,
+): boolean {
+  const stage = getEvidenceInvestigationStage(state)
+  return stage > 0 && getEvidencePresentedStages(state, party).includes(stage)
+}
+
+function getEvidencePresentDisabledReason(
+  state: { investigatedActions?: string[]; presentedStagesByParty?: Partial<Record<PartyId, number[]>> } | undefined,
+  party: PartyId,
+  partyName: string,
+  otherPartyName: string,
+  relevant: boolean,
+): string | undefined {
+  if (!relevant) {
+    return `${otherPartyName} 쪽 증거라 ${partyName}에게는 바로 제시할 수 없습니다.`
+  }
+  const stage = getEvidenceInvestigationStage(state)
+  if (stage <= 0) {
+    return '증거를 1단계 이상 조사한 뒤 제시할 수 있습니다.'
+  }
+  if (isEvidencePresentedForCurrentStage(state, party)) {
+    return `조사 ${stage}단계 답변은 이미 받았습니다. 다음 조사 단계가 열리면 다시 제시할 수 있습니다.`
+  }
+  return undefined
+}
+
+function getInvestigationTokenCostForStage(stage: number): number {
+  if (stage <= 1) return 0
+  return stage === 2 ? 2 : 1
+}
+
 export function buildEvidenceSelectionPayload(disputeId: string, party: PartyId): PcInteractionPayload | null {
   const state = useGameStore.getState()
   const caseData = state.caseData
@@ -255,8 +300,7 @@ export function buildEvidenceSelectionPayload(disputeId: string, party: PartyId)
   const linkedEvidence = state.evidenceDefinitions.filter((evidence) => {
     const unlocked = state.evidenceStates[evidence.id]?.unlocked
     const related = evidence.proves.includes(disputeId)
-    const alreadyPresented = state.evidenceStates[evidence.id]?.presentedTo?.includes(party) ?? false
-    return Boolean(unlocked && related && !alreadyPresented)
+    return Boolean(unlocked && related)
   })
 
   if (linkedEvidence.length === 0) {
@@ -280,15 +324,18 @@ export function buildEvidenceSelectionPayload(disputeId: string, party: PartyId)
     tone: 'gold',
     tags: [partyName, dispute.name],
     actions: linkedEvidence.map((evidence) => {
+      const evidenceState = state.evidenceStates[evidence.id]
+      const stage = getEvidenceInvestigationStage(evidenceState)
       const relevant = !evidence.subjectParty || evidence.subjectParty === 'both' || evidence.subjectParty === party
+      const disabledReason = getEvidencePresentDisabledReason(evidenceState, party, partyName, otherPartyName, relevant)
       return {
         kind: 'prepare_evidence_present' as const,
-        label: evidence.surfaceName ?? evidence.name,
+        label: `${evidence.surfaceName ?? evidence.name}${stage > 0 ? ` · 조사 ${stage}단계` : ''}`,
         evidenceId: evidence.id,
         disputeId,
         party,
-        disabled: !relevant,
-        disabledReason: !relevant ? `${otherPartyName} 측 증거입니다. ${partyName}에게는 추궁 효과가 없습니다.` : undefined,
+        disabled: Boolean(disabledReason),
+        disabledReason,
       }
     }),
   }
@@ -308,7 +355,12 @@ function buildEvidencePromptPayload(evidenceId: string, disputeId: string, party
   }
 
   const partyName = party === 'a' ? caseData.duo.partyA.name : caseData.duo.partyB.name
+  const otherPartyName = party === 'a' ? caseData.duo.partyB.name : caseData.duo.partyA.name
   const context = party === 'a' ? evidence.partyContext?.a : evidence.partyContext?.b
+  const evidenceState = state.evidenceStates[evidenceId]
+  const currentStage = getEvidenceInvestigationStage(evidenceState)
+  const relevant = !evidence.subjectParty || evidence.subjectParty === 'both' || evidence.subjectParty === party
+  const disabledReason = getEvidencePresentDisabledReason(evidenceState, party, partyName, otherPartyName, relevant)
 
   return {
     title: evidence.surfaceName ?? evidence.name,
@@ -320,7 +372,7 @@ function buildEvidencePromptPayload(evidenceId: string, disputeId: string, party
       context?.implication ? `${COPY.implication}: ${context.implication}` : '',
     ].filter(Boolean).join('\n'),
     tone: 'gold',
-    tags: [partyName, dispute.name],
+    tags: [partyName, dispute.name, currentStage > 0 ? `조사 ${currentStage}단계` : '조사 필요'],
     actions: [
       {
         kind: 'present_evidence',
@@ -328,6 +380,8 @@ function buildEvidencePromptPayload(evidenceId: string, disputeId: string, party
         evidenceId,
         disputeId,
         party,
+        disabled: Boolean(disabledReason),
+        disabledReason,
       },
       {
         kind: 'present_evidence',
@@ -335,6 +389,8 @@ function buildEvidencePromptPayload(evidenceId: string, disputeId: string, party
         evidenceId,
         disputeId,
         party,
+        disabled: Boolean(disabledReason),
+        disabledReason,
       },
     ],
   }
@@ -850,16 +906,18 @@ function EvidenceDetailSection({ evidenceId, onClose }: { evidenceId: string; on
   }
 
   // 첫 조사(0→1)는 무료 열람, 2·3회차는 토큰 1 소비
-  const investigateCostLabel = investigatedKeys.size === 0 ? '-0' : '-1'
+  const currentStage = getEvidenceInvestigationStage(state)
 
   const nameA = caseData.duo.partyA.name
   const nameB = caseData.duo.partyB.name
-  const presentedToA = state?.presentedTo?.includes('a') ?? false
-  const presentedToB = state?.presentedTo?.includes('b') ?? false
+  const presentedToA = isEvidencePresentedForCurrentStage(state, 'a')
+  const presentedToB = isEvidencePresentedForCurrentStage(state, 'b')
   // subjectParty 분기 — 비매칭 측에 제시 = 게임 메커니즘상 효과 X
   const subjectParty = evidence.subjectParty ?? 'both'
   const aRelevant = subjectParty === 'both' || subjectParty === 'a'
   const bRelevant = subjectParty === 'both' || subjectParty === 'b'
+  const aDisabledReason = getEvidencePresentDisabledReason(state, 'a', nameA, nameB, aRelevant)
+  const bDisabledReason = getEvidencePresentDisabledReason(state, 'b', nameB, nameA, bRelevant)
 
   return (
     <div className="pc-ev-detail">
@@ -880,6 +938,7 @@ function EvidenceDetailSection({ evidenceId, onClose }: { evidenceId: string; on
         <div className="pc-ev-detail__stages">
           <span className="pc-ev-detail__stages-label">조사 단계</span>
           {stages.map((stage) => {
+            const investigateCostLabel = `-${getInvestigationTokenCostForStage(stage.stage)}`
             // is-ready 일 때만 전체 영역을 버튼으로 (전체 클릭 가능, 안쪽 별도 버튼 X)
             if (stage.unlockable && !stage.revealed) {
               return (
@@ -918,11 +977,11 @@ function EvidenceDetailSection({ evidenceId, onClose }: { evidenceId: string; on
       {/* Present buttons — A/B split. subjectParty 비매칭 측은 disabled + 사유 표시 */}
       <div className="pc-ev-detail__present">
         <button
-          className={`pc-ev-detail__present-btn is-a${presentedToA ? ' is-done' : ''}${!aRelevant ? ' is-mismatch' : ''}`}
-          disabled={presentedToA || !aRelevant}
-          title={!aRelevant ? `${nameB} 측 증거 — ${nameA}에게 제시 효과 없음` : (presentedToA ? '이미 제시함' : undefined)}
+          className={`pc-ev-detail__present-btn is-a${presentedToA ? ' is-done' : ''}${!aRelevant ? ' is-mismatch' : ''}${currentStage <= 0 ? ' is-stage-locked' : ''}`}
+          disabled={Boolean(aDisabledReason)}
+          title={aDisabledReason}
           onClick={() => {
-            if (!presentedToA && aRelevant) {
+            if (!aDisabledReason) {
               onClose?.()
               window.setTimeout(() => {
                 dispatch({ type: 'evidence_present', evidenceId, target: 'a' })
@@ -934,14 +993,14 @@ function EvidenceDetailSection({ evidenceId, onClose }: { evidenceId: string; on
           <span className="pc-ev-detail__present-avatar">
             <PCCharacterPortrait alt={nameA} caseId={caseData.caseId} emotion="defensive" fallbackSymbolId="i-person" party="a" size={28} />
           </span>
-          <span>{presentedToA ? `${nameA} 제시 완료` : !aRelevant ? `${nameA} (대상 아님)` : `${nameA}에게 제시`}</span>
+          <span>{presentedToA ? `${nameA} 조사 ${currentStage}단계 답변 완료` : !aRelevant ? `${nameA} (대상 아님)` : currentStage <= 0 ? '조사 후 제시 가능' : `${nameA}에게 제시`}</span>
         </button>
         <button
-          className={`pc-ev-detail__present-btn is-b${presentedToB ? ' is-done' : ''}${!bRelevant ? ' is-mismatch' : ''}`}
-          disabled={presentedToB || !bRelevant}
-          title={!bRelevant ? `${nameA} 측 증거 — ${nameB}에게 제시 효과 없음` : (presentedToB ? '이미 제시함' : undefined)}
+          className={`pc-ev-detail__present-btn is-b${presentedToB ? ' is-done' : ''}${!bRelevant ? ' is-mismatch' : ''}${currentStage <= 0 ? ' is-stage-locked' : ''}`}
+          disabled={Boolean(bDisabledReason)}
+          title={bDisabledReason}
           onClick={() => {
-            if (!presentedToB && bRelevant) {
+            if (!bDisabledReason) {
               onClose?.()
               window.setTimeout(() => {
                 dispatch({ type: 'evidence_present', evidenceId, target: 'b' })
@@ -953,7 +1012,7 @@ function EvidenceDetailSection({ evidenceId, onClose }: { evidenceId: string; on
           <span className="pc-ev-detail__present-avatar">
             <PCCharacterPortrait alt={nameB} caseId={caseData.caseId} emotion="defensive" fallbackSymbolId="i-person" party="b" size={28} />
           </span>
-          <span>{presentedToB ? `${nameB} 제시 완료` : !bRelevant ? `${nameB} (대상 아님)` : `${nameB}에게 제시`}</span>
+          <span>{presentedToB ? `${nameB} 조사 ${currentStage}단계 답변 완료` : !bRelevant ? `${nameB} (대상 아님)` : currentStage <= 0 ? '조사 후 제시 가능' : `${nameB}에게 제시`}</span>
         </button>
       </div>
     </div>
@@ -982,6 +1041,9 @@ function DialogueDetailSection({ payload, onClose }: { payload: PcInteractionPay
   const party = payload.dialogueSpeaker === 'a' || payload.dialogueSpeaker === 'b'
     ? payload.dialogueSpeaker
     : null
+  const witnessPortrait = payload.dialogueSpeaker === 'witness'
+    ? getWitnessPortraitPath(caseData?.caseId, null, payload.dialogueSpeakerName)
+    : null
   return (
     <div className={`pc-dialogue-popup${speakerClass ? ` pc-dialogue-popup--${speakerClass}` : ''}`}>
       <div className="pc-dialogue-popup__header-row">
@@ -996,6 +1058,8 @@ function DialogueDetailSection({ payload, onClose }: { payload: PcInteractionPay
                 party={party}
                 size={34}
               />
+            ) : witnessPortrait ? (
+              <img alt={payload.dialogueSpeakerName ?? '증인'} src={witnessPortrait} />
             ) : (
               <PCSvgIcon id={speakerIconId} size={18} />
             )}
@@ -1068,8 +1132,16 @@ function WitnessDetailSection({ onAction }: { onAction: (action: PcInteractionAc
         const slotLabel = w.slot === 'institutional' ? '기관 증인' : '관련인'
         const gated = (w.unlockedByDossier ?? []).length > 0
         const locked = gated && !unlockedWitnessIds.includes(w.id)
+        const portrait = getWitnessPortraitPath(caseData.caseId, w.id, w.name)
         return (
           <div className={`pc-witness-card${called ? ' is-called' : ''}${locked ? ' is-locked' : ''}`} key={w.id}>
+            <span className="pc-witness-card__portrait" aria-hidden>
+              {!locked && portrait ? (
+                <img alt="" src={portrait} />
+              ) : (
+                <PCSvgIcon id="i-witness" size={22} />
+              )}
+            </span>
             <div className="pc-witness-card__info">
               <span className="pc-witness-card__name">{locked ? '???' : w.name}</span>
               <span className="pc-witness-card__meta">{slotLabel}{locked ? ' · 잠김' : ''}</span>

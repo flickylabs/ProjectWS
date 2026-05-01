@@ -168,31 +168,70 @@ function getEvidenceDisplayName(def: any, runtimeState?: { deepInvestigated?: bo
   return runtimeState?.deepInvestigated ? (def.name ?? def.id) : (def.surfaceName ?? def.name ?? def.id)
 }
 
-function buildEvidencePresentationQuestion(
-  state: ReturnType<typeof useGameStore.getState>,
-  target: PartyId,
-  evidence: any,
-  evidenceRuntime: any,
-  displayName: string,
-  relatedDisputes: string[],
-): string {
-  const targetName = getPartyName(state, target)
+function normalizeEvidenceDisplayLabel(name: string): string {
+  return (name ?? '').replace(/\s*\(/g, ' (').replace(/\s+\)/g, ')').replace(/\s+/g, ' ').trim()
+}
+
+function getEvidencePresentationStageLabel(evidence: any, evidenceRuntime: any): string {
   const stages = Array.isArray(evidence?.investigationStages) ? evidence.investigationStages : []
   const investigated = Array.isArray(evidenceRuntime?.investigatedActions) ? evidenceRuntime.investigatedActions : []
   const latestStage = stages
     .filter((stage: any) => investigated.includes(stage.revealKey))
     .sort((a: any, b: any) => (a.stage ?? 0) - (b.stage ?? 0))
     .at(-1)
-  const stageLabel = latestStage?.stage ? `조사 ${latestStage.stage}단계` : '기초 확인'
+  return latestStage?.stage ? `조사 ${latestStage.stage}단계` : '기초 확인'
+}
+
+function polishEvidencePresentationQuestion(questionText: string, displayName: string): string {
+  const text = questionText.replace(/\s+/g, ' ').trim()
+  const evidenceHint = `${displayName} ${text}`
+  if (/영수증|품목|물품|구입|구매|참고서|틴트|스타킹/.test(evidenceHint)) {
+    if (/품목들이\s+가리키는\s+상대/.test(text)) {
+      return '이 품목들은 누구를 위해 구입한 것입니까?'
+    }
+    if (/물품들은\s+누구를\s+위해\s+구매/.test(text)) {
+      return '이 물품들은 누구를 위해 구입한 것입니까?'
+    }
+    if (/참고서는\s+누구를\s+위해\s+산/.test(text)) {
+      return '참고서는 누구를 위해 산 것입니까?'
+    }
+  }
+  return text
+}
+
+function getEvidencePresentationQuestionText(evidence: any, evidenceRuntime: any, target: PartyId, displayName: string): string {
+  const stages = Array.isArray(evidence?.investigationStages) ? evidence.investigationStages : []
+  const investigated = Array.isArray(evidenceRuntime?.investigatedActions) ? evidenceRuntime.investigatedActions : []
+  const latestStage = stages
+    .filter((stage: any) => investigated.includes(stage.revealKey))
+    .sort((a: any, b: any) => (a.stage ?? 0) - (b.stage ?? 0))
+    .at(-1)
   const questionText = latestStage?.question?.text
     ?? evidence?.partyContext?.[target]?.questionAngle
     ?? '이 증거와 관련해 설명해 주시겠습니까?'
-  const disputeName = relatedDisputes
-    .map((dId) => state.caseData?.disputes.find((d) => d.id === dId)?.name)
-    .filter(Boolean)[0]
-  const disputeClause = disputeName ? ` "${disputeName}" 쟁점과 관련해` : ''
+  return polishEvidencePresentationQuestion(questionText, displayName)
+}
 
-  return `${targetName} 씨, ${displayName}(${stageLabel})를 제시합니다.${disputeClause} ${questionText}`
+function buildEvidencePresentationQuestion(
+  state: ReturnType<typeof useGameStore.getState>,
+  target: PartyId,
+  evidence: any,
+  evidenceRuntime: any,
+  displayName: string,
+): string {
+  const targetName = getPartyName(state, target)
+  const questionText = getEvidencePresentationQuestionText(evidence, evidenceRuntime, target, displayName)
+
+  return `${targetName} 씨, ${questionText}`
+}
+
+function buildEvidencePresentationMeta(displayName: string, stageLabel: string) {
+  const evidenceName = normalizeEvidenceDisplayLabel(displayName)
+  return {
+    evidenceName,
+    stageLabel,
+    label: `${evidenceName} - ${stageLabel}를 제시합니다.`,
+  }
 }
 
 function getEvidenceCurrentLieRank(evidence: any, lieStates: Record<string, { currentState?: string }> | undefined): number {
@@ -355,6 +394,33 @@ async function handleEvidencePresent(action: Extract<PlayerAction, { type: 'evid
 
   const evDef = state.evidenceDefinitions.find((e) => e.id === action.evidenceId)
   if (!evDef) { evidencePresentLock = false; return }
+  const currentEvidenceState = state.evidenceStates[action.evidenceId]
+  const presentationStage = currentEvidenceState?.investigatedActions?.length ?? 0
+  const presentedStages = currentEvidenceState?.presentedStagesByParty?.[action.target] ?? []
+  if (presentationStage <= 0) {
+    state.enqueueFeedback({
+      kind: 'evidence_result',
+      eyebrow: '증거 제시',
+      title: '조사 필요',
+      body: '증거를 1단계 이상 조사한 뒤 제시할 수 있습니다.',
+      tone: 'neutral',
+      autoDismissMs: 1800,
+    })
+    evidencePresentLock = false
+    return
+  }
+  if (presentedStages.includes(presentationStage)) {
+    state.enqueueFeedback({
+      kind: 'evidence_result',
+      eyebrow: '증거 제시',
+      title: '이미 답변한 단계',
+      body: `조사 ${presentationStage}단계 답변은 이미 받았습니다. 다음 조사 단계가 열리면 다시 제시할 수 있습니다.`,
+      tone: 'neutral',
+      autoDismissMs: 2000,
+    })
+    evidencePresentLock = false
+    return
+  }
 
   // 증거가 입증하는 첫 번째 쟁점을 포커스로 기록
   if (evDef.proves?.length > 0) {
@@ -368,24 +434,26 @@ async function handleEvidencePresent(action: Extract<PlayerAction, { type: 'evid
   if (newUnlocks.length > 0) v4Effects.evidenceUnlock()
 
   playEvidencePresent()
+  const stateAfterPresent = useGameStore.getState()
   const evVis = state.discovery.disputeVisibility
   const visibleEvProves = evDef.proves.filter(dId => { const v = evVis[dId]; return !v || v.visibility !== 'hidden' })
   // [Phase F] 증거 시스템 메시지 명칭 — deepInvestigated 전엔 surfaceName(잠금 명칭) 사용.
-  const evStateForName = state.evidenceStates[evDef.id]
+  const evStateForName = stateAfterPresent.evidenceStates[evDef.id]
   const displayName = getEvidenceDisplayName(evDef, evStateForName)
+  const evidenceStageLabel = getEvidencePresentationStageLabel(evDef, evStateForName)
   const judgeEvidenceQuestion = buildEvidencePresentationQuestion(
     state,
     action.target,
     evDef,
     evStateForName,
     displayName,
-    visibleEvProves,
   )
   state.addDialogue({
     speaker: 'judge',
     text: judgeEvidenceQuestion,
     relatedDisputes: visibleEvProves,
     turn: state.turnCount,
+    evidencePresentation: buildEvidencePresentationMeta(displayName, evidenceStageLabel),
   })
   state.pushGameEvent({
     id: state.gameEventLog.length + 1,
@@ -599,13 +667,27 @@ async function handleCallWitness(action: Extract<PlayerAction, { type: 'call_wit
   const hasSlots = availableSlots.length > 0
   const check = canCallWitness(action.witnessId, state.calledWitnesses, state.caseData, hasSlots, state.unlockedWitnessIds)
   if (!check.available) {
-    state.addDialogue({ speaker: 'system', text: check.reason ?? '증인 소환 불가', relatedDisputes: [], turn: state.turnCount })
+    state.enqueueFeedback({
+      kind: 'info',
+      eyebrow: '증인 심문',
+      title: '추가 질문 없음',
+      body: check.reason ?? '지금은 이 증인에게 더 물을 내용이 없습니다.',
+      tone: 'neutral',
+      autoDismissMs: 1800,
+    })
     return
   }
 
   // 비용: 조사 토큰 1개
   if (state.resources.investigationTokens < 1) {
-    state.addDialogue({ speaker: 'system', text: '조사 토큰이 모두 소진되었습니다.', relatedDisputes: [], turn: state.turnCount })
+    state.enqueueFeedback({
+      kind: 'info',
+      eyebrow: '증인 심문',
+      title: '조사 토큰 부족',
+      body: '증인을 다시 부르려면 조사 토큰이 필요합니다.',
+      tone: 'neutral',
+      autoDismissMs: 1800,
+    })
     return
   }
   state.spend('investigationTokens', 1)
@@ -616,14 +698,6 @@ async function handleCallWitness(action: Extract<PlayerAction, { type: 'call_wit
       state.addCalledWitness(action.witnessId)
     }
     const isResummon = session.summonCount > 0
-    state.addDialogue({
-      speaker: 'system',
-      text: isResummon
-        ? `증인 ${witness.name}에게 추가 질문을 합니다.`
-        : `증인 ${witness.name} 소환 — 증언이 시작됩니다.`,
-      relatedDisputes: [],
-      turn: state.turnCount,
-    })
     // 주제 선택 모달 표시 → UI에서 선택 후 applyWitnessSlot 호출
     state.setPendingWitnessChoice({
       witnessId: action.witnessId,
@@ -791,13 +865,15 @@ async function handleEvidenceInvestigate(action: Extract<PlayerAction, { type: '
   const state = useGameStore.getState()
   // 토큰 경제: 첫 조사(투자한 횟수 0)는 무료 열람용, 2·3회차는 토큰 1 소비
   const prevInvestigations = state.evidenceStates[action.evidenceId]?.investigatedActions.length ?? 0
-  if (prevInvestigations >= 1) {
-    if (!state.spend('investigationTokens', 1)) {
+  const nextInvestigationStage = prevInvestigations + 1
+  const investigationCost = prevInvestigations === 0 ? 0 : (nextInvestigationStage === 2 ? 2 : 1)
+  if (investigationCost > 0) {
+    if (!state.spend('investigationTokens', investigationCost)) {
       state.enqueueFeedback({
         kind: 'evidence_result',
         eyebrow: '증거 조사',
         title: '조사 토큰 부족',
-        body: '조사 토큰이 부족합니다.',
+        body: `조사 ${nextInvestigationStage}단계에는 조사 토큰 ${investigationCost}개가 필요합니다.`,
         tone: 'neutral',
         autoDismissMs: 1800,
       })
@@ -2226,10 +2302,14 @@ function notifyLieTransition(party: PartyId, disputeId: string) {
     S2: '답변에 변화가 감지된다',
     S3: '감정이 동요하고 있다',
     S4: '심리적 압박이 커지고 있다',
-    S5: '진술 태도가 크게 변했다',
+    S5: '진실파악 5단계에 도달했다',
   }
   if (newState && labels[newState]) {
     if (newState === 'S5') {
+      const currentEmotion = (party === 'a' ? state.agentA : state.agentB).emotionalState.internalValue
+      if (currentEmotion < 85) {
+        changeEmotionWithPhaseTracking(party, 85 - currentEmotion)
+      }
       playLieCollapse()
       v4Effects.confession(party, name, {
         turn: state.turnCount,
@@ -2239,9 +2319,16 @@ function notifyLieTransition(party: PartyId, disputeId: string) {
     }
     // S1~S4: v4 newFact 배너 제거 — 통합 피드백 카드가 대체 (사운드 필요 시 이후 개별 추가)
     if (newState === 'S5') {
-      // 결정적 순간은 영구 기록으로 채팅에 남김
-      const text = `결정적 순간 — ${name}의 진술 태도가 크게 변했다!`
-      state.addDialogue({ speaker: 'system', text, relatedDisputes: [disputeId], turn: state.turnCount })
+      state.addJudgeObservation({
+        turnCount: state.turnCount,
+        category: 'state',
+        iconId: 'i-flame',
+        title: '진실파악 5단계에 도달했습니다.',
+        summary: name && dispute ? `${name} · ${dispute.name}` : `${name ?? '당사자'} · ${disputeId}`,
+        party,
+        disputeId,
+        linkedDialogueId: findLinkedDialogueId(party),
+      })
     } else {
       // S1~S4 상태 변화 — NPC 말풍선 읽은 뒤 관찰 패널에 기록 (Minor 티커 폐기)
       setTimeout(() => {
@@ -2267,7 +2354,17 @@ function notifyLieTransition(party: PartyId, disputeId: string) {
         relatedDisputes: [disputeId],
         turn: state.turnCount,
       })
-      dispatchS5ConfessionAnswer(party, disputeId)
+      const emittedConfession = dispatchS5ConfessionAnswer(party, disputeId)
+      if (!emittedConfession) {
+        state.addDialogue({
+          speaker: party,
+          text: '…맞습니다. 더 숨기지 않겠습니다. 제가 알고 있는 사실을 정리해 말씀드리겠습니다.',
+          relatedDisputes: [disputeId],
+          turn: state.turnCount,
+          behaviorHint: '핵심 사실을 더 이상 부인하지 않는다.',
+          source: 'fallback',
+        })
+      }
     }
 
     // S5 도달 시 진실 발견 + 정답지 기록
@@ -2302,12 +2399,6 @@ function notifyLieTransition(party: PartyId, disputeId: string) {
               party,
               disputeId,
               linkedDialogueId: lastNpcDialogue?.id,
-            })
-            state.addDialogue({
-              speaker: 'system',
-              text: `📔 재판관의 수첩에 결정적 진술이 기록되었습니다 — ${truthDispute?.name ?? disputeId}`,
-              relatedDisputes: [disputeId],
-              turn: state.turnCount,
             })
           }
 
@@ -2855,6 +2946,149 @@ function buildContradictionQuestion(
 // 증인 다층 증언 — 슬롯 선택 후 효과 적용
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
+function getPartyNameForWitnessProbe(state: ReturnType<typeof useGameStore.getState>, party: PartyId): string {
+  return party === 'a'
+    ? state.caseData?.duo.partyA.name ?? '당사자'
+    : state.caseData?.duo.partyB.name ?? '당사자'
+}
+
+function inferWitnessProbeTarget(
+  caseId: string | undefined,
+  disputeId: string,
+  slot: import('../types/witnessTestimony').TestimonySlot,
+): PartyId {
+  const normalizedCaseId = normalizeCaseKey(caseId ?? '')
+
+  if (normalizedCaseId === 'spouse-01') {
+    if (disputeId === 'd-1' || disputeId === 'd-2') return 'b'
+    if (disputeId === 'h-d3' || disputeId === 'h-d4') return 'a'
+  }
+
+  if (slot.effect.favorDirection === 'pro_a') return 'b'
+  if (slot.effect.favorDirection === 'pro_b') return 'a'
+  return slot.effect.lieStateNudge?.party ?? 'b'
+}
+
+function buildWitnessProbeBridgeLine(
+  caseId: string | undefined,
+  party: PartyId,
+  disputeId: string,
+): string {
+  const normalizedCaseId = normalizeCaseKey(caseId ?? '')
+
+  if (normalizedCaseId === 'spouse-01' && party === 'b' && disputeId === 'd-1') {
+    return '…그 증언까지 나왔습니까. 네, 더 숨기기 어렵겠습니다.'
+  }
+  if (normalizedCaseId === 'spouse-01' && party === 'b' && disputeId === 'd-2') {
+    return '…출금 흐름까지 확인됐군요. 제가 설명하겠습니다.'
+  }
+  if (normalizedCaseId === 'spouse-01' && party === 'a') {
+    return '…그 부분까지 확인됐다면, 저도 피하지 않겠습니다.'
+  }
+  return '…그 부분까지 확인됐습니까. 제가 아는 대로 말씀드리겠습니다.'
+}
+
+function confirmWitnessTruthProbe(
+  target: PartyId,
+  disputeId: string,
+  witnessName: string,
+): void {
+  const state = useGameStore.getState()
+  const caseData = state.caseData
+  if (!caseData) return
+
+  const targetName = getPartyNameForWitnessProbe(state, target)
+  const dispute = caseData.disputes.find((item) => item.id === disputeId)
+  const disputeName = dispute?.name ?? disputeId
+  const currentState = (target === 'a' ? state.agentA : state.agentB).lieStateMap[disputeId]?.currentState ?? 'S0'
+
+  state.addDialogue({
+    speaker: 'judge',
+    text: `${targetName} 씨, 방금 ${witnessName}의 증언은 "${disputeName}" 쟁점의 핵심과 맞닿아 있습니다. 이 부분을 직접 확인하겠습니다.`,
+    relatedDisputes: [disputeId],
+    turn: state.turnCount,
+  })
+
+  state.addDialogue({
+    speaker: target,
+    text: buildWitnessProbeBridgeLine(caseData.caseId, target, disputeId),
+    relatedDisputes: [disputeId],
+    turn: state.turnCount,
+    behaviorHint: '증인 증언에 당황하고, 더 이상 버티기 어렵다는 반응을 보인다.',
+    source: 'fallback',
+  })
+
+  if (currentState !== 'S5') {
+    snapshotLieState(target, disputeId)
+    state.forceSetLieState(target, disputeId, 'S5')
+    notifyLieTransition(target, disputeId)
+  } else {
+    dispatchS5ConfessionAnswer(target, disputeId)
+  }
+}
+
+function enqueueWitnessTruthProbe(
+  pending: NonNullable<ReturnType<typeof useGameStore.getState>['pendingWitnessChoice']>,
+  slot: import('../types/witnessTestimony').TestimonySlot,
+): void {
+  const state = useGameStore.getState()
+  const caseData = state.caseData
+  if (!caseData) return
+
+  const disputeId = slot.effect.relatedDisputes[0]
+  if (!disputeId) return
+
+  const dispute = caseData.disputes.find((item) => item.id === disputeId)
+  const target = inferWitnessProbeTarget(caseData.caseId, disputeId, slot)
+  const targetName = getPartyNameForWitnessProbe(state, target)
+  const disputeName = dispute?.name ?? disputeId
+
+  state.addJudgeObservation({
+    turnCount: state.turnCount,
+    category: 'event',
+    iconId: 'i-witness',
+    title: '핵심 증언이 포착됐다.',
+    summary: `${pending.witnessName} · ${disputeName}`,
+    party: target,
+    disputeId,
+    linkedDialogueId: findLinkedDialogueId(),
+  })
+
+  state.enqueueFeedback({
+    kind: 'confrontation',
+    eyebrow: '핵심 증언 포착',
+    title: disputeName,
+    body: `${pending.witnessName}의 답변이 이 쟁점의 핵심과 맞닿아 있습니다. ${targetName} 씨에게 직접 확인하시겠습니까?`,
+    quote: slot.testimony,
+    tone: 'gold',
+    actions: [
+      {
+        label: '기록만 한다',
+        tone: 'gray',
+        onSelect: () => {
+          useGameStore.getState().addJudgeObservation({
+            turnCount: useGameStore.getState().turnCount,
+            category: 'event',
+            iconId: 'i-witness',
+            title: '핵심 증언을 보류 기록으로 남겼다.',
+            summary: `${pending.witnessName} · ${disputeName}`,
+            party: target,
+            disputeId,
+            linkedDialogueId: findLinkedDialogueId(),
+          })
+        },
+      },
+      {
+        label: '당사자에게 확인',
+        tone: 'gold',
+        onSelect: () => {
+          window.setTimeout(() => confirmWitnessTruthProbe(target, disputeId, pending.witnessName), 320)
+        },
+      },
+    ],
+  })
+}
+
 export function applyWitnessSlot(slotId: string): void {
   const state = useGameStore.getState()
   const pending = state.pendingWitnessChoice
@@ -2862,6 +3096,7 @@ export function applyWitnessSlot(slotId: string): void {
 
   const slot = pending.slots.find(s => s.id === slotId)
   if (!slot) return
+  state.setPendingWitnessChoice(null)
 
   // 재판관 질문
   state.addDialogue({
@@ -2891,11 +3126,17 @@ export function applyWitnessSlot(slotId: string): void {
 
   if (slot.effect.lieStateNudge) {
     const { party, dispute } = slot.effect.lieStateNudge
-    const transitioned = state.transitionLie(party as any, dispute, 'witness_testimony')
-    if (transitioned) {
-      notifyLieTransition(party as any, dispute)
-      state.trackMetric('lieTransitions')
+    if (slot.depth >= 3) {
+      enqueueWitnessTruthProbe(pending, slot)
+    } else {
+      const transitioned = state.transitionLie(party as any, dispute, 'witness_testimony')
+      if (transitioned) {
+        notifyLieTransition(party as any, dispute)
+        state.trackMetric('lieTransitions')
+      }
     }
+  } else if (slot.depth >= 3 && slot.effect.relatedDisputes.length > 0) {
+    enqueueWitnessTruthProbe(pending, slot)
   }
 
   if (slot.effect.emergenceTrigger) {
@@ -2911,22 +3152,5 @@ export function applyWitnessSlot(slotId: string): void {
 
   // 세션 업데이트
   state.updateWitnessSession(pending.witnessId, slotId)
-
-  const fresh = useGameStore.getState()
-  const allSlots = pending.allSlots ?? pending.slots
-  const session = fresh.witnessSessions[pending.witnessId] ?? { heardSlots: [], lastChoice: slotId, summonCount: 0 }
-  const nextSlots = getAvailableSlots(allSlots, pending.witnessId, session, buildWitnessGameState(fresh))
-
-  if (nextSlots.length > 0) {
-    fresh.setPendingWitnessChoice({
-      witnessId: pending.witnessId,
-      witnessName: pending.witnessName,
-      slots: nextSlots,
-      allSlots,
-      isResummon: true,
-    })
-  } else {
-    fresh.setPendingWitnessChoice(null)
-  }
   // 증인 주제 선택은 소환의 일부, 별도 턴 소비 없음
 }

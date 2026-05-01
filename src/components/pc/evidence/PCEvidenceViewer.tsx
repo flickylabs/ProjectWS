@@ -57,6 +57,21 @@ export default function PCEvidenceViewer() {
   const state = evidenceStates[evidence.id]
   const displayName = evidence.surfaceName ?? evidence.name
   const currentStage = state?.investigatedActions?.length ?? 0
+  const openInvestigationPanel = () => {
+    setPendingEvidenceView(null)
+    window.setTimeout(() => {
+      window.dispatchEvent(new CustomEvent('pc:open-interaction-panel', {
+        detail: {
+          title: displayName,
+          subtitle: '증거 조사',
+          body: '증거를 조사하면 열람 내용과 제시 질문이 단계적으로 열립니다.',
+          tone: 'gold',
+          variant: 'evidence',
+          evidenceId: evidence.id,
+        },
+      }))
+    }, 80)
+  }
   // 원본 JSON의 viewerData를 항상 우선 사용 (sessionStorage 캐시가 오래된 구조일 수 있음)
   const baseViewerData = getOriginalViewerData(caseData!.caseId, evidence.id) ?? evidence.viewerData
   // 단계별 오버라이드 — currentStage 이하 중 가장 큰 key 선택 (원본 JSON 우선)
@@ -96,6 +111,9 @@ export default function PCEvidenceViewer() {
               <PCSvgIcon id={getPcEvidenceSymbolId(evidence.type)} size={64} />
               <p>아직 열람할 수 없습니다</p>
               <span>증거를 <b>조사</b>하면 내용이 공개됩니다 (첫 조사는 토큰 소모 없음)</span>
+              <button className="pc-ev-placeholder__investigate" onClick={openInvestigationPanel} type="button">
+                증거조사 바로가기
+              </button>
             </div>
           ) : hasSubViewer ? (
             <EvidenceSubContent type={evidence.type} viewerData={viewerData!} />

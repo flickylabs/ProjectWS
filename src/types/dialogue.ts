@@ -21,6 +21,12 @@ export interface DialogueEntry {
   autoPin?: boolean
   /** 발화 출처 — 개발 모드에서 디버그 배지 표시용 ('script' | 'llm' | 'fallback') */
   source?: 'script' | 'llm' | 'fallback'
+  /** 재판관이 증거를 제시하며 묻는 말풍선의 보조 라벨 */
+  evidencePresentation?: {
+    evidenceName: string
+    stageLabel: string
+    label: string
+  }
   /** 모순 감지 전용: 클릭하면 추궁 가능 */
   contradictionMeta?: {
     party: PartyId
