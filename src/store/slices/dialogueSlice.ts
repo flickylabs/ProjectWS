@@ -1,6 +1,7 @@
 import type { StateCreator } from 'zustand'
 import type { DialogueEntry, ClaimNode, ClaimStatus } from '../../types'
 import type { EventFeedbackItem } from './eventFeedbackSlice'
+import { isLowValueSystemDialogueText } from '../../utils/systemLogPolicy'
 
 /**
  * [B-17 D 옵션] 시스템 메시지 기반 수동 트리거 모달
@@ -43,6 +44,9 @@ export const createDialogueSlice: StateCreator<DialogueSlice, [], [], DialogueSl
   dialoguePendingFeedback: {},
 
   addDialogue: (entry) => {
+    if (entry.speaker === 'system' && isLowValueSystemDialogueText(entry.text)) {
+      return ''
+    }
     const id = `dlg-${get().nextDialogueId}`
     const fullState = get() as any
     const agent = entry.speaker === 'a'

@@ -82,7 +82,7 @@ export default function JudgeObservationSection() {
     }
     flashTimerRef.current = window.setTimeout(() => {
       setBadgeFlash(false)
-    }, 700)
+    }, 2200)
     return () => {
       if (flashTimerRef.current !== null) {
         window.clearTimeout(flashTimerRef.current)
@@ -115,9 +115,8 @@ export default function JudgeObservationSection() {
     // (컷씬 2.3s 중 수렴 꼬리 ~0.7s 추가 고려)
     const archetypeExtraDelay = latest.category === 'archetype' && hasCutscene ? 900 : 0
     const arriveDelay = (hasCutscene ? 2300 : 1200) + archetypeExtraDelay
-    // flash duration — 관찰 카드 is-hero-flash와 말풍선 pc-dialogue-jump-pulse 모두 2.4s 리듬 공유
-    // (핫바 슬롯 pulse와 속도 통일, 유저 체감 속도 완화)
-    const flashMs = 2400
+    // flash duration — 관찰 카드, 말풍선, 핫바 슬롯이 모두 3회 이상 점멸하는 리듬 공유
+    const flashMs = 3150
     // 이벤트 관찰도 micro 강조로 제한한다. 실제 번개 연결은 쟁점 unlock 같은 보상 순간에서만 발동.
     const useMicroLink = false
 
@@ -176,7 +175,7 @@ export default function JudgeObservationSection() {
           const tag = document.querySelector<HTMLElement>(`[data-archetype-tag="${tagKey}"]`)
           if (tag) {
             tag.classList.add('pc-archetype-badge-slow-pulse')
-            window.setTimeout(() => tag.classList.remove('pc-archetype-badge-slow-pulse'), 3400)
+            window.setTimeout(() => tag.classList.remove('pc-archetype-badge-slow-pulse'), 3800)
           }
         }
 
@@ -243,7 +242,7 @@ export default function JudgeObservationSection() {
     if (!slip || confirmedSlipPulseRef.current.has(slip.id)) return
     confirmedSlipPulseRef.current.add(slip.id)
 
-    const flashMs = 2400
+    const flashMs = 3150
     setDisplayedMainId(slip.id)
     setIsFresh(true)
     confirmedSlipFlashActiveRef.current = true
@@ -255,7 +254,7 @@ export default function JudgeObservationSection() {
     }
     flashTimerRef.current = window.setTimeout(() => {
       setBadgeFlash(false)
-    }, 700)
+    }, 2200)
 
     if (typeof document !== 'undefined') {
       let attempts = 0
@@ -412,5 +411,5 @@ export function jumpToDialogue(dialogueId: string | undefined): void {
   bubble.classList.add('pc-dialogue-nav-pulse')
   window.setTimeout(() => {
     bubble.classList.remove('pc-dialogue-nav-pulse')
-  }, 3000)
+  }, 3800)
 }

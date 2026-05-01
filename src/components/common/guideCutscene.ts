@@ -1,5 +1,8 @@
 import { useGameStore } from '../../store/useGameStore'
 
+const PC_CLOSE_INTERACTION_PANEL_EVENT = 'pc:close-interaction-panel'
+const GUIDE_CUTSCENE_PANEL_CLOSE_DELAY_MS = 120
+
 /**
  * 재판관 가이드 컷씬 — 중앙 검정 띠로 짧게 노출 후 지정한 타겟 selector로 수렴.
  * 수렴 완료 시 타겟이 2번 깜빡(빛남)으로 유저 시선을 그리로 유도.
@@ -11,10 +14,23 @@ import { useGameStore } from '../../store/useGameStore'
  *  - 쟁점 정리 / 선례 감각 → 쟁점 리본
  */
 export function showGuideCutscene(text: string, targetSelector: string): void {
-  useGameStore.getState().enqueueFeedback({
-    kind: 'observation',
-    body: text,
-    tone: 'gold',
-    convergeTargetSelector: targetSelector,
-  })
+  if (typeof window === 'undefined') {
+    useGameStore.getState().enqueueFeedback({
+      kind: 'observation',
+      body: text,
+      tone: 'gold',
+      convergeTargetSelector: targetSelector,
+    })
+    return
+  }
+
+  window.dispatchEvent(new Event(PC_CLOSE_INTERACTION_PANEL_EVENT))
+  window.setTimeout(() => {
+    useGameStore.getState().enqueueFeedback({
+      kind: 'observation',
+      body: text,
+      tone: 'gold',
+      convergeTargetSelector: targetSelector,
+    })
+  }, GUIDE_CUTSCENE_PANEL_CLOSE_DELAY_MS)
 }

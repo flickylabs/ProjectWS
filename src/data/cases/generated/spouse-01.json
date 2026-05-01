@@ -2844,7 +2844,7 @@
           ]
         },
         "chat": {
-          "header": "이준호 ↔ 010-****-3847 문자 기록 — 2026.01~02",
+          "header": "010-****-3847",
           "messages": [
             {
               "side": "right",
@@ -2884,7 +2884,7 @@
             {
               "side": "left",
               "sender": "010-****-3847",
-              "text": "얘기 들었다. 고맙고 미안해."
+              "text": "얘기 들었어. 고맙고 미안해."
             },
             {
               "side": "right",
@@ -2936,7 +2936,7 @@
             ]
           },
           "chat": {
-            "header": "이준호 ↔ 발신자 미상 문자 기록",
+            "header": "발신자 미상",
             "messages": [
               {
                 "side": "left",
@@ -2996,7 +2996,7 @@
             ]
           },
           "chat": {
-            "header": "이준호 ↔ 010-****-3847 문자 기록",
+            "header": "010-****-3847",
             "messages": [
               {
                 "side": "left",
@@ -3066,7 +3066,7 @@
             ]
           },
           "chat": {
-            "header": "이준호 ↔ 010-****-3847 문자 기록 — 2026.01~02",
+            "header": "010-****-3847",
             "messages": [
               {
                 "side": "right",
@@ -3102,11 +3102,37 @@
                 "side": "right",
                 "sender": "이준호",
                 "text": "어차피 요새 사이도 안좋아서 관심도 없어. 걱정 마."
-              },
+              }
+            ]
+          }
+        },
+        "3": {
+          "meta": {
+            "name": "발신자 미상 문자",
+            "type": "chat",
+            "viewerType": "chat",
+            "trustLevel": "mid",
+            "trustLabel": "보통",
+            "source": "b",
+            "sourceLabel": "B측",
+            "legality": "ok",
+            "legalLabel": "적법",
+            "stage": 4,
+            "stageLabel": "맥락 복원",
+            "sourceNote": "self_possessed / original",
+            "redactions": [
+              "조카 이름 비공개",
+              "학교명 및 학년 마스킹",
+              "생리 관련 직접 표현 봉인"
+            ]
+          },
+          "chat": {
+            "header": "010-****-3847",
+            "messages": [
               {
                 "side": "left",
                 "sender": "010-****-3847",
-                "text": "얘기 들었다. 고맙고 미안해."
+                "text": "얘기 들었어. 고맙고 미안해."
               },
               {
                 "side": "right",

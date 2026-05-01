@@ -33,7 +33,7 @@ export function getAvailableSlots(
 ): TestimonySlot[] {
   const witnessSlots = allSlots.filter(s => s.witnessId === witnessId)
 
-  return witnessSlots.filter(slot => {
+  const conditionMatched = witnessSlots.filter(slot => {
     // 이미 들은 건 제외
     if (session.heardSlots.includes(slot.id)) return false
 
@@ -69,6 +69,33 @@ export function getAvailableSlots(
 
     return true
   })
+
+  if (conditionMatched.length === 0) return []
+
+  const lastSlot = session.lastChoice
+    ? witnessSlots.find(slot => slot.id === session.lastChoice) ?? null
+    : null
+
+  if (!lastSlot) {
+    const firstDepth = Math.min(...conditionMatched.map(slot => slot.depth))
+    return conditionMatched.filter(slot => slot.depth === firstDepth)
+  }
+
+  const directFollowUps = conditionMatched.filter(slot => {
+    const conditions = slot.conditions
+    return conditions?.prevSlotRequired === lastSlot.id || conditions?.prevChoiceRequired === lastSlot.id
+  })
+  if (directFollowUps.length > 0) return directFollowUps
+
+  const nextDepth = Math.min(...conditionMatched
+    .map(slot => slot.depth)
+    .filter(depth => depth > lastSlot.depth))
+  if (Number.isFinite(nextDepth)) {
+    return conditionMatched.filter(slot => slot.depth === nextDepth)
+  }
+
+  const fallbackDepth = Math.min(...conditionMatched.map(slot => slot.depth))
+  return conditionMatched.filter(slot => slot.depth === fallbackDepth)
 }
 
 /**

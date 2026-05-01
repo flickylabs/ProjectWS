@@ -7,6 +7,7 @@ import { getPcFaceSymbolId } from '../icons/pcIconUtils'
 import { openPcInteractionPanel } from './PCInteractionPanel'
 import { HOTBAR_DRAG_TYPE } from '../hotbar/pcHotbarConfig'
 import { hasContradictionComparison } from '../../../utils/contradiction'
+import { isLowValueSystemDialogueText } from '../../../utils/systemLogPolicy'
 
 const CHAT_NOTE_DRAG_TYPE = 'application/x-pc-note'
 
@@ -400,7 +401,9 @@ export default function PCDialogueLog() {
     }
   }, [dialogueLog.length])
 
-  const visibleEntries = useMemo(() => dialogueLog.filter((entry) => !entry.isHidden), [dialogueLog])
+  const visibleEntries = useMemo(() => dialogueLog.filter((entry) =>
+    !entry.isHidden && !(entry.speaker === 'system' && isLowValueSystemDialogueText(entry.text))
+  ), [dialogueLog])
 
   // 각 화자별 마지막 발언 인덱스 (감정 이펙트를 최신 말풍선에만 적용)
   const latestIndexBySpeaker = useMemo(() => {

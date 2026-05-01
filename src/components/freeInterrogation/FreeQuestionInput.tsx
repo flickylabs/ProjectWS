@@ -24,6 +24,7 @@ interface Props {
 
 const MIN_QUESTION_LENGTH = 5
 const MAX_QUESTION_LENGTH = 100
+const PANEL_CLOSE_BEFORE_RESULT_DELAY_MS = 140
 
 export default function FreeQuestionInput({
   target,
@@ -81,16 +82,24 @@ export default function FreeQuestionInput({
 
       if (result.status === 'dispatch' && result.action) {
         if (result.costPolicy === 'consume' && !useGameStore.getState().spend('investigationTokens', 1)) return
-        dispatch(result.action)
+        const action = result.action
         const cutscenePayload = buildAIReasoningCutscenePayload(trimmed, result.intent, caseData)
-        if (cutscenePayload) {
-          triggerAIReasoningCutscene(cutscenePayload)
-        }
+        setText('')
+        onDone?.()
+        window.setTimeout(() => {
+          dispatch(action)
+          if (cutscenePayload) {
+            triggerAIReasoningCutscene(cutscenePayload)
+          }
+        }, PANEL_CLOSE_BEFORE_RESULT_DELAY_MS)
+        return
       } else {
         const fallbackSpeaker = result.dialogueSpeaker ?? target ?? 'system'
         const related = result.intent.mapped.disputeId ? [result.intent.mapped.disputeId] : []
         const fresh = useGameStore.getState()
         if (result.costPolicy === 'consume' && !fresh.spend('investigationTokens', 1)) return
+        setText('')
+        onDone?.()
         fresh.addDialogue({ speaker: 'judge', text: trimmed, relatedDisputes: related, turn: fresh.turnCount })
         fresh.addDialogue({
           speaker: fallbackSpeaker,
@@ -105,10 +114,9 @@ export default function FreeQuestionInput({
         if (result.turnPolicy === 'advance') {
           fresh.incrementTurn()
         }
+        return
       }
 
-      setText('')
-      onDone?.()
     } finally {
       setBusy(false)
     }

@@ -68,6 +68,14 @@ function ensureQuestionMeterState(meter?: Partial<QuestionMeterState>): Question
   }
 }
 
+function buildCriticalLeakSlipText(caseId: string | undefined, party: PartyId, disputeId: string, partyName: string): string {
+  const normalizedCaseId = normalizeCaseKey(caseId ?? '')
+  if (normalizedCaseId === 'spouse-01' && party === 'b' && disputeId === 'd-1') {
+    return '형이 집을 비우는 시간이 길어서 조카 혼자 있는 날이 많았습니다. 제가 아니면... 누가 합니까.'
+  }
+  return `${partyName} 쪽에서 숨기던 핵심이 말실수로 새어 나왔습니다.`
+}
+
 /** 퍼크 효과를 게임 초기 상태에 반영 */
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 function applyPerks(set: (partial: any) => void): void {
@@ -156,7 +164,7 @@ export type GameStore = PhaseSlice & AgentSlice & ResourceSlice & EvidenceSlice 
   witnessSessions: Record<string, { heardSlots: string[]; lastChoice: string | null; summonCount: number }>
   updateWitnessSession: (witnessId: string, slotId: string) => void
   /** 증인 주제 선택 대기 */
-  pendingWitnessChoice: { witnessId: string; witnessName: string; slots: import('../types/witnessTestimony').TestimonySlot[]; isResummon: boolean } | null
+  pendingWitnessChoice: { witnessId: string; witnessName: string; slots: import('../types/witnessTestimony').TestimonySlot[]; allSlots?: import('../types/witnessTestimony').TestimonySlot[]; isResummon: boolean } | null
   setPendingWitnessChoice: (choice: GameStore['pendingWitnessChoice']) => void
   /** 미니게임 대기 (UI에서 모달 표시) */
   pendingMinigame:
@@ -468,6 +476,7 @@ export const useGameStore: import('zustand').UseBoundStore<import('zustand').Sto
       if (!lieState) return null
 
       const meter = state.questionMeters[party]
+      const previousLeakMeter = meter.leakMeter
       const { result, updatedMeter } = resolveQuestionEffect(
         questionType, party, disputeId, lieState, stance, emotionTier, meter, options,
       )
@@ -512,6 +521,20 @@ export const useGameStore: import('zustand').UseBoundStore<import('zustand').Sto
             }
             break
           }
+          case 'suppression_leak': {
+            const effectParty = effect.party as 'a' | 'b'
+            const partyData = effectParty === 'a' ? state.caseData?.duo.partyA : state.caseData?.duo.partyB
+            state.addJudgeObservation({
+              turnCount: state.turnCount,
+              category: 'slip',
+              iconId: 'i-scale',
+              title: '숨기던 말이 새고 있습니다.',
+              summary: `${partyData?.name ?? '당사자'} · 누설 ${updatedMeter.leakMeter}%`,
+              party: effectParty,
+              disputeId,
+            })
+            break
+          }
           case 'hidden_dispute_hook':
             // 동기 탐색: 숨겨진 쟁점 연결고리 → 이벤트 로그(토스트)
             set((prev) => ({
@@ -523,20 +546,26 @@ export const useGameStore: import('zustand').UseBoundStore<import('zustand').Sto
                 timestamp: Date.now(),
               }],
             }))
-            state.addDialogue({
-              speaker: 'system',
-              text: '동기 탐색이 효과를 보이고 있습니다 — 아직 드러나지 않은 쟁점의 단서가 보입니다.',
-              relatedDisputes: [effect.hintDisputeId],
-              turn: state.turnCount,
+            state.addJudgeObservation({
+              turnCount: state.turnCount,
+              category: 'state',
+              iconId: 'i-scale',
+              title: '숨겨진 연결고리가 보입니다.',
+              summary: '동기 탐색 결과 · 쟁점으로 이어질 수 있는 단서',
+              party,
+              disputeId: effect.hintDisputeId,
             })
             break
           case 'blame_text_exposed':
-            // 동기 탐색: 책임 회피 문구 노출 → 대화 로그에 시스템 노트
-            state.addDialogue({
-              speaker: 'system',
-              text: '책임 회피 문구가 기록되었습니다',
-              relatedDisputes: [disputeId],
-              turn: state.turnCount,
+            // 동기 탐색: 책임 회피 문구 노출 → 관찰 패널에 낮은 강도로 기록
+            state.addJudgeObservation({
+              turnCount: state.turnCount,
+              category: 'state',
+              iconId: 'i-scale',
+              title: '책임을 돌리는 말투가 반복됩니다.',
+              summary: effect.exposedText,
+              party,
+              disputeId,
             })
             break
           case 'trust_window_open':
@@ -566,6 +595,31 @@ export const useGameStore: import('zustand').UseBoundStore<import('zustand').Sto
             }))
             break
         }
+      }
+
+      if (questionType === 'motive_search' && previousLeakMeter < 100 && updatedMeter.leakMeter >= 100) {
+        const partyData = party === 'a' ? state.caseData?.duo.partyA : state.caseData?.duo.partyB
+        const dispute = state.caseData?.disputes.find((d) => d.id === disputeId)
+        const partyName = partyData?.name ?? '당사자'
+        const slipText = buildCriticalLeakSlipText(state.caseData?.caseId, party, disputeId, partyName)
+        state.setPendingSlip({
+          party,
+          sourceDisputeId: disputeId,
+          linkedDisputeId: null,
+          slipText,
+          turn: state.turnCount,
+          trigger: 'leak_critical',
+          forceConfessionOnReflect: true,
+        })
+        state.addJudgeObservation({
+          turnCount: state.turnCount,
+          category: 'slip',
+          iconId: 'i-heart',
+          title: '말실수가 나왔습니다.',
+          summary: `${partyName} · 누설 100% · ${dispute?.name ?? disputeId}`,
+          party,
+          disputeId,
+        })
       }
 
       // 이벤트 로그 추가

@@ -17,7 +17,7 @@ import PCCharacterPortrait from '../icons/PCCharacterPortrait'
 import { getPcFaceSymbolId } from '../icons/pcIconUtils'
 import { getPcArchetypeLabel, getPcTellDescription, getPcTellLabel } from '../pcUiLabels'
 import { HOTBAR_DRAG_TYPE } from '../hotbar/pcHotbarConfig'
-import { openPcInteractionPanel, type PcInteractionAction } from '../layout/PCInteractionPanel'
+import { closePcInteractionPanel, openPcInteractionPanel, type PcInteractionAction, type PcInteractionPayload } from '../layout/PCInteractionPanel'
 import { showToast } from '../../common/Toast'
 import { showGuideCutscene } from '../../common/guideCutscene'
 import { getCombinationComment } from '../../../data/combinationComments'
@@ -32,6 +32,8 @@ const LIE_STATES: LieState[] = ['S0', 'S1', 'S2', 'S3', 'S4', 'S5']
 const COMBINATION_SUCCESS_SOURCE_SELECTOR = '[data-resonance-target="combination-success"]'
 const JUDGE_OBSERVATION_SELECTOR = '[data-resonance-target="jobs-main"]'
 const JUDGE_NOTEBOOK_SELECTOR = '[data-resonance-target="judge-notebook"]'
+const COMBINATION_RESONANCE_DELAY_MS = 260
+const COMBINATION_RESULT_PANEL_DELAY_MS = 3100
 
 
 const EMOTION_LABELS: Record<EmotionalPhase, string> = {
@@ -73,6 +75,14 @@ export default function PCRightPanel() {
   const [autoMatchConfirming, setAutoMatchConfirming] = useState(false)
   const [infoDrawer, setInfoDrawer] = useState<TargetInfoDrawer | null>(null)
   const [selectedLieStageIdx, setSelectedLieStageIdx] = useState<number | null>(null)
+  const combinationResultPanelTimerRef = useRef<number | null>(null)
+
+  useEffect(() => () => {
+    if (combinationResultPanelTimerRef.current !== null) {
+      window.clearTimeout(combinationResultPanelTimerRef.current)
+      combinationResultPanelTimerRef.current = null
+    }
+  }, [])
 
   // Phase 1 (사전진술) 등에서는 심문/증거 액션 자체가 의미 없음 — 기록 정리도 차단.
   // 활성 Phase 체계: 0 → 1 → 2(Phase.Interrogation) → 3a → 3b
@@ -510,7 +520,7 @@ export default function PCRightPanel() {
     })
 
     const effectTags = matchingOutput.effects.slice(0, 4).map((effect) => getResultKindLabel(effect.kind))
-    openPcInteractionPanel({
+    const resultPanelPayload: PcInteractionPayload = {
       title: cleanOutputLabel(matchingOutput.label),
       subtitle: isWitnessResult ? '새 증인 추가' : '\uC870\uD569 \uC131\uACF5',
       tone: 'gold',
@@ -518,7 +528,7 @@ export default function PCRightPanel() {
       body: panelBody,
       tags: isWitnessResult ? ['새 증인', ...effectTags.filter((tag) => tag !== '새 발언')] : effectTags,
       actions: panelActions,
-    })
+    }
 
     if (isWitnessResult) {
       const summary = witnessNames.length > 0
@@ -531,7 +541,6 @@ export default function PCRightPanel() {
         title: '새 증인 추가',
         summary,
       })
-      store.enqueueAura({ targetSelector: '[data-guide-target="witness-summon"]' })
     } else if (combinationResultType === 'dispute') {
       store.addJudgeObservation({
         turnCount: store.turnCount,
@@ -540,7 +549,6 @@ export default function PCRightPanel() {
         title: '쟁점 추가',
         summary: outputSummary || '새 쟁점이 기록에 추가됐습니다.',
       })
-      store.enqueueAura({ targetSelector: '.pc-dispute-ribbon' })
     } else if (combinationResultType === 'dossier') {
       store.addJudgeObservation({
         turnCount: store.turnCount,
@@ -549,7 +557,6 @@ export default function PCRightPanel() {
         title: '결정적 질문 해금',
         summary: outputSummary || '새 질문 경로가 열렸습니다.',
       })
-      store.enqueueAura({ targetSelector: '[data-guide-target="question-fact"]' })
     } else if (combinationResultType === 'question') {
       store.addJudgeObservation({
         turnCount: store.turnCount,
@@ -558,7 +565,6 @@ export default function PCRightPanel() {
         title: '질문 경로 추가',
         summary: outputSummary || '새 질문 경로가 열렸습니다.',
       })
-      store.enqueueAura({ targetSelector: '[data-guide-target="question-fact"]' })
     } else if (combinationResultType === 'evidence') {
       store.addJudgeObservation({
         turnCount: store.turnCount,
@@ -568,10 +574,6 @@ export default function PCRightPanel() {
         summary: outputSummary || '새 증거가 기록에 추가됐습니다.',
         evidenceId: primaryEvidenceId ?? undefined,
       })
-      store.enqueueAura({ targetSelector: '[data-guide-target="evidence-present"]' })
-      if (primaryEvidenceId) {
-        store.enqueueAura({ targetSelector: `[data-resonance-target="evidence-${primaryEvidenceId}"]` })
-      }
     } else if (combinationResultType === 'mediation') {
       store.addJudgeObservation({
         turnCount: store.turnCount,
@@ -612,26 +614,7 @@ export default function PCRightPanel() {
       })
     }
 
-    // 3) Toast: 플레이 가이드 (judgeHint — 채팅 비삽입, 짧은 힌트만)
-    if (matchingOutput.judgeHint) {
-      // 힌트 키워드별 타겟 분기 (우선순위: 증인 > 증거/제시 > 자백/공감 > 추궁/모순 > 쟁점/숨김 > 조합 카드)
-      const hint = matchingOutput.judgeHint.trim()
-      const target =
-        /증인/.test(hint) ? '[data-guide-target="witness-summon"]'
-        : /증거|제시/.test(hint) ? '[data-guide-target="evidence-present"]'
-        : /자백|솔직/.test(hint) ? '[data-guide-target="question-empathy"]'
-        : /추궁|모순|사실\s*추궁/.test(hint) ? '[data-guide-target="question-fact"]'
-        : /쟁점|숨[긴겨]|동기\s*탐색/.test(hint) ? '[data-guide-target="question-motive"]'
-        : '.pc-combination-card'
-      showGuideCutscene(hint, target)
-    } else {
-      const guide = getCombinationGuideCutscene(combinationResultType, cleanOutputLabel(matchingOutput.label))
-      if (guide) {
-        showGuideCutscene(guide.text, guide.target)
-      }
-    }
-
-    // 4) 시스템: 새 증인 소환 알림 (runCombinationRecipe가 반환한 newly unlocked)
+    // 3) 시스템: 새 증인 소환 알림 (runCombinationRecipe가 반환한 newly unlocked)
     for (const w of result.newlyUnlockedWitnesses ?? []) {
       store.addDialogue({
         speaker: 'system',
@@ -640,6 +623,8 @@ export default function PCRightPanel() {
         turn: store.turnCount,
       })
     }
+
+    closePcInteractionPanel()
 
     playCombinationSuccess()
     window.dispatchEvent(new CustomEvent('pc:combination-success', {
@@ -662,7 +647,15 @@ export default function PCRightPanel() {
         disputeId: primaryDisputeId,
         evidenceId: primaryEvidenceId,
       })
-    }, 140)
+    }, COMBINATION_RESONANCE_DELAY_MS)
+
+    if (combinationResultPanelTimerRef.current !== null) {
+      window.clearTimeout(combinationResultPanelTimerRef.current)
+    }
+    combinationResultPanelTimerRef.current = window.setTimeout(() => {
+      openPcInteractionPanel(resultPanelPayload)
+      combinationResultPanelTimerRef.current = null
+    }, COMBINATION_RESULT_PANEL_DELAY_MS)
 
     clearComboSlots()
   }, [clearComboSlots, comboNodeA, comboNodeB, comboReady, matchingOutput, matchingRecipe, store])
@@ -1456,28 +1449,6 @@ function getPrimaryCombinationEvidenceId(output: CombinationLabOutput): string |
     .map((effect) => effect.evidenceUpgrade?.evidenceId ?? effect.unlockNodeId ?? effect.targetId ?? effect.upgradeToId ?? effect.reframeToId)
     .find((value): value is string => Boolean(value))
   return output.evidenceNode?.id ?? fromEffect ?? null
-}
-
-function getCombinationGuideCutscene(resultType: PcCombinationResultType, label: string): { text: string; target: string } | null {
-  switch (resultType) {
-    case 'witness':
-      return { text: `새 증인 추가: ${label}`, target: '[data-guide-target="witness-summon"]' }
-    case 'evidence':
-      return { text: `새 증거 추가: ${label}`, target: '[data-guide-target="evidence-present"]' }
-    case 'dispute':
-      return { text: `새 쟁점 추가: ${label}`, target: '.pc-dispute-ribbon' }
-    case 'dossier':
-    case 'question':
-      return { text: `새 질문 경로: ${label}`, target: '[data-guide-target="question-fact"]' }
-    case 'mediation':
-    case 'note':
-    case 'statement':
-    case 'reliability':
-    case 'context':
-      return null
-    default:
-      return null
-  }
 }
 
 interface CombinationResonanceContext {

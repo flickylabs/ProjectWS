@@ -309,6 +309,10 @@ function checkEmotionalBurst(snapshot: TurnSnapshot): GameEventTrigger | null {
   const party = snapshot.activeParty
   const emotion = snapshot.emotions[party]
 
+  // 감정 폭발은 '격앙' 상태에서만 발생한다. 이미 체념 상태라면
+  // 별도의 자백/lockout 흐름으로 다루고, 다시 폭발 선택지를 띄우지 않는다.
+  if (emotion.phase !== 'angry') return null
+
   // 조건 1: 감정 임계 초과
   if (emotion.internalValue < EMOTIONAL_BURST_THRESHOLD) return null
 

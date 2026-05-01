@@ -135,6 +135,10 @@ export interface EmotionalSlipEvent {
   /** 실수 발언 내용 (verbalTells 기반) */
   slipText: string
   turn: number
+  /** 발생 원인. leak_critical은 누설 100%로 생긴 말실수다. */
+  trigger?: 'emotion' | 'leak_critical'
+  /** 반영 버튼을 누르면 해당 쟁점을 S5 자백 흐름으로 끌어올릴지 여부 */
+  forceConfessionOnReflect?: boolean
 }
 
 // ─────────────────────────────────────────

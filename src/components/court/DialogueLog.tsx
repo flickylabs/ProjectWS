@@ -5,6 +5,7 @@ import type { DialogueEntry as DialogueEntryType } from '../../types'
 import { handleContradictionPursue } from '../../hooks/useActionDispatch'
 import Emoji from '../common/Emoji'
 import { hasContradictionComparison } from '../../utils/contradiction'
+import { isLowValueSystemDialogueText } from '../../utils/systemLogPolicy'
 
 interface Props {
   onTestimonyClick?: () => void
@@ -62,7 +63,7 @@ export default function DialogueLog({ onTestimonyClick }: Props) {
       )}
 
       <div className="space-y-1">
-        {dialogueLog.filter(e => !e.isHidden).map((entry, i) => (
+        {dialogueLog.filter(e => !e.isHidden && !(e.speaker === 'system' && isLowValueSystemDialogueText(e.text))).map((entry, i) => (
           <DialogueEntry
             key={entry.id}
             entry={entry}

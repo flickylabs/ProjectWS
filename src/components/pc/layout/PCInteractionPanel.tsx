@@ -9,6 +9,7 @@ import PCCharacterPortrait from '../icons/PCCharacterPortrait'
 import { jumpToDialogue } from '../observation/JudgeObservationSection'
 
 export const PC_OPEN_INTERACTION_PANEL_EVENT = 'pc:open-interaction-panel'
+export const PC_CLOSE_INTERACTION_PANEL_EVENT = 'pc:close-interaction-panel'
 
 type InteractionTone = 'neutral' | 'gold' | 'blue' | 'red' | 'green'
 type ToastTone = 'info' | 'success' | 'warn' | 'error'
@@ -117,12 +118,22 @@ const COPY = {
   immediateDemand: '\uC9C0\uAE08 \uC7C1\uC810\uC5D0 \uB300\uD55C \uC989\uB2F5\uC744 \uC694\uAD6C\uD569\uB2C8\uB2E4.',
 } as const
 
+const PANEL_ACTION_CLOSE_DELAY_MS = 140
+
 export function openPcInteractionPanel(payload: PcInteractionPayload): void {
   if (typeof window === 'undefined') {
     return
   }
 
   window.dispatchEvent(new CustomEvent<PcInteractionPayload>(PC_OPEN_INTERACTION_PANEL_EVENT, { detail: payload }))
+}
+
+export function closePcInteractionPanel(): void {
+  if (typeof window === 'undefined') {
+    return
+  }
+
+  window.dispatchEvent(new Event(PC_CLOSE_INTERACTION_PANEL_EVENT))
 }
 
 function buildCaseSummaryPayload(): PcInteractionPayload {
@@ -380,9 +391,17 @@ export default function PCInteractionPanel() {
       const customEvent = event as CustomEvent<PcInteractionPayload>
       setPayload(customEvent.detail ?? null)
     }
+    const closeHandler = () => {
+      savedPayloadRef.current = null
+      setPayload(null)
+    }
 
     window.addEventListener(PC_OPEN_INTERACTION_PANEL_EVENT, handler)
-    return () => window.removeEventListener(PC_OPEN_INTERACTION_PANEL_EVENT, handler)
+    window.addEventListener(PC_CLOSE_INTERACTION_PANEL_EVENT, closeHandler)
+    return () => {
+      window.removeEventListener(PC_OPEN_INTERACTION_PANEL_EVENT, handler)
+      window.removeEventListener(PC_CLOSE_INTERACTION_PANEL_EVENT, closeHandler)
+    }
   }, [])
 
   // SVG 뷰어 닫힐 때 증거 팝업 복귀
@@ -412,7 +431,15 @@ export default function PCInteractionPanel() {
     return () => window.removeEventListener('keydown', onKeyDown)
   }, [payload])
 
-  const closePanel = () => setPayload(null)
+  const closePanel = () => {
+    savedPayloadRef.current = null
+    setPayload(null)
+  }
+
+  const runAfterPanelClose = (fn: () => void) => {
+    closePanel()
+    window.setTimeout(fn, PANEL_ACTION_CLOSE_DELAY_MS)
+  }
 
   const handleAction = (action: PcInteractionAction) => {
     if (action.disabled) {
@@ -466,13 +493,14 @@ export default function PCInteractionPanel() {
             setLastFocusedDisputeId(action.disputeId)
           }
           suppressTransitionChoice()
-          dispatch({
-            type: 'evidence_present',
-            evidenceId: action.evidenceId,
-            target: action.party,
+          runAfterPanelClose(() => {
+            dispatch({
+              type: 'evidence_present',
+              evidenceId: action.evidenceId!,
+              target: action.party!,
+            })
+            window.setTimeout(unsuppressTransitionChoice, 2000)
           })
-          setTimeout(unsuppressTransitionChoice, 2000)
-          setPayload(null)
           return
         }
         break
@@ -506,14 +534,16 @@ export default function PCInteractionPanel() {
           setLastFocusedDisputeId(action.disputeId)
           // 전략 패널에서 실행한 액션 → 연속 전략 선택 차단
           suppressTransitionChoice()
-          dispatch({
-            type: 'question',
-            questionType: action.questionType,
-            target: action.party,
-            disputeId: action.disputeId,
+          runAfterPanelClose(() => {
+            dispatch({
+              type: 'question',
+              questionType: action.questionType!,
+              target: action.party!,
+              disputeId: action.disputeId!,
+            })
+            window.setTimeout(unsuppressTransitionChoice, 2000)
           })
-          // 액션 처리 완료 후 차단 해제 (비동기 처리 후)
-          setTimeout(unsuppressTransitionChoice, 2000)
+          return
         }
         break
       case 'run_special': {
@@ -524,61 +554,70 @@ export default function PCInteractionPanel() {
         }
 
         if (action.specialAction === 'objection') {
-          if (!state.spend('skillPoints', 1)) {
+          if (state.resources.skillPoints < 1) {
+            showToast(COPY.insufficientSkill, 'warn')
             break
           }
-          state.addDialogue({ speaker: 'judge', text: COPY.judgeObjection, relatedDisputes: [], turn: state.turnCount })
-          state.changeEmotion(target, 12)
-          for (const dispute of state.caseData?.disputes ?? []) {
-            state.transitionLie(target, dispute.id, 'direct_question')
-          }
-          state.incrementTurn()
-          break
+          runAfterPanelClose(() => {
+            const latest = useGameStore.getState()
+            if (!latest.spend('skillPoints', 1)) return
+            latest.addDialogue({ speaker: 'judge', text: COPY.judgeObjection, relatedDisputes: [], turn: latest.turnCount })
+            latest.changeEmotion(target, 12)
+            for (const dispute of latest.caseData?.disputes ?? []) {
+              latest.transitionLie(target, dispute.id, 'direct_question')
+            }
+            latest.incrementTurn()
+          })
+          return
         }
 
         if (action.specialAction === 'immediate_answer') {
           if (!action.disputeId) {
             break
           }
-          if (!state.spend('skillPoints', 1)) {
-            showToast('스킬 포인트가 부족합니다.', 'warn')
+          if (state.resources.skillPoints < 1) {
+            showToast(COPY.insufficientSkill, 'warn')
             break
           }
-          window.dispatchEvent(new CustomEvent('pc:court-control-used', {
-            detail: { action: 'immediate_answer', label: '즉답 요구' },
-          }))
-          const currentEntry = (target === 'a' ? state.agentA : state.agentB).lieStateMap[action.disputeId]
-          if (!currentEntry) {
-            break
-          }
-          useGameStore.setState((prev) => target === 'a'
-            ? {
-                agentA: {
-                  ...prev.agentA,
-                  lieStateMap: {
-                    ...prev.agentA.lieStateMap,
-                    [action.disputeId!]: { ...prev.agentA.lieStateMap[action.disputeId!], currentState: 'S5' },
+          runAfterPanelClose(() => {
+            const latest = useGameStore.getState()
+            if (!latest.spend('skillPoints', 1)) return
+            window.dispatchEvent(new CustomEvent('pc:court-control-used', {
+              detail: { action: 'immediate_answer', label: '즉답 요구' },
+            }))
+            const currentEntry = (target === 'a' ? state.agentA : state.agentB).lieStateMap[action.disputeId!]
+            if (!currentEntry) {
+              return
+            }
+            useGameStore.setState((prev) => target === 'a'
+              ? {
+                  agentA: {
+                    ...prev.agentA,
+                    lieStateMap: {
+                      ...prev.agentA.lieStateMap,
+                      [action.disputeId!]: { ...prev.agentA.lieStateMap[action.disputeId!], currentState: 'S5' },
+                    },
                   },
-                },
-              }
-            : {
-                agentB: {
-                  ...prev.agentB,
-                  lieStateMap: {
-                    ...prev.agentB.lieStateMap,
-                    [action.disputeId!]: { ...prev.agentB.lieStateMap[action.disputeId!], currentState: 'S5' },
+                }
+              : {
+                  agentB: {
+                    ...prev.agentB,
+                    lieStateMap: {
+                      ...prev.agentB.lieStateMap,
+                      [action.disputeId!]: { ...prev.agentB.lieStateMap[action.disputeId!], currentState: 'S5' },
+                    },
                   },
-                },
-              })
-          state.addDialogue({
-            speaker: 'judge',
-            text: COPY.immediateDemand,
-            relatedDisputes: [action.disputeId],
-            turn: state.turnCount,
+                })
+            latest.addDialogue({
+              speaker: 'judge',
+              text: COPY.immediateDemand,
+              relatedDisputes: [action.disputeId!],
+              turn: latest.turnCount,
+            })
+            setLastFocusedDisputeId(action.disputeId!)
+            dispatch({ type: 'question', questionType: 'fact_pursuit', target, disputeId: action.disputeId! })
           })
-          setLastFocusedDisputeId(action.disputeId)
-          dispatch({ type: 'question', questionType: 'fact_pursuit', target, disputeId: action.disputeId })
-          break
+          return
         }
 
         if (action.specialAction === 'separation') {
@@ -587,8 +626,10 @@ export default function PCInteractionPanel() {
             showToast('법정 지배력이 부족합니다.', 'warn')
             break
           }
-          dispatch({ type: 'trust_action', actionType: 'separation', target })
-          break
+          runAfterPanelClose(() => {
+            dispatch({ type: 'trust_action', actionType: 'separation', target })
+          })
+          return
         }
 
         if (action.specialAction === 'confidential_protection') {
@@ -597,12 +638,17 @@ export default function PCInteractionPanel() {
             showToast('법정 지배력이 부족합니다.', 'warn')
             break
           }
-          dispatch({ type: 'trust_action', actionType: 'confidential_protection', target })
-          break
+          runAfterPanelClose(() => {
+            dispatch({ type: 'trust_action', actionType: 'confidential_protection', target })
+          })
+          return
         }
 
         if (action.specialAction === 'advance_phase' && state.canAdvancePhase()) {
-          state.advancePhase()
+          runAfterPanelClose(() => {
+            useGameStore.getState().advancePhase()
+          })
+          return
         }
         break
       }
@@ -623,20 +669,26 @@ export default function PCInteractionPanel() {
       }
       case 'run_contradiction':
         if (action.party && action.disputeId && action.previousClaim && action.currentClaim) {
-          handleContradictionPursue(action.party, action.disputeId, action.previousClaim, action.currentClaim)
+          runAfterPanelClose(() => {
+            handleContradictionPursue(action.party!, action.disputeId!, action.previousClaim!, action.currentClaim!)
+          })
+          return
         }
         break
       case 'summon_witness':
         if (action.witnessId) {
-          dispatch({ type: 'call_witness', witnessId: action.witnessId })
-          const store = useGameStore.getState()
-          store.pushGameEvent({
-            id: store.gameEventLog.length + 1,
-            turn: store.turnCount,
-            type: 'event_trigger',
-            message: `🗣️ 증인 소환: ${action.label.replace(/\s*(재)?소환$/, '')}`,
-            timestamp: Date.now(),
+          runAfterPanelClose(() => {
+            dispatch({ type: 'call_witness', witnessId: action.witnessId! })
+            const store = useGameStore.getState()
+            store.pushGameEvent({
+              id: store.gameEventLog.length + 1,
+              turn: store.turnCount,
+              type: 'event_trigger',
+              message: `증인 소환: ${action.label.replace(/\s*(재)?소환$/, '')}`,
+              timestamp: Date.now(),
+            })
           })
+          return
         }
         break
       case 'close':

@@ -13,6 +13,7 @@ import { showToast, showLLMErrorBanner } from '../components/common/Toast'
 import { getAffinityScore, getAffinityGrade } from '../data/actionAffinity'
 import { getOptimalPath, getNarrativeExpansion } from '../data/caseEnrichment'
 import { normalizeCaseKey } from '../utils/caseHelpers'
+import { getConfession } from '../data/confessionScripts'
 import { detectStatementChange } from '../engine/contradictionEngine'
 import { getScriptedEvidenceDiscovery } from '../engine/scriptedTextLoader'
 import { extractDisputeSubject } from '../engine/judgeQuestionEngine'
@@ -56,6 +57,7 @@ import { getAllTransitionBeats } from '../engine/v3GameLoopLoader'
 import { selectHint, markHintShown, ARCHETYPE_META } from '../engine/archetypeHintEngine'
 import { getInterrogationMicroVfx } from '../engine/vfxHierarchyEngine'
 import { hasContradictionComparison } from '../utils/contradiction'
+import { getAvailableSlots } from '../engine/witnessTestimonyResolver'
 
 /** LLM 모드 — AI 필수: 항상 true */
 const useLLMMode = true
@@ -72,6 +74,19 @@ export { setDossierQuestionOverride, consumeDossierQuestionOverride }
 export { setNextConfidential, setNextEvasionReading }
 
 let globalDispatchLock = false
+
+function buildWitnessGameState(state: ReturnType<typeof useGameStore.getState>) {
+  return {
+    disputeVisibility: state.discovery.disputeVisibility,
+    disputeLieState: Object.fromEntries(
+      (state.caseData?.disputes ?? []).map(d => {
+        const a = state.agentA.lieStateMap[d.id]?.currentState ?? 'S0'
+        const b = state.agentB.lieStateMap[d.id]?.currentState ?? 'S0'
+        return [d.id, a > b ? a : b]
+      }),
+    ),
+  }
+}
 
 // ── V4 전략적 차별화: 모듈 레벨 상태 (Zustand state에 붙이면 setState 시 유실) ──
 const _contradictionTokens: Record<string, number> = {}
@@ -91,6 +106,11 @@ function formatEmotionPhaseLabel(phase: string | undefined): string {
   if (!phase) return '미확인'
   const normalized = String(phase).toLowerCase()
   return EMOTION_PHASE_LABELS[normalized] ?? phase
+}
+
+function formatLieStateStepLabel(state: string | undefined): string {
+  const match = /^S([0-5])$/.exec(state ?? '')
+  return match ? `${match[1]}단계` : (state ?? '미확인')
 }
 
 const shownLockoutNoticeKeys = new Set<string>()
@@ -537,20 +557,10 @@ async function handleCallWitness(action: Extract<PlayerAction, { type: 'call_wit
 
   // 다층 증언 시스템: 사용 가능한 슬롯 확인
   const session = state.witnessSessions[action.witnessId] ?? { heardSlots: [], lastChoice: null, summonCount: 0 }
-  const gameStateForWitness = {
-    disputeVisibility: state.discovery.disputeVisibility,
-    disputeLieState: Object.fromEntries(
-      (state.caseData.disputes ?? []).map(d => {
-        const a = state.agentA.lieStateMap[d.id]?.currentState ?? 'S0'
-        const b = state.agentB.lieStateMap[d.id]?.currentState ?? 'S0'
-        return [d.id, a > b ? a : b]
-      }),
-    ),
-  }
+  const gameStateForWitness = buildWitnessGameState(state)
 
   let availableSlots: import('../types/witnessTestimony').TestimonySlot[] = []
   if (testimonySlots.length > 0) {
-    const { getAvailableSlots } = await import('../engine/witnessTestimonyResolver')
     availableSlots = getAvailableSlots(testimonySlots, action.witnessId, session, gameStateForWitness)
   }
 
@@ -587,6 +597,7 @@ async function handleCallWitness(action: Extract<PlayerAction, { type: 'call_wit
       witnessId: action.witnessId,
       witnessName: witness.name,
       slots: availableSlots,
+      allSlots: testimonySlots,
       isResummon,
     })
     return
@@ -823,6 +834,52 @@ function pickConfessionRecapLine(caseId: string, party: 'a' | 'b'): string {
   }
   return map[key] ?? '이미 자백한 부분입니다. 더 드릴 말씀이 없습니다.'
 }
+function dispatchS5ConfessionAnswer(party: PartyId, disputeId: string): boolean {
+  const state = useGameStore.getState()
+  const caseData = state.caseData
+  if (!caseData) return false
+  if (state.confessionDispatched?.[party]?.[disputeId]) return false
+
+  const entry = getConfession(normalizeCaseKey(caseData.caseId ?? ''), party, disputeId)
+  if (!entry) return false
+
+  const partyName = party === 'a' ? caseData.duo.partyA.name : caseData.duo.partyB.name
+  const dispute = caseData.disputes.find((item) => item.id === disputeId)
+  const disputeName = dispute?.name ?? disputeId
+
+  const mainDialogueId = state.addDialogue({
+    speaker: party,
+    text: entry.confessionMain,
+    relatedDisputes: [disputeId],
+    turn: state.turnCount,
+    behaviorHint: '핵심 사실을 구체적으로 인정한다.',
+    source: 'script',
+  })
+
+  state.addDialogue({
+    speaker: party,
+    text: entry.postConfession,
+    relatedDisputes: [disputeId],
+    turn: state.turnCount,
+    behaviorHint: '숨긴 책임을 인정한다.',
+    source: 'script',
+  })
+
+  state.addNotebookEntry?.({
+    turnCount: state.turnCount,
+    category: 'confession',
+    iconId: 'i-key',
+    title: `${partyName}의 자백 - ${disputeName}`,
+    summary: entry.confessionMain.slice(0, 80) + (entry.confessionMain.length > 80 ? '...' : ''),
+    party,
+    disputeId,
+    linkedDialogueId: mainDialogueId,
+  })
+
+  state.markConfessionDispatched?.(party, disputeId)
+  return true
+}
+
 async function handleQuestion(action: Extract<PlayerAction, { type: 'question' }>) {
   if (questionLock) return
   questionLock = true
@@ -840,6 +897,29 @@ async function handleQuestion(action: Extract<PlayerAction, { type: 'question' }
   }
   // [Phase C-4] 자백 후 동일 쟁점 재추궁 — 짧은 재진술/회피로 응답. LLM 호출 안 함.
   const alreadyConfessed = state.confessionDispatched?.[action.target]?.[action.disputeId]
+  const currentTargetAgent = action.target === 'a' ? state.agentA : state.agentB
+  const alreadyAtFullTruth = currentTargetAgent.lieStateMap?.[action.disputeId]?.currentState === 'S5'
+  if (alreadyAtFullTruth && !alreadyConfessed) {
+    state.addDialogue({
+      speaker: 'judge',
+      text: judgeQuestionText,
+      relatedDisputes: [action.disputeId],
+      turn: state.turnCount,
+    })
+    const emittedConfession = dispatchS5ConfessionAnswer(action.target, action.disputeId)
+    if (!emittedConfession) {
+      state.addDialogue({
+        speaker: action.target,
+        text: pickConfessionRecapLine(state.caseData?.caseId ?? '', action.target),
+        relatedDisputes: [action.disputeId],
+        turn: state.turnCount,
+        behaviorHint: '이미 인정한 핵심 사실을 다시 정리한다.',
+        source: 'fallback',
+      })
+    }
+    state.incrementTurn()
+    return
+  }
   if (alreadyConfessed) {
     const targetName = action.target === 'a'
       ? state.caseData?.duo.partyA.name ?? '당사자'
@@ -2147,14 +2227,15 @@ function notifyLieTransition(party: PartyId, disputeId: string) {
       }, 1500)
     }
 
-    // S5 도달 시 재판관이 계속 진술을 유도
+    // S5 도달 시 재판관 유도문만 남기지 않고 당사자 자백/정리 답변까지 보장
     if (newState === 'S5') {
       state.addDialogue({
         speaker: 'judge',
-        text: `${name} 씨, 계속 말씀해 보십시오.`,
+        text: `${name} 씨, 지금 인정한 핵심을 분명히 정리해 주십시오.`,
         relatedDisputes: [disputeId],
         turn: state.turnCount,
       })
+      dispatchS5ConfessionAnswer(party, disputeId)
     }
 
     // S5 도달 시 진실 발견 + 정답지 기록
@@ -2175,18 +2256,18 @@ function notifyLieTransition(party: PartyId, disputeId: string) {
             // [Phase C-5] 결정적 진술 → 자백은 증거 아닌 발화. 증거 게시판 안내 결함.
             // 재판관의 수첩(JudgeNotebookSlice)에 핵심 발화 등록 + 안내 메시지 변경.
             const truthDispute = caseData.disputes.find((d: { id: string }) => d.id === disputeId)
-            const partyName = action.target === 'a'
+            const partyName = party === 'a'
               ? caseData.duo.partyA.name
               : caseData.duo.partyB.name
             // 마지막 NPC 발화 id 추출 (수첩 jump용)
-            const lastNpcDialogue = [...state.dialogueLog].reverse().find((d: { speaker: string }) => d.speaker === action.target)
+            const lastNpcDialogue = [...state.dialogueLog].reverse().find((d: { speaker: string }) => d.speaker === party)
             state.addNotebookEntry?.({
               turnCount: state.turnCount,
               category: 'key_statement',
               iconId: 'i-flame',
-              title: `${partyName}의 결정적 진술 — ${truthDispute?.name ?? disputeId}`,
+              title: `${partyName}의 결정적 진술 - ${truthDispute?.name ?? disputeId}`,
               summary: truth?.summary ?? '',
-              party: action.target,
+              party,
               disputeId,
               linkedDialogueId: lastNpcDialogue?.id,
             })
@@ -2648,7 +2729,7 @@ export async function handleContradictionPursue(
       })
     const outcomeParts: string[] = []
     if (unlockedEvidence.length > 0) outcomeParts.push(`증거 해금: ${unlockedEvidence.join(', ')}`)
-    if (afterLieState !== currentLieState) outcomeParts.push(`쟁점 단계: ${currentLieState} -> ${afterLieState}`)
+    if (afterLieState !== currentLieState) outcomeParts.push(`진실 파악: ${formatLieStateStepLabel(currentLieState)} → ${formatLieStateStepLabel(afterLieState)}`)
     if (afterEmotion.phase !== beforeEmotion.phase || afterEmotion.internalValue !== beforeEmotion.internalValue) {
       outcomeParts.push(`감정 변화: ${formatEmotionPhaseLabel(beforeEmotion.phase)} ${beforeEmotion.internalValue} → ${formatEmotionPhaseLabel(afterEmotion.phase)} ${afterEmotion.internalValue}`)
     }
@@ -2799,19 +2880,21 @@ export function applyWitnessSlot(slotId: string): void {
   // 세션 업데이트
   state.updateWitnessSession(pending.witnessId, slotId)
 
-  // 시스템 메시지
-  const session = state.witnessSessions[pending.witnessId]
-  const remaining = pending.slots.filter(s => s.id !== slotId && !session?.heardSlots.includes(s.id))
-  if (remaining.length > 0) {
-    state.addDialogue({
-      speaker: 'system',
-      text: `${pending.witnessName}에게 추가 질문이 가능합니다. (재소환 시)`,
-      relatedDisputes: [],
-      turn: state.turnCount,
-    })
-  }
+  const fresh = useGameStore.getState()
+  const allSlots = pending.allSlots ?? pending.slots
+  const session = fresh.witnessSessions[pending.witnessId] ?? { heardSlots: [], lastChoice: slotId, summonCount: 0 }
+  const nextSlots = getAvailableSlots(allSlots, pending.witnessId, session, buildWitnessGameState(fresh))
 
-  // 대기 해제
-  state.setPendingWitnessChoice(null)
+  if (nextSlots.length > 0) {
+    fresh.setPendingWitnessChoice({
+      witnessId: pending.witnessId,
+      witnessName: pending.witnessName,
+      slots: nextSlots,
+      allSlots,
+      isResummon: true,
+    })
+  } else {
+    fresh.setPendingWitnessChoice(null)
+  }
   // 증인 주제 선택은 소환의 일부, 별도 턴 소비 없음
 }

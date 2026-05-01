@@ -33,6 +33,17 @@ const JUDGMENT_LABELS: Record<TruthJudgment, string> = {
   undetermined: '지금은 보류 (나중에 다시 판단)',
 }
 
+function buildEmotionalBurstFollowUp(choice: 'press' | 'calm', hasScriptedOutburst: boolean): string {
+  if (choice === 'press') {
+    return hasScriptedOutburst
+      ? '알겠습니다. 더 돌려 말하지 않겠습니다. 숨긴 이유와 제가 한 행동을 이어서 말씀드리겠습니다.'
+      : '말씀드리겠습니다. 감정이 앞섰지만, 피하지 않고 사실관계를 이어서 말하겠습니다.'
+  }
+  return hasScriptedOutburst
+    ? '네. 흥분해서 앞뒤가 흐려졌습니다. 사실관계부터 다시 정리하겠습니다.'
+    : '네. 잠시 정리하겠습니다. 제가 아는 사실부터 차례대로 말하겠습니다.'
+}
+
 function isNarrativeReaction(text: string | undefined): boolean {
   if (!text) return false
   return /(부딪힌다|드러난다|흔들린다|뒤집힌다|갈라진다|맞선다|올라오자|설명이|해석이|책임의 방향)/.test(text)
@@ -42,6 +53,16 @@ function buildContradictionFallbackLine(lieState: string): string {
   if (lieState >= 'S3') return '...그건... 상황이 복잡했습니다. 제가 처음에 말씀드린 것과 다른 부분이 있었습니다.'
   if (lieState >= 'S2') return '재판관님, 제 기억이 혼란스러웠던 것 같습니다. 다시 정리하겠습니다.'
   return '그건... 제가 말한 것과 다르지 않습니다. 맥락이 다른 것입니다.'
+}
+
+function buildLeakConfessionLine(caseId: string | undefined, party: 'a' | 'b', disputeId: string, fallbackTruth?: string): string {
+  if (caseId === 'spouse-01' && party === 'b' && disputeId === 'd-1') {
+    return '형이 집을 비우는 시간이 길어서 조카 혼자 있는 날이 많았습니다. 제가 아니면... 누가 합니까.'
+  }
+  if (fallbackTruth) {
+    return `...맞습니다. ${fallbackTruth}`
+  }
+  return '...맞습니다. 방금 말한 부분이 숨기던 핵심입니다.'
 }
 
 export default function DiscoveryFeedbackWatcher() {
@@ -315,24 +336,26 @@ export default function DiscoveryFeedbackWatcher() {
     const linkedDispute = pendingSlip.linkedDisputeId
       ? caseData.disputes.find((d) => d.id === pendingSlip.linkedDisputeId)
       : null
+    const isCriticalLeakSlip = pendingSlip.trigger === 'leak_critical' || pendingSlip.forceConfessionOnReflect
 
     const meta: string[] = []
     if (sourceDispute) meta.push(`관련 쟁점: ${sourceDispute.name}`)
     if (linkedDispute) meta.push(`연결 쟁점: ${linkedDispute.name}`)
+    if (isCriticalLeakSlip) meta.push('누설 100%')
 
     state.addJudgeObservation({
       turnCount: state.turnCount,
       category: 'slip',
       iconId: 'i-heart',
-      title: pendingSlip.slipText,
-      summary: `${partyData.name} · 감정 실수 포착`,
+      title: isCriticalLeakSlip ? '말실수가 나왔습니다. 바로 추궁할 수 있습니다.' : pendingSlip.slipText,
+      summary: isCriticalLeakSlip ? `${partyData.name} · 누설 100%` : `${partyData.name} · 감정 실수 포착`,
       party: pendingSlip.party,
       disputeId: pendingSlip.sourceDisputeId,
     })
     state.enqueueFeedback({
       kind: 'emotional_slip',
-      eyebrow: '감정 실수 포착',
-      title: partyData.name,
+      eyebrow: isCriticalLeakSlip ? '말실수 포착' : '감정 실수 포착',
+      title: isCriticalLeakSlip ? `${partyData.name}의 말이 새어 나왔습니다` : partyData.name,
       quote: pendingSlip.slipText,
       meta,
       tone: 'red',
@@ -346,10 +369,42 @@ export default function DiscoveryFeedbackWatcher() {
           },
         },
         {
-          label: '진실 공방에 반영',
+          label: isCriticalLeakSlip ? '말실수 추궁' : '진실 공방에 반영',
           tone: 'red',
           onSelect: () => {
-            useGameStore.getState().addEmotionalSlip(pendingSlip)
+            const fresh = useGameStore.getState()
+            fresh.addEmotionalSlip(pendingSlip)
+            if (isCriticalLeakSlip) {
+              const beforeState = pendingSlip.party === 'a'
+                ? fresh.agentA.lieStateMap[pendingSlip.sourceDisputeId]?.currentState
+                : fresh.agentB.lieStateMap[pendingSlip.sourceDisputeId]?.currentState
+              fresh.addDialogue({
+                speaker: 'judge',
+                text: '방금 말한 내용은 그냥 넘길 수 없습니다. 숨기던 사실을 분명히 답하십시오.',
+                relatedDisputes: [pendingSlip.sourceDisputeId],
+                turn: fresh.turnCount,
+                source: 'fallback',
+              })
+              fresh.forceSetLieState(pendingSlip.party, pendingSlip.sourceDisputeId, 'S5')
+              fresh.trackMetric('liesCollapsed')
+              fresh.addDialogue({
+                speaker: pendingSlip.party,
+                text: buildLeakConfessionLine(caseData.caseId, pendingSlip.party, pendingSlip.sourceDisputeId, sourceDispute?.truthDescription),
+                relatedDisputes: [pendingSlip.sourceDisputeId],
+                turn: fresh.turnCount,
+                behaviorHint: '말실수를 지적받자 숨기던 사실을 더 이상 돌리지 않고 인정한다.',
+                source: 'fallback',
+              })
+              fresh.addJudgeObservation({
+                turnCount: fresh.turnCount,
+                category: 'event',
+                iconId: 'i-scale',
+                title: '말실수를 추궁해 자백을 끌어냈습니다.',
+                summary: `${sourceDispute?.name ?? pendingSlip.sourceDisputeId} · ${beforeState ?? '이전 단계'} → S5`,
+                party: pendingSlip.party,
+                disputeId: pendingSlip.sourceDisputeId,
+              })
+            }
             enqueuedRef.current.delete(key)
           },
         },
@@ -620,21 +675,33 @@ export default function DiscoveryFeedbackWatcher() {
         const s = useGameStore.getState()
         if (outburstLine) {
           s.addDialogue({ speaker: ev.party, text: outburstLine, relatedDisputes: [ev.disputeId], turn: s.turnCount })
-        } else {
-          s.addDialogue({ speaker: 'system', text: EMOTIONAL_BURST_SURFACE_FALLBACK, relatedDisputes: [ev.disputeId], turn: s.turnCount })
         }
       }
       const handlePress = () => {
         const s = useGameStore.getState()
         emitOutburst()
         s.addDialogue({ speaker: 'judge', text: '계속 말해보세요. 지금의 흐름을 더 확인하겠습니다.', relatedDisputes: [ev.disputeId], turn: s.turnCount })
+        s.addDialogue({
+          speaker: ev.party,
+          text: buildEmotionalBurstFollowUp('press', Boolean(outburstLine)),
+          relatedDisputes: [ev.disputeId],
+          turn: s.turnCount,
+        })
         s.changeEmotion(ev.party, 8)
         const meters = s.questionMeters
         const partyMeter = meters[ev.party]
         useGameStore.setState({
           questionMeters: { ...meters, [ev.party]: { ...partyMeter, leakMeter: Math.min(partyMeter.leakMeter + 10, 100) } },
         })
-        s.addDialogue({ speaker: 'system', text: '사실 추궁이나 동기 탐색이 더 잘 먹히는 구간입니다.', relatedDisputes: [ev.disputeId], turn: s.turnCount })
+        s.addJudgeObservation({
+          turnCount: s.turnCount,
+          category: 'state',
+          iconId: 'i-scale',
+          title: '격앙 상태가 이어지고 있다. 사실 추궁과 동기 탐색이 더 강하게 작용할 수 있다.',
+          summary: `${partyName} · ${disputeName}`,
+          party: ev.party,
+          disputeId: ev.disputeId,
+        })
         s.setPendingGameEvent(null)
         releaseKey()
       }
@@ -642,6 +709,12 @@ export default function DiscoveryFeedbackWatcher() {
         const s = useGameStore.getState()
         emitOutburst()
         s.addDialogue({ speaker: 'judge', text: '잠시 진정하고, 사실만 다시 정리해 주세요.', relatedDisputes: [ev.disputeId], turn: s.turnCount })
+        s.addDialogue({
+          speaker: ev.party,
+          text: buildEmotionalBurstFollowUp('calm', Boolean(outburstLine)),
+          relatedDisputes: [ev.disputeId],
+          turn: s.turnCount,
+        })
         s.changeTrust(ev.party, 'trustTowardJudge', 12)
         s.changeEmotion(ev.party, -10)
         const meters = s.questionMeters
@@ -649,7 +722,15 @@ export default function DiscoveryFeedbackWatcher() {
         useGameStore.setState({
           questionMeters: { ...meters, [ev.party]: { ...partyMeter, trustWindow: Math.min(partyMeter.trustWindow + 15, 100) } },
         })
-        s.addDialogue({ speaker: 'system', text: '공감 접근의 효율이 높아졌습니다.', relatedDisputes: [ev.disputeId], turn: s.turnCount })
+        s.addJudgeObservation({
+          turnCount: s.turnCount,
+          category: 'state',
+          iconId: 'i-heart',
+          title: '감정이 가라앉고 있다. 공감 접근으로 다시 사실관계를 정리하기 좋은 흐름이다.',
+          summary: `${partyName} · ${disputeName}`,
+          party: ev.party,
+          disputeId: ev.disputeId,
+        })
         s.setPendingGameEvent(null)
         releaseKey()
       }
@@ -663,16 +744,10 @@ export default function DiscoveryFeedbackWatcher() {
         party: ev.party,
         disputeId: ev.disputeId,
       })
-      // [B-17 D] 자동 모달 X — 시스템 메시지 클릭 시 수동 트리거.
-      const sysMsgId = state.addDialogue({
-        speaker: 'system',
-        text: `${partyName}의 감정이 무너진다 — ${disputeName}`,
-        relatedDisputes: [ev.disputeId],
-        turn: state.turnCount,
-      })
-      state.attachDialoguePendingFeedback(sysMsgId, {
+      state.enqueueFeedback({
         kind: 'emotional_slip',
         eyebrow: '감정 폭발',
+        title: `${partyName}의 감정이 격해졌습니다`,
         subtitle: `${partyName} · ${disputeName}`,
         quote: outburstLine ? outburstText : undefined,
         body: outburstLine ? undefined : outburstText,
@@ -683,7 +758,6 @@ export default function DiscoveryFeedbackWatcher() {
             tone: 'gray',
             onSelect: () => {
               handleCalm()
-              useGameStore.getState().consumeDialoguePendingFeedback(sysMsgId)
             },
           },
           {
@@ -691,11 +765,10 @@ export default function DiscoveryFeedbackWatcher() {
             tone: 'red',
             onSelect: () => {
               handlePress()
-              useGameStore.getState().consumeDialoguePendingFeedback(sysMsgId)
             },
           },
         ],
-      }, state.turnCount)
+      })
       return
     }
   }, [pendingGameEvent])
@@ -828,7 +901,8 @@ export default function DiscoveryFeedbackWatcher() {
   useEffect(() => {
     if (!pendingWitnessChoice) return
     const pc = pendingWitnessChoice
-    const key = `witness:${pc.witnessId}:${pc.isResummon ? 're' : 'first'}`
+    const depth = pc.slots.length > 0 ? Math.min(...pc.slots.map(slot => slot.depth)) : 1
+    const key = `witness:${pc.witnessId}:d${depth}:${pc.slots.map(slot => slot.id).join('|')}`
     if (enqueuedRef.current.has(key)) return
     enqueuedRef.current.add(key)
 
@@ -840,21 +914,21 @@ export default function DiscoveryFeedbackWatcher() {
       category: 'event',
       iconId: 'i-witness',
       title: pc.isResummon
-        ? `${pc.witnessName}에게 추가 질문을 할 기회가 생겼다.`
+        ? `${pc.witnessName}에게 ${depth}단계 추가 질문을 할 수 있다.`
         : `${pc.witnessName}${pp이가(pc.witnessName)} 증언대에 섰다.`,
       summary: pc.isResummon ? '증인 재심문' : '증인 심문',
     })
     state.enqueueFeedback({
       kind: 'witness_choice',
-      eyebrow: pc.isResummon ? '추가 질문' : '증인 심문',
+      eyebrow: pc.isResummon ? `${depth}단계 질문` : '증인 심문',
       title: pc.witnessName,
       body: pc.isResummon
-        ? `${pc.witnessName}에게 추가로 무엇을 물어보시겠습니까?`
-        : `${pc.witnessName}에게 어떤 질문을 하시겠습니까?`,
+        ? '앞선 답변을 바탕으로 더 좁혀 물어볼 질문을 선택하세요.'
+        : '먼저 표면 정황을 확인할 질문을 선택하세요. 답변이 이어질수록 질문이 구체화됩니다.',
       tone: 'green',
       actionsLayout: 'vertical',
       actions: pc.slots.map((slot) => ({
-        label: slot.topic,
+        label: `${slot.depth}단계 · ${slot.topic}`,
         tone: 'green',
         onSelect: () => {
           applyWitnessSlot(slot.id)
