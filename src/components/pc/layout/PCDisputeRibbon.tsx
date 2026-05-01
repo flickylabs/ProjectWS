@@ -63,7 +63,7 @@ export default function PCDisputeRibbon() {
     }, 1800)
 
     return () => window.clearTimeout(timer)
-  }, [lastFocusedDisputeId, pinnedId])
+  }, [lastFocusedDisputeId, pinnedId, turnCount])
 
   const getMaxLieState = (disputeId: string): LieState => {
     const entryA = agentA.lieStateMap[disputeId] as LieStateEntry | undefined
@@ -148,7 +148,7 @@ export default function PCDisputeRibbon() {
 
       {activeDispute ? (
         <div
-          className={`pc-dispute-ribbon__popover${flashId === activeDispute.id ? ' is-flash' : ''}`}
+          className={`pc-dispute-ribbon__popover${flashId === activeDispute.id ? ' is-flash' : ''}${hoveredId === activeDispute.id ? ' is-hovered' : ''}${pinnedId === activeDispute.id ? ' is-pinned' : ''}`}
           onMouseEnter={() => {
             if (!pinnedId) {
               setHoveredId(activeDispute.id)

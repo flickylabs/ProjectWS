@@ -15,6 +15,7 @@ import { eunneun } from '../utils/korean'
 import { getTruthThrottle, getArchetypeGuide } from './blueprintPromptBuilderV2'
 import { callFreeInterrogationApiText, evaluateFreeInterrogationResponse } from './freeInterrogation/guard'
 import { selectFreeInterrogationFallbackText } from './freeInterrogation/fallback'
+import { buildFreeInterrogationRuntimeBrief } from './freeInterrogation/publicInfo'
 import type { CaseData, PartyId, QuestionType } from '../types'
 import type { AgentState } from '../types'
 import type { EvidenceRuntimeState } from './evidenceEngine'
@@ -248,6 +249,7 @@ async function generateResponse(
 
   // ── 게임 맥락 채우기 ──
   const store = useGameStore.getState()
+  const currentPhase = store.currentPhase
   const dialogueLog = store.dialogueLog ?? []
 
   // 최근 대화 5턴
@@ -271,6 +273,17 @@ async function generateResponse(
     .filter(e => store.evidenceStates?.[e.id]?.presented)
     .map(e => `${e.name} (${e.reliability})`)
     .join(', ')
+
+  const runtimeBrief = buildFreeInterrogationRuntimeBrief({
+    caseId: normalizeCaseKey(caseData),
+    caseData,
+    currentPhase,
+    target,
+    activeDisputeId: focusedDisputeId || classification.primaryDisputeId,
+    agentA: store.agentA,
+    agentB: store.agentB,
+    evidenceStates: store.evidenceStates ?? {},
+  }, target, focusedDisputeId || classification.primaryDisputeId)
 
   // Truth Throttle + Archetype 보강 블록
   let truthThrottleBlock = ''
@@ -314,6 +327,7 @@ async function generateResponse(
     emotionInfo: `현재 감정: ${agent.emotionalState.behaviorHint || agent.emotionalState.phase}`,
     evidenceInfo: presentedEvidence ? `제시된 증거: ${presentedEvidence}` : '제시된 증거 없음',
     recentDialogue: recentDialogue || '대화 기록 없음',
+    runtimeBrief,
     historyContext: '',
     phaseTranscript: '',
     actionContract: JSON.stringify({
@@ -341,7 +355,6 @@ async function generateResponse(
   responderVars.truthThrottleBlock = truthThrottleBlock
   responderVars.archetypeBlock = archetypeBlock ? `\n캐릭터 유형:\n${archetypeBlock}` : ''
 
-  const currentPhase = useGameStore.getState().currentPhase
   const systemPrompt = isAgentLoaded()
     ? buildAgentPrompt('free_question_responder', responderVars, { phase: currentPhase })
     : getPrompt('free_question', responderVars)
@@ -365,7 +378,24 @@ async function generateResponse(
     evidenceBlock = `\n\n★ 증거 대질 맥락:\n- 증거명: ${evidenceContext.name}\n- 증거 설명: ${evidenceContext.description}\n- 출처: ${evidenceContext.provenance} / 신뢰도: ${evidenceContext.reliability}\n- ${roleDesc}\n- 재판관의 질문은 이 증거를 기반으로 하고 있다. 증거 내용을 고려하여 답변하라.`
   }
 
-  const userMessage = `분류가 끝난 자유 질문에 캐릭터로서 응답한다.\n원문 질문: "${question}"\nclassifier 결과:\n- questionType: ${classification.questionType}\n- focusedDisputeId: ${classification.primaryDisputeId ?? 'null'}\n- secondaryDisputeId: ${classification.secondaryDisputeId ?? 'null'}\n- confidence: ${classification.confidence}${evidenceBlock}\n\n규칙:\n- 분류 결과를 다시 바꾸지 않는다.\n- focusedDisputeId(${classification.primaryDisputeId ?? 'null'})를 중심으로 답한다.\n- 출력은 JSON 객체 하나만 한다.`
+  const userMessage = `분류가 끝난 자유 질문에 캐릭터로서 응답한다.
+원문 질문: "${question}"
+classifier 결과:
+- questionType: ${classification.questionType}
+- focusedDisputeId: ${classification.primaryDisputeId ?? 'null'}
+- secondaryDisputeId: ${classification.secondaryDisputeId ?? 'null'}
+- confidence: ${classification.confidence}${evidenceBlock}
+
+런타임 브리프:
+${runtimeBrief}
+
+응답 규칙:
+- 분류 결과를 다시 바꾸지 않는다.
+- focusedDisputeId(${classification.primaryDisputeId ?? 'null'})를 중심으로 답한다.
+- 답변자는 반드시 ${party.name}이며, 말투는 "${party.speechStyle}"를 따른다.
+- 현재 공개 단계와 제시된 증거 범위를 넘겨 숨겨진 진실을 직접 말하지 않는다.
+- 상대방 호칭은 재판관에게 말할 때 "${judgeRef}", 직접 부를 때 "${myCall}" 기준을 따른다.
+- 출력은 JSON 객체 하나만 한다.`
   const guardContext = buildFreeQuestionGuardContext({
     caseData,
     target,

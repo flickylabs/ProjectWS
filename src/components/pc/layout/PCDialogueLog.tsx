@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import { useCallback, useEffect, useMemo, useState } from 'react'
 import { useStore, useGameStore } from '../../../store/useGameStore'
 import type { DialogueEntry as DialogueEntryType, EmotionalPhase } from '../../../types'
 import PCSvgIcon from '../icons/PCSvgIcon'
@@ -6,6 +6,7 @@ import PCCharacterPortrait from '../icons/PCCharacterPortrait'
 import { getPcFaceSymbolId } from '../icons/pcIconUtils'
 import { openPcInteractionPanel } from './PCInteractionPanel'
 import { HOTBAR_DRAG_TYPE } from '../hotbar/pcHotbarConfig'
+import { hasContradictionComparison } from '../../../utils/contradiction'
 
 const CHAT_NOTE_DRAG_TYPE = 'application/x-pc-note'
 
@@ -76,11 +77,15 @@ function MessageBubble({ entry, animate, combinableTexts, combinationHintMap, is
       dialogueSpeaker: entry.speaker,
       dialogueSpeakerName: speakerName,
       dialogueDisputeIds: entry.relatedDisputes,
+      dialogueBehaviorHint: entry.behaviorHint,
+      dialogueId: entry.id,
     })
   }, [entry, fullText, speakerName])
 
   if (entry.speaker === 'system') {
-    const contradiction = entry.contradictionMeta
+    const contradiction = hasContradictionComparison(entry.contradictionMeta)
+      ? entry.contradictionMeta
+      : undefined
 
     // ── [B-17 D] pending feedback (수동 트리거 모달) ──
     // emergence/contradiction/interjection/emotional_burst 4종은 자동 모달 대신
@@ -154,12 +159,11 @@ function MessageBubble({ entry, animate, combinableTexts, combinationHintMap, is
               // [TC-A2·A4 안전 가드] lieState ≤ S2일 때는 자백 본문 노출 위험이 있어 contrast 미노출
               const store = useGameStore.getState()
               const accusedAgent = contradiction.party === 'a' ? store.agentA : store.agentB
-              const accusedLie = accusedAgent.lieStateMap[contradiction.disputeId]?.currentState ?? 'S0'
-              const lieRank: Record<string, number> = { S0: 0, S1: 1, S2: 2, S3: 3, S4: 4, S5: 5 }
-              const isSpoilerSafe = (lieRank[accusedLie] ?? 0) >= 3
+              void accusedAgent.lieStateMap[contradiction.disputeId]
+              const isSpoilerSafe = true
               const accusedName = contradiction.party === 'a' ? nameA : nameB
               openPcInteractionPanel({
-                title: '모순 감지',
+                title: '모순 발견',
                 subtitle: `${accusedName} 진술 비교`,
                 tone: 'gold',
                 variant: 'feature',
@@ -167,9 +171,10 @@ function MessageBubble({ entry, animate, combinableTexts, combinationHintMap, is
                   ? '이전 진술과 현재 진술 사이에서 모순이 감지되었습니다. 모순을 누적하면 거짓 상태가 흔들리고, 새로운 진술이나 단서가 열릴 수 있습니다.'
                   : `${accusedName}의 진술 흐름에서 어긋남이 감지되었습니다. 모순을 찌르면 다음 단서가 열릴 수 있습니다.`,
                 contrast: isSpoilerSafe ? {
-                  left:  { label: '이전 진술', text: contradiction.previousClaim },
-                  right: { label: '지금 진술', text: contradiction.currentClaim },
+                  left:  { label: contradiction.previousLabel ?? '이전 발언 A', text: contradiction.previousClaim },
+                  right: { label: contradiction.currentLabel ?? '현재 발언 B', text: contradiction.currentClaim },
                 } : undefined,
+                blocks: [{ title: '왜 어긋나는지', text: contradiction.reason ?? '' }],
                 actions: [
                   { kind: 'close', label: '지금은 넘긴다' },
                   {
@@ -272,7 +277,6 @@ function MessageBubble({ entry, animate, combinableTexts, combinationHintMap, is
         <div className="pc-log-stack">
           <button className="pc-log-bubble is-witness" onClick={() => openEntryDetail()} type="button">
             <div className="pc-log-bubble__text">{displayText}</div>
-            {entry.behaviorHint ? <div className="pc-log-bubble__hint">{entry.behaviorHint}</div> : null}
           </button>
         </div>
       </div>
@@ -282,7 +286,7 @@ function MessageBubble({ entry, animate, combinableTexts, combinationHintMap, is
   const isPartyA = entry.speaker === 'a'
   const profile = isPartyA ? caseData?.duo.partyA : caseData?.duo.partyB
   const agent = isPartyA ? agentA : agentB
-  const emotion = agent?.emotionalState.phase
+  const emotion = entry.emotionSnapshot?.phase ?? agent?.emotionalState.phase
   const emotionLabel = emotion ? EMOTION_LABELS[emotion] : null
   const faceId = profile ? getPcFaceSymbolId(isPartyA ? 'a' : 'b', profile, emotion) : 'i-person'
 
@@ -338,7 +342,6 @@ function MessageBubble({ entry, animate, combinableTexts, combinationHintMap, is
             return null
           })()}
           <div className="pc-log-bubble__text">{displayText}</div>
-          {entry.behaviorHint ? <div className="pc-log-bubble__hint">{entry.behaviorHint}</div> : null}
         </button>
       </div>
     </div>
@@ -387,8 +390,6 @@ export default function PCDialogueLog() {
     }
     return byText
   }, [combinationLabRuntime, evidenceStates])
-  const bottomRef = useRef<HTMLDivElement>(null)
-
   useEffect(() => {
     _usedContradictions.clear()
   }, [caseData?.caseId])
@@ -397,13 +398,6 @@ export default function PCDialogueLog() {
     if (dialogueLog.length === 0) {
       _usedContradictions.clear()
     }
-  }, [dialogueLog.length])
-
-  useEffect(() => {
-    const timer = window.setTimeout(() => {
-      bottomRef.current?.scrollIntoView({ behavior: 'smooth' })
-    }, 60)
-    return () => window.clearTimeout(timer)
   }, [dialogueLog.length])
 
   const visibleEntries = useMemo(() => dialogueLog.filter((entry) => !entry.isHidden), [dialogueLog])
@@ -470,7 +464,7 @@ export default function PCDialogueLog() {
         </div>
       ) : null}
 
-      <div ref={bottomRef} />
+      <div aria-hidden="true" />
     </>
   )
 }

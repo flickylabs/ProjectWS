@@ -1,6 +1,12 @@
 import { classifyFreeInterrogationIntent } from './intentClassifier'
 import { mapFreeInterrogationContext } from './contextMapper'
 import { selectFreeInterrogationFallbackText } from './fallback'
+import {
+  buildFreeInterrogationContextualFallback,
+  buildFreeInterrogationOffTopicRedirect,
+  buildFreeInterrogationPublicAnswer,
+  resolveFreeInterrogationPublicSpeaker,
+} from './publicInfo'
 import { GamePhase } from '../../types'
 import type {
   FreeInterrogationFallbackContext,
@@ -15,6 +21,8 @@ export * from './guard'
 export * from './heuristic'
 export * from './intentClassifier'
 export * from './contextMapper'
+export * from './publicInfo'
+export * from './questionPolicy'
 
 const VALID_MODES: FreeInterrogationMode[] = ['off', 'preview', 'on']
 const MIN_FALLBACK_CONTEXT_CONFIDENCE = 0.65
@@ -42,20 +50,70 @@ export async function resolveFreeInterrogation(
   const actionDisputeId = mapped.mapped.disputeId
   const questionType = mapped.mapped.interrogationType
 
+  if (mapped.intent === 'off_topic') {
+    return {
+      status: 'fallback',
+      route: 'off_topic_redirect',
+      costPolicy: 'no_cost',
+      turnPolicy: 'no_advance',
+      dialogueSpeaker: 'system',
+      intent: mapped,
+      fallbackText: buildFreeInterrogationOffTopicRedirect(),
+      reason: 'off_topic',
+    }
+  }
+
+  if (mapped.intent === 'public_info') {
+    return {
+      status: 'fallback',
+      route: 'public_answer',
+      costPolicy: 'no_cost',
+      turnPolicy: 'no_advance',
+      dialogueSpeaker: resolveFreeInterrogationPublicSpeaker(mapped.raw, context),
+      intent: mapped,
+      fallbackText: buildFreeInterrogationPublicAnswer(mapped.raw, context),
+      reason: 'public_info',
+    }
+  }
+
+  if (mapped.intent === 'leak_probe') {
+    const fallbackContext = buildFallbackContext(context, mapped)
+    const fallback = buildMappedFallback(fallbackContext, 'leak_probe')
+    const outputReason = 'reason' in fallback ? fallback.reason : 'leak_probe'
+    return {
+      status: 'fallback',
+      route: 'guard_fallback',
+      costPolicy: 'no_cost',
+      turnPolicy: 'no_advance',
+      dialogueSpeaker: fallbackContext.target ?? 'system',
+      intent: mapped,
+      fallbackText: buildFreeInterrogationContextualFallback(context, fallbackContext, 'leak_probe', fallback.text),
+      reason: outputReason,
+    }
+  }
+
   if (context.currentPhase !== GamePhase.Phase3_Interrogation) {
     const fallbackContext = buildFallbackContext(context, mapped)
     const fallback = buildMappedFallback(fallbackContext, 'phase_not_interrogation')
+    const outputReason = 'reason' in fallback ? fallback.reason : 'phase_not_interrogation'
     return {
       status: 'fallback',
+      route: 'phase_redirect',
+      costPolicy: 'no_cost',
+      turnPolicy: 'no_advance',
+      dialogueSpeaker: fallbackContext.target ?? 'system',
       intent: mapped,
-      fallbackText: fallback.text,
-      reason: 'reason' in fallback ? fallback.reason : 'phase_not_interrogation',
+      fallbackText: buildFreeInterrogationContextualFallback(context, fallbackContext, 'phase_not_interrogation', fallback.text),
+      reason: outputReason,
     }
   }
 
   if (actionTarget && actionDisputeId && questionType) {
     return {
       status: 'dispatch',
+      route: 'case_dispatch',
+      costPolicy: 'consume',
+      turnPolicy: 'advance',
       intent: mapped,
       action: {
         type: 'question',
@@ -73,13 +131,19 @@ export async function resolveFreeInterrogation(
   }
 
   const fallbackContext = buildFallbackContext(context, mapped)
-  const fallback = buildMappedFallback(fallbackContext, resolveFallbackReason(mapped))
+  const fallbackReason = resolveFallbackReason(mapped)
+  const fallback = buildMappedFallback(fallbackContext, fallbackReason)
+  const reason = 'reason' in fallback ? fallback.reason : 'context_mapping_failed'
 
   return {
     status: 'fallback',
+    route: 'mapping_fallback',
+    costPolicy: 'no_cost',
+    turnPolicy: 'no_advance',
+    dialogueSpeaker: fallbackContext.target ?? 'system',
     intent: mapped,
-    fallbackText: fallback.text,
-    reason: 'reason' in fallback ? fallback.reason : 'context_mapping_failed',
+    fallbackText: buildFreeInterrogationContextualFallback(context, fallbackContext, fallbackReason, fallback.text),
+    reason,
   }
 }
 
@@ -89,6 +153,9 @@ function buildFallbackContext(
 ): FreeInterrogationFallbackContext {
   const canUseAmbientDispute = mapped.intent !== 'unmapped' &&
     mapped.intent !== 'evidence_query' &&
+    mapped.intent !== 'off_topic' &&
+    mapped.intent !== 'public_info' &&
+    mapped.intent !== 'leak_probe' &&
     mapped.confidence >= MIN_FALLBACK_CONTEXT_CONFIDENCE
   const fallbackDisputeId = mapped.mapped.disputeId ?? (canUseAmbientDispute ? context.activeDisputeId ?? null : null)
   const fallbackTarget = mapped.mapped.target ?? context.target
@@ -105,6 +172,9 @@ function buildFallbackContext(
 }
 
 function resolveFallbackReason(mapped: FreeInterrogationResolution['intent']): string {
+  if (mapped.intent === 'off_topic') return 'off_topic'
+  if (mapped.intent === 'public_info') return 'public_info'
+  if (mapped.intent === 'leak_probe') return 'leak_probe'
   if (mapped.intent === 'unmapped') return 'unmapped_intent'
   if (mapped.confidence < MIN_FALLBACK_CONTEXT_CONFIDENCE) return 'low_confidence_mapping'
   if (mapped.intent === 'evidence_query' && !mapped.mapped.evidenceRef) return 'evidence_unavailable'
@@ -117,7 +187,7 @@ function buildMappedFallback(context: FreeInterrogationFallbackContext, reason =
     (context.target !== 'a' && context.target !== 'b')
   ) {
     return {
-      text: '재판관님, 그 질문에는 지금 답하기 어렵습니다.',
+      text: '재판관님, 지금은 공개된 기록 안에서 확인할 수 있는 부분만 다루겠습니다.',
       reason: 'free-interrogation-unmapped',
     }
   }

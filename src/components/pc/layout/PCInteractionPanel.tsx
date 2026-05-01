@@ -58,6 +58,7 @@ export interface PcInteractionPayload {
     left:  { label: string; text: string }
     right: { label: string; text: string }
   }
+  blocks?: { title: string; text: string }[]
   evidenceId?: string
   /** evidence variant: 타입 레이블 (기기, 기록 등) */
   evidenceTypeLabel?: string
@@ -68,6 +69,7 @@ export interface PcInteractionPayload {
   dialogueSpeaker?: string
   dialogueSpeakerName?: string
   dialogueDisputeIds?: string[]
+  dialogueBehaviorHint?: string
   /** dialogue variant: 실제 대화 id — 있으면 '바로가기' 버튼 노출 */
   dialogueId?: string
   /** backdrop (화면 덮는 어두운 배경) 여부. 기본 true. false이면 상단 중앙 소프트 팝업으로 렌더 */
@@ -726,6 +728,15 @@ export default function PCInteractionPanel() {
                 <div className="pc-interaction-card__contrast-text">"{payload.contrast.right.text}"</div>
               </div>
             </div>
+            {payload.blocks?.length ? (
+              <div className="pc-interaction-card__contrast-intro">
+                {payload.blocks.map((block) => (
+                  <div key={block.title}>
+                    <strong>{block.title}</strong>: {block.text}
+                  </div>
+                ))}
+              </div>
+            ) : null}
           </div>
         ) : (
           <div className="pc-interaction-card__body">{payload.body}</div>
@@ -916,58 +927,73 @@ function DialogueDetailSection({ payload, onClose }: { payload: PcInteractionPay
     : payload.dialogueSpeaker === 'judge' ? 'i-scale'
     : payload.dialogueSpeaker === 'witness' ? 'i-witness'
     : 'i-bulb'
-
+  const party = payload.dialogueSpeaker === 'a' || payload.dialogueSpeaker === 'b'
+    ? payload.dialogueSpeaker
+    : null
   return (
-    <div className="pc-dialogue-popup">
-      {/* Header: 발언 기록 - Turn N  +  바로가기  +  X */}
+    <div className={`pc-dialogue-popup${speakerClass ? ` pc-dialogue-popup--${speakerClass}` : ''}`}>
       <div className="pc-dialogue-popup__header-row">
-        <span className="pc-dialogue-popup__label">발언 기록</span>
-        <span className="pc-dialogue-popup__dash">-</span>
-        <span className="pc-dialogue-popup__turn">Turn {payload.dialogueTurn ?? 0}</span>
-        {payload.dialogueId ? (
-          <button
-            className="pc-dialogue-popup__goto"
-            onClick={() => {
-              const id = payload.dialogueId
-              onClose()
-              if (id) {
-                window.setTimeout(() => jumpToDialogue(id), 220)
-              }
-            }}
-            type="button"
-            title="해당 메시지로 이동"
-          >
-            바로가기
-          </button>
-        ) : null}
-        <button className="pc-dialogue-popup__close" onClick={onClose} type="button">&times;</button>
+        <div className="pc-dialogue-popup__identity">
+          <span className={`pc-dialogue-popup__portrait ${speakerClass}`}>
+            {party ? (
+              <PCCharacterPortrait
+                alt={payload.dialogueSpeakerName}
+                caseId={caseData?.caseId}
+                emotion="defensive"
+                fallbackSymbolId={speakerIconId}
+                party={party}
+                size={34}
+              />
+            ) : (
+              <PCSvgIcon id={speakerIconId} size={18} />
+            )}
+          </span>
+          <div className="pc-dialogue-popup__speaker-copy">
+            <span className="pc-dialogue-popup__label">발언 기록</span>
+            <span className="pc-dialogue-popup__name-line">
+              <span className={`pc-dialogue-popup__speaker ${speakerClass}`}>
+                {payload.dialogueSpeakerName ?? '시스템'}
+              </span>
+              {relatedNames.length > 0 ? (
+                <span className="pc-dialogue-popup__inline-chips" aria-label="관련 쟁점">
+                  {relatedNames.map((name, i) => (
+                    <span className="pc-dialogue-popup__dispute-name" key={`${name}:${i}`}>{name}</span>
+                  ))}
+                </span>
+              ) : null}
+            </span>
+          </div>
+        </div>
+        <div className="pc-dialogue-popup__controls">
+          <span className="pc-dialogue-popup__turn">Turn {payload.dialogueTurn ?? 0}</span>
+          {payload.dialogueId ? (
+            <button
+              className="pc-dialogue-popup__goto"
+              onClick={() => {
+                const id = payload.dialogueId
+                onClose()
+                if (id) {
+                  window.setTimeout(() => jumpToDialogue(id), 220)
+                }
+              }}
+              type="button"
+              title="해당 메시지로 이동"
+            >
+              바로가기
+            </button>
+          ) : null}
+          <button className="pc-dialogue-popup__close" onClick={onClose} type="button" aria-label="닫기">&times;</button>
+        </div>
       </div>
 
       <div className="pc-dialogue-popup__divider" />
 
-      {/* Dispute + speaker row */}
-      <div className="pc-dialogue-popup__dispute-row">
-        <span className="pc-dialogue-popup__dispute-label">주요 쟁점</span>
-        <div className={`pc-dialogue-popup__speaker ${speakerClass}`}>
-          <PCSvgIcon id={speakerIconId} size={16} />
-          <span>{payload.dialogueSpeakerName ?? '시스템'}</span>
-        </div>
+      <div className="pc-dialogue-popup__body">
+        <div className="pc-dialogue-popup__speech">{payload.body}</div>
+        {payload.dialogueBehaviorHint ? (
+          <p className="pc-dialogue-popup__observation">{payload.dialogueBehaviorHint}</p>
+        ) : null}
       </div>
-
-      {/* Dispute names — 여러 개면 구분자로 연이어 */}
-      {relatedNames.length > 0 ? (
-        <div className="pc-dialogue-popup__dispute-names">
-          {relatedNames.map((name, i) => (
-            <span key={i}>
-              {i > 0 ? <span className="pc-dialogue-popup__dispute-sep">|</span> : null}
-              <span className="pc-dialogue-popup__dispute-name">{name}</span>
-            </span>
-          ))}
-        </div>
-      ) : null}
-
-      {/* Body text */}
-      <div className="pc-dialogue-popup__body">{payload.body}</div>
     </div>
   )
 }

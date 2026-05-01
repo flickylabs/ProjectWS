@@ -1,6 +1,7 @@
 import { useMemo } from 'react'
 import { useStore } from '../../../store/useGameStore'
 import PCSvgIcon from '../icons/PCSvgIcon'
+import { hasContradictionComparison } from '../../../utils/contradiction'
 
 const LIE_STATES = ['S0', 'S1', 'S2', 'S3', 'S4', 'S5'] as const
 
@@ -69,7 +70,7 @@ export default function PCRecordSummary({ onClose }: { onClose: () => void }) {
 
   const contradictions = useMemo(() => {
     return dialogueLog
-      .filter((entry) => entry.contradictionMeta)
+      .filter((entry) => hasContradictionComparison(entry.contradictionMeta))
       .map((entry) => ({
         party: entry.contradictionMeta!.party,
         previous: entry.contradictionMeta!.previousClaim,

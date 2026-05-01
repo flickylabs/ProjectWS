@@ -1,30 +1,37 @@
 import { useCallback, useEffect, useMemo, useRef, useState, type DragEvent, type ReactNode } from 'react'
+import { createPortal } from 'react-dom'
 import {
   Phase,
   type CombinationLabNode,
   type CombinationLabOutput,
   type CombinationLabRecipe,
+  type CaseData,
   type EmotionalPhase,
   type LieState,
 } from '../../../types'
 import { useGameStore, useStore } from '../../../store/useGameStore'
+import type { AuraStyle, ResonanceStyle } from '../../../store/slices/judgeObservationSlice'
 import { isEvidenceFullyInvestigated } from '../../../engine/evidenceEngine'
 import PCSvgIcon from '../icons/PCSvgIcon'
 import PCCharacterPortrait from '../icons/PCCharacterPortrait'
 import { getPcFaceSymbolId } from '../icons/pcIconUtils'
 import { getPcArchetypeLabel, getPcTellDescription, getPcTellLabel } from '../pcUiLabels'
 import { HOTBAR_DRAG_TYPE } from '../hotbar/pcHotbarConfig'
-import { openPcInteractionPanel } from '../layout/PCInteractionPanel'
+import { openPcInteractionPanel, type PcInteractionAction } from '../layout/PCInteractionPanel'
 import { showToast } from '../../common/Toast'
 import { showGuideCutscene } from '../../common/guideCutscene'
 import { getCombinationComment } from '../../../data/combinationComments'
 import { PC_ADD_COMBINATION_NOTE_EVENT, type PcCombinationPanelEventDetail, type PcPinnedNote } from './PCImportantNotesSection'
 import { playCombinationSuccess } from '../../../engine/soundEngine'
 import { cleanOutputLabel, cleanOutputSummary } from '../../../utils/combinationLabels'
+import { pp이가 } from '../../../engine/koreanPostposition'
 import ArchetypeTag from '../tags/ArchetypeTag'
 import { ACTION_TARGETS, ActionEm, Em } from '../tags/hotbarHighlight'
 
 const LIE_STATES: LieState[] = ['S0', 'S1', 'S2', 'S3', 'S4', 'S5']
+const COMBINATION_SUCCESS_SOURCE_SELECTOR = '[data-resonance-target="combination-success"]'
+const JUDGE_OBSERVATION_SELECTOR = '[data-resonance-target="jobs-main"]'
+const JUDGE_NOTEBOOK_SELECTOR = '[data-resonance-target="judge-notebook"]'
 
 
 const EMOTION_LABELS: Record<EmotionalPhase, string> = {
@@ -34,6 +41,8 @@ const EMOTION_LABELS: Record<EmotionalPhase, string> = {
   angry: '\uACA9\uC559',
   resigned: '\uCCB4\uB150',
 }
+
+type TargetInfoDrawer = 'emotion' | 'trust' | 'leak' | 'lieStages' | 'contradiction' | 'profile'
 
 export default function PCRightPanel() {
   const caseData = useStore((s) => s.caseData)
@@ -62,7 +71,7 @@ export default function PCRightPanel() {
   const [comboSlots, setComboSlots] = useState<[string | null, string | null]>([null, null])
   const [autoMatchPanelOpen, setAutoMatchPanelOpen] = useState(false)
   const [autoMatchConfirming, setAutoMatchConfirming] = useState(false)
-  const [infoDrawer, setInfoDrawer] = useState<'emotion' | 'trust' | 'leak' | 'lieStages' | 'contradiction' | 'profile' | null>(null)
+  const [infoDrawer, setInfoDrawer] = useState<TargetInfoDrawer | null>(null)
   const [selectedLieStageIdx, setSelectedLieStageIdx] = useState<number | null>(null)
 
   // Phase 1 (사전진술) 등에서는 심문/증거 액션 자체가 의미 없음 — 기록 정리도 차단.
@@ -441,9 +450,46 @@ export default function PCRightPanel() {
       return
     }
 
+    const newlyUnlockedWitnesses = result.newlyUnlockedWitnesses ?? []
+    const isWitnessResult = hasWitnessCombinationResult(matchingOutput, newlyUnlockedWitnesses)
+    const outputSummary = matchingRecipe.discoveryText || cleanOutputSummary(matchingOutput.summary, matchingOutput.label) || matchingOutput.judgeHint || ''
+    const witnessNames = newlyUnlockedWitnesses.map((w) => w.name).filter(Boolean)
+    const panelBody = isWitnessResult
+      ? [
+          witnessNames.length > 0
+            ? `새 증인 ${witnessNames.join(', ')}${pp이가(witnessNames[witnessNames.length - 1] ?? '')} 소환 가능해졌습니다.`
+            : '새 증인 단서가 열렸습니다.',
+          outputSummary,
+        ].filter(Boolean).join('\n')
+      : outputSummary
+    const primaryDisputeId = getPrimaryCombinationDisputeId(matchingOutput, caseData)
+    const combinationResultType = getCombinationResultType(matchingOutput, isWitnessResult)
+    const primaryEvidenceId = getPrimaryCombinationEvidenceId(matchingOutput)
+    const panelActions: PcInteractionAction[] = []
+    if (newlyUnlockedWitnesses.length > 0) {
+      const witness = newlyUnlockedWitnesses[0]
+      panelActions.push({
+        kind: 'summon_witness',
+        label: `${witness.name} 소환하기`,
+        witnessId: witness.id,
+      })
+    } else if (combinationResultType === 'evidence' && primaryEvidenceId) {
+      panelActions.push({
+        kind: 'open_evidence',
+        label: '새 증거 열람',
+        evidenceId: primaryEvidenceId,
+      })
+    } else if (!isWitnessResult && primaryDisputeId) {
+      panelActions.push({
+        kind: 'focus_dispute',
+        label: '\uAD00\uB828 \uC7C1\uC810 \uBCF4\uAE30',
+        disputeId: primaryDisputeId,
+      })
+    }
+
     store.addDialogue({
       speaker: 'system',
-      text: `\uC870\uD569 \uACB0\uACFC: ${cleanOutputLabel(matchingOutput.label)}${matchingRecipe.discoveryText ? '\n' + matchingRecipe.discoveryText : cleanOutputSummary(matchingOutput.summary, matchingOutput.label) ? '\n' + cleanOutputSummary(matchingOutput.summary, matchingOutput.label) : ''}`,
+      text: `\uC870\uD569 \uACB0\uACFC: ${cleanOutputLabel(matchingOutput.label)}${outputSummary ? '\n' + outputSummary : ''}`,
       relatedDisputes: matchingOutput.effects
         .flatMap((effect) => [
           effect.targetId,
@@ -464,17 +510,91 @@ export default function PCRightPanel() {
     const effectTags = matchingOutput.effects.slice(0, 4).map((effect) => getResultKindLabel(effect.kind))
     openPcInteractionPanel({
       title: cleanOutputLabel(matchingOutput.label),
-      subtitle: '\uC870\uD569 \uC131\uACF5',
+      subtitle: isWitnessResult ? '새 증인 추가' : '\uC870\uD569 \uC131\uACF5',
       tone: 'gold',
       variant: 'feature',
-      body: matchingRecipe.discoveryText || cleanOutputSummary(matchingOutput.summary, matchingOutput.label) || matchingOutput.judgeHint || '',
-      tags: effectTags,
-      actions: matchingOutput.effects
-        .map((effect) => effect.targetId ?? effect.unlockNodeId ?? effect.disputeUpgrade?.disputeId)
-        .filter((value): value is string => Boolean(value))
-        .slice(0, 1)
-        .map((disputeId) => ({ kind: 'focus_dispute' as const, label: '\uAD00\uB828 \uC7C1\uC810 \uBCF4\uAE30', disputeId })),
+      body: panelBody,
+      tags: isWitnessResult ? ['새 증인', ...effectTags.filter((tag) => tag !== '새 발언')] : effectTags,
+      actions: panelActions,
     })
+
+    if (isWitnessResult) {
+      const summary = witnessNames.length > 0
+        ? `${witnessNames.join(', ')}${pp이가(witnessNames[witnessNames.length - 1] ?? '')} 새 증인으로 추가됐습니다.`
+        : '새 증인 단서가 열렸습니다.'
+      store.addJudgeObservation({
+        turnCount: store.turnCount,
+        category: 'event',
+        iconId: 'i-eye',
+        title: '새 증인 추가',
+        summary,
+      })
+      store.enqueueAura({ targetSelector: '[data-guide-target="witness-summon"]' })
+    } else if (combinationResultType === 'dispute') {
+      store.addJudgeObservation({
+        turnCount: store.turnCount,
+        category: 'event',
+        iconId: 'i-scale',
+        title: '쟁점 추가',
+        summary: outputSummary || '새 쟁점이 기록에 추가됐습니다.',
+      })
+      store.enqueueAura({ targetSelector: '.pc-dispute-ribbon' })
+    } else if (combinationResultType === 'dossier') {
+      store.addJudgeObservation({
+        turnCount: store.turnCount,
+        category: 'event',
+        iconId: 'i-gavel',
+        title: '결정적 질문 해금',
+        summary: outputSummary || '새 질문 경로가 열렸습니다.',
+      })
+      store.enqueueAura({ targetSelector: '[data-guide-target="question-fact"]' })
+    } else if (combinationResultType === 'question') {
+      store.addJudgeObservation({
+        turnCount: store.turnCount,
+        category: 'event',
+        iconId: 'i-gavel',
+        title: '질문 경로 추가',
+        summary: outputSummary || '새 질문 경로가 열렸습니다.',
+      })
+      store.enqueueAura({ targetSelector: '[data-guide-target="question-fact"]' })
+    } else if (combinationResultType === 'evidence') {
+      store.addJudgeObservation({
+        turnCount: store.turnCount,
+        category: 'evidence',
+        iconId: 'i-doc',
+        title: '새 증거 추가',
+        summary: outputSummary || '새 증거가 기록에 추가됐습니다.',
+        evidenceId: primaryEvidenceId ?? undefined,
+      })
+      store.enqueueAura({ targetSelector: '[data-guide-target="evidence-present"]' })
+      if (primaryEvidenceId) {
+        store.enqueueAura({ targetSelector: `[data-resonance-target="evidence-${primaryEvidenceId}"]` })
+      }
+    } else if (combinationResultType === 'mediation') {
+      store.addJudgeObservation({
+        turnCount: store.turnCount,
+        category: 'event',
+        iconId: 'i-heart',
+        title: '조정 힌트 추가',
+        summary: outputSummary || '조정에 쓸 수 있는 힌트가 추가됐습니다.',
+      })
+    } else if (combinationResultType === 'note' || combinationResultType === 'statement') {
+      store.addJudgeObservation({
+        turnCount: store.turnCount,
+        category: 'event',
+        iconId: 'i-chat',
+        title: combinationResultType === 'note' ? '단서 기록 추가' : '진술 기록 추가',
+        summary: outputSummary || '기록에 새 항목이 추가됐습니다.',
+      })
+    } else if (combinationResultType === 'reliability' || combinationResultType === 'context') {
+      store.addJudgeObservation({
+        turnCount: store.turnCount,
+        category: 'evidence',
+        iconId: 'i-link',
+        title: combinationResultType === 'reliability' ? '증거 신뢰도 강화' : '사건 맥락 확장',
+        summary: outputSummary || '기존 기록의 해석이 강화됐습니다.',
+      })
+    }
 
     // 2) 재판관: 순수 판단 코멘트만 (judgeComment)
     const caseKey = store.caseData?.caseId ?? ''
@@ -502,6 +622,11 @@ export default function PCRightPanel() {
         : /쟁점|숨[긴겨]|동기\s*탐색/.test(hint) ? '[data-guide-target="question-motive"]'
         : '.pc-combination-card'
       showGuideCutscene(hint, target)
+    } else {
+      const guide = getCombinationGuideCutscene(combinationResultType, cleanOutputLabel(matchingOutput.label))
+      if (guide) {
+        showGuideCutscene(guide.text, guide.target)
+      }
     }
 
     // 4) 시스템: 새 증인 소환 알림 (runCombinationRecipe가 반환한 newly unlocked)
@@ -524,14 +649,18 @@ export default function PCRightPanel() {
             type: node.type,
           })),
         outputLabel: cleanOutputLabel(matchingOutput.label),
-        outputSummary: matchingRecipe.discoveryText || cleanOutputSummary(matchingOutput.summary, matchingOutput.label) || matchingOutput.judgeHint || '',
-        resultType: matchingOutput.id.startsWith('dc-')
-          ? 'dossier'
-          : matchingOutput.nodeType === 'dispute'
-            ? 'dispute'
-            : 'upgrade',
+        outputSummary,
+        resultType: combinationResultType,
       },
     }))
+    window.setTimeout(() => {
+      playCombinationResultResonance(useGameStore.getState(), {
+        resultType: combinationResultType,
+        outputId: matchingOutput.id,
+        disputeId: primaryDisputeId,
+        evidenceId: primaryEvidenceId,
+      })
+    }, 140)
 
     clearComboSlots()
   }, [clearComboSlots, comboNodeA, comboNodeB, comboReady, matchingOutput, matchingRecipe, store])
@@ -539,11 +668,26 @@ export default function PCRightPanel() {
   const toggleCombinationPanel = useCallback(() => {
     setAutoMatchPanelOpen((v) => !v)
     setAutoMatchConfirming(false)
+    setInfoDrawer(null)
   }, [])
 
   const openSummaryPanel = useCallback(() => {
     window.dispatchEvent(new Event('pc:open-record-summary'))
   }, [])
+
+  const toggleInfoDrawer = useCallback((drawer: TargetInfoDrawer) => {
+    setAutoMatchPanelOpen(false)
+    setAutoMatchConfirming(false)
+    setInfoDrawer((current) => current === drawer ? null : drawer)
+  }, [])
+
+  const toggleLieStageDrawer = useCallback((stageIdx: number | null) => {
+    setAutoMatchPanelOpen(false)
+    setAutoMatchConfirming(false)
+    setSelectedLieStageIdx(stageIdx)
+    setInfoDrawer((current) => current === 'lieStages' && selectedLieStageIdx === stageIdx ? null : 'lieStages')
+  }, [selectedLieStageIdx])
+  const portalRoot = typeof document !== 'undefined' ? document.body : null
 
   return (
     <div className="pc-play-right">
@@ -578,8 +722,8 @@ export default function PCRightPanel() {
               role="button"
               tabIndex={0}
               style={{ cursor: 'pointer' }}
-              onClick={() => setInfoDrawer('profile')}
-              onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setInfoDrawer('profile') } }}
+              onClick={() => toggleInfoDrawer('profile')}
+              onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleInfoDrawer('profile') } }}
               title={`${targetProfile.name} 상세 정보 보기`}
             >
               <PCCharacterPortrait
@@ -611,8 +755,8 @@ export default function PCRightPanel() {
                 className="pc-target-state-row is-interactive"
                 role="button"
                 tabIndex={0}
-                onClick={() => setInfoDrawer('emotion')}
-                onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setInfoDrawer('emotion') } }}
+                onClick={() => toggleInfoDrawer('emotion')}
+                onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleInfoDrawer('emotion') } }}
               >
                 <span>감정</span>
                 <strong>{EMOTION_LABELS[targetAgent.emotionalState.phase]}</strong>
@@ -622,8 +766,8 @@ export default function PCRightPanel() {
                 data-resonance-target={`trust-${pcTargetParty}`}
                 role="button"
                 tabIndex={0}
-                onClick={() => setInfoDrawer('trust')}
-                onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setInfoDrawer('trust') } }}
+                onClick={() => toggleInfoDrawer('trust')}
+                onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleInfoDrawer('trust') } }}
               >
                 <span>신뢰 상태</span>
                 <strong>{trustStateLabel}</strong>
@@ -635,7 +779,7 @@ export default function PCRightPanel() {
               valueText={`${targetMeters.leakMeter}%`}
               width={targetMeters.leakMeter}
               tone="gold"
-              onClick={() => setInfoDrawer('leak')}
+              onClick={() => toggleInfoDrawer('leak')}
             />
           </div>
 
@@ -660,8 +804,8 @@ export default function PCRightPanel() {
                 role="button"
                 tabIndex={0}
                 style={{ cursor: 'pointer' }}
-                onClick={() => { setSelectedLieStageIdx(null); setInfoDrawer('lieStages') }}
-                onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setSelectedLieStageIdx(null); setInfoDrawer('lieStages') } }}
+                onClick={() => toggleLieStageDrawer(null)}
+                onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleLieStageDrawer(null) } }}
                 title="진실파악 단계 안내 보기"
               >
                 {activeDispute?.name ?? '쟁점 없음'}
@@ -700,8 +844,8 @@ export default function PCRightPanel() {
                     role="button"
                     tabIndex={0}
                     style={{ cursor: 'pointer' }}
-                    onClick={() => { setSelectedLieStageIdx(index); setInfoDrawer('lieStages') }}
-                    onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setSelectedLieStageIdx(index); setInfoDrawer('lieStages') } }}
+                    onClick={() => toggleLieStageDrawer(index)}
+                    onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleLieStageDrawer(index) } }}
                     title={`진실파악 단계 ${index} 안내`}
                   >
                     {index}
@@ -716,8 +860,8 @@ export default function PCRightPanel() {
               role="button"
               tabIndex={0}
               style={{ cursor: 'pointer' }}
-              onClick={() => setInfoDrawer('contradiction')}
-              onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setInfoDrawer('contradiction') } }}
+              onClick={() => toggleInfoDrawer('contradiction')}
+              onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleInfoDrawer('contradiction') } }}
               title="모순이 무엇인지 안내 보기"
             >
               <span className="pc-target-contradiction__label">
@@ -739,7 +883,8 @@ export default function PCRightPanel() {
           </div>
 
           {/* 정보 드로어 — 감정 / 신뢰 / 누설 안내 (프로필 카드 왼쪽으로 확장) */}
-          <aside
+          {portalRoot ? createPortal(
+            <aside
             className={`pc-target-info-drawer${infoDrawer ? ' is-open' : ''}`}
             aria-hidden={!infoDrawer}
             aria-label="프로필 팩터 안내"
@@ -969,7 +1114,9 @@ export default function PCRightPanel() {
                 </div>
               </>
             ) : null}
-          </aside>
+            </aside>,
+            portalRoot,
+          ) : null}
         </div>
       </section>
 
@@ -1012,7 +1159,8 @@ export default function PCRightPanel() {
             </div>
 
             {/* 조합 가능 항목 상세 — 카드 왼쪽으로 확장되는 드로어 */}
-            <aside
+            {portalRoot ? createPortal(
+              <aside
               className={`pc-combination-drawer${autoMatchPanelOpen ? ' is-open' : ''}`}
               aria-hidden={!autoMatchPanelOpen}
               aria-label="조합 가능 항목 상세"
@@ -1058,7 +1206,7 @@ export default function PCRightPanel() {
                         <span>자동 매칭</span>
                       </span>
                       <span className="pc-combination-drawer__auto-cost" title={`스킬 포인트 ${autoMatchCost} 소비`}>
-                        <PCSvgIcon id="i-bolt" size={12} />
+                        <PCSvgIcon id="i-link" size={12} />
                         <span>{autoMatchCost}</span>
                       </span>
                     </button>
@@ -1093,7 +1241,9 @@ export default function PCRightPanel() {
                   </div>
                 </>
               )}
-            </aside>
+              </aside>,
+              portalRoot,
+            ) : null}
             <div className="pc-combination-card__slots">
               <CombinationSlot label="A" node={comboNodeA} displayText={comboNodeADisplay} onClear={() => setComboSlots((c) => [null, c[1]])} />
               <span className="pc-combination-card__plus">+</span>
@@ -1245,12 +1395,213 @@ function getTrustStateLabel(value: number): string {
   return '\uC758\uC2EC'
 }
 
+function hasWitnessCombinationResult(
+  output: CombinationLabOutput,
+  newlyUnlockedWitnesses: { id: string; name: string }[],
+): boolean {
+  return newlyUnlockedWitnesses.length > 0 ||
+    (output.witnessAngles?.length ?? 0) > 0 ||
+    output.effects.some((effect) => effect.kind === 'unlock_witness_angle') ||
+    /증인/.test(output.judgeHint ?? '')
+}
+
+function getPrimaryCombinationDisputeId(output: CombinationLabOutput, caseData: CaseData | null): string | null {
+  const disputeIds = new Set((caseData?.disputes ?? []).map((dispute) => dispute.id))
+  const candidates = output.effects.flatMap((effect) => [
+    effect.kind === 'unlock_dispute' ? effect.unlockNodeId : undefined,
+    effect.kind === 'upgrade_dispute' ? effect.disputeUpgrade?.disputeId : undefined,
+    effect.kind === 'reframe_dispute' ? effect.reframeToId ?? effect.reframeFromId : undefined,
+    effect.kind === 'split_dispute' ? effect.splitFromId : undefined,
+    effect.kind === 'merge_disputes' ? effect.mergeToId : undefined,
+    effect.targetId,
+  ])
+
+  return candidates.find((value): value is string => Boolean(value && disputeIds.has(value))) ?? null
+}
+
+type PcCombinationResultType =
+  | 'dispute'
+  | 'upgrade'
+  | 'dossier'
+  | 'witness'
+  | 'evidence'
+  | 'question'
+  | 'note'
+  | 'statement'
+  | 'mediation'
+  | 'reliability'
+  | 'context'
+
+type GameStoreSnapshot = ReturnType<typeof useGameStore.getState>
+
+function getCombinationResultType(output: CombinationLabOutput, isWitnessResult: boolean): PcCombinationResultType {
+  const kinds = new Set(output.effects.map((effect) => effect.kind))
+  if (isWitnessResult) return 'witness'
+  if (kinds.has('unlock_evidence') || output.evidenceNode || output.nodeType === 'evidence' || output.nodeType === 'derived_evidence') return 'evidence'
+  if (output.nodeType === 'dispute' || kinds.has('unlock_dispute') || kinds.has('upgrade_dispute') || kinds.has('reframe_dispute') || kinds.has('split_dispute') || kinds.has('merge_disputes')) return 'dispute'
+  if (kinds.has('unlock_question') || kinds.has('upgrade_question') || kinds.has('reframe_question') || (output.questionPrompts?.length ?? 0) > 0) return output.id.startsWith('dc-') ? 'dossier' : 'question'
+  if (kinds.has('unlock_statement') || (output.statementEntries?.length ?? 0) > 0) return 'statement'
+  if (kinds.has('unlock_note') || output.noteText) return 'note'
+  if (kinds.has('unlock_mediation_hint') || (output.mediationHints?.length ?? 0) > 0) return 'mediation'
+  if (kinds.has('elevate_reliability') || kinds.has('shift_legality_weight') || kinds.has('shift_responsibility_weight')) return 'reliability'
+  if (kinds.has('expand_context') || kinds.has('narrow_scope')) return 'context'
+  if (output.id.startsWith('dc-')) return 'dossier'
+  return 'upgrade'
+}
+
+function getPrimaryCombinationEvidenceId(output: CombinationLabOutput): string | null {
+  const fromEffect = output.effects
+    .map((effect) => effect.evidenceUpgrade?.evidenceId ?? effect.unlockNodeId ?? effect.targetId ?? effect.upgradeToId ?? effect.reframeToId)
+    .find((value): value is string => Boolean(value))
+  return output.evidenceNode?.id ?? fromEffect ?? null
+}
+
+function getCombinationGuideCutscene(resultType: PcCombinationResultType, label: string): { text: string; target: string } | null {
+  switch (resultType) {
+    case 'witness':
+      return { text: `새 증인 추가: ${label}`, target: '[data-guide-target="witness-summon"]' }
+    case 'evidence':
+      return { text: `새 증거 추가: ${label}`, target: '[data-guide-target="evidence-present"]' }
+    case 'dispute':
+      return { text: `새 쟁점 추가: ${label}`, target: '.pc-dispute-ribbon' }
+    case 'dossier':
+    case 'question':
+      return { text: `새 질문 경로: ${label}`, target: '[data-guide-target="question-fact"]' }
+    case 'mediation':
+    case 'note':
+    case 'statement':
+    case 'reliability':
+    case 'context':
+      return null
+    default:
+      return null
+  }
+}
+
+interface CombinationResonanceContext {
+  resultType: PcCombinationResultType
+  outputId: string
+  disputeId: string | null
+  evidenceId: string | null
+}
+
+interface CombinationDestinationTarget {
+  selector: string
+  targetKey: string
+  resonanceStyle: ResonanceStyle
+  auraStyle: AuraStyle
+}
+
+function playCombinationResultResonance(store: GameStoreSnapshot, ctx: CombinationResonanceContext): void {
+  const destination = getCombinationDestinationTarget(ctx)
+
+  if (ctx.resultType === 'dispute' && ctx.disputeId) {
+    store.setLastFocusedDisputeId(ctx.disputeId)
+    store.setRecentlyEmergedDispute(ctx.disputeId)
+    window.setTimeout(() => {
+      const latest = useGameStore.getState()
+      if (latest.recentlyEmergedDisputeId === ctx.disputeId) {
+        latest.setRecentlyEmergedDispute(null)
+      }
+    }, 3600)
+  }
+
+  if (destination) {
+    store.enqueueAura({ targetSelector: destination.selector, style: destination.auraStyle })
+    store.enqueueResonance({
+      fromSelector: COMBINATION_SUCCESS_SOURCE_SELECTOR,
+      toSelector: destination.selector,
+      reason: 'combination_result',
+      targetKey: destination.targetKey,
+      style: destination.resonanceStyle,
+    })
+  }
+
+  const memoryTarget = getCombinationMemoryTarget(ctx.resultType)
+  if (memoryTarget && memoryTarget.selector !== destination?.selector) {
+    store.enqueueAura({ targetSelector: memoryTarget.selector, style: memoryTarget.auraStyle })
+    if (memoryTarget.selector === JUDGE_NOTEBOOK_SELECTOR) {
+      store.enqueueAura({ targetSelector: JUDGE_OBSERVATION_SELECTOR, style: 'archive' })
+    }
+    store.enqueueResonance({
+      fromSelector: COMBINATION_SUCCESS_SOURCE_SELECTOR,
+      toSelector: memoryTarget.selector,
+      reason: 'combination_result',
+      targetKey: memoryTarget.targetKey,
+      style: memoryTarget.resonanceStyle,
+    })
+  }
+}
+
+function getCombinationDestinationTarget(ctx: CombinationResonanceContext): CombinationDestinationTarget | null {
+  switch (ctx.resultType) {
+    case 'witness':
+      return { selector: '[data-guide-target="witness-summon"]', targetKey: 'combination:witness', resonanceStyle: 'spotlight', auraStyle: 'spotlight' }
+    case 'dispute':
+      return {
+        selector: ctx.disputeId
+          ? `[data-dispute-id="${escapeAttributeValue(ctx.disputeId)}"]`
+          : '.pc-dispute-ribbon',
+        targetKey: `combination:dispute:${ctx.disputeId ?? ctx.outputId}`,
+        resonanceStyle: 'lightning',
+        auraStyle: 'electric',
+      }
+    case 'evidence':
+      return {
+        selector: ctx.evidenceId
+          ? `[data-resonance-target="evidence-${escapeAttributeValue(ctx.evidenceId)}"]`
+          : '[data-guide-target="evidence-present"]',
+        targetKey: `combination:evidence:${ctx.evidenceId ?? ctx.outputId}`,
+        resonanceStyle: 'absorb',
+        auraStyle: 'soft',
+      }
+    case 'dossier':
+    case 'question':
+      return { selector: '[data-guide-target="question-fact"]', targetKey: `combination:question:${ctx.outputId}`, resonanceStyle: 'lightning', auraStyle: 'electric' }
+    case 'note':
+    case 'statement':
+      return { selector: JUDGE_NOTEBOOK_SELECTOR, targetKey: `combination:notebook:${ctx.outputId}`, resonanceStyle: 'archive', auraStyle: 'archive' }
+    case 'mediation':
+      return { selector: '[data-guide-target="question-empathy"]', targetKey: `combination:mediation:${ctx.outputId}`, resonanceStyle: 'absorb', auraStyle: 'soft' }
+    case 'reliability':
+    case 'context':
+      return { selector: JUDGE_OBSERVATION_SELECTOR, targetKey: `combination:context:${ctx.outputId}`, resonanceStyle: 'absorb', auraStyle: 'soft' }
+    default:
+      return null
+  }
+}
+
+function getCombinationMemoryTarget(resultType: PcCombinationResultType): CombinationDestinationTarget | null {
+  switch (resultType) {
+    case 'witness':
+    case 'dispute':
+    case 'evidence':
+    case 'dossier':
+    case 'question':
+    case 'reliability':
+    case 'context':
+      return {
+        selector: JUDGE_NOTEBOOK_SELECTOR,
+        targetKey: `combination:memory:${resultType}`,
+        resonanceStyle: resultType === 'dispute' || resultType === 'dossier' || resultType === 'question' ? 'lightning' : 'archive',
+        auraStyle: resultType === 'dispute' || resultType === 'dossier' || resultType === 'question' ? 'electric' : 'archive',
+      }
+    default:
+      return null
+  }
+}
+
+function escapeAttributeValue(value: string): string {
+  return value.replace(/\\/g, '\\\\').replace(/"/g, '\\"')
+}
+
 function getResultKindLabel(kind: string): string {
   const labels: Record<string, string> = {
     unlock_evidence: '\uC0C8 \uC99D\uAC70',
     unlock_note: '\uC0C8 \uBC1C\uC5B8',
     unlock_question: '\uC0C8 \uC9C8\uBB38',
     unlock_dispute: '\uC0C8 \uC7C1\uC810',
+    unlock_witness_angle: '새 증인',
     unlock_statement: '\uC9C4\uC220 \uD574\uAE08',
     upgrade_evidence: '\uC99D\uAC70 \uAC15\uD654',
     upgrade_dispute: '\uC7C1\uC810 \uAC15\uD654',

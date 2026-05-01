@@ -43,6 +43,8 @@ const MIN_PROGRESSED_DISPUTES = 2
 /** 판결 가능 최소 major breakthrough 수 */
 const MIN_MAJOR_BREAKTHROUGHS = 1
 
+const MIN_EVIDENCE_PROGRESS = 1
+
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 // 공개 API
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -72,6 +74,7 @@ export function checkVerdictEligible(
   const score = calculateReadinessScore(state)
   const majorBreakthroughs = getMajorBreakthroughCount(state)
   const progressedDisputes = state.crackedDisputeCount + state.resolvedDisputeCount
+  const evidenceProgress = state.investigationSuccessCount + state.fullCollapseCount
 
   // 조기 종료 예외 체크
   if (turn >= EARLY_FINISH_MIN_TURNS && checkEarlyFinish(state)) {
@@ -83,6 +86,7 @@ export function checkVerdictEligible(
     turn >= MIN_TURNS_FOR_VERDICT &&
     score >= MIN_READINESS_SCORE &&
     progressedDisputes >= MIN_PROGRESSED_DISPUTES &&
+    evidenceProgress >= MIN_EVIDENCE_PROGRESS &&
     majorBreakthroughs >= MIN_MAJOR_BREAKTHROUGHS
   ) {
     return { eligible: true, reason: 'normal' }

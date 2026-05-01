@@ -4,6 +4,7 @@ import DialogueEntry from './DialogueEntry'
 import type { DialogueEntry as DialogueEntryType } from '../../types'
 import { handleContradictionPursue } from '../../hooks/useActionDispatch'
 import Emoji from '../common/Emoji'
+import { hasContradictionComparison } from '../../utils/contradiction'
 
 interface Props {
   onTestimonyClick?: () => void
@@ -14,7 +15,7 @@ type PendingContradiction = {
   meta: NonNullable<DialogueEntryType['contradictionMeta']>
 }
 
-const _usedContradictions = new Set<string>()
+const usedContradictions = new Set<string>()
 
 export default function DialogueLog({ onTestimonyClick }: Props) {
   const dialogueLog = useStore((s) => s.dialogueLog)
@@ -25,17 +26,16 @@ export default function DialogueLog({ onTestimonyClick }: Props) {
   const [, setContradictionVersion] = useState(0)
 
   useEffect(() => {
-    _usedContradictions.clear()
+    usedContradictions.clear()
   }, [caseData?.caseId])
 
   useEffect(() => {
-    if (dialogueLog.length === 0) {
-      _usedContradictions.clear()
-    }
+    if (dialogueLog.length === 0) usedContradictions.clear()
   }, [dialogueLog.length])
 
   const handleContradictionClick = (entryId: string, meta: NonNullable<DialogueEntryType['contradictionMeta']>) => {
-    if (_usedContradictions.has(entryId)) return
+    if (usedContradictions.has(entryId)) return
+    if (!hasContradictionComparison(meta)) return
     setPendingContradiction({ entryId, meta })
   }
 
@@ -43,7 +43,7 @@ export default function DialogueLog({ onTestimonyClick }: Props) {
     if (!pendingContradiction) return
     const { entryId, meta } = pendingContradiction
     const { party, disputeId, previousClaim, currentClaim } = meta
-    _usedContradictions.add(entryId)
+    usedContradictions.add(entryId)
     setContradictionVersion((value) => value + 1)
     setPendingContradiction(null)
     await handleContradictionPursue(party, disputeId, previousClaim, currentClaim)
@@ -69,66 +69,62 @@ export default function DialogueLog({ onTestimonyClick }: Props) {
             animate={i === dialogueLog.length - 1}
             onTestimonyClick={onTestimonyClick}
             onContradictionClick={handleContradictionClick}
-            contradictionUsed={_usedContradictions.has(entry.id)}
+            contradictionUsed={usedContradictions.has(entry.id)}
           />
         ))}
       </div>
 
       {isLLMLoading && (
         <div className={`flex items-center gap-2 my-2 px-3 py-2 ${llmTarget === 'b' ? 'justify-end' : ''}`}>
-          <div className="gavel-loading" style={{ fontSize: 16 }}>⚖️</div>
+          <div className="gavel-loading" style={{ fontSize: 16 }}>⚖</div>
           <span className="text-xs text-gray-500">응답 중...</span>
         </div>
       )}
 
-      {/* 모순 추궁 확인 팝업 */}
       {pendingContradiction && (
         <div className="fixed inset-0 z-50 bg-gray-950/85 flex items-center justify-center px-4" onClick={() => setPendingContradiction(null)}>
           <div className="bg-gray-900 border border-amber-700/50 rounded-2xl w-full max-w-md animate-scale-in shadow-2xl" onClick={(e) => e.stopPropagation()}>
-            {/* Header */}
             <div className="flex items-center gap-2 px-5 pt-5 pb-3 border-b border-gray-800">
               <Emoji char="⚡" size={20} />
               <h2 className="text-base font-bold text-amber-400">모순 추궁</h2>
             </div>
 
-            {/* 이전 vs 현재 주장 */}
             <div className="px-5 py-4 space-y-3">
               <p className="text-xs text-gray-400">
-                {npcName}의 진술에서 모순이 발견되었습니다.
+                {npcName}의 발언에서 바로 추궁할 수 있는 불일치가 발견되었습니다.
               </p>
 
               <div className="bg-gray-800/40 border border-gray-700/30 rounded-xl p-3">
-                <div className="text-[10px] text-gray-600 mb-1">이전 주장</div>
+                <div className="text-[10px] text-gray-500 mb-1">{pendingContradiction.meta.previousLabel ?? '이전 발언 A'}</div>
                 <p className="text-xs text-gray-400 leading-relaxed">"{pendingContradiction.meta.previousClaim}"</p>
               </div>
 
               <div className="flex justify-center">
-                <span className="text-xs text-amber-500 font-bold">↕ 모순</span>
+                <span className="text-xs text-amber-500 font-bold">비교</span>
               </div>
 
               <div className="bg-amber-950/30 border border-amber-800/30 rounded-xl p-3">
-                <div className="text-[10px] text-amber-600 mb-1">현재 주장</div>
+                <div className="text-[10px] text-amber-600 mb-1">{pendingContradiction.meta.currentLabel ?? '현재 발언 B'}</div>
                 <p className="text-xs text-amber-200 leading-relaxed">"{pendingContradiction.meta.currentClaim}"</p>
               </div>
 
               <p className="text-xs text-gray-500 leading-relaxed">
-                이 모순을 추궁하면 심리 방어가 흔들리고, 핵심 진실에 더 가까워질 수 있습니다.
+                {pendingContradiction.meta.reason ?? '두 내용이 같은 사실관계를 서로 다르게 설명하고 있어 추가 확인이 필요합니다.'}
               </p>
             </div>
 
-            {/* Actions */}
             <div className="px-5 pb-5 flex gap-2">
               <button
                 onClick={() => setPendingContradiction(null)}
                 className="flex-1 py-2.5 rounded-xl bg-gray-800 text-gray-400 text-sm font-medium active:scale-95 hover:bg-gray-700"
               >
-                넘어가기
+                보류
               </button>
               <button
                 onClick={handleConfirmPursue}
-                className="flex-1 py-2.5 rounded-xl bg-amber-600 text-gray-950 text-sm font-bold active:scale-95 hover:bg-amber-500 transition-all"
+                className="flex-[1.7] py-3 rounded-xl bg-amber-500 text-gray-950 text-sm font-black active:scale-95 hover:bg-amber-400 transition-all shadow-lg shadow-amber-900/30"
               >
-                모순 추궁하기
+                추궁하기
               </button>
             </div>
           </div>

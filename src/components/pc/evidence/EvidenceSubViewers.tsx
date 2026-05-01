@@ -19,9 +19,9 @@ export function ReceiptViewer({ sheets }: { sheets: ReceiptSheet[] }) {
   if (!sheet) return null
 
   return (
-    <div>
+    <div className="pc-receipt-viewer">
       {/* Header: page indicator */}
-      <div className="flex items-center justify-between mb-3">
+      <div className="pc-receipt-viewer__header flex items-center justify-between mb-3">
         <span className="text-xs font-semibold" style={{ color: '#8b8b9a' }}>
           영수증 {current + 1} / {sheets.length}
         </span>
@@ -43,7 +43,7 @@ export function ReceiptViewer({ sheets }: { sheets: ReceiptSheet[] }) {
 
       {/* Receipt paper */}
       <div
-        className="rounded-xl px-5 mb-3"
+        className="pc-receipt-paper rounded-xl px-5 mb-3"
         style={{
           background: sheet.suspicious ? 'rgba(224,96,96,0.04)' : 'rgba(255,255,255,0.02)',
           border: sheet.suspicious ? '1px solid rgba(224,96,96,0.15)' : '1px solid rgba(255,255,255,0.06)',
@@ -67,7 +67,7 @@ export function ReceiptViewer({ sheets }: { sheets: ReceiptSheet[] }) {
         <div className="mb-2" style={{ borderTop: '1px dashed rgba(255,255,255,0.1)' }} />
 
         {/* Items header */}
-        <div className="flex text-xs font-semibold mb-2 px-1" style={{ color: '#4e4e5c', paddingTop: 6, paddingBottom: 6 }}>
+        <div className="pc-receipt-header-row flex text-xs font-semibold mb-2 px-1" style={{ color: '#4e4e5c', paddingTop: 6, paddingBottom: 6 }}>
           <span className="flex-1">상품명</span>
           <span className="w-14 text-right">단가</span>
           <span className="w-8 text-center">수량</span>
@@ -76,7 +76,7 @@ export function ReceiptViewer({ sheets }: { sheets: ReceiptSheet[] }) {
 
         {/* Items */}
         {sheet.items.map((item, i) => (
-          <div key={i} className="flex text-sm px-1" style={{ color: '#8b8b9a', borderBottom: '1px solid rgba(255,255,255,0.03)', paddingTop: 12, paddingBottom: 12 }}>
+          <div key={i} className="pc-receipt-item-row flex text-sm px-1" style={{ color: '#8b8b9a', borderBottom: '1px solid rgba(255,255,255,0.03)', paddingTop: 12, paddingBottom: 12 }}>
             <div className="flex-1 min-w-0">
               <div className="truncate">{item.name}</div>
               {item.code ? <div className="text-xs" style={{ color: '#3a3a48' }}>{item.code}</div> : null}
@@ -91,13 +91,13 @@ export function ReceiptViewer({ sheets }: { sheets: ReceiptSheet[] }) {
         <div className="my-2" style={{ borderTop: '1px dashed rgba(255,255,255,0.1)' }} />
 
         {/* Totals */}
-        <div className="flex justify-between text-sm px-1" style={{ color: '#8b8b9a', paddingTop: 8, paddingBottom: 8 }}>
+        <div className="pc-receipt-total-row flex justify-between text-sm px-1" style={{ color: '#8b8b9a', paddingTop: 8, paddingBottom: 8 }}>
           <span>합계</span><span className="tabular-nums">{sheet.subtotal}</span>
         </div>
-        <div className="flex justify-between text-sm px-1" style={{ color: '#4e4e5c', paddingTop: 8, paddingBottom: 8 }}>
+        <div className="pc-receipt-total-row flex justify-between text-sm px-1" style={{ color: '#4e4e5c', paddingTop: 8, paddingBottom: 8 }}>
           <span>부가세</span><span className="tabular-nums">{sheet.tax}</span>
         </div>
-        <div className="flex justify-between text-sm font-bold px-1" style={{ color: '#dcdce0', paddingTop: 10, paddingBottom: 10 }}>
+        <div className="pc-receipt-total-row is-final flex justify-between text-sm font-bold px-1" style={{ color: '#dcdce0', paddingTop: 10, paddingBottom: 10 }}>
           <span>결제금액</span><span className="tabular-nums">{sheet.total}</span>
         </div>
 
@@ -111,7 +111,7 @@ export function ReceiptViewer({ sheets }: { sheets: ReceiptSheet[] }) {
       </div>
 
       {/* Prev/Next */}
-      <div className="flex justify-center gap-4">
+      <div className="pc-receipt-nav flex justify-center gap-4">
         <button
           className="text-sm px-4 py-2 rounded-lg transition-colors duration-150"
           style={{
@@ -287,40 +287,32 @@ export function BankViewer({ rows }: { rows: BankRow[] }) {
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 export function ChatViewer({ header, messages }: { header: string; messages: ChatMessage[] }) {
+  const contactLabel = resolveChatContactLabel(header, messages)
   return (
-    <div>
-      <div
-        className="text-center text-xs font-medium py-2 mb-3 rounded-lg"
-        style={{ background: 'rgba(212,162,78,0.06)', color: '#8b8b9a' }}
-      >
-        {header}
-      </div>
-      <div className="flex flex-col gap-2">
+    <div className="pc-phone-chat">
+      <div className="pc-phone-chat__shell">
+        <div className="pc-phone-chat__top">
+          <span className="pc-phone-chat__contact">{contactLabel}</span>
+        </div>
+        <div className="pc-phone-chat__messages">
         {messages.map((m, i) => {
           if (m.type === 'deleted') {
             return (
               <div
                 key={i}
-                className="text-center text-xs py-2 mx-4 rounded"
-                style={{
-                  color: '#4e4e5c',
-                  border: '1px dashed rgba(255,255,255,0.08)',
-                  background: 'rgba(255,255,255,0.015)',
-                }}
+                className="pc-phone-chat__system"
               >
                 {'... [' + m.text + '] ...'}
               </div>
             )
           }
 
-          if (m.type === 'read') {
+          if (m.type === 'read' || m.type === 'note') {
             return (
               <div
                 key={i}
-                className="flex items-center justify-center gap-1.5 text-xs py-1"
-                style={{ color: '#4e4e5c' }}
+                className="pc-phone-chat__system"
               >
-                <span style={{ fontSize: 10 }}>👁</span>
                 {m.text}
               </div>
             )
@@ -330,30 +322,27 @@ export function ChatViewer({ header, messages }: { header: string; messages: Cha
           return (
             <div
               key={i}
-              className={`max-w-[75%] px-3.5 py-2.5 rounded-xl text-sm leading-relaxed ${isLeft ? 'self-start' : 'self-end'}`}
-              style={{
-                background: isLeft
-                  ? 'rgba(91,141,239,0.08)'
-                  : 'rgba(224,96,96,0.08)',
-                border: isLeft
-                  ? '1px solid rgba(91,141,239,0.15)'
-                  : '1px solid rgba(224,96,96,0.15)',
-                color: '#dcdce0',
-              }}
+              className={`pc-phone-chat__bubble ${isLeft ? 'is-left' : 'is-right'}`}
             >
-              <div
-                className="text-xs font-semibold mb-0.5"
-                style={{ color: isLeft ? '#5b8def' : '#e06060' }}
-              >
-                {m.sender}
-              </div>
               {m.text}
             </div>
           )
         })}
+        </div>
       </div>
     </div>
   )
+}
+
+function resolveChatContactLabel(header: string, messages: ChatMessage[]): string {
+  const phoneMatch = header.match(/010-\*{4}-\d{4}/)
+  if (phoneMatch) return phoneMatch[0]
+  const messagePhone = messages
+    .map((message) => message.sender?.match(/010-\*{4}-\d{4}/)?.[0])
+    .find((value): value is string => Boolean(value))
+  if (messagePhone) return messagePhone
+  if (/발신자\s*미상/.test(header)) return '발신자 미상'
+  return '발신자 미상'
 }
 
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━

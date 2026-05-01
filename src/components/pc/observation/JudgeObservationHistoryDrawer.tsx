@@ -3,6 +3,7 @@ import { createPortal } from 'react-dom'
 import { useGameStore, useStore } from '../../../store/useGameStore'
 import PCSvgIcon from '../icons/PCSvgIcon'
 import type { JudgeObservation, JudgeObservationCategory } from '../../../store/slices/judgeObservationSlice'
+import type { JudgeNotebookCategory, JudgeNotebookEntry } from '../../../store/slices/judgeNotebookSlice'
 import { jumpToDialogue } from './JudgeObservationSection'
 
 const CATEGORY_ICON: Record<JudgeObservationCategory, string> = {
@@ -27,6 +28,29 @@ const FILTER_LABELS: Record<FilterKey, string> = {
 }
 
 const FILTER_ORDER: FilterKey[] = ['all', 'archetype', 'state', 'contradiction', 'slip', 'evidence', 'event']
+
+const NOTEBOOK_CATEGORY_ICON: Record<JudgeNotebookCategory, string> = {
+  confession: 'i-key',
+  critical_contradiction: 'i-bolt',
+  key_statement: 'i-flame',
+}
+
+type NotebookFilterKey = 'all' | JudgeNotebookCategory
+
+const NOTEBOOK_FILTER_LABELS: Record<NotebookFilterKey, string> = {
+  all: '전체',
+  confession: '자백',
+  critical_contradiction: '결정적 모순',
+  key_statement: '핵심 발화',
+}
+
+const NOTEBOOK_FILTER_ORDER: NotebookFilterKey[] = ['all', 'confession', 'critical_contradiction', 'key_statement']
+
+const NOTEBOOK_TO_OBSERVATION_CATEGORY: Record<JudgeNotebookCategory, JudgeObservationCategory> = {
+  confession: 'event',
+  critical_contradiction: 'contradiction',
+  key_statement: 'state',
+}
 
 export default function JudgeObservationHistoryDrawer() {
   const open = useStore((s) => s.observationHistoryOpen)
@@ -125,6 +149,7 @@ export default function JudgeObservationHistoryDrawer() {
             sorted.map((obs) => (
               <li
                 key={obs.id}
+                data-observation-id={obs.id}
                 className={`pc-jobs-drawer__item is-${obs.category}${obs.read ? '' : ' is-unread'}${obs.linkedDialogueId ? ' is-linked' : ''}`}
               >
                 <button
@@ -152,6 +177,142 @@ export default function JudgeObservationHistoryDrawer() {
             ))
           )}
         </ol>
+    </aside>,
+    document.body,
+  )
+}
+
+export function JudgeNotebookHistoryDrawer({
+  open,
+  onOpenChange,
+}: {
+  open: boolean
+  onOpenChange: (open: boolean) => void
+}) {
+  const entries = useStore((s) => s.notebookEntries ?? [])
+  const [filter, setFilter] = useState<NotebookFilterKey>('all')
+
+  useEffect(() => {
+    const handler = (e: Event) => {
+      const detail = (e as CustomEvent).detail
+      if (detail !== 'notebook-history') onOpenChange(false)
+    }
+    window.addEventListener('pc-drawer-open', handler)
+    return () => window.removeEventListener('pc-drawer-open', handler)
+  }, [onOpenChange])
+
+  const sorted = useMemo(() => {
+    const reversed = [...entries].reverse()
+    return filter === 'all' ? reversed : reversed.filter((entry) => entry.category === filter)
+  }, [entries, filter])
+
+  const categoryCounts = useMemo(() => {
+    const counts: Record<NotebookFilterKey, number> = {
+      all: entries.length,
+      confession: 0,
+      critical_contradiction: 0,
+      key_statement: 0,
+    }
+    for (const entry of entries) counts[entry.category] += 1
+    return counts
+  }, [entries])
+
+  const handleItemClick = (entry: JudgeNotebookEntry) => {
+    useGameStore.getState().markNotebookEntryRead(entry.id)
+    if (entry.linkedDialogueId) {
+      onOpenChange(false)
+      window.setTimeout(() => jumpToDialogue(entry.linkedDialogueId), 220)
+    }
+  }
+
+  const markAllRead = () => {
+    useGameStore.getState().markAllNotebookRead()
+  }
+
+  if (typeof document === 'undefined') return null
+
+  return createPortal(
+    <aside
+      className={`pc-jobs-drawer pc-jobs-drawer--notebook${open ? ' is-open' : ''}`}
+      role="dialog"
+      aria-label="재판관의 수첩 전체 기록"
+      aria-hidden={!open}
+    >
+      <header className="pc-jobs-drawer__header">
+        <div className="pc-jobs-drawer__title">
+          <PCSvgIcon id="i-doc" size={16} />
+          <span>재판관의 수첩 — 전체 기록</span>
+        </div>
+        <button
+          type="button"
+          className="pc-jobs-drawer__close"
+          onClick={() => onOpenChange(false)}
+          aria-label="닫기"
+        >
+          ✕
+        </button>
+      </header>
+
+      <div className="pc-jobs-drawer__filter-row">
+        {NOTEBOOK_FILTER_ORDER.map((key) => (
+          <button
+            key={key}
+            type="button"
+            className={`pc-jobs-drawer__filter${filter === key ? ' is-active' : ''}`}
+            onClick={() => setFilter(key)}
+          >
+            {NOTEBOOK_FILTER_LABELS[key]}
+            {categoryCounts[key] > 0 ? (
+              <span className="pc-jobs-drawer__filter-count">{categoryCounts[key]}</span>
+            ) : null}
+          </button>
+        ))}
+        <button
+          type="button"
+          className="pc-jobs-drawer__mark-all"
+          onClick={markAllRead}
+        >
+          모두 읽음
+        </button>
+      </div>
+
+      <ol className="pc-jobs-drawer__timeline">
+        {sorted.length === 0 ? (
+          <li className="pc-jobs-drawer__empty">해당 조건의 기록이 없습니다.</li>
+        ) : (
+          sorted.map((entry) => {
+            const obsCategory = NOTEBOOK_TO_OBSERVATION_CATEGORY[entry.category]
+            return (
+              <li
+                key={entry.id}
+                className={`pc-jobs-drawer__item is-${obsCategory}${entry.read ? '' : ' is-unread'}${entry.linkedDialogueId ? ' is-linked' : ''}`}
+              >
+                <button
+                  type="button"
+                  className="pc-jobs-drawer__item-btn"
+                  onClick={() => handleItemClick(entry)}
+                >
+                  <span className="pc-jobs-drawer__rail" aria-hidden="true">
+                    <span className="pc-jobs-drawer__dot">
+                      <PCSvgIcon id={entry.iconId ?? NOTEBOOK_CATEGORY_ICON[entry.category]} size={10} />
+                    </span>
+                  </span>
+                  <span className="pc-jobs-drawer__item-body">
+                    <span className="pc-jobs-drawer__item-meta">
+                      <span className="pc-jobs-drawer__item-turn">턴 {entry.turnCount}</span>
+                      <span className="pc-jobs-drawer__item-cat">{NOTEBOOK_FILTER_LABELS[entry.category]}</span>
+                    </span>
+                    <span className="pc-jobs-drawer__item-title">{entry.title}</span>
+                    {entry.summary ? (
+                      <span className="pc-jobs-drawer__item-summary">{entry.summary}</span>
+                    ) : null}
+                  </span>
+                </button>
+              </li>
+            )
+          })
+        )}
+      </ol>
     </aside>,
     document.body,
   )

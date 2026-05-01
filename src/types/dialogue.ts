@@ -1,5 +1,5 @@
 import type { PartyId } from './game'
-import type { LieState } from './agent'
+import type { EmotionalPhase, LieState } from './agent'
 
 export type Speaker = PartyId | 'system' | 'judge' | 'witness'
 
@@ -29,6 +29,13 @@ export interface DialogueEntry {
     previousClaim: string
     /** 현재(모순된) 주장 요약 */
     currentClaim: string
+    reason?: string
+    previousLabel?: string
+    currentLabel?: string
+  }
+  emotionSnapshot?: {
+    phase: EmotionalPhase
+    internalValue: number
   }
 }
 

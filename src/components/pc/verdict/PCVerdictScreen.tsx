@@ -9,9 +9,11 @@ import type { MediationScoreContext } from '../../../engine/mediationEffectEngin
 import { getSolutionOrientationByText } from '../../../data/solutionOrientations'
 import { deriveCaseProfile, applyDriftUpdate } from '../../../engine/judgeProfileEngine'
 import { generateVerdictSummary } from '../../../engine/verdictSummaryEngine'
+import { pp이가 } from '../../../engine/koreanPostposition'
 import { recordGameComplete } from '../../../hooks/useLocalStorage'
 import { useGameStore, useStore } from '../../../store/useGameStore'
 import { GamePhase } from '../../../types'
+import type { CaseData, LieState, VerdictInput } from '../../../types'
 import { recordHistory } from '../../layout/HistoryPanel'
 import CharacterFaceSvg from '../icons/CharacterFaceSvg'
 import PCCharacterPortrait from '../icons/PCCharacterPortrait'
@@ -22,12 +24,66 @@ import { CUTSCENE_DURATION, shouldTriggerCutscene } from '../../../engine/cutsce
 type VerdictStep = 'fact' | 'responsibility' | 'solution' | 'confirm'
 type FlatItem = { step: VerdictStep; subIdx: number }
 
+const LIE_STATE_RANK: Record<LieState, number> = { S0: 0, S1: 1, S2: 2, S3: 3, S4: 4, S5: 5 }
+const LIE_STATE_LABEL: Record<LieState, string> = {
+  S0: '방어',
+  S1: '동요',
+  S2: '변명',
+  S3: '궁지',
+  S4: '한계',
+  S5: '고백',
+}
+
 const STEPS: { id: VerdictStep; label: string }[] = [
   { id: 'fact', label: '01 쟁점 판단' },
   { id: 'responsibility', label: '02 안건 책임' },
   { id: 'solution', label: '03 해결안' },
   { id: 'confirm', label: '04 판결문' },
 ]
+
+function buildKeyMomentText(args: {
+  caseData: CaseData
+  verdictInput: VerdictInput
+  agentALieMap: Record<string, { currentState: LieState }>
+  agentBLieMap: Record<string, { currentState: LieState }>
+  keyEvidenceNames: string[]
+  avgPercentA: number
+}): string {
+  const { caseData, verdictInput, agentALieMap, agentBLieMap, keyEvidenceNames, avgPercentA } = args
+  const candidates = caseData.disputes.flatMap((dispute) => {
+    const aState = agentALieMap[dispute.id]?.currentState ?? 'S0'
+    const bState = agentBLieMap[dispute.id]?.currentState ?? 'S0'
+    return [
+      { partyName: caseData.duo.partyA.name, disputeName: dispute.name, state: aState, finding: verdictInput.factFindings[dispute.id] },
+      { partyName: caseData.duo.partyB.name, disputeName: dispute.name, state: bState, finding: verdictInput.factFindings[dispute.id] },
+    ]
+  }).sort((a, b) => LIE_STATE_RANK[b.state] - LIE_STATE_RANK[a.state])
+
+  const confession = candidates.find((item) => item.state === 'S5' && item.finding !== 'pending')
+  if (confession) {
+    return `${confession.partyName}${pp이가(confession.partyName)} "${confession.disputeName}" 쟁점과 관련해 감정이 격앙되며 자백했고, 그 진술이 책임 배분과 해결 방향을 확정하는 기준이 되었습니다.`
+  }
+
+  const pressured = candidates.find((item) => LIE_STATE_RANK[item.state] >= 3)
+  if (pressured) {
+    const statePhrase = pressured.state === 'S4'
+      ? '감정이 한계까지 밀리며 진술이 흔들린 점'
+      : '답변이 궁지에 몰리며 진술의 일관성이 흔들린 점'
+    return `${pressured.partyName}${pp이가(pressured.partyName)} "${pressured.disputeName}" 쟁점과 관련해 ${statePhrase}이 결정적이었습니다. 최종 자백까지 이르지는 않았기 때문에, 판결은 제출된 증거와 선택한 책임 비율을 함께 반영했습니다.`
+  }
+
+  if (keyEvidenceNames.length > 0) {
+    return `"${keyEvidenceNames[0]}" 등 제출된 증거가 각 주장 사이의 차이를 좁히는 기준이 되었습니다.`
+  }
+
+  if (avgPercentA >= 55) {
+    return `${caseData.duo.partyA.name}에게 더 큰 책임을 둔 책임 배분이 판결의 방향을 갈랐습니다.`
+  }
+  if (avgPercentA <= 45) {
+    return `${caseData.duo.partyB.name}에게 더 큰 책임을 둔 책임 배분이 판결의 방향을 갈랐습니다.`
+  }
+  return '양측의 책임을 비교적 균등하게 본 판단이 이번 판결의 핵심 기준이 되었습니다.'
+}
 
 function getRelLabel(type: string): string {
   const map: Record<string, string> = { spouse: '부부', family: '가족', friend: '친구', neighbor: '이웃', partnership: '동업', workplace: '직장', tenant_landlord: '세입자' }
@@ -337,6 +393,14 @@ export default function PCVerdictScreen() {
       selectedSolution: verdictInput.selectedSolutions.join(', ') || '미선택',
       keyEvidenceNames,
       keyTransition,
+      keyMomentText: buildKeyMomentText({
+        caseData,
+        verdictInput,
+        agentALieMap: state.agentA.lieStateMap,
+        agentBLieMap: state.agentB.lieStateMap,
+        keyEvidenceNames,
+        avgPercentA,
+      }),
       judgeTitle,
       totalTurns: turnCount,
       contradictionsFound: processMetrics.lieTransitions,

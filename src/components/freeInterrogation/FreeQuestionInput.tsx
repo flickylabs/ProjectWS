@@ -1,9 +1,8 @@
-import { useCallback, useMemo, useState, type RefObject } from 'react'
+import { useCallback, useState, type RefObject } from 'react'
 import type { CaseData, FreeInterrogationIntent, FreeInterrogationIntentId, PartyId } from '../../types'
 import { useActionDispatch } from '../../hooks/useActionDispatch'
 import { useGameStore, useStore } from '../../store/useGameStore'
 import {
-  getFreeInterrogationMode,
   isFreeInterrogationEnabled,
   resolveFreeInterrogation,
 } from '../../engine/freeInterrogation'
@@ -17,10 +16,13 @@ import {
 interface Props {
   target: PartyId | null
   activeDisputeId?: string | null
-  autoFocusRef?: RefObject<HTMLInputElement | null>
+  autoFocusRef?: RefObject<HTMLTextAreaElement | null>
   className?: string
   onDone?: () => void
 }
+
+const MIN_QUESTION_LENGTH = 5
+const MAX_QUESTION_LENGTH = 100
 
 export default function FreeQuestionInput({
   target,
@@ -35,19 +37,18 @@ export default function FreeQuestionInput({
   const caseData = useStore((s) => s.caseData)
   const currentPhase = useStore((s) => s.currentPhase)
   const resources = useStore((s) => s.resources)
-  const mode = getFreeInterrogationMode()
   const enabled = isFreeInterrogationEnabled()
 
-  const remaining = 100 - text.length
+  const remaining = MAX_QUESTION_LENGTH - text.length
   const trimmed = text.trim()
-  const canSubmit = enabled && !!caseData && !!target && trimmed.length >= 2 && remaining >= 0 && !busy
+  const canSubmit = enabled && !!caseData && !!target && trimmed.length >= MIN_QUESTION_LENGTH && remaining >= 0 && !busy
+  const showLengthHint = trimmed.length > 0 && trimmed.length < MIN_QUESTION_LENGTH
 
-  const metaText = useMemo(() => {
-    if (!enabled) return '비활성화됨'
-    if (!target) return '대상 선택 필요'
-    if (trimmed.length > 0 && trimmed.length < 2) return '2자 이상'
-    return mode === 'preview' ? 'Preview' : 'On'
-  }, [enabled, mode, target, trimmed.length])
+  const resizeTextarea = useCallback((el: HTMLTextAreaElement | null) => {
+    if (!el) return
+    el.style.height = 'auto'
+    el.style.height = `${Math.min(el.scrollHeight, 150)}px`
+  }, [])
 
   const submit = useCallback(async () => {
     if (!canSubmit || !caseData || !target) return
@@ -67,27 +68,48 @@ export default function FreeQuestionInput({
       })
 
       if (result.status === 'dispatch' && result.action) {
-        useGameStore.getState().spend('investigationTokens', 1)
+        const fresh = useGameStore.getState()
+        if (result.costPolicy !== 'no_cost' && !fresh.spend('investigationTokens', 1)) {
+          fresh.addDialogue({
+            speaker: 'system',
+            text: '조사권이 부족합니다. 공개 정보 확인은 가능하지만, 유효한 심문은 조사권 1개가 필요합니다.',
+            relatedDisputes: [],
+            turn: fresh.turnCount,
+          })
+          return
+        }
         dispatch(result.action)
         const cutscenePayload = buildAIReasoningCutscenePayload(trimmed, result.intent, caseData)
         if (cutscenePayload) {
           triggerAIReasoningCutscene(cutscenePayload)
         }
       } else {
-        const fallbackTarget = target
+        const fallbackSpeaker = result.dialogueSpeaker ?? result.fallbackSpeaker ?? target
         const related = result.intent.mapped.disputeId ? [result.intent.mapped.disputeId] : []
         const fresh = useGameStore.getState()
-        fresh.spend('investigationTokens', 1)
+        if (result.costPolicy !== 'no_cost' && !fresh.spend('investigationTokens', 1)) {
+          fresh.addDialogue({
+            speaker: 'system',
+            text: '조사권이 부족합니다. 공개 정보 확인은 가능하지만, 유효한 심문은 조사권 1개가 필요합니다.',
+            relatedDisputes: related,
+            turn: fresh.turnCount,
+          })
+          return
+        }
         fresh.addDialogue({ speaker: 'judge', text: trimmed, relatedDisputes: related, turn: fresh.turnCount })
         fresh.addDialogue({
-          speaker: fallbackTarget,
+          speaker: fallbackSpeaker,
           text: result.fallbackText ?? '재판관님, 그 질문에는 지금 답하기 어렵습니다.',
           relatedDisputes: related,
           turn: fresh.turnCount,
-          behaviorHint: '질문을 고르다 잠시 말을 아낀다.',
+          behaviorHint: fallbackSpeaker === 'judge' || fallbackSpeaker === 'system'
+            ? undefined
+            : '질문을 고르다 잠시 말을 아낀다.',
           source: 'fallback',
         })
-        fresh.incrementTurn()
+        if (result.turnPolicy !== 'no_advance') {
+          fresh.incrementTurn()
+        }
       }
 
       setText('')
@@ -107,33 +129,48 @@ export default function FreeQuestionInput({
         void submit()
       }}
     >
-      <div className="relative flex-1">
-        <input
+      <div className="pc-free-question-field relative flex-1">
+        {showLengthHint ? (
+          <span className="pc-free-question-requirement">5글자 이상 입력해주세요</span>
+        ) : null}
+        <textarea
           ref={autoFocusRef}
-          className="w-full rounded-lg border border-amber-700/40 bg-gray-950/70 px-3 py-2 pr-16 text-sm text-gray-100 outline-none transition focus:border-amber-500 disabled:opacity-60"
-          disabled={busy || resources.investigationTokens < 1}
-          maxLength={100}
-          onChange={(event) => setText(event.target.value.slice(0, 100))}
+          className="pc-free-question-textarea w-full rounded-lg border border-amber-700/40 bg-gray-950/70 px-3 py-2 pr-16 text-sm text-gray-100 outline-none transition focus:border-amber-500 disabled:opacity-60"
+          disabled={busy}
+          maxLength={MAX_QUESTION_LENGTH}
+          onChange={(event) => {
+            const el = event.currentTarget
+            setText(el.value.slice(0, MAX_QUESTION_LENGTH))
+            window.requestAnimationFrame(() => resizeTextarea(el))
+          }}
+          onKeyDown={(event) => {
+            if (event.key === 'Enter' && !event.shiftKey) {
+              event.preventDefault()
+              void submit()
+            }
+          }}
           placeholder="직접 질문을 입력하세요"
-          type="text"
+          rows={1}
           value={text}
         />
-        <span className={`absolute right-3 top-1/2 -translate-y-1/2 text-[11px] ${remaining < 10 ? 'text-amber-300' : 'text-gray-500'}`}>
+        <span className={`pc-free-question-count absolute right-3 top-1/2 -translate-y-1/2 text-[11px] ${remaining < 10 ? 'text-amber-300' : 'text-gray-500'}`}>
           {text.length}/100
         </span>
       </div>
       <button
-        className={`rounded-lg px-3 py-2 text-sm font-semibold transition ${
-          canSubmit && resources.investigationTokens >= 1
+        className={`pc-free-question-submit rounded-lg px-3 py-2 text-sm font-semibold transition ${
+          canSubmit
             ? 'bg-amber-500 text-gray-950 hover:bg-amber-400'
             : 'bg-gray-800 text-gray-500'
         }`}
-        disabled={!canSubmit || resources.investigationTokens < 1}
+        disabled={!canSubmit}
         type="submit"
       >
-        {busy ? '처리 중' : '질문'}
+        {busy ? '처리 중' : '보내기'}
       </button>
-      <span className="text-[11px] text-gray-500">{resources.investigationTokens < 1 ? '토큰 부족' : metaText}</span>
+      {resources.investigationTokens < 1 ? (
+        <span className="text-[11px] text-gray-500">심문 토큰 0</span>
+      ) : null}
     </form>
   )
 }
@@ -145,6 +182,9 @@ const INTENT_LABELS: Record<FreeInterrogationIntentId, string> = {
   evidence_query: '관련 증거 확인',
   relation_query: '관계 확인',
   pre_verdict_summary: '판결 전 정리',
+  off_topic: '사건 밖 질문',
+  public_info: '공개 정보',
+  leak_probe: '비공개 정보 차단',
   unmapped: '질문 분석',
 }
 

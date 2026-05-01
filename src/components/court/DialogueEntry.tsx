@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import type { DialogueEntry as DialogueEntryType } from '../../types'
 import { useStore } from '../../store/useGameStore'
 import Emoji, { replaceEmojisInText } from '../common/Emoji'
+import { hasContradictionComparison } from '../../utils/contradiction'
 
 interface Props {
   entry: DialogueEntryType
@@ -89,7 +90,7 @@ export default function DialogueEntry({
     }
 
     // 모순 감지 — 클릭하면 추궁 가능
-    if (entry.contradictionMeta && onContradictionClick) {
+    if (hasContradictionComparison(entry.contradictionMeta) && onContradictionClick) {
       return (
         <div className="flex justify-center my-2.5 animate-shake">
           <button
@@ -102,9 +103,9 @@ export default function DialogueEntry({
             }`}
           >
             <Emoji char="⚡" size={16} />
-            <span>{displayText.replace('— 탭하여 추궁', '').trim()}</span>
+            <span>{displayText.replace('— 추궁하기', '').trim()}</span>
             <span className={`text-[10px] ml-1 ${contradictionUsed ? 'text-gray-600' : 'text-amber-500/60'}`}>
-              {contradictionUsed ? '추궁 완료' : '탭하여 추궁'}
+              {contradictionUsed ? '추궁 완료' : '추궁하기'}
             </span>
           </button>
         </div>
@@ -181,7 +182,8 @@ export default function DialogueEntry({
   const align = isA ? 'items-start' : 'items-end'
 
   // 감정 기반 이모지
-  const emotionPhase = isA ? agentA?.emotionalState?.phase : isB ? agentB?.emotionalState?.phase : undefined
+  const emotionPhase = entry.emotionSnapshot?.phase
+    ?? (isA ? agentA?.emotionalState?.phase : isB ? agentB?.emotionalState?.phase : undefined)
   const avatar = getEmotionEmoji(entry.speaker, emotionPhase)
 
   // 감정 강도에 따른 말풍선 효과

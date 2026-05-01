@@ -20,12 +20,31 @@ const TIMELINE_COUNT = 7
 
 /** 메인 슬롯이 "신선"하게 유지되는 시간(ms). 경과 후 dim */
 const FRESH_MS = 4000
+const LOW_VALUE_OBSERVATION_TITLES = new Set(['단서 접근', '모순 단서', '방어 완화'])
+const IMPORTANT_EVENT_OBSERVATION_TITLES = new Set([
+  '새 증인 추가',
+  '쟁점 추가',
+  '결정적 질문 해금',
+  '질문 경로 추가',
+  '조정 힌트 추가',
+  '단서 기록 추가',
+  '진술 기록 추가',
+])
+
+function isImportantEventObservation(obs: JudgeObservation | null): boolean {
+  return !!obs && obs.category === 'event' && IMPORTANT_EVENT_OBSERVATION_TITLES.has(obs.title)
+}
 
 export default function JudgeObservationSection() {
-  const observations = useStore((s) => s.judgeObservations ?? [])
+  const rawObservations = useStore((s) => s.judgeObservations ?? [])
+  const observations = useMemo(
+    () => rawObservations.filter((obs) => !LOW_VALUE_OBSERVATION_TITLES.has(obs.title)),
+    [rawObservations],
+  )
   const turnCount = useStore((s) => s.turnCount)
   const setHistoryOpen = useStore((s) => s.setObservationHistoryOpen)
   const historyOpen = useStore((s) => s.observationHistoryOpen)
+  const confirmedSlipCount = useStore((s) => s.discovery.emotionalSlips.length)
 
   // 가장 최근 관찰 (내부 latest)
   const latest = useMemo<JudgeObservation | null>(() => {
@@ -55,6 +74,8 @@ export default function JudgeObservationSection() {
   const flashTimerRef = useRef<number | null>(null)
   useEffect(() => {
     if (observations.length === 0) return
+    if (latest?.category === 'slip') return
+    if (latest?.category === 'event' && !isImportantEventObservation(latest)) return
     setBadgeFlash(true)
     if (flashTimerRef.current !== null) {
       window.clearTimeout(flashTimerRef.current)
@@ -68,7 +89,7 @@ export default function JudgeObservationSection() {
         flashTimerRef.current = null
       }
     }
-  }, [observations.length])
+  }, [observations.length, latest?.category])
 
   // 카드 상태
   const [isFresh, setIsFresh] = useState<boolean>(false)
@@ -76,6 +97,10 @@ export default function JudgeObservationSection() {
 
   const processedIdRef = useRef<string | null>(null)
   const pulsedRef = useRef<Set<string>>(new Set())
+  const confirmedSlipCountRef = useRef<number>(confirmedSlipCount)
+  const confirmedSlipPulseRef = useRef<Set<string>>(new Set())
+  const confirmedSlipFlashActiveRef = useRef<boolean>(false)
+  const confirmedSlipTimersRef = useRef<number[]>([])
 
   useEffect(() => {
     if (!latest) return
@@ -94,13 +119,17 @@ export default function JudgeObservationSection() {
     // (핫바 슬롯 pulse와 속도 통일, 유저 체감 속도 완화)
     const flashMs = 2400
     // 이벤트 관찰도 micro 강조로 제한한다. 실제 번개 연결은 쟁점 unlock 같은 보상 순간에서만 발동.
-    const useMicroLink = latest.category === 'event'
+    const useMicroLink = false
 
     // Modal(actions 있는 Tier 3)이 떠 있으면 닫힐 때까지 대기 → 순차 진행
     const runArrive = () => {
       setDisplayedMainId(latest.id)   // 카드 교체 (즉시 등장 애니메이션)
-      setIsFresh(true)
-      setIsHeroFlash(true)
+      const importantEvent = isImportantEventObservation(latest)
+      setIsFresh(latest.category !== 'event' || importantEvent)
+      const flashMainImmediately = latest.category === 'contradiction' || latest.category === 'evidence' || importantEvent
+      if (flashMainImmediately || !confirmedSlipFlashActiveRef.current) {
+        setIsHeroFlash(flashMainImmediately)
+      }
 
       // 연결된 채팅 발언 pulse + (이벤트 카테고리일 때만 번개 연결 + 전기 테두리)
       const store = useGameStore.getState()
@@ -170,8 +199,14 @@ export default function JudgeObservationSection() {
       }
 
       // hero flash 종료 타이머 (arrive 실행 시점 기준)
-      window.setTimeout(() => setIsHeroFlash(false), flashMs)
-      window.setTimeout(() => setIsFresh(false), FRESH_MS)
+      if (flashMainImmediately) {
+        window.setTimeout(() => setIsHeroFlash(false), flashMs)
+      }
+      window.setTimeout(() => {
+        if (!confirmedSlipFlashActiveRef.current) {
+          setIsFresh(false)
+        }
+      }, FRESH_MS)
     }
 
     // Modal 닫힐 때까지 polling (250ms 간격)
@@ -196,6 +231,73 @@ export default function JudgeObservationSection() {
       window.clearTimeout(heroEndTimer)
     }
   }, [latest?.id])
+
+  useEffect(() => {
+    if (confirmedSlipCount <= confirmedSlipCountRef.current) {
+      confirmedSlipCountRef.current = confirmedSlipCount
+      return
+    }
+    confirmedSlipCountRef.current = confirmedSlipCount
+
+    const slip = [...observations].reverse().find((obs) => obs.category === 'slip')
+    if (!slip || confirmedSlipPulseRef.current.has(slip.id)) return
+    confirmedSlipPulseRef.current.add(slip.id)
+
+    const flashMs = 2400
+    setDisplayedMainId(slip.id)
+    setIsFresh(true)
+    confirmedSlipFlashActiveRef.current = true
+    setIsHeroFlash(true)
+    setBadgeFlash(true)
+
+    if (flashTimerRef.current !== null) {
+      window.clearTimeout(flashTimerRef.current)
+    }
+    flashTimerRef.current = window.setTimeout(() => {
+      setBadgeFlash(false)
+    }, 700)
+
+    if (typeof document !== 'undefined') {
+      let attempts = 0
+      const pulseDrawerRow = () => {
+        const safeSlipId =
+          typeof CSS !== 'undefined' && typeof CSS.escape === 'function'
+            ? CSS.escape(slip.id)
+            : slip.id
+        const row = document.querySelector<HTMLElement>(
+          `.pc-jobs-drawer.is-open .pc-jobs-drawer__item.is-slip[data-observation-id="${safeSlipId}"]`,
+        )
+        if (!row) {
+          attempts += 1
+          if (attempts <= 6) {
+            confirmedSlipTimersRef.current.push(window.setTimeout(pulseDrawerRow, 80))
+          }
+          return
+        }
+        row.classList.add('is-active', 'is-highlight')
+        confirmedSlipTimersRef.current.push(window.setTimeout(() => {
+          row.classList.remove('is-active', 'is-highlight')
+        }, flashMs))
+      }
+      window.requestAnimationFrame(pulseDrawerRow)
+    }
+
+    confirmedSlipTimersRef.current.push(window.setTimeout(() => {
+      confirmedSlipFlashActiveRef.current = false
+      setIsHeroFlash(false)
+    }, flashMs))
+    confirmedSlipTimersRef.current.push(window.setTimeout(() => setIsFresh(false), FRESH_MS))
+  }, [confirmedSlipCount, historyOpen, observations])
+
+  useEffect(() => {
+    return () => {
+      for (const timer of confirmedSlipTimersRef.current) {
+        window.clearTimeout(timer)
+      }
+      confirmedSlipFlashActiveRef.current = false
+      confirmedSlipTimersRef.current = []
+    }
+  }, [])
 
   const handleMainClick = () => {
     if (!main) return

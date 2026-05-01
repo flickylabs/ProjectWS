@@ -44,8 +44,20 @@ export const createDialogueSlice: StateCreator<DialogueSlice, [], [], DialogueSl
 
   addDialogue: (entry) => {
     const id = `dlg-${get().nextDialogueId}`
+    const fullState = get() as any
+    const agent = entry.speaker === 'a'
+      ? fullState.agentA
+      : entry.speaker === 'b'
+        ? fullState.agentB
+        : null
+    const emotionSnapshot = agent?.emotionalState
+      ? {
+          phase: agent.emotionalState.phase,
+          internalValue: agent.emotionalState.internalValue,
+        }
+      : undefined
     set((state) => ({
-      dialogueLog: [...state.dialogueLog, { ...entry, id }],
+      dialogueLog: [...state.dialogueLog, { ...entry, id, emotionSnapshot }],
       nextDialogueId: state.nextDialogueId + 1,
     }))
     // 조합용 statement 노드 동기화 — 당사자 발언에서만 매칭

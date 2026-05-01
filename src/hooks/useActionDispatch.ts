@@ -55,6 +55,7 @@ import { toTrustWindowBand } from '../types'
 import { getAllTransitionBeats } from '../engine/v3GameLoopLoader'
 import { selectHint, markHintShown, ARCHETYPE_META } from '../engine/archetypeHintEngine'
 import { getInterrogationMicroVfx } from '../engine/vfxHierarchyEngine'
+import { hasContradictionComparison } from '../utils/contradiction'
 
 /** LLM 모드 — AI 필수: 항상 true */
 const useLLMMode = true
@@ -77,6 +78,19 @@ const _contradictionTokens: Record<string, number> = {}
 const _empathyAttempts: Record<string, number> = {}
 
 const LIE_STATE_RANK_FOR_UNLOCK: Record<string, number> = { S0: 0, S1: 1, S2: 2, S3: 3, S4: 4, S5: 5 }
+
+const EMOTION_PHASE_LABELS: Record<string, string> = {
+  defensive: '방어',
+  confident: '자신감',
+  shaken: '동요',
+  angry: '격앙',
+  resigned: '체념',
+}
+
+function formatEmotionPhaseLabel(phase: string | undefined): string {
+  if (!phase) return '미확인'
+  return EMOTION_PHASE_LABELS[phase] ?? phase
+}
 
 function getEvidenceDisplayName(def: any, runtimeState?: { deepInvestigated?: boolean } | null): string {
   if (!def) return ''
@@ -240,8 +254,8 @@ async function handleEvidencePresent(action: Extract<PlayerAction, { type: 'evid
       ? state.caseData?.duo.partyA.name ?? '당사자'
       : state.caseData?.duo.partyB.name ?? '당사자'
     const otherName = action.target === 'a'
-      ? state.caseData?.duo.partyB.name ?? '상대방'
-      : state.caseData?.duo.partyA.name ?? '상대방'
+      ? state.caseData?.duo.partyB.name ?? '상대'
+      : state.caseData?.duo.partyA.name ?? '상대'
     state.addDialogue({
       speaker: 'system',
       text: `🔒 ${targetName}${pp이가(targetName)} 체념 상태입니다. ${lockoutUntil - state.turnCount}턴 후 증거를 제시할 수 있습니다. ${otherName}에게 증거를 제시하거나 다른 행동을 취해주세요.`,
@@ -766,8 +780,8 @@ async function handleQuestion(action: Extract<PlayerAction, { type: 'question' }
       : state.caseData?.duo.partyB.name ?? '당사자'
     // [Phase B] 우회 안내 강화 — 다른 당사자 / 다른 행동 명시
     const otherName = action.target === 'a'
-      ? state.caseData?.duo.partyB.name ?? '상대방'
-      : state.caseData?.duo.partyA.name ?? '상대방'
+      ? state.caseData?.duo.partyB.name ?? '상대'
+      : state.caseData?.duo.partyA.name ?? '상대'
     state.addDialogue({
       speaker: 'system',
       text: `🔒 ${targetName}${pp이가(targetName)} 체념 상태입니다. ${lockoutUntil - state.turnCount}턴 후 다시 질문할 수 있습니다. ${otherName}에게 질문하거나 다른 행동을 취해주세요.`,
@@ -1255,29 +1269,33 @@ async function handleQuestion(action: Extract<PlayerAction, { type: 'question' }
           const beatHint = 'behaviorHint' in beat ? beat.behaviorHint : ''
           const isTransitionLane = presentation.main.lane === 'transition'
 
-          state.addDialogue({
-            speaker: 'judge',
-            text: buildQuestionText(action.questionType, action.target, action.disputeId),
-            relatedDisputes: [action.disputeId],
-            turn: state.turnCount,
-          })
-
           if (isTransitionLane) {
             // transitionBeat.line은 3인칭 서술체 — 내레이션으로 처리 (당사자 말풍선 아님)
             if (beatLine) {
               state.addDialogue({
-                speaker: 'system',
+                speaker: action.target,
                 text: beatLine,
                 relatedDisputes: [action.disputeId],
                 turn: state.turnCount,
+                behaviorHint: beatHint,
               })
             }
-            if (beatHint) {
+            if (!beatLine && beatHint) {
               state.addDialogue({
-                speaker: 'system',
+                speaker: action.target,
                 text: beatHint,
                 relatedDisputes: [action.disputeId],
                 turn: state.turnCount,
+                source: 'fallback',
+              })
+            }
+            if (!beatLine && !beatHint) {
+              state.addDialogue({
+                speaker: action.target,
+                text: '지금은 그 부분을 바로 정리하기 어렵습니다. 질문의 범위를 좁혀 주십시오.',
+                relatedDisputes: [action.disputeId],
+                turn: state.turnCount,
+                source: 'fallback',
               })
             }
           } else {
@@ -1766,11 +1784,11 @@ function changeEmotionWithPhaseTracking(party: PartyId, delta: number) {
  */
 function discoverEvidenceFromQuestioning(party: PartyId, disputeId: string, questionType: QuestionType | 'contradiction_pursuit') {
   const state = useGameStore.getState()
-  if (!state.caseData) return
+  if (!state.caseData) return null
 
   // 단순 사실 추궁 반복은 증거 자동 발견 경로를 열지 않는다.
   // 명시적인 증거 조사/제시, 동기 탐색, 공감 접근, 모순 추궁만 별도 조건에서 진행한다.
-  if (questionType === 'fact_pursuit') return
+  if (questionType === 'fact_pursuit') return null
 
   const name = party === 'a' ? state.caseData.duo.partyA.name : state.caseData.duo.partyB.name
   const agent = party === 'a' ? state.agentA : state.agentB
@@ -1782,6 +1800,7 @@ function discoverEvidenceFromQuestioning(party: PartyId, disputeId: string, ques
     const rs = state.evidenceStates[e.id]
     if (!rs || rs.unlocked) return false
     if (!e.proves.includes(disputeId)) return false
+    if (e.subjectParty && e.subjectParty !== 'both' && e.subjectParty !== party) return false
     // requires 조건 체크: 선행 증거가 모두 해금되어야 함
     if (e.requires && e.requires.length > 0) {
       const allRequiresMet = e.requires.every(reqId => state.evidenceStates[reqId]?.unlocked)
@@ -1795,25 +1814,26 @@ function discoverEvidenceFromQuestioning(party: PartyId, disputeId: string, ques
     return true
   })
 
-  if (lockedRelated.length === 0) return
+  if (lockedRelated.length === 0) return null
 
   // 발견 확률: 거짓말 상태가 깊을수록 높음
   const chanceByState: Record<string, number> = {
     S0: 0.15, S1: 0.25, S2: 0.40, S3: 0.55, S4: 0.70, S5: 0.90,
   }
   const chance = chanceByState[lieEntry?.currentState ?? 'S0'] ?? 0.2
-  if (Math.random() > chance) return
+  if (Math.random() > chance) return null
 
   const ev = lockedRelated[0]
 
   // 미니게임 자동 트리거 차단 — 증거 즉시 해금 (유저 결정)
   // 사용되지 않는 값들이지만 향후 복원 가능성 고려해 주석으로 보존
   void lieEntry; void name; void dispute
-  actuallyDiscoverEvidence(ev.id)
+  actuallyDiscoverEvidence(ev.id, party)
+  return ev.id
 }
 
 /** 미니게임 성공 시 실제 증거 해금 — 5단 대화 연출 */
-export function actuallyDiscoverEvidence(evidenceId: string) {
+export function actuallyDiscoverEvidence(evidenceId: string, partyOverride?: PartyId) {
   const state = useGameStore.getState()
   if (!state.caseData) return
 
@@ -1822,7 +1842,7 @@ export function actuallyDiscoverEvidence(evidenceId: string) {
 
   const mg = state.pendingMinigame
   const lieState = mg?.lieState ?? 'S2'
-  const party = mg?.party ?? 'a'
+  const party = partyOverride ?? mg?.party ?? (ev.subjectParty === 'a' || ev.subjectParty === 'b' ? ev.subjectParty : 'a')
   const fallbackPartyName = party === 'a' ? state.caseData.duo.partyA.name : state.caseData.duo.partyB.name
   const name = mg?.npcName ?? fallbackPartyName
 
@@ -1900,14 +1920,14 @@ function getDiscoveryLines(
       confirm: `지금 거래 내역을 언급하셨습니다. 해당 금융 기록을 확인하겠습니다.`,
     },
     chat: {
-      probe: `${npcName} 씨, 당시 상대방과 연락을 주고받은 적이 있습니까.`,
+      probe: `${npcName} 씨, 당시 관련 인물과 연락을 주고받은 적이 있습니까.`,
       slip: `${ctx} 그때 주고받은 메시지가 있긴 한데…`,
       confirm: `메시지 기록이 있다고 하셨습니다. 해당 대화 내용을 확보하겠습니다.`,
     },
     cctv: {
       probe: `${npcName} 씨, 그 시간대에 정확히 어디에 계셨는지 다시 한번 말씀해 주십시오.`,
       slip: `${ctx} 그 시간에 거기 있었던 건 맞는데… 카메라가 있는 줄은…`,
-      confirm: `해당 장소에 있었다고 인정하셨습니다. 영상 기록을 확인하겠습니다.`,
+      confirm: `그 장소에 있었다고 인정하셨습니다. 영상 기록을 확인하겠습니다.`,
     },
     contract: {
       probe: `${npcName} 씨, 혹시 사전에 서로 합의하거나 약속한 부분이 있었습니까.`,
@@ -2004,11 +2024,11 @@ function emitInterrogationMicroVfx(
   if (!meta) return
 
   const state = useGameStore.getState()
-  const escape = typeof CSS !== 'undefined' && typeof CSS.escape === 'function' ? CSS.escape : (v: string) => v
-  const targetSelector = meta.tone === 'aura'
-    ? `[data-resonance-target="trust-${target}"]`
-    : `[data-dispute-id="${escape(disputeId)}"]`
-  state.enqueueAura({ targetSelector })
+  if (meta.tone === 'aura') {
+    state.enqueueAura({ targetSelector: `[data-resonance-target="trust-${target}"]` })
+  } else {
+    state.setLastFocusedDisputeId(disputeId)
+  }
 
   const partyName = target === 'a' ? state.caseData?.duo.partyA.name : state.caseData?.duo.partyB.name
   const disputeName = state.caseData?.disputes.find((item) => item.id === disputeId)?.name ?? disputeId
@@ -2025,7 +2045,7 @@ function emitInterrogationMicroVfx(
   })
 
   if (didTransition && meta.tone === 'reveal') {
-    state.enqueueAura({ targetSelector: `[data-dispute-id="${escape(disputeId)}"]` })
+    state.setLastFocusedDisputeId(disputeId)
   }
 }
 
@@ -2150,6 +2170,10 @@ function notifyLieTransition(party: PartyId, disputeId: string) {
     )
     if (prevClaims.length > 0) {
       const previousClaim = prevClaims[prevClaims.length - 1].summary
+      const latestTargetLine = [...state.dialogueLog]
+        .reverse()
+        .find((entry) => entry.speaker === party && entry.relatedDisputes?.includes(disputeId) && entry.text.trim().length > 0)
+      const currentClaim = latestTargetLine?.text ?? ''
 
       const transitionDesc: Record<string, string> = {
         'S0→S2': `말씀이 조금씩 달라지고 있습니다`,
@@ -2163,23 +2187,30 @@ function notifyLieTransition(party: PartyId, disputeId: string) {
       }
       const desc = transitionDesc[`${prevState}→${newState}`] ?? `처음 하신 말씀과 지금이 다릅니다`
 
-      v4Effects.contradiction(party, previousClaim, desc, disputeId, {
-        turn: state.turnCount,
-        caseId: state.caseData?.caseId,
-        phase: state.currentPhase,
-      })
-      state.addDialogue({
-        speaker: 'system',
-        text: `${name}의 진술에서 이전과 다른 점이 발견되었다 — 탭하여 추궁`,
-        relatedDisputes: [disputeId],
-        turn: state.turnCount,
-        contradictionMeta: {
-          party,
-          disputeId,
-          previousClaim,
-          currentClaim: desc,
-        },
-      })
+      const contradictionMeta = {
+        party,
+        disputeId,
+        previousClaim,
+        currentClaim: currentClaim || desc,
+        reason: '이전에는 부인하던 쟁점이 현재 설명에서는 일부 인정되거나 다른 맥락으로 바뀌었습니다.',
+        previousLabel: '이전 발언 A',
+        currentLabel: '현재 발언 B',
+      }
+
+      if (hasContradictionComparison(contradictionMeta)) {
+        v4Effects.contradiction(party, previousClaim, desc, disputeId, {
+          turn: state.turnCount,
+          caseId: state.caseData?.caseId,
+          phase: state.currentPhase,
+        })
+        state.addDialogue({
+          speaker: 'system',
+          text: `${name}의 진술에서 이전과 다른 점이 발견되었습니다. — 추궁하기`,
+          relatedDisputes: [disputeId],
+          turn: state.turnCount,
+          contradictionMeta,
+        })
+      }
     }
   }
 }
@@ -2441,7 +2472,7 @@ function buildTrustActionText(actionType: string, target: PartyId): string {
   const s = useGameStore.getState()
   const name = target === 'a' ? s.caseData?.duo.partyA.name : s.caseData?.duo.partyB.name
   const t: Record<string, string> = {
-    confidential_protection: `${name} 씨, 지금 하시는 말씀은 상대방에게 공개하지 않겠습니다.`,
+    confidential_protection: `${name} 씨, 지금 하시는 말씀은 다른 당사자에게 공개하지 않겠습니다.`,
     separation: `상대측은 발언을 중단해 주십시오.`,
   }
   return t[actionType] ?? ''
@@ -2484,6 +2515,12 @@ export async function handleContradictionPursue(
 
     const lieEntry = (party === 'a' ? state.agentA : state.agentB).lieStateMap[disputeId]
     const currentLieState = lieEntry?.currentState ?? 'S0'
+    const beforeEvidenceIds = new Set(
+      Object.entries(state.evidenceStates)
+        .filter(([, evState]) => evState?.unlocked)
+        .map(([id]) => id),
+    )
+    const beforeEmotion = (party === 'a' ? state.agentA : state.agentB).emotionalState
 
     // 사건별 스크립트 우선 → 일반 템플릿 폴백
     // target(party) 라우팅 — 추궁 대상에 따라 호명 정확
@@ -2546,10 +2583,38 @@ export async function handleContradictionPursue(
     }
 
     // 감정 상승 (모순 추궁은 압박이 강함)
-    changeEmotionWithPhaseTracking(party, 12)
+    changeEmotionWithPhaseTracking(party, 35)
 
     // Discovery 체크
     runDiscoveryChecks(party, disputeId)
+
+    const afterState = useGameStore.getState()
+    const afterAgent = party === 'a' ? afterState.agentA : afterState.agentB
+    const afterEmotion = afterAgent.emotionalState
+    const afterLieState = afterAgent.lieStateMap[disputeId]?.currentState ?? currentLieState
+    const unlockedEvidence = Object.entries(afterState.evidenceStates)
+      .filter(([id, evState]) => evState?.unlocked && !beforeEvidenceIds.has(id))
+      .map(([id]) => {
+        const evDef = afterState.evidenceDefinitions.find((ev) => ev.id === id)
+        return evDef ? getEvidenceDisplayName(evDef, afterState.evidenceStates[id]) : id
+      })
+    const outcomeParts: string[] = []
+    if (unlockedEvidence.length > 0) outcomeParts.push(`증거 해금: ${unlockedEvidence.join(', ')}`)
+    if (afterLieState !== currentLieState) outcomeParts.push(`쟁점 단계: ${currentLieState} -> ${afterLieState}`)
+    if (afterEmotion.phase !== beforeEmotion.phase || afterEmotion.internalValue !== beforeEmotion.internalValue) {
+      outcomeParts.push(`감정 변화: ${formatEmotionPhaseLabel(beforeEmotion.phase)} ${beforeEmotion.internalValue} → ${formatEmotionPhaseLabel(afterEmotion.phase)} ${afterEmotion.internalValue}`)
+    }
+    const currentLockout = afterState.emotionalLockoutUntil?.[party] ?? 0
+    if (afterEmotion.internalValue >= 65 && afterEmotion.internalValue < 85 && currentLockout <= afterState.turnCount) {
+      afterState.setEmotionalLockout(party, afterState.turnCount + 3)
+      outcomeParts.push('감정 셧다운 예고: 다음 2턴 동안 방어적으로 닫힐 수 있음')
+    }
+    afterState.addDialogue({
+      speaker: 'system',
+      text: `추궁 결과: ${outcomeParts.length > 0 ? outcomeParts.join(' / ') : '즉시 해금은 없지만 방어 반응이 흔들렸습니다.'}`,
+      relatedDisputes: [disputeId],
+      turn: afterState.turnCount,
+    })
 
     useGameStore.getState().incrementTurn()
   } finally {

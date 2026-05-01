@@ -12,6 +12,9 @@ export type FreeInterrogationIntent =
   | 'evidence_query'
   | 'relation_query'
   | 'pre_verdict_summary'
+  | 'off_topic'
+  | 'public_info'
+  | 'leak_probe'
   | 'unmapped'
 
 export type FreeInterrogationLieStateBucket =
@@ -36,6 +39,7 @@ export type FreeInterrogationGuardIssueDimension =
   | 'empty_response'
   | 'character_mismatch'
   | 'intent_mismatch'
+  | 'leak_probe'
   | 'unmapped_intent'
 
 export interface FreeInterrogationGuardContext {

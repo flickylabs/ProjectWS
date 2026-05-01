@@ -294,7 +294,10 @@ export function selectFreeInterrogationFallbackText(
 function isSafeContextFallbackReason(reason: string): boolean {
   return reason === 'unmapped_intent' ||
     reason === 'low_confidence_mapping' ||
-    reason === 'evidence_unavailable'
+    reason === 'evidence_unavailable' ||
+    reason === 'leak_probe' ||
+    reason === 'off_topic' ||
+    reason === 'public_info'
 }
 
 export function freeInterrogationFallback(

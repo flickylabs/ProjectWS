@@ -39,6 +39,7 @@ export interface VerdictSummaryInput {
   selectedSolution: string
   keyEvidenceNames: string[]
   keyTransition: { party: string; from: string; to: string } | null
+  keyMomentText?: string
   judgeTitle: string
   totalTurns: number
   contradictionsFound: number
@@ -60,7 +61,7 @@ export function generateVerdictSummary(input: VerdictSummaryInput): VerdictSumma
   const {
     caseName, partyAName, partyBName, percentA,
     selectedSolution, keyEvidenceNames, keyTransition,
-    judgeTitle, totalTurns, contradictionsFound,
+    judgeTitle, totalTurns, contradictionsFound, keyMomentText,
   } = input
   const percentB = 100 - percentA
 
@@ -93,8 +94,8 @@ export function generateVerdictSummary(input: VerdictSummaryInput): VerdictSumma
   }
 
   // 결정적 순간
-  let keyMoment = '특별한 전환점 없이 점진적으로 진행되었습니다.'
-  if (keyTransition) {
+  let keyMoment = keyMomentText?.trim() || '특별한 전환점 없이 점진적으로 진행되었습니다.'
+  if (!keyMomentText && keyTransition) {
     const fromLabel = LIE_STATE_LABELS[keyTransition.from] ?? keyTransition.from
     const toLabel = LIE_STATE_LABELS[keyTransition.to] ?? keyTransition.to
     keyMoment = `${keyTransition.party}${pp이가(keyTransition.party)} ${fromLabel}에서 ${toLabel}로 전환된 순간이 결정적이었습니다.`
@@ -103,7 +104,7 @@ export function generateVerdictSummary(input: VerdictSummaryInput): VerdictSumma
   const judgeStyle = `본 재판은 "${judgeTitle}" 성향의 재판관에 의해 진행되었습니다.`
 
   const evidenceText = keyEvidenceNames.length > 0
-    ? (() => { const last = keyEvidenceNames[keyEvidenceNames.length - 1]; return `결정적 증거로는 ${keyEvidenceNames.join(', ')}${pp이가(last)} 활용되었습니다.` })()
+    ? `결정적 증거로는 ${keyEvidenceNames.join(', ')} 등이 활용되었습니다.`
     : '특별히 결정적인 증거 없이 진술 분석 위주로 진행되었습니다.'
 
   const fullText = [

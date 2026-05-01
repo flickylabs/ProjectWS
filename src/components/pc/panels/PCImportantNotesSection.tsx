@@ -6,6 +6,7 @@ import { HOTBAR_DRAG_TYPE } from '../hotbar/pcHotbarConfig'
 import PCSvgIcon from '../icons/PCSvgIcon'
 import { openPcInteractionPanel } from '../layout/PCInteractionPanel'
 import { jumpToDialogue } from '../observation/JudgeObservationSection'
+import { hasContradictionComparison } from '../../../utils/contradiction'
 
 export const PC_ADD_COMBINATION_NOTE_EVENT = 'pc:add-combination-note'
 
@@ -27,6 +28,10 @@ export interface PcCombinationPanelEventDetail {
 
 interface VisibleNote extends PcPinnedNote {
   pinned: boolean
+}
+
+function getValidContradictionMeta(entry: Pick<DialogueEntry, 'contradictionMeta'> | Pick<PcPinnedNote, 'contradictionMeta'>) {
+  return hasContradictionComparison(entry.contradictionMeta) ? entry.contradictionMeta : undefined
 }
 
 const SPEAKER_COLORS: Record<string, string> = {
@@ -139,7 +144,7 @@ export default function PCImportantNotesSection() {
     return dialogueLog
       .filter(
         (entry) => !entry.isHidden
-          && (entry.autoPin || entry.contradictionMeta || entry.behaviorHint || entry.speaker === 'a' || entry.speaker === 'b' || entry.speaker === 'judge'),
+          && (entry.autoPin || getValidContradictionMeta(entry) || entry.behaviorHint || entry.speaker === 'a' || entry.speaker === 'b' || entry.speaker === 'judge'),
       )
       .slice(-30)
   }, [dialogueLog])
@@ -157,7 +162,7 @@ export default function PCImportantNotesSection() {
           turn: e.turn,
           relatedDisputes: e.relatedDisputes,
           behaviorHint: e.behaviorHint,
-          contradictionMeta: e.contradictionMeta,
+          contradictionMeta: getValidContradictionMeta(e),
         }))
       return newPins.length > 0 ? [...current, ...newPins] : current
     })
@@ -173,7 +178,7 @@ export default function PCImportantNotesSection() {
       turn: entry.turn,
       relatedDisputes: entry.relatedDisputes,
       behaviorHint: entry.behaviorHint,
-      contradictionMeta: entry.contradictionMeta,
+      contradictionMeta: getValidContradictionMeta(entry),
     }
   }, [])
 
@@ -495,6 +500,7 @@ function FavoriteCard({
   onDragOver: (e: DragEvent<HTMLDivElement>) => void; onDrop: (e: DragEvent<HTMLDivElement>) => void
 }) {
   const color = SPEAKER_COLORS[note.speaker] ?? '#787c8a'
+  const contradictionMeta = getValidContradictionMeta(note)
   const tag = disputeIndices.length > 0
     ? `T${note.turn} | S${disputeIndices.join(',')}`
     : `T${note.turn}`
@@ -508,7 +514,7 @@ function FavoriteCard({
 
   return (
     <div
-      className={`pc-note-card is-pinned is-speaker-${note.speaker}${dragging ? ' is-dragging' : ''}${reorderTarget ? ' is-reorder-target' : ''}${note.contradictionMeta ? ' is-contradiction' : ''}${isCombinable ? ' is-combinable' : ''}`}
+      className={`pc-note-card is-pinned is-speaker-${note.speaker}${dragging ? ' is-dragging' : ''}${reorderTarget ? ' is-reorder-target' : ''}${contradictionMeta ? ' is-contradiction' : ''}${isCombinable ? ' is-combinable' : ''}`}
       draggable
       onClick={(event) => { if (event.shiftKey) { onShiftClick(); return }; onClickNote() }}
       onDragEnd={onDragEnd}
@@ -533,7 +539,7 @@ function FavoriteCard({
           ) : null}
         </span>
       ) : null}
-      {note.contradictionMeta ? <span className="pc-note-card__flash">&#x26A1;</span> : null}
+      {contradictionMeta ? <span className="pc-note-card__flash">&#x26A1;</span> : null}
       <button className="pc-note-card__pin pc-note-card__unfav" onClick={(event) => { event.stopPropagation(); onRemove() }} title="즐겨찾기 해제" type="button">
         <StarIcon size={16} filled />
       </button>
@@ -550,11 +556,12 @@ function ExpandedNoteCard({
   onDragStart: (e: DragEvent<HTMLDivElement>) => void; onDragEnd: () => void
 }) {
   const color = SPEAKER_COLORS[note.speaker] ?? '#787c8a'
+  const contradictionMeta = getValidContradictionMeta(note)
   const tag = disputeIndices.length > 0 ? `S${disputeIndices.join(',')}` : null
 
   return (
     <div
-      className={`pc-note-expanded-card${isFav ? ' is-pinned' : ''}${note.contradictionMeta ? ' is-contradiction' : ''}`}
+      className={`pc-note-expanded-card${isFav ? ' is-pinned' : ''}${contradictionMeta ? ' is-contradiction' : ''}`}
       draggable
       onClick={onClickNote}
       onDragStart={onDragStart}
@@ -563,7 +570,7 @@ function ExpandedNoteCard({
       <div className="pc-note-expanded-card__head">
         <span className="pc-note-expanded-card__speaker" style={{ color }}>{speakerName}</span>
         {tag ? <span className="pc-note-expanded-card__disputes">{tag}</span> : null}
-        {note.contradictionMeta ? <span className="pc-note-expanded-card__flash">&#x26A1; 모순</span> : null}
+        {contradictionMeta ? <span className="pc-note-expanded-card__flash">&#x26A1; 모순</span> : null}
         <button className={`pc-note-expanded-card__pin${isFav ? ' is-fav' : ''}`} onClick={(event) => { event.stopPropagation(); onToggleFav() }} title={isFav ? '즐겨찾기 해제' : '즐겨찾기 추가'} type="button">
           <StarIcon size={14} filled={isFav} />
         </button>
@@ -581,9 +588,10 @@ function ExpandedNoteEntry({
   onClickNote: () => void; onToggleFav: () => void
   onDragStart: (e: DragEvent<HTMLDivElement>) => void; onDragEnd: () => void
 }) {
+  const contradictionMeta = getValidContradictionMeta(note)
   return (
     <div
-      className={`pc-notes-compare__entry${isFav ? ' is-pinned' : ''}${note.contradictionMeta ? ' is-contradiction' : ''}`}
+      className={`pc-notes-compare__entry${isFav ? ' is-pinned' : ''}${contradictionMeta ? ' is-contradiction' : ''}`}
       draggable
       onClick={onClickNote}
       onDragStart={onDragStart}
@@ -591,7 +599,7 @@ function ExpandedNoteEntry({
     >
       <span className="pc-notes-compare__turn">T{note.turn}</span>
       <span className="pc-notes-compare__text">{note.text}</span>
-      {note.contradictionMeta ? <span className="pc-notes-compare__flash">&#x26A1;</span> : null}
+      {contradictionMeta ? <span className="pc-notes-compare__flash">&#x26A1;</span> : null}
       <button className={`pc-notes-compare__pin${isFav ? ' is-fav' : ''}`} onClick={(event) => { event.stopPropagation(); onToggleFav() }} title={isFav ? '즐겨찾기 해제' : '즐겨찾기 추가'} type="button">
         <StarIcon size={12} filled={isFav} />
       </button>

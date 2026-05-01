@@ -48,7 +48,7 @@ Evidence entries should include:
 ```json
 {
   "evidenceId": "e-4",
-  "name": "형 문자 스레드",
+  "name": "발신자 미상 문자",
   "surfaceName": "발신자 미상 문자",
   "surfaceDescription": "safe description",
   "descriptionTruth": ["형", "조카 학교 알림"],
@@ -208,4 +208,3 @@ The policy JSON must not be imported from:
 - `src/engine/**`
 - `src/components/**`
 - `src/hooks/**`
-

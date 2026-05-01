@@ -13,6 +13,7 @@ export type CutsceneType =
 export type LightningReason =
   | 'free_interrogation_mapping'
   | 'evidence_combo_unlock'
+  | 'combination_result'
   | 'system_to_dispute'
   | 'pre_verdict_key_evidence'
   | 's5_collapse'
@@ -44,6 +45,7 @@ export interface InterrogationMicroVfx {
 const CUT_IN_COOLDOWN_TURNS = 5
 const EMOTIONAL_BURST_COOLDOWN_TURNS = 7
 const LIGHTNING_TARGET_COOLDOWN_TURNS = 5
+const COMBINATION_LIGHTNING_PER_TURN_LIMIT = 2
 const PHASE_CUTIN_WARN_THRESHOLD = 5
 const PHASE_TRANSITION_STRONG_LIMIT = 2
 const MAJOR_HARD_CAP_PER_CASE = 3
@@ -52,6 +54,7 @@ const MAJOR_CUTSCENES = new Set<CutsceneType>(['lie_collapse', 'verdict_gavel'])
 const ALLOWED_LIGHTNING_REASONS = new Set<LightningReason>([
   'free_interrogation_mapping',
   'evidence_combo_unlock',
+  'combination_result',
   'system_to_dispute',
   'pre_verdict_key_evidence',
   's5_collapse',
@@ -63,6 +66,7 @@ const phaseCutInCount = new Map<string, number>()
 const phaseWarned = new Set<string>()
 const phaseTransitionCountByCase = new Map<string, number>()
 const lightningTurnUsed = new Set<string>()
+const combinationLightningTurnCount = new Map<string, number>()
 const lastLightningTargetTurn = new Map<string, number>()
 const lightningWarned = new Set<string>()
 const majorWarned = new Set<string>()
@@ -152,7 +156,14 @@ export function shouldPlayLightning(req: LightningGateRequest): boolean {
   if (!ALLOWED_LIGHTNING_REASONS.has(reason)) return false
 
   const tKey = turnKey(req)
-  if (lightningTurnUsed.has(tKey)) return false
+  const combinationCount = reason === 'combination_result'
+    ? (combinationLightningTurnCount.get(tKey) ?? 0)
+    : 0
+  if (reason === 'combination_result') {
+    if (combinationCount >= COMBINATION_LIGHTNING_PER_TURN_LIMIT) return false
+  } else if (lightningTurnUsed.has(tKey)) {
+    return false
+  }
 
   const target = `${caseKey(req.caseId)}:${req.targetKey ?? req.toSelector}`
   const last = lastLightningTargetTurn.get(target)
@@ -165,21 +176,16 @@ export function shouldPlayLightning(req: LightningGateRequest): boolean {
     return false
   }
 
+  if (reason === 'combination_result') {
+    combinationLightningTurnCount.set(tKey, combinationCount + 1)
+  }
   lightningTurnUsed.add(tKey)
   lastLightningTargetTurn.set(target, req.turn)
   return true
 }
 
 export function getInterrogationMicroVfx(questionType: QuestionType): InterrogationMicroVfx | null {
-  if (questionType === 'fact_pursuit') {
-    return { label: '모순 생성', category: 'contradiction', iconId: 'i-bolt', tone: 'crack' }
-  }
-  if (questionType === 'empathy_approach') {
-    return { label: '방어 완화', category: 'slip', iconId: 'i-heart', tone: 'aura' }
-  }
-  if (questionType === 'motive_search') {
-    return { label: '숨은 쟁점 접근', category: 'event', iconId: 'i-eye', tone: 'reveal' }
-  }
+  void questionType
   return null
 }
 
@@ -191,6 +197,7 @@ export function getVfxHierarchyConstants() {
     phaseCutInWarnThreshold: PHASE_CUTIN_WARN_THRESHOLD,
     phaseTransitionStrongLimit: PHASE_TRANSITION_STRONG_LIMIT,
     majorHardCapPerCase: MAJOR_HARD_CAP_PER_CASE,
+    combinationLightningPerTurnLimit: COMBINATION_LIGHTNING_PER_TURN_LIMIT,
     allowedLightningReasons: Array.from(ALLOWED_LIGHTNING_REASONS),
   }
 }
@@ -202,6 +209,7 @@ export function resetVfxHierarchyState(): void {
   phaseWarned.clear()
   phaseTransitionCountByCase.clear()
   lightningTurnUsed.clear()
+  combinationLightningTurnCount.clear()
   lastLightningTargetTurn.clear()
   lightningWarned.clear()
   majorWarned.clear()

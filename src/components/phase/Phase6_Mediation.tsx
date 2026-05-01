@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { GamePhase, Phase } from '../../types'
+import { Phase } from '../../types'
 import { useGameStore, useStore } from '../../store/useGameStore'
 import { resolveLLMDialogue } from '../../engine/llmDialogueResolver'
 import { isLLMMode } from '../../hooks/useActionDispatch'
@@ -7,11 +7,16 @@ import { getScriptedMediation } from '../../engine/scriptedTextLoader'
 import { normalizeCaseKey } from '../../utils/caseHelpers'
 import { buildBridgeFromStore } from '../../engine/phase6ResultPromptV2'
 import { hasStructureV2 } from '../../engine/v2DataLoader'
-import { loadMediationScript } from '../../data/dialogues/mediationScriptLoader'
+import { loadMediationScript, type MediationScriptBundle } from '../../data/dialogues/mediationScriptLoader'
 import PCSvgIcon from '../pc/icons/PCSvgIcon'
 import type { PlayerAction } from '../../types'
 
 type MediationPath = 'immediate' | 'conditional' | 'postpone' | 'fact_first'
+
+type MediationScriptState = {
+  caseKey: string
+  bundle: MediationScriptBundle | null
+}
 
 const PATH_LABELS: Record<MediationPath, { label: string; iconId: string; desc: string; judge: string }> = {
   immediate: {
@@ -47,7 +52,25 @@ export default function Phase6_Mediation() {
   const caseData = useStore((s) => s.caseData)
   const addDialogue = useStore((s) => s.addDialogue)
   const turnCount = useStore((s) => s.turnCount)
-  const mediationScript = loadMediationScript(caseData?.caseId ?? '')
+  const [mediationScriptState, setMediationScriptState] = useState<MediationScriptState | null>(null)
+  const caseKey = normalizeCaseKey(caseData?.caseId ?? '')
+  const mediationScript = mediationScriptState?.caseKey === caseKey ? mediationScriptState.bundle : null
+
+  useEffect(() => {
+    let alive = true
+
+    if (!caseData?.caseId) return () => { alive = false }
+
+    loadMediationScript(caseData.caseId)
+      .then((bundle) => {
+        if (alive) setMediationScriptState({ caseKey: normalizeCaseKey(caseData.caseId), bundle })
+      })
+      .catch(() => {
+        if (alive) setMediationScriptState({ caseKey: normalizeCaseKey(caseData.caseId), bundle: null })
+      })
+
+    return () => { alive = false }
+  }, [caseData?.caseId])
 
   useEffect(() => {
     if (!caseData) return
@@ -71,14 +94,14 @@ export default function Phase6_Mediation() {
     setSelectedPath(path)
     useGameStore.getState().setMediationChoice(path)
 
-    const scriptedPath = mediationScript?.paths?.[path]
+    const scriptBundle = mediationScript ?? await loadMediationScript(caseData.caseId)
+    if (!mediationScript && scriptBundle) {
+      setMediationScriptState({ caseKey: normalizeCaseKey(caseData.caseId), bundle: scriptBundle })
+    }
+
+    const scriptedPath = scriptBundle?.paths?.[path]
     const judgeText = scriptedPath?.judge ?? PATH_LABELS[path].judge
     addDialogue({ speaker: 'judge', text: judgeText, relatedDisputes: [], turn: turnCount })
-
-    if (path === 'immediate') {
-      advancePhase(Phase.Verdict)
-      return
-    }
 
     if (scriptedPath?.dialogues?.length) {
       for (const line of scriptedPath.dialogues) {
@@ -90,6 +113,7 @@ export default function Phase6_Mediation() {
           behaviorHint: line.behaviorHint ?? undefined,
         })
       }
+      if (path === 'immediate') advancePhase(Phase.Verdict)
       return
     }
 
@@ -99,17 +123,22 @@ export default function Phase6_Mediation() {
       const mediationCaseKey = normalizeCaseKey(caseData.caseId ?? '')
       const resultClass = pathToChoice(path)
       const mediationAction: PlayerAction = { type: 'mediation', choice: resultClass }
+      let emittedResponse = false
 
       // A 응답: ScriptedText 우선 → LLM 폴백
       const scriptedA = getScriptedMediation(mediationCaseKey, 'a', resultClass)
       if (scriptedA) {
         store.addDialogue({ speaker: 'a', text: scriptedA.text, relatedDisputes: [], turn: store.turnCount, behaviorHint: scriptedA.behaviorHint })
+        emittedResponse = true
       } else if (isLLMMode()) {
         try {
           store.setLLMLoading(true, 'a')
           const resultA = await resolveLLMDialogue(mediationAction, store.agentA, store.agentB, store.evidenceStates, caseData)
           store.setLLMLoading(false)
-          if (resultA) store.addDialogue({ speaker: 'a', text: resultA.node.text, relatedDisputes: [], turn: store.turnCount, behaviorHint: resultA.node.behaviorHint })
+          if (resultA) {
+            store.addDialogue({ speaker: 'a', text: resultA.node.text, relatedDisputes: [], turn: store.turnCount, behaviorHint: resultA.node.behaviorHint })
+            emittedResponse = true
+          }
         } catch { store.setLLMLoading(false) }
       }
 
@@ -118,16 +147,30 @@ export default function Phase6_Mediation() {
       const scriptedB = getScriptedMediation(mediationCaseKey, 'b', resultClass)
       if (scriptedB) {
         freshStore.addDialogue({ speaker: 'b', text: scriptedB.text, relatedDisputes: [], turn: freshStore.turnCount, behaviorHint: scriptedB.behaviorHint })
+        emittedResponse = true
       } else if (isLLMMode()) {
         try {
           freshStore.setLLMLoading(true, 'b')
           const resultB = await resolveLLMDialogue(mediationAction, freshStore.agentA, freshStore.agentB, freshStore.evidenceStates, caseData)
           freshStore.setLLMLoading(false)
-          if (resultB) freshStore.addDialogue({ speaker: 'b', text: resultB.node.text, relatedDisputes: [], turn: freshStore.turnCount, behaviorHint: resultB.node.behaviorHint })
+          if (resultB) {
+            freshStore.addDialogue({ speaker: 'b', text: resultB.node.text, relatedDisputes: [], turn: freshStore.turnCount, behaviorHint: resultB.node.behaviorHint })
+            emittedResponse = true
+          }
         } catch { useGameStore.getState().setLLMLoading(false) }
       }
 
+      if (path === 'immediate' && !emittedResponse) {
+        useGameStore.getState().addDialogue({
+          speaker: 'system',
+          text: '즉시 판결 선택이 기록되었습니다. 조정 응답을 생략하고 판결 검토로 이동합니다.',
+          relatedDisputes: [],
+          turn: useGameStore.getState().turnCount,
+        })
+      }
+
       setLoading(false)
+      if (path === 'immediate') advancePhase(Phase.Verdict)
       return
     }
 
@@ -145,7 +188,8 @@ export default function Phase6_Mediation() {
         '해결책을 서두르기보다 사실을 먼저 정리하는 편이 공정합니다. 감정과 책임을 분리해 봐야 합니다.',
       ],
     }
-    const lines = (fallbacks as any)[path] ?? ['']
+    const fallbackPath = path as Exclude<MediationPath, 'immediate'>
+    const lines = fallbacks[fallbackPath] ?? ['']
     if (lines[0]) addDialogue({ speaker: 'a', text: lines[0], relatedDisputes: [], turn: turnCount })
     if (lines[1]) addDialogue({ speaker: 'b', text: lines[1], relatedDisputes: [], turn: turnCount })
   }

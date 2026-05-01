@@ -59,7 +59,7 @@ export default function PCBottomDock() {
   const [questionChoice, setQuestionChoice] = useState<{ type: QuestionType } | null>(null)
   const [evidenceChoice, setEvidenceChoice] = useState(false)
   const [freeQuestionOpen, setFreeQuestionOpen] = useState(false)
-  const freeQuestionRef = useRef<HTMLInputElement>(null)
+  const freeQuestionRef = useRef<HTMLTextAreaElement>(null)
   const [advanceDismissed, setAdvanceDismissed] = useState(false)
   const freeInterrogationEnabled = isFreeInterrogationEnabled()
 
@@ -210,7 +210,8 @@ export default function PCBottomDock() {
   // --- Keyboard shortcuts ---
   useEffect(() => {
     const onKeyDown = (event: KeyboardEvent) => {
-      if ((event.target as HTMLElement)?.tagName === 'INPUT') return
+      const targetTag = (event.target as HTMLElement)?.tagName
+      if (targetTag === 'INPUT' || targetTag === 'TEXTAREA') return
       // [기타2 픽스] LLM 응답 진행 중에는 단축키 무시 — 다중 액션 발사 방지
       if (isLLMLoading) {
         if (event.key === 'Escape') closeAll()
@@ -279,8 +280,8 @@ export default function PCBottomDock() {
               <span className="pc-question-choice__title">
                 {questionChoice.type === 'fact_pursuit' ? '모순에 집중하기' : questionChoice.type === 'motive_search' ? '숨겨진 쟁점찾기' : '자백 유도하기'}
               </span>
-              <button className="pc-question-choice__close" onClick={() => setQuestionChoice(null)} type="button">
-                <PCSvgIcon id="i-plus" size={14} />
+              <button className="pc-question-choice__close" onClick={() => setQuestionChoice(null)} type="button" aria-label="닫기">
+                &times;
               </button>
             </div>
             <div className="pc-question-choice__disputes">
@@ -303,8 +304,8 @@ export default function PCBottomDock() {
             <div className="pc-question-choice__header">
               <PCSvgIcon id="i-chat" size={18} />
               <span className="pc-question-choice__title">자유 질문</span>
-              <button className="pc-question-choice__close" onClick={() => setFreeQuestionOpen(false)} type="button">
-                <PCSvgIcon id="i-plus" size={14} />
+              <button className="pc-question-choice__close" onClick={() => setFreeQuestionOpen(false)} type="button" aria-label="닫기">
+                &times;
               </button>
             </div>
             <div className="pc-question-choice__disputes">
@@ -329,8 +330,8 @@ export default function PCBottomDock() {
             <div className="pc-question-choice__header">
               <PCSvgIcon id="i-doc" size={18} />
               <span className="pc-question-choice__title">증거 제시</span>
-              <button className="pc-question-choice__close" onClick={() => setEvidenceChoice(false)} type="button">
-                <PCSvgIcon id="i-plus" size={14} />
+              <button className="pc-question-choice__close" onClick={() => setEvidenceChoice(false)} type="button" aria-label="닫기">
+                &times;
               </button>
             </div>
             <div className="pc-question-choice__disputes">
@@ -380,7 +381,7 @@ export default function PCBottomDock() {
                   <kbd>W</kbd><PCSvgIcon id="i-shield" size={13} /><span>비공개 보호</span>
                 </button>
                 <button className="hotbar-special-btn" onClick={() => openSpecialAction('immediate')} title="즉답 요구 (E)" type="button">
-                  <kbd>E</kbd><PCSvgIcon id="i-bolt" size={13} /><span>즉답 요구</span>
+                  <kbd>E</kbd><PCSvgIcon id="i-gavel" size={13} /><span>즉답 요구</span>
                 </button>
               </div>
             </div>

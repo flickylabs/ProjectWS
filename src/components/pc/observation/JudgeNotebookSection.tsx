@@ -1,9 +1,9 @@
 import { useMemo, useState, useEffect, useRef } from 'react'
 import { useStore } from '../../../store/useGameStore'
 import PCSvgIcon from '../icons/PCSvgIcon'
-import { showToast } from '../../common/Toast'
 import { openPcInteractionPanel } from '../layout/PCInteractionPanel'
 import { jumpToDialogue } from './JudgeObservationSection'
+import { JudgeNotebookHistoryDrawer } from './JudgeObservationHistoryDrawer'
 import type { JudgeNotebookEntry, JudgeNotebookCategory } from '../../../store/slices/judgeNotebookSlice'
 
 const CATEGORY_ICON: Record<JudgeNotebookCategory, string> = {
@@ -40,6 +40,7 @@ export default function JudgeNotebookSection() {
   const turnCount = useStore((s) => s.turnCount)
   const markEntryRead = useStore((s) => s.markNotebookEntryRead)
   const [badgeFlash, setBadgeFlash] = useState(false)
+  const [historyOpen, setHistoryOpen] = useState(false)
   const prevCountRef = useRef(entries.length)
 
   // 신규 entry 들어오면 배지 펄스
@@ -52,6 +53,15 @@ export default function JudgeNotebookSection() {
     }
     prevCountRef.current = entries.length
   }, [entries.length])
+
+  useEffect(() => {
+    const handler = (e: Event) => {
+      const detail = (e as CustomEvent).detail
+      if (detail !== 'notebook-history') setHistoryOpen(false)
+    }
+    window.addEventListener('pc-drawer-open', handler)
+    return () => window.removeEventListener('pc-drawer-open', handler)
+  }, [])
 
   // 메인 슬롯 = 가장 최근 entry
   const main = entries.length > 0 ? entries[entries.length - 1] : null
@@ -94,15 +104,21 @@ export default function JudgeNotebookSection() {
     }
   }
 
-  const openHelpToast = () => {
-    showToast('자백·결정적 모순·핵심 발화 등 게임에 영향을 주는 결정적 사건이 자동 기록됩니다.', 'info')
+  const toggleHistory = () => {
+    const nextOpen = !historyOpen
+    if (nextOpen) {
+      window.dispatchEvent(new CustomEvent('pc-drawer-open', { detail: 'notebook-history' }))
+    }
+    setHistoryOpen(nextOpen)
   }
 
   const isFresh = main ? turnCount - main.turnCount <= 1 : false
 
   return (
+    <>
     <section
       className="sec pc-judge-observation-section pc-judge-observation-section--notebook"
+      data-resonance-target="judge-notebook"
       aria-label="재판관의 수첩"
     >
       <div className="sec-h">
@@ -115,12 +131,13 @@ export default function JudgeNotebookSection() {
         ) : null}
         <button
           type="button"
-          className="pc-jobs-history-btn"
-          onClick={openHelpToast}
-          title="수첩 도움말"
-          aria-label="수첩 도움말"
+          className={`pc-jobs-history-btn${historyOpen ? ' is-open' : ''}`}
+          onClick={toggleHistory}
+          title={historyOpen ? '수첩 히스토리 닫기' : '수첩 히스토리 열기'}
+          aria-label="수첩 히스토리 열기"
+          aria-pressed={historyOpen}
         >
-          <PCSvgIcon id="i-bulb" size={12} />
+          <PCSvgIcon id="i-doc" size={12} />
         </button>
       </div>
 
@@ -176,6 +193,8 @@ export default function JudgeNotebookSection() {
         </div>
       )}
     </section>
+    <JudgeNotebookHistoryDrawer open={historyOpen} onOpenChange={setHistoryOpen} />
+    </>
   )
 }
 

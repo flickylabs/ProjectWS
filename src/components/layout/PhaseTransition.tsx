@@ -45,7 +45,7 @@ const PHASE_BGM: Partial<Record<GamePhase, string>> = {
   [Phase.Result]: '/bgm/result.mp3',
 }
 
-const CUTSCENE_DURATION_MS = 2300
+const CUTSCENE_DURATION_MS = 1650
 
 export default function PhaseTransition() {
   const currentPhase = useStore((s) => s.currentPhase)

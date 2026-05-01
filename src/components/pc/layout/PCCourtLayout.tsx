@@ -38,6 +38,19 @@ const PHASE_LABELS: Record<string, string> = {
   [GamePhase.Phase5_ReExamination]: '심문',
 }
 
+type CombinationOverlayResultType =
+  | 'dispute'
+  | 'upgrade'
+  | 'dossier'
+  | 'witness'
+  | 'evidence'
+  | 'question'
+  | 'note'
+  | 'statement'
+  | 'mediation'
+  | 'reliability'
+  | 'context'
+
 function getPhaseNumber(phase: GamePhase): string {
   const DISPLAY_NUMBERS: Record<string, string> = {
     [Phase.Briefing]: '0',
@@ -59,18 +72,19 @@ interface CombinationOverlayState {
   inputs: Array<{ label: string; iconId: string }>
   outputLabel: string
   outputSummary: string
+  resultType?: CombinationOverlayResultType
 }
 
 interface PcCombinationSuccessDetail {
   inputs?: Array<{ label: string; type?: string }>
   outputLabel?: string
   outputSummary?: string
-  resultType?: 'dispute' | 'upgrade' | 'dossier'
+  resultType?: CombinationOverlayResultType
   resultTitle?: string
 }
 
 interface V4CombineSuccessDetail {
-  resultType: 'dispute' | 'upgrade' | 'dossier'
+  resultType: CombinationOverlayResultType
   resultTitle: string
 }
 
@@ -135,6 +149,7 @@ export default function PCCourtLayout({ actionPanel, onDialogueTap, isDialoguePh
         inputs,
         outputLabel,
         outputSummary,
+        resultType: detail.resultType,
       })
 
       if (combinationTimerRef.current) window.clearTimeout(combinationTimerRef.current)
@@ -435,8 +450,8 @@ export default function PCCourtLayout({ actionPanel, onDialogueTap, isDialoguePh
       <MiniGameOverlay />
       <PCSettingsPanel open={settingsOpen} onClose={() => setSettingsOpen(false)} />
       {combinationOverlay ? (
-        <div className="pc-combination-success" key={combinationOverlay.id}>
-          <div className="pc-combination-success__card">
+        <div className={`pc-combination-success is-${combinationOverlay.resultType ?? 'upgrade'}`} key={combinationOverlay.id}>
+          <div className="pc-combination-success__card" data-resonance-target="combination-success">
             <div className="pc-combination-success__eyebrow">조합 성공</div>
             <div className="pc-combination-success__flow">
               {combinationOverlay.inputs.length > 0 ? combinationOverlay.inputs.map((input, index) => (
@@ -457,7 +472,7 @@ export default function PCCourtLayout({ actionPanel, onDialogueTap, isDialoguePh
               <span className="pc-combination-success__arrow">→</span>
               <div className="pc-combination-success__result">
                 <span className="pc-combination-success__icon is-result">
-                  <PCSvgIcon id="i-bolt" size={18} />
+                  <PCSvgIcon id={getCombinationResultIconId(combinationOverlay.resultType)} size={18} />
                 </span>
                 <span className="pc-combination-success__name is-result">{combinationOverlay.outputLabel}</span>
               </div>
@@ -509,14 +524,52 @@ function getCombinationIconId(type?: string): string {
   }
 }
 
-function getCombinationSummary(resultType?: 'dispute' | 'upgrade' | 'dossier'): string {
+function getCombinationSummary(resultType?: CombinationOverlayResultType): string {
   if (resultType === 'dossier') {
     return '결정적 질문으로 이어지는 조합이 완성됐습니다.'
+  }
+  if (resultType === 'witness') {
+    return '새 증인이 소환 가능해졌습니다.'
+  }
+  if (resultType === 'evidence') {
+    return '새 증거가 기록에 추가됐습니다.'
+  }
+  if (resultType === 'question') {
+    return '새 질문 경로가 열렸습니다.'
+  }
+  if (resultType === 'note') {
+    return '새 단서 기록이 추가됐습니다.'
+  }
+  if (resultType === 'statement') {
+    return '새 진술이 기록에 추가됐습니다.'
+  }
+  if (resultType === 'mediation') {
+    return '조정에 쓸 수 있는 힌트가 추가됐습니다.'
+  }
+  if (resultType === 'reliability') {
+    return '기존 증거의 신뢰도가 강화됐습니다.'
+  }
+  if (resultType === 'context') {
+    return '사건 맥락이 더 구체화됐습니다.'
   }
   if (resultType === 'dispute') {
     return '새로운 쟁점이 드러났습니다.'
   }
   return '기존 정보가 더 강한 형태로 정리됐습니다.'
+}
+
+function getCombinationResultIconId(resultType?: CombinationOverlayResultType): string {
+  if (resultType === 'witness') return 'i-eye'
+  if (resultType === 'evidence') return 'i-doc'
+  if (resultType === 'question') return 'i-gavel'
+  if (resultType === 'note') return 'i-chat'
+  if (resultType === 'statement') return 'i-chat'
+  if (resultType === 'mediation') return 'i-heart'
+  if (resultType === 'reliability') return 'i-link'
+  if (resultType === 'context') return 'i-link'
+  if (resultType === 'dossier') return 'i-gavel'
+  if (resultType === 'dispute') return 'i-scale'
+  return 'i-link'
 }
 
 function getCourtControlLabel(action?: 'separation' | 'confidential_protection' | 'immediate_answer'): string {

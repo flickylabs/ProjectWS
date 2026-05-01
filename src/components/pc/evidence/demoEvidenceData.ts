@@ -34,7 +34,7 @@ export interface ChatMessage {
   side?: 'left' | 'right'
   sender?: string
   text: string
-  type?: 'deleted' | 'read'
+  type?: 'deleted' | 'read' | 'note'
 }
 
 // ── Contract ──

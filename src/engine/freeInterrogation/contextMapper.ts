@@ -14,6 +14,9 @@ const INTENT_TO_QUESTION_TYPE: Record<FreeInterrogationIntentId, FreeInterrogati
   evidence_query: 'fact_pursuit',
   relation_query: 'motive_search',
   pre_verdict_summary: 'fact_pursuit',
+  off_topic: null,
+  public_info: null,
+  leak_probe: null,
   unmapped: null,
 }
 

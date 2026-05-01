@@ -33,6 +33,12 @@ const EMPTY_DISCOVERY: DiscoveryState = {
   pendingSlip: null,
 }
 
+function getEmotionalSlipKey(slip: EmotionalSlipEvent): string {
+  return `${slip.party}:${slip.sourceDisputeId}:${slip.turn}`
+}
+
+const surfacedEmotionalSlipKeys = new Set<string>()
+
 export interface DiscoverySlice {
   discovery: DiscoveryState
 
@@ -89,6 +95,7 @@ export const createDiscoverySlice: StateCreator<DiscoverySlice, [], [], Discover
 
   // ── 초기화 ──
   initDiscovery: (caseData) => {
+    surfacedEmotionalSlipKeys.clear()
     set({ discovery: createInitialDiscoveryState(caseData) })
   },
 
@@ -275,13 +282,20 @@ export const createDiscoverySlice: StateCreator<DiscoverySlice, [], [], Discover
     set((prev) => ({
       discovery: {
         ...prev.discovery,
-        emotionalSlips: [...prev.discovery.emotionalSlips, slip],
+        emotionalSlips: prev.discovery.emotionalSlips.some((item) => getEmotionalSlipKey(item) === getEmotionalSlipKey(slip))
+          ? prev.discovery.emotionalSlips
+          : [...prev.discovery.emotionalSlips, slip],
         pendingSlip: null,
       },
     }))
   },
 
   setPendingSlip: (slip) => {
+    if (slip) {
+      const key = getEmotionalSlipKey(slip)
+      if (surfacedEmotionalSlipKeys.has(key)) return
+      surfacedEmotionalSlipKeys.add(key)
+    }
     set((prev) => ({
       discovery: { ...prev.discovery, pendingSlip: slip },
     }))

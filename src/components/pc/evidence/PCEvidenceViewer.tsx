@@ -55,7 +55,7 @@ export default function PCEvidenceViewer() {
   if (!pendingEvidenceView || !evidence) return null
 
   const state = evidenceStates[evidence.id]
-  const displayName = state?.deepInvestigated ? evidence.name : (evidence.surfaceName ?? evidence.name)
+  const displayName = evidence.surfaceName ?? evidence.name
   const currentStage = state?.investigatedActions?.length ?? 0
   // 원본 JSON의 viewerData를 항상 우선 사용 (sessionStorage 캐시가 오래된 구조일 수 있음)
   const baseViewerData = getOriginalViewerData(caseData!.caseId, evidence.id) ?? evidence.viewerData

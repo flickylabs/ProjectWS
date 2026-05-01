@@ -25,7 +25,7 @@ This file records draft findings for `src/data/disclosurePolicy/spouse-01.json`.
 | e-1 | 영수증 묶음 (5장) | 영수증 묶음 5장 | OK. Later summaries contain `조카` truth terms and must be stage-gated. |
 | e-2 | 블랙박스 GPS / 네비 즐겨찾기 | 블랙박스 GPS 기록 | OK. Later summaries contain `형네` truth terms and must be stage-gated. |
 | e-3 | 통화기록 | 통화기록 | OK. Later summaries contain `형과의 통화` truth terms and must be stage-gated. |
-| e-4 | 형 문자 스레드 | 발신자 미상 문자 | Surface split exists. UI must display `surfaceName`, not `name`, before gate. |
+| e-4 | 발신자 미상 문자 | 발신자 미상 문자 | UI must display `surfaceName` consistently. |
 | e-5 | 이준호의 개인 계좌 출금 내역 | 개인 계좌 출금 내역 | OK. Purpose terms involving `형` must be gated. |
 | e-6 | 투자방 카톡 + 송금 기록 | 투자방 카톡 기록 | OK. `투자 사기` terms must be gated. |
 | e-7 | 공동 적금 해지 서류 | 공동 적금 해지 서류 | OK. `위임장 조작` terms must be gated. |
@@ -47,12 +47,12 @@ These fields contain truth lexemes and are candidates for P7 protection. This is
 
 | Source field | Source text | Risk | Draft policy |
 |---|---|---|---|
-| `combinationLab.nodes.e-4.label` | `e-4 형 문자 + 조카 학교 알림` | High if rendered before gate | Replace with `e-4 발신자 미상 문자`. |
+| `combinationLab.nodes.e-4.label` | `e-4 발신자 미상 문자` | Low | Keep surface label. |
 | `combinationLab.nodes.e-5.label` | `e-5 공동 적금 해지 + 형 계좌 이체` | High if rendered before gate | Replace with `e-5 개인 계좌 출금 내역`. |
 | `combinationLab.outputs.dc-1.summary` | `외도 오해를 형네 돌봄으로 뒤집는 카드` | High if rendered as dossier summary | Abstract to `외도 오해를 다른 동선으로 재검토하는 카드`. |
-| `combinationLab.outputs.dc-2.judgeHint` | `형 문자(e-4)` | High in judge/dossier UI | Use `해당 문자 기록(e-4)`. |
+| `combinationLab.outputs.dc-2.judgeHint` | `발신자 미상 문자(e-4)` | Low | Keep surface label. |
 | `combinationLab.outputs.dc-4.judgeHint` | `이준호 씨 형의 상황` | High in judge/dossier UI | Use `이준호 씨가 숨긴 사정`. |
-| `v3Design.authorityPlacements[1].purpose` | `형 문자와 조카 알림을 원본으로 확보` | Unknown UI exposure | Mark as `unknown-internal-candidate`; confirm UI path before code fix. |
+| `v3Design.authorityPlacements[1].purpose` | `발신자 미상 문자와 일정 알림을 원본으로 확보` | Low | Keep surface label. |
 | `v3Design.authorityPlacements[3].purpose` | `형, 조카, 2,000만 원 같은 실체 명사 강제` | Unknown UI exposure | Mark as `unknown-internal-candidate`; confirm UI path before code fix. |
 | `evidence.e-1.v3DepthPlan.Established.summary` | `조카 돌봄을 위한 구매로 확인됨` | Allowed only by player-discovered deep route | Stage-gated; protected channels still surface-only. |
 | `evidence.e-2.v3DepthPlan.Context.summary` | `오피스텔 동선과 형네 주소 일치` | Allowed only by player-discovered deep route | Stage-gated; protected channels still surface-only. |

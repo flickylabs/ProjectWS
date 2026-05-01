@@ -81,6 +81,34 @@ function nodeBadge(node: CombinationLabNode): string {
   }
 }
 
+type PcCombinationResultType =
+  | 'dispute'
+  | 'upgrade'
+  | 'dossier'
+  | 'witness'
+  | 'evidence'
+  | 'question'
+  | 'note'
+  | 'statement'
+  | 'mediation'
+  | 'reliability'
+  | 'context'
+
+function getCombinationResultType(output: CombinationLabOutput): PcCombinationResultType {
+  const kinds = new Set(output.effects.map((effect) => effect.kind))
+  if ((output.witnessAngles?.length ?? 0) > 0 || kinds.has('unlock_witness_angle') || /증인/.test(output.judgeHint ?? '')) return 'witness'
+  if (kinds.has('unlock_evidence') || output.evidenceNode || output.nodeType === 'evidence' || output.nodeType === 'derived_evidence') return 'evidence'
+  if (output.nodeType === 'dispute' || kinds.has('unlock_dispute') || kinds.has('upgrade_dispute') || kinds.has('reframe_dispute') || kinds.has('split_dispute') || kinds.has('merge_disputes')) return 'dispute'
+  if (kinds.has('unlock_question') || kinds.has('upgrade_question') || kinds.has('reframe_question') || (output.questionPrompts?.length ?? 0) > 0) return output.id.startsWith('dc-') ? 'dossier' : 'question'
+  if (kinds.has('unlock_statement') || (output.statementEntries?.length ?? 0) > 0) return 'statement'
+  if (kinds.has('unlock_note') || output.noteText) return 'note'
+  if (kinds.has('unlock_mediation_hint') || (output.mediationHints?.length ?? 0) > 0) return 'mediation'
+  if (kinds.has('elevate_reliability') || kinds.has('shift_legality_weight') || kinds.has('shift_responsibility_weight')) return 'reliability'
+  if (kinds.has('expand_context') || kinds.has('narrow_scope')) return 'context'
+  if (output.id.startsWith('dc-')) return 'dossier'
+  return 'upgrade'
+}
+
 export default function CombinationLabPanel() {
   const runtime = useStore((s) => s.combinationLabRuntime)
   const evidenceStates = useStore((s) => s.evidenceStates)
@@ -246,11 +274,7 @@ export default function CombinationLabPanel() {
           })),
         outputLabel: cleanOutputLabel(matchingOutput.label),
         outputSummary: cleanOutputSummary(matchingOutput.summary, matchingOutput.label),
-        resultType: matchingOutput.id.startsWith('dc-')
-          ? 'dossier'
-          : matchingOutput.nodeType === 'dispute'
-            ? 'dispute'
-            : 'upgrade',
+        resultType: getCombinationResultType(matchingOutput),
       },
     }))
 

@@ -312,8 +312,13 @@ export function saveDriftState(state: JudgeDriftState): void {
   function updateTraits(axis: { level: number }, negKey: keyof typeof prog.traits, posKey: keyof typeof prog.traits) {
     if (axis.level < 0) {
       prog.traits[negKey] = { level: Math.min(3, Math.abs(axis.level)) }
+      prog.traits[posKey] = { level: 0 }
     } else if (axis.level > 0) {
+      prog.traits[negKey] = { level: 0 }
       prog.traits[posKey] = { level: Math.min(3, axis.level) }
+    } else {
+      prog.traits[negKey] = { level: 0 }
+      prog.traits[posKey] = { level: 0 }
     }
   }
   updateTraits(state.inquiry, 'logical', 'intuitive')

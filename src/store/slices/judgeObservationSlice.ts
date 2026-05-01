@@ -40,7 +40,10 @@ export interface JudgeObservation {
   read: boolean
 }
 
-/** 공명선(번개) 발사 요청 */
+export type ResonanceStyle = 'lightning' | 'absorb' | 'spotlight' | 'archive'
+export type AuraStyle = 'electric' | 'soft' | 'spotlight' | 'archive'
+
+/** 공명선/흡수선 발사 요청 */
 export interface ResonanceRequest {
   id: string
   fromSelector: string
@@ -48,6 +51,7 @@ export interface ResonanceRequest {
   createdAt: number
   reason?: LightningReason
   targetKey?: string
+  style?: ResonanceStyle
 }
 
 /** 요소 주변 전기 테두리(aura) 요청 */
@@ -55,6 +59,7 @@ export interface AuraRequest {
   id: string
   targetSelector: string
   createdAt: number
+  style?: AuraStyle
 }
 
 export interface JudgeObservationSlice {
@@ -166,14 +171,17 @@ export const createJudgeObservationSlice: StateCreator<JudgeObservationRootState
 
   enqueueResonance: (req) => {
     const id = nextResonanceId()
-    const entry: ResonanceRequest = { ...req, id, createdAt: Date.now() }
+    const style = req.style ?? 'lightning'
+    const entry: ResonanceRequest = { ...req, id, createdAt: Date.now(), style }
     set((state) => {
-      const allowed = shouldPlayLightning({
-        ...req,
-        turn: typeof state.turnCount === 'number' ? state.turnCount : 0,
-        phase: state.currentPhase,
-        caseId: state.caseData?.caseId,
-      })
+      const allowed = style === 'lightning'
+        ? shouldPlayLightning({
+            ...req,
+            turn: typeof state.turnCount === 'number' ? state.turnCount : 0,
+            phase: state.currentPhase,
+            caseId: state.caseData?.caseId,
+          })
+        : true
       if (!allowed) return {}
       return { pendingResonances: [...state.pendingResonances, entry] }
     })
@@ -188,7 +196,7 @@ export const createJudgeObservationSlice: StateCreator<JudgeObservationRootState
 
   enqueueAura: (req) => {
     const id = nextAuraId()
-    const entry: AuraRequest = { ...req, id, createdAt: Date.now() }
+    const entry: AuraRequest = { ...req, id, createdAt: Date.now(), style: req.style ?? 'electric' }
     set((state) => ({ pendingAuras: [...state.pendingAuras, entry] }))
     return id
   },

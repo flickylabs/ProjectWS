@@ -6,13 +6,15 @@ import { deriveCaseProfile, deriveJudgeProfile, TITLE_LABELS, AXIS_LABELS, TIER_
 import PCTitleEmblem from '../icons/PCTitleEmblem'
 import PCCharacterPortrait from '../icons/PCCharacterPortrait'
 import { PCFragmentIcon } from '../progression/PCJudgeProgressionShared'
-import type { AxisLevelState } from '../../../engine/judgeProfileEngine'
+import type { AxisLevelState, JudgeDriftState, JudgeProfile } from '../../../engine/judgeProfileEngine'
 import type { PerkId } from '../../../engine/judgePerks'
 import { TRAIT_META, FRAGMENT_TABLE, applyRewardsToInventory, canEnhanceTrait, computeCaseRewards, type FragmentReward, type TraitId } from '../../../engine/judgeProgressionEngine'
 import { GamePhase } from '../../../types'
+import type { CaseData, VerdictInput } from '../../../types'
 import { useGameStore, useStore } from '../../../store/useGameStore'
 import { saveCaseProgress } from '../../phase/CaseMap'
 import { resetAftermathCache } from '../../result/Aftermath'
+import { resolveScriptedAftermath } from '../../../engine/aftermathResolver'
 import { playClick } from '../../../engine/soundEngine'
 import { pp과와, pp은는 } from '../../../engine/koreanPostposition'
 import CharacterFaceSvg from '../icons/CharacterFaceSvg'
@@ -99,6 +101,13 @@ function isLieStateS3Plus(state?: { currentState?: string }) {
   if (!raw) return false
   const rank = Number.parseInt(raw.replace('S', ''), 10)
   return Number.isFinite(rank) && rank >= 3
+}
+
+function getFindingLabel(value: 'true' | 'false' | 'pending' | undefined, truth: boolean): string {
+  if (value === 'pending') return '판단 보류'
+  if (value === 'true') return truth ? '사실로 판단' : '상대 주장 사실로 판단'
+  if (value === 'false') return truth ? '사실 아님으로 판단' : '거짓으로 판단'
+  return '미판단'
 }
 
 function getProfileDescription(titleId: string): string {
@@ -228,8 +237,14 @@ export default function PCResultScreen() {
 
   // 결과 화면 진입 시 LLM 후일담을 즉시 백그라운드 생성 (판결 결과 기반)
   useEffect(() => {
-    if (_aftermathCache) return // 이미 캐시됨
+    if (_aftermathCache?.caseId === caseData?.caseId) return
     if (!caseData || !verdictScore) return
+
+    const scripted = resolveScriptedAftermath(caseData, verdictInput)
+    if (scripted) {
+      _aftermathCache = { caseId: caseData.caseId, text: withVerdictContext(caseData, verdictInput, scripted.text) }
+      return
+    }
 
     void (async () => {
       try {
@@ -266,7 +281,7 @@ export default function PCResultScreen() {
         if (response) {
           const processed = postProcessAftermath(response, { a: caseData.duo.partyA.name, b: caseData.duo.partyB.name })
           if (processed) {
-            _aftermathCache = processed
+            _aftermathCache = { caseId: caseData.caseId, text: withVerdictContext(caseData, verdictInput, processed) }
             console.log('[후일담] LLM 생성 완료, 길이:', processed.length)
           }
         }
@@ -378,9 +393,17 @@ export default function PCResultScreen() {
   const currentIdx = sessionCases.findIndex((item) => item.caseId === caseData.caseId)
   const nextCase = currentIdx >= 0 ? sessionCases[currentIdx + 1] : null
   const rewardOverlayOpen = false // 보너스 탭으로 이동 — 팝업 비활성
+  const tabIndex = TABS.findIndex((item) => item.id === tab)
+  const prevTab = tabIndex > 0 ? TABS[tabIndex - 1] : null
+  const nextTab = tabIndex < TABS.length - 1 ? TABS[tabIndex + 1] : null
+  const visibleDisputes = caseData.disputes.filter((d) => {
+    const v = disputeVisibility[d.id]
+    return !v || v.visibility !== 'hidden'
+  })
 
   const handleExit = () => {
     resetAftermathCache()
+    _aftermathCache = null
     const state = useGameStore.getState()
     state.clearSavedGame?.()
     state.clearDialogue()
@@ -395,10 +418,12 @@ export default function PCResultScreen() {
     }
 
     resetAftermathCache()
+    _aftermathCache = null
     initializeCase(nextCase)
   }
 
   const handleRetry = () => {
+    _aftermathCache = null
     useGameStore.getState().resetVerdict()
     useGameStore.getState().setPhase(GamePhase.Phase7_Verdict)
   }
@@ -449,6 +474,52 @@ export default function PCResultScreen() {
 
   return (
     <div className="pc-result-screen">
+      <style>{`
+        body.pc-mode .pc-result-screen .pc-result-footer {
+          display: flex;
+          flex-wrap: nowrap;
+          align-items: center;
+          justify-content: space-between;
+          gap: 12px;
+          margin-top: auto;
+          padding: 16px 0 5px;
+          width: 100%;
+        }
+        body.pc-mode .pc-result-screen .pc-result-shell {
+          height: calc(100vh - 56px) !important;
+          min-height: 0 !important;
+          max-height: calc(100vh - 56px) !important;
+        }
+        body.pc-mode .pc-result-screen .pc-result-main {
+          height: 100% !important;
+          min-height: 0 !important;
+          overflow: hidden !important;
+        }
+        body.pc-mode .pc-result-screen .pc-result-hero {
+          position: relative !important;
+          overflow: hidden !important;
+          padding-bottom: 96px !important;
+        }
+        body.pc-mode .pc-result-screen .pc-result-hero__actions {
+          position: absolute !important;
+          left: 24px !important;
+          right: 24px !important;
+          bottom: 29px !important;
+          width: auto !important;
+          margin-top: 0 !important;
+        }
+        body.pc-mode .pc-result-screen .pc-result-tabs,
+        body.pc-mode .pc-result-screen .pc-result-footer {
+          flex: 0 0 auto !important;
+        }
+        body.pc-mode .pc-result-screen .pc-result-panel {
+          flex: 1 1 auto !important;
+          height: auto !important;
+          min-height: 0 !important;
+          max-height: calc(100vh - 226px) !important;
+          padding-bottom: 24px !important;
+        }
+      `}</style>
       <div className="pc-result-shell">
         <aside className="pc-result-hero">
           <div className="pc-result-hero__eyebrow">RESULT DOSSIER</div>
@@ -473,7 +544,7 @@ export default function PCResultScreen() {
             </div>
             <div className="pc-result-hero__meta-card">
               <span>쟁점</span>
-              <strong>{caseData.disputes.filter((d) => { const v = disputeVisibility[d.id]; return !v || v.visibility !== 'hidden' }).length}개</strong>
+              <strong>{visibleDisputes.length}개</strong>
             </div>
             <div className="pc-result-hero__meta-card">
               <span>증거</span>
@@ -564,7 +635,7 @@ export default function PCResultScreen() {
                 {/* 쟁점별 정답 공개 */}
                 <div className="pc-result-truth" style={{ marginTop: 8 }}>
                   <h3 style={{ fontSize: 16, fontWeight: 800, color: '#e0ddd6', marginBottom: 8 }}>쟁점별 판단 결과</h3>
-                  {caseData.disputes.filter((d) => { const v = disputeVisibility[d.id]; return !v || v.visibility !== 'hidden' }).map((d) => {
+                  {visibleDisputes.map((d) => {
                     const finding = verdictInput.factFindings[d.id]
                     const correct = finding === 'pending'
                       ? null
@@ -577,8 +648,8 @@ export default function PCResultScreen() {
                       >
                         <div style={{ flex: 1, minWidth: 0 }}>
                           <strong style={{ fontSize: 14, display: 'block', marginBottom: 3, color: '#e0ddd6' }}>{d.name}</strong>
-                          <p style={{ fontSize: 13, color: '#b0aда4', lineHeight: 1.5, margin: 0, overflow: 'hidden', textOverflow: 'ellipsis', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical' } as any}>
-                            {selectedText ?? d.truthDescription}
+                          <p style={{ fontSize: 13, color: '#b0aeb4', lineHeight: 1.5, margin: 0, overflow: 'hidden', textOverflow: 'ellipsis', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical' } as any}>
+                            내 판단: {selectedText ?? getFindingLabel(finding, d.truth)}
                           </p>
                         </div>
                         <div style={{
@@ -596,11 +667,7 @@ export default function PCResultScreen() {
                   })}
                 </div>
 
-                {/* 하단 prev/next */}
-                <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                  <button className="pc-verdict-footer__button" disabled type="button">&lt; 이전</button>
-                  <button className="pc-verdict-footer__button is-primary" onClick={() => setTab('verdict_pronounce')} type="button">다음 &gt;</button>
-                </div>
+                <span aria-hidden="true" style={{ display: 'none' }} />
               </div>
             ) : null}
 
@@ -695,14 +762,9 @@ export default function PCResultScreen() {
                         </button>
                       </div>
                     </div>
-
-                    {/* 하단 prev/next */}
-                    <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: 20 }}>
-                      <button className="pc-verdict-footer__button" onClick={() => setTab('result')} type="button">&lt; 이전</button>
-                      <button className="pc-verdict-footer__button is-primary" onClick={() => setTab('epilogue')} type="button">다음 &gt;</button>
-                    </div>
                   </>
                 ) : null}
+                <span aria-hidden="true" style={{ display: 'none' }} />
               </div>
               )
             })() : null}
@@ -748,12 +810,7 @@ export default function PCResultScreen() {
                     </div>
                   </div>
                 )}
-
-                {/* 하단 버튼 — 최하단 고정 */}
-                <div style={{ display: 'flex', justifyContent: 'space-between', flexShrink: 0 }}>
-                  <button className="pc-verdict-footer__button" onClick={() => setTab('verdict_pronounce')} type="button">&lt; 이전</button>
-                  <button className="pc-verdict-footer__button is-primary" onClick={() => setTab('bonus')} type="button">다음 &gt;</button>
-                </div>
+                <span aria-hidden="true" style={{ display: 'none' }} />
               </div>
             ) : null}
 
@@ -775,17 +832,29 @@ export default function PCResultScreen() {
                     </span>
                   </div>
                 )}
-
-                {/* 하단 버튼 */}
-                <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                  <button className="pc-verdict-footer__button" onClick={() => setTab('epilogue')} type="button">&lt; 이전</button>
-                  <button className="pc-verdict-footer__button is-primary" onClick={handleExit} type="button">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" style={{ display: 'inline-block', verticalAlign: 'middle', marginRight: 4 }}><path d="M3 12l9-8 9 8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/><path d="M5 10v9a1 1 0 001 1h4v-5h4v5h4a1 1 0 001-1v-9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
-                    홈으로
-                  </button>
-                </div>
+                <span aria-hidden="true" style={{ display: 'none' }} />
               </div>
             ) : null}
+          </div>
+          <div className="pc-result-footer">
+            <button
+              className="pc-verdict-footer__button"
+              disabled={!prevTab}
+              onClick={() => prevTab && setTab(prevTab.id)}
+              type="button"
+            >
+              &lt; 이전
+            </button>
+            {nextTab ? (
+              <button className="pc-verdict-footer__button is-primary" onClick={() => setTab(nextTab.id)} type="button">
+                다음 &gt;
+              </button>
+            ) : (
+              <button className="pc-verdict-footer__button is-primary" onClick={handleExit} type="button">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" style={{ display: 'inline-block', verticalAlign: 'middle', marginRight: 4 }}><path d="M3 12l9-8 9 8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/><path d="M5 10v9a1 1 0 001 1h4v-5h4v5h4a1 1 0 001-1v-9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                홈으로
+              </button>
+            )}
           </div>
         </section>
       </div>
@@ -928,7 +997,12 @@ function FragmentGrid({ rewards }: { rewards: FragmentReward[] }) {
 /* ─── Aftermath inline (uses same LLM/scripted logic) ─── */
 
 // 후일담 캐시 — 탭 전환으로 리마운트되어도 재호출하지 않음
-let _aftermathCache: string | null = null
+let _aftermathCache: { caseId: string; text: string } | null = null
+
+function getCachedAftermath(caseId?: string): string | null {
+  const cached = _aftermathCache
+  return cached && cached.caseId === caseId ? cached.text : null
+}
 
 function AftermathInline() {
   const caseData = useStore((s) => s.caseData)
@@ -936,22 +1010,31 @@ function AftermathInline() {
   const verdictScore = useStore((s) => s.verdictScore)
   const processMetrics = useStore((s) => s.processMetrics)
   const discovery = useStore((s) => s.discovery)
-  const [aftermath, setAftermath] = useState<string | null>(_aftermathCache)
+  const [aftermath, setAftermath] = useState<string | null>(getCachedAftermath(caseData?.caseId))
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
 
   useEffect(() => {
     // 캐시가 있으면 재호출하지 않음
-    if (_aftermathCache) { setAftermath(_aftermathCache); return }
+    const cached = getCachedAftermath(caseData?.caseId)
+    if (cached) { setAftermath(cached); return }
     // 사전 생성된 결과가 있으면 사용
     const pregenerated = (window as any).__aftermathPregenerated as string | undefined
     if (pregenerated) {
-      _aftermathCache = pregenerated
+      _aftermathCache = { caseId: caseData?.caseId ?? 'unknown', text: pregenerated }
       setAftermath(pregenerated)
       console.log('[후일담] 사전 생성 결과 사용')
       return
     }
     if (!caseData || !verdictScore) return
+
+    const scripted = resolveScriptedAftermath(caseData, verdictInput)
+    if (scripted) {
+      const text = withVerdictContext(caseData, verdictInput, scripted.text)
+      _aftermathCache = { caseId: caseData.caseId, text }
+      setAftermath(text)
+      return
+    }
 
     void (async () => {
       setLoading(true)
@@ -1003,14 +1086,17 @@ function AftermathInline() {
           { temperature: 0.9, maxTokens: 900, model: 'gpt-4o-mini', endpoint: 'aftermath' },
         )
         console.log('[후일담] LLM 응답 길이:', response.length)
-        const result = postProcessAftermath(response, { a: caseData.duo.partyA.name, b: caseData.duo.partyB.name }) || buildFallback(caseData, verdictScore.total)
-        _aftermathCache = result
+        const generated = postProcessAftermath(response, { a: caseData.duo.partyA.name, b: caseData.duo.partyB.name })
+        const result = generated
+          ? withVerdictContext(caseData, verdictInput, generated)
+          : buildFallback(caseData, verdictScore.total, verdictInput)
+        _aftermathCache = { caseId: caseData.caseId, text: result }
         setAftermath(result)
       } catch (err: any) {
         console.error('[후일담] LLM 호출 실패:', err?.message ?? err)
         setError(err?.message ?? 'LLM 호출 실패')
-        const fb = buildFallback(caseData, verdictScore.total)
-        _aftermathCache = fb
+        const fb = buildFallback(caseData, verdictScore.total, verdictInput)
+        _aftermathCache = { caseId: caseData.caseId, text: fb }
         setAftermath(fb)
       } finally {
         setLoading(false)
@@ -1049,33 +1135,182 @@ function AftermathInline() {
   )
 }
 
-function buildFallback(caseData: { duo: { partyA: { name: string }; partyB: { name: string } } }, total: number): string {
+function getSelectedSolutionText(verdictInput: VerdictInput): string {
+  const selectedSolutions = verdictInput.selectedSolutions
+    .map((entry) => entry.includes('::') ? entry.slice(entry.indexOf('::') + 2) : entry)
+    .filter(Boolean)
+  return selectedSolutions.length > 0
+    ? selectedSolutions.slice(0, 2).join(', ')
+    : '추가 조치 없이 판결 내용을 따르는 것'
+}
+
+function getResponsibilityContext(caseData: CaseData, verdictInput: VerdictInput): { avgA: number; text: string } {
+  const nameA = caseData.duo.partyA.name
+  const nameB = caseData.duo.partyB.name
+  const responsibilities = Object.values(verdictInput.responsibility)
+  const avgA = responsibilities.length > 0
+    ? Math.round(responsibilities.reduce((sum, item) => sum + item.a, 0) / responsibilities.length)
+    : 50
+  const text = avgA > 55
+    ? `${nameA}에게 더 큰 책임이 배분된 판결`
+    : avgA < 45
+      ? `${nameB}에게 더 큰 책임이 배분된 판결`
+      : '양측 책임을 비슷하게 본 판결'
+  return { avgA, text }
+}
+
+function withVerdictContext(caseData: CaseData, verdictInput: VerdictInput, text: string): string {
   const nameA = caseData.duo.partyA.name
   const nameB = caseData.duo.partyB.name
   const pA = pp과와(nameA)
   const pB = pp은는(nameB)
+  const { avgA, text: responsibilityText } = getResponsibilityContext(caseData, verdictInput)
+  const solutionText = getSelectedSolutionText(verdictInput).replace(/[.。]+$/g, '')
+  const dominantName = avgA > 55 ? nameA : avgA < 45 ? nameB : null
+  const responsibilityDetail = dominantName
+    ? `${dominantName} 쪽 책임이 ${dominantName === nameA ? avgA : 100 - avgA}%로 더 무겁게 정리되면서`
+    : `책임이 ${avgA}:${100 - avgA}에 가깝게 나뉘면서`
+  const intro = `${nameA}${pA} ${nameB}${pB} ${responsibilityText}을 받아들었다. 판결문에 적힌 해결 방향은 다음 조치였다. ${solutionText}. ${responsibilityDetail} 후일담의 방향도 누가 더 억울한지보다 무엇을 먼저 정리해야 하는지에 맞춰졌다.`
+  const paras = text.split(/\n\n+/).map((para) => para.trim()).filter(Boolean)
+  if (paras[0]?.includes(solutionText) && paras[0]?.includes('책임')) return text
+  return [intro, ...paras].join('\n\n')
+}
+
+function buildFallback(caseData: CaseData, total: number, verdictInput: VerdictInput): string {
+  const nameA = caseData.duo.partyA.name
+  const nameB = caseData.duo.partyB.name
+  const pA = pp과와(nameA)
+  const pB = pp은는(nameB)
+  const solutionText = getSelectedSolutionText(verdictInput)
+  const { text: responsibilityText } = getResponsibilityContext(caseData, verdictInput)
+
   if (total >= 75) {
-    return `${nameA}${pA} ${nameB}${pB} 적어도 무엇이 문제였는지 같은 문장으로 말할 수 있게 되었다.\n\n서로를 향한 비난은 줄었고, 앞으로 지켜야 할 선을 다시 확인하는 대화가 시작됐다.\n\n완전한 화해는 아니어도, 같은 실수를 반복하지 않겠다는 말만은 남았다.`
+    return `${nameA}${pA} ${nameB}${pB} ${responsibilityText}을 들은 뒤에도 한동안 말을 고르며 앉아 있었다. 그래도 판결은 무엇을 사과하고 무엇을 고쳐야 하는지 분명히 남겼다.\n\n며칠 뒤 두 사람은 ${solutionText}을 기준으로 다시 연락했다. 감정이 완전히 풀린 것은 아니었지만, 같은 문제를 반복하지 않기 위한 최소한의 절차는 세워졌다.\n\n한 달이 지나자 다툼의 열기는 줄었고, 남은 불편함은 서로가 지켜야 할 선을 확인하는 표지가 되었다. 이번 결말은 화해보다 먼저 정리를 선택한 결과였다.`
   }
   if (total >= 50) {
-    return `${nameA}${pA} ${nameB}${pB} 판결을 받아들였지만, 완전히 만족한 얼굴은 아니었다.\n\n한 달이 지나도 불만은 남았지만, 같은 싸움이 반복되는 지점은 서로 알고 있었다.\n\n정리가 곧 화해는 아니지만, 더 크게 무너지는 일은 막아 낸 결말이었다.`
+    return `${nameA}${pA} ${nameB}${pB} ${responsibilityText}을 받아들였지만, 완전히 만족한 얼굴은 아니었다. 판결은 억울함을 모두 지우기보다 더 커지기 전에 멈춰 세우는 쪽에 가까웠다.\n\n이후 두 사람은 ${solutionText}을 놓고 필요한 말만 주고받았다. 불만은 남았지만, 어느 지점에서 같은 싸움이 반복되는지는 서로 알고 있었다.\n\n정리가 곧 화해는 아니었다. 다만 이번에는 더 크게 무너지는 일을 막아 낸 결말로 남았다.`
   }
-  return `${nameA}${pA} ${nameB}${pB} 판결 뒤에도 쉽게 자리를 뜨지 못했다.\n\n감정이 정리된 것은 아니었고, 남은 말들은 다음 갈등의 씨앗처럼 남아 있었다.\n\n이번 결말은 봉합보다 경고에 가까웠다.`
+  return `${nameA}${pA} ${nameB}${pB} ${responsibilityText} 뒤에도 쉽게 자리를 뜨지 못했다. 판결은 방향을 제시했지만, 사건의 감정까지 설득하지는 못했다.\n\n선택된 해결 방향은 ${solutionText}이었으나, 두 사람은 그 조치가 충분한지에 대해 끝내 같은 표정을 짓지 못했다. 남은 말들은 다음 갈등의 씨앗처럼 법정 밖으로 따라 나갔다.\n\n이번 결말은 봉합보다 경고에 가까웠다.`
 }
 
 /* ─── Profile inline ─── */
 
+type CaseProfileAxes = { inquiry: number; judgment: number; resolution: number }
+
+function clampAxisValue(value: number): number {
+  return Math.max(-100, Math.min(100, Math.round(value)))
+}
+
+function axisToLevelState(value: number): AxisLevelState {
+  const axis = clampAxisValue(value)
+  const abs = Math.abs(axis)
+  const level = abs >= 66 ? 3 : abs >= 33 ? 2 : abs >= 12 ? 1 : 0
+  return { level: level * Math.sign(axis), progress: 0 }
+}
+
+function hasMeaningfulCaseAxes(axes: CaseProfileAxes | null): axes is CaseProfileAxes {
+  return !!axes && (
+    Math.abs(axes.inquiry) >= 12 ||
+    Math.abs(axes.judgment) >= 12 ||
+    Math.abs(axes.resolution) >= 12
+  )
+}
+
+function getAxisTag(axis: keyof CaseProfileAxes, value: number): string | null {
+  if (Math.abs(value) < 12) return null
+  const labels = AXIS_LABELS[axis]
+  return value < 0 ? labels.negative : labels.positive
+}
+
+function resolveCaseTitleId(axes: CaseProfileAxes): string {
+  const logical = axes.inquiry <= -12
+  const intuitive = axes.inquiry >= 12
+  const strict = axes.judgment <= -12
+  const lenient = axes.judgment >= 12
+  const principled = axes.resolution <= -12
+  const reconciling = axes.resolution >= 12
+
+  if (logical && strict && principled) return 'cold_judge'
+  if (logical && strict && reconciling) return 'practical_analyst'
+  if (logical && lenient && principled) return 'balanced_sage'
+  if (logical && lenient && reconciling) return 'careful_mediator'
+  if (intuitive && strict && principled) return 'instinct_judge'
+  if (intuitive && strict && reconciling) return 'passion_arbiter'
+  if (intuitive && lenient && principled) return 'gentle_guardian'
+  if (intuitive && lenient && reconciling) return 'warm_mediator'
+  if (strict && principled) return 'cold_judge'
+  if (strict && reconciling) return 'passion_arbiter'
+  if (lenient && principled) return 'balanced_sage'
+  if (lenient && reconciling) return 'warm_mediator'
+  if (logical) return principled ? 'balanced_sage' : 'careful_mediator'
+  if (intuitive) return strict ? 'instinct_judge' : 'gentle_guardian'
+  if (principled) return 'balanced_sage'
+  if (reconciling) return 'careful_mediator'
+  if (strict) return 'cold_judge'
+  if (lenient) return 'gentle_guardian'
+  return 'neutral_observer'
+}
+
+function buildDisplayDriftFromAxes(drift: JudgeDriftState, axes: CaseProfileAxes): JudgeDriftState {
+  return {
+    ...drift,
+    inquiry: axisToLevelState(axes.inquiry),
+    judgment: axisToLevelState(axes.judgment),
+    resolution: axisToLevelState(axes.resolution),
+    casesProcessed: Math.max(1, drift.casesProcessed),
+  }
+}
+
 /** 프로필 데이터 공유 hook */
 function useProfileData() {
+  const caseData = useStore((s) => s.caseData)
+  const verdictInput = useStore((s) => s.verdictInput)
+  const processMetrics = useStore((s) => s.processMetrics)
+
   return useMemo(() => {
     const drift = loadDriftState()
     const perks = loadJudgePerks()
-    const prof = deriveJudgeProfile(drift, undefined, {
+    const perkSelection = {
       major: perks.major as PerkId | null,
       minor: perks.minor as PerkId | null,
-    })
-    return { profile: prof, driftState: drift, totalGames: drift.casesProcessed }
-  }, [])
+    }
+    const cumulativeProfile = deriveJudgeProfile(drift, undefined, perkSelection)
+    const currentAxes = caseData
+      ? deriveCaseProfile(
+        verdictInput,
+        processMetrics,
+        caseData.disputes.map((item) => ({
+          id: item.id,
+          ambiguity: item.ambiguity,
+          truth: item.truth ?? true,
+        })),
+        caseData.caseId,
+        caseData.solutions,
+      )
+      : null
+    if (!hasMeaningfulCaseAxes(currentAxes)) {
+      return { profile: cumulativeProfile, driftState: drift, totalGames: drift.casesProcessed, currentAxes: null }
+    }
+
+    const displayDrift = buildDisplayDriftFromAxes(drift, currentAxes)
+    const profileFromAxes = deriveJudgeProfile(displayDrift, undefined, perkSelection)
+    const subtags = [
+      getAxisTag('inquiry', currentAxes.inquiry),
+      getAxisTag('judgment', currentAxes.judgment),
+      getAxisTag('resolution', currentAxes.resolution),
+    ].filter(Boolean) as string[]
+    const profile: JudgeProfile = {
+      ...profileFromAxes,
+      inquiryAxis: clampAxisValue(currentAxes.inquiry),
+      judgmentAxis: clampAxisValue(currentAxes.judgment),
+      resolutionAxis: clampAxisValue(currentAxes.resolution),
+      titleId: profileFromAxes.titleId === 'neutral_observer'
+        ? resolveCaseTitleId(currentAxes)
+        : profileFromAxes.titleId,
+      subtags,
+    }
+    return { profile, driftState: displayDrift, totalGames: Math.max(1, drift.casesProcessed), currentAxes }
+  }, [caseData, verdictInput, processMetrics])
 }
 
 /** 좌측: 타이틀 + 설명 + 태그 + 티어 */
@@ -1111,9 +1346,9 @@ function ProfileInfoSection() {
 
 /** 우측: 3축 게이지 */
 function ProfileGaugeSection() {
-  const { driftState, totalGames } = useProfileData()
+  const { driftState, totalGames, currentAxes } = useProfileData()
 
-  if (totalGames === 0) {
+  if (totalGames === 0 && !currentAxes) {
     return (
       <div style={{ padding: '12px 16px', borderRadius: 10, border: '1px solid rgba(255,255,255,0.06)', background: 'rgba(255,255,255,0.02)', fontSize: 13, color: '#8c8fa0', lineHeight: 1.7 }}>
         첫 번째 재판을 마쳤습니다. 사건을 거듭할수록 성향이 드러납니다.
@@ -1123,9 +1358,9 @@ function ProfileGaugeSection() {
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: 8, justifyContent: 'center' }}>
-      <ProfileAxis label="탐구" axisState={driftState.inquiry} />
-      <ProfileAxis label="판단" axisState={driftState.judgment} />
-      <ProfileAxis label="해결" axisState={driftState.resolution} />
+      <ProfileAxis label="탐구" axisState={driftState.inquiry} axisValue={currentAxes?.inquiry} />
+      <ProfileAxis label="판단" axisState={driftState.judgment} axisValue={currentAxes?.judgment} />
+      <ProfileAxis label="해결" axisState={driftState.resolution} axisValue={currentAxes?.resolution} />
     </div>
   )
 }
@@ -1140,27 +1375,28 @@ function ProfileInline() {
   )
 }
 
-function ProfileAxis({ label, axisState }: {
+function ProfileAxis({ label, axisState, axisValue }: {
   label: string
   axisState: AxisLevelState
+  axisValue?: number
 }) {
-  const { level } = axisState
-  const levelPct = ((level + 3) / 6) * 100
+  const displayValue = typeof axisValue === 'number' ? clampAxisValue(axisValue) : axisState.level * 33
+  const levelPct = ((displayValue + 100) / 200) * 100
 
   return (
     <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
       <span style={{ fontSize: 12, fontWeight: 700, color: '#8c8fa0', minWidth: 28 }}>{label}</span>
       <div style={{ flex: 1, position: 'relative', height: 10, borderRadius: 5, background: 'rgba(255,255,255,0.06)' }}>
-        {level < 0 && (
+        {displayValue < 0 && (
           <div style={{ position: 'absolute', top: 0, left: `${levelPct}%`, width: `${50 - levelPct}%`, height: '100%', borderRadius: 5, background: 'var(--pc-blue, #5b8def)' }} />
         )}
-        {level > 0 && (
+        {displayValue > 0 && (
           <div style={{ position: 'absolute', top: 0, left: '50%', width: `${levelPct - 50}%`, height: '100%', borderRadius: 5, background: 'var(--pc-gold, #d4a24e)' }} />
         )}
         {/* 중앙선 */}
         <div style={{ position: 'absolute', top: -2, left: '50%', width: 1, height: 14, background: 'rgba(255,255,255,0.15)' }} />
         {/* 현재 위치 마커 */}
-        <div style={{ position: 'absolute', top: -1, left: `${levelPct}%`, width: 12, height: 12, borderRadius: '50%', background: level === 0 ? '#6a6e80' : level < 0 ? 'var(--pc-blue)' : 'var(--pc-gold)', border: '2px solid rgba(12,12,20,0.8)', transform: 'translateX(-50%)' }} />
+        <div style={{ position: 'absolute', top: -1, left: `${levelPct}%`, width: 12, height: 12, borderRadius: '50%', background: displayValue === 0 ? '#6a6e80' : displayValue < 0 ? 'var(--pc-blue)' : 'var(--pc-gold)', border: '2px solid rgba(12,12,20,0.8)', transform: 'translateX(-50%)' }} />
       </div>
     </div>
   )

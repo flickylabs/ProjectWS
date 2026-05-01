@@ -70,7 +70,7 @@
       },
       "e-4": {
         "evidenceId": "e-4",
-        "name": "형 문자 스레드",
+        "name": "발신자 미상 문자",
         "surfaceName": "발신자 미상 문자",
         "surfaceDescription": "발신자가 확인되지 않은 번호와의 반복 교신 기록.",
         "descriptionTruth": [
@@ -293,7 +293,7 @@
       "형네": "해당 장소",
       "조카": "아이",
       "조카 학교 알림": "일정 알림",
-      "형 문자 스레드": "발신자 미상 문자",
+      "발신자 미상 문자": "발신자 미상 문자",
       "위임장 조작": "서류 처리 경위",
       "투자 사기": "투자 손실 경위",
       "형에게 전달": "제3자에게 이동",
@@ -576,7 +576,7 @@
     },
     "entries": {
       "combinationLab.nodes.e-4.label": {
-        "sourceText": "e-4 형 문자 + 조카 학교 알림",
+        "sourceText": "e-4 발신자 미상 문자",
         "surfaceText": "e-4 발신자 미상 문자",
         "exposure": "ui-candidate",
         "policy": "replace-before-ui"
@@ -594,7 +594,7 @@
         "policy": "replace-before-ui"
       },
       "combinationLab.outputs.dc-2.judgeHint": {
-        "sourceText": "이 감정 패턴을 이준호 씨에게 직접 추궁하시거나 형 문자(e-4)를 제시하면 구체적 사연이 드러날 것입니다.",
+        "sourceText": "이 감정 패턴을 이준호 씨에게 직접 추궁하시거나 발신자 미상 문자(e-4)를 제시하면 구체적 사연이 드러날 것입니다.",
         "surfaceText": "이 감정 패턴을 이준호 씨에게 직접 추궁하시거나 해당 문자 기록(e-4)을 제시하면 숨긴 사정이 드러날 것입니다.",
         "exposure": "ui-candidate",
         "policy": "replace-before-ui"
@@ -606,7 +606,7 @@
         "policy": "replace-before-ui"
       },
       "v3Design.authorityPlacements[1].purpose": {
-        "sourceText": "형 문자와 조카 알림을 원본으로 확보",
+        "sourceText": "발신자 미상 문자와 일정 알림을 원본으로 확보",
         "surfaceText": "발신자 미상 문자와 일정 알림을 원본으로 확보",
         "exposure": "unknown-internal-candidate",
         "policy": "confirm-ui-path-before-runtime-fix"
@@ -677,7 +677,7 @@
         "surfaceFallback": "구매 위치와 차량 동선의 반복 패턴이 맞물립니다."
       },
       "combine-2": {
-        "sourceText": "영수증의 중학교 참고서 + 형 문자의 '가은이 학교 알림'... 중학생 조카가 있다?!",
+        "sourceText": "영수증의 중학교 참고서와 발신자 미상 문자의 학교 알림이 같은 돌봄 정황으로 이어진다.",
         "truthLexemes": [
           "형",
           "가은이",

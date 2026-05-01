@@ -230,7 +230,7 @@ function resolveFactPursuit(
 ): QuestionEffectResult {
   const effects: QuestionGameEffect[] = []
 
-  // 사실추궁 성공 판정: deny/hedge 상태에서 질문하면 모순 생성
+  // 사실추궁 성공 판정: deny/hedge 상태에서 질문하면 모순 단서 누적
   const isEffective = stance === 'deny' || stance === 'hedge' || stance === 'blame'
   if (!isEffective) {
     return { meter: 'contradiction', delta: 0, effects: [], feedback: '상대가 이미 방어를 낮추고 있습니다.' }

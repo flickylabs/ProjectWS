@@ -7,6 +7,7 @@
  * pendingGameEvent가 Store에 있으면 자동 표시.
  */
 
+import { useEffect } from 'react'
 import { useGameStore, useStore } from '../../store/useGameStore'
 import Emoji from '../common/Emoji'
 import type { GameEventTrigger } from '../../engine/gameEventTriggerEngine'
@@ -18,6 +19,7 @@ import {
 import { getScriptedEmotionalOverload } from '../../engine/scriptedTextLoader'
 import { normalizeCaseKey } from '../../utils/caseHelpers'
 import { recordInterjectionChoice } from '../../engine/phase3LogCollector'
+import { hasContradictionComparison } from '../../utils/contradiction'
 
 function isNarrativeReaction(text: string | undefined): boolean {
   if (!text) return false
@@ -34,9 +36,30 @@ export default function GameEventModal() {
   const pendingEvent = useStore(s => s.pendingGameEvent)
   const caseData = useStore(s => s.caseData)
 
-  if (!pendingEvent || !caseData) return null
+  const caseKey = caseData?.caseId?.replace(/^case-/, '') ?? ''
+  const pendingContradictionEvent = pendingEvent?.type === 'contradiction' && pendingEvent.scriptSlot?.textId
+    ? getContradictionEvent(caseKey, pendingEvent.scriptSlot.textId)
+    : null
+  const invalidContradiction = pendingEvent?.type === 'contradiction' && !hasContradictionComparison(
+    pendingContradictionEvent
+      ? {
+          party: pendingEvent.party,
+          disputeId: pendingEvent.disputeId,
+          previousClaim: pendingContradictionEvent.statementA,
+          currentClaim: pendingContradictionEvent.statementB,
+          reason: pendingContradictionEvent.npcReaction,
+        }
+      : undefined,
+  )
 
-  const caseKey = caseData.caseId?.replace(/^case-/, '') ?? ''
+  useEffect(() => {
+    if (invalidContradiction) {
+      useGameStore.getState().setPendingGameEvent(null)
+    }
+  }, [invalidContradiction])
+
+  if (!pendingEvent || !caseData || invalidContradiction) return null
+
   const partyName = pendingEvent.party === 'a' ? caseData.duo.partyA.name : caseData.duo.partyB.name
 
   return (
@@ -145,7 +168,7 @@ function ContradictionModal({ event, caseKey, partyName }: { event: GameEventTri
 
   return (
     <>
-      <EventHeader icon="⚡" title="모순 감지" severity={event.severity} color="yellow" />
+      <EventHeader icon="⚡" title="모순 발견" severity={event.severity} color="yellow" />
       <div className="px-4 py-3">
         {v3Event ? (
           <div className="space-y-2">

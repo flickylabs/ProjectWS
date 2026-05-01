@@ -12,7 +12,21 @@ export type FreeInterrogationIntentId =
   | 'evidence_query'
   | 'relation_query'
   | 'pre_verdict_summary'
+  | 'off_topic'
+  | 'public_info'
+  | 'leak_probe'
   | 'unmapped'
+
+export type FreeInterrogationResolutionRoute =
+  | 'case_dispatch'
+  | 'mapping_fallback'
+  | 'phase_redirect'
+  | 'off_topic_redirect'
+  | 'public_answer'
+  | 'guard_fallback'
+
+export type FreeInterrogationCostPolicy = 'consume' | 'no_cost'
+export type FreeInterrogationTurnPolicy = 'advance' | 'no_advance'
 
 export type FreeInterrogationQuestionType = Extract<
   QuestionType,
@@ -69,6 +83,10 @@ export interface FreeInterrogationFallbackResult {
 export interface FreeInterrogationResolution {
   status: 'dispatch' | 'fallback'
   intent: FreeInterrogationIntent
+  route?: FreeInterrogationResolutionRoute
+  costPolicy?: FreeInterrogationCostPolicy
+  turnPolicy?: FreeInterrogationTurnPolicy
+  dialogueSpeaker?: PartyId | 'judge' | 'system'
   action?: {
     type: 'question'
     questionType: FreeInterrogationQuestionType
@@ -77,5 +95,6 @@ export interface FreeInterrogationResolution {
     freeInterrogation: FreeInterrogationActionMeta
   }
   fallbackText?: string
+  fallbackSpeaker?: PartyId | 'judge' | 'system'
   reason?: string
 }

@@ -33,8 +33,7 @@ function getRuntimeEnv(name: string): string | undefined {
 
 function getConfig(): LLMConfig {
   const providerOverride = getRuntimeEnv('VITE_LLM_PROVIDER')?.toLowerCase()
-  const isProd = Boolean((import.meta as ImportMeta & { env?: { PROD?: boolean } }).env?.PROD)
-  const useLocal = providerOverride === 'local' || (!isProd && providerOverride !== 'openai' && providerOverride !== 'proxy')
+  const useLocal = providerOverride === 'local'
 
   if (!useLocal) {
     return {
@@ -117,13 +116,18 @@ export async function checkConnection(): Promise<{
   error?: string
 }> {
   const config = getConfig()
+  const providerOverride = getRuntimeEnv('VITE_LLM_PROVIDER')?.toLowerCase()
 
   if (config.provider === 'openai') {
+    if (providerOverride !== 'openai' && providerOverride !== 'proxy') {
+      return { connected: false, provider: 'openai', error: 'LLM provider is not configured.' }
+    }
+
     try {
       const res = await fetch(`${config.baseUrl}/dialogue`, { signal: AbortSignal.timeout(5000) })
       if (!res.ok) return { connected: false, error: `OpenAI 프록시 오류: ${res.status}` }
       return { connected: true, provider: 'openai', modelId: config.modelId }
-    } catch (e) {
+    } catch {
       return { connected: false, error: 'OpenAI 프록시에 연결할 수 없습니다.' }
     }
   }

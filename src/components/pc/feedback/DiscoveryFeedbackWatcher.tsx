@@ -7,6 +7,7 @@ import { recordInterjectionChoice } from '../../../engine/phase3LogCollector'
 import { pp이가 } from '../../../engine/koreanPostposition'
 import type { TruthJudgment } from '../../../types/discovery'
 import { getEmergenceHook, getEmergenceHookSpeaker } from '../../../data/emergenceHooks'
+import { hasContradictionComparison } from '../../../utils/contradiction'
 
 const CONTRADICTION_SURFACE_FALLBACK = '진술 흐름에서 확인할 지점이 생겼습니다. 추가 질문으로 맥락을 확인하세요.'
 const EMOTIONAL_BURST_SURFACE_FALLBACK = '감정이 격해졌습니다. 반응을 더 밀어붙일지, 잠시 정리할지 판단하세요.'
@@ -53,6 +54,7 @@ export default function DiscoveryFeedbackWatcher() {
 
   // 큐에 이미 넣은 pending id 추적 (중복 방지)
   const enqueuedRef = useRef<Set<string>>(new Set())
+  const surfacedSlipRef = useRef<Set<string>>(new Set())
 
   // 진실 공방
   useEffect(() => {
@@ -295,9 +297,14 @@ export default function DiscoveryFeedbackWatcher() {
   // 감정 실수 포착
   useEffect(() => {
     if (!pendingSlip) return
-    const key = `slip:${pendingSlip.sourceDisputeId}:${pendingSlip.turn}`
+    const key = `slip:${pendingSlip.party}:${pendingSlip.sourceDisputeId}:${pendingSlip.turn}`
     if (enqueuedRef.current.has(key)) return
+    if (surfacedSlipRef.current.has(key)) {
+      useGameStore.getState().setPendingSlip(null)
+      return
+    }
     enqueuedRef.current.add(key)
+    surfacedSlipRef.current.add(key)
 
     const state = useGameStore.getState()
     const caseData = state.caseData
@@ -458,11 +465,28 @@ export default function DiscoveryFeedbackWatcher() {
       const accusedAgent = ev.party === 'a' ? state.agentA : state.agentB
       const accusedLieState = accusedAgent.lieStateMap[ev.disputeId]?.currentState ?? 'S0'
       const lieRank: Record<string, number> = { S0: 0, S1: 1, S2: 2, S3: 3, S4: 4, S5: 5 }
-      const isSpoilerSafeStage = (lieRank[accusedLieState] ?? 0) >= 3
+      void lieRank[accusedLieState]
+      const isSpoilerSafeStage = true
+      const eventContradictionMeta = v3Event
+        ? {
+            party: ev.party,
+            disputeId: ev.disputeId,
+            previousClaim: v3Event.statementA,
+            currentClaim: v3Event.statementB,
+            reason: v3Event.npcReaction,
+            previousLabel: '이전 진술',
+            currentLabel: '지금 진술',
+          }
+        : undefined
+      if (!hasContradictionComparison(eventContradictionMeta)) {
+        state.setPendingGameEvent(null)
+        releaseKey()
+        return
+      }
       const contrastPayload = v3Event && isSpoilerSafeStage
         ? {
-            left:  { label: '이전 진술', text: v3Event.statementA },
-            right: { label: '지금 진술', text: v3Event.statementB },
+            left:  { label: eventContradictionMeta.previousLabel ?? '이전 진술', text: eventContradictionMeta.previousClaim },
+            right: { label: eventContradictionMeta.currentLabel ?? '지금 진술', text: eventContradictionMeta.currentClaim },
           }
         : undefined
       const safeFallbackBody = !isSpoilerSafeStage
@@ -487,10 +511,11 @@ export default function DiscoveryFeedbackWatcher() {
       })
       state.attachDialoguePendingFeedback(sysMsgId, {
         kind: 'contradiction',
-        eyebrow: '모순 감지',
+        eyebrow: '모순 발견',
         subtitle: `${disputeName} · ${partyName}`,
         body: contrastPayload ? undefined : (safeFallbackBody ?? CONTRADICTION_SURFACE_FALLBACK),
         contrast: contrastPayload,
+        blocks: [{ title: '왜 어긋나는지', text: eventContradictionMeta.reason }],
         // [TC-A2 픽스] '진술이 엇갈렸다' 시스템 메시지는 빨강 톤(공격/모순)으로 통일
         // — '추궁하기' 시스템 메시지(.is-action)와 의미·시각 모두 일치
         tone: 'alert',
