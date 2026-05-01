@@ -150,7 +150,31 @@ if ($StartServer -eq '1') {
     Write-Host "Open: $Url"
     Write-Host 'Press Ctrl+C to stop this server.'
     Write-Host ''
-    & npm.cmd run dev:pc -- --host 127.0.0.1 --port $Port
+    $serverArgs = @('/c', 'npm.cmd', 'run', 'dev:pc', '--', '--host', '127.0.0.1', '--port', "$Port")
+    $server = Start-Process -FilePath 'cmd.exe' -ArgumentList $serverArgs -WorkingDirectory $Root -PassThru
+    $ready = $false
+    for ($i = 0; $i -lt 60; $i += 1) {
+      Start-Sleep -Milliseconds 500
+      if ($server.HasExited) { break }
+      try {
+        $response = Invoke-WebRequest -Uri $Url -UseBasicParsing -TimeoutSec 2
+        if ($response.StatusCode -ge 200 -and $response.StatusCode -lt 500) {
+          $ready = $true
+          break
+        }
+      } catch {
+        # Server is still starting.
+      }
+    }
+    if ($ready) {
+      Start-Process $Url
+      Write-Host ''
+      Write-Host 'Dev server is running in a separate window.'
+      Write-Host 'Close that server window or press Ctrl+C there when finished.'
+    } else {
+      Write-Host '[WARN] Dev server did not respond yet. It may still be starting in a separate window.'
+      Write-Host "Try opening manually: $Url"
+    }
     exit $LASTEXITCODE
   }
   Write-Host '[SKIP] Dev server not started because build:pc failed.'
