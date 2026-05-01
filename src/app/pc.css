@@ -17347,6 +17347,13 @@ body.pc-mode .pc-event-feedback-card.kind-observation.is-cutscene .pc-event-feed
 body.pc-mode .pc-event-feedback-card.kind-observation.is-cutscene .pc-event-feedback__title,
 body.pc-mode .pc-event-feedback-card.kind-observation.is-cutscene .pc-event-feedback__ornament,
 body.pc-mode .pc-event-feedback-card.kind-observation.is-cutscene .pc-event-feedback__tag,
+body.pc-mode .pc-event-feedback-card.kind-evidence_result.is-cutscene .pc-event-feedback__eye,
+body.pc-mode .pc-event-feedback-card.kind-evidence_result.is-cutscene .pc-event-feedback__eyebrow,
+body.pc-mode .pc-event-feedback-card.kind-evidence_result.is-cutscene .pc-event-feedback__subtitle,
+body.pc-mode .pc-event-feedback-card.kind-evidence_result.is-cutscene .pc-event-feedback__title,
+body.pc-mode .pc-event-feedback-card.kind-evidence_result.is-cutscene .pc-event-feedback__ornament,
+body.pc-mode .pc-event-feedback-card.kind-evidence_result.is-cutscene .pc-event-feedback__tag,
+body.pc-mode .pc-event-feedback-card.kind-evidence_result.is-cutscene .pc-event-feedback__meta,
 body.pc-mode .pc-event-feedback-card.kind-transition_choice.is-cutscene .pc-event-feedback__eye,
 body.pc-mode .pc-event-feedback-card.kind-transition_choice.is-cutscene .pc-event-feedback__eyebrow,
 body.pc-mode .pc-event-feedback-card.kind-transition_choice.is-cutscene .pc-event-feedback__title,
@@ -17358,6 +17365,7 @@ body.pc-mode .pc-event-feedback-card.kind-transition_choice.is-cutscene .pc-even
 
 /* body 한 줄 작은 글씨 */
 body.pc-mode .pc-event-feedback-card.kind-observation.is-cutscene .pc-event-feedback__body,
+body.pc-mode .pc-event-feedback-card.kind-evidence_result.is-cutscene .pc-event-feedback__body,
 body.pc-mode .pc-event-feedback-card.kind-transition_choice.is-cutscene .pc-event-feedback__body {
   font-size: 13.5px !important;
   line-height: 1.35 !important;
@@ -17374,6 +17382,7 @@ body.pc-mode .pc-event-feedback-card.kind-transition_choice.is-cutscene .pc-even
 
 /* 등장 시 flash — 번쩍 */
 body.pc-mode .pc-event-feedback-card.kind-observation.is-cutscene.is-phase-appearing,
+body.pc-mode .pc-event-feedback-card.kind-evidence_result.is-cutscene.is-phase-appearing,
 body.pc-mode .pc-event-feedback-card.kind-transition_choice.is-cutscene.is-phase-appearing {
   animation: pc-obs-cutscene-flash 0.5s cubic-bezier(0.22, 0.9, 0.32, 1) !important;
 }
@@ -17386,6 +17395,7 @@ body.pc-mode .pc-event-feedback-card.kind-transition_choice.is-cutscene.is-phase
 
 /* Visible 상태에서 body만 등장 (기존 is-cutscene의 0 opacity 애니메이션 오버라이드) */
 body.pc-mode .pc-event-feedback-card.kind-observation.is-cutscene.is-phase-visible .pc-event-feedback__body,
+body.pc-mode .pc-event-feedback-card.kind-evidence_result.is-cutscene.is-phase-visible .pc-event-feedback__body,
 body.pc-mode .pc-event-feedback-card.kind-transition_choice.is-cutscene.is-phase-visible .pc-event-feedback__body {
   animation: pc-obs-body-in 0.35s 0.1s ease-out backwards !important;
   opacity: 1 !important;
@@ -17398,6 +17408,8 @@ body.pc-mode .pc-event-feedback-card.kind-transition_choice.is-cutscene.is-phase
 /* 수렴 — 좌측 하단(관찰 패널 방향)으로 축소되며 빨려들어감 (뚜렷한 모션) */
 body.pc-mode .pc-event-feedback-card.kind-observation.is-cutscene.is-phase-leaving,
 body.pc-mode .pc-event-feedback-card.kind-observation.is-cutscene.is-phase-converging,
+body.pc-mode .pc-event-feedback-card.kind-evidence_result.is-cutscene.is-phase-leaving,
+body.pc-mode .pc-event-feedback-card.kind-evidence_result.is-cutscene.is-phase-converging,
 body.pc-mode .pc-event-feedback-card.kind-transition_choice.is-cutscene.is-phase-leaving,
 body.pc-mode .pc-event-feedback-card.kind-transition_choice.is-cutscene.is-phase-converging {
   animation: pc-obs-converge 0.7s cubic-bezier(0.55, 0, 0.85, 0.05) forwards !important;
@@ -17412,6 +17424,10 @@ body.pc-mode .pc-event-feedback-card.kind-transition_choice.is-cutscene.is-phase
 
 /* observation 컷씬은 root backdrop도 최소화 (이미 alert라 blur 없음) */
 body.pc-mode .pc-event-feedback-root.is-alert:has(.kind-observation.is-cutscene) {
+  padding-top: 14vh !important;
+}
+
+body.pc-mode .pc-event-feedback-root.is-alert:has(.kind-evidence_result.is-cutscene) {
   padding-top: 14vh !important;
 }
 

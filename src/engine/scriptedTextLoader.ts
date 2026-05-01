@@ -33,6 +33,12 @@ const recentScriptContexts = new Map<string, SelectedScriptContext[]>() // caseI
 const MAX_RECENT = 20
 const MAX_CONTEXT = 12
 
+function toEvidencePresentLieBand(lieState: ScriptedLieState): ScriptedLieBand {
+  // S4는 "거의 무너짐"이지 완전 자백은 아니다. 증거 제시 응답의 full reveal은 S5에서만 쓴다.
+  if (lieState === 'S4') return 'mid'
+  return toScriptedLieBand(lieState)
+}
+
 interface VariantTagMap {
   [key: string]: string
 }
@@ -413,7 +419,7 @@ export function getScriptedEvidencePresent(
   lieState: string,
   subjectRole: string,
 ): { text: string; behaviorHint: string } | null {
-  const lieBand = toScriptedLieBand(lieState as ScriptedLieState)
+  const lieBand = toEvidencePresentLieBand(lieState as ScriptedLieState)
   const key = buildEvidencePresentKey({
     party,
     evidenceId,

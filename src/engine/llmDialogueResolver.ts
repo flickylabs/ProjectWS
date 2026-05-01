@@ -2208,6 +2208,9 @@ function tryScriptedDialoguePath(
     logScriptMiss(caseId, action, target, disputeId, lieEntry.currentState)
     return null
   }
+  // 증거 제시처럼 재판관 질문을 호출부에서 이미 출력한 scripted 응답은
+  // LLM 경로로 들어가지 않으므로 skip flag를 여기서 소비해 다음 액션으로 새지 않게 한다.
+  shouldSkipJudgeQuestion()
 
   // 후처리 파이프라인 경유 (기존과 동일한 품질 가드)
   const bpPartyNames = { nameA: caseData.duo.partyA.name, nameB: caseData.duo.partyB.name }

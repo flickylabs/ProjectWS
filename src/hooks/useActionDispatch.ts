@@ -168,6 +168,33 @@ function getEvidenceDisplayName(def: any, runtimeState?: { deepInvestigated?: bo
   return runtimeState?.deepInvestigated ? (def.name ?? def.id) : (def.surfaceName ?? def.name ?? def.id)
 }
 
+function buildEvidencePresentationQuestion(
+  state: ReturnType<typeof useGameStore.getState>,
+  target: PartyId,
+  evidence: any,
+  evidenceRuntime: any,
+  displayName: string,
+  relatedDisputes: string[],
+): string {
+  const targetName = getPartyName(state, target)
+  const stages = Array.isArray(evidence?.investigationStages) ? evidence.investigationStages : []
+  const investigated = Array.isArray(evidenceRuntime?.investigatedActions) ? evidenceRuntime.investigatedActions : []
+  const latestStage = stages
+    .filter((stage: any) => investigated.includes(stage.revealKey))
+    .sort((a: any, b: any) => (a.stage ?? 0) - (b.stage ?? 0))
+    .at(-1)
+  const stageLabel = latestStage?.stage ? `조사 ${latestStage.stage}단계` : '기초 확인'
+  const questionText = latestStage?.question?.text
+    ?? evidence?.partyContext?.[target]?.questionAngle
+    ?? '이 증거와 관련해 설명해 주시겠습니까?'
+  const disputeName = relatedDisputes
+    .map((dId) => state.caseData?.disputes.find((d) => d.id === dId)?.name)
+    .filter(Boolean)[0]
+  const disputeClause = disputeName ? ` "${disputeName}" 쟁점과 관련해` : ''
+
+  return `${targetName} 씨, ${displayName}(${stageLabel})를 제시합니다.${disputeClause} ${questionText}`
+}
+
 function getEvidenceCurrentLieRank(evidence: any, lieStates: Record<string, { currentState?: string }> | undefined): number {
   const proves = Array.isArray(evidence?.proves) && evidence.proves.length > 0 ? evidence.proves : []
   const ranks = proves.map((id: string) => LIE_STATE_RANK_FOR_UNLOCK[lieStates?.[id]?.currentState ?? 'S0'] ?? 0)
@@ -343,16 +370,20 @@ async function handleEvidencePresent(action: Extract<PlayerAction, { type: 'evid
   playEvidencePresent()
   const evVis = state.discovery.disputeVisibility
   const visibleEvProves = evDef.proves.filter(dId => { const v = evVis[dId]; return !v || v.visibility !== 'hidden' })
-  const disputeNames = visibleEvProves.length > 0
-    ? visibleEvProves.map(dId => state.caseData?.disputes.find(d => d.id === dId)?.name ?? dId).join(', ')
-    : '관련 쟁점'
-  const reliabilityLabel = evDef.reliability === 'hard' ? 'Hard' : 'Soft'
   // [Phase F] 증거 시스템 메시지 명칭 — deepInvestigated 전엔 surfaceName(잠금 명칭) 사용.
   const evStateForName = state.evidenceStates[evDef.id]
   const displayName = getEvidenceDisplayName(evDef, evStateForName)
+  const judgeEvidenceQuestion = buildEvidencePresentationQuestion(
+    state,
+    action.target,
+    evDef,
+    evStateForName,
+    displayName,
+    visibleEvProves,
+  )
   state.addDialogue({
-    speaker: 'system',
-    text: `증거 제시: ${displayName} [${reliabilityLabel}] → "${disputeNames}"`,
+    speaker: 'judge',
+    text: judgeEvidenceQuestion,
     relatedDisputes: visibleEvProves,
     turn: state.turnCount,
   })
@@ -490,6 +521,7 @@ async function handleEvidencePresent(action: Extract<PlayerAction, { type: 'evid
 
   // NPC 반응 — 증거에 대해 직접 반응하도록 evidence_present 액션 전달
   if (evDef.proves.length > 0) {
+    setSkipNextJudgeQuestion(true)
     await resolveAndApply(action, action.target)
   }
 
