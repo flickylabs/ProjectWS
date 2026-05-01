@@ -114,6 +114,8 @@ export default function PCRightPanel() {
   const tellType = targetProfile.verbalTells[0]?.type ?? ''
   const faceId = getPcFaceSymbolId(pcTargetParty, targetProfile, targetAgent.emotionalState.phase)
   const trustStateLabel = getTrustStateLabel(targetAgent.trustState.trustTowardJudge)
+  const emotionStateValue = Math.max(0, Math.min(100, Math.round(targetAgent.emotionalState.internalValue ?? 0)))
+  const trustStateValue = Math.max(0, Math.min(100, Math.round(targetAgent.trustState.trustTowardJudge ?? 0)))
   const showCombination = currentPhase === Phase.Interrogation
 
   // 조합 준비 완료 감지 — 양쪽 모두 해금된 미완료 레시피 수 변화 → 얼럿 + shimmer
@@ -936,7 +938,7 @@ export default function PCRightPanel() {
                   </ul>
                   <div className="pc-target-info-drawer__now">
                     <span>현재 상태:</span>
-                    <strong>{EMOTION_LABELS[currentPhase]}</strong>
+                    <strong>{EMOTION_LABELS[currentPhase]} · {emotionStateValue}/100</strong>
                   </div>
                 </>
               )
@@ -970,7 +972,7 @@ export default function PCRightPanel() {
                 </p>
                 <div className="pc-target-info-drawer__now">
                   <span>현재 상태:</span>
-                  <strong>{trustStateLabel}</strong>
+                  <strong>{trustStateLabel} · {trustStateValue}/100</strong>
                 </div>
               </>
             ) : null}
