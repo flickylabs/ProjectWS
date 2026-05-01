@@ -25,6 +25,7 @@ $StrictQaFast = Get-Flag 'STRICT_QA_FAST' $strictDefault
 $script:FailCount = 0
 $script:WarnCount = 0
 $script:BuildOk = $false
+$script:LastTestExit = 0
 
 function Invoke-TestCommand {
   param(
@@ -46,6 +47,7 @@ function Invoke-TestCommand {
 
   & $FilePath @Arguments
   $exit = if ($null -eq $LASTEXITCODE) { 0 } else { $LASTEXITCODE }
+  $script:LastTestExit = $exit
 
   if ($exit -eq 0) {
     Write-Host "[PASS] $Label"
@@ -57,7 +59,9 @@ function Invoke-TestCommand {
     $script:FailCount += 1
   }
 
-  return $exit
+  # Keep the exit code in script state instead of returning it on the
+  # success stream; otherwise command output can corrupt callers that
+  # compare the return value.
 }
 
 Write-Host '============================================================'
@@ -90,16 +94,16 @@ if (!(Test-Path (Join-Path $Root 'package.json'))) {
 
 Set-Location $Root
 
-Invoke-TestCommand 'Node version' 'node' @('--version') | Out-Null
-Invoke-TestCommand 'NPM version' 'npm.cmd' @('--version') | Out-Null
+Invoke-TestCommand 'Node version' 'node' @('--version')
+Invoke-TestCommand 'NPM version' 'npm.cmd' @('--version')
 
-$buildExit = Invoke-TestCommand 'UI/PC production build' 'npm.cmd' @('run', 'build:pc')
-if ($buildExit -eq 0) { $script:BuildOk = $true }
+Invoke-TestCommand 'UI/PC production build' 'npm.cmd' @('run', 'build:pc')
+if ($script:LastTestExit -eq 0) { $script:BuildOk = $true }
 
-Invoke-TestCommand 'LLM free-question policy corpus' 'npm.cmd' @('run', 'qa:free-interrogation') | Out-Null
+Invoke-TestCommand 'LLM free-question policy corpus' 'npm.cmd' @('run', 'qa:free-interrogation')
 
 if ($RunBrowser -eq '1') {
-  Invoke-TestCommand 'UI browser harness' 'npm.cmd' @('run', 'qa:browser') -Audit:($StrictBrowser -ne '1') | Out-Null
+  Invoke-TestCommand 'UI browser harness' 'npm.cmd' @('run', 'qa:browser') -Audit:($StrictBrowser -ne '1')
 } else {
   Write-Host '[SKIP] Browser UI harness disabled.'
 }
@@ -107,24 +111,24 @@ if ($RunBrowser -eq '1') {
 if ($RunScriptAudit -eq '1') {
   foreach ($caseId in @('spouse-01', 'family-01', 'friend-01')) {
     $audit = $StrictScript -ne '1'
-    Invoke-TestCommand "Script semantic quality $caseId" 'node' @('scripts\validate-scripted-semantic-quality.cjs', '--case', $caseId) -Audit:$audit | Out-Null
-    Invoke-TestCommand "Script template coverage $caseId" 'node' @('scripts\validate-scripted-template-coverage.cjs', '--case', $caseId) -Audit:$audit | Out-Null
-    Invoke-TestCommand "Runtime template coverage $caseId" 'node' @('scripts\validate-runtime-template-coverage.cjs', '--case', $caseId) -Audit:$audit | Out-Null
+    Invoke-TestCommand "Script semantic quality $caseId" 'node' @('scripts\validate-scripted-semantic-quality.cjs', '--case', $caseId) -Audit:$audit
+    Invoke-TestCommand "Script template coverage $caseId" 'node' @('scripts\validate-scripted-template-coverage.cjs', '--case', $caseId) -Audit:$audit
+    Invoke-TestCommand "Runtime template coverage $caseId" 'node' @('scripts\validate-runtime-template-coverage.cjs', '--case', $caseId) -Audit:$audit
   }
 } else {
   Write-Host '[SKIP] Script audit disabled.'
 }
 
 if ($RunQaFast -eq '1') {
-  Invoke-TestCommand 'QA fast static+route release gate' 'npm.cmd' @('run', 'qa:fast') -Audit:($StrictQaFast -ne '1') | Out-Null
+  Invoke-TestCommand 'QA fast static+route release gate' 'npm.cmd' @('run', 'qa:fast') -Audit:($StrictQaFast -ne '1')
 } else {
   Write-Host '[SKIP] qa:fast disabled.'
 }
 
 if ($RunDeep -eq '1') {
-  Invoke-TestCommand 'QA deep' 'npm.cmd' @('run', 'qa:deep') -Audit | Out-Null
-  Invoke-TestCommand 'QA visual report' 'npm.cmd' @('run', 'qa:visual') -Audit | Out-Null
-  Invoke-TestCommand 'QA route exhaustive' 'npm.cmd' @('run', 'qa:route:exhaustive') -Audit | Out-Null
+  Invoke-TestCommand 'QA deep' 'npm.cmd' @('run', 'qa:deep') -Audit
+  Invoke-TestCommand 'QA visual report' 'npm.cmd' @('run', 'qa:visual') -Audit
+  Invoke-TestCommand 'QA route exhaustive' 'npm.cmd' @('run', 'qa:route:exhaustive') -Audit
 } else {
   Write-Host '[SKIP] Deep/visual/exhaustive QA disabled. Set RUN_DEEP=1 to enable.'
 }
@@ -175,7 +179,7 @@ if ($StartServer -eq '1') {
       Write-Host '[WARN] Dev server did not respond yet. It may still be starting in a separate window.'
       Write-Host "Try opening manually: $Url"
     }
-    exit $LASTEXITCODE
+    exit $script:FailCount
   }
   Write-Host '[SKIP] Dev server not started because build:pc failed.'
 } else {
