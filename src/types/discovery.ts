@@ -82,7 +82,7 @@ export interface DisputeVisibilityEntry {
 }
 
 export interface EmergenceRoute {
-  type: 'evidence' | 'truth_confrontation' | 'witness' | 'lie_collapse' | 'emotional_slip' | 'lie_state_threshold'
+  type: 'evidence' | 'truth_confrontation' | 'witness' | 'lie_collapse' | 'emotional_slip' | 'lie_state_threshold' | 'interjection'
   /** 필요 조건 상세 */
   condition: {
     /** 특정 증거 제시/조사 필요 */

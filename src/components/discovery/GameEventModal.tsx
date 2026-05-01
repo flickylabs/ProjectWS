@@ -32,6 +32,45 @@ function buildContradictionFallbackLine(lieState: string): string {
   return '그건... 제가 말한 것과 다르지 않습니다. 맥락이 다른 것입니다.'
 }
 
+const INTERJECTION_EMERGENCE_TARGETS: Record<string, string> = {
+  'spouse-v3-01-interjection-b': 'h-d3',
+  'spouse-01-interjection-b': 'h-d3',
+  'family-01-interjection-a': 'd-2',
+  'family-01-interjection-b': 'd-3',
+  'friend-01-interjection-a': 'd-2',
+  'friend-01-interjection-b': 'd-3',
+}
+
+function findHiddenDisputeMentionedByInterjection(
+  state: ReturnType<typeof useGameStore.getState>,
+  event: GameEventTrigger,
+  interjectionId: string | undefined,
+  text: string,
+): string | null {
+  const visibility = state.discovery?.disputeVisibility ?? {}
+  const directTarget = interjectionId ? INTERJECTION_EMERGENCE_TARGETS[interjectionId] : null
+  if (directTarget && visibility[directTarget]?.visibility === 'hidden') return directTarget
+
+  const caseDisputes = state.caseData?.disputes ?? []
+  const hiddenDisputes = caseDisputes.filter((d) =>
+    d.id !== event.disputeId && visibility[d.id]?.visibility === 'hidden'
+  )
+  if (hiddenDisputes.length === 0) return null
+
+  const normalizedText = text.replace(/\s+/g, '')
+  const stop = new Set(['쟁점', '진짜', '실체', '이유', '의도', '패턴', '문제', '침묵', '주체'])
+  let best: { id: string; score: number } | null = null
+  for (const dispute of hiddenDisputes) {
+    const tokens = String(dispute.name ?? dispute.id)
+      .split(/[\s·,()]+/)
+      .map((token) => token.trim())
+      .filter((token) => token.length >= 2 && !stop.has(token))
+    const score = tokens.reduce((sum, token) => sum + (normalizedText.includes(token.replace(/\s+/g, '')) ? 1 : 0), 0)
+    if (score > (best?.score ?? 0)) best = { id: dispute.id, score }
+  }
+  return best && best.score >= 2 ? best.id : null
+}
+
 export default function GameEventModal() {
   const pendingEvent = useStore(s => s.pendingGameEvent)
   const caseData = useStore(s => s.caseData)
@@ -211,6 +250,7 @@ function InterjectionModal({ event, caseKey, partyName }: { event: GameEventTrig
   const interjectionText = v3Event?.interjectionLine ?? event.description
 
   const handleAllow = () => {
+    const state = useGameStore.getState()
     addDialogue({
       speaker: event.party,
       text: interjectionText,
@@ -228,6 +268,16 @@ function InterjectionModal({ event, caseKey, partyName }: { event: GameEventTrig
     recordInterjectionChoice('allow')
     // 권위 감소
     changeTrust(event.party === 'a' ? 'b' : 'a', 'trustTowardJudge', -3)
+    const emergedDisputeId = findHiddenDisputeMentionedByInterjection(state, event, v3Event?.id, interjectionText)
+    if (emergedDisputeId) {
+      const dispute = state.caseData?.disputes.find((d) => d.id === emergedDisputeId)
+      state.emergeDispute(
+        emergedDisputeId,
+        'interjection',
+        turnCount,
+        dispute?.name ?? '끼어든 발언에서 새 쟁점이 드러났습니다.',
+      )
+    }
     dismiss(null)
   }
 

@@ -23,6 +23,7 @@ const ROUTE_LABELS: Record<string, string> = {
   witness: '증인 진술이 다른 갈래를 열었습니다.',
   lie_collapse: '거짓 붕괴로 숨은 쟁점이 드러났습니다.',
   emotional_slip: '감정 실수로 숨은 쟁점이 드러났습니다.',
+  interjection: '끼어든 발언이 새 쟁점을 열었습니다.',
 }
 
 const JUDGMENT_LABELS: Record<TruthJudgment, string> = {

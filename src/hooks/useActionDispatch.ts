@@ -89,7 +89,58 @@ const EMOTION_PHASE_LABELS: Record<string, string> = {
 
 function formatEmotionPhaseLabel(phase: string | undefined): string {
   if (!phase) return '미확인'
-  return EMOTION_PHASE_LABELS[phase] ?? phase
+  const normalized = String(phase).toLowerCase()
+  return EMOTION_PHASE_LABELS[normalized] ?? phase
+}
+
+const shownLockoutNoticeKeys = new Set<string>()
+
+function getPartyName(state: ReturnType<typeof useGameStore.getState>, party: PartyId, fallback = '당사자'): string {
+  return party === 'a'
+    ? state.caseData?.duo.partyA.name ?? fallback
+    : state.caseData?.duo.partyB.name ?? fallback
+}
+
+function getOtherPartyName(state: ReturnType<typeof useGameStore.getState>, party: PartyId): string {
+  return getPartyName(state, party === 'a' ? 'b' : 'a', '상대')
+}
+
+function addAngryLockoutNotice(
+  state: ReturnType<typeof useGameStore.getState>,
+  party: PartyId,
+  relatedDisputes: string[],
+  blockedActionLabel: string,
+): boolean {
+  const lockoutUntil = state.emotionalLockoutUntil?.[party] ?? 0
+  if (lockoutUntil <= state.turnCount) return false
+
+  const key = `${state.caseData?.caseId ?? 'case'}:${party}:${state.turnCount}:${lockoutUntil}:${blockedActionLabel}`
+  if (shownLockoutNoticeKeys.has(key)) return false
+  shownLockoutNoticeKeys.add(key)
+
+  const targetName = getPartyName(state, party)
+  const otherName = getOtherPartyName(state, party)
+  const remainingTurns = Math.min(2, Math.max(1, lockoutUntil - state.turnCount))
+  state.addDialogue({
+    speaker: 'system',
+    text: `🔒 ${targetName}${pp이가(targetName)} 격앙 상태입니다. ${remainingTurns}턴 동안 ${blockedActionLabel} 수 없습니다. ${otherName}에게 진행하거나 다른 행동을 선택해 주세요.`,
+    relatedDisputes,
+    turn: state.turnCount,
+  })
+  return true
+}
+
+function buildAngryRefusalLine(state: ReturnType<typeof useGameStore.getState>, party: PartyId): string {
+  const caseId = normalizeCaseKey(state.caseData?.caseId ?? '')
+  const map: Record<string, string> = {
+    'spouse-01:a': '그만 몰아붙이세요. 지금은 더 말하고 싶지 않습니다.',
+    'spouse-01:b': '그만하십시오. 지금은 더 대답하지 않겠습니다.',
+    'family-01:a': '잠깐만요. 지금은 더 묻지 마십시오.',
+    'family-01:b': '지금은 여기서 멈추겠습니다. 더 답하지 않겠습니다.',
+    'friend-01:a': '그만해 주세요. 지금은 더 말하면 제가 더 세게 말할 것 같아요.',
+    'friend-01:b': '지금은 답 못 하겠습니다. 더 캐묻지 말아 주세요.',
+  }
+  return map[`${caseId}:${party}`] ?? '지금은 더 대답하지 않겠습니다.'
 }
 
 function getEvidenceDisplayName(def: any, runtimeState?: { deepInvestigated?: boolean } | null): string {
@@ -250,18 +301,7 @@ async function handleEvidencePresent(action: Extract<PlayerAction, { type: 'evid
   // [Phase B-3] 체념(셧다운) 상태에서 증거 제시도 차단. 카운팅도 안 됨.
   const lockoutUntil = state.emotionalLockoutUntil?.[action.target] ?? 0
   if (lockoutUntil > state.turnCount) {
-    const targetName = action.target === 'a'
-      ? state.caseData?.duo.partyA.name ?? '당사자'
-      : state.caseData?.duo.partyB.name ?? '당사자'
-    const otherName = action.target === 'a'
-      ? state.caseData?.duo.partyB.name ?? '상대'
-      : state.caseData?.duo.partyA.name ?? '상대'
-    state.addDialogue({
-      speaker: 'system',
-      text: `🔒 ${targetName}${pp이가(targetName)} 체념 상태입니다. ${lockoutUntil - state.turnCount}턴 후 증거를 제시할 수 있습니다. ${otherName}에게 증거를 제시하거나 다른 행동을 취해주세요.`,
-      relatedDisputes: [],
-      turn: state.turnCount,
-    })
+    addAngryLockoutNotice(state, action.target, [], '증거를 제시할')
     evidencePresentLock = false
     return
   }
@@ -710,12 +750,30 @@ async function handleEvidenceInvestigate(action: Extract<PlayerAction, { type: '
   const prevInvestigations = state.evidenceStates[action.evidenceId]?.investigatedActions.length ?? 0
   if (prevInvestigations >= 1) {
     if (!state.spend('investigationTokens', 1)) {
-      state.addDialogue({ speaker: 'system', text: '조사 토큰이 부족합니다.', relatedDisputes: [], turn: state.turnCount })
+      state.enqueueFeedback({
+        kind: 'evidence_result',
+        eyebrow: '증거 조사',
+        title: '조사 토큰 부족',
+        body: '조사 토큰이 부족합니다.',
+        tone: 'neutral',
+        autoDismissMs: 1800,
+      })
       return
     }
   }
   const result = state.investigateEvidence(action.evidenceId, action.subAction)
-  if (result) state.addDialogue({ speaker: 'system', text: `${result}`, relatedDisputes: [], turn: state.turnCount })
+  if (result) {
+    const def = state.evidenceDefinitions.find((e) => e.id === action.evidenceId)
+    const displayName = def ? getEvidenceDisplayName(def, state.evidenceStates[def.id]) : '증거 조사'
+    state.enqueueFeedback({
+      kind: 'evidence_result',
+      eyebrow: '증거 조사',
+      title: displayName,
+      body: `${result}`,
+      tone: 'neutral',
+      autoDismissMs: 2400,
+    })
+  }
 
   // [TC-F C2 픽스] 조사 결과로 자동 해금된 증거를 시스템 메시지로 알림
   // — '발신자 미상 문자' 같은 신규 해금이 사용자에게 전혀 표시되지 않던 결함 해소
@@ -726,11 +784,13 @@ async function handleEvidenceInvestigate(action: Extract<PlayerAction, { type: '
       const def = evidenceDefs.find((e) => e.id === unlockedId)
       if (!def) continue
       const displayName = getEvidenceDisplayName(def, state.evidenceStates[def.id])
-      state.addDialogue({
-        speaker: 'system',
-        text: `🔓 새로운 증거를 손에 넣었다 — ${displayName}`,
-        relatedDisputes: [],
-        turn: state.turnCount,
+      state.enqueueFeedback({
+        kind: 'evidence_result',
+        eyebrow: '새 증거 확보',
+        title: displayName,
+        body: '좌측 증거 목록에 추가되었습니다.',
+        tone: 'green',
+        autoDismissMs: 2200,
       })
     }
   }
@@ -775,19 +835,7 @@ async function handleQuestion(action: Extract<PlayerAction, { type: 'question' }
   // [감정 과부하 lockout] 차단 만료 turn 까지 질문 거부 — 메시지 1회만 출력
   const lockoutUntil = state.emotionalLockoutUntil?.[action.target] ?? 0
   if (lockoutUntil > state.turnCount) {
-    const targetName = action.target === 'a'
-      ? state.caseData?.duo.partyA.name ?? '당사자'
-      : state.caseData?.duo.partyB.name ?? '당사자'
-    // [Phase B] 우회 안내 강화 — 다른 당사자 / 다른 행동 명시
-    const otherName = action.target === 'a'
-      ? state.caseData?.duo.partyB.name ?? '상대'
-      : state.caseData?.duo.partyA.name ?? '상대'
-    state.addDialogue({
-      speaker: 'system',
-      text: `🔒 ${targetName}${pp이가(targetName)} 체념 상태입니다. ${lockoutUntil - state.turnCount}턴 후 다시 질문할 수 있습니다. ${otherName}에게 질문하거나 다른 행동을 취해주세요.`,
-      relatedDisputes: [action.disputeId],
-      turn: state.turnCount,
-    })
+    addAngryLockoutNotice(state, action.target, [action.disputeId], '질문할')
     return
   }
   // [Phase C-4] 자백 후 동일 쟁점 재추궁 — 짧은 재진술/회피로 응답. LLM 호출 안 함.
@@ -2607,7 +2655,15 @@ export async function handleContradictionPursue(
     const currentLockout = afterState.emotionalLockoutUntil?.[party] ?? 0
     if (afterEmotion.internalValue >= 65 && afterEmotion.internalValue < 85 && currentLockout <= afterState.turnCount) {
       afterState.setEmotionalLockout(party, afterState.turnCount + 3)
-      outcomeParts.push('감정 셧다운 예고: 다음 2턴 동안 방어적으로 닫힐 수 있음')
+      outcomeParts.push('격앙 진입: 다음 2턴 동안 질문 차단')
+      afterState.addDialogue({
+        speaker: party,
+        text: buildAngryRefusalLine(afterState, party),
+        relatedDisputes: [disputeId],
+        turn: afterState.turnCount,
+        behaviorHint: '목소리가 높아지고, 더 묻지 말라는 태도로 대화를 끊는다.',
+        source: 'fallback',
+      })
     }
     afterState.addDialogue({
       speaker: 'system',
