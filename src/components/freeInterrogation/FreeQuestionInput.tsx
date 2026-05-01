@@ -3,6 +3,7 @@ import type { CaseData, FreeInterrogationIntent, FreeInterrogationIntentId, Part
 import { useActionDispatch } from '../../hooks/useActionDispatch'
 import { useGameStore, useStore } from '../../store/useGameStore'
 import {
+  buildFreeInterrogationNoTokenText,
   isFreeInterrogationEnabled,
   resolveFreeInterrogation,
 } from '../../engine/freeInterrogation'
@@ -67,47 +68,41 @@ export default function FreeQuestionInput({
         evidenceStates: state.evidenceStates,
       })
 
-      if (result.status === 'dispatch' && result.action) {
+      if (result.costPolicy === 'consume' && useGameStore.getState().resources.investigationTokens < 1) {
         const fresh = useGameStore.getState()
-        if (result.costPolicy !== 'no_cost' && !fresh.spend('investigationTokens', 1)) {
-          fresh.addDialogue({
-            speaker: 'system',
-            text: '조사권이 부족합니다. 공개 정보 확인은 가능하지만, 유효한 심문은 조사권 1개가 필요합니다.',
-            relatedDisputes: [],
-            turn: fresh.turnCount,
-          })
-          return
-        }
+        fresh.addDialogue({
+          speaker: 'system',
+          text: buildFreeInterrogationNoTokenText(),
+          relatedDisputes: result.intent.mapped.disputeId ? [result.intent.mapped.disputeId] : [],
+          turn: fresh.turnCount,
+        })
+        return
+      }
+
+      if (result.status === 'dispatch' && result.action) {
+        if (result.costPolicy === 'consume' && !useGameStore.getState().spend('investigationTokens', 1)) return
         dispatch(result.action)
         const cutscenePayload = buildAIReasoningCutscenePayload(trimmed, result.intent, caseData)
         if (cutscenePayload) {
           triggerAIReasoningCutscene(cutscenePayload)
         }
       } else {
-        const fallbackSpeaker = result.dialogueSpeaker ?? result.fallbackSpeaker ?? target
+        const fallbackSpeaker = result.dialogueSpeaker ?? target ?? 'system'
         const related = result.intent.mapped.disputeId ? [result.intent.mapped.disputeId] : []
         const fresh = useGameStore.getState()
-        if (result.costPolicy !== 'no_cost' && !fresh.spend('investigationTokens', 1)) {
-          fresh.addDialogue({
-            speaker: 'system',
-            text: '조사권이 부족합니다. 공개 정보 확인은 가능하지만, 유효한 심문은 조사권 1개가 필요합니다.',
-            relatedDisputes: related,
-            turn: fresh.turnCount,
-          })
-          return
-        }
+        if (result.costPolicy === 'consume' && !fresh.spend('investigationTokens', 1)) return
         fresh.addDialogue({ speaker: 'judge', text: trimmed, relatedDisputes: related, turn: fresh.turnCount })
         fresh.addDialogue({
           speaker: fallbackSpeaker,
           text: result.fallbackText ?? '재판관님, 그 질문에는 지금 답하기 어렵습니다.',
           relatedDisputes: related,
           turn: fresh.turnCount,
-          behaviorHint: fallbackSpeaker === 'judge' || fallbackSpeaker === 'system'
+          behaviorHint: fallbackSpeaker === 'system'
             ? undefined
             : '질문을 고르다 잠시 말을 아낀다.',
           source: 'fallback',
         })
-        if (result.turnPolicy !== 'no_advance') {
+        if (result.turnPolicy === 'advance') {
           fresh.incrementTurn()
         }
       }
@@ -117,7 +112,7 @@ export default function FreeQuestionInput({
     } finally {
       setBusy(false)
     }
-  }, [activeDisputeId, canSubmit, caseData, currentPhase, onDone, target, trimmed])
+  }, [activeDisputeId, canSubmit, caseData, currentPhase, dispatch, onDone, target, trimmed])
 
   if (!enabled) return null
 

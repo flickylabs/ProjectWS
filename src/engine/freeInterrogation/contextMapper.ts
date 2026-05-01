@@ -179,7 +179,7 @@ function hasTargetLieState(context: FreeInterrogationRuntimeContext, target: Par
 
 function splitMeaningfulTokens(text: string): string[] {
   return text
-    .split(/[\s/·,()[\]{}"“”'‘’:：\-]+/)
+    .split(/[\s/·,()[\]{}"“”'‘’:：-]+/)
     .map((token) => token.trim())
     .filter((token) => token.length >= 2)
 }

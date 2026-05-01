@@ -83,10 +83,10 @@ export interface FreeInterrogationFallbackResult {
 export interface FreeInterrogationResolution {
   status: 'dispatch' | 'fallback'
   intent: FreeInterrogationIntent
-  route?: FreeInterrogationResolutionRoute
-  costPolicy?: FreeInterrogationCostPolicy
-  turnPolicy?: FreeInterrogationTurnPolicy
-  dialogueSpeaker?: PartyId | 'judge' | 'system'
+  route: FreeInterrogationResolutionRoute
+  costPolicy: FreeInterrogationCostPolicy
+  turnPolicy: FreeInterrogationTurnPolicy
+  dialogueSpeaker?: PartyId | 'system'
   action?: {
     type: 'question'
     questionType: FreeInterrogationQuestionType
@@ -95,6 +95,5 @@ export interface FreeInterrogationResolution {
     freeInterrogation: FreeInterrogationActionMeta
   }
   fallbackText?: string
-  fallbackSpeaker?: PartyId | 'judge' | 'system'
   reason?: string
 }

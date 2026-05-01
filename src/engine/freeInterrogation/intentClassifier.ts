@@ -74,11 +74,6 @@ const IDENTITY_META_PATTERNS = [
 const AMBIGUOUS_REFERENCE_PATTERN = /그런|그 의심|그 이유|그 부분|그 일|그 말|그 행동|그거|그것|그게|그렇게/i
 const MIN_LLM_INTENT_CONFIDENCE = 0.65
 
-export function isCourtIdentityQuestion(rawText: string): boolean {
-  const raw = normalizeRawText(rawText)
-  return IDENTITY_META_PATTERNS.some((pattern) => pattern.test(raw))
-}
-
 export async function classifyFreeInterrogationIntent(
   rawText: string,
   context: FreeInterrogationRuntimeContext,
@@ -250,7 +245,7 @@ function normalizeToken(value: string): string {
 
 function splitMeaningfulTokens(text: string): string[] {
   return text
-    .split(/[\s/·,()[\]{}"“”'‘’:：\-]+/)
+    .split(/[\s/·,()[\]{}"“”'‘’:：-]+/)
     .map((token) => token.trim())
     .filter((token) => token.length >= 2)
 }

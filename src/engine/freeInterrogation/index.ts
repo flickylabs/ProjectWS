@@ -2,7 +2,6 @@ import { classifyFreeInterrogationIntent } from './intentClassifier'
 import { mapFreeInterrogationContext } from './contextMapper'
 import { selectFreeInterrogationFallbackText } from './fallback'
 import {
-  buildFreeInterrogationContextualFallback,
   buildFreeInterrogationOffTopicRedirect,
   buildFreeInterrogationPublicAnswer,
   resolveFreeInterrogationPublicSpeaker,
@@ -79,7 +78,6 @@ export async function resolveFreeInterrogation(
   if (mapped.intent === 'leak_probe') {
     const fallbackContext = buildFallbackContext(context, mapped)
     const fallback = buildMappedFallback(fallbackContext, 'leak_probe')
-    const outputReason = 'reason' in fallback ? fallback.reason : 'leak_probe'
     return {
       status: 'fallback',
       route: 'guard_fallback',
@@ -87,15 +85,14 @@ export async function resolveFreeInterrogation(
       turnPolicy: 'no_advance',
       dialogueSpeaker: fallbackContext.target ?? 'system',
       intent: mapped,
-      fallbackText: buildFreeInterrogationContextualFallback(context, fallbackContext, 'leak_probe', fallback.text),
-      reason: outputReason,
+      fallbackText: fallback.text,
+      reason: 'reason' in fallback ? fallback.reason : 'leak_probe',
     }
   }
 
   if (context.currentPhase !== GamePhase.Phase3_Interrogation) {
     const fallbackContext = buildFallbackContext(context, mapped)
     const fallback = buildMappedFallback(fallbackContext, 'phase_not_interrogation')
-    const outputReason = 'reason' in fallback ? fallback.reason : 'phase_not_interrogation'
     return {
       status: 'fallback',
       route: 'phase_redirect',
@@ -103,8 +100,8 @@ export async function resolveFreeInterrogation(
       turnPolicy: 'no_advance',
       dialogueSpeaker: fallbackContext.target ?? 'system',
       intent: mapped,
-      fallbackText: buildFreeInterrogationContextualFallback(context, fallbackContext, 'phase_not_interrogation', fallback.text),
-      reason: outputReason,
+      fallbackText: fallback.text,
+      reason: 'reason' in fallback ? fallback.reason : 'phase_not_interrogation',
     }
   }
 
@@ -131,9 +128,7 @@ export async function resolveFreeInterrogation(
   }
 
   const fallbackContext = buildFallbackContext(context, mapped)
-  const fallbackReason = resolveFallbackReason(mapped)
-  const fallback = buildMappedFallback(fallbackContext, fallbackReason)
-  const reason = 'reason' in fallback ? fallback.reason : 'context_mapping_failed'
+  const fallback = buildMappedFallback(fallbackContext, resolveFallbackReason(mapped))
 
   return {
     status: 'fallback',
@@ -142,8 +137,8 @@ export async function resolveFreeInterrogation(
     turnPolicy: 'no_advance',
     dialogueSpeaker: fallbackContext.target ?? 'system',
     intent: mapped,
-    fallbackText: buildFreeInterrogationContextualFallback(context, fallbackContext, fallbackReason, fallback.text),
-    reason,
+    fallbackText: fallback.text,
+    reason: 'reason' in fallback ? fallback.reason : 'context_mapping_failed',
   }
 }
 
