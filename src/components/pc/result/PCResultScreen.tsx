@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo, useState } from 'react'
 import { loadGeneratedCases } from '../../../data/cases/caseLoader'
 import { evaluateTitles, saveUnlockedTitles, loadUnlockedTitles, type Title } from '../../../data/titles'
-import { loadDriftState, loadExtendedHistory, loadJudgePerks, loadProgressionState, saveProgressionState } from '../../../data/leaderboard'
+import { loadDriftState, loadExtendedHistory, loadJudgePerks, loadProgressionState, saveProgressionState, updateLatestAftermath } from '../../../data/leaderboard'
 import { deriveCaseProfile, deriveJudgeProfile, TITLE_LABELS, AXIS_LABELS, TIER_LABELS, LEVEL_LABELS } from '../../../engine/judgeProfileEngine'
 import PCTitleEmblem from '../icons/PCTitleEmblem'
 import PCCharacterPortrait from '../icons/PCCharacterPortrait'
@@ -186,7 +186,6 @@ export default function PCResultScreen() {
   const evidenceStates = useStore((s) => s.evidenceStates)
   const skillUseCounts = useStore((s) => s.skillUseCounts)
   const processMetrics = useStore((s) => s.processMetrics)
-  const minigameProgress = useStore((s) => s.minigameProgress)
   const calledWitnesses = useStore((s) => s.calledWitnesses)
   const triggeredCombinations = useStore((s) => s.triggeredCombinations)
   const combinationLabRuntime = useStore((s) => s.combinationLabRuntime)
@@ -240,16 +239,10 @@ export default function PCResultScreen() {
     if (_aftermathCache?.caseId === caseData?.caseId) return
     if (!caseData || !verdictScore) return
 
-    const scripted = resolveScriptedAftermath(caseData, verdictInput)
-    if (scripted) {
-      _aftermathCache = { caseId: caseData.caseId, text: withVerdictContext(caseData, verdictInput, scripted.text) }
-      return
-    }
-
     void (async () => {
       try {
         const { chatCompletion } = await import('../../../engine/llmClient')
-        const { buildAftermathPrompt, postProcessAftermath } = await import('../../../engine/aftermathLLMGenerator')
+        const { AFTERMATH_MAX_TOKENS, buildAftermathPrompt, postProcessAftermath } = await import('../../../engine/aftermathLLMGenerator')
 
         const keyDiscoveries: string[] = []
         if (processMetrics.liesCollapsed > 0) keyDiscoveries.push(`거짓말 ${processMetrics.liesCollapsed}건 자백 유도`)
@@ -276,17 +269,25 @@ export default function PCResultScreen() {
         console.log('[후일담] 결과 화면 진입 — LLM 즉시 호출 시작')
         const response = await chatCompletion(
           [{ role: 'user', content: prompt }],
-          { temperature: 0.9, maxTokens: 900, model: 'gpt-4o-mini', endpoint: 'aftermath' },
+          { temperature: 0.9, maxTokens: AFTERMATH_MAX_TOKENS, model: 'gpt-4o-mini', endpoint: 'aftermath' },
         )
         if (response) {
           const processed = postProcessAftermath(response, { a: caseData.duo.partyA.name, b: caseData.duo.partyB.name })
           if (processed) {
-            _aftermathCache = { caseId: caseData.caseId, text: withVerdictContext(caseData, verdictInput, processed) }
+            const result = withVerdictContext(caseData, verdictInput, processed)
+            _aftermathCache = { caseId: caseData.caseId, text: result }
+            updateLatestAftermath(result)
             console.log('[후일담] LLM 생성 완료, 길이:', processed.length)
           }
         }
       } catch (err) {
         console.warn('[후일담] 백그라운드 LLM 생성 실패:', err)
+        const scripted = resolveScriptedAftermath(caseData, verdictInput)
+        const fallbackText = scripted
+          ? withVerdictContext(caseData, verdictInput, scripted.text)
+          : buildFallback(caseData, verdictScore.total, verdictInput)
+        _aftermathCache = { caseId: caseData.caseId, text: fallbackText }
+        updateLatestAftermath(fallbackText)
       }
     })()
   }, []) // eslint-disable-line react-hooks/exhaustive-deps
@@ -868,7 +869,6 @@ export default function PCResultScreen() {
 
       {clearanceDetailOpen ? (
         <PCClearanceDetailPopup
-          minigameProgress={minigameProgress}
           onClose={handleCloseClearanceDetail}
           result={clearanceResult}
         />
@@ -1023,25 +1023,18 @@ function AftermathInline() {
     if (pregenerated) {
       _aftermathCache = { caseId: caseData?.caseId ?? 'unknown', text: pregenerated }
       setAftermath(pregenerated)
+      updateLatestAftermath(pregenerated)
       console.log('[후일담] 사전 생성 결과 사용')
       return
     }
     if (!caseData || !verdictScore) return
-
-    const scripted = resolveScriptedAftermath(caseData, verdictInput)
-    if (scripted) {
-      const text = withVerdictContext(caseData, verdictInput, scripted.text)
-      _aftermathCache = { caseId: caseData.caseId, text }
-      setAftermath(text)
-      return
-    }
 
     void (async () => {
       setLoading(true)
       setError(null)
       try {
         const { chatCompletion } = await import('../../../engine/llmClient')
-        const { buildAftermathPrompt, postProcessAftermath } = await import('../../../engine/aftermathLLMGenerator')
+        const { AFTERMATH_MAX_TOKENS, buildAftermathPrompt, postProcessAftermath } = await import('../../../engine/aftermathLLMGenerator')
         const { evaluateTitles } = await import('../../../data/titles')
 
         const keyDiscoveries: string[] = []
@@ -1083,7 +1076,7 @@ function AftermathInline() {
         console.log('[후일담] LLM 호출 시작')
         const response = await chatCompletion(
           [{ role: 'user', content: prompt }],
-          { temperature: 0.9, maxTokens: 900, model: 'gpt-4o-mini', endpoint: 'aftermath' },
+          { temperature: 0.9, maxTokens: AFTERMATH_MAX_TOKENS, model: 'gpt-4o-mini', endpoint: 'aftermath' },
         )
         console.log('[후일담] LLM 응답 길이:', response.length)
         const generated = postProcessAftermath(response, { a: caseData.duo.partyA.name, b: caseData.duo.partyB.name })
@@ -1092,12 +1085,17 @@ function AftermathInline() {
           : buildFallback(caseData, verdictScore.total, verdictInput)
         _aftermathCache = { caseId: caseData.caseId, text: result }
         setAftermath(result)
+        updateLatestAftermath(result)
       } catch (err: any) {
         console.error('[후일담] LLM 호출 실패:', err?.message ?? err)
         setError(err?.message ?? 'LLM 호출 실패')
-        const fb = buildFallback(caseData, verdictScore.total, verdictInput)
+        const scripted = resolveScriptedAftermath(caseData, verdictInput)
+        const fb = scripted
+          ? withVerdictContext(caseData, verdictInput, scripted.text)
+          : buildFallback(caseData, verdictScore.total, verdictInput)
         _aftermathCache = { caseId: caseData.caseId, text: fb }
         setAftermath(fb)
+        updateLatestAftermath(fb)
       } finally {
         setLoading(false)
       }
@@ -1111,12 +1109,16 @@ function AftermathInline() {
     return <p>후일담 데이터가 없습니다.</p>
   }
 
+  const shapedAftermath = caseData && verdictScore
+    ? ensureAftermathShape(caseData, verdictInput, verdictScore.total, aftermath)
+    : aftermath
+
   // "**교훈 한 문장**:" 제거
-  let cleaned = aftermath.replace(/\*?\*?교훈 한 문장\*?\*?:\s*/g, '')
+  let cleaned = shapedAftermath.replace(/\*?\*?교훈 한 문장\*?\*?:\s*/g, '')
   const allParas = cleaned.split('\n\n').filter(p => p.trim())
   // 본문 3문단(흰색) + 마지막 1문장(노란색 따옴표)
-  const bodyParas = allParas.slice(0, 3)
-  const lesson = allParas.length > 3 ? allParas[allParas.length - 1] : null
+  const lesson = allParas.length >= 4 ? allParas[allParas.length - 1] : null
+  const bodyParas = (lesson ? allParas.slice(0, -1) : allParas).slice(0, 3)
 
   return (
     <>
@@ -1124,7 +1126,7 @@ function AftermathInline() {
         <p key={i} style={{ fontSize: 15, lineHeight: 1.9, color: '#e8e5dc' }}>{para}</p>
       ))}
       {lesson && (() => {
-        const text = lesson.trim().replace(/^[""\u201C]|[""\u201D]$/g, '')
+        const text = lesson.trim().replace(/^["“”']+|["“”']+$/g, '')
         return (
           <p style={{ fontSize: 16, lineHeight: 1.8, color: 'var(--pc-gold-light, #e8c172)', textAlign: 'center', fontWeight: 600, marginTop: 10, fontStyle: 'italic' }}>
             &ldquo;{text}&rdquo;
@@ -1142,6 +1144,25 @@ function getSelectedSolutionText(verdictInput: VerdictInput): string {
   return selectedSolutions.length > 0
     ? selectedSolutions.slice(0, 2).join(', ')
     : '추가 조치 없이 판결 내용을 따르는 것'
+}
+
+function splitAftermathParagraphs(text: string): string[] {
+  return text.split(/\n\n+/).map((para) => para.trim()).filter(Boolean)
+}
+
+function ensureAftermathShape(caseData: CaseData, verdictInput: VerdictInput, total: number, text: string): string {
+  const paragraphs = splitAftermathParagraphs(text)
+  if (paragraphs.length >= 4) return text
+
+  const fallbackParagraphs = splitAftermathParagraphs(buildFallback(caseData, total, verdictInput))
+  if (paragraphs.length === 0) return fallbackParagraphs.join('\n\n')
+
+  const body = [
+    paragraphs[0],
+    ...fallbackParagraphs.slice(1, 3),
+  ].slice(0, 3)
+  const lesson = fallbackParagraphs[fallbackParagraphs.length - 1]
+  return [...body, lesson].join('\n\n')
 }
 
 function getResponsibilityContext(caseData: CaseData, verdictInput: VerdictInput): { avgA: number; text: string } {
@@ -1171,9 +1192,10 @@ function withVerdictContext(caseData: CaseData, verdictInput: VerdictInput, text
     ? `${dominantName} 쪽 책임이 ${dominantName === nameA ? avgA : 100 - avgA}%로 더 무겁게 정리되면서`
     : `책임이 ${avgA}:${100 - avgA}에 가깝게 나뉘면서`
   const intro = `${nameA}${pA} ${nameB}${pB} ${responsibilityText}을 받아들었다. 판결문에 적힌 해결 방향은 다음 조치였다. ${solutionText}. ${responsibilityDetail} 후일담의 방향도 누가 더 억울한지보다 무엇을 먼저 정리해야 하는지에 맞춰졌다.`
-  const paras = text.split(/\n\n+/).map((para) => para.trim()).filter(Boolean)
+  const paras = splitAftermathParagraphs(text)
   if (paras[0]?.includes(solutionText) && paras[0]?.includes('책임')) return text
-  return [intro, ...paras].join('\n\n')
+  if (paras.length === 0) return intro
+  return [`${intro} ${paras[0]}`, ...paras.slice(1)].join('\n\n')
 }
 
 function buildFallback(caseData: CaseData, total: number, verdictInput: VerdictInput): string {
@@ -1185,12 +1207,12 @@ function buildFallback(caseData: CaseData, total: number, verdictInput: VerdictI
   const { text: responsibilityText } = getResponsibilityContext(caseData, verdictInput)
 
   if (total >= 75) {
-    return `${nameA}${pA} ${nameB}${pB} ${responsibilityText}을 들은 뒤에도 한동안 말을 고르며 앉아 있었다. 그래도 판결은 무엇을 사과하고 무엇을 고쳐야 하는지 분명히 남겼다.\n\n며칠 뒤 두 사람은 ${solutionText}을 기준으로 다시 연락했다. 감정이 완전히 풀린 것은 아니었지만, 같은 문제를 반복하지 않기 위한 최소한의 절차는 세워졌다.\n\n한 달이 지나자 다툼의 열기는 줄었고, 남은 불편함은 서로가 지켜야 할 선을 확인하는 표지가 되었다. 이번 결말은 화해보다 먼저 정리를 선택한 결과였다.`
+    return `${nameA}${pA} ${nameB}${pB} ${responsibilityText}을 들은 뒤에도 한동안 말을 고르며 앉아 있었다. 승패가 또렷하게 갈린 판결이라기보다, 두 사람이 외면해 온 일을 더 이상 미룰 수 없게 만든 결론이었다. ${nameA}${pp은는(nameA)} 자신에게 남은 책임을 먼저 헤아렸고, ${nameB}${pp은는(nameB)} 상대의 표정에서 뒤늦은 피로와 안도감을 함께 읽었다. 법정을 나서는 발걸음은 가볍지 않았지만, 적어도 무엇을 사과하고 무엇을 고쳐야 하는지는 분명해졌다.\n\n며칠 뒤 두 사람은 ${solutionText}을 기준으로 다시 연락했다. 감정이 완전히 풀린 것은 아니어서 첫 대화는 짧고 조심스러웠다. 그래도 이전처럼 억울함을 앞세워 말을 끊지는 않았고, 서로가 확인해야 할 일과 더 묻지 말아야 할 일을 구분하기 시작했다. 판결문은 두 사람 사이에 놓인 차가운 종이였지만, 같은 문제를 반복하지 않기 위한 최소한의 약속이 되었다.\n\n한 달이 지나자 다툼의 열기는 줄었고, 남은 불편함은 서로가 지켜야 할 선을 확인하는 표지가 되었다. 두 사람은 예전처럼 쉽게 웃지는 못했지만, 같은 장면을 서로 다르게 기억한다는 사실을 더 이상 부정하지 않았다. 관계가 완전히 회복된 것은 아니었으나, 무너진 자리를 그냥 덮어 두는 대신 천천히 정리하는 쪽을 택했다. 이번 결말은 화해보다 먼저 책임을 문장으로 남긴 결과였다.\n\n\"책임을 나누어 적은 뒤에야 두 사람은 감정이 아니라 다음 행동을 기준으로 서로를 다시 볼 수 있었다.\"`
   }
   if (total >= 50) {
-    return `${nameA}${pA} ${nameB}${pB} ${responsibilityText}을 받아들였지만, 완전히 만족한 얼굴은 아니었다. 판결은 억울함을 모두 지우기보다 더 커지기 전에 멈춰 세우는 쪽에 가까웠다.\n\n이후 두 사람은 ${solutionText}을 놓고 필요한 말만 주고받았다. 불만은 남았지만, 어느 지점에서 같은 싸움이 반복되는지는 서로 알고 있었다.\n\n정리가 곧 화해는 아니었다. 다만 이번에는 더 크게 무너지는 일을 막아 낸 결말로 남았다.`
+    return `${nameA}${pA} ${nameB}${pB} ${responsibilityText}을 받아들였지만, 완전히 만족한 얼굴은 아니었다. 판결은 억울함을 모두 지워 주기보다 더 커지기 전에 멈춰 세우는 쪽에 가까웠다. ${nameA}${pp은는(nameA)} 아직 설명되지 않은 감정을 붙들고 있었고, ${nameB}${pp은는(nameB)} 자신이 들은 말 중 어떤 것을 사과로 받아들여야 할지 쉽게 정하지 못했다. 법정의 결론은 끝이 아니라 불편한 정리의 시작이었다.\n\n이후 두 사람은 ${solutionText}을 놓고 필요한 말만 주고받았다. 대화는 건조했지만, 예전처럼 같은 문장을 두고 서로를 몰아붙이는 일은 줄었다. 불만은 남았고 몇 번의 침묵도 오갔지만, 어느 지점에서 같은 싸움이 반복되는지는 둘 다 알고 있었다. 그래서 두 사람은 감정을 설득하려 하기보다 절차를 먼저 지키는 쪽으로 움직였다.\n\n시간이 지나도 정리가 곧 화해가 되지는 않았다. 다만 이번에는 더 크게 무너지는 일을 막아 낸 결말로 남았다. ${nameA}${pA} ${nameB}${pp은는(nameB)} 서로를 완전히 이해했다고 말하지 않았지만, 적어도 확인하지 않은 확신으로 다시 상처를 만들지는 않기로 했다. 그 조심스러운 거리감이 판결 뒤에 남은 가장 현실적인 변화였다.\n\n\"이 사건의 결론은 누가 더 옳았는지가 아니라, 같은 오해를 반복하지 않기 위해 무엇을 먼저 확인해야 하는지에 있었다.\"`
   }
-  return `${nameA}${pA} ${nameB}${pB} ${responsibilityText} 뒤에도 쉽게 자리를 뜨지 못했다. 판결은 방향을 제시했지만, 사건의 감정까지 설득하지는 못했다.\n\n선택된 해결 방향은 ${solutionText}이었으나, 두 사람은 그 조치가 충분한지에 대해 끝내 같은 표정을 짓지 못했다. 남은 말들은 다음 갈등의 씨앗처럼 법정 밖으로 따라 나갔다.\n\n이번 결말은 봉합보다 경고에 가까웠다.`
+  return `${nameA}${pA} ${nameB}${pB} ${responsibilityText} 뒤에도 쉽게 자리를 뜨지 못했다. 판결은 방향을 제시했지만, 사건의 감정까지 설득하지는 못했다. ${nameA}${pp은는(nameA)} 자신에게 불리한 대목을 오래 곱씹었고, ${nameB}${pp은는(nameB)} 인정받지 못한 말들이 아직 남아 있다고 느꼈다. 법정의 공기는 가라앉았지만, 두 사람의 표정에는 풀리지 않은 질문이 그대로 남았다.\n\n선택된 해결 방향은 ${solutionText}이었으나, 두 사람은 그 조치가 충분한지에 대해 끝내 같은 표정을 짓지 못했다. 필요한 연락은 이어졌지만, 말끝마다 다시 다투지 않기 위한 조심스러운 거리감이 먼저 끼어들었다. 사과와 정리는 일부만 진행됐고, 남은 말들은 다음 갈등의 씨앗처럼 법정 밖으로 따라 나갔다. 그래도 이번 판결은 최소한 더 큰 오해로 번지기 전에 멈춰 서야 할 지점을 표시했다.\n\n며칠 뒤의 일상은 이전과 비슷했지만, 두 사람은 같은 방식으로 돌아가지는 못했다. 서로의 주장에는 아직 날이 서 있었고, 쉽게 믿겠다는 말도 나오지 않았다. 다만 이번에는 감정이 앞서기 전에 기록과 절차를 먼저 보아야 한다는 사실만큼은 남았다. 그 사실이 봉합보다 경고에 가까운 결말을 만들었다.\n\n\"풀리지 않은 감정이 남아도, 확인하지 않은 말로 다시 판결을 대신할 수는 없었다.\"`
 }
 
 /* ─── Profile inline ─── */

@@ -1155,7 +1155,7 @@ function WitnessDetailSection({ onAction }: { onAction: (action: PcInteractionAc
               onClick={() => !locked && onAction({ kind: 'summon_witness', label: `${w.name} 소환`, witnessId: w.id })}
               type="button"
             >
-              {locked ? '잠김' : called ? '재소환' : '소환'}
+              {locked ? '잠김' : called ? '추가 심문' : '소환'}
             </button>
           </div>
         )

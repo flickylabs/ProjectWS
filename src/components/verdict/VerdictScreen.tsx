@@ -132,6 +132,7 @@ export default function VerdictScreen() {
       clearanceState: runtimeState,
     })
     setVerdictScore(score)
+    let verdictSummaryDraft: ReturnType<typeof generateVerdictSummary> | undefined
 
     // 판결문 자동 초안 생성
     {
@@ -173,7 +174,7 @@ export default function VerdictScreen() {
         : score.total >= 60 ? '유능한 재판관'
         : score.total >= 40 ? '보통의 재판관' : '미숙한 재판관'
 
-      const summary = generateVerdictSummary({
+      verdictSummaryDraft = generateVerdictSummary({
         caseName: caseData.context.description || caseData.caseId,
         partyAName: caseData.duo.partyA.name,
         partyBName: caseData.duo.partyB.name,
@@ -185,7 +186,7 @@ export default function VerdictScreen() {
         totalTurns: turnCount,
         contradictionsFound: processMetrics.lieTransitions,
       })
-      setVerdictSummary(summary)
+      setVerdictSummary(verdictSummaryDraft)
     }
 
     recordGameComplete(caseData.caseId, score.total)
@@ -226,6 +227,7 @@ export default function VerdictScreen() {
         responsibility: { ...verdictInput.responsibility },
         selectedSolutions: [...verdictInput.selectedSolutions],
         disputeNames,
+        verdictSummary: verdictSummaryDraft,
       },
       caseTelemetry,
     })

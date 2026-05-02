@@ -52,7 +52,6 @@ export type ClearanceCategory =
   | 'witness'
   | 'interrogation'
   | 'dispute'
-  | 'minigame'
 
 export interface ClearanceItem {
   id: string

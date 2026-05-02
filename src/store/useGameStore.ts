@@ -168,14 +168,12 @@ export type GameStore = PhaseSlice & AgentSlice & ResourceSlice & EvidenceSlice 
   /** 증인 주제 선택 대기 */
   pendingWitnessChoice: { witnessId: string; witnessName: string; slots: import('../types/witnessTestimony').TestimonySlot[]; allSlots?: import('../types/witnessTestimony').TestimonySlot[]; isResummon: boolean } | null
   setPendingWitnessChoice: (choice: GameStore['pendingWitnessChoice']) => void
-  /** 미니게임 대기 (UI에서 모달 표시) */
+  /** Deprecated: kept only so old saved sessions can be loaded. Runtime no longer opens minigames. */
   pendingMinigame:
     | { type: 'evidence_discovery'; evidenceId: string; clues: [string, string, string]; npcName: string; lieState: string; party: PartyId; minigameVariant: 'memory' | 'heartbeat' | 'matching' | 'word_scramble' }
-    // TODO: 증거 깊이 해금 트리거 — EvidencePresenter.tsx handleInvestigate 3번째 조사 시 MatchingPuzzle 사용
+    // Deprecated legacy payloads
     | { type: 'evidence_depth'; evidenceId: string; depth: number }
-    // TODO: 거짓말 붕괴(S5) 트리거 — lieStateMachine에서 S5 전환 시 HeartbeatDetector 사용
     | { type: 'lie_collapse'; disputeId: string; party: PartyId }
-    // TODO: 모순 감지 트리거 — contradictionEngine에서 모순 발견 시 WordScramble 사용
     | { type: 'contradiction'; text: string; disputeId: string; target: PartyId }
     | null
   setPendingMinigame: (mg: GameStore['pendingMinigame']) => void
@@ -363,7 +361,7 @@ export const useGameStore: import('zustand').UseBoundStore<import('zustand').Sto
       }
     }),
     pendingMinigame: null,
-    setPendingMinigame: (mg) => set({ pendingMinigame: mg }),
+    setPendingMinigame: () => set({ pendingMinigame: null }),
 
     recentAtomIds: { a: {}, b: {} },
     trackUsedAtoms: (party, disputeId, atomIds) => set((prev) => {

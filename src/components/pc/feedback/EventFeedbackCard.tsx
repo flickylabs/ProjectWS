@@ -52,8 +52,6 @@ function isCutsceneKind(kind: EventFeedbackKind, hasActions: boolean): boolean {
 export default function EventFeedbackCard() {
   const active = useStore((s) => s.activeFeedback)
   const dismiss = useStore((s) => s.dismissActiveFeedback)
-  // 미니게임 활성 중엔 카드 대기 (미니게임은 아직 통합 대상 외)
-  const minigameActive = useStore((s) => Boolean((s as any).pendingMinigame))
   const cardRef = useRef<HTMLDivElement | null>(null)
   const [phase, setPhase] = useState<Phase>('appearing')
   const [convergeTransform, setConvergeTransform] = useState<string | null>(null)
@@ -79,7 +77,7 @@ export default function EventFeedbackCard() {
 
   // visible 진입 시 auto-dismiss 스케줄
   useEffect(() => {
-    if (!active || phase !== 'visible' || minigameActive) return
+    if (!active || phase !== 'visible') return
     const meta = KIND_META[active.kind]
     const autoMs = active.autoDismissMs ?? meta.defaultAutoMs
     if (autoMs == null) return
@@ -105,11 +103,11 @@ export default function EventFeedbackCard() {
       setPhase('leaving')
     }, autoMs)
     return () => window.clearTimeout(timer)
-  }, [active, phase, minigameActive])
+  }, [active, phase])
 
   // 새 증거 확보 컷씬은 검정띠 자체에서 좌측 증거 카드로 번개가 나가야 인지된다.
   useEffect(() => {
-    if (!active || phase !== 'visible' || minigameActive) return
+    if (!active || phase !== 'visible') return
     if (active.kind !== 'evidence_result' || active.tag !== 'evidence-unlock' || !active.convergeTargetSelector) return
     if (unlockVfxFiredRef.current === active.id) return
     unlockVfxFiredRef.current = active.id
@@ -127,7 +125,7 @@ export default function EventFeedbackCard() {
       })
     }, 140)
     return () => window.clearTimeout(timer)
-  }, [active, phase, minigameActive])
+  }, [active, phase])
 
   // 증거 조사 패널이 열린 상태에서 새 증거 컷씬이 재생되면 panel backdrop blur가
   // 좌측 증거 카드와 번개를 흐리게 만든다. 컷씬이 active인 동안만 blur를 풀고 복구한다.
@@ -160,8 +158,6 @@ export default function EventFeedbackCard() {
   }, [phase, dismiss, active])
 
   if (!active) return null
-  // 미니게임 활성 시 카드 대기 (미니게임 모달이 우선)
-  if (minigameActive) return null
 
   const meta = KIND_META[active.kind]
   const tone = active.tone ?? meta.tone

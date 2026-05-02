@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import type { ExtendedHistoryEntry } from '../../types'
 import { loadExtendedHistory, addHistoryEntry, ensureProfile } from '../../data/leaderboard'
 import { getCurrentSeason } from '../../data/seasons'
+import type { VerdictSummary } from '../../engine/verdictSummaryEngine'
 import Emoji from '../common/Emoji'
 
 /** 판결 완료 시 호출 — VerdictScreen에서 사용 */
@@ -20,6 +21,7 @@ export function recordHistory(entry: {
     responsibility: Record<string, { a: number; b: number }>
     selectedSolutions: string[]
     disputeNames: Record<string, string>
+    verdictSummary?: VerdictSummary
     aftermath?: string
   }
   caseTelemetry?: { inquiry: number; judgment: number; resolution: number }

@@ -138,11 +138,19 @@ export default function EvidencePresenter({ target, onPresent, onConfront, onWit
 
     playClick()
 
-    // 모든 조사 단계에서 미니게임/광고/아이템 선택지 제공
     if (investigationCost > 0) {
       useGameStore.getState().spend('investigationTokens', investigationCost)
     }
-    useGameStore.getState().setPendingMinigame({ type: 'evidence_depth', evidenceId, depth })
+    const gameState = useGameStore.getState()
+    const result = gameState.investigateEvidence(evidenceId, nextKey)
+    if (result) {
+      gameState.addDialogue({
+        speaker: 'system',
+        text: `🔍 ${result}`,
+        relatedDisputes: evidenceDefinitions.find((ev) => ev.id === evidenceId)?.proves ?? [],
+        turn: gameState.turnCount,
+      })
+    }
   }
 
   if (!target) return null

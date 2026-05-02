@@ -12,8 +12,6 @@ import PCDialogueLog from './PCDialogueLog'
 import PCDisputeRibbon from './PCDisputeRibbon'
 import PCGameplayOverlay from './PCGameplayOverlay'
 import TokenSpendEffect from '../effects/TokenSpendEffect'
-import MiniGameOverlay from '../minigame/MiniGameOverlay'
-import { MINIGAME_MAX_ROUNDS } from '../../../types/minigame'
 import PCInteractionPanel, { openPcInteractionPanel } from './PCInteractionPanel'
 import PCRecordSummary from './PCRecordSummary'
 import PCSettingsPanel from '../settings/PCSettingsPanel'
@@ -107,8 +105,6 @@ export default function PCCourtLayout({ actionPanel, onDialogueTap, isDialoguePh
   const dialogueLog = useStore((s) => s.dialogueLog)
   const resources = useStore((s) => s.resources)
   const turnCount = useStore((s) => s.turnCount)
-  const minigameProgress = useStore((s) => s.minigameProgress)
-  const startMinigame = useStore((s) => s.startMinigame)
 
   const [tokenPopup, setTokenPopup] = useState<'invest' | 'skill' | 'court' | null>(null)
   const [recordSummaryOpen, setRecordSummaryOpen] = useState(false)
@@ -266,8 +262,6 @@ export default function PCCourtLayout({ actionPanel, onDialogueTap, isDialoguePh
       tone: 'blue' as const,
       value: resources.investigationTokens,
       desc: '증거 조사, 추가 단서 발굴, 사건 분석에서 사용합니다.',
-      minigameType: 'memory_match' as const,
-      minigameLabel: '짝맞추기',
     },
     skill: {
       title: '스킬 포인트',
@@ -275,8 +269,6 @@ export default function PCCourtLayout({ actionPanel, onDialogueTap, isDialoguePh
       tone: 'gold' as const,
       value: resources.skillPoints,
       desc: '즉답 요구, 분리 심문, 비공개 보호 등 특수 행동에 사용합니다.',
-      minigameType: 'skill_runner' as const,
-      minigameLabel: '스킬 러너',
     },
     court: {
       title: '법정 지배력',
@@ -284,15 +276,10 @@ export default function PCCourtLayout({ actionPanel, onDialogueTap, isDialoguePh
       tone: 'red' as const,
       value: resources.courtControl,
       desc: '질문과 증거 제시의 효과를 높이고, 판결에서 유리한 위치를 확보합니다.',
-      minigameType: 'whack_a_mole' as const,
-      minigameLabel: '두더지 잡기',
     },
   }
 
   const tokenPopupData = tokenPopup ? TOKEN_POPUP_CONFIG[tokenPopup] : null
-  const tokenPopupRemaining = tokenPopup
-    ? MINIGAME_MAX_ROUNDS - (minigameProgress[TOKEN_POPUP_CONFIG[tokenPopup].minigameType]?.completedRounds ?? 0)
-    : 0
 
   return (
     <>
@@ -307,20 +294,6 @@ export default function PCCourtLayout({ actionPanel, onDialogueTap, isDialoguePh
               <span className="pc-token-popup__value">{tokenPopupData.value}</span>
             </div>
             <p className="pc-token-popup__desc">{tokenPopupData.desc}</p>
-            {tokenPopupRemaining > 0 ? (
-              <button
-                className="pc-token-popup__recharge-btn"
-                onClick={() => {
-                  setTokenPopup(null)
-                  startMinigame(tokenPopupData.minigameType)
-                }}
-                type="button"
-              >
-                미니게임으로 충전하기 ({tokenPopupRemaining}/{MINIGAME_MAX_ROUNDS})
-              </button>
-            ) : (
-              <span className="pc-token-popup__recharge-done">충전 완료 (0/{MINIGAME_MAX_ROUNDS})</span>
-            )}
           </div>
         </div>
       )}
@@ -400,6 +373,7 @@ export default function PCCourtLayout({ actionPanel, onDialogueTap, isDialoguePh
         </aside>
 
         <main className="center pc-play-center">
+          <div className="pc-vfx-origin-center" data-resonance-target="vfx-origin-center" aria-hidden="true" />
           <div className="amb amb-1" />
           <div className="amb amb-2" />
           <div className="amb amb-3" />
@@ -447,7 +421,6 @@ export default function PCCourtLayout({ actionPanel, onDialogueTap, isDialoguePh
       <PCInteractionPanel />
       <PCGameplayOverlay />
       <TokenSpendEffect />
-      <MiniGameOverlay />
       <PCSettingsPanel open={settingsOpen} onClose={() => setSettingsOpen(false)} />
       {combinationOverlay ? (
         <div className={`pc-combination-success is-${combinationOverlay.resultType ?? 'upgrade'}`} key={combinationOverlay.id}>

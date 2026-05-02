@@ -329,13 +329,14 @@ export default function DiscoveryFeedbackWatcher() {
             const logSelector = `[data-dialogue-id="${escape(sysMsgId)}"] .pc-log-system-card`
             const notebookSelector = '[data-resonance-target="judge-notebook"]'
             const toSelector = `[data-dispute-id="${escape(pendingEmergence.disputeId)}"]`
-            s.enqueueAura({ targetSelector: notebookSelector, style: 'archive' })
+            s.enqueueAura({ targetSelector: notebookSelector, style: 'electric' })
             s.enqueueAura({ targetSelector: toSelector, style: 'electric' })
             s.enqueueResonance({
               fromSelector: logSelector,
               toSelector: notebookSelector,
+              reason: 'notebook_entry',
               targetKey: `notebook:dispute:${pendingEmergence.disputeId}`,
-              style: 'archive',
+              style: 'lightning',
             })
             s.enqueueResonance({
               fromSelector: notebookSelector,

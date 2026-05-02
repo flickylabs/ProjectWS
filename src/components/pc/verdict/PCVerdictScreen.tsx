@@ -449,6 +449,7 @@ export default function PCVerdictScreen() {
         responsibility: { ...verdictInput.responsibility },
         selectedSolutions: [...verdictInput.selectedSolutions],
         disputeNames,
+        verdictSummary: summary,
       },
       caseTelemetry,
     })

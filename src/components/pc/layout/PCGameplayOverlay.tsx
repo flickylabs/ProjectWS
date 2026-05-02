@@ -1,7 +1,6 @@
 import { useEffect } from 'react'
 import { useStore, useGameStore } from '../../../store/useGameStore'
 import CutsceneOverlay from '../../discovery/CutsceneOverlay'
-import PCMinigameOverlay from './PCMinigameOverlay'
 import PCDiscoveryOverlay from './PCDiscoveryOverlay'
 import {
   openPcInteractionPanel,
@@ -185,7 +184,6 @@ export default function PCGameplayOverlay() {
   return (
     <>
       <CutsceneOverlay />
-      <PCMinigameOverlay />
       <PCDiscoveryOverlay />
     </>
   )

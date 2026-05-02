@@ -1,5 +1,5 @@
 import { useMemo, useState, useEffect, useRef } from 'react'
-import { useStore } from '../../../store/useGameStore'
+import { useGameStore, useStore } from '../../../store/useGameStore'
 import PCSvgIcon from '../icons/PCSvgIcon'
 import { openPcInteractionPanel } from '../layout/PCInteractionPanel'
 import { jumpToDialogue } from './JudgeObservationSection'
@@ -50,10 +50,28 @@ export default function JudgeNotebookSection() {
   // 신규 entry 들어오면 배지 펄스
   useEffect(() => {
     if (entries.length > prevCountRef.current) {
+      const latest = entries[entries.length - 1]
       setBadgeFlash(true)
-      const t = window.setTimeout(() => setBadgeFlash(false), 700)
+      const vfxTimer = window.setTimeout(() => {
+        const store = useGameStore.getState()
+        store.enqueueAura({
+          targetSelector: '[data-resonance-target="judge-notebook"]',
+          style: 'electric',
+        })
+        store.enqueueResonance({
+          fromSelector: '[data-resonance-target="vfx-origin-center"]',
+          toSelector: '[data-resonance-target="judge-notebook"]',
+          reason: 'notebook_entry',
+          targetKey: `notebook:${latest?.id ?? entries.length}`,
+          style: 'lightning',
+        })
+      }, 90)
+      const t = window.setTimeout(() => setBadgeFlash(false), 1800)
       prevCountRef.current = entries.length
-      return () => window.clearTimeout(t)
+      return () => {
+        window.clearTimeout(vfxTimer)
+        window.clearTimeout(t)
+      }
     }
     prevCountRef.current = entries.length
   }, [entries.length])

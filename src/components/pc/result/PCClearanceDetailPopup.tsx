@@ -1,10 +1,8 @@
 import { useEffect, useMemo } from 'react'
 import type { ClearanceCategory, ClearanceResult } from '../../../types'
-import type { MiniGameProgress, MiniGameType } from '../../../types/minigame'
 
 interface Props {
   result: ClearanceResult
-  minigameProgress: Record<MiniGameType, MiniGameProgress>
   onClose: () => void
 }
 
@@ -14,7 +12,6 @@ const CATEGORY_LABELS: Record<ClearanceCategory, string> = {
   witness: '증인',
   interrogation: '심문',
   dispute: '쟁점',
-  minigame: '미니게임',
 }
 
 const CATEGORY_ORDER: ClearanceCategory[] = [
@@ -23,19 +20,28 @@ const CATEGORY_ORDER: ClearanceCategory[] = [
   'witness',
   'interrogation',
   'dispute',
-  'minigame',
 ]
 
-const MINIGAME_LABELS: Record<MiniGameType, string> = {
-  memory_match: '조사',
-  skill_runner: '스킬',
-  whack_a_mole: '법정',
+function buildMissedConnectionHints(result: ClearanceResult) {
+  const counts = result.missedConnections.reduce((acc, connection) => {
+    if (connection.label.startsWith('자동 조합')) {
+      acc.auto += 1
+    } else if (connection.label.startsWith('수동 조합')) {
+      acc.manual += 1
+    } else {
+      acc.other += 1
+    }
+    return acc
+  }, { auto: 0, manual: 0, other: 0 })
+
+  return [
+    counts.auto > 0 ? { id: 'auto', label: '자동 조합', count: counts.auto } : null,
+    counts.manual > 0 ? { id: 'manual', label: '수동 조합', count: counts.manual } : null,
+    counts.other > 0 ? { id: 'other', label: '기타 연결', count: counts.other } : null,
+  ].filter((item): item is { id: string; label: string; count: number } => item !== null)
 }
 
-const MINIGAME_ORDER: MiniGameType[] = ['memory_match', 'skill_runner', 'whack_a_mole']
-const MINIGAME_TARGET = 5
-
-export default function PCClearanceDetailPopup({ result, minigameProgress, onClose }: Props) {
+export default function PCClearanceDetailPopup({ result, onClose }: Props) {
   useEffect(() => {
     const handleEscape = (event: KeyboardEvent) => {
       if (event.key === 'Escape') onClose()
@@ -56,6 +62,8 @@ export default function PCClearanceDetailPopup({ result, minigameProgress, onClo
 
     return groups
   }, [result.items])
+
+  const missedConnectionHints = useMemo(() => buildMissedConnectionHints(result), [result])
 
   return (
     <div className="pc-clearance-popup" role="dialog" aria-modal="true" aria-label="클리어율 상세">
@@ -97,31 +105,19 @@ export default function PCClearanceDetailPopup({ result, minigameProgress, onClo
 
           <section className="pc-clearance-popup__section">
             <h3>놓친 연결 고리</h3>
-            {result.missedConnections.length > 0 ? (
+            {missedConnectionHints.length > 0 ? (
               <div className="pc-clearance-popup__list">
-                {result.missedConnections.map((connection, index) => (
-                  <div className="pc-clearance-popup__item is-missed" key={`${connection.label}-${index}`}>
-                    <span className="pc-clearance-popup__item-mark">!</span>
-                    <span className="pc-clearance-popup__item-label">{connection.label}</span>
-                    <strong className="pc-clearance-popup__item-progress">{connection.a} + {connection.b}</strong>
+                {missedConnectionHints.map((hint) => (
+                  <div className="pc-clearance-popup__item is-missed" key={hint.id}>
+                    <span className="pc-clearance-popup__item-mark">?</span>
+                    <span className="pc-clearance-popup__item-label">{hint.label}</span>
+                    <strong className="pc-clearance-popup__item-progress">{hint.count}건</strong>
                   </div>
                 ))}
               </div>
             ) : (
               <p className="pc-clearance-popup__empty">놓친 조합이 없습니다.</p>
             )}
-          </section>
-
-          <section className="pc-clearance-popup__section">
-            <h3>미니게임 진행도</h3>
-            <div className="pc-clearance-popup__minigames">
-              {MINIGAME_ORDER.map((type) => (
-                <div className="pc-clearance-popup__minigame-card" key={type}>
-                  <span>{MINIGAME_LABELS[type]}</span>
-                  <strong>{minigameProgress[type]?.completedRounds ?? 0}/{MINIGAME_TARGET}</strong>
-                </div>
-              ))}
-            </div>
           </section>
         </div>
 

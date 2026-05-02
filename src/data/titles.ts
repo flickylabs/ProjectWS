@@ -32,8 +32,6 @@ interface TitleCheckMeta {
   combinationsTotal?: number
   /** 증인 depth 3 도달 수 */
   witnessDepth3Count?: number
-  /** 미니게임 총 성공 수 */
-  minigameSuccessTotal?: number
 }
 
 const TITLES: TitleCondition[] = [
@@ -97,10 +95,6 @@ const TITLES: TitleCondition[] = [
   {
     title: { id: 'deep-listener', name: '깊은 경청자', description: '모든 증인의 핵심 증언을 청취', icon: '👂', rarity: 'epic' },
     check: (_s, _i, m) => (m.witnessDepth3Count ?? 0) >= 3,
-  },
-  {
-    title: { id: 'minigame-master', name: '법정의 만능인', description: '미니게임 15회 모두 성공', icon: '🎮', rarity: 'legendary' },
-    check: (_s, _i, m) => (m.minigameSuccessTotal ?? 0) >= 15,
   },
   {
     title: { id: 'resource-master', name: '자원의 달인', description: '모든 토큰을 1개 이상 잔여로 판결', icon: '💎', rarity: 'rare' },

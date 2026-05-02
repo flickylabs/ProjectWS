@@ -273,7 +273,7 @@ function MessageBubble({ entry, animate, combinableTexts, combinationHintMap, is
       : null
 
     return (
-      <div className={`pc-log-row ${witnessFavor}`}>
+      <div className={`pc-log-row is-witness-row ${witnessFavor}`}>
         <div className="pc-log-speaker is-witness">
           <button className="pc-log-avatar is-witness" onClick={() => openEntryDetail()} type="button">
             {witnessPortrait ? (

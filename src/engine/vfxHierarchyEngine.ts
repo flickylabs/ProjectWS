@@ -19,6 +19,8 @@ export type LightningReason =
   | 'combination_result'
   | 'evidence_unlock'
   | 'dispute_emergence'
+  | 'notebook_entry'
+  | 'witness_summon'
   | 'system_to_dispute'
   | 'pre_verdict_key_evidence'
   | 's5_collapse'
@@ -70,6 +72,8 @@ const ALLOWED_LIGHTNING_REASONS = new Set<LightningReason>([
   'combination_result',
   'evidence_unlock',
   'dispute_emergence',
+  'notebook_entry',
+  'witness_summon',
   'system_to_dispute',
   'pre_verdict_key_evidence',
   's5_collapse',
@@ -86,6 +90,13 @@ const strongUnlockLightningTurnCount = new Map<string, number>()
 const lastLightningTargetTurn = new Map<string, number>()
 const lightningWarned = new Set<string>()
 const majorWarned = new Set<string>()
+
+function isStrongUnlockReason(reason: LightningReason): boolean {
+  return reason === 'evidence_unlock' ||
+    reason === 'dispute_emergence' ||
+    reason === 'notebook_entry' ||
+    reason === 'witness_summon'
+}
 
 function caseKey(caseId?: string | null): string {
   return caseId?.replace(/^case-/, '') || 'session'
@@ -175,12 +186,12 @@ export function shouldPlayLightning(req: LightningGateRequest): boolean {
   const combinationCount = reason === 'combination_result'
     ? (combinationLightningTurnCount.get(tKey) ?? 0)
     : 0
-  const strongUnlockCount = reason === 'evidence_unlock' || reason === 'dispute_emergence'
+  const strongUnlockCount = isStrongUnlockReason(reason)
     ? (strongUnlockLightningTurnCount.get(tKey) ?? 0)
     : 0
   if (reason === 'combination_result') {
     if (combinationCount >= COMBINATION_LIGHTNING_PER_TURN_LIMIT) return false
-  } else if (reason === 'evidence_unlock' || reason === 'dispute_emergence') {
+  } else if (isStrongUnlockReason(reason)) {
     if (strongUnlockCount >= STRONG_UNLOCK_LIGHTNING_PER_TURN_LIMIT) return false
   } else if (lightningTurnUsed.has(tKey)) {
     return false
@@ -199,7 +210,7 @@ export function shouldPlayLightning(req: LightningGateRequest): boolean {
 
   if (reason === 'combination_result') {
     combinationLightningTurnCount.set(tKey, combinationCount + 1)
-  } else if (reason === 'evidence_unlock' || reason === 'dispute_emergence') {
+  } else if (isStrongUnlockReason(reason)) {
     strongUnlockLightningTurnCount.set(tKey, strongUnlockCount + 1)
   }
   lightningTurnUsed.add(tKey)

@@ -13,19 +13,12 @@ const LIE_RANK: Record<string, number> = {
   S5: 5,
 }
 
-const MINIGAME_MAX_ROUNDS = 5
-
 type LieStateMap = Record<string, { currentState: string }>
 
 type WitnessSession = {
   heardSlots: string[]
   lastChoice: string | null
   summonCount: number
-}
-
-type MiniGameProgressState = {
-  completedRounds: number
-  totalEarned: number
 }
 
 type CombinationLabRuntimeState = {
@@ -50,7 +43,6 @@ export interface ClearanceTrackerState {
   agentB: {
     lieStateMap: LieStateMap
   }
-  minigameProgress: Record<string, MiniGameProgressState>
   dialogueLog: DialogueEntry[]
 }
 

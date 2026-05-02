@@ -1,3 +1,5 @@
+import type { VerdictSummary } from '../engine/verdictSummaryEngine'
+
 export interface ExtendedHistoryEntry {
   caseId: string
   score: number
@@ -18,6 +20,7 @@ export interface ExtendedHistoryEntry {
     responsibility: Record<string, { a: number; b: number }>
     selectedSolutions: string[]
     disputeNames: Record<string, string>
+    verdictSummary?: VerdictSummary
     aftermath?: string
   }
   caseTelemetry?: { inquiry: number; judgment: number; resolution: number }

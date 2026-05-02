@@ -1,7 +1,7 @@
 import { GamePhase, Phase, type Resources } from '../types'
 
 export const INITIAL_RESOURCES: Resources = {
-  investigationTokens: 20,  // 증거 조사(21) + 증인(3) — 미니게임으로 추가 획득 가능
+  investigationTokens: 20,  // 증거 조사와 증인 소환에 사용
   skillPoints: 10,           // 조합(6) + DossierCard(3) + 회피읽기(1)
   courtControl: 5,           // 분리심문(1) + 비공개보호(1) + 즉답요구(1) + 잔여→점수보너스
 }

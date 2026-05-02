@@ -1494,7 +1494,7 @@ function playCombinationResultResonance(store: GameStoreSnapshot, ctx: Combinati
   if (memoryTarget && memoryTarget.selector !== destination?.selector) {
     store.enqueueAura({ targetSelector: memoryTarget.selector, style: memoryTarget.auraStyle })
     if (memoryTarget.selector === JUDGE_NOTEBOOK_SELECTOR) {
-      store.enqueueAura({ targetSelector: JUDGE_OBSERVATION_SELECTOR, style: 'archive' })
+      store.enqueueAura({ targetSelector: JUDGE_OBSERVATION_SELECTOR, style: 'electric' })
     }
     store.enqueueResonance({
       fromSelector: COMBINATION_SUCCESS_SOURCE_SELECTOR,
@@ -1506,10 +1506,20 @@ function playCombinationResultResonance(store: GameStoreSnapshot, ctx: Combinati
   }
 }
 
+function isNotebookLightningResult(resultType: PcCombinationResultType): boolean {
+  return resultType === 'witness' ||
+    resultType === 'evidence' ||
+    resultType === 'dossier' ||
+    resultType === 'question' ||
+    resultType === 'note' ||
+    resultType === 'statement' ||
+    resultType === 'dispute'
+}
+
 function getCombinationDestinationTarget(ctx: CombinationResonanceContext): CombinationDestinationTarget | null {
   switch (ctx.resultType) {
     case 'witness':
-      return { selector: '[data-guide-target="witness-summon"]', targetKey: 'combination:witness', resonanceStyle: 'spotlight', auraStyle: 'spotlight' }
+      return { selector: '[data-guide-target="witness-summon"]', targetKey: 'combination:witness', resonanceStyle: 'lightning', auraStyle: 'electric' }
     case 'dispute':
       return {
         selector: ctx.disputeId
@@ -1525,15 +1535,15 @@ function getCombinationDestinationTarget(ctx: CombinationResonanceContext): Comb
           ? `[data-resonance-target="evidence-${escapeAttributeValue(ctx.evidenceId)}"]`
           : '[data-guide-target="evidence-present"]',
         targetKey: `combination:evidence:${ctx.evidenceId ?? ctx.outputId}`,
-        resonanceStyle: 'absorb',
-        auraStyle: 'soft',
+        resonanceStyle: 'lightning',
+        auraStyle: 'electric',
       }
     case 'dossier':
     case 'question':
       return { selector: '[data-guide-target="question-fact"]', targetKey: `combination:question:${ctx.outputId}`, resonanceStyle: 'lightning', auraStyle: 'electric' }
     case 'note':
     case 'statement':
-      return { selector: JUDGE_NOTEBOOK_SELECTOR, targetKey: `combination:notebook:${ctx.outputId}`, resonanceStyle: 'archive', auraStyle: 'archive' }
+      return { selector: JUDGE_NOTEBOOK_SELECTOR, targetKey: `combination:notebook:${ctx.outputId}`, resonanceStyle: 'lightning', auraStyle: 'electric' }
     case 'mediation':
       return { selector: '[data-guide-target="question-empathy"]', targetKey: `combination:mediation:${ctx.outputId}`, resonanceStyle: 'absorb', auraStyle: 'soft' }
     case 'reliability':
@@ -1556,8 +1566,8 @@ function getCombinationMemoryTarget(resultType: PcCombinationResultType): Combin
       return {
         selector: JUDGE_NOTEBOOK_SELECTOR,
         targetKey: `combination:memory:${resultType}`,
-        resonanceStyle: resultType === 'dispute' || resultType === 'dossier' || resultType === 'question' ? 'lightning' : 'archive',
-        auraStyle: resultType === 'dispute' || resultType === 'dossier' || resultType === 'question' ? 'electric' : 'archive',
+        resonanceStyle: isNotebookLightningResult(resultType) ? 'lightning' : 'archive',
+        auraStyle: isNotebookLightningResult(resultType) ? 'electric' : 'archive',
       }
     default:
       return null

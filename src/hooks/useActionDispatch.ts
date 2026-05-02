@@ -283,6 +283,19 @@ function enqueueNewEvidenceCutscene(
   }, 120)
 }
 
+function enqueueWitnessSummonLightning(witnessId: string): void {
+  const state = useGameStore.getState()
+  const targetSelector = '[data-guide-target="witness-summon"]'
+  state.enqueueAura({ targetSelector, style: 'electric' })
+  state.enqueueResonance({
+    fromSelector: '[data-resonance-target="vfx-origin-center"]',
+    toSelector: targetSelector,
+    reason: 'witness_summon',
+    targetKey: `witness-summon:${witnessId}`,
+    style: 'lightning',
+  })
+}
+
 // ── ScriptedText 모드 핫바 락 ──
 // LLM 모드는 resolveLLMDialogue 호출 동안 isLLMLoading=true로 핫바 차단.
 // ScriptedText 분기는 dialogue 추가가 동기적이므로 LLM 락이 안 걸림 →
@@ -737,6 +750,7 @@ async function handleCallWitness(action: Extract<PlayerAction, { type: 'call_wit
     return
   }
   state.spend('investigationTokens', 1)
+  enqueueWitnessSummonLightning(action.witnessId)
 
   // 다층 증언이 있으면 주제 선택 모달 표시
   if (hasSlots) {

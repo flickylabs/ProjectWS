@@ -1,15 +1,9 @@
 import type { ReactNode } from 'react'
 import { useState, useEffect, useRef, useCallback } from 'react'
-import { useGameStore, useStore } from '../../store/useGameStore'
+import { useStore } from '../../store/useGameStore'
 import CourtHeader from './CourtHeader'
 import DialogueLog from '../court/DialogueLog'
 import TestimonyModal from '../court/TestimonyModal'
-import MemoryPuzzle from '../minigame/MemoryPuzzle'
-import HeartbeatDetector from '../minigame/HeartbeatDetector'
-import MatchingPuzzle from '../minigame/MatchingPuzzle'
-import WordScramble from '../minigame/WordScramble'
-// AdCountdown removed — PC/모바일 모두 광고 비활성화
-import { actuallyDiscoverEvidence, applyLieCollapseSuccess, applyLieCollapseFail, applyContradictionSuccess, applyContradictionFail } from '../../hooks/useActionDispatch'
 import DisputeChecklist from '../info/DisputeChecklist'
 import ClaimGraph from '../info/ClaimGraph'
 import EvidenceBoard from '../info/EvidenceBoard'
@@ -67,9 +61,6 @@ export default function CourtLayout({ actionPanel, onDialogueTap, isDialoguePhas
 
       {/* Discovery 모달들 */}
       <DiscoveryOverlay />
-
-      {/* 미니게임 모달 */}
-      <MinigameOverlay />
 
       {/* 헤더 (1행: 캐릭터/단계, 2행: 요약/리소스/점수/쟁점) */}
       <CourtHeader
@@ -157,7 +148,6 @@ export default function CourtLayout({ actionPanel, onDialogueTap, isDialoguePhas
     </div>
   )
 }
-
 /** Discovery 모달 오버레이 — pendingXxx 상태에 따라 적절한 모달 표시 */
 function DiscoveryOverlay() {
   const discovery = useStore((s) => s.discovery)
@@ -202,158 +192,4 @@ function PhaseOverlay() {
       <div className="text-4xl font-black text-amber-400/50 animate-fade-in tracking-wider">{label}</div>
     </div>
   )
-}
-
-/** 미니게임 오버레이 — pendingMinigame이 있으면 모달 표시 */
-/** 증거/쟁점명을 단어 단위로 분해 (4~7단어). 띄어쓰기 기준. */
-function splitToWords(text: string): string[] {
-  let words = text.split(/\s+/).filter(w => w.length > 0)
-  if (words.length > 7) words = words.slice(0, 7)
-  while (words.length < 4) words.push('확인')
-  return words
-}
-
-function getEvidenceDisplayName(
-  evidence: { id?: string; name?: string; surfaceName?: string },
-  state?: { deepInvestigated?: boolean },
-  fallback = '증거',
-): string {
-  return state?.deepInvestigated
-    ? (evidence.name ?? evidence.id ?? fallback)
-    : (evidence.surfaceName ?? evidence.name ?? evidence.id ?? fallback)
-}
-
-function MinigameOverlay() {
-  const mg = useStore((s) => s.pendingMinigame)
-  const clearMg = useStore((s) => s.setPendingMinigame)
-  const evidenceDefinitions = useStore((s) => s.evidenceDefinitions)
-  const evidenceStates = useStore((s) => s.evidenceStates)
-  const caseData = useStore((s) => s.caseData)
-  const [chosenMethod, setChosenMethod] = useState<'minigame' | null>(null)
-
-  if (!mg) return null
-
-  if (mg.type === 'evidence_discovery') {
-    const { evidenceId, clues, minigameVariant } = mg
-
-    const handleSuccess = () => {
-      actuallyDiscoverEvidence(evidenceId)
-      clearMg(null)
-    }
-    const handleFail = () => clearMg(null)
-
-    if (minigameVariant === 'heartbeat') {
-      return <HeartbeatDetector onSuccess={handleSuccess} onFail={handleFail} />
-    }
-
-    if (minigameVariant === 'matching') {
-      return <MatchingPuzzle onSuccess={handleSuccess} onFail={handleFail} />
-    }
-
-    if (minigameVariant === 'word_scramble') {
-      const evDef = evidenceDefinitions.find(e => e.id === evidenceId)
-      const evName = evDef ? getEvidenceDisplayName(evDef, evidenceStates[evidenceId], '새로운 증거 확보') : '새로운 증거 확보'
-      const words = splitToWords(evName)
-      return <WordScramble words={words} onSuccess={handleSuccess} onFail={handleFail} />
-    }
-
-    // variant === 'memory' (기본값)
-    return <MemoryPuzzle clues={clues} onSuccess={handleSuccess} onFail={handleFail} />
-  }
-
-  // evidence_depth → 단계별 미니게임 + 선택지
-  if (mg.type === 'evidence_depth') {
-    const { evidenceId, depth } = mg
-    const evDef = evidenceDefinitions.find((e) => e.id === evidenceId)
-
-    const KEY_ORDER = ['request_original', 'restore_context', 'check_edits'] as const
-    const evState = evidenceStates[evidenceId]
-    const nextKey = KEY_ORDER.find((k) => !evState?.investigatedActions?.includes(k)) ?? 'check_edits'
-
-    const handleSuccess = () => {
-      const { investigateEvidence, addDialogue, turnCount } = useGameStore.getState()
-      const result = investigateEvidence(evidenceId, nextKey)
-      if (result) {
-        addDialogue({ speaker: 'system', text: `🔍 ${result}`, relatedDisputes: evDef?.proves ?? [], turn: turnCount })
-      }
-      clearMg(null)
-    }
-    const handleFail = () => {
-      useGameStore.getState().addDialogue({
-        speaker: 'system',
-        text: '조사가 실패했다. 결정적 단서를 놓쳤다.',
-        relatedDisputes: evDef?.proves ?? [],
-        turn: useGameStore.getState().turnCount,
-      })
-      clearMg(null)
-    }
-    // 선택지 화면: 미니게임 / 즉시 완료 택1
-    if (!chosenMethod) {
-      const depthLabel = depth === 1 ? '1단계: 원본 확보' : depth === 2 ? '2단계: 맥락 복원' : '3단계: 편집 검증'
-      const miniLabel = depth === 1 ? '하트 맞추기' : depth === 2 ? '그림 짝 맞추기' : '글자 순서 맞추기'
-      const displayName = evDef ? getEvidenceDisplayName(evDef, evState, '증거') : '증거'
-      return (
-        <div className="fixed inset-0 z-50 bg-gray-950 flex flex-col items-center justify-center px-6"
-          style={{ paddingTop: 'env(safe-area-inset-top)', paddingBottom: 'env(safe-area-inset-bottom)' }}>
-          <div className="text-center mb-6">
-            <Emoji char="🔍" size={48} />
-            <div className="text-lg font-bold text-amber-400 mt-3">{depthLabel}</div>
-            <div className="text-xs text-gray-500 mt-1">"{displayName}" 조사</div>
-          </div>
-          <div className="w-full max-w-xs space-y-3">
-            <button onClick={() => setChosenMethod('minigame')}
-              className="w-full py-3.5 rounded-2xl text-sm font-bold bg-amber-600 text-gray-950 active:scale-95">
-              <Emoji char="🎮" size={16} /> {miniLabel} 미니게임
-            </button>
-            <button onClick={() => { setChosenMethod(null); handleSuccess() }}
-              className="w-full py-3.5 rounded-2xl text-sm font-medium bg-gray-800 text-gray-300 border border-gray-700 active:scale-95">
-              <Emoji char="🔍" size={16} /> 조사 토큰 사용 (즉시)
-            </button>
-            <button onClick={() => clearMg(null)}
-              className="w-full py-2 text-xs text-gray-600">
-              취소
-            </button>
-          </div>
-        </div>
-      )
-    }
-
-    // 미니게임 실행 — depth별 분기
-    if (depth === 1) {
-      return <HeartbeatDetector onSuccess={() => { setChosenMethod(null); handleSuccess() }} onFail={() => { setChosenMethod(null); handleFail() }} />
-    }
-    if (depth === 2) {
-      return <MatchingPuzzle onSuccess={() => { setChosenMethod(null); handleSuccess() }} onFail={() => { setChosenMethod(null); handleFail() }} />
-    }
-    const evName3 = evDef ? getEvidenceDisplayName(evDef, evState, '증거 조사') : '증거 조사'
-    const words3 = splitToWords(evName3)
-    return <WordScramble words={words3} onSuccess={() => { setChosenMethod(null); handleSuccess() }} onFail={() => { setChosenMethod(null); handleFail() }} />
-  }
-
-  // lie_collapse → HeartbeatDetector
-  if (mg.type === 'lie_collapse') {
-    const { disputeId, party } = mg
-    const handleSuccess = () => { applyLieCollapseSuccess(disputeId, party); clearMg(null) }
-    const handleFail = () => { applyLieCollapseFail(disputeId); clearMg(null) }
-
-    return (
-      <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm">
-        <div className="bg-gray-900 border border-amber-700/50 rounded-2xl p-5 w-[340px] shadow-2xl">
-          <HeartbeatDetector onSuccess={handleSuccess} onFail={handleFail} />
-        </div>
-      </div>
-    )
-  }
-
-  // contradiction → WordScramble
-  if (mg.type === 'contradiction') {
-    const { text, disputeId, target } = mg
-    const words = splitToWords(text)
-    const handleSuccess = () => { applyContradictionSuccess(disputeId, target); clearMg(null) }
-    const handleFail = () => { applyContradictionFail(disputeId); clearMg(null) }
-
-    return <WordScramble words={words} onSuccess={handleSuccess} onFail={handleFail} />
-  }
-
-  return null
 }
