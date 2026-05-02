@@ -315,7 +315,17 @@ export function BankViewer({ rows }: { rows: BankRow[] }) {
 // 2. ChatViewer — 카카오톡 대화
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-export function ChatViewer({ header, messages, pages: rawPages }: { header: string; messages: ChatMessage[]; pages?: ChatPage[] }) {
+export function ChatViewer({
+  header,
+  messages,
+  pages: rawPages,
+  inputStatus,
+}: {
+  header: string
+  messages: ChatMessage[]
+  pages?: ChatPage[]
+  inputStatus?: string
+}) {
   const pages = normalizeChatPages(header, messages, rawPages)
   const [currentPage, setCurrentPage] = useState(Math.max(0, pages.length - 1))
   useEffect(() => {
@@ -426,6 +436,11 @@ export function ChatViewer({ header, messages, pages: rawPages }: { header: stri
           )
         })}
         </div>
+        {inputStatus ? (
+          <div className="pc-phone-chat__input-status" aria-label="채팅 입력 상태">
+            {inputStatus}
+          </div>
+        ) : null}
       </div>
     </div>
   )

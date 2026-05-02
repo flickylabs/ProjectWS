@@ -25050,6 +25050,19 @@ body.pc-mode .pc-phone-chat__system {
   text-align: center !important;
 }
 
+body.pc-mode .pc-phone-chat__input-status {
+  flex: 0 0 auto !important;
+  margin: 0 !important;
+  padding: 12px 16px !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+  background: rgba(255, 255, 255, 0.05) !important;
+  color: rgba(224, 226, 232, 0.76) !important;
+  font-size: 12px !important;
+  font-weight: 800 !important;
+  line-height: 1.35 !important;
+  text-align: left !important;
+}
+
 /* KakaoTalk evidence: 1:1 chat layout for 카톡 records. */
 body.pc-mode .pc-phone-chat.is-kakao-talk .pc-phone-chat__shell {
   width: min(410px, 100%) !important;
@@ -25078,6 +25091,12 @@ body.pc-mode .pc-phone-chat.is-kakao-talk .pc-phone-chat__messages {
 body.pc-mode .pc-phone-chat.is-kakao-talk .pc-phone-chat__system {
   background: rgba(80, 95, 111, 0.28) !important;
   color: rgba(255, 255, 255, 0.8) !important;
+}
+
+body.pc-mode .pc-phone-chat.is-kakao-talk .pc-phone-chat__input-status {
+  border-top-color: rgba(47, 61, 74, 0.16) !important;
+  background: rgba(238, 241, 244, 0.62) !important;
+  color: rgba(42, 54, 66, 0.68) !important;
 }
 
 body.pc-mode .pc-kakao-row {

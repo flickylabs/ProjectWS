@@ -172,7 +172,7 @@ function EvidenceSubContent({
       return <BankViewer rows={Array.isArray(data) ? data as any : [data]} />
     case 'chat':
     case 'email':
-      return <ChatViewer header={(data as any).header ?? ''} messages={(data as any).messages ?? []} pages={(data as any).pages} />
+      return <ChatViewer header={(data as any).header ?? ''} messages={(data as any).messages ?? []} pages={(data as any).pages} inputStatus={(data as any).inputStatus} />
     case 'contract':
     case 'estimate':
     case 'document':

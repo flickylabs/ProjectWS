@@ -139,7 +139,7 @@ export interface SNSData {
 export interface EvidenceViewerData {
   meta: EvidenceMeta
   bank?: BankRow[]
-  chat?: { header: string; messages: ChatMessage[]; pages?: ChatPage[] }
+  chat?: { header: string; messages: ChatMessage[]; pages?: ChatPage[]; inputStatus?: string }
   contract?: { title: string; subtitle: string; rows: ContractRow[]; signature: string }
   testimony?: TestimonyData
   cctv?: CCTVEvent[]
