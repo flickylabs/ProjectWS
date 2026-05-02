@@ -6,7 +6,7 @@ import { useEffect, useState, useCallback, type ReactNode } from 'react'
 import type {
   BankRow, ChatMessage, ContractRow, TestimonyData,
   CCTVEvent, LogRow, DeviceSection, SNSData,
-  ReceiptSheet, GpsLogEntry,
+  ReceiptSheet, GpsLogEntry, LogPage,
 } from './demoEvidenceData'
 
 type DocumentShellVariant = 'contract' | 'ledger' | 'bank' | 'testimony'
@@ -841,18 +841,47 @@ function buildLogFilterOptions(rows: LogRow[]) {
   ]
 }
 
-export function LogViewer({ rows, note, title }: { rows: LogRow[]; note: string; title?: string }) {
+export function LogViewer({ rows, note, title, pages: rawPages }: { rows: LogRow[]; note: string; title?: string; pages?: LogPage[] }) {
+  const pages = normalizeLogPages(title, rows, note, rawPages)
+  const [currentPage, setCurrentPage] = useState(Math.max(0, pages.length - 1))
   const [filter, setFilter] = useState<string>('all')
-  const filterOptions = buildLogFilterOptions(rows)
+  useEffect(() => {
+    setCurrentPage(Math.max(0, pages.length - 1))
+    setFilter('all')
+  }, [pages.length, title])
 
-  const filtered = filter === 'all' ? rows : rows.filter((r) => r.type === filter)
-  const logTitle = title && /통화|전화/.test(title)
+  const page = pages[Math.min(currentPage, pages.length - 1)] ?? pages[0]
+  const activeRows = page?.rows ?? rows
+  const activeNote = page?.note ?? note
+  const activeTitle = page?.title ?? title
+  const filterOptions = buildLogFilterOptions(activeRows)
+
+  const filtered = filter === 'all' ? activeRows : activeRows.filter((r) => r.type === filter)
+  const logTitle = activeTitle && /통화|전화/.test(activeTitle)
     ? '통화 기록 대장'
-    : title || '기록 대장'
-  const isCallLog = /통화|전화|발신|수신|부재중/.test(`${logTitle} ${rows.map((r) => r.typeLabel).join(' ')}`)
+    : activeTitle || '기록 대장'
+  const isCallLog = /통화|전화|발신|수신|부재중/.test(`${logTitle} ${activeRows.map((r) => r.typeLabel).join(' ')}`)
 
   return (
     <div>
+      {pages.length > 1 ? (
+        <div className="pc-doc-toolrow pc-doc-toolrow--pages" role="tablist" aria-label="기록 페이지">
+          {pages.map((p, i) => (
+            <button
+              key={`${p.label ?? 'page'}-${i}`}
+              className={i === currentPage ? 'is-active' : ''}
+              onClick={() => {
+                setCurrentPage(i)
+                setFilter('all')
+              }}
+              role="tab"
+              type="button"
+            >
+              {p.label ?? `${i + 1}쪽`}
+            </button>
+          ))}
+        </div>
+      ) : null}
       <div className="pc-doc-toolrow" role="tablist" aria-label="기록 필터">
         {filterOptions.map((f) => (
           <button
@@ -869,10 +898,10 @@ export function LogViewer({ rows, note, title }: { rows: LogRow[]; note: string;
 
       <EvidenceDocumentShell
         title={logTitle}
-        subtitle={`${rows.length}건 중 ${filtered.length}건 표시 / ${isCallLog ? '통신사' : '기관'} 제출 사본`}
+        subtitle={`${activeRows.length}건 중 ${filtered.length}건 표시 / ${isCallLog ? '통신사' : '기관'} 제출 사본`}
         stamp={isCallLog ? '통신확인' : '기관확인'}
         variant="ledger"
-        footer={note ? <span>{note}</span> : null}
+        footer={activeNote ? <span>{activeNote}</span> : null}
       >
         <div className={`pc-doc-table pc-doc-table--ledger${isCallLog ? ' is-call-log' : ''}`} role="table" aria-label={isCallLog ? '통화 기록' : '방문 및 처리 기록'}>
           <div className="pc-doc-table__head" role="row">
@@ -913,6 +942,20 @@ export function LogViewer({ rows, note, title }: { rows: LogRow[]; note: string;
       </EvidenceDocumentShell>
     </div>
   )
+}
+
+function normalizeLogPages(title: string | undefined, rows: LogRow[], note: string, pages?: LogPage[]): LogPage[] {
+  if (Array.isArray(pages) && pages.length > 0) {
+    return pages
+      .filter((page) => Array.isArray(page.rows) && page.rows.length > 0)
+      .map((page, index) => ({
+        label: page.label ?? `${index + 1}쪽`,
+        title: page.title ?? title,
+        rows: page.rows,
+        note: page.note ?? note,
+      }))
+  }
+  return [{ title, rows, note }]
 }
 
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━

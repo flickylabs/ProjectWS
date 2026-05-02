@@ -115,6 +115,13 @@ export interface LogRow {
   suspicious: boolean
 }
 
+export interface LogPage {
+  label?: string
+  title?: string
+  rows: LogRow[]
+  note?: string
+}
+
 // ── Device ──
 export interface DeviceSection {
   title: string
@@ -143,7 +150,7 @@ export interface EvidenceViewerData {
   contract?: { title: string; subtitle: string; rows: ContractRow[]; signature: string }
   testimony?: TestimonyData
   cctv?: CCTVEvent[]
-  log?: { rows: LogRow[]; note: string }
+  log?: { rows: LogRow[]; note: string; pages?: LogPage[] }
   device?: { ownerName: string; sections: DeviceSection[] }
   sns?: SNSData
 }

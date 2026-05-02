@@ -448,7 +448,7 @@
       "id": "e-1",
       "name": "최수민→예비신랑 연락 기록",
       "surfaceName": "연락 기록",
-      "description": "최근 9일 동안 B가 예비신랑에게 전화 6번, 문자 11번을 보냈고 대부분 답이 없거나 짧게 끊긴 기록.",
+      "description": "최근 9일 동안 최수민이 예비신랑 김태윤에게 전화와 문자를 반복한 기록. 단계별 원문을 확인해야 연락 의도를 판단할 수 있다.",
       "surfaceDescription": "최수민 씨가 예비신랑에게 보낸 연락 기록이 존재한다.",
       "type": "log",
       "reliability": "hard",
@@ -461,9 +461,9 @@
       "isTrap": false,
       "requires": [],
       "investigationResults": {
-        "request_original": "9일간 전화 6번, 문자 11번. 대부분 답이 없거나 짧게 끊겼다.",
-        "check_metadata": "일부 문구에는 태윤이 수민에게 선을 넘었던 일을 문제 삼으려는 연락이 아니라는 설명이 붙어 있다.",
-        "restore_context": "연락 이유가 수민과 태윤 사이의 감정 문제가 아니라 다은과 관련된 다른 문제라는 맥락이 드러난다."
+        "request_original": "첫 페이지에서는 9일간 반복된 발신과 부재중이 확인된다. 집착성 연락처럼 보이지만 원문은 대부분 봉인되어 있다.",
+        "check_metadata": "두 번째 페이지에서 태윤과 수민 사이의 사적인 문제를 따지는 연락은 아니라는 문구가 보인다. 다만 정확한 목적은 아직 확정되지 않는다.",
+        "restore_context": "세 번째 페이지에서 다은 관련 사유와 과거에도 비슷한 일이 있었다는 문구가 드러난다. 연락 의도를 본격적으로 물어볼 근거가 생긴다."
       },
       "subjectParty": "b",
       "investigationStages": [
@@ -517,22 +517,22 @@
         {
           "id": "excerpt",
           "label": "Excerpt",
-          "summary": "전화·문자 횟수만 보임"
+          "summary": "발신 횟수와 부재중 중심으로 보임"
         },
         {
           "id": "original",
           "label": "Original",
-          "summary": "연락 시간대와 내용 톤 확인"
+          "summary": "일부 문자 원문으로 사적 연락 오해를 낮춤"
         },
         {
           "id": "context",
           "label": "Context",
-          "summary": "긴급 전달 맥락 복원"
+          "summary": "다은 관련 사유와 과거 반복 암시 확인"
         },
         {
           "id": "established",
           "label": "Established",
-          "summary": "집착이 아닌 경고 연락으로 확인됨"
+          "summary": "연락 의도를 경고 가능성까지 놓고 판단한다."
         }
       ],
       "v3TrustStates": [
@@ -559,7 +559,7 @@
         {
           "id": "misread",
           "label": "조작/오독 판정",
-          "summary": "집착 해석은 오독 가능"
+          "summary": "집착 해석은 원문 대조가 필요하다."
         }
       ],
       "meta": {
@@ -589,11 +589,12 @@
           "legality": "ok",
           "legalLabel": "적법",
           "stage": 3,
-          "stageLabel": "3단계 — 다은 관련 연락 이유",
+          "stageLabel": "3단계 — 다은 관련 사유",
           "sourceNote": "self_possessed / original",
           "redactions": []
         },
         "log": {
+          "title": "최수민→예비신랑 연락 기록",
           "rows": [
             {
               "date": "03.01 19:22",
@@ -708,7 +709,270 @@
               "suspicious": false
             }
           ],
-          "note": "9일간 발신 전화 6회, 문자 11회. 답장 0건. 원문에는 “태윤의 선 넘은 말이 목적이 아님”, “다은이 관련 이야기”, “예전에 같은 일” 같은 문구가 반복된다."
+          "note": "3쪽 전체 원문에서는 “다은이 관련 이야기”, “예전에 같은 일” 같은 문구가 반복된다. 연락 의도는 예비신랑과 수민 사이의 감정 문제가 아니라 다른 사안으로 보인다.",
+          "pages": [
+            {
+              "label": "1쪽 발신 빈도",
+              "title": "최수민→예비신랑 연락 기록",
+              "rows": [
+                {
+                  "date": "03.01 저녁",
+                  "type": "out",
+                  "typeLabel": "발신",
+                  "target": "김○○ (예비신랑)",
+                  "duration": "짧게 끊김",
+                  "suspicious": true
+                },
+                {
+                  "date": "03.01 저녁",
+                  "type": "out",
+                  "typeLabel": "문자",
+                  "target": "김○○",
+                  "duration": "통화 요청 문구",
+                  "suspicious": false
+                },
+                {
+                  "date": "03.02 오전",
+                  "type": "out",
+                  "typeLabel": "문자",
+                  "target": "김○○",
+                  "duration": "중요한 이야기 요청",
+                  "suspicious": true
+                },
+                {
+                  "date": "03.02 저녁",
+                  "type": "out",
+                  "typeLabel": "발신",
+                  "target": "김○○",
+                  "duration": "부재중",
+                  "suspicious": false
+                },
+                {
+                  "date": "03.03 오전",
+                  "type": "out",
+                  "typeLabel": "문자",
+                  "target": "김○○",
+                  "duration": "결혼 전 확인 요청",
+                  "suspicious": true
+                },
+                {
+                  "date": "03.04 낮",
+                  "type": "out",
+                  "typeLabel": "발신",
+                  "target": "김○○",
+                  "duration": "짧게 끊김",
+                  "suspicious": false
+                },
+                {
+                  "date": "03.05 밤",
+                  "type": "out",
+                  "typeLabel": "문자",
+                  "target": "김○○",
+                  "duration": "한 번만 만나자는 문구",
+                  "suspicious": true
+                }
+              ],
+              "note": "1쪽은 발신 횟수와 부재중 중심의 발췌다. 이 단계만으로는 최수민이 예비신랑에게 반복 연락한 사실만 보인다."
+            },
+            {
+              "label": "2쪽 문구 재맥락",
+              "title": "최수민→예비신랑 연락 기록",
+              "rows": [
+                {
+                  "date": "03.01 19시대",
+                  "type": "out",
+                  "typeLabel": "발신",
+                  "target": "김태○ (예비신랑)",
+                  "duration": "0분 12초 (끊김)",
+                  "suspicious": true
+                },
+                {
+                  "date": "03.01 19시대",
+                  "type": "out",
+                  "typeLabel": "문자",
+                  "target": "김태○",
+                  "duration": "\"태윤 씨, 수민입니다. 잠깐만 통화할 수 있을까요\"",
+                  "suspicious": false
+                },
+                {
+                  "date": "03.02 10시대",
+                  "type": "out",
+                  "typeLabel": "문자",
+                  "target": "김태○",
+                  "duration": "\"그때 저한테 선 넘은 말 한 걸 문제 삼으려는 게 아니에요\"",
+                  "suspicious": true
+                },
+                {
+                  "date": "03.03 09시대",
+                  "type": "out",
+                  "typeLabel": "문자",
+                  "target": "김태○",
+                  "duration": "\"다른 얘기라서 전화로 설명하고 싶어요\"",
+                  "suspicious": true
+                },
+                {
+                  "date": "03.04 12시대",
+                  "type": "out",
+                  "typeLabel": "발신",
+                  "target": "김태○",
+                  "duration": "0분 08초 (끊김)",
+                  "suspicious": false
+                },
+                {
+                  "date": "03.05 21시대",
+                  "type": "out",
+                  "typeLabel": "문자",
+                  "target": "김태○",
+                  "duration": "\"저랑 태윤 씨 문제로 부르는 게 아니에요\"",
+                  "suspicious": true
+                },
+                {
+                  "date": "03.06 08시대",
+                  "type": "out",
+                  "typeLabel": "발신",
+                  "target": "김태○",
+                  "duration": "1분 42초",
+                  "suspicious": true
+                },
+                {
+                  "date": "03.08 17시대",
+                  "type": "out",
+                  "typeLabel": "문자",
+                  "target": "김태○",
+                  "duration": "\"오해할 얘기는 아닌데, 그냥 넘기면 안 될 것 같아요\"",
+                  "suspicious": true
+                },
+                {
+                  "date": "03.09 11시대",
+                  "type": "out",
+                  "typeLabel": "발신",
+                  "target": "김태○",
+                  "duration": "부재중 (차단 추정)",
+                  "suspicious": true
+                }
+              ],
+              "note": "2쪽은 일부 원문을 복원한다. 최수민이 태윤과의 사적인 문제를 따지려는 연락은 아닌 듯하지만, 정확한 목적은 아직 봉인되어 있다."
+            },
+            {
+              "label": "3쪽 다은 관련 사유",
+              "title": "최수민→예비신랑 연락 기록",
+              "rows": [
+                {
+                  "date": "03.01 19:22",
+                  "type": "out",
+                  "typeLabel": "발신",
+                  "target": "김태윤 (예비신랑)",
+                  "duration": "0분 12초 (끊김)",
+                  "suspicious": true
+                },
+                {
+                  "date": "03.01 19:35",
+                  "type": "out",
+                  "typeLabel": "문자",
+                  "target": "김태윤",
+                  "duration": "\"태윤 씨, 수민입니다. 잠깐만 통화할 수 있을까요\"",
+                  "suspicious": false
+                },
+                {
+                  "date": "03.02 10:15",
+                  "type": "out",
+                  "typeLabel": "문자",
+                  "target": "김태윤",
+                  "duration": "\"지난번에 제게 선 넘는 농담을 한 걸 따지려는 게 아니에요. 다른 얘기예요\"",
+                  "suspicious": true
+                },
+                {
+                  "date": "03.02 18:40",
+                  "type": "out",
+                  "typeLabel": "발신",
+                  "target": "김태윤",
+                  "duration": "부재중",
+                  "suspicious": false
+                },
+                {
+                  "date": "03.03 09:08",
+                  "type": "out",
+                  "typeLabel": "문자",
+                  "target": "김태윤",
+                  "duration": "\"중요한 얘기가 있어요. 다은이 관련 이야기에요\"",
+                  "suspicious": true
+                },
+                {
+                  "date": "03.04 12:30",
+                  "type": "out",
+                  "typeLabel": "발신",
+                  "target": "김태윤",
+                  "duration": "0분 08초 (끊김)",
+                  "suspicious": false
+                },
+                {
+                  "date": "03.04 12:45",
+                  "type": "out",
+                  "typeLabel": "문자",
+                  "target": "김태윤",
+                  "duration": "\"피하지 마세요. 다은이한테 지금 바로 말하기 어려워서 이러는 거예요\"",
+                  "suspicious": true
+                },
+                {
+                  "date": "03.05 21:10",
+                  "type": "out",
+                  "typeLabel": "문자",
+                  "target": "김태윤",
+                  "duration": "\"한 번만 만나서 얘기하면 다 이해할 거예요\"",
+                  "suspicious": true
+                },
+                {
+                  "date": "03.06 08:50",
+                  "type": "out",
+                  "typeLabel": "발신",
+                  "target": "김태윤",
+                  "duration": "1분 42초",
+                  "suspicious": true
+                },
+                {
+                  "date": "03.07 14:20",
+                  "type": "out",
+                  "typeLabel": "문자",
+                  "target": "김태윤",
+                  "duration": "\"저도 이러고 싶지 않아요. 다은이 일이라 그냥 넘길 수 없어요\"",
+                  "suspicious": false
+                },
+                {
+                  "date": "03.08 17:30",
+                  "type": "out",
+                  "typeLabel": "발신",
+                  "target": "김태윤",
+                  "duration": "부재중",
+                  "suspicious": false
+                },
+                {
+                  "date": "03.08 17:45",
+                  "type": "out",
+                  "typeLabel": "문자",
+                  "target": "김태윤",
+                  "duration": "\"마지막으로 부탁드려요. 예전에 같은 일이 있었거든요\"",
+                  "suspicious": true
+                },
+                {
+                  "date": "03.09 11:00",
+                  "type": "out",
+                  "typeLabel": "발신",
+                  "target": "김태윤",
+                  "duration": "부재중 (차단 추정)",
+                  "suspicious": true
+                },
+                {
+                  "date": "03.09 11:15",
+                  "type": "out",
+                  "typeLabel": "문자",
+                  "target": "김태윤",
+                  "duration": "\"차단하셨나 봐요. 다은이를 끌어들이고 싶지 않았는데 미안해요\"",
+                  "suspicious": false
+                }
+              ],
+              "note": "3쪽 전체 원문에서는 “다은이 관련 이야기”, “예전에 같은 일” 같은 문구가 반복된다. 연락 의도는 예비신랑과 수민 사이의 감정 문제가 아니라 다른 사안으로 보인다."
+            }
+          ]
         }
       },
       "viewerDataByStage": {
@@ -724,7 +988,7 @@
             "legality": "ok",
             "legalLabel": "적법",
             "stage": 1,
-            "stageLabel": "1단계 — 일방 연락처럼 보이는 발신 내역",
+            "stageLabel": "1단계 — 발신 빈도",
             "sourceNote": "self_possessed / original",
             "redactions": [
               "수신자 이름 일부 마스킹",
@@ -732,13 +996,14 @@
             ]
           },
           "log": {
+            "title": "최수민→예비신랑 연락 기록",
             "rows": [
               {
                 "date": "03.01 저녁",
                 "type": "out",
                 "typeLabel": "발신",
                 "target": "김○○ (예비신랑)",
-                "duration": "0분대 통화",
+                "duration": "짧게 끊김",
                 "suspicious": true
               },
               {
@@ -772,9 +1037,90 @@
                 "target": "김○○",
                 "duration": "결혼 전 확인 요청",
                 "suspicious": true
+              },
+              {
+                "date": "03.04 낮",
+                "type": "out",
+                "typeLabel": "발신",
+                "target": "김○○",
+                "duration": "짧게 끊김",
+                "suspicious": false
+              },
+              {
+                "date": "03.05 밤",
+                "type": "out",
+                "typeLabel": "문자",
+                "target": "김○○",
+                "duration": "한 번만 만나자는 문구",
+                "suspicious": true
               }
             ],
-            "note": "문자 원문은 대부분 통화 요청 수준으로 제한되어, 최수민이 태윤에게 일방적으로 연락을 반복한 모양새만 보인다."
+            "note": "1쪽은 발신 횟수와 부재중 중심의 발췌다. 이 단계만으로는 최수민이 예비신랑에게 반복 연락한 사실만 보인다.",
+            "pages": [
+              {
+                "label": "1쪽 발신 빈도",
+                "title": "최수민→예비신랑 연락 기록",
+                "rows": [
+                  {
+                    "date": "03.01 저녁",
+                    "type": "out",
+                    "typeLabel": "발신",
+                    "target": "김○○ (예비신랑)",
+                    "duration": "짧게 끊김",
+                    "suspicious": true
+                  },
+                  {
+                    "date": "03.01 저녁",
+                    "type": "out",
+                    "typeLabel": "문자",
+                    "target": "김○○",
+                    "duration": "통화 요청 문구",
+                    "suspicious": false
+                  },
+                  {
+                    "date": "03.02 오전",
+                    "type": "out",
+                    "typeLabel": "문자",
+                    "target": "김○○",
+                    "duration": "중요한 이야기 요청",
+                    "suspicious": true
+                  },
+                  {
+                    "date": "03.02 저녁",
+                    "type": "out",
+                    "typeLabel": "발신",
+                    "target": "김○○",
+                    "duration": "부재중",
+                    "suspicious": false
+                  },
+                  {
+                    "date": "03.03 오전",
+                    "type": "out",
+                    "typeLabel": "문자",
+                    "target": "김○○",
+                    "duration": "결혼 전 확인 요청",
+                    "suspicious": true
+                  },
+                  {
+                    "date": "03.04 낮",
+                    "type": "out",
+                    "typeLabel": "발신",
+                    "target": "김○○",
+                    "duration": "짧게 끊김",
+                    "suspicious": false
+                  },
+                  {
+                    "date": "03.05 밤",
+                    "type": "out",
+                    "typeLabel": "문자",
+                    "target": "김○○",
+                    "duration": "한 번만 만나자는 문구",
+                    "suspicious": true
+                  }
+                ],
+                "note": "1쪽은 발신 횟수와 부재중 중심의 발췌다. 이 단계만으로는 최수민이 예비신랑에게 반복 연락한 사실만 보인다."
+              }
+            ]
           }
         },
         "2": {
@@ -789,7 +1135,7 @@
             "legality": "ok",
             "legalLabel": "적법",
             "stage": 2,
-            "stageLabel": "2단계 — 태윤과 수민 관계 재맥락",
+            "stageLabel": "2단계 — 문구 재맥락",
             "sourceNote": "self_possessed / original",
             "redactions": [
               "수신자 이름 일부 마스킹",
@@ -797,6 +1143,7 @@
             ]
           },
           "log": {
+            "title": "최수민→예비신랑 연락 기록",
             "rows": [
               {
                 "date": "03.01 19시대",
@@ -811,7 +1158,7 @@
                 "type": "out",
                 "typeLabel": "문자",
                 "target": "김태○",
-                "duration": "\"잠깐만 통화할 수 있을까요\"",
+                "duration": "\"태윤 씨, 수민입니다. 잠깐만 통화할 수 있을까요\"",
                 "suspicious": false
               },
               {
@@ -871,7 +1218,151 @@
                 "suspicious": true
               }
             ],
-            "note": "문구 일부를 보면 태윤이 수민에게 플러팅했던 일을 따지려는 연락은 아니다. 수민과 태윤 사이의 감정 문제가 아니라 다른 사안이 있음을 암시한다."
+            "note": "2쪽은 일부 원문을 복원한다. 최수민이 태윤과의 사적인 문제를 따지려는 연락은 아닌 듯하지만, 정확한 목적은 아직 봉인되어 있다.",
+            "pages": [
+              {
+                "label": "1쪽 발신 빈도",
+                "title": "최수민→예비신랑 연락 기록",
+                "rows": [
+                  {
+                    "date": "03.01 저녁",
+                    "type": "out",
+                    "typeLabel": "발신",
+                    "target": "김○○ (예비신랑)",
+                    "duration": "짧게 끊김",
+                    "suspicious": true
+                  },
+                  {
+                    "date": "03.01 저녁",
+                    "type": "out",
+                    "typeLabel": "문자",
+                    "target": "김○○",
+                    "duration": "통화 요청 문구",
+                    "suspicious": false
+                  },
+                  {
+                    "date": "03.02 오전",
+                    "type": "out",
+                    "typeLabel": "문자",
+                    "target": "김○○",
+                    "duration": "중요한 이야기 요청",
+                    "suspicious": true
+                  },
+                  {
+                    "date": "03.02 저녁",
+                    "type": "out",
+                    "typeLabel": "발신",
+                    "target": "김○○",
+                    "duration": "부재중",
+                    "suspicious": false
+                  },
+                  {
+                    "date": "03.03 오전",
+                    "type": "out",
+                    "typeLabel": "문자",
+                    "target": "김○○",
+                    "duration": "결혼 전 확인 요청",
+                    "suspicious": true
+                  },
+                  {
+                    "date": "03.04 낮",
+                    "type": "out",
+                    "typeLabel": "발신",
+                    "target": "김○○",
+                    "duration": "짧게 끊김",
+                    "suspicious": false
+                  },
+                  {
+                    "date": "03.05 밤",
+                    "type": "out",
+                    "typeLabel": "문자",
+                    "target": "김○○",
+                    "duration": "한 번만 만나자는 문구",
+                    "suspicious": true
+                  }
+                ],
+                "note": "1쪽은 발신 횟수와 부재중 중심의 발췌다. 이 단계만으로는 최수민이 예비신랑에게 반복 연락한 사실만 보인다."
+              },
+              {
+                "label": "2쪽 문구 재맥락",
+                "title": "최수민→예비신랑 연락 기록",
+                "rows": [
+                  {
+                    "date": "03.01 19시대",
+                    "type": "out",
+                    "typeLabel": "발신",
+                    "target": "김태○ (예비신랑)",
+                    "duration": "0분 12초 (끊김)",
+                    "suspicious": true
+                  },
+                  {
+                    "date": "03.01 19시대",
+                    "type": "out",
+                    "typeLabel": "문자",
+                    "target": "김태○",
+                    "duration": "\"태윤 씨, 수민입니다. 잠깐만 통화할 수 있을까요\"",
+                    "suspicious": false
+                  },
+                  {
+                    "date": "03.02 10시대",
+                    "type": "out",
+                    "typeLabel": "문자",
+                    "target": "김태○",
+                    "duration": "\"그때 저한테 선 넘은 말 한 걸 문제 삼으려는 게 아니에요\"",
+                    "suspicious": true
+                  },
+                  {
+                    "date": "03.03 09시대",
+                    "type": "out",
+                    "typeLabel": "문자",
+                    "target": "김태○",
+                    "duration": "\"다른 얘기라서 전화로 설명하고 싶어요\"",
+                    "suspicious": true
+                  },
+                  {
+                    "date": "03.04 12시대",
+                    "type": "out",
+                    "typeLabel": "발신",
+                    "target": "김태○",
+                    "duration": "0분 08초 (끊김)",
+                    "suspicious": false
+                  },
+                  {
+                    "date": "03.05 21시대",
+                    "type": "out",
+                    "typeLabel": "문자",
+                    "target": "김태○",
+                    "duration": "\"저랑 태윤 씨 문제로 부르는 게 아니에요\"",
+                    "suspicious": true
+                  },
+                  {
+                    "date": "03.06 08시대",
+                    "type": "out",
+                    "typeLabel": "발신",
+                    "target": "김태○",
+                    "duration": "1분 42초",
+                    "suspicious": true
+                  },
+                  {
+                    "date": "03.08 17시대",
+                    "type": "out",
+                    "typeLabel": "문자",
+                    "target": "김태○",
+                    "duration": "\"오해할 얘기는 아닌데, 그냥 넘기면 안 될 것 같아요\"",
+                    "suspicious": true
+                  },
+                  {
+                    "date": "03.09 11시대",
+                    "type": "out",
+                    "typeLabel": "발신",
+                    "target": "김태○",
+                    "duration": "부재중 (차단 추정)",
+                    "suspicious": true
+                  }
+                ],
+                "note": "2쪽은 일부 원문을 복원한다. 최수민이 태윤과의 사적인 문제를 따지려는 연락은 아닌 듯하지만, 정확한 목적은 아직 봉인되어 있다."
+              }
+            ]
           }
         },
         "3": {
@@ -886,11 +1377,12 @@
             "legality": "ok",
             "legalLabel": "적법",
             "stage": 3,
-            "stageLabel": "3단계 — 다은 관련 연락 이유",
+            "stageLabel": "3단계 — 다은 관련 사유",
             "sourceNote": "self_possessed / original",
             "redactions": []
           },
           "log": {
+            "title": "최수민→예비신랑 연락 기록",
             "rows": [
               {
                 "date": "03.01 19:22",
@@ -1005,7 +1497,270 @@
                 "suspicious": false
               }
             ],
-            "note": "9일간 발신 전화 6회, 문자 11회. 답장 0건. 원문에는 “태윤의 선 넘은 말이 목적이 아님”, “다은이 관련 이야기”, “예전에 같은 일” 같은 문구가 반복된다."
+            "note": "3쪽 전체 원문에서는 “다은이 관련 이야기”, “예전에 같은 일” 같은 문구가 반복된다. 연락 의도는 예비신랑과 수민 사이의 감정 문제가 아니라 다른 사안으로 보인다.",
+            "pages": [
+              {
+                "label": "1쪽 발신 빈도",
+                "title": "최수민→예비신랑 연락 기록",
+                "rows": [
+                  {
+                    "date": "03.01 저녁",
+                    "type": "out",
+                    "typeLabel": "발신",
+                    "target": "김○○ (예비신랑)",
+                    "duration": "짧게 끊김",
+                    "suspicious": true
+                  },
+                  {
+                    "date": "03.01 저녁",
+                    "type": "out",
+                    "typeLabel": "문자",
+                    "target": "김○○",
+                    "duration": "통화 요청 문구",
+                    "suspicious": false
+                  },
+                  {
+                    "date": "03.02 오전",
+                    "type": "out",
+                    "typeLabel": "문자",
+                    "target": "김○○",
+                    "duration": "중요한 이야기 요청",
+                    "suspicious": true
+                  },
+                  {
+                    "date": "03.02 저녁",
+                    "type": "out",
+                    "typeLabel": "발신",
+                    "target": "김○○",
+                    "duration": "부재중",
+                    "suspicious": false
+                  },
+                  {
+                    "date": "03.03 오전",
+                    "type": "out",
+                    "typeLabel": "문자",
+                    "target": "김○○",
+                    "duration": "결혼 전 확인 요청",
+                    "suspicious": true
+                  },
+                  {
+                    "date": "03.04 낮",
+                    "type": "out",
+                    "typeLabel": "발신",
+                    "target": "김○○",
+                    "duration": "짧게 끊김",
+                    "suspicious": false
+                  },
+                  {
+                    "date": "03.05 밤",
+                    "type": "out",
+                    "typeLabel": "문자",
+                    "target": "김○○",
+                    "duration": "한 번만 만나자는 문구",
+                    "suspicious": true
+                  }
+                ],
+                "note": "1쪽은 발신 횟수와 부재중 중심의 발췌다. 이 단계만으로는 최수민이 예비신랑에게 반복 연락한 사실만 보인다."
+              },
+              {
+                "label": "2쪽 문구 재맥락",
+                "title": "최수민→예비신랑 연락 기록",
+                "rows": [
+                  {
+                    "date": "03.01 19시대",
+                    "type": "out",
+                    "typeLabel": "발신",
+                    "target": "김태○ (예비신랑)",
+                    "duration": "0분 12초 (끊김)",
+                    "suspicious": true
+                  },
+                  {
+                    "date": "03.01 19시대",
+                    "type": "out",
+                    "typeLabel": "문자",
+                    "target": "김태○",
+                    "duration": "\"태윤 씨, 수민입니다. 잠깐만 통화할 수 있을까요\"",
+                    "suspicious": false
+                  },
+                  {
+                    "date": "03.02 10시대",
+                    "type": "out",
+                    "typeLabel": "문자",
+                    "target": "김태○",
+                    "duration": "\"그때 저한테 선 넘은 말 한 걸 문제 삼으려는 게 아니에요\"",
+                    "suspicious": true
+                  },
+                  {
+                    "date": "03.03 09시대",
+                    "type": "out",
+                    "typeLabel": "문자",
+                    "target": "김태○",
+                    "duration": "\"다른 얘기라서 전화로 설명하고 싶어요\"",
+                    "suspicious": true
+                  },
+                  {
+                    "date": "03.04 12시대",
+                    "type": "out",
+                    "typeLabel": "발신",
+                    "target": "김태○",
+                    "duration": "0분 08초 (끊김)",
+                    "suspicious": false
+                  },
+                  {
+                    "date": "03.05 21시대",
+                    "type": "out",
+                    "typeLabel": "문자",
+                    "target": "김태○",
+                    "duration": "\"저랑 태윤 씨 문제로 부르는 게 아니에요\"",
+                    "suspicious": true
+                  },
+                  {
+                    "date": "03.06 08시대",
+                    "type": "out",
+                    "typeLabel": "발신",
+                    "target": "김태○",
+                    "duration": "1분 42초",
+                    "suspicious": true
+                  },
+                  {
+                    "date": "03.08 17시대",
+                    "type": "out",
+                    "typeLabel": "문자",
+                    "target": "김태○",
+                    "duration": "\"오해할 얘기는 아닌데, 그냥 넘기면 안 될 것 같아요\"",
+                    "suspicious": true
+                  },
+                  {
+                    "date": "03.09 11시대",
+                    "type": "out",
+                    "typeLabel": "발신",
+                    "target": "김태○",
+                    "duration": "부재중 (차단 추정)",
+                    "suspicious": true
+                  }
+                ],
+                "note": "2쪽은 일부 원문을 복원한다. 최수민이 태윤과의 사적인 문제를 따지려는 연락은 아닌 듯하지만, 정확한 목적은 아직 봉인되어 있다."
+              },
+              {
+                "label": "3쪽 다은 관련 사유",
+                "title": "최수민→예비신랑 연락 기록",
+                "rows": [
+                  {
+                    "date": "03.01 19:22",
+                    "type": "out",
+                    "typeLabel": "발신",
+                    "target": "김태윤 (예비신랑)",
+                    "duration": "0분 12초 (끊김)",
+                    "suspicious": true
+                  },
+                  {
+                    "date": "03.01 19:35",
+                    "type": "out",
+                    "typeLabel": "문자",
+                    "target": "김태윤",
+                    "duration": "\"태윤 씨, 수민입니다. 잠깐만 통화할 수 있을까요\"",
+                    "suspicious": false
+                  },
+                  {
+                    "date": "03.02 10:15",
+                    "type": "out",
+                    "typeLabel": "문자",
+                    "target": "김태윤",
+                    "duration": "\"지난번에 제게 선 넘는 농담을 한 걸 따지려는 게 아니에요. 다른 얘기예요\"",
+                    "suspicious": true
+                  },
+                  {
+                    "date": "03.02 18:40",
+                    "type": "out",
+                    "typeLabel": "발신",
+                    "target": "김태윤",
+                    "duration": "부재중",
+                    "suspicious": false
+                  },
+                  {
+                    "date": "03.03 09:08",
+                    "type": "out",
+                    "typeLabel": "문자",
+                    "target": "김태윤",
+                    "duration": "\"중요한 얘기가 있어요. 다은이 관련 이야기에요\"",
+                    "suspicious": true
+                  },
+                  {
+                    "date": "03.04 12:30",
+                    "type": "out",
+                    "typeLabel": "발신",
+                    "target": "김태윤",
+                    "duration": "0분 08초 (끊김)",
+                    "suspicious": false
+                  },
+                  {
+                    "date": "03.04 12:45",
+                    "type": "out",
+                    "typeLabel": "문자",
+                    "target": "김태윤",
+                    "duration": "\"피하지 마세요. 다은이한테 지금 바로 말하기 어려워서 이러는 거예요\"",
+                    "suspicious": true
+                  },
+                  {
+                    "date": "03.05 21:10",
+                    "type": "out",
+                    "typeLabel": "문자",
+                    "target": "김태윤",
+                    "duration": "\"한 번만 만나서 얘기하면 다 이해할 거예요\"",
+                    "suspicious": true
+                  },
+                  {
+                    "date": "03.06 08:50",
+                    "type": "out",
+                    "typeLabel": "발신",
+                    "target": "김태윤",
+                    "duration": "1분 42초",
+                    "suspicious": true
+                  },
+                  {
+                    "date": "03.07 14:20",
+                    "type": "out",
+                    "typeLabel": "문자",
+                    "target": "김태윤",
+                    "duration": "\"저도 이러고 싶지 않아요. 다은이 일이라 그냥 넘길 수 없어요\"",
+                    "suspicious": false
+                  },
+                  {
+                    "date": "03.08 17:30",
+                    "type": "out",
+                    "typeLabel": "발신",
+                    "target": "김태윤",
+                    "duration": "부재중",
+                    "suspicious": false
+                  },
+                  {
+                    "date": "03.08 17:45",
+                    "type": "out",
+                    "typeLabel": "문자",
+                    "target": "김태윤",
+                    "duration": "\"마지막으로 부탁드려요. 예전에 같은 일이 있었거든요\"",
+                    "suspicious": true
+                  },
+                  {
+                    "date": "03.09 11:00",
+                    "type": "out",
+                    "typeLabel": "발신",
+                    "target": "김태윤",
+                    "duration": "부재중 (차단 추정)",
+                    "suspicious": true
+                  },
+                  {
+                    "date": "03.09 11:15",
+                    "type": "out",
+                    "typeLabel": "문자",
+                    "target": "김태윤",
+                    "duration": "\"차단하셨나 봐요. 다은이를 끌어들이고 싶지 않았는데 미안해요\"",
+                    "suspicious": false
+                  }
+                ],
+                "note": "3쪽 전체 원문에서는 “다은이 관련 이야기”, “예전에 같은 일” 같은 문구가 반복된다. 연락 의도는 예비신랑과 수민 사이의 감정 문제가 아니라 다른 사안으로 보인다."
+              }
+            ]
           }
         }
       }
@@ -1927,7 +2682,7 @@
       "investigationResults": {
         "request_original": "B가 그 일은 자신이 정리하겠다는 말만 남겼고, A는 그 일에 얽히면 사람이 달라진다는 취지로 답했다.",
         "check_metadata": "이 대화 직후 두 사람은 연락이 끊겼고 약 2년간 만나지 않았다.",
-        "restore_context": "B가 숨긴 '돈 문제'의 실체가 A 아버지의 사기였다는 맥락이 빠져 있다."
+        "restore_context": "과거 대화만으로는 돈 문제의 상대와 책임 소재가 아직 분리되지 않는다. 추가 기록과 대조해야 한다."
       },
       "subjectParty": "both",
       "investigationStages": [
@@ -1955,7 +2710,7 @@
           "stage": 3,
           "revealKey": "restore_context",
           "question": {
-            "text": "왜 끝까지 아버지 일을 말하지 않았습니까?",
+            "text": "왜 끝까지 그 일을 말하지 않았습니까?",
             "attackVector": "responsibility"
           },
           "label": "침묵추궁",
@@ -1968,7 +2723,7 @@
           "implication": "A가 확인 없이 단정한 패턴을 드러낸다."
         },
         "b": {
-          "questionAngle": "왜 그 일의 실체를 끝까지 말하지 않았습니까?",
+          "questionAngle": "왜 그 일의 책임 소재를 끝까지 말하지 않았습니까?",
           "implication": "B의 침묵 동기를 확인한다."
         }
       },
@@ -1991,12 +2746,12 @@
         {
           "id": "context",
           "label": "Context",
-          "summary": "B가 숨긴 '돈 문제'의 실체 암시"
+          "summary": "B가 숨긴 돈 문제의 상대를 암시한다."
         },
         {
           "id": "established",
           "label": "Established",
-          "summary": "A 아버지 사기와의 연결 확인"
+          "summary": "과거 금전 문제와의 연결 가능성을 확인한다."
         }
       ],
       "v3TrustStates": [
@@ -2797,7 +3552,7 @@
         {
           "id": "established",
           "label": "Established",
-          "summary": "선넘은 건 예비신랑이었음 확정"
+          "summary": "예비신랑의 선 넘은 접근 정황을 확인한다."
         }
       ],
       "v3TrustStates": [
@@ -2824,7 +3579,7 @@
         {
           "id": "misread",
           "label": "조작/오독 판정",
-          "summary": "원본 인증됨, 예비신랑의 접근 확정"
+          "summary": "원본은 인증됐고, 접근 방향은 심문에서 정리한다."
         }
       ],
       "meta": {
@@ -3478,9 +4233,9 @@
     {
       "id": "e-5",
       "name": "송다은 아버지와 예비신랑의 문자",
-      "surfaceName": "송다은 씨 아버지 문자",
-      "description": "A 아버지와 예비신랑 사이에 자금 관련 표현이 오간 기록. B가 연락하던 시기와 겹친다.",
-      "surfaceDescription": "송다은 씨 아버지와 예비신랑 사이의 문자 기록이 존재한다.",
+      "surfaceName": "송다은 아버지 문자",
+      "description": "송다은 아버지와 예비신랑 사이에 부탁성 문자가 오간 기록. 단계별 원문을 대조해야 금전 요구와 비밀 요청 여부가 보인다.",
+      "surfaceDescription": "송다은 아버지와 예비신랑 사이의 문자 기록이 존재한다.",
       "type": "chat",
       "reliability": "hard",
       "completeness": "original",
@@ -3495,9 +4250,9 @@
       ],
       "requiredLieState": "S2",
       "investigationResults": {
-        "request_original": "A 아버지가 '결혼 전에 잠깐만 도와주면 금방 돌려준다'는 문자를 먼저 보냈다.",
-        "check_metadata": "'사위 될 사람이면 이 정도는 믿어야지'라는 추가 메시지가 있고, B가 연락하던 시기와 정확히 겹친다.",
-        "restore_context": "B가 예비신랑에게 연락한 시점과 A 아버지의 돈 접근 시점이 겹치며 경고 동기가 확인된다."
+        "request_original": "첫 페이지에서는 결혼 준비 안부와 조심스러운 부탁 예고만 확인된다. 돈 문제인지 개인적 상담인지 아직 단정하기 어렵다.",
+        "check_metadata": "두 번째 페이지에서 금전성 부탁처럼 보이는 흐름이 드러난다. 다만 금액과 정확한 목적은 아직 봉인되어 있다.",
+        "restore_context": "세 번째 페이지에서 금액, 사업 자금 명목, 다은에게 말하지 말라는 문구가 드러나며 B가 예비신랑에게 연락한 이유를 다시 물어볼 근거가 생긴다."
       },
       "subjectParty": "both",
       "investigationStages": [
@@ -3505,40 +4260,40 @@
           "stage": 1,
           "revealKey": "request_original",
           "question": {
-            "text": "A 아버지가 먼저 돈 얘기를 꺼냈습니까?",
+            "text": "부탁 예고 문구의 원본성을 확인해 주십시오.",
             "attackVector": "authenticity"
           },
-          "label": "대화확인",
+          "label": "부탁확인",
           "unlockHint": null
         },
         {
           "stage": 2,
           "revealKey": "check_metadata",
           "question": {
-            "text": "돈 요구 시점과 B의 연락을 대조해 주십시오.",
+            "text": "부탁이 돈 문제로 이어지는지 대조해 주십시오.",
             "attackVector": "context"
           },
-          "label": "시점대조",
-          "unlockHint": "문자 원문을 더 보면 돈 요구 시점과 B의 연락 시점이 맞물리는지 볼 수 있습니다."
+          "label": "금전대조",
+          "unlockHint": "문자 원문을 더 보면 부탁의 성격이 금전 문제인지 확인할 수 있습니다."
         },
         {
           "stage": 3,
           "revealKey": "restore_context",
           "question": {
-            "text": "B가 왜 예비신랑에게 경고했는지 따져 주십시오.",
+            "text": "금액과 비밀 요청이 B의 경고와 어떻게 이어지는지 따져 주십시오.",
             "attackVector": "responsibility"
           },
-          "label": "경고복원",
-          "unlockHint": "시점을 대조하면 B가 직접 A에게 말하지 못한 이유를 물을 수 있습니다."
+          "label": "비밀요청",
+          "unlockHint": "마지막 페이지를 확인하면 B가 왜 예비신랑에게 직접 연락했는지 물을 수 있습니다."
         }
       ],
       "partyContext": {
         "a": {
-          "questionAngle": "아버지가 예비신랑에게 돈 얘기를 한 사실을 알고 있었습니까?",
-          "implication": "A가 아버지의 행동을 몰랐음을 확인한다."
+          "questionAngle": "아버지가 예비신랑에게 사적인 부탁을 한 사실을 알고 있었습니까?",
+          "implication": "A가 아버지의 요청 내용을 어디까지 알고 있었는지 확인한다."
         },
         "b": {
-          "questionAngle": "이 문자를 어떻게 알게 되었고 왜 경고하려 했습니까?",
+          "questionAngle": "이 문자 흐름을 어떻게 알게 되었고 왜 경고하려 했습니까?",
           "implication": "B의 경고 동기를 확인한다."
         }
       },
@@ -3551,22 +4306,22 @@
         {
           "id": "excerpt",
           "label": "Excerpt",
-          "summary": "A 아버지의 첫 문자만 보임"
+          "summary": "부탁 예고 문구만 보임"
         },
         {
           "id": "original",
           "label": "Original",
-          "summary": "추가 메시지와 시기 격침 확인"
+          "summary": "금전성 부탁 가능성이 보임"
         },
         {
           "id": "context",
           "label": "Context",
-          "summary": "B의 연락 시점과의 대조"
+          "summary": "금액과 비밀 요청을 확인"
         },
         {
           "id": "established",
           "label": "Established",
-          "summary": "A 아버지의 돈 접근 패턴 확정"
+          "summary": "B의 경고 동기와 연결해 검토한다."
         }
       ],
       "v3TrustStates": [
@@ -3588,16 +4343,16 @@
         {
           "id": "challenged",
           "label": "이의 제기됨",
-          "summary": "A가 '아버지가 그런 분이 아니다'라고 이의"
+          "summary": "송다은이 아버지 요청의 의미를 다툼"
         },
         {
           "id": "misread",
           "label": "조작/오독 판정",
-          "summary": "원본 인증됨, 돈 접근 사실 확정"
+          "summary": "원본상 금전 요구와 비밀 요청 문구가 확인된다."
         }
       ],
       "meta": {
-        "name": "A 아버지 문자",
+        "name": "송다은 아버지 문자",
         "type": "chat",
         "viewerType": "chat",
         "trustLevel": "mid",
@@ -3613,7 +4368,7 @@
       },
       "viewerData": {
         "meta": {
-          "name": "A 아버지 문자",
+          "name": "송다은 아버지 문자",
           "type": "chat",
           "viewerType": "chat",
           "trustLevel": "mid",
@@ -3623,61 +4378,140 @@
           "legality": "ok",
           "legalLabel": "적법",
           "stage": 3,
-          "stageLabel": "3단계 — 전체 공개",
+          "stageLabel": "3단계 — 금액과 비밀 요청",
           "sourceNote": "self_possessed / original",
           "redactions": []
         },
         "chat": {
-          "header": "송 아버지 ↔ 김태윤(예비신랑) 문자 — 2026.02~03",
+          "header": "송다은 아버지 ↔ 김태윤 문자 — 2026.03.02",
           "messages": [
             {
               "side": "left",
-              "sender": "송 아버지",
-              "text": "태윤아, 결혼 준비 잘 되고 있지?"
+              "sender": "송다은 아버지",
+              "text": "사위 될 사람이면 이 정도는 믿어야지. 3천만 원만 잠깐 도와줘."
             },
             {
               "side": "right",
               "sender": "김태윤",
-              "text": "네 아버님, 잘 진행 중입니다"
+              "text": "3천만 원은 바로 결정하기 어렵습니다."
             },
             {
               "side": "left",
-              "sender": "송 아버지",
-              "text": "사위 될 사람한테 부탁하기 좀 그렇지만"
-            },
-            {
-              "side": "left",
-              "sender": "송 아버지",
-              "text": "결혼 전에 잠깐만 도와주면 금방 돌려준다"
+              "sender": "송다은 아버지",
+              "text": "2달이면 갚을 수 있어. 사업 자금이 급해서 그래."
             },
             {
               "side": "right",
               "sender": "김태윤",
-              "text": "네? 무슨 말씀이신지..."
+              "text": "다은이랑 상의해야 할 것 같습니다."
             },
             {
               "side": "left",
-              "sender": "송 아버지",
-              "text": "사위 될 사람이면 이 정도는 믿어야지. 3천만 원만 잠깐"
-            },
-            {
-              "side": "left",
-              "sender": "송 아버지",
-              "text": "2달이면 갚을 수 있어. 사업 자금이 급해서 그래"
-            },
-            {
-              "side": "right",
-              "sender": "김태윤",
-              "text": "좀 생각해볼게요..."
-            },
-            {
-              "side": "left",
-              "sender": "송 아버지",
-              "text": "다은이한테는 아직 말하지 마. 걱정시키기 싫으니까"
+              "sender": "송다은 아버지",
+              "text": "다은이한테는 아직 말하지 마. 걱정시키기 싫으니까."
             },
             {
               "type": "read",
               "text": "김태윤 — 읽음"
+            }
+          ],
+          "pages": [
+            {
+              "label": "1쪽 부탁 예고",
+              "header": "송○○ ↔ 김○○ 문자 — 2026.02.28",
+              "messages": [
+                {
+                  "side": "left",
+                  "sender": "송○○",
+                  "text": "태윤아, 결혼 준비 잘 되고 있지?"
+                },
+                {
+                  "side": "right",
+                  "sender": "김○○",
+                  "text": "네, 아버님. 다은이랑 잘 준비하고 있습니다."
+                },
+                {
+                  "side": "left",
+                  "sender": "송○○",
+                  "text": "부탁하기 좀 조심스러운 일이 하나 있는데"
+                },
+                {
+                  "side": "right",
+                  "sender": "김○○",
+                  "text": "어떤 일이세요?"
+                },
+                {
+                  "side": "left",
+                  "sender": "송○○",
+                  "text": "아직 다은이한테 말하기는 애매해서. 시간 괜찮을 때 짧게 통화할 수 있나?"
+                }
+              ]
+            },
+            {
+              "label": "2쪽 금전성 부탁",
+              "header": "송○○ ↔ 김태○ 문자 — 2026.03.01",
+              "messages": [
+                {
+                  "side": "left",
+                  "sender": "송○○",
+                  "text": "어제 말한 건 그냥 개인 부탁이야. 결혼 전에 잠깐만 도와주면 바로 정리할 수 있어."
+                },
+                {
+                  "side": "right",
+                  "sender": "김태○",
+                  "text": "도와드린다는 게 돈 말씀인가요?"
+                },
+                {
+                  "side": "left",
+                  "sender": "송○○",
+                  "text": "크게 부담 줄 생각은 없어. 급한 데만 막으면 금방 돌려줄 수 있다."
+                },
+                {
+                  "side": "right",
+                  "sender": "김태○",
+                  "text": "다은이에게도 말씀하신 건가요?"
+                },
+                {
+                  "side": "left",
+                  "sender": "송○○",
+                  "text": "걱정할까 봐 아직은 안 했다. 괜히 일 키우고 싶지 않아서 그래."
+                }
+              ]
+            },
+            {
+              "label": "3쪽 금액과 비밀 요청",
+              "header": "송다은 아버지 ↔ 김태윤 문자 — 2026.03.02",
+              "messages": [
+                {
+                  "side": "left",
+                  "sender": "송다은 아버지",
+                  "text": "사위 될 사람이면 이 정도는 믿어야지. 3천만 원만 잠깐 도와줘."
+                },
+                {
+                  "side": "right",
+                  "sender": "김태윤",
+                  "text": "3천만 원은 바로 결정하기 어렵습니다."
+                },
+                {
+                  "side": "left",
+                  "sender": "송다은 아버지",
+                  "text": "2달이면 갚을 수 있어. 사업 자금이 급해서 그래."
+                },
+                {
+                  "side": "right",
+                  "sender": "김태윤",
+                  "text": "다은이랑 상의해야 할 것 같습니다."
+                },
+                {
+                  "side": "left",
+                  "sender": "송다은 아버지",
+                  "text": "다은이한테는 아직 말하지 마. 걱정시키기 싫으니까."
+                },
+                {
+                  "type": "read",
+                  "text": "김태윤 — 읽음"
+                }
+              ]
             }
           ]
         }
@@ -3685,7 +4519,7 @@
       "viewerDataByStage": {
         "1": {
           "meta": {
-            "name": "A 아버지 문자",
+            "name": "송다은 아버지 문자",
             "type": "chat",
             "viewerType": "chat",
             "trustLevel": "mid",
@@ -3695,37 +4529,80 @@
             "legality": "ok",
             "legalLabel": "적법",
             "stage": 1,
-            "stageLabel": "1단계 — 돈 부탁 첫 문구",
+            "stageLabel": "1단계 — 부탁 예고",
             "sourceNote": "self_possessed / original",
             "redactions": [
               "발신자 이름 일부 마스킹",
-              "금액 봉인"
+              "부탁 내용 봉인"
             ]
           },
           "chat": {
-            "header": "송○○ ↔ 예비신랑 문자 — 2026.02~03 (첫 발췌)",
+            "header": "송○○ ↔ 김○○ 문자 — 2026.02.28",
             "messages": [
               {
                 "side": "left",
                 "sender": "송○○",
-                "text": "사위 될 사람한테 부탁하기 좀 그렇지만"
-              },
-              {
-                "side": "left",
-                "sender": "송○○",
-                "text": "결혼 전에 잠깐만 도와주면 금방 돌려준다"
+                "text": "태윤아, 결혼 준비 잘 되고 있지?"
               },
               {
                 "side": "right",
                 "sender": "김○○",
-                "text": "네? 무슨 말씀이신지..."
+                "text": "네, 아버님. 다은이랑 잘 준비하고 있습니다."
+              },
+              {
+                "side": "left",
+                "sender": "송○○",
+                "text": "부탁하기 좀 조심스러운 일이 하나 있는데"
+              },
+              {
+                "side": "right",
+                "sender": "김○○",
+                "text": "어떤 일이세요?"
+              },
+              {
+                "side": "left",
+                "sender": "송○○",
+                "text": "아직 다은이한테 말하기는 애매해서. 시간 괜찮을 때 짧게 통화할 수 있나?"
+              }
+            ],
+            "pages": [
+              {
+                "label": "1쪽 부탁 예고",
+                "header": "송○○ ↔ 김○○ 문자 — 2026.02.28",
+                "messages": [
+                  {
+                    "side": "left",
+                    "sender": "송○○",
+                    "text": "태윤아, 결혼 준비 잘 되고 있지?"
+                  },
+                  {
+                    "side": "right",
+                    "sender": "김○○",
+                    "text": "네, 아버님. 다은이랑 잘 준비하고 있습니다."
+                  },
+                  {
+                    "side": "left",
+                    "sender": "송○○",
+                    "text": "부탁하기 좀 조심스러운 일이 하나 있는데"
+                  },
+                  {
+                    "side": "right",
+                    "sender": "김○○",
+                    "text": "어떤 일이세요?"
+                  },
+                  {
+                    "side": "left",
+                    "sender": "송○○",
+                    "text": "아직 다은이한테 말하기는 애매해서. 시간 괜찮을 때 짧게 통화할 수 있나?"
+                  }
+                ]
               }
             ]
           }
         },
         "2": {
           "meta": {
-            "name": "A 아버지 문자",
+            "name": "송다은 아버지 문자",
             "type": "chat",
             "viewerType": "chat",
             "trustLevel": "mid",
@@ -3735,52 +4612,111 @@
             "legality": "ok",
             "legalLabel": "적법",
             "stage": 2,
-            "stageLabel": "2단계 — 금액과 시기 공개",
+            "stageLabel": "2단계 — 금전성 부탁",
             "sourceNote": "self_possessed / original",
             "redactions": [
-              "예비신랑 이름 일부 마스킹",
-              "금액 근사 공개"
+              "발신자 이름 일부 마스킹",
+              "정확한 금액과 목적 봉인"
             ]
           },
           "chat": {
-            "header": "송 아버지 ↔ 김태○ 문자 — 2026.02~03 (확대 발췌)",
+            "header": "송○○ ↔ 김태○ 문자 — 2026.03.01",
             "messages": [
               {
                 "side": "left",
-                "sender": "송 아버지",
-                "text": "사위 될 사람한테 부탁하기 좀 그렇지만"
-              },
-              {
-                "side": "left",
-                "sender": "송 아버지",
-                "text": "결혼 전에 잠깐만 도와주면 금방 돌려준다"
+                "sender": "송○○",
+                "text": "어제 말한 건 그냥 개인 부탁이야. 결혼 전에 잠깐만 도와주면 바로 정리할 수 있어."
               },
               {
                 "side": "right",
                 "sender": "김태○",
-                "text": "네? 무슨 말씀이신지..."
+                "text": "도와드린다는 게 돈 말씀인가요?"
               },
               {
                 "side": "left",
-                "sender": "송 아버지",
-                "text": "사위 될 사람이면 이 정도는 믿어야지. 약 3천만 원만 잠깐"
-              },
-              {
-                "side": "left",
-                "sender": "송 아버지",
-                "text": "사업 자금이 급해서 그래"
+                "sender": "송○○",
+                "text": "크게 부담 줄 생각은 없어. 급한 데만 막으면 금방 돌려줄 수 있다."
               },
               {
                 "side": "right",
                 "sender": "김태○",
-                "text": "좀 생각해볼게요..."
+                "text": "다은이에게도 말씀하신 건가요?"
+              },
+              {
+                "side": "left",
+                "sender": "송○○",
+                "text": "걱정할까 봐 아직은 안 했다. 괜히 일 키우고 싶지 않아서 그래."
+              }
+            ],
+            "pages": [
+              {
+                "label": "1쪽 부탁 예고",
+                "header": "송○○ ↔ 김○○ 문자 — 2026.02.28",
+                "messages": [
+                  {
+                    "side": "left",
+                    "sender": "송○○",
+                    "text": "태윤아, 결혼 준비 잘 되고 있지?"
+                  },
+                  {
+                    "side": "right",
+                    "sender": "김○○",
+                    "text": "네, 아버님. 다은이랑 잘 준비하고 있습니다."
+                  },
+                  {
+                    "side": "left",
+                    "sender": "송○○",
+                    "text": "부탁하기 좀 조심스러운 일이 하나 있는데"
+                  },
+                  {
+                    "side": "right",
+                    "sender": "김○○",
+                    "text": "어떤 일이세요?"
+                  },
+                  {
+                    "side": "left",
+                    "sender": "송○○",
+                    "text": "아직 다은이한테 말하기는 애매해서. 시간 괜찮을 때 짧게 통화할 수 있나?"
+                  }
+                ]
+              },
+              {
+                "label": "2쪽 금전성 부탁",
+                "header": "송○○ ↔ 김태○ 문자 — 2026.03.01",
+                "messages": [
+                  {
+                    "side": "left",
+                    "sender": "송○○",
+                    "text": "어제 말한 건 그냥 개인 부탁이야. 결혼 전에 잠깐만 도와주면 바로 정리할 수 있어."
+                  },
+                  {
+                    "side": "right",
+                    "sender": "김태○",
+                    "text": "도와드린다는 게 돈 말씀인가요?"
+                  },
+                  {
+                    "side": "left",
+                    "sender": "송○○",
+                    "text": "크게 부담 줄 생각은 없어. 급한 데만 막으면 금방 돌려줄 수 있다."
+                  },
+                  {
+                    "side": "right",
+                    "sender": "김태○",
+                    "text": "다은이에게도 말씀하신 건가요?"
+                  },
+                  {
+                    "side": "left",
+                    "sender": "송○○",
+                    "text": "걱정할까 봐 아직은 안 했다. 괜히 일 키우고 싶지 않아서 그래."
+                  }
+                ]
               }
             ]
           }
         },
         "3": {
           "meta": {
-            "name": "A 아버지 문자",
+            "name": "송다은 아버지 문자",
             "type": "chat",
             "viewerType": "chat",
             "trustLevel": "mid",
@@ -3790,61 +4726,140 @@
             "legality": "ok",
             "legalLabel": "적법",
             "stage": 3,
-            "stageLabel": "3단계 — 전체 문자 공개",
+            "stageLabel": "3단계 — 금액과 비밀 요청",
             "sourceNote": "self_possessed / original",
             "redactions": []
           },
           "chat": {
-            "header": "송 아버지 ↔ 김태윤(예비신랑) 문자 — 2026.02~03",
+            "header": "송다은 아버지 ↔ 김태윤 문자 — 2026.03.02",
             "messages": [
               {
                 "side": "left",
-                "sender": "송 아버지",
-                "text": "태윤아, 결혼 준비 잘 되고 있지?"
+                "sender": "송다은 아버지",
+                "text": "사위 될 사람이면 이 정도는 믿어야지. 3천만 원만 잠깐 도와줘."
               },
               {
                 "side": "right",
                 "sender": "김태윤",
-                "text": "네 아버님, 잘 진행 중입니다"
+                "text": "3천만 원은 바로 결정하기 어렵습니다."
               },
               {
                 "side": "left",
-                "sender": "송 아버지",
-                "text": "사위 될 사람한테 부탁하기 좀 그렇지만"
-              },
-              {
-                "side": "left",
-                "sender": "송 아버지",
-                "text": "결혼 전에 잠깐만 도와주면 금방 돌려준다"
+                "sender": "송다은 아버지",
+                "text": "2달이면 갚을 수 있어. 사업 자금이 급해서 그래."
               },
               {
                 "side": "right",
                 "sender": "김태윤",
-                "text": "네? 무슨 말씀이신지..."
+                "text": "다은이랑 상의해야 할 것 같습니다."
               },
               {
                 "side": "left",
-                "sender": "송 아버지",
-                "text": "사위 될 사람이면 이 정도는 믿어야지. 3천만 원만 잠깐"
-              },
-              {
-                "side": "left",
-                "sender": "송 아버지",
-                "text": "2달이면 갚을 수 있어. 사업 자금이 급해서 그래"
-              },
-              {
-                "side": "right",
-                "sender": "김태윤",
-                "text": "좀 생각해볼게요..."
-              },
-              {
-                "side": "left",
-                "sender": "송 아버지",
-                "text": "다은이한테는 아직 말하지 마. 걱정시키기 싫으니까"
+                "sender": "송다은 아버지",
+                "text": "다은이한테는 아직 말하지 마. 걱정시키기 싫으니까."
               },
               {
                 "type": "read",
                 "text": "김태윤 — 읽음"
+              }
+            ],
+            "pages": [
+              {
+                "label": "1쪽 부탁 예고",
+                "header": "송○○ ↔ 김○○ 문자 — 2026.02.28",
+                "messages": [
+                  {
+                    "side": "left",
+                    "sender": "송○○",
+                    "text": "태윤아, 결혼 준비 잘 되고 있지?"
+                  },
+                  {
+                    "side": "right",
+                    "sender": "김○○",
+                    "text": "네, 아버님. 다은이랑 잘 준비하고 있습니다."
+                  },
+                  {
+                    "side": "left",
+                    "sender": "송○○",
+                    "text": "부탁하기 좀 조심스러운 일이 하나 있는데"
+                  },
+                  {
+                    "side": "right",
+                    "sender": "김○○",
+                    "text": "어떤 일이세요?"
+                  },
+                  {
+                    "side": "left",
+                    "sender": "송○○",
+                    "text": "아직 다은이한테 말하기는 애매해서. 시간 괜찮을 때 짧게 통화할 수 있나?"
+                  }
+                ]
+              },
+              {
+                "label": "2쪽 금전성 부탁",
+                "header": "송○○ ↔ 김태○ 문자 — 2026.03.01",
+                "messages": [
+                  {
+                    "side": "left",
+                    "sender": "송○○",
+                    "text": "어제 말한 건 그냥 개인 부탁이야. 결혼 전에 잠깐만 도와주면 바로 정리할 수 있어."
+                  },
+                  {
+                    "side": "right",
+                    "sender": "김태○",
+                    "text": "도와드린다는 게 돈 말씀인가요?"
+                  },
+                  {
+                    "side": "left",
+                    "sender": "송○○",
+                    "text": "크게 부담 줄 생각은 없어. 급한 데만 막으면 금방 돌려줄 수 있다."
+                  },
+                  {
+                    "side": "right",
+                    "sender": "김태○",
+                    "text": "다은이에게도 말씀하신 건가요?"
+                  },
+                  {
+                    "side": "left",
+                    "sender": "송○○",
+                    "text": "걱정할까 봐 아직은 안 했다. 괜히 일 키우고 싶지 않아서 그래."
+                  }
+                ]
+              },
+              {
+                "label": "3쪽 금액과 비밀 요청",
+                "header": "송다은 아버지 ↔ 김태윤 문자 — 2026.03.02",
+                "messages": [
+                  {
+                    "side": "left",
+                    "sender": "송다은 아버지",
+                    "text": "사위 될 사람이면 이 정도는 믿어야지. 3천만 원만 잠깐 도와줘."
+                  },
+                  {
+                    "side": "right",
+                    "sender": "김태윤",
+                    "text": "3천만 원은 바로 결정하기 어렵습니다."
+                  },
+                  {
+                    "side": "left",
+                    "sender": "송다은 아버지",
+                    "text": "2달이면 갚을 수 있어. 사업 자금이 급해서 그래."
+                  },
+                  {
+                    "side": "right",
+                    "sender": "김태윤",
+                    "text": "다은이랑 상의해야 할 것 같습니다."
+                  },
+                  {
+                    "side": "left",
+                    "sender": "송다은 아버지",
+                    "text": "다은이한테는 아직 말하지 마. 걱정시키기 싫으니까."
+                  },
+                  {
+                    "type": "read",
+                    "text": "김태윤 — 읽음"
+                  }
+                ]
               }
             ]
           }
@@ -3855,7 +4870,7 @@
       "id": "e-6",
       "name": "과거 송금 영수증 + 문자",
       "surfaceName": "과거 송금 기록",
-      "description": "A 아버지가 B에게 '급한 투자금이니 한 달만 쓰고 갚겠다'고 받아간 돈의 이체 내역과, 이후 차일피일 미루며 갚지 않은 문자.",
+      "description": "과거 송금과 차용성 문구가 함께 남아 있는 기록. 상환 여부와 관계 단절 시점이 쟁점이다.",
       "surfaceDescription": "과거 최수민 씨와 송다은 씨 아버지 사이의 송금 기록과 문자가 존재한다.",
       "type": "bank",
       "reliability": "hard",
@@ -3871,9 +4886,9 @@
       ],
       "requiredLieState": "S2",
       "investigationResults": {
-        "request_original": "B에서 A 아버지에게로의 이체 내역이 확인된다. '급한 투자금이니 한 달만 쓰고 갚겠다'는 문자가 동반돼 있다.",
-        "check_metadata": "이후 A 아버지가 '조금만 더 기다려라', '곧 정리한다'며 차일피일 미룬 문자가 이어진다.",
-        "restore_context": "돈을 돌려받지 못한 상태에서 B가 A에게 이 사실을 말하지 못하고 손절을 택한 맥락이 확인된다."
+        "request_original": "B 계좌에서 송씨 성 수취인에게 이체된 내역이 확인된다. 차용성 문구가 함께 남아 있다.",
+        "check_metadata": "이후 수취인 측이 상환을 미루는 듯한 문자가 이어지고, 상환 기록은 확인되지 않는다.",
+        "restore_context": "상환 흔적이 약한 상태에서 B가 A에게 말하지 못한 이유를 물어볼 근거가 생긴다."
       },
       "subjectParty": "b",
       "investigationStages": [
@@ -3905,7 +4920,7 @@
             "attackVector": "responsibility"
           },
           "label": "침묵추궁",
-          "unlockHint": "상환 흐름을 대조하면 과거 손절의 진짜 이유를 물을 수 있습니다."
+          "unlockHint": "상환 흐름을 대조하면 과거 손절의 이유를 물을 수 있습니다."
         }
       ],
       "partyContext": {
@@ -3932,7 +4947,7 @@
         {
           "id": "original",
           "label": "Original",
-          "summary": "A 아버지의 차용 문자 확인"
+          "summary": "차용성 문자와 이체 내역을 함께 확인한다."
         },
         {
           "id": "context",
@@ -3942,7 +4957,7 @@
         {
           "id": "established",
           "label": "Established",
-          "summary": "A 아버지의 사기 패턴 확정"
+          "summary": "과거 금전 문제의 반복 가능성을 판단한다."
         }
       ],
       "v3TrustStates": [
@@ -3964,12 +4979,12 @@
         {
           "id": "challenged",
           "label": "이의 제기됨",
-          "summary": "A가 '아버지 사정이 있었을 것'이라고 이의"
+          "summary": "A가 수취인 측 사정이 있었을 수 있다고 이의"
         },
         {
           "id": "misread",
           "label": "조작/오독 판정",
-          "summary": "사기 패턴 확정"
+          "summary": "미상환 흐름과 문자 원본이 확인된다."
         }
       ],
       "meta": {
@@ -4238,7 +5253,7 @@
       "id": "e-7",
       "name": "과거·현재 대조표",
       "surfaceName": "대조표",
-      "description": "A 아버지가 예전에 B에게 보낸 돈 부탁 문구와, 지금 예비신랑에게 보낸 문구가 거의 같고, 그 사이마다 B가 말 대신 혼자 끊고 사라졌던 시점이 한 줄 타임라인으로 정리돼 있다.",
+      "description": "과거와 현재의 돈 부탁 문구, 연락 단절 시점, 단톡방 반응을 나란히 정리한 대조표.",
       "surfaceDescription": "과거와 현재의 대조 분석표가 존재한다.",
       "type": "log",
       "reliability": "hard",
@@ -4259,7 +5274,7 @@
       "investigationResults": {
         "request_original": "과거 B에게 보낸 문구와 현재 예비신랑에게 보낸 문구가 거의 동일하다.",
         "check_metadata": "두 시점 사이에 B가 말 대신 혼자 끊고 사라진 타이밍이 정확히 겹친다.",
-        "restore_context": "A 아버지의 돈 접근 패턴이 반복되고 있으며 B는 이번에도 혼자 막으려 했다."
+        "restore_context": "과거와 현재의 돈 부탁 방식과 B의 침묵 시점이 반복된다. 낙인이 만들어진 순서를 따져볼 수 있다."
       },
       "subjectParty": "both",
       "investigationStages": [
@@ -4328,7 +5343,7 @@
         {
           "id": "established",
           "label": "Established",
-          "summary": "A 아버지의 반복 패턴과 B의 반복 침묵 확정"
+          "summary": "돈 부탁 방식과 B의 침묵 시점이 반복되는지 판단한다."
         }
       ],
       "v3TrustStates": [
@@ -4355,7 +5370,7 @@
         {
           "id": "misread",
           "label": "조작/오독 판정",
-          "summary": "패턴 반복 확정"
+          "summary": "반복 구조가 확인되며 책임 판단은 심문과 함께 본다."
         }
       ],
       "meta": {
@@ -4440,7 +5455,7 @@
               "suspicious": true
             }
           ],
-          "note": "과거와 현재의 패턴이 거의 동일하다. “급한 돈, 다은이한테 말하지 마”가 과거와 현재에 반복되고, B는 두 번 모두 말하지 못하고 악역이 되었다."
+          "note": "과거와 현재의 돈 부탁 문구가 매우 비슷하고, 두 번 모두 B가 충분히 설명하지 못한 채 비난을 받았다."
         }
       },
       "viewerDataByStage": {
@@ -4608,7 +5623,7 @@
                 "suspicious": true
               }
             ],
-            "note": "과거와 현재의 패턴이 거의 동일하다. “급한 돈, 다은이한테 말하지 마”가 과거와 현재에 반복되고, B는 두 번 모두 말하지 못하고 악역이 되었다."
+            "note": "과거와 현재의 돈 부탁 문구가 매우 비슷하고, 두 번 모두 B가 충분히 설명하지 못한 채 비난을 받았다."
           }
         }
       }
@@ -5120,7 +6135,7 @@
       {
         "id": "e-5",
         "type": "evidence",
-        "label": "e-5 A 아버지 문자",
+        "label": "e-5 송다은 아버지 문자",
         "sourceRef": "e-5",
         "linkedDisputeIds": [
           "d-3"

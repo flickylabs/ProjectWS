@@ -10727,6 +10727,15 @@ body.pc-mode .pc-doc-toolrow {
   gap: 7px;
 }
 
+body.pc-mode .pc-doc-toolrow--pages {
+  justify-content: center;
+  margin-bottom: 8px;
+}
+
+body.pc-mode .pc-doc-toolrow--pages button {
+  min-width: 72px;
+}
+
 body.pc-mode .pc-doc-toolrow button {
   min-height: 30px;
   padding: 0 12px;

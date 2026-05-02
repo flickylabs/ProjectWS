@@ -188,7 +188,7 @@ function EvidenceSubContent({
     case 'platform_log':
     case 'cloud_log':
     case 'device_log':
-      return <LogViewer rows={(data as any).rows ?? []} note={(data as any).note ?? ''} title={(data as any).title ?? evidenceName} />
+      return <LogViewer rows={(data as any).rows ?? []} note={(data as any).note ?? ''} title={(data as any).title ?? evidenceName} pages={(data as any).pages} />
     case 'device':
       return <DeviceViewer ownerName={(data as any).ownerName ?? ''} sections={(data as any).sections ?? []} />
     case 'sns':
