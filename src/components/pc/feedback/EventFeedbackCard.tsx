@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
-import { useStore } from '../../../store/useGameStore'
+import { useGameStore, useStore } from '../../../store/useGameStore'
 import type { EventFeedbackKind } from '../../../store/slices/eventFeedbackSlice'
 
 type Phase = 'appearing' | 'visible' | 'converging' | 'leaving'
@@ -58,11 +58,13 @@ export default function EventFeedbackCard() {
   const [phase, setPhase] = useState<Phase>('appearing')
   const [convergeTransform, setConvergeTransform] = useState<string | null>(null)
   const activeIdRef = useRef<string | null>(null)
+  const unlockVfxFiredRef = useRef<string | null>(null)
 
   // active 이 바뀌면 phase 초기화
   useEffect(() => {
     if (!active) {
       activeIdRef.current = null
+      unlockVfxFiredRef.current = null
       setPhase('appearing')
       setConvergeTransform(null)
       return
@@ -105,6 +107,40 @@ export default function EventFeedbackCard() {
     return () => window.clearTimeout(timer)
   }, [active, phase, minigameActive])
 
+  // 새 증거 확보 컷씬은 검정띠 자체에서 좌측 증거 카드로 번개가 나가야 인지된다.
+  useEffect(() => {
+    if (!active || phase !== 'visible' || minigameActive) return
+    if (active.kind !== 'evidence_result' || active.tag !== 'evidence-unlock' || !active.convergeTargetSelector) return
+    if (unlockVfxFiredRef.current === active.id) return
+    unlockVfxFiredRef.current = active.id
+
+    const targetSelector = active.convergeTargetSelector
+    const timer = window.setTimeout(() => {
+      const state = useGameStore.getState()
+      state.enqueueAura({ targetSelector, style: 'electric' })
+      state.enqueueResonance({
+        fromSelector: '[data-resonance-target="cutscene-center"]',
+        toSelector: targetSelector,
+        reason: 'evidence_unlock',
+        targetKey: `evidence-unlock:${targetSelector}`,
+        style: 'lightning',
+      })
+    }, 140)
+    return () => window.clearTimeout(timer)
+  }, [active, phase, minigameActive])
+
+  // 증거 조사 패널이 열린 상태에서 새 증거 컷씬이 재생되면 panel backdrop blur가
+  // 좌측 증거 카드와 번개를 흐리게 만든다. 컷씬이 active인 동안만 blur를 풀고 복구한다.
+  useEffect(() => {
+    if (typeof document === 'undefined') return
+    const revealInteraction = active?.kind === 'evidence_result' && active.tag === 'evidence-unlock'
+    if (!revealInteraction) return
+    document.body.classList.add('pc-vfx-reveal-interaction')
+    return () => {
+      document.body.classList.remove('pc-vfx-reveal-interaction')
+    }
+  }, [active?.id, active?.kind, active?.tag])
+
   // converging/leaving 종료 후 실제 dismiss + 수렴 타겟 3번 깜빡
   useEffect(() => {
     if (phase !== 'converging' && phase !== 'leaving') return
@@ -139,7 +175,8 @@ export default function EventFeedbackCard() {
 
   const modal = isModalKind(active.kind, hasActions)
   const cutscene = isCutsceneKind(active.kind, hasActions)
-  const rootClass = `pc-event-feedback-root${modal ? ' is-modal' : ' is-alert'}${cutscene ? ' is-cutscene' : ''} is-phase-${phase}`
+  const evidenceUnlockCutscene = cutscene && active.kind === 'evidence_result' && active.tag === 'evidence-unlock'
+  const rootClass = `pc-event-feedback-root${modal ? ' is-modal' : ' is-alert'}${cutscene ? ' is-cutscene' : ''}${evidenceUnlockCutscene ? ' is-evidence-unlock' : ''} is-phase-${phase}`
   // 컷씬(자동소멸 알림 4종): 배경 클릭 시 즉시 닫기. 선택 필수 모달은 차단.
   const allowBackdropDismiss = cutscene
 
@@ -154,7 +191,7 @@ export default function EventFeedbackCard() {
     >
       <div
         ref={cardRef}
-        className={`pc-event-feedback-card tone-${tone} kind-${active.kind} is-phase-${phase}${modal ? ' is-modal' : ' is-alert'}${cutscene ? ' is-cutscene' : ''}`}
+        className={`pc-event-feedback-card tone-${tone} kind-${active.kind} is-phase-${phase}${modal ? ' is-modal' : ' is-alert'}${cutscene ? ' is-cutscene' : ''}${evidenceUnlockCutscene ? ' is-evidence-unlock' : ''}`}
         data-resonance-target={cutscene ? 'cutscene-center' : undefined}
         style={cardStyle}
       >
@@ -193,6 +230,11 @@ export default function EventFeedbackCard() {
               <circle cx="32" cy="16" r="1.6" fill="#0a0906" />
               <circle cx="33" cy="15" r="0.7" fill="rgba(255,245,215,0.95)" />
             </svg>
+          </div>
+        ) : null}
+        {evidenceUnlockCutscene ? (
+          <div className="pc-event-feedback__evidence-mark" aria-hidden="true">
+            <span />
           </div>
         ) : null}
         {active.eyebrow ? <div className="pc-event-feedback__eyebrow">{active.eyebrow}</div> : null}

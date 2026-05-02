@@ -10,18 +10,21 @@ const CATEGORY_ICON: Record<JudgeNotebookCategory, string> = {
   confession: 'i-key',
   critical_contradiction: 'i-bolt',
   key_statement: 'i-flame',
+  dispute_emergence: 'i-bolt',
 }
 
 const CATEGORY_LABEL: Record<JudgeNotebookCategory, string> = {
   confession: '자백',
   critical_contradiction: '결정적 모순',
   key_statement: '핵심 발화',
+  dispute_emergence: '쟁점 발현',
 }
 
 const CATEGORY_TONE: Record<JudgeNotebookCategory, 'gold' | 'red' | 'blue'> = {
   confession: 'gold',
   critical_contradiction: 'red',
   key_statement: 'blue',
+  dispute_emergence: 'gold',
 }
 
 /** 관찰 카테고리 시각 매핑 — 수첩 카테고리를 관찰 CSS 변수에 맞춰 재사용 */
@@ -29,6 +32,7 @@ const CATEGORY_TO_OBS: Record<JudgeNotebookCategory, string> = {
   confession: 'event',
   critical_contradiction: 'contradiction',
   key_statement: 'state',
+  dispute_emergence: 'event',
 }
 
 /** 미니 타임라인 표시 개수 */

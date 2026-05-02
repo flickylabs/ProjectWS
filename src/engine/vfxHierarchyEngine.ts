@@ -17,6 +17,8 @@ export type LightningReason =
   | 'free_interrogation_mapping'
   | 'evidence_combo_unlock'
   | 'combination_result'
+  | 'evidence_unlock'
+  | 'dispute_emergence'
   | 'system_to_dispute'
   | 'pre_verdict_key_evidence'
   | 's5_collapse'
@@ -49,6 +51,7 @@ const CUT_IN_COOLDOWN_TURNS = 5
 const EMOTIONAL_BURST_COOLDOWN_TURNS = 7
 const LIGHTNING_TARGET_COOLDOWN_TURNS = 5
 const COMBINATION_LIGHTNING_PER_TURN_LIMIT = 2
+const STRONG_UNLOCK_LIGHTNING_PER_TURN_LIMIT = 3
 const PHASE_CUTIN_WARN_THRESHOLD = 5
 const PHASE_TRANSITION_STRONG_LIMIT = 2
 const MAJOR_HARD_CAP_PER_CASE = 8
@@ -65,6 +68,8 @@ const ALLOWED_LIGHTNING_REASONS = new Set<LightningReason>([
   'free_interrogation_mapping',
   'evidence_combo_unlock',
   'combination_result',
+  'evidence_unlock',
+  'dispute_emergence',
   'system_to_dispute',
   'pre_verdict_key_evidence',
   's5_collapse',
@@ -77,6 +82,7 @@ const phaseWarned = new Set<string>()
 const phaseTransitionCountByCase = new Map<string, number>()
 const lightningTurnUsed = new Set<string>()
 const combinationLightningTurnCount = new Map<string, number>()
+const strongUnlockLightningTurnCount = new Map<string, number>()
 const lastLightningTargetTurn = new Map<string, number>()
 const lightningWarned = new Set<string>()
 const majorWarned = new Set<string>()
@@ -169,8 +175,13 @@ export function shouldPlayLightning(req: LightningGateRequest): boolean {
   const combinationCount = reason === 'combination_result'
     ? (combinationLightningTurnCount.get(tKey) ?? 0)
     : 0
+  const strongUnlockCount = reason === 'evidence_unlock' || reason === 'dispute_emergence'
+    ? (strongUnlockLightningTurnCount.get(tKey) ?? 0)
+    : 0
   if (reason === 'combination_result') {
     if (combinationCount >= COMBINATION_LIGHTNING_PER_TURN_LIMIT) return false
+  } else if (reason === 'evidence_unlock' || reason === 'dispute_emergence') {
+    if (strongUnlockCount >= STRONG_UNLOCK_LIGHTNING_PER_TURN_LIMIT) return false
   } else if (lightningTurnUsed.has(tKey)) {
     return false
   }
@@ -188,6 +199,8 @@ export function shouldPlayLightning(req: LightningGateRequest): boolean {
 
   if (reason === 'combination_result') {
     combinationLightningTurnCount.set(tKey, combinationCount + 1)
+  } else if (reason === 'evidence_unlock' || reason === 'dispute_emergence') {
+    strongUnlockLightningTurnCount.set(tKey, strongUnlockCount + 1)
   }
   lightningTurnUsed.add(tKey)
   lastLightningTargetTurn.set(target, req.turn)
@@ -208,6 +221,7 @@ export function getVfxHierarchyConstants() {
     phaseTransitionStrongLimit: PHASE_TRANSITION_STRONG_LIMIT,
     majorHardCapPerCase: MAJOR_HARD_CAP_PER_CASE,
     combinationLightningPerTurnLimit: COMBINATION_LIGHTNING_PER_TURN_LIMIT,
+    strongUnlockLightningPerTurnLimit: STRONG_UNLOCK_LIGHTNING_PER_TURN_LIMIT,
     allowedLightningReasons: Array.from(ALLOWED_LIGHTNING_REASONS),
   }
 }
@@ -220,6 +234,7 @@ export function resetVfxHierarchyState(): void {
   phaseTransitionCountByCase.clear()
   lightningTurnUsed.clear()
   combinationLightningTurnCount.clear()
+  strongUnlockLightningTurnCount.clear()
   lastLightningTargetTurn.clear()
   lightningWarned.clear()
   majorWarned.clear()

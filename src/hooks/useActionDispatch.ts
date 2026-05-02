@@ -241,6 +241,48 @@ function getEvidenceCurrentLieRank(evidence: any, lieStates: Record<string, { cu
   return ranks.length > 0 ? Math.max(...ranks) : 0
 }
 
+function escapeAttributeSelectorValue(value: string): string {
+  return String(value).replace(/\\/g, '\\\\').replace(/"/g, '\\"')
+}
+
+function enqueueNewEvidenceCutscene(
+  evidenceId: string,
+  options: {
+    body?: string
+    subtitle?: string
+    autoDismissMs?: number
+    tone?: 'gold' | 'green' | 'blue' | 'neutral'
+  } = {},
+): void {
+  const state = useGameStore.getState()
+  const def = state.evidenceDefinitions.find((e) => e.id === evidenceId)
+  if (!def) return
+
+  const displayName = getEvidenceDisplayName(def, state.evidenceStates[evidenceId])
+  const selector = `[data-resonance-target="evidence-${escapeAttributeSelectorValue(evidenceId)}"]`
+  const relatedNames = (state.caseData?.disputes ?? [])
+    .filter((dispute) => (def.proves ?? []).includes(dispute.id))
+    .map((dispute) => dispute.name)
+    .slice(0, 2)
+
+  state.enqueueFeedback({
+    kind: 'evidence_result',
+    eyebrow: '새 증거 확보',
+    subtitle: options.subtitle ?? '증거 목록 갱신',
+    title: displayName,
+    body: options.body ?? '좌측 증거 목록에 새 증거가 추가되었습니다.',
+    tone: options.tone ?? 'green',
+    tag: 'evidence-unlock',
+    meta: relatedNames.length > 0 ? [`관련 쟁점: ${relatedNames.join(', ')}`] : undefined,
+    autoDismissMs: options.autoDismissMs ?? 3600,
+    convergeTargetSelector: selector,
+  })
+
+  window.setTimeout(() => {
+    useGameStore.getState().enqueueAura({ targetSelector: selector, style: 'electric' })
+  }, 120)
+}
+
 // ── ScriptedText 모드 핫바 락 ──
 // LLM 모드는 resolveLLMDialogue 호출 동안 isLLMLoading=true로 핫바 차단.
 // ScriptedText 분기는 dialogue 추가가 동기적이므로 LLM 락이 안 걸림 →
@@ -543,6 +585,9 @@ async function handleEvidencePresent(action: Extract<PlayerAction, { type: 'evid
       // [Phase F] 새 증거 메시지 — deepInvestigated 전엔 surfaceName(잠금 명칭) 사용
       const newEvState = state.evidenceStates[def.id]
       const newDisplayName = getEvidenceDisplayName(def, newEvState)
+      enqueueNewEvidenceCutscene(def.id, {
+        body: `${newDisplayName}${pp이가(newDisplayName)} 좌측 증거 목록에 추가되었습니다.`,
+      })
       state.addDialogue({ speaker: 'system', text: `새로운 증거를 손에 넣었다 — ${newDisplayName}`, relatedDisputes: def.proves, turn: state.turnCount })
     }
   }
@@ -904,13 +949,8 @@ async function handleEvidenceInvestigate(action: Extract<PlayerAction, { type: '
       const def = evidenceDefs.find((e) => e.id === unlockedId)
       if (!def) continue
       const displayName = getEvidenceDisplayName(def, state.evidenceStates[def.id])
-      state.enqueueFeedback({
-        kind: 'evidence_result',
-        eyebrow: '새 증거 확보',
-        title: displayName,
-        body: '좌측 증거 목록에 추가되었습니다.',
-        tone: 'green',
-        autoDismissMs: 2200,
+      enqueueNewEvidenceCutscene(def.id, {
+        body: `${displayName}${pp이가(displayName)} 조사 결과로 확보되었습니다.`,
       })
     }
   }
@@ -1955,11 +1995,20 @@ function applyDialogueNode(node: DialogueNode, target: PartyId, isConfidential =
   if (effects.evidenceUnlock) {
     const evStates = state.evidenceStates
     if (evStates[effects.evidenceUnlock] && !evStates[effects.evidenceUnlock].unlocked) {
-      state.presentEvidence(effects.evidenceUnlock, target)
+      useGameStore.setState((prev) => ({
+        evidenceStates: {
+          ...prev.evidenceStates,
+          [effects.evidenceUnlock]: { ...prev.evidenceStates[effects.evidenceUnlock], unlocked: true },
+        },
+      }))
+      playEvidenceUnlock()
       // 비공개 보호 하에 해금된 증거에 confidentialSource 마킹
       if (isConfidential) {
         state.markEvidenceConfidential(effects.evidenceUnlock)
       }
+      enqueueNewEvidenceCutscene(effects.evidenceUnlock, {
+        body: '발언에서 파생된 새 증거가 좌측 증거 목록에 추가되었습니다.',
+      })
     }
   }
   if (effects.claimUpdate) {
@@ -2127,9 +2176,13 @@ export function actuallyDiscoverEvidence(evidenceId: string, partyOverride?: Par
   }))
   playEvidenceUnlock()
   state.trackMetric('evidenceDiscovered')
+  const discoveredDisplayName = getEvidenceDisplayName(ev, useGameStore.getState().evidenceStates[ev.id])
+  enqueueNewEvidenceCutscene(evidenceId, {
+    body: `${discoveredDisplayName}${pp이가(discoveredDisplayName)} 심문 중 새 증거로 확보되었습니다.`,
+  })
   state.addDialogue({
     speaker: 'system',
-    text: `새 증거: ${getEvidenceDisplayName(ev, useGameStore.getState().evidenceStates[ev.id])}`,
+    text: `새 증거: ${discoveredDisplayName}`,
     relatedDisputes: ev.proves,
     turn: state.turnCount,
   })
@@ -2500,6 +2553,9 @@ export function applyLieCollapseSuccess(disputeId: string, party: PartyId) {
       },
     }))
     playEvidenceUnlock()
+    enqueueNewEvidenceCutscene(lockedEv.id, {
+      body: `${displayName}${pp이가(displayName)} 붕괴 보상으로 확보되었습니다.`,
+    })
     state.addDialogue({
       speaker: 'system',
       text: `완벽하게 간파했다! 새 증거가 해금된다 — ${displayName}`,

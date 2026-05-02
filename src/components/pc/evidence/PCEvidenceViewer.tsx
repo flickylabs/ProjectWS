@@ -57,6 +57,8 @@ export default function PCEvidenceViewer() {
   const state = evidenceStates[evidence.id]
   const displayName = evidence.surfaceName ?? evidence.name
   const currentStage = state?.investigatedActions?.length ?? 0
+  const stageCount = evidence.investigationStages?.length || 3
+  const boundedStage = Math.min(currentStage, stageCount)
   const openInvestigationPanel = () => {
     setPendingEvidenceView(null)
     window.setTimeout(() => {
@@ -116,7 +118,23 @@ export default function PCEvidenceViewer() {
               </button>
             </div>
           ) : hasSubViewer ? (
-            <EvidenceSubContent type={evidence.type} viewerData={viewerData!} />
+            <>
+              <div className="pc-ev-stage-meter" aria-label={`조사 ${boundedStage}단계 / ${stageCount}단계`}>
+                <span className="pc-ev-stage-meter__label">조사 {boundedStage}단계 / {stageCount}단계</span>
+                <span className="pc-ev-stage-meter__track">
+                  {Array.from({ length: stageCount }, (_, i) => (
+                    <span
+                      key={i}
+                      className={i < boundedStage ? 'is-on' : ''}
+                    />
+                  ))}
+                </span>
+                <span className="pc-ev-stage-meter__hint">
+                  {boundedStage < stageCount ? '부분 공개' : '전체 공개'}
+                </span>
+              </div>
+              <EvidenceSubContent type={evidence.type} viewerData={viewerData!} />
+            </>
           ) : (
             <div className="pc-ev-placeholder">
               <PCSvgIcon id={getPcEvidenceSymbolId(evidence.type)} size={64} />

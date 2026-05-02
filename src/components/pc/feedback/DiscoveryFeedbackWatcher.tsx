@@ -4,10 +4,11 @@ import { resetFatigueForDossier } from '../../../engine/questionFatigueEngine'
 import { getContradictionEvent, getInterjectionEvent, getOutburstEvent } from '../../../engine/v3GameLoopLoader'
 import { applyWitnessSlot } from '../../../hooks/useActionDispatch'
 import { recordInterjectionChoice } from '../../../engine/phase3LogCollector'
-import { pp이가 } from '../../../engine/koreanPostposition'
+import { pp이가, pp을를 } from '../../../engine/koreanPostposition'
 import type { TruthJudgment } from '../../../types/discovery'
 import { getEmergenceHook, getEmergenceHookSpeaker } from '../../../data/emergenceHooks'
 import { hasContradictionComparison } from '../../../utils/contradiction'
+import type { Dispute } from '../../../types/case'
 
 const CONTRADICTION_SURFACE_FALLBACK = '진술 흐름에서 확인할 지점이 생겼습니다. 추가 질문으로 맥락을 확인하세요.'
 const EMOTIONAL_BURST_SURFACE_FALLBACK = '감정이 격해졌습니다. 반응을 더 밀어붙일지, 잠시 정리할지 판단하세요.'
@@ -31,6 +32,62 @@ const JUDGMENT_LABELS: Record<TruthJudgment, string> = {
   believe_b: 'B의 주장이 더 설득력 있습니다',
   both_partial: '양쪽 모두 일부만 사실입니다',
   undetermined: '지금은 보류 (나중에 다시 판단)',
+}
+
+const DISPUTE_WEIGHT_LABELS: Record<string, string> = {
+  high: '높음',
+  medium: '보통',
+  low: '낮음',
+}
+
+const DISPUTE_AMBIGUITY_LABELS: Record<string, string> = {
+  high: '높음',
+  medium: '보통',
+  mid: '보통',
+  low: '낮음',
+  none: '낮음',
+}
+
+function buildDisputeEmergenceDetails(dispute: Dispute | undefined, routeDescription: string | undefined) {
+  const name = dispute?.name ?? '새 쟁점'
+  const axis = dispute?.mediationLink?.trim() || name
+  const evidenceCount = dispute?.requiredEvidence?.length ?? 0
+  const evidenceText = evidenceCount > 0
+    ? `관련 증거 ${evidenceCount}개와 증인/발언을 대조해 사실관계를 확정합니다.`
+    : '양측 진술과 새로 나온 단서를 대조해 사실관계를 확정합니다.'
+  const legalText = dispute?.legitimacyIssue
+    ? '절차상 책임이나 위법성도 별도 판단해야 합니다.'
+    : '현재 단계에서는 결론이 아니라 검토 범위만 추가됩니다.'
+
+  const blocks = [
+    {
+      title: '검토 축',
+      text: `${axis}${pp을를(axis)} 중심으로 양측 설명이 어디서 갈라지는지 확인합니다.`,
+    },
+    {
+      title: '확인 방향',
+      text: evidenceText,
+    },
+    {
+      title: dispute?.legitimacyIssue ? '절차 책임' : '판단 상태',
+      text: legalText,
+    },
+  ]
+
+  const meta = [
+    dispute?.weight ? `중요도: ${DISPUTE_WEIGHT_LABELS[dispute.weight] ?? dispute.weight}` : null,
+    dispute?.ambiguity ? `모호성: ${DISPUTE_AMBIGUITY_LABELS[dispute.ambiguity] ?? dispute.ambiguity}` : null,
+    evidenceCount > 0 ? `필요 증거: ${evidenceCount}개` : null,
+  ].filter(Boolean) as string[]
+
+  const routeLine = routeDescription?.trim()
+  const body = routeLine
+    ? `${routeLine} 이제 "${name}"을 별도 쟁점으로 추적합니다.`
+    : `"${name}"이 별도 쟁점으로 추가되었습니다.`
+  const notebookSummary = `${axis}. ${evidenceText} ${legalText}`.slice(0, 150)
+  const observationSummary = `${name} - ${axis}`
+
+  return { body, blocks, meta, notebookSummary, observationSummary }
 }
 
 function buildEmotionalBurstFollowUp(choice: 'press' | 'calm', hasScriptedOutburst: boolean): string {
@@ -215,12 +272,15 @@ export default function DiscoveryFeedbackWatcher() {
     const caseData = state.caseData
     if (!caseData) return
     const dispute = caseData.disputes.find((d) => d.id === pendingEmergence.disputeId)
+    const disputeName = dispute?.name ?? pendingEmergence.disputeId
+    const routeLabel = ROUTE_LABELS[pendingEmergence.route] ?? '새 단서가 갈래를 바꿨습니다.'
+    const emergenceDetails = buildDisputeEmergenceDetails(dispute, pendingEmergence.description)
 
     // 쟁점 발견 시 시스템 메시지로 흐름 표시 — 모달은 자동으로 띄우지 않고 (B-17 D 옵션),
     // 시스템 메시지 클릭 시 수동 트리거되도록 pendingFeedback 부착.
     const sysMsgId = state.addDialogue({
       speaker: 'system',
-      text: `새 쟁점이 드러났다 — ${dispute?.name ?? pendingEmergence.disputeId}`,
+      text: `새 쟁점이 드러났다 — ${disputeName}`,
       relatedDisputes: [pendingEmergence.disputeId],
       turn: state.turnCount,
     })
@@ -228,18 +288,28 @@ export default function DiscoveryFeedbackWatcher() {
       turnCount: state.turnCount,
       category: 'event',
       iconId: 'i-plus',
-      title: ROUTE_LABELS[pendingEmergence.route] ?? '새 단서가 갈래를 바꿨다.',
-      summary: `${dispute?.name ?? pendingEmergence.disputeId}`,
+      title: routeLabel,
+      summary: emergenceDetails.observationSummary,
       disputeId: pendingEmergence.disputeId,
+    })
+    state.addNotebookEntry?.({
+      turnCount: state.turnCount,
+      category: 'dispute_emergence',
+      iconId: 'i-bolt',
+      title: `새 쟁점 - ${disputeName}`,
+      summary: emergenceDetails.notebookSummary,
+      disputeId: pendingEmergence.disputeId,
+      linkedDialogueId: sysMsgId,
     })
     state.attachDialoguePendingFeedback(sysMsgId, {
       kind: 'emergence',
       eyebrow: '새 쟁점 발견',
-      subtitle: ROUTE_LABELS[pendingEmergence.route] ?? '새 단서가 갈래를 바꿨습니다.',
-      title: dispute?.name ?? pendingEmergence.disputeId,
-      // [Phase E] 모달 내용 정정 — 이미 쟁점 보드에 추가된 상태에서 모달이 뜨므로,
-      // "발견" 알림이 아니라 "이제 이 쟁점을 본격 공략할 수 있습니다" 안내 톤으로 변경.
-      body: '이 쟁점에 대한 심문과 증거 제시가 본격적으로 가능합니다. 새 단서를 활용해 진실을 추궁해 보세요.',
+      subtitle: routeLabel,
+      title: disputeName,
+      body: emergenceDetails.body,
+      blocks: emergenceDetails.blocks,
+      meta: emergenceDetails.meta,
+      tag: '쟁점 보드 + 재판관 수첩',
       tone: 'gold',
       actions: [
         {
@@ -256,15 +326,24 @@ export default function DiscoveryFeedbackWatcher() {
             s.setRecentlyEmergedDispute(pendingEmergence.disputeId)
             // 메시지 → 탑바 쟁점 chip 으로 연결 1회 + 오라 발사
             const escape = typeof CSS !== 'undefined' && typeof CSS.escape === 'function' ? CSS.escape : (v: string) => v
-            const fromSelector = `[data-dialogue-id="${escape(sysMsgId)}"] .pc-log-system-card`
+            const logSelector = `[data-dialogue-id="${escape(sysMsgId)}"] .pc-log-system-card`
+            const notebookSelector = '[data-resonance-target="judge-notebook"]'
             const toSelector = `[data-dispute-id="${escape(pendingEmergence.disputeId)}"]`
+            s.enqueueAura({ targetSelector: notebookSelector, style: 'archive' })
+            s.enqueueAura({ targetSelector: toSelector, style: 'electric' })
             s.enqueueResonance({
-              fromSelector,
-              toSelector,
-              reason: 'system_to_dispute',
-              targetKey: `dispute:${pendingEmergence.disputeId}`,
+              fromSelector: logSelector,
+              toSelector: notebookSelector,
+              targetKey: `notebook:dispute:${pendingEmergence.disputeId}`,
+              style: 'archive',
             })
-            s.enqueueAura({ targetSelector: toSelector })
+            s.enqueueResonance({
+              fromSelector: notebookSelector,
+              toSelector,
+              reason: 'dispute_emergence',
+              targetKey: `dispute:${pendingEmergence.disputeId}`,
+              style: 'lightning',
+            })
             window.setTimeout(() => {
               useGameStore.getState().setRecentlyEmergedDispute(null)
             }, 4000)

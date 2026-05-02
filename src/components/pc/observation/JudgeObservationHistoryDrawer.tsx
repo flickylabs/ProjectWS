@@ -33,6 +33,7 @@ const NOTEBOOK_CATEGORY_ICON: Record<JudgeNotebookCategory, string> = {
   confession: 'i-key',
   critical_contradiction: 'i-bolt',
   key_statement: 'i-flame',
+  dispute_emergence: 'i-bolt',
 }
 
 type NotebookFilterKey = 'all' | JudgeNotebookCategory
@@ -42,14 +43,16 @@ const NOTEBOOK_FILTER_LABELS: Record<NotebookFilterKey, string> = {
   confession: '자백',
   critical_contradiction: '결정적 모순',
   key_statement: '핵심 발화',
+  dispute_emergence: '쟁점 발현',
 }
 
-const NOTEBOOK_FILTER_ORDER: NotebookFilterKey[] = ['all', 'confession', 'critical_contradiction', 'key_statement']
+const NOTEBOOK_FILTER_ORDER: NotebookFilterKey[] = ['all', 'confession', 'critical_contradiction', 'key_statement', 'dispute_emergence']
 
 const NOTEBOOK_TO_OBSERVATION_CATEGORY: Record<JudgeNotebookCategory, JudgeObservationCategory> = {
   confession: 'event',
   critical_contradiction: 'contradiction',
   key_statement: 'state',
+  dispute_emergence: 'event',
 }
 
 export default function JudgeObservationHistoryDrawer() {
@@ -212,6 +215,7 @@ export function JudgeNotebookHistoryDrawer({
       confession: 0,
       critical_contradiction: 0,
       key_statement: 0,
+      dispute_emergence: 0,
     }
     for (const entry of entries) counts[entry.category] += 1
     return counts

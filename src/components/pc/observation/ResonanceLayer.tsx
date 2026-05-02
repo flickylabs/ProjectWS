@@ -9,9 +9,9 @@ import type { AuraRequest, ResonanceRequest } from '../../../store/slices/judgeO
  * 부드러운 흡수선으로 목적지를 분리해 보여준다.
  */
 
-const BOLT_DURATION_MS = 900
+const BOLT_DURATION_MS = 1200
 const FLOW_DURATION_MS = 1250
-const AURA_DURATION_MS = 1300
+const AURA_DURATION_MS = 1700
 
 export default function ResonanceLayer() {
   const requests = useStore((s) => s.pendingResonances ?? [])

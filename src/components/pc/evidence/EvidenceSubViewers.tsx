@@ -2,12 +2,57 @@
  * 8 evidence type-specific sub-viewer components
  * Each renders the body content for PCEvidenceViewer.
  */
-import { useState, useCallback } from 'react'
+import { useState, useCallback, type ReactNode } from 'react'
 import type {
   BankRow, ChatMessage, ContractRow, TestimonyData,
   CCTVEvent, LogRow, DeviceSection, SNSData,
   ReceiptSheet, GpsLogEntry,
 } from './demoEvidenceData'
+
+type DocumentShellVariant = 'contract' | 'ledger' | 'bank' | 'testimony'
+
+function EvidenceDocumentShell({
+  title,
+  subtitle,
+  stamp,
+  variant,
+  children,
+  footer,
+}: {
+  title: string
+  subtitle?: string
+  stamp: string
+  variant: DocumentShellVariant
+  children: ReactNode
+  footer?: ReactNode
+}) {
+  return (
+    <div className={`pc-doc-shell pc-doc-shell--${variant}`}>
+      <div className="pc-doc-paper">
+        <div className="pc-doc-paper__texture" aria-hidden="true" />
+        <span className="pc-doc-paper__clip" aria-hidden="true" />
+        <span className="pc-doc-paper__serial" aria-hidden="true">COPY</span>
+        <span className="pc-doc-stamp" aria-hidden="true">{stamp}</span>
+        <header className="pc-doc-paper__header">
+          <span className="pc-doc-paper__eyebrow">증거 사본</span>
+          <h3>{title || '문서 사본'}</h3>
+          {subtitle ? <p>{subtitle}</p> : null}
+        </header>
+        <div className="pc-doc-paper__content">
+          {children}
+        </div>
+        {footer ? <footer className="pc-doc-paper__footer">{footer}</footer> : null}
+      </div>
+    </div>
+  )
+}
+
+function getDocumentStamp(title: string, fallback: string) {
+  if (/유서|유언|공증/.test(title)) return '원본대조'
+  if (/방문|기록|대장|로그/.test(title)) return '기관확인'
+  if (/송금|계좌|금융|영수/.test(title)) return '거래확인'
+  return fallback
+}
 
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 // 0. ReceiptViewer — 영수증 묶음 (좌우 넘기기)
@@ -223,62 +268,49 @@ export function GpsLogViewer({ entries }: { entries: GpsLogEntry[] }) {
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 export function BankViewer({ rows }: { rows: BankRow[] }) {
+  const period = rows.length > 0
+    ? `${rows[0].date} - ${rows[rows.length - 1].date}`
+    : '조회 기간 미상'
+  const suspiciousCount = rows.filter((row) => row.suspicious).length
+
   return (
-    <table className="w-full text-sm" style={{ borderCollapse: 'collapse' }}>
-      <thead>
-        <tr>
-          {['날짜', '내용', '금액', '잔액'].map((h) => (
-            <th
-              key={h}
-              className="text-left text-xs font-semibold py-2 px-3"
-              style={{ color: '#4e4e5c', borderBottom: '1px solid rgba(255,255,255,0.06)' }}
-            >
-              {h}
-            </th>
-          ))}
-        </tr>
-      </thead>
-      <tbody>
+    <EvidenceDocumentShell
+      title="금융거래 내역 조회표"
+      subtitle={`${period} / 거래 원장 출력본`}
+      stamp="거래확인"
+      variant="bank"
+      footer={<span>중점 거래 {suspiciousCount}건 표시 · 제출용 사본</span>}
+    >
+      <div className="pc-doc-bank-summary">
+        <span>조회 계좌</span>
+        <strong>제출자 보관 계좌</strong>
+        <span>표시 기준</span>
+        <strong>입출금·잔액 대조</strong>
+      </div>
+      <div className="pc-doc-table pc-doc-table--bank" role="table" aria-label="금융거래 내역">
+        <div className="pc-doc-table__head" role="row">
+          <span>거래일</span>
+          <span>적요</span>
+          <span>거래금액</span>
+          <span>잔액</span>
+        </div>
         {rows.map((r, i) => {
           const isNeg = r.amount.startsWith('-')
           return (
-            <tr
-              key={i}
-              className="transition-colors duration-150"
-              style={{
-                background: r.suspicious ? 'rgba(224,96,96,0.06)' : 'transparent',
-                cursor: r.suspicious ? 'pointer' : 'default',
-              }}
-              onMouseEnter={(e) => {
-                if (r.suspicious) (e.currentTarget as HTMLElement).style.background = 'rgba(224,96,96,0.12)'
-              }}
-              onMouseLeave={(e) => {
-                (e.currentTarget as HTMLElement).style.background = r.suspicious ? 'rgba(224,96,96,0.06)' : 'transparent'
-              }}
+            <div
+              key={`${r.date}-${i}`}
+              className={`pc-doc-table__row${r.suspicious ? ' is-focus' : ''}`}
+              role="row"
             >
-              <td className="py-2 px-3 tabular-nums" style={{ color: r.suspicious ? '#dcdce0' : '#8b8b9a', borderBottom: '1px solid rgba(255,255,255,0.03)' }}>
-                {r.date}
-              </td>
-              <td className="py-2 px-3 relative" style={{ color: r.suspicious ? '#dcdce0' : '#8b8b9a', borderBottom: '1px solid rgba(255,255,255,0.03)' }}>
-                {r.desc}
-              </td>
-              <td
-                className="py-2 px-3 font-semibold tabular-nums"
-                style={{
-                  color: isNeg ? '#e06060' : '#5cc97a',
-                  borderBottom: '1px solid rgba(255,255,255,0.03)',
-                }}
-              >
-                {r.amount}
-              </td>
-              <td className="py-2 px-3 tabular-nums" style={{ color: '#8b8b9a', borderBottom: '1px solid rgba(255,255,255,0.03)' }}>
-                {r.balance}
-              </td>
-            </tr>
+              <span className="tabular-nums">{r.date}</span>
+              <span>{r.desc}</span>
+              <span className={`tabular-nums pc-doc-amount${isNeg ? ' is-negative' : ' is-positive'}`}>{r.amount}</span>
+              <span className="tabular-nums">{r.balance}</span>
+            </div>
           )
         })}
-      </tbody>
-    </table>
+      </div>
+    </EvidenceDocumentShell>
   )
 }
 
@@ -350,63 +382,29 @@ function resolveChatContactLabel(header: string, messages: ChatMessage[]): strin
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 export function ContractViewer({ title, subtitle, rows, signature }: {
-  title: string; subtitle: string; rows: ContractRow[]; signature: string
+  title: string; subtitle: string; rows: ContractRow[]; signature?: string
 }) {
   return (
-    <div
-      className="rounded-xl p-6"
-      style={{
-        background: 'rgba(212,162,78,0.03)',
-        border: '1px solid rgba(212,162,78,0.1)',
-      }}
+    <EvidenceDocumentShell
+      title={title}
+      subtitle={subtitle}
+      stamp={getDocumentStamp(title, '확인')}
+      variant="contract"
+      footer={signature ? <span>{signature}</span> : null}
     >
-      <div className="text-center text-lg font-bold tracking-widest mb-1" style={{ color: '#dcdce0' }}>
-        {title}
-      </div>
-      <div className="text-center text-sm mb-5" style={{ color: '#4e4e5c' }}>
-        {subtitle}
-      </div>
-
-      {rows.map((r, i) => (
-        <div
-          key={i}
-          className="flex items-center py-2.5 px-3"
-          style={{
-            borderBottom: r.missing ? 'none' : '1px solid rgba(255,255,255,0.04)',
-            background: r.missing ? 'rgba(212,162,78,0.08)' : 'transparent',
-            borderRadius: r.missing ? 6 : 0,
-            margin: r.missing ? '4px 0' : 0,
-          }}
-        >
-          <span className="tabular-nums text-sm" style={{ color: '#4e4e5c', minWidth: 60 }}>
-            {r.date}
-          </span>
-          <span
-            className="flex-1 mx-4 text-sm"
-            style={{
-              color: r.missing ? 'var(--pc-gold-light, #e8c172)' : '#8b8b9a',
-              fontWeight: r.missing ? 600 : 400,
-            }}
+      <div className="pc-doc-form">
+        {rows.map((r, i) => (
+          <div
+            key={`${r.date}-${i}`}
+            className={`pc-doc-form__row${r.missing ? ' is-focus' : ''}${r.amount ? '' : ' has-no-amount'}`}
           >
-            {r.content}
-          </span>
-          <span className="tabular-nums text-sm text-right" style={{ color: '#8b8b9a', minWidth: 80 }}>
-            {r.amount}
-          </span>
-        </div>
-      ))}
-
-      <div
-        className="text-center text-sm mt-6 pt-4"
-        style={{
-          color: '#4e4e5c',
-          borderTop: '1px dashed rgba(255,255,255,0.08)',
-          fontStyle: 'italic',
-        }}
-      >
-        {signature}
+            <span className="pc-doc-form__label">{r.date || '항목'}</span>
+            <span className="pc-doc-form__content">{r.content}</span>
+            {r.amount ? <span className="pc-doc-form__amount tabular-nums">{r.amount}</span> : null}
+          </div>
+        ))}
       </div>
-    </div>
+    </EvidenceDocumentShell>
   )
 }
 
@@ -647,97 +645,91 @@ const LOG_TYPE_STYLES: Record<string, { bg: string; color: string }> = {
   miss: { bg: 'rgba(224,96,96,0.1)', color: '#e06060' },
 }
 
-const FILTER_OPTIONS = [
-  { key: 'all', label: '전체' },
-  { key: 'out', label: '발신' },
-  { key: 'in', label: '수신' },
-  { key: 'miss', label: '부재중' },
-] as const
+const LOG_TYPE_FALLBACK_LABELS: Record<string, string> = {
+  out: '발신',
+  in: '수신·방문',
+  miss: '부재중·변경',
+}
+
+function buildLogFilterOptions(rows: LogRow[]) {
+  const types = new Map<string, string>()
+  rows.forEach((row) => {
+    if (!types.has(row.type)) {
+      types.set(row.type, row.typeLabel || LOG_TYPE_FALLBACK_LABELS[row.type] || row.type)
+    }
+  })
+  return [
+    { key: 'all', label: '전체' },
+    ...Array.from(types, ([key, label]) => ({ key, label })),
+  ]
+}
 
 export function LogViewer({ rows, note }: { rows: LogRow[]; note: string }) {
   const [filter, setFilter] = useState<string>('all')
+  const filterOptions = buildLogFilterOptions(rows)
 
   const filtered = filter === 'all' ? rows : rows.filter((r) => r.type === filter)
 
   return (
     <div>
-      {/* Filters */}
-      <div className="flex gap-1.5 flex-wrap mb-4">
-        {FILTER_OPTIONS.map((f) => (
+      <div className="pc-doc-toolrow" role="tablist" aria-label="기록 필터">
+        {filterOptions.map((f) => (
           <button
             key={f.key}
-            className="text-xs px-3 py-1.5 rounded-lg font-medium transition-colors duration-150"
-            style={{
-              background: filter === f.key ? 'rgba(212,162,78,0.1)' : 'transparent',
-              border: filter === f.key
-                ? '1px solid rgba(212,162,78,0.18)'
-                : '1px solid rgba(255,255,255,0.05)',
-              color: filter === f.key ? 'var(--pc-gold-light, #e8c172)' : '#4e4e5c',
-            }}
+            className={filter === f.key ? 'is-active' : ''}
             onClick={() => setFilter(f.key)}
+            role="tab"
+            type="button"
           >
             {f.label}
           </button>
         ))}
       </div>
 
-      {/* Table */}
-      <table className="w-full text-sm" style={{ borderCollapse: 'collapse' }}>
-        <thead>
-          <tr>
-            {['시각', '유형', '상대', '통화시간'].map((h) => (
-              <th
-                key={h}
-                className="text-left text-xs font-semibold px-3"
-                style={{ color: '#4e4e5c', borderBottom: '1px solid rgba(255,255,255,0.06)', paddingTop: 12, paddingBottom: 12 }}
-              >
-                {h}
-              </th>
-            ))}
-          </tr>
-        </thead>
-        <tbody>
+      <EvidenceDocumentShell
+        title="방문·처리 기록 대장"
+        subtitle={`${rows.length}건 중 ${filtered.length}건 표시 / 기관 제출 사본`}
+        stamp="기관확인"
+        variant="ledger"
+        footer={note ? <span>{note}</span> : null}
+      >
+        <div className="pc-doc-table pc-doc-table--ledger" role="table" aria-label="방문 및 처리 기록">
+          <div className="pc-doc-table__head" role="row">
+            <span>일자·시각</span>
+            <span>분류</span>
+            <span>대상·내용</span>
+            <span>소요시간</span>
+          </div>
           {filtered.map((r, i) => {
             const typeStyle = LOG_TYPE_STYLES[r.type] ?? LOG_TYPE_STYLES.out
             return (
-              <tr
-                key={i}
-                style={{ background: r.suspicious ? 'rgba(212,162,78,0.06)' : 'transparent' }}
+              <div
+                key={`${r.date}-${i}`}
+                className={`pc-doc-table__row${r.suspicious ? ' is-focus' : ''}`}
+                role="row"
               >
-                <td className="px-3 tabular-nums" style={{ color: r.suspicious ? 'var(--pc-gold-light, #e8c172)' : '#8b8b9a', borderBottom: '1px solid rgba(255,255,255,0.03)', paddingTop: 14, paddingBottom: 14 }}>
+                <span className="tabular-nums">
                   {r.date}
-                </td>
-                <td className="px-3" style={{ borderBottom: '1px solid rgba(255,255,255,0.03)', paddingTop: 14, paddingBottom: 14 }}>
+                </span>
+                <span>
                   <span
-                    className="text-xs font-semibold rounded-full whitespace-nowrap"
-                    style={{ background: typeStyle.bg, color: typeStyle.color, paddingLeft: 8, paddingRight: 8, paddingTop: 3, paddingBottom: 3 }}
+                    className="pc-doc-table__type"
+                    style={{ background: typeStyle.bg, color: typeStyle.color }}
                   >
                     {r.typeLabel}
                   </span>
-                </td>
-                <td className="px-3" style={{ color: r.suspicious ? 'var(--pc-gold-light, #e8c172)' : '#8b8b9a', borderBottom: '1px solid rgba(255,255,255,0.03)', paddingTop: 14, paddingBottom: 14 }}>
+                </span>
+                <span>
                   {r.target}
-                </td>
-                <td className="px-3 tabular-nums" style={{ color: r.suspicious ? 'var(--pc-gold-light, #e8c172)' : '#8b8b9a', borderBottom: '1px solid rgba(255,255,255,0.03)', paddingTop: 14, paddingBottom: 14, fontWeight: r.suspicious ? 600 : 400 }}>
+                </span>
+                <span className="tabular-nums">
                   {r.duration}
-                </td>
-              </tr>
+                </span>
+              </div>
             )
           })}
-        </tbody>
-      </table>
-
-      {/* Note */}
-      <div
-        className="mt-4 px-4 py-3 rounded-lg text-sm leading-relaxed"
-        style={{
-          background: 'rgba(212,162,78,0.06)',
-          border: '1px solid rgba(212,162,78,0.18)',
-          color: 'var(--pc-gold-light, #e8c172)',
-        }}
-      >
-        {note}
-      </div>
+        </div>
+      </EvidenceDocumentShell>
     </div>
   )
 }
