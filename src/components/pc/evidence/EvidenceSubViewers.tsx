@@ -859,12 +859,12 @@ export function LogViewer({ rows, note, title }: { rows: LogRow[]; note: string;
         variant="ledger"
         footer={note ? <span>{note}</span> : null}
       >
-        <div className="pc-doc-table pc-doc-table--ledger" role="table" aria-label={isCallLog ? '통화 기록' : '방문 및 처리 기록'}>
+        <div className={`pc-doc-table pc-doc-table--ledger${isCallLog ? ' is-call-log' : ''}`} role="table" aria-label={isCallLog ? '통화 기록' : '방문 및 처리 기록'}>
           <div className="pc-doc-table__head" role="row">
             <span>일자·시각</span>
             <span>분류</span>
             <span>{isCallLog ? '상대·번호' : '대상·내용'}</span>
-            <span>{isCallLog ? '통화시간' : '소요시간'}</span>
+            <span>{isCallLog ? '통화시간·메시지' : '소요시간'}</span>
           </div>
           {filtered.map((r, i) => {
             const typeStyle = LOG_TYPE_STYLES[r.type] ?? LOG_TYPE_STYLES.out
