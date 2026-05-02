@@ -178,7 +178,7 @@ async function handleContradiction(e: ContradictionEvent) {
 
 /** #5 S5 자백 */
 async function handleConfession(e: ConfessionEvent) {
-  if (!shouldPlayCutscene('lie_collapse', normalizeContext(e.context))) return
+  if (!shouldPlayCutscene('truth_breakthrough', normalizeContext(e.context))) return
   playLieCollapse()
   // 배경 오버레이
   const overlay = document.createElement('div')

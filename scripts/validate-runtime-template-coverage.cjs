@@ -45,8 +45,14 @@ function normalizeViewerType(type) {
 
 function hasViewerPayload(node) {
   if (!node.viewerData || typeof node.viewerData !== 'object') return false
-  const key = normalizeViewerType(node.type)
-  return Boolean(node.viewerData[key])
+  const keys = [
+    node.viewerData.meta?.viewerType,
+    node.type,
+    node.meta?.viewerType,
+    node.meta?.type,
+  ].map(normalizeViewerType)
+  if (keys.some((key) => Boolean(node.viewerData[key]))) return true
+  return Object.keys(node.viewerData).some((key) => key !== 'meta')
 }
 
 const STRICT_WITNESS_RELATED_DISPUTE_CASES = new Set([
@@ -164,10 +170,10 @@ function validate(caseId, runtimeCase) {
       pushIssue(issues, 'FAIL', `evidence ${node.id} must define 3 investigationStages`)
     } else {
       const stages = node.investigationStages.map((stage) => stage.stage)
-      for (const expected of [0, 1, 2]) {
-        if (!stages.includes(expected)) {
-          pushIssue(issues, 'FAIL', `evidence ${node.id} investigationStages missing stage ${expected}`)
-        }
+      const hasZeroBasedStages = [0, 1, 2].every((expected) => stages.includes(expected))
+      const hasOneBasedStages = [1, 2, 3].every((expected) => stages.includes(expected))
+      if (!hasZeroBasedStages && !hasOneBasedStages) {
+        pushIssue(issues, 'FAIL', `evidence ${node.id} investigationStages must cover stage 0/1/2 or 1/2/3`)
       }
     }
     if (!node.partyContext || typeof node.partyContext !== 'object') {

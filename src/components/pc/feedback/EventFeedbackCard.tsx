@@ -105,7 +105,7 @@ export default function EventFeedbackCard() {
     return () => window.clearTimeout(timer)
   }, [active, phase, minigameActive])
 
-  // converging/leaving 종료 후 실제 dismiss + 수렴 타겟 2번 깜빡
+  // converging/leaving 종료 후 실제 dismiss + 수렴 타겟 3번 깜빡
   useEffect(() => {
     if (phase !== 'converging' && phase !== 'leaving') return
     const duration = phase === 'converging' ? 520 : 260
@@ -115,7 +115,7 @@ export default function EventFeedbackCard() {
         const target = document.querySelector<HTMLElement>(active.convergeTargetSelector)
         if (target) {
           target.classList.add('pc-dialogue-jump-pulse')
-          window.setTimeout(() => target.classList.remove('pc-dialogue-jump-pulse'), 1400)
+          window.setTimeout(() => target.classList.remove('pc-dialogue-jump-pulse'), 3350)
         }
       }
       dismiss()
@@ -257,7 +257,11 @@ export default function EventFeedbackCard() {
                 type="button"
                 className={`pc-event-feedback__action tone-${action.tone ?? 'gold'}`}
                 onClick={() => {
-                  try { action.onSelect() } finally { setPhase('leaving') }
+                  const runAction = action.onSelect
+                  setPhase('leaving')
+                  window.setTimeout(() => {
+                    runAction()
+                  }, 280)
                 }}
               >
                 {action.label}

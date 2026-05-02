@@ -6,7 +6,7 @@ import { resolveLLMDialogue } from '../engine/llmDialogueResolver'
 import { pp을를, pp과와, pp이가, pp은는 } from '../engine/koreanPostposition'
 import { generateWitnessTestimony, canCallWitness, determineTestimonyDepth, getDepthSystemMessage } from '../engine/witnessEngine'
 import type { PlayerAction, PartyId, QuestionType, DialogueNode } from '../types'
-import { playEvidencePresent, playLieCollapse, playEvidenceUnlock, playEvidenceUpgrade, playSeparation } from '../engine/soundEngine'
+import { playEvidencePresent, playEvidenceUnlock, playEvidenceUpgrade, playSeparation } from '../engine/soundEngine'
 import { v4Effects } from '../engine/presentationEngine'
 import { iga, eunneun } from '../utils/korean'
 import { showToast, showLLMErrorBanner } from '../components/common/Toast'
@@ -1273,11 +1273,15 @@ async function handleQuestion(action: Extract<PlayerAction, { type: 'question' }
         }
       } else {
         _empathyAttempts[empathyKey] = newAttempts
-        state.addDialogue({
-          speaker: 'system',
-          text: `경계가 조금씩 풀리고 있습니다.`,
-          relatedDisputes: [action.disputeId],
-          turn: state.turnCount,
+        state.addJudgeObservation({
+          turnCount: state.turnCount,
+          category: 'state',
+          iconId: 'i-heart',
+          title: '경계가 조금씩 풀리고 있다.',
+          summary: '공감 접근 결과 · 신뢰 경로 단서',
+          party: action.target,
+          disputeId: action.disputeId,
+          linkedDialogueId: findLinkedDialogueId(action.target),
         })
       }
     }
@@ -2323,7 +2327,6 @@ function notifyLieTransition(party: PartyId, disputeId: string) {
       if (currentEmotion < 85) {
         changeEmotionWithPhaseTracking(party, 85 - currentEmotion)
       }
-      playLieCollapse()
       v4Effects.confession(party, name, {
         turn: state.turnCount,
         caseId: state.caseData?.caseId,
@@ -2382,8 +2385,6 @@ function notifyLieTransition(party: PartyId, disputeId: string) {
 
     // S5 도달 시 진실 발견 + 정답지 기록
     if (newState === 'S5' && dispute) {
-      playLieCollapse()
-
       // 관련 truthTable에서 해당 쟁점의 진실 찾아서 발견 처리
       const caseData = state.caseData
       if (caseData) {
@@ -3001,6 +3002,22 @@ function buildWitnessProbeBridgeLine(
   return '…그 부분까지 확인됐습니까. 제가 아는 대로 말씀드리겠습니다.'
 }
 
+function buildWitnessProbeHoldLine(
+  caseId: string | undefined,
+  party: PartyId,
+  disputeId: string,
+): string {
+  const normalizedCaseId = normalizeCaseKey(caseId ?? '')
+
+  if (normalizedCaseId === 'spouse-01' && party === 'b' && disputeId === 'd-1') {
+    return '증언이 나왔다는 건 알겠습니다. 다만 지금 그 결론까지 바로 인정하기는 어렵습니다.'
+  }
+  if (normalizedCaseId === 'spouse-01' && party === 'a') {
+    return '그 증언을 못 들은 척하겠다는 뜻은 아닙니다. 그래도 지금은 제 입장을 바로 접지는 못하겠습니다.'
+  }
+  return '그 증언은 들었습니다. 그래도 지금 바로 결론까지 인정하기는 어렵습니다.'
+}
+
 function confirmWitnessTruthProbe(
   target: PartyId,
   disputeId: string,
@@ -3013,7 +3030,17 @@ function confirmWitnessTruthProbe(
   const targetName = getPartyNameForWitnessProbe(state, target)
   const dispute = caseData.disputes.find((item) => item.id === disputeId)
   const disputeName = dispute?.name ?? disputeId
-  const currentState = (target === 'a' ? state.agentA : state.agentB).lieStateMap[disputeId]?.currentState ?? 'S0'
+  const targetAgent = target === 'a' ? state.agentA : state.agentB
+  const currentState = targetAgent.lieStateMap[disputeId]?.currentState ?? 'S0'
+  const gate = evaluateTruthBreakthroughGate({
+    caseData,
+    evidenceStates: state.evidenceStates,
+    witnessSessions: state.witnessSessions,
+    party: target,
+    disputeId,
+    agent: targetAgent,
+    trigger: 'witness_support_probe',
+  })
 
   state.addDialogue({
     speaker: 'judge',
@@ -3024,23 +3051,60 @@ function confirmWitnessTruthProbe(
 
   state.addDialogue({
     speaker: target,
-    text: buildWitnessProbeBridgeLine(caseData.caseId, target, disputeId),
+    text: gate.canBreakthrough
+      ? buildWitnessProbeBridgeLine(caseData.caseId, target, disputeId)
+      : buildWitnessProbeHoldLine(caseData.caseId, target, disputeId),
     relatedDisputes: [disputeId],
     turn: state.turnCount,
-    behaviorHint: '증인 증언에 당황하고, 더 이상 버티기 어렵다는 반응을 보인다.',
+    behaviorHint: gate.canBreakthrough
+      ? '증인 증언에 당황하고, 더 이상 버티기 어렵다는 반응을 보인다.'
+      : '핵심 증언에 흔들리지만 아직 자신의 방어를 완전히 내려놓지는 않는다.',
     source: 'fallback',
   })
 
-  if (currentState !== 'S5') {
+  if (currentState === 'S5') {
+    dispatchS5ConfessionAnswer(target, disputeId)
+    return
+  }
+
+  if (gate.canBreakthrough) {
     snapshotLieState(target, disputeId)
     state.forceSetLieState(target, disputeId, 'S5', {
       allowS5: true,
-      breakthroughRoute: 'explicit',
+      breakthroughRoute: gate.route === 'blocked' ? undefined : gate.route,
     })
     notifyLieTransition(target, disputeId)
-  } else {
-    dispatchS5ConfessionAnswer(target, disputeId)
+    state.addJudgeObservation({
+      turnCount: state.turnCount,
+      category: 'event',
+      iconId: 'i-key',
+      title: '증인 진술과 당사자 반응이 맞물려 진실이 확정됐다.',
+      summary: `${disputeName} · ${gate.route === 'trust' ? '신뢰 경로' : '감정 경로'}`,
+      party: target,
+      disputeId,
+      linkedDialogueId: findLinkedDialogueId(target),
+    })
+    return
   }
+
+  const rank = LIE_STATE_RANK_FOR_UNLOCK[currentState] ?? 0
+  if (rank < 4) {
+    snapshotLieState(target, disputeId)
+    state.forceSetLieState(target, disputeId, 'S4')
+    notifyLieTransition(target, disputeId)
+  }
+  state.addJudgeObservation({
+    turnCount: state.turnCount,
+    category: 'event',
+    iconId: 'i-witness',
+    title: '증언은 확보됐지만 진실 확정은 보류됐다.',
+    summary: gate.holdReason === 'route_not_ready'
+      ? '당사자의 감정/신뢰 경로가 아직 열리지 않았습니다.'
+      : '이 쟁점을 받칠 추가 증거 또는 증언이 더 필요합니다.',
+    party: target,
+    disputeId,
+    linkedDialogueId: findLinkedDialogueId(target),
+  })
 }
 
 function enqueueWitnessTruthProbe(
@@ -3133,6 +3197,9 @@ export function applyWitnessSlot(slotId: string): void {
     witnessFavor: slot.effect.favorDirection === 'pro_a' ? 'pro_a' : slot.effect.favorDirection === 'pro_b' ? 'pro_b' : 'neutral',
   })
 
+  // 세션 업데이트를 먼저 반영해야 S5 게이트가 방금 들은 핵심 증언을 support condition으로 볼 수 있다.
+  state.updateWitnessSession(pending.witnessId, slotId)
+
   // 효과 적용
   if (slot.effect.emotionDelta) {
     // 불리한 쪽의 감정 상승
@@ -3165,8 +3232,5 @@ export function applyWitnessSlot(slotId: string): void {
       turn: state.turnCount,
     })
   }
-
-  // 세션 업데이트
-  state.updateWitnessSession(pending.witnessId, slotId)
   // 증인 주제 선택은 소환의 일부, 별도 턴 소비 없음
 }

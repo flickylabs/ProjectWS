@@ -157,7 +157,7 @@ export default function JudgeObservationSection() {
           ? `[data-dialogue-bubble-id="${safeId}"]`
           : rowSelector
 
-        // 말풍선 2번 깜빡 (모든 카테고리 공통)
+        // 말풍선 3번 깜빡 (모든 카테고리 공통)
         if (bubble) {
           bubble.classList.add('pc-dialogue-jump-pulse')
           window.setTimeout(() => bubble.classList.remove('pc-dialogue-jump-pulse'), flashMs + 200)

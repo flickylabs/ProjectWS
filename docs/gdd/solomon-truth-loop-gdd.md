@@ -236,11 +236,11 @@ Example structure:
 
 Trigger shape:
 
-- authored witness truth probe
 - authored direct confession
 - authored event that intentionally bypasses the support gate
 
 This route should be rare and hand-authored. Generated text should not use this route without explicit runtime permission.
+Witness truth probes are not direct explicit routes. They are witness support/probe events and must still pass the shared S5 gate before a truth breakthrough is allowed.
 
 ## 7. Support Conditions
 
@@ -952,7 +952,7 @@ Route readiness:
 |---|---|
 | emotion | emotional phase is resigned OR internalValue >= 84 |
 | trust | trustTowardJudge >= 100 |
-| explicit | trigger contains `confession_dispatched`, `witness_truth_probe`, `explicit_confession`, or `truth_probe_confirmed` |
+| explicit | trigger contains `confession_dispatched`, `explicit_confession`, or a direct `truth_probe_confirmed` route that is explicitly authored to bypass support |
 | blocked | neither route is ready |
 
 Support readiness:
@@ -964,7 +964,7 @@ conditionReady = satisfiedEvidence.length + satisfiedWitness.length > 0
 Final gate:
 
 ```text
-if route is explicit: canBreakthrough = true
+if route is explicit direct bypass: canBreakthrough = true
 else canBreakthrough = routeReady && conditionReady
 ```
 
@@ -974,6 +974,12 @@ If code attempts S5 without this gate:
 from S4 -> stays S4, trigger suffix = :truth_gate_held
 from S0-S3 -> moves only to S4, trigger suffix = :truth_gate_held
 ```
+
+Current implementation guardrails:
+
+- Witness truth probes may provide support or hold a target at S4/probe, but they do not force S5 alone.
+- Emotional leak/slip events are observations or weak clues. They do not dispatch automatic S5 confession.
+- Release QA must keep `qa:fast` at static P0 = 0 and route P0 = 0, `qa:free-interrogation` passing, and scripted semantic/template/runtime validators at FAIL = 0 for each active case.
 
 ### 18.9 Verdict Readiness
 

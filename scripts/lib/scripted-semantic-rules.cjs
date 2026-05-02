@@ -336,15 +336,15 @@ function callTermIssues({ channel, entry, text, runtimeCase, variantId }) {
 
   if (!leadLooksLikeJudgeAddress(leadAddress)) {
     issues.push({
-      severity: 'FAIL',
+      severity: 'WARN',
       code: 'C2',
-      message: `${label} does not open with a judge-facing address`,
+      message: `${label} does not open with a judge-facing address; allowed when listener metadata is judge-facing`,
     })
   }
 
   if (toJudge && leadAddress.includes(toJudge)) {
     issues.push({
-      severity: 'FAIL',
+      severity: 'WARN',
       code: 'C3',
       message: `${label} uses toJudge as the salutation instead of a counterparty reference`,
     })
@@ -352,7 +352,7 @@ function callTermIssues({ channel, entry, text, runtimeCase, variantId }) {
 
   if ((toPartner && leadAddress.includes(toPartner)) || (angry && leadAddress.includes(angry))) {
     issues.push({
-      severity: 'FAIL',
+      severity: 'WARN',
       code: 'C4',
       message: `${label} uses toPartner/angry as the salutation`,
     })

@@ -22,7 +22,7 @@ const ROUTE_LABELS: Record<string, string> = {
   truth_confrontation: '진실 공방에서 새 쟁점이 튀어나왔습니다.',
   witness: '증인 진술이 다른 갈래를 열었습니다.',
   lie_collapse: '거짓 붕괴로 숨은 쟁점이 드러났습니다.',
-  emotional_slip: '감정 실수로 숨은 쟁점이 드러났습니다.',
+  emotional_slip: '감정 반응에서 확인할 단서가 생겼습니다.',
   interjection: '끼어든 발언이 새 쟁점을 열었습니다.',
 }
 
@@ -53,16 +53,6 @@ function buildContradictionFallbackLine(lieState: string): string {
   if (lieState >= 'S3') return '...그건... 상황이 복잡했습니다. 제가 처음에 말씀드린 것과 다른 부분이 있었습니다.'
   if (lieState >= 'S2') return '재판관님, 제 기억이 혼란스러웠던 것 같습니다. 다시 정리하겠습니다.'
   return '그건... 제가 말한 것과 다르지 않습니다. 맥락이 다른 것입니다.'
-}
-
-function buildLeakConfessionLine(caseId: string | undefined, party: 'a' | 'b', disputeId: string, fallbackTruth?: string): string {
-  if (caseId === 'spouse-01' && party === 'b' && disputeId === 'd-1') {
-    return '형이 집을 비우는 시간이 길어서 조카 혼자 있는 날이 많았습니다. 제가 아니면... 누가 합니까.'
-  }
-  if (fallbackTruth) {
-    return `...맞습니다. ${fallbackTruth}`
-  }
-  return '...맞습니다. 방금 말한 부분이 숨기던 핵심입니다.'
 }
 
 export default function DiscoveryFeedbackWatcher() {
@@ -336,26 +326,24 @@ export default function DiscoveryFeedbackWatcher() {
     const linkedDispute = pendingSlip.linkedDisputeId
       ? caseData.disputes.find((d) => d.id === pendingSlip.linkedDisputeId)
       : null
-    const isCriticalLeakSlip = false
 
     const meta: string[] = []
     if (sourceDispute) meta.push(`관련 쟁점: ${sourceDispute.name}`)
     if (linkedDispute) meta.push(`연결 쟁점: ${linkedDispute.name}`)
-    if (isCriticalLeakSlip) meta.push('누설 100%')
 
     state.addJudgeObservation({
       turnCount: state.turnCount,
       category: 'slip',
       iconId: 'i-heart',
-      title: isCriticalLeakSlip ? '말실수가 나왔습니다. 바로 추궁할 수 있습니다.' : pendingSlip.slipText,
-      summary: isCriticalLeakSlip ? `${partyData.name} · 누설 100%` : `${partyData.name} · 감정 실수 포착`,
+      title: pendingSlip.slipText,
+      summary: `${partyData.name} · 감정 실수 포착`,
       party: pendingSlip.party,
       disputeId: pendingSlip.sourceDisputeId,
     })
     state.enqueueFeedback({
       kind: 'emotional_slip',
-      eyebrow: isCriticalLeakSlip ? '말실수 포착' : '감정 실수 포착',
-      title: isCriticalLeakSlip ? `${partyData.name}의 말이 새어 나왔습니다` : partyData.name,
+      eyebrow: '감정 실수 포착',
+      title: partyData.name,
       quote: pendingSlip.slipText,
       meta,
       tone: 'red',
@@ -369,42 +357,11 @@ export default function DiscoveryFeedbackWatcher() {
           },
         },
         {
-          label: isCriticalLeakSlip ? '말실수 추궁' : '진실 공방에 반영',
+          label: '관찰에 기록',
           tone: 'red',
           onSelect: () => {
             const fresh = useGameStore.getState()
             fresh.addEmotionalSlip(pendingSlip)
-            if (isCriticalLeakSlip) {
-              const beforeState = pendingSlip.party === 'a'
-                ? fresh.agentA.lieStateMap[pendingSlip.sourceDisputeId]?.currentState
-                : fresh.agentB.lieStateMap[pendingSlip.sourceDisputeId]?.currentState
-              fresh.addDialogue({
-                speaker: 'judge',
-                text: '방금 말한 내용은 그냥 넘길 수 없습니다. 숨기던 사실을 분명히 답하십시오.',
-                relatedDisputes: [pendingSlip.sourceDisputeId],
-                turn: fresh.turnCount,
-                source: 'fallback',
-              })
-              fresh.forceSetLieState(pendingSlip.party, pendingSlip.sourceDisputeId, 'S5')
-              fresh.trackMetric('liesCollapsed')
-              fresh.addDialogue({
-                speaker: pendingSlip.party,
-                text: buildLeakConfessionLine(caseData.caseId, pendingSlip.party, pendingSlip.sourceDisputeId, sourceDispute?.truthDescription),
-                relatedDisputes: [pendingSlip.sourceDisputeId],
-                turn: fresh.turnCount,
-                behaviorHint: '말실수를 지적받자 숨기던 사실을 더 이상 돌리지 않고 인정한다.',
-                source: 'fallback',
-              })
-              fresh.addJudgeObservation({
-                turnCount: fresh.turnCount,
-                category: 'event',
-                iconId: 'i-scale',
-                title: '말실수를 추궁해 자백을 끌어냈습니다.',
-                summary: `${sourceDispute?.name ?? pendingSlip.sourceDisputeId} · ${beforeState ?? '이전 단계'} → S5`,
-                party: pendingSlip.party,
-                disputeId: pendingSlip.sourceDisputeId,
-              })
-            }
             enqueuedRef.current.delete(key)
           },
         },

@@ -91,6 +91,17 @@ export const FREE_INTERROGATION_QUESTION_CORPUS: FreeInterrogationQuestionCorpus
     note: 'Direct identity question should keep party persona.',
   },
   {
+    id: 'public-target-identity-formal',
+    text: '당신은 누구십니까?',
+    expectedIntent: 'public_info',
+    expectedRoute: 'public_answer',
+    expectedCostPolicy: 'no_cost',
+    expectedTurnPolicy: 'no_advance',
+    expectedSpeaker: 'a',
+    expectedTextIncludes: ['저는 박지훈', '공개된 프로필'],
+    note: 'Formal direct identity question should be answered naturally by the target party.',
+  },
+  {
     id: 'public-target-b-occupation',
     text: '직업은 뭐야?',
     expectedIntent: 'public_info',
@@ -496,9 +507,9 @@ const LEAK_PROBE_PATTERNS = [
 
 const PUBLIC_INFO_PATTERNS = [
   /(공개된|공개 정보|기본 정보|프로필|등장인물|인물 정보)/i,
-  /((이|저|그)\s*사람|당사자|인물|\bA\b|\bB\b).*(누구(?:예요|입니까|인가요|인가|죠|\?)?|이름|나이|직업|프로필)/i,
+  /((이|저|그)\s*사람|당사자|인물|\bA\b|\bB\b).*(누구(?:예요|입니까|십니까|인가요|인가|죠|\?)?|이름|나이|직업|프로필)/i,
   /(\bA\b|\bB\b|A의|B의).*(이름|나이|직업|프로필)/i,
-  /(당신|본인|증인|당사자).*(누구(?:예요|입니까|인가요|인가|죠|\?)|이름|나이|직업|프로필)/i,
+  /(당신|본인|증인|당사자).*(누구(?:예요|입니까|십니까|인가요|인가|죠|\?)|이름|나이|직업|프로필)/i,
   /(당신|본인|증인|당사자).*(이름|나이|직업|프로필).*(알려|뭐|무엇|몇|확인|말해)/i,
   /(이름|나이|직업|프로필)\s*(은|는|이|가)?\s*(알려|뭐|무엇|몇|확인)/i,
   /(상대방|배우자|남편|아내|파트너).*(누구|관계|사이|무슨|뭐|공개\s*정보|프로필)/i,

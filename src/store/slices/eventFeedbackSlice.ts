@@ -76,7 +76,7 @@ export interface EventFeedbackItem {
   autoDismissMs?: number
   /** observation 전용: 해당 파티의 archetype 태그로 수렴 애니메이션 재생 */
   convergeToTag?: boolean
-  /** 가이드 컷씬: 임의의 타겟 selector로 수렴 + 수렴 완료 후 타겟 2번 깜빡 */
+  /** 가이드 컷씬: 임의의 타겟 selector로 수렴 + 수렴 완료 후 타겟 3번 깜빡 */
   convergeTargetSelector?: string
   /** 액션 레이아웃: 기본 horizontal, 긴 리스트(증인 주제 등)는 vertical */
   actionsLayout?: 'horizontal' | 'vertical'

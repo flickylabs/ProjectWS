@@ -158,7 +158,6 @@ export default function PCRecordSummary({ onClose }: { onClose: () => void }) {
 
     for (const dispute of visibleDisputes) {
       const stage = getMaxTruthStage(dispute.id, agentA, agentB)
-      const judgment = judgments[dispute.id]
 
       if (stage >= 5) {
         const truthFact = getTruthFactForDispute(caseData, dispute.id)
@@ -168,15 +167,25 @@ export default function PCRecordSummary({ onClose }: { onClose: () => void }) {
             : `${dispute.name}: 진실파악 5단계에 도달했습니다.`,
           confirmed: true,
         })
-      } else if (judgment) {
-        facts.push({
-          text: `${dispute.name}: 내 판단 - ${getJudgmentLabel(judgment.judgment, caseData)}`,
-          confirmed: false,
-        })
       }
     }
 
     return facts
+  }, [agentA, agentB, caseData, visibleDisputes])
+
+  const myJudgments = useMemo(() => {
+    if (!caseData) return []
+    return visibleDisputes
+      .map((dispute) => {
+        const judgment = judgments[dispute.id]
+        if (!judgment) return null
+        const stage = getMaxTruthStage(dispute.id, agentA, agentB)
+        return {
+          text: `${dispute.name}: ${getJudgmentLabel(judgment.judgment, caseData)} 진실파악 ${stage}/5`,
+          confirmed: stage >= 5,
+        }
+      })
+      .filter((item): item is { text: string; confirmed: boolean } => Boolean(item))
   }, [agentA, agentB, caseData, judgments, visibleDisputes])
 
   const unresolvedQuestions = useMemo(() => {
@@ -206,6 +215,19 @@ export default function PCRecordSummary({ onClose }: { onClose: () => void }) {
     })
     if (incompleteEvidence.length > 0) {
       questions.push(`추가 조사 가능한 증거 ${incompleteEvidence.length}개가 남아 있습니다.`)
+    }
+
+    const lockedEvidence = caseData.evidence.filter((evidence) => !evidenceStates[evidence.id]?.unlocked)
+    if (lockedEvidence.length > 0) {
+      questions.push(`아직 해금되지 않은 증거 ${lockedEvidence.length}개가 남아 있습니다.`)
+    }
+
+    const unpresentedEvidence = caseData.evidence.filter((evidence) => {
+      const state = evidenceStates[evidence.id]
+      return state?.unlocked && !state.presented
+    })
+    if (unpresentedEvidence.length > 0) {
+      questions.push(`열렸지만 당사자에게 제시하지 않은 증거 ${unpresentedEvidence.length}개가 남아 있습니다.`)
     }
 
     const uncalledWitnesses = caseData.duo.socialGraph.filter((witness) => !calledWitnesses.includes(witness.id))
@@ -253,7 +275,7 @@ export default function PCRecordSummary({ onClose }: { onClose: () => void }) {
           <section className="pc-record-summary__section">
             <h3><PCSvgIcon id="i-shield" size={14} /> 확인된 사실 <span className="pc-record-summary__count">{confirmedFacts.length}/{visibleDisputes.length}</span></h3>
             {confirmedFacts.length === 0 ? (
-              <p className="pc-record-summary__empty">아직 확정된 진실이나 내 판단 기록이 없습니다.</p>
+              <p className="pc-record-summary__empty">아직 쟁점 단위로 확정된 진실이 없습니다.</p>
             ) : confirmedFacts.map((fact, index) => (
               <div className={`pc-record-summary__item ${fact.confirmed ? 'is-confirmed' : 'is-partial'}`} key={`${fact.text}-${index}`}>
                 <span>{fact.confirmed ? '✓' : '판'}</span>
@@ -263,9 +285,21 @@ export default function PCRecordSummary({ onClose }: { onClose: () => void }) {
           </section>
 
           <section className="pc-record-summary__section">
+            <h3><PCSvgIcon id="i-scale" size={14} /> 내 판단 <span className="pc-record-summary__count">{myJudgments.length}</span></h3>
+            {myJudgments.length === 0 ? (
+              <p className="pc-record-summary__empty">아직 재판관 판단으로 정리한 쟁점이 없습니다.</p>
+            ) : myJudgments.map((judgment, index) => (
+              <div className={`pc-record-summary__item ${judgment.confirmed ? 'is-confirmed' : 'is-partial'}`} key={`${judgment.text}-${index}`}>
+                <span>{judgment.confirmed ? '확' : '판'}</span>
+                <span>{judgment.text}</span>
+              </div>
+            ))}
+          </section>
+
+          <section className="pc-record-summary__section">
             <h3><PCSvgIcon id="i-search" size={14} /> 미해결 의문 <span className="pc-record-summary__count">{unresolvedQuestions.length}</span></h3>
             {unresolvedQuestions.length === 0 ? (
-              <p className="pc-record-summary__empty">현재 열린 쟁점은 모두 5단계까지 확인됐습니다.</p>
+              <p className="pc-record-summary__empty">전체 사건 기준으로 남은 쟁점, 증거, 증인 확인 항목이 없습니다.</p>
             ) : unresolvedQuestions.map((question, index) => (
               <div className="pc-record-summary__item is-question" key={`${question}-${index}`}>
                 <span>?</span>

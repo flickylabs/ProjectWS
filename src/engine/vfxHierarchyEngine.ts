@@ -6,6 +6,9 @@ export type CutsceneType =
   | 'lie_collapse'
   | 'contradiction_hit'
   | 'emotional_burst'
+  | 'emotion_peak'
+  | 'trust_peak'
+  | 'truth_breakthrough'
   | 'dispute_emergence'
   | 'phase_transition'
   | 'verdict_gavel'
@@ -48,9 +51,16 @@ const LIGHTNING_TARGET_COOLDOWN_TURNS = 5
 const COMBINATION_LIGHTNING_PER_TURN_LIMIT = 2
 const PHASE_CUTIN_WARN_THRESHOLD = 5
 const PHASE_TRANSITION_STRONG_LIMIT = 2
-const MAJOR_HARD_CAP_PER_CASE = 3
+const MAJOR_HARD_CAP_PER_CASE = 8
 
-const MAJOR_CUTSCENES = new Set<CutsceneType>(['lie_collapse', 'verdict_gavel'])
+const MAJOR_CUTSCENES = new Set<CutsceneType>([
+  'lie_collapse',
+  'truth_breakthrough',
+  'dispute_emergence',
+  'emotion_peak',
+  'trust_peak',
+  'verdict_gavel',
+])
 const ALLOWED_LIGHTNING_REASONS = new Set<LightningReason>([
   'free_interrogation_mapping',
   'evidence_combo_unlock',
@@ -144,7 +154,7 @@ export function shouldPlayCutscene(type: CutsceneType, ctx: VfxTurnContext): boo
     return true
   }
 
-  if (type === 'emotional_burst') {
+  if (type === 'emotional_burst' || type === 'emotion_peak' || type === 'trust_peak') {
     return canPlayCutIn(type, ctx, EMOTIONAL_BURST_COOLDOWN_TURNS)
   }
 

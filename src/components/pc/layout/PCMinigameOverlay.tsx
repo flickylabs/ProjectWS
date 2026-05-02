@@ -104,19 +104,31 @@ export default function PCMinigameOverlay() {
       .find((key) => !evidenceState?.investigatedActions?.includes(key)) ?? 'check_edits'
 
     const handleSuccess = () => {
-      const { addDialogue, investigateEvidence, turnCount } = useGameStore.getState()
+      const { enqueueFeedback, investigateEvidence } = useGameStore.getState()
       const result = investigateEvidence(evidenceId, nextKey)
       if (result) {
-        addDialogue({ speaker: 'system', text: `조사 결과: ${result}`, relatedDisputes: evidence?.proves ?? [], turn: turnCount })
+        enqueueFeedback({
+          kind: 'evidence_result',
+          eyebrow: '증거 조사',
+          title: evidenceDisplayName,
+          body: result,
+          tone: 'gold',
+          autoDismissMs: 2400,
+          convergeTargetSelector: `[data-resonance-target="evidence-${evidenceId}"]`,
+        })
       }
       clearPendingMinigame(null)
       setChosenMethod(null)
     }
 
     const handleFail = () => {
-      useGameStore.getState().addDialogue({
-        speaker: 'system', text: '조사에 실패했습니다. 단서를 다시 정리해야 합니다.',
-        relatedDisputes: evidence?.proves ?? [], turn: useGameStore.getState().turnCount,
+      useGameStore.getState().enqueueFeedback({
+        kind: 'evidence_result',
+        eyebrow: '증거 조사',
+        title: '조사 실패',
+        body: '단서를 다시 정리해야 합니다.',
+        tone: 'neutral',
+        autoDismissMs: 1800,
       })
       clearPendingMinigame(null)
       setChosenMethod(null)

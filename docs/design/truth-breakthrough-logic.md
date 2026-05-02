@@ -26,14 +26,14 @@ One of the following must be true:
 
 - Emotion route: the target is in the resigned band, or emotional pressure has reached the peak threshold.
 - Trust route: trust toward the judge has reached the maximum band.
-- Explicit route: an authored confession, witness truth probe, or direct truth confirmation is being executed.
+- Explicit route: an authored confession or direct truth confirmation is being executed. Witness truth probes are support/probe events, not S5 bypasses.
 
 ### Support Condition
 
 One of the following must be true for the same dispute:
 
 - Evidence condition: an evidence item required by the dispute, or an evidence item whose `proves` list includes the dispute, has been investigated or presented deeply enough.
-- Witness condition: a witness whose `relatedDisputeIds` includes the dispute has given testimony slots connected to that dispute. A decisive slot or at least two related slots are enough. A direct witness can also satisfy the condition after at least one related slot and repeated questioning.
+- Witness condition: a witness whose `relatedDisputeIds` includes the dispute has given testimony slots connected to that dispute. A decisive slot or at least two related slots are enough. A direct witness can also satisfy the condition after at least one related slot and repeated questioning. A witness truth probe may hold or raise the target to S4 when the rest of the gate is not ready, but it cannot force S5 by itself.
 - Explicit bypass: only an authored route that is deliberately marked as direct can bypass evidence/witness support.
 
 If route readiness is true but support is missing, the dispute may rise to S4 but must not enter S5.
@@ -190,3 +190,6 @@ Minimum tests for each active case:
 6. A witness for one dispute does not unlock unrelated disputes.
 7. Automatic leak does not force S5.
 8. S5 produces route-specific confession/confirmation text, not generic system text.
+9. `qa:fast` reports static P0 = 0 and route P0 = 0.
+10. Scripted semantic/template/runtime validators report FAIL = 0 for each active case. WARN items remain audit follow-up and must not hide blocking failures.
+11. Free-interrogation QA includes target identity questions such as "당신은 누구십니까?" while preserving `public_info`, `gameplay`, `off_topic`, and `leak_probe` routing.

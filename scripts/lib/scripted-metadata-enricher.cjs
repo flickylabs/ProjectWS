@@ -101,8 +101,11 @@ function responseModeTag(channel) {
 
 function findSpeakerEntity(runtimeCase, entry) {
   const duo = runtimeCase?.duo || {}
-  if (entry.party === 'a') return duo.partyA || null
-  if (entry.party === 'b') return duo.partyB || null
+  const party = entry.party ||
+    entry.targetParty ||
+    String(entry.questionId || entry.key || '').match(/(?:^|[.|])([ab])(?:[.|])/u)?.[1]
+  if (party === 'a') return duo.partyA || null
+  if (party === 'b') return duo.partyB || null
   if (entry.witnessId) {
     return (duo.socialGraph || []).find((item) => item.id === entry.witnessId) || null
   }

@@ -27,7 +27,6 @@ const TRUST_BREAKTHROUGH_THRESHOLD = 100
 const EMOTION_BREAKTHROUGH_VALUE = 84
 const DIRECT_BREAKTHROUGH_TRIGGERS = [
   'confession_dispatched',
-  'witness_truth_probe',
   'explicit_confession',
   'truth_probe_confirmed',
 ]

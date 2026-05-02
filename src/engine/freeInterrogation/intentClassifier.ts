@@ -128,7 +128,10 @@ function classifyByRules(raw: string, context: FreeInterrogationRuntimeContext):
 }
 
 function isPreflightUnmapped(raw: string, context: FreeInterrogationRuntimeContext): boolean {
-  if (IDENTITY_META_PATTERNS.some((pattern) => pattern.test(raw))) return true
+  if (IDENTITY_META_PATTERNS.some((pattern) => pattern.test(raw))) {
+    if (/(ai|인공지능|챗봇|시스템|모델)/i.test(raw)) return true
+    if (!context.target) return true
+  }
   if (UNMAPPED_PATTERNS.some((pattern) => pattern.test(raw)) && !hasCaseAnchor(raw, context)) return true
   return false
 }

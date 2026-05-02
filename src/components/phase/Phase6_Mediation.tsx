@@ -89,6 +89,7 @@ export default function Phase6_Mediation() {
   }, [caseData])
 
   if (!caseData) return null
+  const selectedInfo = selectedPath ? PATH_LABELS[selectedPath] : null
 
   const handleSelect = async (path: MediationPath) => {
     setSelectedPath(path)
@@ -223,6 +224,17 @@ export default function Phase6_Mediation() {
         </div>
       ) : null}
 
+      {selectedInfo ? (
+        <div className="pc-mediation__selected" role="status">
+          <span className="pc-mediation__selected-kicker">선택한 중재 방식</span>
+          <span className="pc-mediation__selected-name">
+            <PCSvgIcon id={selectedInfo.iconId} size={18} />
+            <span>{selectedInfo.label}</span>
+          </span>
+          <span className="pc-mediation__selected-desc">{selectedInfo.desc}</span>
+        </div>
+      ) : null}
+
       {loading ? (
         <div className="pc-mediation__loading">
           <div className="pc-mediation__spinner" />
@@ -232,6 +244,7 @@ export default function Phase6_Mediation() {
 
       {selectedPath && selectedPath !== 'immediate' && !loading ? (
         <div className="pc-mediation__advance">
+          <p className="pc-mediation__advance-copy">중재 발언이 기록되었습니다. 선택한 방식은 판결 점수와 후일담에 반영됩니다.</p>
           <button className="pc-mediation__advance-btn" onClick={() => advancePhase(Phase.Verdict)} type="button">
             <PCSvgIcon id="i-gavel" size={18} />
             <span>판결로 진행</span>
