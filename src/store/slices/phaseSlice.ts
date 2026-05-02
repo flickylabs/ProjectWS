@@ -5,6 +5,7 @@ import { PHASE_ORDER } from '../../utils/constants'
 import { checkVerdictEligible, checkForcedVerdict } from '../../engine/readinessEngine'
 import { normalizeCaseKey } from '../../utils/caseHelpers'
 import { triggerConfessionModalIfReady } from '../../engine/confessionTrigger'
+import { getVerdictDisputeGate } from '../../engine/verdictAdvanceGate'
 
 export type MediationChoice = 'immediate' | 'conditional' | 'postpone' | 'fact_first' | null
 
@@ -44,6 +45,14 @@ export const createPhaseSlice: StateCreator<PhaseSlice, [], [], PhaseSlice> = (s
       const currentIndex = PHASE_ORDER.indexOf(currentPhase)
       if (currentIndex === -1 || currentIndex >= PHASE_ORDER.length - 1) return
       nextPhase = PHASE_ORDER[currentIndex + 1]
+    }
+
+    if (
+      currentPhase === Phase.Interrogation &&
+      (nextPhase === Phase.Mediation || nextPhase === Phase.Verdict) &&
+      !getVerdictDisputeGate(get() as any).hasMinimumVisibleDisputes
+    ) {
+      return
     }
 
     // Phase 전환: separationTarget/separationTurns는 GameStore 루트 상태이지만
@@ -114,7 +123,7 @@ export const createPhaseSlice: StateCreator<PhaseSlice, [], [], PhaseSlice> = (s
     ]
     if (interrogationPhases.includes(currentPhase) && state.readinessState) {
       const { forced, verdictMode } = checkForcedVerdict(turnCount, state.readinessState)
-      if (forced) {
+      if (forced && getVerdictDisputeGate(state).hasMinimumVisibleDisputes) {
         setVerdictMode(verdictMode)
         advancePhase(Phase.Mediation)
       }
@@ -127,6 +136,9 @@ export const createPhaseSlice: StateCreator<PhaseSlice, [], [], PhaseSlice> = (s
 
     // Phase 3 통합 심문: readinessEngine에서 판결 가능 여부 확인
     if (currentPhase === Phase.Interrogation) {
+      if (!getVerdictDisputeGate(state).hasMinimumVisibleDisputes) {
+        return false
+      }
       // readinessState가 store에 있으면 사용, 없으면 기본 허용
       if (state.readinessState) {
         const { eligible } = checkVerdictEligible(state.turnCount, state.readinessState)

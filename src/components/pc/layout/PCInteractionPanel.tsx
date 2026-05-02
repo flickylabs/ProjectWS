@@ -8,6 +8,7 @@ import PCSvgIcon from '../icons/PCSvgIcon'
 import PCCharacterPortrait from '../icons/PCCharacterPortrait'
 import { jumpToDialogue } from '../observation/JudgeObservationSection'
 import { getWitnessPortraitPath } from '../../../utils/witnessPortraits'
+import { emitVerdictCtaCollapsed } from './verdictAdvanceEvents'
 
 export const PC_OPEN_INTERACTION_PANEL_EVENT = 'pc:open-interaction-panel'
 export const PC_CLOSE_INTERACTION_PANEL_EVENT = 'pc:close-interaction-panel'
@@ -31,6 +32,7 @@ export interface PcInteractionAction {
     | 'open_dispute_picker'
     | 'run_contradiction'
     | 'summon_witness'
+    | 'collapse_verdict_cta'
     | 'close'
   label: string
   disputeId?: string
@@ -747,6 +749,10 @@ export default function PCInteractionPanel() {
           return
         }
         break
+      case 'collapse_verdict_cta':
+        closePanel()
+        emitVerdictCtaCollapsed()
+        return
       case 'close':
       default:
         break

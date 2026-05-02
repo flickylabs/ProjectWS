@@ -1,4 +1,5 @@
-import { Fragment, useCallback, useState, type ReactNode } from 'react'
+import { Fragment, useCallback, useEffect, useRef, useState, type ReactNode } from 'react'
+import { createPortal } from 'react-dom'
 import { useStore } from '../../../store/useGameStore'
 import { ARCHETYPE_META } from '../../../engine/archetypeHintEngine'
 import { pulseHotbarSlot } from './hotbarHighlight'
@@ -66,20 +67,79 @@ function renderStrategyHint(hint: string): ReactNode[] {
 export default function ArchetypeTag({ party, archetype }: ArchetypeTagProps) {
   const glowingTagKey = useStore((s) => s.glowingTagKey)
   const dismissGlow = useStore((s) => s.dismissGlow)
+  const tagRef = useRef<HTMLSpanElement | null>(null)
   const [tipOpen, setTipOpen] = useState(false)
+  const [tipPosition, setTipPosition] = useState<{ top: number; left: number } | null>(null)
 
   const meta = ARCHETYPE_META[archetype]
   const isGlowing = glowingTagKey === `${party}:${archetype}`
 
+  const getTipPosition = useCallback(() => {
+    if (typeof window === 'undefined') return null
+    const rect = tagRef.current?.getBoundingClientRect()
+    if (!rect) return null
+
+    const margin = 12
+    const width = 280
+    const left = Math.min(
+      window.innerWidth - width - margin,
+      Math.max(margin, rect.right - width),
+    )
+
+    return {
+      top: rect.bottom + 8,
+      left,
+    }
+  }, [])
+
   const handleClick = useCallback(() => {
-    setTipOpen((v) => !v)
+    setTipOpen((v) => {
+      const next = !v
+      if (next) setTipPosition(getTipPosition())
+      return next
+    })
     if (isGlowing) dismissGlow()
-  }, [isGlowing, dismissGlow])
+  }, [getTipPosition, isGlowing, dismissGlow])
+
+  useEffect(() => {
+    if (!tipOpen) return
+
+    const syncPosition = () => setTipPosition(getTipPosition())
+    syncPosition()
+
+    window.addEventListener('resize', syncPosition)
+    window.addEventListener('scroll', syncPosition, true)
+    return () => {
+      window.removeEventListener('resize', syncPosition)
+      window.removeEventListener('scroll', syncPosition, true)
+    }
+  }, [getTipPosition, tipOpen])
 
   if (!meta) return null
 
+  const portalRoot = typeof document !== 'undefined' ? document.body : null
+  const tooltip = tipOpen && tipPosition ? (
+    <span
+      className="tag-arch__tip tag-arch__tip--portal"
+      role="tooltip"
+      style={{ top: `${tipPosition.top}px`, left: `${tipPosition.left}px` }}
+    >
+      <button
+        type="button"
+        className="tag-arch__tip-close"
+        onClick={(e) => { e.stopPropagation(); setTipOpen(false) }}
+        aria-label="닫기"
+      >
+        ✕
+      </button>
+      <span className="tag-arch__tip-label">공략 힌트</span>
+      <span className="tag-arch__tip-body">{renderStrategyHint(meta.strategyHint)}</span>
+    </span>
+  ) : null
+
   return (
     <span
+      ref={tagRef}
       className={`tag tag-arch tag-arch--observed${isGlowing ? ' is-glowing' : ''}${tipOpen ? ' is-active' : ''}`}
       data-archetype-tag={`${party}:${archetype}`}
       data-resonance-target={`archetype-${party}`}
@@ -89,20 +149,7 @@ export default function ArchetypeTag({ party, archetype }: ArchetypeTagProps) {
       title={meta.strategyHint}
     >
       <span className="tag-arch__label">{meta.tagLabel}</span>
-      {tipOpen ? (
-        <span className="tag-arch__tip" role="tooltip">
-          <button
-            type="button"
-            className="tag-arch__tip-close"
-            onClick={(e) => { e.stopPropagation(); setTipOpen(false) }}
-            aria-label="닫기"
-          >
-            ✕
-          </button>
-          <span className="tag-arch__tip-label">공략 힌트</span>
-          <span className="tag-arch__tip-body">{renderStrategyHint(meta.strategyHint)}</span>
-        </span>
-      ) : null}
+      {portalRoot && tooltip ? createPortal(tooltip, portalRoot) : null}
     </span>
   )
 }

@@ -1,8 +1,12 @@
-import { useEffect, useMemo, useState } from 'react'
-import { useStore } from '../../../store/useGameStore'
-import type { LieState, LieStateEntry } from '../../../types'
+import { useEffect, useLayoutEffect, useMemo, useState } from 'react'
+import { Phase } from '../../../types'
+import { useGameStore, useStore } from '../../../store/useGameStore'
+import type { CaseData, LieState, LieStateEntry } from '../../../types'
 import PCSvgIcon from '../icons/PCSvgIcon'
 import { getPcEvidenceSymbolId } from '../icons/pcIconUtils'
+import { PC_DISPUTE_RIBBON_EXPAND_EVENT, type DisputeRibbonExpandDetail } from './disputeRibbonEvents'
+import { PC_VERDICT_CTA_COLLAPSED_EVENT } from './verdictAdvanceEvents'
+import { requestVerdictAdvance } from './verdictAdvancePrompt'
 
 const LIE_STATES: LieState[] = ['S0', 'S1', 'S2', 'S3', 'S4', 'S5']
 
@@ -11,6 +15,12 @@ function getLieClassName(state: LieState) {
   if (state === 'S1') return 'dp-1'
   if (state === 'S2') return 'dp-2'
   return 'dp-3'
+}
+
+function getTruthFactForDispute(caseData: CaseData, disputeId: string): string | null {
+  const index = caseData.disputes.findIndex((dispute) => dispute.id === disputeId)
+  if (index < 0) return null
+  return caseData.truthTable[index]?.fact ?? null
 }
 
 export default function PCDisputeRibbon() {
@@ -27,6 +37,7 @@ export default function PCDisputeRibbon() {
   const dialogueLog = useStore((s) => s.dialogueLog)
   const dialoguePendingFeedback = useStore((s) => s.dialoguePendingFeedback)
   const turnCount = useStore((s) => s.turnCount)
+  const currentPhase = useStore((s) => s.currentPhase)
   const urgentPendingDisputeIds = useMemo(() => {
     const ids = new Set<string>()
     for (const dlg of dialogueLog) {
@@ -42,10 +53,12 @@ export default function PCDisputeRibbon() {
   const [pinnedId, setPinnedId] = useState<string | null>(null)
   const [hoveredId, setHoveredId] = useState<string | null>(null)
   const [autoExpandedId, setAutoExpandedId] = useState<string | null>(null)
+  const [vfxExpandedId, setVfxExpandedId] = useState<string | null>(null)
   const [flashId, setFlashId] = useState<string | null>(null)
   const [collapsed, setCollapsed] = useState(false)
+  const [verdictCtaCollapsed, setVerdictCtaCollapsed] = useState(false)
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (!lastFocusedDisputeId) {
       return
     }
@@ -65,6 +78,56 @@ export default function PCDisputeRibbon() {
     return () => window.clearTimeout(timer)
   }, [lastFocusedDisputeId, pinnedId, turnCount])
 
+  useEffect(() => {
+    let timer: number | null = null
+
+    const handleExpandForVfx = (event: Event) => {
+      const disputeId = (event as CustomEvent<DisputeRibbonExpandDetail>).detail?.disputeId
+      if (!disputeId) return
+
+      if (timer != null) {
+        window.clearTimeout(timer)
+      }
+
+      setCollapsed(false)
+      setVfxExpandedId(disputeId)
+      setFlashId(disputeId)
+      setAutoExpandedId(disputeId)
+
+      timer = window.setTimeout(() => {
+        setVfxExpandedId((current) => (current === disputeId ? null : current))
+        setFlashId((current) => (current === disputeId ? null : current))
+        setAutoExpandedId((current) => (current === disputeId ? null : current))
+        timer = null
+      }, 2400)
+    }
+
+    window.addEventListener(PC_DISPUTE_RIBBON_EXPAND_EVENT, handleExpandForVfx)
+    return () => {
+      if (timer != null) {
+        window.clearTimeout(timer)
+      }
+      window.removeEventListener(PC_DISPUTE_RIBBON_EXPAND_EVENT, handleExpandForVfx)
+    }
+  }, [])
+
+  const canShowCollapsedVerdictCta = useMemo(() => {
+    if (currentPhase !== Phase.Interrogation) return false
+    return useGameStore.getState().canAdvancePhase()
+  }, [agentA, agentB, caseData, currentPhase, disputeVisibility, turnCount])
+
+  useEffect(() => {
+    const handleCollapsed = () => setVerdictCtaCollapsed(true)
+    window.addEventListener(PC_VERDICT_CTA_COLLAPSED_EVENT, handleCollapsed)
+    return () => window.removeEventListener(PC_VERDICT_CTA_COLLAPSED_EVENT, handleCollapsed)
+  }, [])
+
+  useEffect(() => {
+    if (!canShowCollapsedVerdictCta) {
+      setVerdictCtaCollapsed(false)
+    }
+  }, [canShowCollapsedVerdictCta, currentPhase])
+
   const getMaxLieState = (disputeId: string): LieState => {
     const entryA = agentA.lieStateMap[disputeId] as LieStateEntry | undefined
     const entryB = agentB.lieStateMap[disputeId] as LieStateEntry | undefined
@@ -73,7 +136,7 @@ export default function PCDisputeRibbon() {
     return LIE_STATES.indexOf(stateA) >= LIE_STATES.indexOf(stateB) ? stateA : stateB
   }
 
-  const activeId = pinnedId ?? hoveredId ?? autoExpandedId
+  const activeId = vfxExpandedId ?? pinnedId ?? hoveredId ?? autoExpandedId
 
   const activeDispute = useMemo(() => {
     return caseData?.disputes.find((dispute) => dispute.id === activeId) ?? null
@@ -86,6 +149,11 @@ export default function PCDisputeRibbon() {
 
     return evidenceDefinitions.filter((evidence) => evidence.proves.includes(activeDispute.id))
   }, [activeDispute, evidenceDefinitions])
+
+  const activeLieState = activeDispute ? getMaxLieState(activeDispute.id) : 'S0'
+  const activeTruthFact = activeDispute && caseData && activeLieState === 'S5'
+    ? getTruthFactForDispute(caseData, activeDispute.id) ?? activeDispute.truthDescription
+    : null
 
   if (!caseData || caseData.disputes.length === 0) {
     return null
@@ -144,6 +212,16 @@ export default function PCDisputeRibbon() {
             )
           })}
         </div>
+        {verdictCtaCollapsed && canShowCollapsedVerdictCta ? (
+          <button
+            className="pc-dispute-ribbon__verdict-cta"
+            onClick={requestVerdictAdvance}
+            type="button"
+          >
+            <PCSvgIcon id="i-scale" size={14} />
+            <span>판결 진행</span>
+          </button>
+        ) : null}
       </div>
 
       {activeDispute ? (
@@ -162,12 +240,12 @@ export default function PCDisputeRibbon() {
         >
           <div className="pc-dispute-ribbon__popover-head">
             <strong>{activeDispute.name}</strong>
-            <span className={`pc-dispute-ribbon__state ${getLieClassName(getMaxLieState(activeDispute.id))}`}>
-              {getMaxLieState(activeDispute.id)}
+            <span className={`pc-dispute-ribbon__state ${getLieClassName(activeLieState)}`}>
+              {activeLieState}
             </span>
           </div>
-          <p className="pc-dispute-ribbon__popover-copy pc-dispute-ribbon__popover-copy--muted">
-            심문과 증거로 진실을 밝혀내세요.
+          <p className={`pc-dispute-ribbon__popover-copy${activeTruthFact ? ' pc-dispute-ribbon__popover-copy--truth' : ' pc-dispute-ribbon__popover-copy--muted'}`}>
+            {activeTruthFact ?? '심문과 증거로 진실을 밝혀내세요.'}
           </p>
           <div className="pc-dispute-ribbon__evidence-list">
             {activeEvidence.map((evidence) => {

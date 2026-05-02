@@ -23,7 +23,42 @@ export interface ExtendedHistoryEntry {
     verdictSummary?: VerdictSummary
     aftermath?: string
   }
+  resultSnapshot?: VerdictResultSnapshot
   caseTelemetry?: { inquiry: number; judgment: number; resolution: number }
+}
+
+export interface VerdictResultSnapshot {
+  version: 1
+  capturedAt: string
+  caseTitle: string
+  relationshipLabel: string
+  score: {
+    total: number
+    insight: number
+    authority: number
+    wisdom: number
+    rating: string
+  }
+  factFindings: Array<{
+    id: string
+    name: string
+    finding: string
+    truth?: boolean
+  }>
+  selectedSolutions: string[]
+  verdictSummary?: VerdictSummary
+  aftermath?: string
+  titles?: Array<{
+    id: string
+    name: string
+    rarity?: string
+    description?: string
+  }>
+  rewards?: Array<{
+    fragmentId: string
+    count: number
+    label?: string
+  }>
 }
 
 export interface Season {

@@ -442,7 +442,6 @@ export default function PCCourtLayout({ actionPanel, onDialogueTap, isDialoguePh
                   <span className="pc-combination-success__name">분석 완료</span>
                 </div>
               )}
-              <span className="pc-combination-success__arrow">→</span>
               <div className="pc-combination-success__result">
                 <span className="pc-combination-success__icon is-result">
                   <PCSvgIcon id={getCombinationResultIconId(combinationOverlay.resultType)} size={18} />

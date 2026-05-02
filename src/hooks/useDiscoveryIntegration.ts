@@ -32,12 +32,19 @@ function isVisibleOrEmerged(state: any, disputeId: string): boolean {
   return visibility === 'visible' || visibility === 'emerged'
 }
 
+function getMaxLieRank(state: any, disputeId: string): number {
+  const rank: Record<string, number> = { S0: 0, S1: 1, S2: 2, S3: 3, S4: 4, S5: 5 }
+  const aState = state.agentA?.lieStateMap?.[disputeId]?.currentState ?? 'S0'
+  const bState = state.agentB?.lieStateMap?.[disputeId]?.currentState ?? 'S0'
+  return Math.max(rank[aState] ?? 0, rank[bState] ?? 0)
+}
+
 function passesSpouse01EmergenceGate(state: any, disputeId: string): boolean {
   const caseId = String(state.caseData?.caseId ?? '').replace(/^case-/, '')
   if (caseId !== 'spouse-01') return true
 
   if (disputeId === 'd-2') {
-    return hasEvidenceStage(state, 'e-4')
+    return hasEvidenceStage(state, 'e-4') || getMaxLieRank(state, 'd-1') >= 5
   }
   if (disputeId === 'h-d3') {
     return isVisibleOrEmerged(state, 'd-2') && hasEvidenceStage(state, 'e-5')

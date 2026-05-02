@@ -3,6 +3,7 @@ import { useGameStore, useStore } from '../../store/useGameStore'
 import { GamePhase } from '../../types'
 import { calculateVerdict } from '../../engine/verdictEngine'
 import { generateVerdictSummary } from '../../engine/verdictSummaryEngine'
+import { buildDefaultAftermath, buildVerdictResultSnapshot } from '../../engine/verdictHistorySnapshot'
 import { recordGameComplete } from '../../hooks/useLocalStorage'
 import { recordHistory } from '../layout/HistoryPanel'
 import { completeStage } from '../../data/campaign'
@@ -217,6 +218,15 @@ export default function VerdictScreen() {
     )
     saveDriftState(newDrift)
 
+    const initialAftermath = buildDefaultAftermath(caseData, score, verdictInput)
+    const resultSnapshot = buildVerdictResultSnapshot({
+      caseData,
+      verdictInput,
+      score,
+      verdictSummary: verdictSummaryDraft,
+      aftermath: initialAftermath,
+    })
+
     recordHistory({
       caseId: caseData.caseId, score: score.total,
       insight: score.insight, authority: score.authority, wisdom: score.wisdom,
@@ -228,7 +238,9 @@ export default function VerdictScreen() {
         selectedSolutions: [...verdictInput.selectedSolutions],
         disputeNames,
         verdictSummary: verdictSummaryDraft,
+        aftermath: initialAftermath,
       },
+      resultSnapshot,
       caseTelemetry,
     })
     // 캠페인 Stage 진행 (관계 유형으로 매칭)

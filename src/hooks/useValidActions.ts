@@ -1,6 +1,6 @@
 import { useMemo } from 'react'
 import { useStore } from '../store/useGameStore'
-import type { PartyId, QuestionType, Dispute } from '../types'
+import type { AgentState, PartyId, QuestionType, Dispute } from '../types'
 
 interface ValidDispute {
   id: string
@@ -15,6 +15,39 @@ interface ValidQuestion {
   icon: string
   disputes: ValidDispute[]
   anyEnabled: boolean
+}
+
+type DisputeRequirement = { id: string; minState?: string; party?: PartyId }
+
+const LIE_STATE_RANK: Record<string, number> = {
+  S0: 0,
+  S1: 1,
+  S2: 2,
+  S3: 3,
+  S4: 4,
+  S5: 5,
+}
+
+function rankLieState(state?: string): number {
+  return LIE_STATE_RANK[state ?? 'S0'] ?? 0
+}
+
+function getAgentLieRank(agent: AgentState, disputeId: string): number {
+  return rankLieState(agent.lieStateMap[disputeId]?.currentState)
+}
+
+function normalizeRequirements(
+  requireDispute: NonNullable<Dispute['unlockCondition']>['requireDispute'],
+): DisputeRequirement[] {
+  if (!requireDispute) return []
+  return Array.isArray(requireDispute) ? requireDispute : [requireDispute]
+}
+
+function isRequirementMet(req: DisputeRequirement, agentA: AgentState, agentB: AgentState): boolean {
+  const minRank = rankLieState(req.minState ?? 'S5')
+  if (req.party === 'a') return getAgentLieRank(agentA, req.id) >= minRank
+  if (req.party === 'b') return getAgentLieRank(agentB, req.id) >= minRank
+  return Math.max(getAgentLieRank(agentA, req.id), getAgentLieRank(agentB, req.id)) >= minRank
 }
 
 /**
@@ -66,12 +99,11 @@ export function useValidActions(target: PartyId | null) {
         // 해금 조건 체크
         const unlock = (d as Dispute).unlockCondition
         if (unlock) {
-          if (unlock.requireDispute) {
-            const reqEntry = agent.lieStateMap[unlock.requireDispute.id]
-            if (!reqEntry || reqEntry.currentState < unlock.requireDispute.minState) {
-              const reqDispute = disputes.find((x: Dispute) => x.id === unlock.requireDispute!.id)
-              return { id: d.id, name: d.name, enabled: false, reason: `선행: "${reqDispute?.name ?? '?'}" 추궁 필요` }
-            }
+          const unmetRequirement = normalizeRequirements(unlock.requireDispute)
+            .find((req) => !isRequirementMet(req, agentA, agentB))
+          if (unmetRequirement) {
+            const reqDispute = caseData.disputes.find((x: Dispute) => x.id === unmetRequirement.id)
+            return { id: d.id, name: d.name, enabled: false, reason: `선행: "${reqDispute?.name ?? '?'}" 추궁 필요` }
           }
           if (unlock.requireEvidence) {
             const evState = evidenceStates[unlock.requireEvidence]

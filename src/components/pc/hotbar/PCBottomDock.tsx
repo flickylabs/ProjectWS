@@ -15,6 +15,8 @@ import PCDeferredVerdictIcon from './PCDeferredVerdictIcon'
 import { getPcFaceSymbolId, getPcEvidenceSymbolId } from '../icons/pcIconUtils'
 import FreeInterrogationInput from '../../freeInterrogation/FreeQuestionInput'
 import { isFreeInterrogationEnabled } from '../../../engine/freeInterrogation'
+import { emitVerdictCtaCollapsed, PC_VERDICT_CTA_COLLAPSED_EVENT } from '../layout/verdictAdvanceEvents'
+import { requestVerdictAdvance } from '../layout/verdictAdvancePrompt'
 
 const EMOTION_LABELS: Record<EmotionalPhase, string> = {
   defensive: '경계',
@@ -48,10 +50,11 @@ export default function PCBottomDock() {
   const isLLMLoading = useStore((s) => s.isLLMLoading)
   const disputeVisibility = useStore((s) => s.discovery.disputeVisibility)
   const turnCount = useStore((s) => s.turnCount)
+  const readinessState = useStore((s) => s.readinessState)
   // canAdvancePhase()와 getCombinableEvidenceIds()는 매번 새 값을 반환하여 무한 루프 유발
   // → useMemo + getState()로 의존성 기반 캐싱
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  const canAdvance = useMemo(() => useGameStore.getState().canAdvancePhase(), [currentPhase, turnCount])
+  const canAdvance = useMemo(() => useGameStore.getState().canAdvancePhase(), [currentPhase, disputeVisibility, readinessState, turnCount])
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const combinableIds = useMemo(() => useGameStore.getState().getCombinableEvidenceIds(), [evidenceStates])
 
@@ -194,12 +197,22 @@ export default function PCBottomDock() {
 
   // --- Advance phase banner (B-7) ---
   const handleAdvance = useCallback(() => {
-    dispatch({ type: 'advance_phase' } as any)
+    requestVerdictAdvance()
+  }, [])
+
+  const collapseAdvanceBanner = useCallback(() => {
     setAdvanceDismissed(true)
-  }, [dispatch])
+    emitVerdictCtaCollapsed()
+  }, [])
 
   // phase 변경 시 dismiss 리셋
   useEffect(() => { setAdvanceDismissed(false) }, [currentPhase])
+
+  useEffect(() => {
+    const handleCollapsed = () => setAdvanceDismissed(true)
+    window.addEventListener(PC_VERDICT_CTA_COLLAPSED_EVENT, handleCollapsed)
+    return () => window.removeEventListener(PC_VERDICT_CTA_COLLAPSED_EVENT, handleCollapsed)
+  }, [])
 
   const advanceLabel = currentPhase === Phase.Interrogation
     ? '판결 단계로 진행'
@@ -264,7 +277,7 @@ export default function PCBottomDock() {
         <div className="pc-advance-banner">
           <span className="pc-advance-banner__text">{advanceLabel}할 수 있습니다</span>
           <button className="pc-advance-banner__btn" onClick={handleAdvance} type="button">{advanceLabel}</button>
-          <button className="pc-advance-banner__dismiss" onClick={() => setAdvanceDismissed(true)} title="닫기" type="button">
+          <button className="pc-advance-banner__dismiss" onClick={collapseAdvanceBanner} title="닫기" type="button">
             <PCSvgIcon id="i-plus" size={12} />
           </button>
         </div>

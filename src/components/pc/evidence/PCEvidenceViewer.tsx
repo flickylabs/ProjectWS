@@ -133,7 +133,7 @@ export default function PCEvidenceViewer() {
                   {boundedStage < stageCount ? '부분 공개' : '전체 공개'}
                 </span>
               </div>
-              <EvidenceSubContent type={evidence.type} viewerData={viewerData!} />
+              <EvidenceSubContent type={evidence.type} viewerData={viewerData!} evidenceName={displayName} />
             </>
           ) : (
             <div className="pc-ev-placeholder">
@@ -148,7 +148,15 @@ export default function PCEvidenceViewer() {
   )
 }
 
-function EvidenceSubContent({ type, viewerData }: { type: string; viewerData: Record<string, unknown> }) {
+function EvidenceSubContent({
+  type,
+  viewerData,
+  evidenceName,
+}: {
+  type: string
+  viewerData: Record<string, unknown>
+  evidenceName?: string
+}) {
   // viewerData의 실제 content key를 기준으로 뷰어를 선택 (type과 content key가 불일치할 수 있음)
   const contentKey = Object.keys(viewerData).find(k => k !== 'meta' && k !== 'media') ?? type
   const data = viewerData[contentKey] ?? viewerData[type]
@@ -164,7 +172,7 @@ function EvidenceSubContent({ type, viewerData }: { type: string; viewerData: Re
       return <BankViewer rows={Array.isArray(data) ? data as any : [data]} />
     case 'chat':
     case 'email':
-      return <ChatViewer header={(data as any).header ?? ''} messages={(data as any).messages ?? []} />
+      return <ChatViewer header={(data as any).header ?? ''} messages={(data as any).messages ?? []} pages={(data as any).pages} />
     case 'contract':
     case 'estimate':
     case 'document':
@@ -180,7 +188,7 @@ function EvidenceSubContent({ type, viewerData }: { type: string; viewerData: Re
     case 'platform_log':
     case 'cloud_log':
     case 'device_log':
-      return <LogViewer rows={(data as any).rows ?? []} note={(data as any).note ?? ''} />
+      return <LogViewer rows={(data as any).rows ?? []} note={(data as any).note ?? ''} title={(data as any).title ?? evidenceName} />
     case 'device':
       return <DeviceViewer ownerName={(data as any).ownerName ?? ''} sections={(data as any).sections ?? []} />
     case 'sns':

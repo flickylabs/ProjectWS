@@ -2,6 +2,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { useGameStore } from '../../store/useGameStore'
 import type { LightningReason } from '../../engine/vfxHierarchyEngine'
 import AIReasoningCompactVFX from './AIReasoningCompactVFX'
+import { afterDisputeRibbonExpansion, requestDisputeRibbonExpansion } from '../pc/layout/disputeRibbonEvents'
 import '../../styles/aiReasoningCutscene.css'
 
 export interface AIReasoningCutsceneChip {
@@ -191,7 +192,6 @@ export default function AIReasoningCutscene() {
 }
 
 function enqueueConnectionLines(payload: ActiveCutscene): void {
-  const store = useGameStore.getState()
   const connections = getConnectionTargets(payload)
 
   const primary = connections.find((item) => item.key === 'dispute')
@@ -199,19 +199,45 @@ function enqueueConnectionLines(payload: ActiveCutscene): void {
     ?? connections[0]
   if (!primary) return
 
-  store.enqueueResonance({
-    fromSelector: `[data-ai-cutscene-chip="${primary.key}"]`,
-    toSelector: primary.selector,
-    reason: FREE_MAPPING_REASON,
-    targetKey: `ai-reasoning-${primary.key}`,
-  })
+  const enqueue = () => {
+    useGameStore.getState().enqueueResonance({
+      fromSelector: `[data-ai-cutscene-chip="${primary.key}"]`,
+      toSelector: primary.selector,
+      reason: FREE_MAPPING_REASON,
+      targetKey: `ai-reasoning-${primary.key}`,
+    })
+  }
+
+  const disputeId = primary.key === 'dispute' ? extractDisputeIdFromSelector(primary.selector) : null
+  if (disputeId) {
+    requestDisputeRibbonExpansion(disputeId)
+    afterDisputeRibbonExpansion(enqueue)
+    return
+  }
+
+  enqueue()
 }
 
 function enqueueAuras(payload: ActiveCutscene): void {
-  const store = useGameStore.getState()
-  for (const item of getConnectionTargets(payload)) {
-    store.enqueueAura({ targetSelector: item.selector })
+  const targets = getConnectionTargets(payload)
+  const disputeId = targets
+    .map((item) => extractDisputeIdFromSelector(item.selector))
+    .find((value): value is string => Boolean(value))
+
+  const enqueue = () => {
+    const store = useGameStore.getState()
+    for (const item of targets) {
+      store.enqueueAura({ targetSelector: item.selector })
+    }
   }
+
+  if (disputeId) {
+    requestDisputeRibbonExpansion(disputeId)
+    afterDisputeRibbonExpansion(enqueue)
+    return
+  }
+
+  enqueue()
 }
 
 function getConnectionTargets(payload: AIReasoningCutscenePayload): Array<{ key: string; selector: string }> {
@@ -235,6 +261,11 @@ function toQuerySelector(selector?: string): string | null {
   if (!attrMatch) return trimmed
 
   return `[${attrMatch[1]}="${escapeAttributeValue(attrMatch[2])}"]`
+}
+
+function extractDisputeIdFromSelector(selector?: string): string | null {
+  const match = selector?.match(/\[data-dispute-id="([^"]+)"\]/)
+  return match?.[1] ?? null
 }
 
 function escapeAttributeValue(value: string): string {

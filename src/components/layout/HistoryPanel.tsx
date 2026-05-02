@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import type { ExtendedHistoryEntry } from '../../types'
+import type { ExtendedHistoryEntry, VerdictResultSnapshot } from '../../types'
 import { loadExtendedHistory, addHistoryEntry, ensureProfile } from '../../data/leaderboard'
 import { getCurrentSeason } from '../../data/seasons'
 import type { VerdictSummary } from '../../engine/verdictSummaryEngine'
@@ -24,6 +24,7 @@ export function recordHistory(entry: {
     verdictSummary?: VerdictSummary
     aftermath?: string
   }
+  resultSnapshot?: VerdictResultSnapshot
   caseTelemetry?: { inquiry: number; judgment: number; resolution: number }
 }) {
   const profile = ensureProfile()
@@ -43,6 +44,7 @@ export function recordHistory(entry: {
     playerName: profile.playerName,
     titles: entry.titles ?? [],
     verdictDetail: entry.verdictDetail,
+    resultSnapshot: entry.resultSnapshot,
     caseTelemetry: entry.caseTelemetry,
   })
 }

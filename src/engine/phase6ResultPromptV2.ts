@@ -192,7 +192,7 @@ export function buildResultSystemPrompt(): string {
 - 실제 법정 후일담/에필로그처럼 따뜻하고 인간적인 톤으로 작성하라.
 ★ 후일담은 최소 3문단 이상. 양쪽 당사자의 이후 삶을 구체적으로 그려라.
 ★ aReaction과 bReaction에 각 당사자의 판결 직후 반응을 구체적으로 써라. shortEpilogue에서도 양쪽의 이후 삶을 반영하라.
-★ shortEpilogue 형식: 본문 2~3문장 + 빈 줄(\n\n) + 교훈 한 문장("큰따옴표" 또는 —대시 시작). 교훈 문장은 반드시 별도 문단으로 분리하라.`
+★ shortEpilogue 형식: 본문 2~3문장 + 빈 줄(\n\n) + 후일담 전체를 관통하는 짧은 교훈 한 문장("큰따옴표"). 교훈 문장은 반드시 별도 문단으로 분리하고, 25~45자 안팎의 명언처럼 간결하게 쓰라.`
 }
 
 export interface VerdictData {
@@ -248,7 +248,8 @@ ${JSON.stringify(bridge.keyMoments)}
 
 추가 지시:
 - relationCoreRevealed가 ${bridge.structuredLog.relationCoreRevealed ? 'true이고 fake issue가 해소되었다면, shortEpilogue에 "오해는 풀렸지만 방식의 상처가 남는다" 또는 그 반대의 구조를 반영하라' : 'false이므로 relationshipOutlook을 지나치게 낙관/비관하지 말고 fragile 또는 unresolved 쪽으로 보수적으로 선택하라'}.
-- finalEmotions 값이 70 이상인 당사자는 immediateAftermath에서 짧고 딱딱한 반응을 우선한다.`
+- finalEmotions 값이 70 이상인 당사자는 immediateAftermath에서 짧고 딱딱한 반응을 우선한다.
+- shortEpilogue 마지막 문장은 사건을 요약 설명하지 말고, 전체 후일담을 관통하는 짧은 교훈이나 명언처럼 남겨라.`
 }
 
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━

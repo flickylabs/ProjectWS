@@ -546,6 +546,36 @@ export const useGameStore: import('zustand').UseBoundStore<import('zustand').Sto
                 timestamp: Date.now(),
               }],
             }))
+            {
+              const effectParty = effect.party as 'a' | 'b'
+              const latest = useGameStore.getState()
+              const partyData = effectParty === 'a' ? latest.caseData?.duo.partyA : latest.caseData?.duo.partyB
+              const dispute = latest.caseData?.disputes.find((d) => d.id === effect.hintDisputeId)
+              const alreadyRecorded = latest.notebookEntries.some((entry) =>
+                entry.category === 'dispute_probe' &&
+                entry.party === effectParty &&
+                entry.disputeId === effect.hintDisputeId,
+              )
+              if (!alreadyRecorded) {
+                const linkedDialogue = [...latest.dialogueLog].reverse().find((entry) =>
+                  entry.turn === latest.turnCount &&
+                  (entry.speaker === effectParty || entry.speaker === 'judge') &&
+                  (entry.relatedDisputes ?? []).includes(effect.hintDisputeId),
+                )
+                const partyName = partyData?.name ?? '당사자'
+                const disputeName = dispute?.name ?? effect.hintDisputeId
+                latest.addNotebookEntry?.({
+                  turnCount: latest.turnCount,
+                  category: 'dispute_probe',
+                  iconId: 'i-eye',
+                  title: `쟁점 파악 - ${disputeName}`,
+                  summary: `${partyName}의 답변에서 "${disputeName}" 쟁점과 이어질 수 있는 연결고리를 확인했습니다. 아직 결론은 아니며, 증거·증언으로 검증해야 합니다.`,
+                  party: effectParty,
+                  disputeId: effect.hintDisputeId,
+                  linkedDialogueId: linkedDialogue?.id,
+                })
+              }
+            }
             state.addJudgeObservation({
               turnCount: state.turnCount,
               category: 'state',

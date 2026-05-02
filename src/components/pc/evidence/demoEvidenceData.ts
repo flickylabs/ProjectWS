@@ -34,7 +34,14 @@ export interface ChatMessage {
   side?: 'left' | 'right'
   sender?: string
   text: string
+  time?: string
   type?: 'deleted' | 'read' | 'note'
+}
+
+export interface ChatPage {
+  label?: string
+  header?: string
+  messages: ChatMessage[]
 }
 
 // ── Contract ──
@@ -132,7 +139,7 @@ export interface SNSData {
 export interface EvidenceViewerData {
   meta: EvidenceMeta
   bank?: BankRow[]
-  chat?: { header: string; messages: ChatMessage[] }
+  chat?: { header: string; messages: ChatMessage[]; pages?: ChatPage[] }
   contract?: { title: string; subtitle: string; rows: ContractRow[]; signature: string }
   testimony?: TestimonyData
   cctv?: CCTVEvent[]

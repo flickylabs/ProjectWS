@@ -132,6 +132,7 @@ function MessageBubble({ entry, animate, combinableTexts, combinationHintMap, is
     // ── 카테고리 분류 ──
     const category = contradiction ? 'action'
       : /\[주의\]|\[교착\]|소진|불가/.test(fullText) ? 'warning'
+      : /^추궁 결과 반응이 크게 흔들렸습니다/.test(fullText) ? 'observation'
       : /🔓|해금|손에 넣|새 증거|📋|증거 제시|🔗|조합 격상|🔥|간파/.test(fullText) ? 'unlock'
       : /✅|결정적|확보/.test(fullText) ? 'success'
       : /🧑‍⚖️|증인.*소환/.test(fullText) ? 'witness'
@@ -139,6 +140,7 @@ function MessageBubble({ entry, animate, combinableTexts, combinationHintMap, is
       : 'info'
 
     const iconId = category === 'action' ? 'i-bolt'
+      : category === 'observation' ? 'i-scale'
       : category === 'unlock' ? 'i-doc'
       : category === 'warning' ? 'i-flame'
       : category === 'success' ? 'i-star'

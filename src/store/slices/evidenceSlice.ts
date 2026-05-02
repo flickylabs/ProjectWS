@@ -38,6 +38,8 @@ export interface EvidenceSlice {
   getCombinableEvidenceIds: () => Set<string>
   /** 노드별 조합 힌트 — 미완료 레시피 기준 파트너 수/카테고리 */
   getCombinationPartnerHints: () => Map<string, CombinationPartnerHint>
+  /** lieState 변화 뒤 잠금 증거 해금 조건을 다시 계산 */
+  refreshEvidenceUnlocks: () => string[]
   addDerivedEvidence: (node: EvidenceNode, unlock?: boolean) => void
   patchEvidenceDefinition: (evidenceId: string, patch: Partial<EvidenceNode>) => void
 }
@@ -53,6 +55,24 @@ export interface CombinationPartnerHint {
     statement: number
     other: number
   }
+}
+
+function collectMaxLieStates(getRoot: () => unknown): Record<string, string> {
+  const root = getRoot() as any
+  const LIE_RANK: Record<string, number> = { S0: 0, S1: 1, S2: 2, S3: 3, S4: 4, S5: 5 }
+  const lieStates: Record<string, string> = {}
+
+  for (const agent of [root.agentA, root.agentB]) {
+    if (!agent?.lieStateMap) continue
+    for (const [dId, entry] of Object.entries(agent.lieStateMap)) {
+      const st = (entry as any).currentState ?? 'S0'
+      lieStates[dId] = (LIE_RANK[st] ?? 0) >= (LIE_RANK[lieStates[dId] ?? 'S0'] ?? 0)
+        ? st
+        : lieStates[dId]
+    }
+  }
+
+  return lieStates
 }
 
 export const createEvidenceSlice: StateCreator<EvidenceSlice, [], [], EvidenceSlice> = (set, get) => ({
@@ -85,22 +105,7 @@ export const createEvidenceSlice: StateCreator<EvidenceSlice, [], [], EvidenceSl
     const afterPresent = presentEv(evidenceStates, evidenceId, target)
 
     // 잠금 해제 체크 (immutable) — lieState 조건 포함
-    const LIE_RANK: Record<string, number> = { S0: 0, S1: 1, S2: 2, S3: 3, S4: 4, S5: 5 }
-    const agentA = (get() as any).agentA
-    const agentB = (get() as any).agentB
-    const lieStates: Record<string, string> = {}
-    if (agentA?.lieStateMap) {
-      for (const [dId, entry] of Object.entries(agentA.lieStateMap)) {
-        const st = (entry as any).currentState ?? 'S0'
-        lieStates[dId] = (LIE_RANK[st] ?? 0) >= (LIE_RANK[lieStates[dId] ?? 'S0'] ?? 0) ? st : lieStates[dId]
-      }
-    }
-    if (agentB?.lieStateMap) {
-      for (const [dId, entry] of Object.entries(agentB.lieStateMap)) {
-        const st = (entry as any).currentState ?? 'S0'
-        lieStates[dId] = (LIE_RANK[st] ?? 0) >= (LIE_RANK[lieStates[dId] ?? 'S0'] ?? 0) ? st : lieStates[dId]
-      }
-    }
+    const lieStates = collectMaxLieStates(get)
     const { updated, newlyUnlocked } = checkUnlocks(afterPresent, evidenceDefinitions, lieStates)
 
     // 조합 체크 (이미 발동된 조합은 제외) — investigationStages 미완료 시 조합 차단
@@ -121,22 +126,7 @@ export const createEvidenceSlice: StateCreator<EvidenceSlice, [], [], EvidenceSl
     const afterInvestigate = investigateEv(evidenceStates, evidenceId, subAction)
 
     // checkUnlocks 호출: 조사 후 잠금 해제 조건 확인
-    const LIE_RANK: Record<string, number> = { S0: 0, S1: 1, S2: 2, S3: 3, S4: 4, S5: 5 }
-    const agentA = (get() as any).agentA
-    const agentB = (get() as any).agentB
-    const lieStates: Record<string, string> = {}
-    if (agentA?.lieStateMap) {
-      for (const [dId, entry] of Object.entries(agentA.lieStateMap)) {
-        const st = (entry as any).currentState ?? 'S0'
-        lieStates[dId] = (LIE_RANK[st] ?? 0) >= (LIE_RANK[lieStates[dId] ?? 'S0'] ?? 0) ? st : lieStates[dId]
-      }
-    }
-    if (agentB?.lieStateMap) {
-      for (const [dId, entry] of Object.entries(agentB.lieStateMap)) {
-        const st = (entry as any).currentState ?? 'S0'
-        lieStates[dId] = (LIE_RANK[st] ?? 0) >= (LIE_RANK[lieStates[dId] ?? 'S0'] ?? 0) ? st : lieStates[dId]
-      }
-    }
+    const lieStates = collectMaxLieStates(get)
     const { updated, newlyUnlocked } = checkUnlocks(afterInvestigate, evidenceDefinitions, lieStates)
 
     // [TC-F C2 픽스] 자동 해금된 증거 ID를 transient state에 보관 (handleEvidenceInvestigate가 소비)
@@ -151,6 +141,16 @@ export const createEvidenceSlice: StateCreator<EvidenceSlice, [], [], EvidenceSl
     const ids = get().lastInvestigateUnlocks
     if (ids.length > 0) set({ lastInvestigateUnlocks: [] })
     return ids
+  },
+
+  refreshEvidenceUnlocks: () => {
+    const { evidenceStates, evidenceDefinitions } = get()
+    const lieStates = collectMaxLieStates(get)
+    const { updated, newlyUnlocked } = checkUnlocks(evidenceStates, evidenceDefinitions, lieStates)
+    if (newlyUnlocked.length > 0) {
+      set({ evidenceStates: updated })
+    }
+    return newlyUnlocked
   },
 
   setRecommendedEvidence: (ids) => {

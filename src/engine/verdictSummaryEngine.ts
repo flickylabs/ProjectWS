@@ -54,6 +54,14 @@ const LIE_STATE_LABELS: Record<string, string> = {
   S5: '고백',
 }
 
+function normalizeSelectedSolutionText(text: string): string {
+  return text
+    .split(',')
+    .map((item) => item.trim().replace(/[.。]+$/g, '').trim())
+    .filter(Boolean)
+    .join('. ')
+}
+
 /**
  * 판결문 자동 초안 생성
  */
@@ -64,6 +72,7 @@ export function generateVerdictSummary(input: VerdictSummaryInput): VerdictSumma
     judgeTitle, totalTurns, contradictionsFound, keyMomentText,
   } = input
   const percentB = 100 - percentA
+  const selectedSolutionText = normalizeSelectedSolutionText(selectedSolution) || '미선택'
 
   const title = `판결문 — ${caseName}`
 
@@ -119,7 +128,7 @@ export function generateVerdictSummary(input: VerdictSummaryInput): VerdictSumma
     '',
     `■ 결정적 순간: ${keyMoment}`,
     '',
-    `■ 해결 방향: ${selectedSolution}`,
+    `■ 해결 방향: ${selectedSolutionText}`,
     '',
     judgeStyle,
   ].join('\n')
@@ -131,7 +140,7 @@ export function generateVerdictSummary(input: VerdictSummaryInput): VerdictSumma
     responsibilityReason,
     keyEvidence: keyEvidenceNames,
     keyMoment,
-    resolution: selectedSolution,
+    resolution: selectedSolutionText,
     judgeStyle,
     fullText,
   }

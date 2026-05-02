@@ -315,13 +315,12 @@
       "unlockCondition": {
         "requireDispute": {
           "id": "d-1",
-          "party": "b",
           "minState": "S3"
         }
       },
       "v3UnlockPlan": {
-        "runtimeRule": "B d-1 S2 도달 시 (공증 과정 의혹 언급)",
-        "authoredRule": "B가 d-1 심문에서 S2에 도달하면 공증 이중 스캔 발견으로 새 쟁점 부상"
+        "runtimeRule": "A/B 어느 쪽이든 d-1 S3 이상 도달 시 (공증 과정 의혹 언급)",
+        "authoredRule": "어느 쪽 심문이든 d-1에서 공증 과정의 균열이 드러나면 공증 이중 스캔 발견으로 새 쟁점 부상"
       },
       "verdictOptions": {
         "wrong": "동생이 자기 몫을 90%로 늘리기 위해 유서를 조작했다.",
@@ -357,7 +356,7 @@
         }
       },
       "v3UnlockPlan": {
-        "runtimeRule": "d-2 S3 도달 시 해금",
+        "runtimeRule": "A/B 어느 쪽이든 d-2 S3 이상 도달 시 해금",
         "authoredRule": "d-2에서 유서 조작 동기가 드러나면서 20년 지원 이야기가 부상"
       },
       "verdictOptions": {
@@ -394,7 +393,7 @@
         }
       },
       "v3UnlockPlan": {
-        "runtimeRule": "d-3 S2 도달 시 해금",
+        "runtimeRule": "A/B 어느 쪽이든 d-3 S3 이상 도달 시 해금",
         "authoredRule": "20년 지원의 실체가 드러나면서 왜 그렇게까지 했는지 의문이 생기며 출생 비밀 쟁점 부상"
       },
       "verdictOptions": {
@@ -438,7 +437,7 @@
         ]
       },
       "v3UnlockPlan": {
-        "runtimeRule": "d-3 S3 + d-4 S2 모두 도달 시 자동 해금",
+        "runtimeRule": "A/B 어느 쪽이든 d-3 S3 + d-4 S3 모두 도달 시 자동 해금",
         "authoredRule": "20년 지원과 출생 비밀이 모두 드러난 뒤 최종 쟁점 발현"
       },
       "verdictOptions": {
@@ -3306,6 +3305,41 @@
           "from": "S2",
           "to": "S3",
           "trigger": "motive_question"
+        },
+        {
+          "from": "S3",
+          "to": "S4",
+          "trigger": "empathy_question"
+        },
+        {
+          "from": "S4",
+          "to": "S5",
+          "trigger": "empathy_question"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "lieType": "LT-6",
+      "lieIntensity": "L3",
+      "lieMotive": "third_party_protection",
+      "initialState": "S0",
+      "collapseViaTrust": false,
+      "transitions": [
+        {
+          "from": "S0",
+          "to": "S1",
+          "trigger": "motive_question"
+        },
+        {
+          "from": "S1",
+          "to": "S2",
+          "trigger": "direct_question"
+        },
+        {
+          "from": "S2",
+          "to": "S3",
+          "trigger": "hard_evidence"
         },
         {
           "from": "S3",

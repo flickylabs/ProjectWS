@@ -22,6 +22,7 @@ import { type PCGeneralSessionId, PC_GENERAL_SESSIONS, formatCountdown, getCases
 type HomeView = 'home' | 'general' | 'generalCases' | 'season' | 'profile' | 'leaderboard' | 'settings'
 type JudgeDeskTab = 'profile' | 'history' | 'progression'
 type HistoryMode = 'general' | 'season'
+type HistoryResultTab = 'result' | 'issues' | 'verdict' | 'epilogue' | 'bonus'
 type HomeSettings = ReturnType<typeof getSettings>
 type SessionProgress = { completedCount: number; totalCount: number; averageScore: number | null; progressRate: number }
 type HistoryCaseCard = {
@@ -38,6 +39,14 @@ const SORTS: { id: SortCategory; label: string }[] = [
   { id: 'insight', label: '탐구' },
   { id: 'authority', label: '판결' },
   { id: 'wisdom', label: '해결' },
+]
+
+const HISTORY_RESULT_TABS: { id: HistoryResultTab; label: string }[] = [
+  { id: 'result', label: '01 결과 확인' },
+  { id: 'issues', label: '02 쟁점 판단' },
+  { id: 'verdict', label: '03 판결 선고' },
+  { id: 'epilogue', label: '04 후일담' },
+  { id: 'bonus', label: '05 보너스' },
 ]
 
 export default function PCHomeScreen() {
@@ -367,20 +376,6 @@ export default function PCHomeScreen() {
                     <Empty title="표시할 사건이 없습니다." description="아직 이 모드에 연결된 사건이 없습니다." />
                   ) : (
                     <div className="pc-history-case-picker">
-                      <label className="pc-history-record-select-label" htmlFor="pc-history-case-select">사건</label>
-                      <select
-                        className="pc-history-record-select"
-                        id="pc-history-case-select"
-                        value={selectedHistoryCase?.caseData.caseId ?? ''}
-                        onChange={(event) => { setSelectedHistoryCaseId(event.target.value); setSelectedHistoryKey(null) }}
-                      >
-                        {historyCaseCards.map((item) => (
-                          <option key={item.caseData.caseId} value={item.caseData.caseId}>
-                            {`${getCaseDisplayTitle(item.caseData)} · ${item.playedCount}회`}
-                          </option>
-                        ))}
-                      </select>
-
                       {selectedHistoryCase ? (
                         <div className="pc-history-case-stats">
                           <MiniStat label="플레이" value={`${selectedHistoryCase.playedCount}회`} />
@@ -390,14 +385,14 @@ export default function PCHomeScreen() {
                       ) : null}
 
                       <div className="pc-history-case-list" role="list">
-                        {historyCaseCards.map((item) => (
+                        {historyCaseCards.map((item, index) => (
                           <button
                             className={`pc-history-case-option${selectedHistoryCase?.caseData.caseId === item.caseData.caseId ? ' is-active' : ''}`}
                             key={item.caseData.caseId}
                             onClick={() => { setSelectedHistoryCaseId(item.caseData.caseId); setSelectedHistoryKey(null) }}
                             type="button"
                           >
-                            <span className="pc-history-case-option__title">{getCaseDisplayTitle(item.caseData)}</span>
+                            <span className="pc-history-case-option__title">{getNumberedCaseTitle(item.caseData, index)}</span>
                             <span className="pc-history-case-option__meta">
                               {getRelationshipLabel(item.caseData.meta?.relationshipType ?? item.caseData.duo.relationshipType)}
                               {' · '}
@@ -417,18 +412,12 @@ export default function PCHomeScreen() {
                     <div className="pc-history-play-panel">
                       <div className="pc-history-play-selects">
                         <label>
-                          <span>날짜</span>
+                          <span>플레이 시점 / 점수</span>
                           <select className="pc-history-record-select" value={selectedHistory ? getHistoryKey(selectedHistory) : ''} onChange={(event) => setSelectedHistoryKey(event.target.value)}>
                             {selectedCaseEntries.map((entry) => (
-                              <option key={getHistoryKey(entry)} value={getHistoryKey(entry)}>{formatHistoryDate(entry.date)}</option>
-                            ))}
-                          </select>
-                        </label>
-                        <label>
-                          <span>점수</span>
-                          <select className="pc-history-record-select" value={selectedHistory ? getHistoryKey(selectedHistory) : ''} onChange={(event) => setSelectedHistoryKey(event.target.value)}>
-                            {selectedCaseEntries.map((entry) => (
-                              <option key={getHistoryKey(entry)} value={getHistoryKey(entry)}>{`${entry.score}점 · ${getHistoryRating(entry.score)}`}</option>
+                              <option key={getHistoryKey(entry)} value={getHistoryKey(entry)}>
+                                {`${formatHistoryDate(entry.date)} · ${entry.score}점 · ${getHistoryRating(entry.score)}`}
+                              </option>
                             ))}
                           </select>
                         </label>
@@ -446,7 +435,7 @@ export default function PCHomeScreen() {
                             <strong>판결 결과 요약</strong>
                             <p>{getHistoryVerdictBrief(selectedHistory)}</p>
                           </div>
-                          <button className="pc-inline-button" onClick={() => setHistoryDetailEntry(selectedHistory)} type="button">기록 크게 보기</button>
+                          <button className="pc-inline-button" onClick={() => setHistoryDetailEntry(selectedHistory)} type="button">상세 보기</button>
                         </div>
                       ) : null}
                     </div>
@@ -581,6 +570,10 @@ function getCaseDisplayTitle(caseData: CaseData): string {
   return caseData.meta?.title ?? `${caseData.duo.partyA.name} vs ${caseData.duo.partyB.name}`
 }
 
+function getNumberedCaseTitle(caseData: CaseData, index: number): string {
+  return `${String(index + 1).padStart(2, '0')}-${getCaseDisplayTitle(caseData)}`
+}
+
 function formatHistoryDate(date: string): string {
   return new Date(date).toLocaleString('ko-KR', {
     year: 'numeric',
@@ -603,11 +596,25 @@ function formatSolutionLabel(solution: string): string {
   return solution.includes('::') ? solution.slice(solution.indexOf('::') + 2) : solution
 }
 
+function sanitizeStoredText(text: string): string {
+  return text
+    .replace(/[.。]\s*,\s*/g, '. ')
+    .replace(/\s{2,}/g, ' ')
+    .trim()
+}
+
+function splitResolutionSentences(text: string): string[] {
+  return sanitizeStoredText(text)
+    .split(/[.。]\s*/)
+    .map((sentence) => sentence.trim().replace(/^,\s*/, '').trim())
+    .filter(Boolean)
+}
+
 function getHistoryVerdictBrief(entry: ExtendedHistoryEntry): string {
   const detail = entry.verdictDetail
-  if (detail?.verdictSummary?.caseSummary) return detail.verdictSummary.caseSummary
+  if (detail?.verdictSummary?.caseSummary) return sanitizeStoredText(detail.verdictSummary.caseSummary)
   if (detail?.selectedSolutions?.length) {
-    return detail.selectedSolutions.map(formatSolutionLabel).slice(0, 2).join(', ')
+    return sanitizeStoredText(detail.selectedSolutions.map(formatSolutionLabel).slice(0, 2).join('. '))
   }
   return `${entry.nameA} vs ${entry.nameB} · ${formatHistoryDate(entry.date)} 판결 기록`
 }
@@ -620,13 +627,44 @@ function getStoredFindingLabel(value: string): string {
 }
 
 function splitStoredParagraphs(text?: string): string[] {
-  return (text ?? '').split(/\n\n+/).map((para) => para.trim()).filter(Boolean)
+  return (text ?? '')
+    .replace(/\*?\*?(?:교훈 한 문장|교훈|명언)\*?\*?\s*[:：]\s*/g, '')
+    .split(/\n\n+/)
+    .map((para) => sanitizeStoredText(para))
+    .filter(Boolean)
 }
 
 function HistoryDetailModal({ entry, onClose }: { entry: ExtendedHistoryEntry; onClose: () => void }) {
+  const [tab, setTab] = useState<HistoryResultTab>('result')
+  const caseData = getCaseById(entry.caseId)
   const detail = entry.verdictDetail
-  const summary = detail?.verdictSummary
-  const paragraphs = splitStoredParagraphs(detail?.aftermath)
+  const snapshot = entry.resultSnapshot
+  const summary = snapshot?.verdictSummary ?? detail?.verdictSummary
+  const aftermath = snapshot?.aftermath ?? detail?.aftermath
+  const paragraphs = splitStoredParagraphs(aftermath)
+  const score = snapshot?.score ?? {
+    total: entry.score,
+    insight: entry.insight,
+    authority: entry.authority,
+    wisdom: entry.wisdom,
+    rating: getHistoryRating(entry.score),
+  }
+  const selectedSolutions = snapshot?.selectedSolutions ?? detail?.selectedSolutions ?? []
+  const caseTitle = snapshot?.caseTitle ?? (caseData ? getCaseDisplayTitle(caseData) : `${entry.nameA} vs ${entry.nameB}`)
+  const factRows = snapshot?.factFindings?.length
+    ? snapshot.factFindings
+    : caseData?.disputes.map((dispute) => ({
+      id: dispute.id,
+      name: detail?.disputeNames?.[dispute.id] ?? dispute.name,
+      finding: detail?.factFindings?.[dispute.id] ?? 'pending',
+      truth: dispute.truth,
+    })) ?? Object.entries(detail?.factFindings ?? {}).map(([id, finding]) => ({
+      id,
+      name: detail?.disputeNames?.[id] ?? id,
+      finding,
+      truth: undefined,
+    }))
+  const resolutionSentences = splitResolutionSentences(summary?.resolution ?? selectedSolutions.map(formatSolutionLabel).join('. '))
 
   return (
     <div className="pc-history-detail-modal" role="dialog" aria-modal="true" aria-label="판결 기록 상세">
@@ -635,77 +673,158 @@ function HistoryDetailModal({ entry, onClose }: { entry: ExtendedHistoryEntry; o
         <header className="pc-history-detail-modal__header">
           <div>
             <span>PLAY RECORD</span>
-            <h2>{entry.nameA} vs {entry.nameB}</h2>
-            <p>{formatHistoryDate(entry.date)} · {getRelationshipLabel(entry.relationshipType)}</p>
+            <h2>{caseTitle}</h2>
+            <p>{formatHistoryDate(entry.date)} · {snapshot?.relationshipLabel ?? getRelationshipLabel(entry.relationshipType)} · {score.total}점</p>
           </div>
           <button type="button" onClick={onClose} aria-label="닫기">×</button>
         </header>
 
         <div className="pc-history-detail-modal__body">
-          <div className="pc-history-detail-score-row">
-            <MiniStat label="총점" value={`${entry.score}점`} />
-            <MiniStat label="탐구" value={`${entry.insight}`} />
-            <MiniStat label="판결" value={`${entry.authority}`} />
-            <MiniStat label="해결" value={`${entry.wisdom}`} />
+          <div className="pc-history-result-tabs" role="tablist" aria-label="저장된 결과 보기">
+            {HISTORY_RESULT_TABS.map((item) => (
+              <button
+                aria-selected={tab === item.id}
+                className={`pc-history-result-tab${tab === item.id ? ' is-active' : ''}`}
+                key={item.id}
+                onClick={() => setTab(item.id)}
+                type="button"
+              >
+                {item.label}
+              </button>
+            ))}
           </div>
 
-          {summary ? (
-            <section className="pc-history-detail-section">
-              <h3>판결문 요약</h3>
-              <p>{summary.caseSummary}</p>
-              <div className="pc-history-detail-responsibility">
-                <strong>{summary.responsibility.partyA} {summary.responsibility.percentA}%</strong>
-                <span><i style={{ width: `${summary.responsibility.percentA}%` }} /></span>
-                <strong>{summary.responsibility.percentB}% {summary.responsibility.partyB}</strong>
+          {tab === 'result' ? (
+            <section className="pc-history-result-pane">
+              <div className="pc-history-result-score-hero">
+                <div>
+                  <span>총점</span>
+                  <strong>{score.total}</strong>
+                  <em>{score.rating}</em>
+                </div>
+                <div className="pc-history-detail-score-row">
+                  <MiniStat label="탐구" value={`${score.insight}`} />
+                  <MiniStat label="판결" value={`${score.authority}`} />
+                  <MiniStat label="해결" value={`${score.wisdom}`} />
+                </div>
               </div>
-              <p>{summary.responsibilityReason}</p>
-              <p><b>결정적 순간</b> {summary.keyMoment}</p>
-              <p><b>해결 방향</b> {summary.resolution}</p>
+              <div className="pc-history-detail-section">
+                <h3>판결 결과 요약</h3>
+                <p>{getHistoryVerdictBrief(entry)}</p>
+              </div>
             </section>
-          ) : (
-            <section className="pc-history-detail-section">
-              <h3>판결 결과 요약</h3>
-              <p>{getHistoryVerdictBrief(entry)}</p>
-            </section>
-          )}
+          ) : null}
 
-          {detail ? (
-            <section className="pc-history-detail-section">
+          {tab === 'issues' ? (
+            <section className="pc-history-result-pane">
               <h3>쟁점별 판단</h3>
               <div className="pc-history-detail-grid">
-                {Object.entries(detail.factFindings).map(([id, value]) => (
-                  <div className="pc-history-detail-finding" key={id}>
-                    <strong>{detail.disputeNames?.[id] ?? id}</strong>
-                    <span>{getStoredFindingLabel(value)}</span>
+                {factRows.map((row) => {
+                  const correct = row.truth == null || row.finding === 'pending' ? null : (row.finding === 'true') === row.truth
+                  return (
+                  <div className={`pc-history-detail-finding${correct === true ? ' is-correct' : correct === false ? ' is-wrong' : ''}`} key={row.id}>
+                    <strong>{row.name}</strong>
+                    <span>{getStoredFindingLabel(row.finding)}</span>
                   </div>
-                ))}
+                  )
+                })}
               </div>
             </section>
           ) : null}
 
-          {detail?.selectedSolutions?.length ? (
-            <section className="pc-history-detail-section">
-              <h3>선택한 해결책</h3>
-              <div className="pc-history-detail-tags">
-                {detail.selectedSolutions.map((solution) => (
-                  <span key={solution}>{formatSolutionLabel(solution)}</span>
-                ))}
-              </div>
+          {tab === 'verdict' ? (
+            <section className="pc-history-result-pane">
+              {summary ? (
+                <>
+                  <div className="pc-history-detail-section">
+                    <h3>판결문 요약</h3>
+                    <p>{summary.caseSummary}</p>
+                    <div className="pc-history-detail-responsibility">
+                      <strong>{summary.responsibility.partyA} {summary.responsibility.percentA}%</strong>
+                      <span><i style={{ width: `${summary.responsibility.percentA}%` }} /></span>
+                      <strong>{summary.responsibility.percentB}% {summary.responsibility.partyB}</strong>
+                    </div>
+                    <p>{summary.responsibilityReason}</p>
+                  </div>
+                  <div className="pc-history-result-two-col">
+                    <div className="pc-history-detail-section">
+                      <h3>결정적 순간</h3>
+                      <p>{summary.keyMoment}</p>
+                    </div>
+                    <div className="pc-history-detail-section">
+                      <h3>해결 방향</h3>
+                      <div className="pc-history-result-resolution-list">
+                        {resolutionSentences.map((sentence, index) => <span key={`${index}-${sentence}`}>{sentence}</span>)}
+                      </div>
+                    </div>
+                  </div>
+                </>
+              ) : (
+                <div className="pc-history-detail-section">
+                  <h3>판결문 요약</h3>
+                  <p>{getHistoryVerdictBrief(entry)}</p>
+                </div>
+              )}
             </section>
           ) : null}
 
-          <section className="pc-history-detail-section">
-            <h3>기록된 후일담</h3>
-            {paragraphs.length ? (
-              <div className="pc-history-detail-aftermath">
-                {paragraphs.map((paragraph, index) => (
-                  <p className={index === paragraphs.length - 1 ? 'is-lesson' : ''} key={`${index}-${paragraph.slice(0, 12)}`}>{paragraph}</p>
-                ))}
+          {tab === 'epilogue' ? (
+            <section className="pc-history-result-pane">
+              <h3>후일담</h3>
+              {paragraphs.length ? (
+                <div className="pc-history-detail-aftermath">
+                  {paragraphs.map((paragraph, index) => (
+                    <p className={index === paragraphs.length - 1 ? 'is-lesson' : ''} key={`${index}-${paragraph.slice(0, 12)}`}>{paragraph}</p>
+                  ))}
+                </div>
+              ) : (
+                <p className="pc-history-detail-empty">이전 플레이 기록에는 후일담이 저장되어 있지 않습니다. 앞으로 완료되는 플레이는 후일담까지 함께 저장됩니다.</p>
+              )}
+            </section>
+          ) : null}
+
+          {tab === 'bonus' ? (
+            <section className="pc-history-result-pane">
+              <div className="pc-history-detail-section">
+                <h3>선택한 해결책</h3>
+                {selectedSolutions.length ? (
+                  <div className="pc-history-detail-tags">
+                    {selectedSolutions.map((solution) => (
+                      <span key={solution}>{formatSolutionLabel(solution)}</span>
+                    ))}
+                  </div>
+                ) : (
+                  <p className="pc-history-detail-empty">선택한 해결책 기록이 없습니다.</p>
+                )}
               </div>
-            ) : (
-              <p className="pc-history-detail-empty">이 플레이 기록에는 후일담이 아직 저장되지 않았습니다.</p>
-            )}
-          </section>
+              <div className="pc-history-result-two-col">
+                <div className="pc-history-detail-section">
+                  <h3>획득 칭호</h3>
+                  {snapshot?.titles?.length ? (
+                    <div className="pc-history-detail-tags">
+                      {snapshot.titles.map((title) => <span key={title.id}>{title.name}</span>)}
+                    </div>
+                  ) : entry.titles.length ? (
+                    <div className="pc-history-detail-tags">
+                      {entry.titles.map((title) => <span key={title}>{title}</span>)}
+                    </div>
+                  ) : (
+                    <p className="pc-history-detail-empty">저장된 칭호 기록이 없습니다.</p>
+                  )}
+                </div>
+                <div className="pc-history-detail-section">
+                  <h3>보상 조각</h3>
+                  {snapshot?.rewards?.length ? (
+                    <div className="pc-history-detail-tags">
+                      {snapshot.rewards.map((reward) => <span key={reward.fragmentId}>{reward.label ?? reward.fragmentId} × {reward.count}</span>)}
+                    </div>
+                  ) : (
+                    <p className="pc-history-detail-empty">저장된 보상 기록이 없습니다.</p>
+                  )}
+                </div>
+              </div>
+            </section>
+          ) : null}
         </div>
       </section>
     </div>

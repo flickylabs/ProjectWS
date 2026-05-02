@@ -1,5 +1,6 @@
 import type { DuoSeed } from './character'
 import type { LieType, LieIntensity, LieMotive, LieState } from './agent'
+import type { PartyId } from './game'
 import type { TruthLevel } from './renewal'
 
 export type KnowledgeQuadrant = 'both_know' | 'a_only' | 'b_only' | 'neither_knows' | 'shared_misconception'
@@ -316,7 +317,7 @@ export interface Dispute {
   /** 이 쟁점을 심문하려면 선행 조건 필요 (없으면 처음부터 가능) */
   unlockCondition?: {
     /** 선행 쟁점이 특정 상태 이상이어야 함 */
-    requireDispute?: { id: string; minState: string }
+    requireDispute?: { id: string; minState: string; party?: PartyId } | Array<{ id: string; minState: string; party?: PartyId }>
     /** 선행 증거가 제시되어야 함 */
     requireEvidence?: string
   }

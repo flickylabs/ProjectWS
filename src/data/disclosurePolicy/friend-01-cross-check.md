@@ -19,7 +19,7 @@ The policy JSON follows the actual generated shape. `_schema.md`, spouse-01 poli
 
 | Evidence | Truth-bearing source name | Surface policy | Notes |
 |---|---|---|---|
-| `e-1` | `B→예비신랑 연락 기록` | `예비신랑 연락 기록` | Contact count is visible; warning intent is gated. |
+| `e-1` | `최수민→예비신랑 연락 기록` | `예비신랑 연락 기록` | Contact count is visible; warning intent is gated. |
 | `e-2` | `공통 친구 단톡방 캡처` | same | Safe as public-post evidence; legal/ethical conclusion is gated. |
 | `e-3` | `과거 손절 직전 카톡` | same | `돈 문제` is visible, but father/fraud detail is gated. |
 | `e-4` | `예비신랑의 선넘는 메시지와 B의 거절 답장` | `예비신랑 메시지와 답장` | Sender direction is high-risk before Original/Context. |

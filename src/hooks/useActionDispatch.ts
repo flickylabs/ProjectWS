@@ -114,6 +114,14 @@ function formatLieStateStepLabel(state: string | undefined): string {
   return match ? `${match[1]}단계` : (state ?? '미확인')
 }
 
+function compactNotebookText(parts: Array<string | undefined | null>, limit = 160): string {
+  const text = parts
+    .map((part) => part?.trim())
+    .filter(Boolean)
+    .join(' / ')
+  return text.length > limit ? `${text.slice(0, limit - 1)}…` : text
+}
+
 const shownLockoutNoticeKeys = new Set<string>()
 
 function getPartyName(state: ReturnType<typeof useGameStore.getState>, party: PartyId, fallback = '당사자'): string {
@@ -149,19 +157,6 @@ function addAngryLockoutNotice(
     turn: state.turnCount,
   })
   return true
-}
-
-function buildAngryRefusalLine(state: ReturnType<typeof useGameStore.getState>, party: PartyId): string {
-  const caseId = normalizeCaseKey(state.caseData?.caseId ?? '')
-  const map: Record<string, string> = {
-    'spouse-01:a': '그만 몰아붙이세요. 지금은 더 말하고 싶지 않습니다.',
-    'spouse-01:b': '그만하십시오. 지금은 더 대답하지 않겠습니다.',
-    'family-01:a': '잠깐만요. 지금은 더 묻지 마십시오.',
-    'family-01:b': '지금은 여기서 멈추겠습니다. 더 답하지 않겠습니다.',
-    'friend-01:a': '그만해 주세요. 지금은 더 말하면 제가 더 세게 말할 것 같아요.',
-    'friend-01:b': '지금은 답 못 하겠습니다. 더 캐묻지 말아 주세요.',
-  }
-  return map[`${caseId}:${party}`] ?? '지금은 더 대답하지 않겠습니다.'
 }
 
 function getEvidenceDisplayName(def: any, runtimeState?: { deepInvestigated?: boolean } | null): string {
@@ -541,6 +536,19 @@ async function handleEvidencePresent(action: Extract<PlayerAction, { type: 'evid
       if (newLieState === 'S5' && trigger !== 'hard_evidence') {
         state.trackMetric('unsupportedCollapses')
       }
+    }
+  }
+  if (evDidTransition) {
+    const unlockedByProgress = useGameStore.getState().refreshEvidenceUnlocks?.() ?? []
+    for (const unlockedId of unlockedByProgress) {
+      const fresh = useGameStore.getState()
+      const def = fresh.evidenceDefinitions.find((e) => e.id === unlockedId)
+      if (!def) continue
+      const newDisplayName = getEvidenceDisplayName(def, fresh.evidenceStates[def.id])
+      enqueueNewEvidenceCutscene(def.id, {
+        body: `${newDisplayName}${pp이가(newDisplayName)} 진실 단계 변화로 확보되었습니다.`,
+      })
+      state.addDialogue({ speaker: 'system', text: `새로운 증거를 손에 넣었다 — ${newDisplayName}`, relatedDisputes: def.proves, turn: state.turnCount })
     }
   }
   if (evDidTransition) state.trackMetric('evidenceEffective')
@@ -969,6 +977,9 @@ async function handleEvidenceInvestigate(action: Extract<PlayerAction, { type: '
     }
   }
 
+  // 증거 조사는 턴을 쓰지 않지만 숨겨진 쟁점/후속 증거 조건을 만족시킬 수 있다.
+  runDiscoveryChecks(useGameStore.getState().pcTargetParty ?? 'a')
+
   // [차단] 증거 조사 후 자동 NPC 심문 — 의도되지 않은 액션. 사용자가 명시적으로 심문할 때만 발화.
   // 조사는 정보 획득 액션. 심문은 별개. 자동 심문은 사용자 흐름을 끊고 잘못된 캐릭터에 메시지 발생.
   // 증거 조사는 토큰만 소비, 턴 소비 없음
@@ -1246,7 +1257,7 @@ async function handleQuestion(action: Extract<PlayerAction, { type: 'question' }
     // 숨겨진 쟁점 발견 부스트: discovery 체크를 강제 실행
     // (runDiscoveryChecks가 이미 턴 끝에 실행되지만, motive_search는 추가 부스트)
     if (state.caseData) {
-      const hiddenDisputes = state.caseData.disputes.filter(d => d.hidden && d.v3Visibility === 'hidden')
+      const hiddenDisputes = state.caseData.disputes.filter(d => d.hidden || d.v3Visibility === 'hidden')
       for (const hd of hiddenDisputes) {
         // 이미 발견된 쟁점은 스킵
         if (state.discovery?.discoveredDisputes?.includes(hd.id)) continue
@@ -1671,6 +1682,16 @@ async function handleQuestion(action: Extract<PlayerAction, { type: 'question' }
 
   // 증거 발견: NPC 응답 이후 — 진술 내용에서 단서가 포착된 것처럼 연출
   if (didTransition) {
+    const unlockedByProgress = useGameStore.getState().refreshEvidenceUnlocks?.() ?? []
+    for (const unlockedId of unlockedByProgress) {
+      const fresh = useGameStore.getState()
+      const def = fresh.evidenceDefinitions.find((e) => e.id === unlockedId)
+      if (!def) continue
+      const displayName = getEvidenceDisplayName(def, fresh.evidenceStates[def.id])
+      enqueueNewEvidenceCutscene(unlockedId, {
+        body: `${displayName}${pp이가(displayName)} 진실 단계 변화로 확보되었습니다.`,
+      })
+    }
     discoverEvidenceFromQuestioning(action.target, action.disputeId, action.questionType)
   }
 
@@ -2476,7 +2497,11 @@ function notifyLieTransition(party: PartyId, disputeId: string) {
               category: 'key_statement',
               iconId: 'i-flame',
               title: `${partyName}의 결정적 진술 - ${truthDispute?.name ?? disputeId}`,
-              summary: truth?.summary ?? '',
+              summary: compactNotebookText([
+                truth?.summary,
+                truth?.fact,
+                truthDispute?.truthDescription,
+              ]),
               party,
               disputeId,
               linkedDialogueId: lastNpcDialogue?.id,
@@ -2536,12 +2561,25 @@ function notifyLieTransition(party: PartyId, disputeId: string) {
           caseId: state.caseData?.caseId,
           phase: state.currentPhase,
         })
-        state.addDialogue({
+        const contradictionDialogueId = state.addDialogue({
           speaker: 'system',
           text: `${name}의 진술에서 이전과 다른 점이 발견되었습니다. — 추궁하기`,
           relatedDisputes: [disputeId],
           turn: state.turnCount,
           contradictionMeta,
+        })
+        state.addNotebookEntry?.({
+          turnCount: state.turnCount,
+          category: 'critical_contradiction',
+          iconId: 'i-bolt',
+          title: `모순 발견 - ${dispute.name}`,
+          summary: compactNotebookText([
+            `이전: ${previousClaim}`,
+            `현재: ${currentClaim || desc}`,
+          ]),
+          party,
+          disputeId,
+          linkedDialogueId: contradictionDialogueId || latestTargetLine?.id,
         })
       }
     }
@@ -2915,6 +2953,16 @@ export async function handleContradictionPursue(
       if (freshAgent.lieStateMap[disputeId]?.currentState === 'S5') {
         state.trackMetric('liesCollapsed')
       }
+      const unlockedByProgress = useGameStore.getState().refreshEvidenceUnlocks?.() ?? []
+      for (const unlockedId of unlockedByProgress) {
+        const fresh = useGameStore.getState()
+        const def = fresh.evidenceDefinitions.find((e) => e.id === unlockedId)
+        if (!def) continue
+        const displayName = getEvidenceDisplayName(def, fresh.evidenceStates[def.id])
+        enqueueNewEvidenceCutscene(unlockedId, {
+          body: `${displayName}${pp이가(displayName)} 진실 단계 변화로 확보되었습니다.`,
+        })
+      }
       discoverEvidenceFromQuestioning(party, disputeId, 'contradiction_pursuit')
     }
 
@@ -2944,18 +2992,36 @@ export async function handleContradictionPursue(
     if (afterEmotion.internalValue >= 65 && afterEmotion.internalValue < 85 && currentLockout <= afterState.turnCount) {
       afterState.setEmotionalLockout(party, afterState.turnCount + 3)
       outcomeParts.push('격앙 진입: 다음 2턴 동안 질문 차단')
-      afterState.addDialogue({
-        speaker: party,
-        text: buildAngryRefusalLine(afterState, party),
-        relatedDisputes: [disputeId],
-        turn: afterState.turnCount,
-        behaviorHint: '목소리가 높아지고, 더 묻지 말라는 태도로 대화를 끊는다.',
-        source: 'fallback',
-      })
     }
+    const observationSummary = outcomeParts.length > 0
+      ? outcomeParts.join(' / ')
+      : `${npcName} · ${dispute?.name ?? disputeId}`
+    afterState.addJudgeObservation({
+      turnCount: afterState.turnCount,
+      category: 'contradiction',
+      iconId: 'i-bolt',
+      title: '추궁 결과 반응이 크게 흔들렸습니다',
+      summary: observationSummary,
+      party,
+      disputeId,
+    })
+    afterState.addNotebookEntry?.({
+      turnCount: afterState.turnCount,
+      category: 'critical_contradiction',
+      iconId: 'i-bolt',
+      title: `추궁 결과 - ${dispute?.name ?? disputeId}`,
+      summary: compactNotebookText([
+        `이전: ${previousClaim}`,
+        `현재: ${currentClaim}`,
+        observationSummary,
+      ]),
+      party,
+      disputeId,
+      linkedDialogueId: findLinkedDialogueId(party),
+    })
     afterState.addDialogue({
       speaker: 'system',
-      text: `추궁 결과: ${outcomeParts.length > 0 ? outcomeParts.join(' / ') : '즉시 해금은 없지만 방어 반응이 흔들렸습니다.'}`,
+      text: '추궁 결과 반응이 크게 흔들렸습니다',
       relatedDisputes: [disputeId],
       turn: afterState.turnCount,
     })

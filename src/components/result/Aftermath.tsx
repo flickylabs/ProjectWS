@@ -48,6 +48,34 @@ function splitAftermathParagraphs(text: string): string[] {
   return text.split('\n\n').map((item) => item.trim()).filter(Boolean)
 }
 
+function removeAftermathLessonLabels(text: string): string {
+  return text
+    .replace(/\*?\*?(?:교훈 한 문장|교훈|명언)\*?\*?\s*[:：]\s*/g, '')
+    .replace(/^\s*(?:교훈 한 문장|교훈|명언)\s*[:：]\s*/gm, '')
+}
+
+function normalizeAftermathLesson(text: string): string {
+  return removeAftermathLessonLabels(text)
+    .trim()
+    .replace(/^[\s"“”'‘’`—-]+|[\s"“”'‘’`]+$/g, '')
+}
+
+function ensureAftermathDisplayShape(text: string, fallback: string): string {
+  const cleaned = removeAftermathLessonLabels(text)
+  const paragraphs = splitAftermathParagraphs(cleaned)
+  if (paragraphs.length >= 4) return paragraphs.join('\n\n')
+
+  const fallbackParagraphs = splitAftermathParagraphs(removeAftermathLessonLabels(fallback))
+  if (fallbackParagraphs.length < 4) return paragraphs.join('\n\n')
+
+  const body = [
+    ...paragraphs.slice(0, 3),
+    ...fallbackParagraphs.slice(paragraphs.length, 3),
+  ].slice(0, 3)
+  const lesson = fallbackParagraphs[fallbackParagraphs.length - 1]
+  return [...body, lesson].join('\n\n')
+}
+
 export default function Aftermath() {
   const caseData = useStore((s) => s.caseData)
   const verdictInput = useStore((s) => s.verdictInput)
@@ -57,9 +85,10 @@ export default function Aftermath() {
   const aftermathCanvasRef = useRef<HTMLCanvasElement>(null)
 
   const setResolvedAftermath = (text: string) => {
-    cachedAftermath = text
-    setAftermath(text)
-    updateLatestAftermath(text)
+    const shaped = ensureAftermathDisplayShape(text, buildFallbackAftermath())
+    cachedAftermath = shaped
+    setAftermath(shaped)
+    updateLatestAftermath(shaped, caseData?.caseId)
   }
 
   useEffect(() => {
@@ -121,16 +150,17 @@ export default function Aftermath() {
         `선택한 해결책: ${selectedSolutions}`,
         `판결 점수 분위기: ${scoreTone}`,
         '요구사항:',
-        '- 3개 문단으로 쓴다.',
-        '- 각 문단은 2문장 또는 3문장으로 제한한다.',
+        '- 본문 3개 문단과 마지막 교훈 1문장, 총 4개 문단으로 쓴다.',
+        '- 본문 각 문단은 2문장 또는 3문장으로 제한한다.',
         '- 1주 뒤, 1개월 뒤, 남은 여파 순으로 전개한다.',
-        '- 마지막 문단 마지막 문장만 짧은 여운 문장으로 쓴다.',
+        '- 마지막 문단은 후일담 전체를 관통하는 짧은 교훈이나 명언 같은 한 문장만 쓴다.',
+        '- 마지막 교훈 문장은 반드시 큰따옴표로 감싼다.',
         '- 보고서체가 아니라 소설처럼 자연스럽게 쓴다.',
       ].join('\n')
 
       const response = await chatCompletion(
         [{ role: 'user', content: prompt }],
-        { temperature: 0.9, maxTokens: 420 },
+        { temperature: 0.9, maxTokens: 720 },
       )
 
       setResolvedAftermath(response.trim() || buildFallbackAftermath())
@@ -200,12 +230,12 @@ export default function Aftermath() {
     const pA = pp과와(nameA)
     const pB = pp은는(nameB)
     if (total >= 75) {
-      return `${nameA}${pA} ${nameB}${pB} 판결 직후에는 여전히 굳은 표정이었지만, 적어도 무엇이 문제였는지는 같은 문장으로 말할 수 있게 되었다.\n\n일주일쯤 지나자 서로를 향한 비난은 조금 줄었고, 대신 앞으로 지켜야 할 선과 절차를 다시 확인하는 대화가 시작됐다.\n\n완전한 화해는 아니어도, 이번에는 같은 실수를 반복하지 않겠다는 말만은 남았다.`
+      return `${nameA}${pA} ${nameB}${pB} 판결 직후에는 여전히 굳은 표정이었지만, 적어도 무엇이 문제였는지는 같은 문장으로 말할 수 있게 되었다.\n\n일주일쯤 지나자 서로를 향한 비난은 조금 줄었고, 대신 앞으로 지켜야 할 선과 절차를 다시 확인하는 대화가 시작됐다.\n\n완전한 화해는 아니어도, 이번에는 같은 실수를 반복하지 않겠다는 말만은 남았다.\n\n\"책임을 적어야 관계도 다시 읽힌다.\"`
     }
     if (total >= 50) {
-      return `${nameA}${pA} ${nameB}${pB} 판결을 받아들였지만, 누구도 완전히 만족한 얼굴은 아니었다.\n\n한 달이 지나도 억울함과 불만은 남았지만, 적어도 무엇을 다시 건드리면 같은 싸움이 반복되는지는 서로 알고 있었다.\n\n정리가 곧 화해는 아니지만, 더 크게 무너지는 일은 막아 낸 결말이었다.`
+      return `${nameA}${pA} ${nameB}${pB} 판결을 받아들였지만, 누구도 완전히 만족한 얼굴은 아니었다.\n\n한 달이 지나도 억울함과 불만은 남았지만, 적어도 무엇을 다시 건드리면 같은 싸움이 반복되는지는 서로 알고 있었다.\n\n정리가 곧 화해는 아니지만, 더 크게 무너지는 일은 막아 낸 결말이었다.\n\n\"오해를 멈추는 첫 절차는 확인이다.\"`
     }
-    return `${nameA}${pA} ${nameB}${pB} 판결 뒤에도 쉽게 자리를 뜨지 못했다.\n\n사실이 드러났다고 해서 감정이 정리된 것은 아니었고, 남은 말들은 대부분 다음 갈등의 씨앗처럼 방 안에 남아 있었다.\n\n이번 결말은 봉합보다 경고에 가까웠다.`
+    return `${nameA}${pA} ${nameB}${pB} 판결 뒤에도 쉽게 자리를 뜨지 못했다.\n\n사실이 드러났다고 해서 감정이 정리된 것은 아니었고, 남은 말들은 대부분 다음 갈등의 씨앗처럼 방 안에 남아 있었다.\n\n이번 결말은 봉합보다 경고에 가까웠다.\n\n\"확인 없는 말은 법정 밖에서도 판결이 된다.\"`
   }
 
   if (loading) {
@@ -228,7 +258,8 @@ export default function Aftermath() {
     const ctx = canvas.getContext('2d')
     if (!ctx) return null
     const dpr = window.devicePixelRatio || 1
-    const paragraphs = splitAftermathParagraphs(aftermath)
+    const paragraphs = splitAftermathParagraphs(removeAftermathLessonLabels(aftermath))
+      .map((paragraph, index, all) => index === all.length - 1 ? `“${normalizeAftermathLesson(paragraph)}”` : paragraph)
 
     ctx.font = '14px Pretendard, sans-serif'
     const paragraphLines = paragraphs.map((item) => wrapText(ctx, item, W - 80))
@@ -322,7 +353,7 @@ export default function Aftermath() {
     <div className="space-y-4">
       <h3 className="text-sm font-bold text-amber-400 text-center">판결 이후</h3>
       <div className="bg-gray-800/40 border border-gray-700 rounded-lg p-5">
-        {splitAftermathParagraphs(aftermath).map((paragraph, index, all) => (
+        {splitAftermathParagraphs(removeAftermathLessonLabels(aftermath)).map((paragraph, index, all) => (
           <p
             key={index}
             className={`text-sm leading-relaxed ${
@@ -331,7 +362,7 @@ export default function Aftermath() {
                 : 'text-gray-300 mb-5'
             }`}
           >
-            {paragraph}
+            {index === all.length - 1 ? `“${normalizeAftermathLesson(paragraph)}”` : paragraph}
           </p>
         ))}
       </div>

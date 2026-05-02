@@ -1,4 +1,4 @@
-import type { ExtendedHistoryEntry, HallOfFameEntry, SortCategory, LocalPlayerProfile } from '../types'
+import type { ExtendedHistoryEntry, HallOfFameEntry, SortCategory, LocalPlayerProfile, VerdictResultSnapshot } from '../types'
 import { getSeasonForDate, getCurrentSeason } from './seasons'
 import {
   createDefaultProgressionState,
@@ -85,13 +85,65 @@ export function addHistoryEntry(entry: ExtendedHistoryEntry): void {
   updateHallOfFame(entry)
 }
 
+function findLatestHistoryIndex(history: ExtendedHistoryEntry[], caseId?: string): number {
+  if (!caseId) return 0
+  const index = history.findIndex((entry) => entry.caseId === caseId)
+  return index >= 0 ? index : 0
+}
+
 /** 최근 기록에 후일담 추가 */
-export function updateLatestAftermath(aftermath: string): void {
+export function updateLatestAftermath(aftermath: string, caseId?: string): void {
   const history = loadExtendedHistory()
-  if (history.length > 0 && history[0].verdictDetail) {
-    history[0].verdictDetail.aftermath = aftermath
+  const index = findLatestHistoryIndex(history, caseId)
+  const entry = history[index]
+  if (entry?.verdictDetail) {
+    entry.verdictDetail.aftermath = aftermath
+    if (entry.resultSnapshot) {
+      entry.resultSnapshot.aftermath = aftermath
+    }
     saveExtendedHistory(history)
   }
+}
+
+export function updateLatestResultSnapshot(patch: Partial<VerdictResultSnapshot>, caseId?: string): void {
+  const history = loadExtendedHistory()
+  const index = findLatestHistoryIndex(history, caseId)
+  const entry = history[index]
+  if (!entry) return
+
+  const current = entry.resultSnapshot
+  entry.resultSnapshot = {
+    ...(current ?? {
+      version: 1,
+      capturedAt: new Date().toISOString(),
+      caseTitle: `${entry.nameA} vs ${entry.nameB}`,
+      relationshipLabel: entry.relationshipType,
+      score: {
+        total: entry.score,
+        insight: entry.insight,
+        authority: entry.authority,
+        wisdom: entry.wisdom,
+        rating: '',
+      },
+      factFindings: [],
+      selectedSolutions: entry.verdictDetail?.selectedSolutions ?? [],
+    }),
+    ...patch,
+    score: patch.score ?? current?.score ?? {
+      total: entry.score,
+      insight: entry.insight,
+      authority: entry.authority,
+      wisdom: entry.wisdom,
+      rating: '',
+    },
+    factFindings: patch.factFindings ?? current?.factFindings ?? [],
+    selectedSolutions: patch.selectedSolutions ?? current?.selectedSolutions ?? entry.verdictDetail?.selectedSolutions ?? [],
+  }
+
+  if (patch.aftermath && entry.verdictDetail) {
+    entry.verdictDetail.aftermath = patch.aftermath
+  }
+  saveExtendedHistory(history)
 }
 
 /** 기존 HistoryEntry → ExtendedHistoryEntry 마이그레이션 */

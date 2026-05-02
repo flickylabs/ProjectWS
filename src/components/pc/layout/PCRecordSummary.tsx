@@ -1,4 +1,4 @@
-import { useMemo } from 'react'
+import { useMemo, useState } from 'react'
 import { useStore } from '../../../store/useGameStore'
 import type { AgentState } from '../../../types/agent'
 import type { CaseData } from '../../../types'
@@ -18,6 +18,17 @@ interface ProgressRow {
   total: number
   detail: string
 }
+
+interface JudgmentSummaryItem {
+  disputeId: string
+  disputeName: string
+  judgment: TruthJudgment
+  text: string
+  confirmed: boolean
+  stage: number
+}
+
+const JUDGMENT_OPTIONS: TruthJudgment[] = ['believe_a', 'believe_b', 'both_partial', 'undetermined']
 
 function stateIndex(state: string): number {
   return Math.max(LIE_STATES.indexOf(state as (typeof LIE_STATES)[number]), 0)
@@ -75,7 +86,10 @@ export default function PCRecordSummary({ onClose }: { onClose: () => void }) {
   const evidenceStates = useStore((s) => s.evidenceStates)
   const disputeVisibility = useStore((s) => s.discovery.disputeVisibility)
   const judgments = useStore((s) => s.discovery.judgments)
+  const reviseJudgment = useStore((s) => s.reviseJudgment)
+  const turnCount = useStore((s) => s.turnCount)
   const calledWitnesses = useStore((s) => s.calledWitnesses)
+  const [editingJudgmentId, setEditingJudgmentId] = useState<string | null>(null)
 
   const visibleDisputes = useMemo(() => {
     if (!caseData) return []
@@ -181,12 +195,20 @@ export default function PCRecordSummary({ onClose }: { onClose: () => void }) {
         if (!judgment) return null
         const stage = getMaxTruthStage(dispute.id, agentA, agentB)
         return {
+          disputeId: dispute.id,
+          disputeName: dispute.name,
+          judgment: judgment.judgment,
           text: `${dispute.name}: ${getJudgmentLabel(judgment.judgment, caseData)} 진실파악 ${stage}/5`,
           confirmed: stage >= 5,
+          stage,
         }
       })
-      .filter((item): item is { text: string; confirmed: boolean } => Boolean(item))
+      .filter((item): item is JudgmentSummaryItem => Boolean(item))
   }, [agentA, agentB, caseData, judgments, visibleDisputes])
+
+  const editingJudgment = useMemo(() => {
+    return myJudgments.find((item) => item.disputeId === editingJudgmentId) ?? null
+  }, [editingJudgmentId, myJudgments])
 
   const unresolvedQuestions = useMemo(() => {
     if (!caseData) return []
@@ -289,10 +311,16 @@ export default function PCRecordSummary({ onClose }: { onClose: () => void }) {
             {myJudgments.length === 0 ? (
               <p className="pc-record-summary__empty">아직 재판관 판단으로 정리한 쟁점이 없습니다.</p>
             ) : myJudgments.map((judgment, index) => (
-              <div className={`pc-record-summary__item ${judgment.confirmed ? 'is-confirmed' : 'is-partial'}`} key={`${judgment.text}-${index}`}>
+              <button
+                className={`pc-record-summary__item pc-record-summary__item-button ${judgment.confirmed ? 'is-confirmed' : 'is-partial'}`}
+                key={`${judgment.disputeId}-${index}`}
+                onClick={() => setEditingJudgmentId(judgment.disputeId)}
+                type="button"
+              >
                 <span>{judgment.confirmed ? '확' : '판'}</span>
                 <span>{judgment.text}</span>
-              </div>
+                <small>수정</small>
+              </button>
             ))}
           </section>
 
@@ -325,6 +353,49 @@ export default function PCRecordSummary({ onClose }: { onClose: () => void }) {
           <button className="pc-record-summary__close-btn" onClick={onClose} type="button">닫기</button>
         </div>
       </div>
+
+      {caseData && editingJudgment ? (
+        <div className="pc-record-judgment-modal" role="dialog" aria-label="내 판단 수정">
+          <div className="pc-record-judgment-modal__backdrop" onClick={() => setEditingJudgmentId(null)} />
+          <div className="pc-record-judgment-modal__panel">
+            <header className="pc-record-judgment-modal__header">
+              <span><PCSvgIcon id="i-scale" size={16} /> 내 판단 수정</span>
+              <button onClick={() => setEditingJudgmentId(null)} type="button" aria-label="닫기">×</button>
+            </header>
+            <div className="pc-record-judgment-modal__body">
+              <p className="pc-record-judgment-modal__eyebrow">{editingJudgment.disputeName}</p>
+              <div className="pc-record-judgment-modal__current">
+                <span>기존 판단</span>
+                <strong>{getJudgmentLabel(editingJudgment.judgment, caseData)}</strong>
+                <small>진실파악 {editingJudgment.stage}/5</small>
+              </div>
+              <div className="pc-record-judgment-modal__options">
+                {JUDGMENT_OPTIONS.map((option) => {
+                  const selected = option === editingJudgment.judgment
+                  return (
+                    <button
+                      className={`pc-record-judgment-modal__option${selected ? ' is-selected' : ''}`}
+                      key={option}
+                      onClick={() => {
+                        if (selected) {
+                          setEditingJudgmentId(null)
+                          return
+                        }
+                        reviseJudgment(editingJudgment.disputeId, option, turnCount)
+                        setEditingJudgmentId(null)
+                      }}
+                      type="button"
+                    >
+                      <span>{selected ? '현재' : '변경'}</span>
+                      <strong>{getJudgmentLabel(option, caseData)}</strong>
+                    </button>
+                  )
+                })}
+              </div>
+            </div>
+          </div>
+        </div>
+      ) : null}
     </div>
   )
 }

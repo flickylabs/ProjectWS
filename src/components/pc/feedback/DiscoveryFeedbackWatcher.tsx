@@ -9,6 +9,7 @@ import type { TruthJudgment } from '../../../types/discovery'
 import { getEmergenceHook, getEmergenceHookSpeaker } from '../../../data/emergenceHooks'
 import { hasContradictionComparison } from '../../../utils/contradiction'
 import type { Dispute } from '../../../types/case'
+import { afterDisputeRibbonExpansion, requestDisputeRibbonExpansion } from '../layout/disputeRibbonEvents'
 
 const CONTRADICTION_SURFACE_FALLBACK = '진술 흐름에서 확인할 지점이 생겼습니다. 추가 질문으로 맥락을 확인하세요.'
 const EMOTIONAL_BURST_SURFACE_FALLBACK = '감정이 격해졌습니다. 반응을 더 밀어붙일지, 잠시 정리할지 판단하세요.'
@@ -90,6 +91,14 @@ function buildDisputeEmergenceDetails(dispute: Dispute | undefined, routeDescrip
   return { body, blocks, meta, notebookSummary, observationSummary }
 }
 
+function compactNotebookSummary(parts: Array<string | undefined | null>, limit = 160): string {
+  const text = parts
+    .map((part) => part?.trim())
+    .filter(Boolean)
+    .join(' / ')
+  return text.length > limit ? `${text.slice(0, limit - 1)}…` : text
+}
+
 function buildEmotionalBurstFollowUp(choice: 'press' | 'calm', hasScriptedOutburst: boolean): string {
   if (choice === 'press') {
     return hasScriptedOutburst
@@ -147,6 +156,17 @@ export default function DiscoveryFeedbackWatcher() {
       iconId: 'i-scale',
       title: '진실 공방이 열렸다. 양측 주장을 비교해 판결을 내려야 한다.',
       summary: `${dispute?.name ?? pendingConfrontation.disputeId}`,
+      disputeId: pendingConfrontation.disputeId,
+    })
+    state.addNotebookEntry?.({
+      turnCount: state.turnCount,
+      category: 'critical_contradiction',
+      iconId: 'i-scale',
+      title: `진실 공방 - ${dispute?.name ?? pendingConfrontation.disputeId}`,
+      summary: compactNotebookSummary([
+        `${partyA}: ${pendingConfrontation.claimA.summary}`,
+        `${partyB}: ${pendingConfrontation.claimB.summary}`,
+      ]),
       disputeId: pendingConfrontation.disputeId,
     })
     const handleDefer = () => {
@@ -225,6 +245,17 @@ export default function DiscoveryFeedbackWatcher() {
       iconId: 'i-conflict',
       title: '기존 판단과 새 정보가 충돌하고 있다.',
       summary: `${dispute?.name ?? pendingConflict.disputeId}`,
+      disputeId: pendingConflict.disputeId,
+    })
+    state.addNotebookEntry?.({
+      turnCount: state.turnCount,
+      category: 'critical_contradiction',
+      iconId: 'i-conflict',
+      title: `판단 충돌 - ${dispute?.name ?? pendingConflict.disputeId}`,
+      summary: compactNotebookSummary([
+        `${leftLabel}: ${leftText}`,
+        `새 정보: ${pendingConflict.conflictingInfo}`,
+      ]),
       disputeId: pendingConflict.disputeId,
     })
     state.enqueueFeedback({
@@ -324,26 +355,30 @@ export default function DiscoveryFeedbackWatcher() {
             // 번개 이펙트도 모달 dismiss 직후로 이동 (모달 블러로 가려지는 결함 해소).
             s.setLastFocusedDisputeId(pendingEmergence.disputeId)
             s.setRecentlyEmergedDispute(pendingEmergence.disputeId)
+            requestDisputeRibbonExpansion(pendingEmergence.disputeId)
             // 메시지 → 탑바 쟁점 chip 으로 연결 1회 + 오라 발사
             const escape = typeof CSS !== 'undefined' && typeof CSS.escape === 'function' ? CSS.escape : (v: string) => v
             const logSelector = `[data-dialogue-id="${escape(sysMsgId)}"] .pc-log-system-card`
             const notebookSelector = '[data-resonance-target="judge-notebook"]'
             const toSelector = `[data-dispute-id="${escape(pendingEmergence.disputeId)}"]`
-            s.enqueueAura({ targetSelector: notebookSelector, style: 'electric' })
-            s.enqueueAura({ targetSelector: toSelector, style: 'electric' })
-            s.enqueueResonance({
-              fromSelector: logSelector,
-              toSelector: notebookSelector,
-              reason: 'notebook_entry',
-              targetKey: `notebook:dispute:${pendingEmergence.disputeId}`,
-              style: 'lightning',
-            })
-            s.enqueueResonance({
-              fromSelector: notebookSelector,
-              toSelector,
-              reason: 'dispute_emergence',
-              targetKey: `dispute:${pendingEmergence.disputeId}`,
-              style: 'lightning',
+            afterDisputeRibbonExpansion(() => {
+              const latest = useGameStore.getState()
+              latest.enqueueAura({ targetSelector: notebookSelector, style: 'electric' })
+              latest.enqueueAura({ targetSelector: toSelector, style: 'electric' })
+              latest.enqueueResonance({
+                fromSelector: logSelector,
+                toSelector: notebookSelector,
+                reason: 'notebook_entry',
+                targetKey: `notebook:dispute:${pendingEmergence.disputeId}`,
+                style: 'lightning',
+              })
+              latest.enqueueResonance({
+                fromSelector: notebookSelector,
+                toSelector,
+                reason: 'dispute_emergence',
+                targetKey: `dispute:${pendingEmergence.disputeId}`,
+                style: 'lightning',
+              })
             })
             window.setTimeout(() => {
               useGameStore.getState().setRecentlyEmergedDispute(null)

@@ -17,6 +17,7 @@ export type JudgeNotebookCategory =
   | 'confession'              // 자백
   | 'critical_contradiction'  // 결정적 모순
   | 'key_statement'           // 핵심 발화
+  | 'dispute_probe'           // 쟁점 파악
   | 'dispute_emergence'       // 새 쟁점 발현
 
 export interface JudgeNotebookEntry {

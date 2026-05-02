@@ -9,6 +9,7 @@ import type { MediationScoreContext } from '../../../engine/mediationEffectEngin
 import { getSolutionOrientationByText } from '../../../data/solutionOrientations'
 import { deriveCaseProfile, applyDriftUpdate } from '../../../engine/judgeProfileEngine'
 import { generateVerdictSummary } from '../../../engine/verdictSummaryEngine'
+import { buildDefaultAftermath, buildVerdictResultSnapshot } from '../../../engine/verdictHistorySnapshot'
 import { pp이가 } from '../../../engine/koreanPostposition'
 import { recordGameComplete } from '../../../hooks/useLocalStorage'
 import { useGameStore, useStore } from '../../../store/useGameStore'
@@ -435,6 +436,15 @@ export default function PCVerdictScreen() {
     )
     saveDriftState(newDrift)
 
+    const initialAftermath = buildDefaultAftermath(caseData, score, verdictInput)
+    const resultSnapshot = buildVerdictResultSnapshot({
+      caseData,
+      verdictInput,
+      score,
+      verdictSummary: summary,
+      aftermath: initialAftermath,
+    })
+
     recordHistory({
       caseId: caseData.caseId,
       score: score.total,
@@ -450,7 +460,9 @@ export default function PCVerdictScreen() {
         selectedSolutions: [...verdictInput.selectedSolutions],
         disputeNames,
         verdictSummary: summary,
+        aftermath: initialAftermath,
       },
+      resultSnapshot,
       caseTelemetry,
     })
 

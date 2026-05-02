@@ -2,7 +2,7 @@
  * 8 evidence type-specific sub-viewer components
  * Each renders the body content for PCEvidenceViewer.
  */
-import { useState, useCallback, type ReactNode } from 'react'
+import { useEffect, useState, useCallback, type ReactNode } from 'react'
 import type {
   BankRow, ChatMessage, ContractRow, TestimonyData,
   CCTVEvent, LogRow, DeviceSection, SNSData,
@@ -62,124 +62,121 @@ export function ReceiptViewer({ sheets }: { sheets: ReceiptSheet[] }) {
   const [current, setCurrent] = useState(0)
   const sheet = sheets[current]
   if (!sheet) return null
+  const receiptNo = String(current + 1).padStart(2, '0')
 
   return (
     <div className="pc-receipt-viewer">
-      {/* Header: page indicator */}
-      <div className="pc-receipt-viewer__header flex items-center justify-between mb-3">
-        <span className="text-xs font-semibold" style={{ color: '#8b8b9a' }}>
-          영수증 {current + 1} / {sheets.length}
-        </span>
-        <div className="flex gap-1">
+      <div className="pc-receipt-viewer__header">
+        <div className="pc-receipt-viewer__header-copy">
+          <span>RECEIPT BUNDLE</span>
+          <strong>영수증 {current + 1} / {sheets.length}</strong>
+        </div>
+        <div className="pc-receipt-viewer__dots" aria-label="영수증 페이지 선택">
           {sheets.map((_, i) => (
             <button
               key={i}
-              className="w-2 h-2 rounded-full transition-all duration-150"
-              style={{
-                background: i === current ? 'var(--pc-gold, #d4a24e)' : 'rgba(255,255,255,0.1)',
-                cursor: 'pointer',
-                border: 'none',
-              }}
+              aria-label={`${i + 1}번째 영수증 보기`}
+              className={i === current ? 'is-active' : ''}
               onClick={() => setCurrent(i)}
+              type="button"
             />
           ))}
         </div>
       </div>
 
-      {/* Receipt paper */}
-      <div
-        className="pc-receipt-paper rounded-xl px-5 mb-3"
-        style={{
-          background: sheet.suspicious ? 'rgba(224,96,96,0.04)' : 'rgba(255,255,255,0.02)',
-          border: sheet.suspicious ? '1px solid rgba(224,96,96,0.15)' : '1px solid rgba(255,255,255,0.06)',
-          paddingTop: 20,
-          paddingBottom: 20,
-          maxWidth: 420,
-          marginLeft: 'auto',
-          marginRight: 'auto',
-        }}
-      >
-        {/* Store name */}
-        <div className="text-center text-sm font-bold tracking-wider mb-0.5" style={{ color: '#dcdce0' }}>
-          {sheet.storeName}
-        </div>
-        {sheet.storeAddr ? (
-          <div className="text-center text-xs mb-2" style={{ color: '#4e4e5c' }}>{sheet.storeAddr}</div>
-        ) : null}
-        <div className="text-center text-xs mb-3" style={{ color: '#4e4e5c' }}>{sheet.date}</div>
-
-        {/* Separator */}
-        <div className="mb-2" style={{ borderTop: '1px dashed rgba(255,255,255,0.1)' }} />
-
-        {/* Items header */}
-        <div className="pc-receipt-header-row flex text-xs font-semibold mb-2 px-1" style={{ color: '#4e4e5c', paddingTop: 6, paddingBottom: 6 }}>
-          <span className="flex-1">상품명</span>
-          <span className="w-14 text-right">단가</span>
-          <span className="w-8 text-center">수량</span>
-          <span className="w-16 text-right">금액</span>
-        </div>
-
-        {/* Items */}
-        {sheet.items.map((item, i) => (
-          <div key={i} className="pc-receipt-item-row flex text-sm px-1" style={{ color: '#8b8b9a', borderBottom: '1px solid rgba(255,255,255,0.03)', paddingTop: 12, paddingBottom: 12 }}>
-            <div className="flex-1 min-w-0">
-              <div className="truncate">{item.name}</div>
-              {item.code ? <div className="text-xs" style={{ color: '#3a3a48' }}>{item.code}</div> : null}
-            </div>
-            <span className="w-14 text-right tabular-nums shrink-0">{item.unitPrice}</span>
-            <span className="w-8 text-center tabular-nums shrink-0">{item.qty}</span>
-            <span className="w-16 text-right tabular-nums shrink-0 font-medium" style={{ color: '#dcdce0' }}>{item.amount}</span>
-          </div>
+      <div className="pc-receipt-strip" aria-label="영수증 묶음 목록">
+        {sheets.map((candidate, i) => (
+          <button
+            className={`pc-receipt-thumb${i === current ? ' is-active' : ''}${candidate.suspicious ? ' is-suspicious' : ''}`}
+            key={`${candidate.storeName}-${candidate.date}-${i}`}
+            onClick={() => setCurrent(i)}
+            type="button"
+          >
+            <span>{String(i + 1).padStart(2, '0')}</span>
+            <strong>{candidate.storeName}</strong>
+            <em>{candidate.date}</em>
+            <b>{candidate.total}</b>
+          </button>
         ))}
+      </div>
 
-        {/* Separator */}
-        <div className="my-2" style={{ borderTop: '1px dashed rgba(255,255,255,0.1)' }} />
+      <div className={`pc-receipt-paper${sheet.suspicious ? ' is-suspicious' : ''}`}>
+        <span className="pc-receipt-paper__texture" aria-hidden="true" />
+        <span className="pc-receipt-paper__perforation is-top" aria-hidden="true" />
+        <span className="pc-receipt-paper__perforation is-bottom" aria-hidden="true" />
+        {sheet.suspicious ? <span className="pc-receipt-paper__stamp" aria-hidden="true">대조 필요</span> : null}
 
-        {/* Totals */}
-        <div className="pc-receipt-total-row flex justify-between text-sm px-1" style={{ color: '#8b8b9a', paddingTop: 8, paddingBottom: 8 }}>
-          <span>합계</span><span className="tabular-nums">{sheet.subtotal}</span>
+        <header className="pc-receipt-paper__head">
+          <div className="pc-receipt-paper__mark" aria-hidden="true">
+            <svg viewBox="0 0 54 54" role="img">
+              <rect x="8" y="6" width="38" height="42" rx="4" fill="none" stroke="currentColor" strokeWidth="3" />
+              <path d="M16 17h22M16 25h22M16 33h13" stroke="currentColor" strokeWidth="3" strokeLinecap="round" />
+              <path d="M12 47l5-4 5 4 5-4 5 4 5-4 5 4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinejoin="round" />
+            </svg>
+          </div>
+          <span>RECEIPT NO. {receiptNo}</span>
+          <h3>{sheet.storeName}</h3>
+          {sheet.storeAddr ? <p>{sheet.storeAddr}</p> : null}
+          <time>{sheet.date}</time>
+        </header>
+
+        <div className="pc-receipt-separator" aria-hidden="true" />
+
+        <div className="pc-receipt-header-row">
+          <span>상품명</span>
+          <span>단가</span>
+          <span>수량</span>
+          <span>금액</span>
         </div>
-        <div className="pc-receipt-total-row flex justify-between text-sm px-1" style={{ color: '#4e4e5c', paddingTop: 8, paddingBottom: 8 }}>
-          <span>부가세</span><span className="tabular-nums">{sheet.tax}</span>
-        </div>
-        <div className="pc-receipt-total-row is-final flex justify-between text-sm font-bold px-1" style={{ color: '#dcdce0', paddingTop: 10, paddingBottom: 10 }}>
-          <span>결제금액</span><span className="tabular-nums">{sheet.total}</span>
+
+        <div className="pc-receipt-item-list">
+          {sheet.items.map((item, i) => (
+            <div key={`${item.name}-${i}`} className="pc-receipt-item-row">
+              <div className="pc-receipt-item-row__name">
+                <span>{String(i + 1).padStart(2, '0')}</span>
+                <strong>{item.name}</strong>
+                {item.code ? <em>상품코드 {item.code}</em> : null}
+              </div>
+              <span className="tabular-nums">{item.unitPrice}</span>
+              <span className="tabular-nums">{item.qty}</span>
+              <span className="tabular-nums">{item.amount}</span>
+            </div>
+          ))}
         </div>
 
-        {/* Separator */}
-        <div className="mb-2" style={{ borderTop: '1px dashed rgba(255,255,255,0.1)' }} />
+        <div className="pc-receipt-separator" aria-hidden="true" />
 
-        {/* Payment method */}
-        <div className="text-xs text-center" style={{ color: '#4e4e5c' }}>
-          {sheet.paymentMethod}
+        <div className="pc-receipt-total-row">
+          <span>합계</span><strong className="tabular-nums">{sheet.subtotal}</strong>
+        </div>
+        <div className="pc-receipt-total-row is-muted">
+          <span>부가세</span><strong className="tabular-nums">{sheet.tax}</strong>
+        </div>
+        <div className="pc-receipt-total-row is-final">
+          <span>결제금액</span><strong className="tabular-nums">{sheet.total}</strong>
+        </div>
+
+        <div className="pc-receipt-payment">
+          <span>{sheet.paymentMethod}</span>
+          <div className="pc-receipt-barcode" aria-hidden="true">
+            <i /><i /><i /><i /><i /><i /><i /><i /><i /><i /><i /><i /><i /><i /><i />
+          </div>
+          <small>원본 영수증 사본 · 조사 단계별 열람 기록</small>
         </div>
       </div>
 
-      {/* Prev/Next */}
-      <div className="pc-receipt-nav flex justify-center gap-4">
+      <div className="pc-receipt-nav">
         <button
-          className="text-sm px-4 py-2 rounded-lg transition-colors duration-150"
-          style={{
-            background: 'var(--pc-p3, #18181f)',
-            border: '1px solid rgba(255,255,255,0.06)',
-            color: current > 0 ? '#8b8b9a' : '#3a3a48',
-            cursor: current > 0 ? 'pointer' : 'default',
-          }}
           disabled={current === 0}
           onClick={() => setCurrent((p) => Math.max(0, p - 1))}
+          type="button"
         >
           ← 이전
         </button>
         <button
-          className="text-sm px-4 py-2 rounded-lg transition-colors duration-150"
-          style={{
-            background: 'var(--pc-p3, #18181f)',
-            border: '1px solid rgba(255,255,255,0.06)',
-            color: current < sheets.length - 1 ? '#8b8b9a' : '#3a3a48',
-            cursor: current < sheets.length - 1 ? 'pointer' : 'default',
-          }}
           disabled={current === sheets.length - 1}
           onClick={() => setCurrent((p) => Math.min(sheets.length - 1, p + 1))}
+          type="button"
         >
           다음 →
         </button>
@@ -318,16 +315,42 @@ export function BankViewer({ rows }: { rows: BankRow[] }) {
 // 2. ChatViewer — 카카오톡 대화
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-export function ChatViewer({ header, messages }: { header: string; messages: ChatMessage[] }) {
-  const contactLabel = resolveChatContactLabel(header, messages)
+export function ChatViewer({ header, messages, pages: rawPages }: { header: string; messages: ChatMessage[]; pages?: ChatPage[] }) {
+  const pages = normalizeChatPages(header, messages, rawPages)
+  const [currentPage, setCurrentPage] = useState(Math.max(0, pages.length - 1))
+  useEffect(() => {
+    setCurrentPage(Math.max(0, pages.length - 1))
+  }, [header, pages.length])
+
+  const page = pages[Math.min(currentPage, pages.length - 1)] ?? pages[0]
+  const activeHeader = page?.header ?? header
+  const activeMessages = page?.messages ?? messages
+  const contactLabel = resolveChatContactLabel(activeHeader, activeMessages)
+  const isGroupChat = resolveIsGroupChat(activeHeader, activeMessages)
+  const isKakaoChat = !isGroupChat && resolveIsKakaoChat(activeHeader)
   return (
-    <div className="pc-phone-chat">
+    <div className={`pc-phone-chat${isGroupChat ? ' is-group-dm' : ''}${isKakaoChat ? ' is-kakao-talk' : ''}`}>
       <div className="pc-phone-chat__shell">
         <div className="pc-phone-chat__top">
+          {isGroupChat ? <span className="pc-phone-chat__group-stack" aria-hidden="true">{buildGroupAvatarStack(activeMessages)}</span> : null}
           <span className="pc-phone-chat__contact">{contactLabel}</span>
         </div>
+        {pages.length > 1 ? (
+          <div className="pc-phone-chat__pager" aria-label="대화 캡처 페이지">
+            {pages.map((p, i) => (
+              <button
+                key={`${p.label ?? 'page'}-${i}`}
+                className={i === currentPage ? 'is-active' : ''}
+                type="button"
+                onClick={() => setCurrentPage(i)}
+              >
+                {p.label ?? `${i + 1}쪽`}
+              </button>
+            ))}
+          </div>
+        ) : null}
         <div className="pc-phone-chat__messages">
-        {messages.map((m, i) => {
+        {activeMessages.map((m, i) => {
           if (m.type === 'deleted') {
             return (
               <div
@@ -351,6 +374,48 @@ export function ChatViewer({ header, messages }: { header: string; messages: Cha
           }
 
           const isLeft = m.side === 'left'
+          const sender = m.sender?.trim() || (isLeft ? '상대방' : '나')
+          const group = getMessageGroup(activeMessages, i)
+          if (isGroupChat) {
+            return (
+              <div
+                key={i}
+                className={`pc-phone-chat__dm-row ${isLeft ? 'is-left' : 'is-right'} is-${group.position}${group.prevSame ? ' is-tight' : ''}`}
+              >
+                {isLeft ? (
+                  <span className={`pc-phone-chat__avatar ${getSenderTone(sender)}${group.nextSame ? ' is-placeholder' : ''}`} aria-hidden="true">
+                    {getSenderInitial(sender)}
+                  </span>
+                ) : null}
+                <span className="pc-phone-chat__dm-content">
+                  {isLeft && !group.prevSame ? <span className="pc-phone-chat__sender">{sender}</span> : null}
+                  <span className="pc-phone-chat__bubble">{m.text}</span>
+                </span>
+              </div>
+            )
+          }
+
+          if (isKakaoChat) {
+            return (
+              <div
+                key={i}
+                className={`pc-kakao-row ${isLeft ? 'is-left' : 'is-right'} is-${group.position}${group.prevSame ? ' is-tight' : ''}`}
+              >
+                {isLeft ? (
+                  <span className={`pc-kakao-avatar${group.nextSame ? ' is-placeholder' : ''}`} aria-hidden="true" />
+                ) : null}
+                <span className="pc-kakao-stack">
+                  {isLeft && !group.prevSame ? <span className="pc-kakao-name">{sender}</span> : null}
+                  <span className="pc-kakao-line">
+                    {!isLeft && m.time ? <span className="pc-kakao-time">{m.time}</span> : null}
+                    <span className="pc-kakao-bubble">{m.text}</span>
+                    {isLeft && m.time ? <span className="pc-kakao-time">{m.time}</span> : null}
+                  </span>
+                </span>
+              </div>
+            )
+          }
+
           return (
             <div
               key={i}
@@ -366,15 +431,112 @@ export function ChatViewer({ header, messages }: { header: string; messages: Cha
   )
 }
 
+type ChatPage = {
+  label?: string
+  header?: string
+  messages?: ChatMessage[]
+}
+
+function normalizeChatPages(header: string, messages: ChatMessage[], pages?: ChatPage[]): Array<{ label?: string; header: string; messages: ChatMessage[] }> {
+  if (Array.isArray(pages) && pages.length > 0) {
+    return pages
+      .filter((page) => Array.isArray(page.messages) && page.messages.length > 0)
+      .map((page, index) => ({
+        label: page.label ?? `${index + 1}쪽`,
+        header: page.header ?? header,
+        messages: page.messages!,
+      }))
+  }
+  return [{ header, messages }]
+}
+
+function getMessageGroup(messages: ChatMessage[], index: number): { position: 'single' | 'first' | 'middle' | 'last'; prevSame: boolean; nextSame: boolean } {
+  const prevSame = isSameChatSender(messages[index - 1], messages[index])
+  const nextSame = isSameChatSender(messages[index + 1], messages[index])
+  if (!prevSame && !nextSame) return { position: 'single', prevSame, nextSame }
+  if (!prevSame && nextSame) return { position: 'first', prevSame, nextSame }
+  if (prevSame && nextSame) return { position: 'middle', prevSame, nextSame }
+  return { position: 'last', prevSame, nextSame }
+}
+
+function isSameChatSender(a?: ChatMessage, b?: ChatMessage): boolean {
+  if (!a || !b || a.type || b.type) return false
+  return (a.side ?? 'left') === (b.side ?? 'left')
+    && (a.sender?.trim() ?? '') === (b.sender?.trim() ?? '')
+}
+
+function resolveIsKakaoChat(header: string): boolean {
+  return /카카오톡|카톡/i.test(header)
+}
+
+function resolveIsGroupChat(header: string, messages: ChatMessage[]): boolean {
+  if (/단체채팅|단톡|단톡방|오픈채팅|그룹|group/i.test(header)) return true
+  const senders = new Set(
+    messages
+      .map((message) => message.sender?.trim())
+      .filter((sender): sender is string => Boolean(sender)),
+  )
+  return senders.size >= 3
+}
+
 function resolveChatContactLabel(header: string, messages: ChatMessage[]): string {
+  if (resolveIsGroupChat(header, messages)) {
+    const quoted = header.match(/[“"']([^“"']+)[”"']/)?.[1]
+    if (quoted) return quoted
+    const compact = header
+      .replace(/카카오톡|단체채팅|오픈채팅|대화\s*기록|발췌|확대|—.*$/g, '')
+      .replace(/[()]/g, '')
+      .trim()
+    return compact || '단체 대화방'
+  }
   const phoneMatch = header.match(/010-\*{4}-\d{4}/)
   if (phoneMatch) return phoneMatch[0]
   const messagePhone = messages
     .map((message) => message.sender?.match(/010-\*{4}-\d{4}/)?.[0])
     .find((value): value is string => Boolean(value))
   if (messagePhone) return messagePhone
+  if (resolveIsKakaoChat(header)) {
+    const compact = header
+      .replace(/\s*—.*$/g, '')
+      .replace(/\s*\([^)]*\)/g, '')
+      .replace(/\s*(?:1:1\s*)?카톡\s*/g, ' ')
+      .trim()
+    if (compact) return compact
+  }
   if (/발신자\s*미상/.test(header)) return '발신자 미상'
   return '발신자 미상'
+}
+
+function getSenderInitial(sender: string): string {
+  const normalized = sender.replace(/\([^)]*\)/g, '').trim()
+  if (!normalized) return '?'
+  const koreanName = normalized.match(/[가-힣]{2,4}/)?.[0]
+  if (koreanName) return koreanName.slice(-2)
+  return normalized.slice(0, 2).toUpperCase()
+}
+
+function getSenderTone(sender: string): string {
+  let sum = 0
+  for (const char of sender) sum += char.charCodeAt(0)
+  return `is-tone-${(sum % 5) + 1}`
+}
+
+function buildGroupAvatarStack(messages: ChatMessage[]): ReactNode {
+  const senders = Array.from(new Set(
+    messages
+      .map((message) => message.sender?.trim())
+      .filter((sender): sender is string => Boolean(sender)),
+  )).slice(0, 3)
+  if (senders.length === 0) return null
+  return (
+    <>
+      {senders.map((sender) => (
+        <span className={`pc-phone-chat__stack-avatar ${getSenderTone(sender)}`} key={sender}>
+          {getSenderInitial(sender)}
+        </span>
+      ))}
+    </>
+  )
 }
 
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -664,11 +826,15 @@ function buildLogFilterOptions(rows: LogRow[]) {
   ]
 }
 
-export function LogViewer({ rows, note }: { rows: LogRow[]; note: string }) {
+export function LogViewer({ rows, note, title }: { rows: LogRow[]; note: string; title?: string }) {
   const [filter, setFilter] = useState<string>('all')
   const filterOptions = buildLogFilterOptions(rows)
 
   const filtered = filter === 'all' ? rows : rows.filter((r) => r.type === filter)
+  const logTitle = title && /통화|전화/.test(title)
+    ? '통화 기록 대장'
+    : title || '기록 대장'
+  const isCallLog = /통화|전화|발신|수신|부재중/.test(`${logTitle} ${rows.map((r) => r.typeLabel).join(' ')}`)
 
   return (
     <div>
@@ -687,18 +853,18 @@ export function LogViewer({ rows, note }: { rows: LogRow[]; note: string }) {
       </div>
 
       <EvidenceDocumentShell
-        title="방문·처리 기록 대장"
-        subtitle={`${rows.length}건 중 ${filtered.length}건 표시 / 기관 제출 사본`}
-        stamp="기관확인"
+        title={logTitle}
+        subtitle={`${rows.length}건 중 ${filtered.length}건 표시 / ${isCallLog ? '통신사' : '기관'} 제출 사본`}
+        stamp={isCallLog ? '통신확인' : '기관확인'}
         variant="ledger"
         footer={note ? <span>{note}</span> : null}
       >
-        <div className="pc-doc-table pc-doc-table--ledger" role="table" aria-label="방문 및 처리 기록">
+        <div className="pc-doc-table pc-doc-table--ledger" role="table" aria-label={isCallLog ? '통화 기록' : '방문 및 처리 기록'}>
           <div className="pc-doc-table__head" role="row">
             <span>일자·시각</span>
             <span>분류</span>
-            <span>대상·내용</span>
-            <span>소요시간</span>
+            <span>{isCallLog ? '상대·번호' : '대상·내용'}</span>
+            <span>{isCallLog ? '통화시간' : '소요시간'}</span>
           </div>
           {filtered.map((r, i) => {
             const typeStyle = LOG_TYPE_STYLES[r.type] ?? LOG_TYPE_STYLES.out

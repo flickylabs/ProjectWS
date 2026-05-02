@@ -27,6 +27,7 @@ import { cleanOutputLabel, cleanOutputSummary } from '../../../utils/combination
 import { pp이가 } from '../../../engine/koreanPostposition'
 import ArchetypeTag from '../tags/ArchetypeTag'
 import { ACTION_TARGETS, ActionEm, Em } from '../tags/hotbarHighlight'
+import { afterDisputeRibbonExpansion, requestDisputeRibbonExpansion } from '../layout/disputeRibbonEvents'
 
 const LIE_STATES: LieState[] = ['S0', 'S1', 'S2', 'S3', 'S4', 'S5']
 const COMBINATION_SUCCESS_SOURCE_SELECTOR = '[data-resonance-target="combination-success"]'
@@ -1471,6 +1472,7 @@ function playCombinationResultResonance(store: GameStoreSnapshot, ctx: Combinati
   if (ctx.resultType === 'dispute' && ctx.disputeId) {
     store.setLastFocusedDisputeId(ctx.disputeId)
     store.setRecentlyEmergedDispute(ctx.disputeId)
+    requestDisputeRibbonExpansion(ctx.disputeId)
     window.setTimeout(() => {
       const latest = useGameStore.getState()
       if (latest.recentlyEmergedDisputeId === ctx.disputeId) {
@@ -1479,30 +1481,40 @@ function playCombinationResultResonance(store: GameStoreSnapshot, ctx: Combinati
     }, 3600)
   }
 
-  if (destination) {
-    store.enqueueAura({ targetSelector: destination.selector, style: destination.auraStyle })
-    store.enqueueResonance({
-      fromSelector: COMBINATION_SUCCESS_SOURCE_SELECTOR,
-      toSelector: destination.selector,
-      reason: 'combination_result',
-      targetKey: destination.targetKey,
-      style: destination.resonanceStyle,
-    })
+  const enqueueResultVfx = () => {
+    const latest = useGameStore.getState()
+
+    if (destination) {
+      latest.enqueueAura({ targetSelector: destination.selector, style: destination.auraStyle })
+      latest.enqueueResonance({
+        fromSelector: COMBINATION_SUCCESS_SOURCE_SELECTOR,
+        toSelector: destination.selector,
+        reason: 'combination_result',
+        targetKey: destination.targetKey,
+        style: destination.resonanceStyle,
+      })
+    }
+
+    const memoryTarget = getCombinationMemoryTarget(ctx.resultType)
+    if (memoryTarget && memoryTarget.selector !== destination?.selector) {
+      latest.enqueueAura({ targetSelector: memoryTarget.selector, style: memoryTarget.auraStyle })
+      if (memoryTarget.selector === JUDGE_NOTEBOOK_SELECTOR) {
+        latest.enqueueAura({ targetSelector: JUDGE_OBSERVATION_SELECTOR, style: 'electric' })
+      }
+      latest.enqueueResonance({
+        fromSelector: COMBINATION_SUCCESS_SOURCE_SELECTOR,
+        toSelector: memoryTarget.selector,
+        reason: 'combination_result',
+        targetKey: memoryTarget.targetKey,
+        style: memoryTarget.resonanceStyle,
+      })
+    }
   }
 
-  const memoryTarget = getCombinationMemoryTarget(ctx.resultType)
-  if (memoryTarget && memoryTarget.selector !== destination?.selector) {
-    store.enqueueAura({ targetSelector: memoryTarget.selector, style: memoryTarget.auraStyle })
-    if (memoryTarget.selector === JUDGE_NOTEBOOK_SELECTOR) {
-      store.enqueueAura({ targetSelector: JUDGE_OBSERVATION_SELECTOR, style: 'electric' })
-    }
-    store.enqueueResonance({
-      fromSelector: COMBINATION_SUCCESS_SOURCE_SELECTOR,
-      toSelector: memoryTarget.selector,
-      reason: 'combination_result',
-      targetKey: memoryTarget.targetKey,
-      style: memoryTarget.resonanceStyle,
-    })
+  if (ctx.resultType === 'dispute' && ctx.disputeId) {
+    afterDisputeRibbonExpansion(enqueueResultVfx)
+  } else {
+    enqueueResultVfx()
   }
 }
 

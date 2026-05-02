@@ -10,6 +10,7 @@ const CATEGORY_ICON: Record<JudgeNotebookCategory, string> = {
   confession: 'i-key',
   critical_contradiction: 'i-bolt',
   key_statement: 'i-flame',
+  dispute_probe: 'i-eye',
   dispute_emergence: 'i-bolt',
 }
 
@@ -17,6 +18,7 @@ const CATEGORY_LABEL: Record<JudgeNotebookCategory, string> = {
   confession: '자백',
   critical_contradiction: '결정적 모순',
   key_statement: '핵심 발화',
+  dispute_probe: '쟁점 파악',
   dispute_emergence: '쟁점 발현',
 }
 
@@ -24,6 +26,7 @@ const CATEGORY_TONE: Record<JudgeNotebookCategory, 'gold' | 'red' | 'blue'> = {
   confession: 'gold',
   critical_contradiction: 'red',
   key_statement: 'blue',
+  dispute_probe: 'gold',
   dispute_emergence: 'gold',
 }
 
@@ -32,6 +35,7 @@ const CATEGORY_TO_OBS: Record<JudgeNotebookCategory, string> = {
   confession: 'event',
   critical_contradiction: 'contradiction',
   key_statement: 'state',
+  dispute_probe: 'event',
   dispute_emergence: 'event',
 }
 

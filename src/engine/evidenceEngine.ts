@@ -46,6 +46,17 @@ export function createInitialEvidenceStates(
 
 const LIE_STATE_RANK: Record<string, number> = { S0: 0, S1: 1, S2: 2, S3: 3, S4: 4, S5: 5 }
 
+function getUnlockRelevantDisputeIds(candidate: EvidenceNode, evidence: EvidenceNode[]): string[] {
+  const ids = new Set(candidate.proves)
+  for (const reqId of candidate.requires) {
+    const prerequisite = evidence.find((item) => item.id === reqId)
+    for (const disputeId of prerequisite?.proves ?? []) {
+      ids.add(disputeId)
+    }
+  }
+  return Array.from(ids)
+}
+
 /**
  * 잠금 해제 체크 — 원본을 mutate하지 않고 새 객체를 반환
  * @param lieStates - dispute별 최대 lieState 맵 (양 파티 통합). 없으면 lieState 조건 무시.
@@ -70,11 +81,12 @@ export function checkUnlocks(
     })
     if (!allRequirementsMet) continue
 
-    // lieState 조건: proves[]에 연결된 쟁점 중 최대 state가 필요 상태 이상이면 해금
+    // lieState 조건: 해당 증거와 선행 증거가 연결된 쟁점 중 최대 state가 필요 상태 이상이면 해금
     if (e.requiredLieState && lieStates) {
       const reqRank = LIE_STATE_RANK[e.requiredLieState] ?? 0
-      const relevantIds = e.proves.length > 0 ? e.proves : Object.keys(lieStates)
-      const relevantRanks = relevantIds.map(id => LIE_STATE_RANK[lieStates[id] as string] ?? 0)
+      const relevantIds = getUnlockRelevantDisputeIds(e, evidence)
+      const targetIds = relevantIds.length > 0 ? relevantIds : Object.keys(lieStates)
+      const relevantRanks = targetIds.map(id => LIE_STATE_RANK[lieStates[id] as string] ?? 0)
       const maxRelevantRank = relevantRanks.length > 0 ? Math.max(...relevantRanks) : 0
       if (maxRelevantRank < reqRank) continue
     }
