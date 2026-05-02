@@ -336,7 +336,7 @@ export default function DiscoveryFeedbackWatcher() {
     const linkedDispute = pendingSlip.linkedDisputeId
       ? caseData.disputes.find((d) => d.id === pendingSlip.linkedDisputeId)
       : null
-    const isCriticalLeakSlip = pendingSlip.trigger === 'leak_critical' || pendingSlip.forceConfessionOnReflect
+    const isCriticalLeakSlip = false
 
     const meta: string[] = []
     if (sourceDispute) meta.push(`관련 쟁점: ${sourceDispute.name}`)

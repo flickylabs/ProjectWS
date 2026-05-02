@@ -57,6 +57,8 @@ const EMPTY_METRICS: ProcessMetrics = {
   collapseViaTrustOrEmpathy: 0,
 }
 
+const ENABLE_AUTOMATIC_CRITICAL_LEAK = false
+
 function ensureQuestionMeterState(meter?: Partial<QuestionMeterState>): QuestionMeterState {
   return {
     contradictionTokens: meter?.contradictionTokens ?? 0,
@@ -597,7 +599,7 @@ export const useGameStore: import('zustand').UseBoundStore<import('zustand').Sto
         }
       }
 
-      if (questionType === 'motive_search' && previousLeakMeter < 100 && updatedMeter.leakMeter >= 100) {
+      if (ENABLE_AUTOMATIC_CRITICAL_LEAK && questionType === 'motive_search' && previousLeakMeter < 100 && updatedMeter.leakMeter >= 100) {
         const partyData = party === 'a' ? state.caseData?.duo.partyA : state.caseData?.duo.partyB
         const dispute = state.caseData?.disputes.find((d) => d.id === disputeId)
         const partyName = partyData?.name ?? '당사자'

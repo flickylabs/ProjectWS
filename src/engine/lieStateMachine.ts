@@ -3,11 +3,16 @@ import type { LieState, LieStateEntry, AgentState } from '../types'
 import type { LieConfig } from '../types'
 import { TRUST_THRESHOLDS } from '../utils/constants'
 
-interface TransitionResult {
+export interface TransitionResult {
   transitioned: boolean
   from: LieState
   to: LieState
   trigger: string
+}
+
+export interface LieTransitionContext {
+  allowS5?: boolean
+  breakthroughRoute?: 'emotion' | 'trust' | 'explicit'
 }
 
 export function attemptLieTransition(
@@ -15,6 +20,7 @@ export function attemptLieTransition(
   config: LieConfig,
   trigger: string,
   agentState: AgentState,
+  context: LieTransitionContext = {},
 ): TransitionResult {
   const currentState = entry.currentState
   const noTransition: TransitionResult = {
@@ -33,12 +39,15 @@ export function attemptLieTransition(
     agentState.trustState.trustTowardJudge >= TRUST_THRESHOLDS.voluntaryConfession &&
     (trigger.includes('empathy') || trigger.includes('trust') || trigger.includes('confidential'))
   ) {
-    return { transitioned: true, from: currentState, to: 'S5', trigger: 'voluntary_confession' }
+    return gateS5Transition(
+      { transitioned: true, from: currentState, to: 'S5', trigger: 'voluntary_confession' },
+      context,
+    )
   }
 
   // 동기별 특수 전이
   const motiveSkip = getMotiveSkipTransition(entry, trigger, agentState)
-  if (motiveSkip) return motiveSkip
+  if (motiveSkip) return gateS5Transition(motiveSkip, context)
 
   // config의 transitions에서 매칭
   const matchedTransition = config.transitions.find(
@@ -46,19 +55,19 @@ export function attemptLieTransition(
   )
 
   if (matchedTransition) {
-    return {
+    return gateS5Transition({
       transitioned: true,
       from: currentState,
       to: matchedTransition.to as LieState,
       trigger,
-    }
+    }, context)
   }
 
   // 매칭 안 되면: 하드 증거는 최소 한 단계 진행 보장
   if (trigger.includes('hard_evidence') && currentState !== 'S5') {
     const nextState = getNextState(currentState)
     if (nextState) {
-      return { transitioned: true, from: currentState, to: nextState, trigger }
+      return gateS5Transition({ transitioned: true, from: currentState, to: nextState, trigger }, context)
     }
   }
 
@@ -68,12 +77,15 @@ export function attemptLieTransition(
   if (QUESTION_TRIGGERS.includes(trigger) && currentState !== 'S5') {
     const sameFromTransition = config.transitions.find(t => t.from === currentState)
     if (sameFromTransition) {
-      return { transitioned: true, from: currentState, to: sameFromTransition.to as LieState, trigger }
+      return gateS5Transition(
+        { transitioned: true, from: currentState, to: sameFromTransition.to as LieState, trigger },
+        context,
+      )
     }
     // 그래도 없으면 단순 다음 단계
     const nextState = getNextState(currentState)
     if (nextState) {
-      return { transitioned: true, from: currentState, to: nextState, trigger }
+      return gateS5Transition({ transitioned: true, from: currentState, to: nextState, trigger }, context)
     }
   }
 
@@ -81,11 +93,31 @@ export function attemptLieTransition(
   if (trigger === 'witness_testimony' && currentState <= 'S2') {
     const nextState = getNextState(currentState)
     if (nextState) {
-      return { transitioned: true, from: currentState, to: nextState, trigger }
+      return gateS5Transition({ transitioned: true, from: currentState, to: nextState, trigger }, context)
     }
   }
 
   return noTransition
+}
+
+function gateS5Transition(result: TransitionResult, context: LieTransitionContext): TransitionResult {
+  if (!result.transitioned || result.to !== 'S5' || context.allowS5) return result
+
+  if (result.from === 'S4') {
+    return {
+      transitioned: false,
+      from: result.from,
+      to: result.from,
+      trigger: `${result.trigger}:truth_gate_held`,
+    }
+  }
+
+  return {
+    transitioned: true,
+    from: result.from,
+    to: 'S4',
+    trigger: `${result.trigger}:truth_gate_held`,
+  }
 }
 
 function getMotiveSkipTransition(

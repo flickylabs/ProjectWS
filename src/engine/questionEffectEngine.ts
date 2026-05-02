@@ -64,7 +64,6 @@ export interface QuestionMeterState {
 /** 모순토큰: 사실추궁 1회 성공 시 획득량 */
 const CONTRADICTION_BASE = 1
 /** 모순토큰: 연속 사실추궁 보너스 (2회째부터) */
-const CONTRADICTION_CONSECUTIVE_BONUS = 1
 /** 모순토큰: 최대 보유량 */
 const CONTRADICTION_MAX = 5
 /** 모순토큰 → lieState 전이 보너스 변환율 */
@@ -174,6 +173,18 @@ export function resolveQuestionEffect(
     }
   }
 
+  if (!useExternal && !options.bypassLegacyDiminish && isSameType && meterState.consecutiveSameType >= 2) {
+    return {
+      result: {
+        meter: 'none',
+        delta: 0,
+        effects: [],
+        feedback: '같은 접근이 반복되어 더는 진전이 없습니다. 증거, 증인, 다른 질문으로 각도를 바꾸세요.',
+      },
+      updatedMeter: { ...meterState, lastQuestionType: questionType, consecutiveSameType: consecutive },
+    }
+  }
+
   let result: QuestionEffectResult
 
   switch (questionType) {
@@ -237,11 +248,7 @@ function resolveFactPursuit(
   }
 
   // 토큰 획득량 계산
-  const isConsecutive = meter.lastQuestionType === 'fact_pursuit'
   let tokenGain = CONTRADICTION_BASE
-  if (isConsecutive && meter.consecutiveSameType >= 1) {
-    tokenGain += CONTRADICTION_CONSECUTIVE_BONUS
-  }
   tokenGain = Math.round(tokenGain * diminish)
 
   const prevDisputeTokens = meter.contradictionTokensByDispute[disputeId] ?? 0

@@ -58,6 +58,7 @@ import { selectHint, markHintShown, ARCHETYPE_META } from '../engine/archetypeHi
 import { getInterrogationMicroVfx } from '../engine/vfxHierarchyEngine'
 import { hasContradictionComparison } from '../utils/contradiction'
 import { getAvailableSlots } from '../engine/witnessTestimonyResolver'
+import { evaluateTruthBreakthroughGate } from '../engine/truthBreakthroughEngine'
 
 /** LLM 모드 — AI 필수: 항상 true */
 const useLLMMode = true
@@ -1213,9 +1214,21 @@ async function handleQuestion(action: Extract<PlayerAction, { type: 'question' }
       const trust = freshAgent.trustState.trustTowardJudge
       const empathyAtCurrentState = freshAgent.empathyAtCurrentState
       // 신뢰 70+ 이면 자백 유도 성공 (S5로)
-      if (trust >= 70 && empathyAtCurrentState >= 2) {
+      const gate = evaluateTruthBreakthroughGate({
+        caseData: useGameStore.getState().caseData,
+        evidenceStates: useGameStore.getState().evidenceStates,
+        witnessSessions: useGameStore.getState().witnessSessions,
+        party: action.target,
+        disputeId: action.disputeId,
+        agent: freshAgent,
+        trigger: 'empathy_truth_breakthrough',
+      })
+      if (trust >= 100 && empathyAtCurrentState >= 2 && gate.canBreakthrough) {
         snapshotLieState(action.target, action.disputeId)
-        state.forceSetLieState(action.target, action.disputeId, 'S5')
+        state.forceSetLieState(action.target, action.disputeId, 'S5', {
+          allowS5: true,
+          breakthroughRoute: gate.route === 'blocked' ? 'trust' : gate.route,
+        })
         notifyLieTransition(action.target, action.disputeId)
         didTransition = true
         state.trackMetric('lieTransitions')
@@ -3020,7 +3033,10 @@ function confirmWitnessTruthProbe(
 
   if (currentState !== 'S5') {
     snapshotLieState(target, disputeId)
-    state.forceSetLieState(target, disputeId, 'S5')
+    state.forceSetLieState(target, disputeId, 'S5', {
+      allowS5: true,
+      breakthroughRoute: 'explicit',
+    })
     notifyLieTransition(target, disputeId)
   } else {
     dispatchS5ConfessionAnswer(target, disputeId)

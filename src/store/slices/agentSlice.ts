@@ -2,7 +2,9 @@ import type { StateCreator } from 'zustand'
 import type { AgentState, LieState, EmotionalPhase, CaseData, ProcessMetrics } from '../../types'
 import type { LieConfig } from '../../types'
 import type { Archetype } from '../../types'
-import { initializeLieStates, attemptLieTransition } from '../../engine/lieStateMachine'
+import { initializeLieStates, attemptLieTransition, type LieTransitionContext } from '../../engine/lieStateMachine'
+import { evaluateTruthBreakthroughGate } from '../../engine/truthBreakthroughEngine'
+import type { EvidenceRuntimeState } from '../../engine/evidenceEngine'
 import { createInitialEmotionalState, updateEmotion } from '../../engine/emotionEngine'
 import { createInitialTrustState, updateTrust as updateTrustState } from '../../engine/trustEngine'
 import { applyBridge } from '../../engine/bridgeEngine'
@@ -25,8 +27,8 @@ export interface AgentSlice {
   ) => void
   /** Phase 3 진입 시 브리지 적용 — Phase 1~2에서 인정된 사실 반영 */
   applyPhase3Bridge: (caseId: string) => void
-  transitionLie: (party: 'a' | 'b', disputeId: string, trigger: string) => boolean
-  forceSetLieState: (party: 'a' | 'b', disputeId: string, state: LieState) => void
+  transitionLie: (party: 'a' | 'b', disputeId: string, trigger: string, context?: LieTransitionContext) => boolean
+  forceSetLieState: (party: 'a' | 'b', disputeId: string, state: LieState, context?: LieTransitionContext) => void
   incrementEmpathyAtCurrentState: (party: 'a' | 'b') => void
   changeEmotion: (party: 'a' | 'b', delta: number) => void
   changeTrust: (party: 'a' | 'b', field: 'trustTowardJudge' | 'fearOfExposure' | 'retaliationWorry', delta: number) => void
@@ -46,6 +48,8 @@ type AgentSliceRootState = AgentSlice & {
   agentA: AgentState
   agentB: AgentState
   caseData: CaseData | null
+  evidenceStates?: Record<string, EvidenceRuntimeState>
+  witnessSessions?: Record<string, { heardSlots: string[]; lastChoice: string | null; summonCount: number }>
   processMetrics: ProcessMetrics
   trackMetric: (key: keyof ProcessMetrics, delta?: number) => void
 }
@@ -108,7 +112,7 @@ export const createAgentSlice: StateCreator<AgentSlice, [], [], AgentSlice> = (s
     })
   },
 
-  transitionLie: (party, disputeId, trigger) => {
+  transitionLie: (party, disputeId, trigger, context = {}) => {
     const state = get() as AgentSliceRootState
     const agent = party === 'a' ? state.agentA : state.agentB
     const configs = party === 'a' ? state.lieConfigsA : state.lieConfigsB
@@ -119,7 +123,21 @@ export const createAgentSlice: StateCreator<AgentSlice, [], [], AgentSlice> = (s
     const config = configs.find((c) => c.disputeId === disputeId)
     if (!config) return false
 
-    const result = attemptLieTransition(entry, config, trigger, agent)
+    const gate = evaluateTruthBreakthroughGate({
+      caseData: state.caseData,
+      evidenceStates: state.evidenceStates,
+      witnessSessions: state.witnessSessions,
+      party,
+      disputeId,
+      agent,
+      trigger,
+      bypass: context.allowS5,
+    })
+    const result = attemptLieTransition(entry, config, trigger, agent, {
+      ...context,
+      allowS5: context.allowS5 ?? gate.canBreakthrough,
+      breakthroughRoute: context.breakthroughRoute ?? (gate.route === 'blocked' ? undefined : gate.route),
+    })
     if (result.transitioned) {
       const agentKey = party === 'a' ? 'agentA' : 'agentB'
       const nextAgent: AgentState = {
@@ -142,18 +160,34 @@ export const createAgentSlice: StateCreator<AgentSlice, [], [], AgentSlice> = (s
     return false
   },
 
-  forceSetLieState: (party, disputeId, newState) => {
+  forceSetLieState: (party, disputeId, newState, context = {}) => {
     const state = get() as AgentSliceRootState
     const agentKey = party === 'a' ? 'agentA' : 'agentB'
     const agent = state[agentKey]
     const entry = agent.lieStateMap[disputeId]
     if (!entry) return
-    const didTransition = entry.currentState !== newState
+    let targetState = newState
+    if (newState === 'S5' && !context.allowS5) {
+      const gate = evaluateTruthBreakthroughGate({
+        caseData: state.caseData,
+        evidenceStates: state.evidenceStates,
+        witnessSessions: state.witnessSessions,
+        party,
+        disputeId,
+        agent,
+        trigger: 'force_set_lie_state',
+        bypass: context.allowS5,
+      })
+      if (!gate.canBreakthrough) {
+        targetState = entry.currentState === 'S5' ? 'S5' : 'S4'
+      }
+    }
+    const didTransition = entry.currentState !== targetState
     const nextAgent: AgentState = {
       ...agent,
       lieStateMap: {
         ...agent.lieStateMap,
-        [disputeId]: { ...entry, currentState: newState },
+        [disputeId]: { ...entry, currentState: targetState },
       },
       empathyAtCurrentState: didTransition ? 0 : agent.empathyAtCurrentState,
     }
