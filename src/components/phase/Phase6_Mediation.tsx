@@ -197,60 +197,62 @@ export default function Phase6_Mediation() {
 
   return (
     <div className="pc-mediation">
-      <div className="pc-mediation__header">
-        <PCSvgIcon id="i-scale" size={18} />
-        <span className="pc-mediation__title">중재</span>
-        <span className="pc-mediation__subtitle">판결 방식을 선택하세요</span>
-      </div>
+      <section className="pc-mediation__card" role="dialog" aria-modal="true" aria-labelledby="pc-mediation-title">
+        <div className="pc-mediation__header">
+          <PCSvgIcon id="i-scale" size={18} />
+          <span className="pc-mediation__title" id="pc-mediation-title">중재</span>
+          <span className="pc-mediation__subtitle">판결 방식을 선택하세요</span>
+        </div>
 
-      {!selectedPath ? (
-        <div className="pc-mediation__options">
-          {(Object.entries(PATH_LABELS) as Array<[MediationPath, typeof PATH_LABELS[MediationPath]]>).map(([id, item]) => (
-            <button
-              className="pc-mediation__option"
-              key={id}
-              onClick={() => handleSelect(id)}
-              type="button"
-            >
-              <span className="pc-mediation__option-icon">
-                <PCSvgIcon id={item.iconId} size={20} />
-              </span>
-              <span className="pc-mediation__option-body">
-                <span className="pc-mediation__option-label">{item.label}</span>
-                <span className="pc-mediation__option-desc">{item.desc}</span>
-              </span>
+        {!selectedPath ? (
+          <div className="pc-mediation__options">
+            {(Object.entries(PATH_LABELS) as Array<[MediationPath, typeof PATH_LABELS[MediationPath]]>).map(([id, item]) => (
+              <button
+                className="pc-mediation__option"
+                key={id}
+                onClick={() => handleSelect(id)}
+                type="button"
+              >
+                <span className="pc-mediation__option-icon">
+                  <PCSvgIcon id={item.iconId} size={20} />
+                </span>
+                <span className="pc-mediation__option-body">
+                  <span className="pc-mediation__option-label">{item.label}</span>
+                  <span className="pc-mediation__option-desc">{item.desc}</span>
+                </span>
+              </button>
+            ))}
+          </div>
+        ) : null}
+
+        {selectedInfo ? (
+          <div className="pc-mediation__selected" role="status">
+            <span className="pc-mediation__selected-kicker">선택한 중재 방식</span>
+            <span className="pc-mediation__selected-name">
+              <PCSvgIcon id={selectedInfo.iconId} size={18} />
+              <span>{selectedInfo.label}</span>
+            </span>
+            <span className="pc-mediation__selected-desc">{selectedInfo.desc}</span>
+          </div>
+        ) : null}
+
+        {loading ? (
+          <div className="pc-mediation__loading">
+            <div className="pc-mediation__spinner" />
+            <span>양측 반응을 확인하고 있습니다...</span>
+          </div>
+        ) : null}
+
+        {selectedPath && selectedPath !== 'immediate' && !loading ? (
+          <div className="pc-mediation__advance">
+            <p className="pc-mediation__advance-copy">중재 발언이 기록되었습니다. 선택한 방식은 판결 점수와 후일담에 반영됩니다.</p>
+            <button className="pc-mediation__advance-btn" onClick={() => advancePhase(Phase.Verdict)} type="button">
+              <PCSvgIcon id="i-gavel" size={18} />
+              <span>판결로 진행</span>
             </button>
-          ))}
-        </div>
-      ) : null}
-
-      {selectedInfo ? (
-        <div className="pc-mediation__selected" role="status">
-          <span className="pc-mediation__selected-kicker">선택한 중재 방식</span>
-          <span className="pc-mediation__selected-name">
-            <PCSvgIcon id={selectedInfo.iconId} size={18} />
-            <span>{selectedInfo.label}</span>
-          </span>
-          <span className="pc-mediation__selected-desc">{selectedInfo.desc}</span>
-        </div>
-      ) : null}
-
-      {loading ? (
-        <div className="pc-mediation__loading">
-          <div className="pc-mediation__spinner" />
-          <span>양측 반응을 확인하고 있습니다...</span>
-        </div>
-      ) : null}
-
-      {selectedPath && selectedPath !== 'immediate' && !loading ? (
-        <div className="pc-mediation__advance">
-          <p className="pc-mediation__advance-copy">중재 발언이 기록되었습니다. 선택한 방식은 판결 점수와 후일담에 반영됩니다.</p>
-          <button className="pc-mediation__advance-btn" onClick={() => advancePhase(Phase.Verdict)} type="button">
-            <PCSvgIcon id="i-gavel" size={18} />
-            <span>판결로 진행</span>
-          </button>
-        </div>
-      ) : null}
+          </div>
+        ) : null}
+      </section>
     </div>
   )
 }

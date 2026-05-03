@@ -49,6 +49,15 @@ const HISTORY_RESULT_TABS: { id: HistoryResultTab; label: string }[] = [
   { id: 'bonus', label: '05 보너스' },
 ]
 
+function formatHallOfFameCaseLabel(caseId: string, cases: CaseData[]): string {
+  const normalized = caseId.replace(/^case-/, '')
+  const caseData = cases.find((item) => item.caseId.replace(/^case-/, '') === normalized)
+  const number = normalized.match(/-(\d+)$/)?.[1] ?? ''
+  const relationship = getRelationshipLabel(caseData?.meta?.relationshipType ?? normalized.replace(/-\d+$/, ''))
+  const title = caseData?.meta?.title ?? normalized
+  return number ? `${relationship}-${number} / ${title}` : `${relationship} / ${title}`
+}
+
 export default function PCHomeScreen() {
   const { preset: screenPreset, setPreset: setScreenPreset } = useScreenPreset()
   const [showIntro, setShowIntro] = useState(() => !hasSeenPcIntro())
@@ -454,7 +463,7 @@ export default function PCHomeScreen() {
           <div className="pc-filter-pills-v2">{SORTS.map((sort) => <button className={`pc-filter-pill-v2${leaderboardSort === sort.id ? ' is-active' : ''}`} key={sort.id} onClick={() => setLeaderboardSort(sort.id)} type="button">{sort.label}</button>)}</div>
           <div className="pc-leaderboard-grid">
             <Card eyebrow="SCOREBOARD" title="시즌 랭킹">{leaderboard.length === 0 ? <Empty title="아직 시즌 기록이 없습니다." description="플레이 기록이 쌓이면 이곳에 자동 반영됩니다." /> : <div className="pc-ranking-list-v2">{leaderboard.slice(0, 10).map((entry, index) => <div className="pc-ranking-row-v2" key={getHistoryKey(entry)}><span className="pc-ranking-row-v2__rank">{index + 1}</span><div className="pc-ranking-row-v2__copy"><strong>{entry.nameA} vs {entry.nameB}</strong><span>{getRelationshipLabel(entry.relationshipType)}</span></div><strong className="pc-ranking-row-v2__score">{sortMetric(entry, leaderboardSort)}</strong></div>)}</div>}</Card>
-            <Card eyebrow="HALL OF FAME" title="명예의 전당">{hallOfFame.length === 0 ? <Empty title="아직 전당 기록이 없습니다." description="최고 기록이 쌓이면 시즌 명예의 전당이 채워집니다." /> : <div className="pc-ranking-list-v2">{hallOfFame.map((entry) => <div className="pc-ranking-row-v2" key={`${entry.seasonId}:${entry.rank}:${entry.caseId}`}><span className="pc-ranking-row-v2__rank">{entry.rank}</span><div className="pc-ranking-row-v2__copy"><strong>{entry.playerName}</strong><span>{entry.caseId.replace(/^case-/, '')}</span></div><strong className="pc-ranking-row-v2__score">{entry.score}점</strong></div>)}</div>}</Card>
+            <Card eyebrow="HALL OF FAME" title="명예의 전당">{hallOfFame.length === 0 ? <Empty title="아직 전당 기록이 없습니다." description="최고 기록이 쌓이면 시즌 명예의 전당이 채워집니다." /> : <div className="pc-ranking-list-v2">{hallOfFame.map((entry) => <div className="pc-ranking-row-v2" key={`${entry.seasonId}:${entry.rank}:${entry.caseId}`}><span className="pc-ranking-row-v2__rank">{entry.rank}</span><div className="pc-ranking-row-v2__copy"><strong>{entry.playerName}</strong><span>{formatHallOfFameCaseLabel(entry.caseId, allCases)}</span></div><strong className="pc-ranking-row-v2__score">{entry.score}점</strong></div>)}</div>}</Card>
           </div>
         </section>
       )}

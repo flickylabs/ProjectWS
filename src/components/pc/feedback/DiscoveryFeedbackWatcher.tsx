@@ -133,6 +133,7 @@ export default function DiscoveryFeedbackWatcher() {
   // 큐에 이미 넣은 pending id 추적 (중복 방지)
   const enqueuedRef = useRef<Set<string>>(new Set())
   const surfacedSlipRef = useRef<Set<string>>(new Set())
+  const surfacedEmergenceHookRef = useRef<Set<string>>(new Set())
 
   // 진실 공방
   useEffect(() => {
@@ -392,6 +393,18 @@ export default function DiscoveryFeedbackWatcher() {
               ? (hookSpeaker === 'a' ? s.agentA : s.agentB).lieStateMap[pendingEmergence.disputeId]?.currentState
               : undefined
             const hook = getEmergenceHook(hookCaseId, pendingEmergence.disputeId, speakerLieState)
+            const hookText = hook?.text ?? ''
+            const fallbackText = emergedDispute?.name
+              ? `…사실, ${emergedDispute.name} 건도 함께 봐주셔야 합니다.`
+              : '…사실, 그것만이 아니었습니다.'
+            const hookKey = `emergence-hook:${hookCaseId}:${pendingEmergence.disputeId}:${hookText || fallbackText}`
+            const alreadyLogged = s.dialogueLog.some((d) =>
+              d.text === (hookText || fallbackText)
+              && (d.relatedDisputes ?? []).includes(pendingEmergence.disputeId)
+            )
+            if (surfacedEmergenceHookRef.current.has(hookKey) || alreadyLogged) return
+            surfacedEmergenceHookRef.current.add(hookKey)
+
             if (hook) {
               s.addDialogue({
                 speaker: hook.speaker,
@@ -403,12 +416,9 @@ export default function DiscoveryFeedbackWatcher() {
               })
             } else {
               // 폴백 — 데이터 없는 경우 (Legacy 사건 등) generic 발화
-              const emergedName = emergedDispute?.name ?? ''
               s.addDialogue({
                 speaker: s.pcTargetParty,
-                text: emergedName
-                  ? `…사실, ${emergedName} 건도 함께 봐주셔야 합니다.`
-                  : '…사실, 그것만이 아니었습니다.',
+                text: fallbackText,
                 relatedDisputes: [pendingEmergence.disputeId],
                 turn: s.turnCount,
                 behaviorHint: '시선이 흔들리며 잠시 멈춘다.',

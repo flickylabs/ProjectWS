@@ -188,6 +188,7 @@ const INTENT_LABELS: Record<FreeInterrogationIntentId, string> = {
   pre_verdict_summary: '판결 전 정리',
   off_topic: '사건 밖 질문',
   public_info: '공개 정보',
+  gameplay_help: '진행 도움',
   leak_probe: '비공개 정보 차단',
   unmapped: '질문 분석',
 }

@@ -1408,9 +1408,9 @@ function ProfileGaugeSection() {
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: 8, justifyContent: 'center' }}>
-      <ProfileAxis label="탐구" axisState={driftState.inquiry} axisValue={currentAxes?.inquiry} />
-      <ProfileAxis label="판단" axisState={driftState.judgment} axisValue={currentAxes?.judgment} />
-      <ProfileAxis label="해결" axisState={driftState.resolution} axisValue={currentAxes?.resolution} />
+      <ProfileAxis label={AXIS_LABELS.inquiry.label} negativeLabel={AXIS_LABELS.inquiry.negative} positiveLabel={AXIS_LABELS.inquiry.positive} axisState={driftState.inquiry} axisValue={currentAxes?.inquiry} />
+      <ProfileAxis label={AXIS_LABELS.judgment.label} negativeLabel={AXIS_LABELS.judgment.negative} positiveLabel={AXIS_LABELS.judgment.positive} axisState={driftState.judgment} axisValue={currentAxes?.judgment} />
+      <ProfileAxis label={AXIS_LABELS.resolution.label} negativeLabel={AXIS_LABELS.resolution.negative} positiveLabel={AXIS_LABELS.resolution.positive} axisState={driftState.resolution} axisValue={currentAxes?.resolution} />
     </div>
   )
 }
@@ -1425,8 +1425,10 @@ function ProfileInline() {
   )
 }
 
-function ProfileAxis({ label, axisState, axisValue }: {
+function ProfileAxis({ label, negativeLabel, positiveLabel, axisState, axisValue }: {
   label: string
+  negativeLabel: string
+  positiveLabel: string
   axisState: AxisLevelState
   axisValue?: number
 }) {
@@ -1434,19 +1436,25 @@ function ProfileAxis({ label, axisState, axisValue }: {
   const levelPct = ((displayValue + 100) / 200) * 100
 
   return (
-    <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-      <span style={{ fontSize: 12, fontWeight: 700, color: '#8c8fa0', minWidth: 28 }}>{label}</span>
-      <div style={{ flex: 1, position: 'relative', height: 10, borderRadius: 5, background: 'rgba(255,255,255,0.06)' }}>
-        {displayValue < 0 && (
-          <div style={{ position: 'absolute', top: 0, left: `${levelPct}%`, width: `${50 - levelPct}%`, height: '100%', borderRadius: 5, background: 'var(--pc-blue, #5b8def)' }} />
-        )}
-        {displayValue > 0 && (
-          <div style={{ position: 'absolute', top: 0, left: '50%', width: `${levelPct - 50}%`, height: '100%', borderRadius: 5, background: 'var(--pc-gold, #d4a24e)' }} />
-        )}
-        {/* 중앙선 */}
-        <div style={{ position: 'absolute', top: -2, left: '50%', width: 1, height: 14, background: 'rgba(255,255,255,0.15)' }} />
-        {/* 현재 위치 마커 */}
-        <div style={{ position: 'absolute', top: -1, left: `${levelPct}%`, width: 12, height: 12, borderRadius: '50%', background: displayValue === 0 ? '#6a6e80' : displayValue < 0 ? 'var(--pc-blue)' : 'var(--pc-gold)', border: '2px solid rgba(12,12,20,0.8)', transform: 'translateX(-50%)' }} />
+    <div style={{ display: 'grid', gridTemplateColumns: '36px minmax(0, 1fr)', alignItems: 'center', gap: 10 }}>
+      <span style={{ fontSize: 12, fontWeight: 800, color: '#c6c0b3', minWidth: 28 }}>{label}</span>
+      <div style={{ minWidth: 0 }}>
+        <div style={{ position: 'relative', height: 10, borderRadius: 5, background: 'rgba(255,255,255,0.06)' }}>
+          {displayValue < 0 && (
+            <div style={{ position: 'absolute', top: 0, left: `${levelPct}%`, width: `${50 - levelPct}%`, height: '100%', borderRadius: 5, background: 'var(--pc-blue, #5b8def)' }} />
+          )}
+          {displayValue > 0 && (
+            <div style={{ position: 'absolute', top: 0, left: '50%', width: `${levelPct - 50}%`, height: '100%', borderRadius: 5, background: 'var(--pc-gold, #d4a24e)' }} />
+          )}
+          {/* 중앙선 */}
+          <div style={{ position: 'absolute', top: -2, left: '50%', width: 1, height: 14, background: 'rgba(255,255,255,0.15)' }} />
+          {/* 현재 위치 마커 */}
+          <div style={{ position: 'absolute', top: -1, left: `${levelPct}%`, width: 12, height: 12, borderRadius: '50%', background: displayValue === 0 ? '#6a6e80' : displayValue < 0 ? 'var(--pc-blue)' : 'var(--pc-gold)', border: '2px solid rgba(12,12,20,0.8)', transform: 'translateX(-50%)' }} />
+        </div>
+        <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: 4, fontSize: 11, fontWeight: 800, color: 'rgba(230,224,212,0.72)' }}>
+          <span>{negativeLabel}</span>
+          <span>{positiveLabel}</span>
+        </div>
       </div>
     </div>
   )

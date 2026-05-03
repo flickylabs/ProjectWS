@@ -41,11 +41,21 @@ function keyFromPath(path: string): string {
 
 const mediationIndex = new Map<string, MediationScriptBundle>()
 const mediationLoaders = new Map<string, () => Promise<MediationModule>>()
+const mediationLoaderPriority = new Map<string, number>()
 
 for (const [path, loader] of Object.entries(mediationMods)) {
   const key = keyFromPath(path)
   if (key) {
     mediationLoaders.set(key, loader)
+    const versioned = key.match(/^(.+)-v(\d+)-(\d+)$/)
+    if (versioned) {
+      const aliasKey = `${versioned[1]}-${versioned[3]}`
+      const priority = Number(versioned[2])
+      if ((mediationLoaderPriority.get(aliasKey) ?? -1) <= priority) {
+        mediationLoaders.set(aliasKey, loader)
+        mediationLoaderPriority.set(aliasKey, priority)
+      }
+    }
   }
 }
 

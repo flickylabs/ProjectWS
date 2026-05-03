@@ -211,8 +211,17 @@ function TitleDetailPanel({ titleDef, subs, totalLv, activeEffect, inventory, ti
           const subLv = subs[i]
           const cost = getSubLevelCost(subLv)
           const canUp = canEnhanceAxis(selectedTitle, i, titleLevels, inventory)
-          const dirVis = FRAGMENT_VISUALS[axis.directionFragment]
-          const neuVis = FRAGMENT_VISUALS[axis.neutralFragment]
+          const costItems = cost
+            ? [
+                { fragmentId: axis.directionFragment, amount: cost.direction },
+                { fragmentId: axis.neutralFragment, amount: cost.neutral },
+              ].reduce<Array<{ fragmentId: FragmentId; amount: number }>>((items, item) => {
+                const existing = items.find((costItem) => costItem.fragmentId === item.fragmentId)
+                if (existing) existing.amount += item.amount
+                else items.push({ ...item })
+                return items
+              }, [])
+            : []
 
           return (
             <div className="jp2__axis" key={axis.label}>
@@ -222,8 +231,16 @@ function TitleDetailPanel({ titleDef, subs, totalLv, activeEffect, inventory, ti
               </div>
               {cost ? (
                 <div className="jp2__axis-cost">
-                  <span>{dirVis?.name ?? axis.directionFragment} ×{cost.direction} <b className={inventory[axis.directionFragment] >= cost.direction ? 'ok' : 'no'}>({inventory[axis.directionFragment]})</b></span>
-                  <span>{neuVis?.name ?? axis.neutralFragment} ×{cost.neutral} <b className={inventory[axis.neutralFragment] >= cost.neutral ? 'ok' : 'no'}>({inventory[axis.neutralFragment]})</b></span>
+                  {costItems.map((item) => {
+                    const visual = FRAGMENT_VISUALS[item.fragmentId]
+                    const owned = inventory[item.fragmentId]
+                    return (
+                      <span key={item.fragmentId}>
+                        {visual?.name ?? item.fragmentId} ×{item.amount}{' '}
+                        <b className={owned >= item.amount ? 'ok' : 'no'}>({owned})</b>
+                      </span>
+                    )
+                  })}
                 </div>
               ) : (
                 <div className="jp2__axis-cost"><span className="jp2__axis-max">최대 레벨</span></div>
