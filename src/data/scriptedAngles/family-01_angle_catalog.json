@@ -5,13 +5,15 @@
     {
       "disputeId": "d-1",
       "angleId": "general",
-      "label": "작성 절차 포괄",
-      "description": "유서 작성과 판단 능력 쟁점 전체를 넓게 확인한다.",
+      "label": "유서 작성 경위",
+      "description": "어머니가 유서 내용을 이해하고 뜻을 표시했는지 작성 과정을 확인한다.",
       "keywords": [
         "유서",
         "판단",
         "작성",
-        "절차"
+        "절차",
+        "어머니 의사",
+        "이해"
       ],
       "unlockCondition": {
         "defaultUnlocked": true,
@@ -19,7 +21,7 @@
           "e-1"
         ],
         "witnessIds": [],
-        "notes": "general은 기본 해금. 그 외 angle은 지정 증거/증인 또는 선행 쟁점 진행 후 해금하는 것을 권장한다."
+        "notes": "기본 해금. 세부 각도는 지정 증거/증인 또는 선행 진행 후 해금하는 것을 권장한다."
       },
       "truthBoundary": {
         "beforeS5MustNotSay": [
@@ -196,13 +198,15 @@
     {
       "disputeId": "d-2",
       "angleId": "general",
-      "label": "유서 변경 포괄",
-      "description": "60:40 유서가 어떻게 최종본이 되었는지 넓게 확인한다.",
+      "label": "최종 유서 경위",
+      "description": "60:40 유서가 어떤 경로로 최종본이 되었는지 확인한다.",
       "keywords": [
-        "유서",
-        "변경",
-        "비율",
-        "최종본"
+        "60:40",
+        "유서 변경",
+        "최종본",
+        "원본",
+        "공증",
+        "비율"
       ],
       "unlockCondition": {
         "defaultUnlocked": false,
@@ -211,7 +215,7 @@
           "e-4"
         ],
         "witnessIds": [],
-        "notes": "general은 기본 해금. 그 외 angle은 지정 증거/증인 또는 선행 쟁점 진행 후 해금하는 것을 권장한다."
+        "notes": "기본 해금. 세부 각도는 지정 증거/증인 또는 선행 진행 후 해금하는 것을 권장한다."
       },
       "truthBoundary": {
         "beforeS5MustNotSay": [
@@ -357,13 +361,15 @@
     {
       "disputeId": "d-3",
       "angleId": "general",
-      "label": "오래된 자금 흐름 포괄",
-      "description": "어머니 통장과 형 쪽 자금 흐름을 넓게 확인한다.",
+      "label": "어머니 통장 자금",
+      "description": "어머니 통장으로 보인 돈과 형제 사이의 자금 이동을 확인한다.",
       "keywords": [
-        "계좌",
-        "흐름",
+        "어머니 통장",
         "생활비",
-        "지원"
+        "송금",
+        "공장",
+        "자금 이동",
+        "형제"
       ],
       "unlockCondition": {
         "defaultUnlocked": false,
@@ -371,7 +377,7 @@
           "e-6"
         ],
         "witnessIds": [],
-        "notes": "general은 기본 해금. 그 외 angle은 지정 증거/증인 또는 선행 쟁점 진행 후 해금하는 것을 권장한다."
+        "notes": "기본 해금. 세부 각도는 지정 증거/증인 또는 선행 진행 후 해금하는 것을 권장한다."
       },
       "truthBoundary": {
         "beforeS5MustNotSay": [
@@ -514,13 +520,14 @@
     {
       "disputeId": "d-4",
       "angleId": "general",
-      "label": "오래된 가족 사정 포괄",
-      "description": "어머니 일기장에 남은 민감한 가족 사정과 침묵을 넓게 확인한다.",
+      "label": "일기장 속 가족사",
+      "description": "어머니 일기장에 남은 민감한 가족 사정과 침묵을 확인한다.",
       "keywords": [
         "일기장",
-        "가족 사정",
+        "가족사",
+        "비밀",
         "침묵",
-        "기록"
+        "어머니 기록"
       ],
       "unlockCondition": {
         "defaultUnlocked": false,
@@ -528,7 +535,7 @@
           "e-7"
         ],
         "witnessIds": [],
-        "notes": "general은 기본 해금. 그 외 angle은 지정 증거/증인 또는 선행 쟁점 진행 후 해금하는 것을 권장한다."
+        "notes": "기본 해금. 세부 각도는 지정 증거/증인 또는 선행 진행 후 해금하는 것을 권장한다."
       },
       "truthBoundary": {
         "beforeS5MustNotSay": [
@@ -678,13 +685,15 @@
     {
       "disputeId": "d-5",
       "angleId": "general",
-      "label": "최종 책임 구조 포괄",
-      "description": "두 형제가 어머니 뜻을 각자 어떻게 해석하고 왜곡했는지 넓게 확인한다.",
+      "label": "형제 책임 구조",
+      "description": "두 형제가 어머니 뜻을 각자 어떻게 해석하고 왜곡했는지 확인한다.",
       "keywords": [
+        "형제",
         "책임",
         "어머니 뜻",
-        "두 형제",
-        "왜곡"
+        "해석",
+        "왜곡",
+        "분리"
       ],
       "unlockCondition": {
         "defaultUnlocked": false,
@@ -695,7 +704,7 @@
         "witnessIds": [
           "w-3"
         ],
-        "notes": "general은 기본 해금. 그 외 angle은 지정 증거/증인 또는 선행 쟁점 진행 후 해금하는 것을 권장한다."
+        "notes": "기본 해금. 세부 각도는 지정 증거/증인 또는 선행 진행 후 해금하는 것을 권장한다."
       },
       "truthBoundary": {
         "beforeS5MustNotSay": [

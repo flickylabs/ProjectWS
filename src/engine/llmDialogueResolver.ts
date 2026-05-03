@@ -556,7 +556,7 @@ export async function resolveLLMDialogue(
     )
   } catch (error) {
     console.warn('LLM 호출 실패, 폴백:', error)
-    const fallbackResult = fallbackResolve(action, agentA, agentB, evidenceStates)
+    const fallbackResult = fallbackResolve(action, agentA, agentB, evidenceStates, caseData)
     const guardedFallback = await applyDisclosureGuardToResolvedDialogue(
       fallbackResult,
       buildDisclosureGuardContext(
@@ -579,7 +579,7 @@ export async function resolveLLMDialogue(
   }
   } catch (outerError) {
     console.error('[resolveLLMDialogue] 프롬프트 조립 또는 처리 중 에러:', outerError)
-    const fallbackResult = fallbackResolve(action, agentA, agentB, evidenceStates)
+    const fallbackResult = fallbackResolve(action, agentA, agentB, evidenceStates, caseData)
     const guardedFallback = await applyDisclosureGuardToResolvedDialogue(
       fallbackResult,
       buildDisclosureGuardContext(

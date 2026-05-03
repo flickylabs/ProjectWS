@@ -1,4 +1,4 @@
-import type { DialogueNode } from '../../types'
+import type { DialogueNode } from '../../../types'
 
 /**
  * Phase 3~5 대사 트리.

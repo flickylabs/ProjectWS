@@ -1,4 +1,4 @@
-import type { DialogueEntry } from '../../types'
+import type { DialogueEntry } from '../../../types'
 
 /** Phase 2: 즉각 반박 — 감정 온도가 올라가며 핵심 모순 힌트가 노출된다. */
 export const phase2Dialogues: Omit<DialogueEntry, 'id'>[] = [

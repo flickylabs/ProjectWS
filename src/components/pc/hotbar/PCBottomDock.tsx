@@ -124,7 +124,7 @@ export default function PCBottomDock() {
       pcTargetParty,
       {
         allowedAngles,
-        limit: 5,
+        limit: 3,
         seed,
         includeOtherDepths: false,
       },
@@ -137,7 +137,7 @@ export default function PCBottomDock() {
       target: pcTargetParty,
       evidenceStates,
       calledWitnesses,
-      limit: 5,
+      limit: 3,
       seed,
     }).map((option) => ({
       ...option,
@@ -151,7 +151,7 @@ export default function PCBottomDock() {
       const key = option.text.replace(/\s+/g, ' ').trim()
       if (!byText.has(key)) byText.set(key, option)
     }
-    return [...byText.values()].slice(0, 5)
+    return [...byText.values()].slice(0, 3)
   }, [calledWitnesses, caseData, evidenceStates, interrogationHistory, pcTargetParty, questionChoice, turnCount])
 
   const selectQuestionOption = useCallback((option?: ScriptedJudgeQuestionOption) => {
@@ -355,7 +355,7 @@ export default function PCBottomDock() {
             <div className="pc-question-choice__header">
               <PCSvgIcon id={questionChoice.type === 'fact_pursuit' ? 'i-gavel' : questionChoice.type === 'motive_search' ? 'i-eye' : 'i-heart'} size={18} />
               <span className="pc-question-choice__title">
-                {questionChoice.type === 'fact_pursuit' ? '모순에 집중하기' : questionChoice.type === 'motive_search' ? '숨겨진 쟁점찾기' : '자백 유도하기'}
+                {questionChoice.type === 'fact_pursuit' ? '사실 추궁 - 모순에 집중하기' : questionChoice.type === 'motive_search' ? '동기 탐색 - 숨겨진 쟁점 찾기' : '공감 접근 - 자백 유도하기'}
               </span>
               <button className="pc-question-choice__close" onClick={() => setQuestionChoice(null)} type="button" aria-label="닫기">
                 &times;
@@ -374,7 +374,8 @@ export default function PCBottomDock() {
               ) : (
                 <>
                   <button className="pc-question-choice__back" onClick={() => setQuestionChoice({ type: questionChoice.type })} type="button">
-                    ← 쟁점 다시 선택
+                    <span className="pc-question-choice__back-mark" aria-hidden="true">&lt;</span>
+                    <span>쟁점 다시 선택</span>
                   </button>
                   <p className="pc-question-choice__hint">질문을 선택하세요</p>
                   {questionOptions.length === 0 ? (
@@ -403,7 +404,7 @@ export default function PCBottomDock() {
           <div className="pc-question-choice__panel">
             <div className="pc-question-choice__header">
               <PCSvgIcon id="i-chat" size={18} />
-              <span className="pc-question-choice__title">자유 질문</span>
+              <span className="pc-question-choice__title">자유 질문 - 복합적 접근 시도</span>
               <button className="pc-question-choice__close" onClick={() => setFreeQuestionOpen(false)} type="button" aria-label="닫기">
                 &times;
               </button>
@@ -488,7 +489,7 @@ export default function PCBottomDock() {
 
             <div className={`hotbar-slots${isLLMLoading ? ' hotbar-slots--locked' : ''}`}>
               {/* 1: 사실 추궁 */}
-              <button className="slot" data-guide-target="question-fact" disabled={isLLMLoading} onClick={() => openQuestionChoice('fact_pursuit')} title={isLLMLoading ? '응답 대기 중' : '모순에 집중하기'} type="button">
+              <button className="slot" data-guide-target="question-fact" disabled={isLLMLoading} onClick={() => openQuestionChoice('fact_pursuit')} title={isLLMLoading ? '응답 대기 중' : '사실 추궁 - 모순에 집중하기'} type="button">
                 <span className="slot-key">1</span>
                 <span className="slot-ico"><PCSvgIcon id="i-gavel" size={24} /></span>
                 <span className="slot-nm">사실 추궁</span>
@@ -496,21 +497,21 @@ export default function PCBottomDock() {
               </button>
 
               {/* 2: 동기 탐색 */}
-              <button className="slot" data-guide-target="question-motive" disabled={isLLMLoading} onClick={() => openQuestionChoice('motive_search')} title={isLLMLoading ? '응답 대기 중' : '숨겨진 쟁점찾기'} type="button">
+              <button className="slot" data-guide-target="question-motive" disabled={isLLMLoading} onClick={() => openQuestionChoice('motive_search')} title={isLLMLoading ? '응답 대기 중' : '동기 탐색 - 숨겨진 쟁점 찾기'} type="button">
                 <span className="slot-key">2</span>
                 <span className="slot-ico"><PCSvgIcon id="i-eye" size={24} /></span>
                 <span className="slot-nm">동기 탐색</span>
               </button>
 
               {/* 3: 공감 접근 */}
-              <button className="slot" data-guide-target="question-empathy" disabled={isLLMLoading} onClick={() => openQuestionChoice('empathy_approach')} title={isLLMLoading ? '응답 대기 중' : '자백 유도하기'} type="button">
+              <button className="slot" data-guide-target="question-empathy" disabled={isLLMLoading} onClick={() => openQuestionChoice('empathy_approach')} title={isLLMLoading ? '응답 대기 중' : '공감 접근 - 자백 유도하기'} type="button">
                 <span className="slot-key">3</span>
                 <span className="slot-ico"><PCSvgIcon id="i-heart" size={24} /></span>
                 <span className="slot-nm">공감 접근</span>
               </button>
 
               {freeInterrogationEnabled ? (
-                <button className="slot" disabled={isLLMLoading} onClick={openFreeQuestion} title={isLLMLoading ? '응답 대기 중' : '자유 질문'} type="button">
+                <button className="slot" disabled={isLLMLoading} onClick={openFreeQuestion} title={isLLMLoading ? '응답 대기 중' : '자유 질문 - 복합적 접근 시도'} type="button">
                   <span className="slot-key">4</span>
                   <span className="slot-ico"><PCSvgIcon id="i-chat" size={24} /></span>
                   <span className="slot-nm">자유 질문</span>

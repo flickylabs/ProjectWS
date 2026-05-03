@@ -42,8 +42,6 @@ try {
   if (CASE_ENRICHMENT_DATA) registerAllEnrichments(CASE_ENRICHMENT_DATA)
 } catch { /* H 단계 전: 보강 데이터 없음 — 정상 */ }
 import { playerApi, mailApi, healthApi, noticeApi } from '../api/client'
-import { phase1Dialogues } from '../data/dialogues/phase1'
-import { phase2Dialogues } from '../data/dialogues/phase2'
 import { buildGenericPhase1, buildGenericPhase2 } from '../data/dialogues/generic-phase1'
 import { loadPhase1Script, loadPhase2Script, getScriptCounts } from '../data/dialogues/phaseScriptLoader'
 
@@ -376,7 +374,7 @@ function getActionPanel(phase: GamePhase) {
       // Phase 1: 사건별 사전 생성 스크립트 우선 → 없으면 범용 폴백
       const caseScript = caseData ? loadPhase1Script(caseData.caseId) : null
       if (caseData) console.log(`[Phase1] caseId=${caseData.caseId}, script=${caseScript ? `loaded(${caseScript.length} entries)` : 'NOT FOUND → fallback'}`)
-      const fallback = caseScript ?? (caseData ? buildGenericPhase1(caseData) : phase1Dialogues)
+      const fallback = caseScript ?? (caseData ? buildGenericPhase1(caseData) : [])
       return (
         <AutoDialoguePhase
           dialogues={fallback}
@@ -388,7 +386,7 @@ function getActionPanel(phase: GamePhase) {
     case GamePhase.Phase2_Rebuttal: {
       // Phase 2: AI 생성 우선, 없으면 스크립트 폴백
       const caseScript = caseData ? loadPhase2Script(caseData.caseId) : null
-      const fallback = caseScript ?? (caseData ? buildGenericPhase2(caseData) : phase2Dialogues)
+      const fallback = caseScript ?? (caseData ? buildGenericPhase2(caseData) : [])
       return (
         <AutoDialoguePhase
           dialogues={fallback}

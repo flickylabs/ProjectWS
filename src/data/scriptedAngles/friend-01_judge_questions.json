@@ -22,7 +22,7 @@
         },
         {
           "id": "judgeq-d-1-fact_pursuit-a-contact_timeline-v2",
-          "text": "송다은 씨, 9일간의 연락 시간표에서 직접 한 일과 추정한 일을 나눠 설명해 주십시오.",
+          "text": "9일간의 연락 시간표에서 직접 한 일과 추정한 일을 나눠 설명해 주십시오.",
           "behaviorHint": "9일간의 연락 시간표에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -34,7 +34,7 @@
         },
         {
           "id": "judgeq-d-1-fact_pursuit-a-contact_timeline-v3",
-          "text": "송다은 씨, 9일간의 연락 시간표 문제에서 상대 주장과 다른 부분이 있다면 구체적으로 답하십시오.",
+          "text": "9일간의 연락 시간표 문제에서 상대 주장과 다른 부분이 있다면 구체적으로 답하십시오.",
           "behaviorHint": "9일간의 연락 시간표에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -46,7 +46,7 @@
         },
         {
           "id": "judgeq-d-1-fact_pursuit-a-contact_timeline-v4",
-          "text": "송다은 씨, 9일간의 연락 시간표 항목을 기록 기준으로 다시 정리해 주십시오.",
+          "text": "9일간의 연락 시간표 항목을 기록 기준으로 다시 정리해 주십시오.",
           "behaviorHint": "9일간의 연락 시간표에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -90,7 +90,7 @@
         },
         {
           "id": "judgeq-d-1-fact_pursuit-b-contact_timeline-v2",
-          "text": "최수민 씨, 9일간의 연락 시간표에서 직접 한 일과 추정한 일을 나눠 설명해 주십시오.",
+          "text": "9일간의 연락 시간표에서 직접 한 일과 추정한 일을 나눠 설명해 주십시오.",
           "behaviorHint": "9일간의 연락 시간표에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -102,7 +102,7 @@
         },
         {
           "id": "judgeq-d-1-fact_pursuit-b-contact_timeline-v3",
-          "text": "최수민 씨, 9일간의 연락 시간표 문제에서 상대 주장과 다른 부분이 있다면 구체적으로 답하십시오.",
+          "text": "9일간의 연락 시간표 문제에서 상대 주장과 다른 부분이 있다면 구체적으로 답하십시오.",
           "behaviorHint": "9일간의 연락 시간표에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -114,7 +114,7 @@
         },
         {
           "id": "judgeq-d-1-fact_pursuit-b-contact_timeline-v4",
-          "text": "최수민 씨, 9일간의 연락 시간표 항목을 기록 기준으로 다시 정리해 주십시오.",
+          "text": "9일간의 연락 시간표 항목을 기록 기준으로 다시 정리해 주십시오.",
           "behaviorHint": "9일간의 연락 시간표에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -158,7 +158,7 @@
         },
         {
           "id": "judgeq-d-1-motive_search-a-contact_timeline-v2",
-          "text": "송다은 씨, 9일간의 연락 시간표에서 어떤 부담이나 계산이 있었는지 설명하십시오.",
+          "text": "9일간의 연락 시간표에서 어떤 부담이나 계산이 있었는지 설명하십시오.",
           "behaviorHint": "9일간의 연락 시간표에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -170,7 +170,7 @@
         },
         {
           "id": "judgeq-d-1-motive_search-a-contact_timeline-v3",
-          "text": "송다은 씨, 9일간의 연락 시간표에 대해 숨기거나 늦게 말한 이유가 무엇입니까.",
+          "text": "9일간의 연락 시간표에 대해 숨기거나 늦게 말한 이유가 무엇입니까.",
           "behaviorHint": "9일간의 연락 시간표에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -182,7 +182,7 @@
         },
         {
           "id": "judgeq-d-1-motive_search-a-contact_timeline-v4",
-          "text": "송다은 씨, 9일간의 연락 시간표에 대해 그때 왜 그런 선택을 했는지 답하십시오.",
+          "text": "9일간의 연락 시간표에 대해 그때 왜 그런 선택을 했는지 답하십시오.",
           "behaviorHint": "9일간의 연락 시간표에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -226,7 +226,7 @@
         },
         {
           "id": "judgeq-d-1-motive_search-b-contact_timeline-v2",
-          "text": "최수민 씨, 9일간의 연락 시간표에서 어떤 부담이나 계산이 있었는지 설명하십시오.",
+          "text": "9일간의 연락 시간표에서 어떤 부담이나 계산이 있었는지 설명하십시오.",
           "behaviorHint": "9일간의 연락 시간표에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -238,7 +238,7 @@
         },
         {
           "id": "judgeq-d-1-motive_search-b-contact_timeline-v3",
-          "text": "최수민 씨, 9일간의 연락 시간표에 대해 숨기거나 늦게 말한 이유가 무엇입니까.",
+          "text": "9일간의 연락 시간표에 대해 숨기거나 늦게 말한 이유가 무엇입니까.",
           "behaviorHint": "9일간의 연락 시간표에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -250,7 +250,7 @@
         },
         {
           "id": "judgeq-d-1-motive_search-b-contact_timeline-v4",
-          "text": "최수민 씨, 9일간의 연락 시간표에 대해 그때 왜 그런 선택을 했는지 답하십시오.",
+          "text": "9일간의 연락 시간표에 대해 그때 왜 그런 선택을 했는지 답하십시오.",
           "behaviorHint": "9일간의 연락 시간표에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -294,7 +294,7 @@
         },
         {
           "id": "judgeq-d-1-empathy_approach-a-contact_timeline-v2",
-          "text": "송다은 씨, 9일간의 연락 시간표에서 상대에게 상처를 준 부분을 어떻게 보고 있습니까.",
+          "text": "9일간의 연락 시간표에서 상대에게 상처를 준 부분을 어떻게 보고 있습니까.",
           "behaviorHint": "9일간의 연락 시간표에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -306,7 +306,7 @@
         },
         {
           "id": "judgeq-d-1-empathy_approach-a-contact_timeline-v3",
-          "text": "송다은 씨, 9일간의 연락 시간표 문제에서 두려웠거나 피하고 싶었던 지점이 있었습니까.",
+          "text": "9일간의 연락 시간표 문제에서 두려웠거나 피하고 싶었던 지점이 있었습니까.",
           "behaviorHint": "9일간의 연락 시간표에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -318,7 +318,7 @@
         },
         {
           "id": "judgeq-d-1-empathy_approach-a-contact_timeline-v4",
-          "text": "송다은 씨, 9일간의 연락 시간표에 관해 지금 바로잡고 싶은 말이 있다면 해 주십시오.",
+          "text": "9일간의 연락 시간표에 관해 지금 바로잡고 싶은 말이 있다면 해 주십시오.",
           "behaviorHint": "9일간의 연락 시간표에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -362,7 +362,7 @@
         },
         {
           "id": "judgeq-d-1-empathy_approach-b-contact_timeline-v2",
-          "text": "최수민 씨, 9일간의 연락 시간표에서 상대에게 상처를 준 부분을 어떻게 보고 있습니까.",
+          "text": "9일간의 연락 시간표에서 상대에게 상처를 준 부분을 어떻게 보고 있습니까.",
           "behaviorHint": "9일간의 연락 시간표에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -374,7 +374,7 @@
         },
         {
           "id": "judgeq-d-1-empathy_approach-b-contact_timeline-v3",
-          "text": "최수민 씨, 9일간의 연락 시간표 문제에서 두려웠거나 피하고 싶었던 지점이 있었습니까.",
+          "text": "9일간의 연락 시간표 문제에서 두려웠거나 피하고 싶었던 지점이 있었습니까.",
           "behaviorHint": "9일간의 연락 시간표에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -386,7 +386,7 @@
         },
         {
           "id": "judgeq-d-1-empathy_approach-b-contact_timeline-v4",
-          "text": "최수민 씨, 9일간의 연락 시간표에 관해 지금 바로잡고 싶은 말이 있다면 해 주십시오.",
+          "text": "9일간의 연락 시간표에 관해 지금 바로잡고 싶은 말이 있다면 해 주십시오.",
           "behaviorHint": "9일간의 연락 시간표에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -430,7 +430,7 @@
         },
         {
           "id": "judgeq-d-1-fact_pursuit-a-message_intent-v2",
-          "text": "송다은 씨, 문자에 담긴 전달 목적에서 직접 한 일과 추정한 일을 나눠 설명해 주십시오.",
+          "text": "문자에 담긴 전달 목적에서 직접 한 일과 추정한 일을 나눠 설명해 주십시오.",
           "behaviorHint": "문자에 담긴 전달 목적에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -442,7 +442,7 @@
         },
         {
           "id": "judgeq-d-1-fact_pursuit-a-message_intent-v3",
-          "text": "송다은 씨, 문자에 담긴 전달 목적 문제에서 상대 주장과 다른 부분이 있다면 구체적으로 답하십시오.",
+          "text": "문자에 담긴 전달 목적 문제에서 상대 주장과 다른 부분이 있다면 구체적으로 답하십시오.",
           "behaviorHint": "문자에 담긴 전달 목적에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -454,7 +454,7 @@
         },
         {
           "id": "judgeq-d-1-fact_pursuit-a-message_intent-v4",
-          "text": "송다은 씨, 문자에 담긴 전달 목적 항목을 기록 기준으로 다시 정리해 주십시오.",
+          "text": "문자에 담긴 전달 목적 항목을 기록 기준으로 다시 정리해 주십시오.",
           "behaviorHint": "문자에 담긴 전달 목적에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -498,7 +498,7 @@
         },
         {
           "id": "judgeq-d-1-fact_pursuit-b-message_intent-v2",
-          "text": "최수민 씨, 문자에 담긴 전달 목적에서 직접 한 일과 추정한 일을 나눠 설명해 주십시오.",
+          "text": "문자에 담긴 전달 목적에서 직접 한 일과 추정한 일을 나눠 설명해 주십시오.",
           "behaviorHint": "문자에 담긴 전달 목적에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -510,7 +510,7 @@
         },
         {
           "id": "judgeq-d-1-fact_pursuit-b-message_intent-v3",
-          "text": "최수민 씨, 문자에 담긴 전달 목적 문제에서 상대 주장과 다른 부분이 있다면 구체적으로 답하십시오.",
+          "text": "문자에 담긴 전달 목적 문제에서 상대 주장과 다른 부분이 있다면 구체적으로 답하십시오.",
           "behaviorHint": "문자에 담긴 전달 목적에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -522,7 +522,7 @@
         },
         {
           "id": "judgeq-d-1-fact_pursuit-b-message_intent-v4",
-          "text": "최수민 씨, 문자에 담긴 전달 목적 항목을 기록 기준으로 다시 정리해 주십시오.",
+          "text": "문자에 담긴 전달 목적 항목을 기록 기준으로 다시 정리해 주십시오.",
           "behaviorHint": "문자에 담긴 전달 목적에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -566,7 +566,7 @@
         },
         {
           "id": "judgeq-d-1-motive_search-a-message_intent-v2",
-          "text": "송다은 씨, 문자에 담긴 전달 목적에서 어떤 부담이나 계산이 있었는지 설명하십시오.",
+          "text": "문자에 담긴 전달 목적에서 어떤 부담이나 계산이 있었는지 설명하십시오.",
           "behaviorHint": "문자에 담긴 전달 목적에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -578,7 +578,7 @@
         },
         {
           "id": "judgeq-d-1-motive_search-a-message_intent-v3",
-          "text": "송다은 씨, 문자에 담긴 전달 목적에 대해 숨기거나 늦게 말한 이유가 무엇입니까.",
+          "text": "문자에 담긴 전달 목적에 대해 숨기거나 늦게 말한 이유가 무엇입니까.",
           "behaviorHint": "문자에 담긴 전달 목적에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -590,7 +590,7 @@
         },
         {
           "id": "judgeq-d-1-motive_search-a-message_intent-v4",
-          "text": "송다은 씨, 문자에 담긴 전달 목적에 대해 그때 왜 그런 선택을 했는지 답하십시오.",
+          "text": "문자에 담긴 전달 목적에 대해 그때 왜 그런 선택을 했는지 답하십시오.",
           "behaviorHint": "문자에 담긴 전달 목적에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -634,7 +634,7 @@
         },
         {
           "id": "judgeq-d-1-motive_search-b-message_intent-v2",
-          "text": "최수민 씨, 문자에 담긴 전달 목적에서 어떤 부담이나 계산이 있었는지 설명하십시오.",
+          "text": "문자에 담긴 전달 목적에서 어떤 부담이나 계산이 있었는지 설명하십시오.",
           "behaviorHint": "문자에 담긴 전달 목적에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -646,7 +646,7 @@
         },
         {
           "id": "judgeq-d-1-motive_search-b-message_intent-v3",
-          "text": "최수민 씨, 문자에 담긴 전달 목적에 대해 숨기거나 늦게 말한 이유가 무엇입니까.",
+          "text": "문자에 담긴 전달 목적에 대해 숨기거나 늦게 말한 이유가 무엇입니까.",
           "behaviorHint": "문자에 담긴 전달 목적에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -658,7 +658,7 @@
         },
         {
           "id": "judgeq-d-1-motive_search-b-message_intent-v4",
-          "text": "최수민 씨, 문자에 담긴 전달 목적에 대해 그때 왜 그런 선택을 했는지 답하십시오.",
+          "text": "문자에 담긴 전달 목적에 대해 그때 왜 그런 선택을 했는지 답하십시오.",
           "behaviorHint": "문자에 담긴 전달 목적에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -702,7 +702,7 @@
         },
         {
           "id": "judgeq-d-1-empathy_approach-a-message_intent-v2",
-          "text": "송다은 씨, 문자에 담긴 전달 목적에서 상대에게 상처를 준 부분을 어떻게 보고 있습니까.",
+          "text": "문자에 담긴 전달 목적에서 상대에게 상처를 준 부분을 어떻게 보고 있습니까.",
           "behaviorHint": "문자에 담긴 전달 목적에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -714,7 +714,7 @@
         },
         {
           "id": "judgeq-d-1-empathy_approach-a-message_intent-v3",
-          "text": "송다은 씨, 문자에 담긴 전달 목적 문제에서 두려웠거나 피하고 싶었던 지점이 있었습니까.",
+          "text": "문자에 담긴 전달 목적 문제에서 두려웠거나 피하고 싶었던 지점이 있었습니까.",
           "behaviorHint": "문자에 담긴 전달 목적에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -726,7 +726,7 @@
         },
         {
           "id": "judgeq-d-1-empathy_approach-a-message_intent-v4",
-          "text": "송다은 씨, 문자에 담긴 전달 목적에 관해 지금 바로잡고 싶은 말이 있다면 해 주십시오.",
+          "text": "문자에 담긴 전달 목적에 관해 지금 바로잡고 싶은 말이 있다면 해 주십시오.",
           "behaviorHint": "문자에 담긴 전달 목적에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -770,7 +770,7 @@
         },
         {
           "id": "judgeq-d-1-empathy_approach-b-message_intent-v2",
-          "text": "최수민 씨, 문자에 담긴 전달 목적에서 상대에게 상처를 준 부분을 어떻게 보고 있습니까.",
+          "text": "문자에 담긴 전달 목적에서 상대에게 상처를 준 부분을 어떻게 보고 있습니까.",
           "behaviorHint": "문자에 담긴 전달 목적에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -782,7 +782,7 @@
         },
         {
           "id": "judgeq-d-1-empathy_approach-b-message_intent-v3",
-          "text": "최수민 씨, 문자에 담긴 전달 목적 문제에서 두려웠거나 피하고 싶었던 지점이 있었습니까.",
+          "text": "문자에 담긴 전달 목적 문제에서 두려웠거나 피하고 싶었던 지점이 있었습니까.",
           "behaviorHint": "문자에 담긴 전달 목적에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -794,7 +794,7 @@
         },
         {
           "id": "judgeq-d-1-empathy_approach-b-message_intent-v4",
-          "text": "최수민 씨, 문자에 담긴 전달 목적에 관해 지금 바로잡고 싶은 말이 있다면 해 주십시오.",
+          "text": "문자에 담긴 전달 목적에 관해 지금 바로잡고 싶은 말이 있다면 해 주십시오.",
           "behaviorHint": "문자에 담긴 전달 목적에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -838,7 +838,7 @@
         },
         {
           "id": "judgeq-d-1-fact_pursuit-a-bypass_da_eun-v2",
-          "text": "송다은 씨, 송다은을 거치지 않은 이유에서 직접 한 일과 추정한 일을 나눠 설명해 주십시오.",
+          "text": "송다은을 거치지 않은 이유에서 직접 한 일과 추정한 일을 나눠 설명해 주십시오.",
           "behaviorHint": "송다은을 거치지 않은 이유에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -850,7 +850,7 @@
         },
         {
           "id": "judgeq-d-1-fact_pursuit-a-bypass_da_eun-v3",
-          "text": "송다은 씨, 송다은을 거치지 않은 이유 문제에서 상대 주장과 다른 부분이 있다면 구체적으로 답하십시오.",
+          "text": "송다은을 거치지 않은 이유 문제에서 상대 주장과 다른 부분이 있다면 구체적으로 답하십시오.",
           "behaviorHint": "송다은을 거치지 않은 이유에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -862,7 +862,7 @@
         },
         {
           "id": "judgeq-d-1-fact_pursuit-a-bypass_da_eun-v4",
-          "text": "송다은 씨, 송다은을 거치지 않은 이유 항목을 기록 기준으로 다시 정리해 주십시오.",
+          "text": "송다은을 거치지 않은 이유 항목을 기록 기준으로 다시 정리해 주십시오.",
           "behaviorHint": "송다은을 거치지 않은 이유에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -906,7 +906,7 @@
         },
         {
           "id": "judgeq-d-1-fact_pursuit-b-bypass_da_eun-v2",
-          "text": "최수민 씨, 송다은을 거치지 않은 이유에서 직접 한 일과 추정한 일을 나눠 설명해 주십시오.",
+          "text": "송다은을 거치지 않은 이유에서 직접 한 일과 추정한 일을 나눠 설명해 주십시오.",
           "behaviorHint": "송다은을 거치지 않은 이유에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -918,7 +918,7 @@
         },
         {
           "id": "judgeq-d-1-fact_pursuit-b-bypass_da_eun-v3",
-          "text": "최수민 씨, 송다은을 거치지 않은 이유 문제에서 상대 주장과 다른 부분이 있다면 구체적으로 답하십시오.",
+          "text": "송다은을 거치지 않은 이유 문제에서 상대 주장과 다른 부분이 있다면 구체적으로 답하십시오.",
           "behaviorHint": "송다은을 거치지 않은 이유에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -930,7 +930,7 @@
         },
         {
           "id": "judgeq-d-1-fact_pursuit-b-bypass_da_eun-v4",
-          "text": "최수민 씨, 송다은을 거치지 않은 이유 항목을 기록 기준으로 다시 정리해 주십시오.",
+          "text": "송다은을 거치지 않은 이유 항목을 기록 기준으로 다시 정리해 주십시오.",
           "behaviorHint": "송다은을 거치지 않은 이유에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -974,7 +974,7 @@
         },
         {
           "id": "judgeq-d-1-motive_search-a-bypass_da_eun-v2",
-          "text": "송다은 씨, 송다은을 거치지 않은 이유에서 어떤 부담이나 계산이 있었는지 설명하십시오.",
+          "text": "송다은을 거치지 않은 이유에서 어떤 부담이나 계산이 있었는지 설명하십시오.",
           "behaviorHint": "송다은을 거치지 않은 이유에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -986,7 +986,7 @@
         },
         {
           "id": "judgeq-d-1-motive_search-a-bypass_da_eun-v3",
-          "text": "송다은 씨, 송다은을 거치지 않은 이유에 대해 숨기거나 늦게 말한 이유가 무엇입니까.",
+          "text": "송다은을 거치지 않은 이유에 대해 숨기거나 늦게 말한 이유가 무엇입니까.",
           "behaviorHint": "송다은을 거치지 않은 이유에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -998,7 +998,7 @@
         },
         {
           "id": "judgeq-d-1-motive_search-a-bypass_da_eun-v4",
-          "text": "송다은 씨, 송다은을 거치지 않은 이유에 대해 그때 왜 그런 선택을 했는지 답하십시오.",
+          "text": "송다은을 거치지 않은 이유에 대해 그때 왜 그런 선택을 했는지 답하십시오.",
           "behaviorHint": "송다은을 거치지 않은 이유에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -1042,7 +1042,7 @@
         },
         {
           "id": "judgeq-d-1-motive_search-b-bypass_da_eun-v2",
-          "text": "최수민 씨, 송다은을 거치지 않은 이유에서 어떤 부담이나 계산이 있었는지 설명하십시오.",
+          "text": "송다은을 거치지 않은 이유에서 어떤 부담이나 계산이 있었는지 설명하십시오.",
           "behaviorHint": "송다은을 거치지 않은 이유에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -1054,7 +1054,7 @@
         },
         {
           "id": "judgeq-d-1-motive_search-b-bypass_da_eun-v3",
-          "text": "최수민 씨, 송다은을 거치지 않은 이유에 대해 숨기거나 늦게 말한 이유가 무엇입니까.",
+          "text": "송다은을 거치지 않은 이유에 대해 숨기거나 늦게 말한 이유가 무엇입니까.",
           "behaviorHint": "송다은을 거치지 않은 이유에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -1066,7 +1066,7 @@
         },
         {
           "id": "judgeq-d-1-motive_search-b-bypass_da_eun-v4",
-          "text": "최수민 씨, 송다은을 거치지 않은 이유에 대해 그때 왜 그런 선택을 했는지 답하십시오.",
+          "text": "송다은을 거치지 않은 이유에 대해 그때 왜 그런 선택을 했는지 답하십시오.",
           "behaviorHint": "송다은을 거치지 않은 이유에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -1110,7 +1110,7 @@
         },
         {
           "id": "judgeq-d-1-empathy_approach-a-bypass_da_eun-v2",
-          "text": "송다은 씨, 송다은을 거치지 않은 이유에서 상대에게 상처를 준 부분을 어떻게 보고 있습니까.",
+          "text": "송다은을 거치지 않은 이유에서 상대에게 상처를 준 부분을 어떻게 보고 있습니까.",
           "behaviorHint": "송다은을 거치지 않은 이유에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -1122,7 +1122,7 @@
         },
         {
           "id": "judgeq-d-1-empathy_approach-a-bypass_da_eun-v3",
-          "text": "송다은 씨, 송다은을 거치지 않은 이유 문제에서 두려웠거나 피하고 싶었던 지점이 있었습니까.",
+          "text": "송다은을 거치지 않은 이유 문제에서 두려웠거나 피하고 싶었던 지점이 있었습니까.",
           "behaviorHint": "송다은을 거치지 않은 이유에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -1134,7 +1134,7 @@
         },
         {
           "id": "judgeq-d-1-empathy_approach-a-bypass_da_eun-v4",
-          "text": "송다은 씨, 송다은을 거치지 않은 이유에 관해 지금 바로잡고 싶은 말이 있다면 해 주십시오.",
+          "text": "송다은을 거치지 않은 이유에 관해 지금 바로잡고 싶은 말이 있다면 해 주십시오.",
           "behaviorHint": "송다은을 거치지 않은 이유에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -1178,7 +1178,7 @@
         },
         {
           "id": "judgeq-d-1-empathy_approach-b-bypass_da_eun-v2",
-          "text": "최수민 씨, 송다은을 거치지 않은 이유에서 상대에게 상처를 준 부분을 어떻게 보고 있습니까.",
+          "text": "송다은을 거치지 않은 이유에서 상대에게 상처를 준 부분을 어떻게 보고 있습니까.",
           "behaviorHint": "송다은을 거치지 않은 이유에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -1190,7 +1190,7 @@
         },
         {
           "id": "judgeq-d-1-empathy_approach-b-bypass_da_eun-v3",
-          "text": "최수민 씨, 송다은을 거치지 않은 이유 문제에서 두려웠거나 피하고 싶었던 지점이 있었습니까.",
+          "text": "송다은을 거치지 않은 이유 문제에서 두려웠거나 피하고 싶었던 지점이 있었습니까.",
           "behaviorHint": "송다은을 거치지 않은 이유에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -1202,7 +1202,7 @@
         },
         {
           "id": "judgeq-d-1-empathy_approach-b-bypass_da_eun-v4",
-          "text": "최수민 씨, 송다은을 거치지 않은 이유에 관해 지금 바로잡고 싶은 말이 있다면 해 주십시오.",
+          "text": "송다은을 거치지 않은 이유에 관해 지금 바로잡고 싶은 말이 있다면 해 주십시오.",
           "behaviorHint": "송다은을 거치지 않은 이유에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -1246,7 +1246,7 @@
         },
         {
           "id": "judgeq-d-2-fact_pursuit-a-message_sequence-v2",
-          "text": "송다은 씨, 예비신랑 메시지의 선후관계에서 직접 한 일과 추정한 일을 나눠 설명해 주십시오.",
+          "text": "예비신랑 메시지의 선후관계에서 직접 한 일과 추정한 일을 나눠 설명해 주십시오.",
           "behaviorHint": "예비신랑 메시지의 선후관계에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -1258,7 +1258,7 @@
         },
         {
           "id": "judgeq-d-2-fact_pursuit-a-message_sequence-v3",
-          "text": "송다은 씨, 예비신랑 메시지의 선후관계 문제에서 상대 주장과 다른 부분이 있다면 구체적으로 답하십시오.",
+          "text": "예비신랑 메시지의 선후관계 문제에서 상대 주장과 다른 부분이 있다면 구체적으로 답하십시오.",
           "behaviorHint": "예비신랑 메시지의 선후관계에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -1270,7 +1270,7 @@
         },
         {
           "id": "judgeq-d-2-fact_pursuit-a-message_sequence-v4",
-          "text": "송다은 씨, 예비신랑 메시지의 선후관계 항목을 기록 기준으로 다시 정리해 주십시오.",
+          "text": "예비신랑 메시지의 선후관계 항목을 기록 기준으로 다시 정리해 주십시오.",
           "behaviorHint": "예비신랑 메시지의 선후관계에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -1314,7 +1314,7 @@
         },
         {
           "id": "judgeq-d-2-fact_pursuit-b-message_sequence-v2",
-          "text": "최수민 씨, 예비신랑 메시지의 선후관계에서 직접 한 일과 추정한 일을 나눠 설명해 주십시오.",
+          "text": "예비신랑 메시지의 선후관계에서 직접 한 일과 추정한 일을 나눠 설명해 주십시오.",
           "behaviorHint": "예비신랑 메시지의 선후관계에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -1326,7 +1326,7 @@
         },
         {
           "id": "judgeq-d-2-fact_pursuit-b-message_sequence-v3",
-          "text": "최수민 씨, 예비신랑 메시지의 선후관계 문제에서 상대 주장과 다른 부분이 있다면 구체적으로 답하십시오.",
+          "text": "예비신랑 메시지의 선후관계 문제에서 상대 주장과 다른 부분이 있다면 구체적으로 답하십시오.",
           "behaviorHint": "예비신랑 메시지의 선후관계에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -1338,7 +1338,7 @@
         },
         {
           "id": "judgeq-d-2-fact_pursuit-b-message_sequence-v4",
-          "text": "최수민 씨, 예비신랑 메시지의 선후관계 항목을 기록 기준으로 다시 정리해 주십시오.",
+          "text": "예비신랑 메시지의 선후관계 항목을 기록 기준으로 다시 정리해 주십시오.",
           "behaviorHint": "예비신랑 메시지의 선후관계에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -1382,7 +1382,7 @@
         },
         {
           "id": "judgeq-d-2-motive_search-a-message_sequence-v2",
-          "text": "송다은 씨, 예비신랑 메시지의 선후관계에서 어떤 부담이나 계산이 있었는지 설명하십시오.",
+          "text": "예비신랑 메시지의 선후관계에서 어떤 부담이나 계산이 있었는지 설명하십시오.",
           "behaviorHint": "예비신랑 메시지의 선후관계에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -1394,7 +1394,7 @@
         },
         {
           "id": "judgeq-d-2-motive_search-a-message_sequence-v3",
-          "text": "송다은 씨, 예비신랑 메시지의 선후관계에 대해 숨기거나 늦게 말한 이유가 무엇입니까.",
+          "text": "예비신랑 메시지의 선후관계에 대해 숨기거나 늦게 말한 이유가 무엇입니까.",
           "behaviorHint": "예비신랑 메시지의 선후관계에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -1406,7 +1406,7 @@
         },
         {
           "id": "judgeq-d-2-motive_search-a-message_sequence-v4",
-          "text": "송다은 씨, 예비신랑 메시지의 선후관계에 대해 그때 왜 그런 선택을 했는지 답하십시오.",
+          "text": "예비신랑 메시지의 선후관계에 대해 그때 왜 그런 선택을 했는지 답하십시오.",
           "behaviorHint": "예비신랑 메시지의 선후관계에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -1450,7 +1450,7 @@
         },
         {
           "id": "judgeq-d-2-motive_search-b-message_sequence-v2",
-          "text": "최수민 씨, 예비신랑 메시지의 선후관계에서 어떤 부담이나 계산이 있었는지 설명하십시오.",
+          "text": "예비신랑 메시지의 선후관계에서 어떤 부담이나 계산이 있었는지 설명하십시오.",
           "behaviorHint": "예비신랑 메시지의 선후관계에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -1462,7 +1462,7 @@
         },
         {
           "id": "judgeq-d-2-motive_search-b-message_sequence-v3",
-          "text": "최수민 씨, 예비신랑 메시지의 선후관계에 대해 숨기거나 늦게 말한 이유가 무엇입니까.",
+          "text": "예비신랑 메시지의 선후관계에 대해 숨기거나 늦게 말한 이유가 무엇입니까.",
           "behaviorHint": "예비신랑 메시지의 선후관계에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -1474,7 +1474,7 @@
         },
         {
           "id": "judgeq-d-2-motive_search-b-message_sequence-v4",
-          "text": "최수민 씨, 예비신랑 메시지의 선후관계에 대해 그때 왜 그런 선택을 했는지 답하십시오.",
+          "text": "예비신랑 메시지의 선후관계에 대해 그때 왜 그런 선택을 했는지 답하십시오.",
           "behaviorHint": "예비신랑 메시지의 선후관계에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -1518,7 +1518,7 @@
         },
         {
           "id": "judgeq-d-2-empathy_approach-a-message_sequence-v2",
-          "text": "송다은 씨, 예비신랑 메시지의 선후관계에서 상대에게 상처를 준 부분을 어떻게 보고 있습니까.",
+          "text": "예비신랑 메시지의 선후관계에서 상대에게 상처를 준 부분을 어떻게 보고 있습니까.",
           "behaviorHint": "예비신랑 메시지의 선후관계에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -1530,7 +1530,7 @@
         },
         {
           "id": "judgeq-d-2-empathy_approach-a-message_sequence-v3",
-          "text": "송다은 씨, 예비신랑 메시지의 선후관계 문제에서 두려웠거나 피하고 싶었던 지점이 있었습니까.",
+          "text": "예비신랑 메시지의 선후관계 문제에서 두려웠거나 피하고 싶었던 지점이 있었습니까.",
           "behaviorHint": "예비신랑 메시지의 선후관계에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -1542,7 +1542,7 @@
         },
         {
           "id": "judgeq-d-2-empathy_approach-a-message_sequence-v4",
-          "text": "송다은 씨, 예비신랑 메시지의 선후관계에 관해 지금 바로잡고 싶은 말이 있다면 해 주십시오.",
+          "text": "예비신랑 메시지의 선후관계에 관해 지금 바로잡고 싶은 말이 있다면 해 주십시오.",
           "behaviorHint": "예비신랑 메시지의 선후관계에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -1586,7 +1586,7 @@
         },
         {
           "id": "judgeq-d-2-empathy_approach-b-message_sequence-v2",
-          "text": "최수민 씨, 예비신랑 메시지의 선후관계에서 상대에게 상처를 준 부분을 어떻게 보고 있습니까.",
+          "text": "예비신랑 메시지의 선후관계에서 상대에게 상처를 준 부분을 어떻게 보고 있습니까.",
           "behaviorHint": "예비신랑 메시지의 선후관계에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -1598,7 +1598,7 @@
         },
         {
           "id": "judgeq-d-2-empathy_approach-b-message_sequence-v3",
-          "text": "최수민 씨, 예비신랑 메시지의 선후관계 문제에서 두려웠거나 피하고 싶었던 지점이 있었습니까.",
+          "text": "예비신랑 메시지의 선후관계 문제에서 두려웠거나 피하고 싶었던 지점이 있었습니까.",
           "behaviorHint": "예비신랑 메시지의 선후관계에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -1610,7 +1610,7 @@
         },
         {
           "id": "judgeq-d-2-empathy_approach-b-message_sequence-v4",
-          "text": "최수민 씨, 예비신랑 메시지의 선후관계에 관해 지금 바로잡고 싶은 말이 있다면 해 주십시오.",
+          "text": "예비신랑 메시지의 선후관계에 관해 지금 바로잡고 싶은 말이 있다면 해 주십시오.",
           "behaviorHint": "예비신랑 메시지의 선후관계에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -1654,7 +1654,7 @@
         },
         {
           "id": "judgeq-d-2-fact_pursuit-a-boundary_response-v2",
-          "text": "송다은 씨, 거절 답장의 의미에서 직접 한 일과 추정한 일을 나눠 설명해 주십시오.",
+          "text": "거절 답장의 의미에서 직접 한 일과 추정한 일을 나눠 설명해 주십시오.",
           "behaviorHint": "거절 답장의 의미에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -1666,7 +1666,7 @@
         },
         {
           "id": "judgeq-d-2-fact_pursuit-a-boundary_response-v3",
-          "text": "송다은 씨, 거절 답장의 의미 문제에서 상대 주장과 다른 부분이 있다면 구체적으로 답하십시오.",
+          "text": "거절 답장의 의미 문제에서 상대 주장과 다른 부분이 있다면 구체적으로 답하십시오.",
           "behaviorHint": "거절 답장의 의미에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -1678,7 +1678,7 @@
         },
         {
           "id": "judgeq-d-2-fact_pursuit-a-boundary_response-v4",
-          "text": "송다은 씨, 거절 답장의 의미 항목을 기록 기준으로 다시 정리해 주십시오.",
+          "text": "거절 답장의 의미 항목을 기록 기준으로 다시 정리해 주십시오.",
           "behaviorHint": "거절 답장의 의미에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -1722,7 +1722,7 @@
         },
         {
           "id": "judgeq-d-2-fact_pursuit-b-boundary_response-v2",
-          "text": "최수민 씨, 거절 답장의 의미에서 직접 한 일과 추정한 일을 나눠 설명해 주십시오.",
+          "text": "거절 답장의 의미에서 직접 한 일과 추정한 일을 나눠 설명해 주십시오.",
           "behaviorHint": "거절 답장의 의미에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -1734,7 +1734,7 @@
         },
         {
           "id": "judgeq-d-2-fact_pursuit-b-boundary_response-v3",
-          "text": "최수민 씨, 거절 답장의 의미 문제에서 상대 주장과 다른 부분이 있다면 구체적으로 답하십시오.",
+          "text": "거절 답장의 의미 문제에서 상대 주장과 다른 부분이 있다면 구체적으로 답하십시오.",
           "behaviorHint": "거절 답장의 의미에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -1746,7 +1746,7 @@
         },
         {
           "id": "judgeq-d-2-fact_pursuit-b-boundary_response-v4",
-          "text": "최수민 씨, 거절 답장의 의미 항목을 기록 기준으로 다시 정리해 주십시오.",
+          "text": "거절 답장의 의미 항목을 기록 기준으로 다시 정리해 주십시오.",
           "behaviorHint": "거절 답장의 의미에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -1790,7 +1790,7 @@
         },
         {
           "id": "judgeq-d-2-motive_search-a-boundary_response-v2",
-          "text": "송다은 씨, 거절 답장의 의미에서 어떤 부담이나 계산이 있었는지 설명하십시오.",
+          "text": "거절 답장의 의미에서 어떤 부담이나 계산이 있었는지 설명하십시오.",
           "behaviorHint": "거절 답장의 의미에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -1802,7 +1802,7 @@
         },
         {
           "id": "judgeq-d-2-motive_search-a-boundary_response-v3",
-          "text": "송다은 씨, 거절 답장의 의미에 대해 숨기거나 늦게 말한 이유가 무엇입니까.",
+          "text": "거절 답장의 의미에 대해 숨기거나 늦게 말한 이유가 무엇입니까.",
           "behaviorHint": "거절 답장의 의미에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -1814,7 +1814,7 @@
         },
         {
           "id": "judgeq-d-2-motive_search-a-boundary_response-v4",
-          "text": "송다은 씨, 거절 답장의 의미에 대해 그때 왜 그런 선택을 했는지 답하십시오.",
+          "text": "거절 답장의 의미에 대해 그때 왜 그런 선택을 했는지 답하십시오.",
           "behaviorHint": "거절 답장의 의미에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -1858,7 +1858,7 @@
         },
         {
           "id": "judgeq-d-2-motive_search-b-boundary_response-v2",
-          "text": "최수민 씨, 거절 답장의 의미에서 어떤 부담이나 계산이 있었는지 설명하십시오.",
+          "text": "거절 답장의 의미에서 어떤 부담이나 계산이 있었는지 설명하십시오.",
           "behaviorHint": "거절 답장의 의미에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -1870,7 +1870,7 @@
         },
         {
           "id": "judgeq-d-2-motive_search-b-boundary_response-v3",
-          "text": "최수민 씨, 거절 답장의 의미에 대해 숨기거나 늦게 말한 이유가 무엇입니까.",
+          "text": "거절 답장의 의미에 대해 숨기거나 늦게 말한 이유가 무엇입니까.",
           "behaviorHint": "거절 답장의 의미에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -1882,7 +1882,7 @@
         },
         {
           "id": "judgeq-d-2-motive_search-b-boundary_response-v4",
-          "text": "최수민 씨, 거절 답장의 의미에 대해 그때 왜 그런 선택을 했는지 답하십시오.",
+          "text": "거절 답장의 의미에 대해 그때 왜 그런 선택을 했는지 답하십시오.",
           "behaviorHint": "거절 답장의 의미에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -1926,7 +1926,7 @@
         },
         {
           "id": "judgeq-d-2-empathy_approach-a-boundary_response-v2",
-          "text": "송다은 씨, 거절 답장의 의미에서 상대에게 상처를 준 부분을 어떻게 보고 있습니까.",
+          "text": "거절 답장의 의미에서 상대에게 상처를 준 부분을 어떻게 보고 있습니까.",
           "behaviorHint": "거절 답장의 의미에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -1938,7 +1938,7 @@
         },
         {
           "id": "judgeq-d-2-empathy_approach-a-boundary_response-v3",
-          "text": "송다은 씨, 거절 답장의 의미 문제에서 두려웠거나 피하고 싶었던 지점이 있었습니까.",
+          "text": "거절 답장의 의미 문제에서 두려웠거나 피하고 싶었던 지점이 있었습니까.",
           "behaviorHint": "거절 답장의 의미에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -1950,7 +1950,7 @@
         },
         {
           "id": "judgeq-d-2-empathy_approach-a-boundary_response-v4",
-          "text": "송다은 씨, 거절 답장의 의미에 관해 지금 바로잡고 싶은 말이 있다면 해 주십시오.",
+          "text": "거절 답장의 의미에 관해 지금 바로잡고 싶은 말이 있다면 해 주십시오.",
           "behaviorHint": "거절 답장의 의미에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -1994,7 +1994,7 @@
         },
         {
           "id": "judgeq-d-2-empathy_approach-b-boundary_response-v2",
-          "text": "최수민 씨, 거절 답장의 의미에서 상대에게 상처를 준 부분을 어떻게 보고 있습니까.",
+          "text": "거절 답장의 의미에서 상대에게 상처를 준 부분을 어떻게 보고 있습니까.",
           "behaviorHint": "거절 답장의 의미에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -2006,7 +2006,7 @@
         },
         {
           "id": "judgeq-d-2-empathy_approach-b-boundary_response-v3",
-          "text": "최수민 씨, 거절 답장의 의미 문제에서 두려웠거나 피하고 싶었던 지점이 있었습니까.",
+          "text": "거절 답장의 의미 문제에서 두려웠거나 피하고 싶었던 지점이 있었습니까.",
           "behaviorHint": "거절 답장의 의미에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -2018,7 +2018,7 @@
         },
         {
           "id": "judgeq-d-2-empathy_approach-b-boundary_response-v4",
-          "text": "최수민 씨, 거절 답장의 의미에 관해 지금 바로잡고 싶은 말이 있다면 해 주십시오.",
+          "text": "거절 답장의 의미에 관해 지금 바로잡고 싶은 말이 있다면 해 주십시오.",
           "behaviorHint": "거절 답장의 의미에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -2062,7 +2062,7 @@
         },
         {
           "id": "judgeq-d-2-fact_pursuit-a-withheld_capture-v2",
-          "text": "송다은 씨, 캡처를 바로 내놓지 못한 이유에서 직접 한 일과 추정한 일을 나눠 설명해 주십시오.",
+          "text": "캡처를 바로 내놓지 못한 이유에서 직접 한 일과 추정한 일을 나눠 설명해 주십시오.",
           "behaviorHint": "캡처를 바로 내놓지 못한 이유에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -2074,7 +2074,7 @@
         },
         {
           "id": "judgeq-d-2-fact_pursuit-a-withheld_capture-v3",
-          "text": "송다은 씨, 캡처를 바로 내놓지 못한 이유 문제에서 상대 주장과 다른 부분이 있다면 구체적으로 답하십시오.",
+          "text": "캡처를 바로 내놓지 못한 이유 문제에서 상대 주장과 다른 부분이 있다면 구체적으로 답하십시오.",
           "behaviorHint": "캡처를 바로 내놓지 못한 이유에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -2086,7 +2086,7 @@
         },
         {
           "id": "judgeq-d-2-fact_pursuit-a-withheld_capture-v4",
-          "text": "송다은 씨, 캡처를 바로 내놓지 못한 이유 항목을 기록 기준으로 다시 정리해 주십시오.",
+          "text": "캡처를 바로 내놓지 못한 이유 항목을 기록 기준으로 다시 정리해 주십시오.",
           "behaviorHint": "캡처를 바로 내놓지 못한 이유에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -2130,7 +2130,7 @@
         },
         {
           "id": "judgeq-d-2-fact_pursuit-b-withheld_capture-v2",
-          "text": "최수민 씨, 캡처를 바로 내놓지 못한 이유에서 직접 한 일과 추정한 일을 나눠 설명해 주십시오.",
+          "text": "캡처를 바로 내놓지 못한 이유에서 직접 한 일과 추정한 일을 나눠 설명해 주십시오.",
           "behaviorHint": "캡처를 바로 내놓지 못한 이유에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -2142,7 +2142,7 @@
         },
         {
           "id": "judgeq-d-2-fact_pursuit-b-withheld_capture-v3",
-          "text": "최수민 씨, 캡처를 바로 내놓지 못한 이유 문제에서 상대 주장과 다른 부분이 있다면 구체적으로 답하십시오.",
+          "text": "캡처를 바로 내놓지 못한 이유 문제에서 상대 주장과 다른 부분이 있다면 구체적으로 답하십시오.",
           "behaviorHint": "캡처를 바로 내놓지 못한 이유에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -2154,7 +2154,7 @@
         },
         {
           "id": "judgeq-d-2-fact_pursuit-b-withheld_capture-v4",
-          "text": "최수민 씨, 캡처를 바로 내놓지 못한 이유 항목을 기록 기준으로 다시 정리해 주십시오.",
+          "text": "캡처를 바로 내놓지 못한 이유 항목을 기록 기준으로 다시 정리해 주십시오.",
           "behaviorHint": "캡처를 바로 내놓지 못한 이유에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -2198,7 +2198,7 @@
         },
         {
           "id": "judgeq-d-2-motive_search-a-withheld_capture-v2",
-          "text": "송다은 씨, 캡처를 바로 내놓지 못한 이유에서 어떤 부담이나 계산이 있었는지 설명하십시오.",
+          "text": "캡처를 바로 내놓지 못한 이유에서 어떤 부담이나 계산이 있었는지 설명하십시오.",
           "behaviorHint": "캡처를 바로 내놓지 못한 이유에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -2210,7 +2210,7 @@
         },
         {
           "id": "judgeq-d-2-motive_search-a-withheld_capture-v3",
-          "text": "송다은 씨, 캡처를 바로 내놓지 못한 이유에 대해 숨기거나 늦게 말한 이유가 무엇입니까.",
+          "text": "캡처를 바로 내놓지 못한 이유에 대해 숨기거나 늦게 말한 이유가 무엇입니까.",
           "behaviorHint": "캡처를 바로 내놓지 못한 이유에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -2222,7 +2222,7 @@
         },
         {
           "id": "judgeq-d-2-motive_search-a-withheld_capture-v4",
-          "text": "송다은 씨, 캡처를 바로 내놓지 못한 이유에 대해 그때 왜 그런 선택을 했는지 답하십시오.",
+          "text": "캡처를 바로 내놓지 못한 이유에 대해 그때 왜 그런 선택을 했는지 답하십시오.",
           "behaviorHint": "캡처를 바로 내놓지 못한 이유에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -2266,7 +2266,7 @@
         },
         {
           "id": "judgeq-d-2-motive_search-b-withheld_capture-v2",
-          "text": "최수민 씨, 캡처를 바로 내놓지 못한 이유에서 어떤 부담이나 계산이 있었는지 설명하십시오.",
+          "text": "캡처를 바로 내놓지 못한 이유에서 어떤 부담이나 계산이 있었는지 설명하십시오.",
           "behaviorHint": "캡처를 바로 내놓지 못한 이유에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -2278,7 +2278,7 @@
         },
         {
           "id": "judgeq-d-2-motive_search-b-withheld_capture-v3",
-          "text": "최수민 씨, 캡처를 바로 내놓지 못한 이유에 대해 숨기거나 늦게 말한 이유가 무엇입니까.",
+          "text": "캡처를 바로 내놓지 못한 이유에 대해 숨기거나 늦게 말한 이유가 무엇입니까.",
           "behaviorHint": "캡처를 바로 내놓지 못한 이유에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -2290,7 +2290,7 @@
         },
         {
           "id": "judgeq-d-2-motive_search-b-withheld_capture-v4",
-          "text": "최수민 씨, 캡처를 바로 내놓지 못한 이유에 대해 그때 왜 그런 선택을 했는지 답하십시오.",
+          "text": "캡처를 바로 내놓지 못한 이유에 대해 그때 왜 그런 선택을 했는지 답하십시오.",
           "behaviorHint": "캡처를 바로 내놓지 못한 이유에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -2334,7 +2334,7 @@
         },
         {
           "id": "judgeq-d-2-empathy_approach-a-withheld_capture-v2",
-          "text": "송다은 씨, 캡처를 바로 내놓지 못한 이유에서 상대에게 상처를 준 부분을 어떻게 보고 있습니까.",
+          "text": "캡처를 바로 내놓지 못한 이유에서 상대에게 상처를 준 부분을 어떻게 보고 있습니까.",
           "behaviorHint": "캡처를 바로 내놓지 못한 이유에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -2346,7 +2346,7 @@
         },
         {
           "id": "judgeq-d-2-empathy_approach-a-withheld_capture-v3",
-          "text": "송다은 씨, 캡처를 바로 내놓지 못한 이유 문제에서 두려웠거나 피하고 싶었던 지점이 있었습니까.",
+          "text": "캡처를 바로 내놓지 못한 이유 문제에서 두려웠거나 피하고 싶었던 지점이 있었습니까.",
           "behaviorHint": "캡처를 바로 내놓지 못한 이유에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -2358,7 +2358,7 @@
         },
         {
           "id": "judgeq-d-2-empathy_approach-a-withheld_capture-v4",
-          "text": "송다은 씨, 캡처를 바로 내놓지 못한 이유에 관해 지금 바로잡고 싶은 말이 있다면 해 주십시오.",
+          "text": "캡처를 바로 내놓지 못한 이유에 관해 지금 바로잡고 싶은 말이 있다면 해 주십시오.",
           "behaviorHint": "캡처를 바로 내놓지 못한 이유에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -2402,7 +2402,7 @@
         },
         {
           "id": "judgeq-d-2-empathy_approach-b-withheld_capture-v2",
-          "text": "최수민 씨, 캡처를 바로 내놓지 못한 이유에서 상대에게 상처를 준 부분을 어떻게 보고 있습니까.",
+          "text": "캡처를 바로 내놓지 못한 이유에서 상대에게 상처를 준 부분을 어떻게 보고 있습니까.",
           "behaviorHint": "캡처를 바로 내놓지 못한 이유에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -2414,7 +2414,7 @@
         },
         {
           "id": "judgeq-d-2-empathy_approach-b-withheld_capture-v3",
-          "text": "최수민 씨, 캡처를 바로 내놓지 못한 이유 문제에서 두려웠거나 피하고 싶었던 지점이 있었습니까.",
+          "text": "캡처를 바로 내놓지 못한 이유 문제에서 두려웠거나 피하고 싶었던 지점이 있었습니까.",
           "behaviorHint": "캡처를 바로 내놓지 못한 이유에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -2426,7 +2426,7 @@
         },
         {
           "id": "judgeq-d-2-empathy_approach-b-withheld_capture-v4",
-          "text": "최수민 씨, 캡처를 바로 내놓지 못한 이유에 관해 지금 바로잡고 싶은 말이 있다면 해 주십시오.",
+          "text": "캡처를 바로 내놓지 못한 이유에 관해 지금 바로잡고 싶은 말이 있다면 해 주십시오.",
           "behaviorHint": "캡처를 바로 내놓지 못한 이유에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -2470,7 +2470,7 @@
         },
         {
           "id": "judgeq-d-3-fact_pursuit-a-father_request_signal-v2",
-          "text": "송다은 씨, 아버지의 부탁 신호에서 직접 한 일과 추정한 일을 나눠 설명해 주십시오.",
+          "text": "아버지의 부탁 신호에서 직접 한 일과 추정한 일을 나눠 설명해 주십시오.",
           "behaviorHint": "아버지의 부탁 신호에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -2482,7 +2482,7 @@
         },
         {
           "id": "judgeq-d-3-fact_pursuit-a-father_request_signal-v3",
-          "text": "송다은 씨, 아버지의 부탁 신호 문제에서 상대 주장과 다른 부분이 있다면 구체적으로 답하십시오.",
+          "text": "아버지의 부탁 신호 문제에서 상대 주장과 다른 부분이 있다면 구체적으로 답하십시오.",
           "behaviorHint": "아버지의 부탁 신호에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -2494,7 +2494,7 @@
         },
         {
           "id": "judgeq-d-3-fact_pursuit-a-father_request_signal-v4",
-          "text": "송다은 씨, 아버지의 부탁 신호 항목을 기록 기준으로 다시 정리해 주십시오.",
+          "text": "아버지의 부탁 신호 항목을 기록 기준으로 다시 정리해 주십시오.",
           "behaviorHint": "아버지의 부탁 신호에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -2538,7 +2538,7 @@
         },
         {
           "id": "judgeq-d-3-fact_pursuit-b-father_request_signal-v2",
-          "text": "최수민 씨, 아버지의 부탁 신호에서 직접 한 일과 추정한 일을 나눠 설명해 주십시오.",
+          "text": "아버지의 부탁 신호에서 직접 한 일과 추정한 일을 나눠 설명해 주십시오.",
           "behaviorHint": "아버지의 부탁 신호에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -2550,7 +2550,7 @@
         },
         {
           "id": "judgeq-d-3-fact_pursuit-b-father_request_signal-v3",
-          "text": "최수민 씨, 아버지의 부탁 신호 문제에서 상대 주장과 다른 부분이 있다면 구체적으로 답하십시오.",
+          "text": "아버지의 부탁 신호 문제에서 상대 주장과 다른 부분이 있다면 구체적으로 답하십시오.",
           "behaviorHint": "아버지의 부탁 신호에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -2562,7 +2562,7 @@
         },
         {
           "id": "judgeq-d-3-fact_pursuit-b-father_request_signal-v4",
-          "text": "최수민 씨, 아버지의 부탁 신호 항목을 기록 기준으로 다시 정리해 주십시오.",
+          "text": "아버지의 부탁 신호 항목을 기록 기준으로 다시 정리해 주십시오.",
           "behaviorHint": "아버지의 부탁 신호에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -2606,7 +2606,7 @@
         },
         {
           "id": "judgeq-d-3-motive_search-a-father_request_signal-v2",
-          "text": "송다은 씨, 아버지의 부탁 신호에서 어떤 부담이나 계산이 있었는지 설명하십시오.",
+          "text": "아버지의 부탁 신호에서 어떤 부담이나 계산이 있었는지 설명하십시오.",
           "behaviorHint": "아버지의 부탁 신호에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -2618,7 +2618,7 @@
         },
         {
           "id": "judgeq-d-3-motive_search-a-father_request_signal-v3",
-          "text": "송다은 씨, 아버지의 부탁 신호에 대해 숨기거나 늦게 말한 이유가 무엇입니까.",
+          "text": "아버지의 부탁 신호에 대해 숨기거나 늦게 말한 이유가 무엇입니까.",
           "behaviorHint": "아버지의 부탁 신호에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -2630,7 +2630,7 @@
         },
         {
           "id": "judgeq-d-3-motive_search-a-father_request_signal-v4",
-          "text": "송다은 씨, 아버지의 부탁 신호에 대해 그때 왜 그런 선택을 했는지 답하십시오.",
+          "text": "아버지의 부탁 신호에 대해 그때 왜 그런 선택을 했는지 답하십시오.",
           "behaviorHint": "아버지의 부탁 신호에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -2674,7 +2674,7 @@
         },
         {
           "id": "judgeq-d-3-motive_search-b-father_request_signal-v2",
-          "text": "최수민 씨, 아버지의 부탁 신호에서 어떤 부담이나 계산이 있었는지 설명하십시오.",
+          "text": "아버지의 부탁 신호에서 어떤 부담이나 계산이 있었는지 설명하십시오.",
           "behaviorHint": "아버지의 부탁 신호에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -2686,7 +2686,7 @@
         },
         {
           "id": "judgeq-d-3-motive_search-b-father_request_signal-v3",
-          "text": "최수민 씨, 아버지의 부탁 신호에 대해 숨기거나 늦게 말한 이유가 무엇입니까.",
+          "text": "아버지의 부탁 신호에 대해 숨기거나 늦게 말한 이유가 무엇입니까.",
           "behaviorHint": "아버지의 부탁 신호에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -2698,7 +2698,7 @@
         },
         {
           "id": "judgeq-d-3-motive_search-b-father_request_signal-v4",
-          "text": "최수민 씨, 아버지의 부탁 신호에 대해 그때 왜 그런 선택을 했는지 답하십시오.",
+          "text": "아버지의 부탁 신호에 대해 그때 왜 그런 선택을 했는지 답하십시오.",
           "behaviorHint": "아버지의 부탁 신호에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -2742,7 +2742,7 @@
         },
         {
           "id": "judgeq-d-3-empathy_approach-a-father_request_signal-v2",
-          "text": "송다은 씨, 아버지의 부탁 신호에서 상대에게 상처를 준 부분을 어떻게 보고 있습니까.",
+          "text": "아버지의 부탁 신호에서 상대에게 상처를 준 부분을 어떻게 보고 있습니까.",
           "behaviorHint": "아버지의 부탁 신호에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -2754,7 +2754,7 @@
         },
         {
           "id": "judgeq-d-3-empathy_approach-a-father_request_signal-v3",
-          "text": "송다은 씨, 아버지의 부탁 신호 문제에서 두려웠거나 피하고 싶었던 지점이 있었습니까.",
+          "text": "아버지의 부탁 신호 문제에서 두려웠거나 피하고 싶었던 지점이 있었습니까.",
           "behaviorHint": "아버지의 부탁 신호에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -2766,7 +2766,7 @@
         },
         {
           "id": "judgeq-d-3-empathy_approach-a-father_request_signal-v4",
-          "text": "송다은 씨, 아버지의 부탁 신호에 관해 지금 바로잡고 싶은 말이 있다면 해 주십시오.",
+          "text": "아버지의 부탁 신호에 관해 지금 바로잡고 싶은 말이 있다면 해 주십시오.",
           "behaviorHint": "아버지의 부탁 신호에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -2810,7 +2810,7 @@
         },
         {
           "id": "judgeq-d-3-empathy_approach-b-father_request_signal-v2",
-          "text": "최수민 씨, 아버지의 부탁 신호에서 상대에게 상처를 준 부분을 어떻게 보고 있습니까.",
+          "text": "아버지의 부탁 신호에서 상대에게 상처를 준 부분을 어떻게 보고 있습니까.",
           "behaviorHint": "아버지의 부탁 신호에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -2822,7 +2822,7 @@
         },
         {
           "id": "judgeq-d-3-empathy_approach-b-father_request_signal-v3",
-          "text": "최수민 씨, 아버지의 부탁 신호 문제에서 두려웠거나 피하고 싶었던 지점이 있었습니까.",
+          "text": "아버지의 부탁 신호 문제에서 두려웠거나 피하고 싶었던 지점이 있었습니까.",
           "behaviorHint": "아버지의 부탁 신호에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -2834,7 +2834,7 @@
         },
         {
           "id": "judgeq-d-3-empathy_approach-b-father_request_signal-v4",
-          "text": "최수민 씨, 아버지의 부탁 신호에 관해 지금 바로잡고 싶은 말이 있다면 해 주십시오.",
+          "text": "아버지의 부탁 신호에 관해 지금 바로잡고 싶은 말이 있다면 해 주십시오.",
           "behaviorHint": "아버지의 부탁 신호에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -2878,7 +2878,7 @@
         },
         {
           "id": "judgeq-d-3-fact_pursuit-a-money_secrecy-v2",
-          "text": "송다은 씨, 돈 이야기와 비밀 요청에서 직접 한 일과 추정한 일을 나눠 설명해 주십시오.",
+          "text": "돈 이야기와 비밀 요청에서 직접 한 일과 추정한 일을 나눠 설명해 주십시오.",
           "behaviorHint": "돈 이야기와 비밀 요청에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -2890,7 +2890,7 @@
         },
         {
           "id": "judgeq-d-3-fact_pursuit-a-money_secrecy-v3",
-          "text": "송다은 씨, 돈 이야기와 비밀 요청 문제에서 상대 주장과 다른 부분이 있다면 구체적으로 답하십시오.",
+          "text": "돈 이야기와 비밀 요청 문제에서 상대 주장과 다른 부분이 있다면 구체적으로 답하십시오.",
           "behaviorHint": "돈 이야기와 비밀 요청에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -2902,7 +2902,7 @@
         },
         {
           "id": "judgeq-d-3-fact_pursuit-a-money_secrecy-v4",
-          "text": "송다은 씨, 돈 이야기와 비밀 요청 항목을 기록 기준으로 다시 정리해 주십시오.",
+          "text": "돈 이야기와 비밀 요청 항목을 기록 기준으로 다시 정리해 주십시오.",
           "behaviorHint": "돈 이야기와 비밀 요청에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -2946,7 +2946,7 @@
         },
         {
           "id": "judgeq-d-3-fact_pursuit-b-money_secrecy-v2",
-          "text": "최수민 씨, 돈 이야기와 비밀 요청에서 직접 한 일과 추정한 일을 나눠 설명해 주십시오.",
+          "text": "돈 이야기와 비밀 요청에서 직접 한 일과 추정한 일을 나눠 설명해 주십시오.",
           "behaviorHint": "돈 이야기와 비밀 요청에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -2958,7 +2958,7 @@
         },
         {
           "id": "judgeq-d-3-fact_pursuit-b-money_secrecy-v3",
-          "text": "최수민 씨, 돈 이야기와 비밀 요청 문제에서 상대 주장과 다른 부분이 있다면 구체적으로 답하십시오.",
+          "text": "돈 이야기와 비밀 요청 문제에서 상대 주장과 다른 부분이 있다면 구체적으로 답하십시오.",
           "behaviorHint": "돈 이야기와 비밀 요청에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -2970,7 +2970,7 @@
         },
         {
           "id": "judgeq-d-3-fact_pursuit-b-money_secrecy-v4",
-          "text": "최수민 씨, 돈 이야기와 비밀 요청 항목을 기록 기준으로 다시 정리해 주십시오.",
+          "text": "돈 이야기와 비밀 요청 항목을 기록 기준으로 다시 정리해 주십시오.",
           "behaviorHint": "돈 이야기와 비밀 요청에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -3014,7 +3014,7 @@
         },
         {
           "id": "judgeq-d-3-motive_search-a-money_secrecy-v2",
-          "text": "송다은 씨, 돈 이야기와 비밀 요청에서 어떤 부담이나 계산이 있었는지 설명하십시오.",
+          "text": "돈 이야기와 비밀 요청에서 어떤 부담이나 계산이 있었는지 설명하십시오.",
           "behaviorHint": "돈 이야기와 비밀 요청에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -3026,7 +3026,7 @@
         },
         {
           "id": "judgeq-d-3-motive_search-a-money_secrecy-v3",
-          "text": "송다은 씨, 돈 이야기와 비밀 요청에 대해 숨기거나 늦게 말한 이유가 무엇입니까.",
+          "text": "돈 이야기와 비밀 요청에 대해 숨기거나 늦게 말한 이유가 무엇입니까.",
           "behaviorHint": "돈 이야기와 비밀 요청에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -3038,7 +3038,7 @@
         },
         {
           "id": "judgeq-d-3-motive_search-a-money_secrecy-v4",
-          "text": "송다은 씨, 돈 이야기와 비밀 요청에 대해 그때 왜 그런 선택을 했는지 답하십시오.",
+          "text": "돈 이야기와 비밀 요청에 대해 그때 왜 그런 선택을 했는지 답하십시오.",
           "behaviorHint": "돈 이야기와 비밀 요청에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -3082,7 +3082,7 @@
         },
         {
           "id": "judgeq-d-3-motive_search-b-money_secrecy-v2",
-          "text": "최수민 씨, 돈 이야기와 비밀 요청에서 어떤 부담이나 계산이 있었는지 설명하십시오.",
+          "text": "돈 이야기와 비밀 요청에서 어떤 부담이나 계산이 있었는지 설명하십시오.",
           "behaviorHint": "돈 이야기와 비밀 요청에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -3094,7 +3094,7 @@
         },
         {
           "id": "judgeq-d-3-motive_search-b-money_secrecy-v3",
-          "text": "최수민 씨, 돈 이야기와 비밀 요청에 대해 숨기거나 늦게 말한 이유가 무엇입니까.",
+          "text": "돈 이야기와 비밀 요청에 대해 숨기거나 늦게 말한 이유가 무엇입니까.",
           "behaviorHint": "돈 이야기와 비밀 요청에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -3106,7 +3106,7 @@
         },
         {
           "id": "judgeq-d-3-motive_search-b-money_secrecy-v4",
-          "text": "최수민 씨, 돈 이야기와 비밀 요청에 대해 그때 왜 그런 선택을 했는지 답하십시오.",
+          "text": "돈 이야기와 비밀 요청에 대해 그때 왜 그런 선택을 했는지 답하십시오.",
           "behaviorHint": "돈 이야기와 비밀 요청에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -3150,7 +3150,7 @@
         },
         {
           "id": "judgeq-d-3-empathy_approach-a-money_secrecy-v2",
-          "text": "송다은 씨, 돈 이야기와 비밀 요청에서 상대에게 상처를 준 부분을 어떻게 보고 있습니까.",
+          "text": "돈 이야기와 비밀 요청에서 상대에게 상처를 준 부분을 어떻게 보고 있습니까.",
           "behaviorHint": "돈 이야기와 비밀 요청에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -3162,7 +3162,7 @@
         },
         {
           "id": "judgeq-d-3-empathy_approach-a-money_secrecy-v3",
-          "text": "송다은 씨, 돈 이야기와 비밀 요청 문제에서 두려웠거나 피하고 싶었던 지점이 있었습니까.",
+          "text": "돈 이야기와 비밀 요청 문제에서 두려웠거나 피하고 싶었던 지점이 있었습니까.",
           "behaviorHint": "돈 이야기와 비밀 요청에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -3174,7 +3174,7 @@
         },
         {
           "id": "judgeq-d-3-empathy_approach-a-money_secrecy-v4",
-          "text": "송다은 씨, 돈 이야기와 비밀 요청에 관해 지금 바로잡고 싶은 말이 있다면 해 주십시오.",
+          "text": "돈 이야기와 비밀 요청에 관해 지금 바로잡고 싶은 말이 있다면 해 주십시오.",
           "behaviorHint": "돈 이야기와 비밀 요청에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -3218,7 +3218,7 @@
         },
         {
           "id": "judgeq-d-3-empathy_approach-b-money_secrecy-v2",
-          "text": "최수민 씨, 돈 이야기와 비밀 요청에서 상대에게 상처를 준 부분을 어떻게 보고 있습니까.",
+          "text": "돈 이야기와 비밀 요청에서 상대에게 상처를 준 부분을 어떻게 보고 있습니까.",
           "behaviorHint": "돈 이야기와 비밀 요청에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -3230,7 +3230,7 @@
         },
         {
           "id": "judgeq-d-3-empathy_approach-b-money_secrecy-v3",
-          "text": "최수민 씨, 돈 이야기와 비밀 요청 문제에서 두려웠거나 피하고 싶었던 지점이 있었습니까.",
+          "text": "돈 이야기와 비밀 요청 문제에서 두려웠거나 피하고 싶었던 지점이 있었습니까.",
           "behaviorHint": "돈 이야기와 비밀 요청에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -3242,7 +3242,7 @@
         },
         {
           "id": "judgeq-d-3-empathy_approach-b-money_secrecy-v4",
-          "text": "최수민 씨, 돈 이야기와 비밀 요청에 관해 지금 바로잡고 싶은 말이 있다면 해 주십시오.",
+          "text": "돈 이야기와 비밀 요청에 관해 지금 바로잡고 싶은 말이 있다면 해 주십시오.",
           "behaviorHint": "돈 이야기와 비밀 요청에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -3286,7 +3286,7 @@
         },
         {
           "id": "judgeq-d-3-fact_pursuit-a-pattern_warning-v2",
-          "text": "송다은 씨, 과거와 닮은 흐름에서 직접 한 일과 추정한 일을 나눠 설명해 주십시오.",
+          "text": "과거와 닮은 흐름에서 직접 한 일과 추정한 일을 나눠 설명해 주십시오.",
           "behaviorHint": "과거와 닮은 흐름에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -3298,7 +3298,7 @@
         },
         {
           "id": "judgeq-d-3-fact_pursuit-a-pattern_warning-v3",
-          "text": "송다은 씨, 과거와 닮은 흐름 문제에서 상대 주장과 다른 부분이 있다면 구체적으로 답하십시오.",
+          "text": "과거와 닮은 흐름 문제에서 상대 주장과 다른 부분이 있다면 구체적으로 답하십시오.",
           "behaviorHint": "과거와 닮은 흐름에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -3310,7 +3310,7 @@
         },
         {
           "id": "judgeq-d-3-fact_pursuit-a-pattern_warning-v4",
-          "text": "송다은 씨, 과거와 닮은 흐름 항목을 기록 기준으로 다시 정리해 주십시오.",
+          "text": "과거와 닮은 흐름 항목을 기록 기준으로 다시 정리해 주십시오.",
           "behaviorHint": "과거와 닮은 흐름에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -3354,7 +3354,7 @@
         },
         {
           "id": "judgeq-d-3-fact_pursuit-b-pattern_warning-v2",
-          "text": "최수민 씨, 과거와 닮은 흐름에서 직접 한 일과 추정한 일을 나눠 설명해 주십시오.",
+          "text": "과거와 닮은 흐름에서 직접 한 일과 추정한 일을 나눠 설명해 주십시오.",
           "behaviorHint": "과거와 닮은 흐름에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -3366,7 +3366,7 @@
         },
         {
           "id": "judgeq-d-3-fact_pursuit-b-pattern_warning-v3",
-          "text": "최수민 씨, 과거와 닮은 흐름 문제에서 상대 주장과 다른 부분이 있다면 구체적으로 답하십시오.",
+          "text": "과거와 닮은 흐름 문제에서 상대 주장과 다른 부분이 있다면 구체적으로 답하십시오.",
           "behaviorHint": "과거와 닮은 흐름에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -3378,7 +3378,7 @@
         },
         {
           "id": "judgeq-d-3-fact_pursuit-b-pattern_warning-v4",
-          "text": "최수민 씨, 과거와 닮은 흐름 항목을 기록 기준으로 다시 정리해 주십시오.",
+          "text": "과거와 닮은 흐름 항목을 기록 기준으로 다시 정리해 주십시오.",
           "behaviorHint": "과거와 닮은 흐름에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -3422,7 +3422,7 @@
         },
         {
           "id": "judgeq-d-3-motive_search-a-pattern_warning-v2",
-          "text": "송다은 씨, 과거와 닮은 흐름에서 어떤 부담이나 계산이 있었는지 설명하십시오.",
+          "text": "과거와 닮은 흐름에서 어떤 부담이나 계산이 있었는지 설명하십시오.",
           "behaviorHint": "과거와 닮은 흐름에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -3434,7 +3434,7 @@
         },
         {
           "id": "judgeq-d-3-motive_search-a-pattern_warning-v3",
-          "text": "송다은 씨, 과거와 닮은 흐름에 대해 숨기거나 늦게 말한 이유가 무엇입니까.",
+          "text": "과거와 닮은 흐름에 대해 숨기거나 늦게 말한 이유가 무엇입니까.",
           "behaviorHint": "과거와 닮은 흐름에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -3446,7 +3446,7 @@
         },
         {
           "id": "judgeq-d-3-motive_search-a-pattern_warning-v4",
-          "text": "송다은 씨, 과거와 닮은 흐름에 대해 그때 왜 그런 선택을 했는지 답하십시오.",
+          "text": "과거와 닮은 흐름에 대해 그때 왜 그런 선택을 했는지 답하십시오.",
           "behaviorHint": "과거와 닮은 흐름에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -3490,7 +3490,7 @@
         },
         {
           "id": "judgeq-d-3-motive_search-b-pattern_warning-v2",
-          "text": "최수민 씨, 과거와 닮은 흐름에서 어떤 부담이나 계산이 있었는지 설명하십시오.",
+          "text": "과거와 닮은 흐름에서 어떤 부담이나 계산이 있었는지 설명하십시오.",
           "behaviorHint": "과거와 닮은 흐름에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -3502,7 +3502,7 @@
         },
         {
           "id": "judgeq-d-3-motive_search-b-pattern_warning-v3",
-          "text": "최수민 씨, 과거와 닮은 흐름에 대해 숨기거나 늦게 말한 이유가 무엇입니까.",
+          "text": "과거와 닮은 흐름에 대해 숨기거나 늦게 말한 이유가 무엇입니까.",
           "behaviorHint": "과거와 닮은 흐름에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -3514,7 +3514,7 @@
         },
         {
           "id": "judgeq-d-3-motive_search-b-pattern_warning-v4",
-          "text": "최수민 씨, 과거와 닮은 흐름에 대해 그때 왜 그런 선택을 했는지 답하십시오.",
+          "text": "과거와 닮은 흐름에 대해 그때 왜 그런 선택을 했는지 답하십시오.",
           "behaviorHint": "과거와 닮은 흐름에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -3558,7 +3558,7 @@
         },
         {
           "id": "judgeq-d-3-empathy_approach-a-pattern_warning-v2",
-          "text": "송다은 씨, 과거와 닮은 흐름에서 상대에게 상처를 준 부분을 어떻게 보고 있습니까.",
+          "text": "과거와 닮은 흐름에서 상대에게 상처를 준 부분을 어떻게 보고 있습니까.",
           "behaviorHint": "과거와 닮은 흐름에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -3570,7 +3570,7 @@
         },
         {
           "id": "judgeq-d-3-empathy_approach-a-pattern_warning-v3",
-          "text": "송다은 씨, 과거와 닮은 흐름 문제에서 두려웠거나 피하고 싶었던 지점이 있었습니까.",
+          "text": "과거와 닮은 흐름 문제에서 두려웠거나 피하고 싶었던 지점이 있었습니까.",
           "behaviorHint": "과거와 닮은 흐름에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -3582,7 +3582,7 @@
         },
         {
           "id": "judgeq-d-3-empathy_approach-a-pattern_warning-v4",
-          "text": "송다은 씨, 과거와 닮은 흐름에 관해 지금 바로잡고 싶은 말이 있다면 해 주십시오.",
+          "text": "과거와 닮은 흐름에 관해 지금 바로잡고 싶은 말이 있다면 해 주십시오.",
           "behaviorHint": "과거와 닮은 흐름에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -3626,7 +3626,7 @@
         },
         {
           "id": "judgeq-d-3-empathy_approach-b-pattern_warning-v2",
-          "text": "최수민 씨, 과거와 닮은 흐름에서 상대에게 상처를 준 부분을 어떻게 보고 있습니까.",
+          "text": "과거와 닮은 흐름에서 상대에게 상처를 준 부분을 어떻게 보고 있습니까.",
           "behaviorHint": "과거와 닮은 흐름에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -3638,7 +3638,7 @@
         },
         {
           "id": "judgeq-d-3-empathy_approach-b-pattern_warning-v3",
-          "text": "최수민 씨, 과거와 닮은 흐름 문제에서 두려웠거나 피하고 싶었던 지점이 있었습니까.",
+          "text": "과거와 닮은 흐름 문제에서 두려웠거나 피하고 싶었던 지점이 있었습니까.",
           "behaviorHint": "과거와 닮은 흐름에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -3650,7 +3650,7 @@
         },
         {
           "id": "judgeq-d-3-empathy_approach-b-pattern_warning-v4",
-          "text": "최수민 씨, 과거와 닮은 흐름에 관해 지금 바로잡고 싶은 말이 있다면 해 주십시오.",
+          "text": "과거와 닮은 흐름에 관해 지금 바로잡고 싶은 말이 있다면 해 주십시오.",
           "behaviorHint": "과거와 닮은 흐름에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -3694,7 +3694,7 @@
         },
         {
           "id": "judgeq-d-4-fact_pursuit-a-severance_chat_gap-v2",
-          "text": "송다은 씨, 손절 직전 카톡의 빈칸에서 직접 한 일과 추정한 일을 나눠 설명해 주십시오.",
+          "text": "손절 직전 카톡의 빈칸에서 직접 한 일과 추정한 일을 나눠 설명해 주십시오.",
           "behaviorHint": "손절 직전 카톡의 빈칸에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -3706,7 +3706,7 @@
         },
         {
           "id": "judgeq-d-4-fact_pursuit-a-severance_chat_gap-v3",
-          "text": "송다은 씨, 손절 직전 카톡의 빈칸 문제에서 상대 주장과 다른 부분이 있다면 구체적으로 답하십시오.",
+          "text": "손절 직전 카톡의 빈칸 문제에서 상대 주장과 다른 부분이 있다면 구체적으로 답하십시오.",
           "behaviorHint": "손절 직전 카톡의 빈칸에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -3718,7 +3718,7 @@
         },
         {
           "id": "judgeq-d-4-fact_pursuit-a-severance_chat_gap-v4",
-          "text": "송다은 씨, 손절 직전 카톡의 빈칸 항목을 기록 기준으로 다시 정리해 주십시오.",
+          "text": "손절 직전 카톡의 빈칸 항목을 기록 기준으로 다시 정리해 주십시오.",
           "behaviorHint": "손절 직전 카톡의 빈칸에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -3762,7 +3762,7 @@
         },
         {
           "id": "judgeq-d-4-fact_pursuit-b-severance_chat_gap-v2",
-          "text": "최수민 씨, 손절 직전 카톡의 빈칸에서 직접 한 일과 추정한 일을 나눠 설명해 주십시오.",
+          "text": "손절 직전 카톡의 빈칸에서 직접 한 일과 추정한 일을 나눠 설명해 주십시오.",
           "behaviorHint": "손절 직전 카톡의 빈칸에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -3774,7 +3774,7 @@
         },
         {
           "id": "judgeq-d-4-fact_pursuit-b-severance_chat_gap-v3",
-          "text": "최수민 씨, 손절 직전 카톡의 빈칸 문제에서 상대 주장과 다른 부분이 있다면 구체적으로 답하십시오.",
+          "text": "손절 직전 카톡의 빈칸 문제에서 상대 주장과 다른 부분이 있다면 구체적으로 답하십시오.",
           "behaviorHint": "손절 직전 카톡의 빈칸에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -3786,7 +3786,7 @@
         },
         {
           "id": "judgeq-d-4-fact_pursuit-b-severance_chat_gap-v4",
-          "text": "최수민 씨, 손절 직전 카톡의 빈칸 항목을 기록 기준으로 다시 정리해 주십시오.",
+          "text": "손절 직전 카톡의 빈칸 항목을 기록 기준으로 다시 정리해 주십시오.",
           "behaviorHint": "손절 직전 카톡의 빈칸에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -3830,7 +3830,7 @@
         },
         {
           "id": "judgeq-d-4-motive_search-a-severance_chat_gap-v2",
-          "text": "송다은 씨, 손절 직전 카톡의 빈칸에서 어떤 부담이나 계산이 있었는지 설명하십시오.",
+          "text": "손절 직전 카톡의 빈칸에서 어떤 부담이나 계산이 있었는지 설명하십시오.",
           "behaviorHint": "손절 직전 카톡의 빈칸에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -3842,7 +3842,7 @@
         },
         {
           "id": "judgeq-d-4-motive_search-a-severance_chat_gap-v3",
-          "text": "송다은 씨, 손절 직전 카톡의 빈칸에 대해 숨기거나 늦게 말한 이유가 무엇입니까.",
+          "text": "손절 직전 카톡의 빈칸에 대해 숨기거나 늦게 말한 이유가 무엇입니까.",
           "behaviorHint": "손절 직전 카톡의 빈칸에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -3854,7 +3854,7 @@
         },
         {
           "id": "judgeq-d-4-motive_search-a-severance_chat_gap-v4",
-          "text": "송다은 씨, 손절 직전 카톡의 빈칸에 대해 그때 왜 그런 선택을 했는지 답하십시오.",
+          "text": "손절 직전 카톡의 빈칸에 대해 그때 왜 그런 선택을 했는지 답하십시오.",
           "behaviorHint": "손절 직전 카톡의 빈칸에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -3898,7 +3898,7 @@
         },
         {
           "id": "judgeq-d-4-motive_search-b-severance_chat_gap-v2",
-          "text": "최수민 씨, 손절 직전 카톡의 빈칸에서 어떤 부담이나 계산이 있었는지 설명하십시오.",
+          "text": "손절 직전 카톡의 빈칸에서 어떤 부담이나 계산이 있었는지 설명하십시오.",
           "behaviorHint": "손절 직전 카톡의 빈칸에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -3910,7 +3910,7 @@
         },
         {
           "id": "judgeq-d-4-motive_search-b-severance_chat_gap-v3",
-          "text": "최수민 씨, 손절 직전 카톡의 빈칸에 대해 숨기거나 늦게 말한 이유가 무엇입니까.",
+          "text": "손절 직전 카톡의 빈칸에 대해 숨기거나 늦게 말한 이유가 무엇입니까.",
           "behaviorHint": "손절 직전 카톡의 빈칸에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -3922,7 +3922,7 @@
         },
         {
           "id": "judgeq-d-4-motive_search-b-severance_chat_gap-v4",
-          "text": "최수민 씨, 손절 직전 카톡의 빈칸에 대해 그때 왜 그런 선택을 했는지 답하십시오.",
+          "text": "손절 직전 카톡의 빈칸에 대해 그때 왜 그런 선택을 했는지 답하십시오.",
           "behaviorHint": "손절 직전 카톡의 빈칸에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -3966,7 +3966,7 @@
         },
         {
           "id": "judgeq-d-4-empathy_approach-a-severance_chat_gap-v2",
-          "text": "송다은 씨, 손절 직전 카톡의 빈칸에서 상대에게 상처를 준 부분을 어떻게 보고 있습니까.",
+          "text": "손절 직전 카톡의 빈칸에서 상대에게 상처를 준 부분을 어떻게 보고 있습니까.",
           "behaviorHint": "손절 직전 카톡의 빈칸에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -3978,7 +3978,7 @@
         },
         {
           "id": "judgeq-d-4-empathy_approach-a-severance_chat_gap-v3",
-          "text": "송다은 씨, 손절 직전 카톡의 빈칸 문제에서 두려웠거나 피하고 싶었던 지점이 있었습니까.",
+          "text": "손절 직전 카톡의 빈칸 문제에서 두려웠거나 피하고 싶었던 지점이 있었습니까.",
           "behaviorHint": "손절 직전 카톡의 빈칸에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -3990,7 +3990,7 @@
         },
         {
           "id": "judgeq-d-4-empathy_approach-a-severance_chat_gap-v4",
-          "text": "송다은 씨, 손절 직전 카톡의 빈칸에 관해 지금 바로잡고 싶은 말이 있다면 해 주십시오.",
+          "text": "손절 직전 카톡의 빈칸에 관해 지금 바로잡고 싶은 말이 있다면 해 주십시오.",
           "behaviorHint": "손절 직전 카톡의 빈칸에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -4034,7 +4034,7 @@
         },
         {
           "id": "judgeq-d-4-empathy_approach-b-severance_chat_gap-v2",
-          "text": "최수민 씨, 손절 직전 카톡의 빈칸에서 상대에게 상처를 준 부분을 어떻게 보고 있습니까.",
+          "text": "손절 직전 카톡의 빈칸에서 상대에게 상처를 준 부분을 어떻게 보고 있습니까.",
           "behaviorHint": "손절 직전 카톡의 빈칸에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -4046,7 +4046,7 @@
         },
         {
           "id": "judgeq-d-4-empathy_approach-b-severance_chat_gap-v3",
-          "text": "최수민 씨, 손절 직전 카톡의 빈칸 문제에서 두려웠거나 피하고 싶었던 지점이 있었습니까.",
+          "text": "손절 직전 카톡의 빈칸 문제에서 두려웠거나 피하고 싶었던 지점이 있었습니까.",
           "behaviorHint": "손절 직전 카톡의 빈칸에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -4058,7 +4058,7 @@
         },
         {
           "id": "judgeq-d-4-empathy_approach-b-severance_chat_gap-v4",
-          "text": "최수민 씨, 손절 직전 카톡의 빈칸에 관해 지금 바로잡고 싶은 말이 있다면 해 주십시오.",
+          "text": "손절 직전 카톡의 빈칸에 관해 지금 바로잡고 싶은 말이 있다면 해 주십시오.",
           "behaviorHint": "손절 직전 카톡의 빈칸에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -4102,7 +4102,7 @@
         },
         {
           "id": "judgeq-d-4-fact_pursuit-a-transfer_repayment-v2",
-          "text": "송다은 씨, 송금과 상환 지연에서 직접 한 일과 추정한 일을 나눠 설명해 주십시오.",
+          "text": "송금과 상환 지연에서 직접 한 일과 추정한 일을 나눠 설명해 주십시오.",
           "behaviorHint": "송금과 상환 지연에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -4114,7 +4114,7 @@
         },
         {
           "id": "judgeq-d-4-fact_pursuit-a-transfer_repayment-v3",
-          "text": "송다은 씨, 송금과 상환 지연 문제에서 상대 주장과 다른 부분이 있다면 구체적으로 답하십시오.",
+          "text": "송금과 상환 지연 문제에서 상대 주장과 다른 부분이 있다면 구체적으로 답하십시오.",
           "behaviorHint": "송금과 상환 지연에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -4126,7 +4126,7 @@
         },
         {
           "id": "judgeq-d-4-fact_pursuit-a-transfer_repayment-v4",
-          "text": "송다은 씨, 송금과 상환 지연 항목을 기록 기준으로 다시 정리해 주십시오.",
+          "text": "송금과 상환 지연 항목을 기록 기준으로 다시 정리해 주십시오.",
           "behaviorHint": "송금과 상환 지연에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -4170,7 +4170,7 @@
         },
         {
           "id": "judgeq-d-4-fact_pursuit-b-transfer_repayment-v2",
-          "text": "최수민 씨, 송금과 상환 지연에서 직접 한 일과 추정한 일을 나눠 설명해 주십시오.",
+          "text": "송금과 상환 지연에서 직접 한 일과 추정한 일을 나눠 설명해 주십시오.",
           "behaviorHint": "송금과 상환 지연에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -4182,7 +4182,7 @@
         },
         {
           "id": "judgeq-d-4-fact_pursuit-b-transfer_repayment-v3",
-          "text": "최수민 씨, 송금과 상환 지연 문제에서 상대 주장과 다른 부분이 있다면 구체적으로 답하십시오.",
+          "text": "송금과 상환 지연 문제에서 상대 주장과 다른 부분이 있다면 구체적으로 답하십시오.",
           "behaviorHint": "송금과 상환 지연에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -4194,7 +4194,7 @@
         },
         {
           "id": "judgeq-d-4-fact_pursuit-b-transfer_repayment-v4",
-          "text": "최수민 씨, 송금과 상환 지연 항목을 기록 기준으로 다시 정리해 주십시오.",
+          "text": "송금과 상환 지연 항목을 기록 기준으로 다시 정리해 주십시오.",
           "behaviorHint": "송금과 상환 지연에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -4238,7 +4238,7 @@
         },
         {
           "id": "judgeq-d-4-motive_search-a-transfer_repayment-v2",
-          "text": "송다은 씨, 송금과 상환 지연에서 어떤 부담이나 계산이 있었는지 설명하십시오.",
+          "text": "송금과 상환 지연에서 어떤 부담이나 계산이 있었는지 설명하십시오.",
           "behaviorHint": "송금과 상환 지연에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -4250,7 +4250,7 @@
         },
         {
           "id": "judgeq-d-4-motive_search-a-transfer_repayment-v3",
-          "text": "송다은 씨, 송금과 상환 지연에 대해 숨기거나 늦게 말한 이유가 무엇입니까.",
+          "text": "송금과 상환 지연에 대해 숨기거나 늦게 말한 이유가 무엇입니까.",
           "behaviorHint": "송금과 상환 지연에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -4262,7 +4262,7 @@
         },
         {
           "id": "judgeq-d-4-motive_search-a-transfer_repayment-v4",
-          "text": "송다은 씨, 송금과 상환 지연에 대해 그때 왜 그런 선택을 했는지 답하십시오.",
+          "text": "송금과 상환 지연에 대해 그때 왜 그런 선택을 했는지 답하십시오.",
           "behaviorHint": "송금과 상환 지연에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -4306,7 +4306,7 @@
         },
         {
           "id": "judgeq-d-4-motive_search-b-transfer_repayment-v2",
-          "text": "최수민 씨, 송금과 상환 지연에서 어떤 부담이나 계산이 있었는지 설명하십시오.",
+          "text": "송금과 상환 지연에서 어떤 부담이나 계산이 있었는지 설명하십시오.",
           "behaviorHint": "송금과 상환 지연에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -4318,7 +4318,7 @@
         },
         {
           "id": "judgeq-d-4-motive_search-b-transfer_repayment-v3",
-          "text": "최수민 씨, 송금과 상환 지연에 대해 숨기거나 늦게 말한 이유가 무엇입니까.",
+          "text": "송금과 상환 지연에 대해 숨기거나 늦게 말한 이유가 무엇입니까.",
           "behaviorHint": "송금과 상환 지연에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -4330,7 +4330,7 @@
         },
         {
           "id": "judgeq-d-4-motive_search-b-transfer_repayment-v4",
-          "text": "최수민 씨, 송금과 상환 지연에 대해 그때 왜 그런 선택을 했는지 답하십시오.",
+          "text": "송금과 상환 지연에 대해 그때 왜 그런 선택을 했는지 답하십시오.",
           "behaviorHint": "송금과 상환 지연에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -4374,7 +4374,7 @@
         },
         {
           "id": "judgeq-d-4-empathy_approach-a-transfer_repayment-v2",
-          "text": "송다은 씨, 송금과 상환 지연에서 상대에게 상처를 준 부분을 어떻게 보고 있습니까.",
+          "text": "송금과 상환 지연에서 상대에게 상처를 준 부분을 어떻게 보고 있습니까.",
           "behaviorHint": "송금과 상환 지연에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -4386,7 +4386,7 @@
         },
         {
           "id": "judgeq-d-4-empathy_approach-a-transfer_repayment-v3",
-          "text": "송다은 씨, 송금과 상환 지연 문제에서 두려웠거나 피하고 싶었던 지점이 있었습니까.",
+          "text": "송금과 상환 지연 문제에서 두려웠거나 피하고 싶었던 지점이 있었습니까.",
           "behaviorHint": "송금과 상환 지연에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -4398,7 +4398,7 @@
         },
         {
           "id": "judgeq-d-4-empathy_approach-a-transfer_repayment-v4",
-          "text": "송다은 씨, 송금과 상환 지연에 관해 지금 바로잡고 싶은 말이 있다면 해 주십시오.",
+          "text": "송금과 상환 지연에 관해 지금 바로잡고 싶은 말이 있다면 해 주십시오.",
           "behaviorHint": "송금과 상환 지연에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -4442,7 +4442,7 @@
         },
         {
           "id": "judgeq-d-4-empathy_approach-b-transfer_repayment-v2",
-          "text": "최수민 씨, 송금과 상환 지연에서 상대에게 상처를 준 부분을 어떻게 보고 있습니까.",
+          "text": "송금과 상환 지연에서 상대에게 상처를 준 부분을 어떻게 보고 있습니까.",
           "behaviorHint": "송금과 상환 지연에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -4454,7 +4454,7 @@
         },
         {
           "id": "judgeq-d-4-empathy_approach-b-transfer_repayment-v3",
-          "text": "최수민 씨, 송금과 상환 지연 문제에서 두려웠거나 피하고 싶었던 지점이 있었습니까.",
+          "text": "송금과 상환 지연 문제에서 두려웠거나 피하고 싶었던 지점이 있었습니까.",
           "behaviorHint": "송금과 상환 지연에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -4466,7 +4466,7 @@
         },
         {
           "id": "judgeq-d-4-empathy_approach-b-transfer_repayment-v4",
-          "text": "최수민 씨, 송금과 상환 지연에 관해 지금 바로잡고 싶은 말이 있다면 해 주십시오.",
+          "text": "송금과 상환 지연에 관해 지금 바로잡고 싶은 말이 있다면 해 주십시오.",
           "behaviorHint": "송금과 상환 지연에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -4510,7 +4510,7 @@
         },
         {
           "id": "judgeq-d-4-fact_pursuit-a-protective_silence-v2",
-          "text": "송다은 씨, 친구를 무너뜨리기 싫었던 침묵에서 직접 한 일과 추정한 일을 나눠 설명해 주십시오.",
+          "text": "친구를 무너뜨리기 싫었던 침묵에서 직접 한 일과 추정한 일을 나눠 설명해 주십시오.",
           "behaviorHint": "친구를 무너뜨리기 싫었던 침묵에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -4522,7 +4522,7 @@
         },
         {
           "id": "judgeq-d-4-fact_pursuit-a-protective_silence-v3",
-          "text": "송다은 씨, 친구를 무너뜨리기 싫었던 침묵 문제에서 상대 주장과 다른 부분이 있다면 구체적으로 답하십시오.",
+          "text": "친구를 무너뜨리기 싫었던 침묵 문제에서 상대 주장과 다른 부분이 있다면 구체적으로 답하십시오.",
           "behaviorHint": "친구를 무너뜨리기 싫었던 침묵에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -4534,7 +4534,7 @@
         },
         {
           "id": "judgeq-d-4-fact_pursuit-a-protective_silence-v4",
-          "text": "송다은 씨, 친구를 무너뜨리기 싫었던 침묵 항목을 기록 기준으로 다시 정리해 주십시오.",
+          "text": "친구를 무너뜨리기 싫었던 침묵 항목을 기록 기준으로 다시 정리해 주십시오.",
           "behaviorHint": "친구를 무너뜨리기 싫었던 침묵에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -4578,7 +4578,7 @@
         },
         {
           "id": "judgeq-d-4-fact_pursuit-b-protective_silence-v2",
-          "text": "최수민 씨, 친구를 무너뜨리기 싫었던 침묵에서 직접 한 일과 추정한 일을 나눠 설명해 주십시오.",
+          "text": "친구를 무너뜨리기 싫었던 침묵에서 직접 한 일과 추정한 일을 나눠 설명해 주십시오.",
           "behaviorHint": "친구를 무너뜨리기 싫었던 침묵에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -4590,7 +4590,7 @@
         },
         {
           "id": "judgeq-d-4-fact_pursuit-b-protective_silence-v3",
-          "text": "최수민 씨, 친구를 무너뜨리기 싫었던 침묵 문제에서 상대 주장과 다른 부분이 있다면 구체적으로 답하십시오.",
+          "text": "친구를 무너뜨리기 싫었던 침묵 문제에서 상대 주장과 다른 부분이 있다면 구체적으로 답하십시오.",
           "behaviorHint": "친구를 무너뜨리기 싫었던 침묵에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -4602,7 +4602,7 @@
         },
         {
           "id": "judgeq-d-4-fact_pursuit-b-protective_silence-v4",
-          "text": "최수민 씨, 친구를 무너뜨리기 싫었던 침묵 항목을 기록 기준으로 다시 정리해 주십시오.",
+          "text": "친구를 무너뜨리기 싫었던 침묵 항목을 기록 기준으로 다시 정리해 주십시오.",
           "behaviorHint": "친구를 무너뜨리기 싫었던 침묵에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -4646,7 +4646,7 @@
         },
         {
           "id": "judgeq-d-4-motive_search-a-protective_silence-v2",
-          "text": "송다은 씨, 친구를 무너뜨리기 싫었던 침묵에서 어떤 부담이나 계산이 있었는지 설명하십시오.",
+          "text": "친구를 무너뜨리기 싫었던 침묵에서 어떤 부담이나 계산이 있었는지 설명하십시오.",
           "behaviorHint": "친구를 무너뜨리기 싫었던 침묵에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -4658,7 +4658,7 @@
         },
         {
           "id": "judgeq-d-4-motive_search-a-protective_silence-v3",
-          "text": "송다은 씨, 친구를 무너뜨리기 싫었던 침묵에 대해 숨기거나 늦게 말한 이유가 무엇입니까.",
+          "text": "친구를 무너뜨리기 싫었던 침묵에 대해 숨기거나 늦게 말한 이유가 무엇입니까.",
           "behaviorHint": "친구를 무너뜨리기 싫었던 침묵에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -4670,7 +4670,7 @@
         },
         {
           "id": "judgeq-d-4-motive_search-a-protective_silence-v4",
-          "text": "송다은 씨, 친구를 무너뜨리기 싫었던 침묵에 대해 그때 왜 그런 선택을 했는지 답하십시오.",
+          "text": "친구를 무너뜨리기 싫었던 침묵에 대해 그때 왜 그런 선택을 했는지 답하십시오.",
           "behaviorHint": "친구를 무너뜨리기 싫었던 침묵에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -4714,7 +4714,7 @@
         },
         {
           "id": "judgeq-d-4-motive_search-b-protective_silence-v2",
-          "text": "최수민 씨, 친구를 무너뜨리기 싫었던 침묵에서 어떤 부담이나 계산이 있었는지 설명하십시오.",
+          "text": "친구를 무너뜨리기 싫었던 침묵에서 어떤 부담이나 계산이 있었는지 설명하십시오.",
           "behaviorHint": "친구를 무너뜨리기 싫었던 침묵에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -4726,7 +4726,7 @@
         },
         {
           "id": "judgeq-d-4-motive_search-b-protective_silence-v3",
-          "text": "최수민 씨, 친구를 무너뜨리기 싫었던 침묵에 대해 숨기거나 늦게 말한 이유가 무엇입니까.",
+          "text": "친구를 무너뜨리기 싫었던 침묵에 대해 숨기거나 늦게 말한 이유가 무엇입니까.",
           "behaviorHint": "친구를 무너뜨리기 싫었던 침묵에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -4738,7 +4738,7 @@
         },
         {
           "id": "judgeq-d-4-motive_search-b-protective_silence-v4",
-          "text": "최수민 씨, 친구를 무너뜨리기 싫었던 침묵에 대해 그때 왜 그런 선택을 했는지 답하십시오.",
+          "text": "친구를 무너뜨리기 싫었던 침묵에 대해 그때 왜 그런 선택을 했는지 답하십시오.",
           "behaviorHint": "친구를 무너뜨리기 싫었던 침묵에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -4782,7 +4782,7 @@
         },
         {
           "id": "judgeq-d-4-empathy_approach-a-protective_silence-v2",
-          "text": "송다은 씨, 친구를 무너뜨리기 싫었던 침묵에서 상대에게 상처를 준 부분을 어떻게 보고 있습니까.",
+          "text": "친구를 무너뜨리기 싫었던 침묵에서 상대에게 상처를 준 부분을 어떻게 보고 있습니까.",
           "behaviorHint": "친구를 무너뜨리기 싫었던 침묵에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -4794,7 +4794,7 @@
         },
         {
           "id": "judgeq-d-4-empathy_approach-a-protective_silence-v3",
-          "text": "송다은 씨, 친구를 무너뜨리기 싫었던 침묵 문제에서 두려웠거나 피하고 싶었던 지점이 있었습니까.",
+          "text": "친구를 무너뜨리기 싫었던 침묵 문제에서 두려웠거나 피하고 싶었던 지점이 있었습니까.",
           "behaviorHint": "친구를 무너뜨리기 싫었던 침묵에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -4806,7 +4806,7 @@
         },
         {
           "id": "judgeq-d-4-empathy_approach-a-protective_silence-v4",
-          "text": "송다은 씨, 친구를 무너뜨리기 싫었던 침묵에 관해 지금 바로잡고 싶은 말이 있다면 해 주십시오.",
+          "text": "친구를 무너뜨리기 싫었던 침묵에 관해 지금 바로잡고 싶은 말이 있다면 해 주십시오.",
           "behaviorHint": "친구를 무너뜨리기 싫었던 침묵에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -4850,7 +4850,7 @@
         },
         {
           "id": "judgeq-d-4-empathy_approach-b-protective_silence-v2",
-          "text": "최수민 씨, 친구를 무너뜨리기 싫었던 침묵에서 상대에게 상처를 준 부분을 어떻게 보고 있습니까.",
+          "text": "친구를 무너뜨리기 싫었던 침묵에서 상대에게 상처를 준 부분을 어떻게 보고 있습니까.",
           "behaviorHint": "친구를 무너뜨리기 싫었던 침묵에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -4862,7 +4862,7 @@
         },
         {
           "id": "judgeq-d-4-empathy_approach-b-protective_silence-v3",
-          "text": "최수민 씨, 친구를 무너뜨리기 싫었던 침묵 문제에서 두려웠거나 피하고 싶었던 지점이 있었습니까.",
+          "text": "친구를 무너뜨리기 싫었던 침묵 문제에서 두려웠거나 피하고 싶었던 지점이 있었습니까.",
           "behaviorHint": "친구를 무너뜨리기 싫었던 침묵에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -4874,7 +4874,7 @@
         },
         {
           "id": "judgeq-d-4-empathy_approach-b-protective_silence-v4",
-          "text": "최수민 씨, 친구를 무너뜨리기 싫었던 침묵에 관해 지금 바로잡고 싶은 말이 있다면 해 주십시오.",
+          "text": "친구를 무너뜨리기 싫었던 침묵에 관해 지금 바로잡고 싶은 말이 있다면 해 주십시오.",
           "behaviorHint": "친구를 무너뜨리기 싫었던 침묵에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -4918,7 +4918,7 @@
         },
         {
           "id": "judgeq-d-5-fact_pursuit-a-first_groupchat_post-v2",
-          "text": "송다은 씨, 단톡방에 처음 올라간 말에서 직접 한 일과 추정한 일을 나눠 설명해 주십시오.",
+          "text": "단톡방에 처음 올라간 말에서 직접 한 일과 추정한 일을 나눠 설명해 주십시오.",
           "behaviorHint": "단톡방에 처음 올라간 말에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -4930,7 +4930,7 @@
         },
         {
           "id": "judgeq-d-5-fact_pursuit-a-first_groupchat_post-v3",
-          "text": "송다은 씨, 단톡방에 처음 올라간 말 문제에서 상대 주장과 다른 부분이 있다면 구체적으로 답하십시오.",
+          "text": "단톡방에 처음 올라간 말 문제에서 상대 주장과 다른 부분이 있다면 구체적으로 답하십시오.",
           "behaviorHint": "단톡방에 처음 올라간 말에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -4942,7 +4942,7 @@
         },
         {
           "id": "judgeq-d-5-fact_pursuit-a-first_groupchat_post-v4",
-          "text": "송다은 씨, 단톡방에 처음 올라간 말 항목을 기록 기준으로 다시 정리해 주십시오.",
+          "text": "단톡방에 처음 올라간 말 항목을 기록 기준으로 다시 정리해 주십시오.",
           "behaviorHint": "단톡방에 처음 올라간 말에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -4986,7 +4986,7 @@
         },
         {
           "id": "judgeq-d-5-fact_pursuit-b-first_groupchat_post-v2",
-          "text": "최수민 씨, 단톡방에 처음 올라간 말에서 직접 한 일과 추정한 일을 나눠 설명해 주십시오.",
+          "text": "단톡방에 처음 올라간 말에서 직접 한 일과 추정한 일을 나눠 설명해 주십시오.",
           "behaviorHint": "단톡방에 처음 올라간 말에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -4998,7 +4998,7 @@
         },
         {
           "id": "judgeq-d-5-fact_pursuit-b-first_groupchat_post-v3",
-          "text": "최수민 씨, 단톡방에 처음 올라간 말 문제에서 상대 주장과 다른 부분이 있다면 구체적으로 답하십시오.",
+          "text": "단톡방에 처음 올라간 말 문제에서 상대 주장과 다른 부분이 있다면 구체적으로 답하십시오.",
           "behaviorHint": "단톡방에 처음 올라간 말에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -5010,7 +5010,7 @@
         },
         {
           "id": "judgeq-d-5-fact_pursuit-b-first_groupchat_post-v4",
-          "text": "최수민 씨, 단톡방에 처음 올라간 말 항목을 기록 기준으로 다시 정리해 주십시오.",
+          "text": "단톡방에 처음 올라간 말 항목을 기록 기준으로 다시 정리해 주십시오.",
           "behaviorHint": "단톡방에 처음 올라간 말에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -5054,7 +5054,7 @@
         },
         {
           "id": "judgeq-d-5-motive_search-a-first_groupchat_post-v2",
-          "text": "송다은 씨, 단톡방에 처음 올라간 말에서 어떤 부담이나 계산이 있었는지 설명하십시오.",
+          "text": "단톡방에 처음 올라간 말에서 어떤 부담이나 계산이 있었는지 설명하십시오.",
           "behaviorHint": "단톡방에 처음 올라간 말에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -5066,7 +5066,7 @@
         },
         {
           "id": "judgeq-d-5-motive_search-a-first_groupchat_post-v3",
-          "text": "송다은 씨, 단톡방에 처음 올라간 말에 대해 숨기거나 늦게 말한 이유가 무엇입니까.",
+          "text": "단톡방에 처음 올라간 말에 대해 숨기거나 늦게 말한 이유가 무엇입니까.",
           "behaviorHint": "단톡방에 처음 올라간 말에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -5078,7 +5078,7 @@
         },
         {
           "id": "judgeq-d-5-motive_search-a-first_groupchat_post-v4",
-          "text": "송다은 씨, 단톡방에 처음 올라간 말에 대해 그때 왜 그런 선택을 했는지 답하십시오.",
+          "text": "단톡방에 처음 올라간 말에 대해 그때 왜 그런 선택을 했는지 답하십시오.",
           "behaviorHint": "단톡방에 처음 올라간 말에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -5122,7 +5122,7 @@
         },
         {
           "id": "judgeq-d-5-motive_search-b-first_groupchat_post-v2",
-          "text": "최수민 씨, 단톡방에 처음 올라간 말에서 어떤 부담이나 계산이 있었는지 설명하십시오.",
+          "text": "단톡방에 처음 올라간 말에서 어떤 부담이나 계산이 있었는지 설명하십시오.",
           "behaviorHint": "단톡방에 처음 올라간 말에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -5134,7 +5134,7 @@
         },
         {
           "id": "judgeq-d-5-motive_search-b-first_groupchat_post-v3",
-          "text": "최수민 씨, 단톡방에 처음 올라간 말에 대해 숨기거나 늦게 말한 이유가 무엇입니까.",
+          "text": "단톡방에 처음 올라간 말에 대해 숨기거나 늦게 말한 이유가 무엇입니까.",
           "behaviorHint": "단톡방에 처음 올라간 말에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -5146,7 +5146,7 @@
         },
         {
           "id": "judgeq-d-5-motive_search-b-first_groupchat_post-v4",
-          "text": "최수민 씨, 단톡방에 처음 올라간 말에 대해 그때 왜 그런 선택을 했는지 답하십시오.",
+          "text": "단톡방에 처음 올라간 말에 대해 그때 왜 그런 선택을 했는지 답하십시오.",
           "behaviorHint": "단톡방에 처음 올라간 말에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -5190,7 +5190,7 @@
         },
         {
           "id": "judgeq-d-5-empathy_approach-a-first_groupchat_post-v2",
-          "text": "송다은 씨, 단톡방에 처음 올라간 말에서 상대에게 상처를 준 부분을 어떻게 보고 있습니까.",
+          "text": "단톡방에 처음 올라간 말에서 상대에게 상처를 준 부분을 어떻게 보고 있습니까.",
           "behaviorHint": "단톡방에 처음 올라간 말에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -5202,7 +5202,7 @@
         },
         {
           "id": "judgeq-d-5-empathy_approach-a-first_groupchat_post-v3",
-          "text": "송다은 씨, 단톡방에 처음 올라간 말 문제에서 두려웠거나 피하고 싶었던 지점이 있었습니까.",
+          "text": "단톡방에 처음 올라간 말 문제에서 두려웠거나 피하고 싶었던 지점이 있었습니까.",
           "behaviorHint": "단톡방에 처음 올라간 말에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -5214,7 +5214,7 @@
         },
         {
           "id": "judgeq-d-5-empathy_approach-a-first_groupchat_post-v4",
-          "text": "송다은 씨, 단톡방에 처음 올라간 말에 관해 지금 바로잡고 싶은 말이 있다면 해 주십시오.",
+          "text": "단톡방에 처음 올라간 말에 관해 지금 바로잡고 싶은 말이 있다면 해 주십시오.",
           "behaviorHint": "단톡방에 처음 올라간 말에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -5258,7 +5258,7 @@
         },
         {
           "id": "judgeq-d-5-empathy_approach-b-first_groupchat_post-v2",
-          "text": "최수민 씨, 단톡방에 처음 올라간 말에서 상대에게 상처를 준 부분을 어떻게 보고 있습니까.",
+          "text": "단톡방에 처음 올라간 말에서 상대에게 상처를 준 부분을 어떻게 보고 있습니까.",
           "behaviorHint": "단톡방에 처음 올라간 말에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -5270,7 +5270,7 @@
         },
         {
           "id": "judgeq-d-5-empathy_approach-b-first_groupchat_post-v3",
-          "text": "최수민 씨, 단톡방에 처음 올라간 말 문제에서 두려웠거나 피하고 싶었던 지점이 있었습니까.",
+          "text": "단톡방에 처음 올라간 말 문제에서 두려웠거나 피하고 싶었던 지점이 있었습니까.",
           "behaviorHint": "단톡방에 처음 올라간 말에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -5282,7 +5282,7 @@
         },
         {
           "id": "judgeq-d-5-empathy_approach-b-first_groupchat_post-v4",
-          "text": "최수민 씨, 단톡방에 처음 올라간 말에 관해 지금 바로잡고 싶은 말이 있다면 해 주십시오.",
+          "text": "단톡방에 처음 올라간 말에 관해 지금 바로잡고 싶은 말이 있다면 해 주십시오.",
           "behaviorHint": "단톡방에 처음 올라간 말에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -5326,7 +5326,7 @@
         },
         {
           "id": "judgeq-d-5-fact_pursuit-a-pile_on_spread-v2",
-          "text": "송다은 씨, 친구들의 동조와 확산에서 직접 한 일과 추정한 일을 나눠 설명해 주십시오.",
+          "text": "친구들의 동조와 확산에서 직접 한 일과 추정한 일을 나눠 설명해 주십시오.",
           "behaviorHint": "친구들의 동조와 확산에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -5338,7 +5338,7 @@
         },
         {
           "id": "judgeq-d-5-fact_pursuit-a-pile_on_spread-v3",
-          "text": "송다은 씨, 친구들의 동조와 확산 문제에서 상대 주장과 다른 부분이 있다면 구체적으로 답하십시오.",
+          "text": "친구들의 동조와 확산 문제에서 상대 주장과 다른 부분이 있다면 구체적으로 답하십시오.",
           "behaviorHint": "친구들의 동조와 확산에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -5350,7 +5350,7 @@
         },
         {
           "id": "judgeq-d-5-fact_pursuit-a-pile_on_spread-v4",
-          "text": "송다은 씨, 친구들의 동조와 확산 항목을 기록 기준으로 다시 정리해 주십시오.",
+          "text": "친구들의 동조와 확산 항목을 기록 기준으로 다시 정리해 주십시오.",
           "behaviorHint": "친구들의 동조와 확산에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -5394,7 +5394,7 @@
         },
         {
           "id": "judgeq-d-5-fact_pursuit-b-pile_on_spread-v2",
-          "text": "최수민 씨, 친구들의 동조와 확산에서 직접 한 일과 추정한 일을 나눠 설명해 주십시오.",
+          "text": "친구들의 동조와 확산에서 직접 한 일과 추정한 일을 나눠 설명해 주십시오.",
           "behaviorHint": "친구들의 동조와 확산에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -5406,7 +5406,7 @@
         },
         {
           "id": "judgeq-d-5-fact_pursuit-b-pile_on_spread-v3",
-          "text": "최수민 씨, 친구들의 동조와 확산 문제에서 상대 주장과 다른 부분이 있다면 구체적으로 답하십시오.",
+          "text": "친구들의 동조와 확산 문제에서 상대 주장과 다른 부분이 있다면 구체적으로 답하십시오.",
           "behaviorHint": "친구들의 동조와 확산에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -5418,7 +5418,7 @@
         },
         {
           "id": "judgeq-d-5-fact_pursuit-b-pile_on_spread-v4",
-          "text": "최수민 씨, 친구들의 동조와 확산 항목을 기록 기준으로 다시 정리해 주십시오.",
+          "text": "친구들의 동조와 확산 항목을 기록 기준으로 다시 정리해 주십시오.",
           "behaviorHint": "친구들의 동조와 확산에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -5462,7 +5462,7 @@
         },
         {
           "id": "judgeq-d-5-motive_search-a-pile_on_spread-v2",
-          "text": "송다은 씨, 친구들의 동조와 확산에서 어떤 부담이나 계산이 있었는지 설명하십시오.",
+          "text": "친구들의 동조와 확산에서 어떤 부담이나 계산이 있었는지 설명하십시오.",
           "behaviorHint": "친구들의 동조와 확산에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -5474,7 +5474,7 @@
         },
         {
           "id": "judgeq-d-5-motive_search-a-pile_on_spread-v3",
-          "text": "송다은 씨, 친구들의 동조와 확산에 대해 숨기거나 늦게 말한 이유가 무엇입니까.",
+          "text": "친구들의 동조와 확산에 대해 숨기거나 늦게 말한 이유가 무엇입니까.",
           "behaviorHint": "친구들의 동조와 확산에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -5486,7 +5486,7 @@
         },
         {
           "id": "judgeq-d-5-motive_search-a-pile_on_spread-v4",
-          "text": "송다은 씨, 친구들의 동조와 확산에 대해 그때 왜 그런 선택을 했는지 답하십시오.",
+          "text": "친구들의 동조와 확산에 대해 그때 왜 그런 선택을 했는지 답하십시오.",
           "behaviorHint": "친구들의 동조와 확산에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -5530,7 +5530,7 @@
         },
         {
           "id": "judgeq-d-5-motive_search-b-pile_on_spread-v2",
-          "text": "최수민 씨, 친구들의 동조와 확산에서 어떤 부담이나 계산이 있었는지 설명하십시오.",
+          "text": "친구들의 동조와 확산에서 어떤 부담이나 계산이 있었는지 설명하십시오.",
           "behaviorHint": "친구들의 동조와 확산에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -5542,7 +5542,7 @@
         },
         {
           "id": "judgeq-d-5-motive_search-b-pile_on_spread-v3",
-          "text": "최수민 씨, 친구들의 동조와 확산에 대해 숨기거나 늦게 말한 이유가 무엇입니까.",
+          "text": "친구들의 동조와 확산에 대해 숨기거나 늦게 말한 이유가 무엇입니까.",
           "behaviorHint": "친구들의 동조와 확산에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -5554,7 +5554,7 @@
         },
         {
           "id": "judgeq-d-5-motive_search-b-pile_on_spread-v4",
-          "text": "최수민 씨, 친구들의 동조와 확산에 대해 그때 왜 그런 선택을 했는지 답하십시오.",
+          "text": "친구들의 동조와 확산에 대해 그때 왜 그런 선택을 했는지 답하십시오.",
           "behaviorHint": "친구들의 동조와 확산에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -5598,7 +5598,7 @@
         },
         {
           "id": "judgeq-d-5-empathy_approach-a-pile_on_spread-v2",
-          "text": "송다은 씨, 친구들의 동조와 확산에서 상대에게 상처를 준 부분을 어떻게 보고 있습니까.",
+          "text": "친구들의 동조와 확산에서 상대에게 상처를 준 부분을 어떻게 보고 있습니까.",
           "behaviorHint": "친구들의 동조와 확산에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -5610,7 +5610,7 @@
         },
         {
           "id": "judgeq-d-5-empathy_approach-a-pile_on_spread-v3",
-          "text": "송다은 씨, 친구들의 동조와 확산 문제에서 두려웠거나 피하고 싶었던 지점이 있었습니까.",
+          "text": "친구들의 동조와 확산 문제에서 두려웠거나 피하고 싶었던 지점이 있었습니까.",
           "behaviorHint": "친구들의 동조와 확산에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -5622,7 +5622,7 @@
         },
         {
           "id": "judgeq-d-5-empathy_approach-a-pile_on_spread-v4",
-          "text": "송다은 씨, 친구들의 동조와 확산에 관해 지금 바로잡고 싶은 말이 있다면 해 주십시오.",
+          "text": "친구들의 동조와 확산에 관해 지금 바로잡고 싶은 말이 있다면 해 주십시오.",
           "behaviorHint": "친구들의 동조와 확산에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -5666,7 +5666,7 @@
         },
         {
           "id": "judgeq-d-5-empathy_approach-b-pile_on_spread-v2",
-          "text": "최수민 씨, 친구들의 동조와 확산에서 상대에게 상처를 준 부분을 어떻게 보고 있습니까.",
+          "text": "친구들의 동조와 확산에서 상대에게 상처를 준 부분을 어떻게 보고 있습니까.",
           "behaviorHint": "친구들의 동조와 확산에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -5678,7 +5678,7 @@
         },
         {
           "id": "judgeq-d-5-empathy_approach-b-pile_on_spread-v3",
-          "text": "최수민 씨, 친구들의 동조와 확산 문제에서 두려웠거나 피하고 싶었던 지점이 있었습니까.",
+          "text": "친구들의 동조와 확산 문제에서 두려웠거나 피하고 싶었던 지점이 있었습니까.",
           "behaviorHint": "친구들의 동조와 확산에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -5690,7 +5690,7 @@
         },
         {
           "id": "judgeq-d-5-empathy_approach-b-pile_on_spread-v4",
-          "text": "최수민 씨, 친구들의 동조와 확산에 관해 지금 바로잡고 싶은 말이 있다면 해 주십시오.",
+          "text": "친구들의 동조와 확산에 관해 지금 바로잡고 싶은 말이 있다면 해 주십시오.",
           "behaviorHint": "친구들의 동조와 확산에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -5734,7 +5734,7 @@
         },
         {
           "id": "judgeq-d-5-fact_pursuit-a-repeat_villain_frame-v2",
-          "text": "송다은 씨, 최수민이 반복해서 악역이 된 구조에서 직접 한 일과 추정한 일을 나눠 설명해 주십시오.",
+          "text": "최수민이 반복해서 악역이 된 구조에서 직접 한 일과 추정한 일을 나눠 설명해 주십시오.",
           "behaviorHint": "최수민이 반복해서 악역이 된 구조에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -5746,7 +5746,7 @@
         },
         {
           "id": "judgeq-d-5-fact_pursuit-a-repeat_villain_frame-v3",
-          "text": "송다은 씨, 최수민이 반복해서 악역이 된 구조 문제에서 상대 주장과 다른 부분이 있다면 구체적으로 답하십시오.",
+          "text": "최수민이 반복해서 악역이 된 구조 문제에서 상대 주장과 다른 부분이 있다면 구체적으로 답하십시오.",
           "behaviorHint": "최수민이 반복해서 악역이 된 구조에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -5758,7 +5758,7 @@
         },
         {
           "id": "judgeq-d-5-fact_pursuit-a-repeat_villain_frame-v4",
-          "text": "송다은 씨, 최수민이 반복해서 악역이 된 구조 항목을 기록 기준으로 다시 정리해 주십시오.",
+          "text": "최수민이 반복해서 악역이 된 구조 항목을 기록 기준으로 다시 정리해 주십시오.",
           "behaviorHint": "최수민이 반복해서 악역이 된 구조에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -5802,7 +5802,7 @@
         },
         {
           "id": "judgeq-d-5-fact_pursuit-b-repeat_villain_frame-v2",
-          "text": "최수민 씨, 최수민이 반복해서 악역이 된 구조에서 직접 한 일과 추정한 일을 나눠 설명해 주십시오.",
+          "text": "최수민이 반복해서 악역이 된 구조에서 직접 한 일과 추정한 일을 나눠 설명해 주십시오.",
           "behaviorHint": "최수민이 반복해서 악역이 된 구조에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -5814,7 +5814,7 @@
         },
         {
           "id": "judgeq-d-5-fact_pursuit-b-repeat_villain_frame-v3",
-          "text": "최수민 씨, 최수민이 반복해서 악역이 된 구조 문제에서 상대 주장과 다른 부분이 있다면 구체적으로 답하십시오.",
+          "text": "최수민이 반복해서 악역이 된 구조 문제에서 상대 주장과 다른 부분이 있다면 구체적으로 답하십시오.",
           "behaviorHint": "최수민이 반복해서 악역이 된 구조에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -5826,7 +5826,7 @@
         },
         {
           "id": "judgeq-d-5-fact_pursuit-b-repeat_villain_frame-v4",
-          "text": "최수민 씨, 최수민이 반복해서 악역이 된 구조 항목을 기록 기준으로 다시 정리해 주십시오.",
+          "text": "최수민이 반복해서 악역이 된 구조 항목을 기록 기준으로 다시 정리해 주십시오.",
           "behaviorHint": "최수민이 반복해서 악역이 된 구조에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -5870,7 +5870,7 @@
         },
         {
           "id": "judgeq-d-5-motive_search-a-repeat_villain_frame-v2",
-          "text": "송다은 씨, 최수민이 반복해서 악역이 된 구조에서 어떤 부담이나 계산이 있었는지 설명하십시오.",
+          "text": "최수민이 반복해서 악역이 된 구조에서 어떤 부담이나 계산이 있었는지 설명하십시오.",
           "behaviorHint": "최수민이 반복해서 악역이 된 구조에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -5882,7 +5882,7 @@
         },
         {
           "id": "judgeq-d-5-motive_search-a-repeat_villain_frame-v3",
-          "text": "송다은 씨, 최수민이 반복해서 악역이 된 구조에 대해 숨기거나 늦게 말한 이유가 무엇입니까.",
+          "text": "최수민이 반복해서 악역이 된 구조에 대해 숨기거나 늦게 말한 이유가 무엇입니까.",
           "behaviorHint": "최수민이 반복해서 악역이 된 구조에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -5894,7 +5894,7 @@
         },
         {
           "id": "judgeq-d-5-motive_search-a-repeat_villain_frame-v4",
-          "text": "송다은 씨, 최수민이 반복해서 악역이 된 구조에 대해 그때 왜 그런 선택을 했는지 답하십시오.",
+          "text": "최수민이 반복해서 악역이 된 구조에 대해 그때 왜 그런 선택을 했는지 답하십시오.",
           "behaviorHint": "최수민이 반복해서 악역이 된 구조에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -5938,7 +5938,7 @@
         },
         {
           "id": "judgeq-d-5-motive_search-b-repeat_villain_frame-v2",
-          "text": "최수민 씨, 최수민이 반복해서 악역이 된 구조에서 어떤 부담이나 계산이 있었는지 설명하십시오.",
+          "text": "최수민이 반복해서 악역이 된 구조에서 어떤 부담이나 계산이 있었는지 설명하십시오.",
           "behaviorHint": "최수민이 반복해서 악역이 된 구조에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -5950,7 +5950,7 @@
         },
         {
           "id": "judgeq-d-5-motive_search-b-repeat_villain_frame-v3",
-          "text": "최수민 씨, 최수민이 반복해서 악역이 된 구조에 대해 숨기거나 늦게 말한 이유가 무엇입니까.",
+          "text": "최수민이 반복해서 악역이 된 구조에 대해 숨기거나 늦게 말한 이유가 무엇입니까.",
           "behaviorHint": "최수민이 반복해서 악역이 된 구조에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -5962,7 +5962,7 @@
         },
         {
           "id": "judgeq-d-5-motive_search-b-repeat_villain_frame-v4",
-          "text": "최수민 씨, 최수민이 반복해서 악역이 된 구조에 대해 그때 왜 그런 선택을 했는지 답하십시오.",
+          "text": "최수민이 반복해서 악역이 된 구조에 대해 그때 왜 그런 선택을 했는지 답하십시오.",
           "behaviorHint": "최수민이 반복해서 악역이 된 구조에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -6006,7 +6006,7 @@
         },
         {
           "id": "judgeq-d-5-empathy_approach-a-repeat_villain_frame-v2",
-          "text": "송다은 씨, 최수민이 반복해서 악역이 된 구조에서 상대에게 상처를 준 부분을 어떻게 보고 있습니까.",
+          "text": "최수민이 반복해서 악역이 된 구조에서 상대에게 상처를 준 부분을 어떻게 보고 있습니까.",
           "behaviorHint": "최수민이 반복해서 악역이 된 구조에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -6018,7 +6018,7 @@
         },
         {
           "id": "judgeq-d-5-empathy_approach-a-repeat_villain_frame-v3",
-          "text": "송다은 씨, 최수민이 반복해서 악역이 된 구조 문제에서 두려웠거나 피하고 싶었던 지점이 있었습니까.",
+          "text": "최수민이 반복해서 악역이 된 구조 문제에서 두려웠거나 피하고 싶었던 지점이 있었습니까.",
           "behaviorHint": "최수민이 반복해서 악역이 된 구조에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -6030,7 +6030,7 @@
         },
         {
           "id": "judgeq-d-5-empathy_approach-a-repeat_villain_frame-v4",
-          "text": "송다은 씨, 최수민이 반복해서 악역이 된 구조에 관해 지금 바로잡고 싶은 말이 있다면 해 주십시오.",
+          "text": "최수민이 반복해서 악역이 된 구조에 관해 지금 바로잡고 싶은 말이 있다면 해 주십시오.",
           "behaviorHint": "최수민이 반복해서 악역이 된 구조에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -6074,7 +6074,7 @@
         },
         {
           "id": "judgeq-d-5-empathy_approach-b-repeat_villain_frame-v2",
-          "text": "최수민 씨, 최수민이 반복해서 악역이 된 구조에서 상대에게 상처를 준 부분을 어떻게 보고 있습니까.",
+          "text": "최수민이 반복해서 악역이 된 구조에서 상대에게 상처를 준 부분을 어떻게 보고 있습니까.",
           "behaviorHint": "최수민이 반복해서 악역이 된 구조에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -6086,7 +6086,7 @@
         },
         {
           "id": "judgeq-d-5-empathy_approach-b-repeat_villain_frame-v3",
-          "text": "최수민 씨, 최수민이 반복해서 악역이 된 구조 문제에서 두려웠거나 피하고 싶었던 지점이 있었습니까.",
+          "text": "최수민이 반복해서 악역이 된 구조 문제에서 두려웠거나 피하고 싶었던 지점이 있었습니까.",
           "behaviorHint": "최수민이 반복해서 악역이 된 구조에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -6098,7 +6098,7 @@
         },
         {
           "id": "judgeq-d-5-empathy_approach-b-repeat_villain_frame-v4",
-          "text": "최수민 씨, 최수민이 반복해서 악역이 된 구조에 관해 지금 바로잡고 싶은 말이 있다면 해 주십시오.",
+          "text": "최수민이 반복해서 악역이 된 구조에 관해 지금 바로잡고 싶은 말이 있다면 해 주십시오.",
           "behaviorHint": "최수민이 반복해서 악역이 된 구조에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",

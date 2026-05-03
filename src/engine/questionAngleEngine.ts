@@ -32,8 +32,8 @@ export interface GeneratedQuestionAngleOption {
 const FALLBACK_GENERAL_ANGLE: QuestionAngleDefinition = {
   disputeId: '',
   angleId: GENERAL_QUESTION_ANGLE,
-  label: '포괄 확인',
-  description: '쟁점 전체를 넓게 확인한다.',
+  label: '경위 확인',
+  description: '선택한 안건에서 확인된 행동, 기록, 추정을 분리해 확인한다.',
   keywords: [],
   unlockCondition: { defaultUnlocked: true },
 }
@@ -101,41 +101,43 @@ export function buildGeneratedQuestionAngleOptions(
 }
 
 function getGenericQuestionTemplates(questionType: string, definition: QuestionAngleDefinition): string[] {
-  const label = definition.label || '이 쟁점'
+  const label = definition.angleId === GENERAL_QUESTION_ANGLE
+    ? '해당 안건'
+    : definition.label || '해당 안건'
   const description = definition.description || label
 
   if (questionType === 'motive_search') {
     return [
-      `{name} 씨, ${label}에 관해 그런 선택을 하게 된 이유를 설명하십시오.`,
-      `{name} 씨, ${description}의 동기가 무엇이었는지 사실과 추정을 나눠 말씀하십시오.`,
-      `{name} 씨, ${label}에서 가장 숨기고 싶었던 이유가 무엇입니까.`,
-      `{name} 씨, ${label}과 관련해 상대가 오해한 부분과 본인이 책임져야 할 부분을 구분하십시오.`,
-      `{name} 씨, ${label}에 대해 지금까지 말하지 못한 사정을 정리해 주십시오.`,
+      `{name} 씨, ${label}에서 늦게 말했거나 숨긴 대목이 있다면 그 이유부터 설명하십시오.`,
+      `${description} 그중 실제 이유와 나중에 붙은 해명을 구분해 주십시오.`,
+      `${label}을 말하지 못하게 만든 가장 큰 부담이 무엇이었습니까.`,
+      `${label}에서 상대가 오해한 부분과 본인이 책임져야 할 부분을 나눠 말씀하십시오.`,
+      `{name} 씨, ${label}을 처음부터 말하지 못한 사정을 구체적으로 설명하십시오.`,
     ]
   }
 
   if (questionType === 'empathy_approach') {
     return [
-      `{name} 씨, ${label}을 말하기 어려웠다면 그 감정부터 설명해 주십시오.`,
-      `{name} 씨, ${description} 때문에 마음이 흔들린 지점이 있었습니까.`,
-      `{name} 씨, ${label}에서 상대에게 상처를 준 부분을 어떻게 보고 있습니까.`,
-      `{name} 씨, ${label}을 숨기거나 늦게 말한 이유가 두려움 때문이었습니까.`,
-      `{name} 씨, ${label}에 관해 지금 바로잡고 싶은 말이 있다면 해 주십시오.`,
+      `{name} 씨, ${label}을 꺼내기 어려웠다면 그때의 감정부터 말씀해 주십시오.`,
+      `${description} 그 과정에서 마음이 흔들린 순간이 있었습니까.`,
+      `${label} 때문에 상대에게 상처를 준 부분을 지금은 어떻게 보고 있습니까.`,
+      `${label}을 늦게 말한 이유가 두려움 때문이었는지 설명해 주십시오.`,
+      `{name} 씨, ${label}과 관련해 지금 바로잡고 싶은 말이 있다면 말씀하십시오.`,
     ]
   }
 
   return [
-    `{name} 씨, ${label}에 관해 확인된 사실부터 차례대로 말씀하십시오.`,
-    `{name} 씨, ${description}에서 상대의 주장과 다른 부분을 구체적으로 답하십시오.`,
-    `{name} 씨, ${label}과 관련해 직접 한 행동과 추정한 내용을 나눠 설명하십시오.`,
-    `{name} 씨, ${label}에서 숨기거나 늦게 설명한 사실이 있습니까.`,
-    `{name} 씨, ${label}이 이 쟁점의 판단에 어떤 의미가 있는지 정리하십시오.`,
+    `{name} 씨, ${label}에서 직접 한 일과 나중에 알게 된 일을 나눠 말씀하십시오.`,
+    `${description} 기록으로 확인되는 부분과 아직 다투는 부분을 구분해 주십시오.`,
+    `${label}을 상대가 다르게 받아들인 이유가 무엇인지 설명하십시오.`,
+    `${label}에서 빠뜨렸거나 늦게 설명한 사실이 있습니까.`,
+    `{name} 씨, ${label}을 판단할 때 먼저 확인해야 할 행동부터 정리하십시오.`,
   ]
 }
 
 function getFallbackAngleLabel(angleId: string): string {
   const fallback: Record<string, string> = {
-    [GENERAL_QUESTION_ANGLE]: '포괄 확인',
+    [GENERAL_QUESTION_ANGLE]: '경위 확인',
     visit_route: '오피스텔 방문',
     call_record: '새벽 전화',
     family_items: '영수증 물건',

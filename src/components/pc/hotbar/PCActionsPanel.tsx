@@ -37,9 +37,9 @@ const VIEW_META: Record<PCHotbarPanelView, { iconId: string; label: string; subt
 }
 
 const QUICK_QUESTION_LABELS: Record<QuestionType, string> = {
-  fact_pursuit: '모순에 집중하기',
-  motive_search: '숨겨진 쟁점찾기',
-  empathy_approach: '자백 유도하기',
+  fact_pursuit: '사실 추궁 - 모순에 집중하기',
+  motive_search: '동기 탐색 - 숨겨진 쟁점 찾기',
+  empathy_approach: '공감 접근 - 자백 유도하기',
   evidence_present: '증거 제시',
 }
 

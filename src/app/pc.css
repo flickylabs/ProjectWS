@@ -10514,19 +10514,38 @@ body.pc-mode .pc-question-choice__msg-text {
 body.pc-mode .pc-question-choice__back {
   display: inline-flex;
   align-items: center;
+  gap: 6px;
   margin-top: 8px;
-  padding: 6px 12px;
-  border-radius: 8px;
-  border: 0;
-  background: transparent;
-  color: #8c8fa0;
+  margin-bottom: 10px;
+  padding: 7px 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(212, 162, 78, 0.16);
+  background: rgba(255, 255, 255, 0.035);
+  color: #c7b890;
   font-size: 11px;
   font-weight: 700;
   cursor: pointer;
+  transition: border-color 160ms ease, background 160ms ease, color 160ms ease, transform 160ms ease;
 }
 
 body.pc-mode .pc-question-choice__back:hover {
+  border-color: rgba(212, 162, 78, 0.42);
+  background: rgba(212, 162, 78, 0.1);
   color: var(--pc-gold-light);
+  transform: translateY(-1px);
+}
+
+body.pc-mode .pc-question-choice__back-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  border-radius: 5px;
+  border: 1px solid rgba(212, 162, 78, 0.24);
+  color: #f1d08d;
+  font-size: 12px;
+  line-height: 1;
 }
 
 /* ═══════════════════════════════════════════════════

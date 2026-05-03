@@ -3,8 +3,6 @@ import { loadAgents, snapshotForSession } from '../api/agentManager'
 import { loadPrompts } from '../api/promptManager'
 import { registerAllEnrichments } from '../data/caseEnrichment'
 import { buildGenericPhase1, buildGenericPhase2 } from '../data/dialogues/generic-phase1'
-import { phase1Dialogues } from '../data/dialogues/phase1'
-import { phase2Dialogues } from '../data/dialogues/phase2'
 import { loadPhase1Script, loadPhase2Script } from '../data/dialogues/phaseScriptLoader'
 import { generatePhase2Dialogues } from '../engine/llmPhaseDialogue'
 import { GamePhase, Phase } from '../types'
@@ -142,12 +140,12 @@ function getActionPanel(phase: GamePhase) {
   switch (phase) {
     case Phase.Pretrial: {
       const script = caseData ? loadPhase1Script(caseData.caseId) : null
-      const fallback = script ?? (caseData ? buildGenericPhase1(caseData) : phase1Dialogues)
+      const fallback = script ?? (caseData ? buildGenericPhase1(caseData) : [])
       return <AutoDialoguePhase dialogues={fallback} nextPhase={Phase.Interrogation} phaseKey="phase1" />
     }
     case GamePhase.Phase2_Rebuttal: {
       const script = caseData ? loadPhase2Script(caseData.caseId) : null
-      const fallback = script ?? (caseData ? buildGenericPhase2(caseData) : phase2Dialogues)
+      const fallback = script ?? (caseData ? buildGenericPhase2(caseData) : [])
       return (
         <AutoDialoguePhase
           dialogues={fallback}

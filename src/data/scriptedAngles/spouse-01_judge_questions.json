@@ -10,8 +10,8 @@
       "variants": [
         {
           "id": "judgeq-d-1-fact_pursuit-b-general-v1",
-          "text": "이준호 씨, 전체 경위에 대해 확인된 사실부터 순서대로 말씀해 주십시오.",
-          "behaviorHint": "전체 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
+          "text": "이준호 씨, 오피스텔에 들른 일과 새벽 통화가 있었던 건 맞습니까. 그때 본인이 직접 한 행동부터 말씀해 주십시오.",
+          "behaviorHint": "방문·통화 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:b",
@@ -22,8 +22,8 @@
         },
         {
           "id": "judgeq-d-1-fact_pursuit-b-general-v2",
-          "text": "이준호 씨, 전체 경위에서 직접 한 일과 추정한 일을 나눠 설명해 주십시오.",
-          "behaviorHint": "전체 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
+          "text": "오피스텔 방문 기록과 새벽 통화 내역 중 사실로 인정하는 부분을 먼저 정리해 주십시오.",
+          "behaviorHint": "방문·통화 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:b",
@@ -34,8 +34,8 @@
         },
         {
           "id": "judgeq-d-1-fact_pursuit-b-general-v3",
-          "text": "이준호 씨, 전체 경위 문제에서 상대 주장과 다른 부분이 있다면 구체적으로 답하십시오.",
-          "behaviorHint": "전체 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
+          "text": "상대가 외도로 의심한 근거 중 실제 행동과 추정이 섞인 부분을 나눠 답하십시오.",
+          "behaviorHint": "방문·통화 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:b",
@@ -46,8 +46,8 @@
         },
         {
           "id": "judgeq-d-1-fact_pursuit-b-general-v4",
-          "text": "이준호 씨, 전체 경위 항목을 기록 기준으로 다시 정리해 주십시오.",
-          "behaviorHint": "전체 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
+          "text": "영수증 물건까지 함께 보면 어떤 오해가 생길 수 있었는지 설명해 주십시오.",
+          "behaviorHint": "방문·통화 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:b",
@@ -58,8 +58,8 @@
         },
         {
           "id": "judgeq-d-1-fact_pursuit-b-general-v5",
-          "text": "이준호 씨, 전체 경위에 대해 아직 설명하지 않은 사실이 있습니까.",
-          "behaviorHint": "전체 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
+          "text": "이준호 씨, 방문 장소와 통화 내용을 시간순으로 다시 말씀해 주십시오.",
+          "behaviorHint": "방문·통화 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:b",
@@ -78,8 +78,8 @@
       "variants": [
         {
           "id": "judgeq-d-1-fact_pursuit-a-general-v1",
-          "text": "박지연 씨, 전체 경위에 대해 확인된 사실부터 순서대로 말씀해 주십시오.",
-          "behaviorHint": "전체 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
+          "text": "박지연 씨, 오피스텔 방문과 새벽 통화를 의심하게 된 근거를 직접 확인한 것과 추정한 것으로 나눠 말씀해 주십시오.",
+          "behaviorHint": "방문·통화 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:a",
@@ -90,8 +90,8 @@
         },
         {
           "id": "judgeq-d-1-fact_pursuit-a-general-v2",
-          "text": "박지연 씨, 전체 경위에서 직접 한 일과 추정한 일을 나눠 설명해 주십시오.",
-          "behaviorHint": "전체 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
+          "text": "영수증 물건까지 외도 의심으로 이어진 과정을 차례대로 설명해 주십시오.",
+          "behaviorHint": "방문·통화 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:a",
@@ -102,8 +102,8 @@
         },
         {
           "id": "judgeq-d-1-fact_pursuit-a-general-v3",
-          "text": "박지연 씨, 전체 경위 문제에서 상대 주장과 다른 부분이 있다면 구체적으로 답하십시오.",
-          "behaviorHint": "전체 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
+          "text": "상대의 방문 기록과 통화 내역 중 어떤 부분이 가장 납득되지 않았습니까.",
+          "behaviorHint": "방문·통화 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:a",
@@ -114,8 +114,8 @@
         },
         {
           "id": "judgeq-d-1-fact_pursuit-a-general-v4",
-          "text": "박지연 씨, 전체 경위 항목을 기록 기준으로 다시 정리해 주십시오.",
-          "behaviorHint": "전체 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
+          "text": "직접 본 기록, 들은 이야기, 본인의 추측을 구분해서 말씀해 주십시오.",
+          "behaviorHint": "방문·통화 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:a",
@@ -126,8 +126,8 @@
         },
         {
           "id": "judgeq-d-1-fact_pursuit-a-general-v5",
-          "text": "박지연 씨, 전체 경위에 대해 아직 설명하지 않은 사실이 있습니까.",
-          "behaviorHint": "전체 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
+          "text": "박지연 씨, 남편의 설명에서 가장 먼저 확인해야 한다고 보는 부분을 답하십시오.",
+          "behaviorHint": "방문·통화 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:a",
@@ -146,8 +146,8 @@
       "variants": [
         {
           "id": "judgeq-d-1-motive_search-b-general-v1",
-          "text": "이준호 씨, 전체 경위 문제를 그렇게 처리한 이유를 말씀해 주십시오.",
-          "behaviorHint": "전체 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
+          "text": "이준호 씨, 오피스텔 방문과 새벽 통화를 배우자에게 바로 말하지 않은 이유를 설명하십시오.",
+          "behaviorHint": "방문·통화 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:b",
@@ -158,8 +158,8 @@
         },
         {
           "id": "judgeq-d-1-motive_search-b-general-v2",
-          "text": "이준호 씨, 전체 경위에서 어떤 부담이나 계산이 있었는지 설명하십시오.",
-          "behaviorHint": "전체 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
+          "text": "상대가 외도로 받아들일 수 있는 상황이었다는 점을 알고도 숨긴 이유가 무엇입니까.",
+          "behaviorHint": "방문·통화 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:b",
@@ -170,8 +170,8 @@
         },
         {
           "id": "judgeq-d-1-motive_search-b-general-v3",
-          "text": "이준호 씨, 전체 경위에 대해 숨기거나 늦게 말한 이유가 무엇입니까.",
-          "behaviorHint": "전체 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
+          "text": "방문 기록, 통화 기록, 영수증 물건이 한꺼번에 의심을 키운 상황을 어떻게 보고 있습니까.",
+          "behaviorHint": "방문·통화 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:b",
@@ -182,8 +182,8 @@
         },
         {
           "id": "judgeq-d-1-motive_search-b-general-v4",
-          "text": "이준호 씨, 전체 경위에 대해 그때 왜 그런 선택을 했는지 답하십시오.",
-          "behaviorHint": "전체 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
+          "text": "그때 가장 피하고 싶었던 이야기가 방문 장소였습니까, 통화 내용이었습니까.",
+          "behaviorHint": "방문·통화 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:b",
@@ -194,8 +194,8 @@
         },
         {
           "id": "judgeq-d-1-motive_search-b-general-v5",
-          "text": "이준호 씨, 전체 경위의 배경이 되는 사정을 구체적으로 말해 주십시오.",
-          "behaviorHint": "전체 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
+          "text": "이준호 씨, 처음부터 설명하지 못한 사정을 구체적으로 말씀해 주십시오.",
+          "behaviorHint": "방문·통화 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:b",
@@ -214,8 +214,8 @@
       "variants": [
         {
           "id": "judgeq-d-1-motive_search-a-general-v1",
-          "text": "박지연 씨, 전체 경위 문제를 그렇게 처리한 이유를 말씀해 주십시오.",
-          "behaviorHint": "전체 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
+          "text": "박지연 씨, 오피스텔 방문과 새벽 통화를 보고 곧바로 외도 의심으로 이어진 이유가 무엇입니까.",
+          "behaviorHint": "방문·통화 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:a",
@@ -226,8 +226,8 @@
         },
         {
           "id": "judgeq-d-1-motive_search-a-general-v2",
-          "text": "박지연 씨, 전체 경위에서 어떤 부담이나 계산이 있었는지 설명하십시오.",
-          "behaviorHint": "전체 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
+          "text": "영수증 물건을 봤을 때 다른 설명보다 외도 가능성이 먼저 떠오른 배경을 말씀하십시오.",
+          "behaviorHint": "방문·통화 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:a",
@@ -238,8 +238,8 @@
         },
         {
           "id": "judgeq-d-1-motive_search-a-general-v3",
-          "text": "박지연 씨, 전체 경위에 대해 숨기거나 늦게 말한 이유가 무엇입니까.",
-          "behaviorHint": "전체 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
+          "text": "남편에게 바로 확인하지 못하고 의심이 커진 이유를 설명해 주십시오.",
+          "behaviorHint": "방문·통화 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:a",
@@ -250,8 +250,8 @@
         },
         {
           "id": "judgeq-d-1-motive_search-a-general-v4",
-          "text": "박지연 씨, 전체 경위에 대해 그때 왜 그런 선택을 했는지 답하십시오.",
-          "behaviorHint": "전체 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
+          "text": "그 정황을 믿기 어려웠던 이유가 과거 경험 때문인지, 기록 자체 때문인지 나눠 답하십시오.",
+          "behaviorHint": "방문·통화 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:a",
@@ -262,8 +262,8 @@
         },
         {
           "id": "judgeq-d-1-motive_search-a-general-v5",
-          "text": "박지연 씨, 전체 경위의 배경이 되는 사정을 구체적으로 말해 주십시오.",
-          "behaviorHint": "전체 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
+          "text": "박지연 씨, 지금도 가장 의심스럽게 남아 있는 장면이 무엇인지 말씀하십시오.",
+          "behaviorHint": "방문·통화 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:a",
@@ -282,8 +282,8 @@
       "variants": [
         {
           "id": "judgeq-d-1-empathy_approach-b-general-v1",
-          "text": "이준호 씨, 전체 경위에 대해 말하기 어려웠다면 그 감정부터 설명해 주십시오.",
-          "behaviorHint": "전체 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
+          "text": "이준호 씨, 오피스텔 일을 말했을 때 관계가 무너질까 두려웠습니까.",
+          "behaviorHint": "방문·통화 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:b",
@@ -294,8 +294,8 @@
         },
         {
           "id": "judgeq-d-1-empathy_approach-b-general-v2",
-          "text": "이준호 씨, 전체 경위에서 상대에게 상처를 준 부분을 어떻게 보고 있습니까.",
-          "behaviorHint": "전체 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
+          "text": "새벽 통화와 방문 사실을 숨기면서 상대에게 어떤 상처가 생길 수 있다고 생각했습니까.",
+          "behaviorHint": "방문·통화 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:b",
@@ -306,8 +306,8 @@
         },
         {
           "id": "judgeq-d-1-empathy_approach-b-general-v3",
-          "text": "이준호 씨, 전체 경위 문제에서 두려웠거나 피하고 싶었던 지점이 있었습니까.",
-          "behaviorHint": "전체 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
+          "text": "외도 의심까지 번진 상황에서 지금 바로잡고 싶은 말이 있다면 말씀하십시오.",
+          "behaviorHint": "방문·통화 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:b",
@@ -318,8 +318,8 @@
         },
         {
           "id": "judgeq-d-1-empathy_approach-b-general-v4",
-          "text": "이준호 씨, 전체 경위에 관해 지금 바로잡고 싶은 말이 있다면 해 주십시오.",
-          "behaviorHint": "전체 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
+          "text": "방문 장소와 통화 내용을 늦게 말한 데 죄책감이 있었는지 설명해 주십시오.",
+          "behaviorHint": "방문·통화 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:b",
@@ -330,8 +330,8 @@
         },
         {
           "id": "judgeq-d-1-empathy_approach-b-general-v5",
-          "text": "이준호 씨, 전체 경위에 대해 감정이 아니라 책임의 문제로 다시 말해 주십시오.",
-          "behaviorHint": "전체 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
+          "text": "이준호 씨, 감정과 책임을 나눠서 오피스텔 방문 경위를 다시 말씀해 주십시오.",
+          "behaviorHint": "방문·통화 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:b",
@@ -350,8 +350,8 @@
       "variants": [
         {
           "id": "judgeq-d-1-empathy_approach-a-general-v1",
-          "text": "박지연 씨, 전체 경위에 대해 말하기 어려웠다면 그 감정부터 설명해 주십시오.",
-          "behaviorHint": "전체 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
+          "text": "박지연 씨, 오피스텔 의심이 커졌을 때 가장 상처받은 부분이 무엇이었습니까.",
+          "behaviorHint": "방문·통화 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:a",
@@ -362,8 +362,8 @@
         },
         {
           "id": "judgeq-d-1-empathy_approach-a-general-v2",
-          "text": "박지연 씨, 전체 경위에서 상대에게 상처를 준 부분을 어떻게 보고 있습니까.",
-          "behaviorHint": "전체 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
+          "text": "새벽 통화와 영수증을 보며 먼저 배신감이 들었는지, 두려움이 컸는지 말씀해 주십시오.",
+          "behaviorHint": "방문·통화 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:a",
@@ -374,8 +374,8 @@
         },
         {
           "id": "judgeq-d-1-empathy_approach-a-general-v3",
-          "text": "박지연 씨, 전체 경위 문제에서 두려웠거나 피하고 싶었던 지점이 있었습니까.",
-          "behaviorHint": "전체 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
+          "text": "남편의 해명이 늦어진 동안 어떤 감정이 쌓였는지 설명해 주십시오.",
+          "behaviorHint": "방문·통화 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:a",
@@ -386,8 +386,8 @@
         },
         {
           "id": "judgeq-d-1-empathy_approach-a-general-v4",
-          "text": "박지연 씨, 전체 경위에 관해 지금 바로잡고 싶은 말이 있다면 해 주십시오.",
-          "behaviorHint": "전체 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
+          "text": "외도 의심을 말하는 과정에서 상대에게 상처를 준 부분도 있다고 보십니까.",
+          "behaviorHint": "방문·통화 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:a",
@@ -398,8 +398,8 @@
         },
         {
           "id": "judgeq-d-1-empathy_approach-a-general-v5",
-          "text": "박지연 씨, 전체 경위에 대해 감정이 아니라 책임의 문제로 다시 말해 주십시오.",
-          "behaviorHint": "전체 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
+          "text": "박지연 씨, 의심과 사실을 나눠 받아들이기 어려웠던 이유를 말씀하십시오.",
+          "behaviorHint": "방문·통화 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:a",
@@ -430,7 +430,7 @@
         },
         {
           "id": "judgeq-d-1-fact_pursuit-b-visit_route-v2",
-          "text": "이준호 씨, 오피스텔에 반복해서 간 이유에서 직접 한 일과 추정한 일을 나눠 설명해 주십시오.",
+          "text": "오피스텔에 반복해서 간 이유에서 직접 한 일과 추정한 일을 나눠 설명해 주십시오.",
           "behaviorHint": "오피스텔에 반복해서 간 이유에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -442,7 +442,7 @@
         },
         {
           "id": "judgeq-d-1-fact_pursuit-b-visit_route-v3",
-          "text": "이준호 씨, 오피스텔에 반복해서 간 이유 문제에서 상대 주장과 다른 부분이 있다면 구체적으로 답하십시오.",
+          "text": "오피스텔에 반복해서 간 이유 문제에서 상대 주장과 다른 부분이 있다면 구체적으로 답하십시오.",
           "behaviorHint": "오피스텔에 반복해서 간 이유에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -454,7 +454,7 @@
         },
         {
           "id": "judgeq-d-1-fact_pursuit-b-visit_route-v4",
-          "text": "이준호 씨, 오피스텔에 반복해서 간 이유 항목을 기록 기준으로 다시 정리해 주십시오.",
+          "text": "오피스텔에 반복해서 간 이유 항목을 기록 기준으로 다시 정리해 주십시오.",
           "behaviorHint": "오피스텔에 반복해서 간 이유에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -498,7 +498,7 @@
         },
         {
           "id": "judgeq-d-1-fact_pursuit-a-visit_route-v2",
-          "text": "박지연 씨, 오피스텔에 반복해서 간 이유에서 직접 한 일과 추정한 일을 나눠 설명해 주십시오.",
+          "text": "오피스텔에 반복해서 간 이유에서 직접 한 일과 추정한 일을 나눠 설명해 주십시오.",
           "behaviorHint": "오피스텔에 반복해서 간 이유에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -510,7 +510,7 @@
         },
         {
           "id": "judgeq-d-1-fact_pursuit-a-visit_route-v3",
-          "text": "박지연 씨, 오피스텔에 반복해서 간 이유 문제에서 상대 주장과 다른 부분이 있다면 구체적으로 답하십시오.",
+          "text": "오피스텔에 반복해서 간 이유 문제에서 상대 주장과 다른 부분이 있다면 구체적으로 답하십시오.",
           "behaviorHint": "오피스텔에 반복해서 간 이유에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -522,7 +522,7 @@
         },
         {
           "id": "judgeq-d-1-fact_pursuit-a-visit_route-v4",
-          "text": "박지연 씨, 오피스텔에 반복해서 간 이유 항목을 기록 기준으로 다시 정리해 주십시오.",
+          "text": "오피스텔에 반복해서 간 이유 항목을 기록 기준으로 다시 정리해 주십시오.",
           "behaviorHint": "오피스텔에 반복해서 간 이유에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -566,7 +566,7 @@
         },
         {
           "id": "judgeq-d-1-motive_search-b-visit_route-v2",
-          "text": "이준호 씨, 오피스텔에 반복해서 간 이유에서 어떤 부담이나 계산이 있었는지 설명하십시오.",
+          "text": "오피스텔에 반복해서 간 이유에서 어떤 부담이나 계산이 있었는지 설명하십시오.",
           "behaviorHint": "오피스텔에 반복해서 간 이유에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -578,7 +578,7 @@
         },
         {
           "id": "judgeq-d-1-motive_search-b-visit_route-v3",
-          "text": "이준호 씨, 오피스텔에 반복해서 간 이유에 대해 숨기거나 늦게 말한 이유가 무엇입니까.",
+          "text": "오피스텔에 반복해서 간 이유에 대해 숨기거나 늦게 말한 이유가 무엇입니까.",
           "behaviorHint": "오피스텔에 반복해서 간 이유에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -590,7 +590,7 @@
         },
         {
           "id": "judgeq-d-1-motive_search-b-visit_route-v4",
-          "text": "이준호 씨, 오피스텔에 반복해서 간 이유에 대해 그때 왜 그런 선택을 했는지 답하십시오.",
+          "text": "오피스텔에 반복해서 간 이유에 대해 그때 왜 그런 선택을 했는지 답하십시오.",
           "behaviorHint": "오피스텔에 반복해서 간 이유에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -634,7 +634,7 @@
         },
         {
           "id": "judgeq-d-1-motive_search-a-visit_route-v2",
-          "text": "박지연 씨, 오피스텔에 반복해서 간 이유에서 어떤 부담이나 계산이 있었는지 설명하십시오.",
+          "text": "오피스텔에 반복해서 간 이유에서 어떤 부담이나 계산이 있었는지 설명하십시오.",
           "behaviorHint": "오피스텔에 반복해서 간 이유에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -646,7 +646,7 @@
         },
         {
           "id": "judgeq-d-1-motive_search-a-visit_route-v3",
-          "text": "박지연 씨, 오피스텔에 반복해서 간 이유에 대해 숨기거나 늦게 말한 이유가 무엇입니까.",
+          "text": "오피스텔에 반복해서 간 이유에 대해 숨기거나 늦게 말한 이유가 무엇입니까.",
           "behaviorHint": "오피스텔에 반복해서 간 이유에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -658,7 +658,7 @@
         },
         {
           "id": "judgeq-d-1-motive_search-a-visit_route-v4",
-          "text": "박지연 씨, 오피스텔에 반복해서 간 이유에 대해 그때 왜 그런 선택을 했는지 답하십시오.",
+          "text": "오피스텔에 반복해서 간 이유에 대해 그때 왜 그런 선택을 했는지 답하십시오.",
           "behaviorHint": "오피스텔에 반복해서 간 이유에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -702,7 +702,7 @@
         },
         {
           "id": "judgeq-d-1-empathy_approach-b-visit_route-v2",
-          "text": "이준호 씨, 오피스텔에 반복해서 간 이유에서 상대에게 상처를 준 부분을 어떻게 보고 있습니까.",
+          "text": "오피스텔에 반복해서 간 이유에서 상대에게 상처를 준 부분을 어떻게 보고 있습니까.",
           "behaviorHint": "오피스텔에 반복해서 간 이유에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -714,7 +714,7 @@
         },
         {
           "id": "judgeq-d-1-empathy_approach-b-visit_route-v3",
-          "text": "이준호 씨, 오피스텔에 반복해서 간 이유 문제에서 두려웠거나 피하고 싶었던 지점이 있었습니까.",
+          "text": "오피스텔에 반복해서 간 이유 문제에서 두려웠거나 피하고 싶었던 지점이 있었습니까.",
           "behaviorHint": "오피스텔에 반복해서 간 이유에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -726,7 +726,7 @@
         },
         {
           "id": "judgeq-d-1-empathy_approach-b-visit_route-v4",
-          "text": "이준호 씨, 오피스텔에 반복해서 간 이유에 관해 지금 바로잡고 싶은 말이 있다면 해 주십시오.",
+          "text": "오피스텔에 반복해서 간 이유에 관해 지금 바로잡고 싶은 말이 있다면 해 주십시오.",
           "behaviorHint": "오피스텔에 반복해서 간 이유에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -770,7 +770,7 @@
         },
         {
           "id": "judgeq-d-1-empathy_approach-a-visit_route-v2",
-          "text": "박지연 씨, 오피스텔에 반복해서 간 이유에서 상대에게 상처를 준 부분을 어떻게 보고 있습니까.",
+          "text": "오피스텔에 반복해서 간 이유에서 상대에게 상처를 준 부분을 어떻게 보고 있습니까.",
           "behaviorHint": "오피스텔에 반복해서 간 이유에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -782,7 +782,7 @@
         },
         {
           "id": "judgeq-d-1-empathy_approach-a-visit_route-v3",
-          "text": "박지연 씨, 오피스텔에 반복해서 간 이유 문제에서 두려웠거나 피하고 싶었던 지점이 있었습니까.",
+          "text": "오피스텔에 반복해서 간 이유 문제에서 두려웠거나 피하고 싶었던 지점이 있었습니까.",
           "behaviorHint": "오피스텔에 반복해서 간 이유에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -794,7 +794,7 @@
         },
         {
           "id": "judgeq-d-1-empathy_approach-a-visit_route-v4",
-          "text": "박지연 씨, 오피스텔에 반복해서 간 이유에 관해 지금 바로잡고 싶은 말이 있다면 해 주십시오.",
+          "text": "오피스텔에 반복해서 간 이유에 관해 지금 바로잡고 싶은 말이 있다면 해 주십시오.",
           "behaviorHint": "오피스텔에 반복해서 간 이유에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -838,7 +838,7 @@
         },
         {
           "id": "judgeq-d-1-fact_pursuit-b-call_record-v2",
-          "text": "이준호 씨, 새벽 전화와 미등록 번호에서 직접 한 일과 추정한 일을 나눠 설명해 주십시오.",
+          "text": "새벽 전화와 미등록 번호에서 직접 한 일과 추정한 일을 나눠 설명해 주십시오.",
           "behaviorHint": "새벽 전화와 미등록 번호에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -850,7 +850,7 @@
         },
         {
           "id": "judgeq-d-1-fact_pursuit-b-call_record-v3",
-          "text": "이준호 씨, 새벽 전화와 미등록 번호 문제에서 상대 주장과 다른 부분이 있다면 구체적으로 답하십시오.",
+          "text": "새벽 전화와 미등록 번호 문제에서 상대 주장과 다른 부분이 있다면 구체적으로 답하십시오.",
           "behaviorHint": "새벽 전화와 미등록 번호에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -862,7 +862,7 @@
         },
         {
           "id": "judgeq-d-1-fact_pursuit-b-call_record-v4",
-          "text": "이준호 씨, 새벽 전화와 미등록 번호 항목을 기록 기준으로 다시 정리해 주십시오.",
+          "text": "새벽 전화와 미등록 번호 항목을 기록 기준으로 다시 정리해 주십시오.",
           "behaviorHint": "새벽 전화와 미등록 번호에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -906,7 +906,7 @@
         },
         {
           "id": "judgeq-d-1-fact_pursuit-a-call_record-v2",
-          "text": "박지연 씨, 새벽 전화와 미등록 번호에서 직접 한 일과 추정한 일을 나눠 설명해 주십시오.",
+          "text": "새벽 전화와 미등록 번호에서 직접 한 일과 추정한 일을 나눠 설명해 주십시오.",
           "behaviorHint": "새벽 전화와 미등록 번호에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -918,7 +918,7 @@
         },
         {
           "id": "judgeq-d-1-fact_pursuit-a-call_record-v3",
-          "text": "박지연 씨, 새벽 전화와 미등록 번호 문제에서 상대 주장과 다른 부분이 있다면 구체적으로 답하십시오.",
+          "text": "새벽 전화와 미등록 번호 문제에서 상대 주장과 다른 부분이 있다면 구체적으로 답하십시오.",
           "behaviorHint": "새벽 전화와 미등록 번호에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -930,7 +930,7 @@
         },
         {
           "id": "judgeq-d-1-fact_pursuit-a-call_record-v4",
-          "text": "박지연 씨, 새벽 전화와 미등록 번호 항목을 기록 기준으로 다시 정리해 주십시오.",
+          "text": "새벽 전화와 미등록 번호 항목을 기록 기준으로 다시 정리해 주십시오.",
           "behaviorHint": "새벽 전화와 미등록 번호에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -974,7 +974,7 @@
         },
         {
           "id": "judgeq-d-1-motive_search-b-call_record-v2",
-          "text": "이준호 씨, 새벽 전화와 미등록 번호에서 어떤 부담이나 계산이 있었는지 설명하십시오.",
+          "text": "새벽 전화와 미등록 번호에서 어떤 부담이나 계산이 있었는지 설명하십시오.",
           "behaviorHint": "새벽 전화와 미등록 번호에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -986,7 +986,7 @@
         },
         {
           "id": "judgeq-d-1-motive_search-b-call_record-v3",
-          "text": "이준호 씨, 새벽 전화와 미등록 번호에 대해 숨기거나 늦게 말한 이유가 무엇입니까.",
+          "text": "새벽 전화와 미등록 번호에 대해 숨기거나 늦게 말한 이유가 무엇입니까.",
           "behaviorHint": "새벽 전화와 미등록 번호에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -998,7 +998,7 @@
         },
         {
           "id": "judgeq-d-1-motive_search-b-call_record-v4",
-          "text": "이준호 씨, 새벽 전화와 미등록 번호에 대해 그때 왜 그런 선택을 했는지 답하십시오.",
+          "text": "새벽 전화와 미등록 번호에 대해 그때 왜 그런 선택을 했는지 답하십시오.",
           "behaviorHint": "새벽 전화와 미등록 번호에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -1042,7 +1042,7 @@
         },
         {
           "id": "judgeq-d-1-motive_search-a-call_record-v2",
-          "text": "박지연 씨, 새벽 전화와 미등록 번호에서 어떤 부담이나 계산이 있었는지 설명하십시오.",
+          "text": "새벽 전화와 미등록 번호에서 어떤 부담이나 계산이 있었는지 설명하십시오.",
           "behaviorHint": "새벽 전화와 미등록 번호에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -1054,7 +1054,7 @@
         },
         {
           "id": "judgeq-d-1-motive_search-a-call_record-v3",
-          "text": "박지연 씨, 새벽 전화와 미등록 번호에 대해 숨기거나 늦게 말한 이유가 무엇입니까.",
+          "text": "새벽 전화와 미등록 번호에 대해 숨기거나 늦게 말한 이유가 무엇입니까.",
           "behaviorHint": "새벽 전화와 미등록 번호에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -1066,7 +1066,7 @@
         },
         {
           "id": "judgeq-d-1-motive_search-a-call_record-v4",
-          "text": "박지연 씨, 새벽 전화와 미등록 번호에 대해 그때 왜 그런 선택을 했는지 답하십시오.",
+          "text": "새벽 전화와 미등록 번호에 대해 그때 왜 그런 선택을 했는지 답하십시오.",
           "behaviorHint": "새벽 전화와 미등록 번호에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -1110,7 +1110,7 @@
         },
         {
           "id": "judgeq-d-1-empathy_approach-b-call_record-v2",
-          "text": "이준호 씨, 새벽 전화와 미등록 번호에서 상대에게 상처를 준 부분을 어떻게 보고 있습니까.",
+          "text": "새벽 전화와 미등록 번호에서 상대에게 상처를 준 부분을 어떻게 보고 있습니까.",
           "behaviorHint": "새벽 전화와 미등록 번호에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -1122,7 +1122,7 @@
         },
         {
           "id": "judgeq-d-1-empathy_approach-b-call_record-v3",
-          "text": "이준호 씨, 새벽 전화와 미등록 번호 문제에서 두려웠거나 피하고 싶었던 지점이 있었습니까.",
+          "text": "새벽 전화와 미등록 번호 문제에서 두려웠거나 피하고 싶었던 지점이 있었습니까.",
           "behaviorHint": "새벽 전화와 미등록 번호에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -1134,7 +1134,7 @@
         },
         {
           "id": "judgeq-d-1-empathy_approach-b-call_record-v4",
-          "text": "이준호 씨, 새벽 전화와 미등록 번호에 관해 지금 바로잡고 싶은 말이 있다면 해 주십시오.",
+          "text": "새벽 전화와 미등록 번호에 관해 지금 바로잡고 싶은 말이 있다면 해 주십시오.",
           "behaviorHint": "새벽 전화와 미등록 번호에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -1178,7 +1178,7 @@
         },
         {
           "id": "judgeq-d-1-empathy_approach-a-call_record-v2",
-          "text": "박지연 씨, 새벽 전화와 미등록 번호에서 상대에게 상처를 준 부분을 어떻게 보고 있습니까.",
+          "text": "새벽 전화와 미등록 번호에서 상대에게 상처를 준 부분을 어떻게 보고 있습니까.",
           "behaviorHint": "새벽 전화와 미등록 번호에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -1190,7 +1190,7 @@
         },
         {
           "id": "judgeq-d-1-empathy_approach-a-call_record-v3",
-          "text": "박지연 씨, 새벽 전화와 미등록 번호 문제에서 두려웠거나 피하고 싶었던 지점이 있었습니까.",
+          "text": "새벽 전화와 미등록 번호 문제에서 두려웠거나 피하고 싶었던 지점이 있었습니까.",
           "behaviorHint": "새벽 전화와 미등록 번호에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -1202,7 +1202,7 @@
         },
         {
           "id": "judgeq-d-1-empathy_approach-a-call_record-v4",
-          "text": "박지연 씨, 새벽 전화와 미등록 번호에 관해 지금 바로잡고 싶은 말이 있다면 해 주십시오.",
+          "text": "새벽 전화와 미등록 번호에 관해 지금 바로잡고 싶은 말이 있다면 해 주십시오.",
           "behaviorHint": "새벽 전화와 미등록 번호에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -1246,7 +1246,7 @@
         },
         {
           "id": "judgeq-d-1-fact_pursuit-b-family_items-v2",
-          "text": "이준호 씨, 영수증에 남은 물건에서 직접 한 일과 추정한 일을 나눠 설명해 주십시오.",
+          "text": "영수증에 남은 물건에서 직접 한 일과 추정한 일을 나눠 설명해 주십시오.",
           "behaviorHint": "영수증에 남은 물건에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -1258,7 +1258,7 @@
         },
         {
           "id": "judgeq-d-1-fact_pursuit-b-family_items-v3",
-          "text": "이준호 씨, 영수증에 남은 물건 문제에서 상대 주장과 다른 부분이 있다면 구체적으로 답하십시오.",
+          "text": "영수증에 남은 물건 문제에서 상대 주장과 다른 부분이 있다면 구체적으로 답하십시오.",
           "behaviorHint": "영수증에 남은 물건에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -1270,7 +1270,7 @@
         },
         {
           "id": "judgeq-d-1-fact_pursuit-b-family_items-v4",
-          "text": "이준호 씨, 영수증에 남은 물건 항목을 기록 기준으로 다시 정리해 주십시오.",
+          "text": "영수증에 남은 물건 항목을 기록 기준으로 다시 정리해 주십시오.",
           "behaviorHint": "영수증에 남은 물건에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -1314,7 +1314,7 @@
         },
         {
           "id": "judgeq-d-1-fact_pursuit-a-family_items-v2",
-          "text": "박지연 씨, 영수증에 남은 물건에서 직접 한 일과 추정한 일을 나눠 설명해 주십시오.",
+          "text": "영수증에 남은 물건에서 직접 한 일과 추정한 일을 나눠 설명해 주십시오.",
           "behaviorHint": "영수증에 남은 물건에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -1326,7 +1326,7 @@
         },
         {
           "id": "judgeq-d-1-fact_pursuit-a-family_items-v3",
-          "text": "박지연 씨, 영수증에 남은 물건 문제에서 상대 주장과 다른 부분이 있다면 구체적으로 답하십시오.",
+          "text": "영수증에 남은 물건 문제에서 상대 주장과 다른 부분이 있다면 구체적으로 답하십시오.",
           "behaviorHint": "영수증에 남은 물건에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -1338,7 +1338,7 @@
         },
         {
           "id": "judgeq-d-1-fact_pursuit-a-family_items-v4",
-          "text": "박지연 씨, 영수증에 남은 물건 항목을 기록 기준으로 다시 정리해 주십시오.",
+          "text": "영수증에 남은 물건 항목을 기록 기준으로 다시 정리해 주십시오.",
           "behaviorHint": "영수증에 남은 물건에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -1382,7 +1382,7 @@
         },
         {
           "id": "judgeq-d-1-motive_search-b-family_items-v2",
-          "text": "이준호 씨, 영수증에 남은 물건에서 어떤 부담이나 계산이 있었는지 설명하십시오.",
+          "text": "영수증에 남은 물건에서 어떤 부담이나 계산이 있었는지 설명하십시오.",
           "behaviorHint": "영수증에 남은 물건에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -1394,7 +1394,7 @@
         },
         {
           "id": "judgeq-d-1-motive_search-b-family_items-v3",
-          "text": "이준호 씨, 영수증에 남은 물건에 대해 숨기거나 늦게 말한 이유가 무엇입니까.",
+          "text": "영수증에 남은 물건에 대해 숨기거나 늦게 말한 이유가 무엇입니까.",
           "behaviorHint": "영수증에 남은 물건에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -1406,7 +1406,7 @@
         },
         {
           "id": "judgeq-d-1-motive_search-b-family_items-v4",
-          "text": "이준호 씨, 영수증에 남은 물건에 대해 그때 왜 그런 선택을 했는지 답하십시오.",
+          "text": "영수증에 남은 물건에 대해 그때 왜 그런 선택을 했는지 답하십시오.",
           "behaviorHint": "영수증에 남은 물건에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -1450,7 +1450,7 @@
         },
         {
           "id": "judgeq-d-1-motive_search-a-family_items-v2",
-          "text": "박지연 씨, 영수증에 남은 물건에서 어떤 부담이나 계산이 있었는지 설명하십시오.",
+          "text": "영수증에 남은 물건에서 어떤 부담이나 계산이 있었는지 설명하십시오.",
           "behaviorHint": "영수증에 남은 물건에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -1462,7 +1462,7 @@
         },
         {
           "id": "judgeq-d-1-motive_search-a-family_items-v3",
-          "text": "박지연 씨, 영수증에 남은 물건에 대해 숨기거나 늦게 말한 이유가 무엇입니까.",
+          "text": "영수증에 남은 물건에 대해 숨기거나 늦게 말한 이유가 무엇입니까.",
           "behaviorHint": "영수증에 남은 물건에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -1474,7 +1474,7 @@
         },
         {
           "id": "judgeq-d-1-motive_search-a-family_items-v4",
-          "text": "박지연 씨, 영수증에 남은 물건에 대해 그때 왜 그런 선택을 했는지 답하십시오.",
+          "text": "영수증에 남은 물건에 대해 그때 왜 그런 선택을 했는지 답하십시오.",
           "behaviorHint": "영수증에 남은 물건에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -1518,7 +1518,7 @@
         },
         {
           "id": "judgeq-d-1-empathy_approach-b-family_items-v2",
-          "text": "이준호 씨, 영수증에 남은 물건에서 상대에게 상처를 준 부분을 어떻게 보고 있습니까.",
+          "text": "영수증에 남은 물건에서 상대에게 상처를 준 부분을 어떻게 보고 있습니까.",
           "behaviorHint": "영수증에 남은 물건에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -1530,7 +1530,7 @@
         },
         {
           "id": "judgeq-d-1-empathy_approach-b-family_items-v3",
-          "text": "이준호 씨, 영수증에 남은 물건 문제에서 두려웠거나 피하고 싶었던 지점이 있었습니까.",
+          "text": "영수증에 남은 물건 문제에서 두려웠거나 피하고 싶었던 지점이 있었습니까.",
           "behaviorHint": "영수증에 남은 물건에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -1542,7 +1542,7 @@
         },
         {
           "id": "judgeq-d-1-empathy_approach-b-family_items-v4",
-          "text": "이준호 씨, 영수증에 남은 물건에 관해 지금 바로잡고 싶은 말이 있다면 해 주십시오.",
+          "text": "영수증에 남은 물건에 관해 지금 바로잡고 싶은 말이 있다면 해 주십시오.",
           "behaviorHint": "영수증에 남은 물건에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -1586,7 +1586,7 @@
         },
         {
           "id": "judgeq-d-1-empathy_approach-a-family_items-v2",
-          "text": "박지연 씨, 영수증에 남은 물건에서 상대에게 상처를 준 부분을 어떻게 보고 있습니까.",
+          "text": "영수증에 남은 물건에서 상대에게 상처를 준 부분을 어떻게 보고 있습니까.",
           "behaviorHint": "영수증에 남은 물건에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -1598,7 +1598,7 @@
         },
         {
           "id": "judgeq-d-1-empathy_approach-a-family_items-v3",
-          "text": "박지연 씨, 영수증에 남은 물건 문제에서 두려웠거나 피하고 싶었던 지점이 있었습니까.",
+          "text": "영수증에 남은 물건 문제에서 두려웠거나 피하고 싶었던 지점이 있었습니까.",
           "behaviorHint": "영수증에 남은 물건에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -1610,7 +1610,7 @@
         },
         {
           "id": "judgeq-d-1-empathy_approach-a-family_items-v4",
-          "text": "박지연 씨, 영수증에 남은 물건에 관해 지금 바로잡고 싶은 말이 있다면 해 주십시오.",
+          "text": "영수증에 남은 물건에 관해 지금 바로잡고 싶은 말이 있다면 해 주십시오.",
           "behaviorHint": "영수증에 남은 물건에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -1654,7 +1654,7 @@
         },
         {
           "id": "judgeq-d-1-fact_pursuit-b-affair_denial-v2",
-          "text": "이준호 씨, 외도 의심에서 직접 한 일과 추정한 일을 나눠 설명해 주십시오.",
+          "text": "외도 의심에서 직접 한 일과 추정한 일을 나눠 설명해 주십시오.",
           "behaviorHint": "외도 의심에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -1666,7 +1666,7 @@
         },
         {
           "id": "judgeq-d-1-fact_pursuit-b-affair_denial-v3",
-          "text": "이준호 씨, 외도 의심 문제에서 상대 주장과 다른 부분이 있다면 구체적으로 답하십시오.",
+          "text": "외도 의심 문제에서 상대 주장과 다른 부분이 있다면 구체적으로 답하십시오.",
           "behaviorHint": "외도 의심에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -1678,7 +1678,7 @@
         },
         {
           "id": "judgeq-d-1-fact_pursuit-b-affair_denial-v4",
-          "text": "이준호 씨, 외도 의심 항목을 기록 기준으로 다시 정리해 주십시오.",
+          "text": "외도 의심 항목을 기록 기준으로 다시 정리해 주십시오.",
           "behaviorHint": "외도 의심에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -1722,7 +1722,7 @@
         },
         {
           "id": "judgeq-d-1-fact_pursuit-a-affair_denial-v2",
-          "text": "박지연 씨, 외도 의심에서 직접 한 일과 추정한 일을 나눠 설명해 주십시오.",
+          "text": "외도 의심에서 직접 한 일과 추정한 일을 나눠 설명해 주십시오.",
           "behaviorHint": "외도 의심에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -1734,7 +1734,7 @@
         },
         {
           "id": "judgeq-d-1-fact_pursuit-a-affair_denial-v3",
-          "text": "박지연 씨, 외도 의심 문제에서 상대 주장과 다른 부분이 있다면 구체적으로 답하십시오.",
+          "text": "외도 의심 문제에서 상대 주장과 다른 부분이 있다면 구체적으로 답하십시오.",
           "behaviorHint": "외도 의심에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -1746,7 +1746,7 @@
         },
         {
           "id": "judgeq-d-1-fact_pursuit-a-affair_denial-v4",
-          "text": "박지연 씨, 외도 의심 항목을 기록 기준으로 다시 정리해 주십시오.",
+          "text": "외도 의심 항목을 기록 기준으로 다시 정리해 주십시오.",
           "behaviorHint": "외도 의심에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -1790,7 +1790,7 @@
         },
         {
           "id": "judgeq-d-1-motive_search-b-affair_denial-v2",
-          "text": "이준호 씨, 외도 의심에서 어떤 부담이나 계산이 있었는지 설명하십시오.",
+          "text": "외도 의심에서 어떤 부담이나 계산이 있었는지 설명하십시오.",
           "behaviorHint": "외도 의심에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -1802,7 +1802,7 @@
         },
         {
           "id": "judgeq-d-1-motive_search-b-affair_denial-v3",
-          "text": "이준호 씨, 외도 의심에 대해 숨기거나 늦게 말한 이유가 무엇입니까.",
+          "text": "외도 의심에 대해 숨기거나 늦게 말한 이유가 무엇입니까.",
           "behaviorHint": "외도 의심에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -1814,7 +1814,7 @@
         },
         {
           "id": "judgeq-d-1-motive_search-b-affair_denial-v4",
-          "text": "이준호 씨, 외도 의심에 대해 그때 왜 그런 선택을 했는지 답하십시오.",
+          "text": "외도 의심에 대해 그때 왜 그런 선택을 했는지 답하십시오.",
           "behaviorHint": "외도 의심에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -1858,7 +1858,7 @@
         },
         {
           "id": "judgeq-d-1-motive_search-a-affair_denial-v2",
-          "text": "박지연 씨, 외도 의심에서 어떤 부담이나 계산이 있었는지 설명하십시오.",
+          "text": "외도 의심에서 어떤 부담이나 계산이 있었는지 설명하십시오.",
           "behaviorHint": "외도 의심에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -1870,7 +1870,7 @@
         },
         {
           "id": "judgeq-d-1-motive_search-a-affair_denial-v3",
-          "text": "박지연 씨, 외도 의심에 대해 숨기거나 늦게 말한 이유가 무엇입니까.",
+          "text": "외도 의심에 대해 숨기거나 늦게 말한 이유가 무엇입니까.",
           "behaviorHint": "외도 의심에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -1882,7 +1882,7 @@
         },
         {
           "id": "judgeq-d-1-motive_search-a-affair_denial-v4",
-          "text": "박지연 씨, 외도 의심에 대해 그때 왜 그런 선택을 했는지 답하십시오.",
+          "text": "외도 의심에 대해 그때 왜 그런 선택을 했는지 답하십시오.",
           "behaviorHint": "외도 의심에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -1926,7 +1926,7 @@
         },
         {
           "id": "judgeq-d-1-empathy_approach-b-affair_denial-v2",
-          "text": "이준호 씨, 외도 의심에서 상대에게 상처를 준 부분을 어떻게 보고 있습니까.",
+          "text": "외도 의심에서 상대에게 상처를 준 부분을 어떻게 보고 있습니까.",
           "behaviorHint": "외도 의심에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -1938,7 +1938,7 @@
         },
         {
           "id": "judgeq-d-1-empathy_approach-b-affair_denial-v3",
-          "text": "이준호 씨, 외도 의심 문제에서 두려웠거나 피하고 싶었던 지점이 있었습니까.",
+          "text": "외도 의심 문제에서 두려웠거나 피하고 싶었던 지점이 있었습니까.",
           "behaviorHint": "외도 의심에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -1950,7 +1950,7 @@
         },
         {
           "id": "judgeq-d-1-empathy_approach-b-affair_denial-v4",
-          "text": "이준호 씨, 외도 의심에 관해 지금 바로잡고 싶은 말이 있다면 해 주십시오.",
+          "text": "외도 의심에 관해 지금 바로잡고 싶은 말이 있다면 해 주십시오.",
           "behaviorHint": "외도 의심에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -1994,7 +1994,7 @@
         },
         {
           "id": "judgeq-d-1-empathy_approach-a-affair_denial-v2",
-          "text": "박지연 씨, 외도 의심에서 상대에게 상처를 준 부분을 어떻게 보고 있습니까.",
+          "text": "외도 의심에서 상대에게 상처를 준 부분을 어떻게 보고 있습니까.",
           "behaviorHint": "외도 의심에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -2006,7 +2006,7 @@
         },
         {
           "id": "judgeq-d-1-empathy_approach-a-affair_denial-v3",
-          "text": "박지연 씨, 외도 의심 문제에서 두려웠거나 피하고 싶었던 지점이 있었습니까.",
+          "text": "외도 의심 문제에서 두려웠거나 피하고 싶었던 지점이 있었습니까.",
           "behaviorHint": "외도 의심에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -2018,7 +2018,7 @@
         },
         {
           "id": "judgeq-d-1-empathy_approach-a-affair_denial-v4",
-          "text": "박지연 씨, 외도 의심에 관해 지금 바로잡고 싶은 말이 있다면 해 주십시오.",
+          "text": "외도 의심에 관해 지금 바로잡고 싶은 말이 있다면 해 주십시오.",
           "behaviorHint": "외도 의심에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -2062,7 +2062,7 @@
         },
         {
           "id": "judgeq-d-1-fact_pursuit-b-concealment_reason-v2",
-          "text": "이준호 씨, 끝까지 숨긴 이유에서 직접 한 일과 추정한 일을 나눠 설명해 주십시오.",
+          "text": "끝까지 숨긴 이유에서 직접 한 일과 추정한 일을 나눠 설명해 주십시오.",
           "behaviorHint": "끝까지 숨긴 이유에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -2074,7 +2074,7 @@
         },
         {
           "id": "judgeq-d-1-fact_pursuit-b-concealment_reason-v3",
-          "text": "이준호 씨, 끝까지 숨긴 이유 문제에서 상대 주장과 다른 부분이 있다면 구체적으로 답하십시오.",
+          "text": "끝까지 숨긴 이유 문제에서 상대 주장과 다른 부분이 있다면 구체적으로 답하십시오.",
           "behaviorHint": "끝까지 숨긴 이유에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -2086,7 +2086,7 @@
         },
         {
           "id": "judgeq-d-1-fact_pursuit-b-concealment_reason-v4",
-          "text": "이준호 씨, 끝까지 숨긴 이유 항목을 기록 기준으로 다시 정리해 주십시오.",
+          "text": "끝까지 숨긴 이유 항목을 기록 기준으로 다시 정리해 주십시오.",
           "behaviorHint": "끝까지 숨긴 이유에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -2130,7 +2130,7 @@
         },
         {
           "id": "judgeq-d-1-fact_pursuit-a-concealment_reason-v2",
-          "text": "박지연 씨, 끝까지 숨긴 이유에서 직접 한 일과 추정한 일을 나눠 설명해 주십시오.",
+          "text": "끝까지 숨긴 이유에서 직접 한 일과 추정한 일을 나눠 설명해 주십시오.",
           "behaviorHint": "끝까지 숨긴 이유에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -2142,7 +2142,7 @@
         },
         {
           "id": "judgeq-d-1-fact_pursuit-a-concealment_reason-v3",
-          "text": "박지연 씨, 끝까지 숨긴 이유 문제에서 상대 주장과 다른 부분이 있다면 구체적으로 답하십시오.",
+          "text": "끝까지 숨긴 이유 문제에서 상대 주장과 다른 부분이 있다면 구체적으로 답하십시오.",
           "behaviorHint": "끝까지 숨긴 이유에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -2154,7 +2154,7 @@
         },
         {
           "id": "judgeq-d-1-fact_pursuit-a-concealment_reason-v4",
-          "text": "박지연 씨, 끝까지 숨긴 이유 항목을 기록 기준으로 다시 정리해 주십시오.",
+          "text": "끝까지 숨긴 이유 항목을 기록 기준으로 다시 정리해 주십시오.",
           "behaviorHint": "끝까지 숨긴 이유에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -2198,7 +2198,7 @@
         },
         {
           "id": "judgeq-d-1-motive_search-b-concealment_reason-v2",
-          "text": "이준호 씨, 끝까지 숨긴 이유에서 어떤 부담이나 계산이 있었는지 설명하십시오.",
+          "text": "끝까지 숨긴 이유에서 어떤 부담이나 계산이 있었는지 설명하십시오.",
           "behaviorHint": "끝까지 숨긴 이유에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -2210,7 +2210,7 @@
         },
         {
           "id": "judgeq-d-1-motive_search-b-concealment_reason-v3",
-          "text": "이준호 씨, 끝까지 숨긴 이유에 대해 숨기거나 늦게 말한 이유가 무엇입니까.",
+          "text": "끝까지 숨긴 이유에 대해 숨기거나 늦게 말한 이유가 무엇입니까.",
           "behaviorHint": "끝까지 숨긴 이유에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -2222,7 +2222,7 @@
         },
         {
           "id": "judgeq-d-1-motive_search-b-concealment_reason-v4",
-          "text": "이준호 씨, 끝까지 숨긴 이유에 대해 그때 왜 그런 선택을 했는지 답하십시오.",
+          "text": "끝까지 숨긴 이유에 대해 그때 왜 그런 선택을 했는지 답하십시오.",
           "behaviorHint": "끝까지 숨긴 이유에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -2266,7 +2266,7 @@
         },
         {
           "id": "judgeq-d-1-motive_search-a-concealment_reason-v2",
-          "text": "박지연 씨, 끝까지 숨긴 이유에서 어떤 부담이나 계산이 있었는지 설명하십시오.",
+          "text": "끝까지 숨긴 이유에서 어떤 부담이나 계산이 있었는지 설명하십시오.",
           "behaviorHint": "끝까지 숨긴 이유에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -2278,7 +2278,7 @@
         },
         {
           "id": "judgeq-d-1-motive_search-a-concealment_reason-v3",
-          "text": "박지연 씨, 끝까지 숨긴 이유에 대해 숨기거나 늦게 말한 이유가 무엇입니까.",
+          "text": "끝까지 숨긴 이유에 대해 숨기거나 늦게 말한 이유가 무엇입니까.",
           "behaviorHint": "끝까지 숨긴 이유에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -2290,7 +2290,7 @@
         },
         {
           "id": "judgeq-d-1-motive_search-a-concealment_reason-v4",
-          "text": "박지연 씨, 끝까지 숨긴 이유에 대해 그때 왜 그런 선택을 했는지 답하십시오.",
+          "text": "끝까지 숨긴 이유에 대해 그때 왜 그런 선택을 했는지 답하십시오.",
           "behaviorHint": "끝까지 숨긴 이유에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -2334,7 +2334,7 @@
         },
         {
           "id": "judgeq-d-1-empathy_approach-b-concealment_reason-v2",
-          "text": "이준호 씨, 끝까지 숨긴 이유에서 상대에게 상처를 준 부분을 어떻게 보고 있습니까.",
+          "text": "끝까지 숨긴 이유에서 상대에게 상처를 준 부분을 어떻게 보고 있습니까.",
           "behaviorHint": "끝까지 숨긴 이유에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -2346,7 +2346,7 @@
         },
         {
           "id": "judgeq-d-1-empathy_approach-b-concealment_reason-v3",
-          "text": "이준호 씨, 끝까지 숨긴 이유 문제에서 두려웠거나 피하고 싶었던 지점이 있었습니까.",
+          "text": "끝까지 숨긴 이유 문제에서 두려웠거나 피하고 싶었던 지점이 있었습니까.",
           "behaviorHint": "끝까지 숨긴 이유에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -2358,7 +2358,7 @@
         },
         {
           "id": "judgeq-d-1-empathy_approach-b-concealment_reason-v4",
-          "text": "이준호 씨, 끝까지 숨긴 이유에 관해 지금 바로잡고 싶은 말이 있다면 해 주십시오.",
+          "text": "끝까지 숨긴 이유에 관해 지금 바로잡고 싶은 말이 있다면 해 주십시오.",
           "behaviorHint": "끝까지 숨긴 이유에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -2402,7 +2402,7 @@
         },
         {
           "id": "judgeq-d-1-empathy_approach-a-concealment_reason-v2",
-          "text": "박지연 씨, 끝까지 숨긴 이유에서 상대에게 상처를 준 부분을 어떻게 보고 있습니까.",
+          "text": "끝까지 숨긴 이유에서 상대에게 상처를 준 부분을 어떻게 보고 있습니까.",
           "behaviorHint": "끝까지 숨긴 이유에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -2414,7 +2414,7 @@
         },
         {
           "id": "judgeq-d-1-empathy_approach-a-concealment_reason-v3",
-          "text": "박지연 씨, 끝까지 숨긴 이유 문제에서 두려웠거나 피하고 싶었던 지점이 있었습니까.",
+          "text": "끝까지 숨긴 이유 문제에서 두려웠거나 피하고 싶었던 지점이 있었습니까.",
           "behaviorHint": "끝까지 숨긴 이유에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -2426,7 +2426,7 @@
         },
         {
           "id": "judgeq-d-1-empathy_approach-a-concealment_reason-v4",
-          "text": "박지연 씨, 끝까지 숨긴 이유에 관해 지금 바로잡고 싶은 말이 있다면 해 주십시오.",
+          "text": "끝까지 숨긴 이유에 관해 지금 바로잡고 싶은 말이 있다면 해 주십시오.",
           "behaviorHint": "끝까지 숨긴 이유에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -2458,8 +2458,8 @@
       "variants": [
         {
           "id": "judgeq-d-2-fact_pursuit-b-general-v1",
-          "text": "이준호 씨, 전체 경위에 대해 확인된 사실부터 순서대로 말씀해 주십시오.",
-          "behaviorHint": "전체 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
+          "text": "이준호 씨, 개인 계좌에서 큰돈이 빠져나간 시점과 사용처를 확인된 범위에서 말씀해 주십시오.",
+          "behaviorHint": "목돈 출금 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:b",
@@ -2470,8 +2470,8 @@
         },
         {
           "id": "judgeq-d-2-fact_pursuit-b-general-v2",
-          "text": "이준호 씨, 전체 경위에서 직접 한 일과 추정한 일을 나눠 설명해 주십시오.",
-          "behaviorHint": "전체 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
+          "text": "출금된 돈이 어디로 옮겨졌고 누가 알고 있었는지 순서대로 정리해 주십시오.",
+          "behaviorHint": "목돈 출금 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:b",
@@ -2482,8 +2482,8 @@
         },
         {
           "id": "judgeq-d-2-fact_pursuit-b-general-v3",
-          "text": "이준호 씨, 전체 경위 문제에서 상대 주장과 다른 부분이 있다면 구체적으로 답하십시오.",
-          "behaviorHint": "전체 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
+          "text": "배우자에게 말하지 않은 돈과 실제로 쓴 돈을 구분해서 설명하십시오.",
+          "behaviorHint": "목돈 출금 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:b",
@@ -2494,8 +2494,8 @@
         },
         {
           "id": "judgeq-d-2-fact_pursuit-b-general-v4",
-          "text": "이준호 씨, 전체 경위 항목을 기록 기준으로 다시 정리해 주십시오.",
-          "behaviorHint": "전체 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
+          "text": "기록상 확인되는 출금과 아직 추정에 남아 있는 사용처를 나눠 말씀해 주십시오.",
+          "behaviorHint": "목돈 출금 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:b",
@@ -2506,8 +2506,8 @@
         },
         {
           "id": "judgeq-d-2-fact_pursuit-b-general-v5",
-          "text": "이준호 씨, 전체 경위에 대해 아직 설명하지 않은 사실이 있습니까.",
-          "behaviorHint": "전체 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
+          "text": "이준호 씨, 현금 이동을 숨겼다는 의심에 대해 직접 한 행동부터 답하십시오.",
+          "behaviorHint": "목돈 출금 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:b",
@@ -2526,8 +2526,8 @@
       "variants": [
         {
           "id": "judgeq-d-2-fact_pursuit-a-general-v1",
-          "text": "박지연 씨, 전체 경위에 대해 확인된 사실부터 순서대로 말씀해 주십시오.",
-          "behaviorHint": "전체 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
+          "text": "박지연 씨, 개인 계좌에서 큰돈이 빠져나간 시점과 사용처를 확인된 범위에서 말씀해 주십시오.",
+          "behaviorHint": "목돈 출금 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:a",
@@ -2538,8 +2538,8 @@
         },
         {
           "id": "judgeq-d-2-fact_pursuit-a-general-v2",
-          "text": "박지연 씨, 전체 경위에서 직접 한 일과 추정한 일을 나눠 설명해 주십시오.",
-          "behaviorHint": "전체 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
+          "text": "출금된 돈이 어디로 옮겨졌고 누가 알고 있었는지 순서대로 정리해 주십시오.",
+          "behaviorHint": "목돈 출금 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:a",
@@ -2550,8 +2550,8 @@
         },
         {
           "id": "judgeq-d-2-fact_pursuit-a-general-v3",
-          "text": "박지연 씨, 전체 경위 문제에서 상대 주장과 다른 부분이 있다면 구체적으로 답하십시오.",
-          "behaviorHint": "전체 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
+          "text": "배우자에게 말하지 않은 돈과 실제로 쓴 돈을 구분해서 설명하십시오.",
+          "behaviorHint": "목돈 출금 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:a",
@@ -2562,8 +2562,8 @@
         },
         {
           "id": "judgeq-d-2-fact_pursuit-a-general-v4",
-          "text": "박지연 씨, 전체 경위 항목을 기록 기준으로 다시 정리해 주십시오.",
-          "behaviorHint": "전체 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
+          "text": "기록상 확인되는 출금과 아직 추정에 남아 있는 사용처를 나눠 말씀해 주십시오.",
+          "behaviorHint": "목돈 출금 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:a",
@@ -2574,8 +2574,8 @@
         },
         {
           "id": "judgeq-d-2-fact_pursuit-a-general-v5",
-          "text": "박지연 씨, 전체 경위에 대해 아직 설명하지 않은 사실이 있습니까.",
-          "behaviorHint": "전체 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
+          "text": "박지연 씨, 현금 이동을 숨겼다는 의심에 대해 직접 한 행동부터 답하십시오.",
+          "behaviorHint": "목돈 출금 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:a",
@@ -2594,8 +2594,8 @@
       "variants": [
         {
           "id": "judgeq-d-2-motive_search-b-general-v1",
-          "text": "이준호 씨, 전체 경위 문제를 그렇게 처리한 이유를 말씀해 주십시오.",
-          "behaviorHint": "전체 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
+          "text": "이준호 씨, 큰돈을 움직이면서 배우자에게 바로 말하지 않은 이유가 무엇입니까.",
+          "behaviorHint": "목돈 출금 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:b",
@@ -2606,8 +2606,8 @@
         },
         {
           "id": "judgeq-d-2-motive_search-b-general-v2",
-          "text": "이준호 씨, 전체 경위에서 어떤 부담이나 계산이 있었는지 설명하십시오.",
-          "behaviorHint": "전체 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
+          "text": "돈 이야기를 피하려 했던 것인지, 특정 사용처를 숨기려 했던 것인지 구분해 주십시오.",
+          "behaviorHint": "목돈 출금 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:b",
@@ -2618,8 +2618,8 @@
         },
         {
           "id": "judgeq-d-2-motive_search-b-general-v3",
-          "text": "이준호 씨, 전체 경위에 대해 숨기거나 늦게 말한 이유가 무엇입니까.",
-          "behaviorHint": "전체 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
+          "text": "출금 사실이 드러나면 가장 곤란해질 부분이 무엇이라고 생각했습니까.",
+          "behaviorHint": "목돈 출금 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:b",
@@ -2630,8 +2630,8 @@
         },
         {
           "id": "judgeq-d-2-motive_search-b-general-v4",
-          "text": "이준호 씨, 전체 경위에 대해 그때 왜 그런 선택을 했는지 답하십시오.",
-          "behaviorHint": "전체 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
+          "text": "배우자가 오해할 수 있다는 점을 알면서도 설명을 미룬 이유를 말씀하십시오.",
+          "behaviorHint": "목돈 출금 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:b",
@@ -2642,8 +2642,8 @@
         },
         {
           "id": "judgeq-d-2-motive_search-b-general-v5",
-          "text": "이준호 씨, 전체 경위의 배경이 되는 사정을 구체적으로 말해 주십시오.",
-          "behaviorHint": "전체 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
+          "text": "이준호 씨, 그 돈을 따로 관리해야 한다고 판단한 배경을 설명하십시오.",
+          "behaviorHint": "목돈 출금 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:b",
@@ -2662,8 +2662,8 @@
       "variants": [
         {
           "id": "judgeq-d-2-motive_search-a-general-v1",
-          "text": "박지연 씨, 전체 경위 문제를 그렇게 처리한 이유를 말씀해 주십시오.",
-          "behaviorHint": "전체 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
+          "text": "박지연 씨, 큰돈을 움직이면서 배우자에게 바로 말하지 않은 이유가 무엇입니까.",
+          "behaviorHint": "목돈 출금 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:a",
@@ -2674,8 +2674,8 @@
         },
         {
           "id": "judgeq-d-2-motive_search-a-general-v2",
-          "text": "박지연 씨, 전체 경위에서 어떤 부담이나 계산이 있었는지 설명하십시오.",
-          "behaviorHint": "전체 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
+          "text": "돈 이야기를 피하려 했던 것인지, 특정 사용처를 숨기려 했던 것인지 구분해 주십시오.",
+          "behaviorHint": "목돈 출금 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:a",
@@ -2686,8 +2686,8 @@
         },
         {
           "id": "judgeq-d-2-motive_search-a-general-v3",
-          "text": "박지연 씨, 전체 경위에 대해 숨기거나 늦게 말한 이유가 무엇입니까.",
-          "behaviorHint": "전체 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
+          "text": "출금 사실이 드러나면 가장 곤란해질 부분이 무엇이라고 생각했습니까.",
+          "behaviorHint": "목돈 출금 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:a",
@@ -2698,8 +2698,8 @@
         },
         {
           "id": "judgeq-d-2-motive_search-a-general-v4",
-          "text": "박지연 씨, 전체 경위에 대해 그때 왜 그런 선택을 했는지 답하십시오.",
-          "behaviorHint": "전체 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
+          "text": "배우자가 오해할 수 있다는 점을 알면서도 설명을 미룬 이유를 말씀하십시오.",
+          "behaviorHint": "목돈 출금 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:a",
@@ -2710,8 +2710,8 @@
         },
         {
           "id": "judgeq-d-2-motive_search-a-general-v5",
-          "text": "박지연 씨, 전체 경위의 배경이 되는 사정을 구체적으로 말해 주십시오.",
-          "behaviorHint": "전체 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
+          "text": "박지연 씨, 그 돈을 따로 관리해야 한다고 판단한 배경을 설명하십시오.",
+          "behaviorHint": "목돈 출금 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:a",
@@ -2730,8 +2730,8 @@
       "variants": [
         {
           "id": "judgeq-d-2-empathy_approach-b-general-v1",
-          "text": "이준호 씨, 전체 경위에 대해 말하기 어려웠다면 그 감정부터 설명해 주십시오.",
-          "behaviorHint": "전체 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
+          "text": "이준호 씨, 돈을 숨겼다는 의심을 받은 상황에서 가장 두려웠던 점이 무엇입니까.",
+          "behaviorHint": "목돈 출금 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:b",
@@ -2742,8 +2742,8 @@
         },
         {
           "id": "judgeq-d-2-empathy_approach-b-general-v2",
-          "text": "이준호 씨, 전체 경위에서 상대에게 상처를 준 부분을 어떻게 보고 있습니까.",
-          "behaviorHint": "전체 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
+          "text": "배우자가 배제됐다고 느낀 부분에 대해 지금은 어떻게 생각하십니까.",
+          "behaviorHint": "목돈 출금 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:b",
@@ -2754,8 +2754,8 @@
         },
         {
           "id": "judgeq-d-2-empathy_approach-b-general-v3",
-          "text": "이준호 씨, 전체 경위 문제에서 두려웠거나 피하고 싶었던 지점이 있었습니까.",
-          "behaviorHint": "전체 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
+          "text": "출금 사실을 늦게 말한 데 미안함이나 억울함이 있다면 구분해서 말씀하십시오.",
+          "behaviorHint": "목돈 출금 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:b",
@@ -2766,8 +2766,8 @@
         },
         {
           "id": "judgeq-d-2-empathy_approach-b-general-v4",
-          "text": "이준호 씨, 전체 경위에 관해 지금 바로잡고 싶은 말이 있다면 해 주십시오.",
-          "behaviorHint": "전체 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
+          "text": "돈 문제 때문에 관계가 흔들린 순간을 어떻게 받아들이고 있습니까.",
+          "behaviorHint": "목돈 출금 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:b",
@@ -2778,8 +2778,8 @@
         },
         {
           "id": "judgeq-d-2-empathy_approach-b-general-v5",
-          "text": "이준호 씨, 전체 경위에 대해 감정이 아니라 책임의 문제로 다시 말해 주십시오.",
-          "behaviorHint": "전체 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
+          "text": "이준호 씨, 상대에게 상처를 준 부분과 설명이 필요한 부분을 나눠 말해 주십시오.",
+          "behaviorHint": "목돈 출금 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:b",
@@ -2798,8 +2798,8 @@
       "variants": [
         {
           "id": "judgeq-d-2-empathy_approach-a-general-v1",
-          "text": "박지연 씨, 전체 경위에 대해 말하기 어려웠다면 그 감정부터 설명해 주십시오.",
-          "behaviorHint": "전체 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
+          "text": "박지연 씨, 돈을 숨겼다는 의심을 받은 상황에서 가장 두려웠던 점이 무엇입니까.",
+          "behaviorHint": "목돈 출금 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:a",
@@ -2810,8 +2810,8 @@
         },
         {
           "id": "judgeq-d-2-empathy_approach-a-general-v2",
-          "text": "박지연 씨, 전체 경위에서 상대에게 상처를 준 부분을 어떻게 보고 있습니까.",
-          "behaviorHint": "전체 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
+          "text": "배우자가 배제됐다고 느낀 부분에 대해 지금은 어떻게 생각하십니까.",
+          "behaviorHint": "목돈 출금 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:a",
@@ -2822,8 +2822,8 @@
         },
         {
           "id": "judgeq-d-2-empathy_approach-a-general-v3",
-          "text": "박지연 씨, 전체 경위 문제에서 두려웠거나 피하고 싶었던 지점이 있었습니까.",
-          "behaviorHint": "전체 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
+          "text": "출금 사실을 늦게 말한 데 미안함이나 억울함이 있다면 구분해서 말씀하십시오.",
+          "behaviorHint": "목돈 출금 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:a",
@@ -2834,8 +2834,8 @@
         },
         {
           "id": "judgeq-d-2-empathy_approach-a-general-v4",
-          "text": "박지연 씨, 전체 경위에 관해 지금 바로잡고 싶은 말이 있다면 해 주십시오.",
-          "behaviorHint": "전체 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
+          "text": "돈 문제 때문에 관계가 흔들린 순간을 어떻게 받아들이고 있습니까.",
+          "behaviorHint": "목돈 출금 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:a",
@@ -2846,8 +2846,8 @@
         },
         {
           "id": "judgeq-d-2-empathy_approach-a-general-v5",
-          "text": "박지연 씨, 전체 경위에 대해 감정이 아니라 책임의 문제로 다시 말해 주십시오.",
-          "behaviorHint": "전체 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
+          "text": "박지연 씨, 상대에게 상처를 준 부분과 설명이 필요한 부분을 나눠 말해 주십시오.",
+          "behaviorHint": "목돈 출금 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:a",
@@ -2878,7 +2878,7 @@
         },
         {
           "id": "judgeq-d-2-fact_pursuit-b-cash_withdrawal-v2",
-          "text": "이준호 씨, 현금 출금 시점에서 직접 한 일과 추정한 일을 나눠 설명해 주십시오.",
+          "text": "현금 출금 시점에서 직접 한 일과 추정한 일을 나눠 설명해 주십시오.",
           "behaviorHint": "현금 출금 시점에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -2890,7 +2890,7 @@
         },
         {
           "id": "judgeq-d-2-fact_pursuit-b-cash_withdrawal-v3",
-          "text": "이준호 씨, 현금 출금 시점 문제에서 상대 주장과 다른 부분이 있다면 구체적으로 답하십시오.",
+          "text": "현금 출금 시점 문제에서 상대 주장과 다른 부분이 있다면 구체적으로 답하십시오.",
           "behaviorHint": "현금 출금 시점에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -2902,7 +2902,7 @@
         },
         {
           "id": "judgeq-d-2-fact_pursuit-b-cash_withdrawal-v4",
-          "text": "이준호 씨, 현금 출금 시점 항목을 기록 기준으로 다시 정리해 주십시오.",
+          "text": "현금 출금 시점 항목을 기록 기준으로 다시 정리해 주십시오.",
           "behaviorHint": "현금 출금 시점에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -2946,7 +2946,7 @@
         },
         {
           "id": "judgeq-d-2-fact_pursuit-a-cash_withdrawal-v2",
-          "text": "박지연 씨, 현금 출금 시점에서 직접 한 일과 추정한 일을 나눠 설명해 주십시오.",
+          "text": "현금 출금 시점에서 직접 한 일과 추정한 일을 나눠 설명해 주십시오.",
           "behaviorHint": "현금 출금 시점에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -2958,7 +2958,7 @@
         },
         {
           "id": "judgeq-d-2-fact_pursuit-a-cash_withdrawal-v3",
-          "text": "박지연 씨, 현금 출금 시점 문제에서 상대 주장과 다른 부분이 있다면 구체적으로 답하십시오.",
+          "text": "현금 출금 시점 문제에서 상대 주장과 다른 부분이 있다면 구체적으로 답하십시오.",
           "behaviorHint": "현금 출금 시점에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -2970,7 +2970,7 @@
         },
         {
           "id": "judgeq-d-2-fact_pursuit-a-cash_withdrawal-v4",
-          "text": "박지연 씨, 현금 출금 시점 항목을 기록 기준으로 다시 정리해 주십시오.",
+          "text": "현금 출금 시점 항목을 기록 기준으로 다시 정리해 주십시오.",
           "behaviorHint": "현금 출금 시점에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -3014,7 +3014,7 @@
         },
         {
           "id": "judgeq-d-2-motive_search-b-cash_withdrawal-v2",
-          "text": "이준호 씨, 현금 출금 시점에서 어떤 부담이나 계산이 있었는지 설명하십시오.",
+          "text": "현금 출금 시점에서 어떤 부담이나 계산이 있었는지 설명하십시오.",
           "behaviorHint": "현금 출금 시점에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -3026,7 +3026,7 @@
         },
         {
           "id": "judgeq-d-2-motive_search-b-cash_withdrawal-v3",
-          "text": "이준호 씨, 현금 출금 시점에 대해 숨기거나 늦게 말한 이유가 무엇입니까.",
+          "text": "현금 출금 시점에 대해 숨기거나 늦게 말한 이유가 무엇입니까.",
           "behaviorHint": "현금 출금 시점에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -3038,7 +3038,7 @@
         },
         {
           "id": "judgeq-d-2-motive_search-b-cash_withdrawal-v4",
-          "text": "이준호 씨, 현금 출금 시점에 대해 그때 왜 그런 선택을 했는지 답하십시오.",
+          "text": "현금 출금 시점에 대해 그때 왜 그런 선택을 했는지 답하십시오.",
           "behaviorHint": "현금 출금 시점에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -3082,7 +3082,7 @@
         },
         {
           "id": "judgeq-d-2-motive_search-a-cash_withdrawal-v2",
-          "text": "박지연 씨, 현금 출금 시점에서 어떤 부담이나 계산이 있었는지 설명하십시오.",
+          "text": "현금 출금 시점에서 어떤 부담이나 계산이 있었는지 설명하십시오.",
           "behaviorHint": "현금 출금 시점에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -3094,7 +3094,7 @@
         },
         {
           "id": "judgeq-d-2-motive_search-a-cash_withdrawal-v3",
-          "text": "박지연 씨, 현금 출금 시점에 대해 숨기거나 늦게 말한 이유가 무엇입니까.",
+          "text": "현금 출금 시점에 대해 숨기거나 늦게 말한 이유가 무엇입니까.",
           "behaviorHint": "현금 출금 시점에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -3106,7 +3106,7 @@
         },
         {
           "id": "judgeq-d-2-motive_search-a-cash_withdrawal-v4",
-          "text": "박지연 씨, 현금 출금 시점에 대해 그때 왜 그런 선택을 했는지 답하십시오.",
+          "text": "현금 출금 시점에 대해 그때 왜 그런 선택을 했는지 답하십시오.",
           "behaviorHint": "현금 출금 시점에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -3150,7 +3150,7 @@
         },
         {
           "id": "judgeq-d-2-empathy_approach-b-cash_withdrawal-v2",
-          "text": "이준호 씨, 현금 출금 시점에서 상대에게 상처를 준 부분을 어떻게 보고 있습니까.",
+          "text": "현금 출금 시점에서 상대에게 상처를 준 부분을 어떻게 보고 있습니까.",
           "behaviorHint": "현금 출금 시점에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -3162,7 +3162,7 @@
         },
         {
           "id": "judgeq-d-2-empathy_approach-b-cash_withdrawal-v3",
-          "text": "이준호 씨, 현금 출금 시점 문제에서 두려웠거나 피하고 싶었던 지점이 있었습니까.",
+          "text": "현금 출금 시점 문제에서 두려웠거나 피하고 싶었던 지점이 있었습니까.",
           "behaviorHint": "현금 출금 시점에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -3174,7 +3174,7 @@
         },
         {
           "id": "judgeq-d-2-empathy_approach-b-cash_withdrawal-v4",
-          "text": "이준호 씨, 현금 출금 시점에 관해 지금 바로잡고 싶은 말이 있다면 해 주십시오.",
+          "text": "현금 출금 시점에 관해 지금 바로잡고 싶은 말이 있다면 해 주십시오.",
           "behaviorHint": "현금 출금 시점에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -3218,7 +3218,7 @@
         },
         {
           "id": "judgeq-d-2-empathy_approach-a-cash_withdrawal-v2",
-          "text": "박지연 씨, 현금 출금 시점에서 상대에게 상처를 준 부분을 어떻게 보고 있습니까.",
+          "text": "현금 출금 시점에서 상대에게 상처를 준 부분을 어떻게 보고 있습니까.",
           "behaviorHint": "현금 출금 시점에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -3230,7 +3230,7 @@
         },
         {
           "id": "judgeq-d-2-empathy_approach-a-cash_withdrawal-v3",
-          "text": "박지연 씨, 현금 출금 시점 문제에서 두려웠거나 피하고 싶었던 지점이 있었습니까.",
+          "text": "현금 출금 시점 문제에서 두려웠거나 피하고 싶었던 지점이 있었습니까.",
           "behaviorHint": "현금 출금 시점에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -3242,7 +3242,7 @@
         },
         {
           "id": "judgeq-d-2-empathy_approach-a-cash_withdrawal-v4",
-          "text": "박지연 씨, 현금 출금 시점에 관해 지금 바로잡고 싶은 말이 있다면 해 주십시오.",
+          "text": "현금 출금 시점에 관해 지금 바로잡고 싶은 말이 있다면 해 주십시오.",
           "behaviorHint": "현금 출금 시점에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -3286,7 +3286,7 @@
         },
         {
           "id": "judgeq-d-2-fact_pursuit-b-private_fund_boundary-v2",
-          "text": "이준호 씨, 개인 돈과 공동 재산의 경계에서 직접 한 일과 추정한 일을 나눠 설명해 주십시오.",
+          "text": "개인 돈과 공동 재산의 경계에서 직접 한 일과 추정한 일을 나눠 설명해 주십시오.",
           "behaviorHint": "개인 돈과 공동 재산의 경계에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -3298,7 +3298,7 @@
         },
         {
           "id": "judgeq-d-2-fact_pursuit-b-private_fund_boundary-v3",
-          "text": "이준호 씨, 개인 돈과 공동 재산의 경계 문제에서 상대 주장과 다른 부분이 있다면 구체적으로 답하십시오.",
+          "text": "개인 돈과 공동 재산의 경계 문제에서 상대 주장과 다른 부분이 있다면 구체적으로 답하십시오.",
           "behaviorHint": "개인 돈과 공동 재산의 경계에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -3310,7 +3310,7 @@
         },
         {
           "id": "judgeq-d-2-fact_pursuit-b-private_fund_boundary-v4",
-          "text": "이준호 씨, 개인 돈과 공동 재산의 경계 항목을 기록 기준으로 다시 정리해 주십시오.",
+          "text": "개인 돈과 공동 재산의 경계 항목을 기록 기준으로 다시 정리해 주십시오.",
           "behaviorHint": "개인 돈과 공동 재산의 경계에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -3354,7 +3354,7 @@
         },
         {
           "id": "judgeq-d-2-fact_pursuit-a-private_fund_boundary-v2",
-          "text": "박지연 씨, 개인 돈과 공동 재산의 경계에서 직접 한 일과 추정한 일을 나눠 설명해 주십시오.",
+          "text": "개인 돈과 공동 재산의 경계에서 직접 한 일과 추정한 일을 나눠 설명해 주십시오.",
           "behaviorHint": "개인 돈과 공동 재산의 경계에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -3366,7 +3366,7 @@
         },
         {
           "id": "judgeq-d-2-fact_pursuit-a-private_fund_boundary-v3",
-          "text": "박지연 씨, 개인 돈과 공동 재산의 경계 문제에서 상대 주장과 다른 부분이 있다면 구체적으로 답하십시오.",
+          "text": "개인 돈과 공동 재산의 경계 문제에서 상대 주장과 다른 부분이 있다면 구체적으로 답하십시오.",
           "behaviorHint": "개인 돈과 공동 재산의 경계에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -3378,7 +3378,7 @@
         },
         {
           "id": "judgeq-d-2-fact_pursuit-a-private_fund_boundary-v4",
-          "text": "박지연 씨, 개인 돈과 공동 재산의 경계 항목을 기록 기준으로 다시 정리해 주십시오.",
+          "text": "개인 돈과 공동 재산의 경계 항목을 기록 기준으로 다시 정리해 주십시오.",
           "behaviorHint": "개인 돈과 공동 재산의 경계에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -3422,7 +3422,7 @@
         },
         {
           "id": "judgeq-d-2-motive_search-b-private_fund_boundary-v2",
-          "text": "이준호 씨, 개인 돈과 공동 재산의 경계에서 어떤 부담이나 계산이 있었는지 설명하십시오.",
+          "text": "개인 돈과 공동 재산의 경계에서 어떤 부담이나 계산이 있었는지 설명하십시오.",
           "behaviorHint": "개인 돈과 공동 재산의 경계에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -3434,7 +3434,7 @@
         },
         {
           "id": "judgeq-d-2-motive_search-b-private_fund_boundary-v3",
-          "text": "이준호 씨, 개인 돈과 공동 재산의 경계에 대해 숨기거나 늦게 말한 이유가 무엇입니까.",
+          "text": "개인 돈과 공동 재산의 경계에 대해 숨기거나 늦게 말한 이유가 무엇입니까.",
           "behaviorHint": "개인 돈과 공동 재산의 경계에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -3446,7 +3446,7 @@
         },
         {
           "id": "judgeq-d-2-motive_search-b-private_fund_boundary-v4",
-          "text": "이준호 씨, 개인 돈과 공동 재산의 경계에 대해 그때 왜 그런 선택을 했는지 답하십시오.",
+          "text": "개인 돈과 공동 재산의 경계에 대해 그때 왜 그런 선택을 했는지 답하십시오.",
           "behaviorHint": "개인 돈과 공동 재산의 경계에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -3490,7 +3490,7 @@
         },
         {
           "id": "judgeq-d-2-motive_search-a-private_fund_boundary-v2",
-          "text": "박지연 씨, 개인 돈과 공동 재산의 경계에서 어떤 부담이나 계산이 있었는지 설명하십시오.",
+          "text": "개인 돈과 공동 재산의 경계에서 어떤 부담이나 계산이 있었는지 설명하십시오.",
           "behaviorHint": "개인 돈과 공동 재산의 경계에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -3502,7 +3502,7 @@
         },
         {
           "id": "judgeq-d-2-motive_search-a-private_fund_boundary-v3",
-          "text": "박지연 씨, 개인 돈과 공동 재산의 경계에 대해 숨기거나 늦게 말한 이유가 무엇입니까.",
+          "text": "개인 돈과 공동 재산의 경계에 대해 숨기거나 늦게 말한 이유가 무엇입니까.",
           "behaviorHint": "개인 돈과 공동 재산의 경계에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -3514,7 +3514,7 @@
         },
         {
           "id": "judgeq-d-2-motive_search-a-private_fund_boundary-v4",
-          "text": "박지연 씨, 개인 돈과 공동 재산의 경계에 대해 그때 왜 그런 선택을 했는지 답하십시오.",
+          "text": "개인 돈과 공동 재산의 경계에 대해 그때 왜 그런 선택을 했는지 답하십시오.",
           "behaviorHint": "개인 돈과 공동 재산의 경계에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -3558,7 +3558,7 @@
         },
         {
           "id": "judgeq-d-2-empathy_approach-b-private_fund_boundary-v2",
-          "text": "이준호 씨, 개인 돈과 공동 재산의 경계에서 상대에게 상처를 준 부분을 어떻게 보고 있습니까.",
+          "text": "개인 돈과 공동 재산의 경계에서 상대에게 상처를 준 부분을 어떻게 보고 있습니까.",
           "behaviorHint": "개인 돈과 공동 재산의 경계에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -3570,7 +3570,7 @@
         },
         {
           "id": "judgeq-d-2-empathy_approach-b-private_fund_boundary-v3",
-          "text": "이준호 씨, 개인 돈과 공동 재산의 경계 문제에서 두려웠거나 피하고 싶었던 지점이 있었습니까.",
+          "text": "개인 돈과 공동 재산의 경계 문제에서 두려웠거나 피하고 싶었던 지점이 있었습니까.",
           "behaviorHint": "개인 돈과 공동 재산의 경계에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -3582,7 +3582,7 @@
         },
         {
           "id": "judgeq-d-2-empathy_approach-b-private_fund_boundary-v4",
-          "text": "이준호 씨, 개인 돈과 공동 재산의 경계에 관해 지금 바로잡고 싶은 말이 있다면 해 주십시오.",
+          "text": "개인 돈과 공동 재산의 경계에 관해 지금 바로잡고 싶은 말이 있다면 해 주십시오.",
           "behaviorHint": "개인 돈과 공동 재산의 경계에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -3626,7 +3626,7 @@
         },
         {
           "id": "judgeq-d-2-empathy_approach-a-private_fund_boundary-v2",
-          "text": "박지연 씨, 개인 돈과 공동 재산의 경계에서 상대에게 상처를 준 부분을 어떻게 보고 있습니까.",
+          "text": "개인 돈과 공동 재산의 경계에서 상대에게 상처를 준 부분을 어떻게 보고 있습니까.",
           "behaviorHint": "개인 돈과 공동 재산의 경계에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -3638,7 +3638,7 @@
         },
         {
           "id": "judgeq-d-2-empathy_approach-a-private_fund_boundary-v3",
-          "text": "박지연 씨, 개인 돈과 공동 재산의 경계 문제에서 두려웠거나 피하고 싶었던 지점이 있었습니까.",
+          "text": "개인 돈과 공동 재산의 경계 문제에서 두려웠거나 피하고 싶었던 지점이 있었습니까.",
           "behaviorHint": "개인 돈과 공동 재산의 경계에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -3650,7 +3650,7 @@
         },
         {
           "id": "judgeq-d-2-empathy_approach-a-private_fund_boundary-v4",
-          "text": "박지연 씨, 개인 돈과 공동 재산의 경계에 관해 지금 바로잡고 싶은 말이 있다면 해 주십시오.",
+          "text": "개인 돈과 공동 재산의 경계에 관해 지금 바로잡고 싶은 말이 있다면 해 주십시오.",
           "behaviorHint": "개인 돈과 공동 재산의 경계에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -3694,7 +3694,7 @@
         },
         {
           "id": "judgeq-d-2-fact_pursuit-b-recipient_reason-v2",
-          "text": "이준호 씨, 현금을 건넨 대상과 이유에서 직접 한 일과 추정한 일을 나눠 설명해 주십시오.",
+          "text": "현금을 건넨 대상과 이유에서 직접 한 일과 추정한 일을 나눠 설명해 주십시오.",
           "behaviorHint": "현금을 건넨 대상과 이유에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -3706,7 +3706,7 @@
         },
         {
           "id": "judgeq-d-2-fact_pursuit-b-recipient_reason-v3",
-          "text": "이준호 씨, 현금을 건넨 대상과 이유 문제에서 상대 주장과 다른 부분이 있다면 구체적으로 답하십시오.",
+          "text": "현금을 건넨 대상과 이유 문제에서 상대 주장과 다른 부분이 있다면 구체적으로 답하십시오.",
           "behaviorHint": "현금을 건넨 대상과 이유에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -3718,7 +3718,7 @@
         },
         {
           "id": "judgeq-d-2-fact_pursuit-b-recipient_reason-v4",
-          "text": "이준호 씨, 현금을 건넨 대상과 이유 항목을 기록 기준으로 다시 정리해 주십시오.",
+          "text": "현금을 건넨 대상과 이유 항목을 기록 기준으로 다시 정리해 주십시오.",
           "behaviorHint": "현금을 건넨 대상과 이유에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -3762,7 +3762,7 @@
         },
         {
           "id": "judgeq-d-2-fact_pursuit-a-recipient_reason-v2",
-          "text": "박지연 씨, 현금을 건넨 대상과 이유에서 직접 한 일과 추정한 일을 나눠 설명해 주십시오.",
+          "text": "현금을 건넨 대상과 이유에서 직접 한 일과 추정한 일을 나눠 설명해 주십시오.",
           "behaviorHint": "현금을 건넨 대상과 이유에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -3774,7 +3774,7 @@
         },
         {
           "id": "judgeq-d-2-fact_pursuit-a-recipient_reason-v3",
-          "text": "박지연 씨, 현금을 건넨 대상과 이유 문제에서 상대 주장과 다른 부분이 있다면 구체적으로 답하십시오.",
+          "text": "현금을 건넨 대상과 이유 문제에서 상대 주장과 다른 부분이 있다면 구체적으로 답하십시오.",
           "behaviorHint": "현금을 건넨 대상과 이유에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -3786,7 +3786,7 @@
         },
         {
           "id": "judgeq-d-2-fact_pursuit-a-recipient_reason-v4",
-          "text": "박지연 씨, 현금을 건넨 대상과 이유 항목을 기록 기준으로 다시 정리해 주십시오.",
+          "text": "현금을 건넨 대상과 이유 항목을 기록 기준으로 다시 정리해 주십시오.",
           "behaviorHint": "현금을 건넨 대상과 이유에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -3830,7 +3830,7 @@
         },
         {
           "id": "judgeq-d-2-motive_search-b-recipient_reason-v2",
-          "text": "이준호 씨, 현금을 건넨 대상과 이유에서 어떤 부담이나 계산이 있었는지 설명하십시오.",
+          "text": "현금을 건넨 대상과 이유에서 어떤 부담이나 계산이 있었는지 설명하십시오.",
           "behaviorHint": "현금을 건넨 대상과 이유에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -3842,7 +3842,7 @@
         },
         {
           "id": "judgeq-d-2-motive_search-b-recipient_reason-v3",
-          "text": "이준호 씨, 현금을 건넨 대상과 이유에 대해 숨기거나 늦게 말한 이유가 무엇입니까.",
+          "text": "현금을 건넨 대상과 이유에 대해 숨기거나 늦게 말한 이유가 무엇입니까.",
           "behaviorHint": "현금을 건넨 대상과 이유에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -3854,7 +3854,7 @@
         },
         {
           "id": "judgeq-d-2-motive_search-b-recipient_reason-v4",
-          "text": "이준호 씨, 현금을 건넨 대상과 이유에 대해 그때 왜 그런 선택을 했는지 답하십시오.",
+          "text": "현금을 건넨 대상과 이유에 대해 그때 왜 그런 선택을 했는지 답하십시오.",
           "behaviorHint": "현금을 건넨 대상과 이유에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -3898,7 +3898,7 @@
         },
         {
           "id": "judgeq-d-2-motive_search-a-recipient_reason-v2",
-          "text": "박지연 씨, 현금을 건넨 대상과 이유에서 어떤 부담이나 계산이 있었는지 설명하십시오.",
+          "text": "현금을 건넨 대상과 이유에서 어떤 부담이나 계산이 있었는지 설명하십시오.",
           "behaviorHint": "현금을 건넨 대상과 이유에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -3910,7 +3910,7 @@
         },
         {
           "id": "judgeq-d-2-motive_search-a-recipient_reason-v3",
-          "text": "박지연 씨, 현금을 건넨 대상과 이유에 대해 숨기거나 늦게 말한 이유가 무엇입니까.",
+          "text": "현금을 건넨 대상과 이유에 대해 숨기거나 늦게 말한 이유가 무엇입니까.",
           "behaviorHint": "현금을 건넨 대상과 이유에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -3922,7 +3922,7 @@
         },
         {
           "id": "judgeq-d-2-motive_search-a-recipient_reason-v4",
-          "text": "박지연 씨, 현금을 건넨 대상과 이유에 대해 그때 왜 그런 선택을 했는지 답하십시오.",
+          "text": "현금을 건넨 대상과 이유에 대해 그때 왜 그런 선택을 했는지 답하십시오.",
           "behaviorHint": "현금을 건넨 대상과 이유에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -3966,7 +3966,7 @@
         },
         {
           "id": "judgeq-d-2-empathy_approach-b-recipient_reason-v2",
-          "text": "이준호 씨, 현금을 건넨 대상과 이유에서 상대에게 상처를 준 부분을 어떻게 보고 있습니까.",
+          "text": "현금을 건넨 대상과 이유에서 상대에게 상처를 준 부분을 어떻게 보고 있습니까.",
           "behaviorHint": "현금을 건넨 대상과 이유에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -3978,7 +3978,7 @@
         },
         {
           "id": "judgeq-d-2-empathy_approach-b-recipient_reason-v3",
-          "text": "이준호 씨, 현금을 건넨 대상과 이유 문제에서 두려웠거나 피하고 싶었던 지점이 있었습니까.",
+          "text": "현금을 건넨 대상과 이유 문제에서 두려웠거나 피하고 싶었던 지점이 있었습니까.",
           "behaviorHint": "현금을 건넨 대상과 이유에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -3990,7 +3990,7 @@
         },
         {
           "id": "judgeq-d-2-empathy_approach-b-recipient_reason-v4",
-          "text": "이준호 씨, 현금을 건넨 대상과 이유에 관해 지금 바로잡고 싶은 말이 있다면 해 주십시오.",
+          "text": "현금을 건넨 대상과 이유에 관해 지금 바로잡고 싶은 말이 있다면 해 주십시오.",
           "behaviorHint": "현금을 건넨 대상과 이유에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -4034,7 +4034,7 @@
         },
         {
           "id": "judgeq-d-2-empathy_approach-a-recipient_reason-v2",
-          "text": "박지연 씨, 현금을 건넨 대상과 이유에서 상대에게 상처를 준 부분을 어떻게 보고 있습니까.",
+          "text": "현금을 건넨 대상과 이유에서 상대에게 상처를 준 부분을 어떻게 보고 있습니까.",
           "behaviorHint": "현금을 건넨 대상과 이유에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -4046,7 +4046,7 @@
         },
         {
           "id": "judgeq-d-2-empathy_approach-a-recipient_reason-v3",
-          "text": "박지연 씨, 현금을 건넨 대상과 이유 문제에서 두려웠거나 피하고 싶었던 지점이 있었습니까.",
+          "text": "현금을 건넨 대상과 이유 문제에서 두려웠거나 피하고 싶었던 지점이 있었습니까.",
           "behaviorHint": "현금을 건넨 대상과 이유에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -4058,7 +4058,7 @@
         },
         {
           "id": "judgeq-d-2-empathy_approach-a-recipient_reason-v4",
-          "text": "박지연 씨, 현금을 건넨 대상과 이유에 관해 지금 바로잡고 싶은 말이 있다면 해 주십시오.",
+          "text": "현금을 건넨 대상과 이유에 관해 지금 바로잡고 싶은 말이 있다면 해 주십시오.",
           "behaviorHint": "현금을 건넨 대상과 이유에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -4102,7 +4102,7 @@
         },
         {
           "id": "judgeq-d-2-fact_pursuit-b-consent_boundary-v2",
-          "text": "이준호 씨, 배우자에게 말하지 않은 책임에서 직접 한 일과 추정한 일을 나눠 설명해 주십시오.",
+          "text": "배우자에게 말하지 않은 책임에서 직접 한 일과 추정한 일을 나눠 설명해 주십시오.",
           "behaviorHint": "배우자에게 말하지 않은 책임에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -4114,7 +4114,7 @@
         },
         {
           "id": "judgeq-d-2-fact_pursuit-b-consent_boundary-v3",
-          "text": "이준호 씨, 배우자에게 말하지 않은 책임 문제에서 상대 주장과 다른 부분이 있다면 구체적으로 답하십시오.",
+          "text": "배우자에게 말하지 않은 책임 문제에서 상대 주장과 다른 부분이 있다면 구체적으로 답하십시오.",
           "behaviorHint": "배우자에게 말하지 않은 책임에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -4126,7 +4126,7 @@
         },
         {
           "id": "judgeq-d-2-fact_pursuit-b-consent_boundary-v4",
-          "text": "이준호 씨, 배우자에게 말하지 않은 책임 항목을 기록 기준으로 다시 정리해 주십시오.",
+          "text": "배우자에게 말하지 않은 책임 항목을 기록 기준으로 다시 정리해 주십시오.",
           "behaviorHint": "배우자에게 말하지 않은 책임에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -4170,7 +4170,7 @@
         },
         {
           "id": "judgeq-d-2-fact_pursuit-a-consent_boundary-v2",
-          "text": "박지연 씨, 배우자에게 말하지 않은 책임에서 직접 한 일과 추정한 일을 나눠 설명해 주십시오.",
+          "text": "배우자에게 말하지 않은 책임에서 직접 한 일과 추정한 일을 나눠 설명해 주십시오.",
           "behaviorHint": "배우자에게 말하지 않은 책임에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -4182,7 +4182,7 @@
         },
         {
           "id": "judgeq-d-2-fact_pursuit-a-consent_boundary-v3",
-          "text": "박지연 씨, 배우자에게 말하지 않은 책임 문제에서 상대 주장과 다른 부분이 있다면 구체적으로 답하십시오.",
+          "text": "배우자에게 말하지 않은 책임 문제에서 상대 주장과 다른 부분이 있다면 구체적으로 답하십시오.",
           "behaviorHint": "배우자에게 말하지 않은 책임에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -4194,7 +4194,7 @@
         },
         {
           "id": "judgeq-d-2-fact_pursuit-a-consent_boundary-v4",
-          "text": "박지연 씨, 배우자에게 말하지 않은 책임 항목을 기록 기준으로 다시 정리해 주십시오.",
+          "text": "배우자에게 말하지 않은 책임 항목을 기록 기준으로 다시 정리해 주십시오.",
           "behaviorHint": "배우자에게 말하지 않은 책임에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -4238,7 +4238,7 @@
         },
         {
           "id": "judgeq-d-2-motive_search-b-consent_boundary-v2",
-          "text": "이준호 씨, 배우자에게 말하지 않은 책임에서 어떤 부담이나 계산이 있었는지 설명하십시오.",
+          "text": "배우자에게 말하지 않은 책임에서 어떤 부담이나 계산이 있었는지 설명하십시오.",
           "behaviorHint": "배우자에게 말하지 않은 책임에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -4250,7 +4250,7 @@
         },
         {
           "id": "judgeq-d-2-motive_search-b-consent_boundary-v3",
-          "text": "이준호 씨, 배우자에게 말하지 않은 책임에 대해 숨기거나 늦게 말한 이유가 무엇입니까.",
+          "text": "배우자에게 말하지 않은 책임에 대해 숨기거나 늦게 말한 이유가 무엇입니까.",
           "behaviorHint": "배우자에게 말하지 않은 책임에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -4262,7 +4262,7 @@
         },
         {
           "id": "judgeq-d-2-motive_search-b-consent_boundary-v4",
-          "text": "이준호 씨, 배우자에게 말하지 않은 책임에 대해 그때 왜 그런 선택을 했는지 답하십시오.",
+          "text": "배우자에게 말하지 않은 책임에 대해 그때 왜 그런 선택을 했는지 답하십시오.",
           "behaviorHint": "배우자에게 말하지 않은 책임에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -4306,7 +4306,7 @@
         },
         {
           "id": "judgeq-d-2-motive_search-a-consent_boundary-v2",
-          "text": "박지연 씨, 배우자에게 말하지 않은 책임에서 어떤 부담이나 계산이 있었는지 설명하십시오.",
+          "text": "배우자에게 말하지 않은 책임에서 어떤 부담이나 계산이 있었는지 설명하십시오.",
           "behaviorHint": "배우자에게 말하지 않은 책임에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -4318,7 +4318,7 @@
         },
         {
           "id": "judgeq-d-2-motive_search-a-consent_boundary-v3",
-          "text": "박지연 씨, 배우자에게 말하지 않은 책임에 대해 숨기거나 늦게 말한 이유가 무엇입니까.",
+          "text": "배우자에게 말하지 않은 책임에 대해 숨기거나 늦게 말한 이유가 무엇입니까.",
           "behaviorHint": "배우자에게 말하지 않은 책임에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -4330,7 +4330,7 @@
         },
         {
           "id": "judgeq-d-2-motive_search-a-consent_boundary-v4",
-          "text": "박지연 씨, 배우자에게 말하지 않은 책임에 대해 그때 왜 그런 선택을 했는지 답하십시오.",
+          "text": "배우자에게 말하지 않은 책임에 대해 그때 왜 그런 선택을 했는지 답하십시오.",
           "behaviorHint": "배우자에게 말하지 않은 책임에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -4374,7 +4374,7 @@
         },
         {
           "id": "judgeq-d-2-empathy_approach-b-consent_boundary-v2",
-          "text": "이준호 씨, 배우자에게 말하지 않은 책임에서 상대에게 상처를 준 부분을 어떻게 보고 있습니까.",
+          "text": "배우자에게 말하지 않은 책임에서 상대에게 상처를 준 부분을 어떻게 보고 있습니까.",
           "behaviorHint": "배우자에게 말하지 않은 책임에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -4386,7 +4386,7 @@
         },
         {
           "id": "judgeq-d-2-empathy_approach-b-consent_boundary-v3",
-          "text": "이준호 씨, 배우자에게 말하지 않은 책임 문제에서 두려웠거나 피하고 싶었던 지점이 있었습니까.",
+          "text": "배우자에게 말하지 않은 책임 문제에서 두려웠거나 피하고 싶었던 지점이 있었습니까.",
           "behaviorHint": "배우자에게 말하지 않은 책임에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -4398,7 +4398,7 @@
         },
         {
           "id": "judgeq-d-2-empathy_approach-b-consent_boundary-v4",
-          "text": "이준호 씨, 배우자에게 말하지 않은 책임에 관해 지금 바로잡고 싶은 말이 있다면 해 주십시오.",
+          "text": "배우자에게 말하지 않은 책임에 관해 지금 바로잡고 싶은 말이 있다면 해 주십시오.",
           "behaviorHint": "배우자에게 말하지 않은 책임에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -4442,7 +4442,7 @@
         },
         {
           "id": "judgeq-d-2-empathy_approach-a-consent_boundary-v2",
-          "text": "박지연 씨, 배우자에게 말하지 않은 책임에서 상대에게 상처를 준 부분을 어떻게 보고 있습니까.",
+          "text": "배우자에게 말하지 않은 책임에서 상대에게 상처를 준 부분을 어떻게 보고 있습니까.",
           "behaviorHint": "배우자에게 말하지 않은 책임에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -4454,7 +4454,7 @@
         },
         {
           "id": "judgeq-d-2-empathy_approach-a-consent_boundary-v3",
-          "text": "박지연 씨, 배우자에게 말하지 않은 책임 문제에서 두려웠거나 피하고 싶었던 지점이 있었습니까.",
+          "text": "배우자에게 말하지 않은 책임 문제에서 두려웠거나 피하고 싶었던 지점이 있었습니까.",
           "behaviorHint": "배우자에게 말하지 않은 책임에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -4466,7 +4466,7 @@
         },
         {
           "id": "judgeq-d-2-empathy_approach-a-consent_boundary-v4",
-          "text": "박지연 씨, 배우자에게 말하지 않은 책임에 관해 지금 바로잡고 싶은 말이 있다면 해 주십시오.",
+          "text": "배우자에게 말하지 않은 책임에 관해 지금 바로잡고 싶은 말이 있다면 해 주십시오.",
           "behaviorHint": "배우자에게 말하지 않은 책임에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -4498,8 +4498,8 @@
       "variants": [
         {
           "id": "judgeq-h-d3-fact_pursuit-a-general-v1",
-          "text": "박지연 씨, 전체 경위에 대해 확인된 사실부터 순서대로 말씀해 주십시오.",
-          "behaviorHint": "전체 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
+          "text": "박지연 씨, 공동 적금이 해지되고 투자방으로 돈이 넘어간 순서를 직접 아는 범위에서 말씀해 주십시오.",
+          "behaviorHint": "적금·송금 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:a",
@@ -4510,8 +4510,8 @@
         },
         {
           "id": "judgeq-h-d3-fact_pursuit-a-general-v2",
-          "text": "박지연 씨, 전체 경위에서 직접 한 일과 추정한 일을 나눠 설명해 주십시오.",
-          "behaviorHint": "전체 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
+          "text": "위임 서류가 쓰인 시점과 실제 송금이 이루어진 시점을 나눠 설명하십시오.",
+          "behaviorHint": "적금·송금 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:a",
@@ -4522,8 +4522,8 @@
         },
         {
           "id": "judgeq-h-d3-fact_pursuit-a-general-v3",
-          "text": "박지연 씨, 전체 경위 문제에서 상대 주장과 다른 부분이 있다면 구체적으로 답하십시오.",
-          "behaviorHint": "전체 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
+          "text": "적금 해지, 송금, 손실 중 본인이 직접 확인한 부분부터 정리해 주십시오.",
+          "behaviorHint": "적금·송금 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:a",
@@ -4534,8 +4534,8 @@
         },
         {
           "id": "judgeq-h-d3-fact_pursuit-a-general-v4",
-          "text": "박지연 씨, 전체 경위 항목을 기록 기준으로 다시 정리해 주십시오.",
-          "behaviorHint": "전체 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
+          "text": "공동 명의 돈이 움직인 과정에서 상대 동의가 있었는지 명확히 답하십시오.",
+          "behaviorHint": "적금·송금 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:a",
@@ -4546,8 +4546,8 @@
         },
         {
           "id": "judgeq-h-d3-fact_pursuit-a-general-v5",
-          "text": "박지연 씨, 전체 경위에 대해 아직 설명하지 않은 사실이 있습니까.",
-          "behaviorHint": "전체 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
+          "text": "박지연 씨, 돈이 사라진 경위를 추정이 아니라 확인된 행동 중심으로 말씀하십시오.",
+          "behaviorHint": "적금·송금 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:a",
@@ -4566,8 +4566,8 @@
       "variants": [
         {
           "id": "judgeq-h-d3-fact_pursuit-b-general-v1",
-          "text": "이준호 씨, 전체 경위에 대해 확인된 사실부터 순서대로 말씀해 주십시오.",
-          "behaviorHint": "전체 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
+          "text": "이준호 씨, 공동 적금이 해지되고 투자방으로 돈이 넘어간 순서를 직접 아는 범위에서 말씀해 주십시오.",
+          "behaviorHint": "적금·송금 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:b",
@@ -4578,8 +4578,8 @@
         },
         {
           "id": "judgeq-h-d3-fact_pursuit-b-general-v2",
-          "text": "이준호 씨, 전체 경위에서 직접 한 일과 추정한 일을 나눠 설명해 주십시오.",
-          "behaviorHint": "전체 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
+          "text": "위임 서류가 쓰인 시점과 실제 송금이 이루어진 시점을 나눠 설명하십시오.",
+          "behaviorHint": "적금·송금 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:b",
@@ -4590,8 +4590,8 @@
         },
         {
           "id": "judgeq-h-d3-fact_pursuit-b-general-v3",
-          "text": "이준호 씨, 전체 경위 문제에서 상대 주장과 다른 부분이 있다면 구체적으로 답하십시오.",
-          "behaviorHint": "전체 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
+          "text": "적금 해지, 송금, 손실 중 본인이 직접 확인한 부분부터 정리해 주십시오.",
+          "behaviorHint": "적금·송금 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:b",
@@ -4602,8 +4602,8 @@
         },
         {
           "id": "judgeq-h-d3-fact_pursuit-b-general-v4",
-          "text": "이준호 씨, 전체 경위 항목을 기록 기준으로 다시 정리해 주십시오.",
-          "behaviorHint": "전체 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
+          "text": "공동 명의 돈이 움직인 과정에서 상대 동의가 있었는지 명확히 답하십시오.",
+          "behaviorHint": "적금·송금 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:b",
@@ -4614,8 +4614,8 @@
         },
         {
           "id": "judgeq-h-d3-fact_pursuit-b-general-v5",
-          "text": "이준호 씨, 전체 경위에 대해 아직 설명하지 않은 사실이 있습니까.",
-          "behaviorHint": "전체 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
+          "text": "이준호 씨, 돈이 사라진 경위를 추정이 아니라 확인된 행동 중심으로 말씀하십시오.",
+          "behaviorHint": "적금·송금 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:b",
@@ -4634,8 +4634,8 @@
       "variants": [
         {
           "id": "judgeq-h-d3-motive_search-a-general-v1",
-          "text": "박지연 씨, 전체 경위 문제를 그렇게 처리한 이유를 말씀해 주십시오.",
-          "behaviorHint": "전체 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
+          "text": "박지연 씨, 공동 적금을 건드리거나 그 사실을 늦게 말한 이유가 무엇입니까.",
+          "behaviorHint": "적금·송금 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:a",
@@ -4646,8 +4646,8 @@
         },
         {
           "id": "judgeq-h-d3-motive_search-a-general-v2",
-          "text": "박지연 씨, 전체 경위에서 어떤 부담이나 계산이 있었는지 설명하십시오.",
-          "behaviorHint": "전체 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
+          "text": "위임 서류와 송금 사실이 드러나면 가장 피하고 싶었던 책임이 무엇이었습니까.",
+          "behaviorHint": "적금·송금 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:a",
@@ -4658,8 +4658,8 @@
         },
         {
           "id": "judgeq-h-d3-motive_search-a-general-v3",
-          "text": "박지연 씨, 전체 경위에 대해 숨기거나 늦게 말한 이유가 무엇입니까.",
-          "behaviorHint": "전체 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
+          "text": "투자방 송금까지 이어진 판단을 당시에는 어떻게 정당화했는지 설명하십시오.",
+          "behaviorHint": "적금·송금 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:a",
@@ -4670,8 +4670,8 @@
         },
         {
           "id": "judgeq-h-d3-motive_search-a-general-v4",
-          "text": "박지연 씨, 전체 경위에 대해 그때 왜 그런 선택을 했는지 답하십시오.",
-          "behaviorHint": "전체 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
+          "text": "상대에게 먼저 말하지 않고 돈을 움직이게 된 배경을 말씀해 주십시오.",
+          "behaviorHint": "적금·송금 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:a",
@@ -4682,8 +4682,8 @@
         },
         {
           "id": "judgeq-h-d3-motive_search-a-general-v5",
-          "text": "박지연 씨, 전체 경위의 배경이 되는 사정을 구체적으로 말해 주십시오.",
-          "behaviorHint": "전체 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
+          "text": "박지연 씨, 손실이 커진 뒤에도 바로 말하지 못한 이유를 구체적으로 답하십시오.",
+          "behaviorHint": "적금·송금 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:a",
@@ -4702,8 +4702,8 @@
       "variants": [
         {
           "id": "judgeq-h-d3-motive_search-b-general-v1",
-          "text": "이준호 씨, 전체 경위 문제를 그렇게 처리한 이유를 말씀해 주십시오.",
-          "behaviorHint": "전체 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
+          "text": "이준호 씨, 공동 적금을 건드리거나 그 사실을 늦게 말한 이유가 무엇입니까.",
+          "behaviorHint": "적금·송금 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:b",
@@ -4714,8 +4714,8 @@
         },
         {
           "id": "judgeq-h-d3-motive_search-b-general-v2",
-          "text": "이준호 씨, 전체 경위에서 어떤 부담이나 계산이 있었는지 설명하십시오.",
-          "behaviorHint": "전체 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
+          "text": "위임 서류와 송금 사실이 드러나면 가장 피하고 싶었던 책임이 무엇이었습니까.",
+          "behaviorHint": "적금·송금 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:b",
@@ -4726,8 +4726,8 @@
         },
         {
           "id": "judgeq-h-d3-motive_search-b-general-v3",
-          "text": "이준호 씨, 전체 경위에 대해 숨기거나 늦게 말한 이유가 무엇입니까.",
-          "behaviorHint": "전체 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
+          "text": "투자방 송금까지 이어진 판단을 당시에는 어떻게 정당화했는지 설명하십시오.",
+          "behaviorHint": "적금·송금 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:b",
@@ -4738,8 +4738,8 @@
         },
         {
           "id": "judgeq-h-d3-motive_search-b-general-v4",
-          "text": "이준호 씨, 전체 경위에 대해 그때 왜 그런 선택을 했는지 답하십시오.",
-          "behaviorHint": "전체 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
+          "text": "상대에게 먼저 말하지 않고 돈을 움직이게 된 배경을 말씀해 주십시오.",
+          "behaviorHint": "적금·송금 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:b",
@@ -4750,8 +4750,8 @@
         },
         {
           "id": "judgeq-h-d3-motive_search-b-general-v5",
-          "text": "이준호 씨, 전체 경위의 배경이 되는 사정을 구체적으로 말해 주십시오.",
-          "behaviorHint": "전체 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
+          "text": "이준호 씨, 손실이 커진 뒤에도 바로 말하지 못한 이유를 구체적으로 답하십시오.",
+          "behaviorHint": "적금·송금 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:b",
@@ -4770,8 +4770,8 @@
       "variants": [
         {
           "id": "judgeq-h-d3-empathy_approach-a-general-v1",
-          "text": "박지연 씨, 전체 경위에 대해 말하기 어려웠다면 그 감정부터 설명해 주십시오.",
-          "behaviorHint": "전체 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
+          "text": "박지연 씨, 공동 적금이 사라진 일을 상대가 알게 됐을 때 어떤 감정이 들었습니까.",
+          "behaviorHint": "적금·송금 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:a",
@@ -4782,8 +4782,8 @@
         },
         {
           "id": "judgeq-h-d3-empathy_approach-a-general-v2",
-          "text": "박지연 씨, 전체 경위에서 상대에게 상처를 준 부분을 어떻게 보고 있습니까.",
-          "behaviorHint": "전체 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
+          "text": "위임 서류와 송금 문제에서 지금 가장 후회되는 선택이 무엇입니까.",
+          "behaviorHint": "적금·송금 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:a",
@@ -4794,8 +4794,8 @@
         },
         {
           "id": "judgeq-h-d3-empathy_approach-a-general-v3",
-          "text": "박지연 씨, 전체 경위 문제에서 두려웠거나 피하고 싶었던 지점이 있었습니까.",
-          "behaviorHint": "전체 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
+          "text": "돈을 지키려 했다는 마음과 절차를 어긴 책임을 나눠 말씀하십시오.",
+          "behaviorHint": "적금·송금 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:a",
@@ -4806,8 +4806,8 @@
         },
         {
           "id": "judgeq-h-d3-empathy_approach-a-general-v4",
-          "text": "박지연 씨, 전체 경위에 관해 지금 바로잡고 싶은 말이 있다면 해 주십시오.",
-          "behaviorHint": "전체 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
+          "text": "상대의 신뢰를 해친 부분을 지금은 어떻게 받아들이고 있습니까.",
+          "behaviorHint": "적금·송금 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:a",
@@ -4818,8 +4818,8 @@
         },
         {
           "id": "judgeq-h-d3-empathy_approach-a-general-v5",
-          "text": "박지연 씨, 전체 경위에 대해 감정이 아니라 책임의 문제로 다시 말해 주십시오.",
-          "behaviorHint": "전체 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
+          "text": "박지연 씨, 손실보다 먼저 인정해야 할 책임이 있다면 말해 주십시오.",
+          "behaviorHint": "적금·송금 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:a",
@@ -4838,8 +4838,8 @@
       "variants": [
         {
           "id": "judgeq-h-d3-empathy_approach-b-general-v1",
-          "text": "이준호 씨, 전체 경위에 대해 말하기 어려웠다면 그 감정부터 설명해 주십시오.",
-          "behaviorHint": "전체 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
+          "text": "이준호 씨, 공동 적금이 사라진 일을 상대가 알게 됐을 때 어떤 감정이 들었습니까.",
+          "behaviorHint": "적금·송금 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:b",
@@ -4850,8 +4850,8 @@
         },
         {
           "id": "judgeq-h-d3-empathy_approach-b-general-v2",
-          "text": "이준호 씨, 전체 경위에서 상대에게 상처를 준 부분을 어떻게 보고 있습니까.",
-          "behaviorHint": "전체 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
+          "text": "위임 서류와 송금 문제에서 지금 가장 후회되는 선택이 무엇입니까.",
+          "behaviorHint": "적금·송금 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:b",
@@ -4862,8 +4862,8 @@
         },
         {
           "id": "judgeq-h-d3-empathy_approach-b-general-v3",
-          "text": "이준호 씨, 전체 경위 문제에서 두려웠거나 피하고 싶었던 지점이 있었습니까.",
-          "behaviorHint": "전체 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
+          "text": "돈을 지키려 했다는 마음과 절차를 어긴 책임을 나눠 말씀하십시오.",
+          "behaviorHint": "적금·송금 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:b",
@@ -4874,8 +4874,8 @@
         },
         {
           "id": "judgeq-h-d3-empathy_approach-b-general-v4",
-          "text": "이준호 씨, 전체 경위에 관해 지금 바로잡고 싶은 말이 있다면 해 주십시오.",
-          "behaviorHint": "전체 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
+          "text": "상대의 신뢰를 해친 부분을 지금은 어떻게 받아들이고 있습니까.",
+          "behaviorHint": "적금·송금 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:b",
@@ -4886,8 +4886,8 @@
         },
         {
           "id": "judgeq-h-d3-empathy_approach-b-general-v5",
-          "text": "이준호 씨, 전체 경위에 대해 감정이 아니라 책임의 문제로 다시 말해 주십시오.",
-          "behaviorHint": "전체 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
+          "text": "이준호 씨, 손실보다 먼저 인정해야 할 책임이 있다면 말해 주십시오.",
+          "behaviorHint": "적금·송금 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:b",
@@ -4918,7 +4918,7 @@
         },
         {
           "id": "judgeq-h-d3-fact_pursuit-a-savings_cancellation-v2",
-          "text": "박지연 씨, 공동 적금 해지에서 직접 한 일과 추정한 일을 나눠 설명해 주십시오.",
+          "text": "공동 적금 해지에서 직접 한 일과 추정한 일을 나눠 설명해 주십시오.",
           "behaviorHint": "공동 적금 해지에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -4930,7 +4930,7 @@
         },
         {
           "id": "judgeq-h-d3-fact_pursuit-a-savings_cancellation-v3",
-          "text": "박지연 씨, 공동 적금 해지 문제에서 상대 주장과 다른 부분이 있다면 구체적으로 답하십시오.",
+          "text": "공동 적금 해지 문제에서 상대 주장과 다른 부분이 있다면 구체적으로 답하십시오.",
           "behaviorHint": "공동 적금 해지에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -4942,7 +4942,7 @@
         },
         {
           "id": "judgeq-h-d3-fact_pursuit-a-savings_cancellation-v4",
-          "text": "박지연 씨, 공동 적금 해지 항목을 기록 기준으로 다시 정리해 주십시오.",
+          "text": "공동 적금 해지 항목을 기록 기준으로 다시 정리해 주십시오.",
           "behaviorHint": "공동 적금 해지에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -4986,7 +4986,7 @@
         },
         {
           "id": "judgeq-h-d3-fact_pursuit-b-savings_cancellation-v2",
-          "text": "이준호 씨, 공동 적금 해지에서 직접 한 일과 추정한 일을 나눠 설명해 주십시오.",
+          "text": "공동 적금 해지에서 직접 한 일과 추정한 일을 나눠 설명해 주십시오.",
           "behaviorHint": "공동 적금 해지에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -4998,7 +4998,7 @@
         },
         {
           "id": "judgeq-h-d3-fact_pursuit-b-savings_cancellation-v3",
-          "text": "이준호 씨, 공동 적금 해지 문제에서 상대 주장과 다른 부분이 있다면 구체적으로 답하십시오.",
+          "text": "공동 적금 해지 문제에서 상대 주장과 다른 부분이 있다면 구체적으로 답하십시오.",
           "behaviorHint": "공동 적금 해지에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -5010,7 +5010,7 @@
         },
         {
           "id": "judgeq-h-d3-fact_pursuit-b-savings_cancellation-v4",
-          "text": "이준호 씨, 공동 적금 해지 항목을 기록 기준으로 다시 정리해 주십시오.",
+          "text": "공동 적금 해지 항목을 기록 기준으로 다시 정리해 주십시오.",
           "behaviorHint": "공동 적금 해지에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -5054,7 +5054,7 @@
         },
         {
           "id": "judgeq-h-d3-motive_search-a-savings_cancellation-v2",
-          "text": "박지연 씨, 공동 적금 해지에서 어떤 부담이나 계산이 있었는지 설명하십시오.",
+          "text": "공동 적금 해지에서 어떤 부담이나 계산이 있었는지 설명하십시오.",
           "behaviorHint": "공동 적금 해지에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -5066,7 +5066,7 @@
         },
         {
           "id": "judgeq-h-d3-motive_search-a-savings_cancellation-v3",
-          "text": "박지연 씨, 공동 적금 해지에 대해 숨기거나 늦게 말한 이유가 무엇입니까.",
+          "text": "공동 적금 해지에 대해 숨기거나 늦게 말한 이유가 무엇입니까.",
           "behaviorHint": "공동 적금 해지에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -5078,7 +5078,7 @@
         },
         {
           "id": "judgeq-h-d3-motive_search-a-savings_cancellation-v4",
-          "text": "박지연 씨, 공동 적금 해지에 대해 그때 왜 그런 선택을 했는지 답하십시오.",
+          "text": "공동 적금 해지에 대해 그때 왜 그런 선택을 했는지 답하십시오.",
           "behaviorHint": "공동 적금 해지에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -5122,7 +5122,7 @@
         },
         {
           "id": "judgeq-h-d3-motive_search-b-savings_cancellation-v2",
-          "text": "이준호 씨, 공동 적금 해지에서 어떤 부담이나 계산이 있었는지 설명하십시오.",
+          "text": "공동 적금 해지에서 어떤 부담이나 계산이 있었는지 설명하십시오.",
           "behaviorHint": "공동 적금 해지에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -5134,7 +5134,7 @@
         },
         {
           "id": "judgeq-h-d3-motive_search-b-savings_cancellation-v3",
-          "text": "이준호 씨, 공동 적금 해지에 대해 숨기거나 늦게 말한 이유가 무엇입니까.",
+          "text": "공동 적금 해지에 대해 숨기거나 늦게 말한 이유가 무엇입니까.",
           "behaviorHint": "공동 적금 해지에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -5146,7 +5146,7 @@
         },
         {
           "id": "judgeq-h-d3-motive_search-b-savings_cancellation-v4",
-          "text": "이준호 씨, 공동 적금 해지에 대해 그때 왜 그런 선택을 했는지 답하십시오.",
+          "text": "공동 적금 해지에 대해 그때 왜 그런 선택을 했는지 답하십시오.",
           "behaviorHint": "공동 적금 해지에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -5190,7 +5190,7 @@
         },
         {
           "id": "judgeq-h-d3-empathy_approach-a-savings_cancellation-v2",
-          "text": "박지연 씨, 공동 적금 해지에서 상대에게 상처를 준 부분을 어떻게 보고 있습니까.",
+          "text": "공동 적금 해지에서 상대에게 상처를 준 부분을 어떻게 보고 있습니까.",
           "behaviorHint": "공동 적금 해지에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -5202,7 +5202,7 @@
         },
         {
           "id": "judgeq-h-d3-empathy_approach-a-savings_cancellation-v3",
-          "text": "박지연 씨, 공동 적금 해지 문제에서 두려웠거나 피하고 싶었던 지점이 있었습니까.",
+          "text": "공동 적금 해지 문제에서 두려웠거나 피하고 싶었던 지점이 있었습니까.",
           "behaviorHint": "공동 적금 해지에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -5214,7 +5214,7 @@
         },
         {
           "id": "judgeq-h-d3-empathy_approach-a-savings_cancellation-v4",
-          "text": "박지연 씨, 공동 적금 해지에 관해 지금 바로잡고 싶은 말이 있다면 해 주십시오.",
+          "text": "공동 적금 해지에 관해 지금 바로잡고 싶은 말이 있다면 해 주십시오.",
           "behaviorHint": "공동 적금 해지에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -5258,7 +5258,7 @@
         },
         {
           "id": "judgeq-h-d3-empathy_approach-b-savings_cancellation-v2",
-          "text": "이준호 씨, 공동 적금 해지에서 상대에게 상처를 준 부분을 어떻게 보고 있습니까.",
+          "text": "공동 적금 해지에서 상대에게 상처를 준 부분을 어떻게 보고 있습니까.",
           "behaviorHint": "공동 적금 해지에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -5270,7 +5270,7 @@
         },
         {
           "id": "judgeq-h-d3-empathy_approach-b-savings_cancellation-v3",
-          "text": "이준호 씨, 공동 적금 해지 문제에서 두려웠거나 피하고 싶었던 지점이 있었습니까.",
+          "text": "공동 적금 해지 문제에서 두려웠거나 피하고 싶었던 지점이 있었습니까.",
           "behaviorHint": "공동 적금 해지에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -5282,7 +5282,7 @@
         },
         {
           "id": "judgeq-h-d3-empathy_approach-b-savings_cancellation-v4",
-          "text": "이준호 씨, 공동 적금 해지에 관해 지금 바로잡고 싶은 말이 있다면 해 주십시오.",
+          "text": "공동 적금 해지에 관해 지금 바로잡고 싶은 말이 있다면 해 주십시오.",
           "behaviorHint": "공동 적금 해지에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -5326,7 +5326,7 @@
         },
         {
           "id": "judgeq-h-d3-fact_pursuit-a-proxy_document-v2",
-          "text": "박지연 씨, 위임 서류와 서명에서 직접 한 일과 추정한 일을 나눠 설명해 주십시오.",
+          "text": "위임 서류와 서명에서 직접 한 일과 추정한 일을 나눠 설명해 주십시오.",
           "behaviorHint": "위임 서류와 서명에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -5338,7 +5338,7 @@
         },
         {
           "id": "judgeq-h-d3-fact_pursuit-a-proxy_document-v3",
-          "text": "박지연 씨, 위임 서류와 서명 문제에서 상대 주장과 다른 부분이 있다면 구체적으로 답하십시오.",
+          "text": "위임 서류와 서명 문제에서 상대 주장과 다른 부분이 있다면 구체적으로 답하십시오.",
           "behaviorHint": "위임 서류와 서명에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -5350,7 +5350,7 @@
         },
         {
           "id": "judgeq-h-d3-fact_pursuit-a-proxy_document-v4",
-          "text": "박지연 씨, 위임 서류와 서명 항목을 기록 기준으로 다시 정리해 주십시오.",
+          "text": "위임 서류와 서명 항목을 기록 기준으로 다시 정리해 주십시오.",
           "behaviorHint": "위임 서류와 서명에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -5394,7 +5394,7 @@
         },
         {
           "id": "judgeq-h-d3-fact_pursuit-b-proxy_document-v2",
-          "text": "이준호 씨, 위임 서류와 서명에서 직접 한 일과 추정한 일을 나눠 설명해 주십시오.",
+          "text": "위임 서류와 서명에서 직접 한 일과 추정한 일을 나눠 설명해 주십시오.",
           "behaviorHint": "위임 서류와 서명에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -5406,7 +5406,7 @@
         },
         {
           "id": "judgeq-h-d3-fact_pursuit-b-proxy_document-v3",
-          "text": "이준호 씨, 위임 서류와 서명 문제에서 상대 주장과 다른 부분이 있다면 구체적으로 답하십시오.",
+          "text": "위임 서류와 서명 문제에서 상대 주장과 다른 부분이 있다면 구체적으로 답하십시오.",
           "behaviorHint": "위임 서류와 서명에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -5418,7 +5418,7 @@
         },
         {
           "id": "judgeq-h-d3-fact_pursuit-b-proxy_document-v4",
-          "text": "이준호 씨, 위임 서류와 서명 항목을 기록 기준으로 다시 정리해 주십시오.",
+          "text": "위임 서류와 서명 항목을 기록 기준으로 다시 정리해 주십시오.",
           "behaviorHint": "위임 서류와 서명에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -5462,7 +5462,7 @@
         },
         {
           "id": "judgeq-h-d3-motive_search-a-proxy_document-v2",
-          "text": "박지연 씨, 위임 서류와 서명에서 어떤 부담이나 계산이 있었는지 설명하십시오.",
+          "text": "위임 서류와 서명에서 어떤 부담이나 계산이 있었는지 설명하십시오.",
           "behaviorHint": "위임 서류와 서명에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -5474,7 +5474,7 @@
         },
         {
           "id": "judgeq-h-d3-motive_search-a-proxy_document-v3",
-          "text": "박지연 씨, 위임 서류와 서명에 대해 숨기거나 늦게 말한 이유가 무엇입니까.",
+          "text": "위임 서류와 서명에 대해 숨기거나 늦게 말한 이유가 무엇입니까.",
           "behaviorHint": "위임 서류와 서명에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -5486,7 +5486,7 @@
         },
         {
           "id": "judgeq-h-d3-motive_search-a-proxy_document-v4",
-          "text": "박지연 씨, 위임 서류와 서명에 대해 그때 왜 그런 선택을 했는지 답하십시오.",
+          "text": "위임 서류와 서명에 대해 그때 왜 그런 선택을 했는지 답하십시오.",
           "behaviorHint": "위임 서류와 서명에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -5530,7 +5530,7 @@
         },
         {
           "id": "judgeq-h-d3-motive_search-b-proxy_document-v2",
-          "text": "이준호 씨, 위임 서류와 서명에서 어떤 부담이나 계산이 있었는지 설명하십시오.",
+          "text": "위임 서류와 서명에서 어떤 부담이나 계산이 있었는지 설명하십시오.",
           "behaviorHint": "위임 서류와 서명에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -5542,7 +5542,7 @@
         },
         {
           "id": "judgeq-h-d3-motive_search-b-proxy_document-v3",
-          "text": "이준호 씨, 위임 서류와 서명에 대해 숨기거나 늦게 말한 이유가 무엇입니까.",
+          "text": "위임 서류와 서명에 대해 숨기거나 늦게 말한 이유가 무엇입니까.",
           "behaviorHint": "위임 서류와 서명에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -5554,7 +5554,7 @@
         },
         {
           "id": "judgeq-h-d3-motive_search-b-proxy_document-v4",
-          "text": "이준호 씨, 위임 서류와 서명에 대해 그때 왜 그런 선택을 했는지 답하십시오.",
+          "text": "위임 서류와 서명에 대해 그때 왜 그런 선택을 했는지 답하십시오.",
           "behaviorHint": "위임 서류와 서명에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -5598,7 +5598,7 @@
         },
         {
           "id": "judgeq-h-d3-empathy_approach-a-proxy_document-v2",
-          "text": "박지연 씨, 위임 서류와 서명에서 상대에게 상처를 준 부분을 어떻게 보고 있습니까.",
+          "text": "위임 서류와 서명에서 상대에게 상처를 준 부분을 어떻게 보고 있습니까.",
           "behaviorHint": "위임 서류와 서명에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -5610,7 +5610,7 @@
         },
         {
           "id": "judgeq-h-d3-empathy_approach-a-proxy_document-v3",
-          "text": "박지연 씨, 위임 서류와 서명 문제에서 두려웠거나 피하고 싶었던 지점이 있었습니까.",
+          "text": "위임 서류와 서명 문제에서 두려웠거나 피하고 싶었던 지점이 있었습니까.",
           "behaviorHint": "위임 서류와 서명에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -5622,7 +5622,7 @@
         },
         {
           "id": "judgeq-h-d3-empathy_approach-a-proxy_document-v4",
-          "text": "박지연 씨, 위임 서류와 서명에 관해 지금 바로잡고 싶은 말이 있다면 해 주십시오.",
+          "text": "위임 서류와 서명에 관해 지금 바로잡고 싶은 말이 있다면 해 주십시오.",
           "behaviorHint": "위임 서류와 서명에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -5666,7 +5666,7 @@
         },
         {
           "id": "judgeq-h-d3-empathy_approach-b-proxy_document-v2",
-          "text": "이준호 씨, 위임 서류와 서명에서 상대에게 상처를 준 부분을 어떻게 보고 있습니까.",
+          "text": "위임 서류와 서명에서 상대에게 상처를 준 부분을 어떻게 보고 있습니까.",
           "behaviorHint": "위임 서류와 서명에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -5678,7 +5678,7 @@
         },
         {
           "id": "judgeq-h-d3-empathy_approach-b-proxy_document-v3",
-          "text": "이준호 씨, 위임 서류와 서명 문제에서 두려웠거나 피하고 싶었던 지점이 있었습니까.",
+          "text": "위임 서류와 서명 문제에서 두려웠거나 피하고 싶었던 지점이 있었습니까.",
           "behaviorHint": "위임 서류와 서명에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -5690,7 +5690,7 @@
         },
         {
           "id": "judgeq-h-d3-empathy_approach-b-proxy_document-v4",
-          "text": "이준호 씨, 위임 서류와 서명에 관해 지금 바로잡고 싶은 말이 있다면 해 주십시오.",
+          "text": "위임 서류와 서명에 관해 지금 바로잡고 싶은 말이 있다면 해 주십시오.",
           "behaviorHint": "위임 서류와 서명에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -5734,7 +5734,7 @@
         },
         {
           "id": "judgeq-h-d3-fact_pursuit-a-investment_room-v2",
-          "text": "박지연 씨, 투자방 송금에서 직접 한 일과 추정한 일을 나눠 설명해 주십시오.",
+          "text": "투자방 송금에서 직접 한 일과 추정한 일을 나눠 설명해 주십시오.",
           "behaviorHint": "투자방 송금에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -5746,7 +5746,7 @@
         },
         {
           "id": "judgeq-h-d3-fact_pursuit-a-investment_room-v3",
-          "text": "박지연 씨, 투자방 송금 문제에서 상대 주장과 다른 부분이 있다면 구체적으로 답하십시오.",
+          "text": "투자방 송금 문제에서 상대 주장과 다른 부분이 있다면 구체적으로 답하십시오.",
           "behaviorHint": "투자방 송금에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -5758,7 +5758,7 @@
         },
         {
           "id": "judgeq-h-d3-fact_pursuit-a-investment_room-v4",
-          "text": "박지연 씨, 투자방 송금 항목을 기록 기준으로 다시 정리해 주십시오.",
+          "text": "투자방 송금 항목을 기록 기준으로 다시 정리해 주십시오.",
           "behaviorHint": "투자방 송금에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -5802,7 +5802,7 @@
         },
         {
           "id": "judgeq-h-d3-fact_pursuit-b-investment_room-v2",
-          "text": "이준호 씨, 투자방 송금에서 직접 한 일과 추정한 일을 나눠 설명해 주십시오.",
+          "text": "투자방 송금에서 직접 한 일과 추정한 일을 나눠 설명해 주십시오.",
           "behaviorHint": "투자방 송금에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -5814,7 +5814,7 @@
         },
         {
           "id": "judgeq-h-d3-fact_pursuit-b-investment_room-v3",
-          "text": "이준호 씨, 투자방 송금 문제에서 상대 주장과 다른 부분이 있다면 구체적으로 답하십시오.",
+          "text": "투자방 송금 문제에서 상대 주장과 다른 부분이 있다면 구체적으로 답하십시오.",
           "behaviorHint": "투자방 송금에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -5826,7 +5826,7 @@
         },
         {
           "id": "judgeq-h-d3-fact_pursuit-b-investment_room-v4",
-          "text": "이준호 씨, 투자방 송금 항목을 기록 기준으로 다시 정리해 주십시오.",
+          "text": "투자방 송금 항목을 기록 기준으로 다시 정리해 주십시오.",
           "behaviorHint": "투자방 송금에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -5870,7 +5870,7 @@
         },
         {
           "id": "judgeq-h-d3-motive_search-a-investment_room-v2",
-          "text": "박지연 씨, 투자방 송금에서 어떤 부담이나 계산이 있었는지 설명하십시오.",
+          "text": "투자방 송금에서 어떤 부담이나 계산이 있었는지 설명하십시오.",
           "behaviorHint": "투자방 송금에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -5882,7 +5882,7 @@
         },
         {
           "id": "judgeq-h-d3-motive_search-a-investment_room-v3",
-          "text": "박지연 씨, 투자방 송금에 대해 숨기거나 늦게 말한 이유가 무엇입니까.",
+          "text": "투자방 송금에 대해 숨기거나 늦게 말한 이유가 무엇입니까.",
           "behaviorHint": "투자방 송금에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -5894,7 +5894,7 @@
         },
         {
           "id": "judgeq-h-d3-motive_search-a-investment_room-v4",
-          "text": "박지연 씨, 투자방 송금에 대해 그때 왜 그런 선택을 했는지 답하십시오.",
+          "text": "투자방 송금에 대해 그때 왜 그런 선택을 했는지 답하십시오.",
           "behaviorHint": "투자방 송금에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -5938,7 +5938,7 @@
         },
         {
           "id": "judgeq-h-d3-motive_search-b-investment_room-v2",
-          "text": "이준호 씨, 투자방 송금에서 어떤 부담이나 계산이 있었는지 설명하십시오.",
+          "text": "투자방 송금에서 어떤 부담이나 계산이 있었는지 설명하십시오.",
           "behaviorHint": "투자방 송금에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -5950,7 +5950,7 @@
         },
         {
           "id": "judgeq-h-d3-motive_search-b-investment_room-v3",
-          "text": "이준호 씨, 투자방 송금에 대해 숨기거나 늦게 말한 이유가 무엇입니까.",
+          "text": "투자방 송금에 대해 숨기거나 늦게 말한 이유가 무엇입니까.",
           "behaviorHint": "투자방 송금에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -5962,7 +5962,7 @@
         },
         {
           "id": "judgeq-h-d3-motive_search-b-investment_room-v4",
-          "text": "이준호 씨, 투자방 송금에 대해 그때 왜 그런 선택을 했는지 답하십시오.",
+          "text": "투자방 송금에 대해 그때 왜 그런 선택을 했는지 답하십시오.",
           "behaviorHint": "투자방 송금에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -6006,7 +6006,7 @@
         },
         {
           "id": "judgeq-h-d3-empathy_approach-a-investment_room-v2",
-          "text": "박지연 씨, 투자방 송금에서 상대에게 상처를 준 부분을 어떻게 보고 있습니까.",
+          "text": "투자방 송금에서 상대에게 상처를 준 부분을 어떻게 보고 있습니까.",
           "behaviorHint": "투자방 송금에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -6018,7 +6018,7 @@
         },
         {
           "id": "judgeq-h-d3-empathy_approach-a-investment_room-v3",
-          "text": "박지연 씨, 투자방 송금 문제에서 두려웠거나 피하고 싶었던 지점이 있었습니까.",
+          "text": "투자방 송금 문제에서 두려웠거나 피하고 싶었던 지점이 있었습니까.",
           "behaviorHint": "투자방 송금에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -6030,7 +6030,7 @@
         },
         {
           "id": "judgeq-h-d3-empathy_approach-a-investment_room-v4",
-          "text": "박지연 씨, 투자방 송금에 관해 지금 바로잡고 싶은 말이 있다면 해 주십시오.",
+          "text": "투자방 송금에 관해 지금 바로잡고 싶은 말이 있다면 해 주십시오.",
           "behaviorHint": "투자방 송금에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -6074,7 +6074,7 @@
         },
         {
           "id": "judgeq-h-d3-empathy_approach-b-investment_room-v2",
-          "text": "이준호 씨, 투자방 송금에서 상대에게 상처를 준 부분을 어떻게 보고 있습니까.",
+          "text": "투자방 송금에서 상대에게 상처를 준 부분을 어떻게 보고 있습니까.",
           "behaviorHint": "투자방 송금에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -6086,7 +6086,7 @@
         },
         {
           "id": "judgeq-h-d3-empathy_approach-b-investment_room-v3",
-          "text": "이준호 씨, 투자방 송금 문제에서 두려웠거나 피하고 싶었던 지점이 있었습니까.",
+          "text": "투자방 송금 문제에서 두려웠거나 피하고 싶었던 지점이 있었습니까.",
           "behaviorHint": "투자방 송금에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -6098,7 +6098,7 @@
         },
         {
           "id": "judgeq-h-d3-empathy_approach-b-investment_room-v4",
-          "text": "이준호 씨, 투자방 송금에 관해 지금 바로잡고 싶은 말이 있다면 해 주십시오.",
+          "text": "투자방 송금에 관해 지금 바로잡고 싶은 말이 있다면 해 주십시오.",
           "behaviorHint": "투자방 송금에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -6142,7 +6142,7 @@
         },
         {
           "id": "judgeq-h-d3-fact_pursuit-a-loss_responsibility-v2",
-          "text": "박지연 씨, 손실과 법적 책임에서 직접 한 일과 추정한 일을 나눠 설명해 주십시오.",
+          "text": "손실과 법적 책임에서 직접 한 일과 추정한 일을 나눠 설명해 주십시오.",
           "behaviorHint": "손실과 법적 책임에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -6154,7 +6154,7 @@
         },
         {
           "id": "judgeq-h-d3-fact_pursuit-a-loss_responsibility-v3",
-          "text": "박지연 씨, 손실과 법적 책임 문제에서 상대 주장과 다른 부분이 있다면 구체적으로 답하십시오.",
+          "text": "손실과 법적 책임 문제에서 상대 주장과 다른 부분이 있다면 구체적으로 답하십시오.",
           "behaviorHint": "손실과 법적 책임에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -6166,7 +6166,7 @@
         },
         {
           "id": "judgeq-h-d3-fact_pursuit-a-loss_responsibility-v4",
-          "text": "박지연 씨, 손실과 법적 책임 항목을 기록 기준으로 다시 정리해 주십시오.",
+          "text": "손실과 법적 책임 항목을 기록 기준으로 다시 정리해 주십시오.",
           "behaviorHint": "손실과 법적 책임에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -6210,7 +6210,7 @@
         },
         {
           "id": "judgeq-h-d3-fact_pursuit-b-loss_responsibility-v2",
-          "text": "이준호 씨, 손실과 법적 책임에서 직접 한 일과 추정한 일을 나눠 설명해 주십시오.",
+          "text": "손실과 법적 책임에서 직접 한 일과 추정한 일을 나눠 설명해 주십시오.",
           "behaviorHint": "손실과 법적 책임에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -6222,7 +6222,7 @@
         },
         {
           "id": "judgeq-h-d3-fact_pursuit-b-loss_responsibility-v3",
-          "text": "이준호 씨, 손실과 법적 책임 문제에서 상대 주장과 다른 부분이 있다면 구체적으로 답하십시오.",
+          "text": "손실과 법적 책임 문제에서 상대 주장과 다른 부분이 있다면 구체적으로 답하십시오.",
           "behaviorHint": "손실과 법적 책임에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -6234,7 +6234,7 @@
         },
         {
           "id": "judgeq-h-d3-fact_pursuit-b-loss_responsibility-v4",
-          "text": "이준호 씨, 손실과 법적 책임 항목을 기록 기준으로 다시 정리해 주십시오.",
+          "text": "손실과 법적 책임 항목을 기록 기준으로 다시 정리해 주십시오.",
           "behaviorHint": "손실과 법적 책임에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -6278,7 +6278,7 @@
         },
         {
           "id": "judgeq-h-d3-motive_search-a-loss_responsibility-v2",
-          "text": "박지연 씨, 손실과 법적 책임에서 어떤 부담이나 계산이 있었는지 설명하십시오.",
+          "text": "손실과 법적 책임에서 어떤 부담이나 계산이 있었는지 설명하십시오.",
           "behaviorHint": "손실과 법적 책임에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -6290,7 +6290,7 @@
         },
         {
           "id": "judgeq-h-d3-motive_search-a-loss_responsibility-v3",
-          "text": "박지연 씨, 손실과 법적 책임에 대해 숨기거나 늦게 말한 이유가 무엇입니까.",
+          "text": "손실과 법적 책임에 대해 숨기거나 늦게 말한 이유가 무엇입니까.",
           "behaviorHint": "손실과 법적 책임에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -6302,7 +6302,7 @@
         },
         {
           "id": "judgeq-h-d3-motive_search-a-loss_responsibility-v4",
-          "text": "박지연 씨, 손실과 법적 책임에 대해 그때 왜 그런 선택을 했는지 답하십시오.",
+          "text": "손실과 법적 책임에 대해 그때 왜 그런 선택을 했는지 답하십시오.",
           "behaviorHint": "손실과 법적 책임에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -6346,7 +6346,7 @@
         },
         {
           "id": "judgeq-h-d3-motive_search-b-loss_responsibility-v2",
-          "text": "이준호 씨, 손실과 법적 책임에서 어떤 부담이나 계산이 있었는지 설명하십시오.",
+          "text": "손실과 법적 책임에서 어떤 부담이나 계산이 있었는지 설명하십시오.",
           "behaviorHint": "손실과 법적 책임에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -6358,7 +6358,7 @@
         },
         {
           "id": "judgeq-h-d3-motive_search-b-loss_responsibility-v3",
-          "text": "이준호 씨, 손실과 법적 책임에 대해 숨기거나 늦게 말한 이유가 무엇입니까.",
+          "text": "손실과 법적 책임에 대해 숨기거나 늦게 말한 이유가 무엇입니까.",
           "behaviorHint": "손실과 법적 책임에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -6370,7 +6370,7 @@
         },
         {
           "id": "judgeq-h-d3-motive_search-b-loss_responsibility-v4",
-          "text": "이준호 씨, 손실과 법적 책임에 대해 그때 왜 그런 선택을 했는지 답하십시오.",
+          "text": "손실과 법적 책임에 대해 그때 왜 그런 선택을 했는지 답하십시오.",
           "behaviorHint": "손실과 법적 책임에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -6414,7 +6414,7 @@
         },
         {
           "id": "judgeq-h-d3-empathy_approach-a-loss_responsibility-v2",
-          "text": "박지연 씨, 손실과 법적 책임에서 상대에게 상처를 준 부분을 어떻게 보고 있습니까.",
+          "text": "손실과 법적 책임에서 상대에게 상처를 준 부분을 어떻게 보고 있습니까.",
           "behaviorHint": "손실과 법적 책임에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -6426,7 +6426,7 @@
         },
         {
           "id": "judgeq-h-d3-empathy_approach-a-loss_responsibility-v3",
-          "text": "박지연 씨, 손실과 법적 책임 문제에서 두려웠거나 피하고 싶었던 지점이 있었습니까.",
+          "text": "손실과 법적 책임 문제에서 두려웠거나 피하고 싶었던 지점이 있었습니까.",
           "behaviorHint": "손실과 법적 책임에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -6438,7 +6438,7 @@
         },
         {
           "id": "judgeq-h-d3-empathy_approach-a-loss_responsibility-v4",
-          "text": "박지연 씨, 손실과 법적 책임에 관해 지금 바로잡고 싶은 말이 있다면 해 주십시오.",
+          "text": "손실과 법적 책임에 관해 지금 바로잡고 싶은 말이 있다면 해 주십시오.",
           "behaviorHint": "손실과 법적 책임에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -6482,7 +6482,7 @@
         },
         {
           "id": "judgeq-h-d3-empathy_approach-b-loss_responsibility-v2",
-          "text": "이준호 씨, 손실과 법적 책임에서 상대에게 상처를 준 부분을 어떻게 보고 있습니까.",
+          "text": "손실과 법적 책임에서 상대에게 상처를 준 부분을 어떻게 보고 있습니까.",
           "behaviorHint": "손실과 법적 책임에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -6494,7 +6494,7 @@
         },
         {
           "id": "judgeq-h-d3-empathy_approach-b-loss_responsibility-v3",
-          "text": "이준호 씨, 손실과 법적 책임 문제에서 두려웠거나 피하고 싶었던 지점이 있었습니까.",
+          "text": "손실과 법적 책임 문제에서 두려웠거나 피하고 싶었던 지점이 있었습니까.",
           "behaviorHint": "손실과 법적 책임에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -6506,7 +6506,7 @@
         },
         {
           "id": "judgeq-h-d3-empathy_approach-b-loss_responsibility-v4",
-          "text": "이준호 씨, 손실과 법적 책임에 관해 지금 바로잡고 싶은 말이 있다면 해 주십시오.",
+          "text": "손실과 법적 책임에 관해 지금 바로잡고 싶은 말이 있다면 해 주십시오.",
           "behaviorHint": "손실과 법적 책임에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -6538,8 +6538,8 @@
       "variants": [
         {
           "id": "judgeq-h-d4-fact_pursuit-a-general-v1",
-          "text": "박지연 씨, 전체 경위에 대해 확인된 사실부터 순서대로 말씀해 주십시오.",
-          "behaviorHint": "전체 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
+          "text": "박지연 씨, 처음 숨긴 일과 나중에 돈이 움직인 일을 같은 책임으로 묶지 말고 순서대로 말씀하십시오.",
+          "behaviorHint": "책임 순서에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:a",
@@ -6550,8 +6550,8 @@
         },
         {
           "id": "judgeq-h-d4-fact_pursuit-a-general-v2",
-          "text": "박지연 씨, 전체 경위에서 직접 한 일과 추정한 일을 나눠 설명해 주십시오.",
-          "behaviorHint": "전체 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
+          "text": "계좌 확인, 돈 실행, 서류 문제 중 본인이 직접 한 일을 구분해 주십시오.",
+          "behaviorHint": "책임 순서에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:a",
@@ -6562,8 +6562,8 @@
         },
         {
           "id": "judgeq-h-d4-fact_pursuit-a-general-v3",
-          "text": "박지연 씨, 전체 경위 문제에서 상대 주장과 다른 부분이 있다면 구체적으로 답하십시오.",
-          "behaviorHint": "전체 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
+          "text": "상대의 잘못과 본인의 잘못이 어디에서 갈라지는지 확인된 행동으로 설명하십시오.",
+          "behaviorHint": "책임 순서에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:a",
@@ -6574,8 +6574,8 @@
         },
         {
           "id": "judgeq-h-d4-fact_pursuit-a-general-v4",
-          "text": "박지연 씨, 전체 경위 항목을 기록 기준으로 다시 정리해 주십시오.",
-          "behaviorHint": "전체 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
+          "text": "돈 문제의 출발점과 실제 위반 행위가 무엇이었는지 나눠 답하십시오.",
+          "behaviorHint": "책임 순서에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:a",
@@ -6586,8 +6586,8 @@
         },
         {
           "id": "judgeq-h-d4-fact_pursuit-a-general-v5",
-          "text": "박지연 씨, 전체 경위에 대해 아직 설명하지 않은 사실이 있습니까.",
-          "behaviorHint": "전체 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
+          "text": "박지연 씨, 서로의 책임을 섞지 말고 본인이 인정할 부분부터 말씀하십시오.",
+          "behaviorHint": "책임 순서에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:a",
@@ -6606,8 +6606,8 @@
       "variants": [
         {
           "id": "judgeq-h-d4-fact_pursuit-b-general-v1",
-          "text": "이준호 씨, 전체 경위에 대해 확인된 사실부터 순서대로 말씀해 주십시오.",
-          "behaviorHint": "전체 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
+          "text": "이준호 씨, 처음 숨긴 일과 나중에 돈이 움직인 일을 같은 책임으로 묶지 말고 순서대로 말씀하십시오.",
+          "behaviorHint": "책임 순서에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:b",
@@ -6618,8 +6618,8 @@
         },
         {
           "id": "judgeq-h-d4-fact_pursuit-b-general-v2",
-          "text": "이준호 씨, 전체 경위에서 직접 한 일과 추정한 일을 나눠 설명해 주십시오.",
-          "behaviorHint": "전체 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
+          "text": "계좌 확인, 돈 실행, 서류 문제 중 본인이 직접 한 일을 구분해 주십시오.",
+          "behaviorHint": "책임 순서에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:b",
@@ -6630,8 +6630,8 @@
         },
         {
           "id": "judgeq-h-d4-fact_pursuit-b-general-v3",
-          "text": "이준호 씨, 전체 경위 문제에서 상대 주장과 다른 부분이 있다면 구체적으로 답하십시오.",
-          "behaviorHint": "전체 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
+          "text": "상대의 잘못과 본인의 잘못이 어디에서 갈라지는지 확인된 행동으로 설명하십시오.",
+          "behaviorHint": "책임 순서에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:b",
@@ -6642,8 +6642,8 @@
         },
         {
           "id": "judgeq-h-d4-fact_pursuit-b-general-v4",
-          "text": "이준호 씨, 전체 경위 항목을 기록 기준으로 다시 정리해 주십시오.",
-          "behaviorHint": "전체 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
+          "text": "돈 문제의 출발점과 실제 위반 행위가 무엇이었는지 나눠 답하십시오.",
+          "behaviorHint": "책임 순서에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:b",
@@ -6654,8 +6654,8 @@
         },
         {
           "id": "judgeq-h-d4-fact_pursuit-b-general-v5",
-          "text": "이준호 씨, 전체 경위에 대해 아직 설명하지 않은 사실이 있습니까.",
-          "behaviorHint": "전체 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
+          "text": "이준호 씨, 서로의 책임을 섞지 말고 본인이 인정할 부분부터 말씀하십시오.",
+          "behaviorHint": "책임 순서에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:b",
@@ -6674,8 +6674,8 @@
       "variants": [
         {
           "id": "judgeq-h-d4-motive_search-a-general-v1",
-          "text": "박지연 씨, 전체 경위 문제를 그렇게 처리한 이유를 말씀해 주십시오.",
-          "behaviorHint": "전체 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
+          "text": "박지연 씨, 상대의 잘못을 이유로 본인의 선택을 덮으려 한 부분이 있었습니까.",
+          "behaviorHint": "책임 순서에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:a",
@@ -6686,8 +6686,8 @@
         },
         {
           "id": "judgeq-h-d4-motive_search-a-general-v2",
-          "text": "박지연 씨, 전체 경위에서 어떤 부담이나 계산이 있었는지 설명하십시오.",
-          "behaviorHint": "전체 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
+          "text": "처음 숨긴 행동과 뒤따른 대응이 왜 더 큰 문제로 번졌는지 설명하십시오.",
+          "behaviorHint": "책임 순서에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:a",
@@ -6698,8 +6698,8 @@
         },
         {
           "id": "judgeq-h-d4-motive_search-a-general-v3",
-          "text": "박지연 씨, 전체 경위에 대해 숨기거나 늦게 말한 이유가 무엇입니까.",
-          "behaviorHint": "전체 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
+          "text": "책임을 상대에게 넘기고 싶었던 순간이 있었다면 그 이유를 말씀하십시오.",
+          "behaviorHint": "책임 순서에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:a",
@@ -6710,8 +6710,8 @@
         },
         {
           "id": "judgeq-h-d4-motive_search-a-general-v4",
-          "text": "박지연 씨, 전체 경위에 대해 그때 왜 그런 선택을 했는지 답하십시오.",
-          "behaviorHint": "전체 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
+          "text": "돈 문제에서 가장 먼저 인정하기 어려웠던 책임은 무엇입니까.",
+          "behaviorHint": "책임 순서에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:a",
@@ -6722,8 +6722,8 @@
         },
         {
           "id": "judgeq-h-d4-motive_search-a-general-v5",
-          "text": "박지연 씨, 전체 경위의 배경이 되는 사정을 구체적으로 말해 주십시오.",
-          "behaviorHint": "전체 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
+          "text": "박지연 씨, 서로 다른 잘못을 한꺼번에 말하려는 이유가 무엇인지 설명하십시오.",
+          "behaviorHint": "책임 순서에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:a",
@@ -6742,8 +6742,8 @@
       "variants": [
         {
           "id": "judgeq-h-d4-motive_search-b-general-v1",
-          "text": "이준호 씨, 전체 경위 문제를 그렇게 처리한 이유를 말씀해 주십시오.",
-          "behaviorHint": "전체 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
+          "text": "이준호 씨, 상대의 잘못을 이유로 본인의 선택을 덮으려 한 부분이 있었습니까.",
+          "behaviorHint": "책임 순서에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:b",
@@ -6754,8 +6754,8 @@
         },
         {
           "id": "judgeq-h-d4-motive_search-b-general-v2",
-          "text": "이준호 씨, 전체 경위에서 어떤 부담이나 계산이 있었는지 설명하십시오.",
-          "behaviorHint": "전체 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
+          "text": "처음 숨긴 행동과 뒤따른 대응이 왜 더 큰 문제로 번졌는지 설명하십시오.",
+          "behaviorHint": "책임 순서에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:b",
@@ -6766,8 +6766,8 @@
         },
         {
           "id": "judgeq-h-d4-motive_search-b-general-v3",
-          "text": "이준호 씨, 전체 경위에 대해 숨기거나 늦게 말한 이유가 무엇입니까.",
-          "behaviorHint": "전체 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
+          "text": "책임을 상대에게 넘기고 싶었던 순간이 있었다면 그 이유를 말씀하십시오.",
+          "behaviorHint": "책임 순서에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:b",
@@ -6778,8 +6778,8 @@
         },
         {
           "id": "judgeq-h-d4-motive_search-b-general-v4",
-          "text": "이준호 씨, 전체 경위에 대해 그때 왜 그런 선택을 했는지 답하십시오.",
-          "behaviorHint": "전체 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
+          "text": "돈 문제에서 가장 먼저 인정하기 어려웠던 책임은 무엇입니까.",
+          "behaviorHint": "책임 순서에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:b",
@@ -6790,8 +6790,8 @@
         },
         {
           "id": "judgeq-h-d4-motive_search-b-general-v5",
-          "text": "이준호 씨, 전체 경위의 배경이 되는 사정을 구체적으로 말해 주십시오.",
-          "behaviorHint": "전체 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
+          "text": "이준호 씨, 서로 다른 잘못을 한꺼번에 말하려는 이유가 무엇인지 설명하십시오.",
+          "behaviorHint": "책임 순서에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:b",
@@ -6810,8 +6810,8 @@
       "variants": [
         {
           "id": "judgeq-h-d4-empathy_approach-a-general-v1",
-          "text": "박지연 씨, 전체 경위에 대해 말하기 어려웠다면 그 감정부터 설명해 주십시오.",
-          "behaviorHint": "전체 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
+          "text": "박지연 씨, 상대가 먼저 잘못했다는 마음 때문에 본인의 책임을 늦게 본 건 아닙니까.",
+          "behaviorHint": "책임 순서에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:a",
@@ -6822,8 +6822,8 @@
         },
         {
           "id": "judgeq-h-d4-empathy_approach-a-general-v2",
-          "text": "박지연 씨, 전체 경위에서 상대에게 상처를 준 부분을 어떻게 보고 있습니까.",
-          "behaviorHint": "전체 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
+          "text": "서로의 잘못이 겹친 상황에서 지금 가장 바로잡고 싶은 말이 무엇입니까.",
+          "behaviorHint": "책임 순서에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:a",
@@ -6834,8 +6834,8 @@
         },
         {
           "id": "judgeq-h-d4-empathy_approach-a-general-v3",
-          "text": "박지연 씨, 전체 경위 문제에서 두려웠거나 피하고 싶었던 지점이 있었습니까.",
-          "behaviorHint": "전체 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
+          "text": "상대에게 받은 상처와 본인이 준 상처를 나눠서 말씀해 주십시오.",
+          "behaviorHint": "책임 순서에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:a",
@@ -6846,8 +6846,8 @@
         },
         {
           "id": "judgeq-h-d4-empathy_approach-a-general-v4",
-          "text": "박지연 씨, 전체 경위에 관해 지금 바로잡고 싶은 말이 있다면 해 주십시오.",
-          "behaviorHint": "전체 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
+          "text": "책임을 인정하는 일이 두려웠다면 어떤 부분이 가장 두려웠습니까.",
+          "behaviorHint": "책임 순서에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:a",
@@ -6858,8 +6858,8 @@
         },
         {
           "id": "judgeq-h-d4-empathy_approach-a-general-v5",
-          "text": "박지연 씨, 전체 경위에 대해 감정이 아니라 책임의 문제로 다시 말해 주십시오.",
-          "behaviorHint": "전체 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
+          "text": "박지연 씨, 감정적으로 억울한 부분과 실제 책임질 부분을 구분해 주십시오.",
+          "behaviorHint": "책임 순서에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:a",
@@ -6878,8 +6878,8 @@
       "variants": [
         {
           "id": "judgeq-h-d4-empathy_approach-b-general-v1",
-          "text": "이준호 씨, 전체 경위에 대해 말하기 어려웠다면 그 감정부터 설명해 주십시오.",
-          "behaviorHint": "전체 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
+          "text": "이준호 씨, 상대가 먼저 잘못했다는 마음 때문에 본인의 책임을 늦게 본 건 아닙니까.",
+          "behaviorHint": "책임 순서에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:b",
@@ -6890,8 +6890,8 @@
         },
         {
           "id": "judgeq-h-d4-empathy_approach-b-general-v2",
-          "text": "이준호 씨, 전체 경위에서 상대에게 상처를 준 부분을 어떻게 보고 있습니까.",
-          "behaviorHint": "전체 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
+          "text": "서로의 잘못이 겹친 상황에서 지금 가장 바로잡고 싶은 말이 무엇입니까.",
+          "behaviorHint": "책임 순서에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:b",
@@ -6902,8 +6902,8 @@
         },
         {
           "id": "judgeq-h-d4-empathy_approach-b-general-v3",
-          "text": "이준호 씨, 전체 경위 문제에서 두려웠거나 피하고 싶었던 지점이 있었습니까.",
-          "behaviorHint": "전체 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
+          "text": "상대에게 받은 상처와 본인이 준 상처를 나눠서 말씀해 주십시오.",
+          "behaviorHint": "책임 순서에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:b",
@@ -6914,8 +6914,8 @@
         },
         {
           "id": "judgeq-h-d4-empathy_approach-b-general-v4",
-          "text": "이준호 씨, 전체 경위에 관해 지금 바로잡고 싶은 말이 있다면 해 주십시오.",
-          "behaviorHint": "전체 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
+          "text": "책임을 인정하는 일이 두려웠다면 어떤 부분이 가장 두려웠습니까.",
+          "behaviorHint": "책임 순서에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:b",
@@ -6926,8 +6926,8 @@
         },
         {
           "id": "judgeq-h-d4-empathy_approach-b-general-v5",
-          "text": "이준호 씨, 전체 경위에 대해 감정이 아니라 책임의 문제로 다시 말해 주십시오.",
-          "behaviorHint": "전체 경위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
+          "text": "이준호 씨, 감정적으로 억울한 부분과 실제 책임질 부분을 구분해 주십시오.",
+          "behaviorHint": "책임 순서에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:b",
@@ -6958,7 +6958,7 @@
         },
         {
           "id": "judgeq-h-d4-fact_pursuit-a-concealment_sequence-v2",
-          "text": "박지연 씨, 누가 먼저 숨겼는지에서 직접 한 일과 추정한 일을 나눠 설명해 주십시오.",
+          "text": "누가 먼저 숨겼는지에서 직접 한 일과 추정한 일을 나눠 설명해 주십시오.",
           "behaviorHint": "누가 먼저 숨겼는지에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -6970,7 +6970,7 @@
         },
         {
           "id": "judgeq-h-d4-fact_pursuit-a-concealment_sequence-v3",
-          "text": "박지연 씨, 누가 먼저 숨겼는지 문제에서 상대 주장과 다른 부분이 있다면 구체적으로 답하십시오.",
+          "text": "누가 먼저 숨겼는지 문제에서 상대 주장과 다른 부분이 있다면 구체적으로 답하십시오.",
           "behaviorHint": "누가 먼저 숨겼는지에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -6982,7 +6982,7 @@
         },
         {
           "id": "judgeq-h-d4-fact_pursuit-a-concealment_sequence-v4",
-          "text": "박지연 씨, 누가 먼저 숨겼는지 항목을 기록 기준으로 다시 정리해 주십시오.",
+          "text": "누가 먼저 숨겼는지 항목을 기록 기준으로 다시 정리해 주십시오.",
           "behaviorHint": "누가 먼저 숨겼는지에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -7026,7 +7026,7 @@
         },
         {
           "id": "judgeq-h-d4-fact_pursuit-b-concealment_sequence-v2",
-          "text": "이준호 씨, 누가 먼저 숨겼는지에서 직접 한 일과 추정한 일을 나눠 설명해 주십시오.",
+          "text": "누가 먼저 숨겼는지에서 직접 한 일과 추정한 일을 나눠 설명해 주십시오.",
           "behaviorHint": "누가 먼저 숨겼는지에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -7038,7 +7038,7 @@
         },
         {
           "id": "judgeq-h-d4-fact_pursuit-b-concealment_sequence-v3",
-          "text": "이준호 씨, 누가 먼저 숨겼는지 문제에서 상대 주장과 다른 부분이 있다면 구체적으로 답하십시오.",
+          "text": "누가 먼저 숨겼는지 문제에서 상대 주장과 다른 부분이 있다면 구체적으로 답하십시오.",
           "behaviorHint": "누가 먼저 숨겼는지에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -7050,7 +7050,7 @@
         },
         {
           "id": "judgeq-h-d4-fact_pursuit-b-concealment_sequence-v4",
-          "text": "이준호 씨, 누가 먼저 숨겼는지 항목을 기록 기준으로 다시 정리해 주십시오.",
+          "text": "누가 먼저 숨겼는지 항목을 기록 기준으로 다시 정리해 주십시오.",
           "behaviorHint": "누가 먼저 숨겼는지에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -7094,7 +7094,7 @@
         },
         {
           "id": "judgeq-h-d4-motive_search-a-concealment_sequence-v2",
-          "text": "박지연 씨, 누가 먼저 숨겼는지에서 어떤 부담이나 계산이 있었는지 설명하십시오.",
+          "text": "누가 먼저 숨겼는지에서 어떤 부담이나 계산이 있었는지 설명하십시오.",
           "behaviorHint": "누가 먼저 숨겼는지에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -7106,7 +7106,7 @@
         },
         {
           "id": "judgeq-h-d4-motive_search-a-concealment_sequence-v3",
-          "text": "박지연 씨, 누가 먼저 숨겼는지에 대해 숨기거나 늦게 말한 이유가 무엇입니까.",
+          "text": "누가 먼저 숨겼는지에 대해 숨기거나 늦게 말한 이유가 무엇입니까.",
           "behaviorHint": "누가 먼저 숨겼는지에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -7118,7 +7118,7 @@
         },
         {
           "id": "judgeq-h-d4-motive_search-a-concealment_sequence-v4",
-          "text": "박지연 씨, 누가 먼저 숨겼는지에 대해 그때 왜 그런 선택을 했는지 답하십시오.",
+          "text": "누가 먼저 숨겼는지에 대해 그때 왜 그런 선택을 했는지 답하십시오.",
           "behaviorHint": "누가 먼저 숨겼는지에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -7162,7 +7162,7 @@
         },
         {
           "id": "judgeq-h-d4-motive_search-b-concealment_sequence-v2",
-          "text": "이준호 씨, 누가 먼저 숨겼는지에서 어떤 부담이나 계산이 있었는지 설명하십시오.",
+          "text": "누가 먼저 숨겼는지에서 어떤 부담이나 계산이 있었는지 설명하십시오.",
           "behaviorHint": "누가 먼저 숨겼는지에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -7174,7 +7174,7 @@
         },
         {
           "id": "judgeq-h-d4-motive_search-b-concealment_sequence-v3",
-          "text": "이준호 씨, 누가 먼저 숨겼는지에 대해 숨기거나 늦게 말한 이유가 무엇입니까.",
+          "text": "누가 먼저 숨겼는지에 대해 숨기거나 늦게 말한 이유가 무엇입니까.",
           "behaviorHint": "누가 먼저 숨겼는지에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -7186,7 +7186,7 @@
         },
         {
           "id": "judgeq-h-d4-motive_search-b-concealment_sequence-v4",
-          "text": "이준호 씨, 누가 먼저 숨겼는지에 대해 그때 왜 그런 선택을 했는지 답하십시오.",
+          "text": "누가 먼저 숨겼는지에 대해 그때 왜 그런 선택을 했는지 답하십시오.",
           "behaviorHint": "누가 먼저 숨겼는지에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -7230,7 +7230,7 @@
         },
         {
           "id": "judgeq-h-d4-empathy_approach-a-concealment_sequence-v2",
-          "text": "박지연 씨, 누가 먼저 숨겼는지에서 상대에게 상처를 준 부분을 어떻게 보고 있습니까.",
+          "text": "누가 먼저 숨겼는지에서 상대에게 상처를 준 부분을 어떻게 보고 있습니까.",
           "behaviorHint": "누가 먼저 숨겼는지에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -7242,7 +7242,7 @@
         },
         {
           "id": "judgeq-h-d4-empathy_approach-a-concealment_sequence-v3",
-          "text": "박지연 씨, 누가 먼저 숨겼는지 문제에서 두려웠거나 피하고 싶었던 지점이 있었습니까.",
+          "text": "누가 먼저 숨겼는지 문제에서 두려웠거나 피하고 싶었던 지점이 있었습니까.",
           "behaviorHint": "누가 먼저 숨겼는지에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -7254,7 +7254,7 @@
         },
         {
           "id": "judgeq-h-d4-empathy_approach-a-concealment_sequence-v4",
-          "text": "박지연 씨, 누가 먼저 숨겼는지에 관해 지금 바로잡고 싶은 말이 있다면 해 주십시오.",
+          "text": "누가 먼저 숨겼는지에 관해 지금 바로잡고 싶은 말이 있다면 해 주십시오.",
           "behaviorHint": "누가 먼저 숨겼는지에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -7298,7 +7298,7 @@
         },
         {
           "id": "judgeq-h-d4-empathy_approach-b-concealment_sequence-v2",
-          "text": "이준호 씨, 누가 먼저 숨겼는지에서 상대에게 상처를 준 부분을 어떻게 보고 있습니까.",
+          "text": "누가 먼저 숨겼는지에서 상대에게 상처를 준 부분을 어떻게 보고 있습니까.",
           "behaviorHint": "누가 먼저 숨겼는지에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -7310,7 +7310,7 @@
         },
         {
           "id": "judgeq-h-d4-empathy_approach-b-concealment_sequence-v3",
-          "text": "이준호 씨, 누가 먼저 숨겼는지 문제에서 두려웠거나 피하고 싶었던 지점이 있었습니까.",
+          "text": "누가 먼저 숨겼는지 문제에서 두려웠거나 피하고 싶었던 지점이 있었습니까.",
           "behaviorHint": "누가 먼저 숨겼는지에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -7322,7 +7322,7 @@
         },
         {
           "id": "judgeq-h-d4-empathy_approach-b-concealment_sequence-v4",
-          "text": "이준호 씨, 누가 먼저 숨겼는지에 관해 지금 바로잡고 싶은 말이 있다면 해 주십시오.",
+          "text": "누가 먼저 숨겼는지에 관해 지금 바로잡고 싶은 말이 있다면 해 주십시오.",
           "behaviorHint": "누가 먼저 숨겼는지에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -7366,7 +7366,7 @@
         },
         {
           "id": "judgeq-h-d4-fact_pursuit-a-account_monitoring-v2",
-          "text": "박지연 씨, 계좌 확인의 시작에서 직접 한 일과 추정한 일을 나눠 설명해 주십시오.",
+          "text": "계좌 확인의 시작에서 직접 한 일과 추정한 일을 나눠 설명해 주십시오.",
           "behaviorHint": "계좌 확인의 시작에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -7378,7 +7378,7 @@
         },
         {
           "id": "judgeq-h-d4-fact_pursuit-a-account_monitoring-v3",
-          "text": "박지연 씨, 계좌 확인의 시작 문제에서 상대 주장과 다른 부분이 있다면 구체적으로 답하십시오.",
+          "text": "계좌 확인의 시작 문제에서 상대 주장과 다른 부분이 있다면 구체적으로 답하십시오.",
           "behaviorHint": "계좌 확인의 시작에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -7390,7 +7390,7 @@
         },
         {
           "id": "judgeq-h-d4-fact_pursuit-a-account_monitoring-v4",
-          "text": "박지연 씨, 계좌 확인의 시작 항목을 기록 기준으로 다시 정리해 주십시오.",
+          "text": "계좌 확인의 시작 항목을 기록 기준으로 다시 정리해 주십시오.",
           "behaviorHint": "계좌 확인의 시작에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -7434,7 +7434,7 @@
         },
         {
           "id": "judgeq-h-d4-fact_pursuit-b-account_monitoring-v2",
-          "text": "이준호 씨, 계좌 확인의 시작에서 직접 한 일과 추정한 일을 나눠 설명해 주십시오.",
+          "text": "계좌 확인의 시작에서 직접 한 일과 추정한 일을 나눠 설명해 주십시오.",
           "behaviorHint": "계좌 확인의 시작에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -7446,7 +7446,7 @@
         },
         {
           "id": "judgeq-h-d4-fact_pursuit-b-account_monitoring-v3",
-          "text": "이준호 씨, 계좌 확인의 시작 문제에서 상대 주장과 다른 부분이 있다면 구체적으로 답하십시오.",
+          "text": "계좌 확인의 시작 문제에서 상대 주장과 다른 부분이 있다면 구체적으로 답하십시오.",
           "behaviorHint": "계좌 확인의 시작에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -7458,7 +7458,7 @@
         },
         {
           "id": "judgeq-h-d4-fact_pursuit-b-account_monitoring-v4",
-          "text": "이준호 씨, 계좌 확인의 시작 항목을 기록 기준으로 다시 정리해 주십시오.",
+          "text": "계좌 확인의 시작 항목을 기록 기준으로 다시 정리해 주십시오.",
           "behaviorHint": "계좌 확인의 시작에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -7502,7 +7502,7 @@
         },
         {
           "id": "judgeq-h-d4-motive_search-a-account_monitoring-v2",
-          "text": "박지연 씨, 계좌 확인의 시작에서 어떤 부담이나 계산이 있었는지 설명하십시오.",
+          "text": "계좌 확인의 시작에서 어떤 부담이나 계산이 있었는지 설명하십시오.",
           "behaviorHint": "계좌 확인의 시작에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -7514,7 +7514,7 @@
         },
         {
           "id": "judgeq-h-d4-motive_search-a-account_monitoring-v3",
-          "text": "박지연 씨, 계좌 확인의 시작에 대해 숨기거나 늦게 말한 이유가 무엇입니까.",
+          "text": "계좌 확인의 시작에 대해 숨기거나 늦게 말한 이유가 무엇입니까.",
           "behaviorHint": "계좌 확인의 시작에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -7526,7 +7526,7 @@
         },
         {
           "id": "judgeq-h-d4-motive_search-a-account_monitoring-v4",
-          "text": "박지연 씨, 계좌 확인의 시작에 대해 그때 왜 그런 선택을 했는지 답하십시오.",
+          "text": "계좌 확인의 시작에 대해 그때 왜 그런 선택을 했는지 답하십시오.",
           "behaviorHint": "계좌 확인의 시작에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -7570,7 +7570,7 @@
         },
         {
           "id": "judgeq-h-d4-motive_search-b-account_monitoring-v2",
-          "text": "이준호 씨, 계좌 확인의 시작에서 어떤 부담이나 계산이 있었는지 설명하십시오.",
+          "text": "계좌 확인의 시작에서 어떤 부담이나 계산이 있었는지 설명하십시오.",
           "behaviorHint": "계좌 확인의 시작에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -7582,7 +7582,7 @@
         },
         {
           "id": "judgeq-h-d4-motive_search-b-account_monitoring-v3",
-          "text": "이준호 씨, 계좌 확인의 시작에 대해 숨기거나 늦게 말한 이유가 무엇입니까.",
+          "text": "계좌 확인의 시작에 대해 숨기거나 늦게 말한 이유가 무엇입니까.",
           "behaviorHint": "계좌 확인의 시작에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -7594,7 +7594,7 @@
         },
         {
           "id": "judgeq-h-d4-motive_search-b-account_monitoring-v4",
-          "text": "이준호 씨, 계좌 확인의 시작에 대해 그때 왜 그런 선택을 했는지 답하십시오.",
+          "text": "계좌 확인의 시작에 대해 그때 왜 그런 선택을 했는지 답하십시오.",
           "behaviorHint": "계좌 확인의 시작에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -7638,7 +7638,7 @@
         },
         {
           "id": "judgeq-h-d4-empathy_approach-a-account_monitoring-v2",
-          "text": "박지연 씨, 계좌 확인의 시작에서 상대에게 상처를 준 부분을 어떻게 보고 있습니까.",
+          "text": "계좌 확인의 시작에서 상대에게 상처를 준 부분을 어떻게 보고 있습니까.",
           "behaviorHint": "계좌 확인의 시작에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -7650,7 +7650,7 @@
         },
         {
           "id": "judgeq-h-d4-empathy_approach-a-account_monitoring-v3",
-          "text": "박지연 씨, 계좌 확인의 시작 문제에서 두려웠거나 피하고 싶었던 지점이 있었습니까.",
+          "text": "계좌 확인의 시작 문제에서 두려웠거나 피하고 싶었던 지점이 있었습니까.",
           "behaviorHint": "계좌 확인의 시작에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -7662,7 +7662,7 @@
         },
         {
           "id": "judgeq-h-d4-empathy_approach-a-account_monitoring-v4",
-          "text": "박지연 씨, 계좌 확인의 시작에 관해 지금 바로잡고 싶은 말이 있다면 해 주십시오.",
+          "text": "계좌 확인의 시작에 관해 지금 바로잡고 싶은 말이 있다면 해 주십시오.",
           "behaviorHint": "계좌 확인의 시작에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -7706,7 +7706,7 @@
         },
         {
           "id": "judgeq-h-d4-empathy_approach-b-account_monitoring-v2",
-          "text": "이준호 씨, 계좌 확인의 시작에서 상대에게 상처를 준 부분을 어떻게 보고 있습니까.",
+          "text": "계좌 확인의 시작에서 상대에게 상처를 준 부분을 어떻게 보고 있습니까.",
           "behaviorHint": "계좌 확인의 시작에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -7718,7 +7718,7 @@
         },
         {
           "id": "judgeq-h-d4-empathy_approach-b-account_monitoring-v3",
-          "text": "이준호 씨, 계좌 확인의 시작 문제에서 두려웠거나 피하고 싶었던 지점이 있었습니까.",
+          "text": "계좌 확인의 시작 문제에서 두려웠거나 피하고 싶었던 지점이 있었습니까.",
           "behaviorHint": "계좌 확인의 시작에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -7730,7 +7730,7 @@
         },
         {
           "id": "judgeq-h-d4-empathy_approach-b-account_monitoring-v4",
-          "text": "이준호 씨, 계좌 확인의 시작에 관해 지금 바로잡고 싶은 말이 있다면 해 주십시오.",
+          "text": "계좌 확인의 시작에 관해 지금 바로잡고 싶은 말이 있다면 해 주십시오.",
           "behaviorHint": "계좌 확인의 시작에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -7774,7 +7774,7 @@
         },
         {
           "id": "judgeq-h-d4-fact_pursuit-a-execution_timeline-v2",
-          "text": "박지연 씨, 돈이 실제로 움직인 순서에서 직접 한 일과 추정한 일을 나눠 설명해 주십시오.",
+          "text": "돈이 실제로 움직인 순서에서 직접 한 일과 추정한 일을 나눠 설명해 주십시오.",
           "behaviorHint": "돈이 실제로 움직인 순서에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -7786,7 +7786,7 @@
         },
         {
           "id": "judgeq-h-d4-fact_pursuit-a-execution_timeline-v3",
-          "text": "박지연 씨, 돈이 실제로 움직인 순서 문제에서 상대 주장과 다른 부분이 있다면 구체적으로 답하십시오.",
+          "text": "돈이 실제로 움직인 순서 문제에서 상대 주장과 다른 부분이 있다면 구체적으로 답하십시오.",
           "behaviorHint": "돈이 실제로 움직인 순서에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -7798,7 +7798,7 @@
         },
         {
           "id": "judgeq-h-d4-fact_pursuit-a-execution_timeline-v4",
-          "text": "박지연 씨, 돈이 실제로 움직인 순서 항목을 기록 기준으로 다시 정리해 주십시오.",
+          "text": "돈이 실제로 움직인 순서 항목을 기록 기준으로 다시 정리해 주십시오.",
           "behaviorHint": "돈이 실제로 움직인 순서에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -7842,7 +7842,7 @@
         },
         {
           "id": "judgeq-h-d4-fact_pursuit-b-execution_timeline-v2",
-          "text": "이준호 씨, 돈이 실제로 움직인 순서에서 직접 한 일과 추정한 일을 나눠 설명해 주십시오.",
+          "text": "돈이 실제로 움직인 순서에서 직접 한 일과 추정한 일을 나눠 설명해 주십시오.",
           "behaviorHint": "돈이 실제로 움직인 순서에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -7854,7 +7854,7 @@
         },
         {
           "id": "judgeq-h-d4-fact_pursuit-b-execution_timeline-v3",
-          "text": "이준호 씨, 돈이 실제로 움직인 순서 문제에서 상대 주장과 다른 부분이 있다면 구체적으로 답하십시오.",
+          "text": "돈이 실제로 움직인 순서 문제에서 상대 주장과 다른 부분이 있다면 구체적으로 답하십시오.",
           "behaviorHint": "돈이 실제로 움직인 순서에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -7866,7 +7866,7 @@
         },
         {
           "id": "judgeq-h-d4-fact_pursuit-b-execution_timeline-v4",
-          "text": "이준호 씨, 돈이 실제로 움직인 순서 항목을 기록 기준으로 다시 정리해 주십시오.",
+          "text": "돈이 실제로 움직인 순서 항목을 기록 기준으로 다시 정리해 주십시오.",
           "behaviorHint": "돈이 실제로 움직인 순서에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -7910,7 +7910,7 @@
         },
         {
           "id": "judgeq-h-d4-motive_search-a-execution_timeline-v2",
-          "text": "박지연 씨, 돈이 실제로 움직인 순서에서 어떤 부담이나 계산이 있었는지 설명하십시오.",
+          "text": "돈이 실제로 움직인 순서에서 어떤 부담이나 계산이 있었는지 설명하십시오.",
           "behaviorHint": "돈이 실제로 움직인 순서에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -7922,7 +7922,7 @@
         },
         {
           "id": "judgeq-h-d4-motive_search-a-execution_timeline-v3",
-          "text": "박지연 씨, 돈이 실제로 움직인 순서에 대해 숨기거나 늦게 말한 이유가 무엇입니까.",
+          "text": "돈이 실제로 움직인 순서에 대해 숨기거나 늦게 말한 이유가 무엇입니까.",
           "behaviorHint": "돈이 실제로 움직인 순서에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -7934,7 +7934,7 @@
         },
         {
           "id": "judgeq-h-d4-motive_search-a-execution_timeline-v4",
-          "text": "박지연 씨, 돈이 실제로 움직인 순서에 대해 그때 왜 그런 선택을 했는지 답하십시오.",
+          "text": "돈이 실제로 움직인 순서에 대해 그때 왜 그런 선택을 했는지 답하십시오.",
           "behaviorHint": "돈이 실제로 움직인 순서에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -7978,7 +7978,7 @@
         },
         {
           "id": "judgeq-h-d4-motive_search-b-execution_timeline-v2",
-          "text": "이준호 씨, 돈이 실제로 움직인 순서에서 어떤 부담이나 계산이 있었는지 설명하십시오.",
+          "text": "돈이 실제로 움직인 순서에서 어떤 부담이나 계산이 있었는지 설명하십시오.",
           "behaviorHint": "돈이 실제로 움직인 순서에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -7990,7 +7990,7 @@
         },
         {
           "id": "judgeq-h-d4-motive_search-b-execution_timeline-v3",
-          "text": "이준호 씨, 돈이 실제로 움직인 순서에 대해 숨기거나 늦게 말한 이유가 무엇입니까.",
+          "text": "돈이 실제로 움직인 순서에 대해 숨기거나 늦게 말한 이유가 무엇입니까.",
           "behaviorHint": "돈이 실제로 움직인 순서에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -8002,7 +8002,7 @@
         },
         {
           "id": "judgeq-h-d4-motive_search-b-execution_timeline-v4",
-          "text": "이준호 씨, 돈이 실제로 움직인 순서에 대해 그때 왜 그런 선택을 했는지 답하십시오.",
+          "text": "돈이 실제로 움직인 순서에 대해 그때 왜 그런 선택을 했는지 답하십시오.",
           "behaviorHint": "돈이 실제로 움직인 순서에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -8046,7 +8046,7 @@
         },
         {
           "id": "judgeq-h-d4-empathy_approach-a-execution_timeline-v2",
-          "text": "박지연 씨, 돈이 실제로 움직인 순서에서 상대에게 상처를 준 부분을 어떻게 보고 있습니까.",
+          "text": "돈이 실제로 움직인 순서에서 상대에게 상처를 준 부분을 어떻게 보고 있습니까.",
           "behaviorHint": "돈이 실제로 움직인 순서에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -8058,7 +8058,7 @@
         },
         {
           "id": "judgeq-h-d4-empathy_approach-a-execution_timeline-v3",
-          "text": "박지연 씨, 돈이 실제로 움직인 순서 문제에서 두려웠거나 피하고 싶었던 지점이 있었습니까.",
+          "text": "돈이 실제로 움직인 순서 문제에서 두려웠거나 피하고 싶었던 지점이 있었습니까.",
           "behaviorHint": "돈이 실제로 움직인 순서에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -8070,7 +8070,7 @@
         },
         {
           "id": "judgeq-h-d4-empathy_approach-a-execution_timeline-v4",
-          "text": "박지연 씨, 돈이 실제로 움직인 순서에 관해 지금 바로잡고 싶은 말이 있다면 해 주십시오.",
+          "text": "돈이 실제로 움직인 순서에 관해 지금 바로잡고 싶은 말이 있다면 해 주십시오.",
           "behaviorHint": "돈이 실제로 움직인 순서에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -8114,7 +8114,7 @@
         },
         {
           "id": "judgeq-h-d4-empathy_approach-b-execution_timeline-v2",
-          "text": "이준호 씨, 돈이 실제로 움직인 순서에서 상대에게 상처를 준 부분을 어떻게 보고 있습니까.",
+          "text": "돈이 실제로 움직인 순서에서 상대에게 상처를 준 부분을 어떻게 보고 있습니까.",
           "behaviorHint": "돈이 실제로 움직인 순서에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -8126,7 +8126,7 @@
         },
         {
           "id": "judgeq-h-d4-empathy_approach-b-execution_timeline-v3",
-          "text": "이준호 씨, 돈이 실제로 움직인 순서 문제에서 두려웠거나 피하고 싶었던 지점이 있었습니까.",
+          "text": "돈이 실제로 움직인 순서 문제에서 두려웠거나 피하고 싶었던 지점이 있었습니까.",
           "behaviorHint": "돈이 실제로 움직인 순서에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -8138,7 +8138,7 @@
         },
         {
           "id": "judgeq-h-d4-empathy_approach-b-execution_timeline-v4",
-          "text": "이준호 씨, 돈이 실제로 움직인 순서에 관해 지금 바로잡고 싶은 말이 있다면 해 주십시오.",
+          "text": "돈이 실제로 움직인 순서에 관해 지금 바로잡고 싶은 말이 있다면 해 주십시오.",
           "behaviorHint": "돈이 실제로 움직인 순서에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -8182,7 +8182,7 @@
         },
         {
           "id": "judgeq-h-d4-fact_pursuit-a-illegal_boundary-v2",
-          "text": "박지연 씨, 법적으로 선을 넘은 행위에서 직접 한 일과 추정한 일을 나눠 설명해 주십시오.",
+          "text": "법적으로 선을 넘은 행위에서 직접 한 일과 추정한 일을 나눠 설명해 주십시오.",
           "behaviorHint": "법적으로 선을 넘은 행위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -8194,7 +8194,7 @@
         },
         {
           "id": "judgeq-h-d4-fact_pursuit-a-illegal_boundary-v3",
-          "text": "박지연 씨, 법적으로 선을 넘은 행위 문제에서 상대 주장과 다른 부분이 있다면 구체적으로 답하십시오.",
+          "text": "법적으로 선을 넘은 행위 문제에서 상대 주장과 다른 부분이 있다면 구체적으로 답하십시오.",
           "behaviorHint": "법적으로 선을 넘은 행위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -8206,7 +8206,7 @@
         },
         {
           "id": "judgeq-h-d4-fact_pursuit-a-illegal_boundary-v4",
-          "text": "박지연 씨, 법적으로 선을 넘은 행위 항목을 기록 기준으로 다시 정리해 주십시오.",
+          "text": "법적으로 선을 넘은 행위 항목을 기록 기준으로 다시 정리해 주십시오.",
           "behaviorHint": "법적으로 선을 넘은 행위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -8250,7 +8250,7 @@
         },
         {
           "id": "judgeq-h-d4-fact_pursuit-b-illegal_boundary-v2",
-          "text": "이준호 씨, 법적으로 선을 넘은 행위에서 직접 한 일과 추정한 일을 나눠 설명해 주십시오.",
+          "text": "법적으로 선을 넘은 행위에서 직접 한 일과 추정한 일을 나눠 설명해 주십시오.",
           "behaviorHint": "법적으로 선을 넘은 행위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -8262,7 +8262,7 @@
         },
         {
           "id": "judgeq-h-d4-fact_pursuit-b-illegal_boundary-v3",
-          "text": "이준호 씨, 법적으로 선을 넘은 행위 문제에서 상대 주장과 다른 부분이 있다면 구체적으로 답하십시오.",
+          "text": "법적으로 선을 넘은 행위 문제에서 상대 주장과 다른 부분이 있다면 구체적으로 답하십시오.",
           "behaviorHint": "법적으로 선을 넘은 행위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -8274,7 +8274,7 @@
         },
         {
           "id": "judgeq-h-d4-fact_pursuit-b-illegal_boundary-v4",
-          "text": "이준호 씨, 법적으로 선을 넘은 행위 항목을 기록 기준으로 다시 정리해 주십시오.",
+          "text": "법적으로 선을 넘은 행위 항목을 기록 기준으로 다시 정리해 주십시오.",
           "behaviorHint": "법적으로 선을 넘은 행위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -8318,7 +8318,7 @@
         },
         {
           "id": "judgeq-h-d4-motive_search-a-illegal_boundary-v2",
-          "text": "박지연 씨, 법적으로 선을 넘은 행위에서 어떤 부담이나 계산이 있었는지 설명하십시오.",
+          "text": "법적으로 선을 넘은 행위에서 어떤 부담이나 계산이 있었는지 설명하십시오.",
           "behaviorHint": "법적으로 선을 넘은 행위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -8330,7 +8330,7 @@
         },
         {
           "id": "judgeq-h-d4-motive_search-a-illegal_boundary-v3",
-          "text": "박지연 씨, 법적으로 선을 넘은 행위에 대해 숨기거나 늦게 말한 이유가 무엇입니까.",
+          "text": "법적으로 선을 넘은 행위에 대해 숨기거나 늦게 말한 이유가 무엇입니까.",
           "behaviorHint": "법적으로 선을 넘은 행위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -8342,7 +8342,7 @@
         },
         {
           "id": "judgeq-h-d4-motive_search-a-illegal_boundary-v4",
-          "text": "박지연 씨, 법적으로 선을 넘은 행위에 대해 그때 왜 그런 선택을 했는지 답하십시오.",
+          "text": "법적으로 선을 넘은 행위에 대해 그때 왜 그런 선택을 했는지 답하십시오.",
           "behaviorHint": "법적으로 선을 넘은 행위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -8386,7 +8386,7 @@
         },
         {
           "id": "judgeq-h-d4-motive_search-b-illegal_boundary-v2",
-          "text": "이준호 씨, 법적으로 선을 넘은 행위에서 어떤 부담이나 계산이 있었는지 설명하십시오.",
+          "text": "법적으로 선을 넘은 행위에서 어떤 부담이나 계산이 있었는지 설명하십시오.",
           "behaviorHint": "법적으로 선을 넘은 행위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -8398,7 +8398,7 @@
         },
         {
           "id": "judgeq-h-d4-motive_search-b-illegal_boundary-v3",
-          "text": "이준호 씨, 법적으로 선을 넘은 행위에 대해 숨기거나 늦게 말한 이유가 무엇입니까.",
+          "text": "법적으로 선을 넘은 행위에 대해 숨기거나 늦게 말한 이유가 무엇입니까.",
           "behaviorHint": "법적으로 선을 넘은 행위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -8410,7 +8410,7 @@
         },
         {
           "id": "judgeq-h-d4-motive_search-b-illegal_boundary-v4",
-          "text": "이준호 씨, 법적으로 선을 넘은 행위에 대해 그때 왜 그런 선택을 했는지 답하십시오.",
+          "text": "법적으로 선을 넘은 행위에 대해 그때 왜 그런 선택을 했는지 답하십시오.",
           "behaviorHint": "법적으로 선을 넘은 행위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -8454,7 +8454,7 @@
         },
         {
           "id": "judgeq-h-d4-empathy_approach-a-illegal_boundary-v2",
-          "text": "박지연 씨, 법적으로 선을 넘은 행위에서 상대에게 상처를 준 부분을 어떻게 보고 있습니까.",
+          "text": "법적으로 선을 넘은 행위에서 상대에게 상처를 준 부분을 어떻게 보고 있습니까.",
           "behaviorHint": "법적으로 선을 넘은 행위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -8466,7 +8466,7 @@
         },
         {
           "id": "judgeq-h-d4-empathy_approach-a-illegal_boundary-v3",
-          "text": "박지연 씨, 법적으로 선을 넘은 행위 문제에서 두려웠거나 피하고 싶었던 지점이 있었습니까.",
+          "text": "법적으로 선을 넘은 행위 문제에서 두려웠거나 피하고 싶었던 지점이 있었습니까.",
           "behaviorHint": "법적으로 선을 넘은 행위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -8478,7 +8478,7 @@
         },
         {
           "id": "judgeq-h-d4-empathy_approach-a-illegal_boundary-v4",
-          "text": "박지연 씨, 법적으로 선을 넘은 행위에 관해 지금 바로잡고 싶은 말이 있다면 해 주십시오.",
+          "text": "법적으로 선을 넘은 행위에 관해 지금 바로잡고 싶은 말이 있다면 해 주십시오.",
           "behaviorHint": "법적으로 선을 넘은 행위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -8522,7 +8522,7 @@
         },
         {
           "id": "judgeq-h-d4-empathy_approach-b-illegal_boundary-v2",
-          "text": "이준호 씨, 법적으로 선을 넘은 행위에서 상대에게 상처를 준 부분을 어떻게 보고 있습니까.",
+          "text": "법적으로 선을 넘은 행위에서 상대에게 상처를 준 부분을 어떻게 보고 있습니까.",
           "behaviorHint": "법적으로 선을 넘은 행위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -8534,7 +8534,7 @@
         },
         {
           "id": "judgeq-h-d4-empathy_approach-b-illegal_boundary-v3",
-          "text": "이준호 씨, 법적으로 선을 넘은 행위 문제에서 두려웠거나 피하고 싶었던 지점이 있었습니까.",
+          "text": "법적으로 선을 넘은 행위 문제에서 두려웠거나 피하고 싶었던 지점이 있었습니까.",
           "behaviorHint": "법적으로 선을 넘은 행위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -8546,7 +8546,7 @@
         },
         {
           "id": "judgeq-h-d4-empathy_approach-b-illegal_boundary-v4",
-          "text": "이준호 씨, 법적으로 선을 넘은 행위에 관해 지금 바로잡고 싶은 말이 있다면 해 주십시오.",
+          "text": "법적으로 선을 넘은 행위에 관해 지금 바로잡고 싶은 말이 있다면 해 주십시오.",
           "behaviorHint": "법적으로 선을 넘은 행위에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -8590,7 +8590,7 @@
         },
         {
           "id": "judgeq-h-d4-fact_pursuit-a-responsibility_split-v2",
-          "text": "박지연 씨, 각자 따로 져야 할 책임에서 직접 한 일과 추정한 일을 나눠 설명해 주십시오.",
+          "text": "각자 따로 져야 할 책임에서 직접 한 일과 추정한 일을 나눠 설명해 주십시오.",
           "behaviorHint": "각자 따로 져야 할 책임에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -8602,7 +8602,7 @@
         },
         {
           "id": "judgeq-h-d4-fact_pursuit-a-responsibility_split-v3",
-          "text": "박지연 씨, 각자 따로 져야 할 책임 문제에서 상대 주장과 다른 부분이 있다면 구체적으로 답하십시오.",
+          "text": "각자 따로 져야 할 책임 문제에서 상대 주장과 다른 부분이 있다면 구체적으로 답하십시오.",
           "behaviorHint": "각자 따로 져야 할 책임에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -8614,7 +8614,7 @@
         },
         {
           "id": "judgeq-h-d4-fact_pursuit-a-responsibility_split-v4",
-          "text": "박지연 씨, 각자 따로 져야 할 책임 항목을 기록 기준으로 다시 정리해 주십시오.",
+          "text": "각자 따로 져야 할 책임 항목을 기록 기준으로 다시 정리해 주십시오.",
           "behaviorHint": "각자 따로 져야 할 책임에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -8658,7 +8658,7 @@
         },
         {
           "id": "judgeq-h-d4-fact_pursuit-b-responsibility_split-v2",
-          "text": "이준호 씨, 각자 따로 져야 할 책임에서 직접 한 일과 추정한 일을 나눠 설명해 주십시오.",
+          "text": "각자 따로 져야 할 책임에서 직접 한 일과 추정한 일을 나눠 설명해 주십시오.",
           "behaviorHint": "각자 따로 져야 할 책임에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -8670,7 +8670,7 @@
         },
         {
           "id": "judgeq-h-d4-fact_pursuit-b-responsibility_split-v3",
-          "text": "이준호 씨, 각자 따로 져야 할 책임 문제에서 상대 주장과 다른 부분이 있다면 구체적으로 답하십시오.",
+          "text": "각자 따로 져야 할 책임 문제에서 상대 주장과 다른 부분이 있다면 구체적으로 답하십시오.",
           "behaviorHint": "각자 따로 져야 할 책임에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -8682,7 +8682,7 @@
         },
         {
           "id": "judgeq-h-d4-fact_pursuit-b-responsibility_split-v4",
-          "text": "이준호 씨, 각자 따로 져야 할 책임 항목을 기록 기준으로 다시 정리해 주십시오.",
+          "text": "각자 따로 져야 할 책임 항목을 기록 기준으로 다시 정리해 주십시오.",
           "behaviorHint": "각자 따로 져야 할 책임에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -8726,7 +8726,7 @@
         },
         {
           "id": "judgeq-h-d4-motive_search-a-responsibility_split-v2",
-          "text": "박지연 씨, 각자 따로 져야 할 책임에서 어떤 부담이나 계산이 있었는지 설명하십시오.",
+          "text": "각자 따로 져야 할 책임에서 어떤 부담이나 계산이 있었는지 설명하십시오.",
           "behaviorHint": "각자 따로 져야 할 책임에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -8738,7 +8738,7 @@
         },
         {
           "id": "judgeq-h-d4-motive_search-a-responsibility_split-v3",
-          "text": "박지연 씨, 각자 따로 져야 할 책임에 대해 숨기거나 늦게 말한 이유가 무엇입니까.",
+          "text": "각자 따로 져야 할 책임에 대해 숨기거나 늦게 말한 이유가 무엇입니까.",
           "behaviorHint": "각자 따로 져야 할 책임에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -8750,7 +8750,7 @@
         },
         {
           "id": "judgeq-h-d4-motive_search-a-responsibility_split-v4",
-          "text": "박지연 씨, 각자 따로 져야 할 책임에 대해 그때 왜 그런 선택을 했는지 답하십시오.",
+          "text": "각자 따로 져야 할 책임에 대해 그때 왜 그런 선택을 했는지 답하십시오.",
           "behaviorHint": "각자 따로 져야 할 책임에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -8794,7 +8794,7 @@
         },
         {
           "id": "judgeq-h-d4-motive_search-b-responsibility_split-v2",
-          "text": "이준호 씨, 각자 따로 져야 할 책임에서 어떤 부담이나 계산이 있었는지 설명하십시오.",
+          "text": "각자 따로 져야 할 책임에서 어떤 부담이나 계산이 있었는지 설명하십시오.",
           "behaviorHint": "각자 따로 져야 할 책임에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -8806,7 +8806,7 @@
         },
         {
           "id": "judgeq-h-d4-motive_search-b-responsibility_split-v3",
-          "text": "이준호 씨, 각자 따로 져야 할 책임에 대해 숨기거나 늦게 말한 이유가 무엇입니까.",
+          "text": "각자 따로 져야 할 책임에 대해 숨기거나 늦게 말한 이유가 무엇입니까.",
           "behaviorHint": "각자 따로 져야 할 책임에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -8818,7 +8818,7 @@
         },
         {
           "id": "judgeq-h-d4-motive_search-b-responsibility_split-v4",
-          "text": "이준호 씨, 각자 따로 져야 할 책임에 대해 그때 왜 그런 선택을 했는지 답하십시오.",
+          "text": "각자 따로 져야 할 책임에 대해 그때 왜 그런 선택을 했는지 답하십시오.",
           "behaviorHint": "각자 따로 져야 할 책임에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -8862,7 +8862,7 @@
         },
         {
           "id": "judgeq-h-d4-empathy_approach-a-responsibility_split-v2",
-          "text": "박지연 씨, 각자 따로 져야 할 책임에서 상대에게 상처를 준 부분을 어떻게 보고 있습니까.",
+          "text": "각자 따로 져야 할 책임에서 상대에게 상처를 준 부분을 어떻게 보고 있습니까.",
           "behaviorHint": "각자 따로 져야 할 책임에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -8874,7 +8874,7 @@
         },
         {
           "id": "judgeq-h-d4-empathy_approach-a-responsibility_split-v3",
-          "text": "박지연 씨, 각자 따로 져야 할 책임 문제에서 두려웠거나 피하고 싶었던 지점이 있었습니까.",
+          "text": "각자 따로 져야 할 책임 문제에서 두려웠거나 피하고 싶었던 지점이 있었습니까.",
           "behaviorHint": "각자 따로 져야 할 책임에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -8886,7 +8886,7 @@
         },
         {
           "id": "judgeq-h-d4-empathy_approach-a-responsibility_split-v4",
-          "text": "박지연 씨, 각자 따로 져야 할 책임에 관해 지금 바로잡고 싶은 말이 있다면 해 주십시오.",
+          "text": "각자 따로 져야 할 책임에 관해 지금 바로잡고 싶은 말이 있다면 해 주십시오.",
           "behaviorHint": "각자 따로 져야 할 책임에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -8930,7 +8930,7 @@
         },
         {
           "id": "judgeq-h-d4-empathy_approach-b-responsibility_split-v2",
-          "text": "이준호 씨, 각자 따로 져야 할 책임에서 상대에게 상처를 준 부분을 어떻게 보고 있습니까.",
+          "text": "각자 따로 져야 할 책임에서 상대에게 상처를 준 부분을 어떻게 보고 있습니까.",
           "behaviorHint": "각자 따로 져야 할 책임에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -8942,7 +8942,7 @@
         },
         {
           "id": "judgeq-h-d4-empathy_approach-b-responsibility_split-v3",
-          "text": "이준호 씨, 각자 따로 져야 할 책임 문제에서 두려웠거나 피하고 싶었던 지점이 있었습니까.",
+          "text": "각자 따로 져야 할 책임 문제에서 두려웠거나 피하고 싶었던 지점이 있었습니까.",
           "behaviorHint": "각자 따로 져야 할 책임에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",
@@ -8954,7 +8954,7 @@
         },
         {
           "id": "judgeq-h-d4-empathy_approach-b-responsibility_split-v4",
-          "text": "이준호 씨, 각자 따로 져야 할 책임에 관해 지금 바로잡고 싶은 말이 있다면 해 주십시오.",
+          "text": "각자 따로 져야 할 책임에 관해 지금 바로잡고 싶은 말이 있다면 해 주십시오.",
           "behaviorHint": "각자 따로 져야 할 책임에 맞춘 재판관 질문. 답변은 같은 angle로 고정한다.",
           "tags": [
             "channel:judge_question",

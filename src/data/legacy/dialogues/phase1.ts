@@ -1,4 +1,4 @@
-import type { DialogueEntry } from '../../types'
+import type { DialogueEntry } from '../../../types'
 
 /** Phase 1: 초기 진술 — A와 B가 서로 끼어들며 핑퐁. */
 export const phase1Dialogues: Omit<DialogueEntry, 'id'>[] = [

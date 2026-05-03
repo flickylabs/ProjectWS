@@ -5,20 +5,21 @@
     {
       "disputeId": "d-1",
       "angleId": "general",
-      "label": "포괄 확인",
-      "description": "오피스텔 방문, 새벽 전화, 영수증 물건을 한 묶음으로 확인한다.",
+      "label": "방문·통화 경위",
+      "description": "오피스텔 방문, 새벽 전화, 영수증 물건을 같은 의심선상에서 확인한다.",
       "keywords": [
         "오피스텔",
         "새벽 전화",
         "영수증",
         "외도 의심",
-        "전체 경위"
+        "방문 경위",
+        "통화 경위"
       ],
       "unlockCondition": {
         "defaultUnlocked": true,
         "evidenceIds": [],
         "witnessIds": [],
-        "notes": "초기부터 열리지만 S5 전에는 방문 대상의 정체를 직접 말하지 않는다."
+        "notes": "기본 해금. 세부 각도는 지정 증거/증인 또는 선행 진행 후 해금하는 것을 권장한다."
       },
       "truthBoundary": {
         "beforeS5MustNotSay": [
@@ -199,15 +200,14 @@
     {
       "disputeId": "d-2",
       "angleId": "general",
-      "label": "포괄 확인",
-      "description": "개인 계좌 목돈 출금, 현금 이동, 배우자 배제 문제를 한 묶음으로 확인한다.",
+      "label": "목돈 출금 경위",
+      "description": "개인 계좌 목돈 출금, 현금 이동, 배우자 배제 문제를 확인한다.",
       "keywords": [
-        "개인 계좌",
-        "출금",
+        "목돈 출금",
         "현금",
-        "목돈",
-        "배우자 동의",
-        "전체 경위"
+        "개인 계좌",
+        "배우자 배제",
+        "자금 이동"
       ],
       "unlockCondition": {
         "defaultUnlocked": false,
@@ -215,7 +215,7 @@
           "e-5"
         ],
         "witnessIds": [],
-        "notes": "d-1이 일정 단계 이상 진행된 뒤 개인 계좌 출금 내역으로 열린다."
+        "notes": "기본 해금. 세부 각도는 지정 증거/증인 또는 선행 진행 후 해금하는 것을 권장한다."
       },
       "truthBoundary": {
         "beforeS5MustNotSay": [
@@ -356,15 +356,15 @@
     {
       "disputeId": "h-d3",
       "angleId": "general",
-      "label": "포괄 확인",
-      "description": "공동 적금 해지, 위임 서류, 투자방 송금, 손실 경위를 한 묶음으로 확인한다.",
+      "label": "적금·송금 경위",
+      "description": "공동 적금 해지, 위임 서류, 투자방 송금, 손실 경위를 차례대로 확인한다.",
       "keywords": [
         "공동 적금",
-        "해지",
         "위임장",
         "투자방",
         "송금",
-        "손실"
+        "손실",
+        "해지"
       ],
       "unlockCondition": {
         "defaultUnlocked": false,
@@ -376,7 +376,7 @@
           "w-2",
           "w-3"
         ],
-        "notes": "d-2 공개 뒤 역공 또는 e-6/e-7 조합으로 열린다."
+        "notes": "기본 해금. 세부 각도는 지정 증거/증인 또는 선행 진행 후 해금하는 것을 권장한다."
       },
       "truthBoundary": {
         "beforeS5MustNotSay": [
@@ -524,15 +524,15 @@
     {
       "disputeId": "h-d4",
       "angleId": "general",
-      "label": "포괄 확인",
+      "label": "책임 순서",
       "description": "숨김, 계좌 확인, 돈 실행, 서류 위반을 한 덩어리로 묶지 않고 분리한다.",
       "keywords": [
-        "선후",
+        "책임",
         "숨김",
         "계좌 확인",
-        "자금 실행",
         "서류 위반",
-        "책임 분리"
+        "돈 실행",
+        "순서"
       ],
       "unlockCondition": {
         "defaultUnlocked": false,
@@ -545,7 +545,7 @@
           "w-2",
           "w-3"
         ],
-        "notes": "d-2와 h-d3가 모두 최소 공개된 뒤 자동 해금된다."
+        "notes": "기본 해금. 세부 각도는 지정 증거/증인 또는 선행 진행 후 해금하는 것을 권장한다."
       },
       "truthBoundary": {
         "beforeS5MustNotSay": [
