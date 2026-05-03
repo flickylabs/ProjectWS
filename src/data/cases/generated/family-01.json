@@ -2035,7 +2035,7 @@
           "stage": 3,
           "revealKey": "restore_context",
           "question": {
-            "text": "원래 비율과 변경 이유를 밝혀 주십시오.",
+            "text": "이전 문서가 있다면 그 시점과 변경 이유를 밝혀 주십시오.",
             "attackVector": "responsibility"
           },
           "label": "이유추궁",
@@ -2404,7 +2404,7 @@
           "stage": 3,
           "revealKey": "restore_context",
           "question": {
-            "text": "형에게 돈의 출처를 숨긴 이유를 밝혀 주십시오.",
+            "text": "형에게 송금 출처를 알리지 않은 이유를 밝혀 주십시오.",
             "attackVector": "responsibility"
           },
           "label": "숨김추궁",
@@ -2775,7 +2775,7 @@
       "investigationResults": {
         "request_original": "어머니 자필 일기장 사진이다. 두 아들과 유서 비율을 두고 오래 고민한 흔적이 있다.",
         "check_metadata": "작성 시점은 유서보다 앞서고 여러 날짜에 걸쳐 이어진다. B가 형을 지키겠다고 한 대목이 확인된다.",
-        "restore_context": "출생 관련 봉인 문장과 유서 비율 변경 이유가 연결될 가능성이 보인다. 사실 확정은 심문에서 다뤄야 한다."
+        "restore_context": "봉인된 가족 사정과 유서 비율 변경 이유가 연결될 가능성이 보인다. 사실 확정은 심문에서 다뤄야 한다."
       },
       "subjectParty": "both",
       "investigationStages": [
@@ -2807,7 +2807,7 @@
             "attackVector": "responsibility"
           },
           "label": "동기복원",
-          "unlockHint": "문장과 시점을 대조하면 B가 무엇을 막으려 했는지 물을 수 있습니다."
+          "unlockHint": "문장과 시점을 대조하면 윤정후 씨에게 무엇을 막으려 했는지 물을 수 있습니다."
         }
       ],
       "partyContext": {
@@ -3944,7 +3944,7 @@
           "e-5"
         ],
         "cost": 1,
-        "discoveryText": "공증사무실 이중 스캔과 원본 유서를 대조하면... 90이 60으로 바뀐 건 자기 몫을 줄인 조작이었다!",
+        "discoveryText": "공증사무실 이중 스캔과 서랍 원본의 비율 방향이 정반대로 어긋난다. 마지막 제출자도 같은 사람이라는 사실이 드러난다. 변경 방향과 동기를 본인에게 추궁할 시점이다.",
         "outputId": "dc-1",
         "resultType": "dossier"
       },
@@ -3955,7 +3955,7 @@
           "e-6"
         ],
         "cost": 1,
-        "discoveryText": "어머니가 90을 남기려 한 이유가 보인다. 20년간 생활비를 대고 형의 부도까지 막아준 것이 윤정후였다.",
+        "discoveryText": "서랍 원본의 비율 방향과 어머니 통장에 누적된 장기 송금 흐름이 같은 인물의 손에서 만난다. 어머니 돈으로만 보였던 출처를 다시 짚어 봐야 한다.",
         "outputId": "dc-2",
         "resultType": "upgrade"
       },
@@ -3966,7 +3966,7 @@
           "e-7"
         ],
         "cost": 1,
-        "discoveryText": "20년 송금 내역과 어머니 일기장을 합치면... 윤정후는 돈과 출생 비밀 두 가지를 모두 떠안고 형을 지켜왔다.",
+        "discoveryText": "어머니 통장의 오래된 흐름과 일기장에 봉인된 사적 기록이 같은 시점을 가리킨다. 윤정후가 무엇을 떠안고 침묵해 왔는지 본인에게 직접 물어야 한다.",
         "outputId": "dc-4",
         "resultType": "dossier"
       },
@@ -3999,7 +3999,7 @@
           "e-7"
         ],
         "cost": 1,
-        "discoveryText": "원본 유서와 어머니 일기장을 대조하면... 60대 40이 아니었을 때 형이 마주해야 했을 진실이 보인다.",
+        "discoveryText": "원본 유서와 어머니 일기장의 시점이 한 흐름으로 묶인다. 비율을 낮춰 가면서까지 막으려 한 것이 무엇인지 본인에게 물어야 한다.",
         "outputId": "dc-3",
         "resultType": "dossier"
       },
@@ -4021,7 +4021,7 @@
           "e-7"
         ],
         "cost": 1,
-        "discoveryText": "형의 '모시고 산 건 나인데'라는 말과 어머니 일기장을 대조하면... 두 형제 모두 어머니 뜻을 자기 방식으로 바꿨다.",
+        "discoveryText": "형의 ‘모시고 산 건 나인데’라는 말과 어머니 일기장의 기록이 서로 다른 어머니의 모습을 가리킨다. 두 사람이 각자 어머니 뜻을 어떻게 받아 적었는지 함께 짚어야 한다.",
         "outputId": "dc-5",
         "resultType": "dossier"
       },

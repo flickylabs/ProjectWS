@@ -378,7 +378,7 @@
             "witnessRef": null,
             "answerability": "wrong_target",
             "lieState": "S1",
-            "reason": "A는 통화 상대를 직접 알지 못하고 의심만 말할 수 있음"
+            "reason": "박지연은 통화 상대를 직접 알지 못하고 의심만 말할 수 있음"
           }
         ],
         "composition": {
@@ -466,7 +466,7 @@
             "witnessRef": null,
             "answerability": "blocked",
             "lieState": "S1",
-            "reason": "A의 hidden dispute가 미해금"
+            "reason": "박지연 관련 hidden dispute가 미해금"
           }
         ],
         "composition": {
@@ -1032,7 +1032,7 @@
             "witnessRef": null,
             "answerability": "wrong_target",
             "lieState": "S1",
-            "reason": "B가 직접 알 수 없는 A hidden dispute"
+            "reason": "이준호가 직접 알 수 없는 박지연 관련 hidden dispute"
           }
         ],
         "composition": {
@@ -1140,7 +1140,7 @@
           "wrongTargetSegments": [],
           "publicOnlySegments": [],
           "mustAvoid": [
-            "범죄 행위는 A"
+            "범죄 행위는 박지연의 위임장 조작"
           ],
           "guardContextPolicy": "strictest_segment"
         },
@@ -1579,7 +1579,7 @@
             "witnessRef": null,
             "answerability": "wrong_target",
             "lieState": "S2",
-            "reason": "A는 돈 출처를 오해했고 직접 지식이 제한됨"
+            "reason": "박지연은 돈 출처를 오해했고 직접 지식이 제한됨"
           }
         ],
         "composition": {
@@ -2734,7 +2734,7 @@
           "publicOnlySegments": [],
           "mustAvoid": [
             "아버지의 사기",
-            "B 피해",
+            "최수민 피해",
             "같은 패턴 반복"
           ],
           "guardContextPolicy": "strictest_segment"
@@ -2795,7 +2795,7 @@
             "witnessRef": null,
             "answerability": "wrong_target",
             "lieState": "S1",
-            "reason": "A는 메시지 선후와 원문을 직접 알지 못함"
+            "reason": "송다은은 메시지 선후와 원문을 직접 알지 못함"
           }
         ],
         "composition": {
@@ -2809,7 +2809,7 @@
           "publicOnlySegments": [],
           "mustAvoid": [
             "예비신랑이 먼저",
-            "B의 거절"
+            "최수민의 거절"
           ],
           "guardContextPolicy": "strictest_segment"
         },
@@ -2901,7 +2901,7 @@
           "mustAvoid": [
             "아버지의 사기",
             "투자 명목 사기",
-            "B 피해"
+            "최수민 피해"
           ],
           "guardContextPolicy": "strictest_segment"
         },
@@ -3609,7 +3609,7 @@
             "witnessRef": "w-3",
             "answerability": "wrong_target",
             "lieState": "S2",
-            "reason": "A는 증인 목격을 반박/수용할 수 있지만 B 피해 사실을 대신 자백할 수 없음"
+            "reason": "송다은은 증인 목격을 반박/수용할 수 있지만 최수민 피해 사실을 대신 자백할 수 없음"
           }
         ],
         "composition": {
@@ -3623,7 +3623,7 @@
           "publicOnlySegments": [],
           "mustAvoid": [
             "아버지의 사기",
-            "B 피해"
+            "최수민 피해"
           ],
           "guardContextPolicy": "strictest_segment"
         },

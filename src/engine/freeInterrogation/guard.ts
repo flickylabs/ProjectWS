@@ -255,10 +255,7 @@ function mapDisclosureGuardResult(result: GuardResult): FreeInterrogationGuardIs
 }
 
 function shouldScanLexemes(context: FreeInterrogationGuardContext): boolean {
-  return context.lieState === undefined ||
-    context.lieState === 'S0' ||
-    context.lieState === 'S1' ||
-    context.lieState === 'S2'
+  return context.lieState === undefined || context.lieState !== 'S5'
 }
 
 function buildLexemeRules(policy: DisclosurePolicy | null, context: FreeInterrogationGuardContext): LexemeRule[] {

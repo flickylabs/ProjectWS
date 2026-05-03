@@ -24,8 +24,8 @@
         "speaker": "target_or_system"
       },
       "gameplay_help": {
-        "intent": "public_info",
-        "route": "public_answer",
+        "intent": "gameplay_help",
+        "route": "gameplay_help",
         "costPolicy": "no_cost",
         "turnPolicy": "no_advance",
         "speaker": "system"
@@ -231,7 +231,7 @@
       "Allow the judge/system to suggest asking the proper party only when that party is public and not itself a spoiler"
     ],
     "doNot": [
-      "Make A confess B-only facts",
+      "Make the current target confess facts only another party can know",
       "Make 피해자가 가해자의 행위를 대신 자백하게 하기",
       "Reveal witness-only knowledge before witness is called"
     ]

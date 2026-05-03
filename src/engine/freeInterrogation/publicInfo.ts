@@ -81,6 +81,10 @@ export function buildFreeInterrogationNoTokenText(): string {
   return '조사권이 부족합니다. 공개 정보나 사건 범위 확인은 가능하지만, 유효한 심문은 조사권 1개가 필요합니다.'
 }
 
+export function buildFreeInterrogationGameplayHelp(): string {
+  return '자유 질문은 현재 심문 중인 인물에게 직접 묻는 기능입니다. 사건의 사실, 동기, 감정, 공개된 증거를 기준으로 질문해 주세요. 숨겨진 정답이나 아직 열리지 않은 증거를 요구하면 답변하지 않습니다.'
+}
+
 const LIE_STATE_LABELS: Record<string, string> = {
   S0: '부인',
   S1: '회피',

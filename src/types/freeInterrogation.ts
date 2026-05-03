@@ -14,6 +14,7 @@ export type FreeInterrogationIntentId =
   | 'pre_verdict_summary'
   | 'off_topic'
   | 'public_info'
+  | 'gameplay_help'
   | 'leak_probe'
   | 'unmapped'
 
@@ -23,6 +24,7 @@ export type FreeInterrogationResolutionRoute =
   | 'phase_redirect'
   | 'off_topic_redirect'
   | 'public_answer'
+  | 'gameplay_help'
   | 'guard_fallback'
 
 export type FreeInterrogationCostPolicy = 'consume' | 'no_cost'

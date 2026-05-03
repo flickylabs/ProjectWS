@@ -153,7 +153,7 @@ export function getScriptedAngleJudgeQuestionOptions(input: {
   const bundle = readBundle(judgeQuestionMods, input.caseId, 'judge_questions')
   if (!bundle?.judgeQuestions?.length) return []
 
-  const limit = Math.max(1, input.limit ?? 5)
+  const limit = Math.max(1, input.limit ?? 3)
   const allowed = new Set((input.allowedAngles ?? []).filter(Boolean))
   const restrictByAngle = allowed.size > 0
   const candidates: ScriptedAngleQuestionOption[] = []

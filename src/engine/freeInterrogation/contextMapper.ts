@@ -21,6 +21,7 @@ const INTENT_TO_QUESTION_TYPE: Record<FreeInterrogationIntentId, FreeInterrogati
   pre_verdict_summary: 'fact_pursuit',
   off_topic: null,
   public_info: null,
+  gameplay_help: null,
   leak_probe: null,
   unmapped: null,
 }
@@ -62,7 +63,7 @@ function buildMapping(
     return emptyMapping()
   }
 
-  const target = resolveTarget(context)
+  const target = resolveTarget(context, intent.raw)
   if (!target) {
     return { ...emptyMapping(), interrogationType }
   }
@@ -124,7 +125,10 @@ function emptyMapping(): FreeInterrogationMapping {
   }
 }
 
-function resolveTarget(context: FreeInterrogationRuntimeContext): PartyId | null {
+function resolveTarget(context: FreeInterrogationRuntimeContext, raw: string): PartyId | null {
+  const addressed = resolveAddressedParty(raw, context)
+  if (addressed) return addressed
+
   if (context.target) return context.target
 
   const active = context.activeDisputeId
@@ -132,6 +136,20 @@ function resolveTarget(context: FreeInterrogationRuntimeContext): PartyId | null
   if (context.agentA.lieStateMap[active]) return 'a'
   if (context.agentB.lieStateMap[active]) return 'b'
   return null
+}
+
+function resolveAddressedParty(raw: string, context: FreeInterrogationRuntimeContext): PartyId | null {
+  const partyA = context.caseData.duo.partyA.name
+  const partyB = context.caseData.duo.partyB.name
+  if (isDirectAddress(raw, partyA)) return 'a'
+  if (isDirectAddress(raw, partyB)) return 'b'
+  return null
+}
+
+function isDirectAddress(raw: string, name: string): boolean {
+  if (!name.trim()) return false
+  const escaped = name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+  return new RegExp(`(^|[\\s,])${escaped}\\s*(씨|님|에게|한테|께|야|아|,)`).test(raw)
 }
 
 function resolveDisputeId(

@@ -14,6 +14,7 @@ export type FreeInterrogationIntent =
   | 'pre_verdict_summary'
   | 'off_topic'
   | 'public_info'
+  | 'gameplay_help'
   | 'leak_probe'
   | 'unmapped'
 

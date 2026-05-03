@@ -18,6 +18,7 @@
       "pre_verdict_summary",
       "off_topic",
       "public_info",
+      "gameplay_help",
       "leak_probe",
       "unmapped"
     ],
@@ -60,6 +61,7 @@
       "phase_redirect",
       "off_topic_redirect",
       "public_answer",
+      "gameplay_help",
       "guard_fallback"
     ],
     "costPolicy": [

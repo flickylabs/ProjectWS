@@ -78,7 +78,7 @@ export function buildGeneratedQuestionAngleOptions(
   context: QuestionAngleRuntimeContext & { questionType: string; limit?: number; seed?: number },
 ): GeneratedQuestionAngleOption[] {
   const caseId = normalizeCaseKey(context.caseId)
-  const limit = Math.max(1, context.limit ?? 5)
+  const limit = Math.max(1, context.limit ?? 3)
   const partyName = resolvePartyName(context)
   const definitions = getQuestionAngleDefinitions(caseId, context.disputeId)
   const unlocked = new Set(getUnlockedQuestionAngleIds(context))
@@ -118,9 +118,9 @@ function getGenericQuestionTemplates(questionType: string, definition: QuestionA
 
   if (questionType === 'empathy_approach') {
     return [
-      `{name} 씨, ${label}을 꺼내기 어려웠다면 그때의 감정부터 말씀해 주십시오.`,
+      `{name} 씨, ${label}을 떠올릴 때 가장 먼저 걸리는 마음부터 차분히 말씀해 주십시오.`,
       `${description} 그 과정에서 마음이 흔들린 순간이 있었습니까.`,
-      `${label} 때문에 상대에게 상처를 준 부분을 지금은 어떻게 보고 있습니까.`,
+      `${label}이 상대에게 어떻게 받아들여졌는지, 지금은 어느 부분을 먼저 설명하고 싶습니까.`,
       `${label}을 늦게 말한 이유가 두려움 때문이었는지 설명해 주십시오.`,
       `{name} 씨, ${label}과 관련해 지금 바로잡고 싶은 말이 있다면 말씀하십시오.`,
     ]

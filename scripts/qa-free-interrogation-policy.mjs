@@ -5,6 +5,7 @@ import {
 import { mapFreeInterrogationContext } from '../src/engine/freeInterrogation/contextMapper.ts'
 import {
   buildFreeInterrogationOffTopicRedirect,
+  buildFreeInterrogationGameplayHelp,
   buildFreeInterrogationPublicAnswer,
   resolveFreeInterrogationPublicSpeaker,
 } from '../src/engine/freeInterrogation/publicInfo.ts'
@@ -56,7 +57,7 @@ const context = {
   },
 }
 
-const noCostPolicyIntents = new Set(['off_topic', 'public_info', 'leak_probe'])
+const noCostPolicyIntents = new Set(['off_topic', 'public_info', 'gameplay_help', 'leak_probe'])
 const genericOutputBans = ['해당 장소', '관련된 자료', '그런 일', '말씀드릴 수 없습니다', '그렇게 단정할 수 없습니다', '답할 수 있는 범위']
 const genericFallbackBans = ['그 질문', '답하기 어렵습니다']
 const failures = []
@@ -199,6 +200,16 @@ function deriveResolution(item, policyResult, runtimeContext) {
       turnPolicy: 'no_advance',
       speaker: resolveFreeInterrogationPublicSpeaker(mapped.raw, runtimeContext),
       text: buildFreeInterrogationPublicAnswer(mapped.raw, runtimeContext),
+    }
+  }
+
+  if (mapped.intent === 'gameplay_help') {
+    return {
+      route: 'gameplay_help',
+      costPolicy: 'no_cost',
+      turnPolicy: 'no_advance',
+      speaker: 'system',
+      text: buildFreeInterrogationGameplayHelp(),
     }
   }
 

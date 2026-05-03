@@ -3,6 +3,7 @@ import { mapFreeInterrogationContext } from './contextMapper'
 import { selectFreeInterrogationFallbackText } from './fallback'
 import {
   buildFreeInterrogationOffTopicRedirect,
+  buildFreeInterrogationGameplayHelp,
   buildFreeInterrogationPublicAnswer,
   resolveFreeInterrogationPublicSpeaker,
 } from './publicInfo'
@@ -72,6 +73,19 @@ export async function resolveFreeInterrogation(
       intent: mapped,
       fallbackText: buildFreeInterrogationPublicAnswer(mapped.raw, context),
       reason: 'public_info',
+    }
+  }
+
+  if (mapped.intent === 'gameplay_help') {
+    return {
+      status: 'fallback',
+      route: 'gameplay_help',
+      costPolicy: 'no_cost',
+      turnPolicy: 'no_advance',
+      dialogueSpeaker: 'system',
+      intent: mapped,
+      fallbackText: buildFreeInterrogationGameplayHelp(),
+      reason: 'gameplay_help',
     }
   }
 
@@ -153,6 +167,7 @@ function buildFallbackContext(
     mapped.intent !== 'evidence_query' &&
     mapped.intent !== 'off_topic' &&
     mapped.intent !== 'public_info' &&
+    mapped.intent !== 'gameplay_help' &&
     mapped.intent !== 'leak_probe' &&
     mapped.confidence >= MIN_FALLBACK_CONTEXT_CONFIDENCE
   const fallbackDisputeId = mapped.mapped.disputeId ?? (canUseAmbientDispute ? context.activeDisputeId ?? null : null)
@@ -172,6 +187,7 @@ function buildFallbackContext(
 function resolveFallbackReason(mapped: FreeInterrogationResolution['intent']): string {
   if (mapped.intent === 'off_topic') return 'off_topic'
   if (mapped.intent === 'public_info') return 'public_info'
+  if (mapped.intent === 'gameplay_help') return 'gameplay_help'
   if (mapped.intent === 'leak_probe') return 'leak_probe'
   if (mapped.intent === 'unmapped') return 'unmapped_intent'
   if (mapped.confidence < MIN_FALLBACK_CONTEXT_CONFIDENCE) return 'low_confidence_mapping'
