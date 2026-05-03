@@ -6,6 +6,11 @@ import type {
   FreeInterrogationQuestionType,
   FreeInterrogationRuntimeContext,
 } from '../../types/freeInterrogation'
+import {
+  classifyQuestionAnglesFromText,
+  GENERAL_QUESTION_ANGLE,
+  getUnlockedQuestionAngleIds,
+} from '../questionAngleEngine.ts'
 
 const INTENT_TO_QUESTION_TYPE: Record<FreeInterrogationIntentId, FreeInterrogationQuestionType | null> = {
   fact_pursuit: 'fact_pursuit',
@@ -76,6 +81,7 @@ function buildMapping(
       disputeId: null,
       interrogationType,
       evidenceRef,
+      angleRefs: [],
     }
   }
 
@@ -84,7 +90,28 @@ function buildMapping(
     disputeId,
     interrogationType,
     evidenceRef,
+    angleRefs: resolveSafeAngleRefs(context, target, disputeId, intent.raw, evidenceRef),
   }
+}
+
+function resolveSafeAngleRefs(
+  context: FreeInterrogationRuntimeContext,
+  target: PartyId,
+  disputeId: string,
+  raw: string,
+  evidenceRef: string | null,
+): string[] {
+  const classified = classifyQuestionAnglesFromText(context.caseId, disputeId, raw, evidenceRef)
+  const unlocked = new Set(getUnlockedQuestionAngleIds({
+    caseId: context.caseId,
+    caseData: context.caseData,
+    disputeId,
+    target,
+    evidenceStates: context.evidenceStates,
+    calledWitnesses: context.calledWitnesses,
+  }))
+  const safe = classified.filter((angleId) => angleId === GENERAL_QUESTION_ANGLE || unlocked.has(angleId))
+  return safe.length > 0 ? [...new Set(safe)] : [GENERAL_QUESTION_ANGLE]
 }
 
 function emptyMapping(): FreeInterrogationMapping {
@@ -93,6 +120,7 @@ function emptyMapping(): FreeInterrogationMapping {
     disputeId: null,
     interrogationType: null,
     evidenceRef: null,
+    angleRefs: [],
   }
 }
 

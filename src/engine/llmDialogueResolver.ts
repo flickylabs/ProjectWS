@@ -161,6 +161,7 @@ type FreeInterrogationQuestionMeta = {
   rawText: string
   intent?: FreeInterrogationGuardContext['intent']
   evidenceRef?: string | null
+  angleRefs?: string[]
 }
 
 function getFreeInterrogationMeta(action: PlayerAction): FreeInterrogationQuestionMeta | null {
@@ -171,6 +172,11 @@ function getFreeInterrogationMeta(action: PlayerAction): FreeInterrogationQuesti
 
 function getFreeInterrogationQuestionText(action: PlayerAction): string | null {
   return getFreeInterrogationMeta(action)?.rawText ?? null
+}
+
+function getProvidedJudgeQuestionText(action: PlayerAction): string | null {
+  if (action.type !== 'question') return null
+  return getFreeInterrogationQuestionText(action) ?? action.judgeQuestionText ?? null
 }
 
 async function applyFreeInterrogationFallbackToResolvedDialogue(
@@ -340,7 +346,7 @@ export async function resolveLLMDialogue(
   const agentKey = resolveAgentKey(action, store, target)
 
   // ── 재판관 질문: 폴백용 템플릿 (LLM이 생성 못 하면 사용) ──
-  const fallbackJudgeQuestion = getFreeInterrogationQuestionText(action)
+  const fallbackJudgeQuestion = getProvidedJudgeQuestionText(action)
     ?? buildJudgeQuestion(action, caseData, target, dispute)
 
   // ── interrogationDepth: 현재 쟁점에 대한 질문 횟수 ──
@@ -2182,6 +2188,10 @@ function tryScriptedDialoguePath(
     scripted = getScriptedInterrogation(
       caseId, target, disputeId, lieEntry.currentState, action.questionType,
       targetProfile.archetype, targetAgent.emotionalState?.phase,
+      [...new Set([
+        ...((action as { answerAngles?: string[] }).answerAngles ?? []),
+        ...(((action as { answerAngle?: string }).answerAngle) ? [(action as { answerAngle?: string }).answerAngle as string] : []),
+      ])],
     )
   } else if (action.type === 'evidence_present' && 'evidenceId' in action) {
     const ev = caseData.evidence.find(e => e.id === action.evidenceId)
@@ -2379,7 +2389,7 @@ async function tryBlueprintPath(
   const interrogationDepth = disputeId
     ? (store.interrogationHistory[target]?.[disputeId]?.questionTypes.length ?? 0) + 1
     : 1
-  const judgeQuestion = getFreeInterrogationQuestionText(action)
+  const judgeQuestion = getProvidedJudgeQuestionText(action)
     ?? generateJudgeQuestion(questionType, caseData, target, disputeId, interrogationDepth)
 
   // V2 경로: claimAtoms가 있으면 atom 기반 프롬프트

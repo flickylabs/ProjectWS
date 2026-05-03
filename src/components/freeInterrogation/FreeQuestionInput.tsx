@@ -67,6 +67,7 @@ export default function FreeQuestionInput({
         agentA: state.agentA,
         agentB: state.agentB,
         evidenceStates: state.evidenceStates,
+        calledWitnesses: state.calledWitnesses,
       })
 
       if (result.costPolicy === 'consume' && useGameStore.getState().resources.investigationTokens < 1) {

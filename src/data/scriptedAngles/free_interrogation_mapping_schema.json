@@ -1,0 +1,199 @@
+{
+  "schemaVersion": 1,
+  "schemaName": "free_interrogation_mapping_schema",
+  "description": "자유 질문을 target, dispute, angle, intent, 증거/증인, lieState, 해금 상태, 공개 가능성 단위로 분해한 결과 스키마",
+  "enums": {
+    "target": [
+      "a",
+      "b",
+      "system",
+      null
+    ],
+    "intent": [
+      "fact_pursuit",
+      "motive_search",
+      "empathy_approach",
+      "evidence_query",
+      "relation_query",
+      "pre_verdict_summary",
+      "off_topic",
+      "public_info",
+      "leak_probe",
+      "unmapped"
+    ],
+    "intentSubtype": [
+      "interrogation",
+      "public_profile",
+      "public_case_summary",
+      "gameplay_help",
+      "courtroom_meta",
+      "direct_core_truth_probe",
+      "locked_evidence_probe",
+      "prompt_exfiltration",
+      null
+    ],
+    "questionType": [
+      "fact_pursuit",
+      "motive_search",
+      "empathy_approach",
+      null
+    ],
+    "answerability": [
+      "answerable",
+      "partial",
+      "blocked",
+      "wrong_target",
+      "public_only"
+    ],
+    "lieState": [
+      "S0",
+      "S1",
+      "S2",
+      "S3",
+      "S4",
+      "S5",
+      null
+    ],
+    "route": [
+      "case_dispatch",
+      "mapping_fallback",
+      "phase_redirect",
+      "off_topic_redirect",
+      "public_answer",
+      "guard_fallback"
+    ],
+    "costPolicy": [
+      "consume",
+      "no_cost"
+    ],
+    "turnPolicy": [
+      "advance",
+      "no_advance"
+    ],
+    "compositionStrategy": [
+      "single_fragment",
+      "integrated_answer",
+      "ordered_multi_dispute",
+      "answer_then_boundary",
+      "public_answer",
+      "guarded_fallback"
+    ]
+  },
+  "segmentSchema": {
+    "rawSpan": "string: 원문 중 이 segment가 담당하는 범위",
+    "normalizedSpan": "string: 공백/기호를 정규화한 범위",
+    "target": "a|b|system|null: 이 segment의 직접 질문 대상",
+    "mentionedTarget": "a|b|null: 문장 안에 명시된 대상",
+    "knowledgeOwner": "a|b|witness|system|unknown: 실제 정보를 가진 주체",
+    "disputeId": "string|null",
+    "candidateDisputeIds": [
+      "string"
+    ],
+    "angleId": "string: primary angle. 복수면 첫 번째 대표 angle",
+    "angleRefs": [
+      "string: 모든 감지 angle"
+    ],
+    "questionType": "fact_pursuit|motive_search|empathy_approach|null",
+    "intent": "FreeInterrogationIntentId",
+    "evidenceRef": "string|null: 해금되어 답변 근거로 쓸 수 있는 증거",
+    "mentionedEvidenceRef": "string|null: 잠겨 있더라도 사용자가 암시/언급한 증거",
+    "evidenceState": "unlocked|presented|investigated|locked|unknown|null",
+    "witnessRef": "string|null",
+    "witnessState": "called|known|locked|unknown|null",
+    "lieState": "S0~S5|null",
+    "unlockStatus": "visible|hidden_unlocked|hidden_locked|evidence_locked|witness_locked|not_applicable",
+    "answerability": "answerable|partial|blocked|wrong_target|public_only",
+    "allowedDisclosure": [
+      "string: 이 segment에서 말해도 되는 surface/진실 범위"
+    ],
+    "forbiddenDisclosure": [
+      "string: 이 segment에서 금지되는 진실어/동의어"
+    ],
+    "reason": "string: 매핑 및 answerability 판정 이유",
+    "confidence": "number: 0~1"
+  },
+  "mappingResult": {
+    "target": "a",
+    "intent": "fact_pursuit",
+    "intentSubtype": "interrogation",
+    "confidence": 0.9,
+    "primaryDisputeId": "d-1",
+    "segments": [
+      {
+        "rawSpan": "오피스텔에 왜 갔습니까",
+        "normalizedSpan": "오피스텔에 왜 갔습니까",
+        "target": "b",
+        "mentionedTarget": "b",
+        "knowledgeOwner": "b",
+        "disputeId": "d-1",
+        "candidateDisputeIds": [
+          "d-1"
+        ],
+        "angleId": "visit_route",
+        "angleRefs": [
+          "visit_route"
+        ],
+        "questionType": "fact_pursuit",
+        "intent": "fact_pursuit",
+        "evidenceRef": "e-2",
+        "mentionedEvidenceRef": "e-2",
+        "evidenceState": "unlocked",
+        "witnessRef": null,
+        "witnessState": null,
+        "answerability": "partial",
+        "lieState": "S2",
+        "unlockStatus": "visible",
+        "allowedDisclosure": [
+          "오피스텔 방문",
+          "퇴근 뒤 동선",
+          "외도라고 단정할 수 없음"
+        ],
+        "forbiddenDisclosure": [
+          "친형",
+          "조카",
+          "돌봄",
+          "형의 오피스텔"
+        ],
+        "reason": "해당 angle은 증거가 해금되어 부분 답변 가능하지만 S5 전 핵심 가족 사정은 금지",
+        "confidence": 0.9
+      }
+    ],
+    "composition": {
+      "strategy": "integrated_answer",
+      "dominantSpeaker": "b",
+      "answerableAngles": [
+        "visit_route"
+      ],
+      "partialAngles": [
+        "visit_route"
+      ],
+      "blockedAngles": [
+        "family_items"
+      ],
+      "wrongTargetSegments": [],
+      "publicOnlySegments": [],
+      "mustAvoid": [
+        "친형",
+        "조카"
+      ],
+      "allowedTruthScope": [
+        "d-1:visit_route:surface"
+      ],
+      "guardContextPolicy": "strictest_segment"
+    },
+    "resolution": {
+      "route": "case_dispatch",
+      "costPolicy": "consume",
+      "turnPolicy": "advance",
+      "reason": "mapped_interrogation"
+    }
+  },
+  "validationRules": [
+    "segments가 비어 있으면 route는 public_answer, off_topic_redirect, guard_fallback, mapping_fallback 중 하나여야 한다.",
+    "answerability=answerable인 segment는 disputeId, angleId, questionType, lieState가 모두 null이 아니어야 한다.",
+    "answerability=blocked인 segment는 forbiddenDisclosure 또는 reason을 반드시 포함해야 한다.",
+    "mentionedEvidenceRef가 있고 evidenceState=locked이면 evidenceRef는 null이어도 되지만 mentionedEvidenceRef는 보존한다.",
+    "S5 segment의 allowedDisclosure는 해당 disputeId/angleId 범위에 한정한다.",
+    "composition.mustAvoid는 모든 segment의 forbiddenDisclosure 합집합이어야 한다."
+  ]
+}

@@ -38,6 +38,7 @@ export interface FreeInterrogationMapping {
   disputeId: string | null
   interrogationType: FreeInterrogationQuestionType | null
   evidenceRef: string | null
+  angleRefs?: string[]
 }
 
 export interface FreeInterrogationIntent {
@@ -56,6 +57,7 @@ export interface FreeInterrogationRuntimeContext {
   agentA: AgentState
   agentB: AgentState
   evidenceStates: Record<string, { unlocked?: boolean; investigatedActions?: string[]; presented?: boolean }>
+  calledWitnesses?: string[]
 }
 
 export interface FreeInterrogationActionMeta {
@@ -63,6 +65,7 @@ export interface FreeInterrogationActionMeta {
   intent: FreeInterrogationIntentId
   confidence: number
   evidenceRef?: string | null
+  angleRefs?: string[]
 }
 
 export interface FreeInterrogationFallbackContext {
@@ -92,6 +95,8 @@ export interface FreeInterrogationResolution {
     questionType: FreeInterrogationQuestionType
     target: PartyId
     disputeId: string
+    answerAngle?: string
+    answerAngles?: string[]
     freeInterrogation: FreeInterrogationActionMeta
   }
   fallbackText?: string

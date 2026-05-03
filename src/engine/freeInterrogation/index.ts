@@ -117,11 +117,14 @@ export async function resolveFreeInterrogation(
         questionType,
         target: actionTarget,
         disputeId: actionDisputeId,
+        answerAngle: mapped.mapped.angleRefs?.[0],
+        answerAngles: mapped.mapped.angleRefs,
         freeInterrogation: {
           rawText: mapped.raw,
           intent: mapped.intent,
           confidence: mapped.confidence,
           evidenceRef: mapped.mapped.evidenceRef,
+          angleRefs: mapped.mapped.angleRefs,
         },
       },
     }

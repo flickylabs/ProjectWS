@@ -87,7 +87,17 @@ export type MediationChoice =
   | 'fact_first_solution_later'
 
 export type PlayerAction =
-  | { type: 'question'; questionType: QuestionType; target: PartyId; disputeId: string; freeInterrogation?: FreeInterrogationActionMeta }
+  | {
+      type: 'question'
+      questionType: QuestionType
+      target: PartyId
+      disputeId: string
+      judgeQuestionText?: string
+      scriptedQuestionId?: string
+      answerAngle?: string
+      answerAngles?: string[]
+      freeInterrogation?: FreeInterrogationActionMeta
+    }
   | { type: 'trust_action'; actionType: TrustActionType; target: PartyId }
   | { type: 'skill'; skillType: SkillType; target?: PartyId; disputeId?: string }
   | { type: 'evidence_present'; evidenceId: string; target: PartyId }

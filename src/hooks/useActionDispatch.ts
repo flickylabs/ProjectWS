@@ -1062,6 +1062,7 @@ async function handleQuestion(action: Extract<PlayerAction, { type: 'question' }
   const freeInterrogation = (action as typeof action & { freeInterrogation?: { rawText?: string } }).freeInterrogation
   const isFreeInterrogation = Boolean(freeInterrogation?.rawText)
   const judgeQuestionText = freeInterrogation?.rawText
+    ?? action.judgeQuestionText
     ?? buildQuestionText(action.questionType, action.target, action.disputeId)
   // [감정 과부하 lockout] 차단 만료 turn 까지 질문 거부 — 메시지 1회만 출력
   const lockoutUntil = state.emotionalLockoutUntil?.[action.target] ?? 0
@@ -2732,8 +2733,8 @@ function applyTrustEffect(actionType: string, target: PartyId) {
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 const FACT_POOL_SOFT = [
-  '${myName} 씨, ${topic} 당시 처음 확인한 사실부터 차례대로 말씀해 주십시오.',
-  '${myName} 씨, ${topic}에 대해 처음 어떻게 알게 되었는지 경위를 설명해 주십시오.',
+  '${myName} 씨, ${topic} 관련 실제 사실들을 차례대로 말씀해 주십시오.',
+  '${myName} 씨, ${topic}에 대해 상대측이 의심을 시작하게 된 경위를 설명해 주십시오.',
   '${myName} 씨, ${topic} 직전에는 어떤 일이 있었습니까?',
   '${myName} 씨, ${topic} 당시 옆에 있었거나 내용을 들은 사람이 있었습니까?',
   '${myName} 씨, ${topic} 이후에 누구에게 먼저 말했는지 말씀해 주십시오.',
@@ -2741,7 +2742,7 @@ const FACT_POOL_SOFT = [
   '${myName} 씨, ${topic}에서 시간 순서가 중요합니다. 먼저 일어난 일부터 짚어 주십시오.',
   '${myName} 씨, ${topic} 관련해서 확인할 수 있는 메시지나 계좌 기록이 있습니까?',
   '${myName} 씨, ${topic}에 대해 ${opName} 씨의 말과 다른 부분이 있습니다. 어느 쪽이 사실입니까?',
-  '${myName} 씨, ${topic} 당시 본인이 직접 한 행동만 분명히 말씀해 주십시오.',
+  '${myName} 씨, ${topic} 관련 상대측이 문제 삼는 내용들에 대해 상세하게 말씀해 주십시오.',
 ]
 const FACT_POOL_HARD = [
   '${myName} 씨, ${topic}에 대한 말씀이 앞뒤가 맞지 않습니다. 지금 확인된 사실만 답하십시오.',
@@ -2807,6 +2808,17 @@ const EMPATHY_POOL_HARD = [
 function buildQuestionText(type: QuestionType, target: PartyId, disputeId: string): string {
   const s = useGameStore.getState()
   if (!s.caseData) return '말씀해 주십시오.'
+  const history = s.interrogationHistory?.[target]?.[disputeId]
+  const depth = Math.min(Math.max((history?.questionTypes?.length ?? 0) + 1, 1), 4)
+  const scriptedJudge = getScriptedJudgeQuestion(
+    normalizeCaseKey(s.caseData.caseId ?? ''),
+    disputeId,
+    type,
+    depth,
+    target,
+  )
+  if (scriptedJudge?.text) return scriptedJudge.text
+
   const myName = target === 'a' ? s.caseData.duo.partyA.name : s.caseData.duo.partyB.name
   const opName = target === 'a' ? s.caseData.duo.partyB.name : s.caseData.duo.partyA.name
   const dispute = s.caseData.disputes.find((d) => d.id === disputeId)

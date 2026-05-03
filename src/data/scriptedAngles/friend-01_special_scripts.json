@@ -1,0 +1,1907 @@
+{
+  "schemaVersion": 1,
+  "caseId": "friend-01",
+  "confessions": [
+    {
+      "id": "confession-d-1-b-emotion",
+      "party": "b",
+      "disputeId": "d-1",
+      "route": "emotion",
+      "statementType": "truth_confession",
+      "preConfession": "압박 끝에 최수민은 기록만 남으면 또 악역이 된다고 말한다.",
+      "confessionMain": "9일간의 연락은 집착이 아니었습니다. 송다은 아버지가 예비신랑에게 돈 문제를 꺼내는 흐름을 보고, 결혼 전에 경고하려고 연락했습니다.",
+      "postConfession": "다만 다은이에게 직접 말하지 않고 우회한 방식은 제 책임입니다.",
+      "supportCondition": {
+        "requiredEvidence": [
+          "e-1",
+          "e-7"
+        ],
+        "routeReadiness": "emotion",
+        "notes": "S5는 해당 쟁점 지원 조건과 route readiness가 모두 충족될 때만 사용한다."
+      },
+      "tags": [
+        "channel:confession",
+        "party:b",
+        "disputeId:d-1",
+        "route:emotion",
+        "lieState:S5",
+        "reveal:full"
+      ]
+    },
+    {
+      "id": "confession-d-1-b-trust",
+      "party": "b",
+      "disputeId": "d-1",
+      "route": "trust",
+      "statementType": "truth_confession",
+      "preConfession": "재판관이 의도와 방식을 분리하자 최수민의 목소리가 낮아진다.",
+      "confessionMain": "제가 하려던 말은 유혹이 아니라 경고였습니다. 다은이에게 바로 말할 수 없어서 예비신랑에게 남긴 연락이었습니다.",
+      "postConfession": "늦게 말한 탓에 다은이가 받은 상처까지 부정하지 않겠습니다.",
+      "supportCondition": {
+        "requiredEvidence": [
+          "e-1",
+          "e-7"
+        ],
+        "routeReadiness": "trust",
+        "notes": "S5는 해당 쟁점 지원 조건과 route readiness가 모두 충족될 때만 사용한다."
+      },
+      "tags": [
+        "channel:confession",
+        "party:b",
+        "disputeId:d-1",
+        "route:trust",
+        "lieState:S5",
+        "reveal:full"
+      ]
+    },
+    {
+      "id": "confession-d-2-b-emotion",
+      "party": "b",
+      "disputeId": "d-2",
+      "route": "emotion",
+      "statementType": "victim_confirmation",
+      "preConfession": "메시지 원본이 제시되자 최수민이 짧게 숨을 삼킨다.",
+      "confessionMain": "김태윤 씨가 먼저 선 넘는 메시지를 보냈고 저는 거절했습니다. 제 답장을 호응으로 자르면 순서가 완전히 바뀝니다.",
+      "postConfession": "제가 원본을 바로 말하지 않은 책임은 있지만, 선을 넘은 주체까지 바뀌면 안 됩니다.",
+      "supportCondition": {
+        "requiredEvidence": [
+          "e-4"
+        ],
+        "routeReadiness": "emotion",
+        "notes": "S5는 해당 쟁점 지원 조건과 route readiness가 모두 충족될 때만 사용한다."
+      },
+      "tags": [
+        "channel:confession",
+        "party:b",
+        "disputeId:d-2",
+        "route:emotion",
+        "lieState:S5",
+        "reveal:full"
+      ]
+    },
+    {
+      "id": "confession-d-2-b-trust",
+      "party": "b",
+      "disputeId": "d-2",
+      "route": "trust",
+      "statementType": "victim_confirmation",
+      "preConfession": "재판관이 피해와 침묵을 구분하자 최수민이 원본을 내민다.",
+      "confessionMain": "그 메시지는 제가 끌어낸 게 아닙니다. 저는 받아준 게 아니라 멈추라고 답했습니다.",
+      "postConfession": "이 부분은 제 죄를 고백하는 게 아니라, 잘린 순서를 바로잡는 진술입니다.",
+      "supportCondition": {
+        "requiredEvidence": [
+          "e-4"
+        ],
+        "routeReadiness": "trust",
+        "notes": "S5는 해당 쟁점 지원 조건과 route readiness가 모두 충족될 때만 사용한다."
+      },
+      "tags": [
+        "channel:confession",
+        "party:b",
+        "disputeId:d-2",
+        "route:trust",
+        "lieState:S5",
+        "reveal:full"
+      ]
+    },
+    {
+      "id": "confession-d-3-b-emotion",
+      "party": "b",
+      "disputeId": "d-3",
+      "route": "emotion",
+      "statementType": "truth_confirmation",
+      "preConfession": "아버지 문자와 대조표가 겹치자 최수민의 말이 더 평평해진다.",
+      "confessionMain": "송다은 아버지가 예비신랑에게 돈 얘기를 꺼냈고, 저는 그 흐름을 알아봤습니다. 예전에 본 방식과 닮아 있어서 결혼 전에 막으려 했습니다.",
+      "postConfession": "정확한 과거 피해는 d-4에서 따로 확인해야 합니다.",
+      "supportCondition": {
+        "requiredEvidence": [
+          "e-5"
+        ],
+        "routeReadiness": "emotion",
+        "notes": "S5는 해당 쟁점 지원 조건과 route readiness가 모두 충족될 때만 사용한다."
+      },
+      "tags": [
+        "channel:confession",
+        "party:b",
+        "disputeId:d-3",
+        "route:emotion",
+        "lieState:S5",
+        "reveal:full"
+      ]
+    },
+    {
+      "id": "confession-d-3-b-trust",
+      "party": "b",
+      "disputeId": "d-3",
+      "route": "trust",
+      "statementType": "truth_confirmation",
+      "preConfession": "재판관이 추측과 확인을 분리하자 최수민이 문자 순서를 짚는다.",
+      "confessionMain": "처음엔 저도 단정하지 않았습니다. 그런데 금전성 문구와 비밀 요청이 겹치면서, 그냥 넘기면 안 된다고 판단했습니다.",
+      "postConfession": "그래서 연락의 의도는 d-1과 연결되지만, 이 쟁점의 핵심은 아버지의 현재 접근입니다.",
+      "supportCondition": {
+        "requiredEvidence": [
+          "e-5"
+        ],
+        "routeReadiness": "trust",
+        "notes": "S5는 해당 쟁점 지원 조건과 route readiness가 모두 충족될 때만 사용한다."
+      },
+      "tags": [
+        "channel:confession",
+        "party:b",
+        "disputeId:d-3",
+        "route:trust",
+        "lieState:S5",
+        "reveal:full"
+      ]
+    },
+    {
+      "id": "confession-d-4-b-emotion",
+      "party": "b",
+      "disputeId": "d-4",
+      "route": "emotion",
+      "statementType": "victim_confirmation",
+      "preConfession": "송금 기록이 공식 채택되자 최수민은 고개를 들지 않는다.",
+      "confessionMain": "과거 손절의 원인은 다은이 아버지가 투자 명목으로 제 돈을 가져가고 갚지 않은 일이었습니다. 저는 다은이에게 아버지를 사기꾼이라고 말할 수 없어서 제가 나쁜 사람으로 남았습니다.",
+      "postConfession": "그 침묵이 다은이를 지킨 것만은 아니라는 점도 인정합니다.",
+      "supportCondition": {
+        "requiredEvidence": [
+          "e-6"
+        ],
+        "routeReadiness": "emotion",
+        "notes": "S5는 해당 쟁점 지원 조건과 route readiness가 모두 충족될 때만 사용한다."
+      },
+      "tags": [
+        "channel:confession",
+        "party:b",
+        "disputeId:d-4",
+        "route:emotion",
+        "lieState:S5",
+        "reveal:full"
+      ]
+    },
+    {
+      "id": "confession-d-4-b-trust",
+      "party": "b",
+      "disputeId": "d-4",
+      "route": "trust",
+      "statementType": "victim_confirmation",
+      "preConfession": "재판관이 피해 사실과 보호 의도를 나눠 묻자 최수민이 천천히 답한다.",
+      "confessionMain": "돈을 잃은 것보다 다은이에게 그 말을 해야 한다는 게 더 무서웠습니다. 그래서 손절의 이유를 숨겼고, 다은이는 제가 변한 줄 알았습니다.",
+      "postConfession": "이제는 그 사실을 기록으로 남겨야 합니다.",
+      "supportCondition": {
+        "requiredEvidence": [
+          "e-6"
+        ],
+        "routeReadiness": "trust",
+        "notes": "S5는 해당 쟁점 지원 조건과 route readiness가 모두 충족될 때만 사용한다."
+      },
+      "tags": [
+        "channel:confession",
+        "party:b",
+        "disputeId:d-4",
+        "route:trust",
+        "lieState:S5",
+        "reveal:full"
+      ]
+    },
+    {
+      "id": "confession-d-5-a-emotion",
+      "party": "a",
+      "disputeId": "d-5",
+      "route": "emotion",
+      "statementType": "truth_confession",
+      "preConfession": "단톡방 원본이 재생되자 송다은이 말을 끊고 바로 결론을 내리려다 멈춘다.",
+      "confessionMain": "제가 확인 없이 단톡방에서 최수민 씨를 매도했습니다. 친구들이 따라붙을 걸 알면서도 바로 정정하지 않았고, 그 말이 수민 씨 명예를 해쳤습니다.",
+      "postConfession": "불안했다는 말로 공개 책임을 덮지 않겠습니다.",
+      "supportCondition": {
+        "requiredEvidence": [
+          "e-2",
+          "e-7"
+        ],
+        "routeReadiness": "emotion",
+        "notes": "S5는 해당 쟁점 지원 조건과 route readiness가 모두 충족될 때만 사용한다."
+      },
+      "tags": [
+        "channel:confession",
+        "party:a",
+        "disputeId:d-5",
+        "route:emotion",
+        "lieState:S5",
+        "reveal:full"
+      ]
+    },
+    {
+      "id": "confession-d-5-a-trust",
+      "party": "a",
+      "disputeId": "d-5",
+      "route": "trust",
+      "statementType": "truth_confession",
+      "preConfession": "재판관이 공개 책임과 불안을 분리하자 송다은이 낮게 답한다.",
+      "confessionMain": "저는 사실을 알린다고 생각했지만, 확인 전에 사람을 규정했습니다. 그 순서가 잘못됐습니다.",
+      "postConfession": "수민 씨의 침묵도 문제였지만, 먼저 이름을 올린 제 책임이 큽니다.",
+      "supportCondition": {
+        "requiredEvidence": [
+          "e-2",
+          "e-7"
+        ],
+        "routeReadiness": "trust",
+        "notes": "S5는 해당 쟁점 지원 조건과 route readiness가 모두 충족될 때만 사용한다."
+      },
+      "tags": [
+        "channel:confession",
+        "party:a",
+        "disputeId:d-5",
+        "route:trust",
+        "lieState:S5",
+        "reveal:full"
+      ]
+    },
+    {
+      "id": "confession-d-5-b-emotion",
+      "party": "b",
+      "disputeId": "d-5",
+      "route": "emotion",
+      "statementType": "truth_confirmation",
+      "preConfession": "송다은의 인정 뒤 최수민은 한 박자 늦게 답한다.",
+      "confessionMain": "다은이가 먼저 매도한 건 맞습니다. 하지만 저도 또 혼자 참으면 끝난다고 생각해서 악역이 되는 구조를 반복시켰습니다.",
+      "postConfession": "억울함만 말하지 않겠습니다. 제가 침묵으로 키운 부분도 있습니다.",
+      "supportCondition": {
+        "requiredEvidence": [
+          "e-2",
+          "e-7"
+        ],
+        "routeReadiness": "emotion",
+        "notes": "S5는 해당 쟁점 지원 조건과 route readiness가 모두 충족될 때만 사용한다."
+      },
+      "tags": [
+        "channel:confession",
+        "party:b",
+        "disputeId:d-5",
+        "route:emotion",
+        "lieState:S5",
+        "reveal:full"
+      ]
+    },
+    {
+      "id": "confession-d-5-b-trust",
+      "party": "b",
+      "disputeId": "d-5",
+      "route": "trust",
+      "statementType": "truth_confirmation",
+      "preConfession": "재판관이 두 사람의 책임을 함께 정리하자 최수민이 고개를 끄덕인다.",
+      "confessionMain": "저는 억울했지만 바로잡는 일을 미뤘습니다. 그래서 단톡방의 낙인이 더 오래 남았습니다.",
+      "postConfession": "이번에는 제가 사라지는 방식으로 끝내지 않겠습니다.",
+      "supportCondition": {
+        "requiredEvidence": [
+          "e-2",
+          "e-7"
+        ],
+        "routeReadiness": "trust",
+        "notes": "S5는 해당 쟁점 지원 조건과 route readiness가 모두 충족될 때만 사용한다."
+      },
+      "tags": [
+        "channel:confession",
+        "party:b",
+        "disputeId:d-5",
+        "route:trust",
+        "lieState:S5",
+        "reveal:full"
+      ]
+    }
+  ],
+  "interjections": [
+    {
+      "id": "interject-d1-b-slip-d3",
+      "party": "b",
+      "disputeId": "d-1",
+      "severity": "minor",
+      "trigger": "d-1 S2 이상에서 연락 의도 추궁",
+      "text": "잠깐만요, 재판관님. 그 연락은 태윤 씨 개인 문제가 아니라 다은이 집안 쪽 부탁이 걸려 있어서… 아니, 아직 그 말은 빼겠습니다.",
+      "adds": {
+        "disputeIds": [
+          "d-3"
+        ],
+        "evidenceIds": [
+          "e-5"
+        ],
+        "notes": "말실수로 아버지 문자 조사 축이 열린다."
+      }
+    },
+    {
+      "id": "interject-d1-a-slip-d5",
+      "party": "a",
+      "disputeId": "d-1",
+      "severity": "minor",
+      "trigger": "A가 집착 프레임을 반복 주장",
+      "text": "저는 그냥 친구들한테 사실을 말한 겁니다. …수민 씨에게 직접 묻기 전이긴 했지만요.",
+      "adds": {
+        "disputeIds": [
+          "d-5"
+        ],
+        "evidenceIds": [
+          "e-2"
+        ],
+        "notes": "직접 확인 전 단톡방 공개 순서가 쟁점화된다."
+      }
+    },
+    {
+      "id": "interject-d2-b-slip-w2",
+      "party": "b",
+      "disputeId": "d-2",
+      "severity": "major",
+      "trigger": "예비신랑 메시지 선후관계 압박",
+      "text": "그 문장은 제가 먼저 보낸 게 아닙니다. 회사 후배도 태윤 씨가 그 얘기를 먼저 꺼낸 걸… 죄송합니다, 증인 얘기까지 하려던 건 아닙니다.",
+      "adds": {
+        "witnessIds": [
+          "w-2"
+        ],
+        "notes": "박준혁 증인 소환 단서."
+      }
+    },
+    {
+      "id": "interject-d2-a-slip-e4",
+      "party": "a",
+      "disputeId": "d-2",
+      "severity": "minor",
+      "trigger": "A가 예비신랑 설명만 인용",
+      "text": "태윤이는 그냥 오해받을까 봐 말을 줄였다고 했습니다. 원본을 제가 다 본 건 아니지만요.",
+      "adds": {
+        "evidenceIds": [
+          "e-4"
+        ],
+        "notes": "예비신랑 메시지 원본 제출 명령 단서."
+      }
+    },
+    {
+      "id": "interject-d3-a-slip-e5",
+      "party": "a",
+      "disputeId": "d-3",
+      "severity": "major",
+      "trigger": "아버지 부탁 문자 추궁",
+      "text": "아버지가 태윤이한테 뭔가 부탁한 건 맞아도, 그게 꼭 돈이었다고는… 아니, 제가 지금 아버지 얘기를 너무 했습니다.",
+      "adds": {
+        "evidenceIds": [
+          "e-5"
+        ],
+        "notes": "금전성 대조 단계로 이동."
+      }
+    },
+    {
+      "id": "interject-d3-b-slip-d4",
+      "party": "b",
+      "disputeId": "d-3",
+      "severity": "major",
+      "trigger": "같은 흐름이냐는 압박",
+      "text": "전에 저한테 왔던 말이랑 너무 비슷했습니다. 갚겠다는 말까지… 아니, 이건 과거 자료 없이는 말하지 않겠습니다.",
+      "adds": {
+        "disputeIds": [
+          "d-4"
+        ],
+        "evidenceIds": [
+          "e-6"
+        ],
+        "notes": "과거 송금 기록 조사 축이 열린다."
+      }
+    },
+    {
+      "id": "interject-d4-b-slip-w3",
+      "party": "b",
+      "disputeId": "d-4",
+      "severity": "minor",
+      "trigger": "과거 돈 문제 추궁",
+      "text": "그날 분식집 사장님도 제가 울면서 간 걸 봤습니다. 그분까지 부르고 싶진 않았는데…",
+      "adds": {
+        "witnessIds": [
+          "w-3"
+        ],
+        "notes": "오미경 증인 소환 단서."
+      }
+    },
+    {
+      "id": "interject-d4-a-slip-father",
+      "party": "a",
+      "disputeId": "d-4",
+      "severity": "major",
+      "trigger": "아버지 이름이 반복 언급될 때",
+      "text": "저는 아버지가 그런 식으로 돈을 부탁했을 리 없다고 믿고 싶었습니다. 믿고 싶었다는 말 자체가 이상하네요.",
+      "adds": {
+        "evidenceIds": [
+          "e-6"
+        ],
+        "notes": "A가 가족 방어에서 흔들리는 관찰."
+      }
+    },
+    {
+      "id": "interject-d5-a-slip-w1",
+      "party": "a",
+      "disputeId": "d-5",
+      "severity": "minor",
+      "trigger": "단톡방 확산 추궁",
+      "text": "세라가 그렇게까지 말할 줄은 몰랐습니다. 제가 먼저 올렸으니 다들 제 편을 들 거라고 생각한 건 맞지만요.",
+      "adds": {
+        "witnessIds": [
+          "w-1"
+        ],
+        "notes": "김세라 증인 소환 단서."
+      }
+    },
+    {
+      "id": "interject-d5-b-slip-repeat",
+      "party": "b",
+      "disputeId": "d-5",
+      "severity": "major",
+      "trigger": "B가 또 침묵한 이유 추궁",
+      "text": "그때처럼 또 제가 사라지면 끝날 줄 알았습니다. 다은이 아버지 일 때도 그렇게 했으니까…",
+      "adds": {
+        "disputeIds": [
+          "d-4"
+        ],
+        "evidenceIds": [
+          "e-7"
+        ],
+        "notes": "과거·현재 반복 구조가 수첩에 기록된다."
+      }
+    }
+  ],
+  "emotionalOverload": [
+    {
+      "id": "overload-a-d-1",
+      "party": "a",
+      "disputeId": "d-1",
+      "text": "…잠깐만요. 그 연락 화면을 떠올리면 결혼이 흔들리던 감정이 먼저 올라옵니다. (두 턴 후) …정리했습니다. 이어서 답하겠습니다.",
+      "tags": [
+        "channel:emotional_overload",
+        "party:a",
+        "disputeId:d-1",
+        "route:emotion",
+        "reveal:hint"
+      ]
+    },
+    {
+      "id": "overload-b-d-1",
+      "party": "b",
+      "disputeId": "d-1",
+      "text": "…잠깐만요. 연락만 남으면 제가 또 집착한 사람처럼 보입니다. (두 턴 후) …정리했습니다. 이어서 답하겠습니다.",
+      "tags": [
+        "channel:emotional_overload",
+        "party:b",
+        "disputeId:d-1",
+        "route:emotion",
+        "reveal:hint"
+      ]
+    },
+    {
+      "id": "overload-a-d-2",
+      "party": "a",
+      "disputeId": "d-2",
+      "text": "…잠깐만요. 예비신랑 메시지를 보면 믿고 싶었던 쪽까지 같이 무너집니다. (두 턴 후) …정리했습니다. 이어서 답하겠습니다.",
+      "tags": [
+        "channel:emotional_overload",
+        "party:a",
+        "disputeId:d-2",
+        "route:emotion",
+        "reveal:hint"
+      ]
+    },
+    {
+      "id": "overload-b-d-2",
+      "party": "b",
+      "disputeId": "d-2",
+      "text": "…잠깐만요. 거절한 장면보다 연락한 장면만 남는 게 제일 두렵습니다. (두 턴 후) …정리했습니다. 이어서 답하겠습니다.",
+      "tags": [
+        "channel:emotional_overload",
+        "party:b",
+        "disputeId:d-2",
+        "route:emotion",
+        "reveal:hint"
+      ]
+    },
+    {
+      "id": "overload-a-d-3",
+      "party": "a",
+      "disputeId": "d-3",
+      "text": "…잠깐만요. 아버지 돈 얘기는 딸로서 바로 받아들이기 어렵습니다. (두 턴 후) …정리했습니다. 이어서 답하겠습니다.",
+      "tags": [
+        "channel:emotional_overload",
+        "party:a",
+        "disputeId:d-3",
+        "route:emotion",
+        "reveal:hint"
+      ]
+    },
+    {
+      "id": "overload-b-d-3",
+      "party": "b",
+      "disputeId": "d-3",
+      "text": "…잠깐만요. 같은 흐름을 또 봤다는 말을 꺼내는 게 힘듭니다. (두 턴 후) …정리했습니다. 이어서 답하겠습니다.",
+      "tags": [
+        "channel:emotional_overload",
+        "party:b",
+        "disputeId:d-3",
+        "route:emotion",
+        "reveal:hint"
+      ]
+    },
+    {
+      "id": "overload-a-d-4",
+      "party": "a",
+      "disputeId": "d-4",
+      "text": "…잠깐만요. 과거 손절이 아버지와 이어질 수 있다는 말이 숨을 막히게 합니다. (두 턴 후) …정리했습니다. 이어서 답하겠습니다.",
+      "tags": [
+        "channel:emotional_overload",
+        "party:a",
+        "disputeId:d-4",
+        "route:emotion",
+        "reveal:hint"
+      ]
+    },
+    {
+      "id": "overload-b-d-4",
+      "party": "b",
+      "disputeId": "d-4",
+      "text": "…잠깐만요. 손절의 이유를 말하면 다은이가 아버지를 다르게 보게 됩니다. (두 턴 후) …정리했습니다. 이어서 답하겠습니다.",
+      "tags": [
+        "channel:emotional_overload",
+        "party:b",
+        "disputeId:d-4",
+        "route:emotion",
+        "reveal:hint"
+      ]
+    },
+    {
+      "id": "overload-a-d-5",
+      "party": "a",
+      "disputeId": "d-5",
+      "text": "…잠깐만요. 제가 친구들 앞에 올린 문장이 다시 들리니 부끄럽습니다. (두 턴 후) …정리했습니다. 이어서 답하겠습니다.",
+      "tags": [
+        "channel:emotional_overload",
+        "party:a",
+        "disputeId:d-5",
+        "route:emotion",
+        "reveal:hint"
+      ]
+    },
+    {
+      "id": "overload-b-d-5",
+      "party": "b",
+      "disputeId": "d-5",
+      "text": "…잠깐만요. 제 이름이 또 사람들 앞에서 정리되는 느낌이라 잠깐 말이 막힙니다. (두 턴 후) …정리했습니다. 이어서 답하겠습니다.",
+      "tags": [
+        "channel:emotional_overload",
+        "party:b",
+        "disputeId:d-5",
+        "route:emotion",
+        "reveal:hint"
+      ]
+    }
+  ],
+  "trustAction": [
+    {
+      "id": "trust-a-separation-S1",
+      "party": "a",
+      "actionType": "separation",
+      "lieState": "S1",
+      "text": "비공개라면 제가 왜 결론부터 냈는지 조금은 말할 수 있습니다.",
+      "tags": [
+        "channel:trust_action",
+        "party:a",
+        "actionType:separation",
+        "lieState:S1",
+        "route:trust"
+      ]
+    },
+    {
+      "id": "trust-a-separation-S2",
+      "party": "a",
+      "actionType": "separation",
+      "lieState": "S2",
+      "text": "자료 순서대로 보신다면 제가 확인보다 공개를 먼저 택한 부분을 인정하겠습니다.",
+      "tags": [
+        "channel:trust_action",
+        "party:a",
+        "actionType:separation",
+        "lieState:S2",
+        "route:trust"
+      ]
+    },
+    {
+      "id": "trust-a-separation-S3",
+      "party": "a",
+      "actionType": "separation",
+      "lieState": "S3",
+      "text": "재판관님이 바로 단정하지 않으신다면, 아버지 얘기를 피하려 한 제 마음도 말하겠습니다.",
+      "tags": [
+        "channel:trust_action",
+        "party:a",
+        "actionType:separation",
+        "lieState:S3",
+        "route:trust"
+      ]
+    },
+    {
+      "id": "trust-a-confidential-S1",
+      "party": "a",
+      "actionType": "confidential",
+      "lieState": "S1",
+      "text": "비공개라면 제가 왜 결론부터 냈는지 조금은 말할 수 있습니다.",
+      "tags": [
+        "channel:trust_action",
+        "party:a",
+        "actionType:confidential",
+        "lieState:S1",
+        "route:trust"
+      ]
+    },
+    {
+      "id": "trust-a-confidential-S2",
+      "party": "a",
+      "actionType": "confidential",
+      "lieState": "S2",
+      "text": "자료 순서대로 보신다면 제가 확인보다 공개를 먼저 택한 부분을 인정하겠습니다.",
+      "tags": [
+        "channel:trust_action",
+        "party:a",
+        "actionType:confidential",
+        "lieState:S2",
+        "route:trust"
+      ]
+    },
+    {
+      "id": "trust-a-confidential-S3",
+      "party": "a",
+      "actionType": "confidential",
+      "lieState": "S3",
+      "text": "재판관님이 바로 단정하지 않으신다면, 아버지 얘기를 피하려 한 제 마음도 말하겠습니다.",
+      "tags": [
+        "channel:trust_action",
+        "party:a",
+        "actionType:confidential",
+        "lieState:S3",
+        "route:trust"
+      ]
+    },
+    {
+      "id": "trust-a-fact_first-S1",
+      "party": "a",
+      "actionType": "fact_first",
+      "lieState": "S1",
+      "text": "비공개라면 제가 왜 결론부터 냈는지 조금은 말할 수 있습니다.",
+      "tags": [
+        "channel:trust_action",
+        "party:a",
+        "actionType:fact_first",
+        "lieState:S1",
+        "route:trust"
+      ]
+    },
+    {
+      "id": "trust-a-fact_first-S2",
+      "party": "a",
+      "actionType": "fact_first",
+      "lieState": "S2",
+      "text": "자료 순서대로 보신다면 제가 확인보다 공개를 먼저 택한 부분을 인정하겠습니다.",
+      "tags": [
+        "channel:trust_action",
+        "party:a",
+        "actionType:fact_first",
+        "lieState:S2",
+        "route:trust"
+      ]
+    },
+    {
+      "id": "trust-a-fact_first-S3",
+      "party": "a",
+      "actionType": "fact_first",
+      "lieState": "S3",
+      "text": "재판관님이 바로 단정하지 않으신다면, 아버지 얘기를 피하려 한 제 마음도 말하겠습니다.",
+      "tags": [
+        "channel:trust_action",
+        "party:a",
+        "actionType:fact_first",
+        "lieState:S3",
+        "route:trust"
+      ]
+    },
+    {
+      "id": "trust-b-separation-S1",
+      "party": "b",
+      "actionType": "separation",
+      "lieState": "S1",
+      "text": "차분히 사실부터 보신다면 연락의 의미가 감정 문제가 아니었다는 데서 시작하겠습니다.",
+      "tags": [
+        "channel:trust_action",
+        "party:b",
+        "actionType:separation",
+        "lieState:S1",
+        "route:trust"
+      ]
+    },
+    {
+      "id": "trust-b-separation-S2",
+      "party": "b",
+      "actionType": "separation",
+      "lieState": "S2",
+      "text": "원본을 안전하게 다루신다면 제가 왜 우회했는지 더 설명하겠습니다.",
+      "tags": [
+        "channel:trust_action",
+        "party:b",
+        "actionType:separation",
+        "lieState:S2",
+        "route:trust"
+      ]
+    },
+    {
+      "id": "trust-b-separation-S3",
+      "party": "b",
+      "actionType": "separation",
+      "lieState": "S3",
+      "text": "다은이를 공격하지 않는 방식이라면, 제가 숨긴 과거까지 단계적으로 말하겠습니다.",
+      "tags": [
+        "channel:trust_action",
+        "party:b",
+        "actionType:separation",
+        "lieState:S3",
+        "route:trust"
+      ]
+    },
+    {
+      "id": "trust-b-confidential-S1",
+      "party": "b",
+      "actionType": "confidential",
+      "lieState": "S1",
+      "text": "차분히 사실부터 보신다면 연락의 의미가 감정 문제가 아니었다는 데서 시작하겠습니다.",
+      "tags": [
+        "channel:trust_action",
+        "party:b",
+        "actionType:confidential",
+        "lieState:S1",
+        "route:trust"
+      ]
+    },
+    {
+      "id": "trust-b-confidential-S2",
+      "party": "b",
+      "actionType": "confidential",
+      "lieState": "S2",
+      "text": "원본을 안전하게 다루신다면 제가 왜 우회했는지 더 설명하겠습니다.",
+      "tags": [
+        "channel:trust_action",
+        "party:b",
+        "actionType:confidential",
+        "lieState:S2",
+        "route:trust"
+      ]
+    },
+    {
+      "id": "trust-b-confidential-S3",
+      "party": "b",
+      "actionType": "confidential",
+      "lieState": "S3",
+      "text": "다은이를 공격하지 않는 방식이라면, 제가 숨긴 과거까지 단계적으로 말하겠습니다.",
+      "tags": [
+        "channel:trust_action",
+        "party:b",
+        "actionType:confidential",
+        "lieState:S3",
+        "route:trust"
+      ]
+    },
+    {
+      "id": "trust-b-fact_first-S1",
+      "party": "b",
+      "actionType": "fact_first",
+      "lieState": "S1",
+      "text": "차분히 사실부터 보신다면 연락의 의미가 감정 문제가 아니었다는 데서 시작하겠습니다.",
+      "tags": [
+        "channel:trust_action",
+        "party:b",
+        "actionType:fact_first",
+        "lieState:S1",
+        "route:trust"
+      ]
+    },
+    {
+      "id": "trust-b-fact_first-S2",
+      "party": "b",
+      "actionType": "fact_first",
+      "lieState": "S2",
+      "text": "원본을 안전하게 다루신다면 제가 왜 우회했는지 더 설명하겠습니다.",
+      "tags": [
+        "channel:trust_action",
+        "party:b",
+        "actionType:fact_first",
+        "lieState:S2",
+        "route:trust"
+      ]
+    },
+    {
+      "id": "trust-b-fact_first-S3",
+      "party": "b",
+      "actionType": "fact_first",
+      "lieState": "S3",
+      "text": "다은이를 공격하지 않는 방식이라면, 제가 숨긴 과거까지 단계적으로 말하겠습니다.",
+      "tags": [
+        "channel:trust_action",
+        "party:b",
+        "actionType:fact_first",
+        "lieState:S3",
+        "route:trust"
+      ]
+    }
+  ],
+  "evidenceDiscovery": [
+    {
+      "id": "evidence-e-1-stage1",
+      "evidenceId": "e-1",
+      "stage": 1,
+      "label": "기록확인",
+      "relatedDisputeId": "d-1",
+      "probeLine": "최수민→예비신랑 연락 기록의 기록확인 단계입니다. 원본성과 앞뒤 맥락을 나눠 확인하십시오.",
+      "slipLine": "자료 일부가 열렸습니다. 지금 단계에서는 보이는 문구 이상으로 결론을 앞당기지 마십시오.",
+      "captureLine": "9일간 반복된 발신과 부재중이 확인됩니다.",
+      "confirmLine": "최수민→예비신랑 연락 기록 기록확인 결과를 재판관 수첩에 기록합니다. 다음 단계로 넘어가려면 같은 자료의 맥락을 더 확인해야 합니다.",
+      "tags": [
+        "channel:evidence_discovery",
+        "evidenceId:e-1",
+        "disputeId:d-1",
+        "stage:1"
+      ]
+    },
+    {
+      "id": "evidence-e-1-stage2",
+      "evidenceId": "e-1",
+      "stage": 2,
+      "label": "시간대조",
+      "relatedDisputeId": "d-1",
+      "probeLine": "최수민→예비신랑 연락 기록의 시간대조 단계입니다. 원본성과 앞뒤 맥락을 나눠 확인하십시오.",
+      "slipLine": "자료 일부가 열렸습니다. 지금 단계에서는 보이는 문구 이상으로 결론을 앞당기지 마십시오.",
+      "captureLine": "태윤과 수민 사이의 사적인 호감 문제를 따지는 연락은 아니라는 문구가 보입니다.",
+      "confirmLine": "최수민→예비신랑 연락 기록 시간대조 결과를 재판관 수첩에 기록합니다. 다음 단계로 넘어가려면 같은 자료의 맥락을 더 확인해야 합니다.",
+      "tags": [
+        "channel:evidence_discovery",
+        "evidenceId:e-1",
+        "disputeId:d-1",
+        "stage:2"
+      ]
+    },
+    {
+      "id": "evidence-e-1-stage3",
+      "evidenceId": "e-1",
+      "stage": 3,
+      "label": "의도복원",
+      "relatedDisputeId": "d-1",
+      "probeLine": "최수민→예비신랑 연락 기록의 의도복원 단계입니다. 원본성과 앞뒤 맥락을 나눠 확인하십시오.",
+      "slipLine": "자료 일부가 열렸습니다. 지금 단계에서는 보이는 문구 이상으로 결론을 앞당기지 마십시오.",
+      "captureLine": "다은 관련 사유와 과거에도 비슷한 일이 있었다는 문구가 드러납니다.",
+      "confirmLine": "최수민→예비신랑 연락 기록 의도복원 결과를 재판관 수첩에 기록합니다. 다음 단계로 넘어가려면 같은 자료의 맥락을 더 확인해야 합니다.",
+      "tags": [
+        "channel:evidence_discovery",
+        "evidenceId:e-1",
+        "disputeId:d-1",
+        "stage:3"
+      ]
+    },
+    {
+      "id": "evidence-e-2-stage1",
+      "evidenceId": "e-2",
+      "stage": 1,
+      "label": "대화확인",
+      "relatedDisputeId": "d-5",
+      "probeLine": "공통 친구 단톡방 캡처의 대화확인 단계입니다. 원본성과 앞뒤 맥락을 나눠 확인하십시오.",
+      "slipLine": "자료 일부가 열렸습니다. 지금 단계에서는 보이는 문구 이상으로 결론을 앞당기지 마십시오.",
+      "captureLine": "송다은이 최수민의 연락을 “또 내 남자에게 연락”으로 단정하며 올린 정황이 확인됩니다.",
+      "confirmLine": "공통 친구 단톡방 캡처 대화확인 결과를 재판관 수첩에 기록합니다. 다음 단계로 넘어가려면 같은 자료의 맥락을 더 확인해야 합니다.",
+      "tags": [
+        "channel:evidence_discovery",
+        "evidenceId:e-2",
+        "disputeId:d-5",
+        "stage:1"
+      ]
+    },
+    {
+      "id": "evidence-e-2-stage2",
+      "evidenceId": "e-2",
+      "stage": 2,
+      "label": "확산대조",
+      "relatedDisputeId": "d-5",
+      "probeLine": "공통 친구 단톡방 캡처의 확산대조 단계입니다. 원본성과 앞뒤 맥락을 나눠 확인하십시오.",
+      "slipLine": "자료 일부가 열렸습니다. 지금 단계에서는 보이는 문구 이상으로 결론을 앞당기지 마십시오.",
+      "captureLine": "공통 친구들이 직접 확인 전 발언에 동조했고 일부는 확인 필요성을 제기했습니다.",
+      "confirmLine": "공통 친구 단톡방 캡처 확산대조 결과를 재판관 수첩에 기록합니다. 다음 단계로 넘어가려면 같은 자료의 맥락을 더 확인해야 합니다.",
+      "tags": [
+        "channel:evidence_discovery",
+        "evidenceId:e-2",
+        "disputeId:d-5",
+        "stage:2"
+      ]
+    },
+    {
+      "id": "evidence-e-2-stage3",
+      "evidenceId": "e-2",
+      "stage": 3,
+      "label": "책임추궁",
+      "relatedDisputeId": "d-5",
+      "probeLine": "공통 친구 단톡방 캡처의 책임추궁 단계입니다. 원본성과 앞뒤 맥락을 나눠 확인하십시오.",
+      "slipLine": "자료 일부가 열렸습니다. 지금 단계에서는 보이는 문구 이상으로 결론을 앞당기지 마십시오.",
+      "captureLine": "송다은이 최수민에게 직접 묻기 전에 단톡방에 먼저 공유했다는 시간 순서가 확인됩니다.",
+      "confirmLine": "공통 친구 단톡방 캡처 책임추궁 결과를 재판관 수첩에 기록합니다. 다음 단계로 넘어가려면 같은 자료의 맥락을 더 확인해야 합니다.",
+      "tags": [
+        "channel:evidence_discovery",
+        "evidenceId:e-2",
+        "disputeId:d-5",
+        "stage:3"
+      ]
+    },
+    {
+      "id": "evidence-e-3-stage1",
+      "evidenceId": "e-3",
+      "stage": 1,
+      "label": "대화확인",
+      "relatedDisputeId": "d-4",
+      "probeLine": "과거 손절 직전 카톡의 대화확인 단계입니다. 원본성과 앞뒤 맥락을 나눠 확인하십시오.",
+      "slipLine": "자료 일부가 열렸습니다. 지금 단계에서는 보이는 문구 이상으로 결론을 앞당기지 마십시오.",
+      "captureLine": "B가 그 일은 자신이 정리하겠다는 말만 남겼고 A는 돈 문제로 사람이 달라진다는 취지로 답했습니다.",
+      "confirmLine": "과거 손절 직전 카톡 대화확인 결과를 재판관 수첩에 기록합니다. 다음 단계로 넘어가려면 같은 자료의 맥락을 더 확인해야 합니다.",
+      "tags": [
+        "channel:evidence_discovery",
+        "evidenceId:e-3",
+        "disputeId:d-4",
+        "stage:1"
+      ]
+    },
+    {
+      "id": "evidence-e-3-stage2",
+      "evidenceId": "e-3",
+      "stage": 2,
+      "label": "맥락대조",
+      "relatedDisputeId": "d-4",
+      "probeLine": "과거 손절 직전 카톡의 맥락대조 단계입니다. 원본성과 앞뒤 맥락을 나눠 확인하십시오.",
+      "slipLine": "자료 일부가 열렸습니다. 지금 단계에서는 보이는 문구 이상으로 결론을 앞당기지 마십시오.",
+      "captureLine": "이 대화 직후 두 사람은 연락이 끊겼고 약 2년간 만나지 않았습니다.",
+      "confirmLine": "과거 손절 직전 카톡 맥락대조 결과를 재판관 수첩에 기록합니다. 다음 단계로 넘어가려면 같은 자료의 맥락을 더 확인해야 합니다.",
+      "tags": [
+        "channel:evidence_discovery",
+        "evidenceId:e-3",
+        "disputeId:d-4",
+        "stage:2"
+      ]
+    },
+    {
+      "id": "evidence-e-3-stage3",
+      "evidenceId": "e-3",
+      "stage": 3,
+      "label": "침묵추궁",
+      "relatedDisputeId": "d-4",
+      "probeLine": "과거 손절 직전 카톡의 침묵추궁 단계입니다. 원본성과 앞뒤 맥락을 나눠 확인하십시오.",
+      "slipLine": "자료 일부가 열렸습니다. 지금 단계에서는 보이는 문구 이상으로 결론을 앞당기지 마십시오.",
+      "captureLine": "돈 문제의 상대와 책임 소재는 추가 기록과 대조해야 합니다.",
+      "confirmLine": "과거 손절 직전 카톡 침묵추궁 결과를 재판관 수첩에 기록합니다. 다음 단계로 넘어가려면 같은 자료의 맥락을 더 확인해야 합니다.",
+      "tags": [
+        "channel:evidence_discovery",
+        "evidenceId:e-3",
+        "disputeId:d-4",
+        "stage:3"
+      ]
+    },
+    {
+      "id": "evidence-e-4-stage1",
+      "evidenceId": "e-4",
+      "stage": 1,
+      "label": "초기대화",
+      "relatedDisputeId": "d-2",
+      "probeLine": "예비신랑의 선 넘는 메시지와 B의 거절 답장의 초기대화 단계입니다. 원본성과 앞뒤 맥락을 나눠 확인하십시오.",
+      "slipLine": "자료 일부가 열렸습니다. 지금 단계에서는 보이는 문구 이상으로 결론을 앞당기지 마십시오.",
+      "captureLine": "첫 페이지에서는 센터 상담과 운동 이야기처럼 보이는 일상 대화만 확인됩니다.",
+      "confirmLine": "예비신랑의 선 넘는 메시지와 B의 거절 답장 초기대화 결과를 재판관 수첩에 기록합니다. 다음 단계로 넘어가려면 같은 자료의 맥락을 더 확인해야 합니다.",
+      "tags": [
+        "channel:evidence_discovery",
+        "evidenceId:e-4",
+        "disputeId:d-2",
+        "stage:1"
+      ]
+    },
+    {
+      "id": "evidence-e-4-stage2",
+      "evidenceId": "e-4",
+      "stage": 2,
+      "label": "부탁정황",
+      "relatedDisputeId": "d-2",
+      "probeLine": "예비신랑의 선 넘는 메시지와 B의 거절 답장의 부탁정황 단계입니다. 원본성과 앞뒤 맥락을 나눠 확인하십시오.",
+      "slipLine": "자료 일부가 열렸습니다. 지금 단계에서는 보이는 문구 이상으로 결론을 앞당기지 마십시오.",
+      "captureLine": "김태윤이 다은이에게 말하기 애매한 부탁과 비공개 대화를 암시합니다.",
+      "confirmLine": "예비신랑의 선 넘는 메시지와 B의 거절 답장 부탁정황 결과를 재판관 수첩에 기록합니다. 다음 단계로 넘어가려면 같은 자료의 맥락을 더 확인해야 합니다.",
+      "tags": [
+        "channel:evidence_discovery",
+        "evidenceId:e-4",
+        "disputeId:d-2",
+        "stage:2"
+      ]
+    },
+    {
+      "id": "evidence-e-4-stage3",
+      "evidenceId": "e-4",
+      "stage": 3,
+      "label": "선넘김확인",
+      "relatedDisputeId": "d-2",
+      "probeLine": "예비신랑의 선 넘는 메시지와 B의 거절 답장의 선넘김확인 단계입니다. 원본성과 앞뒤 맥락을 나눠 확인하십시오.",
+      "slipLine": "자료 일부가 열렸습니다. 지금 단계에서는 보이는 문구 이상으로 결론을 앞당기지 마십시오.",
+      "captureLine": "늦은 밤 메시지와 최수민의 거리두기 답장이 함께 확인됩니다.",
+      "confirmLine": "예비신랑의 선 넘는 메시지와 B의 거절 답장 선넘김확인 결과를 재판관 수첩에 기록합니다. 다음 단계로 넘어가려면 같은 자료의 맥락을 더 확인해야 합니다.",
+      "tags": [
+        "channel:evidence_discovery",
+        "evidenceId:e-4",
+        "disputeId:d-2",
+        "stage:3"
+      ]
+    },
+    {
+      "id": "evidence-e-5-stage1",
+      "evidenceId": "e-5",
+      "stage": 1,
+      "label": "부탁확인",
+      "relatedDisputeId": "d-3",
+      "probeLine": "송다은 아버지와 예비신랑의 문자의 부탁확인 단계입니다. 원본성과 앞뒤 맥락을 나눠 확인하십시오.",
+      "slipLine": "자료 일부가 열렸습니다. 지금 단계에서는 보이는 문구 이상으로 결론을 앞당기지 마십시오.",
+      "captureLine": "결혼 준비 안부와 조심스러운 부탁 예고만 확인됩니다. 아직 돈 문제라고 단정하기 어렵습니다.",
+      "confirmLine": "송다은 아버지와 예비신랑의 문자 부탁확인 결과를 재판관 수첩에 기록합니다. 다음 단계로 넘어가려면 같은 자료의 맥락을 더 확인해야 합니다.",
+      "tags": [
+        "channel:evidence_discovery",
+        "evidenceId:e-5",
+        "disputeId:d-3",
+        "stage:1"
+      ]
+    },
+    {
+      "id": "evidence-e-5-stage2",
+      "evidenceId": "e-5",
+      "stage": 2,
+      "label": "금전대조",
+      "relatedDisputeId": "d-3",
+      "probeLine": "송다은 아버지와 예비신랑의 문자의 금전대조 단계입니다. 원본성과 앞뒤 맥락을 나눠 확인하십시오.",
+      "slipLine": "자료 일부가 열렸습니다. 지금 단계에서는 보이는 문구 이상으로 결론을 앞당기지 마십시오.",
+      "captureLine": "금전성 부탁처럼 보이는 흐름이 드러나지만 금액과 정확한 목적은 아직 봉인되어 있습니다.",
+      "confirmLine": "송다은 아버지와 예비신랑의 문자 금전대조 결과를 재판관 수첩에 기록합니다. 다음 단계로 넘어가려면 같은 자료의 맥락을 더 확인해야 합니다.",
+      "tags": [
+        "channel:evidence_discovery",
+        "evidenceId:e-5",
+        "disputeId:d-3",
+        "stage:2"
+      ]
+    },
+    {
+      "id": "evidence-e-5-stage3",
+      "evidenceId": "e-5",
+      "stage": 3,
+      "label": "비밀요청",
+      "relatedDisputeId": "d-3",
+      "probeLine": "송다은 아버지와 예비신랑의 문자의 비밀요청 단계입니다. 원본성과 앞뒤 맥락을 나눠 확인하십시오.",
+      "slipLine": "자료 일부가 열렸습니다. 지금 단계에서는 보이는 문구 이상으로 결론을 앞당기지 마십시오.",
+      "captureLine": "금액, 사업 자금 명목, 다은에게 말하지 말라는 문구가 드러납니다.",
+      "confirmLine": "송다은 아버지와 예비신랑의 문자 비밀요청 결과를 재판관 수첩에 기록합니다. 다음 단계로 넘어가려면 같은 자료의 맥락을 더 확인해야 합니다.",
+      "tags": [
+        "channel:evidence_discovery",
+        "evidenceId:e-5",
+        "disputeId:d-3",
+        "stage:3"
+      ]
+    },
+    {
+      "id": "evidence-e-6-stage1",
+      "evidenceId": "e-6",
+      "stage": 1,
+      "label": "내역확인",
+      "relatedDisputeId": "d-4",
+      "probeLine": "과거 송금 영수증 + 문자의 내역확인 단계입니다. 원본성과 앞뒤 맥락을 나눠 확인하십시오.",
+      "slipLine": "자료 일부가 열렸습니다. 지금 단계에서는 보이는 문구 이상으로 결론을 앞당기지 마십시오.",
+      "captureLine": "B 계좌에서 송씨 성 수취인에게 이체된 내역과 차용성 문구가 확인됩니다.",
+      "confirmLine": "과거 송금 영수증 + 문자 내역확인 결과를 재판관 수첩에 기록합니다. 다음 단계로 넘어가려면 같은 자료의 맥락을 더 확인해야 합니다.",
+      "tags": [
+        "channel:evidence_discovery",
+        "evidenceId:e-6",
+        "disputeId:d-4",
+        "stage:1"
+      ]
+    },
+    {
+      "id": "evidence-e-6-stage2",
+      "evidenceId": "e-6",
+      "stage": 2,
+      "label": "상환대조",
+      "relatedDisputeId": "d-4",
+      "probeLine": "과거 송금 영수증 + 문자의 상환대조 단계입니다. 원본성과 앞뒤 맥락을 나눠 확인하십시오.",
+      "slipLine": "자료 일부가 열렸습니다. 지금 단계에서는 보이는 문구 이상으로 결론을 앞당기지 마십시오.",
+      "captureLine": "상환을 미루는 듯한 문자가 이어지고 상환 기록은 확인되지 않습니다.",
+      "confirmLine": "과거 송금 영수증 + 문자 상환대조 결과를 재판관 수첩에 기록합니다. 다음 단계로 넘어가려면 같은 자료의 맥락을 더 확인해야 합니다.",
+      "tags": [
+        "channel:evidence_discovery",
+        "evidenceId:e-6",
+        "disputeId:d-4",
+        "stage:2"
+      ]
+    },
+    {
+      "id": "evidence-e-6-stage3",
+      "evidenceId": "e-6",
+      "stage": 3,
+      "label": "침묵추궁",
+      "relatedDisputeId": "d-4",
+      "probeLine": "과거 송금 영수증 + 문자의 침묵추궁 단계입니다. 원본성과 앞뒤 맥락을 나눠 확인하십시오.",
+      "slipLine": "자료 일부가 열렸습니다. 지금 단계에서는 보이는 문구 이상으로 결론을 앞당기지 마십시오.",
+      "captureLine": "상환 흐름을 대조하면 B가 A에게 말하지 못한 이유를 물을 근거가 생깁니다.",
+      "confirmLine": "과거 송금 영수증 + 문자 침묵추궁 결과를 재판관 수첩에 기록합니다. 다음 단계로 넘어가려면 같은 자료의 맥락을 더 확인해야 합니다.",
+      "tags": [
+        "channel:evidence_discovery",
+        "evidenceId:e-6",
+        "disputeId:d-4",
+        "stage:3"
+      ]
+    },
+    {
+      "id": "evidence-e-7-stage1",
+      "evidenceId": "e-7",
+      "stage": 1,
+      "label": "패턴확인",
+      "relatedDisputeId": "d-5",
+      "probeLine": "과거·현재 대조표의 패턴확인 단계입니다. 원본성과 앞뒤 맥락을 나눠 확인하십시오.",
+      "slipLine": "자료 일부가 열렸습니다. 지금 단계에서는 보이는 문구 이상으로 결론을 앞당기지 마십시오.",
+      "captureLine": "과거 B에게 보낸 문구와 현재 예비신랑에게 보낸 문구가 거의 동일합니다.",
+      "confirmLine": "과거·현재 대조표 패턴확인 결과를 재판관 수첩에 기록합니다. 다음 단계로 넘어가려면 같은 자료의 맥락을 더 확인해야 합니다.",
+      "tags": [
+        "channel:evidence_discovery",
+        "evidenceId:e-7",
+        "disputeId:d-5",
+        "stage:1"
+      ]
+    },
+    {
+      "id": "evidence-e-7-stage2",
+      "evidenceId": "e-7",
+      "stage": 2,
+      "label": "시점대조",
+      "relatedDisputeId": "d-5",
+      "probeLine": "과거·현재 대조표의 시점대조 단계입니다. 원본성과 앞뒤 맥락을 나눠 확인하십시오.",
+      "slipLine": "자료 일부가 열렸습니다. 지금 단계에서는 보이는 문구 이상으로 결론을 앞당기지 마십시오.",
+      "captureLine": "B가 말 대신 혼자 끊고 사라진 타이밍이 두 시점에서 겹칩니다.",
+      "confirmLine": "과거·현재 대조표 시점대조 결과를 재판관 수첩에 기록합니다. 다음 단계로 넘어가려면 같은 자료의 맥락을 더 확인해야 합니다.",
+      "tags": [
+        "channel:evidence_discovery",
+        "evidenceId:e-7",
+        "disputeId:d-5",
+        "stage:2"
+      ]
+    },
+    {
+      "id": "evidence-e-7-stage3",
+      "evidenceId": "e-7",
+      "stage": 3,
+      "label": "낙인추궁",
+      "relatedDisputeId": "d-5",
+      "probeLine": "과거·현재 대조표의 낙인추궁 단계입니다. 원본성과 앞뒤 맥락을 나눠 확인하십시오.",
+      "slipLine": "자료 일부가 열렸습니다. 지금 단계에서는 보이는 문구 이상으로 결론을 앞당기지 마십시오.",
+      "captureLine": "과거와 현재의 돈 부탁 방식과 B의 침묵 시점이 반복됩니다. 낙인이 만들어진 순서를 따져볼 수 있습니다.",
+      "confirmLine": "과거·현재 대조표 낙인추궁 결과를 재판관 수첩에 기록합니다. 다음 단계로 넘어가려면 같은 자료의 맥락을 더 확인해야 합니다.",
+      "tags": [
+        "channel:evidence_discovery",
+        "evidenceId:e-7",
+        "disputeId:d-5",
+        "stage:3"
+      ]
+    }
+  ],
+  "judgeEvidenceCombo": [
+    {
+      "id": "judgecombo-combine-1",
+      "combinationId": "combine-1",
+      "inputs": [
+        "e-1",
+        "e-2"
+      ],
+      "outputId": "dc-1",
+      "relatedDisputeIds": [
+        "d-1",
+        "d-5"
+      ],
+      "judgeLine": "연락 기록과 단톡방 캡처를 대조하면, 반복 연락이 확인 없이 집착 프레임으로 공개된 순서가 보입니다.",
+      "unlockLine": "새 쟁점: 단톡방 매도와 명예훼손을 열 수 있습니다.",
+      "tags": [
+        "channel:judge_evidence_combo",
+        "combo:combine-1",
+        "disputeId:d-1",
+        "disputeId:d-5"
+      ]
+    },
+    {
+      "id": "judgecombo-combine-2",
+      "combinationId": "combine-2",
+      "inputs": [
+        "e-1",
+        "e-4"
+      ],
+      "outputId": "dc-2",
+      "relatedDisputeIds": [
+        "d-2"
+      ],
+      "judgeLine": "연락 기록과 예비신랑 메시지를 대조하면, 연락의 선후관계를 따질 근거가 생깁니다.",
+      "unlockLine": "새 증인: 박준혁을 소환해 접근 방향을 물을 수 있습니다.",
+      "tags": [
+        "channel:judge_evidence_combo",
+        "combo:combine-2",
+        "disputeId:d-2"
+      ]
+    },
+    {
+      "id": "judgecombo-combine-3",
+      "combinationId": "combine-3",
+      "inputs": [
+        "e-5",
+        "e-6"
+      ],
+      "outputId": "dc-3",
+      "relatedDisputeIds": [
+        "d-3",
+        "d-4"
+      ],
+      "judgeLine": "현재 아버지 문자와 과거 송금 기록을 대조하면, 두 시점의 부탁 방식이 닮아 보입니다.",
+      "unlockLine": "새 쟁점: 아버지의 돈 접근 패턴과 과거 손절 원인을 함께 추궁할 수 있습니다.",
+      "tags": [
+        "channel:judge_evidence_combo",
+        "combo:combine-3",
+        "disputeId:d-3",
+        "disputeId:d-4"
+      ]
+    },
+    {
+      "id": "judgecombo-combine-4",
+      "combinationId": "combine-4",
+      "inputs": [
+        "e-4",
+        "e-7"
+      ],
+      "outputId": "dc-1",
+      "relatedDisputeIds": [
+        "d-1",
+        "d-5"
+      ],
+      "judgeLine": "예비신랑 메시지와 대조표를 합치면 최수민의 연락 목적을 다시 해석할 근거가 강화됩니다.",
+      "unlockLine": "새 기록: 연락 의도와 단톡방 프레임을 함께 정리하십시오.",
+      "tags": [
+        "channel:judge_evidence_combo",
+        "combo:combine-4",
+        "disputeId:d-1",
+        "disputeId:d-5"
+      ]
+    },
+    {
+      "id": "judgecombo-combine-5",
+      "combinationId": "combine-5",
+      "inputs": [
+        "stmt-a-accusation",
+        "e-2"
+      ],
+      "outputId": "dc-1",
+      "relatedDisputeIds": [
+        "d-5"
+      ],
+      "judgeLine": "송다은의 “또 내 남자에게 연락한다”는 발언과 단톡방 캡처를 대조하면 확산 경로가 보입니다.",
+      "unlockLine": "새 증인: 김세라에게 최초 발언 뒤 분위기를 물을 수 있습니다.",
+      "tags": [
+        "channel:judge_evidence_combo",
+        "combo:combine-5",
+        "disputeId:d-5"
+      ]
+    },
+    {
+      "id": "judgecombo-combine-6",
+      "combinationId": "combine-6",
+      "inputs": [
+        "e-3",
+        "e-7"
+      ],
+      "outputId": "dc-5",
+      "relatedDisputeIds": [
+        "d-1",
+        "d-5"
+      ],
+      "judgeLine": "과거 카톡과 대조표를 합치면 최수민이 두 번 다 말하지 못해 악역이 된 구조가 보입니다.",
+      "unlockLine": "새 관찰: 낙인의 순서를 수첩에 기록하십시오.",
+      "tags": [
+        "channel:judge_evidence_combo",
+        "combo:combine-6",
+        "disputeId:d-1",
+        "disputeId:d-5"
+      ]
+    },
+    {
+      "id": "judgecombo-combine-7",
+      "combinationId": "combine-7",
+      "inputs": [
+        "e-3",
+        "e-6"
+      ],
+      "outputId": "dc-4",
+      "relatedDisputeIds": [
+        "d-4"
+      ],
+      "judgeLine": "과거 카톡의 돈 문제 언급과 송금 기록을 대조하면 손절의 빈칸을 추궁할 수 있습니다.",
+      "unlockLine": "새 증거축: 과거 손절과 아버지 돈 문제 쟁점이 열립니다.",
+      "tags": [
+        "channel:judge_evidence_combo",
+        "combo:combine-7",
+        "disputeId:d-4"
+      ]
+    },
+    {
+      "id": "judgecombo-combine-8",
+      "combinationId": "combine-8",
+      "inputs": [
+        "stmt-b-silence",
+        "e-4"
+      ],
+      "outputId": "dc-2",
+      "relatedDisputeIds": [
+        "d-2"
+      ],
+      "judgeLine": "최수민의 “참았어야 했다”는 자책과 예비신랑 메시지를 대조하면, 침묵이 무엇을 덮었는지 물을 수 있습니다.",
+      "unlockLine": "새 증인: 박준혁에게 메시지 선후관계를 확인하십시오.",
+      "tags": [
+        "channel:judge_evidence_combo",
+        "combo:combine-8",
+        "disputeId:d-2"
+      ]
+    },
+    {
+      "id": "judgecombo-combine-9",
+      "combinationId": "combine-9",
+      "inputs": [
+        "stmt-b-silence",
+        "e-5"
+      ],
+      "outputId": "dc-3",
+      "relatedDisputeIds": [
+        "d-3"
+      ],
+      "judgeLine": "최수민의 자책과 송다은 아버지 문자를 합치면, 왜 혼자 막으려 했는지 추궁할 수 있습니다.",
+      "unlockLine": "새 쟁점: 아버지의 돈 접근 패턴을 열 수 있습니다.",
+      "tags": [
+        "channel:judge_evidence_combo",
+        "combo:combine-9",
+        "disputeId:d-3"
+      ]
+    },
+    {
+      "id": "judgecombo-combine-10",
+      "combinationId": "combine-10",
+      "inputs": [
+        "stmt-a-accusation",
+        "stmt-b-silence"
+      ],
+      "outputId": "dc-1",
+      "relatedDisputeIds": [
+        "d-5"
+      ],
+      "judgeLine": "“또 내 남자에게 연락한다”는 단정과 “제가 참았어야 했는데”라는 자책은 같은 사건을 정반대로 겪은 흔적입니다.",
+      "unlockLine": "새 관찰: 공개 단정과 보호 침묵이 동시에 기록됩니다.",
+      "tags": [
+        "channel:judge_evidence_combo",
+        "combo:combine-10",
+        "disputeId:d-5"
+      ]
+    }
+  ],
+  "judgeWitnessSummon": [
+    {
+      "id": "summon-w-1-soft",
+      "witnessId": "w-1",
+      "witnessName": "김세라",
+      "tone": "soft",
+      "text": "김세라 씨를 부르겠습니다. 단톡방에서 최초 발언 뒤 분위기가 어떻게 흘렀는지 차분히 듣겠습니다.",
+      "relatedDisputeIds": [
+        "d-5"
+      ],
+      "tags": [
+        "channel:judge_witness_summon",
+        "witnessId:w-1",
+        "disputeId:d-5"
+      ]
+    },
+    {
+      "id": "summon-w-1-mid",
+      "witnessId": "w-1",
+      "witnessName": "김세라",
+      "tone": "mid",
+      "text": "김세라 씨를 소환합니다. 동조한 말과 확인 요구가 있었는지 분리해 답하십시오.",
+      "relatedDisputeIds": [
+        "d-5"
+      ],
+      "tags": [
+        "channel:judge_witness_summon",
+        "witnessId:w-1",
+        "disputeId:d-5"
+      ]
+    },
+    {
+      "id": "summon-w-1-hard",
+      "witnessId": "w-1",
+      "witnessName": "김세라",
+      "tone": "hard",
+      "text": "김세라 씨, 들어오십시오. 친구라는 이유로 사실 확인 전 비난에 가담했는지 답해야 합니다.",
+      "relatedDisputeIds": [
+        "d-5"
+      ],
+      "tags": [
+        "channel:judge_witness_summon",
+        "witnessId:w-1",
+        "disputeId:d-5"
+      ]
+    },
+    {
+      "id": "summon-w-2-soft",
+      "witnessId": "w-2",
+      "witnessName": "박준혁",
+      "tone": "soft",
+      "text": "박준혁 씨를 부르겠습니다. 예비신랑 쪽 대화의 선후관계를 사실 중심으로 듣겠습니다.",
+      "relatedDisputeIds": [
+        "d-2"
+      ],
+      "tags": [
+        "channel:judge_witness_summon",
+        "witnessId:w-2",
+        "disputeId:d-2"
+      ]
+    },
+    {
+      "id": "summon-w-2-mid",
+      "witnessId": "w-2",
+      "witnessName": "박준혁",
+      "tone": "mid",
+      "text": "박준혁 씨를 소환합니다. 직장 관계가 불편해도 메시지의 시작점과 분위기는 분리해 말씀하십시오.",
+      "relatedDisputeIds": [
+        "d-2"
+      ],
+      "tags": [
+        "channel:judge_witness_summon",
+        "witnessId:w-2",
+        "disputeId:d-2"
+      ]
+    },
+    {
+      "id": "summon-w-2-hard",
+      "witnessId": "w-2",
+      "witnessName": "박준혁",
+      "tone": "hard",
+      "text": "박준혁 씨, 들어오십시오. 누가 어떤 말을 먼저 꺼냈는지 원본 기준으로 답하십시오.",
+      "relatedDisputeIds": [
+        "d-2"
+      ],
+      "tags": [
+        "channel:judge_witness_summon",
+        "witnessId:w-2",
+        "disputeId:d-2"
+      ]
+    },
+    {
+      "id": "summon-w-3-soft",
+      "witnessId": "w-3",
+      "witnessName": "오미경",
+      "tone": "soft",
+      "text": "오미경 씨를 부르겠습니다. 과거 돈 거래를 본 범위만 차분히 확인하겠습니다.",
+      "relatedDisputeIds": [
+        "d-4"
+      ],
+      "tags": [
+        "channel:judge_witness_summon",
+        "witnessId:w-3",
+        "disputeId:d-4"
+      ]
+    },
+    {
+      "id": "summon-w-3-mid",
+      "witnessId": "w-3",
+      "witnessName": "오미경",
+      "tone": "mid",
+      "text": "오미경 씨를 소환합니다. 송다은 씨 아버지와 최수민 씨 사이 돈 거래의 목격 사실을 말씀하십시오.",
+      "relatedDisputeIds": [
+        "d-4"
+      ],
+      "tags": [
+        "channel:judge_witness_summon",
+        "witnessId:w-3",
+        "disputeId:d-4"
+      ]
+    },
+    {
+      "id": "summon-w-3-hard",
+      "witnessId": "w-3",
+      "witnessName": "오미경",
+      "tone": "hard",
+      "text": "오미경 씨, 들어오십시오. 친분이 아니라 직접 본 돈 거래와 그 뒤 최수민 씨 상태를 기준으로 답하십시오.",
+      "relatedDisputeIds": [
+        "d-4"
+      ],
+      "tags": [
+        "channel:judge_witness_summon",
+        "witnessId:w-3",
+        "disputeId:d-4"
+      ]
+    }
+  ],
+  "dossierPrompts": [
+    {
+      "id": "dossier-d-1-contact_timeline-observe",
+      "disputeId": "d-1",
+      "angleId": "contact_timeline",
+      "type": "observation",
+      "text": "관찰: 9일 연락의 시간표에서는 전화 6번, 문자 11번이 이어진 기간·시간대·응답 상태를 분리해 확인한다. S5 전에는 최종 원인과 책임 주체를 확정하지 말고, 보이는 자료의 범위만 적는다.",
+      "guardNote": "truthBoundary는 angle_catalog의 beforeS5MustNotSay를 따른다.",
+      "tags": [
+        "channel:dossier",
+        "disputeId:d-1",
+        "answerAngle:contact_timeline",
+        "recordType:observation",
+        "revealGuard:strict"
+      ]
+    },
+    {
+      "id": "dossier-d-1-message_intent-observe",
+      "disputeId": "d-1",
+      "angleId": "message_intent",
+      "type": "observation",
+      "text": "관찰: 문구 속 전달 목적에서는 호감 표현이 없는 문구와 “꼭 할 말”류 표현을 통해 연락의 목적을 추궁한다. S5 전에는 최종 원인과 책임 주체를 확정하지 말고, 보이는 자료의 범위만 적는다.",
+      "guardNote": "truthBoundary는 angle_catalog의 beforeS5MustNotSay를 따른다.",
+      "tags": [
+        "channel:dossier",
+        "disputeId:d-1",
+        "answerAngle:message_intent",
+        "recordType:observation",
+        "revealGuard:strict"
+      ]
+    },
+    {
+      "id": "dossier-d-1-bypass_da_eun-observe",
+      "disputeId": "d-1",
+      "angleId": "bypass_da_eun",
+      "type": "observation",
+      "text": "관찰: 송다은 우회 연락에서는 왜 송다은에게 직접 말하지 않고 예비신랑에게 갔는지, 우회 방식의 책임을 묻는다. S5 전에는 최종 원인과 책임 주체를 확정하지 말고, 보이는 자료의 범위만 적는다.",
+      "guardNote": "truthBoundary는 angle_catalog의 beforeS5MustNotSay를 따른다.",
+      "tags": [
+        "channel:dossier",
+        "disputeId:d-1",
+        "answerAngle:bypass_da_eun",
+        "recordType:observation",
+        "revealGuard:strict"
+      ]
+    },
+    {
+      "id": "dossier-d-2-message_sequence-observe",
+      "disputeId": "d-2",
+      "angleId": "message_sequence",
+      "type": "observation",
+      "text": "관찰: 메시지 선후관계에서는 예비신랑과 최수민 사이 메시지의 시작점, 밤 시간대, 응답 순서를 확인한다. S5 전에는 최종 원인과 책임 주체를 확정하지 말고, 보이는 자료의 범위만 적는다.",
+      "guardNote": "truthBoundary는 angle_catalog의 beforeS5MustNotSay를 따른다.",
+      "tags": [
+        "channel:dossier",
+        "disputeId:d-2",
+        "answerAngle:message_sequence",
+        "recordType:observation",
+        "revealGuard:strict"
+      ]
+    },
+    {
+      "id": "dossier-d-2-boundary_response-observe",
+      "disputeId": "d-2",
+      "angleId": "boundary_response",
+      "type": "observation",
+      "text": "관찰: 경계 답장과 거리두기에서는 최수민의 답장이 호응인지 거리두기인지, 표현의 범위와 의미를 확인한다. S5 전에는 최종 원인과 책임 주체를 확정하지 말고, 보이는 자료의 범위만 적는다.",
+      "guardNote": "truthBoundary는 angle_catalog의 beforeS5MustNotSay를 따른다.",
+      "tags": [
+        "channel:dossier",
+        "disputeId:d-2",
+        "answerAngle:boundary_response",
+        "recordType:observation",
+        "revealGuard:strict"
+      ]
+    },
+    {
+      "id": "dossier-d-2-withheld_capture-observe",
+      "disputeId": "d-2",
+      "angleId": "withheld_capture",
+      "type": "observation",
+      "text": "관찰: 캡처를 숨긴 이유에서는 B가 원본을 곧바로 제시하지 못한 이유와 A가 확인을 미룬 이유를 분리한다. S5 전에는 최종 원인과 책임 주체를 확정하지 말고, 보이는 자료의 범위만 적는다.",
+      "guardNote": "truthBoundary는 angle_catalog의 beforeS5MustNotSay를 따른다.",
+      "tags": [
+        "channel:dossier",
+        "disputeId:d-2",
+        "answerAngle:withheld_capture",
+        "recordType:observation",
+        "revealGuard:strict"
+      ]
+    },
+    {
+      "id": "dossier-d-3-father_request_signal-observe",
+      "disputeId": "d-3",
+      "angleId": "father_request_signal",
+      "type": "observation",
+      "text": "관찰: 아버지의 부탁 신호에서는 결혼 준비 안부와 부탁 예고 문구가 어떤 성격인지 아직 단정하지 않고 확인한다. S5 전에는 최종 원인과 책임 주체를 확정하지 말고, 보이는 자료의 범위만 적는다.",
+      "guardNote": "truthBoundary는 angle_catalog의 beforeS5MustNotSay를 따른다.",
+      "tags": [
+        "channel:dossier",
+        "disputeId:d-3",
+        "answerAngle:father_request_signal",
+        "recordType:observation",
+        "revealGuard:strict"
+      ]
+    },
+    {
+      "id": "dossier-d-3-money_secrecy-observe",
+      "disputeId": "d-3",
+      "angleId": "money_secrecy",
+      "type": "observation",
+      "text": "관찰: 금전성과 비밀 요청에서는 부탁이 금전 요구로 이어지는지, 송다은에게 말하지 말라는 요청이 있었는지를 확인한다. S5 전에는 최종 원인과 책임 주체를 확정하지 말고, 보이는 자료의 범위만 적는다.",
+      "guardNote": "truthBoundary는 angle_catalog의 beforeS5MustNotSay를 따른다.",
+      "tags": [
+        "channel:dossier",
+        "disputeId:d-3",
+        "answerAngle:money_secrecy",
+        "recordType:observation",
+        "revealGuard:strict"
+      ]
+    },
+    {
+      "id": "dossier-d-3-pattern_warning-observe",
+      "disputeId": "d-3",
+      "angleId": "pattern_warning",
+      "type": "observation",
+      "text": "관찰: 과거와 닮은 흐름에서는 현재 문자가 과거 돈 문제와 닮았는지를 단계적으로 묻되, 초반에는 패턴으로 확정하지 않는다. S5 전에는 최종 원인과 책임 주체를 확정하지 말고, 보이는 자료의 범위만 적는다.",
+      "guardNote": "truthBoundary는 angle_catalog의 beforeS5MustNotSay를 따른다.",
+      "tags": [
+        "channel:dossier",
+        "disputeId:d-3",
+        "answerAngle:pattern_warning",
+        "recordType:observation",
+        "revealGuard:strict"
+      ]
+    },
+    {
+      "id": "dossier-d-4-severance_chat_gap-observe",
+      "disputeId": "d-4",
+      "angleId": "severance_chat_gap",
+      "type": "observation",
+      "text": "관찰: 손절 직전 카톡의 빈칸에서는 과거 카톡에서 “내가 정리하겠다”는 말과 손절 사이의 빈칸을 확인한다. S5 전에는 최종 원인과 책임 주체를 확정하지 말고, 보이는 자료의 범위만 적는다.",
+      "guardNote": "truthBoundary는 angle_catalog의 beforeS5MustNotSay를 따른다.",
+      "tags": [
+        "channel:dossier",
+        "disputeId:d-4",
+        "answerAngle:severance_chat_gap",
+        "recordType:observation",
+        "revealGuard:strict"
+      ]
+    },
+    {
+      "id": "dossier-d-4-transfer_repayment-observe",
+      "disputeId": "d-4",
+      "angleId": "transfer_repayment",
+      "type": "observation",
+      "text": "관찰: 송금과 상환의 흐름에서는 과거 송금, 차용성 문구, 상환 지연을 통해 돈 문제의 실체를 단계적으로 확인한다. S5 전에는 최종 원인과 책임 주체를 확정하지 말고, 보이는 자료의 범위만 적는다.",
+      "guardNote": "truthBoundary는 angle_catalog의 beforeS5MustNotSay를 따른다.",
+      "tags": [
+        "channel:dossier",
+        "disputeId:d-4",
+        "answerAngle:transfer_repayment",
+        "recordType:observation",
+        "revealGuard:strict"
+      ]
+    },
+    {
+      "id": "dossier-d-4-protective_silence-observe",
+      "disputeId": "d-4",
+      "angleId": "protective_silence",
+      "type": "observation",
+      "text": "관찰: 보호하려던 침묵에서는 최수민이 왜 송다은에게 과거 돈 문제를 말하지 못하고 악역을 자처했는지 확인한다. S5 전에는 최종 원인과 책임 주체를 확정하지 말고, 보이는 자료의 범위만 적는다.",
+      "guardNote": "truthBoundary는 angle_catalog의 beforeS5MustNotSay를 따른다.",
+      "tags": [
+        "channel:dossier",
+        "disputeId:d-4",
+        "answerAngle:protective_silence",
+        "recordType:observation",
+        "revealGuard:strict"
+      ]
+    },
+    {
+      "id": "dossier-d-5-first_groupchat_post-observe",
+      "disputeId": "d-5",
+      "angleId": "first_groupchat_post",
+      "type": "observation",
+      "text": "관찰: 단톡방 최초 발언에서는 송다은이 어떤 말로 단톡방에 먼저 올렸고 직접 확인보다 공개가 먼저였는지 확인한다. S5 전에는 최종 원인과 책임 주체를 확정하지 말고, 보이는 자료의 범위만 적는다.",
+      "guardNote": "truthBoundary는 angle_catalog의 beforeS5MustNotSay를 따른다.",
+      "tags": [
+        "channel:dossier",
+        "disputeId:d-5",
+        "answerAngle:first_groupchat_post",
+        "recordType:observation",
+        "revealGuard:strict"
+      ]
+    },
+    {
+      "id": "dossier-d-5-pile_on_spread-observe",
+      "disputeId": "d-5",
+      "angleId": "pile_on_spread",
+      "type": "observation",
+      "text": "관찰: 친구들의 동조와 확산에서는 친구들이 어떤 말로 따라붙었고 송다은·최수민이 그 확산을 어떻게 처리했는지 확인한다. S5 전에는 최종 원인과 책임 주체를 확정하지 말고, 보이는 자료의 범위만 적는다.",
+      "guardNote": "truthBoundary는 angle_catalog의 beforeS5MustNotSay를 따른다.",
+      "tags": [
+        "channel:dossier",
+        "disputeId:d-5",
+        "answerAngle:pile_on_spread",
+        "recordType:observation",
+        "revealGuard:strict"
+      ]
+    },
+    {
+      "id": "dossier-d-5-repeat_villain_frame-observe",
+      "disputeId": "d-5",
+      "angleId": "repeat_villain_frame",
+      "type": "observation",
+      "text": "관찰: 반복된 악역 구조에서는 과거와 현재 모두 최수민이 악역으로 남고 송다은이 먼저 단정한 구조를 정리한다. S5 전에는 최종 원인과 책임 주체를 확정하지 말고, 보이는 자료의 범위만 적는다.",
+      "guardNote": "truthBoundary는 angle_catalog의 beforeS5MustNotSay를 따른다.",
+      "tags": [
+        "channel:dossier",
+        "disputeId:d-5",
+        "answerAngle:repeat_villain_frame",
+        "recordType:observation",
+        "revealGuard:strict"
+      ]
+    }
+  ],
+  "postS5Requestions": [
+    {
+      "id": "postS5-d-1-a",
+      "party": "a",
+      "disputeId": "d-1",
+      "text": "수민 씨 연락이 집착이라고만 볼 수 없다는 점은 이미 인정했습니다. 제 판단이 너무 빨랐던 부분을 다시 반복하지 않겠습니다.",
+      "tags": [
+        "channel:interrogation",
+        "party:a",
+        "disputeId:d-1",
+        "lieState:S5",
+        "postTruthRequestion:true"
+      ]
+    },
+    {
+      "id": "postS5-d-1-b",
+      "party": "b",
+      "disputeId": "d-1",
+      "text": "이미 확정한 대로, 9일 연락은 결혼 전 돈 문제를 경고하려던 시도였습니다. 방식이 잘못됐다는 책임은 별도로 지겠습니다.",
+      "tags": [
+        "channel:interrogation",
+        "party:b",
+        "disputeId:d-1",
+        "lieState:S5",
+        "postTruthRequestion:true"
+      ]
+    },
+    {
+      "id": "postS5-d-2-a",
+      "party": "a",
+      "disputeId": "d-2",
+      "text": "이미 확인된 선후관계를 다시 부정하지 않겠습니다. 제가 처음부터 원본을 보지 않고 예비신랑 쪽 말을 믿은 부분이 문제였습니다.",
+      "tags": [
+        "channel:interrogation",
+        "party:a",
+        "disputeId:d-2",
+        "lieState:S5",
+        "postTruthRequestion:true"
+      ]
+    },
+    {
+      "id": "postS5-d-2-b",
+      "party": "b",
+      "disputeId": "d-2",
+      "text": "원본 기준으로 김태윤 씨가 먼저 선을 넘었고 저는 거절했습니다. 이 부분은 다시 제 접근으로 바뀌지 않습니다.",
+      "tags": [
+        "channel:interrogation",
+        "party:b",
+        "disputeId:d-2",
+        "lieState:S5",
+        "postTruthRequestion:true"
+      ]
+    },
+    {
+      "id": "postS5-d-3-a",
+      "party": "a",
+      "disputeId": "d-3",
+      "text": "아버지의 부탁이 돈 문제로 이어진 사실을 더는 가족 사정이라고만 말하지 않겠습니다. 제가 외면한 부분도 있습니다.",
+      "tags": [
+        "channel:interrogation",
+        "party:a",
+        "disputeId:d-3",
+        "lieState:S5",
+        "postTruthRequestion:true"
+      ]
+    },
+    {
+      "id": "postS5-d-3-b",
+      "party": "b",
+      "disputeId": "d-3",
+      "text": "아버지 문자와 과거 흐름이 겹쳐 보여 예비신랑에게 경고하려 했다는 점은 이미 확정됐습니다. 세부 피해는 d-4에서 따로 봐야 합니다.",
+      "tags": [
+        "channel:interrogation",
+        "party:b",
+        "disputeId:d-3",
+        "lieState:S5",
+        "postTruthRequestion:true"
+      ]
+    },
+    {
+      "id": "postS5-d-4-a",
+      "party": "a",
+      "disputeId": "d-4",
+      "text": "과거 손절의 빈칸을 변심으로 단정한 건 제 오해였습니다. 아버지 문제라서 더 늦게 받아들였다는 점까지 기록해 주십시오.",
+      "tags": [
+        "channel:interrogation",
+        "party:a",
+        "disputeId:d-4",
+        "lieState:S5",
+        "postTruthRequestion:true"
+      ]
+    },
+    {
+      "id": "postS5-d-4-b",
+      "party": "b",
+      "disputeId": "d-4",
+      "text": "다은이 아버지에게 당한 일 때문에 손절이 시작됐고, 저는 그 사실을 말하지 못했습니다. 다시 숨기지 않겠습니다.",
+      "tags": [
+        "channel:interrogation",
+        "party:b",
+        "disputeId:d-4",
+        "lieState:S5",
+        "postTruthRequestion:true"
+      ]
+    },
+    {
+      "id": "postS5-d-5-a",
+      "party": "a",
+      "disputeId": "d-5",
+      "text": "이미 확정된 대로, 제가 직접 확인 전에 단톡방에 올린 책임은 피하지 않겠습니다. 다만 이후 정정 방식까지 따로 정리하겠습니다.",
+      "tags": [
+        "channel:interrogation",
+        "party:a",
+        "disputeId:d-5",
+        "lieState:S5",
+        "postTruthRequestion:true"
+      ]
+    },
+    {
+      "id": "postS5-d-5-b",
+      "party": "b",
+      "disputeId": "d-5",
+      "text": "단톡방에서 먼저 매도당한 건 맞지만, 제가 침묵으로 반복을 허용한 책임도 인정합니다. 그 두 부분을 같이 기록해 주십시오.",
+      "tags": [
+        "channel:interrogation",
+        "party:b",
+        "disputeId:d-5",
+        "lieState:S5",
+        "postTruthRequestion:true"
+      ]
+    }
+  ]
+}

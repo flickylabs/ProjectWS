@@ -22,6 +22,12 @@ import {
 } from '../types/scriptedText'
 import type { PartyId } from '../types'
 import { normalizeCaseKey } from '../utils/caseHelpers'
+import { GENERAL_QUESTION_ANGLE } from './questionAngleEngine'
+import {
+  getScriptedAngleAnswerLookup,
+  getScriptedAngleJudgeQuestionOptions,
+  getScriptedAngleJudgeQuestionVariants,
+} from './scriptedAngleTextLoader.ts'
 
 // 캐시: caseId → bundle
 const bundleCache = new Map<string, ScriptedTextBundle>()
@@ -46,11 +52,12 @@ interface VariantTagMap {
 interface SelectedScriptContext {
   variantId: string
   key: string
-  channel: 'interrogation' | 'evidence_present' | 'dossier' | 'witness' | 'aftermath'
+  channel: 'interrogation' | 'evidence_present' | 'dossier' | 'witness' | 'aftermath' | 'judge_question' | 'judge_contradiction'
   speaker?: string
   emotion?: string
   continuity?: string
   reveal?: string
+  answerAngle?: string
   questionType?: string
   disputeId?: string
   evidenceId?: string
@@ -68,9 +75,21 @@ interface VariantSelectionContext {
   emotion?: string
   /** [B1·B2 픽스] 호명 라우팅 — judge_question 등 발화의 대상 당사자 */
   targetParty?: 'a' | 'b'
+  preferredAnswerAngles?: string[]
 }
 
 type ScriptedLookupChannel = SelectedScriptContext['channel']
+
+export interface ScriptedJudgeQuestionOption {
+  id: string
+  text: string
+  behaviorHint: string
+  answerAngle: string
+  disputeId: string
+  questionType: string
+  depth: number
+  targetParty?: PartyId
+}
 
 // Vite dynamic import — eager 로드 (불필요 파일은 _archive로 이동하여 3개만 로드)
 const scriptModsLazy = import.meta.glob<true, string, { default?: ScriptedTextBundle }>(
@@ -138,6 +157,7 @@ function rememberVariant(caseId: string, variant: ScriptedVariant, context: Vari
     emotion: tagMap.emotion,
     continuity: tagMap.continuity,
     reveal: tagMap.reveal,
+    answerAngle: tagMap.answerAngle || tagMap.angleTag,
     questionType: context.questionType || tagMap.questionType,
     disputeId: context.disputeId,
     evidenceId: context.evidenceId,
@@ -206,6 +226,21 @@ function scoreVariant(
   if (context.evidenceId && last.evidenceId && context.evidenceId === last.evidenceId) score += 2
   if (context.witnessId && last.witnessId && context.witnessId === last.witnessId) score += 2
   if (context.questionType && last.questionType && context.questionType === last.questionType) score += 1
+  if (context.channel === 'interrogation' && context.preferredAnswerAngles?.length) {
+    const angle = tags.answerAngle || tags.angleTag
+    if (angle && context.preferredAnswerAngles.includes(angle)) score += 28
+    else if (angle) score -= 4
+  }
+  if (
+    context.channel === 'interrogation' &&
+    last.channel === 'judge_question' &&
+    context.disputeId && last.disputeId === context.disputeId &&
+    context.questionType && last.questionType === context.questionType &&
+    last.answerAngle
+  ) {
+    if (tags.answerAngle === last.answerAngle || tags.angleTag === last.answerAngle) score += 24
+    else if (tags.answerAngle || tags.angleTag) score -= 3
+  }
   if (last.key === context.key) score -= 1
 
   const repeatedEmotion = tags.emotion
@@ -293,15 +328,44 @@ function selectVariant(
 ): ScriptedVariant | null {
   if (!variants.length) return null
 
+  const explicitAngles = [...new Set((context.preferredAnswerAngles ?? []).filter(Boolean))]
+  let explicitlyLockedVariants = variants
+  if (context.channel === 'interrogation' && explicitAngles.length > 0) {
+    const matched = variants.filter((variant) => {
+      const tags = parseTags(variant.tags)
+      const angle = tags.answerAngle || tags.angleTag
+      return angle ? explicitAngles.includes(angle) : false
+    })
+    if (matched.length > 0) explicitlyLockedVariants = matched
+  }
+
+  const recentContexts = getRecentContexts(caseId)
+  const lastContext = recentContexts[recentContexts.length - 1]
+  const recentJudgeAngle = context.channel === 'interrogation' &&
+    lastContext?.channel === 'judge_question' &&
+    lastContext.disputeId === context.disputeId &&
+    lastContext.questionType === context.questionType
+    ? lastContext.answerAngle
+    : undefined
+
+  let angleLockedVariants = explicitlyLockedVariants
+  if (recentJudgeAngle) {
+    const matched = explicitlyLockedVariants.filter((variant) => {
+      const tags = parseTags(variant.tags)
+      return tags.answerAngle === recentJudgeAngle || tags.angleTag === recentJudgeAngle
+    })
+    if (matched.length > 0) angleLockedVariants = matched
+  }
+
   // [기타1 픽스] hard block 완화 — 사용자 결정: "동일 답변 반복이 스포일러보다 나음"
   // 기존: variant 4개 이상이면 최근 3턴 hard block → 다음 변종이 강제 선택되며 점진적 진실 누설
   // 변경: hard block은 최근 1턴(직전)만 — score 패널티(-6/-2)로 자연스러운 다양성 확보
-  let candidates = variants
-  if (variants.length >= 2) {
+  let candidates = angleLockedVariants
+  if (angleLockedVariants.length >= 2) {
     const recentIds = recentScriptIds.get(caseId) ?? []
     const lastUsed = recentIds[recentIds.length - 1]
     if (lastUsed) {
-      const filtered = variants.filter(v => v.id !== lastUsed)
+      const filtered = angleLockedVariants.filter(v => v.id !== lastUsed)
       if (filtered.length > 0) candidates = filtered
     }
   }
@@ -366,13 +430,52 @@ export function getScriptedInterrogation(
   questionType: string,
   archetype?: string,
   emotion?: string,
+  preferredAnswerAngles?: string[],
 ): { text: string; behaviorHint: string } | null {
+  const normalizedCaseId = normalizeCaseKey(caseId)
   const key = buildInterrogationKey({
     party,
     disputeId,
     lieState: lieState as ScriptedLieState,
     questionType: questionType as ScriptedInterrogationQuestionType,
   })
+
+  const recentContexts = getRecentContexts(normalizedCaseId)
+  const lastContext = recentContexts[recentContexts.length - 1]
+  const recentJudgeAngle = lastContext?.channel === 'judge_question' &&
+    lastContext.disputeId === disputeId &&
+    lastContext.questionType === questionType
+    ? lastContext.answerAngle
+    : undefined
+  const anglePreferences = [...new Set([
+    ...(preferredAnswerAngles ?? []),
+    ...(recentJudgeAngle ? [recentJudgeAngle] : []),
+  ].filter(Boolean))]
+
+  const angleLookup = getScriptedAngleAnswerLookup({
+    caseId: normalizedCaseId,
+    party,
+    disputeId,
+    lieState,
+    questionType,
+    preferredAngles: anglePreferences,
+  })
+  if (angleLookup?.variants.length) {
+    const variant = selectVariant(angleLookup.variants, normalizedCaseId, {
+      channel: 'interrogation',
+      key: angleLookup.key,
+      archetype,
+      emotion,
+      questionType,
+      disputeId,
+      preferredAnswerAngles: anglePreferences.length > 0 ? anglePreferences : angleLookup.angleIds,
+    })
+    if (variant) {
+      logScriptedHit(normalizedCaseId, 'interrogation', angleLookup.key)
+      return { text: variant.text, behaviorHint: variant.behaviorHint }
+    }
+  }
+
   const bundle = loadBundle(caseId)
   if (!bundle) {
     logScriptedMiss(caseId, 'interrogation', key, 'bundle_missing')
@@ -402,6 +505,7 @@ export function getScriptedInterrogation(
     emotion,
     questionType,
     disputeId,
+    preferredAnswerAngles: anglePreferences.length > 0 ? anglePreferences : preferredAnswerAngles,
   })
   if (!variant) {
     logScriptedMiss(caseId, 'interrogation', key, 'variant_missing')
@@ -621,7 +725,100 @@ export function getScriptedJudgeQuestion(
   caseId: string, disputeId: string, questionType: string, depth: number, target?: 'a' | 'b',
 ): { text: string; behaviorHint: string } | null {
   const key = `${disputeId}|${questionType}|${depth}`
+  const angleVariants = getScriptedAngleJudgeQuestionVariants({
+    caseId: normalizeCaseKey(caseId),
+    disputeId,
+    questionType,
+    target,
+  })
+  if (angleVariants.length > 0) {
+    const variant = selectVariant(angleVariants, normalizeCaseKey(caseId), {
+      channel: 'judge_question',
+      key,
+      questionType,
+      disputeId,
+      targetParty: target,
+    })
+    if (variant) {
+      logScriptedHit(caseId, 'judge_question', key)
+      return { text: variant.text, behaviorHint: variant.behaviorHint }
+    }
+  }
   return getFromChannel(caseId, 'judge_question', key, { targetParty: target })
+}
+
+export function getScriptedJudgeQuestionOptions(
+  caseId: string,
+  disputeId: string,
+  questionType: string,
+  depth: number,
+  target?: 'a' | 'b',
+  options?: {
+    allowedAngles?: string[]
+    limit?: number
+    seed?: number
+    includeOtherDepths?: boolean
+  },
+): ScriptedJudgeQuestionOption[] {
+  const angleOptions = getScriptedAngleJudgeQuestionOptions({
+    caseId: normalizeCaseKey(caseId),
+    disputeId,
+    questionType,
+    depth,
+    target,
+    allowedAngles: options?.allowedAngles,
+    limit: options?.limit,
+    seed: options?.seed,
+  })
+  if (angleOptions.length > 0) return angleOptions
+
+  const bundle = loadBundle(caseId)
+  const entries = (bundle?.channels as any)?.judge_question?.entries
+  if (!Array.isArray(entries)) return []
+
+  const limit = Math.max(1, options?.limit ?? 5)
+  const normalizedDepth = Math.min(Math.max(depth || 1, 1), 5)
+  const depthOrder = options?.includeOtherDepths === false
+    ? [normalizedDepth]
+    : [
+        normalizedDepth,
+        ...[1, 2, 3, 4, 5].filter((item) => item !== normalizedDepth),
+      ]
+  const allowedAngles = new Set((options?.allowedAngles ?? []).filter(Boolean))
+  const allowByAngle = allowedAngles.size > 0
+  const candidates: ScriptedJudgeQuestionOption[] = []
+
+  for (const currentDepth of depthOrder) {
+    for (const entry of entries) {
+      if (entry?.disputeId !== disputeId) continue
+      if (entry?.questionType !== questionType) continue
+      if (Number(entry?.depth ?? 0) !== currentDepth) continue
+      for (const variant of entry.variants ?? []) {
+        const tags = parseTags(variant.tags)
+        const targetParty = tags.targetParty as PartyId | undefined
+        if (target && targetParty && targetParty !== target) continue
+        const answerAngle = tags.answerAngle || tags.angleTag || GENERAL_QUESTION_ANGLE
+        candidates.push({
+          id: variant.id,
+          text: variant.text,
+          behaviorHint: variant.behaviorHint,
+          answerAngle,
+          disputeId,
+          questionType,
+          depth: currentDepth,
+          targetParty,
+        })
+      }
+    }
+    if (candidates.length >= limit * 2) break
+  }
+
+  const filtered = allowByAngle
+    ? candidates.filter((item) => item.answerAngle === GENERAL_QUESTION_ANGLE || allowedAngles.has(item.answerAngle))
+    : candidates
+  const effective = filtered.length >= Math.min(limit, candidates.length) ? filtered : candidates
+  const deduped = dedupeQuestionOptions(effective)
+  return shuffleQuestionOptions(deduped, options?.seed ?? 0).slice(0, limit)
 }
 
 /** 재판관 모순 추궁 질문 (사건별)
@@ -652,6 +849,35 @@ function getFromChannel(
 }
 
 /** 캐시 클리어 */
+function dedupeQuestionOptions(options: ScriptedJudgeQuestionOption[]): ScriptedJudgeQuestionOption[] {
+  const seen = new Set<string>()
+  const result: ScriptedJudgeQuestionOption[] = []
+  for (const option of options) {
+    const key = option.text.replace(/\s+/g, ' ').trim()
+    if (!key || seen.has(key)) continue
+    seen.add(key)
+    result.push(option)
+  }
+  return result
+}
+
+function shuffleQuestionOptions(options: ScriptedJudgeQuestionOption[], seed: number): ScriptedJudgeQuestionOption[] {
+  return [...options].sort((a, b) => {
+    const scoreA = stableQuestionScore(`${seed}:${a.id}:${a.text}`)
+    const scoreB = stableQuestionScore(`${seed}:${b.id}:${b.text}`)
+    return scoreA - scoreB
+  })
+}
+
+function stableQuestionScore(value: string): number {
+  let hash = 2166136261
+  for (let i = 0; i < value.length; i += 1) {
+    hash ^= value.charCodeAt(i)
+    hash = Math.imul(hash, 16777619)
+  }
+  return hash >>> 0
+}
+
 export function clearScriptedCache(): void {
   bundleCache.clear()
   recentScriptIds.clear()

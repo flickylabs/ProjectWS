@@ -1,0 +1,721 @@
+{
+  "schemaVersion": 1,
+  "caseId": "spouse-01",
+  "angles": [
+    {
+      "disputeId": "d-1",
+      "angleId": "general",
+      "label": "포괄 확인",
+      "description": "오피스텔 방문, 새벽 전화, 영수증 물건을 한 묶음으로 확인한다.",
+      "keywords": [
+        "오피스텔",
+        "새벽 전화",
+        "영수증",
+        "외도 의심",
+        "전체 경위"
+      ],
+      "unlockCondition": {
+        "defaultUnlocked": true,
+        "evidenceIds": [],
+        "witnessIds": [],
+        "notes": "초기부터 열리지만 S5 전에는 방문 대상의 정체를 직접 말하지 않는다."
+      },
+      "truthBoundary": {
+        "beforeS5MustNotSay": [
+          "친형",
+          "조카",
+          "중학생 조카",
+          "형의 오피스텔",
+          "돌봄의 실체"
+        ],
+        "s5CanSay": [
+          "친형 오피스텔에서 조카를 돌본 일",
+          "새벽 전화는 형과의 긴급 연락"
+        ]
+      }
+    },
+    {
+      "disputeId": "d-1",
+      "angleId": "visit_route",
+      "label": "오피스텔 방문 동선",
+      "description": "퇴근 후 같은 오피스텔에 반복 방문한 시간, 경로, 체류 목적을 확인한다.",
+      "keywords": [
+        "오피스텔",
+        "방문",
+        "퇴근",
+        "매장 마감",
+        "GPS",
+        "동선",
+        "체류 시간"
+      ],
+      "unlockCondition": {
+        "defaultUnlocked": false,
+        "evidenceIds": [
+          "e-2"
+        ],
+        "witnessIds": [
+          "w-1"
+        ],
+        "notes": "GPS 기록 또는 오피스텔 경비 증언으로 강화된다."
+      },
+      "truthBoundary": {
+        "beforeS5MustNotSay": [
+          "친형 주소",
+          "조카 돌봄"
+        ],
+        "s5CanSay": [
+          "친형이 지내던 오피스텔",
+          "조카를 돌보러 간 방문"
+        ]
+      }
+    },
+    {
+      "disputeId": "d-1",
+      "angleId": "call_record",
+      "label": "새벽 전화와 미등록 번호",
+      "description": "새벽의 짧은 통화와 미등록 번호 문자 스레드가 어떤 긴급 연락이었는지 확인한다.",
+      "keywords": [
+        "새벽",
+        "전화",
+        "통화",
+        "미등록 번호",
+        "발신자 미상 문자",
+        "긴급 연락"
+      ],
+      "unlockCondition": {
+        "defaultUnlocked": false,
+        "evidenceIds": [
+          "e-3",
+          "e-4"
+        ],
+        "witnessIds": [],
+        "notes": "통화기록과 문자 스레드를 통해 연락 축이 열린다."
+      },
+      "truthBoundary": {
+        "beforeS5MustNotSay": [
+          "형의 번호",
+          "조카 학교 알림"
+        ],
+        "s5CanSay": [
+          "새벽 전화는 형과의 긴급 연락",
+          "문자 안의 학교 알림은 조카 돌봄 맥락"
+        ]
+      }
+    },
+    {
+      "disputeId": "d-1",
+      "angleId": "family_items",
+      "label": "영수증 속 물건",
+      "description": "차에서 발견된 여성용품과 학용품이 누구에게 필요했던 물건인지 확인한다.",
+      "keywords": [
+        "영수증",
+        "틴트",
+        "헤어롤",
+        "머리끈",
+        "손거울",
+        "참고서",
+        "필요한 물건"
+      ],
+      "unlockCondition": {
+        "defaultUnlocked": false,
+        "evidenceIds": [
+          "e-1"
+        ],
+        "witnessIds": [],
+        "notes": "영수증 조사 단계가 올라가면 물건의 실제 사용처를 추궁할 수 있다."
+      },
+      "truthBoundary": {
+        "beforeS5MustNotSay": [
+          "조카 학용품",
+          "중학생 참고서의 대상"
+        ],
+        "s5CanSay": [
+          "조카와 친형 집에 필요한 생필품과 학용품"
+        ]
+      }
+    },
+    {
+      "disputeId": "d-1",
+      "angleId": "affair_denial",
+      "label": "외도 의심 부정",
+      "description": "오피스텔, 전화, 물건이 외도 정황인지 아닌지를 구분한다.",
+      "keywords": [
+        "외도",
+        "바람",
+        "불륜",
+        "딴살림",
+        "관계",
+        "오해"
+      ],
+      "unlockCondition": {
+        "defaultUnlocked": true,
+        "evidenceIds": [],
+        "witnessIds": [],
+        "notes": "초기부터 열린다. 사실 부정과 숨김 책임을 분리한다."
+      },
+      "truthBoundary": {
+        "beforeS5MustNotSay": [
+          "외도 아님을 증명하는 가족 정체"
+        ],
+        "s5CanSay": [
+          "외도가 아니라 가족 돌봄이었다는 확정"
+        ]
+      }
+    },
+    {
+      "disputeId": "d-1",
+      "angleId": "concealment_reason",
+      "label": "숨긴 이유",
+      "description": "왜 방문, 전화, 물건을 배우자에게 설명하지 않았는지 확인한다.",
+      "keywords": [
+        "숨김",
+        "침묵",
+        "설명하지 않음",
+        "시댁 갈등",
+        "두려움",
+        "오해 방치"
+      ],
+      "unlockCondition": {
+        "defaultUnlocked": false,
+        "evidenceIds": [
+          "e-1",
+          "e-2",
+          "e-3",
+          "e-4"
+        ],
+        "witnessIds": [],
+        "notes": "정황이 누적될수록 숨긴 이유 각도가 열리지만 S5 전에는 정체를 직접 말하지 않는다."
+      },
+      "truthBoundary": {
+        "beforeS5MustNotSay": [
+          "친형 개인회생",
+          "조카 돌봄"
+        ],
+        "s5CanSay": [
+          "시댁 갈등이 두려워 형과 조카 일을 숨겼다"
+        ]
+      }
+    },
+    {
+      "disputeId": "d-2",
+      "angleId": "general",
+      "label": "포괄 확인",
+      "description": "개인 계좌 목돈 출금, 현금 이동, 배우자 배제 문제를 한 묶음으로 확인한다.",
+      "keywords": [
+        "개인 계좌",
+        "출금",
+        "현금",
+        "목돈",
+        "배우자 동의",
+        "전체 경위"
+      ],
+      "unlockCondition": {
+        "defaultUnlocked": false,
+        "evidenceIds": [
+          "e-5"
+        ],
+        "witnessIds": [],
+        "notes": "d-1이 일정 단계 이상 진행된 뒤 개인 계좌 출금 내역으로 열린다."
+      },
+      "truthBoundary": {
+        "beforeS5MustNotSay": [
+          "형에게 전달",
+          "개인회생",
+          "비자금"
+        ],
+        "s5CanSay": [
+          "개인 비자금 2,000만원을 형에게 현금 전달",
+          "형이 개인회생 중이라 계좌이체가 어려웠음"
+        ]
+      }
+    },
+    {
+      "disputeId": "d-2",
+      "angleId": "cash_withdrawal",
+      "label": "2,000만원 현금 출금",
+      "description": "개인 계좌에서 2,000만원이 현금으로 출금된 시점과 방식 확인.",
+      "keywords": [
+        "2,000만원",
+        "현금 출금",
+        "개인 계좌",
+        "4개월 전",
+        "목돈"
+      ],
+      "unlockCondition": {
+        "defaultUnlocked": false,
+        "evidenceIds": [
+          "e-5"
+        ],
+        "witnessIds": [],
+        "notes": "개인 계좌 출금 내역을 조사하면 열린다."
+      },
+      "truthBoundary": {
+        "beforeS5MustNotSay": [
+          "형에게 준 돈",
+          "개인회생"
+        ],
+        "s5CanSay": [
+          "4개월 전 개인 비자금 2,000만원을 현금으로 뺐다"
+        ]
+      }
+    },
+    {
+      "disputeId": "d-2",
+      "angleId": "private_fund_boundary",
+      "label": "개인 자금과 공동재산의 경계",
+      "description": "출금 원천이 공동 적금인지 개인 계좌인지, 배우자에게 말하지 않은 책임은 무엇인지 분리한다.",
+      "keywords": [
+        "개인 자금",
+        "공동재산",
+        "공동 적금",
+        "경계",
+        "사전 동의"
+      ],
+      "unlockCondition": {
+        "defaultUnlocked": false,
+        "evidenceIds": [
+          "e-5",
+          "e-7"
+        ],
+        "witnessIds": [],
+        "notes": "e-5로 출금 원천을, e-7로 공동 적금 축과의 차이를 분리한다."
+      },
+      "truthBoundary": {
+        "beforeS5MustNotSay": [
+          "비자금이라는 최종 성격",
+          "공동 적금과 무관하다는 확정"
+        ],
+        "s5CanSay": [
+          "공동 적금이 아니라 이준호 개인 비자금이었다",
+          "그래도 배우자에게 숨긴 책임은 남는다"
+        ]
+      }
+    },
+    {
+      "disputeId": "d-2",
+      "angleId": "recipient_reason",
+      "label": "현금 전달 대상과 이유",
+      "description": "출금한 현금이 누구에게 어떤 사정으로 전달됐는지 확인한다.",
+      "keywords": [
+        "전달 대상",
+        "사용처",
+        "현금으로 준 이유",
+        "긴급 사정",
+        "계좌이체 불가"
+      ],
+      "unlockCondition": {
+        "defaultUnlocked": false,
+        "evidenceIds": [
+          "e-5",
+          "e-4"
+        ],
+        "witnessIds": [],
+        "notes": "문자 스레드와 출금 내역의 시점이 겹칠 때 강화된다."
+      },
+      "truthBoundary": {
+        "beforeS5MustNotSay": [
+          "형에게 전달",
+          "형 빚",
+          "개인회생"
+        ],
+        "s5CanSay": [
+          "형에게 현금으로 전달",
+          "형의 개인회생 때문에 계좌 입금이 곤란했다"
+        ]
+      }
+    },
+    {
+      "disputeId": "d-2",
+      "angleId": "consent_boundary",
+      "label": "배우자 동의 배제",
+      "description": "개인 돈이라도 배우자에게 말하지 않고 큰돈을 움직인 책임을 묻는다.",
+      "keywords": [
+        "동의",
+        "상의",
+        "배우자 배제",
+        "혼자 결정",
+        "재정 신뢰"
+      ],
+      "unlockCondition": {
+        "defaultUnlocked": false,
+        "evidenceIds": [
+          "e-5"
+        ],
+        "witnessIds": [],
+        "notes": "금액과 현금 이동이 확인되면 동의 경계 각도가 열린다."
+      },
+      "truthBoundary": {
+        "beforeS5MustNotSay": [
+          "돈의 최종 수취인 정체"
+        ],
+        "s5CanSay": [
+          "배우자 동의 없이 개인 비자금을 현금 전달한 책임 인정"
+        ]
+      }
+    },
+    {
+      "disputeId": "h-d3",
+      "angleId": "general",
+      "label": "포괄 확인",
+      "description": "공동 적금 해지, 위임 서류, 투자방 송금, 손실 경위를 한 묶음으로 확인한다.",
+      "keywords": [
+        "공동 적금",
+        "해지",
+        "위임장",
+        "투자방",
+        "송금",
+        "손실"
+      ],
+      "unlockCondition": {
+        "defaultUnlocked": false,
+        "evidenceIds": [
+          "e-6",
+          "e-7"
+        ],
+        "witnessIds": [
+          "w-2",
+          "w-3"
+        ],
+        "notes": "d-2 공개 뒤 역공 또는 e-6/e-7 조합으로 열린다."
+      },
+      "truthBoundary": {
+        "beforeS5MustNotSay": [
+          "위임장 조작",
+          "투자 사기",
+          "전액 손실"
+        ],
+        "s5CanSay": [
+          "박지연이 위임장을 조작해 공동 적금 3,000만원 해지",
+          "투자방 송금 후 사기로 전액 손실"
+        ]
+      }
+    },
+    {
+      "disputeId": "h-d3",
+      "angleId": "savings_cancellation",
+      "label": "공동 적금 해지",
+      "description": "공동 적금이 언제, 누구 신청으로 해지됐는지 확인한다.",
+      "keywords": [
+        "공동 적금",
+        "해지",
+        "중도해지",
+        "은행",
+        "수령 계좌"
+      ],
+      "unlockCondition": {
+        "defaultUnlocked": false,
+        "evidenceIds": [
+          "e-7"
+        ],
+        "witnessIds": [
+          "w-2"
+        ],
+        "notes": "공동 적금 해지 서류와 은행 직원 증언으로 강화된다."
+      },
+      "truthBoundary": {
+        "beforeS5MustNotSay": [
+          "동의 없는 조작 확정",
+          "범죄"
+        ],
+        "s5CanSay": [
+          "박지연이 이준호 동의 없이 공동 적금을 해지했다"
+        ]
+      }
+    },
+    {
+      "disputeId": "h-d3",
+      "angleId": "proxy_document",
+      "label": "위임 서류와 서명 경위",
+      "description": "위임장 서명의 작성 경위와 실제 동의 여부를 확인한다.",
+      "keywords": [
+        "위임장",
+        "서명",
+        "본인 확인",
+        "서류 처리",
+        "작성 경위"
+      ],
+      "unlockCondition": {
+        "defaultUnlocked": false,
+        "evidenceIds": [
+          "e-7"
+        ],
+        "witnessIds": [
+          "w-2"
+        ],
+        "notes": "서류 원본과 필체 대조 단계에서 열린다."
+      },
+      "truthBoundary": {
+        "beforeS5MustNotSay": [
+          "위임장 조작",
+          "서명 대필"
+        ],
+        "s5CanSay": [
+          "박지연이 이준호 명의 위임장을 조작했다"
+        ]
+      }
+    },
+    {
+      "disputeId": "h-d3",
+      "angleId": "investment_room",
+      "label": "투자방 송금 경위",
+      "description": "해지된 돈이 투자방으로 흘러간 경위와 가입 경로를 확인한다.",
+      "keywords": [
+        "투자방",
+        "카톡",
+        "송금",
+        "가입 링크",
+        "박미라",
+        "운영자"
+      ],
+      "unlockCondition": {
+        "defaultUnlocked": false,
+        "evidenceIds": [
+          "e-6"
+        ],
+        "witnessIds": [
+          "w-3"
+        ],
+        "notes": "투자방 카톡 및 송금 기록, 박미라 증언으로 강화된다."
+      },
+      "truthBoundary": {
+        "beforeS5MustNotSay": [
+          "투자 사기 확정",
+          "전액 손실"
+        ],
+        "s5CanSay": [
+          "투자방은 사기였고 송금액을 전액 잃었다"
+        ]
+      }
+    },
+    {
+      "disputeId": "h-d3",
+      "angleId": "loss_responsibility",
+      "label": "손실과 법적 책임",
+      "description": "돈이 사라진 결과와 서류 처리 책임을 감정적 피해 주장과 분리한다.",
+      "keywords": [
+        "손실",
+        "책임",
+        "법적 책임",
+        "수치심",
+        "정당화 불가"
+      ],
+      "unlockCondition": {
+        "defaultUnlocked": false,
+        "evidenceIds": [
+          "e-6",
+          "e-7"
+        ],
+        "witnessIds": [
+          "w-2",
+          "w-3"
+        ],
+        "notes": "e-6과 e-7이 함께 확인돼야 최종 책임 각도가 열린다."
+      },
+      "truthBoundary": {
+        "beforeS5MustNotSay": [
+          "범죄 행위 확정",
+          "전액 손실 확정"
+        ],
+        "s5CanSay": [
+          "위임장 조작은 범죄이며 투자 사기로 전액 손실됐다"
+        ]
+      }
+    },
+    {
+      "disputeId": "h-d4",
+      "angleId": "general",
+      "label": "포괄 확인",
+      "description": "숨김, 계좌 확인, 돈 실행, 서류 위반을 한 덩어리로 묶지 않고 분리한다.",
+      "keywords": [
+        "선후",
+        "숨김",
+        "계좌 확인",
+        "자금 실행",
+        "서류 위반",
+        "책임 분리"
+      ],
+      "unlockCondition": {
+        "defaultUnlocked": false,
+        "evidenceIds": [
+          "e-5",
+          "e-6",
+          "e-7"
+        ],
+        "witnessIds": [
+          "w-2",
+          "w-3"
+        ],
+        "notes": "d-2와 h-d3가 모두 최소 공개된 뒤 자동 해금된다."
+      },
+      "truthBoundary": {
+        "beforeS5MustNotSay": [
+          "숨김은 B 먼저",
+          "계좌 감시는 A 먼저",
+          "범죄 행위는 A"
+        ],
+        "s5CanSay": [
+          "숨김은 B 먼저, 계좌 감시는 A 먼저, 돈 실행은 동시기, 범죄 행위는 A 쪽 위임장 조작"
+        ]
+      }
+    },
+    {
+      "disputeId": "h-d4",
+      "angleId": "concealment_sequence",
+      "label": "숨김의 시작",
+      "description": "누가 무엇을 먼저 숨겼는지, 숨김과 실행을 분리해 확인한다.",
+      "keywords": [
+        "숨김 시작",
+        "먼저 숨김",
+        "침묵",
+        "비밀",
+        "선후"
+      ],
+      "unlockCondition": {
+        "defaultUnlocked": false,
+        "evidenceIds": [
+          "e-5"
+        ],
+        "witnessIds": [],
+        "notes": "개인 계좌 출금 쟁점이 공개된 뒤 h-d3와 합쳐져 열린다."
+      },
+      "truthBoundary": {
+        "beforeS5MustNotSay": [
+          "B가 먼저 숨겼다는 최종 확정"
+        ],
+        "s5CanSay": [
+          "비자금과 형 상황 은폐는 B가 먼저였다"
+        ]
+      }
+    },
+    {
+      "disputeId": "h-d4",
+      "angleId": "account_monitoring",
+      "label": "계좌 확인의 시작",
+      "description": "박지연이 언제부터 계좌를 들여다봤는지와 그 행위의 책임을 확인한다.",
+      "keywords": [
+        "계좌 확인",
+        "내역 열람",
+        "감시 의심",
+        "신혼 초",
+        "불안"
+      ],
+      "unlockCondition": {
+        "defaultUnlocked": false,
+        "evidenceIds": [
+          "e-5",
+          "e-6"
+        ],
+        "witnessIds": [],
+        "notes": "개인 계좌 출금 내역을 알게 된 경위가 흔들릴 때 열린다."
+      },
+      "truthBoundary": {
+        "beforeS5MustNotSay": [
+          "계좌 감시는 A가 먼저라는 최종 확정"
+        ],
+        "s5CanSay": [
+          "계좌 감시는 박지연이 신혼 초부터 먼저 시작했다"
+        ]
+      }
+    },
+    {
+      "disputeId": "h-d4",
+      "angleId": "execution_timeline",
+      "label": "자금 실행 시점",
+      "description": "B의 현금 출금과 A의 공동 적금 해지·송금 시점을 시간순으로 배열한다.",
+      "keywords": [
+        "4개월 전",
+        "6주 전",
+        "5주 전",
+        "출금",
+        "해지",
+        "송금",
+        "시간순"
+      ],
+      "unlockCondition": {
+        "defaultUnlocked": false,
+        "evidenceIds": [
+          "e-5",
+          "e-6",
+          "e-7"
+        ],
+        "witnessIds": [],
+        "notes": "세 증거의 시점을 함께 놓아야 열린다."
+      },
+      "truthBoundary": {
+        "beforeS5MustNotSay": [
+          "최종 순서 확정",
+          "위임장 조작 확정"
+        ],
+        "s5CanSay": [
+          "B는 4개월 전 현금 출금, A는 6주 전 공동 적금 해지와 5주 전 송금"
+        ]
+      }
+    },
+    {
+      "disputeId": "h-d4",
+      "angleId": "illegal_boundary",
+      "label": "법적 선을 넘은 행위",
+      "description": "동기와 별개로 법적 책임이 붙는 서류 처리와 자금 이동을 분리한다.",
+      "keywords": [
+        "법적 책임",
+        "서류 위반",
+        "위임 서류",
+        "정당화",
+        "책임 축"
+      ],
+      "unlockCondition": {
+        "defaultUnlocked": false,
+        "evidenceIds": [
+          "e-7"
+        ],
+        "witnessIds": [
+          "w-2"
+        ],
+        "notes": "은행 서류와 증언이 있어야 법적 책임 각도가 강화된다."
+      },
+      "truthBoundary": {
+        "beforeS5MustNotSay": [
+          "범죄 행위는 A라는 최종 판단",
+          "위임장 조작"
+        ],
+        "s5CanSay": [
+          "법적 선을 넘은 행위는 박지연의 위임장 조작"
+        ]
+      }
+    },
+    {
+      "disputeId": "h-d4",
+      "angleId": "responsibility_split",
+      "label": "분리된 책임 기록",
+      "description": "누가 더 나쁜가가 아니라 숨김, 감시, 실행, 위법성을 각각 따로 기록한다.",
+      "keywords": [
+        "분리 기록",
+        "공동 책임",
+        "각자 책임",
+        "단일 책임 금지",
+        "판결 프레임"
+      ],
+      "unlockCondition": {
+        "defaultUnlocked": false,
+        "evidenceIds": [
+          "e-5",
+          "e-6",
+          "e-7"
+        ],
+        "witnessIds": [
+          "w-2",
+          "w-3"
+        ],
+        "notes": "최종 종합 각도. 한 사람의 자백만으로 완료하지 않는다."
+      },
+      "truthBoundary": {
+        "beforeS5MustNotSay": [
+          "최종 종합 결론 전체"
+        ],
+        "s5CanSay": [
+          "숨김, 감시, 실행, 위법성을 분리해 기록한다"
+        ]
+      }
+    }
+  ]
+}

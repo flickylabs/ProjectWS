@@ -15,8 +15,11 @@ import PCDeferredVerdictIcon from './PCDeferredVerdictIcon'
 import { getPcFaceSymbolId, getPcEvidenceSymbolId } from '../icons/pcIconUtils'
 import FreeInterrogationInput from '../../freeInterrogation/FreeQuestionInput'
 import { isFreeInterrogationEnabled } from '../../../engine/freeInterrogation'
+import { buildGeneratedQuestionAngleOptions, getQuestionAngleLabel, getUnlockedQuestionAngleIds } from '../../../engine/questionAngleEngine'
+import { getScriptedJudgeQuestionOptions, type ScriptedJudgeQuestionOption } from '../../../engine/scriptedTextLoader'
 import { emitVerdictCtaCollapsed, PC_VERDICT_CTA_COLLAPSED_EVENT } from '../layout/verdictAdvanceEvents'
 import { requestVerdictAdvance } from '../layout/verdictAdvancePrompt'
+import { normalizeCaseKey } from '../../../utils/caseHelpers'
 
 const EMOTION_LABELS: Record<EmotionalPhase, string> = {
   defensive: '경계',
@@ -43,6 +46,7 @@ export default function PCBottomDock() {
   const evidenceDefinitions = useStore((s) => s.evidenceDefinitions)
   const evidenceStates = useStore((s) => s.evidenceStates)
   const questionMeters = useStore((s) => s.questionMeters)
+  const interrogationHistory = useStore((s) => s.interrogationHistory)
   const agentA = useStore((s) => s.agentA)
   const agentB = useStore((s) => s.agentB)
   const calledWitnesses = useStore((s) => s.calledWitnesses)
@@ -59,7 +63,7 @@ export default function PCBottomDock() {
   const combinableIds = useMemo(() => useGameStore.getState().getCombinableEvidenceIds(), [evidenceStates])
 
   // --- overlay states ---
-  const [questionChoice, setQuestionChoice] = useState<{ type: QuestionType } | null>(null)
+  const [questionChoice, setQuestionChoice] = useState<{ type: QuestionType; disputeId?: string } | null>(null)
   const [evidenceChoice, setEvidenceChoice] = useState(false)
   const [freeQuestionOpen, setFreeQuestionOpen] = useState(false)
   const freeQuestionRef = useRef<HTMLTextAreaElement>(null)
@@ -96,11 +100,71 @@ export default function PCBottomDock() {
 
   const selectDisputeForQuestion = useCallback((disputeId: string) => {
     if (!questionChoice) return
+    setQuestionChoice({ ...questionChoice, disputeId })
+  }, [questionChoice])
+
+  const questionOptions = useMemo(() => {
+    if (!caseData || !questionChoice?.disputeId) return []
+    const history = interrogationHistory?.[pcTargetParty]?.[questionChoice.disputeId]
+    const depth = Math.min(Math.max((history?.questionTypes?.length ?? 0) + 1, 1), 4)
+    const allowedAngles = getUnlockedQuestionAngleIds({
+      caseId: normalizeCaseKey(caseData),
+      caseData,
+      disputeId: questionChoice.disputeId,
+      target: pcTargetParty,
+      evidenceStates,
+      calledWitnesses,
+    })
+    const seed = turnCount + questionChoice.disputeId.charCodeAt(questionChoice.disputeId.length - 1)
+    const scriptedOptions = getScriptedJudgeQuestionOptions(
+      normalizeCaseKey(caseData),
+      questionChoice.disputeId,
+      questionChoice.type,
+      depth,
+      pcTargetParty,
+      {
+        allowedAngles,
+        limit: 5,
+        seed,
+        includeOtherDepths: false,
+      },
+    )
+    const generatedOptions = buildGeneratedQuestionAngleOptions({
+      caseId: normalizeCaseKey(caseData),
+      caseData,
+      disputeId: questionChoice.disputeId,
+      questionType: questionChoice.type,
+      target: pcTargetParty,
+      evidenceStates,
+      calledWitnesses,
+      limit: 5,
+      seed,
+    }).map((option) => ({
+      ...option,
+      disputeId: questionChoice.disputeId!,
+      questionType: questionChoice.type,
+      depth,
+      targetParty: pcTargetParty,
+    }))
+    const byText = new Map<string, ScriptedJudgeQuestionOption>()
+    for (const option of [...scriptedOptions, ...generatedOptions]) {
+      const key = option.text.replace(/\s+/g, ' ').trim()
+      if (!byText.has(key)) byText.set(key, option)
+    }
+    return [...byText.values()].slice(0, 5)
+  }, [calledWitnesses, caseData, evidenceStates, interrogationHistory, pcTargetParty, questionChoice, turnCount])
+
+  const selectQuestionOption = useCallback((option?: ScriptedJudgeQuestionOption) => {
+    if (!questionChoice?.disputeId) return
     dispatch({
       type: 'question',
       questionType: questionChoice.type,
       target: pcTargetParty,
-      disputeId,
+      disputeId: questionChoice.disputeId,
+      judgeQuestionText: option?.text,
+      scriptedQuestionId: option?.id,
+      answerAngle: option?.answerAngle,
+      answerAngles: option?.answerAngle ? [option.answerAngle] : undefined,
     })
     setQuestionChoice(null)
   }, [dispatch, pcTargetParty, questionChoice])
@@ -298,12 +362,35 @@ export default function PCBottomDock() {
               </button>
             </div>
             <div className="pc-question-choice__disputes">
-              <p className="pc-question-choice__hint">쟁점을 선택하세요</p>
-              {visibleDisputes.map((d) => (
-                <button className="pc-question-choice__dispute-btn" key={d.id} onClick={() => selectDisputeForQuestion(d.id)} type="button">
-                  <span className="pc-question-choice__dispute-name">{d.name}</span>
-                </button>
-              ))}
+              {!questionChoice.disputeId ? (
+                <>
+                  <p className="pc-question-choice__hint">쟁점을 선택하세요</p>
+                  {visibleDisputes.map((d) => (
+                    <button className="pc-question-choice__dispute-btn" key={d.id} onClick={() => selectDisputeForQuestion(d.id)} type="button">
+                      <span className="pc-question-choice__dispute-name">{d.name}</span>
+                    </button>
+                  ))}
+                </>
+              ) : (
+                <>
+                  <button className="pc-question-choice__back" onClick={() => setQuestionChoice({ type: questionChoice.type })} type="button">
+                    ← 쟁점 다시 선택
+                  </button>
+                  <p className="pc-question-choice__hint">질문을 선택하세요</p>
+                  {questionOptions.length === 0 ? (
+                    <button className="pc-question-choice__msg-btn" onClick={() => selectQuestionOption()} type="button">
+                      <span className="pc-question-choice__msg-text">기본 질문으로 진행</span>
+                    </button>
+                  ) : (
+                    questionOptions.map((option) => (
+                      <button className="pc-question-choice__msg-btn pc-question-choice__msg-btn--question" key={option.id} onClick={() => selectQuestionOption(option)} type="button">
+                        <span className="pc-question-choice__angle">{getQuestionAngleLabel(option.answerAngle, normalizeCaseKey(caseData), option.disputeId)}</span>
+                        <span className="pc-question-choice__msg-text">{option.text}</span>
+                      </button>
+                    ))
+                  )}
+                </>
+              )}
             </div>
           </div>
         </div>

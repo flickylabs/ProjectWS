@@ -22887,6 +22887,28 @@ body.pc-mode .pc-question-choice__msg-text {
   line-height: 1.5 !important;
 }
 
+body.pc-mode .pc-question-choice__msg-btn--question {
+  display: grid !important;
+  grid-template-columns: 92px minmax(0, 1fr) !important;
+  align-items: start !important;
+  gap: 10px !important;
+  text-align: left !important;
+}
+
+body.pc-mode .pc-question-choice__angle {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-height: 24px !important;
+  border-radius: 999px !important;
+  border: 1px solid rgba(212, 162, 78, 0.22) !important;
+  background: rgba(212, 162, 78, 0.1) !important;
+  color: #f1d08d !important;
+  font-size: 11px !important;
+  font-weight: 800 !important;
+  white-space: nowrap !important;
+}
+
 body.pc-mode .pc-free-question-form {
   gap: 8px !important;
   padding: 0 !important;

@@ -1,0 +1,528 @@
+{
+  "schemaVersion": 1,
+  "caseId": "friend-01",
+  "sourceCaseId": "case-friend-01",
+  "angles": [
+    {
+      "disputeId": "d-1",
+      "angleId": "contact_timeline",
+      "label": "9일 연락의 시간표",
+      "description": "전화 6번, 문자 11번이 이어진 기간·시간대·응답 상태를 분리해 확인한다.",
+      "keywords": [
+        "9일",
+        "전화",
+        "문자",
+        "부재중",
+        "시간대",
+        "연락 기록",
+        "반복"
+      ],
+      "unlockCondition": {
+        "defaultUnlocked": true,
+        "evidenceIds": [
+          "e-1"
+        ],
+        "witnessIds": [],
+        "notes": "기본 해금. 원문 봉인 전에는 횟수와 시간대만 다루고 의도 확정은 보류한다."
+      },
+      "truthBoundary": {
+        "beforeS5MustNotSay": [
+          "송다은 아버지의 돈 접근을 경고했다는 단정",
+          "집착이 아니라 경고였다는 완전 진술",
+          "과거 사기 세부"
+        ],
+        "s5CanSay": [
+          "9일 연락은 결혼 전 위험을 알리려는 경고 시도였음",
+          "직접 말하지 못해 예비신랑에게 우회했음"
+        ]
+      }
+    },
+    {
+      "disputeId": "d-1",
+      "angleId": "message_intent",
+      "label": "문구 속 전달 목적",
+      "description": "호감 표현이 없는 문구와 “꼭 할 말”류 표현을 통해 연락의 목적을 추궁한다.",
+      "keywords": [
+        "꼭 할 말",
+        "의도",
+        "호감 표현",
+        "전달",
+        "다은이 아버지 건",
+        "긴급"
+      ],
+      "unlockCondition": {
+        "defaultUnlocked": false,
+        "evidenceIds": [
+          "e-1",
+          "e-7"
+        ],
+        "witnessIds": [],
+        "notes": "e-1 2~3단계 또는 e-7 확인 뒤 해금 권장. S5 전에는 경고 목적을 단정하지 않는다."
+      },
+      "truthBoundary": {
+        "beforeS5MustNotSay": [
+          "송다은 아버지의 돈 접근을 경고했다는 단정",
+          "집착이 아니라 경고였다는 완전 진술",
+          "과거 사기 세부"
+        ],
+        "s5CanSay": [
+          "9일 연락은 결혼 전 위험을 알리려는 경고 시도였음",
+          "직접 말하지 못해 예비신랑에게 우회했음"
+        ]
+      }
+    },
+    {
+      "disputeId": "d-1",
+      "angleId": "bypass_da_eun",
+      "label": "송다은 우회 연락",
+      "description": "왜 송다은에게 직접 말하지 않고 예비신랑에게 갔는지, 우회 방식의 책임을 묻는다.",
+      "keywords": [
+        "왜 다은이 말고",
+        "우회",
+        "직접 말하지",
+        "예비신랑에게",
+        "연락 경로",
+        "손절"
+      ],
+      "unlockCondition": {
+        "defaultUnlocked": false,
+        "evidenceIds": [
+          "e-1",
+          "e-5",
+          "e-7"
+        ],
+        "witnessIds": [],
+        "notes": "d-1 S2 이후 또는 e-1 원문 복원 뒤 해금. 방식의 책임과 의도는 분리한다."
+      },
+      "truthBoundary": {
+        "beforeS5MustNotSay": [
+          "송다은 아버지의 돈 접근을 경고했다는 단정",
+          "집착이 아니라 경고였다는 완전 진술",
+          "과거 사기 세부"
+        ],
+        "s5CanSay": [
+          "9일 연락은 결혼 전 위험을 알리려는 경고 시도였음",
+          "직접 말하지 못해 예비신랑에게 우회했음"
+        ]
+      }
+    },
+    {
+      "disputeId": "d-2",
+      "angleId": "message_sequence",
+      "label": "메시지 선후관계",
+      "description": "예비신랑과 최수민 사이 메시지의 시작점, 밤 시간대, 응답 순서를 확인한다.",
+      "keywords": [
+        "선후관계",
+        "첫 메시지",
+        "초기 대화",
+        "밤 메시지",
+        "순서",
+        "대화 흐름"
+      ],
+      "unlockCondition": {
+        "defaultUnlocked": false,
+        "evidenceIds": [
+          "e-4"
+        ],
+        "witnessIds": [
+          "w-2"
+        ],
+        "notes": "d-1 S3 또는 e-4 1단계 이후 해금. S5 전에는 선 넘은 주체를 확정하지 않는다."
+      },
+      "truthBoundary": {
+        "beforeS5MustNotSay": [
+          "예비신랑이 먼저 선을 넘었다는 확정",
+          "최수민이 거절했다는 직접 진실",
+          "접근 주체의 단정"
+        ],
+        "s5CanSay": [
+          "예비신랑이 먼저 선 넘는 메시지를 보냈음",
+          "최수민은 그 접근을 거절했음"
+        ]
+      }
+    },
+    {
+      "disputeId": "d-2",
+      "angleId": "boundary_response",
+      "label": "경계 답장과 거리두기",
+      "description": "최수민의 답장이 호응인지 거리두기인지, 표현의 범위와 의미를 확인한다.",
+      "keywords": [
+        "답장",
+        "경계",
+        "거리두기",
+        "받아준",
+        "호응",
+        "커피",
+        "술자리"
+      ],
+      "unlockCondition": {
+        "defaultUnlocked": false,
+        "evidenceIds": [
+          "e-4"
+        ],
+        "witnessIds": [],
+        "notes": "e-4 2~3단계 뒤 해금 권장. S5 전에는 거절 주체를 단정하지 않고 답장의 성격만 묻는다."
+      },
+      "truthBoundary": {
+        "beforeS5MustNotSay": [
+          "예비신랑이 먼저 선을 넘었다는 확정",
+          "최수민이 거절했다는 직접 진실",
+          "접근 주체의 단정"
+        ],
+        "s5CanSay": [
+          "예비신랑이 먼저 선 넘는 메시지를 보냈음",
+          "최수민은 그 접근을 거절했음"
+        ]
+      }
+    },
+    {
+      "disputeId": "d-2",
+      "angleId": "withheld_capture",
+      "label": "캡처를 숨긴 이유",
+      "description": "B가 원본을 곧바로 제시하지 못한 이유와 A가 확인을 미룬 이유를 분리한다.",
+      "keywords": [
+        "캡처",
+        "원본",
+        "보여주지",
+        "숨긴",
+        "말하지",
+        "바로 공개"
+      ],
+      "unlockCondition": {
+        "defaultUnlocked": false,
+        "evidenceIds": [
+          "e-4"
+        ],
+        "witnessIds": [
+          "w-2"
+        ],
+        "notes": "e-4 확인 뒤 또는 박준혁 증언 뒤 해금. 피해자가 가해 행위를 대신 자백하는 톤을 피한다."
+      },
+      "truthBoundary": {
+        "beforeS5MustNotSay": [
+          "예비신랑이 먼저 선을 넘었다는 확정",
+          "최수민이 거절했다는 직접 진실",
+          "접근 주체의 단정"
+        ],
+        "s5CanSay": [
+          "예비신랑이 먼저 선 넘는 메시지를 보냈음",
+          "최수민은 그 접근을 거절했음"
+        ]
+      }
+    },
+    {
+      "disputeId": "d-3",
+      "angleId": "father_request_signal",
+      "label": "아버지의 부탁 신호",
+      "description": "결혼 준비 안부와 부탁 예고 문구가 어떤 성격인지 아직 단정하지 않고 확인한다.",
+      "keywords": [
+        "아버지",
+        "부탁",
+        "안부",
+        "예고",
+        "문자",
+        "조심스러운 부탁"
+      ],
+      "unlockCondition": {
+        "defaultUnlocked": false,
+        "evidenceIds": [
+          "e-5"
+        ],
+        "witnessIds": [],
+        "notes": "d-2 S3 또는 e-5 1단계 후. 초반에는 부탁의 성격을 긴가민가하게 유지한다."
+      },
+      "truthBoundary": {
+        "beforeS5MustNotSay": [
+          "같은 패턴이라고 확정",
+          "과거 피해 세부",
+          "아버지가 사기꾼이라는 단정"
+        ],
+        "s5CanSay": [
+          "송다은 아버지가 예비신랑에게 돈 얘기를 꺼냈음",
+          "최수민이 과거와 닮은 흐름을 보고 경고하려 했음"
+        ]
+      }
+    },
+    {
+      "disputeId": "d-3",
+      "angleId": "money_secrecy",
+      "label": "금전성과 비밀 요청",
+      "description": "부탁이 금전 요구로 이어지는지, 송다은에게 말하지 말라는 요청이 있었는지를 확인한다.",
+      "keywords": [
+        "돈",
+        "금액",
+        "사업 자금",
+        "말하지 말라",
+        "비밀",
+        "금전성"
+      ],
+      "unlockCondition": {
+        "defaultUnlocked": false,
+        "evidenceIds": [
+          "e-5"
+        ],
+        "witnessIds": [],
+        "notes": "e-5 2~3단계 뒤 해금. S5 전에는 금전성 정황과 비밀 요청만 다루고 패턴 확정은 보류한다."
+      },
+      "truthBoundary": {
+        "beforeS5MustNotSay": [
+          "같은 패턴이라고 확정",
+          "과거 피해 세부",
+          "아버지가 사기꾼이라는 단정"
+        ],
+        "s5CanSay": [
+          "송다은 아버지가 예비신랑에게 돈 얘기를 꺼냈음",
+          "최수민이 과거와 닮은 흐름을 보고 경고하려 했음"
+        ]
+      }
+    },
+    {
+      "disputeId": "d-3",
+      "angleId": "pattern_warning",
+      "label": "과거와 닮은 흐름",
+      "description": "현재 문자가 과거 돈 문제와 닮았는지를 단계적으로 묻되, 초반에는 패턴으로 확정하지 않는다.",
+      "keywords": [
+        "과거",
+        "닮은 흐름",
+        "반복",
+        "대조",
+        "패턴",
+        "이전에도"
+      ],
+      "unlockCondition": {
+        "defaultUnlocked": false,
+        "evidenceIds": [
+          "e-5",
+          "e-6",
+          "e-7"
+        ],
+        "witnessIds": [],
+        "notes": "e-5/e-6/e-7 대조 뒤 해금. S5 전에는 “닮았다” 수준으로만 말한다."
+      },
+      "truthBoundary": {
+        "beforeS5MustNotSay": [
+          "같은 패턴이라고 확정",
+          "과거 피해 세부",
+          "아버지가 사기꾼이라는 단정"
+        ],
+        "s5CanSay": [
+          "송다은 아버지가 예비신랑에게 돈 얘기를 꺼냈음",
+          "최수민이 과거와 닮은 흐름을 보고 경고하려 했음"
+        ]
+      }
+    },
+    {
+      "disputeId": "d-4",
+      "angleId": "severance_chat_gap",
+      "label": "손절 직전 카톡의 빈칸",
+      "description": "과거 카톡에서 “내가 정리하겠다”는 말과 손절 사이의 빈칸을 확인한다.",
+      "keywords": [
+        "손절",
+        "과거 카톡",
+        "정리하겠다",
+        "빈칸",
+        "돈 문제",
+        "끊긴 연락"
+      ],
+      "unlockCondition": {
+        "defaultUnlocked": false,
+        "evidenceIds": [
+          "e-3"
+        ],
+        "witnessIds": [],
+        "notes": "d-3 S3 또는 e-3 1단계 후 해금. S5 전에는 돈 문제의 상대와 사기성을 확정하지 않는다."
+      },
+      "truthBoundary": {
+        "beforeS5MustNotSay": [
+          "아버지의 사기",
+          "투자 명목으로 돈을 받아갔다는 확정",
+          "구체 피해액",
+          "과거 손절의 원인이 아버지였다는 완전 확정"
+        ],
+        "s5CanSay": [
+          "과거 손절의 원인은 송다은 아버지의 투자 명목 사기였음",
+          "최수민은 송다은을 보호하려 침묵했음"
+        ]
+      }
+    },
+    {
+      "disputeId": "d-4",
+      "angleId": "transfer_repayment",
+      "label": "송금과 상환의 흐름",
+      "description": "과거 송금, 차용성 문구, 상환 지연을 통해 돈 문제의 실체를 단계적으로 확인한다.",
+      "keywords": [
+        "송금",
+        "영수증",
+        "상환",
+        "차용",
+        "계좌",
+        "미상환",
+        "돈 거래"
+      ],
+      "unlockCondition": {
+        "defaultUnlocked": false,
+        "evidenceIds": [
+          "e-6"
+        ],
+        "witnessIds": [
+          "w-3"
+        ],
+        "notes": "e-6 1~2단계 뒤 해금. S5 전에는 “상환이 확인되지 않는다” 정도로 표현한다."
+      },
+      "truthBoundary": {
+        "beforeS5MustNotSay": [
+          "아버지의 사기",
+          "투자 명목으로 돈을 받아갔다는 확정",
+          "구체 피해액",
+          "과거 손절의 원인이 아버지였다는 완전 확정"
+        ],
+        "s5CanSay": [
+          "과거 손절의 원인은 송다은 아버지의 투자 명목 사기였음",
+          "최수민은 송다은을 보호하려 침묵했음"
+        ]
+      }
+    },
+    {
+      "disputeId": "d-4",
+      "angleId": "protective_silence",
+      "label": "보호하려던 침묵",
+      "description": "최수민이 왜 송다은에게 과거 돈 문제를 말하지 못하고 악역을 자처했는지 확인한다.",
+      "keywords": [
+        "침묵",
+        "말하지 못한 이유",
+        "보호",
+        "악역",
+        "아버지",
+        "차마"
+      ],
+      "unlockCondition": {
+        "defaultUnlocked": false,
+        "evidenceIds": [
+          "e-3",
+          "e-6"
+        ],
+        "witnessIds": [
+          "w-3"
+        ],
+        "notes": "d-4 S2 이상, e-6 2단계 이상 권장. S5 전에는 보호 심리만 다루고 사기 확정은 보류한다."
+      },
+      "truthBoundary": {
+        "beforeS5MustNotSay": [
+          "아버지의 사기",
+          "투자 명목으로 돈을 받아갔다는 확정",
+          "구체 피해액",
+          "과거 손절의 원인이 아버지였다는 완전 확정"
+        ],
+        "s5CanSay": [
+          "과거 손절의 원인은 송다은 아버지의 투자 명목 사기였음",
+          "최수민은 송다은을 보호하려 침묵했음"
+        ]
+      }
+    },
+    {
+      "disputeId": "d-5",
+      "angleId": "first_groupchat_post",
+      "label": "단톡방 최초 발언",
+      "description": "송다은이 어떤 말로 단톡방에 먼저 올렸고 직접 확인보다 공개가 먼저였는지 확인한다.",
+      "keywords": [
+        "단톡방",
+        "처음 올린",
+        "또 내 남자",
+        "공개",
+        "확인 전",
+        "최초 발언"
+      ],
+      "unlockCondition": {
+        "defaultUnlocked": false,
+        "evidenceIds": [
+          "e-2"
+        ],
+        "witnessIds": [
+          "w-1"
+        ],
+        "notes": "e-2 1단계 또는 d-5 해금 후. S5 전에는 명예훼손 최종 판단보다 순서를 묻는다."
+      },
+      "truthBoundary": {
+        "beforeS5MustNotSay": [
+          "명예훼손 최종 판단",
+          "반복된 악역 구조의 완전 확정"
+        ],
+        "s5CanSay": [
+          "송다은이 확인 없이 단톡방에서 먼저 매도했음",
+          "최수민도 침묵으로 반복 구조를 허용했음"
+        ]
+      }
+    },
+    {
+      "disputeId": "d-5",
+      "angleId": "pile_on_spread",
+      "label": "친구들의 동조와 확산",
+      "description": "친구들이 어떤 말로 따라붙었고 송다은·최수민이 그 확산을 어떻게 처리했는지 확인한다.",
+      "keywords": [
+        "동조",
+        "친구들",
+        "확산",
+        "비난",
+        "김세라",
+        "분위기",
+        "단톡방 반응"
+      ],
+      "unlockCondition": {
+        "defaultUnlocked": false,
+        "evidenceIds": [
+          "e-2"
+        ],
+        "witnessIds": [
+          "w-1"
+        ],
+        "notes": "e-2 2단계 또는 김세라 증언 뒤 해금. 동조 책임과 반박 지연을 함께 다룬다."
+      },
+      "truthBoundary": {
+        "beforeS5MustNotSay": [
+          "명예훼손 최종 판단",
+          "반복된 악역 구조의 완전 확정"
+        ],
+        "s5CanSay": [
+          "송다은이 확인 없이 단톡방에서 먼저 매도했음",
+          "최수민도 침묵으로 반복 구조를 허용했음"
+        ]
+      }
+    },
+    {
+      "disputeId": "d-5",
+      "angleId": "repeat_villain_frame",
+      "label": "반복된 악역 구조",
+      "description": "과거와 현재 모두 최수민이 악역으로 남고 송다은이 먼저 단정한 구조를 정리한다.",
+      "keywords": [
+        "또 악역",
+        "반복",
+        "낙인",
+        "대조표",
+        "과거 현재",
+        "악역 자처"
+      ],
+      "unlockCondition": {
+        "defaultUnlocked": false,
+        "evidenceIds": [
+          "e-7",
+          "e-3",
+          "e-2"
+        ],
+        "witnessIds": [
+          "w-1"
+        ],
+        "notes": "d-3 S3 + d-4 S3 또는 e-7 뒤 해금. S5 전에는 구조의 반복을 암시하되 최종 책임 비율은 보류한다."
+      },
+      "truthBoundary": {
+        "beforeS5MustNotSay": [
+          "명예훼손 최종 판단",
+          "반복된 악역 구조의 완전 확정"
+        ],
+        "s5CanSay": [
+          "송다은이 확인 없이 단톡방에서 먼저 매도했음",
+          "최수민도 침묵으로 반복 구조를 허용했음"
+        ]
+      }
+    }
+  ]
+}
