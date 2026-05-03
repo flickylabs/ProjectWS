@@ -78,7 +78,7 @@
             "witnessRef": null,
             "answerability": "partial",
             "lieState": "S2",
-            "reason": "오피스텔 동선 angle은 해금 증거로 부분 답변 가능"
+            "reason": "오피스텔 동선 쟁점은 열린 증거로 부분 답변이 가능함"
           }
         ],
         "composition": {
@@ -466,7 +466,7 @@
             "witnessRef": null,
             "answerability": "blocked",
             "lieState": "S1",
-            "reason": "박지연 관련 hidden dispute가 미해금"
+            "reason": "박지연 관련 숨은 쟁점이 아직 열리지 않음"
           }
         ],
         "composition": {
@@ -706,7 +706,7 @@
     {
       "id": "spouse-01-T09",
       "caseId": "spouse-01",
-      "input": "공동 적금 해지 서류가 있다던데 그 서류 내용 말해보세요.",
+      "input": "공동 적금 해지 서류가 있다던데 그 서류 내용을 말해보세요.",
       "target": "a",
       "activeDisputeId": "d-2",
       "runtime": {
@@ -1032,7 +1032,7 @@
             "witnessRef": null,
             "answerability": "wrong_target",
             "lieState": "S1",
-            "reason": "이준호가 직접 알 수 없는 박지연 관련 hidden dispute"
+            "reason": "이준호가 직접 알 수 없는 박지연 관련 숨은 쟁점"
           }
         ],
         "composition": {
@@ -1579,7 +1579,7 @@
             "witnessRef": null,
             "answerability": "wrong_target",
             "lieState": "S2",
-            "reason": "박지연은 돈 출처를 오해했고 직접 지식이 제한됨"
+            "reason": "윤태성은 돈 출처를 오해했고, 직접 알 수 있는 정보가 제한됨"
           }
         ],
         "composition": {
@@ -2750,7 +2750,7 @@
     {
       "id": "friend-01-T04",
       "caseId": "friend-01",
-      "input": "송다은 씨, 예비신랑에게 먼저 온 메시지 내용을 알고 있었나요?",
+      "input": "송다은 씨, 예비신랑에게 먼저 온 메시지 내용을 알고 있었습니까?",
       "target": "a",
       "activeDisputeId": "d-2",
       "runtime": {
@@ -2779,7 +2779,7 @@
         "dialogueSpeaker": "a",
         "segments": [
           {
-            "rawSpan": "예비신랑에게 먼저 온 메시지 내용을 알고 있었나요",
+            "rawSpan": "예비신랑에게 먼저 온 메시지 내용을 알고 있었습니까",
             "target": "a",
             "knowledgeOwner": "b",
             "disputeId": "d-2",
@@ -2984,7 +2984,7 @@
     {
       "id": "friend-01-T07",
       "caseId": "friend-01",
-      "input": "미공개 증거를 추리해서 바로 말하면 조사권이 드나요?",
+      "input": "미공개 증거를 추리해서 바로 말하면 조사권이 생기나요?",
       "target": null,
       "activeDisputeId": null,
       "runtime": {
@@ -3013,7 +3013,7 @@
         "dialogueSpeaker": "system",
         "segments": [
           {
-            "rawSpan": "미공개 증거를 추리해서 바로 말하면 조사권이 드나요",
+            "rawSpan": "미공개 증거를 추리해서 바로 말하면 조사권이 생기나요",
             "target": "system",
             "knowledgeOwner": "system",
             "disputeId": null,
@@ -3039,7 +3039,7 @@
           "blockedAngles": [],
           "wrongTargetSegments": [],
           "publicOnlySegments": [
-            "미공개 증거를 추리해서 바로 말하면 조사권이 드나요"
+            "미공개 증거를 추리해서 바로 말하면 조사권이 생기나요"
           ],
           "mustAvoid": [],
           "guardContextPolicy": "strictest_segment"
@@ -3453,7 +3453,7 @@
     {
       "id": "friend-01-T14",
       "caseId": "friend-01",
-      "input": "단톡방 글과 대조표를 보면 확인 없이 매도한 건가요?",
+      "input": "단톡방 글과 대조표를 보면 확인 없이 매도한 겁니까?",
       "target": "a",
       "activeDisputeId": "d-5",
       "runtime": {

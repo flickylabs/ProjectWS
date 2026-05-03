@@ -259,7 +259,7 @@
     "description": "매일 퇴근 후 같은 오피스텔에 들렀다 오는 남편. 차에서 발견된 여성용품 영수증. 새벽의 통화. 아내는 남편의 딴 살림을 확신한다.",
     "emotionalPressure": 9,
     "affects": "both",
-    "triggerAmplifier": "초반에는 영수증(머리끈/틴트), 오피스텔 GPS, 새벽 통화가 한 방향으로만 겹쳐 외도처럼 보인다. 그러나 참고서(중2용)와 발신자 미상 문자가 열리면 그 패턴은 조카 돌봄으로 재맥락화되고, 개인 비자금 2,000만원 현금 출금과 위임장 조작 공동 적금 3,000만원 해지가 연달아 드러나면서 사건의 중심은 외도가 아니라 서로 말하지 못한 가족 공포와 비밀 자금 이동 순서로 뒤집힌다.",
+    "triggerAmplifier": "초반에는 영수증(머리끈/틴트), 오피스텔 GPS, 새벽 통화가 한 방향으로만 겹쳐 외도처럼 보인다. 그러나 단서를 더 들춰 볼수록 그 그림은 흔들리고, 양쪽 모두 말하지 못한 사정과 돈의 움직임이 차례로 드러나면서 사건의 중심은 외도 의심 너머로 뒤집힌다.",
     "caseNumber": "TE-SpouseV301",
     "caseName": "새벽 통화기록"
   },
@@ -290,12 +290,12 @@
         "wrong": "이준호의 오피스텔 방문은 딴집 살림 때문이었다.",
         "partial": "오피스텔 방문은 딴집 살림까지는 아니지만, 외도일 가능성이 높다.",
         "truth": "오피스텔 방문의 실체는 외도가 아니라 가족 돌봄이었다.",
-        "defer": "현재로서는 실체를 알 수가 없다. 판단을 유보한다."
+        "defer": "현재로서는 실체를 알 수 없다. 판단을 유보한다."
       }
     },
     {
       "id": "d-2",
-      "name": "개인 비자금 2,000만원 출금",
+      "name": "남편 명의 계좌의 목돈 출금",
       "truth": true,
       "truthDescription": "이준호는 본인 명의 개인 계좌의 비자금에서 2,000만원을 현금으로 출금하여 형에게 전달했다. 형이 개인회생 중이라 계좌 입금이 불가능했다. 공동 적금과는 무관한 개인 자금이다.",
       "quadrant": "b_only",
@@ -308,7 +308,7 @@
       },
       "ambiguity": "low",
       "weight": "high",
-      "mediationLink": "비자금 현금 전달과 개인회생",
+      "mediationLink": "남편 측 현금 흐름의 사용처",
       "legitimacyIssue": true,
       "judgmentStatement": "개인 비자금 2,000만원 현금 전달은 남편 책임이 더 크다.",
       "hidden": false,
@@ -332,7 +332,7 @@
     },
     {
       "id": "h-d3",
-      "name": "공동 적금 3,000만원 해지 (위임장 조작)",
+      "name": "공동 적금 3,000만원 해지 경위",
       "truth": true,
       "truthDescription": "박지연은 이준호 명의 위임장을 조작하여 공동 적금 3,000만원을 해지했다. 이는 범죄 행위이며, 해지한 돈을 투자방에 전액 송금했다가 사기로 손실했다.",
       "quadrant": "a_only",
@@ -345,7 +345,7 @@
       },
       "ambiguity": "high",
       "weight": "high",
-      "mediationLink": "위임장 조작과 투자 사기",
+      "mediationLink": "공동 자산 처분의 경위와 손실",
       "legitimacyIssue": true,
       "judgmentStatement": "공동 적금 3,000만원 위임장 조작 해지는 아내 책임이 더 크다.",
       "hidden": true,
@@ -1230,8 +1230,8 @@
       "requires": [],
       "investigationResults": {
         "request_original": "매일 비슷한 시각에 동일한 좌표로 이동한 흔적이 보인다.",
-        "check_metadata": "방문 장소를 연계했다. 비슷한 시각에 오피스텔에 반복 방문한 것이 확실하다.",
-        "restore_context": "좀 이상하다. 외도로 보기에는 방문 시각이 짧은 듯하다."
+        "check_metadata": "좌표를 주소와 대조했다. 비슷한 시각에 같은 오피스텔로 반복 방문한 패턴이 드러난다.",
+        "restore_context": "한 가지 어긋난다. 외도로 보기에는 매번 체류 시간이 너무 짧다."
       },
       "subjectParty": "b",
       "investigationStages": [
@@ -2019,9 +2019,9 @@
       "isTrap": false,
       "requires": [],
       "investigationResults": {
-        "request_original": "통화 목록을 조회했다. 반복적으로 통화를 한 흔적이 보인다.",
-        "check_metadata": "저장된 번호들과 매핑했다. 등록되지 않은 번호와 자주 통화를 한 것이 확인된다.",
-        "restore_context": "좀 이상하다. 외도로 보기에는 통화 시간이 짧은 듯하다."
+        "request_original": "통화 목록을 조회했다. 같은 시간대에 반복된 통화 흔적이 보인다.",
+        "check_metadata": "저장된 연락처와 대조했다. 등록되지 않은 번호 한 곳과 자주 통화한 것으로 확인된다.",
+        "restore_context": "한 가지 어긋난다. 외도로 보기에는 매번 통화 시간이 너무 짧다."
       },
       "subjectParty": "b",
       "investigationStages": [
@@ -2282,7 +2282,7 @@
             "legality": "ok",
             "legalLabel": "적법",
             "stage": 1,
-            "stageLabel": "1단계 — 시각·번호·통화시간만",
+            "stageLabel": "1단계 ─ 시각·번호·통화시간",
             "sourceNote": "institutional / original",
             "redactions": [
               "target_label"
@@ -2403,7 +2403,7 @@
                 "suspicious": false
               }
             ],
-            "note": "반복 통화 흔적이 보인다."
+            "note": "같은 번호와 반복적으로 주고받은 통화 흔적이 보인다."
           }
         },
         "2": {
@@ -2418,7 +2418,7 @@
             "legality": "ok",
             "legalLabel": "적법",
             "stage": 2,
-            "stageLabel": "2단계 — 상대 매핑 + 미등록 강조",
+            "stageLabel": "2단계 ─ 통화 상대 식별과 미등록 번호 확인",
             "sourceNote": "institutional / original",
             "redactions": []
           },
@@ -2552,7 +2552,7 @@
             "legality": "ok",
             "legalLabel": "적법",
             "stage": 3,
-            "stageLabel": "3단계 — 통화 길이 패턴 강조",
+            "stageLabel": "3단계 ─ 통화 길이 패턴 분석",
             "sourceNote": "institutional / original",
             "redactions": []
           },
@@ -2681,7 +2681,7 @@
       "name": "발신자 미상 문자",
       "surfaceName": "발신자 미상 문자",
       "description": "발신자 불명의 문자 스레드. 지역번호는 익숙하지만 명의가 확인되지 않는 번호와의 반복 교신.",
-      "surfaceDescription": "문자 스레드가 존재한다.",
+      "surfaceDescription": "이름이 등록되지 않은 번호와 문자 스레드가 남아 있다.",
       "type": "chat",
       "reliability": "hard",
       "completeness": "original",
@@ -2720,7 +2720,7 @@
             "attackVector": "context"
           },
           "label": "관계대조",
-          "unlockHint": "대화 내용을 확인하면 번호 주인의 정체를 좁혀볼 수 있습니다."
+          "unlockHint": "대화 내용을 확인하면 이 번호의 주인을 좁혀볼 수 있습니다."
         },
         {
           "stage": 3,
@@ -2736,11 +2736,11 @@
       "partyContext": {
         "a": {
           "questionAngle": "이 문자를 처음 보십니까? 어떤 의미라고 생각하십니까?",
-          "implication": "방문 목적을 직접 가리키는 증거이다."
+          "implication": "오피스텔 방문의 실제 용건을 가늠하는 단서가 될 수 있다."
         },
         "b": {
           "questionAngle": "이 문자가 형에게 온 것이 맞다면 왜 숨겼습니까?",
-          "implication": "시댁 갈등 때문에 숨긴 것이다."
+          "implication": "이 번호를 굳이 숨겨 온 이유에 가족 쪽 사정이 얽혀 있을 수 있다."
         }
       },
       "meta": {
@@ -2781,7 +2781,7 @@
         {
           "id": "context",
           "label": "Context",
-          "summary": "형의 돌봄 부탁 패턴"
+          "summary": "정기적인 부탁이 반복된 정황"
         },
         {
           "id": "established",
@@ -2793,7 +2793,7 @@
         {
           "id": "submitted",
           "label": "제출됨",
-          "summary": "B 발췌본 또는 재판관 포착"
+          "summary": "B가 일부 발췌본을 제출하거나 재판관이 직접 포착한 단계"
         },
         {
           "id": "verifying",
@@ -2808,7 +2808,7 @@
         {
           "id": "challenged",
           "label": "이의 제기됨",
-          "summary": "형네 문자라고 해서 2,000만 원까지 정당화되진 않는다는 이의"
+          "summary": "가족 쪽 연락이라 해도 큰 금액 송금까지 정당화되진 않는다는 이의"
         },
         {
           "id": "misread",
@@ -2926,7 +2926,7 @@
             "legality": "ok",
             "legalLabel": "적법",
             "stage": 4,
-            "stageLabel": "Stub — 발신자 미상, 발췌만",
+            "stageLabel": "1단계 ─ 발신자 미상, 짧은 발췌",
             "sourceNote": "self_possessed / original",
             "redactions": [
               "조카 이름 비공개",
@@ -2986,7 +2986,7 @@
             "legality": "ok",
             "legalLabel": "적법",
             "stage": 4,
-            "stageLabel": "Excerpt — 번호만 노출, 의심스러운 문구 확인",
+            "stageLabel": "2단계 ─ 번호 노출, 의심 문구 확인",
             "sourceNote": "self_possessed / original",
             "redactions": [
               "조카 이름 비공개",
@@ -3168,7 +3168,7 @@
       "name": "이준호의 개인 계좌 출금 내역",
       "surfaceName": "개인 계좌 출금 내역",
       "description": "이준호 본인 명의 개인 계좌에서 목돈이 현금으로 출금된 기록. 공동 적금과는 별개.",
-      "surfaceDescription": "대규모 출금 기록이 있다.",
+      "surfaceDescription": "한 번에 빠져나간 큰 금액의 출금 기록이 보인다.",
       "type": "bank",
       "reliability": "hard",
       "completeness": "original",
@@ -3223,11 +3223,11 @@
       "partyContext": {
         "a": {
           "questionAngle": "이 출금을 어떻게 알게 되었습니까?",
-          "implication": "계좌 감시 사실이 노출될 위험이 있다."
+          "implication": "어떻게 그 출금을 알게 됐는지를 두고 A의 입장이 흔들릴 수 있다."
         },
         "b": {
           "questionAngle": "이 돈을 누구에게 왜 전달했습니까?",
-          "implication": "형에게 현금 전달한 경위 설명이 필요하다."
+          "implication": "이 큰돈이 어디로, 누구에게 갔는지 B의 설명이 필요하다."
         }
       },
       "v3DepthPlan": [
@@ -3254,7 +3254,7 @@
         {
           "id": "established",
           "label": "Established",
-          "summary": "형에게 현금 전달 목적으로 확인"
+          "summary": "현금 전달처와 목적이 확정된 단계"
         }
       ],
       "v3TrustStates": [
@@ -3276,12 +3276,12 @@
         {
           "id": "challenged",
           "label": "이의 제기됨",
-          "summary": "B가 빌려준 돈이라고 주장"
+          "summary": "B가 빌려준 돈이라며 출금 성격을 다르게 주장"
         },
         {
           "id": "misread",
           "label": "조작/오독 판정",
-          "summary": "데이터는 인증되지만 사용 목적은 맥락과 심문으로 확정"
+          "summary": "기록 자체는 인증되지만 돈이 어디 쓰였는지는 맥락과 심문으로 확정된다"
         }
       ],
       "meta": {
@@ -3401,7 +3401,7 @@
       "name": "투자방 카톡 + 송금 기록",
       "surfaceName": "투자방 카톡 기록",
       "description": "박지연의 3,000만원 투자방 송금 내역 + 투자방 대화. 사기 경위.",
-      "surfaceDescription": "투자방 카톡 대화와 송금 기록이 있다.",
+      "surfaceDescription": "투자방으로 보이는 단체 카톡 대화와 송금 기록이 남아 있다.",
       "type": "chat",
       "reliability": "hard",
       "completeness": "original",
@@ -3456,11 +3456,11 @@
       "partyContext": {
         "a": {
           "questionAngle": "이 송금 기록에 대해 설명해 주십시오.",
-          "implication": "해당 거래로 손해가 난 경위가 드러난다."
+          "implication": "이 송금이 어떻게 손실로 이어졌는지가 드러난다."
         },
         "b": {
           "questionAngle": "이 기록을 처음 보십니까? 아내가 이런 일을 한 것을 알고 있었습니까?",
-          "implication": "B도 모르던 A의 비밀 행동이다."
+          "implication": "B 역시 처음 보는, A 단독의 자금 움직임이다."
         }
       },
       "v3DepthPlan": [
@@ -3494,12 +3494,12 @@
         {
           "id": "submitted",
           "label": "제출됨",
-          "summary": "B가 존재를 문제 삼거나 A가 일부만 제출"
+          "summary": "B가 이 기록의 존재를 문제 삼거나 A가 일부만 제출한 단계"
         },
         {
           "id": "verifying",
           "label": "검증 중",
-          "summary": "분리심문(A)과 원본 제출 명령으로 대조"
+          "summary": "A 분리 심문과 원본 제출 명령으로 대조하는 단계"
         },
         {
           "id": "authenticated",
@@ -3509,7 +3509,7 @@
         {
           "id": "challenged",
           "label": "이의 제기됨",
-          "summary": "숨기려 한 건 맞지만 은닉은 아니었다는 이의"
+          "summary": "숨기려 한 건 맞지만 의도적 은닉은 아니었다는 이의"
         },
         {
           "id": "misread",
@@ -3621,8 +3621,8 @@
       "id": "e-7",
       "name": "공동 적금 해지 서류",
       "surfaceName": "공동 적금 해지 서류",
-      "description": "서류와 해지 기록. A의 서류 처리 경위를 가리키는 증거.",
-      "surfaceDescription": "공동 적금 해지 서류가 존재한다.",
+      "description": "공동 적금 해지 서류와 처리 기록. A가 해지 절차를 어떻게 진행했는지 가리키는 자료.",
+      "surfaceDescription": "공동 적금이 만기 전에 해지된 서류가 남아 있다.",
       "type": "contract",
       "reliability": "hard",
       "completeness": "original",
@@ -3668,21 +3668,21 @@
           "stage": 3,
           "revealKey": "restore_context",
           "question": {
-            "text": "그 서류 처리는 중대한 법적 책임이 따릅니다. 이에 대해 어떻게 생각하십니까?",
+            "text": "이 정도의 서류 처리는 중대한 법적 책임으로 이어집니다. 어떻게 설명하시겠습니까?",
             "attackVector": "responsibility"
           },
           "label": "책임추궁",
-          "unlockHint": "필체를 대조하면 누가 동의 없이 공동 적금을 움직였는지 추궁할 수 있습니다."
+          "unlockHint": "필체를 대조하면 동의 없는 해지 여부를 정면으로 추궁할 수 있습니다."
         }
       ],
       "partyContext": {
         "a": {
           "questionAngle": "이 위임장의 서명에 대해 설명해 주십시오.",
-          "implication": "서류 처리와 그 법적 책임이 드러난다."
+          "implication": "서류 처리 과정과 그에 따르는 법적 책임이 드러난다."
         },
         "b": {
           "questionAngle": "이 서류를 보신 적이 있습니까? 해지에 동의한 적이 있습니까?",
-          "implication": "B 동의 없는 해지가 확인된다."
+          "implication": "B의 동의 없이 해지가 진행됐는지가 드러난다."
         }
       },
       "v3DepthPlan": [
@@ -3716,27 +3716,27 @@
         {
           "id": "submitted",
           "label": "제출됨",
-          "summary": "다른 증거 조합을 통해 생성되는 종합 자료"
+          "summary": "다른 증거가 조합될 때 비로소 정리되는 종합 자료"
         },
         {
           "id": "verifying",
           "label": "검증 중",
-          "summary": "e-1부터 e-6의 핵심 축이 인증될 때 생성"
+          "summary": "e-1에서 e-6까지의 핵심 축이 인증되면 함께 정리된다"
         },
         {
           "id": "authenticated",
           "label": "인증됨",
-          "summary": "기반 증거 4개 이상이 인증되면 표도 인증"
+          "summary": "기반 증거 네 건 이상이 인증되면 이 자료도 함께 인증된다"
         },
         {
           "id": "challenged",
           "label": "이의 제기됨",
-          "summary": "A와 B 모두 순서가 의미 없다고 이의 가능"
+          "summary": "A와 B 모두 시점의 선후가 의미 없다고 이의를 제기할 수 있다"
         },
         {
           "id": "misread",
           "label": "조작/오독 판정",
-          "summary": "표 자체는 조작 불가이고 해석은 Reframe 선택에 따라 달라짐"
+          "summary": "자료 자체는 조작이 불가능하지만, 해석은 어떤 관점에서 짚느냐에 따라 달라진다"
         }
       ],
       "meta": {
@@ -4298,7 +4298,7 @@
       {
         "id": "e-5",
         "type": "evidence",
-        "label": "e-5 공동 적금 해지 + 형 계좌 이체",
+        "label": "e-5 개인 계좌의 큰 금액 출금",
         "sourceRef": "e-5",
         "linkedDisputeIds": [
           "d-2",
@@ -4469,7 +4469,7 @@
       {
         "id": "dc-1",
         "label": "dc-1 오피스텔의 사람들",
-        "summary": "외도 오해를 형네 돌봄으로 뒤집는 카드",
+        "summary": "외도라는 첫 인상을 가족 쪽 사정으로 다시 보게 만드는 카드",
         "nodeType": "derived_note",
         "noteText": "오피스텔의 사람들",
         "effects": [
@@ -4486,12 +4486,12 @@
             }
           }
         ],
-        "judgeHint": "이제 '오피스텔 경비'를 증인으로 불러 동선을 확정하실 수 있습니다."
+        "judgeHint": "이제 오피스텔 경비를 증인으로 불러 동선을 확정하실 수 있습니다."
       },
       {
         "id": "dc-2",
         "label": "dc-2 시댁 얘기만 나오면 싸움",
-        "summary": "숨김의 이유를 시댁 불화 공포로 정리하는 카드",
+        "summary": "B가 입을 닫게 만드는 두려움의 정체를 가늠하는 카드",
         "nodeType": "derived_note",
         "noteText": "시댁 얘기만 나오면 싸움",
         "effects": [
@@ -4512,7 +4512,7 @@
       {
         "id": "dc-3",
         "label": "dc-3 3,000만 원의 권한",
-        "summary": "공동 적금 3,000만원 해지의 권한이 누구에게 있었는지, 위임장이 조작됐는지를 묻는 카드",
+        "summary": "공동 적금 해지의 권한이 누구에게 있었는지, 위임장 처리가 정당했는지를 묻는 카드",
         "nodeType": "derived_note",
         "noteText": "3,000만 원의 권한",
         "effects": [
@@ -4525,12 +4525,12 @@
             "unlockNodeId": "h-d3"
           }
         ],
-        "judgeHint": "'은행 직원'을 증인으로 불러 공동 적금 해지 절차와 위임장 진위를 확인해보시지요."
+        "judgeHint": "은행 직원을 증인으로 불러 공동 적금 해지 절차와 위임장 진위를 확인해 보십시오."
       },
       {
         "id": "dc-4",
         "label": "dc-4 2,000만 원의 수치",
-        "summary": "이준호의 개인 비자금 2,000만원이 어디로 움직였는지, 왜 숨겼는지를 묻는 카드",
+        "summary": "이준호 씨의 개인 자금이 어디로, 왜 빠져나갔는지 묻는 카드",
         "nodeType": "derived_note",
         "noteText": "2,000만 원의 수치",
         "effects": [
@@ -4547,7 +4547,7 @@
             }
           }
         ],
-        "judgeHint": "이제 이준호 씨 형의 상황을 직접 확인하거나 동기 탐색으로 숨긴 이유를 물어볼 수 있습니다."
+        "judgeHint": "이제 이준호 씨 가족 쪽 상황을 직접 확인하거나, 동기 탐색으로 숨긴 이유를 물어볼 수 있습니다."
       },
       {
         "id": "dc-5",
@@ -4565,7 +4565,7 @@
             "unlockNodeId": "h-d4"
           }
         ],
-        "judgeHint": "'박미라' 증인이 투자 링크 전달 경위를 결정적으로 채워줄 것입니다."
+        "judgeHint": "박미라 증인이 투자방 가입 경로를 결정적으로 채워줄 것입니다."
       }
     ],
     "recipes": [
@@ -4587,7 +4587,7 @@
           "e-4"
         ],
         "cost": 1,
-        "discoveryText": "영수증의 중학교 참고서와 발신자 미상 문자의 학교 알림이 같은 돌봄 정황으로 이어진다.",
+        "discoveryText": "영수증의 중학교 참고서와 문자에 섞인 학교 알림이 같은 정황을 가리킨다.",
         "outputId": "dc-1",
         "resultType": "dossier"
       },
@@ -4609,7 +4609,7 @@
           "e-7"
         ],
         "cost": 1,
-        "discoveryText": "공동 적금 해지 서류의 3,000만원과 투자방 송금 내역의 3,000만원이 정확히 일치한다. 위임장 조작으로 빠진 돈의 행선지가 확정된다.",
+        "discoveryText": "공동 적금 해지액과 투자방 송금액이 정확히 일치한다. 빠져나간 돈의 행선지가 확정된다.",
         "outputId": "dc-3",
         "resultType": "upgrade"
       },
@@ -4620,7 +4620,7 @@
           "e-7"
         ],
         "cost": 1,
-        "discoveryText": "박지연의 '제 몫을 지키려 했다'는 말과 위조된 위임장이 같은 방향을 가리킨다. 3,000만원 해지가 자각된 행위였음이 드러난다.",
+        "discoveryText": "박지연 씨의 '제 몫을 지키려 했다'는 말과 위임장 처리 정황이 같은 방향을 가리킨다. 공동 적금 해지가 우발이 아니라 자각된 행위였음이 드러난다.",
         "outputId": "dc-3",
         "resultType": "dossier"
       },

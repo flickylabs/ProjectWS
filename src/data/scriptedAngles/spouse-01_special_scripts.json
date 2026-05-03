@@ -18,7 +18,7 @@
       "angleId": "concealment_reason",
       "preConfession": "재판관이 민감한 가족 정보는 필요한 범위만 기록하겠다고 고지한다.",
       "confessionMain": "제 형과 조카 일입니다. 시댁 갈등이 다시 터질까 봐 말하지 못했습니다.",
-      "postConfession": "오피스텔과 전화의 진실은 여기까지입니다. 돈 문제는 별도 쟁점으로 보셔야 합니다."
+      "postConfession": "오피스텔과 전화에 대해서는 여기까지가 전부입니다. 돈 문제는 별개로 봐 주셔야 합니다."
     },
     {
       "party": "b",
@@ -36,7 +36,7 @@
       "angleId": "consent_boundary",
       "preConfession": "재판관이 “선의와 절차 위반은 따로 보겠다”고 정리한다.",
       "confessionMain": "돕고 싶었습니다. 하지만 배우자에게 숨기고 2,000만원을 움직인 건 제 월권입니다.",
-      "postConfession": "이 돈의 사용처는 d-2에서만 판단해 주십시오. 다른 쟁점의 결론으로 섞지 않겠습니다."
+      "postConfession": "이 돈의 사용처는 비자금 사안 안에서만 판단해 주십시오. 다른 사안의 결론과 섞지 말아 주시기 바랍니다."
     },
     {
       "party": "a",
@@ -72,7 +72,7 @@
       "angleId": "concealment_sequence",
       "preConfession": "이준호가 박지연을 보지 못하고 재판관 쪽으로만 말한다.",
       "confessionMain": "숨김의 시작은 제 쪽입니다. 개인 비자금과 형 사정을 먼저 숨겼습니다.",
-      "postConfession": "하지만 계좌 확인, 공동 적금 해지, 서류 위반은 별도의 축으로 기록되어야 합니다."
+      "postConfession": "하지만 계좌 확인, 공동 적금 해지, 서류 위반은 따로따로 구분해서 기록되어야 합니다."
     },
     {
       "party": "a",
@@ -80,7 +80,7 @@
       "route": "trust",
       "angleId": "responsibility_split",
       "preConfession": "재판관이 “한쪽 승패가 아니라 축별 책임”이라고 못 박는다.",
-      "confessionMain": "숨김, 계좌 감시, 돈 실행, 위임장 조작을 나누면 제 책임이 드러납니다. 그래도 그렇게 기록해야 합니다.",
+      "confessionMain": "숨김, 계좌 감시, 돈을 옮긴 일, 위임장 조작을 나누어 보면 제 책임이 드러납니다. 그래도 그렇게 기록해 주십시오.",
       "postConfession": "남편 탓으로만 끝내지 않겠습니다."
     },
     {
@@ -259,7 +259,7 @@
       "stage": 1,
       "stageLabel": "영수확인",
       "step": "probe",
-      "text": "재판관: 영수증 묶음 5장의 영수확인 단계로 들어갑니다. 의심을 부르는 품목과 일반 생활용품이 한 묶음 안에 함께 보입니다.",
+      "text": "재판관: 영수증 묶음 5장을 먼저 확인해 보겠습니다. 의심을 살 만한 품목과 일반 생활용품이 한 묶음 안에 함께 보입니다.",
       "behaviorHint": "증거 조사 단계별 probe/slip/capture/confirm 문장. stage-gated 정보만 사용한다."
     },
     {
@@ -279,7 +279,7 @@
       "stage": 1,
       "stageLabel": "영수확인",
       "step": "capture",
-      "text": "기록: 영수증 묶음 5장의 영수확인 단서가 확보됐습니다. 외도 의심 정황의 외형이 잡힙니다.",
+      "text": "기록: 영수증 묶음 5장에서 첫 단서가 확보됐습니다. 외도 의심 정황의 윤곽이 잡힙니다.",
       "behaviorHint": "증거 조사 단계별 probe/slip/capture/confirm 문장. stage-gated 정보만 사용한다."
     },
     {
@@ -289,7 +289,7 @@
       "stage": 1,
       "stageLabel": "영수확인",
       "step": "confirm",
-      "text": "재판관: 단서의 외형까지 확인했습니다. 책임의 방향은 진술과 함께 다음 단계에서 보겠습니다.",
+      "text": "재판관: 단서의 윤곽까지 확인했습니다. 책임의 방향은 본인 진술과 함께 이어서 보겠습니다.",
       "behaviorHint": "증거 조사 단계별 probe/slip/capture/confirm 문장. stage-gated 정보만 사용한다."
     },
     {
@@ -299,7 +299,7 @@
       "stage": 2,
       "stageLabel": "품목대조",
       "step": "probe",
-      "text": "재판관: 영수증 묶음 5장의 품목대조 단계로 들어갑니다. 미용 품목과 학용품이 같은 결제 묶음 안에 섞여 있어 단일 용도로 보기 어렵습니다.",
+      "text": "재판관: 같은 영수증을 품목별로 다시 비교해 보겠습니다. 미용 품목과 학용품이 같은 결제 묶음 안에 섞여 있어, 한 가지 용도로만 보기는 어렵습니다.",
       "behaviorHint": "증거 조사 단계별 probe/slip/capture/confirm 문장. stage-gated 정보만 사용한다."
     },
     {
@@ -319,7 +319,7 @@
       "stage": 2,
       "stageLabel": "품목대조",
       "step": "capture",
-      "text": "기록: 영수증 묶음 5장의 품목대조 단서가 추가됐습니다. 의심 품목과 학용품이 한 결제 묶음 안에 함께 있습니다.",
+      "text": "기록: 영수증 묶음 5장에 품목 비교 단서가 추가됐습니다. 의심 품목과 학용품이 한 결제 묶음 안에 함께 있습니다.",
       "behaviorHint": "증거 조사 단계별 probe/slip/capture/confirm 문장. stage-gated 정보만 사용한다."
     },
     {
@@ -329,7 +329,7 @@
       "stage": 2,
       "stageLabel": "품목대조",
       "step": "confirm",
-      "text": "재판관: 단서들 사이의 연결은 정리됐습니다. 어디까지가 본인 행동인지는 따로 묻겠습니다.",
+      "text": "재판관: 단서들 사이의 연결은 정리됐습니다. 어디까지가 본인이 직접 한 일인지는 따로 묻겠습니다.",
       "behaviorHint": "증거 조사 단계별 probe/slip/capture/confirm 문장. stage-gated 정보만 사용한다."
     },
     {
@@ -339,7 +339,7 @@
       "stage": 3,
       "stageLabel": "대상복원",
       "step": "probe",
-      "text": "재판관: 영수증 묶음 5장의 대상복원 단계로 들어갑니다. 참고서가 끼어 있어 외도형 구매 해석만으로는 닫히지 않는 부분이 남습니다.",
+      "text": "재판관: 영수증 묶음 5장에서 사용 대상을 다시 짚어 보겠습니다. 참고서가 끼어 있어 외도 정황으로만 설명하기 어려운 부분이 남습니다.",
       "behaviorHint": "증거 조사 단계별 probe/slip/capture/confirm 문장. stage-gated 정보만 사용한다."
     },
     {
@@ -359,7 +359,7 @@
       "stage": 3,
       "stageLabel": "대상복원",
       "step": "capture",
-      "text": "기록: 영수증 묶음 5장의 대상복원 단서가 누적됐습니다. 사용 대상은 본인 진술과 함께 따로 확정합니다.",
+      "text": "기록: 영수증 묶음 5장에 사용 대상 단서가 더 쌓였습니다. 누구를 위한 것인지는 본인 진술과 함께 따로 확정합니다.",
       "behaviorHint": "증거 조사 단계별 probe/slip/capture/confirm 문장. stage-gated 정보만 사용한다."
     },
     {
@@ -369,7 +369,7 @@
       "stage": 3,
       "stageLabel": "대상복원",
       "step": "confirm",
-      "text": "재판관: 단서의 정황은 충분히 누적됐습니다. 다만 최종 정체는 진술 단계에서 본인이 직접 확정해야 합니다.",
+      "text": "재판관: 단서의 정황은 충분히 쌓였습니다. 다만 최종적인 정체는 본인이 직접 진술로 확정해야 합니다.",
       "behaviorHint": "증거 조사 단계별 probe/slip/capture/confirm 문장. stage-gated 정보만 사용한다."
     },
     {
@@ -379,7 +379,7 @@
       "stage": 1,
       "stageLabel": "기록확인",
       "step": "probe",
-      "text": "재판관: 블랙박스 GPS 기록의 기록확인 단계로 들어갑니다. 비슷한 시각 동일 좌표로 이동한 흔적이 반복적으로 남아 있습니다.",
+      "text": "재판관: 블랙박스 GPS 기록을 먼저 확인해 보겠습니다. 비슷한 시각, 같은 좌표로 이동한 흔적이 반복해서 남아 있습니다.",
       "behaviorHint": "증거 조사 단계별 probe/slip/capture/confirm 문장. stage-gated 정보만 사용한다."
     },
     {
@@ -399,7 +399,7 @@
       "stage": 1,
       "stageLabel": "기록확인",
       "step": "capture",
-      "text": "기록: 블랙박스 GPS 기록의 기록확인 단서가 확보됐습니다. 동선 외형이 잡힙니다.",
+      "text": "기록: 블랙박스 GPS 기록에서 첫 단서가 확보됐습니다. 동선의 윤곽이 잡힙니다.",
       "behaviorHint": "증거 조사 단계별 probe/slip/capture/confirm 문장. stage-gated 정보만 사용한다."
     },
     {
@@ -409,7 +409,7 @@
       "stage": 1,
       "stageLabel": "기록확인",
       "step": "confirm",
-      "text": "재판관: 단서의 외형까지 확인했습니다. 책임의 방향은 진술과 함께 다음 단계에서 보겠습니다.",
+      "text": "재판관: 단서의 윤곽까지 확인했습니다. 책임의 방향은 본인 진술과 함께 이어서 보겠습니다.",
       "behaviorHint": "증거 조사 단계별 probe/slip/capture/confirm 문장. stage-gated 정보만 사용한다."
     },
     {
@@ -419,7 +419,7 @@
       "stage": 2,
       "stageLabel": "동선대조",
       "step": "probe",
-      "text": "재판관: 블랙박스 GPS 기록의 동선대조 단계로 들어갑니다. 같은 오피스텔로의 반복 방문이 동선 위에 분명히 남아 있습니다.",
+      "text": "재판관: 블랙박스 GPS 기록의 동선을 다시 비교해 보겠습니다. 같은 오피스텔로 반복해서 방문한 흔적이 동선 위에 분명히 남아 있습니다.",
       "behaviorHint": "증거 조사 단계별 probe/slip/capture/confirm 문장. stage-gated 정보만 사용한다."
     },
     {
@@ -439,7 +439,7 @@
       "stage": 2,
       "stageLabel": "동선대조",
       "step": "capture",
-      "text": "기록: 블랙박스 GPS 기록의 동선대조 단서가 추가됐습니다. 반복 방문 패턴이 외도 의심 정황과 정렬됩니다.",
+      "text": "기록: 블랙박스 GPS 기록에 동선 비교 단서가 추가됐습니다. 반복 방문 양상이 외도 의심 정황과 맞물립니다.",
       "behaviorHint": "증거 조사 단계별 probe/slip/capture/confirm 문장. stage-gated 정보만 사용한다."
     },
     {
@@ -449,7 +449,7 @@
       "stage": 2,
       "stageLabel": "동선대조",
       "step": "confirm",
-      "text": "재판관: 단서들 사이의 연결은 정리됐습니다. 어디까지가 본인 행동인지는 따로 묻겠습니다.",
+      "text": "재판관: 단서들 사이의 연결은 정리됐습니다. 어디까지가 본인이 직접 한 일인지는 따로 묻겠습니다.",
       "behaviorHint": "증거 조사 단계별 probe/slip/capture/confirm 문장. stage-gated 정보만 사용한다."
     },
     {
@@ -459,7 +459,7 @@
       "stage": 3,
       "stageLabel": "시간패턴",
       "step": "probe",
-      "text": "재판관: 블랙박스 GPS 기록의 시간패턴 단계로 들어갑니다. 체류 시간이 짧고 패턴이 일정해, 단일 의심선 만으로 단정하기 어려운 정황이 남습니다.",
+      "text": "재판관: 블랙박스 GPS 기록의 시간 양상을 다시 살피겠습니다. 체류 시간이 짧고 일정한 패턴이라, 한 가지 의심만으로 단정하기 어려운 정황이 남습니다.",
       "behaviorHint": "증거 조사 단계별 probe/slip/capture/confirm 문장. stage-gated 정보만 사용한다."
     },
     {
@@ -479,7 +479,7 @@
       "stage": 3,
       "stageLabel": "시간패턴",
       "step": "capture",
-      "text": "기록: 블랙박스 GPS 기록의 시간패턴 단서가 누적됐습니다. 체류 시간만으로 관계의 종류를 단정하기 어렵습니다.",
+      "text": "기록: 블랙박스 GPS 기록에 시간 양상 단서가 더 쌓였습니다. 체류 시간만으로 관계의 성격을 단정하기는 어렵습니다.",
       "behaviorHint": "증거 조사 단계별 probe/slip/capture/confirm 문장. stage-gated 정보만 사용한다."
     },
     {
@@ -489,7 +489,7 @@
       "stage": 3,
       "stageLabel": "시간패턴",
       "step": "confirm",
-      "text": "재판관: 단서의 정황은 충분히 누적됐습니다. 다만 최종 정체는 진술 단계에서 본인이 직접 확정해야 합니다.",
+      "text": "재판관: 단서의 정황은 충분히 쌓였습니다. 다만 최종적인 정체는 본인이 직접 진술로 확정해야 합니다.",
       "behaviorHint": "증거 조사 단계별 probe/slip/capture/confirm 문장. stage-gated 정보만 사용한다."
     },
     {
@@ -499,7 +499,7 @@
       "stage": 1,
       "stageLabel": "기록확인",
       "step": "probe",
-      "text": "재판관: 통화기록의 기록확인 단계로 들어갑니다. 새벽 시간대 짧은 통화가 반복되어 남아 있습니다.",
+      "text": "재판관: 통화 기록을 먼저 확인해 보겠습니다. 새벽 시간대에 짧은 통화가 반복적으로 남아 있습니다.",
       "behaviorHint": "증거 조사 단계별 probe/slip/capture/confirm 문장. stage-gated 정보만 사용한다."
     },
     {
@@ -519,7 +519,7 @@
       "stage": 1,
       "stageLabel": "기록확인",
       "step": "capture",
-      "text": "기록: 통화기록의 기록확인 단서가 확보됐습니다. 새벽 통화 외형이 잡힙니다.",
+      "text": "기록: 통화 기록에서 첫 단서가 확보됐습니다. 새벽 통화의 윤곽이 잡힙니다.",
       "behaviorHint": "증거 조사 단계별 probe/slip/capture/confirm 문장. stage-gated 정보만 사용한다."
     },
     {
@@ -529,7 +529,7 @@
       "stage": 1,
       "stageLabel": "기록확인",
       "step": "confirm",
-      "text": "재판관: 단서의 외형까지 확인했습니다. 책임의 방향은 진술과 함께 다음 단계에서 보겠습니다.",
+      "text": "재판관: 단서의 윤곽까지 확인했습니다. 책임의 방향은 본인 진술과 함께 이어서 보겠습니다.",
       "behaviorHint": "증거 조사 단계별 probe/slip/capture/confirm 문장. stage-gated 정보만 사용한다."
     },
     {
@@ -539,7 +539,7 @@
       "stage": 2,
       "stageLabel": "상대매핑",
       "step": "probe",
-      "text": "재판관: 통화기록의 상대매핑 단계로 들어갑니다. 번호부에 저장되지 않은 번호와의 짧은 통화가 반복됩니다.",
+      "text": "재판관: 통화 기록의 상대 번호를 다시 짚어 보겠습니다. 연락처에 저장되지 않은 번호로 짧은 통화가 반복됩니다.",
       "behaviorHint": "증거 조사 단계별 probe/slip/capture/confirm 문장. stage-gated 정보만 사용한다."
     },
     {
@@ -559,7 +559,7 @@
       "stage": 2,
       "stageLabel": "상대매핑",
       "step": "capture",
-      "text": "기록: 통화기록의 상대매핑 단서가 추가됐습니다. 미등록 번호와의 짧은 통화 반복이 보입니다.",
+      "text": "기록: 통화 기록에 상대 번호 관련 단서가 추가됐습니다. 미등록 번호로 짧은 통화가 반복됩니다.",
       "behaviorHint": "증거 조사 단계별 probe/slip/capture/confirm 문장. stage-gated 정보만 사용한다."
     },
     {
@@ -569,7 +569,7 @@
       "stage": 2,
       "stageLabel": "상대매핑",
       "step": "confirm",
-      "text": "재판관: 단서들 사이의 연결은 정리됐습니다. 어디까지가 본인 행동인지는 따로 묻겠습니다.",
+      "text": "재판관: 단서들 사이의 연결은 정리됐습니다. 어디까지가 본인이 직접 한 일인지는 따로 묻겠습니다.",
       "behaviorHint": "증거 조사 단계별 probe/slip/capture/confirm 문장. stage-gated 정보만 사용한다."
     },
     {
@@ -579,7 +579,7 @@
       "stage": 3,
       "stageLabel": "시간패턴",
       "step": "probe",
-      "text": "재판관: 통화기록의 시간패턴 단계로 들어갑니다. 통화 길이는 길지 않고 짧은 용건 확인 형태가 반복되어, 관계의 성격을 단정하기 어려운 정황이 남습니다.",
+      "text": "재판관: 이번에는 통화기록의 시간 패턴을 봅니다. 통화 길이가 길지 않고 짧은 용건만 반복되어, 관계의 성격을 단정하기 어렵습니다.",
       "behaviorHint": "증거 조사 단계별 probe/slip/capture/confirm 문장. stage-gated 정보만 사용한다."
     },
     {
@@ -599,7 +599,7 @@
       "stage": 3,
       "stageLabel": "시간패턴",
       "step": "capture",
-      "text": "기록: 통화기록의 시간패턴 단서가 누적됐습니다. 통화 길이만으로 관계의 성격은 단정하기 어렵습니다.",
+      "text": "기록: 통화기록의 시간 패턴 단서가 더해졌다. 통화 길이만으로는 관계의 성격을 단정하기 어렵다.",
       "behaviorHint": "증거 조사 단계별 probe/slip/capture/confirm 문장. stage-gated 정보만 사용한다."
     },
     {
@@ -609,7 +609,7 @@
       "stage": 3,
       "stageLabel": "시간패턴",
       "step": "confirm",
-      "text": "재판관: 단서의 정황은 충분히 누적됐습니다. 다만 최종 정체는 진술 단계에서 본인이 직접 확정해야 합니다.",
+      "text": "재판관: 정황은 충분히 모였습니다. 다만 마지막 결론은 본인이 직접 진술해 주셔야 합니다.",
       "behaviorHint": "증거 조사 단계별 probe/slip/capture/confirm 문장. stage-gated 정보만 사용한다."
     },
     {
@@ -619,7 +619,7 @@
       "stage": 1,
       "stageLabel": "대화확인",
       "step": "probe",
-      "text": "재판관: 발신자 미상 문자의 대화확인 단계로 들어갑니다. 반복되는 부탁과 짧은 감사 문구가 함께 남아 있습니다.",
+      "text": "재판관: 발신자 미상 문자의 내용을 먼저 확인합니다. 반복되는 부탁과 짧은 감사 문구가 함께 남아 있습니다.",
       "behaviorHint": "증거 조사 단계별 probe/slip/capture/confirm 문장. stage-gated 정보만 사용한다."
     },
     {
@@ -639,7 +639,7 @@
       "stage": 1,
       "stageLabel": "대화확인",
       "step": "capture",
-      "text": "기록: 발신자 미상 문자의 대화확인 단서가 확보됐습니다. 반복되는 부탁 문구의 외형이 잡힙니다.",
+      "text": "기록: 발신자 미상 문자의 대화 단서가 확보됐다. 반복되는 부탁 문구의 외형이 드러난다.",
       "behaviorHint": "증거 조사 단계별 probe/slip/capture/confirm 문장. stage-gated 정보만 사용한다."
     },
     {
@@ -649,7 +649,7 @@
       "stage": 1,
       "stageLabel": "대화확인",
       "step": "confirm",
-      "text": "재판관: 단서의 외형까지 확인했습니다. 책임의 방향은 진술과 함께 다음 단계에서 보겠습니다.",
+      "text": "재판관: 단서의 외형은 여기까지 확인했습니다. 책임의 방향은 본인 진술을 들으면서 보겠습니다.",
       "behaviorHint": "증거 조사 단계별 probe/slip/capture/confirm 문장. stage-gated 정보만 사용한다."
     },
     {
@@ -659,7 +659,7 @@
       "stage": 2,
       "stageLabel": "관계대조",
       "step": "probe",
-      "text": "재판관: 발신자 미상 문자의 관계대조 단계로 들어갑니다. 번호부에 저장되지 않은 번호이며 명의가 즉시 식별되지 않습니다.",
+      "text": "재판관: 이번에는 그 번호의 관계를 대조해 보겠습니다. 번호부에 저장되지 않은 번호이고 명의도 바로 식별되지 않습니다.",
       "behaviorHint": "증거 조사 단계별 probe/slip/capture/confirm 문장. stage-gated 정보만 사용한다."
     },
     {
@@ -679,7 +679,7 @@
       "stage": 2,
       "stageLabel": "관계대조",
       "step": "capture",
-      "text": "기록: 발신자 미상 문자의 관계대조 단서가 추가됐습니다. 명의가 즉시 식별되지 않는 사정이 보입니다.",
+      "text": "기록: 발신자 미상 문자의 관계 대조 단서가 더해졌다. 명의가 바로 식별되지 않는 사정이 함께 남는다.",
       "behaviorHint": "증거 조사 단계별 probe/slip/capture/confirm 문장. stage-gated 정보만 사용한다."
     },
     {
@@ -689,7 +689,7 @@
       "stage": 2,
       "stageLabel": "관계대조",
       "step": "confirm",
-      "text": "재판관: 단서들 사이의 연결은 정리됐습니다. 어디까지가 본인 행동인지는 따로 묻겠습니다.",
+      "text": "재판관: 단서들 사이의 연결은 여기까지 정리됐습니다. 어디까지가 본인이 한 일인지는 다음에 따로 묻겠습니다.",
       "behaviorHint": "증거 조사 단계별 probe/slip/capture/confirm 문장. stage-gated 정보만 사용한다."
     },
     {
@@ -699,7 +699,7 @@
       "stage": 3,
       "stageLabel": "맥락복원",
       "step": "probe",
-      "text": "재판관: 발신자 미상 문자의 맥락복원 단계로 들어갑니다. 선불폰 번호 한 명의가 반복되고 외도형 연락만으로는 보기 어려운 일반 안내 메시지가 함께 섞여 있습니다.",
+      "text": "재판관: 이제 문자의 맥락을 맞춰 봅니다. 선불폰 번호 하나로 명의가 반복되고, 외도형 연락만으로는 보기 어려운 일반 안내 메시지도 함께 섞여 있습니다.",
       "behaviorHint": "증거 조사 단계별 probe/slip/capture/confirm 문장. stage-gated 정보만 사용한다."
     },
     {
@@ -719,7 +719,7 @@
       "stage": 3,
       "stageLabel": "맥락복원",
       "step": "capture",
-      "text": "기록: 발신자 미상 문자의 맥락복원 단서가 누적됐습니다. 외도형 연락만으로 보기 어려운 정황이 함께 남습니다.",
+      "text": "기록: 발신자 미상 문자의 맥락 단서가 더해졌다. 외도형 연락만으로 보기 어려운 정황도 함께 남는다.",
       "behaviorHint": "증거 조사 단계별 probe/slip/capture/confirm 문장. stage-gated 정보만 사용한다."
     },
     {
@@ -729,7 +729,7 @@
       "stage": 3,
       "stageLabel": "맥락복원",
       "step": "confirm",
-      "text": "재판관: 단서의 정황은 충분히 누적됐습니다. 다만 최종 정체는 진술 단계에서 본인이 직접 확정해야 합니다.",
+      "text": "재판관: 정황은 충분히 모였습니다. 다만 마지막 결론은 본인이 직접 진술해 주셔야 합니다.",
       "behaviorHint": "증거 조사 단계별 probe/slip/capture/confirm 문장. stage-gated 정보만 사용한다."
     },
     {
@@ -739,7 +739,7 @@
       "stage": 1,
       "stageLabel": "내역확인",
       "step": "probe",
-      "text": "재판관: 개인 계좌 출금 내역의 내역확인 단계로 들어갑니다. 이준호 씨 명의 개인 계좌에서 큰돈이 현금으로 출금된 기록이 남아 있습니다.",
+      "text": "재판관: 개인 계좌 출금 내역부터 먼저 확인하겠습니다. 이준호 씨 명의 개인 계좌에서 큰돈이 현금으로 출금된 기록이 남아 있습니다.",
       "behaviorHint": "증거 조사 단계별 probe/slip/capture/confirm 문장. stage-gated 정보만 사용한다."
     },
     {
@@ -759,7 +759,7 @@
       "stage": 1,
       "stageLabel": "내역확인",
       "step": "capture",
-      "text": "기록: 개인 계좌 출금 내역의 내역확인 단서가 확보됐습니다. 큰돈이 현금으로 이동한 외형이 잡힙니다.",
+      "text": "기록: 개인 계좌 출금 내역의 첫 단서가 확보됐다. 큰돈이 현금으로 빠져나간 외형이 드러난다.",
       "behaviorHint": "증거 조사 단계별 probe/slip/capture/confirm 문장. stage-gated 정보만 사용한다."
     },
     {
@@ -769,7 +769,7 @@
       "stage": 1,
       "stageLabel": "내역확인",
       "step": "confirm",
-      "text": "재판관: 단서의 외형까지 확인했습니다. 책임의 방향은 진술과 함께 다음 단계에서 보겠습니다.",
+      "text": "재판관: 단서의 외형은 여기까지 확인했습니다. 책임의 방향은 본인 진술을 들으면서 보겠습니다.",
       "behaviorHint": "증거 조사 단계별 probe/slip/capture/confirm 문장. stage-gated 정보만 사용한다."
     },
     {
@@ -779,7 +779,7 @@
       "stage": 2,
       "stageLabel": "금액대조",
       "step": "probe",
-      "text": "재판관: 개인 계좌 출금 내역의 금액대조 단계로 들어갑니다. 출금 시점은 4개월 전이며 오피스텔 방문이 시작된 시점과 겹쳐 있습니다.",
+      "text": "재판관: 이번에는 출금 금액과 시점을 맞춰 봅니다. 출금은 4개월 전이고, 오피스텔 방문이 시작된 시점과 겹칩니다.",
       "behaviorHint": "증거 조사 단계별 probe/slip/capture/confirm 문장. stage-gated 정보만 사용한다."
     },
     {
@@ -799,7 +799,7 @@
       "stage": 2,
       "stageLabel": "금액대조",
       "step": "capture",
-      "text": "기록: 개인 계좌 출금 내역의 금액대조 단서가 추가됐습니다. 출금 시점이 다른 쟁점의 시점과 겹칩니다.",
+      "text": "기록: 개인 계좌 출금 내역의 금액·시점 단서가 더해졌다. 출금 시점이 다른 쟁점과 겹친다.",
       "behaviorHint": "증거 조사 단계별 probe/slip/capture/confirm 문장. stage-gated 정보만 사용한다."
     },
     {
@@ -809,7 +809,7 @@
       "stage": 2,
       "stageLabel": "금액대조",
       "step": "confirm",
-      "text": "재판관: 단서들 사이의 연결은 정리됐습니다. 어디까지가 본인 행동인지는 따로 묻겠습니다.",
+      "text": "재판관: 단서들 사이의 연결은 여기까지 정리됐습니다. 어디까지가 본인이 한 일인지는 다음에 따로 묻겠습니다.",
       "behaviorHint": "증거 조사 단계별 probe/slip/capture/confirm 문장. stage-gated 정보만 사용한다."
     },
     {
@@ -819,7 +819,7 @@
       "stage": 3,
       "stageLabel": "사용추궁",
       "step": "probe",
-      "text": "재판관: 개인 계좌 출금 내역의 사용추궁 단계로 들어갑니다. 출금 후 현금이 본인 계좌로 다시 들어온 흐름이 보이지 않으며, 공동 적금 계좌와는 별개의 자금 원천이라는 점만 확인됩니다.",
+      "text": "재판관: 이제 그 돈의 사용처를 묻겠습니다. 출금된 현금이 본인 계좌로 되돌아온 흐름은 보이지 않고, 공동 적금 계좌와는 별개의 자금 원천이라는 점만 확인됩니다.",
       "behaviorHint": "증거 조사 단계별 probe/slip/capture/confirm 문장. stage-gated 정보만 사용한다."
     },
     {
@@ -839,7 +839,7 @@
       "stage": 3,
       "stageLabel": "사용추궁",
       "step": "capture",
-      "text": "기록: 개인 계좌 출금 내역의 사용추궁 단서가 누적됐습니다. 사용처는 본인 진술과 함께 따로 확정합니다.",
+      "text": "기록: 개인 계좌 출금 내역의 사용처 단서가 더해졌다. 사용처는 본인 진술과 함께 따로 가른다.",
       "behaviorHint": "증거 조사 단계별 probe/slip/capture/confirm 문장. stage-gated 정보만 사용한다."
     },
     {
@@ -849,7 +849,7 @@
       "stage": 3,
       "stageLabel": "사용추궁",
       "step": "confirm",
-      "text": "재판관: 단서의 정황은 충분히 누적됐습니다. 다만 최종 정체는 진술 단계에서 본인이 직접 확정해야 합니다.",
+      "text": "재판관: 정황은 충분히 모였습니다. 다만 마지막 결론은 본인이 직접 진술해 주셔야 합니다.",
       "behaviorHint": "증거 조사 단계별 probe/slip/capture/confirm 문장. stage-gated 정보만 사용한다."
     },
     {
@@ -859,7 +859,7 @@
       "stage": 1,
       "stageLabel": "송금확인",
       "step": "probe",
-      "text": "재판관: 투자방 카톡 기록의 송금확인 단계로 들어갑니다. 박지연 씨 계좌에서 투자방 운영 계좌로 3,000만원이 송금된 기록이 남아 있습니다.",
+      "text": "재판관: 투자방 카톡 기록의 송금부터 먼저 확인하겠습니다. 박지연 씨 계좌에서 투자방 운영 계좌로 3,000만원이 송금된 기록이 남아 있습니다.",
       "behaviorHint": "증거 조사 단계별 probe/slip/capture/confirm 문장. stage-gated 정보만 사용한다."
     },
     {
@@ -879,7 +879,7 @@
       "stage": 1,
       "stageLabel": "송금확인",
       "step": "capture",
-      "text": "기록: 투자방 카톡 기록의 송금확인 단서가 확보됐습니다. 송금 행위의 외형이 잡힙니다.",
+      "text": "기록: 투자방 카톡 기록의 송금 단서가 확보됐다. 송금 행위의 외형이 드러난다.",
       "behaviorHint": "증거 조사 단계별 probe/slip/capture/confirm 문장. stage-gated 정보만 사용한다."
     },
     {
@@ -889,7 +889,7 @@
       "stage": 1,
       "stageLabel": "송금확인",
       "step": "confirm",
-      "text": "재판관: 단서의 외형까지 확인했습니다. 책임의 방향은 진술과 함께 다음 단계에서 보겠습니다.",
+      "text": "재판관: 단서의 외형은 여기까지 확인했습니다. 책임의 방향은 본인 진술을 들으면서 보겠습니다.",
       "behaviorHint": "증거 조사 단계별 probe/slip/capture/confirm 문장. stage-gated 정보만 사용한다."
     },
     {
@@ -899,7 +899,7 @@
       "stage": 2,
       "stageLabel": "가입대조",
       "step": "probe",
-      "text": "재판관: 투자방 카톡 기록의 가입대조 단계로 들어갑니다. 박미라 씨가 전달한 링크로 가입한 경로와 공동 적금 해지액·송금액의 맞물림이 함께 확인됩니다.",
+      "text": "재판관: 이번에는 투자방 가입 경로를 대조해 보겠습니다. 박미라 씨가 전달한 링크로 가입한 흔적과 공동 적금 해지액·송금액이 맞물려 확인됩니다.",
       "behaviorHint": "증거 조사 단계별 probe/slip/capture/confirm 문장. stage-gated 정보만 사용한다."
     },
     {
@@ -919,7 +919,7 @@
       "stage": 2,
       "stageLabel": "가입대조",
       "step": "capture",
-      "text": "기록: 투자방 카톡 기록의 가입대조 단서가 추가됐습니다. 가입 경로와 송금 시점이 정렬됩니다.",
+      "text": "기록: 투자방 카톡 기록의 가입 경로 단서가 더해졌다. 가입 경로와 송금 시점이 같은 선에 놓인다.",
       "behaviorHint": "증거 조사 단계별 probe/slip/capture/confirm 문장. stage-gated 정보만 사용한다."
     },
     {
@@ -929,7 +929,7 @@
       "stage": 2,
       "stageLabel": "가입대조",
       "step": "confirm",
-      "text": "재판관: 단서들 사이의 연결은 정리됐습니다. 어디까지가 본인 행동인지는 따로 묻겠습니다.",
+      "text": "재판관: 단서들 사이의 연결은 여기까지 정리됐습니다. 어디까지가 본인이 한 일인지는 다음에 따로 묻겠습니다.",
       "behaviorHint": "증거 조사 단계별 probe/slip/capture/confirm 문장. stage-gated 정보만 사용한다."
     },
     {
@@ -939,7 +939,7 @@
       "stage": 3,
       "stageLabel": "손실복원",
       "step": "probe",
-      "text": "재판관: 투자방 카톡 기록의 손실복원 단계로 들어갑니다. 송금 이후 운영자 응답이 끊기고 출금 흔적이 남지 않은 정황이 확인됩니다.",
+      "text": "재판관: 이제 송금 이후의 흐름을 짚어 보겠습니다. 송금 후 운영자 응답이 끊기고, 출금 흔적도 남지 않은 정황이 확인됩니다.",
       "behaviorHint": "증거 조사 단계별 probe/slip/capture/confirm 문장. stage-gated 정보만 사용한다."
     },
     {
@@ -959,7 +959,7 @@
       "stage": 3,
       "stageLabel": "손실복원",
       "step": "capture",
-      "text": "기록: 투자방 카톡 기록의 손실복원 단서가 누적됐습니다. 결과의 성격은 진술 단계에서 따로 확정합니다.",
+      "text": "기록: 투자방 카톡 기록 이후의 흐름 단서가 더해졌다. 결과의 성격은 본인 진술과 함께 따로 가른다.",
       "behaviorHint": "증거 조사 단계별 probe/slip/capture/confirm 문장. stage-gated 정보만 사용한다."
     },
     {
@@ -969,7 +969,7 @@
       "stage": 3,
       "stageLabel": "손실복원",
       "step": "confirm",
-      "text": "재판관: 단서의 정황은 충분히 누적됐습니다. 다만 최종 정체는 진술 단계에서 본인이 직접 확정해야 합니다.",
+      "text": "재판관: 정황은 충분히 모였습니다. 다만 마지막 결론은 본인이 직접 진술해 주셔야 합니다.",
       "behaviorHint": "증거 조사 단계별 probe/slip/capture/confirm 문장. stage-gated 정보만 사용한다."
     },
     {
@@ -979,7 +979,7 @@
       "stage": 1,
       "stageLabel": "서류확인",
       "step": "probe",
-      "text": "재판관: 공동 적금 해지 서류의 서류확인 단계로 들어갑니다. 공동 적금 중도해지 신청서와 위임장이 함께 제출되어 있습니다.",
+      "text": "재판관: 공동 적금 해지 서류부터 먼저 확인하겠습니다. 중도해지 신청서와 위임장이 함께 제출되어 있습니다.",
       "behaviorHint": "증거 조사 단계별 probe/slip/capture/confirm 문장. stage-gated 정보만 사용한다."
     },
     {
@@ -999,7 +999,7 @@
       "stage": 1,
       "stageLabel": "서류확인",
       "step": "capture",
-      "text": "기록: 공동 적금 해지 서류의 서류확인 단서가 확보됐습니다. 해지 처리 외형이 잡힙니다.",
+      "text": "기록: 공동 적금 해지 서류의 첫 단서가 확보됐다. 해지 처리의 외형이 드러난다.",
       "behaviorHint": "증거 조사 단계별 probe/slip/capture/confirm 문장. stage-gated 정보만 사용한다."
     },
     {
@@ -1009,7 +1009,7 @@
       "stage": 1,
       "stageLabel": "서류확인",
       "step": "confirm",
-      "text": "재판관: 단서의 외형까지 확인했습니다. 책임의 방향은 진술과 함께 다음 단계에서 보겠습니다.",
+      "text": "재판관: 단서의 외형은 여기까지 확인했습니다. 책임의 방향은 본인 진술을 들으면서 보겠습니다.",
       "behaviorHint": "증거 조사 단계별 probe/slip/capture/confirm 문장. stage-gated 정보만 사용한다."
     },
     {
@@ -1019,7 +1019,7 @@
       "stage": 2,
       "stageLabel": "필체대조",
       "step": "probe",
-      "text": "재판관: 공동 적금 해지 서류의 필체대조 단계로 들어갑니다. 위임장 서명이 이준호 씨 본인 필적과 일치하지 않는 부분이 있어 작성 경위가 다투어집니다.",
+      "text": "재판관: 이번에는 위임장 서명의 필체를 대조해 보겠습니다. 위임장 서명이 이준호 씨 본인 필적과 일치하지 않는 부분이 있어, 작성 경위에 다툼이 있습니다.",
       "behaviorHint": "증거 조사 단계별 probe/slip/capture/confirm 문장. stage-gated 정보만 사용한다."
     },
     {
@@ -1039,7 +1039,7 @@
       "stage": 2,
       "stageLabel": "필체대조",
       "step": "capture",
-      "text": "기록: 공동 적금 해지 서류의 필체대조 단서가 추가됐습니다. 서명의 작성 경위가 다투어집니다.",
+      "text": "기록: 공동 적금 해지 서류의 필체 단서가 더해졌다. 서명의 작성 경위에 다툼이 남는다.",
       "behaviorHint": "증거 조사 단계별 probe/slip/capture/confirm 문장. stage-gated 정보만 사용한다."
     },
     {
@@ -1049,7 +1049,7 @@
       "stage": 2,
       "stageLabel": "필체대조",
       "step": "confirm",
-      "text": "재판관: 단서들 사이의 연결은 정리됐습니다. 어디까지가 본인 행동인지는 따로 묻겠습니다.",
+      "text": "재판관: 단서들 사이의 연결은 여기까지 정리됐습니다. 어디까지가 본인이 한 일인지는 다음에 따로 묻겠습니다.",
       "behaviorHint": "증거 조사 단계별 probe/slip/capture/confirm 문장. stage-gated 정보만 사용한다."
     },
     {
@@ -1059,7 +1059,7 @@
       "stage": 3,
       "stageLabel": "책임추궁",
       "step": "probe",
-      "text": "재판관: 공동 적금 해지 서류의 책임추궁 단계로 들어갑니다. 본인 확인 절차가 정상 경로로 진행되지 않은 흔적이 남아 있어, 동의의 실재 여부가 다투어집니다.",
+      "text": "재판관: 이제 책임 소재를 가려 보겠습니다. 본인 확인 절차가 정상 경로로 진행되지 않은 흔적이 남아 있어, 동의가 실제로 있었는지에 다툼이 있습니다.",
       "behaviorHint": "증거 조사 단계별 probe/slip/capture/confirm 문장. stage-gated 정보만 사용한다."
     },
     {
@@ -1079,7 +1079,7 @@
       "stage": 3,
       "stageLabel": "책임추궁",
       "step": "capture",
-      "text": "기록: 공동 적금 해지 서류의 책임추궁 단서가 누적됐습니다. 동의의 실재 여부는 본인 진술과 함께 가릅니다.",
+      "text": "기록: 공동 적금 해지 서류의 책임 단서가 더해졌다. 동의가 실제로 있었는지는 본인 진술과 함께 가른다.",
       "behaviorHint": "증거 조사 단계별 probe/slip/capture/confirm 문장. stage-gated 정보만 사용한다."
     },
     {
@@ -1089,7 +1089,7 @@
       "stage": 3,
       "stageLabel": "책임추궁",
       "step": "confirm",
-      "text": "재판관: 단서의 정황은 충분히 누적됐습니다. 다만 최종 정체는 진술 단계에서 본인이 직접 확정해야 합니다.",
+      "text": "재판관: 정황은 충분히 모였습니다. 다만 마지막 결론은 본인이 직접 진술해 주셔야 합니다.",
       "behaviorHint": "증거 조사 단계별 probe/slip/capture/confirm 문장. stage-gated 정보만 사용한다."
     }
   ],
@@ -1107,7 +1107,7 @@
         "visit_route",
         "family_items"
       ],
-      "text": "영수증과 GPS가 같은 생활권을 가리킵니다. 오피스텔 방문 목적과 물건 사용처를 별도 각도로 열겠습니다.",
+      "text": "영수증과 GPS가 같은 생활권을 가리킵니다. 오피스텔 방문 목적과 물건 사용처는 따로 떼어 보겠습니다.",
       "behaviorHint": "d-1 하드 강화. S5 전 실제 대상은 직접 말하지 않는다."
     },
     {
@@ -1155,7 +1155,7 @@
         "execution_timeline",
         "responsibility_split"
       ],
-      "text": "개인 계좌 출금과 투자방 송금 기록이 서로 다른 돈 흐름을 보여 줍니다. 선후와 책임을 한 덩어리로 묶지 않겠습니다.",
+      "text": "개인 계좌 출금과 투자방 송금 기록이 서로 다른 돈의 흐름을 보여 줍니다. 선후와 책임을 한 덩어리로 묶지 않겠습니다.",
       "behaviorHint": "h-d4 선후 분리 해금."
     },
     {
@@ -1174,7 +1174,7 @@
         "loss_responsibility",
         "illegal_boundary"
       ],
-      "text": "투자방 송금 기록과 공동 적금 해지 서류가 같은 자금 흐름 위에 정렬됩니다. 해지 절차의 동의 여부와 송금 이후 손실은 별도 축으로 따로 기록하겠습니다.",
+      "text": "투자방 송금 기록과 공동 적금 해지 서류가 같은 자금 흐름 위에 놓입니다. 해지 절차의 동의 여부와 송금 이후 손실은 따로 기록하겠습니다.",
       "behaviorHint": "공동 적금 해지와 책임 순서 쟁점 강화. 박지연이 직접 설명해야 한다."
     }
   ],
@@ -1208,7 +1208,7 @@
       "witnessId": "w-2",
       "disputeId": "h-d4",
       "tone": "hard",
-      "text": "은행 직원님, 본인 확인 절차와 서명 확인에서 어떤 이상 징후가 있었는지 답해 주십시오.",
+      "text": "은행 직원님, 본인 확인과 서명 확인 과정에서 어떤 이상 징후가 있었는지 답해 주십시오.",
       "behaviorHint": "illegal_boundary angle 강화. S5 전 조작 확정어 남발 금지."
     },
     {
@@ -1275,7 +1275,7 @@
       "id": "dossier-hd4-surface",
       "disputeId": "h-d4",
       "minLieState": "S0",
-      "text": "수첩: ‘먼저’라는 표현이 숨김, 계좌 확인, 돈 실행, 서류 처리 중 어느 축을 가리키는지 매번 따로 표시한다.",
+      "text": "수첩: ‘먼저’라는 말이 숨김, 계좌 확인, 돈의 실행, 서류 처리 중 어느 쪽을 가리키는지 매번 따로 적어 둔다.",
       "behaviorHint": "h-d4 분리 기록."
     },
     {
