@@ -5672,6 +5672,27 @@
         "d-1",
         "d-5"
       ]
+    },
+    {
+      "requires": [
+        "e-3",
+        "e-7"
+      ],
+      "upgradesTo": "hard",
+      "proves": [
+        "d-1",
+        "d-5"
+      ]
+    },
+    {
+      "requires": [
+        "e-3",
+        "e-6"
+      ],
+      "upgradesTo": "hard",
+      "proves": [
+        "d-4"
+      ]
     }
   ],
   "truthTable": [
@@ -6307,12 +6328,12 @@
           {
             "kind": "upgrade_dispute",
             "disputeUpgrade": {
-              "disputeId": "d-1",
+              "disputeId": "d-2",
               "weight": "high"
             }
           }
         ],
-        "judgeHint": "수민 씨에게 왜 바로 말하지 않았는지 직접 물어볼 수 있습니다."
+        "judgeHint": "예비신랑의 접근과 침묵의 이유가 맞물립니다. 왜 바로 말하지 못했는지 확인할 수 있습니다."
       },
       {
         "id": "dc-3",
@@ -6326,14 +6347,11 @@
             "unlockNodeId": "dc-3"
           },
           {
-            "kind": "upgrade_dispute",
-            "disputeUpgrade": {
-              "disputeId": "d-2",
-              "weight": "high"
-            }
+            "kind": "unlock_dispute",
+            "unlockNodeId": "d-3"
           }
         ],
-        "judgeHint": "아버지의 과거 돈 접근 패턴에 초점을 맞춰 추궁해보시지요."
+        "judgeHint": "새 쟁점 '아버지의 돈 접근 패턴'이 드러났습니다. 반복된 돈 요구를 확인하세요."
       },
       {
         "id": "dc-1",
@@ -6383,11 +6401,14 @@
             "unlockNodeId": "dc-5"
           },
           {
-            "kind": "unlock_dispute",
-            "unlockNodeId": "d-3"
+            "kind": "upgrade_dispute",
+            "disputeUpgrade": {
+              "disputeId": "d-5",
+              "weight": "high"
+            }
           }
         ],
-        "judgeHint": "새 쟁점 '아버지의 돈 접근 패턴'이 드러났습니다. 반복된 구조를 물어보세요."
+        "judgeHint": "단톡방 매도와 과거 손절이 맞물립니다. 확산 경로와 낙인의 순서를 짚어보세요."
       }
     ],
     "recipes": [

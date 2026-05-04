@@ -515,13 +515,17 @@ function enqueueNewEvidenceCutscene(
 function enqueueWitnessSummonLightning(witnessId: string): void {
   const state = useGameStore.getState()
   const targetSelector = '[data-guide-target="witness-summon"]'
+  const hasCombinationSource = typeof document !== 'undefined' && document.querySelector('[data-resonance-target="combination-success"]')
+  const sourceSelector = hasCombinationSource
+    ? '[data-resonance-target="combination-success"]'
+    : '[data-resonance-target="vfx-origin-center"]'
   state.enqueueAura({ targetSelector, style: 'electric' })
   state.enqueueResonance({
-    fromSelector: '[data-resonance-target="vfx-origin-center"]',
+    fromSelector: sourceSelector,
     toSelector: targetSelector,
     reason: 'witness_summon',
     targetKey: `witness-summon:${witnessId}`,
-    style: 'lightning',
+    style: hasCombinationSource ? 'lightning' : 'absorb',
   })
 }
 

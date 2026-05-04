@@ -8,7 +8,7 @@ const PHASE_LABELS: Record<GamePhase, string> = {
   [Phase.Interrogation]: '심문',
   [GamePhase.Phase4_Evidence]: '심문',      // 통합: Phase4도 '심문'으로 표시
   [GamePhase.Phase5_ReExamination]: '심문', // 통합: Phase5도 '심문'으로 표시
-  [Phase.Mediation]: '조정',
+  [Phase.Mediation]: '판결 전 검토',
   [Phase.Verdict]: '판결',
   [Phase.Result]: '결과',
 }

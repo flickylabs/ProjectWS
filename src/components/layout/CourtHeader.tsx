@@ -42,7 +42,7 @@ const PHASE_DESC: Record<string, { title: string; desc: string }> = {
   [Phase.Interrogation]: { title: '심문', desc: '직접 질문하고 증거를 제시하여\n진실을 밝히는 핵심 단계입니다.' },
   [GamePhase.Phase4_Evidence]: { title: '증거 심리', desc: '증거 제시와 즉답 요구가\n해금됩니다.' },
   [GamePhase.Phase5_ReExamination]: { title: '재심문', desc: '비공개 보호 토글이 해금됩니다.\nAI 진술 분석도 사용 가능합니다.' },
-  [Phase.Mediation]: { title: '조정', desc: '최종 판결 전 조정 단계입니다.' },
+  [Phase.Mediation]: { title: '판결 전 검토', desc: '바로 선고할지, 더 심리할지 결정합니다.' },
   [Phase.Verdict]: { title: '판결', desc: '수집한 증거와 심문 결과를 바탕으로\n판결을 내립니다.' },
 }
 

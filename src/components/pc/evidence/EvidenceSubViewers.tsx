@@ -338,8 +338,9 @@ export function ChatViewer({
   const contactLabel = resolveChatContactLabel(activeHeader, activeMessages)
   const isGroupChat = resolveIsGroupChat(activeHeader, activeMessages)
   const isKakaoChat = !isGroupChat && resolveIsKakaoChat(activeHeader)
+  const isTelegramChat = resolveIsTelegramChat(activeHeader)
   return (
-    <div className={`pc-phone-chat${isGroupChat ? ' is-group-dm' : ''}${isKakaoChat ? ' is-kakao-talk' : ''}`}>
+    <div className={`pc-phone-chat${isGroupChat ? ' is-group-dm' : ''}${isKakaoChat ? ' is-kakao-talk' : ''}${isTelegramChat ? ' is-telegram' : ''}`}>
       <div className="pc-phone-chat__shell">
         <div className="pc-phone-chat__top">
           {isGroupChat ? <span className="pc-phone-chat__group-stack" aria-hidden="true">{buildGroupAvatarStack(activeMessages)}</span> : null}
@@ -482,6 +483,10 @@ function isSameChatSender(a?: ChatMessage, b?: ChatMessage): boolean {
 
 function resolveIsKakaoChat(header: string): boolean {
   return /카카오톡|카톡/i.test(header)
+}
+
+function resolveIsTelegramChat(header: string): boolean {
+  return /텔레그램|telegram/i.test(header)
 }
 
 function resolveIsGroupChat(header: string, messages: ChatMessage[]): boolean {

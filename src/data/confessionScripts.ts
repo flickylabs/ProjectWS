@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Confession Scripts — 활성 3사건 자백 발화 데이터
  * ─────────────────────────────────────────────────
  * 체념 진입 시 NPC가 출력하는 사전 작성된 자백 entry.
@@ -76,14 +76,14 @@ const CONFESSION_DATA: Record<string, CaseConfessionMap> = {
       speaker: 'a',
       disputeId: 'd-4',
       preConfession: '재판관님, 한 가지 인정하겠습니다.',
-      confessionMain: '공동 적금을 해지한 뒤 받은 돈 일부를 투자방에 넣었습니다. 그 사람들 말이 너무 그럴듯해서 믿었고, 결국 3,000만원을 사기당했습니다.',
+      confessionMain: '공동 적금을 해지한 뒤 받은 돈 일부를 투자방에 넣었습니다. 그 사람들 말이 너무 그럴듯해서 믿었고, 결국 2,000만원을 사기당했습니다.',
       postConfession: '속았다는 말로 제 책임이 없어지는 건 아닙니다.',
     },
     'A-h-d3-d4': {
       speaker: 'a',
       disputeId: 'h-d3',
       preConfession: '재판관님, 이건 제가 피할 수 없는 일입니다.',
-      confessionMain: '제 남편 몰래 공동 적금을 해지했고, 위임장 서명은 제가 흉내 냈습니다. 그 돈을 투자방에 넣었다가 3,000만원을 잃었습니다. 두려워서 그랬고, 그날 한 번이면 끝날 줄 알았습니다.',
+      confessionMain: '제 남편 몰래 공동 적금을 해지했고, 위임장 서명은 제가 흉내 냈습니다. 그 돈 중 2,000만원을 투자방에 넣었다가 잃었습니다. 두려워서 그랬고, 그날 한 번이면 끝날 줄 알았습니다.',
       postConfession: '그게 사문서위조라는 점도 부정하지 않고, 이 일은 제가 책임지겠습니다.',
     },
   },
@@ -169,3 +169,4 @@ export function getAllConfessions(caseId: string): ConfessionEntry[] {
   if (!caseMap) return []
   return Object.values(caseMap)
 }
+

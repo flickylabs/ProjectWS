@@ -58,17 +58,22 @@ export default function JudgeNotebookSection() {
       setBadgeFlash(true)
       const vfxTimer = window.setTimeout(() => {
         const store = useGameStore.getState()
+        const cutsceneSource = typeof document !== 'undefined'
+          ? document.querySelector('[data-resonance-target="cutscene-center"]')
+          : null
         store.enqueueAura({
           targetSelector: '[data-resonance-target="judge-notebook"]',
-          style: 'electric',
+          style: 'archive',
         })
-        store.enqueueResonance({
-          fromSelector: '[data-resonance-target="vfx-origin-center"]',
-          toSelector: '[data-resonance-target="judge-notebook"]',
-          reason: 'notebook_entry',
-          targetKey: `notebook:${latest?.id ?? entries.length}`,
-          style: 'lightning',
-        })
+        if (cutsceneSource) {
+          store.enqueueResonance({
+            fromSelector: '[data-resonance-target="cutscene-center"]',
+            toSelector: '[data-resonance-target="judge-notebook"]',
+            reason: 'notebook_entry',
+            targetKey: `notebook:${latest?.id ?? entries.length}`,
+            style: 'archive',
+          })
+        }
       }, 90)
       const t = window.setTimeout(() => setBadgeFlash(false), 1800)
       prevCountRef.current = entries.length

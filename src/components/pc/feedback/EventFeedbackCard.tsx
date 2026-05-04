@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+﻿import { useEffect, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
 import { playCourtBeat } from '../../../engine/soundEngine'
 import { useGameStore, useStore } from '../../../store/useGameStore'
@@ -36,13 +36,20 @@ const KIND_META: Record<EventFeedbackKind, KindMeta> = {
   info:               { tone: 'gold',    defaultAutoMs: 2000 },
 }
 
-/** 컷씬 스타일 대상 kind — 얇은 검정 띠, 자동 소멸, 좌측 하단 관찰 패널로 수렴 */
-const CUTSCENE_KINDS: EventFeedbackKind[] = ['observation', 'evidence_result', 'transition_choice']
+/** 컷씬 성격의 kind만 게임 UI 위에 짧게 띄우고, 선택지가 있는 경우에는 모달로 처리한다. */
+const CUTSCENE_KINDS: EventFeedbackKind[] = [
+  'observation',
+  'evidence_result',
+  'transition_choice',
+  'state_change',
+  'emotional_slip',
+  'conflict',
+]
 
 /**
- * Modal 모드 판정:
- * - 선택지 있는 카드만 Modal (유저 선택 필수 — backdrop blur로 게임 정지 느낌)
- * - 컷씬 kind는 Alert 모드 (띠만 뜨고 게임 UI 계속 보임, backdrop 없음)
+ * Modal 판정:
+ * - 선택지가 있는 카드는 Modal
+ * - 컷씬 kind는 Alert 모드로 두고 Court Beat 레이어가 시선을 정리한다.
  */
 function isModalKind(_kind: EventFeedbackKind, hasActions: boolean): boolean {
   return hasActions
@@ -50,6 +57,22 @@ function isModalKind(_kind: EventFeedbackKind, hasActions: boolean): boolean {
 
 function isCutsceneKind(kind: EventFeedbackKind, hasActions: boolean): boolean {
   return !hasActions && CUTSCENE_KINDS.includes(kind)
+}
+
+function isMajorCutsceneCopy(active: EventFeedbackItem): boolean {
+  const text = [
+    active.title,
+    active.subtitle,
+    active.body,
+    active.quote,
+    active.tag,
+    active.eyebrow,
+    active.meta?.join(' '),
+    active.blocks?.map((block) => `${block.title} ${block.text}`).join(' '),
+  ].filter(Boolean).join(' ')
+
+  const normalized = text.replace(/\s+/g, ' ')
+  return /S5|진실|진실\s*파악|누설\s*100|100%|감정\s*(격앙|최고조|체념|방어가\s*흔들|무너)|체념|자백|사실\s*인정|truth|breakthrough/i.test(normalized)
 }
 
 function getCourtBeatProfile(active: EventFeedbackItem | null): CourtBeatProfile {
@@ -87,10 +110,10 @@ function getCourtBeatProfile(active: EventFeedbackItem | null): CourtBeatProfile
     return { level: 'impact', cue: 'contradiction', destination: 'notebook' }
   }
   if (active.kind === 'conflict') {
-    return { level: 'impact', cue: 'contradiction', destination: 'truth' }
+    return { level: isMajorCutsceneCopy(active) ? 'breakthrough' : 'impact', cue: 'contradiction', destination: 'truth' }
   }
   if (active.kind === 'emotional_slip') {
-    return { level: 'impact', cue: 'emotion', destination: 'notebook' }
+    return { level: isMajorCutsceneCopy(active) ? 'breakthrough' : 'impact', cue: 'emotion', destination: 'notebook' }
   }
   if (active.kind === 'witness_choice') {
     return { level: 'impact', cue: 'witness', destination: 'witness' }
@@ -102,20 +125,44 @@ function getCourtBeatProfile(active: EventFeedbackItem | null): CourtBeatProfile
     return { level: 'focus', cue: 'notebook', destination: 'notebook' }
   }
   if (active.kind === 'state_change') {
-    return { level: 'focus', cue: 'truth', destination: 'truth' }
+    return { level: isMajorCutsceneCopy(active) ? 'breakthrough' : 'focus', cue: 'truth', destination: 'truth' }
   }
   return { level: 'none', cue: 'silent', destination: 'none' }
 }
 
+function expandHighlightToReadablePhrase(text: string, highlight: string): string {
+  const index = text.indexOf(highlight)
+  if (index < 0) return highlight
+  const startBreaks = ['.', '!', '?', '。', '！', '？', '\n']
+  const endBreaks = ['.', '!', '?', '。', '！', '？', '\n']
+
+  let start = 0
+  for (const marker of startBreaks) {
+    const markerIndex = text.lastIndexOf(marker, index - 1)
+    if (markerIndex >= start) start = markerIndex + marker.length
+  }
+
+  let end = text.length
+  const highlightEnd = index + highlight.length
+  for (const marker of endBreaks) {
+    const markerIndex = text.indexOf(marker, highlightEnd)
+    if (markerIndex >= 0 && markerIndex + marker.length < end) {
+      end = markerIndex + marker.length
+    }
+  }
+
+  return text.slice(start, end).trim() || highlight
+}
 function splitHighlightedText(text: string, highlight?: string) {
   if (!highlight) return <>{text}</>
-  const index = text.indexOf(highlight)
+  const expandedHighlight = expandHighlightToReadablePhrase(text, highlight)
+  const index = text.indexOf(expandedHighlight)
   if (index < 0) return <>{text}</>
   return (
     <>
       {text.slice(0, index)}
-      <span className="pc-court-clash__phrase is-broken">{highlight}</span>
-      {text.slice(index + highlight.length)}
+      <span className="pc-court-clash__phrase is-broken">{expandedHighlight}</span>
+      {text.slice(index + expandedHighlight.length)}
     </>
   )
 }
@@ -229,12 +276,11 @@ function CourtBeatClash({ active }: { active: EventFeedbackItem }) {
 }
 
 /**
- * 통합 이벤트 피드백 카드 (Option A)
- * ─────────────────────────────────
- * - activeFeedback 을 구독해 1건씩 순차 렌더
- * - actions 있으면 유저 선택 필수, 없으면 autoDismissMs 경과 후 자동 소멸
- * - observation + convergeToTag 는 해당 파티 archetype 태그로 수렴 애니메이션
- * - 상단 중앙 고정, backdrop 없음 (채팅 계속 읽힘)
+ * ?듯빀 ?대깽???쇰뱶諛?移대뱶 (Option A)
+ * ?????????????????????????????????
+ * - activeFeedback ??援щ룆??1嫄댁뵫 ?쒖감 ?뚮뜑
+ * - actions ?덉쑝硫??좎? ?좏깮 ?꾩닔, ?놁쑝硫?autoDismissMs 寃쎄낵 ???먮룞 ?뚮㈇
+ * - observation + convergeToTag ???대떦 ?뚰떚 archetype ?쒓렇濡??섎졃 ?좊땲硫붿씠?? * - ?곷떒 以묒븰 怨좎젙, backdrop ?놁쓬 (梨꾪똿 怨꾩냽 ?쏀옒)
  */
 export default function EventFeedbackCard() {
   const active = useStore((s) => s.activeFeedback)
@@ -247,7 +293,7 @@ export default function EventFeedbackCard() {
   const beatSfxFiredRef = useRef<string | null>(null)
   const activeBeat = getCourtBeatProfile(active)
 
-  // active 이 바뀌면 phase 초기화
+  // active 변경 시 phase 초기화
   useEffect(() => {
     if (!active) {
       activeIdRef.current = null
@@ -273,7 +319,7 @@ export default function EventFeedbackCard() {
     playCourtBeat(activeBeat.cue, activeBeat.level)
   }, [active, activeBeat.cue, activeBeat.level])
 
-  // visible 진입 시 auto-dismiss 스케줄
+  // visible 진입 후 auto-dismiss 스케줄
   useEffect(() => {
     if (!active || phase !== 'visible') return
     const meta = KIND_META[active.kind]
@@ -281,7 +327,7 @@ export default function EventFeedbackCard() {
     if (autoMs == null) return
 
     const timer = window.setTimeout(() => {
-      // 수렴 타겟 우선순위: convergeTargetSelector(가이드 컷씬) > convergeToTag(archetype)
+      // ?섎졃 ?寃??곗꽑?쒖쐞: convergeTargetSelector(媛?대뱶 而룹뵮) > convergeToTag(archetype)
       let targetEl: HTMLElement | null = null
       if (active.convergeTargetSelector) {
         targetEl = document.querySelector<HTMLElement>(active.convergeTargetSelector)
@@ -303,7 +349,7 @@ export default function EventFeedbackCard() {
     return () => window.clearTimeout(timer)
   }, [active, phase])
 
-  // 새 증거 확보 컷씬은 검정띠 자체에서 좌측 증거 카드로 번개가 나가야 인지된다.
+  // ??利앷굅 ?뺣낫 而룹뵮? 寃?뺣씈 ?먯껜?먯꽌 醫뚯륫 利앷굅 移대뱶濡?踰덇컻媛 ?섍????몄??쒕떎.
   useEffect(() => {
     if (!active || phase !== 'visible') return
     if (active.kind !== 'evidence_result' || active.tag !== 'evidence-unlock' || !active.convergeTargetSelector) return
@@ -319,14 +365,14 @@ export default function EventFeedbackCard() {
         toSelector: targetSelector,
         reason: 'evidence_unlock',
         targetKey: `evidence-unlock:${targetSelector}`,
-        style: 'lightning',
+        style: 'absorb',
       })
     }, 140)
     return () => window.clearTimeout(timer)
   }, [active, phase])
 
-  // 증거 조사 패널이 열린 상태에서 새 증거 컷씬이 재생되면 panel backdrop blur가
-  // 좌측 증거 카드와 번개를 흐리게 만든다. 컷씬이 active인 동안만 blur를 풀고 복구한다.
+  // 利앷굅 議곗궗 ?⑤꼸???대┛ ?곹깭?먯꽌 ??利앷굅 而룹뵮???ъ깮?섎㈃ panel backdrop blur媛
+  // 醫뚯륫 利앷굅 移대뱶? 踰덇컻瑜??먮━寃?留뚮뱺?? 而룹뵮??active???숈븞留?blur瑜??怨?蹂듦뎄?쒕떎.
   useEffect(() => {
     if (typeof document === 'undefined') return
     const revealInteraction = active?.kind === 'evidence_result' && active.tag === 'evidence-unlock'
@@ -337,13 +383,13 @@ export default function EventFeedbackCard() {
     }
   }, [active?.id, active?.kind, active?.tag])
 
-  // converging/leaving 종료 후 실제 dismiss + 수렴 타겟 3번 깜빡
+  // converging/leaving 醫낅즺 ???ㅼ젣 dismiss + ?섎졃 ?寃?3踰?源쒕묀
   useEffect(() => {
     if (phase !== 'converging' && phase !== 'leaving') return
     const duration = phase === 'converging' ? 520 : 260
     const timer = window.setTimeout(() => {
-      // 수렴 타겟이 있으면 2번 깜빡 트리거
-      if (phase === 'converging' && active?.convergeTargetSelector) {
+        // 목적지가 있으면 한 번 더 펄스 처리
+        if (phase === 'converging' && active?.convergeTargetSelector) {
         const target = document.querySelector<HTMLElement>(active.convergeTargetSelector)
         if (target) {
           target.classList.add('pc-dialogue-jump-pulse')
@@ -375,7 +421,7 @@ export default function EventFeedbackCard() {
     ? ` is-focus-takeover is-beat-${activeBeat.level} is-cue-${activeBeat.cue} is-destination-${activeBeat.destination}`
     : ''
   const rootClass = `pc-event-feedback-root${modal ? ' is-modal' : ' is-alert'}${cutscene ? ' is-cutscene' : ''}${evidenceUnlockCutscene ? ' is-evidence-unlock' : ''}${beatClass} is-phase-${phase}`
-  // 컷씬(자동소멸 알림 4종): 배경 클릭 시 즉시 닫기. 선택 필수 모달은 차단.
+  // 而룹뵮(?먮룞?뚮㈇ ?뚮┝ 4醫?: 諛곌꼍 ?대┃ ??利됱떆 ?リ린. ?좏깮 ?꾩닔 紐⑤떖? 李⑤떒.
   const allowBackdropDismiss = cutscene
 
   return createPortal(
@@ -401,13 +447,13 @@ export default function EventFeedbackCard() {
         data-resonance-target={cutscene ? 'cutscene-center' : undefined}
         style={cardStyle}
       >
-        {focusTakeover ? (
+        {focusTakeover && !evidenceUnlockCutscene ? (
           <div className="pc-event-feedback__beat-mark" aria-hidden="true">
             <span />
             <i />
           </div>
         ) : null}
-        {/* X 버튼 — onDefer 정의된 카드만 (예: 진실 공방 일시 보류). 클릭 시 onDefer 후 카드 닫음. */}
+        {/* X 踰꾪듉 ??onDefer ?뺤쓽??移대뱶留?(?? 吏꾩떎 怨듬갑 ?쇱떆 蹂대쪟). ?대┃ ??onDefer ??移대뱶 ?レ쓬. */}
         {active.courtBeat ? (
           <button
             type="button"
@@ -429,7 +475,7 @@ export default function EventFeedbackCard() {
             ×
           </button>
         ) : null}
-        {/* kind-observation: 상단 Eye SVG (포착 순간 강조, 작게) */}
+        {/* kind-observation: ?곷떒 Eye SVG (?ъ갑 ?쒓컙 媛뺤“, ?묎쾶) */}
         {cutscene && active.kind === 'observation' ? (
           <div className="pc-event-feedback__eye" aria-hidden="true">
             <svg viewBox="0 0 64 32" width="52" height="26">
@@ -553,3 +599,4 @@ export default function EventFeedbackCard() {
     document.body,
   )
 }
+

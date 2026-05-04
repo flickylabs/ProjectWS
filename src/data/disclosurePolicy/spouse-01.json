@@ -1,4 +1,4 @@
-{
+﻿{
   "caseId": "spouse-01",
   "sourceCaseId": "case-spouse-01",
   "schemaVersion": "tier1-disclosure-policy-draft-v1",
@@ -114,8 +114,8 @@
       },
       "e-6": {
         "evidenceId": "e-6",
-        "name": "투자방 카톡 + 송금 기록",
-        "surfaceName": "투자방 카톡 기록",
+        "name": "투자방 텔레그램 + 송금 기록",
+        "surfaceName": "투자방 텔레그램 기록",
         "surfaceDescription": "박지연이 참여한 투자방 대화와 송금 흐름을 보여주는 기록.",
         "descriptionTruth": [
           "박지연 사기",
@@ -723,7 +723,7 @@
         "surfaceFallback": "새벽 통화와 개인 계좌 출금의 시점이 맞물립니다."
       },
       "combine-4": {
-        "sourceText": "공동 적금 해지 서류의 3,000만원과 투자방 송금 내역의 3,000만원이 정확히 일치한다. 위임장 조작으로 빠진 돈의 행선지가 확정된다.",
+        "sourceText": "공동 적금 해지 서류의 3,000만원 중 2,000만원이 투자방 송금 내역으로 이어진다. 위임장 조작으로 빠진 돈 중 투자 피해액의 행선지가 확정된다.",
         "truthLexemes": [
           "위임장 조작"
         ],
@@ -1469,7 +1469,7 @@
             "stage": 4,
             "name": "조작과 손실 확정",
             "surfaceClaim": "공동 적금 문제는 부부 불신만이 아니라 서류 위반과 손실을 포함한다.",
-            "hiddenTruth": "박지연은 위임장을 조작하거나 악용해 공동 적금 3,000만원을 해지했고, 투자 사기로 잃었다.",
+            "hiddenTruth": "박지연은 위임장을 조작하거나 악용해 공동 적금 3,000만원을 해지했고, 그중 2,000만원을 투자방에 송금했다가 사기로 잃었다.",
             "entryConditions": [
               "partyA lieState >= S5 또는 h-d3 challenge success",
               "e-6 Original/Context와 e-7 Original/Context 확인",
@@ -1770,4 +1770,5 @@
     ]
   }
 }
+
 

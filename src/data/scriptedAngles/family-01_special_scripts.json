@@ -2069,7 +2069,242 @@
   ],
   "judgeEvidenceCombo": [
     {
-      "id": "combo-e2-e3",
+      "id": "judgecombo-combine-1",
+      "combinationId": "combine-1",
+      "inputs": [
+        "e-1",
+        "e-2"
+      ],
+      "unlocksDisputes": [
+        "d-1"
+      ],
+      "unlocksWitnesses": [
+        "w-1"
+      ],
+      "unlocksEvidence": [],
+      "text": "유서 비율과 말년 방문 기록이 겹칩니다. 작성 과정에서 누가 곁에 있었는지 확인해야 합니다.",
+      "behaviorHint": "증거/진술 조합으로 쟁점·증인·증거가 추가되는 재판관 안내 문장.",
+      "tags": [
+        "channel:judge_evidence_combo",
+        "combo:combine-1",
+        "input:e-1",
+        "input:e-2",
+        "disputeId:d-1"
+      ]
+    },
+    {
+      "id": "judgecombo-combine-2",
+      "combinationId": "combine-2",
+      "inputs": [
+        "e-4",
+        "e-5"
+      ],
+      "unlocksDisputes": [
+        "d-2"
+      ],
+      "unlocksWitnesses": [
+        "w-2"
+      ],
+      "unlocksEvidence": [],
+      "text": "공증본과 서랍 원본의 비율 방향이 정반대로 어긋납니다. 그 변경 방향과 제출 순서를 확인해야 합니다.",
+      "behaviorHint": "증거/진술 조합으로 쟁점·증인·증거가 추가되는 재판관 안내 문장.",
+      "tags": [
+        "channel:judge_evidence_combo",
+        "combo:combine-2",
+        "input:e-4",
+        "input:e-5",
+        "disputeId:d-2"
+      ]
+    },
+    {
+      "id": "judgecombo-combine-3",
+      "combinationId": "combine-3",
+      "inputs": [
+        "e-5",
+        "e-6"
+      ],
+      "unlocksDisputes": [
+        "d-3"
+      ],
+      "unlocksWitnesses": [
+        "w-3"
+      ],
+      "unlocksEvidence": [],
+      "text": "원본 유서와 20년 송금 내역이 맞물립니다. 어머니 돈으로 보였던 출처를 다시 따져야 합니다.",
+      "behaviorHint": "증거/진술 조합으로 쟁점·증인·증거가 추가되는 재판관 안내 문장.",
+      "tags": [
+        "channel:judge_evidence_combo",
+        "combo:combine-3",
+        "input:e-5",
+        "input:e-6",
+        "disputeId:d-3"
+      ]
+    },
+    {
+      "id": "judgecombo-combine-4",
+      "combinationId": "combine-4",
+      "inputs": [
+        "e-6",
+        "e-7"
+      ],
+      "unlocksDisputes": [
+        "d-4",
+        "d-5"
+      ],
+      "unlocksWitnesses": [],
+      "unlocksEvidence": [],
+      "text": "오래된 송금 흐름과 일기장이 같은 비밀을 가리킵니다. 침묵의 이유를 돈 문제와 분리해 볼 수 없습니다.",
+      "behaviorHint": "증거/진술 조합으로 쟁점·증인·증거가 추가되는 재판관 안내 문장.",
+      "tags": [
+        "channel:judge_evidence_combo",
+        "combo:combine-4",
+        "input:e-6",
+        "input:e-7",
+        "disputeId:d-4",
+        "disputeId:d-5"
+      ]
+    },
+    {
+      "id": "judgecombo-combine-5",
+      "combinationId": "combine-5",
+      "inputs": [
+        "stmt-b-silence",
+        "e-4"
+      ],
+      "unlocksDisputes": [
+        "d-2"
+      ],
+      "unlocksWitnesses": [
+        "w-2"
+      ],
+      "unlocksEvidence": [],
+      "text": "말할 수 없다는 태도와 공증 기록이 맞물립니다. 비율 변경의 이유를 다시 물어야 합니다.",
+      "behaviorHint": "증거/진술 조합으로 쟁점·증인·증거가 추가되는 재판관 안내 문장.",
+      "tags": [
+        "channel:judge_evidence_combo",
+        "combo:combine-5",
+        "input:stmt-b-silence",
+        "input:e-4",
+        "disputeId:d-2"
+      ]
+    },
+    {
+      "id": "judgecombo-combine-6",
+      "combinationId": "combine-6",
+      "inputs": [
+        "stmt-b-mother",
+        "e-6"
+      ],
+      "unlocksDisputes": [
+        "d-3"
+      ],
+      "unlocksWitnesses": [
+        "w-3"
+      ],
+      "unlocksEvidence": [],
+      "text": "어머니 뜻이라는 말 뒤에 오래된 송금 흐름이 있습니다. 그 돈의 출처부터 확인해야 합니다.",
+      "behaviorHint": "증거/진술 조합으로 쟁점·증인·증거가 추가되는 재판관 안내 문장.",
+      "tags": [
+        "channel:judge_evidence_combo",
+        "combo:combine-6",
+        "input:stmt-b-mother",
+        "input:e-6",
+        "disputeId:d-3"
+      ]
+    },
+    {
+      "id": "judgecombo-combine-7",
+      "combinationId": "combine-7",
+      "inputs": [
+        "e-5",
+        "e-7"
+      ],
+      "unlocksDisputes": [
+        "d-4"
+      ],
+      "unlocksWitnesses": [],
+      "unlocksEvidence": [],
+      "text": "원본 유서와 어머니 일기장이 같은 방향을 가리킵니다. 감춘 이유가 무엇인지 직접 물을 시점입니다.",
+      "behaviorHint": "증거/진술 조합으로 쟁점·증인·증거가 추가되는 재판관 안내 문장.",
+      "tags": [
+        "channel:judge_evidence_combo",
+        "combo:combine-7",
+        "input:e-5",
+        "input:e-7",
+        "disputeId:d-4"
+      ]
+    },
+    {
+      "id": "judgecombo-combine-8",
+      "combinationId": "combine-8",
+      "inputs": [
+        "e-1",
+        "e-7"
+      ],
+      "unlocksDisputes": [
+        "d-5"
+      ],
+      "unlocksWitnesses": [],
+      "unlocksEvidence": [],
+      "text": "유서 비율과 어머니 기록이 함께 흔들립니다. 두 형제가 어머니 뜻을 어떻게 해석했는지 확인해야 합니다.",
+      "behaviorHint": "증거/진술 조합으로 쟁점·증인·증거가 추가되는 재판관 안내 문장.",
+      "tags": [
+        "channel:judge_evidence_combo",
+        "combo:combine-8",
+        "input:e-1",
+        "input:e-7",
+        "disputeId:d-5"
+      ]
+    },
+    {
+      "id": "judgecombo-combine-9",
+      "combinationId": "combine-9",
+      "inputs": [
+        "stmt-a-heir",
+        "e-7"
+      ],
+      "unlocksDisputes": [
+        "d-5"
+      ],
+      "unlocksWitnesses": [],
+      "unlocksEvidence": [],
+      "text": "장남 몫을 당연시한 발언과 어머니 기록이 충돌합니다. 어머니 뜻의 자리를 최종 쟁점으로 정리하십시오.",
+      "behaviorHint": "증거/진술 조합으로 쟁점·증인·증거가 추가되는 재판관 안내 문장.",
+      "tags": [
+        "channel:judge_evidence_combo",
+        "combo:combine-9",
+        "input:stmt-a-heir",
+        "input:e-7",
+        "disputeId:d-5"
+      ]
+    },
+    {
+      "id": "judgecombo-combine-10",
+      "combinationId": "combine-10",
+      "inputs": [
+        "stmt-a-heir",
+        "e-6"
+      ],
+      "unlocksDisputes": [
+        "d-3"
+      ],
+      "unlocksWitnesses": [
+        "w-3"
+      ],
+      "unlocksEvidence": [],
+      "text": "상속 감정과 20년 송금 흐름이 맞물립니다. 누가 무엇을 떠안았는지 확인해야 합니다.",
+      "behaviorHint": "증거/진술 조합으로 쟁점·증인·증거가 추가되는 재판관 안내 문장.",
+      "tags": [
+        "channel:judge_evidence_combo",
+        "combo:combine-10",
+        "input:stmt-a-heir",
+        "input:e-6",
+        "disputeId:d-3"
+      ]
+    },
+    {
+      "id": "judgecombo-combine-11",
+      "combinationId": "combine-11",
       "inputs": [
         "e-2",
         "e-3"
@@ -2081,118 +2316,36 @@
         "w-1"
       ],
       "unlocksEvidence": [],
-      "text": "방문 빈도와 전 요양보호사 증언이 겹칩니다. 유서 작성 과정에서 도움과 개입의 경계를 따져야 합니다.",
-      "behaviorHint": "증거 조합으로 쟁점/증인/증거가 추가되는 재판관 안내 문장.",
+      "text": "방문 기록과 요양보호사 증언이 겹칩니다. 유서 작성 과정에서 도움과 개입의 경계를 따져야 합니다.",
+      "behaviorHint": "증거/진술 조합으로 쟁점·증인·증거가 추가되는 재판관 안내 문장.",
       "tags": [
         "channel:judge_evidence_combo",
+        "combo:combine-11",
         "input:e-2",
-        "input:e-3"
+        "input:e-3",
+        "disputeId:d-1"
       ]
     },
     {
-      "id": "combo-e1-e4",
+      "id": "judgecombo-combine-12",
+      "combinationId": "combine-12",
       "inputs": [
-        "e-1",
-        "e-4"
+        "stmt-a-heir",
+        "stmt-b-silence"
       ],
       "unlocksDisputes": [
         "d-2"
       ],
-      "unlocksWitnesses": [
-        "w-2"
-      ],
-      "unlocksEvidence": [
-        "e-5"
-      ],
-      "text": "공증 유서 사본과 이중 스캔 기록이 맞물립니다. 최종본이 만들어진 순서를 새 쟁점으로 열어야 합니다.",
-      "behaviorHint": "증거 조합으로 쟁점/증인/증거가 추가되는 재판관 안내 문장.",
-      "tags": [
-        "channel:judge_evidence_combo",
-        "input:e-1",
-        "input:e-4"
-      ]
-    },
-    {
-      "id": "combo-e4-e5",
-      "inputs": [
-        "e-4",
-        "e-5"
-      ],
-      "unlocksDisputes": [
-        "d-2",
-        "d-3"
-      ],
-      "unlocksWitnesses": [],
-      "unlocksEvidence": [
-        "e-6"
-      ],
-      "text": "이중 스캔과 서랍 원본의 차이가 분명합니다. 변경 방향의 이유와 오래된 자금 흐름을 함께 확인해야 합니다.",
-      "behaviorHint": "증거 조합으로 쟁점/증인/증거가 추가되는 재판관 안내 문장.",
-      "tags": [
-        "channel:judge_evidence_combo",
-        "input:e-4",
-        "input:e-5"
-      ]
-    },
-    {
-      "id": "combo-e5-e6",
-      "inputs": [
-        "e-5",
-        "e-6"
-      ],
-      "unlocksDisputes": [
-        "d-3",
-        "d-5"
-      ],
-      "unlocksWitnesses": [
-        "w-3"
-      ],
-      "unlocksEvidence": [],
-      "text": "원본 유서와 계좌 흐름을 같이 보면 어머니가 왜 다르게 판단했는지 설명할 단서가 생깁니다. 박순애 증인을 부를 수 있습니다.",
-      "behaviorHint": "증거 조합으로 쟁점/증인/증거가 추가되는 재판관 안내 문장.",
-      "tags": [
-        "channel:judge_evidence_combo",
-        "input:e-5",
-        "input:e-6"
-      ]
-    },
-    {
-      "id": "combo-e6-e7",
-      "inputs": [
-        "e-6",
-        "e-7"
-      ],
-      "unlocksDisputes": [
-        "d-4",
-        "d-5"
-      ],
       "unlocksWitnesses": [],
       "unlocksEvidence": [],
-      "text": "오래된 지원 흐름과 어머니 일기장이 연결됩니다. 침묵의 이유와 최종 책임 구조를 함께 심리해야 합니다.",
-      "behaviorHint": "증거 조합으로 쟁점/증인/증거가 추가되는 재판관 안내 문장.",
+      "text": "상속 감정과 침묵이 같은 빈칸을 가리킵니다. 비율 뒤의 사정을 확인해야 합니다.",
+      "behaviorHint": "증거/진술 조합으로 쟁점·증인·증거가 추가되는 재판관 안내 문장.",
       "tags": [
         "channel:judge_evidence_combo",
-        "input:e-6",
-        "input:e-7"
-      ]
-    },
-    {
-      "id": "combo-stmt-a-heir-e7",
-      "inputs": [
-        "stmt-a-heir",
-        "e-7"
-      ],
-      "unlocksDisputes": [
-        "d-5"
-      ],
-      "unlocksWitnesses": [],
-      "unlocksEvidence": [],
-      "text": "장남 몫을 당연시한 발언과 어머니 기록이 부딪힙니다. 어머니 뜻의 자리를 최종 쟁점으로 정리하십시오.",
-      "behaviorHint": "증거 조합으로 쟁점/증인/증거가 추가되는 재판관 안내 문장.",
-      "tags": [
-        "channel:judge_evidence_combo",
+        "combo:combine-12",
         "input:stmt-a-heir",
-        "input:e-7"
+        "input:stmt-b-silence",
+        "disputeId:d-2"
       ]
     }
   ],

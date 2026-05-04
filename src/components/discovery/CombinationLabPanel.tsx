@@ -40,7 +40,7 @@ function resultKindLabel(kind: CombinationLabResultKind): string {
     unlock_dispute: '새 쟁점',
     unlock_witness_angle: '증인 각도',
     unlock_interjection: '끼어들기',
-    unlock_mediation_hint: '조정 힌트',
+    unlock_mediation_hint: '판결 힌트',
     upgrade_question: '질문 발전',
     upgrade_evidence: '증거 발전',
     upgrade_dispute: '쟁점 발전',

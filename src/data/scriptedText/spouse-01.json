@@ -72077,7 +72077,7 @@
             },
             {
               "id": "a-e-7-late-self-v3",
-              "text": "적금 3,000만원을 해지한 뒤 그 돈을 투자방으로 보냈습니다. 전부 제 결정이었습니다.",
+              "text": "공동 적금 3,000만원을 해지한 뒤 그중 2,000만원을 투자방으로 보냈습니다. 전부 제 결정이었습니다.",
               "behaviorHint": "수치심을 감추지 못하면서도, 범행의 과정과 책임을 또렷하게 털어놓는다.",
               "tags": [
                 "channel:evidence_present",
@@ -125200,7 +125200,7 @@
           "key": "a|e-6|early|request_original",
           "party": "a",
           "evidenceId": "e-6",
-          "evidenceName": "투자방 카톡 + 송금 기록",
+          "evidenceName": "투자방 텔레그램 + 송금 기록",
           "subjectParty": "a",
           "subjectRole": "self",
           "requiredLieState": "S2",
@@ -125739,7 +125739,7 @@
           "key": "a|e-6|early|check_metadata",
           "party": "a",
           "evidenceId": "e-6",
-          "evidenceName": "투자방 카톡 + 송금 기록",
+          "evidenceName": "투자방 텔레그램 + 송금 기록",
           "subjectParty": "a",
           "subjectRole": "self",
           "requiredLieState": "S2",
@@ -126278,7 +126278,7 @@
           "key": "a|e-6|early|restore_context",
           "party": "a",
           "evidenceId": "e-6",
-          "evidenceName": "투자방 카톡 + 송금 기록",
+          "evidenceName": "투자방 텔레그램 + 송금 기록",
           "subjectParty": "a",
           "subjectRole": "self",
           "requiredLieState": "S2",
@@ -126287,7 +126287,7 @@
           "stage": 3,
           "stageLabel": "손실복원",
           "attackVector": "responsibility",
-          "questionText": "이 3,000만원은 현재 어디에 있습니까?",
+          "questionText": "이 2,000만원은 현재 어디에 있습니까?",
           "stanceHint": "hedge",
           "truthLevel": "hint",
           "variants": [
@@ -126817,7 +126817,7 @@
           "key": "a|e-6|mid|request_original",
           "party": "a",
           "evidenceId": "e-6",
-          "evidenceName": "투자방 카톡 + 송금 기록",
+          "evidenceName": "투자방 텔레그램 + 송금 기록",
           "subjectParty": "a",
           "subjectRole": "self",
           "requiredLieState": "S2",
@@ -127376,7 +127376,7 @@
           "key": "a|e-6|mid|check_metadata",
           "party": "a",
           "evidenceId": "e-6",
-          "evidenceName": "투자방 카톡 + 송금 기록",
+          "evidenceName": "투자방 텔레그램 + 송금 기록",
           "subjectParty": "a",
           "subjectRole": "self",
           "requiredLieState": "S2",
@@ -127935,7 +127935,7 @@
           "key": "a|e-6|mid|restore_context",
           "party": "a",
           "evidenceId": "e-6",
-          "evidenceName": "투자방 카톡 + 송금 기록",
+          "evidenceName": "투자방 텔레그램 + 송금 기록",
           "subjectParty": "a",
           "subjectRole": "self",
           "requiredLieState": "S2",
@@ -127944,7 +127944,7 @@
           "stage": 3,
           "stageLabel": "손실복원",
           "attackVector": "responsibility",
-          "questionText": "이 3,000만원은 현재 어디에 있습니까?",
+          "questionText": "이 2,000만원은 현재 어디에 있습니까?",
           "stanceHint": "partial",
           "truthLevel": "partial",
           "variants": [
@@ -128494,7 +128494,7 @@
           "key": "a|e-6|late|request_original",
           "party": "a",
           "evidenceId": "e-6",
-          "evidenceName": "투자방 카톡 + 송금 기록",
+          "evidenceName": "투자방 텔레그램 + 송금 기록",
           "subjectParty": "a",
           "subjectRole": "self",
           "requiredLieState": "S2",
@@ -128509,7 +128509,7 @@
           "variants": [
             {
               "id": "a-e-6-late-request_original-v1",
-              "text": "제가 보냈습니다. 공동 적금에서 나온 3,000만원을 투자방에 넣었습니다.",
+              "text": "제가 보냈습니다. 공동 적금 해지액 중 2,000만원을 투자방에 넣었습니다.",
               "behaviorHint": "송금확인 단계에서 수치심을 드러내며 조작과 손실의 책임을 인정한다.",
               "tags": [
                 "channel:evidence_present",
@@ -128562,7 +128562,7 @@
             },
             {
               "id": "a-e-6-late-request_original-v2",
-              "text": "송금 기록은 제 행동입니다. 제 남편 몰래 3,000만원을 보냈습니다.",
+              "text": "송금 기록은 제 행동입니다. 제 남편 몰래 2,000만원을 보냈습니다.",
               "behaviorHint": "송금확인 단계에서 수치심을 드러내며 조작과 손실의 책임을 인정한다.",
               "tags": [
                 "channel:evidence_present",
@@ -128615,7 +128615,7 @@
             },
             {
               "id": "a-e-6-late-request_original-v3",
-              "text": "제가 3,000만원을 보냈고, 그 돈이 공동 적금 해지액과 맞습니다.",
+              "text": "제가 2,000만원을 보냈고, 그 돈은 공동 적금 해지액 중 일부였습니다.",
               "behaviorHint": "송금확인 단계에서 수치심을 드러내며 조작과 손실의 책임을 인정한다.",
               "tags": [
                 "channel:evidence_present",
@@ -128668,7 +128668,7 @@
             },
             {
               "id": "a-e-6-late-request_original-v4",
-              "text": "제 계좌를 거쳐 투자방으로 3,000만원이 나간 것, 전부 인정합니다.",
+              "text": "제 계좌를 거쳐 투자방으로 2,000만원이 나간 것, 전부 인정합니다.",
               "behaviorHint": "송금확인 단계에서 수치심을 드러내며 조작과 손실의 책임을 인정한다.",
               "tags": [
                 "channel:evidence_present",
@@ -128721,7 +128721,7 @@
             },
             {
               "id": "a-e-6-late-request_original-v5",
-              "text": "남편에게 말하지 않고 3,000만원을 송금했습니다. 책임은 제게 있습니다.",
+              "text": "남편에게 말하지 않고 2,000만원을 송금했습니다. 책임은 제게 있습니다.",
               "behaviorHint": "송금확인 단계에서 수치심을 드러내며 조작과 손실의 책임을 인정한다.",
               "tags": [
                 "channel:evidence_present",
@@ -128827,7 +128827,7 @@
             },
             {
               "id": "a-e-6-late-request_original-v7",
-              "text": "제가 멈췄어야 했습니다. 3,000만원을 보낸 순간 이미 선을 넘었습니다.",
+              "text": "제가 멈췄어야 했습니다. 2,000만원을 보낸 순간 이미 선을 넘었습니다.",
               "behaviorHint": "송금확인 단계에서 수치심을 드러내며 조작과 손실의 책임을 인정한다.",
               "tags": [
                 "channel:evidence_present",
@@ -128933,7 +128933,7 @@
             },
             {
               "id": "a-e-6-late-request_original-v9",
-              "text": "이 기록은 변명할 수 없습니다. 제가 3,000만원을 직접 송금했습니다.",
+              "text": "이 기록은 변명할 수 없습니다. 제가 2,000만원을 직접 송금했습니다.",
               "behaviorHint": "송금확인 단계에서 수치심을 드러내며 조작과 손실의 책임을 인정한다.",
               "tags": [
                 "channel:evidence_present",
@@ -129043,7 +129043,7 @@
           "key": "a|e-6|late|check_metadata",
           "party": "a",
           "evidenceId": "e-6",
-          "evidenceName": "투자방 카톡 + 송금 기록",
+          "evidenceName": "투자방 텔레그램 + 송금 기록",
           "subjectParty": "a",
           "subjectRole": "self",
           "requiredLieState": "S2",
@@ -129111,7 +129111,7 @@
             },
             {
               "id": "a-e-6-late-check_metadata-v2",
-              "text": "친구 링크로 들어갔습니다. 그 뒤 제가 3,000만원을 투자방에 보냈습니다.",
+              "text": "친구 링크로 들어갔습니다. 그 뒤 제가 2,000만원을 투자방에 보냈습니다.",
               "behaviorHint": "가입대조 단계에서 수치심을 드러내며 조작과 손실의 책임을 인정한다.",
               "tags": [
                 "channel:evidence_present",
@@ -129592,7 +129592,7 @@
           "key": "a|e-6|late|restore_context",
           "party": "a",
           "evidenceId": "e-6",
-          "evidenceName": "투자방 카톡 + 송금 기록",
+          "evidenceName": "투자방 텔레그램 + 송금 기록",
           "subjectParty": "a",
           "subjectRole": "self",
           "requiredLieState": "S2",
@@ -129601,13 +129601,13 @@
           "stage": 3,
           "stageLabel": "손실복원",
           "attackVector": "responsibility",
-          "questionText": "이 3,000만원은 현재 어디에 있습니까?",
+          "questionText": "이 2,000만원은 현재 어디에 있습니까?",
           "stanceHint": "confess",
           "truthLevel": "full",
           "variants": [
             {
               "id": "a-e-6-late-restore_context-v1",
-              "text": "투자 사기였고, 4주 전에 3,000만원 전액 손실이 확정됐습니다.",
+              "text": "투자 사기였고, 4주 전에 2,000만원 손실이 확정됐습니다.",
               "behaviorHint": "손실복원 단계에서 수치심을 드러내며 조작과 손실의 책임을 인정한다.",
               "tags": [
                 "channel:evidence_present",
@@ -129660,7 +129660,7 @@
             },
             {
               "id": "a-e-6-late-restore_context-v2",
-              "text": "3,000만원은 없습니다. 사기방이 닫혔고 저는 전부 잃었습니다.",
+              "text": "2,000만원은 없습니다. 사기방이 닫혔고 저는 전부 잃었습니다.",
               "behaviorHint": "손실복원 단계에서 수치심을 드러내며 조작과 손실의 책임을 인정한다.",
               "tags": [
                 "channel:evidence_present",
@@ -129766,7 +129766,7 @@
             },
             {
               "id": "a-e-6-late-restore_context-v4",
-              "text": "돌려받을 돈은 없습니다. 공동 적금 3,000만원을 제가 잃었습니다.",
+              "text": "돌려받을 돈은 없습니다. 공동 적금 해지액 중 2,000만원을 제가 잃었습니다.",
               "behaviorHint": "손실복원 단계에서 수치심을 드러내며 조작과 손실의 책임을 인정한다.",
               "tags": [
                 "channel:evidence_present",
@@ -130141,7 +130141,7 @@
           "key": "b|e-6|early|request_original",
           "party": "b",
           "evidenceId": "e-6",
-          "evidenceName": "투자방 카톡 + 송금 기록",
+          "evidenceName": "투자방 텔레그램 + 송금 기록",
           "subjectParty": "a",
           "subjectRole": "other",
           "requiredLieState": "S2",
@@ -130690,7 +130690,7 @@
           "key": "b|e-6|early|check_metadata",
           "party": "b",
           "evidenceId": "e-6",
-          "evidenceName": "투자방 카톡 + 송금 기록",
+          "evidenceName": "투자방 텔레그램 + 송금 기록",
           "subjectParty": "a",
           "subjectRole": "other",
           "requiredLieState": "S2",
@@ -131239,7 +131239,7 @@
           "key": "b|e-6|early|restore_context",
           "party": "b",
           "evidenceId": "e-6",
-          "evidenceName": "투자방 카톡 + 송금 기록",
+          "evidenceName": "투자방 텔레그램 + 송금 기록",
           "subjectParty": "a",
           "subjectRole": "other",
           "requiredLieState": "S2",
@@ -131248,7 +131248,7 @@
           "stage": 3,
           "stageLabel": "손실복원",
           "attackVector": "responsibility",
-          "questionText": "이 3,000만원은 현재 어디에 있습니까?",
+          "questionText": "이 2,000만원은 현재 어디에 있습니까?",
           "stanceHint": "answer",
           "truthLevel": "hint",
           "variants": [
@@ -131788,7 +131788,7 @@
           "key": "b|e-6|mid|request_original",
           "party": "b",
           "evidenceId": "e-6",
-          "evidenceName": "투자방 카톡 + 송금 기록",
+          "evidenceName": "투자방 텔레그램 + 송금 기록",
           "subjectParty": "a",
           "subjectRole": "other",
           "requiredLieState": "S2",
@@ -132357,7 +132357,7 @@
           "key": "b|e-6|mid|check_metadata",
           "party": "b",
           "evidenceId": "e-6",
-          "evidenceName": "투자방 카톡 + 송금 기록",
+          "evidenceName": "투자방 텔레그램 + 송금 기록",
           "subjectParty": "a",
           "subjectRole": "other",
           "requiredLieState": "S2",
@@ -132926,7 +132926,7 @@
           "key": "b|e-6|mid|restore_context",
           "party": "b",
           "evidenceId": "e-6",
-          "evidenceName": "투자방 카톡 + 송금 기록",
+          "evidenceName": "투자방 텔레그램 + 송금 기록",
           "subjectParty": "a",
           "subjectRole": "other",
           "requiredLieState": "S2",
@@ -132935,7 +132935,7 @@
           "stage": 3,
           "stageLabel": "손실복원",
           "attackVector": "responsibility",
-          "questionText": "이 3,000만원은 현재 어디에 있습니까?",
+          "questionText": "이 2,000만원은 현재 어디에 있습니까?",
           "stanceHint": "answer",
           "truthLevel": "partial",
           "variants": [
@@ -133495,7 +133495,7 @@
           "key": "b|e-6|late|request_original",
           "party": "b",
           "evidenceId": "e-6",
-          "evidenceName": "투자방 카톡 + 송금 기록",
+          "evidenceName": "투자방 텔레그램 + 송금 기록",
           "subjectParty": "a",
           "subjectRole": "other",
           "requiredLieState": "S2",
@@ -133510,7 +133510,7 @@
           "variants": [
             {
               "id": "b-e-6-late-request_original-v1",
-              "text": "제 아내가 3,000만원을 보냈다는 사실은 이제 부정할 수 없습니다.",
+              "text": "제 아내가 2,000만원을 보냈다는 사실은 이제 부정할 수 없습니다.",
               "behaviorHint": "송금확인 사실을 인정하고, 자기 은폐와 아내의 행동 책임을 분리한다.",
               "tags": [
                 "channel:evidence_present",
@@ -133616,7 +133616,7 @@
             },
             {
               "id": "b-e-6-late-request_original-v3",
-              "text": "공동 적금에서 나온 3,000만원이 투자방으로 간 걸 이제 인정합니다.",
+              "text": "공동 적금 해지액 중 2,000만원이 투자방으로 간 걸 이제 인정합니다.",
               "behaviorHint": "송금확인 사실을 인정하고, 자기 은폐와 아내의 행동 책임을 분리한다.",
               "tags": [
                 "channel:evidence_present",
@@ -133669,7 +133669,7 @@
             },
             {
               "id": "b-e-6-late-request_original-v4",
-              "text": "그 기록을 보니, 아내가 저 몰래 3,000만원을 움직인 게 분명합니다.",
+              "text": "그 기록을 보니, 아내가 저 몰래 2,000만원을 움직인 게 분명합니다.",
               "behaviorHint": "송금확인 사실을 인정하고, 자기 은폐와 아내의 행동 책임을 분리한다.",
               "tags": [
                 "channel:evidence_present",
@@ -133775,7 +133775,7 @@
             },
             {
               "id": "b-e-6-late-request_original-v6",
-              "text": "아내가 3,000만원을 보낸 사실을 이제야 받아들입니다.",
+              "text": "아내가 2,000만원을 보낸 사실을 이제야 받아들입니다.",
               "behaviorHint": "송금확인 사실을 인정하고, 자기 은폐와 아내의 행동 책임을 분리한다.",
               "tags": [
                 "channel:evidence_present",
@@ -134044,7 +134044,7 @@
           "key": "b|e-6|late|check_metadata",
           "party": "b",
           "evidenceId": "e-6",
-          "evidenceName": "투자방 카톡 + 송금 기록",
+          "evidenceName": "투자방 텔레그램 + 송금 기록",
           "subjectParty": "a",
           "subjectRole": "other",
           "requiredLieState": "S2",
@@ -134377,7 +134377,7 @@
             },
             {
               "id": "b-e-6-late-check_metadata-v7",
-              "text": "제 숨김이 발단이어도, 3,000만원을 송금한 책임은 분리해야 합니다.",
+              "text": "제 숨김이 발단이어도, 2,000만원을 송금한 책임은 분리해야 합니다.",
               "behaviorHint": "가입대조 사실을 인정하고, 자기 은폐와 아내의 행동 책임을 분리한다.",
               "tags": [
                 "channel:evidence_present",
@@ -134593,7 +134593,7 @@
           "key": "b|e-6|late|restore_context",
           "party": "b",
           "evidenceId": "e-6",
-          "evidenceName": "투자방 카톡 + 송금 기록",
+          "evidenceName": "투자방 텔레그램 + 송금 기록",
           "subjectParty": "a",
           "subjectRole": "other",
           "requiredLieState": "S2",
@@ -134602,13 +134602,13 @@
           "stage": 3,
           "stageLabel": "손실복원",
           "attackVector": "responsibility",
-          "questionText": "이 3,000만원은 현재 어디에 있습니까?",
+          "questionText": "이 2,000만원은 현재 어디에 있습니까?",
           "stanceHint": "emotional",
           "truthLevel": "full",
           "variants": [
             {
               "id": "b-e-6-late-restore_context-v1",
-              "text": "투자 사기로 3,000만원을 잃었다면, 저는 분노와 죄책감이 같이 듭니다.",
+              "text": "투자 사기로 2,000만원을 잃었다면, 저는 분노와 죄책감이 같이 듭니다.",
               "behaviorHint": "손실복원 사실을 인정하고, 자기 은폐와 아내의 행동 책임을 분리한다.",
               "tags": [
                 "channel:evidence_present",
@@ -134820,7 +134820,7 @@
             },
             {
               "id": "b-e-6-late-restore_context-v5",
-              "text": "3,000만원이 4주 전에 전부 사라졌다는 걸 이제야 알았습니다.",
+              "text": "2,000만원이 4주 전에 사라졌다는 걸 이제야 알았습니다.",
               "behaviorHint": "손실복원 사실을 인정하고, 자기 은폐와 아내의 행동 책임을 분리한다.",
               "tags": [
                 "channel:evidence_present",
@@ -151714,7 +151714,7 @@
           "key": "dc-4.a.q1|early",
           "dossierCardId": "dc-4",
           "questionId": "dc-4.a.q1",
-          "questionText": "남편의 진실을 확인하기도 전에 3,000만 원을 먼저 움직인 이유가, 결국 이혼 대비였습니까?",
+          "questionText": "남편의 진실을 확인하기도 전에 2,000만 원을 먼저 움직인 이유가, 결국 이혼 대비였습니까?",
           "targetParty": "a",
           "requiredLieState": "S2",
           "lieBand": "early",
@@ -152237,7 +152237,7 @@
           "key": "dc-4.a.q1|mid",
           "dossierCardId": "dc-4",
           "questionId": "dc-4.a.q1",
-          "questionText": "남편의 진실을 확인하기도 전에 3,000만 원을 먼저 움직인 이유가, 결국 이혼 대비였습니까?",
+          "questionText": "남편의 진실을 확인하기도 전에 2,000만 원을 먼저 움직인 이유가, 결국 이혼 대비였습니까?",
           "targetParty": "a",
           "requiredLieState": "S2",
           "lieBand": "mid",
@@ -152790,7 +152790,7 @@
           "key": "dc-4.a.q1|late",
           "dossierCardId": "dc-4",
           "questionId": "dc-4.a.q1",
-          "questionText": "남편의 진실을 확인하기도 전에 3,000만 원을 먼저 움직인 이유가, 결국 이혼 대비였습니까?",
+          "questionText": "남편의 진실을 확인하기도 전에 2,000만 원을 먼저 움직인 이유가, 결국 이혼 대비였습니까?",
           "targetParty": "a",
           "requiredLieState": "S2",
           "lieBand": "late",
@@ -152799,7 +152799,7 @@
           "variants": [
             {
               "id": "dc-4-a-q1-late-v1",
-              "text": "맞습니다. 남편이 바람이라고 믿은 순간, 저는 이혼까지 계산하며 3,000만 원을 먼저 움직였습니다.",
+              "text": "맞습니다. 남편이 바람이라고 믿은 순간, 저는 이혼까지 계산하며 2,000만 원을 먼저 움직였습니다.",
               "behaviorHint": "작게 숨을 고른 뒤 계산된 선택과 후회를 함께 털어놓는다.",
               "tags": [
                 "channel:dossier",
@@ -153215,7 +153215,7 @@
             },
             {
               "id": "dc-4-a-q1-late-v9",
-              "text": "3,000만 원을 먼저 옮긴 건 제 판단이었습니다. 남편이 숨겼다는 말로 다 덮을 수 없습니다.",
+              "text": "2,000만 원을 먼저 옮긴 건 제 판단이었습니다. 남편이 숨겼다는 말로 다 덮을 수 없습니다.",
               "behaviorHint": "작게 숨을 고른 뒤 계산된 선택과 후회를 함께 털어놓는다.",
               "tags": [
                 "channel:dossier",
@@ -153323,7 +153323,7 @@
           "key": "dc-4.a.q2|early",
           "dossierCardId": "dc-4",
           "questionId": "dc-4.a.q2",
-          "questionText": "그 3,000만 원을 보내고 사기당한 사실까지 숨긴 건 결국 수치심 때문이었습니까?",
+          "questionText": "그 2,000만 원을 보내고 사기당한 사실까지 숨긴 건 결국 수치심 때문이었습니까?",
           "targetParty": "a",
           "requiredLieState": "S3",
           "lieBand": "early",
@@ -153846,7 +153846,7 @@
           "key": "dc-4.a.q2|mid",
           "dossierCardId": "dc-4",
           "questionId": "dc-4.a.q2",
-          "questionText": "그 3,000만 원을 보내고 사기당한 사실까지 숨긴 건 결국 수치심 때문이었습니까?",
+          "questionText": "그 2,000만 원을 보내고 사기당한 사실까지 숨긴 건 결국 수치심 때문이었습니까?",
           "targetParty": "a",
           "requiredLieState": "S3",
           "lieBand": "mid",
@@ -154399,7 +154399,7 @@
           "key": "dc-4.a.q2|late",
           "dossierCardId": "dc-4",
           "questionId": "dc-4.a.q2",
-          "questionText": "그 3,000만 원을 보내고 사기당한 사실까지 숨긴 건 결국 수치심 때문이었습니까?",
+          "questionText": "그 2,000만 원을 보내고 사기당한 사실까지 숨긴 건 결국 수치심 때문이었습니까?",
           "targetParty": "a",
           "requiredLieState": "S3",
           "lieBand": "late",
@@ -154408,7 +154408,7 @@
           "variants": [
             {
               "id": "dc-4-a-q2-late-v1",
-              "text": "맞습니다. 3,000만 원을 보내고 사기당한 사실을 숨긴 건 수치심과 책임을 피하려 한 마음 때문이었습니다.",
+              "text": "맞습니다. 2,000만 원을 보내고 사기당한 사실을 숨긴 건 수치심과 책임을 피하려 한 마음 때문이었습니다.",
               "behaviorHint": "작게 숨을 고른 뒤 계산된 선택과 후회를 함께 털어놓는다.",
               "tags": [
                 "channel:dossier",
@@ -218483,7 +218483,7 @@
           "variants": [
             {
               "id": "judgecombo-dc-4-a-q1-soft-v1",
-              "text": "박지연 씨, 투자방 카톡과 송금 기록을 함께 보겠습니다. 이준호 씨의 해명을 듣기도 전에 본인 돈을 먼저 움직인 이유를 차분히 들려주시겠습니까.",
+              "text": "박지연 씨, 투자방 텔레그램과 송금 기록을 함께 보겠습니다. 이준호 씨의 해명을 듣기도 전에 본인 돈을 먼저 움직인 이유를 차분히 들려주시겠습니까.",
               "behaviorHint": "사건카드 단서 확인 뒤 증거 조합의 의미를 재판관이 정리한다.",
               "tags": [
                 "channel:judge_evidence_combo",
@@ -218575,7 +218575,7 @@
             },
             {
               "id": "judgecombo-dc-4-a-q1-soft-v3",
-              "text": "박지연 씨, 카톡의 권유와 송금 기록이 같은 날의 판단을 가리킵니다. 그때 어떤 계산을 하셨는지 말씀해 주십시오.",
+              "text": "박지연 씨, 텔레그램의 권유와 송금 기록이 같은 날의 판단을 가리킵니다. 그때 어떤 계산을 하셨는지 말씀해 주십시오.",
               "behaviorHint": "사건카드 단서 확인 뒤 증거 조합의 의미를 재판관이 정리한다.",
               "tags": [
                 "channel:judge_evidence_combo",
@@ -218667,7 +218667,7 @@
             },
             {
               "id": "judgecombo-dc-4-a-q1-soft-v5",
-              "text": "박지연 씨, 투자방 카톡과 송금 기록을 보면 두려움이 실제 돈 이동으로 바뀐 순간이 있습니다. 그 순간을 들려주십시오.",
+              "text": "박지연 씨, 투자방 텔레그램과 송금 기록을 보면 두려움이 실제 돈 이동으로 바뀐 순간이 있습니다. 그 순간을 들려주십시오.",
               "behaviorHint": "사건카드 단서 확인 뒤 증거 조합의 의미를 재판관이 정리한다.",
               "tags": [
                 "channel:judge_evidence_combo",
@@ -218767,7 +218767,7 @@
             },
             {
               "id": "judgecombo-dc-4-a-q1-mid-v2",
-              "text": "박지연 씨, 카톡 권유만 있었던 것이 아니라 송금까지 이어졌습니다. 단순한 불안으로 정리할 수 없습니다.",
+              "text": "박지연 씨, 텔레그램 권유만 있었던 것이 아니라 송금까지 이어졌습니다. 단순한 불안으로 정리할 수 없습니다.",
               "behaviorHint": "사건카드 단서 확인 뒤 증거 조합의 의미를 재판관이 정리한다.",
               "tags": [
                 "channel:judge_evidence_combo",
@@ -218813,7 +218813,7 @@
             },
             {
               "id": "judgecombo-dc-4-a-q1-mid-v3",
-              "text": "박지연 씨, 투자방 카톡과 송금 기록은 본인이 먼저 움직인 돈의 흐름을 가리킵니다. 왜 그 사실을 늦게 말했습니까.",
+              "text": "박지연 씨, 투자방 텔레그램과 송금 기록은 본인이 먼저 움직인 돈의 흐름을 가리킵니다. 왜 그 사실을 늦게 말했습니까.",
               "behaviorHint": "사건카드 단서 확인 뒤 증거 조합의 의미를 재판관이 정리한다.",
               "tags": [
                 "channel:judge_evidence_combo",
@@ -218859,7 +218859,7 @@
             },
             {
               "id": "judgecombo-dc-4-a-q1-mid-v4",
-              "text": "박지연 씨, 투자방 카톡과 송금 기록 앞에서는 피해를 막으려 했다는 말만으로 충분하지 않습니다. 실행한 이유를 밝히십시오.",
+              "text": "박지연 씨, 투자방 텔레그램과 송금 기록 앞에서는 피해를 막으려 했다는 말만으로 충분하지 않습니다. 실행한 이유를 밝히십시오.",
               "behaviorHint": "사건카드 단서 확인 뒤 증거 조합의 의미를 재판관이 정리한다.",
               "tags": [
                 "channel:judge_evidence_combo",
@@ -218959,7 +218959,7 @@
           "variants": [
             {
               "id": "judgecombo-dc-4-a-q1-hard-v1",
-              "text": "박지연 씨, 투자방 카톡과 송금 기록이 본인의 실행을 가리키고 있습니다. 왜 먼저 돈을 움직였는지 지금 답하십시오.",
+              "text": "박지연 씨, 투자방 텔레그램과 송금 기록이 본인의 실행을 가리키고 있습니다. 왜 먼저 돈을 움직였는지 지금 답하십시오.",
               "behaviorHint": "사건카드 단서 확인 뒤 증거 조합의 의미를 재판관이 정리한다.",
               "tags": [
                 "channel:judge_evidence_combo",
@@ -219005,7 +219005,7 @@
             },
             {
               "id": "judgecombo-dc-4-a-q1-hard-v2",
-              "text": "박지연 씨, 투자방 카톡과 송금 기록은 확인이 아니라 송금이 먼저였음을 보여줍니다. 그 판단을 인정하고 말씀해 주십시오.",
+              "text": "박지연 씨, 투자방 텔레그램과 송금 기록은 확인이 아니라 송금이 먼저였음을 보여줍니다. 그 판단을 인정하고 말씀해 주십시오.",
               "behaviorHint": "사건카드 단서 확인 뒤 증거 조합의 의미를 재판관이 정리한다.",
               "tags": [
                 "channel:judge_evidence_combo",
@@ -219097,7 +219097,7 @@
             },
             {
               "id": "judgecombo-dc-4-a-q1-hard-v4",
-              "text": "박지연 씨, 투자방 카톡과 송금 기록 앞에서 불안했다는 말로 돈을 먼저 빼낸 사실이 사라지지 않습니다. 실행 이유를 지금 말씀해 주십시오.",
+              "text": "박지연 씨, 투자방 텔레그램과 송금 기록 앞에서 불안했다는 말로 돈을 먼저 빼낸 사실이 사라지지 않습니다. 실행 이유를 지금 말씀해 주십시오.",
               "behaviorHint": "사건카드 단서 확인 뒤 증거 조합의 의미를 재판관이 정리한다.",
               "tags": [
                 "channel:judge_evidence_combo",
@@ -219143,7 +219143,7 @@
             },
             {
               "id": "judgecombo-dc-4-a-q1-hard-v5",
-              "text": "박지연 씨, 카톡과 송금 내역이 같은 결론으로 모입니다. 본인의 선제 행동을 인정하십시오.",
+              "text": "박지연 씨, 텔레그램과 송금 내역이 같은 결론으로 모입니다. 본인의 선제 행동을 인정하십시오.",
               "behaviorHint": "사건카드 단서 확인 뒤 증거 조합의 의미를 재판관이 정리한다.",
               "tags": [
                 "channel:judge_evidence_combo",
@@ -219197,7 +219197,7 @@
           "variants": [
             {
               "id": "judgecombo-dc-4-a-q2-soft-v1",
-              "text": "박지연 씨, 투자방 카톡과 송금 기록은 실행 뒤 손실까지 이어진 흐름을 보여줍니다. 그 사실을 숨긴 이유가 수치심이었는지 말씀해 주시겠습니까.",
+              "text": "박지연 씨, 투자방 텔레그램과 송금 기록은 실행 뒤 손실까지 이어진 흐름을 보여줍니다. 그 사실을 숨긴 이유가 수치심이었는지 말씀해 주시겠습니까.",
               "behaviorHint": "사건카드 단서 확인 뒤 증거 조합의 의미를 재판관이 정리한다.",
               "tags": [
                 "channel:judge_evidence_combo",
@@ -219243,7 +219243,7 @@
             },
             {
               "id": "judgecombo-dc-4-a-q2-soft-v2",
-              "text": "박지연 씨, 투자방 카톡과 송금 기록이 나빠진 결과까지 이어졌을 때 이준호 씨에게 말하지 못한 마음을 차분히 들려주십시오.",
+              "text": "박지연 씨, 투자방 텔레그램과 송금 기록이 나빠진 결과까지 이어졌을 때 이준호 씨에게 말하지 못한 마음을 차분히 들려주십시오.",
               "behaviorHint": "사건카드 단서 확인 뒤 증거 조합의 의미를 재판관이 정리한다.",
               "tags": [
                 "channel:judge_evidence_combo",
@@ -219335,7 +219335,7 @@
             },
             {
               "id": "judgecombo-dc-4-a-q2-soft-v4",
-              "text": "박지연 씨, 투자방 카톡과 송금 기록 앞에서 손실을 인정하기 어려웠던 마음과 피해자 위치에 서려는 마음이 함께 있었습니까.",
+              "text": "박지연 씨, 투자방 텔레그램과 송금 기록 앞에서 손실을 인정하기 어려웠던 마음과 피해자 위치에 서려는 마음이 함께 있었습니까.",
               "behaviorHint": "사건카드 단서 확인 뒤 증거 조합의 의미를 재판관이 정리한다.",
               "tags": [
                 "channel:judge_evidence_combo",
@@ -219381,7 +219381,7 @@
             },
             {
               "id": "judgecombo-dc-4-a-q2-soft-v5",
-              "text": "박지연 씨, 투자방 카톡과 송금 기록을 보면서 수치심과 두려움 중 어느 마음이 더 크게 남았는지 말씀해 주십시오.",
+              "text": "박지연 씨, 투자방 텔레그램과 송금 기록을 보면서 수치심과 두려움 중 어느 마음이 더 크게 남았는지 말씀해 주십시오.",
               "behaviorHint": "사건카드 단서 확인 뒤 증거 조합의 의미를 재판관이 정리한다.",
               "tags": [
                 "channel:judge_evidence_combo",
@@ -219435,7 +219435,7 @@
           "variants": [
             {
               "id": "judgecombo-dc-4-a-q2-mid-v1",
-              "text": "박지연 씨, 투자방 카톡과 송금 기록은 손실을 숨긴 시간이 있었다는 점까지 보여줍니다. 수치심만으로 설명할 수 없습니다.",
+              "text": "박지연 씨, 투자방 텔레그램과 송금 기록은 손실을 숨긴 시간이 있었다는 점까지 보여줍니다. 수치심만으로 설명할 수 없습니다.",
               "behaviorHint": "사건카드 단서 확인 뒤 증거 조합의 의미를 재판관이 정리한다.",
               "tags": [
                 "channel:judge_evidence_combo",
@@ -219527,7 +219527,7 @@
             },
             {
               "id": "judgecombo-dc-4-a-q2-mid-v3",
-              "text": "박지연 씨, 투자방 카톡과 송금 기록은 단순히 속은 정황이 아니라 본인이 들어간 선택의 흔적입니다. 그 선택을 말해야 합니다.",
+              "text": "박지연 씨, 투자방 텔레그램과 송금 기록은 단순히 속은 정황이 아니라 본인이 들어간 선택의 흔적입니다. 그 선택을 말해야 합니다.",
               "behaviorHint": "사건카드 단서 확인 뒤 증거 조합의 의미를 재판관이 정리한다.",
               "tags": [
                 "channel:judge_evidence_combo",
@@ -219573,7 +219573,7 @@
             },
             {
               "id": "judgecombo-dc-4-a-q2-mid-v4",
-              "text": "박지연 씨, 투자방 카톡과 송금 기록을 숨긴 채 상대 책임만 말하면 쟁점이 왜곡됩니다. 본인 행동을 밝혀 주십시오.",
+              "text": "박지연 씨, 투자방 텔레그램과 송금 기록을 숨긴 채 상대 책임만 말하면 쟁점이 왜곡됩니다. 본인 행동을 밝혀 주십시오.",
               "behaviorHint": "사건카드 단서 확인 뒤 증거 조합의 의미를 재판관이 정리한다.",
               "tags": [
                 "channel:judge_evidence_combo",
@@ -219619,7 +219619,7 @@
             },
             {
               "id": "judgecombo-dc-4-a-q2-mid-v5",
-              "text": "박지연 씨, 투자방 카톡과 송금 기록은 수치심 뒤에 감춘 돈의 흐름을 보여줍니다. 더는 감정만 말할 수 없습니다.",
+              "text": "박지연 씨, 투자방 텔레그램과 송금 기록은 수치심 뒤에 감춘 돈의 흐름을 보여줍니다. 더는 감정만 말할 수 없습니다.",
               "behaviorHint": "사건카드 단서 확인 뒤 증거 조합의 의미를 재판관이 정리한다.",
               "tags": [
                 "channel:judge_evidence_combo",
@@ -219673,7 +219673,7 @@
           "variants": [
             {
               "id": "judgecombo-dc-4-a-q2-hard-v1",
-              "text": "박지연 씨, 투자방 카톡과 송금 기록이 손실까지 이어진 본인 행동을 가리킵니다. 왜 숨겼는지 지금 답하십시오.",
+              "text": "박지연 씨, 투자방 텔레그램과 송금 기록이 손실까지 이어진 본인 행동을 가리킵니다. 왜 숨겼는지 지금 답하십시오.",
               "behaviorHint": "사건카드 단서 확인 뒤 증거 조합의 의미를 재판관이 정리한다.",
               "tags": [
                 "channel:judge_evidence_combo",
@@ -219765,7 +219765,7 @@
             },
             {
               "id": "judgecombo-dc-4-a-q2-hard-v3",
-              "text": "박지연 씨, 투자방 카톡과 송금 기록 앞에서 수치심이 있었다 해도 송금과 손실을 숨긴 사실은 남습니다. 그 경위를 밝히십시오.",
+              "text": "박지연 씨, 투자방 텔레그램과 송금 기록 앞에서 수치심이 있었다 해도 송금과 손실을 숨긴 사실은 남습니다. 그 경위를 밝히십시오.",
               "behaviorHint": "사건카드 단서 확인 뒤 증거 조합의 의미를 재판관이 정리한다.",
               "tags": [
                 "channel:judge_evidence_combo",
@@ -219811,7 +219811,7 @@
             },
             {
               "id": "judgecombo-dc-4-a-q2-hard-v4",
-              "text": "박지연 씨, 투자방 카톡과 송금 기록 앞에서 피해를 막으려 했다는 말만으로 버틸 수 없습니다. 본인이 잃은 돈을 말씀해 주십시오.",
+              "text": "박지연 씨, 투자방 텔레그램과 송금 기록 앞에서 피해를 막으려 했다는 말만으로 버틸 수 없습니다. 본인이 잃은 돈을 말씀해 주십시오.",
               "behaviorHint": "사건카드 단서 확인 뒤 증거 조합의 의미를 재판관이 정리한다.",
               "tags": [
                 "channel:judge_evidence_combo",
@@ -222854,7 +222854,7 @@
             },
             {
               "id": "judgewit-w-3-soft-v3",
-              "text": "박미라 씨를 부르겠습니다. 투자방 카톡과 박지연 씨의 돈 지키기 발언 사이를 살펴보겠습니다.",
+              "text": "박미라 씨를 부르겠습니다. 투자방 텔레그램과 박지연 씨의 돈 지키기 발언 사이를 살펴보겠습니다.",
               "behaviorHint": "박미라 증언이 투자방 링크 전달과 박지연의 선제 송금 발언에 미치는 영향을 재판관이 먼저 밝힌다.",
               "tags": [
                 "channel:judge_witness_summon",

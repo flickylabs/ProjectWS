@@ -26,7 +26,7 @@ const IMPORTANT_EVENT_OBSERVATION_TITLES = new Set([
   '쟁점 추가',
   '결정적 질문 해금',
   '질문 경로 추가',
-  '조정 힌트 추가',
+  '판결 힌트 추가',
   '단서 기록 추가',
   '진술 기록 추가',
 ])

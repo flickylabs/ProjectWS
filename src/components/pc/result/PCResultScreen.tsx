@@ -125,52 +125,64 @@ function getProfileDescription(titleId: string): string {
   return descriptions[titleId] ?? descriptions.neutral_observer
 }
 
-/** 칭호 SVG 아이콘 — 순수 라인 아트(테두리만, 흰색) */
+/** ?? SVG ??? ? ?? ??? ??? SVG */
 function getTitleSvgIcon(icon: string): React.ReactNode {
-  const S = 32 // viewBox size
-  const svgs: Record<string, React.ReactNode> = {
-    // ⚖️ 저울
-    '⚖️': <svg width={S} height={S} viewBox="0 0 32 32" fill="none"><line x1="16" y1="4" x2="16" y2="24" stroke="white" strokeWidth="1.5"/><line x1="6" y1="10" x2="26" y2="10" stroke="white" strokeWidth="1.5"/><path d="M6 10l-2 8h8l-2-8" stroke="white" strokeWidth="1.5" fill="none"/><path d="M26 10l-2 8h8l-2-8" stroke="white" strokeWidth="1.5" fill="none"/><line x1="10" y1="26" x2="22" y2="26" stroke="white" strokeWidth="1.5"/></svg>,
-    // 🎯 과녁
-    '🎯': <svg width={S} height={S} viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="12" stroke="white" strokeWidth="1.5"/><circle cx="16" cy="16" r="8" stroke="white" strokeWidth="1.2"/><circle cx="16" cy="16" r="4" stroke="white" strokeWidth="1.2"/><circle cx="16" cy="16" r="1.5" fill="white"/></svg>,
-    // 🔍 돋보기
-    '🔍': <svg width={S} height={S} viewBox="0 0 32 32" fill="none"><circle cx="14" cy="14" r="8" stroke="white" strokeWidth="1.5"/><line x1="20" y1="20" x2="28" y2="28" stroke="white" strokeWidth="2" strokeLinecap="round"/></svg>,
-    // ⚡ 번개
-    '⚡': <svg width={S} height={S} viewBox="0 0 32 32" fill="none"><path d="M18 4L8 18h8l-2 10 12-16h-8l2-8z" stroke="white" strokeWidth="1.5" strokeLinejoin="round" fill="none"/></svg>,
-    // 🛡️ 방패
-    '🛡️': <svg width={S} height={S} viewBox="0 0 32 32" fill="none"><path d="M16 4L6 10v8c0 6 4.5 11.5 10 13 5.5-1.5 10-7 10-13v-8L16 4z" stroke="white" strokeWidth="1.5" fill="none"/></svg>,
-    // 💡 전구
-    '💡': <svg width={S} height={S} viewBox="0 0 32 32" fill="none"><path d="M16 4a8 8 0 00-5 14.3V22h10v-3.7A8 8 0 0016 4z" stroke="white" strokeWidth="1.5" fill="none"/><line x1="12" y1="24" x2="20" y2="24" stroke="white" strokeWidth="1.2"/><line x1="13" y1="27" x2="19" y2="27" stroke="white" strokeWidth="1.2"/></svg>,
-    // 🏆 트로피
-    '🏆': <svg width={S} height={S} viewBox="0 0 32 32" fill="none"><path d="M10 6h12v5a6 6 0 01-12 0V6z" stroke="white" strokeWidth="1.5" fill="none"/><path d="M10 8H7a2 2 0 00-2 2v1a3 3 0 003 3h2" stroke="white" strokeWidth="1"/><path d="M22 8h3a2 2 0 012 2v1a3 3 0 01-3 3h-2" stroke="white" strokeWidth="1"/><line x1="16" y1="17" x2="16" y2="22" stroke="white" strokeWidth="1.5"/><rect x="11" y="22" width="10" height="4" rx="1" stroke="white" strokeWidth="1" fill="none"/></svg>,
-    // 🤝 악수 — 손바닥 라인
-    '🤝': <svg width={S} height={S} viewBox="0 0 32 32" fill="none"><path d="M4 18l3-3 4 1 2-2 2 2 4-1 3 3" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/><path d="M7 15l-3 1v7l4-2" stroke="white" strokeWidth="1.2"/><path d="M25 15l3 1v7l-4-2" stroke="white" strokeWidth="1.2"/></svg>,
-    // ❄️ 눈꽃
-    '❄️': <svg width={S} height={S} viewBox="0 0 32 32" fill="none"><line x1="16" y1="4" x2="16" y2="28" stroke="white" strokeWidth="1.5"/><line x1="4" y1="16" x2="28" y2="16" stroke="white" strokeWidth="1.5"/><line x1="8" y1="8" x2="24" y2="24" stroke="white" strokeWidth="1"/><line x1="24" y1="8" x2="8" y2="24" stroke="white" strokeWidth="1"/><line x1="16" y1="4" x2="13" y2="7" stroke="white" strokeWidth="1"/><line x1="16" y1="4" x2="19" y2="7" stroke="white" strokeWidth="1"/></svg>,
-    // 🕊️ 비둘기
-    '🕊️': <svg width={S} height={S} viewBox="0 0 32 32" fill="none"><path d="M16 8c-4 0-8 4-8 10h16c0-6-4-10-8-10z" stroke="white" strokeWidth="1.5" fill="none"/><path d="M10 18l-3 5" stroke="white" strokeWidth="1.2"/><path d="M22 18l3 5" stroke="white" strokeWidth="1.2"/><circle cx="14" cy="14" r="1" fill="white"/></svg>,
-    // 🤔 고민 — 얼굴 라인
-    '🤔': <svg width={S} height={S} viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="12" stroke="white" strokeWidth="1.5"/><circle cx="12" cy="14" r="1.5" fill="white"/><circle cx="20" cy="14" r="1.5" fill="white"/><path d="M12 21 Q16 19 20 21" stroke="white" strokeWidth="1.2" strokeLinecap="round" fill="none"/><path d="M22 10l4-3" stroke="white" strokeWidth="1.2" strokeLinecap="round"/></svg>,
-    // ✋ 손바닥 — 라인
-    '✋': <svg width={S} height={S} viewBox="0 0 32 32" fill="none"><path d="M16 28c-5 0-8-3-8-8V12" stroke="white" strokeWidth="1.5" strokeLinecap="round"/><path d="M16 28c5 0 8-3 8-8V10" stroke="white" strokeWidth="1.5" strokeLinecap="round"/><line x1="8" y1="12" x2="8" y2="8" stroke="white" strokeWidth="1.5" strokeLinecap="round"/><line x1="12" y1="6" x2="12" y2="12" stroke="white" strokeWidth="1.5" strokeLinecap="round"/><line x1="16" y1="4" x2="16" y2="12" stroke="white" strokeWidth="1.5" strokeLinecap="round"/><line x1="20" y1="6" x2="20" y2="12" stroke="white" strokeWidth="1.5" strokeLinecap="round"/><line x1="24" y1="8" x2="24" y2="12" stroke="white" strokeWidth="1.5" strokeLinecap="round"/></svg>,
-    // 👁 눈 — 라인
-    '👁': <svg width={S} height={S} viewBox="0 0 32 32" fill="none"><path d="M4 16s5-8 12-8 12 8 12 8-5 8-12 8-12-8-12-8z" stroke="white" strokeWidth="1.5" fill="none"/><circle cx="16" cy="16" r="4" stroke="white" strokeWidth="1.5"/><circle cx="16" cy="16" r="1.5" fill="white"/></svg>,
-    // 🔥 불꽃
-    '🔥': <svg width={S} height={S} viewBox="0 0 32 32" fill="none"><path d="M16 4c0 0-8 8-8 16a8 8 0 0016 0c0-8-8-16-8-16z" stroke="white" strokeWidth="1.5" fill="none"/><path d="M16 14c0 0-3 3-3 7a3 3 0 006 0c0-4-3-7-3-7z" stroke="white" strokeWidth="1" fill="none"/></svg>,
-    // 💎 다이아몬드
-    '💎': <svg width={S} height={S} viewBox="0 0 32 32" fill="none"><polygon points="16,4 6,14 16,28 26,14" stroke="white" strokeWidth="1.5" fill="none"/><line x1="6" y1="14" x2="26" y2="14" stroke="white" strokeWidth="1"/><line x1="16" y1="4" x2="12" y2="14" stroke="white" strokeWidth="1"/><line x1="16" y1="4" x2="20" y2="14" stroke="white" strokeWidth="1"/></svg>,
-  }
-  // Default fallback — thinking face (신중)
-  return svgs[icon] ?? (
-    <svg width={S} height={S} viewBox="0 0 32 32" fill="none">
-      <circle cx="16" cy="14" r="10" stroke="white" strokeWidth="1.5"/>
-      <circle cx="12" cy="12" r="1.5" fill="white"/><circle cx="20" cy="12" r="1.5" fill="white"/>
-      <path d="M12 18 Q16 16 20 18" stroke="white" strokeWidth="1.2" strokeLinecap="round" fill="none"/>
-      <path d="M22 8l3-2" stroke="white" strokeWidth="1.2" strokeLinecap="round"/>
-      <line x1="16" y1="24" x2="16" y2="28" stroke="white" strokeWidth="1.2"/>
-      <line x1="12" y1="27" x2="20" y2="27" stroke="white" strokeWidth="1.2"/>
+  const S = 44
+  const code = Array.from(icon || 'title').reduce((sum, ch) => sum + (ch.codePointAt(0) ?? 0), 0)
+  const variant = code % 6
+  const commonProps = {
+    width: S,
+    height: S,
+    viewBox: '0 0 44 44',
+    fill: 'none',
+    className: 'pc-title-svg-icon',
+    'aria-hidden': true,
+  } as const
+  const medallion = (children: React.ReactNode) => (
+    <svg {...commonProps}>
+      <circle cx="22" cy="22" r="19" fill="rgba(244, 216, 150, 0.08)" stroke="currentColor" strokeWidth="1.2" />
+      <circle cx="22" cy="22" r="14.5" stroke="currentColor" strokeWidth="0.9" opacity="0.45" />
+      {children}
+      <path d="M14 35.5l3.2-3.4M30 35.5l-3.2-3.4" stroke="currentColor" strokeWidth="1" strokeLinecap="round" opacity="0.55" />
     </svg>
   )
+
+  switch (variant) {
+    case 0:
+      return medallion(<>
+        <path d="M22 10v19" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" />
+        <path d="M12.5 16h19" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" />
+        <path d="M13.5 16l-3.2 7h6.4l-3.2-7ZM30.5 16l-3.2 7h6.4l-3.2-7Z" stroke="currentColor" strokeWidth="1.2" strokeLinejoin="round" />
+        <path d="M17 30h10" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />
+      </>)
+    case 1:
+      return medallion(<>
+        <path d="M22 12c-5.6 0-10.3 6.1-10.3 6.1S16.4 24.2 22 24.2s10.3-6.1 10.3-6.1S27.6 12 22 12Z" stroke="currentColor" strokeWidth="1.5" />
+        <circle cx="22" cy="18.1" r="3.3" stroke="currentColor" strokeWidth="1.3" />
+        <path d="M16 29c2.2-1.8 9.8-1.8 12 0" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" opacity="0.7" />
+      </>)
+    case 2:
+      return medallion(<>
+        <path d="M14 25.5l4-3.8 3.3 2 5.8-8.2 3.1 2.6-7.1 10.5-5-3.1-2.2 2" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M14.5 13.5h7" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" opacity="0.65" />
+        <path d="M14.5 17.5h4.8" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" opacity="0.45" />
+      </>)
+    case 3:
+      return medallion(<>
+        <path d="M22 11l9 4.8v6.3c0 5.7-3.7 10.1-9 11.7-5.3-1.6-9-6-9-11.7v-6.3L22 11Z" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" />
+        <path d="M18 22.2l2.7 2.7 5.4-6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+      </>)
+    case 4:
+      return medallion(<>
+        <path d="M22 10c2.6 4.8 6.5 7.4 6.5 12.3A6.5 6.5 0 1 1 15.5 22.3C15.5 17.4 19.4 14.8 22 10Z" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" />
+        <path d="M22 20c1.4 2.1 2.9 3.3 2.9 5.2a2.9 2.9 0 1 1-5.8 0c0-1.9 1.5-3.1 2.9-5.2Z" stroke="currentColor" strokeWidth="1.1" opacity="0.7" />
+      </>)
+    default:
+      return medallion(<>
+        <path d="M22 11l7.8 8.1L22 33l-7.8-13.9L22 11Z" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" />
+        <path d="M14.2 19.1h15.6M22 11l-3.2 8.1L22 33l3.2-13.9L22 11Z" stroke="currentColor" strokeWidth="1" opacity="0.65" />
+      </>)
+  }
 }
 
 export default function PCResultScreen() {
@@ -692,6 +704,27 @@ export default function PCResultScreen() {
             {/* ━━━ 판결 선고 탭 ━━━ */}
             {tab === 'verdict_pronounce' ? (() => {
               const avgA = verdictSummary ? verdictSummary.responsibility.percentA : 50
+              const disputeMomentLines = visibleDisputes.map((d) => {
+                const finding = verdictInput.factFindings[d.id]
+                const responsibility = verdictInput.responsibility[d.id]
+                const correct = finding === 'pending'
+                  ? null
+                  : (finding === 'true') === d.truth
+                const factLabel = correct === true
+                  ? '핵심 사실 인정'
+                  : correct === false
+                    ? '판단 불안정'
+                    : '판단 보류'
+                const respLabel = responsibility
+                  ? `${caseData.duo.partyA.name} ${responsibility.a}% · ${caseData.duo.partyB.name} ${responsibility.b}%`
+                  : '책임 배분 미기록'
+                return `${d.name}: ${factLabel} / ${respLabel}`
+              })
+              const resolutionSentences = verdictSummary?.resolution
+                .split(/[.。]\s*/)
+                .map((s: string) => s.trim().replace(/^,\s*/, '').trim())
+                .filter((s: string) => s)
+                ?? []
               return (
               <div className="pc-result-text">
                 {/* 상단 선고문 */}
@@ -708,7 +741,7 @@ export default function PCResultScreen() {
                         <svg width="240" height="180" viewBox="0 0 420 220" style={{ display: 'block' }}>
                           <polygon points="210,160 192,188 228,188" fill="#8b6f3d" opacity="0.7" />
                           <rect x="175" y="188" width="70" height="5" rx="2" fill="#8b6f3d" opacity="0.35" />
-                          {(() => { const t = ((avgA - 50) / 50) * 12; return (
+                          {(() => { const t = ((50 - avgA) / 50) * 12; return (
                           <g transform={`rotate(${t}, 210, 156)`}>
                             <rect x="50" y="154" width="320" height="6" rx="3" fill="#8b6f3d" />
                             <circle cx="100" cy="118" r="32" fill="rgba(74, 111, 165, 0.12)" stroke="#4a6fa5" strokeWidth="1.8" />
@@ -734,7 +767,6 @@ export default function PCResultScreen() {
                           <span style={{ color: '#4a6fa5' }}>{verdictSummary.responsibility.percentA}%</span>
                           <span style={{ color: '#a84f4f' }}>{verdictSummary.responsibility.percentB}%</span>
                         </div>
-                        <p style={{ fontSize: 13, color: '#8c8fa0', lineHeight: 1.6, textAlign: 'center', marginTop: 4 }}>{verdictSummary.responsibilityReason}</p>
                       </div>
 
                       {/* 우측 — 2영역 */}
@@ -743,12 +775,29 @@ export default function PCResultScreen() {
                         <div className="pc-result-summary__section" style={{ margin: 0 }}>
                           <h3>결정적 순간</h3>
                           <p>{verdictSummary.keyMoment}</p>
+                          {disputeMomentLines.length > 0 ? (
+                            <ul style={{ margin: '10px 0 0', padding: 0, listStyle: 'none', display: 'grid', gap: 6 }}>
+                              {disputeMomentLines.map((line, idx) => (
+                                <li key={idx} style={{
+                                  padding: '8px 10px',
+                                  borderRadius: 8,
+                                  border: '1px solid rgba(212,162,78,0.12)',
+                                  background: 'rgba(212,162,78,0.035)',
+                                  color: '#b8b2a4',
+                                  fontSize: 12.5,
+                                  lineHeight: 1.45,
+                                }}>
+                                  {line}
+                                </li>
+                              ))}
+                            </ul>
+                          ) : null}
                         </div>
                         {/* 해결 방향 — 스크롤 영역 */}
                         <div className="pc-result-summary__section" style={{ margin: 0 }}>
                           <h3>해결 방향</h3>
-                          <div style={{ maxHeight: 140, overflowY: 'auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8 }}>
-                            {verdictSummary.resolution.split(/[.。]\s*/).map((s: string) => s.trim().replace(/^,\s*/, '').trim()).filter((s: string) => s).map((sentence: string, i: number) => (
+                          <div style={{ maxHeight: 245, overflowY: 'auto', display: 'grid', gridTemplateColumns: 'repeat(2, minmax(0, 1fr))', gap: 8 }}>
+                            {resolutionSentences.map((sentence: string, i: number) => (
                               <div key={i} style={{
                                 padding: '10px 14px', borderRadius: 8,
                                 border: '1px solid rgba(255,255,255,0.06)', background: 'rgba(255,255,255,0.02)',
@@ -765,19 +814,11 @@ export default function PCResultScreen() {
                     {/* ── 하단: 재판관 성향 — 좌측 타이틀/설명, 우측 게이지 ── */}
                     <div style={{ paddingTop: 20, borderTop: '1px solid rgba(255,255,255,0.06)' }}>
                       <h3 style={{ marginTop: 0, marginBottom: 12 }}>재판관 성향</h3>
-                      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20 }}>
+                      <div style={{ display: 'grid', gridTemplateColumns: 'minmax(220px, 0.9fr) 1.1fr', gap: 16 }}>
                         {/* 좌측: 타이틀 + 설명 + 태그 */}
                         <ProfileInfoSection />
                         {/* 우측: 게이지 */}
                         <ProfileGaugeSection />
-                      </div>
-                      <div style={{ display: 'flex', gap: 8, marginTop: 16, justifyContent: 'flex-end' }}>
-                        <button className="pc-result-text__copy-btn" onClick={handleCopySummary} type="button">
-                          {summaryCopied ? '복사 완료!' : '판결문 복사'}
-                        </button>
-                        <button className="pc-result-text__copy-btn" onClick={handleCopyShare} type="button">
-                          {copied ? '복사 완료!' : '공유하기'}
-                        </button>
                       </div>
                     </div>
                   </>
@@ -1166,16 +1207,26 @@ function splitAftermathParagraphs(text: string): string[] {
   return text.split(/\n\n+/).map((para) => para.trim()).filter(Boolean)
 }
 
-function removeAftermathLessonLabels(text: string): string {
+function normalizeNarrativePunctuation(text: string): string {
   return text
+    .replace(/([.!?。])\s*[,，]+/g, '$1')
+    .replace(/[,，]\s*([.!?。])/g, '$1')
+    .replace(/([.!?。])\s*([.!?。])+/g, '$1')
+    .replace(/([.。])\s*([”"])/g, '$1$2')
+    .replace(/[ \t]{2,}/g, ' ')
+    .trim()
+}
+
+function removeAftermathLessonLabels(text: string): string {
+  return normalizeNarrativePunctuation(text
     .replace(/\*?\*?(?:교훈 한 문장|교훈|명언)\*?\*?\s*[:：]\s*/g, '')
-    .replace(/^\s*(?:교훈 한 문장|교훈|명언)\s*[:：]\s*/gm, '')
+    .replace(/^\s*(?:교훈 한 문장|교훈|명언)\s*[:：]\s*/gm, ''))
 }
 
 function normalizeAftermathLesson(text: string): string {
-  return removeAftermathLessonLabels(text)
+  return normalizeNarrativePunctuation(removeAftermathLessonLabels(text)
     .trim()
-    .replace(/^[\s"“”'‘’`—-]+|[\s"“”'‘’`]+$/g, '')
+    .replace(/^[\s"“”'‘’`—-]+|[\s"“”'‘’`]+$/g, ''))
 }
 
 function ensureAftermathShape(caseData: CaseData, verdictInput: VerdictInput, total: number, text: string): string {
@@ -1221,9 +1272,9 @@ function withVerdictContext(caseData: CaseData, verdictInput: VerdictInput, text
     : `책임이 ${avgA}:${100 - avgA}에 가깝게 나뉘면서`
   const intro = `${nameA}${pA} ${nameB}${pB} ${responsibilityText}을 받아들었다. 판결문에 적힌 해결 방향은 다음 조치였다. ${solutionText}. ${responsibilityDetail} 후일담의 방향도 누가 더 억울한지보다 무엇을 먼저 정리해야 하는지에 맞춰졌다.`
   const paras = splitAftermathParagraphs(text)
-  if (paras[0]?.includes(solutionText) && paras[0]?.includes('책임')) return text
-  if (paras.length === 0) return intro
-  return [`${intro} ${paras[0]}`, ...paras.slice(1)].join('\n\n')
+  if (paras[0]?.includes(solutionText) && paras[0]?.includes('책임')) return normalizeNarrativePunctuation(text)
+  if (paras.length === 0) return normalizeNarrativePunctuation(intro)
+  return normalizeNarrativePunctuation([`${intro} ${paras[0]}`, ...paras.slice(1)].join('\n\n'))
 }
 
 function buildFallback(caseData: CaseData, total: number, verdictInput: VerdictInput): string {

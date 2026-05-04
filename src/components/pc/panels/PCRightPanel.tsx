@@ -611,8 +611,8 @@ export default function PCRightPanel() {
         turnCount: store.turnCount,
         category: 'event',
         iconId: 'i-heart',
-        title: '조정 힌트 추가',
-        summary: outputSummary || '조정에 쓸 수 있는 힌트가 추가됐습니다.',
+        title: '판결 힌트 추가',
+        summary: outputSummary || '판결 전 검토에 쓸 수 있는 힌트가 추가됐습니다.',
       })
     } else if (combinationResultType === 'note' || combinationResultType === 'statement') {
       store.addJudgeObservation({
@@ -1528,7 +1528,7 @@ function playCombinationResultResonance(store: GameStoreSnapshot, ctx: Combinati
     if (memoryTarget && memoryTarget.selector !== destination?.selector) {
       latest.enqueueAura({ targetSelector: memoryTarget.selector, style: memoryTarget.auraStyle })
       if (memoryTarget.selector === JUDGE_NOTEBOOK_SELECTOR) {
-        latest.enqueueAura({ targetSelector: JUDGE_OBSERVATION_SELECTOR, style: 'electric' })
+        latest.enqueueAura({ targetSelector: JUDGE_OBSERVATION_SELECTOR, style: 'soft' })
       }
       latest.enqueueResonance({
         fromSelector: COMBINATION_SUCCESS_SOURCE_SELECTOR,
@@ -1545,16 +1545,6 @@ function playCombinationResultResonance(store: GameStoreSnapshot, ctx: Combinati
   } else {
     enqueueResultVfx()
   }
-}
-
-function isNotebookLightningResult(resultType: PcCombinationResultType): boolean {
-  return resultType === 'witness' ||
-    resultType === 'evidence' ||
-    resultType === 'dossier' ||
-    resultType === 'question' ||
-    resultType === 'note' ||
-    resultType === 'statement' ||
-    resultType === 'dispute'
 }
 
 function getCombinationDestinationTarget(ctx: CombinationResonanceContext): CombinationDestinationTarget | null {
@@ -1584,7 +1574,7 @@ function getCombinationDestinationTarget(ctx: CombinationResonanceContext): Comb
       return { selector: '[data-guide-target="question-fact"]', targetKey: `combination:question:${ctx.outputId}`, resonanceStyle: 'lightning', auraStyle: 'electric' }
     case 'note':
     case 'statement':
-      return { selector: JUDGE_NOTEBOOK_SELECTOR, targetKey: `combination:notebook:${ctx.outputId}`, resonanceStyle: 'lightning', auraStyle: 'electric' }
+      return { selector: JUDGE_NOTEBOOK_SELECTOR, targetKey: `combination:notebook:${ctx.outputId}`, resonanceStyle: 'archive', auraStyle: 'archive' }
     case 'mediation':
       return { selector: '[data-guide-target="question-empathy"]', targetKey: `combination:mediation:${ctx.outputId}`, resonanceStyle: 'absorb', auraStyle: 'soft' }
     case 'reliability':
@@ -1607,8 +1597,8 @@ function getCombinationMemoryTarget(resultType: PcCombinationResultType): Combin
       return {
         selector: JUDGE_NOTEBOOK_SELECTOR,
         targetKey: `combination:memory:${resultType}`,
-        resonanceStyle: isNotebookLightningResult(resultType) ? 'lightning' : 'archive',
-        auraStyle: isNotebookLightningResult(resultType) ? 'electric' : 'archive',
+        resonanceStyle: 'archive',
+        auraStyle: 'archive',
       }
     default:
       return null

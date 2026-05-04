@@ -169,7 +169,7 @@ function PhaseOverlay() {
 
   const LABELS: Record<string, string> = {
     phase1: '초기 진술', phase2: '반박', phase3: '심문 개시',
-    phase4: '증거 심리', phase5: '재심문', phase6: '중재', phase7: '판결',
+    phase4: '증거 심리', phase5: '재심문', phase6: '판결 전 검토', phase7: '판결',
   }
 
   useEffect(() => {

@@ -216,7 +216,7 @@
           "hiddenAgenda": "공증 절차상 확인이 부족했던 점이 불거질까 봐 선을 긋는다."
         },
         "unlockedByDossier": [
-          "dc-3"
+          "dc-2"
         ]
       },
       {
@@ -247,7 +247,7 @@
           "hiddenAgenda": "어머니의 비밀(출생 비밀)을 자기도 알고 있었는지 모호하게 넘기려 한다."
         },
         "unlockedByDossier": [
-          "dc-2",
+          "dc-3",
           "dc-5"
         ]
       }
@@ -3762,7 +3762,21 @@
       {
         "id": "dc-1",
         "type": "derived_note",
-        "label": "dc-1 자기 몫을 줄인 조작의 이유",
+        "label": "dc-1 유서 작성 개입 정황",
+        "linkedDisputeIds": [
+          "d-1"
+        ],
+        "linkedEvidenceIds": [
+          "e-1",
+          "e-2",
+          "e-3"
+        ],
+        "visibility": "derived"
+      },
+      {
+        "id": "dc-2",
+        "type": "derived_note",
+        "label": "dc-2 자기 몫을 줄인 조작의 이유",
         "linkedDisputeIds": [
           "d-2"
         ],
@@ -3773,28 +3787,15 @@
         "visibility": "derived"
       },
       {
-        "id": "dc-2",
+        "id": "dc-3",
         "type": "derived_note",
-        "label": "dc-2 형이 모르던 20년의 돈",
+        "label": "dc-3 형이 모르던 20년의 돈",
         "linkedDisputeIds": [
           "d-3"
         ],
         "linkedEvidenceIds": [
-          "e-6"
-        ],
-        "visibility": "derived"
-      },
-      {
-        "id": "dc-3",
-        "type": "derived_note",
-        "label": "dc-3 60대 40이 아니었다면",
-        "linkedDisputeIds": [
-          "d-4",
-          "d-5"
-        ],
-        "linkedEvidenceIds": [
           "e-5",
-          "e-7"
+          "e-6"
         ],
         "visibility": "derived"
       },
@@ -3806,6 +3807,7 @@
           "d-4"
         ],
         "linkedEvidenceIds": [
+          "e-5",
           "e-6",
           "e-7"
         ],
@@ -3829,10 +3831,10 @@
     "outputs": [
       {
         "id": "dc-1",
-        "label": "dc-1 자기 몫을 줄인 조작의 이유",
-        "summary": "유서를 고친 건 맞는데, 왜 자기 몫을 더 많이 가져가는 쪽이 아니라 덜 가져가는 쪽으로 바꿨습니까?",
+        "label": "dc-1 유서 작성 개입 정황",
+        "summary": "유서 비율과 방문 기록이 함께 움직입니다. 작성 과정에서 누가 곁에 있었는지 확인해야 합니다.",
         "nodeType": "derived_note",
-        "noteText": "자기 몫을 줄인 조작의 이유",
+        "noteText": "유서 작성 개입 정황",
         "effects": [
           {
             "kind": "unlock_note",
@@ -3847,36 +3849,58 @@
             }
           }
         ],
-        "judgeHint": "유서 판단 능력 쟁점을 더 깊이 추궁하거나, 방문 기록 증인을 불러볼 수 있습니다."
+        "judgeHint": "유서 작성 당시 판단 능력과 개입 경계를 더 깊이 추궁하거나, 요양보호사 증언으로 보강할 수 있습니다."
       },
       {
         "id": "dc-2",
-        "label": "dc-2 형이 모르던 20년의 돈",
-        "summary": "형이 평생 어머니 돈인 줄 알았던 그 돈, 사실은 당신 돈이었습니까?",
+        "label": "dc-2 자기 몫을 줄인 조작의 이유",
+        "summary": "공증본과 서랍 원본의 비율 방향이 다릅니다. 왜 자기 몫을 줄이는 쪽으로 바뀌었는지 물어야 합니다.",
         "nodeType": "derived_note",
-        "noteText": "형이 모르던 20년의 돈",
+        "noteText": "자기 몫을 줄인 조작의 이유",
         "effects": [
           {
             "kind": "unlock_note",
             "unlockNodeId": "dc-2"
           },
           {
-            "kind": "unlock_dispute",
-            "unlockNodeId": "d-3"
+            "kind": "upgrade_dispute",
+            "disputeUpgrade": {
+              "disputeId": "d-2",
+              "weight": "high",
+              "ambiguity": "low"
+            }
           }
         ],
-        "judgeHint": "새 쟁점 '20년 송금의 실체'가 드러났습니다. 누가 실질적으로 보냈는지 확인해보세요."
+        "judgeHint": "60:40 변경의 의도와 제출 순서가 맞물립니다. 공증사무실 관계자를 불러 변경 과정을 확인할 수 있습니다."
       },
       {
         "id": "dc-3",
-        "label": "dc-3 60대 40이 아니었다면",
-        "summary": "60대 40으로 바꾸지 않았다면, 형이 무엇을 잃게 됐습니까?",
+        "label": "dc-3 형이 모르던 20년의 돈",
+        "summary": "원본 유서와 송금 내역이 같은 흐름을 가리킵니다. 어머니 돈으로 보였던 출처를 다시 봐야 합니다.",
         "nodeType": "derived_note",
-        "noteText": "60대 40이 아니었다면",
+        "noteText": "형이 모르던 20년의 돈",
         "effects": [
           {
             "kind": "unlock_note",
             "unlockNodeId": "dc-3"
+          },
+          {
+            "kind": "unlock_dispute",
+            "unlockNodeId": "d-3"
+          }
+        ],
+        "judgeHint": "새 쟁점 '20년 송금의 실체'가 드러났습니다. 돈의 실질 출처를 확인하십시오."
+      },
+      {
+        "id": "dc-4",
+        "label": "dc-4 감춘 이유",
+        "summary": "20년 송금과 일기장이 같은 비밀을 가리킵니다. 침묵의 이유가 단순한 돈 문제를 넘어섭니다.",
+        "nodeType": "derived_note",
+        "noteText": "감춘 이유",
+        "effects": [
+          {
+            "kind": "unlock_note",
+            "unlockNodeId": "dc-4"
           },
           {
             "kind": "unlock_dispute",
@@ -3886,30 +3910,9 @@
         "judgeHint": "새 쟁점 '출생 비밀과 침묵의 이유'가 드러났습니다. 침묵의 목적을 짚어보세요."
       },
       {
-        "id": "dc-4",
-        "label": "dc-4 감춘 이유",
-        "summary": "유서 조작과 20년 지원의 끝에 있던 출생 비밀 — 형의 정체성을 지키려 한 것입니까?",
-        "nodeType": "derived_note",
-        "noteText": "감춘 이유",
-        "effects": [
-          {
-            "kind": "unlock_note",
-            "unlockNodeId": "dc-4"
-          },
-          {
-            "kind": "upgrade_dispute",
-            "disputeUpgrade": {
-              "disputeId": "d-4",
-              "legitimacyIssue": true
-            }
-          }
-        ],
-        "judgeHint": "출생 비밀 쟁점의 정당성을 다시 짚으며 추궁할 수 있습니다."
-      },
-      {
         "id": "dc-5",
         "label": "dc-5 어머니의 뜻",
-        "summary": "두 형제 모두 어머니를 있는 그대로 두지 못했다 — 누가 정말 어머니를 이용했습니까?",
+        "summary": "유서 비율과 어머니 기록이 함께 흔들립니다. 두 형제가 각자 어머니 뜻을 어떻게 이용했는지 확인해야 합니다.",
         "nodeType": "derived_note",
         "noteText": "어머니의 뜻",
         "effects": [
@@ -3922,7 +3925,7 @@
             "unlockNodeId": "d-5"
           }
         ],
-        "judgeHint": "새 쟁점 '어머니 이용의 진짜 주체'가 드러났습니다. 누가 어머니를 움직였는지 확인하세요."
+        "judgeHint": "새 쟁점 '어머니 이용의 진짜 주체'가 드러났습니다. 누가 어머니의 뜻을 움직였는지 확인하세요."
       }
     ],
     "recipes": [
@@ -3933,9 +3936,8 @@
           "e-2"
         ],
         "cost": 1,
-        "discoveryText": "유서의 60:40 비율과 윤정후의 말년 방문 급증이 겹친다. 유서 작성에 윤정후가 개입했다는 의심이 강화된다.",
-        "outputId": "dc-1",
-        "resultType": "upgrade"
+        "discoveryText": "유서의 60:40 비율과 말년 방문 기록이 겹친다. 유서 작성 과정에 윤정후가 곁에 있었는지 다시 확인해야 한다.",
+        "outputId": "dc-1"
       },
       {
         "id": "combine-2",
@@ -3944,9 +3946,8 @@
           "e-5"
         ],
         "cost": 1,
-        "discoveryText": "공증사무실 이중 스캔과 서랍 원본의 비율 방향이 정반대로 어긋난다. 마지막 제출자도 같은 사람이라는 사실이 드러난다. 변경 방향과 동기를 본인에게 추궁할 시점이다.",
-        "outputId": "dc-1",
-        "resultType": "dossier"
+        "discoveryText": "공증사무실 이중 스캔과 서랍 원본의 비율 방향이 정반대로 어긋난다. 변경 방향과 제출 순서를 본인에게 물어야 한다.",
+        "outputId": "dc-2"
       },
       {
         "id": "combine-3",
@@ -3955,9 +3956,8 @@
           "e-6"
         ],
         "cost": 1,
-        "discoveryText": "서랍 원본의 비율 방향과 어머니 통장에 누적된 장기 송금 흐름이 같은 인물의 손에서 만난다. 어머니 돈으로만 보였던 출처를 다시 짚어 봐야 한다.",
-        "outputId": "dc-2",
-        "resultType": "upgrade"
+        "discoveryText": "서랍 원본의 비율과 20년 송금 흐름이 같은 손에서 만난다. 어머니 돈으로만 보였던 출처를 다시 짚어야 한다.",
+        "outputId": "dc-3"
       },
       {
         "id": "combine-4",
@@ -3966,9 +3966,8 @@
           "e-7"
         ],
         "cost": 1,
-        "discoveryText": "어머니 통장의 오래된 흐름과 일기장에 봉인된 사적 기록이 같은 시점을 가리킨다. 윤정후가 무엇을 떠안고 침묵해 왔는지 본인에게 직접 물어야 한다.",
-        "outputId": "dc-4",
-        "resultType": "dossier"
+        "discoveryText": "오래된 송금 흐름과 일기장 기록이 같은 비밀을 가리킨다. 윤정후가 무엇을 떠안고 침묵했는지 물어야 한다.",
+        "outputId": "dc-4"
       },
       {
         "id": "combine-5",
@@ -3977,9 +3976,8 @@
           "e-4"
         ],
         "cost": 1,
-        "discoveryText": "윤정후가 '말할 수 있는 부분이 아니다'라고 한 이유... 공증 이중 스캔을 보면 자기 몫을 줄인 이유를 말할 수 없었던 것이다.",
-        "outputId": "dc-1",
-        "resultType": "upgrade"
+        "discoveryText": "윤정후가 '말할 수 있는 부분이 아니다'라고 한 이유와 공증 이중 스캔이 맞물린다. 자기 몫을 줄인 이유를 따져야 한다.",
+        "outputId": "dc-2"
       },
       {
         "id": "combine-6",
@@ -3988,9 +3986,8 @@
           "e-6"
         ],
         "cost": 1,
-        "discoveryText": "어머니가 그렇게 하고 싶어 했다는 말 뒤에... 20년간 윤정후가 보낸 돈이 있었다. 어머니의 뜻에는 근거가 있었다.",
-        "outputId": "dc-2",
-        "resultType": "dossier"
+        "discoveryText": "어머니 뜻이라는 말 뒤에 20년간 윤정후가 보낸 돈이 있었다. 어머니의 판단 근거를 다시 봐야 한다.",
+        "outputId": "dc-3"
       },
       {
         "id": "combine-7",
@@ -3999,9 +3996,8 @@
           "e-7"
         ],
         "cost": 1,
-        "discoveryText": "원본 유서와 어머니 일기장의 시점이 한 흐름으로 묶인다. 비율을 낮춰 가면서까지 막으려 한 것이 무엇인지 본인에게 물어야 한다.",
-        "outputId": "dc-3",
-        "resultType": "dossier"
+        "discoveryText": "원본 유서와 어머니 일기장의 시점이 한 흐름으로 묶인다. 비율을 낮춰 가면서까지 막으려 한 것이 무엇인지 물어야 한다.",
+        "outputId": "dc-4"
       },
       {
         "id": "combine-8",
@@ -4011,8 +4007,7 @@
         ],
         "cost": 1,
         "discoveryText": "유서 비율과 어머니 일기장의 기록이 겹친다. 장남 당연시와 보호 명분이 같은 구조 위에 서 있다.",
-        "outputId": "dc-1",
-        "resultType": "upgrade"
+        "outputId": "dc-5"
       },
       {
         "id": "combine-9",
@@ -4021,9 +4016,8 @@
           "e-7"
         ],
         "cost": 1,
-        "discoveryText": "형의 ‘모시고 산 건 나인데’라는 말과 어머니 일기장의 기록이 서로 다른 어머니의 모습을 가리킨다. 두 사람이 각자 어머니 뜻을 어떻게 받아 적었는지 함께 짚어야 한다.",
-        "outputId": "dc-5",
-        "resultType": "dossier"
+        "discoveryText": "형의 '모시고 산 건 나인데'라는 말과 어머니 일기장의 기록이 충돌한다. 두 사람이 각자 어머니 뜻을 어떻게 받아 적었는지 짚어야 한다.",
+        "outputId": "dc-5"
       },
       {
         "id": "combine-10",
@@ -4032,9 +4026,8 @@
           "e-6"
         ],
         "cost": 1,
-        "discoveryText": "형의 '모시고 산 건 나인데'라는 말과 20년 송금 내역을 합치면... 돈과 비밀 두 가지를 모두 떠안은 동생의 전체 동기가 보인다.",
-        "outputId": "dc-3",
-        "resultType": "upgrade"
+        "discoveryText": "형의 '모시고 산 건 나인데'라는 말과 20년 송금 내역을 합치면, 돈과 비밀을 함께 떠안은 동생의 동기가 보인다.",
+        "outputId": "dc-3"
       },
       {
         "id": "combine-11",
@@ -4043,9 +4036,8 @@
           "e-3"
         ],
         "cost": 1,
-        "discoveryText": "요양원 방문기록의 횟수 증가 시점과 전 요양보호사가 종이를 읽어드리는 장면을 목격한 시점이 겹친다.",
-        "outputId": "dc-2",
-        "resultType": "upgrade"
+        "discoveryText": "요양원 방문기록의 증가 시점과 전 요양보호사가 종이를 읽어드린 시점이 겹친다.",
+        "outputId": "dc-1"
       },
       {
         "id": "combine-12",
@@ -4054,9 +4046,8 @@
           "stmt-b-silence"
         ],
         "cost": 1,
-        "discoveryText": "\"모시고 산 건 나인데 왜 40이냐\"와 \"말할 수 있는 부분이 아닙니다\"를 맞대면, 비율 뒤에 숨은 사정이 있다는 흐름이 보인다.",
-        "outputId": "dc-3",
-        "resultType": "upgrade"
+        "discoveryText": "'모시고 산 건 나인데 왜 40이냐'와 '말할 수 있는 부분이 아닙니다'를 맞대면, 비율 뒤에 숨은 사정이 있다는 흐름이 보인다.",
+        "outputId": "dc-2"
       }
     ]
   },
@@ -4354,22 +4345,12 @@
   "evidenceCombinations": [
     {
       "requires": [
-        "e-2",
-        "e-3"
+        "e-1",
+        "e-2"
       ],
       "upgradesTo": "hard",
       "proves": [
         "d-1"
-      ]
-    },
-    {
-      "requires": [
-        "e-1",
-        "e-4"
-      ],
-      "upgradesTo": "hard",
-      "proves": [
-        "d-2"
       ]
     },
     {
@@ -4379,8 +4360,7 @@
       ],
       "upgradesTo": "hard",
       "proves": [
-        "d-2",
-        "d-3"
+        "d-2"
       ]
     },
     {
@@ -4390,8 +4370,7 @@
       ],
       "upgradesTo": "hard",
       "proves": [
-        "d-3",
-        "d-5"
+        "d-3"
       ]
     },
     {
@@ -4403,6 +4382,36 @@
       "proves": [
         "d-4",
         "d-5"
+      ]
+    },
+    {
+      "requires": [
+        "e-5",
+        "e-7"
+      ],
+      "upgradesTo": "hard",
+      "proves": [
+        "d-4"
+      ]
+    },
+    {
+      "requires": [
+        "e-1",
+        "e-7"
+      ],
+      "upgradesTo": "hard",
+      "proves": [
+        "d-5"
+      ]
+    },
+    {
+      "requires": [
+        "e-2",
+        "e-3"
+      ],
+      "upgradesTo": "hard",
+      "proves": [
+        "d-1"
       ]
     }
   ]

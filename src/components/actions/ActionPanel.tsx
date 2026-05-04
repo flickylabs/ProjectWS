@@ -92,7 +92,7 @@ function getAdvanceInfo(phase: GamePhase): { label: string; unlocks: string[] } 
     case GamePhase.Phase4_Evidence:
       return { label: '최종 심문으로', unlocks: ['🔒 비공개 보호 토글 해금'] }
     case GamePhase.Phase5_ReExamination:
-      return { label: '조정 단계로', unlocks: [] }
+      return { label: '판결 검토로', unlocks: [] }
     default:
       return { label: '다음 단계로', unlocks: [] }
   }

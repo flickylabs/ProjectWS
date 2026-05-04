@@ -577,7 +577,7 @@ function getAdvanceLabel(phase: GamePhase): string {
     case GamePhase.Phase4_Evidence:
       return '최종 심문 단계로'
     case GamePhase.Phase5_ReExamination:
-      return '중재 단계로'
+      return '판결 검토로'
     default:
       return '다음 단계'
   }

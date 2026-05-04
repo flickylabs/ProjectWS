@@ -48,8 +48,8 @@ const TUTORIAL_STEPS: TutorialStep[] = [
   {
     phase: Phase.Mediation,
     trigger: 'phase_enter',
-    title: '중재안',
-    message: '바로 판결할 수도 있고, 조건부 조정안을 제시할 수도 있습니다. 솔로몬다운 지혜를 보여주세요.',
+    title: '판결 전 검토',
+    message: '바로 판결할 수도 있고, 조건부 조정이나 일부 보류를 선택할 수도 있습니다. 미확정 쟁점이 있으면 더 심리할 수 있습니다.',
     icon: '⚖️',
     position: 'center',
   },

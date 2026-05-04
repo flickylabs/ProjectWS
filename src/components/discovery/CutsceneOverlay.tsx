@@ -201,7 +201,7 @@ const PHASE_LABELS: Record<string, string> = {
   phase3: '심문 개시',
   phase4: '증거 심리',
   phase5: '재심문',
-  phase6: '중재',
+  phase6: '판결 전 검토',
   phase7: '판결',
 }
 
