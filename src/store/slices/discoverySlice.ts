@@ -39,6 +39,32 @@ function getEmotionalSlipKey(slip: EmotionalSlipEvent): string {
 
 const surfacedEmotionalSlipKeys = new Set<string>()
 
+const SAFE_EMERGENCE_DESCRIPTIONS: Record<string, Record<string, string>> = {
+  'family-01': {
+    'd-1': '어머니의 판단 능력과 유서 작성 과정이 별도로 확인할 쟁점으로 떠올랐습니다.',
+    'd-2': '공증된 유서가 완성된 시점과 당시 어머니 상태 사이에 확인할 대목이 생겼습니다.',
+    'd-3': '어머니 통장을 거친 오래된 자금 흐름에서 출처와 전달 순서를 확인해야 합니다.',
+    'd-4': '가족 기록 속 민감한 사정이 형제의 침묵과 선택에 영향을 줬을 가능성이 보입니다.',
+    'd-5': '두 형제가 어머니 뜻을 서로 다르게 해석한 대목을 함께 정리해야 합니다.',
+  },
+  'spouse-01': {
+    'd-2': '남편 명의의 비밀 계좌가 존재했고, 목돈이 빠져나간 것으로 보입니다.',
+    'h-d3': '오피스텔 방문 이후의 연락과 사람 관계를 별도로 확인해야 합니다.',
+    'h-d4': '돈의 이동과 오피스텔 방문 사이에 함께 검토할 정황이 생겼습니다.',
+  },
+}
+
+function normalizeCaseId(caseId?: string): string {
+  return String(caseId ?? '').replace(/^case-/, '')
+}
+
+function getSafeEmergenceDescription(storeOrCaseId: any, disputeId: string, fallback: string): string {
+  const caseId = typeof storeOrCaseId === 'string'
+    ? normalizeCaseId(storeOrCaseId)
+    : normalizeCaseId(storeOrCaseId?.caseData?.caseId)
+  return SAFE_EMERGENCE_DESCRIPTIONS[caseId]?.[disputeId] ?? fallback
+}
+
 export interface DiscoverySlice {
   discovery: DiscoveryState
 
@@ -202,11 +228,12 @@ export const createDiscoverySlice: StateCreator<DiscoverySlice, [], [], Discover
     notifyDisputeEmergence()
     // 타임라인 이벤트
     const store = get() as any
+    const safeDescription = getSafeEmergenceDescription(store, disputeId, description)
     store.pushGameEvent?.({
       id: (store.gameEventLog?.length ?? 0) + 1,
       turn,
       type: 'discovery',
-      message: `🔍 새로운 쟁점 발견: ${description}`,
+      message: `🔍 새로운 쟁점 발견: ${safeDescription}`,
       timestamp: Date.now(),
     })
     set((prev) => {
@@ -227,7 +254,7 @@ export const createDiscoverySlice: StateCreator<DiscoverySlice, [], [], Discover
         discovery: {
           ...d,
           disputeVisibility: vis,
-          pendingEmergence: { disputeId, route: via as any, description },
+          pendingEmergence: { disputeId, route: via as any, description: safeDescription },
         },
       }
     })
@@ -260,8 +287,14 @@ export const createDiscoverySlice: StateCreator<DiscoverySlice, [], [], Discover
   },
 
   setPendingEmergence: (event) => {
+    const safeEvent = event
+      ? {
+          ...event,
+          description: getSafeEmergenceDescription(get() as any, event.disputeId, event.description),
+        }
+      : event
     set((prev) => ({
-      discovery: { ...prev.discovery, pendingEmergence: event },
+      discovery: { ...prev.discovery, pendingEmergence: safeEvent },
     }))
   },
 

@@ -60,6 +60,29 @@ function passesSpouse01EmergenceGate(state: any, disputeId: string): boolean {
   return true
 }
 
+const SAFE_EMERGENCE_DESCRIPTIONS: Record<string, Record<string, string>> = {
+  'family-01': {
+    'd-1': '어머니의 판단 능력과 유서 작성 과정이 별도로 확인할 쟁점으로 떠올랐습니다.',
+    'd-2': '공증된 유서가 완성된 시점과 당시 어머니 상태 사이에 확인할 대목이 생겼습니다.',
+    'd-3': '어머니 통장을 거친 오래된 자금 흐름에서 출처와 전달 순서를 확인해야 합니다.',
+    'd-4': '가족 기록 속 민감한 사정이 형제의 침묵과 선택에 영향을 줬을 가능성이 보입니다.',
+    'd-5': '두 형제가 어머니 뜻을 서로 다르게 해석한 대목을 함께 정리해야 합니다.',
+  },
+  'spouse-01': {
+    'd-2': '남편 명의의 비밀 계좌가 존재했고, 목돈이 빠져나간 것으로 보입니다.',
+    'h-d3': '오피스텔 방문 이후의 연락과 사람 관계를 별도로 확인해야 합니다.',
+    'h-d4': '돈의 이동과 오피스텔 방문 사이에 함께 검토할 정황이 생겼습니다.',
+  },
+}
+
+function normalizeCaseId(caseId?: string): string {
+  return String(caseId ?? '').replace(/^case-/, '')
+}
+
+function getSafeEmergenceDescription(caseId: string | undefined, disputeId: string, fallback: string): string {
+  return SAFE_EMERGENCE_DESCRIPTIONS[normalizeCaseId(caseId)]?.[disputeId] ?? fallback
+}
+
 /**
  * 질문/증거/증인 액션 후 discovery 체크를 실행.
  * useActionDispatch의 각 핸들러 끝에서 호출한다.
@@ -149,7 +172,8 @@ export function runDiscoveryChecks(party: PartyId, disputeId?: string) {
     if (via) {
       if (!passesSpouse01EmergenceGate(state, entry.disputeId)) continue
       const dispute = caseData.disputes.find((d: import('../types').Dispute) => d.id === entry.disputeId)
-      const description = dispute?.truthDescription ?? dispute?.name ?? entry.disputeId
+      const rawDescription = dispute?.truthDescription ?? dispute?.name ?? entry.disputeId
+      const description = getSafeEmergenceDescription(caseData.caseId, entry.disputeId, rawDescription)
       const title = dispute?.name ?? entry.disputeId
       state.emergeDispute(entry.disputeId, via, turnCount, description)
       v4Effects.disputeDiscovered(entry.disputeId, title, description, {

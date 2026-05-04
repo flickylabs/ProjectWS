@@ -36,7 +36,7 @@ const PARAPHRASE_RULES: Record<DisclosureCaseId, LexemeRule[]> = {
     { label: '유서를 손댄' },
     { label: '유서를 고친' },
     { label: '유서를 바꾼' },
-    { label: '원본 유서를 고친' },
+    { label: '자필 연습본을 고친' },
     { label: '문서를 손으로 고친' },
     { label: '자기 몫을 줄' },
     { label: '공장 자금' },

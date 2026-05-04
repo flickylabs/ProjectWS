@@ -40,7 +40,7 @@ const SUPPLEMENTAL_PARAPHRASE_RULES: Record<FreeInterrogationGuardContext['caseI
     { label: '유서를 손댄', dimension: 'paraphrase' },
     { label: '유서를 고친', dimension: 'paraphrase' },
     { label: '유서를 바꾼', dimension: 'paraphrase' },
-    { label: '원본 유서를 고친', dimension: 'paraphrase' },
+    { label: '자필 연습본을 고친', dimension: 'paraphrase' },
     { label: '문서를 손으로 고친', dimension: 'paraphrase' },
     { label: '자기 몫을 줄', dimension: 'paraphrase' },
     { label: '공장 자금', dimension: 'paraphrase' },

@@ -22,9 +22,9 @@ The policy JSON follows the actual generated shape. `_schema.md` and all spouse-
 | `e-1` | `60:40 유서 사본` | `공증 유서 사본` | The ratio is visible in evidence detail, but protected judge/system/dossier prompts should not infer the hidden 90:10 direction. |
 | `e-2` | `요양원 방문기록` | same | Safe as timing evidence; do not state motive before d-1 gate. |
 | `e-3` | `전 요양보호사 음성증언` | same | The line about reading paper is player-discovered/witness-gated, not a judge prompt shortcut. |
-| `e-4` | `공증사무실 스캔 보관본` | `공증사무실 스캔 기록` | Two scans are safe; `90:10 -> 60:40` direction is gated. |
-| `e-5` | `어머니 서랍에서 나온 원본 유서` | `서랍에서 나온 원본 유서` | Original ratio is gated by evidence depth and d-2 progression. |
-| `e-6` | `20년 송금 내역 묶음` | `장기 송금 내역 묶음` | `20년` may be visible as evidence name, but protected prompts should use `오래된 지원` until gate. |
+| `e-4` | `공증인 메모 기록` | `공증인 메모 기록` | Two scans are safe; `90:10 -> 60:40` direction is gated. |
+| `e-5` | `어머니 서랍에서 나온 자필 연습본` | `서랍에서 나온 자필 연습본` | Original ratio is gated by evidence depth and d-2 progression. |
+| `e-6` | `오래된 계좌 흐름` | `오래된 계좌 흐름` | `20년` may be visible as evidence name, but protected prompts should use `오래된 지원` until gate. |
 | `e-7` | `어머니 일기장 사진` | same | Birth-secret content is the highest-risk truth leak; stage-gated only. |
 
 ## Dispute Map
@@ -50,7 +50,7 @@ The policy JSON follows the actual generated shape. `_schema.md` and all spouse-
 | Source field | Current text | Exposure risk | Draft handling |
 |---|---|---|---|
 | `combinationLab.nodes.dc-2.label` | `dc-2 형이 모르던 20년의 돈` | High if rendered before d-3 | Surface fallback: `오래된 지원 흐름`. |
-| `combinationLab.outputs.dc-2.judgeHint` | `20년 송금의 실체` | High in judge/system UI | Surface fallback: `오래된 지원의 출처`. |
+| `combinationLab.outputs.dc-2.judgeHint` | `오래된 지원의 출처` | High in judge/system UI | Surface fallback: `오래된 지원의 출처`. |
 | `combinationLab.outputs.dc-4.summary` | `출생 비밀` / `20년 지원` | High before d-4 | Route-gated; protected channels use `민감한 가족 사정`. |
 | `v3Design.authorityPlacements[3].purpose` | `조작 동기, 송금 이유, 일기장 내용 같은 실체 명사 강제` | Unknown UI exposure | Marked as unknown-internal-candidate. |
 | `v3Design.authorityPlacements[11].purpose` | `출생 비밀을 확실히 열되...` | Unknown UI exposure | Marked as unknown-internal-candidate. |

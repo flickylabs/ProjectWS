@@ -594,77 +594,61 @@ export function ContractViewer({ title, subtitle, rows, signature }: {
 // 4. TestimonyViewer — 증인 증언
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-const CONFIDENCE_COLORS: Record<string, string> = { high: '#5cc97a', mid: '#e8c172', low: '#e06060' }
-const BIAS_COLORS: Record<string, string> = { a: '#e06060', neutral: '#5b8def', b: '#5b8def' }
 const BIAS_LABELS: Record<string, string> = { a: 'A편', neutral: '중립', b: 'B편' }
 
-export function TestimonyViewer({ data }: { data: TestimonyData }) {
-  return (
-    <div>
-      {/* Witness info */}
-      <div
-        className="text-sm px-4 py-3 rounded-lg mb-4"
-        style={{ background: 'rgba(255,255,255,0.02)', color: '#8b8b9a' }}
-      >
-        <strong style={{ color: '#dcdce0', fontWeight: 600 }}>증인: {data.witnessName}</strong>
-        {' '}({data.witnessDesc})
-      </div>
-
-      {/* Quote */}
-      <div
-        className="text-base leading-relaxed px-5 py-5 mb-5 rounded-lg"
-        style={{
-          background: 'rgba(212,162,78,0.04)',
-          border: '1px solid rgba(212,162,78,0.1)',
-          color: '#dcdce0',
-        }}
-      >
-        <span className="text-2xl align-middle mr-1" style={{ color: 'var(--pc-gold, #d4a24e)', lineHeight: 0 }}>{'\u201C'}</span>
-        {data.quote}
-        <span className="text-2xl align-middle ml-1" style={{ color: 'var(--pc-gold, #d4a24e)', lineHeight: 0 }}>{'\u201D'}</span>
-      </div>
-
-      {/* Assessment tags */}
-      <div className="flex gap-3 flex-wrap mb-5">
-        <AssessmentTag label="확신도" value={data.confidenceLabel} color={CONFIDENCE_COLORS[data.confidence] ?? '#8b8b9a'} />
-        <AssessmentTag label="편향도" value={BIAS_LABELS[data.bias] ?? data.biasLabel} color={BIAS_COLORS[data.bias] ?? '#8b8b9a'} />
-        <AssessmentTag label="직접 목격" value={data.directWitness ? '예' : '아니오'} color={data.directWitness ? '#5cc97a' : '#4e4e5c'} />
-      </div>
-
-      {/* Related ref */}
-      <button
-        className="flex items-center gap-2 text-sm px-3.5 py-2.5 rounded-lg transition-colors duration-150"
-        style={{
-          color: '#8b8b9a',
-          background: 'rgba(255,255,255,0.02)',
-          border: '1px solid rgba(255,255,255,0.05)',
-        }}
-        onMouseEnter={(e) => {
-          (e.currentTarget as HTMLElement).style.background = 'rgba(212,162,78,0.06)'
-          ;(e.currentTarget as HTMLElement).style.borderColor = 'rgba(212,162,78,0.18)'
-          ;(e.currentTarget as HTMLElement).style.color = 'var(--pc-gold-light, #e8c172)'
-        }}
-        onMouseLeave={(e) => {
-          (e.currentTarget as HTMLElement).style.background = 'rgba(255,255,255,0.02)'
-          ;(e.currentTarget as HTMLElement).style.borderColor = 'rgba(255,255,255,0.05)'
-          ;(e.currentTarget as HTMLElement).style.color = '#8b8b9a'
-        }}
-      >
-        <span style={{ fontSize: 14 }}>📌</span>
-        관련 발언: {data.relatedRef}
-      </button>
-    </div>
-  )
+function splitTestimonyTranscript(value: string) {
+  const normalized = String(value ?? '').replace(/\s+/g, ' ').trim()
+  if (!normalized) return []
+  const matches = normalized.match(/[^.!?。？！]+[.!?。？！]?/g)
+  return (matches ?? [normalized])
+    .map((part) => part.trim())
+    .filter(Boolean)
 }
 
-function AssessmentTag({ label, value, color }: { label: string; value: string; color: string }) {
+export function TestimonyViewer({ data }: { data: TestimonyData }) {
+  const transcriptLines = splitTestimonyTranscript(data.quote)
+
   return (
-    <div
-      className="flex flex-col items-center gap-1 px-4 py-2.5 rounded-lg"
-      style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.04)', minWidth: 80 }}
-    >
-      <span className="text-xs font-medium" style={{ color: '#4e4e5c' }}>{label}</span>
-      <span className="text-sm font-bold" style={{ color }}>{value}</span>
+    <div className="pc-testimony-transcript-viewer">
+      <article className="pc-testimony-paper">
+        <div className="pc-testimony-paper__texture" aria-hidden="true" />
+        <span className="pc-testimony-paper__clip" aria-hidden="true" />
+        <span className="pc-testimony-paper__serial" aria-hidden="true">COPY</span>
+        <span className="pc-testimony-paper__stamp" aria-hidden="true">공증</span>
+
+        <header className="pc-testimony-paper__header">
+          <span>공증 녹취록 사본</span>
+          <h3>전 요양보호사 음성증언</h3>
+          <p>속기사 녹취 요약 / 음성 원본 대조</p>
+        </header>
+
+        <section className="pc-testimony-paper__meta" aria-label="증언 정보">
+          <div><span>증언자</span><strong>{data.witnessName}</strong></div>
+          <div><span>관계</span><strong>{data.witnessDesc}</strong></div>
+          <div><span>확실도</span><strong>{data.confidenceLabel}</strong></div>
+          <div><span>편향도</span><strong>{BIAS_LABELS[data.bias] ?? data.biasLabel}</strong></div>
+        </section>
+
+        <section className="pc-testimony-paper__body">
+          <div className="pc-testimony-paper__body-head">
+            <span>속기사 녹취 내용</span>
+            <small>{data.directWitness ? '직접 목격 진술' : '전언 포함'}</small>
+          </div>
+          <div className="pc-testimony-paper__lines">
+            {(transcriptLines.length > 0 ? transcriptLines : [data.quote]).map((line, index) => (
+              <p key={`${line}-${index}`}>
+                <b>{String(index + 1).padStart(2, '0')}</b>
+                <span>{line}</span>
+              </p>
+            ))}
+          </div>
+        </section>
+
+        <footer className="pc-testimony-paper__footer">
+          <span>관련 참조</span>
+          <strong>{data.relatedRef}</strong>
+        </footer>
+      </article>
     </div>
   )
 }
@@ -973,6 +957,37 @@ export function DeviceViewer({ ownerName, sections }: { ownerName: string; secti
   const toggle = useCallback((id: string) => {
     setCollapsed((prev) => ({ ...prev, [id]: !prev[id] }))
   }, [])
+
+  const diarySignal = `${ownerName} ${sections.map((s) => s.title).join(' ')}`
+  const isDiary = /일기|공책|어머니/.test(diarySignal)
+
+  if (isDiary) {
+    return (
+      <div className="pc-diary-viewer">
+        <article className="pc-diary-paper">
+          <header className="pc-diary-paper__header">
+            <div>
+              <span className="pc-diary-paper__label">DIARY NOTEBOOK</span>
+              <strong>{ownerName || '어머니의 공책'}</strong>
+            </div>
+            <span>자필 사본</span>
+          </header>
+          <div className="pc-diary-paper__body">
+            {sections.map((section) => (
+              <section className="pc-diary-entry" key={section.id || section.title}>
+                <h4>{section.title}</h4>
+                {section.items.map((item, i) => (
+                  <p className={`pc-diary-line${item.suspicious ? ' is-suspicious' : ''}`} key={i}>
+                    {item.text}
+                  </p>
+                ))}
+              </section>
+            ))}
+          </div>
+        </article>
+      </div>
+    )
+  }
 
   return (
     <div

@@ -293,9 +293,9 @@
       "defenderParty": "a",
       "defenderLieState": "S3",
       "spoilerLevel": "partial",
-      "previousStatement": "20년 송금은 제 관리와 무관한 소문이라고 일축했습니다.",
+      "previousStatement": "오래된 지원은 제 관리와 무관한 소문이라고 일축했습니다.",
       "currentStatement": "돈이 들어온 사실은 알았지만 출처 확인은 미뤘다고 했습니다.",
-      "judgePursuitLine": "윤태성 씨, 20년 송금 사실을 알고도 숨긴 것입니까?",
+      "judgePursuitLine": "윤태성 씨, 오래된 지원 사실을 알고도 숨긴 것입니까?",
       "defenderReactionLine": "재판장님, 저는 집을 지키려 했습니다. 정후야! 이제 와서 선심 쓴 척하지 마라.",
       "options": {
         "point_out": {
@@ -315,9 +315,9 @@
       "defenderParty": "a",
       "defenderLieState": "S5",
       "spoilerLevel": "full",
-      "previousStatement": "20년 송금과 공장 매각 자금은 제 책임 밖이라고 했습니다.",
+      "previousStatement": "오래된 지원과 공장 매각 자금은 제 책임 밖이라고 했습니다.",
       "currentStatement": "정후의 송금과 공장 매각 돈을 알고도 숨겼다고 인정했습니다.",
-      "judgePursuitLine": "윤태성 씨, 20년 송금과 공장 매각 자금 은폐를 인정합니까?",
+      "judgePursuitLine": "윤태성 씨, 오래된 지원과 공장 매각 자금 은폐를 인정합니까?",
       "defenderReactionLine": "인정합니다, 재판장님. 형으로서 체면이 무너질까 봐 그 돈을 제 공으로 돌렸습니다.",
       "options": {
         "point_out": {
@@ -359,9 +359,9 @@
       "defenderParty": "b",
       "defenderLieState": "S3",
       "spoilerLevel": "partial",
-      "previousStatement": "20년 송금은 가족과 상관없는 개인 정리였다고 했습니다.",
+      "previousStatement": "오래된 지원은 가족과 상관없는 개인 정리였다고 했습니다.",
       "currentStatement": "생활비 일부가 가족에게 향한 건 맞다고 뒤늦게 인정했습니다.",
-      "judgePursuitLine": "윤정후 씨, 20년 송금의 목적 설명이 끝내 바뀌었습니다.",
+      "judgePursuitLine": "윤정후 씨, 오래된 지원의 목적 설명이 끝내 바뀌었습니다.",
       "defenderReactionLine": "재판장님, 자랑하려던 게 아닙니다. 형이 알면 더 미워할까 봐 숨겼습니다.",
       "options": {
         "point_out": {
@@ -381,9 +381,9 @@
       "defenderParty": "b",
       "defenderLieState": "S5",
       "spoilerLevel": "full",
-      "previousStatement": "20년 송금도 공장 매각 돈도 제 몫과 무관하다고 했습니다.",
+      "previousStatement": "오래된 지원도 공장 매각 돈도 제 몫과 무관하다고 했습니다.",
       "currentStatement": "제 돈을 보내고 공장 매각 손실까지 메웠다고 털어놨습니다.",
-      "judgePursuitLine": "윤정후 씨, 20년 송금과 공장 손실 보전을 모두 인정합니까?",
+      "judgePursuitLine": "윤정후 씨, 오래된 지원과 공장 손실 보전을 모두 인정합니까?",
       "defenderReactionLine": "네, 재판장님... 형에게 말하면 모욕이 될까 봐 조용히 메우려 했습니다.",
       "options": {
         "point_out": {

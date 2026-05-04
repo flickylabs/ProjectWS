@@ -1314,7 +1314,7 @@
           "publicOnlySegments": [],
           "mustAvoid": [
             "90:10",
-            "원본 유서"
+            "자필 연습본"
           ],
           "guardContextPolicy": "strictest_segment"
         },
@@ -1327,7 +1327,7 @@
     {
       "id": "family-01-T02",
       "caseId": "family-01",
-      "input": "스캔본 순서와 원본 유서 차이가 60:40 비율을 설명합니까?",
+      "input": "공증본 순서와 자필 연습본 차이가 60:40 비율을 설명합니까?",
       "target": "b",
       "activeDisputeId": "d-2",
       "runtime": {
@@ -1356,7 +1356,7 @@
         "dialogueSpeaker": "b",
         "segments": [
           {
-            "rawSpan": "스캔본 순서",
+            "rawSpan": "공증본 순서",
             "target": "b",
             "knowledgeOwner": "b",
             "disputeId": "d-2",
@@ -1375,7 +1375,7 @@
             "reason": "answerable"
           },
           {
-            "rawSpan": "원본 유서 차이",
+            "rawSpan": "자필 연습본 차이",
             "target": "b",
             "knowledgeOwner": "b",
             "disputeId": "d-2",
@@ -1420,7 +1420,7 @@
     {
       "id": "family-01-T03",
       "caseId": "family-01",
-      "input": "유서 비율, 20년 송금, 출생 비밀이 서로 연결돼 있습니까?",
+      "input": "유서 비율, 오래된 지원, 출생 비밀이 서로 연결돼 있습니까?",
       "target": "b",
       "activeDisputeId": "d-5",
       "runtime": {
@@ -1469,7 +1469,7 @@
             "reason": "answerable"
           },
           {
-            "rawSpan": "20년 송금",
+            "rawSpan": "오래된 지원",
             "target": "b",
             "knowledgeOwner": "b",
             "disputeId": "d-3",
@@ -1593,7 +1593,7 @@
           "publicOnlySegments": [],
           "mustAvoid": [
             "정후 돈",
-            "20년 송금"
+            "오래된 지원"
           ],
           "guardContextPolicy": "strictest_segment"
         },
@@ -2062,7 +2062,7 @@
     {
       "id": "family-01-T11",
       "caseId": "family-01",
-      "input": "공증사무실 스캔 보관본은 왜 두 번 찍혔습니까?",
+      "input": "공증인 메모 기록은 왜 두 번 찍혔습니까?",
       "target": "b",
       "activeDisputeId": "d-2",
       "runtime": {
@@ -2090,7 +2090,7 @@
         "dialogueSpeaker": "b",
         "segments": [
           {
-            "rawSpan": "공증사무실 스캔 보관본은 왜 두 번 찍혔습니까",
+            "rawSpan": "공증인 메모 기록은 왜 두 번 찍혔습니까",
             "target": "b",
             "knowledgeOwner": "b",
             "disputeId": "d-2",
@@ -2347,7 +2347,7 @@
     {
       "id": "family-01-T15",
       "caseId": "family-01",
-      "input": "윤정후 씨, 김영수 직원이 본 마지막 제출자가 누군지 말할 수 있습니까?",
+      "input": "윤정후 씨, 김영수 직원이 본 문서에 손댄 사람이 누군지 말할 수 있습니까?",
       "target": "b",
       "activeDisputeId": "d-2",
       "runtime": {
@@ -2375,7 +2375,7 @@
         "dialogueSpeaker": "b",
         "segments": [
           {
-            "rawSpan": "김영수 직원이 본 마지막 제출자가 누군지",
+            "rawSpan": "김영수 직원이 본 문서에 손댄 사람이 누군지",
             "target": "b",
             "knowledgeOwner": "witness",
             "disputeId": "d-2",
