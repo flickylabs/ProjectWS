@@ -14,7 +14,7 @@ import {
   type PcCombinationPanelEventDetail,
   type PcPinnedNote,
 } from '../pc/panels/PCImportantNotesSection'
-import { playCombinationSuccess } from '../../engine/soundEngine'
+import { playCombinationFailure, playCombinationSuccess } from '../../engine/soundEngine'
 import { cleanOutputLabel, cleanOutputSummary } from '../../utils/combinationLabels'
 
 function normalizeInputs(ids: string[]): string[] {
@@ -233,6 +233,7 @@ export default function CombinationLabPanel() {
     if (!matchingRecipe || !matchingOutput) return
     const result = store.runCombinationRecipe(matchingRecipe.id)
     if (!result.ok) {
+      playCombinationFailure()
       const reason =
         result.reason === 'output_already_discovered' ? '이미 기록된 결론입니다. 다른 조합을 시도해 주세요.' :
         result.reason === 'recipe_locked' ? '지금은 이 조합을 실행할 수 없습니다.' :

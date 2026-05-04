@@ -7,14 +7,29 @@ summary: Interrogation-heavy d-1 route from S0 through question pressure and har
 
 ## 1. judge_question
 
-action: `{"type":"judge_question","target":"b","subAction":"fact_pursuit","disputeId":"d-1","questionType":"fact_pursuit"}`
+### Player
 
-- judge [judge_question/scripted] src/data/scriptedText/family-01.json:channels.judge_question.entries[key=d-1|fact_pursuit|1].variants[id=judgeq-d-1-fact_pursuit-1-v1]
+- judge [judge_question]
   윤정후 씨, 유서가 작성되던 무렵 어머니를 얼마나 자주 찾아뵈었는지부터 말씀해 주십시오.
-- b [interrogation/scripted] src/data/scriptedText/family-01.json:channels.interrogation.entries[key=b|d-1|S0|fact_pursuit].variants[id=b-d-1-S0-fact-pursuit-v1]
+- b [interrogation]
   어머니 보러 간 게 무슨 잘못입니까. 그게 전부입니다.
 
+### QA Annotations
+
+action: `{"type":"judge_question","target":"b","subAction":"fact_pursuit","disputeId":"d-1","questionType":"fact_pursuit"}`
+
+- none
+
 ## 2. judge_question
+
+### Player
+
+- judge [judge_question]
+  윤정후 씨, 어머니께 유서 내용을 읽어드린 횟수와 그 이유는 무엇입니까.
+- b [interrogation]
+  어머니 보러 간 게 무슨 잘못입니까. 그게 전부입니다.
+
+### QA Annotations
 
 action: `{"type":"judge_question","target":"b","subAction":"fact_pursuit","disputeId":"d-1","questionType":"fact_pursuit"}`
 
@@ -36,12 +51,18 @@ stateDelta:
 }
 ```
 
-- judge [judge_question/scripted] src/data/scriptedText/family-01.json:channels.judge_question.entries[key=d-1|fact_pursuit|2].variants[id=judgeq-d-1-fact_pursuit-2-v1]
-  윤정후 씨, 어머니께 유서 내용을 읽어드린 횟수와 그 이유는 무엇입니까.
-- b [interrogation/scripted] src/data/scriptedText/family-01.json:channels.interrogation.entries[key=b|d-1|S0|fact_pursuit].variants[id=b-d-1-S0-fact-pursuit-v1]
-  어머니 보러 간 게 무슨 잘못입니까. 그게 전부입니다.
+- none
 
 ## 3. judge_question
+
+### Player
+
+- judge [judge_question]
+  윤정후 씨, 그 방문과 설명을 윤태성 씨에게 자연스럽게 말하지 못한 이유가 있었습니까.
+- b [interrogation]
+  어머니 몸이 나빠지시니 더 자주 간 겁니다. 다른 뜻은 없었습니다.
+
+### QA Annotations
 
 action: `{"type":"judge_question","target":"b","subAction":"motive_search","disputeId":"d-1","questionType":"motive_search"}`
 
@@ -63,12 +84,18 @@ stateDelta:
 }
 ```
 
-- judge [judge_question/scripted] src/data/scriptedText/family-01.json:channels.judge_question.entries[key=d-1|motive_search|1].variants[id=judgeq-d-1-motive_search-1-v1]
-  윤정후 씨, 그 방문과 설명을 윤태성 씨에게 자연스럽게 말하지 못한 이유가 있었습니까.
-- b [interrogation/scripted] src/data/scriptedText/family-01.json:channels.interrogation.entries[key=b|d-1|S1|motive_search].variants[id=b-d-1-S1-motive-search-v1]
-  어머니 몸이 나빠지시니 더 자주 간 겁니다. 다른 뜻은 없었습니다.
+- none
 
 ## 4. evidence_present
+
+### Player
+
+- system [system_message]
+  증거 제시: 요양원 방문기록 [Hard]
+- b [evidence_present]
+  어머니 상태가 안 좋으셔서 더 자주 갔습니다. 담당이 바뀐 일과는 나눠서 봐 주셨으면 합니다.
+
+### QA Annotations
 
 action: `{"type":"evidence_present","target":"b","evidenceId":"e-2","disputeId":"d-1"}`
 
@@ -106,12 +133,16 @@ stateDelta:
 }
 ```
 
-- system [system_message/runtime_system] src/hooks/useActionDispatch.ts:getEvidenceDisplayName:e-2
-  증거 제시: 요양원 방문기록 [Hard]
-- b [evidence_present/scripted] src/data/scriptedText/family-01.json:channels.evidence_present.entries[key=b|e-2|mid|self].variants[id=b-e-2-mid-self-v1]
-  어머니 상태가 안 좋으셔서 더 자주 갔습니다. 담당이 바뀐 일과는 나눠서 봐 주셨으면 합니다.
+- none
 
 ## 5. contradiction_pursuit
+
+### Player
+
+- b [contradiction_pursuit]
+  재판관님, 서두른 건 맞습니다. 그렇다고 형을 빼려던 의도만 있었던 건 아닙니다. 상대 쪽 책임도 남아 있습니다.
+
+### QA Annotations
 
 action: `{"type":"contradiction_pursuit","target":"b","disputeId":"d-1","transitionTrigger":"empathy_question"}`
 
@@ -133,6 +164,5 @@ stateDelta:
 }
 ```
 
-- b [contradiction_pursuit/scripted] src/data/scriptedText/family-01.json:channels.contradiction_pursuit.entries[key=b|d-1|S3].variants[id=contra-b-d-1-S3-v1]
-  재판관님, 서두른 건 맞습니다. 그렇다고 형을 빼려던 의도만 있었던 건 아닙니다. 상대 쪽 책임도 남아 있습니다.
+- none
 

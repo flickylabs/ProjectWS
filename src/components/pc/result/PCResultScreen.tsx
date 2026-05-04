@@ -110,6 +110,76 @@ function getFindingLabel(value: 'true' | 'false' | 'pending' | undefined, truth:
   return '미판단'
 }
 
+type ResultEvidenceStateMap = Record<string, { presented?: boolean; unlocked?: boolean } | undefined>
+
+function formatSolutionLabel(solution: string): string {
+  const raw = solution.includes('::') ? solution.slice(solution.indexOf('::') + 2) : solution
+  return raw.replace(/\s+/g, ' ').trim()
+}
+
+function getResolutionItems(verdictInput: VerdictInput, summary?: { resolution?: string } | null): string[] {
+  const selected = verdictInput.selectedSolutions
+    .map(formatSolutionLabel)
+    .filter(Boolean)
+
+  if (selected.length > 0) return selected
+
+  const fallback = summary?.resolution?.trim()
+  if (!fallback) return []
+
+  return fallback
+    .split(/\n+|[;；]/)
+    .map((item) => item.replace(/^[-•]\s*/, '').trim())
+    .filter(Boolean)
+}
+
+function getDisputeEvidenceNames(
+  caseData: CaseData,
+  evidenceStates: ResultEvidenceStateMap,
+  requiredEvidence?: string[],
+): string[] {
+  const evidenceById = new Map(caseData.evidence.map((e) => [e.id, e]))
+  const candidates = (requiredEvidence ?? [])
+    .map((id) => evidenceById.get(id))
+    .filter((e): e is NonNullable<typeof e> => Boolean(e))
+
+  const surfaced = candidates.filter((e) => {
+    const state = evidenceStates[e.id]
+    return state?.presented || state?.unlocked
+  })
+
+  const source = surfaced.length > 0 ? surfaced : candidates
+  return source
+    .map((e) => e.name)
+    .filter(Boolean)
+    .slice(0, 3)
+}
+
+function buildDisputeMomentLine(
+  caseData: CaseData,
+  evidenceStates: ResultEvidenceStateMap,
+  verdictInput: VerdictInput,
+  dispute: CaseData['disputes'][number],
+): string {
+  const finding = verdictInput.factFindings[dispute.id]
+  const evidenceNames = getDisputeEvidenceNames(caseData, evidenceStates, dispute.requiredEvidence)
+  const evidenceText = evidenceNames.length > 0
+    ? `${evidenceNames.join(', ')}${evidenceNames.length >= 3 ? ' 등 관련 자료를' : ' 자료를'}`
+    : '제출된 기록과 진술을'
+  const statement = dispute.judgmentStatement || dispute.truthDescription || '핵심 사실관계'
+
+  if (!finding || finding === 'pending') {
+    return `${dispute.name}: ${evidenceText} 검토했지만, 판결에서 확정할 만큼의 사실관계는 아직 보류했습니다.`
+  }
+
+  const correct = (finding === 'true') === dispute.truth
+  if (correct) {
+    return `${dispute.name}: ${evidenceText} 대조해 ${statement} 쪽으로 사실관계를 정리했습니다.`
+  }
+
+  return `${dispute.name}: ${evidenceText} 검토했으나, 기록과 진술의 연결이 충분히 맞물리지 않아 불안정한 판단으로 남았습니다.`
+}
+
 function getProfileDescription(titleId: string): string {
   const descriptions: Record<string, string> = {
     cold_judge: '증거와 논리를 중시하며, 엄격한 기준으로 공정한 판결을 내리는 타입입니다.',
@@ -704,27 +774,10 @@ export default function PCResultScreen() {
             {/* ━━━ 판결 선고 탭 ━━━ */}
             {tab === 'verdict_pronounce' ? (() => {
               const avgA = verdictSummary ? verdictSummary.responsibility.percentA : 50
-              const disputeMomentLines = visibleDisputes.map((d) => {
-                const finding = verdictInput.factFindings[d.id]
-                const responsibility = verdictInput.responsibility[d.id]
-                const correct = finding === 'pending'
-                  ? null
-                  : (finding === 'true') === d.truth
-                const factLabel = correct === true
-                  ? '핵심 사실 인정'
-                  : correct === false
-                    ? '판단 불안정'
-                    : '판단 보류'
-                const respLabel = responsibility
-                  ? `${caseData.duo.partyA.name} ${responsibility.a}% · ${caseData.duo.partyB.name} ${responsibility.b}%`
-                  : '책임 배분 미기록'
-                return `${d.name}: ${factLabel} / ${respLabel}`
-              })
-              const resolutionSentences = verdictSummary?.resolution
-                .split(/[.。]\s*/)
-                .map((s: string) => s.trim().replace(/^,\s*/, '').trim())
-                .filter((s: string) => s)
-                ?? []
+              const disputeMomentLines = visibleDisputes.map((d) =>
+                buildDisputeMomentLine(caseData, evidenceStates, verdictInput, d),
+              )
+              const resolutionItems = getResolutionItems(verdictInput, verdictSummary)
               return (
               <div className="pc-result-text">
                 {/* 상단 선고문 */}
@@ -772,21 +825,13 @@ export default function PCResultScreen() {
                       {/* 우측 — 2영역 */}
                       <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
                         {/* 결정적 순간 */}
-                        <div className="pc-result-summary__section" style={{ margin: 0 }}>
+                        <div className="pc-result-summary__section pc-result-summary__section--compact" style={{ margin: 0 }}>
                           <h3>결정적 순간</h3>
-                          <p>{verdictSummary.keyMoment}</p>
+                          <p className="pc-result-key-moments__intro">각 쟁점에서 확인된 기록과 진술을 기준으로 판결의 전환점을 정리했습니다.</p>
                           {disputeMomentLines.length > 0 ? (
-                            <ul style={{ margin: '10px 0 0', padding: 0, listStyle: 'none', display: 'grid', gap: 6 }}>
+                            <ul className="pc-result-key-moments__list">
                               {disputeMomentLines.map((line, idx) => (
-                                <li key={idx} style={{
-                                  padding: '8px 10px',
-                                  borderRadius: 8,
-                                  border: '1px solid rgba(212,162,78,0.12)',
-                                  background: 'rgba(212,162,78,0.035)',
-                                  color: '#b8b2a4',
-                                  fontSize: 12.5,
-                                  lineHeight: 1.45,
-                                }}>
+                                <li key={idx} className="pc-result-key-moments__item">
                                   {line}
                                 </li>
                               ))}
@@ -794,16 +839,12 @@ export default function PCResultScreen() {
                           ) : null}
                         </div>
                         {/* 해결 방향 — 스크롤 영역 */}
-                        <div className="pc-result-summary__section" style={{ margin: 0 }}>
+                        <div className="pc-result-summary__section pc-result-summary__section--compact" style={{ margin: 0 }}>
                           <h3>해결 방향</h3>
-                          <div style={{ maxHeight: 245, overflowY: 'auto', display: 'grid', gridTemplateColumns: 'repeat(2, minmax(0, 1fr))', gap: 8 }}>
-                            {resolutionSentences.map((sentence: string, i: number) => (
-                              <div key={i} style={{
-                                padding: '10px 14px', borderRadius: 8,
-                                border: '1px solid rgba(255,255,255,0.06)', background: 'rgba(255,255,255,0.02)',
-                                fontSize: 13, color: '#a8a8b4', lineHeight: 1.5,
-                              }}>
-                                {sentence}.
+                          <div className="pc-result-resolution__list">
+                            {resolutionItems.map((item: string, i: number) => (
+                              <div key={i} className="pc-result-resolution__item">
+                                {item}
                               </div>
                             ))}
                           </div>
@@ -1171,26 +1212,19 @@ function AftermathInline() {
     ? ensureAftermathShape(caseData, verdictInput, verdictScore.total, aftermath)
     : aftermath
 
-  const cleaned = removeAftermathLessonLabels(shapedAftermath)
-  const allParas = cleaned.split('\n\n').filter(p => p.trim())
-  // 본문 3문단(흰색) + 마지막 1문장(노란색 따옴표)
-  const lesson = allParas.length >= 4 ? allParas[allParas.length - 1] : null
-  const bodyParas = (lesson ? allParas.slice(0, -1) : allParas).slice(0, 3)
+  const { bodyParas, lesson } = splitAftermathDisplay(shapedAftermath)
 
   return (
-    <>
+    <div className="pc-result-aftermath">
       {bodyParas.map((para, i) => (
-        <p key={i} style={{ fontSize: 15, lineHeight: 1.9, color: '#e8e5dc' }}>{para}</p>
+        <p key={i} className="pc-result-aftermath__para">{para}</p>
       ))}
-      {lesson && (() => {
-        const text = normalizeAftermathLesson(lesson)
-        return (
-          <p style={{ fontSize: 16, lineHeight: 1.8, color: 'var(--pc-gold-light, #e8c172)', textAlign: 'center', fontWeight: 600, marginTop: 10, fontStyle: 'italic' }}>
-            &ldquo;{text}&rdquo;
-          </p>
-        )
-      })()}
-    </>
+      {lesson ? (
+        <p className="pc-result-aftermath__lesson">
+          &ldquo;{lesson}&rdquo;
+        </p>
+      ) : null}
+    </div>
   )
 }
 
@@ -1227,6 +1261,35 @@ function normalizeAftermathLesson(text: string): string {
   return normalizeNarrativePunctuation(removeAftermathLessonLabels(text)
     .trim()
     .replace(/^[\s"“”'‘’`—-]+|[\s"“”'‘’`]+$/g, ''))
+}
+
+function splitAftermathDisplay(text: string): { bodyParas: string[]; lesson: string | null } {
+  const cleaned = removeAftermathLessonLabels(text)
+  const paragraphs = splitAftermathParagraphs(cleaned)
+
+  if (paragraphs.length === 0) return { bodyParas: [], lesson: null }
+
+  const last = paragraphs[paragraphs.length - 1]
+  const quotedLesson = last.match(/["“‘「]([^"”’」]{8,120})["”’」]\s*$/)
+  if (quotedLesson) {
+    const quoteText = quotedLesson[0]
+    const lesson = normalizeAftermathLesson(quoteText)
+    const lastBody = normalizeNarrativePunctuation(last.slice(0, last.length - quoteText.length).trim())
+    const bodyParas = [
+      ...paragraphs.slice(0, -1),
+      ...(lastBody ? [lastBody] : []),
+    ].slice(0, 3)
+    return { bodyParas, lesson }
+  }
+
+  if (paragraphs.length >= 4) {
+    return {
+      bodyParas: paragraphs.slice(0, -1).slice(0, 3),
+      lesson: normalizeAftermathLesson(paragraphs[paragraphs.length - 1]),
+    }
+  }
+
+  return { bodyParas: paragraphs.slice(0, 3), lesson: null }
 }
 
 function ensureAftermathShape(caseData: CaseData, verdictInput: VerdictInput, total: number, text: string): string {

@@ -12,40 +12,46 @@ import PCSvgIcon from '../pc/icons/PCSvgIcon'
 import type { PlayerAction } from '../../types'
 
 type MediationPath = 'immediate' | 'conditional' | 'postpone' | 'fact_first'
+type MediationPathInfo = { label: string; iconId: string; desc: string; impact: string; judge: string }
 
 type MediationScriptState = {
   caseKey: string
   bundle: MediationScriptBundle | null
 }
 
-const PATH_LABELS: Record<MediationPath, { label: string; iconId: string; desc: string; judge: string }> = {
+const PATH_LABELS: Record<MediationPath, MediationPathInfo> = {
   immediate: {
-    label: '판결 선고',
+    label: '바로 판결 선고',
     iconId: 'i-scale',
-    desc: '현재 확인된 기록을 기준으로 판결문을 선고합니다.',
+    desc: '현재 확인된 기록을 기준으로 최종 판결문 작성 단계로 들어갑니다.',
+    impact: '빠른 결론을 중시합니다. 미확정 쟁점은 판결 안정성 리스크로 남습니다.',
     judge: '쟁점은 충분히 드러났습니다. 더 지체하지 않고 지금 판결의 기준을 세우겠습니다.',
   },
   conditional: {
-    label: '조건부 조정안',
+    label: '조건 붙여 조정',
     iconId: 'i-heart',
-    desc: '서로 받아들일 조건을 묶어 실질적인 조정안을 제시합니다.',
+    desc: '책임 판단과 함께 사과, 상환, 접촉 제한 같은 실행 조건을 묶습니다.',
+    impact: '관계 회복과 실행 가능성을 중시합니다. 일방 처분보다 상호 조건을 평가합니다.',
     judge: '지금은 누가 얼마나 책임을 지는지만 정하면 끝나지 않습니다. 서로 받아들일 조건까지 묶어 합의 가능한 선을 확인하겠습니다.',
   },
   postpone: {
-    label: '일부 판단 보류',
+    label: '미확정 쟁점 보류',
     iconId: 'i-doc',
-    desc: '확정 가능한 부분만 정리하고, 남은 쟁점은 판단을 보류합니다.',
+    desc: '확실히 인정 가능한 부분만 판단하고, 부족한 쟁점은 보류로 남깁니다.',
+    impact: '무리한 단정을 피합니다. 대신 판결의 완결성은 낮아질 수 있습니다.',
     judge: '성급한 결론을 서두르면 남은 상처가 더 커질 수 있습니다. 오늘 확정할 사실과 아직 다룰 쟁점을 나누어 판단하겠습니다.',
   },
   fact_first: {
-    label: '사실 먼저 정리',
+    label: '사실관계 먼저 확정',
     iconId: 'i-search',
-    desc: '감정과 해법을 앞세우기 전에 사실관계부터 고정합니다.',
+    desc: '책임 비율이나 해결책보다, 기록으로 인정 가능한 사실 범위를 먼저 고정합니다.',
+    impact: '정확도와 기록성을 중시합니다. 감정 봉합이나 처분은 보수적으로 평가됩니다.',
     judge: '감정과 해법을 먼저 앞세우면 판단이 흐려집니다. 사실관계부터 분명히 고정한 뒤 책임과 해결책을 보겠습니다.',
   },
 }
 
 export default function Phase6_Mediation() {
+  const [entryConfirmed, setEntryConfirmed] = useState(false)
   const [selectedPath, setSelectedPath] = useState<MediationPath | null>(null)
   const [loading, setLoading] = useState(false)
   const [showVerdictWarning, setShowVerdictWarning] = useState(false)
@@ -194,13 +200,54 @@ export default function Phase6_Mediation() {
     if (path === 'immediate') advancePhase(Phase.Verdict)
   }
 
+  if (!entryConfirmed) {
+    return (
+      <div className="pc-mediation pc-mediation--entry">
+        <section className="pc-mediation-entry" role="dialog" aria-modal="true" aria-labelledby="pc-mediation-entry-title">
+          <div className="pc-mediation-entry__mark" aria-hidden="true">
+            <PCSvgIcon id="i-scale" size={30} />
+          </div>
+          <div className="pc-mediation-entry__eyebrow">PHASE 3 · PRE-VERDICT REVIEW</div>
+          <h2 id="pc-mediation-entry-title">판결 전 검토로 들어가시겠습니까?</h2>
+          <p>
+            지금부터는 심문을 이어갈지, 현재 기록을 닫고 판결 준비에 들어갈지 결정합니다.
+            판결 전 검토에 들어가도 부족한 쟁점이 있으면 다시 심리로 돌아갈 수 있습니다.
+          </p>
+          {hasUnresolved ? (
+            <div className="pc-mediation-entry__warning">
+              <strong>아직 확정되지 않은 쟁점이 있습니다.</strong>
+              <span>
+                {unresolvedNames.join(', ')}
+                {unresolvedDisputes.length > unresolvedNames.length ? ' 외' : ''}
+                {' '}쟁점이 남아 있습니다. 그대로 진행하면 판결 안정성이 낮아질 수 있습니다.
+              </span>
+            </div>
+          ) : (
+            <div className="pc-mediation-entry__ready">
+              <strong>현재 기록으로 판결 검토에 들어갈 수 있습니다.</strong>
+              <span>그래도 추가로 확인하고 싶은 증거나 진술이 있다면 심문을 계속할 수 있습니다.</span>
+            </div>
+          )}
+          <div className="pc-mediation-entry__actions">
+            <button type="button" className="pc-mediation-entry__secondary" onClick={() => setPhase(Phase.Interrogation)}>
+              추가 심리하기
+            </button>
+            <button type="button" className="pc-mediation-entry__primary" onClick={() => setEntryConfirmed(true)}>
+              판결 전 검토 시작
+            </button>
+          </div>
+        </section>
+      </div>
+    )
+  }
+
   return (
     <div className="pc-mediation">
       <section className="pc-mediation__card" role="dialog" aria-modal="true" aria-labelledby="pc-mediation-title">
         <div className="pc-mediation__header">
           <PCSvgIcon id="i-scale" size={18} />
           <span className="pc-mediation__title" id="pc-mediation-title">판결 전 검토</span>
-          <span className="pc-mediation__subtitle">바로 선고할지, 더 심리할지 결정하세요.</span>
+          <span className="pc-mediation__subtitle">판결의 태도를 먼저 정한 뒤 판결문 작성으로 이동합니다.</span>
         </div>
         <div className="pc-mediation__review">
           <strong>{hasUnresolved ? '아직 확인되지 않은 쟁점이 남아 있습니다.' : '모든 쟁점이 판결 가능한 상태입니다.'}</strong>
@@ -239,6 +286,7 @@ export default function Phase6_Mediation() {
                 <span className="pc-mediation__option-body">
                   <span className="pc-mediation__option-label">{item.label}</span>
                   <span className="pc-mediation__option-desc">{item.desc}</span>
+                  <span className="pc-mediation__option-impact">{item.impact}</span>
                 </span>
               </button>
             ))}

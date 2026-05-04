@@ -1,4 +1,4 @@
-﻿{
+{
   "caseId": "spouse-01",
   "sourceCaseId": "case-spouse-01",
   "schemaVersion": "tier1-disclosure-policy-draft-v1",
@@ -182,7 +182,7 @@
         ]
       },
       "h-d3": {
-        "surface": "공동 적금 3,000만원 해지",
+        "surface": "공동 적금 2,000만원 해지",
         "truth": "박지연의 위임장 조작과 투자 사기 손실",
         "protectedSurface": "공동 적금 해지 경위",
         "truthLexemes": [
@@ -1277,7 +1277,7 @@
         ]
       },
       "h-d3": {
-        "title": "공동 적금 3,000만원 해지",
+        "title": "공동 적금 2,000만원 해지",
         "draftCompleteness": "sample-complete",
         "statementFracture": [
           "박지연은 남편의 배신에 반응했을 뿐이라고 말하지만, 공동 적금 서류는 박지연의 독립된 실행을 보여준다.",
@@ -1469,7 +1469,7 @@
             "stage": 4,
             "name": "조작과 손실 확정",
             "surfaceClaim": "공동 적금 문제는 부부 불신만이 아니라 서류 위반과 손실을 포함한다.",
-            "hiddenTruth": "박지연은 위임장을 조작하거나 악용해 공동 적금 3,000만원을 해지했고, 그중 2,000만원을 투자방에 송금했다가 사기로 잃었다.",
+            "hiddenTruth": "박지연은 위임장을 조작하거나 악용해 공동 적금 2,000만원을 해지했고, 전액을 투자방에 송금했다가 사기로 잃었다.",
             "entryConditions": [
               "partyA lieState >= S5 또는 h-d3 challenge success",
               "e-6 Original/Context와 e-7 Original/Context 확인",

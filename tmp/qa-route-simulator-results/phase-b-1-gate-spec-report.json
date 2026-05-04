@@ -18,16 +18,22 @@
     "actions": 64,
     "evidenceInvestigateActions": 9,
     "responseMissingFindings": 0,
+    "responseMissingDetectorRecords": 8,
     "evidenceInvestigateNoNpcFollowupFindings": 9,
+    "qaAnnotationOnlyActionFindings": 6,
+    "systemOnlyActionNoNpcFollowupFindings": 2,
     "legacyRouteSpotCompare": {
       "source": "tmp/qa-codex-spouse-01-p0-patch-results/20260427-phase-a-audit.md",
       "phaseAReference": "routes=3, actions=10, findings=3, hard=3; QARG-0003 is evidence_investigate system-only response_missing",
-      "phaseB3Result": "evidence_investigate remains system-only and is reclassified from P0 response_missing to P1 evidence_investigate_no_npc_followup under Gate option ii",
+      "phaseB3Result": "evidence_investigate remains system-only and is reclassified from P0 response_missing to observability evidence_investigate_no_npc_followup under Gate option ii",
       "note": "The legacy runner was not executed here because it writes to tmp/qa-runtime-gate-results; Phase B output is kept isolated."
     }
   },
   "reclassify": {
-    "B1_QARS_0001": "P0 response_missing -> P1 evidence_investigate_no_npc_followup"
+    "B1_QARS_0001": "P0 response_missing -> observability evidence_investigate_no_npc_followup",
+    "S7_witness_summon": "P0 response_missing -> observability system_only_action_no_npc_followup",
+    "S7_discovery_event": "P0 response_missing -> observability qa_annotation_only_action",
+    "S7_emergence_event": "P0 response_missing -> observability qa_annotation_only_action"
   },
   "gateSpecOptions": [
     {
@@ -46,7 +52,7 @@
       "dataChanges": "none",
       "runtimeImpact": "none",
       "uxFit": "strong - evidence investigation remains an information-acquisition action; follow-up NPC speech happens through a later explicit judge_question",
-      "recommendation": "Recommended. Reclassify the current P0 response_missing to a P1 informational evidence_investigate_no_npc_followup detector."
+      "recommendation": "Recommended. Reclassify the current P0 response_missing to an observability evidence_investigate_no_npc_followup detector."
     },
     {
       "id": "iii",
@@ -58,5 +64,5 @@
       "recommendation": "Only choose as a separate Phase B-6/data-runtime track after user approval."
     }
   ],
-  "ctRecommendation": "Choose option ii for Phase B-3: keep runtime evidence investigation system-only, remove evidence_investigate from response-required, and emit a P1 informational evidence_investigate_no_npc_followup detector. Options i/iii require separate Phase B-6 approval because they change data/runtime behavior."
+  "ctRecommendation": "Choose option ii for Phase B-3: keep runtime evidence investigation system-only, remove evidence_investigate from response-required, and emit an observability evidence_investigate_no_npc_followup detector. Options i/iii require separate Phase B-6 approval because they change data/runtime behavior."
 }

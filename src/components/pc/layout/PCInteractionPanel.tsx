@@ -281,7 +281,7 @@ function getEvidencePresentDisabledReason(
 
 function getInvestigationTokenCostForStage(stage: number): number {
   if (stage <= 1) return 0
-  return stage === 2 ? 2 : 1
+  return stage === 2 ? 1 : 2
 }
 
 export function buildEvidenceSelectionPayload(disputeId: string, party: PartyId): PcInteractionPayload | null {
@@ -911,7 +911,7 @@ function EvidenceDetailSection({ evidenceId, onClose }: { evidenceId: string; on
     dispatch({ type: 'evidence_investigate', evidenceId, subAction: revealKey } as any)
   }
 
-  // 첫 조사(0→1)는 무료 열람, 2·3회차는 토큰 1 소비
+  // 조사 토큰: 1단계 0개, 2단계 1개, 3단계 2개
   const currentStage = getEvidenceInvestigationStage(state)
 
   const nameA = caseData.duo.partyA.name

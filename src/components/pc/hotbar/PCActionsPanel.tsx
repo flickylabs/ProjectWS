@@ -8,6 +8,7 @@ import { GamePhase, Phase, type PartyId, type QuestionType, type SkillType, type
 import EvidencePresenter from '../../actions/EvidencePresenter'
 import QuestionSelector, { type QuestionToggles } from '../../actions/QuestionSelector'
 import PCSvgIcon from '../icons/PCSvgIcon'
+import { playInvestigationTokenWarning } from '../../../engine/soundEngine'
 
 export type PCHotbarPanelView = 'question' | 'evidence' | 'special'
 
@@ -153,7 +154,10 @@ export default function PCActionsPanel({
 
   const handleFreeResult = (result: FreeQuestionResult, party: PartyId, text: string) => {
     const state = useGameStore.getState()
-    state.spend('investigationTokens', 1)
+    if (!state.spend('investigationTokens', 1)) {
+      playInvestigationTokenWarning()
+      return
+    }
     state.addDialogue({
       speaker: 'judge',
       text,

@@ -2,7 +2,7 @@
 
 - routes: 4
 - actions: 20
-- findings: 2
+- findings: 9
 - hard findings: 0
 
 ## Routes
@@ -12,5 +12,12 @@
 - phase5-branching-d5-late [branching]: Late branching route that uses e-7, dossier questioning, and witness confirmation for d-5.
 
 ## Findings
-- QARS-0001 [P1/evidence_investigate_no_npc_followup] evidence_investigate ended as a system-only discovery action with no automatic NPC follow-up.
-- QARS-0002 [P1/evidence_investigate_no_npc_followup] evidence_investigate ended as a system-only discovery action with no automatic NPC follow-up.
+- QARS-0001 [P2/safe_fallback_used] Safe fallback used for evidence_combine.
+- QARS-0002 [observability/evidence_investigate_no_npc_followup] evidence_investigate ended as a system-only discovery action with no automatic NPC follow-up.
+- QARS-0003 [P2/safe_fallback_used] Safe fallback used for witness_summon.
+- QARS-0004 [observability/evidence_investigate_no_npc_followup] evidence_investigate ended as a system-only discovery action with no automatic NPC follow-up.
+- QARS-0005 [P2/safe_fallback_used] Safe fallback used for evidence_combine.
+- QARS-0006 [observability/qa_annotation_only_action] emergence_event produced only QA-annotation output; no player-facing NPC response is required.
+- QARS-0007 [P2/safe_fallback_used] Safe fallback used for witness_question.
+- QARS-0008 [P2/safe_fallback_used] Safe fallback used for witness_question.
+- QARS-0009 [observability/qa_annotation_only_action] discovery_event produced only QA-annotation output; no player-facing NPC response is required.

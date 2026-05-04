@@ -7,6 +7,15 @@ summary: Cascading d-3 route that opens a further hidden dispute through combina
 
 ## 1. evidence_present
 
+### Player
+
+- system [system_message]
+  증거 제시: 오래된 계좌 흐름 [Hard]
+- b [evidence_present]
+  어머니 통장을 거쳐 보냈습니다. 제 형이 모르게 해 달라고 하셔서 그렇게 했습니다.
+
+### QA Annotations
+
 action: `{"type":"evidence_present","target":"b","evidenceId":"e-6","disputeId":"d-3"}`
 
 stateDelta:
@@ -88,12 +97,16 @@ stateDelta:
 }
 ```
 
-- system [system_message/runtime_system] src/hooks/useActionDispatch.ts:getEvidenceDisplayName:e-6
-  증거 제시: 오래된 계좌 흐름 [Hard]
-- b [evidence_present/scripted] src/data/scriptedText/family-01.json:channels.evidence_present.entries[key=b|e-6|mid|self].variants[id=b-e-6-mid-self-v1]
-  어머니 통장을 거쳐 보냈습니다. 제 형이 모르게 해 달라고 하셔서 그렇게 했습니다.
+- none
 
 ## 2. evidence_investigate
+
+### Player
+
+- system [evidence_discovery]
+  A의 공장 부도 시점에 B의 특별 입금과 어머니 통장에서 A 쪽으로 나간 큰돈이 맞물린다.
+
+### QA Annotations
 
 action: `{"type":"evidence_investigate","target":"b","evidenceId":"e-6","subAction":"check_metadata"}`
 
@@ -124,43 +137,30 @@ stateDelta:
 }
 ```
 
-- system [evidence_discovery/runtime_system] src/data/cases/generated/family-01.json:evidence.e-6.investigationResults.check_metadata
-  A의 공장 부도 시점에 B의 특별 입금과 어머니 통장에서 A 쪽으로 나간 큰돈이 맞물린다.
-findings: QARS-0002
+- none
+findings: QARS-0004
 
 ## 3. evidence_combine
 
+### Player
+
+- none
+
+### QA Annotations
+
 action: `{"type":"evidence_combine","target":"b","recipeId":"combine-3","inputs":["e-5","e-6"]}`
 
-stateDelta:
-```json
-{
-  "lieStates": [],
-  "evidence": [],
-  "disputes": [
-    {
-      "disputeId": "d-3",
-      "from": "hidden",
-      "to": "visible",
-      "via": "combine-3"
-    }
-  ],
-  "dossier": [
-    {
-      "dossierId": "dc-2",
-      "to": true
-    }
-  ],
-  "witnesses": []
-}
-```
-
-- system [evidence_combine/runtime_system] src/data/cases/generated/family-01.json:combinationLab.recipes[id=combine-3].discoveryText
-  어머니가 90을 남기려 한 이유가 보인다. 20년간 생활비를 대고 형의 부도까지 막아준 것이 윤정후였다.
-- witness [evidence_combine/route_simulator_facsimile] src/data/cases/generated/family-01.json:combinationLab.outputs[id=dc-2]
-  Analysis note dc-2 is ready for follow-up.
+- system [evidence_combine/route_simulator_runtime_gate] src/data/cases/generated/family-01.json:combinationLab.recipes[id=combine-3]
+  Evidence combination skipped by runtime parity gate: combine-3; not fully investigated=e-5, e-6
+findings: QARS-0005
 
 ## 4. emergence_event
+
+### Player
+
+- none
+
+### QA Annotations
 
 action: `{"type":"emergence_event","eventId":"family-d4-open","target":"b","disputeId":"d-4","unlockDisputes":["d-4"],"text":"Emergence event opened d-4 after the transfer record route."}`
 
@@ -184,15 +184,29 @@ stateDelta:
 
 - witness [emergence_event/route_simulator_facsimile] tmp/qa-route-simulator-manifests/family-01.json:emergence_event.family-d4-open
   Emergence event opened d-4 after the transfer record route.
+findings: QARS-0006
 
 ## 5. dossier
 
-action: `{"type":"dossier","target":"b","dossierId":"dc-2","questionId":"dc-2.b.q1"}`
+### Player
 
-- b [dossier/scripted] src/data/scriptedText/family-01.json:channels.dossier.entries[key=dc-2.b.q1|mid].variants[id=dc-2-b-q1-mid-v1]
+- b [dossier]
   원본에서는 제 몫이 훨씬 컸고, 최종본에서는 제가 제 몫을 낮췄습니다. 그 판단은 제가 했습니다. 형이 원본을 견디지 못할 거라 봤습니다.
 
+### QA Annotations
+
+action: `{"type":"dossier","target":"b","dossierId":"dc-2","questionId":"dc-2.b.q1"}`
+
+- none
+
 ## 6. contradiction_pursuit
+
+### Player
+
+- b [contradiction_pursuit]
+  재판관님, 20년 송금 일부는 제 돈이었습니다. 형이 알면 더 버티기 어려울까 숨겼습니다.
+
+### QA Annotations
 
 action: `{"type":"contradiction_pursuit","target":"b","disputeId":"d-3","transitionTrigger":"empathy_question"}`
 
@@ -214,6 +228,5 @@ stateDelta:
 }
 ```
 
-- b [contradiction_pursuit/scripted] src/data/scriptedText/family-01.json:channels.contradiction_pursuit.entries[key=b|d-3|S3].variants[id=contra-b-d-3-S3-v1]
-  재판관님, 20년 송금 일부는 제 돈이었습니다. 형이 알면 더 버티기 어려울까 숨겼습니다.
+- none
 

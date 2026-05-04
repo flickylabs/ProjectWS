@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react'
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { GamePhase, Phase } from '../../../types'
-import { useStore } from '../../../store/useGameStore'
+import { useGameStore, useStore } from '../../../store/useGameStore'
 import PCBottomDock from '../hotbar/PCBottomDock'
 import PCSvgIcon from '../icons/PCSvgIcon'
 import PCEvidenceViewer from '../evidence/PCEvidenceViewer'
@@ -104,14 +104,21 @@ export default function PCCourtLayout({ actionPanel, onDialogueTap, isDialoguePh
   const currentPhase = useStore((s) => s.currentPhase)
   const dialogueLog = useStore((s) => s.dialogueLog)
   const resources = useStore((s) => s.resources)
+  const rebalanceResource = useStore((s) => s.rebalanceResource)
   const turnCount = useStore((s) => s.turnCount)
 
   const [tokenPopup, setTokenPopup] = useState<'invest' | 'skill' | 'court' | null>(null)
   const [recordSummaryOpen, setRecordSummaryOpen] = useState(false)
   const [settingsOpen, setSettingsOpen] = useState(false)
+  const [tokenPopupResult, setTokenPopupResult] = useState<string | null>(null)
   const [combinationOverlay, setCombinationOverlay] = useState<CombinationOverlayState | null>(null)
   const [dossierUnlockText, setDossierUnlockText] = useState<string | null>(null)
   const [courtControlFlash, setCourtControlFlash] = useState<{ id: number; label: string } | null>(null)
+  const resourcePopupByKey = {
+    investigationTokens: 'invest',
+    skillPoints: 'skill',
+    courtControl: 'court',
+  } as const
 
   useEffect(() => {
     return () => {
@@ -119,6 +126,20 @@ export default function PCCourtLayout({ actionPanel, onDialogueTap, isDialoguePh
       if (dossierTimerRef.current) window.clearTimeout(dossierTimerRef.current)
       if (courtControlTimerRef.current) window.clearTimeout(courtControlTimerRef.current)
     }
+  }, [])
+
+  useEffect(() => {
+    setTokenPopupResult(null)
+  }, [tokenPopup])
+
+  useEffect(() => {
+    const handler = (event: Event) => {
+      const detail = (event as CustomEvent<{ resource?: keyof typeof resourcePopupByKey }>).detail
+      const key = detail?.resource ? resourcePopupByKey[detail.resource] : null
+      if (key) setTokenPopup(key)
+    }
+    window.addEventListener('pc:resource-shortage', handler)
+    return () => window.removeEventListener('pc:resource-shortage', handler)
   }, [])
 
   useEffect(() => {
@@ -255,31 +276,68 @@ export default function PCCourtLayout({ actionPanel, onDialogueTap, isDialoguePh
     })
   }, [caseData?.caseId, currentPhase, resources.skillPoints, resources.courtControl, resources.investigationTokens, timelineBody, turnCount])
 
-  const TOKEN_POPUP_CONFIG = {
+  const CLEAN_TOKEN_POPUP_CONFIG = {
     invest: {
       title: '조사 토큰',
       icon: 'i-search' as const,
       tone: 'blue' as const,
       value: resources.investigationTokens,
-      desc: '증거 조사, 추가 단서 발굴, 사건 분석에서 사용합니다.',
+      desc: '증거를 더 깊게 조사하거나, 추가 단서와 기록을 확인할 때 씁니다.',
     },
     skill: {
       title: '스킬 포인트',
       icon: 'i-bolt' as const,
       tone: 'gold' as const,
       value: resources.skillPoints,
-      desc: '즉답 요구, 분리 심문, 비공개 보호 등 특수 행동에 사용합니다.',
+      desc: '즉답 요구, 비공개 보호, 자동 조합 보조처럼 판사의 적극적 개입에 씁니다.',
     },
     court: {
-      title: '법정 지배력',
+      title: '법정 장악',
       icon: 'i-scale' as const,
       tone: 'red' as const,
       value: resources.courtControl,
-      desc: '질문과 증거 제시의 효과를 높이고, 판결에서 유리한 위치를 확보합니다.',
+      desc: '무리한 압박과 절차 혼선을 버티는 힘입니다. 판결 안정성에도 영향을 줍니다.',
     },
   }
 
-  const tokenPopupData = tokenPopup ? TOKEN_POPUP_CONFIG[tokenPopup] : null
+  const TOKEN_RECOVERY_CONFIG = {
+    invest: {
+      label: '기록 재정리',
+      cost: '법정 장악 1',
+      target: 'investigationTokens' as const,
+      desc: '절차 통제력을 써서 증거 목록을 다시 훑고 조사 토큰 1을 회복합니다.',
+      disabled: resources.courtControl < 1,
+    },
+    skill: {
+      label: '쟁점 압축',
+      cost: '조사 토큰 1',
+      target: 'skillPoints' as const,
+      desc: '조사 자원을 써서 현재 쟁점의 질문 각도를 정리하고 스킬 포인트 1을 회복합니다.',
+      disabled: resources.investigationTokens < 1,
+    },
+    court: {
+      label: '정숙 선언',
+      cost: '스킬 포인트 2',
+      target: 'courtControl' as const,
+      desc: '판사의 개입을 써서 절차를 정리하고 법정 장악 1을 회복합니다.',
+      disabled: resources.skillPoints < 2,
+    },
+  }
+
+  const tokenPopupData = tokenPopup ? CLEAN_TOKEN_POPUP_CONFIG[tokenPopup] : null
+  const tokenRecoveryData = tokenPopup ? TOKEN_RECOVERY_CONFIG[tokenPopup] : null
+
+  const handleTokenRecovery = useCallback(() => {
+    if (!tokenPopup) return
+    const recovery = TOKEN_RECOVERY_CONFIG[tokenPopup]
+    const result = rebalanceResource(recovery.target)
+    setTokenPopupResult(result.message)
+    if (!result.ok) return
+    const latest = useGameStore.getState()
+    if (latest.resources.courtControl < resources.courtControl) {
+      window.dispatchEvent(new CustomEvent('pc:court-control-used', { detail: { label: recovery.label } }))
+    }
+  }, [rebalanceResource, resources.courtControl, tokenPopup])
 
   return (
     <>
@@ -294,6 +352,28 @@ export default function PCCourtLayout({ actionPanel, onDialogueTap, isDialoguePh
               <span className="pc-token-popup__value">{tokenPopupData.value}</span>
             </div>
             <p className="pc-token-popup__desc">{tokenPopupData.desc}</p>
+            {tokenRecoveryData ? (
+              <div className="pc-token-popup__recovery">
+                <div className="pc-token-popup__recovery-head">
+                  <span>{tokenRecoveryData.label}</span>
+                  <b>{tokenRecoveryData.cost}</b>
+                </div>
+                <p className="pc-token-popup__recovery-desc">{tokenRecoveryData.desc}</p>
+                <button
+                  className="pc-token-popup__recharge-btn"
+                  disabled={tokenRecoveryData.disabled}
+                  onClick={handleTokenRecovery}
+                  type="button"
+                >
+                  실행
+                </button>
+                {tokenPopupResult ? (
+                  <p className={`pc-token-popup__recovery-result${tokenPopupResult.includes('부족') ? ' is-warn' : ''}`}>
+                    {tokenPopupResult}
+                  </p>
+                ) : null}
+              </div>
+            ) : null}
           </div>
         </div>
       )}

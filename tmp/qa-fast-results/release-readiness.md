@@ -15,8 +15,8 @@
 
 ## Mode Comparison
 
-- static: total 1669 / P0 0 / P1 1048 / P2 621
-- route: total 9 / P0 0 / P1 9 / P2 0
+- static: total 1226 / P0 0 / P1 768 / P2 458
+- route: total 33 / P0 0 / P1 1 / P2 15
 
 ## Notes
 

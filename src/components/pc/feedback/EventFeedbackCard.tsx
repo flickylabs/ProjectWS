@@ -174,6 +174,15 @@ function mapBeatPortraitEmotion(state?: string) {
   return 'defensive' as const
 }
 
+function getReactionStateLabel(state?: string): string {
+  if (state === 'shaken') return '동요'
+  if (state === 'defensive') return '방어'
+  if (state === 'resigned') return '체념'
+  if (state === 'softened') return '완화'
+  if (state === 'neutral') return '중립'
+  return '방어'
+}
+
 function CourtBeatStamp() {
   return (
     <svg className="pc-court-clash__stamp-svg" viewBox="0 0 96 96" aria-hidden="true">
@@ -190,29 +199,41 @@ function CourtBeatClash({ active }: { active: EventFeedbackItem }) {
   if (!beat) return null
   const isMiss = beat.beatType === 'evidence_miss'
   const hasDirectPhrase = !isMiss && Boolean(beat.statement?.highlightText)
+  const isReview = !isMiss && !hasDirectPhrase
   const reaction = beat.portraitReaction
   const evidenceRows = beat.evidence?.rows ?? []
+  const statementLabel = beat.statement?.label
+    ?? `방금 진술 · ${beat.statement?.speakerName ?? reaction?.name ?? '당사자'}`
 
   return (
     <div className={`pc-court-clash ${isMiss ? 'is-miss' : hasDirectPhrase ? 'is-hit' : 'is-review'}`}>
       <div className="pc-court-clash__grid">
         <section className="pc-court-clash__statement">
-          <div className="pc-court-clash__label">방금 진술 · {beat.statement?.speakerName ?? reaction?.name ?? '당사자'}</div>
+          <div className="pc-court-clash__label">{statementLabel}</div>
           <p>{splitHighlightedText(beat.statement?.text ?? active.body ?? active.title ?? '', beat.statement?.highlightText)}</p>
         </section>
 
-        <div className="pc-court-clash__strike" aria-hidden="true">
-          <svg viewBox="0 0 160 52" preserveAspectRatio="none">
+        <div className="pc-court-clash__strike">
+          <svg viewBox="0 0 160 52" preserveAspectRatio="none" aria-hidden="true">
             <defs>
               <linearGradient id={`court-clash-gradient-${active.id}`} x1="0" x2="1" y1="0" y2="0">
                 <stop offset="0%" stopColor="rgba(216, 178, 91, 0.95)" />
                 <stop offset="100%" stopColor="rgba(208, 86, 65, 0.95)" />
               </linearGradient>
             </defs>
-            <path d="M8 26 C48 16, 86 36, 152 22" stroke={`url(#court-clash-gradient-${active.id})`} />
-            <path className="pc-court-clash__strike-crack" d="M86 16 l-10 12 l13 0 l-10 14" />
+            {isReview ? (
+              <path className="pc-court-clash__strike-review-line" d="M8 27 C35 18, 57 22, 80 27 C106 34, 132 27, 152 22" stroke={`url(#court-clash-gradient-${active.id})`} />
+            ) : (
+              <>
+                <path className="pc-court-clash__strike-segment pc-court-clash__strike-segment--left" d="M8 27 C35 18, 50 21, 66 25" stroke={`url(#court-clash-gradient-${active.id})`} />
+                <path className="pc-court-clash__strike-segment pc-court-clash__strike-segment--right" d="M96 28 C116 34, 132 27, 152 22" stroke={`url(#court-clash-gradient-${active.id})`} />
+                <path className="pc-court-clash__strike-gap" d="M76 18 l8 22 M88 14 l-6 13 l12 -1 l-9 14" />
+                <path className="pc-court-clash__strike-crack" d="M86 16 l-10 12 l13 0 l-10 14" />
+              </>
+            )}
           </svg>
           <span>{isMiss ? '검토' : hasDirectPhrase ? 'FRACTURE' : 'REVIEW'}</span>
+          {beat.relationshipLine ? <em>{beat.relationshipLine}</em> : null}
         </div>
 
         <section className="pc-court-clash__evidence">
@@ -249,7 +270,7 @@ function CourtBeatClash({ active }: { active: EventFeedbackItem }) {
         </div>
         <div className="pc-court-clash__reaction-copy">
           <strong>{reaction?.name ?? beat.statement?.speakerName ?? '당사자'}</strong>
-          <span>{reaction?.state === 'shaken' ? 'shaken' : reaction?.state ?? 'defensive'}</span>
+          <span>{getReactionStateLabel(reaction?.state)}</span>
           {beat.reactionLine ? <p>{beat.reactionLine}</p> : null}
         </div>
         <div className="pc-court-clash__destination">
@@ -260,14 +281,14 @@ function CourtBeatClash({ active }: { active: EventFeedbackItem }) {
 
       {beat.judgeLine ? (
         <div className="pc-court-clash__judge">
-          <span>Judge</span>
+          <span>재판관</span>
           <p>{beat.judgeLine}</p>
         </div>
       ) : null}
 
       {beat.notebookEntry ? (
         <div className="pc-court-clash__notebook">
-          <span>Judicial record</span>
+          <span>재판관의 수첩</span>
           <p>{beat.notebookEntry}</p>
         </div>
       ) : null}

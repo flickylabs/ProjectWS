@@ -211,7 +211,7 @@
       "route": "emotion",
       "statementType": "truth_confession",
       "preConfession": "단톡방 원본이 재생되자 송다은이 말을 끊고 바로 결론을 내리려다 멈춘다.",
-      "confessionMain": "제가 확인 없이 단톡방에서 최수민 씨를 매도했습니다. 친구들이 따라붙을 걸 알면서도 바로 정정하지 않았고, 그 말이 수민 씨 명예를 해쳤습니다.",
+      "confessionMain": "제가 확인 없이 단톡방에서 수민이를 매도했습니다. 친구들이 따라붙을 걸 알면서도 바로 정정하지 않았고, 그 말이 수민이의 명예를 해쳤습니다.",
       "postConfession": "불안했다는 말로 공개 책임을 덮지 않겠습니다.",
       "supportCondition": {
         "requiredEvidence": [
@@ -238,7 +238,7 @@
       "statementType": "truth_confession",
       "preConfession": "재판관이 공개 책임과 불안을 분리하자 송다은이 낮게 답한다.",
       "confessionMain": "저는 사실을 알린다고 생각했지만, 확인 전에 사람을 규정했습니다. 그 순서가 잘못됐습니다.",
-      "postConfession": "수민 씨의 침묵도 문제였지만, 먼저 이름을 올린 제 책임이 큽니다.",
+      "postConfession": "수민이의 침묵도 문제였지만, 먼저 이름을 올린 제 책임이 큽니다.",
       "supportCondition": {
         "requiredEvidence": [
           "e-2",
@@ -333,7 +333,7 @@
       "disputeId": "d-1",
       "severity": "minor",
       "trigger": "송다은이 집착 프레임을 반복 주장",
-      "text": "저는 그냥 친구들한테 사실을 말한 겁니다. …수민 씨에게 직접 묻기 전이긴 했지만요.",
+      "text": "저는 그냥 친구들한테 사실을 말한 겁니다. …수민이에게 직접 묻기 전이긴 했지만요.",
       "adds": {
         "disputeIds": [
           "d-5"
@@ -1626,7 +1626,7 @@
       "disputeId": "d-2",
       "angleId": "withheld_capture",
       "type": "observation",
-      "text": "관찰: 캡처를 숨긴 이유에서는 최수민이 원본을 곧바로 제시하지 못한 이유와 송다은이 확인을 미룬 이유를 분리한다. S5 전에는 최종 원인과 책임 주체를 확정하지 말고, 보이는 자료의 범위만 적는다.",
+      "text": "관찰: 캡처를 숨긴 이유에서는 최수민 씨가 원본을 곧바로 제시하지 못한 이유와 송다은 씨가 확인을 미룬 이유를 분리한다. S5 전에는 최종 원인과 책임 주체를 확정하지 말고, 보이는 자료의 범위만 적는다.",
       "guardNote": "truthBoundary는 angle_catalog의 beforeS5MustNotSay를 따른다.",
       "tags": [
         "channel:dossier",
@@ -1716,7 +1716,7 @@
       "disputeId": "d-4",
       "angleId": "protective_silence",
       "type": "observation",
-      "text": "관찰: 보호하려던 침묵에서는 최수민이 송다은에게 어디까지 말했고 어디부터 침묵했는지, 그리고 왜 그렇게 정리하려 했는지를 단계적으로 확인한다. ‘악역 자처’와 ‘보호 침묵’의 동기 확정은 S5 지원 조건이 충족된 뒤로 미룬다.",
+      "text": "관찰: 보호하려던 침묵에서는 최수민 씨가 송다은 씨에게 어디까지 말했고 어디부터 침묵했는지, 그리고 왜 그렇게 정리하려 했는지를 단계적으로 확인한다. ‘악역 자처’와 ‘보호 침묵’의 동기 확정은 S5 지원 조건이 충족된 뒤로 미룬다.",
       "guardNote": "truthBoundary는 angle_catalog의 beforeS5MustNotSay를 따른다.",
       "tags": [
         "channel:dossier",
@@ -1731,7 +1731,7 @@
       "disputeId": "d-5",
       "angleId": "first_groupchat_post",
       "type": "observation",
-      "text": "관찰: 단톡방 최초 발언에서는 송다은이 어떤 말로 단톡방에 먼저 올렸고 직접 확인보다 공개가 먼저였는지 확인한다. S5 전에는 최종 원인과 책임 주체를 확정하지 말고, 보이는 자료의 범위만 적는다.",
+      "text": "관찰: 단톡방 최초 발언에서는 송다은 씨가 어떤 말로 단톡방에 먼저 올렸고 직접 확인보다 공개가 먼저였는지 확인한다. S5 전에는 최종 원인과 책임 주체를 확정하지 말고, 보이는 자료의 범위만 적는다.",
       "guardNote": "truthBoundary는 angle_catalog의 beforeS5MustNotSay를 따른다.",
       "tags": [
         "channel:dossier",
@@ -1746,7 +1746,7 @@
       "disputeId": "d-5",
       "angleId": "pile_on_spread",
       "type": "observation",
-      "text": "관찰: 친구들의 동조와 확산에서는 친구들이 어떤 말로 따라붙었고 송다은·최수민이 그 확산을 어떻게 처리했는지 확인한다. S5 전에는 최종 원인과 책임 주체를 확정하지 말고, 보이는 자료의 범위만 적는다.",
+      "text": "관찰: 친구들의 동조와 확산에서는 친구들이 어떤 말로 따라붙었고 송다은 씨와 최수민 씨가 그 확산을 어떻게 처리했는지 확인한다. S5 전에는 최종 원인과 책임 주체를 확정하지 말고, 보이는 자료의 범위만 적는다.",
       "guardNote": "truthBoundary는 angle_catalog의 beforeS5MustNotSay를 따른다.",
       "tags": [
         "channel:dossier",
@@ -1777,7 +1777,7 @@
       "id": "postS5-d-1-a",
       "party": "a",
       "disputeId": "d-1",
-      "text": "수민 씨 연락이 집착이라고만 볼 수 없다는 점은 이미 인정했습니다. 제 판단이 너무 빨랐던 부분을 다시 반복하지 않겠습니다.",
+      "text": "수민이 연락이 집착이라고만 볼 수 없다는 점은 이미 인정했습니다. 제 판단이 너무 빨랐던 부분을 다시 반복하지 않겠습니다.",
       "tags": [
         "channel:interrogation",
         "party:a",

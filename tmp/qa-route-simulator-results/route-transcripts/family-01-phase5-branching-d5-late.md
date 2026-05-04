@@ -7,6 +7,15 @@ summary: Late branching route that uses e-7, dossier questioning, and witness co
 
 ## 1. evidence_present
 
+### Player
+
+- system [system_message]
+  증거 제시: 어머니 일기장 [Hard]
+- b [evidence_present]
+  어머니 글씨 맞습니다.
+
+### QA Annotations
+
 action: `{"type":"evidence_present","target":"b","evidenceId":"e-7"}`
 
 stateDelta:
@@ -88,45 +97,44 @@ stateDelta:
 }
 ```
 
-- system [system_message/runtime_system] src/hooks/useActionDispatch.ts:getEvidenceDisplayName:e-7
-  증거 제시: 어머니 일기장 [Hard]
-- b [evidence_present/scripted] src/data/scriptedText/family-01.json:channels.evidence_present.entries[key=b|e-7|early|both].variants[id=b-e-7-early-self-v1]
-  어머니 글씨 맞습니다.
+- none
 
 ## 2. dossier
 
+### Player
+
+- b [dossier]
+  맞습니다. 상대에게 알려지길 피하려 했다는 이유가 어머니의 처음 적힌 비율 뜻을 고친 책임을 없애지 못합니다.
+
+### QA Annotations
+
 action: `{"type":"dossier","target":"b","dossierId":"dc-5","questionId":"dc-5.b.q1"}`
 
-- b [dossier/scripted] src/data/scriptedText/family-01.json:channels.dossier.entries[key=dc-5.b.q1|late].variants[id=dc-5-b-q1-late-v1]
-  맞습니다. 형을 지키려 했다는 이유가 어머니의 90대10 뜻을 고친 책임을 없애지 못합니다.
+- none
 
 ## 3. witness_question
 
+### Player
+
+- none
+
+### QA Annotations
+
 action: `{"type":"witness_question","witnessId":"w-3","disputeId":"d-5","answer":"w-3 confirms the final branch should compare care records with the diary route."}`
 
-stateDelta:
-```json
-{
-  "lieStates": [],
-  "evidence": [],
-  "disputes": [],
-  "dossier": [],
-  "witnesses": [
-    {
-      "witnessId": "w-3",
-      "summonedFrom": false,
-      "summonedTo": true,
-      "questionsFrom": 0,
-      "questionsTo": 1
-    }
-  ]
-}
-```
-
-- witness [witness_question/route_simulator_facsimile] tmp/qa-route-simulator-manifests/family-01.json:witness_question.w-3
-  w-3 confirms the final branch should compare care records with the diary route.
+- system [witness_question/route_simulator_manifest_validation] tmp/qa-route-simulator-manifests/family-01.json:witness_question.w-3
+  Witness action skipped by manifest validation: witness_question_before_summon; Witness question occurs before witness summon: w-3.
+- system [witness_question/route_simulator_manifest_validation] src/data/cases/generated/family-01.json:duo.socialGraph[id=w-3].knowledgeScope
+  Witness action skipped by manifest validation: witness_domain_mismatch; Witness w-3 knowledge does not match route domain care_record.
+findings: QARS-0007, QARS-0008
 
 ## 4. discovery_event
+
+### Player
+
+- none
+
+### QA Annotations
 
 action: `{"type":"discovery_event","eventId":"family-d5-reviewed","dossierId":"dc-5","followup":"The d-5 route has enough late-stage material for judgment."}`
 
@@ -150,4 +158,5 @@ stateDelta:
   Discovery event applied: family-d5-reviewed
 - witness [discovery_event/route_simulator_facsimile] tmp/qa-route-simulator-manifests/family-01.json:discovery_event.family-d5-reviewed.followup
   The d-5 route has enough late-stage material for judgment.
+findings: QARS-0009
 

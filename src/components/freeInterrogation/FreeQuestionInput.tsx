@@ -13,6 +13,7 @@ import {
   triggerAIReasoningCutscene,
   type AIReasoningCutscenePayload,
 } from './AIReasoningCutscene'
+import { playInvestigationTokenWarning } from '../../engine/soundEngine'
 
 interface Props {
   target: PartyId | null
@@ -71,6 +72,7 @@ export default function FreeQuestionInput({
       })
 
       if (result.costPolicy === 'consume' && useGameStore.getState().resources.investigationTokens < 1) {
+        playInvestigationTokenWarning()
         const fresh = useGameStore.getState()
         fresh.addDialogue({
           speaker: 'system',
@@ -82,7 +84,10 @@ export default function FreeQuestionInput({
       }
 
       if (result.status === 'dispatch' && result.action) {
-        if (result.costPolicy === 'consume' && !useGameStore.getState().spend('investigationTokens', 1)) return
+        if (result.costPolicy === 'consume' && !useGameStore.getState().spend('investigationTokens', 1)) {
+          playInvestigationTokenWarning()
+          return
+        }
         const action = result.action
         const cutscenePayload = buildAIReasoningCutscenePayload(trimmed, result.intent, caseData)
         setText('')
@@ -98,7 +103,10 @@ export default function FreeQuestionInput({
         const fallbackSpeaker = result.dialogueSpeaker ?? target ?? 'system'
         const related = result.intent.mapped.disputeId ? [result.intent.mapped.disputeId] : []
         const fresh = useGameStore.getState()
-        if (result.costPolicy === 'consume' && !fresh.spend('investigationTokens', 1)) return
+        if (result.costPolicy === 'consume' && !fresh.spend('investigationTokens', 1)) {
+          playInvestigationTokenWarning()
+          return
+        }
         setText('')
         onDone?.()
         fresh.addDialogue({ speaker: 'judge', text: trimmed, relatedDisputes: related, turn: fresh.turnCount })

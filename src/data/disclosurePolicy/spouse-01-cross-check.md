@@ -103,10 +103,10 @@ While expanding `issueProgression` for `d-2`, `h-d3`, and `h-d4`, the policy dra
 
 | Source field | Existing wording | Conflict | Policy handling |
 |---|---|---|---|
-| `dossierCards.dc-3.description` / `challenge` | `공동 적금 3,000만 원을 형에게 줄 권리` | Confirmed B money axis is personal 비자금 2,000만 원 sent toward his brother, not joint savings 3,000만 원. | `d-2` progression treats B's money as personal cash/비자금 2,000만 원 and does not use this stale joint-savings wording. |
-| `dossierCards.dc-4.description` | `A가 ... 2,000만 원을 옮긴 이유` | Confirmed A hidden money axis is 공동 적금 3,000만 원 해지, 위임장 조작, and investment loss. | `h-d3` progression treats A's axis as 공동 적금 3,000만 원 plus authorization/document misconduct. |
+| `dossierCards.dc-3.description` / `challenge` | `공동 적금 2,000만 원을 형에게 줄 권리` | Confirmed B money axis is personal 비자금 2,000만 원 sent toward his brother, not joint savings 3,000만 원. | `d-2` progression treats B's money as personal cash/비자금 2,000만 원 and does not use this stale joint-savings wording. |
+| `dossierCards.dc-4.description` | `A가 ... 2,000만 원을 옮긴 이유` | Confirmed A hidden money axis is 공동 적금 2,000만 원 해지, 위임장 조작, and investment loss. | `h-d3` progression treats A's axis as 공동 적금 2,000만 원 plus authorization/document misconduct. |
 | `officialRecordRecommendations` | `B가 배우자 동의 없이 3,000만 원을 형에게 보냈다.` | Confirmed B delivered/used 2,000만 원 personal cash toward family support; the 3,000만 원 figure belongs to A's joint-savings axis. | Official-record wording should be considered a stale source candidate before any UI or dossier rendering. |
-| `hiddenDisputePlans.h-d3.name` | `아내의 2,000만 원 송금...` | Confirmed `h-d3` is 공동 적금 3,000만 원 해지 / 위임장 조작 / 투자 사기. | `h-d3` title and truth stages use the confirmed 3,000만 원 axis. |
+| `hiddenDisputePlans.h-d3.name` | `아내의 2,000만 원 송금...` | Confirmed `h-d3` is 공동 적금 2,000만 원 해지 / 위임장 조작 / 투자 사기. | `h-d3` title and truth stages use the confirmed 3,000만 원 axis. |
 
 No source data was changed in this Tier 1 draft. If any of the stale v3 loop-data fields are rendered, they should become a later P4/P7-safe cleanup task after UI exposure is confirmed.
 

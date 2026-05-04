@@ -52,12 +52,12 @@ const HOOKS: Record<string, Record<string, EmergenceHook>> = {
       ],
     },
     'h-d3': {
-      name: '공동 적금 3,000만원 해지 (위임장 조작)',
+      name: '공동 적금 2,000만원 해지 (위임장 조작)',
       speaker: 'a',
       variants: [
         {
           tone: 'confession',
-          text: '재판관님, 저도 돈 얘기에서 떳떳하지 못합니다. 제 남편 명의 위임장을 제가 손댔고, 공동 적금 3,000만원을 해지했습니다.',
+          text: '재판관님, 저도 돈 얘기에서 떳떳하지 못합니다. 제 남편 명의 위임장을 제가 손댔고, 공동 적금 2,000만원을 해지했습니다.',
           behaviorHint: '박지연은 입술을 깨물고 두 손을 무릎 위에 꽉 쥔다.',
         },
         {
@@ -67,7 +67,7 @@ const HOOKS: Record<string, Record<string, EmergenceHook>> = {
         },
         {
           tone: 'resignation',
-          text: '…더는 적금 얘기를 피할 수 없겠네요. 공동 적금 3,000만원을 해지한 사람은 저입니다, 위임장도 제가 꾸몄습니다.',
+          text: '…더는 적금 얘기를 피할 수 없겠네요. 공동 적금 2,000만원을 해지한 사람은 저입니다, 위임장도 제가 꾸몄습니다.',
           behaviorHint: '박지연은 고개를 숙인 채 마지막 말만 작게 내뱉는다.',
         },
       ],

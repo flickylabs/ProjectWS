@@ -238,7 +238,7 @@
     {
       "id": "spouse-01-T03",
       "caseId": "spouse-01",
-      "input": "개인 비자금 3천만원과 공동 적금 3천만원은 같은 돈입니까?",
+      "input": "개인 비자금 3천만원과 공동 적금 2천만원은 같은 돈입니까?",
       "target": "b",
       "activeDisputeId": "h-d4",
       "runtime": {
@@ -285,7 +285,7 @@
             "reason": "answerable"
           },
           {
-            "rawSpan": "공동 적금 3천만원",
+            "rawSpan": "공동 적금 2천만원",
             "target": "b",
             "knowledgeOwner": "a",
             "disputeId": "h-d3",

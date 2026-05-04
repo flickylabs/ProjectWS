@@ -58,6 +58,7 @@ export interface EventFeedbackCourtBeat {
   cue?: EventFeedbackCourtBeatCue
   destination?: EventFeedbackCourtBeatDestination
   statement?: {
+    label?: string
     speakerName?: string
     text: string
     highlightText?: string
@@ -76,6 +77,7 @@ export interface EventFeedbackCourtBeat {
   }
   judgeLine?: string
   reactionLine?: string
+  relationshipLine?: string
   notebookEntry?: string
 }
 

@@ -111,6 +111,46 @@ export function playError() {
   playFile('/sfx/alert.mp3', 0.2)
 }
 
+/** 조사 토큰 부족 경고: 짧은 차단 이중 비프 */
+export function playInvestigationTokenWarning() {
+  withAudioContext((ctx) => {
+    const start = ctx.currentTime
+
+    const playBeep = (at: number, frequency: number, peakGain: number) => {
+      const osc = ctx.createOscillator()
+      const filter = ctx.createBiquadFilter()
+      const gain = ctx.createGain()
+
+      osc.type = 'square'
+      osc.frequency.setValueAtTime(frequency, at)
+      filter.type = 'lowpass'
+      filter.frequency.setValueAtTime(2400, at)
+      gain.gain.setValueAtTime(0.001, at)
+      gain.gain.exponentialRampToValueAtTime(peakGain, at + 0.01)
+      gain.gain.exponentialRampToValueAtTime(0.001, at + 0.105)
+
+      osc.connect(filter).connect(gain).connect(ctx.destination)
+      osc.start(at)
+      osc.stop(at + 0.12)
+    }
+
+    playBeep(start, 880, 0.075)
+    playBeep(start + 0.14, 660, 0.068)
+
+    const body = ctx.createOscillator()
+    const bodyGain = ctx.createGain()
+    body.type = 'sine'
+    body.frequency.setValueAtTime(176, start)
+    body.frequency.exponentialRampToValueAtTime(132, start + 0.16)
+    bodyGain.gain.setValueAtTime(0.001, start)
+    bodyGain.gain.exponentialRampToValueAtTime(0.04, start + 0.008)
+    bodyGain.gain.exponentialRampToValueAtTime(0.001, start + 0.18)
+    body.connect(bodyGain).connect(ctx.destination)
+    body.start(start)
+    body.stop(start + 0.2)
+  })
+}
+
 /** 분리심문 시작 */
 export function playSeparation() {
   playFile('/sfx/tension.mp3', 0.25)
@@ -239,6 +279,18 @@ export function playDramaticReveal() {
 export function playCombinationSuccess() {
   withAudioContext((ctx) => {
     const start = ctx.currentTime
+    const body = ctx.createOscillator()
+    const bodyGain = ctx.createGain()
+    body.type = 'triangle'
+    body.frequency.setValueAtTime(196, start)
+    body.frequency.exponentialRampToValueAtTime(294, start + 0.16)
+    bodyGain.gain.setValueAtTime(0.001, start)
+    bodyGain.gain.exponentialRampToValueAtTime(0.04, start + 0.012)
+    bodyGain.gain.exponentialRampToValueAtTime(0.001, start + 0.2)
+    body.connect(bodyGain).connect(ctx.destination)
+    body.start(start)
+    body.stop(start + 0.22)
+
     const notes = [
       { frequency: 523, offset: 0, duration: 0.08, gain: 0.06 },
       { frequency: 659, offset: 0.06, duration: 0.1, gain: 0.08 },
@@ -263,6 +315,52 @@ export function playCombinationSuccess() {
 
 export function playCombineSuccess() {
   playCombinationSuccess()
+}
+
+/** Combination failure */
+export function playCombinationFailure() {
+  withAudioContext((ctx) => {
+    const start = ctx.currentTime
+
+    const tap = ctx.createOscillator()
+    const tapFilter = ctx.createBiquadFilter()
+    const tapGain = ctx.createGain()
+    tap.type = 'triangle'
+    tap.frequency.setValueAtTime(170, start)
+    tap.frequency.exponentialRampToValueAtTime(90, start + 0.14)
+    tapFilter.type = 'lowpass'
+    tapFilter.frequency.setValueAtTime(700, start)
+    tapGain.gain.setValueAtTime(0.001, start)
+    tapGain.gain.exponentialRampToValueAtTime(0.05, start + 0.008)
+    tapGain.gain.exponentialRampToValueAtTime(0.001, start + 0.16)
+    tap.connect(tapFilter).connect(tapGain).connect(ctx.destination)
+    tap.start(start)
+    tap.stop(start + 0.18)
+
+    const playBeep = (offset: number, frequency: number, peakGain: number) => {
+      const at = start + offset
+      const osc = ctx.createOscillator()
+      const filter = ctx.createBiquadFilter()
+      const gain = ctx.createGain()
+      osc.type = 'square'
+      osc.frequency.setValueAtTime(frequency, at)
+      filter.type = 'lowpass'
+      filter.frequency.setValueAtTime(1800, at)
+      gain.gain.setValueAtTime(0.001, at)
+      gain.gain.exponentialRampToValueAtTime(peakGain, at + 0.01)
+      gain.gain.exponentialRampToValueAtTime(0.001, at + 0.11)
+      osc.connect(filter).connect(gain).connect(ctx.destination)
+      osc.start(at)
+      osc.stop(at + 0.13)
+    }
+
+    playBeep(0.04, 392, 0.035)
+    playBeep(0.17, 294, 0.032)
+  })
+}
+
+export function playCombineFailure() {
+  playCombinationFailure()
 }
 
 /** 법정 지배력 사용 */

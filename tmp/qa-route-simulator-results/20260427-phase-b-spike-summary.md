@@ -10,15 +10,17 @@
 - routes: 12
 - actions: 64
 - evidence_investigate actions: 9
-- findings: 9
+- findings: 33
 - hard findings: 0
 - response_missing findings: 0
 - evidence_investigate_no_npc_followup findings: 9
+- qa_annotation_only_action findings: 6
+- system_only_action_no_npc_followup findings: 2
 
 ## Legacy Route Spot Compare
 - Phase A audit reference: `tmp/qa-codex-spouse-01-p0-patch-results/20260427-phase-a-audit.md`
 - Phase A hard areas: e-4 early truth leak twice, evidence_investigate system-only response_missing once.
-- Phase B-1 route covers the evidence_investigate contract path; Phase B-3 reclassifies that system-only output to P1 informational under Gate option ii.
+- Phase B-1 route covers the evidence_investigate contract path; Phase B-3 reclassifies that system-only output to observability under Gate option ii.
 - The legacy runner was not executed in this session because it writes to `tmp/qa-runtime-gate-results/`; Phase B output isolation was preserved.
 
 ## P0 Findings
@@ -32,7 +34,7 @@
 - (ii) Redefine evidence_investigate as system-only and remove it from response-required
   runnerLoc: 20; dataChanges: none; runtimeImpact: none
   uxFit: strong - evidence investigation remains an information-acquisition action; follow-up NPC speech happens through a later explicit judge_question
-  recommendation: Recommended. Reclassify the current P0 response_missing to a P1 informational evidence_investigate_no_npc_followup detector.
+  recommendation: Recommended. Reclassify the current P0 response_missing to an observability evidence_investigate_no_npc_followup detector.
 - (iii) Wire investigationStages[].scriptedNpcResponses into runtime and Gate
   runnerLoc: 80; dataChanges: investigationStages.scriptedNpcResponses coverage needed across caseData plus type/schema validation; runtimeImpact: dispatch and resolver integration required; existing type allows the field but current runtime/Gate do not read it
   uxFit: medium - preserves authored follow-ups but still changes the current no-auto-NPC investigation contract

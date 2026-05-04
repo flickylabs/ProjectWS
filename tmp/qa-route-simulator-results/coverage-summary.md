@@ -2,7 +2,7 @@
 
 - routes: 12
 - actions: 64
-- findings: 9
+- findings: 33
 - hard findings: 0
 
 ## Case Coverage
@@ -36,10 +36,10 @@
 - phase5: 14
 
 ## Lie State Coverage
-- S0: 933
+- S0: 1053
 - S1: 15
-- S2: 30
-- S3: 66
+- S2: 40
+- S3: 56
 - S4: 17
 - S5: 3
 
@@ -51,3 +51,7 @@
 
 ## Finding Coverage
 - evidence_investigate_no_npc_followup: 9
+- qa_annotation_only_action: 6
+- qa_focus_review: 1
+- safe_fallback_used: 15
+- system_only_action_no_npc_followup: 2

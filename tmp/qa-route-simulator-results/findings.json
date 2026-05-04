@@ -4,12 +4,33 @@
     "caseId": "family-01",
     "routeId": "phase3-evidence-heavy-d2-dossier",
     "phase": "phase3",
+    "actionIndex": 1,
+    "actionType": "evidence_combine",
+    "target": "b",
+    "localIndex": 1,
+    "severity": "P2",
+    "category": "safe_fallback_used",
+    "detectors": [
+      "safe_fallback_used"
+    ],
+    "summary": "Safe fallback used for evidence_combine.",
+    "expected": "Fallback should be visible in route results for manual review.",
+    "actual": "Evidence combination skipped by runtime parity gate: combine-2; not fully investigated=e-4, e-5",
+    "resolverPath": "route_simulator_runtime_gate",
+    "sourcePath": "src/data/cases/generated/family-01.json:combinationLab.recipes[id=combine-2]",
+    "patchPriority": "P2-route-observability"
+  },
+  {
+    "id": "QARS-0002",
+    "caseId": "family-01",
+    "routeId": "phase3-evidence-heavy-d2-dossier",
+    "phase": "phase3",
     "actionIndex": 3,
     "actionType": "evidence_investigate",
     "target": "b",
     "evidenceId": "e-4",
     "localIndex": 1,
-    "severity": "P1",
+    "severity": "observability",
     "category": "evidence_investigate_no_npc_followup",
     "detectors": [
       "evidence_investigate_no_npc_followup"
@@ -19,10 +40,31 @@
     "actual": "1 system output(s); speakers=system",
     "resolverPath": "runtime_system",
     "sourcePath": "src/data/cases/generated/family-01.json:evidence.e-4.investigationResults.request_original",
-    "patchPriority": "P1-route-contract-observability"
+    "patchPriority": "N-route-contract-observability"
   },
   {
-    "id": "QARS-0002",
+    "id": "QARS-0003",
+    "caseId": "family-01",
+    "routeId": "phase3-evidence-heavy-d2-dossier",
+    "phase": "phase3",
+    "actionIndex": 5,
+    "actionType": "witness_summon",
+    "disputeId": "d-2",
+    "localIndex": 1,
+    "severity": "P2",
+    "category": "safe_fallback_used",
+    "detectors": [
+      "safe_fallback_used"
+    ],
+    "summary": "Safe fallback used for witness_summon.",
+    "expected": "Fallback should be visible in route results for manual review.",
+    "actual": "Witness action skipped by manifest validation: witness_scope_mismatch; Witness w-1 is not scoped to dispute d-2.",
+    "resolverPath": "route_simulator_manifest_validation",
+    "sourcePath": "src/data/cases/generated/family-01.json:duo.socialGraph[id=w-1].relatedDisputeIds",
+    "patchPriority": "P2-route-observability"
+  },
+  {
+    "id": "QARS-0004",
     "caseId": "family-01",
     "routeId": "phase4-cascading-d3-emergence",
     "phase": "phase4",
@@ -31,7 +73,7 @@
     "target": "b",
     "evidenceId": "e-6",
     "localIndex": 1,
-    "severity": "P1",
+    "severity": "observability",
     "category": "evidence_investigate_no_npc_followup",
     "detectors": [
       "evidence_investigate_no_npc_followup"
@@ -41,10 +83,125 @@
     "actual": "1 system output(s); speakers=system",
     "resolverPath": "runtime_system",
     "sourcePath": "src/data/cases/generated/family-01.json:evidence.e-6.investigationResults.check_metadata",
-    "patchPriority": "P1-route-contract-observability"
+    "patchPriority": "N-route-contract-observability"
   },
   {
-    "id": "QARS-0003",
+    "id": "QARS-0005",
+    "caseId": "family-01",
+    "routeId": "phase4-cascading-d3-emergence",
+    "phase": "phase4",
+    "actionIndex": 3,
+    "actionType": "evidence_combine",
+    "target": "b",
+    "localIndex": 1,
+    "severity": "P2",
+    "category": "safe_fallback_used",
+    "detectors": [
+      "safe_fallback_used"
+    ],
+    "summary": "Safe fallback used for evidence_combine.",
+    "expected": "Fallback should be visible in route results for manual review.",
+    "actual": "Evidence combination skipped by runtime parity gate: combine-3; not fully investigated=e-5, e-6",
+    "resolverPath": "route_simulator_runtime_gate",
+    "sourcePath": "src/data/cases/generated/family-01.json:combinationLab.recipes[id=combine-3]",
+    "patchPriority": "P2-route-observability"
+  },
+  {
+    "id": "QARS-0006",
+    "caseId": "family-01",
+    "routeId": "phase4-cascading-d3-emergence",
+    "phase": "phase4",
+    "actionIndex": 4,
+    "actionType": "emergence_event",
+    "target": "b",
+    "disputeId": "d-4",
+    "localIndex": 1,
+    "severity": "observability",
+    "category": "qa_annotation_only_action",
+    "detectors": [
+      "response_missing",
+      "response_missing_reclassified"
+    ],
+    "summary": "emergence_event produced only QA-annotation output; no player-facing NPC response is required.",
+    "expected": "Route annotation/state-transition actions should preserve traceability in QA annotations without counting as player-facing missing responses.",
+    "actual": "1 QA annotation output(s); speakers=witness",
+    "resolverPath": "route_simulator_facsimile",
+    "sourcePath": "tmp/qa-route-simulator-manifests/family-01.json:emergence_event.family-d4-open",
+    "patchPriority": "N-route-contract-observability",
+    "reclassifiedFrom": {
+      "severity": "P0",
+      "category": "response_missing"
+    }
+  },
+  {
+    "id": "QARS-0007",
+    "caseId": "family-01",
+    "routeId": "phase5-branching-d5-late",
+    "phase": "phase5",
+    "actionIndex": 3,
+    "actionType": "witness_question",
+    "disputeId": "d-5",
+    "localIndex": 1,
+    "severity": "P2",
+    "category": "safe_fallback_used",
+    "detectors": [
+      "safe_fallback_used"
+    ],
+    "summary": "Safe fallback used for witness_question.",
+    "expected": "Fallback should be visible in route results for manual review.",
+    "actual": "Witness action skipped by manifest validation: witness_question_before_summon; Witness question occurs before witness summon: w-3.",
+    "resolverPath": "route_simulator_manifest_validation",
+    "sourcePath": "tmp/qa-route-simulator-manifests/family-01.json:witness_question.w-3",
+    "patchPriority": "P2-route-observability"
+  },
+  {
+    "id": "QARS-0008",
+    "caseId": "family-01",
+    "routeId": "phase5-branching-d5-late",
+    "phase": "phase5",
+    "actionIndex": 3,
+    "actionType": "witness_question",
+    "disputeId": "d-5",
+    "localIndex": 2,
+    "severity": "P2",
+    "category": "safe_fallback_used",
+    "detectors": [
+      "safe_fallback_used"
+    ],
+    "summary": "Safe fallback used for witness_question.",
+    "expected": "Fallback should be visible in route results for manual review.",
+    "actual": "Witness action skipped by manifest validation: witness_domain_mismatch; Witness w-3 knowledge does not match route domain care_record.",
+    "resolverPath": "route_simulator_manifest_validation",
+    "sourcePath": "src/data/cases/generated/family-01.json:duo.socialGraph[id=w-3].knowledgeScope",
+    "patchPriority": "P2-route-observability"
+  },
+  {
+    "id": "QARS-0009",
+    "caseId": "family-01",
+    "routeId": "phase5-branching-d5-late",
+    "phase": "phase5",
+    "actionIndex": 4,
+    "actionType": "discovery_event",
+    "localIndex": 1,
+    "severity": "observability",
+    "category": "qa_annotation_only_action",
+    "detectors": [
+      "response_missing",
+      "response_missing_reclassified"
+    ],
+    "summary": "discovery_event produced only QA-annotation output; no player-facing NPC response is required.",
+    "expected": "Route annotation/state-transition actions should preserve traceability in QA annotations without counting as player-facing missing responses.",
+    "actual": "2 QA annotation output(s); speakers=system,witness",
+    "resolverPath": "route_simulator_facsimile | route_simulator_facsimile",
+    "sourcePath": "tmp/qa-route-simulator-manifests/family-01.json:discovery_event.family-d5-reviewed | tmp/qa-route-simulator-manifests/family-01.json:discovery_event.family-d5-reviewed.followup",
+    "patchPriority": "N-route-contract-observability",
+    "reclassifiedFrom": {
+      "severity": "P0",
+      "category": "response_missing"
+    }
+  },
+  {
+    "id": "QARS-0010",
     "caseId": "friend-01",
     "routeId": "phase2-linear-d1-contact",
     "phase": "phase2",
@@ -53,7 +210,7 @@
     "target": "b",
     "evidenceId": "e-1",
     "localIndex": 1,
-    "severity": "P1",
+    "severity": "observability",
     "category": "evidence_investigate_no_npc_followup",
     "detectors": [
       "evidence_investigate_no_npc_followup"
@@ -63,10 +220,141 @@
     "actual": "1 system output(s); speakers=system",
     "resolverPath": "runtime_system",
     "sourcePath": "src/data/cases/generated/friend-01.json:evidence.e-1.investigationResults.request_original",
-    "patchPriority": "P1-route-contract-observability"
+    "patchPriority": "N-route-contract-observability"
   },
   {
-    "id": "QARS-0004",
+    "id": "QARS-0011",
+    "caseId": "friend-01",
+    "routeId": "phase2-linear-d1-contact",
+    "phase": "phase2",
+    "actionIndex": 5,
+    "actionType": "witness_question",
+    "disputeId": "d-1",
+    "localIndex": 1,
+    "severity": "P2",
+    "category": "safe_fallback_used",
+    "detectors": [
+      "safe_fallback_used"
+    ],
+    "summary": "Safe fallback used for witness_question.",
+    "expected": "Fallback should be visible in route results for manual review.",
+    "actual": "Witness action skipped by manifest validation: witness_question_before_summon; Witness question occurs before witness summon: w-1.",
+    "resolverPath": "route_simulator_manifest_validation",
+    "sourcePath": "tmp/qa-route-simulator-manifests/friend-01.json:witness_question.w-1",
+    "patchPriority": "P2-route-observability"
+  },
+  {
+    "id": "QARS-0012",
+    "caseId": "friend-01",
+    "routeId": "phase2-linear-d1-contact",
+    "phase": "phase2",
+    "actionIndex": 5,
+    "actionType": "witness_question",
+    "disputeId": "d-1",
+    "localIndex": 2,
+    "severity": "P2",
+    "category": "safe_fallback_used",
+    "detectors": [
+      "safe_fallback_used"
+    ],
+    "summary": "Safe fallback used for witness_question.",
+    "expected": "Fallback should be visible in route results for manual review.",
+    "actual": "Witness action skipped by manifest validation: witness_scope_mismatch; Witness w-1 is not scoped to dispute d-1.",
+    "resolverPath": "route_simulator_manifest_validation",
+    "sourcePath": "src/data/cases/generated/friend-01.json:duo.socialGraph[id=w-1].relatedDisputeIds",
+    "patchPriority": "P2-route-observability"
+  },
+  {
+    "id": "QARS-0013",
+    "caseId": "friend-01",
+    "routeId": "phase2-linear-d1-contact",
+    "phase": "phase2",
+    "actionIndex": 5,
+    "actionType": "witness_question",
+    "disputeId": "d-1",
+    "localIndex": 3,
+    "severity": "P2",
+    "category": "safe_fallback_used",
+    "detectors": [
+      "safe_fallback_used"
+    ],
+    "summary": "Safe fallback used for witness_question.",
+    "expected": "Fallback should be visible in route results for manual review.",
+    "actual": "Witness action skipped by manifest validation: witness_domain_mismatch; Witness w-1 knowledge does not match route domain contact_log.",
+    "resolverPath": "route_simulator_manifest_validation",
+    "sourcePath": "src/data/cases/generated/friend-01.json:duo.socialGraph[id=w-1].knowledgeScope",
+    "patchPriority": "P2-route-observability"
+  },
+  {
+    "id": "QARS-0014",
+    "caseId": "friend-01",
+    "routeId": "phase3-branching-d5-dossier",
+    "phase": "phase3",
+    "actionIndex": 1,
+    "actionType": "evidence_combine",
+    "target": "a",
+    "localIndex": 1,
+    "severity": "P2",
+    "category": "safe_fallback_used",
+    "detectors": [
+      "safe_fallback_used"
+    ],
+    "summary": "Safe fallback used for evidence_combine.",
+    "expected": "Fallback should be visible in route results for manual review.",
+    "actual": "Evidence combination skipped by runtime parity gate: combine-1; not fully investigated=e-1, e-2",
+    "resolverPath": "route_simulator_runtime_gate",
+    "sourcePath": "src/data/cases/generated/friend-01.json:combinationLab.recipes[id=combine-1]",
+    "patchPriority": "P2-route-observability"
+  },
+  {
+    "id": "QARS-0015",
+    "caseId": "friend-01",
+    "routeId": "phase3-branching-d5-dossier",
+    "phase": "phase3",
+    "actionIndex": 4,
+    "actionType": "witness_question",
+    "disputeId": "d-5",
+    "localIndex": 1,
+    "severity": "P2",
+    "category": "safe_fallback_used",
+    "detectors": [
+      "safe_fallback_used"
+    ],
+    "summary": "Safe fallback used for witness_question.",
+    "expected": "Fallback should be visible in route results for manual review.",
+    "actual": "Witness action skipped by manifest validation: witness_question_before_summon; Witness question occurs before witness summon: w-1.",
+    "resolverPath": "route_simulator_manifest_validation",
+    "sourcePath": "tmp/qa-route-simulator-manifests/friend-01.json:witness_question.w-1",
+    "patchPriority": "P2-route-observability"
+  },
+  {
+    "id": "QARS-0016",
+    "caseId": "friend-01",
+    "routeId": "phase3-branching-d5-dossier",
+    "phase": "phase3",
+    "actionIndex": 5,
+    "actionType": "witness_summon",
+    "disputeId": "d-5",
+    "localIndex": 1,
+    "severity": "observability",
+    "category": "system_only_action_no_npc_followup",
+    "detectors": [
+      "response_missing",
+      "response_missing_reclassified"
+    ],
+    "summary": "witness_summon produced only system/player state output; no NPC follow-up is required.",
+    "expected": "System-only route actions may surface state changes without immediate NPC or witness dialogue.",
+    "actual": "1 player-facing outputs; speakers=system",
+    "resolverPath": "runtime_system | route_simulator_facsimile | route_simulator_facsimile",
+    "sourcePath": "src/data/cases/generated/friend-01.json:activeThirdParties[id=w-1] | tmp/qa-route-simulator-manifests/friend-01.json:witness_summon.w-1 | tmp/qa-route-simulator-manifests/friend-01.json:witness_summon.w-1.prompt",
+    "patchPriority": "N-route-contract-observability",
+    "reclassifiedFrom": {
+      "severity": "P0",
+      "category": "response_missing"
+    }
+  },
+  {
+    "id": "QARS-0017",
     "caseId": "friend-01",
     "routeId": "phase4-cascading-d2-message",
     "phase": "phase4",
@@ -75,7 +363,7 @@
     "target": "b",
     "evidenceId": "e-4",
     "localIndex": 1,
-    "severity": "P1",
+    "severity": "observability",
     "category": "evidence_investigate_no_npc_followup",
     "detectors": [
       "evidence_investigate_no_npc_followup"
@@ -85,10 +373,79 @@
     "actual": "1 system output(s); speakers=system",
     "resolverPath": "runtime_system",
     "sourcePath": "src/data/cases/generated/friend-01.json:evidence.e-4.investigationResults.check_metadata",
-    "patchPriority": "P1-route-contract-observability"
+    "patchPriority": "N-route-contract-observability"
   },
   {
-    "id": "QARS-0005",
+    "id": "QARS-0018",
+    "caseId": "friend-01",
+    "routeId": "phase4-cascading-d2-message",
+    "phase": "phase4",
+    "actionIndex": 4,
+    "actionType": "witness_question",
+    "disputeId": "d-2",
+    "localIndex": 1,
+    "severity": "P2",
+    "category": "safe_fallback_used",
+    "detectors": [
+      "safe_fallback_used"
+    ],
+    "summary": "Safe fallback used for witness_question.",
+    "expected": "Fallback should be visible in route results for manual review.",
+    "actual": "Witness action skipped by manifest validation: witness_question_before_summon; Witness question occurs before witness summon: w-2.",
+    "resolverPath": "route_simulator_manifest_validation",
+    "sourcePath": "tmp/qa-route-simulator-manifests/friend-01.json:witness_question.w-2",
+    "patchPriority": "P2-route-observability"
+  },
+  {
+    "id": "QARS-0019",
+    "caseId": "friend-01",
+    "routeId": "phase4-cascading-d2-message",
+    "phase": "phase4",
+    "actionIndex": 5,
+    "actionType": "emergence_event",
+    "target": "b",
+    "disputeId": "d-3",
+    "localIndex": 1,
+    "severity": "observability",
+    "category": "qa_annotation_only_action",
+    "detectors": [
+      "response_missing",
+      "response_missing_reclassified"
+    ],
+    "summary": "emergence_event produced only QA-annotation output; no player-facing NPC response is required.",
+    "expected": "Route annotation/state-transition actions should preserve traceability in QA annotations without counting as player-facing missing responses.",
+    "actual": "1 QA annotation output(s); speakers=witness",
+    "resolverPath": "route_simulator_facsimile",
+    "sourcePath": "tmp/qa-route-simulator-manifests/friend-01.json:emergence_event.friend-d3-open",
+    "patchPriority": "N-route-contract-observability",
+    "reclassifiedFrom": {
+      "severity": "P0",
+      "category": "response_missing"
+    }
+  },
+  {
+    "id": "QARS-0020",
+    "caseId": "friend-01",
+    "routeId": "phase5-evidence-heavy-d4-late",
+    "phase": "phase5",
+    "actionIndex": 1,
+    "actionType": "evidence_combine",
+    "target": "b",
+    "localIndex": 1,
+    "severity": "P2",
+    "category": "safe_fallback_used",
+    "detectors": [
+      "safe_fallback_used"
+    ],
+    "summary": "Safe fallback used for evidence_combine.",
+    "expected": "Fallback should be visible in route results for manual review.",
+    "actual": "Evidence combination skipped by runtime parity gate: combine-7; not fully investigated=e-3, e-6",
+    "resolverPath": "route_simulator_runtime_gate",
+    "sourcePath": "src/data/cases/generated/friend-01.json:combinationLab.recipes[id=combine-7]",
+    "patchPriority": "P2-route-observability"
+  },
+  {
+    "id": "QARS-0021",
     "caseId": "friend-01",
     "routeId": "phase5-evidence-heavy-d4-late",
     "phase": "phase5",
@@ -97,7 +454,7 @@
     "target": "b",
     "evidenceId": "e-6",
     "localIndex": 1,
-    "severity": "P1",
+    "severity": "observability",
     "category": "evidence_investigate_no_npc_followup",
     "detectors": [
       "evidence_investigate_no_npc_followup"
@@ -107,10 +464,35 @@
     "actual": "1 system output(s); speakers=system",
     "resolverPath": "runtime_system",
     "sourcePath": "src/data/cases/generated/friend-01.json:evidence.e-6.investigationResults.restore_context",
-    "patchPriority": "P1-route-contract-observability"
+    "patchPriority": "N-route-contract-observability"
   },
   {
-    "id": "QARS-0006",
+    "id": "QARS-0022",
+    "caseId": "friend-01",
+    "routeId": "phase5-evidence-heavy-d4-late",
+    "phase": "phase5",
+    "actionIndex": 5,
+    "actionType": "discovery_event",
+    "localIndex": 1,
+    "severity": "observability",
+    "category": "qa_annotation_only_action",
+    "detectors": [
+      "response_missing",
+      "response_missing_reclassified"
+    ],
+    "summary": "discovery_event produced only QA-annotation output; no player-facing NPC response is required.",
+    "expected": "Route annotation/state-transition actions should preserve traceability in QA annotations without counting as player-facing missing responses.",
+    "actual": "2 QA annotation output(s); speakers=system,witness",
+    "resolverPath": "route_simulator_facsimile | route_simulator_facsimile",
+    "sourcePath": "tmp/qa-route-simulator-manifests/friend-01.json:discovery_event.friend-d4-reviewed | tmp/qa-route-simulator-manifests/friend-01.json:discovery_event.friend-d4-reviewed.followup",
+    "patchPriority": "N-route-contract-observability",
+    "reclassifiedFrom": {
+      "severity": "P0",
+      "category": "response_missing"
+    }
+  },
+  {
+    "id": "QARS-0023",
     "caseId": "spouse-01",
     "routeId": "phase3-baseline",
     "phase": "phase3",
@@ -119,7 +501,7 @@
     "target": "b",
     "evidenceId": "e-1",
     "localIndex": 1,
-    "severity": "P1",
+    "severity": "observability",
     "category": "evidence_investigate_no_npc_followup",
     "detectors": [
       "evidence_investigate_no_npc_followup"
@@ -129,10 +511,57 @@
     "actual": "1 system output(s); speakers=system",
     "resolverPath": "runtime_system",
     "sourcePath": "src/data/cases/generated/spouse-01.json:evidence.e-1.investigationResults.request_original",
-    "patchPriority": "P1-route-contract-observability"
+    "patchPriority": "N-route-contract-observability"
   },
   {
-    "id": "QARS-0007",
+    "id": "QARS-0024",
+    "caseId": "spouse-01",
+    "routeId": "phase3-branching-dossier-witness",
+    "phase": "phase3",
+    "actionIndex": 1,
+    "actionType": "evidence_combine",
+    "target": "b",
+    "localIndex": 1,
+    "severity": "P2",
+    "category": "safe_fallback_used",
+    "detectors": [
+      "safe_fallback_used"
+    ],
+    "summary": "Safe fallback used for evidence_combine.",
+    "expected": "Fallback should be visible in route results for manual review.",
+    "actual": "Evidence combination skipped by runtime parity gate: combine-2; not fully investigated=e-1, e-4",
+    "resolverPath": "route_simulator_runtime_gate",
+    "sourcePath": "src/data/cases/generated/spouse-01.json:combinationLab.recipes[id=combine-2]",
+    "patchPriority": "P2-route-observability"
+  },
+  {
+    "id": "QARS-0025",
+    "caseId": "spouse-01",
+    "routeId": "phase3-branching-dossier-witness",
+    "phase": "phase3",
+    "actionIndex": 3,
+    "actionType": "witness_summon",
+    "disputeId": "d-1",
+    "localIndex": 1,
+    "severity": "observability",
+    "category": "system_only_action_no_npc_followup",
+    "detectors": [
+      "response_missing",
+      "response_missing_reclassified"
+    ],
+    "summary": "witness_summon produced only system/player state output; no NPC follow-up is required.",
+    "expected": "System-only route actions may surface state changes without immediate NPC or witness dialogue.",
+    "actual": "1 player-facing outputs; speakers=system",
+    "resolverPath": "runtime_system | route_simulator_facsimile | route_simulator_facsimile",
+    "sourcePath": "src/data/cases/generated/spouse-01.json:activeThirdParties[id=w-1] | tmp/qa-route-simulator-manifests/spouse-01.json:witness_summon.w-1 | tmp/qa-route-simulator-manifests/spouse-01.json:witness_summon.w-1.prompt",
+    "patchPriority": "N-route-contract-observability",
+    "reclassifiedFrom": {
+      "severity": "P0",
+      "category": "response_missing"
+    }
+  },
+  {
+    "id": "QARS-0026",
     "caseId": "spouse-01",
     "routeId": "phase4-cascading-d2-to-hidden",
     "phase": "phase4",
@@ -141,7 +570,7 @@
     "target": "b",
     "evidenceId": "e-4",
     "localIndex": 1,
-    "severity": "P1",
+    "severity": "observability",
     "category": "evidence_investigate_no_npc_followup",
     "detectors": [
       "evidence_investigate_no_npc_followup"
@@ -151,10 +580,10 @@
     "actual": "1 system output(s); speakers=system",
     "resolverPath": "runtime_system",
     "sourcePath": "src/data/cases/generated/spouse-01.json:evidence.e-4.investigationResults.request_original",
-    "patchPriority": "P1-route-contract-observability"
+    "patchPriority": "N-route-contract-observability"
   },
   {
-    "id": "QARS-0008",
+    "id": "QARS-0027",
     "caseId": "spouse-01",
     "routeId": "phase4-cascading-d2-to-hidden",
     "phase": "phase4",
@@ -163,7 +592,7 @@
     "target": "b",
     "evidenceId": "e-4",
     "localIndex": 1,
-    "severity": "P1",
+    "severity": "observability",
     "category": "evidence_investigate_no_npc_followup",
     "detectors": [
       "evidence_investigate_no_npc_followup"
@@ -173,10 +602,10 @@
     "actual": "1 system output(s); speakers=system",
     "resolverPath": "runtime_system",
     "sourcePath": "src/data/cases/generated/spouse-01.json:evidence.e-4.investigationResults.check_metadata",
-    "patchPriority": "P1-route-contract-observability"
+    "patchPriority": "N-route-contract-observability"
   },
   {
-    "id": "QARS-0009",
+    "id": "QARS-0028",
     "caseId": "spouse-01",
     "routeId": "phase4-cascading-d2-to-hidden",
     "phase": "phase4",
@@ -185,7 +614,7 @@
     "target": "b",
     "evidenceId": "e-4",
     "localIndex": 1,
-    "severity": "P1",
+    "severity": "observability",
     "category": "evidence_investigate_no_npc_followup",
     "detectors": [
       "evidence_investigate_no_npc_followup"
@@ -195,6 +624,123 @@
     "actual": "1 system output(s); speakers=system",
     "resolverPath": "runtime_system",
     "sourcePath": "src/data/cases/generated/spouse-01.json:evidence.e-4.investigationResults.restore_context",
-    "patchPriority": "P1-route-contract-observability"
+    "patchPriority": "N-route-contract-observability"
+  },
+  {
+    "id": "QARS-0029",
+    "caseId": "spouse-01",
+    "routeId": "phase4-cascading-d2-to-hidden",
+    "phase": "phase4",
+    "actionIndex": 6,
+    "actionType": "emergence_event",
+    "target": "b",
+    "disputeId": "h-d3",
+    "localIndex": 1,
+    "severity": "observability",
+    "category": "qa_annotation_only_action",
+    "detectors": [
+      "response_missing",
+      "response_missing_reclassified"
+    ],
+    "summary": "emergence_event produced only QA-annotation output; no player-facing NPC response is required.",
+    "expected": "Route annotation/state-transition actions should preserve traceability in QA annotations without counting as player-facing missing responses.",
+    "actual": "1 QA annotation output(s); speakers=witness",
+    "resolverPath": "route_simulator_facsimile",
+    "sourcePath": "tmp/qa-route-simulator-manifests/spouse-01.json:emergence_event.spouse-hd3-open",
+    "patchPriority": "N-route-contract-observability",
+    "reclassifiedFrom": {
+      "severity": "P0",
+      "category": "response_missing"
+    }
+  },
+  {
+    "id": "QARS-0030",
+    "caseId": "spouse-01",
+    "routeId": "phase4-cascading-d2-to-hidden",
+    "phase": "phase4",
+    "actionIndex": 7,
+    "actionType": "witness_question",
+    "disputeId": "h-d3",
+    "localIndex": 1,
+    "severity": "P2",
+    "category": "safe_fallback_used",
+    "detectors": [
+      "safe_fallback_used"
+    ],
+    "summary": "Safe fallback used for witness_question.",
+    "expected": "Fallback should be visible in route results for manual review.",
+    "actual": "Witness action skipped by manifest validation: witness_question_before_summon; Witness question occurs before witness summon: w-2.",
+    "resolverPath": "route_simulator_manifest_validation",
+    "sourcePath": "tmp/qa-route-simulator-manifests/spouse-01.json:witness_question.w-2",
+    "patchPriority": "P2-route-observability"
+  },
+  {
+    "id": "QARS-0031",
+    "caseId": "spouse-01",
+    "routeId": "phase5-evidence-heavy-hidden-dossier",
+    "phase": "phase5",
+    "actionIndex": 1,
+    "actionType": "evidence_combine",
+    "target": "b",
+    "localIndex": 1,
+    "severity": "P2",
+    "category": "safe_fallback_used",
+    "detectors": [
+      "safe_fallback_used"
+    ],
+    "summary": "Safe fallback used for evidence_combine.",
+    "expected": "Fallback should be visible in route results for manual review.",
+    "actual": "Evidence combination skipped by runtime parity gate: combine-4; not fully investigated=e-6, e-7",
+    "resolverPath": "route_simulator_runtime_gate",
+    "sourcePath": "src/data/cases/generated/spouse-01.json:combinationLab.recipes[id=combine-4]",
+    "patchPriority": "P2-route-observability"
+  },
+  {
+    "id": "QARS-0032",
+    "caseId": "spouse-01",
+    "routeId": "phase5-evidence-heavy-hidden-dossier",
+    "phase": "phase5",
+    "actionIndex": 3,
+    "actionType": "contradiction_pursuit",
+    "target": "b",
+    "disputeId": "h-d3",
+    "localIndex": 1,
+    "severity": "P1",
+    "category": "qa_focus_review",
+    "detectors": [
+      "qa_mismatch_runtime",
+      "qa_focus_review"
+    ],
+    "summary": "NPC response appears to focus on another dispute in the executed route.",
+    "expected": "Response should stay focused on h-d3.",
+    "actual": "제가 침묵한 게 단초였습니다. 그래도 위임장에 손댄 책임까지 제게 돌릴 수는 없습니다.",
+    "resolverPath": "scripted",
+    "sourcePath": "src/data/scriptedText/spouse-01.json:channels.contradiction_pursuit.entries[key=b|h-d3|S3].variants[id=contra-b-h-d3-S3-v1]",
+    "patchPriority": "P1-script-focus-review"
+  },
+  {
+    "id": "QARS-0033",
+    "caseId": "spouse-01",
+    "routeId": "phase5-evidence-heavy-hidden-dossier",
+    "phase": "phase5",
+    "actionIndex": 5,
+    "actionType": "discovery_event",
+    "localIndex": 1,
+    "severity": "observability",
+    "category": "qa_annotation_only_action",
+    "detectors": [
+      "response_missing",
+      "response_missing_reclassified"
+    ],
+    "summary": "discovery_event produced only QA-annotation output; no player-facing NPC response is required.",
+    "expected": "Route annotation/state-transition actions should preserve traceability in QA annotations without counting as player-facing missing responses.",
+    "actual": "2 QA annotation output(s); speakers=system,witness",
+    "resolverPath": "route_simulator_facsimile | route_simulator_facsimile",
+    "sourcePath": "tmp/qa-route-simulator-manifests/spouse-01.json:discovery_event.spouse-dc3-reviewed | tmp/qa-route-simulator-manifests/spouse-01.json:discovery_event.spouse-dc3-reviewed.followup",
+    "patchPriority": "N-route-contract-observability",
+    "reclassifiedFrom": {
+      "severity": "P0",
+      "category": "response_missing"
+    }
   }
 ]

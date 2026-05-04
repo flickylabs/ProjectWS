@@ -22,7 +22,7 @@ import { showToast } from '../../common/Toast'
 import { showGuideCutscene } from '../../common/guideCutscene'
 import { getCombinationComment } from '../../../data/combinationComments'
 import { PC_ADD_COMBINATION_NOTE_EVENT, type PcCombinationPanelEventDetail, type PcPinnedNote } from './PCImportantNotesSection'
-import { playCombinationSuccess } from '../../../engine/soundEngine'
+import { playCombinationFailure, playCombinationSuccess } from '../../../engine/soundEngine'
 import { cleanOutputLabel, cleanOutputSummary } from '../../../utils/combinationLabels'
 import { pp이가 } from '../../../engine/koreanPostposition'
 import ArchetypeTag from '../tags/ArchetypeTag'
@@ -440,6 +440,7 @@ export default function PCRightPanel() {
     }
 
     if (!matchingRecipe || !matchingOutput) {
+      playCombinationFailure()
       openPcInteractionPanel({
         title: '\uC870\uD569 \uC2E4\uD328',
         subtitle: '\uD604\uC7AC \uC870\uD569 \uACB0\uACFC \uC5C6\uC74C',
@@ -458,6 +459,7 @@ export default function PCRightPanel() {
     )
 
     if (outputAlreadyRecorded) {
+      playCombinationFailure()
       openPcInteractionPanel({
         title: '이미 기록된 조합',
         subtitle: cleanOutputLabel(matchingOutput.label),
@@ -470,6 +472,7 @@ export default function PCRightPanel() {
     }
 
     if (!store.canRunCombinationRecipe(matchingRecipe.id)) {
+      playCombinationFailure()
       openPcInteractionPanel({
         title: '\uC870\uD569 \uBD88\uAC00',
         subtitle: '\uBD84\uC11D \uD3EC\uC778\uD2B8 \uBD80\uC871 \uB610\uB294 \uC7A0\uAE08 \uC0C1\uD0DC',
@@ -483,6 +486,7 @@ export default function PCRightPanel() {
 
     const result = store.runCombinationRecipe(matchingRecipe.id)
     if (!result.ok) {
+      playCombinationFailure()
       openPcInteractionPanel({
         title: '\uC870\uD569 \uC2E4\uD328',
         subtitle: '\uACB0\uACFC \uC0DD\uC131 \uC2E4\uD328',

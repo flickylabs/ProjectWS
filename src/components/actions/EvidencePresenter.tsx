@@ -4,7 +4,7 @@ import { useGameStore, useStore } from '../../store/useGameStore'
 import { useActionDispatch } from '../../hooks/useActionDispatch'
 import { getAvailableWitnesses, getWitnessPreviewText, determineTestimonyDepth, getDepthSystemMessage } from '../../engine/witnessEngine'
 import { canAppraise, getUnlockedQuestions, getLockedQuestions, computeSurfacedEvidence } from '../../engine/evidenceEngine'
-import { playClick, playEvidenceUnlock } from '../../engine/soundEngine'
+import { playClick, playEvidenceUnlock, playInvestigationTokenWarning } from '../../engine/soundEngine'
 import Emoji from '../common/Emoji'
 import EvidenceVisual from '../common/EvidenceVisual'
 import { EvidenceAppraisalModal } from '../discovery'
@@ -128,8 +128,9 @@ export default function EvidencePresenter({ target, onPresent, onConfront, onWit
     if (!nextKey) return
 
     const depth = state.investigatedActions.length + 1 // 1, 2, 3
-    const investigationCost = depth <= 1 ? 0 : (depth === 2 ? 2 : 1)
+    const investigationCost = depth <= 1 ? 0 : (depth === 2 ? 1 : 2)
     if (globalInvest < investigationCost) {
+      playInvestigationTokenWarning()
       useGameStore.getState().addDialogue({
         speaker: 'system', text: `조사 ${depth}단계에는 조사 토큰 ${investigationCost}개가 필요합니다.`, relatedDisputes: [], turn: useGameStore.getState().turnCount,
       })

@@ -165,9 +165,11 @@ export function shouldPlayCutscene(type: CutsceneType, ctx: VfxTurnContext): boo
   if (type === 'phase_transition') {
     const cKey = caseKey(ctx.caseId)
     const phaseCount = phaseTransitionCountByCase.get(cKey) ?? 0
-    if (phaseCount >= PHASE_TRANSITION_STRONG_LIMIT) return false
-    if (!canPlayCutIn(type, ctx)) return false
-    phaseTransitionCountByCase.set(cKey, phaseCount + 1)
+    const phase = phaseKey(ctx.phase)
+    const isJudgmentPhase = phase === 'phase6' || phase === 'phase7'
+    if (!isJudgmentPhase && phaseCount >= PHASE_TRANSITION_STRONG_LIMIT) return false
+    if (!canPlayCutIn(type, ctx, isJudgmentPhase ? 0 : CUT_IN_COOLDOWN_TURNS)) return false
+    if (!isJudgmentPhase) phaseTransitionCountByCase.set(cKey, phaseCount + 1)
     return true
   }
 

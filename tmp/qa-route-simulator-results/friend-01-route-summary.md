@@ -2,7 +2,7 @@
 
 - routes: 4
 - actions: 20
-- findings: 3
+- findings: 13
 - hard findings: 0
 
 ## Routes
@@ -12,6 +12,16 @@
 - phase5-evidence-heavy-d4-late [evidence-heavy]: Evidence-heavy late route for d-4 that combines past records and checks the late evidence investigation contract.
 
 ## Findings
-- QARS-0003 [P1/evidence_investigate_no_npc_followup] evidence_investigate ended as a system-only discovery action with no automatic NPC follow-up.
-- QARS-0004 [P1/evidence_investigate_no_npc_followup] evidence_investigate ended as a system-only discovery action with no automatic NPC follow-up.
-- QARS-0005 [P1/evidence_investigate_no_npc_followup] evidence_investigate ended as a system-only discovery action with no automatic NPC follow-up.
+- QARS-0010 [observability/evidence_investigate_no_npc_followup] evidence_investigate ended as a system-only discovery action with no automatic NPC follow-up.
+- QARS-0011 [P2/safe_fallback_used] Safe fallback used for witness_question.
+- QARS-0012 [P2/safe_fallback_used] Safe fallback used for witness_question.
+- QARS-0013 [P2/safe_fallback_used] Safe fallback used for witness_question.
+- QARS-0014 [P2/safe_fallback_used] Safe fallback used for evidence_combine.
+- QARS-0015 [P2/safe_fallback_used] Safe fallback used for witness_question.
+- QARS-0016 [observability/system_only_action_no_npc_followup] witness_summon produced only system/player state output; no NPC follow-up is required.
+- QARS-0017 [observability/evidence_investigate_no_npc_followup] evidence_investigate ended as a system-only discovery action with no automatic NPC follow-up.
+- QARS-0018 [P2/safe_fallback_used] Safe fallback used for witness_question.
+- QARS-0019 [observability/qa_annotation_only_action] emergence_event produced only QA-annotation output; no player-facing NPC response is required.
+- QARS-0020 [P2/safe_fallback_used] Safe fallback used for evidence_combine.
+- QARS-0021 [observability/evidence_investigate_no_npc_followup] evidence_investigate ended as a system-only discovery action with no automatic NPC follow-up.
+- QARS-0022 [observability/qa_annotation_only_action] discovery_event produced only QA-annotation output; no player-facing NPC response is required.

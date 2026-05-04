@@ -3,7 +3,7 @@
 - runner: `scripts/qa-route-simulator.cjs`
 - routes: 12
 - actions: 64
-- findings: 9
+- findings: 33
 - hard findings: 0
 
 ## Routes

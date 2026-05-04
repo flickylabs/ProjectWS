@@ -6,7 +6,7 @@ import { resolveLLMDialogue } from '../engine/llmDialogueResolver'
 import { pp을를, pp과와, pp이가, pp은는 } from '../engine/koreanPostposition'
 import { generateWitnessTestimony, canCallWitness, determineTestimonyDepth, getDepthSystemMessage } from '../engine/witnessEngine'
 import type { PlayerAction, PartyId, QuestionType, DialogueNode } from '../types'
-import { playEvidencePresent, playEvidenceUnlock, playEvidenceUpgrade, playSeparation } from '../engine/soundEngine'
+import { playEvidencePresent, playEvidenceUnlock, playEvidenceUpgrade, playInvestigationTokenWarning, playSeparation } from '../engine/soundEngine'
 import { v4Effects } from '../engine/presentationEngine'
 import { iga, eunneun } from '../utils/korean'
 import { showToast, showLLMErrorBanner } from '../components/common/Toast'
@@ -328,14 +328,188 @@ function buildEvidenceBeatRows(evidence: any, evidenceRuntime: any, resultType: 
   }]
 }
 
-function findRecentCourtBeatStatement(state: ReturnType<typeof useGameStore.getState>, party: PartyId, disputeIds: string[]): string {
+type CourtBeatEvidenceFamily = 'receipt' | 'call' | 'location' | 'account' | 'message' | 'generic'
+
+function getCourtBeatEvidenceFamily(evidenceName: string, rows: ReturnType<typeof buildEvidenceBeatRows>): CourtBeatEvidenceFamily {
+  const corpus = `${evidenceName} ${rows.map((row) => `${row.label} ${row.detail ?? ''}`).join(' ')}`
+  if (/영수증|구매|품목|결제|원\b|참고서|올리브영|다이소|서점|마트|생활용품/.test(corpus)) return 'receipt'
+  if (/통화|전화|발신|수신|연락|분\s*\d+초|초\b/.test(corpus)) return 'call'
+  if (/GPS|위치|블랙박스|네비|내비|이동|오피스텔|인근|방문|주차|봉천동|관악구/.test(corpus)) return 'location'
+  if (/계좌|출금|입금|송금|현금|거래|잔액|비자금|적금/.test(corpus)) return 'account'
+  if (/문자|메시지|카톡|텔레그램|DM|채팅|알림|발신자/.test(corpus)) return 'message'
+  return 'generic'
+}
+
+function canDirectlyClashWithStatement(family: CourtBeatEvidenceFamily, statementText: string): boolean {
+  const text = statementText.replace(/\s+/g, ' ')
+  switch (family) {
+    case 'location':
+      return /오피스텔|방문|방문한|갔|간\s|그곳|장소|동선|차량|차를|주차|위치|GPS|블랙박스|네비|내비|봉천동|관악구/.test(text)
+    case 'call':
+      return /통화|전화|연락|발신|수신|새벽|시간|길지|짧|의미 없는|단순한 연락/.test(text)
+    case 'account':
+      return /계좌|돈|출금|입금|송금|현금|비자금|적금|재산|금액|비용|잔액|모아/.test(text)
+    case 'receipt':
+      return /영수증|구매|샀|산\s|결제|품목|물건|참고서|생활용품|재산|가족|부모님|돈|비용/.test(text)
+    case 'message':
+      return /문자|메시지|카톡|텔레그램|대화|알림|보낸|받은|연락|내용/.test(text)
+    default:
+      return true
+  }
+}
+
+function buildCourtBeatRelationCopy(
+  evidenceName: string,
+  rows: ReturnType<typeof buildEvidenceBeatRows>,
+  statementText: string,
+  isHit: boolean,
+  isDirectClash: boolean,
+  hasStatementContext: boolean,
+) {
+  const family = getCourtBeatEvidenceFamily(evidenceName, rows)
+  const familyLabel: Record<CourtBeatEvidenceFamily, string> = {
+    receipt: '영수증',
+    call: '통화 기록',
+    location: '위치 기록',
+    account: '계좌 기록',
+    message: '메시지',
+    generic: '이 자료',
+  }
+
+  if (!hasStatementContext) {
+    return {
+      relationshipLine: isHit
+        ? `${familyLabel[family]}은 특정 진술을 바로 깨기보다, 현재 쟁점에서 확인할 범위를 좁힙니다.`
+        : `${familyLabel[family]}만으로는 현재 쟁점을 직접 뒤집기 어렵습니다.`,
+      judgeLine: isHit
+        ? `${familyLabel[family]}은 특정 진술을 바로 뒤집기보다, 현재 쟁점에서 확인할 범위를 좁힙니다.`
+        : '이 자료만으로는 현재 쟁점을 직접 뒤집기 어렵습니다.',
+      notebookEntry: isHit
+        ? `${evidenceName}에서 현재 쟁점과 관련해 추가로 확인할 대목이 생겼습니다.`
+        : undefined,
+    }
+  }
+
+  if (!isHit) {
+    return {
+      relationshipLine: undefined,
+      judgeLine: '이 자료만으로는 방금 진술을 직접 뒤집기 어렵습니다.',
+      notebookEntry: undefined,
+    }
+  }
+
+  if (family === 'receipt') {
+    if (!isDirectClash) {
+      return {
+        relationshipLine: '영수증은 방금 진술을 바로 깨기보다, 같은 기간의 지출 흐름을 따로 확인하게 합니다.',
+        judgeLine: '이 영수증은 방금 진술을 바로 뒤집기보다, 지출 흐름을 더 확인해야 할 범위를 좁힙니다.',
+        notebookEntry: `${evidenceName}에서 지출 흐름을 별도로 확인할 대목이 생겼습니다.`,
+      }
+    }
+    return {
+      relationshipLine: '영수증의 날짜·품목이 방금 진술의 설명과 같은 흐름에 놓입니다.',
+      judgeLine: '영수증의 날짜와 품목이 방금 진술의 설명과 맞물립니다. 별개의 일인지 다시 확인하겠습니다.',
+      notebookEntry: `${evidenceName}의 날짜·품목에 비추어, 방금 진술은 별개의 일로 보기 어렵습니다.`,
+    }
+  }
+
+  if (family === 'location' && /통화|전화|연락|발신|수신/.test(`${evidenceName} ${rows.map((row) => row.label).join(' ')}`)) {
+    if (!isDirectClash) {
+      return {
+        relationshipLine: 'GPS는 방금 진술을 깨기보다, 통화 이후 동선을 따로 확인하게 합니다.',
+        judgeLine: '이 위치 기록은 방금 진술을 바로 뒤집기보다, 통화 이후 동선을 확인할 범위를 좁힙니다.',
+        notebookEntry: `${evidenceName}에서 통화 이후 동선을 확인할 대목이 생겼습니다.`,
+      }
+    }
+    return {
+      relationshipLine: '통화 시각과 이동 기록이 방금 진술의 시간 설명을 끊어냅니다.',
+      judgeLine: '통화 시각과 이동 기록을 따로 볼 수 없습니다. 시간을 다시 짚겠습니다.',
+      notebookEntry: `${evidenceName}에 비추어, 방금 진술은 시간 흐름과 맞지 않습니다.`,
+    }
+  }
+
+  if (family === 'call') {
+    if (!isDirectClash) {
+      return {
+        relationshipLine: '통화 기록은 방금 설명을 바로 깨기보다, 연락의 시간대를 따로 확인하게 합니다.',
+        judgeLine: '이 통화 기록은 방금 진술을 바로 뒤집기보다, 연락의 시간대를 확인할 범위를 좁힙니다.',
+        notebookEntry: `${evidenceName}에서 연락 시간대를 확인할 대목이 생겼습니다.`,
+      }
+    }
+    return {
+      relationshipLine: '통화 기록의 시간·상대가 방금 진술의 축소 설명과 충돌합니다.',
+      judgeLine: '이 통화 기록은 방금 진술과 맞지 않습니다. 연락의 성격을 다시 확인하겠습니다.',
+      notebookEntry: `${evidenceName}에 비추어, 방금 진술은 그대로 받아들이기 어렵습니다.`,
+    }
+  }
+
+  if (family === 'location') {
+    if (!isDirectClash) {
+      return {
+        relationshipLine: 'GPS는 방금 진술을 깨기보다, 오피스텔 방문 동선을 별도로 확인하게 합니다.',
+        judgeLine: '이 위치 기록은 방금 진술을 바로 뒤집기보다, 방문 동선을 따로 확인해야 할 범위를 좁힙니다.',
+        notebookEntry: `${evidenceName}에서 오피스텔 방문 동선을 별도로 확인할 대목이 생겼습니다.`,
+      }
+    }
+    return {
+      relationshipLine: '위치 기록이 방금 진술의 방문·동선 설명과 맞지 않습니다.',
+      judgeLine: '위치 기록은 방금 진술과 다른 동선을 가리킵니다. 이동 경위를 다시 묻겠습니다.',
+      notebookEntry: `${evidenceName}에 비추어, 방금 진술은 동선 설명과 맞지 않습니다.`,
+    }
+  }
+
+  if (family === 'account') {
+    if (!isDirectClash) {
+      return {
+        relationshipLine: '계좌 기록은 방금 설명을 바로 깨기보다, 돈의 흐름을 따로 확인하게 합니다.',
+        judgeLine: '이 계좌 기록은 방금 진술을 바로 뒤집기보다, 돈의 출처와 사용처를 확인할 범위를 좁힙니다.',
+        notebookEntry: `${evidenceName}에서 자금 흐름을 확인할 대목이 생겼습니다.`,
+      }
+    }
+    return {
+      relationshipLine: '거래 흐름이 방금 진술의 돈 출처·사용처 설명과 충돌합니다.',
+      judgeLine: '계좌의 흐름은 방금 진술과 맞지 않습니다. 돈의 출처와 사용처를 다시 확인하겠습니다.',
+      notebookEntry: `${evidenceName}에 비추어, 방금 진술은 자금 흐름과 맞지 않습니다.`,
+    }
+  }
+
+  if (family === 'message') {
+    if (!isDirectClash) {
+      return {
+        relationshipLine: '메시지는 방금 설명을 바로 깨기보다, 당시 대화의 맥락을 따로 확인하게 합니다.',
+        judgeLine: '이 메시지는 방금 진술을 바로 뒤집기보다, 당시 대화의 맥락을 확인할 범위를 좁힙니다.',
+        notebookEntry: `${evidenceName}에서 대화 맥락을 확인할 대목이 생겼습니다.`,
+      }
+    }
+    return {
+      relationshipLine: '메시지의 문맥이 방금 진술의 설명과 다른 방향을 가리킵니다.',
+      judgeLine: '메시지의 문맥은 방금 진술과 맞지 않습니다. 당시 대화의 의미를 다시 확인하겠습니다.',
+      notebookEntry: `${evidenceName}에 비추어, 방금 진술은 메시지 문맥과 맞지 않습니다.`,
+    }
+  }
+
+  return {
+    relationshipLine: isDirectClash
+      ? '증거의 핵심 기록이 방금 진술의 설명과 맞지 않습니다.'
+      : '증거가 방금 설명에서 더 확인해야 할 범위를 좁힙니다.',
+    judgeLine: isDirectClash
+      ? '이 기록은 방금 진술과 맞지 않습니다. 시간을 다시 짚겠습니다.'
+      : '이 기록은 방금 설명을 바로 뒤집기보다, 더 확인해야 할 범위를 좁힙니다.',
+    notebookEntry: isDirectClash
+      ? `${evidenceName}에 비추어, 방금 진술은 그대로 받아들이기 어렵습니다.`
+      : `${evidenceName}에서 추가로 확인할 대목이 생겼습니다. 방금 설명은 더 정리해야 합니다.`,
+  }
+}
+
+function findImmediateCourtBeatStatement(state: ReturnType<typeof useGameStore.getState>, party: PartyId, disputeIds: string[]): string {
   const related = new Set(disputeIds)
   const found = [...state.dialogueLog].reverse().find((entry: any) => {
-    if (entry.speaker !== party || entry.isHidden || !entry.text) return false
+    if (entry.isHidden || !entry.text) return false
+    if (entry.speaker === 'system') return false
     if (related.size === 0) return true
     return Array.isArray(entry.relatedDisputes) && entry.relatedDisputes.some((id: string) => related.has(id))
   })
-  return found?.text ?? ''
+  return found?.speaker === party ? found.text : ''
 }
 
 function pickStatementHighlight(text: string): string | undefined {
@@ -390,17 +564,6 @@ function expandStatementHighlight(text: string, hit: string): string {
   return sentence || hit
 }
 
-function findRecentDirectCourtBeatStatement(state: ReturnType<typeof useGameStore.getState>, party: PartyId, disputeIds: string[]): string {
-  const related = new Set(disputeIds)
-  const found = [...state.dialogueLog].reverse().find((entry: any) => {
-    if (entry.speaker !== party || entry.isHidden || !entry.text) return false
-    if (!pickStatementHighlight(entry.text)) return false
-    if (related.size === 0) return true
-    return Array.isArray(entry.relatedDisputes) && entry.relatedDisputes.some((id: string) => related.has(id))
-  })
-  return found?.text ?? ''
-}
-
 function buildCourtBeatForEvidencePresentation(
   state: ReturnType<typeof useGameStore.getState>,
   target: PartyId,
@@ -412,33 +575,34 @@ function buildCourtBeatForEvidencePresentation(
   resultType: 'hold' | 'crack' | 'collapse',
 ) {
   const targetName = getPartyName(state, target)
-  const recentStatementText = findRecentCourtBeatStatement(state, target, visibleDisputeIds)
-  const recentHighlightText = pickStatementHighlight(recentStatementText)
-  const directStatementText = recentHighlightText
-    ? recentStatementText
-    : findRecentDirectCourtBeatStatement(state, target, visibleDisputeIds)
-  const statementText = directStatementText
-    || recentStatementText
-    || `${targetName}의 직전 설명을 이 기록과 함께 다시 확인합니다.`
-  const highlightText = pickStatementHighlight(statementText)
-  const isHit = resultType === 'crack' || resultType === 'collapse'
-  const isDirectClash = isHit && Boolean(highlightText)
   const evidenceName = normalizeEvidenceDisplayLabel(displayName)
+  const immediateStatementText = findImmediateCourtBeatStatement(state, target, visibleDisputeIds)
+  const hasStatementContext = Boolean(immediateStatementText)
+  const statementText = hasStatementContext
+    ? immediateStatementText
+    : `${evidenceName}의 관련성을 현재 쟁점과 별도로 검토합니다.`
+  const highlightText = hasStatementContext ? pickStatementHighlight(statementText) : undefined
+  const isHit = resultType === 'crack' || resultType === 'collapse'
+  const evidenceRows = buildEvidenceBeatRows(evidence, evidenceRuntime, resultType)
+  const evidenceFamily = getCourtBeatEvidenceFamily(evidenceName, evidenceRows)
+  const isDirectClash = hasStatementContext && isHit && Boolean(highlightText) && canDirectlyClashWithStatement(evidenceFamily, statementText)
+  const relationCopy = buildCourtBeatRelationCopy(evidenceName, evidenceRows, statementText, isHit, isDirectClash, hasStatementContext)
   return {
     beatType: isHit ? 'evidence_hit_major' : 'evidence_miss',
     intensity: isHit ? 'impact' : 'focus',
     cue: isDirectClash ? 'contradiction' : 'evidence',
     destination: isHit ? 'notebook' : 'observation',
     statement: {
-      speakerName: targetName,
+      label: hasStatementContext ? undefined : '검토 대상',
+      speakerName: hasStatementContext ? targetName : undefined,
       text: shortenCourtBeatText(statementText, 96),
-      highlightText,
+      highlightText: isDirectClash ? highlightText : undefined,
     },
     evidence: {
       id: evidence?.id,
       title: evidenceName,
       stageLabel,
-      rows: buildEvidenceBeatRows(evidence, evidenceRuntime, resultType),
+      rows: evidenceRows,
     },
     portraitReaction: {
       caseId: state.caseData?.caseId,
@@ -446,21 +610,14 @@ function buildCourtBeatForEvidencePresentation(
       name: targetName,
       state: isDirectClash ? 'shaken' : 'defensive',
     },
-    judgeLine: isHit
-      ? isDirectClash
-        ? '이 기록은 방금 진술과 맞지 않습니다. 시간을 다시 짚겠습니다.'
-        : '이 기록은 방금 설명을 바로 뒤집기보다, 더 확인해야 할 범위를 좁힙니다.'
-      : '이 자료만으로는 방금 진술을 직접 뒤집기 어렵습니다.',
+    judgeLine: relationCopy.judgeLine,
     reactionLine: isHit
       ? isDirectClash
         ? '...그렇게 연결될 줄은 몰랐습니다.'
         : '...그 부분은 더 설명드리겠습니다.'
       : undefined,
-    notebookEntry: isHit
-      ? isDirectClash
-        ? `${evidenceName}에 비추어, 방금 진술은 그대로 받아들이기 어렵습니다.`
-        : `${evidenceName}에서 추가로 확인할 대목이 생겼습니다. 방금 설명은 더 정리해야 합니다.`
-      : undefined,
+    relationshipLine: relationCopy.relationshipLine,
+    notebookEntry: relationCopy.notebookEntry,
   }
 }
 
@@ -995,6 +1152,7 @@ async function handleCallWitness(action: Extract<PlayerAction, { type: 'call_wit
 
   // 비용: 조사 토큰 1개
   if (state.resources.investigationTokens < 1) {
+    playInvestigationTokenWarning()
     state.enqueueFeedback({
       kind: 'info',
       eyebrow: '증인 심문',
@@ -1179,12 +1337,13 @@ async function handleCallWitness(action: Extract<PlayerAction, { type: 'call_wit
 // ── 증거 조사 ──
 async function handleEvidenceInvestigate(action: Extract<PlayerAction, { type: 'evidence_investigate' }>) {
   const state = useGameStore.getState()
-  // 토큰 경제: 첫 조사(투자한 횟수 0)는 무료 열람용, 2·3회차는 토큰 1 소비
+  // 토큰 경제: 1단계는 무료 열람, 2단계는 1개, 3단계는 2개 소비
   const prevInvestigations = state.evidenceStates[action.evidenceId]?.investigatedActions.length ?? 0
   const nextInvestigationStage = prevInvestigations + 1
-  const investigationCost = prevInvestigations === 0 ? 0 : (nextInvestigationStage === 2 ? 2 : 1)
+  const investigationCost = prevInvestigations === 0 ? 0 : (nextInvestigationStage === 2 ? 1 : 2)
   if (investigationCost > 0) {
     if (!state.spend('investigationTokens', investigationCost)) {
+      playInvestigationTokenWarning()
       state.enqueueFeedback({
         kind: 'evidence_result',
         eyebrow: '증거 조사',
@@ -3425,7 +3584,7 @@ function buildWitnessProbeHoldLine(
   const normalizedCaseId = normalizeCaseKey(caseId ?? '')
 
   if (normalizedCaseId === 'spouse-01' && party === 'b' && disputeId === 'd-1') {
-    return '증언이 나왔다는 건 알겠습니다. 다만 지금 그 결론까지 바로 인정하기는 어렵습니다.'
+    return '오피스텔에 간 것은 맞지만, 누구를 만났는지 얘기하기 곤란한 것은 이해해 주셨으면 합니다. 다만, 아내의 의심과는 전혀 다르다는 것만은 분명히 말할 수 있습니다.'
   }
   if (normalizedCaseId === 'spouse-01' && party === 'a') {
     return '그 증언을 못 들은 척하겠다는 뜻은 아닙니다. 그래도 지금은 제 입장을 바로 접지는 못하겠습니다.'

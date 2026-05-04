@@ -49,8 +49,27 @@ const DISPUTE_AMBIGUITY_LABELS: Record<string, string> = {
   none: '낮음',
 }
 
+function isSpousePrivateAccountWithdrawalDispute(dispute: Dispute | undefined): boolean {
+  const text = `${dispute?.id ?? ''} ${dispute?.name ?? ''}`
+  return /남편\s*명의.*계좌.*목돈\s*출금/.test(text)
+    || /개인\s*계좌.*출금/.test(text)
+    || /비밀\s*계좌.*목돈/.test(text)
+}
+
 function buildDisputeEmergenceDetails(dispute: Dispute | undefined, routeDescription: string | undefined) {
   const name = dispute?.name ?? '새 쟁점'
+
+  if (isSpousePrivateAccountWithdrawalDispute(dispute)) {
+    const surfaceSummary = '남편 명의의 비밀 계좌가 존재했고, 목돈이 빠져나간 것으로 보입니다.'
+    return {
+      body: surfaceSummary,
+      blocks: [],
+      meta: [],
+      notebookSummary: surfaceSummary,
+      observationSummary: surfaceSummary,
+    }
+  }
+
   const axis = dispute?.mediationLink?.trim() || name
   const evidenceCount = dispute?.requiredEvidence?.length ?? 0
   const evidenceText = evidenceCount > 0
@@ -306,6 +325,7 @@ export default function DiscoveryFeedbackWatcher() {
     const dispute = caseData.disputes.find((d) => d.id === pendingEmergence.disputeId)
     const disputeName = dispute?.name ?? pendingEmergence.disputeId
     const routeLabel = ROUTE_LABELS[pendingEmergence.route] ?? '새 단서가 갈래를 바꿨습니다.'
+    const surfaceOnlyEmergence = isSpousePrivateAccountWithdrawalDispute(dispute)
     const emergenceDetails = buildDisputeEmergenceDetails(dispute, pendingEmergence.description)
 
     // 쟁점 발견 시 시스템 메시지로 흐름 표시 — 모달은 자동으로 띄우지 않고 (B-17 D 옵션),
@@ -341,7 +361,7 @@ export default function DiscoveryFeedbackWatcher() {
       body: emergenceDetails.body,
       blocks: emergenceDetails.blocks,
       meta: emergenceDetails.meta,
-      tag: '쟁점 보드 + 재판관 수첩',
+      tag: surfaceOnlyEmergence ? undefined : '쟁점 보드 + 재판관 수첩',
       tone: 'gold',
       actions: [
         {

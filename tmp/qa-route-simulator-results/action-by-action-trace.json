@@ -21,6 +21,7 @@
           "d-1": "S0",
           "d-2": "S0",
           "d-3": "S0",
+          "d-4": "S0",
           "d-5": "S0"
         },
         "b": {
@@ -137,6 +138,7 @@
         "entryKey": "d-1|fact_pursuit|1",
         "entryDisputeId": "d-1",
         "entryQuestionType": "fact_pursuit",
+        "targetPartyTag": "b",
         "tags": [
           "channel:judge_question",
           "speaker:judge",
@@ -163,12 +165,13 @@
           "continuity:question",
           "reveal:none",
           "revealGuard:open",
-          "disclosure:open",
+          "disclosure:guarded",
           "responseMode:judge_formal_prompt",
           "questionType:fact_pursuit",
           "depth:1",
           "disputeId:d-1"
-        ]
+        ],
+        "visibility": "player"
       },
       {
         "speaker": "b",
@@ -213,10 +216,26 @@
           "reveal:none",
           "revealGuard:strict",
           "disclosure:sealed",
-          "responseMode:judge_formal_answer"
-        ]
+          "responseMode:judge_formal_answer",
+          "callTerm:저희_형",
+          "counterpartyRef:저희_형"
+        ],
+        "visibility": "player"
       }
     ],
+    "playerTranscript": [
+      {
+        "speaker": "judge",
+        "channel": "judge_question",
+        "text": "윤정후 씨, 유서가 작성되던 무렵 어머니를 얼마나 자주 찾아뵈었는지부터 말씀해 주십시오."
+      },
+      {
+        "speaker": "b",
+        "channel": "interrogation",
+        "text": "어머니 보러 간 게 무슨 잘못입니까. 그게 전부입니다."
+      }
+    ],
+    "qaAnnotations": [],
     "stateAfter": {
       "turn": 0,
       "lieStates": {
@@ -224,6 +243,7 @@
           "d-1": "S0",
           "d-2": "S0",
           "d-3": "S0",
+          "d-4": "S0",
           "d-5": "S0"
         },
         "b": {
@@ -356,6 +376,7 @@
           "d-1": "S0",
           "d-2": "S0",
           "d-3": "S0",
+          "d-4": "S0",
           "d-5": "S0"
         },
         "b": {
@@ -472,6 +493,7 @@
         "entryKey": "d-1|fact_pursuit|2",
         "entryDisputeId": "d-1",
         "entryQuestionType": "fact_pursuit",
+        "targetPartyTag": "b",
         "tags": [
           "channel:judge_question",
           "speaker:judge",
@@ -498,12 +520,13 @@
           "continuity:question",
           "reveal:none",
           "revealGuard:open",
-          "disclosure:open",
+          "disclosure:guarded",
           "responseMode:judge_formal_prompt",
           "questionType:fact_pursuit",
           "depth:2",
           "disputeId:d-1"
-        ]
+        ],
+        "visibility": "player"
       },
       {
         "speaker": "b",
@@ -548,10 +571,26 @@
           "reveal:none",
           "revealGuard:strict",
           "disclosure:sealed",
-          "responseMode:judge_formal_answer"
-        ]
+          "responseMode:judge_formal_answer",
+          "callTerm:저희_형",
+          "counterpartyRef:저희_형"
+        ],
+        "visibility": "player"
       }
     ],
+    "playerTranscript": [
+      {
+        "speaker": "judge",
+        "channel": "judge_question",
+        "text": "윤정후 씨, 어머니께 유서 내용을 읽어드린 횟수와 그 이유는 무엇입니까."
+      },
+      {
+        "speaker": "b",
+        "channel": "interrogation",
+        "text": "어머니 보러 간 게 무슨 잘못입니까. 그게 전부입니다."
+      }
+    ],
+    "qaAnnotations": [],
     "stateAfter": {
       "turn": 1,
       "lieStates": {
@@ -559,6 +598,7 @@
           "d-1": "S0",
           "d-2": "S0",
           "d-3": "S0",
+          "d-4": "S0",
           "d-5": "S0"
         },
         "b": {
@@ -698,6 +738,7 @@
           "d-1": "S0",
           "d-2": "S0",
           "d-3": "S0",
+          "d-4": "S0",
           "d-5": "S0"
         },
         "b": {
@@ -814,6 +855,7 @@
         "entryKey": "d-1|motive_search|1",
         "entryDisputeId": "d-1",
         "entryQuestionType": "motive_search",
+        "targetPartyTag": "b",
         "tags": [
           "channel:judge_question",
           "speaker:judge",
@@ -840,12 +882,13 @@
           "continuity:question",
           "reveal:none",
           "revealGuard:open",
-          "disclosure:open",
+          "disclosure:guarded",
           "responseMode:judge_formal_prompt",
           "questionType:motive_search",
           "depth:1",
           "disputeId:d-1"
-        ]
+        ],
+        "visibility": "player"
       },
       {
         "speaker": "b",
@@ -890,10 +933,27 @@
           "reveal:hint",
           "revealGuard:strict",
           "disclosure:guarded",
-          "responseMode:judge_formal_answer"
-        ]
+          "responseMode:judge_formal_answer",
+          "callTerm:저희_형",
+          "counterpartyRef:저희_형",
+          "emotion:guarded"
+        ],
+        "visibility": "player"
       }
     ],
+    "playerTranscript": [
+      {
+        "speaker": "judge",
+        "channel": "judge_question",
+        "text": "윤정후 씨, 그 방문과 설명을 윤태성 씨에게 자연스럽게 말하지 못한 이유가 있었습니까."
+      },
+      {
+        "speaker": "b",
+        "channel": "interrogation",
+        "text": "어머니 몸이 나빠지시니 더 자주 간 겁니다. 다른 뜻은 없었습니다."
+      }
+    ],
+    "qaAnnotations": [],
     "stateAfter": {
       "turn": 2,
       "lieStates": {
@@ -901,6 +961,7 @@
           "d-1": "S0",
           "d-2": "S0",
           "d-3": "S0",
+          "d-4": "S0",
           "d-5": "S0"
         },
         "b": {
@@ -1039,6 +1100,7 @@
           "d-1": "S0",
           "d-2": "S0",
           "d-3": "S0",
+          "d-4": "S0",
           "d-5": "S0"
         },
         "b": {
@@ -1199,10 +1261,30 @@
           "responseMode:judge_formal_evidence_answer",
           "trust:mid",
           "legality:ok",
-          "source:org"
-        ]
+          "source:org",
+          "callTerm:저희_형",
+          "counterpartyRef:저희_형",
+          "emotion:defensive",
+          "revealGuard:buffered",
+          "disclosure:limited",
+          "trust:high"
+        ],
+        "visibility": "player"
       }
     ],
+    "playerTranscript": [
+      {
+        "speaker": "system",
+        "channel": "system_message",
+        "text": "증거 제시: 요양원 방문기록 [Hard]"
+      },
+      {
+        "speaker": "b",
+        "channel": "evidence_present",
+        "text": "어머니 상태가 안 좋으셔서 더 자주 갔습니다. 담당이 바뀐 일과는 나눠서 봐 주셨으면 합니다."
+      }
+    ],
+    "qaAnnotations": [],
     "stateAfter": {
       "turn": 3,
       "lieStates": {
@@ -1210,6 +1292,7 @@
           "d-1": "S0",
           "d-2": "S0",
           "d-3": "S0",
+          "d-4": "S0",
           "d-5": "S0"
         },
         "b": {
@@ -1366,6 +1449,7 @@
           "d-1": "S0",
           "d-2": "S0",
           "d-3": "S0",
+          "d-4": "S0",
           "d-5": "S0"
         },
         "b": {
@@ -1515,9 +1599,18 @@
           "lieState:S3",
           "continuity:contradiction_press",
           "contradict_token:2"
-        ]
+        ],
+        "visibility": "player"
       }
     ],
+    "playerTranscript": [
+      {
+        "speaker": "b",
+        "channel": "contradiction_pursuit",
+        "text": "재판관님, 서두른 건 맞습니다. 그렇다고 형을 빼려던 의도만 있었던 건 아닙니다. 상대 쪽 책임도 남아 있습니다."
+      }
+    ],
+    "qaAnnotations": [],
     "stateAfter": {
       "turn": 4,
       "lieStates": {
@@ -1525,6 +1618,7 @@
           "d-1": "S0",
           "d-2": "S0",
           "d-3": "S0",
+          "d-4": "S0",
           "d-5": "S0"
         },
         "b": {
@@ -1668,6 +1762,7 @@
           "d-1": "S0",
           "d-2": "S0",
           "d-3": "S0",
+          "d-4": "S0",
           "d-5": "S0"
         },
         "b": {
@@ -1772,26 +1867,44 @@
     "outputs": [
       {
         "speaker": "system",
-        "text": "공증사무실 이중 스캔과 원본 유서를 대조하면... 90이 60으로 바뀐 건 자기 몫을 줄인 조작이었다!",
+        "text": "Evidence combination skipped by runtime parity gate: combine-2; not fully investigated=e-4, e-5",
         "channel": "evidence_combine",
-        "resolverPath": "runtime_system",
-        "sourcePath": "src/data/cases/generated/family-01.json:combinationLab.recipes[id=combine-2].discoveryText",
+        "resolverPath": "route_simulator_runtime_gate",
+        "sourcePath": "src/data/cases/generated/family-01.json:combinationLab.recipes[id=combine-2]",
         "actionType": "evidence_combine",
         "target": "b",
-        "evidenceId": "e-4",
+        "qaOnly": true,
+        "visibility": "qa_annotation",
+        "safeFallback": true,
         "combinationId": "combine-2",
-        "dossierCardId": "dc-1"
-      },
+        "dossierCardId": "dc-2",
+        "runtimeReachable": false,
+        "gate": {
+          "ok": false,
+          "evidenceIds": [
+            "e-4",
+            "e-5"
+          ],
+          "locked": [],
+          "uninvestigated": [
+            "e-4",
+            "e-5"
+          ],
+          "allowImpossibleStates": false
+        }
+      }
+    ],
+    "playerTranscript": [],
+    "qaAnnotations": [
       {
-        "speaker": "witness",
-        "text": "Analysis note dc-1 is ready for follow-up.",
+        "speaker": "system",
         "channel": "evidence_combine",
-        "resolverPath": "route_simulator_facsimile",
-        "sourcePath": "src/data/cases/generated/family-01.json:combinationLab.outputs[id=dc-1]",
-        "actionType": "evidence_combine",
+        "resolverPath": "route_simulator_runtime_gate",
+        "sourcePath": "src/data/cases/generated/family-01.json:combinationLab.recipes[id=combine-2]",
+        "text": "Evidence combination skipped by runtime parity gate: combine-2; not fully investigated=e-4, e-5",
         "target": "b",
         "combinationId": "combine-2",
-        "dossierCardId": "dc-1"
+        "dossierCardId": "dc-2"
       }
     ],
     "stateAfter": {
@@ -1801,11 +1914,12 @@
           "d-1": "S0",
           "d-2": "S0",
           "d-3": "S0",
+          "d-4": "S0",
           "d-5": "S0"
         },
         "b": {
           "d-1": "S0",
-          "d-2": "S3",
+          "d-2": "S2",
           "d-3": "S0",
           "d-4": "S0",
           "d-5": "S0"
@@ -1898,35 +2012,20 @@
           "emergedVia": null
         }
       },
-      "dossier": {
-        "dc-1": {
-          "unlocked": true,
-          "via": "combine-2"
-        }
-      },
+      "dossier": {},
       "witnesses": {},
       "lastFocusedDisputeId": "d-2"
     },
     "stateDelta": {
-      "lieStates": [
-        {
-          "party": "b",
-          "disputeId": "d-2",
-          "from": "S2",
-          "to": "S3"
-        }
-      ],
+      "lieStates": [],
       "evidence": [],
       "disputes": [],
-      "dossier": [
-        {
-          "dossierId": "dc-1",
-          "to": true
-        }
-      ],
+      "dossier": [],
       "witnesses": []
     },
-    "findingIds": []
+    "findingIds": [
+      "QARS-0001"
+    ]
   },
   {
     "schemaVersion": 1,
@@ -1949,11 +2048,12 @@
           "d-1": "S0",
           "d-2": "S0",
           "d-3": "S0",
+          "d-4": "S0",
           "d-5": "S0"
         },
         "b": {
           "d-1": "S0",
-          "d-2": "S3",
+          "d-2": "S2",
           "d-3": "S0",
           "d-4": "S0",
           "d-5": "S0"
@@ -2046,12 +2146,7 @@
           "emergedVia": null
         }
       },
-      "dossier": {
-        "dc-1": {
-          "unlocked": true,
-          "via": "combine-2"
-        }
-      },
+      "dossier": {},
       "witnesses": {},
       "lastFocusedDisputeId": "d-2"
     },
@@ -2066,9 +2161,10 @@
         "actionType": "dossier",
         "target": "b",
         "disputeId": "d-2",
-        "lieState": "S3",
+        "lieState": "S2",
         "variantId": "dc-1-b-q1-mid-v1",
         "entryKey": "dc-1.b.q1|mid",
+        "targetPartyTag": "b",
         "tags": [
           "channel:dossier",
           "speaker:b",
@@ -2100,10 +2196,26 @@
           "rapport:high",
           "contradict_token:1",
           "lieBand:mid",
-          "targetParty:b"
-        ]
+          "targetParty:b",
+          "speaker:undefined",
+          "emotion:defensive",
+          "continuity:pressure",
+          "revealGuard:buffered",
+          "disclosure:limited",
+          "callTerm:저희_형",
+          "counterpartyRef:저희_형"
+        ],
+        "visibility": "player"
       }
     ],
+    "playerTranscript": [
+      {
+        "speaker": "b",
+        "channel": "dossier",
+        "text": "형이 오면 어머니가 먼저 긴장하셨습니다. 그래서 저는 공증 이야기를 길게 붙잡지 않으려 했습니다."
+      }
+    ],
+    "qaAnnotations": [],
     "stateAfter": {
       "turn": 1,
       "lieStates": {
@@ -2111,11 +2223,12 @@
           "d-1": "S0",
           "d-2": "S0",
           "d-3": "S0",
+          "d-4": "S0",
           "d-5": "S0"
         },
         "b": {
           "d-1": "S0",
-          "d-2": "S3",
+          "d-2": "S2",
           "d-3": "S0",
           "d-4": "S0",
           "d-5": "S0"
@@ -2208,12 +2321,7 @@
           "emergedVia": null
         }
       },
-      "dossier": {
-        "dc-1": {
-          "unlocked": true,
-          "via": "combine-2"
-        }
-      },
+      "dossier": {},
       "witnesses": {},
       "lastFocusedDisputeId": "d-2"
     },
@@ -2247,11 +2355,12 @@
           "d-1": "S0",
           "d-2": "S0",
           "d-3": "S0",
+          "d-4": "S0",
           "d-5": "S0"
         },
         "b": {
           "d-1": "S0",
-          "d-2": "S3",
+          "d-2": "S2",
           "d-3": "S0",
           "d-4": "S0",
           "d-5": "S0"
@@ -2344,12 +2453,7 @@
           "emergedVia": null
         }
       },
-      "dossier": {
-        "dc-1": {
-          "unlocked": true,
-          "via": "combine-2"
-        }
-      },
+      "dossier": {},
       "witnesses": {},
       "lastFocusedDisputeId": "d-2"
     },
@@ -2368,6 +2472,14 @@
         "runtimeContract": "system_only_no_auto_npc"
       }
     ],
+    "playerTranscript": [
+      {
+        "speaker": "system",
+        "channel": "evidence_discovery",
+        "text": "같은 날 같은 유언장이 두 번 스캔된 기록이다. 앞뒤 문서의 상속 비율이 서로 다르다."
+      }
+    ],
+    "qaAnnotations": [],
     "stateAfter": {
       "turn": 2,
       "lieStates": {
@@ -2375,11 +2487,12 @@
           "d-1": "S0",
           "d-2": "S0",
           "d-3": "S0",
+          "d-4": "S0",
           "d-5": "S0"
         },
         "b": {
           "d-1": "S0",
-          "d-2": "S3",
+          "d-2": "S2",
           "d-3": "S0",
           "d-4": "S0",
           "d-5": "S0"
@@ -2474,12 +2587,7 @@
           "emergedVia": null
         }
       },
-      "dossier": {
-        "dc-1": {
-          "unlocked": true,
-          "via": "combine-2"
-        }
-      },
+      "dossier": {},
       "witnesses": {},
       "lastFocusedDisputeId": "d-2"
     },
@@ -2507,7 +2615,7 @@
       "witnesses": []
     },
     "findingIds": [
-      "QARS-0001"
+      "QARS-0002"
     ]
   },
   {
@@ -2531,11 +2639,12 @@
           "d-1": "S0",
           "d-2": "S0",
           "d-3": "S0",
+          "d-4": "S0",
           "d-5": "S0"
         },
         "b": {
           "d-1": "S0",
-          "d-2": "S3",
+          "d-2": "S2",
           "d-3": "S0",
           "d-4": "S0",
           "d-5": "S0"
@@ -2630,12 +2739,7 @@
           "emergedVia": null
         }
       },
-      "dossier": {
-        "dc-1": {
-          "unlocked": true,
-          "via": "combine-2"
-        }
-      },
+      "dossier": {},
       "witnesses": {},
       "lastFocusedDisputeId": "d-2"
     },
@@ -2663,7 +2767,7 @@
         "target": "b",
         "disputeId": "d-2",
         "evidenceId": "e-4",
-        "lieState": "S3",
+        "lieState": "S2",
         "evidenceStage": 1,
         "variantId": "b-e-4-mid-self-v1",
         "entryKey": "b|e-4|mid|self",
@@ -2698,10 +2802,30 @@
           "responseMode:judge_formal_evidence_answer",
           "trust:mid",
           "legality:ok",
-          "source:org"
-        ]
+          "source:org",
+          "callTerm:저희_형",
+          "counterpartyRef:저희_형",
+          "emotion:defensive",
+          "revealGuard:buffered",
+          "disclosure:limited",
+          "trust:high"
+        ],
+        "visibility": "player"
       }
     ],
+    "playerTranscript": [
+      {
+        "speaker": "system",
+        "channel": "system_message",
+        "text": "증거 제시: 공증사무실 스캔 보관본 [Hard]"
+      },
+      {
+        "speaker": "b",
+        "channel": "evidence_present",
+        "text": "두 번 제출한 이유가 있습니다. 원래 비율을 바꿨습니다."
+      }
+    ],
+    "qaAnnotations": [],
     "stateAfter": {
       "turn": 2,
       "lieStates": {
@@ -2709,6 +2833,7 @@
           "d-1": "S0",
           "d-2": "S0",
           "d-3": "S0",
+          "d-4": "S0",
           "d-5": "S0"
         },
         "b": {
@@ -2810,17 +2935,19 @@
           "emergedVia": null
         }
       },
-      "dossier": {
-        "dc-1": {
-          "unlocked": true,
-          "via": "combine-2"
-        }
-      },
+      "dossier": {},
       "witnesses": {},
       "lastFocusedDisputeId": "d-2"
     },
     "stateDelta": {
-      "lieStates": [],
+      "lieStates": [
+        {
+          "party": "b",
+          "disputeId": "d-2",
+          "from": "S2",
+          "to": "S3"
+        }
+      ],
       "evidence": [
         {
           "evidenceId": "e-4",
@@ -2865,6 +2992,7 @@
           "d-1": "S0",
           "d-2": "S0",
           "d-3": "S0",
+          "d-4": "S0",
           "d-5": "S0"
         },
         "b": {
@@ -2966,33 +3094,34 @@
           "emergedVia": null
         }
       },
-      "dossier": {
-        "dc-1": {
-          "unlocked": true,
-          "via": "combine-2"
-        }
-      },
+      "dossier": {},
       "witnesses": {},
       "lastFocusedDisputeId": "d-2"
     },
     "outputs": [
       {
         "speaker": "system",
-        "text": "Witness summoned: w-1",
+        "text": "Witness action skipped by manifest validation: witness_scope_mismatch; Witness w-1 is not scoped to dispute d-2.",
         "channel": "witness_summon",
-        "resolverPath": "runtime_system",
-        "sourcePath": "src/data/cases/generated/family-01.json:activeThirdParties[id=w-1]",
+        "resolverPath": "route_simulator_manifest_validation",
+        "sourcePath": "src/data/cases/generated/family-01.json:duo.socialGraph[id=w-1].relatedDisputeIds",
         "actionType": "witness_summon",
         "disputeId": "d-2",
-        "witnessId": "w-1"
-      },
+        "qaOnly": true,
+        "visibility": "qa_annotation",
+        "safeFallback": true,
+        "witnessId": "w-1",
+        "manifestValidationCategory": "witness_scope_mismatch"
+      }
+    ],
+    "playerTranscript": [],
+    "qaAnnotations": [
       {
-        "speaker": "witness",
-        "text": "w-1 is ready to verify the notary timeline.",
+        "speaker": "system",
         "channel": "witness_summon",
-        "resolverPath": "route_simulator_facsimile",
-        "sourcePath": "tmp/qa-route-simulator-manifests/family-01.json:witness_summon.w-1",
-        "actionType": "witness_summon",
+        "resolverPath": "route_simulator_manifest_validation",
+        "sourcePath": "src/data/cases/generated/family-01.json:duo.socialGraph[id=w-1].relatedDisputeIds",
+        "text": "Witness action skipped by manifest validation: witness_scope_mismatch; Witness w-1 is not scoped to dispute d-2.",
         "disputeId": "d-2",
         "witnessId": "w-1"
       }
@@ -3004,6 +3133,7 @@
           "d-1": "S0",
           "d-2": "S0",
           "d-3": "S0",
+          "d-4": "S0",
           "d-5": "S0"
         },
         "b": {
@@ -3105,18 +3235,8 @@
           "emergedVia": null
         }
       },
-      "dossier": {
-        "dc-1": {
-          "unlocked": true,
-          "via": "combine-2"
-        }
-      },
-      "witnesses": {
-        "w-1": {
-          "summoned": true,
-          "lastDisputeId": "d-2"
-        }
-      },
+      "dossier": {},
+      "witnesses": {},
       "lastFocusedDisputeId": "d-2"
     },
     "stateDelta": {
@@ -3124,17 +3244,11 @@
       "evidence": [],
       "disputes": [],
       "dossier": [],
-      "witnesses": [
-        {
-          "witnessId": "w-1",
-          "summonedFrom": false,
-          "summonedTo": true,
-          "questionsFrom": 0,
-          "questionsTo": 0
-        }
-      ]
+      "witnesses": []
     },
-    "findingIds": []
+    "findingIds": [
+      "QARS-0003"
+    ]
   },
   {
     "schemaVersion": 1,
@@ -3157,6 +3271,7 @@
           "d-1": "S0",
           "d-2": "S0",
           "d-3": "S0",
+          "d-4": "S0",
           "d-5": "S0"
         },
         "b": {
@@ -3317,10 +3432,30 @@
           "responseMode:judge_formal_evidence_answer",
           "trust:mid",
           "legality:ok",
-          "source:org"
-        ]
+          "source:org",
+          "callTerm:저희_형",
+          "counterpartyRef:저희_형",
+          "emotion:defensive",
+          "revealGuard:buffered",
+          "disclosure:limited",
+          "trust:high"
+        ],
+        "visibility": "player"
       }
     ],
+    "playerTranscript": [
+      {
+        "speaker": "system",
+        "channel": "system_message",
+        "text": "증거 제시: 오래된 계좌 흐름 [Hard]"
+      },
+      {
+        "speaker": "b",
+        "channel": "evidence_present",
+        "text": "어머니 통장을 거쳐 보냈습니다. 제 형이 모르게 해 달라고 하셔서 그렇게 했습니다."
+      }
+    ],
+    "qaAnnotations": [],
     "stateAfter": {
       "turn": 0,
       "lieStates": {
@@ -3328,6 +3463,7 @@
           "d-1": "S0",
           "d-2": "S0",
           "d-3": "S0",
+          "d-4": "S0",
           "d-5": "S0"
         },
         "b": {
@@ -3529,6 +3665,7 @@
           "d-1": "S0",
           "d-2": "S0",
           "d-3": "S0",
+          "d-4": "S0",
           "d-5": "S0"
         },
         "b": {
@@ -3647,6 +3784,14 @@
         "runtimeContract": "system_only_no_auto_npc"
       }
     ],
+    "playerTranscript": [
+      {
+        "speaker": "system",
+        "channel": "evidence_discovery",
+        "text": "A의 공장 부도 시점에 B의 특별 입금과 어머니 통장에서 A 쪽으로 나간 큰돈이 맞물린다."
+      }
+    ],
+    "qaAnnotations": [],
     "stateAfter": {
       "turn": 1,
       "lieStates": {
@@ -3654,6 +3799,7 @@
           "d-1": "S0",
           "d-2": "S0",
           "d-3": "S0",
+          "d-4": "S0",
           "d-5": "S0"
         },
         "b": {
@@ -3783,7 +3929,7 @@
       "witnesses": []
     },
     "findingIds": [
-      "QARS-0002"
+      "QARS-0004"
     ]
   },
   {
@@ -3810,6 +3956,7 @@
           "d-1": "S0",
           "d-2": "S0",
           "d-3": "S0",
+          "d-4": "S0",
           "d-5": "S0"
         },
         "b": {
@@ -3918,26 +4065,44 @@
     "outputs": [
       {
         "speaker": "system",
-        "text": "어머니가 90을 남기려 한 이유가 보인다. 20년간 생활비를 대고 형의 부도까지 막아준 것이 윤정후였다.",
+        "text": "Evidence combination skipped by runtime parity gate: combine-3; not fully investigated=e-5, e-6",
         "channel": "evidence_combine",
-        "resolverPath": "runtime_system",
-        "sourcePath": "src/data/cases/generated/family-01.json:combinationLab.recipes[id=combine-3].discoveryText",
+        "resolverPath": "route_simulator_runtime_gate",
+        "sourcePath": "src/data/cases/generated/family-01.json:combinationLab.recipes[id=combine-3]",
         "actionType": "evidence_combine",
         "target": "b",
-        "evidenceId": "e-5",
+        "qaOnly": true,
+        "visibility": "qa_annotation",
+        "safeFallback": true,
         "combinationId": "combine-3",
-        "dossierCardId": "dc-2"
-      },
+        "dossierCardId": "dc-3",
+        "runtimeReachable": false,
+        "gate": {
+          "ok": false,
+          "evidenceIds": [
+            "e-5",
+            "e-6"
+          ],
+          "locked": [],
+          "uninvestigated": [
+            "e-5",
+            "e-6"
+          ],
+          "allowImpossibleStates": false
+        }
+      }
+    ],
+    "playerTranscript": [],
+    "qaAnnotations": [
       {
-        "speaker": "witness",
-        "text": "Analysis note dc-2 is ready for follow-up.",
+        "speaker": "system",
         "channel": "evidence_combine",
-        "resolverPath": "route_simulator_facsimile",
-        "sourcePath": "src/data/cases/generated/family-01.json:combinationLab.outputs[id=dc-2]",
-        "actionType": "evidence_combine",
+        "resolverPath": "route_simulator_runtime_gate",
+        "sourcePath": "src/data/cases/generated/family-01.json:combinationLab.recipes[id=combine-3]",
+        "text": "Evidence combination skipped by runtime parity gate: combine-3; not fully investigated=e-5, e-6",
         "target": "b",
         "combinationId": "combine-3",
-        "dossierCardId": "dc-2"
+        "dossierCardId": "dc-3"
       }
     ],
     "stateAfter": {
@@ -3947,6 +4112,7 @@
           "d-1": "S0",
           "d-2": "S0",
           "d-3": "S0",
+          "d-4": "S0",
           "d-5": "S0"
         },
         "b": {
@@ -4036,8 +4202,8 @@
           "emergedVia": null
         },
         "d-3": {
-          "visibility": "visible",
-          "emergedVia": "combine-3"
+          "visibility": "hidden",
+          "emergedVia": null
         },
         "d-4": {
           "visibility": "hidden",
@@ -4048,35 +4214,20 @@
           "emergedVia": null
         }
       },
-      "dossier": {
-        "dc-2": {
-          "unlocked": true,
-          "via": "combine-3"
-        }
-      },
+      "dossier": {},
       "witnesses": {},
       "lastFocusedDisputeId": "d-3"
     },
     "stateDelta": {
       "lieStates": [],
       "evidence": [],
-      "disputes": [
-        {
-          "disputeId": "d-3",
-          "from": "hidden",
-          "to": "visible",
-          "via": "combine-3"
-        }
-      ],
-      "dossier": [
-        {
-          "dossierId": "dc-2",
-          "to": true
-        }
-      ],
+      "disputes": [],
+      "dossier": [],
       "witnesses": []
     },
-    "findingIds": []
+    "findingIds": [
+      "QARS-0005"
+    ]
   },
   {
     "schemaVersion": 1,
@@ -4103,6 +4254,7 @@
           "d-1": "S0",
           "d-2": "S0",
           "d-3": "S0",
+          "d-4": "S0",
           "d-5": "S0"
         },
         "b": {
@@ -4192,8 +4344,8 @@
           "emergedVia": null
         },
         "d-3": {
-          "visibility": "visible",
-          "emergedVia": "combine-3"
+          "visibility": "hidden",
+          "emergedVia": null
         },
         "d-4": {
           "visibility": "hidden",
@@ -4204,12 +4356,7 @@
           "emergedVia": null
         }
       },
-      "dossier": {
-        "dc-2": {
-          "unlocked": true,
-          "via": "combine-3"
-        }
-      },
+      "dossier": {},
       "witnesses": {},
       "lastFocusedDisputeId": "d-3"
     },
@@ -4222,6 +4369,20 @@
         "sourcePath": "tmp/qa-route-simulator-manifests/family-01.json:emergence_event.family-d4-open",
         "actionType": "emergence_event",
         "target": "b",
+        "disputeId": "d-4",
+        "qaOnly": true,
+        "visibility": "qa_annotation"
+      }
+    ],
+    "playerTranscript": [],
+    "qaAnnotations": [
+      {
+        "speaker": "witness",
+        "channel": "emergence_event",
+        "resolverPath": "route_simulator_facsimile",
+        "sourcePath": "tmp/qa-route-simulator-manifests/family-01.json:emergence_event.family-d4-open",
+        "text": "Emergence event opened d-4 after the transfer record route.",
+        "target": "b",
         "disputeId": "d-4"
       }
     ],
@@ -4232,6 +4393,7 @@
           "d-1": "S0",
           "d-2": "S0",
           "d-3": "S0",
+          "d-4": "S0",
           "d-5": "S0"
         },
         "b": {
@@ -4321,8 +4483,8 @@
           "emergedVia": null
         },
         "d-3": {
-          "visibility": "visible",
-          "emergedVia": "combine-3"
+          "visibility": "hidden",
+          "emergedVia": null
         },
         "d-4": {
           "visibility": "visible",
@@ -4333,12 +4495,7 @@
           "emergedVia": null
         }
       },
-      "dossier": {
-        "dc-2": {
-          "unlocked": true,
-          "via": "combine-3"
-        }
-      },
+      "dossier": {},
       "witnesses": {},
       "lastFocusedDisputeId": "d-3"
     },
@@ -4356,7 +4513,9 @@
       "dossier": [],
       "witnesses": []
     },
-    "findingIds": []
+    "findingIds": [
+      "QARS-0006"
+    ]
   },
   {
     "schemaVersion": 1,
@@ -4379,6 +4538,7 @@
           "d-1": "S0",
           "d-2": "S0",
           "d-3": "S0",
+          "d-4": "S0",
           "d-5": "S0"
         },
         "b": {
@@ -4468,8 +4628,8 @@
           "emergedVia": null
         },
         "d-3": {
-          "visibility": "visible",
-          "emergedVia": "combine-3"
+          "visibility": "hidden",
+          "emergedVia": null
         },
         "d-4": {
           "visibility": "visible",
@@ -4480,12 +4640,7 @@
           "emergedVia": null
         }
       },
-      "dossier": {
-        "dc-2": {
-          "unlocked": true,
-          "via": "combine-3"
-        }
-      },
+      "dossier": {},
       "witnesses": {},
       "lastFocusedDisputeId": "d-3"
     },
@@ -4503,6 +4658,7 @@
         "lieState": "S3",
         "variantId": "dc-2-b-q1-mid-v1",
         "entryKey": "dc-2.b.q1|mid",
+        "targetPartyTag": "b",
         "tags": [
           "channel:dossier",
           "speaker:b",
@@ -4534,10 +4690,26 @@
           "rapport:high",
           "contradict_token:1",
           "lieBand:mid",
-          "targetParty:b"
-        ]
+          "targetParty:b",
+          "speaker:undefined",
+          "emotion:defensive",
+          "continuity:pressure",
+          "revealGuard:buffered",
+          "disclosure:limited",
+          "callTerm:저희_형",
+          "counterpartyRef:저희_형"
+        ],
+        "visibility": "player"
       }
     ],
+    "playerTranscript": [
+      {
+        "speaker": "b",
+        "channel": "dossier",
+        "text": "원본에서는 제 몫이 훨씬 컸고, 최종본에서는 제가 제 몫을 낮췄습니다. 그 판단은 제가 했습니다. 형이 원본을 견디지 못할 거라 봤습니다."
+      }
+    ],
+    "qaAnnotations": [],
     "stateAfter": {
       "turn": 3,
       "lieStates": {
@@ -4545,6 +4717,7 @@
           "d-1": "S0",
           "d-2": "S0",
           "d-3": "S0",
+          "d-4": "S0",
           "d-5": "S0"
         },
         "b": {
@@ -4634,8 +4807,8 @@
           "emergedVia": null
         },
         "d-3": {
-          "visibility": "visible",
-          "emergedVia": "combine-3"
+          "visibility": "hidden",
+          "emergedVia": null
         },
         "d-4": {
           "visibility": "visible",
@@ -4646,12 +4819,7 @@
           "emergedVia": null
         }
       },
-      "dossier": {
-        "dc-2": {
-          "unlocked": true,
-          "via": "combine-3"
-        }
-      },
+      "dossier": {},
       "witnesses": {},
       "lastFocusedDisputeId": "d-3"
     },
@@ -4685,6 +4853,7 @@
           "d-1": "S0",
           "d-2": "S0",
           "d-3": "S0",
+          "d-4": "S0",
           "d-5": "S0"
         },
         "b": {
@@ -4774,8 +4943,8 @@
           "emergedVia": null
         },
         "d-3": {
-          "visibility": "visible",
-          "emergedVia": "combine-3"
+          "visibility": "hidden",
+          "emergedVia": null
         },
         "d-4": {
           "visibility": "visible",
@@ -4786,12 +4955,7 @@
           "emergedVia": null
         }
       },
-      "dossier": {
-        "dc-2": {
-          "unlocked": true,
-          "via": "combine-3"
-        }
-      },
+      "dossier": {},
       "witnesses": {},
       "lastFocusedDisputeId": "d-3"
     },
@@ -4841,9 +5005,18 @@
           "lieState:S3",
           "continuity:contradiction_press",
           "contradict_token:2"
-        ]
+        ],
+        "visibility": "player"
       }
     ],
+    "playerTranscript": [
+      {
+        "speaker": "b",
+        "channel": "contradiction_pursuit",
+        "text": "재판관님, 20년 송금 일부는 제 돈이었습니다. 형이 알면 더 버티기 어려울까 숨겼습니다."
+      }
+    ],
+    "qaAnnotations": [],
     "stateAfter": {
       "turn": 4,
       "lieStates": {
@@ -4851,6 +5024,7 @@
           "d-1": "S0",
           "d-2": "S0",
           "d-3": "S0",
+          "d-4": "S0",
           "d-5": "S0"
         },
         "b": {
@@ -4940,8 +5114,8 @@
           "emergedVia": null
         },
         "d-3": {
-          "visibility": "visible",
-          "emergedVia": "combine-3"
+          "visibility": "hidden",
+          "emergedVia": null
         },
         "d-4": {
           "visibility": "visible",
@@ -4952,12 +5126,7 @@
           "emergedVia": null
         }
       },
-      "dossier": {
-        "dc-2": {
-          "unlocked": true,
-          "via": "combine-3"
-        }
-      },
+      "dossier": {},
       "witnesses": {},
       "lastFocusedDisputeId": "d-3"
     },
@@ -4997,6 +5166,7 @@
           "d-1": "S0",
           "d-2": "S0",
           "d-3": "S0",
+          "d-4": "S0",
           "d-5": "S0"
         },
         "b": {
@@ -5157,10 +5327,30 @@
           "responseMode:judge_formal_evidence_answer",
           "trust:mid",
           "legality:ok",
-          "source:org"
-        ]
+          "source:org",
+          "callTerm:저희_형",
+          "counterpartyRef:저희_형",
+          "subjectRole:both",
+          "emotion:guarded",
+          "trust:high",
+          "source:b"
+        ],
+        "visibility": "player"
       }
     ],
+    "playerTranscript": [
+      {
+        "speaker": "system",
+        "channel": "system_message",
+        "text": "증거 제시: 어머니 일기장 [Hard]"
+      },
+      {
+        "speaker": "b",
+        "channel": "evidence_present",
+        "text": "어머니 글씨 맞습니다."
+      }
+    ],
+    "qaAnnotations": [],
     "stateAfter": {
       "turn": 0,
       "lieStates": {
@@ -5168,6 +5358,7 @@
           "d-1": "S0",
           "d-2": "S0",
           "d-3": "S0",
+          "d-4": "S0",
           "d-5": "S0"
         },
         "b": {
@@ -5369,6 +5560,7 @@
           "d-1": "S0",
           "d-2": "S0",
           "d-3": "S0",
+          "d-4": "S0",
           "d-5": "S0"
         },
         "b": {
@@ -5475,7 +5667,7 @@
     "outputs": [
       {
         "speaker": "b",
-        "text": "맞습니다. 형을 지키려 했다는 이유가 어머니의 90대10 뜻을 고친 책임을 없애지 못합니다.",
+        "text": "맞습니다. 상대에게 알려지길 피하려 했다는 이유가 어머니의 처음 적힌 비율 뜻을 고친 책임을 없애지 못합니다.",
         "behaviorHint": "눈을 한 번 감았다 뜨고 낮게 고백한다.",
         "channel": "dossier",
         "resolverPath": "scripted",
@@ -5486,6 +5678,7 @@
         "lieState": "S4",
         "variantId": "dc-5-b-q1-late-v1",
         "entryKey": "dc-5.b.q1|late",
+        "targetPartyTag": "b",
         "tags": [
           "channel:dossier",
           "speaker:b",
@@ -5508,19 +5701,33 @@
           "counterpartyRefState:defined",
           "mentionTarget:dossier",
           "responseMode:judge_formal_card_answer",
-          "stance:confess",
+          "stance:admit",
           "emotion:resigned",
-          "continuity:confession_pivot",
+          "continuity:admition_pivot",
           "reveal:full",
           "revealGuard:open",
           "disclosure:open",
           "rapport:open",
           "contradict_token:2",
           "lieBand:late",
-          "targetParty:b"
-        ]
+          "targetParty:b",
+          "speaker:undefined",
+          "stance:confess",
+          "continuity:collapse",
+          "callTerm:저희_형",
+          "counterpartyRef:저희_형"
+        ],
+        "visibility": "player"
       }
     ],
+    "playerTranscript": [
+      {
+        "speaker": "b",
+        "channel": "dossier",
+        "text": "맞습니다. 상대에게 알려지길 피하려 했다는 이유가 어머니의 처음 적힌 비율 뜻을 고친 책임을 없애지 못합니다."
+      }
+    ],
+    "qaAnnotations": [],
     "stateAfter": {
       "turn": 1,
       "lieStates": {
@@ -5528,6 +5735,7 @@
           "d-1": "S0",
           "d-2": "S0",
           "d-3": "S0",
+          "d-4": "S0",
           "d-5": "S0"
         },
         "b": {
@@ -5661,6 +5869,7 @@
           "d-1": "S0",
           "d-2": "S0",
           "d-3": "S0",
+          "d-4": "S0",
           "d-5": "S0"
         },
         "b": {
@@ -5766,12 +5975,51 @@
     },
     "outputs": [
       {
-        "speaker": "witness",
-        "text": "w-3 confirms the final branch should compare care records with the diary route.",
+        "speaker": "system",
+        "text": "Witness action skipped by manifest validation: witness_question_before_summon; Witness question occurs before witness summon: w-3.",
         "channel": "witness_question",
-        "resolverPath": "route_simulator_facsimile",
+        "resolverPath": "route_simulator_manifest_validation",
         "sourcePath": "tmp/qa-route-simulator-manifests/family-01.json:witness_question.w-3",
         "actionType": "witness_question",
+        "disputeId": "d-5",
+        "qaOnly": true,
+        "visibility": "qa_annotation",
+        "safeFallback": true,
+        "witnessId": "w-3",
+        "manifestValidationCategory": "witness_question_before_summon"
+      },
+      {
+        "speaker": "system",
+        "text": "Witness action skipped by manifest validation: witness_domain_mismatch; Witness w-3 knowledge does not match route domain care_record.",
+        "channel": "witness_question",
+        "resolverPath": "route_simulator_manifest_validation",
+        "sourcePath": "src/data/cases/generated/family-01.json:duo.socialGraph[id=w-3].knowledgeScope",
+        "actionType": "witness_question",
+        "disputeId": "d-5",
+        "qaOnly": true,
+        "visibility": "qa_annotation",
+        "safeFallback": true,
+        "witnessId": "w-3",
+        "manifestValidationCategory": "witness_domain_mismatch"
+      }
+    ],
+    "playerTranscript": [],
+    "qaAnnotations": [
+      {
+        "speaker": "system",
+        "channel": "witness_question",
+        "resolverPath": "route_simulator_manifest_validation",
+        "sourcePath": "tmp/qa-route-simulator-manifests/family-01.json:witness_question.w-3",
+        "text": "Witness action skipped by manifest validation: witness_question_before_summon; Witness question occurs before witness summon: w-3.",
+        "disputeId": "d-5",
+        "witnessId": "w-3"
+      },
+      {
+        "speaker": "system",
+        "channel": "witness_question",
+        "resolverPath": "route_simulator_manifest_validation",
+        "sourcePath": "src/data/cases/generated/family-01.json:duo.socialGraph[id=w-3].knowledgeScope",
+        "text": "Witness action skipped by manifest validation: witness_domain_mismatch; Witness w-3 knowledge does not match route domain care_record.",
         "disputeId": "d-5",
         "witnessId": "w-3"
       }
@@ -5783,6 +6031,7 @@
           "d-1": "S0",
           "d-2": "S0",
           "d-3": "S0",
+          "d-4": "S0",
           "d-5": "S0"
         },
         "b": {
@@ -5883,13 +6132,7 @@
         }
       },
       "dossier": {},
-      "witnesses": {
-        "w-3": {
-          "summoned": true,
-          "lastDisputeId": "d-5",
-          "questions": 1
-        }
-      },
+      "witnesses": {},
       "lastFocusedDisputeId": "d-5"
     },
     "stateDelta": {
@@ -5897,17 +6140,12 @@
       "evidence": [],
       "disputes": [],
       "dossier": [],
-      "witnesses": [
-        {
-          "witnessId": "w-3",
-          "summonedFrom": false,
-          "summonedTo": true,
-          "questionsFrom": 0,
-          "questionsTo": 1
-        }
-      ]
+      "witnesses": []
     },
-    "findingIds": []
+    "findingIds": [
+      "QARS-0007",
+      "QARS-0008"
+    ]
   },
   {
     "schemaVersion": 1,
@@ -5930,6 +6168,7 @@
           "d-1": "S0",
           "d-2": "S0",
           "d-3": "S0",
+          "d-4": "S0",
           "d-5": "S0"
         },
         "b": {
@@ -6030,13 +6269,7 @@
         }
       },
       "dossier": {},
-      "witnesses": {
-        "w-3": {
-          "summoned": true,
-          "lastDisputeId": "d-5",
-          "questions": 1
-        }
-      },
+      "witnesses": {},
       "lastFocusedDisputeId": "d-5"
     },
     "outputs": [
@@ -6046,7 +6279,9 @@
         "channel": "discovery_event",
         "resolverPath": "route_simulator_facsimile",
         "sourcePath": "tmp/qa-route-simulator-manifests/family-01.json:discovery_event.family-d5-reviewed",
-        "actionType": "discovery_event"
+        "actionType": "discovery_event",
+        "qaOnly": true,
+        "visibility": "qa_annotation"
       },
       {
         "speaker": "witness",
@@ -6054,7 +6289,26 @@
         "channel": "discovery_event",
         "resolverPath": "route_simulator_facsimile",
         "sourcePath": "tmp/qa-route-simulator-manifests/family-01.json:discovery_event.family-d5-reviewed.followup",
-        "actionType": "discovery_event"
+        "actionType": "discovery_event",
+        "qaOnly": true,
+        "visibility": "qa_annotation"
+      }
+    ],
+    "playerTranscript": [],
+    "qaAnnotations": [
+      {
+        "speaker": "system",
+        "channel": "discovery_event",
+        "resolverPath": "route_simulator_facsimile",
+        "sourcePath": "tmp/qa-route-simulator-manifests/family-01.json:discovery_event.family-d5-reviewed",
+        "text": "Discovery event applied: family-d5-reviewed"
+      },
+      {
+        "speaker": "witness",
+        "channel": "discovery_event",
+        "resolverPath": "route_simulator_facsimile",
+        "sourcePath": "tmp/qa-route-simulator-manifests/family-01.json:discovery_event.family-d5-reviewed.followup",
+        "text": "The d-5 route has enough late-stage material for judgment."
       }
     ],
     "stateAfter": {
@@ -6064,6 +6318,7 @@
           "d-1": "S0",
           "d-2": "S0",
           "d-3": "S0",
+          "d-4": "S0",
           "d-5": "S0"
         },
         "b": {
@@ -6169,13 +6424,7 @@
           "via": "family-d5-reviewed"
         }
       },
-      "witnesses": {
-        "w-3": {
-          "summoned": true,
-          "lastDisputeId": "d-5",
-          "questions": 1
-        }
-      },
+      "witnesses": {},
       "lastFocusedDisputeId": "d-5"
     },
     "stateDelta": {
@@ -6190,7 +6439,9 @@
       ],
       "witnesses": []
     },
-    "findingIds": []
+    "findingIds": [
+      "QARS-0009"
+    ]
   },
   {
     "schemaVersion": 1,
@@ -6213,6 +6464,8 @@
         "a": {
           "d-1": "S0",
           "d-2": "S0",
+          "d-3": "S0",
+          "d-4": "S0",
           "d-5": "S0"
         },
         "b": {
@@ -6329,6 +6582,7 @@
         "entryKey": "d-1|fact_pursuit|1",
         "entryDisputeId": "d-1",
         "entryQuestionType": "fact_pursuit",
+        "targetPartyTag": "b",
         "tags": [
           "channel:judge_question",
           "speaker:judge",
@@ -6355,14 +6609,15 @@
           "continuity:question_depth_1",
           "reveal:none",
           "revealGuard:open",
-          "disclosure:open",
+          "disclosure:guarded",
           "responseMode:judge_formal_prompt",
           "questionType:fact_pursuit",
           "depth:1",
           "disputeId:d-1",
           "rapport:mid",
           "contradict_token:0"
-        ]
+        ],
+        "visibility": "player"
       },
       {
         "speaker": "b",
@@ -6408,15 +6663,31 @@
           "revealGuard:strict",
           "disclosure:sealed",
           "responseMode:judge_formal_answer"
-        ]
+        ],
+        "visibility": "player"
       }
     ],
+    "playerTranscript": [
+      {
+        "speaker": "judge",
+        "channel": "judge_question",
+        "text": "최수민 씨, 며칠 동안 이어진 연락이 무엇을 전하려던 것이었는지 먼저 말씀해 주십시오."
+      },
+      {
+        "speaker": "b",
+        "channel": "interrogation",
+        "text": "제가 그 사람에게 집착할 이유는 없습니다."
+      }
+    ],
+    "qaAnnotations": [],
     "stateAfter": {
       "turn": 0,
       "lieStates": {
         "a": {
           "d-1": "S0",
           "d-2": "S0",
+          "d-3": "S0",
+          "d-4": "S0",
           "d-5": "S0"
         },
         "b": {
@@ -6548,6 +6819,8 @@
         "a": {
           "d-1": "S0",
           "d-2": "S0",
+          "d-3": "S0",
+          "d-4": "S0",
           "d-5": "S0"
         },
         "b": {
@@ -6664,6 +6937,7 @@
         "entryKey": "d-1|fact_pursuit|2",
         "entryDisputeId": "d-1",
         "entryQuestionType": "fact_pursuit",
+        "targetPartyTag": "b",
         "tags": [
           "channel:judge_question",
           "speaker:judge",
@@ -6688,16 +6962,17 @@
           "mentionTarget:dispute",
           "emotion:measured",
           "continuity:question_depth_2",
-          "reveal:hint",
+          "reveal:none",
           "revealGuard:open",
-          "disclosure:open",
+          "disclosure:guarded",
           "responseMode:judge_formal_prompt",
           "questionType:fact_pursuit",
           "depth:2",
           "disputeId:d-1",
           "rapport:mid",
           "contradict_token:0"
-        ]
+        ],
+        "visibility": "player"
       },
       {
         "speaker": "b",
@@ -6743,15 +7018,31 @@
           "revealGuard:strict",
           "disclosure:sealed",
           "responseMode:judge_formal_answer"
-        ]
+        ],
+        "visibility": "player"
       }
     ],
+    "playerTranscript": [
+      {
+        "speaker": "judge",
+        "channel": "judge_question",
+        "text": "최수민 씨, 왜 송다은 씨가 아니라 예비신랑에게 먼저 연락했습니까."
+      },
+      {
+        "speaker": "b",
+        "channel": "interrogation",
+        "text": "제가 그 사람에게 집착할 이유는 없습니다."
+      }
+    ],
+    "qaAnnotations": [],
     "stateAfter": {
       "turn": 1,
       "lieStates": {
         "a": {
           "d-1": "S0",
           "d-2": "S0",
+          "d-3": "S0",
+          "d-4": "S0",
           "d-5": "S0"
         },
         "b": {
@@ -6888,6 +7179,8 @@
         "a": {
           "d-1": "S0",
           "d-2": "S0",
+          "d-3": "S0",
+          "d-4": "S0",
           "d-5": "S0"
         },
         "b": {
@@ -7004,7 +7297,7 @@
       },
       {
         "speaker": "b",
-        "text": "연락한 건 맞습니다.",
+        "text": "최근 9일 동안 전화도 했고 문자도 보냈습니다. 기록 그대로입니다.",
         "behaviorHint": "짧은 문장으로 사실만 인정하고 이유는 닫아 둔다.",
         "channel": "evidence_present",
         "resolverPath": "scripted",
@@ -7048,16 +7341,34 @@
           "responseMode:judge_formal_evidence_answer",
           "trust:mid",
           "legality:ok",
-          "source:org"
-        ]
+          "source:org",
+          "emotion:guarded",
+          "source:a"
+        ],
+        "visibility": "player"
       }
     ],
+    "playerTranscript": [
+      {
+        "speaker": "system",
+        "channel": "system_message",
+        "text": "증거 제시: 연락 기록 [Hard]"
+      },
+      {
+        "speaker": "b",
+        "channel": "evidence_present",
+        "text": "최근 9일 동안 전화도 했고 문자도 보냈습니다. 기록 그대로입니다."
+      }
+    ],
+    "qaAnnotations": [],
     "stateAfter": {
       "turn": 2,
       "lieStates": {
         "a": {
           "d-1": "S0",
           "d-2": "S0",
+          "d-3": "S0",
+          "d-4": "S0",
           "d-5": "S0"
         },
         "b": {
@@ -7206,6 +7517,8 @@
         "a": {
           "d-1": "S0",
           "d-2": "S0",
+          "d-3": "S0",
+          "d-4": "S0",
           "d-5": "S0"
         },
         "b": {
@@ -7312,7 +7625,7 @@
     "outputs": [
       {
         "speaker": "system",
-        "text": "9일간 전화 6번, 문자 11번. 대부분 답이 없거나 짧게 끊겼다.",
+        "text": "첫 페이지에서는 9일간 반복된 발신과 부재중이 확인된다. 집착성 연락처럼 보이지만 원문은 대부분 봉인되어 있다.",
         "channel": "evidence_discovery",
         "resolverPath": "runtime_system",
         "sourcePath": "src/data/cases/generated/friend-01.json:evidence.e-1.investigationResults.request_original",
@@ -7324,12 +7637,22 @@
         "runtimeContract": "system_only_no_auto_npc"
       }
     ],
+    "playerTranscript": [
+      {
+        "speaker": "system",
+        "channel": "evidence_discovery",
+        "text": "첫 페이지에서는 9일간 반복된 발신과 부재중이 확인된다. 집착성 연락처럼 보이지만 원문은 대부분 봉인되어 있다."
+      }
+    ],
+    "qaAnnotations": [],
     "stateAfter": {
       "turn": 3,
       "lieStates": {
         "a": {
           "d-1": "S0",
           "d-2": "S0",
+          "d-3": "S0",
+          "d-4": "S0",
           "d-5": "S0"
         },
         "b": {
@@ -7459,7 +7782,7 @@
       "witnesses": []
     },
     "findingIds": [
-      "QARS-0003"
+      "QARS-0010"
     ]
   },
   {
@@ -7482,6 +7805,8 @@
         "a": {
           "d-1": "S0",
           "d-2": "S0",
+          "d-3": "S0",
+          "d-4": "S0",
           "d-5": "S0"
         },
         "b": {
@@ -7589,12 +7914,74 @@
     },
     "outputs": [
       {
-        "speaker": "witness",
-        "text": "w-1 confirms the contact route can be checked against the message log.",
+        "speaker": "system",
+        "text": "Witness action skipped by manifest validation: witness_question_before_summon; Witness question occurs before witness summon: w-1.",
         "channel": "witness_question",
-        "resolverPath": "route_simulator_facsimile",
+        "resolverPath": "route_simulator_manifest_validation",
         "sourcePath": "tmp/qa-route-simulator-manifests/friend-01.json:witness_question.w-1",
         "actionType": "witness_question",
+        "disputeId": "d-1",
+        "qaOnly": true,
+        "visibility": "qa_annotation",
+        "safeFallback": true,
+        "witnessId": "w-1",
+        "manifestValidationCategory": "witness_question_before_summon"
+      },
+      {
+        "speaker": "system",
+        "text": "Witness action skipped by manifest validation: witness_scope_mismatch; Witness w-1 is not scoped to dispute d-1.",
+        "channel": "witness_question",
+        "resolverPath": "route_simulator_manifest_validation",
+        "sourcePath": "src/data/cases/generated/friend-01.json:duo.socialGraph[id=w-1].relatedDisputeIds",
+        "actionType": "witness_question",
+        "disputeId": "d-1",
+        "qaOnly": true,
+        "visibility": "qa_annotation",
+        "safeFallback": true,
+        "witnessId": "w-1",
+        "manifestValidationCategory": "witness_scope_mismatch"
+      },
+      {
+        "speaker": "system",
+        "text": "Witness action skipped by manifest validation: witness_domain_mismatch; Witness w-1 knowledge does not match route domain contact_log.",
+        "channel": "witness_question",
+        "resolverPath": "route_simulator_manifest_validation",
+        "sourcePath": "src/data/cases/generated/friend-01.json:duo.socialGraph[id=w-1].knowledgeScope",
+        "actionType": "witness_question",
+        "disputeId": "d-1",
+        "qaOnly": true,
+        "visibility": "qa_annotation",
+        "safeFallback": true,
+        "witnessId": "w-1",
+        "manifestValidationCategory": "witness_domain_mismatch"
+      }
+    ],
+    "playerTranscript": [],
+    "qaAnnotations": [
+      {
+        "speaker": "system",
+        "channel": "witness_question",
+        "resolverPath": "route_simulator_manifest_validation",
+        "sourcePath": "tmp/qa-route-simulator-manifests/friend-01.json:witness_question.w-1",
+        "text": "Witness action skipped by manifest validation: witness_question_before_summon; Witness question occurs before witness summon: w-1.",
+        "disputeId": "d-1",
+        "witnessId": "w-1"
+      },
+      {
+        "speaker": "system",
+        "channel": "witness_question",
+        "resolverPath": "route_simulator_manifest_validation",
+        "sourcePath": "src/data/cases/generated/friend-01.json:duo.socialGraph[id=w-1].relatedDisputeIds",
+        "text": "Witness action skipped by manifest validation: witness_scope_mismatch; Witness w-1 is not scoped to dispute d-1.",
+        "disputeId": "d-1",
+        "witnessId": "w-1"
+      },
+      {
+        "speaker": "system",
+        "channel": "witness_question",
+        "resolverPath": "route_simulator_manifest_validation",
+        "sourcePath": "src/data/cases/generated/friend-01.json:duo.socialGraph[id=w-1].knowledgeScope",
+        "text": "Witness action skipped by manifest validation: witness_domain_mismatch; Witness w-1 knowledge does not match route domain contact_log.",
         "disputeId": "d-1",
         "witnessId": "w-1"
       }
@@ -7605,6 +7992,8 @@
         "a": {
           "d-1": "S0",
           "d-2": "S0",
+          "d-3": "S0",
+          "d-4": "S0",
           "d-5": "S0"
         },
         "b": {
@@ -7707,13 +8096,7 @@
         }
       },
       "dossier": {},
-      "witnesses": {
-        "w-1": {
-          "summoned": true,
-          "lastDisputeId": "d-1",
-          "questions": 1
-        }
-      },
+      "witnesses": {},
       "lastFocusedDisputeId": "d-1"
     },
     "stateDelta": {
@@ -7721,17 +8104,13 @@
       "evidence": [],
       "disputes": [],
       "dossier": [],
-      "witnesses": [
-        {
-          "witnessId": "w-1",
-          "summonedFrom": false,
-          "summonedTo": true,
-          "questionsFrom": 0,
-          "questionsTo": 1
-        }
-      ]
+      "witnesses": []
     },
-    "findingIds": []
+    "findingIds": [
+      "QARS-0011",
+      "QARS-0012",
+      "QARS-0013"
+    ]
   },
   {
     "schemaVersion": 1,
@@ -7756,6 +8135,8 @@
         "a": {
           "d-1": "S0",
           "d-2": "S0",
+          "d-3": "S0",
+          "d-4": "S0",
           "d-5": "S2"
         },
         "b": {
@@ -7860,26 +8241,44 @@
     "outputs": [
       {
         "speaker": "system",
-        "text": "연락 기록과 단톡방 캡처를 대조하면, 최수민의 연락 사실이 확인도 없이 '집착'으로 프레이밍된 과정이 보인다.",
+        "text": "Evidence combination skipped by runtime parity gate: combine-1; not fully investigated=e-1, e-2",
         "channel": "evidence_combine",
-        "resolverPath": "runtime_system",
-        "sourcePath": "src/data/cases/generated/friend-01.json:combinationLab.recipes[id=combine-1].discoveryText",
+        "resolverPath": "route_simulator_runtime_gate",
+        "sourcePath": "src/data/cases/generated/friend-01.json:combinationLab.recipes[id=combine-1]",
         "actionType": "evidence_combine",
         "target": "a",
-        "evidenceId": "e-1",
+        "qaOnly": true,
+        "visibility": "qa_annotation",
+        "safeFallback": true,
         "combinationId": "combine-1",
-        "dossierCardId": "dc-3"
-      },
+        "dossierCardId": "dc-1",
+        "runtimeReachable": false,
+        "gate": {
+          "ok": false,
+          "evidenceIds": [
+            "e-1",
+            "e-2"
+          ],
+          "locked": [],
+          "uninvestigated": [
+            "e-1",
+            "e-2"
+          ],
+          "allowImpossibleStates": false
+        }
+      }
+    ],
+    "playerTranscript": [],
+    "qaAnnotations": [
       {
-        "speaker": "witness",
-        "text": "Analysis note dc-3 is ready for follow-up.",
+        "speaker": "system",
         "channel": "evidence_combine",
-        "resolverPath": "route_simulator_facsimile",
-        "sourcePath": "src/data/cases/generated/friend-01.json:combinationLab.outputs[id=dc-3]",
-        "actionType": "evidence_combine",
+        "resolverPath": "route_simulator_runtime_gate",
+        "sourcePath": "src/data/cases/generated/friend-01.json:combinationLab.recipes[id=combine-1]",
+        "text": "Evidence combination skipped by runtime parity gate: combine-1; not fully investigated=e-1, e-2",
         "target": "a",
         "combinationId": "combine-1",
-        "dossierCardId": "dc-3"
+        "dossierCardId": "dc-1"
       }
     ],
     "stateAfter": {
@@ -7888,7 +8287,9 @@
         "a": {
           "d-1": "S0",
           "d-2": "S0",
-          "d-5": "S3"
+          "d-3": "S0",
+          "d-4": "S0",
+          "d-5": "S2"
         },
         "b": {
           "d-1": "S0",
@@ -7981,46 +8382,24 @@
           "emergedVia": null
         },
         "d-5": {
-          "visibility": "visible",
-          "emergedVia": "combine-1"
+          "visibility": "hidden",
+          "emergedVia": null
         }
       },
-      "dossier": {
-        "dc-3": {
-          "unlocked": true,
-          "via": "combine-1"
-        }
-      },
+      "dossier": {},
       "witnesses": {},
       "lastFocusedDisputeId": "d-5"
     },
     "stateDelta": {
-      "lieStates": [
-        {
-          "party": "a",
-          "disputeId": "d-5",
-          "from": "S2",
-          "to": "S3"
-        }
-      ],
+      "lieStates": [],
       "evidence": [],
-      "disputes": [
-        {
-          "disputeId": "d-5",
-          "from": "hidden",
-          "to": "visible",
-          "via": "combine-1"
-        }
-      ],
-      "dossier": [
-        {
-          "dossierId": "dc-3",
-          "to": true
-        }
-      ],
+      "disputes": [],
+      "dossier": [],
       "witnesses": []
     },
-    "findingIds": []
+    "findingIds": [
+      "QARS-0014"
+    ]
   },
   {
     "schemaVersion": 1,
@@ -8042,7 +8421,9 @@
         "a": {
           "d-1": "S0",
           "d-2": "S0",
-          "d-5": "S3"
+          "d-3": "S0",
+          "d-4": "S0",
+          "d-5": "S2"
         },
         "b": {
           "d-1": "S0",
@@ -8135,16 +8516,11 @@
           "emergedVia": null
         },
         "d-5": {
-          "visibility": "visible",
-          "emergedVia": "combine-1"
+          "visibility": "hidden",
+          "emergedVia": null
         }
       },
-      "dossier": {
-        "dc-3": {
-          "unlocked": true,
-          "via": "combine-1"
-        }
-      },
+      "dossier": {},
       "witnesses": {},
       "lastFocusedDisputeId": "d-5"
     },
@@ -8159,7 +8535,7 @@
         "actionType": "dossier",
         "target": "a",
         "disputeId": "d-5",
-        "lieState": "S3",
+        "lieState": "S2",
         "variantId": "dc-3-a-q1-mid-v1",
         "entryKey": "dc-3.a.q1|mid",
         "tags": [
@@ -8195,17 +8571,35 @@
           "disclosure:guarded",
           "responseMode:judge_formal_card_answer",
           "rapport:high",
-          "contradict_token:2"
-        ]
+          "contradict_token:2",
+          "speaker:undefined",
+          "emotion:defensive",
+          "continuity:pressure",
+          "revealGuard:buffered",
+          "disclosure:limited",
+          "callTerm:제_전_친구",
+          "counterpartyRef:제_전_친구"
+        ],
+        "visibility": "player"
       }
     ],
+    "playerTranscript": [
+      {
+        "speaker": "a",
+        "channel": "dossier",
+        "text": "아버지 부탁이 반복된다는 말이 마음에 걸렸습니다. 그래도 인정하기가 무서웠습니다."
+      }
+    ],
+    "qaAnnotations": [],
     "stateAfter": {
       "turn": 1,
       "lieStates": {
         "a": {
           "d-1": "S0",
           "d-2": "S0",
-          "d-5": "S3"
+          "d-3": "S0",
+          "d-4": "S0",
+          "d-5": "S2"
         },
         "b": {
           "d-1": "S0",
@@ -8298,16 +8692,11 @@
           "emergedVia": null
         },
         "d-5": {
-          "visibility": "visible",
-          "emergedVia": "combine-1"
+          "visibility": "hidden",
+          "emergedVia": null
         }
       },
-      "dossier": {
-        "dc-3": {
-          "unlocked": true,
-          "via": "combine-1"
-        }
-      },
+      "dossier": {},
       "witnesses": {},
       "lastFocusedDisputeId": "d-5"
     },
@@ -8339,7 +8728,9 @@
         "a": {
           "d-1": "S0",
           "d-2": "S0",
-          "d-5": "S3"
+          "d-3": "S0",
+          "d-4": "S0",
+          "d-5": "S2"
         },
         "b": {
           "d-1": "S0",
@@ -8432,16 +8823,11 @@
           "emergedVia": null
         },
         "d-5": {
-          "visibility": "visible",
-          "emergedVia": "combine-1"
+          "visibility": "hidden",
+          "emergedVia": null
         }
       },
-      "dossier": {
-        "dc-3": {
-          "unlocked": true,
-          "via": "combine-1"
-        }
-      },
+      "dossier": {},
       "witnesses": {},
       "lastFocusedDisputeId": "d-5"
     },
@@ -8469,7 +8855,7 @@
         "target": "a",
         "disputeId": "d-5",
         "evidenceId": "e-2",
-        "lieState": "S3",
+        "lieState": "S2",
         "evidenceStage": 0,
         "variantId": "a-e-2-mid-self-v1",
         "entryKey": "a|e-2|mid|self",
@@ -8504,16 +8890,36 @@
           "responseMode:judge_formal_evidence_answer",
           "trust:mid",
           "legality:ok",
-          "source:org"
-        ]
+          "source:org",
+          "emotion:defensive",
+          "revealGuard:buffered",
+          "disclosure:limited",
+          "source:both"
+        ],
+        "visibility": "player"
       }
     ],
+    "playerTranscript": [
+      {
+        "speaker": "system",
+        "channel": "system_message",
+        "text": "증거 제시: 단톡방 캡처 [Hard]"
+      },
+      {
+        "speaker": "a",
+        "channel": "evidence_present",
+        "text": "화가 나서 그랬습니다. 확인 안 하고 올린 건 인정합니다."
+      }
+    ],
+    "qaAnnotations": [],
     "stateAfter": {
       "turn": 2,
       "lieStates": {
         "a": {
           "d-1": "S0",
           "d-2": "S0",
+          "d-3": "S0",
+          "d-4": "S0",
           "d-5": "S3"
         },
         "b": {
@@ -8609,21 +9015,23 @@
           "emergedVia": null
         },
         "d-5": {
-          "visibility": "visible",
-          "emergedVia": "combine-1"
+          "visibility": "hidden",
+          "emergedVia": null
         }
       },
-      "dossier": {
-        "dc-3": {
-          "unlocked": true,
-          "via": "combine-1"
-        }
-      },
+      "dossier": {},
       "witnesses": {},
       "lastFocusedDisputeId": "d-5"
     },
     "stateDelta": {
-      "lieStates": [],
+      "lieStates": [
+        {
+          "party": "a",
+          "disputeId": "d-5",
+          "from": "S2",
+          "to": "S3"
+        }
+      ],
       "evidence": [
         {
           "evidenceId": "e-2",
@@ -8667,6 +9075,8 @@
         "a": {
           "d-1": "S0",
           "d-2": "S0",
+          "d-3": "S0",
+          "d-4": "S0",
           "d-5": "S3"
         },
         "b": {
@@ -8762,27 +9172,38 @@
           "emergedVia": null
         },
         "d-5": {
-          "visibility": "visible",
-          "emergedVia": "combine-1"
+          "visibility": "hidden",
+          "emergedVia": null
         }
       },
-      "dossier": {
-        "dc-3": {
-          "unlocked": true,
-          "via": "combine-1"
-        }
-      },
+      "dossier": {},
       "witnesses": {},
       "lastFocusedDisputeId": "d-5"
     },
     "outputs": [
       {
-        "speaker": "witness",
-        "text": "w-1 confirms the group chat branch should stay separate from the contact branch.",
+        "speaker": "system",
+        "text": "Witness action skipped by manifest validation: witness_question_before_summon; Witness question occurs before witness summon: w-1.",
         "channel": "witness_question",
-        "resolverPath": "route_simulator_facsimile",
+        "resolverPath": "route_simulator_manifest_validation",
         "sourcePath": "tmp/qa-route-simulator-manifests/friend-01.json:witness_question.w-1",
         "actionType": "witness_question",
+        "disputeId": "d-5",
+        "qaOnly": true,
+        "visibility": "qa_annotation",
+        "safeFallback": true,
+        "witnessId": "w-1",
+        "manifestValidationCategory": "witness_question_before_summon"
+      }
+    ],
+    "playerTranscript": [],
+    "qaAnnotations": [
+      {
+        "speaker": "system",
+        "channel": "witness_question",
+        "resolverPath": "route_simulator_manifest_validation",
+        "sourcePath": "tmp/qa-route-simulator-manifests/friend-01.json:witness_question.w-1",
+        "text": "Witness action skipped by manifest validation: witness_question_before_summon; Witness question occurs before witness summon: w-1.",
         "disputeId": "d-5",
         "witnessId": "w-1"
       }
@@ -8793,6 +9214,8 @@
         "a": {
           "d-1": "S0",
           "d-2": "S0",
+          "d-3": "S0",
+          "d-4": "S0",
           "d-5": "S3"
         },
         "b": {
@@ -8888,23 +9311,12 @@
           "emergedVia": null
         },
         "d-5": {
-          "visibility": "visible",
-          "emergedVia": "combine-1"
+          "visibility": "hidden",
+          "emergedVia": null
         }
       },
-      "dossier": {
-        "dc-3": {
-          "unlocked": true,
-          "via": "combine-1"
-        }
-      },
-      "witnesses": {
-        "w-1": {
-          "summoned": true,
-          "lastDisputeId": "d-5",
-          "questions": 1
-        }
-      },
+      "dossier": {},
+      "witnesses": {},
       "lastFocusedDisputeId": "d-5"
     },
     "stateDelta": {
@@ -8912,17 +9324,11 @@
       "evidence": [],
       "disputes": [],
       "dossier": [],
-      "witnesses": [
-        {
-          "witnessId": "w-1",
-          "summonedFrom": false,
-          "summonedTo": true,
-          "questionsFrom": 0,
-          "questionsTo": 1
-        }
-      ]
+      "witnesses": []
     },
-    "findingIds": []
+    "findingIds": [
+      "QARS-0015"
+    ]
   },
   {
     "schemaVersion": 1,
@@ -8944,6 +9350,8 @@
         "a": {
           "d-1": "S0",
           "d-2": "S0",
+          "d-3": "S0",
+          "d-4": "S0",
           "d-5": "S3"
         },
         "b": {
@@ -9039,43 +9447,76 @@
           "emergedVia": null
         },
         "d-5": {
-          "visibility": "visible",
-          "emergedVia": "combine-1"
+          "visibility": "hidden",
+          "emergedVia": null
         }
       },
-      "dossier": {
-        "dc-3": {
-          "unlocked": true,
-          "via": "combine-1"
-        }
-      },
-      "witnesses": {
-        "w-1": {
-          "summoned": true,
-          "lastDisputeId": "d-5",
-          "questions": 1
-        }
-      },
+      "dossier": {},
+      "witnesses": {},
       "lastFocusedDisputeId": "d-5"
     },
     "outputs": [
       {
         "speaker": "system",
-        "text": "Witness summoned: w-1",
+        "text": "증인 김세라 소환 - 증언이 시작됩니다.",
         "channel": "witness_summon",
         "resolverPath": "runtime_system",
         "sourcePath": "src/data/cases/generated/friend-01.json:activeThirdParties[id=w-1]",
         "actionType": "witness_summon",
         "disputeId": "d-5",
-        "witnessId": "w-1"
+        "witnessId": "w-1",
+        "witnessName": "김세라"
       },
       {
-        "speaker": "witness",
-        "text": "w-1 is ready to compare the group chat spread path.",
+        "speaker": "system",
+        "text": "Witness summoned: w-1",
         "channel": "witness_summon",
         "resolverPath": "route_simulator_facsimile",
         "sourcePath": "tmp/qa-route-simulator-manifests/friend-01.json:witness_summon.w-1",
         "actionType": "witness_summon",
+        "disputeId": "d-5",
+        "qaOnly": true,
+        "visibility": "qa_annotation",
+        "witnessId": "w-1",
+        "witnessName": "김세라"
+      },
+      {
+        "speaker": "system",
+        "text": "Manifest witness prompt: w-1 is ready to compare the group chat spread path.",
+        "channel": "witness_summon",
+        "resolverPath": "route_simulator_facsimile",
+        "sourcePath": "tmp/qa-route-simulator-manifests/friend-01.json:witness_summon.w-1.prompt",
+        "actionType": "witness_summon",
+        "disputeId": "d-5",
+        "qaOnly": true,
+        "visibility": "qa_annotation",
+        "witnessId": "w-1",
+        "witnessName": "김세라"
+      }
+    ],
+    "playerTranscript": [
+      {
+        "speaker": "system",
+        "channel": "witness_summon",
+        "text": "증인 김세라 소환 - 증언이 시작됩니다."
+      }
+    ],
+    "qaAnnotations": [
+      {
+        "speaker": "system",
+        "channel": "witness_summon",
+        "resolverPath": "route_simulator_facsimile",
+        "sourcePath": "tmp/qa-route-simulator-manifests/friend-01.json:witness_summon.w-1",
+        "text": "Witness summoned: w-1",
+        "disputeId": "d-5",
+        "witnessId": "w-1"
+      },
+      {
+        "speaker": "system",
+        "channel": "witness_summon",
+        "resolverPath": "route_simulator_facsimile",
+        "sourcePath": "tmp/qa-route-simulator-manifests/friend-01.json:witness_summon.w-1.prompt",
+        "text": "Manifest witness prompt: w-1 is ready to compare the group chat spread path.",
         "disputeId": "d-5",
         "witnessId": "w-1"
       }
@@ -9086,6 +9527,8 @@
         "a": {
           "d-1": "S0",
           "d-2": "S0",
+          "d-3": "S0",
+          "d-4": "S0",
           "d-5": "S3"
         },
         "b": {
@@ -9181,16 +9624,11 @@
           "emergedVia": null
         },
         "d-5": {
-          "visibility": "visible",
-          "emergedVia": "combine-1"
+          "visibility": "hidden",
+          "emergedVia": null
         }
       },
-      "dossier": {
-        "dc-3": {
-          "unlocked": true,
-          "via": "combine-1"
-        }
-      },
+      "dossier": {},
       "witnesses": {
         "w-1": {
           "summoned": true,
@@ -9207,14 +9645,16 @@
       "witnesses": [
         {
           "witnessId": "w-1",
-          "summonedFrom": true,
+          "summonedFrom": false,
           "summonedTo": true,
-          "questionsFrom": 1,
+          "questionsFrom": 0,
           "questionsTo": 0
         }
       ]
     },
-    "findingIds": []
+    "findingIds": [
+      "QARS-0016"
+    ]
   },
   {
     "schemaVersion": 1,
@@ -9236,6 +9676,8 @@
         "a": {
           "d-1": "S0",
           "d-2": "S0",
+          "d-3": "S0",
+          "d-4": "S0",
           "d-5": "S0"
         },
         "b": {
@@ -9396,16 +9838,36 @@
           "responseMode:judge_formal_evidence_answer",
           "trust:mid",
           "legality:ok",
-          "source:org"
-        ]
+          "source:org",
+          "emotion:defensive",
+          "revealGuard:buffered",
+          "disclosure:limited",
+          "source:b"
+        ],
+        "visibility": "player"
       }
     ],
+    "playerTranscript": [
+      {
+        "speaker": "system",
+        "channel": "system_message",
+        "text": "증거 제시: 예비신랑 메시지 [Hard]"
+      },
+      {
+        "speaker": "b",
+        "channel": "evidence_present",
+        "text": "거절했습니다. '친구 남자친구니까 이러지 마'라고 했습니다."
+      }
+    ],
+    "qaAnnotations": [],
     "stateAfter": {
       "turn": 0,
       "lieStates": {
         "a": {
           "d-1": "S0",
           "d-2": "S0",
+          "d-3": "S0",
+          "d-4": "S0",
           "d-5": "S0"
         },
         "b": {
@@ -9591,6 +10053,8 @@
         "a": {
           "d-1": "S0",
           "d-2": "S0",
+          "d-3": "S0",
+          "d-4": "S0",
           "d-5": "S0"
         },
         "b": {
@@ -9697,7 +10161,7 @@
     "outputs": [
       {
         "speaker": "system",
-        "text": "'너 같은 스타일이 원래 내 이상형'이라는 추가 메시지가 있고, B는 '친구 남자친구니까 이러지 마'라고 끊어냈다.",
+        "text": "두 번째 페이지에서 김태윤이 다은이에게 말하기 애매한 부탁과 비공개 대화를 암시해 미심쩍은 흐름이 보인다.",
         "channel": "evidence_discovery",
         "resolverPath": "runtime_system",
         "sourcePath": "src/data/cases/generated/friend-01.json:evidence.e-4.investigationResults.check_metadata",
@@ -9709,12 +10173,22 @@
         "runtimeContract": "system_only_no_auto_npc"
       }
     ],
+    "playerTranscript": [
+      {
+        "speaker": "system",
+        "channel": "evidence_discovery",
+        "text": "두 번째 페이지에서 김태윤이 다은이에게 말하기 애매한 부탁과 비공개 대화를 암시해 미심쩍은 흐름이 보인다."
+      }
+    ],
+    "qaAnnotations": [],
     "stateAfter": {
       "turn": 1,
       "lieStates": {
         "a": {
           "d-1": "S0",
           "d-2": "S0",
+          "d-3": "S0",
+          "d-4": "S0",
           "d-5": "S0"
         },
         "b": {
@@ -9844,7 +10318,7 @@
       "witnesses": []
     },
     "findingIds": [
-      "QARS-0004"
+      "QARS-0017"
     ]
   },
   {
@@ -9867,6 +10341,8 @@
         "a": {
           "d-1": "S0",
           "d-2": "S0",
+          "d-3": "S0",
+          "d-4": "S0",
           "d-5": "S0"
         },
         "b": {
@@ -10019,15 +10495,26 @@
           "rapport:high",
           "contradict_token:1",
           "lieState:S3"
-        ]
+        ],
+        "visibility": "player"
       }
     ],
+    "playerTranscript": [
+      {
+        "speaker": "b",
+        "channel": "contradiction_pursuit",
+        "text": "이제는 일부를 말해야 할 것 같습니다. 예비신랑이 먼저 사적인 말을 꺼냈고 저는 끊었습니다."
+      }
+    ],
+    "qaAnnotations": [],
     "stateAfter": {
       "turn": 1,
       "lieStates": {
         "a": {
           "d-1": "S0",
           "d-2": "S0",
+          "d-3": "S0",
+          "d-4": "S0",
           "d-5": "S0"
         },
         "b": {
@@ -10169,6 +10656,291 @@
         "a": {
           "d-1": "S0",
           "d-2": "S0",
+          "d-3": "S0",
+          "d-4": "S0",
+          "d-5": "S0"
+        },
+        "b": {
+          "d-1": "S0",
+          "d-2": "S4",
+          "d-3": "S0",
+          "d-4": "S0",
+          "d-5": "S0"
+        }
+      },
+      "evidence": {
+        "e-1": {
+          "id": "e-1",
+          "unlocked": true,
+          "presented": false,
+          "presentedTo": [],
+          "stage": 0,
+          "deepInvestigated": false,
+          "investigatedActions": []
+        },
+        "e-2": {
+          "id": "e-2",
+          "unlocked": true,
+          "presented": false,
+          "presentedTo": [],
+          "stage": 0,
+          "deepInvestigated": false,
+          "investigatedActions": []
+        },
+        "e-3": {
+          "id": "e-3",
+          "unlocked": true,
+          "presented": false,
+          "presentedTo": [],
+          "stage": 0,
+          "deepInvestigated": false,
+          "investigatedActions": []
+        },
+        "e-4": {
+          "id": "e-4",
+          "unlocked": true,
+          "presented": true,
+          "presentedTo": [
+            "b"
+          ],
+          "stage": 1,
+          "deepInvestigated": true,
+          "investigatedActions": [
+            "check_metadata"
+          ]
+        },
+        "e-5": {
+          "id": "e-5",
+          "unlocked": true,
+          "presented": false,
+          "presentedTo": [],
+          "stage": 0,
+          "deepInvestigated": false,
+          "investigatedActions": []
+        },
+        "e-6": {
+          "id": "e-6",
+          "unlocked": false,
+          "presented": false,
+          "presentedTo": [],
+          "stage": 0,
+          "deepInvestigated": false,
+          "investigatedActions": []
+        },
+        "e-7": {
+          "id": "e-7",
+          "unlocked": false,
+          "presented": false,
+          "presentedTo": [],
+          "stage": 0,
+          "deepInvestigated": false,
+          "investigatedActions": []
+        }
+      },
+      "disputes": {
+        "d-1": {
+          "visibility": "visible",
+          "emergedVia": null
+        },
+        "d-2": {
+          "visibility": "hidden",
+          "emergedVia": null
+        },
+        "d-3": {
+          "visibility": "hidden",
+          "emergedVia": null
+        },
+        "d-4": {
+          "visibility": "hidden",
+          "emergedVia": null
+        },
+        "d-5": {
+          "visibility": "hidden",
+          "emergedVia": null
+        }
+      },
+      "dossier": {},
+      "witnesses": {},
+      "lastFocusedDisputeId": null
+    },
+    "outputs": [
+      {
+        "speaker": "system",
+        "text": "Witness action skipped by manifest validation: witness_question_before_summon; Witness question occurs before witness summon: w-2.",
+        "channel": "witness_question",
+        "resolverPath": "route_simulator_manifest_validation",
+        "sourcePath": "tmp/qa-route-simulator-manifests/friend-01.json:witness_question.w-2",
+        "actionType": "witness_question",
+        "disputeId": "d-2",
+        "qaOnly": true,
+        "visibility": "qa_annotation",
+        "safeFallback": true,
+        "witnessId": "w-2",
+        "manifestValidationCategory": "witness_question_before_summon"
+      }
+    ],
+    "playerTranscript": [],
+    "qaAnnotations": [
+      {
+        "speaker": "system",
+        "channel": "witness_question",
+        "resolverPath": "route_simulator_manifest_validation",
+        "sourcePath": "tmp/qa-route-simulator-manifests/friend-01.json:witness_question.w-2",
+        "text": "Witness action skipped by manifest validation: witness_question_before_summon; Witness question occurs before witness summon: w-2.",
+        "disputeId": "d-2",
+        "witnessId": "w-2"
+      }
+    ],
+    "stateAfter": {
+      "turn": 2,
+      "lieStates": {
+        "a": {
+          "d-1": "S0",
+          "d-2": "S0",
+          "d-3": "S0",
+          "d-4": "S0",
+          "d-5": "S0"
+        },
+        "b": {
+          "d-1": "S0",
+          "d-2": "S4",
+          "d-3": "S0",
+          "d-4": "S0",
+          "d-5": "S0"
+        }
+      },
+      "evidence": {
+        "e-1": {
+          "id": "e-1",
+          "unlocked": true,
+          "presented": false,
+          "presentedTo": [],
+          "stage": 0,
+          "deepInvestigated": false,
+          "investigatedActions": []
+        },
+        "e-2": {
+          "id": "e-2",
+          "unlocked": true,
+          "presented": false,
+          "presentedTo": [],
+          "stage": 0,
+          "deepInvestigated": false,
+          "investigatedActions": []
+        },
+        "e-3": {
+          "id": "e-3",
+          "unlocked": true,
+          "presented": false,
+          "presentedTo": [],
+          "stage": 0,
+          "deepInvestigated": false,
+          "investigatedActions": []
+        },
+        "e-4": {
+          "id": "e-4",
+          "unlocked": true,
+          "presented": true,
+          "presentedTo": [
+            "b"
+          ],
+          "stage": 1,
+          "deepInvestigated": true,
+          "investigatedActions": [
+            "check_metadata"
+          ]
+        },
+        "e-5": {
+          "id": "e-5",
+          "unlocked": true,
+          "presented": false,
+          "presentedTo": [],
+          "stage": 0,
+          "deepInvestigated": false,
+          "investigatedActions": []
+        },
+        "e-6": {
+          "id": "e-6",
+          "unlocked": false,
+          "presented": false,
+          "presentedTo": [],
+          "stage": 0,
+          "deepInvestigated": false,
+          "investigatedActions": []
+        },
+        "e-7": {
+          "id": "e-7",
+          "unlocked": false,
+          "presented": false,
+          "presentedTo": [],
+          "stage": 0,
+          "deepInvestigated": false,
+          "investigatedActions": []
+        }
+      },
+      "disputes": {
+        "d-1": {
+          "visibility": "visible",
+          "emergedVia": null
+        },
+        "d-2": {
+          "visibility": "hidden",
+          "emergedVia": null
+        },
+        "d-3": {
+          "visibility": "hidden",
+          "emergedVia": null
+        },
+        "d-4": {
+          "visibility": "hidden",
+          "emergedVia": null
+        },
+        "d-5": {
+          "visibility": "hidden",
+          "emergedVia": null
+        }
+      },
+      "dossier": {},
+      "witnesses": {},
+      "lastFocusedDisputeId": null
+    },
+    "stateDelta": {
+      "lieStates": [],
+      "evidence": [],
+      "disputes": [],
+      "dossier": [],
+      "witnesses": []
+    },
+    "findingIds": [
+      "QARS-0018"
+    ]
+  },
+  {
+    "schemaVersion": 1,
+    "caseId": "friend-01",
+    "routeId": "phase4-cascading-d2-message",
+    "routeSummary": "Cascading d-2 route that tests fiance-message evidence and witness confirmation.",
+    "routePattern": "cascading",
+    "phase": "phase4",
+    "actionIndex": 5,
+    "action": {
+      "type": "emergence_event",
+      "eventId": "friend-d3-open",
+      "target": "b",
+      "disputeId": "d-3",
+      "unlockDisputes": [
+        "d-3"
+      ],
+      "text": "Emergence event opened d-3 after the d-2 message branch."
+    },
+    "stateBefore": {
+      "turn": 3,
+      "lieStates": {
+        "a": {
+          "d-1": "S0",
+          "d-2": "S0",
+          "d-3": "S0",
+          "d-4": "S0",
           "d-5": "S0"
         },
         "b": {
@@ -10277,292 +11049,25 @@
     "outputs": [
       {
         "speaker": "witness",
-        "text": "w-2 confirms the fiance-message branch should be tested against the contact log.",
-        "channel": "witness_question",
-        "resolverPath": "route_simulator_facsimile",
-        "sourcePath": "tmp/qa-route-simulator-manifests/friend-01.json:witness_question.w-2",
-        "actionType": "witness_question",
-        "disputeId": "d-2",
-        "witnessId": "w-2"
-      }
-    ],
-    "stateAfter": {
-      "turn": 2,
-      "lieStates": {
-        "a": {
-          "d-1": "S0",
-          "d-2": "S0",
-          "d-5": "S0"
-        },
-        "b": {
-          "d-1": "S0",
-          "d-2": "S4",
-          "d-3": "S0",
-          "d-4": "S0",
-          "d-5": "S0"
-        }
-      },
-      "evidence": {
-        "e-1": {
-          "id": "e-1",
-          "unlocked": true,
-          "presented": false,
-          "presentedTo": [],
-          "stage": 0,
-          "deepInvestigated": false,
-          "investigatedActions": []
-        },
-        "e-2": {
-          "id": "e-2",
-          "unlocked": true,
-          "presented": false,
-          "presentedTo": [],
-          "stage": 0,
-          "deepInvestigated": false,
-          "investigatedActions": []
-        },
-        "e-3": {
-          "id": "e-3",
-          "unlocked": true,
-          "presented": false,
-          "presentedTo": [],
-          "stage": 0,
-          "deepInvestigated": false,
-          "investigatedActions": []
-        },
-        "e-4": {
-          "id": "e-4",
-          "unlocked": true,
-          "presented": true,
-          "presentedTo": [
-            "b"
-          ],
-          "stage": 1,
-          "deepInvestigated": true,
-          "investigatedActions": [
-            "check_metadata"
-          ]
-        },
-        "e-5": {
-          "id": "e-5",
-          "unlocked": true,
-          "presented": false,
-          "presentedTo": [],
-          "stage": 0,
-          "deepInvestigated": false,
-          "investigatedActions": []
-        },
-        "e-6": {
-          "id": "e-6",
-          "unlocked": false,
-          "presented": false,
-          "presentedTo": [],
-          "stage": 0,
-          "deepInvestigated": false,
-          "investigatedActions": []
-        },
-        "e-7": {
-          "id": "e-7",
-          "unlocked": false,
-          "presented": false,
-          "presentedTo": [],
-          "stage": 0,
-          "deepInvestigated": false,
-          "investigatedActions": []
-        }
-      },
-      "disputes": {
-        "d-1": {
-          "visibility": "visible",
-          "emergedVia": null
-        },
-        "d-2": {
-          "visibility": "hidden",
-          "emergedVia": null
-        },
-        "d-3": {
-          "visibility": "hidden",
-          "emergedVia": null
-        },
-        "d-4": {
-          "visibility": "hidden",
-          "emergedVia": null
-        },
-        "d-5": {
-          "visibility": "hidden",
-          "emergedVia": null
-        }
-      },
-      "dossier": {},
-      "witnesses": {
-        "w-2": {
-          "summoned": true,
-          "lastDisputeId": "d-2",
-          "questions": 1
-        }
-      },
-      "lastFocusedDisputeId": null
-    },
-    "stateDelta": {
-      "lieStates": [],
-      "evidence": [],
-      "disputes": [],
-      "dossier": [],
-      "witnesses": [
-        {
-          "witnessId": "w-2",
-          "summonedFrom": false,
-          "summonedTo": true,
-          "questionsFrom": 0,
-          "questionsTo": 1
-        }
-      ]
-    },
-    "findingIds": []
-  },
-  {
-    "schemaVersion": 1,
-    "caseId": "friend-01",
-    "routeId": "phase4-cascading-d2-message",
-    "routeSummary": "Cascading d-2 route that tests fiance-message evidence and witness confirmation.",
-    "routePattern": "cascading",
-    "phase": "phase4",
-    "actionIndex": 5,
-    "action": {
-      "type": "emergence_event",
-      "eventId": "friend-d3-open",
-      "target": "b",
-      "disputeId": "d-3",
-      "unlockDisputes": [
-        "d-3"
-      ],
-      "text": "Emergence event opened d-3 after the d-2 message branch."
-    },
-    "stateBefore": {
-      "turn": 3,
-      "lieStates": {
-        "a": {
-          "d-1": "S0",
-          "d-2": "S0",
-          "d-5": "S0"
-        },
-        "b": {
-          "d-1": "S0",
-          "d-2": "S4",
-          "d-3": "S0",
-          "d-4": "S0",
-          "d-5": "S0"
-        }
-      },
-      "evidence": {
-        "e-1": {
-          "id": "e-1",
-          "unlocked": true,
-          "presented": false,
-          "presentedTo": [],
-          "stage": 0,
-          "deepInvestigated": false,
-          "investigatedActions": []
-        },
-        "e-2": {
-          "id": "e-2",
-          "unlocked": true,
-          "presented": false,
-          "presentedTo": [],
-          "stage": 0,
-          "deepInvestigated": false,
-          "investigatedActions": []
-        },
-        "e-3": {
-          "id": "e-3",
-          "unlocked": true,
-          "presented": false,
-          "presentedTo": [],
-          "stage": 0,
-          "deepInvestigated": false,
-          "investigatedActions": []
-        },
-        "e-4": {
-          "id": "e-4",
-          "unlocked": true,
-          "presented": true,
-          "presentedTo": [
-            "b"
-          ],
-          "stage": 1,
-          "deepInvestigated": true,
-          "investigatedActions": [
-            "check_metadata"
-          ]
-        },
-        "e-5": {
-          "id": "e-5",
-          "unlocked": true,
-          "presented": false,
-          "presentedTo": [],
-          "stage": 0,
-          "deepInvestigated": false,
-          "investigatedActions": []
-        },
-        "e-6": {
-          "id": "e-6",
-          "unlocked": false,
-          "presented": false,
-          "presentedTo": [],
-          "stage": 0,
-          "deepInvestigated": false,
-          "investigatedActions": []
-        },
-        "e-7": {
-          "id": "e-7",
-          "unlocked": false,
-          "presented": false,
-          "presentedTo": [],
-          "stage": 0,
-          "deepInvestigated": false,
-          "investigatedActions": []
-        }
-      },
-      "disputes": {
-        "d-1": {
-          "visibility": "visible",
-          "emergedVia": null
-        },
-        "d-2": {
-          "visibility": "hidden",
-          "emergedVia": null
-        },
-        "d-3": {
-          "visibility": "hidden",
-          "emergedVia": null
-        },
-        "d-4": {
-          "visibility": "hidden",
-          "emergedVia": null
-        },
-        "d-5": {
-          "visibility": "hidden",
-          "emergedVia": null
-        }
-      },
-      "dossier": {},
-      "witnesses": {
-        "w-2": {
-          "summoned": true,
-          "lastDisputeId": "d-2",
-          "questions": 1
-        }
-      },
-      "lastFocusedDisputeId": null
-    },
-    "outputs": [
-      {
-        "speaker": "witness",
         "text": "Emergence event opened d-3 after the d-2 message branch.",
         "channel": "emergence_event",
         "resolverPath": "route_simulator_facsimile",
         "sourcePath": "tmp/qa-route-simulator-manifests/friend-01.json:emergence_event.friend-d3-open",
         "actionType": "emergence_event",
+        "target": "b",
+        "disputeId": "d-3",
+        "qaOnly": true,
+        "visibility": "qa_annotation"
+      }
+    ],
+    "playerTranscript": [],
+    "qaAnnotations": [
+      {
+        "speaker": "witness",
+        "channel": "emergence_event",
+        "resolverPath": "route_simulator_facsimile",
+        "sourcePath": "tmp/qa-route-simulator-manifests/friend-01.json:emergence_event.friend-d3-open",
+        "text": "Emergence event opened d-3 after the d-2 message branch.",
         "target": "b",
         "disputeId": "d-3"
       }
@@ -10573,6 +11078,8 @@
         "a": {
           "d-1": "S0",
           "d-2": "S0",
+          "d-3": "S0",
+          "d-4": "S0",
           "d-5": "S0"
         },
         "b": {
@@ -10675,13 +11182,7 @@
         }
       },
       "dossier": {},
-      "witnesses": {
-        "w-2": {
-          "summoned": true,
-          "lastDisputeId": "d-2",
-          "questions": 1
-        }
-      },
+      "witnesses": {},
       "lastFocusedDisputeId": null
     },
     "stateDelta": {
@@ -10698,7 +11199,9 @@
       "dossier": [],
       "witnesses": []
     },
-    "findingIds": []
+    "findingIds": [
+      "QARS-0019"
+    ]
   },
   {
     "schemaVersion": 1,
@@ -10723,6 +11226,8 @@
         "a": {
           "d-1": "S0",
           "d-2": "S0",
+          "d-3": "S0",
+          "d-4": "S0",
           "d-5": "S0"
         },
         "b": {
@@ -10827,23 +11332,41 @@
     "outputs": [
       {
         "speaker": "system",
-        "text": "과거 카톡의 '돈 문제' 언급과 과거 송금 기록을 대조하면, 손절의 진짜 원인이 변심이 아니라 사기 피해였다는 사실이 드러난다.",
+        "text": "Evidence combination skipped by runtime parity gate: combine-7; not fully investigated=e-3, e-6",
         "channel": "evidence_combine",
-        "resolverPath": "runtime_system",
-        "sourcePath": "src/data/cases/generated/friend-01.json:combinationLab.recipes[id=combine-7].discoveryText",
+        "resolverPath": "route_simulator_runtime_gate",
+        "sourcePath": "src/data/cases/generated/friend-01.json:combinationLab.recipes[id=combine-7]",
         "actionType": "evidence_combine",
         "target": "b",
-        "evidenceId": "e-3",
+        "qaOnly": true,
+        "visibility": "qa_annotation",
+        "safeFallback": true,
         "combinationId": "combine-7",
-        "dossierCardId": "dc-4"
-      },
+        "dossierCardId": "dc-4",
+        "runtimeReachable": false,
+        "gate": {
+          "ok": false,
+          "evidenceIds": [
+            "e-3",
+            "e-6"
+          ],
+          "locked": [],
+          "uninvestigated": [
+            "e-3",
+            "e-6"
+          ],
+          "allowImpossibleStates": false
+        }
+      }
+    ],
+    "playerTranscript": [],
+    "qaAnnotations": [
       {
-        "speaker": "witness",
-        "text": "Analysis note dc-4 is ready for follow-up.",
+        "speaker": "system",
         "channel": "evidence_combine",
-        "resolverPath": "route_simulator_facsimile",
-        "sourcePath": "src/data/cases/generated/friend-01.json:combinationLab.outputs[id=dc-4]",
-        "actionType": "evidence_combine",
+        "resolverPath": "route_simulator_runtime_gate",
+        "sourcePath": "src/data/cases/generated/friend-01.json:combinationLab.recipes[id=combine-7]",
+        "text": "Evidence combination skipped by runtime parity gate: combine-7; not fully investigated=e-3, e-6",
         "target": "b",
         "combinationId": "combine-7",
         "dossierCardId": "dc-4"
@@ -10855,6 +11378,8 @@
         "a": {
           "d-1": "S0",
           "d-2": "S0",
+          "d-3": "S0",
+          "d-4": "S0",
           "d-5": "S0"
         },
         "b": {
@@ -10868,7 +11393,7 @@
       "evidence": {
         "e-1": {
           "id": "e-1",
-          "unlocked": true,
+          "unlocked": false,
           "presented": false,
           "presentedTo": [],
           "stage": 0,
@@ -10877,7 +11402,7 @@
         },
         "e-2": {
           "id": "e-2",
-          "unlocked": true,
+          "unlocked": false,
           "presented": false,
           "presentedTo": [],
           "stage": 0,
@@ -10945,66 +11470,27 @@
         },
         "d-4": {
           "visibility": "visible",
-          "emergedVia": "combine-7"
+          "emergedVia": null
         },
         "d-5": {
           "visibility": "hidden",
           "emergedVia": null
         }
       },
-      "dossier": {
-        "dc-4": {
-          "unlocked": true,
-          "via": "combine-7"
-        }
-      },
+      "dossier": {},
       "witnesses": {},
       "lastFocusedDisputeId": "d-4"
     },
     "stateDelta": {
       "lieStates": [],
-      "evidence": [
-        {
-          "evidenceId": "e-1",
-          "before": {
-            "unlocked": false,
-            "presented": false,
-            "stage": 0,
-            "deepInvestigated": false
-          },
-          "after": {
-            "unlocked": true,
-            "presented": false,
-            "stage": 0,
-            "deepInvestigated": false
-          }
-        },
-        {
-          "evidenceId": "e-2",
-          "before": {
-            "unlocked": false,
-            "presented": false,
-            "stage": 0,
-            "deepInvestigated": false
-          },
-          "after": {
-            "unlocked": true,
-            "presented": false,
-            "stage": 0,
-            "deepInvestigated": false
-          }
-        }
-      ],
+      "evidence": [],
       "disputes": [],
-      "dossier": [
-        {
-          "dossierId": "dc-4",
-          "to": true
-        }
-      ],
+      "dossier": [],
       "witnesses": []
     },
-    "findingIds": []
+    "findingIds": [
+      "QARS-0020"
+    ]
   },
   {
     "schemaVersion": 1,
@@ -11026,6 +11512,8 @@
         "a": {
           "d-1": "S0",
           "d-2": "S0",
+          "d-3": "S0",
+          "d-4": "S0",
           "d-5": "S0"
         },
         "b": {
@@ -11039,7 +11527,7 @@
       "evidence": {
         "e-1": {
           "id": "e-1",
-          "unlocked": true,
+          "unlocked": false,
           "presented": false,
           "presentedTo": [],
           "stage": 0,
@@ -11048,7 +11536,7 @@
         },
         "e-2": {
           "id": "e-2",
-          "unlocked": true,
+          "unlocked": false,
           "presented": false,
           "presentedTo": [],
           "stage": 0,
@@ -11116,19 +11604,14 @@
         },
         "d-4": {
           "visibility": "visible",
-          "emergedVia": "combine-7"
+          "emergedVia": null
         },
         "d-5": {
           "visibility": "hidden",
           "emergedVia": null
         }
       },
-      "dossier": {
-        "dc-4": {
-          "unlocked": true,
-          "via": "combine-7"
-        }
-      },
+      "dossier": {},
       "witnesses": {},
       "lastFocusedDisputeId": "d-4"
     },
@@ -11179,16 +11662,32 @@
           "disclosure:guarded",
           "responseMode:judge_formal_card_answer",
           "rapport:high",
-          "contradict_token:2"
-        ]
+          "contradict_token:2",
+          "speaker:undefined",
+          "emotion:defensive",
+          "continuity:pressure",
+          "revealGuard:buffered",
+          "disclosure:limited"
+        ],
+        "visibility": "player"
       }
     ],
+    "playerTranscript": [
+      {
+        "speaker": "b",
+        "channel": "dossier",
+        "text": "다은이 아버지가 제 돈을 가져간 일은 맞습니다. 그래도 다은이에게 말하지 못했습니다."
+      }
+    ],
+    "qaAnnotations": [],
     "stateAfter": {
       "turn": 1,
       "lieStates": {
         "a": {
           "d-1": "S0",
           "d-2": "S0",
+          "d-3": "S0",
+          "d-4": "S0",
           "d-5": "S0"
         },
         "b": {
@@ -11279,25 +11778,51 @@
         },
         "d-4": {
           "visibility": "visible",
-          "emergedVia": "combine-7"
+          "emergedVia": null
         },
         "d-5": {
           "visibility": "hidden",
           "emergedVia": null
         }
       },
-      "dossier": {
-        "dc-4": {
-          "unlocked": true,
-          "via": "combine-7"
-        }
-      },
+      "dossier": {},
       "witnesses": {},
       "lastFocusedDisputeId": "d-4"
     },
     "stateDelta": {
       "lieStates": [],
-      "evidence": [],
+      "evidence": [
+        {
+          "evidenceId": "e-1",
+          "before": {
+            "unlocked": false,
+            "presented": false,
+            "stage": 0,
+            "deepInvestigated": false
+          },
+          "after": {
+            "unlocked": true,
+            "presented": false,
+            "stage": 0,
+            "deepInvestigated": false
+          }
+        },
+        {
+          "evidenceId": "e-2",
+          "before": {
+            "unlocked": false,
+            "presented": false,
+            "stage": 0,
+            "deepInvestigated": false
+          },
+          "after": {
+            "unlocked": true,
+            "presented": false,
+            "stage": 0,
+            "deepInvestigated": false
+          }
+        }
+      ],
       "disputes": [],
       "dossier": [],
       "witnesses": []
@@ -11323,6 +11848,8 @@
         "a": {
           "d-1": "S0",
           "d-2": "S0",
+          "d-3": "S0",
+          "d-4": "S0",
           "d-5": "S0"
         },
         "b": {
@@ -11413,19 +11940,14 @@
         },
         "d-4": {
           "visibility": "visible",
-          "emergedVia": "combine-7"
+          "emergedVia": null
         },
         "d-5": {
           "visibility": "hidden",
           "emergedVia": null
         }
       },
-      "dossier": {
-        "dc-4": {
-          "unlocked": true,
-          "via": "combine-7"
-        }
-      },
+      "dossier": {},
       "witnesses": {},
       "lastFocusedDisputeId": "d-4"
     },
@@ -11488,16 +12010,35 @@
           "responseMode:judge_formal_evidence_answer",
           "trust:mid",
           "legality:ok",
-          "source:org"
-        ]
+          "source:org",
+          "emotion:defensive",
+          "revealGuard:buffered",
+          "disclosure:limited"
+        ],
+        "visibility": "player"
       }
     ],
+    "playerTranscript": [
+      {
+        "speaker": "system",
+        "channel": "system_message",
+        "text": "증거 제시: 과거 송금 기록 [Hard]"
+      },
+      {
+        "speaker": "b",
+        "channel": "evidence_present",
+        "text": "'투자금'이라고 했습니다. 한 달만 쓰겠다고 했습니다. 돌아오지 않았습니다."
+      }
+    ],
+    "qaAnnotations": [],
     "stateAfter": {
       "turn": 2,
       "lieStates": {
         "a": {
           "d-1": "S0",
           "d-2": "S0",
+          "d-3": "S0",
+          "d-4": "S0",
           "d-5": "S0"
         },
         "b": {
@@ -11590,19 +12131,14 @@
         },
         "d-4": {
           "visibility": "visible",
-          "emergedVia": "combine-7"
+          "emergedVia": null
         },
         "d-5": {
           "visibility": "hidden",
           "emergedVia": null
         }
       },
-      "dossier": {
-        "dc-4": {
-          "unlocked": true,
-          "via": "combine-7"
-        }
-      },
+      "dossier": {},
       "witnesses": {},
       "lastFocusedDisputeId": "d-4"
     },
@@ -11651,6 +12187,8 @@
         "a": {
           "d-1": "S0",
           "d-2": "S0",
+          "d-3": "S0",
+          "d-4": "S0",
           "d-5": "S0"
         },
         "b": {
@@ -11743,26 +12281,21 @@
         },
         "d-4": {
           "visibility": "visible",
-          "emergedVia": "combine-7"
+          "emergedVia": null
         },
         "d-5": {
           "visibility": "hidden",
           "emergedVia": null
         }
       },
-      "dossier": {
-        "dc-4": {
-          "unlocked": true,
-          "via": "combine-7"
-        }
-      },
+      "dossier": {},
       "witnesses": {},
       "lastFocusedDisputeId": "d-4"
     },
     "outputs": [
       {
         "speaker": "system",
-        "text": "돈을 돌려받지 못한 상태에서 B가 A에게 이 사실을 말하지 못하고 손절을 택한 맥락이 확인된다.",
+        "text": "상환 흔적이 약한 상태에서 B가 A에게 말하지 못한 이유를 물어볼 근거가 생긴다.",
         "channel": "evidence_discovery",
         "resolverPath": "runtime_system",
         "sourcePath": "src/data/cases/generated/friend-01.json:evidence.e-6.investigationResults.restore_context",
@@ -11774,12 +12307,22 @@
         "runtimeContract": "system_only_no_auto_npc"
       }
     ],
+    "playerTranscript": [
+      {
+        "speaker": "system",
+        "channel": "evidence_discovery",
+        "text": "상환 흔적이 약한 상태에서 B가 A에게 말하지 못한 이유를 물어볼 근거가 생긴다."
+      }
+    ],
+    "qaAnnotations": [],
     "stateAfter": {
       "turn": 3,
       "lieStates": {
         "a": {
           "d-1": "S0",
           "d-2": "S0",
+          "d-3": "S0",
+          "d-4": "S0",
           "d-5": "S0"
         },
         "b": {
@@ -11874,19 +12417,14 @@
         },
         "d-4": {
           "visibility": "visible",
-          "emergedVia": "combine-7"
+          "emergedVia": null
         },
         "d-5": {
           "visibility": "hidden",
           "emergedVia": null
         }
       },
-      "dossier": {
-        "dc-4": {
-          "unlocked": true,
-          "via": "combine-7"
-        }
-      },
+      "dossier": {},
       "witnesses": {},
       "lastFocusedDisputeId": "d-4"
     },
@@ -11914,7 +12452,7 @@
       "witnesses": []
     },
     "findingIds": [
-      "QARS-0005"
+      "QARS-0021"
     ]
   },
   {
@@ -11937,6 +12475,8 @@
         "a": {
           "d-1": "S0",
           "d-2": "S0",
+          "d-3": "S0",
+          "d-4": "S0",
           "d-5": "S0"
         },
         "b": {
@@ -12031,19 +12571,14 @@
         },
         "d-4": {
           "visibility": "visible",
-          "emergedVia": "combine-7"
+          "emergedVia": null
         },
         "d-5": {
           "visibility": "hidden",
           "emergedVia": null
         }
       },
-      "dossier": {
-        "dc-4": {
-          "unlocked": true,
-          "via": "combine-7"
-        }
-      },
+      "dossier": {},
       "witnesses": {},
       "lastFocusedDisputeId": "d-4"
     },
@@ -12054,7 +12589,9 @@
         "channel": "discovery_event",
         "resolverPath": "route_simulator_facsimile",
         "sourcePath": "tmp/qa-route-simulator-manifests/friend-01.json:discovery_event.friend-d4-reviewed",
-        "actionType": "discovery_event"
+        "actionType": "discovery_event",
+        "qaOnly": true,
+        "visibility": "qa_annotation"
       },
       {
         "speaker": "witness",
@@ -12062,7 +12599,26 @@
         "channel": "discovery_event",
         "resolverPath": "route_simulator_facsimile",
         "sourcePath": "tmp/qa-route-simulator-manifests/friend-01.json:discovery_event.friend-d4-reviewed.followup",
-        "actionType": "discovery_event"
+        "actionType": "discovery_event",
+        "qaOnly": true,
+        "visibility": "qa_annotation"
+      }
+    ],
+    "playerTranscript": [],
+    "qaAnnotations": [
+      {
+        "speaker": "system",
+        "channel": "discovery_event",
+        "resolverPath": "route_simulator_facsimile",
+        "sourcePath": "tmp/qa-route-simulator-manifests/friend-01.json:discovery_event.friend-d4-reviewed",
+        "text": "Discovery event applied: friend-d4-reviewed"
+      },
+      {
+        "speaker": "witness",
+        "channel": "discovery_event",
+        "resolverPath": "route_simulator_facsimile",
+        "sourcePath": "tmp/qa-route-simulator-manifests/friend-01.json:discovery_event.friend-d4-reviewed.followup",
+        "text": "The d-4 late branch remains available for judgment."
       }
     ],
     "stateAfter": {
@@ -12071,6 +12627,8 @@
         "a": {
           "d-1": "S0",
           "d-2": "S0",
+          "d-3": "S0",
+          "d-4": "S0",
           "d-5": "S0"
         },
         "b": {
@@ -12165,7 +12723,7 @@
         },
         "d-4": {
           "visibility": "visible",
-          "emergedVia": "combine-7"
+          "emergedVia": null
         },
         "d-5": {
           "visibility": "hidden",
@@ -12185,10 +12743,17 @@
       "lieStates": [],
       "evidence": [],
       "disputes": [],
-      "dossier": [],
+      "dossier": [
+        {
+          "dossierId": "dc-4",
+          "to": true
+        }
+      ],
       "witnesses": []
     },
-    "findingIds": []
+    "findingIds": [
+      "QARS-0022"
+    ]
   },
   {
     "schemaVersion": 1,
@@ -12323,6 +12888,7 @@
         "entryKey": "d-1|fact_pursuit|1",
         "entryDisputeId": "d-1",
         "entryQuestionType": "fact_pursuit",
+        "targetPartyTag": "b",
         "tags": [
           "channel:judge_question",
           "speaker:judge",
@@ -12349,12 +12915,14 @@
           "continuity:question",
           "reveal:none",
           "revealGuard:open",
-          "disclosure:open",
+          "disclosure:guarded",
           "responseMode:judge_formal_prompt",
           "questionType:fact_pursuit",
+          "answerAngle:visit_route",
           "depth:1",
           "disputeId:d-1"
-        ]
+        ],
+        "visibility": "player"
       },
       {
         "speaker": "b",
@@ -12399,10 +12967,25 @@
           "reveal:none",
           "revealGuard:strict",
           "disclosure:sealed",
-          "responseMode:judge_formal_answer"
-        ]
+          "responseMode:judge_formal_answer",
+          "answerAngle:general"
+        ],
+        "visibility": "player"
       }
     ],
+    "playerTranscript": [
+      {
+        "speaker": "judge",
+        "channel": "judge_question",
+        "text": "이준호 씨, 매장 마감 뒤 차가 오피스텔로 향한 날들을 먼저 시간순으로 들려주시겠습니까."
+      },
+      {
+        "speaker": "b",
+        "channel": "interrogation",
+        "text": "… 아닙니다. 그건… 아닙니다."
+      }
+    ],
+    "qaAnnotations": [],
     "stateAfter": {
       "turn": 0,
       "lieStates": {
@@ -12648,6 +13231,7 @@
         "entryKey": "d-1|fact_pursuit|2",
         "entryDisputeId": "d-1",
         "entryQuestionType": "fact_pursuit",
+        "targetPartyTag": "b",
         "tags": [
           "channel:judge_question",
           "speaker:judge",
@@ -12674,12 +13258,14 @@
           "continuity:question",
           "reveal:none",
           "revealGuard:open",
-          "disclosure:open",
+          "disclosure:guarded",
           "responseMode:judge_formal_prompt",
           "questionType:fact_pursuit",
+          "answerAngle:call_record",
           "depth:2",
           "disputeId:d-1"
-        ]
+        ],
+        "visibility": "player"
       },
       {
         "speaker": "b",
@@ -12724,10 +13310,25 @@
           "reveal:none",
           "revealGuard:strict",
           "disclosure:sealed",
-          "responseMode:judge_formal_answer"
-        ]
+          "responseMode:judge_formal_answer",
+          "answerAngle:general"
+        ],
+        "visibility": "player"
       }
     ],
+    "playerTranscript": [
+      {
+        "speaker": "judge",
+        "channel": "judge_question",
+        "text": "이준호 씨, 새벽마다 같은 번호와 짧게 이어진 통화가 누구의 사정과 연결돼 있었는지 말씀해 주시겠습니까."
+      },
+      {
+        "speaker": "b",
+        "channel": "interrogation",
+        "text": "… 아닙니다. 그건… 아닙니다."
+      }
+    ],
+    "qaAnnotations": [],
     "stateAfter": {
       "turn": 1,
       "lieStates": {
@@ -13039,10 +13640,25 @@
           "responseMode:judge_formal_evidence_answer",
           "trust:mid",
           "legality:ok",
-          "source:org"
-        ]
+          "source:org",
+          "emotion:guarded"
+        ],
+        "visibility": "player"
       }
     ],
+    "playerTranscript": [
+      {
+        "speaker": "system",
+        "channel": "system_message",
+        "text": "증거 제시: 영수증 묶음 5장 [Hard]"
+      },
+      {
+        "speaker": "b",
+        "channel": "evidence_present",
+        "text": "그건... 제가 산 겁니다."
+      }
+    ],
+    "qaAnnotations": [],
     "stateAfter": {
       "turn": 2,
       "lieStates": {
@@ -13307,6 +13923,14 @@
         "runtimeContract": "system_only_no_auto_npc"
       }
     ],
+    "playerTranscript": [
+      {
+        "speaker": "system",
+        "channel": "evidence_discovery",
+        "text": "틴트, 헤어롤 등 여성용 물건들이 눈에 띈다."
+      }
+    ],
+    "qaAnnotations": [],
     "stateAfter": {
       "turn": 3,
       "lieStates": {
@@ -13438,7 +14062,7 @@
       "witnesses": []
     },
     "findingIds": [
-      "QARS-0006"
+      "QARS-0023"
     ]
   },
   {
@@ -13566,7 +14190,7 @@
     "outputs": [
       {
         "speaker": "judge",
-        "text": "이준호 씨, 그 가족 이야기를 집에서 자연스럽게 꺼내지 못하게 만든 첫 부담이 무엇이었습니까.",
+        "text": "이준호 씨, 다른 관련자 이야기를 집에서 자연스럽게 꺼내지 못하게 만든 첫 부담이 무엇이었습니까.",
         "behaviorHint": "사실 자체보다 왜 말을 못 했는지의 입구를 연다. 처음의 주저함을 자극하는 질문이다.",
         "channel": "judge_question",
         "resolverPath": "scripted",
@@ -13578,6 +14202,7 @@
         "entryKey": "d-1|motive_search|1",
         "entryDisputeId": "d-1",
         "entryQuestionType": "motive_search",
+        "targetPartyTag": "b",
         "tags": [
           "channel:judge_question",
           "speaker:judge",
@@ -13604,12 +14229,13 @@
           "continuity:question",
           "reveal:none",
           "revealGuard:open",
-          "disclosure:open",
+          "disclosure:guarded",
           "responseMode:judge_formal_prompt",
           "questionType:motive_search",
           "depth:1",
           "disputeId:d-1"
-        ]
+        ],
+        "visibility": "player"
       },
       {
         "speaker": "b",
@@ -13654,10 +14280,25 @@
           "reveal:hint",
           "revealGuard:strict",
           "disclosure:guarded",
-          "responseMode:judge_formal_answer"
-        ]
+          "responseMode:judge_formal_answer",
+          "emotion:guarded"
+        ],
+        "visibility": "player"
       }
     ],
+    "playerTranscript": [
+      {
+        "speaker": "judge",
+        "channel": "judge_question",
+        "text": "이준호 씨, 다른 관련자 이야기를 집에서 자연스럽게 꺼내지 못하게 만든 첫 부담이 무엇이었습니까."
+      },
+      {
+        "speaker": "b",
+        "channel": "interrogation",
+        "text": "말하면 더 복잡해질 것 같아서… 안 했습니다. 제가 처리하면 되는 일이었습니다."
+      }
+    ],
+    "qaAnnotations": [],
     "stateAfter": {
       "turn": 3,
       "lieStates": {
@@ -13906,7 +14547,7 @@
     "outputs": [
       {
         "speaker": "judge",
-        "text": "이준호 씨, 오피스텔 일을 떠올릴 때 가장 먼저 마음에 걸리는 사람이 형인지 그 가족인지 박지연 씨인지 말씀해 주시겠습니까.",
+        "text": "이준호 씨, 오피스텔 일을 떠올릴 때 가장 먼저 마음에 걸리는 사람이 형인지 다른 관련자인지 박지연 씨인지 말씀해 주시겠습니까.",
         "behaviorHint": "판단보다 감정의 첫 반응을 묻는다. 방어를 조금 낮추고 안쪽 정서를 끌어내는 질문이다.",
         "channel": "judge_question",
         "resolverPath": "scripted",
@@ -13918,6 +14559,7 @@
         "entryKey": "d-1|empathy_approach|1",
         "entryDisputeId": "d-1",
         "entryQuestionType": "empathy_approach",
+        "targetPartyTag": "b",
         "tags": [
           "channel:judge_question",
           "speaker:judge",
@@ -13944,12 +14586,13 @@
           "continuity:question",
           "reveal:none",
           "revealGuard:open",
-          "disclosure:open",
+          "disclosure:guarded",
           "responseMode:judge_formal_prompt",
           "questionType:empathy_approach",
           "depth:1",
           "disputeId:d-1"
-        ]
+        ],
+        "visibility": "player"
       },
       {
         "speaker": "b",
@@ -13994,10 +14637,27 @@
           "reveal:hint",
           "revealGuard:strict",
           "disclosure:guarded",
-          "responseMode:judge_formal_answer"
-        ]
+          "responseMode:judge_formal_answer",
+          "emotion:defensive",
+          "continuity:partial_slip",
+          "revealGuard:buffered"
+        ],
+        "visibility": "player"
       }
     ],
+    "playerTranscript": [
+      {
+        "speaker": "judge",
+        "channel": "judge_question",
+        "text": "이준호 씨, 오피스텔 일을 떠올릴 때 가장 먼저 마음에 걸리는 사람이 형인지 다른 관련자인지 박지연 씨인지 말씀해 주시겠습니까."
+      },
+      {
+        "speaker": "b",
+        "channel": "interrogation",
+        "text": "말하면 더 크게 터질 것 같았습니다. 이미 8개월째 남남처럼 사는데… 더 망치고 싶지 않았습니다."
+      }
+    ],
+    "qaAnnotations": [],
     "stateAfter": {
       "turn": 4,
       "lieStates": {
@@ -14237,26 +14897,44 @@
     "outputs": [
       {
         "speaker": "system",
-        "text": "영수증의 중학교 참고서 + 형 문자의 '가은이 학교 알림'... 중학생 조카가 있다?!",
+        "text": "Evidence combination skipped by runtime parity gate: combine-2; not fully investigated=e-1, e-4",
         "channel": "evidence_combine",
-        "resolverPath": "runtime_system",
-        "sourcePath": "src/data/cases/generated/spouse-01.json:combinationLab.recipes[id=combine-2].discoveryText",
+        "resolverPath": "route_simulator_runtime_gate",
+        "sourcePath": "src/data/cases/generated/spouse-01.json:combinationLab.recipes[id=combine-2]",
         "actionType": "evidence_combine",
         "target": "b",
-        "evidenceId": "e-1",
+        "qaOnly": true,
+        "visibility": "qa_annotation",
+        "safeFallback": true,
         "combinationId": "combine-2",
-        "dossierCardId": "dc-1"
-      },
+        "dossierCardId": "dc-6",
+        "runtimeReachable": false,
+        "gate": {
+          "ok": false,
+          "evidenceIds": [
+            "e-1",
+            "e-4"
+          ],
+          "locked": [],
+          "uninvestigated": [
+            "e-1",
+            "e-4"
+          ],
+          "allowImpossibleStates": false
+        }
+      }
+    ],
+    "playerTranscript": [],
+    "qaAnnotations": [
       {
-        "speaker": "witness",
-        "text": "Analysis note dc-1 is ready for follow-up.",
+        "speaker": "system",
         "channel": "evidence_combine",
-        "resolverPath": "route_simulator_facsimile",
-        "sourcePath": "src/data/cases/generated/spouse-01.json:combinationLab.outputs[id=dc-1]",
-        "actionType": "evidence_combine",
+        "resolverPath": "route_simulator_runtime_gate",
+        "sourcePath": "src/data/cases/generated/spouse-01.json:combinationLab.recipes[id=combine-2]",
+        "text": "Evidence combination skipped by runtime parity gate: combine-2; not fully investigated=e-1, e-4",
         "target": "b",
         "combinationId": "combine-2",
-        "dossierCardId": "dc-1"
+        "dossierCardId": "dc-6"
       }
     ],
     "stateAfter": {
@@ -14358,12 +15036,7 @@
           "emergedVia": null
         }
       },
-      "dossier": {
-        "dc-1": {
-          "unlocked": true,
-          "via": "combine-2"
-        }
-      },
+      "dossier": {},
       "witnesses": {},
       "lastFocusedDisputeId": "d-1"
     },
@@ -14371,15 +15044,12 @@
       "lieStates": [],
       "evidence": [],
       "disputes": [],
-      "dossier": [
-        {
-          "dossierId": "dc-1",
-          "to": true
-        }
-      ],
+      "dossier": [],
       "witnesses": []
     },
-    "findingIds": []
+    "findingIds": [
+      "QARS-0024"
+    ]
   },
   {
     "schemaVersion": 1,
@@ -14494,19 +15164,14 @@
           "emergedVia": null
         }
       },
-      "dossier": {
-        "dc-1": {
-          "unlocked": true,
-          "via": "combine-2"
-        }
-      },
+      "dossier": {},
       "witnesses": {},
       "lastFocusedDisputeId": "d-1"
     },
     "outputs": [
       {
         "speaker": "b",
-        "text": "그 댁 사정이 걸려 있었습니다. 친척 아이가 혼자 있는 날이 많았고, 제가 그걸 외면하지 못했습니다.",
+        "text": "그 댁 사정이 걸려 있었습니다. 제가 외면하기 어려운 일이 반복됐고, 그걸 말하지 못했습니다.",
         "behaviorHint": "큰 사실은 인정하되 책임의 무게를 조심스럽게 좁혀 말한다.",
         "channel": "dossier",
         "resolverPath": "scripted",
@@ -14517,6 +15182,7 @@
         "lieState": "S2",
         "variantId": "dc-1-b-q1-mid-v1",
         "entryKey": "dc-1.b.q1|mid",
+        "targetPartyTag": "b",
         "tags": [
           "channel:dossier",
           "speaker:b",
@@ -14551,10 +15217,24 @@
           "revealGuard:moderate",
           "disclosure:guarded",
           "rapport:high",
-          "contradict_token:0"
-        ]
+          "contradict_token:0",
+          "speaker:undefined",
+          "emotion:defensive",
+          "continuity:pressure",
+          "revealGuard:buffered",
+          "disclosure:limited"
+        ],
+        "visibility": "player"
       }
     ],
+    "playerTranscript": [
+      {
+        "speaker": "b",
+        "channel": "dossier",
+        "text": "그 댁 사정이 걸려 있었습니다. 제가 외면하기 어려운 일이 반복됐고, 그걸 말하지 못했습니다."
+      }
+    ],
+    "qaAnnotations": [],
     "stateAfter": {
       "turn": 1,
       "lieStates": {
@@ -14654,12 +15334,7 @@
           "emergedVia": null
         }
       },
-      "dossier": {
-        "dc-1": {
-          "unlocked": true,
-          "via": "combine-2"
-        }
-      },
+      "dossier": {},
       "witnesses": {},
       "lastFocusedDisputeId": "d-1"
     },
@@ -14785,33 +15460,72 @@
           "emergedVia": null
         }
       },
-      "dossier": {
-        "dc-1": {
-          "unlocked": true,
-          "via": "combine-2"
-        }
-      },
+      "dossier": {},
       "witnesses": {},
       "lastFocusedDisputeId": "d-1"
     },
     "outputs": [
       {
         "speaker": "system",
-        "text": "Witness summoned: w-1",
+        "text": "증인 오피스텔 경비 소환 - 증언이 시작됩니다.",
         "channel": "witness_summon",
         "resolverPath": "runtime_system",
         "sourcePath": "src/data/cases/generated/spouse-01.json:activeThirdParties[id=w-1]",
         "actionType": "witness_summon",
         "disputeId": "d-1",
-        "witnessId": "w-1"
+        "witnessId": "w-1",
+        "witnessName": "오피스텔 경비"
       },
       {
-        "speaker": "witness",
-        "text": "w-1 is ready to confirm the office-tel route.",
+        "speaker": "system",
+        "text": "Witness summoned: w-1",
         "channel": "witness_summon",
         "resolverPath": "route_simulator_facsimile",
         "sourcePath": "tmp/qa-route-simulator-manifests/spouse-01.json:witness_summon.w-1",
         "actionType": "witness_summon",
+        "disputeId": "d-1",
+        "qaOnly": true,
+        "visibility": "qa_annotation",
+        "witnessId": "w-1",
+        "witnessName": "오피스텔 경비"
+      },
+      {
+        "speaker": "system",
+        "text": "Manifest witness prompt: w-1 is ready to confirm the office-tel route.",
+        "channel": "witness_summon",
+        "resolverPath": "route_simulator_facsimile",
+        "sourcePath": "tmp/qa-route-simulator-manifests/spouse-01.json:witness_summon.w-1.prompt",
+        "actionType": "witness_summon",
+        "disputeId": "d-1",
+        "qaOnly": true,
+        "visibility": "qa_annotation",
+        "witnessId": "w-1",
+        "witnessName": "오피스텔 경비"
+      }
+    ],
+    "playerTranscript": [
+      {
+        "speaker": "system",
+        "channel": "witness_summon",
+        "text": "증인 오피스텔 경비 소환 - 증언이 시작됩니다."
+      }
+    ],
+    "qaAnnotations": [
+      {
+        "speaker": "system",
+        "channel": "witness_summon",
+        "resolverPath": "route_simulator_facsimile",
+        "sourcePath": "tmp/qa-route-simulator-manifests/spouse-01.json:witness_summon.w-1",
+        "text": "Witness summoned: w-1",
+        "disputeId": "d-1",
+        "witnessId": "w-1"
+      },
+      {
+        "speaker": "system",
+        "channel": "witness_summon",
+        "resolverPath": "route_simulator_facsimile",
+        "sourcePath": "tmp/qa-route-simulator-manifests/spouse-01.json:witness_summon.w-1.prompt",
+        "text": "Manifest witness prompt: w-1 is ready to confirm the office-tel route.",
         "disputeId": "d-1",
         "witnessId": "w-1"
       }
@@ -14915,12 +15629,7 @@
           "emergedVia": null
         }
       },
-      "dossier": {
-        "dc-1": {
-          "unlocked": true,
-          "via": "combine-2"
-        }
-      },
+      "dossier": {},
       "witnesses": {
         "w-1": {
           "summoned": true,
@@ -14944,7 +15653,9 @@
         }
       ]
     },
-    "findingIds": []
+    "findingIds": [
+      "QARS-0025"
+    ]
   },
   {
     "schemaVersion": 1,
@@ -15059,12 +15770,7 @@
           "emergedVia": null
         }
       },
-      "dossier": {
-        "dc-1": {
-          "unlocked": true,
-          "via": "combine-2"
-        }
-      },
+      "dossier": {},
       "witnesses": {
         "w-1": {
           "summoned": true,
@@ -15076,11 +15782,43 @@
     "outputs": [
       {
         "speaker": "witness",
-        "text": "w-1 confirms the route timing can be compared with the receipt and GPS records.",
+        "text": "재판관님, 제가 아는 범위에서는 1주일에 2~3번 방문하는 차량을 기억한다. 정확한 호수는 모르지만 그 층에 여자 혼자 사는 집은 없는 것으로 안다.",
+        "channel": "witness_question",
+        "resolverPath": "runtime_witness_facsimile",
+        "sourcePath": "src/data/cases/generated/spouse-01.json:duo.socialGraph[id=w-1]",
+        "actionType": "witness_question",
+        "disputeId": "d-1",
+        "witnessId": "w-1",
+        "witnessName": "오피스텔 경비"
+      },
+      {
+        "speaker": "system",
+        "text": "Manifest witness answer: w-1 confirms the route timing can be compared with the receipt and GPS records.",
         "channel": "witness_question",
         "resolverPath": "route_simulator_facsimile",
-        "sourcePath": "tmp/qa-route-simulator-manifests/spouse-01.json:witness_question.w-1",
+        "sourcePath": "tmp/qa-route-simulator-manifests/spouse-01.json:witness_question.w-1.answer",
         "actionType": "witness_question",
+        "disputeId": "d-1",
+        "qaOnly": true,
+        "visibility": "qa_annotation",
+        "witnessId": "w-1",
+        "witnessName": "오피스텔 경비"
+      }
+    ],
+    "playerTranscript": [
+      {
+        "speaker": "witness",
+        "channel": "witness_question",
+        "text": "재판관님, 제가 아는 범위에서는 1주일에 2~3번 방문하는 차량을 기억한다. 정확한 호수는 모르지만 그 층에 여자 혼자 사는 집은 없는 것으로 안다."
+      }
+    ],
+    "qaAnnotations": [
+      {
+        "speaker": "system",
+        "channel": "witness_question",
+        "resolverPath": "route_simulator_facsimile",
+        "sourcePath": "tmp/qa-route-simulator-manifests/spouse-01.json:witness_question.w-1.answer",
+        "text": "Manifest witness answer: w-1 confirms the route timing can be compared with the receipt and GPS records.",
         "disputeId": "d-1",
         "witnessId": "w-1"
       }
@@ -15184,12 +15922,7 @@
           "emergedVia": null
         }
       },
-      "dossier": {
-        "dc-1": {
-          "unlocked": true,
-          "via": "combine-2"
-        }
-      },
+      "dossier": {},
       "witnesses": {
         "w-1": {
           "summoned": true,
@@ -15329,12 +16062,7 @@
           "emergedVia": null
         }
       },
-      "dossier": {
-        "dc-1": {
-          "unlocked": true,
-          "via": "combine-2"
-        }
-      },
+      "dossier": {},
       "witnesses": {
         "w-1": {
           "summoned": true,
@@ -15391,9 +16119,18 @@
           "disputeId:d-1",
           "rapport:mid",
           "contradict_token:1"
-        ]
+        ],
+        "visibility": "player"
       }
     ],
+    "playerTranscript": [
+      {
+        "speaker": "b",
+        "channel": "contradiction_pursuit",
+        "text": "네, 처음보다 다르게 들릴 수 있습니다. 오피스텔에 간 건 맞습니다. 다만 이유는 그쪽에서 짐작한 것과 다릅니다."
+      }
+    ],
+    "qaAnnotations": [],
     "stateAfter": {
       "turn": 4,
       "lieStates": {
@@ -15493,12 +16230,7 @@
           "emergedVia": null
         }
       },
-      "dossier": {
-        "dc-1": {
-          "unlocked": true,
-          "via": "combine-2"
-        }
-      },
+      "dossier": {},
       "witnesses": {
         "w-1": {
           "summoned": true,
@@ -15638,12 +16370,7 @@
           "emergedVia": null
         }
       },
-      "dossier": {
-        "dc-1": {
-          "unlocked": true,
-          "via": "combine-2"
-        }
-      },
+      "dossier": {},
       "witnesses": {
         "w-1": {
           "summoned": true,
@@ -15656,7 +16383,7 @@
     "outputs": [
       {
         "speaker": "judge",
-        "text": "이준호 씨, 오피스텔 일을 떠올릴 때 가장 먼저 마음에 걸리는 사람이 형인지 그 가족인지 박지연 씨인지 말씀해 주시겠습니까.",
+        "text": "이준호 씨, 오피스텔 일을 떠올릴 때 가장 먼저 마음에 걸리는 사람이 형인지 다른 관련자인지 박지연 씨인지 말씀해 주시겠습니까.",
         "behaviorHint": "판단보다 감정의 첫 반응을 묻는다. 방어를 조금 낮추고 안쪽 정서를 끌어내는 질문이다.",
         "channel": "judge_question",
         "resolverPath": "scripted",
@@ -15668,6 +16395,7 @@
         "entryKey": "d-1|empathy_approach|1",
         "entryDisputeId": "d-1",
         "entryQuestionType": "empathy_approach",
+        "targetPartyTag": "b",
         "tags": [
           "channel:judge_question",
           "speaker:judge",
@@ -15694,16 +16422,17 @@
           "continuity:question",
           "reveal:none",
           "revealGuard:open",
-          "disclosure:open",
+          "disclosure:guarded",
           "responseMode:judge_formal_prompt",
           "questionType:empathy_approach",
           "depth:1",
           "disputeId:d-1"
-        ]
+        ],
+        "visibility": "player"
       },
       {
         "speaker": "b",
-        "text": "조카가 혼자 라면 끓이는 걸 보면… 그냥 올 수가 없었습니다. 그 일이 계속 생각납니다.",
+        "text": "그 집에서 제가 본 상황은… 그냥 지나치기 어려웠습니다. 그 일이 계속 생각납니다.",
         "behaviorHint": "처음으로 감정을 숨기지 못하고 목소리가 잠긴다. 눈이 어딘가를 보고 있다.",
         "channel": "interrogation",
         "resolverPath": "scripted",
@@ -15744,10 +16473,28 @@
           "reveal:partial",
           "revealGuard:moderate",
           "disclosure:guarded",
-          "responseMode:judge_formal_answer"
-        ]
+          "responseMode:judge_formal_answer",
+          "emotion:blaming",
+          "continuity:counter_blame",
+          "revealGuard:buffered",
+          "disclosure:limited"
+        ],
+        "visibility": "player"
       }
     ],
+    "playerTranscript": [
+      {
+        "speaker": "judge",
+        "channel": "judge_question",
+        "text": "이준호 씨, 오피스텔 일을 떠올릴 때 가장 먼저 마음에 걸리는 사람이 형인지 다른 관련자인지 박지연 씨인지 말씀해 주시겠습니까."
+      },
+      {
+        "speaker": "b",
+        "channel": "interrogation",
+        "text": "그 집에서 제가 본 상황은… 그냥 지나치기 어려웠습니다. 그 일이 계속 생각납니다."
+      }
+    ],
+    "qaAnnotations": [],
     "stateAfter": {
       "turn": 5,
       "lieStates": {
@@ -15847,12 +16594,7 @@
           "emergedVia": null
         }
       },
-      "dossier": {
-        "dc-1": {
-          "unlocked": true,
-          "via": "combine-2"
-        }
-      },
+      "dossier": {},
       "witnesses": {
         "w-1": {
           "summoned": true,
@@ -16010,6 +16752,14 @@
         "runtimeContract": "system_only_no_auto_npc"
       }
     ],
+    "playerTranscript": [
+      {
+        "speaker": "system",
+        "channel": "evidence_discovery",
+        "text": "스레드에 반복되는 문구: '나야. 당분간 이 번호로 연락할께.', '내 이름으로 저장은 하지마. 나중에 문제가 될 수 있어.', '오늘도 부탁해.', '항상 고마워.' 수신 시각은 주로 저녁에서 밤 사이."
+      }
+    ],
+    "qaAnnotations": [],
     "stateAfter": {
       "turn": 0,
       "lieStates": {
@@ -16139,7 +16889,7 @@
       "witnesses": []
     },
     "findingIds": [
-      "QARS-0007"
+      "QARS-0026"
     ]
   },
   {
@@ -16276,6 +17026,14 @@
         "runtimeContract": "system_only_no_auto_npc"
       }
     ],
+    "playerTranscript": [
+      {
+        "speaker": "system",
+        "channel": "evidence_discovery",
+        "text": "발신 번호는 이준호 씨가 주로 쓰는 번호부에 저장되어 있지 않다. 지역번호와 앞자리가 어딘가 익숙하지만 누구 것인지 바로 떠오르지 않는다. 명의 조회는 미상."
+      }
+    ],
+    "qaAnnotations": [],
     "stateAfter": {
       "turn": 0,
       "lieStates": {
@@ -16406,7 +17164,7 @@
       "witnesses": []
     },
     "findingIds": [
-      "QARS-0008"
+      "QARS-0027"
     ]
   },
   {
@@ -16544,6 +17302,14 @@
         "runtimeContract": "system_only_no_auto_npc"
       }
     ],
+    "playerTranscript": [
+      {
+        "speaker": "system",
+        "channel": "evidence_discovery",
+        "text": "번호를 역추적하면 이준호 씨 형이 최근 개통한 선불폰 번호로 확인된다. 기존 형의 번호는 채권추심 문제로 정지 상태였다. 스레드 안에 '가은이 학교 알림' 관련 단체 문자가 섞여 있어 조카(중2) 돌봄 맥락이 드러난다."
+      }
+    ],
+    "qaAnnotations": [],
     "stateAfter": {
       "turn": 0,
       "lieStates": {
@@ -16675,7 +17441,7 @@
       "witnesses": []
     },
     "findingIds": [
-      "QARS-0009"
+      "QARS-0028"
     ]
   },
   {
@@ -16858,10 +17624,27 @@
           "responseMode:judge_formal_evidence_answer",
           "trust:mid",
           "legality:ok",
-          "source:org"
-        ]
+          "source:org",
+          "emotion:defensive",
+          "revealGuard:buffered",
+          "disclosure:limited"
+        ],
+        "visibility": "player"
       }
     ],
+    "playerTranscript": [
+      {
+        "speaker": "system",
+        "channel": "system_message",
+        "text": "증거 제시: 개인 계좌 출금 내역 [Hard]"
+      },
+      {
+        "speaker": "b",
+        "channel": "evidence_present",
+        "text": "현금으로 뺐습니다. 계좌 이체가 안 되는 사정이 있었습니다."
+      }
+    ],
+    "qaAnnotations": [],
     "stateAfter": {
       "turn": 0,
       "lieStates": {
@@ -17122,7 +17905,7 @@
     "outputs": [
       {
         "speaker": "b",
-        "text": "…맞습니다. 형한테 갔습니다. 개인회생 중이라 계좌로는 못 보냈습니다. 다만 상대가 먼저 오해한 부분도 있다고 생각했습니다.",
+        "text": "…맞습니다. 형한테 갔습니다. 개인회생 중이라 계좌로는 못 보냈습니다. 외도로 단정된 점은 억울합니다.",
         "behaviorHint": "버티던 말이 무너지고 구체적 실체가 나온다. 선의와 죄책감이 동시에 묻어난다.",
         "channel": "contradiction_pursuit",
         "resolverPath": "scripted",
@@ -17166,9 +17949,18 @@
           "disputeId:d-2",
           "rapport:high",
           "contradict_token:2"
-        ]
+        ],
+        "visibility": "player"
       }
     ],
+    "playerTranscript": [
+      {
+        "speaker": "b",
+        "channel": "contradiction_pursuit",
+        "text": "…맞습니다. 형한테 갔습니다. 개인회생 중이라 계좌로는 못 보냈습니다. 외도로 단정된 점은 억울합니다."
+      }
+    ],
+    "qaAnnotations": [],
     "stateAfter": {
       "turn": 1,
       "lieStates": {
@@ -17423,6 +18215,20 @@
         "sourcePath": "tmp/qa-route-simulator-manifests/spouse-01.json:emergence_event.spouse-hd3-open",
         "actionType": "emergence_event",
         "target": "b",
+        "disputeId": "h-d3",
+        "qaOnly": true,
+        "visibility": "qa_annotation"
+      }
+    ],
+    "playerTranscript": [],
+    "qaAnnotations": [
+      {
+        "speaker": "witness",
+        "channel": "emergence_event",
+        "resolverPath": "route_simulator_facsimile",
+        "sourcePath": "tmp/qa-route-simulator-manifests/spouse-01.json:emergence_event.spouse-hd3-open",
+        "text": "Emergence event opened h-d3 after d-2 pressure.",
+        "target": "b",
         "disputeId": "h-d3"
       }
     ],
@@ -17549,7 +18355,9 @@
       "dossier": [],
       "witnesses": []
     },
-    "findingIds": []
+    "findingIds": [
+      "QARS-0029"
+    ]
   },
   {
     "schemaVersion": 1,
@@ -17676,12 +18484,28 @@
     },
     "outputs": [
       {
-        "speaker": "witness",
-        "text": "w-2 confirms the account path should be tested against the savings paperwork.",
+        "speaker": "system",
+        "text": "Witness action skipped by manifest validation: witness_question_before_summon; Witness question occurs before witness summon: w-2.",
         "channel": "witness_question",
-        "resolverPath": "route_simulator_facsimile",
+        "resolverPath": "route_simulator_manifest_validation",
         "sourcePath": "tmp/qa-route-simulator-manifests/spouse-01.json:witness_question.w-2",
         "actionType": "witness_question",
+        "disputeId": "h-d3",
+        "qaOnly": true,
+        "visibility": "qa_annotation",
+        "safeFallback": true,
+        "witnessId": "w-2",
+        "manifestValidationCategory": "witness_question_before_summon"
+      }
+    ],
+    "playerTranscript": [],
+    "qaAnnotations": [
+      {
+        "speaker": "system",
+        "channel": "witness_question",
+        "resolverPath": "route_simulator_manifest_validation",
+        "sourcePath": "tmp/qa-route-simulator-manifests/spouse-01.json:witness_question.w-2",
+        "text": "Witness action skipped by manifest validation: witness_question_before_summon; Witness question occurs before witness summon: w-2.",
         "disputeId": "h-d3",
         "witnessId": "w-2"
       }
@@ -17792,13 +18616,7 @@
         }
       },
       "dossier": {},
-      "witnesses": {
-        "w-2": {
-          "summoned": true,
-          "lastDisputeId": "h-d3",
-          "questions": 1
-        }
-      },
+      "witnesses": {},
       "lastFocusedDisputeId": null
     },
     "stateDelta": {
@@ -17806,17 +18624,11 @@
       "evidence": [],
       "disputes": [],
       "dossier": [],
-      "witnesses": [
-        {
-          "witnessId": "w-2",
-          "summonedFrom": false,
-          "summonedTo": true,
-          "questionsFrom": 0,
-          "questionsTo": 1
-        }
-      ]
+      "witnesses": []
     },
-    "findingIds": []
+    "findingIds": [
+      "QARS-0030"
+    ]
   },
   {
     "schemaVersion": 1,
@@ -17941,23 +18753,41 @@
     "outputs": [
       {
         "speaker": "system",
-        "text": "공동 적금 해지 서류의 3,000만원과 투자방 송금 내역의 3,000만원이 정확히 일치한다. 위임장 조작으로 빠진 돈의 행선지가 확정된다.",
+        "text": "Evidence combination skipped by runtime parity gate: combine-4; not fully investigated=e-6, e-7",
         "channel": "evidence_combine",
-        "resolverPath": "runtime_system",
-        "sourcePath": "src/data/cases/generated/spouse-01.json:combinationLab.recipes[id=combine-4].discoveryText",
+        "resolverPath": "route_simulator_runtime_gate",
+        "sourcePath": "src/data/cases/generated/spouse-01.json:combinationLab.recipes[id=combine-4]",
         "actionType": "evidence_combine",
         "target": "b",
-        "evidenceId": "e-6",
+        "qaOnly": true,
+        "visibility": "qa_annotation",
+        "safeFallback": true,
         "combinationId": "combine-4",
-        "dossierCardId": "dc-3"
-      },
+        "dossierCardId": "dc-3",
+        "runtimeReachable": false,
+        "gate": {
+          "ok": false,
+          "evidenceIds": [
+            "e-6",
+            "e-7"
+          ],
+          "locked": [],
+          "uninvestigated": [
+            "e-6",
+            "e-7"
+          ],
+          "allowImpossibleStates": false
+        }
+      }
+    ],
+    "playerTranscript": [],
+    "qaAnnotations": [
       {
-        "speaker": "witness",
-        "text": "Analysis note dc-3 is ready for follow-up.",
+        "speaker": "system",
         "channel": "evidence_combine",
-        "resolverPath": "route_simulator_facsimile",
-        "sourcePath": "src/data/cases/generated/spouse-01.json:combinationLab.outputs[id=dc-3]",
-        "actionType": "evidence_combine",
+        "resolverPath": "route_simulator_runtime_gate",
+        "sourcePath": "src/data/cases/generated/spouse-01.json:combinationLab.recipes[id=combine-4]",
+        "text": "Evidence combination skipped by runtime parity gate: combine-4; not fully investigated=e-6, e-7",
         "target": "b",
         "combinationId": "combine-4",
         "dossierCardId": "dc-3"
@@ -17965,6 +18795,304 @@
     ],
     "stateAfter": {
       "turn": 0,
+      "lieStates": {
+        "a": {
+          "d-1": "S0",
+          "d-2": "S0",
+          "h-d3": "S0",
+          "h-d4": "S0"
+        },
+        "b": {
+          "d-1": "S0",
+          "d-2": "S0",
+          "h-d3": "S3",
+          "h-d4": "S0"
+        }
+      },
+      "evidence": {
+        "e-1": {
+          "id": "e-1",
+          "unlocked": false,
+          "presented": false,
+          "presentedTo": [],
+          "stage": 0,
+          "deepInvestigated": false,
+          "investigatedActions": []
+        },
+        "e-2": {
+          "id": "e-2",
+          "unlocked": false,
+          "presented": false,
+          "presentedTo": [],
+          "stage": 0,
+          "deepInvestigated": false,
+          "investigatedActions": []
+        },
+        "e-3": {
+          "id": "e-3",
+          "unlocked": false,
+          "presented": false,
+          "presentedTo": [],
+          "stage": 0,
+          "deepInvestigated": false,
+          "investigatedActions": []
+        },
+        "e-4": {
+          "id": "e-4",
+          "unlocked": false,
+          "presented": false,
+          "presentedTo": [],
+          "stage": 0,
+          "deepInvestigated": false,
+          "investigatedActions": []
+        },
+        "e-5": {
+          "id": "e-5",
+          "unlocked": true,
+          "presented": false,
+          "presentedTo": [],
+          "stage": 0,
+          "deepInvestigated": false,
+          "investigatedActions": []
+        },
+        "e-6": {
+          "id": "e-6",
+          "unlocked": true,
+          "presented": false,
+          "presentedTo": [],
+          "stage": 0,
+          "deepInvestigated": false,
+          "investigatedActions": []
+        },
+        "e-7": {
+          "id": "e-7",
+          "unlocked": true,
+          "presented": false,
+          "presentedTo": [],
+          "stage": 0,
+          "deepInvestigated": false,
+          "investigatedActions": []
+        }
+      },
+      "disputes": {
+        "d-1": {
+          "visibility": "visible",
+          "emergedVia": null
+        },
+        "d-2": {
+          "visibility": "hidden",
+          "emergedVia": null
+        },
+        "h-d3": {
+          "visibility": "visible",
+          "emergedVia": null
+        },
+        "h-d4": {
+          "visibility": "hidden",
+          "emergedVia": null
+        }
+      },
+      "dossier": {},
+      "witnesses": {},
+      "lastFocusedDisputeId": "h-d3"
+    },
+    "stateDelta": {
+      "lieStates": [],
+      "evidence": [],
+      "disputes": [],
+      "dossier": [],
+      "witnesses": []
+    },
+    "findingIds": [
+      "QARS-0031"
+    ]
+  },
+  {
+    "schemaVersion": 1,
+    "caseId": "spouse-01",
+    "routeId": "phase5-evidence-heavy-hidden-dossier",
+    "routeSummary": "Evidence-heavy hidden-dispute route that resolves a dossier card and drives late lieState pressure.",
+    "routePattern": "evidence-heavy",
+    "phase": "phase5",
+    "actionIndex": 2,
+    "action": {
+      "type": "dossier",
+      "target": "b",
+      "dossierId": "dc-3",
+      "questionId": "dc-3.b.q1"
+    },
+    "stateBefore": {
+      "turn": 1,
+      "lieStates": {
+        "a": {
+          "d-1": "S0",
+          "d-2": "S0",
+          "h-d3": "S0",
+          "h-d4": "S0"
+        },
+        "b": {
+          "d-1": "S0",
+          "d-2": "S0",
+          "h-d3": "S3",
+          "h-d4": "S0"
+        }
+      },
+      "evidence": {
+        "e-1": {
+          "id": "e-1",
+          "unlocked": false,
+          "presented": false,
+          "presentedTo": [],
+          "stage": 0,
+          "deepInvestigated": false,
+          "investigatedActions": []
+        },
+        "e-2": {
+          "id": "e-2",
+          "unlocked": false,
+          "presented": false,
+          "presentedTo": [],
+          "stage": 0,
+          "deepInvestigated": false,
+          "investigatedActions": []
+        },
+        "e-3": {
+          "id": "e-3",
+          "unlocked": false,
+          "presented": false,
+          "presentedTo": [],
+          "stage": 0,
+          "deepInvestigated": false,
+          "investigatedActions": []
+        },
+        "e-4": {
+          "id": "e-4",
+          "unlocked": false,
+          "presented": false,
+          "presentedTo": [],
+          "stage": 0,
+          "deepInvestigated": false,
+          "investigatedActions": []
+        },
+        "e-5": {
+          "id": "e-5",
+          "unlocked": true,
+          "presented": false,
+          "presentedTo": [],
+          "stage": 0,
+          "deepInvestigated": false,
+          "investigatedActions": []
+        },
+        "e-6": {
+          "id": "e-6",
+          "unlocked": true,
+          "presented": false,
+          "presentedTo": [],
+          "stage": 0,
+          "deepInvestigated": false,
+          "investigatedActions": []
+        },
+        "e-7": {
+          "id": "e-7",
+          "unlocked": true,
+          "presented": false,
+          "presentedTo": [],
+          "stage": 0,
+          "deepInvestigated": false,
+          "investigatedActions": []
+        }
+      },
+      "disputes": {
+        "d-1": {
+          "visibility": "visible",
+          "emergedVia": null
+        },
+        "d-2": {
+          "visibility": "hidden",
+          "emergedVia": null
+        },
+        "h-d3": {
+          "visibility": "visible",
+          "emergedVia": null
+        },
+        "h-d4": {
+          "visibility": "hidden",
+          "emergedVia": null
+        }
+      },
+      "dossier": {},
+      "witnesses": {},
+      "lastFocusedDisputeId": "h-d3"
+    },
+    "outputs": [
+      {
+        "speaker": "b",
+        "text": "그 댁이 당장 버티기 어려워 보여서 공동 적금을 먼저 깼습니다. 아내에게 말하지 않은 건 제 잘못입니다.",
+        "behaviorHint": "큰 사실은 인정하되 책임의 무게를 조심스럽게 좁혀 말한다.",
+        "channel": "dossier",
+        "resolverPath": "scripted",
+        "sourcePath": "src/data/scriptedText/spouse-01.json:channels.dossier.entries[key=dc-3.b.q1|mid].variants[id=dc-3-b-q1-mid-v1]",
+        "actionType": "dossier",
+        "target": "b",
+        "disputeId": "h-d3",
+        "lieState": "S3",
+        "variantId": "dc-3-b-q1-mid-v1",
+        "entryKey": "dc-3.b.q1|mid",
+        "targetPartyTag": "b",
+        "tags": [
+          "channel:dossier",
+          "speaker:b",
+          "speakerRole:party",
+          "listener:judge",
+          "listenerRole:judge",
+          "address:toJudge",
+          "scope:judge_only",
+          "revealScope:judge_only",
+          "register:formal",
+          "honorific:formal",
+          "audience:single",
+          "tense:present",
+          "relationship:spouse",
+          "judgeAddress:재판관님",
+          "judgeAddressState:defined",
+          "callTerm:제_아내",
+          "callTermState:defined",
+          "counterpartyRef:제_아내",
+          "counterpartyRefState:defined",
+          "mentionTarget:dossier",
+          "dossierCard:dc-3",
+          "questionId:dc-3.b.q1",
+          "targetParty:b",
+          "lieBand:mid",
+          "requiredLieState:S3",
+          "responseMode:judge_formal_card_answer",
+          "stance:partial",
+          "emotion:measured",
+          "continuity:dossier_partial_scope",
+          "reveal:partial",
+          "revealGuard:moderate",
+          "disclosure:guarded",
+          "rapport:high",
+          "contradict_token:0",
+          "speaker:undefined",
+          "emotion:defensive",
+          "continuity:pressure",
+          "revealGuard:buffered",
+          "disclosure:limited"
+        ],
+        "visibility": "player"
+      }
+    ],
+    "playerTranscript": [
+      {
+        "speaker": "b",
+        "channel": "dossier",
+        "text": "그 댁이 당장 버티기 어려워 보여서 공동 적금을 먼저 깼습니다. 아내에게 말하지 않은 건 제 잘못입니다."
+      }
+    ],
+    "qaAnnotations": [],
+    "stateAfter": {
+      "turn": 1,
       "lieStates": {
         "a": {
           "d-1": "S0",
@@ -18055,19 +19183,14 @@
         },
         "h-d3": {
           "visibility": "visible",
-          "emergedVia": "combine-4"
+          "emergedVia": null
         },
         "h-d4": {
           "visibility": "hidden",
           "emergedVia": null
         }
       },
-      "dossier": {
-        "dc-3": {
-          "unlocked": true,
-          "via": "combine-4"
-        }
-      },
+      "dossier": {},
       "witnesses": {},
       "lastFocusedDisputeId": "h-d3"
     },
@@ -18120,302 +19243,6 @@
           }
         }
       ],
-      "disputes": [],
-      "dossier": [
-        {
-          "dossierId": "dc-3",
-          "to": true
-        }
-      ],
-      "witnesses": []
-    },
-    "findingIds": []
-  },
-  {
-    "schemaVersion": 1,
-    "caseId": "spouse-01",
-    "routeId": "phase5-evidence-heavy-hidden-dossier",
-    "routeSummary": "Evidence-heavy hidden-dispute route that resolves a dossier card and drives late lieState pressure.",
-    "routePattern": "evidence-heavy",
-    "phase": "phase5",
-    "actionIndex": 2,
-    "action": {
-      "type": "dossier",
-      "target": "b",
-      "dossierId": "dc-3",
-      "questionId": "dc-3.b.q1"
-    },
-    "stateBefore": {
-      "turn": 1,
-      "lieStates": {
-        "a": {
-          "d-1": "S0",
-          "d-2": "S0",
-          "h-d3": "S0",
-          "h-d4": "S0"
-        },
-        "b": {
-          "d-1": "S0",
-          "d-2": "S0",
-          "h-d3": "S3",
-          "h-d4": "S0"
-        }
-      },
-      "evidence": {
-        "e-1": {
-          "id": "e-1",
-          "unlocked": true,
-          "presented": false,
-          "presentedTo": [],
-          "stage": 0,
-          "deepInvestigated": false,
-          "investigatedActions": []
-        },
-        "e-2": {
-          "id": "e-2",
-          "unlocked": true,
-          "presented": false,
-          "presentedTo": [],
-          "stage": 0,
-          "deepInvestigated": false,
-          "investigatedActions": []
-        },
-        "e-3": {
-          "id": "e-3",
-          "unlocked": true,
-          "presented": false,
-          "presentedTo": [],
-          "stage": 0,
-          "deepInvestigated": false,
-          "investigatedActions": []
-        },
-        "e-4": {
-          "id": "e-4",
-          "unlocked": false,
-          "presented": false,
-          "presentedTo": [],
-          "stage": 0,
-          "deepInvestigated": false,
-          "investigatedActions": []
-        },
-        "e-5": {
-          "id": "e-5",
-          "unlocked": true,
-          "presented": false,
-          "presentedTo": [],
-          "stage": 0,
-          "deepInvestigated": false,
-          "investigatedActions": []
-        },
-        "e-6": {
-          "id": "e-6",
-          "unlocked": true,
-          "presented": false,
-          "presentedTo": [],
-          "stage": 0,
-          "deepInvestigated": false,
-          "investigatedActions": []
-        },
-        "e-7": {
-          "id": "e-7",
-          "unlocked": true,
-          "presented": false,
-          "presentedTo": [],
-          "stage": 0,
-          "deepInvestigated": false,
-          "investigatedActions": []
-        }
-      },
-      "disputes": {
-        "d-1": {
-          "visibility": "visible",
-          "emergedVia": null
-        },
-        "d-2": {
-          "visibility": "hidden",
-          "emergedVia": null
-        },
-        "h-d3": {
-          "visibility": "visible",
-          "emergedVia": "combine-4"
-        },
-        "h-d4": {
-          "visibility": "hidden",
-          "emergedVia": null
-        }
-      },
-      "dossier": {
-        "dc-3": {
-          "unlocked": true,
-          "via": "combine-4"
-        }
-      },
-      "witnesses": {},
-      "lastFocusedDisputeId": "h-d3"
-    },
-    "outputs": [
-      {
-        "speaker": "b",
-        "text": "그 댁이 당장 버티기 어려워 보여서 공동 적금을 먼저 깼습니다. 아내에게 말하지 않은 건 제 잘못입니다.",
-        "behaviorHint": "큰 사실은 인정하되 책임의 무게를 조심스럽게 좁혀 말한다.",
-        "channel": "dossier",
-        "resolverPath": "scripted",
-        "sourcePath": "src/data/scriptedText/spouse-01.json:channels.dossier.entries[key=dc-3.b.q1|mid].variants[id=dc-3-b-q1-mid-v1]",
-        "actionType": "dossier",
-        "target": "b",
-        "disputeId": "h-d3",
-        "lieState": "S3",
-        "variantId": "dc-3-b-q1-mid-v1",
-        "entryKey": "dc-3.b.q1|mid",
-        "tags": [
-          "channel:dossier",
-          "speaker:b",
-          "speakerRole:party",
-          "listener:judge",
-          "listenerRole:judge",
-          "address:toJudge",
-          "scope:judge_only",
-          "revealScope:judge_only",
-          "register:formal",
-          "honorific:formal",
-          "audience:single",
-          "tense:present",
-          "relationship:spouse",
-          "judgeAddress:재판관님",
-          "judgeAddressState:defined",
-          "callTerm:제_아내",
-          "callTermState:defined",
-          "counterpartyRef:제_아내",
-          "counterpartyRefState:defined",
-          "mentionTarget:dossier",
-          "dossierCard:dc-3",
-          "questionId:dc-3.b.q1",
-          "targetParty:b",
-          "lieBand:mid",
-          "requiredLieState:S3",
-          "responseMode:judge_formal_card_answer",
-          "stance:partial",
-          "emotion:measured",
-          "continuity:dossier_partial_scope",
-          "reveal:partial",
-          "revealGuard:moderate",
-          "disclosure:guarded",
-          "rapport:high",
-          "contradict_token:0"
-        ]
-      }
-    ],
-    "stateAfter": {
-      "turn": 1,
-      "lieStates": {
-        "a": {
-          "d-1": "S0",
-          "d-2": "S0",
-          "h-d3": "S0",
-          "h-d4": "S0"
-        },
-        "b": {
-          "d-1": "S0",
-          "d-2": "S0",
-          "h-d3": "S3",
-          "h-d4": "S0"
-        }
-      },
-      "evidence": {
-        "e-1": {
-          "id": "e-1",
-          "unlocked": true,
-          "presented": false,
-          "presentedTo": [],
-          "stage": 0,
-          "deepInvestigated": false,
-          "investigatedActions": []
-        },
-        "e-2": {
-          "id": "e-2",
-          "unlocked": true,
-          "presented": false,
-          "presentedTo": [],
-          "stage": 0,
-          "deepInvestigated": false,
-          "investigatedActions": []
-        },
-        "e-3": {
-          "id": "e-3",
-          "unlocked": true,
-          "presented": false,
-          "presentedTo": [],
-          "stage": 0,
-          "deepInvestigated": false,
-          "investigatedActions": []
-        },
-        "e-4": {
-          "id": "e-4",
-          "unlocked": false,
-          "presented": false,
-          "presentedTo": [],
-          "stage": 0,
-          "deepInvestigated": false,
-          "investigatedActions": []
-        },
-        "e-5": {
-          "id": "e-5",
-          "unlocked": true,
-          "presented": false,
-          "presentedTo": [],
-          "stage": 0,
-          "deepInvestigated": false,
-          "investigatedActions": []
-        },
-        "e-6": {
-          "id": "e-6",
-          "unlocked": true,
-          "presented": false,
-          "presentedTo": [],
-          "stage": 0,
-          "deepInvestigated": false,
-          "investigatedActions": []
-        },
-        "e-7": {
-          "id": "e-7",
-          "unlocked": true,
-          "presented": false,
-          "presentedTo": [],
-          "stage": 0,
-          "deepInvestigated": false,
-          "investigatedActions": []
-        }
-      },
-      "disputes": {
-        "d-1": {
-          "visibility": "visible",
-          "emergedVia": null
-        },
-        "d-2": {
-          "visibility": "hidden",
-          "emergedVia": null
-        },
-        "h-d3": {
-          "visibility": "visible",
-          "emergedVia": "combine-4"
-        },
-        "h-d4": {
-          "visibility": "hidden",
-          "emergedVia": null
-        }
-      },
-      "dossier": {
-        "dc-3": {
-          "unlocked": true,
-          "via": "combine-4"
-        }
-      },
-      "witnesses": {},
-      "lastFocusedDisputeId": "h-d3"
-    },
-    "stateDelta": {
-      "lieStates": [],
-      "evidence": [],
       "disputes": [],
       "dossier": [],
       "witnesses": []
@@ -18528,19 +19355,14 @@
         },
         "h-d3": {
           "visibility": "visible",
-          "emergedVia": "combine-4"
+          "emergedVia": null
         },
         "h-d4": {
           "visibility": "hidden",
           "emergedVia": null
         }
       },
-      "dossier": {
-        "dc-3": {
-          "unlocked": true,
-          "via": "combine-4"
-        }
-      },
+      "dossier": {},
       "witnesses": {},
       "lastFocusedDisputeId": "h-d3"
     },
@@ -18591,9 +19413,18 @@
           "disputeId:h-d3",
           "rapport:high",
           "contradict_token:2"
-        ]
+        ],
+        "visibility": "player"
       }
     ],
+    "playerTranscript": [
+      {
+        "speaker": "b",
+        "channel": "contradiction_pursuit",
+        "text": "제가 침묵한 게 단초였습니다. 그래도 위임장에 손댄 책임까지 제게 돌릴 수는 없습니다."
+      }
+    ],
+    "qaAnnotations": [],
     "stateAfter": {
       "turn": 2,
       "lieStates": {
@@ -18686,19 +19517,14 @@
         },
         "h-d3": {
           "visibility": "visible",
-          "emergedVia": "combine-4"
+          "emergedVia": null
         },
         "h-d4": {
           "visibility": "hidden",
           "emergedVia": null
         }
       },
-      "dossier": {
-        "dc-3": {
-          "unlocked": true,
-          "via": "combine-4"
-        }
-      },
+      "dossier": {},
       "witnesses": {},
       "lastFocusedDisputeId": "h-d3"
     },
@@ -18716,7 +19542,9 @@
       "dossier": [],
       "witnesses": []
     },
-    "findingIds": []
+    "findingIds": [
+      "QARS-0032"
+    ]
   },
   {
     "schemaVersion": 1,
@@ -18824,26 +19652,21 @@
         },
         "h-d3": {
           "visibility": "visible",
-          "emergedVia": "combine-4"
+          "emergedVia": null
         },
         "h-d4": {
           "visibility": "hidden",
           "emergedVia": null
         }
       },
-      "dossier": {
-        "dc-3": {
-          "unlocked": true,
-          "via": "combine-4"
-        }
-      },
+      "dossier": {},
       "witnesses": {},
       "lastFocusedDisputeId": "h-d3"
     },
     "outputs": [
       {
         "speaker": "b",
-        "text": "처가 앞에서 가장 노릇도 못 한 것 같아 부끄러웠습니다. 그래서 더 말을 못 했습니다.",
+        "text": "처가 식구 앞에서 가장 노릇도 못 한 것 같아 부끄러웠습니다. 그래서 더 말을 못 했습니다.",
         "behaviorHint": "분노보다 수치심이 먼저 올라온다. 가장 노릇을 못 했다는 말에서 목이 잠긴다.",
         "channel": "contradiction_pursuit",
         "resolverPath": "scripted",
@@ -18882,14 +19705,23 @@
           "revealGuard:open",
           "disclosure:open",
           "responseMode:judge_formal_answer",
-          "stance:confess",
+          "stance:admit",
           "lieState:S4",
           "disputeId:h-d3",
           "rapport:open",
           "contradict_token:3+"
-        ]
+        ],
+        "visibility": "player"
       }
     ],
+    "playerTranscript": [
+      {
+        "speaker": "b",
+        "channel": "contradiction_pursuit",
+        "text": "처가 식구 앞에서 가장 노릇도 못 한 것 같아 부끄러웠습니다. 그래서 더 말을 못 했습니다."
+      }
+    ],
+    "qaAnnotations": [],
     "stateAfter": {
       "turn": 3,
       "lieStates": {
@@ -18982,19 +19814,14 @@
         },
         "h-d3": {
           "visibility": "visible",
-          "emergedVia": "combine-4"
+          "emergedVia": null
         },
         "h-d4": {
           "visibility": "hidden",
           "emergedVia": null
         }
       },
-      "dossier": {
-        "dc-3": {
-          "unlocked": true,
-          "via": "combine-4"
-        }
-      },
+      "dossier": {},
       "witnesses": {},
       "lastFocusedDisputeId": "h-d3"
     },
@@ -19120,19 +19947,14 @@
         },
         "h-d3": {
           "visibility": "visible",
-          "emergedVia": "combine-4"
+          "emergedVia": null
         },
         "h-d4": {
           "visibility": "hidden",
           "emergedVia": null
         }
       },
-      "dossier": {
-        "dc-3": {
-          "unlocked": true,
-          "via": "combine-4"
-        }
-      },
+      "dossier": {},
       "witnesses": {},
       "lastFocusedDisputeId": "h-d3"
     },
@@ -19143,7 +19965,9 @@
         "channel": "discovery_event",
         "resolverPath": "route_simulator_facsimile",
         "sourcePath": "tmp/qa-route-simulator-manifests/spouse-01.json:discovery_event.spouse-dc3-reviewed",
-        "actionType": "discovery_event"
+        "actionType": "discovery_event",
+        "qaOnly": true,
+        "visibility": "qa_annotation"
       },
       {
         "speaker": "witness",
@@ -19151,7 +19975,26 @@
         "channel": "discovery_event",
         "resolverPath": "route_simulator_facsimile",
         "sourcePath": "tmp/qa-route-simulator-manifests/spouse-01.json:discovery_event.spouse-dc3-reviewed.followup",
-        "actionType": "discovery_event"
+        "actionType": "discovery_event",
+        "qaOnly": true,
+        "visibility": "qa_annotation"
+      }
+    ],
+    "playerTranscript": [],
+    "qaAnnotations": [
+      {
+        "speaker": "system",
+        "channel": "discovery_event",
+        "resolverPath": "route_simulator_facsimile",
+        "sourcePath": "tmp/qa-route-simulator-manifests/spouse-01.json:discovery_event.spouse-dc3-reviewed",
+        "text": "Discovery event applied: spouse-dc3-reviewed"
+      },
+      {
+        "speaker": "witness",
+        "channel": "discovery_event",
+        "resolverPath": "route_simulator_facsimile",
+        "sourcePath": "tmp/qa-route-simulator-manifests/spouse-01.json:discovery_event.spouse-dc3-reviewed.followup",
+        "text": "The dc-3 route card remains available for final judgment."
       }
     ],
     "stateAfter": {
@@ -19246,7 +20089,7 @@
         },
         "h-d3": {
           "visibility": "visible",
-          "emergedVia": "combine-4"
+          "emergedVia": null
         },
         "h-d4": {
           "visibility": "hidden",
@@ -19266,9 +20109,16 @@
       "lieStates": [],
       "evidence": [],
       "disputes": [],
-      "dossier": [],
+      "dossier": [
+        {
+          "dossierId": "dc-3",
+          "to": true
+        }
+      ],
       "witnesses": []
     },
-    "findingIds": []
+    "findingIds": [
+      "QARS-0033"
+    ]
   }
 ]
