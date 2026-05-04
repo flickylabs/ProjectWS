@@ -27337,3 +27337,122 @@ body.pc-mode .pc-ev-panel--viewer .pc-doc-table__head span,
 body.pc-mode .pc-ev-panel--viewer .pc-doc-table__row span {
   padding: 8px 9px !important;
 }
+
+/* Keep PC shell screens inside the viewport. Page-level wheel movement should
+   not nudge Home/Profile/Result screens; scroll belongs to inner content only. */
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body.pc-mode {
+  width: 100vw;
+  height: 100dvh;
+  min-height: 100dvh;
+  overflow: hidden !important;
+  overscroll-behavior: none;
+}
+
+body.pc-mode #root {
+  height: 100dvh;
+  overflow: hidden;
+}
+
+body.pc-mode .pc-loading-screen,
+body.pc-mode .pc-brief-shell,
+body.pc-mode .pc-home-shell {
+  height: 100dvh !important;
+  min-height: 0 !important;
+  max-height: 100dvh !important;
+  overflow: hidden !important;
+  box-sizing: border-box !important;
+}
+
+body.pc-mode .pc-home-v2 {
+  height: 100% !important;
+  min-height: 0 !important;
+  max-height: 100% !important;
+  box-sizing: border-box !important;
+  overflow: hidden !important;
+  padding-top: clamp(24px, 4vh, 40px) !important;
+  padding-bottom: clamp(24px, 4vh, 46px) !important;
+}
+
+body.pc-mode .pc-home-v2__topbar {
+  flex: 0 0 auto;
+  margin-bottom: clamp(12px, 2.2vh, 24px) !important;
+}
+
+body.pc-mode .pc-home-v2__hero {
+  flex: 0 0 auto;
+  padding-top: clamp(18px, 3vh, 28px) !important;
+  padding-bottom: clamp(18px, 3vh, 26px) !important;
+}
+
+body.pc-mode .pc-home-v2__mode-grid,
+body.pc-mode .pc-home-v2__info-grid {
+  flex: 0 1 auto;
+  margin-top: clamp(16px, 2.8vh, 28px) !important;
+}
+
+body.pc-mode .pc-depth-shell {
+  height: calc(100dvh - 56px) !important;
+  min-height: 0 !important;
+  max-height: calc(100dvh - 56px) !important;
+  box-sizing: border-box !important;
+  overflow: hidden !important;
+}
+
+body.pc-mode .pc-depth-shell > .pc-desk-tab-content,
+body.pc-mode .pc-depth-shell > .pc-settings-grid-v2,
+body.pc-mode .pc-depth-shell > .pc-session-grid-v2,
+body.pc-mode .pc-depth-shell > .pc-leaderboard-grid,
+body.pc-mode .pc-depth-shell > .pc-filter-pills-v2,
+body.pc-mode .pc-depth-shell > .cb {
+  min-height: 0 !important;
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+  overscroll-behavior: contain !important;
+}
+
+body.pc-mode .pc-verdict-screen,
+body.pc-mode .pc-result-screen {
+  height: 100dvh !important;
+  min-height: 0 !important;
+  max-height: 100dvh !important;
+  box-sizing: border-box !important;
+  overflow: hidden !important;
+}
+
+body.pc-mode .pc-verdict-shell,
+body.pc-mode .pc-result-shell {
+  height: 100% !important;
+  min-height: 0 !important;
+  max-height: 100% !important;
+  box-sizing: border-box !important;
+}
+
+@media (max-height: 820px) {
+  body.pc-mode .pc-home-v2 {
+    padding-top: 20px !important;
+    padding-bottom: 20px !important;
+  }
+
+  body.pc-mode .pc-home-v2__hero {
+    padding-top: 14px !important;
+    padding-bottom: 14px !important;
+  }
+
+  body.pc-mode .pc-home-v2__hero h1 {
+    font-size: clamp(38px, 4vw, 54px) !important;
+  }
+
+  body.pc-mode .pc-mode-card {
+    padding: 22px 26px 20px !important;
+  }
+
+  body.pc-mode .pc-home-info-card {
+    padding: 18px 22px !important;
+  }
+}
