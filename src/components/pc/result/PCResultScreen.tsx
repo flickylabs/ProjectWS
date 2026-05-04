@@ -788,7 +788,7 @@ export default function PCResultScreen() {
                 {verdictSummary ? (
                   <>
                     {/* ── 상단: 좌측 저울 + 우측 2영역 ── */}
-                    <div style={{ display: 'grid', gridTemplateColumns: '240px 1fr', gap: 20, marginBottom: 28 }}>
+                    <div className="pc-result-verdict-pronounce-grid" style={{ display: 'grid', gridTemplateColumns: '240px 1fr', gap: 20, marginBottom: 28 }}>
                       {/* 좌측 — 저울 + 책임 배분 설명 (top-aligned) */}
                       <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'flex-start', gap: 8, padding: '1px 0 0' }}>
                         <svg width="240" height="180" viewBox="0 0 420 220" style={{ display: 'block' }}>
@@ -827,7 +827,6 @@ export default function PCResultScreen() {
                         {/* 결정적 순간 */}
                         <div className="pc-result-summary__section pc-result-summary__section--compact" style={{ margin: 0 }}>
                           <h3>결정적 순간</h3>
-                          <p className="pc-result-key-moments__intro">각 쟁점에서 확인된 기록과 진술을 기준으로 판결의 전환점을 정리했습니다.</p>
                           {disputeMomentLines.length > 0 ? (
                             <ul className="pc-result-key-moments__list">
                               {disputeMomentLines.map((line, idx) => (
@@ -838,16 +837,16 @@ export default function PCResultScreen() {
                             </ul>
                           ) : null}
                         </div>
-                        {/* 해결 방향 — 스크롤 영역 */}
-                        <div className="pc-result-summary__section pc-result-summary__section--compact" style={{ margin: 0 }}>
-                          <h3>해결 방향</h3>
-                          <div className="pc-result-resolution__list">
-                            {resolutionItems.map((item: string, i: number) => (
-                              <div key={i} className="pc-result-resolution__item">
-                                {item}
-                              </div>
-                            ))}
-                          </div>
+                      </div>
+                      {/* 해결 방향 — 저울 아래까지 가로 확장 */}
+                      <div className="pc-result-summary__section pc-result-summary__section--compact pc-result-resolution--wide" style={{ margin: 0, gridColumn: '1 / -1' }}>
+                        <h3>해결 방향</h3>
+                        <div className="pc-result-resolution__list">
+                          {resolutionItems.map((item: string, i: number) => (
+                            <div key={i} className="pc-result-resolution__item">
+                              {item}
+                            </div>
+                          ))}
                         </div>
                       </div>
                     </div>

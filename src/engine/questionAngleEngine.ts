@@ -33,7 +33,7 @@ const FALLBACK_GENERAL_ANGLE: QuestionAngleDefinition = {
   disputeId: '',
   angleId: GENERAL_QUESTION_ANGLE,
   label: '경위 확인',
-  description: '선택한 안건에서 확인된 행동, 기록, 추정을 분리해 확인한다.',
+  description: '확인된 행동과 기록, 아직 추정인 부분을 차분히 나눠 확인한다.',
   keywords: [],
   unlockCondition: { defaultUnlocked: true },
 }
@@ -128,7 +128,7 @@ function getGenericQuestionTemplates(questionType: string, definition: QuestionA
 
   return [
     `{name} 씨, ${label}에서 직접 한 일과 나중에 알게 된 일을 나눠 말씀하십시오.`,
-    `${description} 기록으로 확인되는 부분과 아직 다투는 부분을 구분해 주십시오.`,
+    `{name} 씨, ${label}에서 기록으로 확인되는 부분과 아직 다투는 부분을 구분해 주십시오.`,
     `${label}을 상대가 다르게 받아들인 이유가 무엇인지 설명하십시오.`,
     `${label}에서 빠뜨렸거나 늦게 설명한 사실이 있습니까.`,
     `{name} 씨, ${label}을 판단할 때 먼저 확인해야 할 행동부터 정리하십시오.`,

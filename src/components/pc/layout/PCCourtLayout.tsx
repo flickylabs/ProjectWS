@@ -27,7 +27,7 @@ const PHASE_LABELS: Record<string, string> = {
   [Phase.Briefing]: '사건 브리핑',
   [Phase.Pretrial]: '사전진술',
   [Phase.Interrogation]: '심문',
-  [Phase.Mediation]: '판결 전 검토',
+  [Phase.Mediation]: '판결 진입',
   [Phase.Verdict]: '판결',
   [Phase.Result]: '결과',
   // Legacy fallback
@@ -596,7 +596,7 @@ function getCombinationSummary(resultType?: CombinationOverlayResultType): strin
     return '새 진술이 기록에 추가됐습니다.'
   }
   if (resultType === 'mediation') {
-    return '판결 전 검토에 쓸 수 있는 힌트가 추가됐습니다.'
+    return '판결 진입에 참고할 힌트가 추가됐습니다.'
   }
   if (resultType === 'reliability') {
     return '기존 증거의 신뢰도가 강화됐습니다.'

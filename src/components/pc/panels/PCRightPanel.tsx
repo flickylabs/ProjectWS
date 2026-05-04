@@ -616,7 +616,7 @@ export default function PCRightPanel() {
         category: 'event',
         iconId: 'i-heart',
         title: '판결 힌트 추가',
-        summary: outputSummary || '판결 전 검토에 쓸 수 있는 힌트가 추가됐습니다.',
+        summary: outputSummary || '판결 진입에 참고할 힌트가 추가됐습니다.',
       })
     } else if (combinationResultType === 'note' || combinationResultType === 'statement') {
       store.addJudgeObservation({

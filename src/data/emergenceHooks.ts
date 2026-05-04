@@ -159,7 +159,7 @@ const HOOKS: Record<string, Record<string, EmergenceHook>> = {
       ],
     },
     'd-5': {
-      name: '어머니 뜻을 움직인 책임',
+      name: '어머니의 숨겨진 마음',
       speaker: 'b',
       variants: [
         {
@@ -224,12 +224,12 @@ const HOOKS: Record<string, Record<string, EmergenceHook>> = {
       ],
     },
     'd-4': {
-      name: '과거 손절과 아버지의 사기',
+      name: '과거 손절의 이유',
       speaker: 'b',
       variants: [
         {
           tone: 'confession',
-          text: '재판관님, 제가 손절당할 때도 끝까지 말하지 못한 게 있습니다. 다은이 아버지가 투자 명목으로 제 돈을 가져갔고, 저는 그걸 사기라고 말할 용기가 없었습니다.',
+          text: '재판관님, 제가 손절당할 때도 끝까지 말하지 못한 게 있습니다. 다은이 아버지에게 빌려준 돈이 일부만 돌아왔고, 저는 그 일을 말할 용기가 없었습니다.',
           behaviorHint: '최수민은 무표정에 가까운 얼굴로, 그러나 아주 천천히 말을 꺼낸다.',
         },
         {

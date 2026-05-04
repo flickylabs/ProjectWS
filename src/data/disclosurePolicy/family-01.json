@@ -103,7 +103,7 @@
         "sourceRefs": ["src/data/cases/generated/family-01.json:disputes.d-4"]
       },
       "d-5": {
-        "surface": "어머니 이용의 진짜 주체",
+        "surface": "어머니의 숨겨진 마음",
         "truth": "윤태성은 유산을 당연시했고, 윤정후는 보호를 명분으로 어머니 뜻을 고쳐 두 사람 모두 어머니를 있는 그대로 두지 못했다.",
         "protectedSurface": "두 형제가 어머니 뜻을 다룬 방식",
         "truthLexemes": ["유산 당연시", "보호 명분", "어머니 뜻 왜곡", "두 번 왜곡"],
@@ -403,7 +403,7 @@
         ]
       },
       "d-5": {
-        "title": "어머니 이용의 진짜 주체",
+        "title": "어머니의 숨겨진 마음",
         "draftCompleteness": "sample-complete",
         "statementFracture": [
           "A는 B가 어머니를 이용했다고 단정하지만 자기 상속 당연시는 보지 않는다.",

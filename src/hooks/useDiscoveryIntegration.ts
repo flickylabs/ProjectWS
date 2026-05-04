@@ -60,13 +60,48 @@ function passesSpouse01EmergenceGate(state: any, disputeId: string): boolean {
   return true
 }
 
+function emergedBeforeTurn(state: any, disputeId: string): boolean {
+  const entry = state.discovery?.disputeVisibility?.[disputeId]
+  if (!entry || (entry.visibility !== 'visible' && entry.visibility !== 'emerged')) return false
+  const emergedAtTurn = entry.emergedAtTurn ?? 0
+  return emergedAtTurn < (state.turnCount ?? 0)
+}
+
+function passesFriend01EmergenceGate(state: any, disputeId: string): boolean {
+  const caseId = String(state.caseData?.caseId ?? '').replace(/^case-/, '')
+  if (caseId !== 'friend-01') return true
+
+  if (disputeId === 'd-2') {
+    return getMaxLieRank(state, 'd-1') >= 3
+  }
+  if (disputeId === 'd-3') {
+    return emergedBeforeTurn(state, 'd-2') && getMaxLieRank(state, 'd-2') >= 3
+  }
+  if (disputeId === 'd-4') {
+    return emergedBeforeTurn(state, 'd-3') && getMaxLieRank(state, 'd-3') >= 3
+  }
+  if (disputeId === 'd-5') {
+    return emergedBeforeTurn(state, 'd-3') &&
+      emergedBeforeTurn(state, 'd-4') &&
+      getMaxLieRank(state, 'd-3') >= 3 &&
+      getMaxLieRank(state, 'd-4') >= 3
+  }
+  return true
+}
+
 const SAFE_EMERGENCE_DESCRIPTIONS: Record<string, Record<string, string>> = {
   'family-01': {
     'd-1': '어머니의 판단 능력과 유서 작성 과정이 별도로 확인할 쟁점으로 떠올랐습니다.',
     'd-2': '공증된 유서가 완성된 시점과 당시 어머니 상태 사이에 확인할 대목이 생겼습니다.',
     'd-3': '어머니 통장을 거친 오래된 자금 흐름에서 출처와 전달 순서를 확인해야 합니다.',
     'd-4': '가족 기록 속 민감한 사정이 형제의 침묵과 선택에 영향을 줬을 가능성이 보입니다.',
-    'd-5': '두 형제가 어머니 뜻을 서로 다르게 해석한 대목을 함께 정리해야 합니다.',
+    'd-5': '어머니가 남긴 기록과 두 형제의 해석 차이를 함께 정리해야 합니다.',
+  },
+  'friend-01': {
+    'd-2': '예비신랑과 최수민 사이의 메시지에서 먼저 확인할 순서가 생겼습니다.',
+    'd-3': '예비신랑에게 이어진 부탁의 내용과 경로를 확인해야 합니다.',
+    'd-4': '과거 손절 직전의 돈 흐름과 침묵 이유를 별도로 확인해야 합니다.',
+    'd-5': '단톡방 글이 퍼진 과정과 확인 없이 단정한 책임을 정리해야 합니다.',
   },
   'spouse-01': {
     'd-2': '남편 명의의 비밀 계좌가 존재했고, 목돈이 빠져나간 것으로 보입니다.',
@@ -75,12 +110,41 @@ const SAFE_EMERGENCE_DESCRIPTIONS: Record<string, Record<string, string>> = {
   },
 }
 
+const SAFE_EMERGENCE_TITLES: Record<string, Record<string, string>> = {
+  'family-01': {
+    'd-1': '유서 작성과 판단 능력',
+    'd-2': '공증 시점의 상태',
+    'd-3': '오래된 지원의 흐름',
+    'd-4': '가족 기록과 침묵',
+    'd-5': '어머니의 숨겨진 마음',
+  },
+  'friend-01': {
+    'd-2': '예비신랑 메시지의 맥락',
+    'd-3': '예비신랑에게 이어진 부탁',
+    'd-4': '과거 손절의 이유',
+    'd-5': '단톡방 발언의 책임',
+  },
+  'spouse-01': {
+    'd-2': '비밀 계좌의 흐름',
+    'h-d3': '방문 이후 연락',
+    'h-d4': '동선과 금전 흐름',
+  },
+}
+
 function normalizeCaseId(caseId?: string): string {
   return String(caseId ?? '').replace(/^case-/, '')
 }
 
 function getSafeEmergenceDescription(caseId: string | undefined, disputeId: string, fallback: string): string {
-  return SAFE_EMERGENCE_DESCRIPTIONS[normalizeCaseId(caseId)]?.[disputeId] ?? fallback
+  void fallback
+  return SAFE_EMERGENCE_DESCRIPTIONS[normalizeCaseId(caseId)]?.[disputeId]
+    ?? '새로운 단서가 기존 설명과 맞물립니다. 확인해야 할 범위만 추가되었습니다.'
+}
+
+function getSafeEmergenceTitle(caseId: string | undefined, disputeId: string, fallback: string): string {
+  void fallback
+  return SAFE_EMERGENCE_TITLES[normalizeCaseId(caseId)]?.[disputeId]
+    ?? '새 확인 쟁점'
 }
 
 /**
@@ -171,10 +235,11 @@ export function runDiscoveryChecks(party: PartyId, disputeId?: string) {
 
     if (via) {
       if (!passesSpouse01EmergenceGate(state, entry.disputeId)) continue
+      if (!passesFriend01EmergenceGate(state, entry.disputeId)) continue
       const dispute = caseData.disputes.find((d: import('../types').Dispute) => d.id === entry.disputeId)
-      const rawDescription = dispute?.truthDescription ?? dispute?.name ?? entry.disputeId
+      const rawDescription = '새로운 단서가 기존 설명과 맞물립니다. 확인해야 할 범위만 추가되었습니다.'
       const description = getSafeEmergenceDescription(caseData.caseId, entry.disputeId, rawDescription)
-      const title = dispute?.name ?? entry.disputeId
+      const title = getSafeEmergenceTitle(caseData.caseId, entry.disputeId, dispute?.name ?? entry.disputeId)
       state.emergeDispute(entry.disputeId, via, turnCount, description)
       v4Effects.disputeDiscovered(entry.disputeId, title, description, {
         turn: state.turnCount,

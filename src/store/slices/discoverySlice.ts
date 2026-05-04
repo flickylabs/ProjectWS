@@ -45,7 +45,13 @@ const SAFE_EMERGENCE_DESCRIPTIONS: Record<string, Record<string, string>> = {
     'd-2': '공증된 유서가 완성된 시점과 당시 어머니 상태 사이에 확인할 대목이 생겼습니다.',
     'd-3': '어머니 통장을 거친 오래된 자금 흐름에서 출처와 전달 순서를 확인해야 합니다.',
     'd-4': '가족 기록 속 민감한 사정이 형제의 침묵과 선택에 영향을 줬을 가능성이 보입니다.',
-    'd-5': '두 형제가 어머니 뜻을 서로 다르게 해석한 대목을 함께 정리해야 합니다.',
+    'd-5': '어머니가 남긴 기록과 두 형제의 해석 차이를 함께 정리해야 합니다.',
+  },
+  'friend-01': {
+    'd-2': '예비신랑과 최수민 사이의 메시지에서 먼저 확인할 순서가 생겼습니다.',
+    'd-3': '예비신랑에게 이어진 부탁의 내용과 경로를 확인해야 합니다.',
+    'd-4': '과거 손절 직전의 돈 흐름과 침묵 이유를 별도로 확인해야 합니다.',
+    'd-5': '단톡방 글이 퍼진 과정과 확인 없이 단정한 책임을 정리해야 합니다.',
   },
   'spouse-01': {
     'd-2': '남편 명의의 비밀 계좌가 존재했고, 목돈이 빠져나간 것으로 보입니다.',
@@ -62,7 +68,9 @@ function getSafeEmergenceDescription(storeOrCaseId: any, disputeId: string, fall
   const caseId = typeof storeOrCaseId === 'string'
     ? normalizeCaseId(storeOrCaseId)
     : normalizeCaseId(storeOrCaseId?.caseData?.caseId)
-  return SAFE_EMERGENCE_DESCRIPTIONS[caseId]?.[disputeId] ?? fallback
+  void fallback
+  return SAFE_EMERGENCE_DESCRIPTIONS[caseId]?.[disputeId]
+    ?? '새로운 단서가 기존 설명과 맞물립니다. 확인해야 할 범위만 추가되었습니다.'
 }
 
 export interface DiscoverySlice {

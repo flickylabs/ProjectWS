@@ -146,7 +146,7 @@
       {
         "id": "ledger-4",
         "category": "confirmed",
-        "description": "A가 확인 없이 단톡방에서 B를 매도했고 공통 친구들이 동조했다.",
+        "description": "송다은이 확인 없이 단톡방에서 최수민을 매도했고 공통 친구들이 동조했다.",
         "isReal": true,
         "whoRemembersAccurately": "both",
         "whoDistorts": "a",
@@ -162,7 +162,7 @@
         "slot": "close_friend",
         "name": "김세라",
         "relationTo": "both",
-        "knowledgeScope": "단톡방에서 A의 글을 보고 B를 비난하는 데 동조했다. 나중에 찜찜한 마음이 들었다.",
+        "knowledgeScope": "단톡방에서 송다은의 글을 보고 최수민을 비난하는 데 동조했다. 나중에 찜찜한 마음이 들었다.",
         "witnessedDirectly": true,
         "bias": "pro_a",
         "distortionRisk": "strategic",
@@ -181,7 +181,7 @@
           "addressJudge": "재판관님",
           "addressA": "다은이",
           "addressB": "수민 씨",
-          "hiddenAgenda": "자신도 B를 비난하는 데 가담한 것이 부끄럽다."
+          "hiddenAgenda": "자신도 최수민을 비난하는 데 가담한 것이 부끄럽다."
         },
         "unlockedByDossier": [
           "dc-1"
@@ -222,7 +222,7 @@
         "slot": "community_witness",
         "name": "오미경",
         "relationTo": "b",
-        "knowledgeScope": "동네 분식집 사장으로, 과거에 A 아버지가 B에게 돈을 빌리러 온 것을 봤다. B가 울면서 가게에 온 적이 있다.",
+        "knowledgeScope": "동네 분식집 사장으로, 과거에 송다은 아버지가 최수민에게 돈을 빌리러 온 것을 봤다. 최수민이 울면서 가게에 온 적이 있다.",
         "witnessedDirectly": true,
         "bias": "pro_b",
         "distortionRisk": "accurate",
@@ -254,7 +254,7 @@
     "description": "손절한 전 절친이 내 예비신랑에게 계속 연락한다. 결혼 3주 전, 그 장면만 보면 누구라도 친구가 선을 넘었다고 생각한다.",
     "emotionalPressure": 8,
     "affects": "both",
-    "triggerAmplifier": "초반에는 B의 9일간 연락 기록과 A의 단톡방 발언이 겹치며 B가 집착하는 사람으로 보인다. 그러나 예비신랑의 선넘는 메시지와 A 아버지의 돈 접근 패턴이 드러나면서 사건의 중심은 집착이 아니라 반복되는 침묵과 낙인으로 뒤집힌다.",
+    "triggerAmplifier": "초반에는 최수민의 9일간 연락 기록과 송다은의 단톡방 발언이 겹치며 최수민이 집착하는 사람으로 보인다. 그러나 예비신랑의 선넘는 메시지와 송다은 아버지의 돈 접근 패턴이 드러나면서 사건의 중심은 집착이 아니라 반복되는 침묵과 낙인으로 뒤집힌다.",
     "caseNumber": "TE-FriendV401",
     "caseName": "손절한 절친"
   },
@@ -339,9 +339,9 @@
       },
       "ambiguity": "mid",
       "weight": "high",
-      "mediationLink": "A 아버지의 돈 접근 패턴",
+      "mediationLink": "송다은 아버지의 돈 접근 패턴",
       "legitimacyIssue": false,
-      "judgmentStatement": "A 아버지의 돈 접근 패턴은 과거와 현재가 같았다.",
+      "judgmentStatement": "송다은 아버지의 돈 접근 패턴은 과거와 현재가 같았다.",
       "hidden": true,
       "v3Visibility": "hidden",
       "unlockCondition": {
@@ -363,9 +363,9 @@
     },
     {
       "id": "d-4",
-      "name": "과거 손절과 아버지의 사기",
+      "name": "과거 손절의 이유",
       "truth": true,
-      "truthDescription": "과거 손절의 진짜 원인은 A 아버지가 B에게 투자 명목으로 돈을 받아간 사기였다. B는 A에게 말하면 아버지가 사기꾼이라는 뜻이 되므로 차마 말하지 못하고 악역을 자처했다.",
+      "truthDescription": "과거 손절의 진짜 원인은 송다은 아버지가 최수민에게 몇백만 원 단위로 세 차례 돈을 빌린 뒤 일부만 갚고 연락을 끊은 일이었다. 최수민은 송다은에게 말하면 아버지 문제를 들춰야 해서 차마 말하지 못하고 악역을 자처했다.",
       "quadrant": "b_only",
       "requiredEvidence": [
         "e-6"
@@ -376,9 +376,9 @@
       },
       "ambiguity": "high",
       "weight": "high",
-      "mediationLink": "과거 사기와 침묵의 대가",
+      "mediationLink": "과거 손절의 이유",
       "legitimacyIssue": true,
-      "judgmentStatement": "과거 손절의 진짜 원인은 A 아버지의 사기였고 B의 침묵은 보호에서 비롯됐다.",
+      "judgmentStatement": "과거 손절의 원인은 송다은 아버지의 차용금 미상환과 최수민의 침묵이었다.",
       "hidden": true,
       "v3Visibility": "hidden",
       "unlockCondition": {
@@ -394,7 +394,7 @@
       "verdictOptions": {
         "wrong": "과거 손절은 최수민이 변심해서 일방적으로 끊은 것이다.",
         "partial": "손절에 돈 문제가 얽혀 있었지만, 정확한 경위는 알 수 없다.",
-        "truth": "송다은 아버지가 최수민에게 투자 명목으로 돈을 받아간 사기가 원인이었다. 최수민은 차마 말 못하고 악역을 자처했다.",
+        "truth": "송다은 아버지가 최수민에게 돈을 빌린 뒤 일부만 갚고 연락을 끊은 일이 원인이었다. 최수민은 차마 말 못하고 악역을 자처했다.",
         "defer": "손절의 진짜 원인을 가리기 어렵다. 유보한다."
       }
     },
@@ -402,7 +402,7 @@
       "id": "d-5",
       "name": "단톡방 매도와 명예훼손",
       "truth": true,
-      "truthDescription": "A가 확인 없이 단톡방에서 B를 매도했고, B는 또 악역을 자처하는 구조가 반복됐다. 두 사람 모두 확인 전에 단정한 책임이 있다.",
+      "truthDescription": "송다은이 확인 없이 단톡방에서 최수민을 매도했고, 최수민은 또 악역을 자처하는 구조가 반복됐다. 두 사람 모두 확인 전에 단정한 책임이 있다.",
       "quadrant": "both",
       "requiredEvidence": [
         "e-2",
@@ -1769,7 +1769,7 @@
       "id": "e-2",
       "name": "공통 친구 단톡방 캡처",
       "surfaceName": "단톡방 캡처",
-      "description": "A가 '수민이가 또 내 남자한테 연락한다'고 올렸고, 몇몇 친구들이 B를 비난한 내용.",
+      "description": "송다은이 '수민이가 또 내 남자한테 연락한다'고 올렸고, 몇몇 친구들이 최수민을 비난한 내용.",
       "surfaceDescription": "공통 친구 단톡방의 대화 캡처가 존재한다.",
       "type": "chat",
       "reliability": "hard",
@@ -2720,7 +2720,7 @@
       "partyContext": {
         "a": {
           "questionAngle": "이 대화 이후 B에게 다시 물어본 적이 있습니까?",
-          "implication": "A가 확인 없이 단정한 패턴을 드러낸다."
+          "implication": "송다은이 확인 없이 단정한 패턴을 드러낸다."
         },
         "b": {
           "questionAngle": "왜 그 일의 책임 소재를 끝까지 말하지 않았습니까?",
@@ -4868,10 +4868,10 @@
     },
     {
       "id": "e-6",
-      "name": "과거 송금 영수증 + 문자",
+      "name": "과거 송금 기록과 차용증",
       "surfaceName": "과거 송금 기록",
-      "description": "과거 송금과 차용성 문구가 함께 남아 있는 기록. 상환 여부와 관계 단절 시점이 쟁점이다.",
-      "surfaceDescription": "과거 최수민 씨와 송다은 씨 아버지 사이의 송금 기록과 문자가 존재한다.",
+      "description": "최수민이 송다은 아버지에게 몇백만 원 단위로 세 차례 보낸 송금 기록과 차용증. 일부 상환 뒤 연락이 끊긴 흐름이 쟁점이다.",
+      "surfaceDescription": "과거 최수민 씨와 송다은 씨 아버지 사이의 송금 기록이 존재한다.",
       "type": "bank",
       "reliability": "hard",
       "completeness": "original",
@@ -4886,9 +4886,9 @@
       ],
       "requiredLieState": "S2",
       "investigationResults": {
-        "request_original": "B 계좌에서 송씨 성 수취인에게 이체된 내역이 확인된다. 차용성 문구가 함께 남아 있다.",
-        "check_metadata": "이후 수취인 측이 상환을 미루는 듯한 문자가 이어지고, 상환 기록은 확인되지 않는다.",
-        "restore_context": "상환 흔적이 약한 상태에서 B가 A에게 말하지 못한 이유를 물어볼 근거가 생긴다."
+        "request_original": "최수민 계좌에서 송씨 성 수취인에게 몇백만 원 단위 송금이 세 차례 이체된 내역이 확인된다.",
+        "check_metadata": "차용증과 일부 상환 내역이 붙어 있지만, 두 차례 소액 상환 뒤 추가 상환과 연락이 끊긴다.",
+        "restore_context": "상환이 끊긴 시점과 과거 손절 직전 카톡을 함께 보면 최수민이 송다은에게 말하지 못한 이유를 물어볼 근거가 생긴다."
       },
       "subjectParty": "b",
       "investigationStages": [
@@ -4896,40 +4896,40 @@
           "stage": 1,
           "revealKey": "request_original",
           "question": {
-            "text": "이 돈이 B 계좌에서 나간 내역입니까?",
+            "text": "세 차례 송금이 실제로 나간 내역입니까?",
             "attackVector": "authenticity"
           },
-          "label": "내역확인",
+          "label": "송금확인",
           "unlockHint": null
         },
         {
           "stage": 2,
           "revealKey": "check_metadata",
           "question": {
-            "text": "상환 약속과 갚지 못한 흐름을 대조해 주십시오.",
+            "text": "차용증과 일부 상환 내역을 대조해 주십시오.",
             "attackVector": "context"
           },
           "label": "상환대조",
-          "unlockHint": "이체 내역을 더 보면 차용 문구와 미상환 문자가 함께 보입니다."
+          "unlockHint": "이체 내역을 더 보면 차용증과 일부 상환 기록이 함께 보입니다."
         },
         {
           "stage": 3,
           "revealKey": "restore_context",
           "question": {
-            "text": "B가 왜 이 사실을 A에게 숨겼는지 물어 주십시오.",
+            "text": "상환이 끊긴 뒤 최수민이 왜 침묵했는지 물어 주십시오.",
             "attackVector": "responsibility"
           },
           "label": "침묵추궁",
-          "unlockHint": "상환 흐름을 대조하면 과거 손절의 이유를 물을 수 있습니다."
+          "unlockHint": "상환이 끊긴 흐름을 대조하면 과거 손절의 이유를 물을 수 있습니다."
         }
       ],
       "partyContext": {
         "a": {
-          "questionAngle": "아버지가 B에게 돈을 빌린 적이 있다는 사실을 알고 있었습니까?",
-          "implication": "A가 아버지의 과거 자금 문제를 몰랐음을 확인한다."
+          "questionAngle": "아버지가 최수민 씨에게 돈을 빌린 적이 있다는 사실을 알고 있었습니까?",
+          "implication": "송다은이 아버지의 과거 자금 문제를 몰랐음을 확인한다."
         },
         "b": {
-          "questionAngle": "왜 이 사실을 A에게 끝까지 숨겼습니까?",
+          "questionAngle": "왜 이 사실을 송다은 씨에게 끝까지 숨겼습니까?",
           "implication": "침묵의 대가를 확인한다."
         }
       },
@@ -4942,17 +4942,17 @@
         {
           "id": "excerpt",
           "label": "Excerpt",
-          "summary": "이체 금액과 일자만 보임"
+          "summary": "세 차례 이체 금액과 일자만 보임"
         },
         {
           "id": "original",
           "label": "Original",
-          "summary": "차용성 문자와 이체 내역을 함께 확인한다."
+          "summary": "차용증과 일부 상환 내역을 함께 확인한다."
         },
         {
           "id": "context",
           "label": "Context",
-          "summary": "미상환 과정과 손절 시점 대조"
+          "summary": "일부 상환 뒤 연락이 끊긴 시점과 손절 시점 대조"
         },
         {
           "id": "established",
@@ -4969,12 +4969,12 @@
         {
           "id": "verifying",
           "label": "검증 중",
-          "summary": "은행 기록 원본 대조 중"
+          "summary": "은행 기록과 차용증 원본 대조 중"
         },
         {
           "id": "authenticated",
           "label": "인증됨",
-          "summary": "이체 내역 확인됨"
+          "summary": "세 차례 이체와 일부 상환 확인됨"
         },
         {
           "id": "challenged",
@@ -4984,7 +4984,7 @@
         {
           "id": "misread",
           "label": "조작/오독 판정",
-          "summary": "미상환 흐름과 문자 원본이 확인된다."
+          "summary": "연락 두절 흐름과 문자 원본이 확인된다."
         }
       ],
       "meta": {
@@ -5014,21 +5014,21 @@
           "legality": "ok",
           "legalLabel": "적법",
           "stage": 3,
-          "stageLabel": "3단계 — 전체 공개",
+          "stageLabel": "3단계 — 전체 송금·차용증·상환 흐름",
           "sourceNote": "institutional / original",
           "redactions": []
         },
         "bank": [
           {
             "date": "2024.05.12",
-            "desc": "최수민 → 송○○ (송 아버지) 이체",
-            "amount": "-500만원",
-            "balance": "320만",
+            "desc": "최수민 → 송○○ (송다은 아버지) 이체",
+            "amount": "-300만원",
+            "balance": "520만원",
             "suspicious": true
           },
           {
             "date": "2024.05.12",
-            "desc": "비고: \"급한 투자금이니 한 달만 쓰고 갚겠다\"",
+            "desc": "첨부: 차용증 사본 — \"급한 운영자금, 8월 말까지 상환\"",
             "amount": "",
             "balance": "",
             "suspicious": false
@@ -5036,34 +5036,41 @@
           {
             "date": "2024.06.15",
             "desc": "최수민 → 송○○ 이체 (2차)",
-            "amount": "-300만원",
-            "balance": "20만",
+            "amount": "-250만원",
+            "balance": "270만원",
             "suspicious": true
           },
           {
-            "date": "2024.06.15",
-            "desc": "비고: \"조금만 더 부탁한다. 다음 달에 함께 돌려줄게\"",
-            "amount": "",
-            "balance": "",
+            "date": "2024.07.20",
+            "desc": "최수민 → 송○○ 이체 (3차)",
+            "amount": "-200만원",
+            "balance": "70만원",
+            "suspicious": true
+          },
+          {
+            "date": "2024.08.10",
+            "desc": "송○○ → 최수민 일부 상환",
+            "amount": "+100만원",
+            "balance": "170만원",
             "suspicious": false
           },
           {
-            "date": "2024.07~12",
-            "desc": "송 아버지 → 최수민 상환 기록",
+            "date": "2024.09.05",
+            "desc": "송○○ → 최수민 일부 상환",
+            "amount": "+50만원",
+            "balance": "220만원",
+            "suspicious": false
+          },
+          {
+            "date": "2024.10~12",
+            "desc": "추가 상환 및 회신 기록",
             "amount": "없음",
             "balance": "",
             "suspicious": true
           },
           {
-            "date": "2024.08.20",
-            "desc": "비고: \"조금만 기다려라. 사업이 좋아지면 바로 갚는다\"",
-            "amount": "",
-            "balance": "",
-            "suspicious": false
-          },
-          {
             "date": "2024.10.05",
-            "desc": "비고: \"수민아 미안하다. 조금만 더. 다은이한테는 말하지 마\"",
+            "desc": "문자: \"조금만 더 기다려라. 다은이한테는 말하지 마\"",
             "amount": "",
             "balance": "",
             "suspicious": true
@@ -5083,7 +5090,7 @@
             "legality": "ok",
             "legalLabel": "적법",
             "stage": 1,
-            "stageLabel": "1단계 — 이체 흐름만 공개",
+            "stageLabel": "1단계 — 세 차례 송금만 공개",
             "sourceNote": "institutional / original",
             "redactions": [
               "수취인 일부 마스킹",
@@ -5095,22 +5102,22 @@
             {
               "date": "2024.05.12",
               "desc": "최수민 → 송○○ 이체",
-              "amount": "300~500만원대",
+              "amount": "200~300만원대",
               "balance": "마스킹",
               "suspicious": true
             },
             {
               "date": "2024.06.15",
               "desc": "최수민 → 송○○ 추가 이체",
-              "amount": "300만원대",
+              "amount": "200만원대",
               "balance": "마스킹",
               "suspicious": true
             },
             {
-              "date": "2024.07~12",
-              "desc": "송○○ → 최수민 상환 기록",
-              "amount": "확인 안 됨",
-              "balance": "",
+              "date": "2024.07.20",
+              "desc": "최수민 → 송○○ 추가 이체",
+              "amount": "200만원대",
+              "balance": "마스킹",
               "suspicious": true
             }
           ]
@@ -5127,24 +5134,24 @@
             "legality": "ok",
             "legalLabel": "적법",
             "stage": 2,
-            "stageLabel": "2단계 — 차용 문구 추가",
+            "stageLabel": "2단계 — 차용증과 일부 상환",
             "sourceNote": "institutional / original",
             "redactions": [
               "수취인 일부 마스킹",
-              "금액 근사 공개"
+              "최종 연락 일부 마스킹"
             ]
           },
           "bank": [
             {
               "date": "2024.05.12",
               "desc": "최수민 → 송○○ 이체",
-              "amount": "약 500만원",
-              "balance": "300만원대",
+              "amount": "약 300만원",
+              "balance": "520만원대",
               "suspicious": true
             },
             {
               "date": "2024.05.12",
-              "desc": "비고: \"급한 투자금이니 한 달만 쓰고 갚겠다\"",
+              "desc": "첨부: 차용증 사본 — \"급한 운영자금, 8월 말까지 상환\"",
               "amount": "",
               "balance": "",
               "suspicious": false
@@ -5152,30 +5159,30 @@
             {
               "date": "2024.06.15",
               "desc": "최수민 → 송○○ 추가 이체",
-              "amount": "약 300만원",
-              "balance": "20만원대",
+              "amount": "약 250만원",
+              "balance": "270만원대",
               "suspicious": true
             },
             {
-              "date": "2024.06.15",
-              "desc": "비고: \"조금만 더 부탁한다. 다음 달에 함께 돌려줄게\"",
-              "amount": "",
-              "balance": "",
+              "date": "2024.07.20",
+              "desc": "최수민 → 송○○ 추가 이체",
+              "amount": "약 200만원",
+              "balance": "70만원대",
+              "suspicious": true
+            },
+            {
+              "date": "2024.08.10",
+              "desc": "송○○ → 최수민 일부 상환",
+              "amount": "+100만원",
+              "balance": "170만원대",
               "suspicious": false
             },
             {
-              "date": "2024.07~12",
-              "desc": "송○○ → 최수민 상환 기록",
-              "amount": "없음",
-              "balance": "",
-              "suspicious": true
-            },
-            {
-              "date": "2024.10.05",
-              "desc": "비고: \"다은이한테는 말하지 마\"",
-              "amount": "",
-              "balance": "",
-              "suspicious": true
+              "date": "2024.09.05",
+              "desc": "송○○ → 최수민 일부 상환",
+              "amount": "+50만원",
+              "balance": "220만원대",
+              "suspicious": false
             }
           ]
         },
@@ -5191,21 +5198,21 @@
             "legality": "ok",
             "legalLabel": "적법",
             "stage": 3,
-            "stageLabel": "3단계 — 전체 송금과 문자",
+            "stageLabel": "3단계 — 전체 송금·차용증·상환 흐름",
             "sourceNote": "institutional / original",
             "redactions": []
           },
           "bank": [
             {
               "date": "2024.05.12",
-              "desc": "최수민 → 송○○ (송 아버지) 이체",
-              "amount": "-500만원",
-              "balance": "320만",
+              "desc": "최수민 → 송○○ (송다은 아버지) 이체",
+              "amount": "-300만원",
+              "balance": "520만원",
               "suspicious": true
             },
             {
               "date": "2024.05.12",
-              "desc": "비고: \"급한 투자금이니 한 달만 쓰고 갚겠다\"",
+              "desc": "첨부: 차용증 사본 — \"급한 운영자금, 8월 말까지 상환\"",
               "amount": "",
               "balance": "",
               "suspicious": false
@@ -5213,34 +5220,41 @@
             {
               "date": "2024.06.15",
               "desc": "최수민 → 송○○ 이체 (2차)",
-              "amount": "-300만원",
-              "balance": "20만",
+              "amount": "-250만원",
+              "balance": "270만원",
               "suspicious": true
             },
             {
-              "date": "2024.06.15",
-              "desc": "비고: \"조금만 더 부탁한다. 다음 달에 함께 돌려줄게\"",
-              "amount": "",
-              "balance": "",
+              "date": "2024.07.20",
+              "desc": "최수민 → 송○○ 이체 (3차)",
+              "amount": "-200만원",
+              "balance": "70만원",
+              "suspicious": true
+            },
+            {
+              "date": "2024.08.10",
+              "desc": "송○○ → 최수민 일부 상환",
+              "amount": "+100만원",
+              "balance": "170만원",
               "suspicious": false
             },
             {
-              "date": "2024.07~12",
-              "desc": "송 아버지 → 최수민 상환 기록",
+              "date": "2024.09.05",
+              "desc": "송○○ → 최수민 일부 상환",
+              "amount": "+50만원",
+              "balance": "220만원",
+              "suspicious": false
+            },
+            {
+              "date": "2024.10~12",
+              "desc": "추가 상환 및 회신 기록",
               "amount": "없음",
               "balance": "",
               "suspicious": true
             },
             {
-              "date": "2024.08.20",
-              "desc": "비고: \"조금만 기다려라. 사업이 좋아지면 바로 갚는다\"",
-              "amount": "",
-              "balance": "",
-              "suspicious": false
-            },
-            {
               "date": "2024.10.05",
-              "desc": "비고: \"수민아 미안하다. 조금만 더. 다은이한테는 말하지 마\"",
+              "desc": "문자: \"조금만 더 기다려라. 다은이한테는 말하지 마\"",
               "amount": "",
               "balance": "",
               "suspicious": true
@@ -5726,7 +5740,7 @@
     },
     {
       "id": "t-5",
-      "fact": "A가 확인 없이 단톡방에서 B를 먼저 매도했다.",
+      "fact": "송다은이 확인 없이 단톡방에서 최수민을 먼저 매도했다.",
       "isTrue": true,
       "weight": 8,
       "quadrant": "both"
@@ -6351,7 +6365,7 @@
             "unlockNodeId": "d-3"
           }
         ],
-        "judgeHint": "새 쟁점 '아버지의 돈 접근 패턴'이 드러났습니다. 반복된 돈 요구를 확인하세요."
+        "judgeHint": "새 쟁점 '예비신랑에게 이어진 부탁'이 드러났습니다. 부탁의 내용과 경로를 확인하세요."
       },
       {
         "id": "dc-1",
@@ -6374,7 +6388,7 @@
       {
         "id": "dc-4",
         "label": "dc-4 손절의 값",
-        "summary": "과거 손절이 변심이 아니라 사기 피해와 침묵의 결과였다면, 왜 끝내 말하지 못했습니까?",
+        "summary": "과거 손절이 변심이 아니라 차용금 미상환 문제와 침묵의 결과였다면, 왜 끝내 말하지 못했습니까?",
         "nodeType": "derived_note",
         "noteText": "손절의 값",
         "effects": [
@@ -6387,7 +6401,7 @@
             "unlockNodeId": "d-4"
           }
         ],
-        "judgeHint": "새 쟁점 '과거 손절과 아버지의 사기'가 드러났습니다. 손절의 진짜 원인을 파고들 수 있습니다."
+        "judgeHint": "새 쟁점 '과거 손절의 이유'가 드러났습니다. 손절 직전의 돈 흐름과 침묵 이유를 확인하세요."
       },
       {
         "id": "dc-5",
@@ -6441,7 +6455,7 @@
           "e-6"
         ],
         "cost": 1,
-        "discoveryText": "송다은 아버지가 예비신랑에게 보낸 문자와 과거 최수민에게 보낸 차용 문자의 패턴이 거의 동일하다.",
+        "discoveryText": "송다은 아버지가 예비신랑에게 보낸 문자와 과거 최수민에게 보낸 차용증과 일부 상환 흐름이 거의 동일하다.",
         "outputId": "dc-3",
         "resultType": "dossier"
       },
@@ -6485,7 +6499,7 @@
           "e-6"
         ],
         "cost": 1,
-        "discoveryText": "과거 카톡의 '돈 문제' 언급과 과거 송금 기록을 대조하면, 손절의 진짜 원인이 변심이 아니라 사기 피해였다는 사실이 드러난다.",
+        "discoveryText": "과거 카톡의 '돈 문제' 언급과 과거 송금 기록을 대조하면, 손절의 진짜 원인이 변심이 아니라 차용금 미상환 문제였다는 사실이 드러난다.",
         "outputId": "dc-4",
         "resultType": "dossier"
       },
@@ -6777,7 +6791,7 @@
       {
         "action": "발언 녹취 정리",
         "recommendedMoment": "d-3 S3 이후",
-        "purpose": "A 아버지의 돈 접근 패턴이 반복됨을 공식 기록"
+        "purpose": "송다은 아버지의 돈 접근 패턴이 반복됨을 공식 기록"
       },
       {
         "action": "당사자 대질",
@@ -6798,9 +6812,9 @@
     "officialRecordRecommendations": [
       "B의 연락은 집착이 아니라 경고 목적이었다.",
       "예비신랑이 먼저 B에게 선넘는 접근을 했다.",
-      "A 아버지의 돈 접근 패턴은 과거와 현재가 같다.",
+      "송다은 아버지의 돈 접근 패턴은 과거와 현재가 같다.",
       "과거 손절의 진짜 원인은 A 아버지의 사기였다.",
-      "A가 확인 없이 단톡방에서 B를 먼저 매도했다."
+      "송다은이 확인 없이 단톡방에서 최수민을 먼저 매도했다."
     ]
   }
 }

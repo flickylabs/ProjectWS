@@ -62,7 +62,7 @@ export default function PCLeftPanel() {
   }, [migrateCombinationLabRuntime, caseData?.caseId])
 
   // Phase 1 (사전진술) 등에서는 증거 인터랙션 차단 — 스크립트 흐름 보존.
-  // 활성 Phase 체계: 0(브리핑) → 1(사전진술) → 2(심문 = Phase.Interrogation) → 3a(판결 전 검토) → 3b(판결)
+  // 활성 Phase 체계: 0(브리핑) → 1(사전진술) → 2(심문 = Phase.Interrogation) → 3a(판결 진입) → 3b(판결)
   const evidenceInteractionAllowed = currentPhase === Phase.Interrogation
 
   const surfaceResult = useMemo(() => {

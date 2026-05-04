@@ -25,7 +25,7 @@ const PHASE_CUTSCENE: Partial<Record<GamePhase, CutsceneSpec>> = {
   },
   [Phase.Mediation]: {
     label: 'Phase 3',
-    title: '판결 전 검토',
+    title: '판결 진입',
     subtitle: '기록을 닫기 전에, 더 심리할지 판결 절차로 들어갈지 결정합니다.',
   },
   [Phase.Verdict]: {

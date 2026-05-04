@@ -33,7 +33,7 @@ export const FRIEND_01_TESTIMONY: TestimonySlot[] = [
     topic: '처음 붙은 말의 방향을 묻는다',
     question: '송다은 씨가 그 캡처를 올릴 때 어떤 식으로 설명했습니까?',
     depth: 1,
-    testimony: '그냥 기록만 올린 게 아니라, 예전에도 비슷했다는 식으로 말이 먼저 붙었습니다. 그래서 분위기가 더 한쪽으로 기울었어요.',
+    testimony: '그냥 기록만 올린 게 아니라, 예전에도 비슷했다는 식으로 말이 번졌습니다. 그래서 분위기가 더 한쪽으로 기울었어요.',
     behaviorHint: '기억을 더듬으며',
     effect: {
       favorDirection: 'mixed',
