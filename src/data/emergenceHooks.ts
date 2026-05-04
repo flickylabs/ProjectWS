@@ -31,12 +31,12 @@ export interface EmergenceHook {
 const HOOKS: Record<string, Record<string, EmergenceHook>> = {
   'spouse-01': {
     'd-2': {
-      name: '개인 비자금 2,000만원 출금',
+      name: '개인 비자금 3,000만원 출금',
       speaker: 'b',
       variants: [
         {
           tone: 'confession',
-          text: '재판관님, 사실은 저도 돈 문제를 숨겼습니다. 제 개인 계좌에서 비자금 2,000만원을 현금으로 빼 형에게 건넸습니다.',
+          text: '재판관님, 사실은 저도 돈 문제를 숨겼습니다. 제 개인 계좌에서 비자금 3,000만원을 현금으로 빼 형에게 건넸습니다.',
           behaviorHint: '이준호는 시선을 낮추고 손가락을 맞잡은 채 짧게 숨을 고른다.',
         },
         {
@@ -46,7 +46,7 @@ const HOOKS: Record<string, Record<string, EmergenceHook>> = {
         },
         {
           tone: 'resignation',
-          text: '…이제 숨겨도 소용없겠습니다. 개인 비자금 2,000만원을 출금한 건 맞고, 그 돈은 형에게 갔습니다.',
+          text: '…이제 숨겨도 소용없겠습니다. 개인 비자금 3,000만원을 출금한 건 맞고, 그 돈은 형에게 갔습니다.',
           behaviorHint: '이준호는 어깨를 떨어뜨리고 한 박자 늦게 재판관을 바라본다.',
         },
       ],

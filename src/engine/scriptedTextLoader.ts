@@ -70,6 +70,7 @@ interface VariantSelectionContext {
   questionType?: string
   disputeId?: string
   evidenceId?: string
+  evidenceQuestionTerms?: string[]
   witnessId?: string
   archetype?: string
   emotion?: string
@@ -209,6 +210,14 @@ function scoreVariant(
 
   if (!recentIds.includes(variant.id)) score += 10
   else score -= recentIds.lastIndexOf(variant.id) === recentIds.length - 1 ? 6 : 2
+
+  if (context.channel === 'evidence_present' && context.evidenceQuestionTerms?.length) {
+    const haystack = `${variant.text} ${variant.behaviorHint ?? ''} ${(variant.tags ?? []).join(' ')}`
+      .replace(/\s+/g, ' ')
+    const matchedTerms = context.evidenceQuestionTerms.filter((term) => haystack.includes(term))
+    score += matchedTerms.length * 16
+    if (matchedTerms.length === 0) score -= 8
+  }
 
   if (!last) return score
 
@@ -515,6 +524,34 @@ export function getScriptedInterrogation(
   return { text: variant.text, behaviorHint: variant.behaviorHint }
 }
 
+function extractEvidenceQuestionTerms(questionText?: string): string[] {
+  const text = (questionText ?? '').replace(/\s+/g, ' ').trim()
+  if (!text) return []
+  const candidates = [
+    '참고서',
+    '중학생',
+    '중학교',
+    '아이',
+    '학생',
+    '틴트',
+    '머리끈',
+    '헤어롤',
+    '영수증',
+    '품목',
+    '물품',
+    '통화',
+    '오피스텔',
+    'GPS',
+    '위치',
+    '문자',
+    '계좌',
+    '송금',
+    '출금',
+    '입금',
+  ]
+  return candidates.filter((term) => text.includes(term))
+}
+
 /** 증거 제시 응답 스크립트 조회 */
 export function getScriptedEvidencePresent(
   caseId: string,
@@ -522,6 +559,7 @@ export function getScriptedEvidencePresent(
   evidenceId: string,
   lieState: string,
   subjectRole: string,
+  questionText?: string,
 ): { text: string; behaviorHint: string } | null {
   const lieBand = toEvidencePresentLieBand(lieState as ScriptedLieState)
   const key = buildEvidencePresentKey({
@@ -544,6 +582,7 @@ export function getScriptedEvidencePresent(
     channel: 'evidence_present',
     key,
     evidenceId,
+    evidenceQuestionTerms: extractEvidenceQuestionTerms(questionText),
   })
   if (!variant) {
     logScriptedMiss(caseId, 'evidence_present', key, 'variant_missing')

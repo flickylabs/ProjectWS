@@ -68,14 +68,15 @@ export default function PCGameplayOverlay() {
     const state = useGameStore.getState()
 
     // Tier 1: collapse/crack은 컷씬 유지 + 공명 발사 (증거 카드로)
-    if (resultType === 'collapse' || resultType === 'crack') {
+    if (resultType === 'collapse' || resultType === 'crack' || pendingEvidenceResult.courtBeat) {
       state.enqueueFeedback({
         kind: 'evidence_result',
         title: descriptor.title,
         subtitle: descriptor.subtitle,
         body: descriptor.body,
         tone: descriptor.tone,
-        autoDismissMs: 3200,
+        courtBeat: pendingEvidenceResult.courtBeat,
+        ...(pendingEvidenceResult.courtBeat ? {} : { autoDismissMs: 3200 }),
       })
       // 증거 결과는 카드 micro 강조로 축소한다.
       const evidenceId = pendingEvidenceResult.evidenceId
@@ -88,6 +89,21 @@ export default function PCGameplayOverlay() {
     }
 
     // 관찰 패널 기록 — 모든 결과(collapse/crack/hold)
+    if (
+      pendingEvidenceResult.courtBeat?.notebookEntry &&
+      pendingEvidenceResult.courtBeat.beatType !== 'evidence_miss'
+    ) {
+      state.addNotebookEntry({
+        turnCount: state.turnCount,
+        category: 'critical_contradiction',
+        iconId: 'i-doc',
+        title: `${evidenceName}로 확인한 모순`,
+        summary: pendingEvidenceResult.courtBeat.notebookEntry,
+        party: pendingEvidenceResult.courtBeat.portraitReaction?.party,
+        linkedDialogueId: findLinkedDialogueId(),
+      })
+    }
+
     state.addJudgeObservation({
       turnCount: state.turnCount,
       category: 'evidence',

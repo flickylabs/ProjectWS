@@ -170,7 +170,7 @@
       },
       "d-2": {
         "surface": "개인 비자금 출금",
-        "truth": "형 빚을 돕기 위한 개인 비자금 2,000만원 현금 전달",
+        "truth": "형 빚을 돕기 위한 개인 비자금 3,000만원 현금 전달",
         "protectedSurface": "개인 계좌 출금의 사용처",
         "truthLexemes": [
           "형 빚",
@@ -553,7 +553,7 @@
             "blocked": []
           },
           "S5": {
-            "allowed": "형·조카 돌봄 자백과 개인 비자금 2,000만원 인정",
+            "allowed": "형·조카 돌봄 자백과 개인 비자금 3,000만원 인정",
             "blocked": []
           }
         }
@@ -612,7 +612,7 @@
         "policy": "confirm-ui-path-before-runtime-fix"
       },
       "v3Design.authorityPlacements[3].purpose": {
-        "sourceText": "형, 조카, 2,000만 원 같은 실체 명사 강제",
+        "sourceText": "형, 조카, 3,000만 원 같은 실체 명사 강제",
         "surfaceText": "숨긴 관계와 금액 같은 실체 명사 강제",
         "exposure": "unknown-internal-candidate",
         "policy": "confirm-ui-path-before-runtime-fix"
@@ -701,7 +701,7 @@
         "surfaceFallback": "영수증의 품목과 문자 일정이 같은 생활 맥락을 가리킵니다."
       },
       "combine-3": {
-        "sourceText": "새벽 통화 상대로 나간 돈의 흐름이 맞물린다. 이준호 개인 비자금 2,000만원이 형 쪽으로 움직인 경로가 드러난다.",
+        "sourceText": "새벽 통화 상대로 나간 돈의 흐름이 맞물린다. 이준호 개인 비자금 3,000만원이 형 쪽으로 움직인 경로가 드러난다.",
         "truthLexemes": [
           "형 쪽",
           "비자금"
@@ -1062,7 +1062,7 @@
             "stage": 0,
             "name": "목돈 출금 표면",
             "surfaceClaim": "개인 계좌에서 큰 현금이 빠져나갔고 사용처가 불분명하다.",
-            "hiddenTruth": "이준호는 개인 비자금 2,000만원을 개인회생 중인 형에게 현금으로 전달했다.",
+            "hiddenTruth": "이준호는 개인 비자금 3,000만원을 개인회생 중인 형에게 현금으로 전달했다.",
             "entryConditions": [
               "d-1 truthStage >= 3 또는 partyA d-1 lieState >= S3",
               "e-5가 새 자금 흐름 단서로 등장"
@@ -1103,14 +1103,14 @@
           {
             "stage": 1,
             "name": "금액과 방식 고정",
-            "surfaceClaim": "2,000만원대 현금 출금 자체는 확인된다.",
+            "surfaceClaim": "3,000만원대 현금 출금 자체는 확인된다.",
             "hiddenTruth": "현금 방식은 형의 개인회생 사정 때문에 선택됐다.",
             "entryConditions": [
               "e-5 stage >= Excerpt 또는 investigationStage >= 1",
               "이준호가 출금 사실을 일부 인정"
             ],
             "allowedDisclosure": [
-              "2,000만원대",
+              "3,000만원대",
               "현금 출금",
               "공동 적금과 별개인 개인 계좌",
               "큰돈을 말하지 않음"
@@ -1191,7 +1191,7 @@
             "stage": 3,
             "name": "형에게 간 돈",
             "surfaceClaim": "돈은 외도 비용이 아니지만 배우자에게 숨겨진 큰 결정이었다.",
-            "hiddenTruth": "이준호는 형의 사정을 돕기 위해 개인 비자금 2,000만원을 현금으로 전달했다.",
+            "hiddenTruth": "이준호는 형의 사정을 돕기 위해 개인 비자금 3,000만원을 현금으로 전달했다.",
             "entryConditions": [
               "partyB lieState >= S3 on d-2",
               "e-5 stage >= Original",
@@ -1242,7 +1242,7 @@
               "d-1 truthStage >= 4 또는 player-discovered 가족 경로 확인"
             ],
             "allowedDisclosure": [
-              "NPC 자백에서는 형/개인회생/2,000만원 언급 가능",
+              "NPC 자백에서는 형/개인회생/3,000만원 언급 가능",
               "player-discovered detail에서는 현금 전달 경로 언급 가능",
               "판결 후 자유 공개"
             ],

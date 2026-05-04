@@ -51,10 +51,15 @@ export default function PCLeftPanel() {
   const getCombinableEvidenceIds = useStore((s) => s.getCombinableEvidenceIds)
   const getCombinationPartnerHints = useStore((s) => s.getCombinationPartnerHints)
   const combinationLabRuntime = useStore((s) => (s as any).combinationLabRuntime)
+  const migrateCombinationLabRuntime = useStore((s) => s.migrateCombinationLabRuntime)
   const combinableIds = useMemo(() => getCombinableEvidenceIds(), [getCombinableEvidenceIds, evidenceStates])
   const partnerHints = useMemo(() => getCombinationPartnerHints(), [getCombinationPartnerHints, evidenceStates, combinationLabRuntime])
   const lastFocusedDisputeId = useStore((s) => s.lastFocusedDisputeId)
   const [timelineOpen, setTimelineOpen] = useState(false)
+
+  useEffect(() => {
+    migrateCombinationLabRuntime()
+  }, [migrateCombinationLabRuntime, caseData?.caseId])
 
   // Phase 1 (사전진술) 등에서는 증거 인터랙션 차단 — 스크립트 흐름 보존.
   // 활성 Phase 체계: 0(브리핑) → 1(사전진술) → 2(심문 = Phase.Interrogation) → 3a(중재) → 3b(판결)

@@ -228,7 +228,7 @@
       "defenderLieState": "S4",
       "spoilerLevel": "partial",
       "previousStatement": "출금 사실은 기억나지 않는다고 재판 내내 같은 말을 반복했습니다.",
-      "currentStatement": "2,000만원을 인출한 사실은 있다고 뒤늦게 인정했습니다.",
+      "currentStatement": "3,000만원을 인출한 사실은 있다고 뒤늦게 인정했습니다.",
       "judgePursuitLine": "이준호 씨, 기억나지 않는다는 말과 인출했다는 말이 다릅니다.",
       "defenderReactionLine": "인출은 맞습니다. 다만 제 욕심이 아니라 급한 데 쓰려고 했고, 말할 용기가 없었습니다.",
       "options": {
@@ -250,8 +250,8 @@
       "defenderLieState": "S5",
       "spoilerLevel": "full",
       "previousStatement": "개인 지출이라고만 하고 돈의 최종 행선지를 숨겼습니다.",
-      "currentStatement": "비자금 2,000만원을 형에게 현금으로 건넸다고 시인했습니다.",
-      "judgePursuitLine": "이준호 씨, 비자금 2,000만원을 형에게 전달한 사실을 인정합니까?",
+      "currentStatement": "비자금 3,000만원을 형에게 현금으로 건넸다고 시인했습니다.",
+      "judgePursuitLine": "이준호 씨, 비자금 3,000만원을 형에게 전달한 사실을 인정합니까?",
       "defenderReactionLine": "네, 형에게 줬습니다. 제 돈처럼 숨긴 건 잘못이지만, 외도를 위한 돈은 아니었습니다.",
       "options": {
         "point_out": {
@@ -641,7 +641,7 @@
       "disputeId": "d-2",
       "partyA": {
         "name": "박지연",
-        "statement": "생활비가 빠듯한데 2,000만원이 빠져나갔습니다. 제게 말하지 않은 돈을 개인 사정이라고 넘길 수 없습니다."
+        "statement": "생활비가 빠듯한데 3,000만원이 빠져나갔습니다. 제게 말하지 않은 돈을 개인 사정이라고 넘길 수 없습니다."
       },
       "partyB": {
         "name": "이준호",

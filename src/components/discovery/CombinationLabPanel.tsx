@@ -234,6 +234,7 @@ export default function CombinationLabPanel() {
     const result = store.runCombinationRecipe(matchingRecipe.id)
     if (!result.ok) {
       const reason =
+        result.reason === 'output_already_discovered' ? '이미 기록된 결론입니다. 다른 조합을 시도해 주세요.' :
         result.reason === 'recipe_locked' ? '지금은 이 조합을 실행할 수 없습니다.' :
         result.reason === 'no_config' ? '이 사건에는 조합 실험실 데이터가 없습니다.' :
         '조합 실행에 실패했습니다.'

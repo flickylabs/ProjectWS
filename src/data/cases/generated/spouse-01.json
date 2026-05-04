@@ -15,9 +15,9 @@
     ],
     "twistModule": "TW-spouse-v3-1",
     "difficulty": "hard",
-    "anchorTruth": "박지연은 남편이 딴살림을 차렸다고 확신한 뒤 위임장을 조작하여 공동 적금 3,000만원을 해지했고, 투자 사기로 전액 손실했다. 이준호는 외도가 아니라 개인회생 중인 친형의 조카(중2)를 돌보고 있었고, 개인 비자금에서 2,000만원을 현금으로 형에게 전달했다.",
+    "anchorTruth": "박지연은 남편이 딴살림을 차렸다고 확신한 뒤 위임장을 조작하여 공동 적금 3,000만원을 해지했고, 투자 사기로 전액 손실했다. 이준호는 외도가 아니라 개인회생 중인 친형의 조카(중2)를 돌보고 있었고, 개인 비자금에서 3,000만원을 현금으로 형에게 전달했다.",
     "emotionalBait": "매일 퇴근 후 같은 오피스텔에 들렀다 오는 남편. 차에서 발견된 여성용품 영수증. 새벽의 통화. 아내는 남편의 딴 살림을 확신한다.",
-    "resolutionDilemma": "개인회생 중인 형과 조카를 지키려다 개인 비자금 2,000만원을 현금으로 전달한 남편과, 배신당했다고 확신하고 위임장을 조작하여 공동 적금 3,000만원을 해지한 뒤 투자 사기로 날린 아내 중 누가 더 무거운 책임을 져야 하는가. 숨김은 남편이 먼저, 계좌 감시는 아내가 먼저, 범죄 행위는 아내가 저질렀다.",
+    "resolutionDilemma": "개인회생 중인 형과 조카를 지키려다 개인 비자금 3,000만원을 현금으로 전달한 남편과, 배신당했다고 확신하고 위임장을 조작하여 공동 적금 3,000만원을 해지한 뒤 투자 사기로 날린 아내 중 누가 더 무거운 책임을 져야 하는가. 숨김은 남편이 먼저, 계좌 감시는 아내가 먼저, 범죄 행위는 아내가 저질렀다.",
     "title": "매일 아내 몰래 오피스텔에 머물다 오는 남편"
   },
   "duo": {
@@ -80,7 +80,7 @@
       "dailyRoutine": "매장 마감 뒤 형네 오피스텔에 들러 조카 저녁과 생필품을 챙기고 새벽에는 형 사정을 확인한 뒤 집으로 돌아왔다.",
       "sensitivePoints": [
         "오피스텔 방문과 새벽 전화는 딴살림 흔적인가",
-        "개인 비자금에서 2,000만원을 현금으로 형에게 전달한 것은 배우자 동의 없는 독단인가",
+        "개인 비자금에서 3,000만원을 현금으로 형에게 전달한 것은 배우자 동의 없는 독단인가",
         "은폐와 선제행동의 순서"
       ],
       "verbalTells": [
@@ -135,7 +135,7 @@
       {
         "id": "ledger-3",
         "category": "silenced",
-        "description": "B는 개인 비자금에서 2,000만원을 형에게 현금 전달했고, A는 위임장을 조작해 공동 적금 3,000만원을 해지한 뒤 투자방에 넣었다가 잃었다.",
+        "description": "B는 개인 비자금에서 3,000만원을 형에게 현금 전달했고, A는 위임장을 조작해 공동 적금 3,000만원을 해지한 뒤 투자방에 넣었다가 잃었다.",
         "isReal": true,
         "whoRemembersAccurately": "both",
         "whoDistorts": "none",
@@ -297,7 +297,7 @@
       "id": "d-2",
       "name": "남편 명의 계좌의 목돈 출금",
       "truth": true,
-      "truthDescription": "이준호는 본인 명의 개인 계좌의 비자금에서 2,000만원을 현금으로 출금하여 형에게 전달했다. 형이 개인회생 중이라 계좌 입금이 불가능했다. 공동 적금과는 무관한 개인 자금이다.",
+      "truthDescription": "이준호는 아내 몰래 10년 가까이 모아 둔 본인 명의 별도 계좌의 비자금 3,000만원을 최근 4개월 동안 500만원, 800만원, 700만원, 1,000만원 순서로 현금 출금했다. 형이 개인회생 중이라 계좌 입금이 곤란해 현금으로 전달했다는 설명이며, 공동 적금과는 무관한 개인 자금이다.",
       "quadrant": "b_only",
       "requiredEvidence": [
         "e-5"
@@ -310,7 +310,7 @@
       "weight": "high",
       "mediationLink": "남편 측 현금 흐름의 사용처",
       "legitimacyIssue": true,
-      "judgmentStatement": "개인 비자금 2,000만원 현금 전달은 남편 책임이 더 크다.",
+      "judgmentStatement": "개인 비자금 3,000만원 현금 전달은 남편 책임이 더 크다.",
       "hidden": false,
       "v3Visibility": "hidden",
       "unlockCondition": {
@@ -324,9 +324,9 @@
         "authoredRule": "d-1 심문에서 오피스텔 방문의 진실이 무너지면 목돈 출금 발견으로 새 쟁점 부상"
       },
       "verdictOptions": {
-        "wrong": "개인 비자금 2,000만원은 이준호가 개인 유흥에 쓴 돈이다.",
+        "wrong": "개인 비자금 3,000만원은 이준호가 개인 유흥에 쓴 돈이다.",
         "partial": "비자금 출금은 사실이지만, 정확한 사용처는 불확실하다.",
-        "truth": "개인 비자금 2,000만원은 개인회생 중인 형에게 현금으로 전달한 돈이었다.",
+        "truth": "개인 비자금 3,000만원은 개인회생 중인 형에게 현금으로 전달한 돈이었다.",
         "defer": "사용처를 단정할 수 없다. 판단을 유보한다."
       }
     },
@@ -372,7 +372,7 @@
       "id": "h-d4",
       "name": "은폐와 선제행동의 순서",
       "truth": true,
-      "truthDescription": "숨김은 B가 먼저(개인 비자금 2천만+형 상황 은폐), 계좌 감시는 A가 먼저(신혼 초), 돈 실행은 동시기(B 4개월 전 2천만 현금 출금, A 6주 전 공동 적금 3천만 위임장 조작 해지), 범죄 행위는 A(위임장 조작).",
+      "truthDescription": "숨김은 B가 먼저(개인 비자금 3천만+형 상황 은폐), 계좌 감시는 A가 먼저(신혼 초), 돈 실행은 동시기(B 4개월 전 3천만 현금 출금, A 6주 전 공동 적금 3천만 위임장 조작 해지), 범죄 행위는 A(위임장 조작).",
       "quadrant": "shared_misconception",
       "requiredEvidence": [
         "e-5",
@@ -3167,8 +3167,8 @@
       "id": "e-5",
       "name": "이준호의 개인 계좌 출금 내역",
       "surfaceName": "개인 계좌 출금 내역",
-      "description": "이준호 본인 명의 개인 계좌에서 목돈이 현금으로 출금된 기록. 공동 적금과는 별개.",
-      "surfaceDescription": "한 번에 빠져나간 큰 금액의 출금 기록이 보인다.",
+      "description": "이준호 본인 명의 별도 계좌에서 10년간 모은 비자금 3,000만원이 최근 4개월 동안 현금으로 나뉘어 출금된 기록. 공동 적금과는 별개다.",
+      "surfaceDescription": "아내에게 공유되지 않은 별도 계좌와 현재 수만 원대 잔액이 보인다.",
       "type": "bank",
       "reliability": "hard",
       "completeness": "original",
@@ -3183,9 +3183,9 @@
       ],
       "requiredLieState": "S2",
       "investigationResults": {
-        "request_original": "이준호 명의 개인 계좌의 별도 자금에서 목돈이 현금으로 출금된 기록이다.",
-        "check_metadata": "출금 시점은 4개월 전이며, 오피스텔 방문 시작 시점과 일치한다. 해당 계좌는 이준호 단독 명의.",
-        "restore_context": "형에게 현금으로 전달하기 위한 출금이었다. 형은 개인회생 중이라 계좌 입금이 불가능했다. 공동 적금과는 무관한 이준호 개인 자금이다."
+        "request_original": "이준호 명의의 별도 계좌가 확인된다. 배우자에게 공유된 생활비 계좌가 아니며, 현재 잔액은 수만 원만 남아 있다.",
+        "check_metadata": "해당 계좌에는 10년 전부터 급여 잔액과 현금이 조금씩 모인 기록이 이어진다. 누적 보유액은 3,000만원을 조금 넘는다.",
+        "restore_context": "최근 4개월 동안 총 3,000만원이 500만원, 800만원, 700만원, 1,000만원 순서로 현금 출금됐다. 은행 직원이 설명한 500만-800만-700만-1,000만원 분할 출금 패턴과 같고, 그 결과 현재 잔액은 수만 원만 남았다."
       },
       "subjectParty": "both",
       "investigationStages": [
@@ -3193,207 +3193,322 @@
           "stage": 1,
           "revealKey": "request_original",
           "question": {
-            "text": "이 출금 기록은 본인 계좌 맞습니까?",
+            "text": "이준호 씨, 이 별도 계좌는 배우자에게 알린 계좌였습니까?",
             "attackVector": "authenticity"
           },
-          "label": "내역확인",
+          "label": "별도계좌확인",
           "unlockHint": null
         },
         {
           "stage": 2,
           "revealKey": "check_metadata",
           "question": {
-            "text": "왜 2,000만원을 현금으로 출금했습니까?",
+            "text": "10년 동안 조금씩 모은 이 3,000만원대 자금을 왜 숨겼습니까?",
             "attackVector": "context"
           },
-          "label": "금액대조",
-          "unlockHint": "내역을 확인하면 2,000만원 현금 출금 시점과 방문 시작 시점을 대조할 수 있습니다."
+          "label": "장기축적확인",
+          "unlockHint": "내역을 더 확인하면 10년 동안 소액을 모아 3,000만원대 비자금을 만든 흐름을 볼 수 있습니다."
         },
         {
           "stage": 3,
           "revealKey": "restore_context",
           "question": {
-            "text": "현금 출금 후 그 돈은 어디로 갔습니까?",
+            "text": "최근 4개월 동안 500만원, 800만원, 700만원, 1,000만원 순서로 현금을 뺀 이유를 말씀하십시오.",
             "attackVector": "responsibility"
           },
-          "label": "사용추궁",
-          "unlockHint": "금액과 시점을 대조하면 그 현금이 실제로 어디로 갔는지 추궁할 수 있습니다."
+          "label": "분할출금추궁",
+          "unlockHint": "출금 패턴을 확인하면 은행 직원 증언과 같은 방식으로 500만원, 800만원, 700만원, 1,000만원이 순차 인출된 사실을 추궁할 수 있습니다."
         }
       ],
       "partyContext": {
         "a": {
-          "questionAngle": "이 출금을 어떻게 알게 되었습니까?",
-          "implication": "어떻게 그 출금을 알게 됐는지를 두고 A의 입장이 흔들릴 수 있다."
+          "questionAngle": "이 별도 계좌의 존재를 언제 알게 되었습니까?",
+          "implication": "배우자에게 공유되지 않은 계좌를 어떻게 알게 됐는지를 두고 A의 감시 경위가 흔들릴 수 있다."
         },
         "b": {
-          "questionAngle": "이 돈을 누구에게 왜 전달했습니까?",
-          "implication": "이 큰돈이 어디로, 누구에게 갔는지 B의 설명이 필요하다."
+          "questionAngle": "이 돈을 왜 500만원, 800만원, 700만원, 1,000만원 순서로 현금 출금했습니까?",
+          "implication": "10년간 모은 돈이 왜 현금으로 빠졌는지 B의 설명이 필요하다."
         }
       },
       "v3DepthPlan": [
         {
           "id": "stub",
           "label": "Stub",
-          "summary": "출금 기록 존재만 보임"
+          "summary": "별도 계좌와 현재 소액 잔액만 보임"
         },
         {
           "id": "excerpt",
           "label": "Excerpt",
-          "summary": "2,000만원 현금 출금 기록"
+          "summary": "10년간 소액 적립된 3,000만원대 비자금 흐름"
         },
         {
           "id": "original",
           "label": "Original",
-          "summary": "출금 시점, 금액, 방식 확인"
+          "summary": "4개월 동안 500만원, 800만원, 700만원, 1,000만원 순서로 현금 출금된 기록"
         },
         {
           "id": "context",
           "label": "Context",
-          "summary": "오피스텔 방문 시작 시점과 일치"
+          "summary": "은행 직원 증언과 같은 500만-800만-700만-1,000만원 분할 출금 패턴"
         },
         {
           "id": "established",
           "label": "Established",
-          "summary": "현금 전달처와 목적이 확정된 단계"
+          "summary": "현재 잔액이 수만 원만 남은 단계"
         }
       ],
       "v3TrustStates": [
         {
           "id": "submitted",
           "label": "제출됨",
-          "summary": "A가 통장내역 일부 제출"
+          "summary": "A가 별도 계좌 잔액 내역 일부 제출"
         },
         {
           "id": "verifying",
           "label": "검증 중",
-          "summary": "계좌 원본 조회와 앱 원본 확인"
+          "summary": "은행 원본 조회로 계좌 명의와 장기 보유 확인"
         },
         {
           "id": "authenticated",
           "label": "인증됨",
-          "summary": "해지와 이체가 동일 날짜로 확인"
+          "summary": "10년간 적립과 4개월 분할 현금 출금 확인"
         },
         {
           "id": "challenged",
           "label": "이의 제기됨",
-          "summary": "B가 빌려준 돈이라며 출금 성격을 다르게 주장"
+          "summary": "B가 형에게 준 돈이라며 사용처를 별도로 설명"
         },
         {
           "id": "misread",
           "label": "조작/오독 판정",
-          "summary": "기록 자체는 인증되지만 돈이 어디 쓰였는지는 맥락과 심문으로 확정된다"
+          "summary": "기록 자체는 인증되지만 전달 목적은 심문과 증언으로 확정된다"
         }
       ],
       "meta": {
-        "name": "이준호의 계좌 출금 내역",
+        "name": "이준호의 개인 계좌 출금 내역",
         "type": "bank",
         "viewerType": "bank",
-        "trustLevel": "mid",
-        "trustLabel": "보통",
+        "trustLevel": "high",
+        "trustLabel": "높음",
         "source": "org",
         "sourceLabel": "기관",
         "legality": "ok",
         "legalLabel": "적법",
-        "stage": 5,
-        "stageLabel": "핵심 공개",
+        "stage": 3,
+        "stageLabel": "3단계 - 4개월 분할 출금",
         "sourceNote": "institutional / original",
         "redactions": []
       },
       "viewerData": {
         "meta": {
-          "name": "이준호의 계좌 출금 내역",
+          "name": "이준호의 개인 계좌 출금 내역",
           "type": "bank",
           "viewerType": "bank",
-          "trustLevel": "mid",
-          "trustLabel": "보통",
+          "trustLevel": "high",
+          "trustLabel": "높음",
           "source": "org",
           "sourceLabel": "기관",
           "legality": "ok",
           "legalLabel": "적법",
-          "stage": 5,
-          "stageLabel": "핵심 공개",
+          "stage": 3,
+          "stageLabel": "3단계 - 4개월 분할 출금",
           "sourceNote": "institutional / original",
           "redactions": []
         },
         "bank": [
           {
-            "date": "2026.02.01",
-            "desc": "급여 입금 — ○○전자매장",
-            "amount": "+3,100,000",
-            "balance": "5,842,300",
+            "date": "2025.09.30",
+            "desc": "장기 적립 누계 - 10년간 모은 별도 자금",
+            "amount": "+30,048,600",
+            "balance": "30,048,600",
             "suspicious": false
           },
           {
-            "date": "2026.02.03",
-            "desc": "카드결제 — GS25 관악중앙",
-            "amount": "-4,200",
-            "balance": "5,838,100",
-            "suspicious": false
-          },
-          {
-            "date": "2026.02.05",
-            "desc": "현금 인출 — 마포지점 ATM",
+            "date": "2025.10.18",
+            "desc": "현금 인출 - 마포지점 창구",
             "amount": "-5,000,000",
-            "balance": "838,100",
+            "balance": "25,048,600",
             "suspicious": true
           },
           {
-            "date": "2026.02.07",
-            "desc": "자동이체 — SK텔레콤 통신료",
-            "amount": "-68,200",
-            "balance": "769,900",
-            "suspicious": false
-          },
-          {
-            "date": "2026.02.08",
-            "desc": "카드결제 — CU 관악봉천",
-            "amount": "-6,500",
-            "balance": "763,400",
-            "suspicious": false
-          },
-          {
-            "date": "2026.02.10",
-            "desc": "현금 인출 — 관악지점 ATM",
+            "date": "2025.11.22",
+            "desc": "현금 인출 - 관악지점 ATM",
             "amount": "-8,000,000",
-            "balance": "-7,236,600",
+            "balance": "17,048,600",
             "suspicious": true
           },
           {
-            "date": "2026.02.12",
-            "desc": "입금 — 이○○ (모친)",
-            "amount": "+2,000,000",
-            "balance": "-5,236,600",
-            "suspicious": false
-          },
-          {
-            "date": "2026.02.15",
-            "desc": "현금 인출 — 마포지점 ATM",
+            "date": "2025.12.20",
+            "desc": "현금 인출 - 마포지점 ATM",
             "amount": "-7,000,000",
-            "balance": "-12,236,600",
+            "balance": "10,048,600",
             "suspicious": true
           },
           {
-            "date": "2026.02.18",
-            "desc": "자동이체 — 아파트관리비",
-            "amount": "-234,500",
-            "balance": "-12,471,100",
-            "suspicious": false
-          },
-          {
-            "date": "2026.02.20",
-            "desc": "현금 인출 — 강서지점 ATM",
+            "date": "2026.01.24",
+            "desc": "현금 인출 - 강서지점 창구",
             "amount": "-10,000,000",
-            "balance": "-22,471,100",
+            "balance": "48,600",
             "suspicious": true
           },
           {
             "date": "2026.02.22",
-            "desc": "카드결제 — 올리브영 봉천역",
-            "amount": "-43,500",
-            "balance": "-22,514,600",
-            "suspicious": false
+            "desc": "잔액 조회 - 분할 출금 후 현재 잔액",
+            "amount": "조회",
+            "balance": "48,600",
+            "suspicious": true
           }
         ]
+      },
+      "viewerDataByStage": {
+        "1": {
+          "meta": {
+            "name": "이준호의 개인 계좌 출금 내역",
+            "type": "bank",
+            "viewerType": "bank",
+            "trustLevel": "high",
+            "trustLabel": "높음",
+            "source": "org",
+            "sourceLabel": "기관",
+            "legality": "ok",
+            "legalLabel": "적법",
+            "stage": 1,
+            "stageLabel": "1단계 - 별도 계좌와 현재 잔액",
+            "sourceNote": "institutional / original",
+            "redactions": []
+          },
+          "bank": [
+            {
+              "date": "2016.03.02",
+              "desc": "계좌 개설 - 이준호 명의 별도 자유입출금 계좌",
+              "amount": "0",
+              "balance": "0",
+              "suspicious": false
+            },
+            {
+              "date": "2026.02.22",
+              "desc": "잔액 조회 - 배우자에게 공유되지 않은 별도 계좌",
+              "amount": "조회",
+              "balance": "48,600",
+              "suspicious": true
+            }
+          ]
+        },
+        "2": {
+          "meta": {
+            "name": "이준호의 개인 계좌 출금 내역",
+            "type": "bank",
+            "viewerType": "bank",
+            "trustLevel": "high",
+            "trustLabel": "높음",
+            "source": "org",
+            "sourceLabel": "기관",
+            "legality": "ok",
+            "legalLabel": "적법",
+            "stage": 2,
+            "stageLabel": "2단계 - 10년간 적립 내역",
+            "sourceNote": "institutional / original",
+            "redactions": []
+          },
+          "bank": [
+            {
+              "date": "2016.03.25",
+              "desc": "정기이체 - 급여 잔액 소액 적립",
+              "amount": "+120,000",
+              "balance": "120,000",
+              "suspicious": false
+            },
+            {
+              "date": "2018.11.30",
+              "desc": "현금 입금 - 명절·상여 잔액 적립",
+              "amount": "+300,000",
+              "balance": "6,850,000",
+              "suspicious": false
+            },
+            {
+              "date": "2021.08.10",
+              "desc": "정기이체 - 월 생활비 잔액 적립",
+              "amount": "+150,000",
+              "balance": "17,420,000",
+              "suspicious": false
+            },
+            {
+              "date": "2024.12.31",
+              "desc": "장기 적립 누계 - 10년간 소액 축적분",
+              "amount": "+12,628,600",
+              "balance": "30,048,600",
+              "suspicious": true
+            },
+            {
+              "date": "2026.02.22",
+              "desc": "잔액 조회 - 최근 출금 후 남은 잔액",
+              "amount": "조회",
+              "balance": "48,600",
+              "suspicious": true
+            }
+          ]
+        },
+        "3": {
+          "meta": {
+            "name": "이준호의 개인 계좌 출금 내역",
+            "type": "bank",
+            "viewerType": "bank",
+            "trustLevel": "high",
+            "trustLabel": "높음",
+            "source": "org",
+            "sourceLabel": "기관",
+            "legality": "ok",
+            "legalLabel": "적법",
+            "stage": 3,
+            "stageLabel": "3단계 - 4개월 분할 출금",
+            "sourceNote": "institutional / original",
+            "redactions": []
+          },
+          "bank": [
+            {
+              "date": "2025.09.30",
+              "desc": "장기 적립 누계 - 10년간 모은 별도 자금",
+              "amount": "+30,048,600",
+              "balance": "30,048,600",
+              "suspicious": false
+            },
+            {
+              "date": "2025.10.18",
+              "desc": "현금 인출 - 마포지점 창구",
+              "amount": "-5,000,000",
+              "balance": "25,048,600",
+              "suspicious": true
+            },
+            {
+              "date": "2025.11.22",
+              "desc": "현금 인출 - 관악지점 ATM",
+              "amount": "-8,000,000",
+              "balance": "17,048,600",
+              "suspicious": true
+            },
+            {
+              "date": "2025.12.20",
+              "desc": "현금 인출 - 마포지점 ATM",
+              "amount": "-7,000,000",
+              "balance": "10,048,600",
+              "suspicious": true
+            },
+            {
+              "date": "2026.01.24",
+              "desc": "현금 인출 - 강서지점 창구",
+              "amount": "-10,000,000",
+              "balance": "48,600",
+              "suspicious": true
+            },
+            {
+              "date": "2026.02.22",
+              "desc": "잔액 조회 - 분할 출금 후 현재 잔액",
+              "amount": "조회",
+              "balance": "48,600",
+              "suspicious": true
+            }
+          ]
+        }
       }
     },
     {
@@ -3903,7 +4018,7 @@
     },
     {
       "id": "t-2",
-      "fact": "B는 개인 비자금 2,000만 원을 배우자에게 숨기고 형에게 현금으로 전달했다.",
+      "fact": "B는 개인 비자금 3,000만 원을 배우자에게 숨기고 형에게 현금으로 전달했다.",
       "isTrue": true,
       "weight": 10,
       "quadrant": "b_only"
@@ -4206,7 +4321,7 @@
   ],
   "solutions": {
     "공동재산회복": [
-      "개인 비자금 2,000만 원 출금과 공동 적금 3,000만 원 송금의 흐름을 분리 정리하고 회수 가능 금액과 손실액을 다시 맞춘다.",
+      "개인 비자금 3,000만 원 출금과 공동 적금 3,000만 원 송금의 흐름을 분리 정리하고 회수 가능 금액과 손실액을 다시 맞춘다.",
       "형네 지원은 부부 공동재산과 분리된 별도 합의 절차로만 허용한다."
     ],
     "신뢰순서분리": [
@@ -4403,12 +4518,11 @@
         "type": "derived_note",
         "label": "dc-1 오피스텔의 사람들",
         "linkedDisputeIds": [
-          "d-1",
-          "h-d4"
+          "d-1"
         ],
         "linkedEvidenceIds": [
-          "e-2",
-          "e-4"
+          "e-1",
+          "e-2"
         ],
         "visibility": "derived"
       },
@@ -4441,7 +4555,7 @@
       {
         "id": "dc-4",
         "type": "derived_note",
-        "label": "dc-4 2,000만 원의 수치",
+        "label": "dc-4 3,000만 원의 수치",
         "linkedDisputeIds": [
           "d-2"
         ],
@@ -4453,7 +4567,7 @@
       {
         "id": "dc-5",
         "type": "derived_note",
-        "label": "dc-5 5,000만 원의 순서",
+        "label": "dc-5 6,000만 원의 순서",
         "linkedDisputeIds": [
           "h-d4"
         ],
@@ -4461,6 +4575,20 @@
           "e-5",
           "e-6",
           "e-7"
+        ],
+        "visibility": "derived"
+      },
+      {
+        "id": "dc-6",
+        "type": "derived_note",
+        "label": "dc-6 가족 쪽 정황",
+        "linkedDisputeIds": [
+          "d-1",
+          "d-2"
+        ],
+        "linkedEvidenceIds": [
+          "e-1",
+          "e-4"
         ],
         "visibility": "derived"
       }
@@ -4503,7 +4631,7 @@
             "kind": "upgrade_evidence",
             "evidenceUpgrade": {
               "evidenceId": "e-4",
-              "toReliability": "verified"
+              "toReliability": "hard"
             }
           }
         ],
@@ -4529,10 +4657,10 @@
       },
       {
         "id": "dc-4",
-        "label": "dc-4 2,000만 원의 수치",
+        "label": "dc-4 3,000만 원의 수치",
         "summary": "이준호 씨의 개인 자금이 어디로, 왜 빠져나갔는지 묻는 카드",
         "nodeType": "derived_note",
-        "noteText": "2,000만 원의 수치",
+        "noteText": "3,000만 원의 수치",
         "effects": [
           {
             "kind": "unlock_note",
@@ -4551,10 +4679,10 @@
       },
       {
         "id": "dc-5",
-        "label": "dc-5 5,000만 원의 순서",
+        "label": "dc-5 6,000만 원의 순서",
         "summary": "숨김의 시작과 실제 송금 실행을 분리하는 카드",
         "nodeType": "derived_note",
-        "noteText": "5,000만 원의 순서",
+        "noteText": "6,000만 원의 순서",
         "effects": [
           {
             "kind": "unlock_note",
@@ -4566,6 +4694,27 @@
           }
         ],
         "judgeHint": "박미라 증인이 투자방 가입 경로를 결정적으로 채워줄 것입니다."
+      },
+      {
+        "id": "dc-6",
+        "label": "dc-6 가족 쪽 정황",
+        "summary": "영수증의 참고서와 문자 속 학교 알림을 함께 보며 가족 쪽 정황을 분리하는 카드",
+        "nodeType": "derived_note",
+        "noteText": "가족 쪽 정황",
+        "effects": [
+          {
+            "kind": "unlock_note",
+            "unlockNodeId": "dc-6"
+          },
+          {
+            "kind": "upgrade_evidence",
+            "evidenceUpgrade": {
+              "evidenceId": "e-4",
+              "toReliability": "hard"
+            }
+          }
+        ],
+        "judgeHint": "문자와 구매 품목이 같은 가족 쪽 정황을 가리킵니다. 누구와 관련된 일인지와 왜 숨겼는지를 따로 확인해야 합니다."
       }
     ],
     "recipes": [
@@ -4587,8 +4736,8 @@
           "e-4"
         ],
         "cost": 1,
-        "discoveryText": "영수증의 중학교 참고서와 문자에 섞인 학교 알림이 같은 정황을 가리킨다.",
-        "outputId": "dc-1",
+        "discoveryText": "영수증 묶음 속 중학교 참고서와 문자에 섞인 학교 알림이 가족 쪽 정황으로 맞물린다.",
+        "outputId": "dc-6",
         "resultType": "dossier"
       },
       {
@@ -4886,7 +5035,7 @@
       {
         "action": "정확히 답변하십시오",
         "recommendedMoment": "B가 \"가족 쪽 일\" 같은 모호어를 반복할 때",
-        "purpose": "형, 조카, 2,000만 원 같은 실체 명사 강제"
+        "purpose": "형, 조카, 3,000만 원 같은 실체 명사 강제"
       },
       {
         "action": "분리심문",
@@ -4906,7 +5055,7 @@
       {
         "action": "잠정 인정",
         "recommendedMoment": "e-5 인증 후",
-        "purpose": "개인 비자금 2,000만 원 현금 출금 기록"
+        "purpose": "개인 비자금 3,000만 원 현금 출금 기록"
       },
       {
         "action": "잠정 인정",
@@ -4948,7 +5097,7 @@
     ],
     "officialRecordRecommendations": [
       "B의 오피스텔 방문 대상은 형과 조카였다.",
-      "B는 개인 비자금 2,000만 원을 배우자에게 숨기고 형에게 현금으로 전달했다.",
+      "B는 개인 비자금 3,000만 원을 배우자에게 숨기고 형에게 현금으로 전달했다.",
       "A는 남편 외도를 확신한 뒤 위임장을 조작해 공동 적금 3,000만 원을 투자방에 송금했다.",
       "숨김은 B가 먼저 시작했고 실제 비밀 송금은 A가 먼저 실행했다.",
       "두 사람 모두 말 못할 이유가 있었지만 둘 다 공동 재산을 혼자 움직였다."

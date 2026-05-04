@@ -15,7 +15,7 @@ import type {
 import type { CaseData, PartyId } from '../types'
 import type { Archetype } from '../types'
 import type { LieState } from '../types/agent'
-import { getMyCall, getJudgeReference, getAngryCall, canUseInformal } from './llmSpeechGuide'
+import { getMyCall, getJudgeReference, getAngryCall, canUseInformal, buildOpponentReferenceGuide } from './llmSpeechGuide'
 import { pp이가, pp은는, pp을를 } from './koreanPostposition'
 
 /**
@@ -36,6 +36,7 @@ export function buildBlueprintSystemPromptV2(
   const myCall = getMyCall(caseData.duo, party)
   const callForm = myCall === '자기' ? '자기야' : myCall
   const canInformalThis = canUseInformal(caseData, party)
+  const opponentReferenceGuide = buildOpponentReferenceGuide(caseData, party)
 
   // 선택된 atom의 의미 라벨
   const selectedAtomLabels = atomPlan.selectedAtoms
@@ -144,6 +145,7 @@ ${monetaryGuard}
 - 화났을 때: "${angryCall}" 허용
 - ${formalityGuide}
 - ❌ 재판관의 말을 생성하지 마. 당신은 ${profile.name}만 연기합니다.
+${opponentReferenceGuide}
 ${recentStr ? `\n## 최근 대화\n${recentStr}` : ''}
 
 ## 출력

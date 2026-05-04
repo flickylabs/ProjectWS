@@ -563,3 +563,238 @@ export function stopBgm() {
   }
   currentBgmTrack = ''
 }
+
+export type CourtBeatCue =
+  | 'silent'
+  | 'evidence'
+  | 'contradiction'
+  | 'dispute'
+  | 'witness'
+  | 'notebook'
+  | 'truth'
+  | 'emotion'
+  | 'choice'
+
+export type CourtBeatLevel = 'focus' | 'impact' | 'breakthrough'
+
+let courtBeatBgmRestoreTimer: number | null = null
+
+function duckBgmForCourtBeat(durationMs: number, volume: number) {
+  if (!bgmAudio || !bgmEnabled) return
+  const originalVolume = bgmAudio.volume
+  bgmAudio.volume = Math.min(originalVolume, volume)
+  if (courtBeatBgmRestoreTimer != null) {
+    window.clearTimeout(courtBeatBgmRestoreTimer)
+  }
+  courtBeatBgmRestoreTimer = window.setTimeout(() => {
+    if (bgmAudio) bgmAudio.volume = originalVolume
+    courtBeatBgmRestoreTimer = null
+  }, durationMs)
+}
+
+function playCourtBeatTone(
+  ctx: AudioContext,
+  at: number,
+  frequency: number,
+  duration: number,
+  type: OscillatorType,
+  gainValue: number,
+  destination: AudioNode = ctx.destination,
+) {
+  const osc = ctx.createOscillator()
+  const gain = ctx.createGain()
+  osc.type = type
+  osc.frequency.setValueAtTime(frequency, at)
+  gain.gain.setValueAtTime(0.001, at)
+  gain.gain.exponentialRampToValueAtTime(gainValue, at + 0.012)
+  gain.gain.exponentialRampToValueAtTime(0.001, at + duration)
+  osc.connect(gain).connect(destination)
+  osc.start(at)
+  osc.stop(at + duration)
+}
+
+function playCourtBeatSweep(
+  ctx: AudioContext,
+  at: number,
+  from: number,
+  to: number,
+  duration: number,
+  type: OscillatorType,
+  gainValue: number,
+  destination: AudioNode = ctx.destination,
+) {
+  const osc = ctx.createOscillator()
+  const gain = ctx.createGain()
+  osc.type = type
+  osc.frequency.setValueAtTime(from, at)
+  osc.frequency.exponentialRampToValueAtTime(to, at + duration)
+  gain.gain.setValueAtTime(0.001, at)
+  gain.gain.exponentialRampToValueAtTime(gainValue, at + 0.012)
+  gain.gain.exponentialRampToValueAtTime(0.001, at + duration)
+  osc.connect(gain).connect(destination)
+  osc.start(at)
+  osc.stop(at + duration)
+}
+
+function playCourtBeatNoise(ctx: AudioContext, at: number, duration: number, gainValue: number) {
+  const bufferSize = Math.max(1, Math.floor(ctx.sampleRate * duration))
+  const buffer = ctx.createBuffer(1, bufferSize, ctx.sampleRate)
+  const data = buffer.getChannelData(0)
+  for (let i = 0; i < bufferSize; i += 1) {
+    const falloff = 1 - i / bufferSize
+    data[i] = (Math.random() * 2 - 1) * falloff
+  }
+  const source = ctx.createBufferSource()
+  const filter = ctx.createBiquadFilter()
+  const gain = ctx.createGain()
+  source.buffer = buffer
+  filter.type = 'bandpass'
+  filter.frequency.setValueAtTime(1800, at)
+  filter.Q.value = 2.4
+  gain.gain.setValueAtTime(gainValue, at)
+  gain.gain.exponentialRampToValueAtTime(0.001, at + duration)
+  source.connect(filter).connect(gain).connect(ctx.destination)
+  source.start(at)
+  source.stop(at + duration)
+}
+
+function playEvidenceHitMajorSound(ctx: AudioContext, at: number) {
+  const body = ctx.createOscillator()
+  const bodyGain = ctx.createGain()
+  body.type = 'sine'
+  body.frequency.setValueAtTime(82, at)
+  body.frequency.exponentialRampToValueAtTime(58, at + 0.22)
+  bodyGain.gain.setValueAtTime(0.001, at)
+  bodyGain.gain.exponentialRampToValueAtTime(0.2, at + 0.006)
+  bodyGain.gain.exponentialRampToValueAtTime(0.001, at + 0.26)
+  body.connect(bodyGain).connect(ctx.destination)
+  body.start(at)
+  body.stop(at + 0.28)
+
+  const click = ctx.createOscillator()
+  const clickGain = ctx.createGain()
+  click.type = 'triangle'
+  click.frequency.setValueAtTime(3900, at + 0.018)
+  clickGain.gain.setValueAtTime(0.001, at + 0.018)
+  clickGain.gain.exponentialRampToValueAtTime(0.11, at + 0.022)
+  clickGain.gain.exponentialRampToValueAtTime(0.001, at + 0.062)
+  click.connect(clickGain).connect(ctx.destination)
+  click.start(at + 0.018)
+  click.stop(at + 0.08)
+
+  playCourtBeatNoise(ctx, at + 0.05, 0.09, 0.05)
+}
+
+function playJudicialStampSound(ctx: AudioContext, at: number) {
+  const thump = ctx.createOscillator()
+  const gain = ctx.createGain()
+  thump.type = 'sine'
+  thump.frequency.setValueAtTime(116, at)
+  thump.frequency.exponentialRampToValueAtTime(72, at + 0.1)
+  gain.gain.setValueAtTime(0.001, at)
+  gain.gain.exponentialRampToValueAtTime(0.13, at + 0.005)
+  gain.gain.exponentialRampToValueAtTime(0.001, at + 0.16)
+  thump.connect(gain).connect(ctx.destination)
+  thump.start(at)
+  thump.stop(at + 0.18)
+
+  const tick = ctx.createOscillator()
+  const tickGain = ctx.createGain()
+  tick.type = 'square'
+  tick.frequency.setValueAtTime(2700, at + 0.01)
+  tickGain.gain.setValueAtTime(0.001, at + 0.01)
+  tickGain.gain.exponentialRampToValueAtTime(0.045, at + 0.016)
+  tickGain.gain.exponentialRampToValueAtTime(0.001, at + 0.04)
+  tick.connect(tickGain).connect(ctx.destination)
+  tick.start(at + 0.01)
+  tick.stop(at + 0.055)
+}
+
+function playEvidenceMissSound(ctx: AudioContext, at: number) {
+  const tap = ctx.createOscillator()
+  const filter = ctx.createBiquadFilter()
+  const gain = ctx.createGain()
+  tap.type = 'sine'
+  tap.frequency.setValueAtTime(176, at)
+  filter.type = 'lowpass'
+  filter.frequency.setValueAtTime(560, at)
+  gain.gain.setValueAtTime(0.001, at)
+  gain.gain.exponentialRampToValueAtTime(0.075, at + 0.008)
+  gain.gain.exponentialRampToValueAtTime(0.001, at + 0.14)
+  tap.connect(filter).connect(gain).connect(ctx.destination)
+  tap.start(at)
+  tap.stop(at + 0.16)
+}
+
+export function playCourtBeat(cue: CourtBeatCue, level: CourtBeatLevel = 'impact') {
+  if (!enabled || cue === 'silent') return
+
+  const duckDuration = level === 'breakthrough' ? 1150 : level === 'impact' ? 820 : 420
+  const duckVolume = level === 'breakthrough' ? 0.02 : level === 'impact' ? 0.035 : 0.075
+  duckBgmForCourtBeat(duckDuration, duckVolume)
+
+  withAudioContext((ctx) => {
+    const start = ctx.currentTime + 0.035
+    const accentByCue: Record<CourtBeatCue, number> = {
+      silent: 440,
+      evidence: 780,
+      contradiction: 260,
+      dispute: 118,
+      witness: 620,
+      notebook: 420,
+      truth: 520,
+      emotion: 196,
+      choice: 360,
+    }
+    const accent = accentByCue[cue]
+
+    if (cue === 'contradiction' && level !== 'focus') {
+      playEvidenceHitMajorSound(ctx, start)
+      playJudicialStampSound(ctx, start + 0.64)
+      return
+    }
+
+    if (cue === 'notebook') {
+      playJudicialStampSound(ctx, start)
+      return
+    }
+
+    if (cue === 'evidence' && level === 'focus') {
+      playEvidenceMissSound(ctx, start)
+      return
+    }
+
+    if (level === 'focus') {
+      playCourtBeatTone(ctx, start, 132, 0.09, 'triangle', 0.05)
+      playCourtBeatTone(ctx, start + 0.12, accent, 0.08, 'sine', 0.045)
+      return
+    }
+
+    playCourtBeatSweep(ctx, start, 180, level === 'breakthrough' ? 46 : 62, 0.22, 'triangle', level === 'breakthrough' ? 0.17 : 0.12)
+    playCourtBeatTone(ctx, start + 0.025, 880, 0.055, 'square', 0.045)
+
+    if (cue === 'contradiction') {
+      playCourtBeatSweep(ctx, start + 0.1, 520, 180, 0.18, 'sawtooth', 0.055)
+      playCourtBeatNoise(ctx, start + 0.12, 0.12, 0.028)
+    } else if (cue === 'dispute') {
+      playCourtBeatSweep(ctx, start + 0.08, 1500, 260, 0.24, 'sawtooth', 0.04)
+      playCourtBeatNoise(ctx, start + 0.18, 0.16, 0.035)
+    } else if (cue === 'evidence') {
+      playCourtBeatTone(ctx, start + 0.11, 740, 0.12, 'triangle', 0.05)
+      playCourtBeatTone(ctx, start + 0.19, 1110, 0.1, 'sine', 0.035)
+    } else if (cue === 'witness') {
+      playCourtBeatTone(ctx, start + 0.11, 620, 0.1, 'triangle', 0.04)
+      playCourtBeatTone(ctx, start + 0.19, 780, 0.11, 'triangle', 0.04)
+    } else if (cue === 'emotion') {
+      playCourtBeatSweep(ctx, start + 0.1, 230, 155, 0.2, 'triangle', 0.06)
+    } else {
+      playCourtBeatTone(ctx, start + 0.13, accent, 0.12, 'sine', 0.045)
+    }
+
+    if (level === 'breakthrough') {
+      playCourtBeatNoise(ctx, start + 0.28, 0.18, 0.04)
+      playCourtBeatTone(ctx, start + 0.31, accent * 1.5, 0.16, 'triangle', 0.055)
+      playCourtBeatTone(ctx, start + 0.46, accent * 2, 0.2, 'sine', 0.035)
+    }
+  })
+}

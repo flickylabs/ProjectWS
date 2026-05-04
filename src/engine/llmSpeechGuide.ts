@@ -129,6 +129,144 @@ export function getAngryCall(duo: CaseData['duo'], party: PartyId): string {
   return ct?.angry ?? duo[party === 'a' ? 'partyB' : 'partyA'].name + ' 씨!'
 }
 
+export interface OpponentReferenceForms {
+  mentionPrimary: string
+  mentionAlt: string
+  directPrimary: string
+  directAlt: string
+  forbidden: string[]
+}
+
+function normalizeDirectCall(call: string): string {
+  return call === '자기' ? '자기야' : call
+}
+
+function escapeRegex(value: string): string {
+  return value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+}
+
+function uniqueValues(values: string[]): string[] {
+  return [...new Set(values.filter(Boolean))]
+}
+
+function hasFinalConsonant(value: string): boolean {
+  const trimmed = value.trim()
+  const last = trimmed.charAt(trimmed.length - 1)
+  if (!last) return false
+  const code = last.charCodeAt(0) - 0xac00
+  return code >= 0 && code <= 11171 && code % 28 !== 0
+}
+
+function attachKoreanParticle(noun: string, particle: string): string {
+  const hasBatchim = hasFinalConsonant(noun)
+  switch (particle) {
+    case '은':
+    case '는':
+      return `${noun}${hasBatchim ? '은' : '는'}`
+    case '이':
+    case '가':
+      return `${noun}${hasBatchim ? '이' : '가'}`
+    case '을':
+    case '를':
+      return `${noun}${hasBatchim ? '을' : '를'}`
+    case '과':
+    case '와':
+      return `${noun}${hasBatchim ? '과' : '와'}`
+    default:
+      return `${noun}${particle}`
+  }
+}
+
+export function getOpponentReferenceForms(caseData: CaseData, party: PartyId): OpponentReferenceForms {
+  const relType = getRelationshipType(caseData)
+  const speaker = party === 'a' ? caseData.duo.partyA : caseData.duo.partyB
+  const opponent = party === 'a' ? caseData.duo.partyB : caseData.duo.partyA
+  const directAlt = getMyCall(caseData.duo, party)
+  const directPrimary = normalizeDirectCall(directAlt)
+
+  if (relType === 'spouse') {
+    const mentionPrimary = speaker.callTerms?.toJudge ?? (party === 'a' ? '제 남편' : '제 아내')
+    const mentionAlt = party === 'a' ? '남편' : '아내'
+    const givenName = opponent.name.slice(1)
+    return {
+      mentionPrimary,
+      mentionAlt,
+      directPrimary,
+      directAlt,
+      forbidden: uniqueValues([
+        `${opponent.name} 씨`,
+        `${opponent.name}씨`,
+        `${givenName} 씨`,
+        `${givenName}씨`,
+        opponent.name,
+        givenName,
+        '상대방',
+        '그 사람',
+      ]),
+    }
+  }
+
+  const mentionPrimary = getJudgeReference(caseData.duo, party)
+  return {
+    mentionPrimary,
+    mentionAlt: mentionPrimary,
+    directPrimary,
+    directAlt,
+    forbidden: [],
+  }
+}
+
+export function buildOpponentReferenceGuide(caseData: CaseData, party: PartyId): string {
+  const opponent = party === 'a' ? caseData.duo.partyB : caseData.duo.partyA
+  const forms = getOpponentReferenceForms(caseData, party)
+  const forbidden = forms.forbidden.length > 0 ? forms.forbidden.map(v => `"${v}"`).join(', ') : '(없음)'
+  return `\n★ 상대 지칭 규칙 (최우선, 출력 위반 시 무효):
+- 지금 발화자가 재판관에게 ${opponent.name}을/를 3인칭으로 언급할 때는 반드시 "${forms.mentionPrimary}" 또는 "${forms.mentionAlt}"만 사용한다.
+- ${opponent.name}에게 직접 부를 때만 "${forms.directPrimary}" 또는 "${forms.directAlt}"를 사용할 수 있다.
+- 재판관에게 보고하는 문장에서는 실명+씨/이름+씨를 쓰지 않는다.
+- 금지 표현: ${forbidden}`
+}
+
+export function enforceOpponentReferenceForms(text: string, caseData: CaseData, party: PartyId): string {
+  if (!text) return text
+  if (getRelationshipType(caseData) !== 'spouse') return text
+
+  const opponent = party === 'a' ? caseData.duo.partyB : caseData.duo.partyA
+  const forms = getOpponentReferenceForms(caseData, party)
+  const name = escapeRegex(opponent.name)
+  const givenName = escapeRegex(opponent.name.slice(1))
+  const direct = forms.directPrimary
+  const mention = forms.mentionPrimary
+
+  let output = text
+
+  const directPatterns = [
+    new RegExp(`${name}\\s*씨\\s*([,，])`, 'g'),
+    new RegExp(`${givenName}\\s*씨\\s*([,，])`, 'g'),
+    new RegExp(`${name}\\s*([,，])`, 'g'),
+  ]
+  for (const pattern of directPatterns) {
+    output = output.replace(pattern, `${direct}$1`)
+  }
+
+  const mentionPatterns = [
+    new RegExp(`${name}\\s*씨`, 'g'),
+    new RegExp(`${givenName}\\s*씨`, 'g'),
+    new RegExp(`${name}(?=\\s*(?:께|에게|한테|와|과|은|는|이|가|을|를|도|만|의|처럼|보다|에게는|에게도|에게만|에게서|께서|께는|께도|께만|께서는|한테는|한테도|한테만|한테서))`, 'g'),
+  ]
+  for (const pattern of mentionPatterns) {
+    output = output.replace(pattern, mention)
+  }
+
+  const genericMentionPattern = /(상대방|그 사람)\s*(에게는|에게도|에게만|에게서|한테는|한테도|한테만|한테서|께서는|께서|께는|께도|께만|에게|한테|께|은|는|이|가|을|를|와|과|도|만|의|처럼|보다)?/g
+  output = output.replace(genericMentionPattern, (_match, _generic, particle = '') => {
+    if (!particle) return mention
+    return attachKoreanParticle(mention, particle)
+  })
+
+  return output
+}
+
 /* ── 말투 규칙 프롬프트 블록 (v6) ────────── */
 
 type Phase = 'phase1' | 'phase2' | 'interrogation' | 'free'
@@ -198,6 +336,10 @@ export function buildSpeechGuide(
     lines.push(`나쁜 예: "${exCall}, 말씀드리면 그 송금은 필요했습니다." → 호칭은 반말인데 존댓말 혼합`)
     lines.push(`좋은 예: "${exCall}, 다시 말하지만 오해야. 정말 급해서 그랬어."`)
     lines.push(`좋은 예: "재판관님, 제가 숨긴 게 아닙니다."`)
+  }
+
+  if (caseData && party) {
+    lines.push(buildOpponentReferenceGuide(caseData, party))
   }
 
   return lines.join('\n')

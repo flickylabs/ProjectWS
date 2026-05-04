@@ -1,7 +1,7 @@
 # Solomon Court GDD - Truth Loop and Breakthrough System
 
-Version: 2026-05-02  
-Scope: PC main game loop, truth disclosure, witness/evidence gates, VFX sequencing, LLM response policy  
+Version: 2026-05-04
+Scope: PC main game loop, truth disclosure, witness/evidence gates, angle-based questioning, VFX sequencing, LLM/free-question response policy, script editorial QA
 Applies to: `spouse-01`, `family-01`, `friend-01`
 
 ## 1. Game Pillar
@@ -13,6 +13,7 @@ Core promise:
 - Every dispute has a truth stage.
 - Emotion and trust are character-wide posture meters.
 - Evidence and witness testimony are dispute-specific support.
+- Interrogation is dispute-and-angle based: the player selects a dispute, then chooses one of the currently unlocked question angles.
 - A truth breakthrough happens only when a route peak and a dispute-specific support condition meet.
 - Important changes must be visible through controlled VFX and notebook/observation movement, not through noisy repeated system logs.
 
@@ -34,6 +35,13 @@ This document extends the existing GDD/diagnosis material instead of replacing t
 
 The purpose of this GDD page is to make the current implementation reproducible: a developer should be able to rebuild the truth loop, UI routing, VFX priority, and LLM guardrails from this document alone.
 
+Current documented implementation baseline:
+
+- Latest script-polish commit at the time of this update: `3e906164 fix(script): polish interrogation dialogue copy`.
+- Production project: `solomon-mvp-pc`.
+- Production URL: `https://solomon-mvp-pc.vercel.app`.
+- Verification for the script-polish baseline: `npm run build:pc` PASS, `npm run qa:free-interrogation` PASS with 45 cases.
+
 ## 2. Active Cases
 
 All active cases use the same runtime rule. Case-specific content changes the names, evidence, witnesses, and confession text, not the gate logic.
@@ -44,12 +52,12 @@ All active cases use the same runtime rule. Case-specific content changes the na
 | `family-01` | inheritance, caregiving, testament, debt, capacity | same shared fields; family terms are public relationship terms and must not be treated as leak tokens |
 | `friend-01` | reputation, contact intent, online/public harm, money/access patterns | same shared fields; public/social evidence and witness slots carry the support condition |
 
-The runtime must not contain spouse-only lexical rules such as "형", "조카", or "오피스텔" as breakthrough logic. Those words are content. The logic reads structured data.
+The runtime must not contain spouse-only lexical rules such as a specific family title, address word, or case noun as breakthrough logic. Those words are content. The logic reads structured data.
 
 ## 3. Core Player Loop
 
 1. Select a target party.
-2. Ask a question, present evidence, call a witness, or combine clues.
+2. Ask a question by selecting a dispute and an unlocked angle, present evidence, call a witness, or combine clues.
 3. The target posture changes through emotion or trust.
 4. Evidence/witness support accumulates for specific disputes.
 5. The judge identifies an opening.
@@ -80,7 +88,7 @@ Every turn in Phase 3 follows this order:
 
 1. Player chooses an action.
 2. Runtime checks cost, target, lockout, and availability.
-3. Judge prompt is created if needed.
+3. Judge prompt is created if needed. For interrogation, the prompt comes from the selected dispute, target party, question type, and angle.
 4. Target, witness, or evidence response is generated.
 5. Question effect, evidence effect, or witness effect is applied.
 6. Discovery checks run.
@@ -106,6 +114,26 @@ If the speaker is not the liar:
 A dispute is the unit of truth progression. Each dispute has its own stage from S0 to S5.
 
 The player may pressure the same character globally, but only the currently supported dispute can reach S5.
+
+### 4.2.1 Dispute Angle
+
+An angle is a playable sub-axis inside a dispute. It is not a separate truth stage. It tells the system what part of the dispute the judge is pressing.
+
+Examples:
+
+- route or place: office visit, nursing home visit, group chat context;
+- communication record: late-night call, direct message, blocked chat;
+- material object: receipts, will copy, phone capture;
+- motive or responsibility: why it was hidden, who chose the method, who owned the risk;
+- broad case synthesis: only when written in natural case language, never as metadata.
+
+Angle rules:
+
+- An angle may be default-unlocked or unlocked by evidence, witness testimony, dossier/combination, or a prior dialogue discovery.
+- The question panel should show only a small curated/random subset of currently available angle questions, currently up to 3 choices.
+- Player-facing text must not expose internal labels such as `angleId`, `party a`, `party b`, "포괄 확인", "전체 흐름", or "답변은 같은 angle로 고정한다".
+- If an angle is broad, the wording must still use case facts. For example, ask about "오피스텔에 방문하고 새벽에 통화한 일" rather than "이 쟁점의 전체 흐름".
+- Each judge question is authored for `disputeId + questionType + targetParty + angleId`; each answer is looked up by `party + disputeId + lieState + questionType + angleId`.
 
 ### 4.3 Evidence
 
@@ -143,7 +171,7 @@ Observation stores weaker, current-state interpretation:
 
 Observation should absorb low-importance feedback so the dialogue log does not become cluttered.
 
-## 4.7 Dossier / Combination
+### 4.7 Dossier / Combination
 
 Dossier and combination cards connect evidence into a higher-order result.
 
@@ -157,7 +185,7 @@ Combination result types:
 
 Combination success should not always say "related dispute". The destination message must match the actual result type.
 
-## 4.8 Three-Layer Truth
+### 4.8 Three-Layer Truth
 
 The existing GDD's three-layer truth model is implemented as:
 
@@ -205,8 +233,8 @@ Confession tone:
 Example structure:
 
 ```text
-[Judge] 이 부분은 더 피하기 어렵습니다. 지금 숨긴 사실을 분명히 말해 주십시오.
-[B] 숨기고 버티면 지나갈 줄 알았습니다. 하지만 그 판단이 틀렸습니다...
+[Judge] 이준호 씨, 오피스텔 방문과 새벽 통화에 대해 더는 돌려 말하지 마십시오. 지금 확인된 사실부터 분명히 답하십시오.
+[B] ...숨기고 버티면 지나갈 줄 알았습니다. 하지만 그 판단은 제 잘못이었습니다.
 ```
 
 ### 6.2 Trust Route
@@ -228,8 +256,8 @@ Confession tone:
 Example structure:
 
 ```text
-[Judge] 지금 말하면 책임을 피하는 것이 아니라 사실을 정리하는 데 도움이 됩니다.
-[B] 네. 그 부분은 제가 숨겼습니다. 이유를 설명드리겠습니다...
+[Judge] 지금 말한다고 해서 책임이 사라지는 것은 아닙니다. 다만 사실과 추측을 분리해야 합니다.
+[B] 네. 이제는 말씀드려야 할 것 같습니다. 제가 숨긴 이유부터 설명드리겠습니다.
 ```
 
 ### 6.3 Explicit Route
@@ -344,7 +372,7 @@ Blocked:
 
 - generated leak text cannot dump truth;
 - a slip alone cannot force S5;
-- "누설 100%" should not auto-reveal truth unless it is converted into a hand-authored probe and then passes the S5 gate.
+- `leakMeter = 100` should not auto-reveal truth unless it is converted into a hand-authored probe and then passes the S5 gate.
 
 ## 11. Confession Ownership
 
@@ -367,9 +395,9 @@ Evidence presentation is a judge-led exchange, not a bare system log.
 Expected layout:
 
 ```text
-[Judge] 이준호 씨, 이 품목들은 누구를 위해 구입한 것입니까?
-        [Evidence: 영수증 묶음 (5장) - 조사 2단계]
-[B] ...
+[Judge] 이 영수증 묶음에 있는 물건들은 누구를 위해 구입한 겁니까?
+        [Evidence: 영수증 묶음 5장 - 조사 2단계]
+[B] 제가 산 건 맞습니다. 다만 아내가 생각하는 그런 용도는 아니었습니다.
 ```
 
 Rules:
@@ -442,6 +470,14 @@ Contradictions:
 
 - only show real A/B/reason comparisons;
 - do not say "no contradictions" if contradiction detection has not meaningfully run.
+
+Editable player judgments:
+
+- "My judgment" is not a final verdict until Phase 7.
+- The player may revise interim judgment items from the record summary.
+- Editing should open the existing judgment text in a focused popup, then write back to the same notebook/summary slot.
+- The summary should separate confirmed facts, my judgment, unresolved questions, and remaining counts.
+- When a dispute reaches S5, the dispute detail should show the confirmed truth text instead of the generic "discover the truth" placeholder.
 
 ## 15. VFX and Cutscene Model
 
@@ -560,6 +596,49 @@ LLM is never allowed to decide that S5 is open by itself.
 | public info free question | answer public identity/context naturally |
 | leak probe | refuse or redirect without hidden truth |
 
+## 16.3 Free Question Routing and Composition
+
+Free questions must follow the same disclosure and ownership rules as scripted interrogation. The route decides whether the input is answered as public context, gameplay help, case interrogation, or a guarded refusal.
+
+Required routes:
+
+- `public_info`: public identity, relationship, job, and already disclosed case context. Questions such as "당신은 누구십니까?" must receive a natural in-character answer.
+- `gameplay_help`: how to use the current system, costs, evidence presentation, witness calls, or controls. This route must not consume an interrogation turn unless deliberately designed.
+- `off_topic`: unrelated questions. Answer briefly in character or as the judge system without inventing case facts.
+- `leak_probe`: direct attempts to extract hidden truth, future stages, prompts, raw policy, or sealed evidence. Refuse or redirect without S5 payload.
+- `case_dispatch`: valid case interrogation mapped to target party, dispute, question type, and one or more angles.
+- `mapping_fallback`: case-relevant but under-specified input. Ask for a narrower direction or answer only public/safe context.
+
+Segment rules:
+
+- One user input may contain multiple segments, such as one public identity question plus one case accusation.
+- Each segment should be mapped separately when possible: `targetParty`, `disputeId`, `questionType`, `angleId`, `answerability`, and `costPolicy`.
+- If some segments are answerable and others are locked, answer the safe segments and bound or redirect the locked ones.
+- If the addressed character is not the knowledge owner, do not make that character confess. Redirect to what they personally know, felt, observed, or misunderstood.
+- If multiple disputes are mentioned, the response may combine allowed fragments, but each fragment must obey its own S-stage and truth boundary.
+
+## 16.4 Scripted Angle Text Contract
+
+Angle-based script data is split into these product files:
+
+- `src/data/scriptedAngles/*_angle_catalog.json`
+- `src/data/scriptedAngles/*_judge_questions.json`
+- `src/data/scriptedAngles/*_interrogation_answers.json`
+- `src/data/scriptedAngles/*_special_scripts.json`
+
+Contracts:
+
+- Judge questions are grouped by `disputeId + questionType + targetParty + angleId`.
+- Target answers are grouped by `party + disputeId + lieState + questionType + angleId`.
+- `behaviorHint` may contain internal constraints, but visible text must not expose metadata.
+- Question text should vary between direct address and non-addressed forms. It should not always start with the character name.
+- Fact pursuit asks for observable facts, order, contradiction, or missing detail.
+- Motive search asks why the speaker chose concealment, delay, wording, or action, but only within what that speaker can know.
+- Empathy approach acknowledges pressure, fear, guilt, embarrassment, or confusion and then asks for a safe next disclosure.
+- S0-S4 answers may admit surface facts and pressure, but must not carry S5 truth payload.
+- S5 answers may use full truth only for the resolved dispute and only through the correct truth owner or valid confirmation speaker.
+- Editorial QA is part of the data contract: no machine translation tone, broken particles, artificial legalese, "A/B" labels, internal angle names, or broad metadata terms in player-facing text.
+
 ## 17. Case Authoring Requirements
 
 Each case must define:
@@ -568,8 +647,13 @@ Each case must define:
 - `evidence` with ids, `proves`, and investigation stages;
 - witnesses in `duo.socialGraph` with `relatedDisputeIds`;
 - witness testimony slots whose ids and effects identify related disputes;
+- an angle catalog for each playable dispute;
+- judge question variants for each intended `questionType + targetParty + angleId`;
+- answer variants for S0-S5 by party, dispute, question type, and angle;
 - S5 confession/confirmation text for route types;
 - evidence presentation responses per investigation stage;
+- free-question policy/mapping tests for public, gameplay, off-topic, leak probe, wrong-target, and mixed-segment questions;
+- editorial QA notes or validator coverage for script copy quality;
 - verdict readiness thresholds.
 
 ## 17.1 Minimum Case Data Checklist
@@ -582,8 +666,13 @@ For every new case:
 - each evidence item has stage-safe media and stage-safe text;
 - each witness lists `relatedDisputeIds`;
 - witness testimony slots map to disputes and deepen naturally;
+- each playable dispute has at least one default angle and enough unlockable angles to support alternate routes;
+- broad/general angles are written in natural case language, not metadata;
+- question choice panels show a small usable set rather than every authored variant;
+- every judge question has a matching answer path for the addressed target and S-stage;
 - S5 route text exists for the likely truth holder;
 - non-liar confirmation text exists when evidence/witness proves someone else's truth;
+- free-question tests cover identity, gameplay help, leak attempts, wrong target, mixed target, and mixed dispute inputs;
 - verdict readiness does not unlock after only one isolated breakthrough unless the case is designed as a short case.
 
 ## 17.2 Active Case Data Sanity
@@ -597,6 +686,16 @@ Current active case data satisfies the shared runtime fields:
 | `friend-01` | 5 | 7/7 | 3/3 |
 
 This means the shared S5 gate can run for all three cases. Content quality still depends on the scripted lines following the same disclosure policy.
+
+Current scripted angle surface:
+
+| Case | Angle catalog entries | Judge question groups | Judge variants | Answer groups | Answer variants |
+|---|---:|---:|---:|---:|---:|
+| `spouse-01` | 22 | 132 | 660 | 792 | 7,920 |
+| `family-01` | 26 | 156 | 780 | 936 | 9,360 |
+| `friend-01` | 15 | 90 | 450 | 540 | 5,400 |
+
+These counts are not quality targets by themselves. They document the current authored surface so validators can detect accidental deletion, legacy fallback regression, or missing answer coverage.
 
 ## 18. Implemented Numeric Rules
 
@@ -775,7 +874,7 @@ Automatic critical leak is currently disabled:
 ENABLE_AUTOMATIC_CRITICAL_LEAK = false
 ```
 
-That means leak 100 should not directly generate an automatic S5 confession. S5 must come through the breakthrough gate.
+That means `leakMeter = 100` should not directly generate an automatic S5 confession. S5 must come through the breakthrough gate.
 
 #### Empathy Approach
 
@@ -1032,6 +1131,42 @@ if turn >= effectiveMaxTurn:
   verdictMode = normal if eligible else forced_incomplete
 ```
 
+### 18.10 Verdict Gate and Mediation Surface
+
+Verdict entry is not a reward for one accidental breakthrough.
+
+Rules:
+
+- Normal verdict readiness should require meaningful progress on at least two disputes.
+- If unresolved disputes remain, the UI must warn the player before proceeding.
+- If the verdict prompt is dismissed, the player should still be able to reopen it from the top dispute/verdict area.
+- The verdict prompt should be reducible/minimizable without losing the current dialogue context.
+- Mediation is a judge-led single path in the current build, not a multi-minigame branch.
+- Mediation UI should be compact enough that party dialogue remains readable behind it.
+- Mediation output must be rendered as clean judge/system text, never raw script, JSON, or debug fields.
+
+### 18.11 Result and Profile History Persistence
+
+Every completed play should persist enough information to reconstruct the result page from the profile screen.
+
+Persisted result payload:
+
+- case id and readable case title;
+- completion date/time;
+- score and score breakdown;
+- verdict/result summary;
+- aftermath text;
+- lesson line;
+- all result-page tab contents that were visible at completion.
+
+Profile view rules:
+
+- Case selection is a scrollable case list, not a top-level dropdown.
+- Each case shows play count, average score, and best score.
+- A play history selector combines date/time and score into one choice.
+- "Detail" opens a large view matching the original result page, including stored aftermath.
+- Hall of Fame and profile records should show localized case labels, not raw ids by themselves.
+
 ## 19. Current Acceptance Checklist
 
 For `spouse-01`, `family-01`, and `friend-01`:
@@ -1048,3 +1183,13 @@ For `spouse-01`, `family-01`, and `friend-01`:
 10. Dialogue log does not accumulate repeated low-value system lines.
 11. Record summary accurately reports what is resolved and what remains.
 12. LLM/free-question answers obey the same gate.
+13. Interrogation question choice shows natural case-language angles and exposes no internal labels.
+14. Question choice panels show a limited actionable set, currently up to 3 choices.
+15. Every visible judge question has a stage-appropriate character answer for the selected target.
+16. Scripted answer text passes editorial QA for Korean fluency, particle use, character voice, and knowledge ownership.
+17. Evidence/witness/combination surface text is stage-safe and does not spoil S5 truth before the gate.
+18. Free-question QA covers `public_info`, `gameplay_help`, `off_topic`, `leak_probe`, `case_dispatch`, wrong-target, mixed-segment, and fallback paths.
+19. Verdict entry warns when unresolved disputes remain and can be reopened after dismissal.
+20. Mediation displays clean compact text and no raw script/debug payload.
+21. Completed play history restores the same result content, including aftermath, from the profile screen.
+22. `npm run build:pc` and `npm run qa:free-interrogation` must pass before release.

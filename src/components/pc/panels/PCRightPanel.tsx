@@ -63,6 +63,7 @@ export default function PCRightPanel() {
   const archetypeB = useStore((s) => s.archetypeB)
   const observedArchetypes = useStore((s) => s.observedArchetypes)
   const combinationLabRuntime = useStore((s) => s.combinationLabRuntime)
+  const migrateCombinationLabRuntime = useStore((s) => s.migrateCombinationLabRuntime)
   const pcSummaryUnlocked = useStore((s) => s.pcSummaryUnlocked)
   const globalSkillPoints = useStore((s) => s.resources.skillPoints)
 
@@ -84,6 +85,10 @@ export default function PCRightPanel() {
       combinationResultPanelTimerRef.current = null
     }
   }, [])
+
+  useEffect(() => {
+    migrateCombinationLabRuntime()
+  }, [migrateCombinationLabRuntime, caseData?.caseId])
 
   // Phase 1 (사전진술) 등에서는 심문/증거 액션 자체가 의미 없음 — 기록 정리도 차단.
   // 활성 Phase 체계: 0 → 1 → 2(Phase.Interrogation) → 3a → 3b
@@ -147,6 +152,8 @@ export default function PCRightPanel() {
     const discovered = new Set(combinationLabRuntime.discoveredNodeIds ?? [])
     const fromLab = (combinationLabRuntime.config?.recipes ?? []).filter((recipe) => {
       if (applied.has(recipe.id) && !recipe.repeatable) return false
+      const output = combinationLabRuntime.config?.outputs.find((item) => item.id === recipe.outputId)
+      if (output && discovered.has(output.id) && !recipe.repeatable) return false
       return recipe.inputs.every((id) => isEvReady(id) || discovered.has(id))
     }).length
     return fromEvCombo + fromLab
@@ -170,9 +177,12 @@ export default function PCRightPanel() {
     const applied = new Set(combinationLabRuntime.appliedRecipeIds ?? [])
     const discovered = new Set(combinationLabRuntime.discoveredNodeIds ?? [])
     const nodeTypeById = new Map<string, string>(config.nodes.map((n: CombinationLabNode) => [n.id, n.type]))
+    const outputById = new Map(config.outputs.map((output: CombinationLabOutput) => [output.id, output]))
     const defById = new Map(evidenceDefinitions.map((d) => [d.id, d]))
     return config.recipes.filter((recipe: CombinationLabRecipe) => {
       if (applied.has(recipe.id) && !recipe.repeatable) return false
+      const output = outputById.get(recipe.outputId)
+      if (output && discovered.has(output.id) && !recipe.repeatable) return false
       return recipe.inputs.every((id) => {
         const type = nodeTypeById.get(id)
         if (type === 'evidence' || type === 'derived_evidence') {
@@ -197,6 +207,7 @@ export default function PCRightPanel() {
     const applied = new Set(combinationLabRuntime.appliedRecipeIds ?? [])
     const discovered = new Set(combinationLabRuntime.discoveredNodeIds ?? [])
     const nodeTypeById = new Map<string, string>(config.nodes.map((n: CombinationLabNode) => [n.id, n.type]))
+    const outputById = new Map(config.outputs.map((output: CombinationLabOutput) => [output.id, output]))
     const defById = new Map(evidenceDefinitions.map((d) => [d.id, d]))
     const isReady = (id: string) => {
       const t = nodeTypeById.get(id)
@@ -213,6 +224,8 @@ export default function PCRightPanel() {
     }
     for (const recipe of config.recipes) {
       if (applied.has(recipe.id) && !recipe.repeatable) continue
+      const output = outputById.get(recipe.outputId)
+      if (output && discovered.has(output.id) && !recipe.repeatable) continue
       if (recipe.inputs.length !== 2) continue
       const [a, b] = recipe.inputs
       const allReady = isReady(a) && isReady(b)
@@ -438,6 +451,24 @@ export default function PCRightPanel() {
       return
     }
 
+    const outputAlreadyRecorded = Boolean(
+      matchingOutput &&
+      !matchingRecipe.repeatable &&
+      combinationLabRuntime.discoveredNodeIds.includes(matchingOutput.id),
+    )
+
+    if (outputAlreadyRecorded) {
+      openPcInteractionPanel({
+        title: '이미 기록된 조합',
+        subtitle: cleanOutputLabel(matchingOutput.label),
+        tone: 'gold',
+        variant: 'feature',
+        body: '이 조합이 가리키는 결론은 이미 재판 기록에 반영되어 있습니다. 다른 증거 또는 발언 노트를 조합해 보세요.',
+      })
+      clearComboSlots()
+      return
+    }
+
     if (!store.canRunCombinationRecipe(matchingRecipe.id)) {
       openPcInteractionPanel({
         title: '\uC870\uD569 \uBD88\uAC00',
@@ -605,13 +636,12 @@ export default function PCRightPanel() {
     const caseKey = store.caseData?.caseId ?? ''
     const judgeComment = matchingRecipe ? getCombinationComment(caseKey, matchingRecipe.id) : null
     if (judgeComment) {
-      store.addDialogue({
-        speaker: 'judge',
-        text: judgeComment.trim(),
-        relatedDisputes: matchingOutput.effects
-          .map((e) => e.disputeUpgrade?.disputeId ?? e.unlockNodeId ?? e.targetId)
-          .filter((v): v is string => Boolean(v)),
-        turn: store.turnCount,
+      store.addJudgeObservation({
+        turnCount: store.turnCount,
+        category: 'event',
+        iconId: 'i-gavel',
+        title: '재판관의 정리',
+        summary: judgeComment.trim(),
       })
     }
 
@@ -659,7 +689,7 @@ export default function PCRightPanel() {
     }, COMBINATION_RESULT_PANEL_DELAY_MS)
 
     clearComboSlots()
-  }, [clearComboSlots, comboNodeA, comboNodeB, comboReady, matchingOutput, matchingRecipe, store])
+  }, [clearComboSlots, comboNodeA, comboNodeB, comboReady, combinationLabRuntime.discoveredNodeIds, matchingOutput, matchingRecipe, store])
 
   const toggleCombinationPanel = useCallback(() => {
     setAutoMatchPanelOpen((v) => !v)
@@ -1397,8 +1427,7 @@ function hasWitnessCombinationResult(
 ): boolean {
   return newlyUnlockedWitnesses.length > 0 ||
     (output.witnessAngles?.length ?? 0) > 0 ||
-    output.effects.some((effect) => effect.kind === 'unlock_witness_angle') ||
-    /증인/.test(output.judgeHint ?? '')
+    output.effects.some((effect) => effect.kind === 'unlock_witness_angle')
 }
 
 function getPrimaryCombinationDisputeId(output: CombinationLabOutput, caseData: CaseData | null): string | null {

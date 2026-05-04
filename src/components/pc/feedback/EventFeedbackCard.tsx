@@ -1,9 +1,20 @@
 import { useEffect, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
+import { playCourtBeat } from '../../../engine/soundEngine'
 import { useGameStore, useStore } from '../../../store/useGameStore'
-import type { EventFeedbackKind } from '../../../store/slices/eventFeedbackSlice'
+import type { EventFeedbackItem, EventFeedbackKind } from '../../../store/slices/eventFeedbackSlice'
+import PCCharacterPortrait from '../icons/PCCharacterPortrait'
 
 type Phase = 'appearing' | 'visible' | 'converging' | 'leaving'
+type CourtBeatLevel = 'none' | 'focus' | 'impact' | 'breakthrough'
+type CourtBeatCue = 'silent' | 'evidence' | 'contradiction' | 'dispute' | 'witness' | 'notebook' | 'truth' | 'emotion' | 'choice'
+type CourtBeatDestination = 'none' | 'evidence' | 'witness' | 'dispute' | 'notebook' | 'truth'
+
+interface CourtBeatProfile {
+  level: CourtBeatLevel
+  cue: CourtBeatCue
+  destination: CourtBeatDestination
+}
 
 interface KindMeta {
   tone: 'gold' | 'red' | 'green' | 'blue' | 'neutral'
@@ -41,6 +52,182 @@ function isCutsceneKind(kind: EventFeedbackKind, hasActions: boolean): boolean {
   return !hasActions && CUTSCENE_KINDS.includes(kind)
 }
 
+function getCourtBeatProfile(active: EventFeedbackItem | null): CourtBeatProfile {
+  if (!active) return { level: 'none', cue: 'silent', destination: 'none' }
+
+  if (active.courtBeat) {
+    const cue = active.courtBeat.cue ?? (
+      active.courtBeat.beatType === 'evidence_hit_major'
+        ? 'contradiction'
+        : active.courtBeat.beatType === 'notebook_judicial_record'
+          ? 'notebook'
+          : 'evidence'
+    )
+    const destination = active.courtBeat.destination ?? (
+      active.courtBeat.beatType === 'evidence_miss' ? 'none' : 'notebook'
+    )
+    return {
+      level: active.courtBeat.intensity ?? (active.courtBeat.beatType === 'evidence_miss' ? 'focus' : 'impact'),
+      cue,
+      destination: destination === 'observation' ? 'none' : destination,
+    }
+  }
+
+  const hasActions = Array.isArray(active.actions) && active.actions.length > 0
+
+  if (active.kind === 'emergence') {
+    return { level: 'breakthrough', cue: 'dispute', destination: 'dispute' }
+  }
+  if (active.kind === 'evidence_result') {
+    return active.tag === 'evidence-unlock'
+      ? { level: 'breakthrough', cue: 'evidence', destination: 'evidence' }
+      : { level: 'impact', cue: 'evidence', destination: 'evidence' }
+  }
+  if (active.kind === 'contradiction' || active.kind === 'confrontation') {
+    return { level: 'impact', cue: 'contradiction', destination: 'notebook' }
+  }
+  if (active.kind === 'conflict') {
+    return { level: 'impact', cue: 'contradiction', destination: 'truth' }
+  }
+  if (active.kind === 'emotional_slip') {
+    return { level: 'impact', cue: 'emotion', destination: 'notebook' }
+  }
+  if (active.kind === 'witness_choice') {
+    return { level: 'impact', cue: 'witness', destination: 'witness' }
+  }
+  if (active.kind === 'transition_choice') {
+    return { level: hasActions ? 'impact' : 'focus', cue: 'choice', destination: 'truth' }
+  }
+  if (active.kind === 'observation') {
+    return { level: 'focus', cue: 'notebook', destination: 'notebook' }
+  }
+  if (active.kind === 'state_change') {
+    return { level: 'focus', cue: 'truth', destination: 'truth' }
+  }
+  return { level: 'none', cue: 'silent', destination: 'none' }
+}
+
+function splitHighlightedText(text: string, highlight?: string) {
+  if (!highlight) return <>{text}</>
+  const index = text.indexOf(highlight)
+  if (index < 0) return <>{text}</>
+  return (
+    <>
+      {text.slice(0, index)}
+      <span className="pc-court-clash__phrase is-broken">{highlight}</span>
+      {text.slice(index + highlight.length)}
+    </>
+  )
+}
+
+function mapBeatPortraitEmotion(state?: string) {
+  if (state === 'shaken') return 'shaken' as const
+  if (state === 'resigned') return 'resigned' as const
+  if (state === 'softened') return 'confident' as const
+  return 'defensive' as const
+}
+
+function CourtBeatStamp() {
+  return (
+    <svg className="pc-court-clash__stamp-svg" viewBox="0 0 96 96" aria-hidden="true">
+      <circle cx="48" cy="48" r="37" />
+      <circle cx="48" cy="48" r="28" />
+      <path d="M30 54h36M36 39h24M39 67h18" />
+      <text x="48" y="51" textAnchor="middle">기록</text>
+    </svg>
+  )
+}
+
+function CourtBeatClash({ active }: { active: EventFeedbackItem }) {
+  const beat = active.courtBeat
+  if (!beat) return null
+  const isMiss = beat.beatType === 'evidence_miss'
+  const hasDirectPhrase = !isMiss && Boolean(beat.statement?.highlightText)
+  const reaction = beat.portraitReaction
+  const evidenceRows = beat.evidence?.rows ?? []
+
+  return (
+    <div className={`pc-court-clash ${isMiss ? 'is-miss' : hasDirectPhrase ? 'is-hit' : 'is-review'}`}>
+      <div className="pc-court-clash__grid">
+        <section className="pc-court-clash__statement">
+          <div className="pc-court-clash__label">방금 진술 · {beat.statement?.speakerName ?? reaction?.name ?? '당사자'}</div>
+          <p>{splitHighlightedText(beat.statement?.text ?? active.body ?? active.title ?? '', beat.statement?.highlightText)}</p>
+        </section>
+
+        <div className="pc-court-clash__strike" aria-hidden="true">
+          <svg viewBox="0 0 160 52" preserveAspectRatio="none">
+            <defs>
+              <linearGradient id={`court-clash-gradient-${active.id}`} x1="0" x2="1" y1="0" y2="0">
+                <stop offset="0%" stopColor="rgba(216, 178, 91, 0.95)" />
+                <stop offset="100%" stopColor="rgba(208, 86, 65, 0.95)" />
+              </linearGradient>
+            </defs>
+            <path d="M8 26 C48 16, 86 36, 152 22" stroke={`url(#court-clash-gradient-${active.id})`} />
+            <path className="pc-court-clash__strike-crack" d="M86 16 l-10 12 l13 0 l-10 14" />
+          </svg>
+          <span>{isMiss ? '검토' : hasDirectPhrase ? 'FRACTURE' : 'REVIEW'}</span>
+        </div>
+
+        <section className="pc-court-clash__evidence">
+          <div className="pc-court-clash__label">증거 · {beat.evidence?.title ?? active.title}</div>
+          {beat.evidence?.stageLabel ? <div className="pc-court-clash__stage">{beat.evidence.stageLabel}</div> : null}
+          <div className="pc-court-clash__rows">
+            {evidenceRows.map((row) => (
+              <div
+                key={row.id}
+                className={`pc-court-clash__row${row.highlighted ? ' is-highlighted' : ''}${row.muted ? ' is-muted' : ''}`}
+              >
+                <span>{row.label}</span>
+                {row.detail ? <small>{row.detail}</small> : null}
+              </div>
+            ))}
+          </div>
+        </section>
+      </div>
+
+      <div className="pc-court-clash__reaction">
+        <div className={`pc-court-clash__portrait state-${reaction?.state ?? 'neutral'}`}>
+          {reaction?.caseId && reaction.party ? (
+            <PCCharacterPortrait
+              alt={reaction.name ?? ''}
+              caseId={reaction.caseId}
+              emotion={mapBeatPortraitEmotion(reaction.state)}
+              fallbackSymbolId="i-person"
+              party={reaction.party}
+              size={72}
+            />
+          ) : (
+            <span>{reaction?.name?.slice(0, 2) ?? '??'}</span>
+          )}
+        </div>
+        <div className="pc-court-clash__reaction-copy">
+          <strong>{reaction?.name ?? beat.statement?.speakerName ?? '당사자'}</strong>
+          <span>{reaction?.state === 'shaken' ? 'shaken' : reaction?.state ?? 'defensive'}</span>
+          {beat.reactionLine ? <p>{beat.reactionLine}</p> : null}
+        </div>
+        <div className="pc-court-clash__destination">
+          <CourtBeatStamp />
+          <span>{isMiss ? '관찰' : '수첩'}</span>
+        </div>
+      </div>
+
+      {beat.judgeLine ? (
+        <div className="pc-court-clash__judge">
+          <span>Judge</span>
+          <p>{beat.judgeLine}</p>
+        </div>
+      ) : null}
+
+      {beat.notebookEntry ? (
+        <div className="pc-court-clash__notebook">
+          <span>Judicial record</span>
+          <p>{beat.notebookEntry}</p>
+        </div>
+      ) : null}
+    </div>
+  )
+}
+
 /**
  * 통합 이벤트 피드백 카드 (Option A)
  * ─────────────────────────────────
@@ -57,29 +244,40 @@ export default function EventFeedbackCard() {
   const [convergeTransform, setConvergeTransform] = useState<string | null>(null)
   const activeIdRef = useRef<string | null>(null)
   const unlockVfxFiredRef = useRef<string | null>(null)
+  const beatSfxFiredRef = useRef<string | null>(null)
+  const activeBeat = getCourtBeatProfile(active)
 
   // active 이 바뀌면 phase 초기화
   useEffect(() => {
     if (!active) {
       activeIdRef.current = null
       unlockVfxFiredRef.current = null
+      beatSfxFiredRef.current = null
       setPhase('appearing')
       setConvergeTransform(null)
       return
     }
     if (activeIdRef.current === active.id) return
     activeIdRef.current = active.id
+    beatSfxFiredRef.current = null
     setPhase('appearing')
     setConvergeTransform(null)
     const t = window.setTimeout(() => setPhase('visible'), 40)
     return () => window.clearTimeout(t)
   }, [active])
 
+  useEffect(() => {
+    if (!active || activeBeat.level === 'none') return
+    if (beatSfxFiredRef.current === active.id) return
+    beatSfxFiredRef.current = active.id
+    playCourtBeat(activeBeat.cue, activeBeat.level)
+  }, [active, activeBeat.cue, activeBeat.level])
+
   // visible 진입 시 auto-dismiss 스케줄
   useEffect(() => {
     if (!active || phase !== 'visible') return
     const meta = KIND_META[active.kind]
-    const autoMs = active.autoDismissMs ?? meta.defaultAutoMs
+    const autoMs = active.courtBeat ? active.autoDismissMs : (active.autoDismissMs ?? meta.defaultAutoMs)
     if (autoMs == null) return
 
     const timer = window.setTimeout(() => {
@@ -162,7 +360,7 @@ export default function EventFeedbackCard() {
   const meta = KIND_META[active.kind]
   const tone = active.tone ?? meta.tone
   const hasActions = Array.isArray(active.actions) && active.actions.length > 0
-  const autoMs = active.autoDismissMs ?? meta.defaultAutoMs
+  const autoMs = active.courtBeat ? active.autoDismissMs : (active.autoDismissMs ?? meta.defaultAutoMs)
   const manualCloseOnly = !hasActions && autoMs == null
 
   const cardStyle = phase === 'converging' && convergeTransform
@@ -172,7 +370,11 @@ export default function EventFeedbackCard() {
   const modal = isModalKind(active.kind, hasActions)
   const cutscene = isCutsceneKind(active.kind, hasActions)
   const evidenceUnlockCutscene = cutscene && active.kind === 'evidence_result' && active.tag === 'evidence-unlock'
-  const rootClass = `pc-event-feedback-root${modal ? ' is-modal' : ' is-alert'}${cutscene ? ' is-cutscene' : ''}${evidenceUnlockCutscene ? ' is-evidence-unlock' : ''} is-phase-${phase}`
+  const focusTakeover = activeBeat.level !== 'none'
+  const beatClass = focusTakeover
+    ? ` is-focus-takeover is-beat-${activeBeat.level} is-cue-${activeBeat.cue} is-destination-${activeBeat.destination}`
+    : ''
+  const rootClass = `pc-event-feedback-root${modal ? ' is-modal' : ' is-alert'}${cutscene ? ' is-cutscene' : ''}${evidenceUnlockCutscene ? ' is-evidence-unlock' : ''}${beatClass} is-phase-${phase}`
   // 컷씬(자동소멸 알림 4종): 배경 클릭 시 즉시 닫기. 선택 필수 모달은 차단.
   const allowBackdropDismiss = cutscene
 
@@ -185,14 +387,37 @@ export default function EventFeedbackCard() {
         if (e.target === e.currentTarget) setPhase('leaving')
       } : undefined}
     >
+      {focusTakeover ? (
+        <div className="pc-court-beat-stage" aria-hidden="true">
+          <div className="pc-court-beat-stage__curtain" />
+          <div className="pc-court-beat-stage__spotlight" />
+          <div className="pc-court-beat-stage__rails" />
+          <div className="pc-court-beat-stage__pulse" />
+        </div>
+      ) : null}
       <div
         ref={cardRef}
-        className={`pc-event-feedback-card tone-${tone} kind-${active.kind} is-phase-${phase}${modal ? ' is-modal' : ' is-alert'}${cutscene ? ' is-cutscene' : ''}${evidenceUnlockCutscene ? ' is-evidence-unlock' : ''}`}
+        className={`pc-event-feedback-card tone-${tone} kind-${active.kind} is-phase-${phase}${modal ? ' is-modal' : ' is-alert'}${cutscene ? ' is-cutscene' : ''}${evidenceUnlockCutscene ? ' is-evidence-unlock' : ''}${active.courtBeat ? ' is-court-clash-card' : ''}${beatClass}`}
         data-resonance-target={cutscene ? 'cutscene-center' : undefined}
         style={cardStyle}
       >
+        {focusTakeover ? (
+          <div className="pc-event-feedback__beat-mark" aria-hidden="true">
+            <span />
+            <i />
+          </div>
+        ) : null}
         {/* X 버튼 — onDefer 정의된 카드만 (예: 진실 공방 일시 보류). 클릭 시 onDefer 후 카드 닫음. */}
-        {active.onDefer ? (
+        {active.courtBeat ? (
+          <button
+            type="button"
+            className="pc-event-feedback__close"
+            aria-label="닫기"
+            onClick={() => setPhase('leaving')}
+          >
+            ×
+          </button>
+        ) : active.onDefer ? (
           <button
             type="button"
             className="pc-event-feedback__close"
@@ -233,6 +458,10 @@ export default function EventFeedbackCard() {
             <span />
           </div>
         ) : null}
+        {active.courtBeat ? (
+          <CourtBeatClash active={active} />
+        ) : (
+          <>
         {active.eyebrow ? <div className="pc-event-feedback__eyebrow">{active.eyebrow}</div> : null}
         {active.subtitle ? <div className="pc-event-feedback__subtitle">{active.subtitle}</div> : null}
         {active.title ? <div className="pc-event-feedback__title">{active.title}</div> : null}
@@ -286,6 +515,8 @@ export default function EventFeedbackCard() {
           </div>
         ) : null}
         {active.tag ? <div className="pc-event-feedback__tag">{active.tag}</div> : null}
+          </>
+        )}
 
         {hasActions ? (
           <div className={`pc-event-feedback__actions layout-${active.actionsLayout ?? 'horizontal'}`}>
@@ -314,7 +545,7 @@ export default function EventFeedbackCard() {
             className="pc-event-feedback__dismiss"
             onClick={() => setPhase('leaving')}
           >
-            확인
+            {active.courtBeat ? '닫기' : '확인'}
           </button>
         ) : null}
       </div>

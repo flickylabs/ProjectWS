@@ -48,6 +48,184 @@ const EMPTY_RUNTIME: CombinationLabRuntimeState = {
   history: [],
 }
 
+const SPOUSE01_COMBINE2_OUTPUT_ID = 'dc-6'
+const SPOUSE01_COMBINE2_LABEL = 'dc-6 가족 쪽 정황'
+const SPOUSE01_COMBINE2_DISCOVERY_TEXT = '영수증 묶음 속 중학교 참고서와 문자에 섞인 학교 알림이 가족 쪽 정황으로 맞물린다.'
+const SPOUSE01_COMBINE2_SUMMARY = '영수증의 참고서와 문자 속 학교 알림을 함께 보며 가족 쪽 정황을 분리하는 카드'
+const SPOUSE01_COMBINE2_NOTE = '가족 쪽 정황'
+const SPOUSE01_COMBINE2_JUDGE_HINT = '문자와 구매 품목이 같은 가족 쪽 정황을 가리킵니다. 누구와 관련된 일인지와 왜 숨겼는지를 따로 확인해야 합니다.'
+const SPOUSE01_STALE_COMBINE2_JUDGE_LINE = '오피스텔의 사람을 짚어야겠습니다'
+
+function normalizeCaseKeyLocal(caseId?: string | null): string {
+  return String(caseId ?? '').replace(/^case-/, '')
+}
+
+function spouse01Combine2Node(): CombinationLabNode {
+  return {
+    id: SPOUSE01_COMBINE2_OUTPUT_ID,
+    type: 'derived_note',
+    label: SPOUSE01_COMBINE2_LABEL,
+    linkedDisputeIds: ['d-1', 'd-2'],
+    linkedEvidenceIds: ['e-1', 'e-4'],
+    visibility: 'derived',
+  }
+}
+
+function spouse01Combine2Output(): CombinationLabOutput {
+  return {
+    id: SPOUSE01_COMBINE2_OUTPUT_ID,
+    label: SPOUSE01_COMBINE2_LABEL,
+    summary: SPOUSE01_COMBINE2_SUMMARY,
+    nodeType: 'derived_note',
+    noteText: SPOUSE01_COMBINE2_NOTE,
+    effects: [
+      {
+        kind: 'unlock_note',
+        unlockNodeId: SPOUSE01_COMBINE2_OUTPUT_ID,
+      },
+      {
+        kind: 'upgrade_evidence',
+        evidenceUpgrade: {
+          evidenceId: 'e-4',
+          toReliability: 'hard',
+        },
+      },
+    ],
+    judgeHint: SPOUSE01_COMBINE2_JUDGE_HINT,
+  }
+}
+
+function dedupeStrings(values: unknown): string[] {
+  return Array.from(new Set(Array.isArray(values) ? values.filter((value): value is string => typeof value === 'string') : []))
+}
+
+function patchSpouse01CombinationConfig(config: CombinationLabConfig | null): CombinationLabConfig | null {
+  if (!config) return config
+
+  let hasDc6Node = false
+  const nodes = config.nodes.map((node) => {
+    if (node.id === 'dc-1') {
+      return {
+        ...node,
+        linkedDisputeIds: ['d-1'],
+        linkedEvidenceIds: ['e-1', 'e-2'],
+      }
+    }
+    if (node.id === SPOUSE01_COMBINE2_OUTPUT_ID) {
+      hasDc6Node = true
+      return { ...node, ...spouse01Combine2Node() }
+    }
+    return node
+  })
+  if (!hasDc6Node) nodes.push(spouse01Combine2Node())
+
+  let hasDc6Output = false
+  const outputs = config.outputs.map((output) => {
+    if (output.id === SPOUSE01_COMBINE2_OUTPUT_ID) {
+      hasDc6Output = true
+      return { ...output, ...spouse01Combine2Output() }
+    }
+    return output
+  })
+  if (!hasDc6Output) outputs.push(spouse01Combine2Output())
+
+  const recipes = config.recipes.map((recipe) => (
+    recipe.id === 'combine-2'
+      ? {
+          ...recipe,
+          inputs: ['e-1', 'e-4'],
+          discoveryText: SPOUSE01_COMBINE2_DISCOVERY_TEXT,
+          outputId: SPOUSE01_COMBINE2_OUTPUT_ID,
+        }
+      : recipe
+  ))
+
+  return { ...config, nodes, outputs, recipes }
+}
+
+function patchSpouse01RuntimeState(root: any): Partial<any> | null {
+  if (normalizeCaseKeyLocal(root.caseData?.caseId) !== 'spouse-01') return null
+
+  const runtime = root.combinationLabRuntime as CombinationLabRuntimeState | undefined
+  const patchedConfig = patchSpouse01CombinationConfig(runtime?.config ?? root.caseData?.combinationLab ?? null)
+  if (!runtime || !patchedConfig) return null
+
+  const appliedRecipeIds = dedupeStrings(runtime.appliedRecipeIds)
+  const combine2Applied = appliedRecipeIds.includes('combine-2')
+  const discoveredNodeIds = dedupeStrings(runtime.discoveredNodeIds)
+  const nextDiscoveredNodeIds = combine2Applied && !discoveredNodeIds.includes(SPOUSE01_COMBINE2_OUTPUT_ID)
+    ? [...discoveredNodeIds, SPOUSE01_COMBINE2_OUTPUT_ID]
+    : discoveredNodeIds
+  const history = Array.isArray(runtime.history)
+    ? runtime.history.map((entry) => (
+        entry.recipeId === 'combine-2' && entry.outputId === 'dc-1'
+          ? { ...entry, outputId: SPOUSE01_COMBINE2_OUTPUT_ID, summary: SPOUSE01_COMBINE2_SUMMARY }
+          : entry
+      ))
+    : []
+
+  const dialogueLog = Array.isArray(root.dialogueLog)
+    ? root.dialogueLog
+        .filter((entry: any) => !(
+          entry?.speaker === 'judge' &&
+          typeof entry.text === 'string' &&
+          entry.text.includes(SPOUSE01_STALE_COMBINE2_JUDGE_LINE)
+        ))
+        .map((entry: any) => {
+          if (
+            typeof entry?.text === 'string' &&
+            entry.text.includes('조합 결과: 오피스텔의 사람들') &&
+            entry.text.includes('중학교 참고서') &&
+            entry.text.includes('학교 알림')
+          ) {
+            return {
+              ...entry,
+              text: `조합 결과: ${SPOUSE01_COMBINE2_NOTE}\n${SPOUSE01_COMBINE2_DISCOVERY_TEXT}`,
+            }
+          }
+          return entry
+        })
+    : root.dialogueLog
+
+  const judgeObservations = Array.isArray(root.judgeObservations)
+    ? root.judgeObservations
+        .filter((entry: any) => !(
+          typeof entry?.summary === 'string' &&
+          entry.summary.includes(SPOUSE01_STALE_COMBINE2_JUDGE_LINE)
+        ))
+        .map((entry: any) => {
+          if (typeof entry?.summary === 'string' && entry.summary.includes('가족 쪽 돌봄 정황')) {
+            return { ...entry, summary: entry.summary.replaceAll('가족 쪽 돌봄 정황', '가족 쪽 정황') }
+          }
+          return entry
+        })
+    : root.judgeObservations
+
+  return {
+    caseData: root.caseData
+      ? { ...root.caseData, combinationLab: patchedConfig }
+      : root.caseData,
+    combinationLabRuntime: {
+      ...runtime,
+      config: patchedConfig,
+      appliedRecipeIds,
+      discoveredNodeIds: nextDiscoveredNodeIds,
+      unlockedNotes: combine2Applied
+        ? { ...(runtime.unlockedNotes ?? {}), [SPOUSE01_COMBINE2_OUTPUT_ID]: SPOUSE01_COMBINE2_NOTE }
+        : (runtime.unlockedNotes ?? {}),
+      history,
+    },
+    dialogueLog,
+    judgeObservations,
+  }
+}
+
+function ensureSpouse01RuntimePatched(get: () => any, set: (partial: any) => void): CombinationLabRuntimeState {
+  const patch = patchSpouse01RuntimeState(get())
+  if (patch) set(patch)
+  return (patch?.combinationLabRuntime ?? get().combinationLabRuntime) as CombinationLabRuntimeState
+}
+
 function dedupePush(list: string[], value: string): string[] {
   return list.includes(value) ? list : [...list, value]
 }
@@ -77,6 +255,7 @@ export interface CombinationLabSlice {
   combinationLabRuntime: CombinationLabRuntimeState
   initCombinationLab: (caseData: CaseData) => void
   resetCombinationLab: () => void
+  migrateCombinationLabRuntime: () => void
   getCombinationNode: (nodeId: string) => CombinationLabNode | undefined
   getCombinationOutput: (outputId: string) => CombinationLabOutput | undefined
   canRunCombinationRecipe: (recipeId: string) => boolean
@@ -89,7 +268,9 @@ export const createCombinationLabSlice: StateCreator<any, [], [], CombinationLab
   combinationLabRuntime: { ...EMPTY_RUNTIME },
 
   initCombinationLab: (caseData) => {
-    const config = caseData.combinationLab ?? null
+    const config = normalizeCaseKeyLocal(caseData.caseId) === 'spouse-01'
+      ? patchSpouse01CombinationConfig(caseData.combinationLab ?? null)
+      : (caseData.combinationLab ?? null)
     // base visibility 노드를 등록하되, statement는 해당 발언이 실제 대화에서
     // 발화될 때까지 "아직 발견 전"으로 둔다. 그렇지 않으면 NPC가 말하기도 전에
     // 자동 매칭에 노출되어 조기 스포일러를 유발한다.
@@ -135,23 +316,29 @@ export const createCombinationLabSlice: StateCreator<any, [], [], CombinationLab
     set({ combinationLabRuntime: { ...EMPTY_RUNTIME } })
   },
 
+  migrateCombinationLabRuntime: () => {
+    ensureSpouse01RuntimePatched(get, set as (partial: any) => void)
+  },
+
   getCombinationNode: (nodeId) => {
-    const config = get().combinationLabRuntime.config
+    const config = ensureSpouse01RuntimePatched(get, set as (partial: any) => void).config
     return config?.nodes.find((node: CombinationLabNode) => node.id === nodeId)
   },
 
   getCombinationOutput: (outputId) => {
-    const config = get().combinationLabRuntime.config
+    const config = ensureSpouse01RuntimePatched(get, set as (partial: any) => void).config
     return config?.outputs.find((output: CombinationLabOutput) => output.id === outputId)
   },
 
   canRunCombinationRecipe: (recipeId) => {
-    const state = get().combinationLabRuntime
+    const state = ensureSpouse01RuntimePatched(get, set as (partial: any) => void)
     const config = state.config
     if (!config) return false
     const recipe = config.recipes.find((item: CombinationLabRecipe) => item.id === recipeId)
     if (!recipe) return false
     if (!recipe.repeatable && state.appliedRecipeIds.includes(recipe.id)) return false
+    const output = config.outputs.find((item: CombinationLabOutput) => item.id === recipe.outputId)
+    if (output && !recipe.repeatable && state.discoveredNodeIds.includes(output.id)) return false
     if (state.analysisPoints < recipe.cost) return false
 
     const root = get() as any
@@ -174,16 +361,19 @@ export const createCombinationLabSlice: StateCreator<any, [], [], CombinationLab
 
   runCombinationRecipe: (recipeId) => {
     const root = get() as any
-    const runtime = root.combinationLabRuntime as CombinationLabRuntimeState
+    const runtime = ensureSpouse01RuntimePatched(get, set as (partial: any) => void)
     const config = runtime.config
     if (!config) return { ok: false, reason: 'no_config' }
 
     const recipe = config.recipes.find((item: CombinationLabRecipe) => item.id === recipeId)
     if (!recipe) return { ok: false, reason: 'recipe_not_found' }
-    if (!root.canRunCombinationRecipe(recipeId)) return { ok: false, reason: 'recipe_locked' }
-
     const output = config.outputs.find((item: CombinationLabOutput) => item.id === recipe.outputId)
     if (!output) return { ok: false, reason: 'output_not_found' }
+    if (!recipe.repeatable && runtime.appliedRecipeIds.includes(recipe.id)) return { ok: false, reason: 'recipe_locked' }
+    if (!recipe.repeatable && runtime.discoveredNodeIds.includes(output.id)) {
+      return { ok: false, reason: 'output_already_discovered' }
+    }
+    if (!root.canRunCombinationRecipe(recipeId)) return { ok: false, reason: 'recipe_locked' }
     const hiddenRefund = recipe.hidden ? (config.analysisPointRefundOnFirstHidden ?? 0) : 0
     const unlockedDossierForFirstTime = output.id.startsWith('dc-') && !runtime.appliedRecipeIds.includes(recipe.id)
 
@@ -230,6 +420,30 @@ export const createCombinationLabSlice: StateCreator<any, [], [], CombinationLab
       }
     }
 
+    const emergeExistingDispute = (disputeId?: string) => {
+      if (!disputeId || !caseData?.disputes.some((d) => d.id === disputeId)) return
+      const visibilityEntry = root.discovery?.disputeVisibility?.[disputeId]
+      if (visibilityEntry?.visibility !== 'hidden') return
+      const dispute = caseData.disputes.find((d) => d.id === disputeId)
+      root.emergeDispute?.(
+        disputeId,
+        'truth_confrontation',
+        root.turnCount ?? 0,
+        dispute?.name ?? stripOutputCodename(output.label ?? disputeId),
+      )
+    }
+
+    const emergePrerequisiteDisputes = (disputeId?: string) => {
+      if (!disputeId || !caseData) return
+      const dispute = caseData.disputes.find((d) => d.id === disputeId)
+      const required = dispute?.unlockCondition?.requireDispute
+      if (!required) return
+      const requirements = Array.isArray(required) ? required : [required]
+      for (const requirement of requirements) {
+        emergeExistingDispute(requirement?.id)
+      }
+    }
+
     if (output.noteText) {
       const primaryNoteNodeId =
         output.effects.find((effect) => effect.kind === 'unlock_note')?.unlockNodeId
@@ -266,6 +480,8 @@ export const createCombinationLabSlice: StateCreator<any, [], [], CombinationLab
           upsertDerivedDisputes(output.disputeNodes, 'emerged')
           const disputeId = effect.unlockNodeId ?? effect.targetId
           addNode(disputeId ?? output.id)
+          emergePrerequisiteDisputes(disputeId)
+          emergeExistingDispute(disputeId)
           // 기존 hidden 쟁점이면 discovery 상태에서 emerge 처리
           if (disputeId && caseData?.disputes.some((d) => d.id === disputeId)) {
             const visibilityEntry = root.discovery?.disputeVisibility?.[disputeId]
@@ -310,6 +526,8 @@ export const createCombinationLabSlice: StateCreator<any, [], [], CombinationLab
               }
             }
             nextDisputeTransforms[disputeId] = output.summary
+            emergePrerequisiteDisputes(disputeId)
+            emergeExistingDispute(disputeId)
           }
           break
         }

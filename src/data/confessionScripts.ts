@@ -69,7 +69,7 @@ const CONFESSION_DATA: Record<string, CaseConfessionMap> = {
       speaker: 'b',
       disputeId: 'd-3',
       preConfession: '…재판관님, 이건 액수까지 말씀드리겠습니다.',
-      confessionMain: '2,000만원입니다. 제 아내 몰래 모아둔 돈에서 빼서 형에게 현금으로 직접 전했습니다. 형이 개인회생 중이라 통장으로는 받을 수 없다고 했습니다.',
+      confessionMain: '3,000만원입니다. 제 아내 몰래 모아둔 돈에서 빼서 형에게 현금으로 직접 전했습니다. 형이 개인회생 중이라 통장으로는 받을 수 없다고 했습니다.',
       postConfession: '이 부분은 제가 책임지겠습니다.',
     },
     'A-d4': {

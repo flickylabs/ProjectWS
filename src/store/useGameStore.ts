@@ -11,7 +11,7 @@ import { createDiscoverySlice, type DiscoverySlice } from './slices/discoverySli
 import { createCombinationLabSlice, type CombinationLabSlice } from './slices/combinationLabSlice'
 import { createMinigameSlice, type MinigameSlice } from './slices/minigameSlice'
 import { createCharacterTagSlice, type CharacterTagSlice } from './slices/characterTagSlice'
-import { createEventFeedbackSlice, type EventFeedbackSlice } from './slices/eventFeedbackSlice'
+import { createEventFeedbackSlice, type EventFeedbackSlice, type EventFeedbackCourtBeat } from './slices/eventFeedbackSlice'
 import { createJudgeObservationSlice, type JudgeObservationSlice } from './slices/judgeObservationSlice'
 import { createJudgeNotebookSlice, type JudgeNotebookSlice } from './slices/judgeNotebookSlice'
 import type { CaseData, ProcessMetrics, PartyId } from '../types'
@@ -67,6 +67,194 @@ function ensureQuestionMeterState(meter?: Partial<QuestionMeterState>): Question
     trustWindow: meter?.trustWindow ?? 0,
     lastQuestionType: meter?.lastQuestionType ?? null,
     consecutiveSameType: meter?.consecutiveSameType ?? 0,
+  }
+}
+
+const SPOUSE01_COMBINE2_OUTPUT_ID = 'dc-6'
+const SPOUSE01_COMBINE2_LABEL = 'dc-6 가족 쪽 정황'
+const SPOUSE01_COMBINE2_DISCOVERY_TEXT = '영수증 묶음 속 중학교 참고서와 문자에 섞인 학교 알림이 가족 쪽 정황으로 맞물린다.'
+const SPOUSE01_COMBINE2_SUMMARY = '영수증의 참고서와 문자 속 학교 알림을 함께 보며 가족 쪽 정황을 분리하는 카드'
+const SPOUSE01_COMBINE2_NOTE = '가족 쪽 정황'
+const SPOUSE01_COMBINE2_JUDGE_HINT = '문자와 구매 품목이 같은 가족 쪽 정황을 가리킵니다. 누구와 관련된 일인지와 왜 숨겼는지를 따로 확인해야 합니다.'
+const SPOUSE01_STALE_COMBINE2_JUDGE_LINE = '오피스텔의 사람을 짚어야겠습니다'
+
+function spouse01Combine2Node() {
+  return {
+    id: SPOUSE01_COMBINE2_OUTPUT_ID,
+    type: 'derived_note',
+    label: SPOUSE01_COMBINE2_LABEL,
+    linkedDisputeIds: ['d-1', 'd-2'],
+    linkedEvidenceIds: ['e-1', 'e-4'],
+    visibility: 'derived',
+  }
+}
+
+function spouse01Combine2Output() {
+  return {
+    id: SPOUSE01_COMBINE2_OUTPUT_ID,
+    label: SPOUSE01_COMBINE2_LABEL,
+    summary: SPOUSE01_COMBINE2_SUMMARY,
+    nodeType: 'derived_note',
+    noteText: SPOUSE01_COMBINE2_NOTE,
+    effects: [
+      {
+        kind: 'unlock_note',
+        unlockNodeId: SPOUSE01_COMBINE2_OUTPUT_ID,
+      },
+      {
+        kind: 'upgrade_evidence',
+        evidenceUpgrade: {
+          evidenceId: 'e-4',
+          toReliability: 'hard',
+        },
+      },
+    ],
+    judgeHint: SPOUSE01_COMBINE2_JUDGE_HINT,
+  }
+}
+
+function dedupeStrings(values: unknown): string[] {
+  return Array.from(new Set(Array.isArray(values) ? values.filter((value): value is string => typeof value === 'string') : []))
+}
+
+function patchSpouse01CombinationConfig(config: any): any {
+  if (!config || !Array.isArray(config.nodes) || !Array.isArray(config.outputs) || !Array.isArray(config.recipes)) {
+    return config
+  }
+
+  let hasDc6Node = false
+  const nodes = config.nodes.map((node: any) => {
+    if (node?.id === 'dc-1') {
+      return {
+        ...node,
+        linkedDisputeIds: ['d-1'],
+        linkedEvidenceIds: ['e-1', 'e-2'],
+      }
+    }
+    if (node?.id === SPOUSE01_COMBINE2_OUTPUT_ID) {
+      hasDc6Node = true
+      return { ...node, ...spouse01Combine2Node() }
+    }
+    return node
+  })
+  if (!hasDc6Node) {
+    nodes.push(spouse01Combine2Node())
+  }
+
+  let hasDc6Output = false
+  const outputs = config.outputs.map((output: any) => {
+    if (output?.id === SPOUSE01_COMBINE2_OUTPUT_ID) {
+      hasDc6Output = true
+      return { ...output, ...spouse01Combine2Output() }
+    }
+    return output
+  })
+  if (!hasDc6Output) {
+    outputs.push(spouse01Combine2Output())
+  }
+
+  const recipes = config.recipes.map((recipe: any) => (
+    recipe?.id === 'combine-2'
+      ? {
+          ...recipe,
+          inputs: ['e-1', 'e-4'],
+          discoveryText: SPOUSE01_COMBINE2_DISCOVERY_TEXT,
+          outputId: SPOUSE01_COMBINE2_OUTPUT_ID,
+          resultType: recipe.resultType ?? 'dossier',
+        }
+      : recipe
+  ))
+
+  return { ...config, nodes, outputs, recipes }
+}
+
+function patchSpouse01CombinationRuntime(runtime: any): any {
+  if (!runtime) return runtime
+
+  const appliedRecipeIds = dedupeStrings(runtime.appliedRecipeIds)
+  const combine2Applied = appliedRecipeIds.includes('combine-2')
+  const discoveredNodeIds = dedupeStrings(runtime.discoveredNodeIds)
+  const nextDiscoveredNodeIds = combine2Applied && !discoveredNodeIds.includes(SPOUSE01_COMBINE2_OUTPUT_ID)
+    ? [...discoveredNodeIds, SPOUSE01_COMBINE2_OUTPUT_ID]
+    : discoveredNodeIds
+  const history = Array.isArray(runtime.history)
+    ? runtime.history.map((entry: any) => (
+        entry?.recipeId === 'combine-2' && entry.outputId === 'dc-1'
+          ? { ...entry, outputId: SPOUSE01_COMBINE2_OUTPUT_ID, summary: SPOUSE01_COMBINE2_SUMMARY }
+          : entry
+      ))
+    : []
+
+  return {
+    ...runtime,
+    config: patchSpouse01CombinationConfig(runtime.config),
+    appliedRecipeIds,
+    discoveredNodeIds: nextDiscoveredNodeIds,
+    unlockedNotes: combine2Applied
+      ? { ...(runtime.unlockedNotes ?? {}), [SPOUSE01_COMBINE2_OUTPUT_ID]: SPOUSE01_COMBINE2_NOTE }
+      : (runtime.unlockedNotes ?? {}),
+    history,
+  }
+}
+
+function patchSpouse01CombinationDialogue(dialogueLog: any): any {
+  if (!Array.isArray(dialogueLog)) return dialogueLog
+  return dialogueLog
+    .filter((entry: any) => !(
+      entry?.speaker === 'judge' &&
+      typeof entry.text === 'string' &&
+      entry.text.includes(SPOUSE01_STALE_COMBINE2_JUDGE_LINE)
+    ))
+    .map((entry: any) => {
+      if (
+        typeof entry?.text === 'string' &&
+        entry.text.includes('조합 결과: 오피스텔의 사람들') &&
+        entry.text.includes('중학교 참고서') &&
+        entry.text.includes('학교 알림')
+      ) {
+        return {
+          ...entry,
+          text: `조합 결과: ${SPOUSE01_COMBINE2_NOTE}\n${SPOUSE01_COMBINE2_DISCOVERY_TEXT}`,
+        }
+      }
+      return entry
+    })
+}
+
+function patchSpouse01JudgeObservations(judgeObservations: any): any {
+  if (!Array.isArray(judgeObservations)) return judgeObservations
+  return judgeObservations
+    .filter((entry: any) => !(
+      typeof entry?.summary === 'string' &&
+      entry.summary.includes(SPOUSE01_STALE_COMBINE2_JUDGE_LINE)
+    ))
+    .map((entry: any) => {
+      if (typeof entry?.summary === 'string' && entry.summary.includes('가족 쪽 돌봄 정황')) {
+        return {
+          ...entry,
+          summary: entry.summary.replaceAll('가족 쪽 돌봄 정황', '가족 쪽 정황'),
+        }
+      }
+      return entry
+    })
+}
+
+function patchSpouse01PersistedCombinationState(state: GameStore): GameStore {
+  if (normalizeCaseKey(state.caseData?.caseId ?? '') !== 'spouse-01') {
+    return state
+  }
+
+  return {
+    ...state,
+    caseData: state.caseData
+      ? {
+          ...state.caseData,
+          combinationLab: patchSpouse01CombinationConfig(state.caseData.combinationLab),
+        }
+      : state.caseData,
+    combinationLabRuntime: patchSpouse01CombinationRuntime((state as any).combinationLabRuntime),
+    dialogueLog: patchSpouse01CombinationDialogue((state as any).dialogueLog),
+    judgeObservations: patchSpouse01JudgeObservations((state as any).judgeObservations),
   }
 }
 
@@ -231,7 +419,7 @@ export type GameStore = PhaseSlice & AgentSlice & ResourceSlice & EvidenceSlice 
   pendingGameEvent: GameEventTrigger | null
   setPendingGameEvent: (event: GameEventTrigger | null) => void
   /** V3: 증거 결과 토스트 */
-  pendingEvidenceResult: { type: 'hold' | 'crack' | 'collapse'; evidenceName: string; evidenceId?: string } | null
+  pendingEvidenceResult: { type: 'hold' | 'crack' | 'collapse'; evidenceName: string; evidenceId?: string; courtBeat?: EventFeedbackCourtBeat } | null
   setPendingEvidenceResult: (r: GameStore['pendingEvidenceResult']) => void
   /** V3: DisputeBoard → ActionPanel 라우팅 */
   disputeBoardAction: { disputeId: string; party: 'a' | 'b' } | null
@@ -975,7 +1163,7 @@ export const useGameStore: import('zustand').UseBoundStore<import('zustand').Sto
       }
     }
 
-    return merged
+    return patchSpouse01PersistedCombinationState(merged)
   },
   partialize: (state): any => ({
     // phase

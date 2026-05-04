@@ -44,7 +44,9 @@ function passesSpouse01EmergenceGate(state: any, disputeId: string): boolean {
   if (caseId !== 'spouse-01') return true
 
   if (disputeId === 'd-2') {
-    return hasEvidenceStage(state, 'e-4') || getMaxLieRank(state, 'd-1') >= 5
+    return getMaxLieRank(state, 'd-1') >= 3 ||
+      hasEvidenceStage(state, 'e-4') ||
+      hasEvidenceStage(state, 'e-5')
   }
   if (disputeId === 'h-d3') {
     return isVisibleOrEmerged(state, 'd-2') && hasEvidenceStage(state, 'e-5')

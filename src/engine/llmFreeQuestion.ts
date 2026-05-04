@@ -10,7 +10,16 @@ import { getPrompt, getPromptConfig } from '../api/promptManager'
 import { buildAgentPrompt, getAgentConfig, isAgentLoaded } from '../api/agentManager'
 import { enforceHonorifics, fixMisdirectedAddress, postProcessNpcText, type PostProcessContext } from './llmDialogueResolver'
 import { fixPostpositions } from './koreanPostposition'
-import { buildSpeechGuide, getMyCall, getJudgeReference, getAngryCall, getRelationLabel, canUseInformal } from './llmSpeechGuide'
+import {
+  buildSpeechGuide,
+  getMyCall,
+  getJudgeReference,
+  getAngryCall,
+  getRelationLabel,
+  canUseInformal,
+  buildOpponentReferenceGuide,
+  enforceOpponentReferenceForms,
+} from './llmSpeechGuide'
 import { eunneun } from '../utils/korean'
 import { getTruthThrottle, getArchetypeGuide } from './blueprintPromptBuilderV2'
 import { callFreeInterrogationApiText, evaluateFreeInterrogationResponse } from './freeInterrogation/guard'
@@ -218,6 +227,7 @@ async function generateResponse(
   const myCall = rawCall === '자기' ? '자기야' : rawCall
   const judgeRef = getJudgeReference(caseData.duo, target)
   const angryCall = getAngryCall(caseData.duo, target)
+  const opponentReferenceGuide = buildOpponentReferenceGuide(caseData, target)
 
   const relType = getRelationshipType(caseData)
   const canInformalThis = canUseInformal(caseData, target)
@@ -307,10 +317,11 @@ async function generateResponse(
     callForm: myCall,
     judgeRef,
     angryCall,
+    opponentReferenceGuide,
     formalityGuide,
     lieStates,
     disputeList,
-    speechGuide: buildSpeechGuide(caseData.duo, 'free', target),
+    speechGuide: buildSpeechGuide(caseData.duo, 'free', target, caseData),
     speechGuideShort: canInformalThis
       ? `\n말투 규칙 (최우선 — 위반 시 출력 무효):\n★ 재판관에게는 어떤 상황에서도 반드시 존댓말만 사용 (~습니다, ~요, ~입니다). 반말 절대 금지.\n- 상대에게: 반말만 사용 (~야, ~잖아, ~거야, ~했어)\n- 절대 금지: "~냐?", "~냐고?", "~했냐?", "~것이냐?" → 대신 "~야?", "~한 거야?", "~했어?" 사용\n- 문장 끝에 "~다"로 끝나는 평서문 금지 → "~야", "~거야", "~잖아"로 마무리`
       : `\n말투 규칙 (최우선 — 위반 시 출력 무효):\n★ 재판관에게는 어떤 상황에서도 반드시 존댓말만 사용 (~습니다, ~요, ~입니다). 반말 절대 금지.\n- 상대에게: 존댓말 (~요, ~습니다, ~했습니다)\n- 절대 금지: "~냐?", "~냐고?", "~했냐?" → 대신 "~요?", "~습니까?" 사용\n- 감정이 격해진 경우에만 상대에게 반말 전환 허용 (재판관에게는 불가)`,
@@ -395,6 +406,7 @@ ${runtimeBrief}
 - 답변자는 반드시 ${party.name}이며, 말투는 "${party.speechStyle}"를 따른다.
 - 현재 공개 단계와 제시된 증거 범위를 넘겨 숨겨진 진실을 직접 말하지 않는다.
 - 상대방 호칭은 재판관에게 말할 때 "${judgeRef}", 직접 부를 때 "${myCall}" 기준을 따른다.
+${opponentReferenceGuide}
 - 출력은 JSON 객체 하나만 한다.`
   const guardContext = buildFreeQuestionGuardContext({
     caseData,
@@ -431,7 +443,10 @@ ${runtimeBrief}
         }
 
     if (rawResult.action === 'fallback') {
-      return buildGuardFallbackFreeQuestionResult(rawResult, classification)
+      return buildGuardFallbackFreeQuestionResult(
+        { ...rawResult, text: enforceOpponentReferenceForms(rawResult.text, caseData, target) },
+        classification,
+      )
     }
 
     const raw = rawResult.text
@@ -447,14 +462,18 @@ ${runtimeBrief}
       speaker: target,
       previousNpcResponse: dialogueLog.filter(d => d.speaker === target).slice(-1)[0]?.text,
     }
-    const parsed = parseResponderResponse(raw, ppCtx)
+    const parsed = parseResponderResponse(raw, ppCtx, caseData, target)
     if (guardContext) {
       const guarded = await evaluateFreeInterrogationResponse(parsed.response, guardContext)
       if (guarded.action === 'fallback') {
-        return buildGuardFallbackFreeQuestionResult(guarded, classification)
+        return buildGuardFallbackFreeQuestionResult(
+          { ...guarded, text: enforceOpponentReferenceForms(guarded.text, caseData, target) },
+          classification,
+        )
       }
       parsed.response = guarded.text
     }
+    parsed.response = enforceOpponentReferenceForms(parsed.response, caseData, target)
 
     return {
       questionType: classification.questionType,
@@ -465,13 +484,14 @@ ${runtimeBrief}
     }
   } catch {
     if (guardContext) {
+      const fallback = selectFreeInterrogationFallbackText(
+        guardContext,
+        'api_failure',
+        '',
+        [{ dimension: 'api_failure', reason: 'free-question-responder threw unexpectedly' }],
+      )
       return buildGuardFallbackFreeQuestionResult(
-        selectFreeInterrogationFallbackText(
-          guardContext,
-          'api_failure',
-          '',
-          [{ dimension: 'api_failure', reason: 'free-question-responder threw unexpectedly' }],
-        ),
+        { ...fallback, text: enforceOpponentReferenceForms(fallback.text, caseData, target) },
         classification,
       )
     }
@@ -485,7 +505,12 @@ ${runtimeBrief}
   }
 }
 
-function parseResponderResponse(raw: string, ppCtx?: PostProcessContext): { response: string; behaviorHint: string } {
+function parseResponderResponse(
+  raw: string,
+  ppCtx: PostProcessContext | undefined,
+  caseData: CaseData,
+  target: PartyId,
+): { response: string; behaviorHint: string } {
   try {
     const jsonMatch = raw.match(/\{[\s\S]*\}/)
     if (!jsonMatch) throw new Error('No JSON')
@@ -497,7 +522,11 @@ function parseResponderResponse(raw: string, ppCtx?: PostProcessContext): { resp
     const behaviorHint = parsed.behaviorHint || (behaviorMatch ? behaviorMatch[1] : '')
     const rawResponse = responseText.replace(/[（(][^)）]+[)）]/g, '').trim()
     // 전체 후처리 파이프라인 적용 (TruthThrottle/클리셰 필터/금액 보호 포함)
-    const response = ppCtx ? postProcessNpcText(rawResponse, ppCtx) : fixPostpositions(enforceHonorifics(fixMisdirectedAddress(rawResponse)))
+    const response = enforceOpponentReferenceForms(
+      ppCtx ? postProcessNpcText(rawResponse, ppCtx) : fixPostpositions(enforceHonorifics(fixMisdirectedAddress(rawResponse))),
+      caseData,
+      target,
+    )
 
     // S0-S1 회피 패턴 감지 → 플레이어에게 힌트 제공
     let finalHint = behaviorHint
@@ -510,7 +539,7 @@ function parseResponderResponse(raw: string, ppCtx?: PostProcessContext): { resp
 
     return { response: response || '...', behaviorHint: finalHint }
   } catch {
-    return { response: raw.slice(0, 200), behaviorHint: '' }
+    return { response: enforceOpponentReferenceForms(raw.slice(0, 200), caseData, target), behaviorHint: '' }
   }
 }
 

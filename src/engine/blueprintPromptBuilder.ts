@@ -10,7 +10,7 @@ import type { ResponseBlueprint, ClaimPolicy, QuestionType } from '../types'
 import type { CaseData, PartyId } from '../types'
 import type { Archetype } from '../types'
 import type { LieState } from '../types/agent'
-import { getMyCall, getJudgeReference, getAngryCall, canUseInformal } from './llmSpeechGuide'
+import { getMyCall, getJudgeReference, getAngryCall, canUseInformal, buildOpponentReferenceGuide } from './llmSpeechGuide'
 import { getBridgeEntry } from './bridgeEngine'
 import { normalizeCaseKey } from '../utils/caseHelpers'
 import { pp이가, pp은는 } from './koreanPostposition'
@@ -34,6 +34,7 @@ export function buildBlueprintSystemPrompt(
   const angryCall = getAngryCall(caseData.duo, party)
   const callForm = myCall === '자기' ? '자기야' : myCall
   const canInformalThis = canUseInformal(caseData, party)
+  const opponentReferenceGuide = buildOpponentReferenceGuide(caseData, party)
 
   const dispute = caseData.disputes.find(d => d.id === blueprint.focusDisputeId)
   const disputeName = dispute?.name ?? '해당 사안'
@@ -101,6 +102,7 @@ ${admittedFacts.length > 0 ? `\n## 이미 인정한 사실 (재부정 금지)\n$
 - 상대방에게 직접 말할 때: "${callForm}" 사용
 - ${formalityGuide}
 - ❌ 재판관의 말을 생성하지 마. 당신은 ${profile.name}만 연기합니다.
+${opponentReferenceGuide}
 ${recentStr ? `\n## 최근 대화\n${recentStr}` : ''}
 
 ## 출력

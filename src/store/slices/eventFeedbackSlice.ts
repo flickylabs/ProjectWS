@@ -35,6 +35,50 @@ export interface EventFeedbackAction {
   onSelect: () => void
 }
 
+export type EventFeedbackCourtBeatType =
+  | 'evidence_hit_major'
+  | 'evidence_miss'
+  | 'notebook_judicial_record'
+
+export type EventFeedbackCourtBeatIntensity = 'focus' | 'impact' | 'breakthrough'
+export type EventFeedbackCourtBeatCue = 'evidence' | 'contradiction' | 'notebook' | 'truth'
+export type EventFeedbackCourtBeatDestination = 'evidence' | 'dispute' | 'notebook' | 'truth' | 'observation'
+
+export interface EventFeedbackEvidenceRow {
+  id: string
+  label: string
+  detail?: string
+  highlighted?: boolean
+  muted?: boolean
+}
+
+export interface EventFeedbackCourtBeat {
+  beatType: EventFeedbackCourtBeatType
+  intensity?: EventFeedbackCourtBeatIntensity
+  cue?: EventFeedbackCourtBeatCue
+  destination?: EventFeedbackCourtBeatDestination
+  statement?: {
+    speakerName?: string
+    text: string
+    highlightText?: string
+  }
+  evidence?: {
+    id?: string
+    title: string
+    stageLabel?: string
+    rows: EventFeedbackEvidenceRow[]
+  }
+  portraitReaction?: {
+    caseId?: string
+    party?: PartyId
+    name?: string
+    state?: 'neutral' | 'defensive' | 'shaken' | 'resigned' | 'softened'
+  }
+  judgeLine?: string
+  reactionLine?: string
+  notebookEntry?: string
+}
+
 export interface EventFeedbackItem {
   id: string
   kind: EventFeedbackKind
@@ -59,6 +103,8 @@ export interface EventFeedbackItem {
   meta?: string[]
   /** block 리스트 (제목 + 설명) — 판단 충돌/감정 실수 등 */
   blocks?: { title: string; text: string }[]
+  /** Court Beat v1: statement/evidence clash and judicial record visual payload. */
+  courtBeat?: EventFeedbackCourtBeat
   tone?: EventFeedbackTone
   /** 카드 상단 라벨 (ex: "재판관의 관찰") */
   eyebrow?: string

@@ -230,6 +230,240 @@ function buildEvidencePresentationMeta(displayName: string, stageLabel: string) 
   }
 }
 
+function shortenCourtBeatText(value: unknown, max = 72): string {
+  const text = String(value ?? '').replace(/\s+/g, ' ').trim()
+  if (text.length <= max) return text
+  return `${text.slice(0, max - 1)}…`
+}
+
+function getEvidenceBeatViewerData(evidence: any, evidenceRuntime: any): any {
+  const byStage = evidence?.viewerDataByStage ?? {}
+  const stages = Array.isArray(evidence?.investigationStages) ? evidence.investigationStages : []
+  const investigated = Array.isArray(evidenceRuntime?.investigatedActions) ? evidenceRuntime.investigatedActions : []
+  const latestStage = stages
+    .filter((stage: any) => investigated.includes(stage.revealKey))
+    .sort((a: any, b: any) => (a.stage ?? 0) - (b.stage ?? 0))
+    .at(-1)?.stage
+  return byStage[String(latestStage)] ?? byStage[String(investigated.length)] ?? evidence?.viewerData ?? {}
+}
+
+function evidenceBeatRowLabel(row: any): string {
+  if (!row || typeof row !== 'object') return shortenCourtBeatText(row, 58)
+  if ('storeName' in row || 'total' in row || Array.isArray(row.items)) {
+    const itemSummary = Array.isArray(row.items)
+      ? row.items
+          .map((item: any) => item?.name)
+          .filter(Boolean)
+          .slice(0, 2)
+          .join(', ')
+      : ''
+    return shortenCourtBeatText(
+      [
+        row.date,
+        [row.storeName, itemSummary].filter(Boolean).join(' · '),
+        row.total ? `${row.total}원` : '',
+      ].filter(Boolean).join('  '),
+      78,
+    )
+  }
+  if ('date' in row || 'duration' in row || 'target' in row) {
+    return shortenCourtBeatText([row.date, row.typeLabel, row.target, row.duration].filter(Boolean).join('  '), 64)
+  }
+  if ('timestamp' in row || 'location' in row || 'speed' in row) {
+    return shortenCourtBeatText([row.timestamp, row.location, row.speed].filter(Boolean).join('  '), 64)
+  }
+  if ('sender' in row || 'text' in row) {
+    return shortenCourtBeatText([row.sender, row.text].filter(Boolean).join(': '), 64)
+  }
+  if ('name' in row || 'amount' in row) {
+    return shortenCourtBeatText([row.name, row.amount ? `${row.amount}원` : ''].filter(Boolean).join('  '), 64)
+  }
+  return shortenCourtBeatText(Object.values(row).filter((v) => typeof v === 'string' || typeof v === 'number').join('  '), 64)
+}
+
+function flattenEvidenceBeatRows(viewerData: any): any[] {
+  const rows: any[] = []
+  const logRows = viewerData?.log?.rows
+  if (Array.isArray(logRows)) rows.push(...logRows)
+  if (Array.isArray(viewerData?.gps_log)) rows.push(...viewerData.gps_log)
+  if (Array.isArray(viewerData?.receipt)) {
+    for (const receipt of viewerData.receipt) rows.push(receipt)
+  }
+  const messages = viewerData?.chat?.messages
+  if (Array.isArray(messages)) rows.push(...messages.filter((m: any) => m?.text))
+  const recordRows = viewerData?.record?.rows ?? viewerData?.document?.rows ?? viewerData?.device?.rows
+  if (Array.isArray(recordRows)) rows.push(...recordRows)
+  return rows
+}
+
+function buildEvidenceBeatRows(evidence: any, evidenceRuntime: any, resultType: 'hold' | 'crack' | 'collapse') {
+  const viewerData = getEvidenceBeatViewerData(evidence, evidenceRuntime)
+  const rawRows = flattenEvidenceBeatRows(viewerData)
+  const preferred = rawRows.filter((row) => row?.suspicious === true)
+  const baseRows = (preferred.length > 0 ? preferred : rawRows).slice(0, 4)
+  const rows = baseRows.map((row, index) => ({
+    id: `${evidence?.id ?? 'evidence'}-row-${index}`,
+    label: evidenceBeatRowLabel(row),
+    highlighted: resultType !== 'hold' && (row?.suspicious === true || index < Math.min(3, baseRows.length)),
+    muted: resultType === 'hold' || row?.suspicious === false,
+  }))
+  if (rows.length > 0) return rows
+
+  const investigated = Array.isArray(evidenceRuntime?.investigatedActions) ? evidenceRuntime.investigatedActions : []
+  const resultRows = investigated
+    .map((key: string, index: number) => ({
+      id: `${evidence?.id ?? 'evidence'}-result-${index}`,
+      label: shortenCourtBeatText(evidence?.investigationResults?.[key] ?? key, 68),
+      highlighted: resultType !== 'hold' && index === investigated.length - 1,
+      muted: resultType === 'hold',
+    }))
+    .filter((row: any) => row.label)
+  if (resultRows.length > 0) return resultRows.slice(-4)
+
+  return [{
+    id: `${evidence?.id ?? 'evidence'}-summary`,
+    label: shortenCourtBeatText(evidence?.description ?? evidence?.surfaceDescription ?? evidence?.name ?? evidence?.id, 68),
+    highlighted: resultType !== 'hold',
+    muted: resultType === 'hold',
+  }]
+}
+
+function findRecentCourtBeatStatement(state: ReturnType<typeof useGameStore.getState>, party: PartyId, disputeIds: string[]): string {
+  const related = new Set(disputeIds)
+  const found = [...state.dialogueLog].reverse().find((entry: any) => {
+    if (entry.speaker !== party || entry.isHidden || !entry.text) return false
+    if (related.size === 0) return true
+    return Array.isArray(entry.relatedDisputes) && entry.relatedDisputes.some((id: string) => related.has(id))
+  })
+  return found?.text ?? ''
+}
+
+function pickStatementHighlight(text: string): string | undefined {
+  const candidates = [
+    '별 의미 없는 연락',
+    '별 의미 없는',
+    '의미 없는 연락',
+    '의미 없는',
+    '단순한 연락',
+    '단순한',
+    '따로 볼 수',
+    '별개의',
+    '관계없',
+    '관련없',
+    '관련 없',
+    '관련이 없',
+    '기억나지',
+    '기억이 나지',
+    '모르',
+    '단순',
+    '우연',
+  ]
+  const hit = candidates.find((candidate) => text.includes(candidate))
+  if (hit) return expandStatementHighlight(text, hit)
+  return undefined
+}
+
+function expandStatementHighlight(text: string, hit: string): string {
+  const index = text.indexOf(hit)
+  if (index < 0) return hit
+
+  const sentenceBreakers = new Set(['.', '?', '!', '。', '？', '！', '\n'])
+  let start = 0
+  for (let i = index - 1; i >= 0; i -= 1) {
+    if (sentenceBreakers.has(text[i])) {
+      start = i + 1
+      break
+    }
+  }
+  while (start < text.length && /\s/.test(text[start])) start += 1
+
+  let end = text.length
+  for (let i = index + hit.length; i < text.length; i += 1) {
+    if (sentenceBreakers.has(text[i])) {
+      end = i + 1
+      break
+    }
+  }
+  while (end > start && /\s/.test(text[end - 1])) end -= 1
+
+  const sentence = text.slice(start, end)
+  return sentence || hit
+}
+
+function findRecentDirectCourtBeatStatement(state: ReturnType<typeof useGameStore.getState>, party: PartyId, disputeIds: string[]): string {
+  const related = new Set(disputeIds)
+  const found = [...state.dialogueLog].reverse().find((entry: any) => {
+    if (entry.speaker !== party || entry.isHidden || !entry.text) return false
+    if (!pickStatementHighlight(entry.text)) return false
+    if (related.size === 0) return true
+    return Array.isArray(entry.relatedDisputes) && entry.relatedDisputes.some((id: string) => related.has(id))
+  })
+  return found?.text ?? ''
+}
+
+function buildCourtBeatForEvidencePresentation(
+  state: ReturnType<typeof useGameStore.getState>,
+  target: PartyId,
+  evidence: any,
+  evidenceRuntime: any,
+  displayName: string,
+  stageLabel: string,
+  visibleDisputeIds: string[],
+  resultType: 'hold' | 'crack' | 'collapse',
+) {
+  const targetName = getPartyName(state, target)
+  const recentStatementText = findRecentCourtBeatStatement(state, target, visibleDisputeIds)
+  const recentHighlightText = pickStatementHighlight(recentStatementText)
+  const directStatementText = recentHighlightText
+    ? recentStatementText
+    : findRecentDirectCourtBeatStatement(state, target, visibleDisputeIds)
+  const statementText = directStatementText
+    || recentStatementText
+    || `${targetName}의 직전 설명을 이 기록과 함께 다시 확인합니다.`
+  const highlightText = pickStatementHighlight(statementText)
+  const isHit = resultType === 'crack' || resultType === 'collapse'
+  const isDirectClash = isHit && Boolean(highlightText)
+  const evidenceName = normalizeEvidenceDisplayLabel(displayName)
+  return {
+    beatType: isHit ? 'evidence_hit_major' : 'evidence_miss',
+    intensity: isHit ? 'impact' : 'focus',
+    cue: isDirectClash ? 'contradiction' : 'evidence',
+    destination: isHit ? 'notebook' : 'observation',
+    statement: {
+      speakerName: targetName,
+      text: shortenCourtBeatText(statementText, 96),
+      highlightText,
+    },
+    evidence: {
+      id: evidence?.id,
+      title: evidenceName,
+      stageLabel,
+      rows: buildEvidenceBeatRows(evidence, evidenceRuntime, resultType),
+    },
+    portraitReaction: {
+      caseId: state.caseData?.caseId,
+      party: target,
+      name: targetName,
+      state: isDirectClash ? 'shaken' : 'defensive',
+    },
+    judgeLine: isHit
+      ? isDirectClash
+        ? '이 기록은 방금 진술과 맞지 않습니다. 시간을 다시 짚겠습니다.'
+        : '이 기록은 방금 설명을 바로 뒤집기보다, 더 확인해야 할 범위를 좁힙니다.'
+      : '이 자료만으로는 방금 진술을 직접 뒤집기 어렵습니다.',
+    reactionLine: isHit
+      ? isDirectClash
+        ? '...그렇게 연결될 줄은 몰랐습니다.'
+        : '...그 부분은 더 설명드리겠습니다.'
+      : undefined,
+    notebookEntry: isHit
+      ? isDirectClash
+        ? `${evidenceName}에 비추어, 방금 진술은 그대로 받아들이기 어렵습니다.`
+        : `${evidenceName}에서 추가로 확인할 대목이 생겼습니다. 방금 설명은 더 정리해야 합니다.`
+      : undefined,
+  }
+}
+
 function getEvidenceCurrentLieRank(evidence: any, lieStates: Record<string, { currentState?: string }> | undefined): number {
   const proves = Array.isArray(evidence?.proves) && evidence.proves.length > 0 ? evidence.proves : []
   const ranks = proves.map((id: string) => LIE_STATE_RANK_FOR_UNLOCK[lieStates?.[id]?.currentState ?? 'S0'] ?? 0)
@@ -585,7 +819,17 @@ async function handleEvidencePresent(action: Extract<PlayerAction, { type: 'evid
     const toastState = useGameStore.getState()
     const resultType = !evDidTransition ? 'hold'
       : evDef.reliability === 'hard' ? 'collapse' : 'crack'
-    toastState.setPendingEvidenceResult({ type: resultType, evidenceName: displayName, evidenceId: evDef.id })
+    const courtBeat = buildCourtBeatForEvidencePresentation(
+      toastState,
+      action.target,
+      evDef,
+      evStateForName,
+      displayName,
+      evidenceStageLabel,
+      visibleEvProves,
+      resultType,
+    )
+    toastState.setPendingEvidenceResult({ type: resultType, evidenceName: displayName, evidenceId: evDef.id, courtBeat })
 
     // penalty_buffer 퍼크: hold(증거 무효) 시 철회/재프레이밍 선택지
     if (resultType === 'hold' && toastState.activePerks.penaltyBufferUsesRemaining > 0) {
@@ -2805,11 +3049,31 @@ const EMPATHY_POOL_HARD = [
   '${myName} 씨, ${topic} 당시의 마음을 말하되, 책임질 부분을 흐리지 말고 답하십시오.',
 ]
 
+function sanitizeJudgeQuestionForDisclosure(text: string, caseId: string, lieState: string): string {
+  const normalizedCaseId = normalizeCaseKey(caseId)
+  const stage = Number(String(lieState).replace(/^S/, '')) || 0
+  if (normalizedCaseId !== 'spouse-01' || stage >= 4) return text
+
+  return text
+    .replace(
+      /형을 보호하려는 마음이 배우자를 배제해도 된다는 판단으로 바뀐 지점/g,
+      '개인적인 사정을 우선한 판단이 배우자에게 설명하지 않는 선택으로 바뀐 지점',
+    )
+    .replace(/형 사정/g, '개인적인 사정')
+    .replace(/형에게 온 문자/g, '발신자 미상 문자')
+    .replace(/형에게/g, '상대에게')
+    .replace(/형을/g, '상대를')
+    .replace(/동생으로는/g, '개인적으로는')
+}
+
 function buildQuestionText(type: QuestionType, target: PartyId, disputeId: string): string {
   const s = useGameStore.getState()
   if (!s.caseData) return '말씀해 주십시오.'
   const history = s.interrogationHistory?.[target]?.[disputeId]
   const depth = Math.min(Math.max((history?.questionTypes?.length ?? 0) + 1, 1), 4)
+  const agent = target === 'a' ? s.agentA : s.agentB
+  const lieEntry = agent.lieStateMap[disputeId]
+  const lieState = lieEntry?.currentState ?? 'S0'
   const scriptedJudge = getScriptedJudgeQuestion(
     normalizeCaseKey(s.caseData.caseId ?? ''),
     disputeId,
@@ -2817,14 +3081,13 @@ function buildQuestionText(type: QuestionType, target: PartyId, disputeId: strin
     depth,
     target,
   )
-  if (scriptedJudge?.text) return scriptedJudge.text
+  if (scriptedJudge?.text) {
+    return sanitizeJudgeQuestionForDisclosure(scriptedJudge.text, s.caseData.caseId ?? '', lieState)
+  }
 
   const myName = target === 'a' ? s.caseData.duo.partyA.name : s.caseData.duo.partyB.name
   const opName = target === 'a' ? s.caseData.duo.partyB.name : s.caseData.duo.partyA.name
   const dispute = s.caseData.disputes.find((d) => d.id === disputeId)
-  const agent = target === 'a' ? s.agentA : s.agentB
-  const lieEntry = agent.lieStateMap[disputeId]
-  const lieState = lieEntry?.currentState ?? 'S0'
   const turn = s.turnCount
 
   // 쟁점명에서 대상 이름을 제거하고 자연스러운 주제로 변환

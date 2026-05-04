@@ -8,7 +8,15 @@
 import { chatCompletion, MODEL_DIALOGUE } from './llmClient'
 import { getPrompt, getPromptConfig } from '../api/promptManager'
 import { buildAgentPrompt, getAgentConfig, isAgentLoaded, getContextFlags } from '../api/agentManager'
-import { getMyCall, getJudgeReference, getAngryCall, getRelationLabel, canUseInformal } from './llmSpeechGuide'
+import {
+  getMyCall,
+  getJudgeReference,
+  getAngryCall,
+  getRelationLabel,
+  canUseInformal,
+  buildOpponentReferenceGuide,
+  enforceOpponentReferenceForms,
+} from './llmSpeechGuide'
 import { pp이가, pp은는, pp을를, pp과와, fixPostpositions } from './koreanPostposition'
 import { resolveDialogue as fallbackResolve, type ResolvedDialogue } from './dialogueResolver'
 import type { PlayerAction, PartyId, DialogueNode, AgentState } from '../types'
@@ -157,6 +165,20 @@ async function applyDisclosureGuardToResolvedDialogue(
   return result
 }
 
+function applySpeechReferenceGuardToResolvedDialogue(
+  result: ResolvedDialogue | null,
+  caseData: CaseData,
+): ResolvedDialogue | null {
+  if (!result) return result
+  return {
+    ...result,
+    node: {
+      ...result.node,
+      text: enforceOpponentReferenceForms(result.node.text, caseData, result.target),
+    },
+  }
+}
+
 type FreeInterrogationQuestionMeta = {
   rawText: string
   intent?: FreeInterrogationGuardContext['intent']
@@ -213,7 +235,7 @@ async function applyFreeInterrogationFallbackToResolvedDialogue(
     ...result,
     node: {
       ...result.node,
-      text: fallbackResult.text,
+      text: enforceOpponentReferenceForms(fallbackResult.text, caseData, finalTarget),
       behaviorHint: fallbackResult.behaviorHint || result.node.behaviorHint,
     },
   }
@@ -247,13 +269,13 @@ export async function resolveLLMDialogue(
 
   // ── ScriptedText 우선 경로: 사전 생성 대사가 있으면 LLM 호출 안 함 ──
   const scriptedResult = tryScriptedDialoguePath(action, agentA, agentB, caseData, store, dossierContext)
-  if (scriptedResult !== null) return scriptedResult
+  if (scriptedResult !== null) return applySpeechReferenceGuardToResolvedDialogue(scriptedResult, caseData)
 
   // ── Blueprint 경로 분기: ClaimPolicy가 있는 사건은 새 경로 ──
   const blueprintResult = await tryBlueprintPath(action, agentA, agentB, evidenceStates, caseData, store)
   if (blueprintResult !== null) {
     const guardedBlueprintResult = await applyDisclosureGuardToResolvedDialogue(
-      blueprintResult,
+      applySpeechReferenceGuardToResolvedDialogue(blueprintResult, caseData),
       buildDisclosureGuardContext(
         action, caseData, evidenceStates, agentA, agentB, store, dossierContext, 'blueprint-result',
         {
@@ -457,6 +479,7 @@ export async function resolveLLMDialogue(
       amountHint: extractConcreteAmountHint(dispute?.truthDescription, dispute?.name),
     })
     parsed.npcNode.text = diversifyAgainstPreviousResponse(parsed.npcNode.text, getPreviousNpcResponseText(store.dialogueLog))
+    parsed.npcNode.text = enforceOpponentReferenceForms(parsed.npcNode.text, caseData, target)
 
     // NPC 응답이 너무 짧으면 폴백으로 전환
     if (!parsed.npcNode.text || parsed.npcNode.text.length < 5) {
@@ -558,7 +581,7 @@ export async function resolveLLMDialogue(
     console.warn('LLM 호출 실패, 폴백:', error)
     const fallbackResult = fallbackResolve(action, agentA, agentB, evidenceStates, caseData)
     const guardedFallback = await applyDisclosureGuardToResolvedDialogue(
-      fallbackResult,
+      applySpeechReferenceGuardToResolvedDialogue(fallbackResult, caseData),
       buildDisclosureGuardContext(
         action, caseData, evidenceStates, agentA, agentB, store, dossierContext, 'legacy-fallback-inner',
         {
@@ -581,7 +604,7 @@ export async function resolveLLMDialogue(
     console.error('[resolveLLMDialogue] 프롬프트 조립 또는 처리 중 에러:', outerError)
     const fallbackResult = fallbackResolve(action, agentA, agentB, evidenceStates, caseData)
     const guardedFallback = await applyDisclosureGuardToResolvedDialogue(
-      fallbackResult,
+      applySpeechReferenceGuardToResolvedDialogue(fallbackResult, caseData),
       buildDisclosureGuardContext(
         action, caseData, evidenceStates, agentA, agentB, store, dossierContext, 'legacy-fallback-outer',
         {
@@ -629,6 +652,7 @@ function buildSystemPrompt(
   const angryCall = getAngryCall(caseData.duo, party)
   const canInformalThis = canUseInformal(caseData, party)
   const callForm = myCall === '자기' ? '자기야' : myCall
+  const opponentReferenceGuide = buildOpponentReferenceGuide(caseData, party)
 
   // ── 동적 데이터 블록 조립 ──
 
@@ -927,6 +951,7 @@ function buildSystemPrompt(
     callForm,
     judgeRef,
     angryCall,
+    opponentReferenceGuide,
     formalityGuide,
     knownFacts,
     disputeInfo,
@@ -965,7 +990,7 @@ function buildSystemPrompt(
     if (unresolved) {
       console.warn(`[buildSystemPrompt] 미치환 변수 발견 (agent=${agentKey}):`, [...new Set(unresolved)])
     }
-    return prompt
+    return `${prompt}\n${opponentReferenceGuide}`
   }
 
   // 폴백: 기존 모놀리식 프롬프트
@@ -974,11 +999,11 @@ function buildSystemPrompt(
     disputeName: dispute?.name ?? '해당 사안',
     callForm,
   })
-  return getPrompt('interrogation_system', {
+  return `${getPrompt('interrogation_system', {
     ...vars,
     phaseGuide,
     outputFormat: fallbackOutputFormat,
-  })
+  })}\n${opponentReferenceGuide}`
 }
 
 /* ── Phase별 가이드 (어드민에서 관리) ── */
@@ -1023,12 +1048,13 @@ function buildUserPrompt(
     : null
   const judgeRefOut = myCallTerms?.toJudge ?? '상대방'
   const callFormOut = myCallTerms?.toPartner ? (myCallTerms.toPartner === '자기' ? '자기야' : myCallTerms.toPartner) : opName + '씨'
+  const opponentReferenceGuideOut = target && caseData ? buildOpponentReferenceGuide(caseData, target) : ''
 
   const isJudgeOnly = responseMode === 'answer_only' || responseMode === 'private_confession' || responseMode === 'yes_no_first'
   const honorificRule = `\n★★ 호칭 규칙 (절대 위반 금지):\n- 재판관에게 ${opName}${pp을를(opName)} 언급할 때: 반드시 "${judgeRefOut}"로 지칭\n  ✅ "${judgeRefOut}${pp이가(judgeRefOut)} 그렇게 했습니다", "${judgeRefOut}${pp은는(judgeRefOut)} 알고 있었습니다"\n  ❌ "${callFormOut}가~", "${callFormOut}도~" (애칭을 재판관 앞에서 쓰지 마라)\n- ${opName}에게 직접 말할 때만: "${callFormOut}" 사용 가능\n★★ 재판관에게 의문 표현 (절대 위반 금지):\n- 재판관에게 직접 답을 요구하는 질문 금지. 재판관은 답할 수 없다.\n  ❌ "재판관님, ~ 뭐였어?", "재판관님, ~ 알려주십시오", "재판관님, ~ 말해줄 수 없습니까?"\n  ✅ 자기 회의/숙고 어조로: "저도 모르겠습니다", "이유가 무엇이었을지...", "왜 그랬는지 저도 모릅니다"\n★★ 자기 지칭 (절대 위반 금지):\n- "자기"로 자기 자신 지칭 금지 ("자기"는 상대 직접 호칭에만 사용).\n  ❌ "자기를 보호하려고", "자기 자신이"  ✅ "스스로를 지키려고", "본인이"\n`
   const addressRule = isJudgeOnly
-    ? `★ 당신은 "${myName}"이다. 지금 재판관에게만 답한다. ${opName}에게 말하는 것이 아니다.\n★ 상대 호칭("${callFormOut}" 등)으로 시작 금지. 호칭 없이 바로 답하거나 "재판관님"으로 시작.\n★ npcResponse 전체가 재판관을 향한 존댓말(~습니다, ~요)이어야 한다.\n★ "${opName}"에게 직접 말하는 문장을 넣지 마라.\n${honorificRule}`
-    : `★ 당신은 "${myName}"이다. 재판관에게 답한 뒤, ${opName}에게 짧게 1문장만 덧붙일 수 있다.\n★ 재판관에게는 반드시 존댓말. 상대에게는 관계에 맞는 말투.\n★ 답변의 주 대상은 재판관이다. 상대에게 직접 말하는 비중이 50%를 넘지 마라.\n${honorificRule}`
+    ? `★ 당신은 "${myName}"이다. 지금 재판관에게만 답한다. ${opName}에게 말하는 것이 아니다.\n★ 상대 호칭("${callFormOut}" 등)으로 시작 금지. 호칭 없이 바로 답하거나 "재판관님"으로 시작.\n★ npcResponse 전체가 재판관을 향한 존댓말(~습니다, ~요)이어야 한다.\n★ "${opName}"에게 직접 말하는 문장을 넣지 마라.\n${honorificRule}${opponentReferenceGuideOut}`
+    : `★ 당신은 "${myName}"이다. 재판관에게 답한 뒤, ${opName}에게 짧게 1문장만 덧붙일 수 있다.\n★ 재판관에게는 반드시 존댓말. 상대에게는 관계에 맞는 말투.\n★ 답변의 주 대상은 재판관이다. 상대에게 직접 말하는 비중이 50%를 넘지 마라.\n${honorificRule}${opponentReferenceGuideOut}`
 
   const judgeGenRule = `\n★ judgeQuestion 필드 규칙 (최우선):\n- judgeQuestion은 "재판관"이 "${myName}" 씨에게 묻는 질문이다.\n- 재판관은 제3자 시점의 권위적 심문관이다. 절대로 NPC가 아니다.\n- "${myName} 씨, ~" 로 시작하거나 바로 질문으로 시작한다.\n- 상대방을 언급할 때: 반드시 "${opName} 씨"로 지칭. (예: "${opName} 씨가 ~", "${opName} 씨에게 ~")\n- ❌ 절대 금지: "재판관님"으로 시작하는 문장. judgeQuestion은 재판관 본인이 말하는 것이므로 자기 자신을 "재판관님"이라 부르지 않는다.\n- ❌ 절대 금지: NPC 입장에서 쓴 문장 (존댓말로 보고하는 톤, "저는~", "제가~" 등)\n- ❌ 절대 금지: 당사자 관점 호칭 사용 ("제 아내", "제 남편", "제 아들", "우리 엄마" 등). 재판관은 3인칭 시점이므로 "${opName} 씨"만 사용.\n- ✅ 올바른 예: "${myName} 씨, ~에 대해 설명해 주십시오", "왜 ~하신 겁니까?", "${opName} 씨가 ~한 사실을 인정하십니까?"\n- 재판관 어투: 격식체, 간결, 권위 있는 톤 (~주십시오, ~입니까, ~하셨습니까)\n- "${disputeName}" 쟁점에 대해 질문 유형에 맞는 자연스러운 질문을 만든다.\n- 쟁점명을 그대로 인용하지 말고, 맥락에 맞게 풀어서 질문한다.\n`
 
@@ -2201,14 +2227,18 @@ function tryScriptedDialoguePath(
       : subjectParty === 'both'
         ? 'both'
         : 'other'
+    const evidenceJudgeQuestion = [...store.dialogueLog]
+      .reverse()
+      .find((entry: import('../types').DialogueEntry) => entry.speaker === 'judge' && Boolean(entry.evidencePresentation))
+      ?.text
     scripted = getScriptedEvidencePresent(
-      caseId, target, action.evidenceId, lieEntry.currentState, subjectRole,
+      caseId, target, action.evidenceId, lieEntry.currentState, subjectRole, evidenceJudgeQuestion,
     )
     // subjectRole 폴백: 1차 miss 시 'self' → 'other' → 'both' 순으로 재시도
     if (!scripted) {
       const fallbacks = ['self', 'other', 'both'].filter(r => r !== subjectRole)
       for (const fb of fallbacks) {
-        scripted = getScriptedEvidencePresent(caseId, target, action.evidenceId, lieEntry.currentState, fb)
+        scripted = getScriptedEvidencePresent(caseId, target, action.evidenceId, lieEntry.currentState, fb, evidenceJudgeQuestion)
         if (scripted) break
       }
     }

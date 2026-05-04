@@ -17036,6 +17036,309 @@ body.pc-mode .pc-event-feedback-root.is-alert {
   padding-top: 18vh;
 }
 
+body.pc-mode .pc-event-feedback-root.is-focus-takeover {
+  --court-beat-accent: 232, 193, 114;
+  --court-beat-danger: 224, 96, 96;
+  align-items: center !important;
+  justify-content: center;
+  padding: 0 !important;
+  background:
+    radial-gradient(circle at 50% 48%, rgba(var(--court-beat-accent), 0.08), rgba(0, 0, 0, 0) 34%),
+    rgba(0, 0, 0, 0.36) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  animation: pc-court-beat-root-in 0.24s ease-out both;
+}
+
+body.pc-mode .pc-event-feedback-root.is-focus-takeover.is-modal {
+  pointer-events: auto;
+  background:
+    radial-gradient(circle at 50% 48%, rgba(var(--court-beat-accent), 0.1), rgba(0, 0, 0, 0) 36%),
+    rgba(0, 0, 0, 0.58) !important;
+}
+
+body.pc-mode .pc-event-feedback-root.is-focus-takeover.is-cue-evidence {
+  --court-beat-accent: 142, 240, 172;
+}
+
+body.pc-mode .pc-event-feedback-root.is-focus-takeover.is-cue-contradiction,
+body.pc-mode .pc-event-feedback-root.is-focus-takeover.is-cue-emotion {
+  --court-beat-accent: 238, 110, 110;
+}
+
+body.pc-mode .pc-event-feedback-root.is-focus-takeover.is-cue-dispute {
+  --court-beat-accent: 255, 208, 96;
+}
+
+body.pc-mode .pc-event-feedback-root.is-focus-takeover.is-cue-witness {
+  --court-beat-accent: 130, 220, 176;
+}
+
+body.pc-mode .pc-court-beat-stage {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+body.pc-mode .pc-court-beat-stage__curtain {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(0, 0, 0, 0.72), rgba(0, 0, 0, 0.12) 27%, rgba(0, 0, 0, 0.08) 73%, rgba(0, 0, 0, 0.72)),
+    linear-gradient(180deg, rgba(0, 0, 0, 0.5), transparent 28%, transparent 68%, rgba(0, 0, 0, 0.58));
+  opacity: 0;
+  animation: pc-court-beat-curtain-in 0.42s ease-out forwards;
+}
+
+body.pc-mode .pc-court-beat-stage__spotlight {
+  position: absolute;
+  left: 50%;
+  top: 48%;
+  width: min(780px, 62vw);
+  height: min(340px, 42vh);
+  transform: translate(-50%, -50%);
+  background: radial-gradient(ellipse at center, rgba(var(--court-beat-accent), 0.12), rgba(var(--court-beat-accent), 0.04) 42%, rgba(0, 0, 0, 0) 74%);
+  opacity: 0;
+  filter: blur(2px);
+  animation: pc-court-beat-spotlight-in 0.52s 0.04s ease-out forwards;
+}
+
+body.pc-mode .pc-court-beat-stage__rails {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: min(860px, 72vw);
+  height: min(360px, 46vh);
+  transform: translate(-50%, -50%);
+  border-top: 1px solid rgba(var(--court-beat-accent), 0.28);
+  border-bottom: 1px solid rgba(var(--court-beat-accent), 0.18);
+  opacity: 0;
+  animation: pc-court-beat-rails-in 0.58s 0.08s cubic-bezier(0.2, 0.72, 0.16, 1) forwards;
+}
+
+body.pc-mode .pc-court-beat-stage__rails::before,
+body.pc-mode .pc-court-beat-stage__rails::after {
+  content: '';
+  position: absolute;
+  top: -1px;
+  bottom: -1px;
+  width: 1px;
+  background: linear-gradient(180deg, transparent, rgba(var(--court-beat-accent), 0.32), transparent);
+}
+
+body.pc-mode .pc-court-beat-stage__rails::before { left: 0; }
+body.pc-mode .pc-court-beat-stage__rails::after { right: 0; }
+
+body.pc-mode .pc-court-beat-stage__pulse {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 28px;
+  height: 28px;
+  border: 1px solid rgba(var(--court-beat-accent), 0.75);
+  transform: translate(-50%, -50%) rotate(45deg) scale(0.4);
+  opacity: 0;
+  box-shadow: 0 0 24px rgba(var(--court-beat-accent), 0.34);
+  animation: pc-court-beat-pulse 0.82s 0.12s cubic-bezier(0.19, 1, 0.22, 1) both;
+}
+
+body.pc-mode .pc-event-feedback-card.is-focus-takeover {
+  z-index: 1;
+  overflow: visible;
+  border-color: rgba(var(--court-beat-accent), 0.34) !important;
+  box-shadow:
+    0 0 0 1px rgba(var(--court-beat-accent), 0.08),
+    0 32px 90px rgba(0, 0, 0, 0.72),
+    0 0 44px rgba(var(--court-beat-accent), 0.14) !important;
+}
+
+body.pc-mode .pc-event-feedback-card.is-focus-takeover.is-cutscene {
+  width: min(760px, calc(100vw - 72px)) !important;
+  min-width: min(560px, calc(100vw - 72px)) !important;
+  max-width: min(760px, calc(100vw - 72px)) !important;
+  padding: 28px 38px 30px !important;
+  border: 1px solid rgba(var(--court-beat-accent), 0.3) !important;
+  border-radius: 14px !important;
+  background:
+    linear-gradient(180deg, rgba(20, 20, 28, 0.98), rgba(8, 9, 14, 0.98)),
+    #0c0c14 !important;
+  mask-image: none !important;
+  -webkit-mask-image: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+body.pc-mode .pc-event-feedback-card.is-focus-takeover.is-beat-impact.is-phase-visible {
+  animation: pc-court-beat-card-impact 0.62s cubic-bezier(0.17, 0.8, 0.2, 1) both !important;
+}
+
+body.pc-mode .pc-event-feedback-card.is-focus-takeover.is-beat-breakthrough.is-phase-visible {
+  animation: pc-court-beat-card-breakthrough 0.86s cubic-bezier(0.17, 0.84, 0.15, 1) both !important;
+}
+
+body.pc-mode .pc-event-feedback-card.is-focus-takeover.kind-observation.is-cutscene .pc-event-feedback__body,
+body.pc-mode .pc-event-feedback-card.is-focus-takeover.kind-evidence_result.is-cutscene .pc-event-feedback__body,
+body.pc-mode .pc-event-feedback-card.is-focus-takeover.kind-transition_choice.is-cutscene .pc-event-feedback__body {
+  white-space: normal !important;
+  overflow: visible !important;
+  text-overflow: clip !important;
+  max-width: 620px !important;
+  padding: 0 !important;
+  font-size: 15.5px !important;
+  line-height: 1.55 !important;
+  font-weight: 500 !important;
+}
+
+body.pc-mode .pc-event-feedback-card.is-focus-takeover.kind-evidence_result.is-cutscene .pc-event-feedback__eyebrow,
+body.pc-mode .pc-event-feedback-card.is-focus-takeover.kind-evidence_result.is-cutscene .pc-event-feedback__subtitle,
+body.pc-mode .pc-event-feedback-card.is-focus-takeover.kind-evidence_result.is-cutscene .pc-event-feedback__title,
+body.pc-mode .pc-event-feedback-card.is-focus-takeover.kind-evidence_result.is-cutscene .pc-event-feedback__meta,
+body.pc-mode .pc-event-feedback-card.is-focus-takeover.kind-transition_choice.is-cutscene .pc-event-feedback__subtitle {
+  display: block !important;
+}
+
+body.pc-mode .pc-event-feedback__beat-mark {
+  position: absolute;
+  left: 50%;
+  top: -36px;
+  width: 72px;
+  height: 72px;
+  transform: translateX(-50%);
+  display: grid;
+  place-items: center;
+  pointer-events: none;
+  opacity: 0;
+  animation: pc-court-beat-mark-in 0.74s 0.06s cubic-bezier(0.19, 1, 0.22, 1) both;
+}
+
+body.pc-mode .pc-event-feedback__beat-mark::before {
+  content: '';
+  position: absolute;
+  inset: 12px;
+  border: 1px solid rgba(var(--court-beat-accent), 0.62);
+  transform: rotate(45deg);
+  background: rgba(7, 7, 10, 0.84);
+  box-shadow: 0 0 22px rgba(var(--court-beat-accent), 0.24);
+}
+
+body.pc-mode .pc-event-feedback__beat-mark span,
+body.pc-mode .pc-event-feedback__beat-mark i {
+  position: relative;
+  display: block;
+  width: 30px;
+  height: 2px;
+  background: rgba(var(--court-beat-accent), 0.92);
+  border-radius: 999px;
+  box-shadow: 0 0 16px rgba(var(--court-beat-accent), 0.4);
+}
+
+body.pc-mode .pc-event-feedback__beat-mark i {
+  position: absolute;
+  width: 2px;
+  height: 30px;
+}
+
+body.pc-mode .pc-event-feedback-card.is-cue-evidence .pc-event-feedback__beat-mark span {
+  width: 24px;
+  height: 32px;
+  border: 1px solid rgba(var(--court-beat-accent), 0.9);
+  border-radius: 3px;
+  background: linear-gradient(180deg, rgba(var(--court-beat-accent), 0.18), rgba(0, 0, 0, 0));
+}
+
+body.pc-mode .pc-event-feedback-card.is-cue-evidence .pc-event-feedback__beat-mark i {
+  width: 16px;
+  height: 1px;
+  transform: translateY(3px);
+}
+
+body.pc-mode .pc-event-feedback-card.is-cue-dispute .pc-event-feedback__beat-mark span,
+body.pc-mode .pc-event-feedback-card.is-cue-dispute .pc-event-feedback__beat-mark i {
+  width: 34px;
+  height: 3px;
+  transform: rotate(-22deg);
+}
+
+@keyframes pc-court-beat-root-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes pc-court-beat-curtain-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes pc-court-beat-spotlight-in {
+  0% { opacity: 0; transform: translate(-50%, -50%) scale(0.68); }
+  100% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+}
+
+@keyframes pc-court-beat-rails-in {
+  0% { opacity: 0; transform: translate(-50%, -50%) scaleX(0.22); }
+  58% { opacity: 1; transform: translate(-50%, -50%) scaleX(1.03); }
+  100% { opacity: 0.88; transform: translate(-50%, -50%) scaleX(1); }
+}
+
+@keyframes pc-court-beat-pulse {
+  0% { opacity: 0; transform: translate(-50%, -50%) rotate(45deg) scale(0.2); }
+  16% { opacity: 0.95; }
+  100% { opacity: 0; transform: translate(-50%, -50%) rotate(45deg) scale(20); }
+}
+
+@keyframes pc-court-beat-card-impact {
+  0% { opacity: 0; transform: scale(0.9) translateY(10px); filter: brightness(1.4); }
+  44% { opacity: 1; transform: scale(1.035) translateY(0); filter: brightness(1.12); }
+  62% { transform: translateX(-3px); }
+  74% { transform: translateX(3px); }
+  86% { transform: translateX(-1px); }
+  100% { opacity: 1; transform: scale(1) translateX(0); filter: brightness(1); }
+}
+
+@keyframes pc-court-beat-card-breakthrough {
+  0% { opacity: 0; transform: scale(0.84); filter: brightness(2); }
+  14% { opacity: 1; transform: scale(1.07); filter: brightness(2.35); }
+  28% { transform: scale(0.985); filter: brightness(1.15); }
+  48% { transform: scale(1.025); filter: brightness(1.85); }
+  68% { transform: scale(0.995); filter: brightness(1.1); }
+  100% { opacity: 1; transform: scale(1); filter: brightness(1); }
+}
+
+@keyframes pc-court-beat-mark-in {
+  0% { opacity: 0; transform: translateX(-50%) translateY(10px) scale(0.5); }
+  32% { opacity: 1; transform: translateX(-50%) translateY(0) scale(1.08); }
+  100% { opacity: 0.95; transform: translateX(-50%) translateY(0) scale(1); }
+}
+
+body.pc-mode .pc-event-feedback-root.is-focus-takeover.is-phase-leaving,
+body.pc-mode .pc-event-feedback-root.is-focus-takeover.is-phase-converging {
+  animation: pc-court-beat-root-out 0.28s ease-in forwards;
+}
+
+@keyframes pc-court-beat-root-out {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body.pc-mode .pc-court-beat-stage__curtain,
+  body.pc-mode .pc-court-beat-stage__spotlight,
+  body.pc-mode .pc-court-beat-stage__rails,
+  body.pc-mode .pc-court-beat-stage__pulse,
+  body.pc-mode .pc-event-feedback-card.is-focus-takeover.is-beat-impact.is-phase-visible,
+  body.pc-mode .pc-event-feedback-card.is-focus-takeover.is-beat-breakthrough.is-phase-visible,
+  body.pc-mode .pc-event-feedback__beat-mark {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+
+  body.pc-mode .pc-court-beat-stage__pulse {
+    display: none;
+  }
+}
+
 @keyframes pc-efb-backdrop-in {
   from { background-color: rgba(0, 0, 0, 0); backdrop-filter: blur(0); }
   to   { background-color: rgba(0, 0, 0, 0.76); backdrop-filter: blur(6px); }
@@ -24256,6 +24559,106 @@ body.pc-mode .pc-event-feedback-card.kind-emotional_slip .pc-event-feedback__act
   }
 }
 
+/* A1 correction: emotional slip follows the common modal frame; only the tone stays red. */
+body.pc-mode .pc-event-feedback-card.kind-emotional_slip {
+  min-width: 480px !important;
+  max-width: min(640px, calc(100vw - 64px)) !important;
+  padding: 24px 28px 22px !important;
+  gap: 14px !important;
+  border-radius: 16px !important;
+  border: 1px solid rgba(224, 96, 96, 0.24) !important;
+  background: #0c0c14 !important;
+  box-shadow:
+    0 30px 90px rgba(0, 0, 0, 0.7),
+    0 0 0 1px rgba(224, 96, 96, 0.05) !important;
+  overflow: visible !important;
+}
+
+body.pc-mode .pc-event-feedback-card.kind-emotional_slip::before {
+  display: none !important;
+  content: none !important;
+}
+
+body.pc-mode .pc-event-feedback-card.kind-emotional_slip .pc-event-feedback__eyebrow,
+body.pc-mode .pc-event-feedback-card.kind-emotional_slip .pc-event-feedback__subtitle,
+body.pc-mode .pc-event-feedback-card.kind-emotional_slip .pc-event-feedback__title {
+  order: initial !important;
+  padding: 0 !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+body.pc-mode .pc-event-feedback-card.kind-emotional_slip .pc-event-feedback__eyebrow {
+  color: rgba(236, 142, 142, 0.92) !important;
+  font-size: 13px !important;
+  line-height: 1.2 !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.12em !important;
+}
+
+body.pc-mode .pc-event-feedback-card.kind-emotional_slip .pc-event-feedback__subtitle {
+  color: #9ea1a8 !important;
+  font-size: 13px !important;
+  line-height: 1.35 !important;
+}
+
+body.pc-mode .pc-event-feedback-card.kind-emotional_slip .pc-event-feedback__title {
+  color: #ebe5d5 !important;
+  font-size: 22px !important;
+  line-height: 1.4 !important;
+  font-weight: 700 !important;
+  border-bottom: 0 !important;
+}
+
+body.pc-mode .pc-event-feedback-card.kind-emotional_slip .pc-event-feedback__body,
+body.pc-mode .pc-event-feedback-card.kind-emotional_slip .pc-event-feedback__quote,
+body.pc-mode .pc-event-feedback-card.kind-emotional_slip .pc-event-feedback__lines,
+body.pc-mode .pc-event-feedback-card.kind-emotional_slip .pc-event-feedback__blocks,
+body.pc-mode .pc-event-feedback-card.kind-emotional_slip .pc-event-feedback__claims,
+body.pc-mode .pc-event-feedback-card.kind-emotional_slip .pc-event-feedback__contrast {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+body.pc-mode .pc-event-feedback-card.kind-emotional_slip .pc-event-feedback__quote {
+  order: initial !important;
+  margin-top: 4px !important;
+  padding: 14px 18px !important;
+  border-radius: 0 10px 10px 0 !important;
+  border: 0 !important;
+  border-left: 3px solid rgba(224, 96, 96, 0.65) !important;
+  background: rgba(224, 96, 96, 0.08) !important;
+  color: #f3e9cf !important;
+  font-size: 15px !important;
+  line-height: 1.6 !important;
+  box-shadow: none !important;
+}
+
+body.pc-mode .pc-event-feedback-card.kind-emotional_slip .pc-event-feedback__meta {
+  order: initial !important;
+  justify-content: flex-start !important;
+  margin: 0 !important;
+}
+
+body.pc-mode .pc-event-feedback-card.kind-emotional_slip .pc-event-feedback__actions {
+  order: initial !important;
+  justify-content: center !important;
+  gap: 10px !important;
+  margin-top: 14px !important;
+  padding: 0 !important;
+  border-top: 0 !important;
+  background: transparent !important;
+}
+
+body.pc-mode .pc-event-feedback-card.kind-emotional_slip .pc-event-feedback__action {
+  flex: 1 1 180px !important;
+  min-width: 180px !important;
+  min-height: 52px !important;
+  padding: 14px 24px !important;
+  border-radius: 14px !important;
+  font-size: 15px !important;
+}
+
 /* A1 follow-up: keep contradiction CTA and pending alert CTA in one visual family. */
 body.pc-mode .pc-log-system-row.is-action .pc-log-system-card.is-action:not(.is-pending-feedback):not(.is-used):not(:disabled),
 body.pc-mode .pc-log-system-row.is-action .pc-log-system-card.is-action.is-pending-feedback.is-alert:not(.is-used):not(:disabled) {
@@ -26100,4 +26503,635 @@ body.pc-mode .pc-history-detail-empty {
     width: min(100%, calc(100vw - 32px)) !important;
     max-height: calc(100vh - 32px) !important;
   }
+}
+
+/* Court beat final overrides: keep global focus events centered above later kind-specific rules. */
+body.pc-mode .pc-event-feedback-root.is-focus-takeover {
+  align-items: center !important;
+  padding: 0 !important;
+}
+
+body.pc-mode .pc-event-feedback-root.is-focus-takeover .pc-event-feedback-card.is-focus-takeover {
+  z-index: 1;
+}
+
+/* Court Beat v1: statement/evidence clash renderer. */
+body.pc-mode .pc-event-feedback-card.is-court-clash-card {
+  width: min(1080px, calc(100vw - 48px));
+  max-width: min(1080px, calc(100vw - 48px));
+  padding: 28px;
+  background:
+    linear-gradient(180deg, rgba(30, 31, 32, 0.96), rgba(16, 17, 18, 0.98)),
+    radial-gradient(circle at 50% 20%, rgba(212, 168, 67, 0.12), transparent 48%);
+  border-color: rgba(212, 168, 67, 0.42);
+}
+
+body.pc-mode .pc-court-clash {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  color: rgba(245, 238, 220, 0.94);
+}
+
+body.pc-mode .pc-court-clash__grid {
+  display: grid;
+  grid-template-columns: minmax(240px, 1fr) 132px minmax(280px, 1fr);
+  align-items: center;
+  gap: 18px;
+}
+
+body.pc-mode .pc-court-clash__statement,
+body.pc-mode .pc-court-clash__evidence,
+body.pc-mode .pc-court-clash__judge,
+body.pc-mode .pc-court-clash__notebook {
+  border: 1px solid rgba(212, 168, 67, 0.28);
+  border-radius: 8px;
+  background: rgba(25, 24, 22, 0.88);
+  box-shadow: inset 0 0 0 1px rgba(255, 231, 180, 0.035), 0 18px 60px rgba(0, 0, 0, 0.28);
+}
+
+body.pc-mode .pc-court-clash__statement {
+  padding: 20px 22px;
+  animation: court-clash-slide-left 0.34s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+body.pc-mode .pc-court-clash__statement p {
+  margin: 10px 0 0;
+  font-size: clamp(18px, 2vw, 25px);
+  line-height: 1.55;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+body.pc-mode .pc-court-clash__label {
+  color: rgba(212, 168, 67, 0.8);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+body.pc-mode .pc-court-clash__phrase {
+  position: relative;
+  display: inline-block;
+  margin: 0 2px;
+  padding: 0 5px;
+  color: #ffe5a5;
+  background: rgba(196, 72, 58, 0.2);
+  border-radius: 4px;
+}
+
+body.pc-mode .pc-court-clash__phrase::after {
+  content: "";
+  position: absolute;
+  left: 4px;
+  right: 4px;
+  top: 52%;
+  height: 2px;
+  background: linear-gradient(90deg, rgba(212, 168, 67, 0.95), rgba(214, 79, 62, 0.95));
+  transform: scaleX(0);
+  transform-origin: left center;
+  animation: court-clash-fracture 0.46s 0.48s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+}
+
+body.pc-mode .pc-court-clash__evidence {
+  padding: 18px 18px 16px;
+  background: rgba(28, 31, 40, 0.88);
+  border-color: rgba(132, 155, 205, 0.54);
+  animation: court-clash-slide-right 0.34s 0.12s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+body.pc-mode .pc-court-clash__stage {
+  margin-top: 4px;
+  color: rgba(173, 188, 225, 0.76);
+  font-size: 12px;
+}
+
+body.pc-mode .pc-court-clash__rows {
+  margin-top: 14px;
+  display: grid;
+  gap: 4px;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+}
+
+body.pc-mode .pc-court-clash__row {
+  display: flex;
+  align-items: center;
+  min-height: 34px;
+  padding: 7px 10px;
+  border-left: 2px solid rgba(107, 116, 139, 0.45);
+  background: rgba(12, 13, 16, 0.3);
+  color: rgba(220, 225, 238, 0.72);
+  font-size: 13px;
+  line-height: 1.35;
+}
+
+body.pc-mode .pc-court-clash__row.is-highlighted {
+  color: #ffe7a4;
+  border-left-color: rgba(212, 168, 67, 0.95);
+  background: linear-gradient(90deg, rgba(212, 168, 67, 0.24), rgba(212, 168, 67, 0.08));
+  animation: court-clash-row-hit 0.22s ease-out both;
+}
+
+body.pc-mode .pc-court-clash__row.is-muted {
+  opacity: 0.5;
+}
+
+body.pc-mode .pc-court-clash__strike {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: 98px;
+  color: rgba(224, 91, 72, 0.88);
+  animation: court-clash-strike-pop 0.3s 0.46s ease-out both;
+}
+
+body.pc-mode .pc-court-clash__strike svg {
+  width: 100%;
+  height: 74px;
+  overflow: visible;
+}
+
+body.pc-mode .pc-court-clash__strike path:first-of-type {
+  fill: none;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-dasharray: 180;
+  stroke-dashoffset: 180;
+  animation: court-clash-line-draw 0.42s 0.46s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+}
+
+body.pc-mode .pc-court-clash__strike-crack {
+  fill: none;
+  stroke: rgba(230, 92, 70, 0.96);
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  opacity: 0;
+  animation: court-clash-crack-show 0.18s 0.74s ease-out forwards;
+}
+
+body.pc-mode .pc-court-clash__strike span {
+  position: absolute;
+  bottom: 10px;
+  font-size: 11px;
+  letter-spacing: 0.26em;
+  color: rgba(230, 92, 70, 0.9);
+}
+
+body.pc-mode .pc-court-clash.is-miss .pc-court-clash__strike,
+body.pc-mode .pc-court-clash.is-miss .pc-court-clash__strike span {
+  color: rgba(160, 168, 176, 0.78);
+}
+
+body.pc-mode .pc-court-clash.is-miss .pc-court-clash__phrase::after,
+body.pc-mode .pc-court-clash.is-miss .pc-court-clash__strike path:first-of-type {
+  animation-duration: 0.18s;
+  opacity: 0.42;
+}
+
+body.pc-mode .pc-court-clash.is-review .pc-court-clash__strike span {
+  color: rgba(212, 168, 67, 0.86);
+}
+
+body.pc-mode .pc-court-clash.is-review .pc-court-clash__strike-crack {
+  opacity: 0.18;
+  stroke: rgba(212, 168, 67, 0.58);
+  animation: none;
+}
+
+body.pc-mode .pc-court-clash.is-review .pc-court-clash__strike path:first-of-type {
+  opacity: 0.72;
+}
+
+body.pc-mode .pc-court-clash__reaction {
+  display: grid;
+  grid-template-columns: 76px minmax(220px, 1fr) auto;
+  align-items: center;
+  gap: 14px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+body.pc-mode .pc-court-clash__portrait {
+  width: 76px;
+  height: 76px;
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+  border: 2px solid rgba(212, 168, 67, 0.42);
+  background: rgba(40, 35, 28, 0.9);
+  overflow: hidden;
+}
+
+body.pc-mode .pc-court-clash__portrait.state-shaken {
+  border-color: rgba(212, 94, 67, 0.82);
+  box-shadow: 0 0 0 4px rgba(212, 94, 67, 0.12);
+  animation: court-clash-portrait-shake 0.36s 0.62s ease-out both;
+}
+
+body.pc-mode .pc-court-clash__portrait.state-resigned {
+  opacity: 0.76;
+  border-color: rgba(124, 112, 87, 0.78);
+}
+
+body.pc-mode .pc-court-clash__reaction-copy strong {
+  display: block;
+  color: rgba(245, 226, 178, 0.92);
+  font-size: 17px;
+}
+
+body.pc-mode .pc-court-clash__reaction-copy span {
+  display: inline-block;
+  margin-top: 2px;
+  color: rgba(212, 168, 67, 0.92);
+  font-size: 13px;
+}
+
+body.pc-mode .pc-court-clash__reaction-copy p {
+  margin: 8px 0 0;
+  color: rgba(232, 226, 212, 0.86);
+  font-size: 14px;
+}
+
+body.pc-mode .pc-court-clash__destination {
+  display: grid;
+  grid-template-columns: 48px auto;
+  align-items: center;
+  gap: 8px;
+  min-width: 96px;
+  color: rgba(212, 168, 67, 0.92);
+  font-weight: 800;
+  animation: court-clash-destination-pulse 0.52s 1.05s ease-out both;
+}
+
+body.pc-mode .pc-court-clash__stamp-svg {
+  width: 48px;
+  height: 48px;
+  filter: drop-shadow(0 0 14px rgba(212, 168, 67, 0.2));
+}
+
+body.pc-mode .pc-court-clash__stamp-svg circle {
+  fill: none;
+  stroke: rgba(212, 168, 67, 0.82);
+  stroke-width: 3;
+}
+
+body.pc-mode .pc-court-clash__stamp-svg circle + circle {
+  stroke-width: 1.4;
+  opacity: 0.7;
+}
+
+body.pc-mode .pc-court-clash__stamp-svg path {
+  fill: none;
+  stroke: rgba(212, 168, 67, 0.74);
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+
+body.pc-mode .pc-court-clash__stamp-svg text {
+  fill: rgba(245, 226, 178, 0.95);
+  font-size: 17px;
+  font-weight: 900;
+  letter-spacing: 0;
+}
+
+body.pc-mode .pc-court-clash__judge,
+body.pc-mode .pc-court-clash__notebook {
+  padding: 14px 16px;
+}
+
+body.pc-mode .pc-court-clash__judge {
+  display: grid;
+  grid-template-columns: 74px 1fr;
+  gap: 12px;
+  align-items: center;
+}
+
+body.pc-mode .pc-court-clash__judge span,
+body.pc-mode .pc-court-clash__notebook span {
+  color: rgba(212, 168, 67, 0.78);
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+body.pc-mode .pc-court-clash__judge p,
+body.pc-mode .pc-court-clash__notebook p {
+  margin: 0;
+  color: rgba(246, 239, 221, 0.94);
+  line-height: 1.55;
+}
+
+body.pc-mode .pc-court-clash__notebook {
+  border-style: double;
+  background: linear-gradient(90deg, rgba(212, 168, 67, 0.12), rgba(34, 29, 22, 0.88));
+}
+
+@keyframes court-clash-slide-left {
+  from { opacity: 0; transform: translateX(-34px) scale(0.985); }
+  to { opacity: 1; transform: translateX(0) scale(1); }
+}
+
+@keyframes court-clash-slide-right {
+  from { opacity: 0; transform: translateX(34px) scale(0.985); }
+  to { opacity: 1; transform: translateX(0) scale(1); }
+}
+
+@keyframes court-clash-line-draw {
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes court-clash-fracture {
+  to { transform: scaleX(1); }
+}
+
+@keyframes court-clash-crack-show {
+  to { opacity: 1; }
+}
+
+@keyframes court-clash-strike-pop {
+  from { opacity: 0; transform: scale(0.96); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes court-clash-row-hit {
+  from { transform: translateX(0); }
+  45% { transform: translateX(4px); }
+  to { transform: translateX(0); }
+}
+
+@keyframes court-clash-portrait-shake {
+  0%, 100% { transform: translateX(0); }
+  22% { transform: translateX(-3px); }
+  44% { transform: translateX(3px); }
+  66% { transform: translateX(-2px); }
+  82% { transform: translateX(1px); }
+}
+
+@keyframes court-clash-destination-pulse {
+  0% { opacity: 0.55; transform: scale(0.96); }
+  45% { opacity: 1; transform: scale(1.08); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+@media (max-width: 860px) {
+  body.pc-mode .pc-court-clash__grid {
+    grid-template-columns: 1fr;
+  }
+
+  body.pc-mode .pc-court-clash__strike {
+    min-height: 54px;
+  }
+
+  body.pc-mode .pc-court-clash__strike svg {
+    height: 42px;
+  }
+
+  body.pc-mode .pc-court-clash__reaction {
+    grid-template-columns: 64px 1fr;
+  }
+
+  body.pc-mode .pc-court-clash__destination {
+    grid-column: 1 / -1;
+    justify-self: end;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body.pc-mode .pc-court-clash__statement,
+  body.pc-mode .pc-court-clash__evidence,
+  body.pc-mode .pc-court-clash__strike,
+  body.pc-mode .pc-court-clash__row.is-highlighted,
+  body.pc-mode .pc-court-clash__portrait.state-shaken,
+  body.pc-mode .pc-court-clash__destination {
+    animation: none !important;
+  }
+
+  body.pc-mode .pc-court-clash__phrase::after,
+  body.pc-mode .pc-court-clash__strike path:first-of-type,
+  body.pc-mode .pc-court-clash__strike-crack {
+    animation: none !important;
+    stroke-dashoffset: 0;
+    opacity: 1;
+    transform: scaleX(1);
+  }
+}
+/* 2026-05-04 follow-up: evidence readability, Court Beat scale, left rail overflow. */
+body.pc-mode .pc-receipt-paper__head {
+  align-items: center !important;
+  gap: 4px !important;
+  margin: 4px 0 10px !important;
+  padding: 10px 12px 9px !important;
+  color: #17130e !important;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.34), rgba(255, 255, 255, 0.08)),
+    #f3ead6 !important;
+  border: 1px solid rgba(52, 42, 30, 0.14) !important;
+  border-radius: 2px !important;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.28) !important;
+}
+
+body.pc-mode .pc-receipt-paper__mark {
+  display: none !important;
+}
+
+body.pc-mode .pc-receipt-paper__head span {
+  color: rgba(22, 18, 13, 0.58) !important;
+  font-size: 9px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.14em !important;
+}
+
+body.pc-mode .pc-receipt-paper__head h3 {
+  color: #16110c !important;
+  font-size: 13px !important;
+  font-weight: 760 !important;
+  letter-spacing: 0.02em !important;
+  line-height: 1.25 !important;
+}
+
+body.pc-mode .pc-receipt-paper__head p,
+body.pc-mode .pc-receipt-paper__head time {
+  color: rgba(22, 18, 13, 0.72) !important;
+  font-size: 10px !important;
+  line-height: 1.25 !important;
+}
+
+body.pc-mode .pc-event-feedback-card.is-court-clash-card {
+  max-width: min(760px, calc(100vw - 40px)) !important;
+}
+
+body.pc-mode .pc-court-clash__statement {
+  padding: 14px 16px !important;
+}
+
+body.pc-mode .pc-court-clash__statement p {
+  font-size: clamp(15px, 1.18vw, 20px) !important;
+  line-height: 1.45 !important;
+  letter-spacing: 0 !important;
+  word-break: keep-all !important;
+  overflow-wrap: anywhere !important;
+}
+
+body.pc-mode .pc-court-clash__phrase {
+  margin-inline: 1px !important;
+  padding: 1px 4px !important;
+  border-radius: 3px !important;
+}
+
+body.pc-mode .pc-play-left .pc-play-evidence-section {
+  flex: 0 0 min(34vh, 340px) !important;
+  min-height: 168px !important;
+  max-height: min(34vh, 340px) !important;
+  overflow: hidden !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+body.pc-mode .pc-play-left .pc-play-evidence-section .sec-content {
+  flex: 1 1 auto !important;
+  min-height: 0 !important;
+  overflow: hidden !important;
+}
+
+body.pc-mode .pc-play-left .pc-play-evidence-list {
+  flex: 1 1 auto !important;
+  min-height: 0 !important;
+  max-height: 100% !important;
+  overflow-y: auto !important;
+  overscroll-behavior: contain !important;
+  scrollbar-gutter: stable !important;
+  padding-right: 2px !important;
+}
+
+body.pc-mode .pc-play-left .pc-judge-observation-section--notebook {
+  flex: 0 0 210px !important;
+  min-height: 180px !important;
+  max-height: 230px !important;
+}
+
+/* 2026-05-04 follow-up: only the evidence notebook list scrolls.
+   The left rail itself should stay fixed so observations/notebook are not pushed out. */
+body.pc-mode .pc-play-panel--left {
+  overflow: hidden !important;
+}
+
+body.pc-mode .pc-play-left {
+  overflow-x: hidden !important;
+  overflow-y: hidden !important;
+}
+
+body.pc-mode .pc-play-left .pc-play-evidence-section {
+  flex: 0 0 224px !important;
+  height: 224px !important;
+  min-height: 224px !important;
+  max-height: 224px !important;
+}
+
+body.pc-mode .pc-play-left .pc-play-evidence-list {
+  flex: 1 1 auto !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+  overscroll-behavior: contain !important;
+}
+
+body.pc-mode .pc-play-left .pc-ev-notebook {
+  flex: 0 0 auto !important;
+}
+
+/* 2026-05-04 follow-up: evidence viewer common typography/readability pass.
+   Keep evidence pages document-like, but prevent dark title blocks on light papers. */
+body.pc-mode .pc-ev-panel--viewer {
+  max-width: min(860px, calc(100vw - 48px)) !important;
+}
+
+body.pc-mode .pc-ev-panel--viewer .pc-ev-body {
+  font-size: 13px !important;
+}
+
+body.pc-mode .pc-ev-panel--viewer .pc-doc-paper {
+  padding: 34px 42px 34px !important;
+}
+
+body.pc-mode .pc-ev-panel--viewer .pc-doc-paper__header,
+body.pc-mode .pc-ev-panel--viewer .pc-doc-shell--ledger .pc-doc-paper__header {
+  margin: 0 0 12px !important;
+  padding: 10px 14px 11px !important;
+  text-align: left !important;
+  color: #18130e !important;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.36), rgba(255, 255, 255, 0.1)),
+    #f2ead8 !important;
+  border: 1px solid rgba(52, 42, 30, 0.14) !important;
+  border-bottom: 1px solid rgba(52, 42, 30, 0.22) !important;
+  border-radius: 2px !important;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.24) !important;
+}
+
+body.pc-mode .pc-ev-panel--viewer .pc-doc-paper__eyebrow,
+body.pc-mode .pc-ev-panel--viewer .pc-doc-shell--ledger .pc-doc-paper__eyebrow {
+  display: block !important;
+  margin: 0 0 3px !important;
+  color: rgba(24, 19, 14, 0.54) !important;
+  font-size: 9px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.13em !important;
+  text-shadow: none !important;
+}
+
+body.pc-mode .pc-ev-panel--viewer .pc-doc-paper__header h3,
+body.pc-mode .pc-ev-panel--viewer .pc-doc-shell--ledger .pc-doc-paper__header h3 {
+  margin: 0 !important;
+  color: #18130e !important;
+  font-size: 15px !important;
+  line-height: 1.3 !important;
+  font-weight: 800 !important;
+  letter-spacing: 0 !important;
+  text-shadow: none !important;
+}
+
+body.pc-mode .pc-ev-panel--viewer .pc-doc-paper__header p,
+body.pc-mode .pc-ev-panel--viewer .pc-doc-shell--ledger .pc-doc-paper__header p {
+  margin: 4px 0 0 !important;
+  color: rgba(24, 19, 14, 0.68) !important;
+  font-size: 10.5px !important;
+  line-height: 1.35 !important;
+  text-shadow: none !important;
+}
+
+body.pc-mode .pc-ev-panel--viewer .pc-doc-stamp {
+  top: 72px !important;
+  right: 34px !important;
+  width: 58px !important;
+  height: 58px !important;
+  font-size: 10.5px !important;
+}
+
+body.pc-mode .pc-ev-panel--viewer .pc-doc-paper__content {
+  gap: 12px !important;
+}
+
+body.pc-mode .pc-ev-panel--viewer .pc-doc-form__label,
+body.pc-mode .pc-ev-panel--viewer .pc-doc-form__content,
+body.pc-mode .pc-ev-panel--viewer .pc-doc-form__amount,
+body.pc-mode .pc-ev-panel--viewer .pc-doc-table__row span {
+  font-size: 12.5px !important;
+  line-height: 1.55 !important;
+}
+
+body.pc-mode .pc-ev-panel--viewer .pc-doc-table__head span,
+body.pc-mode .pc-ev-panel--viewer .pc-doc-bank-summary span {
+  font-size: 10.5px !important;
+}
+
+body.pc-mode .pc-ev-panel--viewer .pc-doc-bank-summary strong {
+  font-size: 12px !important;
+}
+
+body.pc-mode .pc-ev-panel--viewer .pc-doc-table__head span,
+body.pc-mode .pc-ev-panel--viewer .pc-doc-table__row span {
+  padding: 8px 9px !important;
 }
