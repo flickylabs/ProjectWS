@@ -221,8 +221,31 @@ export function shouldPlayLightning(req: LightningGateRequest): boolean {
 }
 
 export function getInterrogationMicroVfx(questionType: QuestionType): InterrogationMicroVfx | null {
-  void questionType
-  return null
+  switch (questionType) {
+    case 'fact_pursuit':
+      return {
+        label: '사실 추궁',
+        category: 'contradiction',
+        iconId: 'i-bolt',
+        tone: 'crack',
+      }
+    case 'motive_search':
+      return {
+        label: '동기 탐색',
+        category: 'event',
+        iconId: 'i-eye',
+        tone: 'reveal',
+      }
+    case 'empathy_approach':
+      return {
+        label: '신뢰 접근',
+        category: 'slip',
+        iconId: 'i-heart',
+        tone: 'aura',
+      }
+    default:
+      return null
+  }
 }
 
 export function getVfxHierarchyConstants() {

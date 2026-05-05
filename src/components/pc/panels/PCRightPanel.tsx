@@ -577,6 +577,15 @@ export default function PCRightPanel() {
         title: '새 증인 추가',
         summary,
       })
+      store.enqueueFeedback({
+        kind: 'witness_choice',
+        eyebrow: '새 증인 등장',
+        title: witnessNames.join(', ') || '새 증인',
+        body: '증인 목록에 소환 가능한 인물이 추가되었습니다. 필요한 시점에 증언 주제를 확인하십시오.',
+        tag: '증인 목록 갱신',
+        tone: 'green',
+        autoDismissMs: 2700,
+      })
     } else if (combinationResultType === 'dispute') {
       store.addJudgeObservation({
         turnCount: store.turnCount,

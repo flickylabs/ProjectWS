@@ -44,6 +44,8 @@ const CUTSCENE_KINDS: EventFeedbackKind[] = [
   'state_change',
   'emotional_slip',
   'conflict',
+  'emergence',
+  'witness_choice',
 ]
 
 /**
@@ -73,6 +75,34 @@ function isMajorCutsceneCopy(active: EventFeedbackItem): boolean {
 
   const normalized = text.replace(/\s+/g, ' ')
   return /S5|진실|진실\s*파악|누설\s*100|100%|감정\s*(격앙|최고조|체념|방어가\s*흔들|무너)|체념|자백|사실\s*인정|truth|breakthrough/i.test(normalized)
+}
+
+function getStateChangeCue(active: EventFeedbackItem): CourtBeatCue {
+  const text = [
+    active.title,
+    active.subtitle,
+    active.body,
+    active.quote,
+    active.tag,
+    active.eyebrow,
+    active.meta?.join(' '),
+  ].filter(Boolean).join(' ')
+
+  if (/감정|격앙|체념|흔들|emotion/i.test(text)) return 'emotion'
+  if (/신뢰|trust/i.test(text)) return 'emotion'
+  if (/누설|leak/i.test(text)) return 'emotion'
+  return 'truth'
+}
+
+function getFeedbackAutoDismissMs(active: EventFeedbackItem, meta: KindMeta): number | undefined {
+  if (active.courtBeat) {
+    if (active.autoDismissMs != null) return active.autoDismissMs
+    const intensity = active.courtBeat.intensity ?? 'impact'
+    if (intensity === 'breakthrough') return 3600
+    if (intensity === 'impact') return 3000
+    return 2200
+  }
+  return active.autoDismissMs ?? meta.defaultAutoMs
 }
 
 function getCourtBeatProfile(active: EventFeedbackItem | null): CourtBeatProfile {
@@ -125,7 +155,7 @@ function getCourtBeatProfile(active: EventFeedbackItem | null): CourtBeatProfile
     return { level: 'focus', cue: 'notebook', destination: 'notebook' }
   }
   if (active.kind === 'state_change') {
-    return { level: isMajorCutsceneCopy(active) ? 'breakthrough' : 'focus', cue: 'truth', destination: 'truth' }
+    return { level: isMajorCutsceneCopy(active) ? 'breakthrough' : 'focus', cue: getStateChangeCue(active), destination: 'truth' }
   }
   return { level: 'none', cue: 'silent', destination: 'none' }
 }
@@ -233,7 +263,6 @@ function CourtBeatClash({ active }: { active: EventFeedbackItem }) {
             )}
           </svg>
           <span>{isMiss ? '검토' : hasDirectPhrase ? 'FRACTURE' : 'REVIEW'}</span>
-          {beat.relationshipLine ? <em>{beat.relationshipLine}</em> : null}
         </div>
 
         <section className="pc-court-clash__evidence">
@@ -344,7 +373,7 @@ export default function EventFeedbackCard() {
   useEffect(() => {
     if (!active || phase !== 'visible') return
     const meta = KIND_META[active.kind]
-    const autoMs = active.courtBeat ? active.autoDismissMs : (active.autoDismissMs ?? meta.defaultAutoMs)
+    const autoMs = getFeedbackAutoDismissMs(active, meta)
     if (autoMs == null) return
 
     const timer = window.setTimeout(() => {
@@ -399,8 +428,10 @@ export default function EventFeedbackCard() {
     const revealInteraction = active?.kind === 'evidence_result' && active.tag === 'evidence-unlock'
     if (!revealInteraction) return
     document.body.classList.add('pc-vfx-reveal-interaction')
+    document.body.classList.add('pc-vfx-foreground-resonance')
     return () => {
       document.body.classList.remove('pc-vfx-reveal-interaction')
+      document.body.classList.remove('pc-vfx-foreground-resonance')
     }
   }, [active?.id, active?.kind, active?.tag])
 
@@ -427,7 +458,7 @@ export default function EventFeedbackCard() {
   const meta = KIND_META[active.kind]
   const tone = active.tone ?? meta.tone
   const hasActions = Array.isArray(active.actions) && active.actions.length > 0
-  const autoMs = active.courtBeat ? active.autoDismissMs : (active.autoDismissMs ?? meta.defaultAutoMs)
+  const autoMs = getFeedbackAutoDismissMs(active, meta)
   const manualCloseOnly = !hasActions && autoMs == null
 
   const cardStyle = phase === 'converging' && convergeTransform

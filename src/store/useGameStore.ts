@@ -665,6 +665,7 @@ export const useGameStore: import('zustand').UseBoundStore<import('zustand').Sto
 
       const meter = state.questionMeters[party]
       const previousLeakMeter = meter.leakMeter
+      const previousTrustWindow = meter.trustWindow
       const { result, updatedMeter } = resolveQuestionEffect(
         questionType, party, disputeId, lieState, stance, emotionTier, meter, options,
       )
@@ -673,6 +674,47 @@ export const useGameStore: import('zustand').UseBoundStore<import('zustand').Sto
       set({
         questionMeters: { ...state.questionMeters, [party]: updatedMeter },
       })
+
+      if (updatedMeter.leakMeter > previousLeakMeter) {
+        const leakMilestone =
+          previousLeakMeter < 100 && updatedMeter.leakMeter >= 100 ? 100 :
+          previousLeakMeter < 80 && updatedMeter.leakMeter >= 80 ? 80 :
+          previousLeakMeter < 50 && updatedMeter.leakMeter >= 50 ? 50 :
+          null
+        if (leakMilestone != null) {
+          const partyData = party === 'a' ? state.caseData?.duo.partyA : state.caseData?.duo.partyB
+          const dispute = state.caseData?.disputes.find((d) => d.id === disputeId)
+          state.enqueueFeedback({
+            kind: 'state_change',
+            eyebrow: '누설 위험',
+            title: leakMilestone >= 100 ? '누설 100%에 도달했습니다' : `누설 위험 ${leakMilestone}%`,
+            body: leakMilestone >= 100
+              ? '감정 누설이 한계치에 도달했습니다. 단정하지 말고 기록 가능한 실수와 관련 쟁점을 확인하십시오.'
+              : '답변의 빈틈이 커졌습니다. 아직 결론이 아니라 추가 질문과 증거 연결이 필요한 신호입니다.',
+            tag: [partyData?.name, dispute?.name].filter(Boolean).join(' · '),
+            party,
+            disputeId,
+            tone: leakMilestone >= 80 ? 'red' : 'gold',
+            autoDismissMs: leakMilestone >= 100 ? 3300 : 2400,
+          })
+        }
+      }
+
+      if (previousTrustWindow < 60 && updatedMeter.trustWindow >= 60) {
+        const partyData = party === 'a' ? state.caseData?.duo.partyA : state.caseData?.duo.partyB
+        const dispute = state.caseData?.disputes.find((d) => d.id === disputeId)
+        state.enqueueFeedback({
+          kind: 'state_change',
+          eyebrow: '신뢰 상태 변화',
+          title: '신뢰 창이 열렸습니다',
+          body: '공감 접근으로 확인할 수 있는 범위가 넓어졌습니다. 아직 자백은 아니므로 낮은 단계 질문부터 이어가십시오.',
+          tag: [partyData?.name, dispute?.name].filter(Boolean).join(' · '),
+          party,
+          disputeId,
+          tone: 'green',
+          autoDismissMs: 2600,
+        })
+      }
 
       // 효과 적용
       for (const effect of result.effects) {

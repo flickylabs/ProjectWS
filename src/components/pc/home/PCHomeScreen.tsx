@@ -13,8 +13,11 @@ import { useGameStore, useStore } from '../../../store/useGameStore'
 import { GamePhase, type CaseData, type ExtendedHistoryEntry, type SortCategory } from '../../../types'
 import PCSvgIcon from '../icons/PCSvgIcon'
 import PCSessionIcon from '../icons/PCSessionIcon'
+import PCCharacterPortrait from '../icons/PCCharacterPortrait'
 import { openPcInteractionPanel } from '../layout/PCInteractionPanel'
 import PCJudgeProgressionPanel from '../profile/PCJudgeProgressionPanel'
+import { FRAGMENT_VISUALS, PCFragmentIcon } from '../progression/PCJudgeProgressionShared'
+import { PCResultFrame } from '../result/PCResultScreen'
 import PCCaseBrowser from './PCCaseBrowser'
 import PCIntroSlides from './PCIntroSlides'
 import { type PCGeneralSessionId, PC_GENERAL_SESSIONS, formatCountdown, getCasesForPcGeneralSession, getRelationshipLabel, getSeasonCases, hasSeenPcIntro, loadPcCaseProgress } from './pcHomeShared'
@@ -22,9 +25,10 @@ import { type PCGeneralSessionId, PC_GENERAL_SESSIONS, formatCountdown, getCases
 type HomeView = 'home' | 'general' | 'generalCases' | 'season' | 'profile' | 'leaderboard' | 'settings'
 type JudgeDeskTab = 'profile' | 'history' | 'progression'
 type HistoryMode = 'general' | 'season'
-type HistoryResultTab = 'result' | 'issues' | 'verdict' | 'epilogue' | 'bonus'
+type HistoryResultTab = 'result' | 'verdict_pronounce' | 'epilogue' | 'bonus'
 type HomeSettings = ReturnType<typeof getSettings>
 type SessionProgress = { completedCount: number; totalCount: number; averageScore: number | null; progressRate: number }
+type PendingScreenPreset = { previous: ScreenPresetId; next: ScreenPresetId }
 type HistoryCaseCard = {
   caseData: CaseData
   entries: ExtendedHistoryEntry[]
@@ -43,10 +47,9 @@ const SORTS: { id: SortCategory; label: string }[] = [
 
 const HISTORY_RESULT_TABS: { id: HistoryResultTab; label: string }[] = [
   { id: 'result', label: '01 결과 확인' },
-  { id: 'issues', label: '02 쟁점 판단' },
-  { id: 'verdict', label: '03 판결 선고' },
-  { id: 'epilogue', label: '04 후일담' },
-  { id: 'bonus', label: '05 보너스' },
+  { id: 'verdict_pronounce', label: '02 판결 선고' },
+  { id: 'epilogue', label: '03 후일담' },
+  { id: 'bonus', label: '04 보너스' },
 ]
 
 function formatHallOfFameCaseLabel(caseId: string, cases: CaseData[]): string {
@@ -75,6 +78,8 @@ export default function PCHomeScreen() {
   const [llmConnected, setLlmConnected] = useState<boolean | null>(null)
   const [checkingConnection, setCheckingConnection] = useState(false)
   const [refreshKey, setRefreshKey] = useState(0)
+  const [pendingScreenPreset, setPendingScreenPreset] = useState<PendingScreenPreset | null>(null)
+  const [screenConfirmCountdown, setScreenConfirmCountdown] = useState(5)
   const countdown = 0 // 충전 시스템 비활성 상태
 
   const initializeCase = useStore((s) => s.initializeCase)
@@ -192,6 +197,24 @@ export default function PCHomeScreen() {
     setSelectedHistoryKey(getHistoryKey(selectedCaseEntries[0]))
   }, [selectedCaseEntries, selectedHistoryCase, selectedHistoryKey])
 
+  useEffect(() => {
+    if (!pendingScreenPreset) return
+
+    setScreenConfirmCountdown(5)
+    const countdownTimer = window.setInterval(() => {
+      setScreenConfirmCountdown((current) => Math.max(0, current - 1))
+    }, 1000)
+    const revertTimer = window.setTimeout(() => {
+      setScreenPreset(pendingScreenPreset.previous)
+      setPendingScreenPreset(null)
+    }, 5000)
+
+    return () => {
+      window.clearInterval(countdownTimer)
+      window.clearTimeout(revertTimer)
+    }
+  }, [pendingScreenPreset, setScreenPreset])
+
   const startCase = async (caseData: CaseData) => {
     stopBgmFn()
     setLLMMode(llmConnected ?? false)
@@ -233,6 +256,25 @@ export default function PCHomeScreen() {
   const updateTypingSpeed = (value: HomeSettings['typingSpeed']) => {
     updateSettings({ typingSpeed: value })
     setSettings((current) => ({ ...current, typingSpeed: value }))
+  }
+
+  const requestScreenPreset = (nextPreset: ScreenPresetId) => {
+    if (nextPreset === screenPreset) return
+    const previousPreset = pendingScreenPreset?.previous ?? screenPreset
+    setScreenPreset(nextPreset)
+    setPendingScreenPreset({ previous: previousPreset, next: nextPreset })
+    setScreenConfirmCountdown(5)
+  }
+
+  const keepScreenPreset = () => {
+    setPendingScreenPreset(null)
+    setScreenConfirmCountdown(5)
+  }
+
+  const revertScreenPreset = () => {
+    if (pendingScreenPreset) setScreenPreset(pendingScreenPreset.previous)
+    setPendingScreenPreset(null)
+    setScreenConfirmCountdown(5)
   }
 
   const openGuide = () => openPcInteractionPanel({
@@ -425,10 +467,10 @@ export default function PCHomeScreen() {
                       <div className="pc-history-play-selects">
                         <label>
                           <span>플레이 시점 / 점수</span>
-                          <select className="pc-history-record-select" value={selectedHistory ? getHistoryKey(selectedHistory) : ''} onChange={(event) => setSelectedHistoryKey(event.target.value)}>
+                          <select className="pc-history-record-select pc-settings-select" value={selectedHistory ? getHistoryKey(selectedHistory) : ''} onChange={(event) => setSelectedHistoryKey(event.target.value)}>
                             {selectedCaseEntries.map((entry) => (
                               <option key={getHistoryKey(entry)} value={getHistoryKey(entry)}>
-                                {`${formatHistoryDate(entry.date)} · ${entry.score}점 · ${getHistoryRating(entry.score)}`}
+                                {formatHistoryOptionLabel(entry)}
                               </option>
                             ))}
                           </select>
@@ -484,7 +526,7 @@ export default function PCHomeScreen() {
                 <select
                   className="pc-settings-select"
                   value={screenPreset}
-                  onChange={(event) => setScreenPreset(event.target.value as ScreenPresetId)}
+                  onChange={(event) => requestScreenPreset(event.target.value as ScreenPresetId)}
                 >
                   <option value="auto">Auto (자동 감지)</option>
                   {SCREEN_PRESETS.map((p) => (
@@ -502,6 +544,10 @@ export default function PCHomeScreen() {
 
       {historyDetailEntry ? (
         <HistoryDetailModal entry={historyDetailEntry} onClose={() => setHistoryDetailEntry(null)} />
+      ) : null}
+
+      {pendingScreenPreset ? (
+        <ScreenPresetConfirmModal countdown={screenConfirmCountdown} onCancel={revertScreenPreset} onConfirm={keepScreenPreset} />
       ) : null}
     </div>
   )
@@ -589,6 +635,24 @@ function SummaryRow({ label, value }: { label: string; value: string }) {
   return <div className="pc-summary-row"><strong>{label}</strong><span>{value}</span></div>
 }
 
+function ScreenPresetConfirmModal({ countdown, onCancel, onConfirm }: { countdown: number; onCancel: () => void; onConfirm: () => void }) {
+  return (
+    <div className="pc-resolution-confirm-backdrop" role="presentation">
+      <section className="pc-resolution-confirm" role="dialog" aria-modal="true" aria-labelledby="pc-resolution-confirm-title">
+        <h3 id="pc-resolution-confirm-title">지금 해상도를 유지하시겠습니까?</h3>
+        <div className="pc-resolution-confirm__count">
+          <strong>{countdown}</strong>
+          <span>초 후 이전 해상도로 돌아갑니다.</span>
+        </div>
+        <div className="pc-resolution-confirm__actions">
+          <button className="pc-inline-button" onClick={onConfirm} type="button">예</button>
+          <button className="pc-inline-button is-ghost" onClick={onCancel} type="button">아니요</button>
+        </div>
+      </section>
+    </div>
+  )
+}
+
 function getCaseDisplayTitle(caseData: CaseData): string {
   return caseData.meta?.title ?? `${caseData.duo.partyA.name} vs ${caseData.duo.partyB.name}`
 }
@@ -605,6 +669,13 @@ function formatHistoryDate(date: string): string {
     hour: '2-digit',
     minute: '2-digit',
   })
+}
+
+function formatHistoryOptionLabel(entry: ExtendedHistoryEntry): string {
+  const d = new Date(entry.date)
+  const pad = (value: number) => String(value).padStart(2, '0')
+  const stamp = `${d.getFullYear()}.${pad(d.getMonth() + 1)}.${pad(d.getDate())}. ${pad(d.getHours())}:${pad(d.getMinutes())}`
+  return `[ ${stamp} ]  -  ${entry.score}점 / ${getHistoryRating(entry.score)}`
 }
 
 function getHistoryRating(score: number): string {
@@ -688,168 +759,245 @@ function HistoryDetailModal({ entry, onClose }: { entry: ExtendedHistoryEntry; o
       truth: undefined,
     }))
   const resolutionSentences = splitResolutionSentences(summary?.resolution ?? selectedSolutions.map(formatSolutionLabel).join('. '))
+  const relationshipLabel = snapshot?.relationshipLabel ?? getRelationshipLabel(entry.relationshipType)
+  const factMomentLines = factRows.map((row) => `${row.name}: ${getStoredFindingLabel(row.finding)}로 정리했습니다.`)
+  const keyMomentLines = summary?.keyMoment
+    ? splitResolutionSentences(summary.keyMoment)
+    : factMomentLines
+  const partyAName = caseData?.duo.partyA.name ?? entry.nameA
+  const partyBName = caseData?.duo.partyB.name ?? entry.nameB
+  const responsibility = summary?.responsibility
+  const percentA = responsibility?.percentA ?? 50
+  const percentB = responsibility?.percentB ?? 50
+  const currentTabIndex = HISTORY_RESULT_TABS.findIndex((item) => item.id === tab)
+  const prevTab = currentTabIndex > 0 ? HISTORY_RESULT_TABS[currentTabIndex - 1] : null
+  const nextTab = currentTabIndex >= 0 && currentTabIndex < HISTORY_RESULT_TABS.length - 1 ? HISTORY_RESULT_TABS[currentTabIndex + 1] : null
+  const stars = Math.max(1, Math.min(3, Math.ceil(score.total / 35)))
+  const rewardTitles: Array<{ id: string; name: string; rarity?: string; description?: string }> = snapshot?.titles?.length
+    ? snapshot.titles.map((title) => ({ id: title.id, name: title.name, rarity: title.rarity, description: title.description }))
+    : entry.titles.map((title) => ({ id: title, name: title }))
+  const rewardFragments = snapshot?.rewards ?? []
 
   return (
     <div className="pc-history-detail-modal" role="dialog" aria-modal="true" aria-label="판결 기록 상세">
       <div className="pc-history-detail-modal__backdrop" onClick={onClose} />
       <section className="pc-history-detail-modal__panel" onClick={(event) => event.stopPropagation()}>
-        <header className="pc-history-detail-modal__header">
-          <div>
-            <span>PLAY RECORD</span>
-            <h2>{caseTitle}</h2>
-            <p>{formatHistoryDate(entry.date)} · {snapshot?.relationshipLabel ?? getRelationshipLabel(entry.relationshipType)} · {score.total}점</p>
-          </div>
-          <button type="button" onClick={onClose} aria-label="닫기">×</button>
-        </header>
-
-        <div className="pc-history-detail-modal__body">
-          <div className="pc-history-result-tabs" role="tablist" aria-label="저장된 결과 보기">
-            {HISTORY_RESULT_TABS.map((item) => (
+        <PCResultFrame
+          activeTab={tab}
+          className="pc-result-screen--history"
+          eyebrow="판결 기록"
+          footer={(
+            <>
               <button
-                aria-selected={tab === item.id}
-                className={`pc-history-result-tab${tab === item.id ? ' is-active' : ''}`}
-                key={item.id}
-                onClick={() => setTab(item.id)}
+                className="pc-verdict-footer__button"
+                disabled={!prevTab}
+                onClick={() => prevTab && setTab(prevTab.id)}
                 type="button"
               >
-                {item.label}
+                &lt; 이전
               </button>
-            ))}
-          </div>
-
-          {tab === 'result' ? (
-            <section className="pc-history-result-pane">
-              <div className="pc-history-result-score-hero">
-                <div>
-                  <span>총점</span>
-                  <strong>{score.total}</strong>
-                  <em>{score.rating}</em>
-                </div>
-                <div className="pc-history-detail-score-row">
-                  <MiniStat label="탐구" value={`${score.insight}`} />
-                  <MiniStat label="판결" value={`${score.authority}`} />
-                  <MiniStat label="해결" value={`${score.wisdom}`} />
-                </div>
-              </div>
-              <div className="pc-history-detail-section">
-                <h3>판결 결과 요약</h3>
-                <p>{getHistoryVerdictBrief(entry)}</p>
-              </div>
-            </section>
-          ) : null}
-
-          {tab === 'issues' ? (
-            <section className="pc-history-result-pane">
-              <h3>쟁점별 판단</h3>
-              <div className="pc-history-detail-grid">
-                {factRows.map((row) => {
-                  const correct = row.truth == null || row.finding === 'pending' ? null : (row.finding === 'true') === row.truth
-                  return (
-                  <div className={`pc-history-detail-finding${correct === true ? ' is-correct' : correct === false ? ' is-wrong' : ''}`} key={row.id}>
-                    <strong>{row.name}</strong>
-                    <span>{getStoredFindingLabel(row.finding)}</span>
-                  </div>
-                  )
-                })}
-              </div>
-            </section>
-          ) : null}
-
-          {tab === 'verdict' ? (
-            <section className="pc-history-result-pane">
-              {summary ? (
-                <>
-                  <div className="pc-history-detail-section">
-                    <h3>판결문 요약</h3>
-                    <p>{summary.caseSummary}</p>
-                    <div className="pc-history-detail-responsibility">
-                      <strong>{summary.responsibility.partyA} {summary.responsibility.percentA}%</strong>
-                      <span><i style={{ width: `${summary.responsibility.percentA}%` }} /></span>
-                      <strong>{summary.responsibility.percentB}% {summary.responsibility.partyB}</strong>
+              {nextTab ? (
+                <button className="pc-verdict-footer__button is-primary" onClick={() => setTab(nextTab.id)} type="button">
+                  다음 &gt;
+                </button>
+              ) : (
+                <button className="pc-verdict-footer__button is-primary" onClick={onClose} type="button">
+                  닫기
+                </button>
+              )}
+            </>
+          )}
+          headline={caseTitle}
+          meta={[
+            { label: '관계', value: relationshipLabel },
+            { label: '쟁점', value: `${factRows.length}건` },
+            { label: '증거', value: `${caseData?.evidence.length ?? 0}종` },
+          ]}
+          onTabChange={setTab}
+          rating={score.rating}
+          score={score.total}
+          stars={stars}
+          summary={`${formatHistoryDate(entry.date)} · ${relationshipLabel} · ${score.total}점`}
+          tabs={HISTORY_RESULT_TABS}
+        >
+                {tab === 'result' ? (
+                  <div className="pc-result-combined">
+                    <div className="pc-result-donuts">
+                      <HistoryScoreDonut label="통찰" value={score.insight} color="var(--pc-blue)" />
+                      <HistoryScoreDonut label="권위" value={score.authority} color="var(--pc-gold)" />
+                      <HistoryScoreDonut label="지혜" value={score.wisdom} color="var(--pc-green)" />
+                      <HistoryScoreDonut label="총점" value={score.total} color="#d4a24e" />
                     </div>
-                    <p>{summary.responsibilityReason}</p>
-                  </div>
-                  <div className="pc-history-result-two-col">
-                    <div className="pc-history-detail-section">
-                      <h3>결정적 순간</h3>
-                      <p>{summary.keyMoment}</p>
+
+                    <div className="pc-result-truth">
+                      <h3>쟁점별 판단 결과</h3>
+                      {factRows.map((row) => {
+                        const correct = row.truth == null || row.finding === 'pending' ? null : (row.finding === 'true') === row.truth
+                        return (
+                          <div className={`pc-result-truth__card ${correct === true ? 'is-correct' : correct === false ? 'is-wrong' : ''}`} key={row.id}>
+                            <div>
+                              <strong>{row.name}</strong>
+                              <p>내 판단: {getStoredFindingLabel(row.finding)}</p>
+                            </div>
+                            <div className="pc-history-result-mark">
+                              {correct === true ? 'O' : correct === false ? 'X' : '—'}
+                            </div>
+                          </div>
+                        )
+                      })}
                     </div>
-                    <div className="pc-history-detail-section">
-                      <h3>해결 방향</h3>
-                      <div className="pc-history-result-resolution-list">
-                        {resolutionSentences.map((sentence, index) => <span key={`${index}-${sentence}`}>{sentence}</span>)}
+                  </div>
+                ) : null}
+
+                {tab === 'verdict_pronounce' ? (
+                  <div className="pc-result-text">
+                    <p className="pc-history-result-pronounce">
+                      본 사건은 <strong>{partyAName}</strong>과 <strong>{partyBName}</strong>의 {relationshipLabel} 분쟁으로, 저장된 판결 기록을 기준으로 다시 표시합니다.
+                    </p>
+
+                    {summary ? (
+                      <>
+                        <div className="pc-result-verdict-pronounce-grid">
+                          <div className="pc-history-result-scale">
+                            <svg width="240" height="180" viewBox="0 0 420 220" aria-hidden="true">
+                              <polygon points="210,160 192,188 228,188" fill="#8b6f3d" opacity="0.7" />
+                              <rect x="175" y="188" width="70" height="5" rx="2" fill="#8b6f3d" opacity="0.35" />
+                              <g transform={`rotate(${((50 - percentA) / 50) * 12}, 210, 156)`}>
+                                <rect x="50" y="154" width="320" height="6" rx="3" fill="#8b6f3d" />
+                                <circle cx="100" cy="118" r="32" fill="rgba(74, 111, 165, 0.12)" stroke="#4a6fa5" strokeWidth="1.8" />
+                                <foreignObject x="70" y="88" width="60" height="60">
+                                  <div className="pc-history-result-portrait"><PCCharacterPortrait alt={partyAName} caseId={entry.caseId} emotion="defensive" fallbackSymbolId="i-person" party="a" size={60} /></div>
+                                </foreignObject>
+                                <text x="100" y="70" textAnchor="middle" fontSize="11" fontWeight="800" fill="#4a6fa5">{partyAName}</text>
+                                <circle cx="320" cy="118" r="32" fill="rgba(168, 79, 79, 0.12)" stroke="#a84f4f" strokeWidth="1.8" />
+                                <foreignObject x="290" y="88" width="60" height="60">
+                                  <div className="pc-history-result-portrait"><PCCharacterPortrait alt={partyBName} caseId={entry.caseId} emotion="defensive" fallbackSymbolId="i-person" party="b" size={60} /></div>
+                                </foreignObject>
+                                <text x="320" y="70" textAnchor="middle" fontSize="11" fontWeight="800" fill="#a84f4f">{partyBName}</text>
+                              </g>
+                            </svg>
+                            <div><span>{percentA}%</span><span>{percentB}%</span></div>
+                          </div>
+
+                          <div className="pc-result-summary__section pc-result-summary__section--compact">
+                            <h3>결정적 순간</h3>
+                            <ul className="pc-result-key-moments__list">
+                              {keyMomentLines.map((line, index) => <li className="pc-result-key-moments__item" key={`${index}-${line}`}>{line}</li>)}
+                            </ul>
+                          </div>
+
+                          <div className="pc-result-summary__section pc-result-summary__section--compact pc-result-resolution--wide" style={{ margin: 0, gridColumn: '1 / -1' }}>
+                            <h3>해결 방향</h3>
+                            <div className="pc-result-resolution__list">
+                              {resolutionSentences.map((item, index) => <div className="pc-result-resolution__item" key={`${index}-${item}`}>{item}</div>)}
+                            </div>
+                          </div>
+                        </div>
+                        <div className="pc-result-summary__section">
+                          <h3>판결문 요약</h3>
+                          <p>{summary.caseSummary}</p>
+                          <p>{summary.responsibilityReason}</p>
+                        </div>
+                      </>
+                    ) : (
+                      <div className="pc-result-summary__section">
+                        <h3>판결문 요약</h3>
+                        <p>{getHistoryVerdictBrief(entry)}</p>
+                      </div>
+                    )}
+                  </div>
+                ) : null}
+
+                {tab === 'epilogue' ? (
+                  <div className="pc-result-text">
+                    <div className="pc-history-epilogue-box">
+                      <div style={{ textAlign: 'center', marginBottom: 8 }}>
+                        <div style={{ fontSize: 12, fontWeight: 800, letterSpacing: '0.2em', color: 'var(--pc-gold-light)', textTransform: 'uppercase' }}>Epilogue</div>
+                      </div>
+                      <div className="pc-result-aftermath">
+                        {paragraphs.length ? paragraphs.map((paragraph, index) => (
+                          <p className="pc-result-aftermath__para" key={`${index}-${paragraph.slice(0, 12)}`}>
+                            {paragraph}
+                          </p>
+                        )) : <p className="pc-history-detail-empty">이전 플레이 기록에는 후일담이 저장되어 있지 않습니다. 앞으로 완료되는 플레이는 후일담까지 함께 저장됩니다.</p>}
                       </div>
                     </div>
                   </div>
-                </>
-              ) : (
-                <div className="pc-history-detail-section">
-                  <h3>판결문 요약</h3>
-                  <p>{getHistoryVerdictBrief(entry)}</p>
-                </div>
-              )}
-            </section>
-          ) : null}
+                ) : null}
 
-          {tab === 'epilogue' ? (
-            <section className="pc-history-result-pane">
-              <h3>후일담</h3>
-              {paragraphs.length ? (
-                <div className="pc-history-detail-aftermath">
-                  {paragraphs.map((paragraph, index) => (
-                    <p className={index === paragraphs.length - 1 ? 'is-lesson' : ''} key={`${index}-${paragraph.slice(0, 12)}`}>{paragraph}</p>
-                  ))}
-                </div>
-              ) : (
-                <p className="pc-history-detail-empty">이전 플레이 기록에는 후일담이 저장되어 있지 않습니다. 앞으로 완료되는 플레이는 후일담까지 함께 저장됩니다.</p>
-              )}
-            </section>
-          ) : null}
-
-          {tab === 'bonus' ? (
-            <section className="pc-history-result-pane">
-              <div className="pc-history-detail-section">
-                <h3>선택한 해결책</h3>
-                {selectedSolutions.length ? (
-                  <div className="pc-history-detail-tags">
-                    {selectedSolutions.map((solution) => (
-                      <span key={solution}>{formatSolutionLabel(solution)}</span>
-                    ))}
+                {tab === 'bonus' ? (
+                  <div className="pc-result-text">
+                    <div className="pc-history-bonus-layout">
+                      <div className="pc-result-summary__section">
+                        <h3>획득 카드</h3>
+                        {rewardTitles.length ? (
+                          <div className="pc-history-title-cards">
+                            {rewardTitles.map((title) => (
+                              <div className={`pc-result-title-card ${title.rarity ? `is-${title.rarity}` : ''}`} key={title.id}>
+                                <span className="pc-result-title-card__name">{title.name}</span>
+                                {title.description ? <span className="pc-result-title-card__tooltip">{title.description}</span> : null}
+                              </div>
+                            ))}
+                          </div>
+                        ) : <p className="pc-history-detail-empty">저장된 칭호 기록이 없습니다.</p>}
+                      </div>
+                      <div className="pc-result-summary__section">
+                        <h3>보상 조각</h3>
+                        <HistoryRewardGrid rewards={rewardFragments} />
+                      </div>
+                    </div>
                   </div>
-                ) : (
-                  <p className="pc-history-detail-empty">선택한 해결책 기록이 없습니다.</p>
-                )}
-              </div>
-              <div className="pc-history-result-two-col">
-                <div className="pc-history-detail-section">
-                  <h3>획득 칭호</h3>
-                  {snapshot?.titles?.length ? (
-                    <div className="pc-history-detail-tags">
-                      {snapshot.titles.map((title) => <span key={title.id}>{title.name}</span>)}
-                    </div>
-                  ) : entry.titles.length ? (
-                    <div className="pc-history-detail-tags">
-                      {entry.titles.map((title) => <span key={title}>{title}</span>)}
-                    </div>
-                  ) : (
-                    <p className="pc-history-detail-empty">저장된 칭호 기록이 없습니다.</p>
-                  )}
-                </div>
-                <div className="pc-history-detail-section">
-                  <h3>보상 조각</h3>
-                  {snapshot?.rewards?.length ? (
-                    <div className="pc-history-detail-tags">
-                      {snapshot.rewards.map((reward) => <span key={reward.fragmentId}>{reward.label ?? reward.fragmentId} × {reward.count}</span>)}
-                    </div>
-                  ) : (
-                    <p className="pc-history-detail-empty">저장된 보상 기록이 없습니다.</p>
-                  )}
-                </div>
-              </div>
-            </section>
-          ) : null}
-        </div>
+                ) : null}
+        </PCResultFrame>
       </section>
+    </div>
+  )
+}
+
+function HistoryScoreDonut({ color, label, value }: { color: string; label: string; value: number }) {
+  const pct = Math.max(0, Math.min(value, 100))
+  const dash = (pct / 100) * 251
+  return (
+    <div className="pc-result-donut-single">
+      <span className="pc-result-donut-label" style={{ color }}>{label}</span>
+      <svg viewBox="0 0 100 100" width="180" height="180">
+        <circle cx="50" cy="50" r="40" fill="none" stroke="rgba(255,255,255,0.05)" strokeWidth="6" />
+        <circle
+          className="pc-result-donut-ring"
+          cx="50"
+          cy="50"
+          r="40"
+          fill="none"
+          stroke={color}
+          strokeDasharray={`${dash} 251`}
+          strokeDashoffset="0"
+          strokeLinecap="round"
+          strokeWidth="6"
+          transform="rotate(-90 50 50)"
+        />
+        <text x="50" y="55" textAnchor="middle" fill="#f2efe8" fontSize="28" fontWeight="900">{value}</text>
+      </svg>
+    </div>
+  )
+}
+
+function HistoryRewardGrid({ rewards }: { rewards: Array<{ fragmentId: string; count: number; label?: string }> }) {
+  if (!rewards.length) {
+    return <p className="pc-history-detail-empty">저장된 보상 기록이 없습니다.</p>
+  }
+
+  return (
+    <div className="pc-history-reward-grid">
+      {rewards.map((reward) => {
+        const visual = FRAGMENT_VISUALS[reward.fragmentId as keyof typeof FRAGMENT_VISUALS]
+        return (
+          <div className="pc-history-reward-card" key={reward.fragmentId}>
+            <PCFragmentIcon fragmentId={reward.fragmentId as any} size={56} />
+            <strong>{reward.label ?? visual?.name ?? reward.fragmentId}</strong>
+            <span>× {reward.count}</span>
+          </div>
+        )
+      })}
     </div>
   )
 }

@@ -477,7 +477,7 @@ function buildCourtBeatRelationCopy(
   if (!hasStatementContext) {
     const scope = scopeLines[family]
     return {
-      relationshipLine: isHit ? `${label}은 방금 진술을 직접 깨기보다, 현재 쟁점에서 더 확인해야 할 범위를 좁힙니다.` : undefined,
+      relationshipLine: undefined,
       judgeLine: isHit ? scope.judge : `이 ${label}만으로는 현재 쟁점을 직접 판단하기 어렵습니다.`,
       notebookEntry: isHit ? scope.notebook : undefined,
     }
@@ -494,14 +494,14 @@ function buildCourtBeatRelationCopy(
   if (!isDirectClash) {
     const scope = scopeLines[family]
     return {
-      relationshipLine: `${label}은 방금 진술을 직접 깨기보다, 현재 쟁점에서 더 확인해야 할 범위를 좁힙니다.`,
+      relationshipLine: undefined,
       judgeLine: scope.judge,
       notebookEntry: scope.notebook,
     }
   }
 
   return {
-    relationshipLine: `${label}의 확인 지점이 방금 진술과 맞지 않습니다.`,
+    relationshipLine: undefined,
     judgeLine: `이 ${label}은 방금 진술과 맞지 않습니다. 확인 범위를 다시 짚겠습니다.`,
     notebookEntry: `${evidenceName}에 비추어, 방금 진술은 그대로 받아들이기 어렵습니다.`,
   }
@@ -2860,10 +2860,17 @@ function notifyLieTransition(party: PartyId, disputeId: string) {
       if (currentEmotion < 85) {
         changeEmotionWithPhaseTracking(party, 85 - currentEmotion)
       }
-      v4Effects.confession(party, name, {
-        turn: state.turnCount,
-        caseId: state.caseData?.caseId,
-        phase: state.currentPhase,
+      state.enqueueFeedback({
+        kind: 'state_change',
+        eyebrow: '진실 파악',
+        title: '진실 파악 5단계 도달',
+        subtitle: dispute?.name ?? disputeId,
+        body: `${name ?? '당사자'}의 방어가 무너지고 자백 단계에 들어갔습니다.`,
+        tag: '자백 단계',
+        party,
+        disputeId,
+        tone: 'red',
+        autoDismissMs: 3400,
       })
     }
     // S1~S4: v4 newFact 배너 제거 — 통합 피드백 카드가 대체 (사운드 필요 시 이후 개별 추가)

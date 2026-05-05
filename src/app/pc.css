@@ -19915,6 +19915,10 @@ body.pc-mode .pc-resonance-layer {
   z-index: 10000;
   overflow: visible;
 }
+
+body.pc-mode.pc-vfx-foreground-resonance .pc-resonance-layer {
+  z-index: 10320;
+}
 /* 전기 테두리(aura) — 요소 주변 3겹 zigzag border */
 body.pc-mode .pc-aura-bolt {
   fill: none;
@@ -27155,7 +27159,8 @@ body.pc-mode .pc-history-detail-modal__backdrop {
 body.pc-mode .pc-history-detail-modal__panel {
   position: relative !important;
   z-index: 1 !important;
-  width: min(1160px, calc(100vw - 56px)) !important;
+  width: min(1440px, calc(100vw - 56px)) !important;
+  height: calc(100vh - 56px) !important;
   max-height: calc(100vh - 56px) !important;
   display: flex !important;
   flex-direction: column !important;
@@ -28381,9 +28386,9 @@ body.pc-mode .pc-discovery-overlay {
 }
 
 body.pc-mode.pc-vfx-reveal-interaction .pc-interaction-overlay {
-  background: rgba(7, 7, 12, 0.64) !important;
-  backdrop-filter: blur(8px) saturate(0.82) !important;
-  -webkit-backdrop-filter: blur(8px) saturate(0.82) !important;
+  background: rgba(7, 7, 12, 0.18) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
 }
 /* Family testimony evidence: notarized transcript view */
 body.pc-mode .pc-testimony-transcript-viewer {
@@ -29427,5 +29432,654 @@ body.pc-mode .jp2__exchange-actions {
 
   body.pc-mode .jp2__top-tabs {
     grid-template-columns: 1fr;
+  }
+}
+
+/* Judge desk: May 2026 UX refinement */
+body.pc-mode .pc-history-record-select,
+body.pc-mode .pc-history-record-select option,
+body.pc-mode .jp2__title-select select,
+body.pc-mode .jp2__title-select select option,
+body.pc-mode .jp2__exchange-selects select,
+body.pc-mode .jp2__exchange-selects select option {
+  background: #07080c !important;
+  color: rgba(247, 243, 235, 0.96) !important;
+}
+
+body.pc-mode .pc-history-record-select {
+  border-color: rgba(212, 162, 78, 0.24) !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.035) !important;
+}
+
+body.pc-mode .pc-history-record-select:hover,
+body.pc-mode .jp2__title-select select:hover,
+body.pc-mode .jp2__exchange-selects select:hover {
+  background: #101116 !important;
+}
+
+/* My Info dropdowns share the Settings preset select styling. */
+body.pc-mode .pc-history-record-select.pc-settings-select,
+body.pc-mode .jp2__title-select select.pc-settings-select,
+body.pc-mode .jp2__exchange-selects select.pc-settings-select {
+  width: 100% !important;
+  min-width: 150px !important;
+  height: 42px !important;
+  min-height: 36px !important;
+  padding: 0 12px !important;
+  border-radius: 10px !important;
+  border: 1px solid rgba(212, 162, 78, 0.22) !important;
+  background: rgba(212, 162, 78, 0.06) !important;
+  color: var(--pc-text) !important;
+  font-size: 13px !important;
+  font-family: inherit !important;
+  font-weight: 800 !important;
+  transition: border-color 160ms ease !important;
+  color-scheme: dark;
+}
+
+body.pc-mode .pc-history-record-select.pc-settings-select:hover,
+body.pc-mode .pc-history-record-select.pc-settings-select:focus,
+body.pc-mode .jp2__title-select select.pc-settings-select:hover,
+body.pc-mode .jp2__title-select select.pc-settings-select:focus,
+body.pc-mode .jp2__exchange-selects select.pc-settings-select:hover,
+body.pc-mode .jp2__exchange-selects select.pc-settings-select:focus {
+  border-color: rgba(212, 162, 78, 0.45) !important;
+  background: rgba(212, 162, 78, 0.06) !important;
+  outline: none !important;
+}
+
+body.pc-mode .pc-history-record-select.pc-settings-select option,
+body.pc-mode .jp2__title-select select.pc-settings-select option,
+body.pc-mode .jp2__exchange-selects select.pc-settings-select option {
+  background: #17130d !important;
+  color: #f0e6d0 !important;
+}
+
+body.pc-mode .pc-history-record-select.pc-settings-select option:checked,
+body.pc-mode .pc-history-record-select.pc-settings-select option:hover,
+body.pc-mode .pc-history-record-select.pc-settings-select option:focus,
+body.pc-mode .jp2__title-select select.pc-settings-select option:checked,
+body.pc-mode .jp2__title-select select.pc-settings-select option:hover,
+body.pc-mode .jp2__title-select select.pc-settings-select option:focus,
+body.pc-mode .jp2__exchange-selects select.pc-settings-select option:checked,
+body.pc-mode .jp2__exchange-selects select.pc-settings-select option:hover,
+body.pc-mode .jp2__exchange-selects select.pc-settings-select option:focus {
+  background: #2a2112 !important;
+  color: var(--pc-gold-light, #e8c172) !important;
+}
+
+body.pc-mode .pc-resolution-confirm-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 2600;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: rgba(0, 0, 0, 0.66);
+  backdrop-filter: blur(8px);
+}
+
+body.pc-mode .pc-resolution-confirm {
+  width: min(420px, calc(100vw - 32px));
+  display: grid;
+  gap: 18px;
+  padding: 28px;
+  border: 1px solid rgba(212, 162, 78, 0.28);
+  border-radius: 18px;
+  background: linear-gradient(180deg, rgba(19, 17, 14, 0.98), rgba(8, 9, 13, 0.98));
+  box-shadow: 0 28px 90px rgba(0, 0, 0, 0.62), inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  text-align: center;
+}
+
+body.pc-mode .pc-resolution-confirm h3 {
+  margin: 0;
+  color: var(--pc-text, #f4eee3);
+  font-size: 20px;
+  font-weight: 900;
+}
+
+body.pc-mode .pc-resolution-confirm__count {
+  display: inline-grid;
+  justify-items: center;
+  gap: 6px;
+  color: rgba(244, 238, 227, 0.74);
+  font-size: 13px;
+  font-weight: 800;
+}
+
+body.pc-mode .pc-resolution-confirm__count strong {
+  width: 54px;
+  height: 54px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(212, 162, 78, 0.36);
+  border-radius: 50%;
+  background: rgba(212, 162, 78, 0.1);
+  color: var(--pc-gold-light, #e8c172);
+  font-size: 26px;
+  line-height: 1;
+}
+
+body.pc-mode .pc-resolution-confirm__actions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+body.pc-mode .pc-history-detail-modal__panel {
+  width: min(1440px, calc(100vw - 56px)) !important;
+  height: calc(100vh - 56px) !important;
+  max-height: calc(100vh - 56px) !important;
+  padding: 0 !important;
+  background: transparent !important;
+  border: 0 !important;
+}
+
+body.pc-mode .pc-result-screen--history {
+  position: relative !important;
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+body.pc-mode .pc-result-screen--history .pc-result-shell {
+  width: 100% !important;
+  height: 100% !important;
+  padding: 0 !important;
+  grid-template-columns: 340px minmax(0, 1fr) !important;
+  gap: 24px !important;
+}
+
+body.pc-mode .pc-result-screen--history .pc-result-hero {
+  gap: 16px !important;
+  padding-bottom: 24px !important;
+}
+
+body.pc-mode .pc-result-screen--history .pc-result-hero h1 {
+  display: -webkit-box !important;
+  -webkit-box-orient: vertical !important;
+  -webkit-line-clamp: 2 !important;
+  overflow: hidden !important;
+  font-size: 32px !important;
+  line-height: 1.14 !important;
+}
+
+body.pc-mode .pc-result-screen--history .pc-result-hero__summary {
+  display: -webkit-box !important;
+  -webkit-box-orient: vertical !important;
+  -webkit-line-clamp: 2 !important;
+  overflow: hidden !important;
+}
+
+body.pc-mode .pc-result-screen--history .pc-result-hero__meta-card {
+  padding: 12px 10px !important;
+}
+
+body.pc-mode .pc-result-screen--history .pc-result-hero__steps {
+  gap: 3px !important;
+  margin-top: 4px !important;
+}
+
+body.pc-mode .pc-result-screen--history .pc-result-step-link {
+  padding: 8px 10px !important;
+  font-size: 13px !important;
+}
+
+body.pc-mode .pc-result-screen--history .pc-result-main,
+body.pc-mode .pc-result-screen--history .pc-result-panel {
+  min-height: 0 !important;
+}
+
+body.pc-mode .pc-result-screen--history .pc-result-panel {
+  overflow: hidden !important;
+}
+
+body.pc-mode .pc-result-screen--history .pc-result-panel > .pc-result-combined > div:last-child,
+body.pc-mode .pc-result-screen--history .pc-result-panel > .pc-result-text > div:last-child {
+  position: static !important;
+  inset: auto !important;
+  margin: revert !important;
+  padding: revert !important;
+  justify-content: initial !important;
+  z-index: auto !important;
+}
+
+body.pc-mode .pc-result-screen--history .pc-result-panel > .pc-result-combined > .pc-result-truth {
+  display: grid !important;
+  gap: 12px !important;
+  margin-top: 8px !important;
+  padding: 24px 0 !important;
+}
+
+body.pc-mode .pc-result-screen--history .pc-result-panel > .pc-result-text > .pc-result-summary__section {
+  display: block !important;
+}
+
+body.pc-mode .pc-result-screen--history .pc-result-panel > .pc-result-text > .pc-history-epilogue-box,
+body.pc-mode .pc-result-screen--history .pc-result-panel > .pc-result-text > .pc-history-bonus-layout {
+  display: grid !important;
+}
+
+body.pc-mode .pc-result-screen--history .pc-result-donuts {
+  gap: 24px !important;
+}
+
+body.pc-mode .pc-result-screen--history .pc-result-donut-single {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  gap: 8px !important;
+}
+
+body.pc-mode .pc-history-result-mark {
+  flex-shrink: 0;
+  width: 56px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+  border: 2px solid rgba(160, 165, 180, 0.15);
+  background: rgba(160, 165, 180, 0.08);
+  color: #8c8fa0;
+  font-size: 16px;
+  font-weight: 900;
+}
+
+body.pc-mode .pc-result-screen--history .pc-result-truth__card {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 12px !important;
+  padding: 10px 14px !important;
+}
+
+body.pc-mode .pc-history-result-pronounce {
+  font-size: 17px !important;
+  color: #e8e5dc !important;
+  line-height: 1.8 !important;
+  text-align: center !important;
+  margin: 0 0 28px !important;
+}
+
+body.pc-mode .pc-result-screen--history .pc-result-verdict-pronounce-grid {
+  display: grid !important;
+  grid-template-columns: 240px minmax(0, 1fr) !important;
+  gap: 20px !important;
+  margin-bottom: 28px !important;
+}
+
+body.pc-mode .pc-history-result-scale {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8px;
+  padding-top: 1px;
+}
+
+body.pc-mode .pc-history-result-scale > div {
+  display: flex;
+  gap: 24px;
+  font-size: 20px;
+  font-weight: 900;
+}
+
+body.pc-mode .pc-history-result-scale > div span:first-child {
+  color: #4a6fa5;
+}
+
+body.pc-mode .pc-history-result-scale > div span:last-child {
+  color: #a84f4f;
+}
+
+body.pc-mode .pc-history-result-portrait {
+  width: 60px;
+  height: 60px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+body.pc-mode .pc-history-epilogue-box {
+  display: grid !important;
+  gap: 12px;
+  min-height: 0;
+  padding: 16px 20px;
+  border: 1px solid rgba(212, 162, 78, 0.15);
+  border-radius: 16px;
+  background: rgba(212, 162, 78, 0.02);
+  overflow-y: auto;
+}
+
+body.pc-mode .pc-history-epilogue-box .pc-result-aftermath {
+  display: grid !important;
+  gap: 13px;
+}
+
+body.pc-mode .pc-history-bonus-layout {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 16px;
+  min-height: 0;
+}
+
+body.pc-mode .pc-history-title-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+body.pc-mode .pc-history-title-cards .pc-result-title-card {
+  min-width: 150px;
+  min-height: 84px;
+  cursor: default;
+}
+
+body.pc-mode .pc-history-reward-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+body.pc-mode .pc-history-reward-card {
+  min-height: 118px;
+  display: grid;
+  justify-items: center;
+  align-content: center;
+  gap: 7px;
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(212, 162, 78, 0.14);
+  background: rgba(255, 255, 255, 0.025);
+  color: rgba(245, 241, 233, 0.82);
+  text-align: center;
+}
+
+body.pc-mode .pc-history-reward-card strong {
+  font-size: 12px;
+  font-weight: 900;
+}
+
+body.pc-mode .pc-history-reward-card span {
+  color: var(--pc-gold-light);
+  font-size: 12px;
+  font-weight: 900;
+}
+
+body.pc-mode .jp2__summary--manager {
+  grid-template-columns: minmax(0, 1fr) !important;
+}
+
+body.pc-mode .jp2__equip-layout {
+  grid-template-columns: minmax(520px, 1fr) minmax(360px, 400px) !important;
+  align-items: stretch !important;
+}
+
+body.pc-mode .jp2.jp2--manager {
+  gap: 12px;
+}
+
+body.pc-mode .jp2__equip-slots--wide {
+  align-content: start;
+}
+
+body.pc-mode .jp2__slot-pair {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+body.pc-mode .jp2__slot-pair .jp2__slot {
+  min-height: 150px;
+  align-content: start;
+}
+
+body.pc-mode .jp2__title-info-panel {
+  display: grid;
+  gap: 10px;
+  align-content: start;
+  min-height: 0;
+}
+
+body.pc-mode .jp2__title-card-summary {
+  display: grid;
+  gap: 6px;
+}
+
+body.pc-mode .jp2__title-card-summary h3 {
+  font-size: 18px;
+  line-height: 1.15;
+}
+
+body.pc-mode .jp2__title-card-summary p {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  line-height: 1.35;
+}
+
+body.pc-mode .jp2__effect-preview {
+  gap: 4px;
+  min-height: 0;
+  padding: 8px 10px;
+}
+
+body.pc-mode .jp2__effect-preview p {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  margin: 0;
+  overflow: hidden;
+  line-height: 1.35;
+}
+
+body.pc-mode .jp2__effect-preview--next p {
+  -webkit-line-clamp: 3;
+}
+
+body.pc-mode .jp2__effect-preview-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+body.pc-mode .jp2__text-button {
+  border: 1px solid rgba(212, 162, 78, 0.2);
+  border-radius: 999px;
+  background: rgba(212, 162, 78, 0.06);
+  color: var(--pc-gold-light);
+  cursor: pointer;
+  font-size: 11px;
+  font-weight: 900;
+  padding: 4px 9px;
+}
+
+body.pc-mode .jp2__effect-preview--next {
+  border-color: rgba(212, 162, 78, 0.2);
+  background: rgba(212, 162, 78, 0.055);
+}
+
+body.pc-mode .jp2__effect-preview--next strong {
+  color: var(--pc-gold-light);
+}
+
+body.pc-mode .jp2__equip-btns--stack {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 7px;
+}
+
+body.pc-mode .jp2__equip-btns--stack .jp2__action-btn {
+  min-height: 40px;
+}
+
+body.pc-mode .jp2__enhance-layout {
+  grid-template-columns: minmax(520px, 1fr) minmax(360px, 400px) !important;
+  align-items: stretch !important;
+}
+
+body.pc-mode .jp2__enhance-info {
+  padding: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+body.pc-mode .jp2__forge-panel--focused {
+  min-height: 0 !important;
+  padding-top: 16px !important;
+}
+
+body.pc-mode .jp2__forge-panel--focused::before {
+  display: none !important;
+}
+
+body.pc-mode .jp2__axis-tabs {
+  margin-bottom: 12px;
+}
+
+body.pc-mode .jp2__axis-tab {
+  min-height: 54px;
+}
+
+body.pc-mode .jp2__material-board {
+  position: relative;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  align-items: stretch;
+}
+
+body.pc-mode .jp2__material-slot {
+  grid-template-columns: minmax(0, 1fr) !important;
+  gap: 12px !important;
+}
+
+body.pc-mode .jp2__material-controls {
+  justify-content: space-between;
+}
+
+body.pc-mode .jp2__forge-max {
+  min-height: 188px;
+  grid-column: 1 / -1;
+  display: grid;
+  place-items: center;
+  align-content: center;
+  gap: 5px;
+}
+
+body.pc-mode .jp2__forge-max strong,
+body.pc-mode .jp2__forge-max span {
+  display: block;
+}
+
+body.pc-mode .jp2__forge-command-row {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
+}
+
+body.pc-mode .jp2__fragment-layout {
+  grid-template-columns: minmax(320px, 0.72fr) minmax(520px, 1.28fr) !important;
+  align-items: stretch !important;
+}
+
+body.pc-mode .jp2__frag-detail,
+body.pc-mode .jp2__fragment-board {
+  min-height: 430px;
+}
+
+body.pc-mode .jp2__fragment-board {
+  overflow: visible !important;
+}
+
+body.pc-mode .jp2__frag-usedby {
+  min-height: 104px;
+  align-content: start;
+}
+
+body.pc-mode .jp2__frag-section:nth-child(2) p {
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+body.pc-mode .jp2__title-detail-modal,
+body.pc-mode .jp2__slot-choice-modal {
+  position: relative;
+  width: min(620px, 100%);
+  padding: 24px;
+  border: 1px solid rgba(232, 193, 114, 0.22);
+  border-radius: 18px;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(212, 162, 78, 0.13), transparent 34%),
+    linear-gradient(180deg, rgba(18, 18, 26, 0.98), rgba(10, 11, 17, 0.98));
+  box-shadow: 0 28px 80px rgba(0, 0, 0, 0.5);
+}
+
+body.pc-mode .jp2__title-detail-modal .jp2__section-head h3 small {
+  color: var(--pc-gold-light);
+  font-size: 14px;
+}
+
+body.pc-mode .jp2__title-detail-subtitle,
+body.pc-mode .jp2__modal-copy {
+  margin: 10px 0 14px;
+  color: rgba(255, 255, 255, 0.58);
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+body.pc-mode .jp2__detail-effects--modal {
+  max-height: 360px;
+  overflow-y: auto;
+  margin-top: 16px;
+}
+
+body.pc-mode .jp2__slot-choice-list {
+  display: grid;
+  gap: 10px;
+}
+
+body.pc-mode .jp2__slot-choice {
+  display: grid;
+  gap: 5px;
+  padding: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.035);
+  color: rgba(255, 255, 255, 0.72);
+  cursor: pointer;
+  text-align: left;
+}
+
+body.pc-mode .jp2__slot-choice:hover {
+  border-color: rgba(212, 162, 78, 0.36);
+  background: rgba(212, 162, 78, 0.08);
+}
+
+body.pc-mode .jp2__slot-choice span {
+  color: rgba(232, 193, 114, 0.7);
+  font-size: 11px;
+  font-weight: 900;
+}
+
+body.pc-mode .jp2__slot-choice strong {
+  color: #f6ead2;
+  font-size: 15px;
+}
+
+body.pc-mode .jp2__slot-choice small {
+  color: rgba(255, 255, 255, 0.48);
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+@media (max-width: 980px) {
+  body.pc-mode .pc-result-screen--history .pc-result-shell,
+  body.pc-mode .jp2__slot-pair,
+  body.pc-mode .jp2__material-board {
+    grid-template-columns: 1fr !important;
   }
 }

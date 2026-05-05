@@ -137,6 +137,7 @@ async function handleEvent(event: PresentationEvent): Promise<void> {
 
 /** #1 NEW FACT 배너 */
 async function handleNewFact(e: NewFactEvent) {
+  await waitForPresentationLane()
   playNewFactDiscovery()
   const banner = document.createElement('div')
   banner.className = 'v4-newfact-banner'
@@ -149,6 +150,7 @@ async function handleNewFact(e: NewFactEvent) {
 /** #2 숨겨진 쟁점 발견 */
 async function handleDisputeDiscovery(e: DisputeDiscoveryEvent) {
   if (shouldPlayCutscene('dispute_emergence', normalizeContext(e.context))) {
+    await waitForPresentationLane()
     playDisputeDiscovery()
     const overlay = document.createElement('div')
     overlay.className = 'v4-dispute-card-overlay'
@@ -179,6 +181,7 @@ async function handleContradiction(e: ContradictionEvent) {
 /** #5 S5 자백 */
 async function handleConfession(e: ConfessionEvent) {
   if (!shouldPlayCutscene('truth_breakthrough', normalizeContext(e.context))) return
+  await waitForPresentationLane()
   playLieCollapse()
   // 배경 오버레이
   const overlay = document.createElement('div')
@@ -200,6 +203,7 @@ async function handleConfession(e: ConfessionEvent) {
 
 /** #3 조합 성공 */
 async function handleCombineSuccess(e: CombineSuccessEvent) {
+  await waitForPresentationLane()
   playCombineSuccess()
   window.dispatchEvent(new CustomEvent('v4:combine-success', { detail: e }))
   await delay(800)
@@ -207,6 +211,7 @@ async function handleCombineSuccess(e: CombineSuccessEvent) {
 
 /** #12 DossierCard 해금 */
 async function handleDossierUnlock(e: DossierUnlockEvent) {
+  await waitForPresentationLane(1200)
   playDossierUnlock()
   window.dispatchEvent(new CustomEvent('v4:dossier-unlock', { detail: e }))
   await delay(600)
@@ -269,6 +274,25 @@ async function handleScoreCounter(e: ScoreCounterEvent) {
 
 function delay(ms: number): Promise<void> {
   return new Promise(resolve => setTimeout(resolve, ms))
+}
+
+async function waitForPresentationLane(maxMs = 2600): Promise<void> {
+  if (typeof document === 'undefined') return
+  const startedAt = Date.now()
+  while (Date.now() - startedAt < maxMs) {
+    const busy = document.querySelector(
+      [
+        '.pc-event-feedback-root.is-modal',
+        '.pc-event-feedback-root.is-focus-takeover',
+        '.pc-interaction-overlay',
+        '.pc-combination-success',
+        '.v4-confession-overlay',
+        '.v4-dispute-card-overlay',
+      ].join(', ')
+    )
+    if (!busy) return
+    await delay(120)
+  }
 }
 
 function escapeHtml(str: string): string {

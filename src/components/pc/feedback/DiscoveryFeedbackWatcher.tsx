@@ -329,6 +329,18 @@ export default function DiscoveryFeedbackWatcher() {
     const surfaceOnlyEmergence = isSpousePrivateAccountWithdrawalDispute(dispute)
     const emergenceDetails = buildDisputeEmergenceDetails(dispute, pendingEmergence.description, disputeName)
 
+    state.enqueueFeedback({
+      kind: 'emergence',
+      eyebrow: '새 쟁점 발견',
+      title: disputeName,
+      subtitle: '확인해야 할 범위가 넓어졌습니다',
+      body: '아직 결론이 아닙니다. 관련 기록과 진술을 더 확인해 쟁점으로 다룰지 판단하십시오.',
+      tag: '쟁점 보드 갱신',
+      tone: 'gold',
+      disputeId: pendingEmergence.disputeId,
+      autoDismissMs: 2800,
+    })
+
     // 쟁점 발견 시 시스템 메시지로 흐름 표시 — 모달은 자동으로 띄우지 않고 (B-17 D 옵션),
     // 시스템 메시지 클릭 시 수동 트리거되도록 pendingFeedback 부착.
     const sysMsgId = state.addDialogue({

@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useState } from 'react'
+import { useCallback, useEffect, useState, type ReactNode } from 'react'
 import { loadProgressionState, saveProgressionState } from '../../../data/leaderboard'
 import {
   FRAGMENT_TABLE,
@@ -24,7 +24,6 @@ import {
   createDefaultLoadout,
   getTitleById,
   getTitleResourceBonuses,
-  getActiveTitleGameplayNotes,
   type TitleDefinition,
   type TitleId,
   type TitleLevels,
@@ -136,25 +135,9 @@ export default function PCJudgeProgressionPanel({ onChange, syncKey }: Props) {
   const titleDef = getTitleById(selectedTitle) ?? TITLE_TABLE[0]
   const subs = titleLevels[selectedTitle]
   const totalLv = getTotalLevel(subs)
-  const loadoutBonuses = useMemo(() => getLoadoutBonuses(titleLevels, titleLoadout), [titleLevels, titleLoadout])
 
   return (
     <div className="jp2 jp2--manager">
-      <div className="jp2__summary jp2__summary--manager">
-        <div>
-          <span className="jp2__eyebrow">Judge Management</span>
-          <h3>재판관 관리</h3>
-          <p>타이틀을 강화하고 장착하면 다음 사건 시작 자원이 달라집니다.</p>
-        </div>
-        <div className="jp2__bonus-strip" aria-label="현재 장착 보너스">
-          {(Object.keys(RESOURCE_LABELS) as Array<keyof Resources>).map((key) => (
-            <span key={key} className={`jp2__bonus-pill${loadoutBonuses[key] ? ' is-active' : ''}`}>
-              {RESOURCE_LABELS[key]} <b>+{loadoutBonuses[key] ?? 0}</b>
-            </span>
-          ))}
-        </div>
-      </div>
-
       <div className="jp2__top-tabs" role="tablist" aria-label="재판관 관리 메뉴">
         {MANAGEMENT_TABS.map((tab) => (
           <button
@@ -177,7 +160,6 @@ export default function PCJudgeProgressionPanel({ onChange, syncKey }: Props) {
           onSelectTitle={setSelectedTitle}
           onEquip={handleEquip}
           onUnequip={handleUnequip}
-          onGoEnhance={() => setActiveTab('enhance')}
         />
       )}
 
@@ -185,7 +167,6 @@ export default function PCJudgeProgressionPanel({ onChange, syncKey }: Props) {
         <EnhancePanel
           titleDef={titleDef}
           titleLevels={titleLevels}
-          titleLoadout={titleLoadout}
           selectedTitle={selectedTitle}
           selectedAxis={selectedAxis}
           synthesizingAxis={synthesizingAxis}
@@ -195,7 +176,6 @@ export default function PCJudgeProgressionPanel({ onChange, syncKey }: Props) {
           onSelectTitle={setSelectedTitle}
           onSelectAxis={setSelectedAxis}
           onEnhanceAxis={handleEnhanceAxis}
-          onEquip={handleEquip}
         />
       )}
 
@@ -230,7 +210,6 @@ function EquipPanel({
   onSelectTitle,
   onEquip,
   onUnequip,
-  onGoEnhance,
 }: {
   titleLevels: TitleLevels
   titleLoadout: TitleLoadout
@@ -238,91 +217,80 @@ function EquipPanel({
   onSelectTitle: (id: TitleId) => void
   onEquip: (slot: SlotKey, titleId?: TitleId) => void
   onUnequip: (slot: SlotKey) => void
-  onGoEnhance: () => void
 }) {
+  const [slotChoiceOpen, setSlotChoiceOpen] = useState(false)
+  const [detailOpen, setDetailOpen] = useState(false)
   const ownedTitles = TITLE_TABLE.filter((title) => getTotalLevel(titleLevels[title.id]) >= 1)
   const selectedOwned = ownedTitles.find((title) => title.id === selectedTitle) ?? ownedTitles[0] ?? getTitleById(selectedTitle) ?? TITLE_TABLE[0]
   const selectedLevel = getTotalLevel(titleLevels[selectedOwned.id])
-  const selectedBonuses = getTitleResourceBonuses(selectedOwned, selectedLevel)
   const selectedEquipped = titleLoadout.slot1 === selectedOwned.id || titleLoadout.slot2 === selectedOwned.id
+  const canAutoEquip = getTotalLevel(titleLevels[selectedOwned.id]) >= 1 && !selectedEquipped
+
+  const handleAutoEquip = () => {
+    if (!canAutoEquip) return
+    if (!titleLoadout.slot1) {
+      onEquip('slot1', selectedOwned.id)
+      return
+    }
+    if (!titleLoadout.slot2) {
+      onEquip('slot2', selectedOwned.id)
+      return
+    }
+    setSlotChoiceOpen(true)
+  }
 
   return (
     <div className="jp2__equip-layout">
-      <section className="jp2__equip-slots" aria-label="장착 슬롯">
-        <SlotDisplay
-          label="슬롯 1"
-          title={titleLoadout.slot1 ? getTitleById(titleLoadout.slot1) ?? null : null}
-          level={titleLoadout.slot1 ? getTotalLevel(titleLevels[titleLoadout.slot1]) : 0}
-          onUnequip={() => onUnequip('slot1')}
-        />
-        <SlotDisplay
-          label="슬롯 2"
-          title={titleLoadout.slot2 ? getTitleById(titleLoadout.slot2) ?? null : null}
-          level={titleLoadout.slot2 ? getTotalLevel(titleLevels[titleLoadout.slot2]) : 0}
-          onUnequip={() => onUnequip('slot2')}
-        />
+      <section className="jp2__equip-slots jp2__equip-slots--wide" aria-label="장착 중인 타이틀">
+        <div className="jp2__section-head">
+          <span className="jp2__eyebrow">Equipped Titles</span>
+          <h4>장착 중인 타이틀</h4>
+        </div>
+        <div className="jp2__slot-pair">
+          <SlotDisplay
+            label="슬롯 1"
+            title={titleLoadout.slot1 ? getTitleById(titleLoadout.slot1) ?? null : null}
+            level={titleLoadout.slot1 ? getTotalLevel(titleLevels[titleLoadout.slot1]) : 0}
+            onUnequip={() => onUnequip('slot1')}
+          />
+          <SlotDisplay
+            label="슬롯 2"
+            title={titleLoadout.slot2 ? getTitleById(titleLoadout.slot2) ?? null : null}
+            level={titleLoadout.slot2 ? getTotalLevel(titleLevels[titleLoadout.slot2]) : 0}
+            onUnequip={() => onUnequip('slot2')}
+          />
+        </div>
       </section>
 
-      <section className="jp2__owned-list" aria-label="보유 타이틀">
-        <div className="jp2__section-head">
-          <span className="jp2__eyebrow">Owned Titles</span>
-          <h4>보유 타이틀</h4>
-        </div>
-        {ownedTitles.length > 0 ? (
-          <div className="jp2__owned-grid">
-            {ownedTitles.map((title) => {
-              const level = getTotalLevel(titleLevels[title.id])
-              const equipped = titleLoadout.slot1 === title.id || titleLoadout.slot2 === title.id
-              return (
-                <button
-                  key={title.id}
-                  className={`jp2__owned-title${selectedOwned.id === title.id ? ' is-active' : ''}${equipped ? ' is-equipped' : ''}`}
-                  onClick={() => onSelectTitle(title.id)}
-                  type="button"
-                >
-                  <span>{equipped ? '장착 중' : '보유'}</span>
-                  <strong>{title.name}</strong>
-                  <b>Lv.{level}</b>
-                </button>
-              )
-            })}
-          </div>
-        ) : (
-          <div className="jp2__empty-state">
-            <strong>아직 보유한 타이틀이 없습니다.</strong>
-            <p>강화 탭에서 원하는 타이틀을 Lv.1 이상으로 올리면 장착할 수 있습니다.</p>
-            <button className="jp2__action-btn" onClick={onGoEnhance} type="button">강화하러 가기</button>
+      <TitleInfoPanel
+        title={selectedOwned}
+        titleLevels={titleLevels}
+        selectedTitle={selectedOwned.id}
+        onSelectTitle={onSelectTitle}
+        titles={ownedTitles.length > 0 ? ownedTitles : TITLE_TABLE}
+        actions={(
+          <div className="jp2__equip-btns jp2__equip-btns--stack">
+            {selectedEquipped ? <span className="jp2__equipped-badge">현재 슬롯에 장착 중</span> : null}
+            <button className="jp2__action-btn" disabled={!canAutoEquip} onClick={handleAutoEquip} type="button">장착 하기</button>
           </div>
         )}
-      </section>
+        onOpenDetail={() => setDetailOpen(true)}
+      />
 
-      <section className="jp2__selected-panel">
-        <span className="jp2__eyebrow">Selected Title</span>
-        <h3>{selectedOwned.name} <span>Lv.{selectedLevel}</span></h3>
-        <p>{selectedOwned.subtitle}</p>
-        <div className="jp2__axis-mini">
-          {selectedOwned.axes.map((axis, index) => (
-            <span key={`${selectedOwned.id}-${axis.label}`}>{axis.label} Lv.{titleLevels[selectedOwned.id][index]}</span>
-          ))}
-        </div>
-        <div className="jp2__bonus-strip jp2__bonus-strip--left">
-          {(Object.keys(RESOURCE_LABELS) as Array<keyof Resources>).map((key) => (
-            <span key={key} className={`jp2__bonus-pill${selectedBonuses[key] ? ' is-active' : ''}`}>
-              {RESOURCE_LABELS[key]} <b>+{selectedBonuses[key] ?? 0}</b>
-            </span>
-          ))}
-        </div>
-        <div className="jp2__effect-preview">
-          <strong>현재 효과</strong>
-          <p>{getActiveEffect(selectedOwned, selectedLevel) || 'Lv.1부터 장착 효과가 열립니다.'}</p>
-        </div>
-        <div className="jp2__equip-btns">
-          {selectedEquipped ? <span className="jp2__equipped-badge">현재 슬롯에 장착 중</span> : null}
-          <button className="jp2__action-btn" disabled={!canEquipTitle(selectedOwned.id, 'slot1', titleLevels, titleLoadout)} onClick={() => onEquip('slot1', selectedOwned.id)} type="button">슬롯 1 장착</button>
-          <button className="jp2__action-btn" disabled={!canEquipTitle(selectedOwned.id, 'slot2', titleLevels, titleLoadout)} onClick={() => onEquip('slot2', selectedOwned.id)} type="button">슬롯 2 장착</button>
-          <button className="jp2__action-btn is-ghost" onClick={onGoEnhance} type="button">강화하기</button>
-        </div>
-      </section>
+      {slotChoiceOpen ? (
+        <EquipSlotChoiceModal
+          title={selectedOwned}
+          titleLevels={titleLevels}
+          titleLoadout={titleLoadout}
+          onClose={() => setSlotChoiceOpen(false)}
+          onSelect={(slot) => {
+            onEquip(slot, selectedOwned.id)
+            setSlotChoiceOpen(false)
+          }}
+        />
+      ) : null}
+
+      {detailOpen ? <TitleDetailModal title={selectedOwned} level={selectedLevel} titleLevels={titleLevels} onClose={() => setDetailOpen(false)} /> : null}
     </div>
   )
 }
@@ -330,7 +298,6 @@ function EquipPanel({
 function EnhancePanel({
   titleDef,
   titleLevels,
-  titleLoadout,
   selectedTitle,
   selectedAxis,
   synthesizingAxis,
@@ -340,11 +307,9 @@ function EnhancePanel({
   onSelectTitle,
   onSelectAxis,
   onEnhanceAxis,
-  onEquip,
 }: {
   titleDef: TitleDefinition
   titleLevels: TitleLevels
-  titleLoadout: TitleLoadout
   selectedTitle: TitleId
   selectedAxis: number
   synthesizingAxis: number | null
@@ -354,9 +319,9 @@ function EnhancePanel({
   onSelectTitle: (id: TitleId) => void
   onSelectAxis: (i: number) => void
   onEnhanceAxis: (i: number) => boolean
-  onEquip: (slot: SlotKey, titleId?: TitleId) => void
 }) {
   const [materialDraft, setMaterialDraft] = useState<MaterialDraft>({})
+  const [detailOpen, setDetailOpen] = useState(false)
   const selectedAxisSafe = Math.max(0, Math.min(2, selectedAxis))
   const axis = titleDef.axes[selectedAxisSafe]
   const subLv = subs[selectedAxisSafe]
@@ -368,11 +333,8 @@ function EnhancePanel({
   const canEnhance = Boolean(cost) && canSystemEnhance && materialsComplete
   const currentEffect = getActiveEffect(titleDef, totalLv)
   const nextEffect = getActiveEffect(titleDef, totalLv + 1)
-  const currentBonuses = getTitleResourceBonuses(titleDef, totalLv)
-  const nextBonuses = getTitleResourceBonuses(titleDef, totalLv + 1)
-  const activeNotes = getActiveTitleGameplayNotes(titleDef, totalLv)
   const nextUnlock = getNextUnlock(titleDef, totalLv)
-  const isEquipped = titleLoadout.slot1 === selectedTitle || titleLoadout.slot2 === selectedTitle
+  const projectedAxisLevel = materialsComplete ? nextLevel : subLv
 
   useEffect(() => {
     setMaterialDraft({})
@@ -385,14 +347,6 @@ function EnhancePanel({
     }))
   }
 
-  const fillMax = () => {
-    const next: MaterialDraft = {}
-    for (const item of costItems) {
-      next[item.fragmentId] = Math.min(item.amount, inventory[item.fragmentId])
-    }
-    setMaterialDraft(next)
-  }
-
   const clearMaterials = () => setMaterialDraft({})
 
   const executeEnhance = () => {
@@ -403,11 +357,6 @@ function EnhancePanel({
   return (
     <div className="jp2__enhance-layout">
       <section className={`jp2__forge-panel jp2__forge-panel--focused${synthesizingAxis === selectedAxisSafe ? ' is-synthesizing' : ''}`}>
-        <div className="jp2__forge-title">
-          <span>{axis.label} 강화</span>
-          <b>{subLv >= MAX_SUB_LEVEL ? '최대 강화' : `Lv.${subLv} → Lv.${nextLevel}`}</b>
-        </div>
-
         <div className="jp2__axis-tabs" role="tablist" aria-label="강화 항목 선택">
           {titleDef.axes.map((item, index) => (
             <button
@@ -417,7 +366,7 @@ function EnhancePanel({
               type="button"
             >
               <span>{item.label}</span>
-              <b>{subs[index] >= MAX_SUB_LEVEL ? 'MAX' : `Lv.${subs[index]}`}</b>
+              <b>{formatAxisLevelLabel(subs[index], selectedAxisSafe === index ? projectedAxisLevel : subs[index])}</b>
             </button>
           ))}
         </div>
@@ -439,13 +388,15 @@ function EnhancePanel({
               />
             )
           }) : (
-            <div className="jp2__forge-max">이 항목은 이미 최대 레벨입니다.</div>
+            <div className="jp2__forge-max">
+              <strong>최고 레벨에 도달하여</strong>
+              <span>더 이상 레벨업이 불가합니다.</span>
+            </div>
           )}
         </div>
 
         <div className="jp2__forge-command-row">
-          <button className="jp2__action-btn is-ghost" disabled={costItems.length === 0} onClick={clearMaterials} type="button">비우기</button>
-          <button className="jp2__action-btn" disabled={costItems.length === 0} onClick={fillMax} type="button">Max</button>
+          <button className="jp2__action-btn is-ghost" disabled={costItems.length === 0} onClick={clearMaterials} type="button">취소</button>
           <button className="jp2__forge-button" disabled={!canEnhance} onClick={executeEnhance} type="button">강화</button>
         </div>
 
@@ -455,54 +406,165 @@ function EnhancePanel({
       </section>
 
       <aside className="jp2__enhance-info">
-        <label className="jp2__title-select">
-          <span>타이틀 선택</span>
-          <select value={selectedTitle} onChange={(event) => { onSelectTitle(event.target.value as TitleId); onSelectAxis(0) }}>
-            {TITLE_TABLE.map((title) => (
-              <option key={title.id} value={title.id}>{title.name} · Lv.{getTotalLevel(titleLevels[title.id])}</option>
-            ))}
-          </select>
-        </label>
-
-        <div className="jp2__selected-panel jp2__selected-panel--compact">
-          <span className="jp2__eyebrow">Title Detail</span>
-          <h3>{titleDef.name} <span>Lv.{totalLv}</span></h3>
-          <p>{titleDef.subtitle}</p>
-          <div className="jp2__axis-mini">
-            {titleDef.axes.map((item, index) => <span key={item.label}>{item.label} Lv.{subs[index]}</span>)}
-          </div>
-          <div className="jp2__effect-preview">
-            <strong>강화 후 변화</strong>
-            <p>{nextEffect && nextEffect !== currentEffect ? nextEffect : nextUnlock ? `총 레벨이 오릅니다. 다음 효과는 Lv.${nextUnlock.level}에서 열립니다.` : '최대 단계에 가까워졌습니다.'}</p>
-          </div>
-          <div className="jp2__bonus-compare">
-            {(Object.keys(RESOURCE_LABELS) as Array<keyof Resources>).map((key) => (
-              <span key={key}>
-                {RESOURCE_LABELS[key]}
-                <b>{currentBonuses[key] ?? 0} → {nextBonuses[key] ?? 0}</b>
-              </span>
-            ))}
-          </div>
-          <div className="jp2__detail-effects">
-            <h4>레벨별 효과</h4>
-            {Object.entries(titleDef.effects).map(([level, desc]) => (
-              <div key={level} className={`jp2__effect-row${totalLv >= Number(level) ? ' is-active' : ''}`}>
-                <span>Lv.{level}</span>
-                <p>{desc}</p>
-              </div>
-            ))}
-          </div>
-          <div className="jp2__active-bonuses">
-            <h4>현재 적용 가능 효과</h4>
-            {activeNotes.length > 0 ? <p>{activeNotes.join(' · ')}</p> : <p>Lv.1부터 시작 보너스가 열립니다.</p>}
-          </div>
-          <div className="jp2__equip-btns">
-            {isEquipped ? <span className="jp2__equipped-badge">장착 중</span> : null}
-            <button className="jp2__action-btn" disabled={!canEquipTitle(selectedTitle, 'slot1', titleLevels, titleLoadout)} onClick={() => onEquip('slot1', selectedTitle)} type="button">슬롯 1 장착</button>
-            <button className="jp2__action-btn" disabled={!canEquipTitle(selectedTitle, 'slot2', titleLevels, titleLoadout)} onClick={() => onEquip('slot2', selectedTitle)} type="button">슬롯 2 장착</button>
-          </div>
-        </div>
+        <TitleInfoPanel
+          title={titleDef}
+          titleLevels={titleLevels}
+          selectedTitle={selectedTitle}
+          titles={TITLE_TABLE}
+          onSelectTitle={(id) => { onSelectTitle(id); onSelectAxis(0) }}
+          nextEffectLabel="+1 강화 시 효과"
+          nextEffect={nextEffect && nextEffect !== currentEffect ? nextEffect : nextUnlock ? `총 레벨이 오릅니다. 다음 효과는 Lv.${nextUnlock.level}에서 열립니다.` : '최대 단계에 가까워졌습니다.'}
+          onOpenDetail={() => setDetailOpen(true)}
+        />
       </aside>
+
+      {detailOpen ? <TitleDetailModal title={titleDef} level={totalLv} titleLevels={titleLevels} onClose={() => setDetailOpen(false)} /> : null}
+    </div>
+  )
+}
+
+function TitleInfoPanel({
+  title,
+  titles,
+  titleLevels,
+  selectedTitle,
+  nextEffectLabel,
+  nextEffect,
+  actions,
+  onSelectTitle,
+  onOpenDetail,
+}: {
+  title: TitleDefinition
+  titles: readonly TitleDefinition[]
+  titleLevels: TitleLevels
+  selectedTitle: TitleId
+  nextEffectLabel?: string
+  nextEffect?: string
+  actions?: ReactNode
+  onSelectTitle: (id: TitleId) => void
+  onOpenDetail: () => void
+}) {
+  const level = getTotalLevel(titleLevels[title.id])
+  const subs = titleLevels[title.id]
+  const currentEffect = getActiveEffect(title, level) || 'Lv.1부터 장착 효과가 열립니다.'
+
+  return (
+    <section className="jp2__selected-panel jp2__title-info-panel" aria-label="보유 타이틀">
+      <label className="jp2__title-select">
+        <span>타이틀 선택</span>
+        <select className="pc-settings-select" value={selectedTitle} onChange={(event) => onSelectTitle(event.target.value as TitleId)}>
+          {titles.map((item) => (
+            <option key={item.id} value={item.id}>{item.name} · Lv.{getTotalLevel(titleLevels[item.id])}</option>
+          ))}
+        </select>
+      </label>
+
+      <div className="jp2__title-card-summary">
+        <h3>{title.name} <span>Lv.{level}</span></h3>
+        <p>{title.subtitle}</p>
+        <div className="jp2__axis-mini">
+          {title.axes.map((axis, index) => (
+            <span key={`${title.id}-${axis.label}`}>{axis.label} Lv.{subs[index]}</span>
+          ))}
+        </div>
+      </div>
+
+      <div className="jp2__effect-preview">
+        <div className="jp2__effect-preview-head">
+          <strong>현재 효과</strong>
+          <button className="jp2__text-button" onClick={onOpenDetail} type="button">상세보기</button>
+        </div>
+        <p>{currentEffect}</p>
+      </div>
+
+      {actions}
+
+      {nextEffect ? (
+        <div className="jp2__effect-preview jp2__effect-preview--next">
+          <strong>{nextEffectLabel ?? '+1 강화 시 효과'}</strong>
+          <p>{nextEffect}</p>
+        </div>
+      ) : null}
+    </section>
+  )
+}
+
+function TitleDetailModal({
+  title,
+  level,
+  titleLevels,
+  onClose,
+}: {
+  title: TitleDefinition
+  level: number
+  titleLevels: TitleLevels
+  onClose: () => void
+}) {
+  return (
+    <div className="jp2__modal-backdrop" role="presentation" onMouseDown={onClose}>
+      <div className="jp2__title-detail-modal" role="dialog" aria-modal="true" aria-label="타이틀 상세보기" onMouseDown={(event) => event.stopPropagation()}>
+        <button className="jp2__modal-close" onClick={onClose} type="button" aria-label="닫기">×</button>
+        <div className="jp2__section-head">
+          <span className="jp2__eyebrow">Title Effects</span>
+          <h3>{title.name} <small>Lv.{level}</small></h3>
+        </div>
+        <p className="jp2__title-detail-subtitle">{title.subtitle}</p>
+        <div className="jp2__axis-mini">
+          {title.axes.map((axis, index) => (
+            <span key={`${title.id}-detail-${axis.label}`}>{axis.label} Lv.{titleLevels[title.id][index]}</span>
+          ))}
+        </div>
+        <div className="jp2__detail-effects jp2__detail-effects--modal">
+          <h4>레벨별 효과</h4>
+          {Object.entries(title.effects).map(([effectLevel, desc]) => (
+            <div key={effectLevel} className={`jp2__effect-row${level >= Number(effectLevel) ? ' is-active' : ''}`}>
+              <span>Lv.{effectLevel}</span>
+              <p>{desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  )
+}
+
+function EquipSlotChoiceModal({
+  title,
+  titleLevels,
+  titleLoadout,
+  onClose,
+  onSelect,
+}: {
+  title: TitleDefinition
+  titleLevels: TitleLevels
+  titleLoadout: TitleLoadout
+  onClose: () => void
+  onSelect: (slot: SlotKey) => void
+}) {
+  const slots: SlotKey[] = ['slot1', 'slot2']
+  return (
+    <div className="jp2__modal-backdrop" role="presentation" onMouseDown={onClose}>
+      <div className="jp2__slot-choice-modal" role="dialog" aria-modal="true" aria-label="장착 슬롯 선택" onMouseDown={(event) => event.stopPropagation()}>
+        <button className="jp2__modal-close" onClick={onClose} type="button" aria-label="닫기">×</button>
+        <div className="jp2__section-head">
+          <span className="jp2__eyebrow">Equip Slot</span>
+          <h3>장착 슬롯 선택</h3>
+        </div>
+        <p className="jp2__modal-copy">두 슬롯이 모두 사용 중입니다. {title.name}을 어느 슬롯에 장착할지 선택하세요.</p>
+        <div className="jp2__slot-choice-list">
+          {slots.map((slot, index) => {
+            const currentTitle = titleLoadout[slot] ? getTitleById(titleLoadout[slot]!) ?? null : null
+            const currentLevel = titleLoadout[slot] ? getTotalLevel(titleLevels[titleLoadout[slot]!]) : 0
+            return (
+              <button key={slot} className="jp2__slot-choice" onClick={() => onSelect(slot)} type="button">
+                <span>슬롯 {index + 1}</span>
+                <strong>{currentTitle ? `${currentTitle.name} Lv.${currentLevel}` : '비어 있음'}</strong>
+                <small>{currentTitle ? getActiveEffect(currentTitle, currentLevel) : '선택한 타이틀을 장착합니다.'}</small>
+              </button>
+            )
+          })}
+        </div>
+      </div>
     </div>
   )
 }
@@ -642,7 +704,7 @@ function FragmentExchangeModal({
         <div className="jp2__exchange-selects">
           <label>
             <span>교환 재료</span>
-            <select value={source} onChange={(event) => onSetSource(event.target.value as FragmentId)}>
+            <select className="pc-settings-select" value={source} onChange={(event) => onSetSource(event.target.value as FragmentId)}>
               {FRAGMENT_TABLE.map((fragment) => (
                 <option key={fragment.id} value={fragment.id}>
                   {FRAGMENT_VISUALS[fragment.id]?.name ?? fragment.name} · 보유 {inventory[fragment.id]}개
@@ -652,7 +714,7 @@ function FragmentExchangeModal({
           </label>
           <label>
             <span>교환 대상</span>
-            <select value={target} onChange={(event) => onSetTarget(event.target.value as FragmentId)}>
+            <select className="pc-settings-select" value={target} onChange={(event) => onSetTarget(event.target.value as FragmentId)}>
               {targetOptions.map((fragment) => (
                 <option key={fragment.id} value={fragment.id}>{FRAGMENT_VISUALS[fragment.id]?.name ?? fragment.name}</option>
               ))}
@@ -715,25 +777,17 @@ function SlotDisplay({
   )
 }
 
-function getLoadoutBonuses(titleLevels: TitleLevels, titleLoadout: TitleLoadout): Partial<Resources> {
-  const bonuses: Partial<Resources> = {}
-  for (const titleId of [titleLoadout.slot1, titleLoadout.slot2]) {
-    if (!titleId) continue
-    const def = getTitleById(titleId)
-    if (!def) continue
-    const titleBonus = getTitleResourceBonuses(def, getTotalLevel(titleLevels[titleId]))
-    for (const key of Object.keys(titleBonus) as Array<keyof Resources>) {
-      bonuses[key] = (bonuses[key] ?? 0) + (titleBonus[key] ?? 0)
-    }
-  }
-  return bonuses
-}
-
 function getNextUnlock(titleDef: TitleDefinition, totalLevel: number): { level: number; effect: string } | null {
   return Object.entries(titleDef.effects)
     .map(([level, effect]) => ({ level: Number(level), effect }))
     .filter((item) => item.level > totalLevel)
     .sort((a, b) => a.level - b.level)[0] ?? null
+}
+
+function formatAxisLevelLabel(level: number, projectedLevel: number): string {
+  if (level >= MAX_SUB_LEVEL) return 'MAX'
+  if (projectedLevel > level) return `Lv.${level} → Lv.${projectedLevel}`
+  return `Lv.${level}`
 }
 
 function normalizeProgression(state: JudgeProgressionState): JudgeProgressionState {

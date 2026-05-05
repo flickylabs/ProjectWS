@@ -52,6 +52,7 @@ type AgentSliceRootState = AgentSlice & {
   witnessSessions?: Record<string, { heardSlots: string[]; lastChoice: string | null; summonCount: number }>
   processMetrics: ProcessMetrics
   trackMetric: (key: keyof ProcessMetrics, delta?: number) => void
+  enqueueFeedback?: (item: any) => string
 }
 
 function hasS3Plus(agent: AgentState): boolean {
@@ -65,6 +66,106 @@ function shouldTrackBothSidesS3Plus(root: AgentSliceRootState, party: 'a' | 'b',
   const nextAgentB = party === 'b' ? nextAgent : root.agentB
 
   return hasS3Plus(nextAgentA) && hasS3Plus(nextAgentB)
+}
+
+const EMOTION_MILESTONE_COPY: Record<EmotionalPhase, { title: string; body: string; tone: 'gold' | 'red' | 'green' }> = {
+  defensive: {
+    title: '감정 상태가 가라앉았습니다',
+    body: '감정 변화가 확인됐습니다. 아직 결론이 아니라 다음 질문의 흐름을 조정할 신호입니다.',
+    tone: 'green',
+  },
+  confident: {
+    title: '감정 상태가 안정됐습니다',
+    body: '당사자가 다시 방어 태세를 정돈했습니다. 같은 압박을 반복하기보다 다른 각도를 확인하십시오.',
+    tone: 'green',
+  },
+  shaken: {
+    title: '감정이 흔들리기 시작했습니다',
+    body: '답변의 균형이 흔들렸습니다. 기록과 진술을 이어 확인하면 빈틈을 좁힐 수 있습니다.',
+    tone: 'gold',
+  },
+  angry: {
+    title: '감정 격앙 단계에 들어갔습니다',
+    body: '감정이 크게 올라왔습니다. 무리한 단정은 피하고 모순이나 기록으로 압박할 시점입니다.',
+    tone: 'red',
+  },
+  resigned: {
+    title: '감정 체념 단계에 들어갔습니다',
+    body: '방어가 흔들리고 체념 반응이 보입니다. 자백을 강요하지 말고 확인된 사실부터 정리하십시오.',
+    tone: 'red',
+  },
+}
+
+const EMOTION_PHASE_LABELS: Record<EmotionalPhase, string> = {
+  defensive: '방어',
+  confident: '안정',
+  shaken: '동요',
+  angry: '격앙',
+  resigned: '체념',
+}
+
+function getPartyName(root: AgentSliceRootState, party: 'a' | 'b'): string {
+  return party === 'a'
+    ? root.caseData?.duo.partyA.name ?? '당사자 A'
+    : root.caseData?.duo.partyB.name ?? '당사자 B'
+}
+
+function maybeEnqueueEmotionMilestone(
+  root: AgentSliceRootState,
+  party: 'a' | 'b',
+  prev: AgentState['emotionalState'],
+  next: AgentState['emotionalState'],
+) {
+  if (!root.enqueueFeedback) return
+  if (prev.phase === next.phase) return
+  if (next.internalValue <= prev.internalValue) return
+  if (next.phase === 'defensive' || next.phase === 'confident') return
+
+  const copy = EMOTION_MILESTONE_COPY[next.phase]
+  const name = getPartyName(root, party)
+  root.enqueueFeedback({
+    kind: 'state_change',
+    eyebrow: '감정 단계 변화',
+    title: `${name} · ${copy.title}`,
+    body: copy.body,
+    tag: `감정 ${EMOTION_PHASE_LABELS[prev.phase]} → ${EMOTION_PHASE_LABELS[next.phase]}`,
+    party,
+    tone: copy.tone,
+    autoDismissMs: next.phase === 'shaken' ? 2400 : 3200,
+  })
+}
+
+function trustMilestone(prev: number, next: number): 70 | 100 | null {
+  if (prev < 100 && next >= 100) return 100
+  if (prev < 70 && next >= 70) return 70
+  return null
+}
+
+function maybeEnqueueTrustMilestone(
+  root: AgentSliceRootState,
+  party: 'a' | 'b',
+  field: keyof AgentState['trustState'],
+  prev: number,
+  next: number,
+) {
+  if (!root.enqueueFeedback) return
+  if (field !== 'trustTowardJudge') return
+  const milestone = trustMilestone(prev, next)
+  if (!milestone) return
+
+  const name = getPartyName(root, party)
+  root.enqueueFeedback({
+    kind: 'state_change',
+    eyebrow: '신뢰 상태 변화',
+    title: milestone >= 100 ? `${name}의 신뢰가 최고치에 도달했습니다` : `${name}의 신뢰 경로가 열렸습니다`,
+    body: milestone >= 100
+      ? '신뢰 상태가 최고치에 도달했습니다. 감정 압박보다 차분한 확인 질문이 자백 경로에 더 적합합니다.'
+      : '신뢰가 충분히 쌓였습니다. 공감 접근과 비공개 확인 질문의 효율이 높아집니다.',
+    tag: `신뢰 ${milestone}%`,
+    party,
+    tone: milestone >= 100 ? 'gold' : 'green',
+    autoDismissMs: milestone >= 100 ? 3200 : 2400,
+  })
 }
 
 export const createAgentSlice: StateCreator<AgentSlice, [], [], AgentSlice> = (set, get) => ({
@@ -212,28 +313,32 @@ export const createAgentSlice: StateCreator<AgentSlice, [], [], AgentSlice> = (s
   },
 
   changeEmotion: (party, delta) => {
-    const state = get()
+    const state = get() as AgentSliceRootState
     const agentKey = party === 'a' ? 'agentA' : 'agentB'
     const archetype = party === 'a' ? state.archetypeA : state.archetypeB
     const agent = state[agentKey]
+    const nextEmotion = updateEmotion(agent.emotionalState, delta, archetype)
     set({
       [agentKey]: {
         ...agent,
-        emotionalState: updateEmotion(agent.emotionalState, delta, archetype),
+        emotionalState: nextEmotion,
       },
     })
+    maybeEnqueueEmotionMilestone(state, party, agent.emotionalState, nextEmotion)
   },
 
   changeTrust: (party, field, delta) => {
-    const state = get()
+    const state = get() as AgentSliceRootState
     const agentKey = party === 'a' ? 'agentA' : 'agentB'
     const agent = state[agentKey]
+    const nextTrust = updateTrustState(agent.trustState, field, delta)
     set({
       [agentKey]: {
         ...agent,
-        trustState: updateTrustState(agent.trustState, field, delta),
+        trustState: nextTrust,
       },
     })
+    maybeEnqueueTrustMilestone(state, party, field, agent.trustState[field], nextTrust[field])
   },
 
   getAgent: (party) => {

@@ -31,6 +31,162 @@ const TABS: { id: ResultTab; label: string }[] = [
   { id: 'bonus', label: '04 보너스' },
 ]
 
+export type PCResultFrameTab<T extends string = string> = { id: T; label: string }
+
+type PCResultFrameMeta = {
+  label: string
+  value: React.ReactNode
+}
+
+export function PCResultFrame<T extends string>({
+  activeTab,
+  actions,
+  children,
+  className,
+  eyebrow = 'RESULT DOSSIER',
+  footer,
+  headline,
+  meta,
+  onTabChange,
+  rating,
+  score,
+  stars,
+  summary,
+  tabs,
+  unit = '점',
+}: {
+  activeTab: T
+  actions?: React.ReactNode
+  children: React.ReactNode
+  className?: string
+  eyebrow?: string
+  footer?: React.ReactNode
+  headline: string
+  meta: PCResultFrameMeta[]
+  onTabChange: (tab: T) => void
+  rating: string
+  score: number
+  stars?: number
+  summary?: React.ReactNode
+  tabs: readonly PCResultFrameTab<T>[]
+  unit?: string
+}) {
+  return (
+    <div className={`pc-result-screen${className ? ` ${className}` : ''}`}>
+      <style>{`
+        body.pc-mode .pc-result-screen .pc-result-footer {
+          display: flex;
+          flex-wrap: nowrap;
+          align-items: center;
+          justify-content: space-between;
+          gap: 12px;
+          margin-top: auto;
+          padding: 16px 0 5px;
+          width: 100%;
+        }
+        body.pc-mode .pc-result-screen .pc-result-shell {
+          height: calc(100vh - 56px) !important;
+          min-height: 0 !important;
+          max-height: calc(100vh - 56px) !important;
+        }
+        body.pc-mode .pc-result-screen .pc-result-main {
+          height: 100% !important;
+          min-height: 0 !important;
+          overflow: hidden !important;
+        }
+        body.pc-mode .pc-result-screen .pc-result-hero {
+          position: relative !important;
+          overflow: hidden !important;
+          padding-bottom: 96px !important;
+        }
+        body.pc-mode .pc-result-screen .pc-result-hero__actions {
+          position: absolute !important;
+          left: 24px !important;
+          right: 24px !important;
+          bottom: 29px !important;
+          width: auto !important;
+          margin-top: 0 !important;
+        }
+        body.pc-mode .pc-result-screen .pc-result-tabs,
+        body.pc-mode .pc-result-screen .pc-result-footer {
+          flex: 0 0 auto !important;
+        }
+        body.pc-mode .pc-result-screen .pc-result-panel {
+          flex: 1 1 auto !important;
+          height: auto !important;
+          min-height: 0 !important;
+          max-height: calc(100vh - 226px) !important;
+          padding-bottom: 24px !important;
+        }
+      `}</style>
+      <div className="pc-result-shell">
+        <aside className="pc-result-hero">
+          <div className="pc-result-hero__eyebrow">{eyebrow}</div>
+          <h1>{headline}</h1>
+          {summary ? <p className="pc-result-hero__summary">{summary}</p> : null}
+
+          <div className="pc-result-score">
+            <span className="pc-result-score__value">{score}</span>
+            <span className="pc-result-score__unit">{unit}</span>
+          </div>
+
+          <div className="pc-result-hero__rating">{rating}</div>
+          {typeof stars === 'number' ? (
+            <div className="pc-result-hero__stars" aria-label={`별 ${stars}개`}>
+              {Array.from({ length: 3 }, (_, index) => (
+                <span className={index < stars ? 'is-filled' : ''} key={index}>★</span>
+              ))}
+            </div>
+          ) : null}
+
+          <div className="pc-result-hero__meta">
+            {meta.map((item) => (
+              <div className="pc-result-hero__meta-card" key={item.label}>
+                <span>{item.label}</span>
+                <strong>{item.value}</strong>
+              </div>
+            ))}
+          </div>
+
+          <div className="pc-result-hero__steps">
+            {tabs.map((item) => (
+              <button
+                className={`pc-result-step-link${activeTab === item.id ? ' is-active' : ''}`}
+                key={item.id}
+                onClick={() => onTabChange(item.id)}
+                type="button"
+              >
+                {item.label}
+              </button>
+            ))}
+          </div>
+
+          {actions ? <div className="pc-result-hero__actions">{actions}</div> : null}
+        </aside>
+
+        <section className="pc-result-main">
+          <div className="pc-result-tabs" role="tablist">
+            {tabs.map((item) => (
+              <button
+                aria-selected={activeTab === item.id}
+                className={`pc-result-tab${activeTab === item.id ? ' is-active' : ''}`}
+                key={item.id}
+                onClick={() => onTabChange(item.id)}
+                type="button"
+              >
+                {item.label}
+              </button>
+            ))}
+          </div>
+
+          <div className="pc-result-panel">{children}</div>
+          {footer ? <div className="pc-result-footer">{footer}</div> : null}
+        </section>
+      </div>
+    </div>
+  )
+}
+
 function getRating(total: number): string {
   if (total >= 90) return '전설적인 재판관'
   if (total >= 75) return '훌륭한 재판관'

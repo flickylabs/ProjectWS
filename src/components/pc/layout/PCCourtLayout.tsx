@@ -149,6 +149,28 @@ export default function PCCourtLayout({ actionPanel, onDialogueTap, isDialoguePh
   }, [])
 
   useEffect(() => {
+    const runWhenPresentationLaneIsFree = (callback: () => void, maxMs = 2800) => {
+      const startedAt = Date.now()
+      const tick = () => {
+        const feedbackBusy = Boolean(useGameStore.getState().activeFeedback || useGameStore.getState().feedbackQueue.length > 0)
+        const busy = document.querySelector(
+          [
+            '.pc-event-feedback-root.is-modal',
+            '.pc-event-feedback-root.is-focus-takeover',
+            '.pc-interaction-overlay',
+            '.v4-confession-overlay',
+            '.v4-dispute-card-overlay',
+          ].join(', ')
+        )
+        if ((!feedbackBusy && !busy) || Date.now() - startedAt >= maxMs) {
+          callback()
+          return
+        }
+        window.setTimeout(tick, 120)
+      }
+      tick()
+    }
+
     const showCombinationOverlay = (detail: PcCombinationSuccessDetail) => {
       const inputs = (detail.inputs ?? [])
         .slice(0, 2)
@@ -174,15 +196,17 @@ export default function PCCourtLayout({ actionPanel, onDialogueTap, isDialoguePh
     }
 
     const handleCombination = (event: Event) => {
-      showCombinationOverlay((event as CustomEvent<PcCombinationSuccessDetail>).detail ?? {})
+      const detail = (event as CustomEvent<PcCombinationSuccessDetail>).detail ?? {}
+      runWhenPresentationLaneIsFree(() => showCombinationOverlay(detail))
     }
 
     const handleLegacyCombination = (event: Event) => {
       const detail = (event as CustomEvent<V4CombineSuccessDetail>).detail
-      showCombinationOverlay({
+      const payload = {
         resultType: detail?.resultType,
         resultTitle: detail?.resultTitle,
-      })
+      }
+      runWhenPresentationLaneIsFree(() => showCombinationOverlay(payload))
     }
 
     const handleDossierUnlock = (event: Event) => {
