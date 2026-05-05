@@ -94,13 +94,21 @@ export function evaluateLinkEdges(input: LinkEdgeEvalInput): LinkEdgeActivation[
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 function checkLinkCondition(edge: DisputeLinkEdge, input: LinkEdgeEvalInput): boolean {
-  const when = edge.when
+  if (!edge.id || !edge.fromDisputeId || !edge.toDisputeId || !edge.effect) return false
+
+  const when = edge.when ?? {}
 
   // minState 검사: from 쟁점의 lieState가 minState 이상인지
   if (when.minState) {
-    const currentState = input.lieStates[edge.fromDisputeId]
-    if (!currentState) return false
-    if ((STATE_RANK[currentState] ?? 0) < (STATE_RANK[when.minState] ?? 0)) return false
+    if (!meetsStateRequirement(input.lieStates[edge.fromDisputeId], when.minState)) return false
+  }
+
+  if (when.requireDispute && !meetsDisputeRequirement(when.requireDispute, input)) return false
+
+  if (when.requireDisputes) {
+    for (const requirement of when.requireDisputes) {
+      if (!meetsDisputeRequirement(requirement, input)) return false
+    }
   }
 
   // minLayer 검사: from 쟁점의 활성 층이 minLayer 이상인지
@@ -123,6 +131,18 @@ function checkLinkCondition(edge: DisputeLinkEdge, input: LinkEdgeEvalInput): bo
   }
 
   return true
+}
+
+function meetsDisputeRequirement(
+  requirement: { id: string; minState?: string },
+  input: LinkEdgeEvalInput,
+): boolean {
+  return meetsStateRequirement(input.lieStates[requirement.id], requirement.minState ?? 'S0')
+}
+
+function meetsStateRequirement(currentState: string | undefined, minState: string): boolean {
+  if (!currentState) return false
+  return (STATE_RANK[currentState] ?? 0) >= (STATE_RANK[minState] ?? 0)
 }
 
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━

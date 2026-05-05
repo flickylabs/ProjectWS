@@ -33,7 +33,9 @@ export type LinkEdgeType =
   | 'supports'
   | 'weakens_counter'
   | 'unlocks_layer'
+  | 'unlocks_dispute'
   | 'retaliation'
+  | 'reframes'
 
 export interface DisputeLayerUnlockCondition {
   requireDisputes?: Array<{
@@ -69,6 +71,16 @@ export interface DisputeLinkEdge {
     minLayer?: DepthLayerId
     disproved?: boolean
     requireFlags?: string[]
+    requireDispute?: {
+      id: string
+      party?: PartyId
+      minState?: LieState | MisconceptionState
+    }
+    requireDisputes?: Array<{
+      id: string
+      party?: PartyId
+      minState?: LieState | MisconceptionState
+    }>
   }
   effect: {
     unlockLayer?: DepthLayerId

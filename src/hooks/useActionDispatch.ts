@@ -23,6 +23,7 @@ import {
   getScriptedEmotionalOverload,
   getScriptedTrustAction,
   getScriptedJudgeQuestion,
+  getScriptedInterrogation,
   getScriptedJudgeContradiction,
 } from '../engine/scriptedTextLoader'
 import { runDiscoveryChecks, updateCascadeTargets } from './useDiscoveryIntegration'
@@ -1476,6 +1477,10 @@ async function handleQuestion(action: Extract<PlayerAction, { type: 'question' }
   const state = useGameStore.getState()
   const freeInterrogation = (action as typeof action & { freeInterrogation?: { rawText?: string } }).freeInterrogation
   const isFreeInterrogation = Boolean(freeInterrogation?.rawText)
+  const scriptedAnswerAngles = [...new Set([
+    ...((action.answerAngles ?? []).filter(Boolean)),
+    ...(action.answerAngle ? [action.answerAngle] : []),
+  ])]
   const judgeQuestionText = freeInterrogation?.rawText
     ?? action.judgeQuestionText
     ?? buildQuestionText(action.questionType, action.target, action.disputeId)
@@ -1814,7 +1819,8 @@ async function handleQuestion(action: Extract<PlayerAction, { type: 'question' }
       const trustValue = (action.target === 'a' ? state.agentA : state.agentB).trustState.trustTowardJudge
 
       // 2. angleTag 파생
-      const angleTag = deriveAngleTag({
+      const explicitQuestionAngle = scriptedAnswerAngles[0]
+      const angleTag = explicitQuestionAngle ?? deriveAngleTag({
         questionType: action.questionType,
         layer,
         issueRole,
@@ -1961,7 +1967,30 @@ async function handleQuestion(action: Extract<PlayerAction, { type: 'question' }
         npcReaction.debugNotes.join(' | '))
 
       // 6. 대사 생성 분기: beat가 있으면 스크립트, 없으면 LLM
-      const beatLib = v2BeatAvailable ? getBeatLibrary(v2CaseId) : null
+      const scriptedAngleAnswer = getScriptedInterrogation(
+        v2CaseId,
+        action.target,
+        action.disputeId,
+        v2Lie.currentState,
+        action.questionType,
+        action.target === 'a' ? state.caseData?.duo.partyA.archetype : state.caseData?.duo.partyB.archetype,
+        v2Agent.emotionalState.phase,
+        scriptedAnswerAngles,
+      )
+
+      if (scriptedAngleAnswer) {
+        state.addDialogue({
+          speaker: action.target,
+          text: scriptedAngleAnswer.text,
+          relatedDisputes: [action.disputeId],
+          turn: state.turnCount,
+          behaviorHint: scriptedAngleAnswer.behaviorHint,
+        })
+        maybeShowArchetypeHint(action.target, state.turnCount)
+        v2BeatUsed = true
+      }
+
+      const beatLib = !v2BeatUsed && v2BeatAvailable ? getBeatLibrary(v2CaseId) : null
       if (beatLib) {
         const v3Transitions = getAllTransitionBeats(v2CaseId)
         const mergedLib = { beats: beatLib.beats, transitionBeats: v3Transitions }
@@ -3366,8 +3395,14 @@ export async function handleContradictionPursue(
     })
 
     // ScriptedText 우선 → LLM 폴백
+    snapshotLieState(party, disputeId)
+    const transitioned = state.transitionLie(party, disputeId, 'contradiction_pursuit')
+    const stateAfterContradiction = useGameStore.getState()
+    const agentAfterContradiction = party === 'a' ? stateAfterContradiction.agentA : stateAfterContradiction.agentB
+    const answerLieState = agentAfterContradiction.lieStateMap[disputeId]?.currentState ?? currentLieState
+    const scriptedLieState = answerLieState === 'S5' ? 'S4' : answerLieState
     const caseKey = normalizeCaseKey(state.caseData?.caseId ?? '')
-    const scripted = getScriptedContradictionPursuit(caseKey, party, disputeId, currentLieState)
+    const scripted = getScriptedContradictionPursuit(caseKey, party, disputeId, scriptedLieState)
     if (scripted) {
       state.addDialogue({
         speaker: party,
@@ -3390,8 +3425,6 @@ export async function handleContradictionPursue(
     }
 
     // 모순 추궁은 거짓말 전이에 유리 — 추가 전이 시도
-    snapshotLieState(party, disputeId)
-    const transitioned = state.transitionLie(party, disputeId, 'contradiction_pursuit')
     if (transitioned) {
       notifyLieTransition(party, disputeId)
       state.trackMetric('lieTransitions')

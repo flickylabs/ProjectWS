@@ -2619,7 +2619,7 @@
           "publicOnlySegments": [],
           "mustAvoid": [
             "예비신랑이 먼저",
-            "선넘는 메시지"
+            "선 넘는 메시지"
           ],
           "guardContextPolicy": "strictest_segment"
         },

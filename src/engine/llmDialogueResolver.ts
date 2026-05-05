@@ -2227,18 +2227,19 @@ function tryScriptedDialoguePath(
       : subjectParty === 'both'
         ? 'both'
         : 'other'
+    const evidenceStage = Math.max(1, Math.min(3, store.evidenceStates[action.evidenceId]?.investigatedActions?.length ?? 1))
     const evidenceJudgeQuestion = [...store.dialogueLog]
       .reverse()
       .find((entry: import('../types').DialogueEntry) => entry.speaker === 'judge' && Boolean(entry.evidencePresentation))
       ?.text
     scripted = getScriptedEvidencePresent(
-      caseId, target, action.evidenceId, lieEntry.currentState, subjectRole, evidenceJudgeQuestion,
+      caseId, target, action.evidenceId, lieEntry.currentState, subjectRole, evidenceJudgeQuestion, evidenceStage,
     )
     // subjectRole 폴백: 1차 miss 시 'self' → 'other' → 'both' 순으로 재시도
     if (!scripted) {
       const fallbacks = ['self', 'other', 'both'].filter(r => r !== subjectRole)
       for (const fb of fallbacks) {
-        scripted = getScriptedEvidencePresent(caseId, target, action.evidenceId, lieEntry.currentState, fb, evidenceJudgeQuestion)
+        scripted = getScriptedEvidencePresent(caseId, target, action.evidenceId, lieEntry.currentState, fb, evidenceJudgeQuestion, evidenceStage)
         if (scripted) break
       }
     }

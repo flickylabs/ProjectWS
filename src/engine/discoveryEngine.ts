@@ -481,10 +481,23 @@ export function checkEmotionalSlip(
 
   const linkedDisputeId = linkedDisputes.length > 0 ? linkedDisputes[0] : null
 
-  // verbalTells에서 적절한 실수 패턴 선택
+  // Emotional slips must be actual emotional cracks, not defensive/cornered tells.
   const partyData = party === 'a' ? caseData.duo.partyA : caseData.duo.partyB
-  const corneredTell = partyData.verbalTells?.find((vt) => vt.trigger === 'cornered' || vt.trigger === 'emotional')
-  const slipText = corneredTell?.pattern ?? '(감정적 실수 발언)'
+  const defensiveTellTypes = new Set([
+    'flat_deflection',
+    'silence_shield',
+    'rank_pull',
+    'character_attack',
+    'pattern_citation',
+  ])
+  const emotionalTell = partyData.verbalTells?.find((vt) =>
+    vt.trigger === 'emotional' &&
+    Boolean(vt.pattern) &&
+    !defensiveTellTypes.has(vt.type),
+  )
+  if (!emotionalTell) return null
+
+  const slipText = emotionalTell.pattern
 
   return {
     party,

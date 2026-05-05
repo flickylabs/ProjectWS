@@ -205,7 +205,7 @@ function renderReasons(summary) {
     return [
       '- `qa:fast` is RELEASE READY.',
       '- bounded exhaustive route exploration has P0 hard count 0.',
-      '- browser actual play harness passed with no console/page errors.',
+      '- browser actual play harness passed with no page errors or scenario failures.',
     ];
   }
   return summary.release.reasons.map((reason) => `- ${reason}`);

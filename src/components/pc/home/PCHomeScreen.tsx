@@ -283,7 +283,7 @@ export default function PCHomeScreen() {
             <ModeCard badge={season.name} iconId="i-crown" label="시즌 모드 >" metaLeft={seasonCases.length ? `${seasonCases.length}건 배정` : '배정 준비 중'} metaRight={`${remainingDays}일 남음`} onClick={() => setView('season')} progressRate={seasonProgress.progressRate} season />
           </div>
 <div className="pc-home-v2__info-grid">
-            <InfoCard actionLabel="내 정보 >" iconId="i-person" onClick={() => { setJudgeDeskTab('profile'); setView('profile') }} subtitle={profile.playerName} title={titleInfo.name} />
+            <InfoCard actionLabel="재판관 정보 >" iconId="i-person" onClick={() => { setJudgeDeskTab('profile'); setView('profile') }} subtitle={profile.playerName} title={titleInfo.name} />
             <InfoCard actionLabel="상세 보기 >" iconId="i-crown" onClick={() => setView('leaderboard')} subtitle={season.name} title="리더보드" />
           </div>
         </section>
@@ -340,35 +340,38 @@ export default function PCHomeScreen() {
 
       {view === 'profile' && (
         <section className="pc-depth-shell">
-          <DepthHeader eyebrow="JUDGE DESK" title="내 정보" description="재판관 프로필과 판결 기록을 한 화면에서 관리합니다." onBack={() => setView('home')} />
+          <DepthHeader eyebrow="JUDGE DESK" title="재판관 정보" description="현재 재판관의 성향과 타이틀, 판결 기록을 확인합니다." onBack={() => setView('home')} />
           <div className="pc-desk-tabs">
-            <button className={`pc-desk-tab${judgeDeskTab === 'profile' ? ' is-active' : ''}`} onClick={() => setJudgeDeskTab('profile')} type="button">내 정보</button>
+            <button className={`pc-desk-tab${judgeDeskTab === 'profile' ? ' is-active' : ''}`} onClick={() => setJudgeDeskTab('profile')} type="button">정보 확인</button>
             <button className={`pc-desk-tab${judgeDeskTab === 'history' ? ' is-active' : ''}`} onClick={() => setJudgeDeskTab('history')} type="button">판결 기록</button>
             <button className={`pc-desk-tab${judgeDeskTab === 'progression' ? ' is-active' : ''}`} onClick={() => setJudgeDeskTab('progression')} type="button">재판관 관리</button>
           </div>
 
           <div className="pc-desk-tab-content">
           {judgeDeskTab === 'profile' ? (
-            <div className="pc-desk-grid">
-              <Card eyebrow="JUDGE PROFILE" title={`Lv ${Math.max(1, judgeLevel)} ${titleInfo.name}`}>
-                <div className="pc-desk-hero__meter"><strong>명성 진행</strong><span>{`${Math.min(reputation, 1200)}/1200`}</span><div className="pc-progress-bar"><i style={{ width: `${Math.min(100, (Math.min(reputation, 1200) / 1200) * 100)}%` }} /></div></div>
-                <div className="pc-desk-hero__stats"><MiniStat label="명성" value={reputation.toLocaleString()} /><MiniStat label="처리 사건" value={`${history.length}건`} /><MiniStat label="최고 점수" value={`${playerStats.bestScore}점`} /><MiniStat label="평균 점수" value={`${Math.round(playerStats.avgScore ?? 0)}점`} /></div>
+            <div className="pc-desk-grid pc-desk-grid--profile">
+              <Card eyebrow="JUDGE PROFILE" title={profile.playerName}>
+                <div className="pc-desk-profile-title">
+                  <span>Lv {Math.max(1, judgeLevel)}</span>
+                  <strong>{titleInfo.name}</strong>
+                  <p>{titleInfo.subtitle}</p>
+                </div>
+                <div className="pc-desk-hero__meter">
+                  <strong>명성 진행</strong>
+                  <span>{`${Math.min(reputation, 1200)}/1200`}</span>
+                  <div className="pc-progress-bar"><i style={{ width: `${Math.min(100, (Math.min(reputation, 1200) / 1200) * 100)}%` }} /></div>
+                </div>
+                <div className="pc-desk-hero__stats">
+                  <MiniStat label="처리 사건" value={`${history.length}건`} />
+                  <MiniStat label="최고 점수" value={`${playerStats.bestScore}점`} />
+                  <MiniStat label="평균 점수" value={`${Math.round(playerStats.avgScore ?? 0)}점`} />
+                  <MiniStat label="시즌" value={season.name} />
+                </div>
               </Card>
-              <Card eyebrow="PLAYER" title={profile.playerName}>
-                <div className="pc-player-card__resources"><MiniActionCard iconId="i-search" label={`조사 ${globalInvest}/10`} subLabel={`충전 ${formatCountdown(countdown)}`} /><MiniActionCard iconId="i-bolt" label={`스킬 ${globalSkill}/5`} subLabel="즉시 사용 가능" /><MiniActionCard iconId="i-crown" label={`명성 ${reputation.toLocaleString()}`} subLabel={season.name} /></div>
-                <div className="pc-player-card__actions"><button className="pc-inline-button" onClick={() => setJudgeDeskTab('history')} type="button">지난 기록</button><button className="pc-inline-button is-ghost" onClick={() => setView('settings')} type="button">설정</button></div>
-              </Card>
-              <Card eyebrow="AXES" title={titleInfo.name}>
+              <Card eyebrow="JUDGE AXES" title={titleInfo.name}>
                 <AxisRow label="탐구(균형)" left="논리" right="직관" value={judgeProfile.inquiryAxis} />
                 <AxisRow label="판결(균형)" left="엄격" right="관용" value={judgeProfile.judgmentAxis} />
                 <AxisRow label="해결(균형)" left="원칙" right="봉합" value={judgeProfile.resolutionAxis} />
-              </Card>
-              <Card eyebrow="ACHIEVEMENTS" title="업적">
-                <div className="pc-achievement-strip__track">
-                  <Achievement iconId="i-crown" label="명성" value={reputation.toLocaleString()} />
-                  <Achievement iconId="i-doc" label="처리 사건" value={`${history.length}건`} />
-                  <Achievement iconId="i-scale" label="최고 점수" value={`${playerStats.bestScore}점`} />
-                </div>
               </Card>
             </div>
           ) : judgeDeskTab === 'progression' ? (
@@ -564,7 +567,18 @@ function Achievement({ iconId, label, value }: { iconId: string; label: string; 
 function AxisRow({ label, left, right, value }: { label: string; left: string; right: string; value: number }) {
   const clamped = Math.max(-100, Math.min(100, value))
   const percent = ((clamped + 100) / 200) * 100
-  return <div className="pc-axis-row"><div className="pc-axis-row__head"><strong>{label}</strong><span>{clamped > 0 ? right : left}</span></div><div className="pc-axis-row__track"><span>{left}</span><div className="pc-axis-row__line"><i style={{ left: `${percent}%` }} /></div><span>{right}</span></div></div>
+  const leftGlow = clamped < 0 ? Math.ceil((Math.abs(clamped) / 100) * 5) : 0
+  const rightGlow = clamped > 0 ? Math.ceil((clamped / 100) * 5) : 0
+  return (
+    <div className="pc-axis-row">
+      <div className="pc-axis-row__head"><strong>{label}</strong></div>
+      <div className="pc-axis-row__track">
+        <span className={`pc-axis-row__pole glow-${leftGlow}`}>{left}</span>
+        <div className="pc-axis-row__line"><i style={{ left: `${percent}%` }} /></div>
+        <span className={`pc-axis-row__pole glow-${rightGlow}`}>{right}</span>
+      </div>
+    </div>
+  )
 }
 
 function ToggleRow({ checked, label, description, onToggle }: { checked: boolean; label: string; description: string; onToggle: () => void }) {

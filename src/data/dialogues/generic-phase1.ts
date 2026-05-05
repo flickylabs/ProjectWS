@@ -122,8 +122,8 @@ export function buildGenericPhase1(caseData: CaseData): Omit<DialogueEntry, 'id'
   const aTellLying = duo.partyA.verbalTells.find(v => v.trigger === 'lying')
   const aTellAvoiding = duo.partyA.verbalTells.find(v => v.trigger === 'avoiding')
 
-  // B의 말버릇 (cornered/emotional trigger)
-  const bTellEmotional = duo.partyB.verbalTells.find(v => v.trigger === 'emotional' || v.trigger === 'cornered')
+  // B의 말버릇 (emotional trigger only; cornered tells are defensive reactions)
+  const bTellEmotional = duo.partyB.verbalTells.find(v => v.trigger === 'emotional')
 
   const entries: Omit<DialogueEntry, 'id'>[] = []
 

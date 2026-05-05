@@ -63,7 +63,7 @@ The policy JSON follows the actual generated shape. `_schema.md` and all spouse-
 |---|---|---|---|
 | `combine-1` | `e-1`, `e-2` | 윤정후 개입 | d-1 stage 1 + evidence Excerpt. |
 | `combine-2` | `e-4`, `e-5` | 90:10, 60:40, 자기 몫 축소 | d-2 stage 2 + e-4/e-5 Original. |
-| `combine-3` | `e-5`, `e-6` | 20년 생활비, 윤정후 돈 | d-3 stage 2 + e-6 Original. |
+| `combine-3` | `e-5`, `e-6` | 장기간 정기 지원금, 윤정후 돈 | d-3 stage 2 + e-6 Original. |
 | `combine-4` | `e-6`, `e-7` | 출생 비밀, 형 보호 | d-4 stage 3 + e-6/e-7 Context. |
 | `combine-5` | `stmt-b-silence`, `e-4` | 자기 몫을 줄인 이유 | d-2 stage 2 + e-4 Context. |
 | `combine-6` | `stmt-b-mother`, `e-6` | 20년간 윤정후가 보낸 돈 | d-3 stage 2 + e-6 Original. |

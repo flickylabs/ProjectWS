@@ -7,6 +7,7 @@ import { recordInterjectionChoice } from '../../../engine/phase3LogCollector'
 import { pp이가, pp을를 } from '../../../engine/koreanPostposition'
 import type { TruthJudgment } from '../../../types/discovery'
 import { getEmergenceHook, getEmergenceHookSpeaker } from '../../../data/emergenceHooks'
+import { getSafeEmergenceTitle } from '../../../data/safeEmergenceCopy'
 import { hasContradictionComparison } from '../../../utils/contradiction'
 import type { Dispute } from '../../../types/case'
 import { afterDisputeRibbonExpansion, requestDisputeRibbonExpansion } from '../layout/disputeRibbonEvents'
@@ -49,27 +50,6 @@ const DISPUTE_AMBIGUITY_LABELS: Record<string, string> = {
   none: '낮음',
 }
 
-const SAFE_EMERGENCE_TITLES: Record<string, Record<string, string>> = {
-  'family-01': {
-    'd-1': '유서 작성과 판단 능력',
-    'd-2': '공증 시점의 상태',
-    'd-3': '오래된 지원의 흐름',
-    'd-4': '가족 기록과 침묵',
-    'd-5': '어머니의 숨겨진 마음',
-  },
-  'friend-01': {
-    'd-2': '예비신랑 메시지의 맥락',
-    'd-3': '예비신랑에게 이어진 부탁',
-    'd-4': '과거 손절의 이유',
-    'd-5': '단톡방 발언의 책임',
-  },
-  'spouse-01': {
-    'd-2': '비밀 계좌의 흐름',
-    'h-d3': '방문 이후 연락',
-    'h-d4': '동선과 금전 흐름',
-  },
-}
-
 function isSpousePrivateAccountWithdrawalDispute(dispute: Dispute | undefined): boolean {
   const text = `${dispute?.id ?? ''} ${dispute?.name ?? ''}`
   return /남편\s*명의.*계좌.*목돈\s*출금/.test(text)
@@ -77,21 +57,11 @@ function isSpousePrivateAccountWithdrawalDispute(dispute: Dispute | undefined): 
     || /비밀\s*계좌.*목돈/.test(text)
 }
 
-function normalizeCaseId(caseId?: string): string {
-  return String(caseId ?? '').replace(/^case-/, '')
-}
-
-function getSafeEmergenceTitle(caseId: string | undefined, disputeId: string, fallback: string): string {
-  void fallback
-  return SAFE_EMERGENCE_TITLES[normalizeCaseId(caseId)]?.[disputeId]
-    ?? '새 확인 쟁점'
-}
-
 function buildDisputeEmergenceDetails(dispute: Dispute | undefined, routeDescription: string | undefined, displayName?: string) {
   const name = displayName ?? dispute?.name ?? '새 쟁점'
 
   if (isSpousePrivateAccountWithdrawalDispute(dispute)) {
-    const surfaceSummary = '남편 명의의 비밀 계좌가 존재했고, 목돈이 빠져나간 것으로 보입니다.'
+    const surfaceSummary = '목돈 출금 흔적과 설명되지 않은 사용처를 확인해야 합니다.'
     return {
       body: surfaceSummary,
       blocks: [],

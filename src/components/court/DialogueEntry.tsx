@@ -4,6 +4,7 @@ import { useStore } from '../../store/useGameStore'
 import Emoji, { replaceEmojisInText } from '../common/Emoji'
 import { hasContradictionComparison } from '../../utils/contradiction'
 import { getWitnessPortraitPath } from '../../utils/witnessPortraits'
+import { sanitizeKoreanSurfaceText } from '../../utils/korean'
 
 interface Props {
   entry: DialogueEntryType
@@ -44,38 +45,39 @@ export default function DialogueEntry({
   const agentB = useStore((s) => s.agentB)
   const nameA = caseData?.duo.partyA.name ?? 'A'
   const nameB = caseData?.duo.partyB.name ?? 'B'
-  const [displayText, setDisplayText] = useState(animate ? '' : entry.text)
+  const entryText = sanitizeKoreanSurfaceText(entry.text ?? '')
+  const [displayText, setDisplayText] = useState(animate ? '' : entryText)
   const [done, setDone] = useState(!animate)
 
   // animate가 false로 바뀌면 (새 대사 추가로 더 이상 마지막이 아닌 경우)
   // 전체 텍스트를 즉시 표시하고 완료 처리
   useEffect(() => {
     if (!animate && !done) {
-      setDisplayText(entry.text)
+      setDisplayText(entryText)
       setDone(true)
     }
-  }, [animate, done, entry.text])
+  }, [animate, done, entryText])
 
   useEffect(() => {
     if (!animate) return
     let i = 0
     const interval = setInterval(() => {
       i++
-      setDisplayText(entry.text.slice(0, i))
-      if (i >= entry.text.length) {
+      setDisplayText(entryText.slice(0, i))
+      if (i >= entryText.length) {
         clearInterval(interval)
         setDone(true)
       }
     }, 20)
     return () => clearInterval(interval)
-  }, [animate, entry.text])
+  }, [animate, entryText])
 
   // 시스템 메시지
   if (entry.speaker === 'system') {
-    const isEvidence = entry.text.includes('증거') || entry.text.includes('🔓') || entry.text.includes('📄')
-    const isCollapse = entry.text.includes('⚡') || entry.text.includes('💥')
-    const isMultiHit = entry.text.includes('🎯')
-    const isTestimony = entry.text.includes('진술 분석')
+    const isEvidence = entryText.includes('증거') || entryText.includes('🔓') || entryText.includes('📄')
+    const isCollapse = entryText.includes('⚡') || entryText.includes('💥')
+    const isMultiHit = entryText.includes('🎯')
+    const isTestimony = entryText.includes('진술 분석')
 
     // 진술 분석 — 클릭 가능한 특별 메시지
     if (isTestimony && onTestimonyClick) {

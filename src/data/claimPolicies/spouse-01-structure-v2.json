@@ -70,9 +70,18 @@
       ],
       "linkEdges": [
         {
-          "target": "d-2",
-          "relation": "unlocks_layer",
-          "note": "박지연의 d-1이 S3에 도달하면, 외도 의심 뒤에 있던 2,000만원 출금 쟁점이 열린다."
+          "id": "link.d1.to.d2.unlocks_layer",
+          "fromDisputeId": "d-1",
+          "toDisputeId": "d-2",
+          "type": "unlocks_layer",
+          "when": {
+            "minState": "S3"
+          },
+          "effect": {
+            "unlockLayer": "surface",
+            "grantFlag": "d2.unlock_ready"
+          },
+          "uiLabel": "박지연의 d-1이 S3에 도달하면, 외도 의심 뒤에 있던 2,000만원 출금 쟁점이 열린다."
         }
       ]
     },
@@ -154,14 +163,36 @@
       ],
       "linkEdges": [
         {
-          "target": "h-d3",
-          "relation": "retaliation",
-          "note": "d-2가 S1에 도달하면 이준호는 '그쪽도 적금을 건드린 것 아니냐'는 역공으로 h-d3를 열 수 있다."
+          "id": "link.d2.to.h-d3.retaliation",
+          "fromDisputeId": "d-2",
+          "toDisputeId": "h-d3",
+          "type": "retaliation",
+          "when": {
+            "minState": "S1"
+          },
+          "effect": {
+            "retaliationAngleTag": "h-d3.retaliation",
+            "grantFlag": "h-d3.retaliation_ready"
+          },
+          "uiLabel": "d-2가 S1에 도달하면 이준호는 '그쪽도 적금을 건드린 것 아니냐'는 역공으로 h-d3를 열 수 있다."
         },
         {
-          "target": "h-d4",
-          "relation": "supports",
-          "note": "d-2가 열린 뒤 h-d3까지 드러나면, 선후와 책임을 분리하는 h-d4로 이어진다."
+          "id": "link.d2.to.h-d4.supports",
+          "fromDisputeId": "d-2",
+          "toDisputeId": "h-d4",
+          "type": "supports",
+          "when": {
+            "minState": "S2",
+            "requireDispute": {
+              "id": "h-d3",
+              "minState": "S1"
+            }
+          },
+          "effect": {
+            "supportBonus": 10,
+            "grantFlag": "h-d4.sequence_ready"
+          },
+          "uiLabel": "d-2가 열린 뒤 h-d3까지 드러나면, 선후와 책임을 분리하는 h-d4로 이어진다."
         }
       ]
     },
@@ -244,9 +275,22 @@
       ],
       "linkEdges": [
         {
-          "target": "h-d4",
-          "relation": "supports",
-          "note": "h-d3가 S1 이상 공개되면 d-2와 함께 h-d4의 선후 분리 판단을 지지한다."
+          "id": "link.h-d3.to.h-d4.supports",
+          "fromDisputeId": "h-d3",
+          "toDisputeId": "h-d4",
+          "type": "supports",
+          "when": {
+            "minState": "S1",
+            "requireDispute": {
+              "id": "d-2",
+              "minState": "S2"
+            }
+          },
+          "effect": {
+            "supportBonus": 10,
+            "grantFlag": "h-d4.sequence_ready"
+          },
+          "uiLabel": "h-d3가 S1 이상 공개되면 d-2와 함께 h-d4의 선후 분리 판단을 지지한다."
         }
       ]
     },

@@ -2562,7 +2562,7 @@
         },
         {
           "id": "judgeq-d-2-fact_pursuit-b-general-v4",
-          "text": "서류가 두 차례 정리됐다면, 처음 정리본과 마지막 정리본 사이에서 본인이 손댄 부분이 있는지 답해 주십시오.",
+          "text": "공증본이 60:40으로 정리되는 과정에서 본인이 손댄 부분이 있는지 답해 주십시오.",
           "behaviorHint": "사실 추궁. 윤정후가 손댄 절차의 단계를 시간순으로 답하게 한다. S5 전 원본 비율 직접 표현은 피한다.",
           "tags": [
             "channel:judge_question",
@@ -2866,8 +2866,8 @@
       "variants": [
         {
           "id": "judgeq-d-2-fact_pursuit-a-scan_sequence-v1",
-          "text": "윤태성 씨, 공증사무실에서 같은 날 두 차례 스캔이 진행됐다는 사실을 본인이 언제 어떻게 알게 되셨는지 말씀해 주십시오.",
-          "behaviorHint": "사실 추궁. 스캔 두 회차에 대한 윤태성의 인지 경로를 사실로 정리한다.",
+          "text": "윤태성 씨, 공증인 메모 기록을 언제 어떤 경로로 확인했는지부터 말씀해 주십시오.",
+          "behaviorHint": "사실 추궁. 공증인 메모를 본 경로와 메모에 적힌 사실, 윤태성의 해석을 분리하게 한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:a",
@@ -2878,8 +2878,8 @@
         },
         {
           "id": "judgeq-d-2-fact_pursuit-a-scan_sequence-v2",
-          "text": "두 번의 스캔에 대해 본인이 직접 확인한 사실과 다른 사람에게서 옮겨 들은 사실을 따로 답해 주십시오.",
-          "behaviorHint": "사실 추궁. 스캔 두 회차에 대한 윤태성의 인지 경로를 사실로 정리한다.",
+          "text": "그 메모에서 본인이 직접 확인한 문장과 다른 사람에게 들은 설명을 따로 답해 주십시오.",
+          "behaviorHint": "사실 추궁. 공증인 메모를 본 경로와 메모에 적힌 사실, 윤태성의 해석을 분리하게 한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:a",
@@ -2890,8 +2890,8 @@
         },
         {
           "id": "judgeq-d-2-fact_pursuit-a-scan_sequence-v3",
-          "text": "보관본 기록과 본인의 기억이 갈리는 지점이 있다면 어느 시각의 어떤 절차에서 갈리는지 짚어 주십시오.",
-          "behaviorHint": "사실 추궁. 스캔 두 회차에 대한 윤태성의 인지 경로를 사실로 정리한다.",
+          "text": "공증본 60:40 기록과 어머니 상태 메모 사이에서 본인이 의심한 지점을 사실 중심으로 말씀해 주십시오.",
+          "behaviorHint": "사실 추궁. 공증인 메모를 본 경로와 메모에 적힌 사실, 윤태성의 해석을 분리하게 한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:a",
@@ -2902,8 +2902,8 @@
         },
         {
           "id": "judgeq-d-2-fact_pursuit-a-scan_sequence-v4",
-          "text": "첫 번째 스캔과 두 번째 스캔 사이에 누가 어디로 서류를 들고 갔는지, 본인이 알고 있는 범위에서 정리해 주십시오.",
-          "behaviorHint": "사실 추궁. 스캔 두 회차에 대한 윤태성의 인지 경로를 사실로 정리한다.",
+          "text": "메모에 남은 숫자 혼동이나 절차 진행 표현 중 본인이 직접 본 대목을 짚어 주십시오.",
+          "behaviorHint": "사실 추궁. 공증인 메모를 본 경로와 메모에 적힌 사실, 윤태성의 해석을 분리하게 한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:a",
@@ -2914,8 +2914,8 @@
         },
         {
           "id": "judgeq-d-2-fact_pursuit-a-scan_sequence-v5",
-          "text": "윤태성 씨, 두 차례 스캔의 의미에 대한 본인의 해석은 잠시 미뤄 두고, 본인이 본 그대로의 사실부터 말씀해 주십시오.",
-          "behaviorHint": "사실 추궁. 스캔 두 회차에 대한 윤태성의 인지 경로를 사실로 정리한다.",
+          "text": "윤태성 씨, 해석은 잠시 미뤄 두고 공증인 메모에 적힌 사실부터 말씀해 주십시오.",
+          "behaviorHint": "사실 추궁. 공증인 메모를 본 경로와 메모에 적힌 사실, 윤태성의 해석을 분리하게 한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:a",
@@ -2934,8 +2934,8 @@
       "variants": [
         {
           "id": "judgeq-d-2-fact_pursuit-b-scan_sequence-v1",
-          "text": "윤정후 씨, 공증사무실에서 서류가 두 차례 스캔된 경위를 시각과 진행자 중심으로 시간순으로 말씀해 주십시오.",
-          "behaviorHint": "사실 추궁. 두 회차 스캔에서 윤정후가 직접 한 작업과 동선을 시간순으로 답하게 한다.",
+          "text": "윤정후 씨, 공증인 메모에 남은 당일 절차와 본인의 설명 과정을 시간순으로 말씀해 주십시오.",
+          "behaviorHint": "사실 추궁. 공증 당일 어머니 상태와 윤정후의 절차 개입을 시간순으로 답하게 한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:b",
@@ -2946,8 +2946,8 @@
         },
         {
           "id": "judgeq-d-2-fact_pursuit-b-scan_sequence-v2",
-          "text": "두 번 가운데 본인이 직접 제출한 회차와 다른 사람이 처리한 회차를 분리해 답해 주십시오.",
-          "behaviorHint": "사실 추궁. 두 회차 스캔에서 윤정후가 직접 한 작업과 동선을 시간순으로 답하게 한다.",
+          "text": "어머니께서 숫자를 오락가락하셨다는 기록을 본인이 당시 어떻게 받아들였는지 답해 주십시오.",
+          "behaviorHint": "사실 추궁. 공증 당일 어머니 상태와 윤정후의 절차 개입을 시간순으로 답하게 한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:b",
@@ -2958,8 +2958,8 @@
         },
         {
           "id": "judgeq-d-2-fact_pursuit-b-scan_sequence-v3",
-          "text": "보관본의 두 회차 사이에 본인이 손을 댔다면 어느 단계에서 어떤 작업을 했는지 사실관계만으로 답해 주십시오.",
-          "behaviorHint": "사실 추궁. 두 회차 스캔에서 윤정후가 직접 한 작업과 동선을 시간순으로 답하게 한다.",
+          "text": "메모에 본인이 절차를 밀어붙인 듯 보였다는 대목이 있다면 그날 실제 행동을 사실대로 말씀해 주십시오.",
+          "behaviorHint": "사실 추궁. 공증 당일 어머니 상태와 윤정후의 절차 개입을 시간순으로 답하게 한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:b",
@@ -2970,8 +2970,8 @@
         },
         {
           "id": "judgeq-d-2-fact_pursuit-b-scan_sequence-v4",
-          "text": "첫 스캔 직후 서류를 어디로 옮겼는지, 두 번째 스캔까지의 동선을 본인이 기억하는 그대로 정리해 주십시오.",
-          "behaviorHint": "사실 추궁. 두 회차 스캔에서 윤정후가 직접 한 작업과 동선을 시간순으로 답하게 한다.",
+          "text": "공증 당일 어머니 상태와 본인이 옆에서 한 말을 분리해 설명해 주십시오.",
+          "behaviorHint": "사실 추궁. 공증 당일 어머니 상태와 윤정후의 절차 개입을 시간순으로 답하게 한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:b",
@@ -2982,8 +2982,8 @@
         },
         {
           "id": "judgeq-d-2-fact_pursuit-b-scan_sequence-v5",
-          "text": "윤정후 씨, 같은 날 두 번 스캔이 필요했던 이유보다, 그 시각의 본인 행동부터 사실 그대로 말씀해 주십시오.",
-          "behaviorHint": "사실 추궁. 두 회차 스캔에서 윤정후가 직접 한 작업과 동선을 시간순으로 답하게 한다.",
+          "text": "윤정후 씨, 공증본이 60:40으로 접수된 사실과 본인의 절차 개입을 나눠 답해 주십시오.",
+          "behaviorHint": "사실 추궁. 공증 당일 어머니 상태와 윤정후의 절차 개입을 시간순으로 답하게 한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:b",
@@ -3002,8 +3002,8 @@
       "variants": [
         {
           "id": "judgeq-d-2-motive_search-a-scan_sequence-v1",
-          "text": "윤태성 씨, 같은 날 두 차례 스캔이 있었다는 사실을 본인이 어떻게 알게 됐는지, 알게 된 시점과 그 사실을 다루는 본인의 판단을 함께 말씀해 주십시오.",
-          "behaviorHint": "동기 탐색. 두 차례 스캔 사실을 알게 된 시점과 그것을 단정으로 옮긴 본인 판단을 분리해 답하게 한다.",
+          "text": "윤태성 씨, 공증인 메모를 보고 동생의 책임을 어떻게 판단하게 됐는지 그 흐름을 말씀해 주십시오.",
+          "behaviorHint": "동기 탐색. 공증인 메모를 근거로 윤태성이 어떤 결론으로 넘어갔는지 확인한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:a",
@@ -3014,8 +3014,8 @@
         },
         {
           "id": "judgeq-d-2-motive_search-a-scan_sequence-v2",
-          "text": "그 사실을 알고도 곧바로 동생에게 묻지 않고 의심을 키운 이유는 무엇입니까.",
-          "behaviorHint": "동기 탐색. 두 차례 스캔 사실을 알게 된 시점과 그것을 단정으로 옮긴 본인 판단을 분리해 답하게 한다.",
+          "text": "어머니 상태가 좋지 않았다는 기록을 본 뒤, 본인이 곧바로 어떤 결론으로 넘어갔는지 설명하십시오.",
+          "behaviorHint": "동기 탐색. 공증인 메모를 근거로 윤태성이 어떤 결론으로 넘어갔는지 확인한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:a",
@@ -3026,8 +3026,8 @@
         },
         {
           "id": "judgeq-d-2-motive_search-a-scan_sequence-v3",
-          "text": "스캔 순서를 두고 본인이 직접 본 부분이 없다면, 어떤 추정이 본인의 단정을 만들었는지 답하십시오.",
-          "behaviorHint": "동기 탐색. 두 차례 스캔 사실을 알게 된 시점과 그것을 단정으로 옮긴 본인 판단을 분리해 답하게 한다.",
+          "text": "메모에 남은 절차 진행 표현을 두고 본인이 추정한 부분과 확인한 부분을 나눠 주십시오.",
+          "behaviorHint": "동기 탐색. 공증인 메모를 근거로 윤태성이 어떤 결론으로 넘어갔는지 확인한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:a",
@@ -3038,8 +3038,8 @@
         },
         {
           "id": "judgeq-d-2-motive_search-a-scan_sequence-v4",
-          "text": "본인이 그 사실을 가장 늦게 알게 된 점이 본인의 분노에 어떻게 작용했는지 설명하십시오.",
-          "behaviorHint": "동기 탐색. 두 차례 스캔 사실을 알게 된 시점과 그것을 단정으로 옮긴 본인 판단을 분리해 답하게 한다.",
+          "text": "그 메모가 본인의 분노를 키웠다면, 기록 자체와 본인의 해석을 분리해 말씀해 주십시오.",
+          "behaviorHint": "동기 탐색. 공증인 메모를 근거로 윤태성이 어떤 결론으로 넘어갔는지 확인한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:a",
@@ -3050,8 +3050,8 @@
         },
         {
           "id": "judgeq-d-2-motive_search-a-scan_sequence-v5",
-          "text": "윤태성 씨, 스캔 자체에 대한 본인의 판단을 사후에 들은 이야기와 분리해 설명할 수 있는 부분이 있다면 답하십시오.",
-          "behaviorHint": "동기 탐색. 두 차례 스캔 사실을 알게 된 시점과 그것을 단정으로 옮긴 본인 판단을 분리해 답하게 한다.",
+          "text": "윤태성 씨, 공증인 메모가 왜 유서 전체를 의심하게 만든 근거가 됐는지 답하십시오.",
+          "behaviorHint": "동기 탐색. 공증인 메모를 근거로 윤태성이 어떤 결론으로 넘어갔는지 확인한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:a",
@@ -3070,8 +3070,8 @@
       "variants": [
         {
           "id": "judgeq-d-2-motive_search-b-scan_sequence-v1",
-          "text": "윤정후 씨, 같은 날 두 번 스캔된 절차에 본인이 어디까지 관여했는지, 관여했다면 그 결정을 본인 선에서 한 이유는 무엇입니까.",
-          "behaviorHint": "동기 탐색. 같은 날 두 차례 스캔 절차에 본인이 어디까지 관여했는지, 공개를 미룬 본인 결정의 동기를 답하게 한다.",
+          "text": "윤정후 씨, 어머니 상태가 좋지 않았다는 메모가 남은 상황에서도 절차를 진행한 이유를 말씀해 주십시오.",
+          "behaviorHint": "동기 탐색. 좋지 않은 상태 기록을 알고도 절차를 진행한 윤정후의 판단을 묻는다.",
           "tags": [
             "channel:judge_question",
             "targetParty:b",
@@ -3082,8 +3082,8 @@
         },
         {
           "id": "judgeq-d-2-motive_search-b-scan_sequence-v2",
-          "text": "본인이 문서에 손댄 사람에 가까웠다면, 그 사실을 형에게 즉시 말하지 않은 동기를 답하십시오.",
-          "behaviorHint": "동기 탐색. 같은 날 두 차례 스캔 절차에 본인이 어디까지 관여했는지, 공개를 미룬 본인 결정의 동기를 답하게 한다.",
+          "text": "공증 당일 숫자 혼동이 있었는데도 본인이 절차를 멈추지 않은 판단 과정을 설명하십시오.",
+          "behaviorHint": "동기 탐색. 좋지 않은 상태 기록을 알고도 절차를 진행한 윤정후의 판단을 묻는다.",
           "tags": [
             "channel:judge_question",
             "targetParty:b",
@@ -3094,8 +3094,8 @@
         },
         {
           "id": "judgeq-d-2-motive_search-b-scan_sequence-v3",
-          "text": "같은 날 두 차례 스캔이 필요하다고 본 본인의 판단 과정을 형식적인 절차 외 부분도 포함해 설명하십시오.",
-          "behaviorHint": "동기 탐색. 같은 날 두 차례 스캔 절차에 본인이 어디까지 관여했는지, 공개를 미룬 본인 결정의 동기를 답하게 한다.",
+          "text": "메모에 남은 절차 진행 표현이 본인에게 불리하게 보이는 이유를 알고 있다면 답해 주십시오.",
+          "behaviorHint": "동기 탐색. 좋지 않은 상태 기록을 알고도 절차를 진행한 윤정후의 판단을 묻는다.",
           "tags": [
             "channel:judge_question",
             "targetParty:b",
@@ -3106,8 +3106,8 @@
         },
         {
           "id": "judgeq-d-2-motive_search-b-scan_sequence-v4",
-          "text": "그 자리에서 본인이 가장 미루고 싶었던 설명이 있었다면, 그 설명을 미룬 이유를 단정 없이 말씀해 주십시오.",
-          "behaviorHint": "동기 탐색. 같은 날 두 차례 스캔 절차에 본인이 어디까지 관여했는지, 공개를 미룬 본인 결정의 동기를 답하게 한다.",
+          "text": "그날 형에게 바로 말하지 않은 이유가 보호였는지 회피였는지 본인 말로 구분해 주십시오.",
+          "behaviorHint": "동기 탐색. 좋지 않은 상태 기록을 알고도 절차를 진행한 윤정후의 판단을 묻는다.",
           "tags": [
             "channel:judge_question",
             "targetParty:b",
@@ -3118,8 +3118,8 @@
         },
         {
           "id": "judgeq-d-2-motive_search-b-scan_sequence-v5",
-          "text": "윤정후 씨, 절차의 합법성과 별개로 본인이 그 자리에서 형의 부재를 어떻게 활용했는지 답하십시오.",
-          "behaviorHint": "동기 탐색. 같은 날 두 차례 스캔 절차에 본인이 어디까지 관여했는지, 공개를 미룬 본인 결정의 동기를 답하게 한다.",
+          "text": "윤정후 씨, 공증인 메모에 남은 불편한 대목을 지금까지 낮춰 말한 이유를 설명하십시오.",
+          "behaviorHint": "동기 탐색. 좋지 않은 상태 기록을 알고도 절차를 진행한 윤정후의 판단을 묻는다.",
           "tags": [
             "channel:judge_question",
             "targetParty:b",
@@ -3138,8 +3138,8 @@
       "variants": [
         {
           "id": "judgeq-d-2-empathy_approach-a-scan_sequence-v1",
-          "text": "윤태성 씨, 같은 날 두 번 스캔이 있었다는 정황이 뒤늦게 드러났다면 누구라도 마음이 무너졌을 수 있습니다. 본인이 그 사실을 알게 된 경위부터 말씀해 주십시오.",
-          "behaviorHint": "공감 접근. 사후에 알게 된 박탈감을 인정하되, 본 자료/들은 정황/추정을 분리하게 한다.",
+          "text": "윤태성 씨, 공증인 메모에 어머니 상태가 좋지 않았다는 말이 남은 것을 보며 어떤 마음이 먼저 들었습니까.",
+          "behaviorHint": "공감 접근. 어머니 상태 기록을 본 윤태성의 충격과 추정을 분리하게 한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:a",
@@ -3150,8 +3150,8 @@
         },
         {
           "id": "judgeq-d-2-empathy_approach-a-scan_sequence-v2",
-          "text": "본인이 자리에 없었던 시간에 무엇이 오갔을지 떠올리는 일 자체가 괴로웠을 수 있습니다. 본인이 사후에 확인한 기록과, 그 기록을 보고 떠올린 의문을 나눠 주십시오.",
-          "behaviorHint": "공감 접근. 사후에 알게 된 박탈감을 인정하되, 본 자료/들은 정황/추정을 분리하게 한다.",
+          "text": "어머니가 숫자를 혼동했다는 기록을 본 충격과, 동생에게 향한 분노를 나눠 말씀해 주십시오.",
+          "behaviorHint": "공감 접근. 어머니 상태 기록을 본 윤태성의 충격과 추정을 분리하게 한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:a",
@@ -3162,8 +3162,8 @@
         },
         {
           "id": "judgeq-d-2-empathy_approach-a-scan_sequence-v3",
-          "text": "윤태성 씨, 두 번째 스캔에 누가 있었는지 지금 단정할 필요는 없습니다. 다만 본인이 직접 본 자료와 들어서 안 정황을 나눠 말씀해 주십시오.",
-          "behaviorHint": "공감 접근. 사후에 알게 된 박탈감을 인정하되, 본 자료/들은 정황/추정을 분리하게 한다.",
+          "text": "그 메모를 본 뒤 어머니 뜻을 다시 생각하게 된 지점이 있다면 먼저 말씀해 주십시오.",
+          "behaviorHint": "공감 접근. 어머니 상태 기록을 본 윤태성의 충격과 추정을 분리하게 한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:a",
@@ -3174,8 +3174,8 @@
         },
         {
           "id": "judgeq-d-2-empathy_approach-a-scan_sequence-v4",
-          "text": "그날 본인이 함께 갔다면 달라졌을지 모른다는 후회가 있다면 그 마음부터 풀어 주십시오. 그래야 본인 추정과 사실을 가려 따질 수 있습니다.",
-          "behaviorHint": "공감 접근. 사후에 알게 된 박탈감을 인정하되, 본 자료/들은 정황/추정을 분리하게 한다.",
+          "text": "윤태성 씨, 기록을 보며 본인이 놓친 시간까지 떠올랐다면 그 마음부터 차분히 설명하십시오.",
+          "behaviorHint": "공감 접근. 어머니 상태 기록을 본 윤태성의 충격과 추정을 분리하게 한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:a",
@@ -3186,8 +3186,8 @@
         },
         {
           "id": "judgeq-d-2-empathy_approach-a-scan_sequence-v5",
-          "text": "윤태성 씨, 두 번 스캔되었다는 사실과 두 문서의 내용 차이는 다른 문제입니다. 본인이 확인한 만큼만 분리해 말씀해 주십시오.",
-          "behaviorHint": "공감 접근. 사후에 알게 된 박탈감을 인정하되, 본 자료/들은 정황/추정을 분리하게 한다.",
+          "text": "공증인 메모가 본인에게 어떤 상처로 읽혔는지, 사실과 감정을 나눠 말씀해 주십시오.",
+          "behaviorHint": "공감 접근. 어머니 상태 기록을 본 윤태성의 충격과 추정을 분리하게 한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:a",
@@ -3206,8 +3206,8 @@
       "variants": [
         {
           "id": "judgeq-d-2-empathy_approach-b-scan_sequence-v1",
-          "text": "윤정후 씨, 같은 날 같은 사무실에서 두 번 스캔이 있었다는 사실은 본인 입장에서도 설명이 필요할 것입니다. 그 자리에 본인이 어떻게 두 번 들어가게 되었는지부터 말씀해 주십시오.",
-          "behaviorHint": "공감 접근. 두 번 들른 정황의 무게를 인정하되, 동기 단정 없이 두 번 사이에 본인이 한 일을 분리하게 한다.",
+          "text": "윤정후 씨, 공증인 메모에 남은 어머니 상태 기록을 지금 다시 보며 가장 피하고 싶은 대목이 무엇입니까.",
+          "behaviorHint": "공감 접근. 공증인 메모 앞에서 윤정후가 피하려는 책임을 말하게 한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:b",
@@ -3218,8 +3218,8 @@
         },
         {
           "id": "judgeq-d-2-empathy_approach-b-scan_sequence-v2",
-          "text": "어머니의 뜻을 다시 한 번 정리해야 한다고 본인이 판단한 시점이 있었다면, 그때 마음의 결을 말씀해 주십시오. 결과의 옳고 그름은 뒤에 따지겠습니다.",
-          "behaviorHint": "공감 접근. 두 번 들른 정황의 무게를 인정하되, 동기 단정 없이 두 번 사이에 본인이 한 일을 분리하게 한다.",
+          "text": "어머니께서 숫자를 혼동하셨다는 기록 앞에서 본인이 느끼는 책임을 말씀해 주십시오.",
+          "behaviorHint": "공감 접근. 공증인 메모 앞에서 윤정후가 피하려는 책임을 말하게 한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:b",
@@ -3230,8 +3230,8 @@
         },
         {
           "id": "judgeq-d-2-empathy_approach-b-scan_sequence-v3",
-          "text": "윤정후 씨, 두 번째 스캔의 모든 동기를 한 번에 풀 필요는 없습니다. 다만 두 번 사이에 본인이 무엇을 손에 쥐고 있었고 누구와 함께 있었는지부터 말씀해 주십시오.",
-          "behaviorHint": "공감 접근. 두 번 들른 정황의 무게를 인정하되, 동기 단정 없이 두 번 사이에 본인이 한 일을 분리하게 한다.",
+          "text": "그날 절차를 멈췄어야 했다는 생각이 있다면, 그 마음을 먼저 설명해 주십시오.",
+          "behaviorHint": "공감 접근. 공증인 메모 앞에서 윤정후가 피하려는 책임을 말하게 한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:b",
@@ -3242,8 +3242,8 @@
         },
         {
           "id": "judgeq-d-2-empathy_approach-b-scan_sequence-v4",
-          "text": "그 절차를 형에게 알리지 않은 데 본인 나름의 이유가 있을 수 있습니다. 그 이유의 결을 말씀해 주십시오. 그것이 보호인지 회피인지에 따라 무게가 달라집니다.",
-          "behaviorHint": "공감 접근. 두 번 들른 정황의 무게를 인정하되, 동기 단정 없이 두 번 사이에 본인이 한 일을 분리하게 한다.",
+          "text": "윤정후 씨, 형을 보호하려 했다는 말과 공증 당일 메모에 남은 절차 진행 사이의 간격을 말씀해 주십시오.",
+          "behaviorHint": "공감 접근. 공증인 메모 앞에서 윤정후가 피하려는 책임을 말하게 한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:b",
@@ -3254,8 +3254,8 @@
         },
         {
           "id": "judgeq-d-2-empathy_approach-b-scan_sequence-v5",
-          "text": "윤정후 씨, 두 번 스캔되었다는 사실과 두 번째 자리에서 본인이 한 일은 다른 문제입니다. 본인이 직접 한 일부터 분리해 말씀해 주십시오.",
-          "behaviorHint": "공감 접근. 두 번 들른 정황의 무게를 인정하되, 동기 단정 없이 두 번 사이에 본인이 한 일을 분리하게 한다.",
+          "text": "공증인 메모를 보면 본인도 변명하기 어려운 대목이 있을 것입니다. 그 부분부터 답해 주십시오.",
+          "behaviorHint": "공감 접근. 공증인 메모 앞에서 윤정후가 피하려는 책임을 말하게 한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:b",
@@ -3682,8 +3682,8 @@
       "variants": [
         {
           "id": "judgeq-d-2-fact_pursuit-a-changed_direction-v1",
-          "text": "윤태성 씨, 비율이 본인에게 더 유리하게 바뀐 형태인지, 덜 유리하게 바뀐 형태인지 본인이 본 문서를 기준으로 말씀해 주십시오.",
-          "behaviorHint": "사실 추궁. 비율 변화 방향에 대해 본인이 본 사실을 우선 답하게 한다.",
+          "text": "윤태성 씨, 공증본과 별도 문서가 다르게 보인다는 점을 언제 확인했는지, 본인이 직접 본 문서와 전해 들은 문서를 나눠 말씀해 주십시오.",
+          "behaviorHint": "문서 차이의 의미를 단정하지 말고 확인 경로와 추정을 분리하게 한다. 원본 비율 직접 표현 금지.",
           "tags": [
             "channel:judge_question",
             "targetParty:a",
@@ -3694,8 +3694,8 @@
         },
         {
           "id": "judgeq-d-2-fact_pursuit-a-changed_direction-v2",
-          "text": "비율 변화에 대해 본인이 직접 확인한 부분과 가족에게서 들은 부분을 분리해 답해 주십시오.",
-          "behaviorHint": "사실 추궁. 비율 변화 방향에 대해 본인이 본 사실을 우선 답하게 한다.",
+          "text": "비율 차이에 대한 해석은 잠시 미루고, 본인이 확인한 문서의 종류와 확인 경로부터 정리해 주십시오.",
+          "behaviorHint": "문서 차이의 의미를 단정하지 말고 확인 경로와 추정을 분리하게 한다. 원본 비율 직접 표현 금지.",
           "tags": [
             "channel:judge_question",
             "targetParty:a",
@@ -3706,8 +3706,8 @@
         },
         {
           "id": "judgeq-d-2-fact_pursuit-a-changed_direction-v3",
-          "text": "변경 방향이 통념적인 가족 분쟁과 다르게 보일 수 있다는 지점에 대해 본인이 알고 있는 사실관계를 답해 주십시오.",
-          "behaviorHint": "사실 추궁. 비율 변화 방향에 대해 본인이 본 사실을 우선 답하게 한다.",
+          "text": "문서마다 숫자가 다르게 남아 있다는 점을 본인이 어떤 순서로 알게 됐는지 사실관계만 말씀해 주십시오.",
+          "behaviorHint": "문서 차이의 의미를 단정하지 말고 확인 경로와 추정을 분리하게 한다. 원본 비율 직접 표현 금지.",
           "tags": [
             "channel:judge_question",
             "targetParty:a",
@@ -3718,8 +3718,8 @@
         },
         {
           "id": "judgeq-d-2-fact_pursuit-a-changed_direction-v4",
-          "text": "비율 변화의 방향과 본인이 받아들인 기분이 따로 가는 부분이 있다면, 사실 부분과 감정 부분을 따로 정리해 주십시오.",
-          "behaviorHint": "사실 추궁. 비율 변화 방향에 대해 본인이 본 사실을 우선 답하게 한다.",
+          "text": "윤태성 씨, 처음 의심한 방향과 실제 문서 차이가 어떻게 어긋나는지, 지금 단계에서 확인된 범위만 답해 주십시오.",
+          "behaviorHint": "문서 차이의 의미를 단정하지 말고 확인 경로와 추정을 분리하게 한다. 원본 비율 직접 표현 금지.",
           "tags": [
             "channel:judge_question",
             "targetParty:a",
@@ -3730,8 +3730,8 @@
         },
         {
           "id": "judgeq-d-2-fact_pursuit-a-changed_direction-v5",
-          "text": "윤태성 씨, 비율 차이의 의미에 대한 본인의 해석은 잠시 보류하고, 본인이 본 숫자만 사실 그대로 말씀해 주십시오.",
-          "behaviorHint": "사실 추궁. 비율 변화 방향에 대해 본인이 본 사실을 우선 답하게 한다.",
+          "text": "문서 차이가 의미하는 결론은 뒤에 보겠습니다. 먼저 본인이 본 숫자와 들은 설명을 구분해 주십시오.",
+          "behaviorHint": "문서 차이의 의미를 단정하지 말고 확인 경로와 추정을 분리하게 한다. 원본 비율 직접 표현 금지.",
           "tags": [
             "channel:judge_question",
             "targetParty:a",
@@ -3750,8 +3750,8 @@
       "variants": [
         {
           "id": "judgeq-d-2-fact_pursuit-b-changed_direction-v1",
-          "text": "윤정후 씨, 본인이 손댄 비율이 본인 몫을 늘리는 방향이었는지 줄이는 방향이었는지 사실관계로 답해 주십시오.",
-          "behaviorHint": "사실 추궁. 비율의 어느 칸을 어떻게 바꿨는지 윤정후 본인 행동 단위로 답하게 한다. 단순 탐욕형 단정은 피한다.",
+          "text": "윤정후 씨, 공증본과 별도 문서가 다르게 남은 경위를 본인이 아는 범위에서 시간순으로 말씀해 주십시오.",
+          "behaviorHint": "문서 차이를 설명하지 않은 경위와 본인 책임을 분리해 말하게 한다. 원본 비율 직접 표현 금지.",
           "tags": [
             "channel:judge_question",
             "targetParty:b",
@@ -3762,8 +3762,8 @@
         },
         {
           "id": "judgeq-d-2-fact_pursuit-b-changed_direction-v2",
-          "text": "비율을 정리한 시점에 본인이 본 어머니 의사와 본인이 추가로 적용한 판단을 분리해 답해 주십시오.",
-          "behaviorHint": "사실 추궁. 비율의 어느 칸을 어떻게 바꿨는지 윤정후 본인 행동 단위로 답하게 한다. 단순 탐욕형 단정은 피한다.",
+          "text": "문서 차이가 생긴 과정에서 본인이 맡았던 절차와 직접 보지 못한 부분을 나눠 답해 주십시오.",
+          "behaviorHint": "문서 차이를 설명하지 않은 경위와 본인 책임을 분리해 말하게 한다. 원본 비율 직접 표현 금지.",
           "tags": [
             "channel:judge_question",
             "targetParty:b",
@@ -3774,8 +3774,8 @@
         },
         {
           "id": "judgeq-d-2-fact_pursuit-b-changed_direction-v3",
-          "text": "형의 진술에는 본인이 단순한 탐욕으로 손댄 것으로 들리는 부분이 있습니다. 본인이 직접 한 작업의 방향을 사실관계만으로 답해 주십시오.",
-          "behaviorHint": "사실 추궁. 비율의 어느 칸을 어떻게 바꿨는지 윤정후 본인 행동 단위로 답하게 한다. 단순 탐욕형 단정은 피한다.",
+          "text": "형의 의심과 별개로, 문서가 서로 다르게 남은 이유를 지금 말할 수 있는 범위 안에서 정리해 주십시오.",
+          "behaviorHint": "문서 차이를 설명하지 않은 경위와 본인 책임을 분리해 말하게 한다. 원본 비율 직접 표현 금지.",
           "tags": [
             "channel:judge_question",
             "targetParty:b",
@@ -3786,8 +3786,8 @@
         },
         {
           "id": "judgeq-d-2-fact_pursuit-b-changed_direction-v4",
-          "text": "비율이 본인에게 더 유리해졌는지, 덜 유리해졌는지에 대한 의미 해석은 미뤄 두고, 어느 칸의 숫자를 어떻게 바꿨는지부터 정리해 주십시오.",
-          "behaviorHint": "사실 추궁. 비율의 어느 칸을 어떻게 바꿨는지 윤정후 본인 행동 단위로 답하게 한다. 단순 탐욕형 단정은 피한다.",
+          "text": "비율 차이의 의미를 단정하기 전에, 본인이 그 문서를 언제 어떤 상태로 보았는지부터 말씀해 주십시오.",
+          "behaviorHint": "문서 차이를 설명하지 않은 경위와 본인 책임을 분리해 말하게 한다. 원본 비율 직접 표현 금지.",
           "tags": [
             "channel:judge_question",
             "targetParty:b",
@@ -3798,8 +3798,8 @@
         },
         {
           "id": "judgeq-d-2-fact_pursuit-b-changed_direction-v5",
-          "text": "윤정후 씨, 비율을 그대로 두지 않은 이유보다, 본인이 손댄 항목과 손대지 않은 항목부터 분리해 답해 주십시오.",
-          "behaviorHint": "사실 추궁. 비율의 어느 칸을 어떻게 바꿨는지 윤정후 본인 행동 단위로 답하게 한다. 단순 탐욕형 단정은 피한다.",
+          "text": "윤정후 씨, 문서 차이를 설명하지 않고 둔 시간이 있었다면 그 경위를 먼저 답해 주십시오.",
+          "behaviorHint": "문서 차이를 설명하지 않은 경위와 본인 책임을 분리해 말하게 한다. 원본 비율 직접 표현 금지.",
           "tags": [
             "channel:judge_question",
             "targetParty:b",
@@ -3818,8 +3818,8 @@
       "variants": [
         {
           "id": "judgeq-d-2-motive_search-a-changed_direction-v1",
-          "text": "윤태성 씨, 본인에게 더 유리한 방향으로 바뀐 결과를 두고도 그것을 조작이라고 본 본인의 판단 과정을 말씀해 주십시오.",
-          "behaviorHint": "동기 탐색. 본인에게 더 유리한 방향임에도 의심을 단정으로 옮긴 본인 판단의 동기를 답하게 한다.",
+          "text": "윤태성 씨, 문서 차이를 보면서도 동생의 책임이라고 본 판단 과정을 말씀해 주십시오.",
+          "behaviorHint": "문서 차이의 의미를 단정하지 말고 확인 경로와 추정을 분리하게 한다. 원본 비율 직접 표현 금지.",
           "tags": [
             "channel:judge_question",
             "targetParty:a",
@@ -3830,8 +3830,8 @@
         },
         {
           "id": "judgeq-d-2-motive_search-a-changed_direction-v2",
-          "text": "그 방향이 본인의 평소 기대보다 적었다면, 적다는 감각이 의심의 출발에 어떻게 작용했는지 답하십시오.",
-          "behaviorHint": "동기 탐색. 본인에게 더 유리한 방향임에도 의심을 단정으로 옮긴 본인 판단의 동기를 답하게 한다.",
+          "text": "처음 떠올린 의심과 새로 확인된 문서 차이가 어긋난다면, 그 어긋남을 어떻게 받아들이고 있는지 답하십시오.",
+          "behaviorHint": "문서 차이의 의미를 단정하지 말고 확인 경로와 추정을 분리하게 한다. 원본 비율 직접 표현 금지.",
           "tags": [
             "channel:judge_question",
             "targetParty:a",
@@ -3842,8 +3842,8 @@
         },
         {
           "id": "judgeq-d-2-motive_search-a-changed_direction-v3",
-          "text": "본인에게 유리한 방향이라는 사실이 동생의 동기를 단정하기 어렵게 만든다는 가능성을 어떻게 다루셨는지 설명하십시오.",
-          "behaviorHint": "동기 탐색. 본인에게 더 유리한 방향임에도 의심을 단정으로 옮긴 본인 판단의 동기를 답하게 한다.",
+          "text": "결과의 방향을 단정하기 전에, 본인이 동생의 의도를 의심하게 된 출발점을 설명해 주십시오.",
+          "behaviorHint": "문서 차이의 의미를 단정하지 말고 확인 경로와 추정을 분리하게 한다. 원본 비율 직접 표현 금지.",
           "tags": [
             "channel:judge_question",
             "targetParty:a",
@@ -3854,8 +3854,8 @@
         },
         {
           "id": "judgeq-d-2-motive_search-a-changed_direction-v4",
-          "text": "본인이 받지 못한 부분만큼을 동생의 의도로 옮긴 자리가 있다면, 그 옮김의 이유는 무엇입니까.",
-          "behaviorHint": "동기 탐색. 본인에게 더 유리한 방향임에도 의심을 단정으로 옮긴 본인 판단의 동기를 답하게 한다.",
+          "text": "본인이 기대한 유서와 실제로 확인한 문서 사이의 차이가 의심으로 옮겨간 이유는 무엇입니까.",
+          "behaviorHint": "문서 차이의 의미를 단정하지 말고 확인 경로와 추정을 분리하게 한다. 원본 비율 직접 표현 금지.",
           "tags": [
             "channel:judge_question",
             "targetParty:a",
@@ -3866,8 +3866,8 @@
         },
         {
           "id": "judgeq-d-2-motive_search-a-changed_direction-v5",
-          "text": "윤태성 씨, 결과의 방향과 본인의 의심을 분리해 설명할 수 있는 부분이 있다면, 먼저 말씀해 주십시오.",
-          "behaviorHint": "동기 탐색. 본인에게 더 유리한 방향임에도 의심을 단정으로 옮긴 본인 판단의 동기를 답하게 한다.",
+          "text": "윤태성 씨, 문서 차이와 동생의 동기를 한꺼번에 묶은 부분이 있다면 그 판단부터 풀어 말씀해 주십시오.",
+          "behaviorHint": "문서 차이의 의미를 단정하지 말고 확인 경로와 추정을 분리하게 한다. 원본 비율 직접 표현 금지.",
           "tags": [
             "channel:judge_question",
             "targetParty:a",
@@ -3886,8 +3886,8 @@
       "variants": [
         {
           "id": "judgeq-d-2-motive_search-b-changed_direction-v1",
-          "text": "윤정후 씨, 본인 몫이 줄어드는 방향이었다면, 그 의도를 처음부터 형에게 설명하지 않은 이유가 무엇입니까.",
-          "behaviorHint": "동기 탐색. 본인 몫이 줄어드는 방향이었다면 그 의도를 처음부터 설명하지 않은 본인 결정의 동기를 답하게 한다. 원본 비율 직접 표현 금지.",
+          "text": "윤정후 씨, 문서 차이를 처음부터 설명하지 않은 이유가 무엇인지 말씀해 주십시오.",
+          "behaviorHint": "문서 차이를 설명하지 않은 경위와 본인 책임을 분리해 말하게 한다. 원본 비율 직접 표현 금지.",
           "tags": [
             "channel:judge_question",
             "targetParty:b",
@@ -3898,8 +3898,8 @@
         },
         {
           "id": "judgeq-d-2-motive_search-b-changed_direction-v2",
-          "text": "본인 몫을 줄여서라도 막고 싶었던 결과가 무엇이었는지, 본인이 알 수 있는 범위에서 답하십시오.",
-          "behaviorHint": "동기 탐색. 본인 몫이 줄어드는 방향이었다면 그 의도를 처음부터 설명하지 않은 본인 결정의 동기를 답하게 한다. 원본 비율 직접 표현 금지.",
+          "text": "그 차이를 말하지 않고 둔 결정에 본인이 어떤 부담을 느꼈는지 답하십시오.",
+          "behaviorHint": "문서 차이를 설명하지 않은 경위와 본인 책임을 분리해 말하게 한다. 원본 비율 직접 표현 금지.",
           "tags": [
             "channel:judge_question",
             "targetParty:b",
@@ -3910,8 +3910,8 @@
         },
         {
           "id": "judgeq-d-2-motive_search-b-changed_direction-v3",
-          "text": "형이 받게 될 비율을 본인이 정해 둔 자리가 있다면, 그 결정이 어머니의 뜻과 어디서 나뉘는지 설명하십시오.",
-          "behaviorHint": "동기 탐색. 본인 몫이 줄어드는 방향이었다면 그 의도를 처음부터 설명하지 않은 본인 결정의 동기를 답하게 한다. 원본 비율 직접 표현 금지.",
+          "text": "형이 오해할 수 있다는 것을 알면서도 설명을 미룬 이유를 본인이 말할 수 있는 범위에서 말씀해 주십시오.",
+          "behaviorHint": "문서 차이를 설명하지 않은 경위와 본인 책임을 분리해 말하게 한다. 원본 비율 직접 표현 금지.",
           "tags": [
             "channel:judge_question",
             "targetParty:b",
@@ -3922,8 +3922,8 @@
         },
         {
           "id": "judgeq-d-2-motive_search-b-changed_direction-v4",
-          "text": "그 방향을 본인 선에서 정리하면서 가장 미루고 싶었던 설명이 있었다면, 그 설명의 이유를 답하십시오.",
-          "behaviorHint": "동기 탐색. 본인 몫이 줄어드는 방향이었다면 그 의도를 처음부터 설명하지 않은 본인 결정의 동기를 답하게 한다. 원본 비율 직접 표현 금지.",
+          "text": "문서 차이가 단순한 절차 문제로만 남지 않을 수 있다는 점을 언제부터 알고 있었는지 답하십시오.",
+          "behaviorHint": "문서 차이를 설명하지 않은 경위와 본인 책임을 분리해 말하게 한다. 원본 비율 직접 표현 금지.",
           "tags": [
             "channel:judge_question",
             "targetParty:b",
@@ -3934,8 +3934,8 @@
         },
         {
           "id": "judgeq-d-2-motive_search-b-changed_direction-v5",
-          "text": "윤정후 씨, 동기와 별개로 그 방향을 본인이 만든 행위 자체에 대한 본인 책임을 분리해 인정할 수 있는 부분을 말씀해 주십시오.",
-          "behaviorHint": "동기 탐색. 본인 몫이 줄어드는 방향이었다면 그 의도를 처음부터 설명하지 않은 본인 결정의 동기를 답하게 한다. 원본 비율 직접 표현 금지.",
+          "text": "윤정후 씨, 동기와 별개로 문서 차이를 숨긴 책임을 어디까지 인정할 수 있는지 말씀해 주십시오.",
+          "behaviorHint": "문서 차이를 설명하지 않은 경위와 본인 책임을 분리해 말하게 한다. 원본 비율 직접 표현 금지.",
           "tags": [
             "channel:judge_question",
             "targetParty:b",
@@ -3954,8 +3954,8 @@
       "variants": [
         {
           "id": "judgeq-d-2-empathy_approach-a-changed_direction-v1",
-          "text": "윤태성 씨, 의심하던 방향과 다른 결과가 보이면 마음이 더 어지러워졌을 수 있습니다. 본인이 처음 가졌던 그림과 실제로 본 숫자 사이에서 무엇이 가장 어긋났는지 말씀해 주십시오.",
-          "behaviorHint": "공감 접근. 의심과 결과의 어긋남에서 오는 혼란을 인정하되, 본 결과와 추정한 동기를 분리하게 한다.",
+          "text": "윤태성 씨, 의심하던 그림과 문서 차이가 맞지 않는다고 느꼈다면 마음이 더 어지러웠을 수 있습니다. 그 혼란을 사실과 감정으로 나눠 말씀해 주십시오.",
+          "behaviorHint": "문서 차이의 의미를 단정하지 말고 확인 경로와 추정을 분리하게 한다. 원본 비율 직접 표현 금지.",
           "tags": [
             "channel:judge_question",
             "targetParty:a",
@@ -3966,8 +3966,8 @@
         },
         {
           "id": "judgeq-d-2-empathy_approach-a-changed_direction-v2",
-          "text": "결과가 단순한 탐욕으로 설명되지 않는다고 느꼈다면, 그 자리에서도 동생을 의심하기를 멈추지 못한 본인의 마음이 무거우셨을 수 있습니다. 그 결을 솔직히 말씀해 주십시오.",
-          "behaviorHint": "공감 접근. 의심과 결과의 어긋남에서 오는 혼란을 인정하되, 본 결과와 추정한 동기를 분리하게 한다.",
+          "text": "처음 믿었던 설명이 흔들리는 자리는 쉽지 않았을 것입니다. 문서 차이를 마주한 순간의 생각부터 말씀해 주십시오.",
+          "behaviorHint": "문서 차이의 의미를 단정하지 말고 확인 경로와 추정을 분리하게 한다. 원본 비율 직접 표현 금지.",
           "tags": [
             "channel:judge_question",
             "targetParty:a",
@@ -3978,8 +3978,8 @@
         },
         {
           "id": "judgeq-d-2-empathy_approach-a-changed_direction-v3",
-          "text": "윤태성 씨, 변경 방향의 의미 전체를 지금 단정할 필요는 없습니다. 다만 본인이 본 결과와 본인이 떠올린 동생의 동기 사이에서 어디부터 추정인지 가려 주십시오.",
-          "behaviorHint": "공감 접근. 의심과 결과의 어긋남에서 오는 혼란을 인정하되, 본 결과와 추정한 동기를 분리하게 한다.",
+          "text": "윤태성 씨, 결과의 의미 전체를 지금 단정할 필요는 없습니다. 다만 본인이 본 사실과 떠올린 추정을 구분해 주십시오.",
+          "behaviorHint": "문서 차이의 의미를 단정하지 말고 확인 경로와 추정을 분리하게 한다. 원본 비율 직접 표현 금지.",
           "tags": [
             "channel:judge_question",
             "targetParty:a",
@@ -3990,8 +3990,8 @@
         },
         {
           "id": "judgeq-d-2-empathy_approach-a-changed_direction-v4",
-          "text": "의심을 거두기 어려웠던 마음과 결과를 그대로 받아들이기 어려웠던 마음 중 어느 쪽이 더 컸는지 말씀해 주십시오. 그래야 다음 이야기로 넘어갈 수 있습니다.",
-          "behaviorHint": "공감 접근. 의심과 결과의 어긋남에서 오는 혼란을 인정하되, 본 결과와 추정한 동기를 분리하게 한다.",
+          "text": "의심을 거두기 어려웠던 마음과 문서 차이를 받아들이기 어려웠던 마음 중 어느 쪽이 더 컸는지 말씀해 주십시오.",
+          "behaviorHint": "문서 차이의 의미를 단정하지 말고 확인 경로와 추정을 분리하게 한다. 원본 비율 직접 표현 금지.",
           "tags": [
             "channel:judge_question",
             "targetParty:a",
@@ -4002,8 +4002,8 @@
         },
         {
           "id": "judgeq-d-2-empathy_approach-a-changed_direction-v5",
-          "text": "윤태성 씨, 비율이 어떻게 달라졌는지와 그 변경의 동기가 무엇이었는지는 다른 문제입니다. 본인이 본 사실부터 분리해 말씀해 주십시오.",
-          "behaviorHint": "공감 접근. 의심과 결과의 어긋남에서 오는 혼란을 인정하되, 본 결과와 추정한 동기를 분리하게 한다.",
+          "text": "비율이 어떻게 달라졌는지와 그 변경의 동기가 무엇이었는지는 다른 문제입니다. 본인이 확인한 사실부터 분리해 말씀해 주십시오.",
+          "behaviorHint": "문서 차이의 의미를 단정하지 말고 확인 경로와 추정을 분리하게 한다. 원본 비율 직접 표현 금지.",
           "tags": [
             "channel:judge_question",
             "targetParty:a",
@@ -4022,8 +4022,8 @@
       "variants": [
         {
           "id": "judgeq-d-2-empathy_approach-b-changed_direction-v1",
-          "text": "윤정후 씨, 결과만 보면 본인에게 불리한 방향처럼 보이는 변경이 의심을 더 키운다는 것이 답답하실 수 있습니다. 그래도 본인이 그 방향을 택한 자리의 마음을 지금 말할 수 있는 만큼 들려주십시오.",
-          "behaviorHint": "공감 접근. 동기 단정으로 가지 않게 하되, 변경 결정 시점의 우선순위와 침묵을 분리해 말하게 한다.",
+          "text": "윤정후 씨, 문서 차이가 형에게 어떤 의심으로 보일지 본인도 느꼈을 것입니다. 그 부담을 지금 말할 수 있는 만큼 들려주십시오.",
+          "behaviorHint": "문서 차이를 설명하지 않은 경위와 본인 책임을 분리해 말하게 한다. 원본 비율 직접 표현 금지.",
           "tags": [
             "channel:judge_question",
             "targetParty:b",
@@ -4034,8 +4034,8 @@
         },
         {
           "id": "judgeq-d-2-empathy_approach-b-changed_direction-v2",
-          "text": "어머니의 뜻을 본인 안에서 다시 정리해야 한다고 느낀 시기가 있었다면, 그 정리의 결을 말씀해 주십시오. 정당함은 뒤에 따지겠습니다.",
-          "behaviorHint": "공감 접근. 동기 단정으로 가지 않게 하되, 변경 결정 시점의 우선순위와 침묵을 분리해 말하게 한다.",
+          "text": "어머니의 뜻을 정리해야 한다고 느낀 시기가 있었다면, 그 정리의 결을 말씀해 주십시오. 정당함은 뒤에 따지겠습니다.",
+          "behaviorHint": "문서 차이를 설명하지 않은 경위와 본인 책임을 분리해 말하게 한다. 원본 비율 직접 표현 금지.",
           "tags": [
             "channel:judge_question",
             "targetParty:b",
@@ -4046,8 +4046,8 @@
         },
         {
           "id": "judgeq-d-2-empathy_approach-b-changed_direction-v3",
-          "text": "윤정후 씨, 모든 동기를 한 번에 풀 필요는 없습니다. 다만 그 방향을 결정할 때 본인이 무엇을 우선에 두었는지부터 차근히 정리해 주십시오.",
-          "behaviorHint": "공감 접근. 동기 단정으로 가지 않게 하되, 변경 결정 시점의 우선순위와 침묵을 분리해 말하게 한다.",
+          "text": "윤정후 씨, 모든 동기를 한 번에 풀 필요는 없습니다. 다만 그 차이를 설명하지 못한 이유부터 차근히 정리해 주십시오.",
+          "behaviorHint": "문서 차이를 설명하지 않은 경위와 본인 책임을 분리해 말하게 한다. 원본 비율 직접 표현 금지.",
           "tags": [
             "channel:judge_question",
             "targetParty:b",
@@ -4058,8 +4058,8 @@
         },
         {
           "id": "judgeq-d-2-empathy_approach-b-changed_direction-v4",
-          "text": "결과의 모양이 의심을 비껴가지 못한다는 점을 본인도 알고 있었을 것입니다. 그것을 알면서도 말하지 않은 시간의 결을 말씀해 주십시오.",
-          "behaviorHint": "공감 접근. 동기 단정으로 가지 않게 하되, 변경 결정 시점의 우선순위와 침묵을 분리해 말하게 한다.",
+          "text": "문서 차이가 의심을 비껴가지 못한다는 점을 알면서도 말하지 않은 시간의 결을 말씀해 주십시오.",
+          "behaviorHint": "문서 차이를 설명하지 않은 경위와 본인 책임을 분리해 말하게 한다. 원본 비율 직접 표현 금지.",
           "tags": [
             "channel:judge_question",
             "targetParty:b",
@@ -4070,8 +4070,8 @@
         },
         {
           "id": "judgeq-d-2-empathy_approach-b-changed_direction-v5",
-          "text": "윤정후 씨, 변경의 방향이 본인에게 유리한지 불리한지와, 어머니 문서를 본인이 다시 정리했다는 사실은 다른 차원입니다. 본인이 한 일부터 분리해 말씀해 주십시오.",
-          "behaviorHint": "공감 접근. 동기 단정으로 가지 않게 하되, 변경 결정 시점의 우선순위와 침묵을 분리해 말하게 한다.",
+          "text": "변경의 방향과 어머니 문서를 본인이 다시 정리했다는 책임은 다른 차원입니다. 지금 말할 수 있는 범위부터 분리해 말씀해 주십시오.",
+          "behaviorHint": "문서 차이를 설명하지 않은 경위와 본인 책임을 분리해 말하게 한다. 원본 비율 직접 표현 금지.",
           "tags": [
             "channel:judge_question",
             "targetParty:b",
@@ -4090,8 +4090,8 @@
       "variants": [
         {
           "id": "judgeq-d-2-fact_pursuit-a-forgery_responsibility-v1",
-          "text": "윤태성 씨, 어머니 문서에 누가 손을 댔다고 보는지, 본인이 직접 본 사실에 한해 시간순으로 말씀해 주십시오.",
-          "behaviorHint": "사실 추궁. 책임 결론보다 윤태성이 본 손댐의 흔적을 먼저 답하게 한다.",
+          "text": "윤태성 씨, 어머니 문서가 다르게 남은 책임을 누구에게 묻고 있는지, 직접 본 사실과 추정을 나눠 말씀해 주십시오.",
+          "behaviorHint": "문서 차이를 책임 판단으로 옮긴 근거를 기록 중심으로 분리하게 한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:a",
@@ -4102,8 +4102,8 @@
         },
         {
           "id": "judgeq-d-2-fact_pursuit-a-forgery_responsibility-v2",
-          "text": "본인이 직접 확인한 손댐과 추정으로 그렇게 보고 있는 부분을 분리해 답해 주십시오.",
-          "behaviorHint": "사실 추궁. 책임 결론보다 윤태성이 본 손댐의 흔적을 먼저 답하게 한다.",
+          "text": "문서 차이를 책임 문제로 보게 된 근거를 본인이 확인한 순서대로 정리해 주십시오.",
+          "behaviorHint": "문서 차이를 책임 판단으로 옮긴 근거를 기록 중심으로 분리하게 한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:a",
@@ -4114,8 +4114,8 @@
         },
         {
           "id": "judgeq-d-2-fact_pursuit-a-forgery_responsibility-v3",
-          "text": "동생의 진술과 다르게 본인이 보는 책임 주체가 누구인지, 그 근거가 어떤 기록인지 사실관계만으로 답해 주십시오.",
-          "behaviorHint": "사실 추궁. 책임 결론보다 윤태성이 본 손댐의 흔적을 먼저 답하게 한다.",
+          "text": "동생이 문서 처리에 관여했다고 판단한 근거 중 기록으로 확인되는 부분만 먼저 말씀해 주십시오.",
+          "behaviorHint": "문서 차이를 책임 판단으로 옮긴 근거를 기록 중심으로 분리하게 한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:a",
@@ -4126,8 +4126,8 @@
         },
         {
           "id": "judgeq-d-2-fact_pursuit-a-forgery_responsibility-v4",
-          "text": "본인이 모은 의심의 근거를 보관 자료, 들은 이야기, 본인 기억으로 나누어 정리해 주십시오.",
-          "behaviorHint": "사실 추궁. 책임 결론보다 윤태성이 본 손댐의 흔적을 먼저 답하게 한다.",
+          "text": "어머니 문서 문제를 법적 책임으로 옮긴 본인의 판단 과정을 차근차근 설명해 주십시오.",
+          "behaviorHint": "문서 차이를 책임 판단으로 옮긴 근거를 기록 중심으로 분리하게 한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:a",
@@ -4138,8 +4138,8 @@
         },
         {
           "id": "judgeq-d-2-fact_pursuit-a-forgery_responsibility-v5",
-          "text": "윤태성 씨, 책임 추궁의 결론은 잠시 미뤄 두고, 본인이 직접 본 손댐의 흔적부터 말씀해 주십시오.",
-          "behaviorHint": "사실 추궁. 책임 결론보다 윤태성이 본 손댐의 흔적을 먼저 답하게 한다.",
+          "text": "문서 차이에 대한 감정과 책임 판단을 분리해서 말씀해 주십시오.",
+          "behaviorHint": "문서 차이를 책임 판단으로 옮긴 근거를 기록 중심으로 분리하게 한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:a",
@@ -4158,8 +4158,8 @@
       "variants": [
         {
           "id": "judgeq-d-2-fact_pursuit-b-forgery_responsibility-v1",
-          "text": "윤정후 씨, 어머니 문서에 본인이 손을 댄 사실이 있다면 시점과 단계를 시간순으로 말씀해 주십시오.",
-          "behaviorHint": "사실 추궁. 동기 진술보다 손댐 사실 자체를 인정 범위 안에서 답하게 한다. 단순 위조 단정은 피한다.",
+          "text": "윤정후 씨, 어머니 문서 처리 과정에서 본인이 맡았던 범위와 설명하지 않은 범위를 나눠 말씀해 주십시오.",
+          "behaviorHint": "어머니 문서 처리 과정의 본인 역할과 책임을 단계적으로 답하게 한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:b",
@@ -4170,8 +4170,8 @@
         },
         {
           "id": "judgeq-d-2-fact_pursuit-b-forgery_responsibility-v2",
-          "text": "본인이 직접 한 작업과 공증인이나 다른 사람에게 맡긴 작업을 분리해 답해 주십시오.",
-          "behaviorHint": "사실 추궁. 동기 진술보다 손댐 사실 자체를 인정 범위 안에서 답하게 한다. 단순 위조 단정은 피한다.",
+          "text": "문서 차이에 본인 책임이 있다면 어느 단계부터인지, 지금 말할 수 있는 범위 안에서 정리해 주십시오.",
+          "behaviorHint": "어머니 문서 처리 과정의 본인 역할과 책임을 단계적으로 답하게 한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:b",
@@ -4182,8 +4182,8 @@
         },
         {
           "id": "judgeq-d-2-fact_pursuit-b-forgery_responsibility-v3",
-          "text": "형은 본인을 단순 위조 주체로 보지만, 본인이 진술해 온 보호 동기와는 별개로 실제로 한 행위만 사실관계로 짚어 주십시오.",
-          "behaviorHint": "사실 추궁. 동기 진술보다 손댐 사실 자체를 인정 범위 안에서 답하게 한다. 단순 위조 단정은 피한다.",
+          "text": "어머니 문서가 다르게 남은 과정에서 본인이 한 일과 하지 않은 일을 분리해 답해 주십시오.",
+          "behaviorHint": "어머니 문서 처리 과정의 본인 역할과 책임을 단계적으로 답하게 한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:b",
@@ -4194,8 +4194,8 @@
         },
         {
           "id": "judgeq-d-2-fact_pursuit-b-forgery_responsibility-v4",
-          "text": "본인이 손댄 흔적이 어떤 형태로 서류에 남아 있는지, 본인이 알고 있는 범위에서 정리해 주십시오.",
-          "behaviorHint": "사실 추궁. 동기 진술보다 손댐 사실 자체를 인정 범위 안에서 답하게 한다. 단순 위조 단정은 피한다.",
+          "text": "윤정후 씨, 동기와 별개로 문서 차이에 대한 책임을 어디까지 인정할 수 있는지 말씀해 주십시오.",
+          "behaviorHint": "어머니 문서 처리 과정의 본인 역할과 책임을 단계적으로 답하게 한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:b",
@@ -4206,8 +4206,8 @@
         },
         {
           "id": "judgeq-d-2-fact_pursuit-b-forgery_responsibility-v5",
-          "text": "윤정후 씨, 동기에 대한 진술은 잠시 미뤄 두고, 어머니 문서에 손을 댔다는 사실 자체부터 인정 범위 안에서 답해 주십시오.",
-          "behaviorHint": "사실 추궁. 동기 진술보다 손댐 사실 자체를 인정 범위 안에서 답하게 한다. 단순 위조 단정은 피한다.",
+          "text": "문서 처리 경위를 미룬 이유와 그 책임을 나눠 설명해 주십시오.",
+          "behaviorHint": "어머니 문서 처리 과정의 본인 역할과 책임을 단계적으로 답하게 한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:b",
@@ -4226,8 +4226,8 @@
       "variants": [
         {
           "id": "judgeq-d-2-motive_search-a-forgery_responsibility-v1",
-          "text": "윤태성 씨, 위조 사실을 본인이 직접 보지 못한 채로 단정한 본인의 판단 동기는 무엇입니까.",
-          "behaviorHint": "동기 탐색. 직접 보지 못한 위조를 단정한 본인 동기와, 본인 자신의 책임 부재라는 가정의 근거를 분리해 답하게 한다.",
+          "text": "윤태성 씨, 문서 차이를 동생의 책임으로 판단하게 된 본인 쪽 이유를 설명해 주십시오.",
+          "behaviorHint": "문서 차이를 책임 판단으로 옮긴 근거를 기록 중심으로 분리하게 한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:a",
@@ -4238,8 +4238,8 @@
         },
         {
           "id": "judgeq-d-2-motive_search-a-forgery_responsibility-v2",
-          "text": "본인이 의심하는 동기를 형으로서 단정의 자격으로 옮긴 자리가 있다면, 그 옮김의 이유를 말씀해 주십시오.",
-          "behaviorHint": "동기 탐색. 직접 보지 못한 위조를 단정한 본인 동기와, 본인 자신의 책임 부재라는 가정의 근거를 분리해 답하게 한다.",
+          "text": "직접 본 장면이 부족한 상태에서도 책임을 단정하게 된 판단의 출발점은 무엇이었습니까.",
+          "behaviorHint": "문서 차이를 책임 판단으로 옮긴 근거를 기록 중심으로 분리하게 한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:a",
@@ -4250,8 +4250,8 @@
         },
         {
           "id": "judgeq-d-2-motive_search-a-forgery_responsibility-v3",
-          "text": "본인의 단정에 본인이 받게 될 몫에 대한 기대가 섞인 부분이 있었는지 답하십시오.",
-          "behaviorHint": "동기 탐색. 직접 보지 못한 위조를 단정한 본인 동기와, 본인 자신의 책임 부재라는 가정의 근거를 분리해 답하게 한다.",
+          "text": "문서 차이를 본 뒤 분노와 법적 책임 판단이 한꺼번에 움직인 지점이 있다면 말씀해 주십시오.",
+          "behaviorHint": "문서 차이를 책임 판단으로 옮긴 근거를 기록 중심으로 분리하게 한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:a",
@@ -4262,8 +4262,8 @@
         },
         {
           "id": "judgeq-d-2-motive_search-a-forgery_responsibility-v4",
-          "text": "동생의 책임을 단정하면서 본인 자신은 그 자리에 어떤 책임도 없다고 본 판단의 근거가 무엇입니까.",
-          "behaviorHint": "동기 탐색. 직접 보지 못한 위조를 단정한 본인 동기와, 본인 자신의 책임 부재라는 가정의 근거를 분리해 답하게 한다.",
+          "text": "동생의 동기를 탐욕으로 읽은 이유와, 지금 새로 확인되는 문서 차이를 어떻게 나누고 있는지 답하십시오.",
+          "behaviorHint": "문서 차이를 책임 판단으로 옮긴 근거를 기록 중심으로 분리하게 한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:a",
@@ -4274,8 +4274,8 @@
         },
         {
           "id": "judgeq-d-2-motive_search-a-forgery_responsibility-v5",
-          "text": "윤태성 씨, 본인이 직접 확인할 수 없는 영역에 대해 단정 대신 묻기로 미뤘다면, 그 미룬 이유는 무엇이었습니까.",
-          "behaviorHint": "동기 탐색. 직접 보지 못한 위조를 단정한 본인 동기와, 본인 자신의 책임 부재라는 가정의 근거를 분리해 답하게 한다.",
+          "text": "어머니 문서 문제를 가족 감정이 아니라 책임 문제로 본 이유를 말씀해 주십시오.",
+          "behaviorHint": "문서 차이를 책임 판단으로 옮긴 근거를 기록 중심으로 분리하게 한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:a",
@@ -4294,8 +4294,8 @@
       "variants": [
         {
           "id": "judgeq-d-2-motive_search-b-forgery_responsibility-v1",
-          "text": "윤정후 씨, 동기가 무엇이든 어머니 문서에 손댄 사실 자체를 인정하지 않고 미룬 이유가 무엇입니까.",
-          "behaviorHint": "동기 탐색. 동기와 별개로 어머니 문서에 손댄 사실 자체를 인정하지 않고 미룬 본인 결정의 동기를 답하게 한다.",
+          "text": "윤정후 씨, 문서 차이를 알고도 바로 설명하지 않은 이유가 무엇인지 말씀해 주십시오.",
+          "behaviorHint": "어머니 문서 처리 과정의 본인 역할과 책임을 단계적으로 답하게 한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:b",
@@ -4306,8 +4306,8 @@
         },
         {
           "id": "judgeq-d-2-motive_search-b-forgery_responsibility-v2",
-          "text": "본인이 그 자리에서 가장 가까이 있었다는 사실은 인정하셨으니, 그 가까움이 본인 책임에 어떻게 이어지는지 본인 선에서 답하십시오.",
-          "behaviorHint": "동기 탐색. 동기와 별개로 어머니 문서에 손댄 사실 자체를 인정하지 않고 미룬 본인 결정의 동기를 답하게 한다.",
+          "text": "그 책임을 인정하는 일과 그때의 동기를 설명하는 일이 본인 안에서 어떻게 달랐는지 답하십시오.",
+          "behaviorHint": "어머니 문서 처리 과정의 본인 역할과 책임을 단계적으로 답하게 한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:b",
@@ -4318,8 +4318,8 @@
         },
         {
           "id": "judgeq-d-2-motive_search-b-forgery_responsibility-v3",
-          "text": "보호 명분이 본인에게 면죄의 자격을 주지 않는다는 점을 어디까지 본인 안에서 정리하고 계셨는지 설명하십시오.",
-          "behaviorHint": "동기 탐색. 동기와 별개로 어머니 문서에 손댄 사실 자체를 인정하지 않고 미룬 본인 결정의 동기를 답하게 한다.",
+          "text": "어머니 문서를 둘러싼 책임을 미루게 만든 가장 큰 이유가 무엇이었습니까.",
+          "behaviorHint": "어머니 문서 처리 과정의 본인 역할과 책임을 단계적으로 답하게 한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:b",
@@ -4330,8 +4330,8 @@
         },
         {
           "id": "judgeq-d-2-motive_search-b-forgery_responsibility-v4",
-          "text": "본인 몫이 줄어든 결과가 본인의 위법 책임을 가려 준다고 본 부분이 있었다면, 그 판단의 이유를 답하십시오.",
-          "behaviorHint": "동기 탐색. 동기와 별개로 어머니 문서에 손댄 사실 자체를 인정하지 않고 미룬 본인 결정의 동기를 답하게 한다.",
+          "text": "형에게 말하지 않은 시간이 길어진 이유와 그 사이 본인이 두려워한 결과를 나눠 말씀해 주십시오.",
+          "behaviorHint": "어머니 문서 처리 과정의 본인 역할과 책임을 단계적으로 답하게 한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:b",
@@ -4342,8 +4342,8 @@
         },
         {
           "id": "judgeq-d-2-motive_search-b-forgery_responsibility-v5",
-          "text": "윤정후 씨, 본인이 한 행위와 그 행위의 동기를 분리해 인정할 수 있는 부분을 먼저 말씀해 주십시오.",
-          "behaviorHint": "동기 탐색. 동기와 별개로 어머니 문서에 손댄 사실 자체를 인정하지 않고 미룬 본인 결정의 동기를 답하게 한다.",
+          "text": "동기와 별개로 책임을 받아들여야 한다는 점을 언제부터 알았는지 답하십시오.",
+          "behaviorHint": "어머니 문서 처리 과정의 본인 역할과 책임을 단계적으로 답하게 한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:b",
@@ -4362,8 +4362,8 @@
       "variants": [
         {
           "id": "judgeq-d-2-empathy_approach-a-forgery_responsibility-v1",
-          "text": "윤태성 씨, 어머니의 문서에 손이 닿았다는 의심을 가족 안에서 꺼내는 일이 본인에게도 큰 결단이었을 것입니다. 본인이 어떤 근거로 그 단어에 이르렀는지부터 말씀해 주십시오.",
-          "behaviorHint": "공감 접근. 의심을 꺼낸 무게를 인정하되, 본인이 본 근거와 단정을 분리하게 한다.",
+          "text": "윤태성 씨, 어머니 문서 문제를 가족 안에서 꺼내는 일 자체가 무거웠을 것입니다. 그 말을 책임 문제로 꺼낸 순간의 마음을 말씀해 주십시오.",
+          "behaviorHint": "문서 차이를 책임 판단으로 옮긴 근거를 기록 중심으로 분리하게 한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:a",
@@ -4374,8 +4374,8 @@
         },
         {
           "id": "judgeq-d-2-empathy_approach-a-forgery_responsibility-v2",
-          "text": "의심이 사실이라 해도 가족이 무너진다는 무게가 함께 있었을 수 있습니다. 본인이 직접 확인한 부분과 추정으로 채운 부분을 나눠 말씀해 주십시오.",
-          "behaviorHint": "공감 접근. 의심을 꺼낸 무게를 인정하되, 본인이 본 근거와 단정을 분리하게 한다.",
+          "text": "의심을 말하는 일과 가족을 고발하는 일 사이에서 본인이 망설인 지점이 있었다면 그 결을 들려주십시오.",
+          "behaviorHint": "문서 차이를 책임 판단으로 옮긴 근거를 기록 중심으로 분리하게 한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:a",
@@ -4386,8 +4386,8 @@
         },
         {
           "id": "judgeq-d-2-empathy_approach-a-forgery_responsibility-v3",
-          "text": "윤태성 씨, 동생을 위조의 주체로 단정하라는 자리는 아닙니다. 다만 본인이 본 자료에서 어떤 부분이 가장 흔들리지 않는 근거인지부터 짚어 주십시오.",
-          "behaviorHint": "공감 접근. 의심을 꺼낸 무게를 인정하되, 본인이 본 근거와 단정을 분리하게 한다.",
+          "text": "어머니의 문서가 다르게 남았다는 사실이 본인에게 어떤 배신감으로 닿았는지, 사실과 감정을 나눠 말씀해 주십시오.",
+          "behaviorHint": "문서 차이를 책임 판단으로 옮긴 근거를 기록 중심으로 분리하게 한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:a",
@@ -4398,8 +4398,8 @@
         },
         {
           "id": "judgeq-d-2-empathy_approach-a-forgery_responsibility-v4",
-          "text": "위조라는 단어를 꺼낸 뒤 본인 안에 남은 두려움이 있다면 그 마음부터 말씀해 주십시오. 그래야 본인 의심이 어느 자리에 서 있는지 가릴 수 있습니다.",
-          "behaviorHint": "공감 접근. 의심을 꺼낸 무게를 인정하되, 본인이 본 근거와 단정을 분리하게 한다.",
+          "text": "동생의 책임을 묻는 말이 본인에게도 쉽지 않았을 수 있습니다. 그래도 그 말을 하게 된 이유를 말씀해 주십시오.",
+          "behaviorHint": "문서 차이를 책임 판단으로 옮긴 근거를 기록 중심으로 분리하게 한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:a",
@@ -4410,8 +4410,8 @@
         },
         {
           "id": "judgeq-d-2-empathy_approach-a-forgery_responsibility-v5",
-          "text": "윤태성 씨, 누가 무엇을 했다는 결론과 본인이 본 사실은 다른 차원입니다. 본인이 확인한 만큼만 분리해 말씀해 주십시오.",
-          "behaviorHint": "공감 접근. 의심을 꺼낸 무게를 인정하되, 본인이 본 근거와 단정을 분리하게 한다.",
+          "text": "어머니 문서 앞에서 분노가 먼저였는지, 확인해야 한다는 마음이 먼저였는지부터 말씀해 주십시오.",
+          "behaviorHint": "문서 차이를 책임 판단으로 옮긴 근거를 기록 중심으로 분리하게 한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:a",
@@ -4430,8 +4430,8 @@
       "variants": [
         {
           "id": "judgeq-d-2-empathy_approach-b-forgery_responsibility-v1",
-          "text": "윤정후 씨, 어머니의 문서에 손댔다는 단어가 본인 위에 얹히는 무게는 가볍지 않을 것입니다. 그 단어를 받아들이는 일과 별개로, 본인이 그 종이를 어디서 어떻게 다뤘는지부터 말씀해 주십시오.",
-          "behaviorHint": "공감 접근. 책임 단어의 무게를 인정하되, 동기와 사실 행위를 분리해 말하게 한다.",
+          "text": "윤정후 씨, 어머니 문서에 대한 책임이라는 말이 본인에게도 가볍지 않을 것입니다. 그 무게를 피하지 말고 지금 말할 수 있는 범위부터 답해 주십시오.",
+          "behaviorHint": "어머니 문서 처리 과정의 본인 역할과 책임을 단계적으로 답하게 한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:b",
@@ -4442,8 +4442,8 @@
         },
         {
           "id": "judgeq-d-2-empathy_approach-b-forgery_responsibility-v2",
-          "text": "본인이 어머니를 위해 한 일이라고 믿더라도, 그 결과의 모양에는 책임이 따른다는 것을 본인도 짐작하실 것입니다. 그 두 결을 솔직히 말씀해 주십시오.",
-          "behaviorHint": "공감 접근. 책임 단어의 무게를 인정하되, 동기와 사실 행위를 분리해 말하게 한다.",
+          "text": "형 앞에서 문서 책임을 말해야 하는 자리가 본인에게 어떤 부담으로 남았는지 들려주십시오.",
+          "behaviorHint": "어머니 문서 처리 과정의 본인 역할과 책임을 단계적으로 답하게 한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:b",
@@ -4454,8 +4454,8 @@
         },
         {
           "id": "judgeq-d-2-empathy_approach-b-forgery_responsibility-v3",
-          "text": "윤정후 씨, 동기를 지금 한 번에 풀 필요는 없습니다. 다만 본인이 그 종이를 직접 만진 시점과 다른 사람의 손을 거친 시점을 분리해 주십시오.",
-          "behaviorHint": "공감 접근. 책임 단어의 무게를 인정하되, 동기와 사실 행위를 분리해 말하게 한다.",
+          "text": "어머니 뜻을 담은 문서를 둘러싼 책임을 인정하는 일이 왜 늦어졌는지, 그 감정의 결부터 말씀해 주십시오.",
+          "behaviorHint": "어머니 문서 처리 과정의 본인 역할과 책임을 단계적으로 답하게 한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:b",
@@ -4466,8 +4466,8 @@
         },
         {
           "id": "judgeq-d-2-empathy_approach-b-forgery_responsibility-v4",
-          "text": "그 사실을 형에게 분명히 말하지 못한 시간이 길었다면, 그때 마음의 결을 말씀해 주십시오. 그것이 보호인지 회피인지에 따라 결론의 모양이 달라집니다.",
-          "behaviorHint": "공감 접근. 책임 단어의 무게를 인정하되, 동기와 사실 행위를 분리해 말하게 한다.",
+          "text": "책임을 인정하는 말이 변명으로 들릴까 두려웠다면, 그 두려움이 어떤 침묵으로 이어졌는지 답해 주십시오.",
+          "behaviorHint": "어머니 문서 처리 과정의 본인 역할과 책임을 단계적으로 답하게 한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:b",
@@ -4478,8 +4478,8 @@
         },
         {
           "id": "judgeq-d-2-empathy_approach-b-forgery_responsibility-v5",
-          "text": "윤정후 씨, 본인 의도가 무엇이었는지와 본인이 어머니 문서에 손을 댔다는 사실은 다른 차원의 문제입니다. 본인이 직접 한 일부터 분리해 말씀해 주십시오.",
-          "behaviorHint": "공감 접근. 책임 단어의 무게를 인정하되, 동기와 사실 행위를 분리해 말하게 한다.",
+          "text": "윤정후 씨, 문서 차이를 설명하지 못한 시간이 본인에게 어떻게 남아 있는지부터 말씀해 주십시오.",
+          "behaviorHint": "어머니 문서 처리 과정의 본인 역할과 책임을 단계적으로 답하게 한다.",
           "tags": [
             "channel:judge_question",
             "targetParty:b",
@@ -4839,7 +4839,7 @@
         {
           "id": "judgeq-d-3-empathy_approach-b-general-v1",
           "text": "윤정후 씨, 오랜 시간 말하지 않고 보낸 돈에 대해 한 번에 다 풀어내야 할 자리는 아닙니다. 다만 그 돈을 어머니 이름 앞으로 보낸 이유부터 본인이 말할 수 있는 만큼 들려주십시오.",
-          "behaviorHint": "공감 접근. 침묵으로 보낸 돈의 무게를 인정하되, 송금 행위와 침묵의 책임을 분리하게 한다. 공장 부도 대납 등 직접 확정 금지.",
+          "behaviorHint": "공감 접근. 침묵으로 보낸 돈의 무게를 인정하되, 송금 행위와 침묵의 책임을 분리하게 한다. 3억원 전달 출처 등 직접 확정 금지.",
           "tags": [
             "channel:judge_question",
             "targetParty:b",
@@ -4851,7 +4851,7 @@
         {
           "id": "judgeq-d-3-empathy_approach-b-general-v2",
           "text": "형에게 직접 건넸을 때 형의 자존심을 다칠까 봐 망설인 시간이 있었을 수 있습니다. 그 결을 솔직히 말씀해 주십시오.",
-          "behaviorHint": "공감 접근. 침묵으로 보낸 돈의 무게를 인정하되, 송금 행위와 침묵의 책임을 분리하게 한다. 공장 부도 대납 등 직접 확정 금지.",
+          "behaviorHint": "공감 접근. 침묵으로 보낸 돈의 무게를 인정하되, 송금 행위와 침묵의 책임을 분리하게 한다. 3억원 전달 출처 등 직접 확정 금지.",
           "tags": [
             "channel:judge_question",
             "targetParty:b",
@@ -4863,7 +4863,7 @@
         {
           "id": "judgeq-d-3-empathy_approach-b-general-v3",
           "text": "윤정후 씨, 본인이 보낸 돈의 모든 사용처를 지금 다 풀 필요는 없습니다. 다만 본인이 직접 보낸 돈과 어머니 손을 거쳐 형에게 간 돈을 분리해 주십시오.",
-          "behaviorHint": "공감 접근. 침묵으로 보낸 돈의 무게를 인정하되, 송금 행위와 침묵의 책임을 분리하게 한다. 공장 부도 대납 등 직접 확정 금지.",
+          "behaviorHint": "공감 접근. 침묵으로 보낸 돈의 무게를 인정하되, 송금 행위와 침묵의 책임을 분리하게 한다. 3억원 전달 출처 등 직접 확정 금지.",
           "tags": [
             "channel:judge_question",
             "targetParty:b",
@@ -4875,7 +4875,7 @@
         {
           "id": "judgeq-d-3-empathy_approach-b-general-v4",
           "text": "보낸 돈을 두고 본인 안에 남은 부담이 있다면 그 마음을 말씀해 주십시오. 그것이 형에 대한 보호인지 본인을 위한 거리 두기인지에 따라 책임의 결이 달라집니다.",
-          "behaviorHint": "공감 접근. 침묵으로 보낸 돈의 무게를 인정하되, 송금 행위와 침묵의 책임을 분리하게 한다. 공장 부도 대납 등 직접 확정 금지.",
+          "behaviorHint": "공감 접근. 침묵으로 보낸 돈의 무게를 인정하되, 송금 행위와 침묵의 책임을 분리하게 한다. 3억원 전달 출처 등 직접 확정 금지.",
           "tags": [
             "channel:judge_question",
             "targetParty:b",
@@ -4887,7 +4887,7 @@
         {
           "id": "judgeq-d-3-empathy_approach-b-general-v5",
           "text": "윤정후 씨, 돈을 보냈다는 사실과 보낸 사실을 말하지 않은 일은 다른 차원입니다. 두 가지를 나누어, 본인이 한 일부터 말씀해 주십시오.",
-          "behaviorHint": "공감 접근. 침묵으로 보낸 돈의 무게를 인정하되, 송금 행위와 침묵의 책임을 분리하게 한다. 공장 부도 대납 등 직접 확정 금지.",
+          "behaviorHint": "공감 접근. 침묵으로 보낸 돈의 무게를 인정하되, 송금 행위와 침묵의 책임을 분리하게 한다. 3억원 전달 출처 등 직접 확정 금지.",
           "tags": [
             "channel:judge_question",
             "targetParty:b",
@@ -4906,7 +4906,7 @@
       "variants": [
         {
           "id": "judgeq-d-3-fact_pursuit-a-long_support_flow-v1",
-          "text": "윤태성 씨, 어머니로부터 받았다고 본인이 알고 있던 생활비가 어느 시기부터 어느 시기까지 들어왔는지 본인이 기억하는 흐름대로 말씀해 주십시오.",
+          "text": "윤태성 씨, 어머니로부터 받았다고 본인이 알고 있던 정기 지원금이 어느 시기부터 어느 시기까지 들어왔는지 본인이 기억하는 흐름대로 말씀해 주십시오.",
           "behaviorHint": "사실 추궁. 받은 회차와 사용처를 윤태성이 본 사실로 답하게 한다.",
           "tags": [
             "channel:judge_question",
@@ -4974,7 +4974,7 @@
       "variants": [
         {
           "id": "judgeq-d-3-fact_pursuit-b-long_support_flow-v1",
-          "text": "윤정후 씨, 형에게 보내진 생활비 가운데 본인이 직접 송금에 관여한 회차를 시간순으로 말씀해 주십시오.",
+          "text": "윤정후 씨, 형에게 보내진 정기 지원금 가운데 본인이 직접 송금에 관여한 회차를 시간순으로 말씀해 주십시오.",
           "behaviorHint": "사실 추궁. 송금 회차의 출처와 경로를 윤정후 본인 행동 단위로 답하게 한다.",
           "tags": [
             "channel:judge_question",
@@ -6063,7 +6063,7 @@
         {
           "id": "judgeq-d-3-empathy_approach-b-factory_crisis_support-v1",
           "text": "윤정후 씨, 형의 위기를 두고만 볼 수 없었던 시기가 있었다면, 그때 본인이 어떤 결단을 했는지를 본인이 가장 잘 알고 계실 것입니다. 그 결단의 결을 지금 말할 수 있는 만큼 들려주십시오.",
-          "behaviorHint": "공감 접근. 위기 시기 결단의 무게를 인정하되, 송금 행위와 침묵을 분리하게 한다. 공장 부도 대납 직접 확정 금지.",
+          "behaviorHint": "공감 접근. 위기 시기 결단의 무게를 인정하되, 송금 행위와 침묵을 분리하게 한다. 3억원 전달 출처 직접 확정 금지.",
           "tags": [
             "channel:judge_question",
             "targetParty:b",
@@ -6075,7 +6075,7 @@
         {
           "id": "judgeq-d-3-empathy_approach-b-factory_crisis_support-v2",
           "text": "큰돈을 보내고도 본인 이름을 앞에 두지 못한 데 형에 대한 마음이 깊이 작용했을 수 있습니다. 그 마음의 결을 솔직히 풀어 주십시오.",
-          "behaviorHint": "공감 접근. 위기 시기 결단의 무게를 인정하되, 송금 행위와 침묵을 분리하게 한다. 공장 부도 대납 직접 확정 금지.",
+          "behaviorHint": "공감 접근. 위기 시기 결단의 무게를 인정하되, 송금 행위와 침묵을 분리하게 한다. 3억원 전달 출처 직접 확정 금지.",
           "tags": [
             "channel:judge_question",
             "targetParty:b",
@@ -6087,7 +6087,7 @@
         {
           "id": "judgeq-d-3-empathy_approach-b-factory_crisis_support-v3",
           "text": "윤정후 씨, 그 자금의 사용처를 한 번에 다 풀 필요는 없습니다. 다만 본인이 그 큰돈을 어떤 경로로 어디에 보냈는지부터 정리해 주십시오.",
-          "behaviorHint": "공감 접근. 위기 시기 결단의 무게를 인정하되, 송금 행위와 침묵을 분리하게 한다. 공장 부도 대납 직접 확정 금지.",
+          "behaviorHint": "공감 접근. 위기 시기 결단의 무게를 인정하되, 송금 행위와 침묵을 분리하게 한다. 3억원 전달 출처 직접 확정 금지.",
           "tags": [
             "channel:judge_question",
             "targetParty:b",
@@ -6099,7 +6099,7 @@
         {
           "id": "judgeq-d-3-empathy_approach-b-factory_crisis_support-v4",
           "text": "위기 이후에도 그 일을 입에 올리지 않은 시간이 있다면 그 결을 말씀해 주십시오. 그것이 형의 자존심을 위한 침묵인지 본인의 거리 두기인지에 따라 무게가 달라집니다.",
-          "behaviorHint": "공감 접근. 위기 시기 결단의 무게를 인정하되, 송금 행위와 침묵을 분리하게 한다. 공장 부도 대납 직접 확정 금지.",
+          "behaviorHint": "공감 접근. 위기 시기 결단의 무게를 인정하되, 송금 행위와 침묵을 분리하게 한다. 3억원 전달 출처 직접 확정 금지.",
           "tags": [
             "channel:judge_question",
             "targetParty:b",
@@ -6111,7 +6111,7 @@
         {
           "id": "judgeq-d-3-empathy_approach-b-factory_crisis_support-v5",
           "text": "윤정후 씨, 큰돈을 보냈다는 사실과 보낸 사실을 말하지 않은 일은 다른 차원입니다. 본인이 한 일과 한 침묵을 분리해 말씀해 주십시오.",
-          "behaviorHint": "공감 접근. 위기 시기 결단의 무게를 인정하되, 송금 행위와 침묵을 분리하게 한다. 공장 부도 대납 직접 확정 금지.",
+          "behaviorHint": "공감 접근. 위기 시기 결단의 무게를 인정하되, 송금 행위와 침묵을 분리하게 한다. 3억원 전달 출처 직접 확정 금지.",
           "tags": [
             "channel:judge_question",
             "targetParty:b",

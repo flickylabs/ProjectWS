@@ -22,7 +22,7 @@ The policy JSON follows the actual generated shape. `_schema.md`, spouse-01 poli
 | `e-1` | `최수민→예비신랑 연락 기록` | `예비신랑 연락 기록` | Contact count is visible; warning intent is gated. |
 | `e-2` | `공통 친구 단톡방 캡처` | same | Safe as public-post evidence; legal/ethical conclusion is gated. |
 | `e-3` | `과거 손절 직전 카톡` | same | `돈 문제` is visible, but father/fraud detail is gated. |
-| `e-4` | `예비신랑의 선넘는 메시지와 B의 거절 답장` | `예비신랑 메시지와 답장` | Sender direction is high-risk before Original/Context. |
+| `e-4` | `예비신랑의 선 넘는 메시지와 최수민의 거절 답장` | `예비신랑 메시지와 답장` | Sender direction is high-risk before Original/Context. |
 | `e-5` | `송다은 아버지와 예비신랑의 문자` | `아버지와 예비신랑의 문자` | Current money request is visible by depth; pattern conclusion is gated. |
 | `e-6` | `과거 송금 영수증 + 문자` | `과거 송금 기록과 문자` | Fraud wording is gated to player-discovered deep route. |
 | `e-7` | `과거·현재 대조표` | same | Pattern repetition is a late-route discovery, not protected-channel prompt text. |
@@ -58,14 +58,14 @@ The policy JSON follows the actual generated shape. `_schema.md`, spouse-01 poli
 | `friend-01-dossier-cards.dc-2.description` | `예비신랑이 먼저 경계를 넘었다는 반전` | Dossier risk before solve | Dossier-gated; protected prompt should say `선후관계`. |
 | `friend-01-dossier-cards.dc-4.successEffects` | `사기 피해 맥락` | Dossier risk before d-4 | Use `금전 문제 맥락` before gate. |
 | `evidence.e-6.v3DepthPlan.Established.summary` | `A 아버지의 사기 패턴 확정` | Allowed only in player-discovered evidence detail | Protected channels remain surface-only. |
-| `evidence.e-7.v3DepthPlan.Established.summary` | `A 아버지의 반복 패턴과 B의 반복 침묵 확정` | Allowed only in player-discovered evidence detail | Protected channels remain surface-only. |
+| `evidence.e-7.v3DepthPlan.Established.summary` | `A 아버지의 반복 패턴과 최수민의 반복 침묵 확정` | Allowed only in player-discovered evidence detail | Protected channels remain surface-only. |
 
 ## discoveryText Gate Candidates
 
 | Recipe | Inputs | Truth terms | Draft gate |
 |---|---|---|---|
 | `combine-1` | `e-1`, `e-2` | 확인 없이 프레이밍 | d-1/d-5 early gate + e-1 Original/e-2 Excerpt. |
-| `combine-2` | `e-1`, `e-4` | 예비신랑이 먼저, 선넘는 메시지 | d-2 stage 2 + e-4 Original. |
+| `combine-2` | `e-1`, `e-4` | 예비신랑이 먼저, 선 넘는 메시지 | d-2 stage 2 + e-4 Original. |
 | `combine-3` | `e-5`, `e-6` | 같은 패턴, 아버지 돈 접근 | d-3 stage 3 + e-5/e-6 Original. |
 | `combine-4` | `e-4`, `e-7` | 경고였다는 결론 | d-1/d-2 stage 3 + e-7 Original. |
 | `combine-5` | `stmt-a-accusation`, `e-2` | 단톡방 확산 | d-5 stage 2 + e-2 Original. |

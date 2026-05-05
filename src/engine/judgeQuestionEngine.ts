@@ -309,7 +309,7 @@ function interpolate(template: string, values: Record<string, string>): string {
 export function extractDisputeSubject(disputeName: string): string {
   let subject = disputeName
 
-  // 1) "X의 " 소유격 접두 제거 (예: "예비신랑의 선넘는 접근" → "선넘는 접근")
+  // 1) "X의 " 소유격 접두 제거 (예: "예비신랑의 선 넘는 접근" → "선 넘는 접근")
   subject = subject.replace(/^[가-힣]+의\s+/, '')
 
   // 2) 조사적 프레이밍 제거 — 이것들은 질문에 넣으면 부자연스러움

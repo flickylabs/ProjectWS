@@ -537,7 +537,7 @@ function scanVisibleText(ctx, findings, item) {
 function detectTruthLexemeLeaks(ctx, findings, item, text) {
   const surfaceLexemes = getSurfaceOnlyLexemes(ctx.policy, item.channel);
   const surfaceMatches = matchLexemes(text, surfaceLexemes);
-  if (surfaceMatches.length > 0) {
+  if (surfaceMatches.length > 0 && !hasEvidenceStageRevealAuthority(item)) {
     addFinding(findings, {
       ...findingBase(item),
       severity: 'P0',
@@ -586,6 +586,11 @@ function detectTruthLexemeLeaks(ctx, findings, item, text) {
       });
     }
   }
+}
+
+function hasEvidenceStageRevealAuthority(item) {
+  if (!item.evidenceId) return false;
+  return (item.evidenceStage ?? 0) >= 3 || item.playerDiscovered;
 }
 
 function detectEvidenceStageLeaks(ctx, findings, item, text) {

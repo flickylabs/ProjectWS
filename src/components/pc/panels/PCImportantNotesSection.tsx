@@ -7,6 +7,7 @@ import PCSvgIcon from '../icons/PCSvgIcon'
 import { openPcInteractionPanel } from '../layout/PCInteractionPanel'
 import { jumpToDialogue } from '../observation/JudgeObservationSection'
 import { hasContradictionComparison } from '../../../utils/contradiction'
+import { sanitizeKoreanSurfaceText } from '../../../utils/korean'
 
 export const PC_ADD_COMBINATION_NOTE_EVENT = 'pc:add-combination-note'
 
@@ -244,7 +245,7 @@ export default function PCImportantNotesSection() {
       subtitle: isPinned ? '즐겨찾기' : '발언 기록',
       tone: note.speaker === 'a' ? 'red' : note.speaker === 'b' ? 'blue' : 'gold',
       variant: 'dialogue',
-      body: note.text,
+      body: sanitizeKoreanSurfaceText(note.text),
       dialogueTurn: note.turn,
       dialogueSpeaker: note.speaker,
       dialogueSpeakerName: speakerNameMap.get(note.speaker) ?? '발언',
@@ -265,7 +266,7 @@ export default function PCImportantNotesSection() {
     event.dataTransfer.effectAllowed = 'copyMove'
     event.dataTransfer.setData(HOTBAR_DRAG_TYPE, JSON.stringify({ kind: 'note', note }))
     event.dataTransfer.setData(NOTE_DRAG_TYPE, JSON.stringify(note))
-    event.dataTransfer.setData('text/plain', getNoteSummary(note.text))
+    event.dataTransfer.setData('text/plain', getNoteSummary(sanitizeKoreanSurfaceText(note.text)))
   }, [])
 
   /* ━━━ Favorites reorder via drag ━━━ */
@@ -527,7 +528,7 @@ function FavoriteCard({
         <span className="pc-note-card__tag">{tag}</span>
       </div>
       <div className="pc-note-card__body">
-        <div className="pc-note-card__summary">{getNoteSummary(note.text)}</div>
+        <div className="pc-note-card__summary">{getNoteSummary(sanitizeKoreanSurfaceText(note.text))}</div>
       </div>
       {comboHint && (comboHint.readyCount > 0 || comboHint.potentialCount > 0) ? (
         <span className="pc-note-card__combo" title={comboTitle}>
@@ -575,7 +576,7 @@ function ExpandedNoteCard({
           <StarIcon size={14} filled={isFav} />
         </button>
       </div>
-      <div className="pc-note-expanded-card__text">{note.text}</div>
+      <div className="pc-note-expanded-card__text">{sanitizeKoreanSurfaceText(note.text)}</div>
     </div>
   )
 }
@@ -598,7 +599,7 @@ function ExpandedNoteEntry({
       onDragEnd={onDragEnd}
     >
       <span className="pc-notes-compare__turn">T{note.turn}</span>
-      <span className="pc-notes-compare__text">{note.text}</span>
+      <span className="pc-notes-compare__text">{sanitizeKoreanSurfaceText(note.text)}</span>
       {contradictionMeta ? <span className="pc-notes-compare__flash">&#x26A1;</span> : null}
       <button className={`pc-notes-compare__pin${isFav ? ' is-fav' : ''}`} onClick={(event) => { event.stopPropagation(); onToggleFav() }} title={isFav ? '즐겨찾기 해제' : '즐겨찾기 추가'} type="button">
         <StarIcon size={12} filled={isFav} />

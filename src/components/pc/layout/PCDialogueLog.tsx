@@ -9,6 +9,7 @@ import { HOTBAR_DRAG_TYPE } from '../hotbar/pcHotbarConfig'
 import { hasContradictionComparison } from '../../../utils/contradiction'
 import { isLowValueSystemDialogueText } from '../../../utils/systemLogPolicy'
 import { getWitnessPortraitPath } from '../../../utils/witnessPortraits'
+import { sanitizeKoreanSurfaceText } from '../../../utils/korean'
 
 const CHAT_NOTE_DRAG_TYPE = 'application/x-pc-note'
 
@@ -56,7 +57,7 @@ function MessageBubble({ entry, animate, combinableTexts, combinationHintMap, is
   const agentB = useStore((s) => s.agentB)
   const pendingFeedback = useStore((s) => s.dialoguePendingFeedback[entry.id])
   const currentTurn = useStore((s) => s.turnCount)
-  const rawText = entry.text ?? ''
+  const rawText = sanitizeKoreanSurfaceText(entry.text ?? '')
   const displayText = useRevealText(rawText, animate)
   const fullText = rawText.trim()
   const nameA = caseData?.duo.partyA.name ?? '당사자 A'

@@ -8,6 +8,7 @@ import PCSvgIcon from '../icons/PCSvgIcon'
 import PCCharacterPortrait from '../icons/PCCharacterPortrait'
 import { jumpToDialogue } from '../observation/JudgeObservationSection'
 import { getWitnessPortraitPath } from '../../../utils/witnessPortraits'
+import { sanitizeKoreanSurfaceText } from '../../../utils/korean'
 import { emitVerdictCtaCollapsed } from './verdictAdvanceEvents'
 
 export const PC_OPEN_INTERACTION_PANEL_EVENT = 'pc:open-interaction-panel'
@@ -765,6 +766,7 @@ export default function PCInteractionPanel() {
     return null
   }
 
+  const sanitizedBody = sanitizeKoreanSurfaceText(payload.body ?? '')
   const softPopup = payload.backdrop === false
   const wrapperClass = softPopup ? 'pc-interaction-softpop' : 'pc-interaction-overlay'
   const cardExtra = softPopup ? ' pc-interaction-card--softpop' : ''
@@ -818,7 +820,7 @@ export default function PCInteractionPanel() {
           <WitnessDetailSection onAction={handleAction} />
         ) : payload.variant === 'evidence' ? (
           <div className="pc-interaction-card__body pc-ev-body-wrap">
-            <span>{payload.body}</span>
+            <span>{sanitizedBody}</span>
             {payload.evidenceId ? (
               <button className="pc-ev-viewer-btn" onClick={() => handleAction({ kind: 'open_evidence', label: '증거 열람', evidenceId: payload.evidenceId })} type="button">
                 증거 열람
@@ -828,32 +830,32 @@ export default function PCInteractionPanel() {
         ) : payload.contrast ? (
           // [TC-A1 D1] vs 구도 — 모순 추궁 모달이 모순 감지 모달과 동일한 좌/우 + VS 형태로 통일
           <div className="pc-interaction-card__contrast-wrap">
-            {payload.body ? <div className="pc-interaction-card__contrast-intro">{payload.body}</div> : null}
+            {sanitizedBody ? <div className="pc-interaction-card__contrast-intro">{sanitizedBody}</div> : null}
             <div className="pc-interaction-card__contrast">
               <div className="pc-interaction-card__contrast-side is-left">
                 <div className="pc-interaction-card__contrast-label">{payload.contrast.left.label}</div>
-                <div className="pc-interaction-card__contrast-text">"{payload.contrast.left.text}"</div>
+                <div className="pc-interaction-card__contrast-text">"{sanitizeKoreanSurfaceText(payload.contrast.left.text)}"</div>
               </div>
               <div className="pc-interaction-card__contrast-vs" aria-hidden="true">
                 <span>VS</span>
               </div>
               <div className="pc-interaction-card__contrast-side is-right">
                 <div className="pc-interaction-card__contrast-label">{payload.contrast.right.label}</div>
-                <div className="pc-interaction-card__contrast-text">"{payload.contrast.right.text}"</div>
+                <div className="pc-interaction-card__contrast-text">"{sanitizeKoreanSurfaceText(payload.contrast.right.text)}"</div>
               </div>
             </div>
             {payload.blocks?.length ? (
               <div className="pc-interaction-card__contrast-intro">
                 {payload.blocks.map((block) => (
                   <div key={block.title}>
-                    <strong>{block.title}</strong>: {block.text}
+                    <strong>{block.title}</strong>: {sanitizeKoreanSurfaceText(block.text)}
                   </div>
                 ))}
               </div>
             ) : null}
           </div>
         ) : (
-          <div className="pc-interaction-card__body">{payload.body}</div>
+          <div className="pc-interaction-card__body">{sanitizedBody}</div>
         )}
 
         {payload.variant === 'evidence' && payload.evidenceId ? (
@@ -1038,6 +1040,8 @@ function DialogueDetailSection({ payload, onClose }: { payload: PcInteractionPay
   const disputes = caseData?.disputes ?? []
   const relatedIds = payload.dialogueDisputeIds ?? []
   const relatedNames = relatedIds.map((id) => disputes.find((d) => d.id === id)?.name).filter(Boolean) as string[]
+  const body = sanitizeKoreanSurfaceText(payload.body ?? '')
+  const behaviorHint = payload.dialogueBehaviorHint ? sanitizeKoreanSurfaceText(payload.dialogueBehaviorHint) : undefined
   const speakerClass = SPEAKER_TONE_CLASS[payload.dialogueSpeaker ?? ''] ?? ''
   const speakerIconId = payload.dialogueSpeaker === 'a' ? 'i-man'
     : payload.dialogueSpeaker === 'b' ? 'i-woman'
@@ -1111,9 +1115,9 @@ function DialogueDetailSection({ payload, onClose }: { payload: PcInteractionPay
       <div className="pc-dialogue-popup__divider" />
 
       <div className="pc-dialogue-popup__body">
-        <div className="pc-dialogue-popup__speech">{payload.body}</div>
-        {payload.dialogueBehaviorHint ? (
-          <p className="pc-dialogue-popup__observation">{payload.dialogueBehaviorHint}</p>
+        <div className="pc-dialogue-popup__speech">{body}</div>
+        {behaviorHint ? (
+          <p className="pc-dialogue-popup__observation">{behaviorHint}</p>
         ) : null}
       </div>
     </div>

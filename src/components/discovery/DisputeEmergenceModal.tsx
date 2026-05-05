@@ -2,6 +2,7 @@
  * 숨겨진 쟁점 발현 모달 — 새로운 쟁점이 드러났을 때
  */
 import { useStore } from '../../store/useGameStore'
+import { getSafeEmergenceTitle } from '../../data/safeEmergenceCopy'
 import Emoji from '../common/Emoji'
 
 const ROUTE_LABELS: Record<string, { icon: string; label: string }> = {
@@ -20,6 +21,7 @@ export default function DisputeEmergenceModal() {
 
   const dispute = caseData.disputes.find((d) => d.id === event.disputeId)
   const routeInfo = ROUTE_LABELS[event.route] ?? { icon: '💡', label: '발견' }
+  const disputeTitle = getSafeEmergenceTitle(caseData.caseId, event.disputeId, dispute?.name ?? event.disputeId)
 
   return (
     <div className="fixed inset-0 z-50 bg-gray-950/90 flex items-center justify-center px-4">
@@ -40,7 +42,7 @@ export default function DisputeEmergenceModal() {
         {/* 쟁점 내용 */}
         <div className="px-5 py-4">
           <div className="bg-amber-950/30 border border-amber-800/40 rounded-xl p-4">
-            <div className="text-sm font-bold text-amber-300 mb-2">{dispute?.name ?? event.disputeId}</div>
+            <div className="text-sm font-bold text-amber-300 mb-2">{disputeTitle}</div>
             <p className="text-sm text-gray-300 leading-relaxed">{event.description}</p>
           </div>
         </div>

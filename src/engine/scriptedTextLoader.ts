@@ -28,6 +28,7 @@ import {
   getScriptedAngleJudgeQuestionOptions,
   getScriptedAngleJudgeQuestionVariants,
 } from './scriptedAngleTextLoader.ts'
+import { getStageAwareEvidencePresent } from '../data/evidencePresentationScripts'
 
 // 캐시: caseId → bundle
 const bundleCache = new Map<string, ScriptedTextBundle>()
@@ -41,8 +42,10 @@ const MAX_CONTEXT = 12
 
 function toEvidencePresentLieBand(lieState: ScriptedLieState): ScriptedLieBand {
   // S4는 "거의 무너짐"이지 완전 자백은 아니다. 증거 제시 응답의 full reveal은 S5에서만 쓴다.
-  if (lieState === 'S4') return 'mid'
-  return toScriptedLieBand(lieState)
+  // S0-S2 still deny, S3-S4 only partially yield, and only S5 fully opens.
+  if (lieState === 'S0' || lieState === 'S1' || lieState === 'S2') return 'early'
+  if (lieState === 'S3' || lieState === 'S4') return 'mid'
+  return 'late'
 }
 
 interface VariantTagMap {
@@ -544,6 +547,20 @@ function extractEvidenceQuestionTerms(questionText?: string): string[] {
     'GPS',
     '위치',
     '문자',
+    '메시지',
+    '카톡',
+    '단톡방',
+    '아버지',
+    '유서',
+    '유언장',
+    '공증',
+    '연습본',
+    '자필',
+    '일기',
+    '요양',
+    '방문',
+    '녹취록',
+    '증언',
     '계좌',
     '송금',
     '출금',
@@ -560,8 +577,21 @@ export function getScriptedEvidencePresent(
   lieState: string,
   subjectRole: string,
   questionText?: string,
+  investigationStage?: number,
 ): { text: string; behaviorHint: string } | null {
   const lieBand = toEvidencePresentLieBand(lieState as ScriptedLieState)
+  const normalizedCaseId = normalizeCaseKey(caseId)
+  const stageAware = getStageAwareEvidencePresent({
+    caseId: normalizedCaseId,
+    party,
+    evidenceId,
+    lieBand,
+    investigationStage,
+  })
+  if (stageAware) {
+    logScriptedHit(caseId, 'evidence_present', `${party}|${evidenceId}|${lieBand}|stage${investigationStage ?? 1}`)
+    return stageAware
+  }
   const key = buildEvidencePresentKey({
     party,
     evidenceId,
@@ -771,7 +801,13 @@ export function getScriptedJudgeQuestion(
     target,
   })
   if (angleVariants.length > 0) {
-    const variant = selectVariant(angleVariants, normalizeCaseKey(caseId), {
+    const generalVariants = angleVariants.filter((candidate) => {
+      const tags = parseTags(candidate.tags)
+      const angle = tags.answerAngle || tags.angleTag
+      return angle === GENERAL_QUESTION_ANGLE
+    })
+    const pool = generalVariants.length > 0 ? generalVariants : angleVariants
+    const variant = selectVariant(pool, normalizeCaseKey(caseId), {
       channel: 'judge_question',
       key,
       questionType,

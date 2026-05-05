@@ -93,3 +93,24 @@ export function resolveNameTemplate(
     },
   )
 }
+
+/**
+ * 출력 표면에서 발생한 한국어 호칭 깨짐을 보정한다.
+ *
+ * 일부 후처리/LLM 응답 경로에서 "어머님" 계열 표현이
+ * 일반 상대 지칭어와 잘못 결합되어 "어머상대방이"처럼 표시되는
+ * 사례가 있었다. 저장된 세이브/대화 로그에도 적용될 수 있도록
+ * 렌더 직전 텍스트에 한 번 더 통과시킨다.
+ */
+export function sanitizeKoreanSurfaceText(value: string): string {
+  if (!value) return value
+
+  return value
+    .replace(/어머상대방께서/g, '어머님께서')
+    .replace(/어머상대방께/g, '어머님께')
+    .replace(/어머상대방이/g, '어머님께서')
+    .replace(/어머상대방은/g, '어머님께서는')
+    .replace(/어머상대방을/g, '어머님을')
+    .replace(/어머상대방의/g, '어머님의')
+    .replace(/어머상대방/g, '어머님')
+}
