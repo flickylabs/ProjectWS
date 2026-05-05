@@ -35,6 +35,7 @@ export function isSoundEnabled() { return enabled }
 // ── MP3 파일 재생 ──
 
 const audioCache: Record<string, HTMLAudioElement> = {}
+const sfxCooldowns: Record<string, number> = {}
 
 function playFile(path: string, volume = 0.3) {
   if (!enabled) return
@@ -42,11 +43,27 @@ function playFile(path: string, volume = 0.3) {
     if (!audioCache[path]) {
       audioCache[path] = new Audio(path)
     }
-    const audio = audioCache[path]
+    const cached = audioCache[path]
+    const audio = cached.paused || cached.ended
+      ? cached
+      : cached.cloneNode(true) as HTMLAudioElement
     audio.volume = volume
     audio.currentTime = 0
     audio.play().catch(() => {})
   } catch { /* 무시 */ }
+}
+
+function playFileDelayed(path: string, volume: number, delayMs: number) {
+  if (!enabled) return
+  window.setTimeout(() => playFile(path, volume), delayMs)
+}
+
+function claimSfxSlot(key: string, cooldownMs: number): boolean {
+  const now = Date.now()
+  const lastPlayedAt = sfxCooldowns[key] ?? 0
+  if (now - lastPlayedAt < cooldownMs) return false
+  sfxCooldowns[key] = now
+  return true
 }
 
 // ── 합성음 폴백 (MP3 로드 실패 시 사용) ──
@@ -69,16 +86,76 @@ function _playTone(frequency: number, duration: number, type: OscillatorType = '
   } catch { /* 무시 */ }
 }
 
+function playFilteredNoise(
+  ctx: AudioContext,
+  at: number,
+  duration: number,
+  gainValue: number,
+  filterType: BiquadFilterType = 'bandpass',
+  frequency = 1800,
+  q = 1.8,
+) {
+  const bufferSize = Math.max(1, Math.floor(ctx.sampleRate * duration))
+  const buffer = ctx.createBuffer(1, bufferSize, ctx.sampleRate)
+  const data = buffer.getChannelData(0)
+  for (let i = 0; i < bufferSize; i += 1) {
+    const falloff = 1 - i / bufferSize
+    data[i] = (Math.random() * 2 - 1) * falloff
+  }
+  const source = ctx.createBufferSource()
+  const filter = ctx.createBiquadFilter()
+  const gain = ctx.createGain()
+  source.buffer = buffer
+  filter.type = filterType
+  filter.frequency.setValueAtTime(frequency, at)
+  filter.Q.value = q
+  gain.gain.setValueAtTime(gainValue, at)
+  gain.gain.exponentialRampToValueAtTime(0.001, at + duration)
+  source.connect(filter).connect(gain).connect(ctx.destination)
+  source.start(at)
+  source.stop(at + duration)
+}
+
+function playBassDrop(ctx: AudioContext, at: number, from: number, to: number, duration: number, gainValue: number) {
+  const osc = ctx.createOscillator()
+  const filter = ctx.createBiquadFilter()
+  const gain = ctx.createGain()
+  osc.type = 'sine'
+  osc.frequency.setValueAtTime(from, at)
+  osc.frequency.exponentialRampToValueAtTime(to, at + duration)
+  filter.type = 'lowpass'
+  filter.frequency.setValueAtTime(220, at)
+  gain.gain.setValueAtTime(0.001, at)
+  gain.gain.exponentialRampToValueAtTime(gainValue, at + 0.012)
+  gain.gain.exponentialRampToValueAtTime(0.001, at + duration)
+  osc.connect(filter).connect(gain).connect(ctx.destination)
+  osc.start(at)
+  osc.stop(at + duration)
+}
+
+function playElectricSnap(ctx: AudioContext, at: number, strength = 1) {
+  playFilteredNoise(ctx, at, 0.055, 0.07 * strength, 'bandpass', 3400, 5.5)
+  playFilteredNoise(ctx, at + 0.045, 0.085, 0.045 * strength, 'highpass', 2400, 1.1)
+  playCourtBeatSweep(ctx, at + 0.008, 1800, 120, 0.13, 'sawtooth', 0.042 * strength)
+  playCourtBeatTone(ctx, at + 0.028, 3200, 0.035, 'square', 0.028 * strength)
+}
+
+function playSparkCluster(ctx: AudioContext, at: number, frequencies: number[], gainValue: number) {
+  frequencies.forEach((frequency, index) => {
+    playCourtBeatTone(ctx, at + index * 0.045, frequency, 0.08, index % 2 === 0 ? 'triangle' : 'sine', gainValue)
+  })
+}
+
 // ── 게임 이벤트별 사운드 ──
 
 /** Phase 전환 */
 export function playPhaseTransition() {
-  playFile('/sfx/whoosh.mp3', 0.25)
+  playCutsceneSfx('phase_transition')
 }
 
 /** 거짓말 붕괴 */
 export function playLieCollapse() {
-  playFile('/sfx/reveal.mp3', 0.35)
+  playCutsceneSfx('lie_collapse')
 }
 
 /** 증거 제시 */
@@ -88,17 +165,24 @@ export function playEvidencePresent() {
 
 /** 증거 잠금 해제 */
 export function playEvidenceUnlock() {
-  playFile('/sfx/notification.mp3', 0.2)
+  playFile('/sfx/notification.mp3', 0.24)
+  playFileDelayed('/sfx/chime.mp3', 0.18, 190)
+  playElectricAura()
 }
 
 /** 증거 조합 격상 */
 export function playEvidenceUpgrade() {
-  playFile('/sfx/chime.mp3', 0.3)
+  playFile('/sfx/chime.mp3', 0.32)
+  playFileDelayed('/sfx/reveal.mp3', 0.2, 180)
+  withAudioContext((ctx) => {
+    const start = ctx.currentTime + 0.02
+    playSparkCluster(ctx, start, [523, 659, 784, 1047], 0.05)
+  })
 }
 
 /** 판결 확정 */
 export function playVerdictConfirm() {
-  playFile('/sfx/chime.mp3', 0.35)
+  playCutsceneSfx('verdict_gavel')
 }
 
 /** 클릭/선택 */
@@ -176,11 +260,130 @@ export function playObjection() {
   playFile('/sfx/alert.mp3', 0.4)
 }
 
+export type CutsceneSfxType =
+  | 'lie_collapse'
+  | 'contradiction_hit'
+  | 'emotional_burst'
+  | 'dispute_emergence'
+  | 'phase_transition'
+  | 'verdict_gavel'
+  | 'dramatic_reveal'
+
+export type LightningSfxIntensity = 'minor' | 'major'
+
+export function playElectricAura() {
+  if (!enabled || !claimSfxSlot('electric-aura', 120)) return
+  withAudioContext((ctx) => {
+    const start = ctx.currentTime + 0.012
+    playElectricSnap(ctx, start, 0.58)
+    playSparkCluster(ctx, start + 0.08, [1320, 1760, 2217], 0.026)
+  })
+}
+
+export function playLightningStrike(intensity: LightningSfxIntensity = 'major') {
+  if (!enabled) return
+  const isMajor = intensity === 'major'
+  if (!claimSfxSlot(`lightning-${intensity}`, isMajor ? 360 : 135)) return
+
+  duckBgmForCourtBeat(isMajor ? 980 : 520, isMajor ? 0.025 : 0.06)
+  playFile(isMajor ? '/sfx/tension.mp3' : '/sfx/whoosh.mp3', isMajor ? 0.3 : 0.18)
+  if (isMajor) {
+    playFileDelayed('/sfx/alert.mp3', 0.18, 55)
+    playFileDelayed('/sfx/reveal.mp3', 0.24, 190)
+  }
+
+  withAudioContext((ctx) => {
+    const start = ctx.currentTime + 0.018
+    playElectricSnap(ctx, start, isMajor ? 1.35 : 0.82)
+    playElectricSnap(ctx, start + (isMajor ? 0.12 : 0.085), isMajor ? 0.95 : 0.48)
+    playBassDrop(ctx, start + 0.035, isMajor ? 92 : 74, isMajor ? 34 : 46, isMajor ? 0.55 : 0.28, isMajor ? 0.2 : 0.09)
+    playFilteredNoise(ctx, start + 0.16, isMajor ? 0.58 : 0.26, isMajor ? 0.045 : 0.018, 'lowpass', isMajor ? 150 : 240, 0.75)
+    if (isMajor) {
+      playSparkCluster(ctx, start + 0.28, [1480, 1976, 2637, 3520], 0.032)
+      playCourtBeatSweep(ctx, start + 0.44, 640, 98, 0.28, 'sawtooth', 0.05)
+    }
+  })
+}
+
+export function playCutsceneSfx(type: CutsceneSfxType) {
+  if (!enabled || !claimSfxSlot(`cutscene-${type}`, 280)) return
+
+  switch (type) {
+    case 'lie_collapse':
+      duckBgmForCourtBeat(1200, 0.02)
+      playFile('/sfx/reveal.mp3', 0.42)
+      playFileDelayed('/sfx/tension.mp3', 0.26, 70)
+      withAudioContext((ctx) => {
+        const start = ctx.currentTime + 0.025
+        playBassDrop(ctx, start, 118, 38, 0.62, 0.2)
+        playFilteredNoise(ctx, start + 0.12, 0.16, 0.06, 'bandpass', 1400, 3.2)
+        playCourtBeatSweep(ctx, start + 0.22, 820, 146, 0.34, 'sawtooth', 0.06)
+      })
+      break
+    case 'contradiction_hit':
+      playLightningStrike('major')
+      playFileDelayed('/sfx/gavel.mp3', 0.38, 430)
+      break
+    case 'emotional_burst':
+      duckBgmForCourtBeat(850, 0.035)
+      playFile('/sfx/alert.mp3', 0.26)
+      playFileDelayed('/sfx/tension.mp3', 0.22, 120)
+      withAudioContext((ctx) => {
+        const start = ctx.currentTime + 0.02
+        playBassDrop(ctx, start, 154, 72, 0.32, 0.15)
+        playCourtBeatSweep(ctx, start + 0.09, 240, 520, 0.22, 'triangle', 0.055)
+        playFilteredNoise(ctx, start + 0.16, 0.12, 0.034, 'bandpass', 980, 2.4)
+      })
+      break
+    case 'dispute_emergence':
+      duckBgmForCourtBeat(1000, 0.03)
+      playFile('/sfx/tension.mp3', 0.32)
+      playFileDelayed('/sfx/reveal.mp3', 0.24, 230)
+      withAudioContext((ctx) => {
+        const start = ctx.currentTime + 0.02
+        playBassDrop(ctx, start, 98, 52, 0.45, 0.13)
+        playElectricSnap(ctx, start + 0.16, 0.72)
+        playSparkCluster(ctx, start + 0.27, [392, 523, 784, 1047], 0.042)
+      })
+      break
+    case 'phase_transition':
+      duckBgmForCourtBeat(720, 0.055)
+      playFile('/sfx/whoosh.mp3', 0.34)
+      playFileDelayed('/sfx/chime.mp3', 0.25, 330)
+      withAudioContext((ctx) => {
+        const start = ctx.currentTime + 0.02
+        playCourtBeatSweep(ctx, start, 220, 980, 0.46, 'triangle', 0.06)
+        playSparkCluster(ctx, start + 0.35, [659, 880, 1175], 0.032)
+      })
+      break
+    case 'verdict_gavel':
+      duckBgmForCourtBeat(1250, 0.025)
+      playFile('/sfx/gavel.mp3', 0.48)
+      playFileDelayed('/sfx/stamp.mp3', 0.3, 190)
+      playFileDelayed('/sfx/gavel.mp3', 0.38, 560)
+      withAudioContext((ctx) => {
+        const start = ctx.currentTime + 0.028
+        playBassDrop(ctx, start, 92, 38, 0.36, 0.18)
+        playBassDrop(ctx, start + 0.55, 86, 42, 0.34, 0.14)
+        playFilteredNoise(ctx, start + 0.025, 0.09, 0.038, 'bandpass', 760, 2.2)
+      })
+      break
+    case 'dramatic_reveal':
+      duckBgmForCourtBeat(1100, 0.025)
+      playFile('/sfx/tension.mp3', 0.34)
+      playFileDelayed('/sfx/reveal.mp3', 0.3, 160)
+      playLightningStrike('major')
+      break
+  }
+}
+
 // ── V4 연출 사운드 ──
 
 /** #1 NEW FACT 발견 — 밝은 2음 상승 (C5→E5) */
 export function playNewFactDiscovery() {
   if (!enabled) return
+  playFile('/sfx/notification.mp3', 0.22)
+  playFileDelayed('/sfx/chime.mp3', 0.2, 120)
   try {
     const ctx = getAudioCtx()
     const t = ctx.currentTime
@@ -209,47 +412,12 @@ export function playNewFactDiscovery() {
 
 /** #2 숨겨진 쟁점 발견 — 낮은 떨림 (A2 tremolo) */
 export function playDisputeDiscovery() {
-  if (!enabled) return
-  try {
-    const ctx = getAudioCtx()
-    const t = ctx.currentTime
-    const osc = ctx.createOscillator()
-    const g = ctx.createGain()
-    const lfo = ctx.createOscillator()
-    const lfoG = ctx.createGain()
-    osc.type = 'triangle'
-    osc.frequency.value = 110 // A2
-    g.gain.value = 0.15
-    lfo.type = 'sine'
-    lfo.frequency.value = 8
-    lfoG.gain.value = 0.06
-    lfo.connect(lfoG).connect(g.gain)
-    osc.connect(g).connect(ctx.destination)
-    g.gain.exponentialRampToValueAtTime(0.001, t + 0.6)
-    osc.start(t)
-    lfo.start(t)
-    osc.stop(t + 0.6)
-    lfo.stop(t + 0.6)
-  } catch { /* */ }
+  playCutsceneSfx('dispute_emergence')
 }
 
 /** #4 모순 발견 — 경고 2음 하강 */
 export function playContradiction() {
-  if (!enabled) return
-  try {
-    const ctx = getAudioCtx()
-    const t = ctx.currentTime
-    const osc = ctx.createOscillator()
-    const g = ctx.createGain()
-    osc.type = 'sawtooth'
-    osc.frequency.setValueAtTime(440, t)
-    osc.frequency.exponentialRampToValueAtTime(220, t + 0.25)
-    g.gain.setValueAtTime(0.08, t)
-    g.gain.exponentialRampToValueAtTime(0.001, t + 0.3)
-    osc.connect(g).connect(ctx.destination)
-    osc.start(t)
-    osc.stop(t + 0.3)
-  } catch { /* */ }
+  playCutsceneSfx('contradiction_hit')
 }
 
 /** #8 점수 카운터 틱 */
@@ -272,7 +440,7 @@ export function playScoreTick() {
 
 /** #14 계좌 감시 폭로 — tension + shake */
 export function playDramaticReveal() {
-  playFile('/sfx/tension.mp3', 0.3)
+  playCutsceneSfx('dramatic_reveal')
 }
 
 /** #3 조합 성공 */
@@ -824,12 +992,62 @@ function playEvidenceMissSound(ctx: AudioContext, at: number) {
   tap.stop(at + 0.16)
 }
 
+function playCourtBeatFileLayers(cue: CourtBeatCue, level: CourtBeatLevel) {
+  if (level === 'focus') return
+
+  if (cue === 'contradiction') {
+    playFile('/sfx/reveal.mp3', level === 'breakthrough' ? 0.36 : 0.26)
+    playFileDelayed('/sfx/gavel.mp3', level === 'breakthrough' ? 0.36 : 0.26, level === 'breakthrough' ? 520 : 360)
+    playLightningStrike(level === 'breakthrough' ? 'major' : 'minor')
+    return
+  }
+
+  if (cue === 'dispute') {
+    playFile('/sfx/tension.mp3', level === 'breakthrough' ? 0.32 : 0.22)
+    playFileDelayed('/sfx/reveal.mp3', level === 'breakthrough' ? 0.26 : 0.18, 210)
+    if (level === 'breakthrough') playLightningStrike('major')
+    return
+  }
+
+  if (cue === 'evidence') {
+    playFile('/sfx/whoosh.mp3', 0.2)
+    playFileDelayed('/sfx/stamp.mp3', 0.28, 120)
+    playFileDelayed('/sfx/chime.mp3', level === 'breakthrough' ? 0.24 : 0.16, 360)
+    if (level === 'breakthrough') playLightningStrike('minor')
+    return
+  }
+
+  if (cue === 'witness') {
+    playFile('/sfx/notification.mp3', 0.22)
+    playFileDelayed('/sfx/chime.mp3', 0.2, 220)
+    return
+  }
+
+  if (cue === 'emotion') {
+    playFile('/sfx/alert.mp3', level === 'breakthrough' ? 0.24 : 0.18)
+    playFileDelayed('/sfx/tension.mp3', level === 'breakthrough' ? 0.26 : 0.18, 110)
+    return
+  }
+
+  if (cue === 'truth') {
+    playFile('/sfx/reveal.mp3', level === 'breakthrough' ? 0.34 : 0.22)
+    if (level === 'breakthrough') playFileDelayed('/sfx/chime.mp3', 0.24, 280)
+    return
+  }
+
+  if (cue === 'choice') {
+    playFile('/sfx/whoosh.mp3', 0.18)
+    playFileDelayed('/sfx/stamp.mp3', 0.18, 170)
+  }
+}
+
 export function playCourtBeat(cue: CourtBeatCue, level: CourtBeatLevel = 'impact') {
   if (!enabled || cue === 'silent') return
 
   const duckDuration = level === 'breakthrough' ? 1150 : level === 'impact' ? 820 : 420
   const duckVolume = level === 'breakthrough' ? 0.02 : level === 'impact' ? 0.035 : 0.075
   duckBgmForCourtBeat(duckDuration, duckVolume)
+  playCourtBeatFileLayers(cue, level)
 
   withAudioContext((ctx) => {
     const start = ctx.currentTime + 0.035

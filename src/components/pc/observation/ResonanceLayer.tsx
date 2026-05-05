@@ -1,4 +1,5 @@
 import { useEffect, useState, type CSSProperties } from 'react'
+import { playElectricAura, playLightningStrike } from '../../../engine/soundEngine'
 import { useGameStore, useStore } from '../../../store/useGameStore'
 import type { AuraRequest, ResonanceRequest } from '../../../store/slices/judgeObservationSlice'
 
@@ -53,6 +54,9 @@ function AuraBolt({ request }: { request: AuraRequest }) {
           buildAuraSmoothRect(rect, 7),
           buildAuraSmoothRect(rect, 13),
         ])
+    if (style === 'electric') {
+      playElectricAura()
+    }
     const timer = window.setTimeout(() => {
       useGameStore.getState().dismissAura(request.id)
     }, AURA_DURATION_MS)
@@ -166,6 +170,9 @@ function ResonanceBolt({ request }: { request: ResonanceRequest }) {
     const [x2, y2] = edgePointToward(toRect, fromCx, fromCy)
 
     setPath(style === 'lightning' ? buildJaggedPath(x1, y1, x2, y2) : buildCurvedPath(x1, y1, x2, y2))
+    if (style === 'lightning') {
+      playLightningStrike(request.reason === 'dispute_emergence' || request.reason === 'witness_summon' ? 'major' : 'minor')
+    }
 
     const timer = window.setTimeout(() => {
       useGameStore.getState().dismissResonance(request.id)

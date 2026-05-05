@@ -18,6 +18,7 @@
 import { useState, useEffect, useCallback, useRef } from 'react'
 import type { CutsceneEvent } from '../../engine/cutsceneTriggerEngine'
 import { CUTSCENE_DURATION } from '../../engine/cutsceneTriggerEngine'
+import { playCutsceneSfx } from '../../engine/soundEngine'
 
 // ── 외부 트리거 함수 ──────────────────────────────────
 
@@ -44,6 +45,7 @@ export default function CutsceneOverlay() {
   // 자동 dismiss
   useEffect(() => {
     if (!event) return
+    playCutsceneSfx(event.type)
     if (timerRef.current) clearTimeout(timerRef.current)
     timerRef.current = setTimeout(() => {
       setEvent(null)

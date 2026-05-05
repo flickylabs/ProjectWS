@@ -7,6 +7,7 @@ import {
   isFreeInterrogationEnabled,
   resolveFreeInterrogation,
 } from '../../engine/freeInterrogation'
+import { polishNpcResponseCopy } from '../../engine/npcResponsePolisher'
 import { normalizeCaseKey } from '../../utils/caseHelpers'
 import {
   claimAIReasoningCutsceneFirstSuccess,
@@ -109,10 +110,13 @@ export default function FreeQuestionInput({
         }
         setText('')
         onDone?.()
+        const fallbackText = fallbackSpeaker === 'a' || fallbackSpeaker === 'b'
+          ? polishNpcResponseCopy(result.fallbackText ?? '재판관님, 그 질문에는 지금 답하기 어렵습니다.', caseData, fallbackSpeaker)
+          : result.fallbackText ?? '재판관님, 그 질문에는 지금 답하기 어렵습니다.'
         fresh.addDialogue({ speaker: 'judge', text: trimmed, relatedDisputes: related, turn: fresh.turnCount })
         fresh.addDialogue({
           speaker: fallbackSpeaker,
-          text: result.fallbackText ?? '재판관님, 그 질문에는 지금 답하기 어렵습니다.',
+          text: fallbackText,
           relatedDisputes: related,
           turn: fresh.turnCount,
           behaviorHint: fallbackSpeaker === 'system'

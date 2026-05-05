@@ -78,7 +78,7 @@ const HOOKS: Record<string, Record<string, EmergenceHook>> = {
       variants: [
         {
           tone: 'confession',
-          text: '재판관님, 동선과 돈 흐름을 따로 떼어 설명하기 어려운 지점이 있습니다. 순서대로 확인해 주십시오.',
+          text: '재판관님, 동선과 돈 흐름을 따로 떼어 설명하기 어려운 지점이 있습니다. 순서대로 봐 주십시오.',
           behaviorHint: '박지연은 말끝을 흐리지 않으려 애쓰며 정면을 바라본다.',
         },
         {
@@ -255,7 +255,7 @@ const HOOKS: Record<string, Record<string, EmergenceHook>> = {
         },
         {
           tone: 'attack',
-          text: '하지만 그때는 저도 침묵이 답이라고 생각하기 어려웠습니다. 제 말이 지나쳤는지는 기록과 함께 판단해 주십시오.',
+          text: '그때는 저도 예민한 상태라 조용히 넘기기 어려웠습니다. 제 말이 지나쳤을 수도 있다는 건 느끼고 있습니다.',
           behaviorHint: '송다은은 미안함과 원망이 뒤섞인 얼굴로 최수민을 바라본다.',
         },
         {

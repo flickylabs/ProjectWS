@@ -27021,7 +27021,7 @@
         },
         {
           "id": "b-d-2-S0-fact_pursuit-boundary_response-v3",
-          "text": "답장 한 줄만 떼어 보면 오해가 생깁니다. 앞뒤 맥락을 확인해 주십시오.",
+          "text": "답장 한 줄만 떼어 보면 오해가 생깁니다. 앞뒤 맥락을 봐 주십시오.",
           "behaviorHint": "최수민이 boundary_response 쟁점에 대해 사실을 기록 중심으로 받는다.",
           "tags": [
             "channel:interrogation",
@@ -27091,7 +27091,7 @@
         },
         {
           "id": "b-d-2-S0-fact_pursuit-boundary_response-v8",
-          "text": "답장 한 줄만 떼어 보면 오해가 생깁니다. 앞뒤 맥락을 확인해 주십시오.",
+          "text": "답장 한 줄만 떼어 보면 오해가 생깁니다. 앞뒤 맥락을 봐 주십시오.",
           "behaviorHint": "최수민이 boundary_response 쟁점에 대해 사실을 기록 중심으로 받는다.",
           "tags": [
             "channel:interrogation",
@@ -27170,7 +27170,7 @@
         },
         {
           "id": "b-d-2-S0-motive_search-boundary_response-v3",
-          "text": "답장 한 줄만 떼어 보면 오해가 생깁니다. 앞뒤 맥락을 확인해 주십시오.",
+          "text": "답장 한 줄만 떼어 보면 오해가 생깁니다. 앞뒤 맥락을 봐 주십시오.",
           "behaviorHint": "최수민이 boundary_response 쟁점에 대해 판단의 이유를 받는다.",
           "tags": [
             "channel:interrogation",
@@ -27240,7 +27240,7 @@
         },
         {
           "id": "b-d-2-S0-motive_search-boundary_response-v8",
-          "text": "답장 한 줄만 떼어 보면 오해가 생깁니다. 앞뒤 맥락을 확인해 주십시오.",
+          "text": "답장 한 줄만 떼어 보면 오해가 생깁니다. 앞뒤 맥락을 봐 주십시오.",
           "behaviorHint": "최수민이 boundary_response 쟁점에 대해 판단의 이유를 받는다.",
           "tags": [
             "channel:interrogation",
@@ -27319,7 +27319,7 @@
         },
         {
           "id": "b-d-2-S0-empathy_approach-boundary_response-v3",
-          "text": "답장 한 줄만 떼어 보면 오해가 생깁니다. 앞뒤 맥락을 확인해 주십시오.",
+          "text": "답장 한 줄만 떼어 보면 오해가 생깁니다. 앞뒤 맥락을 봐 주십시오.",
           "behaviorHint": "최수민이 boundary_response 쟁점에 대해 감정은 인정하되 사실로 되돌린다.",
           "tags": [
             "channel:interrogation",
@@ -27389,7 +27389,7 @@
         },
         {
           "id": "b-d-2-S0-empathy_approach-boundary_response-v8",
-          "text": "답장 한 줄만 떼어 보면 오해가 생깁니다. 앞뒤 맥락을 확인해 주십시오.",
+          "text": "답장 한 줄만 떼어 보면 오해가 생깁니다. 앞뒤 맥락을 봐 주십시오.",
           "behaviorHint": "최수민이 boundary_response 쟁점에 대해 감정은 인정하되 사실로 되돌린다.",
           "tags": [
             "channel:interrogation",
@@ -27468,7 +27468,7 @@
         },
         {
           "id": "b-d-2-S1-fact_pursuit-boundary_response-v3",
-          "text": "답장 한 줄만 떼어 보면 오해가 생깁니다. 앞뒤 맥락을 확인해 주십시오.",
+          "text": "답장 한 줄만 떼어 보면 오해가 생깁니다. 앞뒤 맥락을 봐 주십시오.",
           "behaviorHint": "최수민이 boundary_response 쟁점에 대해 사실을 기록 중심으로 받는다.",
           "tags": [
             "channel:interrogation",
@@ -27538,7 +27538,7 @@
         },
         {
           "id": "b-d-2-S1-fact_pursuit-boundary_response-v8",
-          "text": "답장 한 줄만 떼어 보면 오해가 생깁니다. 앞뒤 맥락을 확인해 주십시오.",
+          "text": "답장 한 줄만 떼어 보면 오해가 생깁니다. 앞뒤 맥락을 봐 주십시오.",
           "behaviorHint": "최수민이 boundary_response 쟁점에 대해 사실을 기록 중심으로 받는다.",
           "tags": [
             "channel:interrogation",
@@ -27617,7 +27617,7 @@
         },
         {
           "id": "b-d-2-S1-motive_search-boundary_response-v3",
-          "text": "답장 한 줄만 떼어 보면 오해가 생깁니다. 앞뒤 맥락을 확인해 주십시오.",
+          "text": "답장 한 줄만 떼어 보면 오해가 생깁니다. 앞뒤 맥락을 봐 주십시오.",
           "behaviorHint": "최수민이 boundary_response 쟁점에 대해 판단의 이유를 받는다.",
           "tags": [
             "channel:interrogation",
@@ -27687,7 +27687,7 @@
         },
         {
           "id": "b-d-2-S1-motive_search-boundary_response-v8",
-          "text": "답장 한 줄만 떼어 보면 오해가 생깁니다. 앞뒤 맥락을 확인해 주십시오.",
+          "text": "답장 한 줄만 떼어 보면 오해가 생깁니다. 앞뒤 맥락을 봐 주십시오.",
           "behaviorHint": "최수민이 boundary_response 쟁점에 대해 판단의 이유를 받는다.",
           "tags": [
             "channel:interrogation",
@@ -27766,7 +27766,7 @@
         },
         {
           "id": "b-d-2-S1-empathy_approach-boundary_response-v3",
-          "text": "답장 한 줄만 떼어 보면 오해가 생깁니다. 앞뒤 맥락을 확인해 주십시오.",
+          "text": "답장 한 줄만 떼어 보면 오해가 생깁니다. 앞뒤 맥락을 봐 주십시오.",
           "behaviorHint": "최수민이 boundary_response 쟁점에 대해 감정은 인정하되 사실로 되돌린다.",
           "tags": [
             "channel:interrogation",
@@ -27836,7 +27836,7 @@
         },
         {
           "id": "b-d-2-S1-empathy_approach-boundary_response-v8",
-          "text": "답장 한 줄만 떼어 보면 오해가 생깁니다. 앞뒤 맥락을 확인해 주십시오.",
+          "text": "답장 한 줄만 떼어 보면 오해가 생깁니다. 앞뒤 맥락을 봐 주십시오.",
           "behaviorHint": "최수민이 boundary_response 쟁점에 대해 감정은 인정하되 사실로 되돌린다.",
           "tags": [
             "channel:interrogation",
@@ -27915,7 +27915,7 @@
         },
         {
           "id": "b-d-2-S2-fact_pursuit-boundary_response-v3",
-          "text": "답장 한 줄만 떼어 보면 오해가 생깁니다. 앞뒤 맥락을 확인해 주십시오.",
+          "text": "답장 한 줄만 떼어 보면 오해가 생깁니다. 앞뒤 맥락을 봐 주십시오.",
           "behaviorHint": "최수민이 boundary_response 쟁점에 대해 사실을 기록 중심으로 받는다.",
           "tags": [
             "channel:interrogation",
@@ -27985,7 +27985,7 @@
         },
         {
           "id": "b-d-2-S2-fact_pursuit-boundary_response-v8",
-          "text": "답장 한 줄만 떼어 보면 오해가 생깁니다. 앞뒤 맥락을 확인해 주십시오.",
+          "text": "답장 한 줄만 떼어 보면 오해가 생깁니다. 앞뒤 맥락을 봐 주십시오.",
           "behaviorHint": "최수민이 boundary_response 쟁점에 대해 사실을 기록 중심으로 받는다.",
           "tags": [
             "channel:interrogation",
@@ -28064,7 +28064,7 @@
         },
         {
           "id": "b-d-2-S2-motive_search-boundary_response-v3",
-          "text": "답장 한 줄만 떼어 보면 오해가 생깁니다. 앞뒤 맥락을 확인해 주십시오.",
+          "text": "답장 한 줄만 떼어 보면 오해가 생깁니다. 앞뒤 맥락을 봐 주십시오.",
           "behaviorHint": "최수민이 boundary_response 쟁점에 대해 판단의 이유를 받는다.",
           "tags": [
             "channel:interrogation",
@@ -28134,7 +28134,7 @@
         },
         {
           "id": "b-d-2-S2-motive_search-boundary_response-v8",
-          "text": "답장 한 줄만 떼어 보면 오해가 생깁니다. 앞뒤 맥락을 확인해 주십시오.",
+          "text": "답장 한 줄만 떼어 보면 오해가 생깁니다. 앞뒤 맥락을 봐 주십시오.",
           "behaviorHint": "최수민이 boundary_response 쟁점에 대해 판단의 이유를 받는다.",
           "tags": [
             "channel:interrogation",
@@ -28213,7 +28213,7 @@
         },
         {
           "id": "b-d-2-S2-empathy_approach-boundary_response-v3",
-          "text": "답장 한 줄만 떼어 보면 오해가 생깁니다. 앞뒤 맥락을 확인해 주십시오.",
+          "text": "답장 한 줄만 떼어 보면 오해가 생깁니다. 앞뒤 맥락을 봐 주십시오.",
           "behaviorHint": "최수민이 boundary_response 쟁점에 대해 감정은 인정하되 사실로 되돌린다.",
           "tags": [
             "channel:interrogation",
@@ -28283,7 +28283,7 @@
         },
         {
           "id": "b-d-2-S2-empathy_approach-boundary_response-v8",
-          "text": "답장 한 줄만 떼어 보면 오해가 생깁니다. 앞뒤 맥락을 확인해 주십시오.",
+          "text": "답장 한 줄만 떼어 보면 오해가 생깁니다. 앞뒤 맥락을 봐 주십시오.",
           "behaviorHint": "최수민이 boundary_response 쟁점에 대해 감정은 인정하되 사실로 되돌린다.",
           "tags": [
             "channel:interrogation",
@@ -36517,7 +36517,7 @@
         },
         {
           "id": "b-d-2-S0-fact_pursuit-private_request_pressure-v5",
-          "text": "친구의 예비신랑과 사적으로 말이 오간 점은 무겁습니다. 원문 순서가 먼저입니다.",
+          "text": "친구의 예비신랑과 사적으로 연락이 오간 점은 가볍게 볼 수 없습니다. 다만 원문을 보면 제가 먼저 선을 넘은 건 아니었습니다.",
           "behaviorHint": "최수민이 비공개 부탁의 압박 각도에서 사실 추궁에 답한다.",
           "tags": [
             "channel:interrogation",
@@ -36596,7 +36596,7 @@
         },
         {
           "id": "b-d-2-S0-motive_search-private_request_pressure-v5",
-          "text": "친구의 예비신랑과 사적으로 말이 오간 점은 무겁습니다. 원문 순서가 먼저입니다.",
+          "text": "친구의 예비신랑과 사적으로 연락이 오간 점은 가볍게 볼 수 없습니다. 다만 원문을 보면 제가 먼저 선을 넘은 건 아니었습니다.",
           "behaviorHint": "최수민이 비공개 부탁의 압박 각도에서 동기 확인에 답한다.",
           "tags": [
             "channel:interrogation",
@@ -36675,7 +36675,7 @@
         },
         {
           "id": "b-d-2-S0-empathy_approach-private_request_pressure-v5",
-          "text": "친구의 예비신랑과 사적으로 말이 오간 점은 무겁습니다. 원문 순서가 먼저입니다.",
+          "text": "친구의 예비신랑과 사적으로 연락이 오간 점은 가볍게 볼 수 없습니다. 다만 원문을 보면 제가 먼저 선을 넘은 건 아니었습니다.",
           "behaviorHint": "최수민이 비공개 부탁의 압박 각도에서 사정 확인에 답한다.",
           "tags": [
             "channel:interrogation",
@@ -36754,7 +36754,7 @@
         },
         {
           "id": "b-d-2-S1-fact_pursuit-private_request_pressure-v5",
-          "text": "친구의 예비신랑과 사적으로 말이 오간 점은 무겁습니다. 원문 순서가 먼저입니다.",
+          "text": "친구의 예비신랑과 사적으로 연락이 오간 점은 가볍게 볼 수 없습니다. 다만 원문을 보면 제가 먼저 선을 넘은 건 아니었습니다.",
           "behaviorHint": "최수민이 비공개 부탁의 압박 각도에서 사실 추궁에 답한다.",
           "tags": [
             "channel:interrogation",
@@ -36833,7 +36833,7 @@
         },
         {
           "id": "b-d-2-S1-motive_search-private_request_pressure-v5",
-          "text": "친구의 예비신랑과 사적으로 말이 오간 점은 무겁습니다. 원문 순서가 먼저입니다.",
+          "text": "친구의 예비신랑과 사적으로 연락이 오간 점은 가볍게 볼 수 없습니다. 다만 원문을 보면 제가 먼저 선을 넘은 건 아니었습니다.",
           "behaviorHint": "최수민이 비공개 부탁의 압박 각도에서 동기 확인에 답한다.",
           "tags": [
             "channel:interrogation",
@@ -36912,7 +36912,7 @@
         },
         {
           "id": "b-d-2-S1-empathy_approach-private_request_pressure-v5",
-          "text": "친구의 예비신랑과 사적으로 말이 오간 점은 무겁습니다. 원문 순서가 먼저입니다.",
+          "text": "친구의 예비신랑과 사적으로 연락이 오간 점은 가볍게 볼 수 없습니다. 다만 원문을 보면 제가 먼저 선을 넘은 건 아니었습니다.",
           "behaviorHint": "최수민이 비공개 부탁의 압박 각도에서 사정 확인에 답한다.",
           "tags": [
             "channel:interrogation",
@@ -36991,7 +36991,7 @@
         },
         {
           "id": "b-d-2-S2-fact_pursuit-private_request_pressure-v5",
-          "text": "친구의 예비신랑과 사적으로 말이 오간 점은 무겁습니다. 원문 순서가 먼저입니다.",
+          "text": "친구의 예비신랑과 사적으로 연락이 오간 점은 가볍게 볼 수 없습니다. 다만 원문을 보면 제가 먼저 선을 넘은 건 아니었습니다.",
           "behaviorHint": "최수민이 비공개 부탁의 압박 각도에서 사실 추궁에 답한다.",
           "tags": [
             "channel:interrogation",
@@ -37070,7 +37070,7 @@
         },
         {
           "id": "b-d-2-S2-motive_search-private_request_pressure-v5",
-          "text": "친구의 예비신랑과 사적으로 말이 오간 점은 무겁습니다. 원문 순서가 먼저입니다.",
+          "text": "친구의 예비신랑과 사적으로 연락이 오간 점은 가볍게 볼 수 없습니다. 다만 원문을 보면 제가 먼저 선을 넘은 건 아니었습니다.",
           "behaviorHint": "최수민이 비공개 부탁의 압박 각도에서 동기 확인에 답한다.",
           "tags": [
             "channel:interrogation",
@@ -37149,7 +37149,7 @@
         },
         {
           "id": "b-d-2-S2-empathy_approach-private_request_pressure-v5",
-          "text": "친구의 예비신랑과 사적으로 말이 오간 점은 무겁습니다. 원문 순서가 먼저입니다.",
+          "text": "친구의 예비신랑과 사적으로 연락이 오간 점은 가볍게 볼 수 없습니다. 다만 원문을 보면 제가 먼저 선을 넘은 건 아니었습니다.",
           "behaviorHint": "최수민이 비공개 부탁의 압박 각도에서 사정 확인에 답한다.",
           "tags": [
             "channel:interrogation",

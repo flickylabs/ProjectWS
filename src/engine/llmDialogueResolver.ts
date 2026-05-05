@@ -49,6 +49,7 @@ import { ensureDisclosurePolicyLoaded } from './disclosurePolicyLoader'
 import type { DisclosureCaseId, DisclosureChannelType, GuardContext } from '../types/disclosure'
 import { evaluateFreeInterrogationResponse } from './freeInterrogation/guard'
 import type { FreeInterrogationGuardContext } from '../types/freeInterrogationGuard'
+import { buildReleaseDialogueStyleGuide, polishNpcResponseCopy } from './npcResponsePolisher'
 
 interface DossierOverrideContext {
   questionId?: string
@@ -235,7 +236,11 @@ async function applyFreeInterrogationFallbackToResolvedDialogue(
     ...result,
     node: {
       ...result.node,
-      text: enforceOpponentReferenceForms(fallbackResult.text, caseData, finalTarget),
+      text: polishNpcResponseCopy(
+        enforceOpponentReferenceForms(fallbackResult.text, caseData, finalTarget),
+        caseData,
+        finalTarget,
+      ),
       behaviorHint: fallbackResult.behaviorHint || result.node.behaviorHint,
     },
   }
@@ -653,6 +658,7 @@ function buildSystemPrompt(
   const canInformalThis = canUseInformal(caseData, party)
   const callForm = myCall === '자기' ? '자기야' : myCall
   const opponentReferenceGuide = buildOpponentReferenceGuide(caseData, party)
+  const releaseStyleGuide = buildReleaseDialogueStyleGuide(caseData, party)
 
   // ── 동적 데이터 블록 조립 ──
 
@@ -990,7 +996,7 @@ function buildSystemPrompt(
     if (unresolved) {
       console.warn(`[buildSystemPrompt] 미치환 변수 발견 (agent=${agentKey}):`, [...new Set(unresolved)])
     }
-    return `${prompt}\n${opponentReferenceGuide}`
+    return `${prompt}\n${opponentReferenceGuide}\n${releaseStyleGuide}`
   }
 
   // 폴백: 기존 모놀리식 프롬프트
@@ -1003,7 +1009,7 @@ function buildSystemPrompt(
     ...vars,
     phaseGuide,
     outputFormat: fallbackOutputFormat,
-  })}\n${opponentReferenceGuide}`
+  })}\n${opponentReferenceGuide}\n${releaseStyleGuide}`
 }
 
 /* ── Phase별 가이드 (어드민에서 관리) ── */
@@ -1226,10 +1232,14 @@ const VALID_STANCES: NpcStance[] = ['deny', 'hedge', 'partial_admit', 'admit', '
 function parseLLMResponse(response: string, speaker: PartyId, disputeId?: string, extraCtx?: PostProcessContext): ParsedLLMResponse {
   const storeCaseData = useGameStore.getState().caseData
   const partyNames = { nameA: storeCaseData?.duo?.partyA?.name ?? 'A', nameB: storeCaseData?.duo?.partyB?.name ?? 'B' }
-  const polishText = (text: string) => postProcessNpcText(text, {
-    partyNames,
-    ...extraCtx,
-  })
+  const polishText = (text: string) => polishNpcResponseCopy(
+    postProcessNpcText(text, {
+      partyNames,
+      ...extraCtx,
+    }),
+    storeCaseData,
+    speaker,
+  )
   const fallback: ParsedLLMResponse = {
     npcNode: {
       id: `llm-${Date.now()}`,
@@ -2259,15 +2269,19 @@ function tryScriptedDialoguePath(
   const bpHasMonetary = caseData.disputes.some(d => monetaryKw.test(d.name) || monetaryKw.test(d.truthDescription ?? ''))
   const thirdPartyNames = caseData.duo.socialGraph?.map(tp => tp.name).filter(Boolean) ?? []
 
-  const processedText = postProcessNpcText(scripted.text, {
-    lieState: lieEntry.currentState,
-    hasMonetaryDispute: bpHasMonetary,
-    partyNames: bpPartyNames,
-    thirdPartyNames,
-    toJudgeA: caseData.duo.partyA.callTerms?.toJudge,
-    toJudgeB: caseData.duo.partyB.callTerms?.toJudge,
-    speaker: target,
-  })
+  const processedText = polishNpcResponseCopy(
+    postProcessNpcText(scripted.text, {
+      lieState: lieEntry.currentState,
+      hasMonetaryDispute: bpHasMonetary,
+      partyNames: bpPartyNames,
+      thirdPartyNames,
+      toJudgeA: caseData.duo.partyA.callTerms?.toJudge,
+      toJudgeB: caseData.duo.partyB.callTerms?.toJudge,
+      speaker: target,
+    }),
+    caseData,
+    target,
+  )
 
   // Truth Throttle 행동 힌트: S0-S1에서 회피성 표현 감지 시 보충
   let finalHint = scripted.behaviorHint

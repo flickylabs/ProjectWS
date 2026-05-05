@@ -30,6 +30,7 @@ import type { AgentState } from '../types'
 import type { EvidenceRuntimeState } from './evidenceEngine'
 import { useGameStore } from '../store/useGameStore'
 import { getRelationshipType, normalizeCaseKey } from '../utils/caseHelpers'
+import { buildReleaseDialogueStyleGuide, polishNpcResponseCopy } from './npcResponsePolisher'
 import type {
   FreeInterrogationFallbackResult,
   FreeInterrogationGuardContext,
@@ -228,6 +229,7 @@ async function generateResponse(
   const judgeRef = getJudgeReference(caseData.duo, target)
   const angryCall = getAngryCall(caseData.duo, target)
   const opponentReferenceGuide = buildOpponentReferenceGuide(caseData, target)
+  const releaseStyleGuide = buildReleaseDialogueStyleGuide(caseData, target)
 
   const relType = getRelationshipType(caseData)
   const canInformalThis = canUseInformal(caseData, target)
@@ -364,11 +366,13 @@ async function generateResponse(
 
   // Truth Throttle + Archetype을 프롬프트 변수에 주입
   responderVars.truthThrottleBlock = truthThrottleBlock
+  responderVars.responseQualityRules = `${responderVars.responseQualityRules}\n${releaseStyleGuide}`
   responderVars.archetypeBlock = archetypeBlock ? `\n캐릭터 유형:\n${archetypeBlock}` : ''
 
-  const systemPrompt = isAgentLoaded()
+  let systemPrompt = isAgentLoaded()
     ? buildAgentPrompt('free_question_responder', responderVars, { phase: currentPhase })
     : getPrompt('free_question', responderVars)
+  systemPrompt = `${systemPrompt}\n${releaseStyleGuide}`
 
   const config = isAgentLoaded()
     ? getAgentConfig('free_question_responder')
@@ -444,7 +448,7 @@ ${opponentReferenceGuide}
 
     if (rawResult.action === 'fallback') {
       return buildGuardFallbackFreeQuestionResult(
-        { ...rawResult, text: enforceOpponentReferenceForms(rawResult.text, caseData, target) },
+        { ...rawResult, text: polishNpcResponseCopy(enforceOpponentReferenceForms(rawResult.text, caseData, target), caseData, target) },
         classification,
       )
     }
@@ -467,13 +471,13 @@ ${opponentReferenceGuide}
       const guarded = await evaluateFreeInterrogationResponse(parsed.response, guardContext)
       if (guarded.action === 'fallback') {
         return buildGuardFallbackFreeQuestionResult(
-          { ...guarded, text: enforceOpponentReferenceForms(guarded.text, caseData, target) },
+          { ...guarded, text: polishNpcResponseCopy(enforceOpponentReferenceForms(guarded.text, caseData, target), caseData, target) },
           classification,
         )
       }
-      parsed.response = guarded.text
+      parsed.response = polishNpcResponseCopy(guarded.text, caseData, target)
     }
-    parsed.response = enforceOpponentReferenceForms(parsed.response, caseData, target)
+    parsed.response = polishNpcResponseCopy(enforceOpponentReferenceForms(parsed.response, caseData, target), caseData, target)
 
     return {
       questionType: classification.questionType,
@@ -491,7 +495,7 @@ ${opponentReferenceGuide}
         [{ dimension: 'api_failure', reason: 'free-question-responder threw unexpectedly' }],
       )
       return buildGuardFallbackFreeQuestionResult(
-        { ...fallback, text: enforceOpponentReferenceForms(fallback.text, caseData, target) },
+        { ...fallback, text: polishNpcResponseCopy(enforceOpponentReferenceForms(fallback.text, caseData, target), caseData, target) },
         classification,
       )
     }
@@ -522,8 +526,12 @@ function parseResponderResponse(
     const behaviorHint = parsed.behaviorHint || (behaviorMatch ? behaviorMatch[1] : '')
     const rawResponse = responseText.replace(/[（(][^)）]+[)）]/g, '').trim()
     // 전체 후처리 파이프라인 적용 (TruthThrottle/클리셰 필터/금액 보호 포함)
-    const response = enforceOpponentReferenceForms(
-      ppCtx ? postProcessNpcText(rawResponse, ppCtx) : fixPostpositions(enforceHonorifics(fixMisdirectedAddress(rawResponse))),
+    const response = polishNpcResponseCopy(
+      enforceOpponentReferenceForms(
+        ppCtx ? postProcessNpcText(rawResponse, ppCtx) : fixPostpositions(enforceHonorifics(fixMisdirectedAddress(rawResponse))),
+        caseData,
+        target,
+      ),
       caseData,
       target,
     )
@@ -539,7 +547,10 @@ function parseResponderResponse(
 
     return { response: response || '...', behaviorHint: finalHint }
   } catch {
-    return { response: enforceOpponentReferenceForms(raw.slice(0, 200), caseData, target), behaviorHint: '' }
+    return {
+      response: polishNpcResponseCopy(enforceOpponentReferenceForms(raw.slice(0, 200), caseData, target), caseData, target),
+      behaviorHint: '',
+    }
   }
 }
 

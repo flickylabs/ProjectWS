@@ -14,6 +14,7 @@ import { getAffinityScore, getAffinityGrade } from '../data/actionAffinity'
 import { getOptimalPath, getNarrativeExpansion } from '../data/caseEnrichment'
 import { normalizeCaseKey } from '../utils/caseHelpers'
 import { getConfession } from '../data/confessionScripts'
+import { getStageAwareEvidenceQuestion } from '../data/evidencePresentationScripts'
 import { detectStatementChange } from '../engine/contradictionEngine'
 import { getScriptedEvidenceDiscovery } from '../engine/scriptedTextLoader'
 import { extractDisputeSubject } from '../engine/judgeQuestionEngine'
@@ -196,14 +197,22 @@ function polishEvidencePresentationQuestion(questionText: string, displayName: s
   return text
 }
 
-function getEvidencePresentationQuestionText(evidence: any, evidenceRuntime: any, target: PartyId, displayName: string): string {
+function getEvidencePresentationQuestionText(caseId: string | undefined, evidence: any, evidenceRuntime: any, target: PartyId, displayName: string): string {
   const stages = Array.isArray(evidence?.investigationStages) ? evidence.investigationStages : []
   const investigated = Array.isArray(evidenceRuntime?.investigatedActions) ? evidenceRuntime.investigatedActions : []
   const latestStage = stages
     .filter((stage: any) => investigated.includes(stage.revealKey))
     .sort((a: any, b: any) => (a.stage ?? 0) - (b.stage ?? 0))
     .at(-1)
+  const stageAwareQuestion = getStageAwareEvidenceQuestion({
+    caseId: normalizeCaseKey(caseId ?? ''),
+    party: target,
+    evidenceId: evidence?.id,
+    investigationStage: latestStage?.stage ?? investigated.length,
+  })
   const questionText = latestStage?.question?.text
+    ? stageAwareQuestion ?? latestStage.question.text
+    : stageAwareQuestion
     ?? evidence?.partyContext?.[target]?.questionAngle
     ?? '이 증거와 관련해 설명해 주시겠습니까?'
   return polishEvidencePresentationQuestion(questionText, displayName)
@@ -217,7 +226,7 @@ function buildEvidencePresentationQuestion(
   displayName: string,
 ): string {
   const targetName = getPartyName(state, target)
-  const questionText = getEvidencePresentationQuestionText(evidence, evidenceRuntime, target, displayName)
+  const questionText = getEvidencePresentationQuestionText(state.caseData?.caseId, evidence, evidenceRuntime, target, displayName)
 
   return `${targetName} 씨, ${questionText}`
 }
