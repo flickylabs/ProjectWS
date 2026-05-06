@@ -28,7 +28,7 @@ if "%START_LOCAL_SERVER%"=="1" (
         echo [1/2] Starting server in new window...
         start "Solomon Server" cmd /c ""%ROOT%\start-server.bat""
         echo Waiting for server...
-        timeout /t 8 /nobreak >nul
+        timeout /t 2 /nobreak >nul
     ) else (
         echo [1/2] Server already running.
     )

@@ -20,7 +20,7 @@ import PCVerdictScreen from '../components/pc/verdict/PCVerdictScreen'
 import PCTestConsole from '../components/pc/debug/PCTestConsole'
 import { useActionDispatch } from '../hooks/useActionDispatch'
 import { useScreenPreset } from '../hooks/useScreenPreset'
-import { ensureSteamAuthSession } from '../api/steamAuth'
+import { ensureSteamAuthSession, isSteamAuthRequired } from '../api/steamAuth'
 import { useGameStore, useStore } from '../store/useGameStore'
 import { useI18n, type LocaleCode } from '../i18n'
 
@@ -41,7 +41,7 @@ export default function PCApp() {
   const [steamSessionChecked, setSteamSessionChecked] = useState(false)
   const [steamAuthError, setSteamAuthError] = useState<string | null>(null)
   const dispatch = useActionDispatch()
-  const steamAuthRequired = !import.meta.env.DEV || import.meta.env.VITE_STEAM_AUTH_REQUIRED === 'true'
+  const steamAuthRequired = isSteamAuthRequired()
   // 해상도 프리셋 전역 바인딩 (body[data-screen-bucket] 자동 갱신)
   useScreenPreset()
 
@@ -52,6 +52,11 @@ export default function PCApp() {
   }, [])
 
   useEffect(() => {
+    if (!steamAuthRequired) {
+      setSteamSessionChecked(true)
+      return
+    }
+
     let active = true
     ensureSteamAuthSession()
       .catch((err) => {
@@ -64,7 +69,7 @@ export default function PCApp() {
     return () => {
       active = false
     }
-  }, [])
+  }, [steamAuthRequired, t])
 
   const retrySteamAuth = async () => {
     setSteamSessionChecked(false)
@@ -104,7 +109,7 @@ export default function PCApp() {
 
     ;(async () => {
       try {
-        await ensureSteamAuthSession()
+        if (steamAuthRequired) await ensureSteamAuthSession()
         await loadPrompts(true)
         await loadAgents(true)
         snapshotForSession()
@@ -115,7 +120,7 @@ export default function PCApp() {
       }
       setSessionReady(true)
     })()
-  }, [caseData, sessionReady])
+  }, [caseData, sessionReady, steamAuthRequired])
 
   if (!splashDone || !steamSessionChecked) {
     return (

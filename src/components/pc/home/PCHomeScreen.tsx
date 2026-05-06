@@ -10,7 +10,7 @@ import { setLLMMode } from '../../../hooks/useActionDispatch'
 import { useScreenPreset } from '../../../hooks/useScreenPreset'
 import { SCREEN_PRESETS, type ScreenPresetId } from '../../../utils/screenPresets'
 import { useGameStore, useStore } from '../../../store/useGameStore'
-import { translate, useI18n } from '../../../i18n'
+import { translate, useI18n, type LocaleCode } from '../../../i18n'
 import { GamePhase, type CaseData, type ExtendedHistoryEntry, type SortCategory } from '../../../types'
 import PCSvgIcon from '../icons/PCSvgIcon'
 import PCSessionIcon from '../icons/PCSessionIcon'
@@ -63,7 +63,7 @@ function formatHallOfFameCaseLabel(caseId: string, cases: CaseData[]): string {
 }
 
 export default function PCHomeScreen() {
-  const { t } = useI18n()
+  const { t, locale, locales, setLocale } = useI18n()
   const { preset: screenPreset, setPreset: setScreenPreset } = useScreenPreset()
   const [showIntro, setShowIntro] = useState(() => !hasSeenPcIntro())
   const [view, setView] = useState<HomeView>('home')
@@ -117,6 +117,7 @@ export default function PCHomeScreen() {
   }, [history])
 
   const titleInfo = TITLE_LABELS[judgeProfile.titleId] ?? TITLE_LABELS.neutral_observer
+  const selectedLocale = locales.find((item) => item.code === locale)
   const judgeLevel = Math.max(1, history.length || 1)
   const reputation = history.reduce((sum, entry) => sum + Math.max(0, entry.score), 0)
 
@@ -536,6 +537,27 @@ export default function PCHomeScreen() {
                   ))}
                 </select>
               </div>
+            </Card>
+            <Card eyebrow="LANGUAGE" title={t('settings.language.title')}>
+              <div className="pc-settings-select-row">
+                <div>
+                  <strong>{t('settings.language.displayLanguage')}</strong>
+                  <p>{t('settings.language.displayLanguageDescription')}</p>
+                </div>
+                <select
+                  className="pc-settings-select"
+                  value={locale}
+                  aria-label={t('language.selectorTitle')}
+                  onChange={(event) => setLocale(event.target.value as LocaleCode)}
+                >
+                  {locales.map((item) => (
+                    <option key={item.code} value={item.code}>
+                      {item.nativeName}
+                    </option>
+                  ))}
+                </select>
+              </div>
+              <SummaryRow label={t('settings.language.current')} value={selectedLocale?.nativeName ?? locale} />
             </Card>
             <Card eyebrow="AUDIO" title="오디오"><ToggleRow checked={bgmOn} label="배경음" description="타이틀과 플레이 배경음" onToggle={toggleBgm} /><ToggleRow checked={sfxOn} label="효과음" description="상호작용과 판결 효과음" onToggle={toggleSfx} /></Card>
             <Card eyebrow="GAMEPLAY" title="게임 플레이"><SummaryRow label="행동 힌트" value={settings.showBehaviorHints ? '켜짐' : '꺼짐'} /><SummaryRow label="대사 자동 진행" value={settings.autoAdvanceDialogue ? '켜짐' : '꺼짐'} /><div className="pc-settings-select-row"><div><strong>텍스트 속도</strong><p>대사 표시와 타이핑 속도</p></div><select className="pc-settings-select" onChange={(event) => updateTypingSpeed(event.target.value as HomeSettings['typingSpeed'])} value={settings.typingSpeed}><option value="fast">빠르게</option><option value="normal">보통</option><option value="slow">느리게</option></select></div></Card>

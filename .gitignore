@@ -56,3 +56,5 @@ server/node_modules/
 /PROPOSAL_freeq_code_changes.md
 /tmp-current-home.png
 /tmp_case_extract_*.txt
+
+.vercel

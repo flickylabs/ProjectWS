@@ -23,6 +23,10 @@ interface SteamAuthResponse {
 let cachedSession: SteamAuthSession | null = null
 let authPromise: Promise<SteamAuthSession> | null = null
 
+export function isSteamAuthRequired(): boolean {
+  return import.meta.env.VITE_STEAM_AUTH_REQUIRED === 'true'
+}
+
 function isSessionFresh(session: SteamAuthSession | null): session is SteamAuthSession {
   if (!session?.token || !session.expiresAt) return false
   return Date.parse(session.expiresAt) - Date.now() > SESSION_REFRESH_MARGIN_MS
@@ -182,7 +186,7 @@ function shouldAttachSteamSession(input: RequestInfo | URL): boolean {
 export async function authFetch(input: RequestInfo | URL, init: RequestInit = {}): Promise<Response> {
   const headers = new Headers(init.headers)
 
-  if (shouldAttachSteamSession(input)) {
+  if (isSteamAuthRequired() && shouldAttachSteamSession(input)) {
     const session = await ensureSteamAuthSession()
     headers.set('Authorization', `Bearer ${session.token}`)
   }

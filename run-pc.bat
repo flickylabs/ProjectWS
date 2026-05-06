@@ -27,7 +27,7 @@ if "%START_LOCAL_SERVER%"=="1" (
     if errorlevel 1 (
         echo [server] Starting local API server in new window...
         start "Solomon Server" cmd /c ""%ROOT%\start-server.bat""
-        timeout /t 8 /nobreak >nul
+        timeout /t 2 /nobreak >nul
     ) else (
         echo [server] Local API server already running.
     )
