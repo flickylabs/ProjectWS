@@ -32,7 +32,7 @@ if "%START_LOCAL_SERVER%"=="1" (
         echo [server] Local API server already running.
     )
 ) else (
-    echo [server] Skipping local API server (--no-server).
+    echo [server] Skipping local API server: --no-server
 )
 
 if not exist "node_modules\" (

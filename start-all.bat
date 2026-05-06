@@ -4,25 +4,36 @@ title Solomon - Full Local Start
 
 set "ROOT=%~dp0"
 if "%ROOT:~-1%"=="\" set "ROOT=%ROOT:~0,-1%"
+set "PORT=5174"
+set "URL=http://127.0.0.1:%PORT%/index-pc.html"
+set "START_LOCAL_SERVER=1"
+
+if /I "%~1"=="--no-server" set "START_LOCAL_SERVER=0"
+if /I "%~2"=="--no-server" set "START_LOCAL_SERVER=0"
 
 echo ============================================
-echo   Solomon Game - Full Local Start
+echo   Solomon PC - Full Local Start
 echo ============================================
 echo.
 echo   Server env: server\.env
-echo   Client dev env: Vite defaults and root VITE_* env only
+echo   PC URL:     %URL%
+echo   API proxy:  http://localhost:3001/api
 echo.
 
 cd /d "%ROOT%"
 
-call :check_server
-if errorlevel 1 (
-    echo [1/2] Starting server in new window...
-    start "Solomon Server" cmd /c ""%ROOT%\start-server.bat""
-    echo Waiting for server...
-    timeout /t 8 /nobreak >nul
+if "%START_LOCAL_SERVER%"=="1" (
+    call :check_server
+    if errorlevel 1 (
+        echo [1/2] Starting server in new window...
+        start "Solomon Server" cmd /c ""%ROOT%\start-server.bat""
+        echo Waiting for server...
+        timeout /t 8 /nobreak >nul
+    ) else (
+        echo [1/2] Server already running.
+    )
 ) else (
-    echo [1/2] Server already running.
+    echo [1/2] Skipping local API server: --no-server
 )
 
 echo [2/2] Starting frontend...
@@ -39,15 +50,14 @@ if not exist "node_modules\" (
 )
 
 echo.
-echo   Game:     http://localhost:5173
+echo   Game:     %URL%
 echo   WebAdmin: http://localhost:3001/admin
 echo ============================================
 echo.
 
 start "" http://localhost:3001/admin
-start "" http://localhost:5173
 
-call npm run dev
+call npm run dev:pc -- --host 127.0.0.1 --open /index-pc.html
 set "EXITCODE=%ERRORLEVEL%"
 
 pause
