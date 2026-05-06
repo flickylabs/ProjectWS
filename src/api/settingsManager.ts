@@ -4,6 +4,7 @@
  * 로드 실패 시 constants.ts의 하드코딩 값을 폴백으로 사용.
  */
 import type { Resources } from '../types'
+import { authFetch } from './steamAuth'
 
 const API_BASE = (import.meta.env.VITE_API_URL as string) || '/api'
 
@@ -13,7 +14,7 @@ let loaded = false
 
 export async function loadSettings(): Promise<void> {
   try {
-    const res = await fetch(`${API_BASE}/stats/settings`)
+    const res = await authFetch(`${API_BASE}/stats/settings`)
     if (res.ok) {
       settings = await res.json()
       loaded = true

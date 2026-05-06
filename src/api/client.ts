@@ -4,6 +4,8 @@
  * 프로덕션: 동일 도메인 또는 환경변수로 지정
  */
 
+import { authFetch } from './steamAuth';
+
 const BASE_URL = import.meta.env.VITE_API_URL || '/api';
 
 async function request<T>(path: string, method = 'GET', body?: unknown): Promise<T> {
@@ -13,7 +15,7 @@ async function request<T>(path: string, method = 'GET', body?: unknown): Promise
   };
   if (body) opts.body = JSON.stringify(body);
 
-  const res = await fetch(`${BASE_URL}${path}`, opts);
+  const res = await authFetch(`${BASE_URL}${path}`, opts);
   if (!res.ok) {
     const text = await res.text().catch(() => '');
     throw new Error(`API ${method} ${path}: ${res.status} ${text}`);

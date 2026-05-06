@@ -1,6 +1,7 @@
 {
-  "name": "solomon-server",
+  "name": "project-solomon-server",
   "version": "1.0.0",
+  "description": "Project_Solomon backend for Steam authentication and LLM proxy",
   "type": "module",
   "scripts": {
     "dev": "node --watch index.js",
@@ -10,6 +11,7 @@
   "dependencies": {
     "better-sqlite3": "^11.7.0",
     "cors": "^2.8.5",
+    "dotenv": "^17.4.2",
     "express": "^5.1.0"
   }
 }

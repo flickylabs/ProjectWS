@@ -1,0 +1,42 @@
+{
+  "appId": "com.flickylabs.projectsolomon",
+  "productName": "Project_Solomon",
+  "executableName": "Project_Solomon",
+  "directories": {
+    "output": "release/steam"
+  },
+  "files": [
+    "dist-pc/**",
+    "electron/**",
+    "package.json"
+  ],
+  "extraMetadata": {
+    "main": "electron/main.cjs"
+  },
+  "asar": true,
+  "asarUnpack": [
+    "node_modules/steamworks.js/dist/**"
+  ],
+  "extraFiles": [
+    {
+      "from": "node_modules/steamworks.js/dist/win64/steam_api64.dll",
+      "to": "steam_api64.dll"
+    }
+  ],
+  "win": {
+    "signAndEditExecutable": false,
+    "target": [
+      "dir"
+    ]
+  },
+  "mac": {
+    "target": [
+      "dir"
+    ]
+  },
+  "linux": {
+    "target": [
+      "dir"
+    ]
+  }
+}

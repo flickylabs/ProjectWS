@@ -19,6 +19,7 @@ import PCResultScreen from '../components/pc/result/PCResultScreen'
 import PCVerdictScreen from '../components/pc/verdict/PCVerdictScreen'
 import { useActionDispatch } from '../hooks/useActionDispatch'
 import { useScreenPreset } from '../hooks/useScreenPreset'
+import { ensureSteamAuthSession } from '../api/steamAuth'
 import { useGameStore, useStore } from '../store/useGameStore'
 
 try {
@@ -34,7 +35,10 @@ export default function PCApp() {
   const caseData = useStore((s) => s.caseData)
   const [sessionReady, setSessionReady] = useState(false)
   const [splashDone, setSplashDone] = useState(false)
+  const [steamSessionChecked, setSteamSessionChecked] = useState(false)
+  const [steamAuthError, setSteamAuthError] = useState<string | null>(null)
   const dispatch = useActionDispatch()
+  const steamAuthRequired = !import.meta.env.DEV || import.meta.env.VITE_STEAM_AUTH_REQUIRED === 'true'
   // 해상도 프리셋 전역 바인딩 (body[data-screen-bucket] 자동 갱신)
   useScreenPreset()
 
@@ -43,6 +47,33 @@ export default function PCApp() {
     const timer = setTimeout(() => setSplashDone(true), 1200)
     return () => clearTimeout(timer)
   }, [])
+
+  useEffect(() => {
+    let active = true
+    ensureSteamAuthSession()
+      .catch((err) => {
+        console.warn('[SteamAuth] Session bootstrap failed; API calls will retry before use.', err)
+        if (active) setSteamAuthError(err instanceof Error ? err.message : 'Steam authentication failed.')
+      })
+      .finally(() => {
+        if (active) setSteamSessionChecked(true)
+      })
+    return () => {
+      active = false
+    }
+  }, [])
+
+  const retrySteamAuth = async () => {
+    setSteamSessionChecked(false)
+    setSteamAuthError(null)
+    try {
+      await ensureSteamAuthSession(true)
+    } catch (err) {
+      setSteamAuthError(err instanceof Error ? err.message : 'Steam authentication failed.')
+    } finally {
+      setSteamSessionChecked(true)
+    }
+  }
 
   useEffect(() => {
     if (!import.meta.env.DEV) return
@@ -70,6 +101,7 @@ export default function PCApp() {
 
     ;(async () => {
       try {
+        await ensureSteamAuthSession()
         await loadPrompts(true)
         await loadAgents(true)
         snapshotForSession()
@@ -82,13 +114,26 @@ export default function PCApp() {
     })()
   }, [caseData, sessionReady])
 
-  if (!splashDone) {
+  if (!splashDone || !steamSessionChecked) {
     return (
       <div className="pc-splash">
         <div className="pc-splash__content">
           <div className="pc-splash__icon">⚖</div>
           <h1 className="pc-splash__title">솔로몬의 딜레마</h1>
           <p className="pc-splash__sub">COURT SIMULATION GAME</p>
+        </div>
+      </div>
+    )
+  }
+
+  if (steamAuthRequired && steamAuthError) {
+    return (
+      <div className="pc-loading-screen">
+        <div className="pc-loading-screen__card">
+          <span className="pc-loading-screen__icon">STEAM</span>
+          <strong>Steam 인증이 필요합니다</strong>
+          <p>Steam 클라이언트와 서버 인증 상태를 확인한 뒤 다시 시도하세요.</p>
+          <button type="button" className="pc-btn pc-btn--primary" onClick={retrySteamAuth}>다시 시도</button>
         </div>
       </div>
     )

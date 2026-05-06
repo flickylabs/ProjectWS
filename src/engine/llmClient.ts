@@ -1,3 +1,5 @@
+import { authFetch } from '../api/steamAuth'
+
 /**
  * LLM API 클라이언트.
  * 프로덕션에서는 서버 프록시를 통해 OpenAI를 호출하고,
@@ -86,7 +88,8 @@ export async function chatCompletion(
     : `${config.baseUrl}/chat/completions`
 
   const timeout = options.maxTokens && options.maxTokens >= 400 ? 90000 : 60000
-  const res = await fetch(url, {
+  const fetchImpl = config.provider === 'openai' ? authFetch : fetch
+  const res = await fetchImpl(url, {
     method: 'POST',
     headers,
     signal: AbortSignal.timeout(timeout),
@@ -124,7 +127,7 @@ export async function checkConnection(): Promise<{
     }
 
     try {
-      const res = await fetch(`${config.baseUrl}/dialogue`, { signal: AbortSignal.timeout(5000) })
+      const res = await authFetch(`${config.baseUrl}/dialogue`, { signal: AbortSignal.timeout(5000) })
       if (!res.ok) return { connected: false, error: `OpenAI 프록시 오류: ${res.status}` }
       return { connected: true, provider: 'openai', modelId: config.modelId }
     } catch {
