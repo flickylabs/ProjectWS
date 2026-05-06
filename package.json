@@ -13,6 +13,7 @@
     "preview": "vite preview",
     "dev:pc": "vite --config vite.config.pc.ts",
     "build:pc": "tsc -b --force && vite build --config vite.config.pc.ts",
+    "vercel:pc": "npm run build:pc && node scripts/prepare-vercel-pc-output.mjs",
     "steam:appid": "node scripts/write-steam-appid.mjs",
     "steam:secret": "node scripts/generate-session-secret.mjs",
     "server:env": "node scripts/verify-server-env.mjs",

@@ -1,0 +1,4 @@
+{
+  "buildCommand": "npm run vercel:pc",
+  "outputDirectory": "dist-pc"
+}
