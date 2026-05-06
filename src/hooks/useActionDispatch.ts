@@ -373,17 +373,39 @@ type CourtBeatEvidenceFamily =
   | 'diary'
   | 'generic'
 
-function getCourtBeatEvidenceFamily(evidenceName: string, rows: ReturnType<typeof buildEvidenceBeatRows>): CourtBeatEvidenceFamily {
+function getCourtBeatEvidenceFamily(evidenceName: string, rows: ReturnType<typeof buildEvidenceBeatRows>, evidence?: any): CourtBeatEvidenceFamily {
+  const explicitTags = [
+    evidence?.type,
+    evidence?.viewerType,
+    evidence?.meta?.type,
+    evidence?.meta?.viewerType,
+    evidence?.viewerData?.meta?.type,
+    evidence?.viewerData?.meta?.viewerType,
+  ]
+    .filter((tag): tag is string => typeof tag === 'string')
+    .map((tag) => tag.toLowerCase())
+  const viewerData = evidence?.viewerData ?? {}
+
+  if (explicitTags.some((tag) => tag === 'chat' || tag === 'message' || tag === 'messenger') || viewerData?.chat) {
+    return 'message'
+  }
+  if (explicitTags.some((tag) => tag === 'testimony' || tag === 'transcript') || viewerData?.testimony) {
+    return 'testimony'
+  }
+  if (explicitTags.some((tag) => tag === 'bank' || tag === 'account') || viewerData?.bank) {
+    return 'account'
+  }
+
   const corpus = `${evidenceName} ${rows.map((row) => `${row.label} ${row.detail ?? ''}`).join(' ')}`
   if (/공증인|공증\s*메모|공증인\s*메모|공증\s*기록|메모\s*기록|공증/.test(corpus) && !/요양보호사|음성증언|녹취|증언/.test(corpus)) return 'notary'
   if (/요양보호사|음성증언|녹취|녹취록|증언|목격|속기사|최복순/.test(corpus)) return 'testimony'
   if (/요양원|방문기록|방문\s*기록|방문대장/.test(corpus)) return 'visitRecord'
   if (/일기장|일기|자필\s*공책|공책/.test(corpus)) return 'diary'
   if (/영수증|구매|품목|결제|CU|올리브영|다이소|마트|생활용품|참고서|교복/.test(corpus)) return 'receipt'
-  if (/통화|전화|발신|수신|연락|분\s*\d+초|초\b/.test(corpus)) return 'call'
+  if (/문자|메시지|카톡|텔레그램|DM|채팅|알림|발신자|단톡|대화/.test(corpus)) return 'message'
+  if (/통화|전화|발신|수신|분\s*\d+초|초\b/.test(corpus)) return 'call'
   if (/GPS|위치|블랙박스|내비|네비|이동|주차|오피스텔|봉천동|관악/.test(corpus)) return 'location'
   if (/계좌|출금|입금|송금|현금|거래|금액|비자금|적금|통장|공장|자금|생활비|원\b/.test(corpus)) return 'account'
-  if (/문자|메시지|카톡|텔레그램|DM|채팅|알림|발신자/.test(corpus)) return 'message'
   return 'generic'
 }
 
@@ -436,8 +458,9 @@ function buildCourtBeatRelationCopy(
   isHit: boolean,
   isDirectClash: boolean,
   hasStatementContext: boolean,
+  evidence?: any,
 ) {
-  const family = getCourtBeatEvidenceFamily(evidenceName, rows)
+  const family = getCourtBeatEvidenceFamily(evidenceName, rows, evidence)
   const label = getCourtBeatFamilyLabel(family)
 
   const scopeLines: Record<CourtBeatEvidenceFamily, { judge: string; notebook: string }> = {
@@ -595,7 +618,7 @@ function buildCourtBeatForEvidencePresentation(
   const immediateStatementText = findImmediateCourtBeatStatement(state, target, visibleDisputeIds)
   const isHit = resultType === 'crack' || resultType === 'collapse'
   const evidenceRows = buildEvidenceBeatRows(evidence, evidenceRuntime, resultType)
-  const evidenceFamily = getCourtBeatEvidenceFamily(evidenceName, evidenceRows)
+  const evidenceFamily = getCourtBeatEvidenceFamily(evidenceName, evidenceRows, evidence)
   const rawHighlightText = immediateStatementText ? pickStatementHighlight(immediateStatementText) : undefined
   const isDirectClash = Boolean(immediateStatementText) && isHit && Boolean(rawHighlightText) && canDirectlyClashWithStatement(evidenceFamily, immediateStatementText)
   const hasStatementContext = isDirectClash
@@ -603,7 +626,7 @@ function buildCourtBeatForEvidencePresentation(
     ? immediateStatementText
     : `${evidenceName}의 관련성을 현재 쟁점과 별도로 검토합니다.`
   const highlightText = hasStatementContext ? rawHighlightText : undefined
-  const relationCopy = buildCourtBeatRelationCopy(evidenceName, evidenceRows, statementText, isHit, isDirectClash, hasStatementContext)
+  const relationCopy = buildCourtBeatRelationCopy(evidenceName, evidenceRows, statementText, isHit, isDirectClash, hasStatementContext, evidence)
   return {
     beatType: isHit ? 'evidence_hit_major' : 'evidence_miss',
     intensity: isHit ? 'impact' : 'focus',
@@ -3157,7 +3180,7 @@ function applyTrustEffect(actionType: string, target: PartyId) {
   const s = useGameStore.getState()
   switch (actionType) {
     case 'confidential_protection':
-      // 비공개보호: 법정 지배력 1 소비
+      // 비공개보호: 법정 장악 1 소비
       if (s.resources.courtControl >= 1) {
         s.spend('courtControl', 1)
         window.dispatchEvent(new CustomEvent('pc:court-control-used', {
@@ -3166,11 +3189,11 @@ function applyTrustEffect(actionType: string, target: PartyId) {
         s.changeTrust(target, 'trustTowardJudge', 20)
         s.changeTrust(target, 'fearOfExposure', -15)
       } else {
-        s.addDialogue({ speaker: 'system', text: `법정 지배력이 부족합니다.`, relatedDisputes: [], turn: s.turnCount })
+        s.addDialogue({ speaker: 'system', text: `법정 장악이 부족합니다.`, relatedDisputes: [], turn: s.turnCount })
       }
       break
     case 'separation':
-      // 분리심문: 법정 지배력 1 소비, 3턴간 상대 배제
+      // 분리심문: 법정 장악 1 소비, 3턴간 상대 배제
       if (s.resources.courtControl >= 1) {
         s.spend('courtControl', 1)
         window.dispatchEvent(new CustomEvent('pc:court-control-used', {
@@ -3181,7 +3204,7 @@ function applyTrustEffect(actionType: string, target: PartyId) {
         s.changeTrust(target, 'retaliationWorry', -10)
         s.addDialogue({ speaker: 'system', text: `[분리] 분리 심문 시작 — 3턴간 상대측이 배제됩니다.`, relatedDisputes: [], turn: s.turnCount })
       } else {
-        s.addDialogue({ speaker: 'system', text: `법정 지배력이 부족합니다.`, relatedDisputes: [], turn: s.turnCount })
+        s.addDialogue({ speaker: 'system', text: `법정 장악이 부족합니다.`, relatedDisputes: [], turn: s.turnCount })
       }
       break
   }

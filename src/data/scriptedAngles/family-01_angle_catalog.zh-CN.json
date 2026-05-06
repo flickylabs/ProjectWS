@@ -1,0 +1,164 @@
+{
+  "schemaVersion": 1,
+  "caseId": "family-01",
+  "locale": "zh-CN",
+  "overlayKind": "angle_catalog",
+  "angles": [
+    {
+      "disputeId": "d-1",
+      "angleId": "general",
+      "label": "遗嘱形成经过",
+      "description": "确认母亲是否理解遗嘱内容并表达过自己的意思——审视形成过程。"
+    },
+    {
+      "disputeId": "d-1",
+      "angleId": "mother_intent",
+      "label": "母亲意思的确认",
+      "description": "追问母亲是否理解遗嘱内容并自行表达过意思。"
+    },
+    {
+      "disputeId": "d-1",
+      "angleId": "visit_pattern",
+      "label": "晚年探访频次",
+      "description": "尹正厚的探访次数与停留时长怎样与遗嘱议题相关——确认其连接点。"
+    },
+    {
+      "disputeId": "d-1",
+      "angleId": "caregiver_change",
+      "label": "护理员的更替",
+      "description": "公证之前主责护理员的更替是否与遗嘱程序相互咬合——逐项追问。"
+    },
+    {
+      "disputeId": "d-1",
+      "angleId": "notarization_flow",
+      "label": "公证的时点与程序",
+      "description": "公证日、文件准备情况、母亲状态——按时间顺序逐一对照。"
+    },
+    {
+      "disputeId": "d-1",
+      "angleId": "paper_reading",
+      "label": "在母亲面前念纸的场景",
+      "description": "尹正厚在母亲面前反复念那张纸、并在哥哥到达之前赶着收尾的情形——把它单独抽出来看。"
+    },
+    {
+      "disputeId": "d-2",
+      "angleId": "general",
+      "label": "最终遗嘱的形成经过",
+      "description": "确认六比四的遗嘱通过怎样的路径成为了最终版本。"
+    },
+    {
+      "disputeId": "d-2",
+      "angleId": "scan_sequence",
+      "label": "公证人备忘记录",
+      "description": "公证当日备忘里记下的母亲状态、数字混淆、程序推进方式——逐一确认。"
+    },
+    {
+      "disputeId": "d-2",
+      "angleId": "original_gap",
+      "label": "亲笔练习本与公证副本的差异",
+      "description": "追问为何亲笔练习本与公证副本之间会出现比例差。"
+    },
+    {
+      "disputeId": "d-2",
+      "angleId": "changed_direction",
+      "label": "改动方向的反差",
+      "description": "改动方向与一般贪欲所推断的方向不一致——把这一处单独抽出来看。"
+    },
+    {
+      "disputeId": "d-2",
+      "angleId": "forgery_responsibility",
+      "label": "对文件动手的责任",
+      "description": "无论动机为何——对母亲的文件动过手的责任，要单独确认。"
+    },
+    {
+      "disputeId": "d-3",
+      "angleId": "general",
+      "label": "母亲账户的资金",
+      "description": "经母亲账户呈现的款项与兄弟之间的资金往来，逐项确认。"
+    },
+    {
+      "disputeId": "d-3",
+      "angleId": "long_support_flow",
+      "label": "按月入账的资金流向",
+      "description": "反复进入母亲账户的款项，其实际性质——分阶段确认。"
+    },
+    {
+      "disputeId": "d-3",
+      "angleId": "mother_account_mask",
+      "label": "经由母亲账户的中转",
+      "description": "钱看上去像是以母亲名义存在的——这一结构与由此产生的误会，单独确认。"
+    },
+    {
+      "disputeId": "d-3",
+      "angleId": "factory_crisis_support",
+      "label": "工厂困难期的资金支援",
+      "description": "工厂困难时期的资金往来与对其来源的认识——审视清楚。"
+    },
+    {
+      "disputeId": "d-3",
+      "angleId": "silence_over_pride",
+      "label": "面子下的沉默",
+      "description": "对钱不言不语——这是出于保护，还是出于隐瞒？分清楚。"
+    },
+    {
+      "disputeId": "d-4",
+      "angleId": "general",
+      "label": "日记本里的家事",
+      "description": "母亲日记本里所留下的敏感家事与沉默——审视清楚。"
+    },
+    {
+      "disputeId": "d-4",
+      "angleId": "diary_discovery",
+      "label": "日记本的发现时点",
+      "description": "尹正厚是何时翻开母亲日记本、又确认到了什么——逐项追问。"
+    },
+    {
+      "disputeId": "d-4",
+      "angleId": "sealed_family_record",
+      "label": "封存的家庭记录",
+      "description": "不轻易翻开具体内容，只就封存记录所带来的影响——单独追问。"
+    },
+    {
+      "disputeId": "d-4",
+      "angleId": "silence_reason",
+      "label": "沉默的理由",
+      "description": "知情却选择不说——这份沉默到底护住了谁、又把谁排除在外？审视清楚。"
+    },
+    {
+      "disputeId": "d-4",
+      "angleId": "will_link",
+      "label": "敏感家事与遗嘱改动的连接",
+      "description": "敏感的家事如何延伸成对遗嘱改动的判断——逐项追问。"
+    },
+    {
+      "disputeId": "d-5",
+      "angleId": "general",
+      "label": "兄弟责任结构",
+      "description": "两兄弟各自怎样理解、又怎样扭曲了母亲的意思——审视清楚。"
+    },
+    {
+      "disputeId": "d-5",
+      "angleId": "a_entitlement",
+      "label": "把长子身份当成继承权",
+      "description": "尹泰成把照护与长子身份当作继承权来读的责任——审视清楚。"
+    },
+    {
+      "disputeId": "d-5",
+      "angleId": "b_protection_control",
+      "label": "以保护为名的控制",
+      "description": "尹正厚以保护为名，反过来矫正母亲意思的责任——审视清楚。"
+    },
+    {
+      "disputeId": "d-5",
+      "angleId": "mother_voice",
+      "label": "母亲意思该有的位置",
+      "description": "母亲实际的意思，在两个儿子的解读之间——是怎样被弄丢的？审视清楚。"
+    },
+    {
+      "disputeId": "d-5",
+      "angleId": "dual_responsibility",
+      "label": "两兄弟的共同责任",
+      "description": "不是一边设为恶人——而是把双方各自不同方式的责任，并排整理出来。"
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+key_or_source,locale,current_proposal,shorter_alternative,notes
+hotbar.slot.fact,en,Fact Pursuit,Facts,Compact alias for [data-screen-bucket=sm or xs]. Thread-04 P0-7 + Thread-01 LONG_TEXT_RISKS.
+hotbar.slot.motive,en,Motive Search,Motive,Compact alias.
+hotbar.slot.empathy,en,Empathy Approach,Empathy,Compact alias.
+hotbar.slot.free,en,Free Question,Free Q,Compact alias.
+hotbar.slot.evidence,en,Present Evidence,Evidence,Compact alias.
+hotbar.slot.witness,en,Call Witness,Witness,Compact alias.
+hotbar.special.separation,en,Separate Interrogation,Separate,Compact alias for max-width 56-92px chip. Thread-04 P0-7.
+hotbar.special.confidential,en,Confidential Protection,Confidential,Compact alias.
+hotbar.special.immediate,en,Demand Answer,Immediate,Compact alias. Demand Answer is widest of the 3.
+hotbar.choice.fact.title,en,Fact Pursuit — focus on contradictions,Fact Pursuit / Focus on contradictions,Split title + subtitle pattern.
+hotbar.choice.motive.title,en,Motive Search — surface hidden disputes,Motive Search / Surface hidden disputes,Same pattern.
+hotbar.choice.empathy.title,en,Empathy Approach — invite confession,Empathy Approach / Invite confession,Same pattern.
+court.advance.banner,en,You can {label}.,Ready: {label}.,Banner over hotbar. Combined with `Advance to Verdict` overflows. Thread-04 P0-7 + Thread-01 LONG_TEXT_RISKS.
+verdict.footer.submitBlocked,en,Judge every dispute first ({done}/{total}),Judge all disputes first ({done}/{total}),Inline progress indicator. Thread-04 P0-6.
+pc.verdict.factOption.partyClaimCorrectWithContradiction,en,This dispute differs from the facts — {party}'s claim is correct,Differs from facts — {party}'s claim,P0 in Thread-01 LONG_TEXT_RISKS. Verdict picker option button. Add CSS [lang=en] .pc-verdict-fact__option-text { font-size: 13px; }.
+pc.verdict.responsibility.major,en,Primary responsibility: {party},Primary: {party},Compact alt for narrow meter.
+pc.verdict.responsibility.greater,en,Greater responsibility: {party},Greater: {party},Compact alt.
+pc.verdict.responsibility.similar,en,Comparable responsibility on both sides,Both sides comparable,Compact alt for narrow meter.
+pc.verdictAdvance.hidden.confirm,en,Proceed Anyway,Proceed,P1 in Thread-01. Single-word fallback for M/S buckets.
+pc.verdictAdvance.hidden.collapse,en,Hide Verdict Button,Hide Button,Single-word fallback. Context survives because button only applies to verdict CTA.
+pc.combo.ready,en,{count} ready to combine,(no shorter form needed),Thread-01 patch already drops redundant `available now` / `connect now` suffix.
+pc.combo.potential,en,{count} leads still missing,(no shorter form needed),Thread-01 patch already condenses.
+pc.notes.unseen,en,({count} unverified),({count} pending),Even more compact for very narrow note label.
+splash.subtitle,en,COURT SIMULATION GAME,COURT SIM,Drop GAME if Steam Deck portrait orientation truncates. Default OK.
+home.tagline,en,Take the bench and weigh every claim against the truth.,Take the bench. Weigh every claim.,Two-clause split for narrow Steam Deck portrait. Default fits.
+pcHomeShared.ts:134,en,Step onto the bench and untangle every dispute yourself.,(none — uses 1-2 line layout),Brand-clean wording (no Solomon). Pending i18n promotion.
+pc.home.guide.body,ja,モードを選び、セッションを決めて事件をクリックすると、ブリーフィングを経てすぐに公判が始まります。,モードを選びセッションを決めて事件をクリックすれば、すぐに公判が始まります。,Home top-bar guide popover.
+pc.intro.slide1.body,ja,質問・証拠・判断を組み合わせて、食い違う真相を見極める模擬法廷ゲームです。,(verify on S/XS — split into two clauses if needed),Centered hero copy.
+pc.settings.data.reset.desc,ja,セーブスロット・事件進行・裁判官の傾向・実績・プロフィールをすべて削除します。元に戻せません。,Split into two <p>: 削除対象: … / 元に戻せません。,Danger description.
+pc.settings.about.credits.description,ja,AI同士の対立を人間の知恵で裁く、リプレイ型の推理ゲーム,AI同士の対立を、人の知恵で裁くリプレイ型推理ゲーム,Drop 同士 if narrow.
+pc.profile.enhance.hint,ja,各素材スロットを必要数まで満たすと強化ボタンが有効になります。強化が完了すると、その項目のレベルと称号の合計レベルが同時に上がります。,Render as two <p>: split at 「。」,Forge modal help.
+pc.dialogue.contradiction.body,ja,前の供述と現在の供述の間に矛盾が検出されました。矛盾を積み重ねると、虚偽の状態が揺らぎ、新たな供述や手がかりが現れる可能性があります。,Split sentences across two <p>,Contradiction popup mid-width.
+pc.actions.evidence.selected.hint,ja,スロットで選んだ証拠をすぐに提示することも、下のパネルから調査・対面質問へ繋ぐこともできます。,選んだ証拠はすぐ提示できます。下のパネルから調査・対面質問にも繋げます。,Action panel hint.
+pc.record.section.contradiction.empty,ja,比較できる発言の食い違いはまだありません。同じ争点で違う質問タイプや証拠提示を行うと、供述の変化を確認できます。,(OK as 2 lines on L; on S split at 「ありません。」),Empty state record summary.
+pc.verdict.advance.body,ja,現在の公開争点は{visible}件です。まだ明らかになっていない争点が{hidden}件残っています。それでも判決へ進みますか？,Render with <br> between to control breaks (already 3 sentences),Confirmation panel body.
+pc.verdictAdvance.minimumVisible,ja,判決は争点が{required}件以上明らかになってから進められます。現在明らかになっている争点は{visible}件です。,判決は争点が{required}件以上明らかになるまで進められません（現在{visible}件）。,toast/banner — JA dense; 2-line wrap likely on Steam Deck XS.
+pc.actions.interrogation.subtitle,zh-CN,基于当前争议点控制提问、自由提问与辅助开关。,控制当前争议点的提问与开关。,22→14 chars. Hotbar subtitle row sm bucket may ellipsize.
+pc.actions.evidence.subtitle,zh-CN,在同一处管理证据出示、调查、鉴定与传唤证人。,集中管理证据出示、调查、鉴定与证人传唤。,22→20 chars.
+pc.gameplay.held.body,zh-CN,虽未直接崩塌，但已具备记录价值。请尝试与其他证据或发言连结后再次推进。,尚未直接崩塌，但值得记录。可与其他证据或发言连结后再试。,33→26 chars. sm bucket may force 3 lines.
+pc.gameplay.statementCollapse.body,zh-CN,对方陈述大幅动摇。现在正适合衔接下一道追问或异议。,对方陈述大幅动摇，正适合接下一道追问或异议。,23→21 chars.
+pc.settings.about.credits.description,zh-CN,用人类判断审理 AI 证词冲突的可重玩推理游戏,以人类判断审理 AI 证词冲突的回放推理游戏,21 chars; credits row may be single-line zone.
+pc.settings.data.resetDescription,zh-CN,将删除存档槽、案件进度、裁判官倾向、成就与档案，操作不可撤销。,删除存档、案件进度、倾向、成就与档案，无法撤销。,30→23 chars.
+pc.toast.onlyHighlightedCombinable,zh-CN,只有高亮的关键发言可参与组合。,只能组合高亮的关键发言。,Toast sometimes truncates at 12 chars.
+pc.interaction.objectionLabel,zh-CN,提出异议,异议,2-char alt if button is small icon-tile.
+pc.verdictAdvance.minimumVisible,zh-CN,需要至少揭示 {required} 个争议点后才能进入裁决。当前已揭示 {visible} 个。,至少揭示 {required} 个争议点才能进入裁决。当前 {visible} 个。,Reduce padding word.
+splash.subtitle,ja,法廷シミュレーションゲーム,法廷シミュ,Compact for very narrow splash. Default OK.
+splash.subtitle,zh-CN,法庭模拟游戏,法庭模拟,Compact for very narrow splash. Default OK.
+home.gameTitle,en,Verdict Zero: Trial of Truth,Verdict Zero / Trial of Truth (2-line),"Stack on Steam Deck 1280×800 (Thread-04 P0-3 — controlled wrap)."
+home.gameTitle,ja,ソロモンのジレンマ：真実の裁き,ソロモンのジレンマ / 真実の裁き (2-line),Same.
+home.gameTitle,zh-CN,真相裁决：零点审判,真相裁决 / 零点审判 (2-line),Same.
+result.tab.* numeric prefix,en,01 Result / 02 Verdict / 03 Epilogue / 04 Bonus,Result / Verdict / Epilogue / Bonus,Drop numeric prefix on non-KO. Thread-04 P0-4. Resolves Thread-01 conflict.
+result.tab.* numeric prefix,ja,01 結果確認 / 02 判決宣告 / 03 後日談 / 04 ボーナス,結果 / 判決 / 後日談 / ボーナス,Same.
+result.tab.* numeric prefix,zh-CN,01 结果 / 02 判决 / 03 后日谈 / 04 奖励,结果 / 判决 / 后日谈 / 奖励,Same.
+verdict.step.* numeric prefix,en,01 Dispute Judgment / 02 Responsibility / 03 Solutions / 04 Verdict,Disputes / Responsibility / Solution / Verdict,Same.
+verdict.step.* numeric prefix,ja,01 争点判断 / 02 責任配分 / 03 解決策 / 04 判決文,争点判断 / 責任配分 / 解決策 / 判決文,Same.
+verdict.step.* numeric prefix,zh-CN,01 争点判断 / 02 责任分配 / 03 解决方案 / 04 判决文,争点判断 / 责任分配 / 解决方案 / 判决文,Same.
+court.tools.investigation,en,Investigation Resource (header tool button),Token (compact),Header shows icon + counter only; tooltip is full text.
+court.tools.skill,en,Skill Points,Skill (compact),Same header pattern.
+court.tools.courtControl,en,Court Control,Court (compact),Same header pattern.
+testConsole.investigationTokens,en,Investigation Token,Token,Test console resource head — Thread-04 P2-1.
+testConsole.skillPoints,en,Skill Point,Skill,Same.
+testConsole.courtControl,en,Court Control,Court,Same.
+phase.advance.label.toVerdict,en,Advance to Verdict,To Verdict,Drop verb when banner sentence already says ready.
+phase.advance.label.toReexam,en,Advance to Final Interrogation,To Final Interrogation,Same.
+phase.advance.label.next,en,Advance to Next Phase,Next Phase,Same.

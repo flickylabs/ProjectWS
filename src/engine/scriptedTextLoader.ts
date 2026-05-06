@@ -29,6 +29,8 @@ import {
   getScriptedAngleJudgeQuestionVariants,
 } from './scriptedAngleTextLoader.ts'
 import { getStageAwareEvidencePresent } from '../data/evidencePresentationScripts'
+import type { LocaleCode } from '../i18n/locales'
+import { getRuntimeScriptLocale } from '../i18n/scriptLocale.ts'
 
 // 캐시: caseId → bundle
 const bundleCache = new Map<string, ScriptedTextBundle>()
@@ -96,29 +98,79 @@ export interface ScriptedJudgeQuestionOption {
 }
 
 // Vite dynamic import — eager 로드 (불필요 파일은 _archive로 이동하여 3개만 로드)
-const scriptModsLazy = import.meta.glob<true, string, { default?: ScriptedTextBundle }>(
+const scriptModsLazy = import.meta.glob<true, string, { default?: unknown }>(
   '../data/scriptedText/*.json',
   { eager: true },
 )
 
 /** case bundle load (동기 — eager glob 사용) */
-function loadBundle(caseId: string): ScriptedTextBundle | null {
+function loadBundle(caseId: string, locale: LocaleCode = getRuntimeScriptLocale()): ScriptedTextBundle | null {
   const normalizedId = normalizeCaseKey(caseId)
-  if (bundleCache.has(normalizedId)) return bundleCache.get(normalizedId)!
-  if (bundleCache.has(caseId)) return bundleCache.get(caseId)!
+  const cacheKey = `${normalizedId}:${locale}`
+  const rawCacheKey = `${caseId}:${locale}`
+  if (bundleCache.has(cacheKey)) return bundleCache.get(cacheKey)!
+  if (bundleCache.has(rawCacheKey)) return bundleCache.get(rawCacheKey)!
 
   const candidateIds = [...new Set([normalizedId, caseId].filter(Boolean))]
   for (const candidateId of candidateIds) {
-    const path = `../data/scriptedText/${candidateId}.json`
-    const mod = scriptModsLazy[path]
-    if (!mod) continue
-    const bundle = ((mod as any).default ?? mod) as ScriptedTextBundle
+    const bundle = readScriptedTextModule(`../data/scriptedText/${candidateId}.json`)
+    if (!bundle) continue
     if (bundle.schemaVersion !== 1) return null
-    bundleCache.set(normalizedId, bundle)
-    bundleCache.set(candidateId, bundle)
-    return bundle
+    const overlay = locale === 'ko'
+      ? null
+      : readScriptedTextModule(`../data/scriptedText/${candidateId}.${locale}.json`)
+    const localizedBundle = overlay ? mergeScriptedTextBundle(bundle, overlay) : bundle
+    bundleCache.set(cacheKey, localizedBundle)
+    bundleCache.set(rawCacheKey, localizedBundle)
+    return localizedBundle
   }
   return null
+}
+
+function readScriptedTextModule(path: string): ScriptedTextBundle | null {
+  const mod = scriptModsLazy[path]
+  const bundle = ((mod as any)?.default ?? mod) as ScriptedTextBundle | null | undefined
+  if (!bundle || typeof bundle !== 'object') return null
+  return bundle
+}
+
+function mergeScriptedTextBundle(base: ScriptedTextBundle, overlay: Partial<ScriptedTextBundle>): ScriptedTextBundle {
+  const merged = cloneJson(base)
+  const overlayChannels = (overlay as any).channels ?? {}
+  for (const [channelName, overlayChannel] of Object.entries<any>(overlayChannels)) {
+    const targetChannel = (merged.channels as any)[channelName]
+    if (!targetChannel?.entries || !Array.isArray(overlayChannel?.entries)) continue
+    mergeChannelEntries(targetChannel.entries, overlayChannel.entries)
+  }
+  return merged
+}
+
+function mergeChannelEntries(targetEntries: any[], overlayEntries: any[]): void {
+  const targetByKey = new Map(targetEntries.map((entry) => [entry.key, entry]))
+  for (const overlayEntry of overlayEntries) {
+    const targetEntry = targetByKey.get(overlayEntry.key)
+    if (!targetEntry || !Array.isArray(overlayEntry.variants)) continue
+    mergeVariantTexts(targetEntry.variants ?? [], overlayEntry.variants)
+  }
+}
+
+function mergeVariantTexts(targetVariants: ScriptedVariant[], overlayVariants: Array<Partial<ScriptedVariant> & { id?: string }>): void {
+  const targetById = new Map(targetVariants.map((variant) => [variant.id, variant]))
+  for (const overlayVariant of overlayVariants) {
+    if (!overlayVariant.id) continue
+    const target = targetById.get(overlayVariant.id)
+    if (!target) continue
+    if (hasText(overlayVariant.text)) target.text = overlayVariant.text
+    if (hasText(overlayVariant.behaviorHint)) target.behaviorHint = overlayVariant.behaviorHint
+  }
+}
+
+function hasText(value: unknown): value is string {
+  return typeof value === 'string' && value.trim().length > 0
+}
+
+function cloneJson<T>(value: T): T {
+  return JSON.parse(JSON.stringify(value)) as T
 }
 
 /** 사건 선택 시 미리 로드 (호환용 — eager이므로 즉시 완료) */

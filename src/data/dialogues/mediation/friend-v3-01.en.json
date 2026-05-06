@@ -1,0 +1,55 @@
+{
+  "caseId": "case-friend-01",
+  "overlayKind": "mediationDialogue",
+  "paths": {
+    "immediate": {
+      "judge": "I will rule on the issues as currently organised. We move to the verdict stage.",
+      "dialogues": []
+    },
+    "conditional": {
+      "judge": "I will start by proposing a conditional mediation that separates the core responsibilities. The intent behind nine days of contact, the nuance of the fiance's messages, and the past breakup with the texts about the father will not be bundled into one matter.",
+      "dialogues": [
+        {
+          "id": "0",
+          "speaker": "a",
+          "text": "Ms. Song's side can hear a conditional mediation. But the intent behind the nine days of contact has to be put on paper first, or the same misunderstanding just keeps coming back."
+        },
+        {
+          "id": "1",
+          "speaker": "b",
+          "text": "Ms. Choi's side can hear the conditional terms as well. But the circumstances of the past breakup and the texts about her father — and why I went around her — must be addressed together."
+        }
+      ]
+    },
+    "postpone": {
+      "judge": "I will fix only the facts that can be confirmed today and reserve the rest. The circumstances of the past breakup and the issues around the father will be examined separately, between record and the parties' own accounts.",
+      "dialogues": [
+        {
+          "id": "0",
+          "speaker": "a",
+          "text": "Ms. Song's side can accept reserving a decision. But the intent behind the nine days of contact at least has to be drawn out today, or further confusion will only grow."
+        },
+        {
+          "id": "1",
+          "speaker": "b",
+          "text": "Ms. Choi's side also believes the circumstances need a closer look before any hasty conclusion. But please make it clear that reserving a decision is not the same as being cleared."
+        }
+      ]
+    },
+    "fact_first": {
+      "judge": "Before any solution, I will fix the facts. The nine days of contact, the fiance's messages, and the circumstances of the past breakup — where each connects to which — come first.",
+      "dialogues": [
+        {
+          "id": "0",
+          "speaker": "a",
+          "text": "Ms. Song's side agrees with sorting facts out first. At minimum, the intent behind the nine days of contact has to be fixed against the records first."
+        },
+        {
+          "id": "1",
+          "speaker": "b",
+          "text": "Ms. Choi's side can accept facts before solutions. But the reason I made contact and how Da-eun received it have to be looked at separately."
+        }
+      ]
+    }
+  }
+}

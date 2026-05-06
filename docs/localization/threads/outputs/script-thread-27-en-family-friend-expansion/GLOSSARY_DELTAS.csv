@@ -1,0 +1,57 @@
+case_id,ko_term,en_chosen,glossary_status,notes
+family-01,윤태성,Yoon Tae-seong,new,Older brother / party A. Used as `Mr. Yoon Tae-seong` in formal address.
+family-01,윤정후,Yoon Jung-hoo,new,Younger brother / party B. Used as `Mr. Yoon Jung-hoo` in formal address.
+family-01,형 (vocative B→A),Brother,new,EN courtroom-natural translation of intimate vocative; alternative `Tae-seong` used in some contexts.
+family-01,정후야 (intimate A→B),Jung-hoo,new,First-name vocative.
+family-01,어머니 / 어머님,mother / our mother / their mother,new,Possessive form depends on speaker context.
+family-01,유서,will,new,Locked.
+family-01,공증본,notarised copy,new,Locked.
+family-01,자필 연습본,handwritten draft,new,Locked.
+family-01,60:40 / 60대 40,60:40,new,Public ratio — allowed in all surfaces.
+family-01,요양원,care home,new,Locked.
+family-01,요양보호사,care worker,new,Locked.
+family-01,공증인,notary,new,Locked.
+family-01,일기장,diary,new,Locked.
+family-01,어머니 통장 자금 흐름,mother's account flow,new,Locked.
+family-01,어머니 판단 능력,mother's capacity to decide,new,Locked.
+family-01,분배 비율이 적힌 서류 사본 (e-1 surfaceName),Copy of the document showing the distribution ratio,new,Surface only.
+family-01,요양원 방문기록 (e-2 surfaceName),Care-home visit log,new,Surface only.
+family-01,전 요양보호사 음성증언 (e-3 surfaceName),Voice statement from the former care worker,new,Surface only.
+family-01,공증인 메모 기록 (e-4 surfaceName),Notary's procedural notes,new,Surface only.
+family-01,어머니 자필 유언장 연습본 (e-5 surfaceName),Mother's handwritten draft will,new,Surface only.
+family-01,오래된 계좌 흐름 (e-6 surfaceName),Long-running account flow,new,Surface only.
+family-01,어머니 일기장 (e-7 surfaceName),Mother's diary,new,Surface only.
+family-01,출생 비밀 (TRUTH),"old family matter / sensitive family matter (S0–S4); birth secret (S5)",truth-gated,Forbidden in non-S5 EN.
+family-01,친생 / 친자 (TRUTH),"family identity matter (S0–S4); not biologically his son / different father (S5)",truth-gated,Forbidden in non-S5 EN.
+family-01,90:10 (TRUTH),"a different ratio / the original draft ratio (S0–S4); 90:10 / 90 to 10 (S5)",truth-gated,Forbidden in non-S5 EN.
+family-01,비율 변경 (B-down) (TRUTH),"the ratio change (S0–S4); reduced his own share / will manipulation (S5)",truth-gated,Forbidden in non-S5 EN.
+family-01,3억 / 공장 위기 (TRUTH),"the factory's difficult time / that prior support (S0–S4); 300 million won / factory crisis 300 million (S5)",truth-gated,Forbidden in non-S5 EN.
+family-01,정후 돈 / 어머니 통장 경유 (TRUTH),"old regular support hidden through her account (S0–S4 abstract); Yoon Jung-hoo's money / Jung-hoo's money (S5)",truth-gated,Forbidden in non-S5 EN.
+friend-01,송다은,Song Da-eun,new,Bride-to-be / party A. Used as `Ms. Song` in formal address.
+friend-01,최수민,Choi Su-min,new,Former best friend / party B. Used as `Ms. Choi` in formal address.
+friend-01,다은아 (intimate),Da-eun,new,First-name vocative.
+friend-01,수민아 (intimate),Su-min,new,First-name vocative.
+friend-01,예비신랑,the fiance,new,Surface label; not specified as 'fiance approached first' in pre-S5.
+friend-01,손절,the breakup / the friendship cutoff,new,Surface label.
+friend-01,단톡방,group chat,new,Locked.
+friend-01,캡처,captures / screenshots,new,Locked.
+friend-01,카톡,KakaoTalk thread,new,Locked.
+friend-01,차용증,IOU,new,Locked.
+friend-01,송금,transfer,new,Locked.
+friend-01,9일간의 연락,nine days of contact,new,Locked phrase.
+friend-01,6번 / 11번,six calls / eleven texts,new,Numeric form preserved.
+friend-01,연락 기록 (e-1 surfaceName),Contact log,new,Surface only.
+friend-01,단톡방 캡처 (e-2 surfaceName),Group-chat captures,new,Surface only.
+friend-01,과거 카톡 (e-3 surfaceName),Past KakaoTalk thread,new,Surface only.
+friend-01,예비신랑 메시지 (e-4 surfaceName),Fiance's messages,new,Surface only.
+friend-01,송다은 아버지 문자 (e-5 surfaceName),Texts from Ms. Song's father,new,Surface only.
+friend-01,과거 송금 기록 (e-6 surfaceName),Past transfer record,new,Surface only.
+friend-01,대조표 (e-7 surfaceName),Comparison table,new,Surface only.
+friend-01,선을 넘은 (TRUTH re fiance),"something out of line / something inappropriate (S0–S4); fiance crossed the line / inappropriate messages (S5)",truth-gated,Forbidden in non-S5 EN.
+friend-01,사기 (TRUTH re father),"a past money problem / prior money issue (S0–S4); father's fraud / investment fraud (S5)",truth-gated,Forbidden in non-S5 EN.
+friend-01,거절 (TRUTH re B refused),"(S0–S4 in B's voice — avoid); Choi Sumin refused (S5)",truth-gated,Forbidden in non-S5 EN.
+friend-01,같은 패턴 (TRUTH),"(S0–S4 — avoid 'same pattern'); same pattern again / could not let it happen again (S5)",truth-gated,Forbidden in non-S5 EN.
+friend-01,B 경고 의도 (TRUTH),"(S0–S4 — describe via 'something I had to pass on'); B's warning intent / not seduction but warning (S5)",truth-gated,Forbidden in non-S5 EN.
+friend-01,과거 손절 이유 (TRUTH),"(S0–S4 — 'something I could not just speak about'); old breakup caused by A's father / B could not say it / B played the villain again (S5)",truth-gated,Forbidden in non-S5 EN.
+friend-01,명예훼손 (TRUTH),"(S0–S4 — 'the public exposure / the framing'); defamation (S5)",truth-gated,Forbidden in non-S5 EN.
+common,재판관님,Your Honor,locked-spouse-01-already,Reused from spouse-01 pilot.

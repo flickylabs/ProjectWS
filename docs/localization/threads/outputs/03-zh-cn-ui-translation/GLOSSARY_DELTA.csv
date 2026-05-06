@@ -1,0 +1,3 @@
+glossary_id,locale,current,proposed,reason,confidence,requires_user_decision
+investigation_token,zh-CN,调查代币,调查点数,"代币 reads like a crypto/casino token in modern CN; 调查点数 reads as a game UI resource. Three call sites all in dev-style labels — safe to test.",medium,true
+trust,zh-CN,信任度,信任,"Glossary CN is 信任度 (compound for 'trust meter'). All in-UI surfaces use base 信任 (信任顺序 / 信任恢复). Suggest dropping 度 in glossary so it matches actual usage; keep 信任度 as a longer descriptive form for tooltips.",medium,true

@@ -1,0 +1,306 @@
+id,locale,current,proposed,reason,confidence,requires_user_decision
+internal_project_name,ko,,Project_Solomon,"NEW row. Internal/dev codename. Locked across all locales. Not used as public-facing title in any UI surface — package metadata / Steam app config / repo identifier only.",high,false
+internal_project_name,en,,Project_Solomon,"NEW. Locked.",high,false
+internal_project_name,ja,,Project_Solomon,"NEW. Locked.",high,false
+internal_project_name,zh-CN,,Project_Solomon,"NEW. Locked.",high,false
+brand_title,ko,,솔로몬의 딜레마,"NEW row. Public-facing in-game title (top half of title + subtitle structure). Locked. PROJECT_CONTROL_TOWER decision 2026-05-06.",high,false
+brand_title,en,,Verdict Zero,"NEW. Locked. PROJECT_CONTROL_TOWER decision: avoid Solomon-based naming for EN to prevent religious/biblical reading. Verdict Zero conveys judge/wisdom theme.",high,false
+brand_title,ja,,ソロモンのジレンマ,"NEW. Locked.",high,false
+brand_title,zh-CN,,真相裁决,"NEW. Locked. PROJECT_CONTROL_TOWER decision: rejects 所罗门的法庭 and 所罗门的两难. Use natural localized title — 真相裁决 conveys truth / verdict theme.",high,false
+brand_subtitle,ko,,진실의 재판,"NEW row. Public-facing subtitle. Locked.",high,false
+brand_subtitle,en,,Trial of Truth,"NEW. Locked.",high,false
+brand_subtitle,ja,,真実の裁き,"NEW. Locked.",high,false
+brand_subtitle,zh-CN,,零点审判,"NEW. Locked.",high,false
+brand_full_title,ko,,솔로몬의 딜레마: 진실의 재판,"NEW row. Locked. Joined form (title + ' : ' + subtitle). KO/EN use Roman colon `:`.",high,false
+brand_full_title,en,,Verdict Zero: Trial of Truth,"NEW. Locked.",high,false
+brand_full_title,ja,,ソロモンのジレンマ：真実の裁き,"NEW. Locked. Note JA uses full-width colon `：` per JIS punctuation convention.",high,false
+brand_full_title,zh-CN,,真相裁决：零点审判,"NEW. Locked. Note zh-CN uses full-width colon `：`.",high,false
+project_solomon,ko,Project Solomon,(deprecate as user-facing — use internal_project_name only),"PROJECT_CONTROL_TOWER decision: do not use Project Solomon as the in-game public title. Glossary row remains for engine/dev references via internal_project_name. Mark current row as locked + note ""never user-facing"".",high,false
+record_summary,ko,기록 요약,기록 정리,"All UI surfaces (court.recordSummary / token.recovery.records.title / right-panel) render 기록 정리. Glossary KR field is wrong. Confirmed by Thread-01 + Thread-02 audits.",high,false
+record_summary,en,Record Summary,Records,"Floating right-panel toggle and panel title both render Records. Record Summary overflows.",high,false
+record_summary,ja,記録要約,記録の整理,"Once KO source is updated to 기록 정리, JA target follows. Matches PC UI rendering.",high,false
+record_summary,zh-CN,记录摘要,记录整理,"Cross-locale alignment.",medium,false
+solution,ja,解決案,解決策,"PC UI verdict step uses 解決策 (more natural for game UI choice copy). 解決案 may still appear in formal verdict text.",medium,false
+investigation_token,zh-CN,调查代币,调查点数,"代币 reads like crypto/casino token in modern CN. 调查点数 reads as natural game-UI resource.",medium,false
+trust,zh-CN,信任度,信任,"All in-UI surfaces use base 信任. 信任度 reserved for tooltip-only descriptive form.",medium,false
+pretrial_phase,en,Pretrial Phase,Opening Statements,"PROJECT_CONTROL_TOWER decision 9 confirmed. Pretrial Phase reads too legalistic for Steam audience.",high,false
+re_examination_phase,en,Re-examination Phase,Final Interrogation,"PROJECT_CONTROL_TOWER decision 10 confirmed. KR source 최종 심문 단계 = Final Interrogation Phase. EN UI uses Final Interrogation across advance button + tactical tab.",high,false
+briefing_phase,en,Briefing Phase,Case Brief,"UI hero pill renders 사건 브리핑 as Case Brief for tone parity with Steam game UI.",high,false
+interrogation_phase,en,Interrogation Phase,Interrogation,"Phase pill drops Phase suffix. JA + zh-CN already drop the suffix. All locales should drop suffix when used as phase label.",high,false
+interrogation_phase,ja,尋問フェーズ,尋問,"Cross-locale alignment with EN.",high,false
+interrogation_phase,zh-CN,讯问阶段,讯问,"Cross-locale alignment with EN.",high,false
+briefing_phase,ja,ブリーフィングフェーズ,ブリーフィング,"JA audit shows ブリーフィング (no フェーズ) in UI.",high,false
+briefing_phase,zh-CN,简报阶段,案件简报,"zh-CN audit shows 案件简报 (no 阶段).",high,false
+pretrial_phase,ja,冒頭陳述フェーズ,冒頭陳述,"JA audit confirms 冒頭陳述 used.",high,false
+pretrial_phase,zh-CN,庭前陈述阶段,庭前陈述,"zh-CN audit confirms 庭前陈述 used.",high,false
+verdict_phase,ja,判決フェーズ,判決,"JA audit shows 判決 used as phase pill.",high,false
+verdict_phase,zh-CN,判决阶段,判决,"zh-CN audit shows 判决 used as phase pill.",high,false
+result_phase,ja,結果フェーズ,結果,"JA audit shows 結果 used.",high,false
+result_phase,zh-CN,结果阶段,结果,"zh-CN audit shows 结果 used.",high,false
+mediation_phase,ja,調停フェーズ,調停,"JA audit shows 調停 used.",high,false
+re_examination_phase,ja,再尋問フェーズ,再尋問,"JA audit shows 再尋問 used.",high,false
+re_examination_phase,zh-CN,最终讯问阶段,最终讯问,"zh-CN: drop 阶段 suffix per phase-pill convention.",high,false
+clearance,ko,클리어런스,(rename id to permission_level),"PROJECT_CONTROL_TOWER decision 1 confirmed: split. permission_level = permission/security/unlock concept.",high,false
+clearance,en,Clearance,(rename id to permission_level),"Rename glossary id. Old 'clearance' is removed.",high,false
+clearance,ja,クリアランス,(rename id to permission_level),"Rename glossary id.",high,false
+clearance,zh-CN,权限等级,(rename id to permission_level),"Rename glossary id. zh-CN value retained.",high,false
+permission_level,ko,,권한 등급,"NEW row (was clearance). KO transliteration 클리어런스 replaced with 권한 등급 for clarity. Engine-only currently — verify usage.",high,false
+permission_level,en,,Permission Level,"NEW row.",high,false
+permission_level,ja,,権限レベル,"NEW row.",high,false
+permission_level,zh-CN,,权限等级,"NEW row. Value carried over.",high,false
+clearance_rate,ko,,클리어율,"NEW row. PROJECT_CONTROL_TOWER decision 1 confirmed: completion percentage concept distinct from permission_level. Used in result-screen donut.",high,false
+clearance_rate,en,,Completion Rate,"NEW row. PROJECT_CONTROL_TOWER decision 1: prefer Completion Rate; compact UI may use Completion. Was Clearance Rate in earlier draft.",high,false
+clearance_rate,ja,,達成度,"NEW row.",high,false
+clearance_rate,zh-CN,,完成度,"NEW row. Thread-03 already renders 完成度.",high,false
+court_control,ko,,법정 장악,"NEW row. KR source uses both 법정 장악 + 법정 지배력 — canonicalize to 법정 장악.",high,false
+court_control,en,,Court Control,"NEW row. Used 8× in EN UI.",high,false
+court_control,ja,,法廷掌握,"NEW row.",high,false
+court_control,zh-CN,,法庭掌控,"NEW row.",medium,false
+free_question,ko,,자유 질문,"NEW row. Per-slot free-text question label. Distinct from free_interrogation (mode).",high,false
+free_question,en,,Free Question,"NEW row. Hotbar slot label.",high,false
+free_question,ja,,自由質問,"NEW row.",high,false
+free_question,zh-CN,,自由提问,"NEW row.",high,false
+investigation_stage,ko,,조사 단계,"NEW row. Distinct from evidence_stage (증거 단계).",high,false
+investigation_stage,en,,Investigation Stage,"NEW row.",high,false
+investigation_stage,ja,,調査ステージ,"NEW row.",high,false
+investigation_stage,zh-CN,,调查阶段,"NEW row.",high,false
+decisive_question,ko,,결정적 질문,"NEW row. PROJECT_CONTROL_TOWER decision 3: dossier deprecated; use context-specific terms (Records / Case File / Decisive Question / Notes). decisive_question is one of those replacements.",high,false
+decisive_question,en,,Decisive Question,"NEW row.",high,false
+decisive_question,ja,,決定的質問,"NEW row.",high,false
+decisive_question,zh-CN,,决定性提问,"NEW row.",high,false
+case_file,ko,,사건 파일,"NEW row. PROJECT_CONTROL_TOWER decision 3: dossier replacement for case-detail surfaces. Verify if any UI surface needs this beyond Records / Decisive Question.",medium,true
+case_file,en,,Case File,"NEW row. Use only where Records / Decisive Question / Notes do not fit.",medium,false
+case_file,ja,,事件ファイル,"NEW row.",medium,false
+case_file,zh-CN,,案件档案,"NEW row.",medium,false
+dossier,ko,사건 기록,(deprecated for user-facing UI),"PROJECT_CONTROL_TOWER decision 3 confirmed. Mark status=deprecated. Engine-internal naming kept for legacy code references only. UI surfaces use Records / Case File / Decisive Question / Notes per context.",high,false
+dossier,en,Dossier,(deprecated for user-facing UI),"Same as above.",high,false
+dossier,ja,調書,(deprecated for user-facing UI),"Same as above.",high,false
+dossier,zh-CN,档案,(deprecated for user-facing UI),"Same as above.",high,false
+judge_fragment,ko,,판결 조각,"NEW row. Used 11× JA + 9 sub-types.",high,false
+judge_fragment,en,,Verdict Fragment,"NEW row.",high,false
+judge_fragment,ja,,判決の欠片,"NEW row.",high,false
+judge_fragment,zh-CN,,判决碎片,"NEW row.",high,false
+judge_title,ko,,칭호,"NEW row. PROJECT_CONTROL_TOWER decision 6 confirmed: KO source 타이틀 → 칭호 rename.",high,false
+judge_title,en,,Title,"NEW row.",high,false
+judge_title,ja,,称号,"NEW row.",high,false
+judge_title,zh-CN,,称号,"NEW row.",high,false
+score_axis_insight,ko,,탐구 (점수),"NEW row. Score-axis name on result donut. Disambiguates from 탐구 inquiry-axis trait.",high,false
+score_axis_insight,en,,Insight,"NEW row.",high,false
+score_axis_insight,ja,,洞察,"NEW row. JA team to confirm.",medium,true
+score_axis_insight,zh-CN,,洞察,"NEW row. zh-CN team to confirm.",medium,true
+score_axis_authority,ko,,판결 (점수),"NEW row. CRITICAL — same KR character 판결 collides with glossary verdict. Disambiguates score-axis from gameplay verdict.",high,false
+score_axis_authority,en,,Authority,"NEW row.",high,false
+score_axis_authority,ja,,権威,"NEW row. JA team to confirm. Alt 判決軸.",medium,true
+score_axis_authority,zh-CN,,权威,"NEW row. zh-CN team to confirm.",medium,true
+score_axis_wisdom,ko,,해결 (점수),"NEW row. Distinct from gameplay solution (해결안).",high,false
+score_axis_wisdom,en,,Wisdom,"NEW row.",high,false
+score_axis_wisdom,ja,,知恵,"NEW row.",medium,true
+score_axis_wisdom,zh-CN,,智慧,"NEW row.",medium,true
+demand_answer,ko,,즉답 요구,"NEW row. Used 5× as recurring action label.",high,false
+demand_answer,en,,Demand Answer,"NEW row.",high,false
+demand_answer,ja,,即答要求,"NEW row.",medium,false
+demand_answer,zh-CN,,即答要求,"NEW row.",medium,false
+separate_interrogation,ko,,분리 심문,"NEW row.",high,false
+separate_interrogation,en,,Separate Interrogation,"NEW row.",high,false
+separate_interrogation,ja,,個別尋問,"NEW row.",medium,false
+separate_interrogation,zh-CN,,分别讯问,"NEW row.",medium,false
+confidential_protection,ko,,비공개 보호,"NEW row.",high,false
+confidential_protection,en,,Confidential Protection,"NEW row.",high,false
+confidential_protection,ja,,非公開保護,"NEW row.",medium,false
+confidential_protection,zh-CN,,保密保护,"NEW row.",medium,false
+objection,ko,,이의 제기,"NEW row. UI noun (button label). Distinct from 이의 있습니다 (in-character spoken bark).",high,false
+objection,en,,Objection,"NEW row.",high,false
+objection,ja,,異議申立,"NEW row.",medium,false
+objection,zh-CN,,异议,"NEW row. PROJECT_CONTROL_TOWER decision 7 confirmed: UI noun 异议. In-character spoken bark uses 反对！via separate dialogue key. NOT 我提出异议 for compact UI.",high,false
+objection_bark,ko,,이의 있습니다,"NEW row. PROJECT_CONTROL_TOWER decision 7: separate row for in-character speech. Routed through dialogue channel.",high,false
+objection_bark,en,,Objection!,"NEW row. In-character spoken line.",high,false
+objection_bark,ja,,異議あり！,"NEW row.",medium,false
+objection_bark,zh-CN,,反对！,"NEW row. PROJECT_CONTROL_TOWER decision 7 confirmed.",high,false
+truth_progress,ko,,진실파악 단계,"NEW row.",high,false
+truth_progress,en,,Truth Progress,"NEW row.",high,false
+truth_progress,ja,,真相把握段階,"NEW row.",medium,false
+truth_progress,zh-CN,,真相进度,"NEW row.",medium,false
+combination,ko,,조합,"NEW row.",high,false
+combination,en,,Combination,"NEW row.",high,false
+combination,ja,,組合せ,"NEW row.",medium,false
+combination,zh-CN,,组合,"NEW row.",medium,false
+trust_state_high,ko,,신뢰함,"NEW row.",medium,true
+trust_state_high,en,,Trusting,"NEW row.",medium,false
+trust_state_high,ja,,信頼,"NEW row.",medium,true
+trust_state_high,zh-CN,,信任,"NEW row.",medium,true
+trust_state_mid,ko,,경계함,"NEW row.",medium,true
+trust_state_mid,en,,Cautious,"NEW row.",medium,false
+trust_state_mid,ja,,警戒,"NEW row.",medium,true
+trust_state_mid,zh-CN,,警觉,"NEW row.",medium,true
+trust_state_low,ko,,의심함,"NEW row.",medium,true
+trust_state_low,en,,Suspicious,"NEW row.",medium,false
+trust_state_low,ja,,疑念,"NEW row.",medium,true
+trust_state_low,zh-CN,,怀疑,"NEW row.",medium,true
+rarity_common,ko,,일반,"NEW row.",high,false
+rarity_common,en,,Common,"NEW row.",high,false
+rarity_common,ja,,コモン,"NEW row. JA team to confirm — 一般 alt.",medium,true
+rarity_common,zh-CN,,普通,"NEW row.",high,false
+rarity_rare,ko,,희귀,"NEW row.",high,false
+rarity_rare,en,,Rare,"NEW row.",high,false
+rarity_rare,ja,,レア,"NEW row.",high,false
+rarity_rare,zh-CN,,稀有,"NEW row.",high,false
+rarity_epic,ko,,영웅,"NEW row. KR literal 영웅=hero; CN gaming convention prefers 史诗.",high,false
+rarity_epic,en,,Epic,"NEW row.",high,false
+rarity_epic,ja,,エピック,"NEW row.",high,false
+rarity_epic,zh-CN,,史诗,"NEW row.",high,false
+rarity_legendary,ko,,전설,"NEW row.",high,false
+rarity_legendary,en,,Legendary,"NEW row.",high,false
+rarity_legendary,ja,,レジェンダリー,"NEW row.",high,false
+rarity_legendary,zh-CN,,传说,"NEW row.",high,false
+emotion_defensive,ko,,경계,"NEW row.",high,false
+emotion_defensive,en,,Guarded,"NEW row.",medium,false
+emotion_defensive,ja,,警戒,"NEW row.",medium,false
+emotion_defensive,zh-CN,,警戒,"NEW row.",medium,false
+emotion_confident,ko,,자신감,"NEW row.",high,false
+emotion_confident,en,,Confident,"NEW row.",high,false
+emotion_confident,ja,,自信,"NEW row.",medium,false
+emotion_confident,zh-CN,,自信,"NEW row.",medium,false
+emotion_shaken,ko,,동요,"NEW row.",high,false
+emotion_shaken,en,,Shaken,"NEW row.",high,false
+emotion_shaken,ja,,動揺,"NEW row.",medium,false
+emotion_shaken,zh-CN,,动摇,"NEW row.",medium,false
+emotion_angry,ko,,격앙,"NEW row.",high,false
+emotion_angry,en,,Enraged,"NEW row.",medium,false
+emotion_angry,ja,,激昂,"NEW row.",medium,false
+emotion_angry,zh-CN,,激愤,"NEW row.",medium,false
+emotion_resigned,ko,,체념,"NEW row.",high,false
+emotion_resigned,en,,Resigned,"NEW row.",high,false
+emotion_resigned,ja,,諦観,"NEW row. Alt 諦め.",medium,true
+emotion_resigned,zh-CN,,认命,"NEW row. PROJECT_CONTROL_TOWER decision 8 confirmed: use 认命 (fatalistic acceptance) NOT 放弃 (give up). 默许 only for tacit-permission contexts which do not apply here.",high,false
+lie_state_s0,ko,,방어,"NEW row.",high,false
+lie_state_s0,en,,Defense,"NEW row.",high,false
+lie_state_s0,ja,,防衛,"NEW row.",medium,false
+lie_state_s0,zh-CN,,防御,"NEW row.",medium,false
+lie_state_s1,ko,,동요,"NEW row. NOTE — same KR as emotion_shaken; verify intentional.",medium,true
+lie_state_s1,en,,Wavering,"NEW row.",high,false
+lie_state_s1,ja,,動揺,"NEW row.",medium,false
+lie_state_s1,zh-CN,,动摇,"NEW row.",medium,false
+lie_state_s2,ko,,변명,"NEW row.",high,false
+lie_state_s2,en,,Excuse,"NEW row.",high,false
+lie_state_s2,ja,,弁明,"NEW row.",medium,false
+lie_state_s2,zh-CN,,辩解,"NEW row.",medium,false
+lie_state_s3,ko,,궁지,"NEW row.",high,false
+lie_state_s3,en,,Cornered,"NEW row.",high,false
+lie_state_s3,ja,,窮地,"NEW row.",medium,false
+lie_state_s3,zh-CN,,窘迫,"NEW row.",medium,false
+lie_state_s4,ko,,붕괴,"NEW row.",high,false
+lie_state_s4,en,,Breaking,"NEW row.",high,false
+lie_state_s4,ja,,崩壊,"NEW row.",medium,false
+lie_state_s4,zh-CN,,崩溃,"NEW row.",medium,false
+lie_state_s5,ko,,자백,"NEW row.",high,false
+lie_state_s5,en,,Confession,"NEW row.",high,false
+lie_state_s5,ja,,自白,"NEW row.",medium,false
+lie_state_s5,zh-CN,,自白,"NEW row.",medium,false
+fragment_reasoning,ko,,논리 조각,"NEW row.",high,false
+fragment_reasoning,en,,Reasoning Fragment,"NEW row.",high,false
+fragment_reasoning,ja,,論理の欠片,"NEW row.",medium,false
+fragment_reasoning,zh-CN,,逻辑碎片,"NEW row.",medium,false
+fragment_inquiry,ko,,탐구 조각,"NEW row.",high,false
+fragment_inquiry,en,,Inquiry Fragment,"NEW row.",high,false
+fragment_inquiry,ja,,探究の欠片,"NEW row.",medium,false
+fragment_inquiry,zh-CN,,探究碎片,"NEW row.",medium,false
+fragment_empathy,ko,,공감 조각,"NEW row.",high,false
+fragment_empathy,en,,Empathy Fragment,"NEW row.",high,false
+fragment_empathy,ja,,共感の欠片,"NEW row.",medium,false
+fragment_empathy,zh-CN,,共情碎片,"NEW row.",medium,false
+fragment_severity,ko,,엄정 조각,"NEW row. PROJECT_CONTROL_TOWER 엄격↔엄정 KR cleanup pending — verify final canonical.",high,true
+fragment_severity,en,,Severity Fragment,"NEW row.",high,false
+fragment_severity,ja,,厳正の欠片,"NEW row.",medium,false
+fragment_severity,zh-CN,,严正碎片,"NEW row.",medium,false
+fragment_deliberation,ko,,심사 조각,"NEW row.",high,false
+fragment_deliberation,en,,Deliberation Fragment,"NEW row.",high,false
+fragment_deliberation,ja,,審議の欠片,"NEW row.",medium,false
+fragment_deliberation,zh-CN,,审议碎片,"NEW row.",medium,false
+fragment_leniency,ko,,관용 조각,"NEW row.",high,false
+fragment_leniency,en,,Leniency Fragment,"NEW row.",high,false
+fragment_leniency,ja,,寛容の欠片,"NEW row.",medium,false
+fragment_leniency,zh-CN,,宽容碎片,"NEW row.",medium,false
+fragment_jurisprudence,ko,,법리 조각,"NEW row.",high,false
+fragment_jurisprudence,en,,Jurisprudence Fragment,"NEW row.",high,false
+fragment_jurisprudence,ja,,法理の欠片,"NEW row.",medium,false
+fragment_jurisprudence,zh-CN,,法理碎片,"NEW row.",medium,false
+fragment_balance,ko,,균형 조각,"NEW row.",high,false
+fragment_balance,en,,Balance Fragment,"NEW row.",high,false
+fragment_balance,ja,,均衡の欠片,"NEW row.",medium,false
+fragment_balance,zh-CN,,均衡碎片,"NEW row.",medium,false
+fragment_reconciliation,ko,,화해 조각,"NEW row. PROJECT_CONTROL_TOWER decision 4 confirmed: 화해 = reconciliation/restored relationship. Distinct from 봉합 (axis_resolution_pole below).",high,false
+fragment_reconciliation,en,,Reconciliation Fragment,"NEW row.",high,false
+fragment_reconciliation,ja,,和解の欠片,"NEW row.",medium,false
+fragment_reconciliation,zh-CN,,和解碎片,"NEW row.",medium,false
+axis_resolution_pole,ko,,봉합,"NEW row. PROJECT_CONTROL_TOWER decision 4 confirmed: 봉합 = patching over / containment / closing a conflict without true reconciliation. Resolution-axis right pole. Distinct from 화해 (fragment_reconciliation).",high,false
+axis_resolution_pole,en,,Closure,"NEW row. Recommended EN translation conveying 'patching over / closing without reconciliation'. Frees Reconcile/Reconciliation for 화해. Alt: Containment / Patch Over.",medium,true
+axis_resolution_pole,ja,,収拾,"NEW row. Recommended JA. Alt: 鎮静 / 弥縫.",medium,true
+axis_resolution_pole,zh-CN,,弥合,"NEW row. Recommended zh-CN — literally 'stitching the gap', semantically 'patching over'. Alt: 平息.",medium,true
+axis_principle_pole,ko,,원칙,"NEW row. Resolution-axis left pole (paired with 봉합).",high,false
+axis_principle_pole,en,,Principle,"NEW row. Already in EN UI as judgeDesk.axes.principle.",high,false
+axis_principle_pole,ja,,原則,"NEW row.",high,false
+axis_principle_pole,zh-CN,,原则,"NEW row.",high,false
+axis_logic_pole,ko,,논리,"NEW row. Inquiry-axis left pole.",high,false
+axis_logic_pole,en,,Logic,"NEW row.",high,false
+axis_logic_pole,ja,,論理,"NEW row.",high,false
+axis_logic_pole,zh-CN,,逻辑,"NEW row.",high,false
+axis_intuition_pole,ko,,직관,"NEW row. Inquiry-axis right pole.",high,false
+axis_intuition_pole,en,,Intuition,"NEW row.",high,false
+axis_intuition_pole,ja,,直感,"NEW row.",high,false
+axis_intuition_pole,zh-CN,,直觉,"NEW row.",high,false
+axis_severity_pole,ko,,엄격,"NEW row. Judgment-axis left pole. KR cleanup: prefer 엄격 over 엄정 for axis-pole label; 엄정 reserved for fragment_severity.",high,false
+axis_severity_pole,en,,Strict,"NEW row.",high,false
+axis_severity_pole,ja,,厳格,"NEW row.",high,false
+axis_severity_pole,zh-CN,,严格,"NEW row. Thread-03 P2 noted KR 엄격↔엄정 collapse to 严正 — after KR cleanup, axis pole becomes 严格.",medium,false
+axis_leniency_pole,ko,,관용,"NEW row. Judgment-axis right pole.",high,false
+axis_leniency_pole,en,,Lenient,"NEW row.",high,false
+axis_leniency_pole,ja,,寛容,"NEW row.",high,false
+axis_leniency_pole,zh-CN,,宽容,"NEW row.",high,false
+relationship_spouse,ko,,부부,"NEW row.",high,false
+relationship_spouse,en,,Spouse,"NEW row.",high,false
+relationship_spouse,ja,,夫婦,"NEW row.",high,false
+relationship_spouse,zh-CN,,夫妻,"NEW row.",high,false
+relationship_family,ko,,가족,"NEW row.",high,false
+relationship_family,en,,Family,"NEW row.",high,false
+relationship_family,ja,,家族,"NEW row.",high,false
+relationship_family,zh-CN,,家庭,"NEW row.",medium,false
+relationship_friend,ko,,친구,"NEW row.",high,false
+relationship_friend,en,,Friend,"NEW row.",high,false
+relationship_friend,ja,,友人,"NEW row.",high,false
+relationship_friend,zh-CN,,朋友,"NEW row.",high,false
+relationship_neighbor,ko,,이웃,"NEW row.",high,false
+relationship_neighbor,en,,Neighbor,"NEW row.",high,false
+relationship_neighbor,ja,,隣人,"NEW row.",high,false
+relationship_neighbor,zh-CN,,邻居,"NEW row.",high,false
+relationship_partnership,ko,,동업,"NEW row.",high,false
+relationship_partnership,en,,Business Partner,"NEW row.",medium,false
+relationship_partnership,ja,,共同事業,"NEW row.",medium,false
+relationship_partnership,zh-CN,,合伙,"NEW row.",medium,false
+relationship_workplace,ko,,직장,"NEW row.",high,false
+relationship_workplace,en,,Workplace,"NEW row.",high,false
+relationship_workplace,ja,,職場,"NEW row.",high,false
+relationship_workplace,zh-CN,,职场,"NEW row.",high,false
+relationship_tenant_landlord,ko,,세입자-집주인,"NEW row.",high,false
+relationship_tenant_landlord,en,,Tenant–Landlord,"NEW row.",high,false
+relationship_tenant_landlord,ja,,賃借人・家主,"NEW row.",medium,false
+relationship_tenant_landlord,zh-CN,,租户·房东,"NEW row.",medium,false
+relationship_online,ko,,온라인,"NEW row.",high,false
+relationship_online,en,,Online,"NEW row.",high,false
+relationship_online,ja,,オンライン,"NEW row.",high,false
+relationship_online,zh-CN,,网络,"NEW row.",medium,false
+relationship_medical_education,ko,,의료·교육,"NEW row.",high,false
+relationship_medical_education,en,,Medical / Education,"NEW row.",high,false
+relationship_medical_education,ja,,医療・教育,"NEW row.",high,false
+relationship_medical_education,zh-CN,,医疗·教育,"NEW row.",high,false
+relationship_public_system,ko,,공공·제도,"NEW row.",high,false
+relationship_public_system,en,,Public / Civic,"NEW row.",medium,false
+relationship_public_system,ja,,公共・制度,"NEW row.",medium,false
+relationship_public_system,zh-CN,,公共·制度,"NEW row.",medium,false
+records,ko,,기록,"NEW row. Compact records label (alias of record_summary).",medium,false
+records,en,,Records,"NEW row.",high,false
+records,ja,,記録,"NEW row.",high,false
+records,zh-CN,,记录,"NEW row.",high,false
+notes,ko,,메모,"NEW row. PROJECT_CONTROL_TOWER decision 3: dossier replacement for note-style surfaces.",medium,false
+notes,en,,Notes,"NEW row.",high,false
+notes,ja,,メモ,"NEW row.",high,false
+notes,zh-CN,,笔记,"NEW row.",medium,false

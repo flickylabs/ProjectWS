@@ -1,0 +1,81 @@
+{
+  "caseId": "family-01",
+  "locale": "zh-CN",
+  "overlayKind": "generatedCaseSurface",
+  "meta": {
+    "title": "失智母亲留下的遗嘱"
+  },
+  "context": {
+    "description": "失智的母亲留下的遗嘱上写着——次子 60%、长子 40%。一直自认是亲自照护母亲的尹泰成怒不可遏；弟弟则始终淡然。",
+    "triggerAmplifier": "起初，遗嘱比例与疗养院的探访记录看起来都像是尹正厚介入的痕迹。但随着公证人备忘、亲笔练习本、陈年的账户流向、母亲的日记本相继被翻开，事件的中心已经不只是一桩寻常的遗产之争。"
+  },
+  "duo": {
+    "partyA": {
+      "name": "尹泰成",
+      "occupation": "厨房家具工厂代表"
+    },
+    "partyB": {
+      "name": "尹正厚",
+      "occupation": "汽车配件店经营"
+    }
+  },
+  "disputes": [
+    {
+      "id": "d-1",
+      "name": "遗嘱形成与判断能力"
+    },
+    {
+      "id": "d-2",
+      "name": "公证遗嘱与另一份文件的差异"
+    },
+    {
+      "id": "d-3",
+      "name": "陈年资助的来源"
+    },
+    {
+      "id": "d-4",
+      "name": "家族记录与沉默的理由"
+    },
+    {
+      "id": "d-5",
+      "name": "母亲未道明的心意"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e-1",
+      "surfaceName": "记载分配比例的文件副本",
+      "surfaceDescription": "母亲遗嘱的副本存在。"
+    },
+    {
+      "id": "e-2",
+      "surfaceName": "疗养院探访记录",
+      "surfaceDescription": "疗养院的探访记录留有底档。"
+    },
+    {
+      "id": "e-3",
+      "surfaceName": "前任护理员录音证言",
+      "surfaceDescription": "前任护理员的证言已留有录音。"
+    },
+    {
+      "id": "e-4",
+      "surfaceName": "公证人备忘记录",
+      "surfaceDescription": "公证当日的程序备忘留有底档。"
+    },
+    {
+      "id": "e-5",
+      "surfaceName": "母亲亲笔遗书练习本",
+      "surfaceDescription": "母亲留下的亲笔遗书练习本存在。"
+    },
+    {
+      "id": "e-6",
+      "surfaceName": "陈年账户流向记录",
+      "surfaceDescription": "陈年账户流向的记录存在。"
+    },
+    {
+      "id": "e-7",
+      "surfaceName": "母亲的日记本",
+      "surfaceDescription": "母亲所留的白色亲笔笔记本照片存在。"
+    }
+  ]
+}

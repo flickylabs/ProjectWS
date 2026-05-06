@@ -4,6 +4,7 @@ import PCSvgIcon from '../icons/PCSvgIcon'
 import { useScreenPreset } from '../../../hooks/useScreenPreset'
 import { SCREEN_PRESETS, nearestPreset, type ScreenPresetId } from '../../../utils/screenPresets'
 import { getSettings, updateSettings } from '../../../hooks/useLocalStorage'
+import { useI18n, type LocaleCode, type MessageKey } from '../../../i18n'
 import {
   isBgmEnabled,
   setBgmEnabled,
@@ -36,22 +37,23 @@ type SettingsCategoryId =
 
 const CATEGORIES: Array<{
   id: SettingsCategoryId
-  label: string
+  labelKey: MessageKey
   iconId: string
   status: 'ready' | 'preview'  // ready=실제 옵션 / preview=구조만
 }> = [
-  { id: 'display',       label: '화면',     iconId: 'i-eye',     status: 'ready' },
-  { id: 'audio',         label: '오디오',   iconId: 'i-bolt',    status: 'ready' },
-  { id: 'gameplay',      label: '게임플레이', iconId: 'i-gavel',   status: 'ready' },
-  { id: 'data',          label: '데이터',   iconId: 'i-doc',     status: 'ready' },
-  { id: 'language',      label: '언어',     iconId: 'i-chat',    status: 'preview' },
-  { id: 'accessibility', label: '접근성',   iconId: 'i-heart',   status: 'preview' },
-  { id: 'controls',      label: '키보드',   iconId: 'i-hand',    status: 'preview' },
-  { id: 'account',       label: '계정',     iconId: 'i-person',  status: 'preview' },
-  { id: 'about',         label: '정보',     iconId: 'i-bulb',    status: 'ready' },
+  { id: 'display',       labelKey: 'settings.category.display',       iconId: 'i-eye',     status: 'ready' },
+  { id: 'audio',         labelKey: 'settings.category.audio',         iconId: 'i-bolt',    status: 'ready' },
+  { id: 'gameplay',      labelKey: 'settings.category.gameplay',      iconId: 'i-gavel',   status: 'ready' },
+  { id: 'data',          labelKey: 'settings.category.data',          iconId: 'i-doc',     status: 'ready' },
+  { id: 'language',      labelKey: 'settings.category.language',      iconId: 'i-chat',    status: 'ready' },
+  { id: 'accessibility', labelKey: 'settings.category.accessibility', iconId: 'i-heart',   status: 'preview' },
+  { id: 'controls',      labelKey: 'settings.category.controls',      iconId: 'i-hand',    status: 'preview' },
+  { id: 'account',       labelKey: 'settings.category.account',       iconId: 'i-person',  status: 'preview' },
+  { id: 'about',         labelKey: 'settings.category.about',         iconId: 'i-bulb',    status: 'ready' },
 ]
 
 export default function PCSettingsPanel({ open, onClose }: Props) {
+  const { t } = useI18n()
   const [activeCategory, setActiveCategory] = useState<SettingsCategoryId>('display')
 
   useEffect(() => {
@@ -66,18 +68,18 @@ export default function PCSettingsPanel({ open, onClose }: Props) {
   if (!open) return null
 
   return createPortal(
-    <div className="pc-settings-fullscreen" role="dialog" aria-label="설정">
+    <div className="pc-settings-fullscreen" role="dialog" aria-label={t('settings.title')}>
       <header className="pc-settings-fullscreen__header">
         <div className="pc-settings-fullscreen__title">
           <PCSvgIcon id="i-gear" size={22} />
-          <span>설정</span>
+          <span>{t('settings.title')}</span>
         </div>
         <button
           type="button"
           className="pc-settings-fullscreen__close"
           onClick={onClose}
-          aria-label="닫기 (Esc)"
-          title="닫기 (Esc)"
+          aria-label={t('settings.closeWithShortcut')}
+          title={t('settings.closeWithShortcut')}
         >
           <span>✕</span>
           <kbd>Esc</kbd>
@@ -85,7 +87,7 @@ export default function PCSettingsPanel({ open, onClose }: Props) {
       </header>
 
       <div className="pc-settings-fullscreen__body">
-        <nav className="pc-settings-sidebar" aria-label="설정 카테고리">
+        <nav className="pc-settings-sidebar" aria-label={t('settings.title')}>
           {CATEGORIES.map((cat) => (
             <button
               key={cat.id}
@@ -97,9 +99,9 @@ export default function PCSettingsPanel({ open, onClose }: Props) {
               <span className="pc-settings-sidebar__icon">
                 <PCSvgIcon id={cat.iconId} size={16} />
               </span>
-              <span className="pc-settings-sidebar__label">{cat.label}</span>
+              <span className="pc-settings-sidebar__label">{t(cat.labelKey)}</span>
               {cat.status === 'preview' ? (
-                <span className="pc-settings-sidebar__badge">준비 중</span>
+                <span className="pc-settings-sidebar__badge">{t('settings.category.preview')}</span>
               ) : null}
             </button>
           ))}
@@ -110,10 +112,16 @@ export default function PCSettingsPanel({ open, onClose }: Props) {
           {activeCategory === 'audio' && <AudioSettings />}
           {activeCategory === 'gameplay' && <GameplaySettings />}
           {activeCategory === 'data' && <DataSettings />}
-          {activeCategory === 'language' && <PreviewSection title="언어" desc="한국어 / 영어 / 일본어 — 확장 예정" />}
-          {activeCategory === 'accessibility' && <PreviewSection title="접근성" desc="색약 모드·큰 글씨·자막·깜빡임 감소 — 다음 사이클" />}
-          {activeCategory === 'controls' && <PreviewSection title="키보드" desc="단축키 커스터마이징 — 다음 사이클" />}
-          {activeCategory === 'account' && <PreviewSection title="계정" desc="로그인·세이브 동기 — 확장 예정" />}
+          {activeCategory === 'language' && <LanguageSettings />}
+          {activeCategory === 'accessibility' && (
+            <PreviewSection title={t('settings.category.accessibility')} desc={t('settings.preview.accessibility.description')} />
+          )}
+          {activeCategory === 'controls' && (
+            <PreviewSection title={t('settings.category.controls')} desc={t('settings.preview.controls.description')} />
+          )}
+          {activeCategory === 'account' && (
+            <PreviewSection title={t('settings.category.account')} desc={t('settings.preview.account.description')} />
+          )}
           {activeCategory === 'about' && <AboutSection />}
         </main>
       </div>
@@ -452,35 +460,84 @@ function DataSettings() {
 // 카테고리: 정보 (About)
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-function AboutSection() {
+function LanguageSettings() {
+  const { locale, locales, setLocale, t } = useI18n()
+  const selectedLocale = locales.find((item) => item.code === locale)
+
   return (
     <div className="pc-settings-content">
-      <h2 className="pc-settings-content__title">정보</h2>
-      <p className="pc-settings-content__desc">버전 · 크레딧 · 라이선스</p>
+      <h2 className="pc-settings-content__title">{t('settings.language.title')}</h2>
+      <p className="pc-settings-content__desc">{t('settings.language.description')}</p>
 
       <section className="pc-settings-group">
-        <h3 className="pc-settings-group__title">버전</h3>
-        <div className="pc-settings-info-row">
-          <span className="pc-settings-info-row__label">빌드</span>
-          <span className="pc-settings-info-row__value">v0.x — 개발 중 (PC 베타)</span>
-        </div>
-        <div className="pc-settings-info-row">
-          <span className="pc-settings-info-row__label">엔진</span>
-          <span className="pc-settings-info-row__value">React 19 · TypeScript 5.9 · Vite 8</span>
+        <h3 className="pc-settings-group__title">{t('settings.language.displayLanguage')}</h3>
+        <div className="pc-settings-select-row">
+          <div>
+            <strong>{t('settings.language.displayLanguage')}</strong>
+            <p>{t('settings.language.displayLanguageDescription')}</p>
+          </div>
+          <select
+            className="pc-settings-select"
+            value={locale}
+            aria-label={t('language.selectorTitle')}
+            onChange={(event) => setLocale(event.target.value as LocaleCode)}
+          >
+            {locales.map((item) => (
+              <option key={item.code} value={item.code}>
+                {item.nativeName}
+              </option>
+            ))}
+          </select>
         </div>
       </section>
 
       <section className="pc-settings-group">
-        <h3 className="pc-settings-group__title">크레딧</h3>
+        <h3 className="pc-settings-group__title">{t('settings.language.current')}</h3>
+        <div className="pc-settings-info-row">
+          <span className="pc-settings-info-row__label">{t('settings.language.current')}</span>
+          <span className="pc-settings-info-row__value">{selectedLocale?.nativeName ?? locale}</span>
+        </div>
+        <p className="pc-settings-content__desc" style={{ marginTop: 12 }}>
+          {t('settings.language.restartNote')}
+        </p>
+      </section>
+    </div>
+  )
+}
+
+function AboutSection() {
+  const { t } = useI18n()
+
+  return (
+    <div className="pc-settings-content">
+      <h2 className="pc-settings-content__title">{t('settings.about.title')}</h2>
+      <p className="pc-settings-content__desc">{t('settings.about.description')}</p>
+
+      <section className="pc-settings-group">
+        <h3 className="pc-settings-group__title">{t('settings.about.versionGroup')}</h3>
+        <div className="pc-settings-info-row">
+          <span className="pc-settings-info-row__label">{t('settings.about.versionBuildLabel')}</span>
+          <span className="pc-settings-info-row__value">{t('settings.about.versionBuildValue')}</span>
+        </div>
+        <div className="pc-settings-info-row">
+          <span className="pc-settings-info-row__label">{t('settings.about.engineLabel')}</span>
+          <span className="pc-settings-info-row__value">{t('settings.about.engineValue')}</span>
+        </div>
+      </section>
+
+      <section className="pc-settings-group">
+        <h3 className="pc-settings-group__title">{t('settings.about.creditsGroup')}</h3>
         <p className="pc-settings-content__desc" style={{ marginTop: 4 }}>
-          솔로몬 법정 — AI 둘의 싸움을 인간 지혜로 재판하는 리플레이형 추리 게임
+          <strong>{t('settings.about.credits.title')}</strong>
+          <br />
+          {t('settings.about.credits.description')}
         </p>
       </section>
 
       <section className="pc-settings-group">
-        <h3 className="pc-settings-group__title">라이선스</h3>
+        <h3 className="pc-settings-group__title">{t('settings.about.licenseGroup')}</h3>
         <p className="pc-settings-content__desc" style={{ marginTop: 4 }}>
-          오픈소스 라이브러리 · 폰트 · 에셋 정보 (개발 중)
+          {t('settings.about.licenseDescription')}
         </p>
       </section>
     </div>
@@ -492,14 +549,16 @@ function AboutSection() {
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 function PreviewSection({ title, desc }: { title: string; desc: string }) {
+  const { t } = useI18n()
+
   return (
     <div className="pc-settings-content">
       <h2 className="pc-settings-content__title">{title}</h2>
       <p className="pc-settings-content__desc">{desc}</p>
       <div className="pc-settings-preview-empty">
         <PCSvgIcon id="i-clock" size={32} />
-        <p>이 카테고리는 다음 사이클에서 옵션이 추가됩니다.</p>
-        <p className="pc-settings-preview-empty__sub">v2.0 디자인 가이드의 카테고리 매트릭스 참고</p>
+        <p>{t('settings.preview.nextCycle')}</p>
+        <p className="pc-settings-preview-empty__sub">{t('settings.preview.designGuideNote')}</p>
       </div>
     </div>
   )

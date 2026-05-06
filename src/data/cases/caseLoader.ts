@@ -4,6 +4,7 @@
  */
 import type { CaseData, LieConfig } from '../../types'
 import { postposition } from '../../engine/koreanPostposition'
+import { getRuntimeScriptLocale } from '../../i18n/scriptLocale.ts'
 
 // Vite의 glob import로 모든 JSON을 lazy 로드 가능하게 등록
 const caseModules = import.meta.glob('./generated/*.json', { eager: true }) as Record<string, { default: any }>
@@ -16,13 +17,14 @@ const EXCLUDED_CASE_KEYS = new Set(['neighbor-new-10', 'civic-new-07'])
 const SCRIPTED_SET = new Set(
   Object.keys(scriptedModules)
     .map((modulePath) => modulePath.split('/').pop()?.replace('.json', '') ?? '')
-    .filter((caseKey) => !!caseKey && !EXCLUDED_CASE_KEYS.has(caseKey)),
+    .filter((caseKey) => !!caseKey && !isLocaleSidecarName(caseKey) && !EXCLUDED_CASE_KEYS.has(caseKey)),
 )
 
 // 즉시 로드 — 정제 완료된 케이스만 (개발 중에는 USE_REFINED_ONLY를 false로)
 const USE_REFINED_ONLY = true
 const RAW_CASES = Object.entries(caseModules)
   .filter(([path]) => {
+    if (isLocaleSidecarPath(path)) return false
     const fileName = path.split('/').pop()?.replace('.json', '') ?? ''
     if (EXCLUDED_CASE_KEYS.has(fileName)) return false
     if (!SCRIPTED_SET.has(fileName)) return false
@@ -443,7 +445,7 @@ function normalizeLieTrigger(t: string): string {
 
 /** 모든 생성 사건을 로드 */
 export function loadGeneratedCases(): CaseData[] {
-  return RAW_CASES.map(normalizeCaseData)
+  return getRuntimeRawCases().map(normalizeCaseData)
 }
 
 /** 사건 메타 정보 (CaseMap용) */
@@ -457,13 +459,79 @@ export interface CaseMeta {
 
 /** 모든 생성 사건의 메타 정보 반환 */
 export function loadCaseMetas(): CaseMeta[] {
-  return RAW_CASES.map((raw: any) => ({
+  return getRuntimeRawCases().map((raw: any) => ({
     caseId: raw.caseId,
     relationshipType: raw.meta?.relationshipType ?? raw.duo?.relationshipType ?? 'unknown',
     difficulty: raw.meta?.difficulty ?? 'medium',
     anchorTruth: raw.meta?.anchorTruth ?? '',
     disputeNames: (raw.disputes ?? raw.issues ?? []).map((d: any) => d.name ?? d.statement?.slice(0, 40) ?? ''),
   }))
+}
+
+function getRuntimeRawCases(): any[] {
+  const locale = getRuntimeScriptLocale()
+  if (locale === 'ko') return RAW_CASES
+  return RAW_CASES.map((raw: any) => {
+    const overlay = getGeneratedCaseOverlay(raw.caseId, locale)
+    return overlay ? mergeGeneratedCaseSurface(raw, overlay) : raw
+  })
+}
+
+function getGeneratedCaseOverlay(caseId: string, locale: string): any | null {
+  const key = normalizeCaseOverlayKey(caseId)
+  const mod = caseModules[`./generated/${key}.${locale}.json`]
+  const overlay = (mod as any)?.default ?? mod
+  if (!overlay || typeof overlay !== 'object') return null
+  return overlay
+}
+
+function mergeGeneratedCaseSurface(raw: any, overlay: any): any {
+  const merged = cloneJson(raw)
+  mergeTextFields(merged.meta, overlay.meta, ['title', 'subtitle', 'summary'])
+  mergeTextFields(merged.context, overlay.context, ['description', 'triggerAmplifier'])
+  mergeTextFields(merged.duo?.partyA, overlay.duo?.partyA, ['name', 'occupation'])
+  mergeTextFields(merged.duo?.partyB, overlay.duo?.partyB, ['name', 'occupation'])
+  mergeCollectionFields(merged.disputes, overlay.disputes, ['name', 'surfaceClaim'])
+  mergeCollectionFields(merged.evidence, overlay.evidence, ['surfaceName', 'surfaceDescription'])
+  return merged
+}
+
+function mergeTextFields(target: any, source: any, fields: string[]): void {
+  if (!target || !source) return
+  for (const field of fields) {
+    if (typeof source[field] === 'string' && source[field].trim()) target[field] = source[field]
+  }
+}
+
+function mergeCollectionFields(target: any[] | undefined, source: any[] | undefined, fields: string[]): void {
+  if (!Array.isArray(target) || !Array.isArray(source)) return
+  const byId = new Map(target.map((item) => [item.id, item]))
+  for (const sourceItem of source) {
+    const targetItem = byId.get(sourceItem.id)
+    if (!targetItem) continue
+    for (const field of fields) {
+      if (typeof sourceItem[field] !== 'string' || !sourceItem[field].trim()) continue
+      if (field === 'surfaceName') targetItem.name = sourceItem[field]
+      else if (field === 'surfaceDescription') targetItem.description = sourceItem[field]
+      else targetItem[field] = sourceItem[field]
+    }
+  }
+}
+
+function normalizeCaseOverlayKey(caseId: string): string {
+  return caseId.replace(/^case-/, '')
+}
+
+function isLocaleSidecarPath(path: string): boolean {
+  return /\.(en|ja|zh-CN)\.json$/i.test(path)
+}
+
+function isLocaleSidecarName(name: string): boolean {
+  return /\.(en|ja|zh-CN)$/i.test(name)
+}
+
+function cloneJson<T>(value: T): T {
+  return JSON.parse(JSON.stringify(value)) as T
 }
 
 /** 원본 JSON에서 특정 증거의 viewerData를 조회 (sessionStorage 복원 시 누락 방어) */

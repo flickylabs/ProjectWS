@@ -8,6 +8,7 @@ import { openPcInteractionPanel } from '../layout/PCInteractionPanel'
 import { jumpToDialogue } from '../observation/JudgeObservationSection'
 import { hasContradictionComparison } from '../../../utils/contradiction'
 import { sanitizeKoreanSurfaceText } from '../../../utils/korean'
+import { translate } from '../../../i18n'
 
 export const PC_ADD_COMBINATION_NOTE_EVENT = 'pc:add-combination-note'
 
@@ -508,8 +509,8 @@ function FavoriteCard({
 
   const comboTitle = comboHint
     ? [
-        comboHint.readyCount > 0 ? `조합 가능 ${comboHint.readyCount}개 — 지금 바로 연결 가능` : null,
-        comboHint.potentialCount > 0 ? `실마리 필요 ${comboHint.potentialCount}개 — 아직 찾지 못한 단서가 있는 듯` : null,
+        comboHint.readyCount > 0 ? translate('pc.combo.ready', { count: comboHint.readyCount }) : null,
+        comboHint.potentialCount > 0 ? translate('pc.combo.potential', { count: comboHint.potentialCount }) : null,
       ].filter(Boolean).join('\n')
     : undefined
 

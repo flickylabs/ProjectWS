@@ -1,0 +1,15 @@
+case_id,sidecar_path,surface_type,ko_source_path,zh_cn_variants_filled,total_variants,coverage_pct,build_method,build_script
+family-01,src/data/scriptedText/family-01.zh-CN.json,scriptedText,src/data/scriptedText/family-01.json,5262,5262,100.0,sentence-pool build,tmp/script-localization/zh-cn-family-build/build-scripted-text.cjs
+family-01,src/data/scriptedAngles/family-01_angle_catalog.zh-CN.json,angle_catalog,src/data/scriptedAngles/family-01_angle_catalog.json,52,52,100.0,manual,n/a
+family-01,src/data/scriptedAngles/family-01_judge_questions.zh-CN.json,judge_questions,src/data/scriptedAngles/family-01_judge_questions.json,780,780,100.0,sentence-pool build,tmp/script-localization/zh-cn-family-build/build-judge-questions.cjs
+family-01,src/data/scriptedAngles/family-01_interrogation_answers.zh-CN.json,interrogation_answers,src/data/scriptedAngles/family-01_interrogation_answers.json,9360,9360,100.0,sentence-pool build,tmp/script-localization/zh-cn-family-build/build-answers.cjs
+family-01,src/data/dialogues/phase1/family-01.zh-CN.json,phase1Dialogue,src/data/dialogues/phase1/family-01.json,29,34,85.3,manual,n/a
+family-01,src/data/dialogues/mediation/family-v3-01.zh-CN.json,mediationDialogue,src/data/dialogues/mediation/family-v3-01.json,12,12,100.0,manual,n/a
+family-01,src/data/cases/generated/family-01.zh-CN.json,generatedCaseSurface,src/data/cases/generated/family-01.json,40,40,100.0,manual,n/a
+friend-01,src/data/scriptedText/friend-01.zh-CN.json,scriptedText,src/data/scriptedText/friend-01.json,5097,5097,100.0,sentence-pool build,tmp/script-localization/zh-cn-friend-build/build-scripted-text.cjs
+friend-01,src/data/scriptedAngles/friend-01_angle_catalog.zh-CN.json,angle_catalog,src/data/scriptedAngles/friend-01_angle_catalog.json,40,40,100.0,manual,n/a
+friend-01,src/data/scriptedAngles/friend-01_judge_questions.zh-CN.json,judge_questions,src/data/scriptedAngles/friend-01_judge_questions.json,600,600,100.0,sentence-pool build,tmp/script-localization/zh-cn-friend-build/build-judge-questions.cjs
+friend-01,src/data/scriptedAngles/friend-01_interrogation_answers.zh-CN.json,interrogation_answers,src/data/scriptedAngles/friend-01_interrogation_answers.json,6300,6300,100.0,KO-sentence-map build,tmp/script-localization/zh-cn-friend-build/build-answers.cjs
+friend-01,src/data/dialogues/phase1/friend-01.zh-CN.json,phase1Dialogue,src/data/dialogues/phase1/friend-01.json,29,34,85.3,manual,n/a
+friend-01,src/data/dialogues/mediation/friend-v3-01.zh-CN.json,mediationDialogue,src/data/dialogues/mediation/friend-v3-01.json,12,12,100.0,manual,n/a
+friend-01,src/data/cases/generated/friend-01.zh-CN.json,generatedCaseSurface,src/data/cases/generated/friend-01.json,40,40,100.0,manual,n/a

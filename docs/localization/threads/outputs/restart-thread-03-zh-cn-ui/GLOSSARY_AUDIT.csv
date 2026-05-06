@@ -1,0 +1,56 @@
+term_id,source_ko,current_glossary_zh_cn,used_translation,issue,recommendation
+project_solomon,Project Solomon,Project Solomon,Project_Solomon,Internal name with underscore per brand rule; glossary uses space-form,Glossary may want to add `Project_Solomon` underscore variant for internal use; not blocking.
+court_simulation,재판 시뮬레이션,法庭模拟,法庭模拟游戏,Adds 游戏 in splash.subtitle (matches KO 법정 시뮬레이션 게임),OK — composed phrase. No glossary change.
+courtroom,법정,法庭,法庭,Used consistently,clean
+judge,재판관,裁判官,裁判官 / 审判者,"home.tagline currently uses 审判者; proposed change to 裁判官 to align glossary.",Apply MESSAGE_PATCH change → home.tagline 化身现代裁判官…
+party,당사자,当事人,{party} 一方,Concrete usage is 一方 (e.g., A 一方 / B 一方); 当事人 is the abstract noun,Glossary OK; UI uses idiomatic 一方.
+witness,증인,证人,证人,Used in clearance category,clean
+case,사건,案件,案件,Used everywhere,clean
+case_brief,사건 브리핑,案件简报,案件简报 (proposed for pc.phase.briefing),Source phase label is 사건 브리핑; matches glossary,clean
+phase,단계,阶段,阶段,Observation filter uses 阶段 directly,clean
+briefing_phase,브리핑 단계,简报阶段,案件简报 (truncated),"KO source pc.phase uses 사건 브리핑 (no 단계); CN truncates accordingly.",No glossary change. Different surface.
+pretrial_phase,사전 진술 단계,庭前陈述阶段,庭前陈述,KO source 사전진술 (no 단계),Same — UI shorthand.
+interrogation_phase,심문 단계,讯问阶段,讯问,Same shorthand,
+verdict_phase,판결 단계,判决阶段,判决,Same shorthand,
+result_phase,결과 단계,结果阶段,结果,Same shorthand,
+verdict,판결,判决,判决 / 裁决,"Brand uses 真相裁决 → verdictAdvance flow uses 裁决 (action of issuing). Static records keys (判决记录, 判决依据) keep 判决.",Recommend glossary add note: `판결 → 判决 (record/static); 裁决 (process/action; brand-aligned)`. See SUMMARY 裁决/判决 split.
+responsibility,책임,责任,责任,clean,
+dispute,쟁점,争议点,争议点,Used everywhere; ~28 occurrences,clean
+claim,주장,主张,主张,Used in verdict.factOption keys,clean
+fact,사실,事实,事实,Used in result.finding,clean
+truth,진실,真相,真相,"Used in disputes; 真相 also part of brand 真相裁决.",clean
+evidence,증거,证据,证据,Used everywhere; ~30 occurrences,clean
+contradiction,모순,矛盾,矛盾,Used in observation/notebook,clean
+free_interrogation,자유심문,自由讯问,自由提问,"KO source uses 자유질문 (free question), not 자유심문. Different lemma. CN 自由提问 fits the source.",No glossary change; different KO term.
+fact_pursuit,사실 추궁,事实追问,事实追问,clean,
+motive_search,동기 탐색,动机探查,动机探查,clean,
+empathy_approach,공감 접근,共情接近,共情接近,clean,
+dossier,사건 기록,档案,(not surfaced in this batch),Out of UI scope here,unused
+notebook,수첩,笔记本,(category labels only; root 수첩 not surfaced as text),Sub-category labels surfaced via pc.notebook.category.*,unused as bare label
+observation,관찰,观察,观察,Used in observation filters/title,clean
+investigation_token,조사 토큰,调查代币,调查代币,Glossary alignment OK,Native review optional — see GLOSSARY_DELTA in original Thread 03 (still relevant).
+skill_point,스킬 포인트,技能点,技能点,clean,
+trust,신뢰도,信任度,信任 (顺序/恢复 compounds),Glossary CN is 信任度 but actual UI uses 信任 (信任顺序分离 / 信任恢复) — base form not the meter form.,Glossary may want to drop 度 OR keep 信任度 reserved for meter tooltip. Not blocking.
+perk,특전,特性,特性 (装备),"KO source uses loanword 퍼크 (not glossary KO 특전). CN 特性 matches glossary.",Optionally add 퍼크 alias to glossary.
+trait,특성,特质,倾向 (六倾向 etc.),"Source uses 성향 (not glossary 특성). Different lemma.",No change to glossary trait row.
+clearance,클리어런스,权限等级,完成度 (clear-rate context),Source uses 클리어율 (clear-rate) which is a different lemma from glossary 클리어런스,No change. Different concept.
+session,세션,会话,会话 (Steam) / 赛季 (lobby category),"세션 in code = Steam session; 시즌 in lobby UI = season grouping. Two unrelated concepts collide on the word `session`.",Glossary OK; 시즌 needs its own row.
+save_data,저장 데이터,存档数据,存档槽 (compound),Used as 存档 in compounds,clean
+test_console,테스트 콘솔,测试控制台,Token Console (English),Dev tool kept English in current implementation,clean (English kept)
+hotbar,핫바,快捷栏,(not surfaced as label),,unused
+contradiction_pursuit,모순 추궁,矛盾追问,(not surfaced as bare label),Action category not directly labeled,unused
+hidden_truth,숨은 진실,隐藏真相,(not surfaced),Engine concept; not UI label,unused
+surface_text,표면 정보,表层信息,(not surfaced),Engine concept,unused
+testimony,증언,证言,(not surfaced as label),(used in toast `生成证人证词` via 证词 — different word from 证言),Toast uses 证词 — semantically OK; close synonym.
+emotion (체념),체념,(not in glossary),认命,"Per restart rule: 체념 → 认命; was 放弃 in pre-restart pass.",ADD glossary row: `체념 → 认命` (status=draft).
+emotion (격앙),격앙,(not in glossary),激愤,Used in emotion meter,ADD glossary row.
+emotion (경계),경계,(not in glossary),戒备,Used in emotion meter (different from 경계 in 边界设定),ADD glossary row with disambiguation note.
+emotion (자신감),자신감,(not in glossary),自信,clean,ADD glossary row.
+emotion (동요),동요,(not in glossary),动摇,clean,ADD glossary row. Note: same CN as lieState s1 — semantically aligned.
+court_control,법정 장악,(not in glossary),法庭掌控,Used as PC resource; not in glossary,ADD glossary row: `법정 장악 → 法庭掌控`.
+objection,이의,异议 (proposed),提出异议 (UI label),"Per restart rule: objection UI noun = 异议; reserved 反对！ for bark only.",ADD glossary row: `이의 → 异议 (UI noun); 反对！ (bark/dialogue only)`. P0-style rule.
+reconciliation_pole,봉합,(not in glossary),调和,resolution axis right pole,ADD glossary row: `봉합 → 调和`.
+fragment_resource,판결 조각,(not in glossary),判决碎片,Progression resource,ADD glossary row.
+title (progression),타이틀/칭호,(not in glossary),称号,"Used in profile tab descriptions",ADD glossary row.
+public_brand_title (zh-CN),솔로몬의 딜레마: 진실의 재판,(not in glossary),真相裁决：零点审判,P0 — public brand distinct from KO literal,ADD glossary row marked `locked=true`. Brand override.
+forbidden_brand_alternates,(none),(none),Forbidden: 所罗门的法庭 / 所罗门的两难 / 所罗门困境,P0 — forbidden CN renderings,ADD glossary row marked `locked=true` with forbidden list.

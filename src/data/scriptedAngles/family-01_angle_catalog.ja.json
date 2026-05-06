@@ -1,0 +1,164 @@
+{
+  "schemaVersion": 1,
+  "locale": "ja",
+  "caseId": "family-01",
+  "overlayKind": "angle_catalog",
+  "angles": [
+    {
+      "disputeId": "d-1",
+      "angleId": "general",
+      "label": "遺言書作成の経緯",
+      "description": "母が遺言書の内容を理解し、自らの意思を示していたのか、その作成過程を確かめる。"
+    },
+    {
+      "disputeId": "d-1",
+      "angleId": "mother_intent",
+      "label": "母の意思の確認",
+      "description": "母が遺言書の内容を理解し、自分の意思を表明していたのかを問う。"
+    },
+    {
+      "disputeId": "d-1",
+      "angleId": "visit_pattern",
+      "label": "晩年の面会頻度",
+      "description": "ユン・ジョンフの面会回数と滞在時間が、遺言書をめぐる議論とどのように重なるのかを確かめる。"
+    },
+    {
+      "disputeId": "d-1",
+      "angleId": "caregiver_change",
+      "label": "介護士の交代",
+      "description": "公証直前の担当介護士の交代が、遺言書の手続きと噛み合っていたかを問う。"
+    },
+    {
+      "disputeId": "d-1",
+      "angleId": "notarization_flow",
+      "label": "公証の時点と手続き",
+      "description": "公証日、書類の準備、母の状態を時系列で照らし合わせる。"
+    },
+    {
+      "disputeId": "d-1",
+      "angleId": "paper_reading",
+      "label": "紙を読み上げた場面",
+      "description": "ユン・ジョンフが母に紙を読み上げ、兄が来る前に終わらせようとした状況を切り分けて見る。"
+    },
+    {
+      "disputeId": "d-2",
+      "angleId": "general",
+      "label": "最終の遺言書ができるまで",
+      "description": "60対40の遺言書が、どのような経路で最終本となったのかを確かめる。"
+    },
+    {
+      "disputeId": "d-2",
+      "angleId": "scan_sequence",
+      "label": "公証人メモの記録",
+      "description": "公証当日のメモに残された母の状態、数字の取り違え、手続きの進め方を確かめる。"
+    },
+    {
+      "disputeId": "d-2",
+      "angleId": "original_gap",
+      "label": "自筆練習本と公証本の差",
+      "description": "自筆練習本と公証本の比率に差が生じた理由を問う。"
+    },
+    {
+      "disputeId": "d-2",
+      "angleId": "changed_direction",
+      "label": "変更方向の逆説",
+      "description": "変更の方向が、通念上の利得とは逆に見える地点を切り分ける。"
+    },
+    {
+      "disputeId": "d-2",
+      "angleId": "forgery_responsibility",
+      "label": "改ざんの責任",
+      "description": "動機が何であれ、母の文書に手を加えた責任を確かめる。"
+    },
+    {
+      "disputeId": "d-3",
+      "angleId": "general",
+      "label": "母の通帳の資金",
+      "description": "母の通帳を経由した金銭と、兄弟間の資金の動きを確かめる。"
+    },
+    {
+      "disputeId": "d-3",
+      "angleId": "long_support_flow",
+      "label": "月単位の入金の流れ",
+      "description": "母の通帳に繰り返し入金された資金の実際の性格を、段階を追って確かめる。"
+    },
+    {
+      "disputeId": "d-3",
+      "angleId": "mother_account_mask",
+      "label": "母の口座の経由",
+      "description": "資金が母の名義に見えるようになった構造と、それが招いた誤解を確かめる。"
+    },
+    {
+      "disputeId": "d-3",
+      "angleId": "factory_crisis_support",
+      "label": "工場の危機への支援",
+      "description": "工場の困難な時期における大口資金の流れと、その出所がどのように受け取られていたかを問う。"
+    },
+    {
+      "disputeId": "d-3",
+      "angleId": "silence_over_pride",
+      "label": "兄の体面と沈黙",
+      "description": "金銭について語らなかった沈黙が保護だったのか欺瞞だったのかを確かめる。"
+    },
+    {
+      "disputeId": "d-4",
+      "angleId": "general",
+      "label": "日記に残る家族史",
+      "description": "母の日記に残された繊細な家族の事情と、その沈黙を確かめる。"
+    },
+    {
+      "disputeId": "d-4",
+      "angleId": "diary_discovery",
+      "label": "日記の発見時点",
+      "description": "ユン・ジョンフが母の日記をいつ目にし、何を確かめたのかを問う。"
+    },
+    {
+      "disputeId": "d-4",
+      "angleId": "sealed_family_record",
+      "label": "封じられた家族の記録",
+      "description": "具体的な内容を不用意に開かず、封じられた家族の記録が及ぼした影響だけを追及する。"
+    },
+    {
+      "disputeId": "d-4",
+      "angleId": "silence_reason",
+      "label": "沈黙の理由",
+      "description": "知りつつも語らなかった沈黙が、誰を守り、誰を疎外したのかを確かめる。"
+    },
+    {
+      "disputeId": "d-4",
+      "angleId": "will_link",
+      "label": "遺言書変更とのつながり",
+      "description": "繊細な家族の事情が、遺言書変更の判断とどのように結びついたのかを問う。"
+    },
+    {
+      "disputeId": "d-5",
+      "angleId": "general",
+      "label": "兄弟の責任構造",
+      "description": "二人の兄弟が母の意思をそれぞれどう解釈し、どう歪めたのかを確かめる。"
+    },
+    {
+      "disputeId": "d-5",
+      "angleId": "a_entitlement",
+      "label": "長男の相続を当然と見なす姿勢",
+      "description": "ユン・テソンが介護と長男という立場を相続上の当然の権利のように読んでいた責任を見る。"
+    },
+    {
+      "disputeId": "d-5",
+      "angleId": "b_protection_control",
+      "label": "保護を名目にした統制",
+      "description": "ユン・ジョンフが保護を名目に母の意思を整え直していった責任を見る。"
+    },
+    {
+      "disputeId": "d-5",
+      "angleId": "mother_voice",
+      "label": "母の意思の居場所",
+      "description": "母の本当の意思が、二人の息子の解釈の間でどのように消えてしまったのかを確かめる。"
+    },
+    {
+      "disputeId": "d-5",
+      "angleId": "dual_responsibility",
+      "label": "兄弟の共同責任",
+      "description": "片方だけを悪役にする構図ではなく、それぞれ異なる形の責任を併せて整理する。"
+    }
+  ]
+}

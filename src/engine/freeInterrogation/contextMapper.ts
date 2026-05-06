@@ -126,10 +126,13 @@ function emptyMapping(): FreeInterrogationMapping {
 }
 
 function resolveTarget(context: FreeInterrogationRuntimeContext, raw: string): PartyId | null {
+  // The UI target selection is explicit. Names inside the question often refer to
+  // the counterpart as an object ("A에게 왜 말하지 않았나") and must not reroute
+  // the question away from the selected party.
+  if (context.target) return context.target
+
   const addressed = resolveAddressedParty(raw, context)
   if (addressed) return addressed
-
-  if (context.target) return context.target
 
   const active = context.activeDisputeId
   if (!active) return null

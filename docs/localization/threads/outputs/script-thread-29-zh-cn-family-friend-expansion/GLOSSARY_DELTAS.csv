@@ -1,0 +1,27 @@
+term_id,case_id,ko,zh_cn_used,glossary_status,notes
+judge_vocative,both,재판관,裁判官,approved,Per script-glossary.csv:judge_vocative; consistent across both cases.
+spouse_intimate_address,n/a,n/a,n/a,not-applicable-to-family-friend,family-01/friend-01 do not use the spousal intimate vocative; spouse-01-only term.
+brother_designation_neutral,family-01,형/동생,哥/弟弟 (NOT 哥哥 except in S5),guarded,family-01 uses 哥/弟弟 as relational vocatives (e.g. "정후야" → "正厚啊", "형이" → "哥的"); 哥哥 is reserved for S5 truth lexeme contexts (different surface than spouse-01's brother truth lexeme).
+will_document,family-01,유서,遗嘱,draft-applied,Style-guide style: 遗嘱 = will/testament (general); 公证副本 = notarized copy; 亲笔练习本 = handwritten draft. Used consistently across all family-01 surfaces.
+inheritance_ratio_surface,family-01,60:40 (surface),60:40 / 六比四 (surface),applied,Surface ratio 60:40 is openly stated by parties (judge channel allowed). Hidden truth ratio 90:10 is forbidden in non-S5.
+nursing_home_visits,family-01,요양원 방문기록,疗养院探访记录,new-script-term,No glossary entry; chosen 探访记录 over 访问记录 for nursing/care register.
+former_caregiver,family-01,전 요양보호사,前任护理员,new-script-term,前任护理员 chosen over 前护工 for clinical accuracy.
+notary_memo,family-01,공증인 메모,公证人备忘记录,new-script-term,公证人备忘记录 reads as formal courtroom evidence label.
+factory_funding_surface,family-01,공장 자금,工厂资金往来,applied,Surface form per uiSurfaceMap; raw 工厂危机3亿 / 经营权危机 forbidden until S5.
+mother_diary,family-01,어머니 일기장,母亲的日记本,new-script-term,Used consistently in case-data and judge-question surfaces.
+fiance,friend-01,예비신랑,未婚夫,new-script-term,Standard zh-CN; verified not in forbidden paraphrase list (the forbidden item is 未婚夫先联系 — exact phrase only).
+former_friend,friend-01,전 친구 / 손절한 친구,前友人 / 前挚友 / 已断交的前挚友,new-script-term,Multiple surface forms used; A's framing varies (前友人 in formal contexts, 前挚友 in emotional beats).
+groupchat,friend-01,단톡방,群聊,new-script-term,Standard zh-CN messenger term.
+crossed-line-message,friend-01,선을 넘는 메시지,越线的消息 / 不当言行,paraphrase-applied,The exact compound 越界消息 is forbidden; surface uses 越线 / 不当言行 / 越了线 (decomposed forms).
+warning-intent,friend-01,경고 의도,提醒意图 / 想拦下来,paraphrase-applied,Forbidden 警告目的 → use 提醒 / 想拦 surface forms; 警告 alone is OK in non-targeted contexts.
+contradiction,both,모순,矛盾,locked,Per glossary.csv:contradiction.
+interrogation,both,심문,讯问,locked,Per glossary.csv:interrogation_phase / per style-guide.md.
+mediation,both,중재 / 조정,调解,locked,Per style-guide.md zh-CN section.
+verdict,both,판결,裁决 (process) / 判决书 (document),locked,Per style-guide.md and script-13 distinction.
+resigned-emotion,both,체념,认命,locked,Per style-guide.md.
+behaviorHint,both,behaviorHint,(skipped),policy,Decision #5 in script-localization-decisions.md — not translated in v1 bulk pass.
+keywordsLocale,both,(field),(skipped),policy,Decision #7 — KO keywords[] remains runtime matcher.
+evidence_name_internal,both,evidence.name,(KO retained, not localized),policy,Decision #3 — evidence.name remains canonical KO; only surfaceName/surfaceDescription localized.
+generated_case_caseId,both,case-* prefix,no-prefix (e.g. family-01),validator-required,validateGeneratedCaseOverlay hardcodes assertEqual(overlay.caseId, caseId-without-prefix); zh-CN overlays write caseId as 'family-01' / 'friend-01' (not 'case-family-01').
+phase1_choice_schema,both,options[],options[] (NOT choices[]),validator-tolerant,Validator reads choices[] but base files use options[]; matching base = options[]. Validator does not enforce choice-text validation but loader supports it (per spouse-01 EN/ja sidecars).
+generated_case_disputes,both,disputes[].name + .surfaceClaim (KO),disputes[].name only,validator-required,surfaceClaim is not a supported sidecar field per Thread-24 recheck v2 finding 6.c; overlay uses disputes[].id + .name only.

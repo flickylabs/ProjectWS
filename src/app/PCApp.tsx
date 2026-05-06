@@ -22,6 +22,7 @@ import { useActionDispatch } from '../hooks/useActionDispatch'
 import { useScreenPreset } from '../hooks/useScreenPreset'
 import { ensureSteamAuthSession } from '../api/steamAuth'
 import { useGameStore, useStore } from '../store/useGameStore'
+import { useI18n, type LocaleCode } from '../i18n'
 
 try {
   // eslint-disable-next-line @typescript-eslint/no-var-requires
@@ -32,6 +33,7 @@ try {
 }
 
 export default function PCApp() {
+  const { t } = useI18n()
   const currentPhase = useStore((s) => s.currentPhase)
   const caseData = useStore((s) => s.caseData)
   const [sessionReady, setSessionReady] = useState(false)
@@ -54,7 +56,7 @@ export default function PCApp() {
     ensureSteamAuthSession()
       .catch((err) => {
         console.warn('[SteamAuth] Session bootstrap failed; API calls will retry before use.', err)
-        if (active) setSteamAuthError(err instanceof Error ? err.message : 'Steam authentication failed.')
+        if (active) setSteamAuthError(err instanceof Error ? err.message : t('steam.authFailedFallback'))
       })
       .finally(() => {
         if (active) setSteamSessionChecked(true)
@@ -70,7 +72,7 @@ export default function PCApp() {
     try {
       await ensureSteamAuthSession(true)
     } catch (err) {
-      setSteamAuthError(err instanceof Error ? err.message : 'Steam authentication failed.')
+      setSteamAuthError(err instanceof Error ? err.message : t('steam.authFailedFallback'))
     } finally {
       setSteamSessionChecked(true)
     }
@@ -120,8 +122,9 @@ export default function PCApp() {
       <div className="pc-splash">
         <div className="pc-splash__content">
           <div className="pc-splash__icon">⚖</div>
-          <h1 className="pc-splash__title">솔로몬의 딜레마</h1>
-          <p className="pc-splash__sub">COURT SIMULATION GAME</p>
+          <h1 className="pc-splash__title">{t('brand.fullTitle')}</h1>
+          <p className="pc-splash__sub">{t('splash.subtitle')}</p>
+          <PCLanguageMiniSelect className="pc-splash__language" />
         </div>
       </div>
     )
@@ -132,9 +135,12 @@ export default function PCApp() {
       <div className="pc-loading-screen">
         <div className="pc-loading-screen__card">
           <span className="pc-loading-screen__icon">STEAM</span>
-          <strong>Steam 인증이 필요합니다</strong>
-          <p>Steam 클라이언트와 서버 인증 상태를 확인한 뒤 다시 시도하세요.</p>
-          <button type="button" className="pc-btn pc-btn--primary" onClick={retrySteamAuth}>다시 시도</button>
+          <strong>{t('steam.authRequired.title')}</strong>
+          <p>{t('steam.authRequired.description')}</p>
+          <PCLanguageMiniSelect className="pc-loading-screen__language" />
+          <button type="button" className="pc-btn pc-btn--primary" onClick={retrySteamAuth}>
+            {t('steam.authRequired.retry')}
+          </button>
         </div>
       </div>
     )
@@ -154,8 +160,9 @@ export default function PCApp() {
       <div className="pc-loading-screen">
         <div className="pc-loading-screen__card">
           <span className="pc-loading-screen__icon">⚖</span>
-          <strong>세션 준비 중</strong>
-          <p>사건 데이터와 재판 환경을 불러오고 있습니다.</p>
+          <strong>{t('session.preparing.title')}</strong>
+          <p>{t('session.preparing.description')}</p>
+          <PCLanguageMiniSelect className="pc-loading-screen__language" />
         </div>
       </div>
     )
@@ -204,6 +211,27 @@ export default function PCApp() {
 function PcTestConsoleMount() {
   const enabled = import.meta.env.DEV || import.meta.env.VITE_PC_TEST_CONSOLE === 'true'
   return enabled ? <PCTestConsole /> : null
+}
+
+function PCLanguageMiniSelect({ className }: { className?: string }) {
+  const { locale, locales, setLocale, t } = useI18n()
+
+  return (
+    <label className={`pc-language-mini${className ? ` ${className}` : ''}`}>
+      <span>{t('language.selectorLabel')}</span>
+      <select
+        aria-label={t('language.selectorTitle')}
+        value={locale}
+        onChange={(event) => setLocale(event.target.value as LocaleCode)}
+      >
+        {locales.map((item) => (
+          <option key={item.code} value={item.code}>
+            {item.nativeName}
+          </option>
+        ))}
+      </select>
+    </label>
+  )
 }
 
 function getActionPanel(phase: GamePhase) {

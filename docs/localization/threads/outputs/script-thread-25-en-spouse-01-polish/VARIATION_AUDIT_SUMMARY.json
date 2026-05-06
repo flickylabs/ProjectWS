@@ -1,0 +1,50 @@
+{
+  "generatedAt": "2026-05-06T16:08:14.920Z",
+  "thresholds": {
+    "anchorThreshold": 3,
+    "variantThreshold": 6,
+    "openerCloserPrefixLen": 60,
+    "prefix60Threshold": 0.5
+  },
+  "buckets": {
+    "interrogation": {
+      "label": "scriptedText.interrogation",
+      "totalBuckets": 144,
+      "eligibleBuckets": 144,
+      "ineligibleSmallBuckets": 0,
+      "bucketsPassing": 144,
+      "bucketsFailingOpener": 0,
+      "bucketsFailingCloser": 0,
+      "bucketsFailingPrefix": 0,
+      "overallPassRate": 1,
+      "averageUniqueOpener60": 3,
+      "averageUniqueCloser60": 10
+    },
+    "answers": {
+      "label": "interrogation_answers",
+      "totalBuckets": 792,
+      "eligibleBuckets": 792,
+      "ineligibleSmallBuckets": 0,
+      "bucketsPassing": 792,
+      "bucketsFailingOpener": 0,
+      "bucketsFailingCloser": 0,
+      "bucketsFailingPrefix": 0,
+      "overallPassRate": 1,
+      "averageUniqueOpener60": 3,
+      "averageUniqueCloser60": 10
+    },
+    "combined": {
+      "label": "combined",
+      "totalBuckets": 936,
+      "eligibleBuckets": 936,
+      "ineligibleSmallBuckets": 0,
+      "bucketsPassing": 936,
+      "bucketsFailingOpener": 0,
+      "bucketsFailingCloser": 0,
+      "bucketsFailingPrefix": 0,
+      "overallPassRate": 1,
+      "averageUniqueOpener60": 3,
+      "averageUniqueCloser60": 10
+    }
+  }
+}

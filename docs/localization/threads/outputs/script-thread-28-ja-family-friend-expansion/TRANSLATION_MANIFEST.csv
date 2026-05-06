@@ -1,0 +1,15 @@
+case,surface,path,owner,size_bytes,strings_translated,coverage_pct,validator_strict_pass
+family-01,scriptedText,src/data/scriptedText/family-01.ja.json,main_thread (after JA_FAMILY_SCRIPTED_TEXT subagent failed),1849101,5262,100.00,yes
+family-01,angle_catalog,src/data/scriptedAngles/family-01_angle_catalog.ja.json,main_thread,6516,52,100.00,yes
+family-01,judge_questions,src/data/scriptedAngles/family-01_judge_questions.ja.json,JA_FAMILY_ANGLES,231460,780,100.00,yes
+family-01,interrogation_answers,src/data/scriptedAngles/family-01_interrogation_answers.ja.json,JA_FAMILY_ANGLES,3546021,9360,100.00,yes
+family-01,phase1,src/data/dialogues/phase1/family-01.ja.json,main_thread,9727,34,100.00,yes
+family-01,mediation,src/data/dialogues/mediation/family-v3-01.ja.json,main_thread,2980,10,100.00,yes
+family-01,cases_generated,src/data/cases/generated/family-01.ja.json,main_thread,2587,15,100.00,yes
+friend-01,scriptedText,src/data/scriptedText/friend-01.ja.json,JA_FRIEND_SCRIPTED_TEXT,1837067,5097,100.00,yes
+friend-01,angle_catalog,src/data/scriptedAngles/friend-01_angle_catalog.ja.json,main_thread,5974,40,100.00,yes
+friend-01,judge_questions,src/data/scriptedAngles/friend-01_judge_questions.ja.json,JA_FRIEND_ANGLES,154155,600,100.00,yes
+friend-01,interrogation_answers,src/data/scriptedAngles/friend-01_interrogation_answers.ja.json,JA_FRIEND_ANGLES,2472617,6300,100.00,yes
+friend-01,phase1,src/data/dialogues/phase1/friend-01.ja.json,main_thread,9083,34,100.00,yes
+friend-01,mediation,src/data/dialogues/mediation/friend-v3-01.ja.json,main_thread,2940,10,100.00,yes
+friend-01,cases_generated,src/data/cases/generated/friend-01.ja.json,main_thread,2501,14,100.00,yes

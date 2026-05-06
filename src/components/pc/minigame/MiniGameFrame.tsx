@@ -14,7 +14,7 @@ import { playMiniGameCountdown, playMiniGameStart } from '../../../engine/soundE
 const TOKEN_LABELS: Record<string, string> = {
   investigation: '조사 토큰',
   skill: '스킬 포인트',
-  court: '법정 지배력',
+  court: '법정 장악',
 }
 
 const TOKEN_ICONS: Record<string, string> = {

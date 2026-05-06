@@ -1,0 +1,17 @@
+key_or_source,japanese_text,risk,shorter_alternative,notes
+pc.verdictAdvance.minimumVisible,判決は争点が{required}件以上明らかになってから進められます。現在明らかになっている争点は{visible}件です。,P1,"判決は争点が{required}件以上明らかになるまで進められません（現在{visible}件）。",toast/banner — JA dense; 2-line wrap likely on Steam Deck (XS bucket)
+pc.verdictAdvance.hidden.body,現在明らかになっている争点は{visible}件です。\\nまだ明らかになっていない争点が{hidden}件残っています。\\n\\nそれでも判決へ進みますか？,P1,already split with explicit \\n,"3-paragraph confirmation body — preserve the \\n splits; check that they render as <br> in PCVerdictAdvancePrompt"
+pc.combo.potential,手がかり要 {count}件 ─ まだ見つかっていない手がかりがあるようです,P1,"手がかり要 {count}件 ─ まだ未発見の手がかりがあるようです",sidebar combo hint — JA likely 2-line in narrow combo column
+pc.combo.ready,組み合わせ可能 {count}件 ─ 今すぐ連結できます,P2,組み合わせ {count}件 ─ 連結可能,sidebar combo hint — generally OK but verify on M/S buckets
+pc.combo.readyMaterialsNotice,組み合わせ可能な材料が{count}件揃いました,P2,材料 {count}件が揃いました,toast text
+home.tagline,"現代の裁判官となり、証言の奥にある真相を見極めましょう。",P2,"現代の裁判官となり、真相を見極めましょう。",hero subtitle — KO source is 1 line; JA may wrap to 2 on M bucket. Acceptable.
+settings.about.credits.description,"AI同士の対立を人間の知恵で裁く、リプレイ型の推理ゲーム",P2,"AI同士の対立を、人の知恵で裁くリプレイ型推理ゲーム",about-row description — JA fits but tight on narrow rows. Consider drop 同士 for compactness.
+settings.language.restartNote,"一部の事件本文と保存済み記録は、次の画面遷移後に更新される場合があります。",P2,"一部の事件本文・保存済み記録は、画面遷移後に更新される場合があります。",settings note line — JA dense; verify line-height in language section
+steam.authRequired.description,"Steamクライアントとサーバー認証の状態を確認のうえ、再度お試しください。",P2,"Steamクライアントとサーバー認証を確認のうえ、再度お試しください。",modal body; usually wide enough but JA dense
+session.preparing.description,事件データと法廷環境を読み込んでいます。,P2,事件データと法廷環境を読込中…,loading screen body — verify with subtle ellipsis variant
+pc.recordSummary.moreConvincing,{party}側の主張のほうが説得力があると判断しました。,P2,{party}側の主張をより説得力ありと判断,record summary line — full sentence ends in 判断しました — could wrap on narrow column
+pc.verdict.factOption.partyClaimCorrectWithContradiction,この争点は事実と異なります ─ {party}側の主張が正しい,P2,事実と異なる ─ {party}側の主張が正しい,verdict option button — after partyName interpolation may exceed 1 line on narrow buckets
+pc.verdict.responsibility.major,{party}側に主たる責任,P2,主たる責任 ({party}側),responsibility option — long party names push 2-line wrap; consider name-on-top layout via CSS
+pc.notes.unseen,（未確認項目 {count}件）,P2,未確認 {count}件,notes badge — full-width parens add width; if tight switch to half-width or drop label
+src/components/pc/panels/PCRightPanel.tsx (toast strings),"スキルポイントが不足しています。 / 同じカードがすでにスロットにあります。 / 組み合わせはハイライト中の核心発言のみ可能です。",P2,(verify in toast container width),new toast strings to be wired (see SOURCE_STRING_MAP) — JA toast containers are narrow; some may need 2 lines
+src/hooks/useActionDispatch.ts:1372,証人の証言生成に失敗しました。トークンを返却しました。,P2,証言の生成に失敗。トークンを返却しました。,LLM failure toast — current 2 sentences may overflow toast width

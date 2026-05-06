@@ -1,0 +1,57 @@
+case_id,verification_aspect,result,evidence
+spouse-01,localePolicy.schemaVersion,PASS,disclosurePolicy/spouse-01.json:306 = "script-localization-v1"
+spouse-01,localePolicy.status,PASS,disclosurePolicy/spouse-01.json:307 = "tier-a-draft"
+spouse-01,localePolicy.forbiddenLexemes.en,PASS (19 entries),disclosurePolicy/spouse-01.json:309-329
+spouse-01,localePolicy.forbiddenLexemes.ja,PASS (18 entries),disclosurePolicy/spouse-01.json:330-349
+spouse-01,localePolicy.forbiddenLexemes.zh-CN,PASS (18 entries),disclosurePolicy/spouse-01.json:350-369
+spouse-01,localePolicy.paraphraseLexemes.en,PASS (6 entries),disclosurePolicy/spouse-01.json:372-379
+spouse-01,localePolicy.paraphraseLexemes.ja,PASS (6 entries),disclosurePolicy/spouse-01.json:380-387
+spouse-01,localePolicy.paraphraseLexemes.zh-CN,PASS (6 entries),disclosurePolicy/spouse-01.json:388-395
+spouse-01,localePolicy.uiSurfaceMap.en,PASS (6 fields populated),disclosurePolicy/spouse-01.json:398-410 (surfaceOnlyChannels + truthGate + localizeFields + doNotLocalizeFields + safeSubstitutes)
+spouse-01,localePolicy.uiSurfaceMap.ja,PASS (6 fields populated),disclosurePolicy/spouse-01.json:411-423
+spouse-01,localePolicy.uiSurfaceMap.zh-CN,PASS (6 fields populated),disclosurePolicy/spouse-01.json:424-436
+spouse-01,doNotLocalizeFields includes behaviorHint,PASS (en/ja/zh-CN all 3),disclosurePolicy/spouse-01.json:402 / 415 / 428
+spouse-01,Tier B deferral note,PASS,disclosurePolicy/spouse-01.json:442 "behaviorHint remains KO-only until the Tier B policy decision lands"
+family-01,localePolicy.schemaVersion,PASS,disclosurePolicy/family-01.json:416 = "script-localization-v1"
+family-01,localePolicy.status,PASS,disclosurePolicy/family-01.json:417 = "tier-a-draft"
+family-01,localePolicy.forbiddenLexemes.en,PASS (21 entries),disclosurePolicy/family-01.json:419-441
+family-01,localePolicy.forbiddenLexemes.ja,PASS (19 entries),disclosurePolicy/family-01.json:442-462
+family-01,localePolicy.forbiddenLexemes.zh-CN,PASS (19 entries),disclosurePolicy/family-01.json:463-483
+family-01,localePolicy.paraphraseLexemes.en,PASS (6 entries),disclosurePolicy/family-01.json:486-493
+family-01,localePolicy.paraphraseLexemes.ja,PASS (6 entries),disclosurePolicy/family-01.json:494-501
+family-01,localePolicy.paraphraseLexemes.zh-CN,PASS (6 entries),disclosurePolicy/family-01.json:502-509
+family-01,localePolicy.uiSurfaceMap.en,PASS (6 fields populated),disclosurePolicy/family-01.json:512-524
+family-01,localePolicy.uiSurfaceMap.ja,PASS (6 fields populated),disclosurePolicy/family-01.json:525-537
+family-01,localePolicy.uiSurfaceMap.zh-CN,PASS (6 fields populated),disclosurePolicy/family-01.json:538-550
+family-01,doNotLocalizeFields includes behaviorHint,PASS (en/ja/zh-CN all 3),disclosurePolicy/family-01.json:516 / 529 / 542
+family-01,Tier B deferral note,PASS,disclosurePolicy/family-01.json:556 "behaviorHint remains KO-only until the Tier B policy decision lands"
+friend-01,localePolicy.schemaVersion,PASS,disclosurePolicy/friend-01.json:96 = "script-localization-v1"
+friend-01,localePolicy.status,PASS,disclosurePolicy/friend-01.json:97 = "tier-a-draft"
+friend-01,localePolicy.forbiddenLexemes.en,PASS (21 entries),disclosurePolicy/friend-01.json:99-121
+friend-01,localePolicy.forbiddenLexemes.ja,PASS (18 entries),disclosurePolicy/friend-01.json:122-141
+friend-01,localePolicy.forbiddenLexemes.zh-CN,PASS (18 entries),disclosurePolicy/friend-01.json:142-161
+friend-01,localePolicy.paraphraseLexemes.en,PASS (6 entries),disclosurePolicy/friend-01.json:164-171
+friend-01,localePolicy.paraphraseLexemes.ja,PASS (6 entries),disclosurePolicy/friend-01.json:172-179
+friend-01,localePolicy.paraphraseLexemes.zh-CN,PASS (6 entries),disclosurePolicy/friend-01.json:180-187
+friend-01,localePolicy.uiSurfaceMap.en,PASS (6 fields populated),disclosurePolicy/friend-01.json:190-202
+friend-01,localePolicy.uiSurfaceMap.ja,PASS (6 fields populated),disclosurePolicy/friend-01.json:203-215
+friend-01,localePolicy.uiSurfaceMap.zh-CN,PASS (6 fields populated),disclosurePolicy/friend-01.json:216-228
+friend-01,doNotLocalizeFields includes behaviorHint,PASS (en/ja/zh-CN all 3),disclosurePolicy/friend-01.json:194 / 207 / 220
+friend-01,Tier B deferral note,PASS,disclosurePolicy/friend-01.json:234 "behaviorHint remains KO-only until the Tier B policy decision lands"
+all,validate-script-locale.cjs reads localePolicy,PASS,scripts/validate-script-locale.cjs:62-92 (validateLocalePolicy function)
+all,scaffold status rejected,PASS,scripts/validate-script-locale.cjs:72-74
+all,non-empty array enforcement,PASS,scripts/validate-script-locale.cjs:76-90 (forbiddenLexemes/paraphraseLexemes/uiSurfaceMap)
+all,publicBrandForbidden EN patterns,PASS,scripts/validate-script-locale.cjs:28 (3 patterns with /i flag)
+all,publicBrandForbidden JA pattern,PASS,scripts/validate-script-locale.cjs:29 (`/ソロモン法廷/`)
+all,publicBrandForbidden zh-CN patterns,PASS,scripts/validate-script-locale.cjs:30 (`/所罗门/` + `/所羅門/`)
+all,brand guard runs before lexeme check,PASS,scripts/validate-script-locale.cjs:318-326 (validateOptionalText: brand first, then case lexemes)
+all,brand guard always runs (skipCaseLexemes does not bypass),PASS,scripts/validate-script-locale.cjs:321-325 (publicBrandForbidden iteration outside skipCaseLexemes branch)
+all,truthStage S5 allows truth lexemes,PASS,scripts/validate-script-locale.cjs:345-347 (isTruthLexemeAllowed)
+all,behaviorHint excluded via skipCaseLexemes,PASS,scripts/validate-script-locale.cjs:125-127 + 276-278 (4 call sites)
+all,sidecar walk brand-only sweep,PASS,scripts/validate-script-locale.cjs:310-316 (registerSidecar with skipCaseLexemes:true)
+all,generated case overlay full lexeme check,PASS,scripts/validate-script-locale.cjs:247-255 (validateGeneratedCaseOverlay walkStrings without skipCaseLexemes option)
+all,case-insensitive EN matching,PASS,scripts/validate-script-locale.cjs:351 (toLocaleLowerCase('en'))
+all,locale alias normalization,PASS,scripts/validate-script-locale.cjs:384-389 (zh / zh_cn / zh-cn → zh-CN)
+all,strict mode coverage + missing-sidecar handling,PASS,scripts/validate-script-locale.cjs:131 / 159 / 167 / 173 / 210 / 244 / 372 (8 strict-mode branches)
+all,check:all integration,PASS,package.json `check:all`: localization:glossary && localization:scripts:validate && qa:fast && qa:free-interrogation
+all,localization:scripts:validate runs validate-script-locale.cjs,PASS,package.json `localization:scripts:validate`: node scripts/validate-script-locale.cjs

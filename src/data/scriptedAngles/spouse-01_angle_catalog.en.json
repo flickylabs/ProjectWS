@@ -1,0 +1,162 @@
+{
+  "schemaVersion": 1,
+  "locale": "en",
+  "caseId": "spouse-01",
+  "overlayKind": "angle_catalog",
+  "angles": [
+    {
+      "disputeId": "d-1",
+      "angleId": "general",
+      "label": "Visits and Calls — Circumstances",
+      "description": "Examine the studio-apartment visits, late-night calls, and items in the receipts together along the same line of suspicion.",
+      "keywordsLocale": []
+    },
+    {
+      "disputeId": "d-1",
+      "angleId": "visit_route",
+      "label": "Studio-Apartment Visit Route",
+      "description": "Confirm the time, route, and purpose of his repeated after-work visits to the same studio apartment.",
+      "keywordsLocale": []
+    },
+    {
+      "disputeId": "d-1",
+      "angleId": "call_record",
+      "label": "Late-Night Calls and Unregistered Numbers",
+      "description": "Determine what the brief late-night calls and the text thread with an unregistered number actually involved.",
+      "keywordsLocale": []
+    },
+    {
+      "disputeId": "d-1",
+      "angleId": "family_items",
+      "label": "Items on the Receipts",
+      "description": "Identify who the women's items and study materials found in the car were actually for.",
+      "keywordsLocale": []
+    },
+    {
+      "disputeId": "d-1",
+      "angleId": "affair_denial",
+      "label": "Denying the Affair Suspicion",
+      "description": "Distinguish whether the studio apartment, the calls, and the items truly point to an affair.",
+      "keywordsLocale": []
+    },
+    {
+      "disputeId": "d-1",
+      "angleId": "concealment_reason",
+      "label": "Why It Was Hidden",
+      "description": "Examine why the visits, calls, and items were never explained to his spouse.",
+      "keywordsLocale": []
+    },
+    {
+      "disputeId": "d-2",
+      "angleId": "general",
+      "label": "Large Cash Withdrawal — Circumstances",
+      "description": "Examine the large withdrawal from a personal account, the cash movement, and the exclusion of the spouse from the decision.",
+      "keywordsLocale": []
+    },
+    {
+      "disputeId": "d-2",
+      "angleId": "cash_withdrawal",
+      "label": "30-Million-Won Cash Withdrawal",
+      "description": "Confirm the timing and method by which 30 million won was pulled in cash from a separate account in Lee Jun-ho's name over the past four months.",
+      "keywordsLocale": []
+    },
+    {
+      "disputeId": "d-2",
+      "angleId": "private_fund_boundary",
+      "label": "Boundary Between Personal Funds and Marital Assets",
+      "description": "Separate whether the source of the withdrawal was the joint savings or a personal account, and isolate the responsibility for not telling the spouse.",
+      "keywordsLocale": []
+    },
+    {
+      "disputeId": "d-2",
+      "angleId": "recipient_reason",
+      "label": "Recipient of the Cash and the Reason",
+      "description": "Determine who received the cash and under what circumstances it was handed over.",
+      "keywordsLocale": []
+    },
+    {
+      "disputeId": "d-2",
+      "angleId": "consent_boundary",
+      "label": "Spousal Consent Excluded",
+      "description": "Even if the money was personal, examine the responsibility of moving a large sum without consulting the spouse.",
+      "keywordsLocale": []
+    },
+    {
+      "disputeId": "h-d3",
+      "angleId": "general",
+      "label": "Savings and Transfer — Circumstances",
+      "description": "Examine in order: the cancellation of the joint savings, the authorization paperwork, the transfer to the investment group, and how it was lost.",
+      "keywordsLocale": []
+    },
+    {
+      "disputeId": "h-d3",
+      "angleId": "savings_cancellation",
+      "label": "Joint Savings Cancellation",
+      "description": "Confirm when and on whose application the joint savings were cancelled.",
+      "keywordsLocale": []
+    },
+    {
+      "disputeId": "h-d3",
+      "angleId": "proxy_document",
+      "label": "Authorization Form and Signature",
+      "description": "Examine how the signature on the authorization form was produced and whether actual consent was given.",
+      "keywordsLocale": []
+    },
+    {
+      "disputeId": "h-d3",
+      "angleId": "investment_room",
+      "label": "How the Money Reached the Investment Group",
+      "description": "Trace how the cancelled funds flowed into the investment group, and how the membership was joined.",
+      "keywordsLocale": []
+    },
+    {
+      "disputeId": "h-d3",
+      "angleId": "loss_responsibility",
+      "label": "Loss and Legal Responsibility",
+      "description": "Separate the outcome of the money being lost and the responsibility for the document handling from any emotional claim of victimhood.",
+      "keywordsLocale": []
+    },
+    {
+      "disputeId": "h-d4",
+      "angleId": "general",
+      "label": "Order of Responsibility",
+      "description": "Do not bundle concealment, account checking, money movement, and document violations into one — keep them separate.",
+      "keywordsLocale": []
+    },
+    {
+      "disputeId": "h-d4",
+      "angleId": "concealment_sequence",
+      "label": "Where the Concealment Began",
+      "description": "Examine who hid what first, and keep the act of hiding separate from the act of moving money.",
+      "keywordsLocale": []
+    },
+    {
+      "disputeId": "h-d4",
+      "angleId": "account_monitoring",
+      "label": "Where the Account Checking Began",
+      "description": "Confirm when Park Ji-yeon began looking into the account, and the responsibility that comes with that act.",
+      "keywordsLocale": []
+    },
+    {
+      "disputeId": "h-d4",
+      "angleId": "execution_timeline",
+      "label": "Timing of the Money Movements",
+      "description": "Lay out, in order, Lee Jun-ho's cash withdrawals and Park Ji-yeon's joint-savings cancellation and transfer.",
+      "keywordsLocale": []
+    },
+    {
+      "disputeId": "h-d4",
+      "angleId": "illegal_boundary",
+      "label": "Where the Legal Line Was Crossed",
+      "description": "Apart from motive, separate out the document handling and money movement that carry legal responsibility.",
+      "keywordsLocale": []
+    },
+    {
+      "disputeId": "h-d4",
+      "angleId": "responsibility_split",
+      "label": "Separated Record of Responsibility",
+      "description": "Not which side is worse, but a separate record of concealment, monitoring, execution, and unlawfulness.",
+      "keywordsLocale": []
+    }
+  ]
+}

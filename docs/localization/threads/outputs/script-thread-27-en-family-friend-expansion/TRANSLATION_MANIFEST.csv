@@ -1,0 +1,19 @@
+case_id,surface,sidecar_path,workstream,build_script,partial_path,variants_total,variants_translated
+family-01,case-surface,src/data/cases/generated/family-01.en.json,main-thread,(direct write),(none),26,26
+family-01,mediation,src/data/dialogues/mediation/family-v3-01.en.json,main-thread,(direct write),(none),10,10
+family-01,phase1,src/data/dialogues/phase1/family-01.en.json,main-thread,(direct write),(none),43,40
+family-01,angle_catalog,src/data/scriptedAngles/family-01_angle_catalog.en.json,main-thread,(direct write),(none),52,52
+family-01,scriptedText.interrogation,src/data/scriptedText/family-01.en.json,F1 (EN_FAMILY_ST_INTERROGATION),tmp/build-en-family-st-interrogation.cjs,tmp/script-localization/en-family-friend/family-01_st_interrogation.en.json,1800,1800
+family-01,scriptedText.non_interrogation,src/data/scriptedText/family-01.en.json,F2 (EN_FAMILY_ST_NON_INTERROGATION_RETRY),tmp/build-en-st-family01-non-interrogation.cjs,tmp/script-localization/en-family-friend/family-01_st_non_interrogation.en.json,3462,3462
+family-01,judge_questions,src/data/scriptedAngles/family-01_judge_questions.en.json,F3 (EN_FAMILY_JQ_AND_ANSWERS_D1_D2),tmp/script-localization/en-family-friend/build-family-01-jq-and-answers-d1-d2.cjs,tmp/script-localization/en-family-friend/family-01_judge_questions.en.json,780,780
+family-01,interrogation_answers (d-1+d-2),src/data/scriptedAngles/family-01_interrogation_answers.en.json,F3,tmp/script-localization/en-family-friend/build-family-01-jq-and-answers-d1-d2.cjs,tmp/script-localization/en-family-friend/family-01_answers_d1_d2.en.json,3960,3960
+family-01,interrogation_answers (d-3+d-4+d-5),src/data/scriptedAngles/family-01_interrogation_answers.en.json,F4 (EN_FAMILY_ANSWERS_D3_D4_D5),tmp/script-localization/en-family-friend/build-family-01-answers-d3-d4-d5.cjs,tmp/script-localization/en-family-friend/family-01_answers_d3_d4_d5.en.json,5400,5400
+friend-01,case-surface,src/data/cases/generated/friend-01.en.json,main-thread,(direct write),(none),25,25
+friend-01,mediation,src/data/dialogues/mediation/friend-v3-01.en.json,main-thread,(direct write),(none),10,10
+friend-01,phase1,src/data/dialogues/phase1/friend-01.en.json,main-thread,(direct write),(none),43,40
+friend-01,angle_catalog,src/data/scriptedAngles/friend-01_angle_catalog.en.json,main-thread,(direct write),(none),40,40
+friend-01,scriptedText.interrogation,src/data/scriptedText/friend-01.en.json,Fr1 (EN_FRIEND_ST_INTERROGATION),tmp/build-en-st-interrogation-friend-01.cjs,tmp/script-localization/en-family-friend/friend-01_st_interrogation.en.json,1800,1800
+friend-01,scriptedText.non_interrogation,src/data/scriptedText/friend-01.en.json,Fr2 (EN_FRIEND_ST_NON_INTERROGATION) + Fr2-polish,tmp/build-en-friend-01-st-non-interrogation.cjs,tmp/script-localization/en-family-friend/friend-01_st_non_interrogation.en.json,3297,3297
+friend-01,judge_questions,src/data/scriptedAngles/friend-01_judge_questions.en.json,Fr3 (EN_FRIEND_JQ_AND_ANSWERS_D1_D2_D3),tmp/script-localization/en-family-friend/build-friend-01-jq-and-answers-d1-d2-d3.cjs,tmp/script-localization/en-family-friend/friend-01_judge_questions.en.json,600,600
+friend-01,interrogation_answers (d-1+d-2+d-3),src/data/scriptedAngles/friend-01_interrogation_answers.en.json,Fr3,tmp/script-localization/en-family-friend/build-friend-01-jq-and-answers-d1-d2-d3.cjs,tmp/script-localization/en-family-friend/friend-01_answers_d1_d2_d3.en.json,3780,3780
+friend-01,interrogation_answers (d-4+d-5),src/data/scriptedAngles/friend-01_interrogation_answers.en.json,Fr4 (EN_FRIEND_ANSWERS_D4_D5),tmp/script-localization/en-family-friend/build-friend-01-answers-d4-d5.cjs,tmp/script-localization/en-family-friend/friend-01_answers_d4_d5.en.json,2520,2520

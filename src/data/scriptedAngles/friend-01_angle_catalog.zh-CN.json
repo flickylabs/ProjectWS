@@ -1,0 +1,128 @@
+{
+  "schemaVersion": 1,
+  "caseId": "friend-01",
+  "locale": "zh-CN",
+  "overlayKind": "angle_catalog",
+  "angles": [
+    {
+      "disputeId": "d-1",
+      "angleId": "contact_timeline",
+      "label": "九天联络的时间表",
+      "description": "电话六次、短信十一条所横跨的期间、时段与回应状态——分开来确认。"
+    },
+    {
+      "disputeId": "d-1",
+      "angleId": "message_intent",
+      "label": "字句中要传达的目的",
+      "description": "通过未带好感色彩的字句，以及‘必须告诉一声’这一类表达——追问联络的目的。"
+    },
+    {
+      "disputeId": "d-1",
+      "angleId": "bypass_da_eun",
+      "label": "绕开宋多恩的联络",
+      "description": "为何不直接告诉宋多恩、却选择去找未婚夫——这种绕路的责任，要追问清楚。"
+    },
+    {
+      "disputeId": "d-1",
+      "angleId": "unanswered_escalation",
+      "label": "无应答与反复的理由",
+      "description": "联络次数攀升的原因——是纠缠？还是因无回应而反复想确认？要分清。"
+    },
+    {
+      "disputeId": "d-2",
+      "angleId": "message_sequence",
+      "label": "消息的先后关系",
+      "description": "未婚夫与崔秀敏之间消息的起点、夜间时段、回应顺序——确认清楚。"
+    },
+    {
+      "disputeId": "d-2",
+      "angleId": "boundary_response",
+      "label": "划界回复与拉开距离",
+      "description": "崔秀敏的回复是迎合，还是拉开距离——其表达的范围与含义，确认清楚。"
+    },
+    {
+      "disputeId": "d-2",
+      "angleId": "withheld_capture",
+      "label": "迟未公开截图的理由",
+      "description": "崔秀敏未能立刻出示原文的理由，与宋多恩推迟核实的理由——单独抽出来看。"
+    },
+    {
+      "disputeId": "d-2",
+      "angleId": "private_request_pressure",
+      "label": "私下请求的压力",
+      "description": "未婚夫绕开多恩私下提出请求或将话题引向私域的过程——审视清楚。"
+    },
+    {
+      "disputeId": "d-3",
+      "angleId": "father_request_signal",
+      "label": "父亲的请求信号",
+      "description": "婚事的关心问候与请求预告这一类字句具备何种性质——目前先不下定论，逐步确认。"
+    },
+    {
+      "disputeId": "d-3",
+      "angleId": "money_secrecy",
+      "label": "金钱性与请求保密",
+      "description": "请求是否走向金钱要求？是否伴随‘别让多恩知道’这类要求？逐项确认。"
+    },
+    {
+      "disputeId": "d-3",
+      "angleId": "pattern_warning",
+      "label": "与过往相似的走向",
+      "description": "现在的短信是否与过去的金钱往来形成对应——分阶段提问；初期不把它定性为‘模式’。"
+    },
+    {
+      "disputeId": "d-3",
+      "angleId": "father_blindspot",
+      "label": "对父亲问题的回避点",
+      "description": "宋多恩把父亲的请求只当作家事看待，迟迟才意识到那处不对——确认这一过程。"
+    },
+    {
+      "disputeId": "d-4",
+      "angleId": "severance_chat_gap",
+      "label": "断交前夕聊天里的空白",
+      "description": "在过往聊天里，‘我自己来处理’这一句与最终断交之间的空白——确认清楚。"
+    },
+    {
+      "disputeId": "d-4",
+      "angleId": "transfer_repayment",
+      "label": "汇款与偿还的走向",
+      "description": "通过三次汇款、借据、部分偿还后失联，逐步确认这桩钱事的实情。"
+    },
+    {
+      "disputeId": "d-4",
+      "angleId": "protective_silence",
+      "label": "出于保护的沉默",
+      "description": "崔秀敏为何没能向宋多恩说出过往的钱事，反而宁愿被当成恶人——审视清楚。"
+    },
+    {
+      "disputeId": "d-4",
+      "angleId": "loan_document_weight",
+      "label": "借据的分量",
+      "description": "是好意，还是借贷？借据与部分偿还，如何支撑崔秀敏的沉默与断交的理由——审视清楚。"
+    },
+    {
+      "disputeId": "d-5",
+      "angleId": "first_groupchat_post",
+      "label": "群聊里最先一句",
+      "description": "宋多恩以怎样的话先把事情发到群里——核实之前是否就先公开了？确认清楚。"
+    },
+    {
+      "disputeId": "d-5",
+      "angleId": "pile_on_spread",
+      "label": "朋友们的附和与扩散",
+      "description": "朋友们以怎样的话跟着附和——宋多恩与崔秀敏当时各自如何处理这股扩散？确认清楚。"
+    },
+    {
+      "disputeId": "d-5",
+      "angleId": "repeat_villain_frame",
+      "label": "反复出现的‘坏人’结构",
+      "description": "过往与当下都是——崔秀敏被当作恶人留下、宋多恩抢先下断言。把这一结构整理清楚。"
+    },
+    {
+      "disputeId": "d-5",
+      "angleId": "verification_gap",
+      "label": "未经核实的公开",
+      "description": "宋多恩在向崔秀敏求证之前是否就发到了群里？发出之后是否还有及时纠正的机会？确认清楚。"
+    }
+  ]
+}

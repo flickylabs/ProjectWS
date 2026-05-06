@@ -4,10 +4,13 @@ This folder now keeps only current reference material. Historical prompts, one-o
 
 ## Current Release Docs
 
+- `project-control-tower.md`: main coordination-thread responsibilities across release, localization, and case generation.
 - `steam-release-env.md`: Steam/Railway/Electron environment setup.
 - `steam-achievements.md`: current placeholder achievement IDs.
 - `steam-art-assets-guide.md`: Steam capsule/icon asset checklist.
 - `release-runbook.md`: Steam/Railway release and QA command flow.
+- `localization-plan.md`: Korean/English/Japanese/Simplified Chinese rollout plan.
+- `localization/`: glossary, style guide, and translation thread queue.
 - `server-architecture.md`: backend shape and API responsibilities.
 - `../steamworks/`: SteamPipe upload templates for the Windows depot.
 

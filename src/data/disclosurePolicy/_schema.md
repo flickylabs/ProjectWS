@@ -22,6 +22,7 @@ against case data, ScriptedText, and future spot-check patterns.
   "draftStatus": "schema-draft",
   "surfaceMap": {},
   "forbiddenLexemes": {},
+  "localePolicy": {},
   "channelAuthority": {},
   "lieStateGate": {},
   "uiSurfaceMap": {},
@@ -71,6 +72,42 @@ Required groups:
 - `allowedSurfaceSubstitutes`: safe replacements.
 
 ### `channelAuthority`
+
+### `localePolicy`
+
+Script localization guard scaffold. This field is required before any
+non-Korean script sidecar is promoted into `src/data/**`.
+
+```json
+{
+  "schemaVersion": "script-localization-v1",
+  "status": "scaffold",
+  "forbiddenLexemes": {
+    "en": [],
+    "ja": [],
+    "zh-CN": []
+  },
+  "paraphraseLexemes": {
+    "en": [],
+    "ja": [],
+    "zh-CN": []
+  },
+  "uiSurfaceMap": {
+    "en": {},
+    "ja": {},
+    "zh-CN": {}
+  }
+}
+```
+
+Rules:
+
+- Locale blocks may be empty while no locale sidecars are present.
+- Locale blocks must be populated before a bulk translation import.
+- KO `forbiddenLexemes` remains the canonical runtime guard source until
+  locale-side Tier 3 guard is approved.
+- v1 does not localize `evidence.name`; localize `surfaceName` and other
+  safe surface fields only.
 
 Defines what each channel is allowed to know.
 

@@ -1,0 +1,58 @@
+path,surface_type,case_id,authoritative_status,text_fields,estimated_text_items,notes
+src/data/scriptedText/spouse-01.json,scripted_text_bundle,spouse-01,active,"text, behaviorHint",560 entries / 4677 variants,Primary scripted bundle. Channels: interrogation/evidence_present/dossier/witness/aftermath/system_message/contradiction_pursuit/interjection/emotional_overload/evidence_discovery/trust_action/mediation/judge_question/judge_contradiction/judge_evidence_combo/judge_witness_summon/rapport_milestone/contradict_milestone. variantsPerKey 5 or 10.
+src/data/scriptedText/family-01.json,scripted_text_bundle,family-01,active,"text, behaviorHint",632 entries / 5262 variants,Same structure as spouse-01.
+src/data/scriptedText/friend-01.json,scripted_text_bundle,friend-01,active,"text, behaviorHint",605 entries / 5097 variants,Same structure as spouse-01.
+src/data/scriptedAngles/spouse-01_angle_catalog.json,scripted_angle_catalog,spouse-01,active,"label, description, keywords, truthBoundary.beforeS5MustNotSay, truthBoundary.s5CanSay",22 angles,"label and description are user-visible angle names. keywords are matching tokens (KO morphology); EN translation needs a parallel keyword list, not a literal one. truthBoundary lexemes must stay as KO source (used by KO disclosure guard); add EN companion list if EN runtime guard is added."
+src/data/scriptedAngles/family-01_angle_catalog.json,scripted_angle_catalog,family-01,active,"label, description, keywords, truthBoundary.*",26 angles,Same as spouse-01.
+src/data/scriptedAngles/friend-01_angle_catalog.json,scripted_angle_catalog,friend-01,active,"label, description, keywords, truthBoundary.*",20 angles,Same as spouse-01.
+src/data/scriptedAngles/spouse-01_judge_questions.json,scripted_judge_questions,spouse-01,active,"text, behaviorHint",132 entries / 660 variants,Judge-channel surface-only. EN must preserve disclosure-policy §2.1 — no truth lexemes before S5.
+src/data/scriptedAngles/family-01_judge_questions.json,scripted_judge_questions,family-01,active,"text, behaviorHint",156 entries / 780 variants,Same.
+src/data/scriptedAngles/friend-01_judge_questions.json,scripted_judge_questions,friend-01,active,"text, behaviorHint",120 entries / 600 variants,Same.
+src/data/scriptedAngles/spouse-01_interrogation_answers.json,scripted_interrogation_answers,spouse-01,active,"text, behaviorHint",792 entries / 7920 variants,NPC angle-routed answers. Truth boundary follows lieState — see disclosure-policy §3.
+src/data/scriptedAngles/family-01_interrogation_answers.json,scripted_interrogation_answers,family-01,active,"text, behaviorHint",936 entries / 9360 variants,Same.
+src/data/scriptedAngles/friend-01_interrogation_answers.json,scripted_interrogation_answers,friend-01,active,"text, behaviorHint",720 entries / 6300 variants,Same.
+src/data/scriptedAngles/spouse-01_special_scripts.json,scripted_special_scripts,spouse-01,active,"text, preConfession, confessionMain, postConfession, behaviorHint",136 entries,"Mixed buckets: confessions / interjections / s5RequestionResponses / postS5Requestions / emotionalOverload / trustAction / evidenceDiscovery / judgeEvidenceCombo / judgeWitnessSummon / dossierPrompts. Schema treats arrays as unknown[]; per-bucket entry shape varies."
+src/data/scriptedAngles/family-01_special_scripts.json,scripted_special_scripts,family-01,active,"text, preConfession, confessionMain, postConfession, behaviorHint",178 entries,Same buckets.
+src/data/scriptedAngles/friend-01_special_scripts.json,scripted_special_scripts,friend-01,active,"text, preConfession, confessionMain, postConfession, behaviorHint",115 entries,Same buckets.
+src/data/scriptedAngles/free_interrogation_mapping_schema.json,policy_schema,(global),test_or_policy,(none — schema only),0 user-visible strings,Schema for free-interrogation mapping. No translatable text.
+src/data/scriptedAngles/free_interrogation_response_policy.json,policy,(global),test_or_policy,"behavior labels (mostly enum-like)",~30 (mostly enum keys),Policy bands and fallback definitions. Translate only any UI-surfacing fallback message strings; do not translate enum keys.
+src/data/scriptedAngles/free_interrogation_test_cases.json,test_fixture,(global),test_or_policy,"sample question text, expected behavior labels",~150,QA fixtures. Translate only when EN free-interrogation test coverage is added.
+src/data/dialogues/phase1/spouse-01.json,phase1_dialogue,spouse-01,active,"text, behaviorHint, options[].text",34 dialogues + branching choices,Phase 1 opening statements. Loaded by dialogue runtime.
+src/data/dialogues/phase1/family-01.json,phase1_dialogue,family-01,active,"text, behaviorHint, options[].text",34 dialogues + branching choices,Same.
+src/data/dialogues/phase1/friend-01.json,phase1_dialogue,friend-01,active,"text, behaviorHint, options[].text",34 dialogues + branching choices,Same.
+src/data/dialogues/mediation/spouse-v3-01.json,mediation_dialogue,spouse-01,active,"paths.*.judge, paths.*.dialogues[].text, paths.*.dialogues[].behaviorHint","4 paths × ~3 lines + 4 judge intros, ~16 strings","Loaded for spouse-01 via mediationScriptLoader.ts versioned alias rule (-v3-01 → spouse-01). spouse-v2-01 and spouse-05/11/12 are superseded — see notes."
+src/data/dialogues/mediation/spouse-v2-01.json,mediation_dialogue,spouse-01,legacy,paths.*,~12 strings,Lower priority than -v3-01 alias; not reached at runtime when v3 present.
+src/data/dialogues/mediation/spouse-05.json,mediation_dialogue,(unmapped),legacy,paths.*,~12 strings,Numeric suffix belongs to a Legacy storyline; not part of active 3.
+src/data/dialogues/mediation/spouse-11.json,mediation_dialogue,(unmapped),legacy,paths.*,~12 strings,Same.
+src/data/dialogues/mediation/spouse-12.json,mediation_dialogue,(unmapped),legacy,paths.*,~12 strings,Same.
+src/data/dialogues/mediation/family-09.json,mediation_dialogue,(unmapped),legacy,paths.*,~12 strings,Numeric suffix belongs to Legacy storyline.
+src/data/dialogues/mediation/family-05.json,mediation_dialogue,(unmapped),legacy,paths.*,~12 strings,Same.
+src/data/dialogues/mediation/friend-03.json,mediation_dialogue,(unmapped),legacy,paths.*,~12 strings,Same.
+src/data/dialogues/mediation/friend-07.json,mediation_dialogue,(unmapped),legacy,paths.*,~12 strings,Same.
+src/data/dialogues/mediation/{civic|family|friend|neighbor|online|partnership|professional|spouse|tenant}-new-*.json,mediation_dialogue,(non-active cases),likely_active,paths.*,roughly 100 files × ~12 strings,"-new-* mediation files are wired through mediationScriptLoader (no -v versioning needed) for cases that will become active later. Out of scope for spouse-01 pilot, but flagged so EN doesn't translate the wrong file."
+src/data/dialogues/mediation/headline-01.json,mediation_dialogue,(non-active),likely_active,paths.*,~12 strings,Same.
+src/data/dialogues/mediation/headline-02.json,mediation_dialogue,(non-active),likely_active,paths.*,~12 strings,Same.
+src/data/dialogues/mediation/neighbor-03.json,mediation_dialogue,(unmapped),legacy,paths.*,~12 strings,Numeric suffix belongs to Legacy storyline.
+src/data/dialogues/mediation/neighbor-08.json,mediation_dialogue,(unmapped),legacy,paths.*,~12 strings,Same.
+src/data/dialogues/mediation/partnership-04.json,mediation_dialogue,(unmapped),legacy,paths.*,~12 strings,Same.
+src/data/dialogues/mediation/partnership-09.json,mediation_dialogue,(unmapped),legacy,paths.*,~12 strings,Same.
+src/data/dialogues/mediation/tenant-02.json,mediation_dialogue,(unmapped),legacy,paths.*,~12 strings,Same.
+src/data/dialogues/mediation/tenant-09.json,mediation_dialogue,(unmapped),legacy,paths.*,~12 strings,Same.
+src/data/cases/generated/spouse-01.json,case_data,spouse-01,active,"meta.*, duo.*.speechStyle/fear/verbalTells, context.*, disputes[].name/truthDescription, evidence[].name/description/surfaceName/viewerData, evidenceCombinations, truthTable, solutions, combinationLab, v3Design, dossierCards, uiSurfaceMap","~1274 KO string fields out of 3171 total","Primary case data. Includes both narrative truth fields (e.g. evidence[].name = ground-truth label) and surface fields (evidence[].surfaceName, uiSurfaceMap.*) that the UI is allowed to show. Localization MUST translate the surface side; ground-truth side may stay KO if EN guard does not consume them."
+src/data/cases/generated/family-01.json,case_data,family-01,active,(same as spouse-01),~1000+ KO strings,Same.
+src/data/cases/generated/friend-01.json,case_data,friend-01,active,(same as spouse-01),~1500+ KO strings,Same.
+src/data/cases/refined/spouse-01_texts.json,case_text_refined,spouse-01,legacy,"fields.*.label/original/refined",~80 strings,"Pre-v2 storyline (different characters: 지석/280만원 etc.). REFINED_SET is read by caseLoader.ts only as a manifest filter — the *_texts.json content itself is NOT loaded at runtime. Treat as legacy artifact; do not translate."
+src/data/cases/refined/family-01_texts.json,case_text_refined,family-01,legacy,fields.*,~80 strings,Same.
+src/data/cases/refined/friend-01_texts.json,case_text_refined,friend-01,legacy,fields.*,~80 strings,Same.
+src/data/cases/refined/spouse-01_backup.json,case_data_backup,spouse-01,legacy,(snapshot),N/A,Backup snapshot. Not loaded.
+src/data/cases/refined/manifest.json,manifest,(global),active,(no user-visible text),3 entries,"Only the {""refined"": [...]} list is consumed; entries are filenames."
+src/data/witnessTestimonyData/spouse-01.ts,witness_testimony,spouse-01,active,"topic, question, testimony, behaviorHint",21 testimony slots,TS module exporting TestimonySlot[]. Used by witness flow.
+src/data/witnessTestimonyData/family-01.ts,witness_testimony,family-01,active,(same),18 testimony slots,Same.
+src/data/witnessTestimonyData/friend-01.ts,witness_testimony,friend-01,active,(same),18 testimony slots,Same.
+src/data/evidencePresentationScripts.ts,evidence_presentation,(spouse-01/family-01/friend-01),active,"facts[stage], partyFacts.{a|b}[stage], stances.{a|b}.{early|mid|late}, BEHAVIOR_HINT_BY_BAND",~255 KO strings (rough),"Hard-coded TS module with per-evidence per-stage per-band lines. Currently KO-only; localization needs a parallel locale lookup or a JSON migration."
+src/data/confessionScripts.ts,confession_scripts,(spouse-01/family-01/friend-01),active,"preConfession, confessionMain, postConfession",~13 confession entries,TS module. Used at S5 confession trigger. May overlap with scriptedAngles/*_special_scripts.json `confessions` bucket — verify dedupe before translation.
+src/data/combinationComments.ts,combination_comments,(spouse-01/family-01/friend-01),active,comment,~30 lines,TS module. Judge comment after evidence combination success.
+src/data/legacy/dialogues/phase1.ts,legacy_dialogue,(legacy),legacy,(static dialogues),108 lines,Pre-V4 dialogue. Not active.
+src/data/legacy/dialogues/phase2.ts,legacy_dialogue,(legacy),legacy,(static dialogues),87 lines,Same.
+src/data/legacy/dialogues/phase3-5.ts,legacy_dialogue,(legacy),legacy,(static dialogues),472 lines,Same.
+src/data/disclosurePolicy/*.json,policy_data,(spouse-01/family-01/friend-01),test_or_policy,"forbiddenLexemes, paraphraseSet, surfaceMap entries, gating notes",per-case policy file (Codex-owned),"Disclosure policy JSON used by check:policy wrapper. Lexemes are KO source; an EN runtime guard would need a parallel EN lexeme set. Not a runtime import today."

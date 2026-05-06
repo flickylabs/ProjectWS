@@ -412,6 +412,150 @@
       "공장 위기 3억원 전달": "과거 자금 지원"
     }
   },
+  "localePolicy": {
+    "schemaVersion": "script-localization-v1",
+    "status": "tier-a-draft",
+    "forbiddenLexemes": {
+      "en": [
+        "birth secret",
+        "half brother",
+        "half-brother",
+        "different bloodline",
+        "different father",
+        "not his father's child",
+        "not biologically his son",
+        "not a biological child",
+        "Jung-hoo's money",
+        "Yoon Jung-hoo's money",
+        "old regular support",
+        "factory crisis 300 million",
+        "300 million won",
+        "90:10",
+        "90 to 10",
+        "Jung-hoo 90",
+        "Taesung 10",
+        "will manipulation",
+        "reduced his own share",
+        "management rights crisis",
+        "brother's identity"
+      ],
+      "ja": [
+        "出生の秘密",
+        "異父",
+        "血縁が違う",
+        "父の血ではない",
+        "実子ではない",
+        "別の父",
+        "正厚の金",
+        "尹正厚の金",
+        "古い定期支援",
+        "工場危機の3億",
+        "3億ウォン",
+        "90:10",
+        "90対10",
+        "正厚90",
+        "泰成10",
+        "遺書操作",
+        "自分の取り分を減らした",
+        "経営権危機",
+        "兄のアイデンティティ"
+      ],
+      "zh-CN": [
+        "出生秘密",
+        "同母异父",
+        "血缘不同",
+        "不是父亲的血脉",
+        "不是亲生子",
+        "另一个父亲",
+        "正厚的钱",
+        "尹正厚的钱",
+        "长期定期支援",
+        "工厂危机3亿",
+        "3亿韩元",
+        "90:10",
+        "90比10",
+        "正厚90",
+        "泰成10",
+        "遗书造假",
+        "减少自己的份额",
+        "经营权危机",
+        "哥哥的身份"
+      ]
+    },
+    "paraphraseLexemes": {
+      "en": [
+        "hidden parentage",
+        "separate bloodline",
+        "not blood-related",
+        "Yoon Jung-hoo's hidden funding",
+        "changed inheritance ratio",
+        "protect his brother's identity"
+      ],
+      "ja": [
+        "隠された親子関係",
+        "別の血筋",
+        "血がつながっていない",
+        "別資金",
+        "相続比率変更",
+        "兄を守るため"
+      ],
+      "zh-CN": [
+        "隐藏的亲子关系",
+        "不同血脉",
+        "没有血缘",
+        "另一笔钱",
+        "继承比例变更",
+        "保护哥哥身份"
+      ]
+    },
+    "uiSurfaceMap": {
+      "en": {
+        "surfaceOnlyChannels": ["judge_question", "judge_contradiction", "judge_evidence_combo", "judge_witness_summon", "system_message", "dossier"],
+        "truthGate": "S5",
+        "localizeFields": ["surfaceName", "surfaceDescription", "label", "description", "text", "judge", "choices.text"],
+        "doNotLocalizeFields": ["id", "key", "tags", "sourceRefs", "behaviorHint", "evidence.name"],
+        "safeSubstitutes": {
+          "birth secret": "old family matter",
+          "half brother": "sensitive family matter",
+          "not his father's child": "sensitive identity matter",
+          "Jung-hoo's money": "money from another source",
+          "90:10": "a different ratio from the notarized copy"
+        }
+      },
+      "ja": {
+        "surfaceOnlyChannels": ["judge_question", "judge_contradiction", "judge_evidence_combo", "judge_witness_summon", "system_message", "dossier"],
+        "truthGate": "S5",
+        "localizeFields": ["surfaceName", "surfaceDescription", "label", "description", "text", "judge", "choices.text"],
+        "doNotLocalizeFields": ["id", "key", "tags", "sourceRefs", "behaviorHint", "evidence.name"],
+        "safeSubstitutes": {
+          "出生の秘密": "古い家族事情",
+          "異父": "話しづらい家の事情",
+          "実子ではない": "アイデンティティに関わる敏感な事情",
+          "正厚の金": "別の出所の金",
+          "90:10": "公証本と異なる比率"
+        }
+      },
+      "zh-CN": {
+        "surfaceOnlyChannels": ["judge_question", "judge_contradiction", "judge_evidence_combo", "judge_witness_summon", "system_message", "dossier"],
+        "truthGate": "S5",
+        "localizeFields": ["surfaceName", "surfaceDescription", "label", "description", "text", "judge", "choices.text"],
+        "doNotLocalizeFields": ["id", "key", "tags", "sourceRefs", "behaviorHint", "evidence.name"],
+        "safeSubstitutes": {
+          "出生秘密": "陈年家庭隐情",
+          "同母异父": "难以启齿的家事",
+          "不是亲生子": "涉及身份的敏感情况",
+          "正厚的钱": "另一来源的钱",
+          "90:10": "与公证本不同的比例"
+        }
+      }
+    },
+    "notes": [
+      "Tier A locale blocks are populated for wrapper-gated script translation.",
+      "KO forbiddenLexemes remains canonical for current runtime guard.",
+      "evidence.name is not localized in v1; translate surfaceName only.",
+      "behaviorHint remains KO-only until the Tier B policy decision lands."
+    ]
+  },
   "channelAuthority": {
     "surfaceOnly": [
       {

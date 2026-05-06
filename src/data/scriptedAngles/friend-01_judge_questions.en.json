@@ -1,0 +1,3368 @@
+{
+  "schemaVersion": 1,
+  "locale": "en",
+  "caseId": "friend-01",
+  "overlayKind": "judge_questions",
+  "judgeQuestions": [
+    {
+      "disputeId": "d-1",
+      "questionType": "fact_pursuit",
+      "targetParty": "a",
+      "angleId": "contact_timeline",
+      "variants": [
+        {
+          "id": "judgeq-d-1-fact_pursuit-a-contact_timeline-v1",
+          "text": "Ms. Song, regarding how you reconstructed those nine days of calls and texts as a timeline, please walk me through what happened in chronological order, with dates where you can."
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-a-contact_timeline-v2",
+          "text": "Looking at the call records, the text logs, and the group chat captures, please separate what you accept as your own conduct from what you do not recall, item by item."
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-a-contact_timeline-v3",
+          "text": "Where Ms. Choi's account and your own account diverge most sharply on how you reconstructed those nine days of calls and texts as a timeline, please start from that point and answer on the facts alone."
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-a-contact_timeline-v4",
+          "text": "Among the call records, the text logs, and the group chat captures, please tell me which items you accept here and which items you still wish to dispute."
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-a-contact_timeline-v5",
+          "text": "Ms. Song, if there is anything about how you reconstructed those nine days of calls and texts as a timeline that you have not yet stated on the record, please bring it forward first."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "fact_pursuit",
+      "targetParty": "b",
+      "angleId": "contact_timeline",
+      "variants": [
+        {
+          "id": "judgeq-d-1-fact_pursuit-b-contact_timeline-v1",
+          "text": "Ms. Choi, regarding the order and timing of your calls and texts to the fiance, please walk me through what happened in chronological order, with dates where you can."
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-b-contact_timeline-v2",
+          "text": "Looking at the call records, the text logs, and the group chat captures, please separate what you accept as your own conduct from what you do not recall, item by item."
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-b-contact_timeline-v3",
+          "text": "Where Ms. Song's account and your own account diverge most sharply on the order and timing of your calls and texts to the fiance, please start from that point and answer on the facts alone."
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-b-contact_timeline-v4",
+          "text": "Among the call records, the text logs, and the group chat captures, please tell me which items you accept here and which items you still wish to dispute."
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-b-contact_timeline-v5",
+          "text": "Ms. Choi, if there is anything about the order and timing of your calls and texts to the fiance that you have not yet stated on the record, please bring it forward first."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "motive_search",
+      "targetParty": "a",
+      "angleId": "contact_timeline",
+      "variants": [
+        {
+          "id": "judgeq-d-1-motive_search-a-contact_timeline-v1",
+          "text": "Ms. Song, while how you reconstructed those nine days of calls and texts as a timeline was building up, why did you not lay this out for the other side beforehand? Please explain your reasoning."
+        },
+        {
+          "id": "judgeq-d-1-motive_search-a-contact_timeline-v2",
+          "text": "If you were aware that how you reconstructed those nine days of calls and texts as a timeline could be misread, please tell me the basis on which you chose silence at that point."
+        },
+        {
+          "id": "judgeq-d-1-motive_search-a-contact_timeline-v3",
+          "text": "You could have explained each part separately. Please tell me what motivated you to defer all of it instead."
+        },
+        {
+          "id": "judgeq-d-1-motive_search-a-contact_timeline-v4",
+          "text": "At that time, which conversation did you most want to avoid, and which were you willing to have? Please answer on that distinction."
+        },
+        {
+          "id": "judgeq-d-1-motive_search-a-contact_timeline-v5",
+          "text": "Within what you can say here, please explain where the impulse to keep this matter buried came from."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "motive_search",
+      "targetParty": "b",
+      "angleId": "contact_timeline",
+      "variants": [
+        {
+          "id": "judgeq-d-1-motive_search-b-contact_timeline-v1",
+          "text": "Ms. Choi, while the order and timing of your calls and texts to the fiance was building up, why did you not lay this out for the other side beforehand? Please explain your reasoning."
+        },
+        {
+          "id": "judgeq-d-1-motive_search-b-contact_timeline-v2",
+          "text": "If you were aware that the order and timing of your calls and texts to the fiance could be misread, please tell me the basis on which you chose silence at that point."
+        },
+        {
+          "id": "judgeq-d-1-motive_search-b-contact_timeline-v3",
+          "text": "You could have explained each part separately. Please tell me what motivated you to defer all of it instead."
+        },
+        {
+          "id": "judgeq-d-1-motive_search-b-contact_timeline-v4",
+          "text": "At that time, which conversation did you most want to avoid, and which were you willing to have? Please answer on that distinction."
+        },
+        {
+          "id": "judgeq-d-1-motive_search-b-contact_timeline-v5",
+          "text": "Within what you can say here, please explain where the impulse to keep this matter buried came from."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "empathy_approach",
+      "targetParty": "a",
+      "angleId": "contact_timeline",
+      "variants": [
+        {
+          "id": "judgeq-d-1-empathy_approach-a-contact_timeline-v1",
+          "text": "Ms. Song, this is a setting where it is hard to speak. Regarding how you reconstructed those nine days of calls and texts as a timeline, please share, at your own pace, what you found most difficult to say."
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-a-contact_timeline-v2",
+          "text": "If there were circumstances that made it hard to raise how you reconstructed those nine days of calls and texts as a timeline, please explain them in your own words first."
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-a-contact_timeline-v3",
+          "text": "You do not need to lay everything out at once. Please begin with the part of how you reconstructed those nine days of calls and texts as a timeline that you feel ready to say today."
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-a-contact_timeline-v4",
+          "text": "If part of how you reconstructed those nine days of calls and texts as a timeline is something you can speak about and part is not yet, please separate them and answer on the part you can."
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-a-contact_timeline-v5",
+          "text": "Ms. Song, if there is something about how you reconstructed those nine days of calls and texts as a timeline you have been carrying alone, please put it down here, in the form you are able to."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "empathy_approach",
+      "targetParty": "b",
+      "angleId": "contact_timeline",
+      "variants": [
+        {
+          "id": "judgeq-d-1-empathy_approach-b-contact_timeline-v1",
+          "text": "Ms. Choi, this is a setting where it is hard to speak. Regarding the order and timing of your calls and texts to the fiance, please share, at your own pace, what you found most difficult to say."
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-b-contact_timeline-v2",
+          "text": "If there were circumstances that made it hard to raise the order and timing of your calls and texts to the fiance, please explain them in your own words first."
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-b-contact_timeline-v3",
+          "text": "You do not need to lay everything out at once. Please begin with the part of the order and timing of your calls and texts to the fiance that you feel ready to say today."
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-b-contact_timeline-v4",
+          "text": "If part of the order and timing of your calls and texts to the fiance is something you can speak about and part is not yet, please separate them and answer on the part you can."
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-b-contact_timeline-v5",
+          "text": "Ms. Choi, if there is something about the order and timing of your calls and texts to the fiance you have been carrying alone, please put it down here, in the form you are able to."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "fact_pursuit",
+      "targetParty": "a",
+      "angleId": "message_intent",
+      "variants": [
+        {
+          "id": "judgeq-d-1-fact_pursuit-a-message_intent-v1",
+          "text": "Ms. Song, regarding the intent you read into Ms. Choi's contact with the fiance, please walk me through what happened in chronological order, with dates where you can."
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-a-message_intent-v2",
+          "text": "Looking at the call records, the text logs, and the group chat captures, please separate what you accept as your own conduct from what you do not recall, item by item."
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-a-message_intent-v3",
+          "text": "Where Ms. Choi's account and your own account diverge most sharply on the intent you read into Ms. Choi's contact with the fiance, please start from that point and answer on the facts alone."
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-a-message_intent-v4",
+          "text": "Among the call records, the text logs, and the group chat captures, please tell me which items you accept here and which items you still wish to dispute."
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-a-message_intent-v5",
+          "text": "Ms. Song, if there is anything about the intent you read into Ms. Choi's contact with the fiance that you have not yet stated on the record, please bring it forward first."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "fact_pursuit",
+      "targetParty": "b",
+      "angleId": "message_intent",
+      "variants": [
+        {
+          "id": "judgeq-d-1-fact_pursuit-b-message_intent-v1",
+          "text": "Ms. Choi, regarding the purpose you say lay behind those calls and texts, please walk me through what happened in chronological order, with dates where you can."
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-b-message_intent-v2",
+          "text": "Looking at the call records, the text logs, and the group chat captures, please separate what you accept as your own conduct from what you do not recall, item by item."
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-b-message_intent-v3",
+          "text": "Where Ms. Song's account and your own account diverge most sharply on the purpose you say lay behind those calls and texts, please start from that point and answer on the facts alone."
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-b-message_intent-v4",
+          "text": "Among the call records, the text logs, and the group chat captures, please tell me which items you accept here and which items you still wish to dispute."
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-b-message_intent-v5",
+          "text": "Ms. Choi, if there is anything about the purpose you say lay behind those calls and texts that you have not yet stated on the record, please bring it forward first."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "motive_search",
+      "targetParty": "a",
+      "angleId": "message_intent",
+      "variants": [
+        {
+          "id": "judgeq-d-1-motive_search-a-message_intent-v1",
+          "text": "Ms. Song, while the intent you read into Ms. Choi's contact with the fiance was building up, why did you not lay this out for the other side beforehand? Please explain your reasoning."
+        },
+        {
+          "id": "judgeq-d-1-motive_search-a-message_intent-v2",
+          "text": "If you were aware that the intent you read into Ms. Choi's contact with the fiance could be misread, please tell me the basis on which you chose silence at that point."
+        },
+        {
+          "id": "judgeq-d-1-motive_search-a-message_intent-v3",
+          "text": "You could have explained each part separately. Please tell me what motivated you to defer all of it instead."
+        },
+        {
+          "id": "judgeq-d-1-motive_search-a-message_intent-v4",
+          "text": "At that time, which conversation did you most want to avoid, and which were you willing to have? Please answer on that distinction."
+        },
+        {
+          "id": "judgeq-d-1-motive_search-a-message_intent-v5",
+          "text": "Within what you can say here, please explain where the impulse to keep this matter buried came from."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "motive_search",
+      "targetParty": "b",
+      "angleId": "message_intent",
+      "variants": [
+        {
+          "id": "judgeq-d-1-motive_search-b-message_intent-v1",
+          "text": "Ms. Choi, while the purpose you say lay behind those calls and texts was building up, why did you not lay this out for the other side beforehand? Please explain your reasoning."
+        },
+        {
+          "id": "judgeq-d-1-motive_search-b-message_intent-v2",
+          "text": "If you were aware that the purpose you say lay behind those calls and texts could be misread, please tell me the basis on which you chose silence at that point."
+        },
+        {
+          "id": "judgeq-d-1-motive_search-b-message_intent-v3",
+          "text": "You could have explained each part separately. Please tell me what motivated you to defer all of it instead."
+        },
+        {
+          "id": "judgeq-d-1-motive_search-b-message_intent-v4",
+          "text": "At that time, which conversation did you most want to avoid, and which were you willing to have? Please answer on that distinction."
+        },
+        {
+          "id": "judgeq-d-1-motive_search-b-message_intent-v5",
+          "text": "Within what you can say here, please explain where the impulse to keep this matter buried came from."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "empathy_approach",
+      "targetParty": "a",
+      "angleId": "message_intent",
+      "variants": [
+        {
+          "id": "judgeq-d-1-empathy_approach-a-message_intent-v1",
+          "text": "Ms. Song, this is a setting where it is hard to speak. Regarding the intent you read into Ms. Choi's contact with the fiance, please share, at your own pace, what you found most difficult to say."
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-a-message_intent-v2",
+          "text": "If there were circumstances that made it hard to raise the intent you read into Ms. Choi's contact with the fiance, please explain them in your own words first."
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-a-message_intent-v3",
+          "text": "You do not need to lay everything out at once. Please begin with the part of the intent you read into Ms. Choi's contact with the fiance that you feel ready to say today."
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-a-message_intent-v4",
+          "text": "If part of the intent you read into Ms. Choi's contact with the fiance is something you can speak about and part is not yet, please separate them and answer on the part you can."
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-a-message_intent-v5",
+          "text": "Ms. Song, if there is something about the intent you read into Ms. Choi's contact with the fiance you have been carrying alone, please put it down here, in the form you are able to."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "empathy_approach",
+      "targetParty": "b",
+      "angleId": "message_intent",
+      "variants": [
+        {
+          "id": "judgeq-d-1-empathy_approach-b-message_intent-v1",
+          "text": "Ms. Choi, this is a setting where it is hard to speak. Regarding the purpose you say lay behind those calls and texts, please share, at your own pace, what you found most difficult to say."
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-b-message_intent-v2",
+          "text": "If there were circumstances that made it hard to raise the purpose you say lay behind those calls and texts, please explain them in your own words first."
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-b-message_intent-v3",
+          "text": "You do not need to lay everything out at once. Please begin with the part of the purpose you say lay behind those calls and texts that you feel ready to say today."
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-b-message_intent-v4",
+          "text": "If part of the purpose you say lay behind those calls and texts is something you can speak about and part is not yet, please separate them and answer on the part you can."
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-b-message_intent-v5",
+          "text": "Ms. Choi, if there is something about the purpose you say lay behind those calls and texts you have been carrying alone, please put it down here, in the form you are able to."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "fact_pursuit",
+      "targetParty": "a",
+      "angleId": "bypass_da_eun",
+      "variants": [
+        {
+          "id": "judgeq-d-1-fact_pursuit-a-bypass_da_eun-v1",
+          "text": "Ms. Song, regarding why, in your reading, Ms. Choi did not come to you directly first, please walk me through what happened in chronological order, with dates where you can."
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-a-bypass_da_eun-v2",
+          "text": "Looking at the call records, the text logs, and the group chat captures, please separate what you accept as your own conduct from what you do not recall, item by item."
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-a-bypass_da_eun-v3",
+          "text": "Where Ms. Choi's account and your own account diverge most sharply on why, in your reading, Ms. Choi did not come to you directly first, please start from that point and answer on the facts alone."
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-a-bypass_da_eun-v4",
+          "text": "Among the call records, the text logs, and the group chat captures, please tell me which items you accept here and which items you still wish to dispute."
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-a-bypass_da_eun-v5",
+          "text": "Ms. Song, if there is anything about why, in your reading, Ms. Choi did not come to you directly first that you have not yet stated on the record, please bring it forward first."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "fact_pursuit",
+      "targetParty": "b",
+      "angleId": "bypass_da_eun",
+      "variants": [
+        {
+          "id": "judgeq-d-1-fact_pursuit-b-bypass_da_eun-v1",
+          "text": "Ms. Choi, regarding why you did not raise the matter with Ms. Song directly first, please walk me through what happened in chronological order, with dates where you can."
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-b-bypass_da_eun-v2",
+          "text": "Looking at the call records, the text logs, and the group chat captures, please separate what you accept as your own conduct from what you do not recall, item by item."
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-b-bypass_da_eun-v3",
+          "text": "Where Ms. Song's account and your own account diverge most sharply on why you did not raise the matter with Ms. Song directly first, please start from that point and answer on the facts alone."
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-b-bypass_da_eun-v4",
+          "text": "Among the call records, the text logs, and the group chat captures, please tell me which items you accept here and which items you still wish to dispute."
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-b-bypass_da_eun-v5",
+          "text": "Ms. Choi, if there is anything about why you did not raise the matter with Ms. Song directly first that you have not yet stated on the record, please bring it forward first."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "motive_search",
+      "targetParty": "a",
+      "angleId": "bypass_da_eun",
+      "variants": [
+        {
+          "id": "judgeq-d-1-motive_search-a-bypass_da_eun-v1",
+          "text": "Ms. Song, while why, in your reading, Ms. Choi did not come to you directly first was building up, why did you not lay this out for the other side beforehand? Please explain your reasoning."
+        },
+        {
+          "id": "judgeq-d-1-motive_search-a-bypass_da_eun-v2",
+          "text": "If you were aware that why, in your reading, Ms. Choi did not come to you directly first could be misread, please tell me the basis on which you chose silence at that point."
+        },
+        {
+          "id": "judgeq-d-1-motive_search-a-bypass_da_eun-v3",
+          "text": "You could have explained each part separately. Please tell me what motivated you to defer all of it instead."
+        },
+        {
+          "id": "judgeq-d-1-motive_search-a-bypass_da_eun-v4",
+          "text": "At that time, which conversation did you most want to avoid, and which were you willing to have? Please answer on that distinction."
+        },
+        {
+          "id": "judgeq-d-1-motive_search-a-bypass_da_eun-v5",
+          "text": "Within what you can say here, please explain where the impulse to keep this matter buried came from."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "motive_search",
+      "targetParty": "b",
+      "angleId": "bypass_da_eun",
+      "variants": [
+        {
+          "id": "judgeq-d-1-motive_search-b-bypass_da_eun-v1",
+          "text": "Ms. Choi, while why you did not raise the matter with Ms. Song directly first was building up, why did you not lay this out for the other side beforehand? Please explain your reasoning."
+        },
+        {
+          "id": "judgeq-d-1-motive_search-b-bypass_da_eun-v2",
+          "text": "If you were aware that why you did not raise the matter with Ms. Song directly first could be misread, please tell me the basis on which you chose silence at that point."
+        },
+        {
+          "id": "judgeq-d-1-motive_search-b-bypass_da_eun-v3",
+          "text": "You could have explained each part separately. Please tell me what motivated you to defer all of it instead."
+        },
+        {
+          "id": "judgeq-d-1-motive_search-b-bypass_da_eun-v4",
+          "text": "At that time, which conversation did you most want to avoid, and which were you willing to have? Please answer on that distinction."
+        },
+        {
+          "id": "judgeq-d-1-motive_search-b-bypass_da_eun-v5",
+          "text": "Within what you can say here, please explain where the impulse to keep this matter buried came from."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "empathy_approach",
+      "targetParty": "a",
+      "angleId": "bypass_da_eun",
+      "variants": [
+        {
+          "id": "judgeq-d-1-empathy_approach-a-bypass_da_eun-v1",
+          "text": "Ms. Song, this is a setting where it is hard to speak. Regarding why, in your reading, Ms. Choi did not come to you directly first, please share, at your own pace, what you found most difficult to say."
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-a-bypass_da_eun-v2",
+          "text": "If there were circumstances that made it hard to raise why, in your reading, Ms. Choi did not come to you directly first, please explain them in your own words first."
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-a-bypass_da_eun-v3",
+          "text": "You do not need to lay everything out at once. Please begin with the part of why, in your reading, Ms. Choi did not come to you directly first that you feel ready to say today."
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-a-bypass_da_eun-v4",
+          "text": "If part of why, in your reading, Ms. Choi did not come to you directly first is something you can speak about and part is not yet, please separate them and answer on the part you can."
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-a-bypass_da_eun-v5",
+          "text": "Ms. Song, if there is something about why, in your reading, Ms. Choi did not come to you directly first you have been carrying alone, please put it down here, in the form you are able to."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "empathy_approach",
+      "targetParty": "b",
+      "angleId": "bypass_da_eun",
+      "variants": [
+        {
+          "id": "judgeq-d-1-empathy_approach-b-bypass_da_eun-v1",
+          "text": "Ms. Choi, this is a setting where it is hard to speak. Regarding why you did not raise the matter with Ms. Song directly first, please share, at your own pace, what you found most difficult to say."
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-b-bypass_da_eun-v2",
+          "text": "If there were circumstances that made it hard to raise why you did not raise the matter with Ms. Song directly first, please explain them in your own words first."
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-b-bypass_da_eun-v3",
+          "text": "You do not need to lay everything out at once. Please begin with the part of why you did not raise the matter with Ms. Song directly first that you feel ready to say today."
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-b-bypass_da_eun-v4",
+          "text": "If part of why you did not raise the matter with Ms. Song directly first is something you can speak about and part is not yet, please separate them and answer on the part you can."
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-b-bypass_da_eun-v5",
+          "text": "Ms. Choi, if there is something about why you did not raise the matter with Ms. Song directly first you have been carrying alone, please put it down here, in the form you are able to."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "fact_pursuit",
+      "targetParty": "a",
+      "angleId": "unanswered_escalation",
+      "variants": [
+        {
+          "id": "judgeq-d-1-fact_pursuit-a-unanswered_escalation-v1",
+          "text": "Ms. Song, regarding how you came to read the repeated calls after no reply, please walk me through what happened in chronological order, with dates where you can."
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-a-unanswered_escalation-v2",
+          "text": "Looking at the call records, the text logs, and the group chat captures, please separate what you accept as your own conduct from what you do not recall, item by item."
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-a-unanswered_escalation-v3",
+          "text": "Where Ms. Choi's account and your own account diverge most sharply on how you came to read the repeated calls after no reply, please start from that point and answer on the facts alone."
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-a-unanswered_escalation-v4",
+          "text": "Among the call records, the text logs, and the group chat captures, please tell me which items you accept here and which items you still wish to dispute."
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-a-unanswered_escalation-v5",
+          "text": "Ms. Song, if there is anything about how you came to read the repeated calls after no reply that you have not yet stated on the record, please bring it forward first."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "fact_pursuit",
+      "targetParty": "b",
+      "angleId": "unanswered_escalation",
+      "variants": [
+        {
+          "id": "judgeq-d-1-fact_pursuit-b-unanswered_escalation-v1",
+          "text": "Ms. Choi, regarding why you kept calling after the first messages went unanswered, please walk me through what happened in chronological order, with dates where you can."
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-b-unanswered_escalation-v2",
+          "text": "Looking at the call records, the text logs, and the group chat captures, please separate what you accept as your own conduct from what you do not recall, item by item."
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-b-unanswered_escalation-v3",
+          "text": "Where Ms. Song's account and your own account diverge most sharply on why you kept calling after the first messages went unanswered, please start from that point and answer on the facts alone."
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-b-unanswered_escalation-v4",
+          "text": "Among the call records, the text logs, and the group chat captures, please tell me which items you accept here and which items you still wish to dispute."
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-b-unanswered_escalation-v5",
+          "text": "Ms. Choi, if there is anything about why you kept calling after the first messages went unanswered that you have not yet stated on the record, please bring it forward first."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "motive_search",
+      "targetParty": "a",
+      "angleId": "unanswered_escalation",
+      "variants": [
+        {
+          "id": "judgeq-d-1-motive_search-a-unanswered_escalation-v1",
+          "text": "Ms. Song, while how you came to read the repeated calls after no reply was building up, why did you not lay this out for the other side beforehand? Please explain your reasoning."
+        },
+        {
+          "id": "judgeq-d-1-motive_search-a-unanswered_escalation-v2",
+          "text": "If you were aware that how you came to read the repeated calls after no reply could be misread, please tell me the basis on which you chose silence at that point."
+        },
+        {
+          "id": "judgeq-d-1-motive_search-a-unanswered_escalation-v3",
+          "text": "You could have explained each part separately. Please tell me what motivated you to defer all of it instead."
+        },
+        {
+          "id": "judgeq-d-1-motive_search-a-unanswered_escalation-v4",
+          "text": "At that time, which conversation did you most want to avoid, and which were you willing to have? Please answer on that distinction."
+        },
+        {
+          "id": "judgeq-d-1-motive_search-a-unanswered_escalation-v5",
+          "text": "Within what you can say here, please explain where the impulse to keep this matter buried came from."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "motive_search",
+      "targetParty": "b",
+      "angleId": "unanswered_escalation",
+      "variants": [
+        {
+          "id": "judgeq-d-1-motive_search-b-unanswered_escalation-v1",
+          "text": "Ms. Choi, while why you kept calling after the first messages went unanswered was building up, why did you not lay this out for the other side beforehand? Please explain your reasoning."
+        },
+        {
+          "id": "judgeq-d-1-motive_search-b-unanswered_escalation-v2",
+          "text": "If you were aware that why you kept calling after the first messages went unanswered could be misread, please tell me the basis on which you chose silence at that point."
+        },
+        {
+          "id": "judgeq-d-1-motive_search-b-unanswered_escalation-v3",
+          "text": "You could have explained each part separately. Please tell me what motivated you to defer all of it instead."
+        },
+        {
+          "id": "judgeq-d-1-motive_search-b-unanswered_escalation-v4",
+          "text": "At that time, which conversation did you most want to avoid, and which were you willing to have? Please answer on that distinction."
+        },
+        {
+          "id": "judgeq-d-1-motive_search-b-unanswered_escalation-v5",
+          "text": "Within what you can say here, please explain where the impulse to keep this matter buried came from."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "empathy_approach",
+      "targetParty": "a",
+      "angleId": "unanswered_escalation",
+      "variants": [
+        {
+          "id": "judgeq-d-1-empathy_approach-a-unanswered_escalation-v1",
+          "text": "Ms. Song, this is a setting where it is hard to speak. Regarding how you came to read the repeated calls after no reply, please share, at your own pace, what you found most difficult to say."
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-a-unanswered_escalation-v2",
+          "text": "If there were circumstances that made it hard to raise how you came to read the repeated calls after no reply, please explain them in your own words first."
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-a-unanswered_escalation-v3",
+          "text": "You do not need to lay everything out at once. Please begin with the part of how you came to read the repeated calls after no reply that you feel ready to say today."
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-a-unanswered_escalation-v4",
+          "text": "If part of how you came to read the repeated calls after no reply is something you can speak about and part is not yet, please separate them and answer on the part you can."
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-a-unanswered_escalation-v5",
+          "text": "Ms. Song, if there is something about how you came to read the repeated calls after no reply you have been carrying alone, please put it down here, in the form you are able to."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "empathy_approach",
+      "targetParty": "b",
+      "angleId": "unanswered_escalation",
+      "variants": [
+        {
+          "id": "judgeq-d-1-empathy_approach-b-unanswered_escalation-v1",
+          "text": "Ms. Choi, this is a setting where it is hard to speak. Regarding why you kept calling after the first messages went unanswered, please share, at your own pace, what you found most difficult to say."
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-b-unanswered_escalation-v2",
+          "text": "If there were circumstances that made it hard to raise why you kept calling after the first messages went unanswered, please explain them in your own words first."
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-b-unanswered_escalation-v3",
+          "text": "You do not need to lay everything out at once. Please begin with the part of why you kept calling after the first messages went unanswered that you feel ready to say today."
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-b-unanswered_escalation-v4",
+          "text": "If part of why you kept calling after the first messages went unanswered is something you can speak about and part is not yet, please separate them and answer on the part you can."
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-b-unanswered_escalation-v5",
+          "text": "Ms. Choi, if there is something about why you kept calling after the first messages went unanswered you have been carrying alone, please put it down here, in the form you are able to."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "fact_pursuit",
+      "targetParty": "a",
+      "angleId": "message_sequence",
+      "variants": [
+        {
+          "id": "judgeq-d-2-fact_pursuit-a-message_sequence-v1",
+          "text": "Ms. Song, regarding how you put together the order of the messages between Ms. Choi and the fiance, please walk me through what happened in chronological order, with dates where you can."
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-a-message_sequence-v2",
+          "text": "Looking at the message records, the captures, and the order in which they were posted, please separate what you accept as your own conduct from what you do not recall, item by item."
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-a-message_sequence-v3",
+          "text": "Where Ms. Choi's account and your own account diverge most sharply on how you put together the order of the messages between Ms. Choi and the fiance, please start from that point and answer on the facts alone."
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-a-message_sequence-v4",
+          "text": "Among the message records, the captures, and the order in which they were posted, please tell me which items you accept here and which items you still wish to dispute."
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-a-message_sequence-v5",
+          "text": "Ms. Song, if there is anything about how you put together the order of the messages between Ms. Choi and the fiance that you have not yet stated on the record, please bring it forward first."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "fact_pursuit",
+      "targetParty": "b",
+      "angleId": "message_sequence",
+      "variants": [
+        {
+          "id": "judgeq-d-2-fact_pursuit-b-message_sequence-v1",
+          "text": "Ms. Choi, regarding the order in which the messages with the fiance moved on your side, please walk me through what happened in chronological order, with dates where you can."
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-b-message_sequence-v2",
+          "text": "Looking at the message records, the captures, and the order in which they were posted, please separate what you accept as your own conduct from what you do not recall, item by item."
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-b-message_sequence-v3",
+          "text": "Where Ms. Song's account and your own account diverge most sharply on the order in which the messages with the fiance moved on your side, please start from that point and answer on the facts alone."
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-b-message_sequence-v4",
+          "text": "Among the message records, the captures, and the order in which they were posted, please tell me which items you accept here and which items you still wish to dispute."
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-b-message_sequence-v5",
+          "text": "Ms. Choi, if there is anything about the order in which the messages with the fiance moved on your side that you have not yet stated on the record, please bring it forward first."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "motive_search",
+      "targetParty": "a",
+      "angleId": "message_sequence",
+      "variants": [
+        {
+          "id": "judgeq-d-2-motive_search-a-message_sequence-v1",
+          "text": "Ms. Song, while how you put together the order of the messages between Ms. Choi and the fiance was building up, why did you not lay this out for the other side beforehand? Please explain your reasoning."
+        },
+        {
+          "id": "judgeq-d-2-motive_search-a-message_sequence-v2",
+          "text": "If you were aware that how you put together the order of the messages between Ms. Choi and the fiance could be misread, please tell me the basis on which you chose silence at that point."
+        },
+        {
+          "id": "judgeq-d-2-motive_search-a-message_sequence-v3",
+          "text": "You could have explained each part separately. Please tell me what motivated you to defer all of it instead."
+        },
+        {
+          "id": "judgeq-d-2-motive_search-a-message_sequence-v4",
+          "text": "At that time, which conversation did you most want to avoid, and which were you willing to have? Please answer on that distinction."
+        },
+        {
+          "id": "judgeq-d-2-motive_search-a-message_sequence-v5",
+          "text": "Within what you can say here, please explain where the impulse to keep this matter buried came from."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "motive_search",
+      "targetParty": "b",
+      "angleId": "message_sequence",
+      "variants": [
+        {
+          "id": "judgeq-d-2-motive_search-b-message_sequence-v1",
+          "text": "Ms. Choi, while the order in which the messages with the fiance moved on your side was building up, why did you not lay this out for the other side beforehand? Please explain your reasoning."
+        },
+        {
+          "id": "judgeq-d-2-motive_search-b-message_sequence-v2",
+          "text": "If you were aware that the order in which the messages with the fiance moved on your side could be misread, please tell me the basis on which you chose silence at that point."
+        },
+        {
+          "id": "judgeq-d-2-motive_search-b-message_sequence-v3",
+          "text": "You could have explained each part separately. Please tell me what motivated you to defer all of it instead."
+        },
+        {
+          "id": "judgeq-d-2-motive_search-b-message_sequence-v4",
+          "text": "At that time, which conversation did you most want to avoid, and which were you willing to have? Please answer on that distinction."
+        },
+        {
+          "id": "judgeq-d-2-motive_search-b-message_sequence-v5",
+          "text": "Within what you can say here, please explain where the impulse to keep this matter buried came from."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "empathy_approach",
+      "targetParty": "a",
+      "angleId": "message_sequence",
+      "variants": [
+        {
+          "id": "judgeq-d-2-empathy_approach-a-message_sequence-v1",
+          "text": "Ms. Song, this is a setting where it is hard to speak. Regarding how you put together the order of the messages between Ms. Choi and the fiance, please share, at your own pace, what you found most difficult to say."
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-a-message_sequence-v2",
+          "text": "If there were circumstances that made it hard to raise how you put together the order of the messages between Ms. Choi and the fiance, please explain them in your own words first."
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-a-message_sequence-v3",
+          "text": "You do not need to lay everything out at once. Please begin with the part of how you put together the order of the messages between Ms. Choi and the fiance that you feel ready to say today."
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-a-message_sequence-v4",
+          "text": "If part of how you put together the order of the messages between Ms. Choi and the fiance is something you can speak about and part is not yet, please separate them and answer on the part you can."
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-a-message_sequence-v5",
+          "text": "Ms. Song, if there is something about how you put together the order of the messages between Ms. Choi and the fiance you have been carrying alone, please put it down here, in the form you are able to."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "empathy_approach",
+      "targetParty": "b",
+      "angleId": "message_sequence",
+      "variants": [
+        {
+          "id": "judgeq-d-2-empathy_approach-b-message_sequence-v1",
+          "text": "Ms. Choi, this is a setting where it is hard to speak. Regarding the order in which the messages with the fiance moved on your side, please share, at your own pace, what you found most difficult to say."
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-b-message_sequence-v2",
+          "text": "If there were circumstances that made it hard to raise the order in which the messages with the fiance moved on your side, please explain them in your own words first."
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-b-message_sequence-v3",
+          "text": "You do not need to lay everything out at once. Please begin with the part of the order in which the messages with the fiance moved on your side that you feel ready to say today."
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-b-message_sequence-v4",
+          "text": "If part of the order in which the messages with the fiance moved on your side is something you can speak about and part is not yet, please separate them and answer on the part you can."
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-b-message_sequence-v5",
+          "text": "Ms. Choi, if there is something about the order in which the messages with the fiance moved on your side you have been carrying alone, please put it down here, in the form you are able to."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "fact_pursuit",
+      "targetParty": "a",
+      "angleId": "boundary_response",
+      "variants": [
+        {
+          "id": "judgeq-d-2-fact_pursuit-a-boundary_response-v1",
+          "text": "Ms. Song, regarding how you read Ms. Choi's response when the line was first tested, please walk me through what happened in chronological order, with dates where you can."
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-a-boundary_response-v2",
+          "text": "Looking at the message records, the captures, and the order in which they were posted, please separate what you accept as your own conduct from what you do not recall, item by item."
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-a-boundary_response-v3",
+          "text": "Where Ms. Choi's account and your own account diverge most sharply on how you read Ms. Choi's response when the line was first tested, please start from that point and answer on the facts alone."
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-a-boundary_response-v4",
+          "text": "Among the message records, the captures, and the order in which they were posted, please tell me which items you accept here and which items you still wish to dispute."
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-a-boundary_response-v5",
+          "text": "Ms. Song, if there is anything about how you read Ms. Choi's response when the line was first tested that you have not yet stated on the record, please bring it forward first."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "fact_pursuit",
+      "targetParty": "b",
+      "angleId": "boundary_response",
+      "variants": [
+        {
+          "id": "judgeq-d-2-fact_pursuit-b-boundary_response-v1",
+          "text": "Ms. Choi, regarding how you responded when something out of line came up, please walk me through what happened in chronological order, with dates where you can."
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-b-boundary_response-v2",
+          "text": "Looking at the message records, the captures, and the order in which they were posted, please separate what you accept as your own conduct from what you do not recall, item by item."
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-b-boundary_response-v3",
+          "text": "Where Ms. Song's account and your own account diverge most sharply on how you responded when something out of line came up, please start from that point and answer on the facts alone."
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-b-boundary_response-v4",
+          "text": "Among the message records, the captures, and the order in which they were posted, please tell me which items you accept here and which items you still wish to dispute."
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-b-boundary_response-v5",
+          "text": "Ms. Choi, if there is anything about how you responded when something out of line came up that you have not yet stated on the record, please bring it forward first."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "motive_search",
+      "targetParty": "a",
+      "angleId": "boundary_response",
+      "variants": [
+        {
+          "id": "judgeq-d-2-motive_search-a-boundary_response-v1",
+          "text": "Ms. Song, while how you read Ms. Choi's response when the line was first tested was building up, why did you not lay this out for the other side beforehand? Please explain your reasoning."
+        },
+        {
+          "id": "judgeq-d-2-motive_search-a-boundary_response-v2",
+          "text": "If you were aware that how you read Ms. Choi's response when the line was first tested could be misread, please tell me the basis on which you chose silence at that point."
+        },
+        {
+          "id": "judgeq-d-2-motive_search-a-boundary_response-v3",
+          "text": "You could have explained each part separately. Please tell me what motivated you to defer all of it instead."
+        },
+        {
+          "id": "judgeq-d-2-motive_search-a-boundary_response-v4",
+          "text": "At that time, which conversation did you most want to avoid, and which were you willing to have? Please answer on that distinction."
+        },
+        {
+          "id": "judgeq-d-2-motive_search-a-boundary_response-v5",
+          "text": "Within what you can say here, please explain where the impulse to keep this matter buried came from."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "motive_search",
+      "targetParty": "b",
+      "angleId": "boundary_response",
+      "variants": [
+        {
+          "id": "judgeq-d-2-motive_search-b-boundary_response-v1",
+          "text": "Ms. Choi, while how you responded when something out of line came up was building up, why did you not lay this out for the other side beforehand? Please explain your reasoning."
+        },
+        {
+          "id": "judgeq-d-2-motive_search-b-boundary_response-v2",
+          "text": "If you were aware that how you responded when something out of line came up could be misread, please tell me the basis on which you chose silence at that point."
+        },
+        {
+          "id": "judgeq-d-2-motive_search-b-boundary_response-v3",
+          "text": "You could have explained each part separately. Please tell me what motivated you to defer all of it instead."
+        },
+        {
+          "id": "judgeq-d-2-motive_search-b-boundary_response-v4",
+          "text": "At that time, which conversation did you most want to avoid, and which were you willing to have? Please answer on that distinction."
+        },
+        {
+          "id": "judgeq-d-2-motive_search-b-boundary_response-v5",
+          "text": "Within what you can say here, please explain where the impulse to keep this matter buried came from."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "empathy_approach",
+      "targetParty": "a",
+      "angleId": "boundary_response",
+      "variants": [
+        {
+          "id": "judgeq-d-2-empathy_approach-a-boundary_response-v1",
+          "text": "Ms. Song, this is a setting where it is hard to speak. Regarding how you read Ms. Choi's response when the line was first tested, please share, at your own pace, what you found most difficult to say."
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-a-boundary_response-v2",
+          "text": "If there were circumstances that made it hard to raise how you read Ms. Choi's response when the line was first tested, please explain them in your own words first."
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-a-boundary_response-v3",
+          "text": "You do not need to lay everything out at once. Please begin with the part of how you read Ms. Choi's response when the line was first tested that you feel ready to say today."
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-a-boundary_response-v4",
+          "text": "If part of how you read Ms. Choi's response when the line was first tested is something you can speak about and part is not yet, please separate them and answer on the part you can."
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-a-boundary_response-v5",
+          "text": "Ms. Song, if there is something about how you read Ms. Choi's response when the line was first tested you have been carrying alone, please put it down here, in the form you are able to."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "empathy_approach",
+      "targetParty": "b",
+      "angleId": "boundary_response",
+      "variants": [
+        {
+          "id": "judgeq-d-2-empathy_approach-b-boundary_response-v1",
+          "text": "Ms. Choi, this is a setting where it is hard to speak. Regarding how you responded when something out of line came up, please share, at your own pace, what you found most difficult to say."
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-b-boundary_response-v2",
+          "text": "If there were circumstances that made it hard to raise how you responded when something out of line came up, please explain them in your own words first."
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-b-boundary_response-v3",
+          "text": "You do not need to lay everything out at once. Please begin with the part of how you responded when something out of line came up that you feel ready to say today."
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-b-boundary_response-v4",
+          "text": "If part of how you responded when something out of line came up is something you can speak about and part is not yet, please separate them and answer on the part you can."
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-b-boundary_response-v5",
+          "text": "Ms. Choi, if there is something about how you responded when something out of line came up you have been carrying alone, please put it down here, in the form you are able to."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "fact_pursuit",
+      "targetParty": "a",
+      "angleId": "withheld_capture",
+      "variants": [
+        {
+          "id": "judgeq-d-2-fact_pursuit-a-withheld_capture-v1",
+          "text": "Ms. Song, regarding the captures you say have not yet been shown, please walk me through what happened in chronological order, with dates where you can."
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-a-withheld_capture-v2",
+          "text": "Looking at the message records, the captures, and the order in which they were posted, please separate what you accept as your own conduct from what you do not recall, item by item."
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-a-withheld_capture-v3",
+          "text": "Where Ms. Choi's account and your own account diverge most sharply on the captures you say have not yet been shown, please start from that point and answer on the facts alone."
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-a-withheld_capture-v4",
+          "text": "Among the message records, the captures, and the order in which they were posted, please tell me which items you accept here and which items you still wish to dispute."
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-a-withheld_capture-v5",
+          "text": "Ms. Song, if there is anything about the captures you say have not yet been shown that you have not yet stated on the record, please bring it forward first."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "fact_pursuit",
+      "targetParty": "b",
+      "angleId": "withheld_capture",
+      "variants": [
+        {
+          "id": "judgeq-d-2-fact_pursuit-b-withheld_capture-v1",
+          "text": "Ms. Choi, regarding whether there are messages on your side that you have not yet brought forward, please walk me through what happened in chronological order, with dates where you can."
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-b-withheld_capture-v2",
+          "text": "Looking at the message records, the captures, and the order in which they were posted, please separate what you accept as your own conduct from what you do not recall, item by item."
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-b-withheld_capture-v3",
+          "text": "Where Ms. Song's account and your own account diverge most sharply on whether there are messages on your side that you have not yet brought forward, please start from that point and answer on the facts alone."
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-b-withheld_capture-v4",
+          "text": "Among the message records, the captures, and the order in which they were posted, please tell me which items you accept here and which items you still wish to dispute."
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-b-withheld_capture-v5",
+          "text": "Ms. Choi, if there is anything about whether there are messages on your side that you have not yet brought forward that you have not yet stated on the record, please bring it forward first."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "motive_search",
+      "targetParty": "a",
+      "angleId": "withheld_capture",
+      "variants": [
+        {
+          "id": "judgeq-d-2-motive_search-a-withheld_capture-v1",
+          "text": "Ms. Song, while the captures you say have not yet been shown was building up, why did you not lay this out for the other side beforehand? Please explain your reasoning."
+        },
+        {
+          "id": "judgeq-d-2-motive_search-a-withheld_capture-v2",
+          "text": "If you were aware that the captures you say have not yet been shown could be misread, please tell me the basis on which you chose silence at that point."
+        },
+        {
+          "id": "judgeq-d-2-motive_search-a-withheld_capture-v3",
+          "text": "You could have explained each part separately. Please tell me what motivated you to defer all of it instead."
+        },
+        {
+          "id": "judgeq-d-2-motive_search-a-withheld_capture-v4",
+          "text": "At that time, which conversation did you most want to avoid, and which were you willing to have? Please answer on that distinction."
+        },
+        {
+          "id": "judgeq-d-2-motive_search-a-withheld_capture-v5",
+          "text": "Within what you can say here, please explain where the impulse to keep this matter buried came from."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "motive_search",
+      "targetParty": "b",
+      "angleId": "withheld_capture",
+      "variants": [
+        {
+          "id": "judgeq-d-2-motive_search-b-withheld_capture-v1",
+          "text": "Ms. Choi, while whether there are messages on your side that you have not yet brought forward was building up, why did you not lay this out for the other side beforehand? Please explain your reasoning."
+        },
+        {
+          "id": "judgeq-d-2-motive_search-b-withheld_capture-v2",
+          "text": "If you were aware that whether there are messages on your side that you have not yet brought forward could be misread, please tell me the basis on which you chose silence at that point."
+        },
+        {
+          "id": "judgeq-d-2-motive_search-b-withheld_capture-v3",
+          "text": "You could have explained each part separately. Please tell me what motivated you to defer all of it instead."
+        },
+        {
+          "id": "judgeq-d-2-motive_search-b-withheld_capture-v4",
+          "text": "At that time, which conversation did you most want to avoid, and which were you willing to have? Please answer on that distinction."
+        },
+        {
+          "id": "judgeq-d-2-motive_search-b-withheld_capture-v5",
+          "text": "Within what you can say here, please explain where the impulse to keep this matter buried came from."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "empathy_approach",
+      "targetParty": "a",
+      "angleId": "withheld_capture",
+      "variants": [
+        {
+          "id": "judgeq-d-2-empathy_approach-a-withheld_capture-v1",
+          "text": "Ms. Song, this is a setting where it is hard to speak. Regarding the captures you say have not yet been shown, please share, at your own pace, what you found most difficult to say."
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-a-withheld_capture-v2",
+          "text": "If there were circumstances that made it hard to raise the captures you say have not yet been shown, please explain them in your own words first."
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-a-withheld_capture-v3",
+          "text": "You do not need to lay everything out at once. Please begin with the part of the captures you say have not yet been shown that you feel ready to say today."
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-a-withheld_capture-v4",
+          "text": "If part of the captures you say have not yet been shown is something you can speak about and part is not yet, please separate them and answer on the part you can."
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-a-withheld_capture-v5",
+          "text": "Ms. Song, if there is something about the captures you say have not yet been shown you have been carrying alone, please put it down here, in the form you are able to."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "empathy_approach",
+      "targetParty": "b",
+      "angleId": "withheld_capture",
+      "variants": [
+        {
+          "id": "judgeq-d-2-empathy_approach-b-withheld_capture-v1",
+          "text": "Ms. Choi, this is a setting where it is hard to speak. Regarding whether there are messages on your side that you have not yet brought forward, please share, at your own pace, what you found most difficult to say."
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-b-withheld_capture-v2",
+          "text": "If there were circumstances that made it hard to raise whether there are messages on your side that you have not yet brought forward, please explain them in your own words first."
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-b-withheld_capture-v3",
+          "text": "You do not need to lay everything out at once. Please begin with the part of whether there are messages on your side that you have not yet brought forward that you feel ready to say today."
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-b-withheld_capture-v4",
+          "text": "If part of whether there are messages on your side that you have not yet brought forward is something you can speak about and part is not yet, please separate them and answer on the part you can."
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-b-withheld_capture-v5",
+          "text": "Ms. Choi, if there is something about whether there are messages on your side that you have not yet brought forward you have been carrying alone, please put it down here, in the form you are able to."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "fact_pursuit",
+      "targetParty": "a",
+      "angleId": "private_request_pressure",
+      "variants": [
+        {
+          "id": "judgeq-d-2-fact_pursuit-a-private_request_pressure-v1",
+          "text": "Ms. Song, regarding how you read the request to keep that exchange private, please walk me through what happened in chronological order, with dates where you can."
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-a-private_request_pressure-v2",
+          "text": "Looking at the message records, the captures, and the order in which they were posted, please separate what you accept as your own conduct from what you do not recall, item by item."
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-a-private_request_pressure-v3",
+          "text": "Where Ms. Choi's account and your own account diverge most sharply on how you read the request to keep that exchange private, please start from that point and answer on the facts alone."
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-a-private_request_pressure-v4",
+          "text": "Among the message records, the captures, and the order in which they were posted, please tell me which items you accept here and which items you still wish to dispute."
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-a-private_request_pressure-v5",
+          "text": "Ms. Song, if there is anything about how you read the request to keep that exchange private that you have not yet stated on the record, please bring it forward first."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "fact_pursuit",
+      "targetParty": "b",
+      "angleId": "private_request_pressure",
+      "variants": [
+        {
+          "id": "judgeq-d-2-fact_pursuit-b-private_request_pressure-v1",
+          "text": "Ms. Choi, regarding how the request to keep that exchange private came up on your side, please walk me through what happened in chronological order, with dates where you can."
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-b-private_request_pressure-v2",
+          "text": "Looking at the message records, the captures, and the order in which they were posted, please separate what you accept as your own conduct from what you do not recall, item by item."
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-b-private_request_pressure-v3",
+          "text": "Where Ms. Song's account and your own account diverge most sharply on how the request to keep that exchange private came up on your side, please start from that point and answer on the facts alone."
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-b-private_request_pressure-v4",
+          "text": "Among the message records, the captures, and the order in which they were posted, please tell me which items you accept here and which items you still wish to dispute."
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-b-private_request_pressure-v5",
+          "text": "Ms. Choi, if there is anything about how the request to keep that exchange private came up on your side that you have not yet stated on the record, please bring it forward first."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "motive_search",
+      "targetParty": "a",
+      "angleId": "private_request_pressure",
+      "variants": [
+        {
+          "id": "judgeq-d-2-motive_search-a-private_request_pressure-v1",
+          "text": "Ms. Song, while how you read the request to keep that exchange private was building up, why did you not lay this out for the other side beforehand? Please explain your reasoning."
+        },
+        {
+          "id": "judgeq-d-2-motive_search-a-private_request_pressure-v2",
+          "text": "If you were aware that how you read the request to keep that exchange private could be misread, please tell me the basis on which you chose silence at that point."
+        },
+        {
+          "id": "judgeq-d-2-motive_search-a-private_request_pressure-v3",
+          "text": "You could have explained each part separately. Please tell me what motivated you to defer all of it instead."
+        },
+        {
+          "id": "judgeq-d-2-motive_search-a-private_request_pressure-v4",
+          "text": "At that time, which conversation did you most want to avoid, and which were you willing to have? Please answer on that distinction."
+        },
+        {
+          "id": "judgeq-d-2-motive_search-a-private_request_pressure-v5",
+          "text": "Within what you can say here, please explain where the impulse to keep this matter buried came from."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "motive_search",
+      "targetParty": "b",
+      "angleId": "private_request_pressure",
+      "variants": [
+        {
+          "id": "judgeq-d-2-motive_search-b-private_request_pressure-v1",
+          "text": "Ms. Choi, while how the request to keep that exchange private came up on your side was building up, why did you not lay this out for the other side beforehand? Please explain your reasoning."
+        },
+        {
+          "id": "judgeq-d-2-motive_search-b-private_request_pressure-v2",
+          "text": "If you were aware that how the request to keep that exchange private came up on your side could be misread, please tell me the basis on which you chose silence at that point."
+        },
+        {
+          "id": "judgeq-d-2-motive_search-b-private_request_pressure-v3",
+          "text": "You could have explained each part separately. Please tell me what motivated you to defer all of it instead."
+        },
+        {
+          "id": "judgeq-d-2-motive_search-b-private_request_pressure-v4",
+          "text": "At that time, which conversation did you most want to avoid, and which were you willing to have? Please answer on that distinction."
+        },
+        {
+          "id": "judgeq-d-2-motive_search-b-private_request_pressure-v5",
+          "text": "Within what you can say here, please explain where the impulse to keep this matter buried came from."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "empathy_approach",
+      "targetParty": "a",
+      "angleId": "private_request_pressure",
+      "variants": [
+        {
+          "id": "judgeq-d-2-empathy_approach-a-private_request_pressure-v1",
+          "text": "Ms. Song, this is a setting where it is hard to speak. Regarding how you read the request to keep that exchange private, please share, at your own pace, what you found most difficult to say."
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-a-private_request_pressure-v2",
+          "text": "If there were circumstances that made it hard to raise how you read the request to keep that exchange private, please explain them in your own words first."
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-a-private_request_pressure-v3",
+          "text": "You do not need to lay everything out at once. Please begin with the part of how you read the request to keep that exchange private that you feel ready to say today."
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-a-private_request_pressure-v4",
+          "text": "If part of how you read the request to keep that exchange private is something you can speak about and part is not yet, please separate them and answer on the part you can."
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-a-private_request_pressure-v5",
+          "text": "Ms. Song, if there is something about how you read the request to keep that exchange private you have been carrying alone, please put it down here, in the form you are able to."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "empathy_approach",
+      "targetParty": "b",
+      "angleId": "private_request_pressure",
+      "variants": [
+        {
+          "id": "judgeq-d-2-empathy_approach-b-private_request_pressure-v1",
+          "text": "Ms. Choi, this is a setting where it is hard to speak. Regarding how the request to keep that exchange private came up on your side, please share, at your own pace, what you found most difficult to say."
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-b-private_request_pressure-v2",
+          "text": "If there were circumstances that made it hard to raise how the request to keep that exchange private came up on your side, please explain them in your own words first."
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-b-private_request_pressure-v3",
+          "text": "You do not need to lay everything out at once. Please begin with the part of how the request to keep that exchange private came up on your side that you feel ready to say today."
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-b-private_request_pressure-v4",
+          "text": "If part of how the request to keep that exchange private came up on your side is something you can speak about and part is not yet, please separate them and answer on the part you can."
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-b-private_request_pressure-v5",
+          "text": "Ms. Choi, if there is something about how the request to keep that exchange private came up on your side you have been carrying alone, please put it down here, in the form you are able to."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "questionType": "fact_pursuit",
+      "targetParty": "a",
+      "angleId": "father_request_signal",
+      "variants": [
+        {
+          "id": "judgeq-d-3-fact_pursuit-a-father_request_signal-v1",
+          "text": "Ms. Song, regarding how the recent contact about your father's money came across to you, please walk me through what happened in chronological order, with dates where you can."
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-a-father_request_signal-v2",
+          "text": "Looking at the IOU, the transfer records, and the messages around the request, please separate what you accept as your own conduct from what you do not recall, item by item."
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-a-father_request_signal-v3",
+          "text": "Where Ms. Choi's account and your own account diverge most sharply on how the recent contact about your father's money came across to you, please start from that point and answer on the facts alone."
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-a-father_request_signal-v4",
+          "text": "Among the IOU, the transfer records, and the messages around the request, please tell me which items you accept here and which items you still wish to dispute."
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-a-father_request_signal-v5",
+          "text": "Ms. Song, if there is anything about how the recent contact about your father's money came across to you that you have not yet stated on the record, please bring it forward first."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "questionType": "fact_pursuit",
+      "targetParty": "b",
+      "angleId": "father_request_signal",
+      "variants": [
+        {
+          "id": "judgeq-d-3-fact_pursuit-b-father_request_signal-v1",
+          "text": "Ms. Choi, regarding the signal you say came from Ms. Song's father about the money, please walk me through what happened in chronological order, with dates where you can."
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-b-father_request_signal-v2",
+          "text": "Looking at the IOU, the transfer records, and the messages around the request, please separate what you accept as your own conduct from what you do not recall, item by item."
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-b-father_request_signal-v3",
+          "text": "Where Ms. Song's account and your own account diverge most sharply on the signal you say came from Ms. Song's father about the money, please start from that point and answer on the facts alone."
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-b-father_request_signal-v4",
+          "text": "Among the IOU, the transfer records, and the messages around the request, please tell me which items you accept here and which items you still wish to dispute."
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-b-father_request_signal-v5",
+          "text": "Ms. Choi, if there is anything about the signal you say came from Ms. Song's father about the money that you have not yet stated on the record, please bring it forward first."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "questionType": "motive_search",
+      "targetParty": "a",
+      "angleId": "father_request_signal",
+      "variants": [
+        {
+          "id": "judgeq-d-3-motive_search-a-father_request_signal-v1",
+          "text": "Ms. Song, while how the recent contact about your father's money came across to you was building up, why did you not lay this out for the other side beforehand? Please explain your reasoning."
+        },
+        {
+          "id": "judgeq-d-3-motive_search-a-father_request_signal-v2",
+          "text": "If you were aware that how the recent contact about your father's money came across to you could be misread, please tell me the basis on which you chose silence at that point."
+        },
+        {
+          "id": "judgeq-d-3-motive_search-a-father_request_signal-v3",
+          "text": "You could have explained each part separately. Please tell me what motivated you to defer all of it instead."
+        },
+        {
+          "id": "judgeq-d-3-motive_search-a-father_request_signal-v4",
+          "text": "At that time, which conversation did you most want to avoid, and which were you willing to have? Please answer on that distinction."
+        },
+        {
+          "id": "judgeq-d-3-motive_search-a-father_request_signal-v5",
+          "text": "Within what you can say here, please explain where the impulse to keep this matter buried came from."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "questionType": "motive_search",
+      "targetParty": "b",
+      "angleId": "father_request_signal",
+      "variants": [
+        {
+          "id": "judgeq-d-3-motive_search-b-father_request_signal-v1",
+          "text": "Ms. Choi, while the signal you say came from Ms. Song's father about the money was building up, why did you not lay this out for the other side beforehand? Please explain your reasoning."
+        },
+        {
+          "id": "judgeq-d-3-motive_search-b-father_request_signal-v2",
+          "text": "If you were aware that the signal you say came from Ms. Song's father about the money could be misread, please tell me the basis on which you chose silence at that point."
+        },
+        {
+          "id": "judgeq-d-3-motive_search-b-father_request_signal-v3",
+          "text": "You could have explained each part separately. Please tell me what motivated you to defer all of it instead."
+        },
+        {
+          "id": "judgeq-d-3-motive_search-b-father_request_signal-v4",
+          "text": "At that time, which conversation did you most want to avoid, and which were you willing to have? Please answer on that distinction."
+        },
+        {
+          "id": "judgeq-d-3-motive_search-b-father_request_signal-v5",
+          "text": "Within what you can say here, please explain where the impulse to keep this matter buried came from."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "questionType": "empathy_approach",
+      "targetParty": "a",
+      "angleId": "father_request_signal",
+      "variants": [
+        {
+          "id": "judgeq-d-3-empathy_approach-a-father_request_signal-v1",
+          "text": "Ms. Song, this is a setting where it is hard to speak. Regarding how the recent contact about your father's money came across to you, please share, at your own pace, what you found most difficult to say."
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-a-father_request_signal-v2",
+          "text": "If there were circumstances that made it hard to raise how the recent contact about your father's money came across to you, please explain them in your own words first."
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-a-father_request_signal-v3",
+          "text": "You do not need to lay everything out at once. Please begin with the part of how the recent contact about your father's money came across to you that you feel ready to say today."
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-a-father_request_signal-v4",
+          "text": "If part of how the recent contact about your father's money came across to you is something you can speak about and part is not yet, please separate them and answer on the part you can."
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-a-father_request_signal-v5",
+          "text": "Ms. Song, if there is something about how the recent contact about your father's money came across to you you have been carrying alone, please put it down here, in the form you are able to."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "questionType": "empathy_approach",
+      "targetParty": "b",
+      "angleId": "father_request_signal",
+      "variants": [
+        {
+          "id": "judgeq-d-3-empathy_approach-b-father_request_signal-v1",
+          "text": "Ms. Choi, this is a setting where it is hard to speak. Regarding the signal you say came from Ms. Song's father about the money, please share, at your own pace, what you found most difficult to say."
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-b-father_request_signal-v2",
+          "text": "If there were circumstances that made it hard to raise the signal you say came from Ms. Song's father about the money, please explain them in your own words first."
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-b-father_request_signal-v3",
+          "text": "You do not need to lay everything out at once. Please begin with the part of the signal you say came from Ms. Song's father about the money that you feel ready to say today."
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-b-father_request_signal-v4",
+          "text": "If part of the signal you say came from Ms. Song's father about the money is something you can speak about and part is not yet, please separate them and answer on the part you can."
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-b-father_request_signal-v5",
+          "text": "Ms. Choi, if there is something about the signal you say came from Ms. Song's father about the money you have been carrying alone, please put it down here, in the form you are able to."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "questionType": "fact_pursuit",
+      "targetParty": "a",
+      "angleId": "money_secrecy",
+      "variants": [
+        {
+          "id": "judgeq-d-3-fact_pursuit-a-money_secrecy-v1",
+          "text": "Ms. Song, regarding how the privacy around that money came to be settled, please walk me through what happened in chronological order, with dates where you can."
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-a-money_secrecy-v2",
+          "text": "Looking at the IOU, the transfer records, and the messages around the request, please separate what you accept as your own conduct from what you do not recall, item by item."
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-a-money_secrecy-v3",
+          "text": "Where Ms. Choi's account and your own account diverge most sharply on how the privacy around that money came to be settled, please start from that point and answer on the facts alone."
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-a-money_secrecy-v4",
+          "text": "Among the IOU, the transfer records, and the messages around the request, please tell me which items you accept here and which items you still wish to dispute."
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-a-money_secrecy-v5",
+          "text": "Ms. Song, if there is anything about how the privacy around that money came to be settled that you have not yet stated on the record, please bring it forward first."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "questionType": "fact_pursuit",
+      "targetParty": "b",
+      "angleId": "money_secrecy",
+      "variants": [
+        {
+          "id": "judgeq-d-3-fact_pursuit-b-money_secrecy-v1",
+          "text": "Ms. Choi, regarding why the money matter around the father stayed off the table on your side, please walk me through what happened in chronological order, with dates where you can."
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-b-money_secrecy-v2",
+          "text": "Looking at the IOU, the transfer records, and the messages around the request, please separate what you accept as your own conduct from what you do not recall, item by item."
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-b-money_secrecy-v3",
+          "text": "Where Ms. Song's account and your own account diverge most sharply on why the money matter around the father stayed off the table on your side, please start from that point and answer on the facts alone."
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-b-money_secrecy-v4",
+          "text": "Among the IOU, the transfer records, and the messages around the request, please tell me which items you accept here and which items you still wish to dispute."
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-b-money_secrecy-v5",
+          "text": "Ms. Choi, if there is anything about why the money matter around the father stayed off the table on your side that you have not yet stated on the record, please bring it forward first."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "questionType": "motive_search",
+      "targetParty": "a",
+      "angleId": "money_secrecy",
+      "variants": [
+        {
+          "id": "judgeq-d-3-motive_search-a-money_secrecy-v1",
+          "text": "Ms. Song, while how the privacy around that money came to be settled was building up, why did you not lay this out for the other side beforehand? Please explain your reasoning."
+        },
+        {
+          "id": "judgeq-d-3-motive_search-a-money_secrecy-v2",
+          "text": "If you were aware that how the privacy around that money came to be settled could be misread, please tell me the basis on which you chose silence at that point."
+        },
+        {
+          "id": "judgeq-d-3-motive_search-a-money_secrecy-v3",
+          "text": "You could have explained each part separately. Please tell me what motivated you to defer all of it instead."
+        },
+        {
+          "id": "judgeq-d-3-motive_search-a-money_secrecy-v4",
+          "text": "At that time, which conversation did you most want to avoid, and which were you willing to have? Please answer on that distinction."
+        },
+        {
+          "id": "judgeq-d-3-motive_search-a-money_secrecy-v5",
+          "text": "Within what you can say here, please explain where the impulse to keep this matter buried came from."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "questionType": "motive_search",
+      "targetParty": "b",
+      "angleId": "money_secrecy",
+      "variants": [
+        {
+          "id": "judgeq-d-3-motive_search-b-money_secrecy-v1",
+          "text": "Ms. Choi, while why the money matter around the father stayed off the table on your side was building up, why did you not lay this out for the other side beforehand? Please explain your reasoning."
+        },
+        {
+          "id": "judgeq-d-3-motive_search-b-money_secrecy-v2",
+          "text": "If you were aware that why the money matter around the father stayed off the table on your side could be misread, please tell me the basis on which you chose silence at that point."
+        },
+        {
+          "id": "judgeq-d-3-motive_search-b-money_secrecy-v3",
+          "text": "You could have explained each part separately. Please tell me what motivated you to defer all of it instead."
+        },
+        {
+          "id": "judgeq-d-3-motive_search-b-money_secrecy-v4",
+          "text": "At that time, which conversation did you most want to avoid, and which were you willing to have? Please answer on that distinction."
+        },
+        {
+          "id": "judgeq-d-3-motive_search-b-money_secrecy-v5",
+          "text": "Within what you can say here, please explain where the impulse to keep this matter buried came from."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "questionType": "empathy_approach",
+      "targetParty": "a",
+      "angleId": "money_secrecy",
+      "variants": [
+        {
+          "id": "judgeq-d-3-empathy_approach-a-money_secrecy-v1",
+          "text": "Ms. Song, this is a setting where it is hard to speak. Regarding how the privacy around that money came to be settled, please share, at your own pace, what you found most difficult to say."
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-a-money_secrecy-v2",
+          "text": "If there were circumstances that made it hard to raise how the privacy around that money came to be settled, please explain them in your own words first."
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-a-money_secrecy-v3",
+          "text": "You do not need to lay everything out at once. Please begin with the part of how the privacy around that money came to be settled that you feel ready to say today."
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-a-money_secrecy-v4",
+          "text": "If part of how the privacy around that money came to be settled is something you can speak about and part is not yet, please separate them and answer on the part you can."
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-a-money_secrecy-v5",
+          "text": "Ms. Song, if there is something about how the privacy around that money came to be settled you have been carrying alone, please put it down here, in the form you are able to."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "questionType": "empathy_approach",
+      "targetParty": "b",
+      "angleId": "money_secrecy",
+      "variants": [
+        {
+          "id": "judgeq-d-3-empathy_approach-b-money_secrecy-v1",
+          "text": "Ms. Choi, this is a setting where it is hard to speak. Regarding why the money matter around the father stayed off the table on your side, please share, at your own pace, what you found most difficult to say."
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-b-money_secrecy-v2",
+          "text": "If there were circumstances that made it hard to raise why the money matter around the father stayed off the table on your side, please explain them in your own words first."
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-b-money_secrecy-v3",
+          "text": "You do not need to lay everything out at once. Please begin with the part of why the money matter around the father stayed off the table on your side that you feel ready to say today."
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-b-money_secrecy-v4",
+          "text": "If part of why the money matter around the father stayed off the table on your side is something you can speak about and part is not yet, please separate them and answer on the part you can."
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-b-money_secrecy-v5",
+          "text": "Ms. Choi, if there is something about why the money matter around the father stayed off the table on your side you have been carrying alone, please put it down here, in the form you are able to."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "questionType": "fact_pursuit",
+      "targetParty": "a",
+      "angleId": "pattern_warning",
+      "variants": [
+        {
+          "id": "judgeq-d-3-fact_pursuit-a-pattern_warning-v1",
+          "text": "Ms. Song, regarding whether you saw any pattern between past money matters and the recent one, please walk me through what happened in chronological order, with dates where you can."
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-a-pattern_warning-v2",
+          "text": "Looking at the IOU, the transfer records, and the messages around the request, please separate what you accept as your own conduct from what you do not recall, item by item."
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-a-pattern_warning-v3",
+          "text": "Where Ms. Choi's account and your own account diverge most sharply on whether you saw any pattern between past money matters and the recent one, please start from that point and answer on the facts alone."
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-a-pattern_warning-v4",
+          "text": "Among the IOU, the transfer records, and the messages around the request, please tell me which items you accept here and which items you still wish to dispute."
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-a-pattern_warning-v5",
+          "text": "Ms. Song, if there is anything about whether you saw any pattern between past money matters and the recent one that you have not yet stated on the record, please bring it forward first."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "questionType": "fact_pursuit",
+      "targetParty": "b",
+      "angleId": "pattern_warning",
+      "variants": [
+        {
+          "id": "judgeq-d-3-fact_pursuit-b-pattern_warning-v1",
+          "text": "Ms. Choi, regarding the pattern you say you were trying to flag, please walk me through what happened in chronological order, with dates where you can."
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-b-pattern_warning-v2",
+          "text": "Looking at the IOU, the transfer records, and the messages around the request, please separate what you accept as your own conduct from what you do not recall, item by item."
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-b-pattern_warning-v3",
+          "text": "Where Ms. Song's account and your own account diverge most sharply on the pattern you say you were trying to flag, please start from that point and answer on the facts alone."
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-b-pattern_warning-v4",
+          "text": "Among the IOU, the transfer records, and the messages around the request, please tell me which items you accept here and which items you still wish to dispute."
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-b-pattern_warning-v5",
+          "text": "Ms. Choi, if there is anything about the pattern you say you were trying to flag that you have not yet stated on the record, please bring it forward first."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "questionType": "motive_search",
+      "targetParty": "a",
+      "angleId": "pattern_warning",
+      "variants": [
+        {
+          "id": "judgeq-d-3-motive_search-a-pattern_warning-v1",
+          "text": "Ms. Song, while whether you saw any pattern between past money matters and the recent one was building up, why did you not lay this out for the other side beforehand? Please explain your reasoning."
+        },
+        {
+          "id": "judgeq-d-3-motive_search-a-pattern_warning-v2",
+          "text": "If you were aware that whether you saw any pattern between past money matters and the recent one could be misread, please tell me the basis on which you chose silence at that point."
+        },
+        {
+          "id": "judgeq-d-3-motive_search-a-pattern_warning-v3",
+          "text": "You could have explained each part separately. Please tell me what motivated you to defer all of it instead."
+        },
+        {
+          "id": "judgeq-d-3-motive_search-a-pattern_warning-v4",
+          "text": "At that time, which conversation did you most want to avoid, and which were you willing to have? Please answer on that distinction."
+        },
+        {
+          "id": "judgeq-d-3-motive_search-a-pattern_warning-v5",
+          "text": "Within what you can say here, please explain where the impulse to keep this matter buried came from."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "questionType": "motive_search",
+      "targetParty": "b",
+      "angleId": "pattern_warning",
+      "variants": [
+        {
+          "id": "judgeq-d-3-motive_search-b-pattern_warning-v1",
+          "text": "Ms. Choi, while the pattern you say you were trying to flag was building up, why did you not lay this out for the other side beforehand? Please explain your reasoning."
+        },
+        {
+          "id": "judgeq-d-3-motive_search-b-pattern_warning-v2",
+          "text": "If you were aware that the pattern you say you were trying to flag could be misread, please tell me the basis on which you chose silence at that point."
+        },
+        {
+          "id": "judgeq-d-3-motive_search-b-pattern_warning-v3",
+          "text": "You could have explained each part separately. Please tell me what motivated you to defer all of it instead."
+        },
+        {
+          "id": "judgeq-d-3-motive_search-b-pattern_warning-v4",
+          "text": "At that time, which conversation did you most want to avoid, and which were you willing to have? Please answer on that distinction."
+        },
+        {
+          "id": "judgeq-d-3-motive_search-b-pattern_warning-v5",
+          "text": "Within what you can say here, please explain where the impulse to keep this matter buried came from."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "questionType": "empathy_approach",
+      "targetParty": "a",
+      "angleId": "pattern_warning",
+      "variants": [
+        {
+          "id": "judgeq-d-3-empathy_approach-a-pattern_warning-v1",
+          "text": "Ms. Song, this is a setting where it is hard to speak. Regarding whether you saw any pattern between past money matters and the recent one, please share, at your own pace, what you found most difficult to say."
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-a-pattern_warning-v2",
+          "text": "If there were circumstances that made it hard to raise whether you saw any pattern between past money matters and the recent one, please explain them in your own words first."
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-a-pattern_warning-v3",
+          "text": "You do not need to lay everything out at once. Please begin with the part of whether you saw any pattern between past money matters and the recent one that you feel ready to say today."
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-a-pattern_warning-v4",
+          "text": "If part of whether you saw any pattern between past money matters and the recent one is something you can speak about and part is not yet, please separate them and answer on the part you can."
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-a-pattern_warning-v5",
+          "text": "Ms. Song, if there is something about whether you saw any pattern between past money matters and the recent one you have been carrying alone, please put it down here, in the form you are able to."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "questionType": "empathy_approach",
+      "targetParty": "b",
+      "angleId": "pattern_warning",
+      "variants": [
+        {
+          "id": "judgeq-d-3-empathy_approach-b-pattern_warning-v1",
+          "text": "Ms. Choi, this is a setting where it is hard to speak. Regarding the pattern you say you were trying to flag, please share, at your own pace, what you found most difficult to say."
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-b-pattern_warning-v2",
+          "text": "If there were circumstances that made it hard to raise the pattern you say you were trying to flag, please explain them in your own words first."
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-b-pattern_warning-v3",
+          "text": "You do not need to lay everything out at once. Please begin with the part of the pattern you say you were trying to flag that you feel ready to say today."
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-b-pattern_warning-v4",
+          "text": "If part of the pattern you say you were trying to flag is something you can speak about and part is not yet, please separate them and answer on the part you can."
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-b-pattern_warning-v5",
+          "text": "Ms. Choi, if there is something about the pattern you say you were trying to flag you have been carrying alone, please put it down here, in the form you are able to."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "questionType": "fact_pursuit",
+      "targetParty": "a",
+      "angleId": "father_blindspot",
+      "variants": [
+        {
+          "id": "judgeq-d-3-fact_pursuit-a-father_blindspot-v1",
+          "text": "Ms. Song, regarding where you place the blindspot on your father's money matter, please walk me through what happened in chronological order, with dates where you can."
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-a-father_blindspot-v2",
+          "text": "Looking at the IOU, the transfer records, and the messages around the request, please separate what you accept as your own conduct from what you do not recall, item by item."
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-a-father_blindspot-v3",
+          "text": "Where Ms. Choi's account and your own account diverge most sharply on where you place the blindspot on your father's money matter, please start from that point and answer on the facts alone."
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-a-father_blindspot-v4",
+          "text": "Among the IOU, the transfer records, and the messages around the request, please tell me which items you accept here and which items you still wish to dispute."
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-a-father_blindspot-v5",
+          "text": "Ms. Song, if there is anything about where you place the blindspot on your father's money matter that you have not yet stated on the record, please bring it forward first."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "questionType": "fact_pursuit",
+      "targetParty": "b",
+      "angleId": "father_blindspot",
+      "variants": [
+        {
+          "id": "judgeq-d-3-fact_pursuit-b-father_blindspot-v1",
+          "text": "Ms. Choi, regarding where you place the blindspot you say Ms. Song had about her father, please walk me through what happened in chronological order, with dates where you can."
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-b-father_blindspot-v2",
+          "text": "Looking at the IOU, the transfer records, and the messages around the request, please separate what you accept as your own conduct from what you do not recall, item by item."
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-b-father_blindspot-v3",
+          "text": "Where Ms. Song's account and your own account diverge most sharply on where you place the blindspot you say Ms. Song had about her father, please start from that point and answer on the facts alone."
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-b-father_blindspot-v4",
+          "text": "Among the IOU, the transfer records, and the messages around the request, please tell me which items you accept here and which items you still wish to dispute."
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-b-father_blindspot-v5",
+          "text": "Ms. Choi, if there is anything about where you place the blindspot you say Ms. Song had about her father that you have not yet stated on the record, please bring it forward first."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "questionType": "motive_search",
+      "targetParty": "a",
+      "angleId": "father_blindspot",
+      "variants": [
+        {
+          "id": "judgeq-d-3-motive_search-a-father_blindspot-v1",
+          "text": "Ms. Song, while where you place the blindspot on your father's money matter was building up, why did you not lay this out for the other side beforehand? Please explain your reasoning."
+        },
+        {
+          "id": "judgeq-d-3-motive_search-a-father_blindspot-v2",
+          "text": "If you were aware that where you place the blindspot on your father's money matter could be misread, please tell me the basis on which you chose silence at that point."
+        },
+        {
+          "id": "judgeq-d-3-motive_search-a-father_blindspot-v3",
+          "text": "You could have explained each part separately. Please tell me what motivated you to defer all of it instead."
+        },
+        {
+          "id": "judgeq-d-3-motive_search-a-father_blindspot-v4",
+          "text": "At that time, which conversation did you most want to avoid, and which were you willing to have? Please answer on that distinction."
+        },
+        {
+          "id": "judgeq-d-3-motive_search-a-father_blindspot-v5",
+          "text": "Within what you can say here, please explain where the impulse to keep this matter buried came from."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "questionType": "motive_search",
+      "targetParty": "b",
+      "angleId": "father_blindspot",
+      "variants": [
+        {
+          "id": "judgeq-d-3-motive_search-b-father_blindspot-v1",
+          "text": "Ms. Choi, while where you place the blindspot you say Ms. Song had about her father was building up, why did you not lay this out for the other side beforehand? Please explain your reasoning."
+        },
+        {
+          "id": "judgeq-d-3-motive_search-b-father_blindspot-v2",
+          "text": "If you were aware that where you place the blindspot you say Ms. Song had about her father could be misread, please tell me the basis on which you chose silence at that point."
+        },
+        {
+          "id": "judgeq-d-3-motive_search-b-father_blindspot-v3",
+          "text": "You could have explained each part separately. Please tell me what motivated you to defer all of it instead."
+        },
+        {
+          "id": "judgeq-d-3-motive_search-b-father_blindspot-v4",
+          "text": "At that time, which conversation did you most want to avoid, and which were you willing to have? Please answer on that distinction."
+        },
+        {
+          "id": "judgeq-d-3-motive_search-b-father_blindspot-v5",
+          "text": "Within what you can say here, please explain where the impulse to keep this matter buried came from."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "questionType": "empathy_approach",
+      "targetParty": "a",
+      "angleId": "father_blindspot",
+      "variants": [
+        {
+          "id": "judgeq-d-3-empathy_approach-a-father_blindspot-v1",
+          "text": "Ms. Song, this is a setting where it is hard to speak. Regarding where you place the blindspot on your father's money matter, please share, at your own pace, what you found most difficult to say."
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-a-father_blindspot-v2",
+          "text": "If there were circumstances that made it hard to raise where you place the blindspot on your father's money matter, please explain them in your own words first."
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-a-father_blindspot-v3",
+          "text": "You do not need to lay everything out at once. Please begin with the part of where you place the blindspot on your father's money matter that you feel ready to say today."
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-a-father_blindspot-v4",
+          "text": "If part of where you place the blindspot on your father's money matter is something you can speak about and part is not yet, please separate them and answer on the part you can."
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-a-father_blindspot-v5",
+          "text": "Ms. Song, if there is something about where you place the blindspot on your father's money matter you have been carrying alone, please put it down here, in the form you are able to."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "questionType": "empathy_approach",
+      "targetParty": "b",
+      "angleId": "father_blindspot",
+      "variants": [
+        {
+          "id": "judgeq-d-3-empathy_approach-b-father_blindspot-v1",
+          "text": "Ms. Choi, this is a setting where it is hard to speak. Regarding where you place the blindspot you say Ms. Song had about her father, please share, at your own pace, what you found most difficult to say."
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-b-father_blindspot-v2",
+          "text": "If there were circumstances that made it hard to raise where you place the blindspot you say Ms. Song had about her father, please explain them in your own words first."
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-b-father_blindspot-v3",
+          "text": "You do not need to lay everything out at once. Please begin with the part of where you place the blindspot you say Ms. Song had about her father that you feel ready to say today."
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-b-father_blindspot-v4",
+          "text": "If part of where you place the blindspot you say Ms. Song had about her father is something you can speak about and part is not yet, please separate them and answer on the part you can."
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-b-father_blindspot-v5",
+          "text": "Ms. Choi, if there is something about where you place the blindspot you say Ms. Song had about her father you have been carrying alone, please put it down here, in the form you are able to."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "questionType": "fact_pursuit",
+      "targetParty": "a",
+      "angleId": "severance_chat_gap",
+      "variants": [
+        {
+          "id": "judgeq-d-4-fact_pursuit-a-severance_chat_gap-v1",
+          "text": "Ms. Song, regarding the gap in messages around the cutoff on your side, please walk me through what happened in chronological order, with dates where you can."
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-a-severance_chat_gap-v2",
+          "text": "Looking at the messages around the cutoff, the captures, and the timing, please separate what you accept as your own conduct from what you do not recall, item by item."
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-a-severance_chat_gap-v3",
+          "text": "Where Ms. Choi's account and your own account diverge most sharply on the gap in messages around the cutoff on your side, please start from that point and answer on the facts alone."
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-a-severance_chat_gap-v4",
+          "text": "Among the messages around the cutoff, the captures, and the timing, please tell me which items you accept here and which items you still wish to dispute."
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-a-severance_chat_gap-v5",
+          "text": "Ms. Song, if there is anything about the gap in messages around the cutoff on your side that you have not yet stated on the record, please bring it forward first."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "questionType": "fact_pursuit",
+      "targetParty": "b",
+      "angleId": "severance_chat_gap",
+      "variants": [
+        {
+          "id": "judgeq-d-4-fact_pursuit-b-severance_chat_gap-v1",
+          "text": "Ms. Choi, regarding the gap in messages around the cutoff on your side, please walk me through what happened in chronological order, with dates where you can."
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-b-severance_chat_gap-v2",
+          "text": "Looking at the messages around the cutoff, the captures, and the timing, please separate what you accept as your own conduct from what you do not recall, item by item."
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-b-severance_chat_gap-v3",
+          "text": "Where Ms. Song's account and your own account diverge most sharply on the gap in messages around the cutoff on your side, please start from that point and answer on the facts alone."
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-b-severance_chat_gap-v4",
+          "text": "Among the messages around the cutoff, the captures, and the timing, please tell me which items you accept here and which items you still wish to dispute."
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-b-severance_chat_gap-v5",
+          "text": "Ms. Choi, if there is anything about the gap in messages around the cutoff on your side that you have not yet stated on the record, please bring it forward first."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "questionType": "motive_search",
+      "targetParty": "a",
+      "angleId": "severance_chat_gap",
+      "variants": [
+        {
+          "id": "judgeq-d-4-motive_search-a-severance_chat_gap-v1",
+          "text": "Ms. Song, while the gap in messages around the cutoff on your side was building up, why did you not lay this out for the other side beforehand? Please explain your reasoning."
+        },
+        {
+          "id": "judgeq-d-4-motive_search-a-severance_chat_gap-v2",
+          "text": "If you were aware that the gap in messages around the cutoff on your side could be misread, please tell me the basis on which you chose silence at that point."
+        },
+        {
+          "id": "judgeq-d-4-motive_search-a-severance_chat_gap-v3",
+          "text": "You could have explained each part separately. Please tell me what motivated you to defer all of it instead."
+        },
+        {
+          "id": "judgeq-d-4-motive_search-a-severance_chat_gap-v4",
+          "text": "At that time, which conversation did you most want to avoid, and which were you willing to have? Please answer on that distinction."
+        },
+        {
+          "id": "judgeq-d-4-motive_search-a-severance_chat_gap-v5",
+          "text": "Within what you can say here, please explain where the impulse to keep this matter buried came from."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "questionType": "motive_search",
+      "targetParty": "b",
+      "angleId": "severance_chat_gap",
+      "variants": [
+        {
+          "id": "judgeq-d-4-motive_search-b-severance_chat_gap-v1",
+          "text": "Ms. Choi, while the gap in messages around the cutoff on your side was building up, why did you not lay this out for the other side beforehand? Please explain your reasoning."
+        },
+        {
+          "id": "judgeq-d-4-motive_search-b-severance_chat_gap-v2",
+          "text": "If you were aware that the gap in messages around the cutoff on your side could be misread, please tell me the basis on which you chose silence at that point."
+        },
+        {
+          "id": "judgeq-d-4-motive_search-b-severance_chat_gap-v3",
+          "text": "You could have explained each part separately. Please tell me what motivated you to defer all of it instead."
+        },
+        {
+          "id": "judgeq-d-4-motive_search-b-severance_chat_gap-v4",
+          "text": "At that time, which conversation did you most want to avoid, and which were you willing to have? Please answer on that distinction."
+        },
+        {
+          "id": "judgeq-d-4-motive_search-b-severance_chat_gap-v5",
+          "text": "Within what you can say here, please explain where the impulse to keep this matter buried came from."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "questionType": "empathy_approach",
+      "targetParty": "a",
+      "angleId": "severance_chat_gap",
+      "variants": [
+        {
+          "id": "judgeq-d-4-empathy_approach-a-severance_chat_gap-v1",
+          "text": "Ms. Song, this is a setting where it is hard to speak. Regarding the gap in messages around the cutoff on your side, please share, at your own pace, what you found most difficult to say."
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-a-severance_chat_gap-v2",
+          "text": "If there were circumstances that made it hard to raise the gap in messages around the cutoff on your side, please explain them in your own words first."
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-a-severance_chat_gap-v3",
+          "text": "You do not need to lay everything out at once. Please begin with the part of the gap in messages around the cutoff on your side that you feel ready to say today."
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-a-severance_chat_gap-v4",
+          "text": "If part of the gap in messages around the cutoff on your side is something you can speak about and part is not yet, please separate them and answer on the part you can."
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-a-severance_chat_gap-v5",
+          "text": "Ms. Song, if there is something about the gap in messages around the cutoff on your side you have been carrying alone, please put it down here, in the form you are able to."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "questionType": "empathy_approach",
+      "targetParty": "b",
+      "angleId": "severance_chat_gap",
+      "variants": [
+        {
+          "id": "judgeq-d-4-empathy_approach-b-severance_chat_gap-v1",
+          "text": "Ms. Choi, this is a setting where it is hard to speak. Regarding the gap in messages around the cutoff on your side, please share, at your own pace, what you found most difficult to say."
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-b-severance_chat_gap-v2",
+          "text": "If there were circumstances that made it hard to raise the gap in messages around the cutoff on your side, please explain them in your own words first."
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-b-severance_chat_gap-v3",
+          "text": "You do not need to lay everything out at once. Please begin with the part of the gap in messages around the cutoff on your side that you feel ready to say today."
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-b-severance_chat_gap-v4",
+          "text": "If part of the gap in messages around the cutoff on your side is something you can speak about and part is not yet, please separate them and answer on the part you can."
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-b-severance_chat_gap-v5",
+          "text": "Ms. Choi, if there is something about the gap in messages around the cutoff on your side you have been carrying alone, please put it down here, in the form you are able to."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "questionType": "fact_pursuit",
+      "targetParty": "a",
+      "angleId": "transfer_repayment",
+      "variants": [
+        {
+          "id": "judgeq-d-4-fact_pursuit-a-transfer_repayment-v1",
+          "text": "Ms. Song, regarding how the repayment piece of that money matter sits for you, please walk me through what happened in chronological order, with dates where you can."
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-a-transfer_repayment-v2",
+          "text": "Looking at the messages around the cutoff, the captures, and the timing, please separate what you accept as your own conduct from what you do not recall, item by item."
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-a-transfer_repayment-v3",
+          "text": "Where Ms. Choi's account and your own account diverge most sharply on how the repayment piece of that money matter sits for you, please start from that point and answer on the facts alone."
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-a-transfer_repayment-v4",
+          "text": "Among the messages around the cutoff, the captures, and the timing, please tell me which items you accept here and which items you still wish to dispute."
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-a-transfer_repayment-v5",
+          "text": "Ms. Song, if there is anything about how the repayment piece of that money matter sits for you that you have not yet stated on the record, please bring it forward first."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "questionType": "fact_pursuit",
+      "targetParty": "b",
+      "angleId": "transfer_repayment",
+      "variants": [
+        {
+          "id": "judgeq-d-4-fact_pursuit-b-transfer_repayment-v1",
+          "text": "Ms. Choi, regarding how the transfer and repayment around that money sit on your side, please walk me through what happened in chronological order, with dates where you can."
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-b-transfer_repayment-v2",
+          "text": "Looking at the messages around the cutoff, the captures, and the timing, please separate what you accept as your own conduct from what you do not recall, item by item."
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-b-transfer_repayment-v3",
+          "text": "Where Ms. Song's account and your own account diverge most sharply on how the transfer and repayment around that money sit on your side, please start from that point and answer on the facts alone."
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-b-transfer_repayment-v4",
+          "text": "Among the messages around the cutoff, the captures, and the timing, please tell me which items you accept here and which items you still wish to dispute."
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-b-transfer_repayment-v5",
+          "text": "Ms. Choi, if there is anything about how the transfer and repayment around that money sit on your side that you have not yet stated on the record, please bring it forward first."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "questionType": "motive_search",
+      "targetParty": "a",
+      "angleId": "transfer_repayment",
+      "variants": [
+        {
+          "id": "judgeq-d-4-motive_search-a-transfer_repayment-v1",
+          "text": "Ms. Song, while how the repayment piece of that money matter sits for you was building up, why did you not lay this out for the other side beforehand? Please explain your reasoning."
+        },
+        {
+          "id": "judgeq-d-4-motive_search-a-transfer_repayment-v2",
+          "text": "If you were aware that how the repayment piece of that money matter sits for you could be misread, please tell me the basis on which you chose silence at that point."
+        },
+        {
+          "id": "judgeq-d-4-motive_search-a-transfer_repayment-v3",
+          "text": "You could have explained each part separately. Please tell me what motivated you to defer all of it instead."
+        },
+        {
+          "id": "judgeq-d-4-motive_search-a-transfer_repayment-v4",
+          "text": "At that time, which conversation did you most want to avoid, and which were you willing to have? Please answer on that distinction."
+        },
+        {
+          "id": "judgeq-d-4-motive_search-a-transfer_repayment-v5",
+          "text": "Within what you can say here, please explain where the impulse to keep this matter buried came from."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "questionType": "motive_search",
+      "targetParty": "b",
+      "angleId": "transfer_repayment",
+      "variants": [
+        {
+          "id": "judgeq-d-4-motive_search-b-transfer_repayment-v1",
+          "text": "Ms. Choi, while how the transfer and repayment around that money sit on your side was building up, why did you not lay this out for the other side beforehand? Please explain your reasoning."
+        },
+        {
+          "id": "judgeq-d-4-motive_search-b-transfer_repayment-v2",
+          "text": "If you were aware that how the transfer and repayment around that money sit on your side could be misread, please tell me the basis on which you chose silence at that point."
+        },
+        {
+          "id": "judgeq-d-4-motive_search-b-transfer_repayment-v3",
+          "text": "You could have explained each part separately. Please tell me what motivated you to defer all of it instead."
+        },
+        {
+          "id": "judgeq-d-4-motive_search-b-transfer_repayment-v4",
+          "text": "At that time, which conversation did you most want to avoid, and which were you willing to have? Please answer on that distinction."
+        },
+        {
+          "id": "judgeq-d-4-motive_search-b-transfer_repayment-v5",
+          "text": "Within what you can say here, please explain where the impulse to keep this matter buried came from."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "questionType": "empathy_approach",
+      "targetParty": "a",
+      "angleId": "transfer_repayment",
+      "variants": [
+        {
+          "id": "judgeq-d-4-empathy_approach-a-transfer_repayment-v1",
+          "text": "Ms. Song, this is a setting where it is hard to speak. Regarding how the repayment piece of that money matter sits for you, please share, at your own pace, what you found most difficult to say."
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-a-transfer_repayment-v2",
+          "text": "If there were circumstances that made it hard to raise how the repayment piece of that money matter sits for you, please explain them in your own words first."
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-a-transfer_repayment-v3",
+          "text": "You do not need to lay everything out at once. Please begin with the part of how the repayment piece of that money matter sits for you that you feel ready to say today."
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-a-transfer_repayment-v4",
+          "text": "If part of how the repayment piece of that money matter sits for you is something you can speak about and part is not yet, please separate them and answer on the part you can."
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-a-transfer_repayment-v5",
+          "text": "Ms. Song, if there is something about how the repayment piece of that money matter sits for you you have been carrying alone, please put it down here, in the form you are able to."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "questionType": "empathy_approach",
+      "targetParty": "b",
+      "angleId": "transfer_repayment",
+      "variants": [
+        {
+          "id": "judgeq-d-4-empathy_approach-b-transfer_repayment-v1",
+          "text": "Ms. Choi, this is a setting where it is hard to speak. Regarding how the transfer and repayment around that money sit on your side, please share, at your own pace, what you found most difficult to say."
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-b-transfer_repayment-v2",
+          "text": "If there were circumstances that made it hard to raise how the transfer and repayment around that money sit on your side, please explain them in your own words first."
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-b-transfer_repayment-v3",
+          "text": "You do not need to lay everything out at once. Please begin with the part of how the transfer and repayment around that money sit on your side that you feel ready to say today."
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-b-transfer_repayment-v4",
+          "text": "If part of how the transfer and repayment around that money sit on your side is something you can speak about and part is not yet, please separate them and answer on the part you can."
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-b-transfer_repayment-v5",
+          "text": "Ms. Choi, if there is something about how the transfer and repayment around that money sit on your side you have been carrying alone, please put it down here, in the form you are able to."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "questionType": "fact_pursuit",
+      "targetParty": "a",
+      "angleId": "protective_silence",
+      "variants": [
+        {
+          "id": "judgeq-d-4-fact_pursuit-a-protective_silence-v1",
+          "text": "Ms. Song, regarding whether your silence around that period was protective and toward whom, please walk me through what happened in chronological order, with dates where you can."
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-a-protective_silence-v2",
+          "text": "Looking at the messages around the cutoff, the captures, and the timing, please separate what you accept as your own conduct from what you do not recall, item by item."
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-a-protective_silence-v3",
+          "text": "Where Ms. Choi's account and your own account diverge most sharply on whether your silence around that period was protective and toward whom, please start from that point and answer on the facts alone."
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-a-protective_silence-v4",
+          "text": "Among the messages around the cutoff, the captures, and the timing, please tell me which items you accept here and which items you still wish to dispute."
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-a-protective_silence-v5",
+          "text": "Ms. Song, if there is anything about whether your silence around that period was protective and toward whom that you have not yet stated on the record, please bring it forward first."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "questionType": "fact_pursuit",
+      "targetParty": "b",
+      "angleId": "protective_silence",
+      "variants": [
+        {
+          "id": "judgeq-d-4-fact_pursuit-b-protective_silence-v1",
+          "text": "Ms. Choi, regarding whether your silence around that period was protective and toward whom, please walk me through what happened in chronological order, with dates where you can."
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-b-protective_silence-v2",
+          "text": "Looking at the messages around the cutoff, the captures, and the timing, please separate what you accept as your own conduct from what you do not recall, item by item."
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-b-protective_silence-v3",
+          "text": "Where Ms. Song's account and your own account diverge most sharply on whether your silence around that period was protective and toward whom, please start from that point and answer on the facts alone."
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-b-protective_silence-v4",
+          "text": "Among the messages around the cutoff, the captures, and the timing, please tell me which items you accept here and which items you still wish to dispute."
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-b-protective_silence-v5",
+          "text": "Ms. Choi, if there is anything about whether your silence around that period was protective and toward whom that you have not yet stated on the record, please bring it forward first."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "questionType": "motive_search",
+      "targetParty": "a",
+      "angleId": "protective_silence",
+      "variants": [
+        {
+          "id": "judgeq-d-4-motive_search-a-protective_silence-v1",
+          "text": "Ms. Song, while whether your silence around that period was protective and toward whom was building up, why did you not lay this out for the other side beforehand? Please explain your reasoning."
+        },
+        {
+          "id": "judgeq-d-4-motive_search-a-protective_silence-v2",
+          "text": "If you were aware that whether your silence around that period was protective and toward whom could be misread, please tell me the basis on which you chose silence at that point."
+        },
+        {
+          "id": "judgeq-d-4-motive_search-a-protective_silence-v3",
+          "text": "You could have explained each part separately. Please tell me what motivated you to defer all of it instead."
+        },
+        {
+          "id": "judgeq-d-4-motive_search-a-protective_silence-v4",
+          "text": "At that time, which conversation did you most want to avoid, and which were you willing to have? Please answer on that distinction."
+        },
+        {
+          "id": "judgeq-d-4-motive_search-a-protective_silence-v5",
+          "text": "Within what you can say here, please explain where the impulse to keep this matter buried came from."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "questionType": "motive_search",
+      "targetParty": "b",
+      "angleId": "protective_silence",
+      "variants": [
+        {
+          "id": "judgeq-d-4-motive_search-b-protective_silence-v1",
+          "text": "Ms. Choi, while whether your silence around that period was protective and toward whom was building up, why did you not lay this out for the other side beforehand? Please explain your reasoning."
+        },
+        {
+          "id": "judgeq-d-4-motive_search-b-protective_silence-v2",
+          "text": "If you were aware that whether your silence around that period was protective and toward whom could be misread, please tell me the basis on which you chose silence at that point."
+        },
+        {
+          "id": "judgeq-d-4-motive_search-b-protective_silence-v3",
+          "text": "You could have explained each part separately. Please tell me what motivated you to defer all of it instead."
+        },
+        {
+          "id": "judgeq-d-4-motive_search-b-protective_silence-v4",
+          "text": "At that time, which conversation did you most want to avoid, and which were you willing to have? Please answer on that distinction."
+        },
+        {
+          "id": "judgeq-d-4-motive_search-b-protective_silence-v5",
+          "text": "Within what you can say here, please explain where the impulse to keep this matter buried came from."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "questionType": "empathy_approach",
+      "targetParty": "a",
+      "angleId": "protective_silence",
+      "variants": [
+        {
+          "id": "judgeq-d-4-empathy_approach-a-protective_silence-v1",
+          "text": "Ms. Song, this is a setting where it is hard to speak. Regarding whether your silence around that period was protective and toward whom, please share, at your own pace, what you found most difficult to say."
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-a-protective_silence-v2",
+          "text": "If there were circumstances that made it hard to raise whether your silence around that period was protective and toward whom, please explain them in your own words first."
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-a-protective_silence-v3",
+          "text": "You do not need to lay everything out at once. Please begin with the part of whether your silence around that period was protective and toward whom that you feel ready to say today."
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-a-protective_silence-v4",
+          "text": "If part of whether your silence around that period was protective and toward whom is something you can speak about and part is not yet, please separate them and answer on the part you can."
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-a-protective_silence-v5",
+          "text": "Ms. Song, if there is something about whether your silence around that period was protective and toward whom you have been carrying alone, please put it down here, in the form you are able to."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "questionType": "empathy_approach",
+      "targetParty": "b",
+      "angleId": "protective_silence",
+      "variants": [
+        {
+          "id": "judgeq-d-4-empathy_approach-b-protective_silence-v1",
+          "text": "Ms. Choi, this is a setting where it is hard to speak. Regarding whether your silence around that period was protective and toward whom, please share, at your own pace, what you found most difficult to say."
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-b-protective_silence-v2",
+          "text": "If there were circumstances that made it hard to raise whether your silence around that period was protective and toward whom, please explain them in your own words first."
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-b-protective_silence-v3",
+          "text": "You do not need to lay everything out at once. Please begin with the part of whether your silence around that period was protective and toward whom that you feel ready to say today."
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-b-protective_silence-v4",
+          "text": "If part of whether your silence around that period was protective and toward whom is something you can speak about and part is not yet, please separate them and answer on the part you can."
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-b-protective_silence-v5",
+          "text": "Ms. Choi, if there is something about whether your silence around that period was protective and toward whom you have been carrying alone, please put it down here, in the form you are able to."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "questionType": "fact_pursuit",
+      "targetParty": "a",
+      "angleId": "loan_document_weight",
+      "variants": [
+        {
+          "id": "judgeq-d-4-fact_pursuit-a-loan_document_weight-v1",
+          "text": "Ms. Song, regarding how much weight you put on the IOU document, please walk me through what happened in chronological order, with dates where you can."
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-a-loan_document_weight-v2",
+          "text": "Looking at the messages around the cutoff, the captures, and the timing, please separate what you accept as your own conduct from what you do not recall, item by item."
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-a-loan_document_weight-v3",
+          "text": "Where Ms. Choi's account and your own account diverge most sharply on how much weight you put on the IOU document, please start from that point and answer on the facts alone."
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-a-loan_document_weight-v4",
+          "text": "Among the messages around the cutoff, the captures, and the timing, please tell me which items you accept here and which items you still wish to dispute."
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-a-loan_document_weight-v5",
+          "text": "Ms. Song, if there is anything about how much weight you put on the IOU document that you have not yet stated on the record, please bring it forward first."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "questionType": "fact_pursuit",
+      "targetParty": "b",
+      "angleId": "loan_document_weight",
+      "variants": [
+        {
+          "id": "judgeq-d-4-fact_pursuit-b-loan_document_weight-v1",
+          "text": "Ms. Choi, regarding how much weight you put on the IOU document, please walk me through what happened in chronological order, with dates where you can."
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-b-loan_document_weight-v2",
+          "text": "Looking at the messages around the cutoff, the captures, and the timing, please separate what you accept as your own conduct from what you do not recall, item by item."
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-b-loan_document_weight-v3",
+          "text": "Where Ms. Song's account and your own account diverge most sharply on how much weight you put on the IOU document, please start from that point and answer on the facts alone."
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-b-loan_document_weight-v4",
+          "text": "Among the messages around the cutoff, the captures, and the timing, please tell me which items you accept here and which items you still wish to dispute."
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-b-loan_document_weight-v5",
+          "text": "Ms. Choi, if there is anything about how much weight you put on the IOU document that you have not yet stated on the record, please bring it forward first."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "questionType": "motive_search",
+      "targetParty": "a",
+      "angleId": "loan_document_weight",
+      "variants": [
+        {
+          "id": "judgeq-d-4-motive_search-a-loan_document_weight-v1",
+          "text": "Ms. Song, while how much weight you put on the IOU document was building up, why did you not lay this out for the other side beforehand? Please explain your reasoning."
+        },
+        {
+          "id": "judgeq-d-4-motive_search-a-loan_document_weight-v2",
+          "text": "If you were aware that how much weight you put on the IOU document could be misread, please tell me the basis on which you chose silence at that point."
+        },
+        {
+          "id": "judgeq-d-4-motive_search-a-loan_document_weight-v3",
+          "text": "You could have explained each part separately. Please tell me what motivated you to defer all of it instead."
+        },
+        {
+          "id": "judgeq-d-4-motive_search-a-loan_document_weight-v4",
+          "text": "At that time, which conversation did you most want to avoid, and which were you willing to have? Please answer on that distinction."
+        },
+        {
+          "id": "judgeq-d-4-motive_search-a-loan_document_weight-v5",
+          "text": "Within what you can say here, please explain where the impulse to keep this matter buried came from."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "questionType": "motive_search",
+      "targetParty": "b",
+      "angleId": "loan_document_weight",
+      "variants": [
+        {
+          "id": "judgeq-d-4-motive_search-b-loan_document_weight-v1",
+          "text": "Ms. Choi, while how much weight you put on the IOU document was building up, why did you not lay this out for the other side beforehand? Please explain your reasoning."
+        },
+        {
+          "id": "judgeq-d-4-motive_search-b-loan_document_weight-v2",
+          "text": "If you were aware that how much weight you put on the IOU document could be misread, please tell me the basis on which you chose silence at that point."
+        },
+        {
+          "id": "judgeq-d-4-motive_search-b-loan_document_weight-v3",
+          "text": "You could have explained each part separately. Please tell me what motivated you to defer all of it instead."
+        },
+        {
+          "id": "judgeq-d-4-motive_search-b-loan_document_weight-v4",
+          "text": "At that time, which conversation did you most want to avoid, and which were you willing to have? Please answer on that distinction."
+        },
+        {
+          "id": "judgeq-d-4-motive_search-b-loan_document_weight-v5",
+          "text": "Within what you can say here, please explain where the impulse to keep this matter buried came from."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "questionType": "empathy_approach",
+      "targetParty": "a",
+      "angleId": "loan_document_weight",
+      "variants": [
+        {
+          "id": "judgeq-d-4-empathy_approach-a-loan_document_weight-v1",
+          "text": "Ms. Song, this is a setting where it is hard to speak. Regarding how much weight you put on the IOU document, please share, at your own pace, what you found most difficult to say."
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-a-loan_document_weight-v2",
+          "text": "If there were circumstances that made it hard to raise how much weight you put on the IOU document, please explain them in your own words first."
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-a-loan_document_weight-v3",
+          "text": "You do not need to lay everything out at once. Please begin with the part of how much weight you put on the IOU document that you feel ready to say today."
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-a-loan_document_weight-v4",
+          "text": "If part of how much weight you put on the IOU document is something you can speak about and part is not yet, please separate them and answer on the part you can."
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-a-loan_document_weight-v5",
+          "text": "Ms. Song, if there is something about how much weight you put on the IOU document you have been carrying alone, please put it down here, in the form you are able to."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "questionType": "empathy_approach",
+      "targetParty": "b",
+      "angleId": "loan_document_weight",
+      "variants": [
+        {
+          "id": "judgeq-d-4-empathy_approach-b-loan_document_weight-v1",
+          "text": "Ms. Choi, this is a setting where it is hard to speak. Regarding how much weight you put on the IOU document, please share, at your own pace, what you found most difficult to say."
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-b-loan_document_weight-v2",
+          "text": "If there were circumstances that made it hard to raise how much weight you put on the IOU document, please explain them in your own words first."
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-b-loan_document_weight-v3",
+          "text": "You do not need to lay everything out at once. Please begin with the part of how much weight you put on the IOU document that you feel ready to say today."
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-b-loan_document_weight-v4",
+          "text": "If part of how much weight you put on the IOU document is something you can speak about and part is not yet, please separate them and answer on the part you can."
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-b-loan_document_weight-v5",
+          "text": "Ms. Choi, if there is something about how much weight you put on the IOU document you have been carrying alone, please put it down here, in the form you are able to."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "questionType": "fact_pursuit",
+      "targetParty": "a",
+      "angleId": "first_groupchat_post",
+      "variants": [
+        {
+          "id": "judgeq-d-5-fact_pursuit-a-first_groupchat_post-v1",
+          "text": "Ms. Song, regarding the first post you made in the group chat about this matter, please walk me through what happened in chronological order, with dates where you can."
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-a-first_groupchat_post-v2",
+          "text": "Looking at the group chat captures, the posting times, and the spread of replies, please separate what you accept as your own conduct from what you do not recall, item by item."
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-a-first_groupchat_post-v3",
+          "text": "Where Ms. Choi's account and your own account diverge most sharply on the first post you made in the group chat about this matter, please start from that point and answer on the facts alone."
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-a-first_groupchat_post-v4",
+          "text": "Among the group chat captures, the posting times, and the spread of replies, please tell me which items you accept here and which items you still wish to dispute."
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-a-first_groupchat_post-v5",
+          "text": "Ms. Song, if there is anything about the first post you made in the group chat about this matter that you have not yet stated on the record, please bring it forward first."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "questionType": "fact_pursuit",
+      "targetParty": "b",
+      "angleId": "first_groupchat_post",
+      "variants": [
+        {
+          "id": "judgeq-d-5-fact_pursuit-b-first_groupchat_post-v1",
+          "text": "Ms. Choi, regarding the first post made in the group chat that concerned you, please walk me through what happened in chronological order, with dates where you can."
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-b-first_groupchat_post-v2",
+          "text": "Looking at the group chat captures, the posting times, and the spread of replies, please separate what you accept as your own conduct from what you do not recall, item by item."
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-b-first_groupchat_post-v3",
+          "text": "Where Ms. Song's account and your own account diverge most sharply on the first post made in the group chat that concerned you, please start from that point and answer on the facts alone."
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-b-first_groupchat_post-v4",
+          "text": "Among the group chat captures, the posting times, and the spread of replies, please tell me which items you accept here and which items you still wish to dispute."
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-b-first_groupchat_post-v5",
+          "text": "Ms. Choi, if there is anything about the first post made in the group chat that concerned you that you have not yet stated on the record, please bring it forward first."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "questionType": "motive_search",
+      "targetParty": "a",
+      "angleId": "first_groupchat_post",
+      "variants": [
+        {
+          "id": "judgeq-d-5-motive_search-a-first_groupchat_post-v1",
+          "text": "Ms. Song, while the first post you made in the group chat about this matter was building up, why did you not lay this out for the other side beforehand? Please explain your reasoning."
+        },
+        {
+          "id": "judgeq-d-5-motive_search-a-first_groupchat_post-v2",
+          "text": "If you were aware that the first post you made in the group chat about this matter could be misread, please tell me the basis on which you chose silence at that point."
+        },
+        {
+          "id": "judgeq-d-5-motive_search-a-first_groupchat_post-v3",
+          "text": "You could have explained each part separately. Please tell me what motivated you to defer all of it instead."
+        },
+        {
+          "id": "judgeq-d-5-motive_search-a-first_groupchat_post-v4",
+          "text": "At that time, which conversation did you most want to avoid, and which were you willing to have? Please answer on that distinction."
+        },
+        {
+          "id": "judgeq-d-5-motive_search-a-first_groupchat_post-v5",
+          "text": "Within what you can say here, please explain where the impulse to keep this matter buried came from."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "questionType": "motive_search",
+      "targetParty": "b",
+      "angleId": "first_groupchat_post",
+      "variants": [
+        {
+          "id": "judgeq-d-5-motive_search-b-first_groupchat_post-v1",
+          "text": "Ms. Choi, while the first post made in the group chat that concerned you was building up, why did you not lay this out for the other side beforehand? Please explain your reasoning."
+        },
+        {
+          "id": "judgeq-d-5-motive_search-b-first_groupchat_post-v2",
+          "text": "If you were aware that the first post made in the group chat that concerned you could be misread, please tell me the basis on which you chose silence at that point."
+        },
+        {
+          "id": "judgeq-d-5-motive_search-b-first_groupchat_post-v3",
+          "text": "You could have explained each part separately. Please tell me what motivated you to defer all of it instead."
+        },
+        {
+          "id": "judgeq-d-5-motive_search-b-first_groupchat_post-v4",
+          "text": "At that time, which conversation did you most want to avoid, and which were you willing to have? Please answer on that distinction."
+        },
+        {
+          "id": "judgeq-d-5-motive_search-b-first_groupchat_post-v5",
+          "text": "Within what you can say here, please explain where the impulse to keep this matter buried came from."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "questionType": "empathy_approach",
+      "targetParty": "a",
+      "angleId": "first_groupchat_post",
+      "variants": [
+        {
+          "id": "judgeq-d-5-empathy_approach-a-first_groupchat_post-v1",
+          "text": "Ms. Song, this is a setting where it is hard to speak. Regarding the first post you made in the group chat about this matter, please share, at your own pace, what you found most difficult to say."
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-a-first_groupchat_post-v2",
+          "text": "If there were circumstances that made it hard to raise the first post you made in the group chat about this matter, please explain them in your own words first."
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-a-first_groupchat_post-v3",
+          "text": "You do not need to lay everything out at once. Please begin with the part of the first post you made in the group chat about this matter that you feel ready to say today."
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-a-first_groupchat_post-v4",
+          "text": "If part of the first post you made in the group chat about this matter is something you can speak about and part is not yet, please separate them and answer on the part you can."
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-a-first_groupchat_post-v5",
+          "text": "Ms. Song, if there is something about the first post you made in the group chat about this matter you have been carrying alone, please put it down here, in the form you are able to."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "questionType": "empathy_approach",
+      "targetParty": "b",
+      "angleId": "first_groupchat_post",
+      "variants": [
+        {
+          "id": "judgeq-d-5-empathy_approach-b-first_groupchat_post-v1",
+          "text": "Ms. Choi, this is a setting where it is hard to speak. Regarding the first post made in the group chat that concerned you, please share, at your own pace, what you found most difficult to say."
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-b-first_groupchat_post-v2",
+          "text": "If there were circumstances that made it hard to raise the first post made in the group chat that concerned you, please explain them in your own words first."
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-b-first_groupchat_post-v3",
+          "text": "You do not need to lay everything out at once. Please begin with the part of the first post made in the group chat that concerned you that you feel ready to say today."
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-b-first_groupchat_post-v4",
+          "text": "If part of the first post made in the group chat that concerned you is something you can speak about and part is not yet, please separate them and answer on the part you can."
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-b-first_groupchat_post-v5",
+          "text": "Ms. Choi, if there is something about the first post made in the group chat that concerned you you have been carrying alone, please put it down here, in the form you are able to."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "questionType": "fact_pursuit",
+      "targetParty": "a",
+      "angleId": "pile_on_spread",
+      "variants": [
+        {
+          "id": "judgeq-d-5-fact_pursuit-a-pile_on_spread-v1",
+          "text": "Ms. Song, regarding how the pile-on of replies spread after your post, please walk me through what happened in chronological order, with dates where you can."
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-a-pile_on_spread-v2",
+          "text": "Looking at the group chat captures, the posting times, and the spread of replies, please separate what you accept as your own conduct from what you do not recall, item by item."
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-a-pile_on_spread-v3",
+          "text": "Where Ms. Choi's account and your own account diverge most sharply on how the pile-on of replies spread after your post, please start from that point and answer on the facts alone."
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-a-pile_on_spread-v4",
+          "text": "Among the group chat captures, the posting times, and the spread of replies, please tell me which items you accept here and which items you still wish to dispute."
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-a-pile_on_spread-v5",
+          "text": "Ms. Song, if there is anything about how the pile-on of replies spread after your post that you have not yet stated on the record, please bring it forward first."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "questionType": "fact_pursuit",
+      "targetParty": "b",
+      "angleId": "pile_on_spread",
+      "variants": [
+        {
+          "id": "judgeq-d-5-fact_pursuit-b-pile_on_spread-v1",
+          "text": "Ms. Choi, regarding how the pile-on of replies spread on the other side, please walk me through what happened in chronological order, with dates where you can."
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-b-pile_on_spread-v2",
+          "text": "Looking at the group chat captures, the posting times, and the spread of replies, please separate what you accept as your own conduct from what you do not recall, item by item."
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-b-pile_on_spread-v3",
+          "text": "Where Ms. Song's account and your own account diverge most sharply on how the pile-on of replies spread on the other side, please start from that point and answer on the facts alone."
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-b-pile_on_spread-v4",
+          "text": "Among the group chat captures, the posting times, and the spread of replies, please tell me which items you accept here and which items you still wish to dispute."
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-b-pile_on_spread-v5",
+          "text": "Ms. Choi, if there is anything about how the pile-on of replies spread on the other side that you have not yet stated on the record, please bring it forward first."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "questionType": "motive_search",
+      "targetParty": "a",
+      "angleId": "pile_on_spread",
+      "variants": [
+        {
+          "id": "judgeq-d-5-motive_search-a-pile_on_spread-v1",
+          "text": "Ms. Song, while how the pile-on of replies spread after your post was building up, why did you not lay this out for the other side beforehand? Please explain your reasoning."
+        },
+        {
+          "id": "judgeq-d-5-motive_search-a-pile_on_spread-v2",
+          "text": "If you were aware that how the pile-on of replies spread after your post could be misread, please tell me the basis on which you chose silence at that point."
+        },
+        {
+          "id": "judgeq-d-5-motive_search-a-pile_on_spread-v3",
+          "text": "You could have explained each part separately. Please tell me what motivated you to defer all of it instead."
+        },
+        {
+          "id": "judgeq-d-5-motive_search-a-pile_on_spread-v4",
+          "text": "At that time, which conversation did you most want to avoid, and which were you willing to have? Please answer on that distinction."
+        },
+        {
+          "id": "judgeq-d-5-motive_search-a-pile_on_spread-v5",
+          "text": "Within what you can say here, please explain where the impulse to keep this matter buried came from."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "questionType": "motive_search",
+      "targetParty": "b",
+      "angleId": "pile_on_spread",
+      "variants": [
+        {
+          "id": "judgeq-d-5-motive_search-b-pile_on_spread-v1",
+          "text": "Ms. Choi, while how the pile-on of replies spread on the other side was building up, why did you not lay this out for the other side beforehand? Please explain your reasoning."
+        },
+        {
+          "id": "judgeq-d-5-motive_search-b-pile_on_spread-v2",
+          "text": "If you were aware that how the pile-on of replies spread on the other side could be misread, please tell me the basis on which you chose silence at that point."
+        },
+        {
+          "id": "judgeq-d-5-motive_search-b-pile_on_spread-v3",
+          "text": "You could have explained each part separately. Please tell me what motivated you to defer all of it instead."
+        },
+        {
+          "id": "judgeq-d-5-motive_search-b-pile_on_spread-v4",
+          "text": "At that time, which conversation did you most want to avoid, and which were you willing to have? Please answer on that distinction."
+        },
+        {
+          "id": "judgeq-d-5-motive_search-b-pile_on_spread-v5",
+          "text": "Within what you can say here, please explain where the impulse to keep this matter buried came from."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "questionType": "empathy_approach",
+      "targetParty": "a",
+      "angleId": "pile_on_spread",
+      "variants": [
+        {
+          "id": "judgeq-d-5-empathy_approach-a-pile_on_spread-v1",
+          "text": "Ms. Song, this is a setting where it is hard to speak. Regarding how the pile-on of replies spread after your post, please share, at your own pace, what you found most difficult to say."
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-a-pile_on_spread-v2",
+          "text": "If there were circumstances that made it hard to raise how the pile-on of replies spread after your post, please explain them in your own words first."
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-a-pile_on_spread-v3",
+          "text": "You do not need to lay everything out at once. Please begin with the part of how the pile-on of replies spread after your post that you feel ready to say today."
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-a-pile_on_spread-v4",
+          "text": "If part of how the pile-on of replies spread after your post is something you can speak about and part is not yet, please separate them and answer on the part you can."
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-a-pile_on_spread-v5",
+          "text": "Ms. Song, if there is something about how the pile-on of replies spread after your post you have been carrying alone, please put it down here, in the form you are able to."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "questionType": "empathy_approach",
+      "targetParty": "b",
+      "angleId": "pile_on_spread",
+      "variants": [
+        {
+          "id": "judgeq-d-5-empathy_approach-b-pile_on_spread-v1",
+          "text": "Ms. Choi, this is a setting where it is hard to speak. Regarding how the pile-on of replies spread on the other side, please share, at your own pace, what you found most difficult to say."
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-b-pile_on_spread-v2",
+          "text": "If there were circumstances that made it hard to raise how the pile-on of replies spread on the other side, please explain them in your own words first."
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-b-pile_on_spread-v3",
+          "text": "You do not need to lay everything out at once. Please begin with the part of how the pile-on of replies spread on the other side that you feel ready to say today."
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-b-pile_on_spread-v4",
+          "text": "If part of how the pile-on of replies spread on the other side is something you can speak about and part is not yet, please separate them and answer on the part you can."
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-b-pile_on_spread-v5",
+          "text": "Ms. Choi, if there is something about how the pile-on of replies spread on the other side you have been carrying alone, please put it down here, in the form you are able to."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "questionType": "fact_pursuit",
+      "targetParty": "a",
+      "angleId": "repeat_villain_frame",
+      "variants": [
+        {
+          "id": "judgeq-d-5-fact_pursuit-a-repeat_villain_frame-v1",
+          "text": "Ms. Song, regarding how the framing around repeating roles came up on your side, please walk me through what happened in chronological order, with dates where you can."
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-a-repeat_villain_frame-v2",
+          "text": "Looking at the group chat captures, the posting times, and the spread of replies, please separate what you accept as your own conduct from what you do not recall, item by item."
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-a-repeat_villain_frame-v3",
+          "text": "Where Ms. Choi's account and your own account diverge most sharply on how the framing around repeating roles came up on your side, please start from that point and answer on the facts alone."
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-a-repeat_villain_frame-v4",
+          "text": "Among the group chat captures, the posting times, and the spread of replies, please tell me which items you accept here and which items you still wish to dispute."
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-a-repeat_villain_frame-v5",
+          "text": "Ms. Song, if there is anything about how the framing around repeating roles came up on your side that you have not yet stated on the record, please bring it forward first."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "questionType": "fact_pursuit",
+      "targetParty": "b",
+      "angleId": "repeat_villain_frame",
+      "variants": [
+        {
+          "id": "judgeq-d-5-fact_pursuit-b-repeat_villain_frame-v1",
+          "text": "Ms. Choi, regarding how the framing around being cast as the villain again came up on your side, please walk me through what happened in chronological order, with dates where you can."
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-b-repeat_villain_frame-v2",
+          "text": "Looking at the group chat captures, the posting times, and the spread of replies, please separate what you accept as your own conduct from what you do not recall, item by item."
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-b-repeat_villain_frame-v3",
+          "text": "Where Ms. Song's account and your own account diverge most sharply on how the framing around being cast as the villain again came up on your side, please start from that point and answer on the facts alone."
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-b-repeat_villain_frame-v4",
+          "text": "Among the group chat captures, the posting times, and the spread of replies, please tell me which items you accept here and which items you still wish to dispute."
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-b-repeat_villain_frame-v5",
+          "text": "Ms. Choi, if there is anything about how the framing around being cast as the villain again came up on your side that you have not yet stated on the record, please bring it forward first."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "questionType": "motive_search",
+      "targetParty": "a",
+      "angleId": "repeat_villain_frame",
+      "variants": [
+        {
+          "id": "judgeq-d-5-motive_search-a-repeat_villain_frame-v1",
+          "text": "Ms. Song, while how the framing around repeating roles came up on your side was building up, why did you not lay this out for the other side beforehand? Please explain your reasoning."
+        },
+        {
+          "id": "judgeq-d-5-motive_search-a-repeat_villain_frame-v2",
+          "text": "If you were aware that how the framing around repeating roles came up on your side could be misread, please tell me the basis on which you chose silence at that point."
+        },
+        {
+          "id": "judgeq-d-5-motive_search-a-repeat_villain_frame-v3",
+          "text": "You could have explained each part separately. Please tell me what motivated you to defer all of it instead."
+        },
+        {
+          "id": "judgeq-d-5-motive_search-a-repeat_villain_frame-v4",
+          "text": "At that time, which conversation did you most want to avoid, and which were you willing to have? Please answer on that distinction."
+        },
+        {
+          "id": "judgeq-d-5-motive_search-a-repeat_villain_frame-v5",
+          "text": "Within what you can say here, please explain where the impulse to keep this matter buried came from."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "questionType": "motive_search",
+      "targetParty": "b",
+      "angleId": "repeat_villain_frame",
+      "variants": [
+        {
+          "id": "judgeq-d-5-motive_search-b-repeat_villain_frame-v1",
+          "text": "Ms. Choi, while how the framing around being cast as the villain again came up on your side was building up, why did you not lay this out for the other side beforehand? Please explain your reasoning."
+        },
+        {
+          "id": "judgeq-d-5-motive_search-b-repeat_villain_frame-v2",
+          "text": "If you were aware that how the framing around being cast as the villain again came up on your side could be misread, please tell me the basis on which you chose silence at that point."
+        },
+        {
+          "id": "judgeq-d-5-motive_search-b-repeat_villain_frame-v3",
+          "text": "You could have explained each part separately. Please tell me what motivated you to defer all of it instead."
+        },
+        {
+          "id": "judgeq-d-5-motive_search-b-repeat_villain_frame-v4",
+          "text": "At that time, which conversation did you most want to avoid, and which were you willing to have? Please answer on that distinction."
+        },
+        {
+          "id": "judgeq-d-5-motive_search-b-repeat_villain_frame-v5",
+          "text": "Within what you can say here, please explain where the impulse to keep this matter buried came from."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "questionType": "empathy_approach",
+      "targetParty": "a",
+      "angleId": "repeat_villain_frame",
+      "variants": [
+        {
+          "id": "judgeq-d-5-empathy_approach-a-repeat_villain_frame-v1",
+          "text": "Ms. Song, this is a setting where it is hard to speak. Regarding how the framing around repeating roles came up on your side, please share, at your own pace, what you found most difficult to say."
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-a-repeat_villain_frame-v2",
+          "text": "If there were circumstances that made it hard to raise how the framing around repeating roles came up on your side, please explain them in your own words first."
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-a-repeat_villain_frame-v3",
+          "text": "You do not need to lay everything out at once. Please begin with the part of how the framing around repeating roles came up on your side that you feel ready to say today."
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-a-repeat_villain_frame-v4",
+          "text": "If part of how the framing around repeating roles came up on your side is something you can speak about and part is not yet, please separate them and answer on the part you can."
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-a-repeat_villain_frame-v5",
+          "text": "Ms. Song, if there is something about how the framing around repeating roles came up on your side you have been carrying alone, please put it down here, in the form you are able to."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "questionType": "empathy_approach",
+      "targetParty": "b",
+      "angleId": "repeat_villain_frame",
+      "variants": [
+        {
+          "id": "judgeq-d-5-empathy_approach-b-repeat_villain_frame-v1",
+          "text": "Ms. Choi, this is a setting where it is hard to speak. Regarding how the framing around being cast as the villain again came up on your side, please share, at your own pace, what you found most difficult to say."
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-b-repeat_villain_frame-v2",
+          "text": "If there were circumstances that made it hard to raise how the framing around being cast as the villain again came up on your side, please explain them in your own words first."
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-b-repeat_villain_frame-v3",
+          "text": "You do not need to lay everything out at once. Please begin with the part of how the framing around being cast as the villain again came up on your side that you feel ready to say today."
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-b-repeat_villain_frame-v4",
+          "text": "If part of how the framing around being cast as the villain again came up on your side is something you can speak about and part is not yet, please separate them and answer on the part you can."
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-b-repeat_villain_frame-v5",
+          "text": "Ms. Choi, if there is something about how the framing around being cast as the villain again came up on your side you have been carrying alone, please put it down here, in the form you are able to."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "questionType": "fact_pursuit",
+      "targetParty": "a",
+      "angleId": "verification_gap",
+      "variants": [
+        {
+          "id": "judgeq-d-5-fact_pursuit-a-verification_gap-v1",
+          "text": "Ms. Song, regarding where the verification gap sits in what you posted, please walk me through what happened in chronological order, with dates where you can."
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-a-verification_gap-v2",
+          "text": "Looking at the group chat captures, the posting times, and the spread of replies, please separate what you accept as your own conduct from what you do not recall, item by item."
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-a-verification_gap-v3",
+          "text": "Where Ms. Choi's account and your own account diverge most sharply on where the verification gap sits in what you posted, please start from that point and answer on the facts alone."
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-a-verification_gap-v4",
+          "text": "Among the group chat captures, the posting times, and the spread of replies, please tell me which items you accept here and which items you still wish to dispute."
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-a-verification_gap-v5",
+          "text": "Ms. Song, if there is anything about where the verification gap sits in what you posted that you have not yet stated on the record, please bring it forward first."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "questionType": "fact_pursuit",
+      "targetParty": "b",
+      "angleId": "verification_gap",
+      "variants": [
+        {
+          "id": "judgeq-d-5-fact_pursuit-b-verification_gap-v1",
+          "text": "Ms. Choi, regarding where the verification gap sits between the posts and the actual record, please walk me through what happened in chronological order, with dates where you can."
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-b-verification_gap-v2",
+          "text": "Looking at the group chat captures, the posting times, and the spread of replies, please separate what you accept as your own conduct from what you do not recall, item by item."
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-b-verification_gap-v3",
+          "text": "Where Ms. Song's account and your own account diverge most sharply on where the verification gap sits between the posts and the actual record, please start from that point and answer on the facts alone."
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-b-verification_gap-v4",
+          "text": "Among the group chat captures, the posting times, and the spread of replies, please tell me which items you accept here and which items you still wish to dispute."
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-b-verification_gap-v5",
+          "text": "Ms. Choi, if there is anything about where the verification gap sits between the posts and the actual record that you have not yet stated on the record, please bring it forward first."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "questionType": "motive_search",
+      "targetParty": "a",
+      "angleId": "verification_gap",
+      "variants": [
+        {
+          "id": "judgeq-d-5-motive_search-a-verification_gap-v1",
+          "text": "Ms. Song, while where the verification gap sits in what you posted was building up, why did you not lay this out for the other side beforehand? Please explain your reasoning."
+        },
+        {
+          "id": "judgeq-d-5-motive_search-a-verification_gap-v2",
+          "text": "If you were aware that where the verification gap sits in what you posted could be misread, please tell me the basis on which you chose silence at that point."
+        },
+        {
+          "id": "judgeq-d-5-motive_search-a-verification_gap-v3",
+          "text": "You could have explained each part separately. Please tell me what motivated you to defer all of it instead."
+        },
+        {
+          "id": "judgeq-d-5-motive_search-a-verification_gap-v4",
+          "text": "At that time, which conversation did you most want to avoid, and which were you willing to have? Please answer on that distinction."
+        },
+        {
+          "id": "judgeq-d-5-motive_search-a-verification_gap-v5",
+          "text": "Within what you can say here, please explain where the impulse to keep this matter buried came from."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "questionType": "motive_search",
+      "targetParty": "b",
+      "angleId": "verification_gap",
+      "variants": [
+        {
+          "id": "judgeq-d-5-motive_search-b-verification_gap-v1",
+          "text": "Ms. Choi, while where the verification gap sits between the posts and the actual record was building up, why did you not lay this out for the other side beforehand? Please explain your reasoning."
+        },
+        {
+          "id": "judgeq-d-5-motive_search-b-verification_gap-v2",
+          "text": "If you were aware that where the verification gap sits between the posts and the actual record could be misread, please tell me the basis on which you chose silence at that point."
+        },
+        {
+          "id": "judgeq-d-5-motive_search-b-verification_gap-v3",
+          "text": "You could have explained each part separately. Please tell me what motivated you to defer all of it instead."
+        },
+        {
+          "id": "judgeq-d-5-motive_search-b-verification_gap-v4",
+          "text": "At that time, which conversation did you most want to avoid, and which were you willing to have? Please answer on that distinction."
+        },
+        {
+          "id": "judgeq-d-5-motive_search-b-verification_gap-v5",
+          "text": "Within what you can say here, please explain where the impulse to keep this matter buried came from."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "questionType": "empathy_approach",
+      "targetParty": "a",
+      "angleId": "verification_gap",
+      "variants": [
+        {
+          "id": "judgeq-d-5-empathy_approach-a-verification_gap-v1",
+          "text": "Ms. Song, this is a setting where it is hard to speak. Regarding where the verification gap sits in what you posted, please share, at your own pace, what you found most difficult to say."
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-a-verification_gap-v2",
+          "text": "If there were circumstances that made it hard to raise where the verification gap sits in what you posted, please explain them in your own words first."
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-a-verification_gap-v3",
+          "text": "You do not need to lay everything out at once. Please begin with the part of where the verification gap sits in what you posted that you feel ready to say today."
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-a-verification_gap-v4",
+          "text": "If part of where the verification gap sits in what you posted is something you can speak about and part is not yet, please separate them and answer on the part you can."
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-a-verification_gap-v5",
+          "text": "Ms. Song, if there is something about where the verification gap sits in what you posted you have been carrying alone, please put it down here, in the form you are able to."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "questionType": "empathy_approach",
+      "targetParty": "b",
+      "angleId": "verification_gap",
+      "variants": [
+        {
+          "id": "judgeq-d-5-empathy_approach-b-verification_gap-v1",
+          "text": "Ms. Choi, this is a setting where it is hard to speak. Regarding where the verification gap sits between the posts and the actual record, please share, at your own pace, what you found most difficult to say."
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-b-verification_gap-v2",
+          "text": "If there were circumstances that made it hard to raise where the verification gap sits between the posts and the actual record, please explain them in your own words first."
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-b-verification_gap-v3",
+          "text": "You do not need to lay everything out at once. Please begin with the part of where the verification gap sits between the posts and the actual record that you feel ready to say today."
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-b-verification_gap-v4",
+          "text": "If part of where the verification gap sits between the posts and the actual record is something you can speak about and part is not yet, please separate them and answer on the part you can."
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-b-verification_gap-v5",
+          "text": "Ms. Choi, if there is something about where the verification gap sits between the posts and the actual record you have been carrying alone, please put it down here, in the form you are able to."
+        }
+      ]
+    }
+  ]
+}

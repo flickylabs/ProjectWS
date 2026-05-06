@@ -1,0 +1,128 @@
+{
+  "schemaVersion": 1,
+  "locale": "ja",
+  "caseId": "friend-01",
+  "overlayKind": "angle_catalog",
+  "angles": [
+    {
+      "disputeId": "d-1",
+      "angleId": "contact_timeline",
+      "label": "9日間の連絡の時系列",
+      "description": "電話6回、メッセージ11回が続いた期間・時間帯・応答状況を切り分けて確かめる。"
+    },
+    {
+      "disputeId": "d-1",
+      "angleId": "message_intent",
+      "label": "文面の中の伝達目的",
+      "description": "好意の表現がない文面と『どうしても伝えたい話』類の言葉から、連絡の目的を追及する。"
+    },
+    {
+      "disputeId": "d-1",
+      "angleId": "bypass_da_eun",
+      "label": "ソン・ダウンを通さない連絡",
+      "description": "なぜソン・ダウンに直接話さず、婚約者の側へ向かったのか——その回り道の責任を問う。"
+    },
+    {
+      "disputeId": "d-1",
+      "angleId": "unanswered_escalation",
+      "label": "応答がなかったことと反復の理由",
+      "description": "連絡回数が増えた理由が執着なのか、応答がなく確認の依頼が繰り返されたのかを切り分ける。"
+    },
+    {
+      "disputeId": "d-2",
+      "angleId": "message_sequence",
+      "label": "メッセージの先後関係",
+      "description": "婚約者とチェ・スミンの間のメッセージの始点、夜の時間帯、応答の順序を確かめる。"
+    },
+    {
+      "disputeId": "d-2",
+      "angleId": "boundary_response",
+      "label": "境界線の引き方と距離の取り方",
+      "description": "チェ・スミンの返信が同調なのか距離を取るものなのか、表現の幅と意味を確かめる。"
+    },
+    {
+      "disputeId": "d-2",
+      "angleId": "withheld_capture",
+      "label": "原本をすぐに出せなかった理由",
+      "description": "チェ・スミンが原本をすぐに提示できなかった理由と、ソン・ダウンが確認を後回しにした理由を切り分ける。"
+    },
+    {
+      "disputeId": "d-2",
+      "angleId": "private_request_pressure",
+      "label": "非公開の依頼がもたらす圧力",
+      "description": "婚約者がチェ・スミンへ、ダウンに知らせず私的に持ちかけたり、個人的な場面へ誘った流れを確かめる。"
+    },
+    {
+      "disputeId": "d-3",
+      "angleId": "father_request_signal",
+      "label": "ご家族からの依頼の予兆",
+      "description": "結婚準備の安否伺いと依頼予告の文面が、どのような性格のものかを、まだ断定せずに確かめる。"
+    },
+    {
+      "disputeId": "d-3",
+      "angleId": "money_secrecy",
+      "label": "金銭性と秘密の依頼",
+      "description": "依頼が金銭の要求に及んでいるか、ソン・ダウンには言わないでほしい旨の要請があったかを確かめる。"
+    },
+    {
+      "disputeId": "d-3",
+      "angleId": "pattern_warning",
+      "label": "過去と似た流れ",
+      "description": "現在のメッセージが過去の金銭の出来事と似ているかを段階的に問うが、序盤はパターンとして確定はしない。"
+    },
+    {
+      "disputeId": "d-3",
+      "angleId": "father_blindspot",
+      "label": "ご家族の問題を直視しなかった地点",
+      "description": "ソン・ダウンが家族からの依頼を家のこととしてだけ受け止め、引っかかる箇所を遅れて見ていった経緯を確かめる。"
+    },
+    {
+      "disputeId": "d-4",
+      "angleId": "severance_chat_gap",
+      "label": "絶交直前のやり取りの空白",
+      "description": "過去のメッセージにある『私の方で片付ける』という言葉と、絶交との間にある空白を確かめる。"
+    },
+    {
+      "disputeId": "d-4",
+      "angleId": "transfer_repayment",
+      "label": "送金と返済の流れ",
+      "description": "三度の送金、借用書、一部返済の後の連絡途絶を通じて、金銭の出来事の実体を段階的に確かめる。"
+    },
+    {
+      "disputeId": "d-4",
+      "angleId": "protective_silence",
+      "label": "守ろうとした沈黙",
+      "description": "チェ・スミンがなぜソン・ダウンに過去の金銭の問題を話せず、悪役の側に立つことを選んだのかを確かめる。"
+    },
+    {
+      "disputeId": "d-4",
+      "angleId": "loan_document_weight",
+      "label": "借用書の重み",
+      "description": "好意なのか貸付なのか——借用書と一部返済が、チェ・スミンの沈黙と絶交の理由をどう裏づけるかを確かめる。"
+    },
+    {
+      "disputeId": "d-5",
+      "angleId": "first_groupchat_post",
+      "label": "グループチャットでの最初の発言",
+      "description": "ソン・ダウンがどのような言葉でグループチャットに先に書き込み、直接の確認より公開が先になっていなかったかを確かめる。"
+    },
+    {
+      "disputeId": "d-5",
+      "angleId": "pile_on_spread",
+      "label": "友人たちの同調と拡散",
+      "description": "友人たちがどのような言葉で続き、ソン・ダウンとチェ・スミンがその拡散にどう対応したかを確かめる。"
+    },
+    {
+      "disputeId": "d-5",
+      "angleId": "repeat_villain_frame",
+      "label": "繰り返される悪役の構図",
+      "description": "過去も現在も、チェ・スミンが悪役として残り、ソン・ダウンが先に決めつける構図を整理する。"
+    },
+    {
+      "disputeId": "d-5",
+      "angleId": "verification_gap",
+      "label": "確認のないままの公表",
+      "description": "ソン・ダウンがチェ・スミンに確かめる前にグループチャットに書き込んだのか、公表後に正す機会があったのかを確かめる。"
+    }
+  ]
+}

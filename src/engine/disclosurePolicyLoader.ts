@@ -1,6 +1,9 @@
 import type { DisclosureCaseId } from '../types/disclosure'
+import type { LocaleCode } from '../i18n/locales'
 
 type ForbiddenLexemeRef = string | string[]
+type LocaleLexemeMap = Partial<Record<Exclude<LocaleCode, 'ko'>, string[]>>
+type LocaleSurfaceMap = Partial<Record<Exclude<LocaleCode, 'ko'>, Record<string, string>>>
 
 export type DisclosureForbiddenLexemes = {
   globalTruthLexemes?: string[]
@@ -9,9 +12,19 @@ export type DisclosureForbiddenLexemes = {
   allowedSurfaceSubstitutes?: Record<string, string>
 }
 
+export type DisclosureLocalePolicy = {
+  schemaVersion?: string
+  status?: string
+  forbiddenLexemes?: LocaleLexemeMap
+  paraphraseLexemes?: LocaleLexemeMap
+  uiSurfaceMap?: LocaleSurfaceMap
+  notes?: string[]
+}
+
 export type DisclosurePolicy = {
   caseId?: string
   forbiddenLexemes?: DisclosureForbiddenLexemes
+  localePolicy?: DisclosureLocalePolicy
 }
 
 const policyModules = import.meta.glob<{ default?: DisclosurePolicy }>(

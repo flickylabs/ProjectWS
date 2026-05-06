@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { useI18n } from '../../../i18n'
 import PCSvgIcon from '../icons/PCSvgIcon'
 import { markPcIntroSeen, PC_HOME_INTRO_SLIDES } from './pcHomeShared'
 
@@ -7,6 +8,7 @@ interface Props {
 }
 
 export default function PCIntroSlides({ onComplete }: Props) {
+  const { t } = useI18n()
   const [index, setIndex] = useState(0)
   const slide = PC_HOME_INTRO_SLIDES[index]
   const isLast = index === PC_HOME_INTRO_SLIDES.length - 1
@@ -46,22 +48,22 @@ export default function PCIntroSlides({ onComplete }: Props) {
             <span className="pc-intro__brand-mark">
               <PCSvgIcon id="i-scale" size={28} />
             </span>
-            <span className="pc-intro__brand-name">솔로몬의 딜레마</span>
+            <span className="pc-intro__brand-name">{t('brand.fullTitle')}</span>
             <span className="pc-intro__brand-sep">|</span>
-            <span className="pc-intro__brand-copy">COURT SIMULATION GAME</span>
+            <span className="pc-intro__brand-copy">{t('splash.subtitle')}</span>
             <span className="pc-intro__brand-sep">|</span>
             <span className="pc-intro__brand-kicker">{slide.kicker}</span>
           </div>
 
           <button className="pc-intro__skip" onClick={finish} type="button">
-            건너뛰기
+            {t('pc.home.intro.skip')}
           </button>
         </header>
 
         <div className="pc-intro__body">
           <span className="pc-intro__kicker">{slide.kicker}</span>
-          <h1>{slide.title}</h1>
-          <p>{slide.body}</p>
+          <h1>{t(slide.titleKey)}</h1>
+          <p>{t(slide.bodyKey)}</p>
         </div>
 
         <footer className="pc-intro__footer">
@@ -79,10 +81,10 @@ export default function PCIntroSlides({ onComplete }: Props) {
 
           <div className="pc-intro__actions">
             <button className="pc-intro__ghost" disabled={index === 0} onClick={goPrev} type="button">
-              이전
+              {t('pc.home.intro.previous')}
             </button>
             <button className="pc-intro__primary" onClick={isLast ? finish : goNext} type="button">
-              {isLast ? '로비 입장' : '다음'}
+              {isLast ? t('pc.home.intro.enterLobby') : t('pc.home.intro.next')}
             </button>
           </div>
         </footer>

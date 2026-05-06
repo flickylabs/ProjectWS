@@ -11,6 +11,7 @@ import EventFeedbackCard from '../components/pc/feedback/EventFeedbackCard'
 import ResonanceLayer from '../components/pc/observation/ResonanceLayer'
 import AIReasoningCutscene from '../components/freeInterrogation/AIReasoningCutscene'
 import { bucketFromPreset, readStoredPreset } from '../utils/screenPresets'
+import { I18nProvider } from '../i18n'
 
 // PC 모드 — body 클래스 추가
 document.body.classList.add('pc-mode')
@@ -27,13 +28,15 @@ document.body.classList.add('pc-mode')
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <ErrorBoundary>
-      <PCPrototypeStyle />
-      <PCSvgDefs />
-      <PCApp />
-      <ToastContainer />
-      <EventFeedbackCard />
-      <AIReasoningCutscene />
-      <ResonanceLayer />
+      <I18nProvider>
+        <PCPrototypeStyle />
+        <PCSvgDefs />
+        <PCApp />
+        <ToastContainer />
+        <EventFeedbackCard />
+        <AIReasoningCutscene />
+        <ResonanceLayer />
+      </I18nProvider>
     </ErrorBoundary>
   </StrictMode>,
 )

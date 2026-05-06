@@ -1,0 +1,16 @@
+case_id,sidecar,channel_or_scope,total_variants,non_s5_forbidden_hits,s5_truth_hits,brand_forbidden_hits,result,notes
+family-01,scriptedText,all 18 channels,5262,0,240,0,PASS,S5 hits concentrated in interrogation S5 entries — licensed reveal; non-S5 channels (judge_*/system_message/dossier/aftermath/etc.) all clean
+family-01,interrogation_answers,answers,9360,0,492,0,PASS,S5 entries use truth lexemes (90:10 / 60:40 / 同母异父 / 工厂危机3亿) per disclosure-policy.md §4.2; non-S5 (S0-S4) all use surface substitutes
+family-01,judge_questions,judgeQuestions (always surface-only),780,0,n/a,0,PASS,Judge channel must remain surface-only; 0 forbidden hits across all 780 variants
+family-01,angle_catalog,angle.label + angle.description,52,0,n/a,0,PASS,Catalog labels and descriptions never contain truth lexemes
+family-01,phase1Dialogue,dialogue.text + options[].text,~40 strings,0,n/a,0,PASS,Pre-interrogation phase; surface-only by design
+family-01,mediationDialogue,judge + dialogues,12,0,n/a,0,PASS,Mediation phase; surface paraphrase used
+family-01,generatedCaseSurface,UI surface fields only,40,0,n/a,0,PASS,case-data overlay only writes surfaceName/surfaceDescription/disputes.name/etc.
+friend-01,scriptedText,all 18 channels,5097,0,530,0,PASS,S5 interrogation entries use friend-01 truth lexemes (准新郎接近 / 父亲诈骗 / 投资名义诈骗 / B的警告意图 / 不是勾引而是警告 / 同样模式 / 越界消息 / etc.) per disclosure-policy.md §4.3
+friend-01,interrogation_answers,answers,6300,0,0,0,PASS but soft S5,S5 entries use softer surface paraphrase (提个醒 / 想拦下来 / 想替她拦住父亲) rather than literal forbidden tokens — narratively-valid follow-up per Thread-24 recheck v2 §4 (waives 100% literal substring)
+friend-01,judge_questions,judgeQuestions (always surface-only),600,0,n/a,0,PASS,Judge channel surface-only; 0 forbidden hits
+friend-01,angle_catalog,angle.label + angle.description,40,0,n/a,0,PASS,
+friend-01,phase1Dialogue,dialogue.text + options[].text,~40 strings,0,n/a,0,PASS,
+friend-01,mediationDialogue,judge + dialogues,12,0,n/a,0,PASS,
+friend-01,generatedCaseSurface,UI surface fields only,40,0,n/a,0,PASS,
+total_audited,both cases all surfaces,n/a,~27000 strings,0,1262,0,PASS,Zero non-S5 forbidden lexeme leaks; zero brand forbidden hits; truth boundary holds

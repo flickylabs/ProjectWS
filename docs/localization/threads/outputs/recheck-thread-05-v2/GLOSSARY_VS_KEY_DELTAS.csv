@@ -1,0 +1,47 @@
+term_id,locale,glossary_line,glossary_current,canonical_value,source_of_canonical,deviation_type,recommendation
+responsibility,note,30,"JA uses ???? and zh-CN uses ????","JA uses 責任配分 and zh-CN uses 责任分配",verdict.ts:96 (JA) + verdict.ts:138 (zh-CN),encoding-corruption,P0 patch glossary.csv line 30 note text.
+emotion_defensive,zh-CN,100,??,防备,hotbar.ts:297,encoding-corruption,P0 patch glossary.csv line 100 zh-CN field.
+emotion_angry,zh-CN,103,??,激动,hotbar.ts:300,encoding-corruption,P0 patch glossary.csv line 103 zh-CN field.
+lie_state_s0,ja,105,??,防御,verdict.ts:89,encoding-corruption,P0 patch glossary.csv line 105 JA field.
+lie_state_s0,zh-CN,105,??,防备,verdict.ts:131,encoding-corruption,P0 patch glossary.csv line 105 zh-CN field.
+lie_state_s3,zh-CN,108,????,被逼入角,verdict.ts:134,encoding-corruption,P0 patch glossary.csv line 108 zh-CN field.
+lie_state_s4,ko,109,??,한계,verdict.ts:9,encoding-corruption,P0 patch glossary.csv line 109 KO field.
+lie_state_s4,ja,109,??,限界,verdict.ts:93,encoding-corruption,P0 patch glossary.csv line 109 JA field.
+lie_state_s4,zh-CN,109,????,到达极限,verdict.ts:135,encoding-corruption,P0 patch glossary.csv line 109 zh-CN field.
+lie_state_s5,ko,110,??,고백,verdict.ts:10,encoding-corruption,P0 patch glossary.csv line 110 KO field.
+lie_state_s5,ja,110,??,告白,verdict.ts:94,encoding-corruption,P0 patch glossary.csv line 110 JA field.
+lie_state_s5,zh-CN,110,??,承认,verdict.ts:136,encoding-corruption,P0 patch glossary.csv line 110 zh-CN field.
+lie_state_s5,note,110,"JA ?? and zh-CN ?? require native/legal nuance review","JA 告白 and zh-CN 承认 require native/legal nuance review",—,encoding-corruption,P0 patch glossary.csv line 110 note text.
+verdict_step_fact_finding,ko,138,01 ?? ??,01 쟁점 판단,verdict.ts:11,encoding-corruption,P0 patch glossary.csv line 138 KO field.
+verdict_step_fact_finding,ja,138,????,争点判断,verdict.ts:95,encoding-corruption,P0 patch glossary.csv line 138 JA field.
+verdict_step_fact_finding,zh-CN,138,????,争议判断,verdict.ts:137,encoding-corruption,P0 patch glossary.csv line 138 zh-CN field.
+verdict_step_resolution,ko,139,03 ???,03 해결안,verdict.ts:13,encoding-corruption,P0 patch glossary.csv line 139 KO field.
+verdict_step_resolution,ja,139,???,解決案,verdict.ts:97,encoding-corruption,P0 patch glossary.csv line 139 JA field.
+verdict_step_resolution,zh-CN,139,????,解决方案,verdict.ts:139,encoding-corruption,P0 patch glossary.csv line 139 zh-CN field.
+verdict_step_decision,ko,140,04 ???,04 판결문,verdict.ts:14,encoding-corruption,P0 patch glossary.csv line 140 KO field.
+verdict_step_decision,ja,140,???,判決文,verdict.ts:98,encoding-corruption,P0 patch glossary.csv line 140 JA field.
+verdict_step_decision,zh-CN,140,???,判决书,verdict.ts:140,encoding-corruption,P0 patch glossary.csv line 140 zh-CN field.
+truth (in `pc.record.noConfirmedFacts`),ja,layout.ts:645,確定した真実,確定した真相,glossary truth=真相,glossary-misalignment,P1 patch layout.ts:645. Single character 真実→真相 to align with court.ts:74 conditionsMissing patch already applied.
+truth (in intro slides),ja,home.ts:80 + 81,食い違う真実,(stylistic — keep or align),locked brand subtitle uses 真実,brand-cohesion-vs-glossary,P2 native review choice. Recommend keep 真実 (brand cohesion) and document.
+emotion_defensive,en,100,Defensive (already updated by Codex),Defensive,verdict.ts emotion meter,match,—
+emotion_angry,en,103,Agitated (already updated by Codex),Agitated,hotbar.ts emotion meter,match,—
+emotion_resigned,zh-CN,104,认命,认命,decision 8 confirmed,match,—
+lie_state_s0,en,105,Defensive (Codex schema),Defensive,verdict.ts:47,match,—
+lie_state_s1,en|ja|zh-CN,106,Shaken / 動揺 / 动摇,Shaken / 動揺 / 动摇,verdict.ts,match,—
+lie_state_s2,en|ja|zh-CN,107,Excusing / 弁明 / 辩解,Excusing / 弁明 / 辩解,verdict.ts,match,—
+lie_state_s3,en|ja,108,Cornered / 窮地,Cornered / 窮地,verdict.ts,match,—
+lie_state_s4,en,109,At Limit (Codex schema),At Limit,verdict.ts:51,match,—
+lie_state_s5,en,110,Confessed (Codex schema),Confessed,verdict.ts:52,match,—
+verdict_step_fact_finding,en,138,Fact Finding,Fact Finding,verdict.ts:53,match,—
+verdict_step_resolution,en,139,Resolution,Resolution,verdict.ts:55,match,—
+verdict_step_decision,en,140,Decision,Decision,verdict.ts:56,match,—
+brand_full_title,en|ja|zh-CN,73,locked,Verdict Zero: Trial of Truth / ソロモンのジレンマ：真実の裁き / 真相裁决：零点审判,common.ts,locked-pass,—
+fact_pursuit,en,—,Fact Pursuit,Fact Pursuit,hotbar.ts:88,match,—
+motive_search,en,—,Motive Search,Motive Search,hotbar.ts:91,match,—
+empathy_approach,en,—,Empathy Approach,Empathy Approach,hotbar.ts:94,match,—
+free_question,en,—,Free Question,Free Question,hotbar.ts:97,match,—
+separate_interrogation,en,—,Separate Interrogation,Separate Interrogation,hotbar.ts:135,match,—
+confidential_protection,en,—,Confidential Protection,Confidential Protection,hotbar.ts:139,match,—
+demand_answer,en,—,Demand Answer,Demand Answer,hotbar.ts:143,match,—
+court_control,all,—,Court Control / 法廷掌握 / 法庭掌控,(no inline KO leak in 6 sibling components),—,match,—
+project_solomon,all,—,(forbidden as user-facing),(zero matches in messages/** + components/pc/**),—,verified-clean,—

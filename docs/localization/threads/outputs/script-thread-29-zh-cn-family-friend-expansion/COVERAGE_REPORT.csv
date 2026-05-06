@@ -1,0 +1,15 @@
+case_id,surface,ko_entries,ko_variants_total,zh_cn_filled,coverage_pct,strict_pass,notes
+family-01,scriptedText,632,5262,5262,100.0,yes,18 channels covered: interrogation/evidence_present/dossier/witness/aftermath/system_message/contradiction_pursuit/interjection/emotional_overload/evidence_discovery/trust_action/mediation/judge_question/judge_contradiction/judge_evidence_combo/judge_witness_summon/rapport_milestone/contradict_milestone
+family-01,angle_catalog,26,52,52,100.0,yes,label + description per angle
+family-01,judge_questions,156,780,780,100.0,yes,5 variants per entry; 3-opener × 3-closer pool with pair grid (0,0)(1,1)(2,2)(0,1)(1,2)
+family-01,interrogation_answers,936,9360,9360,100.0,yes,10 variants per entry; sentence-pool variation gate
+family-01,phase1Dialogue,34,34,29,85.3,n/a,5 choice nodes have empty source text by schema; choice options translated via options[] (validator does not enforce)
+family-01,mediationDialogue,4 paths,12 lines,12,100.0,n/a,4 paths × judge + 2 dialogues per path
+family-01,generatedCaseSurface,n/a,~40 fields,40,100.0,n/a,meta.title + context + duo + 5 disputes + 7 evidence (surfaceName + surfaceDescription)
+friend-01,scriptedText,605,5097,5097,100.0,yes,18 channels covered same as family-01
+friend-01,angle_catalog,20,40,40,100.0,yes,label + description per angle
+friend-01,judge_questions,120,600,600,100.0,yes,5 variants per entry; 3-opener × 3-closer pair grid
+friend-01,interrogation_answers,720,6300,6300,100.0,yes,~9 variants per entry; KO-sentence-map composition
+friend-01,phase1Dialogue,34,34,29,85.3,n/a,Same as family-01 — 5 choice nodes have empty source text; options[] used for choices
+friend-01,mediationDialogue,4 paths,12 lines,12,100.0,n/a,Same shape as family-01
+friend-01,generatedCaseSurface,n/a,~40 fields,40,100.0,n/a,meta.title + context + duo + 5 disputes + 7 evidence

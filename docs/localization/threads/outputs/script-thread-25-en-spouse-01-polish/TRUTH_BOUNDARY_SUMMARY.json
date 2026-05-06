@@ -1,0 +1,14 @@
+{
+  "generatedAt": "2026-05-06T16:08:23.183Z",
+  "forbiddenLexemeCount": 25,
+  "violations": {
+    "total": 0,
+    "bySurface": {}
+  },
+  "s5Strength": {
+    "totalS5Variants": 1560,
+    "strongS5Variants": 1205,
+    "weakS5Variants": 355,
+    "strongS5Ratio": 0.772
+  }
+}

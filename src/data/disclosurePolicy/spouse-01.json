@@ -302,6 +302,146 @@
       "가족 일": "개인적인 일"
     }
   },
+  "localePolicy": {
+    "schemaVersion": "script-localization-v1",
+    "status": "tier-a-draft",
+    "forbiddenLexemes": {
+      "en": [
+        "older brother",
+        "brother",
+        "brother's family",
+        "niece",
+        "nephew",
+        "middle school niece",
+        "Gaeun",
+        "family support",
+        "power of attorney manipulation",
+        "forged power of attorney",
+        "investment fraud",
+        "brother's debt",
+        "brother's officetel",
+        "under brother's name",
+        "sent to his brother",
+        "school supplies",
+        "school notice",
+        "proxy signature",
+        "total loss"
+      ],
+      "ja": [
+        "兄",
+        "実兄",
+        "姪",
+        "甥",
+        "中学生の姪",
+        "ガウン",
+        "家族支援",
+        "委任状偽造",
+        "偽造委任状",
+        "投資詐欺",
+        "兄の借金",
+        "兄のオフィステル",
+        "兄名義",
+        "兄に渡した",
+        "学用品",
+        "学校通知",
+        "代理署名",
+        "全額損失"
+      ],
+      "zh-CN": [
+        "哥哥",
+        "亲哥哥",
+        "侄女",
+        "侄子",
+        "中学生侄女",
+        "佳恩",
+        "家人支援",
+        "委托书造假",
+        "伪造委托书",
+        "投资诈骗",
+        "哥哥的债",
+        "哥哥的办公公寓",
+        "哥哥名义",
+        "转给哥哥",
+        "学习用品",
+        "学校通知",
+        "代签",
+        "全部亏损"
+      ]
+    },
+    "paraphraseLexemes": {
+      "en": [
+        "brother's child",
+        "school costs for the child",
+        "supporting his brother's family",
+        "signed for someone else",
+        "wired to his brother",
+        "lost everything in the investment"
+      ],
+      "ja": [
+        "兄の子",
+        "子どもの学費",
+        "兄一家を支えた",
+        "他人の代わりに署名",
+        "兄へ送金",
+        "投資で全損"
+      ],
+      "zh-CN": [
+        "哥哥的孩子",
+        "孩子的学费",
+        "支援哥哥一家",
+        "替别人签字",
+        "汇给哥哥",
+        "投资全损"
+      ]
+    },
+    "uiSurfaceMap": {
+      "en": {
+        "surfaceOnlyChannels": ["judge_question", "judge_contradiction", "judge_evidence_combo", "judge_witness_summon", "system_message", "dossier"],
+        "truthGate": "S5",
+        "localizeFields": ["surfaceName", "surfaceDescription", "label", "description", "text", "judge", "choices.text"],
+        "doNotLocalizeFields": ["id", "key", "tags", "sourceRefs", "behaviorHint", "evidence.name"],
+        "safeSubstitutes": {
+          "brother": "family member",
+          "niece": "child",
+          "school notice": "schedule notice",
+          "power of attorney manipulation": "document handling issue",
+          "investment fraud": "investment loss issue"
+        }
+      },
+      "ja": {
+        "surfaceOnlyChannels": ["judge_question", "judge_contradiction", "judge_evidence_combo", "judge_witness_summon", "system_message", "dossier"],
+        "truthGate": "S5",
+        "localizeFields": ["surfaceName", "surfaceDescription", "label", "description", "text", "judge", "choices.text"],
+        "doNotLocalizeFields": ["id", "key", "tags", "sourceRefs", "behaviorHint", "evidence.name"],
+        "safeSubstitutes": {
+          "兄": "家族",
+          "姪": "子ども",
+          "学校通知": "予定通知",
+          "委任状偽造": "書類処理の経緯",
+          "投資詐欺": "投資損失の経緯"
+        }
+      },
+      "zh-CN": {
+        "surfaceOnlyChannels": ["judge_question", "judge_contradiction", "judge_evidence_combo", "judge_witness_summon", "system_message", "dossier"],
+        "truthGate": "S5",
+        "localizeFields": ["surfaceName", "surfaceDescription", "label", "description", "text", "judge", "choices.text"],
+        "doNotLocalizeFields": ["id", "key", "tags", "sourceRefs", "behaviorHint", "evidence.name"],
+        "safeSubstitutes": {
+          "哥哥": "家人",
+          "侄女": "孩子",
+          "学校通知": "日程通知",
+          "委托书造假": "文件处理经过",
+          "投资诈骗": "投资损失经过"
+        }
+      }
+    },
+    "notes": [
+      "Tier A locale blocks are populated for wrapper-gated script translation.",
+      "KO forbiddenLexemes remains canonical for current runtime guard.",
+      "evidence.name is not localized in v1; translate surfaceName only.",
+      "behaviorHint remains KO-only until the Tier B policy decision lands."
+    ]
+  },
   "channelAuthority": {
     "surfaceOnly": [
       {

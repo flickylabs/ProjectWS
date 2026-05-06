@@ -1,0 +1,140 @@
+{
+  "schemaVersion": 1,
+  "caseId": "spouse-01",
+  "locale": "zh-CN",
+  "overlayKind": "angle_catalog",
+  "angles": [
+    {
+      "disputeId": "d-1",
+      "angleId": "general",
+      "label": "造访与通话经过",
+      "description": "在同一条怀疑线上，把公寓造访、凌晨通话、收据上的物品一起核对。"
+    },
+    {
+      "disputeId": "d-1",
+      "angleId": "visit_route",
+      "label": "公寓造访动线",
+      "description": "确认下班后反复前往同一栋公寓的时间、路线与停留目的。"
+    },
+    {
+      "disputeId": "d-1",
+      "angleId": "call_record",
+      "label": "凌晨通话与未登记号码",
+      "description": "确认凌晨的简短通话与未登记号码的短信对话，究竟是哪一类紧急联络。"
+    },
+    {
+      "disputeId": "d-1",
+      "angleId": "family_items",
+      "label": "收据中的物品",
+      "description": "确认在车里发现的女性用品与文具，到底是为谁购置的。"
+    },
+    {
+      "disputeId": "d-1",
+      "angleId": "affair_denial",
+      "label": "外遇怀疑的否认",
+      "description": "把公寓、电话、物品是否真的是外遇情形——区分清楚。"
+    },
+    {
+      "disputeId": "d-1",
+      "angleId": "concealment_reason",
+      "label": "瞒下来的理由",
+      "description": "确认为何不把造访、通话与物品向配偶说明。"
+    },
+    {
+      "disputeId": "d-2",
+      "angleId": "general",
+      "label": "整笔提款经过",
+      "description": "确认个人账户整笔提款、现金流向、把配偶排除在外的问题。"
+    },
+    {
+      "disputeId": "d-2",
+      "angleId": "cash_withdrawal",
+      "label": "3,000 万韩元现金提款",
+      "description": "李俊昊名下另一账户在最近四个月内分批提出 3,000 万韩元现金，确认时点与方式。"
+    },
+    {
+      "disputeId": "d-2",
+      "angleId": "private_fund_boundary",
+      "label": "个人资金与共同财产的界线",
+      "description": "提款来源是共同储蓄还是个人账户？没向配偶说明的责任又是什么？分开来看。"
+    },
+    {
+      "disputeId": "d-2",
+      "angleId": "recipient_reason",
+      "label": "现金交付对象与原因",
+      "description": "确认提取的现金交到谁手上、出于什么经过。"
+    },
+    {
+      "disputeId": "d-2",
+      "angleId": "consent_boundary",
+      "label": "未经配偶同意",
+      "description": "即使是个人资金，未告知配偶就动用大额钱款，这一项责任要追问。"
+    },
+    {
+      "disputeId": "h-d3",
+      "angleId": "general",
+      "label": "储蓄·汇款经过",
+      "description": "依次确认共同储蓄解约、委托文件、投资群汇款与亏损经过。"
+    },
+    {
+      "disputeId": "h-d3",
+      "angleId": "savings_cancellation",
+      "label": "共同储蓄解约",
+      "description": "确认共同储蓄是何时、由谁申请解约的。"
+    },
+    {
+      "disputeId": "h-d3",
+      "angleId": "proxy_document",
+      "label": "委托文件与签名经过",
+      "description": "确认委托书签名的填写经过与是否真的取得了同意。"
+    },
+    {
+      "disputeId": "h-d3",
+      "angleId": "investment_room",
+      "label": "投资群汇款经过",
+      "description": "确认解约后的款项流向投资群的经过与加入路径。"
+    },
+    {
+      "disputeId": "h-d3",
+      "angleId": "loss_responsibility",
+      "label": "亏损与法律责任",
+      "description": "把钱消失这一结果与文件处理责任，从情绪受害主张中分离开。"
+    },
+    {
+      "disputeId": "h-d4",
+      "angleId": "general",
+      "label": "责任先后",
+      "description": "瞒下、查账、动钱、违反文件——别捆成一团，要分开看。"
+    },
+    {
+      "disputeId": "h-d4",
+      "angleId": "concealment_sequence",
+      "label": "瞒下的起点",
+      "description": "谁先开始瞒？把瞒下与执行分开来确认。"
+    },
+    {
+      "disputeId": "h-d4",
+      "angleId": "account_monitoring",
+      "label": "查账的起点",
+      "description": "确认朴智妍是从什么时候开始查看账户的，以及这一行为的责任。"
+    },
+    {
+      "disputeId": "h-d4",
+      "angleId": "execution_timeline",
+      "label": "资金动用的时点",
+      "description": "把李俊昊的现金提款与朴智妍解约共同储蓄、汇款的时点，按时间顺序排开。"
+    },
+    {
+      "disputeId": "h-d4",
+      "angleId": "illegal_boundary",
+      "label": "越过法律边界的行为",
+      "description": "把动机另置一旁，附带法律责任的文件处理与资金流转，单独分开看。"
+    },
+    {
+      "disputeId": "h-d4",
+      "angleId": "responsibility_split",
+      "label": "分别记录的责任",
+      "description": "不是‘谁更坏’，而是把瞒下、监视、执行、违法性各自分开来记录。"
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+namespace,key,current_en,proposed_en,status,notes
+common,app.title,Verdict Zero: Trial of Truth,Verdict Zero: Trial of Truth,ok,Matches glossary brand_full_title (locked).
+common,brand.internalProjectName,Project_Solomon,Project_Solomon,ok,Matches glossary internal_project_name (locked). Never user-facing.
+common,brand.title,Verdict Zero,Verdict Zero,ok,Matches glossary brand_title (locked).
+common,brand.subtitle,Trial of Truth,Trial of Truth,ok,Matches glossary brand_subtitle (locked).
+common,brand.fullTitle,Verdict Zero: Trial of Truth,Verdict Zero: Trial of Truth,ok,Matches glossary brand_full_title (locked).
+common,splash.subtitle,COURT SIMULATION GAME,COURT SIMULATION GAME,ok,Genre eyebrow under splash title. ALL-CAPS English suits Steam-style splash.
+common,language.selectorLabel,Language,Language,ok,
+common,language.selectorTitle,Select display language,Select display language,ok,Lower-case sentence — used as title attribute.
+common,steam.authRequired.title,Steam authentication required,Steam authentication required,ok,
+common,steam.authRequired.description,"Check the Steam client and server authentication state, then try again.","Check the Steam client and server authentication state, then try again.",ok,
+common,steam.authRequired.retry,Retry,Retry,ok,
+common,steam.authFailedFallback,Steam authentication failed.,Steam authentication failed.,ok,
+common,session.preparing.title,Preparing session,Preparing session,ok,
+common,session.preparing.description,Loading case data and the courtroom environment.,Loading case data and the courtroom environment.,ok,
+settings,settings.about.credits.title,Verdict Zero: Trial of Truth,Verdict Zero: Trial of Truth,ok,Matches glossary brand_full_title (locked).
+settings,settings.about.credits.description,A replayable courtroom deduction game about judging AI testimony with human reasoning.,A replayable courtroom deduction game where you weigh AI testimony against the truth.,changed,Reads more naturally and aligns with `Trial of Truth` subtitle. needs_native_review.
+settings,settings.language.title,Language,Language,ok,
+settings,settings.language.description,Choose the display language for the game UI.,Choose the display language for the game UI.,ok,
+settings,settings.language.displayLanguage,Display language,Display Language,changed,Title Case per English Rules § major UI labels. Style guide: "Use title case for major UI labels".
+settings,settings.language.displayLanguageDescription,"Applies immediately to home, settings, and system UI.","Applies immediately to home, settings, and system UI.",ok,
+settings,settings.language.current,Current language,Current Language,changed,Title Case per style guide.
+settings,settings.language.restartNote,Some case text and stored records may refresh after the next screen transition.,Some case text and saved records may refresh after the next screen transition.,changed,"`saved records` matches the broader save-data wording used elsewhere; `stored records` is correct but slightly archaic."
+home,home.gameTitle,Verdict Zero: Trial of Truth,Verdict Zero: Trial of Truth,ok,Matches glossary brand_full_title (locked). Used as hero on home screen.
+home,home.tagline,Take the bench and weigh every claim against the truth.,Take the bench and weigh every claim against the truth.,ok,Brand-clean — does not reference `Solomon`. Conveys judge/wisdom theme aligned with brand_title `Verdict Zero`.
+home,pc.home.moreCases,+{count} more,+{count} more,ok,
+home,pc.home.countdown.ready,Ready soon,Ready soon,ok,
+home,pc.home.countdown.minutesSeconds,{minutes}m {seconds}s,{minutes}m {seconds}s,ok,Compact countdown — fits header chip.
+home,pc.home.countdown.seconds,{seconds}s,{seconds}s,ok,
+home,pc.resolutionConfirm.rollback,Reverting to the previous resolution in {seconds}s.,Reverting to the previous resolution in {seconds}s.,ok,
+court,pc.notes.unseen,({count} unseen),({count} unverified),changed,KO `미확인 항목` = unverified/unconfirmed. `unseen` is a tonal mismatch — items have been seen but not investigated/verified. `unverified` matches the gameplay meaning.
+court,pc.combo.ready,{count} ready to combine - available now,{count} ready to combine — connect now,changed,"`available now` is redundant after `ready to combine`. `connect now` is a clearer player verb. Em-dash for typography parity."
+court,pc.combo.potential,{count} clue needed - a missing lead remains,{count} leads still missing — keep investigating,changed,Singular/plural mismatch in current EN (`clue needed` with `{count}`). Reframes as actionable hint. needs_native_review.
+court,pc.combo.readyPairToast,A combinable pair is ready,A combinable pair is ready,ok,
+court,pc.combo.readyItemsNotice,{count} combinable items are available,{count} combinable items available,changed,Drops `are` for compactness — fits notice chip width.
+court,pc.combo.readyMaterialsNotice,{count} combinable materials are ready,{count} combinable materials ready,changed,Drops `are` for compactness.
+court,pc.combo.readyDetailLabel,Combinable item details,Combinable Item Details,changed,Title Case per style guide § major UI labels.
+court,pc.recordSummary.moreConvincing,{party}'s claim was judged more convincing.,{party}’s claim is more convincing.,changed,"Two changes: (1) typographic apostrophe `’` per English Rules. (2) Present tense reads better in a summary panel — KO `판단했습니다` is past tense but EN UI summary convention prefers present."
+court,pc.verdictAdvance.minimumVisible,Verdict requires at least {required} revealed disputes. Currently revealed: {visible}.,A verdict needs at least {required} revealed disputes. Currently revealed: {visible}.,changed,"`A verdict needs` is a smoother sentence opener than `Verdict requires`."
+court,pc.verdictAdvance.conditionsMissing,"Verdict conditions are not met yet. Check each dispute, truth, and evidence first.","Verdict conditions are not met yet. Verify each dispute, truth, and evidence first.",changed,"`Verify` matches the unverified/check semantic; `check` is more passive. Minor."
+court,pc.verdictAdvance.hidden.title,Unrevealed disputes remain,Unrevealed disputes remain,ok,
+court,pc.verdictAdvance.hidden.subtitle,Before verdict,Before the verdict,changed,Reads more natural in EN with article.
+court,pc.verdictAdvance.hidden.body,{visible} disputes are currently revealed.\n{hidden} unrevealed disputes remain.\n\nProceed to verdict anyway?,{visible} disputes are currently revealed.\n{hidden} disputes remain hidden.\n\nProceed to the verdict anyway?,changed,"`disputes remain hidden` mirrors the visibleTag/hiddenTag binary; second line drops repeated `unrevealed`. Article `to the verdict` reads natural."
+court,pc.verdictAdvance.hidden.visibleTag,Revealed {count},Revealed {count},ok,
+court,pc.verdictAdvance.hidden.hiddenTag,Hidden {count},Hidden {count},ok,
+court,pc.verdictAdvance.hidden.confirm,Proceed anyway,Proceed Anyway,changed,Title Case per English Rules § keep button labels short + style guide.
+court,pc.verdictAdvance.hidden.collapse,Hide verdict button,Hide Verdict Button,changed,Title Case per style guide.
+court,pc.verdictAdvance.hidden.keepInvestigating,Keep investigating,Keep Investigating,changed,Title Case per style guide.
+verdict,pc.verdict.factOption.partyClaimCorrect,{party}'s claim is correct,{party}’s claim is correct,changed,Typographic apostrophe `’`.
+verdict,pc.verdict.factOption.partyClaimCorrectWithContradiction,This dispute contradicts the facts - {party}'s claim is correct,This dispute differs from the facts — {party}’s claim is correct,changed,"KO `사실과 다릅니다` reads as `differs from the facts` rather than `contradicts the facts` — softer/closer source nuance. Em-dash + typographic apostrophe."
+verdict,pc.verdict.responsibility.major,Major responsibility: {party},Primary responsibility: {party},changed,"KO `주요 책임` is closer to `Primary` than `Major`. `Primary` reads cleaner alongside `Greater` for the next bucket."
+verdict,pc.verdict.responsibility.greater,Greater responsibility: {party},Greater responsibility: {party},ok,Matches KO `더 큰 책임`.
+verdict,pc.verdict.responsibility.similar,Similar responsibility on both sides,Comparable responsibility on both sides,changed,"`Comparable` reads more legal/judicial than `Similar`. KO `비슷한 책임` is intentionally judgmental, not equivalence-flat. needs_native_review."
+profile,pc.perk.required,{name} required,{name} required,ok,
+profile,pc.profile.fragments.needCount,Need at least {count},At least {count} required,changed,"`At least {count} required` reads cleaner alongside `pc.perk.required` (`{name} required`) — keeps the noun-first pattern."

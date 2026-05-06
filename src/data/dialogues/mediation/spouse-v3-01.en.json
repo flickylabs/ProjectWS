@@ -1,0 +1,55 @@
+{
+  "caseId": "case-spouse-01",
+  "overlayKind": "mediationDialogue",
+  "paths": {
+    "immediate": {
+      "judge": "I will rule on the matter as it currently stands. We move directly to the verdict.",
+      "dialogues": []
+    },
+    "conditional": {
+      "judge": "I will start by proposing a conditional mediation that takes each side's responsibility separately. The studio-apartment visits and late-night calls, the personal-fund withdrawal, and the cancellation of the joint savings will not all be bundled into one matter.",
+      "dialogues": [
+        {
+          "id": "0",
+          "speaker": "a",
+          "text": "If it is a conditional mediation, I can accept that. But the facts about the studio-apartment visits and the late-night calls have to be settled clearly first, or the same suspicion just keeps coming back."
+        },
+        {
+          "id": "1",
+          "speaker": "b",
+          "text": "I can accept the conditional terms as well. But please keep my 30-million-won personal-fund withdrawal and my wife's cancellation of the joint savings as two separate matters."
+        }
+      ]
+    },
+    "postpone": {
+      "judge": "I will fix only the facts that can be confirmed today and reserve the rest. The responsibility for what was hidden and the responsibility for moving first on a judgment will be looked at separately.",
+      "dialogues": [
+        {
+          "id": "0",
+          "speaker": "a",
+          "text": "I can accept reserving a decision. But the studio-apartment visits and the late-night calls at least have to be confirmed today, or all that's left is more guesswork."
+        },
+        {
+          "id": "1",
+          "speaker": "b",
+          "text": "I also think the circumstances need a closer look before any hasty conclusion. But please make it clear that reserving a decision is not the same as being cleared."
+        }
+      ]
+    },
+    "fact_first": {
+      "judge": "Before any solution, I will fix the facts. We start with the order of events: the studio-apartment visits and late-night calls, the 30-million-won withdrawal from the personal account, and the cancellation of the joint savings.",
+      "dialogues": [
+        {
+          "id": "0",
+          "speaker": "a",
+          "text": "I agree with sorting out the facts first. At least the studio-apartment visits and the late-night calls — please confirm those clearly against the records first."
+        },
+        {
+          "id": "1",
+          "speaker": "b",
+          "text": "If facts come before solutions, I can accept that. But please don't let the studio-apartment visits and late-night calls calcify into a finding of an affair."
+        }
+      ]
+    }
+  }
+}

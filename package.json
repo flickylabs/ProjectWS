@@ -35,12 +35,17 @@
     "qa:free-interrogation": "node --experimental-strip-types scripts/qa-free-interrogation-policy.mjs",
     "qa:deep": "node scripts/qa-deep.cjs",
     "qa:visual": "node scripts/qa-visual-report.cjs",
-    "check:policy": "npm run qa:free-interrogation",
+    "check:policy": "node --experimental-strip-types scripts/qa-free-interrogation-policy.mjs",
     "check:sync": "npm run qa:fast",
-    "check:all": "npm run qa:fast && npm run qa:free-interrogation",
+    "check:all": "npm run localization:glossary && npm run localization:scripts:validate && npm run qa:fast && npm run qa:free-interrogation",
+    "check:rc": "npm run check:all && npm run localization:scripts:validate -- --strict",
     "server": "cd server && node index.js",
     "server:dev": "cd server && node --watch index.js",
-    "server:seed": "cd server && node db/seed.js"
+    "server:seed": "cd server && node db/seed.js",
+    "localization:glossary": "node scripts/validate-glossary.mjs",
+    "localization:scripts:extract": "node scripts/extract-script-text.cjs",
+    "localization:scripts:validate": "node scripts/validate-script-locale.cjs",
+    "check:script-locales": "node scripts/validate-script-locale.cjs"
   },
   "dependencies": {
     "react": "^19.2.4",

@@ -34,6 +34,7 @@ import {
   FRAGMENT_VISUALS,
   PCFragmentIcon,
 } from '../progression/PCJudgeProgressionShared'
+import { translate } from '../../../i18n'
 
 interface Props {
   onChange?: (nextState: JudgeProgressionState) => void
@@ -51,8 +52,8 @@ const RESOURCE_LABELS: Record<keyof Resources, string> = {
 }
 
 const MANAGEMENT_TABS: Array<{ id: ManagementTab; label: string; desc: string }> = [
-  { id: 'equip', label: '장착', desc: '보유 타이틀을 슬롯에 배치합니다.' },
-  { id: 'enhance', label: '강화', desc: '판결 조각을 넣어 타이틀 레벨을 올립니다.' },
+  { id: 'equip', label: '장착', desc: '보유 칭호를 슬롯에 배치합니다.' },
+  { id: 'enhance', label: '강화', desc: '판결 조각을 넣어 칭호 레벨을 올립니다.' },
   { id: 'fragments', label: '판결 조각', desc: '보유 조각을 확인하고 교환합니다.' },
 ]
 
@@ -241,10 +242,10 @@ function EquipPanel({
 
   return (
     <div className="jp2__equip-layout">
-      <section className="jp2__equip-slots jp2__equip-slots--wide" aria-label="장착 중인 타이틀">
+      <section className="jp2__equip-slots jp2__equip-slots--wide" aria-label="장착 중인 칭호">
         <div className="jp2__section-head">
           <span className="jp2__eyebrow">Equipped Titles</span>
-          <h4>장착 중인 타이틀</h4>
+          <h4>장착 중인 칭호</h4>
         </div>
         <div className="jp2__slot-pair">
           <SlotDisplay
@@ -401,7 +402,7 @@ function EnhancePanel({
         </div>
 
         <p className="jp2__forge-hint">
-          각 재료 슬롯을 필요한 수량까지 채우면 강화 버튼이 활성화됩니다. 강화가 완료되면 해당 항목 레벨과 타이틀 총 레벨이 함께 올라갑니다.
+          각 재료 슬롯을 필요한 수량까지 채우면 강화 버튼이 활성화됩니다. 강화가 완료되면 해당 항목 레벨과 칭호 총 레벨이 함께 올라갑니다.
         </p>
       </section>
 
@@ -449,9 +450,9 @@ function TitleInfoPanel({
   const currentEffect = getActiveEffect(title, level) || 'Lv.1부터 장착 효과가 열립니다.'
 
   return (
-    <section className="jp2__selected-panel jp2__title-info-panel" aria-label="보유 타이틀">
+    <section className="jp2__selected-panel jp2__title-info-panel" aria-label="보유 칭호">
       <label className="jp2__title-select">
-        <span>타이틀 선택</span>
+        <span>칭호 선택</span>
         <select className="pc-settings-select" value={selectedTitle} onChange={(event) => onSelectTitle(event.target.value as TitleId)}>
           {titles.map((item) => (
             <option key={item.id} value={item.id}>{item.name} · Lv.{getTotalLevel(titleLevels[item.id])}</option>
@@ -502,7 +503,7 @@ function TitleDetailModal({
 }) {
   return (
     <div className="jp2__modal-backdrop" role="presentation" onMouseDown={onClose}>
-      <div className="jp2__title-detail-modal" role="dialog" aria-modal="true" aria-label="타이틀 상세보기" onMouseDown={(event) => event.stopPropagation()}>
+      <div className="jp2__title-detail-modal" role="dialog" aria-modal="true" aria-label="칭호 상세보기" onMouseDown={(event) => event.stopPropagation()}>
         <button className="jp2__modal-close" onClick={onClose} type="button" aria-label="닫기">×</button>
         <div className="jp2__section-head">
           <span className="jp2__eyebrow">Title Effects</span>
@@ -559,7 +560,7 @@ function EquipSlotChoiceModal({
               <button key={slot} className="jp2__slot-choice" onClick={() => onSelect(slot)} type="button">
                 <span>슬롯 {index + 1}</span>
                 <strong>{currentTitle ? `${currentTitle.name} Lv.${currentLevel}` : '비어 있음'}</strong>
-                <small>{currentTitle ? getActiveEffect(currentTitle, currentLevel) : '선택한 타이틀을 장착합니다.'}</small>
+                <small>{currentTitle ? getActiveEffect(currentTitle, currentLevel) : '선택한 칭호를 장착합니다.'}</small>
               </button>
             )
           })}
@@ -644,7 +645,7 @@ function FragmentsPanel({
           </div>
         </div>
         <button className="jp2__action-btn" disabled={!canExchangeFragments(inventory, selectedFragment)} onClick={() => onOpenExchange(selectedFragment)} type="button">
-          {canExchangeFragments(inventory, selectedFragment) ? '조각 교환' : `${EXCHANGE_RATE}개 이상 필요`}
+          {canExchangeFragments(inventory, selectedFragment) ? '조각 교환' : translate('pc.profile.fragments.needCount', { count: EXCHANGE_RATE })}
         </button>
       </section>
 
@@ -738,7 +739,7 @@ function FragmentExchangeModal({
         <div className="jp2__exchange-actions">
           <button className="jp2__action-btn is-ghost" onClick={onClose} type="button">취소</button>
           <button className="jp2__action-btn" disabled={!canExchange} onClick={onExchange} type="button">
-            {canExchange ? '교환 실행' : `${EXCHANGE_RATE}개 이상 필요`}
+            {canExchange ? '교환 실행' : translate('pc.profile.fragments.needCount', { count: EXCHANGE_RATE })}
           </button>
         </div>
       </div>
@@ -763,7 +764,7 @@ function SlotDisplay({
       .filter((key) => bonuses[key])
       .map((key) => `${RESOURCE_LABELS[key]} +${bonuses[key]}`)
       .join(' · ')
-    : '타이틀을 장착하세요'
+    : '칭호를 장착하세요'
 
   return (
     <div className={`jp2__slot${title ? ' is-filled' : ''}`}>

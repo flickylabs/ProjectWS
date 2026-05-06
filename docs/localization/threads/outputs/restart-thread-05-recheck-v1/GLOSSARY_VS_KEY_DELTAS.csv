@@ -1,0 +1,56 @@
+term_id,locale,glossary_value,codex_applied_value,key_path,deviation_type,recommendation
+lie_state_s0,ko,방어,방어,pc.verdict.lieState.S0,match,—
+lie_state_s0,en,Defense,Defensive,pc.verdict.lieState.S0,form-mismatch,Pick scheme — recommend Codex Defensive (adjective form for meter state).
+lie_state_s0,ja,防衛,防御,pc.verdict.lieState.S0,value-mismatch,Update glossary 防衛→防御 OR realign Codex.
+lie_state_s0,zh-CN,防御,防备,pc.verdict.lieState.S0,value-mismatch,Update glossary 防御→防备 (matches Codex emotion_defensive zh-CN choice).
+lie_state_s1,ko,동요,동요,pc.verdict.lieState.S1,match,—
+lie_state_s1,en,Wavering,Shaken,pc.verdict.lieState.S1,form-mismatch,Pick scheme — recommend Codex Shaken (adjective form). Note: collides with emotion_shaken Shaken — acceptable since they are paired concepts on the same character state.
+lie_state_s1,ja,動揺,動揺,pc.verdict.lieState.S1,match,—
+lie_state_s1,zh-CN,动摇,动摇,pc.verdict.lieState.S1,match,—
+lie_state_s2,ko,변명,변명,pc.verdict.lieState.S2,match,—
+lie_state_s2,en,Excuse,Excusing,pc.verdict.lieState.S2,form-mismatch,Pick scheme — recommend Codex Excusing (verb-ing form).
+lie_state_s2,ja,弁明,弁明,pc.verdict.lieState.S2,match,—
+lie_state_s2,zh-CN,辩解,辩解,pc.verdict.lieState.S2,match,—
+lie_state_s3,ko,궁지,궁지,pc.verdict.lieState.S3,match,—
+lie_state_s3,en,Cornered,Cornered,pc.verdict.lieState.S3,match,—
+lie_state_s3,ja,窮地,窮地,pc.verdict.lieState.S3,match,—
+lie_state_s3,zh-CN,窘迫,被逼入角,pc.verdict.lieState.S3,value-mismatch,Update glossary 窘迫→被逼入角 (Codex more vivid; verify with native review).
+lie_state_s4,ko,붕괴,한계,pc.verdict.lieState.S4,value-mismatch,Update glossary 붕괴→한계 — KO source canonical (Codex preserved component literal).
+lie_state_s4,en,Breaking,At Limit,pc.verdict.lieState.S4,value-mismatch,Pick scheme. Recommend Codex At Limit (matches new KO 한계 sense). Update glossary.
+lie_state_s4,ja,崩壊,限界,pc.verdict.lieState.S4,value-mismatch,Update glossary 崩壊→限界 (matches new KO 한계).
+lie_state_s4,zh-CN,崩溃,到达极限,pc.verdict.lieState.S4,value-mismatch,Update glossary 崩溃→到达极限 (matches new KO 한계).
+lie_state_s5,ko,자백,고백,pc.verdict.lieState.S5,value-mismatch,KO source canonical. Update glossary 자백→고백. Note 고백 = `confession` softer than 자백 (legal/formal). Verify design intent.
+lie_state_s5,en,Confession,Confessed,pc.verdict.lieState.S5,form-mismatch,Pick scheme — recommend Codex Confessed (verb-ed form for state achieved).
+lie_state_s5,ja,自白,告白,pc.verdict.lieState.S5,value-mismatch,Update glossary 自白→告白 (matches new KO 고백). 告白 reads softer/personal vs legal 自白 — verify with native.
+lie_state_s5,zh-CN,自白,承认,pc.verdict.lieState.S5,value-mismatch,Update glossary 自白→承认 — but 承认 is closer to `admit` than `confess`. Native review recommended; possible alternative 坦白.
+emotion_defensive,ko,경계,경계,pc.hotbar.emotion.defensive,match,—
+emotion_defensive,en,Guarded,Defensive,pc.hotbar.emotion.defensive,value-mismatch,Update glossary Guarded→Defensive (matches lie_state_s0 EN scheme).
+emotion_defensive,ja,警戒,警戒,pc.hotbar.emotion.defensive,match,—
+emotion_defensive,zh-CN,警戒,防备,pc.hotbar.emotion.defensive,value-mismatch,Update glossary 警戒→防备 (matches lie_state_s0 zh-CN consistent rendering).
+emotion_confident,all,Confident/自信/自信,Confident/自信/自信,pc.hotbar.emotion.confident,match,—
+emotion_shaken,all,Shaken/動揺/动摇,Shaken/動揺/动摇,pc.hotbar.emotion.shaken,match,—
+emotion_angry,ko,격앙,격앙,pc.hotbar.emotion.angry,match,—
+emotion_angry,en,Enraged,Agitated,pc.hotbar.emotion.angry,value-mismatch,Update glossary Enraged→Agitated. Both reasonable; Agitated milder.
+emotion_angry,ja,激昂,激昂,pc.hotbar.emotion.angry,match,—
+emotion_angry,zh-CN,激愤,激动,pc.hotbar.emotion.angry,value-mismatch,Update glossary 激愤→激动 (Codex broader/softer; native review).
+emotion_resigned,ko,체념,체념,pc.hotbar.emotion.resigned,match,—
+emotion_resigned,en,Resigned,Resigned,pc.hotbar.emotion.resigned,match,—
+emotion_resigned,ja,諦観,諦観,pc.hotbar.emotion.resigned,match,—
+emotion_resigned,zh-CN,认命,认命,pc.hotbar.emotion.resigned,match,—
+solution,en,Solution,Resolution,pc.verdict.step.solution / .meta.solutions,value-mismatch,Either align Codex to glossary OR add new disambiguator row `verdict_step_solution`=Resolution. Recommend latter (mirrors score_axis_* pattern).
+solution,ja,解決策,解決案,pc.verdict.step.solution / .meta.solutions,value-mismatch,Either align Codex to glossary OR update glossary 解決策→解決案. Recommend the latter — Codex JA matches the original draft glossary value before Thread-02's earlier patch proposal.
+solution,zh-CN,解决方案,解决方案,pc.verdict.step.solution / .meta.solutions,match,—
+verdict,en,Verdict,Decision,pc.verdict.step.confirm,intentional-deviation,Add new disambiguator row `verdict_step_decision`=Decision/判決文/判决书. Frees Verdict for the gameplay phase noun. Mirrors score_axis_authority disambiguator.
+verdict,ja,判決,判決文,pc.verdict.step.confirm,deviation-document-form,Codex 判決文 is more specific than glossary 判決 (verdict statement/document). Add same disambiguator row.
+verdict,zh-CN,判决,判决书,pc.verdict.step.confirm,deviation-document-form,Codex 判决书 is the legal-document form. Same disambiguator row.
+fact (or dispute),en,Fact / Dispute,Fact Finding,pc.verdict.step.fact,no-glossary-row,Add new disambiguator row `verdict_step_fact_finding`=Fact Finding/争点判断/争议判断. Step concept distinct from glossary fact + dispute nouns.
+responsibility,en,Responsibility,Responsibility,pc.verdict.step.responsibility,match-with-suffix,JA + zh-CN add 配分/分配 (allocation suffix) for step sense. Add usage note to glossary responsibility row.
+fact_pursuit,en,Fact Pursuit,Fact Pursuit,pc.hotbar.slot.fact.label,match,—
+motive_search,en,Motive Search,Motive Search,pc.hotbar.slot.motive.label,match,—
+empathy_approach,en,Empathy Approach,Empathy Approach,pc.hotbar.slot.empathy.label,match,—
+free_question,en,Free Question,Free Question,pc.hotbar.slot.free.label,match,—
+separate_interrogation,en,Separate Interrogation,Separate Interrogation,pc.hotbar.special.separation.label,match,—
+confidential_protection,en,Confidential Protection,Confidential Protection,pc.hotbar.special.confidential.label,match,—
+demand_answer,en,Demand Answer,Demand Answer,pc.hotbar.special.immediate.label,match,—
+brand_full_title,en,Verdict Zero: Trial of Truth,(not in this batch — already locked in common.ts),—,—,—
+project_solomon,all,(forbidden user-facing),(zero matches in new files),pc.* keys,verified-clean,Linter passes.

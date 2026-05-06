@@ -1,0 +1,218 @@
+{
+  "caseId": "case-spouse-01",
+  "overlayKind": "phase1Dialogue",
+  "dialogues": [
+    {
+      "id": "0",
+      "speaker": "system",
+      "text": "Park Ji-yeon and Lee Jun-ho, married ten years. They have been sleeping in separate rooms for eight months. The wife, Park Ji-yeon, has filed for trial, claiming her husband is keeping a second household."
+    },
+    {
+      "id": "1",
+      "speaker": "a",
+      "text": "Your Honor, my husband does not come home straight from work. At first I assumed it was overtime. But one month, two months, three months — the same pattern over and over — I couldn't keep sitting still."
+    },
+    {
+      "id": "2",
+      "speaker": "a",
+      "text": "I checked the dashcam and found that he was visiting the same studio apartment every day for two or three hours at a time. The address was saved in his GPS bookmarks."
+    },
+    {
+      "id": "3",
+      "speaker": "b",
+      "text": "Your Honor, that's a misunderstanding."
+    },
+    {
+      "id": "4",
+      "speaker": "choice",
+      "text": "",
+      "options": [
+        {
+          "id": "c1_press_b",
+          "text": "Mr. Lee, you said it was a 'misunderstanding' — please explain specifically which part you mean."
+        },
+        {
+          "id": "c1_let_a",
+          "text": "Mrs. Park, please continue."
+        },
+        {
+          "id": "c1_calm",
+          "text": "Both of you, please calm yourselves. I will hear each side in order."
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "speaker": "b",
+      "text": "…I did go there, yes. But it isn't what my wife thinks it is."
+    },
+    {
+      "id": "6",
+      "speaker": "a",
+      "text": "Honey, what is the misunderstanding? You go there every single day and call it nothing but a misunderstanding? What are you doing there?"
+    },
+    {
+      "id": "7",
+      "speaker": "b",
+      "text": "…There are circumstances. But it's hard to talk about right now."
+    },
+    {
+      "id": "8",
+      "speaker": "a",
+      "text": "A misunderstanding? That's it? That's all you have to say to me?"
+    },
+    {
+      "id": "9",
+      "speaker": "b",
+      "text": "What are you doing… let's not do this here."
+    },
+    {
+      "id": "10",
+      "speaker": "a",
+      "text": "Don't do this here? For eight months, every time I asked, you'd just get angry and lock the door. Then where am I supposed to go, what am I supposed to do?"
+    },
+    {
+      "id": "11",
+      "speaker": "a",
+      "text": "…Yes, I understand. But Your Honor, this isn't about hearing things in order. My husband goes to the same place every single day, takes calls in the middle of the night, and offers no explanation at all — that itself is the problem."
+    },
+    {
+      "id": "12",
+      "speaker": "b",
+      "text": "…I admit my explanation has been lacking."
+    },
+    {
+      "id": "13",
+      "speaker": "a",
+      "text": "Your Honor, my husband is always like this. 'There are reasons,' 'It's complicated,' 'I'll tell you later.' It was the same with my in-laws. There was a major money matter inside that family that he kept from me right to the end."
+    },
+    {
+      "id": "14",
+      "speaker": "choice",
+      "text": "",
+      "options": [
+        {
+          "id": "c2_stop_a",
+          "text": "Mrs. Park, the in-law matter is separate from this case. Please focus on the studio-apartment issue."
+        },
+        {
+          "id": "c2_ask_b",
+          "text": "Mr. Lee, is the in-law matter Mrs. Park just described actually true?"
+        },
+        {
+          "id": "c2_allow",
+          "text": "Please continue."
+        }
+      ]
+    },
+    {
+      "id": "15",
+      "speaker": "a",
+      "text": "Yes… but Your Honor, I really need you to understand — the things my husband hides aren't just one or two."
+    },
+    {
+      "id": "16",
+      "speaker": "b",
+      "text": "…Thank you, Your Honor."
+    },
+    {
+      "id": "17",
+      "speaker": "b",
+      "text": "The matter about my parents' assets… is true. But it has nothing to do with what we are here for today."
+    },
+    {
+      "id": "18",
+      "speaker": "a",
+      "text": "Nothing to do with it? Then where do you think the habit of hiding things came from? You hid it then to the very end, and now you're hiding things again. What's different?"
+    },
+    {
+      "id": "19",
+      "speaker": "b",
+      "text": "Honey, why are you bringing that up again? It has absolutely nothing to do with right now."
+    },
+    {
+      "id": "20",
+      "speaker": "a",
+      "text": "Nothing to do with it? It's exactly the same. Anything happens — you hide it. Then later when it blows up, that's when you say 'there were circumstances.' Tell me I'm wrong."
+    },
+    {
+      "id": "21",
+      "speaker": "b",
+      "text": "Honey, what's the point of dragging old history into this now?"
+    },
+    {
+      "id": "22",
+      "speaker": "a",
+      "text": "Your Honor, that isn't all. There were times in the middle of the night when I heard him through the door, talking on the phone with someone for a long time."
+    },
+    {
+      "id": "23",
+      "speaker": "b",
+      "text": "Your Honor, yes, I was on a call at that hour. But it absolutely is not the kind of thing my wife is imagining."
+    },
+    {
+      "id": "24",
+      "speaker": "a",
+      "text": "There is more concrete evidence too. Receipts I found in his car had hair ties, lip tint, hair rollers — none of these are things I use."
+    },
+    {
+      "id": "25",
+      "speaker": "b",
+      "text": "Those… I bought. Someone I know needed them, so I picked them up. But it absolutely is not what my wife is imagining."
+    },
+    {
+      "id": "26",
+      "speaker": "choice",
+      "text": "",
+      "options": [
+        {
+          "id": "c3_press",
+          "text": "Mr. Lee, who is this 'someone you know'? Answer specifically."
+        },
+        {
+          "id": "c3_empathy",
+          "text": "Mr. Lee, it seems there are circumstances that are difficult to speak about. Even so, this is the place to bring them out."
+        },
+        {
+          "id": "c3_defer",
+          "text": "I will examine this part more closely during interrogation."
+        }
+      ]
+    },
+    {
+      "id": "27",
+      "speaker": "b",
+      "text": "…It's family. Anything beyond that… I can't say right now."
+    },
+    {
+      "id": "28",
+      "speaker": "a",
+      "text": "Family? What family? Something on your mother's side? Your Honor, that's a lie. Whenever my husband mentions any family matter, it's always about his parents who live far away."
+    },
+    {
+      "id": "29",
+      "speaker": "b",
+      "text": "…Thank you, Your Honor. There are circumstances. Given my wife's temper, it would only make things more complicated… For now, this is all I can say."
+    },
+    {
+      "id": "30",
+      "speaker": "a",
+      "text": "Your Honor, look at how my husband is acting. This is why I feel like I'm losing my mind alone. Circumstances he can't even tell his own wife?"
+    },
+    {
+      "id": "31",
+      "speaker": "a",
+      "text": "Your Honor, listen to him. 'Someone I know' — but he can't even say who? What kind of wife is supposed to just accept that?"
+    },
+    {
+      "id": "32",
+      "speaker": "b",
+      "text": "…Thank you."
+    },
+    {
+      "id": "33",
+      "speaker": "system",
+      "text": "The studio-apartment visits, the late-night calls, the receipts — the husband admitted to all of them, but never revealed who the other party was. The two sides' accounts run head-on against each other. The truth must now be confirmed through interrogation."
+    }
+  ]
+}

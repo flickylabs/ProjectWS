@@ -69,20 +69,101 @@ export function loadExtendedHistory(): ExtendedHistoryEntry[] {
     const raw = localStorage.getItem(HISTORY_KEY)
     if (!raw) return []
     const arr = JSON.parse(raw) as any[]
-    return arr.map(migrateEntry)
+    return dedupeHistoryEntries(arr.map(migrateEntry))
   } catch { return [] }
 }
 
 export function saveExtendedHistory(entries: ExtendedHistoryEntry[]): void {
-  const trimmed = entries.slice(0, MAX_HISTORY)
+  const trimmed = dedupeHistoryEntries(entries).slice(0, MAX_HISTORY)
   localStorage.setItem(HISTORY_KEY, JSON.stringify(trimmed))
 }
 
 export function addHistoryEntry(entry: ExtendedHistoryEntry): void {
   const history = loadExtendedHistory()
+  const incomingKey = getHistoryDuplicateKey(entry)
+  const incomingTime = Date.parse(entry.date)
+  const duplicateIndex = history.findIndex((item) => {
+    if (getHistoryDuplicateKey(item) !== incomingKey) return false
+    const itemTime = Date.parse(item.date)
+    if (!Number.isFinite(incomingTime) || !Number.isFinite(itemTime)) return true
+    return Math.abs(incomingTime - itemTime) < 60_000
+  })
+  if (duplicateIndex >= 0) {
+    history[duplicateIndex] = {
+      ...history[duplicateIndex],
+      ...entry,
+      date: history[duplicateIndex].date,
+      resultSnapshot: entry.resultSnapshot ?? history[duplicateIndex].resultSnapshot,
+      verdictDetail: entry.verdictDetail ?? history[duplicateIndex].verdictDetail,
+    }
+    saveExtendedHistory(history)
+    updateHallOfFame(history[duplicateIndex])
+    return
+  }
   history.unshift(entry)
   saveExtendedHistory(history)
   updateHallOfFame(entry)
+}
+
+function dedupeHistoryEntries(entries: ExtendedHistoryEntry[]): ExtendedHistoryEntry[] {
+  const seen = new Map<string, ExtendedHistoryEntry>()
+  for (const entry of entries) {
+    const key = getHistoryDuplicateKey(entry)
+    const existing = seen.get(key)
+    if (!existing) {
+      seen.set(key, entry)
+      continue
+    }
+
+    const existingTime = Date.parse(existing.date)
+    const entryTime = Date.parse(entry.date)
+    const sameMinute = Number.isFinite(existingTime) && Number.isFinite(entryTime)
+      ? Math.abs(existingTime - entryTime) < 60_000
+      : existing.date === entry.date
+    if (!sameMinute) {
+      seen.set(`${key}:${entry.date}`, entry)
+      continue
+    }
+
+    const preferred = entryTime > existingTime ? entry : existing
+    seen.set(key, {
+      ...existing,
+      ...preferred,
+      date: existing.date < preferred.date ? preferred.date : existing.date,
+      resultSnapshot: preferred.resultSnapshot ?? existing.resultSnapshot,
+      verdictDetail: preferred.verdictDetail ?? existing.verdictDetail,
+    })
+  }
+  return Array.from(seen.values())
+    .sort((a, b) => Date.parse(b.date) - Date.parse(a.date))
+}
+
+function getHistoryDuplicateKey(entry: ExtendedHistoryEntry): string {
+  const detail = entry.verdictDetail
+  return stableStringify({
+    caseId: entry.caseId,
+    score: entry.score,
+    insight: entry.insight,
+    authority: entry.authority,
+    wisdom: entry.wisdom,
+    relationshipType: entry.relationshipType,
+    nameA: entry.nameA,
+    nameB: entry.nameB,
+    factFindings: detail?.factFindings ?? {},
+    responsibility: detail?.responsibility ?? {},
+    selectedSolutions: detail?.selectedSolutions ?? [],
+  })
+}
+
+function stableStringify(value: unknown): string {
+  if (Array.isArray(value)) return `[${value.map(stableStringify).join(',')}]`
+  if (value && typeof value === 'object') {
+    return `{${Object.entries(value as Record<string, unknown>)
+      .sort(([a], [b]) => a.localeCompare(b))
+      .map(([key, item]) => `${JSON.stringify(key)}:${stableStringify(item)}`)
+      .join(',')}}`
+  }
+  return JSON.stringify(value)
 }
 
 function findLatestHistoryIndex(history: ExtendedHistoryEntry[], caseId?: string): number {

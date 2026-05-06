@@ -29,7 +29,7 @@ const CONVERSION_ROWS: Array<{
   targets: TraitId[]
 }> = [
   { axisLabel: '탐구 축', neutralFragment: 'inquiry_fragment', targets: ['logical', 'intuitive'] },
-  { axisLabel: '심판 축', neutralFragment: 'deliberation_fragment', targets: ['strict', 'lenient'] },
+  { axisLabel: '판결 균형', neutralFragment: 'deliberation_fragment', targets: ['strict', 'lenient'] },
   { axisLabel: '해결 축', neutralFragment: 'balance_fragment', targets: ['principled', 'reconciling'] },
 ]
 

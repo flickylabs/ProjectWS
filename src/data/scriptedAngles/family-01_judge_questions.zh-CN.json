@@ -1,0 +1,4376 @@
+{
+  "schemaVersion": 1,
+  "caseId": "family-01",
+  "locale": "zh-CN",
+  "overlayKind": "judge_questions",
+  "judgeQuestions": [
+    {
+      "disputeId": "d-1",
+      "questionType": "fact_pursuit",
+      "targetParty": "a",
+      "angleId": "general",
+      "variants": [
+        {
+          "id": "judgeq-d-1-fact_pursuit-a-general-v1",
+          "text": "尹泰成先生，关于母亲在遗嘱上签名前后的场面，您本人在场亲见的部分到哪一步、又是从他人转述得知的部分到哪一步，请就该处先以事实关系作答。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-a-general-v2",
+          "text": "请按时间顺序梳理：关于母亲在遗嘱上签名前后的场面，您本人在场亲见的部分到哪一步、又是从他人转述得知的部分到哪一步，请按资料分类重新整理。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-a-general-v3",
+          "text": "请把已经记录在案的内容与凭印象转述的部分分开来说——关于母亲在遗嘱上签名前后的场面，您本人在场亲见的部分到哪一步、又是从他人转述得知的部分到哪一步，请把亲眼所见与转述听闻分开陈述。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-a-general-v4",
+          "text": "尹泰成先生，关于母亲在遗嘱上签名前后的场面，您本人在场亲见的部分到哪一步、又是从他人转述得知的部分到哪一步，请按资料分类重新整理。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-a-general-v5",
+          "text": "请按时间顺序梳理：关于母亲在遗嘱上签名前后的场面，您本人在场亲见的部分到哪一步、又是从他人转述得知的部分到哪一步，请把亲眼所见与转述听闻分开陈述。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "fact_pursuit",
+      "targetParty": "b",
+      "angleId": "general",
+      "variants": [
+        {
+          "id": "judgeq-d-1-fact_pursuit-b-general-v1",
+          "text": "尹正厚先生，在遗嘱作成的现场，本人亲手做的事与仅在母亲身旁协助的事分别是哪些，请按时间顺序逐项作答。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-b-general-v2",
+          "text": "请按时间顺序梳理：在遗嘱作成的现场，本人亲手做的事与仅在母亲身旁协助的事分别是哪些，请将本人亲自处理与协助他人办理的部分分开作答。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-b-general-v3",
+          "text": "请区分作答：本人亲手参与的环节与仅在旁辅助的部分——在遗嘱作成的现场，本人亲手做的事与仅在母亲身旁协助的事分别是哪些，请就该处先以事实关系作答。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-b-general-v4",
+          "text": "尹正厚先生，在遗嘱作成的现场，本人亲手做的事与仅在母亲身旁协助的事分别是哪些，请将本人亲自处理与协助他人办理的部分分开作答。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-b-general-v5",
+          "text": "请按时间顺序梳理：在遗嘱作成的现场，本人亲手做的事与仅在母亲身旁协助的事分别是哪些，请就该处先以事实关系作答。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "motive_search",
+      "targetParty": "a",
+      "angleId": "general",
+      "variants": [
+        {
+          "id": "judgeq-d-1-motive_search-a-general-v1",
+          "text": "尹泰成先生，在自己并未全程在场的情况下，您却能断言母亲并非出于本意，所依据的判断从哪里来，请说明判断依据是什么。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-a-general-v2",
+          "text": "请说明：当时作出此种判断时，在自己并未全程在场的情况下，您却能断言母亲并非出于本意，所依据的判断从哪里来，请回答当时作此选择的理由。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-a-general-v3",
+          "text": "在把疑虑推到当庭主张这一步之前，在自己并未全程在场的情况下，您却能断言母亲并非出于本意，所依据的判断从哪里来，请就当时的考量先以本人能负责的范围作答。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-a-general-v4",
+          "text": "尹泰成先生，在自己并未全程在场的情况下，您却能断言母亲并非出于本意，所依据的判断从哪里来，请回答当时作此选择的理由。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-a-general-v5",
+          "text": "请说明：当时作出此种判断时，在自己并未全程在场的情况下，您却能断言母亲并非出于本意，所依据的判断从哪里来，请就当时的考量先以本人能负责的范围作答。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "motive_search",
+      "targetParty": "b",
+      "angleId": "general",
+      "variants": [
+        {
+          "id": "judgeq-d-1-motive_search-b-general-v1",
+          "text": "尹正厚先生，从了解到弟弟介入相关流程那一刻起，到您将之视为可疑事件之间，时间上为什么没有先去当面确认母亲，请说明当时作此处置的理由。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-b-general-v2",
+          "text": "请说明：当时作出此种处置时，从了解到弟弟介入相关流程那一刻起，到您将之视为可疑事件之间，时间上为什么没有先去当面确认母亲，请就本人能负责的范围作答。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-b-general-v3",
+          "text": "在把那段过程留在自己手中这一选择背后，从了解到弟弟介入相关流程那一刻起，到您将之视为可疑事件之间，时间上为什么没有先去当面确认母亲，请回答当时的考量是什么。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-b-general-v4",
+          "text": "尹正厚先生，从了解到弟弟介入相关流程那一刻起，到您将之视为可疑事件之间，时间上为什么没有先去当面确认母亲，请就本人能负责的范围作答。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-b-general-v5",
+          "text": "请说明：当时作出此种处置时，从了解到弟弟介入相关流程那一刻起，到您将之视为可疑事件之间，时间上为什么没有先去当面确认母亲，请回答当时的考量是什么。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "empathy_approach",
+      "targetParty": "a",
+      "angleId": "general",
+      "variants": [
+        {
+          "id": "judgeq-d-1-empathy_approach-a-general-v1",
+          "text": "尹泰成先生，您身为长子长年照料这件事，是否在某个环节里转化为对遗嘱内容的预期，那一段心境的来龙去脉，请把您亲眼所见的场面先讲出来。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-a-general-v2",
+          "text": "请在能说的范围内回顾——您身为长子长年照料这件事，是否在某个环节里转化为对遗嘱内容的预期，那一段心境的来龙去脉，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-a-general-v3",
+          "text": "不必现在就下结论。您身为长子长年照料这件事，是否在某个环节里转化为对遗嘱内容的预期，那一段心境的来龙去脉，请把您能说出的部分先讲一段。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-a-general-v4",
+          "text": "尹泰成先生，您身为长子长年照料这件事，是否在某个环节里转化为对遗嘱内容的预期，那一段心境的来龙去脉，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-a-general-v5",
+          "text": "请在能说的范围内回顾——您身为长子长年照料这件事，是否在某个环节里转化为对遗嘱内容的预期，那一段心境的来龙去脉，请把您能说出的部分先讲一段。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "empathy_approach",
+      "targetParty": "b",
+      "angleId": "general",
+      "variants": [
+        {
+          "id": "judgeq-d-1-empathy_approach-b-general-v1",
+          "text": "尹正厚先生，在那段时期，您为母亲作出的安排和母亲实际的反应之间，最让您挂心的一段，请把您亲历的场面先讲出来。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-b-general-v2",
+          "text": "请在能说的范围内回顾——在那段时期，您为母亲作出的安排和母亲实际的反应之间，最让您挂心的一段，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-b-general-v3",
+          "text": "不必现在就下结论。在那段时期，您为母亲作出的安排和母亲实际的反应之间，最让您挂心的一段，请把您能说出的部分先讲一段。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-b-general-v4",
+          "text": "尹正厚先生，在那段时期，您为母亲作出的安排和母亲实际的反应之间，最让您挂心的一段，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-b-general-v5",
+          "text": "请在能说的范围内回顾——在那段时期，您为母亲作出的安排和母亲实际的反应之间，最让您挂心的一段，请把您能说出的部分先讲一段。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "fact_pursuit",
+      "targetParty": "a",
+      "angleId": "mother_intent",
+      "variants": [
+        {
+          "id": "judgeq-d-1-fact_pursuit-a-mother_intent-v1",
+          "text": "尹泰成先生，关于母亲对于遗嘱内容曾亲口表达过的意思，您能够直接复述的部分与仅是事后听人转述的部分分别是哪些，请就该处先以事实关系作答。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-a-mother_intent-v2",
+          "text": "请按时间顺序梳理：关于母亲对于遗嘱内容曾亲口表达过的意思，您能够直接复述的部分与仅是事后听人转述的部分分别是哪些，请按资料分类重新整理。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-a-mother_intent-v3",
+          "text": "请把已经记录在案的内容与凭印象转述的部分分开来说——关于母亲对于遗嘱内容曾亲口表达过的意思，您能够直接复述的部分与仅是事后听人转述的部分分别是哪些，请把亲眼所见与转述听闻分开陈述。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-a-mother_intent-v4",
+          "text": "尹泰成先生，关于母亲对于遗嘱内容曾亲口表达过的意思，您能够直接复述的部分与仅是事后听人转述的部分分别是哪些，请按资料分类重新整理。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-a-mother_intent-v5",
+          "text": "请按时间顺序梳理：关于母亲对于遗嘱内容曾亲口表达过的意思，您能够直接复述的部分与仅是事后听人转述的部分分别是哪些，请把亲眼所见与转述听闻分开陈述。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "fact_pursuit",
+      "targetParty": "b",
+      "angleId": "mother_intent",
+      "variants": [
+        {
+          "id": "judgeq-d-1-fact_pursuit-b-mother_intent-v1",
+          "text": "尹正厚先生，关于母亲对遗嘱内容的理解程度，本人在母亲身边亲眼观察到的反应与本人代为说明的部分分别是哪些，请按时间顺序逐项作答。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-b-mother_intent-v2",
+          "text": "请按时间顺序梳理：关于母亲对遗嘱内容的理解程度，本人在母亲身边亲眼观察到的反应与本人代为说明的部分分别是哪些，请将本人亲自处理与协助他人办理的部分分开作答。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-b-mother_intent-v3",
+          "text": "请区分作答：本人亲手参与的环节与仅在旁辅助的部分——关于母亲对遗嘱内容的理解程度，本人在母亲身边亲眼观察到的反应与本人代为说明的部分分别是哪些，请就该处先以事实关系作答。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-b-mother_intent-v4",
+          "text": "尹正厚先生，关于母亲对遗嘱内容的理解程度，本人在母亲身边亲眼观察到的反应与本人代为说明的部分分别是哪些，请将本人亲自处理与协助他人办理的部分分开作答。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-b-mother_intent-v5",
+          "text": "请按时间顺序梳理：关于母亲对遗嘱内容的理解程度，本人在母亲身边亲眼观察到的反应与本人代为说明的部分分别是哪些，请就该处先以事实关系作答。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "motive_search",
+      "targetParty": "a",
+      "angleId": "mother_intent",
+      "variants": [
+        {
+          "id": "judgeq-d-1-motive_search-a-mother_intent-v1",
+          "text": "尹泰成先生，您并未直接听到母亲表示同意，却仍然认定那不是母亲的本意，请说明判断依据是什么。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-a-mother_intent-v2",
+          "text": "请说明：当时作出此种判断时，您并未直接听到母亲表示同意，却仍然认定那不是母亲的本意，请回答当时作此选择的理由。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-a-mother_intent-v3",
+          "text": "在把疑虑推到当庭主张这一步之前，您并未直接听到母亲表示同意，却仍然认定那不是母亲的本意，请就当时的考量先以本人能负责的范围作答。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-a-mother_intent-v4",
+          "text": "尹泰成先生，您并未直接听到母亲表示同意，却仍然认定那不是母亲的本意，请回答当时作此选择的理由。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-a-mother_intent-v5",
+          "text": "请说明：当时作出此种判断时，您并未直接听到母亲表示同意，却仍然认定那不是母亲的本意，请就当时的考量先以本人能负责的范围作答。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "motive_search",
+      "targetParty": "b",
+      "angleId": "mother_intent",
+      "variants": [
+        {
+          "id": "judgeq-d-1-motive_search-b-mother_intent-v1",
+          "text": "尹正厚先生，在记得母亲意思表达不清的同一段时间里，您当时为何没有当场提出确认请求，请说明当时作此处置的理由。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-b-mother_intent-v2",
+          "text": "请说明：当时作出此种处置时，在记得母亲意思表达不清的同一段时间里，您当时为何没有当场提出确认请求，请就本人能负责的范围作答。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-b-mother_intent-v3",
+          "text": "在把那段过程留在自己手中这一选择背后，在记得母亲意思表达不清的同一段时间里，您当时为何没有当场提出确认请求，请回答当时的考量是什么。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-b-mother_intent-v4",
+          "text": "尹正厚先生，在记得母亲意思表达不清的同一段时间里，您当时为何没有当场提出确认请求，请就本人能负责的范围作答。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-b-mother_intent-v5",
+          "text": "请说明：当时作出此种处置时，在记得母亲意思表达不清的同一段时间里，您当时为何没有当场提出确认请求，请回答当时的考量是什么。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "empathy_approach",
+      "targetParty": "a",
+      "angleId": "mother_intent",
+      "variants": [
+        {
+          "id": "judgeq-d-1-empathy_approach-a-mother_intent-v1",
+          "text": "尹泰成先生，在那段时间里母亲的言行让您对其判断能力产生疑问，最让您难以释怀的一幕，请把您亲眼所见的场面先讲出来。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-a-mother_intent-v2",
+          "text": "请在能说的范围内回顾——在那段时间里母亲的言行让您对其判断能力产生疑问，最让您难以释怀的一幕，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-a-mother_intent-v3",
+          "text": "不必现在就下结论。在那段时间里母亲的言行让您对其判断能力产生疑问，最让您难以释怀的一幕，请把您能说出的部分先讲一段。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-a-mother_intent-v4",
+          "text": "尹泰成先生，在那段时间里母亲的言行让您对其判断能力产生疑问，最让您难以释怀的一幕，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-a-mother_intent-v5",
+          "text": "请在能说的范围内回顾——在那段时间里母亲的言行让您对其判断能力产生疑问，最让您难以释怀的一幕，请把您能说出的部分先讲一段。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "empathy_approach",
+      "targetParty": "b",
+      "angleId": "mother_intent",
+      "variants": [
+        {
+          "id": "judgeq-d-1-empathy_approach-b-mother_intent-v1",
+          "text": "尹正厚先生，您说服自己相信母亲是出于本意的过程中，最不安的一段记忆，请把您亲历的场面先讲出来。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-b-mother_intent-v2",
+          "text": "请在能说的范围内回顾——您说服自己相信母亲是出于本意的过程中，最不安的一段记忆，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-b-mother_intent-v3",
+          "text": "不必现在就下结论。您说服自己相信母亲是出于本意的过程中，最不安的一段记忆，请把您能说出的部分先讲一段。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-b-mother_intent-v4",
+          "text": "尹正厚先生，您说服自己相信母亲是出于本意的过程中，最不安的一段记忆，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-b-mother_intent-v5",
+          "text": "请在能说的范围内回顾——您说服自己相信母亲是出于本意的过程中，最不安的一段记忆，请把您能说出的部分先讲一段。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "fact_pursuit",
+      "targetParty": "a",
+      "angleId": "visit_pattern",
+      "variants": [
+        {
+          "id": "judgeq-d-1-fact_pursuit-a-visit_pattern-v1",
+          "text": "尹泰成先生，在母亲卧床那段时期，您本人前往照看的频次、日期、停留时间等可对照得出的事实关系，请就该处先以事实关系作答。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-a-visit_pattern-v2",
+          "text": "请按时间顺序梳理：在母亲卧床那段时期，您本人前往照看的频次、日期、停留时间等可对照得出的事实关系，请按资料分类重新整理。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-a-visit_pattern-v3",
+          "text": "请把已经记录在案的内容与凭印象转述的部分分开来说——在母亲卧床那段时期，您本人前往照看的频次、日期、停留时间等可对照得出的事实关系，请把亲眼所见与转述听闻分开陈述。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-a-visit_pattern-v4",
+          "text": "尹泰成先生，在母亲卧床那段时期，您本人前往照看的频次、日期、停留时间等可对照得出的事实关系，请按资料分类重新整理。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-a-visit_pattern-v5",
+          "text": "请按时间顺序梳理：在母亲卧床那段时期，您本人前往照看的频次、日期、停留时间等可对照得出的事实关系，请把亲眼所见与转述听闻分开陈述。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "fact_pursuit",
+      "targetParty": "b",
+      "angleId": "visit_pattern",
+      "variants": [
+        {
+          "id": "judgeq-d-1-fact_pursuit-b-visit_pattern-v1",
+          "text": "尹正厚先生，同一段时间里，您前往母亲住处的次数与停留时长等可与记录核对的事实，请按时间顺序逐项作答。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-b-visit_pattern-v2",
+          "text": "请按时间顺序梳理：同一段时间里，您前往母亲住处的次数与停留时长等可与记录核对的事实，请将本人亲自处理与协助他人办理的部分分开作答。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-b-visit_pattern-v3",
+          "text": "请区分作答：本人亲手参与的环节与仅在旁辅助的部分——同一段时间里，您前往母亲住处的次数与停留时长等可与记录核对的事实，请就该处先以事实关系作答。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-b-visit_pattern-v4",
+          "text": "尹正厚先生，同一段时间里，您前往母亲住处的次数与停留时长等可与记录核对的事实，请将本人亲自处理与协助他人办理的部分分开作答。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-b-visit_pattern-v5",
+          "text": "请按时间顺序梳理：同一段时间里，您前往母亲住处的次数与停留时长等可与记录核对的事实，请就该处先以事实关系作答。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "motive_search",
+      "targetParty": "a",
+      "angleId": "visit_pattern",
+      "variants": [
+        {
+          "id": "judgeq-d-1-motive_search-a-visit_pattern-v1",
+          "text": "尹泰成先生，您主张本人探视频度高于对方，作此主张时所依据的可对照资料是哪些，请说明判断依据是什么。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-a-visit_pattern-v2",
+          "text": "请说明：当时作出此种判断时，您主张本人探视频度高于对方，作此主张时所依据的可对照资料是哪些，请回答当时作此选择的理由。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-a-visit_pattern-v3",
+          "text": "在把疑虑推到当庭主张这一步之前，您主张本人探视频度高于对方，作此主张时所依据的可对照资料是哪些，请就当时的考量先以本人能负责的范围作答。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-a-visit_pattern-v4",
+          "text": "尹泰成先生，您主张本人探视频度高于对方，作此主张时所依据的可对照资料是哪些，请回答当时作此选择的理由。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-a-visit_pattern-v5",
+          "text": "请说明：当时作出此种判断时，您主张本人探视频度高于对方，作此主张时所依据的可对照资料是哪些，请就当时的考量先以本人能负责的范围作答。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "motive_search",
+      "targetParty": "b",
+      "angleId": "visit_pattern",
+      "variants": [
+        {
+          "id": "judgeq-d-1-motive_search-b-visit_pattern-v1",
+          "text": "尹正厚先生，您对自己探视频度的强调，与当时本人能腾出的实际时间之间的差距，请说明当时作此处置的理由。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-b-visit_pattern-v2",
+          "text": "请说明：当时作出此种处置时，您对自己探视频度的强调，与当时本人能腾出的实际时间之间的差距，请就本人能负责的范围作答。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-b-visit_pattern-v3",
+          "text": "在把那段过程留在自己手中这一选择背后，您对自己探视频度的强调，与当时本人能腾出的实际时间之间的差距，请回答当时的考量是什么。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-b-visit_pattern-v4",
+          "text": "尹正厚先生，您对自己探视频度的强调，与当时本人能腾出的实际时间之间的差距，请就本人能负责的范围作答。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-b-visit_pattern-v5",
+          "text": "请说明：当时作出此种处置时，您对自己探视频度的强调，与当时本人能腾出的实际时间之间的差距，请回答当时的考量是什么。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "empathy_approach",
+      "targetParty": "a",
+      "angleId": "visit_pattern",
+      "variants": [
+        {
+          "id": "judgeq-d-1-empathy_approach-a-visit_pattern-v1",
+          "text": "尹泰成先生，在那些探视的日子里，母亲对您说过的话当中，至今仍让您难以放下的一段，请把您亲眼所见的场面先讲出来。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-a-visit_pattern-v2",
+          "text": "请在能说的范围内回顾——在那些探视的日子里，母亲对您说过的话当中，至今仍让您难以放下的一段，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-a-visit_pattern-v3",
+          "text": "不必现在就下结论。在那些探视的日子里，母亲对您说过的话当中，至今仍让您难以放下的一段，请把您能说出的部分先讲一段。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-a-visit_pattern-v4",
+          "text": "尹泰成先生，在那些探视的日子里，母亲对您说过的话当中，至今仍让您难以放下的一段，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-a-visit_pattern-v5",
+          "text": "请在能说的范围内回顾——在那些探视的日子里，母亲对您说过的话当中，至今仍让您难以放下的一段，请把您能说出的部分先讲一段。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "empathy_approach",
+      "targetParty": "b",
+      "angleId": "visit_pattern",
+      "variants": [
+        {
+          "id": "judgeq-d-1-empathy_approach-b-visit_pattern-v1",
+          "text": "尹正厚先生，在那段照看母亲的日子里，您本人感到力不从心的一段时刻，请把您亲历的场面先讲出来。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-b-visit_pattern-v2",
+          "text": "请在能说的范围内回顾——在那段照看母亲的日子里，您本人感到力不从心的一段时刻，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-b-visit_pattern-v3",
+          "text": "不必现在就下结论。在那段照看母亲的日子里，您本人感到力不从心的一段时刻，请把您能说出的部分先讲一段。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-b-visit_pattern-v4",
+          "text": "尹正厚先生，在那段照看母亲的日子里，您本人感到力不从心的一段时刻，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-b-visit_pattern-v5",
+          "text": "请在能说的范围内回顾——在那段照看母亲的日子里，您本人感到力不从心的一段时刻，请把您能说出的部分先讲一段。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "fact_pursuit",
+      "targetParty": "a",
+      "angleId": "caregiver_change",
+      "variants": [
+        {
+          "id": "judgeq-d-1-fact_pursuit-a-caregiver_change-v1",
+          "text": "尹泰成先生，在母亲晚期照护安排发生变化的前后，本人参与决定的部分与仅事后获悉的部分分别是哪些，请就该处先以事实关系作答。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-a-caregiver_change-v2",
+          "text": "请按时间顺序梳理：在母亲晚期照护安排发生变化的前后，本人参与决定的部分与仅事后获悉的部分分别是哪些，请按资料分类重新整理。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-a-caregiver_change-v3",
+          "text": "请把已经记录在案的内容与凭印象转述的部分分开来说——在母亲晚期照护安排发生变化的前后，本人参与决定的部分与仅事后获悉的部分分别是哪些，请把亲眼所见与转述听闻分开陈述。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-a-caregiver_change-v4",
+          "text": "尹泰成先生，在母亲晚期照护安排发生变化的前后，本人参与决定的部分与仅事后获悉的部分分别是哪些，请按资料分类重新整理。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-a-caregiver_change-v5",
+          "text": "请按时间顺序梳理：在母亲晚期照护安排发生变化的前后，本人参与决定的部分与仅事后获悉的部分分别是哪些，请把亲眼所见与转述听闻分开陈述。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "fact_pursuit",
+      "targetParty": "b",
+      "angleId": "caregiver_change",
+      "variants": [
+        {
+          "id": "judgeq-d-1-fact_pursuit-b-caregiver_change-v1",
+          "text": "尹正厚先生，在照护安排出现变更的过程里，本人在何时对何事作出了决定，请按时间顺序逐项作答。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-b-caregiver_change-v2",
+          "text": "请按时间顺序梳理：在照护安排出现变更的过程里，本人在何时对何事作出了决定，请将本人亲自处理与协助他人办理的部分分开作答。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-b-caregiver_change-v3",
+          "text": "请区分作答：本人亲手参与的环节与仅在旁辅助的部分——在照护安排出现变更的过程里，本人在何时对何事作出了决定，请就该处先以事实关系作答。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-b-caregiver_change-v4",
+          "text": "尹正厚先生，在照护安排出现变更的过程里，本人在何时对何事作出了决定，请将本人亲自处理与协助他人办理的部分分开作答。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-b-caregiver_change-v5",
+          "text": "请按时间顺序梳理：在照护安排出现变更的过程里，本人在何时对何事作出了决定，请就该处先以事实关系作答。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "motive_search",
+      "targetParty": "a",
+      "angleId": "caregiver_change",
+      "variants": [
+        {
+          "id": "judgeq-d-1-motive_search-a-caregiver_change-v1",
+          "text": "尹泰成先生，在自己并未参与照护安排变更决定的情况下，您却将之视为可疑情节，请说明判断依据是什么。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-a-caregiver_change-v2",
+          "text": "请说明：当时作出此种判断时，在自己并未参与照护安排变更决定的情况下，您却将之视为可疑情节，请回答当时作此选择的理由。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-a-caregiver_change-v3",
+          "text": "在把疑虑推到当庭主张这一步之前，在自己并未参与照护安排变更决定的情况下，您却将之视为可疑情节，请就当时的考量先以本人能负责的范围作答。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-a-caregiver_change-v4",
+          "text": "尹泰成先生，在自己并未参与照护安排变更决定的情况下，您却将之视为可疑情节，请回答当时作此选择的理由。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-a-caregiver_change-v5",
+          "text": "请说明：当时作出此种判断时，在自己并未参与照护安排变更决定的情况下，您却将之视为可疑情节，请就当时的考量先以本人能负责的范围作答。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "motive_search",
+      "targetParty": "b",
+      "angleId": "caregiver_change",
+      "variants": [
+        {
+          "id": "judgeq-d-1-motive_search-b-caregiver_change-v1",
+          "text": "尹正厚先生，当照护安排发生变化时，您本人未当场提出反对，事后却以此为依据，请说明当时作此处置的理由。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-b-caregiver_change-v2",
+          "text": "请说明：当时作出此种处置时，当照护安排发生变化时，您本人未当场提出反对，事后却以此为依据，请就本人能负责的范围作答。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-b-caregiver_change-v3",
+          "text": "在把那段过程留在自己手中这一选择背后，当照护安排发生变化时，您本人未当场提出反对，事后却以此为依据，请回答当时的考量是什么。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-b-caregiver_change-v4",
+          "text": "尹正厚先生，当照护安排发生变化时，您本人未当场提出反对，事后却以此为依据，请就本人能负责的范围作答。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-b-caregiver_change-v5",
+          "text": "请说明：当时作出此种处置时，当照护安排发生变化时，您本人未当场提出反对，事后却以此为依据，请回答当时的考量是什么。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "empathy_approach",
+      "targetParty": "a",
+      "angleId": "caregiver_change",
+      "variants": [
+        {
+          "id": "judgeq-d-1-empathy_approach-a-caregiver_change-v1",
+          "text": "尹泰成先生，在照护变化前后的某一幕里，母亲让您印象最深的一句话或一个动作，请把您亲眼所见的场面先讲出来。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-a-caregiver_change-v2",
+          "text": "请在能说的范围内回顾——在照护变化前后的某一幕里，母亲让您印象最深的一句话或一个动作，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-a-caregiver_change-v3",
+          "text": "不必现在就下结论。在照护变化前后的某一幕里，母亲让您印象最深的一句话或一个动作，请把您能说出的部分先讲一段。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-a-caregiver_change-v4",
+          "text": "尹泰成先生，在照护变化前后的某一幕里，母亲让您印象最深的一句话或一个动作，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-a-caregiver_change-v5",
+          "text": "请在能说的范围内回顾——在照护变化前后的某一幕里，母亲让您印象最深的一句话或一个动作，请把您能说出的部分先讲一段。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "empathy_approach",
+      "targetParty": "b",
+      "angleId": "caregiver_change",
+      "variants": [
+        {
+          "id": "judgeq-d-1-empathy_approach-b-caregiver_change-v1",
+          "text": "尹正厚先生，在那段照护安排变化之中，您觉得对母亲有亏欠的一段时刻，请把您亲历的场面先讲出来。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-b-caregiver_change-v2",
+          "text": "请在能说的范围内回顾——在那段照护安排变化之中，您觉得对母亲有亏欠的一段时刻，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-b-caregiver_change-v3",
+          "text": "不必现在就下结论。在那段照护安排变化之中，您觉得对母亲有亏欠的一段时刻，请把您能说出的部分先讲一段。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-b-caregiver_change-v4",
+          "text": "尹正厚先生，在那段照护安排变化之中，您觉得对母亲有亏欠的一段时刻，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-b-caregiver_change-v5",
+          "text": "请在能说的范围内回顾——在那段照护安排变化之中，您觉得对母亲有亏欠的一段时刻，请把您能说出的部分先讲一段。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "fact_pursuit",
+      "targetParty": "a",
+      "angleId": "notarization_flow",
+      "variants": [
+        {
+          "id": "judgeq-d-1-fact_pursuit-a-notarization_flow-v1",
+          "text": "尹泰成先生，关于公证现场所走过的程序，本人亲眼所见的步骤与仅依据公证副本得知的步骤分别是哪些，请就该处先以事实关系作答。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-a-notarization_flow-v2",
+          "text": "请按时间顺序梳理：关于公证现场所走过的程序，本人亲眼所见的步骤与仅依据公证副本得知的步骤分别是哪些，请按资料分类重新整理。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-a-notarization_flow-v3",
+          "text": "请把已经记录在案的内容与凭印象转述的部分分开来说——关于公证现场所走过的程序，本人亲眼所见的步骤与仅依据公证副本得知的步骤分别是哪些，请把亲眼所见与转述听闻分开陈述。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-a-notarization_flow-v4",
+          "text": "尹泰成先生，关于公证现场所走过的程序，本人亲眼所见的步骤与仅依据公证副本得知的步骤分别是哪些，请按资料分类重新整理。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-a-notarization_flow-v5",
+          "text": "请按时间顺序梳理：关于公证现场所走过的程序，本人亲眼所见的步骤与仅依据公证副本得知的步骤分别是哪些，请把亲眼所见与转述听闻分开陈述。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "fact_pursuit",
+      "targetParty": "b",
+      "angleId": "notarization_flow",
+      "variants": [
+        {
+          "id": "judgeq-d-1-fact_pursuit-b-notarization_flow-v1",
+          "text": "尹正厚先生，关于公证程序的每一个步骤，本人亲手参与的部分与仅在场观看的部分分别是哪些，请按时间顺序逐项作答。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-b-notarization_flow-v2",
+          "text": "请按时间顺序梳理：关于公证程序的每一个步骤，本人亲手参与的部分与仅在场观看的部分分别是哪些，请将本人亲自处理与协助他人办理的部分分开作答。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-b-notarization_flow-v3",
+          "text": "请区分作答：本人亲手参与的环节与仅在旁辅助的部分——关于公证程序的每一个步骤，本人亲手参与的部分与仅在场观看的部分分别是哪些，请就该处先以事实关系作答。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-b-notarization_flow-v4",
+          "text": "尹正厚先生，关于公证程序的每一个步骤，本人亲手参与的部分与仅在场观看的部分分别是哪些，请将本人亲自处理与协助他人办理的部分分开作答。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-b-notarization_flow-v5",
+          "text": "请按时间顺序梳理：关于公证程序的每一个步骤，本人亲手参与的部分与仅在场观看的部分分别是哪些，请就该处先以事实关系作答。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "motive_search",
+      "targetParty": "a",
+      "angleId": "notarization_flow",
+      "variants": [
+        {
+          "id": "judgeq-d-1-motive_search-a-notarization_flow-v1",
+          "text": "尹泰成先生，您并未在公证现场，却据此质疑公证程序的真实性，请说明判断依据是什么。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-a-notarization_flow-v2",
+          "text": "请说明：当时作出此种判断时，您并未在公证现场，却据此质疑公证程序的真实性，请回答当时作此选择的理由。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-a-notarization_flow-v3",
+          "text": "在把疑虑推到当庭主张这一步之前，您并未在公证现场，却据此质疑公证程序的真实性，请就当时的考量先以本人能负责的范围作答。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-a-notarization_flow-v4",
+          "text": "尹泰成先生，您并未在公证现场，却据此质疑公证程序的真实性，请回答当时作此选择的理由。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-a-notarization_flow-v5",
+          "text": "请说明：当时作出此种判断时，您并未在公证现场，却据此质疑公证程序的真实性，请就当时的考量先以本人能负责的范围作答。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "motive_search",
+      "targetParty": "b",
+      "angleId": "notarization_flow",
+      "variants": [
+        {
+          "id": "judgeq-d-1-motive_search-b-notarization_flow-v1",
+          "text": "尹正厚先生，在得知公证已经办理之后，您选择不直接前往母亲处确认而走另一条路径，请说明当时作此处置的理由。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-b-notarization_flow-v2",
+          "text": "请说明：当时作出此种处置时，在得知公证已经办理之后，您选择不直接前往母亲处确认而走另一条路径，请就本人能负责的范围作答。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-b-notarization_flow-v3",
+          "text": "在把那段过程留在自己手中这一选择背后，在得知公证已经办理之后，您选择不直接前往母亲处确认而走另一条路径，请回答当时的考量是什么。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-b-notarization_flow-v4",
+          "text": "尹正厚先生，在得知公证已经办理之后，您选择不直接前往母亲处确认而走另一条路径，请就本人能负责的范围作答。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-b-notarization_flow-v5",
+          "text": "请说明：当时作出此种处置时，在得知公证已经办理之后，您选择不直接前往母亲处确认而走另一条路径，请回答当时的考量是什么。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "empathy_approach",
+      "targetParty": "a",
+      "angleId": "notarization_flow",
+      "variants": [
+        {
+          "id": "judgeq-d-1-empathy_approach-a-notarization_flow-v1",
+          "text": "尹泰成先生，当您事后得知公证已经办妥时，最先涌上心头的那一段心情，请把您亲眼所见的场面先讲出来。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-a-notarization_flow-v2",
+          "text": "请在能说的范围内回顾——当您事后得知公证已经办妥时，最先涌上心头的那一段心情，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-a-notarization_flow-v3",
+          "text": "不必现在就下结论。当您事后得知公证已经办妥时，最先涌上心头的那一段心情，请把您能说出的部分先讲一段。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-a-notarization_flow-v4",
+          "text": "尹泰成先生，当您事后得知公证已经办妥时，最先涌上心头的那一段心情，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-a-notarization_flow-v5",
+          "text": "请在能说的范围内回顾——当您事后得知公证已经办妥时，最先涌上心头的那一段心情，请把您能说出的部分先讲一段。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "empathy_approach",
+      "targetParty": "b",
+      "angleId": "notarization_flow",
+      "variants": [
+        {
+          "id": "judgeq-d-1-empathy_approach-b-notarization_flow-v1",
+          "text": "尹正厚先生，在公证程序当中您本人感到压力最大的一段，请把您亲历的场面先讲出来。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-b-notarization_flow-v2",
+          "text": "请在能说的范围内回顾——在公证程序当中您本人感到压力最大的一段，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-b-notarization_flow-v3",
+          "text": "不必现在就下结论。在公证程序当中您本人感到压力最大的一段，请把您能说出的部分先讲一段。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-b-notarization_flow-v4",
+          "text": "尹正厚先生，在公证程序当中您本人感到压力最大的一段，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-b-notarization_flow-v5",
+          "text": "请在能说的范围内回顾——在公证程序当中您本人感到压力最大的一段，请把您能说出的部分先讲一段。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "fact_pursuit",
+      "targetParty": "a",
+      "angleId": "paper_reading",
+      "variants": [
+        {
+          "id": "judgeq-d-1-fact_pursuit-a-paper_reading-v1",
+          "text": "尹泰成先生，关于纸本上写的字句，本人亲手对照过公证副本与亲笔练习本所发现的差异，请就该处先以事实关系作答。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-a-paper_reading-v2",
+          "text": "请按时间顺序梳理：关于纸本上写的字句，本人亲手对照过公证副本与亲笔练习本所发现的差异，请按资料分类重新整理。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-a-paper_reading-v3",
+          "text": "请把已经记录在案的内容与凭印象转述的部分分开来说——关于纸本上写的字句，本人亲手对照过公证副本与亲笔练习本所发现的差异，请把亲眼所见与转述听闻分开陈述。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-a-paper_reading-v4",
+          "text": "尹泰成先生，关于纸本上写的字句，本人亲手对照过公证副本与亲笔练习本所发现的差异，请按资料分类重新整理。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-a-paper_reading-v5",
+          "text": "请按时间顺序梳理：关于纸本上写的字句，本人亲手对照过公证副本与亲笔练习本所发现的差异，请把亲眼所见与转述听闻分开陈述。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "fact_pursuit",
+      "targetParty": "b",
+      "angleId": "paper_reading",
+      "variants": [
+        {
+          "id": "judgeq-d-1-fact_pursuit-b-paper_reading-v1",
+          "text": "尹正厚先生，关于纸本上母亲是否亲耳听到内容、亲笔签下姓名，本人在场观察到的具体反应，请按时间顺序逐项作答。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-b-paper_reading-v2",
+          "text": "请按时间顺序梳理：关于纸本上母亲是否亲耳听到内容、亲笔签下姓名，本人在场观察到的具体反应，请将本人亲自处理与协助他人办理的部分分开作答。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-b-paper_reading-v3",
+          "text": "请区分作答：本人亲手参与的环节与仅在旁辅助的部分——关于纸本上母亲是否亲耳听到内容、亲笔签下姓名，本人在场观察到的具体反应，请就该处先以事实关系作答。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-b-paper_reading-v4",
+          "text": "尹正厚先生，关于纸本上母亲是否亲耳听到内容、亲笔签下姓名，本人在场观察到的具体反应，请将本人亲自处理与协助他人办理的部分分开作答。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-b-paper_reading-v5",
+          "text": "请按时间顺序梳理：关于纸本上母亲是否亲耳听到内容、亲笔签下姓名，本人在场观察到的具体反应，请就该处先以事实关系作答。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "motive_search",
+      "targetParty": "a",
+      "angleId": "paper_reading",
+      "variants": [
+        {
+          "id": "judgeq-d-1-motive_search-a-paper_reading-v1",
+          "text": "尹泰成先生，您并未亲手对比纸本，却据此断定其中存在问题，请说明判断依据是什么。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-a-paper_reading-v2",
+          "text": "请说明：当时作出此种判断时，您并未亲手对比纸本，却据此断定其中存在问题，请回答当时作此选择的理由。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-a-paper_reading-v3",
+          "text": "在把疑虑推到当庭主张这一步之前，您并未亲手对比纸本，却据此断定其中存在问题，请就当时的考量先以本人能负责的范围作答。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-a-paper_reading-v4",
+          "text": "尹泰成先生，您并未亲手对比纸本，却据此断定其中存在问题，请回答当时作此选择的理由。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-a-paper_reading-v5",
+          "text": "请说明：当时作出此种判断时，您并未亲手对比纸本，却据此断定其中存在问题，请就当时的考量先以本人能负责的范围作答。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "motive_search",
+      "targetParty": "b",
+      "angleId": "paper_reading",
+      "variants": [
+        {
+          "id": "judgeq-d-1-motive_search-b-paper_reading-v1",
+          "text": "尹正厚先生，在仅仅看过纸本之后，您即得出疑点结论，请说明当时作此处置的理由。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-b-paper_reading-v2",
+          "text": "请说明：当时作出此种处置时，在仅仅看过纸本之后，您即得出疑点结论，请就本人能负责的范围作答。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-b-paper_reading-v3",
+          "text": "在把那段过程留在自己手中这一选择背后，在仅仅看过纸本之后，您即得出疑点结论，请回答当时的考量是什么。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-b-paper_reading-v4",
+          "text": "尹正厚先生，在仅仅看过纸本之后，您即得出疑点结论，请就本人能负责的范围作答。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-b-paper_reading-v5",
+          "text": "请说明：当时作出此种处置时，在仅仅看过纸本之后，您即得出疑点结论，请回答当时的考量是什么。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "empathy_approach",
+      "targetParty": "a",
+      "angleId": "paper_reading",
+      "variants": [
+        {
+          "id": "judgeq-d-1-empathy_approach-a-paper_reading-v1",
+          "text": "尹泰成先生，在反复看过那张纸的过程里，最让您难以接受的一处，请把您亲眼所见的场面先讲出来。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-a-paper_reading-v2",
+          "text": "请在能说的范围内回顾——在反复看过那张纸的过程里，最让您难以接受的一处，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-a-paper_reading-v3",
+          "text": "不必现在就下结论。在反复看过那张纸的过程里，最让您难以接受的一处，请把您能说出的部分先讲一段。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-a-paper_reading-v4",
+          "text": "尹泰成先生，在反复看过那张纸的过程里，最让您难以接受的一处，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-a-paper_reading-v5",
+          "text": "请在能说的范围内回顾——在反复看过那张纸的过程里，最让您难以接受的一处，请把您能说出的部分先讲一段。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "empathy_approach",
+      "targetParty": "b",
+      "angleId": "paper_reading",
+      "variants": [
+        {
+          "id": "judgeq-d-1-empathy_approach-b-paper_reading-v1",
+          "text": "尹正厚先生，在为母亲读出纸本内容时，您本人最难开口的一段，请把您亲历的场面先讲出来。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-b-paper_reading-v2",
+          "text": "请在能说的范围内回顾——在为母亲读出纸本内容时，您本人最难开口的一段，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-b-paper_reading-v3",
+          "text": "不必现在就下结论。在为母亲读出纸本内容时，您本人最难开口的一段，请把您能说出的部分先讲一段。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-b-paper_reading-v4",
+          "text": "尹正厚先生，在为母亲读出纸本内容时，您本人最难开口的一段，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-b-paper_reading-v5",
+          "text": "请在能说的范围内回顾——在为母亲读出纸本内容时，您本人最难开口的一段，请把您能说出的部分先讲一段。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "fact_pursuit",
+      "targetParty": "a",
+      "angleId": "general",
+      "variants": [
+        {
+          "id": "judgeq-d-2-fact_pursuit-a-general-v1",
+          "text": "尹泰成先生，关于公证副本与亲笔练习本之间在文字、笔顺、纸质上的差异，本人亲手对照过的部分，请就该处先以事实关系作答。"
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-a-general-v2",
+          "text": "请按时间顺序梳理：关于公证副本与亲笔练习本之间在文字、笔顺、纸质上的差异，本人亲手对照过的部分，请按资料分类重新整理。"
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-a-general-v3",
+          "text": "请把已经记录在案的内容与凭印象转述的部分分开来说——关于公证副本与亲笔练习本之间在文字、笔顺、纸质上的差异，本人亲手对照过的部分，请把亲眼所见与转述听闻分开陈述。"
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-a-general-v4",
+          "text": "尹泰成先生，关于公证副本与亲笔练习本之间在文字、笔顺、纸质上的差异，本人亲手对照过的部分，请按资料分类重新整理。"
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-a-general-v5",
+          "text": "请按时间顺序梳理：关于公证副本与亲笔练习本之间在文字、笔顺、纸质上的差异，本人亲手对照过的部分，请把亲眼所见与转述听闻分开陈述。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "fact_pursuit",
+      "targetParty": "b",
+      "angleId": "general",
+      "variants": [
+        {
+          "id": "judgeq-d-2-fact_pursuit-b-general-v1",
+          "text": "尹正厚先生，关于公证副本制作流程上每一个环节，本人亲手经办与他人代办的部分分别是哪些，请按时间顺序逐项作答。"
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-b-general-v2",
+          "text": "请按时间顺序梳理：关于公证副本制作流程上每一个环节，本人亲手经办与他人代办的部分分别是哪些，请将本人亲自处理与协助他人办理的部分分开作答。"
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-b-general-v3",
+          "text": "请区分作答：本人亲手参与的环节与仅在旁辅助的部分——关于公证副本制作流程上每一个环节，本人亲手经办与他人代办的部分分别是哪些，请就该处先以事实关系作答。"
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-b-general-v4",
+          "text": "尹正厚先生，关于公证副本制作流程上每一个环节，本人亲手经办与他人代办的部分分别是哪些，请将本人亲自处理与协助他人办理的部分分开作答。"
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-b-general-v5",
+          "text": "请按时间顺序梳理：关于公证副本制作流程上每一个环节，本人亲手经办与他人代办的部分分别是哪些，请就该处先以事实关系作答。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "motive_search",
+      "targetParty": "a",
+      "angleId": "general",
+      "variants": [
+        {
+          "id": "judgeq-d-2-motive_search-a-general-v1",
+          "text": "尹泰成先生，您并未参与公证副本的制作流程，却据此推断其中有不当之处，请说明判断依据是什么。"
+        },
+        {
+          "id": "judgeq-d-2-motive_search-a-general-v2",
+          "text": "请说明：当时作出此种判断时，您并未参与公证副本的制作流程，却据此推断其中有不当之处，请回答当时作此选择的理由。"
+        },
+        {
+          "id": "judgeq-d-2-motive_search-a-general-v3",
+          "text": "在把疑虑推到当庭主张这一步之前，您并未参与公证副本的制作流程，却据此推断其中有不当之处，请就当时的考量先以本人能负责的范围作答。"
+        },
+        {
+          "id": "judgeq-d-2-motive_search-a-general-v4",
+          "text": "尹泰成先生，您并未参与公证副本的制作流程，却据此推断其中有不当之处，请回答当时作此选择的理由。"
+        },
+        {
+          "id": "judgeq-d-2-motive_search-a-general-v5",
+          "text": "请说明：当时作出此种判断时，您并未参与公证副本的制作流程，却据此推断其中有不当之处，请就当时的考量先以本人能负责的范围作答。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "motive_search",
+      "targetParty": "b",
+      "angleId": "general",
+      "variants": [
+        {
+          "id": "judgeq-d-2-motive_search-b-general-v1",
+          "text": "尹正厚先生，当您发现两份纸本之间存在差异时，您选择不立即向母亲求证而采取其他动作，请说明当时作此处置的理由。"
+        },
+        {
+          "id": "judgeq-d-2-motive_search-b-general-v2",
+          "text": "请说明：当时作出此种处置时，当您发现两份纸本之间存在差异时，您选择不立即向母亲求证而采取其他动作，请就本人能负责的范围作答。"
+        },
+        {
+          "id": "judgeq-d-2-motive_search-b-general-v3",
+          "text": "在把那段过程留在自己手中这一选择背后，当您发现两份纸本之间存在差异时，您选择不立即向母亲求证而采取其他动作，请回答当时的考量是什么。"
+        },
+        {
+          "id": "judgeq-d-2-motive_search-b-general-v4",
+          "text": "尹正厚先生，当您发现两份纸本之间存在差异时，您选择不立即向母亲求证而采取其他动作，请就本人能负责的范围作答。"
+        },
+        {
+          "id": "judgeq-d-2-motive_search-b-general-v5",
+          "text": "请说明：当时作出此种处置时，当您发现两份纸本之间存在差异时，您选择不立即向母亲求证而采取其他动作，请回答当时的考量是什么。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "empathy_approach",
+      "targetParty": "a",
+      "angleId": "general",
+      "variants": [
+        {
+          "id": "judgeq-d-2-empathy_approach-a-general-v1",
+          "text": "尹泰成先生，在反复对照两份纸本的那段时间里，最让您难以放下的一处疑点，请把您亲眼所见的场面先讲出来。"
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-a-general-v2",
+          "text": "请在能说的范围内回顾——在反复对照两份纸本的那段时间里，最让您难以放下的一处疑点，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-a-general-v3",
+          "text": "不必现在就下结论。在反复对照两份纸本的那段时间里，最让您难以放下的一处疑点，请把您能说出的部分先讲一段。"
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-a-general-v4",
+          "text": "尹泰成先生，在反复对照两份纸本的那段时间里，最让您难以放下的一处疑点，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-a-general-v5",
+          "text": "请在能说的范围内回顾——在反复对照两份纸本的那段时间里，最让您难以放下的一处疑点，请把您能说出的部分先讲一段。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "empathy_approach",
+      "targetParty": "b",
+      "angleId": "general",
+      "variants": [
+        {
+          "id": "judgeq-d-2-empathy_approach-b-general-v1",
+          "text": "尹正厚先生，在公证副本流程当中您本人最感为难的一段，请把您亲历的场面先讲出来。"
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-b-general-v2",
+          "text": "请在能说的范围内回顾——在公证副本流程当中您本人最感为难的一段，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-b-general-v3",
+          "text": "不必现在就下结论。在公证副本流程当中您本人最感为难的一段，请把您能说出的部分先讲一段。"
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-b-general-v4",
+          "text": "尹正厚先生，在公证副本流程当中您本人最感为难的一段，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-b-general-v5",
+          "text": "请在能说的范围内回顾——在公证副本流程当中您本人最感为难的一段，请把您能说出的部分先讲一段。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "fact_pursuit",
+      "targetParty": "a",
+      "angleId": "scan_sequence",
+      "variants": [
+        {
+          "id": "judgeq-d-2-fact_pursuit-a-scan_sequence-v1",
+          "text": "尹泰成先生，关于扫描或拍照副本是按怎样的先后次序留下的，本人亲眼见到的步骤与仅事后获悉的步骤分别是哪些，请就该处先以事实关系作答。"
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-a-scan_sequence-v2",
+          "text": "请按时间顺序梳理：关于扫描或拍照副本是按怎样的先后次序留下的，本人亲眼见到的步骤与仅事后获悉的步骤分别是哪些，请按资料分类重新整理。"
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-a-scan_sequence-v3",
+          "text": "请把已经记录在案的内容与凭印象转述的部分分开来说——关于扫描或拍照副本是按怎样的先后次序留下的，本人亲眼见到的步骤与仅事后获悉的步骤分别是哪些，请把亲眼所见与转述听闻分开陈述。"
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-a-scan_sequence-v4",
+          "text": "尹泰成先生，关于扫描或拍照副本是按怎样的先后次序留下的，本人亲眼见到的步骤与仅事后获悉的步骤分别是哪些，请按资料分类重新整理。"
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-a-scan_sequence-v5",
+          "text": "请按时间顺序梳理：关于扫描或拍照副本是按怎样的先后次序留下的，本人亲眼见到的步骤与仅事后获悉的步骤分别是哪些，请把亲眼所见与转述听闻分开陈述。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "fact_pursuit",
+      "targetParty": "b",
+      "angleId": "scan_sequence",
+      "variants": [
+        {
+          "id": "judgeq-d-2-fact_pursuit-b-scan_sequence-v1",
+          "text": "尹正厚先生，关于副本扫描与归档过程中每一个步骤，本人亲手处理与委托他人处理的部分分别是哪些，请按时间顺序逐项作答。"
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-b-scan_sequence-v2",
+          "text": "请按时间顺序梳理：关于副本扫描与归档过程中每一个步骤，本人亲手处理与委托他人处理的部分分别是哪些，请将本人亲自处理与协助他人办理的部分分开作答。"
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-b-scan_sequence-v3",
+          "text": "请区分作答：本人亲手参与的环节与仅在旁辅助的部分——关于副本扫描与归档过程中每一个步骤，本人亲手处理与委托他人处理的部分分别是哪些，请就该处先以事实关系作答。"
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-b-scan_sequence-v4",
+          "text": "尹正厚先生，关于副本扫描与归档过程中每一个步骤，本人亲手处理与委托他人处理的部分分别是哪些，请将本人亲自处理与协助他人办理的部分分开作答。"
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-b-scan_sequence-v5",
+          "text": "请按时间顺序梳理：关于副本扫描与归档过程中每一个步骤，本人亲手处理与委托他人处理的部分分别是哪些，请就该处先以事实关系作答。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "motive_search",
+      "targetParty": "a",
+      "angleId": "scan_sequence",
+      "variants": [
+        {
+          "id": "judgeq-d-2-motive_search-a-scan_sequence-v1",
+          "text": "尹泰成先生，您并未在扫描现场却据此提出顺序上的疑问，请说明判断依据是什么。"
+        },
+        {
+          "id": "judgeq-d-2-motive_search-a-scan_sequence-v2",
+          "text": "请说明：当时作出此种判断时，您并未在扫描现场却据此提出顺序上的疑问，请回答当时作此选择的理由。"
+        },
+        {
+          "id": "judgeq-d-2-motive_search-a-scan_sequence-v3",
+          "text": "在把疑虑推到当庭主张这一步之前，您并未在扫描现场却据此提出顺序上的疑问，请就当时的考量先以本人能负责的范围作答。"
+        },
+        {
+          "id": "judgeq-d-2-motive_search-a-scan_sequence-v4",
+          "text": "尹泰成先生，您并未在扫描现场却据此提出顺序上的疑问，请回答当时作此选择的理由。"
+        },
+        {
+          "id": "judgeq-d-2-motive_search-a-scan_sequence-v5",
+          "text": "请说明：当时作出此种判断时，您并未在扫描现场却据此提出顺序上的疑问，请就当时的考量先以本人能负责的范围作答。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "motive_search",
+      "targetParty": "b",
+      "angleId": "scan_sequence",
+      "variants": [
+        {
+          "id": "judgeq-d-2-motive_search-b-scan_sequence-v1",
+          "text": "尹正厚先生，在发现扫描顺序不合常理时，您选择不直接询问当事公证人员而以其他方式追问，请说明当时作此处置的理由。"
+        },
+        {
+          "id": "judgeq-d-2-motive_search-b-scan_sequence-v2",
+          "text": "请说明：当时作出此种处置时，在发现扫描顺序不合常理时，您选择不直接询问当事公证人员而以其他方式追问，请就本人能负责的范围作答。"
+        },
+        {
+          "id": "judgeq-d-2-motive_search-b-scan_sequence-v3",
+          "text": "在把那段过程留在自己手中这一选择背后，在发现扫描顺序不合常理时，您选择不直接询问当事公证人员而以其他方式追问，请回答当时的考量是什么。"
+        },
+        {
+          "id": "judgeq-d-2-motive_search-b-scan_sequence-v4",
+          "text": "尹正厚先生，在发现扫描顺序不合常理时，您选择不直接询问当事公证人员而以其他方式追问，请就本人能负责的范围作答。"
+        },
+        {
+          "id": "judgeq-d-2-motive_search-b-scan_sequence-v5",
+          "text": "请说明：当时作出此种处置时，在发现扫描顺序不合常理时，您选择不直接询问当事公证人员而以其他方式追问，请回答当时的考量是什么。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "empathy_approach",
+      "targetParty": "a",
+      "angleId": "scan_sequence",
+      "variants": [
+        {
+          "id": "judgeq-d-2-empathy_approach-a-scan_sequence-v1",
+          "text": "尹泰成先生，在反复查看扫描档的那段时间里，最让您挂心的一处，请把您亲眼所见的场面先讲出来。"
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-a-scan_sequence-v2",
+          "text": "请在能说的范围内回顾——在反复查看扫描档的那段时间里，最让您挂心的一处，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-a-scan_sequence-v3",
+          "text": "不必现在就下结论。在反复查看扫描档的那段时间里，最让您挂心的一处，请把您能说出的部分先讲一段。"
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-a-scan_sequence-v4",
+          "text": "尹泰成先生，在反复查看扫描档的那段时间里，最让您挂心的一处，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-a-scan_sequence-v5",
+          "text": "请在能说的范围内回顾——在反复查看扫描档的那段时间里，最让您挂心的一处，请把您能说出的部分先讲一段。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "empathy_approach",
+      "targetParty": "b",
+      "angleId": "scan_sequence",
+      "variants": [
+        {
+          "id": "judgeq-d-2-empathy_approach-b-scan_sequence-v1",
+          "text": "尹正厚先生，在副本扫描归档之时您本人最感不踏实的一段，请把您亲历的场面先讲出来。"
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-b-scan_sequence-v2",
+          "text": "请在能说的范围内回顾——在副本扫描归档之时您本人最感不踏实的一段，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-b-scan_sequence-v3",
+          "text": "不必现在就下结论。在副本扫描归档之时您本人最感不踏实的一段，请把您能说出的部分先讲一段。"
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-b-scan_sequence-v4",
+          "text": "尹正厚先生，在副本扫描归档之时您本人最感不踏实的一段，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-b-scan_sequence-v5",
+          "text": "请在能说的范围内回顾——在副本扫描归档之时您本人最感不踏实的一段，请把您能说出的部分先讲一段。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "fact_pursuit",
+      "targetParty": "a",
+      "angleId": "original_gap",
+      "variants": [
+        {
+          "id": "judgeq-d-2-fact_pursuit-a-original_gap-v1",
+          "text": "尹泰成先生，关于原件与副本之间在用纸、笔迹、装订上的差异，本人亲手核对过的部分，请就该处先以事实关系作答。"
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-a-original_gap-v2",
+          "text": "请按时间顺序梳理：关于原件与副本之间在用纸、笔迹、装订上的差异，本人亲手核对过的部分，请按资料分类重新整理。"
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-a-original_gap-v3",
+          "text": "请把已经记录在案的内容与凭印象转述的部分分开来说——关于原件与副本之间在用纸、笔迹、装订上的差异，本人亲手核对过的部分，请把亲眼所见与转述听闻分开陈述。"
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-a-original_gap-v4",
+          "text": "尹泰成先生，关于原件与副本之间在用纸、笔迹、装订上的差异，本人亲手核对过的部分，请按资料分类重新整理。"
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-a-original_gap-v5",
+          "text": "请按时间顺序梳理：关于原件与副本之间在用纸、笔迹、装订上的差异，本人亲手核对过的部分，请把亲眼所见与转述听闻分开陈述。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "fact_pursuit",
+      "targetParty": "b",
+      "angleId": "original_gap",
+      "variants": [
+        {
+          "id": "judgeq-d-2-fact_pursuit-b-original_gap-v1",
+          "text": "尹正厚先生，关于原件保管的具体经手过程，本人在场参与与仅事后听闻的部分分别是哪些，请按时间顺序逐项作答。"
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-b-original_gap-v2",
+          "text": "请按时间顺序梳理：关于原件保管的具体经手过程，本人在场参与与仅事后听闻的部分分别是哪些，请将本人亲自处理与协助他人办理的部分分开作答。"
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-b-original_gap-v3",
+          "text": "请区分作答：本人亲手参与的环节与仅在旁辅助的部分——关于原件保管的具体经手过程，本人在场参与与仅事后听闻的部分分别是哪些，请就该处先以事实关系作答。"
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-b-original_gap-v4",
+          "text": "尹正厚先生，关于原件保管的具体经手过程，本人在场参与与仅事后听闻的部分分别是哪些，请将本人亲自处理与协助他人办理的部分分开作答。"
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-b-original_gap-v5",
+          "text": "请按时间顺序梳理：关于原件保管的具体经手过程，本人在场参与与仅事后听闻的部分分别是哪些，请就该处先以事实关系作答。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "motive_search",
+      "targetParty": "a",
+      "angleId": "original_gap",
+      "variants": [
+        {
+          "id": "judgeq-d-2-motive_search-a-original_gap-v1",
+          "text": "尹泰成先生，您并未实际拿到原件却据此质疑原件已不存在，请说明判断依据是什么。"
+        },
+        {
+          "id": "judgeq-d-2-motive_search-a-original_gap-v2",
+          "text": "请说明：当时作出此种判断时，您并未实际拿到原件却据此质疑原件已不存在，请回答当时作此选择的理由。"
+        },
+        {
+          "id": "judgeq-d-2-motive_search-a-original_gap-v3",
+          "text": "在把疑虑推到当庭主张这一步之前，您并未实际拿到原件却据此质疑原件已不存在，请就当时的考量先以本人能负责的范围作答。"
+        },
+        {
+          "id": "judgeq-d-2-motive_search-a-original_gap-v4",
+          "text": "尹泰成先生，您并未实际拿到原件却据此质疑原件已不存在，请回答当时作此选择的理由。"
+        },
+        {
+          "id": "judgeq-d-2-motive_search-a-original_gap-v5",
+          "text": "请说明：当时作出此种判断时，您并未实际拿到原件却据此质疑原件已不存在，请就当时的考量先以本人能负责的范围作答。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "motive_search",
+      "targetParty": "b",
+      "angleId": "original_gap",
+      "variants": [
+        {
+          "id": "judgeq-d-2-motive_search-b-original_gap-v1",
+          "text": "尹正厚先生，在察觉到原件与副本不一致时，您选择不当面向公证机构提出而走另一条路，请说明当时作此处置的理由。"
+        },
+        {
+          "id": "judgeq-d-2-motive_search-b-original_gap-v2",
+          "text": "请说明：当时作出此种处置时，在察觉到原件与副本不一致时，您选择不当面向公证机构提出而走另一条路，请就本人能负责的范围作答。"
+        },
+        {
+          "id": "judgeq-d-2-motive_search-b-original_gap-v3",
+          "text": "在把那段过程留在自己手中这一选择背后，在察觉到原件与副本不一致时，您选择不当面向公证机构提出而走另一条路，请回答当时的考量是什么。"
+        },
+        {
+          "id": "judgeq-d-2-motive_search-b-original_gap-v4",
+          "text": "尹正厚先生，在察觉到原件与副本不一致时，您选择不当面向公证机构提出而走另一条路，请就本人能负责的范围作答。"
+        },
+        {
+          "id": "judgeq-d-2-motive_search-b-original_gap-v5",
+          "text": "请说明：当时作出此种处置时，在察觉到原件与副本不一致时，您选择不当面向公证机构提出而走另一条路，请回答当时的考量是什么。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "empathy_approach",
+      "targetParty": "a",
+      "angleId": "original_gap",
+      "variants": [
+        {
+          "id": "judgeq-d-2-empathy_approach-a-original_gap-v1",
+          "text": "尹泰成先生，在那段反复对照原件与副本的日子里，最让您难以释怀的一处，请把您亲眼所见的场面先讲出来。"
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-a-original_gap-v2",
+          "text": "请在能说的范围内回顾——在那段反复对照原件与副本的日子里，最让您难以释怀的一处，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-a-original_gap-v3",
+          "text": "不必现在就下结论。在那段反复对照原件与副本的日子里，最让您难以释怀的一处，请把您能说出的部分先讲一段。"
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-a-original_gap-v4",
+          "text": "尹泰成先生，在那段反复对照原件与副本的日子里，最让您难以释怀的一处，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-a-original_gap-v5",
+          "text": "请在能说的范围内回顾——在那段反复对照原件与副本的日子里，最让您难以释怀的一处，请把您能说出的部分先讲一段。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "empathy_approach",
+      "targetParty": "b",
+      "angleId": "original_gap",
+      "variants": [
+        {
+          "id": "judgeq-d-2-empathy_approach-b-original_gap-v1",
+          "text": "尹正厚先生，在原件保管过程当中您本人感到压力最大的一段，请把您亲历的场面先讲出来。"
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-b-original_gap-v2",
+          "text": "请在能说的范围内回顾——在原件保管过程当中您本人感到压力最大的一段，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-b-original_gap-v3",
+          "text": "不必现在就下结论。在原件保管过程当中您本人感到压力最大的一段，请把您能说出的部分先讲一段。"
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-b-original_gap-v4",
+          "text": "尹正厚先生，在原件保管过程当中您本人感到压力最大的一段，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-b-original_gap-v5",
+          "text": "请在能说的范围内回顾——在原件保管过程当中您本人感到压力最大的一段，请把您能说出的部分先讲一段。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "fact_pursuit",
+      "targetParty": "a",
+      "angleId": "changed_direction",
+      "variants": [
+        {
+          "id": "judgeq-d-2-fact_pursuit-a-changed_direction-v1",
+          "text": "尹泰成先生，关于公证文件的内容方向与母亲先前口头表示之间的偏离，本人亲耳听到的部分与转述得知的部分分别是哪些，请就该处先以事实关系作答。"
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-a-changed_direction-v2",
+          "text": "请按时间顺序梳理：关于公证文件的内容方向与母亲先前口头表示之间的偏离，本人亲耳听到的部分与转述得知的部分分别是哪些，请按资料分类重新整理。"
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-a-changed_direction-v3",
+          "text": "请把已经记录在案的内容与凭印象转述的部分分开来说——关于公证文件的内容方向与母亲先前口头表示之间的偏离，本人亲耳听到的部分与转述得知的部分分别是哪些，请把亲眼所见与转述听闻分开陈述。"
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-a-changed_direction-v4",
+          "text": "尹泰成先生，关于公证文件的内容方向与母亲先前口头表示之间的偏离，本人亲耳听到的部分与转述得知的部分分别是哪些，请按资料分类重新整理。"
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-a-changed_direction-v5",
+          "text": "请按时间顺序梳理：关于公证文件的内容方向与母亲先前口头表示之间的偏离，本人亲耳听到的部分与转述得知的部分分别是哪些，请把亲眼所见与转述听闻分开陈述。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "fact_pursuit",
+      "targetParty": "b",
+      "angleId": "changed_direction",
+      "variants": [
+        {
+          "id": "judgeq-d-2-fact_pursuit-b-changed_direction-v1",
+          "text": "尹正厚先生，关于公证文件方向变化的具体经过，本人在场参与与仅事后听闻的部分分别是哪些，请按时间顺序逐项作答。"
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-b-changed_direction-v2",
+          "text": "请按时间顺序梳理：关于公证文件方向变化的具体经过，本人在场参与与仅事后听闻的部分分别是哪些，请将本人亲自处理与协助他人办理的部分分开作答。"
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-b-changed_direction-v3",
+          "text": "请区分作答：本人亲手参与的环节与仅在旁辅助的部分——关于公证文件方向变化的具体经过，本人在场参与与仅事后听闻的部分分别是哪些，请就该处先以事实关系作答。"
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-b-changed_direction-v4",
+          "text": "尹正厚先生，关于公证文件方向变化的具体经过，本人在场参与与仅事后听闻的部分分别是哪些，请将本人亲自处理与协助他人办理的部分分开作答。"
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-b-changed_direction-v5",
+          "text": "请按时间顺序梳理：关于公证文件方向变化的具体经过，本人在场参与与仅事后听闻的部分分别是哪些，请就该处先以事实关系作答。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "motive_search",
+      "targetParty": "a",
+      "angleId": "changed_direction",
+      "variants": [
+        {
+          "id": "judgeq-d-2-motive_search-a-changed_direction-v1",
+          "text": "尹泰成先生，您并未在场旁听整个走向变化却据此断定其中有刻意安排，请说明判断依据是什么。"
+        },
+        {
+          "id": "judgeq-d-2-motive_search-a-changed_direction-v2",
+          "text": "请说明：当时作出此种判断时，您并未在场旁听整个走向变化却据此断定其中有刻意安排，请回答当时作此选择的理由。"
+        },
+        {
+          "id": "judgeq-d-2-motive_search-a-changed_direction-v3",
+          "text": "在把疑虑推到当庭主张这一步之前，您并未在场旁听整个走向变化却据此断定其中有刻意安排，请就当时的考量先以本人能负责的范围作答。"
+        },
+        {
+          "id": "judgeq-d-2-motive_search-a-changed_direction-v4",
+          "text": "尹泰成先生，您并未在场旁听整个走向变化却据此断定其中有刻意安排，请回答当时作此选择的理由。"
+        },
+        {
+          "id": "judgeq-d-2-motive_search-a-changed_direction-v5",
+          "text": "请说明：当时作出此种判断时，您并未在场旁听整个走向变化却据此断定其中有刻意安排，请就当时的考量先以本人能负责的范围作答。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "motive_search",
+      "targetParty": "b",
+      "angleId": "changed_direction",
+      "variants": [
+        {
+          "id": "judgeq-d-2-motive_search-b-changed_direction-v1",
+          "text": "尹正厚先生，当文件方向发生变化时，您本人未在第一时间出面阻止，事后却以此为依据，请说明当时作此处置的理由。"
+        },
+        {
+          "id": "judgeq-d-2-motive_search-b-changed_direction-v2",
+          "text": "请说明：当时作出此种处置时，当文件方向发生变化时，您本人未在第一时间出面阻止，事后却以此为依据，请就本人能负责的范围作答。"
+        },
+        {
+          "id": "judgeq-d-2-motive_search-b-changed_direction-v3",
+          "text": "在把那段过程留在自己手中这一选择背后，当文件方向发生变化时，您本人未在第一时间出面阻止，事后却以此为依据，请回答当时的考量是什么。"
+        },
+        {
+          "id": "judgeq-d-2-motive_search-b-changed_direction-v4",
+          "text": "尹正厚先生，当文件方向发生变化时，您本人未在第一时间出面阻止，事后却以此为依据，请就本人能负责的范围作答。"
+        },
+        {
+          "id": "judgeq-d-2-motive_search-b-changed_direction-v5",
+          "text": "请说明：当时作出此种处置时，当文件方向发生变化时，您本人未在第一时间出面阻止，事后却以此为依据，请回答当时的考量是什么。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "empathy_approach",
+      "targetParty": "a",
+      "angleId": "changed_direction",
+      "variants": [
+        {
+          "id": "judgeq-d-2-empathy_approach-a-changed_direction-v1",
+          "text": "尹泰成先生，在察觉到方向偏离时，最让您难以接受的一段心情，请把您亲眼所见的场面先讲出来。"
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-a-changed_direction-v2",
+          "text": "请在能说的范围内回顾——在察觉到方向偏离时，最让您难以接受的一段心情，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-a-changed_direction-v3",
+          "text": "不必现在就下结论。在察觉到方向偏离时，最让您难以接受的一段心情，请把您能说出的部分先讲一段。"
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-a-changed_direction-v4",
+          "text": "尹泰成先生，在察觉到方向偏离时，最让您难以接受的一段心情，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-a-changed_direction-v5",
+          "text": "请在能说的范围内回顾——在察觉到方向偏离时，最让您难以接受的一段心情，请把您能说出的部分先讲一段。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "empathy_approach",
+      "targetParty": "b",
+      "angleId": "changed_direction",
+      "variants": [
+        {
+          "id": "judgeq-d-2-empathy_approach-b-changed_direction-v1",
+          "text": "尹正厚先生，在文件方向变化之中您本人最感为难的一段，请把您亲历的场面先讲出来。"
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-b-changed_direction-v2",
+          "text": "请在能说的范围内回顾——在文件方向变化之中您本人最感为难的一段，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-b-changed_direction-v3",
+          "text": "不必现在就下结论。在文件方向变化之中您本人最感为难的一段，请把您能说出的部分先讲一段。"
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-b-changed_direction-v4",
+          "text": "尹正厚先生，在文件方向变化之中您本人最感为难的一段，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-b-changed_direction-v5",
+          "text": "请在能说的范围内回顾——在文件方向变化之中您本人最感为难的一段，请把您能说出的部分先讲一段。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "fact_pursuit",
+      "targetParty": "a",
+      "angleId": "forgery_responsibility",
+      "variants": [
+        {
+          "id": "judgeq-d-2-fact_pursuit-a-forgery_responsibility-v1",
+          "text": "尹泰成先生，关于纸本上文字处理上的疑点，本人能够列举的可对照资料与仅凭推测的部分分别是哪些，请就该处先以事实关系作答。"
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-a-forgery_responsibility-v2",
+          "text": "请按时间顺序梳理：关于纸本上文字处理上的疑点，本人能够列举的可对照资料与仅凭推测的部分分别是哪些，请按资料分类重新整理。"
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-a-forgery_responsibility-v3",
+          "text": "请把已经记录在案的内容与凭印象转述的部分分开来说——关于纸本上文字处理上的疑点，本人能够列举的可对照资料与仅凭推测的部分分别是哪些，请把亲眼所见与转述听闻分开陈述。"
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-a-forgery_responsibility-v4",
+          "text": "尹泰成先生，关于纸本上文字处理上的疑点，本人能够列举的可对照资料与仅凭推测的部分分别是哪些，请按资料分类重新整理。"
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-a-forgery_responsibility-v5",
+          "text": "请按时间顺序梳理：关于纸本上文字处理上的疑点，本人能够列举的可对照资料与仅凭推测的部分分别是哪些，请把亲眼所见与转述听闻分开陈述。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "fact_pursuit",
+      "targetParty": "b",
+      "angleId": "forgery_responsibility",
+      "variants": [
+        {
+          "id": "judgeq-d-2-fact_pursuit-b-forgery_responsibility-v1",
+          "text": "尹正厚先生，关于纸本上每一处签名、盖章的具体经手人，本人亲手处理与他人代办的部分分别是哪些，请按时间顺序逐项作答。"
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-b-forgery_responsibility-v2",
+          "text": "请按时间顺序梳理：关于纸本上每一处签名、盖章的具体经手人，本人亲手处理与他人代办的部分分别是哪些，请将本人亲自处理与协助他人办理的部分分开作答。"
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-b-forgery_responsibility-v3",
+          "text": "请区分作答：本人亲手参与的环节与仅在旁辅助的部分——关于纸本上每一处签名、盖章的具体经手人，本人亲手处理与他人代办的部分分别是哪些，请就该处先以事实关系作答。"
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-b-forgery_responsibility-v4",
+          "text": "尹正厚先生，关于纸本上每一处签名、盖章的具体经手人，本人亲手处理与他人代办的部分分别是哪些，请将本人亲自处理与协助他人办理的部分分开作答。"
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-b-forgery_responsibility-v5",
+          "text": "请按时间顺序梳理：关于纸本上每一处签名、盖章的具体经手人，本人亲手处理与他人代办的部分分别是哪些，请就该处先以事实关系作答。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "motive_search",
+      "targetParty": "a",
+      "angleId": "forgery_responsibility",
+      "variants": [
+        {
+          "id": "judgeq-d-2-motive_search-a-forgery_responsibility-v1",
+          "text": "尹泰成先生，您并未掌握直接证据，却把责任推向他人，请说明判断依据是什么。"
+        },
+        {
+          "id": "judgeq-d-2-motive_search-a-forgery_responsibility-v2",
+          "text": "请说明：当时作出此种判断时，您并未掌握直接证据，却把责任推向他人，请回答当时作此选择的理由。"
+        },
+        {
+          "id": "judgeq-d-2-motive_search-a-forgery_responsibility-v3",
+          "text": "在把疑虑推到当庭主张这一步之前，您并未掌握直接证据，却把责任推向他人，请就当时的考量先以本人能负责的范围作答。"
+        },
+        {
+          "id": "judgeq-d-2-motive_search-a-forgery_responsibility-v4",
+          "text": "尹泰成先生，您并未掌握直接证据，却把责任推向他人，请回答当时作此选择的理由。"
+        },
+        {
+          "id": "judgeq-d-2-motive_search-a-forgery_responsibility-v5",
+          "text": "请说明：当时作出此种判断时，您并未掌握直接证据，却把责任推向他人，请就当时的考量先以本人能负责的范围作答。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "motive_search",
+      "targetParty": "b",
+      "angleId": "forgery_responsibility",
+      "variants": [
+        {
+          "id": "judgeq-d-2-motive_search-b-forgery_responsibility-v1",
+          "text": "尹正厚先生，在察觉到文字处理上的疑点时，您选择不直接寻求第三方核验而以其他方式追究，请说明当时作此处置的理由。"
+        },
+        {
+          "id": "judgeq-d-2-motive_search-b-forgery_responsibility-v2",
+          "text": "请说明：当时作出此种处置时，在察觉到文字处理上的疑点时，您选择不直接寻求第三方核验而以其他方式追究，请就本人能负责的范围作答。"
+        },
+        {
+          "id": "judgeq-d-2-motive_search-b-forgery_responsibility-v3",
+          "text": "在把那段过程留在自己手中这一选择背后，在察觉到文字处理上的疑点时，您选择不直接寻求第三方核验而以其他方式追究，请回答当时的考量是什么。"
+        },
+        {
+          "id": "judgeq-d-2-motive_search-b-forgery_responsibility-v4",
+          "text": "尹正厚先生，在察觉到文字处理上的疑点时，您选择不直接寻求第三方核验而以其他方式追究，请就本人能负责的范围作答。"
+        },
+        {
+          "id": "judgeq-d-2-motive_search-b-forgery_responsibility-v5",
+          "text": "请说明：当时作出此种处置时，在察觉到文字处理上的疑点时，您选择不直接寻求第三方核验而以其他方式追究，请回答当时的考量是什么。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "empathy_approach",
+      "targetParty": "a",
+      "angleId": "forgery_responsibility",
+      "variants": [
+        {
+          "id": "judgeq-d-2-empathy_approach-a-forgery_responsibility-v1",
+          "text": "尹泰成先生，在反复审视那张纸本的那段日子里，最让您难以放下的一处，请把您亲眼所见的场面先讲出来。"
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-a-forgery_responsibility-v2",
+          "text": "请在能说的范围内回顾——在反复审视那张纸本的那段日子里，最让您难以放下的一处，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-a-forgery_responsibility-v3",
+          "text": "不必现在就下结论。在反复审视那张纸本的那段日子里，最让您难以放下的一处，请把您能说出的部分先讲一段。"
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-a-forgery_responsibility-v4",
+          "text": "尹泰成先生，在反复审视那张纸本的那段日子里，最让您难以放下的一处，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-a-forgery_responsibility-v5",
+          "text": "请在能说的范围内回顾——在反复审视那张纸本的那段日子里，最让您难以放下的一处，请把您能说出的部分先讲一段。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "empathy_approach",
+      "targetParty": "b",
+      "angleId": "forgery_responsibility",
+      "variants": [
+        {
+          "id": "judgeq-d-2-empathy_approach-b-forgery_responsibility-v1",
+          "text": "尹正厚先生，在纸本处理过程当中您本人最感心虚或最感无奈的一段，请把您亲历的场面先讲出来。"
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-b-forgery_responsibility-v2",
+          "text": "请在能说的范围内回顾——在纸本处理过程当中您本人最感心虚或最感无奈的一段，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-b-forgery_responsibility-v3",
+          "text": "不必现在就下结论。在纸本处理过程当中您本人最感心虚或最感无奈的一段，请把您能说出的部分先讲一段。"
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-b-forgery_responsibility-v4",
+          "text": "尹正厚先生，在纸本处理过程当中您本人最感心虚或最感无奈的一段，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-b-forgery_responsibility-v5",
+          "text": "请在能说的范围内回顾——在纸本处理过程当中您本人最感心虚或最感无奈的一段，请把您能说出的部分先讲一段。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "questionType": "fact_pursuit",
+      "targetParty": "a",
+      "angleId": "general",
+      "variants": [
+        {
+          "id": "judgeq-d-3-fact_pursuit-a-general-v1",
+          "text": "尹泰成先生，关于过去若干年里出现的长期资金往来，本人亲手核对过对账记录的部分与仅听闻的部分分别是哪些，请就该处先以事实关系作答。"
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-a-general-v2",
+          "text": "请按时间顺序梳理：关于过去若干年里出现的长期资金往来，本人亲手核对过对账记录的部分与仅听闻的部分分别是哪些，请按资料分类重新整理。"
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-a-general-v3",
+          "text": "请把已经记录在案的内容与凭印象转述的部分分开来说——关于过去若干年里出现的长期资金往来，本人亲手核对过对账记录的部分与仅听闻的部分分别是哪些，请把亲眼所见与转述听闻分开陈述。"
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-a-general-v4",
+          "text": "尹泰成先生，关于过去若干年里出现的长期资金往来，本人亲手核对过对账记录的部分与仅听闻的部分分别是哪些，请按资料分类重新整理。"
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-a-general-v5",
+          "text": "请按时间顺序梳理：关于过去若干年里出现的长期资金往来，本人亲手核对过对账记录的部分与仅听闻的部分分别是哪些，请把亲眼所见与转述听闻分开陈述。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "questionType": "fact_pursuit",
+      "targetParty": "b",
+      "angleId": "general",
+      "variants": [
+        {
+          "id": "judgeq-d-3-fact_pursuit-b-general-v1",
+          "text": "尹正厚先生，关于资金往来当中每一笔的具体用途，本人亲手经办与他人代为处理的部分分别是哪些，请按时间顺序逐项作答。"
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-b-general-v2",
+          "text": "请按时间顺序梳理：关于资金往来当中每一笔的具体用途，本人亲手经办与他人代为处理的部分分别是哪些，请将本人亲自处理与协助他人办理的部分分开作答。"
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-b-general-v3",
+          "text": "请区分作答：本人亲手参与的环节与仅在旁辅助的部分——关于资金往来当中每一笔的具体用途，本人亲手经办与他人代为处理的部分分别是哪些，请就该处先以事实关系作答。"
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-b-general-v4",
+          "text": "尹正厚先生，关于资金往来当中每一笔的具体用途，本人亲手经办与他人代为处理的部分分别是哪些，请将本人亲自处理与协助他人办理的部分分开作答。"
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-b-general-v5",
+          "text": "请按时间顺序梳理：关于资金往来当中每一笔的具体用途，本人亲手经办与他人代为处理的部分分别是哪些，请就该处先以事实关系作答。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "questionType": "motive_search",
+      "targetParty": "a",
+      "angleId": "general",
+      "variants": [
+        {
+          "id": "judgeq-d-3-motive_search-a-general-v1",
+          "text": "尹泰成先生，您并未掌握全部对账记录，却据此判断其中存在另一来源的资金，请说明判断依据是什么。"
+        },
+        {
+          "id": "judgeq-d-3-motive_search-a-general-v2",
+          "text": "请说明：当时作出此种判断时，您并未掌握全部对账记录，却据此判断其中存在另一来源的资金，请回答当时作此选择的理由。"
+        },
+        {
+          "id": "judgeq-d-3-motive_search-a-general-v3",
+          "text": "在把疑虑推到当庭主张这一步之前，您并未掌握全部对账记录，却据此判断其中存在另一来源的资金，请就当时的考量先以本人能负责的范围作答。"
+        },
+        {
+          "id": "judgeq-d-3-motive_search-a-general-v4",
+          "text": "尹泰成先生，您并未掌握全部对账记录，却据此判断其中存在另一来源的资金，请回答当时作此选择的理由。"
+        },
+        {
+          "id": "judgeq-d-3-motive_search-a-general-v5",
+          "text": "请说明：当时作出此种判断时，您并未掌握全部对账记录，却据此判断其中存在另一来源的资金，请就当时的考量先以本人能负责的范围作答。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "questionType": "motive_search",
+      "targetParty": "b",
+      "angleId": "general",
+      "variants": [
+        {
+          "id": "judgeq-d-3-motive_search-b-general-v1",
+          "text": "尹正厚先生，在察觉到资金往来异常时，您选择不直接向当事人求证而采取其他动作，请说明当时作此处置的理由。"
+        },
+        {
+          "id": "judgeq-d-3-motive_search-b-general-v2",
+          "text": "请说明：当时作出此种处置时，在察觉到资金往来异常时，您选择不直接向当事人求证而采取其他动作，请就本人能负责的范围作答。"
+        },
+        {
+          "id": "judgeq-d-3-motive_search-b-general-v3",
+          "text": "在把那段过程留在自己手中这一选择背后，在察觉到资金往来异常时，您选择不直接向当事人求证而采取其他动作，请回答当时的考量是什么。"
+        },
+        {
+          "id": "judgeq-d-3-motive_search-b-general-v4",
+          "text": "尹正厚先生，在察觉到资金往来异常时，您选择不直接向当事人求证而采取其他动作，请就本人能负责的范围作答。"
+        },
+        {
+          "id": "judgeq-d-3-motive_search-b-general-v5",
+          "text": "请说明：当时作出此种处置时，在察觉到资金往来异常时，您选择不直接向当事人求证而采取其他动作，请回答当时的考量是什么。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "questionType": "empathy_approach",
+      "targetParty": "a",
+      "angleId": "general",
+      "variants": [
+        {
+          "id": "judgeq-d-3-empathy_approach-a-general-v1",
+          "text": "尹泰成先生，在那段一笔一笔核对账目的时间里，最让您难以释怀的一处，请把您亲眼所见的场面先讲出来。"
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-a-general-v2",
+          "text": "请在能说的范围内回顾——在那段一笔一笔核对账目的时间里，最让您难以释怀的一处，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-a-general-v3",
+          "text": "不必现在就下结论。在那段一笔一笔核对账目的时间里，最让您难以释怀的一处，请把您能说出的部分先讲一段。"
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-a-general-v4",
+          "text": "尹泰成先生，在那段一笔一笔核对账目的时间里，最让您难以释怀的一处，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-a-general-v5",
+          "text": "请在能说的范围内回顾——在那段一笔一笔核对账目的时间里，最让您难以释怀的一处，请把您能说出的部分先讲一段。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "questionType": "empathy_approach",
+      "targetParty": "b",
+      "angleId": "general",
+      "variants": [
+        {
+          "id": "judgeq-d-3-empathy_approach-b-general-v1",
+          "text": "尹正厚先生，在那段长期资金往来过程当中您本人最感为难的一段，请把您亲历的场面先讲出来。"
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-b-general-v2",
+          "text": "请在能说的范围内回顾——在那段长期资金往来过程当中您本人最感为难的一段，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-b-general-v3",
+          "text": "不必现在就下结论。在那段长期资金往来过程当中您本人最感为难的一段，请把您能说出的部分先讲一段。"
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-b-general-v4",
+          "text": "尹正厚先生，在那段长期资金往来过程当中您本人最感为难的一段，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-b-general-v5",
+          "text": "请在能说的范围内回顾——在那段长期资金往来过程当中您本人最感为难的一段，请把您能说出的部分先讲一段。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "questionType": "fact_pursuit",
+      "targetParty": "a",
+      "angleId": "long_support_flow",
+      "variants": [
+        {
+          "id": "judgeq-d-3-fact_pursuit-a-long_support_flow-v1",
+          "text": "尹泰成先生，关于长期资金往来的频次、金额、账户走向等可对照得出的事实，本人亲手核对过的部分，请就该处先以事实关系作答。"
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-a-long_support_flow-v2",
+          "text": "请按时间顺序梳理：关于长期资金往来的频次、金额、账户走向等可对照得出的事实，本人亲手核对过的部分，请按资料分类重新整理。"
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-a-long_support_flow-v3",
+          "text": "请把已经记录在案的内容与凭印象转述的部分分开来说——关于长期资金往来的频次、金额、账户走向等可对照得出的事实，本人亲手核对过的部分，请把亲眼所见与转述听闻分开陈述。"
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-a-long_support_flow-v4",
+          "text": "尹泰成先生，关于长期资金往来的频次、金额、账户走向等可对照得出的事实，本人亲手核对过的部分，请按资料分类重新整理。"
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-a-long_support_flow-v5",
+          "text": "请按时间顺序梳理：关于长期资金往来的频次、金额、账户走向等可对照得出的事实，本人亲手核对过的部分，请把亲眼所见与转述听闻分开陈述。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "questionType": "fact_pursuit",
+      "targetParty": "b",
+      "angleId": "long_support_flow",
+      "variants": [
+        {
+          "id": "judgeq-d-3-fact_pursuit-b-long_support_flow-v1",
+          "text": "尹正厚先生，关于长期资金往来的每一段时期里，本人亲手处理与他人代为处理的部分分别是哪些，请按时间顺序逐项作答。"
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-b-long_support_flow-v2",
+          "text": "请按时间顺序梳理：关于长期资金往来的每一段时期里，本人亲手处理与他人代为处理的部分分别是哪些，请将本人亲自处理与协助他人办理的部分分开作答。"
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-b-long_support_flow-v3",
+          "text": "请区分作答：本人亲手参与的环节与仅在旁辅助的部分——关于长期资金往来的每一段时期里，本人亲手处理与他人代为处理的部分分别是哪些，请就该处先以事实关系作答。"
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-b-long_support_flow-v4",
+          "text": "尹正厚先生，关于长期资金往来的每一段时期里，本人亲手处理与他人代为处理的部分分别是哪些，请将本人亲自处理与协助他人办理的部分分开作答。"
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-b-long_support_flow-v5",
+          "text": "请按时间顺序梳理：关于长期资金往来的每一段时期里，本人亲手处理与他人代为处理的部分分别是哪些，请就该处先以事实关系作答。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "questionType": "motive_search",
+      "targetParty": "a",
+      "angleId": "long_support_flow",
+      "variants": [
+        {
+          "id": "judgeq-d-3-motive_search-a-long_support_flow-v1",
+          "text": "尹泰成先生，您并未掌握每一段时期的对账资料却据此质疑其中有不当用途，请说明判断依据是什么。"
+        },
+        {
+          "id": "judgeq-d-3-motive_search-a-long_support_flow-v2",
+          "text": "请说明：当时作出此种判断时，您并未掌握每一段时期的对账资料却据此质疑其中有不当用途，请回答当时作此选择的理由。"
+        },
+        {
+          "id": "judgeq-d-3-motive_search-a-long_support_flow-v3",
+          "text": "在把疑虑推到当庭主张这一步之前，您并未掌握每一段时期的对账资料却据此质疑其中有不当用途，请就当时的考量先以本人能负责的范围作答。"
+        },
+        {
+          "id": "judgeq-d-3-motive_search-a-long_support_flow-v4",
+          "text": "尹泰成先生，您并未掌握每一段时期的对账资料却据此质疑其中有不当用途，请回答当时作此选择的理由。"
+        },
+        {
+          "id": "judgeq-d-3-motive_search-a-long_support_flow-v5",
+          "text": "请说明：当时作出此种判断时，您并未掌握每一段时期的对账资料却据此质疑其中有不当用途，请就当时的考量先以本人能负责的范围作答。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "questionType": "motive_search",
+      "targetParty": "b",
+      "angleId": "long_support_flow",
+      "variants": [
+        {
+          "id": "judgeq-d-3-motive_search-b-long_support_flow-v1",
+          "text": "尹正厚先生，在察觉到长期资金往来异常时，您选择不直接向母亲或对方求证而采取其他动作，请说明当时作此处置的理由。"
+        },
+        {
+          "id": "judgeq-d-3-motive_search-b-long_support_flow-v2",
+          "text": "请说明：当时作出此种处置时，在察觉到长期资金往来异常时，您选择不直接向母亲或对方求证而采取其他动作，请就本人能负责的范围作答。"
+        },
+        {
+          "id": "judgeq-d-3-motive_search-b-long_support_flow-v3",
+          "text": "在把那段过程留在自己手中这一选择背后，在察觉到长期资金往来异常时，您选择不直接向母亲或对方求证而采取其他动作，请回答当时的考量是什么。"
+        },
+        {
+          "id": "judgeq-d-3-motive_search-b-long_support_flow-v4",
+          "text": "尹正厚先生，在察觉到长期资金往来异常时，您选择不直接向母亲或对方求证而采取其他动作，请就本人能负责的范围作答。"
+        },
+        {
+          "id": "judgeq-d-3-motive_search-b-long_support_flow-v5",
+          "text": "请说明：当时作出此种处置时，在察觉到长期资金往来异常时，您选择不直接向母亲或对方求证而采取其他动作，请回答当时的考量是什么。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "questionType": "empathy_approach",
+      "targetParty": "a",
+      "angleId": "long_support_flow",
+      "variants": [
+        {
+          "id": "judgeq-d-3-empathy_approach-a-long_support_flow-v1",
+          "text": "尹泰成先生，在那段长期资金往来当中，最让您难以放下的一段记忆，请把您亲眼所见的场面先讲出来。"
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-a-long_support_flow-v2",
+          "text": "请在能说的范围内回顾——在那段长期资金往来当中，最让您难以放下的一段记忆，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-a-long_support_flow-v3",
+          "text": "不必现在就下结论。在那段长期资金往来当中，最让您难以放下的一段记忆，请把您能说出的部分先讲一段。"
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-a-long_support_flow-v4",
+          "text": "尹泰成先生，在那段长期资金往来当中，最让您难以放下的一段记忆，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-a-long_support_flow-v5",
+          "text": "请在能说的范围内回顾——在那段长期资金往来当中，最让您难以放下的一段记忆，请把您能说出的部分先讲一段。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "questionType": "empathy_approach",
+      "targetParty": "b",
+      "angleId": "long_support_flow",
+      "variants": [
+        {
+          "id": "judgeq-d-3-empathy_approach-b-long_support_flow-v1",
+          "text": "尹正厚先生，在那段长期资金往来里您本人最感力不从心的一段，请把您亲历的场面先讲出来。"
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-b-long_support_flow-v2",
+          "text": "请在能说的范围内回顾——在那段长期资金往来里您本人最感力不从心的一段，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-b-long_support_flow-v3",
+          "text": "不必现在就下结论。在那段长期资金往来里您本人最感力不从心的一段，请把您能说出的部分先讲一段。"
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-b-long_support_flow-v4",
+          "text": "尹正厚先生，在那段长期资金往来里您本人最感力不从心的一段，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-b-long_support_flow-v5",
+          "text": "请在能说的范围内回顾——在那段长期资金往来里您本人最感力不从心的一段，请把您能说出的部分先讲一段。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "questionType": "fact_pursuit",
+      "targetParty": "a",
+      "angleId": "mother_account_mask",
+      "variants": [
+        {
+          "id": "judgeq-d-3-fact_pursuit-a-mother_account_mask-v1",
+          "text": "尹泰成先生，关于母亲账户的资金流向，本人亲手对账过的部分与仅事后听闻的部分分别是哪些，请就该处先以事实关系作答。"
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-a-mother_account_mask-v2",
+          "text": "请按时间顺序梳理：关于母亲账户的资金流向，本人亲手对账过的部分与仅事后听闻的部分分别是哪些，请按资料分类重新整理。"
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-a-mother_account_mask-v3",
+          "text": "请把已经记录在案的内容与凭印象转述的部分分开来说——关于母亲账户的资金流向，本人亲手对账过的部分与仅事后听闻的部分分别是哪些，请把亲眼所见与转述听闻分开陈述。"
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-a-mother_account_mask-v4",
+          "text": "尹泰成先生，关于母亲账户的资金流向，本人亲手对账过的部分与仅事后听闻的部分分别是哪些，请按资料分类重新整理。"
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-a-mother_account_mask-v5",
+          "text": "请按时间顺序梳理：关于母亲账户的资金流向，本人亲手对账过的部分与仅事后听闻的部分分别是哪些，请把亲眼所见与转述听闻分开陈述。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "questionType": "fact_pursuit",
+      "targetParty": "b",
+      "angleId": "mother_account_mask",
+      "variants": [
+        {
+          "id": "judgeq-d-3-fact_pursuit-b-mother_account_mask-v1",
+          "text": "尹正厚先生，关于母亲账户的具体管理与代办过程，本人亲自处理与委托他人处理的部分分别是哪些，请按时间顺序逐项作答。"
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-b-mother_account_mask-v2",
+          "text": "请按时间顺序梳理：关于母亲账户的具体管理与代办过程，本人亲自处理与委托他人处理的部分分别是哪些，请将本人亲自处理与协助他人办理的部分分开作答。"
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-b-mother_account_mask-v3",
+          "text": "请区分作答：本人亲手参与的环节与仅在旁辅助的部分——关于母亲账户的具体管理与代办过程，本人亲自处理与委托他人处理的部分分别是哪些，请就该处先以事实关系作答。"
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-b-mother_account_mask-v4",
+          "text": "尹正厚先生，关于母亲账户的具体管理与代办过程，本人亲自处理与委托他人处理的部分分别是哪些，请将本人亲自处理与协助他人办理的部分分开作答。"
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-b-mother_account_mask-v5",
+          "text": "请按时间顺序梳理：关于母亲账户的具体管理与代办过程，本人亲自处理与委托他人处理的部分分别是哪些，请就该处先以事实关系作答。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "questionType": "motive_search",
+      "targetParty": "a",
+      "angleId": "mother_account_mask",
+      "variants": [
+        {
+          "id": "judgeq-d-3-motive_search-a-mother_account_mask-v1",
+          "text": "尹泰成先生，您并未直接掌握母亲账户的对账资料却据此推断其中有人为遮掩，请说明判断依据是什么。"
+        },
+        {
+          "id": "judgeq-d-3-motive_search-a-mother_account_mask-v2",
+          "text": "请说明：当时作出此种判断时，您并未直接掌握母亲账户的对账资料却据此推断其中有人为遮掩，请回答当时作此选择的理由。"
+        },
+        {
+          "id": "judgeq-d-3-motive_search-a-mother_account_mask-v3",
+          "text": "在把疑虑推到当庭主张这一步之前，您并未直接掌握母亲账户的对账资料却据此推断其中有人为遮掩，请就当时的考量先以本人能负责的范围作答。"
+        },
+        {
+          "id": "judgeq-d-3-motive_search-a-mother_account_mask-v4",
+          "text": "尹泰成先生，您并未直接掌握母亲账户的对账资料却据此推断其中有人为遮掩，请回答当时作此选择的理由。"
+        },
+        {
+          "id": "judgeq-d-3-motive_search-a-mother_account_mask-v5",
+          "text": "请说明：当时作出此种判断时，您并未直接掌握母亲账户的对账资料却据此推断其中有人为遮掩，请就当时的考量先以本人能负责的范围作答。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "questionType": "motive_search",
+      "targetParty": "b",
+      "angleId": "mother_account_mask",
+      "variants": [
+        {
+          "id": "judgeq-d-3-motive_search-b-mother_account_mask-v1",
+          "text": "尹正厚先生，在察觉到母亲账户走向异常时，您选择不直接向母亲求证而通过其他渠道追问，请说明当时作此处置的理由。"
+        },
+        {
+          "id": "judgeq-d-3-motive_search-b-mother_account_mask-v2",
+          "text": "请说明：当时作出此种处置时，在察觉到母亲账户走向异常时，您选择不直接向母亲求证而通过其他渠道追问，请就本人能负责的范围作答。"
+        },
+        {
+          "id": "judgeq-d-3-motive_search-b-mother_account_mask-v3",
+          "text": "在把那段过程留在自己手中这一选择背后，在察觉到母亲账户走向异常时，您选择不直接向母亲求证而通过其他渠道追问，请回答当时的考量是什么。"
+        },
+        {
+          "id": "judgeq-d-3-motive_search-b-mother_account_mask-v4",
+          "text": "尹正厚先生，在察觉到母亲账户走向异常时，您选择不直接向母亲求证而通过其他渠道追问，请就本人能负责的范围作答。"
+        },
+        {
+          "id": "judgeq-d-3-motive_search-b-mother_account_mask-v5",
+          "text": "请说明：当时作出此种处置时，在察觉到母亲账户走向异常时，您选择不直接向母亲求证而通过其他渠道追问，请回答当时的考量是什么。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "questionType": "empathy_approach",
+      "targetParty": "a",
+      "angleId": "mother_account_mask",
+      "variants": [
+        {
+          "id": "judgeq-d-3-empathy_approach-a-mother_account_mask-v1",
+          "text": "尹泰成先生，在反复对照母亲账户记录的那段时间里，最让您挂心的一处，请把您亲眼所见的场面先讲出来。"
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-a-mother_account_mask-v2",
+          "text": "请在能说的范围内回顾——在反复对照母亲账户记录的那段时间里，最让您挂心的一处，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-a-mother_account_mask-v3",
+          "text": "不必现在就下结论。在反复对照母亲账户记录的那段时间里，最让您挂心的一处，请把您能说出的部分先讲一段。"
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-a-mother_account_mask-v4",
+          "text": "尹泰成先生，在反复对照母亲账户记录的那段时间里，最让您挂心的一处，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-a-mother_account_mask-v5",
+          "text": "请在能说的范围内回顾——在反复对照母亲账户记录的那段时间里，最让您挂心的一处，请把您能说出的部分先讲一段。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "questionType": "empathy_approach",
+      "targetParty": "b",
+      "angleId": "mother_account_mask",
+      "variants": [
+        {
+          "id": "judgeq-d-3-empathy_approach-b-mother_account_mask-v1",
+          "text": "尹正厚先生，在协助母亲管理账户的过程当中您本人最感为难的一段，请把您亲历的场面先讲出来。"
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-b-mother_account_mask-v2",
+          "text": "请在能说的范围内回顾——在协助母亲管理账户的过程当中您本人最感为难的一段，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-b-mother_account_mask-v3",
+          "text": "不必现在就下结论。在协助母亲管理账户的过程当中您本人最感为难的一段，请把您能说出的部分先讲一段。"
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-b-mother_account_mask-v4",
+          "text": "尹正厚先生，在协助母亲管理账户的过程当中您本人最感为难的一段，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-b-mother_account_mask-v5",
+          "text": "请在能说的范围内回顾——在协助母亲管理账户的过程当中您本人最感为难的一段，请把您能说出的部分先讲一段。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "questionType": "fact_pursuit",
+      "targetParty": "a",
+      "angleId": "factory_crisis_support",
+      "variants": [
+        {
+          "id": "judgeq-d-3-fact_pursuit-a-factory_crisis_support-v1",
+          "text": "尹泰成先生，关于工厂资金往来当中的关键时点，本人亲手核对过对账记录的部分与仅听闻的部分分别是哪些，请就该处先以事实关系作答。"
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-a-factory_crisis_support-v2",
+          "text": "请按时间顺序梳理：关于工厂资金往来当中的关键时点，本人亲手核对过对账记录的部分与仅听闻的部分分别是哪些，请按资料分类重新整理。"
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-a-factory_crisis_support-v3",
+          "text": "请把已经记录在案的内容与凭印象转述的部分分开来说——关于工厂资金往来当中的关键时点，本人亲手核对过对账记录的部分与仅听闻的部分分别是哪些，请把亲眼所见与转述听闻分开陈述。"
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-a-factory_crisis_support-v4",
+          "text": "尹泰成先生，关于工厂资金往来当中的关键时点，本人亲手核对过对账记录的部分与仅听闻的部分分别是哪些，请按资料分类重新整理。"
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-a-factory_crisis_support-v5",
+          "text": "请按时间顺序梳理：关于工厂资金往来当中的关键时点，本人亲手核对过对账记录的部分与仅听闻的部分分别是哪些，请把亲眼所见与转述听闻分开陈述。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "questionType": "fact_pursuit",
+      "targetParty": "b",
+      "angleId": "factory_crisis_support",
+      "variants": [
+        {
+          "id": "judgeq-d-3-fact_pursuit-b-factory_crisis_support-v1",
+          "text": "尹正厚先生，关于工厂资金往来当中每一笔的具体经手过程，本人亲手处理与他人代为处理的部分分别是哪些，请按时间顺序逐项作答。"
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-b-factory_crisis_support-v2",
+          "text": "请按时间顺序梳理：关于工厂资金往来当中每一笔的具体经手过程，本人亲手处理与他人代为处理的部分分别是哪些，请将本人亲自处理与协助他人办理的部分分开作答。"
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-b-factory_crisis_support-v3",
+          "text": "请区分作答：本人亲手参与的环节与仅在旁辅助的部分——关于工厂资金往来当中每一笔的具体经手过程，本人亲手处理与他人代为处理的部分分别是哪些，请就该处先以事实关系作答。"
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-b-factory_crisis_support-v4",
+          "text": "尹正厚先生，关于工厂资金往来当中每一笔的具体经手过程，本人亲手处理与他人代为处理的部分分别是哪些，请将本人亲自处理与协助他人办理的部分分开作答。"
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-b-factory_crisis_support-v5",
+          "text": "请按时间顺序梳理：关于工厂资金往来当中每一笔的具体经手过程，本人亲手处理与他人代为处理的部分分别是哪些，请就该处先以事实关系作答。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "questionType": "motive_search",
+      "targetParty": "a",
+      "angleId": "factory_crisis_support",
+      "variants": [
+        {
+          "id": "judgeq-d-3-motive_search-a-factory_crisis_support-v1",
+          "text": "尹泰成先生，您并未掌握工厂方面的完整对账资料，却据此质疑其中存在另一来源的资金，请说明判断依据是什么。"
+        },
+        {
+          "id": "judgeq-d-3-motive_search-a-factory_crisis_support-v2",
+          "text": "请说明：当时作出此种判断时，您并未掌握工厂方面的完整对账资料，却据此质疑其中存在另一来源的资金，请回答当时作此选择的理由。"
+        },
+        {
+          "id": "judgeq-d-3-motive_search-a-factory_crisis_support-v3",
+          "text": "在把疑虑推到当庭主张这一步之前，您并未掌握工厂方面的完整对账资料，却据此质疑其中存在另一来源的资金，请就当时的考量先以本人能负责的范围作答。"
+        },
+        {
+          "id": "judgeq-d-3-motive_search-a-factory_crisis_support-v4",
+          "text": "尹泰成先生，您并未掌握工厂方面的完整对账资料，却据此质疑其中存在另一来源的资金，请回答当时作此选择的理由。"
+        },
+        {
+          "id": "judgeq-d-3-motive_search-a-factory_crisis_support-v5",
+          "text": "请说明：当时作出此种判断时，您并未掌握工厂方面的完整对账资料，却据此质疑其中存在另一来源的资金，请就当时的考量先以本人能负责的范围作答。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "questionType": "motive_search",
+      "targetParty": "b",
+      "angleId": "factory_crisis_support",
+      "variants": [
+        {
+          "id": "judgeq-d-3-motive_search-b-factory_crisis_support-v1",
+          "text": "尹正厚先生，在察觉到工厂资金往来异常时，您选择不直接向相关人员求证而走其他途径，请说明当时作此处置的理由。"
+        },
+        {
+          "id": "judgeq-d-3-motive_search-b-factory_crisis_support-v2",
+          "text": "请说明：当时作出此种处置时，在察觉到工厂资金往来异常时，您选择不直接向相关人员求证而走其他途径，请就本人能负责的范围作答。"
+        },
+        {
+          "id": "judgeq-d-3-motive_search-b-factory_crisis_support-v3",
+          "text": "在把那段过程留在自己手中这一选择背后，在察觉到工厂资金往来异常时，您选择不直接向相关人员求证而走其他途径，请回答当时的考量是什么。"
+        },
+        {
+          "id": "judgeq-d-3-motive_search-b-factory_crisis_support-v4",
+          "text": "尹正厚先生，在察觉到工厂资金往来异常时，您选择不直接向相关人员求证而走其他途径，请就本人能负责的范围作答。"
+        },
+        {
+          "id": "judgeq-d-3-motive_search-b-factory_crisis_support-v5",
+          "text": "请说明：当时作出此种处置时，在察觉到工厂资金往来异常时，您选择不直接向相关人员求证而走其他途径，请回答当时的考量是什么。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "questionType": "empathy_approach",
+      "targetParty": "a",
+      "angleId": "factory_crisis_support",
+      "variants": [
+        {
+          "id": "judgeq-d-3-empathy_approach-a-factory_crisis_support-v1",
+          "text": "尹泰成先生，在那段处理工厂资金往来的日子里，最让您难以释怀的一段，请把您亲眼所见的场面先讲出来。"
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-a-factory_crisis_support-v2",
+          "text": "请在能说的范围内回顾——在那段处理工厂资金往来的日子里，最让您难以释怀的一段，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-a-factory_crisis_support-v3",
+          "text": "不必现在就下结论。在那段处理工厂资金往来的日子里，最让您难以释怀的一段，请把您能说出的部分先讲一段。"
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-a-factory_crisis_support-v4",
+          "text": "尹泰成先生，在那段处理工厂资金往来的日子里，最让您难以释怀的一段，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-a-factory_crisis_support-v5",
+          "text": "请在能说的范围内回顾——在那段处理工厂资金往来的日子里，最让您难以释怀的一段，请把您能说出的部分先讲一段。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "questionType": "empathy_approach",
+      "targetParty": "b",
+      "angleId": "factory_crisis_support",
+      "variants": [
+        {
+          "id": "judgeq-d-3-empathy_approach-b-factory_crisis_support-v1",
+          "text": "尹正厚先生，在那段工厂资金往来过程当中您本人最感力不从心的一段，请把您亲历的场面先讲出来。"
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-b-factory_crisis_support-v2",
+          "text": "请在能说的范围内回顾——在那段工厂资金往来过程当中您本人最感力不从心的一段，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-b-factory_crisis_support-v3",
+          "text": "不必现在就下结论。在那段工厂资金往来过程当中您本人最感力不从心的一段，请把您能说出的部分先讲一段。"
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-b-factory_crisis_support-v4",
+          "text": "尹正厚先生，在那段工厂资金往来过程当中您本人最感力不从心的一段，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-b-factory_crisis_support-v5",
+          "text": "请在能说的范围内回顾——在那段工厂资金往来过程当中您本人最感力不从心的一段，请把您能说出的部分先讲一段。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "questionType": "fact_pursuit",
+      "targetParty": "a",
+      "angleId": "silence_over_pride",
+      "variants": [
+        {
+          "id": "judgeq-d-3-fact_pursuit-a-silence_over_pride-v1",
+          "text": "尹泰成先生，关于多年来您本人对资金往来一事保持沉默的具体时间段，请就该处先以事实关系作答。"
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-a-silence_over_pride-v2",
+          "text": "请按时间顺序梳理：关于多年来您本人对资金往来一事保持沉默的具体时间段，请按资料分类重新整理。"
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-a-silence_over_pride-v3",
+          "text": "请把已经记录在案的内容与凭印象转述的部分分开来说——关于多年来您本人对资金往来一事保持沉默的具体时间段，请把亲眼所见与转述听闻分开陈述。"
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-a-silence_over_pride-v4",
+          "text": "尹泰成先生，关于多年来您本人对资金往来一事保持沉默的具体时间段，请按资料分类重新整理。"
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-a-silence_over_pride-v5",
+          "text": "请按时间顺序梳理：关于多年来您本人对资金往来一事保持沉默的具体时间段，请把亲眼所见与转述听闻分开陈述。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "questionType": "fact_pursuit",
+      "targetParty": "b",
+      "angleId": "silence_over_pride",
+      "variants": [
+        {
+          "id": "judgeq-d-3-fact_pursuit-b-silence_over_pride-v1",
+          "text": "尹正厚先生，关于您本人选择对资金往来一事不公开说明的具体场合，请按时间顺序逐项作答。"
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-b-silence_over_pride-v2",
+          "text": "请按时间顺序梳理：关于您本人选择对资金往来一事不公开说明的具体场合，请将本人亲自处理与协助他人办理的部分分开作答。"
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-b-silence_over_pride-v3",
+          "text": "请区分作答：本人亲手参与的环节与仅在旁辅助的部分——关于您本人选择对资金往来一事不公开说明的具体场合，请就该处先以事实关系作答。"
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-b-silence_over_pride-v4",
+          "text": "尹正厚先生，关于您本人选择对资金往来一事不公开说明的具体场合，请将本人亲自处理与协助他人办理的部分分开作答。"
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-b-silence_over_pride-v5",
+          "text": "请按时间顺序梳理：关于您本人选择对资金往来一事不公开说明的具体场合，请就该处先以事实关系作答。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "questionType": "motive_search",
+      "targetParty": "a",
+      "angleId": "silence_over_pride",
+      "variants": [
+        {
+          "id": "judgeq-d-3-motive_search-a-silence_over_pride-v1",
+          "text": "尹泰成先生，您当时即使察觉到了资金往来上的异常，仍然选择长期沉默，请说明判断依据是什么。"
+        },
+        {
+          "id": "judgeq-d-3-motive_search-a-silence_over_pride-v2",
+          "text": "请说明：当时作出此种判断时，您当时即使察觉到了资金往来上的异常，仍然选择长期沉默，请回答当时作此选择的理由。"
+        },
+        {
+          "id": "judgeq-d-3-motive_search-a-silence_over_pride-v3",
+          "text": "在把疑虑推到当庭主张这一步之前，您当时即使察觉到了资金往来上的异常，仍然选择长期沉默，请就当时的考量先以本人能负责的范围作答。"
+        },
+        {
+          "id": "judgeq-d-3-motive_search-a-silence_over_pride-v4",
+          "text": "尹泰成先生，您当时即使察觉到了资金往来上的异常，仍然选择长期沉默，请回答当时作此选择的理由。"
+        },
+        {
+          "id": "judgeq-d-3-motive_search-a-silence_over_pride-v5",
+          "text": "请说明：当时作出此种判断时，您当时即使察觉到了资金往来上的异常，仍然选择长期沉默，请就当时的考量先以本人能负责的范围作答。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "questionType": "motive_search",
+      "targetParty": "b",
+      "angleId": "silence_over_pride",
+      "variants": [
+        {
+          "id": "judgeq-d-3-motive_search-b-silence_over_pride-v1",
+          "text": "尹正厚先生，您本人长期不向家人说明资金往来的真实情况，那段沉默背后的考量，请说明当时作此处置的理由。"
+        },
+        {
+          "id": "judgeq-d-3-motive_search-b-silence_over_pride-v2",
+          "text": "请说明：当时作出此种处置时，您本人长期不向家人说明资金往来的真实情况，那段沉默背后的考量，请就本人能负责的范围作答。"
+        },
+        {
+          "id": "judgeq-d-3-motive_search-b-silence_over_pride-v3",
+          "text": "在把那段过程留在自己手中这一选择背后，您本人长期不向家人说明资金往来的真实情况，那段沉默背后的考量，请回答当时的考量是什么。"
+        },
+        {
+          "id": "judgeq-d-3-motive_search-b-silence_over_pride-v4",
+          "text": "尹正厚先生，您本人长期不向家人说明资金往来的真实情况，那段沉默背后的考量，请就本人能负责的范围作答。"
+        },
+        {
+          "id": "judgeq-d-3-motive_search-b-silence_over_pride-v5",
+          "text": "请说明：当时作出此种处置时，您本人长期不向家人说明资金往来的真实情况，那段沉默背后的考量，请回答当时的考量是什么。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "questionType": "empathy_approach",
+      "targetParty": "a",
+      "angleId": "silence_over_pride",
+      "variants": [
+        {
+          "id": "judgeq-d-3-empathy_approach-a-silence_over_pride-v1",
+          "text": "尹泰成先生，在那段长期沉默的日子里，最让您难以放下的一段心情，请把您亲眼所见的场面先讲出来。"
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-a-silence_over_pride-v2",
+          "text": "请在能说的范围内回顾——在那段长期沉默的日子里，最让您难以放下的一段心情，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-a-silence_over_pride-v3",
+          "text": "不必现在就下结论。在那段长期沉默的日子里，最让您难以放下的一段心情，请把您能说出的部分先讲一段。"
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-a-silence_over_pride-v4",
+          "text": "尹泰成先生，在那段长期沉默的日子里，最让您难以放下的一段心情，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-a-silence_over_pride-v5",
+          "text": "请在能说的范围内回顾——在那段长期沉默的日子里，最让您难以放下的一段心情，请把您能说出的部分先讲一段。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "questionType": "empathy_approach",
+      "targetParty": "b",
+      "angleId": "silence_over_pride",
+      "variants": [
+        {
+          "id": "judgeq-d-3-empathy_approach-b-silence_over_pride-v1",
+          "text": "尹正厚先生，在选择沉默的那段时间里您本人最感为难的一段，请把您亲历的场面先讲出来。"
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-b-silence_over_pride-v2",
+          "text": "请在能说的范围内回顾——在选择沉默的那段时间里您本人最感为难的一段，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-b-silence_over_pride-v3",
+          "text": "不必现在就下结论。在选择沉默的那段时间里您本人最感为难的一段，请把您能说出的部分先讲一段。"
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-b-silence_over_pride-v4",
+          "text": "尹正厚先生，在选择沉默的那段时间里您本人最感为难的一段，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-b-silence_over_pride-v5",
+          "text": "请在能说的范围内回顾——在选择沉默的那段时间里您本人最感为难的一段，请把您能说出的部分先讲一段。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "questionType": "fact_pursuit",
+      "targetParty": "a",
+      "angleId": "general",
+      "variants": [
+        {
+          "id": "judgeq-d-4-fact_pursuit-a-general-v1",
+          "text": "尹泰成先生，关于母亲留下的日记或家庭记录，本人亲手翻阅过的部分与仅听闻的部分分别是哪些，请就该处先以事实关系作答。"
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-a-general-v2",
+          "text": "请按时间顺序梳理：关于母亲留下的日记或家庭记录，本人亲手翻阅过的部分与仅听闻的部分分别是哪些，请按资料分类重新整理。"
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-a-general-v3",
+          "text": "请把已经记录在案的内容与凭印象转述的部分分开来说——关于母亲留下的日记或家庭记录，本人亲手翻阅过的部分与仅听闻的部分分别是哪些，请把亲眼所见与转述听闻分开陈述。"
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-a-general-v4",
+          "text": "尹泰成先生，关于母亲留下的日记或家庭记录，本人亲手翻阅过的部分与仅听闻的部分分别是哪些，请按资料分类重新整理。"
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-a-general-v5",
+          "text": "请按时间顺序梳理：关于母亲留下的日记或家庭记录，本人亲手翻阅过的部分与仅听闻的部分分别是哪些，请把亲眼所见与转述听闻分开陈述。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "questionType": "fact_pursuit",
+      "targetParty": "b",
+      "angleId": "general",
+      "variants": [
+        {
+          "id": "judgeq-d-4-fact_pursuit-b-general-v1",
+          "text": "尹正厚先生，关于这些家庭记录被发现、保管的具体经手过程，本人亲自处理与他人代办的部分分别是哪些，请按时间顺序逐项作答。"
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-b-general-v2",
+          "text": "请按时间顺序梳理：关于这些家庭记录被发现、保管的具体经手过程，本人亲自处理与他人代办的部分分别是哪些，请将本人亲自处理与协助他人办理的部分分开作答。"
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-b-general-v3",
+          "text": "请区分作答：本人亲手参与的环节与仅在旁辅助的部分——关于这些家庭记录被发现、保管的具体经手过程，本人亲自处理与他人代办的部分分别是哪些，请就该处先以事实关系作答。"
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-b-general-v4",
+          "text": "尹正厚先生，关于这些家庭记录被发现、保管的具体经手过程，本人亲自处理与他人代办的部分分别是哪些，请将本人亲自处理与协助他人办理的部分分开作答。"
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-b-general-v5",
+          "text": "请按时间顺序梳理：关于这些家庭记录被发现、保管的具体经手过程，本人亲自处理与他人代办的部分分别是哪些，请就该处先以事实关系作答。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "questionType": "motive_search",
+      "targetParty": "a",
+      "angleId": "general",
+      "variants": [
+        {
+          "id": "judgeq-d-4-motive_search-a-general-v1",
+          "text": "尹泰成先生，您并未亲手翻阅完整的家庭记录却据此提出推论，请说明判断依据是什么。"
+        },
+        {
+          "id": "judgeq-d-4-motive_search-a-general-v2",
+          "text": "请说明：当时作出此种判断时，您并未亲手翻阅完整的家庭记录却据此提出推论，请回答当时作此选择的理由。"
+        },
+        {
+          "id": "judgeq-d-4-motive_search-a-general-v3",
+          "text": "在把疑虑推到当庭主张这一步之前，您并未亲手翻阅完整的家庭记录却据此提出推论，请就当时的考量先以本人能负责的范围作答。"
+        },
+        {
+          "id": "judgeq-d-4-motive_search-a-general-v4",
+          "text": "尹泰成先生，您并未亲手翻阅完整的家庭记录却据此提出推论，请回答当时作此选择的理由。"
+        },
+        {
+          "id": "judgeq-d-4-motive_search-a-general-v5",
+          "text": "请说明：当时作出此种判断时，您并未亲手翻阅完整的家庭记录却据此提出推论，请就当时的考量先以本人能负责的范围作答。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "questionType": "motive_search",
+      "targetParty": "b",
+      "angleId": "general",
+      "variants": [
+        {
+          "id": "judgeq-d-4-motive_search-b-general-v1",
+          "text": "尹正厚先生，在察觉到这些家庭记录的存在时，您选择不直接公开核对而以其他方式处理，请说明当时作此处置的理由。"
+        },
+        {
+          "id": "judgeq-d-4-motive_search-b-general-v2",
+          "text": "请说明：当时作出此种处置时，在察觉到这些家庭记录的存在时，您选择不直接公开核对而以其他方式处理，请就本人能负责的范围作答。"
+        },
+        {
+          "id": "judgeq-d-4-motive_search-b-general-v3",
+          "text": "在把那段过程留在自己手中这一选择背后，在察觉到这些家庭记录的存在时，您选择不直接公开核对而以其他方式处理，请回答当时的考量是什么。"
+        },
+        {
+          "id": "judgeq-d-4-motive_search-b-general-v4",
+          "text": "尹正厚先生，在察觉到这些家庭记录的存在时，您选择不直接公开核对而以其他方式处理，请就本人能负责的范围作答。"
+        },
+        {
+          "id": "judgeq-d-4-motive_search-b-general-v5",
+          "text": "请说明：当时作出此种处置时，在察觉到这些家庭记录的存在时，您选择不直接公开核对而以其他方式处理，请回答当时的考量是什么。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "questionType": "empathy_approach",
+      "targetParty": "a",
+      "angleId": "general",
+      "variants": [
+        {
+          "id": "judgeq-d-4-empathy_approach-a-general-v1",
+          "text": "尹泰成先生，在那段翻阅母亲留下的家庭记录的日子里，最让您难以放下的一处，请把您亲眼所见的场面先讲出来。"
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-a-general-v2",
+          "text": "请在能说的范围内回顾——在那段翻阅母亲留下的家庭记录的日子里，最让您难以放下的一处，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-a-general-v3",
+          "text": "不必现在就下结论。在那段翻阅母亲留下的家庭记录的日子里，最让您难以放下的一处，请把您能说出的部分先讲一段。"
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-a-general-v4",
+          "text": "尹泰成先生，在那段翻阅母亲留下的家庭记录的日子里，最让您难以放下的一处，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-a-general-v5",
+          "text": "请在能说的范围内回顾——在那段翻阅母亲留下的家庭记录的日子里，最让您难以放下的一处，请把您能说出的部分先讲一段。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "questionType": "empathy_approach",
+      "targetParty": "b",
+      "angleId": "general",
+      "variants": [
+        {
+          "id": "judgeq-d-4-empathy_approach-b-general-v1",
+          "text": "尹正厚先生，在那段处理家庭记录的过程当中您本人最感为难的一段，请把您亲历的场面先讲出来。"
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-b-general-v2",
+          "text": "请在能说的范围内回顾——在那段处理家庭记录的过程当中您本人最感为难的一段，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-b-general-v3",
+          "text": "不必现在就下结论。在那段处理家庭记录的过程当中您本人最感为难的一段，请把您能说出的部分先讲一段。"
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-b-general-v4",
+          "text": "尹正厚先生，在那段处理家庭记录的过程当中您本人最感为难的一段，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-b-general-v5",
+          "text": "请在能说的范围内回顾——在那段处理家庭记录的过程当中您本人最感为难的一段，请把您能说出的部分先讲一段。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "questionType": "fact_pursuit",
+      "targetParty": "a",
+      "angleId": "diary_discovery",
+      "variants": [
+        {
+          "id": "judgeq-d-4-fact_pursuit-a-diary_discovery-v1",
+          "text": "尹泰成先生，关于日记被发现的具体时间、地点、在场人员等可对照得出的事实，请就该处先以事实关系作答。"
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-a-diary_discovery-v2",
+          "text": "请按时间顺序梳理：关于日记被发现的具体时间、地点、在场人员等可对照得出的事实，请按资料分类重新整理。"
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-a-diary_discovery-v3",
+          "text": "请把已经记录在案的内容与凭印象转述的部分分开来说——关于日记被发现的具体时间、地点、在场人员等可对照得出的事实，请把亲眼所见与转述听闻分开陈述。"
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-a-diary_discovery-v4",
+          "text": "尹泰成先生，关于日记被发现的具体时间、地点、在场人员等可对照得出的事实，请按资料分类重新整理。"
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-a-diary_discovery-v5",
+          "text": "请按时间顺序梳理：关于日记被发现的具体时间、地点、在场人员等可对照得出的事实，请把亲眼所见与转述听闻分开陈述。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "questionType": "fact_pursuit",
+      "targetParty": "b",
+      "angleId": "diary_discovery",
+      "variants": [
+        {
+          "id": "judgeq-d-4-fact_pursuit-b-diary_discovery-v1",
+          "text": "尹正厚先生，关于日记发现现场每一个环节，本人亲身在场与仅事后听闻的部分分别是哪些，请按时间顺序逐项作答。"
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-b-diary_discovery-v2",
+          "text": "请按时间顺序梳理：关于日记发现现场每一个环节，本人亲身在场与仅事后听闻的部分分别是哪些，请将本人亲自处理与协助他人办理的部分分开作答。"
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-b-diary_discovery-v3",
+          "text": "请区分作答：本人亲手参与的环节与仅在旁辅助的部分——关于日记发现现场每一个环节，本人亲身在场与仅事后听闻的部分分别是哪些，请就该处先以事实关系作答。"
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-b-diary_discovery-v4",
+          "text": "尹正厚先生，关于日记发现现场每一个环节，本人亲身在场与仅事后听闻的部分分别是哪些，请将本人亲自处理与协助他人办理的部分分开作答。"
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-b-diary_discovery-v5",
+          "text": "请按时间顺序梳理：关于日记发现现场每一个环节，本人亲身在场与仅事后听闻的部分分别是哪些，请就该处先以事实关系作答。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "questionType": "motive_search",
+      "targetParty": "a",
+      "angleId": "diary_discovery",
+      "variants": [
+        {
+          "id": "judgeq-d-4-motive_search-a-diary_discovery-v1",
+          "text": "尹泰成先生，您并未在第一时间在发现现场，却据此对发现经过提出疑问，请说明判断依据是什么。"
+        },
+        {
+          "id": "judgeq-d-4-motive_search-a-diary_discovery-v2",
+          "text": "请说明：当时作出此种判断时，您并未在第一时间在发现现场，却据此对发现经过提出疑问，请回答当时作此选择的理由。"
+        },
+        {
+          "id": "judgeq-d-4-motive_search-a-diary_discovery-v3",
+          "text": "在把疑虑推到当庭主张这一步之前，您并未在第一时间在发现现场，却据此对发现经过提出疑问，请就当时的考量先以本人能负责的范围作答。"
+        },
+        {
+          "id": "judgeq-d-4-motive_search-a-diary_discovery-v4",
+          "text": "尹泰成先生，您并未在第一时间在发现现场，却据此对发现经过提出疑问，请回答当时作此选择的理由。"
+        },
+        {
+          "id": "judgeq-d-4-motive_search-a-diary_discovery-v5",
+          "text": "请说明：当时作出此种判断时，您并未在第一时间在发现现场，却据此对发现经过提出疑问，请就当时的考量先以本人能负责的范围作答。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "questionType": "motive_search",
+      "targetParty": "b",
+      "angleId": "diary_discovery",
+      "variants": [
+        {
+          "id": "judgeq-d-4-motive_search-b-diary_discovery-v1",
+          "text": "尹正厚先生，在得知日记被发现时，您选择不立即与对方一同核对而以其他方式应对，请说明当时作此处置的理由。"
+        },
+        {
+          "id": "judgeq-d-4-motive_search-b-diary_discovery-v2",
+          "text": "请说明：当时作出此种处置时，在得知日记被发现时，您选择不立即与对方一同核对而以其他方式应对，请就本人能负责的范围作答。"
+        },
+        {
+          "id": "judgeq-d-4-motive_search-b-diary_discovery-v3",
+          "text": "在把那段过程留在自己手中这一选择背后，在得知日记被发现时，您选择不立即与对方一同核对而以其他方式应对，请回答当时的考量是什么。"
+        },
+        {
+          "id": "judgeq-d-4-motive_search-b-diary_discovery-v4",
+          "text": "尹正厚先生，在得知日记被发现时，您选择不立即与对方一同核对而以其他方式应对，请就本人能负责的范围作答。"
+        },
+        {
+          "id": "judgeq-d-4-motive_search-b-diary_discovery-v5",
+          "text": "请说明：当时作出此种处置时，在得知日记被发现时，您选择不立即与对方一同核对而以其他方式应对，请回答当时的考量是什么。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "questionType": "empathy_approach",
+      "targetParty": "a",
+      "angleId": "diary_discovery",
+      "variants": [
+        {
+          "id": "judgeq-d-4-empathy_approach-a-diary_discovery-v1",
+          "text": "尹泰成先生，在第一次翻阅那本日记的那一刻，最让您难以释怀的一段感受，请把您亲眼所见的场面先讲出来。"
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-a-diary_discovery-v2",
+          "text": "请在能说的范围内回顾——在第一次翻阅那本日记的那一刻，最让您难以释怀的一段感受，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-a-diary_discovery-v3",
+          "text": "不必现在就下结论。在第一次翻阅那本日记的那一刻，最让您难以释怀的一段感受，请把您能说出的部分先讲一段。"
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-a-diary_discovery-v4",
+          "text": "尹泰成先生，在第一次翻阅那本日记的那一刻，最让您难以释怀的一段感受，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-a-diary_discovery-v5",
+          "text": "请在能说的范围内回顾——在第一次翻阅那本日记的那一刻，最让您难以释怀的一段感受，请把您能说出的部分先讲一段。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "questionType": "empathy_approach",
+      "targetParty": "b",
+      "angleId": "diary_discovery",
+      "variants": [
+        {
+          "id": "judgeq-d-4-empathy_approach-b-diary_discovery-v1",
+          "text": "尹正厚先生，在处理日记发现一事的过程当中您本人最感无措的一段，请把您亲历的场面先讲出来。"
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-b-diary_discovery-v2",
+          "text": "请在能说的范围内回顾——在处理日记发现一事的过程当中您本人最感无措的一段，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-b-diary_discovery-v3",
+          "text": "不必现在就下结论。在处理日记发现一事的过程当中您本人最感无措的一段，请把您能说出的部分先讲一段。"
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-b-diary_discovery-v4",
+          "text": "尹正厚先生，在处理日记发现一事的过程当中您本人最感无措的一段，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-b-diary_discovery-v5",
+          "text": "请在能说的范围内回顾——在处理日记发现一事的过程当中您本人最感无措的一段，请把您能说出的部分先讲一段。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "questionType": "fact_pursuit",
+      "targetParty": "a",
+      "angleId": "sealed_family_record",
+      "variants": [
+        {
+          "id": "judgeq-d-4-fact_pursuit-a-sealed_family_record-v1",
+          "text": "尹泰成先生，关于被封存多年的家庭记录被开启的具体过程，本人亲眼见到与仅事后听闻的部分分别是哪些，请就该处先以事实关系作答。"
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-a-sealed_family_record-v2",
+          "text": "请按时间顺序梳理：关于被封存多年的家庭记录被开启的具体过程，本人亲眼见到与仅事后听闻的部分分别是哪些，请按资料分类重新整理。"
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-a-sealed_family_record-v3",
+          "text": "请把已经记录在案的内容与凭印象转述的部分分开来说——关于被封存多年的家庭记录被开启的具体过程，本人亲眼见到与仅事后听闻的部分分别是哪些，请把亲眼所见与转述听闻分开陈述。"
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-a-sealed_family_record-v4",
+          "text": "尹泰成先生，关于被封存多年的家庭记录被开启的具体过程，本人亲眼见到与仅事后听闻的部分分别是哪些，请按资料分类重新整理。"
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-a-sealed_family_record-v5",
+          "text": "请按时间顺序梳理：关于被封存多年的家庭记录被开启的具体过程，本人亲眼见到与仅事后听闻的部分分别是哪些，请把亲眼所见与转述听闻分开陈述。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "questionType": "fact_pursuit",
+      "targetParty": "b",
+      "angleId": "sealed_family_record",
+      "variants": [
+        {
+          "id": "judgeq-d-4-fact_pursuit-b-sealed_family_record-v1",
+          "text": "尹正厚先生，关于这份家庭记录的保管与开启，本人亲自参与与委托他人参与的部分分别是哪些，请按时间顺序逐项作答。"
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-b-sealed_family_record-v2",
+          "text": "请按时间顺序梳理：关于这份家庭记录的保管与开启，本人亲自参与与委托他人参与的部分分别是哪些，请将本人亲自处理与协助他人办理的部分分开作答。"
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-b-sealed_family_record-v3",
+          "text": "请区分作答：本人亲手参与的环节与仅在旁辅助的部分——关于这份家庭记录的保管与开启，本人亲自参与与委托他人参与的部分分别是哪些，请就该处先以事实关系作答。"
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-b-sealed_family_record-v4",
+          "text": "尹正厚先生，关于这份家庭记录的保管与开启，本人亲自参与与委托他人参与的部分分别是哪些，请将本人亲自处理与协助他人办理的部分分开作答。"
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-b-sealed_family_record-v5",
+          "text": "请按时间顺序梳理：关于这份家庭记录的保管与开启，本人亲自参与与委托他人参与的部分分别是哪些，请就该处先以事实关系作答。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "questionType": "motive_search",
+      "targetParty": "a",
+      "angleId": "sealed_family_record",
+      "variants": [
+        {
+          "id": "judgeq-d-4-motive_search-a-sealed_family_record-v1",
+          "text": "尹泰成先生，您并未在场见证开启过程，却据此对其中内容的真实性提出质疑，请说明判断依据是什么。"
+        },
+        {
+          "id": "judgeq-d-4-motive_search-a-sealed_family_record-v2",
+          "text": "请说明：当时作出此种判断时，您并未在场见证开启过程，却据此对其中内容的真实性提出质疑，请回答当时作此选择的理由。"
+        },
+        {
+          "id": "judgeq-d-4-motive_search-a-sealed_family_record-v3",
+          "text": "在把疑虑推到当庭主张这一步之前，您并未在场见证开启过程，却据此对其中内容的真实性提出质疑，请就当时的考量先以本人能负责的范围作答。"
+        },
+        {
+          "id": "judgeq-d-4-motive_search-a-sealed_family_record-v4",
+          "text": "尹泰成先生，您并未在场见证开启过程，却据此对其中内容的真实性提出质疑，请回答当时作此选择的理由。"
+        },
+        {
+          "id": "judgeq-d-4-motive_search-a-sealed_family_record-v5",
+          "text": "请说明：当时作出此种判断时，您并未在场见证开启过程，却据此对其中内容的真实性提出质疑，请就当时的考量先以本人能负责的范围作答。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "questionType": "motive_search",
+      "targetParty": "b",
+      "angleId": "sealed_family_record",
+      "variants": [
+        {
+          "id": "judgeq-d-4-motive_search-b-sealed_family_record-v1",
+          "text": "尹正厚先生，在得知家庭记录被开启时，您选择不直接与家人当面核对而以其他方式追问，请说明当时作此处置的理由。"
+        },
+        {
+          "id": "judgeq-d-4-motive_search-b-sealed_family_record-v2",
+          "text": "请说明：当时作出此种处置时，在得知家庭记录被开启时，您选择不直接与家人当面核对而以其他方式追问，请就本人能负责的范围作答。"
+        },
+        {
+          "id": "judgeq-d-4-motive_search-b-sealed_family_record-v3",
+          "text": "在把那段过程留在自己手中这一选择背后，在得知家庭记录被开启时，您选择不直接与家人当面核对而以其他方式追问，请回答当时的考量是什么。"
+        },
+        {
+          "id": "judgeq-d-4-motive_search-b-sealed_family_record-v4",
+          "text": "尹正厚先生，在得知家庭记录被开启时，您选择不直接与家人当面核对而以其他方式追问，请就本人能负责的范围作答。"
+        },
+        {
+          "id": "judgeq-d-4-motive_search-b-sealed_family_record-v5",
+          "text": "请说明：当时作出此种处置时，在得知家庭记录被开启时，您选择不直接与家人当面核对而以其他方式追问，请回答当时的考量是什么。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "questionType": "empathy_approach",
+      "targetParty": "a",
+      "angleId": "sealed_family_record",
+      "variants": [
+        {
+          "id": "judgeq-d-4-empathy_approach-a-sealed_family_record-v1",
+          "text": "尹泰成先生，在那份家庭记录被开启的那一刻，最让您难以放下的一段心情，请把您亲眼所见的场面先讲出来。"
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-a-sealed_family_record-v2",
+          "text": "请在能说的范围内回顾——在那份家庭记录被开启的那一刻，最让您难以放下的一段心情，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-a-sealed_family_record-v3",
+          "text": "不必现在就下结论。在那份家庭记录被开启的那一刻，最让您难以放下的一段心情，请把您能说出的部分先讲一段。"
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-a-sealed_family_record-v4",
+          "text": "尹泰成先生，在那份家庭记录被开启的那一刻，最让您难以放下的一段心情，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-a-sealed_family_record-v5",
+          "text": "请在能说的范围内回顾——在那份家庭记录被开启的那一刻，最让您难以放下的一段心情，请把您能说出的部分先讲一段。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "questionType": "empathy_approach",
+      "targetParty": "b",
+      "angleId": "sealed_family_record",
+      "variants": [
+        {
+          "id": "judgeq-d-4-empathy_approach-b-sealed_family_record-v1",
+          "text": "尹正厚先生，在面对那份家庭记录的过程当中您本人最感艰难的一段，请把您亲历的场面先讲出来。"
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-b-sealed_family_record-v2",
+          "text": "请在能说的范围内回顾——在面对那份家庭记录的过程当中您本人最感艰难的一段，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-b-sealed_family_record-v3",
+          "text": "不必现在就下结论。在面对那份家庭记录的过程当中您本人最感艰难的一段，请把您能说出的部分先讲一段。"
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-b-sealed_family_record-v4",
+          "text": "尹正厚先生，在面对那份家庭记录的过程当中您本人最感艰难的一段，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-b-sealed_family_record-v5",
+          "text": "请在能说的范围内回顾——在面对那份家庭记录的过程当中您本人最感艰难的一段，请把您能说出的部分先讲一段。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "questionType": "fact_pursuit",
+      "targetParty": "a",
+      "angleId": "silence_reason",
+      "variants": [
+        {
+          "id": "judgeq-d-4-fact_pursuit-a-silence_reason-v1",
+          "text": "尹泰成先生，关于您本人长期不向他人提及这份家庭记录的具体时间段，请就该处先以事实关系作答。"
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-a-silence_reason-v2",
+          "text": "请按时间顺序梳理：关于您本人长期不向他人提及这份家庭记录的具体时间段，请按资料分类重新整理。"
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-a-silence_reason-v3",
+          "text": "请把已经记录在案的内容与凭印象转述的部分分开来说——关于您本人长期不向他人提及这份家庭记录的具体时间段，请把亲眼所见与转述听闻分开陈述。"
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-a-silence_reason-v4",
+          "text": "尹泰成先生，关于您本人长期不向他人提及这份家庭记录的具体时间段，请按资料分类重新整理。"
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-a-silence_reason-v5",
+          "text": "请按时间顺序梳理：关于您本人长期不向他人提及这份家庭记录的具体时间段，请把亲眼所见与转述听闻分开陈述。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "questionType": "fact_pursuit",
+      "targetParty": "b",
+      "angleId": "silence_reason",
+      "variants": [
+        {
+          "id": "judgeq-d-4-fact_pursuit-b-silence_reason-v1",
+          "text": "尹正厚先生，关于您本人选择不公开提及这份家庭记录的具体场合，请按时间顺序逐项作答。"
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-b-silence_reason-v2",
+          "text": "请按时间顺序梳理：关于您本人选择不公开提及这份家庭记录的具体场合，请将本人亲自处理与协助他人办理的部分分开作答。"
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-b-silence_reason-v3",
+          "text": "请区分作答：本人亲手参与的环节与仅在旁辅助的部分——关于您本人选择不公开提及这份家庭记录的具体场合，请就该处先以事实关系作答。"
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-b-silence_reason-v4",
+          "text": "尹正厚先生，关于您本人选择不公开提及这份家庭记录的具体场合，请将本人亲自处理与协助他人办理的部分分开作答。"
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-b-silence_reason-v5",
+          "text": "请按时间顺序梳理：关于您本人选择不公开提及这份家庭记录的具体场合，请就该处先以事实关系作答。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "questionType": "motive_search",
+      "targetParty": "a",
+      "angleId": "silence_reason",
+      "variants": [
+        {
+          "id": "judgeq-d-4-motive_search-a-silence_reason-v1",
+          "text": "尹泰成先生，您本人长期对家庭记录的存在保持沉默，请说明判断依据是什么。"
+        },
+        {
+          "id": "judgeq-d-4-motive_search-a-silence_reason-v2",
+          "text": "请说明：当时作出此种判断时，您本人长期对家庭记录的存在保持沉默，请回答当时作此选择的理由。"
+        },
+        {
+          "id": "judgeq-d-4-motive_search-a-silence_reason-v3",
+          "text": "在把疑虑推到当庭主张这一步之前，您本人长期对家庭记录的存在保持沉默，请就当时的考量先以本人能负责的范围作答。"
+        },
+        {
+          "id": "judgeq-d-4-motive_search-a-silence_reason-v4",
+          "text": "尹泰成先生，您本人长期对家庭记录的存在保持沉默，请回答当时作此选择的理由。"
+        },
+        {
+          "id": "judgeq-d-4-motive_search-a-silence_reason-v5",
+          "text": "请说明：当时作出此种判断时，您本人长期对家庭记录的存在保持沉默，请就当时的考量先以本人能负责的范围作答。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "questionType": "motive_search",
+      "targetParty": "b",
+      "angleId": "silence_reason",
+      "variants": [
+        {
+          "id": "judgeq-d-4-motive_search-b-silence_reason-v1",
+          "text": "尹正厚先生，您本人选择不向兄弟、亲属公开这份家庭记录，请说明当时作此处置的理由。"
+        },
+        {
+          "id": "judgeq-d-4-motive_search-b-silence_reason-v2",
+          "text": "请说明：当时作出此种处置时，您本人选择不向兄弟、亲属公开这份家庭记录，请就本人能负责的范围作答。"
+        },
+        {
+          "id": "judgeq-d-4-motive_search-b-silence_reason-v3",
+          "text": "在把那段过程留在自己手中这一选择背后，您本人选择不向兄弟、亲属公开这份家庭记录，请回答当时的考量是什么。"
+        },
+        {
+          "id": "judgeq-d-4-motive_search-b-silence_reason-v4",
+          "text": "尹正厚先生，您本人选择不向兄弟、亲属公开这份家庭记录，请就本人能负责的范围作答。"
+        },
+        {
+          "id": "judgeq-d-4-motive_search-b-silence_reason-v5",
+          "text": "请说明：当时作出此种处置时，您本人选择不向兄弟、亲属公开这份家庭记录，请回答当时的考量是什么。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "questionType": "empathy_approach",
+      "targetParty": "a",
+      "angleId": "silence_reason",
+      "variants": [
+        {
+          "id": "judgeq-d-4-empathy_approach-a-silence_reason-v1",
+          "text": "尹泰成先生，在长期保守这份记录的日子里，最让您难以释怀的一段心境，请把您亲眼所见的场面先讲出来。"
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-a-silence_reason-v2",
+          "text": "请在能说的范围内回顾——在长期保守这份记录的日子里，最让您难以释怀的一段心境，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-a-silence_reason-v3",
+          "text": "不必现在就下结论。在长期保守这份记录的日子里，最让您难以释怀的一段心境，请把您能说出的部分先讲一段。"
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-a-silence_reason-v4",
+          "text": "尹泰成先生，在长期保守这份记录的日子里，最让您难以释怀的一段心境，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-a-silence_reason-v5",
+          "text": "请在能说的范围内回顾——在长期保守这份记录的日子里，最让您难以释怀的一段心境，请把您能说出的部分先讲一段。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "questionType": "empathy_approach",
+      "targetParty": "b",
+      "angleId": "silence_reason",
+      "variants": [
+        {
+          "id": "judgeq-d-4-empathy_approach-b-silence_reason-v1",
+          "text": "尹正厚先生，在选择沉默的那段时间里您本人最感为难的一段，请把您亲历的场面先讲出来。"
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-b-silence_reason-v2",
+          "text": "请在能说的范围内回顾——在选择沉默的那段时间里您本人最感为难的一段，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-b-silence_reason-v3",
+          "text": "不必现在就下结论。在选择沉默的那段时间里您本人最感为难的一段，请把您能说出的部分先讲一段。"
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-b-silence_reason-v4",
+          "text": "尹正厚先生，在选择沉默的那段时间里您本人最感为难的一段，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-b-silence_reason-v5",
+          "text": "请在能说的范围内回顾——在选择沉默的那段时间里您本人最感为难的一段，请把您能说出的部分先讲一段。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "questionType": "fact_pursuit",
+      "targetParty": "a",
+      "angleId": "will_link",
+      "variants": [
+        {
+          "id": "judgeq-d-4-fact_pursuit-a-will_link-v1",
+          "text": "尹泰成先生，关于这份家庭记录与遗嘱内容之间可能的对应关系，本人亲手核对过的部分，请就该处先以事实关系作答。"
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-a-will_link-v2",
+          "text": "请按时间顺序梳理：关于这份家庭记录与遗嘱内容之间可能的对应关系，本人亲手核对过的部分，请按资料分类重新整理。"
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-a-will_link-v3",
+          "text": "请把已经记录在案的内容与凭印象转述的部分分开来说——关于这份家庭记录与遗嘱内容之间可能的对应关系，本人亲手核对过的部分，请把亲眼所见与转述听闻分开陈述。"
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-a-will_link-v4",
+          "text": "尹泰成先生，关于这份家庭记录与遗嘱内容之间可能的对应关系，本人亲手核对过的部分，请按资料分类重新整理。"
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-a-will_link-v5",
+          "text": "请按时间顺序梳理：关于这份家庭记录与遗嘱内容之间可能的对应关系，本人亲手核对过的部分，请把亲眼所见与转述听闻分开陈述。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "questionType": "fact_pursuit",
+      "targetParty": "b",
+      "angleId": "will_link",
+      "variants": [
+        {
+          "id": "judgeq-d-4-fact_pursuit-b-will_link-v1",
+          "text": "尹正厚先生，关于这份家庭记录与遗嘱处理之间的具体衔接过程，本人亲手处理与他人代为处理的部分分别是哪些，请按时间顺序逐项作答。"
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-b-will_link-v2",
+          "text": "请按时间顺序梳理：关于这份家庭记录与遗嘱处理之间的具体衔接过程，本人亲手处理与他人代为处理的部分分别是哪些，请将本人亲自处理与协助他人办理的部分分开作答。"
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-b-will_link-v3",
+          "text": "请区分作答：本人亲手参与的环节与仅在旁辅助的部分——关于这份家庭记录与遗嘱处理之间的具体衔接过程，本人亲手处理与他人代为处理的部分分别是哪些，请就该处先以事实关系作答。"
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-b-will_link-v4",
+          "text": "尹正厚先生，关于这份家庭记录与遗嘱处理之间的具体衔接过程，本人亲手处理与他人代为处理的部分分别是哪些，请将本人亲自处理与协助他人办理的部分分开作答。"
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-b-will_link-v5",
+          "text": "请按时间顺序梳理：关于这份家庭记录与遗嘱处理之间的具体衔接过程，本人亲手处理与他人代为处理的部分分别是哪些，请就该处先以事实关系作答。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "questionType": "motive_search",
+      "targetParty": "a",
+      "angleId": "will_link",
+      "variants": [
+        {
+          "id": "judgeq-d-4-motive_search-a-will_link-v1",
+          "text": "尹泰成先生，您并未亲手对照两者全文，却据此推论二者之间存在隐含连结，请说明判断依据是什么。"
+        },
+        {
+          "id": "judgeq-d-4-motive_search-a-will_link-v2",
+          "text": "请说明：当时作出此种判断时，您并未亲手对照两者全文，却据此推论二者之间存在隐含连结，请回答当时作此选择的理由。"
+        },
+        {
+          "id": "judgeq-d-4-motive_search-a-will_link-v3",
+          "text": "在把疑虑推到当庭主张这一步之前，您并未亲手对照两者全文，却据此推论二者之间存在隐含连结，请就当时的考量先以本人能负责的范围作答。"
+        },
+        {
+          "id": "judgeq-d-4-motive_search-a-will_link-v4",
+          "text": "尹泰成先生，您并未亲手对照两者全文，却据此推论二者之间存在隐含连结，请回答当时作此选择的理由。"
+        },
+        {
+          "id": "judgeq-d-4-motive_search-a-will_link-v5",
+          "text": "请说明：当时作出此种判断时，您并未亲手对照两者全文，却据此推论二者之间存在隐含连结，请就当时的考量先以本人能负责的范围作答。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "questionType": "motive_search",
+      "targetParty": "b",
+      "angleId": "will_link",
+      "variants": [
+        {
+          "id": "judgeq-d-4-motive_search-b-will_link-v1",
+          "text": "尹正厚先生，在察觉到两者之间可能的关联时，您选择不直接与对方一同核对而以其他方式追问，请说明当时作此处置的理由。"
+        },
+        {
+          "id": "judgeq-d-4-motive_search-b-will_link-v2",
+          "text": "请说明：当时作出此种处置时，在察觉到两者之间可能的关联时，您选择不直接与对方一同核对而以其他方式追问，请就本人能负责的范围作答。"
+        },
+        {
+          "id": "judgeq-d-4-motive_search-b-will_link-v3",
+          "text": "在把那段过程留在自己手中这一选择背后，在察觉到两者之间可能的关联时，您选择不直接与对方一同核对而以其他方式追问，请回答当时的考量是什么。"
+        },
+        {
+          "id": "judgeq-d-4-motive_search-b-will_link-v4",
+          "text": "尹正厚先生，在察觉到两者之间可能的关联时，您选择不直接与对方一同核对而以其他方式追问，请就本人能负责的范围作答。"
+        },
+        {
+          "id": "judgeq-d-4-motive_search-b-will_link-v5",
+          "text": "请说明：当时作出此种处置时，在察觉到两者之间可能的关联时，您选择不直接与对方一同核对而以其他方式追问，请回答当时的考量是什么。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "questionType": "empathy_approach",
+      "targetParty": "a",
+      "angleId": "will_link",
+      "variants": [
+        {
+          "id": "judgeq-d-4-empathy_approach-a-will_link-v1",
+          "text": "尹泰成先生，在反复对照两者的那段时间里，最让您难以放下的一处，请把您亲眼所见的场面先讲出来。"
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-a-will_link-v2",
+          "text": "请在能说的范围内回顾——在反复对照两者的那段时间里，最让您难以放下的一处，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-a-will_link-v3",
+          "text": "不必现在就下结论。在反复对照两者的那段时间里，最让您难以放下的一处，请把您能说出的部分先讲一段。"
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-a-will_link-v4",
+          "text": "尹泰成先生，在反复对照两者的那段时间里，最让您难以放下的一处，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-a-will_link-v5",
+          "text": "请在能说的范围内回顾——在反复对照两者的那段时间里，最让您难以放下的一处，请把您能说出的部分先讲一段。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "questionType": "empathy_approach",
+      "targetParty": "b",
+      "angleId": "will_link",
+      "variants": [
+        {
+          "id": "judgeq-d-4-empathy_approach-b-will_link-v1",
+          "text": "尹正厚先生，在面对两者之间关联的过程当中您本人最感为难的一段，请把您亲历的场面先讲出来。"
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-b-will_link-v2",
+          "text": "请在能说的范围内回顾——在面对两者之间关联的过程当中您本人最感为难的一段，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-b-will_link-v3",
+          "text": "不必现在就下结论。在面对两者之间关联的过程当中您本人最感为难的一段，请把您能说出的部分先讲一段。"
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-b-will_link-v4",
+          "text": "尹正厚先生，在面对两者之间关联的过程当中您本人最感为难的一段，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-b-will_link-v5",
+          "text": "请在能说的范围内回顾——在面对两者之间关联的过程当中您本人最感为难的一段，请把您能说出的部分先讲一段。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "questionType": "fact_pursuit",
+      "targetParty": "a",
+      "angleId": "general",
+      "variants": [
+        {
+          "id": "judgeq-d-5-fact_pursuit-a-general-v1",
+          "text": "尹泰成先生，关于继承份额最终如何安排，本人亲手核对过遗嘱条文的部分与仅听闻的部分分别是哪些，请就该处先以事实关系作答。"
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-a-general-v2",
+          "text": "请按时间顺序梳理：关于继承份额最终如何安排，本人亲手核对过遗嘱条文的部分与仅听闻的部分分别是哪些，请按资料分类重新整理。"
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-a-general-v3",
+          "text": "请把已经记录在案的内容与凭印象转述的部分分开来说——关于继承份额最终如何安排，本人亲手核对过遗嘱条文的部分与仅听闻的部分分别是哪些，请把亲眼所见与转述听闻分开陈述。"
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-a-general-v4",
+          "text": "尹泰成先生，关于继承份额最终如何安排，本人亲手核对过遗嘱条文的部分与仅听闻的部分分别是哪些，请按资料分类重新整理。"
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-a-general-v5",
+          "text": "请按时间顺序梳理：关于继承份额最终如何安排，本人亲手核对过遗嘱条文的部分与仅听闻的部分分别是哪些，请把亲眼所见与转述听闻分开陈述。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "questionType": "fact_pursuit",
+      "targetParty": "b",
+      "angleId": "general",
+      "variants": [
+        {
+          "id": "judgeq-d-5-fact_pursuit-b-general-v1",
+          "text": "尹正厚先生，关于继承份额安排的具体经手过程，本人亲自参与与他人代为办理的部分分别是哪些，请按时间顺序逐项作答。"
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-b-general-v2",
+          "text": "请按时间顺序梳理：关于继承份额安排的具体经手过程，本人亲自参与与他人代为办理的部分分别是哪些，请将本人亲自处理与协助他人办理的部分分开作答。"
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-b-general-v3",
+          "text": "请区分作答：本人亲手参与的环节与仅在旁辅助的部分——关于继承份额安排的具体经手过程，本人亲自参与与他人代为办理的部分分别是哪些，请就该处先以事实关系作答。"
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-b-general-v4",
+          "text": "尹正厚先生，关于继承份额安排的具体经手过程，本人亲自参与与他人代为办理的部分分别是哪些，请将本人亲自处理与协助他人办理的部分分开作答。"
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-b-general-v5",
+          "text": "请按时间顺序梳理：关于继承份额安排的具体经手过程，本人亲自参与与他人代为办理的部分分别是哪些，请就该处先以事实关系作答。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "questionType": "motive_search",
+      "targetParty": "a",
+      "angleId": "general",
+      "variants": [
+        {
+          "id": "judgeq-d-5-motive_search-a-general-v1",
+          "text": "尹泰成先生，您并未掌握全部条文细节却据此主张份额安排存在不当之处，请说明判断依据是什么。"
+        },
+        {
+          "id": "judgeq-d-5-motive_search-a-general-v2",
+          "text": "请说明：当时作出此种判断时，您并未掌握全部条文细节却据此主张份额安排存在不当之处，请回答当时作此选择的理由。"
+        },
+        {
+          "id": "judgeq-d-5-motive_search-a-general-v3",
+          "text": "在把疑虑推到当庭主张这一步之前，您并未掌握全部条文细节却据此主张份额安排存在不当之处，请就当时的考量先以本人能负责的范围作答。"
+        },
+        {
+          "id": "judgeq-d-5-motive_search-a-general-v4",
+          "text": "尹泰成先生，您并未掌握全部条文细节却据此主张份额安排存在不当之处，请回答当时作此选择的理由。"
+        },
+        {
+          "id": "judgeq-d-5-motive_search-a-general-v5",
+          "text": "请说明：当时作出此种判断时，您并未掌握全部条文细节却据此主张份额安排存在不当之处，请就当时的考量先以本人能负责的范围作答。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "questionType": "motive_search",
+      "targetParty": "b",
+      "angleId": "general",
+      "variants": [
+        {
+          "id": "judgeq-d-5-motive_search-b-general-v1",
+          "text": "尹正厚先生，在察觉到份额安排有变时，您选择不直接与对方协商而走当庭主张这一条路，请说明当时作此处置的理由。"
+        },
+        {
+          "id": "judgeq-d-5-motive_search-b-general-v2",
+          "text": "请说明：当时作出此种处置时，在察觉到份额安排有变时，您选择不直接与对方协商而走当庭主张这一条路，请就本人能负责的范围作答。"
+        },
+        {
+          "id": "judgeq-d-5-motive_search-b-general-v3",
+          "text": "在把那段过程留在自己手中这一选择背后，在察觉到份额安排有变时，您选择不直接与对方协商而走当庭主张这一条路，请回答当时的考量是什么。"
+        },
+        {
+          "id": "judgeq-d-5-motive_search-b-general-v4",
+          "text": "尹正厚先生，在察觉到份额安排有变时，您选择不直接与对方协商而走当庭主张这一条路，请就本人能负责的范围作答。"
+        },
+        {
+          "id": "judgeq-d-5-motive_search-b-general-v5",
+          "text": "请说明：当时作出此种处置时，在察觉到份额安排有变时，您选择不直接与对方协商而走当庭主张这一条路，请回答当时的考量是什么。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "questionType": "empathy_approach",
+      "targetParty": "a",
+      "angleId": "general",
+      "variants": [
+        {
+          "id": "judgeq-d-5-empathy_approach-a-general-v1",
+          "text": "尹泰成先生，在那段反复审视份额安排的日子里，最让您难以释怀的一处，请把您亲眼所见的场面先讲出来。"
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-a-general-v2",
+          "text": "请在能说的范围内回顾——在那段反复审视份额安排的日子里，最让您难以释怀的一处，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-a-general-v3",
+          "text": "不必现在就下结论。在那段反复审视份额安排的日子里，最让您难以释怀的一处，请把您能说出的部分先讲一段。"
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-a-general-v4",
+          "text": "尹泰成先生，在那段反复审视份额安排的日子里，最让您难以释怀的一处，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-a-general-v5",
+          "text": "请在能说的范围内回顾——在那段反复审视份额安排的日子里，最让您难以释怀的一处，请把您能说出的部分先讲一段。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "questionType": "empathy_approach",
+      "targetParty": "b",
+      "angleId": "general",
+      "variants": [
+        {
+          "id": "judgeq-d-5-empathy_approach-b-general-v1",
+          "text": "尹正厚先生，在那段就份额安排进行交涉的过程当中您本人最感为难的一段，请把您亲历的场面先讲出来。"
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-b-general-v2",
+          "text": "请在能说的范围内回顾——在那段就份额安排进行交涉的过程当中您本人最感为难的一段，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-b-general-v3",
+          "text": "不必现在就下结论。在那段就份额安排进行交涉的过程当中您本人最感为难的一段，请把您能说出的部分先讲一段。"
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-b-general-v4",
+          "text": "尹正厚先生，在那段就份额安排进行交涉的过程当中您本人最感为难的一段，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-b-general-v5",
+          "text": "请在能说的范围内回顾——在那段就份额安排进行交涉的过程当中您本人最感为难的一段，请把您能说出的部分先讲一段。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "questionType": "fact_pursuit",
+      "targetParty": "a",
+      "angleId": "a_entitlement",
+      "variants": [
+        {
+          "id": "judgeq-d-5-fact_pursuit-a-a_entitlement-v1",
+          "text": "尹泰成先生，关于您主张本人应享有更高份额的依据，可对照得出的事实有哪些，请就该处先以事实关系作答。"
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-a-a_entitlement-v2",
+          "text": "请按时间顺序梳理：关于您主张本人应享有更高份额的依据，可对照得出的事实有哪些，请按资料分类重新整理。"
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-a-a_entitlement-v3",
+          "text": "请把已经记录在案的内容与凭印象转述的部分分开来说——关于您主张本人应享有更高份额的依据，可对照得出的事实有哪些，请把亲眼所见与转述听闻分开陈述。"
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-a-a_entitlement-v4",
+          "text": "尹泰成先生，关于您主张本人应享有更高份额的依据，可对照得出的事实有哪些，请按资料分类重新整理。"
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-a-a_entitlement-v5",
+          "text": "请按时间顺序梳理：关于您主张本人应享有更高份额的依据，可对照得出的事实有哪些，请把亲眼所见与转述听闻分开陈述。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "questionType": "fact_pursuit",
+      "targetParty": "b",
+      "angleId": "a_entitlement",
+      "variants": [
+        {
+          "id": "judgeq-d-5-fact_pursuit-b-a_entitlement-v1",
+          "text": "尹正厚先生，关于您本人长期承担长子角色的具体事实，可与记录对照的部分有哪些，请按时间顺序逐项作答。"
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-b-a_entitlement-v2",
+          "text": "请按时间顺序梳理：关于您本人长期承担长子角色的具体事实，可与记录对照的部分有哪些，请将本人亲自处理与协助他人办理的部分分开作答。"
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-b-a_entitlement-v3",
+          "text": "请区分作答：本人亲手参与的环节与仅在旁辅助的部分——关于您本人长期承担长子角色的具体事实，可与记录对照的部分有哪些，请就该处先以事实关系作答。"
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-b-a_entitlement-v4",
+          "text": "尹正厚先生，关于您本人长期承担长子角色的具体事实，可与记录对照的部分有哪些，请将本人亲自处理与协助他人办理的部分分开作答。"
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-b-a_entitlement-v5",
+          "text": "请按时间顺序梳理：关于您本人长期承担长子角色的具体事实，可与记录对照的部分有哪些，请就该处先以事实关系作答。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "questionType": "motive_search",
+      "targetParty": "a",
+      "angleId": "a_entitlement",
+      "variants": [
+        {
+          "id": "judgeq-d-5-motive_search-a-a_entitlement-v1",
+          "text": "尹泰成先生，您将多年照料的事实直接转化为份额上的主张，请说明判断依据是什么。"
+        },
+        {
+          "id": "judgeq-d-5-motive_search-a-a_entitlement-v2",
+          "text": "请说明：当时作出此种判断时，您将多年照料的事实直接转化为份额上的主张，请回答当时作此选择的理由。"
+        },
+        {
+          "id": "judgeq-d-5-motive_search-a-a_entitlement-v3",
+          "text": "在把疑虑推到当庭主张这一步之前，您将多年照料的事实直接转化为份额上的主张，请就当时的考量先以本人能负责的范围作答。"
+        },
+        {
+          "id": "judgeq-d-5-motive_search-a-a_entitlement-v4",
+          "text": "尹泰成先生，您将多年照料的事实直接转化为份额上的主张，请回答当时作此选择的理由。"
+        },
+        {
+          "id": "judgeq-d-5-motive_search-a-a_entitlement-v5",
+          "text": "请说明：当时作出此种判断时，您将多年照料的事实直接转化为份额上的主张，请就当时的考量先以本人能负责的范围作答。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "questionType": "motive_search",
+      "targetParty": "b",
+      "angleId": "a_entitlement",
+      "variants": [
+        {
+          "id": "judgeq-d-5-motive_search-b-a_entitlement-v1",
+          "text": "尹正厚先生，您本人未先与弟弟当面协商，便径直将主张提到本庭，请说明当时作此处置的理由。"
+        },
+        {
+          "id": "judgeq-d-5-motive_search-b-a_entitlement-v2",
+          "text": "请说明：当时作出此种处置时，您本人未先与弟弟当面协商，便径直将主张提到本庭，请就本人能负责的范围作答。"
+        },
+        {
+          "id": "judgeq-d-5-motive_search-b-a_entitlement-v3",
+          "text": "在把那段过程留在自己手中这一选择背后，您本人未先与弟弟当面协商，便径直将主张提到本庭，请回答当时的考量是什么。"
+        },
+        {
+          "id": "judgeq-d-5-motive_search-b-a_entitlement-v4",
+          "text": "尹正厚先生，您本人未先与弟弟当面协商，便径直将主张提到本庭，请就本人能负责的范围作答。"
+        },
+        {
+          "id": "judgeq-d-5-motive_search-b-a_entitlement-v5",
+          "text": "请说明：当时作出此种处置时，您本人未先与弟弟当面协商，便径直将主张提到本庭，请回答当时的考量是什么。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "questionType": "empathy_approach",
+      "targetParty": "a",
+      "angleId": "a_entitlement",
+      "variants": [
+        {
+          "id": "judgeq-d-5-empathy_approach-a-a_entitlement-v1",
+          "text": "尹泰成先生，在长期身为长子承担一切的那段时间里，最让您难以释怀的一段，请把您亲眼所见的场面先讲出来。"
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-a-a_entitlement-v2",
+          "text": "请在能说的范围内回顾——在长期身为长子承担一切的那段时间里，最让您难以释怀的一段，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-a-a_entitlement-v3",
+          "text": "不必现在就下结论。在长期身为长子承担一切的那段时间里，最让您难以释怀的一段，请把您能说出的部分先讲一段。"
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-a-a_entitlement-v4",
+          "text": "尹泰成先生，在长期身为长子承担一切的那段时间里，最让您难以释怀的一段，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-a-a_entitlement-v5",
+          "text": "请在能说的范围内回顾——在长期身为长子承担一切的那段时间里，最让您难以释怀的一段，请把您能说出的部分先讲一段。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "questionType": "empathy_approach",
+      "targetParty": "b",
+      "angleId": "a_entitlement",
+      "variants": [
+        {
+          "id": "judgeq-d-5-empathy_approach-b-a_entitlement-v1",
+          "text": "尹正厚先生，在那段坚持主张份额的过程当中您本人最感为难的一段，请把您亲历的场面先讲出来。"
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-b-a_entitlement-v2",
+          "text": "请在能说的范围内回顾——在那段坚持主张份额的过程当中您本人最感为难的一段，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-b-a_entitlement-v3",
+          "text": "不必现在就下结论。在那段坚持主张份额的过程当中您本人最感为难的一段，请把您能说出的部分先讲一段。"
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-b-a_entitlement-v4",
+          "text": "尹正厚先生，在那段坚持主张份额的过程当中您本人最感为难的一段，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-b-a_entitlement-v5",
+          "text": "请在能说的范围内回顾——在那段坚持主张份额的过程当中您本人最感为难的一段，请把您能说出的部分先讲一段。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "questionType": "fact_pursuit",
+      "targetParty": "a",
+      "angleId": "b_protection_control",
+      "variants": [
+        {
+          "id": "judgeq-d-5-fact_pursuit-a-b_protection_control-v1",
+          "text": "尹泰成先生，关于您本人在份额安排上向母亲提供的具体协助，可对照得出的事实有哪些，请就该处先以事实关系作答。"
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-a-b_protection_control-v2",
+          "text": "请按时间顺序梳理：关于您本人在份额安排上向母亲提供的具体协助，可对照得出的事实有哪些，请按资料分类重新整理。"
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-a-b_protection_control-v3",
+          "text": "请把已经记录在案的内容与凭印象转述的部分分开来说——关于您本人在份额安排上向母亲提供的具体协助，可对照得出的事实有哪些，请把亲眼所见与转述听闻分开陈述。"
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-a-b_protection_control-v4",
+          "text": "尹泰成先生，关于您本人在份额安排上向母亲提供的具体协助，可对照得出的事实有哪些，请按资料分类重新整理。"
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-a-b_protection_control-v5",
+          "text": "请按时间顺序梳理：关于您本人在份额安排上向母亲提供的具体协助，可对照得出的事实有哪些，请把亲眼所见与转述听闻分开陈述。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "questionType": "fact_pursuit",
+      "targetParty": "b",
+      "angleId": "b_protection_control",
+      "variants": [
+        {
+          "id": "judgeq-d-5-fact_pursuit-b-b_protection_control-v1",
+          "text": "尹正厚先生，关于您本人在份额安排过程中所承担的具体环节，本人亲手处理与他人代办的部分分别是哪些，请按时间顺序逐项作答。"
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-b-b_protection_control-v2",
+          "text": "请按时间顺序梳理：关于您本人在份额安排过程中所承担的具体环节，本人亲手处理与他人代办的部分分别是哪些，请将本人亲自处理与协助他人办理的部分分开作答。"
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-b-b_protection_control-v3",
+          "text": "请区分作答：本人亲手参与的环节与仅在旁辅助的部分——关于您本人在份额安排过程中所承担的具体环节，本人亲手处理与他人代办的部分分别是哪些，请就该处先以事实关系作答。"
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-b-b_protection_control-v4",
+          "text": "尹正厚先生，关于您本人在份额安排过程中所承担的具体环节，本人亲手处理与他人代办的部分分别是哪些，请将本人亲自处理与协助他人办理的部分分开作答。"
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-b-b_protection_control-v5",
+          "text": "请按时间顺序梳理：关于您本人在份额安排过程中所承担的具体环节，本人亲手处理与他人代办的部分分别是哪些，请就该处先以事实关系作答。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "questionType": "motive_search",
+      "targetParty": "a",
+      "angleId": "b_protection_control",
+      "variants": [
+        {
+          "id": "judgeq-d-5-motive_search-a-b_protection_control-v1",
+          "text": "尹泰成先生，您主张是为保护母亲免于他人压力，但作此主张所依据的事实有哪些，请说明判断依据是什么。"
+        },
+        {
+          "id": "judgeq-d-5-motive_search-a-b_protection_control-v2",
+          "text": "请说明：当时作出此种判断时，您主张是为保护母亲免于他人压力，但作此主张所依据的事实有哪些，请回答当时作此选择的理由。"
+        },
+        {
+          "id": "judgeq-d-5-motive_search-a-b_protection_control-v3",
+          "text": "在把疑虑推到当庭主张这一步之前，您主张是为保护母亲免于他人压力，但作此主张所依据的事实有哪些，请就当时的考量先以本人能负责的范围作答。"
+        },
+        {
+          "id": "judgeq-d-5-motive_search-a-b_protection_control-v4",
+          "text": "尹泰成先生，您主张是为保护母亲免于他人压力，但作此主张所依据的事实有哪些，请回答当时作此选择的理由。"
+        },
+        {
+          "id": "judgeq-d-5-motive_search-a-b_protection_control-v5",
+          "text": "请说明：当时作出此种判断时，您主张是为保护母亲免于他人压力，但作此主张所依据的事实有哪些，请就当时的考量先以本人能负责的范围作答。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "questionType": "motive_search",
+      "targetParty": "b",
+      "angleId": "b_protection_control",
+      "variants": [
+        {
+          "id": "judgeq-d-5-motive_search-b-b_protection_control-v1",
+          "text": "尹正厚先生，您本人将份额安排的多个关键节点都留在自己手上，请说明当时作此处置的理由。"
+        },
+        {
+          "id": "judgeq-d-5-motive_search-b-b_protection_control-v2",
+          "text": "请说明：当时作出此种处置时，您本人将份额安排的多个关键节点都留在自己手上，请就本人能负责的范围作答。"
+        },
+        {
+          "id": "judgeq-d-5-motive_search-b-b_protection_control-v3",
+          "text": "在把那段过程留在自己手中这一选择背后，您本人将份额安排的多个关键节点都留在自己手上，请回答当时的考量是什么。"
+        },
+        {
+          "id": "judgeq-d-5-motive_search-b-b_protection_control-v4",
+          "text": "尹正厚先生，您本人将份额安排的多个关键节点都留在自己手上，请就本人能负责的范围作答。"
+        },
+        {
+          "id": "judgeq-d-5-motive_search-b-b_protection_control-v5",
+          "text": "请说明：当时作出此种处置时，您本人将份额安排的多个关键节点都留在自己手上，请回答当时的考量是什么。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "questionType": "empathy_approach",
+      "targetParty": "a",
+      "angleId": "b_protection_control",
+      "variants": [
+        {
+          "id": "judgeq-d-5-empathy_approach-a-b_protection_control-v1",
+          "text": "尹泰成先生，在那段照看母亲与处理身后安排同时进行的日子里，最让您难以释怀的一段，请把您亲眼所见的场面先讲出来。"
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-a-b_protection_control-v2",
+          "text": "请在能说的范围内回顾——在那段照看母亲与处理身后安排同时进行的日子里，最让您难以释怀的一段，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-a-b_protection_control-v3",
+          "text": "不必现在就下结论。在那段照看母亲与处理身后安排同时进行的日子里，最让您难以释怀的一段，请把您能说出的部分先讲一段。"
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-a-b_protection_control-v4",
+          "text": "尹泰成先生，在那段照看母亲与处理身后安排同时进行的日子里，最让您难以释怀的一段，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-a-b_protection_control-v5",
+          "text": "请在能说的范围内回顾——在那段照看母亲与处理身后安排同时进行的日子里，最让您难以释怀的一段，请把您能说出的部分先讲一段。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "questionType": "empathy_approach",
+      "targetParty": "b",
+      "angleId": "b_protection_control",
+      "variants": [
+        {
+          "id": "judgeq-d-5-empathy_approach-b-b_protection_control-v1",
+          "text": "尹正厚先生，在那段处理份额安排的过程当中您本人最感艰难的一段，请把您亲历的场面先讲出来。"
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-b-b_protection_control-v2",
+          "text": "请在能说的范围内回顾——在那段处理份额安排的过程当中您本人最感艰难的一段，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-b-b_protection_control-v3",
+          "text": "不必现在就下结论。在那段处理份额安排的过程当中您本人最感艰难的一段，请把您能说出的部分先讲一段。"
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-b-b_protection_control-v4",
+          "text": "尹正厚先生，在那段处理份额安排的过程当中您本人最感艰难的一段，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-b-b_protection_control-v5",
+          "text": "请在能说的范围内回顾——在那段处理份额安排的过程当中您本人最感艰难的一段，请把您能说出的部分先讲一段。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "questionType": "fact_pursuit",
+      "targetParty": "a",
+      "angleId": "mother_voice",
+      "variants": [
+        {
+          "id": "judgeq-d-5-fact_pursuit-a-mother_voice-v1",
+          "text": "尹泰成先生，关于母亲生前就份额一事曾亲口表达的内容，您能够直接复述的部分与仅事后听人转述的部分分别是哪些，请就该处先以事实关系作答。"
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-a-mother_voice-v2",
+          "text": "请按时间顺序梳理：关于母亲生前就份额一事曾亲口表达的内容，您能够直接复述的部分与仅事后听人转述的部分分别是哪些，请按资料分类重新整理。"
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-a-mother_voice-v3",
+          "text": "请把已经记录在案的内容与凭印象转述的部分分开来说——关于母亲生前就份额一事曾亲口表达的内容，您能够直接复述的部分与仅事后听人转述的部分分别是哪些，请把亲眼所见与转述听闻分开陈述。"
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-a-mother_voice-v4",
+          "text": "尹泰成先生，关于母亲生前就份额一事曾亲口表达的内容，您能够直接复述的部分与仅事后听人转述的部分分别是哪些，请按资料分类重新整理。"
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-a-mother_voice-v5",
+          "text": "请按时间顺序梳理：关于母亲生前就份额一事曾亲口表达的内容，您能够直接复述的部分与仅事后听人转述的部分分别是哪些，请把亲眼所见与转述听闻分开陈述。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "questionType": "fact_pursuit",
+      "targetParty": "b",
+      "angleId": "mother_voice",
+      "variants": [
+        {
+          "id": "judgeq-d-5-fact_pursuit-b-mother_voice-v1",
+          "text": "尹正厚先生，关于母亲就份额一事曾亲口表达的内容，本人在母亲身边亲耳听到的话语与仅听家人转述的部分分别是哪些，请按时间顺序逐项作答。"
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-b-mother_voice-v2",
+          "text": "请按时间顺序梳理：关于母亲就份额一事曾亲口表达的内容，本人在母亲身边亲耳听到的话语与仅听家人转述的部分分别是哪些，请将本人亲自处理与协助他人办理的部分分开作答。"
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-b-mother_voice-v3",
+          "text": "请区分作答：本人亲手参与的环节与仅在旁辅助的部分——关于母亲就份额一事曾亲口表达的内容，本人在母亲身边亲耳听到的话语与仅听家人转述的部分分别是哪些，请就该处先以事实关系作答。"
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-b-mother_voice-v4",
+          "text": "尹正厚先生，关于母亲就份额一事曾亲口表达的内容，本人在母亲身边亲耳听到的话语与仅听家人转述的部分分别是哪些，请将本人亲自处理与协助他人办理的部分分开作答。"
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-b-mother_voice-v5",
+          "text": "请按时间顺序梳理：关于母亲就份额一事曾亲口表达的内容，本人在母亲身边亲耳听到的话语与仅听家人转述的部分分别是哪些，请就该处先以事实关系作答。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "questionType": "motive_search",
+      "targetParty": "a",
+      "angleId": "mother_voice",
+      "variants": [
+        {
+          "id": "judgeq-d-5-motive_search-a-mother_voice-v1",
+          "text": "尹泰成先生，您并未亲耳听到母亲完整意思表达却据此断言母亲并非出于本意，请说明判断依据是什么。"
+        },
+        {
+          "id": "judgeq-d-5-motive_search-a-mother_voice-v2",
+          "text": "请说明：当时作出此种判断时，您并未亲耳听到母亲完整意思表达却据此断言母亲并非出于本意，请回答当时作此选择的理由。"
+        },
+        {
+          "id": "judgeq-d-5-motive_search-a-mother_voice-v3",
+          "text": "在把疑虑推到当庭主张这一步之前，您并未亲耳听到母亲完整意思表达却据此断言母亲并非出于本意，请就当时的考量先以本人能负责的范围作答。"
+        },
+        {
+          "id": "judgeq-d-5-motive_search-a-mother_voice-v4",
+          "text": "尹泰成先生，您并未亲耳听到母亲完整意思表达却据此断言母亲并非出于本意，请回答当时作此选择的理由。"
+        },
+        {
+          "id": "judgeq-d-5-motive_search-a-mother_voice-v5",
+          "text": "请说明：当时作出此种判断时，您并未亲耳听到母亲完整意思表达却据此断言母亲并非出于本意，请就当时的考量先以本人能负责的范围作答。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "questionType": "motive_search",
+      "targetParty": "b",
+      "angleId": "mother_voice",
+      "variants": [
+        {
+          "id": "judgeq-d-5-motive_search-b-mother_voice-v1",
+          "text": "尹正厚先生，在听到母亲的意思表达时，您本人当时未当场记录或求证，请说明当时作此处置的理由。"
+        },
+        {
+          "id": "judgeq-d-5-motive_search-b-mother_voice-v2",
+          "text": "请说明：当时作出此种处置时，在听到母亲的意思表达时，您本人当时未当场记录或求证，请就本人能负责的范围作答。"
+        },
+        {
+          "id": "judgeq-d-5-motive_search-b-mother_voice-v3",
+          "text": "在把那段过程留在自己手中这一选择背后，在听到母亲的意思表达时，您本人当时未当场记录或求证，请回答当时的考量是什么。"
+        },
+        {
+          "id": "judgeq-d-5-motive_search-b-mother_voice-v4",
+          "text": "尹正厚先生，在听到母亲的意思表达时，您本人当时未当场记录或求证，请就本人能负责的范围作答。"
+        },
+        {
+          "id": "judgeq-d-5-motive_search-b-mother_voice-v5",
+          "text": "请说明：当时作出此种处置时，在听到母亲的意思表达时，您本人当时未当场记录或求证，请回答当时的考量是什么。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "questionType": "empathy_approach",
+      "targetParty": "a",
+      "angleId": "mother_voice",
+      "variants": [
+        {
+          "id": "judgeq-d-5-empathy_approach-a-mother_voice-v1",
+          "text": "尹泰成先生，在那些与母亲单独相处的时刻，母亲对您说过的话当中至今仍让您难以放下的一段，请把您亲眼所见的场面先讲出来。"
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-a-mother_voice-v2",
+          "text": "请在能说的范围内回顾——在那些与母亲单独相处的时刻，母亲对您说过的话当中至今仍让您难以放下的一段，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-a-mother_voice-v3",
+          "text": "不必现在就下结论。在那些与母亲单独相处的时刻，母亲对您说过的话当中至今仍让您难以放下的一段，请把您能说出的部分先讲一段。"
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-a-mother_voice-v4",
+          "text": "尹泰成先生，在那些与母亲单独相处的时刻，母亲对您说过的话当中至今仍让您难以放下的一段，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-a-mother_voice-v5",
+          "text": "请在能说的范围内回顾——在那些与母亲单独相处的时刻，母亲对您说过的话当中至今仍让您难以放下的一段，请把您能说出的部分先讲一段。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "questionType": "empathy_approach",
+      "targetParty": "b",
+      "angleId": "mother_voice",
+      "variants": [
+        {
+          "id": "judgeq-d-5-empathy_approach-b-mother_voice-v1",
+          "text": "尹正厚先生，在那段聆听母亲意思表达的过程当中您本人最感为难的一段，请把您亲历的场面先讲出来。"
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-b-mother_voice-v2",
+          "text": "请在能说的范围内回顾——在那段聆听母亲意思表达的过程当中您本人最感为难的一段，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-b-mother_voice-v3",
+          "text": "不必现在就下结论。在那段聆听母亲意思表达的过程当中您本人最感为难的一段，请把您能说出的部分先讲一段。"
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-b-mother_voice-v4",
+          "text": "尹正厚先生，在那段聆听母亲意思表达的过程当中您本人最感为难的一段，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-b-mother_voice-v5",
+          "text": "请在能说的范围内回顾——在那段聆听母亲意思表达的过程当中您本人最感为难的一段，请把您能说出的部分先讲一段。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "questionType": "fact_pursuit",
+      "targetParty": "a",
+      "angleId": "dual_responsibility",
+      "variants": [
+        {
+          "id": "judgeq-d-5-fact_pursuit-a-dual_responsibility-v1",
+          "text": "尹泰成先生，关于兄弟双方在母亲身后事务中分别承担的具体环节，本人亲手处理与对方处理的部分分别是哪些，请就该处先以事实关系作答。"
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-a-dual_responsibility-v2",
+          "text": "请按时间顺序梳理：关于兄弟双方在母亲身后事务中分别承担的具体环节，本人亲手处理与对方处理的部分分别是哪些，请按资料分类重新整理。"
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-a-dual_responsibility-v3",
+          "text": "请把已经记录在案的内容与凭印象转述的部分分开来说——关于兄弟双方在母亲身后事务中分别承担的具体环节，本人亲手处理与对方处理的部分分别是哪些，请把亲眼所见与转述听闻分开陈述。"
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-a-dual_responsibility-v4",
+          "text": "尹泰成先生，关于兄弟双方在母亲身后事务中分别承担的具体环节，本人亲手处理与对方处理的部分分别是哪些，请按资料分类重新整理。"
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-a-dual_responsibility-v5",
+          "text": "请按时间顺序梳理：关于兄弟双方在母亲身后事务中分别承担的具体环节，本人亲手处理与对方处理的部分分别是哪些，请把亲眼所见与转述听闻分开陈述。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "questionType": "fact_pursuit",
+      "targetParty": "b",
+      "angleId": "dual_responsibility",
+      "variants": [
+        {
+          "id": "judgeq-d-5-fact_pursuit-b-dual_responsibility-v1",
+          "text": "尹正厚先生，关于兄弟双方在份额安排上各自经手的具体步骤，本人亲手处理与对方处理的部分分别是哪些，请按时间顺序逐项作答。"
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-b-dual_responsibility-v2",
+          "text": "请按时间顺序梳理：关于兄弟双方在份额安排上各自经手的具体步骤，本人亲手处理与对方处理的部分分别是哪些，请将本人亲自处理与协助他人办理的部分分开作答。"
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-b-dual_responsibility-v3",
+          "text": "请区分作答：本人亲手参与的环节与仅在旁辅助的部分——关于兄弟双方在份额安排上各自经手的具体步骤，本人亲手处理与对方处理的部分分别是哪些，请就该处先以事实关系作答。"
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-b-dual_responsibility-v4",
+          "text": "尹正厚先生，关于兄弟双方在份额安排上各自经手的具体步骤，本人亲手处理与对方处理的部分分别是哪些，请将本人亲自处理与协助他人办理的部分分开作答。"
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-b-dual_responsibility-v5",
+          "text": "请按时间顺序梳理：关于兄弟双方在份额安排上各自经手的具体步骤，本人亲手处理与对方处理的部分分别是哪些，请就该处先以事实关系作答。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "questionType": "motive_search",
+      "targetParty": "a",
+      "angleId": "dual_responsibility",
+      "variants": [
+        {
+          "id": "judgeq-d-5-motive_search-a-dual_responsibility-v1",
+          "text": "尹泰成先生，您主张责任主要应由对方承担，作此主张所依据的事实有哪些，请说明判断依据是什么。"
+        },
+        {
+          "id": "judgeq-d-5-motive_search-a-dual_responsibility-v2",
+          "text": "请说明：当时作出此种判断时，您主张责任主要应由对方承担，作此主张所依据的事实有哪些，请回答当时作此选择的理由。"
+        },
+        {
+          "id": "judgeq-d-5-motive_search-a-dual_responsibility-v3",
+          "text": "在把疑虑推到当庭主张这一步之前，您主张责任主要应由对方承担，作此主张所依据的事实有哪些，请就当时的考量先以本人能负责的范围作答。"
+        },
+        {
+          "id": "judgeq-d-5-motive_search-a-dual_responsibility-v4",
+          "text": "尹泰成先生，您主张责任主要应由对方承担，作此主张所依据的事实有哪些，请回答当时作此选择的理由。"
+        },
+        {
+          "id": "judgeq-d-5-motive_search-a-dual_responsibility-v5",
+          "text": "请说明：当时作出此种判断时，您主张责任主要应由对方承担，作此主张所依据的事实有哪些，请就当时的考量先以本人能负责的范围作答。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "questionType": "motive_search",
+      "targetParty": "b",
+      "angleId": "dual_responsibility",
+      "variants": [
+        {
+          "id": "judgeq-d-5-motive_search-b-dual_responsibility-v1",
+          "text": "尹正厚先生，您本人将多个关键决定留在自己手上，请说明当时作此处置的理由。"
+        },
+        {
+          "id": "judgeq-d-5-motive_search-b-dual_responsibility-v2",
+          "text": "请说明：当时作出此种处置时，您本人将多个关键决定留在自己手上，请就本人能负责的范围作答。"
+        },
+        {
+          "id": "judgeq-d-5-motive_search-b-dual_responsibility-v3",
+          "text": "在把那段过程留在自己手中这一选择背后，您本人将多个关键决定留在自己手上，请回答当时的考量是什么。"
+        },
+        {
+          "id": "judgeq-d-5-motive_search-b-dual_responsibility-v4",
+          "text": "尹正厚先生，您本人将多个关键决定留在自己手上，请就本人能负责的范围作答。"
+        },
+        {
+          "id": "judgeq-d-5-motive_search-b-dual_responsibility-v5",
+          "text": "请说明：当时作出此种处置时，您本人将多个关键决定留在自己手上，请回答当时的考量是什么。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "questionType": "empathy_approach",
+      "targetParty": "a",
+      "angleId": "dual_responsibility",
+      "variants": [
+        {
+          "id": "judgeq-d-5-empathy_approach-a-dual_responsibility-v1",
+          "text": "尹泰成先生，在身为兄弟而走到当庭对立的这一步，最让您难以释怀的一段心境，请把您亲眼所见的场面先讲出来。"
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-a-dual_responsibility-v2",
+          "text": "请在能说的范围内回顾——在身为兄弟而走到当庭对立的这一步，最让您难以释怀的一段心境，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-a-dual_responsibility-v3",
+          "text": "不必现在就下结论。在身为兄弟而走到当庭对立的这一步，最让您难以释怀的一段心境，请把您能说出的部分先讲一段。"
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-a-dual_responsibility-v4",
+          "text": "尹泰成先生，在身为兄弟而走到当庭对立的这一步，最让您难以释怀的一段心境，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-a-dual_responsibility-v5",
+          "text": "请在能说的范围内回顾——在身为兄弟而走到当庭对立的这一步，最让您难以释怀的一段心境，请把您能说出的部分先讲一段。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "questionType": "empathy_approach",
+      "targetParty": "b",
+      "angleId": "dual_responsibility",
+      "variants": [
+        {
+          "id": "judgeq-d-5-empathy_approach-b-dual_responsibility-v1",
+          "text": "尹正厚先生，在身为兄弟而走到当庭对立的这一步当中，您本人最感艰难的一段，请把您亲历的场面先讲出来。"
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-b-dual_responsibility-v2",
+          "text": "请在能说的范围内回顾——在身为兄弟而走到当庭对立的这一步当中，您本人最感艰难的一段，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-b-dual_responsibility-v3",
+          "text": "不必现在就下结论。在身为兄弟而走到当庭对立的这一步当中，您本人最感艰难的一段，请把您能说出的部分先讲一段。"
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-b-dual_responsibility-v4",
+          "text": "尹正厚先生，在身为兄弟而走到当庭对立的这一步当中，您本人最感艰难的一段，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-b-dual_responsibility-v5",
+          "text": "请在能说的范围内回顾——在身为兄弟而走到当庭对立的这一步当中，您本人最感艰难的一段，请把您能说出的部分先讲一段。"
+        }
+      ]
+    }
+  ]
+}

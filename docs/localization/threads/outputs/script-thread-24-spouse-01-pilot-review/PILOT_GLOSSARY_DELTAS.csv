@@ -1,0 +1,70 @@
+term_id,source_ko,locale,pilot_used,glossary_locked,delta_kind,recommendation
+judge_vocative,재판관님,en,Your Honor,Your Honor (script-glossary),OK,Locked. Pilot consistent.
+judge_vocative,재판관님,ja,裁判官,裁判官 (script-glossary — no honorific suffix),OK,Locked. Pilot consistent.
+judge_vocative,재판관님,zh-CN,裁判官,裁判官 (script-glossary — no honorific suffix),OK,Locked. Pilot consistent.
+spouse_intimate_address,자기야,en,Honey,Honey (script-glossary),OK,Locked. Pilot consistent.
+spouse_intimate_address,자기야,ja,あなた,あなた (script-glossary — intimate accusatory between spouses),OK,Locked. Pilot consistent.
+spouse_intimate_address,자기야,zh-CN,亲爱的,亲爱的 (script-glossary),OK,Locked. Pilot consistent.
+npc_name_a,박지연,en,Park Ji-yeon,Park Ji-yeon (script-glossary),OK,Locked.
+npc_name_a,박지연,ja,パク・ジヨン,パク・ジヨン (script-glossary),OK,Locked.
+npc_name_a,박지연,zh-CN,朴智妍,朴智妍 (script-glossary),OK,Locked.
+npc_name_b,이준호,en,Lee Jun-ho,Lee Jun-ho (script-glossary),OK,Locked.
+npc_name_b,이준호,ja,イ・ジュノ,イ・ジュノ (script-glossary),OK,Locked.
+npc_name_b,이준호,zh-CN,李俊昊,李俊昊 (script-glossary),OK,Locked.
+npc_name_w3,박미라,en,Park Mi-ra,Park Mi-ra (script-glossary),OK,Locked.
+npc_name_w3,박미라,ja,相談者 (used by JA scriptedText sub-agent — generic role-noun),パク・ミラ (script-glossary expectation),DRIFT,P2: JA pilot used `相談者` (role-noun) instead of glossary-locked transliteration `パク・ミラ`. JA SUMMARY flagged this. Recommend native-review pass: confirm if role-noun is intentional (witness scene context) or revert to glossary.
+npc_name_w3,박미라,zh-CN,朴美罗,朴美罗 (script-glossary),OK,Locked.
+officetel,오피스텔,en,studio apartment,studio apartment (script-glossary),OK,Locked. Pilot consistent.
+officetel,오피스텔,ja,オフィステル,オフィステル (script-glossary loanword),OK,Locked. Pilot consistent.
+officetel,오피스텔,zh-CN,公寓,公寓 (script-glossary),OK_WITH_NUANCE_LOSS,zh-CN intake + pilot flagged: `公寓` reads as generic apartment, loses 오피스텔's small-studio mixed-use connotation. Acceptable for surface-only judge speech; refinement may be useful in evidence.surfaceDescription. P2.
+won,원/만원,en,won / KRW [N] million,won (script-glossary),OK,Locked. EN compact UI may use `KRW 30M`.
+won,원/만원,ja,ウォン (mixed `三千万ウォン` and `3,000万ウォン` forms used by different sub-agents),ウォン (script-glossary),DRIFT,P2: JA SUMMARY flagged `三千万ウォン` (kanji) vs `3,000万ウォン` (half-width comma) inconsistency between scriptedText and other surfaces. Native-review normalization recommended.
+won,원/만원,zh-CN,韩元 / 万韩元,韩元 (script-glossary),OK,Locked.
+power_of_attorney_truth_lexeme,위임장 / 위임장 조작,en,power of attorney / power-of-attorney forgery (S5+only),power of attorney (script-glossary truth-row),OK,Locked. EN forbidden-list catches paraphrase variants (forged power of attorney / tampered authorization).
+power_of_attorney_truth_lexeme,위임장 / 위임장 조작,ja,委任状 / 委任状の偽造 (S5+only),委任状 (script-glossary truth-row),OK,Locked.
+power_of_attorney_truth_lexeme,위임장 / 위임장 조작,zh-CN,委托书 / 伪造委托书 (S5+only) — but `委任书` also used by some scriptedText S5 lines,委托书 (script-glossary truth-row),DRIFT,"P2: zh-CN SUMMARY flagged `委任书` (alternative form) used in some S5 lines while glossary locks `委托书`. Both pass forbidden-lexeme guard but create inconsistency. Recommend normalization pass."
+investment_fraud_truth_lexeme,투자 사기,en,investment fraud (S5+only),investment fraud (script-glossary truth-row),OK,Locked.
+investment_fraud_truth_lexeme,투자 사기,ja,投資詐欺 (S5+only),投資詐欺 (script-glossary truth-row),OK,Locked.
+investment_fraud_truth_lexeme,투자 사기,zh-CN,投资诈骗 (S5+only),投资诈骗 (script-glossary truth-row),OK,Locked.
+older_brother_truth_lexeme,형/친형,en,(my) older brother / my brother (S5+only),"older brother / my brother (script-glossary truth-row, gender-split forbidden list catches niece+nephew)",OK,Locked. EN substring forbidden-list catches `brother` matches; cross-checked at full-string scan — no pre-S5 occurrences.
+older_brother_truth_lexeme,형/친형,ja,兄/実兄 (S5+only),兄 (script-glossary truth-row),OK,Locked.
+older_brother_truth_lexeme,형/친형,zh-CN,哥哥/亲哥哥 (S5+only),哥哥 (script-glossary truth-row),OK,Locked.
+nephew_truth_lexeme,조카,en,nephew (S5+only),nephew + niece both forbidden in surface (script-glossary truth-row),OK,Locked. KO `조카` is gender-neutral; spouse-01 hidden truth specifies 중2 nephew. EN forbidden-list correctly includes both `nephew` and `niece`.
+nephew_truth_lexeme,조카,ja,甥 (S5+only),甥 (script-glossary truth-row),OK,Locked.
+nephew_truth_lexeme,조카,zh-CN,侄子 (S5+only),侄子 (script-glossary truth-row),OK,Locked.
+late_night_call,새벽 통화,en,late-night call,late-night call (script-glossary),OK,Locked.
+late_night_call,새벽 통화,ja,深夜の通話,深夜の通話 (script-glossary),OK,Locked.
+late_night_call,새벽 통화,zh-CN,凌晨通话,凌晨通话 (script-glossary),OK,Locked.
+dashcam_gps,블랙박스 GPS,en,dashcam GPS log,dashcam (script-glossary),OK,Locked.
+dashcam_gps,블랙박스 GPS,ja,ドラレコGPS / ブラックボックス記録,ドラレコGPS (script-glossary),OK,Pilot mixed `ブラックボックス` and `ドラレコ` — both intelligible. P2 normalization optional.
+dashcam_gps,블랙박스 GPS,zh-CN,行车记录仪 GPS,行车记录仪 (script-glossary),OK,Locked.
+unknown_sender_message,발신자 미상 문자,en,text from an unknown sender,text from an unknown sender (script-glossary),OK,Locked. Critical e-4 surfaceName.
+unknown_sender_message,발신자 미상 문자,ja,差出人不明,差出人不明 (script-glossary),OK,Locked.
+unknown_sender_message,발신자 미상 문자,zh-CN,未登记号码的短信,未知发件人的短信 (script-glossary expectation),NEW_VARIANT,"P2: zh-CN pilot used `未登记号码的短信` instead of script-glossary `未知发件人的短信`. Both surface-correct (no truth lexeme). Recommend either accept as semantic equivalent or normalize."
+in_law_conflict,시댁 갈등,en,in-law conflict,in-law conflict (script-glossary),OK,Locked.
+in_law_conflict,시댁,ja,義実家 (used in phase1 to avoid 兄 truth-leak),義実家 (script-glossary),OK,Locked. JA SUMMARY noted alternative `夫の実家` / `夫の家族` may read more natural — P2 native review.
+in_law_conflict,시댁,zh-CN,婆家方面 / 婆家事,婆家 (script-glossary),OK,Locked.
+slush_fund,개인 비자금,en,personal slush fund,personal slush fund (script-glossary),OK,Locked.
+slush_fund,개인 비자금,ja,隠し財産,隠し財産 (script-glossary),OK,Locked.
+slush_fund,개인 비자금,zh-CN,小金库,小金库 (script-glossary),OK,Locked.
+joint_savings,공동 적금,en,joint savings (account),joint savings (script-glossary),OK,Locked.
+joint_savings,공동 적금,ja,共同貯蓄,共同貯蓄 (script-glossary),OK,Locked.
+joint_savings,공동 적금,zh-CN,共同存款,共同存款 (script-glossary),OK,Locked.
+external_affair_npc_term,외도 (NPC speech / accusation register),en,affair / extramarital affair,affair (script-glossary),OK,Locked.
+external_affair_npc_term,외도 (NPC speech / accusation register),ja,外遇 (Chinese loanword used by sub-agents in S0 b/d-1 templates) / 不貞 (some other places),浮気 / 不倫 (script-glossary),DRIFT,"P2: JA SUMMARY flagged. `外遇` reads as Chinese loanword in JA — standard forms are `浮気` (everyday) or `不倫` (legal/formal). Native-review pass to normalize. Not blocking ship — register issue only."
+external_affair_npc_term,외도 (NPC speech / accusation register),zh-CN,外遇情形 / 外遇,外遇 (script-glossary),OK,Locked.
+brand_full_title,솔로몬의 딜레마: 진실의 재판,en,(brand-locked — used in i18n message map only),"Verdict Zero: Trial of Truth (glossary.csv brand_full_title locked)",NOT_USED_IN_SCRIPT,Brand title not used in script overlays per Stage 1 design. Brand guard sweep confirmed 0 forbidden-literal occurrences in any script sidecar.
+brand_full_title,솔로몬의 딜레마: 진실의 재판,ja,(brand-locked),ソロモンのジレンマ：真実の裁き (locked),NOT_USED_IN_SCRIPT,Same.
+brand_full_title,솔로몬의 딜레마: 진실의 재판,zh-CN,(brand-locked),真相裁决：零点审判 (locked),NOT_USED_IN_SCRIPT,Same.
+honorific_si,씨,en,Mr. / Mrs. + surname,Mr. / Mrs. (script-glossary per character),OK,Locked.
+honorific_si,씨,ja,さん,さん (script-glossary),OK,Locked.
+honorific_si,씨,zh-CN,先生 / 女士,先生 / 女士 (script-glossary per character),OK,Locked.
+amount_30m,3000만원/3천만원,en,30 million won / KRW 30 million,won + numeric form (script-glossary),OK,Locked. Truth Throttle at S0/S1/S2: vague `the amount` / `that amount`.
+amount_30m,3000만원/3천만원,ja,3,000万ウォン / 三千万ウォン (mixed forms),3,000万ウォン (recommended canonical),DRIFT,P2: see `won` row above.
+amount_30m,3000만원/3천만원,zh-CN,3,000万元 / 三千万元,3,000万元 (recommended canonical),OK,Pilot consistent — half-width comma form used.
+truth_word_truth_record_title,진실,en,(used in `Trial of Truth` brand subtitle only — script may render `truth` lowercase in body text),Truth (glossary.csv truth row — draft status),OK,Glossary `truth=Truth`. Body-text usage `the truth` / `that truth` non-leaking.
+truth_word_truth_record_title,진실,ja,真相 (script body text) / 真実 (locked brand subtitle only),"真相 (glossary.csv truth row); 真実 only locked at brand_subtitle/brand_full_title",OK,JA pilot correctly preserves the locked-rule split (真実 in brand-only contexts).
+truth_word_truth_record_title,진실,zh-CN,真相 (script body) / 真相 in brand,真相 (glossary + brand both = 真相),OK,Consistent.
+no_truth_words_in_surface_only_channels,(global rule),all,All 3 locales: 0 truth lexemes in judge_question / judge_contradiction / judge_evidence_combo / judge_witness_summon / system_message / dossier (안내) channels,(N/A — channel-policy enforcement),OK,disclosure-policy.md §2.1 surface-only channel rule honored across all 3 locales.
+ko_truth_lexemes_at_S5_only,(global rule),all,All 3 locales: truth lexemes appear only at lieState=S5 entries (audited),(N/A — lieState-gate enforcement),OK,disclosure-policy.md §3.1 Truth Throttle honored across all 3 locales.
+non_lieState_channel_softening,(aftermath/dossier/witness/etc.),all,All 3 locales: surface paraphrase used where KO source reveals truth (post-verdict / depth=full / lieBand=late),(N/A — design gap),DESIGN_GAP,P1: locale player gets weaker post-verdict reveal than KO player. See PILOT_DISCLOSURE_BOUNDARY_CHECK rows. Decision: extend validator to recognize aftermath/dossier-late/witness-full as truth-allowed OR accept as deliberate locale-side hardening.

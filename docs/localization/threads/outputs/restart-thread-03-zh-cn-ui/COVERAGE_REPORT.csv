@@ -1,0 +1,55 @@
+namespace,key,current_zh_cn,proposed_zh_cn,status,notes
+common,app.title,真相裁决：零点审判,真相裁决：零点审判,ok,Locked brand title applied
+common,brand.internalProjectName,Project_Solomon,Project_Solomon,ok,Internal name; never translated
+common,brand.title,真相裁决,真相裁决,ok,Locked brand
+common,brand.subtitle,零点审判,零点审判,ok,Locked brand
+common,brand.fullTitle,真相裁决：零点审判,真相裁决：零点审判,ok,Full-width colon used
+common,splash.subtitle,法庭模拟游戏,法庭模拟游戏,ok,KO 법정 시뮬레이션 게임
+common,language.selectorLabel,语言,语言,ok,
+common,language.selectorTitle,选择显示语言,选择显示语言,ok,
+common,steam.authRequired.title,需要 Steam 认证,需要 Steam 认证,ok,
+common,steam.authRequired.description,请检查 Steam 客户端和服务器认证状态，然后重试。,请检查 Steam 客户端和服务器认证状态，然后重试。,ok,
+common,steam.authRequired.retry,重试,重试,ok,
+common,steam.authFailedFallback,Steam 认证失败。,Steam 认证失败。,ok,
+common,session.preparing.title,正在准备会话,正在准备会话,ok,
+common,session.preparing.description,正在加载案件数据和审判环境。,正在加载案件数据和审判环境。,ok,
+settings,settings.about.credits.title,真相裁决：零点审判,真相裁决：零点审判,ok,Brand-aligned
+settings,settings.about.credits.description,用人类判断审理 AI 证词冲突的可重玩推理游戏,用人类判断审理 AI 证词冲突的可重玩推理游戏,ok,
+settings,settings.language.title,语言,语言,ok,
+settings,settings.language.description,选择游戏 UI 使用的显示语言。,选择游戏 UI 使用的显示语言。,ok,
+settings,settings.language.displayLanguage,显示语言,显示语言,ok,
+settings,settings.language.displayLanguageDescription,会立即应用到主页、设置与系统 UI。,会立即应用到主页、设置与系统 UI。,ok,
+settings,settings.language.current,当前语言,当前语言,ok,
+settings,settings.language.restartNote,部分案件正文和已保存记录可能会在下一次界面切换后刷新。,部分案件正文和已保存记录可能会在下一次界面切换后刷新。,ok,
+home,home.gameTitle,真相裁决：零点审判,真相裁决：零点审判,ok,Brand-aligned
+home,home.tagline,"成为现代审判者，辨明证词背后的真相。","化身现代裁判官，辨明证词背后的真相。",changed,"Glossary 재판관 → 裁判官 alignment; previous 审判者 deviated. needs_native_review for marketing tone."
+home,pc.home.moreCases,另 {count} 件,另 {count} 件,ok,Replaces composed KO suffix `외 N건`
+home,pc.home.countdown.ready,即将恢复,即将补充,changed,"KO 곧 충전 = recharge; 补充 reads more accurately than 恢复 (recover)."
+home,pc.home.countdown.minutesSeconds,{minutes}分{seconds}秒,{minutes}分{seconds}秒,ok,
+home,pc.home.countdown.seconds,{seconds}秒,{seconds}秒,ok,
+home,pc.resolutionConfirm.rollback,{seconds}秒后将恢复到之前的分辨率。,{seconds}秒后将恢复到之前的分辨率。,ok,Placeholder preserved
+court,pc.notes.unseen,（未确认项目 {count} 个）,（未确认项目 {count} 个）,ok,
+court,pc.combo.ready,可组合 {count} 个 - 现在可连接,可组合 {count} 个 — 现在可连接,changed,"Replace ASCII hyphen with em-dash for CJK polish; native review optional."
+court,pc.combo.potential,需要线索 {count} 个 - 似乎还有未发现的线索,需要线索 {count} 个 — 似乎还有未发现的线索,changed,Same em-dash polish
+court,pc.combo.readyPairToast,可组合的一组已准备好,可组合的一组已准备好,ok,
+court,pc.combo.readyItemsNotice,有 {count} 个可组合项目,有 {count} 个可组合项目,ok,
+court,pc.combo.readyMaterialsNotice,已准备 {count} 个可组合材料,已准备 {count} 个可组合材料,ok,
+court,pc.combo.readyDetailLabel,可组合项目详情,可组合项目详情,ok,
+court,pc.recordSummary.moreConvincing,判定 {party} 一方的主张更有说服力。,判定 {party} 一方的主张更有说服力。,ok,
+court,pc.verdictAdvance.minimumVisible,需要至少揭示 {required} 个争议点后才能进入裁决。当前已揭示 {visible} 个。,需要至少揭示 {required} 个争议点后才能进入裁决。当前已揭示 {visible} 个。,ok,"裁决 brand-aligned; see SUMMARY 裁决/判决 split"
+court,pc.verdictAdvance.conditionsMissing,尚未满足裁决条件。请先确认各争议点的真相与证据。,尚未满足裁决条件。请先确认各争议点的真相与证据。,ok,
+court,pc.verdictAdvance.hidden.title,仍有尚未揭示的争议点,仍有尚未揭示的争议点,ok,
+court,pc.verdictAdvance.hidden.subtitle,裁决前确认,裁决前确认,ok,
+court,pc.verdictAdvance.hidden.body,"当前已揭示 {visible} 个争议点。\n仍有 {hidden} 个争议点尚未揭示。\n\n仍要直接进入裁决吗？","当前已揭示 {visible} 个争议点。\n仍有 {hidden} 个争议点尚未揭示。\n\n仍要直接进入裁决吗？",ok,Both placeholders preserved
+court,pc.verdictAdvance.hidden.visibleTag,已公开争议 {count},已公开争议 {count},ok,
+court,pc.verdictAdvance.hidden.hiddenTag,隐藏争议 {count},隐藏争议 {count},ok,
+court,pc.verdictAdvance.hidden.confirm,仍然进入裁决,仍然进入裁决,ok,
+court,pc.verdictAdvance.hidden.collapse,仅隐藏裁决按钮,仅隐藏裁决按钮,ok,
+court,pc.verdictAdvance.hidden.keepInvestigating,继续调查,继续调查,ok,
+verdict,pc.verdict.factOption.partyClaimCorrect,{party} 一方的主张正确,{party} 一方的主张正确,ok,
+verdict,pc.verdict.factOption.partyClaimCorrectWithContradiction,该争议点与事实不符 - {party} 一方的主张正确,该争议点与事实不符 — {party} 一方的主张正确,changed,Em-dash polish
+verdict,pc.verdict.responsibility.major,{party} 一方承担主要责任,{party} 一方承担主要责任,ok,
+verdict,pc.verdict.responsibility.greater,{party} 一方承担更大责任,{party} 一方承担更大责任,ok,
+verdict,pc.verdict.responsibility.similar,双方责任相近,双方责任相近,ok,
+profile,pc.perk.required,需要 {name},需要 {name},ok,
+profile,pc.profile.fragments.needCount,至少需要 {count} 个,至少需要 {count} 个,ok,

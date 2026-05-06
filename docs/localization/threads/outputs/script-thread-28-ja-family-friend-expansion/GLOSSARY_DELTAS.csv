@@ -1,0 +1,27 @@
+term_id,case,category,ko,ja_used,relation_to_script_glossary,risk,notes
+elder_brother_family,family-01,relationship,형,兄,extends,low,"Plain `兄` not on family-01 forbidden list. Used as kin-vocative B→A. (`兄のアイデンティティ` is forbidden as compound; bare `兄` is safe.)"
+younger_brother_family,family-01,relationship,동생,弟,new_script_term,low,"Plain `弟` used as kin reference A→B. Not on forbidden list."
+mother_kin,family-01,relationship,어머니,母,new_script_term,low,"`母` for the deceased mother. Not on forbidden list."
+party_a_name_family,family-01,name,윤태성,ユン・テソンさん,new_script_term,low,Standard Korean name romanization (Hepburn variant for ㅓ→ソ).
+party_b_name_family,family-01,name,윤정후,ユン・ジョンフさん,new_script_term,low,Standard romanization.
+will_doc,family-01,evidence,유서,遺言書,new_script_term,low,"`遺言書` for the testament document. Distinct from forbidden `遺書操作` (used at S5 only)."
+notary_memo,family-01,evidence,공증인 메모,公証人のメモ,new_script_term,low,Compact JA legal-clerk register.
+handwritten_draft,family-01,evidence,자필 유언장 연습본,自筆遺言練習本,new_script_term,medium,"Compound noun. Could be split as `自筆の遺言練習本` for readability."
+caregiver,family-01,role,요양보호사,介護士,new_script_term,low,"Standard JA term. Caregiver / care worker role. KO uses 요양보호사 (long-term care worker)."
+ratio_60_40_surface,family-01,number,60대 40,60対40,new_script_term,low,"Surface ratio (notarized doc). NOT forbidden — `90:10` and `90対10` are forbidden as the secret/draft ratio."
+sealed_record,family-01,concept,봉인된 가족 기록,封じられた家族の記録,new_script_term,low,Surface paraphrase for the diary's sensitive content. Avoids `出生の秘密`.
+fiance_surface,friend-01,role,예비신랑,婚約者,new_script_term,low,"Plain `婚約者` is fine as surface noun. Forbidden compound is `婚約者が先に` (S5-only)."
+former_friend,friend-01,relationship,전 친구,元友人,new_script_term,low,"`元友人` for the broken friendship. Surface-safe."
+group_chat,friend-01,concept,단톡방,グループチャット,new_script_term,low,"`グループチャット` (loanword) standard for multi-party chat. Compact UI alt: `グループ通話` ✗ wrong (means call), use only `グループチャット`."
+party_a_name_friend,friend-01,name,송다은,ソン・ダウンさん,new_script_term,low,Standard romanization.
+party_b_name_friend,friend-01,name,최수민,チェ・スミンさん,new_script_term,low,Standard romanization.
+intimate_address_friend,friend-01,vocative,수민아 / 다은아,スミン / ダウン,extends,low,"Drops Korean intimate vocative suffix. JA in close-friend register uses bare given name. Equivalent to script-glossary `あなた` for spouse but applied to close-friend pair."
+groom_message,friend-01,evidence,예비신랑 메시지,婚約者とのメッセージ,new_script_term,low,Surface noun.
+father_surface,friend-01,role,(송다은) 아버지,(ソン・ダウンさんの)お父様 / ご家族の方,new_script_term,medium,"Plain `お父様` is surface-safe. `父の詐欺` is the forbidden compound. cases/generated chose `ご家族の方` for extra caution; phase1 uses paraphrase via `義実家の問題` style."
+old_severance,friend-01,concept,과거 손절,過去の絶交,new_script_term,low,"Plain `絶交` for severance. Forbidden compound is `過去の絶交はAの父が原因` (S5-only)."
+notarized_copy,family-01,doc,공증본,公証本,new_script_term,low,Standard JA legal term.
+investigation_phase,family-01,phase,심문,尋問,matches,low,"Already in glossary as `interrogation_phase=尋問`. Confirmed."
+condolence_path,family-01,mediation,조건부 조정,条件付きの調停,extends,low,"Glossary has mediation_phase=調停. Compound here is `条件付きの調停案` for mediation `conditional` path."
+factory_crisis_paraphrase,family-01,event,공장 위기,工場危機,new_script_term,medium,"`工場危機` alone is surface-OK. The forbidden compound `工場危機の3億` (S5-only) requires the amount to remain hidden."
+old_account_flow,family-01,concept,오래된 계좌 흐름,年代物の口座の流れ,new_script_term,low,"Surface paraphrase. Forbidden compound is `古い定期支援` (S5-only). `年代物の` chosen for vintage-record connotation; alt `古い口座の流れ` simpler."
+mother_account_pass,family-01,concept,어머니 통장 경유,母の通帳経由,new_script_term,medium,"Surface noun. Forbidden compound is `正厚の金` etc. (S5-only). `母の通帳` alone is OK."

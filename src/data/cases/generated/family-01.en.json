@@ -1,0 +1,80 @@
+{
+  "caseId": "family-01",
+  "overlayKind": "generatedCaseSurface",
+  "meta": {
+    "title": "The Will of a Mother with Dementia"
+  },
+  "context": {
+    "description": "A mother in late-stage dementia left a will that splits the estate 60% to the younger son and 40% to the elder. The elder son, Yoon Tae-seong, who lived with their mother and cared for her, refuses to accept the ratio. The younger son keeps his composure to the very end.",
+    "triggerAmplifier": "Repeated visits, a switched care worker, and a notarised copy that does not match the handwritten draft are stacked one over the other. At first the suspicion runs straight at the younger son's influence over their mother's final wishes; the more clues are uncovered, the more the picture shifts, and what neither side has spoken about begins to surface."
+  },
+  "duo": {
+    "partyA": {
+      "name": "Yoon Tae-seong",
+      "occupation": "owner of a kitchen-furniture factory"
+    },
+    "partyB": {
+      "name": "Yoon Jung-hoo",
+      "occupation": "auto-parts shop operator"
+    }
+  },
+  "disputes": [
+    {
+      "id": "d-1",
+      "name": "Will drafting and capacity to decide"
+    },
+    {
+      "id": "d-2",
+      "name": "Difference between the notarised will and a separate document"
+    },
+    {
+      "id": "d-3",
+      "name": "Source of the long-running support"
+    },
+    {
+      "id": "d-4",
+      "name": "Family records and the reasons for silence"
+    },
+    {
+      "id": "d-5",
+      "name": "The mother's hidden wishes"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e-1",
+      "surfaceName": "Copy of the document showing the distribution ratio",
+      "surfaceDescription": "A copy of the mother's will exists."
+    },
+    {
+      "id": "e-2",
+      "surfaceName": "Care-home visit log",
+      "surfaceDescription": "A visit log from the care home exists."
+    },
+    {
+      "id": "e-3",
+      "surfaceName": "Voice statement from the former care worker",
+      "surfaceDescription": "A statement from the former care worker exists."
+    },
+    {
+      "id": "e-4",
+      "surfaceName": "Notary's procedural notes",
+      "surfaceDescription": "Procedural notes from the day of notarisation exist."
+    },
+    {
+      "id": "e-5",
+      "surfaceName": "Mother's handwritten draft will",
+      "surfaceDescription": "A handwritten draft of the mother's will exists."
+    },
+    {
+      "id": "e-6",
+      "surfaceName": "Long-running account flow",
+      "surfaceDescription": "A long-running record of account activity exists."
+    },
+    {
+      "id": "e-7",
+      "surfaceName": "Mother's diary",
+      "surfaceDescription": "A photo of the mother's white handwritten notebook exists."
+    }
+  ]
+}

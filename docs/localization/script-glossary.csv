@@ -1,0 +1,12 @@
+term_id,category,ko,en,ja,zh_cn,status,locked,notes
+judge_vocative,role,재판관님,Your Honor,裁判官,裁判官,approved,true,Script dialogue vocative. UI judge label can remain separate.
+spouse_intimate_address,vocative,자기야,Honey,あなた,亲爱的,draft,true,Use for spouse-01 accusatory/intimate address. zh-CN chose 亲爱的 over 老公 to avoid warm colloquial drift.
+brother_b_truth_lexeme,truth_lexeme,형,(my) brother,兄,哥,guarded,true,S5-only truth lexeme for spouse-01. Forbidden in protected pre-S5 surfaces unless explicitly whitelisted.
+nephew_truth_lexeme,truth_lexeme,조카,nephew / niece,甥,侄子,guarded,true,EN guard must include both nephew and niece.
+middle_school_nephew_truth_lexeme,truth_lexeme,중학생 조카,middle-school nephew / eighth-grader,中学2年生,初二 / 中学二年级,guarded,true,spouse-01 specific truth phrase.
+power_of_attorney_truth_lexeme,truth_lexeme,위임장,power of attorney,委任状,委托书,guarded,true,S5-only truth lexeme.
+family_matter_paraphrase,paraphrase,가족 사정,family matter / family business,家族の事情,家里的事情,guarded,true,Use in paraphrase block; not always forbidden when fully generic.
+evidence_surface_name_policy,policy,surfaceName,surfaceName,surfaceName,surfaceName,approved,true,Translate surfaceName; do not translate evidence.name in v1.
+tag_value_policy,policy,tags,tags,tags,tags,approved,true,Tag values stay KO; localized rendering goes through i18n message map.
+behavior_hint_policy,policy,behaviorHint,behaviorHint,behaviorHint,behaviorHint,draft,true,First bulk skips behaviorHint. Decide hide/generic/full translation in a dedicated pass.
+keywords_policy,policy,keywords,keywords,keywords,keywords,approved,true,Keep KO keywords for runtime matching; add locale sibling only in a later matcher pass.

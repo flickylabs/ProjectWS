@@ -1,0 +1,55 @@
+{
+  "caseId": "case-family-01",
+  "overlayKind": "mediationDialogue",
+  "paths": {
+    "immediate": {
+      "judge": "I will rule on the issues as currently organised. We move to the verdict stage.",
+      "dialogues": []
+    },
+    "conditional": {
+      "judge": "I will start by proposing a conditional mediation that separates the core responsibilities. The will-drafting procedure, the difference between the notarised copy and the handwritten draft, and the long-running care and account flow will not be bundled into one matter.",
+      "dialogues": [
+        {
+          "id": "0",
+          "speaker": "a",
+          "text": "Yoon Tae-seong's side can hear a conditional mediation. But by what procedure the will was drawn up has to be put on paper first, or the same confusion just keeps coming back."
+        },
+        {
+          "id": "1",
+          "speaker": "b",
+          "text": "Yoon Jung-hoo's side can hear the conditional terms as well. But the difference between the notarised copy and the handwritten draft, and the situation in which I was at our mother's side, must be addressed together."
+        }
+      ]
+    },
+    "postpone": {
+      "judge": "I will fix only the facts that can be confirmed today and reserve the rest. How each side understood our mother's wishes will be looked at separately, between record and testimony.",
+      "dialogues": [
+        {
+          "id": "0",
+          "speaker": "a",
+          "text": "Yoon Tae-seong's side can accept reserving a decision. But the will-drafting procedure and our mother's capacity to decide at least have to be drawn out today, or further confusion will only grow."
+        },
+        {
+          "id": "1",
+          "speaker": "b",
+          "text": "Yoon Jung-hoo's side also believes the circumstances need a closer look before any hasty conclusion. But please make it clear that reserving a decision is not the same as being cleared."
+        }
+      ]
+    },
+    "fact_first": {
+      "judge": "Before any solution, I will fix the facts. The will-drafting procedure, the difference between the handwritten draft and the notarised copy, and the order of the long-running care and account flow come first.",
+      "dialogues": [
+        {
+          "id": "0",
+          "speaker": "a",
+          "text": "Yoon Tae-seong's side agrees with sorting facts out first. At minimum, the will-drafting procedure and the question of our mother's capacity have to be fixed against the records first."
+        },
+        {
+          "id": "1",
+          "speaker": "b",
+          "text": "Yoon Jung-hoo's side can accept facts before solutions. But the situation in which I was at our mother's side, and the responsibility for the paperwork, have to be looked at separately from emotion."
+        }
+      ]
+    }
+  }
+}

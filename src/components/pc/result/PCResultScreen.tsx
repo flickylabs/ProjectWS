@@ -1478,21 +1478,9 @@ function getResponsibilityContext(caseData: CaseData, verdictInput: VerdictInput
 }
 
 function withVerdictContext(caseData: CaseData, verdictInput: VerdictInput, text: string): string {
-  const nameA = caseData.duo.partyA.name
-  const nameB = caseData.duo.partyB.name
-  const pA = pp과와(nameA)
-  const pB = pp은는(nameB)
-  const { avgA, text: responsibilityText } = getResponsibilityContext(caseData, verdictInput)
-  const solutionText = getSelectedSolutionText(verdictInput).replace(/[.。]+$/g, '')
-  const dominantName = avgA > 55 ? nameA : avgA < 45 ? nameB : null
-  const responsibilityDetail = dominantName
-    ? `${dominantName} 쪽 책임이 ${dominantName === nameA ? avgA : 100 - avgA}%로 더 무겁게 정리되면서`
-    : `책임이 ${avgA}:${100 - avgA}에 가깝게 나뉘면서`
-  const intro = `${nameA}${pA} ${nameB}${pB} ${responsibilityText}을 받아들었다. 판결문에 적힌 해결 방향은 다음 조치였다. ${solutionText}. ${responsibilityDetail} 후일담의 방향도 누가 더 억울한지보다 무엇을 먼저 정리해야 하는지에 맞춰졌다.`
   const paras = splitAftermathParagraphs(text)
-  if (paras[0]?.includes(solutionText) && paras[0]?.includes('책임')) return normalizeNarrativePunctuation(text)
-  if (paras.length === 0) return normalizeNarrativePunctuation(intro)
-  return normalizeNarrativePunctuation([`${intro} ${paras[0]}`, ...paras.slice(1)].join('\n\n'))
+  if (paras.length === 0) return normalizeNarrativePunctuation(buildFallback(caseData, 50, verdictInput))
+  return normalizeNarrativePunctuation(text)
 }
 
 function buildFallback(caseData: CaseData, total: number, verdictInput: VerdictInput): string {
@@ -1501,15 +1489,71 @@ function buildFallback(caseData: CaseData, total: number, verdictInput: VerdictI
   const pA = pp과와(nameA)
   const pB = pp은는(nameB)
   const solutionText = getSelectedSolutionText(verdictInput)
-  const { text: responsibilityText } = getResponsibilityContext(caseData, verdictInput)
+  {
+    const { avgA } = getResponsibilityContext(caseData, verdictInput)
+    const heavierName = avgA > 55 ? nameA : avgA < 45 ? nameB : null
+    const lighterName = avgA > 55 ? nameB : avgA < 45 ? nameA : null
+    const responsibilityMood = heavierName && lighterName
+      ? `${heavierName}${pp은는(heavierName)} 먼저 고개를 끄덕였지만, 그 끄덕임은 승복보다 체념에 가까웠다. ${lighterName}${pp은는(lighterName)} 그 표정을 보고서야 자신이 붙들고 있던 억울함이 상대에게는 또 다른 압박이었을 수 있다는 생각을 떠올렸다.`
+      : `${nameA}${pA} ${nameB}${pB} 서로에게 남은 책임이 한쪽으로만 기울지 않았다는 사실 앞에서 쉽게 승자와 패자를 가르지 못했다. 둘 다 조금씩 억울했고, 그래서 더 조심스럽게 말을 고를 수밖에 없었다.`
+    const firstAction = describeAftermathAction(solutionText)
+    const lesson = getAftermathLesson(caseData.caseId, total)
 
-  if (total >= 75) {
-    return `${nameA}${pA} ${nameB}${pB} ${responsibilityText}을 들은 뒤에도 한동안 말을 고르며 앉아 있었다. 승패가 또렷하게 갈린 판결이라기보다, 두 사람이 외면해 온 일을 더 이상 미룰 수 없게 만든 결론이었다. ${nameA}${pp은는(nameA)} 자신에게 남은 책임을 먼저 헤아렸고, ${nameB}${pp은는(nameB)} 상대의 표정에서 뒤늦은 피로와 안도감을 함께 읽었다. 법정을 나서는 발걸음은 가볍지 않았지만, 적어도 무엇을 사과하고 무엇을 고쳐야 하는지는 분명해졌다.\n\n며칠 뒤 두 사람은 ${solutionText}을 기준으로 다시 연락했다. 감정이 완전히 풀린 것은 아니어서 첫 대화는 짧고 조심스러웠다. 그래도 이전처럼 억울함을 앞세워 말을 끊지는 않았고, 서로가 확인해야 할 일과 더 묻지 말아야 할 일을 구분하기 시작했다. 판결문은 두 사람 사이에 놓인 차가운 종이였지만, 같은 문제를 반복하지 않기 위한 최소한의 약속이 되었다.\n\n한 달이 지나자 다툼의 열기는 줄었고, 남은 불편함은 서로가 지켜야 할 선을 확인하는 표지가 되었다. 두 사람은 예전처럼 쉽게 웃지는 못했지만, 같은 장면을 서로 다르게 기억한다는 사실을 더 이상 부정하지 않았다. 관계가 완전히 회복된 것은 아니었으나, 무너진 자리를 그냥 덮어 두는 대신 천천히 정리하는 쪽을 택했다. 이번 결말은 화해보다 먼저 책임을 문장으로 남긴 결과였다.\n\n\"책임을 적어야 관계도 다시 읽힌다.\"`
+    if (total >= 75) {
+      return `${nameA}${pA} ${nameB}${pB} 법정을 나설 때까지 서로를 바로 보지 못했다. 결론이 내려졌다는 사실보다, 이제는 더 이상 모르는 척할 핑계가 없다는 사실이 먼저 다가왔다. ${responsibilityMood} 문 밖으로 나와 엘리베이터를 기다리는 짧은 시간 동안, 두 사람은 서로에게 가장 먼저 해야 할 말이 사과인지 설명인지도 쉽게 정하지 못했다. 다만 적어도 그날의 침묵은 예전처럼 상대를 밀어내기 위한 침묵이 아니라, 말을 망치지 않기 위해 가까스로 붙잡은 침묵이었다.\n\n며칠 뒤 두 사람은 ${firstAction} 처음에는 필요한 문장만 오갔다. 감정이 완전히 풀린 것은 아니어서 답장은 짧았고, 몇 번은 쓰다가 지운 흔적만 남았다. 그래도 이전처럼 억울함을 앞세워 말을 끊지는 않았다. ${nameA}${pp은는(nameA)} 자신이 확인해야 할 일을 메모했고, ${nameB}${pp은는(nameB)} 더 묻지 말아야 할 선과 반드시 말해야 할 선을 따로 적어 두었다. 그 작은 정리는 화해의 선언은 아니었지만, 같은 상처를 다시 만들지 않겠다는 첫 행동이었다.\n\n한 달이 지나자 다툼의 열기는 줄었고, 남은 불편함은 서로가 지켜야 할 경계의 모양으로 바뀌었다. 두 사람은 예전처럼 쉽게 웃지는 못했지만, 같은 장면을 서로 다르게 기억한다는 사실을 더 이상 부정하지 않았다. 어느 날 짧은 안부가 오갔고, 누구도 그 안부를 관계 회복의 증거로 과장하지 않았다. 그저 예전처럼 덮어 두지 않고, 불편한 사실을 불편한 채로 정리하는 법을 조금 배웠을 뿐이었다.\n\n\"${lesson}\"`
+    }
+    if (total >= 50) {
+      return `${nameA}${pA} ${nameB}${pB} 판결이 끝난 뒤에도 한동안 자리에서 일어나지 못했다. 누구도 완전히 이긴 얼굴은 아니었고, 누구도 완전히 납득한 얼굴도 아니었다. ${responsibilityMood} 법정의 결론은 감정을 지워 주지 않았지만, 적어도 두 사람이 같은 말로 다시 서로를 몰아붙이는 일은 멈춰 세웠다. 그날 두 사람에게 남은 것은 시원함보다, 이제부터는 정말로 조심해야 한다는 피로에 가까웠다.\n\n이후 두 사람은 ${firstAction} 대화는 건조했고, 몇 번은 문장이 너무 짧아 오히려 더 차갑게 느껴졌다. 그래도 예전처럼 단정부터 앞세우지는 않았다. 확인할 것은 확인하고, 사과할 수 있는 부분은 짧게라도 사과했다. 불만은 남았지만 두 사람 모두 어느 지점에서 같은 싸움이 반복되는지 알고 있었고, 그 지점을 지나칠 때마다 잠시 말을 멈추는 버릇이 생겼다.\n\n시간이 지나도 정리가 곧 화해가 되지는 않았다. 다만 이번에는 더 크게 무너지는 일을 막아 낸 결말로 남았다. ${nameA}${pA} ${nameB}${pp은는(nameB)} 서로를 완전히 이해했다고 말하지 않았지만, 적어도 확인하지 않은 확신으로 다시 상처를 만들지는 않기로 했다. 그 조심스러운 거리감이 판결 뒤에 남은 가장 현실적인 변화였다.\n\n\"${lesson}\"`
+    }
+    return `${nameA}${pA} ${nameB}${pB} 법정을 나서면서도 쉽게 걸음을 맞추지 못했다. 결론은 내려졌지만, 두 사람의 마음에는 아직 풀리지 않은 질문이 남아 있었다. ${nameA}${pp은는(nameA)} 자신에게 불리했던 대목을 오래 곱씹었고, ${nameB}${pp은는(nameB)} 끝내 충분히 들리지 못한 말들이 있다고 느꼈다. 그날의 판결은 두 사람을 화해시키기보다, 더 크게 다치기 전에 멈춰 서야 할 지점을 표시한 쪽에 가까웠다.\n\n며칠 뒤 두 사람은 ${firstAction} 필요한 연락은 이어졌지만, 말끝마다 다시 다투지 않기 위한 조심스러운 거리감이 먼저 끼어들었다. 사과와 정리는 일부만 진행됐고, 남은 말들은 다음 갈등의 씨앗처럼 법정 밖으로 따라 나갔다. 그래도 예전처럼 감정이 먼저 결론을 내리기 전에, 기록과 절차를 한 번 더 확인해야 한다는 생각만큼은 남았다.\n\n일상은 이전과 비슷하게 흘렀지만, 두 사람은 같은 방식으로 돌아가지는 못했다. 서로의 주장에는 아직 날이 서 있었고, 쉽게 믿겠다는 말도 나오지 않았다. 다만 이번에는 각자가 어떤 말로 상대를 가장 아프게 했는지 조금은 알게 되었다. 봉합이라고 부르기에는 모자랐지만, 적어도 다음 상처가 어디서 시작되는지는 더 선명해진 결말이었다.\n\n\"${lesson}\"`
   }
-  if (total >= 50) {
-    return `${nameA}${pA} ${nameB}${pB} ${responsibilityText}을 받아들였지만, 완전히 만족한 얼굴은 아니었다. 판결은 억울함을 모두 지워 주기보다 더 커지기 전에 멈춰 세우는 쪽에 가까웠다. ${nameA}${pp은는(nameA)} 아직 설명되지 않은 감정을 붙들고 있었고, ${nameB}${pp은는(nameB)} 자신이 들은 말 중 어떤 것을 사과로 받아들여야 할지 쉽게 정하지 못했다. 법정의 결론은 끝이 아니라 불편한 정리의 시작이었다.\n\n이후 두 사람은 ${solutionText}을 놓고 필요한 말만 주고받았다. 대화는 건조했지만, 예전처럼 같은 문장을 두고 서로를 몰아붙이는 일은 줄었다. 불만은 남았고 몇 번의 침묵도 오갔지만, 어느 지점에서 같은 싸움이 반복되는지는 둘 다 알고 있었다. 그래서 두 사람은 감정을 설득하려 하기보다 절차를 먼저 지키는 쪽으로 움직였다.\n\n시간이 지나도 정리가 곧 화해가 되지는 않았다. 다만 이번에는 더 크게 무너지는 일을 막아 낸 결말로 남았다. ${nameA}${pA} ${nameB}${pp은는(nameB)} 서로를 완전히 이해했다고 말하지 않았지만, 적어도 확인하지 않은 확신으로 다시 상처를 만들지는 않기로 했다. 그 조심스러운 거리감이 판결 뒤에 남은 가장 현실적인 변화였다.\n\n\"오해를 멈추는 첫 절차는 확인이다.\"`
+}
+
+function describeAftermathAction(solutionText: string): string {
+  const normalized = solutionText.replace(/[.。]+$/g, '').trim()
+  if (!normalized || normalized.includes('추가 조치 없음')) {
+    return '먼저 연락하기보다 각자 남은 기록을 정리했다.'
   }
-  return `${nameA}${pA} ${nameB}${pB} ${responsibilityText} 뒤에도 쉽게 자리를 뜨지 못했다. 판결은 방향을 제시했지만, 사건의 감정까지 설득하지는 못했다. ${nameA}${pp은는(nameA)} 자신에게 불리한 대목을 오래 곱씹었고, ${nameB}${pp은는(nameB)} 인정받지 못한 말들이 아직 남아 있다고 느꼈다. 법정의 공기는 가라앉았지만, 두 사람의 표정에는 풀리지 않은 질문이 그대로 남았다.\n\n선택된 해결 방향은 ${solutionText}이었으나, 두 사람은 그 조치가 충분한지에 대해 끝내 같은 표정을 짓지 못했다. 필요한 연락은 이어졌지만, 말끝마다 다시 다투지 않기 위한 조심스러운 거리감이 먼저 끼어들었다. 사과와 정리는 일부만 진행됐고, 남은 말들은 다음 갈등의 씨앗처럼 법정 밖으로 따라 나갔다. 그래도 이번 판결은 최소한 더 큰 오해로 번지기 전에 멈춰 서야 할 지점을 표시했다.\n\n며칠 뒤의 일상은 이전과 비슷했지만, 두 사람은 같은 방식으로 돌아가지는 못했다. 서로의 주장에는 아직 날이 서 있었고, 쉽게 믿겠다는 말도 나오지 않았다. 다만 이번에는 감정이 앞서기 전에 기록과 절차를 먼저 보아야 한다는 사실만큼은 남았다. 그 사실이 봉합보다 경고에 가까운 결말을 만들었다.\n\n\"확인 없는 말은 법정 밖에서도 판결이 된다.\"`
+  if (/사과|해명|정정/.test(normalized)) {
+    return '처음에는 긴 문장을 쓰다 지우고, 결국 가장 짧은 사과부터 다시 보냈다.'
+  }
+  if (/연락|대화|신뢰|관계/.test(normalized)) {
+    return '끊겼던 연락을 한 번 더 열어 두기 위해 짧은 메시지를 먼저 보냈다.'
+  }
+  if (/계좌|정산|분배|금액|송금|돈|재산|상속/.test(normalized)) {
+    return '계좌와 문서를 다시 펼쳐 놓고, 설명할 수 있는 금액부터 줄마다 정리했다.'
+  }
+  if (/기록|문서|증거|확인|검토|공증|유언/.test(normalized)) {
+    return '서로 다른 기억을 밀어붙이기보다 남은 기록을 한 장씩 다시 확인했다.'
+  }
+  if (/조정|중재|절차|분리|보류/.test(normalized)) {
+    return '감정이 먼저 번지지 않도록 한 사람을 사이에 두고 필요한 말만 다시 꺼냈다.'
+  }
+  if (/공개|공유|범위|고지/.test(normalized)) {
+    return '혼자 품고 있던 말을 필요한 사람들에게 어디까지 설명할지 다시 정했다.'
+  }
+  return '결론을 문장으로 옮기기 전에, 각자 먼저 책임져야 할 일부터 적어 보았다.'
+}
+
+function getAftermathLesson(caseId: string, total: number): string {
+  if (caseId === 'friend-01') {
+    return total >= 75
+      ? '늦은 경고도 진심이면 다시 설명되어야 한다.'
+      : '확인하지 않은 걱정은 쉽게 비난이 된다.'
+  }
+  if (caseId === 'family-01') {
+    return total >= 75
+      ? '가족을 지킨다는 말도 사실 앞에서 다시 써야 한다.'
+      : '숨긴 마음은 결국 다른 상속으로 남는다.'
+  }
+  if (caseId === 'spouse-01') {
+    return total >= 75
+      ? '말하지 않은 선의도 믿음 앞에서는 설명이 필요하다.'
+      : '침묵은 때로 거짓보다 오래 의심을 남긴다.'
+  }
+  return total >= 75
+    ? '책임을 말한 뒤에야 관계는 다음 문장을 찾는다.'
+    : '확인 없는 확신은 법정 밖에서도 상처가 된다.'
 }
 
 /* ─── Profile inline ─── */

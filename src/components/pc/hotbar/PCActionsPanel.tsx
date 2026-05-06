@@ -9,6 +9,7 @@ import EvidencePresenter from '../../actions/EvidencePresenter'
 import QuestionSelector, { type QuestionToggles } from '../../actions/QuestionSelector'
 import PCSvgIcon from '../icons/PCSvgIcon'
 import { playInvestigationTokenWarning } from '../../../engine/soundEngine'
+import { useI18n, type MessageKey } from '../../../i18n'
 
 export type PCHotbarPanelView = 'question' | 'evidence' | 'special'
 
@@ -19,29 +20,29 @@ interface Props {
   onViewChange: (view: PCHotbarPanelView) => void
 }
 
-const VIEW_META: Record<PCHotbarPanelView, { iconId: string; label: string; subtitle: string }> = {
+const VIEW_META: Record<PCHotbarPanelView, { iconId: string; labelKey: MessageKey; subtitleKey: MessageKey }> = {
   question: {
     iconId: 'i-sword',
-    label: '심문 컨트롤',
-    subtitle: '현재 쟁점 기준 질문, 자유질문, 보조 토글을 제어합니다.',
+    labelKey: 'pc.actions.view.question.label',
+    subtitleKey: 'pc.actions.view.question.subtitle',
   },
   evidence: {
     iconId: 'i-doc',
-    label: '증거 컨트롤',
-    subtitle: '증거 제시, 조사, 감정, 증인 호출을 한곳에서 처리합니다.',
+    labelKey: 'pc.actions.view.evidence.label',
+    subtitleKey: 'pc.actions.view.evidence.subtitle',
   },
   special: {
     iconId: 'i-shield',
-    label: '특수 행동',
-    subtitle: '즉답 요구, 이의 제기, 보호 행동과 단계 진행을 관리합니다.',
+    labelKey: 'pc.actions.view.special.label',
+    subtitleKey: 'pc.actions.view.special.subtitle',
   },
 }
 
-const QUICK_QUESTION_LABELS: Record<QuestionType, string> = {
-  fact_pursuit: '사실 추궁 - 모순에 집중하기',
-  motive_search: '동기 탐색 - 숨겨진 쟁점 찾기',
-  empathy_approach: '공감 접근 - 자백 유도하기',
-  evidence_present: '증거 제시',
+const QUICK_QUESTION_LABEL_KEYS: Record<QuestionType, MessageKey> = {
+  fact_pursuit: 'pc.actions.quick.fact',
+  motive_search: 'pc.actions.quick.motive',
+  empathy_approach: 'pc.actions.quick.empathy',
+  evidence_present: 'pc.actions.quick.evidence',
 }
 
 export default function PCActionsPanel({
@@ -51,6 +52,7 @@ export default function PCActionsPanel({
   onViewChange,
 }: Props) {
   const dispatch = useActionDispatch()
+  const { t } = useI18n()
   const caseData = useStore((s) => s.caseData)
   const currentPhase = useStore((s) => s.currentPhase)
   const resources = useStore((s) => s.resources)
@@ -196,7 +198,7 @@ export default function PCActionsPanel({
         }
         state.addDialogue({
           speaker: 'system',
-          text: `추가 균열 감지: ${result.secondaryDisputeId}`,
+          text: t('pc.interaction.secondaryCrack', { disputeId: result.secondaryDisputeId }),
           relatedDisputes: [result.secondaryDisputeId],
           turn: state.turnCount,
         })
@@ -204,7 +206,7 @@ export default function PCActionsPanel({
     } else if (result.questionType === 'irrelevant') {
       state.addDialogue({
         speaker: 'system',
-        text: '쟁점과 직접 연결되지 않는 질문입니다.',
+        text: t('pc.interaction.irrelevantQuestion'),
         relatedDisputes: [],
         turn: state.turnCount,
       })
@@ -231,7 +233,9 @@ export default function PCActionsPanel({
 
     state.presentEvidence(evidenceId, targetParty)
     const targetName = targetParty === 'a' ? caseData.duo.partyA.name : caseData.duo.partyB.name
-    const reliabilityLabel = evidence.reliability === 'hard' ? '강한 증거' : '보조 증거'
+    const reliabilityLabel = evidence.reliability === 'hard'
+      ? t('pc.actions.evidence.reliability.hard')
+      : t('pc.actions.evidence.reliability.soft')
     const disputeNames = evidence.proves
       .map((disputeId) => caseData.disputes.find((item) => item.id === disputeId)?.name ?? disputeId)
       .join(', ')
@@ -243,7 +247,13 @@ export default function PCActionsPanel({
     state.changeEmotion(targetParty, evidence.reliability === 'hard' ? 15 : 8)
     state.addDialogue({
       speaker: 'judge',
-      text: `${targetName} 씨, ${evidenceDisplay.name}(${reliabilityLabel})를 제시합니다. "${disputeNames}" 쟁점과 관련해 ${question}`,
+      text: t('pc.actions.dialogue.presentEvidence', {
+        target: targetName,
+        evidence: evidenceDisplay.name,
+        reliability: reliabilityLabel,
+        disputes: disputeNames,
+        question,
+      }),
       relatedDisputes: evidence.proves,
       turn: state.turnCount,
     })
@@ -258,7 +268,7 @@ export default function PCActionsPanel({
 
     state.setLLMLoading(true, targetParty)
     try {
-      const result = await processFreeQuestion(`[증거 "${evidenceDisplay.name}"] ${question}`, targetParty, state.agentA, state.agentB, caseData, undefined, evidenceContext)
+      const result = await processFreeQuestion(t('pc.actions.dialogue.evidencePrompt', { evidence: evidenceDisplay.name, question }), targetParty, state.agentA, state.agentB, caseData, undefined, evidenceContext)
       const freshState = useGameStore.getState()
       freshState.setLLMLoading(false)
       freshState.addDialogue({
@@ -297,7 +307,7 @@ export default function PCActionsPanel({
     const state = useGameStore.getState()
     state.addDialogue({
       speaker: 'judge',
-      text: '이의 있습니다.',
+      text: t('pc.actions.dialogue.objection'),
       relatedDisputes: [],
       turn: state.turnCount,
     })
@@ -307,7 +317,9 @@ export default function PCActionsPanel({
     }
     state.addDialogue({
       speaker: 'system',
-      text: `${targetParty === 'a' ? caseData.duo.partyA.name : caseData.duo.partyB.name}의 반응이 흔들립니다.`,
+      text: t('pc.actions.dialogue.reactionShaken', {
+        name: targetParty === 'a' ? caseData.duo.partyA.name : caseData.duo.partyB.name,
+      }),
       relatedDisputes: [],
       turn: state.turnCount,
     })
@@ -341,7 +353,7 @@ export default function PCActionsPanel({
 
       state.addDialogue({
         speaker: 'judge',
-        text: '즉답을 요구합니다.',
+      text: t('pc.actions.dialogue.immediateDemand'),
         relatedDisputes: [disputeId],
         turn: state.turnCount,
       })
@@ -362,28 +374,29 @@ export default function PCActionsPanel({
   }
 
   const selectedTargetName = targetParty === 'a' ? caseData.duo.partyA.name : caseData.duo.partyB.name
-  const phaseAdvanceLabel = getAdvanceLabel(currentPhase)
+  const phaseAdvanceLabel = getAdvanceLabel(currentPhase, t)
+  const viewMeta = VIEW_META[view]
 
   return (
     <section className="pc-control-panel">
       <div className="pc-control-header">
         <div>
-          <div className="pc-control-eyebrow">TACTICAL CONSOLE</div>
+          <div className="pc-control-eyebrow">{t('pc.actions.consoleEyebrow')}</div>
           <div className="pc-control-title-row">
-            <PCSvgIcon id={VIEW_META[view].iconId} size={18} />
-            <strong>{VIEW_META[view].label}</strong>
+            <PCSvgIcon id={viewMeta.iconId} size={18} />
+            <strong>{t(viewMeta.labelKey)}</strong>
           </div>
-          <p className="pc-control-subtitle">{VIEW_META[view].subtitle}</p>
+          <p className="pc-control-subtitle">{t(viewMeta.subtitleKey)}</p>
         </div>
 
         <div className="pc-control-header-side">
           <div className="pc-control-meta">
             <span className={`pc-control-pill${targetParty === 'a' ? ' party-a' : ' party-b'}`}>
-              대상: {selectedTargetName}
+              {t('pc.common.target')}: {selectedTargetName}
             </span>
             {focusedDisputeName ? (
               <span className="pc-control-pill">
-                현재 쟁점: {focusedDisputeName}
+                {t('pc.common.currentDispute')}: {focusedDisputeName}
               </span>
             ) : null}
           </div>
@@ -407,7 +420,7 @@ export default function PCActionsPanel({
             type="button"
           >
             <PCSvgIcon id={VIEW_META[panelView].iconId} size={14} />
-            {VIEW_META[panelView].label}
+            {t(VIEW_META[panelView].labelKey)}
           </button>
         ))}
       </div>
@@ -415,9 +428,9 @@ export default function PCActionsPanel({
       {view === 'question' && quickQuestionType ? (
         <div className="pc-control-quick">
           <div>
-            <div className="pc-control-quick-label">{QUICK_QUESTION_LABELS[quickQuestionType]}</div>
+            <div className="pc-control-quick-label">{t(QUICK_QUESTION_LABEL_KEYS[quickQuestionType])}</div>
             <div className="pc-control-quick-text">
-              핫바 슬롯을 클릭하면 쟁점과 질문을 선택할 수 있습니다.
+              {t('pc.actions.quick.help')}
             </div>
           </div>
         </div>
@@ -426,10 +439,10 @@ export default function PCActionsPanel({
       {view === 'evidence' && selectedEvidence ? (
         <div className="pc-control-quick">
           <div>
-            <div className="pc-control-quick-label">선택된 증거</div>
+            <div className="pc-control-quick-label">{t('pc.common.selectedEvidence')}</div>
             <div className="pc-control-quick-title">{selectedEvidence.surfaceName ?? selectedEvidence.name}</div>
             <div className="pc-control-quick-text">
-              슬롯에서 고른 증거를 바로 제시하거나, 아래 패널에서 조사와 대면질문까지 이어갈 수 있습니다.
+              {t('pc.actions.evidence.quickHelp')}
             </div>
           </div>
           <button
@@ -437,7 +450,7 @@ export default function PCActionsPanel({
             onClick={() => handlePresentEvidence(selectedEvidence.id)}
             type="button"
           >
-            지금 바로 제시
+            {t('pc.actions.evidence.presentNow')}
           </button>
         </div>
       ) : null}
@@ -469,37 +482,37 @@ export default function PCActionsPanel({
           <div className="pc-control-special-grid">
             <ActionCard
               active
-              description="상대의 주장 전체를 강하게 흔들어 균열을 만든다."
+              description={t('pc.actions.special.objection.desc')}
               iconId="i-bolt"
-              label="이의 제기"
-              meta={`스킬 포인트 ${resources.skillPoints}`}
+              label={t('pc.actions.special.objection.label')}
+              meta={t('pc.actions.special.objection.meta', { points: resources.skillPoints })}
               onClick={handleObjection}
             />
 
             <ActionCard
               active={phaseAtLeast(currentPhase, GamePhase.Phase4_Evidence) && canUseSkill('immediate_answer')}
-              description="선택한 쟁점을 강제로 끝까지 몰아붙인다."
+              description={t('pc.actions.special.immediate.desc')}
               iconId="i-sword"
-              label="즉답 요구"
-              meta={phaseAtLeast(currentPhase, GamePhase.Phase4_Evidence) ? '쟁점 선택 필요' : '증거 정리 단계 이후 해금'}
+              label={t('pc.actions.special.immediate.label')}
+              meta={phaseAtLeast(currentPhase, GamePhase.Phase4_Evidence) ? t('pc.actions.special.immediate.meta.ready') : t('pc.actions.special.immediate.meta.locked')}
               onClick={() => setExpandedSpecialId((current) => current === 'immediate' ? null : 'immediate')}
             />
 
             <ActionCard
               active
-              description="일시적으로 당사자를 분리해 압박 환경을 바꾼다."
+              description={t('pc.actions.special.separation.desc')}
               iconId="i-shield"
-              label="분리 심문"
-              meta="조사 토큰 1 필요"
+              label={t('pc.court.control.separation')}
+              meta={t('pc.actions.special.separation.meta')}
               onClick={() => handleTrustAction('separation')}
             />
 
             <ActionCard
               active={phaseAtLeast(currentPhase, GamePhase.Phase5_ReExamination)}
-              description="비공개 보호를 약속해 방어 반응을 낮춘다."
+              description={t('pc.actions.special.confidential.desc')}
               iconId="i-lock"
-              label="비공개 보호"
-              meta={phaseAtLeast(currentPhase, GamePhase.Phase5_ReExamination) ? '신뢰/공포 수치 조정' : '최종 심문 단계 이후 해금'}
+              label={t('pc.court.control.confidentialProtection')}
+              meta={phaseAtLeast(currentPhase, GamePhase.Phase5_ReExamination) ? t('pc.actions.special.confidential.meta.ready') : t('pc.actions.special.confidential.meta.locked')}
               onClick={() => handleTrustAction('confidential_protection')}
             />
 
@@ -574,15 +587,15 @@ function phaseAtLeast(current: GamePhase, required: GamePhase): boolean {
   return phaseOrder[current] >= phaseOrder[required]
 }
 
-function getAdvanceLabel(phase: GamePhase): string {
+function getAdvanceLabel(phase: GamePhase, t: (key: MessageKey, values?: Record<string, string | number>) => string): string {
   switch (phase) {
     case Phase.Interrogation:
-      return '증거 정리 단계로'
+      return t('pc.actions.advance.evidence')
     case GamePhase.Phase4_Evidence:
-      return '최종 심문 단계로'
+      return t('pc.actions.advance.finalInterrogation')
     case GamePhase.Phase5_ReExamination:
-      return '판결 검토로'
+      return t('pc.actions.advance.verdict')
     default:
-      return '다음 단계'
+      return t('pc.actions.advance.next')
   }
 }

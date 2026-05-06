@@ -12,6 +12,7 @@ import PCCaseTimelineSection from './PCCaseTimelineSection'
 import JudgeObservationSection from '../observation/JudgeObservationSection'
 import JudgeNotebookSection from '../observation/JudgeNotebookSection'
 import JudgeObservationHistoryDrawer from '../observation/JudgeObservationHistoryDrawer'
+import { translate } from '../../../i18n'
 
 const TYPE_LABELS: Record<string, string> = {
   bank: '금융',
@@ -114,7 +115,7 @@ export default function PCLeftPanel() {
       bodyParts.push('')
       bodyParts.push('발견한 내용:')
       revealedFindings.forEach((f) => bodyParts.push(`• ${f}`))
-      if (hiddenCount > 0) bodyParts.push(`(미확인 항목 ${hiddenCount}개)`)
+      if (hiddenCount > 0) bodyParts.push(translate('pc.notes.unseen', { count: hiddenCount }))
     }
 
     const actions: PcInteractionAction[] = [
@@ -281,10 +282,10 @@ function buildComboHintTitle(hint: { recipeCount: number; readyCount: number; pa
   const potential = hint.recipeCount - hint.readyCount
   const parts: string[] = []
   if (hint.readyCount > 0) {
-    parts.push(`조합 가능 ${hint.readyCount}개 — 지금 바로 연결 가능`)
+    parts.push(translate('pc.combo.ready', { count: hint.readyCount }))
   }
   if (potential > 0) {
-    parts.push(`실마리 필요 ${potential}개 — 아직 찾지 못한 단서가 있는 듯`)
+    parts.push(translate('pc.combo.potential', { count: potential }))
   }
   const { evidence, statement } = hint.partnersByCategory
   const categories: string[] = []

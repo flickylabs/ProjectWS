@@ -5,6 +5,7 @@ import type { CaseData } from '../../../types'
 import PCSvgIcon from '../icons/PCSvgIcon'
 import { hasContradictionComparison } from '../../../utils/contradiction'
 import type { TruthJudgment } from '../../../types/discovery'
+import { translate } from '../../../i18n'
 
 const LIE_STATES = ['S0', 'S1', 'S2', 'S3', 'S4', 'S5'] as const
 
@@ -60,15 +61,15 @@ function getJudgmentLabel(judgment: TruthJudgment, caseData: CaseData): string {
 
   switch (judgment) {
     case 'believe_a':
-      return `${partyA} 쪽 주장이 더 설득력 있다고 판단했습니다.`
+      return translate('pc.recordSummary.moreConvincing', { party: partyA })
     case 'believe_b':
-      return `${partyB} 쪽 주장이 더 설득력 있다고 판단했습니다.`
+      return translate('pc.recordSummary.moreConvincing', { party: partyB })
     case 'both_partial':
-      return '양쪽 주장에 각각 사실과 과장이 섞여 있다고 판단했습니다.'
+      return translate('pc.record.judgment.bothPartial')
     case 'undetermined':
-      return '아직 판단을 보류했습니다.'
+      return translate('pc.record.judgment.undetermined')
     default:
-      return '판단 기록이 남아 있습니다.'
+      return translate('pc.record.judgment.default')
   }
 }
 
@@ -128,40 +129,44 @@ export default function PCRecordSummary({ onClose }: { onClose: () => void }) {
 
     return [
       {
-        label: '쟁점 공개',
+        label: translate('pc.record.progress.disputes.label'),
         achieved: visibleDisputes.length,
         total: caseData.disputes.length,
-        detail: hiddenDisputeCount > 0 ? `숨겨진 쟁점 ${hiddenDisputeCount}개 남음` : '모든 쟁점이 열렸습니다',
+        detail: hiddenDisputeCount > 0
+          ? translate('pc.record.progress.disputes.hidden', { count: hiddenDisputeCount })
+          : translate('pc.record.progress.disputes.allOpen'),
       },
       {
-        label: '진실파악 완료',
+        label: translate('pc.record.progress.truth.label'),
         achieved: truthCompleteCount,
         total: caseData.disputes.length,
-        detail: '쟁점별 5단계 도달 기준',
+        detail: translate('pc.record.progress.truth.detail'),
       },
       {
-        label: '증거 해금',
+        label: translate('pc.record.progress.evidenceUnlock.label'),
         achieved: unlockedEvidenceCount,
         total: caseData.evidence.length,
-        detail: '좌측 증거 목록에 열린 증거',
+        detail: translate('pc.record.progress.evidenceUnlock.detail'),
       },
       {
-        label: '증거 조사',
+        label: translate('pc.record.progress.evidenceInvestigation.label'),
         achieved: completedEvidenceStages,
         total: totalEvidenceStages,
-        detail: '증거별 조사 단계 합산',
+        detail: translate('pc.record.progress.evidenceInvestigation.detail'),
       },
       {
-        label: '증거 제시',
+        label: translate('pc.record.progress.evidencePresent.label'),
         achieved: presentedEvidenceCount,
         total: caseData.evidence.length,
-        detail: '심문 중 당사자에게 제시한 증거',
+        detail: translate('pc.record.progress.evidencePresent.detail'),
       },
       {
-        label: '증인 심문',
+        label: translate('pc.record.progress.witness.label'),
         achieved: calledWitnessCount,
         total: witnessTotal,
-        detail: witnessTotal > 0 ? '소환 완료한 증인 수' : '이 사건의 등록 증인이 없습니다',
+        detail: witnessTotal > 0
+          ? translate('pc.record.progress.witness.called')
+          : translate('pc.record.progress.witness.none'),
       },
     ]
   }, [agentA, agentB, calledWitnesses, caseData, evidenceStates, hiddenDisputeCount, visibleDisputes.length])
@@ -178,7 +183,7 @@ export default function PCRecordSummary({ onClose }: { onClose: () => void }) {
         facts.push({
           text: truthFact
             ? `${dispute.name}: ${truthFact}`
-            : `${dispute.name}: 진실파악 5단계에 도달했습니다.`,
+            : translate('pc.record.factConfirmed', { dispute: dispute.name }),
           confirmed: true,
         })
       }
@@ -198,7 +203,11 @@ export default function PCRecordSummary({ onClose }: { onClose: () => void }) {
           disputeId: dispute.id,
           disputeName: dispute.name,
           judgment: judgment.judgment,
-          text: `${dispute.name}: ${getJudgmentLabel(judgment.judgment, caseData)} 진실파악 ${stage}/5`,
+          text: translate('pc.record.judgmentText', {
+            dispute: dispute.name,
+            judgment: getJudgmentLabel(judgment.judgment, caseData),
+            stage,
+          }),
           confirmed: stage >= 5,
           stage,
         }
@@ -215,7 +224,7 @@ export default function PCRecordSummary({ onClose }: { onClose: () => void }) {
     const questions: string[] = []
 
     if (hiddenDisputeCount > 0) {
-      questions.push(`아직 드러나지 않은 쟁점 ${hiddenDisputeCount}개가 남아 있습니다.`)
+      questions.push(translate('pc.record.unresolved.hiddenDisputes', { count: hiddenDisputeCount }))
     }
 
     for (const dispute of visibleDisputes) {
@@ -223,9 +232,9 @@ export default function PCRecordSummary({ onClose }: { onClose: () => void }) {
       const judgment = judgments[dispute.id]
       if (stage < 5) {
         if (judgment && judgment.judgment !== 'undetermined') {
-          questions.push(`${dispute.name}: 내 판단은 기록됐지만 진실파악은 ${stage}/5입니다. 반대 진술이나 추가 증거로 검증해야 합니다.`)
+          questions.push(translate('pc.record.unresolved.partialJudgment', { dispute: dispute.name, stage }))
         } else {
-          questions.push(`${dispute.name}: 아직 판단 기록이 없습니다. 당사자 진술, 증거 제시, 증인 심문 중 하나로 기준을 세워야 합니다.`)
+          questions.push(translate('pc.record.unresolved.noJudgment', { dispute: dispute.name }))
         }
       }
     }
@@ -236,12 +245,12 @@ export default function PCRecordSummary({ onClose }: { onClose: () => void }) {
       return evidenceStates[evidence.id]?.unlocked && done < total
     })
     if (incompleteEvidence.length > 0) {
-      questions.push(`추가 조사 가능한 증거 ${incompleteEvidence.length}개가 남아 있습니다.`)
+      questions.push(translate('pc.record.unresolved.incompleteEvidence', { count: incompleteEvidence.length }))
     }
 
     const lockedEvidence = caseData.evidence.filter((evidence) => !evidenceStates[evidence.id]?.unlocked)
     if (lockedEvidence.length > 0) {
-      questions.push(`아직 해금되지 않은 증거 ${lockedEvidence.length}개가 남아 있습니다.`)
+      questions.push(translate('pc.record.unresolved.lockedEvidence', { count: lockedEvidence.length }))
     }
 
     const unpresentedEvidence = caseData.evidence.filter((evidence) => {
@@ -249,12 +258,12 @@ export default function PCRecordSummary({ onClose }: { onClose: () => void }) {
       return state?.unlocked && !state.presented
     })
     if (unpresentedEvidence.length > 0) {
-      questions.push(`열렸지만 당사자에게 제시하지 않은 증거 ${unpresentedEvidence.length}개가 남아 있습니다.`)
+      questions.push(translate('pc.record.unresolved.unpresentedEvidence', { count: unpresentedEvidence.length }))
     }
 
     const uncalledWitnesses = caseData.duo.socialGraph.filter((witness) => !calledWitnesses.includes(witness.id))
     if (uncalledWitnesses.length > 0) {
-      questions.push(`아직 심문하지 않은 증인 ${uncalledWitnesses.length}명이 남아 있습니다.`)
+      questions.push(translate('pc.record.unresolved.uncalledWitnesses', { count: uncalledWitnesses.length }))
     }
 
     return questions
@@ -266,15 +275,15 @@ export default function PCRecordSummary({ onClose }: { onClose: () => void }) {
       <div className="pc-record-summary__panel">
         <div className="pc-record-summary__header">
           <PCSvgIcon id="i-doc" size={20} />
-          <h2>기록 정리</h2>
-          <button className="pc-record-summary__close" onClick={onClose} type="button" aria-label="닫기">
+          <h2>{translate('pc.record.title')}</h2>
+          <button className="pc-record-summary__close" onClick={onClose} type="button" aria-label={translate('pc.common.close')}>
             <PCSvgIcon id="i-plus" size={14} />
           </button>
         </div>
 
         <div className="pc-record-summary__body">
           <section className="pc-record-summary__section pc-record-summary__section--progress">
-            <h3><PCSvgIcon id="i-search" size={14} /> 클리어 진행 현황</h3>
+            <h3><PCSvgIcon id="i-search" size={14} /> {translate('pc.record.progressTitle')}</h3>
             <div className="pc-record-summary__progress-grid">
               {progressRows.map((row) => {
                 const percent = row.total > 0 ? Math.min(100, Math.round((row.achieved / row.total) * 100)) : 0
@@ -295,21 +304,21 @@ export default function PCRecordSummary({ onClose }: { onClose: () => void }) {
           </section>
 
           <section className="pc-record-summary__section">
-            <h3><PCSvgIcon id="i-shield" size={14} /> 확인된 사실 <span className="pc-record-summary__count">{confirmedFacts.length}/{visibleDisputes.length}</span></h3>
+            <h3><PCSvgIcon id="i-shield" size={14} /> {translate('pc.record.confirmedFacts')} <span className="pc-record-summary__count">{confirmedFacts.length}/{visibleDisputes.length}</span></h3>
             {confirmedFacts.length === 0 ? (
-              <p className="pc-record-summary__empty">아직 쟁점 단위로 확정된 진실이 없습니다.</p>
+              <p className="pc-record-summary__empty">{translate('pc.record.noConfirmedFacts')}</p>
             ) : confirmedFacts.map((fact, index) => (
               <div className={`pc-record-summary__item ${fact.confirmed ? 'is-confirmed' : 'is-partial'}`} key={`${fact.text}-${index}`}>
-                <span>{fact.confirmed ? '✓' : '판'}</span>
+                <span>{fact.confirmed ? '✓' : translate('pc.record.icon.judgment')}</span>
                 <span>{fact.text}</span>
               </div>
             ))}
           </section>
 
           <section className="pc-record-summary__section">
-            <h3><PCSvgIcon id="i-scale" size={14} /> 내 판단 <span className="pc-record-summary__count">{myJudgments.length}</span></h3>
+            <h3><PCSvgIcon id="i-scale" size={14} /> {translate('pc.record.myJudgment')} <span className="pc-record-summary__count">{myJudgments.length}</span></h3>
             {myJudgments.length === 0 ? (
-              <p className="pc-record-summary__empty">아직 재판관 판단으로 정리한 쟁점이 없습니다.</p>
+              <p className="pc-record-summary__empty">{translate('pc.record.noJudgments')}</p>
             ) : myJudgments.map((judgment, index) => (
               <button
                 className={`pc-record-summary__item pc-record-summary__item-button ${judgment.confirmed ? 'is-confirmed' : 'is-partial'}`}
@@ -317,17 +326,17 @@ export default function PCRecordSummary({ onClose }: { onClose: () => void }) {
                 onClick={() => setEditingJudgmentId(judgment.disputeId)}
                 type="button"
               >
-                <span>{judgment.confirmed ? '확' : '판'}</span>
+                <span>{judgment.confirmed ? translate('pc.record.icon.confirmed') : translate('pc.record.icon.judgment')}</span>
                 <span>{judgment.text}</span>
-                <small>수정</small>
+                <small>{translate('pc.record.edit')}</small>
               </button>
             ))}
           </section>
 
           <section className="pc-record-summary__section">
-            <h3><PCSvgIcon id="i-search" size={14} /> 미해결 의문 <span className="pc-record-summary__count">{unresolvedQuestions.length}</span></h3>
+            <h3><PCSvgIcon id="i-search" size={14} /> {translate('pc.record.unresolved')} <span className="pc-record-summary__count">{unresolvedQuestions.length}</span></h3>
             {unresolvedQuestions.length === 0 ? (
-              <p className="pc-record-summary__empty">전체 사건 기준으로 남은 쟁점, 증거, 증인 확인 항목이 없습니다.</p>
+              <p className="pc-record-summary__empty">{translate('pc.record.noUnresolved')}</p>
             ) : unresolvedQuestions.map((question, index) => (
               <div className="pc-record-summary__item is-question" key={`${question}-${index}`}>
                 <span>?</span>
@@ -337,37 +346,41 @@ export default function PCRecordSummary({ onClose }: { onClose: () => void }) {
           </section>
 
           <section className="pc-record-summary__section">
-            <h3><PCSvgIcon id="i-bolt" size={14} /> 모순 발견 <span className="pc-record-summary__count">{contradictions.length}</span></h3>
+            <h3><PCSvgIcon id="i-bolt" size={14} /> {translate('pc.record.contradictions')} <span className="pc-record-summary__count">{contradictions.length}</span></h3>
             {contradictions.length === 0 ? (
-              <p className="pc-record-summary__empty">아직 비교 가능한 발언 충돌은 없습니다. 같은 쟁점에서 다른 질문 유형이나 증거 제시로 진술 변화를 확인하세요.</p>
+              <p className="pc-record-summary__empty">{translate('pc.record.noContradictions')}</p>
             ) : contradictions.map((contradiction, index) => (
               <div className="pc-record-summary__item is-contradiction" key={`${contradiction.previous}-${index}`}>
                 <span>!</span>
-                <span>&ldquo;{contradiction.previous}&rdquo; ↔ &ldquo;{contradiction.current}&rdquo; {contradiction.reason ? `- ${contradiction.reason}` : ''} 다음 행동: 추궁하기로 비교를 확정하세요.</span>
+                <span>{translate('pc.record.contradictionAction', {
+                  previous: contradiction.previous,
+                  current: contradiction.current,
+                  reason: contradiction.reason ? `- ${contradiction.reason}` : '',
+                })}</span>
               </div>
             ))}
           </section>
         </div>
 
         <div className="pc-record-summary__footer">
-          <button className="pc-record-summary__close-btn" onClick={onClose} type="button">닫기</button>
+          <button className="pc-record-summary__close-btn" onClick={onClose} type="button">{translate('pc.common.close')}</button>
         </div>
       </div>
 
       {caseData && editingJudgment ? (
-        <div className="pc-record-judgment-modal" role="dialog" aria-label="내 판단 수정">
+        <div className="pc-record-judgment-modal" role="dialog" aria-label={translate('pc.record.editJudgment')}>
           <div className="pc-record-judgment-modal__backdrop" onClick={() => setEditingJudgmentId(null)} />
           <div className="pc-record-judgment-modal__panel">
             <header className="pc-record-judgment-modal__header">
-              <span><PCSvgIcon id="i-scale" size={16} /> 내 판단 수정</span>
-              <button onClick={() => setEditingJudgmentId(null)} type="button" aria-label="닫기">×</button>
+              <span><PCSvgIcon id="i-scale" size={16} /> {translate('pc.record.editJudgment')}</span>
+              <button onClick={() => setEditingJudgmentId(null)} type="button" aria-label={translate('pc.common.close')}>×</button>
             </header>
             <div className="pc-record-judgment-modal__body">
               <p className="pc-record-judgment-modal__eyebrow">{editingJudgment.disputeName}</p>
               <div className="pc-record-judgment-modal__current">
-                <span>기존 판단</span>
+                <span>{translate('pc.record.currentJudgment')}</span>
                 <strong>{getJudgmentLabel(editingJudgment.judgment, caseData)}</strong>
-                <small>진실파악 {editingJudgment.stage}/5</small>
+                <small>{translate('pc.record.truthStage', { stage: editingJudgment.stage })}</small>
               </div>
               <div className="pc-record-judgment-modal__options">
                 {JUDGMENT_OPTIONS.map((option) => {
@@ -386,7 +399,7 @@ export default function PCRecordSummary({ onClose }: { onClose: () => void }) {
                       }}
                       type="button"
                     >
-                      <span>{selected ? '현재' : '변경'}</span>
+                      <span>{selected ? translate('pc.common.current') : translate('pc.common.change')}</span>
                       <strong>{getJudgmentLabel(option, caseData)}</strong>
                     </button>
                   )

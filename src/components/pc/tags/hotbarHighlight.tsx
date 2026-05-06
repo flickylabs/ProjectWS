@@ -1,4 +1,5 @@
 import { Fragment, type MouseEvent, type ReactNode } from 'react'
+import { translate } from '../../../i18n'
 
 /**
  * 핫바 슬롯 깜빡 + 정보 텍스트 강조 헬퍼.
@@ -82,17 +83,19 @@ export const ACTION_TARGETS = {
 } as const
 
 /** ArchetypeTag 호환용 — 키워드 기반 자동 분리 (string → React 노드 배열) */
-const KEYWORD_PATTERNS: { keyword: string; targets: readonly string[] }[] = [
-  { keyword: '사실 추궁', targets: ACTION_TARGETS.fact },
-  { keyword: '동기 탐색', targets: ACTION_TARGETS.motive },
-  { keyword: '공감 접근', targets: ACTION_TARGETS.empathy },
-]
+function getKeywordPatterns(): { keyword: string; targets: readonly string[] }[] {
+  return [
+    { keyword: translate('pc.archetype.action.fact'), targets: ACTION_TARGETS.fact },
+    { keyword: translate('pc.archetype.action.motive'), targets: ACTION_TARGETS.motive },
+    { keyword: translate('pc.archetype.action.empathy'), targets: ACTION_TARGETS.empathy },
+  ]
+}
 
 export function renderStrategyHint(hint: string): ReactNode[] {
   type Segment = { kind: 'text'; value: string } | { kind: 'action'; text: string; targets: readonly string[] }
   let segments: Segment[] = [{ kind: 'text', value: hint }]
 
-  for (const kw of KEYWORD_PATTERNS) {
+  for (const kw of getKeywordPatterns()) {
     const next: Segment[] = []
     for (const seg of segments) {
       if (seg.kind !== 'text') {

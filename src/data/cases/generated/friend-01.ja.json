@@ -1,0 +1,80 @@
+{
+  "caseId": "friend-01",
+  "locale": "ja",
+  "overlayKind": "generatedCaseSurface",
+  "meta": {
+    "title": "絶交した親友"
+  },
+  "context": {
+    "description": "絶交した元親友が、私の婚約者にずっと連絡を取り続けている。結婚3週間前、その場面だけを見れば、誰でも友人が一線を越えたと考える。"
+  },
+  "duo": {
+    "partyA": {
+      "name": "ソン・ダウン",
+      "occupation": "オンラインショップのカスタマーサポート"
+    },
+    "partyB": {
+      "name": "チェ・スミン",
+      "occupation": "ピラティスインストラクター"
+    }
+  },
+  "disputes": [
+    {
+      "id": "d-1",
+      "name": "9日間の連絡の意図"
+    },
+    {
+      "id": "d-2",
+      "name": "婚約者からの一線を越えた接触"
+    },
+    {
+      "id": "d-3",
+      "name": "家族からの金銭の打診のパターン"
+    },
+    {
+      "id": "d-4",
+      "name": "過去の絶交の理由"
+    },
+    {
+      "id": "d-5",
+      "name": "グループチャットでの中傷と名誉に関わる問題"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e-1",
+      "surfaceName": "連絡の記録",
+      "surfaceDescription": "チェ・スミンさんが婚約者へ送った連絡の記録が存在する。"
+    },
+    {
+      "id": "e-2",
+      "surfaceName": "グループチャットのキャプチャ",
+      "surfaceDescription": "共通の友人グループチャットでのやり取りのキャプチャが存在する。"
+    },
+    {
+      "id": "e-3",
+      "surfaceName": "過去のメッセージ",
+      "surfaceDescription": "過去の絶交直前のメッセージのやり取りの記録が存在する。"
+    },
+    {
+      "id": "e-4",
+      "surfaceName": "婚約者とのメッセージ",
+      "surfaceDescription": "婚約者とチェ・スミンさんの間のメッセージ記録が存在する。"
+    },
+    {
+      "id": "e-5",
+      "surfaceName": "ご家族の方からのメッセージ",
+      "surfaceDescription": "ご家族の方と婚約者との間のメッセージ記録が存在する。"
+    },
+    {
+      "id": "e-6",
+      "surfaceName": "過去の送金記録",
+      "surfaceDescription": "過去のチェ・スミンさんとご家族の方との間の送金記録が存在する。"
+    },
+    {
+      "id": "e-7",
+      "surfaceName": "対照表",
+      "surfaceDescription": "過去と現在を照らし合わせた分析表が存在する。"
+    }
+  ]
+}

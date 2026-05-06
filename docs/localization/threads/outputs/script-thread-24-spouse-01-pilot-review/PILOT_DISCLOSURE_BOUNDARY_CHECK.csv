@@ -1,0 +1,47 @@
+check_category,locale,surface,result,evidence,notes
+brand_guard,en,scriptedText/spouse-01.en.json,PASS,"Solomon=0 / Project_Solomon=0 / 所罗门=0",Independent regex sweep of full sidecar string dump.
+brand_guard,en,scriptedAngles/spouse-01_judge_questions.en.json,PASS,Solomon=0 / Project_Solomon=0,
+brand_guard,en,scriptedAngles/spouse-01_interrogation_answers.en.json,PASS,Solomon=0 / Project_Solomon=0,
+brand_guard,en,scriptedAngles/spouse-01_angle_catalog.en.json,PASS,Solomon=0 / Project_Solomon=0,
+brand_guard,en,dialogues/phase1/spouse-01.en.json,PASS,Solomon=0 / Project_Solomon=0,
+brand_guard,en,dialogues/mediation/spouse-v3-01.en.json,PASS,Solomon=0 / Project_Solomon=0,
+brand_guard,en,cases/generated/spouse-01.en.json,PASS,Solomon=0 / Project_Solomon=0,
+brand_guard,ja,scriptedText/spouse-01.ja.json,PASS,ソロモン法廷=0 / プロジェクト・ソロモン=0,Independent sweep. Brand-locked `ソロモンのジレンマ` not present in script overlay (only in i18n message map).
+brand_guard,ja,all 7 spouse-01 ja sidecars,PASS,0 occurrences of forbidden public brand literals,
+brand_guard,zh-CN,scriptedText/spouse-01.zh-CN.json,PASS,所罗门=0 / 所羅門=0,
+brand_guard,zh-CN,all 7 spouse-01 zh-CN sidecars,PASS,0 occurrences of forbidden public brand literals,
+truth_boundary_pre_S5,en,scriptedText/spouse-01.en.json,PASS,non-S5 leaks=0 / S5 hits=320,"Audit walked entry.lieState; checked English truth lexemes (nephew/niece/older brother/my brother/sister-in-law/power of attorney forgery/investment fraud/school supplies/school notice/brother-in-law). Zero pre-S5 leaks across 18 channels."
+truth_boundary_pre_S5,en,scriptedAngles/spouse-01_interrogation_answers.en.json,PASS,non-S5 leaks=0 / S5 hits=1670,"Largest surface. Zero leaks across 6 lieStates × 132 entries × 10 variants."
+truth_boundary_pre_S5,en,scriptedAngles/spouse-01_judge_questions.en.json,PASS,non-S5 leaks=0 / S5 hits=0,Surface-only channel. Truth lexemes never permitted regardless of stage.
+truth_boundary_pre_S5,en,dialogues/phase1+mediation+cases+angle_catalog,PASS,total truth-lexeme hits=0 across all small-surface en sidecars,Surface-only context throughout.
+truth_boundary_pre_S5,ja,scriptedText/spouse-01.ja.json,PASS,non-S5 leaks=0 / S5 hits=108,"JA truth lexemes audited (兄/実兄/姪/甥/中学生の姪/中学2年生/委任状偽造/委任状の偽造/投資詐欺/兄の借金/学用品/学校通知/義実の兄/兄のオフィステル/兄に渡し/兄に現金). Zero pre-S5 leaks."
+truth_boundary_pre_S5,ja,scriptedAngles/spouse-01_interrogation_answers.ja.json,PASS,non-S5 leaks=0 / S5 hits=1380,
+truth_boundary_pre_S5,ja,scriptedAngles/spouse-01_judge_questions.ja.json,PASS,non-S5 leaks=0 / S5 hits=0,
+truth_boundary_pre_S5,zh-CN,scriptedText/spouse-01.zh-CN.json,PASS,non-S5 leaks=0 / S5 hits=90,"zh-CN truth lexemes audited (哥哥/亲哥哥/侄子/侄女/中学生侄女/佳恩/家人支援/委托书造假/伪造委托书/投资诈骗/哥哥的债/哥哥的办公公寓/哥哥名义/转给哥哥/学习用品/学校通知/代签/全部亏损/哥哥的孩子/支援哥哥一家/汇给哥哥/投资全损). Zero pre-S5 leaks."
+truth_boundary_pre_S5,zh-CN,scriptedAngles/spouse-01_interrogation_answers.zh-CN.json,PASS,non-S5 leaks=0 / S5 hits=1200,
+truth_boundary_pre_S5,zh-CN,scriptedAngles/spouse-01_judge_questions.zh-CN.json,PASS,non-S5 leaks=0 / S5 hits=0,
+S5_truth_disclosure_present,en,scriptedText spouse-01 b|d-1|S5|fact_pursuit,PASS,"v1: `Your Honor, I was caring for my nephew at my older brother's studio apartment, and the late-night calls and receipts were tied to ...`","S5 reveal contains required truth lexemes (nephew + older brother). Negative validator (truth MUST appear at S5) passes."
+S5_truth_disclosure_present,ja,scriptedText spouse-01 b|d-1|S5|fact_pursuit,PASS,"v1: `あのオフィステルは兄が甥と暮らしていた場所です。仕事帰りに立ち寄り、子の世話と必要な雑事を整えていました。`","S5 reveal contains 兄/甥. Faithful KO parity."
+S5_truth_disclosure_present,zh-CN,scriptedText spouse-01 b|d-1|S5|fact_pursuit,PASS,"v1: `那栋公寓是哥哥和侄子住过的地方。下班后我会过去照看孩子,处理一些必要的事。`","S5 reveal contains 哥哥/侄子. Faithful KO parity."
+non_lieState_channel_truth_softening,en,scriptedText aftermath,DESIGN_GAP,"KO aftermath v1 reveals `위임장 조작과 투자 사기 송금` and `형과 조카`. EN paraphrases to `family matter` style surface vocab.","Validator only allows truth lexemes at lieState=S5; aftermath uses resultClass not lieState. Locale player never gets explicit post-verdict reveal that KO player gets. Per disclosure-policy.md §2.4 aftermath = post-verdict free disclosure — locale should mirror but currently softer. P1 design decision."
+non_lieState_channel_truth_softening,ja,scriptedText aftermath,DESIGN_GAP,"v1: `家族の事情を黙っていたことは軽い過ちではなかったが、裁判官は書類の細工と金銭の流出をより重く見た` (paraphrases 위임장 조작 → 書類の細工; 형/조카 → 家族の事情)",Same gap as EN.
+non_lieState_channel_truth_softening,zh-CN,scriptedText aftermath,DESIGN_GAP,"v1: `李俊昊表示不会再隐瞒相关家人和那个孩子的事` (paraphrases 형/조카 → 相关家人和那个孩子)",Same gap as EN/JA.
+non_lieState_channel_truth_softening,en,scriptedText dossier (post-S5),DESIGN_GAP,Validator does not gate by lieBand=late or stage. EN dossier surface paraphrase even where KO reveals.,Same root cause as aftermath.
+non_lieState_channel_truth_softening,ja,scriptedText dossier (post-S5),DESIGN_GAP,Same as EN.,
+non_lieState_channel_truth_softening,zh-CN,scriptedText dossier (post-S5),DESIGN_GAP,Same as EN.,
+non_lieState_channel_truth_softening,en,scriptedText witness depth=full,DESIGN_GAP,Validator does not gate by depth=full. EN witness even at depth=full uses surface vocab.,Same root cause.
+non_lieState_channel_truth_softening,ja,scriptedText witness depth=full,DESIGN_GAP,Same as EN.,
+non_lieState_channel_truth_softening,zh-CN,scriptedText witness depth=full,DESIGN_GAP,Same as EN.,
+non_lieState_channel_truth_softening,en,scriptedText evidence_present lieBand=late,DESIGN_GAP,Validator does not gate by lieBand=late. EN evidence_present even at lieBand=late uses surface vocab.,Same root cause.
+non_lieState_channel_truth_softening,en,scriptedText emotional_overload (S4+),DESIGN_GAP,Validator does not honor S4+ allowance for emotional_overload per disclosure-policy.md §3.3.,Same root cause.
+non_lieState_channel_truth_softening,en,scriptedText mediation (S3+),OK,"Mediation paths invoked when game-loop guarantees lieState ≥ S3 on relevant disputes. KO mediation `paths.conditional` reveals `3,000만원 출금` (S3+ Truth Throttle). EN/JA/zh-CN mediation faithfully translates with truth lexemes where appropriate.","No softening here because mediation path-invocation guarantees S3+ (per JA TRUTH_BOUNDARY_RISKS row 8 confirmed in EN/zh-CN equivalent). Distinct from aftermath/dossier/witness gap above."
+phase1_KO_line_review,all,dialogues/phase1/spouse-01.json,RESOLVED,"v3 P0 finding: `부모님 재산을 형이 다 날린 걸 저한테 끝까지 숨기고 있었습니다` line. Working tree shows KO source edited: line 130 changed to `큰돈이 얽힌 집안 문제를 ~ 숨기고 있었습니다`. Index 31 `당신 형님?` line also edited to `어머님 쪽 일인가요?`","Disclosure-policy author / CT-Main resolved per v3 finding. All 3 locale sidecars 0 lines mention 형/兄/哥/brother in phase1. KO source change visible in `git diff src/data/dialogues/phase1/spouse-01.json` (working tree, not yet committed)."
+schema_parity,en,all 7 sidecars,PASS,validator schema check passes — IDs / keys / channel structure identical to KO source,strict mode 0 errors for spouse-01.
+schema_parity,ja,all 7 sidecars,PASS,Same.,strict mode 0 errors for spouse-01.
+schema_parity,zh-CN,all 7 sidecars,PASS,Same.,strict mode 0 errors for spouse-01.
+keyword_locale_intentionally_empty,all,scriptedAngles/spouse-01_angle_catalog.{en,ja,zh-CN}.json,PASS,keywordsLocale absent or empty array,Per script-localization-decisions.md §7. KO keywords[] remains runtime matcher.
+behaviorHint_intentionally_omitted,all,all sidecars,PASS,behaviorHint not present in any locale sidecar,Per script-localization-decisions.md §5. Tier B activation deferred. Validator runs skipCaseLexemes:true on behaviorHint paths.
+evidence_name_not_localized,all,cases/generated/spouse-01.{en,ja,zh-CN}.json,PASS,evidence.name not translated,Per script-localization-decisions.md §3. Only evidence.surfaceName + surfaceDescription localized.
+ID_invariance,all,all sidecars,PASS,id / key / caseId / channel / disputeId / lieState / lieBand / questionType / depth / resultClass / partyId / sourceRefs / tags all bit-identical to KO source,Validator schema parity check confirms.
+placeholder_check,all,all sidecars,PASS,No placeholder corruption (`?{2,}` / `\d+\s+\?+` / U+FFFD),validate-glossary.mjs guards run on glossary.csv but principle applies. Per-sidecar audit also clean.
+KO_source_unmodified_check,all,src/data/scriptedText/*.json + src/data/scriptedAngles/* + src/data/dialogues/* + src/data/cases/generated/*.json,PARTIAL,"git diff shows `src/data/dialogues/phase1/spouse-01.json` modified (intentional v3 P0 phase1 KO line edit) + `src/data/disclosurePolicy/*.json` modified (intentional Tier A localePolicy schema). No other KO source edited.","Phase1 KO change is the v3 P0 fix — explicit user-approved change per disclosure-policy author review. NOT a brief violation. Other modifications visible in `git status` are i18n + script-locale infra additions per IMPLEMENTATION_PLAN."

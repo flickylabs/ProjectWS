@@ -1,0 +1,3704 @@
+{
+  "schemaVersion": 1,
+  "locale": "en",
+  "caseId": "spouse-01",
+  "overlayKind": "judge_questions",
+  "judgeQuestions": [
+    {
+      "disputeId": "d-1",
+      "questionType": "fact_pursuit",
+      "targetParty": "b",
+      "angleId": "general",
+      "variants": [
+        {
+          "id": "judgeq-d-1-fact_pursuit-b-general-v1",
+          "text": "Mr. Lee, regarding the visits and the late-night calls on your record, please walk me through what happened in chronological order, with dates where you can."
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-b-general-v2",
+          "text": "Looking at the dashcam log, the call records, and the receipts, please separate what you accept as your own conduct from what you do not recall, item by item."
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-b-general-v3",
+          "text": "Where Mrs. Park's account and your own account diverge most sharply on the visits and the late-night calls on your record, please start from that point and answer on the facts alone."
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-b-general-v4",
+          "text": "Among the dashcam log, the call records, and the receipts, please tell me which items you accept here and which items you still wish to dispute."
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-b-general-v5",
+          "text": "Mr. Lee, if there is anything about the visits and the late-night calls on your record that you have not yet stated on the record, please bring it forward first."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "fact_pursuit",
+      "targetParty": "a",
+      "angleId": "general",
+      "variants": [
+        {
+          "id": "judgeq-d-1-fact_pursuit-a-general-v1",
+          "text": "Mrs. Park, regarding how you came to read the visits and calls as an affair, please walk me through what happened in chronological order, with dates where you can."
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-a-general-v2",
+          "text": "Looking at the dashcam log, the call records, and the receipts, please separate what you accept as your own conduct from what you do not recall, item by item."
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-a-general-v3",
+          "text": "Where Mr. Lee's account and your own account diverge most sharply on how you came to read the visits and calls as an affair, please start from that point and answer on the facts alone."
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-a-general-v4",
+          "text": "Among the dashcam log, the call records, and the receipts, please tell me which items you accept here and which items you still wish to dispute."
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-a-general-v5",
+          "text": "Mrs. Park, if there is anything about how you came to read the visits and calls as an affair that you have not yet stated on the record, please bring it forward first."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "motive_search",
+      "targetParty": "b",
+      "angleId": "general",
+      "variants": [
+        {
+          "id": "judgeq-d-1-motive_search-b-general-v1",
+          "text": "Mr. Lee, while the visits and the late-night calls on your record was building up, why did you not lay this out for your spouse beforehand? Please explain your reasoning."
+        },
+        {
+          "id": "judgeq-d-1-motive_search-b-general-v2",
+          "text": "If you were aware that the visits and the late-night calls on your record could be misread, please tell me the basis on which you chose silence at that point."
+        },
+        {
+          "id": "judgeq-d-1-motive_search-b-general-v3",
+          "text": "You could have explained each part separately. Please tell me what motivated you to defer all of it instead."
+        },
+        {
+          "id": "judgeq-d-1-motive_search-b-general-v4",
+          "text": "At that time, which conversation did you most want to avoid, and which were you willing to have? Please answer on that distinction."
+        },
+        {
+          "id": "judgeq-d-1-motive_search-b-general-v5",
+          "text": "Within what you can say here, please explain where the impulse to keep this matter buried came from."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "motive_search",
+      "targetParty": "a",
+      "angleId": "general",
+      "variants": [
+        {
+          "id": "judgeq-d-1-motive_search-a-general-v1",
+          "text": "Mrs. Park, while how you came to read the visits and calls as an affair was building up, why did you not lay this out for your spouse beforehand? Please explain your reasoning."
+        },
+        {
+          "id": "judgeq-d-1-motive_search-a-general-v2",
+          "text": "If you were aware that how you came to read the visits and calls as an affair could be misread, please tell me the basis on which you chose silence at that point."
+        },
+        {
+          "id": "judgeq-d-1-motive_search-a-general-v3",
+          "text": "You could have explained each part separately. Please tell me what motivated you to defer all of it instead."
+        },
+        {
+          "id": "judgeq-d-1-motive_search-a-general-v4",
+          "text": "At that time, which conversation did you most want to avoid, and which were you willing to have? Please answer on that distinction."
+        },
+        {
+          "id": "judgeq-d-1-motive_search-a-general-v5",
+          "text": "Within what you can say here, please explain where the impulse to keep this matter buried came from."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "empathy_approach",
+      "targetParty": "b",
+      "angleId": "general",
+      "variants": [
+        {
+          "id": "judgeq-d-1-empathy_approach-b-general-v1",
+          "text": "Mr. Lee, this is a setting where it is hard to speak. Regarding the visits and the late-night calls on your record, please share, at your own pace, what you found most difficult to say."
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-b-general-v2",
+          "text": "If there were circumstances that made it hard to raise the visits and the late-night calls on your record, please explain them in your own words first."
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-b-general-v3",
+          "text": "You do not need to lay everything out at once. Please begin with the part of the visits and the late-night calls on your record that you feel ready to say today."
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-b-general-v4",
+          "text": "If part of the visits and the late-night calls on your record is something you can speak about and part is not yet, please separate them and answer on the part you can."
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-b-general-v5",
+          "text": "Mr. Lee, if there is something about the visits and the late-night calls on your record you have been carrying alone, please put it down here, in the form you are able to."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "empathy_approach",
+      "targetParty": "a",
+      "angleId": "general",
+      "variants": [
+        {
+          "id": "judgeq-d-1-empathy_approach-a-general-v1",
+          "text": "Mrs. Park, this is a setting where it is hard to speak. Regarding how you came to read the visits and calls as an affair, please share, at your own pace, what you found most difficult to say."
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-a-general-v2",
+          "text": "If there were circumstances that made it hard to raise how you came to read the visits and calls as an affair, please explain them in your own words first."
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-a-general-v3",
+          "text": "You do not need to lay everything out at once. Please begin with the part of how you came to read the visits and calls as an affair that you feel ready to say today."
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-a-general-v4",
+          "text": "If part of how you came to read the visits and calls as an affair is something you can speak about and part is not yet, please separate them and answer on the part you can."
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-a-general-v5",
+          "text": "Mrs. Park, if there is something about how you came to read the visits and calls as an affair you have been carrying alone, please put it down here, in the form you are able to."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "fact_pursuit",
+      "targetParty": "b",
+      "angleId": "visit_route",
+      "variants": [
+        {
+          "id": "judgeq-d-1-fact_pursuit-b-visit_route-v1",
+          "text": "Mr. Lee, regarding the route and timing of your visits to that building, please walk me through what happened in chronological order, with dates where you can."
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-b-visit_route-v2",
+          "text": "Looking at the dashcam log, the call records, and the receipts, please separate what you accept as your own conduct from what you do not recall, item by item."
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-b-visit_route-v3",
+          "text": "Where Mrs. Park's account and your own account diverge most sharply on the route and timing of your visits to that building, please start from that point and answer on the facts alone."
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-b-visit_route-v4",
+          "text": "Among the dashcam log, the call records, and the receipts, please tell me which items you accept here and which items you still wish to dispute."
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-b-visit_route-v5",
+          "text": "Mr. Lee, if there is anything about the route and timing of your visits to that building that you have not yet stated on the record, please bring it forward first."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "fact_pursuit",
+      "targetParty": "a",
+      "angleId": "visit_route",
+      "variants": [
+        {
+          "id": "judgeq-d-1-fact_pursuit-a-visit_route-v1",
+          "text": "Mrs. Park, regarding how you reconstructed the visit route, please walk me through what happened in chronological order, with dates where you can."
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-a-visit_route-v2",
+          "text": "Looking at the dashcam log, the call records, and the receipts, please separate what you accept as your own conduct from what you do not recall, item by item."
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-a-visit_route-v3",
+          "text": "Where Mr. Lee's account and your own account diverge most sharply on how you reconstructed the visit route, please start from that point and answer on the facts alone."
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-a-visit_route-v4",
+          "text": "Among the dashcam log, the call records, and the receipts, please tell me which items you accept here and which items you still wish to dispute."
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-a-visit_route-v5",
+          "text": "Mrs. Park, if there is anything about how you reconstructed the visit route that you have not yet stated on the record, please bring it forward first."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "motive_search",
+      "targetParty": "b",
+      "angleId": "visit_route",
+      "variants": [
+        {
+          "id": "judgeq-d-1-motive_search-b-visit_route-v1",
+          "text": "Mr. Lee, while the route and timing of your visits to that building was building up, why did you not lay this out for your spouse beforehand? Please explain your reasoning."
+        },
+        {
+          "id": "judgeq-d-1-motive_search-b-visit_route-v2",
+          "text": "If you were aware that the route and timing of your visits to that building could be misread, please tell me the basis on which you chose silence at that point."
+        },
+        {
+          "id": "judgeq-d-1-motive_search-b-visit_route-v3",
+          "text": "You could have explained each part separately. Please tell me what motivated you to defer all of it instead."
+        },
+        {
+          "id": "judgeq-d-1-motive_search-b-visit_route-v4",
+          "text": "At that time, which conversation did you most want to avoid, and which were you willing to have? Please answer on that distinction."
+        },
+        {
+          "id": "judgeq-d-1-motive_search-b-visit_route-v5",
+          "text": "Within what you can say here, please explain where the impulse to keep this matter buried came from."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "motive_search",
+      "targetParty": "a",
+      "angleId": "visit_route",
+      "variants": [
+        {
+          "id": "judgeq-d-1-motive_search-a-visit_route-v1",
+          "text": "Mrs. Park, while how you reconstructed the visit route was building up, why did you not lay this out for your spouse beforehand? Please explain your reasoning."
+        },
+        {
+          "id": "judgeq-d-1-motive_search-a-visit_route-v2",
+          "text": "If you were aware that how you reconstructed the visit route could be misread, please tell me the basis on which you chose silence at that point."
+        },
+        {
+          "id": "judgeq-d-1-motive_search-a-visit_route-v3",
+          "text": "You could have explained each part separately. Please tell me what motivated you to defer all of it instead."
+        },
+        {
+          "id": "judgeq-d-1-motive_search-a-visit_route-v4",
+          "text": "At that time, which conversation did you most want to avoid, and which were you willing to have? Please answer on that distinction."
+        },
+        {
+          "id": "judgeq-d-1-motive_search-a-visit_route-v5",
+          "text": "Within what you can say here, please explain where the impulse to keep this matter buried came from."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "empathy_approach",
+      "targetParty": "b",
+      "angleId": "visit_route",
+      "variants": [
+        {
+          "id": "judgeq-d-1-empathy_approach-b-visit_route-v1",
+          "text": "Mr. Lee, this is a setting where it is hard to speak. Regarding the route and timing of your visits to that building, please share, at your own pace, what you found most difficult to say."
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-b-visit_route-v2",
+          "text": "If there were circumstances that made it hard to raise the route and timing of your visits to that building, please explain them in your own words first."
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-b-visit_route-v3",
+          "text": "You do not need to lay everything out at once. Please begin with the part of the route and timing of your visits to that building that you feel ready to say today."
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-b-visit_route-v4",
+          "text": "If part of the route and timing of your visits to that building is something you can speak about and part is not yet, please separate them and answer on the part you can."
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-b-visit_route-v5",
+          "text": "Mr. Lee, if there is something about the route and timing of your visits to that building you have been carrying alone, please put it down here, in the form you are able to."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "empathy_approach",
+      "targetParty": "a",
+      "angleId": "visit_route",
+      "variants": [
+        {
+          "id": "judgeq-d-1-empathy_approach-a-visit_route-v1",
+          "text": "Mrs. Park, this is a setting where it is hard to speak. Regarding how you reconstructed the visit route, please share, at your own pace, what you found most difficult to say."
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-a-visit_route-v2",
+          "text": "If there were circumstances that made it hard to raise how you reconstructed the visit route, please explain them in your own words first."
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-a-visit_route-v3",
+          "text": "You do not need to lay everything out at once. Please begin with the part of how you reconstructed the visit route that you feel ready to say today."
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-a-visit_route-v4",
+          "text": "If part of how you reconstructed the visit route is something you can speak about and part is not yet, please separate them and answer on the part you can."
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-a-visit_route-v5",
+          "text": "Mrs. Park, if there is something about how you reconstructed the visit route you have been carrying alone, please put it down here, in the form you are able to."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "fact_pursuit",
+      "targetParty": "b",
+      "angleId": "call_record",
+      "variants": [
+        {
+          "id": "judgeq-d-1-fact_pursuit-b-call_record-v1",
+          "text": "Mr. Lee, regarding the late-night calls listed on your phone records, please walk me through what happened in chronological order, with dates where you can."
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-b-call_record-v2",
+          "text": "Looking at the dashcam log, the call records, and the receipts, please separate what you accept as your own conduct from what you do not recall, item by item."
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-b-call_record-v3",
+          "text": "Where Mrs. Park's account and your own account diverge most sharply on the late-night calls listed on your phone records, please start from that point and answer on the facts alone."
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-b-call_record-v4",
+          "text": "Among the dashcam log, the call records, and the receipts, please tell me which items you accept here and which items you still wish to dispute."
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-b-call_record-v5",
+          "text": "Mr. Lee, if there is anything about the late-night calls listed on your phone records that you have not yet stated on the record, please bring it forward first."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "fact_pursuit",
+      "targetParty": "a",
+      "angleId": "call_record",
+      "variants": [
+        {
+          "id": "judgeq-d-1-fact_pursuit-a-call_record-v1",
+          "text": "Mrs. Park, regarding how you read the late-night call pattern, please walk me through what happened in chronological order, with dates where you can."
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-a-call_record-v2",
+          "text": "Looking at the dashcam log, the call records, and the receipts, please separate what you accept as your own conduct from what you do not recall, item by item."
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-a-call_record-v3",
+          "text": "Where Mr. Lee's account and your own account diverge most sharply on how you read the late-night call pattern, please start from that point and answer on the facts alone."
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-a-call_record-v4",
+          "text": "Among the dashcam log, the call records, and the receipts, please tell me which items you accept here and which items you still wish to dispute."
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-a-call_record-v5",
+          "text": "Mrs. Park, if there is anything about how you read the late-night call pattern that you have not yet stated on the record, please bring it forward first."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "motive_search",
+      "targetParty": "b",
+      "angleId": "call_record",
+      "variants": [
+        {
+          "id": "judgeq-d-1-motive_search-b-call_record-v1",
+          "text": "Mr. Lee, while the late-night calls listed on your phone records was building up, why did you not lay this out for your spouse beforehand? Please explain your reasoning."
+        },
+        {
+          "id": "judgeq-d-1-motive_search-b-call_record-v2",
+          "text": "If you were aware that the late-night calls listed on your phone records could be misread, please tell me the basis on which you chose silence at that point."
+        },
+        {
+          "id": "judgeq-d-1-motive_search-b-call_record-v3",
+          "text": "You could have explained each part separately. Please tell me what motivated you to defer all of it instead."
+        },
+        {
+          "id": "judgeq-d-1-motive_search-b-call_record-v4",
+          "text": "At that time, which conversation did you most want to avoid, and which were you willing to have? Please answer on that distinction."
+        },
+        {
+          "id": "judgeq-d-1-motive_search-b-call_record-v5",
+          "text": "Within what you can say here, please explain where the impulse to keep this matter buried came from."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "motive_search",
+      "targetParty": "a",
+      "angleId": "call_record",
+      "variants": [
+        {
+          "id": "judgeq-d-1-motive_search-a-call_record-v1",
+          "text": "Mrs. Park, while how you read the late-night call pattern was building up, why did you not lay this out for your spouse beforehand? Please explain your reasoning."
+        },
+        {
+          "id": "judgeq-d-1-motive_search-a-call_record-v2",
+          "text": "If you were aware that how you read the late-night call pattern could be misread, please tell me the basis on which you chose silence at that point."
+        },
+        {
+          "id": "judgeq-d-1-motive_search-a-call_record-v3",
+          "text": "You could have explained each part separately. Please tell me what motivated you to defer all of it instead."
+        },
+        {
+          "id": "judgeq-d-1-motive_search-a-call_record-v4",
+          "text": "At that time, which conversation did you most want to avoid, and which were you willing to have? Please answer on that distinction."
+        },
+        {
+          "id": "judgeq-d-1-motive_search-a-call_record-v5",
+          "text": "Within what you can say here, please explain where the impulse to keep this matter buried came from."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "empathy_approach",
+      "targetParty": "b",
+      "angleId": "call_record",
+      "variants": [
+        {
+          "id": "judgeq-d-1-empathy_approach-b-call_record-v1",
+          "text": "Mr. Lee, this is a setting where it is hard to speak. Regarding the late-night calls listed on your phone records, please share, at your own pace, what you found most difficult to say."
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-b-call_record-v2",
+          "text": "If there were circumstances that made it hard to raise the late-night calls listed on your phone records, please explain them in your own words first."
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-b-call_record-v3",
+          "text": "You do not need to lay everything out at once. Please begin with the part of the late-night calls listed on your phone records that you feel ready to say today."
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-b-call_record-v4",
+          "text": "If part of the late-night calls listed on your phone records is something you can speak about and part is not yet, please separate them and answer on the part you can."
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-b-call_record-v5",
+          "text": "Mr. Lee, if there is something about the late-night calls listed on your phone records you have been carrying alone, please put it down here, in the form you are able to."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "empathy_approach",
+      "targetParty": "a",
+      "angleId": "call_record",
+      "variants": [
+        {
+          "id": "judgeq-d-1-empathy_approach-a-call_record-v1",
+          "text": "Mrs. Park, this is a setting where it is hard to speak. Regarding how you read the late-night call pattern, please share, at your own pace, what you found most difficult to say."
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-a-call_record-v2",
+          "text": "If there were circumstances that made it hard to raise how you read the late-night call pattern, please explain them in your own words first."
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-a-call_record-v3",
+          "text": "You do not need to lay everything out at once. Please begin with the part of how you read the late-night call pattern that you feel ready to say today."
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-a-call_record-v4",
+          "text": "If part of how you read the late-night call pattern is something you can speak about and part is not yet, please separate them and answer on the part you can."
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-a-call_record-v5",
+          "text": "Mrs. Park, if there is something about how you read the late-night call pattern you have been carrying alone, please put it down here, in the form you are able to."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "fact_pursuit",
+      "targetParty": "b",
+      "angleId": "family_items",
+      "variants": [
+        {
+          "id": "judgeq-d-1-fact_pursuit-b-family_items-v1",
+          "text": "Mr. Lee, regarding the household items found in the studio apartment, please walk me through what happened in chronological order, with dates where you can."
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-b-family_items-v2",
+          "text": "Looking at the dashcam log, the call records, and the receipts, please separate what you accept as your own conduct from what you do not recall, item by item."
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-b-family_items-v3",
+          "text": "Where Mrs. Park's account and your own account diverge most sharply on the household items found in the studio apartment, please start from that point and answer on the facts alone."
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-b-family_items-v4",
+          "text": "Among the dashcam log, the call records, and the receipts, please tell me which items you accept here and which items you still wish to dispute."
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-b-family_items-v5",
+          "text": "Mr. Lee, if there is anything about the household items found in the studio apartment that you have not yet stated on the record, please bring it forward first."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "fact_pursuit",
+      "targetParty": "a",
+      "angleId": "family_items",
+      "variants": [
+        {
+          "id": "judgeq-d-1-fact_pursuit-a-family_items-v1",
+          "text": "Mrs. Park, regarding how you interpreted the household items found there, please walk me through what happened in chronological order, with dates where you can."
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-a-family_items-v2",
+          "text": "Looking at the dashcam log, the call records, and the receipts, please separate what you accept as your own conduct from what you do not recall, item by item."
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-a-family_items-v3",
+          "text": "Where Mr. Lee's account and your own account diverge most sharply on how you interpreted the household items found there, please start from that point and answer on the facts alone."
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-a-family_items-v4",
+          "text": "Among the dashcam log, the call records, and the receipts, please tell me which items you accept here and which items you still wish to dispute."
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-a-family_items-v5",
+          "text": "Mrs. Park, if there is anything about how you interpreted the household items found there that you have not yet stated on the record, please bring it forward first."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "motive_search",
+      "targetParty": "b",
+      "angleId": "family_items",
+      "variants": [
+        {
+          "id": "judgeq-d-1-motive_search-b-family_items-v1",
+          "text": "Mr. Lee, while the household items found in the studio apartment was building up, why did you not lay this out for your spouse beforehand? Please explain your reasoning."
+        },
+        {
+          "id": "judgeq-d-1-motive_search-b-family_items-v2",
+          "text": "If you were aware that the household items found in the studio apartment could be misread, please tell me the basis on which you chose silence at that point."
+        },
+        {
+          "id": "judgeq-d-1-motive_search-b-family_items-v3",
+          "text": "You could have explained each part separately. Please tell me what motivated you to defer all of it instead."
+        },
+        {
+          "id": "judgeq-d-1-motive_search-b-family_items-v4",
+          "text": "At that time, which conversation did you most want to avoid, and which were you willing to have? Please answer on that distinction."
+        },
+        {
+          "id": "judgeq-d-1-motive_search-b-family_items-v5",
+          "text": "Within what you can say here, please explain where the impulse to keep this matter buried came from."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "motive_search",
+      "targetParty": "a",
+      "angleId": "family_items",
+      "variants": [
+        {
+          "id": "judgeq-d-1-motive_search-a-family_items-v1",
+          "text": "Mrs. Park, while how you interpreted the household items found there was building up, why did you not lay this out for your spouse beforehand? Please explain your reasoning."
+        },
+        {
+          "id": "judgeq-d-1-motive_search-a-family_items-v2",
+          "text": "If you were aware that how you interpreted the household items found there could be misread, please tell me the basis on which you chose silence at that point."
+        },
+        {
+          "id": "judgeq-d-1-motive_search-a-family_items-v3",
+          "text": "You could have explained each part separately. Please tell me what motivated you to defer all of it instead."
+        },
+        {
+          "id": "judgeq-d-1-motive_search-a-family_items-v4",
+          "text": "At that time, which conversation did you most want to avoid, and which were you willing to have? Please answer on that distinction."
+        },
+        {
+          "id": "judgeq-d-1-motive_search-a-family_items-v5",
+          "text": "Within what you can say here, please explain where the impulse to keep this matter buried came from."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "empathy_approach",
+      "targetParty": "b",
+      "angleId": "family_items",
+      "variants": [
+        {
+          "id": "judgeq-d-1-empathy_approach-b-family_items-v1",
+          "text": "Mr. Lee, this is a setting where it is hard to speak. Regarding the household items found in the studio apartment, please share, at your own pace, what you found most difficult to say."
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-b-family_items-v2",
+          "text": "If there were circumstances that made it hard to raise the household items found in the studio apartment, please explain them in your own words first."
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-b-family_items-v3",
+          "text": "You do not need to lay everything out at once. Please begin with the part of the household items found in the studio apartment that you feel ready to say today."
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-b-family_items-v4",
+          "text": "If part of the household items found in the studio apartment is something you can speak about and part is not yet, please separate them and answer on the part you can."
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-b-family_items-v5",
+          "text": "Mr. Lee, if there is something about the household items found in the studio apartment you have been carrying alone, please put it down here, in the form you are able to."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "empathy_approach",
+      "targetParty": "a",
+      "angleId": "family_items",
+      "variants": [
+        {
+          "id": "judgeq-d-1-empathy_approach-a-family_items-v1",
+          "text": "Mrs. Park, this is a setting where it is hard to speak. Regarding how you interpreted the household items found there, please share, at your own pace, what you found most difficult to say."
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-a-family_items-v2",
+          "text": "If there were circumstances that made it hard to raise how you interpreted the household items found there, please explain them in your own words first."
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-a-family_items-v3",
+          "text": "You do not need to lay everything out at once. Please begin with the part of how you interpreted the household items found there that you feel ready to say today."
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-a-family_items-v4",
+          "text": "If part of how you interpreted the household items found there is something you can speak about and part is not yet, please separate them and answer on the part you can."
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-a-family_items-v5",
+          "text": "Mrs. Park, if there is something about how you interpreted the household items found there you have been carrying alone, please put it down here, in the form you are able to."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "fact_pursuit",
+      "targetParty": "b",
+      "angleId": "affair_denial",
+      "variants": [
+        {
+          "id": "judgeq-d-1-fact_pursuit-b-affair_denial-v1",
+          "text": "Mr. Lee, regarding your denial that the visits and calls amount to an affair, please walk me through what happened in chronological order, with dates where you can."
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-b-affair_denial-v2",
+          "text": "Looking at the dashcam log, the call records, and the receipts, please separate what you accept as your own conduct from what you do not recall, item by item."
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-b-affair_denial-v3",
+          "text": "Where Mrs. Park's account and your own account diverge most sharply on your denial that the visits and calls amount to an affair, please start from that point and answer on the facts alone."
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-b-affair_denial-v4",
+          "text": "Among the dashcam log, the call records, and the receipts, please tell me which items you accept here and which items you still wish to dispute."
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-b-affair_denial-v5",
+          "text": "Mr. Lee, if there is anything about your denial that the visits and calls amount to an affair that you have not yet stated on the record, please bring it forward first."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "fact_pursuit",
+      "targetParty": "a",
+      "angleId": "affair_denial",
+      "variants": [
+        {
+          "id": "judgeq-d-1-fact_pursuit-a-affair_denial-v1",
+          "text": "Mrs. Park, regarding the basis on which you reject that denial, please walk me through what happened in chronological order, with dates where you can."
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-a-affair_denial-v2",
+          "text": "Looking at the dashcam log, the call records, and the receipts, please separate what you accept as your own conduct from what you do not recall, item by item."
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-a-affair_denial-v3",
+          "text": "Where Mr. Lee's account and your own account diverge most sharply on the basis on which you reject that denial, please start from that point and answer on the facts alone."
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-a-affair_denial-v4",
+          "text": "Among the dashcam log, the call records, and the receipts, please tell me which items you accept here and which items you still wish to dispute."
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-a-affair_denial-v5",
+          "text": "Mrs. Park, if there is anything about the basis on which you reject that denial that you have not yet stated on the record, please bring it forward first."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "motive_search",
+      "targetParty": "b",
+      "angleId": "affair_denial",
+      "variants": [
+        {
+          "id": "judgeq-d-1-motive_search-b-affair_denial-v1",
+          "text": "Mr. Lee, while your denial that the visits and calls amount to an affair was building up, why did you not lay this out for your spouse beforehand? Please explain your reasoning."
+        },
+        {
+          "id": "judgeq-d-1-motive_search-b-affair_denial-v2",
+          "text": "If you were aware that your denial that the visits and calls amount to an affair could be misread, please tell me the basis on which you chose silence at that point."
+        },
+        {
+          "id": "judgeq-d-1-motive_search-b-affair_denial-v3",
+          "text": "You could have explained each part separately. Please tell me what motivated you to defer all of it instead."
+        },
+        {
+          "id": "judgeq-d-1-motive_search-b-affair_denial-v4",
+          "text": "At that time, which conversation did you most want to avoid, and which were you willing to have? Please answer on that distinction."
+        },
+        {
+          "id": "judgeq-d-1-motive_search-b-affair_denial-v5",
+          "text": "Within what you can say here, please explain where the impulse to keep this matter buried came from."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "motive_search",
+      "targetParty": "a",
+      "angleId": "affair_denial",
+      "variants": [
+        {
+          "id": "judgeq-d-1-motive_search-a-affair_denial-v1",
+          "text": "Mrs. Park, while the basis on which you reject that denial was building up, why did you not lay this out for your spouse beforehand? Please explain your reasoning."
+        },
+        {
+          "id": "judgeq-d-1-motive_search-a-affair_denial-v2",
+          "text": "If you were aware that the basis on which you reject that denial could be misread, please tell me the basis on which you chose silence at that point."
+        },
+        {
+          "id": "judgeq-d-1-motive_search-a-affair_denial-v3",
+          "text": "You could have explained each part separately. Please tell me what motivated you to defer all of it instead."
+        },
+        {
+          "id": "judgeq-d-1-motive_search-a-affair_denial-v4",
+          "text": "At that time, which conversation did you most want to avoid, and which were you willing to have? Please answer on that distinction."
+        },
+        {
+          "id": "judgeq-d-1-motive_search-a-affair_denial-v5",
+          "text": "Within what you can say here, please explain where the impulse to keep this matter buried came from."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "empathy_approach",
+      "targetParty": "b",
+      "angleId": "affair_denial",
+      "variants": [
+        {
+          "id": "judgeq-d-1-empathy_approach-b-affair_denial-v1",
+          "text": "Mr. Lee, this is a setting where it is hard to speak. Regarding your denial that the visits and calls amount to an affair, please share, at your own pace, what you found most difficult to say."
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-b-affair_denial-v2",
+          "text": "If there were circumstances that made it hard to raise your denial that the visits and calls amount to an affair, please explain them in your own words first."
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-b-affair_denial-v3",
+          "text": "You do not need to lay everything out at once. Please begin with the part of your denial that the visits and calls amount to an affair that you feel ready to say today."
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-b-affair_denial-v4",
+          "text": "If part of your denial that the visits and calls amount to an affair is something you can speak about and part is not yet, please separate them and answer on the part you can."
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-b-affair_denial-v5",
+          "text": "Mr. Lee, if there is something about your denial that the visits and calls amount to an affair you have been carrying alone, please put it down here, in the form you are able to."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "empathy_approach",
+      "targetParty": "a",
+      "angleId": "affair_denial",
+      "variants": [
+        {
+          "id": "judgeq-d-1-empathy_approach-a-affair_denial-v1",
+          "text": "Mrs. Park, this is a setting where it is hard to speak. Regarding the basis on which you reject that denial, please share, at your own pace, what you found most difficult to say."
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-a-affair_denial-v2",
+          "text": "If there were circumstances that made it hard to raise the basis on which you reject that denial, please explain them in your own words first."
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-a-affair_denial-v3",
+          "text": "You do not need to lay everything out at once. Please begin with the part of the basis on which you reject that denial that you feel ready to say today."
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-a-affair_denial-v4",
+          "text": "If part of the basis on which you reject that denial is something you can speak about and part is not yet, please separate them and answer on the part you can."
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-a-affair_denial-v5",
+          "text": "Mrs. Park, if there is something about the basis on which you reject that denial you have been carrying alone, please put it down here, in the form you are able to."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "fact_pursuit",
+      "targetParty": "b",
+      "angleId": "concealment_reason",
+      "variants": [
+        {
+          "id": "judgeq-d-1-fact_pursuit-b-concealment_reason-v1",
+          "text": "Mr. Lee, regarding why you chose not to explain the visits and calls earlier, please walk me through what happened in chronological order, with dates where you can."
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-b-concealment_reason-v2",
+          "text": "Looking at the dashcam log, the call records, and the receipts, please separate what you accept as your own conduct from what you do not recall, item by item."
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-b-concealment_reason-v3",
+          "text": "Where Mrs. Park's account and your own account diverge most sharply on why you chose not to explain the visits and calls earlier, please start from that point and answer on the facts alone."
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-b-concealment_reason-v4",
+          "text": "Among the dashcam log, the call records, and the receipts, please tell me which items you accept here and which items you still wish to dispute."
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-b-concealment_reason-v5",
+          "text": "Mr. Lee, if there is anything about why you chose not to explain the visits and calls earlier that you have not yet stated on the record, please bring it forward first."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "fact_pursuit",
+      "targetParty": "a",
+      "angleId": "concealment_reason",
+      "variants": [
+        {
+          "id": "judgeq-d-1-fact_pursuit-a-concealment_reason-v1",
+          "text": "Mrs. Park, regarding how you read the silence on the other side, please walk me through what happened in chronological order, with dates where you can."
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-a-concealment_reason-v2",
+          "text": "Looking at the dashcam log, the call records, and the receipts, please separate what you accept as your own conduct from what you do not recall, item by item."
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-a-concealment_reason-v3",
+          "text": "Where Mr. Lee's account and your own account diverge most sharply on how you read the silence on the other side, please start from that point and answer on the facts alone."
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-a-concealment_reason-v4",
+          "text": "Among the dashcam log, the call records, and the receipts, please tell me which items you accept here and which items you still wish to dispute."
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-a-concealment_reason-v5",
+          "text": "Mrs. Park, if there is anything about how you read the silence on the other side that you have not yet stated on the record, please bring it forward first."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "motive_search",
+      "targetParty": "b",
+      "angleId": "concealment_reason",
+      "variants": [
+        {
+          "id": "judgeq-d-1-motive_search-b-concealment_reason-v1",
+          "text": "Mr. Lee, while why you chose not to explain the visits and calls earlier was building up, why did you not lay this out for your spouse beforehand? Please explain your reasoning."
+        },
+        {
+          "id": "judgeq-d-1-motive_search-b-concealment_reason-v2",
+          "text": "If you were aware that why you chose not to explain the visits and calls earlier could be misread, please tell me the basis on which you chose silence at that point."
+        },
+        {
+          "id": "judgeq-d-1-motive_search-b-concealment_reason-v3",
+          "text": "You could have explained each part separately. Please tell me what motivated you to defer all of it instead."
+        },
+        {
+          "id": "judgeq-d-1-motive_search-b-concealment_reason-v4",
+          "text": "At that time, which conversation did you most want to avoid, and which were you willing to have? Please answer on that distinction."
+        },
+        {
+          "id": "judgeq-d-1-motive_search-b-concealment_reason-v5",
+          "text": "Within what you can say here, please explain where the impulse to keep this matter buried came from."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "motive_search",
+      "targetParty": "a",
+      "angleId": "concealment_reason",
+      "variants": [
+        {
+          "id": "judgeq-d-1-motive_search-a-concealment_reason-v1",
+          "text": "Mrs. Park, while how you read the silence on the other side was building up, why did you not lay this out for your spouse beforehand? Please explain your reasoning."
+        },
+        {
+          "id": "judgeq-d-1-motive_search-a-concealment_reason-v2",
+          "text": "If you were aware that how you read the silence on the other side could be misread, please tell me the basis on which you chose silence at that point."
+        },
+        {
+          "id": "judgeq-d-1-motive_search-a-concealment_reason-v3",
+          "text": "You could have explained each part separately. Please tell me what motivated you to defer all of it instead."
+        },
+        {
+          "id": "judgeq-d-1-motive_search-a-concealment_reason-v4",
+          "text": "At that time, which conversation did you most want to avoid, and which were you willing to have? Please answer on that distinction."
+        },
+        {
+          "id": "judgeq-d-1-motive_search-a-concealment_reason-v5",
+          "text": "Within what you can say here, please explain where the impulse to keep this matter buried came from."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "empathy_approach",
+      "targetParty": "b",
+      "angleId": "concealment_reason",
+      "variants": [
+        {
+          "id": "judgeq-d-1-empathy_approach-b-concealment_reason-v1",
+          "text": "Mr. Lee, this is a setting where it is hard to speak. Regarding why you chose not to explain the visits and calls earlier, please share, at your own pace, what you found most difficult to say."
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-b-concealment_reason-v2",
+          "text": "If there were circumstances that made it hard to raise why you chose not to explain the visits and calls earlier, please explain them in your own words first."
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-b-concealment_reason-v3",
+          "text": "You do not need to lay everything out at once. Please begin with the part of why you chose not to explain the visits and calls earlier that you feel ready to say today."
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-b-concealment_reason-v4",
+          "text": "If part of why you chose not to explain the visits and calls earlier is something you can speak about and part is not yet, please separate them and answer on the part you can."
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-b-concealment_reason-v5",
+          "text": "Mr. Lee, if there is something about why you chose not to explain the visits and calls earlier you have been carrying alone, please put it down here, in the form you are able to."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "empathy_approach",
+      "targetParty": "a",
+      "angleId": "concealment_reason",
+      "variants": [
+        {
+          "id": "judgeq-d-1-empathy_approach-a-concealment_reason-v1",
+          "text": "Mrs. Park, this is a setting where it is hard to speak. Regarding how you read the silence on the other side, please share, at your own pace, what you found most difficult to say."
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-a-concealment_reason-v2",
+          "text": "If there were circumstances that made it hard to raise how you read the silence on the other side, please explain them in your own words first."
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-a-concealment_reason-v3",
+          "text": "You do not need to lay everything out at once. Please begin with the part of how you read the silence on the other side that you feel ready to say today."
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-a-concealment_reason-v4",
+          "text": "If part of how you read the silence on the other side is something you can speak about and part is not yet, please separate them and answer on the part you can."
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-a-concealment_reason-v5",
+          "text": "Mrs. Park, if there is something about how you read the silence on the other side you have been carrying alone, please put it down here, in the form you are able to."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "fact_pursuit",
+      "targetParty": "b",
+      "angleId": "general",
+      "variants": [
+        {
+          "id": "judgeq-d-2-fact_pursuit-b-general-v1",
+          "text": "Mr. Lee, regarding the cash withdrawals from your personal account, please walk me through what happened in chronological order, with dates where you can."
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-b-general-v2",
+          "text": "Looking at the withdrawal records, the deposit traces, and the receipts, please separate what you accept as your own conduct from what you do not recall, item by item."
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-b-general-v3",
+          "text": "Where Mrs. Park's account and your own account diverge most sharply on the cash withdrawals from your personal account, please start from that point and answer on the facts alone."
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-b-general-v4",
+          "text": "Among the withdrawal records, the deposit traces, and the receipts, please tell me which items you accept here and which items you still wish to dispute."
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-b-general-v5",
+          "text": "Mr. Lee, if there is anything about the cash withdrawals from your personal account that you have not yet stated on the record, please bring it forward first."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "fact_pursuit",
+      "targetParty": "a",
+      "angleId": "general",
+      "variants": [
+        {
+          "id": "judgeq-d-2-fact_pursuit-a-general-v1",
+          "text": "Mrs. Park, regarding how you came to read those withdrawals as unilateral, please walk me through what happened in chronological order, with dates where you can."
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-a-general-v2",
+          "text": "Looking at the withdrawal records, the deposit traces, and the receipts, please separate what you accept as your own conduct from what you do not recall, item by item."
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-a-general-v3",
+          "text": "Where Mr. Lee's account and your own account diverge most sharply on how you came to read those withdrawals as unilateral, please start from that point and answer on the facts alone."
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-a-general-v4",
+          "text": "Among the withdrawal records, the deposit traces, and the receipts, please tell me which items you accept here and which items you still wish to dispute."
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-a-general-v5",
+          "text": "Mrs. Park, if there is anything about how you came to read those withdrawals as unilateral that you have not yet stated on the record, please bring it forward first."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "motive_search",
+      "targetParty": "b",
+      "angleId": "general",
+      "variants": [
+        {
+          "id": "judgeq-d-2-motive_search-b-general-v1",
+          "text": "Mr. Lee, while the cash withdrawals from your personal account was building up, why did you not lay this out for your spouse beforehand? Please explain your reasoning."
+        },
+        {
+          "id": "judgeq-d-2-motive_search-b-general-v2",
+          "text": "If you were aware that the cash withdrawals from your personal account could be misread, please tell me the basis on which you chose silence at that point."
+        },
+        {
+          "id": "judgeq-d-2-motive_search-b-general-v3",
+          "text": "You could have explained each part separately. Please tell me what motivated you to defer all of it instead."
+        },
+        {
+          "id": "judgeq-d-2-motive_search-b-general-v4",
+          "text": "At that time, which conversation did you most want to avoid, and which were you willing to have? Please answer on that distinction."
+        },
+        {
+          "id": "judgeq-d-2-motive_search-b-general-v5",
+          "text": "Within what you can say here, please explain where the impulse to keep this matter buried came from."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "motive_search",
+      "targetParty": "a",
+      "angleId": "general",
+      "variants": [
+        {
+          "id": "judgeq-d-2-motive_search-a-general-v1",
+          "text": "Mrs. Park, while how you came to read those withdrawals as unilateral was building up, why did you not lay this out for your spouse beforehand? Please explain your reasoning."
+        },
+        {
+          "id": "judgeq-d-2-motive_search-a-general-v2",
+          "text": "If you were aware that how you came to read those withdrawals as unilateral could be misread, please tell me the basis on which you chose silence at that point."
+        },
+        {
+          "id": "judgeq-d-2-motive_search-a-general-v3",
+          "text": "You could have explained each part separately. Please tell me what motivated you to defer all of it instead."
+        },
+        {
+          "id": "judgeq-d-2-motive_search-a-general-v4",
+          "text": "At that time, which conversation did you most want to avoid, and which were you willing to have? Please answer on that distinction."
+        },
+        {
+          "id": "judgeq-d-2-motive_search-a-general-v5",
+          "text": "Within what you can say here, please explain where the impulse to keep this matter buried came from."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "empathy_approach",
+      "targetParty": "b",
+      "angleId": "general",
+      "variants": [
+        {
+          "id": "judgeq-d-2-empathy_approach-b-general-v1",
+          "text": "Mr. Lee, this is a setting where it is hard to speak. Regarding the cash withdrawals from your personal account, please share, at your own pace, what you found most difficult to say."
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-b-general-v2",
+          "text": "If there were circumstances that made it hard to raise the cash withdrawals from your personal account, please explain them in your own words first."
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-b-general-v3",
+          "text": "You do not need to lay everything out at once. Please begin with the part of the cash withdrawals from your personal account that you feel ready to say today."
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-b-general-v4",
+          "text": "If part of the cash withdrawals from your personal account is something you can speak about and part is not yet, please separate them and answer on the part you can."
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-b-general-v5",
+          "text": "Mr. Lee, if there is something about the cash withdrawals from your personal account you have been carrying alone, please put it down here, in the form you are able to."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "empathy_approach",
+      "targetParty": "a",
+      "angleId": "general",
+      "variants": [
+        {
+          "id": "judgeq-d-2-empathy_approach-a-general-v1",
+          "text": "Mrs. Park, this is a setting where it is hard to speak. Regarding how you came to read those withdrawals as unilateral, please share, at your own pace, what you found most difficult to say."
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-a-general-v2",
+          "text": "If there were circumstances that made it hard to raise how you came to read those withdrawals as unilateral, please explain them in your own words first."
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-a-general-v3",
+          "text": "You do not need to lay everything out at once. Please begin with the part of how you came to read those withdrawals as unilateral that you feel ready to say today."
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-a-general-v4",
+          "text": "If part of how you came to read those withdrawals as unilateral is something you can speak about and part is not yet, please separate them and answer on the part you can."
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-a-general-v5",
+          "text": "Mrs. Park, if there is something about how you came to read those withdrawals as unilateral you have been carrying alone, please put it down here, in the form you are able to."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "fact_pursuit",
+      "targetParty": "b",
+      "angleId": "cash_withdrawal",
+      "variants": [
+        {
+          "id": "judgeq-d-2-fact_pursuit-b-cash_withdrawal-v1",
+          "text": "Mr. Lee, regarding the dates and amounts of the cash withdrawals, please walk me through what happened in chronological order, with dates where you can."
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-b-cash_withdrawal-v2",
+          "text": "Looking at the withdrawal records, the deposit traces, and the receipts, please separate what you accept as your own conduct from what you do not recall, item by item."
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-b-cash_withdrawal-v3",
+          "text": "Where Mrs. Park's account and your own account diverge most sharply on the dates and amounts of the cash withdrawals, please start from that point and answer on the facts alone."
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-b-cash_withdrawal-v4",
+          "text": "Among the withdrawal records, the deposit traces, and the receipts, please tell me which items you accept here and which items you still wish to dispute."
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-b-cash_withdrawal-v5",
+          "text": "Mr. Lee, if there is anything about the dates and amounts of the cash withdrawals that you have not yet stated on the record, please bring it forward first."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "fact_pursuit",
+      "targetParty": "a",
+      "angleId": "cash_withdrawal",
+      "variants": [
+        {
+          "id": "judgeq-d-2-fact_pursuit-a-cash_withdrawal-v1",
+          "text": "Mrs. Park, regarding how you traced the cash withdrawal pattern, please walk me through what happened in chronological order, with dates where you can."
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-a-cash_withdrawal-v2",
+          "text": "Looking at the withdrawal records, the deposit traces, and the receipts, please separate what you accept as your own conduct from what you do not recall, item by item."
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-a-cash_withdrawal-v3",
+          "text": "Where Mr. Lee's account and your own account diverge most sharply on how you traced the cash withdrawal pattern, please start from that point and answer on the facts alone."
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-a-cash_withdrawal-v4",
+          "text": "Among the withdrawal records, the deposit traces, and the receipts, please tell me which items you accept here and which items you still wish to dispute."
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-a-cash_withdrawal-v5",
+          "text": "Mrs. Park, if there is anything about how you traced the cash withdrawal pattern that you have not yet stated on the record, please bring it forward first."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "motive_search",
+      "targetParty": "b",
+      "angleId": "cash_withdrawal",
+      "variants": [
+        {
+          "id": "judgeq-d-2-motive_search-b-cash_withdrawal-v1",
+          "text": "Mr. Lee, while the dates and amounts of the cash withdrawals was building up, why did you not lay this out for your spouse beforehand? Please explain your reasoning."
+        },
+        {
+          "id": "judgeq-d-2-motive_search-b-cash_withdrawal-v2",
+          "text": "If you were aware that the dates and amounts of the cash withdrawals could be misread, please tell me the basis on which you chose silence at that point."
+        },
+        {
+          "id": "judgeq-d-2-motive_search-b-cash_withdrawal-v3",
+          "text": "You could have explained each part separately. Please tell me what motivated you to defer all of it instead."
+        },
+        {
+          "id": "judgeq-d-2-motive_search-b-cash_withdrawal-v4",
+          "text": "At that time, which conversation did you most want to avoid, and which were you willing to have? Please answer on that distinction."
+        },
+        {
+          "id": "judgeq-d-2-motive_search-b-cash_withdrawal-v5",
+          "text": "Within what you can say here, please explain where the impulse to keep this matter buried came from."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "motive_search",
+      "targetParty": "a",
+      "angleId": "cash_withdrawal",
+      "variants": [
+        {
+          "id": "judgeq-d-2-motive_search-a-cash_withdrawal-v1",
+          "text": "Mrs. Park, while how you traced the cash withdrawal pattern was building up, why did you not lay this out for your spouse beforehand? Please explain your reasoning."
+        },
+        {
+          "id": "judgeq-d-2-motive_search-a-cash_withdrawal-v2",
+          "text": "If you were aware that how you traced the cash withdrawal pattern could be misread, please tell me the basis on which you chose silence at that point."
+        },
+        {
+          "id": "judgeq-d-2-motive_search-a-cash_withdrawal-v3",
+          "text": "You could have explained each part separately. Please tell me what motivated you to defer all of it instead."
+        },
+        {
+          "id": "judgeq-d-2-motive_search-a-cash_withdrawal-v4",
+          "text": "At that time, which conversation did you most want to avoid, and which were you willing to have? Please answer on that distinction."
+        },
+        {
+          "id": "judgeq-d-2-motive_search-a-cash_withdrawal-v5",
+          "text": "Within what you can say here, please explain where the impulse to keep this matter buried came from."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "empathy_approach",
+      "targetParty": "b",
+      "angleId": "cash_withdrawal",
+      "variants": [
+        {
+          "id": "judgeq-d-2-empathy_approach-b-cash_withdrawal-v1",
+          "text": "Mr. Lee, this is a setting where it is hard to speak. Regarding the dates and amounts of the cash withdrawals, please share, at your own pace, what you found most difficult to say."
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-b-cash_withdrawal-v2",
+          "text": "If there were circumstances that made it hard to raise the dates and amounts of the cash withdrawals, please explain them in your own words first."
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-b-cash_withdrawal-v3",
+          "text": "You do not need to lay everything out at once. Please begin with the part of the dates and amounts of the cash withdrawals that you feel ready to say today."
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-b-cash_withdrawal-v4",
+          "text": "If part of the dates and amounts of the cash withdrawals is something you can speak about and part is not yet, please separate them and answer on the part you can."
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-b-cash_withdrawal-v5",
+          "text": "Mr. Lee, if there is something about the dates and amounts of the cash withdrawals you have been carrying alone, please put it down here, in the form you are able to."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "empathy_approach",
+      "targetParty": "a",
+      "angleId": "cash_withdrawal",
+      "variants": [
+        {
+          "id": "judgeq-d-2-empathy_approach-a-cash_withdrawal-v1",
+          "text": "Mrs. Park, this is a setting where it is hard to speak. Regarding how you traced the cash withdrawal pattern, please share, at your own pace, what you found most difficult to say."
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-a-cash_withdrawal-v2",
+          "text": "If there were circumstances that made it hard to raise how you traced the cash withdrawal pattern, please explain them in your own words first."
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-a-cash_withdrawal-v3",
+          "text": "You do not need to lay everything out at once. Please begin with the part of how you traced the cash withdrawal pattern that you feel ready to say today."
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-a-cash_withdrawal-v4",
+          "text": "If part of how you traced the cash withdrawal pattern is something you can speak about and part is not yet, please separate them and answer on the part you can."
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-a-cash_withdrawal-v5",
+          "text": "Mrs. Park, if there is something about how you traced the cash withdrawal pattern you have been carrying alone, please put it down here, in the form you are able to."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "fact_pursuit",
+      "targetParty": "b",
+      "angleId": "private_fund_boundary",
+      "variants": [
+        {
+          "id": "judgeq-d-2-fact_pursuit-b-private_fund_boundary-v1",
+          "text": "Mr. Lee, regarding where you draw the line between personal funds and shared funds, please walk me through what happened in chronological order, with dates where you can."
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-b-private_fund_boundary-v2",
+          "text": "Looking at the withdrawal records, the deposit traces, and the receipts, please separate what you accept as your own conduct from what you do not recall, item by item."
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-b-private_fund_boundary-v3",
+          "text": "Where Mrs. Park's account and your own account diverge most sharply on where you draw the line between personal funds and shared funds, please start from that point and answer on the facts alone."
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-b-private_fund_boundary-v4",
+          "text": "Among the withdrawal records, the deposit traces, and the receipts, please tell me which items you accept here and which items you still wish to dispute."
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-b-private_fund_boundary-v5",
+          "text": "Mr. Lee, if there is anything about where you draw the line between personal funds and shared funds that you have not yet stated on the record, please bring it forward first."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "fact_pursuit",
+      "targetParty": "a",
+      "angleId": "private_fund_boundary",
+      "variants": [
+        {
+          "id": "judgeq-d-2-fact_pursuit-a-private_fund_boundary-v1",
+          "text": "Mrs. Park, regarding where you draw the line for what counts as shared funds, please walk me through what happened in chronological order, with dates where you can."
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-a-private_fund_boundary-v2",
+          "text": "Looking at the withdrawal records, the deposit traces, and the receipts, please separate what you accept as your own conduct from what you do not recall, item by item."
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-a-private_fund_boundary-v3",
+          "text": "Where Mr. Lee's account and your own account diverge most sharply on where you draw the line for what counts as shared funds, please start from that point and answer on the facts alone."
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-a-private_fund_boundary-v4",
+          "text": "Among the withdrawal records, the deposit traces, and the receipts, please tell me which items you accept here and which items you still wish to dispute."
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-a-private_fund_boundary-v5",
+          "text": "Mrs. Park, if there is anything about where you draw the line for what counts as shared funds that you have not yet stated on the record, please bring it forward first."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "motive_search",
+      "targetParty": "b",
+      "angleId": "private_fund_boundary",
+      "variants": [
+        {
+          "id": "judgeq-d-2-motive_search-b-private_fund_boundary-v1",
+          "text": "Mr. Lee, while where you draw the line between personal funds and shared funds was building up, why did you not lay this out for your spouse beforehand? Please explain your reasoning."
+        },
+        {
+          "id": "judgeq-d-2-motive_search-b-private_fund_boundary-v2",
+          "text": "If you were aware that where you draw the line between personal funds and shared funds could be misread, please tell me the basis on which you chose silence at that point."
+        },
+        {
+          "id": "judgeq-d-2-motive_search-b-private_fund_boundary-v3",
+          "text": "You could have explained each part separately. Please tell me what motivated you to defer all of it instead."
+        },
+        {
+          "id": "judgeq-d-2-motive_search-b-private_fund_boundary-v4",
+          "text": "At that time, which conversation did you most want to avoid, and which were you willing to have? Please answer on that distinction."
+        },
+        {
+          "id": "judgeq-d-2-motive_search-b-private_fund_boundary-v5",
+          "text": "Within what you can say here, please explain where the impulse to keep this matter buried came from."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "motive_search",
+      "targetParty": "a",
+      "angleId": "private_fund_boundary",
+      "variants": [
+        {
+          "id": "judgeq-d-2-motive_search-a-private_fund_boundary-v1",
+          "text": "Mrs. Park, while where you draw the line for what counts as shared funds was building up, why did you not lay this out for your spouse beforehand? Please explain your reasoning."
+        },
+        {
+          "id": "judgeq-d-2-motive_search-a-private_fund_boundary-v2",
+          "text": "If you were aware that where you draw the line for what counts as shared funds could be misread, please tell me the basis on which you chose silence at that point."
+        },
+        {
+          "id": "judgeq-d-2-motive_search-a-private_fund_boundary-v3",
+          "text": "You could have explained each part separately. Please tell me what motivated you to defer all of it instead."
+        },
+        {
+          "id": "judgeq-d-2-motive_search-a-private_fund_boundary-v4",
+          "text": "At that time, which conversation did you most want to avoid, and which were you willing to have? Please answer on that distinction."
+        },
+        {
+          "id": "judgeq-d-2-motive_search-a-private_fund_boundary-v5",
+          "text": "Within what you can say here, please explain where the impulse to keep this matter buried came from."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "empathy_approach",
+      "targetParty": "b",
+      "angleId": "private_fund_boundary",
+      "variants": [
+        {
+          "id": "judgeq-d-2-empathy_approach-b-private_fund_boundary-v1",
+          "text": "Mr. Lee, this is a setting where it is hard to speak. Regarding where you draw the line between personal funds and shared funds, please share, at your own pace, what you found most difficult to say."
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-b-private_fund_boundary-v2",
+          "text": "If there were circumstances that made it hard to raise where you draw the line between personal funds and shared funds, please explain them in your own words first."
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-b-private_fund_boundary-v3",
+          "text": "You do not need to lay everything out at once. Please begin with the part of where you draw the line between personal funds and shared funds that you feel ready to say today."
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-b-private_fund_boundary-v4",
+          "text": "If part of where you draw the line between personal funds and shared funds is something you can speak about and part is not yet, please separate them and answer on the part you can."
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-b-private_fund_boundary-v5",
+          "text": "Mr. Lee, if there is something about where you draw the line between personal funds and shared funds you have been carrying alone, please put it down here, in the form you are able to."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "empathy_approach",
+      "targetParty": "a",
+      "angleId": "private_fund_boundary",
+      "variants": [
+        {
+          "id": "judgeq-d-2-empathy_approach-a-private_fund_boundary-v1",
+          "text": "Mrs. Park, this is a setting where it is hard to speak. Regarding where you draw the line for what counts as shared funds, please share, at your own pace, what you found most difficult to say."
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-a-private_fund_boundary-v2",
+          "text": "If there were circumstances that made it hard to raise where you draw the line for what counts as shared funds, please explain them in your own words first."
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-a-private_fund_boundary-v3",
+          "text": "You do not need to lay everything out at once. Please begin with the part of where you draw the line for what counts as shared funds that you feel ready to say today."
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-a-private_fund_boundary-v4",
+          "text": "If part of where you draw the line for what counts as shared funds is something you can speak about and part is not yet, please separate them and answer on the part you can."
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-a-private_fund_boundary-v5",
+          "text": "Mrs. Park, if there is something about where you draw the line for what counts as shared funds you have been carrying alone, please put it down here, in the form you are able to."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "fact_pursuit",
+      "targetParty": "b",
+      "angleId": "recipient_reason",
+      "variants": [
+        {
+          "id": "judgeq-d-2-fact_pursuit-b-recipient_reason-v1",
+          "text": "Mr. Lee, regarding where the cash went after it left your hand, please walk me through what happened in chronological order, with dates where you can."
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-b-recipient_reason-v2",
+          "text": "Looking at the withdrawal records, the deposit traces, and the receipts, please separate what you accept as your own conduct from what you do not recall, item by item."
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-b-recipient_reason-v3",
+          "text": "Where Mrs. Park's account and your own account diverge most sharply on where the cash went after it left your hand, please start from that point and answer on the facts alone."
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-b-recipient_reason-v4",
+          "text": "Among the withdrawal records, the deposit traces, and the receipts, please tell me which items you accept here and which items you still wish to dispute."
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-b-recipient_reason-v5",
+          "text": "Mr. Lee, if there is anything about where the cash went after it left your hand that you have not yet stated on the record, please bring it forward first."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "fact_pursuit",
+      "targetParty": "a",
+      "angleId": "recipient_reason",
+      "variants": [
+        {
+          "id": "judgeq-d-2-fact_pursuit-a-recipient_reason-v1",
+          "text": "Mrs. Park, regarding your reading of where the cash ended up, please walk me through what happened in chronological order, with dates where you can."
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-a-recipient_reason-v2",
+          "text": "Looking at the withdrawal records, the deposit traces, and the receipts, please separate what you accept as your own conduct from what you do not recall, item by item."
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-a-recipient_reason-v3",
+          "text": "Where Mr. Lee's account and your own account diverge most sharply on your reading of where the cash ended up, please start from that point and answer on the facts alone."
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-a-recipient_reason-v4",
+          "text": "Among the withdrawal records, the deposit traces, and the receipts, please tell me which items you accept here and which items you still wish to dispute."
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-a-recipient_reason-v5",
+          "text": "Mrs. Park, if there is anything about your reading of where the cash ended up that you have not yet stated on the record, please bring it forward first."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "motive_search",
+      "targetParty": "b",
+      "angleId": "recipient_reason",
+      "variants": [
+        {
+          "id": "judgeq-d-2-motive_search-b-recipient_reason-v1",
+          "text": "Mr. Lee, while where the cash went after it left your hand was building up, why did you not lay this out for your spouse beforehand? Please explain your reasoning."
+        },
+        {
+          "id": "judgeq-d-2-motive_search-b-recipient_reason-v2",
+          "text": "If you were aware that where the cash went after it left your hand could be misread, please tell me the basis on which you chose silence at that point."
+        },
+        {
+          "id": "judgeq-d-2-motive_search-b-recipient_reason-v3",
+          "text": "You could have explained each part separately. Please tell me what motivated you to defer all of it instead."
+        },
+        {
+          "id": "judgeq-d-2-motive_search-b-recipient_reason-v4",
+          "text": "At that time, which conversation did you most want to avoid, and which were you willing to have? Please answer on that distinction."
+        },
+        {
+          "id": "judgeq-d-2-motive_search-b-recipient_reason-v5",
+          "text": "Within what you can say here, please explain where the impulse to keep this matter buried came from."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "motive_search",
+      "targetParty": "a",
+      "angleId": "recipient_reason",
+      "variants": [
+        {
+          "id": "judgeq-d-2-motive_search-a-recipient_reason-v1",
+          "text": "Mrs. Park, while your reading of where the cash ended up was building up, why did you not lay this out for your spouse beforehand? Please explain your reasoning."
+        },
+        {
+          "id": "judgeq-d-2-motive_search-a-recipient_reason-v2",
+          "text": "If you were aware that your reading of where the cash ended up could be misread, please tell me the basis on which you chose silence at that point."
+        },
+        {
+          "id": "judgeq-d-2-motive_search-a-recipient_reason-v3",
+          "text": "You could have explained each part separately. Please tell me what motivated you to defer all of it instead."
+        },
+        {
+          "id": "judgeq-d-2-motive_search-a-recipient_reason-v4",
+          "text": "At that time, which conversation did you most want to avoid, and which were you willing to have? Please answer on that distinction."
+        },
+        {
+          "id": "judgeq-d-2-motive_search-a-recipient_reason-v5",
+          "text": "Within what you can say here, please explain where the impulse to keep this matter buried came from."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "empathy_approach",
+      "targetParty": "b",
+      "angleId": "recipient_reason",
+      "variants": [
+        {
+          "id": "judgeq-d-2-empathy_approach-b-recipient_reason-v1",
+          "text": "Mr. Lee, this is a setting where it is hard to speak. Regarding where the cash went after it left your hand, please share, at your own pace, what you found most difficult to say."
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-b-recipient_reason-v2",
+          "text": "If there were circumstances that made it hard to raise where the cash went after it left your hand, please explain them in your own words first."
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-b-recipient_reason-v3",
+          "text": "You do not need to lay everything out at once. Please begin with the part of where the cash went after it left your hand that you feel ready to say today."
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-b-recipient_reason-v4",
+          "text": "If part of where the cash went after it left your hand is something you can speak about and part is not yet, please separate them and answer on the part you can."
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-b-recipient_reason-v5",
+          "text": "Mr. Lee, if there is something about where the cash went after it left your hand you have been carrying alone, please put it down here, in the form you are able to."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "empathy_approach",
+      "targetParty": "a",
+      "angleId": "recipient_reason",
+      "variants": [
+        {
+          "id": "judgeq-d-2-empathy_approach-a-recipient_reason-v1",
+          "text": "Mrs. Park, this is a setting where it is hard to speak. Regarding your reading of where the cash ended up, please share, at your own pace, what you found most difficult to say."
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-a-recipient_reason-v2",
+          "text": "If there were circumstances that made it hard to raise your reading of where the cash ended up, please explain them in your own words first."
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-a-recipient_reason-v3",
+          "text": "You do not need to lay everything out at once. Please begin with the part of your reading of where the cash ended up that you feel ready to say today."
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-a-recipient_reason-v4",
+          "text": "If part of your reading of where the cash ended up is something you can speak about and part is not yet, please separate them and answer on the part you can."
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-a-recipient_reason-v5",
+          "text": "Mrs. Park, if there is something about your reading of where the cash ended up you have been carrying alone, please put it down here, in the form you are able to."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "fact_pursuit",
+      "targetParty": "b",
+      "angleId": "consent_boundary",
+      "variants": [
+        {
+          "id": "judgeq-d-2-fact_pursuit-b-consent_boundary-v1",
+          "text": "Mr. Lee, regarding whether you sought consent before each withdrawal, please walk me through what happened in chronological order, with dates where you can."
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-b-consent_boundary-v2",
+          "text": "Looking at the withdrawal records, the deposit traces, and the receipts, please separate what you accept as your own conduct from what you do not recall, item by item."
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-b-consent_boundary-v3",
+          "text": "Where Mrs. Park's account and your own account diverge most sharply on whether you sought consent before each withdrawal, please start from that point and answer on the facts alone."
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-b-consent_boundary-v4",
+          "text": "Among the withdrawal records, the deposit traces, and the receipts, please tell me which items you accept here and which items you still wish to dispute."
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-b-consent_boundary-v5",
+          "text": "Mr. Lee, if there is anything about whether you sought consent before each withdrawal that you have not yet stated on the record, please bring it forward first."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "fact_pursuit",
+      "targetParty": "a",
+      "angleId": "consent_boundary",
+      "variants": [
+        {
+          "id": "judgeq-d-2-fact_pursuit-a-consent_boundary-v1",
+          "text": "Mrs. Park, regarding the consent you say was never sought, please walk me through what happened in chronological order, with dates where you can."
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-a-consent_boundary-v2",
+          "text": "Looking at the withdrawal records, the deposit traces, and the receipts, please separate what you accept as your own conduct from what you do not recall, item by item."
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-a-consent_boundary-v3",
+          "text": "Where Mr. Lee's account and your own account diverge most sharply on the consent you say was never sought, please start from that point and answer on the facts alone."
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-a-consent_boundary-v4",
+          "text": "Among the withdrawal records, the deposit traces, and the receipts, please tell me which items you accept here and which items you still wish to dispute."
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-a-consent_boundary-v5",
+          "text": "Mrs. Park, if there is anything about the consent you say was never sought that you have not yet stated on the record, please bring it forward first."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "motive_search",
+      "targetParty": "b",
+      "angleId": "consent_boundary",
+      "variants": [
+        {
+          "id": "judgeq-d-2-motive_search-b-consent_boundary-v1",
+          "text": "Mr. Lee, while whether you sought consent before each withdrawal was building up, why did you not lay this out for your spouse beforehand? Please explain your reasoning."
+        },
+        {
+          "id": "judgeq-d-2-motive_search-b-consent_boundary-v2",
+          "text": "If you were aware that whether you sought consent before each withdrawal could be misread, please tell me the basis on which you chose silence at that point."
+        },
+        {
+          "id": "judgeq-d-2-motive_search-b-consent_boundary-v3",
+          "text": "You could have explained each part separately. Please tell me what motivated you to defer all of it instead."
+        },
+        {
+          "id": "judgeq-d-2-motive_search-b-consent_boundary-v4",
+          "text": "At that time, which conversation did you most want to avoid, and which were you willing to have? Please answer on that distinction."
+        },
+        {
+          "id": "judgeq-d-2-motive_search-b-consent_boundary-v5",
+          "text": "Within what you can say here, please explain where the impulse to keep this matter buried came from."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "motive_search",
+      "targetParty": "a",
+      "angleId": "consent_boundary",
+      "variants": [
+        {
+          "id": "judgeq-d-2-motive_search-a-consent_boundary-v1",
+          "text": "Mrs. Park, while the consent you say was never sought was building up, why did you not lay this out for your spouse beforehand? Please explain your reasoning."
+        },
+        {
+          "id": "judgeq-d-2-motive_search-a-consent_boundary-v2",
+          "text": "If you were aware that the consent you say was never sought could be misread, please tell me the basis on which you chose silence at that point."
+        },
+        {
+          "id": "judgeq-d-2-motive_search-a-consent_boundary-v3",
+          "text": "You could have explained each part separately. Please tell me what motivated you to defer all of it instead."
+        },
+        {
+          "id": "judgeq-d-2-motive_search-a-consent_boundary-v4",
+          "text": "At that time, which conversation did you most want to avoid, and which were you willing to have? Please answer on that distinction."
+        },
+        {
+          "id": "judgeq-d-2-motive_search-a-consent_boundary-v5",
+          "text": "Within what you can say here, please explain where the impulse to keep this matter buried came from."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "empathy_approach",
+      "targetParty": "b",
+      "angleId": "consent_boundary",
+      "variants": [
+        {
+          "id": "judgeq-d-2-empathy_approach-b-consent_boundary-v1",
+          "text": "Mr. Lee, this is a setting where it is hard to speak. Regarding whether you sought consent before each withdrawal, please share, at your own pace, what you found most difficult to say."
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-b-consent_boundary-v2",
+          "text": "If there were circumstances that made it hard to raise whether you sought consent before each withdrawal, please explain them in your own words first."
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-b-consent_boundary-v3",
+          "text": "You do not need to lay everything out at once. Please begin with the part of whether you sought consent before each withdrawal that you feel ready to say today."
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-b-consent_boundary-v4",
+          "text": "If part of whether you sought consent before each withdrawal is something you can speak about and part is not yet, please separate them and answer on the part you can."
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-b-consent_boundary-v5",
+          "text": "Mr. Lee, if there is something about whether you sought consent before each withdrawal you have been carrying alone, please put it down here, in the form you are able to."
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "empathy_approach",
+      "targetParty": "a",
+      "angleId": "consent_boundary",
+      "variants": [
+        {
+          "id": "judgeq-d-2-empathy_approach-a-consent_boundary-v1",
+          "text": "Mrs. Park, this is a setting where it is hard to speak. Regarding the consent you say was never sought, please share, at your own pace, what you found most difficult to say."
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-a-consent_boundary-v2",
+          "text": "If there were circumstances that made it hard to raise the consent you say was never sought, please explain them in your own words first."
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-a-consent_boundary-v3",
+          "text": "You do not need to lay everything out at once. Please begin with the part of the consent you say was never sought that you feel ready to say today."
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-a-consent_boundary-v4",
+          "text": "If part of the consent you say was never sought is something you can speak about and part is not yet, please separate them and answer on the part you can."
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-a-consent_boundary-v5",
+          "text": "Mrs. Park, if there is something about the consent you say was never sought you have been carrying alone, please put it down here, in the form you are able to."
+        }
+      ]
+    },
+    {
+      "disputeId": "h-d3",
+      "questionType": "fact_pursuit",
+      "targetParty": "a",
+      "angleId": "general",
+      "variants": [
+        {
+          "id": "judgeq-h-d3-fact_pursuit-a-general-v1",
+          "text": "Mrs. Park, regarding how you decided to cancel the joint savings, please walk me through what happened in chronological order, with dates where you can."
+        },
+        {
+          "id": "judgeq-h-d3-fact_pursuit-a-general-v2",
+          "text": "Looking at the cancellation records, the signature samples, and the transfer logs, please separate what you accept as your own conduct from what you do not recall, item by item."
+        },
+        {
+          "id": "judgeq-h-d3-fact_pursuit-a-general-v3",
+          "text": "Where Mr. Lee's account and your own account diverge most sharply on how you decided to cancel the joint savings, please start from that point and answer on the facts alone."
+        },
+        {
+          "id": "judgeq-h-d3-fact_pursuit-a-general-v4",
+          "text": "Among the cancellation records, the signature samples, and the transfer logs, please tell me which items you accept here and which items you still wish to dispute."
+        },
+        {
+          "id": "judgeq-h-d3-fact_pursuit-a-general-v5",
+          "text": "Mrs. Park, if there is anything about how you decided to cancel the joint savings that you have not yet stated on the record, please bring it forward first."
+        }
+      ]
+    },
+    {
+      "disputeId": "h-d3",
+      "questionType": "fact_pursuit",
+      "targetParty": "b",
+      "angleId": "general",
+      "variants": [
+        {
+          "id": "judgeq-h-d3-fact_pursuit-b-general-v1",
+          "text": "Mr. Lee, regarding how you learned that the joint savings had been cancelled, please walk me through what happened in chronological order, with dates where you can."
+        },
+        {
+          "id": "judgeq-h-d3-fact_pursuit-b-general-v2",
+          "text": "Looking at the cancellation records, the signature samples, and the transfer logs, please separate what you accept as your own conduct from what you do not recall, item by item."
+        },
+        {
+          "id": "judgeq-h-d3-fact_pursuit-b-general-v3",
+          "text": "Where Mrs. Park's account and your own account diverge most sharply on how you learned that the joint savings had been cancelled, please start from that point and answer on the facts alone."
+        },
+        {
+          "id": "judgeq-h-d3-fact_pursuit-b-general-v4",
+          "text": "Among the cancellation records, the signature samples, and the transfer logs, please tell me which items you accept here and which items you still wish to dispute."
+        },
+        {
+          "id": "judgeq-h-d3-fact_pursuit-b-general-v5",
+          "text": "Mr. Lee, if there is anything about how you learned that the joint savings had been cancelled that you have not yet stated on the record, please bring it forward first."
+        }
+      ]
+    },
+    {
+      "disputeId": "h-d3",
+      "questionType": "motive_search",
+      "targetParty": "a",
+      "angleId": "general",
+      "variants": [
+        {
+          "id": "judgeq-h-d3-motive_search-a-general-v1",
+          "text": "Mrs. Park, while how you decided to cancel the joint savings was building up, why did you not lay this out for your spouse beforehand? Please explain your reasoning."
+        },
+        {
+          "id": "judgeq-h-d3-motive_search-a-general-v2",
+          "text": "If you were aware that how you decided to cancel the joint savings could be misread, please tell me the basis on which you chose silence at that point."
+        },
+        {
+          "id": "judgeq-h-d3-motive_search-a-general-v3",
+          "text": "You could have explained each part separately. Please tell me what motivated you to defer all of it instead."
+        },
+        {
+          "id": "judgeq-h-d3-motive_search-a-general-v4",
+          "text": "At that time, which conversation did you most want to avoid, and which were you willing to have? Please answer on that distinction."
+        },
+        {
+          "id": "judgeq-h-d3-motive_search-a-general-v5",
+          "text": "Within what you can say here, please explain where the impulse to keep this matter buried came from."
+        }
+      ]
+    },
+    {
+      "disputeId": "h-d3",
+      "questionType": "motive_search",
+      "targetParty": "b",
+      "angleId": "general",
+      "variants": [
+        {
+          "id": "judgeq-h-d3-motive_search-b-general-v1",
+          "text": "Mr. Lee, while how you learned that the joint savings had been cancelled was building up, why did you not lay this out for your spouse beforehand? Please explain your reasoning."
+        },
+        {
+          "id": "judgeq-h-d3-motive_search-b-general-v2",
+          "text": "If you were aware that how you learned that the joint savings had been cancelled could be misread, please tell me the basis on which you chose silence at that point."
+        },
+        {
+          "id": "judgeq-h-d3-motive_search-b-general-v3",
+          "text": "You could have explained each part separately. Please tell me what motivated you to defer all of it instead."
+        },
+        {
+          "id": "judgeq-h-d3-motive_search-b-general-v4",
+          "text": "At that time, which conversation did you most want to avoid, and which were you willing to have? Please answer on that distinction."
+        },
+        {
+          "id": "judgeq-h-d3-motive_search-b-general-v5",
+          "text": "Within what you can say here, please explain where the impulse to keep this matter buried came from."
+        }
+      ]
+    },
+    {
+      "disputeId": "h-d3",
+      "questionType": "empathy_approach",
+      "targetParty": "a",
+      "angleId": "general",
+      "variants": [
+        {
+          "id": "judgeq-h-d3-empathy_approach-a-general-v1",
+          "text": "Mrs. Park, this is a setting where it is hard to speak. Regarding how you decided to cancel the joint savings, please share, at your own pace, what you found most difficult to say."
+        },
+        {
+          "id": "judgeq-h-d3-empathy_approach-a-general-v2",
+          "text": "If there were circumstances that made it hard to raise how you decided to cancel the joint savings, please explain them in your own words first."
+        },
+        {
+          "id": "judgeq-h-d3-empathy_approach-a-general-v3",
+          "text": "You do not need to lay everything out at once. Please begin with the part of how you decided to cancel the joint savings that you feel ready to say today."
+        },
+        {
+          "id": "judgeq-h-d3-empathy_approach-a-general-v4",
+          "text": "If part of how you decided to cancel the joint savings is something you can speak about and part is not yet, please separate them and answer on the part you can."
+        },
+        {
+          "id": "judgeq-h-d3-empathy_approach-a-general-v5",
+          "text": "Mrs. Park, if there is something about how you decided to cancel the joint savings you have been carrying alone, please put it down here, in the form you are able to."
+        }
+      ]
+    },
+    {
+      "disputeId": "h-d3",
+      "questionType": "empathy_approach",
+      "targetParty": "b",
+      "angleId": "general",
+      "variants": [
+        {
+          "id": "judgeq-h-d3-empathy_approach-b-general-v1",
+          "text": "Mr. Lee, this is a setting where it is hard to speak. Regarding how you learned that the joint savings had been cancelled, please share, at your own pace, what you found most difficult to say."
+        },
+        {
+          "id": "judgeq-h-d3-empathy_approach-b-general-v2",
+          "text": "If there were circumstances that made it hard to raise how you learned that the joint savings had been cancelled, please explain them in your own words first."
+        },
+        {
+          "id": "judgeq-h-d3-empathy_approach-b-general-v3",
+          "text": "You do not need to lay everything out at once. Please begin with the part of how you learned that the joint savings had been cancelled that you feel ready to say today."
+        },
+        {
+          "id": "judgeq-h-d3-empathy_approach-b-general-v4",
+          "text": "If part of how you learned that the joint savings had been cancelled is something you can speak about and part is not yet, please separate them and answer on the part you can."
+        },
+        {
+          "id": "judgeq-h-d3-empathy_approach-b-general-v5",
+          "text": "Mr. Lee, if there is something about how you learned that the joint savings had been cancelled you have been carrying alone, please put it down here, in the form you are able to."
+        }
+      ]
+    },
+    {
+      "disputeId": "h-d3",
+      "questionType": "fact_pursuit",
+      "targetParty": "a",
+      "angleId": "savings_cancellation",
+      "variants": [
+        {
+          "id": "judgeq-h-d3-fact_pursuit-a-savings_cancellation-v1",
+          "text": "Mrs. Park, regarding the steps by which you closed the savings, please walk me through what happened in chronological order, with dates where you can."
+        },
+        {
+          "id": "judgeq-h-d3-fact_pursuit-a-savings_cancellation-v2",
+          "text": "Looking at the cancellation records, the signature samples, and the transfer logs, please separate what you accept as your own conduct from what you do not recall, item by item."
+        },
+        {
+          "id": "judgeq-h-d3-fact_pursuit-a-savings_cancellation-v3",
+          "text": "Where Mr. Lee's account and your own account diverge most sharply on the steps by which you closed the savings, please start from that point and answer on the facts alone."
+        },
+        {
+          "id": "judgeq-h-d3-fact_pursuit-a-savings_cancellation-v4",
+          "text": "Among the cancellation records, the signature samples, and the transfer logs, please tell me which items you accept here and which items you still wish to dispute."
+        },
+        {
+          "id": "judgeq-h-d3-fact_pursuit-a-savings_cancellation-v5",
+          "text": "Mrs. Park, if there is anything about the steps by which you closed the savings that you have not yet stated on the record, please bring it forward first."
+        }
+      ]
+    },
+    {
+      "disputeId": "h-d3",
+      "questionType": "fact_pursuit",
+      "targetParty": "b",
+      "angleId": "savings_cancellation",
+      "variants": [
+        {
+          "id": "judgeq-h-d3-fact_pursuit-b-savings_cancellation-v1",
+          "text": "Mr. Lee, regarding the moment you became aware the savings had been closed, please walk me through what happened in chronological order, with dates where you can."
+        },
+        {
+          "id": "judgeq-h-d3-fact_pursuit-b-savings_cancellation-v2",
+          "text": "Looking at the cancellation records, the signature samples, and the transfer logs, please separate what you accept as your own conduct from what you do not recall, item by item."
+        },
+        {
+          "id": "judgeq-h-d3-fact_pursuit-b-savings_cancellation-v3",
+          "text": "Where Mrs. Park's account and your own account diverge most sharply on the moment you became aware the savings had been closed, please start from that point and answer on the facts alone."
+        },
+        {
+          "id": "judgeq-h-d3-fact_pursuit-b-savings_cancellation-v4",
+          "text": "Among the cancellation records, the signature samples, and the transfer logs, please tell me which items you accept here and which items you still wish to dispute."
+        },
+        {
+          "id": "judgeq-h-d3-fact_pursuit-b-savings_cancellation-v5",
+          "text": "Mr. Lee, if there is anything about the moment you became aware the savings had been closed that you have not yet stated on the record, please bring it forward first."
+        }
+      ]
+    },
+    {
+      "disputeId": "h-d3",
+      "questionType": "motive_search",
+      "targetParty": "a",
+      "angleId": "savings_cancellation",
+      "variants": [
+        {
+          "id": "judgeq-h-d3-motive_search-a-savings_cancellation-v1",
+          "text": "Mrs. Park, while the steps by which you closed the savings was building up, why did you not lay this out for your spouse beforehand? Please explain your reasoning."
+        },
+        {
+          "id": "judgeq-h-d3-motive_search-a-savings_cancellation-v2",
+          "text": "If you were aware that the steps by which you closed the savings could be misread, please tell me the basis on which you chose silence at that point."
+        },
+        {
+          "id": "judgeq-h-d3-motive_search-a-savings_cancellation-v3",
+          "text": "You could have explained each part separately. Please tell me what motivated you to defer all of it instead."
+        },
+        {
+          "id": "judgeq-h-d3-motive_search-a-savings_cancellation-v4",
+          "text": "At that time, which conversation did you most want to avoid, and which were you willing to have? Please answer on that distinction."
+        },
+        {
+          "id": "judgeq-h-d3-motive_search-a-savings_cancellation-v5",
+          "text": "Within what you can say here, please explain where the impulse to keep this matter buried came from."
+        }
+      ]
+    },
+    {
+      "disputeId": "h-d3",
+      "questionType": "motive_search",
+      "targetParty": "b",
+      "angleId": "savings_cancellation",
+      "variants": [
+        {
+          "id": "judgeq-h-d3-motive_search-b-savings_cancellation-v1",
+          "text": "Mr. Lee, while the moment you became aware the savings had been closed was building up, why did you not lay this out for your spouse beforehand? Please explain your reasoning."
+        },
+        {
+          "id": "judgeq-h-d3-motive_search-b-savings_cancellation-v2",
+          "text": "If you were aware that the moment you became aware the savings had been closed could be misread, please tell me the basis on which you chose silence at that point."
+        },
+        {
+          "id": "judgeq-h-d3-motive_search-b-savings_cancellation-v3",
+          "text": "You could have explained each part separately. Please tell me what motivated you to defer all of it instead."
+        },
+        {
+          "id": "judgeq-h-d3-motive_search-b-savings_cancellation-v4",
+          "text": "At that time, which conversation did you most want to avoid, and which were you willing to have? Please answer on that distinction."
+        },
+        {
+          "id": "judgeq-h-d3-motive_search-b-savings_cancellation-v5",
+          "text": "Within what you can say here, please explain where the impulse to keep this matter buried came from."
+        }
+      ]
+    },
+    {
+      "disputeId": "h-d3",
+      "questionType": "empathy_approach",
+      "targetParty": "a",
+      "angleId": "savings_cancellation",
+      "variants": [
+        {
+          "id": "judgeq-h-d3-empathy_approach-a-savings_cancellation-v1",
+          "text": "Mrs. Park, this is a setting where it is hard to speak. Regarding the steps by which you closed the savings, please share, at your own pace, what you found most difficult to say."
+        },
+        {
+          "id": "judgeq-h-d3-empathy_approach-a-savings_cancellation-v2",
+          "text": "If there were circumstances that made it hard to raise the steps by which you closed the savings, please explain them in your own words first."
+        },
+        {
+          "id": "judgeq-h-d3-empathy_approach-a-savings_cancellation-v3",
+          "text": "You do not need to lay everything out at once. Please begin with the part of the steps by which you closed the savings that you feel ready to say today."
+        },
+        {
+          "id": "judgeq-h-d3-empathy_approach-a-savings_cancellation-v4",
+          "text": "If part of the steps by which you closed the savings is something you can speak about and part is not yet, please separate them and answer on the part you can."
+        },
+        {
+          "id": "judgeq-h-d3-empathy_approach-a-savings_cancellation-v5",
+          "text": "Mrs. Park, if there is something about the steps by which you closed the savings you have been carrying alone, please put it down here, in the form you are able to."
+        }
+      ]
+    },
+    {
+      "disputeId": "h-d3",
+      "questionType": "empathy_approach",
+      "targetParty": "b",
+      "angleId": "savings_cancellation",
+      "variants": [
+        {
+          "id": "judgeq-h-d3-empathy_approach-b-savings_cancellation-v1",
+          "text": "Mr. Lee, this is a setting where it is hard to speak. Regarding the moment you became aware the savings had been closed, please share, at your own pace, what you found most difficult to say."
+        },
+        {
+          "id": "judgeq-h-d3-empathy_approach-b-savings_cancellation-v2",
+          "text": "If there were circumstances that made it hard to raise the moment you became aware the savings had been closed, please explain them in your own words first."
+        },
+        {
+          "id": "judgeq-h-d3-empathy_approach-b-savings_cancellation-v3",
+          "text": "You do not need to lay everything out at once. Please begin with the part of the moment you became aware the savings had been closed that you feel ready to say today."
+        },
+        {
+          "id": "judgeq-h-d3-empathy_approach-b-savings_cancellation-v4",
+          "text": "If part of the moment you became aware the savings had been closed is something you can speak about and part is not yet, please separate them and answer on the part you can."
+        },
+        {
+          "id": "judgeq-h-d3-empathy_approach-b-savings_cancellation-v5",
+          "text": "Mr. Lee, if there is something about the moment you became aware the savings had been closed you have been carrying alone, please put it down here, in the form you are able to."
+        }
+      ]
+    },
+    {
+      "disputeId": "h-d3",
+      "questionType": "fact_pursuit",
+      "targetParty": "a",
+      "angleId": "proxy_document",
+      "variants": [
+        {
+          "id": "judgeq-h-d3-fact_pursuit-a-proxy_document-v1",
+          "text": "Mrs. Park, regarding how the authorization form was prepared and used, please walk me through what happened in chronological order, with dates where you can."
+        },
+        {
+          "id": "judgeq-h-d3-fact_pursuit-a-proxy_document-v2",
+          "text": "Looking at the cancellation records, the signature samples, and the transfer logs, please separate what you accept as your own conduct from what you do not recall, item by item."
+        },
+        {
+          "id": "judgeq-h-d3-fact_pursuit-a-proxy_document-v3",
+          "text": "Where Mr. Lee's account and your own account diverge most sharply on how the authorization form was prepared and used, please start from that point and answer on the facts alone."
+        },
+        {
+          "id": "judgeq-h-d3-fact_pursuit-a-proxy_document-v4",
+          "text": "Among the cancellation records, the signature samples, and the transfer logs, please tell me which items you accept here and which items you still wish to dispute."
+        },
+        {
+          "id": "judgeq-h-d3-fact_pursuit-a-proxy_document-v5",
+          "text": "Mrs. Park, if there is anything about how the authorization form was prepared and used that you have not yet stated on the record, please bring it forward first."
+        }
+      ]
+    },
+    {
+      "disputeId": "h-d3",
+      "questionType": "fact_pursuit",
+      "targetParty": "b",
+      "angleId": "proxy_document",
+      "variants": [
+        {
+          "id": "judgeq-h-d3-fact_pursuit-b-proxy_document-v1",
+          "text": "Mr. Lee, regarding whether you were aware of the authorization form being used, please walk me through what happened in chronological order, with dates where you can."
+        },
+        {
+          "id": "judgeq-h-d3-fact_pursuit-b-proxy_document-v2",
+          "text": "Looking at the cancellation records, the signature samples, and the transfer logs, please separate what you accept as your own conduct from what you do not recall, item by item."
+        },
+        {
+          "id": "judgeq-h-d3-fact_pursuit-b-proxy_document-v3",
+          "text": "Where Mrs. Park's account and your own account diverge most sharply on whether you were aware of the authorization form being used, please start from that point and answer on the facts alone."
+        },
+        {
+          "id": "judgeq-h-d3-fact_pursuit-b-proxy_document-v4",
+          "text": "Among the cancellation records, the signature samples, and the transfer logs, please tell me which items you accept here and which items you still wish to dispute."
+        },
+        {
+          "id": "judgeq-h-d3-fact_pursuit-b-proxy_document-v5",
+          "text": "Mr. Lee, if there is anything about whether you were aware of the authorization form being used that you have not yet stated on the record, please bring it forward first."
+        }
+      ]
+    },
+    {
+      "disputeId": "h-d3",
+      "questionType": "motive_search",
+      "targetParty": "a",
+      "angleId": "proxy_document",
+      "variants": [
+        {
+          "id": "judgeq-h-d3-motive_search-a-proxy_document-v1",
+          "text": "Mrs. Park, while how the authorization form was prepared and used was building up, why did you not lay this out for your spouse beforehand? Please explain your reasoning."
+        },
+        {
+          "id": "judgeq-h-d3-motive_search-a-proxy_document-v2",
+          "text": "If you were aware that how the authorization form was prepared and used could be misread, please tell me the basis on which you chose silence at that point."
+        },
+        {
+          "id": "judgeq-h-d3-motive_search-a-proxy_document-v3",
+          "text": "You could have explained each part separately. Please tell me what motivated you to defer all of it instead."
+        },
+        {
+          "id": "judgeq-h-d3-motive_search-a-proxy_document-v4",
+          "text": "At that time, which conversation did you most want to avoid, and which were you willing to have? Please answer on that distinction."
+        },
+        {
+          "id": "judgeq-h-d3-motive_search-a-proxy_document-v5",
+          "text": "Within what you can say here, please explain where the impulse to keep this matter buried came from."
+        }
+      ]
+    },
+    {
+      "disputeId": "h-d3",
+      "questionType": "motive_search",
+      "targetParty": "b",
+      "angleId": "proxy_document",
+      "variants": [
+        {
+          "id": "judgeq-h-d3-motive_search-b-proxy_document-v1",
+          "text": "Mr. Lee, while whether you were aware of the authorization form being used was building up, why did you not lay this out for your spouse beforehand? Please explain your reasoning."
+        },
+        {
+          "id": "judgeq-h-d3-motive_search-b-proxy_document-v2",
+          "text": "If you were aware that whether you were aware of the authorization form being used could be misread, please tell me the basis on which you chose silence at that point."
+        },
+        {
+          "id": "judgeq-h-d3-motive_search-b-proxy_document-v3",
+          "text": "You could have explained each part separately. Please tell me what motivated you to defer all of it instead."
+        },
+        {
+          "id": "judgeq-h-d3-motive_search-b-proxy_document-v4",
+          "text": "At that time, which conversation did you most want to avoid, and which were you willing to have? Please answer on that distinction."
+        },
+        {
+          "id": "judgeq-h-d3-motive_search-b-proxy_document-v5",
+          "text": "Within what you can say here, please explain where the impulse to keep this matter buried came from."
+        }
+      ]
+    },
+    {
+      "disputeId": "h-d3",
+      "questionType": "empathy_approach",
+      "targetParty": "a",
+      "angleId": "proxy_document",
+      "variants": [
+        {
+          "id": "judgeq-h-d3-empathy_approach-a-proxy_document-v1",
+          "text": "Mrs. Park, this is a setting where it is hard to speak. Regarding how the authorization form was prepared and used, please share, at your own pace, what you found most difficult to say."
+        },
+        {
+          "id": "judgeq-h-d3-empathy_approach-a-proxy_document-v2",
+          "text": "If there were circumstances that made it hard to raise how the authorization form was prepared and used, please explain them in your own words first."
+        },
+        {
+          "id": "judgeq-h-d3-empathy_approach-a-proxy_document-v3",
+          "text": "You do not need to lay everything out at once. Please begin with the part of how the authorization form was prepared and used that you feel ready to say today."
+        },
+        {
+          "id": "judgeq-h-d3-empathy_approach-a-proxy_document-v4",
+          "text": "If part of how the authorization form was prepared and used is something you can speak about and part is not yet, please separate them and answer on the part you can."
+        },
+        {
+          "id": "judgeq-h-d3-empathy_approach-a-proxy_document-v5",
+          "text": "Mrs. Park, if there is something about how the authorization form was prepared and used you have been carrying alone, please put it down here, in the form you are able to."
+        }
+      ]
+    },
+    {
+      "disputeId": "h-d3",
+      "questionType": "empathy_approach",
+      "targetParty": "b",
+      "angleId": "proxy_document",
+      "variants": [
+        {
+          "id": "judgeq-h-d3-empathy_approach-b-proxy_document-v1",
+          "text": "Mr. Lee, this is a setting where it is hard to speak. Regarding whether you were aware of the authorization form being used, please share, at your own pace, what you found most difficult to say."
+        },
+        {
+          "id": "judgeq-h-d3-empathy_approach-b-proxy_document-v2",
+          "text": "If there were circumstances that made it hard to raise whether you were aware of the authorization form being used, please explain them in your own words first."
+        },
+        {
+          "id": "judgeq-h-d3-empathy_approach-b-proxy_document-v3",
+          "text": "You do not need to lay everything out at once. Please begin with the part of whether you were aware of the authorization form being used that you feel ready to say today."
+        },
+        {
+          "id": "judgeq-h-d3-empathy_approach-b-proxy_document-v4",
+          "text": "If part of whether you were aware of the authorization form being used is something you can speak about and part is not yet, please separate them and answer on the part you can."
+        },
+        {
+          "id": "judgeq-h-d3-empathy_approach-b-proxy_document-v5",
+          "text": "Mr. Lee, if there is something about whether you were aware of the authorization form being used you have been carrying alone, please put it down here, in the form you are able to."
+        }
+      ]
+    },
+    {
+      "disputeId": "h-d3",
+      "questionType": "fact_pursuit",
+      "targetParty": "a",
+      "angleId": "investment_room",
+      "variants": [
+        {
+          "id": "judgeq-h-d3-fact_pursuit-a-investment_room-v1",
+          "text": "Mrs. Park, regarding why funds were routed through the investment chat group, please walk me through what happened in chronological order, with dates where you can."
+        },
+        {
+          "id": "judgeq-h-d3-fact_pursuit-a-investment_room-v2",
+          "text": "Looking at the cancellation records, the signature samples, and the transfer logs, please separate what you accept as your own conduct from what you do not recall, item by item."
+        },
+        {
+          "id": "judgeq-h-d3-fact_pursuit-a-investment_room-v3",
+          "text": "Where Mr. Lee's account and your own account diverge most sharply on why funds were routed through the investment chat group, please start from that point and answer on the facts alone."
+        },
+        {
+          "id": "judgeq-h-d3-fact_pursuit-a-investment_room-v4",
+          "text": "Among the cancellation records, the signature samples, and the transfer logs, please tell me which items you accept here and which items you still wish to dispute."
+        },
+        {
+          "id": "judgeq-h-d3-fact_pursuit-a-investment_room-v5",
+          "text": "Mrs. Park, if there is anything about why funds were routed through the investment chat group that you have not yet stated on the record, please bring it forward first."
+        }
+      ]
+    },
+    {
+      "disputeId": "h-d3",
+      "questionType": "fact_pursuit",
+      "targetParty": "b",
+      "angleId": "investment_room",
+      "variants": [
+        {
+          "id": "judgeq-h-d3-fact_pursuit-b-investment_room-v1",
+          "text": "Mr. Lee, regarding what you knew about the investment chat group, please walk me through what happened in chronological order, with dates where you can."
+        },
+        {
+          "id": "judgeq-h-d3-fact_pursuit-b-investment_room-v2",
+          "text": "Looking at the cancellation records, the signature samples, and the transfer logs, please separate what you accept as your own conduct from what you do not recall, item by item."
+        },
+        {
+          "id": "judgeq-h-d3-fact_pursuit-b-investment_room-v3",
+          "text": "Where Mrs. Park's account and your own account diverge most sharply on what you knew about the investment chat group, please start from that point and answer on the facts alone."
+        },
+        {
+          "id": "judgeq-h-d3-fact_pursuit-b-investment_room-v4",
+          "text": "Among the cancellation records, the signature samples, and the transfer logs, please tell me which items you accept here and which items you still wish to dispute."
+        },
+        {
+          "id": "judgeq-h-d3-fact_pursuit-b-investment_room-v5",
+          "text": "Mr. Lee, if there is anything about what you knew about the investment chat group that you have not yet stated on the record, please bring it forward first."
+        }
+      ]
+    },
+    {
+      "disputeId": "h-d3",
+      "questionType": "motive_search",
+      "targetParty": "a",
+      "angleId": "investment_room",
+      "variants": [
+        {
+          "id": "judgeq-h-d3-motive_search-a-investment_room-v1",
+          "text": "Mrs. Park, while why funds were routed through the investment chat group was building up, why did you not lay this out for your spouse beforehand? Please explain your reasoning."
+        },
+        {
+          "id": "judgeq-h-d3-motive_search-a-investment_room-v2",
+          "text": "If you were aware that why funds were routed through the investment chat group could be misread, please tell me the basis on which you chose silence at that point."
+        },
+        {
+          "id": "judgeq-h-d3-motive_search-a-investment_room-v3",
+          "text": "You could have explained each part separately. Please tell me what motivated you to defer all of it instead."
+        },
+        {
+          "id": "judgeq-h-d3-motive_search-a-investment_room-v4",
+          "text": "At that time, which conversation did you most want to avoid, and which were you willing to have? Please answer on that distinction."
+        },
+        {
+          "id": "judgeq-h-d3-motive_search-a-investment_room-v5",
+          "text": "Within what you can say here, please explain where the impulse to keep this matter buried came from."
+        }
+      ]
+    },
+    {
+      "disputeId": "h-d3",
+      "questionType": "motive_search",
+      "targetParty": "b",
+      "angleId": "investment_room",
+      "variants": [
+        {
+          "id": "judgeq-h-d3-motive_search-b-investment_room-v1",
+          "text": "Mr. Lee, while what you knew about the investment chat group was building up, why did you not lay this out for your spouse beforehand? Please explain your reasoning."
+        },
+        {
+          "id": "judgeq-h-d3-motive_search-b-investment_room-v2",
+          "text": "If you were aware that what you knew about the investment chat group could be misread, please tell me the basis on which you chose silence at that point."
+        },
+        {
+          "id": "judgeq-h-d3-motive_search-b-investment_room-v3",
+          "text": "You could have explained each part separately. Please tell me what motivated you to defer all of it instead."
+        },
+        {
+          "id": "judgeq-h-d3-motive_search-b-investment_room-v4",
+          "text": "At that time, which conversation did you most want to avoid, and which were you willing to have? Please answer on that distinction."
+        },
+        {
+          "id": "judgeq-h-d3-motive_search-b-investment_room-v5",
+          "text": "Within what you can say here, please explain where the impulse to keep this matter buried came from."
+        }
+      ]
+    },
+    {
+      "disputeId": "h-d3",
+      "questionType": "empathy_approach",
+      "targetParty": "a",
+      "angleId": "investment_room",
+      "variants": [
+        {
+          "id": "judgeq-h-d3-empathy_approach-a-investment_room-v1",
+          "text": "Mrs. Park, this is a setting where it is hard to speak. Regarding why funds were routed through the investment chat group, please share, at your own pace, what you found most difficult to say."
+        },
+        {
+          "id": "judgeq-h-d3-empathy_approach-a-investment_room-v2",
+          "text": "If there were circumstances that made it hard to raise why funds were routed through the investment chat group, please explain them in your own words first."
+        },
+        {
+          "id": "judgeq-h-d3-empathy_approach-a-investment_room-v3",
+          "text": "You do not need to lay everything out at once. Please begin with the part of why funds were routed through the investment chat group that you feel ready to say today."
+        },
+        {
+          "id": "judgeq-h-d3-empathy_approach-a-investment_room-v4",
+          "text": "If part of why funds were routed through the investment chat group is something you can speak about and part is not yet, please separate them and answer on the part you can."
+        },
+        {
+          "id": "judgeq-h-d3-empathy_approach-a-investment_room-v5",
+          "text": "Mrs. Park, if there is something about why funds were routed through the investment chat group you have been carrying alone, please put it down here, in the form you are able to."
+        }
+      ]
+    },
+    {
+      "disputeId": "h-d3",
+      "questionType": "empathy_approach",
+      "targetParty": "b",
+      "angleId": "investment_room",
+      "variants": [
+        {
+          "id": "judgeq-h-d3-empathy_approach-b-investment_room-v1",
+          "text": "Mr. Lee, this is a setting where it is hard to speak. Regarding what you knew about the investment chat group, please share, at your own pace, what you found most difficult to say."
+        },
+        {
+          "id": "judgeq-h-d3-empathy_approach-b-investment_room-v2",
+          "text": "If there were circumstances that made it hard to raise what you knew about the investment chat group, please explain them in your own words first."
+        },
+        {
+          "id": "judgeq-h-d3-empathy_approach-b-investment_room-v3",
+          "text": "You do not need to lay everything out at once. Please begin with the part of what you knew about the investment chat group that you feel ready to say today."
+        },
+        {
+          "id": "judgeq-h-d3-empathy_approach-b-investment_room-v4",
+          "text": "If part of what you knew about the investment chat group is something you can speak about and part is not yet, please separate them and answer on the part you can."
+        },
+        {
+          "id": "judgeq-h-d3-empathy_approach-b-investment_room-v5",
+          "text": "Mr. Lee, if there is something about what you knew about the investment chat group you have been carrying alone, please put it down here, in the form you are able to."
+        }
+      ]
+    },
+    {
+      "disputeId": "h-d3",
+      "questionType": "fact_pursuit",
+      "targetParty": "a",
+      "angleId": "loss_responsibility",
+      "variants": [
+        {
+          "id": "judgeq-h-d3-fact_pursuit-a-loss_responsibility-v1",
+          "text": "Mrs. Park, regarding how you assign responsibility for the loss, please walk me through what happened in chronological order, with dates where you can."
+        },
+        {
+          "id": "judgeq-h-d3-fact_pursuit-a-loss_responsibility-v2",
+          "text": "Looking at the cancellation records, the signature samples, and the transfer logs, please separate what you accept as your own conduct from what you do not recall, item by item."
+        },
+        {
+          "id": "judgeq-h-d3-fact_pursuit-a-loss_responsibility-v3",
+          "text": "Where Mr. Lee's account and your own account diverge most sharply on how you assign responsibility for the loss, please start from that point and answer on the facts alone."
+        },
+        {
+          "id": "judgeq-h-d3-fact_pursuit-a-loss_responsibility-v4",
+          "text": "Among the cancellation records, the signature samples, and the transfer logs, please tell me which items you accept here and which items you still wish to dispute."
+        },
+        {
+          "id": "judgeq-h-d3-fact_pursuit-a-loss_responsibility-v5",
+          "text": "Mrs. Park, if there is anything about how you assign responsibility for the loss that you have not yet stated on the record, please bring it forward first."
+        }
+      ]
+    },
+    {
+      "disputeId": "h-d3",
+      "questionType": "fact_pursuit",
+      "targetParty": "b",
+      "angleId": "loss_responsibility",
+      "variants": [
+        {
+          "id": "judgeq-h-d3-fact_pursuit-b-loss_responsibility-v1",
+          "text": "Mr. Lee, regarding how you view responsibility for the loss, please walk me through what happened in chronological order, with dates where you can."
+        },
+        {
+          "id": "judgeq-h-d3-fact_pursuit-b-loss_responsibility-v2",
+          "text": "Looking at the cancellation records, the signature samples, and the transfer logs, please separate what you accept as your own conduct from what you do not recall, item by item."
+        },
+        {
+          "id": "judgeq-h-d3-fact_pursuit-b-loss_responsibility-v3",
+          "text": "Where Mrs. Park's account and your own account diverge most sharply on how you view responsibility for the loss, please start from that point and answer on the facts alone."
+        },
+        {
+          "id": "judgeq-h-d3-fact_pursuit-b-loss_responsibility-v4",
+          "text": "Among the cancellation records, the signature samples, and the transfer logs, please tell me which items you accept here and which items you still wish to dispute."
+        },
+        {
+          "id": "judgeq-h-d3-fact_pursuit-b-loss_responsibility-v5",
+          "text": "Mr. Lee, if there is anything about how you view responsibility for the loss that you have not yet stated on the record, please bring it forward first."
+        }
+      ]
+    },
+    {
+      "disputeId": "h-d3",
+      "questionType": "motive_search",
+      "targetParty": "a",
+      "angleId": "loss_responsibility",
+      "variants": [
+        {
+          "id": "judgeq-h-d3-motive_search-a-loss_responsibility-v1",
+          "text": "Mrs. Park, while how you assign responsibility for the loss was building up, why did you not lay this out for your spouse beforehand? Please explain your reasoning."
+        },
+        {
+          "id": "judgeq-h-d3-motive_search-a-loss_responsibility-v2",
+          "text": "If you were aware that how you assign responsibility for the loss could be misread, please tell me the basis on which you chose silence at that point."
+        },
+        {
+          "id": "judgeq-h-d3-motive_search-a-loss_responsibility-v3",
+          "text": "You could have explained each part separately. Please tell me what motivated you to defer all of it instead."
+        },
+        {
+          "id": "judgeq-h-d3-motive_search-a-loss_responsibility-v4",
+          "text": "At that time, which conversation did you most want to avoid, and which were you willing to have? Please answer on that distinction."
+        },
+        {
+          "id": "judgeq-h-d3-motive_search-a-loss_responsibility-v5",
+          "text": "Within what you can say here, please explain where the impulse to keep this matter buried came from."
+        }
+      ]
+    },
+    {
+      "disputeId": "h-d3",
+      "questionType": "motive_search",
+      "targetParty": "b",
+      "angleId": "loss_responsibility",
+      "variants": [
+        {
+          "id": "judgeq-h-d3-motive_search-b-loss_responsibility-v1",
+          "text": "Mr. Lee, while how you view responsibility for the loss was building up, why did you not lay this out for your spouse beforehand? Please explain your reasoning."
+        },
+        {
+          "id": "judgeq-h-d3-motive_search-b-loss_responsibility-v2",
+          "text": "If you were aware that how you view responsibility for the loss could be misread, please tell me the basis on which you chose silence at that point."
+        },
+        {
+          "id": "judgeq-h-d3-motive_search-b-loss_responsibility-v3",
+          "text": "You could have explained each part separately. Please tell me what motivated you to defer all of it instead."
+        },
+        {
+          "id": "judgeq-h-d3-motive_search-b-loss_responsibility-v4",
+          "text": "At that time, which conversation did you most want to avoid, and which were you willing to have? Please answer on that distinction."
+        },
+        {
+          "id": "judgeq-h-d3-motive_search-b-loss_responsibility-v5",
+          "text": "Within what you can say here, please explain where the impulse to keep this matter buried came from."
+        }
+      ]
+    },
+    {
+      "disputeId": "h-d3",
+      "questionType": "empathy_approach",
+      "targetParty": "a",
+      "angleId": "loss_responsibility",
+      "variants": [
+        {
+          "id": "judgeq-h-d3-empathy_approach-a-loss_responsibility-v1",
+          "text": "Mrs. Park, this is a setting where it is hard to speak. Regarding how you assign responsibility for the loss, please share, at your own pace, what you found most difficult to say."
+        },
+        {
+          "id": "judgeq-h-d3-empathy_approach-a-loss_responsibility-v2",
+          "text": "If there were circumstances that made it hard to raise how you assign responsibility for the loss, please explain them in your own words first."
+        },
+        {
+          "id": "judgeq-h-d3-empathy_approach-a-loss_responsibility-v3",
+          "text": "You do not need to lay everything out at once. Please begin with the part of how you assign responsibility for the loss that you feel ready to say today."
+        },
+        {
+          "id": "judgeq-h-d3-empathy_approach-a-loss_responsibility-v4",
+          "text": "If part of how you assign responsibility for the loss is something you can speak about and part is not yet, please separate them and answer on the part you can."
+        },
+        {
+          "id": "judgeq-h-d3-empathy_approach-a-loss_responsibility-v5",
+          "text": "Mrs. Park, if there is something about how you assign responsibility for the loss you have been carrying alone, please put it down here, in the form you are able to."
+        }
+      ]
+    },
+    {
+      "disputeId": "h-d3",
+      "questionType": "empathy_approach",
+      "targetParty": "b",
+      "angleId": "loss_responsibility",
+      "variants": [
+        {
+          "id": "judgeq-h-d3-empathy_approach-b-loss_responsibility-v1",
+          "text": "Mr. Lee, this is a setting where it is hard to speak. Regarding how you view responsibility for the loss, please share, at your own pace, what you found most difficult to say."
+        },
+        {
+          "id": "judgeq-h-d3-empathy_approach-b-loss_responsibility-v2",
+          "text": "If there were circumstances that made it hard to raise how you view responsibility for the loss, please explain them in your own words first."
+        },
+        {
+          "id": "judgeq-h-d3-empathy_approach-b-loss_responsibility-v3",
+          "text": "You do not need to lay everything out at once. Please begin with the part of how you view responsibility for the loss that you feel ready to say today."
+        },
+        {
+          "id": "judgeq-h-d3-empathy_approach-b-loss_responsibility-v4",
+          "text": "If part of how you view responsibility for the loss is something you can speak about and part is not yet, please separate them and answer on the part you can."
+        },
+        {
+          "id": "judgeq-h-d3-empathy_approach-b-loss_responsibility-v5",
+          "text": "Mr. Lee, if there is something about how you view responsibility for the loss you have been carrying alone, please put it down here, in the form you are able to."
+        }
+      ]
+    },
+    {
+      "disputeId": "h-d4",
+      "questionType": "fact_pursuit",
+      "targetParty": "a",
+      "angleId": "general",
+      "variants": [
+        {
+          "id": "judgeq-h-d4-fact_pursuit-a-general-v1",
+          "text": "Mrs. Park, regarding when you began moving funds without your spouse, please walk me through what happened in chronological order, with dates where you can."
+        },
+        {
+          "id": "judgeq-h-d4-fact_pursuit-a-general-v2",
+          "text": "Looking at the records, the message logs, and the transfer traces, please separate what you accept as your own conduct from what you do not recall, item by item."
+        },
+        {
+          "id": "judgeq-h-d4-fact_pursuit-a-general-v3",
+          "text": "Where Mr. Lee's account and your own account diverge most sharply on when you began moving funds without your spouse, please start from that point and answer on the facts alone."
+        },
+        {
+          "id": "judgeq-h-d4-fact_pursuit-a-general-v4",
+          "text": "Among the records, the message logs, and the transfer traces, please tell me which items you accept here and which items you still wish to dispute."
+        },
+        {
+          "id": "judgeq-h-d4-fact_pursuit-a-general-v5",
+          "text": "Mrs. Park, if there is anything about when you began moving funds without your spouse that you have not yet stated on the record, please bring it forward first."
+        }
+      ]
+    },
+    {
+      "disputeId": "h-d4",
+      "questionType": "fact_pursuit",
+      "targetParty": "b",
+      "angleId": "general",
+      "variants": [
+        {
+          "id": "judgeq-h-d4-fact_pursuit-b-general-v1",
+          "text": "Mr. Lee, regarding when you began withholding matters from your spouse, please walk me through what happened in chronological order, with dates where you can."
+        },
+        {
+          "id": "judgeq-h-d4-fact_pursuit-b-general-v2",
+          "text": "Looking at the records, the message logs, and the transfer traces, please separate what you accept as your own conduct from what you do not recall, item by item."
+        },
+        {
+          "id": "judgeq-h-d4-fact_pursuit-b-general-v3",
+          "text": "Where Mrs. Park's account and your own account diverge most sharply on when you began withholding matters from your spouse, please start from that point and answer on the facts alone."
+        },
+        {
+          "id": "judgeq-h-d4-fact_pursuit-b-general-v4",
+          "text": "Among the records, the message logs, and the transfer traces, please tell me which items you accept here and which items you still wish to dispute."
+        },
+        {
+          "id": "judgeq-h-d4-fact_pursuit-b-general-v5",
+          "text": "Mr. Lee, if there is anything about when you began withholding matters from your spouse that you have not yet stated on the record, please bring it forward first."
+        }
+      ]
+    },
+    {
+      "disputeId": "h-d4",
+      "questionType": "motive_search",
+      "targetParty": "a",
+      "angleId": "general",
+      "variants": [
+        {
+          "id": "judgeq-h-d4-motive_search-a-general-v1",
+          "text": "Mrs. Park, while when you began moving funds without your spouse was building up, why did you not lay this out for your spouse beforehand? Please explain your reasoning."
+        },
+        {
+          "id": "judgeq-h-d4-motive_search-a-general-v2",
+          "text": "If you were aware that when you began moving funds without your spouse could be misread, please tell me the basis on which you chose silence at that point."
+        },
+        {
+          "id": "judgeq-h-d4-motive_search-a-general-v3",
+          "text": "You could have explained each part separately. Please tell me what motivated you to defer all of it instead."
+        },
+        {
+          "id": "judgeq-h-d4-motive_search-a-general-v4",
+          "text": "At that time, which conversation did you most want to avoid, and which were you willing to have? Please answer on that distinction."
+        },
+        {
+          "id": "judgeq-h-d4-motive_search-a-general-v5",
+          "text": "Within what you can say here, please explain where the impulse to keep this matter buried came from."
+        }
+      ]
+    },
+    {
+      "disputeId": "h-d4",
+      "questionType": "motive_search",
+      "targetParty": "b",
+      "angleId": "general",
+      "variants": [
+        {
+          "id": "judgeq-h-d4-motive_search-b-general-v1",
+          "text": "Mr. Lee, while when you began withholding matters from your spouse was building up, why did you not lay this out for your spouse beforehand? Please explain your reasoning."
+        },
+        {
+          "id": "judgeq-h-d4-motive_search-b-general-v2",
+          "text": "If you were aware that when you began withholding matters from your spouse could be misread, please tell me the basis on which you chose silence at that point."
+        },
+        {
+          "id": "judgeq-h-d4-motive_search-b-general-v3",
+          "text": "You could have explained each part separately. Please tell me what motivated you to defer all of it instead."
+        },
+        {
+          "id": "judgeq-h-d4-motive_search-b-general-v4",
+          "text": "At that time, which conversation did you most want to avoid, and which were you willing to have? Please answer on that distinction."
+        },
+        {
+          "id": "judgeq-h-d4-motive_search-b-general-v5",
+          "text": "Within what you can say here, please explain where the impulse to keep this matter buried came from."
+        }
+      ]
+    },
+    {
+      "disputeId": "h-d4",
+      "questionType": "empathy_approach",
+      "targetParty": "a",
+      "angleId": "general",
+      "variants": [
+        {
+          "id": "judgeq-h-d4-empathy_approach-a-general-v1",
+          "text": "Mrs. Park, this is a setting where it is hard to speak. Regarding when you began moving funds without your spouse, please share, at your own pace, what you found most difficult to say."
+        },
+        {
+          "id": "judgeq-h-d4-empathy_approach-a-general-v2",
+          "text": "If there were circumstances that made it hard to raise when you began moving funds without your spouse, please explain them in your own words first."
+        },
+        {
+          "id": "judgeq-h-d4-empathy_approach-a-general-v3",
+          "text": "You do not need to lay everything out at once. Please begin with the part of when you began moving funds without your spouse that you feel ready to say today."
+        },
+        {
+          "id": "judgeq-h-d4-empathy_approach-a-general-v4",
+          "text": "If part of when you began moving funds without your spouse is something you can speak about and part is not yet, please separate them and answer on the part you can."
+        },
+        {
+          "id": "judgeq-h-d4-empathy_approach-a-general-v5",
+          "text": "Mrs. Park, if there is something about when you began moving funds without your spouse you have been carrying alone, please put it down here, in the form you are able to."
+        }
+      ]
+    },
+    {
+      "disputeId": "h-d4",
+      "questionType": "empathy_approach",
+      "targetParty": "b",
+      "angleId": "general",
+      "variants": [
+        {
+          "id": "judgeq-h-d4-empathy_approach-b-general-v1",
+          "text": "Mr. Lee, this is a setting where it is hard to speak. Regarding when you began withholding matters from your spouse, please share, at your own pace, what you found most difficult to say."
+        },
+        {
+          "id": "judgeq-h-d4-empathy_approach-b-general-v2",
+          "text": "If there were circumstances that made it hard to raise when you began withholding matters from your spouse, please explain them in your own words first."
+        },
+        {
+          "id": "judgeq-h-d4-empathy_approach-b-general-v3",
+          "text": "You do not need to lay everything out at once. Please begin with the part of when you began withholding matters from your spouse that you feel ready to say today."
+        },
+        {
+          "id": "judgeq-h-d4-empathy_approach-b-general-v4",
+          "text": "If part of when you began withholding matters from your spouse is something you can speak about and part is not yet, please separate them and answer on the part you can."
+        },
+        {
+          "id": "judgeq-h-d4-empathy_approach-b-general-v5",
+          "text": "Mr. Lee, if there is something about when you began withholding matters from your spouse you have been carrying alone, please put it down here, in the form you are able to."
+        }
+      ]
+    },
+    {
+      "disputeId": "h-d4",
+      "questionType": "fact_pursuit",
+      "targetParty": "a",
+      "angleId": "concealment_sequence",
+      "variants": [
+        {
+          "id": "judgeq-h-d4-fact_pursuit-a-concealment_sequence-v1",
+          "text": "Mrs. Park, regarding the order in which you carried out each step quietly, please walk me through what happened in chronological order, with dates where you can."
+        },
+        {
+          "id": "judgeq-h-d4-fact_pursuit-a-concealment_sequence-v2",
+          "text": "Looking at the records, the message logs, and the transfer traces, please separate what you accept as your own conduct from what you do not recall, item by item."
+        },
+        {
+          "id": "judgeq-h-d4-fact_pursuit-a-concealment_sequence-v3",
+          "text": "Where Mr. Lee's account and your own account diverge most sharply on the order in which you carried out each step quietly, please start from that point and answer on the facts alone."
+        },
+        {
+          "id": "judgeq-h-d4-fact_pursuit-a-concealment_sequence-v4",
+          "text": "Among the records, the message logs, and the transfer traces, please tell me which items you accept here and which items you still wish to dispute."
+        },
+        {
+          "id": "judgeq-h-d4-fact_pursuit-a-concealment_sequence-v5",
+          "text": "Mrs. Park, if there is anything about the order in which you carried out each step quietly that you have not yet stated on the record, please bring it forward first."
+        }
+      ]
+    },
+    {
+      "disputeId": "h-d4",
+      "questionType": "fact_pursuit",
+      "targetParty": "b",
+      "angleId": "concealment_sequence",
+      "variants": [
+        {
+          "id": "judgeq-h-d4-fact_pursuit-b-concealment_sequence-v1",
+          "text": "Mr. Lee, regarding the order in which you stopped sharing each matter, please walk me through what happened in chronological order, with dates where you can."
+        },
+        {
+          "id": "judgeq-h-d4-fact_pursuit-b-concealment_sequence-v2",
+          "text": "Looking at the records, the message logs, and the transfer traces, please separate what you accept as your own conduct from what you do not recall, item by item."
+        },
+        {
+          "id": "judgeq-h-d4-fact_pursuit-b-concealment_sequence-v3",
+          "text": "Where Mrs. Park's account and your own account diverge most sharply on the order in which you stopped sharing each matter, please start from that point and answer on the facts alone."
+        },
+        {
+          "id": "judgeq-h-d4-fact_pursuit-b-concealment_sequence-v4",
+          "text": "Among the records, the message logs, and the transfer traces, please tell me which items you accept here and which items you still wish to dispute."
+        },
+        {
+          "id": "judgeq-h-d4-fact_pursuit-b-concealment_sequence-v5",
+          "text": "Mr. Lee, if there is anything about the order in which you stopped sharing each matter that you have not yet stated on the record, please bring it forward first."
+        }
+      ]
+    },
+    {
+      "disputeId": "h-d4",
+      "questionType": "motive_search",
+      "targetParty": "a",
+      "angleId": "concealment_sequence",
+      "variants": [
+        {
+          "id": "judgeq-h-d4-motive_search-a-concealment_sequence-v1",
+          "text": "Mrs. Park, while the order in which you carried out each step quietly was building up, why did you not lay this out for your spouse beforehand? Please explain your reasoning."
+        },
+        {
+          "id": "judgeq-h-d4-motive_search-a-concealment_sequence-v2",
+          "text": "If you were aware that the order in which you carried out each step quietly could be misread, please tell me the basis on which you chose silence at that point."
+        },
+        {
+          "id": "judgeq-h-d4-motive_search-a-concealment_sequence-v3",
+          "text": "You could have explained each part separately. Please tell me what motivated you to defer all of it instead."
+        },
+        {
+          "id": "judgeq-h-d4-motive_search-a-concealment_sequence-v4",
+          "text": "At that time, which conversation did you most want to avoid, and which were you willing to have? Please answer on that distinction."
+        },
+        {
+          "id": "judgeq-h-d4-motive_search-a-concealment_sequence-v5",
+          "text": "Within what you can say here, please explain where the impulse to keep this matter buried came from."
+        }
+      ]
+    },
+    {
+      "disputeId": "h-d4",
+      "questionType": "motive_search",
+      "targetParty": "b",
+      "angleId": "concealment_sequence",
+      "variants": [
+        {
+          "id": "judgeq-h-d4-motive_search-b-concealment_sequence-v1",
+          "text": "Mr. Lee, while the order in which you stopped sharing each matter was building up, why did you not lay this out for your spouse beforehand? Please explain your reasoning."
+        },
+        {
+          "id": "judgeq-h-d4-motive_search-b-concealment_sequence-v2",
+          "text": "If you were aware that the order in which you stopped sharing each matter could be misread, please tell me the basis on which you chose silence at that point."
+        },
+        {
+          "id": "judgeq-h-d4-motive_search-b-concealment_sequence-v3",
+          "text": "You could have explained each part separately. Please tell me what motivated you to defer all of it instead."
+        },
+        {
+          "id": "judgeq-h-d4-motive_search-b-concealment_sequence-v4",
+          "text": "At that time, which conversation did you most want to avoid, and which were you willing to have? Please answer on that distinction."
+        },
+        {
+          "id": "judgeq-h-d4-motive_search-b-concealment_sequence-v5",
+          "text": "Within what you can say here, please explain where the impulse to keep this matter buried came from."
+        }
+      ]
+    },
+    {
+      "disputeId": "h-d4",
+      "questionType": "empathy_approach",
+      "targetParty": "a",
+      "angleId": "concealment_sequence",
+      "variants": [
+        {
+          "id": "judgeq-h-d4-empathy_approach-a-concealment_sequence-v1",
+          "text": "Mrs. Park, this is a setting where it is hard to speak. Regarding the order in which you carried out each step quietly, please share, at your own pace, what you found most difficult to say."
+        },
+        {
+          "id": "judgeq-h-d4-empathy_approach-a-concealment_sequence-v2",
+          "text": "If there were circumstances that made it hard to raise the order in which you carried out each step quietly, please explain them in your own words first."
+        },
+        {
+          "id": "judgeq-h-d4-empathy_approach-a-concealment_sequence-v3",
+          "text": "You do not need to lay everything out at once. Please begin with the part of the order in which you carried out each step quietly that you feel ready to say today."
+        },
+        {
+          "id": "judgeq-h-d4-empathy_approach-a-concealment_sequence-v4",
+          "text": "If part of the order in which you carried out each step quietly is something you can speak about and part is not yet, please separate them and answer on the part you can."
+        },
+        {
+          "id": "judgeq-h-d4-empathy_approach-a-concealment_sequence-v5",
+          "text": "Mrs. Park, if there is something about the order in which you carried out each step quietly you have been carrying alone, please put it down here, in the form you are able to."
+        }
+      ]
+    },
+    {
+      "disputeId": "h-d4",
+      "questionType": "empathy_approach",
+      "targetParty": "b",
+      "angleId": "concealment_sequence",
+      "variants": [
+        {
+          "id": "judgeq-h-d4-empathy_approach-b-concealment_sequence-v1",
+          "text": "Mr. Lee, this is a setting where it is hard to speak. Regarding the order in which you stopped sharing each matter, please share, at your own pace, what you found most difficult to say."
+        },
+        {
+          "id": "judgeq-h-d4-empathy_approach-b-concealment_sequence-v2",
+          "text": "If there were circumstances that made it hard to raise the order in which you stopped sharing each matter, please explain them in your own words first."
+        },
+        {
+          "id": "judgeq-h-d4-empathy_approach-b-concealment_sequence-v3",
+          "text": "You do not need to lay everything out at once. Please begin with the part of the order in which you stopped sharing each matter that you feel ready to say today."
+        },
+        {
+          "id": "judgeq-h-d4-empathy_approach-b-concealment_sequence-v4",
+          "text": "If part of the order in which you stopped sharing each matter is something you can speak about and part is not yet, please separate them and answer on the part you can."
+        },
+        {
+          "id": "judgeq-h-d4-empathy_approach-b-concealment_sequence-v5",
+          "text": "Mr. Lee, if there is something about the order in which you stopped sharing each matter you have been carrying alone, please put it down here, in the form you are able to."
+        }
+      ]
+    },
+    {
+      "disputeId": "h-d4",
+      "questionType": "fact_pursuit",
+      "targetParty": "a",
+      "angleId": "account_monitoring",
+      "variants": [
+        {
+          "id": "judgeq-h-d4-fact_pursuit-a-account_monitoring-v1",
+          "text": "Mrs. Park, regarding how and when you began monitoring the account, please walk me through what happened in chronological order, with dates where you can."
+        },
+        {
+          "id": "judgeq-h-d4-fact_pursuit-a-account_monitoring-v2",
+          "text": "Looking at the records, the message logs, and the transfer traces, please separate what you accept as your own conduct from what you do not recall, item by item."
+        },
+        {
+          "id": "judgeq-h-d4-fact_pursuit-a-account_monitoring-v3",
+          "text": "Where Mr. Lee's account and your own account diverge most sharply on how and when you began monitoring the account, please start from that point and answer on the facts alone."
+        },
+        {
+          "id": "judgeq-h-d4-fact_pursuit-a-account_monitoring-v4",
+          "text": "Among the records, the message logs, and the transfer traces, please tell me which items you accept here and which items you still wish to dispute."
+        },
+        {
+          "id": "judgeq-h-d4-fact_pursuit-a-account_monitoring-v5",
+          "text": "Mrs. Park, if there is anything about how and when you began monitoring the account that you have not yet stated on the record, please bring it forward first."
+        }
+      ]
+    },
+    {
+      "disputeId": "h-d4",
+      "questionType": "fact_pursuit",
+      "targetParty": "b",
+      "angleId": "account_monitoring",
+      "variants": [
+        {
+          "id": "judgeq-h-d4-fact_pursuit-b-account_monitoring-v1",
+          "text": "Mr. Lee, regarding what you knew about the account being watched, please walk me through what happened in chronological order, with dates where you can."
+        },
+        {
+          "id": "judgeq-h-d4-fact_pursuit-b-account_monitoring-v2",
+          "text": "Looking at the records, the message logs, and the transfer traces, please separate what you accept as your own conduct from what you do not recall, item by item."
+        },
+        {
+          "id": "judgeq-h-d4-fact_pursuit-b-account_monitoring-v3",
+          "text": "Where Mrs. Park's account and your own account diverge most sharply on what you knew about the account being watched, please start from that point and answer on the facts alone."
+        },
+        {
+          "id": "judgeq-h-d4-fact_pursuit-b-account_monitoring-v4",
+          "text": "Among the records, the message logs, and the transfer traces, please tell me which items you accept here and which items you still wish to dispute."
+        },
+        {
+          "id": "judgeq-h-d4-fact_pursuit-b-account_monitoring-v5",
+          "text": "Mr. Lee, if there is anything about what you knew about the account being watched that you have not yet stated on the record, please bring it forward first."
+        }
+      ]
+    },
+    {
+      "disputeId": "h-d4",
+      "questionType": "motive_search",
+      "targetParty": "a",
+      "angleId": "account_monitoring",
+      "variants": [
+        {
+          "id": "judgeq-h-d4-motive_search-a-account_monitoring-v1",
+          "text": "Mrs. Park, while how and when you began monitoring the account was building up, why did you not lay this out for your spouse beforehand? Please explain your reasoning."
+        },
+        {
+          "id": "judgeq-h-d4-motive_search-a-account_monitoring-v2",
+          "text": "If you were aware that how and when you began monitoring the account could be misread, please tell me the basis on which you chose silence at that point."
+        },
+        {
+          "id": "judgeq-h-d4-motive_search-a-account_monitoring-v3",
+          "text": "You could have explained each part separately. Please tell me what motivated you to defer all of it instead."
+        },
+        {
+          "id": "judgeq-h-d4-motive_search-a-account_monitoring-v4",
+          "text": "At that time, which conversation did you most want to avoid, and which were you willing to have? Please answer on that distinction."
+        },
+        {
+          "id": "judgeq-h-d4-motive_search-a-account_monitoring-v5",
+          "text": "Within what you can say here, please explain where the impulse to keep this matter buried came from."
+        }
+      ]
+    },
+    {
+      "disputeId": "h-d4",
+      "questionType": "motive_search",
+      "targetParty": "b",
+      "angleId": "account_monitoring",
+      "variants": [
+        {
+          "id": "judgeq-h-d4-motive_search-b-account_monitoring-v1",
+          "text": "Mr. Lee, while what you knew about the account being watched was building up, why did you not lay this out for your spouse beforehand? Please explain your reasoning."
+        },
+        {
+          "id": "judgeq-h-d4-motive_search-b-account_monitoring-v2",
+          "text": "If you were aware that what you knew about the account being watched could be misread, please tell me the basis on which you chose silence at that point."
+        },
+        {
+          "id": "judgeq-h-d4-motive_search-b-account_monitoring-v3",
+          "text": "You could have explained each part separately. Please tell me what motivated you to defer all of it instead."
+        },
+        {
+          "id": "judgeq-h-d4-motive_search-b-account_monitoring-v4",
+          "text": "At that time, which conversation did you most want to avoid, and which were you willing to have? Please answer on that distinction."
+        },
+        {
+          "id": "judgeq-h-d4-motive_search-b-account_monitoring-v5",
+          "text": "Within what you can say here, please explain where the impulse to keep this matter buried came from."
+        }
+      ]
+    },
+    {
+      "disputeId": "h-d4",
+      "questionType": "empathy_approach",
+      "targetParty": "a",
+      "angleId": "account_monitoring",
+      "variants": [
+        {
+          "id": "judgeq-h-d4-empathy_approach-a-account_monitoring-v1",
+          "text": "Mrs. Park, this is a setting where it is hard to speak. Regarding how and when you began monitoring the account, please share, at your own pace, what you found most difficult to say."
+        },
+        {
+          "id": "judgeq-h-d4-empathy_approach-a-account_monitoring-v2",
+          "text": "If there were circumstances that made it hard to raise how and when you began monitoring the account, please explain them in your own words first."
+        },
+        {
+          "id": "judgeq-h-d4-empathy_approach-a-account_monitoring-v3",
+          "text": "You do not need to lay everything out at once. Please begin with the part of how and when you began monitoring the account that you feel ready to say today."
+        },
+        {
+          "id": "judgeq-h-d4-empathy_approach-a-account_monitoring-v4",
+          "text": "If part of how and when you began monitoring the account is something you can speak about and part is not yet, please separate them and answer on the part you can."
+        },
+        {
+          "id": "judgeq-h-d4-empathy_approach-a-account_monitoring-v5",
+          "text": "Mrs. Park, if there is something about how and when you began monitoring the account you have been carrying alone, please put it down here, in the form you are able to."
+        }
+      ]
+    },
+    {
+      "disputeId": "h-d4",
+      "questionType": "empathy_approach",
+      "targetParty": "b",
+      "angleId": "account_monitoring",
+      "variants": [
+        {
+          "id": "judgeq-h-d4-empathy_approach-b-account_monitoring-v1",
+          "text": "Mr. Lee, this is a setting where it is hard to speak. Regarding what you knew about the account being watched, please share, at your own pace, what you found most difficult to say."
+        },
+        {
+          "id": "judgeq-h-d4-empathy_approach-b-account_monitoring-v2",
+          "text": "If there were circumstances that made it hard to raise what you knew about the account being watched, please explain them in your own words first."
+        },
+        {
+          "id": "judgeq-h-d4-empathy_approach-b-account_monitoring-v3",
+          "text": "You do not need to lay everything out at once. Please begin with the part of what you knew about the account being watched that you feel ready to say today."
+        },
+        {
+          "id": "judgeq-h-d4-empathy_approach-b-account_monitoring-v4",
+          "text": "If part of what you knew about the account being watched is something you can speak about and part is not yet, please separate them and answer on the part you can."
+        },
+        {
+          "id": "judgeq-h-d4-empathy_approach-b-account_monitoring-v5",
+          "text": "Mr. Lee, if there is something about what you knew about the account being watched you have been carrying alone, please put it down here, in the form you are able to."
+        }
+      ]
+    },
+    {
+      "disputeId": "h-d4",
+      "questionType": "fact_pursuit",
+      "targetParty": "a",
+      "angleId": "execution_timeline",
+      "variants": [
+        {
+          "id": "judgeq-h-d4-fact_pursuit-a-execution_timeline-v1",
+          "text": "Mrs. Park, regarding the timeline from decision to execution on your side, please walk me through what happened in chronological order, with dates where you can."
+        },
+        {
+          "id": "judgeq-h-d4-fact_pursuit-a-execution_timeline-v2",
+          "text": "Looking at the records, the message logs, and the transfer traces, please separate what you accept as your own conduct from what you do not recall, item by item."
+        },
+        {
+          "id": "judgeq-h-d4-fact_pursuit-a-execution_timeline-v3",
+          "text": "Where Mr. Lee's account and your own account diverge most sharply on the timeline from decision to execution on your side, please start from that point and answer on the facts alone."
+        },
+        {
+          "id": "judgeq-h-d4-fact_pursuit-a-execution_timeline-v4",
+          "text": "Among the records, the message logs, and the transfer traces, please tell me which items you accept here and which items you still wish to dispute."
+        },
+        {
+          "id": "judgeq-h-d4-fact_pursuit-a-execution_timeline-v5",
+          "text": "Mrs. Park, if there is anything about the timeline from decision to execution on your side that you have not yet stated on the record, please bring it forward first."
+        }
+      ]
+    },
+    {
+      "disputeId": "h-d4",
+      "questionType": "fact_pursuit",
+      "targetParty": "b",
+      "angleId": "execution_timeline",
+      "variants": [
+        {
+          "id": "judgeq-h-d4-fact_pursuit-b-execution_timeline-v1",
+          "text": "Mr. Lee, regarding the timeline from awareness to action on your side, please walk me through what happened in chronological order, with dates where you can."
+        },
+        {
+          "id": "judgeq-h-d4-fact_pursuit-b-execution_timeline-v2",
+          "text": "Looking at the records, the message logs, and the transfer traces, please separate what you accept as your own conduct from what you do not recall, item by item."
+        },
+        {
+          "id": "judgeq-h-d4-fact_pursuit-b-execution_timeline-v3",
+          "text": "Where Mrs. Park's account and your own account diverge most sharply on the timeline from awareness to action on your side, please start from that point and answer on the facts alone."
+        },
+        {
+          "id": "judgeq-h-d4-fact_pursuit-b-execution_timeline-v4",
+          "text": "Among the records, the message logs, and the transfer traces, please tell me which items you accept here and which items you still wish to dispute."
+        },
+        {
+          "id": "judgeq-h-d4-fact_pursuit-b-execution_timeline-v5",
+          "text": "Mr. Lee, if there is anything about the timeline from awareness to action on your side that you have not yet stated on the record, please bring it forward first."
+        }
+      ]
+    },
+    {
+      "disputeId": "h-d4",
+      "questionType": "motive_search",
+      "targetParty": "a",
+      "angleId": "execution_timeline",
+      "variants": [
+        {
+          "id": "judgeq-h-d4-motive_search-a-execution_timeline-v1",
+          "text": "Mrs. Park, while the timeline from decision to execution on your side was building up, why did you not lay this out for your spouse beforehand? Please explain your reasoning."
+        },
+        {
+          "id": "judgeq-h-d4-motive_search-a-execution_timeline-v2",
+          "text": "If you were aware that the timeline from decision to execution on your side could be misread, please tell me the basis on which you chose silence at that point."
+        },
+        {
+          "id": "judgeq-h-d4-motive_search-a-execution_timeline-v3",
+          "text": "You could have explained each part separately. Please tell me what motivated you to defer all of it instead."
+        },
+        {
+          "id": "judgeq-h-d4-motive_search-a-execution_timeline-v4",
+          "text": "At that time, which conversation did you most want to avoid, and which were you willing to have? Please answer on that distinction."
+        },
+        {
+          "id": "judgeq-h-d4-motive_search-a-execution_timeline-v5",
+          "text": "Within what you can say here, please explain where the impulse to keep this matter buried came from."
+        }
+      ]
+    },
+    {
+      "disputeId": "h-d4",
+      "questionType": "motive_search",
+      "targetParty": "b",
+      "angleId": "execution_timeline",
+      "variants": [
+        {
+          "id": "judgeq-h-d4-motive_search-b-execution_timeline-v1",
+          "text": "Mr. Lee, while the timeline from awareness to action on your side was building up, why did you not lay this out for your spouse beforehand? Please explain your reasoning."
+        },
+        {
+          "id": "judgeq-h-d4-motive_search-b-execution_timeline-v2",
+          "text": "If you were aware that the timeline from awareness to action on your side could be misread, please tell me the basis on which you chose silence at that point."
+        },
+        {
+          "id": "judgeq-h-d4-motive_search-b-execution_timeline-v3",
+          "text": "You could have explained each part separately. Please tell me what motivated you to defer all of it instead."
+        },
+        {
+          "id": "judgeq-h-d4-motive_search-b-execution_timeline-v4",
+          "text": "At that time, which conversation did you most want to avoid, and which were you willing to have? Please answer on that distinction."
+        },
+        {
+          "id": "judgeq-h-d4-motive_search-b-execution_timeline-v5",
+          "text": "Within what you can say here, please explain where the impulse to keep this matter buried came from."
+        }
+      ]
+    },
+    {
+      "disputeId": "h-d4",
+      "questionType": "empathy_approach",
+      "targetParty": "a",
+      "angleId": "execution_timeline",
+      "variants": [
+        {
+          "id": "judgeq-h-d4-empathy_approach-a-execution_timeline-v1",
+          "text": "Mrs. Park, this is a setting where it is hard to speak. Regarding the timeline from decision to execution on your side, please share, at your own pace, what you found most difficult to say."
+        },
+        {
+          "id": "judgeq-h-d4-empathy_approach-a-execution_timeline-v2",
+          "text": "If there were circumstances that made it hard to raise the timeline from decision to execution on your side, please explain them in your own words first."
+        },
+        {
+          "id": "judgeq-h-d4-empathy_approach-a-execution_timeline-v3",
+          "text": "You do not need to lay everything out at once. Please begin with the part of the timeline from decision to execution on your side that you feel ready to say today."
+        },
+        {
+          "id": "judgeq-h-d4-empathy_approach-a-execution_timeline-v4",
+          "text": "If part of the timeline from decision to execution on your side is something you can speak about and part is not yet, please separate them and answer on the part you can."
+        },
+        {
+          "id": "judgeq-h-d4-empathy_approach-a-execution_timeline-v5",
+          "text": "Mrs. Park, if there is something about the timeline from decision to execution on your side you have been carrying alone, please put it down here, in the form you are able to."
+        }
+      ]
+    },
+    {
+      "disputeId": "h-d4",
+      "questionType": "empathy_approach",
+      "targetParty": "b",
+      "angleId": "execution_timeline",
+      "variants": [
+        {
+          "id": "judgeq-h-d4-empathy_approach-b-execution_timeline-v1",
+          "text": "Mr. Lee, this is a setting where it is hard to speak. Regarding the timeline from awareness to action on your side, please share, at your own pace, what you found most difficult to say."
+        },
+        {
+          "id": "judgeq-h-d4-empathy_approach-b-execution_timeline-v2",
+          "text": "If there were circumstances that made it hard to raise the timeline from awareness to action on your side, please explain them in your own words first."
+        },
+        {
+          "id": "judgeq-h-d4-empathy_approach-b-execution_timeline-v3",
+          "text": "You do not need to lay everything out at once. Please begin with the part of the timeline from awareness to action on your side that you feel ready to say today."
+        },
+        {
+          "id": "judgeq-h-d4-empathy_approach-b-execution_timeline-v4",
+          "text": "If part of the timeline from awareness to action on your side is something you can speak about and part is not yet, please separate them and answer on the part you can."
+        },
+        {
+          "id": "judgeq-h-d4-empathy_approach-b-execution_timeline-v5",
+          "text": "Mr. Lee, if there is something about the timeline from awareness to action on your side you have been carrying alone, please put it down here, in the form you are able to."
+        }
+      ]
+    },
+    {
+      "disputeId": "h-d4",
+      "questionType": "fact_pursuit",
+      "targetParty": "a",
+      "angleId": "illegal_boundary",
+      "variants": [
+        {
+          "id": "judgeq-h-d4-fact_pursuit-a-illegal_boundary-v1",
+          "text": "Mrs. Park, regarding where you place the line between mistake and unlawful act, please walk me through what happened in chronological order, with dates where you can."
+        },
+        {
+          "id": "judgeq-h-d4-fact_pursuit-a-illegal_boundary-v2",
+          "text": "Looking at the records, the message logs, and the transfer traces, please separate what you accept as your own conduct from what you do not recall, item by item."
+        },
+        {
+          "id": "judgeq-h-d4-fact_pursuit-a-illegal_boundary-v3",
+          "text": "Where Mr. Lee's account and your own account diverge most sharply on where you place the line between mistake and unlawful act, please start from that point and answer on the facts alone."
+        },
+        {
+          "id": "judgeq-h-d4-fact_pursuit-a-illegal_boundary-v4",
+          "text": "Among the records, the message logs, and the transfer traces, please tell me which items you accept here and which items you still wish to dispute."
+        },
+        {
+          "id": "judgeq-h-d4-fact_pursuit-a-illegal_boundary-v5",
+          "text": "Mrs. Park, if there is anything about where you place the line between mistake and unlawful act that you have not yet stated on the record, please bring it forward first."
+        }
+      ]
+    },
+    {
+      "disputeId": "h-d4",
+      "questionType": "fact_pursuit",
+      "targetParty": "b",
+      "angleId": "illegal_boundary",
+      "variants": [
+        {
+          "id": "judgeq-h-d4-fact_pursuit-b-illegal_boundary-v1",
+          "text": "Mr. Lee, regarding where you place the line between mistake and unlawful act, please walk me through what happened in chronological order, with dates where you can."
+        },
+        {
+          "id": "judgeq-h-d4-fact_pursuit-b-illegal_boundary-v2",
+          "text": "Looking at the records, the message logs, and the transfer traces, please separate what you accept as your own conduct from what you do not recall, item by item."
+        },
+        {
+          "id": "judgeq-h-d4-fact_pursuit-b-illegal_boundary-v3",
+          "text": "Where Mrs. Park's account and your own account diverge most sharply on where you place the line between mistake and unlawful act, please start from that point and answer on the facts alone."
+        },
+        {
+          "id": "judgeq-h-d4-fact_pursuit-b-illegal_boundary-v4",
+          "text": "Among the records, the message logs, and the transfer traces, please tell me which items you accept here and which items you still wish to dispute."
+        },
+        {
+          "id": "judgeq-h-d4-fact_pursuit-b-illegal_boundary-v5",
+          "text": "Mr. Lee, if there is anything about where you place the line between mistake and unlawful act that you have not yet stated on the record, please bring it forward first."
+        }
+      ]
+    },
+    {
+      "disputeId": "h-d4",
+      "questionType": "motive_search",
+      "targetParty": "a",
+      "angleId": "illegal_boundary",
+      "variants": [
+        {
+          "id": "judgeq-h-d4-motive_search-a-illegal_boundary-v1",
+          "text": "Mrs. Park, while where you place the line between mistake and unlawful act was building up, why did you not lay this out for your spouse beforehand? Please explain your reasoning."
+        },
+        {
+          "id": "judgeq-h-d4-motive_search-a-illegal_boundary-v2",
+          "text": "If you were aware that where you place the line between mistake and unlawful act could be misread, please tell me the basis on which you chose silence at that point."
+        },
+        {
+          "id": "judgeq-h-d4-motive_search-a-illegal_boundary-v3",
+          "text": "You could have explained each part separately. Please tell me what motivated you to defer all of it instead."
+        },
+        {
+          "id": "judgeq-h-d4-motive_search-a-illegal_boundary-v4",
+          "text": "At that time, which conversation did you most want to avoid, and which were you willing to have? Please answer on that distinction."
+        },
+        {
+          "id": "judgeq-h-d4-motive_search-a-illegal_boundary-v5",
+          "text": "Within what you can say here, please explain where the impulse to keep this matter buried came from."
+        }
+      ]
+    },
+    {
+      "disputeId": "h-d4",
+      "questionType": "motive_search",
+      "targetParty": "b",
+      "angleId": "illegal_boundary",
+      "variants": [
+        {
+          "id": "judgeq-h-d4-motive_search-b-illegal_boundary-v1",
+          "text": "Mr. Lee, while where you place the line between mistake and unlawful act was building up, why did you not lay this out for your spouse beforehand? Please explain your reasoning."
+        },
+        {
+          "id": "judgeq-h-d4-motive_search-b-illegal_boundary-v2",
+          "text": "If you were aware that where you place the line between mistake and unlawful act could be misread, please tell me the basis on which you chose silence at that point."
+        },
+        {
+          "id": "judgeq-h-d4-motive_search-b-illegal_boundary-v3",
+          "text": "You could have explained each part separately. Please tell me what motivated you to defer all of it instead."
+        },
+        {
+          "id": "judgeq-h-d4-motive_search-b-illegal_boundary-v4",
+          "text": "At that time, which conversation did you most want to avoid, and which were you willing to have? Please answer on that distinction."
+        },
+        {
+          "id": "judgeq-h-d4-motive_search-b-illegal_boundary-v5",
+          "text": "Within what you can say here, please explain where the impulse to keep this matter buried came from."
+        }
+      ]
+    },
+    {
+      "disputeId": "h-d4",
+      "questionType": "empathy_approach",
+      "targetParty": "a",
+      "angleId": "illegal_boundary",
+      "variants": [
+        {
+          "id": "judgeq-h-d4-empathy_approach-a-illegal_boundary-v1",
+          "text": "Mrs. Park, this is a setting where it is hard to speak. Regarding where you place the line between mistake and unlawful act, please share, at your own pace, what you found most difficult to say."
+        },
+        {
+          "id": "judgeq-h-d4-empathy_approach-a-illegal_boundary-v2",
+          "text": "If there were circumstances that made it hard to raise where you place the line between mistake and unlawful act, please explain them in your own words first."
+        },
+        {
+          "id": "judgeq-h-d4-empathy_approach-a-illegal_boundary-v3",
+          "text": "You do not need to lay everything out at once. Please begin with the part of where you place the line between mistake and unlawful act that you feel ready to say today."
+        },
+        {
+          "id": "judgeq-h-d4-empathy_approach-a-illegal_boundary-v4",
+          "text": "If part of where you place the line between mistake and unlawful act is something you can speak about and part is not yet, please separate them and answer on the part you can."
+        },
+        {
+          "id": "judgeq-h-d4-empathy_approach-a-illegal_boundary-v5",
+          "text": "Mrs. Park, if there is something about where you place the line between mistake and unlawful act you have been carrying alone, please put it down here, in the form you are able to."
+        }
+      ]
+    },
+    {
+      "disputeId": "h-d4",
+      "questionType": "empathy_approach",
+      "targetParty": "b",
+      "angleId": "illegal_boundary",
+      "variants": [
+        {
+          "id": "judgeq-h-d4-empathy_approach-b-illegal_boundary-v1",
+          "text": "Mr. Lee, this is a setting where it is hard to speak. Regarding where you place the line between mistake and unlawful act, please share, at your own pace, what you found most difficult to say."
+        },
+        {
+          "id": "judgeq-h-d4-empathy_approach-b-illegal_boundary-v2",
+          "text": "If there were circumstances that made it hard to raise where you place the line between mistake and unlawful act, please explain them in your own words first."
+        },
+        {
+          "id": "judgeq-h-d4-empathy_approach-b-illegal_boundary-v3",
+          "text": "You do not need to lay everything out at once. Please begin with the part of where you place the line between mistake and unlawful act that you feel ready to say today."
+        },
+        {
+          "id": "judgeq-h-d4-empathy_approach-b-illegal_boundary-v4",
+          "text": "If part of where you place the line between mistake and unlawful act is something you can speak about and part is not yet, please separate them and answer on the part you can."
+        },
+        {
+          "id": "judgeq-h-d4-empathy_approach-b-illegal_boundary-v5",
+          "text": "Mr. Lee, if there is something about where you place the line between mistake and unlawful act you have been carrying alone, please put it down here, in the form you are able to."
+        }
+      ]
+    },
+    {
+      "disputeId": "h-d4",
+      "questionType": "fact_pursuit",
+      "targetParty": "a",
+      "angleId": "responsibility_split",
+      "variants": [
+        {
+          "id": "judgeq-h-d4-fact_pursuit-a-responsibility_split-v1",
+          "text": "Mrs. Park, regarding how you would divide responsibility between the two sides, please walk me through what happened in chronological order, with dates where you can."
+        },
+        {
+          "id": "judgeq-h-d4-fact_pursuit-a-responsibility_split-v2",
+          "text": "Looking at the records, the message logs, and the transfer traces, please separate what you accept as your own conduct from what you do not recall, item by item."
+        },
+        {
+          "id": "judgeq-h-d4-fact_pursuit-a-responsibility_split-v3",
+          "text": "Where Mr. Lee's account and your own account diverge most sharply on how you would divide responsibility between the two sides, please start from that point and answer on the facts alone."
+        },
+        {
+          "id": "judgeq-h-d4-fact_pursuit-a-responsibility_split-v4",
+          "text": "Among the records, the message logs, and the transfer traces, please tell me which items you accept here and which items you still wish to dispute."
+        },
+        {
+          "id": "judgeq-h-d4-fact_pursuit-a-responsibility_split-v5",
+          "text": "Mrs. Park, if there is anything about how you would divide responsibility between the two sides that you have not yet stated on the record, please bring it forward first."
+        }
+      ]
+    },
+    {
+      "disputeId": "h-d4",
+      "questionType": "fact_pursuit",
+      "targetParty": "b",
+      "angleId": "responsibility_split",
+      "variants": [
+        {
+          "id": "judgeq-h-d4-fact_pursuit-b-responsibility_split-v1",
+          "text": "Mr. Lee, regarding how you would divide responsibility between the two sides, please walk me through what happened in chronological order, with dates where you can."
+        },
+        {
+          "id": "judgeq-h-d4-fact_pursuit-b-responsibility_split-v2",
+          "text": "Looking at the records, the message logs, and the transfer traces, please separate what you accept as your own conduct from what you do not recall, item by item."
+        },
+        {
+          "id": "judgeq-h-d4-fact_pursuit-b-responsibility_split-v3",
+          "text": "Where Mrs. Park's account and your own account diverge most sharply on how you would divide responsibility between the two sides, please start from that point and answer on the facts alone."
+        },
+        {
+          "id": "judgeq-h-d4-fact_pursuit-b-responsibility_split-v4",
+          "text": "Among the records, the message logs, and the transfer traces, please tell me which items you accept here and which items you still wish to dispute."
+        },
+        {
+          "id": "judgeq-h-d4-fact_pursuit-b-responsibility_split-v5",
+          "text": "Mr. Lee, if there is anything about how you would divide responsibility between the two sides that you have not yet stated on the record, please bring it forward first."
+        }
+      ]
+    },
+    {
+      "disputeId": "h-d4",
+      "questionType": "motive_search",
+      "targetParty": "a",
+      "angleId": "responsibility_split",
+      "variants": [
+        {
+          "id": "judgeq-h-d4-motive_search-a-responsibility_split-v1",
+          "text": "Mrs. Park, while how you would divide responsibility between the two sides was building up, why did you not lay this out for your spouse beforehand? Please explain your reasoning."
+        },
+        {
+          "id": "judgeq-h-d4-motive_search-a-responsibility_split-v2",
+          "text": "If you were aware that how you would divide responsibility between the two sides could be misread, please tell me the basis on which you chose silence at that point."
+        },
+        {
+          "id": "judgeq-h-d4-motive_search-a-responsibility_split-v3",
+          "text": "You could have explained each part separately. Please tell me what motivated you to defer all of it instead."
+        },
+        {
+          "id": "judgeq-h-d4-motive_search-a-responsibility_split-v4",
+          "text": "At that time, which conversation did you most want to avoid, and which were you willing to have? Please answer on that distinction."
+        },
+        {
+          "id": "judgeq-h-d4-motive_search-a-responsibility_split-v5",
+          "text": "Within what you can say here, please explain where the impulse to keep this matter buried came from."
+        }
+      ]
+    },
+    {
+      "disputeId": "h-d4",
+      "questionType": "motive_search",
+      "targetParty": "b",
+      "angleId": "responsibility_split",
+      "variants": [
+        {
+          "id": "judgeq-h-d4-motive_search-b-responsibility_split-v1",
+          "text": "Mr. Lee, while how you would divide responsibility between the two sides was building up, why did you not lay this out for your spouse beforehand? Please explain your reasoning."
+        },
+        {
+          "id": "judgeq-h-d4-motive_search-b-responsibility_split-v2",
+          "text": "If you were aware that how you would divide responsibility between the two sides could be misread, please tell me the basis on which you chose silence at that point."
+        },
+        {
+          "id": "judgeq-h-d4-motive_search-b-responsibility_split-v3",
+          "text": "You could have explained each part separately. Please tell me what motivated you to defer all of it instead."
+        },
+        {
+          "id": "judgeq-h-d4-motive_search-b-responsibility_split-v4",
+          "text": "At that time, which conversation did you most want to avoid, and which were you willing to have? Please answer on that distinction."
+        },
+        {
+          "id": "judgeq-h-d4-motive_search-b-responsibility_split-v5",
+          "text": "Within what you can say here, please explain where the impulse to keep this matter buried came from."
+        }
+      ]
+    },
+    {
+      "disputeId": "h-d4",
+      "questionType": "empathy_approach",
+      "targetParty": "a",
+      "angleId": "responsibility_split",
+      "variants": [
+        {
+          "id": "judgeq-h-d4-empathy_approach-a-responsibility_split-v1",
+          "text": "Mrs. Park, this is a setting where it is hard to speak. Regarding how you would divide responsibility between the two sides, please share, at your own pace, what you found most difficult to say."
+        },
+        {
+          "id": "judgeq-h-d4-empathy_approach-a-responsibility_split-v2",
+          "text": "If there were circumstances that made it hard to raise how you would divide responsibility between the two sides, please explain them in your own words first."
+        },
+        {
+          "id": "judgeq-h-d4-empathy_approach-a-responsibility_split-v3",
+          "text": "You do not need to lay everything out at once. Please begin with the part of how you would divide responsibility between the two sides that you feel ready to say today."
+        },
+        {
+          "id": "judgeq-h-d4-empathy_approach-a-responsibility_split-v4",
+          "text": "If part of how you would divide responsibility between the two sides is something you can speak about and part is not yet, please separate them and answer on the part you can."
+        },
+        {
+          "id": "judgeq-h-d4-empathy_approach-a-responsibility_split-v5",
+          "text": "Mrs. Park, if there is something about how you would divide responsibility between the two sides you have been carrying alone, please put it down here, in the form you are able to."
+        }
+      ]
+    },
+    {
+      "disputeId": "h-d4",
+      "questionType": "empathy_approach",
+      "targetParty": "b",
+      "angleId": "responsibility_split",
+      "variants": [
+        {
+          "id": "judgeq-h-d4-empathy_approach-b-responsibility_split-v1",
+          "text": "Mr. Lee, this is a setting where it is hard to speak. Regarding how you would divide responsibility between the two sides, please share, at your own pace, what you found most difficult to say."
+        },
+        {
+          "id": "judgeq-h-d4-empathy_approach-b-responsibility_split-v2",
+          "text": "If there were circumstances that made it hard to raise how you would divide responsibility between the two sides, please explain them in your own words first."
+        },
+        {
+          "id": "judgeq-h-d4-empathy_approach-b-responsibility_split-v3",
+          "text": "You do not need to lay everything out at once. Please begin with the part of how you would divide responsibility between the two sides that you feel ready to say today."
+        },
+        {
+          "id": "judgeq-h-d4-empathy_approach-b-responsibility_split-v4",
+          "text": "If part of how you would divide responsibility between the two sides is something you can speak about and part is not yet, please separate them and answer on the part you can."
+        },
+        {
+          "id": "judgeq-h-d4-empathy_approach-b-responsibility_split-v5",
+          "text": "Mr. Lee, if there is something about how you would divide responsibility between the two sides you have been carrying alone, please put it down here, in the form you are able to."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "caseId": "case-friend-01",
+  "overlayKind": "phase1Dialogue",
+  "dialogues": [
+    { "id": "0", "speaker": "system", "text": "Song Da-eun is three weeks from her wedding. Her former best friend Choi Su-min — whom she had cut off — has called her fiance 6 times and texted him 11 times in the past 9 days. Ms. Song reads it as obsession and has filed for trial." },
+    { "id": "1", "speaker": "a", "text": "Your Honor, my former friend reached out to my fiance like that for nine days. Six calls, eleven texts. If you look at this and still call it a misunderstanding, I have nothing more to say." },
+    { "id": "2", "speaker": "a", "text": "Not just one time — three weeks before the wedding. I told our mutual friends right away. I thought my former friend, the one I cut off for things like this in the past, had latched on to my fiance again." },
+    { "id": "3", "speaker": "b", "text": "Your Honor, that was not what I meant by it." },
+    {
+      "id": "4",
+      "speaker": "choice",
+      "text": "",
+      "options": [
+        { "id": "c1_ask_b", "text": "Ms. Choi, please tell me directly — why did you make contact?" },
+        { "id": "c1_check_a", "text": "Ms. Song, I will examine the basis for that judgement more closely." },
+        { "id": "c1_calm", "text": "Both sides, please calm yourselves. I will hear each side in order." }
+      ]
+    },
+    { "id": "5", "speaker": "b", "text": "Yes, I did make contact. But it was not out of obsession." },
+    { "id": "6", "speaker": "a", "text": "Su-min, you cut me off — and then you reach out to my fiance that many times. What else would that be? If not obsession, what?" },
+    { "id": "7", "speaker": "b", "text": "There was something I had to pass on. But it is hard to say more right now." },
+    { "id": "8", "speaker": "a", "text": "The basis is clear. The contact log alone shows it. Behind my back, she kept reaching out to my fiance first." },
+    { "id": "9", "speaker": "a", "text": "And I showed those captures to my friends. Every one of them said the same thing — three weeks before my wedding, my former friend crossed a line." },
+    { "id": "10", "speaker": "b", "text": "I know that is how people read it. The intent was different." },
+    { "id": "11", "speaker": "a", "text": "Understood. Even so, to me, the same thing seems to be happening all over again." },
+    { "id": "12", "speaker": "b", "text": "I had no intention of stirring up trouble either. I will speak only to the facts." },
+    { "id": "13", "speaker": "a", "text": "Your Honor, when she cut me off in the past it was the same way. My former friend just left a line — 'I'll handle the money matter on my own' — and avoided any explanation. This time too, she will not say why." },
+    {
+      "id": "14",
+      "speaker": "choice",
+      "text": "",
+      "options": [
+        { "id": "c2_press_b", "text": "Ms. Choi, do not hide it — say plainly why you made contact." },
+        { "id": "c2_give_time", "text": "Ms. Choi, if it is hard to speak right now, take a moment and lay it out." },
+        { "id": "c2_ask_past_a", "text": "Ms. Song, please tell me a little more about how the past breakup happened." }
+      ]
+    },
+    { "id": "15", "speaker": "b", "text": "…There was something I had to pass on to that person. It was not contact I was trying to hide." },
+    { "id": "16", "speaker": "a", "text": "Same line again. You did exactly that in the past — kept things hidden until you had made me look like the strange one." },
+    { "id": "17", "speaker": "b", "text": "…Thank you. There are circumstances. But laying it all out here right now would only tangle things further." },
+    { "id": "18", "speaker": "a", "text": "If you stop at 'it is hard to say,' what am I supposed to believe? The numbers are already in front of us." },
+    { "id": "19", "speaker": "b", "text": "Da-eun, I know it looks like that when you only see the numbers." },
+    { "id": "20", "speaker": "a", "text": "Whenever money came up in the past, she cut me off. Without explanation, behind my back, she would wrap things up and move on." },
+    { "id": "21", "speaker": "b", "text": "…There were things I could not just speak about freely back then either." },
+    { "id": "22", "speaker": "a", "text": "Your Honor, that is exactly why I see this the same way. She cut me off for the same reason in the past, and now she has moved on to my fiance. It looks no different." },
+    { "id": "23", "speaker": "b", "text": "It was not obsession. It was closer to trying to stop something. I cannot say more than that right now." },
+    { "id": "24", "speaker": "a", "text": "Choi Su-min! Stop what? Stop whom from what? In the past too, you only left me with results, no explanation." },
+    { "id": "25", "speaker": "b", "text": "Da-eun, I knew you would take it this way. Even so, I could not just leave it." },
+    {
+      "id": "26",
+      "speaker": "choice",
+      "text": "",
+      "options": [
+        { "id": "c3_past_first", "text": "We will sort the past breakup out first." },
+        { "id": "c3_current_first", "text": "We will start with the nature of the current contact." },
+        { "id": "c3_separate", "text": "Do not blend the past and the present — I will hear them separately." }
+      ]
+    },
+    { "id": "27", "speaker": "a", "text": "Good. Start with the past chat. Even then, my former friend just left 'I will handle this on my own' and cut me off." },
+    { "id": "28", "speaker": "b", "text": "Then and now, what is the same is that there were things I could not say." },
+    { "id": "29", "speaker": "a", "text": "Then look at the contact log first. For my former friend to come at me three weeks before the wedding at this volume is not normal." },
+    { "id": "30", "speaker": "b", "text": "If you only look at the records, I am the one who pushed first. I know that puts me at a disadvantage." },
+    { "id": "31", "speaker": "a", "text": "Even split apart, the answer is the same. It was wrong then, and it is wrong now." },
+    { "id": "32", "speaker": "b", "text": "They have to be looked at separately. Past feelings cannot speak for the current intent." },
+    { "id": "33", "speaker": "system", "text": "The fiance's contact log, the captures from the mutual-friends group chat, and the KakaoTalk thread from just before the past breakup have all been disclosed. Ms. Choi admits to the contact but says only that the intent was not obsession. Whether the contact really crossed a line — or whether there was another reason — must now be sorted through interrogation." }
+  ]
+}

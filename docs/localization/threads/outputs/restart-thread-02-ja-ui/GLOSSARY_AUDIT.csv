@@ -1,0 +1,30 @@
+term_id,source_ko,current_glossary_ja,used_translation,issue,recommendation
+project_solomon,Project Solomon,Project Solomon,Project_Solomon,"glossary KO=Project Solomon (no underscore); brand rule says internal name = Project_Solomon (with underscore). Current i18n uses Project_Solomon for brand.internalProjectName.","Update glossary KO + JA fields for project_solomon to Project_Solomon (internal-only). Add new glossary entry public_full_title with locked rows: ko=솔로몬의 딜레마: 진실의 재판 / en=Verdict Zero: Trial of Truth / ja=ソロモンのジレンマ：真実の裁き / zh-CN=真相裁决：零点审判."
+judge,재판관,裁判官,裁判官,glossary draft and i18n usage agree. home.tagline current value uses 裁き手 — patch proposal corrects to 裁判官.,No change to glossary. Apply MESSAGE_PATCH_PROPOSAL home.tagline change (裁き手 → 裁判官).
+truth,진실,真相,"真実 in pc.verdictAdvance.conditionsMissing (proposed → 真相)","conditionsMissing currently renders 真実 — inconsistent with glossary truth=真相 and disclosure-policy hidden-truth lexicon (which uses 真相 set).",Apply MESSAGE_PATCH_PROPOSAL change to 真相. Lock glossary truth=真相.
+case,사건,事件,事件 (session.preparing.description / settings.language.restartNote),clean,No change.
+courtroom,법정,法廷,法廷 (session.preparing.description / settings.about.credits.description),clean,No change.
+verdict,판결,判決,判決 (pc.verdictAdvance.* / verdict.responsibility.* / etc.),clean,No change.
+dispute,쟁점,争点,争点 (pc.verdictAdvance.* / verdict screen),clean,No change.
+evidence,증거,証拠,証拠 (pc.verdictAdvance.conditionsMissing),clean,No change.
+session,세션,セッション,セッション (session.preparing.title),clean,No change.
+save_data,저장 데이터,セーブデータ,(not used in current 55-key namespace),unused in current i18n; will appear once settings data section is wired,No change. Verify when wider settings UI lands (see SOURCE_STRING_MAP for settings.* candidates from prior thread).
+court_simulation,재판 시뮬레이션,法廷シミュレーション,法廷シミュレーションゲーム (splash.subtitle),"i18n appends ゲーム; glossary draft is just 法廷シミュレーション","Recommend updating glossary draft to 法廷シミュレーション (concept term) but keeping i18n splash.subtitle as 法廷シミュレーションゲーム for the splash UX. Also acceptable to make glossary entry 法廷シミュレーションゲーム to match. Flag for native review."
+party,당사자,当事者,当事者 (pc.recordSummary.moreConvincing implicit via {party} placeholder),clean,No change. Note that {party} is interpolated with party name (likely 当事者A/B); rendering side+主張 reads natural.
+investigation_token,조사 토큰,調査トークン,(not used in current 55-key namespace),unused in current i18n,No change.
+skill_point,스킬 포인트,スキルポイント,スキルポイント (proposed in SOURCE_STRING_MAP toast strings),clean,No change. Wire toast strings using glossary term verbatim.
+court_control,법정 장악,(MISSING),法廷掌握 (proposed in SOURCE_STRING_MAP toast/dialogue strings),"NEW term not in glossary. KO source uses 법정 장악 in PCInteractionPanel + useActionDispatch + resourceSlice. Critical resource concept.","Add new glossary entry court_control with: ko=법정 장악 / en=Court Control / ja=法廷掌握 / zh-CN=法庭掌控. status=draft."
+dossier,사건 기록,調書,(not used in current 55-key namespace),"glossary maps 사건 기록 → 調書 but PC UI uses 결정적 질문 / 발언 노트 instead — concept mismatch","No change in this restart. If a 사건 기록 panel ever appears in PC UI, render 調書. Recommend adding decisive_question (결정적 질문 → 決定的質問) as new entry per prior thread output."
+notebook,수첩,ノート,(not used in current 55-key namespace),unused in current i18n,No change.
+hidden_truth,숨은 진실,隠された真相,(not in UI; policy-relevant),disclosure-policy lexicon term — never expose in surface-only channels,No change. Verify combo summary text (pc.combo.*) does not leak hidden-truth lexemes.
+surface_text,표면 정보,表層情報,(not in UI),clean,No change.
+testimony,증언,証言,証言 (proposed in pc.toast.witnessTestimonyFailed),clean,No change.
+contradiction,모순,矛盾,(not used in current 55-key namespace),unused in current i18n,No change.
+phase,단계,フェーズ,(not used in current 55-key namespace),unused in current i18n,No change.
+mediation_phase,중재 단계,調停フェーズ,(not used in current 55-key namespace),unused in current i18n,No change.
+verdict_phase,판결 단계,判決フェーズ,(not used in current 55-key namespace),unused in current i18n,No change.
+solution,해결안,解決案,(not used in current 55-key namespace),unused; prior thread proposed 解決策 (more natural). Decision deferred until verdict step labels are wired.,No change in this restart.
+free_interrogation,자유심문,自由尋問,(not used in current 55-key namespace),unused; KO PC UI uses 자유 질문 (distinct concept) per prior thread,No change in this restart.
+llm,LLM,LLM,(not used in current 55-key namespace),unused in current 55 keys; will appear when audio voice setting is wired,No change.
+api,API,API,(unused),clean,No change.
+jwt,JWT,JWT,(unused),clean,No change.

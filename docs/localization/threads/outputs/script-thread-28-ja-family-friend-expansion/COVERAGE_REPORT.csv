@@ -1,0 +1,16 @@
+case,surface,ko_strings,ja_strings,coverage_pct,buckets_total,buckets_with_6plus_variants,variation_gate_pass_rate,truth_violations
+family-01,scriptedText,5262,5262,100.00,560,430,100.00,0
+family-01,angle_catalog,52,52,100.00,26,0,N/A (5 vars max),0
+family-01,judge_questions,780,780,100.00,156,0,N/A (5 vars max),0
+family-01,interrogation_answers,9360,9360,100.00,936,936,100.00,0
+family-01,phase1,34,34,100.00,N/A,N/A,N/A,0
+family-01,mediation,10,10,100.00,N/A,N/A,N/A,0
+family-01,cases_generated,~30,~30,100.00,N/A,N/A,N/A,0
+friend-01,scriptedText,5097,5097,100.00,~424,424,100.00,0
+friend-01,angle_catalog,40,40,100.00,20,0,N/A (5 vars max),0
+friend-01,judge_questions,600,600,100.00,120,0,N/A (5 vars max),0
+friend-01,interrogation_answers,6300,6300,100.00,720,540,100.00,0
+friend-01,phase1,34,34,100.00,N/A,N/A,N/A,0
+friend-01,mediation,10,10,100.00,N/A,N/A,N/A,0
+friend-01,cases_generated,~30,~30,100.00,N/A,N/A,N/A,0
+TOTAL,,27599,27599,100.00,3072,2330,100.00,0

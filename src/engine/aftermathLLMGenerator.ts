@@ -108,6 +108,9 @@ ${discoveryLines}
 ## 작성 지시
 3인칭 관찰자 시점. 서술체("~했다", "~였다"). 출력은 반드시 **본문 3문단 + 교훈 1문장 별도 문단**, 총 4개 문단으로 작성하세요.
 본문 3문단은 각 문단 4~6문장, 전체 900~1300자 분량을 목표로 합니다. 짧은 요약문으로 끝내지 말고, **인물의 내면 심리와 판결 이후의 생활 변화**를 밀도 있게 서술하세요.
+판결 자료를 그대로 옮겨 적지 말고, 그 결론 때문에 인물들이 실제로 무엇을 했는지로 번역하세요. 예를 들어 "판결을 받아들였다"라고 쓰지 말고, 연락을 다시 보냈는지, 문서를 따로 챙겼는지, 돈이나 기록을 정리했는지, 가족/친구/배우자 앞에서 어떤 말을 삼켰는지처럼 행동으로 보여 주세요.
+해결안은 행정 문구처럼 나열하지 말고 후일담 속 행동의 출발점으로만 사용하세요. 책임 비율이나 해결안 문장을 숫자 그대로 반복하지 말고, 한쪽이 먼저 연락하거나, 사과문을 고쳐 쓰거나, 계좌/메시지/방문 기록을 다시 정리하거나, 관계의 경계를 새로 정하는 식으로 재해석하세요.
+감정은 "울었다/화났다"로 단정하지 말고 망설임, 민망함, 안도, 뒤늦은 미안함, 아직 남은 불신처럼 한 단계 낮은 정서로 묘사하세요.
 
 **1문단 — 판결이 떨어진 순간의 심리**
 ${partyA.name}${pp과와(partyA.name)} ${partyB.name}${pp이가(partyB.name)} 판결 내용을 듣는 순간, 각자의 머릿속에서 어떤 생각이 스쳤는지. 예상했던 결과인지, 예상 밖이었는지. 상대방의 표정을 보며 무엇을 느꼈는지. 판결 직후 입을 열지 못하는 침묵 속에서 두 사람 각각이 삼킨 말은 무엇이었는지. 표면적 반응(끄덕임, 입술 깨물기)과 내면의 괴리를 구체적으로 묘사.
@@ -143,6 +146,7 @@ ${input.clearancePercent != null && input.clearancePercent >= 100 ? `
 - 플레이어/재판관의 조사 과정을 메타적으로 서술 금지 ("증거를 찾아냈다", "심문으로 밝혀냈다" 같은 메타 구조 금지). 인물의 심리와 결과에 집중.
 
 ## 금지 (엄수)
+- **기술적 판결 요약 금지**: "책임 비율", "판결문에 적힌 해결 방향", "다음 조치였다", "후일담의 방향", "받아들였다"를 본문에서 기계적으로 반복하지 마세요.
 - **번역체 9패턴**: "~된 것으로 생각됩니다", "~인 측면이 있었다", "부득이하게", "~에 대한 부분", "해당 [명사]", "상기 [명사]", "미리 말씀드리지 못한", "특정 [명사]", "사전 상의·협의"
 - **합니다체·해요체**: 서술체 외 금지
 - **감정 과잉 반복**: 울었다/소리쳤다/흐느꼈다 연속 사용 금지. 한 문단에 같은 강한 감정 동사 2회 이상 반복 금지.
@@ -219,6 +223,11 @@ export function postProcessAftermath(raw: string, partyNames?: { a: string; b: s
   // 4. 기타 고정 치환
   text = text.replace(/상대방/g, '상대측')
   text = text.replace(/([가-힣]+)만을(\s)/g, '$1만$2')
+  const softened = removeMechanicalAftermathSentences(text)
+  if (softened !== text) {
+    issues.push('mechanical-verdict-summary')
+    text = softened
+  }
 
   // 5. A/B 리터럴 잔존 검사 (단어 경계로, 실명 교정 보조)
   if (partyNames) {
@@ -246,4 +255,30 @@ export function postProcessAftermath(raw: string, partyNames?: { a: string; b: s
   }
 
   return text
+}
+
+function removeMechanicalAftermathSentences(text: string): string {
+  const bannedSentencePatterns = [
+    /책임\s*비율/,
+    /책임.*배분.*판결/,
+    /판결.*받아들/,
+    /판결문에\s*적힌\s*해결\s*방향/,
+    /해결\s*방향은\s*다음\s*조치/,
+    /후일담의\s*방향/,
+    /총\s*\d+\s*턴/,
+    /선택한\s*해결책/,
+  ]
+
+  return text
+    .split(/\n\n+/)
+    .map((paragraph) => {
+      const sentences = paragraph.match(/[^.!?。]+[.!?。]?/g) ?? [paragraph]
+      const filtered = sentences
+        .map((sentence) => sentence.trim())
+        .filter((sentence) => sentence && !bannedSentencePatterns.some((pattern) => pattern.test(sentence)))
+      return filtered.join(' ')
+    })
+    .filter(Boolean)
+    .join('\n\n')
+    .trim()
 }

@@ -1,0 +1,140 @@
+id,category,ko,en,ja,zh-CN,context,status,locked,notes
+project_solomon,product,Project Solomon,Project Solomon,Project Solomon,Project Solomon,Internal project codename / legacy glossary alias.,locked,true,Never use as a public UI title. Use internal_project_name for dev/internal references and brand_* rows for public titles.
+steam_app_id,steam,Steam App ID,Steam App ID,Steam App ID,Steam App ID,Steamworks numeric app identifier,locked,true,Never translate.
+achievement_api_name,steam,업적 API 이름,Achievement API Name,実績API名,成就 API 名,Steamworks achievement identifier,locked,true,API IDs stay in English uppercase snake case.
+steam_auth_ticket,steam,Steam 인증 티켓,Steam Auth Ticket,Steam認証チケット,Steam 认证票据,Steam Web API authentication payload,draft,false,
+steam_cloud,steam,Steam Cloud,Steam Cloud,Steam Cloud,Steam Cloud,Steam Cloud save feature,locked,true,Keep Steam product name unchanged.
+steam_deck,steam,Steam Deck,Steam Deck,Steam Deck,Steam Deck,Steam Deck device/platform,locked,true,Keep product name unchanged.
+court_simulation,genre,재판 시뮬레이션,Court Simulation,法廷シミュレーション,法庭模拟,Game genre/store copy,draft,false,
+courtroom,world,법정,Courtroom,法廷,法庭,Main gameplay space,draft,false,
+judge,role,재판관,Judge,裁判官,裁判官,Player role and in-game speaker,draft,false,Use consistently for the player role.
+party,role,당사자,Party,当事者,当事人,One side in a dispute,draft,false,Avoid plaintiff/defendant unless a case explicitly needs legal roles.
+party_a,role,당사자 A,Party A,当事者A,A 方,Neutral party label,draft,false,
+party_b,role,당사자 B,Party B,当事者B,B 方,Neutral party label,draft,false,
+witness,role,증인,Witness,証人,证人,Person giving testimony,draft,false,
+case,case,사건,Case,事件,案件,Playable case,draft,false,
+case_brief,case,사건 브리핑,Case Brief,事件ブリーフィング,案件简报,Initial case summary screen,draft,false,
+case_id,case,사건 ID,Case ID,事件ID,案件 ID,Stable internal case identifier,locked,true,Do not translate IDs such as spouse-01.
+phase,system,단계,Phase,フェーズ,阶段,Gameplay phase,draft,false,
+briefing_phase,phase,브리핑 단계,Case Brief,ブリーフィング,案件简报,Initial case briefing phase,draft,false,
+pretrial_phase,phase,사전 진술 단계,Opening Statements,冒頭陳述,庭前陈述,Opening statements/dialogue phase,draft,false,
+interrogation_phase,phase,심문 단계,Interrogation,尋問,讯问,Questioning phase,draft,false,
+rebuttal_phase,phase,반박 단계,Rebuttal Phase,反論フェーズ,反驳阶段,Phase 2 rebuttal dialogue,draft,false,
+evidence_phase,phase,증거 심리 단계,Evidence Phase,証拠審理フェーズ,证据审理阶段,Evidence-focused phase,draft,false,
+re_examination_phase,phase,최종 심문 단계,Final Interrogation,再尋問,最终讯问,Late questioning phase,draft,false,
+mediation_phase,phase,중재 단계,Mediation Phase,調停,调解阶段,Mediation/resolution phase,draft,false,
+verdict_phase,phase,판결 단계,Verdict Phase,判決,判决,Verdict selection phase,draft,false,
+result_phase,phase,결과 단계,Result Phase,結果,结果,Post-verdict result screen,draft,false,
+verdict,system,판결,Verdict,判決,判决,Final decision/outcome,draft,false,
+judgment_basis,system,판결 근거,Verdict Basis,判決根拠,判决依据,Reasoning basis before/after verdict,draft,false,
+responsibility,system,책임,Responsibility,責任,责任,Assigned responsibility/culpability,draft,false,Thread-5 recheck: in verdict step context JA uses 責任配分 and zh-CN uses 责任分配; bare noun stays for general responsibility labels.
+solution,system,해결안,Solution,解決策,解决方案,Resolution option,draft,false,
+dispute,case,쟁점,Dispute,争点,争议点,Contested issue in a case,draft,false,
+claim,case,주장,Claim,主張,主张,Party claim,draft,false,
+fact,case,사실,Fact,事実,事实,Established factual point,draft,false,
+truth,case,진실,Truth,真相,真相,Hidden or established truth,draft,false,
+hidden_truth,case,숨은 진실,Hidden Truth,隠された真相,隐藏真相,Truth that must not leak early,draft,false,
+surface_text,content,표면 정보,Surface Text,表層情報,表层信息,Safe visible version of truth-bearing content,draft,false,
+evidence,case,증거,Evidence,証拠,证据,Evidence item,draft,false,
+evidence_card,ui,증거 카드,Evidence Card,証拠カード,证据卡,UI card showing evidence,draft,false,
+evidence_stage,system,증거 단계,Evidence Stage,証拠段階,证据阶段,Depth/unlock stage for evidence,draft,false,
+deep_investigation,action,심층 조사,Deep Investigation,深掘り調査,深度调查,Advanced investigation action,draft,false,
+testimony,case,증언,Testimony,証言,证言,Witness or party testimony,draft,false,
+statement,case,진술,Statement,供述,陈述,Party/witness statement,draft,false,
+contradiction,case,모순,Contradiction,矛盾,矛盾,Conflict between statements/evidence,draft,false,
+contradiction_pursuit,action,모순 추궁,Contradiction Pursuit,矛盾追及,矛盾追问,Action that presses a contradiction,draft,false,
+free_interrogation,action,자유심문,Free Interrogation,自由尋問,自由讯问,Player free-text questioning mode,draft,false,
+judge_question,action,재판관 질문,Judge Question,裁判官の質問,裁判官提问,Question by the player judge,draft,false,
+fact_pursuit,action,사실 추궁,Fact Pursuit,事実追及,事实追问,Questioning mode focused on facts,draft,false,
+motive_search,action,동기 탐색,Motive Search,動機探索,动机探查,Questioning mode focused on motive,draft,false,
+empathy_approach,action,공감 접근,Empathy Approach,共感アプローチ,共情接近,Questioning mode using empathy,draft,false,
+dossier,ui,사건 기록,Dossier,調書,档案,Deprecated legacy user-facing dossier term.,deprecated,false,"User-facing UI should use records, case_file, decisive_question, or notes per surface."
+notebook,ui,수첩,Notebook,ノート,笔记本,Judge notebook UI,draft,false,
+observation,ui,관찰,Observation,観察,观察,Judge observation feed,draft,false,
+record_summary,ui,기록 정리,Records,記録の整理,记录整理,Panel summarizing case progress,draft,false,
+action_panel,ui,행동 패널,Action Panel,アクションパネル,行动面板,Player action UI,draft,false,
+hotbar,ui,핫바,Hotbar,ホットバー,快捷栏,Bottom action bar,draft,false,
+investigation_token,resource,조사 토큰,Investigation Token,調査トークン,调查点数,Resource spent on investigation actions,draft,false,May shorten to Token in compact UI only when icon is present.
+skill_point,resource,스킬 포인트,Skill Point,スキルポイント,技能点,Resource for skills/perks,draft,false,
+trust,resource,신뢰도,Trust,信頼度,信任,Relationship or response meter,draft,false,
+stress,resource,압박도,Stress,圧力,压力,Pressure/stress meter,draft,false,
+perk,progression,특전,Perk,パーク,特性,Judge progression perk,draft,false,
+trait,progression,특성,Trait,特性,特质,Judge trait/progression property,draft,false,
+session,system,세션,Session,セッション,会话,One play session,draft,false,
+save_data,system,저장 데이터,Save Data,セーブデータ,存档数据,Local/Steam Cloud save data,draft,false,
+mock_mode,dev,Mock 모드,Mock Mode,モックモード,模拟模式,Development/testing fallback mode,draft,false,
+test_console,dev,테스트 콘솔,Test Console,テストコンソール,测试控制台,Developer/test token console,draft,false,
+llm,tech,LLM,LLM,LLM,LLM,Large language model abbreviation,locked,true,Do not expand in compact UI.
+api,tech,API,API,API,API,Application programming interface,locked,true,Do not translate.
+jwt,tech,JWT,JWT,JWT,JWT,Session token format,locked,true,Do not translate.
+internal_project_name,product,Project_Solomon,Project_Solomon,Project_Solomon,Project_Solomon,"Internal development codename, never public-facing UI.",locked,true,NEW row. Internal/dev codename. Locked across all locales. Not used as public-facing title in any UI surface — package metadata / Steam app config / repo identifier only. NEW. Locked.
+brand_title,product,솔로몬의 딜레마,Verdict Zero,ソロモンのジレンマ,真相裁决,Public-facing brand title without subtitle.,locked,true,NEW row. Public-facing in-game title (top half of title + subtitle structure). Locked. PROJECT_CONTROL_TOWER decision 2026-05-06. NEW. Locked. PROJECT_CONTROL_TOWER decision: avoid Solomon-based naming for EN to prevent religious/biblical reading. Verdict Zero conveys judge/wisdom theme. NEW. Locked. NEW. Locked. PROJECT_CONTROL_TOWER decision: rejects 所罗门的法庭 and 所罗门的两难. Use natural localized title — 真相裁决 conveys truth / verdict theme.
+brand_subtitle,product,진실의 재판,Trial of Truth,真実の裁き,零点审判,Public-facing brand subtitle.,locked,true,NEW row. Public-facing subtitle. Locked. NEW. Locked.
+brand_full_title,product,솔로몬의 딜레마: 진실의 재판,Verdict Zero: Trial of Truth,ソロモンのジレンマ：真実の裁き,真相裁决：零点审判,Complete public-facing title with locale-specific punctuation.,locked,true,NEW row. Locked. Joined form (title + ' : ' + subtitle). KO/EN use Roman colon `:`. NEW. Locked. NEW. Locked. Note JA uses full-width colon `：` per JIS punctuation convention. NEW. Locked. Note zh-CN uses full-width colon `：`.
+permission_level,system,권한 등급,Permission Level,権限レベル,权限等级,Permission/security/unlock level concept.,draft,false,NEW row (was clearance). KO transliteration 클리어런스 replaced with 권한 등급 for clarity. Engine-only currently — verify usage. NEW row. NEW row. Value carried over.
+clearance_rate,system,클리어율,Completion Rate,達成度,完成度,Completion percentage shown in result surfaces.,draft,false,NEW row. PROJECT_CONTROL_TOWER decision 1 confirmed: completion percentage concept distinct from permission_level. Used in result-screen donut. NEW row. PROJECT_CONTROL_TOWER decision 1: prefer Completion Rate; compact UI may use Completion. Was Clearance Rate in earlier draft. NEW row. NEW row. Thread-03 already renders 完成度.
+court_control,resource,법정 장악,Court Control,法廷掌握,法庭掌控,Localization glossary term.,draft,false,NEW row. KR source uses both 법정 장악 + 법정 지배력 — canonicalize to 법정 장악. NEW row. Used 8× in EN UI. NEW row.
+free_question,action,자유 질문,Free Question,自由質問,自由提问,Localization glossary term.,draft,false,NEW row. Per-slot free-text question label. Distinct from free_interrogation (mode). NEW row. Hotbar slot label. NEW row.
+investigation_stage,system,조사 단계,Investigation Stage,調査ステージ,调查阶段,Localization glossary term.,draft,false,NEW row. Distinct from evidence_stage (증거 단계). NEW row.
+decisive_question,case,결정적 질문,Decisive Question,決定的質問,决定性提问,Localization glossary term.,draft,false,NEW row. PROJECT_CONTROL_TOWER decision 3: dossier deprecated; use context-specific terms (Records / Case File / Decisive Question / Notes). decisive_question is one of those replacements. NEW row.
+case_file,case,사건 파일,Case File,事件ファイル,案件档案,Localization glossary term.,needs-rework,false,NEW row. PROJECT_CONTROL_TOWER decision 3: dossier replacement for case-detail surfaces. Verify if any UI surface needs this beyond Records / Decisive Question. NEW row. Use only where Records / Decisive Question / Notes do not fit. NEW row.
+judge_fragment,progression,판결 조각,Verdict Fragment,判決の欠片,判决碎片,Localization glossary term.,draft,false,NEW row. Used 11× JA + 9 sub-types. NEW row.
+judge_title,progression,칭호,Title,称号,称号,Localization glossary term.,draft,false,NEW row. PROJECT_CONTROL_TOWER decision 6 confirmed: KO source 타이틀 → 칭호 rename. NEW row.
+score_axis_insight,score,탐구 (점수),Insight,洞察,洞察,Result score axis label.,needs-rework,false,NEW row. Score-axis name on result donut. Disambiguates from 탐구 inquiry-axis trait. NEW row. NEW row. JA team to confirm. NEW row. zh-CN team to confirm.
+score_axis_authority,score,판결 (점수),Authority,権威,权威,Result score axis label.,needs-rework,false,NEW row. CRITICAL — same KR character 판결 collides with glossary verdict. Disambiguates score-axis from gameplay verdict. NEW row. NEW row. JA team to confirm. Alt 判決軸. NEW row. zh-CN team to confirm.
+score_axis_wisdom,score,해결 (점수),Wisdom,知恵,智慧,Result score axis label.,needs-rework,false,NEW row. Distinct from gameplay solution (해결안). NEW row.
+demand_answer,action,즉답 요구,Demand Answer,即答要求,即答要求,Localization glossary term.,draft,false,NEW row. Used 5× as recurring action label. NEW row.
+separate_interrogation,action,분리 심문,Separate Interrogation,個別尋問,分别讯问,Localization glossary term.,draft,false,NEW row.
+confidential_protection,action,비공개 보호,Confidential Protection,非公開保護,保密保护,Localization glossary term.,draft,false,NEW row.
+objection,action,이의 제기,Objection,異議申立,异议,Localization glossary term.,draft,false,NEW row. UI noun (button label). Distinct from 이의 있습니다 (in-character spoken bark). NEW row. NEW row. PROJECT_CONTROL_TOWER decision 7 confirmed: UI noun 异议. In-character spoken bark uses 反对！via separate dialogue key. NOT 我提出异议 for compact UI.
+objection_bark,action,이의 있습니다,Objection!,異議あり！,反对！,Localization glossary term.,draft,false,NEW row. PROJECT_CONTROL_TOWER decision 7: separate row for in-character speech. Routed through dialogue channel. NEW row. In-character spoken line. NEW row. NEW row. PROJECT_CONTROL_TOWER decision 7 confirmed.
+truth_progress,system,진실파악 단계,Truth Progress,真相把握段階,真相进度,Localization glossary term.,draft,false,NEW row.
+combination,system,조합,Combination,組合せ,组合,Localization glossary term.,draft,false,NEW row.
+trust_state_high,trust,신뢰함,Trusting,信頼,信任,Trust state label.,needs-rework,false,NEW row.
+trust_state_mid,trust,경계함,Cautious,警戒,警觉,Trust state label.,needs-rework,false,NEW row.
+trust_state_low,trust,의심함,Suspicious,疑念,怀疑,Trust state label.,needs-rework,false,NEW row.
+rarity_common,reward,일반,Common,コモン,普通,Reward rarity label.,needs-rework,false,NEW row. NEW row. JA team to confirm — 一般 alt.
+rarity_rare,reward,희귀,Rare,レア,稀有,Reward rarity label.,draft,false,NEW row.
+rarity_epic,reward,영웅,Epic,エピック,史诗,Reward rarity label.,draft,false,NEW row. KR literal 영웅=hero; CN gaming convention prefers 史诗. NEW row.
+rarity_legendary,reward,전설,Legendary,レジェンダリー,传说,Reward rarity label.,draft,false,NEW row.
+emotion_defensive,emotion,경계,Defensive,警戒,防备,Character emotion label.,draft,false,NEW row. Thread-5 recheck: Codex value adopted for emotion meter state.
+emotion_confident,emotion,자신감,Confident,自信,自信,Character emotion label.,draft,false,NEW row.
+emotion_shaken,emotion,동요,Shaken,動揺,动摇,Character emotion label.,draft,false,NEW row.
+emotion_angry,emotion,격앙,Agitated,激昂,激动,Character emotion label.,draft,false,NEW row. Thread-5 recheck: Codex value adopted for emotion meter state; native review may refine intensity.
+emotion_resigned,emotion,체념,Resigned,諦観,认命,Character emotion label.,needs-rework,false,NEW row. NEW row. Alt 諦め. NEW row. PROJECT_CONTROL_TOWER decision 8 confirmed: use 认命 (fatalistic acceptance) NOT 放弃 (give up). 默许 only for tacit-permission contexts which do not apply here.
+lie_state_s0,state,방어,Defensive,防御,防备,Lie pressure stage label.,draft,false,NEW row. Thread-5 recheck: Codex adjective/state scheme adopted.
+lie_state_s1,state,동요,Shaken,動揺,动摇,Lie pressure stage label.,needs-rework,false,NEW row. NOTE — same KR as emotion_shaken; verify intentional. NEW row. Thread-5 recheck: Codex adjective/state scheme adopted; KO overlap with emotion_shaken remains intentional.
+lie_state_s2,state,변명,Excusing,弁明,辩解,Lie pressure stage label.,draft,false,NEW row. Thread-5 recheck: Codex adjective/state scheme adopted.
+lie_state_s3,state,궁지,Cornered,窮地,被逼入角,Lie pressure stage label.,draft,false,NEW row. Thread-5 recheck: Codex adjective/state scheme adopted.
+lie_state_s4,state,한계,At Limit,限界,到达极限,Lie pressure stage label.,draft,false,NEW row. Thread-5 recheck: Codex source adopted over collapse wording.
+lie_state_s5,state,고백,Confessed,告白,承认,Lie pressure stage label.,needs-rework,false,NEW row. Thread-5 recheck: Codex source adopted; JA 告白 and zh-CN 承认 require native/legal nuance review before lock.
+fragment_reasoning,progression,논리 조각,Reasoning Fragment,論理の欠片,逻辑碎片,Judge progression fragment label.,draft,false,NEW row.
+fragment_inquiry,progression,탐구 조각,Inquiry Fragment,探究の欠片,探究碎片,Judge progression fragment label.,draft,false,NEW row.
+fragment_empathy,progression,공감 조각,Empathy Fragment,共感の欠片,共情碎片,Judge progression fragment label.,draft,false,NEW row.
+fragment_severity,progression,엄정 조각,Severity Fragment,厳正の欠片,严正碎片,Judge progression fragment label.,needs-rework,false,NEW row. PROJECT_CONTROL_TOWER 엄격↔엄정 KR cleanup pending — verify final canonical. NEW row.
+fragment_deliberation,progression,심사 조각,Deliberation Fragment,審議の欠片,审议碎片,Judge progression fragment label.,draft,false,NEW row.
+fragment_leniency,progression,관용 조각,Leniency Fragment,寛容の欠片,宽容碎片,Judge progression fragment label.,draft,false,NEW row.
+fragment_jurisprudence,progression,법리 조각,Jurisprudence Fragment,法理の欠片,法理碎片,Judge progression fragment label.,draft,false,NEW row.
+fragment_balance,progression,균형 조각,Balance Fragment,均衡の欠片,均衡碎片,Judge progression fragment label.,draft,false,NEW row.
+fragment_reconciliation,progression,화해 조각,Reconciliation Fragment,和解の欠片,和解碎片,Judge progression fragment label.,draft,false,NEW row. PROJECT_CONTROL_TOWER decision 4 confirmed: 화해 = reconciliation/restored relationship. Distinct from 봉합 (axis_resolution_pole below). NEW row.
+axis_resolution_pole,progression,봉합,Closure,収拾,弥合,Judge trait axis pole label.,needs-rework,false,"NEW row. PROJECT_CONTROL_TOWER decision 4 confirmed: 봉합 = patching over / containment / closing a conflict without true reconciliation. Resolution-axis right pole. Distinct from 화해 (fragment_reconciliation). NEW row. Recommended EN translation conveying 'patching over / closing without reconciliation'. Frees Reconcile/Reconciliation for 화해. Alt: Containment / Patch Over. NEW row. Recommended JA. Alt: 鎮静 / 弥縫. NEW row. Recommended zh-CN — literally 'stitching the gap', semantically 'patching over'. Alt: 平息."
+axis_principle_pole,progression,원칙,Principle,原則,原则,Judge trait axis pole label.,draft,false,NEW row. Resolution-axis left pole (paired with 봉합). NEW row. Already in EN UI as judgeDesk.axes.principle. NEW row.
+axis_logic_pole,progression,논리,Logic,論理,逻辑,Judge trait axis pole label.,draft,false,NEW row. Inquiry-axis left pole. NEW row.
+axis_intuition_pole,progression,직관,Intuition,直感,直觉,Judge trait axis pole label.,draft,false,NEW row. Inquiry-axis right pole. NEW row.
+axis_severity_pole,progression,엄격,Strict,厳格,严格,Judge trait axis pole label.,draft,false,"NEW row. Judgment-axis left pole. KR cleanup: prefer 엄격 over 엄정 for axis-pole label; 엄정 reserved for fragment_severity. NEW row. NEW row. Thread-03 P2 noted KR 엄격↔엄정 collapse to 严正 — after KR cleanup, axis pole becomes 严格."
+axis_leniency_pole,progression,관용,Lenient,寛容,宽容,Judge trait axis pole label.,draft,false,NEW row. Judgment-axis right pole. NEW row.
+relationship_spouse,relationship,부부,Spouse,夫婦,夫妻,Relationship/session category label.,draft,false,NEW row.
+relationship_family,relationship,가족,Family,家族,家庭,Relationship/session category label.,draft,false,NEW row.
+relationship_friend,relationship,친구,Friend,友人,朋友,Relationship/session category label.,draft,false,NEW row.
+relationship_neighbor,relationship,이웃,Neighbor,隣人,邻居,Relationship/session category label.,draft,false,NEW row.
+relationship_partnership,relationship,동업,Business Partner,共同事業,合伙,Relationship/session category label.,draft,false,NEW row.
+relationship_workplace,relationship,직장,Workplace,職場,职场,Relationship/session category label.,draft,false,NEW row.
+relationship_tenant_landlord,relationship,세입자-집주인,Tenant–Landlord,賃借人・家主,租户·房东,Relationship/session category label.,draft,false,NEW row.
+relationship_online,relationship,온라인,Online,オンライン,网络,Relationship/session category label.,draft,false,NEW row.
+relationship_medical_education,relationship,의료·교육,Medical / Education,医療・教育,医疗·教育,Relationship/session category label.,draft,false,NEW row.
+relationship_public_system,relationship,공공·제도,Public / Civic,公共・制度,公共·制度,Relationship/session category label.,draft,false,NEW row.
+records,case,기록,Records,記録,记录,Localization glossary term.,draft,false,NEW row. Compact records label (alias of record_summary). NEW row.
+notes,case,메모,Notes,メモ,笔记,Localization glossary term.,draft,false,NEW row. PROJECT_CONTROL_TOWER decision 3: dossier replacement for note-style surfaces. NEW row.
+verdict_step_fact_finding,ui,01 쟁점 판단,Fact Finding,争点判断,争议判断,Verdict flow step label distinct from generic fact/dispute nouns.,draft,false,Thread-5 recheck: disambiguator row for pc.verdict.step.fact.
+verdict_step_resolution,ui,03 해결안,Resolution,解決案,解决方案,Verdict flow step label distinct from generic solution option copy.,draft,false,Thread-5 recheck: disambiguator row for pc.verdict.step.solution.
+verdict_step_decision,ui,04 판결문,Decision,判決文,判决书,Verdict flow confirmation step label distinct from verdict phase/outcome.,draft,false,Thread-5 recheck: disambiguator row for pc.verdict.step.confirm.

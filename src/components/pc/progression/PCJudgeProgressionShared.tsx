@@ -1,6 +1,7 @@
 import { useState, type CSSProperties } from 'react'
 import { PERK_TABLE, type PerkDefinition } from '../../../engine/judgePerks'
 import type { FragmentId, TraitId } from '../../../engine/judgeProgressionEngine'
+import { translate } from '../../../i18n'
 
 export const TRAIT_ORDER: TraitId[] = [
   'logical',
@@ -94,7 +95,7 @@ export function formatPerkUnlockCondition(traitId: TraitId, requiredLevel: numbe
 }
 
 export function formatPerkRequirementCopy(traitId: TraitId, requiredLevel: number) {
-  return `${formatPerkUnlockCondition(traitId, requiredLevel)} 필요`
+  return translate('pc.perk.required', { name: formatPerkUnlockCondition(traitId, requiredLevel) })
 }
 
 interface FragmentIconProps {

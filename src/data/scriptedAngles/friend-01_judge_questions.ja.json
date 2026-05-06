@@ -1,0 +1,3368 @@
+{
+  "schemaVersion": 1,
+  "locale": "ja",
+  "caseId": "friend-01",
+  "overlayKind": "judge_questions",
+  "judgeQuestions": [
+    {
+      "disputeId": "d-1",
+      "questionType": "fact_pursuit",
+      "targetParty": "a",
+      "angleId": "contact_timeline",
+      "variants": [
+        {
+          "id": "judgeq-d-1-fact_pursuit-a-contact_timeline-v1",
+          "text": "ソン・ダウンさん、九日間の発信回数と時間帯をどの記録で確認したかについて落ち着いて言葉を選んでください。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-a-contact_timeline-v2",
+          "text": "その記録のうち本人が直接見たものと人づてに聞いたものの違いを結論を急がず述べてください。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-a-contact_timeline-v3",
+          "text": "不在着信十一件という数値と本人がトーク部屋に書き込んだ表現の差についてその場の感覚のまま語ってください。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-a-contact_timeline-v4",
+          "text": "その時系列を最初に目にした人物と本人がそれを受け取った時点を裁判官の前で言葉にしてください。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-a-contact_timeline-v5",
+          "text": "九日間の発信時間帯のうち本人がまだ確認していない区間と時系列に沿ってお答えください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "fact_pursuit",
+      "targetParty": "b",
+      "angleId": "contact_timeline",
+      "variants": [
+        {
+          "id": "judgeq-d-1-fact_pursuit-b-contact_timeline-v1",
+          "text": "チェ・スミンさん、九日間に婚約者へ発信した時刻と回数を一つずつ整理してお答えください。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-b-contact_timeline-v2",
+          "text": "そのうち通話に至った件と不在着信に終わった件の区分について区別して説明してください。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-b-contact_timeline-v3",
+          "text": "トーク部屋に流れた回数と本人の発信記録が食い違う箇所を順を追って明らかにしてください。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-b-contact_timeline-v4",
+          "text": "発信直後に相手から返って来た反応と次の連絡までの間隔を確認できる範囲でお話しください。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-b-contact_timeline-v5",
+          "text": "九日間のうちまだ記録に出ていない発信が残っているかを時点ごとに区切ってお答えください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "motive_search",
+      "targetParty": "a",
+      "angleId": "contact_timeline",
+      "variants": [
+        {
+          "id": "judgeq-d-1-motive_search-a-contact_timeline-v1",
+          "text": "ソン・ダウンさん、目的を確かめる前に「執着」と決めつけた本人の動機を確認できる範囲でお話しください。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-a-contact_timeline-v2",
+          "text": "その判断を急がせた感情がどこから生まれたか、内面の流れを時点ごとに区切ってお答えください。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-a-contact_timeline-v3",
+          "text": "直接尋ねるよりも記録を集めるほうを選んだ本人の理由について落ち着いて言葉を選んでください。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-a-contact_timeline-v4",
+          "text": "結論を先に置いた瞬間にどの言葉が抜け落ちていたかを結論を急がず述べてください。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-a-contact_timeline-v5",
+          "text": "その断定にどの記録が一番強く効いたかという経路についてその場の感覚のまま語ってください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "motive_search",
+      "targetParty": "b",
+      "angleId": "contact_timeline",
+      "variants": [
+        {
+          "id": "judgeq-d-1-motive_search-b-contact_timeline-v1",
+          "text": "チェ・スミンさん、その期間に発信を続けた本人の動機を裁判官の前で言葉にしてください。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-b-contact_timeline-v2",
+          "text": "一度で済ませず重ねて連絡した内側の判断と時系列に沿ってお答えください。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-b-contact_timeline-v3",
+          "text": "ソン・ダウンさんを通さず連絡先を選んだ理由を一つずつ整理してお答えください。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-b-contact_timeline-v4",
+          "text": "やめるべき場面で続行を選んだ判断の流れについて区別して説明してください。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-b-contact_timeline-v5",
+          "text": "通話が成立しなかったあと次を急いだ気持ちを順を追って明らかにしてください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "empathy_approach",
+      "targetParty": "a",
+      "angleId": "contact_timeline",
+      "variants": [
+        {
+          "id": "judgeq-d-1-empathy_approach-a-contact_timeline-v1",
+          "text": "ソン・ダウンさん、結婚直前の九日間で本人を支配した不安についてその場の感覚のまま語ってください。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-a-contact_timeline-v2",
+          "text": "回数だけが目に残った夜、本人が一番恐れていたものを裁判官の前で言葉にしてください。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-a-contact_timeline-v3",
+          "text": "記録を見るたび強くなっていった感覚をそのまま言葉にした流れと時系列に沿ってお答えください。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-a-contact_timeline-v4",
+          "text": "その時間表を見たとき本人の中で最初に崩れた前提を一つずつ整理してお答えください。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-a-contact_timeline-v5",
+          "text": "断定までいかなかった瞬間が一度でもあったか、その揺らぎについて区別して説明してください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "empathy_approach",
+      "targetParty": "b",
+      "angleId": "contact_timeline",
+      "variants": [
+        {
+          "id": "judgeq-d-1-empathy_approach-b-contact_timeline-v1",
+          "text": "チェ・スミンさん、九日間の発信を重ねた本人の中の重さを順を追って明らかにしてください。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-b-contact_timeline-v2",
+          "text": "送るたび深くなった躊躇とそれでも続けた感覚を確認できる範囲でお話しください。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-b-contact_timeline-v3",
+          "text": "結論ではなくその夜々の手触りで残っているものを時点ごとに区切ってお答えください。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-b-contact_timeline-v4",
+          "text": "発信を重ねた間に揺らいだ自分の輪郭について落ち着いて言葉を選んでください。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-b-contact_timeline-v5",
+          "text": "振り返って一番こたえている瞬間を結論を急がず述べてください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "fact_pursuit",
+      "targetParty": "a",
+      "angleId": "message_intent",
+      "variants": [
+        {
+          "id": "judgeq-d-1-fact_pursuit-a-message_intent-v1",
+          "text": "ソン・ダウンさん、その文面の本文と本人の解釈が分かれる箇所について区別して説明してください。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-a-message_intent-v2",
+          "text": "本人が直接読んだ原文と婚約者から伝え聞いた要約の区別を順を追って明らかにしてください。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-a-message_intent-v3",
+          "text": "チェ・スミンさんの文面に残っていた言葉のうち本人が引用した部分を確認できる範囲でお話しください。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-a-message_intent-v4",
+          "text": "トーク部屋で本人が要約した表現と原文の差を時点ごとに区切ってお答えください。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-a-message_intent-v5",
+          "text": "原文のうちまだ本人が確認していない一節があるかについて落ち着いて言葉を選んでください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "fact_pursuit",
+      "targetParty": "b",
+      "angleId": "message_intent",
+      "variants": [
+        {
+          "id": "judgeq-d-1-fact_pursuit-b-message_intent-v1",
+          "text": "チェ・スミンさん、その文面に「ぜひ伝えたいこと」とだけ残した意図を結論を急がず述べてください。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-b-message_intent-v2",
+          "text": "別の表現を選べた中であえて短く急いだ語調を選んだ理由についてその場の感覚のまま語ってください。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-b-message_intent-v3",
+          "text": "文面の中で本人が意図的に省いた語句があれば何を省いたかを裁判官の前で言葉にしてください。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-b-message_intent-v4",
+          "text": "送る時点で最も恐れていた結果が何だったかと時系列に沿ってお答えください。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-b-message_intent-v5",
+          "text": "ソン・ダウンさん側にどう読まれるか想像しつつ送った理由を一つずつ整理してお答えください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "motive_search",
+      "targetParty": "a",
+      "angleId": "message_intent",
+      "variants": [
+        {
+          "id": "judgeq-d-1-motive_search-a-message_intent-v1",
+          "text": "ソン・ダウンさん、原文確認より結論が先に来た本人の動機と時系列に沿ってお答えください。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-a-message_intent-v2",
+          "text": "読み取りを「告白」と固めた瞬間、内側で動いた重みを一つずつ整理してお答えください。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-a-message_intent-v3",
+          "text": "別の読み取りを置く余地を残さなかった理由について区別して説明してください。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-a-message_intent-v4",
+          "text": "原文を尋ねる手間より公開を選んだ判断を順を追って明らかにしてください。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-a-message_intent-v5",
+          "text": "結論を支えた感情がどの言葉に最も強く反応したかを確認できる範囲でお話しください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "motive_search",
+      "targetParty": "b",
+      "angleId": "message_intent",
+      "variants": [
+        {
+          "id": "judgeq-d-1-motive_search-b-message_intent-v1",
+          "text": "チェ・スミンさん、最も伝えたかった核心と表に出した語の差を時点ごとに区切ってお答えください。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-b-message_intent-v2",
+          "text": "直球に書けた可能性とあえて婉曲を選んだ判断について落ち着いて言葉を選んでください。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-b-message_intent-v3",
+          "text": "文面で隠した部分があるなら何を隠そうとしたかを結論を急がず述べてください。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-b-message_intent-v4",
+          "text": "ソン・ダウンさん本人ではなく婚約者に向けた選択についてその場の感覚のまま語ってください。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-b-message_intent-v5",
+          "text": "その選択を急がせた事情の輪郭を裁判官の前で言葉にしてください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "empathy_approach",
+      "targetParty": "a",
+      "angleId": "message_intent",
+      "variants": [
+        {
+          "id": "judgeq-d-1-empathy_approach-a-message_intent-v1",
+          "text": "ソン・ダウンさん、その文面を読んで身体に来た反応を確認できる範囲でお話しください。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-a-message_intent-v2",
+          "text": "読み取りが揺れた瞬間とそれでも止められなかった流れを時点ごとに区切ってお答えください。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-a-message_intent-v3",
+          "text": "友人の言葉だと信じたい気持ちと疑いの拮抗について落ち着いて言葉を選んでください。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-a-message_intent-v4",
+          "text": "結論より先に来た恐れを、結論を抜きにして語ったものを結論を急がず述べてください。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-a-message_intent-v5",
+          "text": "一度だけでも別の読み取りに触れた瞬間があったかについてその場の感覚のまま語ってください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "empathy_approach",
+      "targetParty": "b",
+      "angleId": "message_intent",
+      "variants": [
+        {
+          "id": "judgeq-d-1-empathy_approach-b-message_intent-v1",
+          "text": "チェ・スミンさん、その短い文面に詰め込んだ重さを裁判官の前で言葉にしてください。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-b-message_intent-v2",
+          "text": "送るボタンを押すまで本人を支えた覚悟と時系列に沿ってお答えください。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-b-message_intent-v3",
+          "text": "結論に至れず言葉が短くなった事情を一つずつ整理してお答えください。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-b-message_intent-v4",
+          "text": "言いたかったが書けなかった一行について区別して説明してください。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-b-message_intent-v5",
+          "text": "振り返ってもう一度書き直せるなら手をつけたい箇所を順を追って明らかにしてください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "fact_pursuit",
+      "targetParty": "a",
+      "angleId": "bypass_da_eun",
+      "variants": [
+        {
+          "id": "judgeq-d-1-fact_pursuit-a-bypass_da_eun-v1",
+          "text": "ソン・ダウンさん、友人が本人を経由せず婚約者に連絡した経路を時点ごとに区切ってお答えください。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-a-bypass_da_eun-v2",
+          "text": "本人を通さなかった事実をどの段階で何の記録から把握したかについて落ち着いて言葉を選んでください。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-a-bypass_da_eun-v3",
+          "text": "その経路を本人が知った時点と婚約者側からの説明の前後を結論を急がず述べてください。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-a-bypass_da_eun-v4",
+          "text": "チェ・スミンさんから本人への連絡が同時期にあったか、なかったかについてその場の感覚のまま語ってください。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-a-bypass_da_eun-v5",
+          "text": "本人の名前を経由しなかった具体的な発信の例を裁判官の前で言葉にしてください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "fact_pursuit",
+      "targetParty": "b",
+      "angleId": "bypass_da_eun",
+      "variants": [
+        {
+          "id": "judgeq-d-1-fact_pursuit-b-bypass_da_eun-v1",
+          "text": "チェ・スミンさん、ソン・ダウンさんに直接ではなく婚約者に連絡した順序と時系列に沿ってお答えください。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-b-bypass_da_eun-v2",
+          "text": "本人がソン・ダウンさんを通さなかった具体的な日付と回数を一つずつ整理してお答えください。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-b-bypass_da_eun-v3",
+          "text": "迂回した連絡のうち、後で本人からソン・ダウンさんに伝えたものがあるかについて区別して説明してください。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-b-bypass_da_eun-v4",
+          "text": "迂回経路を選んだ最初の発信時刻と最後の発信時刻を順を追って明らかにしてください。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-b-bypass_da_eun-v5",
+          "text": "記録に残っていない迂回連絡が残っているかを確認できる範囲でお話しください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "motive_search",
+      "targetParty": "a",
+      "angleId": "bypass_da_eun",
+      "variants": [
+        {
+          "id": "judgeq-d-1-motive_search-a-bypass_da_eun-v1",
+          "text": "ソン・ダウンさん、なぜ「迂回」と即断したか、内側の経路を順を追って明らかにしてください。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-a-bypass_da_eun-v2",
+          "text": "相手の意図を直接尋ねず結論を先に置いた本人の事情を確認できる範囲でお話しください。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-a-bypass_da_eun-v3",
+          "text": "迂回された傷を裏切りに置き換えた判断を時点ごとに区切ってお答えください。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-a-bypass_da_eun-v4",
+          "text": "別の読み取りが浮かばなかった瞬間の根拠について落ち着いて言葉を選んでください。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-a-bypass_da_eun-v5",
+          "text": "その断定が結婚直前の不安とどうつながっていたかを結論を急がず述べてください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "motive_search",
+      "targetParty": "b",
+      "angleId": "bypass_da_eun",
+      "variants": [
+        {
+          "id": "judgeq-d-1-motive_search-b-bypass_da_eun-v1",
+          "text": "チェ・スミンさん、ソン・ダウンさんを飛ばした本人の動機についてその場の感覚のまま語ってください。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-b-bypass_da_eun-v2",
+          "text": "直接話すことを避けた具体的な事情の流れを裁判官の前で言葉にしてください。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-b-bypass_da_eun-v3",
+          "text": "婚約者を媒介に選んだ判断の根拠と時系列に沿ってお答えください。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-b-bypass_da_eun-v4",
+          "text": "直接連絡が難しいと感じた境目を一つずつ整理してお答えください。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-b-bypass_da_eun-v5",
+          "text": "その判断を急がせた背景の輪郭について区別して説明してください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "empathy_approach",
+      "targetParty": "a",
+      "angleId": "bypass_da_eun",
+      "variants": [
+        {
+          "id": "judgeq-d-1-empathy_approach-a-bypass_da_eun-v1",
+          "text": "ソン・ダウンさん、本人が外された感覚そのものを結論を急がず述べてください。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-a-bypass_da_eun-v2",
+          "text": "迂回されたという事実が本人を最初に揺らした瞬間についてその場の感覚のまま語ってください。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-a-bypass_da_eun-v3",
+          "text": "その揺らぎが結論を急がせた流れを裁判官の前で言葉にしてください。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-a-bypass_da_eun-v4",
+          "text": "友人の声が届かなくなったと感じた境目と時系列に沿ってお答えください。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-a-bypass_da_eun-v5",
+          "text": "結論を保留できた可能性が一度でもあったかを一つずつ整理してお答えください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "empathy_approach",
+      "targetParty": "b",
+      "angleId": "bypass_da_eun",
+      "variants": [
+        {
+          "id": "judgeq-d-1-empathy_approach-b-bypass_da_eun-v1",
+          "text": "チェ・スミンさん、迂回を選ぶしかなかった本人の事情について区別して説明してください。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-b-bypass_da_eun-v2",
+          "text": "友人の名前を呼べなかった瞬間の感覚を順を追って明らかにしてください。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-b-bypass_da_eun-v3",
+          "text": "直接言えば壊れると感じた何かの重さを確認できる範囲でお話しください。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-b-bypass_da_eun-v4",
+          "text": "結局本人が悪役の側に残った事実への気持ちを時点ごとに区切ってお答えください。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-b-bypass_da_eun-v5",
+          "text": "振り返って言えるなら言いたかった一言について落ち着いて言葉を選んでください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "fact_pursuit",
+      "targetParty": "a",
+      "angleId": "unanswered_escalation",
+      "variants": [
+        {
+          "id": "judgeq-d-1-fact_pursuit-a-unanswered_escalation-v1",
+          "text": "ソン・ダウンさん、応答がなかった期間に本人が見ていた発信記録を一つずつ整理してお答えください。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-a-unanswered_escalation-v2",
+          "text": "応答ゼロの状態が続く中で本人が新しく確認した事実について区別して説明してください。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-a-unanswered_escalation-v3",
+          "text": "応答がない事実を本人が「執着」と読み替えた時点を順を追って明らかにしてください。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-a-unanswered_escalation-v4",
+          "text": "応答なしの期間に本人が動いた行動の順序を確認できる範囲でお話しください。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-a-unanswered_escalation-v5",
+          "text": "応答がなかった期間にまだ確認できていない区間を時点ごとに区切ってお答えください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "fact_pursuit",
+      "targetParty": "b",
+      "angleId": "unanswered_escalation",
+      "variants": [
+        {
+          "id": "judgeq-d-1-fact_pursuit-b-unanswered_escalation-v1",
+          "text": "チェ・スミンさん、応答が返らない中でも発信を続けた経過について落ち着いて言葉を選んでください。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-b-unanswered_escalation-v2",
+          "text": "応答ゼロの間に本人が選んだ連絡手段の変化を結論を急がず述べてください。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-b-unanswered_escalation-v3",
+          "text": "通話・文字・別アプリなどの切替の順序についてその場の感覚のまま語ってください。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-b-unanswered_escalation-v4",
+          "text": "応答が無くても止めなかった発信の最後の時刻を裁判官の前で言葉にしてください。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-b-unanswered_escalation-v5",
+          "text": "応答ゼロの期間に止めなかった理由を支えた事実と時系列に沿ってお答えください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "motive_search",
+      "targetParty": "a",
+      "angleId": "unanswered_escalation",
+      "variants": [
+        {
+          "id": "judgeq-d-1-motive_search-a-unanswered_escalation-v1",
+          "text": "ソン・ダウンさん、応答ゼロを「執着」と決めつけた本人の動機を裁判官の前で言葉にしてください。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-a-unanswered_escalation-v2",
+          "text": "別の解釈を置く余地を奪ったのが何だったかと時系列に沿ってお答えください。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-a-unanswered_escalation-v3",
+          "text": "応答しないでほしいと願った気持ちと判断の関係を一つずつ整理してお答えください。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-a-unanswered_escalation-v4",
+          "text": "応答が来ないほど結論を強くした流れについて区別して説明してください。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-a-unanswered_escalation-v5",
+          "text": "その断定の前にもう一度尋ねる選択肢を捨てた理由を順を追って明らかにしてください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "motive_search",
+      "targetParty": "b",
+      "angleId": "unanswered_escalation",
+      "variants": [
+        {
+          "id": "judgeq-d-1-motive_search-b-unanswered_escalation-v1",
+          "text": "チェ・スミンさん、応答が無いのに連絡を重ねた本人の動機を確認できる範囲でお話しください。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-b-unanswered_escalation-v2",
+          "text": "伝える必要があると感じた理由の重さを時点ごとに区切ってお答えください。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-b-unanswered_escalation-v3",
+          "text": "反応がなくても続けた判断の根拠について落ち着いて言葉を選んでください。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-b-unanswered_escalation-v4",
+          "text": "別の経路を選ばなかった事情を結論を急がず述べてください。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-b-unanswered_escalation-v5",
+          "text": "途中で止められなかった内側の事情についてその場の感覚のまま語ってください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "empathy_approach",
+      "targetParty": "a",
+      "angleId": "unanswered_escalation",
+      "variants": [
+        {
+          "id": "judgeq-d-1-empathy_approach-a-unanswered_escalation-v1",
+          "text": "ソン・ダウンさん、応答が返ってこなかった夜々の重さを順を追って明らかにしてください。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-a-unanswered_escalation-v2",
+          "text": "沈黙が結論として固まっていった本人の感覚を確認できる範囲でお話しください。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-a-unanswered_escalation-v3",
+          "text": "応答を待つ間に内側で大きくなった恐れを時点ごとに区切ってお答えください。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-a-unanswered_escalation-v4",
+          "text": "応答がないままに友人の輪郭が遠のいた瞬間について落ち着いて言葉を選んでください。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-a-unanswered_escalation-v5",
+          "text": "結論を保留できた最後のタイミングを結論を急がず述べてください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "empathy_approach",
+      "targetParty": "b",
+      "angleId": "unanswered_escalation",
+      "variants": [
+        {
+          "id": "judgeq-d-1-empathy_approach-b-unanswered_escalation-v1",
+          "text": "チェ・スミンさん、応答が来ないまま重ねた連絡の重さについてその場の感覚のまま語ってください。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-b-unanswered_escalation-v2",
+          "text": "無視されることが当然になっていった感覚を裁判官の前で言葉にしてください。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-b-unanswered_escalation-v3",
+          "text": "言葉が届かない手応えで残っているものと時系列に沿ってお答えください。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-b-unanswered_escalation-v4",
+          "text": "本人が悪役に固められていく実感を一つずつ整理してお答えください。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-b-unanswered_escalation-v5",
+          "text": "振り返って手応えに気づいた瞬間があったかについて区別して説明してください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "fact_pursuit",
+      "targetParty": "a",
+      "angleId": "message_sequence",
+      "variants": [
+        {
+          "id": "judgeq-d-2-fact_pursuit-a-message_sequence-v1",
+          "text": "ソン・ダウンさん、婚約者とチェ・スミンさん間のやり取りの最初と最後を結論を急がず述べてください。"
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-a-message_sequence-v2",
+          "text": "本人が直接見た画面と婚約者から要約された内容の境目についてその場の感覚のまま語ってください。"
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-a-message_sequence-v3",
+          "text": "時刻順に整理したやり取りのうち本人が引用した発言を裁判官の前で言葉にしてください。"
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-a-message_sequence-v4",
+          "text": "やり取りの順序の中で本人が確認できていない区間と時系列に沿ってお答えください。"
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-a-message_sequence-v5",
+          "text": "一連のメッセージの最初の発信元についての記録を一つずつ整理してお答えください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "fact_pursuit",
+      "targetParty": "b",
+      "angleId": "message_sequence",
+      "variants": [
+        {
+          "id": "judgeq-d-2-fact_pursuit-b-message_sequence-v1",
+          "text": "チェ・スミンさん、婚約者から受けた最初のメッセージの時刻と本人の最初の応答時刻について区別して説明してください。"
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-b-message_sequence-v2",
+          "text": "相手の発言と本人の応答が時刻順にどう並ぶかを順を追って明らかにしてください。"
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-b-message_sequence-v3",
+          "text": "本人が応答しなかった一区間とその理由となる事実を確認できる範囲でお話しください。"
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-b-message_sequence-v4",
+          "text": "本人が応答した文章のうち最も短いものと長いものを時点ごとに区切ってお答えください。"
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-b-message_sequence-v5",
+          "text": "本人の発言と相手の発言の本数が一致しない区間について落ち着いて言葉を選んでください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "motive_search",
+      "targetParty": "a",
+      "angleId": "message_sequence",
+      "variants": [
+        {
+          "id": "judgeq-d-2-motive_search-a-message_sequence-v1",
+          "text": "ソン・ダウンさん、メッセージの始点を確認しないまま結論を固めた動機を時点ごとに区切ってお答えください。"
+        },
+        {
+          "id": "judgeq-d-2-motive_search-a-message_sequence-v2",
+          "text": "原文を求める手間より結論を選んだ理由について落ち着いて言葉を選んでください。"
+        },
+        {
+          "id": "judgeq-d-2-motive_search-a-message_sequence-v3",
+          "text": "婚約者の説明を先に受け入れた事情を結論を急がず述べてください。"
+        },
+        {
+          "id": "judgeq-d-2-motive_search-a-message_sequence-v4",
+          "text": "読み取りを急がせた感情の流れについてその場の感覚のまま語ってください。"
+        },
+        {
+          "id": "judgeq-d-2-motive_search-a-message_sequence-v5",
+          "text": "別の解釈を置けなかった内側の根拠を裁判官の前で言葉にしてください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "motive_search",
+      "targetParty": "b",
+      "angleId": "message_sequence",
+      "variants": [
+        {
+          "id": "judgeq-d-2-motive_search-b-message_sequence-v1",
+          "text": "チェ・スミンさん、最初のメッセージにすぐ反応せずに置いた本人の判断と時系列に沿ってお答えください。"
+        },
+        {
+          "id": "judgeq-d-2-motive_search-b-message_sequence-v2",
+          "text": "対応を遅らせた事情の流れを一つずつ整理してお答えください。"
+        },
+        {
+          "id": "judgeq-d-2-motive_search-b-message_sequence-v3",
+          "text": "ソン・ダウンさんに直ちに見せなかった選択の根拠について区別して説明してください。"
+        },
+        {
+          "id": "judgeq-d-2-motive_search-b-message_sequence-v4",
+          "text": "やり取りの長さを最低限に抑えた理由を順を追って明らかにしてください。"
+        },
+        {
+          "id": "judgeq-d-2-motive_search-b-message_sequence-v5",
+          "text": "応答する語の選び方を支えた事情を確認できる範囲でお話しください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "empathy_approach",
+      "targetParty": "a",
+      "angleId": "message_sequence",
+      "variants": [
+        {
+          "id": "judgeq-d-2-empathy_approach-a-message_sequence-v1",
+          "text": "ソン・ダウンさん、結婚直前のその時間に本人を支配した不安を裁判官の前で言葉にしてください。"
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-a-message_sequence-v2",
+          "text": "原文を読み切れなかった本人の事情と時系列に沿ってお答えください。"
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-a-message_sequence-v3",
+          "text": "やり取りの順序がぼやけたまま結論が来た流れを一つずつ整理してお答えください。"
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-a-message_sequence-v4",
+          "text": "画面を見るたび強くなった揺らぎについて区別して説明してください。"
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-a-message_sequence-v5",
+          "text": "結論より先に来た傷をそのまま語った輪郭を順を追って明らかにしてください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "empathy_approach",
+      "targetParty": "b",
+      "angleId": "message_sequence",
+      "variants": [
+        {
+          "id": "judgeq-d-2-empathy_approach-b-message_sequence-v1",
+          "text": "チェ・スミンさん、友人の婚約者とのやり取りを言葉にする重さを確認できる範囲でお話しください。"
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-b-message_sequence-v2",
+          "text": "最初のメッセージを受け取った瞬間の姿勢を時点ごとに区切ってお答えください。"
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-b-message_sequence-v3",
+          "text": "応答までの空白に流れた本人の動揺について落ち着いて言葉を選んでください。"
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-b-message_sequence-v4",
+          "text": "応答した語の中で一番後ろめたく残るものを結論を急がず述べてください。"
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-b-message_sequence-v5",
+          "text": "結論まで届かない揺らぎをそのまま語った形についてその場の感覚のまま語ってください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "fact_pursuit",
+      "targetParty": "a",
+      "angleId": "boundary_response",
+      "variants": [
+        {
+          "id": "judgeq-d-2-fact_pursuit-a-boundary_response-v1",
+          "text": "ソン・ダウンさん、チェ・スミンさんの返信のうち本人が直接見た文章を確認できる範囲でお話しください。"
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-a-boundary_response-v2",
+          "text": "本人が引用した語と原文の差を時点ごとに区切ってお答えください。"
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-a-boundary_response-v3",
+          "text": "会話・面会の提案に対する応答の表記について落ち着いて言葉を選んでください。"
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-a-boundary_response-v4",
+          "text": "応答に強い拒絶語があったかなかったかの確認を結論を急がず述べてください。"
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-a-boundary_response-v5",
+          "text": "原文のうち本人がまだ目を通していない区間についてその場の感覚のまま語ってください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "fact_pursuit",
+      "targetParty": "b",
+      "angleId": "boundary_response",
+      "variants": [
+        {
+          "id": "judgeq-d-2-fact_pursuit-b-boundary_response-v1",
+          "text": "チェ・スミンさん、婚約者に送った返信中の応答語の順序を裁判官の前で言葉にしてください。"
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-b-boundary_response-v2",
+          "text": "面会や通話の提案に対し本人が選んだ単語と時系列に沿ってお答えください。"
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-b-boundary_response-v3",
+          "text": "応答に拒絶の語があった場合その出現時刻を一つずつ整理してお答えください。"
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-b-boundary_response-v4",
+          "text": "応答の語気を変えた箇所と理由について区別して説明してください。"
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-b-boundary_response-v5",
+          "text": "応答記録のうちまだソン・ダウンさんに見せていない区間を順を追って明らかにしてください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "motive_search",
+      "targetParty": "a",
+      "angleId": "boundary_response",
+      "variants": [
+        {
+          "id": "judgeq-d-2-motive_search-a-boundary_response-v1",
+          "text": "ソン・ダウンさん、どの応答語が「受け入れた」結論に固まったかについて区別して説明してください。"
+        },
+        {
+          "id": "judgeq-d-2-motive_search-a-boundary_response-v2",
+          "text": "原文の温度を確認する前に断定を選んだ事情を順を追って明らかにしてください。"
+        },
+        {
+          "id": "judgeq-d-2-motive_search-a-boundary_response-v3",
+          "text": "応答語のうち柔らかい部分だけを拾った経路を確認できる範囲でお話しください。"
+        },
+        {
+          "id": "judgeq-d-2-motive_search-a-boundary_response-v4",
+          "text": "結論を支えた語句の選び方を時点ごとに区切ってお答えください。"
+        },
+        {
+          "id": "judgeq-d-2-motive_search-a-boundary_response-v5",
+          "text": "反証となる応答を見落とした流れについて落ち着いて言葉を選んでください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "motive_search",
+      "targetParty": "b",
+      "angleId": "boundary_response",
+      "variants": [
+        {
+          "id": "judgeq-d-2-motive_search-b-boundary_response-v1",
+          "text": "チェ・スミンさん、応答の強度をその程度にとどめた本人の判断を結論を急がず述べてください。"
+        },
+        {
+          "id": "judgeq-d-2-motive_search-b-boundary_response-v2",
+          "text": "完全に拒絶できなかった事情の流れについてその場の感覚のまま語ってください。"
+        },
+        {
+          "id": "judgeq-d-2-motive_search-b-boundary_response-v3",
+          "text": "もう一段強く書ける選択肢を捨てた理由を裁判官の前で言葉にしてください。"
+        },
+        {
+          "id": "judgeq-d-2-motive_search-b-boundary_response-v4",
+          "text": "応答の語気を抑えた具体的な事情と時系列に沿ってお答えください。"
+        },
+        {
+          "id": "judgeq-d-2-motive_search-b-boundary_response-v5",
+          "text": "結論を曖昧に残した内側の事情を一つずつ整理してお答えください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "empathy_approach",
+      "targetParty": "a",
+      "angleId": "boundary_response",
+      "variants": [
+        {
+          "id": "judgeq-d-2-empathy_approach-a-boundary_response-v1",
+          "text": "ソン・ダウンさん、友人の応答が同調に見えた瞬間の感覚について落ち着いて言葉を選んでください。"
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-a-boundary_response-v2",
+          "text": "応答語のうち最も早く本人を結論に運んだものを結論を急がず述べてください。"
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-a-boundary_response-v3",
+          "text": "別の読み取りに迷えなかった事情の重さについてその場の感覚のまま語ってください。"
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-a-boundary_response-v4",
+          "text": "結論より先に来た傷の形を裁判官の前で言葉にしてください。"
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-a-boundary_response-v5",
+          "text": "一度だけ判断を止められた瞬間があったかと時系列に沿ってお答えください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "empathy_approach",
+      "targetParty": "b",
+      "angleId": "boundary_response",
+      "variants": [
+        {
+          "id": "judgeq-d-2-empathy_approach-b-boundary_response-v1",
+          "text": "チェ・スミンさん、友人の婚約者に応答する重みを一つずつ整理してお答えください。"
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-b-boundary_response-v2",
+          "text": "残した語と削った語の境目について区別して説明してください。"
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-b-boundary_response-v3",
+          "text": "応答中に揺れた本人の判断の流れを順を追って明らかにしてください。"
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-b-boundary_response-v4",
+          "text": "応答の言葉を選び直したい一行を確認できる範囲でお話しください。"
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-b-boundary_response-v5",
+          "text": "結論まで届かなかった躊躇を時点ごとに区切ってお答えください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "fact_pursuit",
+      "targetParty": "a",
+      "angleId": "withheld_capture",
+      "variants": [
+        {
+          "id": "judgeq-d-2-fact_pursuit-a-withheld_capture-v1",
+          "text": "ソン・ダウンさん、メッセージのキャプチャを最初に見た時刻と直前に聞いた説明の順序を結論を急がず述べてください。"
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-a-withheld_capture-v2",
+          "text": "本人が見たキャプチャと婚約者が要約した内容の差についてその場の感覚のまま語ってください。"
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-a-withheld_capture-v3",
+          "text": "キャプチャ原本のうちまだ確認していない区間を裁判官の前で言葉にしてください。"
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-a-withheld_capture-v4",
+          "text": "本人がキャプチャを直接要求した記録の有無と時系列に沿ってお答えください。"
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-a-withheld_capture-v5",
+          "text": "キャプチャを見たあと本人が公開した文章の前後を一つずつ整理してお答えください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "fact_pursuit",
+      "targetParty": "b",
+      "angleId": "withheld_capture",
+      "variants": [
+        {
+          "id": "judgeq-d-2-fact_pursuit-b-withheld_capture-v1",
+          "text": "チェ・スミンさん、本人の端末に残るキャプチャを見せた相手と見せなかった相手について区別して説明してください。"
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-b-withheld_capture-v2",
+          "text": "キャプチャをソン・ダウンさんに渡さなかった具体的な時点を順を追って明らかにしてください。"
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-b-withheld_capture-v3",
+          "text": "キャプチャを婚約者にだけ渡した記録の有無を確認できる範囲でお話しください。"
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-b-withheld_capture-v4",
+          "text": "保存した画面のうちソン・ダウンさんに開示済みの区間を時点ごとに区切ってお答えください。"
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-b-withheld_capture-v5",
+          "text": "見せられなかったキャプチャに残る発言の有無について落ち着いて言葉を選んでください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "motive_search",
+      "targetParty": "a",
+      "angleId": "withheld_capture",
+      "variants": [
+        {
+          "id": "judgeq-d-2-motive_search-a-withheld_capture-v1",
+          "text": "ソン・ダウンさん、原本確認を本人から要求しなかった事情を時点ごとに区切ってお答えください。"
+        },
+        {
+          "id": "judgeq-d-2-motive_search-a-withheld_capture-v2",
+          "text": "原本より結論の方を先に置いた理由について落ち着いて言葉を選んでください。"
+        },
+        {
+          "id": "judgeq-d-2-motive_search-a-withheld_capture-v3",
+          "text": "婚約者の説明だけで満足した経路を結論を急がず述べてください。"
+        },
+        {
+          "id": "judgeq-d-2-motive_search-a-withheld_capture-v4",
+          "text": "原本に触れる怖さとその回避の流れについてその場の感覚のまま語ってください。"
+        },
+        {
+          "id": "judgeq-d-2-motive_search-a-withheld_capture-v5",
+          "text": "キャプチャに残った言葉を見ないまま動いた根拠を裁判官の前で言葉にしてください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "motive_search",
+      "targetParty": "b",
+      "angleId": "withheld_capture",
+      "variants": [
+        {
+          "id": "judgeq-d-2-motive_search-b-withheld_capture-v1",
+          "text": "チェ・スミンさん、キャプチャをソン・ダウンさんへ即時に共有しなかった理由と時系列に沿ってお答えください。"
+        },
+        {
+          "id": "judgeq-d-2-motive_search-b-withheld_capture-v2",
+          "text": "見せたら起きる事態を避けた事情を一つずつ整理してお答えください。"
+        },
+        {
+          "id": "judgeq-d-2-motive_search-b-withheld_capture-v3",
+          "text": "見せる順番に本人なりの判断があった根拠について区別して説明してください。"
+        },
+        {
+          "id": "judgeq-d-2-motive_search-b-withheld_capture-v4",
+          "text": "時間を置くべきだと判断した流れを順を追って明らかにしてください。"
+        },
+        {
+          "id": "judgeq-d-2-motive_search-b-withheld_capture-v5",
+          "text": "見せなかった選択を支えた具体的な事情を確認できる範囲でお話しください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "empathy_approach",
+      "targetParty": "a",
+      "angleId": "withheld_capture",
+      "variants": [
+        {
+          "id": "judgeq-d-2-empathy_approach-a-withheld_capture-v1",
+          "text": "ソン・ダウンさん、原本を最後まで見られなかった内側の事情を裁判官の前で言葉にしてください。"
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-a-withheld_capture-v2",
+          "text": "どこまで読んでどこで止まったかの境目と時系列に沿ってお答えください。"
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-a-withheld_capture-v3",
+          "text": "止まった理由を結論抜きで語った形を一つずつ整理してお答えください。"
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-a-withheld_capture-v4",
+          "text": "見ることを恐れた具体的な瞬間について区別して説明してください。"
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-a-withheld_capture-v5",
+          "text": "見終わったあとに来た揺らぎを順を追って明らかにしてください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "empathy_approach",
+      "targetParty": "b",
+      "angleId": "withheld_capture",
+      "variants": [
+        {
+          "id": "judgeq-d-2-empathy_approach-b-withheld_capture-v1",
+          "text": "チェ・スミンさん、即時に渡せなかった本人の事情を確認できる範囲でお話しください。"
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-b-withheld_capture-v2",
+          "text": "渡すことがソン・ダウンさんを傷つけると感じた重さを時点ごとに区切ってお答えください。"
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-b-withheld_capture-v3",
+          "text": "渡せないまま時間が伸びた感覚について落ち着いて言葉を選んでください。"
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-b-withheld_capture-v4",
+          "text": "渡すべきだったと振り返るタイミングを結論を急がず述べてください。"
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-b-withheld_capture-v5",
+          "text": "渡さなかった結果に残った後悔についてその場の感覚のまま語ってください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "fact_pursuit",
+      "targetParty": "a",
+      "angleId": "private_request_pressure",
+      "variants": [
+        {
+          "id": "judgeq-d-2-fact_pursuit-a-private_request_pressure-v1",
+          "text": "ソン・ダウンさん、婚約者とチェ・スミンさんの間で非公開に交わされた依頼系の文と返答の順序を順を追って明らかにしてください。"
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-a-private_request_pressure-v2",
+          "text": "本人が直接読んだ部分と要約で受けた部分の境目を確認できる範囲でお話しください。"
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-a-private_request_pressure-v3",
+          "text": "依頼の文面で本人が引用した語句を時点ごとに区切ってお答えください。"
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-a-private_request_pressure-v4",
+          "text": "原本のうちまだ確認していない区間について落ち着いて言葉を選んでください。"
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-a-private_request_pressure-v5",
+          "text": "依頼が始まった発信元についての記録を結論を急がず述べてください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "fact_pursuit",
+      "targetParty": "b",
+      "angleId": "private_request_pressure",
+      "variants": [
+        {
+          "id": "judgeq-d-2-fact_pursuit-b-private_request_pressure-v1",
+          "text": "チェ・スミンさん、非公開の対話が始まった一文と本人の応答の順序についてその場の感覚のまま語ってください。"
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-b-private_request_pressure-v2",
+          "text": "依頼系の発言が始まった具体的な時刻を裁判官の前で言葉にしてください。"
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-b-private_request_pressure-v3",
+          "text": "本人が応答した文の中でも特に短いものと時系列に沿ってお答えください。"
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-b-private_request_pressure-v4",
+          "text": "応答せずに置いた区間とその時刻を一つずつ整理してお答えください。"
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-b-private_request_pressure-v5",
+          "text": "依頼系のやり取りのうちソン・ダウンさんに開示できる区間について区別して説明してください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "motive_search",
+      "targetParty": "a",
+      "angleId": "private_request_pressure",
+      "variants": [
+        {
+          "id": "judgeq-d-2-motive_search-a-private_request_pressure-v1",
+          "text": "ソン・ダウンさん、婚約者側の発信を最初は問題視しなかった理由を一つずつ整理してお答えください。"
+        },
+        {
+          "id": "judgeq-d-2-motive_search-a-private_request_pressure-v2",
+          "text": "依頼の流れを後から問題化した時点について区別して説明してください。"
+        },
+        {
+          "id": "judgeq-d-2-motive_search-a-private_request_pressure-v3",
+          "text": "読み取りを保留できなかった事情を順を追って明らかにしてください。"
+        },
+        {
+          "id": "judgeq-d-2-motive_search-a-private_request_pressure-v4",
+          "text": "結論の方向を決めた具体的な感情の動きを確認できる範囲でお話しください。"
+        },
+        {
+          "id": "judgeq-d-2-motive_search-a-private_request_pressure-v5",
+          "text": "別の解釈を置く機会を逃した経路を時点ごとに区切ってお答えください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "motive_search",
+      "targetParty": "b",
+      "angleId": "private_request_pressure",
+      "variants": [
+        {
+          "id": "judgeq-d-2-motive_search-b-private_request_pressure-v1",
+          "text": "チェ・スミンさん、不快な対話を受けてもすぐソン・ダウンさんに見せなかった理由について落ち着いて言葉を選んでください。"
+        },
+        {
+          "id": "judgeq-d-2-motive_search-b-private_request_pressure-v2",
+          "text": "見せると傷つけると判断した事情を結論を急がず述べてください。"
+        },
+        {
+          "id": "judgeq-d-2-motive_search-b-private_request_pressure-v3",
+          "text": "応答の語気を抑えた根拠についてその場の感覚のまま語ってください。"
+        },
+        {
+          "id": "judgeq-d-2-motive_search-b-private_request_pressure-v4",
+          "text": "対話を引き延ばさなかった判断を裁判官の前で言葉にしてください。"
+        },
+        {
+          "id": "judgeq-d-2-motive_search-b-private_request_pressure-v5",
+          "text": "結論を即座に出さず置いた理由と時系列に沿ってお答えください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "empathy_approach",
+      "targetParty": "a",
+      "angleId": "private_request_pressure",
+      "variants": [
+        {
+          "id": "judgeq-d-2-empathy_approach-a-private_request_pressure-v1",
+          "text": "ソン・ダウンさん、婚約者を信じたい気持ちと原本を確認したい気持ちの衝突を時点ごとに区切ってお答えください。"
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-a-private_request_pressure-v2",
+          "text": "依頼系の文を読んだ瞬間に揺れた前提について落ち着いて言葉を選んでください。"
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-a-private_request_pressure-v3",
+          "text": "結論に運ばれた感情の流れを結論を急がず述べてください。"
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-a-private_request_pressure-v4",
+          "text": "原本を確認できなかった事情の重みについてその場の感覚のまま語ってください。"
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-a-private_request_pressure-v5",
+          "text": "結論より先に来た傷をそのまま語った形を裁判官の前で言葉にしてください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "empathy_approach",
+      "targetParty": "b",
+      "angleId": "private_request_pressure",
+      "variants": [
+        {
+          "id": "judgeq-d-2-empathy_approach-b-private_request_pressure-v1",
+          "text": "チェ・スミンさん、婚約者からの依頼系のやり取りを抱えてソン・ダウンさんに会う重さと時系列に沿ってお答えください。"
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-b-private_request_pressure-v2",
+          "text": "言えなかった事情の輪郭を一つずつ整理してお答えください。"
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-b-private_request_pressure-v3",
+          "text": "言いたいのに言葉にできなかった瞬間について区別して説明してください。"
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-b-private_request_pressure-v4",
+          "text": "結局言わずに過ぎた時間の重みを順を追って明らかにしてください。"
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-b-private_request_pressure-v5",
+          "text": "振り返って言いたかった一言を確認できる範囲でお話しください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "questionType": "fact_pursuit",
+      "targetParty": "a",
+      "angleId": "father_request_signal",
+      "variants": [
+        {
+          "id": "judgeq-d-3-fact_pursuit-a-father_request_signal-v1",
+          "text": "ソン・ダウンさん、婚約者にお父様から届いた文面のうち本人が直接見たものを順を追って明らかにしてください。"
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-a-father_request_signal-v2",
+          "text": "本人が見た文面と婚約者から要約で受けた内容の差を確認できる範囲でお話しください。"
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-a-father_request_signal-v3",
+          "text": "文面の出所と本人が把握した経路の順序を時点ごとに区切ってお答えください。"
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-a-father_request_signal-v4",
+          "text": "文面の中で本人が引用した語について落ち着いて言葉を選んでください。"
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-a-father_request_signal-v5",
+          "text": "まだ本人が確認していない区間の有無を結論を急がず述べてください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "questionType": "fact_pursuit",
+      "targetParty": "b",
+      "angleId": "father_request_signal",
+      "variants": [
+        {
+          "id": "judgeq-d-3-fact_pursuit-b-father_request_signal-v1",
+          "text": "チェ・スミンさん、ソン・ダウンさんのお父様から婚約者に届いた文面のうち本人が信号と受け取った表現についてその場の感覚のまま語ってください。"
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-b-father_request_signal-v2",
+          "text": "本人が直接読んだ語と婚約者が要約した内容の境目を裁判官の前で言葉にしてください。"
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-b-father_request_signal-v3",
+          "text": "相手側の「単なる安否」という主張と本人の読み取りの差と時系列に沿ってお答えください。"
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-b-father_request_signal-v4",
+          "text": "同じ文面を別の人と一緒に読んだか単独で読んだかを一つずつ整理してお答えください。"
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-b-father_request_signal-v5",
+          "text": "まだ公開していない表現が残っているかについて区別して説明してください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "questionType": "motive_search",
+      "targetParty": "a",
+      "angleId": "father_request_signal",
+      "variants": [
+        {
+          "id": "judgeq-d-3-motive_search-a-father_request_signal-v1",
+          "text": "ソン・ダウンさん、お父様の文面を確認するより先に結論を置いた事情を一つずつ整理してお答えください。"
+        },
+        {
+          "id": "judgeq-d-3-motive_search-a-father_request_signal-v2",
+          "text": "家族の話題から距離を取りたかった内側の理由について区別して説明してください。"
+        },
+        {
+          "id": "judgeq-d-3-motive_search-a-father_request_signal-v3",
+          "text": "原文より要約を信頼した根拠を順を追って明らかにしてください。"
+        },
+        {
+          "id": "judgeq-d-3-motive_search-a-father_request_signal-v4",
+          "text": "結論を急いだ感情の流れを確認できる範囲でお話しください。"
+        },
+        {
+          "id": "judgeq-d-3-motive_search-a-father_request_signal-v5",
+          "text": "別の読み取りを置けなかった経路を時点ごとに区切ってお答えください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "questionType": "motive_search",
+      "targetParty": "b",
+      "angleId": "father_request_signal",
+      "variants": [
+        {
+          "id": "judgeq-d-3-motive_search-b-father_request_signal-v1",
+          "text": "チェ・スミンさん、その文面を本人が信号と判断した動機について落ち着いて言葉を選んでください。"
+        },
+        {
+          "id": "judgeq-d-3-motive_search-b-father_request_signal-v2",
+          "text": "すぐソン・ダウンさんに伝えなかった事情を結論を急がず述べてください。"
+        },
+        {
+          "id": "judgeq-d-3-motive_search-b-father_request_signal-v3",
+          "text": "婚約者を経由する経路を選んだ判断についてその場の感覚のまま語ってください。"
+        },
+        {
+          "id": "judgeq-d-3-motive_search-b-father_request_signal-v4",
+          "text": "直接対話を避けた理由の流れを裁判官の前で言葉にしてください。"
+        },
+        {
+          "id": "judgeq-d-3-motive_search-b-father_request_signal-v5",
+          "text": "判断を急がせた背景となる出来事と時系列に沿ってお答えください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "questionType": "empathy_approach",
+      "targetParty": "a",
+      "angleId": "father_request_signal",
+      "variants": [
+        {
+          "id": "judgeq-d-3-empathy_approach-a-father_request_signal-v1",
+          "text": "ソン・ダウンさん、家族に関わる文面を直視する重さを時点ごとに区切ってお答えください。"
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-a-father_request_signal-v2",
+          "text": "父にまつわる話題に触れたとき本人を覆った感覚について落ち着いて言葉を選んでください。"
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-a-father_request_signal-v3",
+          "text": "結論を保留できた瞬間が一度でもあったかを結論を急がず述べてください。"
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-a-father_request_signal-v4",
+          "text": "結論より先に来た恐れの形についてその場の感覚のまま語ってください。"
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-a-father_request_signal-v5",
+          "text": "振り返って一番こたえている言葉を裁判官の前で言葉にしてください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "questionType": "empathy_approach",
+      "targetParty": "b",
+      "angleId": "father_request_signal",
+      "variants": [
+        {
+          "id": "judgeq-d-3-empathy_approach-b-father_request_signal-v1",
+          "text": "チェ・スミンさん、信号と受け取った瞬間に本人を覆った重さと時系列に沿ってお答えください。"
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-b-father_request_signal-v2",
+          "text": "ソン・ダウンさんに直接言えなかった事情の輪郭を一つずつ整理してお答えください。"
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-b-father_request_signal-v3",
+          "text": "結論を抑えた躊躇について区別して説明してください。"
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-b-father_request_signal-v4",
+          "text": "振り返って言葉にしておきたかった一行を順を追って明らかにしてください。"
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-b-father_request_signal-v5",
+          "text": "言えないまま過ぎた時間に残った感覚を確認できる範囲でお話しください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "questionType": "fact_pursuit",
+      "targetParty": "a",
+      "angleId": "money_secrecy",
+      "variants": [
+        {
+          "id": "judgeq-d-3-fact_pursuit-a-money_secrecy-v1",
+          "text": "ソン・ダウンさん、過去の金銭問題に関わる事実のうち本人が現在把握している範囲を結論を急がず述べてください。"
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-a-money_secrecy-v2",
+          "text": "本人が直接確認した記録と人づてに聞いた内容の境目についてその場の感覚のまま語ってください。"
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-a-money_secrecy-v3",
+          "text": "事実の把握に至った経路の順序を裁判官の前で言葉にしてください。"
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-a-money_secrecy-v4",
+          "text": "把握した時点で同席していた相手の有無と時系列に沿ってお答えください。"
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-a-money_secrecy-v5",
+          "text": "まだ確認できていない区間の有無を一つずつ整理してお答えください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "questionType": "fact_pursuit",
+      "targetParty": "b",
+      "angleId": "money_secrecy",
+      "variants": [
+        {
+          "id": "judgeq-d-3-fact_pursuit-b-money_secrecy-v1",
+          "text": "チェ・スミンさん、過去の金銭問題に関わる事実のうち本人が伝えた範囲について区別して説明してください。"
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-b-money_secrecy-v2",
+          "text": "伝えた相手と伝えなかった相手の区別を順を追って明らかにしてください。"
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-b-money_secrecy-v3",
+          "text": "伝えるべきだった時点と実際に伝えた時点の差を確認できる範囲でお話しください。"
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-b-money_secrecy-v4",
+          "text": "記録の中でソン・ダウンさん側が把握できる部分を時点ごとに区切ってお答えください。"
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-b-money_secrecy-v5",
+          "text": "まだ言葉にしていない事実が残っているかについて落ち着いて言葉を選んでください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "questionType": "motive_search",
+      "targetParty": "a",
+      "angleId": "money_secrecy",
+      "variants": [
+        {
+          "id": "judgeq-d-3-motive_search-a-money_secrecy-v1",
+          "text": "ソン・ダウンさん、過去の金銭問題に関わる話題から距離を取った理由を時点ごとに区切ってお答えください。"
+        },
+        {
+          "id": "judgeq-d-3-motive_search-a-money_secrecy-v2",
+          "text": "正面から確認しなかった事情の流れについて落ち着いて言葉を選んでください。"
+        },
+        {
+          "id": "judgeq-d-3-motive_search-a-money_secrecy-v3",
+          "text": "結論を別の方向に置いた根拠を結論を急がず述べてください。"
+        },
+        {
+          "id": "judgeq-d-3-motive_search-a-money_secrecy-v4",
+          "text": "質問を避けた具体的な瞬間についてその場の感覚のまま語ってください。"
+        },
+        {
+          "id": "judgeq-d-3-motive_search-a-money_secrecy-v5",
+          "text": "結論を支えた感情の動きを裁判官の前で言葉にしてください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "questionType": "motive_search",
+      "targetParty": "b",
+      "angleId": "money_secrecy",
+      "variants": [
+        {
+          "id": "judgeq-d-3-motive_search-b-money_secrecy-v1",
+          "text": "チェ・スミンさん、その事実を直接ソン・ダウンさんに言えなかった事情と時系列に沿ってお答えください。"
+        },
+        {
+          "id": "judgeq-d-3-motive_search-b-money_secrecy-v2",
+          "text": "言うことで起きる結果を回避した判断を一つずつ整理してお答えください。"
+        },
+        {
+          "id": "judgeq-d-3-motive_search-b-money_secrecy-v3",
+          "text": "婚約者を経由した経路を選んだ理由について区別して説明してください。"
+        },
+        {
+          "id": "judgeq-d-3-motive_search-b-money_secrecy-v4",
+          "text": "判断を支えた具体的な事情を順を追って明らかにしてください。"
+        },
+        {
+          "id": "judgeq-d-3-motive_search-b-money_secrecy-v5",
+          "text": "言葉にしないまま時間が伸びた経路を確認できる範囲でお話しください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "questionType": "empathy_approach",
+      "targetParty": "a",
+      "angleId": "money_secrecy",
+      "variants": [
+        {
+          "id": "judgeq-d-3-empathy_approach-a-money_secrecy-v1",
+          "text": "ソン・ダウンさん、過去の金銭問題に触れる重さを裁判官の前で言葉にしてください。"
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-a-money_secrecy-v2",
+          "text": "家族にまつわる事実から目を逸らしたかった理由と時系列に沿ってお答えください。"
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-a-money_secrecy-v3",
+          "text": "結論より先に来た恐れの形を一つずつ整理してお答えください。"
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-a-money_secrecy-v4",
+          "text": "結論を保留できた瞬間が一度でもあったかについて区別して説明してください。"
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-a-money_secrecy-v5",
+          "text": "振り返って気付いた揺らぎを順を追って明らかにしてください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "questionType": "empathy_approach",
+      "targetParty": "b",
+      "angleId": "money_secrecy",
+      "variants": [
+        {
+          "id": "judgeq-d-3-empathy_approach-b-money_secrecy-v1",
+          "text": "チェ・スミンさん、ソン・ダウンさんを傷つけたくないという気持ちと話さねばならない重さを確認できる範囲でお話しください。"
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-b-money_secrecy-v2",
+          "text": "言えないまま過ぎた時間に残った感覚を時点ごとに区切ってお答えください。"
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-b-money_secrecy-v3",
+          "text": "直接言えていれば変わったかもしれない場面について落ち着いて言葉を選んでください。"
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-b-money_secrecy-v4",
+          "text": "結局悪役側に残った事実への気持ちを結論を急がず述べてください。"
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-b-money_secrecy-v5",
+          "text": "振り返って言葉にしておきたかった一行についてその場の感覚のまま語ってください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "questionType": "fact_pursuit",
+      "targetParty": "a",
+      "angleId": "pattern_warning",
+      "variants": [
+        {
+          "id": "judgeq-d-3-fact_pursuit-a-pattern_warning-v1",
+          "text": "ソン・ダウンさん、チェ・スミンさんから「昔の未解決の事情と似ている」と聞いた表現の原文を一つずつ整理してお答えください。"
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-a-pattern_warning-v2",
+          "text": "本人が直接見た部分と要約で受けた部分の差について区別して説明してください。"
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-a-pattern_warning-v3",
+          "text": "その指摘を受け取った時点と次の行動の順序を順を追って明らかにしてください。"
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-a-pattern_warning-v4",
+          "text": "指摘を聞いて本人が確認した事実を確認できる範囲でお話しください。"
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-a-pattern_warning-v5",
+          "text": "まだ照合していない区間の有無を時点ごとに区切ってお答えください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "questionType": "fact_pursuit",
+      "targetParty": "b",
+      "angleId": "pattern_warning",
+      "variants": [
+        {
+          "id": "judgeq-d-3-fact_pursuit-b-pattern_warning-v1",
+          "text": "チェ・スミンさん、現在の文面と昔の未解決の事情が重なって見えた根拠について落ち着いて言葉を選んでください。"
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-b-pattern_warning-v2",
+          "text": "本人が見比べた具体的な記録を結論を急がず述べてください。"
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-b-pattern_warning-v3",
+          "text": "指摘をソン・ダウンさんに伝えた時点の前後についてその場の感覚のまま語ってください。"
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-b-pattern_warning-v4",
+          "text": "指摘を聞いた相手の反応の記録を裁判官の前で言葉にしてください。"
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-b-pattern_warning-v5",
+          "text": "まだ言葉にしていない一致点の有無と時系列に沿ってお答えください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "questionType": "motive_search",
+      "targetParty": "a",
+      "angleId": "pattern_warning",
+      "variants": [
+        {
+          "id": "judgeq-d-3-motive_search-a-pattern_warning-v1",
+          "text": "ソン・ダウンさん、その指摘を最初は受け入れなかった事情を裁判官の前で言葉にしてください。"
+        },
+        {
+          "id": "judgeq-d-3-motive_search-a-pattern_warning-v2",
+          "text": "家族の話題に触れたくなかった内側の理由と時系列に沿ってお答えください。"
+        },
+        {
+          "id": "judgeq-d-3-motive_search-a-pattern_warning-v3",
+          "text": "指摘より結論を先に置いた経路を一つずつ整理してお答えください。"
+        },
+        {
+          "id": "judgeq-d-3-motive_search-a-pattern_warning-v4",
+          "text": "結論を支えた感情の流れについて区別して説明してください。"
+        },
+        {
+          "id": "judgeq-d-3-motive_search-a-pattern_warning-v5",
+          "text": "別の解釈を置く余地を奪ったものを順を追って明らかにしてください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "questionType": "motive_search",
+      "targetParty": "b",
+      "angleId": "pattern_warning",
+      "variants": [
+        {
+          "id": "judgeq-d-3-motive_search-b-pattern_warning-v1",
+          "text": "チェ・スミンさん、その指摘を一度に伝えなかった事情を確認できる範囲でお話しください。"
+        },
+        {
+          "id": "judgeq-d-3-motive_search-b-pattern_warning-v2",
+          "text": "ソン・ダウンさんが崩れることを避けた判断を時点ごとに区切ってお答えください。"
+        },
+        {
+          "id": "judgeq-d-3-motive_search-b-pattern_warning-v3",
+          "text": "言葉を選び直した具体的な瞬間について落ち着いて言葉を選んでください。"
+        },
+        {
+          "id": "judgeq-d-3-motive_search-b-pattern_warning-v4",
+          "text": "結論を急がず置いた理由を結論を急がず述べてください。"
+        },
+        {
+          "id": "judgeq-d-3-motive_search-b-pattern_warning-v5",
+          "text": "判断を支えた背景となる出来事についてその場の感覚のまま語ってください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "questionType": "empathy_approach",
+      "targetParty": "a",
+      "angleId": "pattern_warning",
+      "variants": [
+        {
+          "id": "judgeq-d-3-empathy_approach-a-pattern_warning-v1",
+          "text": "ソン・ダウンさん、過去の出来事と現在を重ねて聞かされた重さを順を追って明らかにしてください。"
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-a-pattern_warning-v2",
+          "text": "父にまつわる話題に触れたとき本人を覆った感覚を確認できる範囲でお話しください。"
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-a-pattern_warning-v3",
+          "text": "結論を保留できた瞬間が一度でもあったかを時点ごとに区切ってお答えください。"
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-a-pattern_warning-v4",
+          "text": "結論より先に来た恐れの形について落ち着いて言葉を選んでください。"
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-a-pattern_warning-v5",
+          "text": "振り返って一番こたえている言葉を結論を急がず述べてください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "questionType": "empathy_approach",
+      "targetParty": "b",
+      "angleId": "pattern_warning",
+      "variants": [
+        {
+          "id": "judgeq-d-3-empathy_approach-b-pattern_warning-v1",
+          "text": "チェ・スミンさん、繰り返しに見えた現在を友人に伝える重さについてその場の感覚のまま語ってください。"
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-b-pattern_warning-v2",
+          "text": "言えないまま過ぎた時間の感覚を裁判官の前で言葉にしてください。"
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-b-pattern_warning-v3",
+          "text": "直接言っていれば変わったかもしれない場面と時系列に沿ってお答えください。"
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-b-pattern_warning-v4",
+          "text": "結局悪役側に残った事実への気持ちを一つずつ整理してお答えください。"
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-b-pattern_warning-v5",
+          "text": "振り返って言葉にしておきたかった一行について区別して説明してください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "questionType": "fact_pursuit",
+      "targetParty": "a",
+      "angleId": "father_blindspot",
+      "variants": [
+        {
+          "id": "judgeq-d-3-fact_pursuit-a-father_blindspot-v1",
+          "text": "ソン・ダウンさん、お父様にまつわる事実のうち本人がいま直視できる範囲についてその場の感覚のまま語ってください。"
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-a-father_blindspot-v2",
+          "text": "本人が直接確認した部分と人づてに聞いた部分の境目を裁判官の前で言葉にしてください。"
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-a-father_blindspot-v3",
+          "text": "事実を確認した時点と次の判断の順序と時系列に沿ってお答えください。"
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-a-father_blindspot-v4",
+          "text": "事実を確認した相手の有無を一つずつ整理してお答えください。"
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-a-father_blindspot-v5",
+          "text": "まだ確認できていない区間の有無について区別して説明してください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "questionType": "fact_pursuit",
+      "targetParty": "b",
+      "angleId": "father_blindspot",
+      "variants": [
+        {
+          "id": "judgeq-d-3-fact_pursuit-b-father_blindspot-v1",
+          "text": "チェ・スミンさん、ソン・ダウンさんのお父様にまつわる事実を本人が把握した経路を順を追って明らかにしてください。"
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-b-father_blindspot-v2",
+          "text": "把握した記録と直接の見聞の境目を確認できる範囲でお話しください。"
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-b-father_blindspot-v3",
+          "text": "把握した時点と次の判断の順序を時点ごとに区切ってお答えください。"
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-b-father_blindspot-v4",
+          "text": "事実を共有した相手と共有しなかった相手について落ち着いて言葉を選んでください。"
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-b-father_blindspot-v5",
+          "text": "まだ言葉にしていない事実が残っているかを結論を急がず述べてください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "questionType": "motive_search",
+      "targetParty": "a",
+      "angleId": "father_blindspot",
+      "variants": [
+        {
+          "id": "judgeq-d-3-motive_search-a-father_blindspot-v1",
+          "text": "ソン・ダウンさん、お父様の話題に触れることを避けた事情について落ち着いて言葉を選んでください。"
+        },
+        {
+          "id": "judgeq-d-3-motive_search-a-father_blindspot-v2",
+          "text": "家族の事実よりチェ・スミンさんを責める経路を選んだ理由を結論を急がず述べてください。"
+        },
+        {
+          "id": "judgeq-d-3-motive_search-a-father_blindspot-v3",
+          "text": "質問を遅らせた具体的な事情についてその場の感覚のまま語ってください。"
+        },
+        {
+          "id": "judgeq-d-3-motive_search-a-father_blindspot-v4",
+          "text": "結論を支えた感情の動きを裁判官の前で言葉にしてください。"
+        },
+        {
+          "id": "judgeq-d-3-motive_search-a-father_blindspot-v5",
+          "text": "別の方向に視線を逃がした経路と時系列に沿ってお答えください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "questionType": "motive_search",
+      "targetParty": "b",
+      "angleId": "father_blindspot",
+      "variants": [
+        {
+          "id": "judgeq-d-3-motive_search-b-father_blindspot-v1",
+          "text": "チェ・スミンさん、ソン・ダウンさんに直接伝える経路を選ばなかった事情を一つずつ整理してお答えください。"
+        },
+        {
+          "id": "judgeq-d-3-motive_search-b-father_blindspot-v2",
+          "text": "伝えれば崩れると判断した根拠について区別して説明してください。"
+        },
+        {
+          "id": "judgeq-d-3-motive_search-b-father_blindspot-v3",
+          "text": "婚約者を媒介に選んだ判断の流れを順を追って明らかにしてください。"
+        },
+        {
+          "id": "judgeq-d-3-motive_search-b-father_blindspot-v4",
+          "text": "言葉にする時期を遅らせた具体的な事情を確認できる範囲でお話しください。"
+        },
+        {
+          "id": "judgeq-d-3-motive_search-b-father_blindspot-v5",
+          "text": "判断を支えた背景となる出来事を時点ごとに区切ってお答えください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "questionType": "empathy_approach",
+      "targetParty": "a",
+      "angleId": "father_blindspot",
+      "variants": [
+        {
+          "id": "judgeq-d-3-empathy_approach-a-father_blindspot-v1",
+          "text": "ソン・ダウンさん、お父様にまつわる事実を受け入れる重さと時系列に沿ってお答えください。"
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-a-father_blindspot-v2",
+          "text": "直視を避けた瞬間の感覚を一つずつ整理してお答えください。"
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-a-father_blindspot-v3",
+          "text": "結論より先に来た恐れの形について区別して説明してください。"
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-a-father_blindspot-v4",
+          "text": "結論を保留できた瞬間が一度でもあったかを順を追って明らかにしてください。"
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-a-father_blindspot-v5",
+          "text": "振り返って一番こたえている言葉を確認できる範囲でお話しください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "questionType": "empathy_approach",
+      "targetParty": "b",
+      "angleId": "father_blindspot",
+      "variants": [
+        {
+          "id": "judgeq-d-3-empathy_approach-b-father_blindspot-v1",
+          "text": "チェ・スミンさん、ソン・ダウンさんを傷つけたくないという気持ちと話す責任の衝突を時点ごとに区切ってお答えください。"
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-b-father_blindspot-v2",
+          "text": "言えないまま過ぎた時間に残った感覚について落ち着いて言葉を選んでください。"
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-b-father_blindspot-v3",
+          "text": "直接言っていれば変わったかもしれない場面を結論を急がず述べてください。"
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-b-father_blindspot-v4",
+          "text": "結局悪役側に残った事実への気持ちについてその場の感覚のまま語ってください。"
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-b-father_blindspot-v5",
+          "text": "振り返って言葉にしておきたかった一行を裁判官の前で言葉にしてください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "questionType": "fact_pursuit",
+      "targetParty": "a",
+      "angleId": "severance_chat_gap",
+      "variants": [
+        {
+          "id": "judgeq-d-4-fact_pursuit-a-severance_chat_gap-v1",
+          "text": "ソン・ダウンさん、昔の絶交時のやり取りで本人が記憶している範囲を順を追って明らかにしてください。"
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-a-severance_chat_gap-v2",
+          "text": "本人が直接見た文章とチェ・スミンさんが説明を避けたとされる箇所の境目を確認できる範囲でお話しください。"
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-a-severance_chat_gap-v3",
+          "text": "やり取りの中で空白として残っている区間を時点ごとに区切ってお答えください。"
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-a-severance_chat_gap-v4",
+          "text": "記録を確認した時点と次の判断の順序について落ち着いて言葉を選んでください。"
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-a-severance_chat_gap-v5",
+          "text": "まだ確認していない区間の有無を結論を急がず述べてください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "questionType": "fact_pursuit",
+      "targetParty": "b",
+      "angleId": "severance_chat_gap",
+      "variants": [
+        {
+          "id": "judgeq-d-4-fact_pursuit-b-severance_chat_gap-v1",
+          "text": "チェ・スミンさん、昔の絶交時に本人が「自分が片付ける」と止めた発言の前後についてその場の感覚のまま語ってください。"
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-b-severance_chat_gap-v2",
+          "text": "止めた時点に何を語り何を語らなかったかの境目を裁判官の前で言葉にしてください。"
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-b-severance_chat_gap-v3",
+          "text": "記録に残るやり取りと残っていない部分の差と時系列に沿ってお答えください。"
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-b-severance_chat_gap-v4",
+          "text": "同席者や共有相手の有無を一つずつ整理してお答えください。"
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-b-severance_chat_gap-v5",
+          "text": "まだ言葉にしていない部分の有無について区別して説明してください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "questionType": "motive_search",
+      "targetParty": "a",
+      "angleId": "severance_chat_gap",
+      "variants": [
+        {
+          "id": "judgeq-d-4-motive_search-a-severance_chat_gap-v1",
+          "text": "ソン・ダウンさん、その空白を本人が確認しないまま現在の判断を固めた事情を一つずつ整理してお答えください。"
+        },
+        {
+          "id": "judgeq-d-4-motive_search-a-severance_chat_gap-v2",
+          "text": "昔の事情を再確認するより結論を急いだ理由について区別して説明してください。"
+        },
+        {
+          "id": "judgeq-d-4-motive_search-a-severance_chat_gap-v3",
+          "text": "記録の確認を遅らせた具体的な事情を順を追って明らかにしてください。"
+        },
+        {
+          "id": "judgeq-d-4-motive_search-a-severance_chat_gap-v4",
+          "text": "結論を支えた感情の動きを確認できる範囲でお話しください。"
+        },
+        {
+          "id": "judgeq-d-4-motive_search-a-severance_chat_gap-v5",
+          "text": "別の解釈を置けなかった経路を時点ごとに区切ってお答えください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "questionType": "motive_search",
+      "targetParty": "b",
+      "angleId": "severance_chat_gap",
+      "variants": [
+        {
+          "id": "judgeq-d-4-motive_search-b-severance_chat_gap-v1",
+          "text": "チェ・スミンさん、そこで言葉を止めた本人の事情について落ち着いて言葉を選んでください。"
+        },
+        {
+          "id": "judgeq-d-4-motive_search-b-severance_chat_gap-v2",
+          "text": "ソン・ダウンさんを守ろうとした判断の根拠を結論を急がず述べてください。"
+        },
+        {
+          "id": "judgeq-d-4-motive_search-b-severance_chat_gap-v3",
+          "text": "言葉にすると壊れると感じた具体的な事情についてその場の感覚のまま語ってください。"
+        },
+        {
+          "id": "judgeq-d-4-motive_search-b-severance_chat_gap-v4",
+          "text": "止めた選択を支えた背景の出来事を裁判官の前で言葉にしてください。"
+        },
+        {
+          "id": "judgeq-d-4-motive_search-b-severance_chat_gap-v5",
+          "text": "結論を急がなかった理由と時系列に沿ってお答えください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "questionType": "empathy_approach",
+      "targetParty": "a",
+      "angleId": "severance_chat_gap",
+      "variants": [
+        {
+          "id": "judgeq-d-4-empathy_approach-a-severance_chat_gap-v1",
+          "text": "ソン・ダウンさん、昔の空白に向き合う重さを時点ごとに区切ってお答えください。"
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-a-severance_chat_gap-v2",
+          "text": "空白を埋めることを恐れた感覚について落ち着いて言葉を選んでください。"
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-a-severance_chat_gap-v3",
+          "text": "結論より先に来た傷の形を結論を急がず述べてください。"
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-a-severance_chat_gap-v4",
+          "text": "結論を保留できた瞬間が一度でもあったかについてその場の感覚のまま語ってください。"
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-a-severance_chat_gap-v5",
+          "text": "振り返って一番こたえている言葉を裁判官の前で言葉にしてください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "questionType": "empathy_approach",
+      "targetParty": "b",
+      "angleId": "severance_chat_gap",
+      "variants": [
+        {
+          "id": "judgeq-d-4-empathy_approach-b-severance_chat_gap-v1",
+          "text": "チェ・スミンさん、止まった言葉を抱え続けた重さと時系列に沿ってお答えください。"
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-b-severance_chat_gap-v2",
+          "text": "言えないまま現在に至る感覚を一つずつ整理してお答えください。"
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-b-severance_chat_gap-v3",
+          "text": "直接言っていれば変わったかもしれない場面について区別して説明してください。"
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-b-severance_chat_gap-v4",
+          "text": "結局悪役側に残った事実への気持ちを順を追って明らかにしてください。"
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-b-severance_chat_gap-v5",
+          "text": "振り返って言葉にしておきたかった一行を確認できる範囲でお話しください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "questionType": "fact_pursuit",
+      "targetParty": "a",
+      "angleId": "transfer_repayment",
+      "variants": [
+        {
+          "id": "judgeq-d-4-fact_pursuit-a-transfer_repayment-v1",
+          "text": "ソン・ダウンさん、過去の送金や一部返済に関わる記録のうち本人が把握している範囲を順を追って明らかにしてください。"
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-a-transfer_repayment-v2",
+          "text": "本人が直接見た記録と人づてに聞いた内容の境目を確認できる範囲でお話しください。"
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-a-transfer_repayment-v3",
+          "text": "記録を確認した時点と次の判断の順序を時点ごとに区切ってお答えください。"
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-a-transfer_repayment-v4",
+          "text": "記録の出所についての具体的な経路について落ち着いて言葉を選んでください。"
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-a-transfer_repayment-v5",
+          "text": "まだ確認できていない区間の有無を結論を急がず述べてください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "questionType": "fact_pursuit",
+      "targetParty": "b",
+      "angleId": "transfer_repayment",
+      "variants": [
+        {
+          "id": "judgeq-d-4-fact_pursuit-b-transfer_repayment-v1",
+          "text": "チェ・スミンさん、過去の送金と一部返済に関わる本人の把握範囲についてその場の感覚のまま語ってください。"
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-b-transfer_repayment-v2",
+          "text": "送金額・回数・時系列の整理を裁判官の前で言葉にしてください。"
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-b-transfer_repayment-v3",
+          "text": "一部返済が止まった時点とその直前の出来事と時系列に沿ってお答えください。"
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-b-transfer_repayment-v4",
+          "text": "記録を共有した相手と共有しなかった相手を一つずつ整理してお答えください。"
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-b-transfer_repayment-v5",
+          "text": "まだ言葉にしていない事実が残っているかについて区別して説明してください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "questionType": "motive_search",
+      "targetParty": "a",
+      "angleId": "transfer_repayment",
+      "variants": [
+        {
+          "id": "judgeq-d-4-motive_search-a-transfer_repayment-v1",
+          "text": "ソン・ダウンさん、その送金記録を確認しないまま現在を断定した事情を一つずつ整理してお答えください。"
+        },
+        {
+          "id": "judgeq-d-4-motive_search-a-transfer_repayment-v2",
+          "text": "過去の事実を直視するより結論を急いだ理由について区別して説明してください。"
+        },
+        {
+          "id": "judgeq-d-4-motive_search-a-transfer_repayment-v3",
+          "text": "記録の確認を遅らせた具体的な事情を順を追って明らかにしてください。"
+        },
+        {
+          "id": "judgeq-d-4-motive_search-a-transfer_repayment-v4",
+          "text": "結論を支えた感情の動きを確認できる範囲でお話しください。"
+        },
+        {
+          "id": "judgeq-d-4-motive_search-a-transfer_repayment-v5",
+          "text": "別の解釈を置けなかった経路を時点ごとに区切ってお答えください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "questionType": "motive_search",
+      "targetParty": "b",
+      "angleId": "transfer_repayment",
+      "variants": [
+        {
+          "id": "judgeq-d-4-motive_search-b-transfer_repayment-v1",
+          "text": "チェ・スミンさん、過去の事情をソン・ダウンさんに直接話せなかった事情について落ち着いて言葉を選んでください。"
+        },
+        {
+          "id": "judgeq-d-4-motive_search-b-transfer_repayment-v2",
+          "text": "言うことで友人を傷つけると判断した根拠を結論を急がず述べてください。"
+        },
+        {
+          "id": "judgeq-d-4-motive_search-b-transfer_repayment-v3",
+          "text": "言葉にする時期を遅らせた具体的な事情についてその場の感覚のまま語ってください。"
+        },
+        {
+          "id": "judgeq-d-4-motive_search-b-transfer_repayment-v4",
+          "text": "婚約者を媒介に選ばなかった理由を裁判官の前で言葉にしてください。"
+        },
+        {
+          "id": "judgeq-d-4-motive_search-b-transfer_repayment-v5",
+          "text": "判断を支えた背景となる出来事と時系列に沿ってお答えください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "questionType": "empathy_approach",
+      "targetParty": "a",
+      "angleId": "transfer_repayment",
+      "variants": [
+        {
+          "id": "judgeq-d-4-empathy_approach-a-transfer_repayment-v1",
+          "text": "ソン・ダウンさん、過去の送金記録と向き合う重さを時点ごとに区切ってお答えください。"
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-a-transfer_repayment-v2",
+          "text": "直視を避けた瞬間の感覚について落ち着いて言葉を選んでください。"
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-a-transfer_repayment-v3",
+          "text": "結論より先に来た恐れの形を結論を急がず述べてください。"
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-a-transfer_repayment-v4",
+          "text": "結論を保留できた瞬間が一度でもあったかについてその場の感覚のまま語ってください。"
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-a-transfer_repayment-v5",
+          "text": "振り返って一番こたえている言葉を裁判官の前で言葉にしてください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "questionType": "empathy_approach",
+      "targetParty": "b",
+      "angleId": "transfer_repayment",
+      "variants": [
+        {
+          "id": "judgeq-d-4-empathy_approach-b-transfer_repayment-v1",
+          "text": "チェ・スミンさん、過去の送金にまつわる重さを抱えながら現在を生きる感覚と時系列に沿ってお答えください。"
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-b-transfer_repayment-v2",
+          "text": "言えないまま過ぎた時間に残った感覚を一つずつ整理してお答えください。"
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-b-transfer_repayment-v3",
+          "text": "直接言っていれば変わったかもしれない場面について区別して説明してください。"
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-b-transfer_repayment-v4",
+          "text": "結局悪役側に残った事実への気持ちを順を追って明らかにしてください。"
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-b-transfer_repayment-v5",
+          "text": "振り返って言葉にしておきたかった一行を確認できる範囲でお話しください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "questionType": "fact_pursuit",
+      "targetParty": "a",
+      "angleId": "protective_silence",
+      "variants": [
+        {
+          "id": "judgeq-d-4-fact_pursuit-a-protective_silence-v1",
+          "text": "ソン・ダウンさん、チェ・スミンさんの沈黙を「説明放棄」と解した本人の理由を順を追って明らかにしてください。"
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-a-protective_silence-v2",
+          "text": "沈黙の中身を本人が確認した記録の有無を確認できる範囲でお話しください。"
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-a-protective_silence-v3",
+          "text": "沈黙の期間に本人が動いた行動の順序を時点ごとに区切ってお答えください。"
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-a-protective_silence-v4",
+          "text": "沈黙を保護と読む可能性を一度でも置いたかについて落ち着いて言葉を選んでください。"
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-a-protective_silence-v5",
+          "text": "まだ確認していない区間の有無を結論を急がず述べてください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "questionType": "fact_pursuit",
+      "targetParty": "b",
+      "angleId": "protective_silence",
+      "variants": [
+        {
+          "id": "judgeq-d-4-fact_pursuit-b-protective_silence-v1",
+          "text": "チェ・スミンさん、本人の沈黙がソン・ダウンさんを守る判断だった具体的な根拠についてその場の感覚のまま語ってください。"
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-b-protective_silence-v2",
+          "text": "沈黙していた期間に本人が伝えた相手と伝えなかった相手を裁判官の前で言葉にしてください。"
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-b-protective_silence-v3",
+          "text": "沈黙の選択をした時点とその直前の出来事と時系列に沿ってお答えください。"
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-b-protective_silence-v4",
+          "text": "沈黙の方針を変えた瞬間の有無を一つずつ整理してお答えください。"
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-b-protective_silence-v5",
+          "text": "まだ言葉にしていない部分の有無について区別して説明してください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "questionType": "motive_search",
+      "targetParty": "a",
+      "angleId": "protective_silence",
+      "variants": [
+        {
+          "id": "judgeq-d-4-motive_search-a-protective_silence-v1",
+          "text": "ソン・ダウンさん、沈黙を保護として読まなかった事情を一つずつ整理してお答えください。"
+        },
+        {
+          "id": "judgeq-d-4-motive_search-a-protective_silence-v2",
+          "text": "別の読み取りを置く余地を奪った経路について区別して説明してください。"
+        },
+        {
+          "id": "judgeq-d-4-motive_search-a-protective_silence-v3",
+          "text": "結論を支えた感情の動きを順を追って明らかにしてください。"
+        },
+        {
+          "id": "judgeq-d-4-motive_search-a-protective_silence-v4",
+          "text": "直接尋ねるより結論を選んだ理由を確認できる範囲でお話しください。"
+        },
+        {
+          "id": "judgeq-d-4-motive_search-a-protective_silence-v5",
+          "text": "昔の事情を再確認することを避けた根拠を時点ごとに区切ってお答えください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "questionType": "motive_search",
+      "targetParty": "b",
+      "angleId": "protective_silence",
+      "variants": [
+        {
+          "id": "judgeq-d-4-motive_search-b-protective_silence-v1",
+          "text": "チェ・スミンさん、その沈黙を選んだ本人の動機について落ち着いて言葉を選んでください。"
+        },
+        {
+          "id": "judgeq-d-4-motive_search-b-protective_silence-v2",
+          "text": "ソン・ダウンさんを傷つけないという判断の根拠を結論を急がず述べてください。"
+        },
+        {
+          "id": "judgeq-d-4-motive_search-b-protective_silence-v3",
+          "text": "婚約者を媒介に選ばなかった理由についてその場の感覚のまま語ってください。"
+        },
+        {
+          "id": "judgeq-d-4-motive_search-b-protective_silence-v4",
+          "text": "判断を支えた背景となる出来事を裁判官の前で言葉にしてください。"
+        },
+        {
+          "id": "judgeq-d-4-motive_search-b-protective_silence-v5",
+          "text": "沈黙を解こうとした時点があったかと時系列に沿ってお答えください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "questionType": "empathy_approach",
+      "targetParty": "a",
+      "angleId": "protective_silence",
+      "variants": [
+        {
+          "id": "judgeq-d-4-empathy_approach-a-protective_silence-v1",
+          "text": "ソン・ダウンさん、友人の沈黙が冷たさに見えた瞬間の感覚を時点ごとに区切ってお答えください。"
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-a-protective_silence-v2",
+          "text": "保護として読めなかった事情の重さについて落ち着いて言葉を選んでください。"
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-a-protective_silence-v3",
+          "text": "結論より先に来た傷の形を結論を急がず述べてください。"
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-a-protective_silence-v4",
+          "text": "結論を保留できた瞬間が一度でもあったかについてその場の感覚のまま語ってください。"
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-a-protective_silence-v5",
+          "text": "振り返って一番こたえている言葉を裁判官の前で言葉にしてください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "questionType": "empathy_approach",
+      "targetParty": "b",
+      "angleId": "protective_silence",
+      "variants": [
+        {
+          "id": "judgeq-d-4-empathy_approach-b-protective_silence-v1",
+          "text": "チェ・スミンさん、悪役側に残ることを引き受けた重さと時系列に沿ってお答えください。"
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-b-protective_silence-v2",
+          "text": "言えないまま過ぎた時間に残った感覚を一つずつ整理してお答えください。"
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-b-protective_silence-v3",
+          "text": "直接言っていれば変わったかもしれない場面について区別して説明してください。"
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-b-protective_silence-v4",
+          "text": "結局守りたかった相手の輪郭を順を追って明らかにしてください。"
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-b-protective_silence-v5",
+          "text": "振り返って言葉にしておきたかった一行を確認できる範囲でお話しください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "questionType": "fact_pursuit",
+      "targetParty": "a",
+      "angleId": "loan_document_weight",
+      "variants": [
+        {
+          "id": "judgeq-d-4-fact_pursuit-a-loan_document_weight-v1",
+          "text": "ソン・ダウンさん、借用証の存在を本人がいつどの経路で把握したかを結論を急がず述べてください。"
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-a-loan_document_weight-v2",
+          "text": "借用証に記された金額や条件のうち本人が確認した部分についてその場の感覚のまま語ってください。"
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-a-loan_document_weight-v3",
+          "text": "一部返済記録と借用証の照合状況を裁判官の前で言葉にしてください。"
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-a-loan_document_weight-v4",
+          "text": "借用証を見せた相手と見せなかった相手と時系列に沿ってお答えください。"
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-a-loan_document_weight-v5",
+          "text": "まだ確認していない区間の有無を一つずつ整理してお答えください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "questionType": "fact_pursuit",
+      "targetParty": "b",
+      "angleId": "loan_document_weight",
+      "variants": [
+        {
+          "id": "judgeq-d-4-fact_pursuit-b-loan_document_weight-v1",
+          "text": "チェ・スミンさん、借用証の作成と保管に関わる本人の経路について区別して説明してください。"
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-b-loan_document_weight-v2",
+          "text": "一部返済の事実と止まった時点の整理を順を追って明らかにしてください。"
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-b-loan_document_weight-v3",
+          "text": "借用証を見せた相手と見せなかった相手を確認できる範囲でお話しください。"
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-b-loan_document_weight-v4",
+          "text": "借用証に関わる記録のうちソン・ダウンさんに開示できる範囲を時点ごとに区切ってお答えください。"
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-b-loan_document_weight-v5",
+          "text": "まだ言葉にしていない部分の有無について落ち着いて言葉を選んでください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "questionType": "motive_search",
+      "targetParty": "a",
+      "angleId": "loan_document_weight",
+      "variants": [
+        {
+          "id": "judgeq-d-4-motive_search-a-loan_document_weight-v1",
+          "text": "ソン・ダウンさん、借用証の存在を確認するより結論を先に置いた事情を時点ごとに区切ってお答えください。"
+        },
+        {
+          "id": "judgeq-d-4-motive_search-a-loan_document_weight-v2",
+          "text": "昔の事実を再評価するより現在の断定を急いだ理由について落ち着いて言葉を選んでください。"
+        },
+        {
+          "id": "judgeq-d-4-motive_search-a-loan_document_weight-v3",
+          "text": "結論を支えた感情の動きを結論を急がず述べてください。"
+        },
+        {
+          "id": "judgeq-d-4-motive_search-a-loan_document_weight-v4",
+          "text": "記録より要約に頼った経路についてその場の感覚のまま語ってください。"
+        },
+        {
+          "id": "judgeq-d-4-motive_search-a-loan_document_weight-v5",
+          "text": "別の解釈を置けなかった事情を裁判官の前で言葉にしてください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "questionType": "motive_search",
+      "targetParty": "b",
+      "angleId": "loan_document_weight",
+      "variants": [
+        {
+          "id": "judgeq-d-4-motive_search-b-loan_document_weight-v1",
+          "text": "チェ・スミンさん、借用証の存在をソン・ダウンさんに直接話さなかった事情と時系列に沿ってお答えください。"
+        },
+        {
+          "id": "judgeq-d-4-motive_search-b-loan_document_weight-v2",
+          "text": "言葉にすると傷つけると判断した根拠を一つずつ整理してお答えください。"
+        },
+        {
+          "id": "judgeq-d-4-motive_search-b-loan_document_weight-v3",
+          "text": "言葉にする時期を遅らせた具体的な事情について区別して説明してください。"
+        },
+        {
+          "id": "judgeq-d-4-motive_search-b-loan_document_weight-v4",
+          "text": "婚約者を媒介に選ばなかった理由を順を追って明らかにしてください。"
+        },
+        {
+          "id": "judgeq-d-4-motive_search-b-loan_document_weight-v5",
+          "text": "判断を支えた背景となる出来事を確認できる範囲でお話しください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "questionType": "empathy_approach",
+      "targetParty": "a",
+      "angleId": "loan_document_weight",
+      "variants": [
+        {
+          "id": "judgeq-d-4-empathy_approach-a-loan_document_weight-v1",
+          "text": "ソン・ダウンさん、借用証という具体物に向き合う重さを裁判官の前で言葉にしてください。"
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-a-loan_document_weight-v2",
+          "text": "直視を避けた具体的な瞬間と時系列に沿ってお答えください。"
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-a-loan_document_weight-v3",
+          "text": "結論より先に来た傷の形を一つずつ整理してお答えください。"
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-a-loan_document_weight-v4",
+          "text": "結論を保留できた瞬間が一度でもあったかについて区別して説明してください。"
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-a-loan_document_weight-v5",
+          "text": "振り返って一番こたえている言葉を順を追って明らかにしてください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "questionType": "empathy_approach",
+      "targetParty": "b",
+      "angleId": "loan_document_weight",
+      "variants": [
+        {
+          "id": "judgeq-d-4-empathy_approach-b-loan_document_weight-v1",
+          "text": "チェ・スミンさん、借用証を抱えながら友人と向き合う重さを確認できる範囲でお話しください。"
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-b-loan_document_weight-v2",
+          "text": "言えないまま過ぎた時間に残った感覚を時点ごとに区切ってお答えください。"
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-b-loan_document_weight-v3",
+          "text": "直接言っていれば変わったかもしれない場面について落ち着いて言葉を選んでください。"
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-b-loan_document_weight-v4",
+          "text": "結局悪役側に残った事実への気持ちを結論を急がず述べてください。"
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-b-loan_document_weight-v5",
+          "text": "振り返って言葉にしておきたかった一行についてその場の感覚のまま語ってください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "questionType": "fact_pursuit",
+      "targetParty": "a",
+      "angleId": "first_groupchat_post",
+      "variants": [
+        {
+          "id": "judgeq-d-5-fact_pursuit-a-first_groupchat_post-v1",
+          "text": "ソン・ダウンさん、トーク部屋に最初の投稿を載せた時刻と直前に確認した事実についてその場の感覚のまま語ってください。"
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-a-first_groupchat_post-v2",
+          "text": "投稿前に直接チェ・スミンさんに尋ねた記録の有無を裁判官の前で言葉にしてください。"
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-a-first_groupchat_post-v3",
+          "text": "本人が引用した語と原本の差と時系列に沿ってお答えください。"
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-a-first_groupchat_post-v4",
+          "text": "投稿後に追加した文と削除した文の境目を一つずつ整理してお答えください。"
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-a-first_groupchat_post-v5",
+          "text": "まだ公開していない投稿があるかについて区別して説明してください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "questionType": "fact_pursuit",
+      "targetParty": "b",
+      "angleId": "first_groupchat_post",
+      "variants": [
+        {
+          "id": "judgeq-d-5-fact_pursuit-b-first_groupchat_post-v1",
+          "text": "チェ・スミンさん、トーク部屋の投稿を見た時点と本人の最初の応答時刻を順を追って明らかにしてください。"
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-b-first_groupchat_post-v2",
+          "text": "応答できなかった具体的な事情を確認できる範囲でお話しください。"
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-b-first_groupchat_post-v3",
+          "text": "応答した相手と応答しなかった相手の差を時点ごとに区切ってお答えください。"
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-b-first_groupchat_post-v4",
+          "text": "事実関係のうち本人が訂正したい部分について落ち着いて言葉を選んでください。"
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-b-first_groupchat_post-v5",
+          "text": "まだ言葉にしていない部分の有無を結論を急がず述べてください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "questionType": "motive_search",
+      "targetParty": "a",
+      "angleId": "first_groupchat_post",
+      "variants": [
+        {
+          "id": "judgeq-d-5-motive_search-a-first_groupchat_post-v1",
+          "text": "ソン・ダウンさん、確認より公開を先にした本人の動機について落ち着いて言葉を選んでください。"
+        },
+        {
+          "id": "judgeq-d-5-motive_search-a-first_groupchat_post-v2",
+          "text": "直接尋ねる選択肢を置かなかった事情を結論を急がず述べてください。"
+        },
+        {
+          "id": "judgeq-d-5-motive_search-a-first_groupchat_post-v3",
+          "text": "投稿で得たい結果が何だったかについてその場の感覚のまま語ってください。"
+        },
+        {
+          "id": "judgeq-d-5-motive_search-a-first_groupchat_post-v4",
+          "text": "投稿を急がせた感情の流れを裁判官の前で言葉にしてください。"
+        },
+        {
+          "id": "judgeq-d-5-motive_search-a-first_groupchat_post-v5",
+          "text": "止められた可能性が一度でもあったかと時系列に沿ってお答えください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "questionType": "motive_search",
+      "targetParty": "b",
+      "angleId": "first_groupchat_post",
+      "variants": [
+        {
+          "id": "judgeq-d-5-motive_search-b-first_groupchat_post-v1",
+          "text": "チェ・スミンさん、即時に説明できなかった本人の事情を一つずつ整理してお答えください。"
+        },
+        {
+          "id": "judgeq-d-5-motive_search-b-first_groupchat_post-v2",
+          "text": "言葉を選び直す時間が必要だった理由について区別して説明してください。"
+        },
+        {
+          "id": "judgeq-d-5-motive_search-b-first_groupchat_post-v3",
+          "text": "ソン・ダウンさんに直接連絡する経路を取らなかった事情を順を追って明らかにしてください。"
+        },
+        {
+          "id": "judgeq-d-5-motive_search-b-first_groupchat_post-v4",
+          "text": "判断を支えた背景となる出来事を確認できる範囲でお話しください。"
+        },
+        {
+          "id": "judgeq-d-5-motive_search-b-first_groupchat_post-v5",
+          "text": "結論を急がず置いた理由を時点ごとに区切ってお答えください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "questionType": "empathy_approach",
+      "targetParty": "a",
+      "angleId": "first_groupchat_post",
+      "variants": [
+        {
+          "id": "judgeq-d-5-empathy_approach-a-first_groupchat_post-v1",
+          "text": "ソン・ダウンさん、結婚直前の傷がトーク部屋に流れ出た衝動の感覚と時系列に沿ってお答えください。"
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-a-first_groupchat_post-v2",
+          "text": "投稿前に消えてほしかった感覚を一つずつ整理してお答えください。"
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-a-first_groupchat_post-v3",
+          "text": "止めようとした手の動きが一度でもあったかについて区別して説明してください。"
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-a-first_groupchat_post-v4",
+          "text": "結論より先に来た傷の形を順を追って明らかにしてください。"
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-a-first_groupchat_post-v5",
+          "text": "振り返って一番こたえている言葉を確認できる範囲でお話しください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "questionType": "empathy_approach",
+      "targetParty": "b",
+      "angleId": "first_groupchat_post",
+      "variants": [
+        {
+          "id": "judgeq-d-5-empathy_approach-b-first_groupchat_post-v1",
+          "text": "チェ・スミンさん、悪役として描かれた投稿を読んだ瞬間の重さを時点ごとに区切ってお答えください。"
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-b-first_groupchat_post-v2",
+          "text": "言えないまま広がった事実への感覚について落ち着いて言葉を選んでください。"
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-b-first_groupchat_post-v3",
+          "text": "直接訂正できなかった事情の輪郭を結論を急がず述べてください。"
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-b-first_groupchat_post-v4",
+          "text": "結局沈黙が続いた理由についてその場の感覚のまま語ってください。"
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-b-first_groupchat_post-v5",
+          "text": "振り返って言葉にしておきたかった一行を裁判官の前で言葉にしてください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "questionType": "fact_pursuit",
+      "targetParty": "a",
+      "angleId": "pile_on_spread",
+      "variants": [
+        {
+          "id": "judgeq-d-5-fact_pursuit-a-pile_on_spread-v1",
+          "text": "ソン・ダウンさん、本人の投稿に他の友人が同調していった順序について落ち着いて言葉を選んでください。"
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-a-pile_on_spread-v2",
+          "text": "同調の発言を本人が見た時点と確認した経路を結論を急がず述べてください。"
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-a-pile_on_spread-v3",
+          "text": "本人が止めようとした記録の有無についてその場の感覚のまま語ってください。"
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-a-pile_on_spread-v4",
+          "text": "広がりを抑えるために送ったメッセージの有無を裁判官の前で言葉にしてください。"
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-a-pile_on_spread-v5",
+          "text": "広がりに気づいたが動かなかった区間と時系列に沿ってお答えください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "questionType": "fact_pursuit",
+      "targetParty": "b",
+      "angleId": "pile_on_spread",
+      "variants": [
+        {
+          "id": "judgeq-d-5-fact_pursuit-b-pile_on_spread-v1",
+          "text": "チェ・スミンさん、同調の発言が広がった期間に本人が応答した記録を一つずつ整理してお答えください。"
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-b-pile_on_spread-v2",
+          "text": "応答できなかった理由となる具体的な事情について区別して説明してください。"
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-b-pile_on_spread-v3",
+          "text": "応答した相手と応答しなかった相手の差を順を追って明らかにしてください。"
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-b-pile_on_spread-v4",
+          "text": "同調を止めようとした記録の有無を確認できる範囲でお話しください。"
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-b-pile_on_spread-v5",
+          "text": "まだ言葉にしていない部分の有無を時点ごとに区切ってお答えください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "questionType": "motive_search",
+      "targetParty": "a",
+      "angleId": "pile_on_spread",
+      "variants": [
+        {
+          "id": "judgeq-d-5-motive_search-a-pile_on_spread-v1",
+          "text": "ソン・ダウンさん、広がりを止めなかった本人の事情を確認できる範囲でお話しください。"
+        },
+        {
+          "id": "judgeq-d-5-motive_search-a-pile_on_spread-v2",
+          "text": "止めることが結論を揺るがすと感じた根拠を時点ごとに区切ってお答えください。"
+        },
+        {
+          "id": "judgeq-d-5-motive_search-a-pile_on_spread-v3",
+          "text": "結論を維持したい気持ちと止める責任の比重について落ち着いて言葉を選んでください。"
+        },
+        {
+          "id": "judgeq-d-5-motive_search-a-pile_on_spread-v4",
+          "text": "止めようとして止められなかった具体的な瞬間を結論を急がず述べてください。"
+        },
+        {
+          "id": "judgeq-d-5-motive_search-a-pile_on_spread-v5",
+          "text": "判断を支えた感情の流れについてその場の感覚のまま語ってください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "questionType": "motive_search",
+      "targetParty": "b",
+      "angleId": "pile_on_spread",
+      "variants": [
+        {
+          "id": "judgeq-d-5-motive_search-b-pile_on_spread-v1",
+          "text": "チェ・スミンさん、同調が広がる中で言葉を止めていた事情を裁判官の前で言葉にしてください。"
+        },
+        {
+          "id": "judgeq-d-5-motive_search-b-pile_on_spread-v2",
+          "text": "言葉が届かないと判断した根拠と時系列に沿ってお答えください。"
+        },
+        {
+          "id": "judgeq-d-5-motive_search-b-pile_on_spread-v3",
+          "text": "直接訂正できなかった具体的な事情を一つずつ整理してお答えください。"
+        },
+        {
+          "id": "judgeq-d-5-motive_search-b-pile_on_spread-v4",
+          "text": "応答の場を持たなかった理由について区別して説明してください。"
+        },
+        {
+          "id": "judgeq-d-5-motive_search-b-pile_on_spread-v5",
+          "text": "判断を支えた背景となる出来事を順を追って明らかにしてください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "questionType": "empathy_approach",
+      "targetParty": "a",
+      "angleId": "pile_on_spread",
+      "variants": [
+        {
+          "id": "judgeq-d-5-empathy_approach-a-pile_on_spread-v1",
+          "text": "ソン・ダウンさん、自分の言葉に重なる声が増えていく感覚についてその場の感覚のまま語ってください。"
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-a-pile_on_spread-v2",
+          "text": "止められなかった瞬間の重さを裁判官の前で言葉にしてください。"
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-a-pile_on_spread-v3",
+          "text": "結論を支える声の連鎖が本人を覆った形と時系列に沿ってお答えください。"
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-a-pile_on_spread-v4",
+          "text": "結論より先に来た傷を一つずつ整理してお答えください。"
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-a-pile_on_spread-v5",
+          "text": "振り返って一番こたえている言葉について区別して説明してください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "questionType": "empathy_approach",
+      "targetParty": "b",
+      "angleId": "pile_on_spread",
+      "variants": [
+        {
+          "id": "judgeq-d-5-empathy_approach-b-pile_on_spread-v1",
+          "text": "チェ・スミンさん、同調の声に押されていく感覚を順を追って明らかにしてください。"
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-b-pile_on_spread-v2",
+          "text": "言葉が届かない手応えで残っているものを確認できる範囲でお話しください。"
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-b-pile_on_spread-v3",
+          "text": "本人が悪役に固められていく実感を時点ごとに区切ってお答えください。"
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-b-pile_on_spread-v4",
+          "text": "結局沈黙が続いた理由について落ち着いて言葉を選んでください。"
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-b-pile_on_spread-v5",
+          "text": "振り返って言葉にしておきたかった一行を結論を急がず述べてください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "questionType": "fact_pursuit",
+      "targetParty": "a",
+      "angleId": "repeat_villain_frame",
+      "variants": [
+        {
+          "id": "judgeq-d-5-fact_pursuit-a-repeat_villain_frame-v1",
+          "text": "ソン・ダウンさん、過去と現在のチェ・スミンさんを「悪役」として並べた本人の語り方についてその場の感覚のまま語ってください。"
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-a-repeat_villain_frame-v2",
+          "text": "過去の語り方と現在の語り方の差を本人が認める範囲を裁判官の前で言葉にしてください。"
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-a-repeat_villain_frame-v3",
+          "text": "同じ枠を当てた具体的な発言と時系列に沿ってお答えください。"
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-a-repeat_villain_frame-v4",
+          "text": "本人が引用した語と原本の差を一つずつ整理してお答えください。"
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-a-repeat_villain_frame-v5",
+          "text": "まだ言葉にしていない部分の有無について区別して説明してください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "questionType": "fact_pursuit",
+      "targetParty": "b",
+      "angleId": "repeat_villain_frame",
+      "variants": [
+        {
+          "id": "judgeq-d-5-fact_pursuit-b-repeat_villain_frame-v1",
+          "text": "チェ・スミンさん、二度同じ枠で語られた事実を本人が把握した経路を順を追って明らかにしてください。"
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-b-repeat_villain_frame-v2",
+          "text": "訂正したい部分と認める部分の差を確認できる範囲でお話しください。"
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-b-repeat_villain_frame-v3",
+          "text": "応答した時点と応答しなかった時点の差を時点ごとに区切ってお答えください。"
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-b-repeat_villain_frame-v4",
+          "text": "記録の中でソン・ダウンさんに開示できる範囲について落ち着いて言葉を選んでください。"
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-b-repeat_villain_frame-v5",
+          "text": "まだ言葉にしていない部分の有無を結論を急がず述べてください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "questionType": "motive_search",
+      "targetParty": "a",
+      "angleId": "repeat_villain_frame",
+      "variants": [
+        {
+          "id": "judgeq-d-5-motive_search-a-repeat_villain_frame-v1",
+          "text": "ソン・ダウンさん、同じ枠を二度当てる選択を支えた本人の事情について落ち着いて言葉を選んでください。"
+        },
+        {
+          "id": "judgeq-d-5-motive_search-a-repeat_villain_frame-v2",
+          "text": "別の語り方を置けなかった経路を結論を急がず述べてください。"
+        },
+        {
+          "id": "judgeq-d-5-motive_search-a-repeat_villain_frame-v3",
+          "text": "結論を維持したい気持ちと事実の比重についてその場の感覚のまま語ってください。"
+        },
+        {
+          "id": "judgeq-d-5-motive_search-a-repeat_villain_frame-v4",
+          "text": "繰り返した動機の流れを裁判官の前で言葉にしてください。"
+        },
+        {
+          "id": "judgeq-d-5-motive_search-a-repeat_villain_frame-v5",
+          "text": "判断を支えた感情の動きと時系列に沿ってお答えください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "questionType": "motive_search",
+      "targetParty": "b",
+      "angleId": "repeat_villain_frame",
+      "variants": [
+        {
+          "id": "judgeq-d-5-motive_search-b-repeat_villain_frame-v1",
+          "text": "チェ・スミンさん、二度悪役側に残ることを選んだ本人の事情を一つずつ整理してお答えください。"
+        },
+        {
+          "id": "judgeq-d-5-motive_search-b-repeat_villain_frame-v2",
+          "text": "言葉が届かないと判断した根拠について区別して説明してください。"
+        },
+        {
+          "id": "judgeq-d-5-motive_search-b-repeat_villain_frame-v3",
+          "text": "直接訂正の場を取らなかった理由を順を追って明らかにしてください。"
+        },
+        {
+          "id": "judgeq-d-5-motive_search-b-repeat_villain_frame-v4",
+          "text": "判断を支えた背景となる出来事を確認できる範囲でお話しください。"
+        },
+        {
+          "id": "judgeq-d-5-motive_search-b-repeat_villain_frame-v5",
+          "text": "事実関係を曲げずに残したかった輪郭を時点ごとに区切ってお答えください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "questionType": "empathy_approach",
+      "targetParty": "a",
+      "angleId": "repeat_villain_frame",
+      "variants": [
+        {
+          "id": "judgeq-d-5-empathy_approach-a-repeat_villain_frame-v1",
+          "text": "ソン・ダウンさん、同じ友人を再び悪役と呼ぶ重さと時系列に沿ってお答えください。"
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-a-repeat_villain_frame-v2",
+          "text": "繰り返しに気づいた瞬間の感覚を一つずつ整理してお答えください。"
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-a-repeat_villain_frame-v3",
+          "text": "結論を保留できた瞬間が一度でもあったかについて区別して説明してください。"
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-a-repeat_villain_frame-v4",
+          "text": "結論より先に来た傷の形を順を追って明らかにしてください。"
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-a-repeat_villain_frame-v5",
+          "text": "振り返って一番こたえている言葉を確認できる範囲でお話しください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "questionType": "empathy_approach",
+      "targetParty": "b",
+      "angleId": "repeat_villain_frame",
+      "variants": [
+        {
+          "id": "judgeq-d-5-empathy_approach-b-repeat_villain_frame-v1",
+          "text": "チェ・スミンさん、二度同じ位置に立たされた重さを時点ごとに区切ってお答えください。"
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-b-repeat_villain_frame-v2",
+          "text": "言えないまま過ぎた時間に残った感覚について落ち着いて言葉を選んでください。"
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-b-repeat_villain_frame-v3",
+          "text": "直接訂正できていれば変わったかもしれない場面を結論を急がず述べてください。"
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-b-repeat_villain_frame-v4",
+          "text": "結局事実関係を守るしかなかった選択についてその場の感覚のまま語ってください。"
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-b-repeat_villain_frame-v5",
+          "text": "振り返って言葉にしておきたかった一行を裁判官の前で言葉にしてください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "questionType": "fact_pursuit",
+      "targetParty": "a",
+      "angleId": "verification_gap",
+      "variants": [
+        {
+          "id": "judgeq-d-5-fact_pursuit-a-verification_gap-v1",
+          "text": "ソン・ダウンさん、確認を経ずに公開へ進んだ具体的な手順と時系列に沿ってお答えください。"
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-a-verification_gap-v2",
+          "text": "直接チェ・スミンさんに尋ねる手段が用意されていたかを一つずつ整理してお答えください。"
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-a-verification_gap-v3",
+          "text": "確認を省いた具体的な瞬間について区別して説明してください。"
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-a-verification_gap-v4",
+          "text": "公開後に確認した事実の有無を順を追って明らかにしてください。"
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-a-verification_gap-v5",
+          "text": "まだ確認していない区間の有無を確認できる範囲でお話しください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "questionType": "fact_pursuit",
+      "targetParty": "b",
+      "angleId": "verification_gap",
+      "variants": [
+        {
+          "id": "judgeq-d-5-fact_pursuit-b-verification_gap-v1",
+          "text": "チェ・スミンさん、本人が訂正の場に立てなかった具体的な経路を時点ごとに区切ってお答えください。"
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-b-verification_gap-v2",
+          "text": "訂正する機会があったかなかったかの境目について落ち着いて言葉を選んでください。"
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-b-verification_gap-v3",
+          "text": "本人が応答できた相手と応答できなかった相手を結論を急がず述べてください。"
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-b-verification_gap-v4",
+          "text": "訂正のタイミングを失った時点についてその場の感覚のまま語ってください。"
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-b-verification_gap-v5",
+          "text": "まだ言葉にしていない部分の有無を裁判官の前で言葉にしてください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "questionType": "motive_search",
+      "targetParty": "a",
+      "angleId": "verification_gap",
+      "variants": [
+        {
+          "id": "judgeq-d-5-motive_search-a-verification_gap-v1",
+          "text": "ソン・ダウンさん、確認を省くことを支えた本人の事情についてその場の感覚のまま語ってください。"
+        },
+        {
+          "id": "judgeq-d-5-motive_search-a-verification_gap-v2",
+          "text": "確認すると結論が崩れると感じた根拠を裁判官の前で言葉にしてください。"
+        },
+        {
+          "id": "judgeq-d-5-motive_search-a-verification_gap-v3",
+          "text": "直接尋ねる選択肢を置かなかった具体的な理由と時系列に沿ってお答えください。"
+        },
+        {
+          "id": "judgeq-d-5-motive_search-a-verification_gap-v4",
+          "text": "結論を急がせた感情の流れを一つずつ整理してお答えください。"
+        },
+        {
+          "id": "judgeq-d-5-motive_search-a-verification_gap-v5",
+          "text": "別の解釈を置く余地を奪った経路について区別して説明してください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "questionType": "motive_search",
+      "targetParty": "b",
+      "angleId": "verification_gap",
+      "variants": [
+        {
+          "id": "judgeq-d-5-motive_search-b-verification_gap-v1",
+          "text": "チェ・スミンさん、訂正の場を取らなかった本人の事情を順を追って明らかにしてください。"
+        },
+        {
+          "id": "judgeq-d-5-motive_search-b-verification_gap-v2",
+          "text": "言葉が届かないと判断した根拠を確認できる範囲でお話しください。"
+        },
+        {
+          "id": "judgeq-d-5-motive_search-b-verification_gap-v3",
+          "text": "訂正のために選ぶべきだった経路を時点ごとに区切ってお答えください。"
+        },
+        {
+          "id": "judgeq-d-5-motive_search-b-verification_gap-v4",
+          "text": "判断を支えた背景となる出来事について落ち着いて言葉を選んでください。"
+        },
+        {
+          "id": "judgeq-d-5-motive_search-b-verification_gap-v5",
+          "text": "結局沈黙を維持した理由を結論を急がず述べてください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "questionType": "empathy_approach",
+      "targetParty": "a",
+      "angleId": "verification_gap",
+      "variants": [
+        {
+          "id": "judgeq-d-5-empathy_approach-a-verification_gap-v1",
+          "text": "ソン・ダウンさん、確認を恐れた本人の事情について区別して説明してください。"
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-a-verification_gap-v2",
+          "text": "尋ねれば崩れると感じた瞬間を順を追って明らかにしてください。"
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-a-verification_gap-v3",
+          "text": "結論より先に来た傷の形を確認できる範囲でお話しください。"
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-a-verification_gap-v4",
+          "text": "結論を保留できた瞬間が一度でもあったかを時点ごとに区切ってお答えください。"
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-a-verification_gap-v5",
+          "text": "振り返って一番こたえている言葉について落ち着いて言葉を選んでください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "questionType": "empathy_approach",
+      "targetParty": "b",
+      "angleId": "verification_gap",
+      "variants": [
+        {
+          "id": "judgeq-d-5-empathy_approach-b-verification_gap-v1",
+          "text": "チェ・スミンさん、訂正できないまま悪役に残った重さを結論を急がず述べてください。"
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-b-verification_gap-v2",
+          "text": "言葉が届かない手応えで残っているものについてその場の感覚のまま語ってください。"
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-b-verification_gap-v3",
+          "text": "直接訂正していれば変わったかもしれない場面を裁判官の前で言葉にしてください。"
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-b-verification_gap-v4",
+          "text": "結局事実関係を守るしかなかった選択と時系列に沿ってお答えください。"
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-b-verification_gap-v5",
+          "text": "振り返って言葉にしておきたかった一行を一つずつ整理してお答えください。"
+        }
+      ]
+    }
+  ]
+}

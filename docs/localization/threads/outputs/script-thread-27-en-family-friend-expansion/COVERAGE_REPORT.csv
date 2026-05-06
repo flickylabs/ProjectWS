@@ -1,0 +1,15 @@
+case_id,surface,sidecar_path,bytes,filled_text_count,total_text_count
+family-01,case-surface,src/data/cases/generated/family-01.en.json,2696,26,26
+family-01,mediation,src/data/dialogues/mediation/family-v3-01.en.json,2800,10,10
+family-01,phase1,src/data/dialogues/phase1/family-01.en.json,7474,40,43
+family-01,angle_catalog,src/data/scriptedAngles/family-01_angle_catalog.en.json,6375,52,52
+family-01,judge_questions,src/data/scriptedAngles/family-01_judge_questions.en.json,235848,780,780
+family-01,interrogation_answers,src/data/scriptedAngles/family-01_interrogation_answers.en.json,3071763,9360,9360
+family-01,scriptedText,src/data/scriptedText/family-01.en.json,1994233,5262,5262
+friend-01,case-surface,src/data/cases/generated/friend-01.en.json,2258,25,25
+friend-01,mediation,src/data/dialogues/mediation/friend-v3-01.en.json,2657,10,10
+friend-01,phase1,src/data/dialogues/phase1/friend-01.en.json,6595,40,43
+friend-01,angle_catalog,src/data/scriptedAngles/friend-01_angle_catalog.en.json,5432,40,40
+friend-01,judge_questions,src/data/scriptedAngles/friend-01_judge_questions.en.json,184100,600,600
+friend-01,interrogation_answers,src/data/scriptedAngles/friend-01_interrogation_answers.en.json,2341666,6300,6300
+friend-01,scriptedText,src/data/scriptedText/friend-01.en.json,1984455,5097,5097

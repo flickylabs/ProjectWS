@@ -597,6 +597,14 @@ export function classifyFreeInterrogationQuestionPolicy(
     return { intent: 'gameplay_help', confidence: 0.9, reason: 'modern-gameplay-help-pattern' }
   }
 
+  if (asksAboutCaseActionOrContact(raw, context)) {
+    return null
+  }
+
+  if (asksForRelationshipRepairOrEmotion(raw)) {
+    return null
+  }
+
   if (matchesAny(raw, MODERN_PUBLIC_INFO_PATTERNS) && !asksForPrivateCaseData(raw)) {
     return { intent: 'public_info', confidence: 0.92, reason: 'modern-public-info-pattern' }
   }
@@ -622,6 +630,23 @@ export function classifyFreeInterrogationQuestionPolicy(
   }
 
   return null
+}
+
+function asksForRelationshipRepairOrEmotion(raw: string): boolean {
+  return /(관계|사이|손절|화해|회복|개선|다시|사과|미안|마음|감정|생각|의지|노력|후회)/i.test(raw) &&
+    /(회복|개선|화해|손절|사과|미안|마음|감정|생각|의지|노력|후회|싶|없었|않았|왜|어떤가|어떻|말하지|못했|숨겼)/i.test(raw)
+}
+
+function asksAboutCaseActionOrContact(raw: string, context: FreeInterrogationRuntimeContext): boolean {
+  if (asksOnlyForPublicSurface(raw)) return false
+
+  const hasActionOrContact = /(연락처?|통화|전화|문자|메시지|카톡|텔레그램|DM|단톡|캡처|대화|글|보냈|보낸|받았|받은|올렸|올린|공유|말했|말한|숨겼|숨긴|물어봤|확인|맞춘|맞진|맞긴|만든|시킨|하게|경고|비난|동조|거절)/i.test(raw)
+  if (!hasActionOrContact) return false
+
+  const hasCaseRoleAnchor = /(남자친구|예비신랑|아버지|어머니|배우자|남편|아내|형|동생|친구|수민|다은|태윤|정후|태성|준호|지연)/i.test(raw)
+  const hasInterrogationShape = /(왜|이유|경위|의도|목적|설명|정리|맞|그럼|그러면|아닙니까|아닌가요|했습니까|했나요|했죠|한\s*거|한게|\?)/i.test(raw)
+
+  return hasInterrogationShape && (hasCaseRoleAnchor || hasCaseAnchor(raw, context))
 }
 
 function asksForPrivateCaseData(raw: string): boolean {

@@ -10,6 +10,7 @@ import { hasContradictionComparison } from '../../../utils/contradiction'
 import { isLowValueSystemDialogueText } from '../../../utils/systemLogPolicy'
 import { getWitnessPortraitPath } from '../../../utils/witnessPortraits'
 import { sanitizeKoreanSurfaceText } from '../../../utils/korean'
+import { translate } from '../../../i18n'
 
 const CHAT_NOTE_DRAG_TYPE = 'application/x-pc-note'
 
@@ -345,8 +346,8 @@ function MessageBubble({ entry, animate, combinableTexts, combinationHintMap, is
             for (const [phrase, hint] of combinationHintMap) {
               if (!rawText.includes(phrase)) continue
               const title = [
-                hint.readyCount > 0 ? `조합 가능 ${hint.readyCount}개 — 지금 바로 연결 가능` : null,
-                hint.potentialCount > 0 ? `실마리 필요 ${hint.potentialCount}개 — 아직 찾지 못한 단서가 있는 듯` : null,
+                hint.readyCount > 0 ? translate('pc.combo.ready', { count: hint.readyCount }) : null,
+                hint.potentialCount > 0 ? translate('pc.combo.potential', { count: hint.potentialCount }) : null,
               ].filter(Boolean).join('\n')
               return (
                 <span className="pc-log-bubble__combo" title={title}>

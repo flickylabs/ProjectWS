@@ -10,6 +10,7 @@ import { setLLMMode } from '../../../hooks/useActionDispatch'
 import { useScreenPreset } from '../../../hooks/useScreenPreset'
 import { SCREEN_PRESETS, type ScreenPresetId } from '../../../utils/screenPresets'
 import { useGameStore, useStore } from '../../../store/useGameStore'
+import { translate, useI18n } from '../../../i18n'
 import { GamePhase, type CaseData, type ExtendedHistoryEntry, type SortCategory } from '../../../types'
 import PCSvgIcon from '../icons/PCSvgIcon'
 import PCSessionIcon from '../icons/PCSessionIcon'
@@ -62,6 +63,7 @@ function formatHallOfFameCaseLabel(caseId: string, cases: CaseData[]): string {
 }
 
 export default function PCHomeScreen() {
+  const { t } = useI18n()
   const { preset: screenPreset, setPreset: setScreenPreset } = useScreenPreset()
   const [showIntro, setShowIntro] = useState(() => !hasSeenPcIntro())
   const [view, setView] = useState<HomeView>('home')
@@ -312,13 +314,13 @@ export default function PCHomeScreen() {
             </div>
           </header>
           <div className="pc-home-v2__hero">
-            <span className="pc-home-v2__eyebrow">COURT SIMULATION GAME</span>
+            <span className="pc-home-v2__eyebrow">{t('splash.subtitle')}</span>
             <div className="pc-home-v2__title-row">
               <img className="pc-home-v2__title-scale" src="/icons/ornament/scale-balance.png" alt="" width={48} height={48} aria-hidden="true" />
-              <h1>솔로몬의 딜레마</h1>
+              <h1>{t('home.gameTitle')}</h1>
               <img className="pc-home-v2__title-scale" src="/icons/ornament/scale-balance.png" alt="" width={48} height={48} aria-hidden="true" />
             </div>
-            <p>현대판 솔로몬이 되어 판결을 내려보세요.</p>
+            <p>{t('home.tagline')}</p>
           </div>
           <div className="pc-home-v2__mode-grid">
             <ModeCard badge="NORMAL MODE" iconId="i-gavel" label="일반 모드 >" metaLeft={`세션 ${PC_GENERAL_SESSIONS.length}개`} metaRight={`진척 ${totalGeneralCompleted}/${totalGeneralCases}`} onClick={() => { setSelectedSession(null); setView('general') }} progressRate={totalGeneralCases ? (totalGeneralCompleted / totalGeneralCases) * 100 : 0} />
@@ -382,7 +384,7 @@ export default function PCHomeScreen() {
 
       {view === 'profile' && (
         <section className="pc-depth-shell">
-          <DepthHeader eyebrow="JUDGE DESK" title="재판관 정보" description="현재 재판관의 성향과 타이틀, 판결 기록을 확인합니다." onBack={() => setView('home')} />
+          <DepthHeader eyebrow="JUDGE DESK" title="재판관 정보" description="현재 재판관의 성향과 칭호, 판결 기록을 확인합니다." onBack={() => setView('home')} />
           <div className="pc-desk-tabs">
             <button className={`pc-desk-tab${judgeDeskTab === 'profile' ? ' is-active' : ''}`} onClick={() => setJudgeDeskTab('profile')} type="button">정보 확인</button>
             <button className={`pc-desk-tab${judgeDeskTab === 'history' ? ' is-active' : ''}`} onClick={() => setJudgeDeskTab('history')} type="button">판결 기록</button>
@@ -641,8 +643,7 @@ function ScreenPresetConfirmModal({ countdown, onCancel, onConfirm }: { countdow
       <section className="pc-resolution-confirm" role="dialog" aria-modal="true" aria-labelledby="pc-resolution-confirm-title">
         <h3 id="pc-resolution-confirm-title">지금 해상도를 유지하시겠습니까?</h3>
         <div className="pc-resolution-confirm__count">
-          <strong>{countdown}</strong>
-          <span>초 후 이전 해상도로 돌아갑니다.</span>
+          <span>{translate('pc.resolutionConfirm.rollback', { seconds: countdown })}</span>
         </div>
         <div className="pc-resolution-confirm__actions">
           <button className="pc-inline-button" onClick={onConfirm} type="button">예</button>
@@ -728,14 +729,67 @@ function splitStoredParagraphs(text?: string): string[] {
     .filter(Boolean)
 }
 
+function pickStoredAftermath(snapshotText?: string, detailText?: string): string | undefined {
+  const candidates = [snapshotText, detailText].filter((text): text is string => Boolean(text?.trim()))
+  if (candidates.length === 0) return undefined
+  return candidates.sort((a, b) => {
+    const paraDelta = splitStoredParagraphs(b).length - splitStoredParagraphs(a).length
+    if (paraDelta !== 0) return paraDelta
+    return b.length - a.length
+  })[0]
+}
+
+function buildHistoryAftermathFallback(entry: ExtendedHistoryEntry, caseTitle: string, selectedSolutions: string[]): string[] {
+  const mainAction = selectedSolutions.map(formatSolutionLabel).filter(Boolean)[0]
+  const actionText = mainAction
+    ? `${mainAction}라는 결론은 문장 그대로 남지 않고, 두 사람이 다시 확인해야 할 약속과 경계로 옮겨졌다.`
+    : '두 사람은 당장 결론을 크게 말하기보다, 다시 확인해야 할 기록과 남은 말을 먼저 나누어 적었다.'
+  const lesson = entry.relationshipType === 'friend'
+    ? '늦은 경고도 설명되지 않으면 상처로 남는다.'
+    : entry.relationshipType === 'family'
+      ? '가족의 마음도 사실 앞에서 다시 읽혀야 한다.'
+      : entry.relationshipType === 'spouse'
+        ? '침묵은 때로 선의보다 오래 의심을 남긴다.'
+        : '확인하지 않은 마음은 관계 밖에서 다시 돌아온다.'
+
+  return [
+    `${caseTitle}의 판결이 끝난 뒤에도 ${entry.nameA}과 ${entry.nameB}은 한동안 쉽게 말을 꺼내지 못했다. 점수와 기록은 정리되었지만, 서로에게 남은 감정은 아직 법정 안의 문장처럼 또렷하지 않았다. 한쪽이 먼저 고개를 끄덕였고, 다른 한쪽은 그 표정에서 뒤늦은 피로와 망설임을 함께 보았다.`,
+    `며칠 뒤 두 사람은 필요한 연락만 짧게 주고받았다. ${actionText} 감정이 완전히 풀린 것은 아니어서 답장은 조심스러웠고, 몇 번은 쓴 말을 지우고 다시 적었다. 그래도 예전처럼 확인하지 않은 확신으로 상대를 몰아붙이지는 않았다.`,
+    `시간이 지나면서 사건은 승패보다 남은 거리의 문제로 바뀌었다. 두 사람은 쉽게 예전처럼 돌아가지는 못했지만, 같은 상처가 어디서 시작됐는지는 조금 더 선명하게 알게 되었다. 그 이해는 화해라고 부르기에는 작았지만, 다음 말을 망치지 않기 위한 최소한의 변화였다.`,
+    `"${lesson}"`,
+  ]
+}
+
+function splitStoredAftermathDisplay(text: string | undefined, entry: ExtendedHistoryEntry, caseTitle: string, selectedSolutions: string[]): { bodyParas: string[]; lesson: string | null } {
+  const fallback = buildHistoryAftermathFallback(entry, caseTitle, selectedSolutions)
+  const paragraphs = splitStoredParagraphs(text)
+  const isMechanicalOldText = Boolean(text && /책임\s*비율|책임.*배분.*판결|판결문에\s*적힌\s*해결\s*방향|다음\s*조치였다|후일담의\s*방향/.test(text))
+  const completed = isMechanicalOldText
+    ? fallback
+    : paragraphs.length === 0
+    ? fallback
+    : paragraphs.length >= 4
+    ? paragraphs
+    : [
+      ...paragraphs,
+      ...fallback.slice(Math.max(1, paragraphs.length)),
+    ].slice(0, 4)
+
+  if (completed.length === 0) return { bodyParas: [], lesson: null }
+  const last = completed[completed.length - 1]
+  const quotedLesson = last.match(/^[“"']?(.+?)[”"']?$/)
+  return {
+    bodyParas: completed.slice(0, -1),
+    lesson: quotedLesson?.[1]?.trim() ?? last,
+  }
+}
+
 function HistoryDetailModal({ entry, onClose }: { entry: ExtendedHistoryEntry; onClose: () => void }) {
   const [tab, setTab] = useState<HistoryResultTab>('result')
   const caseData = getCaseById(entry.caseId)
   const detail = entry.verdictDetail
   const snapshot = entry.resultSnapshot
   const summary = snapshot?.verdictSummary ?? detail?.verdictSummary
-  const aftermath = snapshot?.aftermath ?? detail?.aftermath
-  const paragraphs = splitStoredParagraphs(aftermath)
   const score = snapshot?.score ?? {
     total: entry.score,
     insight: entry.insight,
@@ -745,6 +799,8 @@ function HistoryDetailModal({ entry, onClose }: { entry: ExtendedHistoryEntry; o
   }
   const selectedSolutions = snapshot?.selectedSolutions ?? detail?.selectedSolutions ?? []
   const caseTitle = snapshot?.caseTitle ?? (caseData ? getCaseDisplayTitle(caseData) : `${entry.nameA} vs ${entry.nameB}`)
+  const aftermath = pickStoredAftermath(snapshot?.aftermath, detail?.aftermath)
+  const { bodyParas: aftermathBodyParas, lesson: aftermathLesson } = splitStoredAftermathDisplay(aftermath, entry, caseTitle, selectedSolutions)
   const factRows = snapshot?.factFindings?.length
     ? snapshot.factFindings
     : caseData?.disputes.map((dispute) => ({
@@ -846,6 +902,7 @@ function HistoryDetailModal({ entry, onClose }: { entry: ExtendedHistoryEntry; o
                         )
                       })}
                     </div>
+                    <span aria-hidden="true" style={{ display: 'none' }} />
                   </div>
                 ) : null}
 
@@ -905,23 +962,30 @@ function HistoryDetailModal({ entry, onClose }: { entry: ExtendedHistoryEntry; o
                         <p>{getHistoryVerdictBrief(entry)}</p>
                       </div>
                     )}
+                    <span aria-hidden="true" style={{ display: 'none' }} />
                   </div>
                 ) : null}
 
                 {tab === 'epilogue' ? (
-                  <div className="pc-result-text">
+                  <div className="pc-result-text pc-history-epilogue-tab">
+                    <div style={{ textAlign: 'center', marginBottom: 8 }}>
+                      <div style={{ fontSize: 12, fontWeight: 800, letterSpacing: '0.2em', color: 'var(--pc-gold-light)', textTransform: 'uppercase' }}>Epilogue</div>
+                    </div>
                     <div className="pc-history-epilogue-box">
-                      <div style={{ textAlign: 'center', marginBottom: 8 }}>
-                        <div style={{ fontSize: 12, fontWeight: 800, letterSpacing: '0.2em', color: 'var(--pc-gold-light)', textTransform: 'uppercase' }}>Epilogue</div>
-                      </div>
                       <div className="pc-result-aftermath">
-                        {paragraphs.length ? paragraphs.map((paragraph, index) => (
+                        {aftermathBodyParas.length ? aftermathBodyParas.map((paragraph, index) => (
                           <p className="pc-result-aftermath__para" key={`${index}-${paragraph.slice(0, 12)}`}>
                             {paragraph}
                           </p>
                         )) : <p className="pc-history-detail-empty">이전 플레이 기록에는 후일담이 저장되어 있지 않습니다. 앞으로 완료되는 플레이는 후일담까지 함께 저장됩니다.</p>}
+                        {aftermathLesson ? (
+                          <p className="pc-result-aftermath__lesson">
+                            &ldquo;{aftermathLesson}&rdquo;
+                          </p>
+                        ) : null}
                       </div>
                     </div>
+                    <span aria-hidden="true" style={{ display: 'none' }} />
                   </div>
                 ) : null}
 
@@ -946,6 +1010,7 @@ function HistoryDetailModal({ entry, onClose }: { entry: ExtendedHistoryEntry; o
                         <HistoryRewardGrid rewards={rewardFragments} />
                       </div>
                     </div>
+                    <span aria-hidden="true" style={{ display: 'none' }} />
                   </div>
                 ) : null}
         </PCResultFrame>

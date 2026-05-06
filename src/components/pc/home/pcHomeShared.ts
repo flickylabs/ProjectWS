@@ -1,6 +1,7 @@
 import type { CaseData } from '../../../types'
 import { hasScriptedTextBundle } from '../../../engine/scriptedTextLoader'
 import { normalizeCaseKey } from '../../../utils/caseHelpers'
+import { translate, type MessageKey } from '../../../i18n'
 
 export const PC_HOME_INTRO_KEY = 'solomon-intro-seen'
 export const PC_CASE_PROGRESS_KEY = 'solomon-case-progress'
@@ -130,25 +131,29 @@ export interface PCCaseProgressEntry {
 export const PC_HOME_INTRO_SLIDES = [
   {
     kicker: 'DIGITAL COURT',
-    title: '현대판 솔로몬이 되어 갈등을 해결해주세요.',
-    body: '질문, 증거, 판단을 연결하며 서로 다른 진실을 가려내는 모의 재판 게임입니다.',
+    titleKey: 'pc.home.intro.slide.digitalCourt.title',
+    bodyKey: 'pc.home.intro.slide.digitalCourt.body',
   },
   {
     kicker: 'CONFLICT',
-    title: '옳고 그름 보다 어긋난 진실에 집중하세요.',
-    body: '감정과 기록, 침묵과 변명, 계산과 오해가 서로 다른 얼굴을 드러냅니다.',
+    titleKey: 'pc.home.intro.slide.conflict.title',
+    bodyKey: 'pc.home.intro.slide.conflict.body',
   },
   {
     kicker: 'INTERROGATION',
-    title: '질문하고, 증거를 제시하고, 흐름에 집중해주세요.',
-    body: '중요한 것은 정보의 양이 아니라, 파편화 된 단서의 연결입니다.',
+    titleKey: 'pc.home.intro.slide.interrogation.title',
+    bodyKey: 'pc.home.intro.slide.interrogation.body',
   },
   {
     kicker: 'READY',
-    title: '첫 사건이 당신을 기다리고 있습니다!',
-    body: '원하는 사건을 선택하여 지금 바로 재판을 시작할 수 있습니다.',
+    titleKey: 'pc.home.intro.slide.ready.title',
+    bodyKey: 'pc.home.intro.slide.ready.body',
   },
-] as const
+] as const satisfies ReadonlyArray<{
+  kicker: string
+  titleKey: MessageKey
+  bodyKey: MessageKey
+}>
 
 const PC_DROPPED_CASE_KEYS = new Set(['neighbor-new-10', 'civic-new-07'])
 
@@ -193,13 +198,13 @@ export function loadPcCaseProgress(): Record<string, PCCaseProgressEntry> {
 }
 
 export function formatCountdown(seconds: number): string {
-  if (seconds <= 0) return '곧 충전'
+  if (seconds <= 0) return translate('pc.home.countdown.ready')
   const minutes = Math.floor(seconds / 60)
   const remainSeconds = seconds % 60
   if (minutes > 0) {
-    return `${minutes}분 ${String(remainSeconds).padStart(2, '0')}초`
+    return translate('pc.home.countdown.minutesSeconds', { minutes, seconds: String(remainSeconds).padStart(2, '0') })
   }
-  return `${remainSeconds}초`
+  return translate('pc.home.countdown.seconds', { seconds: remainSeconds })
 }
 
 export function getCasesForPcHomeCategory(cases: CaseData[], category: PCHomeCategoryId): CaseData[] {
@@ -327,7 +332,7 @@ export function getCaseIssuePreview(caseData: CaseData, limit = 3): string[] {
     .map((dispute) => truncate(compactText(dispute.name), 28))
   const remaining = Math.max(0, caseData.disputes.length - limit)
   if (remaining > 0) {
-    items.push(`외 ${remaining}건`)
+    items.push(translate('pc.home.moreCases', { count: remaining }))
   }
   return items
 }

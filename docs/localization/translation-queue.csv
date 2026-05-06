@@ -1,0 +1,10 @@
+batch_id,scope,target_locale,assigned_to,status,input_path,output_path,notes
+ui-shell-en,PC shell UI,en,Codex,done,src/i18n/messages.ts,src/i18n/messages.ts,Initial shell messages are in place.
+ui-shell-ja,PC shell UI,ja,Codex,done,src/i18n/messages.ts,src/i18n/messages.ts,Initial shell messages are in place.
+ui-shell-zh-CN,PC shell UI,zh-CN,Codex,done,src/i18n/messages.ts,src/i18n/messages.ts,Initial shell messages are in place.
+ui-home-en,PC home/settings/result/verdict UI,en,GPT Pro,queued,src/components/pc/,src/i18n/messages.ts,Static UI labels first; no case dialogue.
+ui-home-ja,PC home/settings/result/verdict UI,ja,ClaudeCode,queued,src/components/pc/,src/i18n/messages.ts,Static UI labels first; no case dialogue.
+ui-home-zh-CN,PC home/settings/result/verdict UI,zh-CN,Gemini Pro,queued,src/components/pc/,src/i18n/messages.ts,Static UI labels first; no case dialogue.
+case-pilot-en,One pilot case content,en,GPT Pro,queued,src/data/cases/generated/spouse-01.json,src/data/localized/spouse-01/en.json,Use after localized case schema is defined.
+case-pilot-ja,One pilot case content,ja,ClaudeCode,queued,src/data/cases/generated/spouse-01.json,src/data/localized/spouse-01/ja.json,Use after localized case schema is defined.
+case-pilot-zh-CN,One pilot case content,zh-CN,Gemini Pro,queued,src/data/cases/generated/spouse-01.json,src/data/localized/spouse-01/zh-CN.json,Use after localized case schema is defined.

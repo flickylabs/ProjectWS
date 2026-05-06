@@ -1,0 +1,19 @@
+glossary_id,locale,current,proposed,reason,confidence,requires_user_decision
+briefing_phase,en,Briefing Phase,Case Brief,UI hero pill renders `사건 브리핑` as `Case Brief` for tone parity with Steam game UI. `Briefing Phase` reads more academic.,medium,false
+pretrial_phase,en,Pretrial Phase,Opening Statements,EN UI translates `사전진술` as `Opening Statements` for clearer gameplay tone. `Pretrial Phase` is too legalistic for Steam audience.,high,false
+interrogation_phase,en,Interrogation Phase,Interrogation,Phase pill drops the suffix `Phase` (e.g. `Phase 2 - Interrogation` already says Phase). Standalone `Interrogation` reads better in headers.,medium,false
+re_examination_phase,en,Re-examination Phase,Final Interrogation,Source label `최종 심문 단계` literally means `Final Interrogation Phase`. EN UI uses `Final Interrogation` (advance button + tactical tab),medium,false
+contradiction_pursuit,en,Contradiction Pursuit,Press the Contradiction,The action verb in PCDialogueLog (`모순을 찌른다`) reads as imperative. Glossary noun `Contradiction Pursuit` is correct for static labels but the verb form preserves player tone.,medium,false
+free_interrogation,en,Free Interrogation,Free Question,Hotbar slot label fits `Free Question` in the slot width. `Free Interrogation` overflows. Compact-UI form,medium,false
+dossier,en,Dossier,Decisive Question,Source `결정적 질문 해금` does not use the dossier metaphor. `Decisive Question Unlocked` is the in-UI banner. `Dossier` is engine-internal naming and never surfaces in UI,high,true
+record_summary,en,Record Summary,Records,Floating right-panel toggle and panel title both render as `Records` (or `기록 정리` in KO). `Record Summary` overflows the floating button label,medium,false
+party_a,en,Party A,Party A,No change — already aligned,high,false
+court_simulation,en,Court Simulation,Court Simulation,No change — already aligned with eyebrow `COURT SIMULATION GAME`,high,false
+hidden_truth,en,Hidden Truth,Hidden Truth,No change — concept used in policy doc only; EN UI never surfaces this term directly,high,false
+surface_text,en,Surface Text,Surface Text,No change — engine concept; not surfaced in UI,high,false
+mock_mode,en,Mock Mode,Mock Mode,No change — DEV-only concept,high,false
+test_console,en,Test Console,Test Console,No change — already aligned,high,false
+investigation_token,en,Investigation Token,Investigation Token,No change — locked-style behavior preserved. Plural `Investigation Tokens` used for popup title,high,false
+skill_point,en,Skill Point,Skill Point,No change — plural `Skill Points` used in popup title only,high,false
+trust,en,Trust,Trust,No change — adds 3 derived state labels (Trusting / Cautious / Suspicious) which should be appended as new glossary IDs trust_state_*,high,false
+clearance,en,Clearance,Clearance,No change. Verified as the result-screen donut label,high,false

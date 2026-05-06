@@ -1,0 +1,81 @@
+{
+  "caseId": "family-01",
+  "locale": "ja",
+  "overlayKind": "generatedCaseSurface",
+  "meta": {
+    "title": "認知症の母が遺した遺言書"
+  },
+  "context": {
+    "description": "認知症の母が遺した遺言書には、弟60%、兄40%と記されている。母を生涯介護してきたと自負するユン・テソンは怒り、弟は最後まで淡々としている。",
+    "triggerAmplifier": "序盤は、遺言書の比率と療養院の面会記録が、ユン・ジョンフの介入のように見える。しかし、公証人のメモ、自筆練習本、年代物の口座の流れ、母の日記が次々と開かれていくと、事件の中心は単純な遺産争いの向こう側へと拡がっていく。"
+  },
+  "duo": {
+    "partyA": {
+      "name": "ユン・テソン",
+      "occupation": "厨房家具工場代表"
+    },
+    "partyB": {
+      "name": "ユン・ジョンフ",
+      "occupation": "自動車部品店経営"
+    }
+  },
+  "disputes": [
+    {
+      "id": "d-1",
+      "name": "遺言書作成と判断能力"
+    },
+    {
+      "id": "d-2",
+      "name": "公証された遺言書と別の文書との差"
+    },
+    {
+      "id": "d-3",
+      "name": "古くからの支援の出どころ"
+    },
+    {
+      "id": "d-4",
+      "name": "家族の記録と沈黙の理由"
+    },
+    {
+      "id": "d-5",
+      "name": "母の隠された思い"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e-1",
+      "surfaceName": "分配比率が記された書類の写し",
+      "surfaceDescription": "母の遺言書の写しが存在する。"
+    },
+    {
+      "id": "e-2",
+      "surfaceName": "療養院の面会記録",
+      "surfaceDescription": "療養院の面会記録が存在する。"
+    },
+    {
+      "id": "e-3",
+      "surfaceName": "元介護士の音声証言",
+      "surfaceDescription": "元担当の介護士による証言が存在する。"
+    },
+    {
+      "id": "e-4",
+      "surfaceName": "公証人のメモ",
+      "surfaceDescription": "公証当日の手続きメモが存在する。"
+    },
+    {
+      "id": "e-5",
+      "surfaceName": "母の自筆遺言練習本",
+      "surfaceDescription": "母が遺した自筆の遺言練習本が存在する。"
+    },
+    {
+      "id": "e-6",
+      "surfaceName": "年代物の口座の流れ",
+      "surfaceDescription": "古くからの口座の流れの記録が存在する。"
+    },
+    {
+      "id": "e-7",
+      "surfaceName": "母の日記",
+      "surfaceDescription": "母の白い自筆ノートの写真が存在する。"
+    }
+  ]
+}

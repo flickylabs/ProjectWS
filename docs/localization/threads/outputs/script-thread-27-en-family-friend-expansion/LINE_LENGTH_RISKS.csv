@@ -1,0 +1,4 @@
+case_id,surface,variant_id,bucket_key,length_chars,length_bytes,risk
+family-01,scriptedText.system_message,sys-interrogation-repeat_warning-v1,"interrogation|repeat_warning",109,109,WARN long system_message (>80)
+family-01,scriptedText.system_message,sys-interrogation-repeat_warning-v2,"interrogation|repeat_warning",86,86,WARN long system_message (>80)
+family-01,scriptedText.system_message,sys-interrogation-repeat_warning-v4,"interrogation|repeat_warning",98,98,WARN long system_message (>80)

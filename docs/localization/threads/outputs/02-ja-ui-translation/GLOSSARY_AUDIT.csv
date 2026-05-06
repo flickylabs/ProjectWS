@@ -1,0 +1,77 @@
+glossary_id,locked,used_in_keys_count,used_terms_observed,conflicts,status
+project_solomon,true,1,Project Solomon,KO source uses 솔로몬의 딜레마 / 솔로몬 법정 as in-game titles distinct from product name; baseline pc.app.title still emits 'Project Solomon',clean
+steam_app_id,true,0,,,unused
+achievement_api_name,true,0,,,unused
+steam_auth_ticket,false,0,,,unused
+steam_cloud,true,0,,,unused
+steam_deck,true,0,,,unused
+court_simulation,false,0,,,unused
+courtroom,false,1,法廷,,clean
+judge,false,8,裁判官,,clean
+party,false,0,,,unused
+party_a,false,1,当事者A,,clean
+party_b,false,1,当事者B,,clean
+witness,false,5,証人,,clean
+case,false,0,事件 (used as KO 사건; rendered in hero copy & case browser as 事件),,clean
+case_brief,false,0,,KO uses 사건 입장하기 + 사건 목록 + 사건 요약 — no 사건 브리핑 in current PC UI,unused
+case_id,true,0,,,unused
+phase,false,9,フェーズ (UI uses ブリーフィング/冒頭陳述/etc directly without word フェーズ),,clean
+briefing_phase,false,1,ブリーフィング,KO source uses 브리핑 only (drops 단계 in PC UI),clean
+pretrial_phase,false,1,冒頭陳述,KO source uses 사전 진술 (drops 단계),clean
+interrogation_phase,false,1,尋問,KO source uses 심문 (drops 단계); also referenced as 심문 단계 in advance buttons → still 尋問フェーズ via separate strings,clean
+rebuttal_phase,false,1,反論,KO source uses 반박,clean
+evidence_phase,false,1,証拠審理,KO source uses 증거 심리 + 증거 정리 단계 in advance text,needs-normalization
+re_examination_phase,false,1,再尋問,KO source uses 최종 심문 in PC UI not 최종 심문 단계 verbatim,clean
+mediation_phase,false,1,調停,KO source uses 중재 (drops 단계),clean
+verdict_phase,false,1,判決,KO source uses 판결 단계 in advance button text,clean
+result_phase,false,1,結果,,clean
+verdict,false,7,判決,,clean
+judgment_basis,false,0,,,unused
+responsibility,false,1,責任 (used in 02 責任の所在 step heading + responsibility direction labels),,clean
+solution,false,2,解決策 (UI) / 解決案 (verdict step heading 03 解決案 → 03 解決策),"glossary draft = 解決案; UI proposal = 解決策 (more natural for game UI)",needs-normalization
+dispute,false,17,争点,,clean
+claim,false,3,主張,used in fact option1/3,clean
+fact,false,3,事実 (verdict.fact.true) / 事実 (record.section.facts → 確定した事実),,clean
+truth,false,4,真相 (intro slide / dispute popover) / 真相 (record row truth.label 真相の把握),,clean
+hidden_truth,false,0,,,unused
+surface_text,false,0,,,unused
+evidence,false,18,証拠,,clean
+evidence_card,false,0,,,unused
+evidence_stage,false,1,証拠段階 (KO source uses 조사 단계 in interaction panel rendered 調査ステージ),"KO uses two terms (증거 단계 / 조사 단계); UI proposal renders 조사 단계 = 調査ステージ (distinct from glossary 証拠段階)",needs-normalization
+deep_investigation,false,0,,,unused
+testimony,false,3,証言 (used in pc.evidenceType.testimony + pc.dock.witness.subtitle),,clean
+statement,false,2,供述 (record.section.contradiction.empty + dialogue.contradiction.body),,clean
+contradiction,false,9,矛盾,,clean
+contradiction_pursuit,false,2,矛盾を突く / 追及する (verb forms in dialogue.contradiction.{pursue,action}),"glossary draft = 矛盾追及; UI uses verb conjugations not nominal — distinct contexts",clean
+free_interrogation,false,2,自由質問,"KO source uses 자유 질문 (free question) in PC UI, not 자유심문 (free interrogation). UI proposal renders 自由質問 to match KO source semantics. Glossary entry is for the gameplay mode concept, not the per-turn slot label.",needs-normalization
+judge_question,false,0,,,unused
+fact_pursuit,false,2,事実追及,used in dock.choice.fact.title + actions.quick.fact,clean
+motive_search,false,2,動機探索,used in dock.choice.motive.title + actions.quick.motive,clean
+empathy_approach,false,2,共感アプローチ,used in dock.choice.empathy.title + actions.quick.empathy,clean
+dossier,false,0,,KO PC UI uses 결정적 질문 / 발언 노트 / 사건 기록 (concept) but not as a single noun matching 사건 기록 → 調書. Concept appears as 決定的質問.,unused
+notebook,false,4,ノート,used in pc.panels.evidence.title (증거 수첩 → 証拠ノート) and pc.notebook.title (재판관의 수첩 → 裁判官のノート),clean
+observation,false,1,観察,used in pc.observation.title,clean
+record_summary,false,1,記録の整理,"glossary draft = 記録要約; KO source uses 기록 정리 (not 기록 요약). UI proposal renders 記録の整理 to match KO source.",needs-normalization
+action_panel,false,0,,,unused
+hotbar,false,1,ホットバー,used in pc.actions.hotbar.hint,clean
+investigation_token,false,5,調査トークン,"PC UI also uses 조사 자원 (investigation resource) as button label rendered 調査リソース — synonym for the same resource. Distinct word in KO source.",needs-normalization
+skill_point,false,3,スキルポイント,,clean
+trust,false,1,信頼度 (rendered as 信頼/恐怖 in confidential.meta — composite),"KO uses 신뢰/공포 in confidential.meta — partial usage of 신뢰",clean
+stress,false,0,,,unused
+perk,false,4,パーク,"glossary draft = パーク; UI proposals adopt パーク after review. Earlier proposal text considered 特性 but reverted to glossary.",clean
+trait,false,8,特性,used in axis labels + judge progression. Partial overlap with 성향 (rendered 傾向) — KO source distinguishes 특성 (trait/perk descriptor) from 성향 (axis trait),clean
+clearance,false,0,,KO PC UI uses 클리어율 (clear rate) not 클리어런스 (clearance permission) — different concept,unused
+session,false,1,セッション,implicitly used in pc.session.* relationship category labels (label is 関係 not セッション; session card uses tagline+desc),clean
+save_data,false,1,セーブデータ,used in pc.settings.data.* (저장 데이터),clean
+mock_mode,false,0,,,unused
+test_console,false,1,テストコンソール,"KO source uses Token Console (English literal) — UI does not render テストコンソール itself; glossary entry mismatches actual UI",unused
+llm,true,1,LLM,used in audio voice option desc (LLM音声合成),clean
+api,true,0,,,unused
+jwt,true,0,,,unused
+court_control,false,5,法廷掌握,"NEW term not in glossary. KO source uses 법정 장악 (5 places) and 법정 지배력 (2 places) for the same court-control resource. Proposed canonical KO = 법정 장악. See GLOSSARY_DELTA.",new-coverage
+free_question,false,2,自由質問,"NEW term not in glossary. KO PC UI uses 자유 질문 for per-slot free-text question (distinct from glossary free_interrogation 자유심문). See GLOSSARY_DELTA.",new-coverage
+investigation_stage,false,2,調査ステージ,"NEW term not in glossary. KO source uses 조사 단계 in PCInteractionPanel for investigation depth state (distinct from evidence_stage 증거 단계). See GLOSSARY_DELTA.",new-coverage
+decisive_question,false,2,決定的質問,"NEW term not in glossary. KO source uses 결정적 질문 in combo overlay. Replaces dossier as the actual concept users see. See GLOSSARY_DELTA.",new-coverage
+judge_fragment,false,11,判決の欠片,"NEW term not in glossary. KO source uses 판결 조각 across PCJudgeProgressionPanel + PCFragmentRewardOverlay + 9 fragment types. See GLOSSARY_DELTA.",new-coverage
+judge_title,false,9,称号,"NEW term not in glossary. KO source uses 타이틀 across PCJudgeProgressionPanel for the player progression rank label. See GLOSSARY_DELTA.",new-coverage
+investigation_resource,false,1,調査リソース,"NEW (synonym only). KO source uses 조사 자원 in PCCourtLayout token button — synonym for investigation_token. Recommend KO normalization rather than separate term. See GLOSSARY_DELTA.",new-coverage

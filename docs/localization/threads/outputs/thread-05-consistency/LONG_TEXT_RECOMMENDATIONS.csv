@@ -1,0 +1,63 @@
+key_or_source,locale,current_proposal,shorter_alternative,notes
+hotbar.slot.fact,en,Fact Pursuit,Facts,Apply when [data-screen-bucket=sm or xs]. Thread-04 P0-2.
+hotbar.slot.motive,en,Motive Search,Motive,Compact alias for narrow buckets.
+hotbar.slot.empathy,en,Empathy Approach,Empathy,Compact alias.
+hotbar.slot.free,en,Free Question,Free Q,Compact alias.
+hotbar.slot.evidence,en,Present Evidence,Evidence,Compact alias.
+hotbar.slot.witness,en,Call Witness,Witness,Compact alias.
+hotbar.special.separation,en,Separate Interrogation,Separate,Compact alias for max-width 56-92px chip.
+hotbar.special.confidential,en,Confidential Protection,Confidential,Compact alias.
+hotbar.special.immediate,en,Demand Answer,Immediate,Compact alias. JA: 即答 / zh-CN: 即答.
+hotbar.choice.fact.title,en,Fact Pursuit — focus on contradictions,"Fact Pursuit / Focus on contradictions","Split title + subtitle pattern. Same for motive / empathy."
+hotbar.choice.motive.title,en,Motive Search — surface hidden disputes,"Motive Search / Surface hidden disputes",Same pattern.
+hotbar.choice.empathy.title,en,Empathy Approach — invite confession,"Empathy Approach / Invite confession",Same pattern.
+combination.kindLabel.upgradeEvidence,en,Evidence Strengthened,Evidence ↑,Inline kind tag in combination feed. Thread-01 P0.
+combination.kindLabel.upgradeDispute,en,Dispute Strengthened,Dispute ↑,Same.
+combination.kindLabel.reframeEvidence,en,Evidence Reframed,Evidence reframed,Same.
+combination.kindLabel.reframeDispute,en,Dispute Reframed,Dispute reframed,Same.
+combination.kindLabel.elevateReliability,en,Reliability Raised,Reliability ↑,Same.
+court.advance.banner,en,You can {label}.,Ready: {label}.,"Banner over hotbar. Combined with verb Advance to Verdict overflows. Use Ready: prefix and render label as button. Thread-04 P1-5."
+verdict.footer.submitBlocked,en,Judge every dispute first ({done}/{total}),Judge all disputes first ({done}/{total}),Inline progress indicator.
+target.drawer.contradictionNote,en,Tracked per dispute. Reaching 5/5 lands a decisive contradiction and forces a confession.,Tracked per dispute. 5/5 forces a confession.,Right-panel drawer ~280px. Wraps to 4 lines.
+target.drawer.lieStagesNote,en,"Fact Pursuit, Evidence Presentation, and Empathy Approach push the gauge up.","Pushed up by Fact Pursuit, Evidence, or Empathy.",3-line wrap.
+progression.fragments.exchangeRule,en,Trade {rate} of the same fragment for 1 different verdict fragment.,Trade {rate} same fragments → 1 different fragment.,Modal body.
+combination.drawer.autoMatchCost + .autoMatchProceed,en,Auto-match consumes {cost} Skill Points. Proceed?,Auto-match for {cost} Skill Points?,Combine 2 lines into 1.
+tactical.special.confidentialDesc,en,Promise confidentiality to lower defenses.,Lower defenses by promising confidentiality.,Action card description ~3 lines KO → 4 lines EN.
+result.judgeArchetype.* (9 entries),en,sentence-length judge persona descriptions 14–22 words,≤14 words; lead with archetype noun then one short clause,Persona block fixed-width on result screen. Thread-01 P1.
+court.tools.investigation,en,Investigation Resource,Token (compact) / Investigation Resource (tooltip),Header shows icon + counter only; tooltip is full text.
+court.tools.skill,en,Skill Points,Skill (compact),Same header pattern.
+court.tools.courtControl,en,Court Control,Court (compact),Same header pattern.
+testConsole.investigationTokens,en,Investigation Token,Token,Test console resource head — Thread-04 P2-3.
+testConsole.skillPoints,en,Skill Point,Skill,Same.
+testConsole.courtControl,en,Court Control,Court,Same.
+pc.home.guide.body,ja,モードを選び、セッションを決めて事件をクリックすると、ブリーフィングを経てすぐに公判が始まります。,モードを選びセッションを決めて事件をクリックすれば、すぐに公判が始まります。,Home top-bar guide popover.
+pc.intro.slide1.body,ja,質問・証拠・判断を組み合わせて、食い違う真相を見極める模擬法廷ゲームです。,(verify on S/XS — split into two short clauses if needed),Centered hero copy.
+pc.settings.data.reset.desc,ja,セーブスロット・事件進行・裁判官の傾向・実績・プロフィールをすべて削除します。元に戻せません。,Split into two <p>: 削除対象: … / 元に戻せません。,Danger action description.
+pc.settings.about.credit.desc,ja,ソロモン法廷 ─ AI同士の対立を、人の知恵で裁くリプレイ型推理ゲーム,AI同士の対立を、人の知恵で裁くリプレイ型推理 (drop subtitle prefix),"About credit row. Note: branding ソロモン法廷 to be aligned with home_brand decision."
+pc.profile.enhance.hint,ja,各素材スロットを必要数まで満たすと強化ボタンが有効になります。強化が完了すると、その項目のレベルと称号の合計レベルが同時に上がります。,Render as two <p>: split at 「。」,Forge modal help.
+pc.dialogue.contradiction.body,ja,前の供述と現在の供述の間に矛盾が検出されました。矛盾を積み重ねると、虚偽の状態が揺らぎ、新たな供述や手がかりが現れる可能性があります。,Split sentences across two <p>,Contradiction popup mid-width.
+pc.actions.evidence.selected.hint,ja,スロットで選んだ証拠をすぐに提示することも、下のパネルから調査・対面質問へ繋ぐこともできます。,選んだ証拠はすぐ提示できます。下のパネルから調査・対面質問にも繋げます。,Action panel hint.
+pc.record.section.contradiction.empty,ja,比較できる発言の食い違いはまだありません。同じ争点で違う質問タイプや証拠提示を行うと、供述の変化を確認できます。,(OK as 2 lines on L; on S split at 「ありません。」),Empty state record summary modal.
+pc.verdict.advance.body,ja,現在の公開争点は{visible}件です。まだ明らかになっていない争点が{hidden}件残っています。それでも判決へ進みますか？,Render with <br> between to control breaks (already 3 sentences),Confirmation panel body.
+pc.actions.interrogation.subtitle,zh-CN,基于当前争议点控制提问、自由提问与辅助开关。,控制当前争议点的提问与开关。,22 chars → 14 chars. Hotbar subtitle row.
+pc.actions.evidence.subtitle,zh-CN,在同一处管理证据出示、调查、鉴定与传唤证人。,集中管理证据出示、调查、鉴定与证人传唤。,22 chars → 20 chars.
+pc.gameplay.held.body,zh-CN,虽未直接崩塌，但已具备记录价值。请尝试与其他证据或发言连结后再次推进。,尚未直接崩塌，但值得记录。可与其他证据或发言连结后再试。,33 chars → 26 chars. sm bucket may force 3 lines.
+pc.gameplay.statementCollapse.body,zh-CN,对方陈述大幅动摇。现在正适合衔接下一道追问或异议。,对方陈述大幅动摇，正适合接下一道追问或异议。,23 chars → 21 chars.
+pc.settings.about.creditsBody,zh-CN,所罗门的法庭 — 以人类智慧裁决两个 AI 之争的回放推理游戏,Split: 所罗门的法庭 / 以人类智慧裁决两个 AI 之争的回放推理游戏,29 chars single-row.
+pc.settings.data.resetDescription,zh-CN,将删除存档槽、案件进度、裁判官倾向、成就与档案，操作不可撤销。,Split into 2 sentences,30 chars; settings two-line zone.
+result.tab.* / verdict.step.*,en,01 Result / 02 Verdict / 03 Epilogue / 04 Bonus,Result / Verdict / Epilogue / Bonus,Drop numeric prefix on non-KO. Thread-04 P0-4. Same for verdict steps.
+result.tab.* / verdict.step.*,ja,01 結果確認 / 02 判決宣告 / 03 後日談 / 04 ボーナス,結果 / 判決 / 後日談 / ボーナス,Same.
+result.tab.* / verdict.step.*,zh-CN,01 结果 / 02 判决 / 03 后日谈 / 04 奖励,结果 / 判决 / 后日谈 / 奖励,Same.
+phase.advance.label.toVerdict / .toReexam / .next,en,Advance to Verdict / Advance to Final Interrogation / Advance to Next Phase,To Verdict / To Final Interrogation / Next Phase,Banner button. Drop verb when banner sentence already says ready.
+home.gameTitle (uses brand_full_title),ko,(splash hardcoded 솔로몬의 딜레마),솔로몬의 딜레마: 진실의 재판,"PROJECT_CONTROL_TOWER decision 2026-05-06. Replace hardcoded literal in PCApp.tsx:132 with t('home.gameTitle') referencing brand_full_title."
+home.gameTitle (uses brand_full_title),en,Solomon's Dilemma,Verdict Zero: Trial of Truth,"PROJECT_CONTROL_TOWER. Solomon's Dilemma rejected (religious/biblical reading). Use Verdict Zero: Trial of Truth."
+home.gameTitle (uses brand_full_title),ja,ソロモンのジレンマ,ソロモンのジレンマ：真実の裁き,"Add subtitle 真実の裁き. Note JA full-width colon ：."
+home.gameTitle (uses brand_full_title),zh-CN,所罗门的法庭 / 所罗门的两难,真相裁决：零点审判,"PROJECT_CONTROL_TOWER. Both 所罗门的法庭 (Court) and 所罗门的两难 (Dilemma) rejected. Use natural localized title."
+splash.title + splash.subtitle (split rendering),ko,(none),솔로몬의 딜레마 / 진실의 재판,Optional split rendering on splash screen using brand_title + brand_subtitle keys.
+splash.title + splash.subtitle (split rendering),en,COURT SIMULATION GAME (eyebrow only),Verdict Zero / Trial of Truth,Replace existing splash.subtitle eyebrow with brand structure.
+splash.title + splash.subtitle (split rendering),ja,(none),ソロモンのジレンマ / 真実の裁き,Same.
+splash.title + splash.subtitle (split rendering),zh-CN,(none),真相裁决 / 零点审判,Same.
+settings.about.credits,ko,솔로몬 법정 ─ AI 동시의 대립을 인간의 지혜로 ...,솔로몬의 딜레마: 진실의 재판 — AI ...,Drop ad-hoc 솔로몬 법정 — use brand_full_title prefix.
+settings.about.credits,en,Solomon Court — A replayable mystery game…,Verdict Zero: Trial of Truth — A replayable mystery game…,Replace ad-hoc credit subtitle.
+settings.about.credits,ja,ソロモン法廷 ─ AI同士の対立を…,ソロモンのジレンマ：真実の裁き ─ AI同士の対立を…,Replace ad-hoc credit subtitle.
+settings.about.credits,zh-CN,所罗门的法庭 — 以人类智慧裁决两个 AI 之争…,真相裁决：零点审判 — 以人类智慧裁决两个 AI 之争…,Replace ad-hoc credit subtitle.

@@ -16,6 +16,7 @@ import PCInteractionPanel, { openPcInteractionPanel } from './PCInteractionPanel
 import PCRecordSummary from './PCRecordSummary'
 import PCSettingsPanel from '../settings/PCSettingsPanel'
 import { playCourtControl } from '../../../engine/soundEngine'
+import { useI18n, type MessageKey } from '../../../i18n'
 
 interface Props {
   actionPanel?: ReactNode
@@ -23,17 +24,23 @@ interface Props {
   isDialoguePhase?: boolean
 }
 
-const PHASE_LABELS: Record<string, string> = {
-  [Phase.Briefing]: '사건 브리핑',
-  [Phase.Pretrial]: '사전진술',
-  [Phase.Interrogation]: '심문',
-  [Phase.Mediation]: '판결 진입',
-  [Phase.Verdict]: '판결',
-  [Phase.Result]: '결과',
+const PHASE_LABEL_KEYS: Record<string, MessageKey> = {
+  [Phase.Briefing]: 'pc.phase.briefing',
+  [Phase.Pretrial]: 'pc.phase.pretrial',
+  [Phase.Interrogation]: 'pc.phase.interrogation',
+  [Phase.Mediation]: 'pc.phase.mediation',
+  [Phase.Verdict]: 'pc.phase.verdict',
+  [Phase.Result]: 'pc.phase.result',
   // Legacy fallback
-  [GamePhase.Phase2_Rebuttal]: '사전진술',
-  [GamePhase.Phase4_Evidence]: '심문',
-  [GamePhase.Phase5_ReExamination]: '심문',
+  [GamePhase.Phase2_Rebuttal]: 'pc.phase.pretrial',
+  [GamePhase.Phase4_Evidence]: 'pc.phase.interrogation',
+  [GamePhase.Phase5_ReExamination]: 'pc.phase.interrogation',
+}
+
+type TranslateFn = (key: MessageKey, values?: Record<string, string | number | boolean | null | undefined>) => string
+
+function getPhaseLabel(phase: GamePhase, t: TranslateFn): string {
+  return t(PHASE_LABEL_KEYS[phase] ?? 'pc.phase.briefing')
 }
 
 type CombinationOverlayResultType =
@@ -96,6 +103,7 @@ interface CourtControlUsedDetail {
 }
 
 export default function PCCourtLayout({ actionPanel, onDialogueTap, isDialoguePhase }: Props) {
+  const { t } = useI18n()
   const chatRef = useRef<HTMLDivElement>(null)
   const combinationTimerRef = useRef<number | null>(null)
   const dossierTimerRef = useRef<number | null>(null)
@@ -110,7 +118,7 @@ export default function PCCourtLayout({ actionPanel, onDialogueTap, isDialoguePh
   const [tokenPopup, setTokenPopup] = useState<'invest' | 'skill' | 'court' | null>(null)
   const [recordSummaryOpen, setRecordSummaryOpen] = useState(false)
   const [settingsOpen, setSettingsOpen] = useState(false)
-  const [tokenPopupResult, setTokenPopupResult] = useState<string | null>(null)
+  const [tokenPopupResult, setTokenPopupResult] = useState<{ message: string; ok: boolean } | null>(null)
   const [combinationOverlay, setCombinationOverlay] = useState<CombinationOverlayState | null>(null)
   const [dossierUnlockText, setDossierUnlockText] = useState<string | null>(null)
   const [courtControlFlash, setCourtControlFlash] = useState<{ id: number; label: string } | null>(null)
@@ -179,9 +187,9 @@ export default function PCCourtLayout({ actionPanel, onDialogueTap, isDialoguePh
           iconId: getCombinationIconId(item.type),
         }))
 
-      const outputLabel = detail.outputLabel ?? detail.resultTitle ?? '조합 성공'
+      const outputLabel = detail.outputLabel ?? detail.resultTitle ?? t('pc.court.combination.success')
       const outputSummary = detail.outputSummary
-        ?? getCombinationSummary(detail.resultType)
+        ?? getCombinationSummary(detail.resultType, t)
 
       setCombinationOverlay({
         id: Date.now(),
@@ -211,7 +219,7 @@ export default function PCCourtLayout({ actionPanel, onDialogueTap, isDialoguePh
 
     const handleDossierUnlock = (event: Event) => {
       const detail = (event as CustomEvent<DossierUnlockDetail>).detail
-      setDossierUnlockText(detail?.questionText ?? '결정적 질문이 열렸습니다.')
+      setDossierUnlockText(detail?.questionText ?? t('pc.court.dossier.unlockDefault'))
       if (dossierTimerRef.current) window.clearTimeout(dossierTimerRef.current)
       dossierTimerRef.current = window.setTimeout(() => setDossierUnlockText(null), 1500)
     }
@@ -221,7 +229,7 @@ export default function PCCourtLayout({ actionPanel, onDialogueTap, isDialoguePh
       playCourtControl()
       setCourtControlFlash({
         id: Date.now(),
-        label: detail?.label ?? getCourtControlLabel(detail?.action),
+        label: detail?.label ?? getCourtControlLabel(detail?.action, t),
       })
       if (courtControlTimerRef.current) window.clearTimeout(courtControlTimerRef.current)
       courtControlTimerRef.current = window.setTimeout(() => setCourtControlFlash(null), 500)
@@ -238,7 +246,7 @@ export default function PCCourtLayout({ actionPanel, onDialogueTap, isDialoguePh
       window.removeEventListener('v4:dossier-unlock', handleDossierUnlock)
       window.removeEventListener('pc:court-control-used', handleCourtControlUsed)
     }
-  }, [])
+  }, [t])
 
   useEffect(() => {
     const timer = window.setTimeout(() => {
@@ -268,8 +276,8 @@ export default function PCCourtLayout({ actionPanel, onDialogueTap, isDialoguePh
 
     return lines.length > 0
       ? lines.join('\n\n')
-      : '아직 기록된 사건 타임라인이 없습니다.'
-  }, [dialogueLog])
+      : t('pc.court.timeline.empty')
+  }, [dialogueLog, t])
 
   const openHeaderPanel = useCallback((kind: 'invest' | 'skill' | 'court' | 'turn' | 'timeline') => {
     if (kind === 'invest' || kind === 'skill' || kind === 'court') {
@@ -279,71 +287,71 @@ export default function PCCourtLayout({ actionPanel, onDialogueTap, isDialoguePh
 
     if (kind === 'turn') {
       openPcInteractionPanel({
-        title: '턴 진행 현황',
+        title: t('pc.court.turnPanel.title'),
         subtitle: `Turn ${turnCount}`,
         tone: 'neutral',
         body: [
-          `현재 단계: ${PHASE_LABELS[currentPhase]}`,
-          `현재 턴: ${turnCount}`,
+          t('pc.court.turnPanel.currentPhase', { phase: getPhaseLabel(currentPhase, t) }),
+          t('pc.court.turnPanel.currentTurn', { turn: turnCount }),
           '',
-          '질문, 증거 제시, 특수 행동, 반응 로그가 누적되는 흐름입니다.',
+          t('pc.court.turnPanel.description'),
         ].join('\n'),
       })
       return
     }
 
     openPcInteractionPanel({
-      title: '사건 타임라인',
-      subtitle: caseData?.caseId ?? '진행 중',
+      title: t('pc.court.timeline.title'),
+      subtitle: caseData?.caseId ?? t('pc.court.timeline.subtitleFallback'),
       tone: 'blue',
       body: timelineBody,
     })
-  }, [caseData?.caseId, currentPhase, resources.skillPoints, resources.courtControl, resources.investigationTokens, timelineBody, turnCount])
+  }, [caseData?.caseId, currentPhase, t, timelineBody, turnCount])
 
   const CLEAN_TOKEN_POPUP_CONFIG = {
     invest: {
-      title: '조사 토큰',
+      title: t('pc.court.resource.investigationToken'),
       icon: 'i-search' as const,
       tone: 'blue' as const,
       value: resources.investigationTokens,
-      desc: '증거를 더 깊게 조사하거나, 추가 단서와 기록을 확인할 때 씁니다.',
+      desc: t('pc.court.resource.invest.desc'),
     },
     skill: {
-      title: '스킬 포인트',
+      title: t('pc.court.resource.skillPoint'),
       icon: 'i-bolt' as const,
       tone: 'gold' as const,
       value: resources.skillPoints,
-      desc: '즉답 요구, 비공개 보호, 자동 조합 보조처럼 판사의 적극적 개입에 씁니다.',
+      desc: t('pc.court.resource.skill.desc'),
     },
     court: {
-      title: '법정 장악',
+      title: t('pc.court.resource.courtControl'),
       icon: 'i-scale' as const,
       tone: 'red' as const,
       value: resources.courtControl,
-      desc: '무리한 압박과 절차 혼선을 버티는 힘입니다. 판결 안정성에도 영향을 줍니다.',
+      desc: t('pc.court.resource.court.desc'),
     },
   }
 
   const TOKEN_RECOVERY_CONFIG = {
     invest: {
-      label: '기록 재정리',
-      cost: '법정 장악 1',
+      label: t('pc.court.recovery.invest.label'),
+      cost: t('pc.court.recovery.invest.cost'),
       target: 'investigationTokens' as const,
-      desc: '절차 통제력을 써서 증거 목록을 다시 훑고 조사 토큰 1을 회복합니다.',
+      desc: t('pc.court.recovery.invest.desc'),
       disabled: resources.courtControl < 1,
     },
     skill: {
-      label: '쟁점 압축',
-      cost: '조사 토큰 1',
+      label: t('pc.court.recovery.skill.label'),
+      cost: t('pc.court.recovery.skill.cost'),
       target: 'skillPoints' as const,
-      desc: '조사 자원을 써서 현재 쟁점의 질문 각도를 정리하고 스킬 포인트 1을 회복합니다.',
+      desc: t('pc.court.recovery.skill.desc'),
       disabled: resources.investigationTokens < 1,
     },
     court: {
-      label: '정숙 선언',
-      cost: '스킬 포인트 2',
+      label: t('pc.court.recovery.court.label'),
+      cost: t('pc.court.recovery.court.cost'),
       target: 'courtControl' as const,
-      desc: '판사의 개입을 써서 절차를 정리하고 법정 장악 1을 회복합니다.',
+      desc: t('pc.court.recovery.court.desc'),
       disabled: resources.skillPoints < 2,
     },
   }
@@ -355,7 +363,7 @@ export default function PCCourtLayout({ actionPanel, onDialogueTap, isDialoguePh
     if (!tokenPopup) return
     const recovery = TOKEN_RECOVERY_CONFIG[tokenPopup]
     const result = rebalanceResource(recovery.target)
-    setTokenPopupResult(result.message)
+    setTokenPopupResult({ message: result.message, ok: result.ok })
     if (!result.ok) return
     const latest = useGameStore.getState()
     if (latest.resources.courtControl < resources.courtControl) {
@@ -369,7 +377,7 @@ export default function PCCourtLayout({ actionPanel, onDialogueTap, isDialoguePh
       {tokenPopup && tokenPopupData && (
         <div className="pc-token-popup-overlay" onClick={() => setTokenPopup(null)}>
           <div className={`pc-token-popup pc-token-popup--${tokenPopupData.tone}`} onClick={(e) => e.stopPropagation()}>
-            <button className="pc-token-popup__close" onClick={() => setTokenPopup(null)} type="button" aria-label="닫기">&times;</button>
+            <button className="pc-token-popup__close" onClick={() => setTokenPopup(null)} type="button" aria-label={t('pc.common.close')}>&times;</button>
             <h3 className="pc-token-popup__title">{tokenPopupData.title}</h3>
             <div className="pc-token-popup__value-row">
               <PCSvgIcon id={tokenPopupData.icon} size={28} />
@@ -389,11 +397,11 @@ export default function PCCourtLayout({ actionPanel, onDialogueTap, isDialoguePh
                   onClick={handleTokenRecovery}
                   type="button"
                 >
-                  실행
+                  {t('pc.court.recovery.execute')}
                 </button>
                 {tokenPopupResult ? (
-                  <p className={`pc-token-popup__recovery-result${tokenPopupResult.includes('부족') ? ' is-warn' : ''}`}>
-                    {tokenPopupResult}
+                  <p className={`pc-token-popup__recovery-result${tokenPopupResult.ok ? '' : ' is-warn'}`}>
+                    {tokenPopupResult.message}
                   </p>
                 ) : null}
               </div>
@@ -407,7 +415,7 @@ export default function PCCourtLayout({ actionPanel, onDialogueTap, isDialoguePh
         <header className="pc-play-header">
           <button className="pc-play-back" onClick={resetPcSessionToHome} type="button">
             <span className="pc-play-back__arrow" aria-hidden="true">&#8592;</span>
-            <span>나가기</span>
+            <span>{t('pc.court.back')}</span>
           </button>
 
           <div className="pc-play-titlebar">
@@ -415,7 +423,7 @@ export default function PCCourtLayout({ actionPanel, onDialogueTap, isDialoguePh
               <span className="pc-play-logo__mark" aria-hidden="true">
                 <PCSvgIcon id="i-gavel" size={22} />
               </span>
-              <span className="logo-text">솔로몬 법정</span>
+              <span className="logo-text">{t('brand.title')}</span>
               {caseData ? (
                 <span className="logo-case">
                   {caseData.meta?.title ?? caseData.caseId}
@@ -426,7 +434,7 @@ export default function PCCourtLayout({ actionPanel, onDialogueTap, isDialoguePh
 
             <div className="phase-pill pc-play-phase">
               <PCSvgIcon id="i-clock" size={14} />
-              <span>{`Phase ${getPhaseNumber(currentPhase)} - ${PHASE_LABELS[currentPhase]}`}</span>
+              <span>{`Phase ${getPhaseNumber(currentPhase)} - ${getPhaseLabel(currentPhase, t)}`}</span>
             </div>
           </div>
 
@@ -435,7 +443,7 @@ export default function PCCourtLayout({ actionPanel, onDialogueTap, isDialoguePh
               className="pc-play-tool is-blue"
               data-pc-token="investigation"
               onClick={() => openHeaderPanel('invest')}
-              title="조사 자원"
+              title={t('pc.court.resource.investigationToken')}
               type="button"
             >
               <PCSvgIcon id="i-search" size={16} />
@@ -445,7 +453,7 @@ export default function PCCourtLayout({ actionPanel, onDialogueTap, isDialoguePh
               className="pc-play-tool is-gold"
               data-pc-token="skill"
               onClick={() => openHeaderPanel('skill')}
-              title="스킬 포인트"
+              title={t('pc.court.resource.skillPoint')}
               type="button"
             >
               <PCSvgIcon id="i-bolt" size={16} />
@@ -455,7 +463,7 @@ export default function PCCourtLayout({ actionPanel, onDialogueTap, isDialoguePh
               className="pc-play-tool is-red"
               data-pc-token="court"
               onClick={() => openHeaderPanel('court')}
-              title="법정 지배력"
+              title={t('pc.court.resource.courtControl')}
               type="button"
             >
               <PCSvgIcon id="i-scale" size={16} />
@@ -466,7 +474,7 @@ export default function PCCourtLayout({ actionPanel, onDialogueTap, isDialoguePh
               <span>Turn</span>
               <b>{turnCount}</b>
             </button>
-            <button className="pc-play-tool" onClick={() => setSettingsOpen(true)} title="설정" type="button">
+            <button className="pc-play-tool" onClick={() => setSettingsOpen(true)} title={t('pc.court.settings')} type="button">
               <PCSvgIcon id="i-gear" size={16} />
             </button>
           </nav>
@@ -511,8 +519,8 @@ export default function PCCourtLayout({ actionPanel, onDialogueTap, isDialoguePh
               type="button"
               className="pc-summary-floating-toggle"
               onClick={() => window.dispatchEvent(new Event('pc:open-record-summary'))}
-              title="기록 정리"
-              aria-label="기록 정리"
+              title={t('pc.court.recordSummary')}
+              aria-label={t('pc.court.recordSummary')}
             >
               <PCSvgIcon id="i-doc" size={14} />
             </button>
@@ -529,7 +537,7 @@ export default function PCCourtLayout({ actionPanel, onDialogueTap, isDialoguePh
       {combinationOverlay ? (
         <div className={`pc-combination-success is-${combinationOverlay.resultType ?? 'upgrade'}`} key={combinationOverlay.id}>
           <div className="pc-combination-success__card" data-resonance-target="combination-success">
-            <div className="pc-combination-success__eyebrow">조합 성공</div>
+            <div className="pc-combination-success__eyebrow">{t('pc.court.combination.success')}</div>
             <div className="pc-combination-success__flow">
               {combinationOverlay.inputs.length > 0 ? combinationOverlay.inputs.map((input, index) => (
                 <div className="pc-combination-success__flow-item" key={`${combinationOverlay.id}-${input.label}`}>
@@ -543,7 +551,7 @@ export default function PCCourtLayout({ actionPanel, onDialogueTap, isDialoguePh
                 </div>
               )) : (
                 <div className="pc-combination-success__flow-item is-placeholder">
-                  <span className="pc-combination-success__name">분석 완료</span>
+                  <span className="pc-combination-success__name">{t('pc.court.combination.analyzingDone')}</span>
                 </div>
               )}
               <div className="pc-combination-success__result">
@@ -561,7 +569,7 @@ export default function PCCourtLayout({ actionPanel, onDialogueTap, isDialoguePh
         <div className="pc-dossier-unlock" key={dossierUnlockText}>
           <div className="pc-dossier-unlock__glow" />
           <div className="pc-dossier-unlock__banner">
-            <span className="pc-dossier-unlock__eyebrow">결정적 질문 해금</span>
+            <span className="pc-dossier-unlock__eyebrow">{t('pc.court.dossier.unlockEyebrow')}</span>
             <div className="pc-dossier-unlock__content">
               <span className="pc-dossier-unlock__icon">
                 <PCSvgIcon id="i-bolt" size={16} />
@@ -600,38 +608,38 @@ function getCombinationIconId(type?: string): string {
   }
 }
 
-function getCombinationSummary(resultType?: CombinationOverlayResultType): string {
+function getCombinationSummary(resultType: CombinationOverlayResultType | undefined, t: TranslateFn): string {
   if (resultType === 'dossier') {
-    return '결정적 질문으로 이어지는 조합이 완성됐습니다.'
+    return t('pc.court.combination.summary.dossier')
   }
   if (resultType === 'witness') {
-    return '새 증인이 소환 가능해졌습니다.'
+    return t('pc.court.combination.summary.witness')
   }
   if (resultType === 'evidence') {
-    return '새 증거가 기록에 추가됐습니다.'
+    return t('pc.court.combination.summary.evidence')
   }
   if (resultType === 'question') {
-    return '새 질문 경로가 열렸습니다.'
+    return t('pc.court.combination.summary.question')
   }
   if (resultType === 'note') {
-    return '새 단서 기록이 추가됐습니다.'
+    return t('pc.court.combination.summary.note')
   }
   if (resultType === 'statement') {
-    return '새 진술이 기록에 추가됐습니다.'
+    return t('pc.court.combination.summary.statement')
   }
   if (resultType === 'mediation') {
-    return '판결 진입에 참고할 힌트가 추가됐습니다.'
+    return t('pc.court.combination.summary.mediation')
   }
   if (resultType === 'reliability') {
-    return '기존 증거의 신뢰도가 강화됐습니다.'
+    return t('pc.court.combination.summary.reliability')
   }
   if (resultType === 'context') {
-    return '사건 맥락이 더 구체화됐습니다.'
+    return t('pc.court.combination.summary.context')
   }
   if (resultType === 'dispute') {
-    return '새로운 쟁점이 드러났습니다.'
+    return t('pc.court.combination.summary.dispute')
   }
-  return '기존 정보가 더 강한 형태로 정리됐습니다.'
+  return t('pc.court.combination.summary.default')
 }
 
 function getCombinationResultIconId(resultType?: CombinationOverlayResultType): string {
@@ -648,9 +656,9 @@ function getCombinationResultIconId(resultType?: CombinationOverlayResultType): 
   return 'i-link'
 }
 
-function getCourtControlLabel(action?: 'separation' | 'confidential_protection' | 'immediate_answer'): string {
-  if (action === 'separation') return '분리 심문'
-  if (action === 'confidential_protection') return '비공개 보호'
-  if (action === 'immediate_answer') return '즉답 요구'
-  return '법정 지배력 사용'
+function getCourtControlLabel(action: 'separation' | 'confidential_protection' | 'immediate_answer' | undefined, t: TranslateFn): string {
+  if (action === 'separation') return t('pc.court.control.separation')
+  if (action === 'confidential_protection') return t('pc.court.control.confidentialProtection')
+  if (action === 'immediate_answer') return t('pc.court.control.immediateAnswer')
+  return t('pc.court.control.default')
 }

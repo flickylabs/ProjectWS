@@ -1,0 +1,76 @@
+{
+  "caseId": "spouse-01",
+  "overlayKind": "generatedCaseSurface",
+  "meta": {
+    "title": "The Husband Who Spends Every Evening at a Studio Apartment"
+  },
+  "context": {
+    "description": "Every evening after work, the husband visits the same studio apartment. Receipts for women's items in the car. Late-night phone calls. The wife is convinced he is keeping a second household.",
+    "triggerAmplifier": "At first, the receipts (hair ties and lip tint), the GPS log on the studio apartment, and the late-night calls all seem to point one way — straight at an affair. But the more clues are uncovered, the more that picture begins to shake; circumstances neither side has spoken about, and the movement of money, surface one by one, until the case turns past mere suspicion of cheating."
+  },
+  "duo": {
+    "partyA": {
+      "name": "Park Ji-yeon",
+      "occupation": "academy front-desk staff"
+    },
+    "partyB": {
+      "name": "Lee Jun-ho",
+      "occupation": "appliance store employee"
+    }
+  },
+  "disputes": [
+    {
+      "id": "d-1",
+      "name": "Studio-apartment visits and late-night calls"
+    },
+    {
+      "id": "d-2",
+      "name": "Large cash withdrawal from the husband's account"
+    },
+    {
+      "id": "h-d3",
+      "name": "How the joint savings of 20 million won were cancelled"
+    },
+    {
+      "id": "h-d4",
+      "name": "Order of concealment and pre-emptive action"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e-1",
+      "surfaceName": "Bundle of 5 receipts",
+      "surfaceDescription": "A bundle of receipts found inside the husband's car."
+    },
+    {
+      "id": "e-2",
+      "surfaceName": "Dashcam GPS log",
+      "surfaceDescription": "The vehicle's GPS shows the same coordinates as a repeated stop."
+    },
+    {
+      "id": "e-3",
+      "surfaceName": "Call records",
+      "surfaceDescription": "Repeated calls to the same number during the late-night hours."
+    },
+    {
+      "id": "e-4",
+      "surfaceName": "Texts from an unknown sender",
+      "surfaceDescription": "A text thread with a number that has no name registered to it."
+    },
+    {
+      "id": "e-5",
+      "surfaceName": "Personal account withdrawal record",
+      "surfaceDescription": "A separate account, undisclosed to the wife, with only tens of thousands of won remaining."
+    },
+    {
+      "id": "e-6",
+      "surfaceName": "Investment-group Telegram chat",
+      "surfaceDescription": "A bundle of captures showing the investment group's Telegram conversation alongside the transfer flow. As the stage rises, the deposits, the early profit screenshots, and the signs of an exit scam separate out."
+    },
+    {
+      "id": "e-7",
+      "surfaceName": "Joint savings cancellation paperwork",
+      "surfaceDescription": "Paperwork showing the joint savings being closed out before maturity."
+    }
+  ]
+}

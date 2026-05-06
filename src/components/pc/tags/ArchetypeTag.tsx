@@ -3,6 +3,7 @@ import { createPortal } from 'react-dom'
 import { useStore } from '../../../store/useGameStore'
 import { ARCHETYPE_META } from '../../../engine/archetypeHintEngine'
 import { pulseHotbarSlot } from './hotbarHighlight'
+import { useI18n, type MessageKey } from '../../../i18n'
 
 interface ArchetypeTagProps {
   party: 'a' | 'b'
@@ -10,28 +11,56 @@ interface ArchetypeTagProps {
 }
 
 /** 공략 힌트 내에서 하이라이트할 액션 키워드 → 핫바 data-guide-target 매핑 */
-const ACTION_KEYWORDS: { text: string; target: string }[] = [
-  { text: '사실 추궁', target: 'question-fact' },
-  { text: '동기 탐색', target: 'question-motive' },
-  { text: '공감 접근', target: 'question-empathy' },
+const ACTION_KEYWORDS: { key: MessageKey; target: string }[] = [
+  { key: 'pc.archetype.action.fact', target: 'question-fact' },
+  { key: 'pc.archetype.action.motive', target: 'question-motive' },
+  { key: 'pc.archetype.action.empathy', target: 'question-empathy' },
 ]
 
+const ARCHETYPE_MESSAGE_KEYS: Record<string, { labelKey: MessageKey; hintKey: MessageKey }> = {
+  avoidant: {
+    labelKey: 'pc.archetype.avoidant.label',
+    hintKey: 'pc.archetype.avoidant.hint',
+  },
+  confrontational: {
+    labelKey: 'pc.archetype.confrontational.label',
+    hintKey: 'pc.archetype.confrontational.hint',
+  },
+  victim_cosplay: {
+    labelKey: 'pc.archetype.victimCosplay.label',
+    hintKey: 'pc.archetype.victimCosplay.hint',
+  },
+  cold_logic: {
+    labelKey: 'pc.archetype.coldLogic.label',
+    hintKey: 'pc.archetype.coldLogic.hint',
+  },
+  affect_flattening: {
+    labelKey: 'pc.archetype.affectFlattening.label',
+    hintKey: 'pc.archetype.affectFlattening.hint',
+  },
+  premature_summary: {
+    labelKey: 'pc.archetype.prematureSummary.label',
+    hintKey: 'pc.archetype.prematureSummary.hint',
+  },
+}
+
 /** 문자열을 키워드 기준으로 분리하여 [텍스트, 액션버튼, 텍스트, ...] React 노드 배열 생성 */
-function renderStrategyHint(hint: string): ReactNode[] {
+function renderStrategyHint(hint: string, t: (key: MessageKey) => string): ReactNode[] {
   type Segment = { kind: 'text'; value: string } | { kind: 'action'; text: string; target: string }
   let segments: Segment[] = [{ kind: 'text', value: hint }]
 
   for (const kw of ACTION_KEYWORDS) {
+    const keyword = t(kw.key)
     const next: Segment[] = []
     for (const seg of segments) {
       if (seg.kind !== 'text') {
         next.push(seg)
         continue
       }
-      const chunks = seg.value.split(kw.text)
+      const chunks = seg.value.split(keyword)
       chunks.forEach((chunk, idx) => {
         if (chunk) next.push({ kind: 'text', value: chunk })
-        if (idx < chunks.length - 1) next.push({ kind: 'action', text: kw.text, target: kw.target })
+        if (idx < chunks.length - 1) next.push({ kind: 'action', text: keyword, target: kw.target })
       })
     }
     segments = next
@@ -65,6 +94,7 @@ function renderStrategyHint(hint: string): ReactNode[] {
  * - data-archetype-tag="party:archetype" — Popup 수렴 타겟 식별용
  */
 export default function ArchetypeTag({ party, archetype }: ArchetypeTagProps) {
+  const { t } = useI18n()
   const glowingTagKey = useStore((s) => s.glowingTagKey)
   const dismissGlow = useStore((s) => s.dismissGlow)
   const tagRef = useRef<HTMLSpanElement | null>(null)
@@ -116,6 +146,9 @@ export default function ArchetypeTag({ party, archetype }: ArchetypeTagProps) {
   }, [getTipPosition, tipOpen])
 
   if (!meta) return null
+  const localizedKeys = ARCHETYPE_MESSAGE_KEYS[archetype]
+  const tagLabel = localizedKeys ? t(localizedKeys.labelKey) : meta.tagLabel
+  const strategyHint = localizedKeys ? t(localizedKeys.hintKey) : meta.strategyHint
 
   const portalRoot = typeof document !== 'undefined' ? document.body : null
   const tooltip = tipOpen && tipPosition ? (
@@ -128,12 +161,12 @@ export default function ArchetypeTag({ party, archetype }: ArchetypeTagProps) {
         type="button"
         className="tag-arch__tip-close"
         onClick={(e) => { e.stopPropagation(); setTipOpen(false) }}
-        aria-label="닫기"
+        aria-label={t('pc.archetype.close')}
       >
         ✕
       </button>
-      <span className="tag-arch__tip-label">공략 힌트</span>
-      <span className="tag-arch__tip-body">{renderStrategyHint(meta.strategyHint)}</span>
+      <span className="tag-arch__tip-label">{t('pc.archetype.tipLabel')}</span>
+      <span className="tag-arch__tip-body">{renderStrategyHint(strategyHint, t)}</span>
     </span>
   ) : null
 
@@ -146,9 +179,9 @@ export default function ArchetypeTag({ party, archetype }: ArchetypeTagProps) {
       onClick={handleClick}
       role="button"
       tabIndex={0}
-      title={meta.strategyHint}
+      title={strategyHint}
     >
-      <span className="tag-arch__label">{meta.tagLabel}</span>
+      <span className="tag-arch__label">{tagLabel}</span>
       {portalRoot && tooltip ? createPortal(tooltip, portalRoot) : null}
     </span>
   )

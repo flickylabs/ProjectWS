@@ -1,0 +1,64 @@
+term_id,source_ko,current_glossary_en,used_translation,issue,recommendation
+project_solomon,Project Solomon,Project Solomon,(not used in any UI string),"Locked alias kept only for legacy reasons. Restart rules forbid `Project Solomon` as public English title — and EN UI honours that.","No action. Confirm via lint that no public-facing translation re-introduces `Project Solomon`."
+internal_project_name,Project_Solomon,Project_Solomon,Project_Solomon (common.brand.internalProjectName),Used in i18n only as the developer-facing identifier.,No action. Locked entry honoured.
+brand_title,솔로몬의 딜레마,Verdict Zero,Verdict Zero (common.brand.title),Locked. Used.,No action.
+brand_subtitle,진실의 재판,Trial of Truth,Trial of Truth (common.brand.subtitle),Locked. Used.,No action.
+brand_full_title,솔로몬의 딜레마: 진실의 재판,Verdict Zero: Trial of Truth,Verdict Zero: Trial of Truth (common.app.title / common.brand.fullTitle / home.gameTitle / settings.about.credits.title),Locked. Used in 4 places — single source of truth.,"No action. Codex may also unify `app.title` and `home.gameTitle` to read from `brand.fullTitle` to enforce DRY."
+court_simulation,재판 시뮬레이션,Court Simulation,COURT SIMULATION GAME (common.splash.subtitle),"Genre eyebrow. EN value adds `GAME` and renders all-caps for Steam-style splash. Glossary draft says `Court Simulation` (Title Case).",Update glossary draft note: `Title Case in body, ALL-CAPS in genre eyebrows`. No code change.
+courtroom,법정,Courtroom,(not surfaced as a UI label) — appears in body copy `the courtroom environment`,common.session.preparing.description uses `courtroom environment`.,No action.
+judge,재판관,Judge,(not yet surfaced via i18n) — used in dialogueLog speaker labels (out of scope this thread),Glossary entry exists. Will be wired through pc.dialogueLog.judge proposal in SOURCE_STRING_MAP.,No action this thread; Codex follow-up.
+party,당사자,Party,(not surfaced as a standalone label).,Used in interpolated strings via {party}.,No action.
+party_a,당사자 A,Party A,(used as fallback name in dialogueLog only — not in i18n yet),Wired via SOURCE_STRING_MAP proposal pc.dialogueLog.partyAFallback.,No action this thread; Codex follow-up.
+party_b,당사자 B,Party B,Same as party_a.,Same.,Same.
+witness,증인,Witness,(used in hotbar.slot.witness via SOURCE_STRING_MAP),Wired via proposal.,No action this thread.
+case,사건,Case,Used in body copy `case data` (common.session.preparing.description).,Consistent.,No action.
+case_brief,사건 브리핑,Case Brief,(not in i18n yet) — phase label,SOURCE_STRING_MAP proposes `pc.phase.briefing` = `Case Brief`.,No action this thread.
+phase,단계,Phase,(not surfaced standalone — appears in pc.interaction.phase proposal),Wired via SOURCE_STRING_MAP.,No action this thread.
+pretrial_phase,사전 진술 단계,Pretrial Phase,Opening Statements (proposed in SOURCE_STRING_MAP for pc.phase.pretrial),"Glossary draft = `Pretrial Phase` (literal). Steam UI tone prefers `Opening Statements`.",Update draft glossary `pretrial_phase.en` from `Pretrial Phase` to `Opening Statements`. requires_user_decision = false.
+interrogation_phase,심문 단계,Interrogation Phase,Interrogation (proposed in SOURCE_STRING_MAP for pc.phase.interrogation),Phase pill drops the `Phase` suffix because the surrounding chip already says `Phase 2`.,Update glossary draft from `Interrogation Phase` to `Interrogation`. Minor.
+mediation_phase,중재 단계,Mediation Phase,Mediation (proposed),Same — drop `Phase` suffix.,Update draft.
+verdict_phase,판결 단계,Verdict Phase,Verdict (proposed),Same.,Update draft.
+result_phase,결과 단계,Result Phase,Result (proposed),Same.,Update draft.
+verdict,판결,Verdict,"`Verdict` (used heavily in pc.verdictAdvance.* + pc.verdict.*). Also as score axis label `Authority` (KO `판결` reused as 평가 axis label) — distinct concept.","Korean overload between `Verdict` (judgment phase) and `Authority` (score axis using same character).","Add new glossary entry `score_axis_authority` with EN=Authority, JA=権威, ZH=权威. Confidence high."
+responsibility,책임,Responsibility,"Primary / Greater / Comparable responsibility (verdict.* keys)",Used consistently.,No action.
+solution,해결안,Solution,"Solutions (proposed for pc.verdict.step.solution).Score-axis `해결` is `Wisdom` (different concept).",Korean overload between gameplay `solution` (해결안) and score axis `해결` (Wisdom).,"Add new glossary entry `score_axis_wisdom` with EN=Wisdom, JA=知恵, ZH=智慧. Confidence high."
+dispute,쟁점,Dispute,"Used everywhere (court namespace, verdict keys, dispute ribbon proposal).",Consistent. Clean.,No action.
+truth,진실,Truth,"`truth` reads in body copy of pc.verdictAdvance.minimumVisible / pc.disputeRibbon.popoverDefault / brand subtitle `Trial of Truth`.",Glossary entry intact. Public-facing brand reuses the noun.,No action.
+hidden_truth,숨은 진실,Hidden Truth,Used as policy reference (docs/disclosure-policy.md). Not surfaced as a UI label.,Disclosure-policy compliant. EN `verdict.fact.locked` = `Not yet revealed` preserves gating.,No action.
+surface_text,표면 정보,Surface Text,Engine concept; not user-facing in the current i18n namespace.,No exposure surface.,No action.
+evidence,증거,Evidence,"Used widely in court namespace and as a leaderboard tag/sort axis.",Glossary entry intact.,No action.
+evidence_stage,증거 단계,Evidence Stage,(via SOURCE_STRING_MAP `Stage {stage}` for pc.interaction.investigationStage),Wired via proposal. Compact UI prefers `Stage {stage}` (drop `Evidence`).,No action this thread.
+contradiction,모순,Contradiction,"target.profile.contradictionLabel + dialogue contradiction modal (proposed in SOURCE_STRING_MAP).",Glossary entry intact.,No action.
+contradiction_pursuit,모순 추궁,Contradiction Pursuit,"`Press the Contradiction` (proposed for dialogueLog.contradictionPursue).","KO verb form `모순을 찌른다` reads as imperative; glossary noun `Contradiction Pursuit` works for static labels but verb form `Press the Contradiction` reads better in the modal action.",Keep glossary as the noun. Allow `Press the Contradiction` as the imperative variant.
+free_interrogation,자유심문,Free Interrogation,`Free Question` (proposed for hotbar.slot.free),Slot width forces compact form.,Allow compact `Free Question` as UI variant. Keep `Free Interrogation` as the formal/glossary form.
+fact_pursuit,사실 추궁,Fact Pursuit,Fact Pursuit (proposed),Clean.,No action.
+motive_search,동기 탐색,Motive Search,Motive Search (proposed),Clean.,No action.
+empathy_approach,공감 접근,Empathy Approach,Empathy Approach (proposed),Clean.,No action.
+dossier,사건 기록,Dossier,(not used in current i18n; `결정적 질문` decisive question banner uses `Decisive Question Unlocked` instead),"KO source uses `결정적 질문` not `사건 기록` for the unlock banner. EN UI never surfaces `Dossier` — it’s engine-internal naming only.","Mark glossary `dossier` as engine-internal; document that EN UI uses `Decisive Question` for the runtime banner. No code change needed."
+notebook,수첩,Notebook,Notebook (judgeNotebook proposals + Evidence Notebook),Compound `Evidence Notebook` reuses noun consistently.,No action.
+observation,관찰,Observation,Observation / Observations (proposed),Singular for filter chip, plural for panel title.,No action.
+record_summary,기록 요약,Record Summary,Records (proposed for pc.recordSummary.title),Compact UI prefers single noun `Records`.,Keep glossary as `Record Summary`; allow `Records` as the compact variant.
+investigation_token,조사 토큰,Investigation Token,Investigation Token / Investigation Tokens,Plural in popup titles.,No action.
+skill_point,스킬 포인트,Skill Point,Skill Point / Skill Points,Same.,No action.
+trust,신뢰도,Trust,Trust (proposed via target.profile.trust),Glossary entry intact.,"Add new glossary entries `trust_state_high|mid|low` for derived state buckets (Trusting / Cautious / Suspicious)."
+stress,압박도,Stress,(not surfaced in current i18n; engine concept),Clean.,No action.
+perk,특전,Perk,Perk (used in profile.pc.perk.required),Glossary entry intact.,No action.
+trait,특성,Trait,Trait (proposed),Glossary entry intact.,No action.
+clearance,클리어런스,Clearance,Clearance (proposed for result.donut.clearance),Glossary entry intact.,No action.
+session,세션,Session,SESSION (eyebrow) + lower-case in session.preparing.title,Consistent.,No action.
+save_data,저장 데이터,Save Data,(used in body copy of settings data export),Consistent.,No action.
+test_console,테스트 콘솔,Test Console,Test Console (proposed),Clean.,No action.
+llm,LLM,LLM,LLM (used in settings about description and audio voice option),Locked entry intact.,No action.
+api,API,API,(not surfaced),Locked.,No action.
+jwt,JWT,JWT,(not surfaced),Locked.,No action.
+score_axis_insight,탐구 (점수 축),(none — proposed new),Insight (used in pc.sort.insight + result.donut.insight via SOURCE_STRING_MAP),"NEW. Korean `탐구` is reused both as judge-axis label (`Inquiry`) and score-axis label (`Insight`). Distinct concepts.",Add new glossary entry `score_axis_insight` (EN=Insight). high confidence.
+score_axis_authority,판결 (점수 축),(none — proposed new),Authority (used in pc.sort.authority + result.donut.authority),NEW. Korean `판결` overloaded with `verdict` (phase) and `Authority` (score axis).,Add new glossary entry `score_axis_authority` (EN=Authority). high confidence.
+score_axis_wisdom,해결 (점수 축),(none — proposed new),Wisdom (used in pc.sort.wisdom + result.donut.wisdom),NEW. Korean `해결` overloaded with `solution` (gameplay) and `Wisdom` (score axis).,Add new glossary entry `score_axis_wisdom` (EN=Wisdom). high confidence.
+court_control,법정 장악 / 법정 지배력,(none — proposed new),Court Control (used in token.court.title etc.),"NEW. Korean source has TWO terms for the same resource. Source-side cleanup needed (Codex non-translation issue).",Add new glossary entry `court_control` (EN=Court Control). Source-side: unify `법정 장악` and `법정 지배력`. high confidence.
+demand_answer,즉답 요구,(none — proposed new),Demand Answer (proposed for hotbar.special.immediate),NEW. Recurring action label.,Add new glossary entry. high confidence.
+separate_interrogation,분리 심문,(none — proposed new),Separate Interrogation (proposed),NEW.,Add new glossary entry. high confidence.
+confidential_protection,비공개 보호,(none — proposed new),Confidential Protection (proposed),NEW.,Add new glossary entry. high confidence.
+objection,이의 제기 / 이의 있습니다.,(none — proposed new),Objection (proposed for tactical.special.objection),NEW. Spoken line straddles UI/dialogue boundary.,Add new glossary entry. medium confidence — flag for dialogue thread.
+emotion_phase,경계/자신감/동요/격앙/체념,(none — proposed new),Guarded / Confident / Shaken / Enraged / Resigned (proposed),NEW. Drives character emotion donut + dialogue bubble.,Add new glossary group `emotion_phase_*`. high confidence.
+lie_state,방어/동요/변명/궁지/한계/고백,(none — proposed new),Defense / Wavering / Excuse / Cornered / Breaking / Confession (proposed),NEW. S0–S5 truth-progress labels.,Add new glossary group `lie_state_*`. high confidence.
+decisive_question,결정적 질문,(none — proposed new),Decisive Question (used in court.dossierUnlock copy in prior thread),"NEW. Distinct from `dossier` (engine-internal). UI-facing term should be `Decisive Question`.",Add new glossary entry. high confidence.

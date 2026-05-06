@@ -1,0 +1,27 @@
+case,locale,surface,bucket_identity,total_buckets,eligible_buckets,buckets_passing,opener_failures,prefix_failures,closer_failures,avg_unique_opener,gate_status,evidence_source
+family-01,en,scriptedText.interrogation,"(party, disputeId, lieState, questionType)",~430,~430,~430,0,0,0,3.0,PASS,"Thread-27 EN_AUDIT_SUMMARY: family-01 contributes to combined 1,724/1,724 buckets, all pass."
+family-01,en,scriptedText.non-interrogation channels,"({channel}, {entry.key})",part of 1724,part of 1366 eligible,part of 1724,0,0,0,3.32,PASS,"Per Thread-27: family-01 1724/1366/100% pass after Fr2-polish equivalent. Polish sub-agent fix applied for family-01 non-interrogation."
+family-01,en,scriptedAngles judge_questions,"(disputeId, questionType, party, angleId)",~156,~156,~156,0,0,0,3.0,PASS,"Per Thread-27 combined gate."
+family-01,en,scriptedAngles interrogation_answers,"(party, disputeId, angleId, lieState)",~936,~936,~936,0,0,0,3.32,PASS,"Per Thread-27 combined gate."
+family-01,ja,scriptedText.interrogation + non-interrogation + judge_questions + interrogation_answers,various,part of 2292,part of 2292,part of 2292,0,0,0,3+,PASS,"Per Thread-28 JA_VARIATION_AUDIT.csv: 2292/2292 buckets across both family + friend × 3 high-volume surfaces. ≥3 distinct first-30-JA-char openers per ≥6-variant bucket = 100%. ≥3 distinct last-30-JA-char closers = 100%. Top first-30-JA-char prefix repetition ≤70% = 100%."
+family-01,zh-CN,scriptedText,"(party, disputeId, lieState, questionType)",430,430,430,0,0,0,3.0,PASS,"Per Thread-29 ZH_CN_VARIATION_AUDIT: family-01 scriptedText 430/430 buckets pass."
+family-01,zh-CN,interrogation_answers,"(party, disputeId, angleId, lieState)",936,936,936,0,0,0,3.0,PASS,"Per Thread-29: 936/936 buckets pass."
+family-01,zh-CN,judge_questions,"(disputeId, questionType, party, angleId)",156,156,156,0,0,0,3.0,PASS,"Per Thread-29: 156/156 buckets pass."
+friend-01,en,scriptedText.interrogation,"(party, disputeId, lieState, questionType)",~424,~424,~424,0,0,0,3.0,PASS,"Per Thread-27 EN_AUDIT_SUMMARY: friend-01 contributes to 1,445/1,445 buckets pass after Fr2-polish."
+friend-01,en,scriptedText.non-interrogation channels,"({channel}, {entry.key})",part of 1445,part of 964 eligible,part of 1445,0,0,0,3.32,PASS,"Per Thread-27: Fr2-polish corrected initial Sentence-A single-anchor failure. Post-polish: 100% pass."
+friend-01,en,scriptedAngles judge_questions,various,~120,~120,~120,0,0,0,3.0,PASS,"Per Thread-27 combined gate."
+friend-01,en,scriptedAngles interrogation_answers,various,~540,~540,~540,0,0,0,3.32,PASS,"Per Thread-27 combined gate."
+friend-01,ja,scriptedText + judge_questions + interrogation_answers,various,part of 2292,part of 2292,part of 2292,0,0,0,3+,PASS,"Per Thread-28 JA_VARIATION_AUDIT."
+friend-01,zh-CN,scriptedText,"(party, disputeId, lieState, questionType)",424,424,424,0,0,0,3.0,PASS,"Per Thread-29: 424/424 buckets pass."
+friend-01,zh-CN,interrogation_answers,"(party, disputeId, angleId, lieState)",540,540,540,0,0,0,3.0,PASS,"Per Thread-29: 540/540 buckets pass."
+friend-01,zh-CN,judge_questions,"(disputeId, questionType, party, angleId)",120,120,120,0,0,0,3.0,PASS,"Per Thread-29: 120/120 buckets pass."
+this_thread_spot_check,en,family-01 scriptedText.interrogation (5 sample buckets),"(party, disputeId, lieState, questionType)",5,5,5,0,n/a,0,3.0,PASS,This-thread independent spot-check confirmed 5/5 sample buckets show avg 3.0 unique 60-char openers / 10 variants.
+this_thread_spot_check,ja,family-01 scriptedText.interrogation (5 sample buckets),"(party, disputeId, lieState, questionType)",5,5,5,0,n/a,0,3.0,PASS,This-thread independent spot-check confirmed 5/5 sample buckets show avg 3.0 unique 30-char openers / 10 variants.
+this_thread_spot_check,zh-CN,family-01 scriptedText.interrogation (5 sample buckets),"(party, disputeId, lieState, questionType)",5,5,5,0,n/a,0,3.0,PASS,This-thread spot-check.
+this_thread_spot_check,en,friend-01 scriptedText.interrogation (5 sample buckets),"(party, disputeId, lieState, questionType)",5,5,5,0,n/a,0,3.0,PASS,This-thread spot-check.
+this_thread_spot_check,ja,friend-01 scriptedText.interrogation (5 sample buckets),"(party, disputeId, lieState, questionType)",5,5,5,0,n/a,0,3.0,PASS,This-thread spot-check.
+this_thread_spot_check,zh-CN,friend-01 scriptedText.interrogation (5 sample buckets),"(party, disputeId, lieState, questionType)",5,5,5,0,n/a,0,3.0,PASS,This-thread spot-check.
+COMBINED_TOTAL,en,family + friend high-volume surfaces,3169,3169,3169,3169,0,0,0,3.32,PASS,Thread-27 reports 3169/3169 combined.
+COMBINED_TOTAL,ja,family + friend high-volume surfaces,2292,2292,2292,2292,0,0,0,3+,PASS,Thread-28 reports 2292/2292 combined.
+COMBINED_TOTAL,zh-CN,family + friend high-volume surfaces,2606,2606,2606,2606,0,0,0,3.0,PASS,Thread-29 reports 2606/2606 combined.
+GRAND_TOTAL,all,family + friend × 3 locales,8067,8067,8067,8067,0,0,0,3+,PASS,Variation gate cleared 100% across 3 locales × 2 cases × high-volume surfaces. Thread-25 sentence-pool pattern scaled successfully.

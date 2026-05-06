@@ -10,6 +10,7 @@ import { jumpToDialogue } from '../observation/JudgeObservationSection'
 import { getWitnessPortraitPath } from '../../../utils/witnessPortraits'
 import { sanitizeKoreanSurfaceText } from '../../../utils/korean'
 import { emitVerdictCtaCollapsed } from './verdictAdvanceEvents'
+import { translate } from '../../../i18n'
 
 export const PC_OPEN_INTERACTION_PANEL_EVENT = 'pc:open-interaction-panel'
 export const PC_CLOSE_INTERACTION_PANEL_EVENT = 'pc:close-interaction-panel'
@@ -82,44 +83,44 @@ export interface PcInteractionPayload {
 }
 
 const COPY = {
-  caseSummary: '\uC0AC\uAC74 \uC694\uC57D',
-  preparing: '\uC900\uBE44 \uC911',
-  noCase: '\uD604\uC7AC \uC120\uD0DD\uB41C \uC0AC\uAC74\uC774 \uC5C6\uC2B5\uB2C8\uB2E4.',
-  currentDispute: '\uD604\uC7AC \uC7C1\uC810',
-  noDispute: '\uC544\uC9C1 \uC120\uD0DD\uB41C \uC7C1\uC810 \uC5C6\uC74C',
-  phase: '\uC9C4\uD589 \uB2E8\uACC4',
-  turn: '\uD134',
-  unlockedEvidence: '\uD574\uAE08 \uC99D\uAC70',
-  disputeList: '\uC7C1\uC810 \uBAA9\uB85D',
-  viewCurrentDispute: '\uD604\uC7AC \uC7C1\uC810 \uBCF4\uAE30',
-  latestEvidence: '\uCD5C\uADFC \uC99D\uAC70 \uC5F4\uB78C',
-  targetInfo: '\uB300\uC0C1 \uC815\uBCF4',
-  relationship: '\uAD00\uACC4 \uC720\uD615',
-  watchingDispute: '\uD604\uC7AC \uC8FC\uC2DC \uC7C1\uC810',
-  none: '\uC5C6\uC74C',
-  relatedDispute: '\uAD00\uB828 \uC7C1\uC810 \uBCF4\uAE30',
-  disputeInfo: '\uC7C1\uC810 \uC815\uBCF4',
-  linkedEvidence: '\uC5F0\uACB0 \uC99D\uAC70',
-  noLinkedEvidence: '\uC544\uC9C1 \uC5F0\uACB0\uB41C \uC99D\uAC70\uAC00 \uC5C6\uC2B5\uB2C8\uB2E4.',
-  representativeEvidence: '\uB300\uD45C \uC99D\uAC70 \uC5F4\uB78C',
-  presentEvidence: '\uC99D\uAC70 \uC81C\uC2DC',
-  noAvailableSelection: '\uC120\uD0DD \uBD88\uAC00',
-  noRelevantEvidence: '\uD604\uC7AC \uC7C1\uC810\uACFC \uB300\uC0C1\uC5D0 \uBC14\uB85C \uC5F0\uACB0\uB41C \uC99D\uAC70\uAC00 \uC5C6\uC2B5\uB2C8\uB2E4.',
-  close: '\uB2EB\uAE30',
-  selectMessage: '\uC81C\uC2DC \uBA54\uC2DC\uC9C0 \uC120\uD0DD',
-  selectEvidenceBody: '\uC0C1\uB300\uBC29\uC5D0\uAC8C \uB358\uC9C8 \uC99D\uAC70\uB97C \uACE0\uB974\uC138\uC694.',
-  presentWay: '\uC81C\uC2DC \uBC29\uC2DD \uC120\uD0DD',
-  recommendedQuestion: '\uCD94\uCC9C \uC9C8\uBB38',
-  implication: '\uC758\uBBF8',
-  directPresent: '\uC99D\uAC70\uB9CC \uC81C\uC2DC',
-  chooseDispute: '\uC7C1\uC810 \uC774\uB3D9',
-  chooseDisputeBody: '\uC774\uB3D9\uD560 \uC7C1\uC810\uC744 \uC120\uD0DD\uD558\uC138\uC694.',
-  cannotMove: '\uC774\uB3D9 \uBD88\uAC00',
-  noOtherDispute: '\uC774\uB3D9\uD560 \uB2E4\uB978 \uC7C1\uC810\uC774 \uC5C6\uC2B5\uB2C8\uB2E4.',
-  actionSelect: 'ACTION SELECT',
-  insufficientSkill: '\uC2A4\uD0AC \uD3EC\uC778\uD2B8\uAC00 \uBD80\uC871\uD569\uB2C8\uB2E4.',
-  judgeObjection: '\uC774\uC758 \uC788\uC2B5\uB2C8\uB2E4.',
-  immediateDemand: '\uC9C0\uAE08 \uC7C1\uC810\uC5D0 \uB300\uD55C \uC989\uB2F5\uC744 \uC694\uAD6C\uD569\uB2C8\uB2E4.',
+  get caseSummary() { return translate('pc.interaction.caseSummary') },
+  get preparing() { return translate('pc.interaction.preparing') },
+  get noCase() { return translate('pc.interaction.noCase') },
+  get currentDispute() { return translate('pc.common.currentDispute') },
+  get noDispute() { return translate('pc.common.none') },
+  get phase() { return translate('pc.interaction.phase') },
+  get turn() { return translate('pc.interaction.turn') },
+  get unlockedEvidence() { return translate('pc.interaction.unlockedEvidence') },
+  get disputeList() { return translate('pc.interaction.disputeList') },
+  get viewCurrentDispute() { return translate('pc.interaction.viewCurrentDispute') },
+  get latestEvidence() { return translate('pc.interaction.latestEvidence') },
+  get targetInfo() { return translate('pc.interaction.targetInfo') },
+  get relationship() { return translate('pc.interaction.relationship') },
+  get watchingDispute() { return translate('pc.interaction.watchingDispute') },
+  get none() { return translate('pc.common.none') },
+  get relatedDispute() { return translate('pc.common.relatedDispute') },
+  get disputeInfo() { return translate('pc.interaction.disputeInfo') },
+  get linkedEvidence() { return translate('pc.interaction.linkedEvidence') },
+  get noLinkedEvidence() { return translate('pc.interaction.noLinkedEvidence') },
+  get representativeEvidence() { return translate('pc.interaction.representativeEvidence') },
+  get presentEvidence() { return translate('pc.interaction.presentEvidence') },
+  get noAvailableSelection() { return translate('pc.interaction.noAvailableSelection') },
+  get noRelevantEvidence() { return translate('pc.interaction.noRelevantEvidence') },
+  get close() { return translate('pc.common.close') },
+  get selectMessage() { return translate('pc.interaction.selectMessage') },
+  get selectEvidenceBody() { return translate('pc.interaction.selectEvidenceBody') },
+  get presentWay() { return translate('pc.interaction.presentWay') },
+  get recommendedQuestion() { return translate('pc.interaction.recommendedQuestion') },
+  get implication() { return translate('pc.interaction.implication') },
+  get directPresent() { return translate('pc.interaction.directPresent') },
+  get chooseDispute() { return translate('pc.interaction.chooseDispute') },
+  get chooseDisputeBody() { return translate('pc.interaction.chooseDisputeBody') },
+  get cannotMove() { return translate('pc.interaction.cannotMove') },
+  get noOtherDispute() { return translate('pc.interaction.noOtherDispute') },
+  get actionSelect() { return translate('pc.interaction.actionSelect') },
+  get insufficientSkill() { return translate('pc.interaction.insufficientSkill') },
+  get judgeObjection() { return translate('pc.actions.dialogue.objection') },
+  get immediateDemand() { return translate('pc.actions.dialogue.immediateDemand') },
 } as const
 
 const PANEL_ACTION_CLOSE_DELAY_MS = 140
@@ -169,7 +170,12 @@ function buildCaseSummaryPayload(): PcInteractionPayload {
       COPY.disputeList,
       ...caseData.disputes.filter((d) => !d.hidden && d.v3Visibility !== 'hidden').slice(0, 5).map((dispute, index) => `${index + 1}. ${dispute.name}`),
     ].join('\n'),
-    tags: [`${caseData.disputes.filter((d) => !d.hidden && d.v3Visibility !== 'hidden').length}\uAC1C \uC7C1\uC810`, `${unlockedEvidence.length}\uAC1C \uC99D\uAC70`],
+    tags: [
+      translate('pc.interaction.disputeCount', {
+        count: caseData.disputes.filter((d) => !d.hidden && d.v3Visibility !== 'hidden').length,
+      }),
+      translate('pc.interaction.evidenceCount', { count: unlockedEvidence.length }),
+    ],
     actions: [
       ...(focusedDispute ? [{ kind: 'focus_dispute' as const, label: COPY.viewCurrentDispute, disputeId: focusedDispute.id }] : []),
       ...(unlockedEvidence[0] ? [{ kind: 'open_evidence' as const, label: COPY.latestEvidence, evidenceId: unlockedEvidence[0].id }] : []),
@@ -193,12 +199,12 @@ function buildPartyPayload(party: PartyId): PcInteractionPayload | null {
     subtitle: COPY.targetInfo,
     tone,
     body: [
-      `${profile.age}\uC138 \u00B7 ${profile.occupation}`,
+      translate('pc.interaction.ageOccupation', { age: profile.age, occupation: profile.occupation }),
       '',
       `${COPY.relationship}: ${caseData.duo.relationshipType}`,
       `${COPY.watchingDispute}: ${focusedDispute ? focusedDispute.name : COPY.none}`,
     ].join('\n'),
-    tags: [party === 'a' ? '\uB2F9\uC0AC\uC790 A' : '\uB2F9\uC0AC\uC790 B'],
+    tags: [party === 'a' ? translate('pc.interaction.partyA') : translate('pc.interaction.partyB')],
     actions: focusedDispute
       ? [{ kind: 'focus_dispute' as const, label: COPY.relatedDispute, disputeId: focusedDispute.id }]
       : [],
@@ -232,8 +238,8 @@ function buildDisputePayload(disputeId: string): PcInteractionPayload | null {
         : COPY.noLinkedEvidence,
     ].join('\n'),
     tags: [
-      `\uC7C1\uC810 ${caseData.disputes.findIndex((item) => item.id === disputeId) + 1}`,
-      `${linkedEvidence.length}\uAC1C \uC5F0\uACB0`,
+      translate('pc.interaction.disputeNumber', { number: caseData.disputes.findIndex((item) => item.id === disputeId) + 1 }),
+      translate('pc.interaction.linkedCount', { count: linkedEvidence.length }),
     ],
     actions: unlockedEvidence[0]
       ? [{ kind: 'open_evidence' as const, label: COPY.representativeEvidence, evidenceId: unlockedEvidence[0].id }]
@@ -268,14 +274,14 @@ function getEvidencePresentDisabledReason(
   relevant: boolean,
 ): string | undefined {
   if (!relevant) {
-    return `${otherPartyName} 쪽 증거라 ${partyName}에게는 바로 제시할 수 없습니다.`
+    return translate('pc.interaction.evidenceOtherParty', { otherParty: otherPartyName, party: partyName })
   }
   const stage = getEvidenceInvestigationStage(state)
   if (stage <= 0) {
-    return '증거를 1단계 이상 조사한 뒤 제시할 수 있습니다.'
+    return translate('pc.interaction.evidenceNeedsInvestigation')
   }
   if (isEvidencePresentedForCurrentStage(state, party)) {
-    return `조사 ${stage}단계 답변은 이미 받았습니다. 다음 조사 단계가 열리면 다시 제시할 수 있습니다.`
+    return translate('pc.interaction.evidenceStageAnswered', { stage })
   }
   return undefined
 }
@@ -283,6 +289,19 @@ function getEvidencePresentDisabledReason(
 function getInvestigationTokenCostForStage(stage: number): number {
   if (stage <= 1) return 0
   return stage === 2 ? 1 : 2
+}
+
+function formatPresentButtonLabel(partyName: string, stage: number, presented: boolean, relevant: boolean): string {
+  if (presented) {
+    return translate('pc.interaction.presentDone', { party: partyName, stage })
+  }
+  if (!relevant) {
+    return translate('pc.interaction.notTarget', { party: partyName })
+  }
+  if (stage <= 0) {
+    return translate('pc.interaction.presentAfterInvestigation')
+  }
+  return translate('pc.interaction.presentToParty', { party: partyName })
 }
 
 export function buildEvidenceSelectionPayload(disputeId: string, party: PartyId): PcInteractionPayload | null {
@@ -333,7 +352,7 @@ export function buildEvidenceSelectionPayload(disputeId: string, party: PartyId)
       const disabledReason = getEvidencePresentDisabledReason(evidenceState, party, partyName, otherPartyName, relevant)
       return {
         kind: 'prepare_evidence_present' as const,
-        label: `${evidence.surfaceName ?? evidence.name}${stage > 0 ? ` · 조사 ${stage}단계` : ''}`,
+        label: `${evidence.surfaceName ?? evidence.name}${stage > 0 ? ` · ${translate('pc.interaction.stageSuffix', { stage })}` : ''}`,
         evidenceId: evidence.id,
         disputeId,
         party,
@@ -369,13 +388,13 @@ function buildEvidencePromptPayload(evidenceId: string, disputeId: string, party
     title: evidence.surfaceName ?? evidence.name,
     subtitle: COPY.presentWay,
     body: [
-      `${partyName}\uC5D0\uAC8C \uC774 \uC99D\uAC70\uB97C \uC5B4\uB5A4 \uAD00\uC810\uC73C\uB85C \uB358\uC9C8\uC9C0 \uACE0\uB974\uC138\uC694.`,
+      translate('pc.interaction.evidencePromptBody', { party: partyName }),
       '',
-      context?.questionAngle ? `${COPY.recommendedQuestion}: ${context.questionAngle}` : '\uCD94\uCC9C \uC9C8\uBB38 \uC5C6\uC74C',
+      context?.questionAngle ? `${COPY.recommendedQuestion}: ${context.questionAngle}` : translate('pc.interaction.noRecommendedQuestion'),
       context?.implication ? `${COPY.implication}: ${context.implication}` : '',
     ].filter(Boolean).join('\n'),
     tone: 'gold',
-    tags: [partyName, dispute.name, currentStage > 0 ? `조사 ${currentStage}단계` : '조사 필요'],
+    tags: [partyName, dispute.name, currentStage > 0 ? translate('pc.interaction.stageSuffix', { stage: currentStage }) : translate('pc.interaction.investigationNeeded')],
     actions: [
       {
         kind: 'present_evidence',
@@ -423,7 +442,7 @@ export function buildDisputePickerPayload(currentDisputeId: string): PcInteracti
 
   return {
     title: COPY.chooseDispute,
-    subtitle: '\uB300\uC0C1 \uBCC0\uACBD',
+    subtitle: translate('pc.interaction.targetChange'),
     body: COPY.chooseDisputeBody,
     tone: 'blue',
     tags: currentDispute ? [currentDispute.name] : undefined,
@@ -642,7 +661,7 @@ export default function PCInteractionPanel() {
             const latest = useGameStore.getState()
             if (!latest.spend('skillPoints', 1)) return
             window.dispatchEvent(new CustomEvent('pc:court-control-used', {
-              detail: { action: 'immediate_answer', label: '즉답 요구' },
+              detail: { action: 'immediate_answer', label: translate('pc.court.control.immediateAnswer') },
             }))
             const currentEntry = (target === 'a' ? state.agentA : state.agentB).lieStateMap[action.disputeId!]
             if (!currentEntry) {
@@ -682,7 +701,7 @@ export default function PCInteractionPanel() {
         if (action.specialAction === 'separation') {
           // courtControl은 applyTrustEffect에서 차감 (이중 과금 방지)
           if (!state.canAfford('courtControl', 1)) {
-            showToast('법정 지배력이 부족합니다.', 'warn')
+            showToast(translate('pc.actions.toast.insufficientControl'), 'warn')
             break
           }
           runAfterPanelClose(() => {
@@ -694,7 +713,7 @@ export default function PCInteractionPanel() {
         if (action.specialAction === 'confidential_protection') {
           // courtControl은 applyTrustEffect에서 차감 (이중 과금 방지)
           if (!state.canAfford('courtControl', 1)) {
-            showToast('법정 지배력이 부족합니다.', 'warn')
+            showToast(translate('pc.actions.toast.insufficientControl'), 'warn')
             break
           }
           runAfterPanelClose(() => {
@@ -739,11 +758,14 @@ export default function PCInteractionPanel() {
           runAfterPanelClose(() => {
             dispatch({ type: 'call_witness', witnessId: action.witnessId! })
             const store = useGameStore.getState()
+            const witnessName = store.caseData?.duo.socialGraph.find((witness) => witness.id === action.witnessId)?.name ?? action.label
             store.pushGameEvent({
               id: store.gameEventLog.length + 1,
               turn: store.turnCount,
               type: 'event_trigger',
-              message: `증인 소환: ${action.label.replace(/\s*(재)?소환$/, '')}`,
+              message: translate('pc.interaction.summonToast', {
+                name: witnessName,
+              }),
               timestamp: Date.now(),
             })
           })
@@ -822,8 +844,8 @@ export default function PCInteractionPanel() {
           <div className="pc-interaction-card__body pc-ev-body-wrap">
             <span>{sanitizedBody}</span>
             {payload.evidenceId ? (
-              <button className="pc-ev-viewer-btn" onClick={() => handleAction({ kind: 'open_evidence', label: '증거 열람', evidenceId: payload.evidenceId })} type="button">
-                증거 열람
+              <button className="pc-ev-viewer-btn" onClick={() => handleAction({ kind: 'open_evidence', label: translate('pc.interaction.openEvidence'), evidenceId: payload.evidenceId })} type="button">
+                {translate('pc.interaction.openEvidence')}
               </button>
             ) : null}
           </div>
@@ -932,7 +954,7 @@ function EvidenceDetailSection({ evidenceId, onClose }: { evidenceId: string; on
       {/* Dispute section */}
       {disputes.length > 0 ? (
         <div className="pc-ev-detail__dispute-section">
-          <span className="pc-ev-detail__dispute-label">주요 쟁점</span>
+          <span className="pc-ev-detail__dispute-label">{translate('pc.interaction.majorDispute')}</span>
           <div className="pc-ev-detail__dispute-names">
             {disputes.map((d) => (
               <span className="pc-ev-detail__dispute" key={d.id}>{d.name}</span>
@@ -944,7 +966,7 @@ function EvidenceDetailSection({ evidenceId, onClose }: { evidenceId: string; on
       {/* Investigation stages */}
       {stages.length > 0 ? (
         <div className="pc-ev-detail__stages">
-          <span className="pc-ev-detail__stages-label">조사 단계</span>
+          <span className="pc-ev-detail__stages-label">{translate('pc.interaction.investigationStage')}</span>
           {stages.map((stage) => {
             const investigateCostLabel = `-${getInvestigationTokenCostForStage(stage.stage)}`
             // is-ready 일 때만 전체 영역을 버튼으로 (전체 클릭 가능, 안쪽 별도 버튼 X)
@@ -959,7 +981,7 @@ function EvidenceDetailSection({ evidenceId, onClose }: { evidenceId: string; on
                   <span className="pc-ev-detail__stage-num">?</span>
                   <div className="pc-ev-detail__stage-body">
                     <span className="pc-ev-detail__investigate-cost"><PCSvgIcon id="i-search" size={18} /> {investigateCostLabel}</span>
-                    <span className="pc-ev-detail__investigate-label">조사 시도</span>
+                    <span className="pc-ev-detail__investigate-label">{translate('pc.interaction.investigate')}</span>
                   </div>
                 </button>
               )
@@ -973,7 +995,7 @@ function EvidenceDetailSection({ evidenceId, onClose }: { evidenceId: string; on
                   {stage.revealed ? (
                     <span className="pc-ev-detail__stage-a">{evidence.investigationResults[stage.revealKey]}</span>
                   ) : (
-                    <span className="pc-ev-detail__stage-lock">조사 단계 {stage.stage} — 해금 필요</span>
+                    <span className="pc-ev-detail__stage-lock">{translate('pc.interaction.stageLocked', { stage: stage.stage })}</span>
                   )}
                 </div>
               </div>
@@ -1001,7 +1023,7 @@ function EvidenceDetailSection({ evidenceId, onClose }: { evidenceId: string; on
           <span className="pc-ev-detail__present-avatar">
             <PCCharacterPortrait alt={nameA} caseId={caseData.caseId} emotion="defensive" fallbackSymbolId="i-person" party="a" size={28} />
           </span>
-          <span>{presentedToA ? `${nameA} 조사 ${currentStage}단계 답변 완료` : !aRelevant ? `${nameA} (대상 아님)` : currentStage <= 0 ? '조사 후 제시 가능' : `${nameA}에게 제시`}</span>
+          <span>{formatPresentButtonLabel(nameA, currentStage, presentedToA, aRelevant)}</span>
         </button>
         <button
           className={`pc-ev-detail__present-btn is-b${presentedToB ? ' is-done' : ''}${!bRelevant ? ' is-mismatch' : ''}${currentStage <= 0 ? ' is-stage-locked' : ''}`}
@@ -1020,7 +1042,7 @@ function EvidenceDetailSection({ evidenceId, onClose }: { evidenceId: string; on
           <span className="pc-ev-detail__present-avatar">
             <PCCharacterPortrait alt={nameB} caseId={caseData.caseId} emotion="defensive" fallbackSymbolId="i-person" party="b" size={28} />
           </span>
-          <span>{presentedToB ? `${nameB} 조사 ${currentStage}단계 답변 완료` : !bRelevant ? `${nameB} (대상 아님)` : currentStage <= 0 ? '조사 후 제시 가능' : `${nameB}에게 제시`}</span>
+          <span>{formatPresentButtonLabel(nameB, currentStage, presentedToB, bRelevant)}</span>
         </button>
       </div>
     </div>
@@ -1069,19 +1091,19 @@ function DialogueDetailSection({ payload, onClose }: { payload: PcInteractionPay
                 size={34}
               />
             ) : witnessPortrait ? (
-              <img alt={payload.dialogueSpeakerName ?? '증인'} src={witnessPortrait} />
+              <img alt={payload.dialogueSpeakerName ?? translate('pc.common.witness')} src={witnessPortrait} />
             ) : (
               <PCSvgIcon id={speakerIconId} size={18} />
             )}
           </span>
           <div className="pc-dialogue-popup__speaker-copy">
-            <span className="pc-dialogue-popup__label">발언 기록</span>
+            <span className="pc-dialogue-popup__label">{translate('pc.interaction.dialogueRecord')}</span>
             <span className="pc-dialogue-popup__name-line">
               <span className={`pc-dialogue-popup__speaker ${speakerClass}`}>
-                {payload.dialogueSpeakerName ?? '시스템'}
+                {payload.dialogueSpeakerName ?? translate('pc.common.system')}
               </span>
               {relatedNames.length > 0 ? (
-                <span className="pc-dialogue-popup__inline-chips" aria-label="관련 쟁점">
+                <span className="pc-dialogue-popup__inline-chips" aria-label={translate('pc.interaction.relatedDisputeAria')}>
                   {relatedNames.map((name, i) => (
                     <span className="pc-dialogue-popup__dispute-name" key={`${name}:${i}`}>{name}</span>
                   ))}
@@ -1103,12 +1125,12 @@ function DialogueDetailSection({ payload, onClose }: { payload: PcInteractionPay
                 }
               }}
               type="button"
-              title="해당 메시지로 이동"
+              title={translate('pc.interaction.gotoMessage')}
             >
-              바로가기
+              {translate('pc.interaction.goto')}
             </button>
           ) : null}
-          <button className="pc-dialogue-popup__close" onClick={onClose} type="button" aria-label="닫기">&times;</button>
+          <button className="pc-dialogue-popup__close" onClick={onClose} type="button" aria-label={translate('pc.common.close')}>&times;</button>
         </div>
       </div>
 
@@ -1139,7 +1161,9 @@ function WitnessDetailSection({ onAction }: { onAction: (action: PcInteractionAc
     <div className="pc-witness-panel">
       {witnesses.map((w) => {
         const called = calledWitnesses.includes(w.id)
-        const slotLabel = w.slot === 'institutional' ? '기관 증인' : '관련인'
+        const slotLabel = w.slot === 'institutional'
+          ? translate('pc.interaction.witnessInstitution')
+          : translate('pc.interaction.witnessRelated')
         const gated = (w.unlockedByDossier ?? []).length > 0
         const locked = gated && !unlockedWitnessIds.includes(w.id)
         const portrait = getWitnessPortraitPath(caseData.caseId, w.id, w.name)
@@ -1154,18 +1178,18 @@ function WitnessDetailSection({ onAction }: { onAction: (action: PcInteractionAc
             </span>
             <div className="pc-witness-card__info">
               <span className="pc-witness-card__name">{locked ? '???' : w.name}</span>
-              <span className="pc-witness-card__meta">{slotLabel}{locked ? ' · 잠김' : ''}</span>
+              <span className="pc-witness-card__meta">{slotLabel}{locked ? ` · ${translate('pc.interaction.witnessLocked')}` : ''}</span>
               <span className="pc-witness-card__scope">
-                {locked ? '조합으로 단서를 확보해야 소환할 수 있습니다' : (w.knowledgeScope ?? '관련 사실에 대해 알고 있음')}
+                {locked ? translate('pc.interaction.witnessLockedScope') : (w.knowledgeScope ?? translate('pc.interaction.witnessDefaultScope'))}
               </span>
             </div>
             <button
               className={`pc-witness-card__btn${called ? ' is-done' : ''}${locked ? ' is-locked' : ''}`}
               disabled={locked}
-              onClick={() => !locked && onAction({ kind: 'summon_witness', label: `${w.name} 소환`, witnessId: w.id })}
+              onClick={() => !locked && onAction({ kind: 'summon_witness', label: translate('pc.interaction.witnessSummon', { name: w.name }), witnessId: w.id })}
               type="button"
             >
-              {locked ? '잠김' : called ? '추가 심문' : '소환'}
+              {locked ? translate('pc.interaction.witnessLocked') : called ? translate('pc.interaction.witnessAdditional') : translate('pc.interaction.witnessSummonButton')}
             </button>
           </div>
         )

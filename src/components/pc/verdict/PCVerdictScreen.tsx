@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react'
+import React, { useMemo, useRef, useState } from 'react'
 import { loadDriftState, saveDriftState } from '../../../data/leaderboard'
 import { completeStage } from '../../../data/campaign'
 import { checkAndGrantRewards } from '../../../engine/rewardEngine'
@@ -21,25 +21,19 @@ import PCCharacterPortrait from '../icons/PCCharacterPortrait'
 import { CAMPAIGN_STAGE_MAP, getCampaignStageKey } from '../../verdict/VerdictScreen'
 import { triggerCutscene } from '../../discovery/CutsceneOverlay'
 import { CUTSCENE_DURATION, shouldTriggerCutscene } from '../../../engine/cutsceneTriggerEngine'
+import { useI18n, type MessageKey, type MessageValues } from '../../../i18n'
 
 type VerdictStep = 'fact' | 'responsibility' | 'solution' | 'confirm'
 type FlatItem = { step: VerdictStep; subIdx: number }
+type TFunction = (key: MessageKey, values?: MessageValues) => string
 
 const LIE_STATE_RANK: Record<LieState, number> = { S0: 0, S1: 1, S2: 2, S3: 3, S4: 4, S5: 5 }
-const LIE_STATE_LABEL: Record<LieState, string> = {
-  S0: '방어',
-  S1: '동요',
-  S2: '변명',
-  S3: '궁지',
-  S4: '한계',
-  S5: '고백',
-}
 
-const STEPS: { id: VerdictStep; label: string }[] = [
-  { id: 'fact', label: '01 쟁점 판단' },
-  { id: 'responsibility', label: '02 안건 책임' },
-  { id: 'solution', label: '03 해결안' },
-  { id: 'confirm', label: '04 판결문' },
+const STEPS: { id: VerdictStep; labelKey: MessageKey }[] = [
+  { id: 'fact', labelKey: 'pc.verdict.step.fact' },
+  { id: 'responsibility', labelKey: 'pc.verdict.step.responsibility' },
+  { id: 'solution', labelKey: 'pc.verdict.step.solution' },
+  { id: 'confirm', labelKey: 'pc.verdict.step.confirm' },
 ]
 
 function buildKeyMomentText(args: {
@@ -154,15 +148,18 @@ function buildFactOptions(
   nameA: string,
   nameB: string,
   discovered: boolean,
+  t: TFunction,
 ) {
   // 스크립트 생성된 선택지가 있으면 사용
   const vo = dispute.verdictOptions
 
   const option1Text = vo?.wrong
-    ?? (dispute.judgmentStatement ? `이 쟁점은 사실과 다릅니다 — ${nameA} 측 주장이 맞습니다` : `${nameA} 측 주장이 맞습니다`)
-  const option2Text = vo?.partial ?? '일부는 사실이나, 핵심 사실관계가 불분명합니다'
+    ?? (dispute.judgmentStatement
+      ? t('pc.verdict.factOption.partyClaimCorrectWithContradiction', { party: nameA })
+      : t('pc.verdict.factOption.partyClaimCorrect', { party: nameA }))
+  const option2Text = vo?.partial ?? t('pc.verdict.factOption.partial')
   const option3Text = vo?.truth ?? dispute.judgmentStatement ?? dispute.truthDescription
-  const option4Text = vo?.defer ?? '보류 — 판단을 유보합니다'
+  const option4Text = vo?.defer ?? t('pc.verdict.factOption.defer')
 
   // Shuffle options 1-3, keep option 4 last
   const shuffledFirst3 = seededShuffle(dispute.id, 3)
@@ -225,8 +222,11 @@ function ScaleSVG({ percentA, nameA, nameB, caseId }: { percentA: number; nameA:
 }
 
 export default function PCVerdictScreen() {
+  const { t } = useI18n()
   const [globalIdx, setGlobalIdx] = useState(0)
   const [autoAdvanceEnabled, setAutoAdvanceEnabled] = useState(true)
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const submitLockRef = useRef(false)
   // Track selected option key per dispute for fact step
   const [factSelections, setFactSelections] = useState<Record<string, string>>({})
   const caseData = useStore((s) => s.caseData)
@@ -273,6 +273,9 @@ export default function PCVerdictScreen() {
   const currentStepIndex = visibleSteps.findIndex((item) => item.id === currentStep)
 
   const handleSubmit = () => {
+    if (submitLockRef.current) return
+    submitLockRef.current = true
+    setIsSubmitting(true)
     playGavel()
     const runtimeState = useGameStore.getState()
     const processMetrics = runtimeState.processMetrics
@@ -525,21 +528,21 @@ export default function PCVerdictScreen() {
     <div className="pc-verdict-screen">
       <div className="pc-verdict-shell">
         <aside className="pc-verdict-sidebar">
-          <div className="pc-verdict-sidebar__eyebrow">VERDICT STUDIO</div>
-          <h1>최종 판결</h1>
+          <div className="pc-verdict-sidebar__eyebrow">{t('pc.verdict.sidebar.eyebrow')}</div>
+          <h1>{t('pc.verdict.title.final')}</h1>
           <p className="pc-verdict-sidebar__summary">{caseData.context.description}</p>
 
           <div className="pc-verdict-sidebar__meta">
             <div className="pc-verdict-sidebar__meta-card">
-              <span>쟁점</span>
-              <strong>{caseData.disputes.length}개</strong>
+              <span>{t('pc.verdict.meta.disputes')}</span>
+              <strong>{t('pc.verdict.meta.count', { count: caseData.disputes.length })}</strong>
             </div>
             <div className="pc-verdict-sidebar__meta-card">
-              <span>해결책</span>
-              <strong>{verdictInput.selectedSolutions.length}개</strong>
+              <span>{t('pc.verdict.meta.solutions')}</span>
+              <strong>{t('pc.verdict.meta.count', { count: verdictInput.selectedSolutions.length })}</strong>
             </div>
             <div className="pc-verdict-sidebar__meta-card">
-              <span>턴</span>
+              <span>{t('pc.verdict.meta.turns')}</span>
               <strong>{turnCount}</strong>
             </div>
           </div>
@@ -555,7 +558,7 @@ export default function PCVerdictScreen() {
                 }}
                 type="button"
               >
-                <strong>{item.label}</strong>
+                <strong>{t(item.labelKey)}</strong>
               </button>
             ))}
           </div>
@@ -573,7 +576,7 @@ export default function PCVerdictScreen() {
                 }}
                 type="button"
               >
-                {item.label}
+                {t(item.labelKey)}
               </button>
             ))}
           </div>
@@ -588,14 +591,14 @@ export default function PCVerdictScreen() {
                 agentALieMap as Record<string, { currentState: string }>,
                 agentBLieMap as Record<string, { currentState: string }>,
               )
-              const options = buildFactOptions(dispute, nameA, nameB, discovered)
+              const options = buildFactOptions(dispute, nameA, nameB, discovered, t)
               const selectedKey = factSelections[dispute.id]
 
               return (
                 <div className="pc-verdict-fact">
                   <div className="pc-verdict-fact__header">
                     <h2 className="pc-verdict-fact__title">{dispute.name}</h2>
-                    <p className="pc-verdict-fact__subtitle">이 쟁점에 대한 판단을 선택하세요</p>
+                    <p className="pc-verdict-fact__subtitle">{t('pc.verdict.fact.subtitle')}</p>
                   </div>
                   <div className="pc-verdict-fact__options">
                     {options.map((opt, idx) => {
@@ -633,7 +636,7 @@ export default function PCVerdictScreen() {
                             )}
                           </span>
                           <span className="pc-verdict-fact__option-text">
-                            {isLocked ? '아직 밝혀지지 않은 내용입니다' : opt.text}
+                            {isLocked ? t('pc.verdict.fact.locked') : opt.text}
                           </span>
                         </button>
                       )
@@ -652,7 +655,7 @@ export default function PCVerdictScreen() {
                 <div className="pc-verdict-resp">
                   <div className="pc-verdict-resp__header">
                     <h2 className="pc-verdict-resp__title">{dispute.name}</h2>
-                    <p className="pc-verdict-resp__subtitle">누구의 책임이 더 크다고 생각하시나요?</p>
+                    <p className="pc-verdict-resp__subtitle">{t('pc.verdict.responsibility.subtitle')}</p>
                   </div>
                   <div className="pc-verdict-resp__slider-area">
                     <span className="pc-verdict-resp__label is-a">
@@ -688,11 +691,11 @@ export default function PCVerdictScreen() {
                   </div>
                   <ScaleSVG percentA={resp.a} nameA={nameA} nameB={nameB} caseId={caseData.caseId} />
                   <div className="pc-verdict-resp__direction">
-                    {resp.a >= 80 ? `${nameA} 측에 주요 책임`
-                     : resp.a >= 60 ? `${nameA} 측에 더 큰 책임`
-                     : resp.a >= 40 ? '양측 비슷한 책임'
-                     : resp.a >= 20 ? `${nameB} 측에 더 큰 책임`
-                     : `${nameB} 측에 주요 책임`}
+                    {resp.a >= 80 ? t('pc.verdict.responsibility.major', { party: nameA })
+                     : resp.a >= 60 ? t('pc.verdict.responsibility.greater', { party: nameA })
+                     : resp.a >= 40 ? t('pc.verdict.responsibility.similar')
+                     : resp.a >= 20 ? t('pc.verdict.responsibility.greater', { party: nameB })
+                     : t('pc.verdict.responsibility.major', { party: nameB })}
                   </div>
                 </div>
               )
@@ -707,7 +710,7 @@ export default function PCVerdictScreen() {
                 <div className="pc-verdict-solution">
                   <div className="pc-verdict-solution__header">
                     <h2 className="pc-verdict-solution__subtitle" style={{ fontSize: 26, fontWeight: 900, color: '#f2efe8', margin: 0 }}>{catLabel}</h2>
-                    <p className="pc-verdict-solution__hint" style={{ marginTop: 8 }}>※ 복수 선택 가능합니다.</p>
+                    <p className="pc-verdict-solution__hint" style={{ marginTop: 8 }}>{t('pc.verdict.solution.multiSelectHint')}</p>
                   </div>
                   <div className="pc-verdict-solution__grid">
                     {options.map((opt, i) => {
@@ -748,12 +751,15 @@ export default function PCVerdictScreen() {
                             </div>
                           ) : null}
                           <span className={`pc-verdict-confirm__badge is-${item.fact ?? 'none'}`}>
-                            {item.fact === 'true' ? '사실' : item.fact === 'false' ? '거짓' : item.fact === 'pending' ? '보류' : '미판단'}
+                            {item.fact === 'true' ? t('pc.verdict.confirm.badge.true')
+                             : item.fact === 'false' ? t('pc.verdict.confirm.badge.false')
+                             : item.fact === 'pending' ? t('pc.verdict.confirm.badge.pending')
+                             : t('pc.verdict.confirm.badge.none')}
                           </span>
                           <span className="pc-verdict-confirm__card-judgment">
-                            {item.fact === 'true' ? item.name + ' — 사실로 판단'
-                             : item.fact === 'false' ? item.name + ' — 거짓으로 판단'
-                             : '판단 보류'}
+                            {item.fact === 'true' ? t('pc.verdict.confirm.judgment.true', { name: item.name })
+                             : item.fact === 'false' ? t('pc.verdict.confirm.judgment.false', { name: item.name })
+                             : t('pc.verdict.confirm.judgment.pending')}
                           </span>
                         </div>
                       )
@@ -762,7 +768,7 @@ export default function PCVerdictScreen() {
 
                   {verdictInput.selectedSolutions.length > 0 ? (
                     <div className="pc-verdict-confirm__solutions">
-                      <h3>선택한 해결안</h3>
+                      <h3>{t('pc.verdict.confirm.selectedSolutions')}</h3>
                       {verdictInput.selectedSolutions.map((sol, i) => (
                         <div className="pc-verdict-confirm__sol" key={i}>{sol}</div>
                       ))}
@@ -781,7 +787,7 @@ export default function PCVerdictScreen() {
               onClick={() => { setAutoAdvanceEnabled(false); setGlobalIdx(Math.max(safeGlobalIdx - 1, 0)) }}
               type="button"
             >
-              &lt; 이전 단계
+              {t('pc.verdict.footer.previous')}
             </button>
 
             <span className="pc-verdict-footer__indicator">
@@ -791,18 +797,18 @@ export default function PCVerdictScreen() {
             {currentStep === 'confirm' ? (
               <button
                 className="pc-verdict-footer__button is-primary"
-                disabled={!allFactsJudged}
+                disabled={!allFactsJudged || isSubmitting}
                 onClick={handleSubmit}
                 type="button"
               >
-                {allFactsJudged ? (
+                {isSubmitting ? t('pc.verdict.footer.submitting') : allFactsJudged ? (
                   <>
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" style={{marginRight: 6}}>
                       <path d="M4 20h16M8 14l-4 6M12 6l6 6-8 8-6-6 8-8zM14 4l4 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                     </svg>
-                    판결 확정
+                    {t('pc.verdict.footer.submit')}
                   </>
-                ) : `모든 쟁점을 먼저 판단하세요 (${factCount}/${disputes.length})`}
+                ) : t('pc.verdict.footer.judgeAllFirst', { current: factCount, total: disputes.length })}
               </button>
             ) : (
               <button
@@ -810,7 +816,7 @@ export default function PCVerdictScreen() {
                 onClick={() => { setAutoAdvanceEnabled(true); setGlobalIdx(Math.min(safeGlobalIdx + 1, flatSteps.length - 1)) }}
                 type="button"
               >
-                다음 단계 &gt;
+                {t('pc.verdict.footer.next')}
               </button>
             )}
           </div>

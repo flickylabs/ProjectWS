@@ -1,0 +1,36 @@
+key_or_source,zh_cn_text,risk,shorter_alternative,notes
+home.tagline,化身现代裁判官，辨明证词背后的真相。,P2 — 16 chars; tagline area is generous; comma break may help marketing tone but not blocking.,化身现代裁判官，辨明真相。,Marketing-tone judgement.
+pc.home.countdown.ready,即将补充,P2 — 4 chars OK; small countdown badge.,,Replaces previous 即将恢复 (more accurate).
+pc.notes.unseen,（未确认项目 {count} 个）,P2 — placeholder count typically <100 so total ~10 chars; OK.,,Placeholder preserved.
+pc.combo.ready,可组合 {count} 个 — 现在可连接,P1 — 16 chars (with 2-digit count); inline in combo card. Fine on default; verify on sm bucket.,可组合 {count} 个 · 现在可连,Em-dash polish proposed.
+pc.combo.potential,需要线索 {count} 个 — 似乎还有未发现的线索,P1 — 22 chars; tight on Steam Deck.,需要线索 {count} 个 — 还有未发现的线索,
+pc.recordSummary.moreConvincing,判定 {party} 一方的主张更有说服力。,P1 — 17 chars + party name (~3 chars) = 20; long for compact result row but acceptable.,{party} 一方主张更有说服力。,
+pc.verdictAdvance.minimumVisible,需要至少揭示 {required} 个争议点后才能进入裁决。当前已揭示 {visible} 个。,P1 — 33 chars + 2 placeholders. Renders as 2 lines in modal; verify wrap.,至少揭示 {required} 个争议点才能进入裁决。当前 {visible} 个。,Reduce padding word.
+pc.verdictAdvance.hidden.body,"当前已揭示 {visible} 个争议点。\n仍有 {hidden} 个争议点尚未揭示。\n\n仍要直接进入裁决吗？",P1 — multi-line body; renders 4 lines including blank. OK on PC; verify mobile/Steam Deck wrap.,,Newlines preserved.
+pc.actions.interrogation.subtitle,基于当前争议点控制提问、自由提问与辅助开关。,P1 — 22 chars; sm bucket may ellipsize hotbar subtitle row.,控制当前争议点的提问与开关。,Hotbar-subtitle row.
+pc.actions.evidence.subtitle,在同一处管理证据出示、调查、鉴定与传唤证人。,P1 — 22 chars; same risk.,集中管理证据出示、调查、鉴定与证人传唤。,
+pc.actions.special.subtitle,管理即答要求、异议、保护行动与阶段推进。,P1 — 20 chars OK on default; tight on sm.,管理即答、异议、保护行动与阶段推进。,Uses 异议 per restart rule.
+pc.gameplay.guardShaken.body,说辞开始变化。现在追问，可能挖出对方藏起来的东西。,P1 — 22 chars; cut-in modal, fine on default.,说辞开始变化。现在追问，或可逼出隐瞒。,
+pc.gameplay.cornered.body,对方也察觉到辩解已经行不通。您要怎样施压？,P1 — 19 chars; OK.,,
+pc.gameplay.statementCollapse.body,对方陈述大幅动摇。现在正适合衔接下一道追问或异议。,P1 — 23 chars; uses 异议.,对方陈述大幅动摇，正适合接下一道追问或异议。,
+pc.gameplay.crackDetected.body,证据在陈述之间撕开了一道缝。可顺势压向相关争议点。,P1 — 23 chars OK.,证据让陈述出现裂缝，可乘势压向相关争议点。,Slight literary→game UI polish.
+pc.gameplay.held.body,虽未直接崩塌，但已具备记录价值。请尝试与其他证据或发言连结后再次推进。,P1 — 33 chars; cut-in modal may overflow on sm.,尚未直接崩塌，但值得记录。可与其他证据或发言连结后再试。,Recommend shortening for Steam Deck.
+pc.session.lover.description,约定与背叛、嫉妒与真心，考验最亲近的关系。,P1 — 19 chars OK; verify lobby card height.,,All 12 session.* descriptions are 18–24 chars.
+pc.intro.slide1.body,通过提问、证据与判断串联，分辨彼此不同真相的模拟法庭游戏。,P2 — 27 chars; intro slide; CN typewriter timing tuning needed.,,
+pc.settings.about.creditsBody (now settings.about.credits.description),用人类判断审理 AI 证词冲突的可重玩推理游戏,P1 — 21 chars; credits row may be single-line zone.,以人类判断审理 AI 证词冲突的回放推理游戏,Already in i18n.
+pc.settings.data.resetDescription,将删除存档槽、案件进度、裁判官倾向、成就与档案，操作不可撤销。,P1 — 30 chars; settings 2-line description zone — verify wrap.,删除存档、案件进度、倾向、成就与档案，无法撤销。,
+pc.settings.previewBody,此类别将在下一周期添加更多选项。,P2 — 14 chars OK.,,
+pc.toast.skillPointsInsufficient,技能点不足。,P2 — 5 chars OK.,,Toast.
+pc.toast.cardAlreadyInSlot,该卡片已在槽中。,P2 — 7 chars OK.,,
+pc.toast.onlyHighlightedCombinable,只有高亮的关键发言可参与组合。,P1 — 14 chars OK; toast sometimes truncates at 12.,只能组合高亮的关键发言。,Shorter variant safer.
+pc.toast.courtControlInsufficient,法庭掌控不足。,P2 — 6 chars OK.,,
+pc.interaction.objectionLabel,提出异议,P1 — 4 chars OK; replaces previous 反对！per restart rule.,异议,2-char if button is small icon-tile.
+pc.interaction.objectionBody,就当前争议点要求即时回答。,P2 — 12 chars OK.,,
+pc.profile.perk.title,特性装备,P2 — 4 chars OK.,,
+pc.recordSummary.bothMixed,判定双方主张各自含有事实与夸大。,P1 — 14 chars OK.,,
+pc.observation.history.title,裁判官的观察 — 全部记录,P2 — 11 chars OK.,,
+pc.notes.unseen (recheck),（未确认项目 {count} 个）,P0-resolved — already templated with {count} in current i18n.,,Was P0 in pre-restart pass — now fixed.
+pc.recordSummary.moreConvincing (recheck),判定 {party} 一方的主张更有说服力。,P0-resolved — already templated.,,Was P0 — now fixed.
+pc.verdictAdvance.hidden.body (recheck),(see above),P0-resolved — single template with {visible} {hidden}.,,Was 3-fragment risk — now fixed.
+pc.resolutionConfirm.rollback (recheck),{seconds}秒后将恢复到之前的分辨率。,P0-resolved — already templated.,,Was P0 — now fixed.
+pc.home.moreCases (recheck),另 {count} 件,P0-resolved — replaces 외 suffix concat.,,Was P0 — now fixed.

@@ -1,0 +1,4376 @@
+{
+  "schemaVersion": 1,
+  "locale": "ja",
+  "caseId": "family-01",
+  "overlayKind": "judge_questions",
+  "judgeQuestions": [
+    {
+      "disputeId": "d-1",
+      "questionType": "fact_pursuit",
+      "targetParty": "a",
+      "angleId": "general",
+      "variants": [
+        {
+          "id": "judgeq-d-1-fact_pursuit-a-general-v1",
+          "text": "ユン・テソンさん、遺書作成の場面と母の状態をめぐる経緯について、ご自身が直接ご覧になった場面と人づてに聞いた話とを時系列で分けてお答えください。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-a-general-v2",
+          "text": "記録に残された手順とご自身の記憶が食い違う地点があれば、その一点に絞って事実関係を整理してください。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-a-general-v3",
+          "text": "ユン・ジョンフさんの説明と、ご自身が確かめた資料との間でずれている部分を、まず資料単位でお示しください。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-a-general-v4",
+          "text": "推定で埋めた部分と直接確かめた部分を分けたうえで、直接見た場面と聞いて知った話の区別についてご回答ください。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-a-general-v5",
+          "text": "ユン・テソンさん、直接見た場面と聞いて知った話の区別について、ご自身が確認できた範囲を超えた断定は避けて整理してお答えください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "fact_pursuit",
+      "targetParty": "b",
+      "angleId": "general",
+      "variants": [
+        {
+          "id": "judgeq-d-1-fact_pursuit-b-general-v1",
+          "text": "ユン・ジョンフさん、遺書作成の場面と母の状態をめぐる経緯に関わるご自身の動きを、日付ごとに時系列で整理してお答えください。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-b-general-v2",
+          "text": "直接ご自身が行われた行為と、傍らで補助しただけだと述べてこられた行為とを、まずは分けてお示しください。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-b-general-v3",
+          "text": "ユン・テソンさんの主張とご自身の説明が最も食い違う事実は何ですか。その地点から資料に沿ってご回答ください。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-b-general-v4",
+          "text": "公証本、自筆本、口座記録のうち、現時点で認める項目とまだ争いたい項目とを分けてお答えください。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-b-general-v5",
+          "text": "ユン・ジョンフさん、直接見た場面と聞いて知った話の区別について、まだ供述していない事実があれば先にお出しください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "motive_search",
+      "targetParty": "a",
+      "angleId": "general",
+      "variants": [
+        {
+          "id": "judgeq-d-1-motive_search-a-general-v1",
+          "text": "ユン・テソンさん、別の解釈の余地があったにもかかわらず、特定の結論へ早く傾いた理由をお話しください。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-a-general-v2",
+          "text": "直接見た場面と聞いて知った話の区別を見たとき、ご自身の中で先に立ち上がった解釈の背景を整理してお答えください。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-a-general-v3",
+          "text": "ユン・ジョンフさんに直接確かめる前に判断を進めたと申されました。その動機を順序立ててご説明ください。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-a-general-v4",
+          "text": "候補となる解釈の中から特定の一つを選び取った時点について、判断基準を先にお示しください。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-a-general-v5",
+          "text": "ユン・テソンさん、直接見た場面と聞いて知った話の区別に関するご自身の判断の出発点を、率直にお答えください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "motive_search",
+      "targetParty": "b",
+      "angleId": "general",
+      "variants": [
+        {
+          "id": "judgeq-d-1-motive_search-b-general-v1",
+          "text": "ユン・ジョンフさん、遺書作成の場面と母の状態をめぐる経緯が積み重なる間、兄に整理して伝えなかった理由をお話しください。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-b-general-v2",
+          "text": "誤解されかねない状況であるとご自身も分かっていたなら、その時点で沈黙を選ばれた判断の根拠をお答えください。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-b-general-v3",
+          "text": "直接見た場面と聞いて知った話の区別について、説明の機会があったにもかかわらず後ろに送られた理由はどこにありますか。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-b-general-v4",
+          "text": "当時の選択を支えていた事情を、家庭内のいきさつごと順序立ててお話しください。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-b-general-v5",
+          "text": "ユン・ジョンフさん、直接見た場面と聞いて知った話の区別について、ご自身の判断を支えていた理由をお答えください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "empathy_approach",
+      "targetParty": "a",
+      "angleId": "general",
+      "variants": [
+        {
+          "id": "judgeq-d-1-empathy_approach-a-general-v1",
+          "text": "ユン・テソンさん、長年母を支えてこられたご自負と現実との隔たりに揺れた時間があったかと存じます。直接ご覧になった場面からお聞かせください。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-a-general-v2",
+          "text": "不安と確信のはざまで判断を固めていかれた経緯を、当時のお気持ちごとお話しいただけますか。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-a-general-v3",
+          "text": "ユン・ジョンフさんの動きを目にされた折々のお気持ちを、結論ではなく過程としてお話しください。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-a-general-v4",
+          "text": "直接見た場面と聞いて知った話の区別を前にされて言葉を選ばれた時間も含めて、率直にお答えいただきたいのです。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-a-general-v5",
+          "text": "ユン・テソンさん、ご自身を支えていた解釈について、その時点の心境ごとお話しいただけますか。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "empathy_approach",
+      "targetParty": "b",
+      "angleId": "general",
+      "variants": [
+        {
+          "id": "judgeq-d-1-empathy_approach-b-general-v1",
+          "text": "ユン・ジョンフさん、母の傍らで手続きを担われたこと自体が、兄からどう映るかという重みを背負っておられたと存じます。直接の場面をお聞かせください。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-b-general-v2",
+          "text": "行動そのものよりも沈黙が誤解を広げた面があります。今この場で話せる範囲だけでも、直接見た場面と聞いて知った話の区別を整理してお話しください。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-b-general-v3",
+          "text": "直接見た場面と聞いて知った話の区別について、いま胸の中にある事情を整理してお答えください。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-b-general-v4",
+          "text": "遺書作成の場面と母の状態をめぐる経緯を伏せざるを得なかった事情があったのなら、その範囲だけでも先に明かしてください。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-b-general-v5",
+          "text": "ユン・ジョンフさん、兄に説明する前に立ち止まっていた理由を、率直にお話しください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "fact_pursuit",
+      "targetParty": "a",
+      "angleId": "mother_intent",
+      "variants": [
+        {
+          "id": "judgeq-d-1-fact_pursuit-a-mother_intent-v1",
+          "text": "ユン・テソンさん、母の意思表示の有無と理解の程度について、ご自身が直接ご覧になった場面と人づてに聞いた話とを時系列で分けてお答えください。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-a-mother_intent-v2",
+          "text": "記録に残された手順とご自身の記憶が食い違う地点があれば、その一点に絞って事実関係を整理してください。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-a-mother_intent-v3",
+          "text": "ユン・ジョンフさんの説明と、ご自身が確かめた資料との間でずれている部分を、まず資料単位でお示しください。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-a-mother_intent-v4",
+          "text": "推定で埋めた部分と直接確かめた部分を分けたうえで、母の言葉と表情の読み取りについてご回答ください。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-a-mother_intent-v5",
+          "text": "ユン・テソンさん、母の言葉と表情の読み取りについて、ご自身が確認できた範囲を超えた断定は避けて整理してお答えください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "fact_pursuit",
+      "targetParty": "b",
+      "angleId": "mother_intent",
+      "variants": [
+        {
+          "id": "judgeq-d-1-fact_pursuit-b-mother_intent-v1",
+          "text": "ユン・ジョンフさん、母の意思表示の有無と理解の程度に関わるご自身の動きを、日付ごとに時系列で整理してお答えください。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-b-mother_intent-v2",
+          "text": "直接ご自身が行われた行為と、傍らで補助しただけだと述べてこられた行為とを、まずは分けてお示しください。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-b-mother_intent-v3",
+          "text": "ユン・テソンさんの主張とご自身の説明が最も食い違う事実は何ですか。その地点から資料に沿ってご回答ください。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-b-mother_intent-v4",
+          "text": "公証本、自筆本、口座記録のうち、現時点で認める項目とまだ争いたい項目とを分けてお答えください。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-b-mother_intent-v5",
+          "text": "ユン・ジョンフさん、母の言葉と表情の読み取りについて、まだ供述していない事実があれば先にお出しください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "motive_search",
+      "targetParty": "a",
+      "angleId": "mother_intent",
+      "variants": [
+        {
+          "id": "judgeq-d-1-motive_search-a-mother_intent-v1",
+          "text": "ユン・テソンさん、別の解釈の余地があったにもかかわらず、特定の結論へ早く傾いた理由をお話しください。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-a-mother_intent-v2",
+          "text": "母の言葉と表情の読み取りを見たとき、ご自身の中で先に立ち上がった解釈の背景を整理してお答えください。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-a-mother_intent-v3",
+          "text": "ユン・ジョンフさんに直接確かめる前に判断を進めたと申されました。その動機を順序立ててご説明ください。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-a-mother_intent-v4",
+          "text": "候補となる解釈の中から特定の一つを選び取った時点について、判断基準を先にお示しください。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-a-mother_intent-v5",
+          "text": "ユン・テソンさん、母の言葉と表情の読み取りに関するご自身の判断の出発点を、率直にお答えください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "motive_search",
+      "targetParty": "b",
+      "angleId": "mother_intent",
+      "variants": [
+        {
+          "id": "judgeq-d-1-motive_search-b-mother_intent-v1",
+          "text": "ユン・ジョンフさん、母の意思表示の有無と理解の程度が積み重なる間、兄に整理して伝えなかった理由をお話しください。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-b-mother_intent-v2",
+          "text": "誤解されかねない状況であるとご自身も分かっていたなら、その時点で沈黙を選ばれた判断の根拠をお答えください。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-b-mother_intent-v3",
+          "text": "母の言葉と表情の読み取りについて、説明の機会があったにもかかわらず後ろに送られた理由はどこにありますか。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-b-mother_intent-v4",
+          "text": "当時の選択を支えていた事情を、家庭内のいきさつごと順序立ててお話しください。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-b-mother_intent-v5",
+          "text": "ユン・ジョンフさん、母の言葉と表情の読み取りについて、ご自身の判断を支えていた理由をお答えください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "empathy_approach",
+      "targetParty": "a",
+      "angleId": "mother_intent",
+      "variants": [
+        {
+          "id": "judgeq-d-1-empathy_approach-a-mother_intent-v1",
+          "text": "ユン・テソンさん、長年母を支えてこられたご自負と現実との隔たりに揺れた時間があったかと存じます。直接ご覧になった場面からお聞かせください。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-a-mother_intent-v2",
+          "text": "不安と確信のはざまで判断を固めていかれた経緯を、当時のお気持ちごとお話しいただけますか。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-a-mother_intent-v3",
+          "text": "ユン・ジョンフさんの動きを目にされた折々のお気持ちを、結論ではなく過程としてお話しください。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-a-mother_intent-v4",
+          "text": "母の言葉と表情の読み取りを前にされて言葉を選ばれた時間も含めて、率直にお答えいただきたいのです。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-a-mother_intent-v5",
+          "text": "ユン・テソンさん、ご自身を支えていた解釈について、その時点の心境ごとお話しいただけますか。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "empathy_approach",
+      "targetParty": "b",
+      "angleId": "mother_intent",
+      "variants": [
+        {
+          "id": "judgeq-d-1-empathy_approach-b-mother_intent-v1",
+          "text": "ユン・ジョンフさん、母の傍らで手続きを担われたこと自体が、兄からどう映るかという重みを背負っておられたと存じます。直接の場面をお聞かせください。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-b-mother_intent-v2",
+          "text": "行動そのものよりも沈黙が誤解を広げた面があります。今この場で話せる範囲だけでも、母の言葉と表情の読み取りを整理してお話しください。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-b-mother_intent-v3",
+          "text": "母の言葉と表情の読み取りについて、いま胸の中にある事情を整理してお答えください。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-b-mother_intent-v4",
+          "text": "母の意思表示の有無と理解の程度を伏せざるを得なかった事情があったのなら、その範囲だけでも先に明かしてください。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-b-mother_intent-v5",
+          "text": "ユン・ジョンフさん、兄に説明する前に立ち止まっていた理由を、率直にお話しください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "fact_pursuit",
+      "targetParty": "a",
+      "angleId": "visit_pattern",
+      "variants": [
+        {
+          "id": "judgeq-d-1-fact_pursuit-a-visit_pattern-v1",
+          "text": "ユン・テソンさん、末年の母への訪問頻度と滞在時間について、ご自身が直接ご覧になった場面と人づてに聞いた話とを時系列で分けてお答えください。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-a-visit_pattern-v2",
+          "text": "記録に残された手順とご自身の記憶が食い違う地点があれば、その一点に絞って事実関係を整理してください。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-a-visit_pattern-v3",
+          "text": "ユン・ジョンフさんの説明と、ご自身が確かめた資料との間でずれている部分を、まず資料単位でお示しください。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-a-visit_pattern-v4",
+          "text": "推定で埋めた部分と直接確かめた部分を分けたうえで、訪問の時期と頻度の整理についてご回答ください。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-a-visit_pattern-v5",
+          "text": "ユン・テソンさん、訪問の時期と頻度の整理について、ご自身が確認できた範囲を超えた断定は避けて整理してお答えください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "fact_pursuit",
+      "targetParty": "b",
+      "angleId": "visit_pattern",
+      "variants": [
+        {
+          "id": "judgeq-d-1-fact_pursuit-b-visit_pattern-v1",
+          "text": "ユン・ジョンフさん、末年の母への訪問頻度と滞在時間に関わるご自身の動きを、日付ごとに時系列で整理してお答えください。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-b-visit_pattern-v2",
+          "text": "直接ご自身が行われた行為と、傍らで補助しただけだと述べてこられた行為とを、まずは分けてお示しください。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-b-visit_pattern-v3",
+          "text": "ユン・テソンさんの主張とご自身の説明が最も食い違う事実は何ですか。その地点から資料に沿ってご回答ください。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-b-visit_pattern-v4",
+          "text": "公証本、自筆本、口座記録のうち、現時点で認める項目とまだ争いたい項目とを分けてお答えください。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-b-visit_pattern-v5",
+          "text": "ユン・ジョンフさん、訪問の時期と頻度の整理について、まだ供述していない事実があれば先にお出しください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "motive_search",
+      "targetParty": "a",
+      "angleId": "visit_pattern",
+      "variants": [
+        {
+          "id": "judgeq-d-1-motive_search-a-visit_pattern-v1",
+          "text": "ユン・テソンさん、別の解釈の余地があったにもかかわらず、特定の結論へ早く傾いた理由をお話しください。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-a-visit_pattern-v2",
+          "text": "訪問の時期と頻度の整理を見たとき、ご自身の中で先に立ち上がった解釈の背景を整理してお答えください。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-a-visit_pattern-v3",
+          "text": "ユン・ジョンフさんに直接確かめる前に判断を進めたと申されました。その動機を順序立ててご説明ください。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-a-visit_pattern-v4",
+          "text": "候補となる解釈の中から特定の一つを選び取った時点について、判断基準を先にお示しください。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-a-visit_pattern-v5",
+          "text": "ユン・テソンさん、訪問の時期と頻度の整理に関するご自身の判断の出発点を、率直にお答えください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "motive_search",
+      "targetParty": "b",
+      "angleId": "visit_pattern",
+      "variants": [
+        {
+          "id": "judgeq-d-1-motive_search-b-visit_pattern-v1",
+          "text": "ユン・ジョンフさん、末年の母への訪問頻度と滞在時間が積み重なる間、兄に整理して伝えなかった理由をお話しください。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-b-visit_pattern-v2",
+          "text": "誤解されかねない状況であるとご自身も分かっていたなら、その時点で沈黙を選ばれた判断の根拠をお答えください。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-b-visit_pattern-v3",
+          "text": "訪問の時期と頻度の整理について、説明の機会があったにもかかわらず後ろに送られた理由はどこにありますか。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-b-visit_pattern-v4",
+          "text": "当時の選択を支えていた事情を、家庭内のいきさつごと順序立ててお話しください。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-b-visit_pattern-v5",
+          "text": "ユン・ジョンフさん、訪問の時期と頻度の整理について、ご自身の判断を支えていた理由をお答えください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "empathy_approach",
+      "targetParty": "a",
+      "angleId": "visit_pattern",
+      "variants": [
+        {
+          "id": "judgeq-d-1-empathy_approach-a-visit_pattern-v1",
+          "text": "ユン・テソンさん、長年母を支えてこられたご自負と現実との隔たりに揺れた時間があったかと存じます。直接ご覧になった場面からお聞かせください。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-a-visit_pattern-v2",
+          "text": "不安と確信のはざまで判断を固めていかれた経緯を、当時のお気持ちごとお話しいただけますか。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-a-visit_pattern-v3",
+          "text": "ユン・ジョンフさんの動きを目にされた折々のお気持ちを、結論ではなく過程としてお話しください。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-a-visit_pattern-v4",
+          "text": "訪問の時期と頻度の整理を前にされて言葉を選ばれた時間も含めて、率直にお答えいただきたいのです。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-a-visit_pattern-v5",
+          "text": "ユン・テソンさん、ご自身を支えていた解釈について、その時点の心境ごとお話しいただけますか。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "empathy_approach",
+      "targetParty": "b",
+      "angleId": "visit_pattern",
+      "variants": [
+        {
+          "id": "judgeq-d-1-empathy_approach-b-visit_pattern-v1",
+          "text": "ユン・ジョンフさん、母の傍らで手続きを担われたこと自体が、兄からどう映るかという重みを背負っておられたと存じます。直接の場面をお聞かせください。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-b-visit_pattern-v2",
+          "text": "行動そのものよりも沈黙が誤解を広げた面があります。今この場で話せる範囲だけでも、訪問の時期と頻度の整理を整理してお話しください。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-b-visit_pattern-v3",
+          "text": "訪問の時期と頻度の整理について、いま胸の中にある事情を整理してお答えください。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-b-visit_pattern-v4",
+          "text": "末年の母への訪問頻度と滞在時間を伏せざるを得なかった事情があったのなら、その範囲だけでも先に明かしてください。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-b-visit_pattern-v5",
+          "text": "ユン・ジョンフさん、兄に説明する前に立ち止まっていた理由を、率直にお話しください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "fact_pursuit",
+      "targetParty": "a",
+      "angleId": "caregiver_change",
+      "variants": [
+        {
+          "id": "judgeq-d-1-fact_pursuit-a-caregiver_change-v1",
+          "text": "ユン・テソンさん、公証直前の介護担当者の交代について、ご自身が直接ご覧になった場面と人づてに聞いた話とを時系列で分けてお答えください。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-a-caregiver_change-v2",
+          "text": "記録に残された手順とご自身の記憶が食い違う地点があれば、その一点に絞って事実関係を整理してください。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-a-caregiver_change-v3",
+          "text": "ユン・ジョンフさんの説明と、ご自身が確かめた資料との間でずれている部分を、まず資料単位でお示しください。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-a-caregiver_change-v4",
+          "text": "推定で埋めた部分と直接確かめた部分を分けたうえで、介護担当者交代の経緯についてご回答ください。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-a-caregiver_change-v5",
+          "text": "ユン・テソンさん、介護担当者交代の経緯について、ご自身が確認できた範囲を超えた断定は避けて整理してお答えください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "fact_pursuit",
+      "targetParty": "b",
+      "angleId": "caregiver_change",
+      "variants": [
+        {
+          "id": "judgeq-d-1-fact_pursuit-b-caregiver_change-v1",
+          "text": "ユン・ジョンフさん、公証直前の介護担当者の交代に関わるご自身の動きを、日付ごとに時系列で整理してお答えください。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-b-caregiver_change-v2",
+          "text": "直接ご自身が行われた行為と、傍らで補助しただけだと述べてこられた行為とを、まずは分けてお示しください。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-b-caregiver_change-v3",
+          "text": "ユン・テソンさんの主張とご自身の説明が最も食い違う事実は何ですか。その地点から資料に沿ってご回答ください。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-b-caregiver_change-v4",
+          "text": "公証本、自筆本、口座記録のうち、現時点で認める項目とまだ争いたい項目とを分けてお答えください。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-b-caregiver_change-v5",
+          "text": "ユン・ジョンフさん、介護担当者交代の経緯について、まだ供述していない事実があれば先にお出しください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "motive_search",
+      "targetParty": "a",
+      "angleId": "caregiver_change",
+      "variants": [
+        {
+          "id": "judgeq-d-1-motive_search-a-caregiver_change-v1",
+          "text": "ユン・テソンさん、別の解釈の余地があったにもかかわらず、特定の結論へ早く傾いた理由をお話しください。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-a-caregiver_change-v2",
+          "text": "介護担当者交代の経緯を見たとき、ご自身の中で先に立ち上がった解釈の背景を整理してお答えください。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-a-caregiver_change-v3",
+          "text": "ユン・ジョンフさんに直接確かめる前に判断を進めたと申されました。その動機を順序立ててご説明ください。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-a-caregiver_change-v4",
+          "text": "候補となる解釈の中から特定の一つを選び取った時点について、判断基準を先にお示しください。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-a-caregiver_change-v5",
+          "text": "ユン・テソンさん、介護担当者交代の経緯に関するご自身の判断の出発点を、率直にお答えください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "motive_search",
+      "targetParty": "b",
+      "angleId": "caregiver_change",
+      "variants": [
+        {
+          "id": "judgeq-d-1-motive_search-b-caregiver_change-v1",
+          "text": "ユン・ジョンフさん、公証直前の介護担当者の交代が積み重なる間、兄に整理して伝えなかった理由をお話しください。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-b-caregiver_change-v2",
+          "text": "誤解されかねない状況であるとご自身も分かっていたなら、その時点で沈黙を選ばれた判断の根拠をお答えください。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-b-caregiver_change-v3",
+          "text": "介護担当者交代の経緯について、説明の機会があったにもかかわらず後ろに送られた理由はどこにありますか。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-b-caregiver_change-v4",
+          "text": "当時の選択を支えていた事情を、家庭内のいきさつごと順序立ててお話しください。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-b-caregiver_change-v5",
+          "text": "ユン・ジョンフさん、介護担当者交代の経緯について、ご自身の判断を支えていた理由をお答えください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "empathy_approach",
+      "targetParty": "a",
+      "angleId": "caregiver_change",
+      "variants": [
+        {
+          "id": "judgeq-d-1-empathy_approach-a-caregiver_change-v1",
+          "text": "ユン・テソンさん、長年母を支えてこられたご自負と現実との隔たりに揺れた時間があったかと存じます。直接ご覧になった場面からお聞かせください。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-a-caregiver_change-v2",
+          "text": "不安と確信のはざまで判断を固めていかれた経緯を、当時のお気持ちごとお話しいただけますか。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-a-caregiver_change-v3",
+          "text": "ユン・ジョンフさんの動きを目にされた折々のお気持ちを、結論ではなく過程としてお話しください。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-a-caregiver_change-v4",
+          "text": "介護担当者交代の経緯を前にされて言葉を選ばれた時間も含めて、率直にお答えいただきたいのです。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-a-caregiver_change-v5",
+          "text": "ユン・テソンさん、ご自身を支えていた解釈について、その時点の心境ごとお話しいただけますか。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "empathy_approach",
+      "targetParty": "b",
+      "angleId": "caregiver_change",
+      "variants": [
+        {
+          "id": "judgeq-d-1-empathy_approach-b-caregiver_change-v1",
+          "text": "ユン・ジョンフさん、母の傍らで手続きを担われたこと自体が、兄からどう映るかという重みを背負っておられたと存じます。直接の場面をお聞かせください。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-b-caregiver_change-v2",
+          "text": "行動そのものよりも沈黙が誤解を広げた面があります。今この場で話せる範囲だけでも、介護担当者交代の経緯を整理してお話しください。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-b-caregiver_change-v3",
+          "text": "介護担当者交代の経緯について、いま胸の中にある事情を整理してお答えください。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-b-caregiver_change-v4",
+          "text": "公証直前の介護担当者の交代を伏せざるを得なかった事情があったのなら、その範囲だけでも先に明かしてください。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-b-caregiver_change-v5",
+          "text": "ユン・ジョンフさん、兄に説明する前に立ち止まっていた理由を、率直にお話しください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "fact_pursuit",
+      "targetParty": "a",
+      "angleId": "notarization_flow",
+      "variants": [
+        {
+          "id": "judgeq-d-1-fact_pursuit-a-notarization_flow-v1",
+          "text": "ユン・テソンさん、公証手続きの場での進行手順について、ご自身が直接ご覧になった場面と人づてに聞いた話とを時系列で分けてお答えください。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-a-notarization_flow-v2",
+          "text": "記録に残された手順とご自身の記憶が食い違う地点があれば、その一点に絞って事実関係を整理してください。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-a-notarization_flow-v3",
+          "text": "ユン・ジョンフさんの説明と、ご自身が確かめた資料との間でずれている部分を、まず資料単位でお示しください。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-a-notarization_flow-v4",
+          "text": "推定で埋めた部分と直接確かめた部分を分けたうえで、公証当日の手順と立会いについてご回答ください。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-a-notarization_flow-v5",
+          "text": "ユン・テソンさん、公証当日の手順と立会いについて、ご自身が確認できた範囲を超えた断定は避けて整理してお答えください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "fact_pursuit",
+      "targetParty": "b",
+      "angleId": "notarization_flow",
+      "variants": [
+        {
+          "id": "judgeq-d-1-fact_pursuit-b-notarization_flow-v1",
+          "text": "ユン・ジョンフさん、公証手続きの場での進行手順に関わるご自身の動きを、日付ごとに時系列で整理してお答えください。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-b-notarization_flow-v2",
+          "text": "直接ご自身が行われた行為と、傍らで補助しただけだと述べてこられた行為とを、まずは分けてお示しください。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-b-notarization_flow-v3",
+          "text": "ユン・テソンさんの主張とご自身の説明が最も食い違う事実は何ですか。その地点から資料に沿ってご回答ください。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-b-notarization_flow-v4",
+          "text": "公証本、自筆本、口座記録のうち、現時点で認める項目とまだ争いたい項目とを分けてお答えください。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-b-notarization_flow-v5",
+          "text": "ユン・ジョンフさん、公証当日の手順と立会いについて、まだ供述していない事実があれば先にお出しください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "motive_search",
+      "targetParty": "a",
+      "angleId": "notarization_flow",
+      "variants": [
+        {
+          "id": "judgeq-d-1-motive_search-a-notarization_flow-v1",
+          "text": "ユン・テソンさん、別の解釈の余地があったにもかかわらず、特定の結論へ早く傾いた理由をお話しください。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-a-notarization_flow-v2",
+          "text": "公証当日の手順と立会いを見たとき、ご自身の中で先に立ち上がった解釈の背景を整理してお答えください。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-a-notarization_flow-v3",
+          "text": "ユン・ジョンフさんに直接確かめる前に判断を進めたと申されました。その動機を順序立ててご説明ください。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-a-notarization_flow-v4",
+          "text": "候補となる解釈の中から特定の一つを選び取った時点について、判断基準を先にお示しください。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-a-notarization_flow-v5",
+          "text": "ユン・テソンさん、公証当日の手順と立会いに関するご自身の判断の出発点を、率直にお答えください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "motive_search",
+      "targetParty": "b",
+      "angleId": "notarization_flow",
+      "variants": [
+        {
+          "id": "judgeq-d-1-motive_search-b-notarization_flow-v1",
+          "text": "ユン・ジョンフさん、公証手続きの場での進行手順が積み重なる間、兄に整理して伝えなかった理由をお話しください。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-b-notarization_flow-v2",
+          "text": "誤解されかねない状況であるとご自身も分かっていたなら、その時点で沈黙を選ばれた判断の根拠をお答えください。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-b-notarization_flow-v3",
+          "text": "公証当日の手順と立会いについて、説明の機会があったにもかかわらず後ろに送られた理由はどこにありますか。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-b-notarization_flow-v4",
+          "text": "当時の選択を支えていた事情を、家庭内のいきさつごと順序立ててお話しください。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-b-notarization_flow-v5",
+          "text": "ユン・ジョンフさん、公証当日の手順と立会いについて、ご自身の判断を支えていた理由をお答えください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "empathy_approach",
+      "targetParty": "a",
+      "angleId": "notarization_flow",
+      "variants": [
+        {
+          "id": "judgeq-d-1-empathy_approach-a-notarization_flow-v1",
+          "text": "ユン・テソンさん、長年母を支えてこられたご自負と現実との隔たりに揺れた時間があったかと存じます。直接ご覧になった場面からお聞かせください。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-a-notarization_flow-v2",
+          "text": "不安と確信のはざまで判断を固めていかれた経緯を、当時のお気持ちごとお話しいただけますか。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-a-notarization_flow-v3",
+          "text": "ユン・ジョンフさんの動きを目にされた折々のお気持ちを、結論ではなく過程としてお話しください。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-a-notarization_flow-v4",
+          "text": "公証当日の手順と立会いを前にされて言葉を選ばれた時間も含めて、率直にお答えいただきたいのです。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-a-notarization_flow-v5",
+          "text": "ユン・テソンさん、ご自身を支えていた解釈について、その時点の心境ごとお話しいただけますか。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "empathy_approach",
+      "targetParty": "b",
+      "angleId": "notarization_flow",
+      "variants": [
+        {
+          "id": "judgeq-d-1-empathy_approach-b-notarization_flow-v1",
+          "text": "ユン・ジョンフさん、母の傍らで手続きを担われたこと自体が、兄からどう映るかという重みを背負っておられたと存じます。直接の場面をお聞かせください。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-b-notarization_flow-v2",
+          "text": "行動そのものよりも沈黙が誤解を広げた面があります。今この場で話せる範囲だけでも、公証当日の手順と立会いを整理してお話しください。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-b-notarization_flow-v3",
+          "text": "公証当日の手順と立会いについて、いま胸の中にある事情を整理してお答えください。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-b-notarization_flow-v4",
+          "text": "公証手続きの場での進行手順を伏せざるを得なかった事情があったのなら、その範囲だけでも先に明かしてください。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-b-notarization_flow-v5",
+          "text": "ユン・ジョンフさん、兄に説明する前に立ち止まっていた理由を、率直にお話しください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "fact_pursuit",
+      "targetParty": "a",
+      "angleId": "paper_reading",
+      "variants": [
+        {
+          "id": "judgeq-d-1-fact_pursuit-a-paper_reading-v1",
+          "text": "ユン・テソンさん、書面の読み聞かせの順序について、ご自身が直接ご覧になった場面と人づてに聞いた話とを時系列で分けてお答えください。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-a-paper_reading-v2",
+          "text": "記録に残された手順とご自身の記憶が食い違う地点があれば、その一点に絞って事実関係を整理してください。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-a-paper_reading-v3",
+          "text": "ユン・ジョンフさんの説明と、ご自身が確かめた資料との間でずれている部分を、まず資料単位でお示しください。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-a-paper_reading-v4",
+          "text": "推定で埋めた部分と直接確かめた部分を分けたうえで、誰が何をどう読んだのかについてご回答ください。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-a-paper_reading-v5",
+          "text": "ユン・テソンさん、誰が何をどう読んだのかについて、ご自身が確認できた範囲を超えた断定は避けて整理してお答えください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "fact_pursuit",
+      "targetParty": "b",
+      "angleId": "paper_reading",
+      "variants": [
+        {
+          "id": "judgeq-d-1-fact_pursuit-b-paper_reading-v1",
+          "text": "ユン・ジョンフさん、書面の読み聞かせの順序に関わるご自身の動きを、日付ごとに時系列で整理してお答えください。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-b-paper_reading-v2",
+          "text": "直接ご自身が行われた行為と、傍らで補助しただけだと述べてこられた行為とを、まずは分けてお示しください。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-b-paper_reading-v3",
+          "text": "ユン・テソンさんの主張とご自身の説明が最も食い違う事実は何ですか。その地点から資料に沿ってご回答ください。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-b-paper_reading-v4",
+          "text": "公証本、自筆本、口座記録のうち、現時点で認める項目とまだ争いたい項目とを分けてお答えください。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-b-paper_reading-v5",
+          "text": "ユン・ジョンフさん、誰が何をどう読んだのかについて、まだ供述していない事実があれば先にお出しください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "motive_search",
+      "targetParty": "a",
+      "angleId": "paper_reading",
+      "variants": [
+        {
+          "id": "judgeq-d-1-motive_search-a-paper_reading-v1",
+          "text": "ユン・テソンさん、別の解釈の余地があったにもかかわらず、特定の結論へ早く傾いた理由をお話しください。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-a-paper_reading-v2",
+          "text": "誰が何をどう読んだのかを見たとき、ご自身の中で先に立ち上がった解釈の背景を整理してお答えください。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-a-paper_reading-v3",
+          "text": "ユン・ジョンフさんに直接確かめる前に判断を進めたと申されました。その動機を順序立ててご説明ください。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-a-paper_reading-v4",
+          "text": "候補となる解釈の中から特定の一つを選び取った時点について、判断基準を先にお示しください。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-a-paper_reading-v5",
+          "text": "ユン・テソンさん、誰が何をどう読んだのかに関するご自身の判断の出発点を、率直にお答えください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "motive_search",
+      "targetParty": "b",
+      "angleId": "paper_reading",
+      "variants": [
+        {
+          "id": "judgeq-d-1-motive_search-b-paper_reading-v1",
+          "text": "ユン・ジョンフさん、書面の読み聞かせの順序が積み重なる間、兄に整理して伝えなかった理由をお話しください。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-b-paper_reading-v2",
+          "text": "誤解されかねない状況であるとご自身も分かっていたなら、その時点で沈黙を選ばれた判断の根拠をお答えください。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-b-paper_reading-v3",
+          "text": "誰が何をどう読んだのかについて、説明の機会があったにもかかわらず後ろに送られた理由はどこにありますか。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-b-paper_reading-v4",
+          "text": "当時の選択を支えていた事情を、家庭内のいきさつごと順序立ててお話しください。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-b-paper_reading-v5",
+          "text": "ユン・ジョンフさん、誰が何をどう読んだのかについて、ご自身の判断を支えていた理由をお答えください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "empathy_approach",
+      "targetParty": "a",
+      "angleId": "paper_reading",
+      "variants": [
+        {
+          "id": "judgeq-d-1-empathy_approach-a-paper_reading-v1",
+          "text": "ユン・テソンさん、長年母を支えてこられたご自負と現実との隔たりに揺れた時間があったかと存じます。直接ご覧になった場面からお聞かせください。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-a-paper_reading-v2",
+          "text": "不安と確信のはざまで判断を固めていかれた経緯を、当時のお気持ちごとお話しいただけますか。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-a-paper_reading-v3",
+          "text": "ユン・ジョンフさんの動きを目にされた折々のお気持ちを、結論ではなく過程としてお話しください。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-a-paper_reading-v4",
+          "text": "誰が何をどう読んだのかを前にされて言葉を選ばれた時間も含めて、率直にお答えいただきたいのです。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-a-paper_reading-v5",
+          "text": "ユン・テソンさん、ご自身を支えていた解釈について、その時点の心境ごとお話しいただけますか。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "empathy_approach",
+      "targetParty": "b",
+      "angleId": "paper_reading",
+      "variants": [
+        {
+          "id": "judgeq-d-1-empathy_approach-b-paper_reading-v1",
+          "text": "ユン・ジョンフさん、母の傍らで手続きを担われたこと自体が、兄からどう映るかという重みを背負っておられたと存じます。直接の場面をお聞かせください。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-b-paper_reading-v2",
+          "text": "行動そのものよりも沈黙が誤解を広げた面があります。今この場で話せる範囲だけでも、誰が何をどう読んだのかを整理してお話しください。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-b-paper_reading-v3",
+          "text": "誰が何をどう読んだのかについて、いま胸の中にある事情を整理してお答えください。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-b-paper_reading-v4",
+          "text": "書面の読み聞かせの順序を伏せざるを得なかった事情があったのなら、その範囲だけでも先に明かしてください。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-b-paper_reading-v5",
+          "text": "ユン・ジョンフさん、兄に説明する前に立ち止まっていた理由を、率直にお話しください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "fact_pursuit",
+      "targetParty": "a",
+      "angleId": "general",
+      "variants": [
+        {
+          "id": "judgeq-d-2-fact_pursuit-a-general-v1",
+          "text": "ユン・テソンさん、遺書作成の場面と母の状態をめぐる経緯について、ご自身が直接ご覧になった場面と人づてに聞いた話とを時系列で分けてお答えください。"
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-a-general-v2",
+          "text": "記録に残された手順とご自身の記憶が食い違う地点があれば、その一点に絞って事実関係を整理してください。"
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-a-general-v3",
+          "text": "ユン・ジョンフさんの説明と、ご自身が確かめた資料との間でずれている部分を、まず資料単位でお示しください。"
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-a-general-v4",
+          "text": "推定で埋めた部分と直接確かめた部分を分けたうえで、直接見た場面と聞いて知った話の区別についてご回答ください。"
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-a-general-v5",
+          "text": "ユン・テソンさん、直接見た場面と聞いて知った話の区別について、ご自身が確認できた範囲を超えた断定は避けて整理してお答えください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "fact_pursuit",
+      "targetParty": "b",
+      "angleId": "general",
+      "variants": [
+        {
+          "id": "judgeq-d-2-fact_pursuit-b-general-v1",
+          "text": "ユン・ジョンフさん、遺書作成の場面と母の状態をめぐる経緯に関わるご自身の動きを、日付ごとに時系列で整理してお答えください。"
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-b-general-v2",
+          "text": "直接ご自身が行われた行為と、傍らで補助しただけだと述べてこられた行為とを、まずは分けてお示しください。"
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-b-general-v3",
+          "text": "ユン・テソンさんの主張とご自身の説明が最も食い違う事実は何ですか。その地点から資料に沿ってご回答ください。"
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-b-general-v4",
+          "text": "公証本、自筆本、口座記録のうち、現時点で認める項目とまだ争いたい項目とを分けてお答えください。"
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-b-general-v5",
+          "text": "ユン・ジョンフさん、直接見た場面と聞いて知った話の区別について、まだ供述していない事実があれば先にお出しください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "motive_search",
+      "targetParty": "a",
+      "angleId": "general",
+      "variants": [
+        {
+          "id": "judgeq-d-2-motive_search-a-general-v1",
+          "text": "ユン・テソンさん、別の解釈の余地があったにもかかわらず、特定の結論へ早く傾いた理由をお話しください。"
+        },
+        {
+          "id": "judgeq-d-2-motive_search-a-general-v2",
+          "text": "直接見た場面と聞いて知った話の区別を見たとき、ご自身の中で先に立ち上がった解釈の背景を整理してお答えください。"
+        },
+        {
+          "id": "judgeq-d-2-motive_search-a-general-v3",
+          "text": "ユン・ジョンフさんに直接確かめる前に判断を進めたと申されました。その動機を順序立ててご説明ください。"
+        },
+        {
+          "id": "judgeq-d-2-motive_search-a-general-v4",
+          "text": "候補となる解釈の中から特定の一つを選び取った時点について、判断基準を先にお示しください。"
+        },
+        {
+          "id": "judgeq-d-2-motive_search-a-general-v5",
+          "text": "ユン・テソンさん、直接見た場面と聞いて知った話の区別に関するご自身の判断の出発点を、率直にお答えください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "motive_search",
+      "targetParty": "b",
+      "angleId": "general",
+      "variants": [
+        {
+          "id": "judgeq-d-2-motive_search-b-general-v1",
+          "text": "ユン・ジョンフさん、遺書作成の場面と母の状態をめぐる経緯が積み重なる間、兄に整理して伝えなかった理由をお話しください。"
+        },
+        {
+          "id": "judgeq-d-2-motive_search-b-general-v2",
+          "text": "誤解されかねない状況であるとご自身も分かっていたなら、その時点で沈黙を選ばれた判断の根拠をお答えください。"
+        },
+        {
+          "id": "judgeq-d-2-motive_search-b-general-v3",
+          "text": "直接見た場面と聞いて知った話の区別について、説明の機会があったにもかかわらず後ろに送られた理由はどこにありますか。"
+        },
+        {
+          "id": "judgeq-d-2-motive_search-b-general-v4",
+          "text": "当時の選択を支えていた事情を、家庭内のいきさつごと順序立ててお話しください。"
+        },
+        {
+          "id": "judgeq-d-2-motive_search-b-general-v5",
+          "text": "ユン・ジョンフさん、直接見た場面と聞いて知った話の区別について、ご自身の判断を支えていた理由をお答えください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "empathy_approach",
+      "targetParty": "a",
+      "angleId": "general",
+      "variants": [
+        {
+          "id": "judgeq-d-2-empathy_approach-a-general-v1",
+          "text": "ユン・テソンさん、長年母を支えてこられたご自負と現実との隔たりに揺れた時間があったかと存じます。直接ご覧になった場面からお聞かせください。"
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-a-general-v2",
+          "text": "不安と確信のはざまで判断を固めていかれた経緯を、当時のお気持ちごとお話しいただけますか。"
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-a-general-v3",
+          "text": "ユン・ジョンフさんの動きを目にされた折々のお気持ちを、結論ではなく過程としてお話しください。"
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-a-general-v4",
+          "text": "直接見た場面と聞いて知った話の区別を前にされて言葉を選ばれた時間も含めて、率直にお答えいただきたいのです。"
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-a-general-v5",
+          "text": "ユン・テソンさん、ご自身を支えていた解釈について、その時点の心境ごとお話しいただけますか。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "empathy_approach",
+      "targetParty": "b",
+      "angleId": "general",
+      "variants": [
+        {
+          "id": "judgeq-d-2-empathy_approach-b-general-v1",
+          "text": "ユン・ジョンフさん、母の傍らで手続きを担われたこと自体が、兄からどう映るかという重みを背負っておられたと存じます。直接の場面をお聞かせください。"
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-b-general-v2",
+          "text": "行動そのものよりも沈黙が誤解を広げた面があります。今この場で話せる範囲だけでも、直接見た場面と聞いて知った話の区別を整理してお話しください。"
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-b-general-v3",
+          "text": "直接見た場面と聞いて知った話の区別について、いま胸の中にある事情を整理してお答えください。"
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-b-general-v4",
+          "text": "遺書作成の場面と母の状態をめぐる経緯を伏せざるを得なかった事情があったのなら、その範囲だけでも先に明かしてください。"
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-b-general-v5",
+          "text": "ユン・ジョンフさん、兄に説明する前に立ち止まっていた理由を、率直にお話しください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "fact_pursuit",
+      "targetParty": "a",
+      "angleId": "scan_sequence",
+      "variants": [
+        {
+          "id": "judgeq-d-2-fact_pursuit-a-scan_sequence-v1",
+          "text": "ユン・テソンさん、公証人メモと書面スキャンの順序について、ご自身が直接ご覧になった場面と人づてに聞いた話とを時系列で分けてお答えください。"
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-a-scan_sequence-v2",
+          "text": "記録に残された手順とご自身の記憶が食い違う地点があれば、その一点に絞って事実関係を整理してください。"
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-a-scan_sequence-v3",
+          "text": "ユン・ジョンフさんの説明と、ご自身が確かめた資料との間でずれている部分を、まず資料単位でお示しください。"
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-a-scan_sequence-v4",
+          "text": "推定で埋めた部分と直接確かめた部分を分けたうえで、スキャン記録に残る進行順についてご回答ください。"
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-a-scan_sequence-v5",
+          "text": "ユン・テソンさん、スキャン記録に残る進行順について、ご自身が確認できた範囲を超えた断定は避けて整理してお答えください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "fact_pursuit",
+      "targetParty": "b",
+      "angleId": "scan_sequence",
+      "variants": [
+        {
+          "id": "judgeq-d-2-fact_pursuit-b-scan_sequence-v1",
+          "text": "ユン・ジョンフさん、公証人メモと書面スキャンの順序に関わるご自身の動きを、日付ごとに時系列で整理してお答えください。"
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-b-scan_sequence-v2",
+          "text": "直接ご自身が行われた行為と、傍らで補助しただけだと述べてこられた行為とを、まずは分けてお示しください。"
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-b-scan_sequence-v3",
+          "text": "ユン・テソンさんの主張とご自身の説明が最も食い違う事実は何ですか。その地点から資料に沿ってご回答ください。"
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-b-scan_sequence-v4",
+          "text": "公証本、自筆本、口座記録のうち、現時点で認める項目とまだ争いたい項目とを分けてお答えください。"
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-b-scan_sequence-v5",
+          "text": "ユン・ジョンフさん、スキャン記録に残る進行順について、まだ供述していない事実があれば先にお出しください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "motive_search",
+      "targetParty": "a",
+      "angleId": "scan_sequence",
+      "variants": [
+        {
+          "id": "judgeq-d-2-motive_search-a-scan_sequence-v1",
+          "text": "ユン・テソンさん、別の解釈の余地があったにもかかわらず、特定の結論へ早く傾いた理由をお話しください。"
+        },
+        {
+          "id": "judgeq-d-2-motive_search-a-scan_sequence-v2",
+          "text": "スキャン記録に残る進行順を見たとき、ご自身の中で先に立ち上がった解釈の背景を整理してお答えください。"
+        },
+        {
+          "id": "judgeq-d-2-motive_search-a-scan_sequence-v3",
+          "text": "ユン・ジョンフさんに直接確かめる前に判断を進めたと申されました。その動機を順序立ててご説明ください。"
+        },
+        {
+          "id": "judgeq-d-2-motive_search-a-scan_sequence-v4",
+          "text": "候補となる解釈の中から特定の一つを選び取った時点について、判断基準を先にお示しください。"
+        },
+        {
+          "id": "judgeq-d-2-motive_search-a-scan_sequence-v5",
+          "text": "ユン・テソンさん、スキャン記録に残る進行順に関するご自身の判断の出発点を、率直にお答えください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "motive_search",
+      "targetParty": "b",
+      "angleId": "scan_sequence",
+      "variants": [
+        {
+          "id": "judgeq-d-2-motive_search-b-scan_sequence-v1",
+          "text": "ユン・ジョンフさん、公証人メモと書面スキャンの順序が積み重なる間、兄に整理して伝えなかった理由をお話しください。"
+        },
+        {
+          "id": "judgeq-d-2-motive_search-b-scan_sequence-v2",
+          "text": "誤解されかねない状況であるとご自身も分かっていたなら、その時点で沈黙を選ばれた判断の根拠をお答えください。"
+        },
+        {
+          "id": "judgeq-d-2-motive_search-b-scan_sequence-v3",
+          "text": "スキャン記録に残る進行順について、説明の機会があったにもかかわらず後ろに送られた理由はどこにありますか。"
+        },
+        {
+          "id": "judgeq-d-2-motive_search-b-scan_sequence-v4",
+          "text": "当時の選択を支えていた事情を、家庭内のいきさつごと順序立ててお話しください。"
+        },
+        {
+          "id": "judgeq-d-2-motive_search-b-scan_sequence-v5",
+          "text": "ユン・ジョンフさん、スキャン記録に残る進行順について、ご自身の判断を支えていた理由をお答えください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "empathy_approach",
+      "targetParty": "a",
+      "angleId": "scan_sequence",
+      "variants": [
+        {
+          "id": "judgeq-d-2-empathy_approach-a-scan_sequence-v1",
+          "text": "ユン・テソンさん、長年母を支えてこられたご自負と現実との隔たりに揺れた時間があったかと存じます。直接ご覧になった場面からお聞かせください。"
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-a-scan_sequence-v2",
+          "text": "不安と確信のはざまで判断を固めていかれた経緯を、当時のお気持ちごとお話しいただけますか。"
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-a-scan_sequence-v3",
+          "text": "ユン・ジョンフさんの動きを目にされた折々のお気持ちを、結論ではなく過程としてお話しください。"
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-a-scan_sequence-v4",
+          "text": "スキャン記録に残る進行順を前にされて言葉を選ばれた時間も含めて、率直にお答えいただきたいのです。"
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-a-scan_sequence-v5",
+          "text": "ユン・テソンさん、ご自身を支えていた解釈について、その時点の心境ごとお話しいただけますか。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "empathy_approach",
+      "targetParty": "b",
+      "angleId": "scan_sequence",
+      "variants": [
+        {
+          "id": "judgeq-d-2-empathy_approach-b-scan_sequence-v1",
+          "text": "ユン・ジョンフさん、母の傍らで手続きを担われたこと自体が、兄からどう映るかという重みを背負っておられたと存じます。直接の場面をお聞かせください。"
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-b-scan_sequence-v2",
+          "text": "行動そのものよりも沈黙が誤解を広げた面があります。今この場で話せる範囲だけでも、スキャン記録に残る進行順を整理してお話しください。"
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-b-scan_sequence-v3",
+          "text": "スキャン記録に残る進行順について、いま胸の中にある事情を整理してお答えください。"
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-b-scan_sequence-v4",
+          "text": "公証人メモと書面スキャンの順序を伏せざるを得なかった事情があったのなら、その範囲だけでも先に明かしてください。"
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-b-scan_sequence-v5",
+          "text": "ユン・ジョンフさん、兄に説明する前に立ち止まっていた理由を、率直にお話しください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "fact_pursuit",
+      "targetParty": "a",
+      "angleId": "original_gap",
+      "variants": [
+        {
+          "id": "judgeq-d-2-fact_pursuit-a-original_gap-v1",
+          "text": "ユン・テソンさん、自筆練習本と公証本の食い違いについて、ご自身が直接ご覧になった場面と人づてに聞いた話とを時系列で分けてお答えください。"
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-a-original_gap-v2",
+          "text": "記録に残された手順とご自身の記憶が食い違う地点があれば、その一点に絞って事実関係を整理してください。"
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-a-original_gap-v3",
+          "text": "ユン・ジョンフさんの説明と、ご自身が確かめた資料との間でずれている部分を、まず資料単位でお示しください。"
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-a-original_gap-v4",
+          "text": "推定で埋めた部分と直接確かめた部分を分けたうえで、原本同士の差分の読み方についてご回答ください。"
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-a-original_gap-v5",
+          "text": "ユン・テソンさん、原本同士の差分の読み方について、ご自身が確認できた範囲を超えた断定は避けて整理してお答えください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "fact_pursuit",
+      "targetParty": "b",
+      "angleId": "original_gap",
+      "variants": [
+        {
+          "id": "judgeq-d-2-fact_pursuit-b-original_gap-v1",
+          "text": "ユン・ジョンフさん、自筆練習本と公証本の食い違いに関わるご自身の動きを、日付ごとに時系列で整理してお答えください。"
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-b-original_gap-v2",
+          "text": "直接ご自身が行われた行為と、傍らで補助しただけだと述べてこられた行為とを、まずは分けてお示しください。"
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-b-original_gap-v3",
+          "text": "ユン・テソンさんの主張とご自身の説明が最も食い違う事実は何ですか。その地点から資料に沿ってご回答ください。"
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-b-original_gap-v4",
+          "text": "公証本、自筆本、口座記録のうち、現時点で認める項目とまだ争いたい項目とを分けてお答えください。"
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-b-original_gap-v5",
+          "text": "ユン・ジョンフさん、原本同士の差分の読み方について、まだ供述していない事実があれば先にお出しください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "motive_search",
+      "targetParty": "a",
+      "angleId": "original_gap",
+      "variants": [
+        {
+          "id": "judgeq-d-2-motive_search-a-original_gap-v1",
+          "text": "ユン・テソンさん、別の解釈の余地があったにもかかわらず、特定の結論へ早く傾いた理由をお話しください。"
+        },
+        {
+          "id": "judgeq-d-2-motive_search-a-original_gap-v2",
+          "text": "原本同士の差分の読み方を見たとき、ご自身の中で先に立ち上がった解釈の背景を整理してお答えください。"
+        },
+        {
+          "id": "judgeq-d-2-motive_search-a-original_gap-v3",
+          "text": "ユン・ジョンフさんに直接確かめる前に判断を進めたと申されました。その動機を順序立ててご説明ください。"
+        },
+        {
+          "id": "judgeq-d-2-motive_search-a-original_gap-v4",
+          "text": "候補となる解釈の中から特定の一つを選び取った時点について、判断基準を先にお示しください。"
+        },
+        {
+          "id": "judgeq-d-2-motive_search-a-original_gap-v5",
+          "text": "ユン・テソンさん、原本同士の差分の読み方に関するご自身の判断の出発点を、率直にお答えください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "motive_search",
+      "targetParty": "b",
+      "angleId": "original_gap",
+      "variants": [
+        {
+          "id": "judgeq-d-2-motive_search-b-original_gap-v1",
+          "text": "ユン・ジョンフさん、自筆練習本と公証本の食い違いが積み重なる間、兄に整理して伝えなかった理由をお話しください。"
+        },
+        {
+          "id": "judgeq-d-2-motive_search-b-original_gap-v2",
+          "text": "誤解されかねない状況であるとご自身も分かっていたなら、その時点で沈黙を選ばれた判断の根拠をお答えください。"
+        },
+        {
+          "id": "judgeq-d-2-motive_search-b-original_gap-v3",
+          "text": "原本同士の差分の読み方について、説明の機会があったにもかかわらず後ろに送られた理由はどこにありますか。"
+        },
+        {
+          "id": "judgeq-d-2-motive_search-b-original_gap-v4",
+          "text": "当時の選択を支えていた事情を、家庭内のいきさつごと順序立ててお話しください。"
+        },
+        {
+          "id": "judgeq-d-2-motive_search-b-original_gap-v5",
+          "text": "ユン・ジョンフさん、原本同士の差分の読み方について、ご自身の判断を支えていた理由をお答えください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "empathy_approach",
+      "targetParty": "a",
+      "angleId": "original_gap",
+      "variants": [
+        {
+          "id": "judgeq-d-2-empathy_approach-a-original_gap-v1",
+          "text": "ユン・テソンさん、長年母を支えてこられたご自負と現実との隔たりに揺れた時間があったかと存じます。直接ご覧になった場面からお聞かせください。"
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-a-original_gap-v2",
+          "text": "不安と確信のはざまで判断を固めていかれた経緯を、当時のお気持ちごとお話しいただけますか。"
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-a-original_gap-v3",
+          "text": "ユン・ジョンフさんの動きを目にされた折々のお気持ちを、結論ではなく過程としてお話しください。"
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-a-original_gap-v4",
+          "text": "原本同士の差分の読み方を前にされて言葉を選ばれた時間も含めて、率直にお答えいただきたいのです。"
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-a-original_gap-v5",
+          "text": "ユン・テソンさん、ご自身を支えていた解釈について、その時点の心境ごとお話しいただけますか。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "empathy_approach",
+      "targetParty": "b",
+      "angleId": "original_gap",
+      "variants": [
+        {
+          "id": "judgeq-d-2-empathy_approach-b-original_gap-v1",
+          "text": "ユン・ジョンフさん、母の傍らで手続きを担われたこと自体が、兄からどう映るかという重みを背負っておられたと存じます。直接の場面をお聞かせください。"
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-b-original_gap-v2",
+          "text": "行動そのものよりも沈黙が誤解を広げた面があります。今この場で話せる範囲だけでも、原本同士の差分の読み方を整理してお話しください。"
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-b-original_gap-v3",
+          "text": "原本同士の差分の読み方について、いま胸の中にある事情を整理してお答えください。"
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-b-original_gap-v4",
+          "text": "自筆練習本と公証本の食い違いを伏せざるを得なかった事情があったのなら、その範囲だけでも先に明かしてください。"
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-b-original_gap-v5",
+          "text": "ユン・ジョンフさん、兄に説明する前に立ち止まっていた理由を、率直にお話しください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "fact_pursuit",
+      "targetParty": "a",
+      "angleId": "changed_direction",
+      "variants": [
+        {
+          "id": "judgeq-d-2-fact_pursuit-a-changed_direction-v1",
+          "text": "ユン・テソンさん、比率の修正方向に対する読みについて、ご自身が直接ご覧になった場面と人づてに聞いた話とを時系列で分けてお答えください。"
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-a-changed_direction-v2",
+          "text": "記録に残された手順とご自身の記憶が食い違う地点があれば、その一点に絞って事実関係を整理してください。"
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-a-changed_direction-v3",
+          "text": "ユン・ジョンフさんの説明と、ご自身が確かめた資料との間でずれている部分を、まず資料単位でお示しください。"
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-a-changed_direction-v4",
+          "text": "推定で埋めた部分と直接確かめた部分を分けたうえで、比率がどちらへ動いたかの判断についてご回答ください。"
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-a-changed_direction-v5",
+          "text": "ユン・テソンさん、比率がどちらへ動いたかの判断について、ご自身が確認できた範囲を超えた断定は避けて整理してお答えください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "fact_pursuit",
+      "targetParty": "b",
+      "angleId": "changed_direction",
+      "variants": [
+        {
+          "id": "judgeq-d-2-fact_pursuit-b-changed_direction-v1",
+          "text": "ユン・ジョンフさん、比率の修正方向に対する読みに関わるご自身の動きを、日付ごとに時系列で整理してお答えください。"
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-b-changed_direction-v2",
+          "text": "直接ご自身が行われた行為と、傍らで補助しただけだと述べてこられた行為とを、まずは分けてお示しください。"
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-b-changed_direction-v3",
+          "text": "ユン・テソンさんの主張とご自身の説明が最も食い違う事実は何ですか。その地点から資料に沿ってご回答ください。"
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-b-changed_direction-v4",
+          "text": "公証本、自筆本、口座記録のうち、現時点で認める項目とまだ争いたい項目とを分けてお答えください。"
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-b-changed_direction-v5",
+          "text": "ユン・ジョンフさん、比率がどちらへ動いたかの判断について、まだ供述していない事実があれば先にお出しください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "motive_search",
+      "targetParty": "a",
+      "angleId": "changed_direction",
+      "variants": [
+        {
+          "id": "judgeq-d-2-motive_search-a-changed_direction-v1",
+          "text": "ユン・テソンさん、別の解釈の余地があったにもかかわらず、特定の結論へ早く傾いた理由をお話しください。"
+        },
+        {
+          "id": "judgeq-d-2-motive_search-a-changed_direction-v2",
+          "text": "比率がどちらへ動いたかの判断を見たとき、ご自身の中で先に立ち上がった解釈の背景を整理してお答えください。"
+        },
+        {
+          "id": "judgeq-d-2-motive_search-a-changed_direction-v3",
+          "text": "ユン・ジョンフさんに直接確かめる前に判断を進めたと申されました。その動機を順序立ててご説明ください。"
+        },
+        {
+          "id": "judgeq-d-2-motive_search-a-changed_direction-v4",
+          "text": "候補となる解釈の中から特定の一つを選び取った時点について、判断基準を先にお示しください。"
+        },
+        {
+          "id": "judgeq-d-2-motive_search-a-changed_direction-v5",
+          "text": "ユン・テソンさん、比率がどちらへ動いたかの判断に関するご自身の判断の出発点を、率直にお答えください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "motive_search",
+      "targetParty": "b",
+      "angleId": "changed_direction",
+      "variants": [
+        {
+          "id": "judgeq-d-2-motive_search-b-changed_direction-v1",
+          "text": "ユン・ジョンフさん、比率の修正方向に対する読みが積み重なる間、兄に整理して伝えなかった理由をお話しください。"
+        },
+        {
+          "id": "judgeq-d-2-motive_search-b-changed_direction-v2",
+          "text": "誤解されかねない状況であるとご自身も分かっていたなら、その時点で沈黙を選ばれた判断の根拠をお答えください。"
+        },
+        {
+          "id": "judgeq-d-2-motive_search-b-changed_direction-v3",
+          "text": "比率がどちらへ動いたかの判断について、説明の機会があったにもかかわらず後ろに送られた理由はどこにありますか。"
+        },
+        {
+          "id": "judgeq-d-2-motive_search-b-changed_direction-v4",
+          "text": "当時の選択を支えていた事情を、家庭内のいきさつごと順序立ててお話しください。"
+        },
+        {
+          "id": "judgeq-d-2-motive_search-b-changed_direction-v5",
+          "text": "ユン・ジョンフさん、比率がどちらへ動いたかの判断について、ご自身の判断を支えていた理由をお答えください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "empathy_approach",
+      "targetParty": "a",
+      "angleId": "changed_direction",
+      "variants": [
+        {
+          "id": "judgeq-d-2-empathy_approach-a-changed_direction-v1",
+          "text": "ユン・テソンさん、長年母を支えてこられたご自負と現実との隔たりに揺れた時間があったかと存じます。直接ご覧になった場面からお聞かせください。"
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-a-changed_direction-v2",
+          "text": "不安と確信のはざまで判断を固めていかれた経緯を、当時のお気持ちごとお話しいただけますか。"
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-a-changed_direction-v3",
+          "text": "ユン・ジョンフさんの動きを目にされた折々のお気持ちを、結論ではなく過程としてお話しください。"
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-a-changed_direction-v4",
+          "text": "比率がどちらへ動いたかの判断を前にされて言葉を選ばれた時間も含めて、率直にお答えいただきたいのです。"
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-a-changed_direction-v5",
+          "text": "ユン・テソンさん、ご自身を支えていた解釈について、その時点の心境ごとお話しいただけますか。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "empathy_approach",
+      "targetParty": "b",
+      "angleId": "changed_direction",
+      "variants": [
+        {
+          "id": "judgeq-d-2-empathy_approach-b-changed_direction-v1",
+          "text": "ユン・ジョンフさん、母の傍らで手続きを担われたこと自体が、兄からどう映るかという重みを背負っておられたと存じます。直接の場面をお聞かせください。"
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-b-changed_direction-v2",
+          "text": "行動そのものよりも沈黙が誤解を広げた面があります。今この場で話せる範囲だけでも、比率がどちらへ動いたかの判断を整理してお話しください。"
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-b-changed_direction-v3",
+          "text": "比率がどちらへ動いたかの判断について、いま胸の中にある事情を整理してお答えください。"
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-b-changed_direction-v4",
+          "text": "比率の修正方向に対する読みを伏せざるを得なかった事情があったのなら、その範囲だけでも先に明かしてください。"
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-b-changed_direction-v5",
+          "text": "ユン・ジョンフさん、兄に説明する前に立ち止まっていた理由を、率直にお話しください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "fact_pursuit",
+      "targetParty": "a",
+      "angleId": "forgery_responsibility",
+      "variants": [
+        {
+          "id": "judgeq-d-2-fact_pursuit-a-forgery_responsibility-v1",
+          "text": "ユン・テソンさん、母の書面に手を加えた責任の所在について、ご自身が直接ご覧になった場面と人づてに聞いた話とを時系列で分けてお答えください。"
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-a-forgery_responsibility-v2",
+          "text": "記録に残された手順とご自身の記憶が食い違う地点があれば、その一点に絞って事実関係を整理してください。"
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-a-forgery_responsibility-v3",
+          "text": "ユン・ジョンフさんの説明と、ご自身が確かめた資料との間でずれている部分を、まず資料単位でお示しください。"
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-a-forgery_responsibility-v4",
+          "text": "推定で埋めた部分と直接確かめた部分を分けたうえで、書類加筆の関与の範囲についてご回答ください。"
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-a-forgery_responsibility-v5",
+          "text": "ユン・テソンさん、書類加筆の関与の範囲について、ご自身が確認できた範囲を超えた断定は避けて整理してお答えください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "fact_pursuit",
+      "targetParty": "b",
+      "angleId": "forgery_responsibility",
+      "variants": [
+        {
+          "id": "judgeq-d-2-fact_pursuit-b-forgery_responsibility-v1",
+          "text": "ユン・ジョンフさん、母の書面に手を加えた責任の所在に関わるご自身の動きを、日付ごとに時系列で整理してお答えください。"
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-b-forgery_responsibility-v2",
+          "text": "直接ご自身が行われた行為と、傍らで補助しただけだと述べてこられた行為とを、まずは分けてお示しください。"
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-b-forgery_responsibility-v3",
+          "text": "ユン・テソンさんの主張とご自身の説明が最も食い違う事実は何ですか。その地点から資料に沿ってご回答ください。"
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-b-forgery_responsibility-v4",
+          "text": "公証本、自筆本、口座記録のうち、現時点で認める項目とまだ争いたい項目とを分けてお答えください。"
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-b-forgery_responsibility-v5",
+          "text": "ユン・ジョンフさん、書類加筆の関与の範囲について、まだ供述していない事実があれば先にお出しください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "motive_search",
+      "targetParty": "a",
+      "angleId": "forgery_responsibility",
+      "variants": [
+        {
+          "id": "judgeq-d-2-motive_search-a-forgery_responsibility-v1",
+          "text": "ユン・テソンさん、別の解釈の余地があったにもかかわらず、特定の結論へ早く傾いた理由をお話しください。"
+        },
+        {
+          "id": "judgeq-d-2-motive_search-a-forgery_responsibility-v2",
+          "text": "書類加筆の関与の範囲を見たとき、ご自身の中で先に立ち上がった解釈の背景を整理してお答えください。"
+        },
+        {
+          "id": "judgeq-d-2-motive_search-a-forgery_responsibility-v3",
+          "text": "ユン・ジョンフさんに直接確かめる前に判断を進めたと申されました。その動機を順序立ててご説明ください。"
+        },
+        {
+          "id": "judgeq-d-2-motive_search-a-forgery_responsibility-v4",
+          "text": "候補となる解釈の中から特定の一つを選び取った時点について、判断基準を先にお示しください。"
+        },
+        {
+          "id": "judgeq-d-2-motive_search-a-forgery_responsibility-v5",
+          "text": "ユン・テソンさん、書類加筆の関与の範囲に関するご自身の判断の出発点を、率直にお答えください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "motive_search",
+      "targetParty": "b",
+      "angleId": "forgery_responsibility",
+      "variants": [
+        {
+          "id": "judgeq-d-2-motive_search-b-forgery_responsibility-v1",
+          "text": "ユン・ジョンフさん、母の書面に手を加えた責任の所在が積み重なる間、兄に整理して伝えなかった理由をお話しください。"
+        },
+        {
+          "id": "judgeq-d-2-motive_search-b-forgery_responsibility-v2",
+          "text": "誤解されかねない状況であるとご自身も分かっていたなら、その時点で沈黙を選ばれた判断の根拠をお答えください。"
+        },
+        {
+          "id": "judgeq-d-2-motive_search-b-forgery_responsibility-v3",
+          "text": "書類加筆の関与の範囲について、説明の機会があったにもかかわらず後ろに送られた理由はどこにありますか。"
+        },
+        {
+          "id": "judgeq-d-2-motive_search-b-forgery_responsibility-v4",
+          "text": "当時の選択を支えていた事情を、家庭内のいきさつごと順序立ててお話しください。"
+        },
+        {
+          "id": "judgeq-d-2-motive_search-b-forgery_responsibility-v5",
+          "text": "ユン・ジョンフさん、書類加筆の関与の範囲について、ご自身の判断を支えていた理由をお答えください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "empathy_approach",
+      "targetParty": "a",
+      "angleId": "forgery_responsibility",
+      "variants": [
+        {
+          "id": "judgeq-d-2-empathy_approach-a-forgery_responsibility-v1",
+          "text": "ユン・テソンさん、長年母を支えてこられたご自負と現実との隔たりに揺れた時間があったかと存じます。直接ご覧になった場面からお聞かせください。"
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-a-forgery_responsibility-v2",
+          "text": "不安と確信のはざまで判断を固めていかれた経緯を、当時のお気持ちごとお話しいただけますか。"
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-a-forgery_responsibility-v3",
+          "text": "ユン・ジョンフさんの動きを目にされた折々のお気持ちを、結論ではなく過程としてお話しください。"
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-a-forgery_responsibility-v4",
+          "text": "書類加筆の関与の範囲を前にされて言葉を選ばれた時間も含めて、率直にお答えいただきたいのです。"
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-a-forgery_responsibility-v5",
+          "text": "ユン・テソンさん、ご自身を支えていた解釈について、その時点の心境ごとお話しいただけますか。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "empathy_approach",
+      "targetParty": "b",
+      "angleId": "forgery_responsibility",
+      "variants": [
+        {
+          "id": "judgeq-d-2-empathy_approach-b-forgery_responsibility-v1",
+          "text": "ユン・ジョンフさん、母の傍らで手続きを担われたこと自体が、兄からどう映るかという重みを背負っておられたと存じます。直接の場面をお聞かせください。"
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-b-forgery_responsibility-v2",
+          "text": "行動そのものよりも沈黙が誤解を広げた面があります。今この場で話せる範囲だけでも、書類加筆の関与の範囲を整理してお話しください。"
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-b-forgery_responsibility-v3",
+          "text": "書類加筆の関与の範囲について、いま胸の中にある事情を整理してお答えください。"
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-b-forgery_responsibility-v4",
+          "text": "母の書面に手を加えた責任の所在を伏せざるを得なかった事情があったのなら、その範囲だけでも先に明かしてください。"
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-b-forgery_responsibility-v5",
+          "text": "ユン・ジョンフさん、兄に説明する前に立ち止まっていた理由を、率直にお話しください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "questionType": "fact_pursuit",
+      "targetParty": "a",
+      "angleId": "general",
+      "variants": [
+        {
+          "id": "judgeq-d-3-fact_pursuit-a-general-v1",
+          "text": "ユン・テソンさん、遺書作成の場面と母の状態をめぐる経緯について、ご自身が直接ご覧になった場面と人づてに聞いた話とを時系列で分けてお答えください。"
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-a-general-v2",
+          "text": "記録に残された手順とご自身の記憶が食い違う地点があれば、その一点に絞って事実関係を整理してください。"
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-a-general-v3",
+          "text": "ユン・ジョンフさんの説明と、ご自身が確かめた資料との間でずれている部分を、まず資料単位でお示しください。"
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-a-general-v4",
+          "text": "推定で埋めた部分と直接確かめた部分を分けたうえで、直接見た場面と聞いて知った話の区別についてご回答ください。"
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-a-general-v5",
+          "text": "ユン・テソンさん、直接見た場面と聞いて知った話の区別について、ご自身が確認できた範囲を超えた断定は避けて整理してお答えください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "questionType": "fact_pursuit",
+      "targetParty": "b",
+      "angleId": "general",
+      "variants": [
+        {
+          "id": "judgeq-d-3-fact_pursuit-b-general-v1",
+          "text": "ユン・ジョンフさん、遺書作成の場面と母の状態をめぐる経緯に関わるご自身の動きを、日付ごとに時系列で整理してお答えください。"
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-b-general-v2",
+          "text": "直接ご自身が行われた行為と、傍らで補助しただけだと述べてこられた行為とを、まずは分けてお示しください。"
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-b-general-v3",
+          "text": "ユン・テソンさんの主張とご自身の説明が最も食い違う事実は何ですか。その地点から資料に沿ってご回答ください。"
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-b-general-v4",
+          "text": "公証本、自筆本、口座記録のうち、現時点で認める項目とまだ争いたい項目とを分けてお答えください。"
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-b-general-v5",
+          "text": "ユン・ジョンフさん、直接見た場面と聞いて知った話の区別について、まだ供述していない事実があれば先にお出しください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "questionType": "motive_search",
+      "targetParty": "a",
+      "angleId": "general",
+      "variants": [
+        {
+          "id": "judgeq-d-3-motive_search-a-general-v1",
+          "text": "ユン・テソンさん、別の解釈の余地があったにもかかわらず、特定の結論へ早く傾いた理由をお話しください。"
+        },
+        {
+          "id": "judgeq-d-3-motive_search-a-general-v2",
+          "text": "直接見た場面と聞いて知った話の区別を見たとき、ご自身の中で先に立ち上がった解釈の背景を整理してお答えください。"
+        },
+        {
+          "id": "judgeq-d-3-motive_search-a-general-v3",
+          "text": "ユン・ジョンフさんに直接確かめる前に判断を進めたと申されました。その動機を順序立ててご説明ください。"
+        },
+        {
+          "id": "judgeq-d-3-motive_search-a-general-v4",
+          "text": "候補となる解釈の中から特定の一つを選び取った時点について、判断基準を先にお示しください。"
+        },
+        {
+          "id": "judgeq-d-3-motive_search-a-general-v5",
+          "text": "ユン・テソンさん、直接見た場面と聞いて知った話の区別に関するご自身の判断の出発点を、率直にお答えください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "questionType": "motive_search",
+      "targetParty": "b",
+      "angleId": "general",
+      "variants": [
+        {
+          "id": "judgeq-d-3-motive_search-b-general-v1",
+          "text": "ユン・ジョンフさん、遺書作成の場面と母の状態をめぐる経緯が積み重なる間、兄に整理して伝えなかった理由をお話しください。"
+        },
+        {
+          "id": "judgeq-d-3-motive_search-b-general-v2",
+          "text": "誤解されかねない状況であるとご自身も分かっていたなら、その時点で沈黙を選ばれた判断の根拠をお答えください。"
+        },
+        {
+          "id": "judgeq-d-3-motive_search-b-general-v3",
+          "text": "直接見た場面と聞いて知った話の区別について、説明の機会があったにもかかわらず後ろに送られた理由はどこにありますか。"
+        },
+        {
+          "id": "judgeq-d-3-motive_search-b-general-v4",
+          "text": "当時の選択を支えていた事情を、家庭内のいきさつごと順序立ててお話しください。"
+        },
+        {
+          "id": "judgeq-d-3-motive_search-b-general-v5",
+          "text": "ユン・ジョンフさん、直接見た場面と聞いて知った話の区別について、ご自身の判断を支えていた理由をお答えください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "questionType": "empathy_approach",
+      "targetParty": "a",
+      "angleId": "general",
+      "variants": [
+        {
+          "id": "judgeq-d-3-empathy_approach-a-general-v1",
+          "text": "ユン・テソンさん、長年母を支えてこられたご自負と現実との隔たりに揺れた時間があったかと存じます。直接ご覧になった場面からお聞かせください。"
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-a-general-v2",
+          "text": "不安と確信のはざまで判断を固めていかれた経緯を、当時のお気持ちごとお話しいただけますか。"
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-a-general-v3",
+          "text": "ユン・ジョンフさんの動きを目にされた折々のお気持ちを、結論ではなく過程としてお話しください。"
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-a-general-v4",
+          "text": "直接見た場面と聞いて知った話の区別を前にされて言葉を選ばれた時間も含めて、率直にお答えいただきたいのです。"
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-a-general-v5",
+          "text": "ユン・テソンさん、ご自身を支えていた解釈について、その時点の心境ごとお話しいただけますか。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "questionType": "empathy_approach",
+      "targetParty": "b",
+      "angleId": "general",
+      "variants": [
+        {
+          "id": "judgeq-d-3-empathy_approach-b-general-v1",
+          "text": "ユン・ジョンフさん、母の傍らで手続きを担われたこと自体が、兄からどう映るかという重みを背負っておられたと存じます。直接の場面をお聞かせください。"
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-b-general-v2",
+          "text": "行動そのものよりも沈黙が誤解を広げた面があります。今この場で話せる範囲だけでも、直接見た場面と聞いて知った話の区別を整理してお話しください。"
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-b-general-v3",
+          "text": "直接見た場面と聞いて知った話の区別について、いま胸の中にある事情を整理してお答えください。"
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-b-general-v4",
+          "text": "遺書作成の場面と母の状態をめぐる経緯を伏せざるを得なかった事情があったのなら、その範囲だけでも先に明かしてください。"
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-b-general-v5",
+          "text": "ユン・ジョンフさん、兄に説明する前に立ち止まっていた理由を、率直にお話しください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "questionType": "fact_pursuit",
+      "targetParty": "a",
+      "angleId": "long_support_flow",
+      "variants": [
+        {
+          "id": "judgeq-d-3-fact_pursuit-a-long_support_flow-v1",
+          "text": "ユン・テソンさん、母の口座を経由した長年の家計支援について、ご自身が直接ご覧になった場面と人づてに聞いた話とを時系列で分けてお答えください。"
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-a-long_support_flow-v2",
+          "text": "記録に残された手順とご自身の記憶が食い違う地点があれば、その一点に絞って事実関係を整理してください。"
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-a-long_support_flow-v3",
+          "text": "ユン・ジョンフさんの説明と、ご自身が確かめた資料との間でずれている部分を、まず資料単位でお示しください。"
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-a-long_support_flow-v4",
+          "text": "推定で埋めた部分と直接確かめた部分を分けたうえで、入金と送金の流れの説明についてご回答ください。"
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-a-long_support_flow-v5",
+          "text": "ユン・テソンさん、入金と送金の流れの説明について、ご自身が確認できた範囲を超えた断定は避けて整理してお答えください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "questionType": "fact_pursuit",
+      "targetParty": "b",
+      "angleId": "long_support_flow",
+      "variants": [
+        {
+          "id": "judgeq-d-3-fact_pursuit-b-long_support_flow-v1",
+          "text": "ユン・ジョンフさん、母の口座を経由した長年の家計支援に関わるご自身の動きを、日付ごとに時系列で整理してお答えください。"
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-b-long_support_flow-v2",
+          "text": "直接ご自身が行われた行為と、傍らで補助しただけだと述べてこられた行為とを、まずは分けてお示しください。"
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-b-long_support_flow-v3",
+          "text": "ユン・テソンさんの主張とご自身の説明が最も食い違う事実は何ですか。その地点から資料に沿ってご回答ください。"
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-b-long_support_flow-v4",
+          "text": "公証本、自筆本、口座記録のうち、現時点で認める項目とまだ争いたい項目とを分けてお答えください。"
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-b-long_support_flow-v5",
+          "text": "ユン・ジョンフさん、入金と送金の流れの説明について、まだ供述していない事実があれば先にお出しください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "questionType": "motive_search",
+      "targetParty": "a",
+      "angleId": "long_support_flow",
+      "variants": [
+        {
+          "id": "judgeq-d-3-motive_search-a-long_support_flow-v1",
+          "text": "ユン・テソンさん、別の解釈の余地があったにもかかわらず、特定の結論へ早く傾いた理由をお話しください。"
+        },
+        {
+          "id": "judgeq-d-3-motive_search-a-long_support_flow-v2",
+          "text": "入金と送金の流れの説明を見たとき、ご自身の中で先に立ち上がった解釈の背景を整理してお答えください。"
+        },
+        {
+          "id": "judgeq-d-3-motive_search-a-long_support_flow-v3",
+          "text": "ユン・ジョンフさんに直接確かめる前に判断を進めたと申されました。その動機を順序立ててご説明ください。"
+        },
+        {
+          "id": "judgeq-d-3-motive_search-a-long_support_flow-v4",
+          "text": "候補となる解釈の中から特定の一つを選び取った時点について、判断基準を先にお示しください。"
+        },
+        {
+          "id": "judgeq-d-3-motive_search-a-long_support_flow-v5",
+          "text": "ユン・テソンさん、入金と送金の流れの説明に関するご自身の判断の出発点を、率直にお答えください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "questionType": "motive_search",
+      "targetParty": "b",
+      "angleId": "long_support_flow",
+      "variants": [
+        {
+          "id": "judgeq-d-3-motive_search-b-long_support_flow-v1",
+          "text": "ユン・ジョンフさん、母の口座を経由した長年の家計支援が積み重なる間、兄に整理して伝えなかった理由をお話しください。"
+        },
+        {
+          "id": "judgeq-d-3-motive_search-b-long_support_flow-v2",
+          "text": "誤解されかねない状況であるとご自身も分かっていたなら、その時点で沈黙を選ばれた判断の根拠をお答えください。"
+        },
+        {
+          "id": "judgeq-d-3-motive_search-b-long_support_flow-v3",
+          "text": "入金と送金の流れの説明について、説明の機会があったにもかかわらず後ろに送られた理由はどこにありますか。"
+        },
+        {
+          "id": "judgeq-d-3-motive_search-b-long_support_flow-v4",
+          "text": "当時の選択を支えていた事情を、家庭内のいきさつごと順序立ててお話しください。"
+        },
+        {
+          "id": "judgeq-d-3-motive_search-b-long_support_flow-v5",
+          "text": "ユン・ジョンフさん、入金と送金の流れの説明について、ご自身の判断を支えていた理由をお答えください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "questionType": "empathy_approach",
+      "targetParty": "a",
+      "angleId": "long_support_flow",
+      "variants": [
+        {
+          "id": "judgeq-d-3-empathy_approach-a-long_support_flow-v1",
+          "text": "ユン・テソンさん、長年母を支えてこられたご自負と現実との隔たりに揺れた時間があったかと存じます。直接ご覧になった場面からお聞かせください。"
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-a-long_support_flow-v2",
+          "text": "不安と確信のはざまで判断を固めていかれた経緯を、当時のお気持ちごとお話しいただけますか。"
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-a-long_support_flow-v3",
+          "text": "ユン・ジョンフさんの動きを目にされた折々のお気持ちを、結論ではなく過程としてお話しください。"
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-a-long_support_flow-v4",
+          "text": "入金と送金の流れの説明を前にされて言葉を選ばれた時間も含めて、率直にお答えいただきたいのです。"
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-a-long_support_flow-v5",
+          "text": "ユン・テソンさん、ご自身を支えていた解釈について、その時点の心境ごとお話しいただけますか。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "questionType": "empathy_approach",
+      "targetParty": "b",
+      "angleId": "long_support_flow",
+      "variants": [
+        {
+          "id": "judgeq-d-3-empathy_approach-b-long_support_flow-v1",
+          "text": "ユン・ジョンフさん、母の傍らで手続きを担われたこと自体が、兄からどう映るかという重みを背負っておられたと存じます。直接の場面をお聞かせください。"
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-b-long_support_flow-v2",
+          "text": "行動そのものよりも沈黙が誤解を広げた面があります。今この場で話せる範囲だけでも、入金と送金の流れの説明を整理してお話しください。"
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-b-long_support_flow-v3",
+          "text": "入金と送金の流れの説明について、いま胸の中にある事情を整理してお答えください。"
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-b-long_support_flow-v4",
+          "text": "母の口座を経由した長年の家計支援を伏せざるを得なかった事情があったのなら、その範囲だけでも先に明かしてください。"
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-b-long_support_flow-v5",
+          "text": "ユン・ジョンフさん、兄に説明する前に立ち止まっていた理由を、率直にお話しください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "questionType": "fact_pursuit",
+      "targetParty": "a",
+      "angleId": "mother_account_mask",
+      "variants": [
+        {
+          "id": "judgeq-d-3-fact_pursuit-a-mother_account_mask-v1",
+          "text": "ユン・テソンさん、母の口座名義で残された入出金記録について、ご自身が直接ご覧になった場面と人づてに聞いた話とを時系列で分けてお答えください。"
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-a-mother_account_mask-v2",
+          "text": "記録に残された手順とご自身の記憶が食い違う地点があれば、その一点に絞って事実関係を整理してください。"
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-a-mother_account_mask-v3",
+          "text": "ユン・ジョンフさんの説明と、ご自身が確かめた資料との間でずれている部分を、まず資料単位でお示しください。"
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-a-mother_account_mask-v4",
+          "text": "推定で埋めた部分と直接確かめた部分を分けたうえで、名義と実際の出所の食い違いについてご回答ください。"
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-a-mother_account_mask-v5",
+          "text": "ユン・テソンさん、名義と実際の出所の食い違いについて、ご自身が確認できた範囲を超えた断定は避けて整理してお答えください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "questionType": "fact_pursuit",
+      "targetParty": "b",
+      "angleId": "mother_account_mask",
+      "variants": [
+        {
+          "id": "judgeq-d-3-fact_pursuit-b-mother_account_mask-v1",
+          "text": "ユン・ジョンフさん、母の口座名義で残された入出金記録に関わるご自身の動きを、日付ごとに時系列で整理してお答えください。"
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-b-mother_account_mask-v2",
+          "text": "直接ご自身が行われた行為と、傍らで補助しただけだと述べてこられた行為とを、まずは分けてお示しください。"
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-b-mother_account_mask-v3",
+          "text": "ユン・テソンさんの主張とご自身の説明が最も食い違う事実は何ですか。その地点から資料に沿ってご回答ください。"
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-b-mother_account_mask-v4",
+          "text": "公証本、自筆本、口座記録のうち、現時点で認める項目とまだ争いたい項目とを分けてお答えください。"
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-b-mother_account_mask-v5",
+          "text": "ユン・ジョンフさん、名義と実際の出所の食い違いについて、まだ供述していない事実があれば先にお出しください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "questionType": "motive_search",
+      "targetParty": "a",
+      "angleId": "mother_account_mask",
+      "variants": [
+        {
+          "id": "judgeq-d-3-motive_search-a-mother_account_mask-v1",
+          "text": "ユン・テソンさん、別の解釈の余地があったにもかかわらず、特定の結論へ早く傾いた理由をお話しください。"
+        },
+        {
+          "id": "judgeq-d-3-motive_search-a-mother_account_mask-v2",
+          "text": "名義と実際の出所の食い違いを見たとき、ご自身の中で先に立ち上がった解釈の背景を整理してお答えください。"
+        },
+        {
+          "id": "judgeq-d-3-motive_search-a-mother_account_mask-v3",
+          "text": "ユン・ジョンフさんに直接確かめる前に判断を進めたと申されました。その動機を順序立ててご説明ください。"
+        },
+        {
+          "id": "judgeq-d-3-motive_search-a-mother_account_mask-v4",
+          "text": "候補となる解釈の中から特定の一つを選び取った時点について、判断基準を先にお示しください。"
+        },
+        {
+          "id": "judgeq-d-3-motive_search-a-mother_account_mask-v5",
+          "text": "ユン・テソンさん、名義と実際の出所の食い違いに関するご自身の判断の出発点を、率直にお答えください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "questionType": "motive_search",
+      "targetParty": "b",
+      "angleId": "mother_account_mask",
+      "variants": [
+        {
+          "id": "judgeq-d-3-motive_search-b-mother_account_mask-v1",
+          "text": "ユン・ジョンフさん、母の口座名義で残された入出金記録が積み重なる間、兄に整理して伝えなかった理由をお話しください。"
+        },
+        {
+          "id": "judgeq-d-3-motive_search-b-mother_account_mask-v2",
+          "text": "誤解されかねない状況であるとご自身も分かっていたなら、その時点で沈黙を選ばれた判断の根拠をお答えください。"
+        },
+        {
+          "id": "judgeq-d-3-motive_search-b-mother_account_mask-v3",
+          "text": "名義と実際の出所の食い違いについて、説明の機会があったにもかかわらず後ろに送られた理由はどこにありますか。"
+        },
+        {
+          "id": "judgeq-d-3-motive_search-b-mother_account_mask-v4",
+          "text": "当時の選択を支えていた事情を、家庭内のいきさつごと順序立ててお話しください。"
+        },
+        {
+          "id": "judgeq-d-3-motive_search-b-mother_account_mask-v5",
+          "text": "ユン・ジョンフさん、名義と実際の出所の食い違いについて、ご自身の判断を支えていた理由をお答えください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "questionType": "empathy_approach",
+      "targetParty": "a",
+      "angleId": "mother_account_mask",
+      "variants": [
+        {
+          "id": "judgeq-d-3-empathy_approach-a-mother_account_mask-v1",
+          "text": "ユン・テソンさん、長年母を支えてこられたご自負と現実との隔たりに揺れた時間があったかと存じます。直接ご覧になった場面からお聞かせください。"
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-a-mother_account_mask-v2",
+          "text": "不安と確信のはざまで判断を固めていかれた経緯を、当時のお気持ちごとお話しいただけますか。"
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-a-mother_account_mask-v3",
+          "text": "ユン・ジョンフさんの動きを目にされた折々のお気持ちを、結論ではなく過程としてお話しください。"
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-a-mother_account_mask-v4",
+          "text": "名義と実際の出所の食い違いを前にされて言葉を選ばれた時間も含めて、率直にお答えいただきたいのです。"
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-a-mother_account_mask-v5",
+          "text": "ユン・テソンさん、ご自身を支えていた解釈について、その時点の心境ごとお話しいただけますか。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "questionType": "empathy_approach",
+      "targetParty": "b",
+      "angleId": "mother_account_mask",
+      "variants": [
+        {
+          "id": "judgeq-d-3-empathy_approach-b-mother_account_mask-v1",
+          "text": "ユン・ジョンフさん、母の傍らで手続きを担われたこと自体が、兄からどう映るかという重みを背負っておられたと存じます。直接の場面をお聞かせください。"
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-b-mother_account_mask-v2",
+          "text": "行動そのものよりも沈黙が誤解を広げた面があります。今この場で話せる範囲だけでも、名義と実際の出所の食い違いを整理してお話しください。"
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-b-mother_account_mask-v3",
+          "text": "名義と実際の出所の食い違いについて、いま胸の中にある事情を整理してお答えください。"
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-b-mother_account_mask-v4",
+          "text": "母の口座名義で残された入出金記録を伏せざるを得なかった事情があったのなら、その範囲だけでも先に明かしてください。"
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-b-mother_account_mask-v5",
+          "text": "ユン・ジョンフさん、兄に説明する前に立ち止まっていた理由を、率直にお話しください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "questionType": "fact_pursuit",
+      "targetParty": "a",
+      "angleId": "factory_crisis_support",
+      "variants": [
+        {
+          "id": "judgeq-d-3-fact_pursuit-a-factory_crisis_support-v1",
+          "text": "ユン・テソンさん、工場の危機時に動いた家計の助けについて、ご自身が直接ご覧になった場面と人づてに聞いた話とを時系列で分けてお答えください。"
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-a-factory_crisis_support-v2",
+          "text": "記録に残された手順とご自身の記憶が食い違う地点があれば、その一点に絞って事実関係を整理してください。"
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-a-factory_crisis_support-v3",
+          "text": "ユン・ジョンフさんの説明と、ご自身が確かめた資料との間でずれている部分を、まず資料単位でお示しください。"
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-a-factory_crisis_support-v4",
+          "text": "推定で埋めた部分と直接確かめた部分を分けたうえで、危機の時期に動いた金の経路についてご回答ください。"
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-a-factory_crisis_support-v5",
+          "text": "ユン・テソンさん、危機の時期に動いた金の経路について、ご自身が確認できた範囲を超えた断定は避けて整理してお答えください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "questionType": "fact_pursuit",
+      "targetParty": "b",
+      "angleId": "factory_crisis_support",
+      "variants": [
+        {
+          "id": "judgeq-d-3-fact_pursuit-b-factory_crisis_support-v1",
+          "text": "ユン・ジョンフさん、工場の危機時に動いた家計の助けに関わるご自身の動きを、日付ごとに時系列で整理してお答えください。"
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-b-factory_crisis_support-v2",
+          "text": "直接ご自身が行われた行為と、傍らで補助しただけだと述べてこられた行為とを、まずは分けてお示しください。"
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-b-factory_crisis_support-v3",
+          "text": "ユン・テソンさんの主張とご自身の説明が最も食い違う事実は何ですか。その地点から資料に沿ってご回答ください。"
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-b-factory_crisis_support-v4",
+          "text": "公証本、自筆本、口座記録のうち、現時点で認める項目とまだ争いたい項目とを分けてお答えください。"
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-b-factory_crisis_support-v5",
+          "text": "ユン・ジョンフさん、危機の時期に動いた金の経路について、まだ供述していない事実があれば先にお出しください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "questionType": "motive_search",
+      "targetParty": "a",
+      "angleId": "factory_crisis_support",
+      "variants": [
+        {
+          "id": "judgeq-d-3-motive_search-a-factory_crisis_support-v1",
+          "text": "ユン・テソンさん、別の解釈の余地があったにもかかわらず、特定の結論へ早く傾いた理由をお話しください。"
+        },
+        {
+          "id": "judgeq-d-3-motive_search-a-factory_crisis_support-v2",
+          "text": "危機の時期に動いた金の経路を見たとき、ご自身の中で先に立ち上がった解釈の背景を整理してお答えください。"
+        },
+        {
+          "id": "judgeq-d-3-motive_search-a-factory_crisis_support-v3",
+          "text": "ユン・ジョンフさんに直接確かめる前に判断を進めたと申されました。その動機を順序立ててご説明ください。"
+        },
+        {
+          "id": "judgeq-d-3-motive_search-a-factory_crisis_support-v4",
+          "text": "候補となる解釈の中から特定の一つを選び取った時点について、判断基準を先にお示しください。"
+        },
+        {
+          "id": "judgeq-d-3-motive_search-a-factory_crisis_support-v5",
+          "text": "ユン・テソンさん、危機の時期に動いた金の経路に関するご自身の判断の出発点を、率直にお答えください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "questionType": "motive_search",
+      "targetParty": "b",
+      "angleId": "factory_crisis_support",
+      "variants": [
+        {
+          "id": "judgeq-d-3-motive_search-b-factory_crisis_support-v1",
+          "text": "ユン・ジョンフさん、工場の危機時に動いた家計の助けが積み重なる間、兄に整理して伝えなかった理由をお話しください。"
+        },
+        {
+          "id": "judgeq-d-3-motive_search-b-factory_crisis_support-v2",
+          "text": "誤解されかねない状況であるとご自身も分かっていたなら、その時点で沈黙を選ばれた判断の根拠をお答えください。"
+        },
+        {
+          "id": "judgeq-d-3-motive_search-b-factory_crisis_support-v3",
+          "text": "危機の時期に動いた金の経路について、説明の機会があったにもかかわらず後ろに送られた理由はどこにありますか。"
+        },
+        {
+          "id": "judgeq-d-3-motive_search-b-factory_crisis_support-v4",
+          "text": "当時の選択を支えていた事情を、家庭内のいきさつごと順序立ててお話しください。"
+        },
+        {
+          "id": "judgeq-d-3-motive_search-b-factory_crisis_support-v5",
+          "text": "ユン・ジョンフさん、危機の時期に動いた金の経路について、ご自身の判断を支えていた理由をお答えください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "questionType": "empathy_approach",
+      "targetParty": "a",
+      "angleId": "factory_crisis_support",
+      "variants": [
+        {
+          "id": "judgeq-d-3-empathy_approach-a-factory_crisis_support-v1",
+          "text": "ユン・テソンさん、長年母を支えてこられたご自負と現実との隔たりに揺れた時間があったかと存じます。直接ご覧になった場面からお聞かせください。"
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-a-factory_crisis_support-v2",
+          "text": "不安と確信のはざまで判断を固めていかれた経緯を、当時のお気持ちごとお話しいただけますか。"
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-a-factory_crisis_support-v3",
+          "text": "ユン・ジョンフさんの動きを目にされた折々のお気持ちを、結論ではなく過程としてお話しください。"
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-a-factory_crisis_support-v4",
+          "text": "危機の時期に動いた金の経路を前にされて言葉を選ばれた時間も含めて、率直にお答えいただきたいのです。"
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-a-factory_crisis_support-v5",
+          "text": "ユン・テソンさん、ご自身を支えていた解釈について、その時点の心境ごとお話しいただけますか。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "questionType": "empathy_approach",
+      "targetParty": "b",
+      "angleId": "factory_crisis_support",
+      "variants": [
+        {
+          "id": "judgeq-d-3-empathy_approach-b-factory_crisis_support-v1",
+          "text": "ユン・ジョンフさん、母の傍らで手続きを担われたこと自体が、兄からどう映るかという重みを背負っておられたと存じます。直接の場面をお聞かせください。"
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-b-factory_crisis_support-v2",
+          "text": "行動そのものよりも沈黙が誤解を広げた面があります。今この場で話せる範囲だけでも、危機の時期に動いた金の経路を整理してお話しください。"
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-b-factory_crisis_support-v3",
+          "text": "危機の時期に動いた金の経路について、いま胸の中にある事情を整理してお答えください。"
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-b-factory_crisis_support-v4",
+          "text": "工場の危機時に動いた家計の助けを伏せざるを得なかった事情があったのなら、その範囲だけでも先に明かしてください。"
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-b-factory_crisis_support-v5",
+          "text": "ユン・ジョンフさん、兄に説明する前に立ち止まっていた理由を、率直にお話しください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "questionType": "fact_pursuit",
+      "targetParty": "a",
+      "angleId": "silence_over_pride",
+      "variants": [
+        {
+          "id": "judgeq-d-3-fact_pursuit-a-silence_over_pride-v1",
+          "text": "ユン・テソンさん、兄に直接渡さず母を経由した理由について、ご自身が直接ご覧になった場面と人づてに聞いた話とを時系列で分けてお答えください。"
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-a-silence_over_pride-v2",
+          "text": "記録に残された手順とご自身の記憶が食い違う地点があれば、その一点に絞って事実関係を整理してください。"
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-a-silence_over_pride-v3",
+          "text": "ユン・ジョンフさんの説明と、ご自身が確かめた資料との間でずれている部分を、まず資料単位でお示しください。"
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-a-silence_over_pride-v4",
+          "text": "推定で埋めた部分と直接確かめた部分を分けたうえで、直接渡さなかった事情についてご回答ください。"
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-a-silence_over_pride-v5",
+          "text": "ユン・テソンさん、直接渡さなかった事情について、ご自身が確認できた範囲を超えた断定は避けて整理してお答えください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "questionType": "fact_pursuit",
+      "targetParty": "b",
+      "angleId": "silence_over_pride",
+      "variants": [
+        {
+          "id": "judgeq-d-3-fact_pursuit-b-silence_over_pride-v1",
+          "text": "ユン・ジョンフさん、兄に直接渡さず母を経由した理由に関わるご自身の動きを、日付ごとに時系列で整理してお答えください。"
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-b-silence_over_pride-v2",
+          "text": "直接ご自身が行われた行為と、傍らで補助しただけだと述べてこられた行為とを、まずは分けてお示しください。"
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-b-silence_over_pride-v3",
+          "text": "ユン・テソンさんの主張とご自身の説明が最も食い違う事実は何ですか。その地点から資料に沿ってご回答ください。"
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-b-silence_over_pride-v4",
+          "text": "公証本、自筆本、口座記録のうち、現時点で認める項目とまだ争いたい項目とを分けてお答えください。"
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-b-silence_over_pride-v5",
+          "text": "ユン・ジョンフさん、直接渡さなかった事情について、まだ供述していない事実があれば先にお出しください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "questionType": "motive_search",
+      "targetParty": "a",
+      "angleId": "silence_over_pride",
+      "variants": [
+        {
+          "id": "judgeq-d-3-motive_search-a-silence_over_pride-v1",
+          "text": "ユン・テソンさん、別の解釈の余地があったにもかかわらず、特定の結論へ早く傾いた理由をお話しください。"
+        },
+        {
+          "id": "judgeq-d-3-motive_search-a-silence_over_pride-v2",
+          "text": "直接渡さなかった事情を見たとき、ご自身の中で先に立ち上がった解釈の背景を整理してお答えください。"
+        },
+        {
+          "id": "judgeq-d-3-motive_search-a-silence_over_pride-v3",
+          "text": "ユン・ジョンフさんに直接確かめる前に判断を進めたと申されました。その動機を順序立ててご説明ください。"
+        },
+        {
+          "id": "judgeq-d-3-motive_search-a-silence_over_pride-v4",
+          "text": "候補となる解釈の中から特定の一つを選び取った時点について、判断基準を先にお示しください。"
+        },
+        {
+          "id": "judgeq-d-3-motive_search-a-silence_over_pride-v5",
+          "text": "ユン・テソンさん、直接渡さなかった事情に関するご自身の判断の出発点を、率直にお答えください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "questionType": "motive_search",
+      "targetParty": "b",
+      "angleId": "silence_over_pride",
+      "variants": [
+        {
+          "id": "judgeq-d-3-motive_search-b-silence_over_pride-v1",
+          "text": "ユン・ジョンフさん、兄に直接渡さず母を経由した理由が積み重なる間、兄に整理して伝えなかった理由をお話しください。"
+        },
+        {
+          "id": "judgeq-d-3-motive_search-b-silence_over_pride-v2",
+          "text": "誤解されかねない状況であるとご自身も分かっていたなら、その時点で沈黙を選ばれた判断の根拠をお答えください。"
+        },
+        {
+          "id": "judgeq-d-3-motive_search-b-silence_over_pride-v3",
+          "text": "直接渡さなかった事情について、説明の機会があったにもかかわらず後ろに送られた理由はどこにありますか。"
+        },
+        {
+          "id": "judgeq-d-3-motive_search-b-silence_over_pride-v4",
+          "text": "当時の選択を支えていた事情を、家庭内のいきさつごと順序立ててお話しください。"
+        },
+        {
+          "id": "judgeq-d-3-motive_search-b-silence_over_pride-v5",
+          "text": "ユン・ジョンフさん、直接渡さなかった事情について、ご自身の判断を支えていた理由をお答えください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "questionType": "empathy_approach",
+      "targetParty": "a",
+      "angleId": "silence_over_pride",
+      "variants": [
+        {
+          "id": "judgeq-d-3-empathy_approach-a-silence_over_pride-v1",
+          "text": "ユン・テソンさん、長年母を支えてこられたご自負と現実との隔たりに揺れた時間があったかと存じます。直接ご覧になった場面からお聞かせください。"
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-a-silence_over_pride-v2",
+          "text": "不安と確信のはざまで判断を固めていかれた経緯を、当時のお気持ちごとお話しいただけますか。"
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-a-silence_over_pride-v3",
+          "text": "ユン・ジョンフさんの動きを目にされた折々のお気持ちを、結論ではなく過程としてお話しください。"
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-a-silence_over_pride-v4",
+          "text": "直接渡さなかった事情を前にされて言葉を選ばれた時間も含めて、率直にお答えいただきたいのです。"
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-a-silence_over_pride-v5",
+          "text": "ユン・テソンさん、ご自身を支えていた解釈について、その時点の心境ごとお話しいただけますか。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "questionType": "empathy_approach",
+      "targetParty": "b",
+      "angleId": "silence_over_pride",
+      "variants": [
+        {
+          "id": "judgeq-d-3-empathy_approach-b-silence_over_pride-v1",
+          "text": "ユン・ジョンフさん、母の傍らで手続きを担われたこと自体が、兄からどう映るかという重みを背負っておられたと存じます。直接の場面をお聞かせください。"
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-b-silence_over_pride-v2",
+          "text": "行動そのものよりも沈黙が誤解を広げた面があります。今この場で話せる範囲だけでも、直接渡さなかった事情を整理してお話しください。"
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-b-silence_over_pride-v3",
+          "text": "直接渡さなかった事情について、いま胸の中にある事情を整理してお答えください。"
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-b-silence_over_pride-v4",
+          "text": "兄に直接渡さず母を経由した理由を伏せざるを得なかった事情があったのなら、その範囲だけでも先に明かしてください。"
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-b-silence_over_pride-v5",
+          "text": "ユン・ジョンフさん、兄に説明する前に立ち止まっていた理由を、率直にお話しください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "questionType": "fact_pursuit",
+      "targetParty": "a",
+      "angleId": "general",
+      "variants": [
+        {
+          "id": "judgeq-d-4-fact_pursuit-a-general-v1",
+          "text": "ユン・テソンさん、遺書作成の場面と母の状態をめぐる経緯について、ご自身が直接ご覧になった場面と人づてに聞いた話とを時系列で分けてお答えください。"
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-a-general-v2",
+          "text": "記録に残された手順とご自身の記憶が食い違う地点があれば、その一点に絞って事実関係を整理してください。"
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-a-general-v3",
+          "text": "ユン・ジョンフさんの説明と、ご自身が確かめた資料との間でずれている部分を、まず資料単位でお示しください。"
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-a-general-v4",
+          "text": "推定で埋めた部分と直接確かめた部分を分けたうえで、直接見た場面と聞いて知った話の区別についてご回答ください。"
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-a-general-v5",
+          "text": "ユン・テソンさん、直接見た場面と聞いて知った話の区別について、ご自身が確認できた範囲を超えた断定は避けて整理してお答えください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "questionType": "fact_pursuit",
+      "targetParty": "b",
+      "angleId": "general",
+      "variants": [
+        {
+          "id": "judgeq-d-4-fact_pursuit-b-general-v1",
+          "text": "ユン・ジョンフさん、遺書作成の場面と母の状態をめぐる経緯に関わるご自身の動きを、日付ごとに時系列で整理してお答えください。"
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-b-general-v2",
+          "text": "直接ご自身が行われた行為と、傍らで補助しただけだと述べてこられた行為とを、まずは分けてお示しください。"
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-b-general-v3",
+          "text": "ユン・テソンさんの主張とご自身の説明が最も食い違う事実は何ですか。その地点から資料に沿ってご回答ください。"
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-b-general-v4",
+          "text": "公証本、自筆本、口座記録のうち、現時点で認める項目とまだ争いたい項目とを分けてお答えください。"
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-b-general-v5",
+          "text": "ユン・ジョンフさん、直接見た場面と聞いて知った話の区別について、まだ供述していない事実があれば先にお出しください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "questionType": "motive_search",
+      "targetParty": "a",
+      "angleId": "general",
+      "variants": [
+        {
+          "id": "judgeq-d-4-motive_search-a-general-v1",
+          "text": "ユン・テソンさん、別の解釈の余地があったにもかかわらず、特定の結論へ早く傾いた理由をお話しください。"
+        },
+        {
+          "id": "judgeq-d-4-motive_search-a-general-v2",
+          "text": "直接見た場面と聞いて知った話の区別を見たとき、ご自身の中で先に立ち上がった解釈の背景を整理してお答えください。"
+        },
+        {
+          "id": "judgeq-d-4-motive_search-a-general-v3",
+          "text": "ユン・ジョンフさんに直接確かめる前に判断を進めたと申されました。その動機を順序立ててご説明ください。"
+        },
+        {
+          "id": "judgeq-d-4-motive_search-a-general-v4",
+          "text": "候補となる解釈の中から特定の一つを選び取った時点について、判断基準を先にお示しください。"
+        },
+        {
+          "id": "judgeq-d-4-motive_search-a-general-v5",
+          "text": "ユン・テソンさん、直接見た場面と聞いて知った話の区別に関するご自身の判断の出発点を、率直にお答えください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "questionType": "motive_search",
+      "targetParty": "b",
+      "angleId": "general",
+      "variants": [
+        {
+          "id": "judgeq-d-4-motive_search-b-general-v1",
+          "text": "ユン・ジョンフさん、遺書作成の場面と母の状態をめぐる経緯が積み重なる間、兄に整理して伝えなかった理由をお話しください。"
+        },
+        {
+          "id": "judgeq-d-4-motive_search-b-general-v2",
+          "text": "誤解されかねない状況であるとご自身も分かっていたなら、その時点で沈黙を選ばれた判断の根拠をお答えください。"
+        },
+        {
+          "id": "judgeq-d-4-motive_search-b-general-v3",
+          "text": "直接見た場面と聞いて知った話の区別について、説明の機会があったにもかかわらず後ろに送られた理由はどこにありますか。"
+        },
+        {
+          "id": "judgeq-d-4-motive_search-b-general-v4",
+          "text": "当時の選択を支えていた事情を、家庭内のいきさつごと順序立ててお話しください。"
+        },
+        {
+          "id": "judgeq-d-4-motive_search-b-general-v5",
+          "text": "ユン・ジョンフさん、直接見た場面と聞いて知った話の区別について、ご自身の判断を支えていた理由をお答えください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "questionType": "empathy_approach",
+      "targetParty": "a",
+      "angleId": "general",
+      "variants": [
+        {
+          "id": "judgeq-d-4-empathy_approach-a-general-v1",
+          "text": "ユン・テソンさん、長年母を支えてこられたご自負と現実との隔たりに揺れた時間があったかと存じます。直接ご覧になった場面からお聞かせください。"
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-a-general-v2",
+          "text": "不安と確信のはざまで判断を固めていかれた経緯を、当時のお気持ちごとお話しいただけますか。"
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-a-general-v3",
+          "text": "ユン・ジョンフさんの動きを目にされた折々のお気持ちを、結論ではなく過程としてお話しください。"
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-a-general-v4",
+          "text": "直接見た場面と聞いて知った話の区別を前にされて言葉を選ばれた時間も含めて、率直にお答えいただきたいのです。"
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-a-general-v5",
+          "text": "ユン・テソンさん、ご自身を支えていた解釈について、その時点の心境ごとお話しいただけますか。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "questionType": "empathy_approach",
+      "targetParty": "b",
+      "angleId": "general",
+      "variants": [
+        {
+          "id": "judgeq-d-4-empathy_approach-b-general-v1",
+          "text": "ユン・ジョンフさん、母の傍らで手続きを担われたこと自体が、兄からどう映るかという重みを背負っておられたと存じます。直接の場面をお聞かせください。"
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-b-general-v2",
+          "text": "行動そのものよりも沈黙が誤解を広げた面があります。今この場で話せる範囲だけでも、直接見た場面と聞いて知った話の区別を整理してお話しください。"
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-b-general-v3",
+          "text": "直接見た場面と聞いて知った話の区別について、いま胸の中にある事情を整理してお答えください。"
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-b-general-v4",
+          "text": "遺書作成の場面と母の状態をめぐる経緯を伏せざるを得なかった事情があったのなら、その範囲だけでも先に明かしてください。"
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-b-general-v5",
+          "text": "ユン・ジョンフさん、兄に説明する前に立ち止まっていた理由を、率直にお話しください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "questionType": "fact_pursuit",
+      "targetParty": "a",
+      "angleId": "diary_discovery",
+      "variants": [
+        {
+          "id": "judgeq-d-4-fact_pursuit-a-diary_discovery-v1",
+          "text": "ユン・テソンさん、母の日記の発見と保管の経緯について、ご自身が直接ご覧になった場面と人づてに聞いた話とを時系列で分けてお答えください。"
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-a-diary_discovery-v2",
+          "text": "記録に残された手順とご自身の記憶が食い違う地点があれば、その一点に絞って事実関係を整理してください。"
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-a-diary_discovery-v3",
+          "text": "ユン・ジョンフさんの説明と、ご自身が確かめた資料との間でずれている部分を、まず資料単位でお示しください。"
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-a-diary_discovery-v4",
+          "text": "推定で埋めた部分と直接確かめた部分を分けたうえで、日記を見つけた時点と扱いについてご回答ください。"
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-a-diary_discovery-v5",
+          "text": "ユン・テソンさん、日記を見つけた時点と扱いについて、ご自身が確認できた範囲を超えた断定は避けて整理してお答えください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "questionType": "fact_pursuit",
+      "targetParty": "b",
+      "angleId": "diary_discovery",
+      "variants": [
+        {
+          "id": "judgeq-d-4-fact_pursuit-b-diary_discovery-v1",
+          "text": "ユン・ジョンフさん、母の日記の発見と保管の経緯に関わるご自身の動きを、日付ごとに時系列で整理してお答えください。"
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-b-diary_discovery-v2",
+          "text": "直接ご自身が行われた行為と、傍らで補助しただけだと述べてこられた行為とを、まずは分けてお示しください。"
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-b-diary_discovery-v3",
+          "text": "ユン・テソンさんの主張とご自身の説明が最も食い違う事実は何ですか。その地点から資料に沿ってご回答ください。"
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-b-diary_discovery-v4",
+          "text": "公証本、自筆本、口座記録のうち、現時点で認める項目とまだ争いたい項目とを分けてお答えください。"
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-b-diary_discovery-v5",
+          "text": "ユン・ジョンフさん、日記を見つけた時点と扱いについて、まだ供述していない事実があれば先にお出しください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "questionType": "motive_search",
+      "targetParty": "a",
+      "angleId": "diary_discovery",
+      "variants": [
+        {
+          "id": "judgeq-d-4-motive_search-a-diary_discovery-v1",
+          "text": "ユン・テソンさん、別の解釈の余地があったにもかかわらず、特定の結論へ早く傾いた理由をお話しください。"
+        },
+        {
+          "id": "judgeq-d-4-motive_search-a-diary_discovery-v2",
+          "text": "日記を見つけた時点と扱いを見たとき、ご自身の中で先に立ち上がった解釈の背景を整理してお答えください。"
+        },
+        {
+          "id": "judgeq-d-4-motive_search-a-diary_discovery-v3",
+          "text": "ユン・ジョンフさんに直接確かめる前に判断を進めたと申されました。その動機を順序立ててご説明ください。"
+        },
+        {
+          "id": "judgeq-d-4-motive_search-a-diary_discovery-v4",
+          "text": "候補となる解釈の中から特定の一つを選び取った時点について、判断基準を先にお示しください。"
+        },
+        {
+          "id": "judgeq-d-4-motive_search-a-diary_discovery-v5",
+          "text": "ユン・テソンさん、日記を見つけた時点と扱いに関するご自身の判断の出発点を、率直にお答えください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "questionType": "motive_search",
+      "targetParty": "b",
+      "angleId": "diary_discovery",
+      "variants": [
+        {
+          "id": "judgeq-d-4-motive_search-b-diary_discovery-v1",
+          "text": "ユン・ジョンフさん、母の日記の発見と保管の経緯が積み重なる間、兄に整理して伝えなかった理由をお話しください。"
+        },
+        {
+          "id": "judgeq-d-4-motive_search-b-diary_discovery-v2",
+          "text": "誤解されかねない状況であるとご自身も分かっていたなら、その時点で沈黙を選ばれた判断の根拠をお答えください。"
+        },
+        {
+          "id": "judgeq-d-4-motive_search-b-diary_discovery-v3",
+          "text": "日記を見つけた時点と扱いについて、説明の機会があったにもかかわらず後ろに送られた理由はどこにありますか。"
+        },
+        {
+          "id": "judgeq-d-4-motive_search-b-diary_discovery-v4",
+          "text": "当時の選択を支えていた事情を、家庭内のいきさつごと順序立ててお話しください。"
+        },
+        {
+          "id": "judgeq-d-4-motive_search-b-diary_discovery-v5",
+          "text": "ユン・ジョンフさん、日記を見つけた時点と扱いについて、ご自身の判断を支えていた理由をお答えください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "questionType": "empathy_approach",
+      "targetParty": "a",
+      "angleId": "diary_discovery",
+      "variants": [
+        {
+          "id": "judgeq-d-4-empathy_approach-a-diary_discovery-v1",
+          "text": "ユン・テソンさん、長年母を支えてこられたご自負と現実との隔たりに揺れた時間があったかと存じます。直接ご覧になった場面からお聞かせください。"
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-a-diary_discovery-v2",
+          "text": "不安と確信のはざまで判断を固めていかれた経緯を、当時のお気持ちごとお話しいただけますか。"
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-a-diary_discovery-v3",
+          "text": "ユン・ジョンフさんの動きを目にされた折々のお気持ちを、結論ではなく過程としてお話しください。"
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-a-diary_discovery-v4",
+          "text": "日記を見つけた時点と扱いを前にされて言葉を選ばれた時間も含めて、率直にお答えいただきたいのです。"
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-a-diary_discovery-v5",
+          "text": "ユン・テソンさん、ご自身を支えていた解釈について、その時点の心境ごとお話しいただけますか。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "questionType": "empathy_approach",
+      "targetParty": "b",
+      "angleId": "diary_discovery",
+      "variants": [
+        {
+          "id": "judgeq-d-4-empathy_approach-b-diary_discovery-v1",
+          "text": "ユン・ジョンフさん、母の傍らで手続きを担われたこと自体が、兄からどう映るかという重みを背負っておられたと存じます。直接の場面をお聞かせください。"
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-b-diary_discovery-v2",
+          "text": "行動そのものよりも沈黙が誤解を広げた面があります。今この場で話せる範囲だけでも、日記を見つけた時点と扱いを整理してお話しください。"
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-b-diary_discovery-v3",
+          "text": "日記を見つけた時点と扱いについて、いま胸の中にある事情を整理してお答えください。"
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-b-diary_discovery-v4",
+          "text": "母の日記の発見と保管の経緯を伏せざるを得なかった事情があったのなら、その範囲だけでも先に明かしてください。"
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-b-diary_discovery-v5",
+          "text": "ユン・ジョンフさん、兄に説明する前に立ち止まっていた理由を、率直にお話しください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "questionType": "fact_pursuit",
+      "targetParty": "a",
+      "angleId": "sealed_family_record",
+      "variants": [
+        {
+          "id": "judgeq-d-4-fact_pursuit-a-sealed_family_record-v1",
+          "text": "ユン・テソンさん、封印されていた家族記録の存在について、ご自身が直接ご覧になった場面と人づてに聞いた話とを時系列で分けてお答えください。"
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-a-sealed_family_record-v2",
+          "text": "記録に残された手順とご自身の記憶が食い違う地点があれば、その一点に絞って事実関係を整理してください。"
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-a-sealed_family_record-v3",
+          "text": "ユン・ジョンフさんの説明と、ご自身が確かめた資料との間でずれている部分を、まず資料単位でお示しください。"
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-a-sealed_family_record-v4",
+          "text": "推定で埋めた部分と直接確かめた部分を分けたうえで、封印の保管場所と開封の時点についてご回答ください。"
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-a-sealed_family_record-v5",
+          "text": "ユン・テソンさん、封印の保管場所と開封の時点について、ご自身が確認できた範囲を超えた断定は避けて整理してお答えください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "questionType": "fact_pursuit",
+      "targetParty": "b",
+      "angleId": "sealed_family_record",
+      "variants": [
+        {
+          "id": "judgeq-d-4-fact_pursuit-b-sealed_family_record-v1",
+          "text": "ユン・ジョンフさん、封印されていた家族記録の存在に関わるご自身の動きを、日付ごとに時系列で整理してお答えください。"
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-b-sealed_family_record-v2",
+          "text": "直接ご自身が行われた行為と、傍らで補助しただけだと述べてこられた行為とを、まずは分けてお示しください。"
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-b-sealed_family_record-v3",
+          "text": "ユン・テソンさんの主張とご自身の説明が最も食い違う事実は何ですか。その地点から資料に沿ってご回答ください。"
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-b-sealed_family_record-v4",
+          "text": "公証本、自筆本、口座記録のうち、現時点で認める項目とまだ争いたい項目とを分けてお答えください。"
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-b-sealed_family_record-v5",
+          "text": "ユン・ジョンフさん、封印の保管場所と開封の時点について、まだ供述していない事実があれば先にお出しください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "questionType": "motive_search",
+      "targetParty": "a",
+      "angleId": "sealed_family_record",
+      "variants": [
+        {
+          "id": "judgeq-d-4-motive_search-a-sealed_family_record-v1",
+          "text": "ユン・テソンさん、別の解釈の余地があったにもかかわらず、特定の結論へ早く傾いた理由をお話しください。"
+        },
+        {
+          "id": "judgeq-d-4-motive_search-a-sealed_family_record-v2",
+          "text": "封印の保管場所と開封の時点を見たとき、ご自身の中で先に立ち上がった解釈の背景を整理してお答えください。"
+        },
+        {
+          "id": "judgeq-d-4-motive_search-a-sealed_family_record-v3",
+          "text": "ユン・ジョンフさんに直接確かめる前に判断を進めたと申されました。その動機を順序立ててご説明ください。"
+        },
+        {
+          "id": "judgeq-d-4-motive_search-a-sealed_family_record-v4",
+          "text": "候補となる解釈の中から特定の一つを選び取った時点について、判断基準を先にお示しください。"
+        },
+        {
+          "id": "judgeq-d-4-motive_search-a-sealed_family_record-v5",
+          "text": "ユン・テソンさん、封印の保管場所と開封の時点に関するご自身の判断の出発点を、率直にお答えください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "questionType": "motive_search",
+      "targetParty": "b",
+      "angleId": "sealed_family_record",
+      "variants": [
+        {
+          "id": "judgeq-d-4-motive_search-b-sealed_family_record-v1",
+          "text": "ユン・ジョンフさん、封印されていた家族記録の存在が積み重なる間、兄に整理して伝えなかった理由をお話しください。"
+        },
+        {
+          "id": "judgeq-d-4-motive_search-b-sealed_family_record-v2",
+          "text": "誤解されかねない状況であるとご自身も分かっていたなら、その時点で沈黙を選ばれた判断の根拠をお答えください。"
+        },
+        {
+          "id": "judgeq-d-4-motive_search-b-sealed_family_record-v3",
+          "text": "封印の保管場所と開封の時点について、説明の機会があったにもかかわらず後ろに送られた理由はどこにありますか。"
+        },
+        {
+          "id": "judgeq-d-4-motive_search-b-sealed_family_record-v4",
+          "text": "当時の選択を支えていた事情を、家庭内のいきさつごと順序立ててお話しください。"
+        },
+        {
+          "id": "judgeq-d-4-motive_search-b-sealed_family_record-v5",
+          "text": "ユン・ジョンフさん、封印の保管場所と開封の時点について、ご自身の判断を支えていた理由をお答えください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "questionType": "empathy_approach",
+      "targetParty": "a",
+      "angleId": "sealed_family_record",
+      "variants": [
+        {
+          "id": "judgeq-d-4-empathy_approach-a-sealed_family_record-v1",
+          "text": "ユン・テソンさん、長年母を支えてこられたご自負と現実との隔たりに揺れた時間があったかと存じます。直接ご覧になった場面からお聞かせください。"
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-a-sealed_family_record-v2",
+          "text": "不安と確信のはざまで判断を固めていかれた経緯を、当時のお気持ちごとお話しいただけますか。"
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-a-sealed_family_record-v3",
+          "text": "ユン・ジョンフさんの動きを目にされた折々のお気持ちを、結論ではなく過程としてお話しください。"
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-a-sealed_family_record-v4",
+          "text": "封印の保管場所と開封の時点を前にされて言葉を選ばれた時間も含めて、率直にお答えいただきたいのです。"
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-a-sealed_family_record-v5",
+          "text": "ユン・テソンさん、ご自身を支えていた解釈について、その時点の心境ごとお話しいただけますか。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "questionType": "empathy_approach",
+      "targetParty": "b",
+      "angleId": "sealed_family_record",
+      "variants": [
+        {
+          "id": "judgeq-d-4-empathy_approach-b-sealed_family_record-v1",
+          "text": "ユン・ジョンフさん、母の傍らで手続きを担われたこと自体が、兄からどう映るかという重みを背負っておられたと存じます。直接の場面をお聞かせください。"
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-b-sealed_family_record-v2",
+          "text": "行動そのものよりも沈黙が誤解を広げた面があります。今この場で話せる範囲だけでも、封印の保管場所と開封の時点を整理してお話しください。"
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-b-sealed_family_record-v3",
+          "text": "封印の保管場所と開封の時点について、いま胸の中にある事情を整理してお答えください。"
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-b-sealed_family_record-v4",
+          "text": "封印されていた家族記録の存在を伏せざるを得なかった事情があったのなら、その範囲だけでも先に明かしてください。"
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-b-sealed_family_record-v5",
+          "text": "ユン・ジョンフさん、兄に説明する前に立ち止まっていた理由を、率直にお話しください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "questionType": "fact_pursuit",
+      "targetParty": "a",
+      "angleId": "silence_reason",
+      "variants": [
+        {
+          "id": "judgeq-d-4-fact_pursuit-a-silence_reason-v1",
+          "text": "ユン・テソンさん、長年その話題に口を閉ざしていた理由について、ご自身が直接ご覧になった場面と人づてに聞いた話とを時系列で分けてお答えください。"
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-a-silence_reason-v2",
+          "text": "記録に残された手順とご自身の記憶が食い違う地点があれば、その一点に絞って事実関係を整理してください。"
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-a-silence_reason-v3",
+          "text": "ユン・ジョンフさんの説明と、ご自身が確かめた資料との間でずれている部分を、まず資料単位でお示しください。"
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-a-silence_reason-v4",
+          "text": "推定で埋めた部分と直接確かめた部分を分けたうえで、沈黙を選んだ判断の経緯についてご回答ください。"
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-a-silence_reason-v5",
+          "text": "ユン・テソンさん、沈黙を選んだ判断の経緯について、ご自身が確認できた範囲を超えた断定は避けて整理してお答えください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "questionType": "fact_pursuit",
+      "targetParty": "b",
+      "angleId": "silence_reason",
+      "variants": [
+        {
+          "id": "judgeq-d-4-fact_pursuit-b-silence_reason-v1",
+          "text": "ユン・ジョンフさん、長年その話題に口を閉ざしていた理由に関わるご自身の動きを、日付ごとに時系列で整理してお答えください。"
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-b-silence_reason-v2",
+          "text": "直接ご自身が行われた行為と、傍らで補助しただけだと述べてこられた行為とを、まずは分けてお示しください。"
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-b-silence_reason-v3",
+          "text": "ユン・テソンさんの主張とご自身の説明が最も食い違う事実は何ですか。その地点から資料に沿ってご回答ください。"
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-b-silence_reason-v4",
+          "text": "公証本、自筆本、口座記録のうち、現時点で認める項目とまだ争いたい項目とを分けてお答えください。"
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-b-silence_reason-v5",
+          "text": "ユン・ジョンフさん、沈黙を選んだ判断の経緯について、まだ供述していない事実があれば先にお出しください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "questionType": "motive_search",
+      "targetParty": "a",
+      "angleId": "silence_reason",
+      "variants": [
+        {
+          "id": "judgeq-d-4-motive_search-a-silence_reason-v1",
+          "text": "ユン・テソンさん、別の解釈の余地があったにもかかわらず、特定の結論へ早く傾いた理由をお話しください。"
+        },
+        {
+          "id": "judgeq-d-4-motive_search-a-silence_reason-v2",
+          "text": "沈黙を選んだ判断の経緯を見たとき、ご自身の中で先に立ち上がった解釈の背景を整理してお答えください。"
+        },
+        {
+          "id": "judgeq-d-4-motive_search-a-silence_reason-v3",
+          "text": "ユン・ジョンフさんに直接確かめる前に判断を進めたと申されました。その動機を順序立ててご説明ください。"
+        },
+        {
+          "id": "judgeq-d-4-motive_search-a-silence_reason-v4",
+          "text": "候補となる解釈の中から特定の一つを選び取った時点について、判断基準を先にお示しください。"
+        },
+        {
+          "id": "judgeq-d-4-motive_search-a-silence_reason-v5",
+          "text": "ユン・テソンさん、沈黙を選んだ判断の経緯に関するご自身の判断の出発点を、率直にお答えください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "questionType": "motive_search",
+      "targetParty": "b",
+      "angleId": "silence_reason",
+      "variants": [
+        {
+          "id": "judgeq-d-4-motive_search-b-silence_reason-v1",
+          "text": "ユン・ジョンフさん、長年その話題に口を閉ざしていた理由が積み重なる間、兄に整理して伝えなかった理由をお話しください。"
+        },
+        {
+          "id": "judgeq-d-4-motive_search-b-silence_reason-v2",
+          "text": "誤解されかねない状況であるとご自身も分かっていたなら、その時点で沈黙を選ばれた判断の根拠をお答えください。"
+        },
+        {
+          "id": "judgeq-d-4-motive_search-b-silence_reason-v3",
+          "text": "沈黙を選んだ判断の経緯について、説明の機会があったにもかかわらず後ろに送られた理由はどこにありますか。"
+        },
+        {
+          "id": "judgeq-d-4-motive_search-b-silence_reason-v4",
+          "text": "当時の選択を支えていた事情を、家庭内のいきさつごと順序立ててお話しください。"
+        },
+        {
+          "id": "judgeq-d-4-motive_search-b-silence_reason-v5",
+          "text": "ユン・ジョンフさん、沈黙を選んだ判断の経緯について、ご自身の判断を支えていた理由をお答えください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "questionType": "empathy_approach",
+      "targetParty": "a",
+      "angleId": "silence_reason",
+      "variants": [
+        {
+          "id": "judgeq-d-4-empathy_approach-a-silence_reason-v1",
+          "text": "ユン・テソンさん、長年母を支えてこられたご自負と現実との隔たりに揺れた時間があったかと存じます。直接ご覧になった場面からお聞かせください。"
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-a-silence_reason-v2",
+          "text": "不安と確信のはざまで判断を固めていかれた経緯を、当時のお気持ちごとお話しいただけますか。"
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-a-silence_reason-v3",
+          "text": "ユン・ジョンフさんの動きを目にされた折々のお気持ちを、結論ではなく過程としてお話しください。"
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-a-silence_reason-v4",
+          "text": "沈黙を選んだ判断の経緯を前にされて言葉を選ばれた時間も含めて、率直にお答えいただきたいのです。"
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-a-silence_reason-v5",
+          "text": "ユン・テソンさん、ご自身を支えていた解釈について、その時点の心境ごとお話しいただけますか。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "questionType": "empathy_approach",
+      "targetParty": "b",
+      "angleId": "silence_reason",
+      "variants": [
+        {
+          "id": "judgeq-d-4-empathy_approach-b-silence_reason-v1",
+          "text": "ユン・ジョンフさん、母の傍らで手続きを担われたこと自体が、兄からどう映るかという重みを背負っておられたと存じます。直接の場面をお聞かせください。"
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-b-silence_reason-v2",
+          "text": "行動そのものよりも沈黙が誤解を広げた面があります。今この場で話せる範囲だけでも、沈黙を選んだ判断の経緯を整理してお話しください。"
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-b-silence_reason-v3",
+          "text": "沈黙を選んだ判断の経緯について、いま胸の中にある事情を整理してお答えください。"
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-b-silence_reason-v4",
+          "text": "長年その話題に口を閉ざしていた理由を伏せざるを得なかった事情があったのなら、その範囲だけでも先に明かしてください。"
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-b-silence_reason-v5",
+          "text": "ユン・ジョンフさん、兄に説明する前に立ち止まっていた理由を、率直にお話しください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "questionType": "fact_pursuit",
+      "targetParty": "a",
+      "angleId": "will_link",
+      "variants": [
+        {
+          "id": "judgeq-d-4-fact_pursuit-a-will_link-v1",
+          "text": "ユン・テソンさん、日記や家族記録と遺書の比率の関連について、ご自身が直接ご覧になった場面と人づてに聞いた話とを時系列で分けてお答えください。"
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-a-will_link-v2",
+          "text": "記録に残された手順とご自身の記憶が食い違う地点があれば、その一点に絞って事実関係を整理してください。"
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-a-will_link-v3",
+          "text": "ユン・ジョンフさんの説明と、ご自身が確かめた資料との間でずれている部分を、まず資料単位でお示しください。"
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-a-will_link-v4",
+          "text": "推定で埋めた部分と直接確かめた部分を分けたうえで、記録と遺書条項のつながりについてご回答ください。"
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-a-will_link-v5",
+          "text": "ユン・テソンさん、記録と遺書条項のつながりについて、ご自身が確認できた範囲を超えた断定は避けて整理してお答えください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "questionType": "fact_pursuit",
+      "targetParty": "b",
+      "angleId": "will_link",
+      "variants": [
+        {
+          "id": "judgeq-d-4-fact_pursuit-b-will_link-v1",
+          "text": "ユン・ジョンフさん、日記や家族記録と遺書の比率の関連に関わるご自身の動きを、日付ごとに時系列で整理してお答えください。"
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-b-will_link-v2",
+          "text": "直接ご自身が行われた行為と、傍らで補助しただけだと述べてこられた行為とを、まずは分けてお示しください。"
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-b-will_link-v3",
+          "text": "ユン・テソンさんの主張とご自身の説明が最も食い違う事実は何ですか。その地点から資料に沿ってご回答ください。"
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-b-will_link-v4",
+          "text": "公証本、自筆本、口座記録のうち、現時点で認める項目とまだ争いたい項目とを分けてお答えください。"
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-b-will_link-v5",
+          "text": "ユン・ジョンフさん、記録と遺書条項のつながりについて、まだ供述していない事実があれば先にお出しください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "questionType": "motive_search",
+      "targetParty": "a",
+      "angleId": "will_link",
+      "variants": [
+        {
+          "id": "judgeq-d-4-motive_search-a-will_link-v1",
+          "text": "ユン・テソンさん、別の解釈の余地があったにもかかわらず、特定の結論へ早く傾いた理由をお話しください。"
+        },
+        {
+          "id": "judgeq-d-4-motive_search-a-will_link-v2",
+          "text": "記録と遺書条項のつながりを見たとき、ご自身の中で先に立ち上がった解釈の背景を整理してお答えください。"
+        },
+        {
+          "id": "judgeq-d-4-motive_search-a-will_link-v3",
+          "text": "ユン・ジョンフさんに直接確かめる前に判断を進めたと申されました。その動機を順序立ててご説明ください。"
+        },
+        {
+          "id": "judgeq-d-4-motive_search-a-will_link-v4",
+          "text": "候補となる解釈の中から特定の一つを選び取った時点について、判断基準を先にお示しください。"
+        },
+        {
+          "id": "judgeq-d-4-motive_search-a-will_link-v5",
+          "text": "ユン・テソンさん、記録と遺書条項のつながりに関するご自身の判断の出発点を、率直にお答えください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "questionType": "motive_search",
+      "targetParty": "b",
+      "angleId": "will_link",
+      "variants": [
+        {
+          "id": "judgeq-d-4-motive_search-b-will_link-v1",
+          "text": "ユン・ジョンフさん、日記や家族記録と遺書の比率の関連が積み重なる間、兄に整理して伝えなかった理由をお話しください。"
+        },
+        {
+          "id": "judgeq-d-4-motive_search-b-will_link-v2",
+          "text": "誤解されかねない状況であるとご自身も分かっていたなら、その時点で沈黙を選ばれた判断の根拠をお答えください。"
+        },
+        {
+          "id": "judgeq-d-4-motive_search-b-will_link-v3",
+          "text": "記録と遺書条項のつながりについて、説明の機会があったにもかかわらず後ろに送られた理由はどこにありますか。"
+        },
+        {
+          "id": "judgeq-d-4-motive_search-b-will_link-v4",
+          "text": "当時の選択を支えていた事情を、家庭内のいきさつごと順序立ててお話しください。"
+        },
+        {
+          "id": "judgeq-d-4-motive_search-b-will_link-v5",
+          "text": "ユン・ジョンフさん、記録と遺書条項のつながりについて、ご自身の判断を支えていた理由をお答えください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "questionType": "empathy_approach",
+      "targetParty": "a",
+      "angleId": "will_link",
+      "variants": [
+        {
+          "id": "judgeq-d-4-empathy_approach-a-will_link-v1",
+          "text": "ユン・テソンさん、長年母を支えてこられたご自負と現実との隔たりに揺れた時間があったかと存じます。直接ご覧になった場面からお聞かせください。"
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-a-will_link-v2",
+          "text": "不安と確信のはざまで判断を固めていかれた経緯を、当時のお気持ちごとお話しいただけますか。"
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-a-will_link-v3",
+          "text": "ユン・ジョンフさんの動きを目にされた折々のお気持ちを、結論ではなく過程としてお話しください。"
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-a-will_link-v4",
+          "text": "記録と遺書条項のつながりを前にされて言葉を選ばれた時間も含めて、率直にお答えいただきたいのです。"
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-a-will_link-v5",
+          "text": "ユン・テソンさん、ご自身を支えていた解釈について、その時点の心境ごとお話しいただけますか。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "questionType": "empathy_approach",
+      "targetParty": "b",
+      "angleId": "will_link",
+      "variants": [
+        {
+          "id": "judgeq-d-4-empathy_approach-b-will_link-v1",
+          "text": "ユン・ジョンフさん、母の傍らで手続きを担われたこと自体が、兄からどう映るかという重みを背負っておられたと存じます。直接の場面をお聞かせください。"
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-b-will_link-v2",
+          "text": "行動そのものよりも沈黙が誤解を広げた面があります。今この場で話せる範囲だけでも、記録と遺書条項のつながりを整理してお話しください。"
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-b-will_link-v3",
+          "text": "記録と遺書条項のつながりについて、いま胸の中にある事情を整理してお答えください。"
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-b-will_link-v4",
+          "text": "日記や家族記録と遺書の比率の関連を伏せざるを得なかった事情があったのなら、その範囲だけでも先に明かしてください。"
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-b-will_link-v5",
+          "text": "ユン・ジョンフさん、兄に説明する前に立ち止まっていた理由を、率直にお話しください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "questionType": "fact_pursuit",
+      "targetParty": "a",
+      "angleId": "general",
+      "variants": [
+        {
+          "id": "judgeq-d-5-fact_pursuit-a-general-v1",
+          "text": "ユン・テソンさん、遺書作成の場面と母の状態をめぐる経緯について、ご自身が直接ご覧になった場面と人づてに聞いた話とを時系列で分けてお答えください。"
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-a-general-v2",
+          "text": "記録に残された手順とご自身の記憶が食い違う地点があれば、その一点に絞って事実関係を整理してください。"
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-a-general-v3",
+          "text": "ユン・ジョンフさんの説明と、ご自身が確かめた資料との間でずれている部分を、まず資料単位でお示しください。"
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-a-general-v4",
+          "text": "推定で埋めた部分と直接確かめた部分を分けたうえで、直接見た場面と聞いて知った話の区別についてご回答ください。"
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-a-general-v5",
+          "text": "ユン・テソンさん、直接見た場面と聞いて知った話の区別について、ご自身が確認できた範囲を超えた断定は避けて整理してお答えください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "questionType": "fact_pursuit",
+      "targetParty": "b",
+      "angleId": "general",
+      "variants": [
+        {
+          "id": "judgeq-d-5-fact_pursuit-b-general-v1",
+          "text": "ユン・ジョンフさん、遺書作成の場面と母の状態をめぐる経緯に関わるご自身の動きを、日付ごとに時系列で整理してお答えください。"
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-b-general-v2",
+          "text": "直接ご自身が行われた行為と、傍らで補助しただけだと述べてこられた行為とを、まずは分けてお示しください。"
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-b-general-v3",
+          "text": "ユン・テソンさんの主張とご自身の説明が最も食い違う事実は何ですか。その地点から資料に沿ってご回答ください。"
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-b-general-v4",
+          "text": "公証本、自筆本、口座記録のうち、現時点で認める項目とまだ争いたい項目とを分けてお答えください。"
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-b-general-v5",
+          "text": "ユン・ジョンフさん、直接見た場面と聞いて知った話の区別について、まだ供述していない事実があれば先にお出しください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "questionType": "motive_search",
+      "targetParty": "a",
+      "angleId": "general",
+      "variants": [
+        {
+          "id": "judgeq-d-5-motive_search-a-general-v1",
+          "text": "ユン・テソンさん、別の解釈の余地があったにもかかわらず、特定の結論へ早く傾いた理由をお話しください。"
+        },
+        {
+          "id": "judgeq-d-5-motive_search-a-general-v2",
+          "text": "直接見た場面と聞いて知った話の区別を見たとき、ご自身の中で先に立ち上がった解釈の背景を整理してお答えください。"
+        },
+        {
+          "id": "judgeq-d-5-motive_search-a-general-v3",
+          "text": "ユン・ジョンフさんに直接確かめる前に判断を進めたと申されました。その動機を順序立ててご説明ください。"
+        },
+        {
+          "id": "judgeq-d-5-motive_search-a-general-v4",
+          "text": "候補となる解釈の中から特定の一つを選び取った時点について、判断基準を先にお示しください。"
+        },
+        {
+          "id": "judgeq-d-5-motive_search-a-general-v5",
+          "text": "ユン・テソンさん、直接見た場面と聞いて知った話の区別に関するご自身の判断の出発点を、率直にお答えください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "questionType": "motive_search",
+      "targetParty": "b",
+      "angleId": "general",
+      "variants": [
+        {
+          "id": "judgeq-d-5-motive_search-b-general-v1",
+          "text": "ユン・ジョンフさん、遺書作成の場面と母の状態をめぐる経緯が積み重なる間、兄に整理して伝えなかった理由をお話しください。"
+        },
+        {
+          "id": "judgeq-d-5-motive_search-b-general-v2",
+          "text": "誤解されかねない状況であるとご自身も分かっていたなら、その時点で沈黙を選ばれた判断の根拠をお答えください。"
+        },
+        {
+          "id": "judgeq-d-5-motive_search-b-general-v3",
+          "text": "直接見た場面と聞いて知った話の区別について、説明の機会があったにもかかわらず後ろに送られた理由はどこにありますか。"
+        },
+        {
+          "id": "judgeq-d-5-motive_search-b-general-v4",
+          "text": "当時の選択を支えていた事情を、家庭内のいきさつごと順序立ててお話しください。"
+        },
+        {
+          "id": "judgeq-d-5-motive_search-b-general-v5",
+          "text": "ユン・ジョンフさん、直接見た場面と聞いて知った話の区別について、ご自身の判断を支えていた理由をお答えください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "questionType": "empathy_approach",
+      "targetParty": "a",
+      "angleId": "general",
+      "variants": [
+        {
+          "id": "judgeq-d-5-empathy_approach-a-general-v1",
+          "text": "ユン・テソンさん、長年母を支えてこられたご自負と現実との隔たりに揺れた時間があったかと存じます。直接ご覧になった場面からお聞かせください。"
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-a-general-v2",
+          "text": "不安と確信のはざまで判断を固めていかれた経緯を、当時のお気持ちごとお話しいただけますか。"
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-a-general-v3",
+          "text": "ユン・ジョンフさんの動きを目にされた折々のお気持ちを、結論ではなく過程としてお話しください。"
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-a-general-v4",
+          "text": "直接見た場面と聞いて知った話の区別を前にされて言葉を選ばれた時間も含めて、率直にお答えいただきたいのです。"
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-a-general-v5",
+          "text": "ユン・テソンさん、ご自身を支えていた解釈について、その時点の心境ごとお話しいただけますか。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "questionType": "empathy_approach",
+      "targetParty": "b",
+      "angleId": "general",
+      "variants": [
+        {
+          "id": "judgeq-d-5-empathy_approach-b-general-v1",
+          "text": "ユン・ジョンフさん、母の傍らで手続きを担われたこと自体が、兄からどう映るかという重みを背負っておられたと存じます。直接の場面をお聞かせください。"
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-b-general-v2",
+          "text": "行動そのものよりも沈黙が誤解を広げた面があります。今この場で話せる範囲だけでも、直接見た場面と聞いて知った話の区別を整理してお話しください。"
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-b-general-v3",
+          "text": "直接見た場面と聞いて知った話の区別について、いま胸の中にある事情を整理してお答えください。"
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-b-general-v4",
+          "text": "遺書作成の場面と母の状態をめぐる経緯を伏せざるを得なかった事情があったのなら、その範囲だけでも先に明かしてください。"
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-b-general-v5",
+          "text": "ユン・ジョンフさん、兄に説明する前に立ち止まっていた理由を、率直にお話しください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "questionType": "fact_pursuit",
+      "targetParty": "a",
+      "angleId": "a_entitlement",
+      "variants": [
+        {
+          "id": "judgeq-d-5-fact_pursuit-a-a_entitlement-v1",
+          "text": "ユン・テソンさん、長男としての受領分への私の主張について、ご自身が直接ご覧になった場面と人づてに聞いた話とを時系列で分けてお答えください。"
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-a-a_entitlement-v2",
+          "text": "記録に残された手順とご自身の記憶が食い違う地点があれば、その一点に絞って事実関係を整理してください。"
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-a-a_entitlement-v3",
+          "text": "ユン・ジョンフさんの説明と、ご自身が確かめた資料との間でずれている部分を、まず資料単位でお示しください。"
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-a-a_entitlement-v4",
+          "text": "推定で埋めた部分と直接確かめた部分を分けたうえで、長年の介護に基づく取り分の主張についてご回答ください。"
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-a-a_entitlement-v5",
+          "text": "ユン・テソンさん、長年の介護に基づく取り分の主張について、ご自身が確認できた範囲を超えた断定は避けて整理してお答えください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "questionType": "fact_pursuit",
+      "targetParty": "b",
+      "angleId": "a_entitlement",
+      "variants": [
+        {
+          "id": "judgeq-d-5-fact_pursuit-b-a_entitlement-v1",
+          "text": "ユン・ジョンフさん、長男としての受領分への私の主張に関わるご自身の動きを、日付ごとに時系列で整理してお答えください。"
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-b-a_entitlement-v2",
+          "text": "直接ご自身が行われた行為と、傍らで補助しただけだと述べてこられた行為とを、まずは分けてお示しください。"
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-b-a_entitlement-v3",
+          "text": "ユン・テソンさんの主張とご自身の説明が最も食い違う事実は何ですか。その地点から資料に沿ってご回答ください。"
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-b-a_entitlement-v4",
+          "text": "公証本、自筆本、口座記録のうち、現時点で認める項目とまだ争いたい項目とを分けてお答えください。"
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-b-a_entitlement-v5",
+          "text": "ユン・ジョンフさん、長年の介護に基づく取り分の主張について、まだ供述していない事実があれば先にお出しください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "questionType": "motive_search",
+      "targetParty": "a",
+      "angleId": "a_entitlement",
+      "variants": [
+        {
+          "id": "judgeq-d-5-motive_search-a-a_entitlement-v1",
+          "text": "ユン・テソンさん、別の解釈の余地があったにもかかわらず、特定の結論へ早く傾いた理由をお話しください。"
+        },
+        {
+          "id": "judgeq-d-5-motive_search-a-a_entitlement-v2",
+          "text": "長年の介護に基づく取り分の主張を見たとき、ご自身の中で先に立ち上がった解釈の背景を整理してお答えください。"
+        },
+        {
+          "id": "judgeq-d-5-motive_search-a-a_entitlement-v3",
+          "text": "ユン・ジョンフさんに直接確かめる前に判断を進めたと申されました。その動機を順序立ててご説明ください。"
+        },
+        {
+          "id": "judgeq-d-5-motive_search-a-a_entitlement-v4",
+          "text": "候補となる解釈の中から特定の一つを選び取った時点について、判断基準を先にお示しください。"
+        },
+        {
+          "id": "judgeq-d-5-motive_search-a-a_entitlement-v5",
+          "text": "ユン・テソンさん、長年の介護に基づく取り分の主張に関するご自身の判断の出発点を、率直にお答えください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "questionType": "motive_search",
+      "targetParty": "b",
+      "angleId": "a_entitlement",
+      "variants": [
+        {
+          "id": "judgeq-d-5-motive_search-b-a_entitlement-v1",
+          "text": "ユン・ジョンフさん、長男としての受領分への私の主張が積み重なる間、兄に整理して伝えなかった理由をお話しください。"
+        },
+        {
+          "id": "judgeq-d-5-motive_search-b-a_entitlement-v2",
+          "text": "誤解されかねない状況であるとご自身も分かっていたなら、その時点で沈黙を選ばれた判断の根拠をお答えください。"
+        },
+        {
+          "id": "judgeq-d-5-motive_search-b-a_entitlement-v3",
+          "text": "長年の介護に基づく取り分の主張について、説明の機会があったにもかかわらず後ろに送られた理由はどこにありますか。"
+        },
+        {
+          "id": "judgeq-d-5-motive_search-b-a_entitlement-v4",
+          "text": "当時の選択を支えていた事情を、家庭内のいきさつごと順序立ててお話しください。"
+        },
+        {
+          "id": "judgeq-d-5-motive_search-b-a_entitlement-v5",
+          "text": "ユン・ジョンフさん、長年の介護に基づく取り分の主張について、ご自身の判断を支えていた理由をお答えください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "questionType": "empathy_approach",
+      "targetParty": "a",
+      "angleId": "a_entitlement",
+      "variants": [
+        {
+          "id": "judgeq-d-5-empathy_approach-a-a_entitlement-v1",
+          "text": "ユン・テソンさん、長年母を支えてこられたご自負と現実との隔たりに揺れた時間があったかと存じます。直接ご覧になった場面からお聞かせください。"
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-a-a_entitlement-v2",
+          "text": "不安と確信のはざまで判断を固めていかれた経緯を、当時のお気持ちごとお話しいただけますか。"
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-a-a_entitlement-v3",
+          "text": "ユン・ジョンフさんの動きを目にされた折々のお気持ちを、結論ではなく過程としてお話しください。"
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-a-a_entitlement-v4",
+          "text": "長年の介護に基づく取り分の主張を前にされて言葉を選ばれた時間も含めて、率直にお答えいただきたいのです。"
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-a-a_entitlement-v5",
+          "text": "ユン・テソンさん、ご自身を支えていた解釈について、その時点の心境ごとお話しいただけますか。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "questionType": "empathy_approach",
+      "targetParty": "b",
+      "angleId": "a_entitlement",
+      "variants": [
+        {
+          "id": "judgeq-d-5-empathy_approach-b-a_entitlement-v1",
+          "text": "ユン・ジョンフさん、母の傍らで手続きを担われたこと自体が、兄からどう映るかという重みを背負っておられたと存じます。直接の場面をお聞かせください。"
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-b-a_entitlement-v2",
+          "text": "行動そのものよりも沈黙が誤解を広げた面があります。今この場で話せる範囲だけでも、長年の介護に基づく取り分の主張を整理してお話しください。"
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-b-a_entitlement-v3",
+          "text": "長年の介護に基づく取り分の主張について、いま胸の中にある事情を整理してお答えください。"
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-b-a_entitlement-v4",
+          "text": "長男としての受領分への私の主張を伏せざるを得なかった事情があったのなら、その範囲だけでも先に明かしてください。"
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-b-a_entitlement-v5",
+          "text": "ユン・ジョンフさん、兄に説明する前に立ち止まっていた理由を、率直にお話しください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "questionType": "fact_pursuit",
+      "targetParty": "a",
+      "angleId": "b_protection_control",
+      "variants": [
+        {
+          "id": "judgeq-d-5-fact_pursuit-a-b_protection_control-v1",
+          "text": "ユン・テソンさん、弟の側が手続きで主導した部分について、ご自身が直接ご覧になった場面と人づてに聞いた話とを時系列で分けてお答えください。"
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-a-b_protection_control-v2",
+          "text": "記録に残された手順とご自身の記憶が食い違う地点があれば、その一点に絞って事実関係を整理してください。"
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-a-b_protection_control-v3",
+          "text": "ユン・ジョンフさんの説明と、ご自身が確かめた資料との間でずれている部分を、まず資料単位でお示しください。"
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-a-b_protection_control-v4",
+          "text": "推定で埋めた部分と直接確かめた部分を分けたうえで、弟が握っていた手続きの範囲についてご回答ください。"
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-a-b_protection_control-v5",
+          "text": "ユン・テソンさん、弟が握っていた手続きの範囲について、ご自身が確認できた範囲を超えた断定は避けて整理してお答えください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "questionType": "fact_pursuit",
+      "targetParty": "b",
+      "angleId": "b_protection_control",
+      "variants": [
+        {
+          "id": "judgeq-d-5-fact_pursuit-b-b_protection_control-v1",
+          "text": "ユン・ジョンフさん、弟の側が手続きで主導した部分に関わるご自身の動きを、日付ごとに時系列で整理してお答えください。"
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-b-b_protection_control-v2",
+          "text": "直接ご自身が行われた行為と、傍らで補助しただけだと述べてこられた行為とを、まずは分けてお示しください。"
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-b-b_protection_control-v3",
+          "text": "ユン・テソンさんの主張とご自身の説明が最も食い違う事実は何ですか。その地点から資料に沿ってご回答ください。"
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-b-b_protection_control-v4",
+          "text": "公証本、自筆本、口座記録のうち、現時点で認める項目とまだ争いたい項目とを分けてお答えください。"
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-b-b_protection_control-v5",
+          "text": "ユン・ジョンフさん、弟が握っていた手続きの範囲について、まだ供述していない事実があれば先にお出しください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "questionType": "motive_search",
+      "targetParty": "a",
+      "angleId": "b_protection_control",
+      "variants": [
+        {
+          "id": "judgeq-d-5-motive_search-a-b_protection_control-v1",
+          "text": "ユン・テソンさん、別の解釈の余地があったにもかかわらず、特定の結論へ早く傾いた理由をお話しください。"
+        },
+        {
+          "id": "judgeq-d-5-motive_search-a-b_protection_control-v2",
+          "text": "弟が握っていた手続きの範囲を見たとき、ご自身の中で先に立ち上がった解釈の背景を整理してお答えください。"
+        },
+        {
+          "id": "judgeq-d-5-motive_search-a-b_protection_control-v3",
+          "text": "ユン・ジョンフさんに直接確かめる前に判断を進めたと申されました。その動機を順序立ててご説明ください。"
+        },
+        {
+          "id": "judgeq-d-5-motive_search-a-b_protection_control-v4",
+          "text": "候補となる解釈の中から特定の一つを選び取った時点について、判断基準を先にお示しください。"
+        },
+        {
+          "id": "judgeq-d-5-motive_search-a-b_protection_control-v5",
+          "text": "ユン・テソンさん、弟が握っていた手続きの範囲に関するご自身の判断の出発点を、率直にお答えください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "questionType": "motive_search",
+      "targetParty": "b",
+      "angleId": "b_protection_control",
+      "variants": [
+        {
+          "id": "judgeq-d-5-motive_search-b-b_protection_control-v1",
+          "text": "ユン・ジョンフさん、弟の側が手続きで主導した部分が積み重なる間、兄に整理して伝えなかった理由をお話しください。"
+        },
+        {
+          "id": "judgeq-d-5-motive_search-b-b_protection_control-v2",
+          "text": "誤解されかねない状況であるとご自身も分かっていたなら、その時点で沈黙を選ばれた判断の根拠をお答えください。"
+        },
+        {
+          "id": "judgeq-d-5-motive_search-b-b_protection_control-v3",
+          "text": "弟が握っていた手続きの範囲について、説明の機会があったにもかかわらず後ろに送られた理由はどこにありますか。"
+        },
+        {
+          "id": "judgeq-d-5-motive_search-b-b_protection_control-v4",
+          "text": "当時の選択を支えていた事情を、家庭内のいきさつごと順序立ててお話しください。"
+        },
+        {
+          "id": "judgeq-d-5-motive_search-b-b_protection_control-v5",
+          "text": "ユン・ジョンフさん、弟が握っていた手続きの範囲について、ご自身の判断を支えていた理由をお答えください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "questionType": "empathy_approach",
+      "targetParty": "a",
+      "angleId": "b_protection_control",
+      "variants": [
+        {
+          "id": "judgeq-d-5-empathy_approach-a-b_protection_control-v1",
+          "text": "ユン・テソンさん、長年母を支えてこられたご自負と現実との隔たりに揺れた時間があったかと存じます。直接ご覧になった場面からお聞かせください。"
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-a-b_protection_control-v2",
+          "text": "不安と確信のはざまで判断を固めていかれた経緯を、当時のお気持ちごとお話しいただけますか。"
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-a-b_protection_control-v3",
+          "text": "ユン・ジョンフさんの動きを目にされた折々のお気持ちを、結論ではなく過程としてお話しください。"
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-a-b_protection_control-v4",
+          "text": "弟が握っていた手続きの範囲を前にされて言葉を選ばれた時間も含めて、率直にお答えいただきたいのです。"
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-a-b_protection_control-v5",
+          "text": "ユン・テソンさん、ご自身を支えていた解釈について、その時点の心境ごとお話しいただけますか。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "questionType": "empathy_approach",
+      "targetParty": "b",
+      "angleId": "b_protection_control",
+      "variants": [
+        {
+          "id": "judgeq-d-5-empathy_approach-b-b_protection_control-v1",
+          "text": "ユン・ジョンフさん、母の傍らで手続きを担われたこと自体が、兄からどう映るかという重みを背負っておられたと存じます。直接の場面をお聞かせください。"
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-b-b_protection_control-v2",
+          "text": "行動そのものよりも沈黙が誤解を広げた面があります。今この場で話せる範囲だけでも、弟が握っていた手続きの範囲を整理してお話しください。"
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-b-b_protection_control-v3",
+          "text": "弟が握っていた手続きの範囲について、いま胸の中にある事情を整理してお答えください。"
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-b-b_protection_control-v4",
+          "text": "弟の側が手続きで主導した部分を伏せざるを得なかった事情があったのなら、その範囲だけでも先に明かしてください。"
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-b-b_protection_control-v5",
+          "text": "ユン・ジョンフさん、兄に説明する前に立ち止まっていた理由を、率直にお話しください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "questionType": "fact_pursuit",
+      "targetParty": "a",
+      "angleId": "mother_voice",
+      "variants": [
+        {
+          "id": "judgeq-d-5-fact_pursuit-a-mother_voice-v1",
+          "text": "ユン・テソンさん、母自身の意思として読める部分について、ご自身が直接ご覧になった場面と人づてに聞いた話とを時系列で分けてお答えください。"
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-a-mother_voice-v2",
+          "text": "記録に残された手順とご自身の記憶が食い違う地点があれば、その一点に絞って事実関係を整理してください。"
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-a-mother_voice-v3",
+          "text": "ユン・ジョンフさんの説明と、ご自身が確かめた資料との間でずれている部分を、まず資料単位でお示しください。"
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-a-mother_voice-v4",
+          "text": "推定で埋めた部分と直接確かめた部分を分けたうえで、母の意思として残された言葉についてご回答ください。"
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-a-mother_voice-v5",
+          "text": "ユン・テソンさん、母の意思として残された言葉について、ご自身が確認できた範囲を超えた断定は避けて整理してお答えください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "questionType": "fact_pursuit",
+      "targetParty": "b",
+      "angleId": "mother_voice",
+      "variants": [
+        {
+          "id": "judgeq-d-5-fact_pursuit-b-mother_voice-v1",
+          "text": "ユン・ジョンフさん、母自身の意思として読める部分に関わるご自身の動きを、日付ごとに時系列で整理してお答えください。"
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-b-mother_voice-v2",
+          "text": "直接ご自身が行われた行為と、傍らで補助しただけだと述べてこられた行為とを、まずは分けてお示しください。"
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-b-mother_voice-v3",
+          "text": "ユン・テソンさんの主張とご自身の説明が最も食い違う事実は何ですか。その地点から資料に沿ってご回答ください。"
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-b-mother_voice-v4",
+          "text": "公証本、自筆本、口座記録のうち、現時点で認める項目とまだ争いたい項目とを分けてお答えください。"
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-b-mother_voice-v5",
+          "text": "ユン・ジョンフさん、母の意思として残された言葉について、まだ供述していない事実があれば先にお出しください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "questionType": "motive_search",
+      "targetParty": "a",
+      "angleId": "mother_voice",
+      "variants": [
+        {
+          "id": "judgeq-d-5-motive_search-a-mother_voice-v1",
+          "text": "ユン・テソンさん、別の解釈の余地があったにもかかわらず、特定の結論へ早く傾いた理由をお話しください。"
+        },
+        {
+          "id": "judgeq-d-5-motive_search-a-mother_voice-v2",
+          "text": "母の意思として残された言葉を見たとき、ご自身の中で先に立ち上がった解釈の背景を整理してお答えください。"
+        },
+        {
+          "id": "judgeq-d-5-motive_search-a-mother_voice-v3",
+          "text": "ユン・ジョンフさんに直接確かめる前に判断を進めたと申されました。その動機を順序立ててご説明ください。"
+        },
+        {
+          "id": "judgeq-d-5-motive_search-a-mother_voice-v4",
+          "text": "候補となる解釈の中から特定の一つを選び取った時点について、判断基準を先にお示しください。"
+        },
+        {
+          "id": "judgeq-d-5-motive_search-a-mother_voice-v5",
+          "text": "ユン・テソンさん、母の意思として残された言葉に関するご自身の判断の出発点を、率直にお答えください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "questionType": "motive_search",
+      "targetParty": "b",
+      "angleId": "mother_voice",
+      "variants": [
+        {
+          "id": "judgeq-d-5-motive_search-b-mother_voice-v1",
+          "text": "ユン・ジョンフさん、母自身の意思として読める部分が積み重なる間、兄に整理して伝えなかった理由をお話しください。"
+        },
+        {
+          "id": "judgeq-d-5-motive_search-b-mother_voice-v2",
+          "text": "誤解されかねない状況であるとご自身も分かっていたなら、その時点で沈黙を選ばれた判断の根拠をお答えください。"
+        },
+        {
+          "id": "judgeq-d-5-motive_search-b-mother_voice-v3",
+          "text": "母の意思として残された言葉について、説明の機会があったにもかかわらず後ろに送られた理由はどこにありますか。"
+        },
+        {
+          "id": "judgeq-d-5-motive_search-b-mother_voice-v4",
+          "text": "当時の選択を支えていた事情を、家庭内のいきさつごと順序立ててお話しください。"
+        },
+        {
+          "id": "judgeq-d-5-motive_search-b-mother_voice-v5",
+          "text": "ユン・ジョンフさん、母の意思として残された言葉について、ご自身の判断を支えていた理由をお答えください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "questionType": "empathy_approach",
+      "targetParty": "a",
+      "angleId": "mother_voice",
+      "variants": [
+        {
+          "id": "judgeq-d-5-empathy_approach-a-mother_voice-v1",
+          "text": "ユン・テソンさん、長年母を支えてこられたご自負と現実との隔たりに揺れた時間があったかと存じます。直接ご覧になった場面からお聞かせください。"
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-a-mother_voice-v2",
+          "text": "不安と確信のはざまで判断を固めていかれた経緯を、当時のお気持ちごとお話しいただけますか。"
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-a-mother_voice-v3",
+          "text": "ユン・ジョンフさんの動きを目にされた折々のお気持ちを、結論ではなく過程としてお話しください。"
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-a-mother_voice-v4",
+          "text": "母の意思として残された言葉を前にされて言葉を選ばれた時間も含めて、率直にお答えいただきたいのです。"
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-a-mother_voice-v5",
+          "text": "ユン・テソンさん、ご自身を支えていた解釈について、その時点の心境ごとお話しいただけますか。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "questionType": "empathy_approach",
+      "targetParty": "b",
+      "angleId": "mother_voice",
+      "variants": [
+        {
+          "id": "judgeq-d-5-empathy_approach-b-mother_voice-v1",
+          "text": "ユン・ジョンフさん、母の傍らで手続きを担われたこと自体が、兄からどう映るかという重みを背負っておられたと存じます。直接の場面をお聞かせください。"
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-b-mother_voice-v2",
+          "text": "行動そのものよりも沈黙が誤解を広げた面があります。今この場で話せる範囲だけでも、母の意思として残された言葉を整理してお話しください。"
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-b-mother_voice-v3",
+          "text": "母の意思として残された言葉について、いま胸の中にある事情を整理してお答えください。"
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-b-mother_voice-v4",
+          "text": "母自身の意思として読める部分を伏せざるを得なかった事情があったのなら、その範囲だけでも先に明かしてください。"
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-b-mother_voice-v5",
+          "text": "ユン・ジョンフさん、兄に説明する前に立ち止まっていた理由を、率直にお話しください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "questionType": "fact_pursuit",
+      "targetParty": "a",
+      "angleId": "dual_responsibility",
+      "variants": [
+        {
+          "id": "judgeq-d-5-fact_pursuit-a-dual_responsibility-v1",
+          "text": "ユン・テソンさん、兄弟双方の責任の切り分けについて、ご自身が直接ご覧になった場面と人づてに聞いた話とを時系列で分けてお答えください。"
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-a-dual_responsibility-v2",
+          "text": "記録に残された手順とご自身の記憶が食い違う地点があれば、その一点に絞って事実関係を整理してください。"
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-a-dual_responsibility-v3",
+          "text": "ユン・ジョンフさんの説明と、ご自身が確かめた資料との間でずれている部分を、まず資料単位でお示しください。"
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-a-dual_responsibility-v4",
+          "text": "推定で埋めた部分と直接確かめた部分を分けたうえで、双方の関与の整理についてご回答ください。"
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-a-dual_responsibility-v5",
+          "text": "ユン・テソンさん、双方の関与の整理について、ご自身が確認できた範囲を超えた断定は避けて整理してお答えください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "questionType": "fact_pursuit",
+      "targetParty": "b",
+      "angleId": "dual_responsibility",
+      "variants": [
+        {
+          "id": "judgeq-d-5-fact_pursuit-b-dual_responsibility-v1",
+          "text": "ユン・ジョンフさん、兄弟双方の責任の切り分けに関わるご自身の動きを、日付ごとに時系列で整理してお答えください。"
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-b-dual_responsibility-v2",
+          "text": "直接ご自身が行われた行為と、傍らで補助しただけだと述べてこられた行為とを、まずは分けてお示しください。"
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-b-dual_responsibility-v3",
+          "text": "ユン・テソンさんの主張とご自身の説明が最も食い違う事実は何ですか。その地点から資料に沿ってご回答ください。"
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-b-dual_responsibility-v4",
+          "text": "公証本、自筆本、口座記録のうち、現時点で認める項目とまだ争いたい項目とを分けてお答えください。"
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-b-dual_responsibility-v5",
+          "text": "ユン・ジョンフさん、双方の関与の整理について、まだ供述していない事実があれば先にお出しください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "questionType": "motive_search",
+      "targetParty": "a",
+      "angleId": "dual_responsibility",
+      "variants": [
+        {
+          "id": "judgeq-d-5-motive_search-a-dual_responsibility-v1",
+          "text": "ユン・テソンさん、別の解釈の余地があったにもかかわらず、特定の結論へ早く傾いた理由をお話しください。"
+        },
+        {
+          "id": "judgeq-d-5-motive_search-a-dual_responsibility-v2",
+          "text": "双方の関与の整理を見たとき、ご自身の中で先に立ち上がった解釈の背景を整理してお答えください。"
+        },
+        {
+          "id": "judgeq-d-5-motive_search-a-dual_responsibility-v3",
+          "text": "ユン・ジョンフさんに直接確かめる前に判断を進めたと申されました。その動機を順序立ててご説明ください。"
+        },
+        {
+          "id": "judgeq-d-5-motive_search-a-dual_responsibility-v4",
+          "text": "候補となる解釈の中から特定の一つを選び取った時点について、判断基準を先にお示しください。"
+        },
+        {
+          "id": "judgeq-d-5-motive_search-a-dual_responsibility-v5",
+          "text": "ユン・テソンさん、双方の関与の整理に関するご自身の判断の出発点を、率直にお答えください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "questionType": "motive_search",
+      "targetParty": "b",
+      "angleId": "dual_responsibility",
+      "variants": [
+        {
+          "id": "judgeq-d-5-motive_search-b-dual_responsibility-v1",
+          "text": "ユン・ジョンフさん、兄弟双方の責任の切り分けが積み重なる間、兄に整理して伝えなかった理由をお話しください。"
+        },
+        {
+          "id": "judgeq-d-5-motive_search-b-dual_responsibility-v2",
+          "text": "誤解されかねない状況であるとご自身も分かっていたなら、その時点で沈黙を選ばれた判断の根拠をお答えください。"
+        },
+        {
+          "id": "judgeq-d-5-motive_search-b-dual_responsibility-v3",
+          "text": "双方の関与の整理について、説明の機会があったにもかかわらず後ろに送られた理由はどこにありますか。"
+        },
+        {
+          "id": "judgeq-d-5-motive_search-b-dual_responsibility-v4",
+          "text": "当時の選択を支えていた事情を、家庭内のいきさつごと順序立ててお話しください。"
+        },
+        {
+          "id": "judgeq-d-5-motive_search-b-dual_responsibility-v5",
+          "text": "ユン・ジョンフさん、双方の関与の整理について、ご自身の判断を支えていた理由をお答えください。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "questionType": "empathy_approach",
+      "targetParty": "a",
+      "angleId": "dual_responsibility",
+      "variants": [
+        {
+          "id": "judgeq-d-5-empathy_approach-a-dual_responsibility-v1",
+          "text": "ユン・テソンさん、長年母を支えてこられたご自負と現実との隔たりに揺れた時間があったかと存じます。直接ご覧になった場面からお聞かせください。"
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-a-dual_responsibility-v2",
+          "text": "不安と確信のはざまで判断を固めていかれた経緯を、当時のお気持ちごとお話しいただけますか。"
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-a-dual_responsibility-v3",
+          "text": "ユン・ジョンフさんの動きを目にされた折々のお気持ちを、結論ではなく過程としてお話しください。"
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-a-dual_responsibility-v4",
+          "text": "双方の関与の整理を前にされて言葉を選ばれた時間も含めて、率直にお答えいただきたいのです。"
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-a-dual_responsibility-v5",
+          "text": "ユン・テソンさん、ご自身を支えていた解釈について、その時点の心境ごとお話しいただけますか。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "questionType": "empathy_approach",
+      "targetParty": "b",
+      "angleId": "dual_responsibility",
+      "variants": [
+        {
+          "id": "judgeq-d-5-empathy_approach-b-dual_responsibility-v1",
+          "text": "ユン・ジョンフさん、母の傍らで手続きを担われたこと自体が、兄からどう映るかという重みを背負っておられたと存じます。直接の場面をお聞かせください。"
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-b-dual_responsibility-v2",
+          "text": "行動そのものよりも沈黙が誤解を広げた面があります。今この場で話せる範囲だけでも、双方の関与の整理を整理してお話しください。"
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-b-dual_responsibility-v3",
+          "text": "双方の関与の整理について、いま胸の中にある事情を整理してお答えください。"
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-b-dual_responsibility-v4",
+          "text": "兄弟双方の責任の切り分けを伏せざるを得なかった事情があったのなら、その範囲だけでも先に明かしてください。"
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-b-dual_responsibility-v5",
+          "text": "ユン・ジョンフさん、兄に説明する前に立ち止まっていた理由を、率直にお話しください。"
+        }
+      ]
+    }
+  ]
+}

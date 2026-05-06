@@ -1,0 +1,84 @@
+import type { LocaleCode } from '../locales'
+
+export type CommonMessageKey =
+  "app.title"
+  | "brand.internalProjectName"
+  | "brand.title"
+  | "brand.subtitle"
+  | "brand.fullTitle"
+  | "splash.subtitle"
+  | "language.selectorLabel"
+  | "language.selectorTitle"
+  | "steam.authRequired.title"
+  | "steam.authRequired.description"
+  | "steam.authRequired.retry"
+  | "steam.authFailedFallback"
+  | "session.preparing.title"
+  | "session.preparing.description"
+
+export const commonMessages = {
+  ko: {
+    "app.title": "솔로몬의 딜레마: 진실의 재판",
+    "brand.internalProjectName": "Project_Solomon",
+    "brand.title": "솔로몬의 딜레마",
+    "brand.subtitle": "진실의 재판",
+    "brand.fullTitle": "솔로몬의 딜레마: 진실의 재판",
+    "splash.subtitle": "법정 시뮬레이션 게임",
+    "language.selectorLabel": "언어",
+    "language.selectorTitle": "표시 언어 선택",
+    "steam.authRequired.title": "Steam 인증이 필요합니다",
+    "steam.authRequired.description": "Steam 클라이언트와 서버 인증 상태를 확인한 뒤 다시 시도하세요.",
+    "steam.authRequired.retry": "다시 시도",
+    "steam.authFailedFallback": "Steam 인증에 실패했습니다.",
+    "session.preparing.title": "세션 준비 중",
+    "session.preparing.description": "사건 데이터와 재판 환경을 불러오고 있습니다.",
+  },
+  en: {
+    "app.title": "Verdict Zero: Trial of Truth",
+    "brand.internalProjectName": "Project_Solomon",
+    "brand.title": "Verdict Zero",
+    "brand.subtitle": "Trial of Truth",
+    "brand.fullTitle": "Verdict Zero: Trial of Truth",
+    "splash.subtitle": "COURT SIMULATION GAME",
+    "language.selectorLabel": "Language",
+    "language.selectorTitle": "Select display language",
+    "steam.authRequired.title": "Steam authentication required",
+    "steam.authRequired.description": "Check the Steam client and server authentication state, then try again.",
+    "steam.authRequired.retry": "Retry",
+    "steam.authFailedFallback": "Steam authentication failed.",
+    "session.preparing.title": "Preparing session",
+    "session.preparing.description": "Loading case data and the courtroom environment.",
+  },
+  ja: {
+    "app.title": "ソロモンのジレンマ：真実の裁き",
+    "brand.internalProjectName": "Project_Solomon",
+    "brand.title": "ソロモンのジレンマ",
+    "brand.subtitle": "真実の裁き",
+    "brand.fullTitle": "ソロモンのジレンマ：真実の裁き",
+    "splash.subtitle": "法廷シミュレーションゲーム",
+    "language.selectorLabel": "言語",
+    "language.selectorTitle": "表示言語を選択",
+    "steam.authRequired.title": "Steam認証が必要です",
+    "steam.authRequired.description": "Steamクライアントとサーバー認証の状態を確認してから、もう一度お試しください。",
+    "steam.authRequired.retry": "再試行",
+    "steam.authFailedFallback": "Steam認証に失敗しました。",
+    "session.preparing.title": "セッション準備中",
+    "session.preparing.description": "事件データと法廷環境を読み込んでいます。",
+  },
+  "zh-CN": {
+    "app.title": "真相裁决：零点审判",
+    "brand.internalProjectName": "Project_Solomon",
+    "brand.title": "真相裁决",
+    "brand.subtitle": "零点审判",
+    "brand.fullTitle": "真相裁决：零点审判",
+    "splash.subtitle": "法庭模拟游戏",
+    "language.selectorLabel": "语言",
+    "language.selectorTitle": "选择显示语言",
+    "steam.authRequired.title": "需要 Steam 认证",
+    "steam.authRequired.description": "请检查 Steam 客户端和服务器认证状态，然后重试。",
+    "steam.authRequired.retry": "重试",
+    "steam.authFailedFallback": "Steam 认证失败。",
+    "session.preparing.title": "正在准备会话",
+    "session.preparing.description": "正在加载案件数据和审判环境。",
+  },
+} as const satisfies Record<LocaleCode, Record<CommonMessageKey, string>>

@@ -25,6 +25,7 @@ import { PC_ADD_COMBINATION_NOTE_EVENT, type PcCombinationPanelEventDetail, type
 import { playCombinationFailure, playCombinationSuccess } from '../../../engine/soundEngine'
 import { cleanOutputLabel, cleanOutputSummary } from '../../../utils/combinationLabels'
 import { pp이가 } from '../../../engine/koreanPostposition'
+import { translate } from '../../../i18n'
 import ArchetypeTag from '../tags/ArchetypeTag'
 import { ACTION_TARGETS, ActionEm, Em } from '../tags/hotbarHighlight'
 import { afterDisputeRibbonExpansion, requestDisputeRibbonExpansion } from '../layout/disputeRibbonEvents'
@@ -162,7 +163,7 @@ export default function PCRightPanel() {
   const prevReadyCount = useRef(-1)
   useEffect(() => {
     if (prevReadyCount.current >= 0 && readyComboCount > prevReadyCount.current) {
-      showGuideCutscene('조합 가능한 쌍이 준비되었습니다', '.pc-combination-card')
+      showGuideCutscene(translate('pc.combo.readyPairToast'), '.pc-combination-card')
     }
     prevReadyCount.current = readyComboCount
   }, [readyComboCount])
@@ -1185,7 +1186,7 @@ export default function PCRightPanel() {
                 >
                   <span className="pc-combination-card__ready-icon">🔗</span>
                   <span className="pc-combination-card__ready-text">
-                    조합 가능한 항목이 <strong>{readyLabRecipes.length}개</strong> 있습니다
+                    {translate('pc.combo.readyItemsNotice', { count: readyLabRecipes.length })}
                   </span>
                   <span className="pc-combination-card__ready-cta">확인</span>
                 </button>
@@ -1202,11 +1203,11 @@ export default function PCRightPanel() {
               <aside
               className={`pc-combination-drawer${autoMatchPanelOpen ? ' is-open' : ''}`}
               aria-hidden={!autoMatchPanelOpen}
-              aria-label="조합 가능 항목 상세"
+              aria-label={translate('pc.combo.readyDetailLabel')}
             >
               <header className="pc-combination-drawer__header">
                 <div className="pc-combination-drawer__title">
-                  <span>조합 가능한 재료가 <strong>{readyLabRecipes.length}개</strong> 준비되었습니다</span>
+                  <span>{translate('pc.combo.readyMaterialsNotice', { count: readyLabRecipes.length })}</span>
                 </div>
                 <button
                   type="button"

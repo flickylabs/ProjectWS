@@ -25,18 +25,25 @@ export function buildFreeInterrogationPublicAnswer(
   context: FreeInterrogationRuntimeContext,
 ): string {
   const raw = rawText.trim()
-  const party = resolveMentionedParty(raw, context)
   const speaker = resolveFreeInterrogationPublicSpeaker(raw, context)
+  const speakerParty = speaker === 'a' || speaker === 'b' ? speaker : null
+  const speakerProfile = speakerParty === 'a'
+    ? context.caseData.duo.partyA
+    : speakerParty === 'b'
+      ? context.caseData.duo.partyB
+      : null
+  const mentionedParty = resolveMentionedParty(raw, context)
+  const party = speakerProfile ?? mentionedParty
   const relationLabel = RELATIONSHIP_LABELS[getPublicRelationshipType(context)] ?? '당사자'
   const partyA = context.caseData.duo.partyA
   const partyB = context.caseData.duo.partyB
   const relationshipSubject = formatPublicRelationshipSubject(partyA.name, partyB.name)
 
-  if (speaker !== 'system' && party) {
+  if (speakerProfile) {
     if (isCounterpartPublicQuestion(raw)) {
-      return formatPartyCounterpartAnswer(raw, party, getCounterpartProfile(context, party.id), relationLabel)
+      return formatPartyCounterpartAnswer(raw, speakerProfile, getCounterpartProfile(context, speakerParty!), relationLabel)
     }
-    return formatPartyPublicProfile(raw, party)
+    return formatPartyPublicProfile(raw, speakerProfile)
   }
 
   if (isCourtroomContextQuestion(raw)) {

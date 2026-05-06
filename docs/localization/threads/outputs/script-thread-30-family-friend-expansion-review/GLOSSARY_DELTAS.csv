@@ -1,0 +1,61 @@
+case,term_id,source_ko,locale,pilot_used,glossary_or_policy_locked,delta_kind,recommendation
+family-01,birth_secret_truth_lexeme,출생 비밀 / 배다른,en,birth secret / half-brother / half brother / different father / different bloodline (S5+only),"localePolicy.forbiddenLexemes.en (21 lexemes incl. all variants)",OK_LOCKED,Locked. Pilot uses locked forms only at S5; non-S5 leaks=0.
+family-01,birth_secret_truth_lexeme,출생 비밀 / 배다른,ja,出生の秘密 / 異父 / 血縁が違う / 父の血ではない (S5+only),"localePolicy.forbiddenLexemes.ja (19 lexemes)",OK_LOCKED,Locked. Pilot non-S5 leaks=0.
+family-01,birth_secret_truth_lexeme,출생 비밀 / 배다른,zh-CN,出生秘密 / 同母异父 / 血缘不同 / 不是亲生子 (S5+only),"localePolicy.forbiddenLexemes.zh-CN (19 lexemes)",OK_LOCKED,Locked. Pilot non-S5 leaks=0.
+family-01,will_ratio_truth_lexeme,90:10 / 90대10 / 정후 90 / 태성 10,en,90:10 / 90 to 10 / Jung-hoo 90 / Taesung 10 (S5+only),localePolicy.forbiddenLexemes.en,OK_LOCKED,Locked. Surface ratio (60:40 / 60-40) is allowed as pilot uses surface paraphrase pattern.
+family-01,will_ratio_truth_lexeme,90:10 / 90대10,ja,90:10 / 90対10 / 正厚90 / 泰成10 (S5+only),localePolicy.forbiddenLexemes.ja,OK_LOCKED,Same.
+family-01,will_ratio_truth_lexeme,90:10 / 90대10,zh-CN,90:10 / 90比10 / 正厚90 / 泰成10 (S5+only),localePolicy.forbiddenLexemes.zh-CN,OK_LOCKED,Same.
+family-01,will_manipulation_truth_lexeme,유서 조작,en,will manipulation / reduced his own share (S5+only),localePolicy.forbiddenLexemes.en,OK_LOCKED,Locked.
+family-01,will_manipulation_truth_lexeme,유서 조작,ja,遺書操作 / 自分の取り分を減らした (S5+only),localePolicy.forbiddenLexemes.ja,OK_LOCKED,Locked.
+family-01,will_manipulation_truth_lexeme,유서 조작,zh-CN,遗书造假 / 减少自己的份额 (S5+only),localePolicy.forbiddenLexemes.zh-CN,OK_LOCKED,Locked.
+family-01,jung_hoo_money_truth_lexeme,정후의 돈 / 20년 송금,en,Jung-hoo's money / Yoon Jung-hoo's money / old regular support (S5+only),localePolicy.forbiddenLexemes.en,OK_LOCKED,Locked.
+family-01,jung_hoo_money_truth_lexeme,정후의 돈,ja,正厚の金 / 尹正厚の金 / 古い定期支援 (S5+only),localePolicy.forbiddenLexemes.ja,OK_LOCKED,Locked.
+family-01,jung_hoo_money_truth_lexeme,정후의 돈,zh-CN,正厚的钱 / 尹正厚的钱 / 长期定期支援 (S5+only),localePolicy.forbiddenLexemes.zh-CN,OK_LOCKED,Locked.
+family-01,factory_crisis_truth_lexeme,공장 위기 3억,en,factory crisis 300 million / 300 million won / management rights crisis (S5+only),localePolicy.forbiddenLexemes.en,OK_LOCKED,Locked.
+family-01,factory_crisis_truth_lexeme,공장 위기,ja,工場危機の3億 / 3億ウォン / 経営権危機 (S5+only),localePolicy.forbiddenLexemes.ja,OK_LOCKED,Locked.
+family-01,factory_crisis_truth_lexeme,공장 위기,zh-CN,工厂危机3亿 / 3亿韩元 / 经营权危机 (S5+only),localePolicy.forbiddenLexemes.zh-CN,OK_LOCKED,Locked.
+family-01,brother_identity_truth_lexeme,형의 정체,en,brother's identity (S5+only),localePolicy.forbiddenLexemes.en,OK_LOCKED,Locked.
+family-01,brother_identity_truth_lexeme,형의 정체,ja,兄のアイデンティティ (S5+only),localePolicy.forbiddenLexemes.ja,OK_LOCKED,Locked.
+family-01,brother_identity_truth_lexeme,형의 정체,zh-CN,哥哥的身份 (S5+only),localePolicy.forbiddenLexemes.zh-CN,OK_LOCKED,Locked.
+family-01,paraphrase_set_family,(disclosure-policy.md §4.2 paraphrase variants),en,"hidden parentage / separate bloodline / not blood-related / Yoon Jung-hoo's hidden funding / changed inheritance ratio / protect his brother's identity",localePolicy.paraphraseLexemes.en (6 lexemes),OK_LOCKED,Locked.
+family-01,paraphrase_set_family,(§4.2 paraphrases),ja,隠された親子関係 / 別の血筋 / 血がつながっていない / 別資金 / 相続比率変更 / 兄を守るため,localePolicy.paraphraseLexemes.ja (6),OK_LOCKED,Locked.
+family-01,paraphrase_set_family,(§4.2 paraphrases),zh-CN,隐藏的亲子关系 / 不同血脉 / 没有血缘 / 另一笔钱 / 继承比例变更 / 保护哥哥身份,localePolicy.paraphraseLexemes.zh-CN (6),OK_LOCKED,Locked.
+family-01,npc_name_a,윤태성,en,Yoon Tae-sung,script-glossary.csv,OK,Locked.
+family-01,npc_name_a,윤태성,ja,ユン・テソン,script-glossary.csv,OK,Locked.
+family-01,npc_name_a,윤태성,zh-CN,尹泰成,script-glossary.csv,OK,Locked.
+family-01,npc_name_b,윤정후,en,Yoon Jung-hoo / Jung-hoo,script-glossary.csv,OK,Locked.
+family-01,npc_name_b,윤정후,ja,ユン・ジョンフ / 正厚,script-glossary.csv,OK,Locked. Thread-28 GLOSSARY_DELTAS notes 26 new JA terms used outside script-glossary; medium-risk: お父様 paraphrase boundary near 父の詐欺.
+family-01,npc_name_b,윤정후,zh-CN,尹正厚,script-glossary.csv,OK,Locked.
+friend-01,fiance_crossed_truth_lexeme,예비신랑이 먼저 / 선을 넘은,en,fiance crossed the line / fiancé crossed the line / fiance approached first / fiancé approached first / inappropriate messages (S5+only),localePolicy.forbiddenLexemes.en (21 lexemes),OK_LOCKED,Locked.
+friend-01,fiance_crossed_truth_lexeme,예비신랑이 먼저,ja,婚約者が先に / 婚約者が言い寄った / 一線を越えたメッセージ (S5+only),localePolicy.forbiddenLexemes.ja (18 lexemes),OK_LOCKED,Locked.
+friend-01,fiance_crossed_truth_lexeme,예비신랑이 먼저,zh-CN,准新郎先 / 准新郎勾搭 / 准新郎接近 / 越界消息 (S5+only),localePolicy.forbiddenLexemes.zh-CN (18 lexemes),OK_LOCKED,Locked.
+friend-01,father_fraud_truth_lexeme,아버지의 사기 / 투자 사기,en,father's fraud / father extorted money / A's father committed fraud / investment fraud / unpaid debt (S5+only),localePolicy.forbiddenLexemes.en,OK_LOCKED,Locked.
+friend-01,father_fraud_truth_lexeme,아버지의 사기,ja,父の詐欺 / 父が金を奪った / Aの父が詐欺 / 投資名目の詐欺 / 未返済 (S5+only),localePolicy.forbiddenLexemes.ja,OK_LOCKED,Locked.
+friend-01,father_fraud_truth_lexeme,아버지의 사기,zh-CN,父亲诈骗 / 父亲骗钱 / A的父亲诈骗 / 投资名义诈骗 / 未偿还 (S5+only),localePolicy.forbiddenLexemes.zh-CN,OK_LOCKED,Locked.
+friend-01,b_warning_intent_truth_lexeme,수민의 경고 의도,en,B's warning intent / not seduction but warning / old breakup caused by A's father / B could not say it / B played the villain again (S5+only),localePolicy.forbiddenLexemes.en,OK_LOCKED,Locked.
+friend-01,b_warning_intent_truth_lexeme,수민의 경고 의도,ja,Bの警告意図 / 誘惑ではなく警告 / 過去の絶交はAの父が原因 / Bは言えなかった / Bがまた悪役 (S5+only),localePolicy.forbiddenLexemes.ja,OK_LOCKED,Locked.
+friend-01,b_warning_intent_truth_lexeme,수민의 경고 의도,zh-CN,B的警告意图 / 不是勾引而是警告 / 过去绝交是A父亲造成的 / B没能说出口 / B又当恶人 (S5+only),localePolicy.forbiddenLexemes.zh-CN,OK_LOCKED,Locked.
+friend-01,defamation_truth_lexeme,명예훼손,en,defamation (S5+only),localePolicy.forbiddenLexemes.en,OK_LOCKED,Locked.
+friend-01,defamation_truth_lexeme,명예훼손,ja,名誉毀損 (S5+only),localePolicy.forbiddenLexemes.ja,OK_LOCKED,Locked.
+friend-01,defamation_truth_lexeme,명예훼손,zh-CN,名誉毁损 (S5+only),localePolicy.forbiddenLexemes.zh-CN,OK_LOCKED,Locked.
+friend-01,paraphrase_set_friend,(§4.3 paraphrases),en,groom-to-be contacted first / father scammed / warning her about the old scam / same scam pattern / old cutoff reason / not flirting but warning,localePolicy.paraphraseLexemes.en (6),OK_LOCKED,Locked.
+friend-01,paraphrase_set_friend,(§4.3 paraphrases),ja,婚約者からの連絡 / 父親の金銭問題 / 警告目的 / 同じ詐欺の構図 / 昔の絶交理由 / 口説きではない,localePolicy.paraphraseLexemes.ja (6),OK_LOCKED,Locked.
+friend-01,paraphrase_set_friend,(§4.3 paraphrases),zh-CN,未婚夫先联系 / 父亲的钱问题 / 警告目的 / 同样骗局 / 过去断交原因 / 不是调情而是警告,localePolicy.paraphraseLexemes.zh-CN (6),OK_LOCKED,Locked.
+friend-01,npc_name_a,송다은,en,Song Da-eun / Da-eun,script-glossary.csv,OK,Locked.
+friend-01,npc_name_a,송다은,ja,ソン・ダウン / 多恩,script-glossary.csv,OK,Locked.
+friend-01,npc_name_a,송다은,zh-CN,宋多恩,script-glossary.csv,OK,Locked.
+friend-01,npc_name_b,최수민,en,Choi Su-min / Su-min,script-glossary.csv,OK,Locked.
+friend-01,npc_name_b,최수민,ja,チェ・スミン / スミン,script-glossary.csv,OK,Locked.
+friend-01,npc_name_b,최수민,zh-CN,崔秀敏 / 秀敏,script-glossary.csv,OK,Locked.
+ja_new_terms,(thread-28 deltas),(various),ja,"26 new JA terms used outside script-glossary.csv (low risk 19 / medium risk 7)","Per Thread-28 GLOSSARY_DELTAS.csv: low risk 19 (kin terms / name romanizations / legal-doc terms / event surface) / medium risk 7 (お父様 / 工場危機 / 母の通帳経由 / 年代物の口座の流れ / 自筆遺言練習本 / 義実家の問題 — paraphrase boundaries near locked truth lexemes)",NEW_OK,All medium-risk JA terms validated against forbiddenLexemes/paraphraseLexemes by validator's truth-stage gate (no flag). P2 native-review polish recommended for register cohesion.
+en_new_terms,(thread-27 deltas),(various),en,Thread-27 GLOSSARY_DELTAS.csv lists 50 KO/EN term mappings,Per Thread-27 expansion,NEW_OK,Surface-vs-S5-truth split applied throughout. No leaks.
+zh_cn_new_terms,(thread-29 deltas),(various),zh-CN,Thread-29 GLOSSARY_DELTAS.csv applied,Per Thread-29 expansion,NEW_OK,Same.
+brand_full_title_unchanged,(carry-over),솔로몬의 딜레마: 진실의 재판,en,Verdict Zero: Trial of Truth (locked),glossary.csv brand_full_title (locked),NOT_USED_IN_SCRIPT,Not appearing in any script overlay. Brand guard 0 violations.
+brand_full_title_unchanged,(carry-over),솔로몬의 딜레마: 진실의 재판,ja,ソロモンのジレンマ：真実の裁き (locked),glossary.csv (locked),NOT_USED_IN_SCRIPT,Same.
+brand_full_title_unchanged,(carry-over),솔로몬의 딜레마: 진실의 재판,zh-CN,真相裁决：零点审判 (locked),glossary.csv (locked),NOT_USED_IN_SCRIPT,Same.
+non_lieState_channel_softening,(carry-over Thread-24),(aftermath / dossier-late / witness-full / etc.),all,All 3 locales: surface paraphrase used where KO source reveals truth,(N/A — design gap),DESIGN_GAP_CARRY_OVER,Carry-over from Thread-24 P1 / Thread-30 review unchanged. NOT bulk-blocking. PCT decision still pending — extend validator's truth-stage logic OR accept softening.
+ja_a_side_S5_softness,(this-thread P2),(family-01 a|d-1|S5|fact_pursuit narrative softness in JA),ja,"v1-v4 lack explicit forbidden truth lexemes (異父 / 90:10 / 遺書操作 / 正厚の金 missing in visible text)",(no enforcement gate — narrative observation),P2_SOFT_ACCEPTABLE,"JA family-01 a-side S5 (Yoon Tae-sung's confession of MIS-PERCEPTION) more abstract than KO/EN/zh-CN. Bucket cycle DOES expose truth at b-side (b|d-2|S5|fact_pursuit v1-v3 use 90:10/90対10/正厚90/泰成10/兄を守るために fully). Per Thread-24 recheck v2 §4 narrative-valid waiver, acceptable. P2 native-review polish recommended."
+en_friend_b_d1_S5_quality,(this-thread P2),friend-01 a-d-1-S5 narrative,en,"v1: 'Your Honor, I now admit that the nine days of contact were not seduction but warning — Su-min was trying to warn my fiance about my father's fraud history, not pursue him. I will not hide behind those...'",(N/A),OK_QUALITY,Strong reveal. Truth lexemes 'not seduction but warning' + 'father's fraud history' present. Faithful to KO source.
+zh_cn_friend_a_d1_S5_quality,(this-thread P2),friend-01 a-d-1-S5 narrative,zh-CN,"v1: '三月一日到九日,崔秀敏给我的未婚夫打了六次电话、发了十一条短信。短信里有一条写着""是关于多恩爸爸的事""...父亲诈骗、是投资名义诈骗,是同样模式的重演。秀敏不是准新郎接近的对象,她是想替我拦住父亲。这就是B的警告意图。'",(N/A),OK_QUALITY,Very strong reveal. 父亲诈骗 / 投资名义诈骗 / 同样模式 / B的警告意图 all present.
+zh_cn_friend_interrogation_answers_S5_softness,(thread-29 P2),friend-01 interrogation_answers S5,zh-CN,"interrogation_answers S5 used softer narrative phrasing (e.g. 提个醒 / 想拦下来 / 想替她拦住父亲) instead of literal forbidden tokens.",(N/A),P2_SOFT_ACCEPTABLE,"Per Thread-24 recheck v2 §4 narrative-valid waiver. friend-01 scriptedText interrogation S5 entries DO use literal truth lexemes (530 hits per this-thread audit). Stronger reveal vocabulary present at confession beat path."
+keywordsLocale_inconsistency,(this-thread P2 cosmetic),angle_catalog,all,EN keeps keywordsLocale=[] empty arrays / JA + zh-CN omit field entirely,(both valid),P2_COSMETIC,"Both approaches comply with locked decision #7 + brief #7 (no filled keywordsLocale). Cosmetic inconsistency only. Recommend Codex normalize EN scaffold to omit field (matching JA + zh-CN), or make all 3 use empty arrays. Not blocking."

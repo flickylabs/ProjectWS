@@ -1,0 +1,140 @@
+{
+  "schemaVersion": 1,
+  "locale": "ja",
+  "caseId": "spouse-01",
+  "overlayKind": "angle_catalog",
+  "angles": [
+    {
+      "disputeId": "d-1",
+      "angleId": "general",
+      "label": "訪問・通話の経緯",
+      "description": "オフィステル訪問、深夜の通話、レシートの品物を、同じ疑念の線上で確かめる。"
+    },
+    {
+      "disputeId": "d-1",
+      "angleId": "visit_route",
+      "label": "オフィステル訪問の動線",
+      "description": "退勤後、同じオフィステルへ繰り返し訪問した時刻、経路、滞在の目的を確かめる。"
+    },
+    {
+      "disputeId": "d-1",
+      "angleId": "call_record",
+      "label": "深夜の通話と未登録番号",
+      "description": "深夜の短い通話と、未登録番号とのメッセージのやり取りが、どのような緊急連絡だったのかを確かめる。"
+    },
+    {
+      "disputeId": "d-1",
+      "angleId": "family_items",
+      "label": "レシートの中の品物",
+      "description": "車から見つかった女性向けの品と若者向けの品が、誰のために必要だった物なのかを確かめる。"
+    },
+    {
+      "disputeId": "d-1",
+      "angleId": "affair_denial",
+      "label": "浮気疑惑への否認",
+      "description": "オフィステル、通話、品物が浮気の状況証拠なのかどうかを切り分ける。"
+    },
+    {
+      "disputeId": "d-1",
+      "angleId": "concealment_reason",
+      "label": "隠した理由",
+      "description": "なぜ訪問、通話、品物について配偶者に説明しなかったのかを確かめる。"
+    },
+    {
+      "disputeId": "d-2",
+      "angleId": "general",
+      "label": "大口出金の経緯",
+      "description": "個人口座からの大口出金、現金移動、配偶者排除の問題を確かめる。"
+    },
+    {
+      "disputeId": "d-2",
+      "angleId": "cash_withdrawal",
+      "label": "3,000万ウォンの現金出金",
+      "description": "イ・ジュノ名義の別口座から3,000万ウォンが、直近4か月のあいだに分割で現金出金された時点と方法を確かめる。"
+    },
+    {
+      "disputeId": "d-2",
+      "angleId": "private_fund_boundary",
+      "label": "個人資金と共同財産の境界",
+      "description": "出金の原資が共同貯蓄なのか個人口座なのか、配偶者に伝えなかった責任は何なのかを切り分ける。"
+    },
+    {
+      "disputeId": "d-2",
+      "angleId": "recipient_reason",
+      "label": "現金の渡し先と理由",
+      "description": "出金した現金が誰へ、どのような事情で渡されたのかを確かめる。"
+    },
+    {
+      "disputeId": "d-2",
+      "angleId": "consent_boundary",
+      "label": "配偶者の同意の不在",
+      "description": "個人のお金であっても、配偶者に伝えずに大金を動かした責任を問う。"
+    },
+    {
+      "disputeId": "h-d3",
+      "angleId": "general",
+      "label": "貯蓄・送金の経緯",
+      "description": "共同貯蓄の解約、委任書類、投資チャットルームへの送金、損失の経緯を順に確かめる。"
+    },
+    {
+      "disputeId": "h-d3",
+      "angleId": "savings_cancellation",
+      "label": "共同貯蓄の解約",
+      "description": "共同貯蓄がいつ、誰の申請で解約されたのかを確かめる。"
+    },
+    {
+      "disputeId": "h-d3",
+      "angleId": "proxy_document",
+      "label": "委任書類と署名の経緯",
+      "description": "委任書の署名がどのように作成され、本当に同意があったのかを確かめる。"
+    },
+    {
+      "disputeId": "h-d3",
+      "angleId": "investment_room",
+      "label": "投資チャットルームへの送金経緯",
+      "description": "解約された資金が投資チャットルームへ流れた経緯と、加入の経路を確かめる。"
+    },
+    {
+      "disputeId": "h-d3",
+      "angleId": "loss_responsibility",
+      "label": "損失と法的責任",
+      "description": "資金が失われた結果と、書類処理の責任を、感情的な被害主張と切り分ける。"
+    },
+    {
+      "disputeId": "h-d4",
+      "angleId": "general",
+      "label": "責任の順序",
+      "description": "隠匿、口座の確認、資金の実行、書類違反——これらをひとまとめにせず、分けて確かめる。"
+    },
+    {
+      "disputeId": "h-d4",
+      "angleId": "concealment_sequence",
+      "label": "隠匿の始まり",
+      "description": "誰が、何を、いつ最初に隠したのか——隠匿と実行を切り分けて確かめる。"
+    },
+    {
+      "disputeId": "h-d4",
+      "angleId": "account_monitoring",
+      "label": "口座確認の始まり",
+      "description": "パク・ジヨンがいつから口座を覗き始めたのかと、その行為の責任を確かめる。"
+    },
+    {
+      "disputeId": "h-d4",
+      "angleId": "execution_timeline",
+      "label": "資金実行の時点",
+      "description": "イ・ジュノの現金出金と、パク・ジヨンの共同貯蓄解約・送金の時点を、時系列で並べる。"
+    },
+    {
+      "disputeId": "h-d4",
+      "angleId": "illegal_boundary",
+      "label": "法的な一線を越えた行為",
+      "description": "動機とは別に、法的責任が伴う書類処理と資金移動を切り分ける。"
+    },
+    {
+      "disputeId": "h-d4",
+      "angleId": "responsibility_split",
+      "label": "切り分けて記す責任",
+      "description": "誰がより悪いかではなく、隠匿・監視・実行・違法性をそれぞれ別に記録する。"
+    }
+  ]
+}

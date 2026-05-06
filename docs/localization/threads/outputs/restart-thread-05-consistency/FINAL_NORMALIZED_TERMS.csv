@@ -1,0 +1,153 @@
+source_term_or_id,en,ja,zh_cn,notes
+internal_project_name,Project_Solomon,Project_Solomon,Project_Solomon,Locked. Internal codename only — never user-facing.
+brand_title,Verdict Zero,ソロモンのジレンマ,真相裁决,Locked. Public-facing title (top half).
+brand_subtitle,Trial of Truth,真実の裁き,零点审判,Locked. Public-facing subtitle.
+brand_full_title,Verdict Zero: Trial of Truth,ソロモンのジレンマ：真実の裁き,真相裁决：零点审判,"Locked. JA/zh-CN use full-width colon `：`. KO/EN use Roman colon `:`. PROJECT_CONTROL_TOWER 2026-05-06."
+project_solomon,(deprecated user-facing),(deprecated user-facing),(deprecated user-facing),Engine/dev legacy alias only. Linter must reject user-facing usage.
+court_simulation,Court Simulation (body) / COURT SIMULATION GAME (genre eyebrow),法廷シミュレーション (body) / 法廷シミュレーションゲーム (genre eyebrow),法庭模拟 (body) / 法庭模拟游戏 (genre eyebrow),splash.subtitle is genre eyebrow — KO/JA/zh-CN render sentence form; EN renders ALL-CAPS via [lang^=en] CSS scope.
+courtroom,Courtroom,法廷,法庭,Glossary-aligned.
+judge,Judge,裁判官,裁判官,Glossary-aligned. home.tagline JA + zh-CN patches enforce alignment (was 裁き手 / 审判者).
+party,Party,当事者,当事人,Glossary-aligned.
+witness,Witness,証人,证人,Glossary-aligned.
+case,Case,事件,案件,Glossary-aligned.
+case_brief,Case Brief,事件ブリーフィング (formal) / ブリーフィング (UI pill),案件简报,JA UI drops 事件 prefix on phase pill.
+phase,Phase,フェーズ,阶段,Glossary-aligned. Phase pills drop suffix in UI.
+briefing_phase,Case Brief,ブリーフィング,案件简报,Drop suffix.
+pretrial_phase,Opening Statements,冒頭陳述,庭前陈述,EN renamed (PROJECT_CONTROL_TOWER decision 9).
+interrogation_phase,Interrogation,尋問,讯问,Drop suffix.
+mediation_phase,Mediation,調停,调解,Drop suffix.
+re_examination_phase,Final Interrogation,再尋問,最终讯问,EN renamed (PROJECT_CONTROL_TOWER decision 10).
+verdict_phase,Verdict,判決,判决,Drop suffix.
+result_phase,Result,結果,结果,Drop suffix.
+verdict,Verdict,判決,判决 (record/static) / 裁决 (process/action),"zh-CN process/record split. KO 판결 collapses to one term in en/ja; zh-CN renders 判决 for static and 裁决 for action. brand 真相裁决 uses the action sense."
+judgment_basis,Verdict Basis,判決根拠,判决依据,Glossary-aligned.
+responsibility,Responsibility,責任,责任,Glossary-aligned. EN verdict.responsibility.major patch: Major → Primary.
+solution,Solution,解決策 (was 解決案),解决方案,JA delta (more natural game-UI choice copy).
+dispute,Dispute,争点,争议点,Glossary-aligned.
+claim,Claim,主張,主张,Glossary-aligned.
+fact,Fact,事実,事实,Glossary-aligned.
+truth,Truth,真相,真相,"Glossary-aligned. JA pc.verdictAdvance.conditionsMissing patch: 真実→真相."
+hidden_truth,Hidden Truth,隠された真相,隐藏真相,Engine concept; never surfaces.
+surface_text,Surface Text,表層情報,表层信息,Engine concept.
+evidence,Evidence,証拠,证据,Glossary-aligned.
+evidence_card,Evidence Card,証拠カード,证据卡,CSS class only.
+evidence_stage,Evidence Stage,証拠段階,证据阶段,Glossary-aligned. Compact UI may render `Stage {stage}`.
+investigation_stage,Investigation Stage,調査ステージ,调查阶段,Glossary-aligned. Distinct from evidence_stage.
+deep_investigation,Deep Investigation,深掘り調査,深度调查,Engine concept.
+testimony,Testimony,証言,证言,Glossary-aligned.
+statement,Statement,供述,陈述,Glossary-aligned.
+contradiction,Contradiction,矛盾,矛盾,Glossary-aligned.
+contradiction_pursuit,Contradiction Pursuit (noun) / Press the Contradiction (verb-imperative),矛盾追及 (noun) / 突く・追及する (verb forms),矛盾追问,EN keeps glossary noun + verb-form usage note.
+free_interrogation,Free Interrogation,自由尋問,自由讯问,Gameplay mode. Distinct from per-slot label.
+free_question,Free Question,自由質問,自由提问,Per-turn slot label.
+judge_question,Judge Question,裁判官の質問,裁判官提问,Engine field.
+fact_pursuit,Fact Pursuit,事実追及,事实追问,Glossary-aligned.
+motive_search,Motive Search,動機探索,动机探查,Glossary-aligned.
+empathy_approach,Empathy Approach,共感アプローチ,共情接近,Glossary-aligned.
+dossier,(deprecated user-facing),(deprecated user-facing),(deprecated user-facing),"PROJECT_CONTROL_TOWER decision 3. Use Records / Case File / Decisive Question / Notes per surface."
+decisive_question,Decisive Question,決定的質問,决定性提问,One of the dossier replacements.
+case_file,Case File,事件ファイル,案件档案,One of the dossier replacements. Use only where Records/Decisive Question/Notes do not fit.
+notebook,Notebook,ノート,笔记本,Glossary-aligned. Compounds: Evidence Notebook / 証拠ノート / 证据笔记.
+notes,Notes,メモ,笔记,Note-style surface dossier replacement.
+observation,Observation,観察,观察,Glossary-aligned.
+record_summary,Records,記録の整理,记录整理,KR=기록 정리 confirmed; UI compact form.
+records,Records,記録,记录,Compact records label.
+slip,Slip,失言,失言,New row from Thread-04 P1 (judgeHistoryDrawer filter).
+action_panel,Action Panel,アクションパネル,行动面板,CSS class only.
+hotbar,Hotbar,ホットバー,快捷栏,CSS class only.
+investigation_token,Investigation Token,調査トークン,调查点数,zh-CN delta applied.
+skill_point,Skill Point,スキルポイント,技能点,Glossary-aligned.
+court_control,Court Control,法廷掌握,法庭掌控,KR canonicalize 법정 장악 (drop 법정 지배력).
+trust,Trust,信頼,信任,zh-CN delta applied (was 信任度).
+trust_state_high,Trusting,信頼,信任,Trust meter bucket.
+trust_state_mid,Cautious,警戒,警觉,Trust meter bucket.
+trust_state_low,Suspicious,疑念,怀疑,Trust meter bucket.
+stress,Stress,圧力,压力,Engine-only.
+perk,Perk,パーク,特性,Locale-specific by design.
+trait,Trait,特性 / 傾向 (axis-trait),特质 / 倾向 (axis-trait),KR-side cleanup pending: 특성 vs 성향 distinction.
+permission_level,Permission Level,権限レベル,权限等级,"Renamed from clearance. Permission/security/unlock concept."
+clearance_rate,Completion Rate (compact: Completion),達成度,完成度,EN prefers Completion Rate; compact Completion.
+session,Session,セッション,会话,Glossary-aligned.
+season,Season,シーズン,赛季,NEW row. Lobby category grouping; distinct from session.
+save_data,Save Data,セーブデータ,存档数据,Glossary-aligned.
+mock_mode,Mock Mode,モックモード,模拟模式,Engine-only.
+test_console,Test Console,テストコンソール,测试控制台,KR uses Token Console literal; KO normalize first.
+llm,LLM,LLM,LLM,Locked.
+api,API,API,API,Locked.
+jwt,JWT,JWT,JWT,Locked.
+score_axis_insight,Insight,洞察,洞察,Score-axis. JA/zh-CN needs-rework pending native review.
+score_axis_authority,Authority,権威,权威,Score-axis. CRITICAL — disambiguates from gameplay verdict.
+score_axis_wisdom,Wisdom,知恵,智慧,Score-axis. Distinct from solution.
+demand_answer,Demand Answer,即答要求,即答要求,UI action noun.
+demand_bark,Answer me!,即答してください！,请立即回答！,NEW. In-character spoken bark for demand_answer.
+separate_interrogation,Separate Interrogation,個別尋問,分别讯问,Special action.
+confidential_protection,Confidential Protection,非公開保護,保密保护,Special action.
+objection,Objection (noun) / Raise Objection (button),異議申立 (noun) / 異議を申し立てる (button),异议 (noun) / 提出异议 (button),"3-tier split: glossary noun (compact) / UI verb-button / spoken bark."
+objection_bark,Objection!,異議あり！,反对！,In-character spoken bark.
+truth_progress,Truth Progress,真相把握段階,真相进度,Per-dispute truth-stage gauge.
+combination,Combination,組合せ,组合,Card-combination gameplay concept.
+judge_fragment,Verdict Fragment,判決の欠片,判决碎片,Used 11× JA + 9 sub-types.
+judge_title,Title,称号,称号,KO source 타이틀 → 칭호 rename (PROJECT_CONTROL_TOWER decision 6).
+emotion_defensive,Guarded,警戒,警戒,Emotion meter state.
+emotion_confident,Confident,自信,自信,Emotion meter state.
+emotion_shaken,Shaken,動揺,动摇,Emotion meter state.
+emotion_angry,Enraged,激昂,激愤,Emotion meter state.
+emotion_resigned,Resigned,諦観,认命,zh-CN uses 认命 (PROJECT_CONTROL_TOWER decision 8).
+lie_state_s0,Defense,防衛,防御,Lie state stage S0.
+lie_state_s1,Wavering,動揺,动摇,Note: same KR as emotion_shaken — verify intentional.
+lie_state_s2,Excuse,弁明,辩解,Lie state stage S2.
+lie_state_s3,Cornered,窮地,窘迫,Lie state stage S3.
+lie_state_s4,Breaking,崩壊,崩溃,Lie state stage S4.
+lie_state_s5,Confession,自白,自白,Lie state stage S5.
+fragment_reasoning,Reasoning Fragment,論理の欠片,逻辑碎片,Trait fragment.
+fragment_inquiry,Inquiry Fragment,探究の欠片,探究碎片,Trait fragment.
+fragment_empathy,Empathy Fragment,共感の欠片,共情碎片,Trait fragment.
+fragment_severity,Severity Fragment,厳正の欠片,严正碎片,KR axis cleanup: 엄정 reserved for fragment.
+fragment_deliberation,Deliberation Fragment,審議の欠片,审议碎片,Trait fragment.
+fragment_leniency,Leniency Fragment,寛容の欠片,宽容碎片,Trait fragment.
+fragment_jurisprudence,Jurisprudence Fragment,法理の欠片,法理碎片,Trait fragment.
+fragment_balance,Balance Fragment,均衡の欠片,均衡碎片,Trait fragment.
+fragment_reconciliation,Reconciliation Fragment,和解の欠片,和解碎片,화해 = reconciliation (distinct from 봉합 = closure).
+axis_resolution_pole,Closure,収拾,弥合,봉합 = patching over. JA/zh-CN need native verification.
+axis_principle_pole,Principle,原則,原则,Resolution-axis left pole.
+axis_logic_pole,Logic,論理,逻辑,Inquiry-axis left pole.
+axis_intuition_pole,Intuition,直感,直觉,Inquiry-axis right pole.
+axis_severity_pole,Strict,厳格,严格,Judgment-axis left pole. KR cleanup: 엄격 (axis pole) vs 엄정 (fragment).
+axis_leniency_pole,Lenient,寛容,宽容,Judgment-axis right pole.
+rarity_common,Common,コモン,普通,JA needs-rework: コモン (loanword) vs 一般 (kanji).
+rarity_rare,Rare,レア,稀有,Title rarity.
+rarity_epic,Epic,エピック,史诗,KR 영웅 literal but Epic = gaming convention.
+rarity_legendary,Legendary,レジェンダリー,传说,Title rarity.
+relationship_spouse,Spouse,夫婦,夫妻,Session category.
+relationship_family,Family,家族,家庭,Session category.
+relationship_friend,Friend,友人,朋友,Session category.
+relationship_neighbor,Neighbor,隣人,邻居,Session category.
+relationship_partnership,Business Partner,共同事業,合伙,Session category.
+relationship_workplace,Workplace,職場,职场,Session category.
+relationship_tenant_landlord,Tenant–Landlord,賃借人・家主,租户·房东,Session category.
+relationship_online,Online,オンライン,网络,Session category.
+relationship_medical_education,Medical / Education,医療・教育,医疗·教育,Session category.
+relationship_public_system,Public / Civic,公共・制度,公共·制度,Session category.
+hotbar.slot.fact compact (EN only),Facts,—,—,EN compact alias for narrow buckets.
+hotbar.slot.motive compact (EN only),Motive,—,—,Compact alias.
+hotbar.slot.empathy compact (EN only),Empathy,—,—,Compact alias.
+hotbar.slot.free compact (EN only),Free Q,—,—,Compact alias.
+hotbar.slot.evidence compact (EN only),Evidence,—,—,Compact alias.
+hotbar.slot.witness compact (EN only),Witness,—,—,Compact alias.
+hotbar.special.separation compact (EN only),Separate,—,—,Compact alias.
+hotbar.special.confidential compact (EN only),Confidential,—,—,Compact alias.
+hotbar.special.immediate compact (EN only),Immediate,—,—,Compact alias.
+result.tab.* / verdict.step.* numeric prefix,(prefix dropped — Result/Verdict/Epilogue/Bonus + Disputes/Responsibility/Solution/Verdict),(prefix dropped — 結果/判決/後日談/ボーナス + 争点判断/責任配分/解決策/判決文),(prefix dropped — 结果/判决/后日谈/奖励 + 争点判断/责任分配/解决方案/判决文),KO retains numeric prefix; non-KO drops. Thread-04 P0-4. RESOLVES Thread-01 SOURCE_STRING_MAP `01 Result` proposal — must update to drop prefix.
+home.gameTitle,Verdict Zero: Trial of Truth,ソロモンのジレンマ：真実の裁き,真相裁决：零点审判,Consumes brand_full_title.
+splash.title (split rendering option),Verdict Zero,ソロモンのジレンマ,真相裁决,Optional split rendering using brand_title.
+splash.subtitle (genre eyebrow),COURT SIMULATION GAME,法廷シミュレーションゲーム,法庭模拟游戏,EN ALL-CAPS scoped via [lang^=en] CSS. Other locales sentence form.
+home.tagline (current i18n value),Take the bench and weigh every claim against the truth.,現代の裁判官となり、証言の奥にある真相を見極めましょう。,化身现代裁判官，辨明证词背后的真相。,EN brand-clean (no Solomon). JA + zh-CN patches enforce 裁判官 alignment.
+pcHomeShared.ts:134 (intro slide 1 title — pending i18n promotion),Step onto the bench and untangle every dispute yourself.,現代の裁判官として葛藤を解きほぐしてください。 (proposal — JA team to verify),化身现代裁判官，亲手化解每一桩纠纷。 (proposal — zh-CN team to verify),"KO source may keep 솔로몬 metaphor (KO/JA brand rule allows). EN/zh-CN MUST avoid Solomon. Promote PC_HOME_INTRO_SLIDES to i18n first; brand-clean translations land after."
+pc.notes.unseen,({count} unverified),（未確認項目 {count}件）,（未确认项目 {count} 个）,EN tone fix: unseen → unverified (matches KO 미확인).
+pc.combo.ready,{count} ready to combine,組み合わせ可能 {count}件 ─ 今すぐ連結できます,可组合 {count} 个 — 现在可连接,EN drops `connect now`; em-dash polish on JA + zh-CN.
+pc.recordSummary.moreConvincing,{party}'s claim is more convincing.,{party}側の主張のほうが説得力があると判断しました。,判定 {party} 一方的主张更有说服力。,Typographic apostrophe + present tense on EN.
+pc.verdictAdvance.conditionsMissing,"Verdict conditions are not met yet. Verify each dispute, truth, and evidence first.","まだ判決条件を満たしていません。争点ごとの真相と証拠をさらに確認してください。",尚未满足裁决条件。请先确认各争议点的真相与证据。,JA truth=真相 alignment; zh-CN uses 裁决 (process/action sense).
+pc.verdict.factOption.partyClaimCorrectWithContradiction,Differs from facts — {party}'s claim,この争点は事実と異なります ─ {party}側の主張が正しい,该争议点与事实不符 — {party} 一方的主张正确,EN compact alt for verdict picker; em-dash polish on JA + zh-CN.
+pc.verdict.responsibility.major,Primary responsibility: {party},{party}側に主たる責任,{party} 一方承担主要责任,EN: KO 주요 책임 closer to Primary than Major.
+pc.home.countdown.ready,Ready soon,まもなく回復,即将补充,zh-CN delta: 恢复 → 补充 (KO 충전 = recharge).
+pc.actions.objectionLabel (button),Raise Objection,異議を申し立てる,提出异议,3-tier split: button uses verb form. Compact 2-char glossary noun (异议 / Objection / 異議申立) reserved for chip space.

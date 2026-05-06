@@ -55,6 +55,23 @@ body.pc-mode {
   background: var(--pc-bg);
   overflow: hidden;
   user-select: none;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
+
+html[lang^="en"] body.pc-mode {
+  word-break: normal;
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
+html[lang^="ja"] body.pc-mode,
+html[lang^="zh"] body.pc-mode {
+  letter-spacing: 0;
+}
+
+html[lang^="ja"] body.pc-mode {
+  line-break: strict;
 }
 
 /* PC scrollbar — thinner, darker */
@@ -4388,7 +4405,41 @@ body.pc-mode .pc-splash__title {
 
 body.pc-mode .pc-splash__sub {
   font-size: 12px; font-weight: 700; color: #6a6e80;
-  letter-spacing: 0.16em; margin-top: 8px;
+  letter-spacing: 0.04em; margin-top: 8px;
+}
+
+html[lang^="en"] body.pc-mode .pc-splash__sub {
+  letter-spacing: 0.16em;
+}
+
+body.pc-mode .pc-language-mini {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-width: 0;
+  color: rgba(235, 229, 213, 0.62);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+body.pc-mode .pc-language-mini select {
+  min-width: 112px;
+  height: 30px;
+  padding: 0 28px 0 10px;
+  border-radius: 8px;
+  border: 1px solid rgba(212, 162, 78, 0.24);
+  background: rgba(12, 13, 18, 0.92);
+  color: #ede3cc;
+  font: inherit;
+}
+
+body.pc-mode .pc-splash__language {
+  margin-top: 18px;
+}
+
+body.pc-mode .pc-loading-screen__language {
+  margin-top: 8px;
 }
 
 @keyframes pc-splash-rise {
@@ -4570,9 +4621,19 @@ body.pc-mode .pc-mode-card__badge,
 body.pc-mode .pc-stage-preview-v2__eyebrow {
   font-size: 11px;
   font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: none;
+  color: var(--pc-gold-light);
+}
+
+html[lang^="en"] body.pc-mode .pc-intro__brand-copy,
+html[lang^="en"] body.pc-mode .pc-home-v2__eyebrow,
+html[lang^="en"] body.pc-mode .pc-depth-header__copy > span,
+html[lang^="en"] body.pc-mode .pc-panel-card-v2__eyebrow,
+html[lang^="en"] body.pc-mode .pc-mode-card__badge,
+html[lang^="en"] body.pc-mode .pc-stage-preview-v2__eyebrow {
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--pc-gold-light);
 }
 
 body.pc-mode .pc-intro__skip,
@@ -4720,11 +4781,19 @@ body.pc-mode .pc-home-v2__hero h1 {
   margin: 0;
   font-size: clamp(44px, 4.6vw, 64px);
   font-weight: 800;
-  line-height: 1;
+  line-height: 1.05;
   letter-spacing: -0.04em;
   color: var(--pc-text);
   text-shadow: 0 2px 18px rgba(212, 162, 78, 0.18);
-  white-space: nowrap;
+  white-space: normal;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  max-width: min(1100px, calc(100% - 200px));
+  text-align: center;
+}
+
+html[lang^="en"] body.pc-mode .pc-home-v2__hero h1 {
+  letter-spacing: -0.02em;
 }
 
 body.pc-mode .pc-home-v2__hero p {
@@ -20866,6 +20935,7 @@ body.pc-mode .pc-settings-sidebar__item {
   display: flex;
   align-items: center;
   gap: 12px;
+  min-width: 0;
   padding: 10px 14px;
   border-radius: 8px;
   border: 0;
@@ -20894,9 +20964,14 @@ body.pc-mode .pc-settings-sidebar__icon {
   flex-shrink: 0;
 }
 body.pc-mode .pc-settings-sidebar__label {
-  flex: 1;
+  flex: 1 1 0;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 body.pc-mode .pc-settings-sidebar__badge {
+  flex: 0 0 auto;
   font-size: 9px;
   font-weight: 700;
   padding: 2px 6px;
@@ -29639,6 +29714,14 @@ body.pc-mode .pc-result-screen--history .pc-result-panel {
   overflow: hidden !important;
 }
 
+body.pc-mode .pc-result-screen--history .pc-result-panel > .pc-result-combined,
+body.pc-mode .pc-result-screen--history .pc-result-panel > .pc-result-text {
+  flex: 1 1 auto !important;
+  height: 100% !important;
+  min-height: 0 !important;
+  overflow-y: auto !important;
+}
+
 body.pc-mode .pc-result-screen--history .pc-result-panel > .pc-result-combined > div:last-child,
 body.pc-mode .pc-result-screen--history .pc-result-panel > .pc-result-text > div:last-child {
   position: static !important;
@@ -29660,7 +29743,6 @@ body.pc-mode .pc-result-screen--history .pc-result-panel > .pc-result-text > .pc
   display: block !important;
 }
 
-body.pc-mode .pc-result-screen--history .pc-result-panel > .pc-result-text > .pc-history-epilogue-box,
 body.pc-mode .pc-result-screen--history .pc-result-panel > .pc-result-text > .pc-history-bonus-layout {
   display: grid !important;
 }
@@ -29745,14 +29827,18 @@ body.pc-mode .pc-history-result-portrait {
 }
 
 body.pc-mode .pc-history-epilogue-box {
-  display: grid !important;
-  gap: 12px;
+  flex: 1 1 auto;
   min-height: 0;
+  margin-bottom: 16px;
   padding: 16px 20px;
   border: 1px solid rgba(212, 162, 78, 0.15);
   border-radius: 16px;
   background: rgba(212, 162, 78, 0.02);
   overflow-y: auto;
+}
+
+body.pc-mode .pc-history-epilogue-tab {
+  height: 100%;
 }
 
 body.pc-mode .pc-history-epilogue-box .pc-result-aftermath {

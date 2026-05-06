@@ -1,0 +1,262 @@
+{
+  "_meta": {
+    "intake_thread": "script-thread-01-en-intake",
+    "case_id": "spouse-01",
+    "target_locale": "en",
+    "rule_summary": [
+      "Translate text only. Preserve every id, key, channel, party, lieState, lieBand, subjectRole, depth, evidenceId, witnessId, dossierQuestionId, sourceRefs, behaviorHint (kept Korean as a writer note).",
+      "Surface-only channels (judge_question, system_message, dossier) MUST NOT introduce truth lexemes (brother, nephew, forged power of attorney, investment fraud) before S5.",
+      "Match the disclosure boundary at the lieState level: S0/S1 NPC speech keeps amounts/persons/places vague; S2 introduces hedged familial framing; S5 confesses fully.",
+      "Variant set per key kept varied — same intent, different wording — mirroring the KO scriptedText practice."
+    ],
+    "samples": [
+      "interrogation entry (1 entry, 3 of 10 variants)",
+      "evidence_present entry (1 entry, 3 of 10 variants)",
+      "witness entry (1 entry, 3 of 10 variants)",
+      "system_message entry (1 entry, 3 of 5 variants)",
+      "judge_question variant (1 entry, 3 of 5 variants)",
+      "interrogation_answer variant (1 entry, 3 of 10 variants)",
+      "phase1 dialogue passage (single passage, mixed speakers)",
+      "mediation path opening (1 path, 1 judge intro + 2 dialogue lines)"
+    ]
+  },
+  "scripted_text_interrogation": {
+    "source_path": "src/data/scriptedText/spouse-01.json",
+    "key": "a|d-1|S0|fact_pursuit",
+    "party": "a",
+    "disputeId": "d-1",
+    "lieState": "S0",
+    "questionType": "fact_pursuit",
+    "stanceHint": "deny",
+    "truthLevel": "none",
+    "channel": "interrogation",
+    "variants": [
+      {
+        "id": "a-d-1-S0-fact-pursuit-v1",
+        "ko": "블랙박스를 열어봤을 때, 저는 이미 답을 알고 있었습니다. 매일, 같은 시간, 같은 오피스텔. 그래도 아닐 수 있다고, 한 달을 더 참았습니다.",
+        "en": "When I opened the dashcam, I already knew the answer. Every day, same time, same studio apartment. I told myself it could still be nothing, and gave it one more month."
+      },
+      {
+        "id": "a-d-1-S0-fact-pursuit-v2",
+        "ko": "퇴근 시간만 되면 같은 곳에서 멈추는 차 기록. 한두 번이면 제가 예민한 거겠죠. 그런데 석 달이었습니다.",
+        "en": "Every time he left work, the car stopped at the same place. Once or twice and I'd say I was being paranoid. But it was three months."
+      },
+      {
+        "id": "a-d-1-S0-fact-pursuit-v3",
+        "ko": "내비 기록을 맞춰봤습니다. 같은 주소가 반복되는 걸 보는데 손끝이 싸해졌습니다. 그런데도 한번 더 확인했습니다. 세 번째까지.",
+        "en": "I checked the navigation log. Watching the same address come up over and over, my fingers went cold. Even then, I checked one more time. Three times in all."
+      }
+    ],
+    "remaining_variants_pattern": "Variants v4–v10 in the KO source iterate the same beat — A's slow accumulation of evidence before deciding to act — through different sensory anchors (receipts, the late-night call, the wallet check, etc.). EN equivalents should rotate through these same anchors so the player perceives variety while the disclosure boundary (no claim of affair as fact, no truth lexemes) stays intact across all 10."
+  },
+  "scripted_text_evidence_present": {
+    "source_path": "src/data/scriptedText/spouse-01.json",
+    "key": "b|e-1|early|self",
+    "party": "b",
+    "evidenceId": "e-1",
+    "lieBand": "early",
+    "subjectRole": "self",
+    "stanceHint": "hedge",
+    "truthLevel": "hint",
+    "channel": "evidence_present",
+    "_evidence_surface_name_ko": "영수증 묶음 5장",
+    "_evidence_surface_name_en_recommended": "bundle of 5 receipts",
+    "variants": [
+      {
+        "id": "b-e-1-early-self-v1",
+        "ko": "그건... 제가 산 겁니다.",
+        "en": "That… I'm the one who bought them."
+      },
+      {
+        "id": "b-e-1-early-self-v2",
+        "ko": "차에 있던 영수증들, 제가 결제한 건 맞습니다.",
+        "en": "Those receipts in the car — yes, I paid for them."
+      },
+      {
+        "id": "b-e-1-early-self-v3",
+        "ko": "편의점이든 서점이든 제가 산 물건들입니다.",
+        "en": "Convenience store, bookshop — those are all things I bought."
+      }
+    ],
+    "remaining_variants_pattern": "Variants v4–v10 keep B in 'early' lieBand: he admits the purchase is his while leaving the recipient unnamed. EN must hold this same line — never name the recipient (nephew/older brother) at lieBand 'early'."
+  },
+  "scripted_text_witness": {
+    "source_path": "src/data/scriptedText/spouse-01.json",
+    "key": "w-1|vague",
+    "witnessId": "w-1",
+    "depth": "vague",
+    "stanceHint": "answer",
+    "truthLevel": "hint",
+    "channel": "witness",
+    "_witness_role": "오피스텔 경비원 / studio-apartment security guard",
+    "variants": [
+      {
+        "id": "w-1-vague-v1",
+        "ko": "그 차 주인분을 본 적은 있습니다. 다만 정확한 호수까지는 제가 확인하지 않습니다.",
+        "en": "I have seen the owner of that car, yes. But I don't track which unit they go to, exactly."
+      },
+      {
+        "id": "w-1-vague-v2",
+        "ko": "저녁 무렵 출입하는 모습은 몇 번 봤습니다. 어느 집인지 단정하긴 어렵습니다.",
+        "en": "I've seen them come in around the evening a few times. I couldn't say for certain which residence, though."
+      },
+      {
+        "id": "w-1-vague-v3",
+        "ko": "얼굴은 익숙합니다. 경비실에서 지나가는 걸 본 정도로 말씀드릴 수 있습니다.",
+        "en": "The face is familiar. I can say I've seen them pass the guard post — that much."
+      }
+    ],
+    "remaining_variants_pattern": "Variants v4–v10 keep the security guard in 'vague' depth: the player learns the visit pattern without confirming the apartment unit. Higher 'partial' and 'full' depths progressively name the floor and resident; surface guarding still applies to depth 'vague'."
+  },
+  "scripted_text_system_message": {
+    "source_path": "src/data/scriptedText/spouse-01.json",
+    "key": "interrogation|repeat_warning",
+    "context": "interrogation",
+    "eventType": "repeat_warning",
+    "channel": "system_message",
+    "variants": [
+      {
+        "id": "sys-interrogation-repeat_warning-v1",
+        "ko": "같은 질문이 맴돈다. 다른 틈을 찾아보자.",
+        "en": "The same question is circling. Try a different opening."
+      },
+      {
+        "id": "sys-interrogation-repeat_warning-v2",
+        "ko": "반복 추궁은 닫힌 문만 두드린다. 방향을 바꿔라.",
+        "en": "Repeating the same press only knocks on a closed door. Change direction."
+      },
+      {
+        "id": "sys-interrogation-repeat_warning-v3",
+        "ko": "비슷한 질문이 이어져 진술이 굳어간다.",
+        "en": "Similar questions in a row are letting the testimony harden."
+      }
+    ],
+    "ui_length_constraint_note": "System messages are constrained to ≤ 30 chars / single line per docs/information-surface-policy.md §2.1. EN counterparts are over that for v1–v3. Recommend tightening: v1 \"Same question is circling. Try a new angle.\" (47 chars) — still over 30. Conclusion: 30-char limit was authored against KO; EN equivalent likely needs a relaxed cap (~50 chars) confirmed with PROJECT_CONTROL_TOWER, OR each system_message gets a deliberately shorter EN rewrite."
+  },
+  "scripted_angles_judge_question": {
+    "source_path": "src/data/scriptedAngles/spouse-01_judge_questions.json",
+    "disputeId": "d-1",
+    "questionType": "fact_pursuit",
+    "targetParty": "b",
+    "angleId": "general",
+    "channel": "judge_question",
+    "variants": [
+      {
+        "id": "judgeq-d-1-fact_pursuit-b-general-v1",
+        "ko": "이준호 씨, 퇴근 후 오피스텔 방문과 새벽 통화는 본인 행동입니다. 어떤 날짜에 어디까지 들렀는지 시간순으로 먼저 정리해 주십시오.",
+        "en": "Mr. Lee, the after-work studio-apartment visits and the late-night calls are your own actions. Please walk through them in order — which dates, how far you went each time."
+      },
+      {
+        "id": "judgeq-d-1-fact_pursuit-b-general-v2",
+        "ko": "GPS 기록과 통화 내역에 남은 행적 중에서, 본인 행동으로 인정하는 것과 기억나지 않는 것을 나눠 답해 주십시오.",
+        "en": "Of the movements left in the GPS log and the call records, separate what you acknowledge as your own from what you don't recall, and answer accordingly."
+      },
+      {
+        "id": "judgeq-d-1-fact_pursuit-b-general-v3",
+        "ko": "박지연 씨의 외도 주장과 이준호 씨 설명이 가장 크게 어긋나는 사실이 무엇입니까. 그 지점부터 사실관계로 답해 주십시오.",
+        "en": "Where does Mrs. Park's claim of an affair diverge most sharply from your account? Start your answer at that fact."
+      }
+    ],
+    "remaining_variants_pattern": "Variants v4–v5 continue to surface the judge's surface-only register: she names the actions (visits, calls, receipts) without naming brother/nephew. EN must keep that boundary — judge channel must never say brother / nephew before S5."
+  },
+  "scripted_angles_interrogation_answer": {
+    "source_path": "src/data/scriptedAngles/spouse-01_interrogation_answers.json",
+    "key": "b|d-1|S0|fact_pursuit|general",
+    "party": "b",
+    "disputeId": "d-1",
+    "questionType": "fact_pursuit",
+    "angleId": "general",
+    "lieState": "S0",
+    "channel": "interrogation",
+    "variants": [
+      {
+        "id": "b-d-1-S0-fact_pursuit-general-v1",
+        "ko": "방문과 연락, 물건 구매가 있었던 건 맞지만 그걸 외도 정황으로 보는 해석에는 동의하지 않습니다. 지금 기억만으로 단정하진 않겠습니다. GPS 기록, 통화 내역, 영수증 순서대로 제가 인정하는 항목과 다투는 항목을 나누겠습니다.",
+        "en": "I'll grant that there were visits, calls, and purchases, but I do not accept the reading that this is an affair. I won't speak from memory alone. I'll go through the GPS records, the call records, and the receipts in order, and separate what I accept from what I dispute."
+      },
+      {
+        "id": "b-d-1-S0-fact_pursuit-general-v2",
+        "ko": "방문과 연락, 물건 구매가 있었던 건 맞지만 그걸 외도 정황으로 보는 해석에는 동의하지 않습니다. 지금 기억만으로 단정하진 않겠습니다. 제가 직접 한 행동은 오피스텔 방문, 새벽 통화, 영수증 물건 안에서 자료로 확인되는 부분부터 답하겠습니다.",
+        "en": "I'll grant that there were visits, calls, and purchases, but I do not accept the reading that this is an affair. I won't speak from memory alone. As for what I did myself — the studio visits, the late-night calls, the receipted items — I'll start with the parts the records can confirm."
+      },
+      {
+        "id": "b-d-1-S0-fact_pursuit-general-v3",
+        "ko": "방문과 연락, 물건 구매가 있었던 건 맞지만 그걸 외도 정황으로 보는 해석에는 동의하지 않습니다. 지금 기억만으로 단정하진 않겠습니다. 시점과 장소, 금액이나 품목은 기억보다 기록을 우선해서 맞추겠습니다.",
+        "en": "I'll grant that there were visits, calls, and purchases, but I do not accept the reading that this is an affair. I won't speak from memory alone. For times, places, amounts and items, I'll defer to the records over my memory."
+      }
+    ],
+    "remaining_variants_pattern": "Variants share the opening sentence (a deliberate refrain) and rotate the second half. EN should keep the same anchored opening across v1–v10, varying only the closing approach. KO source treats this opening as a fixed lieState-S0 stance signature."
+  },
+  "phase1_dialogue_passage": {
+    "source_path": "src/data/dialogues/phase1/spouse-01.json",
+    "passage_index_range": "dialogues[0..6]",
+    "lines": [
+      {
+        "speaker": "system",
+        "ko": "결혼 10년차 부부 박지연·이준호. 8개월째 각방을 쓰고 있다. 아내 박지연이 남편의 딴살림을 주장하며 재판을 신청했다.",
+        "en": "Park Ji-yeon and Lee Jun-ho, married ten years. They've been sleeping in separate rooms for eight months. The wife, Park Ji-yeon, filed for trial, claiming her husband is keeping a second household."
+      },
+      {
+        "speaker": "a",
+        "ko": "재판관님, 제 남편은 매일 퇴근하면 집으로 바로 돌아오지 않습니다. 처음엔 야근이겠거니 했습니다. 그런데 한 달, 두 달, 석 달… 똑같은 패턴이 반복되니까 저도 가만히 있을 수가 없었습니다.",
+        "en": "Your Honor, my husband does not come home straight from work. At first I assumed it was overtime. But one month, two months, three months — the same pattern over and over — I couldn't keep sitting still."
+      },
+      {
+        "speaker": "a",
+        "ko": "블랙박스를 확인해 보고, 매일 같은 오피스텔에 두세 시간씩 방문하는 것을 알게 되었습니다. 네비 즐겨찾기에는 그 주소가 저장돼 있었습니다.",
+        "en": "I checked the dashcam and learned he was visiting the same studio apartment every day for two or three hours at a time. The address was saved in his GPS bookmarks."
+      },
+      {
+        "speaker": "b",
+        "ko": "재판관님, 그건 오해입니다.",
+        "en": "Your Honor, that's a misunderstanding."
+      },
+      {
+        "speaker": "choice",
+        "ko_options": [
+          "이준호 씨, '오해'라고 하셨는데 — 어떤 부분이 오해라고 하시는 건지 구체적으로 설명해 주십시오.",
+          "박지연 씨, 좀 더 말씀해 보십시오.",
+          "양측 모두 진정하십시오. 순서대로 듣겠습니다."
+        ],
+        "en_options": [
+          "Mr. Lee, you say 'misunderstanding' — explain specifically which part you mean.",
+          "Mrs. Park, please go on.",
+          "Both sides, please calm down. I'll hear you in order."
+        ]
+      },
+      {
+        "speaker": "b",
+        "branchCondition": "c1_press_b",
+        "ko": "… 그곳에 간 건 맞습니다. 근데 제 아내가 생각하는 일은 아닙니다.",
+        "en": "…I did go there, yes. But it isn't what my wife thinks it is."
+      },
+      {
+        "speaker": "a",
+        "branchCondition": "c1_press_b",
+        "ko": "자기야, 뭐가 오해인데? 매일같이 거기를 다녀와놓고 그저 오해라고? 거기서 뭘 하는 건데?",
+        "en": "Honey, what is the misunderstanding? You go there every single day and call it just a misunderstanding? What are you doing there?"
+      }
+    ]
+  },
+  "mediation_path_sample": {
+    "source_path": "src/data/dialogues/mediation/spouse-v3-01.json",
+    "case_id_alias": "spouse-01 (loaded via versioned alias spouse-v3-01 → spouse-01)",
+    "path": "conditional",
+    "judge_intro": {
+      "ko": "각자의 책임을 따로 떼어 보는 조건부 조정안을 먼저 제시하겠습니다. 오피스텔 방문과 새벽 전화, 개인 비자금 출금, 공동 적금 해지 문제는 한꺼번에 묶어 다루지 않겠습니다.",
+      "en": "I'll begin by proposing a conditional mediation that takes each side's responsibility separately. The studio-apartment visits and late-night calls, the personal slush-fund withdrawal, and the joint savings cancellation will not be bundled together."
+    },
+    "dialogues": [
+      {
+        "speaker": "a",
+        "ko": "조건부 조정이라면 저도 받아들이겠습니다. 다만 오피스텔 방문과 새벽 전화의 사실관계부터 먼저 분명히 정리되어야 같은 의심이 반복되지 않습니다.",
+        "en": "If it's a conditional mediation, I can accept that. But the facts about the studio-apartment visits and the late-night calls have to be settled first, or the same suspicion comes back around."
+      },
+      {
+        "speaker": "b",
+        "ko": "저도 조건 자체는 받아들이겠습니다. 다만 제 개인 비자금 3,000만원 출금과 아내의 공동 적금 해지 문제는 따로 구분해서 정리해 주시기 바랍니다.",
+        "en": "I'll accept the conditional terms as well. But please keep my 30-million-won personal slush-fund withdrawal and my wife's joint savings cancellation as two separate matters."
+      }
+    ]
+  }
+}

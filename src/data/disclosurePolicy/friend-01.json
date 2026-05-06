@@ -92,6 +92,148 @@
       "B 차마 못 말함": "말하지 못한 사정"
     }
   },
+  "localePolicy": {
+    "schemaVersion": "script-localization-v1",
+    "status": "tier-a-draft",
+    "forbiddenLexemes": {
+      "en": [
+        "fiance approached first",
+        "fiancé approached first",
+        "fiance hit on her",
+        "fiancé hit on her",
+        "fiance crossed the line",
+        "fiancé crossed the line",
+        "inappropriate messages",
+        "Choi Sumin refused",
+        "father's fraud",
+        "father extorted money",
+        "A's father committed fraud",
+        "investment fraud",
+        "unpaid debt",
+        "same pattern again",
+        "could not let it happen again",
+        "B's warning intent",
+        "not seduction but warning",
+        "old breakup caused by A's father",
+        "B could not say it",
+        "B played the villain again",
+        "defamation"
+      ],
+      "ja": [
+        "婚約者が先に",
+        "婚約者が言い寄った",
+        "婚約者が近づいた",
+        "一線を越えたメッセージ",
+        "チェ・スミンの拒絶",
+        "父の詐欺",
+        "父が金を奪った",
+        "Aの父が詐欺",
+        "投資名目の詐欺",
+        "未返済",
+        "同じパターン",
+        "また騙される",
+        "Bの警告意図",
+        "誘惑ではなく警告",
+        "過去の絶交はAの父が原因",
+        "Bは言えなかった",
+        "Bがまた悪役",
+        "名誉毀損"
+      ],
+      "zh-CN": [
+        "准新郎先",
+        "准新郎勾搭",
+        "准新郎接近",
+        "越界消息",
+        "崔秀敏拒绝",
+        "父亲诈骗",
+        "父亲骗钱",
+        "A的父亲诈骗",
+        "投资名义诈骗",
+        "未偿还",
+        "同样模式",
+        "不能再让她被骗",
+        "B的警告意图",
+        "不是勾引而是警告",
+        "过去绝交是A父亲造成的",
+        "B没能说出口",
+        "B又当恶人",
+        "名誉毁损"
+      ]
+    },
+    "paraphraseLexemes": {
+      "en": [
+        "groom-to-be contacted first",
+        "father scammed",
+        "warning her about the old scam",
+        "same scam pattern",
+        "old cutoff reason",
+        "not flirting but warning"
+      ],
+      "ja": [
+        "婚約者からの連絡",
+        "父親の金銭問題",
+        "警告目的",
+        "同じ詐欺の構図",
+        "昔の絶交理由",
+        "口説きではない"
+      ],
+      "zh-CN": [
+        "未婚夫先联系",
+        "父亲的钱问题",
+        "警告目的",
+        "同样骗局",
+        "过去断交原因",
+        "不是调情而是警告"
+      ]
+    },
+    "uiSurfaceMap": {
+      "en": {
+        "surfaceOnlyChannels": ["judge_question", "judge_contradiction", "judge_evidence_combo", "judge_witness_summon", "system_message", "dossier"],
+        "truthGate": "S5",
+        "localizeFields": ["surfaceName", "surfaceDescription", "label", "description", "text", "judge", "choices.text"],
+        "doNotLocalizeFields": ["id", "key", "tags", "sourceRefs", "behaviorHint", "evidence.name"],
+        "safeSubstitutes": {
+          "fiance approached first": "order of contact",
+          "father's fraud": "past money problem",
+          "B's warning intent": "warning motive",
+          "old breakup caused by A's father": "an old unresolved reason",
+          "not seduction but warning": "the purpose of the contact"
+        }
+      },
+      "ja": {
+        "surfaceOnlyChannels": ["judge_question", "judge_contradiction", "judge_evidence_combo", "judge_witness_summon", "system_message", "dossier"],
+        "truthGate": "S5",
+        "localizeFields": ["surfaceName", "surfaceDescription", "label", "description", "text", "judge", "choices.text"],
+        "doNotLocalizeFields": ["id", "key", "tags", "sourceRefs", "behaviorHint", "evidence.name"],
+        "safeSubstitutes": {
+          "婚約者が先に": "連絡の前後関係",
+          "父の詐欺": "過去の金銭問題",
+          "Bの警告意図": "警告の動機",
+          "過去の絶交はAの父が原因": "昔の未解決の事情",
+          "誘惑ではなく警告": "接触の目的"
+        }
+      },
+      "zh-CN": {
+        "surfaceOnlyChannels": ["judge_question", "judge_contradiction", "judge_evidence_combo", "judge_witness_summon", "system_message", "dossier"],
+        "truthGate": "S5",
+        "localizeFields": ["surfaceName", "surfaceDescription", "label", "description", "text", "judge", "choices.text"],
+        "doNotLocalizeFields": ["id", "key", "tags", "sourceRefs", "behaviorHint", "evidence.name"],
+        "safeSubstitutes": {
+          "准新郎先": "联系先后",
+          "父亲诈骗": "过去的钱款问题",
+          "B的警告意图": "警告动机",
+          "过去绝交是A父亲造成的": "过去未解开的原因",
+          "不是勾引而是警告": "接触目的"
+        }
+      }
+    },
+    "notes": [
+      "Tier A locale blocks are populated for wrapper-gated script translation.",
+      "KO forbiddenLexemes remains canonical for current runtime guard.",
+      "evidence.name is not localized in v1; translate surfaceName only.",
+      "behaviorHint remains KO-only until the Tier B policy decision lands."
+    ]
+  },
   "channelAuthority": {
     "surfaceOnly": [
       {"channel": "judge_question", "authority": "surface-only", "truthLexemePolicy": "blocked", "evidenceStagePolicy": "does-not-expand-authority"},

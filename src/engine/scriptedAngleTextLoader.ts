@@ -6,6 +6,8 @@ import type {
   ScriptedAngleJudgeQuestionsBundle,
 } from '../types/scriptedAngleText'
 import type { ScriptedInterrogationQuestionType, ScriptedLieState, ScriptedVariant } from '../types/scriptedText'
+import type { LocaleCode } from '../i18n/locales'
+import { getRuntimeScriptLocale } from '../i18n/scriptLocale.ts'
 import { normalizeCaseKey } from '../utils/caseHelpers.ts'
 
 export const GENERAL_SCRIPTED_ANGLE = 'general'
@@ -40,23 +42,15 @@ export interface ScriptedAngleAnswerLookup {
   variants: ScriptedVariant[]
 }
 
-const catalogMods = typeof (import.meta as ImportMeta & { glob?: ImportMeta['glob'] }).glob === 'function'
-  ? import.meta.glob<true, string, { default?: ScriptedAngleCatalogBundle }>(
-  '../data/scriptedAngles/*_angle_catalog.json',
-  { eager: true },
-) : {}
+const angleMods = typeof (import.meta as ImportMeta & { glob?: ImportMeta['glob'] }).glob === 'function'
+  ? import.meta.glob<true, string, { default?: unknown }>(
+    '../data/scriptedAngles/*.json',
+    { eager: true },
+  ) : {}
 
-const judgeQuestionMods = typeof (import.meta as ImportMeta & { glob?: ImportMeta['glob'] }).glob === 'function'
-  ? import.meta.glob<true, string, { default?: ScriptedAngleJudgeQuestionsBundle }>(
-  '../data/scriptedAngles/*_judge_questions.json',
-  { eager: true },
-) : {}
-
-const answerMods = typeof (import.meta as ImportMeta & { glob?: ImportMeta['glob'] }).glob === 'function'
-  ? import.meta.glob<true, string, { default?: ScriptedAngleAnswersBundle }>(
-  '../data/scriptedAngles/*_interrogation_answers.json',
-  { eager: true },
-) : {}
+const catalogMods = angleMods as Record<string, { default?: ScriptedAngleCatalogBundle }>
+const judgeQuestionMods = angleMods as Record<string, { default?: ScriptedAngleJudgeQuestionsBundle }>
+const answerMods = angleMods as Record<string, { default?: ScriptedAngleAnswersBundle }>
 
 export function hasScriptedAngleData(caseId: string): boolean {
   const normalized = normalizeCaseKey(caseId)
@@ -251,15 +245,108 @@ export function getScriptedAngleAnswerLookup(input: {
 }
 
 function readBundle<T extends { caseId: string }>(
-  mods: Record<string, { default?: T }>,
+  _mods: Record<string, { default?: T }>,
   caseId: string,
   suffix: string,
+  locale: LocaleCode = getRuntimeScriptLocale(),
 ): T | null {
   const normalized = normalizeCaseKey(caseId)
-  const mod = mods[`../data/scriptedAngles/${normalized}_${suffix}.json`]
-  const bundle = (mod as any)?.default ?? mod
+  const base = readAngleModule<T>(`../data/scriptedAngles/${normalized}_${suffix}.json`)
+  if (!base) return null
+  const overlay = locale === 'ko'
+    ? null
+    : readAngleModule<Partial<T>>(`../data/scriptedAngles/${normalized}_${suffix}.${locale}.json`)
+  return overlay ? mergeAngleBundle(base, overlay, suffix) : base
+}
+
+function readAngleModule<T>(path: string): T | null {
+  const mod = angleMods[path]
+  const bundle = ((mod as any)?.default ?? mod) as T | null | undefined
   if (!bundle || typeof bundle !== 'object') return null
-  return bundle as T
+  return bundle
+}
+
+function mergeAngleBundle<T extends { caseId: string }>(base: T, overlay: Partial<T>, suffix: string): T {
+  const merged = cloneJson(base) as any
+  const source = overlay as any
+  if (suffix === 'angle_catalog') {
+    mergeAngleCatalog(merged.angles ?? [], source.angles ?? [])
+  } else if (suffix === 'judge_questions') {
+    mergeAngleVariants(merged.judgeQuestions ?? [], source.judgeQuestions ?? [], angleJudgeKey)
+  } else if (suffix === 'interrogation_answers') {
+    mergeAngleVariants(merged.answers ?? [], source.answers ?? [], angleAnswerKey)
+  }
+  return merged as T
+}
+
+function mergeAngleCatalog(targetAngles: any[], overlayAngles: any[]): void {
+  const targetByKey = new Map(targetAngles.map((angle) => [angleCatalogKey(angle), angle]))
+  for (const overlayAngle of overlayAngles) {
+    const target = targetByKey.get(angleCatalogKey(overlayAngle))
+    if (!target) continue
+    if (hasText(overlayAngle.label)) target.label = overlayAngle.label
+    if (hasText(overlayAngle.description)) target.description = overlayAngle.description
+    if (Array.isArray(overlayAngle.keywordsLocale)) target.keywordsLocale = overlayAngle.keywordsLocale
+  }
+}
+
+function mergeAngleVariants(targetEntries: any[], overlayEntries: any[], makeKey: (entry: any) => string): void {
+  const targetByKey = new Map(targetEntries.map((entry) => [makeKey(entry), entry]))
+  for (const overlayEntry of overlayEntries) {
+    const target = targetByKey.get(makeKey(overlayEntry))
+    if (!target || !Array.isArray(overlayEntry.variants)) continue
+    mergeVariantTexts(target.variants ?? [], overlayEntry.variants)
+  }
+}
+
+function mergeVariantTexts(targetVariants: ScriptedVariant[], overlayVariants: Array<Partial<ScriptedVariant> & { id?: string }>): void {
+  const targetById = new Map(targetVariants.map((variant) => [variant.id, variant]))
+  for (const overlayVariant of overlayVariants) {
+    if (!overlayVariant.id) continue
+    const target = targetById.get(overlayVariant.id)
+    if (!target) continue
+    if (hasText(overlayVariant.text)) target.text = overlayVariant.text
+    if (hasText(overlayVariant.behaviorHint)) target.behaviorHint = overlayVariant.behaviorHint
+  }
+}
+
+function angleCatalogKey(entry: { disputeId?: string; angleId?: string }): string {
+  return [entry.disputeId ?? '', entry.angleId ?? ''].join('|')
+}
+
+function angleJudgeKey(entry: { disputeId?: string; questionType?: string; targetParty?: string; angleId?: string }): string {
+  return [
+    entry.disputeId ?? '',
+    entry.questionType ?? '',
+    entry.targetParty ?? '',
+    entry.angleId ?? '',
+  ].join('|')
+}
+
+function angleAnswerKey(entry: {
+  party?: string
+  disputeId?: string
+  questionType?: string
+  angleId?: string
+  lieState?: string
+  key?: string
+}): string {
+  return [
+    entry.party ?? '',
+    entry.disputeId ?? '',
+    entry.questionType ?? '',
+    entry.angleId ?? '',
+    entry.lieState ?? '',
+    entry.key ?? '',
+  ].join('|')
+}
+
+function hasText(value: unknown): value is string {
+  return typeof value === 'string' && value.trim().length > 0
+}
+
+function cloneJson<T>(value: T): T {
+  return JSON.parse(JSON.stringify(value)) as T
 }
 
 function parseTags(tags?: string[]): Record<string, string> {

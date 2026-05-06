@@ -1,0 +1,77 @@
+{
+  "caseId": "spouse-01",
+  "locale": "zh-CN",
+  "overlayKind": "generatedCaseSurface",
+  "meta": {
+    "title": "丈夫每天瞒着妻子在公寓停留"
+  },
+  "context": {
+    "description": "每天下班后丈夫都会去同一栋公寓停留一段时间。车上发现的女性用品收据。凌晨的通话。妻子坚信丈夫另立家室。",
+    "triggerAmplifier": "起初，发圈与唇釉的收据、公寓 GPS、凌晨通话只朝一个方向叠合，看起来就是外遇。但越往下挖，画面越乱——双方各自没说的事和钱的去向相继浮现，事件的中心被推到外遇怀疑之外。"
+  },
+  "duo": {
+    "partyA": {
+      "name": "朴智妍",
+      "occupation": "辅导班前台职员"
+    },
+    "partyB": {
+      "name": "李俊昊",
+      "occupation": "家电卖场员工"
+    }
+  },
+  "disputes": [
+    {
+      "id": "d-1",
+      "name": "公寓造访与凌晨通话"
+    },
+    {
+      "id": "d-2",
+      "name": "丈夫名义账户的整笔提款"
+    },
+    {
+      "id": "h-d3",
+      "name": "共同储蓄 2,000 万韩元解约的经过"
+    },
+    {
+      "id": "h-d4",
+      "name": "瞒下来与擅自先动的先后顺序"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e-1",
+      "surfaceName": "一沓收据（5 张）",
+      "surfaceDescription": "在丈夫车里发现的一沓收据。"
+    },
+    {
+      "id": "e-2",
+      "surfaceName": "行车记录仪 GPS 记录",
+      "surfaceDescription": "车辆 GPS 上有反复在同一坐标停留的记录。"
+    },
+    {
+      "id": "e-3",
+      "surfaceName": "通话记录",
+      "surfaceDescription": "凌晨时段反复与同一号码通话的记录。"
+    },
+    {
+      "id": "e-4",
+      "surfaceName": "未登记号码的短信",
+      "surfaceDescription": "与一个未登记姓名的号码之间留有的短信对话。"
+    },
+    {
+      "id": "e-5",
+      "surfaceName": "个人账户提款记录",
+      "surfaceDescription": "未与妻子共享的另一账户，目前余额仅余几万韩元。"
+    },
+    {
+      "id": "e-6",
+      "surfaceName": "投资群 Telegram",
+      "surfaceDescription": "投资群 Telegram 对话与汇款流向同时留存的截图组。随阶段递进，入金、初期收益印证、跑路迹象会逐步分离呈现。"
+    },
+    {
+      "id": "e-7",
+      "surfaceName": "共同储蓄解约文件",
+      "surfaceDescription": "共同储蓄在到期前被解约的文件留有底档。"
+    }
+  ]
+}

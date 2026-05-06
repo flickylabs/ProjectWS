@@ -1,0 +1,81 @@
+{
+  "caseId": "friend-01",
+  "locale": "zh-CN",
+  "overlayKind": "generatedCaseSurface",
+  "meta": {
+    "title": "断交的挚友"
+  },
+  "context": {
+    "description": "已断交的前挚友，一直在联络我的未婚夫。婚礼前三周——光看这一段，谁都会觉得是朋友越了线。",
+    "triggerAmplifier": "起初，崔秀敏九天的联络记录与宋多恩在共同朋友群里的发言相互叠合，崔秀敏看起来像是纠缠者。但随着未婚夫越线的消息、与宋多恩父亲相关的金钱接近模式逐步浮现，事件的中心从纠缠被推回到反复出现的沉默与污名身上。"
+  },
+  "duo": {
+    "partyA": {
+      "name": "宋多恩",
+      "occupation": "网店客服员工"
+    },
+    "partyB": {
+      "name": "崔秀敏",
+      "occupation": "普拉提教练"
+    }
+  },
+  "disputes": [
+    {
+      "id": "d-1",
+      "name": "九天联络的意图"
+    },
+    {
+      "id": "d-2",
+      "name": "未婚夫越线的接近"
+    },
+    {
+      "id": "d-3",
+      "name": "父亲的金钱接近模式"
+    },
+    {
+      "id": "d-4",
+      "name": "当年断交的理由"
+    },
+    {
+      "id": "d-5",
+      "name": "群聊里的抨击与名誉受损"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e-1",
+      "surfaceName": "联络记录",
+      "surfaceDescription": "崔秀敏向未婚夫发出的联络记录留有底档。"
+    },
+    {
+      "id": "e-2",
+      "surfaceName": "群聊截图",
+      "surfaceDescription": "共同朋友群聊里的对话截图存在。"
+    },
+    {
+      "id": "e-3",
+      "surfaceName": "过往的聊天记录",
+      "surfaceDescription": "当年断交前夕的聊天记录留有底档。"
+    },
+    {
+      "id": "e-4",
+      "surfaceName": "未婚夫的消息记录",
+      "surfaceDescription": "未婚夫与崔秀敏之间的消息记录存在。"
+    },
+    {
+      "id": "e-5",
+      "surfaceName": "宋多恩父亲的短信",
+      "surfaceDescription": "宋多恩父亲与未婚夫之间的短信记录存在。"
+    },
+    {
+      "id": "e-6",
+      "surfaceName": "过往的汇款记录",
+      "surfaceDescription": "过往崔秀敏与宋多恩父亲之间的汇款记录存在。"
+    },
+    {
+      "id": "e-7",
+      "surfaceName": "对照表",
+      "surfaceDescription": "过往与当下的对照分析表存在。"
+    }
+  ]
+}

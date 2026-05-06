@@ -1,0 +1,29 @@
+glossary_id,locale,current,proposed,reason,confidence,requires_user_decision
+solution,ja,解決案,解決策,"draft term 解決案 reads as a formal/legal proposal; PC UI verdict step uses 解決策 which is more natural for game UI choice copy. KO source uses 해결안 (= 解決案). Translator note: keep KO unchanged but render JA as 解決策.",medium,false
+record_summary,ko,기록 요약,기록 정리,"glossary KO source 기록 요약 does not match what the PC UI actually uses (기록 정리 / 기록 재정리). DELTA replaces KO source field to reflect actual usage. Affects EN/JA/zh-CN target field choices.",medium,true
+record_summary,ja,記録要約,記録の整理,"if KO source field is updated to 기록 정리, JA target should follow as 記録の整理 (matches PC UI rendering and also pc.token.recovery.records.title).",medium,true
+court_control,ko,,법정 장악,"NEW glossary entry. KO source uses both 법정 장악 and 법정 지배력 for the court-control resource. Recommend canonicalizing to 법정 장악 (more semantic, used more often). Add as new resource entry.",high,true
+court_control,ja,,法廷掌握,"NEW. JA rendering for court-control resource. Used in pc.profile.resource.control / pc.token.control / pc.action.special.controlUse / pc.testConsole.resource.control.",high,false
+court_control,en,,Court Control,"NEW. EN rendering. (Cross-thread: confirm with EN translator.)",medium,false
+court_control,zh-CN,,法庭掌控,"NEW. zh-CN rendering. (Cross-thread: confirm with zh-CN translator.)",medium,false
+free_question,ko,,자유 질문,"NEW glossary entry. Distinct from free_interrogation (mode) — this is the per-turn slot label. KO source uses 자유 질문 (with space) in PC UI dock.",medium,true
+free_question,ja,,自由質問,"NEW. JA rendering for the per-slot free-text question label.",medium,false
+free_question,en,,Free Question,"NEW. EN rendering. (Cross-thread.)",medium,false
+free_question,zh-CN,,自由提问,"NEW. zh-CN rendering. (Cross-thread.)",medium,false
+investigation_stage,ko,,조사 단계,"NEW glossary entry. Distinct from evidence_stage (증거 단계). KO source uses 조사 단계 in PCInteractionPanel for the investigation depth state.",high,false
+investigation_stage,ja,,調査ステージ,"NEW. JA rendering. Used in pc.interaction.investigation.stage / .locked.",high,false
+investigation_stage,en,,Investigation Stage,"NEW. EN rendering. (Cross-thread.)",high,false
+investigation_stage,zh-CN,,调查阶段,"NEW. zh-CN rendering. (Cross-thread.)",high,false
+decisive_question,ko,,결정적 질문,"NEW glossary entry. Used as combo unlock target — distinct from dossier (사건 기록 → 調書 in glossary, but unused in PC UI). Replaces dossier as the actual concept users see.",high,false
+decisive_question,ja,,決定的質問,"NEW. Used in pc.combo.dossier.unlock and pc.combo.summary.dossier.",high,false
+decisive_question,en,,Decisive Question,"NEW. (Cross-thread.)",high,false
+decisive_question,zh-CN,,决定性提问,"NEW. (Cross-thread.)",high,false
+judge_fragment,ko,,판결 조각,"NEW glossary entry. Heavily used in PCJudgeProgressionPanel + PCFragmentRewardOverlay + PCJudgeProgressionShared (9 fragment types).",high,false
+judge_fragment,ja,,判決の欠片,"NEW. Used in pc.profile.tab.fragments / pc.fragment.* / pc.fragmentOverlay.title.",high,false
+judge_fragment,en,,Verdict Fragment,"NEW. (Cross-thread.)",high,false
+judge_fragment,zh-CN,,判决碎片,"NEW. (Cross-thread.)",high,false
+judge_title,ko,,타이틀,"NEW glossary entry. Player progression rank label — KO source uses katakana-style 타이틀, distinct from achievement/award.",medium,true
+judge_title,ja,,称号,"NEW. JA rendering. Used throughout PCJudgeProgressionPanel: pc.profile.equipped.title / pc.profile.detail.title / pc.profile.tab.equip.desc / etc.",high,false
+judge_title,en,,Title,"NEW. (Cross-thread.)",medium,false
+judge_title,zh-CN,,称号,"NEW. (Cross-thread.)",medium,false
+investigation_resource,ko,,조사 자원,"OPTIONAL — recommend NOT adding as separate term. KO source uses 조사 자원 as a synonym for 조사 토큰 in PCCourtLayout token button. Recommendation: normalize KO source to 조사 토큰 only and drop 조사 자원. If kept as separate term, add this entry. requires_user_decision: true.",low,true

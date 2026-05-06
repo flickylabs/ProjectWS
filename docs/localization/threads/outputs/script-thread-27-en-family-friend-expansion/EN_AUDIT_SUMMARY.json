@@ -1,0 +1,61 @@
+{
+  "generatedAt": "2026-05-06T17:18:22.710Z",
+  "thresholds": {
+    "ANCHOR_THRESHOLD": 3,
+    "VARIANT_THRESHOLD": 6,
+    "ANCHOR_LEN": 60,
+    "PREFIX60_THRESHOLD": 0.5
+  },
+  "variation": {
+    "family": {
+      "label": "family-01",
+      "totalBuckets": 1724,
+      "eligibleBuckets": 1366,
+      "bucketsPassing": 1724,
+      "bucketsFailingOpener": 0,
+      "bucketsFailingCloser": 0,
+      "bucketsFailingPrefix": 0,
+      "overallPassRate": 1,
+      "averageUniqueOpener60": 3.32,
+      "averageUniqueCloser60": 6.74
+    },
+    "friend": {
+      "label": "friend-01",
+      "totalBuckets": 1445,
+      "eligibleBuckets": 964,
+      "bucketsPassing": 1445,
+      "bucketsFailingOpener": 0,
+      "bucketsFailingCloser": 0,
+      "bucketsFailingPrefix": 0,
+      "overallPassRate": 1,
+      "averageUniqueOpener60": 3.32,
+      "averageUniqueCloser60": 8.06
+    },
+    "combined": {
+      "label": "combined",
+      "totalBuckets": 3169,
+      "eligibleBuckets": 2330,
+      "bucketsPassing": 3169,
+      "bucketsFailingOpener": 0,
+      "bucketsFailingCloser": 0,
+      "bucketsFailingPrefix": 0,
+      "overallPassRate": 1,
+      "averageUniqueOpener60": 3.32,
+      "averageUniqueCloser60": 7.34
+    }
+  },
+  "truthBoundary": {
+    "family": {
+      "violations": 0,
+      "totalS5": 1860,
+      "strongS5": 1626,
+      "strongRatio": 0.874
+    },
+    "friend": {
+      "violations": 0,
+      "totalS5": 1350,
+      "strongS5": 1264,
+      "strongRatio": 0.936
+    }
+  }
+}

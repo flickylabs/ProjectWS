@@ -1,0 +1,411 @@
+source_file,source_text,proposed_key,zh_cn_text,notes
+src/components/pc/home/PCHomeScreen.tsx,도움말,pc.home.helpTitle,帮助,tooltip title
+src/components/pc/home/PCHomeScreen.tsx,PC 로비 가이드,pc.home.helpSubtitle,PC 大厅指南,tooltip subtitle
+src/components/pc/home/PCHomeScreen.tsx,모드를 고르고 세션을 선택한 뒤 사건을 클릭하면 브리핑을 거쳐 바로 재판이 시작됩니다.,pc.home.helpBody,选择模式与会话，再点击案件即可经过简报直接进入庭审。,help body
+src/components/pc/home/PCHomeScreen.tsx,라이브 상태,pc.home.liveStatus,在线状态,panel title
+src/components/pc/home/PCHomeScreen.tsx,AI 연결됨,pc.home.aiConnected,AI 已连接,connected state
+src/components/pc/home/PCHomeScreen.tsx,오프라인 모드,pc.home.offlineMode,离线模式,offline state
+src/components/pc/home/PCHomeScreen.tsx,설정,pc.common.settings,设置,settings button
+src/components/pc/home/PCHomeScreen.tsx,시즌 모드 >,pc.home.seasonModeLink,赛季模式 >,mode card link
+src/components/pc/home/PCHomeScreen.tsx,재판관 정보 >,pc.home.judgeInfoLink,裁判官信息 >,mode card link
+src/components/pc/home/PCHomeScreen.tsx,리더보드,pc.home.leaderboardCard,排行榜,card title
+src/components/pc/home/PCHomeScreen.tsx,일반 모드,pc.home.normalMode.title,普通模式,section title
+src/components/pc/home/PCHomeScreen.tsx,세션을 고르면 해당 사건 리스트로 바로 이동합니다.,pc.home.normalMode.description,选择会话即可跳转到对应的案件列表。,description
+src/components/pc/home/PCHomeScreen.tsx,준비 중,pc.common.preparing,准备中,session card status (also reused in interaction panel)
+src/components/pc/home/PCHomeScreen.tsx,평균,pc.common.average,平均,stat label
+src/components/pc/home/PCHomeScreen.tsx,잠김,pc.common.locked,已锁定,lock overlay
+src/components/pc/home/PCHomeScreen.tsx,시즌 모드,pc.home.seasonMode.title,赛季模式,section title
+src/components/pc/home/PCHomeScreen.tsx,재판관 정보,pc.home.judgeInfo.title,裁判官信息,header
+src/components/pc/home/PCHomeScreen.tsx,"현재 재판관의 성향과 타이틀, 판결 기록을 확인합니다.",pc.home.judgeInfo.description,查看当前裁判官的倾向、称号与判决记录。,description
+src/components/pc/home/PCHomeScreen.tsx,정보 확인,pc.home.judgeInfo.tab.info,查看信息,tab
+src/components/pc/home/PCHomeScreen.tsx,판결 기록,pc.home.judgeInfo.tab.records,判决记录,"tab; uses 判决 (history record context, not the action-of-issuing-verdict)"
+src/components/pc/home/PCHomeScreen.tsx,재판관 관리,pc.home.judgeInfo.tab.manage,裁判官管理,tab
+src/components/pc/home/PCHomeScreen.tsx,명성 진행,pc.home.reputationProgress,声望进度,progress label
+src/components/pc/home/PCHomeScreen.tsx,처리 사건,pc.home.stats.casesHandled,已审案件,stat
+src/components/pc/home/PCHomeScreen.tsx,최고 점수,pc.home.stats.bestScore,最高分,stat
+src/components/pc/home/PCHomeScreen.tsx,평균 점수,pc.home.stats.averageScore,平均分,stat
+src/components/pc/home/PCHomeScreen.tsx,시즌,pc.home.stats.season,赛季,stat
+src/components/pc/home/PCHomeScreen.tsx,JUDGE AXES,pc.home.judgeAxes.eyebrow,JUDGE AXES,keep English (eyebrow)
+src/components/pc/home/PCHomeScreen.tsx,탐구(균형),pc.home.judgeAxes.inquiry,探究（均衡）,axis label
+src/components/pc/home/PCHomeScreen.tsx,논리,pc.home.judgeAxes.inquiry.left,逻辑,axis end
+src/components/pc/home/PCHomeScreen.tsx,직관,pc.home.judgeAxes.inquiry.right,直觉,axis end
+src/components/pc/home/PCHomeScreen.tsx,판결(균형),pc.home.judgeAxes.verdict,判决（均衡）,"axis label; uses 判决 because the trait describes static records context"
+src/components/pc/home/PCHomeScreen.tsx,엄격,pc.home.judgeAxes.verdict.left,严正,"axis end; KR uses 엄격 here vs 엄정 in progression — both fold to 严正"
+src/components/pc/home/PCHomeScreen.tsx,관용,pc.home.judgeAxes.verdict.right,宽容,axis end
+src/components/pc/home/PCHomeScreen.tsx,해결(균형),pc.home.judgeAxes.resolution,解决（均衡）,axis label
+src/components/pc/home/PCHomeScreen.tsx,원칙,pc.home.judgeAxes.resolution.left,原则,axis end
+src/components/pc/home/PCHomeScreen.tsx,봉합,pc.home.judgeAxes.resolution.right,调和,literal 缝合 wrong; 调和 conveys reconciliation
+src/components/pc/home/PCHomeScreen.tsx,사건 선택,pc.home.caseSelect.title,选择案件,card title
+src/components/pc/home/PCHomeScreen.tsx,표시할 사건이 없습니다.,pc.home.caseSelect.empty.title,暂无可显示的案件。,empty state
+src/components/pc/home/PCHomeScreen.tsx,아직 이 모드에 연결된 사건이 없습니다.,pc.home.caseSelect.empty.description,此模式尚未连接任何案件。,empty desc
+src/components/pc/home/PCHomeScreen.tsx,플레이,pc.common.plays,游玩次数,stat label
+src/components/pc/home/PCHomeScreen.tsx,최고,pc.common.best,最佳,stat label
+src/components/pc/home/PCHomeScreen.tsx,기록 없음,pc.common.noRecord,暂无记录,empty
+src/components/pc/home/PCHomeScreen.tsx,플레이 이력,pc.home.records.title,游玩记录,card title
+src/components/pc/home/PCHomeScreen.tsx,선택한 사건의 플레이 기록이 없습니다.,pc.home.records.empty.title,暂无所选案件的游玩记录。,empty
+src/components/pc/home/PCHomeScreen.tsx,해당 사건을 클리어하면 날짜와 점수별 기록이 이곳에 저장됩니다.,pc.home.records.empty.description,完成该案件后，记录将按日期与分数显示在此。,empty desc
+src/components/pc/home/PCHomeScreen.tsx,플레이 시점 / 점수,pc.home.records.timestampScore,游玩时间 / 分数,label
+src/components/pc/home/PCHomeScreen.tsx,총점,pc.common.totalScore,总分,stat
+src/components/pc/home/PCHomeScreen.tsx,탐구,pc.home.records.axis.inquiry,探究,axis
+src/components/pc/home/PCHomeScreen.tsx,판결,pc.home.records.axis.verdict,判决,axis
+src/components/pc/home/PCHomeScreen.tsx,해결,pc.home.records.axis.resolution,解决,axis
+src/components/pc/home/PCHomeScreen.tsx,판결 결과 요약,pc.home.records.summary,判决结果摘要,section
+src/components/pc/home/PCHomeScreen.tsx,상세 보기,pc.common.viewDetails,查看详情,button
+src/components/pc/home/PCHomeScreen.tsx,리더보드,pc.home.leaderboard.title,排行榜,page title
+src/components/pc/home/PCHomeScreen.tsx,현재 시즌 기준 점수와 명예의 전당 기록입니다.,pc.home.leaderboard.description,当前赛季的分数与名人堂记录。,desc
+src/components/pc/home/PCHomeScreen.tsx,시즌 랭킹,pc.home.leaderboard.season.title,赛季排名,card
+src/components/pc/home/PCHomeScreen.tsx,아직 시즌 기록이 없습니다.,pc.home.leaderboard.season.empty.title,暂无赛季记录。,empty
+src/components/pc/home/PCHomeScreen.tsx,플레이 기록이 쌓이면 이곳에 자동 반영됩니다.,pc.home.leaderboard.season.empty.description,游玩记录累积后将自动反映在此。,empty desc
+src/components/pc/home/PCHomeScreen.tsx,명예의 전당,pc.home.leaderboard.hall.title,名人堂,card
+src/components/pc/home/PCHomeScreen.tsx,아직 전당 기록이 없습니다.,pc.home.leaderboard.hall.empty.title,暂无名人堂记录。,empty
+src/components/pc/home/PCHomeScreen.tsx,최고 기록이 쌓이면 시즌 명예의 전당이 채워집니다.,pc.home.leaderboard.hall.empty.description,最佳成绩累积后将填入赛季名人堂。,empty desc
+src/components/pc/home/PCHomeScreen.tsx,설정,pc.home.settings.title,设置,page title
+src/components/pc/home/PCHomeScreen.tsx,"오디오, 텍스트 속도, AI 연결 상태를 관리합니다.",pc.home.settings.description,管理音频、文本速度与 AI 连接状态。,desc
+src/components/pc/home/PCHomeScreen.tsx,화면,pc.home.settings.screen,画面,card
+src/components/pc/home/PCHomeScreen.tsx,해상도 프리셋,pc.home.settings.resolutionPreset,分辨率预设,label
+src/components/pc/home/PCHomeScreen.tsx,선택한 해상도에 맞춰 좌우 패널이 단계적으로 조정됩니다,pc.home.settings.resolutionPresetDescription,左右面板将根据所选分辨率分级调整。,desc
+src/components/pc/home/PCHomeScreen.tsx,배경음,pc.home.settings.bgm,背景音,toggle
+src/components/pc/home/PCHomeScreen.tsx,타이틀과 플레이 배경음,pc.home.settings.bgmDescription,标题与游玩背景音乐,toggle desc
+src/components/pc/home/PCHomeScreen.tsx,효과음,pc.home.settings.sfx,音效,toggle
+src/components/pc/home/PCHomeScreen.tsx,상호작용과 판결 효과음,pc.home.settings.sfxDescription,交互与判决音效,toggle desc
+src/components/pc/home/PCHomeScreen.tsx,게임 플레이,pc.home.settings.gameplay,游戏,card
+src/components/pc/home/PCHomeScreen.tsx,행동 힌트,pc.home.settings.actionHint,行动提示,label
+src/components/pc/home/PCHomeScreen.tsx,대사 자동 진행,pc.home.settings.dialogueAuto,对话自动推进,label
+src/components/pc/home/PCHomeScreen.tsx,텍스트 속도,pc.home.settings.textSpeed,文本速度,label
+src/components/pc/home/PCHomeScreen.tsx,대사 표시와 타이핑 속도,pc.home.settings.textSpeedDescription,对话显示与打字速度,desc
+src/components/pc/home/PCHomeScreen.tsx,AI 연결,pc.home.settings.aiConnection,AI 连接,label
+src/components/pc/home/PCHomeScreen.tsx,다음 충전,pc.home.settings.nextRecharge,下次补充,label
+src/components/pc/home/PCHomeScreen.tsx,연결 다시 확인,pc.home.settings.recheck,重新检查,button
+src/components/pc/home/PCHomeScreen.tsx,확인 중…,pc.common.checking,检查中…,loading
+src/components/pc/home/PCHomeScreen.tsx,뒤로,pc.common.back,返回,back button
+src/components/pc/home/PCHomeScreen.tsx,지금 해상도를 유지하시겠습니까?,pc.home.resolutionConfirm.title,保持当前分辨率？,modal title (paired with covered pc.resolutionConfirm.rollback body)
+src/components/pc/home/PCHomeScreen.tsx,예,pc.common.yes,是,confirm
+src/components/pc/home/PCHomeScreen.tsx,아니요,pc.common.no,否,cancel
+src/components/pc/home/PCHomeScreen.tsx,전설,pc.rating.legendary,传奇,rating
+src/components/pc/home/PCHomeScreen.tsx,우수,pc.rating.excellent,优秀,rating
+src/components/pc/home/PCHomeScreen.tsx,양호,pc.rating.good,良好,rating
+src/components/pc/home/PCHomeScreen.tsx,보통,pc.rating.average,一般,rating
+src/components/pc/home/PCHomeScreen.tsx,미흡,pc.rating.poor,不足,rating
+src/components/pc/home/PCCaseBrief.tsx,사건 목록,pc.caseBrief.backToList,案件列表,back button
+src/components/pc/home/PCCaseBrief.tsx,주요 쟁점,pc.caseBrief.disputes.title,主要争议点,section
+src/components/pc/home/PCCaseBrief.tsx,심문 과정에서 추가 쟁점이 드러날 수 있습니다,pc.caseBrief.disputes.hint,讯问过程中可能浮现新的争议点,hint
+src/components/pc/home/PCCaseBrief.tsx,초기 증거,pc.caseBrief.evidence.title,初始证据,section
+src/components/pc/home/PCCaseBrief.tsx,초기 증거가 아직 지정되지 않았습니다,pc.caseBrief.evidence.empty,尚未指定初始证据,empty
+src/components/pc/home/PCCaseBrief.tsx,사건 입장하기,pc.caseBrief.enter,进入案件,button
+src/components/pc/home/PCCaseBrowser.tsx,완료 기록만,pc.caseBrowser.completedFilter,仅显示已完成,toggle
+src/components/pc/home/PCCaseBrowser.tsx,???,pc.caseBrowser.scoreUnknown,???,placeholder; keep verbatim
+src/components/pc/home/PCCaseBrowser.tsx,좌측에서 사건을 선택하세요.,pc.caseBrowser.empty,请从左侧选择案件。,empty
+src/components/pc/home/PCCaseBrowser.tsx,초기 증거 미지정,pc.caseBrowser.evidence.empty,初始证据未指定,shorter variant
+src/components/pc/home/PCCaseBrowser.tsx,최고 기록,pc.caseBrowser.bestRecord,最高记录,label
+src/components/pc/home/PCIntroSlides.tsx,건너뛰기,pc.common.skip,跳过,button
+src/components/pc/home/PCIntroSlides.tsx,이전,pc.common.previous,上一步,button
+src/components/pc/home/PCIntroSlides.tsx,다음,pc.common.next,下一步,button
+src/components/pc/home/PCIntroSlides.tsx,로비 입장,pc.intro.enterLobby,进入大厅,finish button
+src/components/pc/home/PCLobbyOverlay.tsx,닫기,pc.common.close,关闭,close button
+src/components/pc/home/pcHomeShared.ts,무작위,pc.relationship.random,随机,category
+src/components/pc/home/pcHomeShared.ts,부부,pc.relationship.spouse,夫妻,category
+src/components/pc/home/pcHomeShared.ts,가족,pc.relationship.family,家人,category
+src/components/pc/home/pcHomeShared.ts,친구,pc.relationship.friend,朋友,category
+src/components/pc/home/pcHomeShared.ts,이웃,pc.relationship.neighbor,邻里,category
+src/components/pc/home/pcHomeShared.ts,동업,pc.relationship.business,合伙,category
+src/components/pc/home/pcHomeShared.ts,세입자,pc.relationship.tenant,房客,category
+src/components/pc/home/pcHomeShared.ts,직장,pc.relationship.workplace,职场,category
+src/components/pc/home/pcHomeShared.ts,헤드라인,pc.relationship.headline,头条,category
+src/components/pc/home/pcHomeShared.ts,온라인,pc.relationship.online,网络,category
+src/components/pc/home/pcHomeShared.ts,의료·교육,pc.relationship.medicalEducation,医疗·教育,category
+src/components/pc/home/pcHomeShared.ts,공공·제도,pc.relationship.publicSystem,公共·制度,category
+src/components/pc/home/pcHomeShared.ts,연인,pc.relationship.lover,恋人,category
+src/components/pc/home/pcHomeShared.ts,가장 가깝고도 먼 사이,pc.session.spouse.tagline,最近也最远的关系,tagline
+src/components/pc/home/pcHomeShared.ts,"사랑, 생활비, 침묵이 한 식탁에서 부딪힙니다.",pc.session.spouse.description,爱、生活费与沉默在同一张餐桌上交锋。,desc
+src/components/pc/home/pcHomeShared.ts,가까워서 더 쉽게 상처가 남는 관계,pc.session.family.tagline,越亲近越容易留下伤痕的关系,tagline
+src/components/pc/home/pcHomeShared.ts,"돌봄과 기대, 의무와 애틋함이 서로를 시험합니다.",pc.session.family.description,照料与期待、义务与依恋彼此试探。,desc
+src/components/pc/home/pcHomeShared.ts,편함과 선 넘음의 한 끗 차이,pc.session.friend.tagline,亲近与越界只有一线之差,tagline
+src/components/pc/home/pcHomeShared.ts,"우정과 거래가 겹치는 순간, 감정의 온도가 달라집니다.",pc.session.friend.description,当友情和交易重叠，情感的温度悄然改变。,desc
+src/components/pc/home/pcHomeShared.ts,문 하나 사이의 생활 전쟁,pc.session.neighbor.tagline,一扇门之隔的生活角力,tagline
+src/components/pc/home/pcHomeShared.ts,"소음과 시선, 경계와 배려가 일상 전체를 흔듭니다.",pc.session.neighbor.description,噪音、目光、边界与体谅，撼动整段日常。,desc
+src/components/pc/home/pcHomeShared.ts,돈과 믿음이 어긋나는 순간,pc.session.business.tagline,金钱与信任错位的瞬间,tagline
+src/components/pc/home/pcHomeShared.ts,"정산과 분담, 약속과 책임이 서로 다른 계산을 드러냅니다.",pc.session.business.description,结算与分担、约定与责任，呈现各自的算计。,desc
+src/components/pc/home/pcHomeShared.ts,계약서 밖에서 터지는 현실,pc.session.tenant.tagline,合同之外发生的现实,tagline
+src/components/pc/home/pcHomeShared.ts,"보증금, 하자, 책임 회피가 좁은 공간 안에서 충돌합니다.",pc.session.tenant.description,押金、瑕疵、推卸责任在狭窄空间里相撞。,desc
+src/components/pc/home/pcHomeShared.ts,기록과 관계가 동시에 흔들리는 자리,pc.session.workplace.tagline,记录与关系同时动摇之地,tagline
+src/components/pc/home/pcHomeShared.ts,"메일과 규정, 평가와 소문이 일의 얼굴을 바꿔 놓습니다.",pc.session.workplace.description,邮件、规章、考核与流言，悄然改写工作的面貌。,desc
+src/components/pc/home/pcHomeShared.ts,세상이 보는 사건은 무게가 다르다,pc.session.headline.tagline,世人眼中的事件分量不同,tagline
+src/components/pc/home/pcHomeShared.ts,공개성과 파장이 커질수록 판단은 더 무거워집니다.,pc.session.headline.description,公开度与波及越大，判断也愈发沉重。,desc
+src/components/pc/home/pcHomeShared.ts,화면 밖 진실은 더 늦게 드러난다,pc.session.online.tagline,屏幕之外的真相迟来一步,tagline
+src/components/pc/home/pcHomeShared.ts,"댓글과 게시물, 캡처와 여론이 사건의 흐름을 바꿉니다.",pc.session.online.description,评论、帖子、截图与舆论，改写事件走向。,desc
+src/components/pc/home/pcHomeShared.ts,믿고 맡긴 만큼 더 무거워지는 책임,pc.session.medicalEducation.tagline,托付越多，责任越重,tagline
+src/components/pc/home/pcHomeShared.ts,"전문성, 보호 의무, 해명의 온도가 정면으로 충돌합니다.",pc.session.medicalEducation.description,专业、保护义务与解释的温度，正面相撞。,desc
+src/components/pc/home/pcHomeShared.ts,제도가 흔들리면 모두가 불안해진다,pc.session.publicSystem.tagline,制度动摇时，所有人都不安,tagline
+src/components/pc/home/pcHomeShared.ts,공적 절차와 개인의 사정이 같은 장면 안에서 맞붙습니다.,pc.session.publicSystem.description,公共程序与个人处境在同一画面交锋。,desc
+src/components/pc/home/pcHomeShared.ts,"사랑과 의심 사이, 감정이 증거가 되는 순간",pc.session.lover.tagline,爱与怀疑之间，情绪化为证据,tagline
+src/components/pc/home/pcHomeShared.ts,"약속과 배신, 질투와 진심이 가장 가까운 사이를 시험합니다.",pc.session.lover.description,约定与背叛、嫉妒与真心，考验最亲近的关系。,desc
+src/components/pc/home/pcHomeShared.ts,현대판 솔로몬이 되어 갈등을 해결해주세요.,pc.intro.slide1.title,化身现代裁判官，化解纷争。,"intro slide; was 솔로몬 — replaced with 裁判官 to align with brand (no 所罗门 in CN)"
+src/components/pc/home/pcHomeShared.ts,"질문, 증거, 판단을 연결하며 서로 다른 진실을 가려내는 모의 재판 게임입니다.",pc.intro.slide1.body,通过提问、证据与判断串联，分辨彼此不同真相的模拟法庭游戏。,intro
+src/components/pc/home/pcHomeShared.ts,옳고 그름 보다 어긋난 진실에 집중하세요.,pc.intro.slide2.title,比起对错，更要聚焦错位的真相。,intro
+src/components/pc/home/pcHomeShared.ts,"감정과 기록, 침묵과 변명, 계산과 오해가 서로 다른 얼굴을 드러냅니다.",pc.intro.slide2.body,情绪与记录、沉默与辩解、计算与误会，会展现不同的面孔。,intro
+src/components/pc/home/pcHomeShared.ts,"질문하고, 증거를 제시하고, 흐름에 집중해주세요.",pc.intro.slide3.title,提问、出示证据，专注于走向。,intro
+src/components/pc/home/pcHomeShared.ts,"중요한 것은 정보의 양이 아니라, 파편화 된 단서의 연결입니다.",pc.intro.slide3.body,关键不在信息的多寡，而在于把碎片化的线索连起来。,intro
+src/components/pc/home/pcHomeShared.ts,첫 사건이 당신을 기다리고 있습니다!,pc.intro.slide4.title,第一桩案件正在等待您！,intro
+src/components/pc/home/pcHomeShared.ts,원하는 사건을 선택하여 지금 바로 재판을 시작할 수 있습니다.,pc.intro.slide4.body,选择想要审理的案件，立即开始庭审。,intro
+src/components/pc/home/pcHomeShared.ts,쉬움,pc.difficulty.easy,简单,difficulty
+src/components/pc/home/pcHomeShared.ts,어려움,pc.difficulty.hard,困难,difficulty
+src/components/pc/home/pcHomeShared.ts,보통,pc.difficulty.normal,普通,difficulty
+src/components/pc/settings/PCSettingsPanel.tsx,화면,pc.settings.category.screen,画面,nav
+src/components/pc/settings/PCSettingsPanel.tsx,오디오,pc.settings.category.audio,音频,nav
+src/components/pc/settings/PCSettingsPanel.tsx,게임플레이,pc.settings.category.gameplay,游戏玩法,nav
+src/components/pc/settings/PCSettingsPanel.tsx,데이터,pc.settings.category.data,数据,nav
+src/components/pc/settings/PCSettingsPanel.tsx,접근성,pc.settings.category.accessibility,辅助功能,nav
+src/components/pc/settings/PCSettingsPanel.tsx,키보드,pc.settings.category.keyboard,键盘,nav
+src/components/pc/settings/PCSettingsPanel.tsx,계정,pc.settings.category.account,账号,nav
+src/components/pc/settings/PCSettingsPanel.tsx,정보,pc.settings.category.about,关于,nav
+src/components/pc/settings/PCSettingsPanel.tsx,준비 중,pc.settings.previewBadge,准备中,badge
+src/components/pc/settings/PCSettingsPanel.tsx,설정,pc.settings.modal.label,设置,modal label
+src/components/pc/settings/PCSettingsPanel.tsx,닫기 (Esc),pc.common.closeEsc,关闭 (Esc),aria/title
+src/components/pc/settings/PCSettingsPanel.tsx,설정 카테고리,pc.settings.navLabel,设置类别,nav aria
+src/components/pc/settings/PCSettingsPanel.tsx,화면,pc.settings.screen.title,画面,section title
+src/components/pc/settings/PCSettingsPanel.tsx,해상도 · 풀스크린 · UI 표시 옵션,pc.settings.screen.description,分辨率·全屏·UI 显示选项,desc
+src/components/pc/settings/PCSettingsPanel.tsx,해상도 프리셋,pc.settings.screen.preset,分辨率预设,label
+src/components/pc/settings/PCSettingsPanel.tsx,선택한 해상도에 맞춰 좌우 패널 레이아웃이 단계적으로 조정됩니다.,pc.settings.screen.presetDescription,左右面板布局会根据所选分辨率分级调整。,desc
+src/components/pc/settings/PCSettingsPanel.tsx,Auto (자동 감지),pc.settings.screen.autoOption,自动 (Auto),option
+src/components/pc/settings/PCSettingsPanel.tsx,현재 UI 단계:,pc.settings.screen.currentBucket,当前 UI 等级：,label
+src/components/pc/settings/PCSettingsPanel.tsx,오디오,pc.settings.audio.title,音频,title
+src/components/pc/settings/PCSettingsPanel.tsx,배경음 · 효과음 · 음소거 옵션,pc.settings.audio.description,背景音·音效·静音选项,desc
+src/components/pc/settings/PCSettingsPanel.tsx,사운드,pc.settings.audio.sound,声音,group
+src/components/pc/settings/PCSettingsPanel.tsx,배경음 (BGM),pc.settings.audio.bgm,背景音 (BGM),toggle
+src/components/pc/settings/PCSettingsPanel.tsx,법정 배경 음악을 재생합니다.,pc.settings.audio.bgmDescription,播放法庭背景音乐。,desc
+src/components/pc/settings/PCSettingsPanel.tsx,효과음 (SFX),pc.settings.audio.sfx,音效 (SFX),toggle
+src/components/pc/settings/PCSettingsPanel.tsx,버튼·상태 전이 등 인터랙션 사운드를 재생합니다.,pc.settings.audio.sfxDescription,播放按钮与状态切换等交互音效。,desc
+src/components/pc/settings/PCSettingsPanel.tsx,게임플레이,pc.settings.gameplay.title,游戏玩法,title
+src/components/pc/settings/PCSettingsPanel.tsx,텍스트 속도 · 자동 진행 · 행동 힌트,pc.settings.gameplay.description,文本速度·自动推进·行动提示,desc
+src/components/pc/settings/PCSettingsPanel.tsx,진행,pc.settings.gameplay.progression,进行,group
+src/components/pc/settings/PCSettingsPanel.tsx,행동 힌트 표시,pc.settings.gameplay.hintLabel,显示行动提示,toggle
+src/components/pc/settings/PCSettingsPanel.tsx,심문/증거 행동 선택지에 추천 힌트를 표시합니다.,pc.settings.gameplay.hintDescription,在讯问/证据行动选项上显示推荐提示。,desc
+src/components/pc/settings/PCSettingsPanel.tsx,대사 자동 진행,pc.settings.gameplay.autoLabel,对话自动推进,toggle
+src/components/pc/settings/PCSettingsPanel.tsx,스크립트 대사를 자동으로 다음 줄로 넘깁니다.,pc.settings.gameplay.autoDescription,让脚本对话自动跳转到下一行。,desc
+src/components/pc/settings/PCSettingsPanel.tsx,텍스트 속도,pc.settings.gameplay.textSpeed,文本速度,group
+src/components/pc/settings/PCSettingsPanel.tsx,대사 타이핑 효과의 속도를 조정합니다.,pc.settings.gameplay.textSpeedDescription,调整对话打字效果的速度。,desc
+src/components/pc/settings/PCSettingsPanel.tsx,빠름,pc.settings.gameplay.speed.fast,快速,option
+src/components/pc/settings/PCSettingsPanel.tsx,보통,pc.settings.gameplay.speed.normal,普通,option
+src/components/pc/settings/PCSettingsPanel.tsx,느림,pc.settings.gameplay.speed.slow,慢速,option
+src/components/pc/settings/PCSettingsPanel.tsx,데이터,pc.settings.data.title,数据,title
+src/components/pc/settings/PCSettingsPanel.tsx,저장 데이터 내보내기 · 초기화,pc.settings.data.description,导出存档·重置数据,desc
+src/components/pc/settings/PCSettingsPanel.tsx,백업 / 복원,pc.settings.data.backup,备份 / 还原,group
+src/components/pc/settings/PCSettingsPanel.tsx,JSON 내보내기,pc.settings.data.exportLabel,导出 JSON,label
+src/components/pc/settings/PCSettingsPanel.tsx,현재 진행 상태(로컬 저장소)를 JSON 파일로 다운로드합니다.,pc.settings.data.exportDescription,将当前进度（本地存储）下载为 JSON 文件。,desc
+src/components/pc/settings/PCSettingsPanel.tsx,내보내기,pc.settings.data.exportButton,导出,button
+src/components/pc/settings/PCSettingsPanel.tsx,초기화,pc.settings.data.resetGroup,重置,group
+src/components/pc/settings/PCSettingsPanel.tsx,진행 데이터 초기화,pc.settings.data.resetLabel,重置进度数据,label
+src/components/pc/settings/PCSettingsPanel.tsx,저장 슬롯·사건 진행·재판관 성향·도전과제·프로필을 모두 삭제합니다. 되돌릴 수 없습니다.,pc.settings.data.resetDescription,将删除存档槽、案件进度、裁判官倾向、成就与档案，操作不可撤销。,desc
+src/components/pc/settings/PCSettingsPanel.tsx,초기화,pc.settings.data.resetButton,重置,button
+src/components/pc/settings/PCSettingsPanel.tsx,처리 중…,pc.common.processing,处理中…,loading
+src/components/pc/settings/PCSettingsPanel.tsx,정보,pc.settings.about.title,关于,title
+src/components/pc/settings/PCSettingsPanel.tsx,버전 · 크레딧 · 라이선스,pc.settings.about.description,版本·制作人员·授权信息,desc
+src/components/pc/settings/PCSettingsPanel.tsx,버전,pc.settings.about.version,版本,group
+src/components/pc/settings/PCSettingsPanel.tsx,빌드,pc.settings.about.build,构建,label
+src/components/pc/settings/PCSettingsPanel.tsx,v0.x — 개발 중 (PC 베타),pc.settings.about.buildValue,v0.x — 开发中 (PC Beta),value
+src/components/pc/settings/PCSettingsPanel.tsx,엔진,pc.settings.about.engine,引擎,label
+src/components/pc/settings/PCSettingsPanel.tsx,React 19 · TypeScript 5.9 · Vite 8,pc.settings.about.engineValue,React 19 · TypeScript 5.9 · Vite 8,keep English
+src/components/pc/settings/PCSettingsPanel.tsx,크레딧,pc.settings.about.credits,制作人员,group
+src/components/pc/settings/PCSettingsPanel.tsx,라이선스,pc.settings.about.license,授权,group
+src/components/pc/settings/PCSettingsPanel.tsx,오픈소스 라이브러리 · 폰트 · 에셋 정보 (개발 중),pc.settings.about.licenseBody,开源库·字体·素材信息（开发中）,desc
+src/components/pc/settings/PCSettingsPanel.tsx,이 카테고리는 다음 사이클에서 옵션이 추가됩니다.,pc.settings.previewBody,此类别将在下一周期添加更多选项。,preview
+src/components/pc/result/PCResultScreen.tsx,전설적인 재판관,pc.rating.judge.legendary,传奇裁判官,rating
+src/components/pc/result/PCResultScreen.tsx,훌륭한 재판관,pc.rating.judge.excellent,杰出裁判官,rating
+src/components/pc/result/PCResultScreen.tsx,능숙한 재판관,pc.rating.judge.skilled,熟练裁判官,rating
+src/components/pc/result/PCResultScreen.tsx,보통의 재판관,pc.rating.judge.average,普通裁判官,rating
+src/components/pc/result/PCResultScreen.tsx,미숙한 재판관,pc.rating.judge.novice,生疏裁判官,rating
+src/components/pc/result/PCResultScreen.tsx,판단 실패,pc.rating.judge.failure,判断失误,rating
+src/components/pc/result/PCResultScreen.tsx,일반,pc.rarity.common,普通,rarity
+src/components/pc/result/PCResultScreen.tsx,희귀,pc.rarity.rare,稀有,rarity
+src/components/pc/result/PCResultScreen.tsx,영웅,pc.rarity.epic,史诗,rarity (CN gaming convention)
+src/components/pc/result/PCResultScreen.tsx,전설,pc.rarity.legendary,传奇,rarity
+src/components/pc/result/PCResultScreen.tsx,판단 보류,pc.result.finding.deferred,保留判断,finding
+src/components/pc/result/PCResultScreen.tsx,사실로 판단,pc.result.finding.true,判定为事实,finding
+src/components/pc/result/PCResultScreen.tsx,상대 주장 사실로 판단,pc.result.finding.opposite,判定对方主张为事实,finding
+src/components/pc/result/PCResultScreen.tsx,사실 아님으로 판단,pc.result.finding.false,判定为事实不成立,finding
+src/components/pc/result/PCResultScreen.tsx,거짓으로 판단,pc.result.finding.lie,判定为虚假,finding
+src/components/pc/result/PCResultScreen.tsx,미판단,pc.result.finding.none,未判定,finding default
+src/components/pc/result/PCClearanceDetailPopup.tsx,증거,pc.clearance.category.evidence,证据,category
+src/components/pc/result/PCClearanceDetailPopup.tsx,조합,pc.clearance.category.combination,组合,category
+src/components/pc/result/PCClearanceDetailPopup.tsx,증인,pc.clearance.category.witness,证人,category
+src/components/pc/result/PCClearanceDetailPopup.tsx,심문,pc.clearance.category.interrogation,讯问,category
+src/components/pc/result/PCClearanceDetailPopup.tsx,쟁점,pc.clearance.category.dispute,争议点,category
+src/components/pc/result/PCClearanceDetailPopup.tsx,클리어율 상세,pc.clearance.modalLabel,完成度详情,modal label
+src/components/pc/result/PCClearanceDetailPopup.tsx,클리어율 상세,pc.clearance.title,完成度详情,modal title
+src/components/pc/result/PCClearanceDetailPopup.tsx,항목 달성,pc.clearance.itemsAchieved,项目达成,summary
+src/components/pc/result/PCClearanceDetailPopup.tsx,모든 체크리스트를 채우고 남은 연결 고리를 없애면 100% 클리어입니다.,pc.clearance.explainer,集齐所有清单并消除剩余的连接节点即达成 100% 完成度。,explainer
+src/components/pc/result/PCClearanceDetailPopup.tsx,놓친 연결 고리,pc.clearance.missingTitle,遗漏的连接节点,section
+src/components/pc/result/PCClearanceDetailPopup.tsx,놓친 조합이 없습니다.,pc.clearance.missingEmpty,没有遗漏的组合。,empty
+src/components/pc/result/PCFragmentRewardOverlay.tsx,판결 조각 회수 완료,pc.fragment.title,判决碎片回收完成,title
+src/components/pc/result/PCFragmentRewardOverlay.tsx,판결 중심,pc.fragment.stage.center,判决中心,stage
+src/components/pc/result/PCFragmentRewardOverlay.tsx,인벤토리,pc.fragment.stage.inventory,物品栏,stage
+src/components/pc/result/PCFragmentRewardOverlay.tsx,BONUS,pc.fragment.bonus,BONUS,keep English
+src/components/pc/result/PCFragmentRewardOverlay.tsx,FRAGMENT,pc.fragment.fragment,FRAGMENT,keep English
+src/components/pc/result/PCFragmentRewardOverlay.tsx,성향 강화 가능,pc.fragment.canEnhance,可强化倾向,alert
+src/components/pc/result/PCFragmentRewardOverlay.tsx,결과 확인,pc.fragment.viewResult,查看结果,button
+src/components/pc/verdict/PCVerdictScreen.tsx,방어,pc.lieState.s0,防御,lie state
+src/components/pc/verdict/PCVerdictScreen.tsx,동요,pc.lieState.s1,动摇,lie state
+src/components/pc/verdict/PCVerdictScreen.tsx,변명,pc.lieState.s2,辩解,lie state
+src/components/pc/verdict/PCVerdictScreen.tsx,궁지,pc.lieState.s3,困境,lie state
+src/components/pc/verdict/PCVerdictScreen.tsx,한계,pc.lieState.s4,极限,lie state
+src/components/pc/verdict/PCVerdictScreen.tsx,고백,pc.lieState.s5,坦白,lie state
+src/components/pc/verdict/PCVerdictScreen.tsx,공동 재산 회복,pc.verdict.solution.communalPropertyRecovery,共同财产恢复,display label
+src/components/pc/verdict/PCVerdictScreen.tsx,신뢰 순서 분리,pc.verdict.solution.trustOrderSeparation,信任顺序分离,display label
+src/components/pc/verdict/PCVerdictScreen.tsx,봉인 정보 경계,pc.verdict.solution.sealedInfoBoundary,封存信息边界,display label
+src/components/pc/verdict/PCVerdictScreen.tsx,관계 재건,pc.verdict.solution.relationshipRebuild,关系重建,display label
+src/components/pc/verdict/PCVerdictScreen.tsx,역할 재조정,pc.verdict.solution.roleReadjustment,角色再调整,display label
+src/components/pc/verdict/PCVerdictScreen.tsx,소통 구조 개선,pc.verdict.solution.communicationStructure,沟通结构改善,display label
+src/components/pc/verdict/PCVerdictScreen.tsx,경계 설정,pc.verdict.solution.boundarySetting,边界设定,display label
+src/components/pc/verdict/PCVerdictScreen.tsx,책임 분담,pc.verdict.solution.responsibilitySharing,责任分担,display label
+src/components/pc/verdict/PCVerdictScreen.tsx,신뢰 회복,pc.verdict.solution.trustRecovery,信任恢复,display label
+src/components/pc/verdict/PCVerdictScreen.tsx,금전 정리,pc.verdict.solution.financialSettlement,金钱整理,display label
+src/components/pc/verdict/PCVerdictScreen.tsx,재정 투명화,pc.verdict.solution.financialTransparency,财务透明化,display label
+src/components/pc/verdict/PCVerdictScreen.tsx,의사소통,pc.verdict.solution.communication,沟通,display label
+src/components/pc/verdict/PCVerdictScreen.tsx,생활 규칙,pc.verdict.solution.livingRules,生活规则,display label
+src/components/pc/verdict/PCVerdictScreen.tsx,법적 정리,pc.verdict.solution.legalSettlement,法律处理,display label
+src/components/pc/debug/PCTestConsole.tsx,조사 토큰,pc.term.investigationToken,调查代币,resource
+src/components/pc/debug/PCTestConsole.tsx,스킬 포인트,pc.term.skillPoint,技能点,resource
+src/components/pc/debug/PCTestConsole.tsx,법정 장악,pc.term.courtControl,法庭掌控,resource (not in glossary; see GLOSSARY_AUDIT)
+src/components/pc/debug/PCTestConsole.tsx,LOCAL TEST,pc.test.kicker,LOCAL TEST,keep English
+src/components/pc/debug/PCTestConsole.tsx,Token Console,pc.test.title,Token Console,keep English (dev tool)
+src/components/pc/debug/PCTestConsole.tsx,지급,pc.test.grant,发放,button
+src/components/pc/hotbar/PCActionsPanel.tsx,심문 컨트롤,pc.actions.interrogation.title,讯问控制,view label
+src/components/pc/hotbar/PCActionsPanel.tsx,"현재 쟁점 기준 질문, 자유질문, 보조 토글을 제어합니다.",pc.actions.interrogation.subtitle,基于当前争议点控制提问、自由提问与辅助开关。,subtitle
+src/components/pc/hotbar/PCActionsPanel.tsx,증거 컨트롤,pc.actions.evidence.title,证据控制,view label
+src/components/pc/hotbar/PCActionsPanel.tsx,"증거 제시, 조사, 감정, 증인 호출을 한곳에서 처리합니다.",pc.actions.evidence.subtitle,在同一处管理证据出示、调查、鉴定与传唤证人。,subtitle
+src/components/pc/hotbar/PCActionsPanel.tsx,특수 행동,pc.actions.special.title,特殊行动,view label
+src/components/pc/hotbar/PCActionsPanel.tsx,"즉답 요구, 이의 제기, 보호 행동과 단계 진행을 관리합니다.",pc.actions.special.subtitle,管理即答要求、异议、保护行动与阶段推进。,"subtitle; uses 异议 per restart rule (objection UI noun)"
+src/components/pc/hotbar/PCActionsPanel.tsx,사실 추궁 - 모순에 집중하기,pc.actions.quick.factPursuit,事实追问 — 聚焦矛盾,quick question
+src/components/pc/hotbar/PCActionsPanel.tsx,동기 탐색 - 숨겨진 쟁점 찾기,pc.actions.quick.motiveSearch,动机探查 — 寻找隐藏争议点,quick question
+src/components/pc/hotbar/PCActionsPanel.tsx,공감 접근 - 자백 유도하기,pc.actions.quick.empathyApproach,共情接近 — 引导坦白,quick question
+src/components/pc/hotbar/PCActionsPanel.tsx,증거 제시,pc.actions.quick.evidencePresent,出示证据,quick question
+src/components/pc/hotbar/PCBottomDock.tsx,경계,pc.emotion.guard,戒备,emotion
+src/components/pc/hotbar/PCBottomDock.tsx,자신감,pc.emotion.confidence,自信,emotion
+src/components/pc/hotbar/PCBottomDock.tsx,동요,pc.emotion.unrest,动摇,emotion
+src/components/pc/hotbar/PCBottomDock.tsx,격앙,pc.emotion.agitated,激愤,emotion
+src/components/pc/hotbar/PCBottomDock.tsx,체념,pc.emotion.resignation,认命,"emotion; per restart rule 체념 → 认命 (was 放弃)"
+src/components/pc/hotbar/PCDeferredVerdictIcon.tsx,보류된 판결,pc.bottomDock.deferredVerdict,保留判决,aria/label
+src/components/pc/panels/PCCaseTimelineSection.tsx,사건 타임라인,pc.timeline.title,案件时间线,section
+src/components/pc/panels/PCCaseTimelineSection.tsx,최근 ↑,pc.timeline.scrollLatest,最新 ↑,scroll
+src/components/pc/panels/PCCaseTimelineSection.tsx,이벤트가 발생하면 여기에 기록됩니다.,pc.timeline.empty,事件发生后将记录于此。,empty
+src/components/pc/panels/PCCaseTimelineSection.tsx,클릭하면 해당 시점으로 이동합니다,pc.timeline.jumpHint,点击可跳转到该时刻,hint
+src/components/pc/panels/PCImportantNotesSection.tsx,발견한 내용:,pc.notes.discoveredLabel,已发现内容：,label
+src/components/pc/panels/PCLeftPanel.tsx,증거 파일,pc.evidence.defaultType,证据文件,default
+src/components/pc/panels/PCLeftPanel.tsx,증거 열람,pc.evidence.viewAction,查阅证据,action
+src/components/pc/panels/PCRightPanel.tsx,스킬 포인트가 부족합니다.,pc.toast.skillPointsInsufficient,技能点不足。,toast (showToast hardcoded)
+src/components/pc/panels/PCRightPanel.tsx,이미 같은 카드가 슬롯에 있습니다.,pc.toast.cardAlreadyInSlot,该卡片已在槽中。,toast
+src/components/pc/panels/PCRightPanel.tsx,하이라이트된 핵심 발언만 조합할 수 있습니다.,pc.toast.onlyHighlightedCombinable,只有高亮的关键发言可参与组合。,toast
+src/components/pc/layout/PCCourtLayout.tsx,사건 브리핑,pc.phase.briefing,案件简报,phase
+src/components/pc/layout/PCCourtLayout.tsx,사전진술,pc.phase.pretrial,庭前陈述,phase
+src/components/pc/layout/PCCourtLayout.tsx,심문,pc.phase.interrogation,讯问,phase
+src/components/pc/layout/PCCourtLayout.tsx,판결 진입,pc.phase.verdictEntry,进入裁决,"phase; brand-aligned 裁决 (entry to verdict)"
+src/components/pc/layout/PCCourtLayout.tsx,판결,pc.phase.verdict,判决,phase (KO 판결 → glossary 判决)
+src/components/pc/layout/PCCourtLayout.tsx,결과,pc.phase.result,结果,phase
+src/components/pc/layout/PCInteractionPanel.tsx,사건 요약,pc.interaction.caseSummary,案件摘要,copy
+src/components/pc/layout/PCInteractionPanel.tsx,현재 선택된 사건이 없습니다.,pc.interaction.noCaseSelected,当前未选择案件。,empty
+src/components/pc/layout/PCInteractionPanel.tsx,현재 쟁점,pc.interaction.currentDispute,当前争议点,copy
+src/components/pc/layout/PCInteractionPanel.tsx,아직 선택된 쟁점 없음,pc.interaction.noDisputeSelected,尚未选择争议点,copy
+src/components/pc/layout/PCInteractionPanel.tsx,진행 단계,pc.interaction.progressStage,进行阶段,copy
+src/components/pc/layout/PCInteractionPanel.tsx,턴,pc.interaction.turn,回合,copy
+src/components/pc/layout/PCInteractionPanel.tsx,해금 증거,pc.interaction.unlockedEvidence,已解锁证据,copy
+src/components/pc/layout/PCInteractionPanel.tsx,쟁점 목록,pc.interaction.disputeList,争议点列表,copy
+src/components/pc/layout/PCInteractionPanel.tsx,현재 쟁점 보기,pc.interaction.viewCurrentDispute,查看当前争议点,copy
+src/components/pc/layout/PCInteractionPanel.tsx,최근 증거 열람,pc.interaction.viewRecentEvidence,查阅最近证据,copy
+src/components/pc/layout/PCInteractionPanel.tsx,대상 정보,pc.interaction.targetInfo,对象信息,copy
+src/components/pc/layout/PCInteractionPanel.tsx,관계 유형,pc.interaction.relationshipType,关系类型,copy
+src/components/pc/layout/PCInteractionPanel.tsx,현재 주시 쟁점,pc.interaction.watchedDispute,当前关注的争议点,copy
+src/components/pc/layout/PCInteractionPanel.tsx,없음,pc.common.none,无,shared
+src/components/pc/layout/PCInteractionPanel.tsx,관련 쟁점 보기,pc.interaction.viewRelatedDisputes,查看相关争议点,copy
+src/components/pc/layout/PCInteractionPanel.tsx,쟁점 정보,pc.interaction.disputeInfo,争议点信息,copy
+src/components/pc/layout/PCInteractionPanel.tsx,연결 증거,pc.interaction.linkedEvidence,关联证据,copy
+src/components/pc/layout/PCInteractionPanel.tsx,아직 연결된 증거가 없습니다.,pc.interaction.noLinkedEvidence,暂无已关联的证据。,empty
+src/components/pc/layout/PCInteractionPanel.tsx,대표 증거 열람,pc.interaction.viewRepresentativeEvidence,查阅代表证据,copy
+src/components/pc/layout/PCInteractionPanel.tsx,증거 제시,pc.interaction.presentEvidence,出示证据,copy
+src/components/pc/layout/PCInteractionPanel.tsx,선택 불가,pc.interaction.notSelectable,不可选择,copy
+src/components/pc/layout/PCInteractionPanel.tsx,현재 쟁점과 대상에 바로 연결된 증거가 없습니다.,pc.interaction.noConnectedEvidence,当前争议点与对象之间没有可直接关联的证据。,empty
+src/components/pc/layout/PCInteractionPanel.tsx,제시 메시지 선택,pc.interaction.choosePresentMessage,选择出示信息,copy
+src/components/pc/layout/PCInteractionPanel.tsx,상대방에게 던질 증거를 고르세요.,pc.interaction.choosePresentMessageHint,选择要出示给对方的证据。,copy
+src/components/pc/layout/PCInteractionPanel.tsx,제시 방식 선택,pc.interaction.choosePresentMode,选择出示方式,copy
+src/components/pc/layout/PCInteractionPanel.tsx,추천 질문,pc.interaction.recommendedQuestion,推荐问题,copy
+src/components/pc/layout/PCInteractionPanel.tsx,의미,pc.interaction.meaning,含义,copy
+src/components/pc/layout/PCInteractionPanel.tsx,증거만 제시,pc.interaction.evidenceOnly,仅出示证据,copy
+src/components/pc/layout/PCInteractionPanel.tsx,쟁점 이동,pc.interaction.moveDispute,切换争议点,copy
+src/components/pc/layout/PCInteractionPanel.tsx,이동할 쟁점을 선택하세요.,pc.interaction.moveDisputeHint,选择要切换到的争议点。,copy
+src/components/pc/layout/PCInteractionPanel.tsx,이동 불가,pc.interaction.cannotMove,无法切换,copy
+src/components/pc/layout/PCInteractionPanel.tsx,이동할 다른 쟁점이 없습니다.,pc.interaction.noOtherDispute,没有其他可切换的争议点。,empty
+src/components/pc/layout/PCInteractionPanel.tsx,ACTION SELECT,pc.interaction.actionSelectKicker,ACTION SELECT,keep English
+src/components/pc/layout/PCInteractionPanel.tsx,스킬 포인트가 부족합니다.,pc.interaction.skillPointsInsufficient,技能点不足。,error
+src/components/pc/layout/PCInteractionPanel.tsx,이의 있습니다.,pc.interaction.objectionLabel,提出异议,"UI label; uses 提出异议 per restart rule (objection UI noun = 异议; 反对！reserved for bark)"
+src/components/pc/layout/PCInteractionPanel.tsx,지금 쟁점에 대한 즉답을 요구합니다.,pc.interaction.objectionBody,就当前争议点要求即时回答。,body
+src/components/pc/layout/PCInteractionPanel.tsx,법정 장악이 부족합니다.,pc.toast.courtControlInsufficient,法庭掌控不足。,toast (showToast hardcoded)
+src/components/pc/layout/PCGameplayOverlay.tsx,방어가 흔들린다,pc.gameplay.guardShaken.title,防御开始动摇,overlay title
+src/components/pc/layout/PCGameplayOverlay.tsx,말이 달라지기 시작했습니다. 지금 파고들면 숨기고 있던 것이 나올 수 있습니다.,pc.gameplay.guardShaken.body,说辞开始变化。现在追问，可能挖出对方藏起来的东西。,body
+src/components/pc/layout/PCGameplayOverlay.tsx,도망칠 곳이 줄어든다,pc.gameplay.cornered.title,退路在收紧,title
+src/components/pc/layout/PCGameplayOverlay.tsx,변명이 통하지 않는다는 걸 본인도 느끼고 있습니다. 어떻게 압박하시겠습니까?,pc.gameplay.cornered.body,对方也察觉到辩解已经行不通。您要怎样施压？,body
+src/components/pc/layout/PCGameplayOverlay.tsx,입을 열 준비가 됐다,pc.gameplay.readyToConfess.title,准备开口,title
+src/components/pc/layout/PCGameplayOverlay.tsx,더 숨기는 것보다 말하는 게 나을 수 있다고 느끼기 시작했습니다.,pc.gameplay.readyToConfess.body,对方开始觉得继续隐瞒不如开口。,body
+src/components/pc/layout/PCGameplayOverlay.tsx,직접 진술 붕괴,pc.gameplay.statementCollapse.subtitle,陈述当场崩塌,subtitle
+src/components/pc/layout/PCGameplayOverlay.tsx,상대 진술이 크게 흔들렸습니다. 지금이 다음 질문이나 이의 제기를 붙일 타이밍입니다.,pc.gameplay.statementCollapse.body,对方陈述大幅动摇。现在正适合衔接下一道追问或异议。,"body; uses 异议"
+src/components/pc/layout/PCGameplayOverlay.tsx,균열 포착,pc.gameplay.crackDetected.subtitle,抓到裂缝,subtitle
+src/components/pc/layout/PCGameplayOverlay.tsx,증거가 진술 사이의 틈을 만들었습니다. 관련 쟁점으로 이어서 압박해 보세요.,pc.gameplay.crackDetected.body,证据在陈述之间撕开了一道缝。可顺势压向相关争议点。,body
+src/components/pc/layout/PCGameplayOverlay.tsx,보류,pc.gameplay.held.subtitle,保留,subtitle
+src/components/pc/layout/PCGameplayOverlay.tsx,직접 붕괴까지는 아니지만 기록 가치가 생겼습니다. 다른 증거나 발언과 연결해 다시 시도해 보세요.,pc.gameplay.held.body,虽未直接崩塌，但已具备记录价值。请尝试与其他证据或发言连结后再次推进。,body
+src/components/pc/layout/PCRecordSummary.tsx,양쪽 주장에 각각 사실과 과장이 섞여 있다고 판단했습니다.,pc.recordSummary.bothMixed,判定双方主张各自含有事实与夸大。,judgment
+src/components/pc/layout/PCRecordSummary.tsx,아직 판단을 보류했습니다.,pc.recordSummary.deferred,判断暂时保留。,judgment
+src/components/pc/layout/PCRecordSummary.tsx,판단 기록이 남아 있습니다.,pc.recordSummary.recordRemains,已留下判断记录。,default
+src/components/pc/layout/PCRecordSummary.tsx,쟁점 공개,pc.recordSummary.disputeReveal,争议点公开度,progress
+src/components/pc/layout/PCRecordSummary.tsx,숨겨진 쟁점,pc.recordSummary.hiddenDispute,隐藏争议点,label
+src/components/pc/layout/PCRecordSummary.tsx,모든 쟁점이 열렸습니다,pc.recordSummary.allRevealed,所有争议点已公开,progress
+src/components/pc/layout/PCRecordSummary.tsx,진실파악 완료,pc.recordSummary.truthGrasp,真相掌握完成,progress
+src/components/pc/layout/PCRecordSummary.tsx,쟁점별 5단계 도달 기준,pc.recordSummary.truthDetail,以各争议点抵达第 5 阶段为准,detail
+src/components/pc/layout/PCRecordSummary.tsx,증거 해금,pc.recordSummary.evidenceUnlock,证据解锁,progress
+src/components/pc/layout/PCRecordSummary.tsx,좌측 증거 목록에 열린 증거,pc.recordSummary.evidenceUnlockDetail,左侧证据列表中已开启的证据,detail
+src/components/pc/layout/PCRecordSummary.tsx,증거 조사,pc.recordSummary.evidenceInvestigation,证据调查,progress
+src/components/pc/observation/JudgeNotebookSection.tsx,자백,pc.notebook.category.confession,坦白,category
+src/components/pc/observation/JudgeNotebookSection.tsx,결정적 모순,pc.notebook.category.criticalContradiction,决定性矛盾,category
+src/components/pc/observation/JudgeNotebookSection.tsx,핵심 발화,pc.notebook.category.keyStatement,关键发言,category
+src/components/pc/observation/JudgeNotebookSection.tsx,쟁점 파악,pc.notebook.category.disputeGrasp,争议点掌握,category
+src/components/pc/observation/JudgeNotebookSection.tsx,쟁점 발현,pc.notebook.category.disputeReveal,争议点显现,category
+src/components/pc/observation/JudgeObservationHistoryDrawer.tsx,전체,pc.observation.filter.all,全部,filter
+src/components/pc/observation/JudgeObservationHistoryDrawer.tsx,관찰,pc.observation.category.observation,观察,filter
+src/components/pc/observation/JudgeObservationHistoryDrawer.tsx,단계,pc.observation.category.stage,阶段,filter
+src/components/pc/observation/JudgeObservationHistoryDrawer.tsx,모순,pc.observation.category.contradiction,矛盾,filter
+src/components/pc/observation/JudgeObservationHistoryDrawer.tsx,감정,pc.observation.category.emotion,情绪,filter
+src/components/pc/observation/JudgeObservationHistoryDrawer.tsx,증거,pc.observation.category.evidence,证据,filter
+src/components/pc/observation/JudgeObservationHistoryDrawer.tsx,이벤트,pc.observation.category.event,事件,filter
+src/components/pc/observation/JudgeObservationHistoryDrawer.tsx,재판관의 관찰 — 전체 기록,pc.observation.history.title,裁判官的观察 — 全部记录,drawer title
+src/components/pc/observation/JudgeObservationHistoryDrawer.tsx,모두 읽음,pc.common.markAllRead,全部标为已读,button
+src/components/pc/progression/PCJudgeProgressionShared.tsx,추론의 조각,pc.progression.fragment.reasoning,推理碎片,fragment
+src/components/pc/progression/PCJudgeProgressionShared.tsx,탐구의 조각,pc.progression.fragment.inquiry,探究碎片,fragment
+src/components/pc/progression/PCJudgeProgressionShared.tsx,공감의 조각,pc.progression.fragment.empathy,共情碎片,fragment
+src/components/pc/progression/PCJudgeProgressionShared.tsx,엄정의 조각,pc.progression.fragment.strict,严正碎片,fragment
+src/components/pc/progression/PCJudgeProgressionShared.tsx,숙의의 조각,pc.progression.fragment.deliberation,慎思碎片,fragment
+src/components/pc/progression/PCJudgeProgressionShared.tsx,관용의 조각,pc.progression.fragment.tolerance,宽容碎片,fragment
+src/components/pc/progression/PCJudgeProgressionShared.tsx,법리의 조각,pc.progression.fragment.law,法理碎片,fragment
+src/components/pc/progression/PCJudgeProgressionShared.tsx,균형의 조각,pc.progression.fragment.balance,均衡碎片,fragment
+src/components/pc/progression/PCJudgeProgressionShared.tsx,화해의 조각,pc.progression.fragment.reconciliation,和解碎片,fragment
+src/components/pc/progression/PCJudgeProgressionShared.tsx,논리,pc.progression.trait.logic,逻辑,trait
+src/components/pc/progression/PCJudgeProgressionShared.tsx,탐구,pc.progression.axis.inquiry,探究,axis
+src/components/pc/progression/PCJudgeProgressionShared.tsx,직감,pc.progression.trait.intuition,直觉,trait
+src/components/pc/progression/PCJudgeProgressionShared.tsx,엄정,pc.progression.trait.strict,严正,trait
+src/components/pc/progression/PCJudgeProgressionShared.tsx,판단,pc.progression.axis.judgment,判断,axis
+src/components/pc/progression/PCJudgeProgressionShared.tsx,관용,pc.progression.trait.tolerance,宽容,trait
+src/components/pc/progression/PCJudgeProgressionShared.tsx,원칙,pc.progression.trait.principle,原则,trait
+src/components/pc/progression/PCJudgeProgressionShared.tsx,해결,pc.progression.axis.resolution,解决,axis
+src/components/pc/progression/PCJudgeProgressionShared.tsx,화해,pc.progression.trait.reconciliation,调和,trait
+src/components/pc/profile/PCJudgeProgressionPanel.tsx,장착,pc.profile.tab.equip,装备,tab
+src/components/pc/profile/PCJudgeProgressionPanel.tsx,보유 타이틀을 슬롯에 배치합니다.,pc.profile.tab.equipDescription,将拥有的称号放入槽位。,desc
+src/components/pc/profile/PCJudgeProgressionPanel.tsx,강화,pc.profile.tab.enhance,强化,tab
+src/components/pc/profile/PCJudgeProgressionPanel.tsx,판결 조각을 넣어 타이틀 레벨을 올립니다.,pc.profile.tab.enhanceDescription,注入判决碎片以提升称号等级。,desc
+src/components/pc/profile/PCJudgeProgressionPanel.tsx,판결 조각,pc.profile.tab.fragments,判决碎片,tab
+src/components/pc/profile/PCJudgeProgressionPanel.tsx,보유 조각을 확인하고 교환합니다.,pc.profile.tab.fragmentsDescription,查看并兑换持有的碎片。,desc
+src/components/pc/profile/PCJudgeProgressionPanel.tsx,재판관 관리 메뉴,pc.profile.tabListLabel,裁判官管理菜单,aria
+src/components/pc/profile/PCPerkEquipPanel.tsx,Lv3 성향을 달성하면 장착할 수 있습니다.,pc.profile.perk.empty.lv3,达到 Lv3 倾向后即可装备。,empty
+src/components/pc/profile/PCPerkEquipPanel.tsx,Lv1 성향을 달성하면 장착할 수 있습니다.,pc.profile.perk.empty.lv1,达到 Lv1 倾向后即可装备。,empty
+src/components/pc/profile/PCPerkEquipPanel.tsx,퍼크 장착,pc.profile.perk.title,特性装备,panel title
+src/components/pc/profile/PCTraitEnhancePanel.tsx,탐구 축,pc.profile.trait.axis.inquiry,探究轴,axis
+src/components/pc/profile/PCTraitEnhancePanel.tsx,심판 축,pc.profile.trait.axis.judgment,审判轴,axis (KO 심판 vs 판결 inconsistency upstream)
+src/components/pc/profile/PCTraitEnhancePanel.tsx,해결 축,pc.profile.trait.axis.resolution,解决轴,axis
+src/components/pc/profile/PCTraitEnhancePanel.tsx,6성향 강화,pc.profile.trait.title,六倾向强化,panel title
+src/hooks/useActionDispatch.ts,증인 증언 생성에 실패했습니다. 토큰이 반환되었습니다.,pc.toast.witnessTestimonyFailed,生成证人证词失败。代币已退还。,toast (out of strict pc/ scope but visible toast)
+src/components/discovery/CombinationLabPanel.tsx,조합 가능한 노드를 찾지 못했습니다.,pc.toast.noCombinableNode,未找到可组合的节点。,toast (out of strict pc/ scope but visible toast)

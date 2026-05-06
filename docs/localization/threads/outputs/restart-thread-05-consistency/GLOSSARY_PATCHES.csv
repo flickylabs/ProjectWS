@@ -1,0 +1,31 @@
+term_id,locale,current,proposed,reason,confidence
+court_simulation,en,Court Simulation,Court Simulation,No value change. Update glossary NOTE column to: `Title Case in body; ALL-CAPS in genre eyebrows (EN only).` Per Thread-01 question 5 + Thread-04 P0-2 the EN ALL-CAPS rendering of splash.subtitle is intentional Steam-style branding scoped via html[lang^='en'].,high
+verdict,zh-CN,判决,判决,"No value change. Update glossary NOTE column to clarify zh-CN process/record split: `zh-CN renders 判决 in record/static contexts (e.g., 判决记录, 判决依据). Renders 裁决 in process/action contexts (verdictAdvance flow, brand 真相裁决). Codex should pick the right form per call site — single zh-CN value cannot capture this nuance, so glossary stores the record form and call sites override with 裁决 when the action sense applies.`",high
+score_axis_insight,en,Insight,Insight,No value change. Promote status from needs-rework → draft. EN value confirmed by Thread-01 GLOSSARY_AUDIT row 54 (high confidence).,high
+score_axis_authority,en,Authority,Authority,No value change. Promote status from needs-rework → draft. EN value confirmed by Thread-01 (high confidence).,high
+score_axis_wisdom,en,Wisdom,Wisdom,No value change. Promote status from needs-rework → draft. EN value confirmed by Thread-01 (high confidence).,high
+score_axis_insight,ja,洞察,洞察,No value change. Status remains needs-rework pending JA native review.,medium
+score_axis_authority,ja,権威,権威,No value change. Status remains needs-rework pending JA native review.,medium
+score_axis_wisdom,ja,知恵,知恵,No value change. Status remains needs-rework pending JA native review.,medium
+score_axis_insight,zh-CN,洞察,洞察,No value change. Status remains needs-rework pending zh-CN native review.,medium
+score_axis_authority,zh-CN,权威,权威,No value change. Status remains needs-rework pending zh-CN native review.,medium
+score_axis_wisdom,zh-CN,智慧,智慧,No value change. Status remains needs-rework pending zh-CN native review.,medium
+project_solomon,ko,Project Solomon,Project Solomon,No value change. Update glossary NOTE column to: `DEPRECATED for user-facing UI. Kept as engine/dev legacy alias only. Use internal_project_name for dev references and brand_* rows for public titles. Linter should reject any user-facing key whose value contains the literal `Project Solomon` (with space).`,high
+season,ko,,시즌,"NEW row. Lobby category grouping concept — distinct from session (one play session). zh-CN distinguishes 赛季 (season) from 会话 (session).",medium
+season,en,,Season,NEW row. Lobby category grouping concept.,medium
+season,ja,,シーズン,NEW row. Lobby category grouping concept.,medium
+season,zh-CN,,赛季,NEW row. Lobby category grouping concept distinct from session=会话.,medium
+forbidden_brand_alternates,ko,,(linter-only),"NEW row. Linter-enforcement marker. Forbidden public-title candidates that must NEVER appear in user-facing strings: EN: `Project Solomon` (with space) / `Solomon's Dilemma` / `Solomon Court`; JA: `ソロモン法廷`; zh-CN: `所罗门的法庭` / `所罗门的两难` / `所罗门困境`. Glossary value column intentionally empty — this row exists for linter integration only. Mark locked=true.",high
+forbidden_brand_alternates,en,,(linter-only),NEW row. See ko notes.,high
+forbidden_brand_alternates,ja,,(linter-only),NEW row. See ko notes.,high
+forbidden_brand_alternates,zh-CN,,(linter-only),NEW row. See ko notes.,high
+demand_bark,ko,,즉답을 요구합니다,"NEW row. PROJECT_CONTROL_TOWER decision 7 pattern extension. In-character spoken bark for the demand_answer action. Routed through dialogue channel. Distinct from demand_answer (UI noun: 즉답 요구).",high
+demand_bark,en,,Answer me!,NEW row. In-character spoken bark.,medium
+demand_bark,ja,,即答してください！,NEW row. In-character spoken bark.,medium
+demand_bark,zh-CN,,请立即回答！,NEW row. In-character spoken bark.,medium
+slip,ko,,실수,"NEW row. Used in pc.judgeHistoryDrawer.filter.slip — slip-up/lapse observation category.",medium
+slip,en,,Slip,NEW row.,high
+slip,ja,,失言,NEW row. Verify with JA native review.,medium
+slip,zh-CN,,失言,NEW row. Verify with zh-CN native review.,medium
+disputeRibbon_label,ko,,쟁점,"NEW row alias. dispute glossary already exists; this row documents that pc.disputeRibbon.label uses the plural-style noun. Codex may opt to skip this row and use existing dispute entry — flag only.",low
+home_brand,ko,,(deprecated alias),"DEPRECATE this aliased term. Earlier draft proposed home_brand row; final structure is brand_full_title (already in glossary as line 73). If a glossary row named home_brand exists in any earlier copy, mark deprecated; do not add new home_brand row.",high

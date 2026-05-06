@@ -5,6 +5,7 @@ import App from './App'
 import ErrorBoundary from '../components/layout/ErrorBoundary'
 import ToastContainer from '../components/common/Toast'
 import AIReasoningCutscene from '../components/freeInterrogation/AIReasoningCutscene'
+import { I18nProvider } from '../i18n'
 
 // PWA 서비스 워커 등록
 if ('serviceWorker' in navigator) {
@@ -16,9 +17,11 @@ if ('serviceWorker' in navigator) {
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <ErrorBoundary>
-      <App />
-      <ToastContainer />
-      <AIReasoningCutscene />
+      <I18nProvider>
+        <App />
+        <ToastContainer />
+        <AIReasoningCutscene />
+      </I18nProvider>
     </ErrorBoundary>
   </StrictMode>,
 )

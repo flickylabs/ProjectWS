@@ -1,0 +1,62 @@
+path,surface_type,case_id,authoritative_status,text_fields,estimated_text_items,notes
+src/data/scriptedText/spouse-01.json,scripted_text_bundle,spouse-01,active,"variants[].text, variants[].behaviorHint",4677,"18 channels (interrogation/evidence_present/dossier/witness/aftermath/system_message/contradiction_pursuit/interjection/emotional_overload/evidence_discovery/trust_action/mediation/judge_question/judge_contradiction/judge_evidence_combo/judge_witness_summon/rapport_milestone/contradict_milestone). 560 entries × ~10 variants. Authoritative under disclosure-policy §4.1. behaviorHint = stage direction (likely no-translate or dev-only)."
+src/data/scriptedText/family-01.json,scripted_text_bundle,family-01,active,"variants[].text, variants[].behaviorHint",5262,"Same schema as spouse-01. 632 entries. Authoritative under disclosure-policy §4.2."
+src/data/scriptedText/friend-01.json,scripted_text_bundle,friend-01,active,"variants[].text, variants[].behaviorHint",5097,"Same schema as spouse-01. 605 entries. Authoritative under disclosure-policy §4.3."
+src/data/scriptedAngles/spouse-01_judge_questions.json,judge_question_bank,spouse-01,active,"judgeQuestions[].variants[].text, variants[].behaviorHint",~480,"Surface-only judge channel; lieState gate + truth-leak rules apply (disclosure-policy §2.1)."
+src/data/scriptedAngles/family-01_judge_questions.json,judge_question_bank,family-01,active,"judgeQuestions[].variants[].text, variants[].behaviorHint",~560,"Same schema; surface-only."
+src/data/scriptedAngles/friend-01_judge_questions.json,judge_question_bank,friend-01,active,"judgeQuestions[].variants[].text, variants[].behaviorHint",~440,"Same schema; surface-only."
+src/data/scriptedAngles/spouse-01_interrogation_answers.json,interrogation_answer_bank,spouse-01,active,"answers[].variants[].text, variants[].behaviorHint",~7900,"792 answer entries × ~10 variants. Largest single per-case asset. Truth-stage gating per disclosure-policy §5."
+src/data/scriptedAngles/family-01_interrogation_answers.json,interrogation_answer_bank,family-01,active,"answers[].variants[].text, variants[].behaviorHint",~9300,"Largest asset across all cases."
+src/data/scriptedAngles/friend-01_interrogation_answers.json,interrogation_answer_bank,friend-01,active,"answers[].variants[].text, variants[].behaviorHint",~6300,
+src/data/scriptedAngles/spouse-01_angle_catalog.json,angle_metadata,spouse-01,active,"angles[].label, angles[].description, angles[].keywords[]",~110,"22 angles. label/description/keywords are translatable; keywords feed mapping/intent — verify whether keyword strings are used for KO-only string match (Codex must confirm before translating)."
+src/data/scriptedAngles/family-01_angle_catalog.json,angle_metadata,family-01,active,"angles[].label, angles[].description, angles[].keywords[]",~120,"Same as spouse-01."
+src/data/scriptedAngles/friend-01_angle_catalog.json,angle_metadata,friend-01,active,"angles[].label, angles[].description, angles[].keywords[]",~100,"Same as spouse-01."
+src/data/scriptedAngles/spouse-01_special_scripts.json,special_script_bank,spouse-01,active,"confessions/interjections/emotionalOverload/trustAction/evidenceDiscovery/judgeEvidenceCombo/judgeWitnessSummon/dossierPrompts/s5RequestionResponses[*].text and inner variant text",~150,"Mixed channels. evidenceDiscovery (84 items) is route+stage gated per disclosure-policy §2.3."
+src/data/scriptedAngles/family-01_special_scripts.json,special_script_bank,family-01,active,similar,~250,
+src/data/scriptedAngles/friend-01_special_scripts.json,special_script_bank,friend-01,active,similar,~200,
+src/data/scriptedAngles/free_interrogation_response_policy.json,policy_test_data,n/a,test_or_policy,policy strings,~50,"Policy/safety bank for free interrogation. Validate whether any string surfaces in UI before translating."
+src/data/scriptedAngles/free_interrogation_test_cases.json,policy_test_data,n/a,test_or_policy,test fixture text,~80,"Test cases — likely dev-only. Skip from translation scope."
+src/data/scriptedAngles/free_interrogation_mapping_schema.json,policy_schema,n/a,test_or_policy,schema definitions,n/a,"JSON schema only — no translatable strings."
+src/data/scriptedAngles/free_interrogation_prompt_blocks.md,policy_prompt,n/a,test_or_policy,prompt template,n/a,"Dev/LLM prompt — not user-facing."
+src/data/dialogues/phase1/spouse-01.json,phase1_dialogue,spouse-01,active,"dialogues[].text, dialogues[].behaviorHint, choice options[].text",~30,"Pre-trial scripted opening. caseId 'case-spouse-01' (note prefix) — runtime caseLoader strips prefix. Branching via choiceId/branchCondition."
+src/data/dialogues/phase1/family-01.json,phase1_dialogue,family-01,active,"dialogues[].text, behaviorHint, choice options[].text",~30,
+src/data/dialogues/phase1/friend-01.json,phase1_dialogue,friend-01,active,"dialogues[].text, behaviorHint, choice options[].text",~30,
+src/data/dialogues/phase2/,phase2_dialogue,n/a,unclear,(empty directory),0,"Empty — phase2 may be runtime-generated or moved. Verify before scaffolding zh-CN equivalents."
+src/data/dialogues/mediation/spouse-v3-01.json,mediation_dialogue,spouse-01,active,"paths.{immediate|conditional|...}.judge, paths.*.dialogues[].text, paths.*.dialogues[].behaviorHint",~30,"Authoritative spouse-01 mediation (caseId 'case-spouse-01'). Used for mediation phase."
+src/data/dialogues/mediation/family-v3-01.json,mediation_dialogue,family-01,likely_active,similar,~30,"Likely authoritative for family-01 — confirm via mediationScriptLoader."
+src/data/dialogues/mediation/friend-v3-01.json,mediation_dialogue,friend-01,likely_active,similar,~30,"Likely authoritative for friend-01 — confirm via mediationScriptLoader."
+src/data/dialogues/mediation/spouse-v2-01.json,mediation_dialogue,spouse-01,unclear,similar,~30,"Older v2 of spouse-01 mediation. Likely superseded by spouse-v3-01 — verify before deciding scope."
+src/data/dialogues/mediation/spouse-05.json,mediation_dialogue,spouse-05,legacy,similar,~30,"Belongs to legacy 81-case set (project_active_cases). Out of scope unless reactivated."
+src/data/dialogues/mediation/spouse-11.json,mediation_dialogue,spouse-11,legacy,similar,~30,
+src/data/dialogues/mediation/spouse-12.json,mediation_dialogue,spouse-12,legacy,similar,~30,
+src/data/dialogues/mediation/spouse-new-*.json,mediation_dialogue,spouse-new-*,legacy,similar,~30 each (10 files),"Legacy 'new' bulk batch — out of active 3 case scope."
+src/data/dialogues/mediation/family-*.json (non v3-01),mediation_dialogue,various,legacy,similar,30 each,"Legacy family cases including family-05/09/new-01..10. Out of scope."
+src/data/dialogues/mediation/friend-*.json (non v3-01),mediation_dialogue,various,legacy,similar,30 each,"Legacy friend cases. Out of scope."
+src/data/dialogues/mediation/civic-*.json,mediation_dialogue,various,legacy,similar,30 each,"Legacy civic batch (11 files). Out of scope."
+src/data/dialogues/mediation/headline-*.json,mediation_dialogue,various,legacy,similar,30 each,"Legacy headline cases (2 files). Out of scope."
+src/data/dialogues/mediation/neighbor-*.json,mediation_dialogue,various,legacy,similar,30 each,"Legacy neighbor batch (~12 files). Out of scope."
+src/data/dialogues/mediation/online-*.json,mediation_dialogue,various,legacy,similar,30 each,"Legacy online batch (~10 files). Out of scope."
+src/data/dialogues/mediation/partnership-*.json,mediation_dialogue,various,legacy,similar,30 each,"Legacy partnership batch (~12 files). Out of scope."
+src/data/dialogues/mediation/professional-*.json,mediation_dialogue,various,legacy,similar,30 each,"Legacy professional batch (~10 files). Out of scope."
+src/data/dialogues/mediation/tenant-*.json,mediation_dialogue,various,legacy,similar,30 each,"Legacy tenant batch (~12 files). Out of scope."
+src/data/dialogues/mediation/workplace-*.json,mediation_dialogue,various,legacy,similar,30 each,"Legacy workplace batch (~12 files). Out of scope."
+src/data/dialogues/generic-phase1.ts,phase1_fallback,n/a,likely_active,inline string templates,~30,"Generic phase1 fallback used when a case lacks a specific phase1 file. May surface to player — verify."
+src/data/dialogues/phaseScriptLoader.ts,loader,n/a,unclear,n/a,n/a,"Loader — non-translatable. Audit for hard-coded ko strings."
+src/data/dialogues/mediationScriptLoader.ts,loader,n/a,unclear,n/a,n/a,"Loader — non-translatable. Audit for hard-coded ko strings."
+src/data/cases/generated/spouse-01.json,case_data,spouse-01,active,"meta.*, duo.*, context.*, disputes[].title, disputes[].surfaceText, evidence[].name, evidence[].surfaceName, evidence[].description, evidence[].surfaceDescription, investigationResults.*, v3DepthPlan summaries, combinationLab.*",~600,"Authoritative case data; many fields surface in UI (dossier card, evidence card, judge hint, combinationLab). disclosure-policy §4.1 lists the surface vs hidden fields. Translation must preserve every truth/surface distinction."
+src/data/cases/generated/family-01.json,case_data,family-01,active,similar,~500,
+src/data/cases/generated/friend-01.json,case_data,friend-01,active,similar,~700,
+src/data/cases/refined/spouse-01_texts.json,case_text_refinement,spouse-01,unclear,"fields[*].refined, arrays[*].refined",~70,"caseId 'case-spouse-01' but truth content (280만원/추석/돌봄센터) does NOT match disclosure-policy.md §4.1 (3,000만원/형/조카). No runtime references found via grep. Likely an older or alternate refinement workspace. Confirm with PROJECT_CONTROL_TOWER before treating as authoritative."
+src/data/cases/refined/family-01_texts.json,case_text_refinement,family-01,unclear,similar,~70,"Same status — verify authority."
+src/data/cases/refined/friend-01_texts.json,case_text_refinement,friend-01,unclear,similar,~70,"Same status — verify authority."
+src/data/cases/refined/spouse-01_backup.json,case_text_refinement,spouse-01,legacy,similar,~70,"'_backup' filename strongly implies non-authoritative. Skip translation unless reactivated."
+src/data/cases/refined/manifest.json,case_text_manifest,n/a,unclear,case id list,n/a,"Lists refined cases. No translatable strings."
+src/data/witnessTestimonyData/spouse-01.ts,witness_testimony,spouse-01,active,"TestimonySlot[].topic, .question, .testimony, .behaviorHint",~60,"Multi-depth witness testimony with branch effects. ~30 slots × 2 fields. Authoritative."
+src/data/witnessTestimonyData/family-01.ts,witness_testimony,family-01,active,similar,~60,
+src/data/witnessTestimonyData/friend-01.ts,witness_testimony,friend-01,active,similar,~60,
+src/data/evidencePresentationScripts.ts,evidence_presentation,all 3 cases,active,"facts (per stage), partyFacts (per stage), stances (per lieBand)",~250,"Inline TypeScript; spec'd per case+evidence. ~70 distinct factual sentences plus stance phrases × 3 lieBands × 2 parties."
+src/data/confessionScripts.ts,confession_bank,all 3 cases,active,"preConfession, confessionMain, postConfession",~30,"S5 confession dispatch. ~10 entries × 3 fields. Truth-disclosing — only surfaces after S5; translation must preserve the reveal moment."
+src/data/combinationComments.ts,combination_comment,all 3 cases,active,comment[],~28,"Judge one-liner per recipe. Truth-leak risk: comments must remain abstract per disclosure-policy §2.1 dossier rule."
+src/data/legacy/dialogues/phase1.ts,legacy,n/a,legacy,inline strings,n/a,"Legacy phase1 — verify if any active case still imports from it."
+src/data/legacy/dialogues/phase2.ts,legacy,n/a,legacy,inline strings,n/a,
+src/data/legacy/dialogues/phase3-5.ts,legacy,n/a,legacy,inline strings,n/a,

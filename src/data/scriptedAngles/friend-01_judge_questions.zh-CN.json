@@ -1,0 +1,3368 @@
+{
+  "schemaVersion": 1,
+  "caseId": "friend-01",
+  "locale": "zh-CN",
+  "overlayKind": "judge_questions",
+  "judgeQuestions": [
+    {
+      "disputeId": "d-1",
+      "questionType": "fact_pursuit",
+      "targetParty": "a",
+      "angleId": "contact_timeline",
+      "variants": [
+        {
+          "id": "judgeq-d-1-fact_pursuit-a-contact_timeline-v1",
+          "text": "宋多恩女士，关于那九天里通话与短信的次数、时间段、应答状态，您本人核对过的记录与仅凭印象记得的部分分别是哪些，请就该处先以事实关系作答。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-a-contact_timeline-v2",
+          "text": "请按时间顺序梳理：关于那九天里通话与短信的次数、时间段、应答状态，您本人核对过的记录与仅凭印象记得的部分分别是哪些，请按记录原貌重新整理。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-a-contact_timeline-v3",
+          "text": "请把您本人亲眼所见的部分与从他人转述听来的部分分开来说——关于那九天里通话与短信的次数、时间段、应答状态，您本人核对过的记录与仅凭印象记得的部分分别是哪些，请把亲眼所见与转述听闻分开陈述。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-a-contact_timeline-v4",
+          "text": "宋多恩女士，关于那九天里通话与短信的次数、时间段、应答状态，您本人核对过的记录与仅凭印象记得的部分分别是哪些，请按记录原貌重新整理。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-a-contact_timeline-v5",
+          "text": "请按时间顺序梳理：关于那九天里通话与短信的次数、时间段、应答状态，您本人核对过的记录与仅凭印象记得的部分分别是哪些，请把亲眼所见与转述听闻分开陈述。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "fact_pursuit",
+      "targetParty": "b",
+      "angleId": "contact_timeline",
+      "variants": [
+        {
+          "id": "judgeq-d-1-fact_pursuit-b-contact_timeline-v1",
+          "text": "崔秀敏女士，关于那九天里您本人发出的通话与短信，按时间顺序逐项的次数、时间段、是否得到回应，请按时间顺序逐项作答。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-b-contact_timeline-v2",
+          "text": "请按时间顺序梳理：关于那九天里您本人发出的通话与短信，按时间顺序逐项的次数、时间段、是否得到回应，请将本人主动发起与对方先行发起的部分分开作答。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-b-contact_timeline-v3",
+          "text": "请区分作答：本人亲手发出的内容与对方先发来的内容——关于那九天里您本人发出的通话与短信，按时间顺序逐项的次数、时间段、是否得到回应，请就该处先以事实关系作答。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-b-contact_timeline-v4",
+          "text": "崔秀敏女士，关于那九天里您本人发出的通话与短信，按时间顺序逐项的次数、时间段、是否得到回应，请将本人主动发起与对方先行发起的部分分开作答。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-b-contact_timeline-v5",
+          "text": "请按时间顺序梳理：关于那九天里您本人发出的通话与短信，按时间顺序逐项的次数、时间段、是否得到回应，请就该处先以事实关系作答。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "motive_search",
+      "targetParty": "a",
+      "angleId": "contact_timeline",
+      "variants": [
+        {
+          "id": "judgeq-d-1-motive_search-a-contact_timeline-v1",
+          "text": "宋多恩女士，您并未掌握全部通话与短信记录，却据此公开断言对方意图，请说明判断依据是什么。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-a-contact_timeline-v2",
+          "text": "请说明：当时作出此种判断时，您并未掌握全部通话与短信记录，却据此公开断言对方意图，请回答当时作此选择的理由。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-a-contact_timeline-v3",
+          "text": "在把疑虑直接公开发布之前，您并未掌握全部通话与短信记录，却据此公开断言对方意图，请就当时的考量先以本人能负责的范围作答。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-a-contact_timeline-v4",
+          "text": "宋多恩女士，您并未掌握全部通话与短信记录，却据此公开断言对方意图，请回答当时作此选择的理由。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-a-contact_timeline-v5",
+          "text": "请说明：当时作出此种判断时，您并未掌握全部通话与短信记录，却据此公开断言对方意图，请就当时的考量先以本人能负责的范围作答。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "motive_search",
+      "targetParty": "b",
+      "angleId": "contact_timeline",
+      "variants": [
+        {
+          "id": "judgeq-d-1-motive_search-b-contact_timeline-v1",
+          "text": "崔秀敏女士，当未接来电与短信反复积累时，您本人选择不直接当面询问，反而走向公开发声这一步，请说明当时作此处置的理由。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-b-contact_timeline-v2",
+          "text": "请说明：当时作出此种处置时，当未接来电与短信反复积累时，您本人选择不直接当面询问，反而走向公开发声这一步，请就本人能负责的范围作答。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-b-contact_timeline-v3",
+          "text": "在选择以那种方式联络的背后，当未接来电与短信反复积累时，您本人选择不直接当面询问，反而走向公开发声这一步，请回答当时的考量是什么。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-b-contact_timeline-v4",
+          "text": "崔秀敏女士，当未接来电与短信反复积累时，您本人选择不直接当面询问，反而走向公开发声这一步，请就本人能负责的范围作答。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-b-contact_timeline-v5",
+          "text": "请说明：当时作出此种处置时，当未接来电与短信反复积累时，您本人选择不直接当面询问，反而走向公开发声这一步，请回答当时的考量是什么。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "empathy_approach",
+      "targetParty": "a",
+      "angleId": "contact_timeline",
+      "variants": [
+        {
+          "id": "judgeq-d-1-empathy_approach-a-contact_timeline-v1",
+          "text": "宋多恩女士，在反复查看那段时间记录的过程中，最让您难以放下的一处，请把您当时最在意的一段先讲出来。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-a-contact_timeline-v2",
+          "text": "请在能说的范围内回顾——在反复查看那段时间记录的过程中，最让您难以放下的一处，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-a-contact_timeline-v3",
+          "text": "不必现在就下结论。在反复查看那段时间记录的过程中，最让您难以放下的一处，请把您能说出的部分先讲一段。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-a-contact_timeline-v4",
+          "text": "宋多恩女士，在反复查看那段时间记录的过程中，最让您难以放下的一处，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-a-contact_timeline-v5",
+          "text": "请在能说的范围内回顾——在反复查看那段时间记录的过程中，最让您难以放下的一处，请把您能说出的部分先讲一段。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "empathy_approach",
+      "targetParty": "b",
+      "angleId": "contact_timeline",
+      "variants": [
+        {
+          "id": "judgeq-d-1-empathy_approach-b-contact_timeline-v1",
+          "text": "崔秀敏女士，在反复联络却得不到回应的那几天里，您本人最为难的一段，请把您当时最为难的一段先讲出来。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-b-contact_timeline-v2",
+          "text": "请在能说的范围内回顾——在反复联络却得不到回应的那几天里，您本人最为难的一段，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-b-contact_timeline-v3",
+          "text": "不必现在就下结论。在反复联络却得不到回应的那几天里，您本人最为难的一段，请把您能说出的部分先讲一段。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-b-contact_timeline-v4",
+          "text": "崔秀敏女士，在反复联络却得不到回应的那几天里，您本人最为难的一段，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-b-contact_timeline-v5",
+          "text": "请在能说的范围内回顾——在反复联络却得不到回应的那几天里，您本人最为难的一段，请把您能说出的部分先讲一段。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "fact_pursuit",
+      "targetParty": "a",
+      "angleId": "message_intent",
+      "variants": [
+        {
+          "id": "judgeq-d-1-fact_pursuit-a-message_intent-v1",
+          "text": "宋多恩女士，关于短信中“有话一定要说”这类表述的具体上下文，本人亲眼读到的原文与仅凭概括记得的部分分别是哪些，请就该处先以事实关系作答。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-a-message_intent-v2",
+          "text": "请按时间顺序梳理：关于短信中“有话一定要说”这类表述的具体上下文，本人亲眼读到的原文与仅凭概括记得的部分分别是哪些，请按记录原貌重新整理。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-a-message_intent-v3",
+          "text": "请把您本人亲眼所见的部分与从他人转述听来的部分分开来说——关于短信中“有话一定要说”这类表述的具体上下文，本人亲眼读到的原文与仅凭概括记得的部分分别是哪些，请把亲眼所见与转述听闻分开陈述。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-a-message_intent-v4",
+          "text": "宋多恩女士，关于短信中“有话一定要说”这类表述的具体上下文，本人亲眼读到的原文与仅凭概括记得的部分分别是哪些，请按记录原貌重新整理。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-a-message_intent-v5",
+          "text": "请按时间顺序梳理：关于短信中“有话一定要说”这类表述的具体上下文，本人亲眼读到的原文与仅凭概括记得的部分分别是哪些，请把亲眼所见与转述听闻分开陈述。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "fact_pursuit",
+      "targetParty": "b",
+      "angleId": "message_intent",
+      "variants": [
+        {
+          "id": "judgeq-d-1-fact_pursuit-b-message_intent-v1",
+          "text": "崔秀敏女士，关于您本人写下的短信文字本身，逐条来看，是哪些字句、想要传达的具体事项，请按时间顺序逐项作答。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-b-message_intent-v2",
+          "text": "请按时间顺序梳理：关于您本人写下的短信文字本身，逐条来看，是哪些字句、想要传达的具体事项，请将本人主动发起与对方先行发起的部分分开作答。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-b-message_intent-v3",
+          "text": "请区分作答：本人亲手发出的内容与对方先发来的内容——关于您本人写下的短信文字本身，逐条来看，是哪些字句、想要传达的具体事项，请就该处先以事实关系作答。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-b-message_intent-v4",
+          "text": "崔秀敏女士，关于您本人写下的短信文字本身，逐条来看，是哪些字句、想要传达的具体事项，请将本人主动发起与对方先行发起的部分分开作答。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-b-message_intent-v5",
+          "text": "请按时间顺序梳理：关于您本人写下的短信文字本身，逐条来看，是哪些字句、想要传达的具体事项，请就该处先以事实关系作答。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "motive_search",
+      "targetParty": "a",
+      "angleId": "message_intent",
+      "variants": [
+        {
+          "id": "judgeq-d-1-motive_search-a-message_intent-v1",
+          "text": "宋多恩女士，您并未直接确认对方写下那些字句的来意，却据此把它定性为某一种意图，请说明判断依据是什么。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-a-message_intent-v2",
+          "text": "请说明：当时作出此种判断时，您并未直接确认对方写下那些字句的来意，却据此把它定性为某一种意图，请回答当时作此选择的理由。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-a-message_intent-v3",
+          "text": "在把疑虑直接公开发布之前，您并未直接确认对方写下那些字句的来意，却据此把它定性为某一种意图，请就当时的考量先以本人能负责的范围作答。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-a-message_intent-v4",
+          "text": "宋多恩女士，您并未直接确认对方写下那些字句的来意，却据此把它定性为某一种意图，请回答当时作此选择的理由。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-a-message_intent-v5",
+          "text": "请说明：当时作出此种判断时，您并未直接确认对方写下那些字句的来意，却据此把它定性为某一种意图，请就当时的考量先以本人能负责的范围作答。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "motive_search",
+      "targetParty": "b",
+      "angleId": "message_intent",
+      "variants": [
+        {
+          "id": "judgeq-d-1-motive_search-b-message_intent-v1",
+          "text": "崔秀敏女士，在写下那些短信字句的当时，您本人为何选择那样的措辞而不是其他更直接的方式，请说明当时作此处置的理由。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-b-message_intent-v2",
+          "text": "请说明：当时作出此种处置时，在写下那些短信字句的当时，您本人为何选择那样的措辞而不是其他更直接的方式，请就本人能负责的范围作答。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-b-message_intent-v3",
+          "text": "在选择以那种方式联络的背后，在写下那些短信字句的当时，您本人为何选择那样的措辞而不是其他更直接的方式，请回答当时的考量是什么。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-b-message_intent-v4",
+          "text": "崔秀敏女士，在写下那些短信字句的当时，您本人为何选择那样的措辞而不是其他更直接的方式，请就本人能负责的范围作答。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-b-message_intent-v5",
+          "text": "请说明：当时作出此种处置时，在写下那些短信字句的当时，您本人为何选择那样的措辞而不是其他更直接的方式，请回答当时的考量是什么。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "empathy_approach",
+      "targetParty": "a",
+      "angleId": "message_intent",
+      "variants": [
+        {
+          "id": "judgeq-d-1-empathy_approach-a-message_intent-v1",
+          "text": "宋多恩女士，在反复阅读那些短信的过程中，最让您难以释怀的一段，请把您当时最在意的一段先讲出来。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-a-message_intent-v2",
+          "text": "请在能说的范围内回顾——在反复阅读那些短信的过程中，最让您难以释怀的一段，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-a-message_intent-v3",
+          "text": "不必现在就下结论。在反复阅读那些短信的过程中，最让您难以释怀的一段，请把您能说出的部分先讲一段。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-a-message_intent-v4",
+          "text": "宋多恩女士，在反复阅读那些短信的过程中，最让您难以释怀的一段，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-a-message_intent-v5",
+          "text": "请在能说的范围内回顾——在反复阅读那些短信的过程中，最让您难以释怀的一段，请把您能说出的部分先讲一段。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "empathy_approach",
+      "targetParty": "b",
+      "angleId": "message_intent",
+      "variants": [
+        {
+          "id": "judgeq-d-1-empathy_approach-b-message_intent-v1",
+          "text": "崔秀敏女士，在写下那些短信的当时，您本人最难开口的一段，请把您当时最为难的一段先讲出来。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-b-message_intent-v2",
+          "text": "请在能说的范围内回顾——在写下那些短信的当时，您本人最难开口的一段，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-b-message_intent-v3",
+          "text": "不必现在就下结论。在写下那些短信的当时，您本人最难开口的一段，请把您能说出的部分先讲一段。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-b-message_intent-v4",
+          "text": "崔秀敏女士，在写下那些短信的当时，您本人最难开口的一段，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-b-message_intent-v5",
+          "text": "请在能说的范围内回顾——在写下那些短信的当时，您本人最难开口的一段，请把您能说出的部分先讲一段。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "fact_pursuit",
+      "targetParty": "a",
+      "angleId": "bypass_da_eun",
+      "variants": [
+        {
+          "id": "judgeq-d-1-fact_pursuit-a-bypass_da_eun-v1",
+          "text": "宋多恩女士，关于联络对象的选择，本人亲眼看到的事实关系与仅凭推测的部分分别是哪些，请就该处先以事实关系作答。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-a-bypass_da_eun-v2",
+          "text": "请按时间顺序梳理：关于联络对象的选择，本人亲眼看到的事实关系与仅凭推测的部分分别是哪些，请按记录原貌重新整理。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-a-bypass_da_eun-v3",
+          "text": "请把您本人亲眼所见的部分与从他人转述听来的部分分开来说——关于联络对象的选择，本人亲眼看到的事实关系与仅凭推测的部分分别是哪些，请把亲眼所见与转述听闻分开陈述。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-a-bypass_da_eun-v4",
+          "text": "宋多恩女士，关于联络对象的选择，本人亲眼看到的事实关系与仅凭推测的部分分别是哪些，请按记录原貌重新整理。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-a-bypass_da_eun-v5",
+          "text": "请按时间顺序梳理：关于联络对象的选择，本人亲眼看到的事实关系与仅凭推测的部分分别是哪些，请把亲眼所见与转述听闻分开陈述。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "fact_pursuit",
+      "targetParty": "b",
+      "angleId": "bypass_da_eun",
+      "variants": [
+        {
+          "id": "judgeq-d-1-fact_pursuit-b-bypass_da_eun-v1",
+          "text": "崔秀敏女士，关于您本人选择不直接联络当事人而走向第三人的这一过程，具体经过是怎样的，请按时间顺序逐项作答。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-b-bypass_da_eun-v2",
+          "text": "请按时间顺序梳理：关于您本人选择不直接联络当事人而走向第三人的这一过程，具体经过是怎样的，请将本人主动发起与对方先行发起的部分分开作答。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-b-bypass_da_eun-v3",
+          "text": "请区分作答：本人亲手发出的内容与对方先发来的内容——关于您本人选择不直接联络当事人而走向第三人的这一过程，具体经过是怎样的，请就该处先以事实关系作答。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-b-bypass_da_eun-v4",
+          "text": "崔秀敏女士，关于您本人选择不直接联络当事人而走向第三人的这一过程，具体经过是怎样的，请将本人主动发起与对方先行发起的部分分开作答。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-b-bypass_da_eun-v5",
+          "text": "请按时间顺序梳理：关于您本人选择不直接联络当事人而走向第三人的这一过程，具体经过是怎样的，请就该处先以事实关系作答。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "motive_search",
+      "targetParty": "a",
+      "angleId": "bypass_da_eun",
+      "variants": [
+        {
+          "id": "judgeq-d-1-motive_search-a-bypass_da_eun-v1",
+          "text": "宋多恩女士，您并未当面询问对方为何绕过您本人，便径直把这一行径定性为越线，请说明判断依据是什么。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-a-bypass_da_eun-v2",
+          "text": "请说明：当时作出此种判断时，您并未当面询问对方为何绕过您本人，便径直把这一行径定性为越线，请回答当时作此选择的理由。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-a-bypass_da_eun-v3",
+          "text": "在把疑虑直接公开发布之前，您并未当面询问对方为何绕过您本人，便径直把这一行径定性为越线，请就当时的考量先以本人能负责的范围作答。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-a-bypass_da_eun-v4",
+          "text": "宋多恩女士，您并未当面询问对方为何绕过您本人，便径直把这一行径定性为越线，请回答当时作此选择的理由。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-a-bypass_da_eun-v5",
+          "text": "请说明：当时作出此种判断时，您并未当面询问对方为何绕过您本人，便径直把这一行径定性为越线，请就当时的考量先以本人能负责的范围作答。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "motive_search",
+      "targetParty": "b",
+      "angleId": "bypass_da_eun",
+      "variants": [
+        {
+          "id": "judgeq-d-1-motive_search-b-bypass_da_eun-v1",
+          "text": "崔秀敏女士，在选择不直接联络当事人而绕道的那一刻，您本人为何作此判断，请说明当时作此处置的理由。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-b-bypass_da_eun-v2",
+          "text": "请说明：当时作出此种处置时，在选择不直接联络当事人而绕道的那一刻，您本人为何作此判断，请就本人能负责的范围作答。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-b-bypass_da_eun-v3",
+          "text": "在选择以那种方式联络的背后，在选择不直接联络当事人而绕道的那一刻，您本人为何作此判断，请回答当时的考量是什么。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-b-bypass_da_eun-v4",
+          "text": "崔秀敏女士，在选择不直接联络当事人而绕道的那一刻，您本人为何作此判断，请就本人能负责的范围作答。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-b-bypass_da_eun-v5",
+          "text": "请说明：当时作出此种处置时，在选择不直接联络当事人而绕道的那一刻，您本人为何作此判断，请回答当时的考量是什么。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "empathy_approach",
+      "targetParty": "a",
+      "angleId": "bypass_da_eun",
+      "variants": [
+        {
+          "id": "judgeq-d-1-empathy_approach-a-bypass_da_eun-v1",
+          "text": "宋多恩女士，在那段被绕开联络的日子里，最让您难以放下的一段心情，请把您当时最在意的一段先讲出来。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-a-bypass_da_eun-v2",
+          "text": "请在能说的范围内回顾——在那段被绕开联络的日子里，最让您难以放下的一段心情，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-a-bypass_da_eun-v3",
+          "text": "不必现在就下结论。在那段被绕开联络的日子里，最让您难以放下的一段心情，请把您能说出的部分先讲一段。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-a-bypass_da_eun-v4",
+          "text": "宋多恩女士，在那段被绕开联络的日子里，最让您难以放下的一段心情，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-a-bypass_da_eun-v5",
+          "text": "请在能说的范围内回顾——在那段被绕开联络的日子里，最让您难以放下的一段心情，请把您能说出的部分先讲一段。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "empathy_approach",
+      "targetParty": "b",
+      "angleId": "bypass_da_eun",
+      "variants": [
+        {
+          "id": "judgeq-d-1-empathy_approach-b-bypass_da_eun-v1",
+          "text": "崔秀敏女士，在选择那条迂回路径的当时，您本人最艰难的一段，请把您当时最为难的一段先讲出来。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-b-bypass_da_eun-v2",
+          "text": "请在能说的范围内回顾——在选择那条迂回路径的当时，您本人最艰难的一段，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-b-bypass_da_eun-v3",
+          "text": "不必现在就下结论。在选择那条迂回路径的当时，您本人最艰难的一段，请把您能说出的部分先讲一段。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-b-bypass_da_eun-v4",
+          "text": "崔秀敏女士，在选择那条迂回路径的当时，您本人最艰难的一段，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-b-bypass_da_eun-v5",
+          "text": "请在能说的范围内回顾——在选择那条迂回路径的当时，您本人最艰难的一段，请把您能说出的部分先讲一段。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "fact_pursuit",
+      "targetParty": "a",
+      "angleId": "unanswered_escalation",
+      "variants": [
+        {
+          "id": "judgeq-d-1-fact_pursuit-a-unanswered_escalation-v1",
+          "text": "宋多恩女士，关于联络次数累计上升的过程，本人亲眼可对照的记录与仅凭印象记得的部分分别是哪些，请就该处先以事实关系作答。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-a-unanswered_escalation-v2",
+          "text": "请按时间顺序梳理：关于联络次数累计上升的过程，本人亲眼可对照的记录与仅凭印象记得的部分分别是哪些，请按记录原貌重新整理。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-a-unanswered_escalation-v3",
+          "text": "请把您本人亲眼所见的部分与从他人转述听来的部分分开来说——关于联络次数累计上升的过程，本人亲眼可对照的记录与仅凭印象记得的部分分别是哪些，请把亲眼所见与转述听闻分开陈述。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-a-unanswered_escalation-v4",
+          "text": "宋多恩女士，关于联络次数累计上升的过程，本人亲眼可对照的记录与仅凭印象记得的部分分别是哪些，请按记录原貌重新整理。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-a-unanswered_escalation-v5",
+          "text": "请按时间顺序梳理：关于联络次数累计上升的过程，本人亲眼可对照的记录与仅凭印象记得的部分分别是哪些，请把亲眼所见与转述听闻分开陈述。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "fact_pursuit",
+      "targetParty": "b",
+      "angleId": "unanswered_escalation",
+      "variants": [
+        {
+          "id": "judgeq-d-1-fact_pursuit-b-unanswered_escalation-v1",
+          "text": "崔秀敏女士，关于反复联络的每一次时点，本人为何重复发起，具体的时间间隔与发送动机分别是哪些，请按时间顺序逐项作答。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-b-unanswered_escalation-v2",
+          "text": "请按时间顺序梳理：关于反复联络的每一次时点，本人为何重复发起，具体的时间间隔与发送动机分别是哪些，请将本人主动发起与对方先行发起的部分分开作答。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-b-unanswered_escalation-v3",
+          "text": "请区分作答：本人亲手发出的内容与对方先发来的内容——关于反复联络的每一次时点，本人为何重复发起，具体的时间间隔与发送动机分别是哪些，请就该处先以事实关系作答。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-b-unanswered_escalation-v4",
+          "text": "崔秀敏女士，关于反复联络的每一次时点，本人为何重复发起，具体的时间间隔与发送动机分别是哪些，请将本人主动发起与对方先行发起的部分分开作答。"
+        },
+        {
+          "id": "judgeq-d-1-fact_pursuit-b-unanswered_escalation-v5",
+          "text": "请按时间顺序梳理：关于反复联络的每一次时点，本人为何重复发起，具体的时间间隔与发送动机分别是哪些，请就该处先以事实关系作答。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "motive_search",
+      "targetParty": "a",
+      "angleId": "unanswered_escalation",
+      "variants": [
+        {
+          "id": "judgeq-d-1-motive_search-a-unanswered_escalation-v1",
+          "text": "宋多恩女士，您并未掌握对方每次未回应的具体处境，却据此把反复联络一概定性为执意纠缠，请说明判断依据是什么。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-a-unanswered_escalation-v2",
+          "text": "请说明：当时作出此种判断时，您并未掌握对方每次未回应的具体处境，却据此把反复联络一概定性为执意纠缠，请回答当时作此选择的理由。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-a-unanswered_escalation-v3",
+          "text": "在把疑虑直接公开发布之前，您并未掌握对方每次未回应的具体处境，却据此把反复联络一概定性为执意纠缠，请就当时的考量先以本人能负责的范围作答。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-a-unanswered_escalation-v4",
+          "text": "宋多恩女士，您并未掌握对方每次未回应的具体处境，却据此把反复联络一概定性为执意纠缠，请回答当时作此选择的理由。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-a-unanswered_escalation-v5",
+          "text": "请说明：当时作出此种判断时，您并未掌握对方每次未回应的具体处境，却据此把反复联络一概定性为执意纠缠，请就当时的考量先以本人能负责的范围作答。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "motive_search",
+      "targetParty": "b",
+      "angleId": "unanswered_escalation",
+      "variants": [
+        {
+          "id": "judgeq-d-1-motive_search-b-unanswered_escalation-v1",
+          "text": "崔秀敏女士，在多次未得回应仍持续联络的背后，您本人当时的迫切感来自何处，请说明当时作此处置的理由。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-b-unanswered_escalation-v2",
+          "text": "请说明：当时作出此种处置时，在多次未得回应仍持续联络的背后，您本人当时的迫切感来自何处，请就本人能负责的范围作答。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-b-unanswered_escalation-v3",
+          "text": "在选择以那种方式联络的背后，在多次未得回应仍持续联络的背后，您本人当时的迫切感来自何处，请回答当时的考量是什么。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-b-unanswered_escalation-v4",
+          "text": "崔秀敏女士，在多次未得回应仍持续联络的背后，您本人当时的迫切感来自何处，请就本人能负责的范围作答。"
+        },
+        {
+          "id": "judgeq-d-1-motive_search-b-unanswered_escalation-v5",
+          "text": "请说明：当时作出此种处置时，在多次未得回应仍持续联络的背后，您本人当时的迫切感来自何处，请回答当时的考量是什么。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "empathy_approach",
+      "targetParty": "a",
+      "angleId": "unanswered_escalation",
+      "variants": [
+        {
+          "id": "judgeq-d-1-empathy_approach-a-unanswered_escalation-v1",
+          "text": "宋多恩女士，在那段一遍又一遍发出却得不到回应的日子里，最让您难以释怀的一段，请把您当时最在意的一段先讲出来。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-a-unanswered_escalation-v2",
+          "text": "请在能说的范围内回顾——在那段一遍又一遍发出却得不到回应的日子里，最让您难以释怀的一段，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-a-unanswered_escalation-v3",
+          "text": "不必现在就下结论。在那段一遍又一遍发出却得不到回应的日子里，最让您难以释怀的一段，请把您能说出的部分先讲一段。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-a-unanswered_escalation-v4",
+          "text": "宋多恩女士，在那段一遍又一遍发出却得不到回应的日子里，最让您难以释怀的一段，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-a-unanswered_escalation-v5",
+          "text": "请在能说的范围内回顾——在那段一遍又一遍发出却得不到回应的日子里，最让您难以释怀的一段，请把您能说出的部分先讲一段。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-1",
+      "questionType": "empathy_approach",
+      "targetParty": "b",
+      "angleId": "unanswered_escalation",
+      "variants": [
+        {
+          "id": "judgeq-d-1-empathy_approach-b-unanswered_escalation-v1",
+          "text": "崔秀敏女士，在反复联络却始终得不到回应的当时，您本人最为难的一段，请把您当时最为难的一段先讲出来。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-b-unanswered_escalation-v2",
+          "text": "请在能说的范围内回顾——在反复联络却始终得不到回应的当时，您本人最为难的一段，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-b-unanswered_escalation-v3",
+          "text": "不必现在就下结论。在反复联络却始终得不到回应的当时，您本人最为难的一段，请把您能说出的部分先讲一段。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-b-unanswered_escalation-v4",
+          "text": "崔秀敏女士，在反复联络却始终得不到回应的当时，您本人最为难的一段，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-1-empathy_approach-b-unanswered_escalation-v5",
+          "text": "请在能说的范围内回顾——在反复联络却始终得不到回应的当时，您本人最为难的一段，请把您能说出的部分先讲一段。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "fact_pursuit",
+      "targetParty": "a",
+      "angleId": "message_sequence",
+      "variants": [
+        {
+          "id": "judgeq-d-2-fact_pursuit-a-message_sequence-v1",
+          "text": "宋多恩女士，关于双方之间短信往来的起点与先后顺序，本人亲手翻阅过的记录与仅听闻的部分分别是哪些，请就该处先以事实关系作答。"
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-a-message_sequence-v2",
+          "text": "请按时间顺序梳理：关于双方之间短信往来的起点与先后顺序，本人亲手翻阅过的记录与仅听闻的部分分别是哪些，请按记录原貌重新整理。"
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-a-message_sequence-v3",
+          "text": "请把您本人亲眼所见的部分与从他人转述听来的部分分开来说——关于双方之间短信往来的起点与先后顺序，本人亲手翻阅过的记录与仅听闻的部分分别是哪些，请把亲眼所见与转述听闻分开陈述。"
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-a-message_sequence-v4",
+          "text": "宋多恩女士，关于双方之间短信往来的起点与先后顺序，本人亲手翻阅过的记录与仅听闻的部分分别是哪些，请按记录原貌重新整理。"
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-a-message_sequence-v5",
+          "text": "请按时间顺序梳理：关于双方之间短信往来的起点与先后顺序，本人亲手翻阅过的记录与仅听闻的部分分别是哪些，请把亲眼所见与转述听闻分开陈述。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "fact_pursuit",
+      "targetParty": "b",
+      "angleId": "message_sequence",
+      "variants": [
+        {
+          "id": "judgeq-d-2-fact_pursuit-b-message_sequence-v1",
+          "text": "崔秀敏女士，关于双方短信往来按时间顺序排列的每一条，本人主动发出与对方先行发来的部分分别是哪些，请按时间顺序逐项作答。"
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-b-message_sequence-v2",
+          "text": "请按时间顺序梳理：关于双方短信往来按时间顺序排列的每一条，本人主动发出与对方先行发来的部分分别是哪些，请将本人主动发起与对方先行发起的部分分开作答。"
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-b-message_sequence-v3",
+          "text": "请区分作答：本人亲手发出的内容与对方先发来的内容——关于双方短信往来按时间顺序排列的每一条，本人主动发出与对方先行发来的部分分别是哪些，请就该处先以事实关系作答。"
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-b-message_sequence-v4",
+          "text": "崔秀敏女士，关于双方短信往来按时间顺序排列的每一条，本人主动发出与对方先行发来的部分分别是哪些，请将本人主动发起与对方先行发起的部分分开作答。"
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-b-message_sequence-v5",
+          "text": "请按时间顺序梳理：关于双方短信往来按时间顺序排列的每一条，本人主动发出与对方先行发来的部分分别是哪些，请就该处先以事实关系作答。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "motive_search",
+      "targetParty": "a",
+      "angleId": "message_sequence",
+      "variants": [
+        {
+          "id": "judgeq-d-2-motive_search-a-message_sequence-v1",
+          "text": "宋多恩女士，您并未掌握完整的往来记录，却据此断定先越线者就是对方，请说明判断依据是什么。"
+        },
+        {
+          "id": "judgeq-d-2-motive_search-a-message_sequence-v2",
+          "text": "请说明：当时作出此种判断时，您并未掌握完整的往来记录，却据此断定先越线者就是对方，请回答当时作此选择的理由。"
+        },
+        {
+          "id": "judgeq-d-2-motive_search-a-message_sequence-v3",
+          "text": "在把疑虑直接公开发布之前，您并未掌握完整的往来记录，却据此断定先越线者就是对方，请就当时的考量先以本人能负责的范围作答。"
+        },
+        {
+          "id": "judgeq-d-2-motive_search-a-message_sequence-v4",
+          "text": "宋多恩女士，您并未掌握完整的往来记录，却据此断定先越线者就是对方，请回答当时作此选择的理由。"
+        },
+        {
+          "id": "judgeq-d-2-motive_search-a-message_sequence-v5",
+          "text": "请说明：当时作出此种判断时，您并未掌握完整的往来记录，却据此断定先越线者就是对方，请就当时的考量先以本人能负责的范围作答。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "motive_search",
+      "targetParty": "b",
+      "angleId": "message_sequence",
+      "variants": [
+        {
+          "id": "judgeq-d-2-motive_search-b-message_sequence-v1",
+          "text": "崔秀敏女士，在察觉到夜间短信往来出现时，您本人未在第一时间出面核对，反而径直作出判断，请说明当时作此处置的理由。"
+        },
+        {
+          "id": "judgeq-d-2-motive_search-b-message_sequence-v2",
+          "text": "请说明：当时作出此种处置时，在察觉到夜间短信往来出现时，您本人未在第一时间出面核对，反而径直作出判断，请就本人能负责的范围作答。"
+        },
+        {
+          "id": "judgeq-d-2-motive_search-b-message_sequence-v3",
+          "text": "在选择以那种方式联络的背后，在察觉到夜间短信往来出现时，您本人未在第一时间出面核对，反而径直作出判断，请回答当时的考量是什么。"
+        },
+        {
+          "id": "judgeq-d-2-motive_search-b-message_sequence-v4",
+          "text": "崔秀敏女士，在察觉到夜间短信往来出现时，您本人未在第一时间出面核对，反而径直作出判断，请就本人能负责的范围作答。"
+        },
+        {
+          "id": "judgeq-d-2-motive_search-b-message_sequence-v5",
+          "text": "请说明：当时作出此种处置时，在察觉到夜间短信往来出现时，您本人未在第一时间出面核对，反而径直作出判断，请回答当时的考量是什么。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "empathy_approach",
+      "targetParty": "a",
+      "angleId": "message_sequence",
+      "variants": [
+        {
+          "id": "judgeq-d-2-empathy_approach-a-message_sequence-v1",
+          "text": "宋多恩女士，在反复查看那段时间往来记录的过程中，最让您难以放下的一段，请把您当时最在意的一段先讲出来。"
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-a-message_sequence-v2",
+          "text": "请在能说的范围内回顾——在反复查看那段时间往来记录的过程中，最让您难以放下的一段，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-a-message_sequence-v3",
+          "text": "不必现在就下结论。在反复查看那段时间往来记录的过程中，最让您难以放下的一段，请把您能说出的部分先讲一段。"
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-a-message_sequence-v4",
+          "text": "宋多恩女士，在反复查看那段时间往来记录的过程中，最让您难以放下的一段，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-a-message_sequence-v5",
+          "text": "请在能说的范围内回顾——在反复查看那段时间往来记录的过程中，最让您难以放下的一段，请把您能说出的部分先讲一段。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "empathy_approach",
+      "targetParty": "b",
+      "angleId": "message_sequence",
+      "variants": [
+        {
+          "id": "judgeq-d-2-empathy_approach-b-message_sequence-v1",
+          "text": "崔秀敏女士，在面对夜间往来记录的那段时间里，您本人最艰难的一段，请把您当时最为难的一段先讲出来。"
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-b-message_sequence-v2",
+          "text": "请在能说的范围内回顾——在面对夜间往来记录的那段时间里，您本人最艰难的一段，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-b-message_sequence-v3",
+          "text": "不必现在就下结论。在面对夜间往来记录的那段时间里，您本人最艰难的一段，请把您能说出的部分先讲一段。"
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-b-message_sequence-v4",
+          "text": "崔秀敏女士，在面对夜间往来记录的那段时间里，您本人最艰难的一段，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-b-message_sequence-v5",
+          "text": "请在能说的范围内回顾——在面对夜间往来记录的那段时间里，您本人最艰难的一段，请把您能说出的部分先讲一段。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "fact_pursuit",
+      "targetParty": "a",
+      "angleId": "boundary_response",
+      "variants": [
+        {
+          "id": "judgeq-d-2-fact_pursuit-a-boundary_response-v1",
+          "text": "宋多恩女士，关于回复内容的具体措辞与口吻，本人亲眼读到的原文与仅凭概括记得的部分分别是哪些，请就该处先以事实关系作答。"
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-a-boundary_response-v2",
+          "text": "请按时间顺序梳理：关于回复内容的具体措辞与口吻，本人亲眼读到的原文与仅凭概括记得的部分分别是哪些，请按记录原貌重新整理。"
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-a-boundary_response-v3",
+          "text": "请把您本人亲眼所见的部分与从他人转述听来的部分分开来说——关于回复内容的具体措辞与口吻，本人亲眼读到的原文与仅凭概括记得的部分分别是哪些，请把亲眼所见与转述听闻分开陈述。"
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-a-boundary_response-v4",
+          "text": "宋多恩女士，关于回复内容的具体措辞与口吻，本人亲眼读到的原文与仅凭概括记得的部分分别是哪些，请按记录原貌重新整理。"
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-a-boundary_response-v5",
+          "text": "请按时间顺序梳理：关于回复内容的具体措辞与口吻，本人亲眼读到的原文与仅凭概括记得的部分分别是哪些，请把亲眼所见与转述听闻分开陈述。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "fact_pursuit",
+      "targetParty": "b",
+      "angleId": "boundary_response",
+      "variants": [
+        {
+          "id": "judgeq-d-2-fact_pursuit-b-boundary_response-v1",
+          "text": "崔秀敏女士，关于您本人回复时的具体措辞与节制程度，逐条来看是怎样的语气与边界设定，请按时间顺序逐项作答。"
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-b-boundary_response-v2",
+          "text": "请按时间顺序梳理：关于您本人回复时的具体措辞与节制程度，逐条来看是怎样的语气与边界设定，请将本人主动发起与对方先行发起的部分分开作答。"
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-b-boundary_response-v3",
+          "text": "请区分作答：本人亲手发出的内容与对方先发来的内容——关于您本人回复时的具体措辞与节制程度，逐条来看是怎样的语气与边界设定，请就该处先以事实关系作答。"
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-b-boundary_response-v4",
+          "text": "崔秀敏女士，关于您本人回复时的具体措辞与节制程度，逐条来看是怎样的语气与边界设定，请将本人主动发起与对方先行发起的部分分开作答。"
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-b-boundary_response-v5",
+          "text": "请按时间顺序梳理：关于您本人回复时的具体措辞与节制程度，逐条来看是怎样的语气与边界设定，请就该处先以事实关系作答。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "motive_search",
+      "targetParty": "a",
+      "angleId": "boundary_response",
+      "variants": [
+        {
+          "id": "judgeq-d-2-motive_search-a-boundary_response-v1",
+          "text": "宋多恩女士，您并未仔细阅读对方回复的全文，却据此断定其性质为附和或迎合，请说明判断依据是什么。"
+        },
+        {
+          "id": "judgeq-d-2-motive_search-a-boundary_response-v2",
+          "text": "请说明：当时作出此种判断时，您并未仔细阅读对方回复的全文，却据此断定其性质为附和或迎合，请回答当时作此选择的理由。"
+        },
+        {
+          "id": "judgeq-d-2-motive_search-a-boundary_response-v3",
+          "text": "在把疑虑直接公开发布之前，您并未仔细阅读对方回复的全文，却据此断定其性质为附和或迎合，请就当时的考量先以本人能负责的范围作答。"
+        },
+        {
+          "id": "judgeq-d-2-motive_search-a-boundary_response-v4",
+          "text": "宋多恩女士，您并未仔细阅读对方回复的全文，却据此断定其性质为附和或迎合，请回答当时作此选择的理由。"
+        },
+        {
+          "id": "judgeq-d-2-motive_search-a-boundary_response-v5",
+          "text": "请说明：当时作出此种判断时，您并未仔细阅读对方回复的全文，却据此断定其性质为附和或迎合，请就当时的考量先以本人能负责的范围作答。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "motive_search",
+      "targetParty": "b",
+      "angleId": "boundary_response",
+      "variants": [
+        {
+          "id": "judgeq-d-2-motive_search-b-boundary_response-v1",
+          "text": "崔秀敏女士，在写下那些回复字句的当时，您本人为何选择那样克制或委婉的措辞，请说明当时作此处置的理由。"
+        },
+        {
+          "id": "judgeq-d-2-motive_search-b-boundary_response-v2",
+          "text": "请说明：当时作出此种处置时，在写下那些回复字句的当时，您本人为何选择那样克制或委婉的措辞，请就本人能负责的范围作答。"
+        },
+        {
+          "id": "judgeq-d-2-motive_search-b-boundary_response-v3",
+          "text": "在选择以那种方式联络的背后，在写下那些回复字句的当时，您本人为何选择那样克制或委婉的措辞，请回答当时的考量是什么。"
+        },
+        {
+          "id": "judgeq-d-2-motive_search-b-boundary_response-v4",
+          "text": "崔秀敏女士，在写下那些回复字句的当时，您本人为何选择那样克制或委婉的措辞，请就本人能负责的范围作答。"
+        },
+        {
+          "id": "judgeq-d-2-motive_search-b-boundary_response-v5",
+          "text": "请说明：当时作出此种处置时，在写下那些回复字句的当时，您本人为何选择那样克制或委婉的措辞，请回答当时的考量是什么。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "empathy_approach",
+      "targetParty": "a",
+      "angleId": "boundary_response",
+      "variants": [
+        {
+          "id": "judgeq-d-2-empathy_approach-a-boundary_response-v1",
+          "text": "宋多恩女士，在反复阅读那些回复的过程中，最让您难以释怀的一段，请把您当时最在意的一段先讲出来。"
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-a-boundary_response-v2",
+          "text": "请在能说的范围内回顾——在反复阅读那些回复的过程中，最让您难以释怀的一段，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-a-boundary_response-v3",
+          "text": "不必现在就下结论。在反复阅读那些回复的过程中，最让您难以释怀的一段，请把您能说出的部分先讲一段。"
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-a-boundary_response-v4",
+          "text": "宋多恩女士，在反复阅读那些回复的过程中，最让您难以释怀的一段，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-a-boundary_response-v5",
+          "text": "请在能说的范围内回顾——在反复阅读那些回复的过程中，最让您难以释怀的一段，请把您能说出的部分先讲一段。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "empathy_approach",
+      "targetParty": "b",
+      "angleId": "boundary_response",
+      "variants": [
+        {
+          "id": "judgeq-d-2-empathy_approach-b-boundary_response-v1",
+          "text": "崔秀敏女士，在写下那些回复的当时，您本人最为难的一段，请把您当时最为难的一段先讲出来。"
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-b-boundary_response-v2",
+          "text": "请在能说的范围内回顾——在写下那些回复的当时，您本人最为难的一段，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-b-boundary_response-v3",
+          "text": "不必现在就下结论。在写下那些回复的当时，您本人最为难的一段，请把您能说出的部分先讲一段。"
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-b-boundary_response-v4",
+          "text": "崔秀敏女士，在写下那些回复的当时，您本人最为难的一段，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-b-boundary_response-v5",
+          "text": "请在能说的范围内回顾——在写下那些回复的当时，您本人最为难的一段，请把您能说出的部分先讲一段。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "fact_pursuit",
+      "targetParty": "a",
+      "angleId": "withheld_capture",
+      "variants": [
+        {
+          "id": "judgeq-d-2-fact_pursuit-a-withheld_capture-v1",
+          "text": "宋多恩女士，关于截图原本未在第一时间出示的具体经过，本人亲身在场与仅事后听闻的部分分别是哪些，请就该处先以事实关系作答。"
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-a-withheld_capture-v2",
+          "text": "请按时间顺序梳理：关于截图原本未在第一时间出示的具体经过，本人亲身在场与仅事后听闻的部分分别是哪些，请按记录原貌重新整理。"
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-a-withheld_capture-v3",
+          "text": "请把您本人亲眼所见的部分与从他人转述听来的部分分开来说——关于截图原本未在第一时间出示的具体经过，本人亲身在场与仅事后听闻的部分分别是哪些，请把亲眼所见与转述听闻分开陈述。"
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-a-withheld_capture-v4",
+          "text": "宋多恩女士，关于截图原本未在第一时间出示的具体经过，本人亲身在场与仅事后听闻的部分分别是哪些，请按记录原貌重新整理。"
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-a-withheld_capture-v5",
+          "text": "请按时间顺序梳理：关于截图原本未在第一时间出示的具体经过，本人亲身在场与仅事后听闻的部分分别是哪些，请把亲眼所见与转述听闻分开陈述。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "fact_pursuit",
+      "targetParty": "b",
+      "angleId": "withheld_capture",
+      "variants": [
+        {
+          "id": "judgeq-d-2-fact_pursuit-b-withheld_capture-v1",
+          "text": "崔秀敏女士，关于您本人未即时出示截图原本的具体过程，那段时间里的考量与处置分别是怎样的，请按时间顺序逐项作答。"
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-b-withheld_capture-v2",
+          "text": "请按时间顺序梳理：关于您本人未即时出示截图原本的具体过程，那段时间里的考量与处置分别是怎样的，请将本人主动发起与对方先行发起的部分分开作答。"
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-b-withheld_capture-v3",
+          "text": "请区分作答：本人亲手发出的内容与对方先发来的内容——关于您本人未即时出示截图原本的具体过程，那段时间里的考量与处置分别是怎样的，请就该处先以事实关系作答。"
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-b-withheld_capture-v4",
+          "text": "崔秀敏女士，关于您本人未即时出示截图原本的具体过程，那段时间里的考量与处置分别是怎样的，请将本人主动发起与对方先行发起的部分分开作答。"
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-b-withheld_capture-v5",
+          "text": "请按时间顺序梳理：关于您本人未即时出示截图原本的具体过程，那段时间里的考量与处置分别是怎样的，请就该处先以事实关系作答。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "motive_search",
+      "targetParty": "a",
+      "angleId": "withheld_capture",
+      "variants": [
+        {
+          "id": "judgeq-d-2-motive_search-a-withheld_capture-v1",
+          "text": "宋多恩女士，您并未直接询问对方为何延后出示，便径直把这段延迟定性为有意隐瞒，请说明判断依据是什么。"
+        },
+        {
+          "id": "judgeq-d-2-motive_search-a-withheld_capture-v2",
+          "text": "请说明：当时作出此种判断时，您并未直接询问对方为何延后出示，便径直把这段延迟定性为有意隐瞒，请回答当时作此选择的理由。"
+        },
+        {
+          "id": "judgeq-d-2-motive_search-a-withheld_capture-v3",
+          "text": "在把疑虑直接公开发布之前，您并未直接询问对方为何延后出示，便径直把这段延迟定性为有意隐瞒，请就当时的考量先以本人能负责的范围作答。"
+        },
+        {
+          "id": "judgeq-d-2-motive_search-a-withheld_capture-v4",
+          "text": "宋多恩女士，您并未直接询问对方为何延后出示，便径直把这段延迟定性为有意隐瞒，请回答当时作此选择的理由。"
+        },
+        {
+          "id": "judgeq-d-2-motive_search-a-withheld_capture-v5",
+          "text": "请说明：当时作出此种判断时，您并未直接询问对方为何延后出示，便径直把这段延迟定性为有意隐瞒，请就当时的考量先以本人能负责的范围作答。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "motive_search",
+      "targetParty": "b",
+      "angleId": "withheld_capture",
+      "variants": [
+        {
+          "id": "judgeq-d-2-motive_search-b-withheld_capture-v1",
+          "text": "崔秀敏女士，在握有截图原本的当时，您本人为何选择不立即出示而暂时保留，请说明当时作此处置的理由。"
+        },
+        {
+          "id": "judgeq-d-2-motive_search-b-withheld_capture-v2",
+          "text": "请说明：当时作出此种处置时，在握有截图原本的当时，您本人为何选择不立即出示而暂时保留，请就本人能负责的范围作答。"
+        },
+        {
+          "id": "judgeq-d-2-motive_search-b-withheld_capture-v3",
+          "text": "在选择以那种方式联络的背后，在握有截图原本的当时，您本人为何选择不立即出示而暂时保留，请回答当时的考量是什么。"
+        },
+        {
+          "id": "judgeq-d-2-motive_search-b-withheld_capture-v4",
+          "text": "崔秀敏女士，在握有截图原本的当时，您本人为何选择不立即出示而暂时保留，请就本人能负责的范围作答。"
+        },
+        {
+          "id": "judgeq-d-2-motive_search-b-withheld_capture-v5",
+          "text": "请说明：当时作出此种处置时，在握有截图原本的当时，您本人为何选择不立即出示而暂时保留，请回答当时的考量是什么。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "empathy_approach",
+      "targetParty": "a",
+      "angleId": "withheld_capture",
+      "variants": [
+        {
+          "id": "judgeq-d-2-empathy_approach-a-withheld_capture-v1",
+          "text": "宋多恩女士，在那段保留截图未公开的日子里，最让您难以放下的一段心情，请把您当时最在意的一段先讲出来。"
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-a-withheld_capture-v2",
+          "text": "请在能说的范围内回顾——在那段保留截图未公开的日子里，最让您难以放下的一段心情，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-a-withheld_capture-v3",
+          "text": "不必现在就下结论。在那段保留截图未公开的日子里，最让您难以放下的一段心情，请把您能说出的部分先讲一段。"
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-a-withheld_capture-v4",
+          "text": "宋多恩女士，在那段保留截图未公开的日子里，最让您难以放下的一段心情，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-a-withheld_capture-v5",
+          "text": "请在能说的范围内回顾——在那段保留截图未公开的日子里，最让您难以放下的一段心情，请把您能说出的部分先讲一段。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "empathy_approach",
+      "targetParty": "b",
+      "angleId": "withheld_capture",
+      "variants": [
+        {
+          "id": "judgeq-d-2-empathy_approach-b-withheld_capture-v1",
+          "text": "崔秀敏女士，在选择暂时保留截图的当时，您本人最艰难的一段，请把您当时最为难的一段先讲出来。"
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-b-withheld_capture-v2",
+          "text": "请在能说的范围内回顾——在选择暂时保留截图的当时，您本人最艰难的一段，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-b-withheld_capture-v3",
+          "text": "不必现在就下结论。在选择暂时保留截图的当时，您本人最艰难的一段，请把您能说出的部分先讲一段。"
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-b-withheld_capture-v4",
+          "text": "崔秀敏女士，在选择暂时保留截图的当时，您本人最艰难的一段，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-b-withheld_capture-v5",
+          "text": "请在能说的范围内回顾——在选择暂时保留截图的当时，您本人最艰难的一段，请把您能说出的部分先讲一段。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "fact_pursuit",
+      "targetParty": "a",
+      "angleId": "private_request_pressure",
+      "variants": [
+        {
+          "id": "judgeq-d-2-fact_pursuit-a-private_request_pressure-v1",
+          "text": "宋多恩女士，关于深夜联络与私下请托的具体情节，本人亲眼所见与仅听闻的部分分别是哪些，请就该处先以事实关系作答。"
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-a-private_request_pressure-v2",
+          "text": "请按时间顺序梳理：关于深夜联络与私下请托的具体情节，本人亲眼所见与仅听闻的部分分别是哪些，请按记录原貌重新整理。"
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-a-private_request_pressure-v3",
+          "text": "请把您本人亲眼所见的部分与从他人转述听来的部分分开来说——关于深夜联络与私下请托的具体情节，本人亲眼所见与仅听闻的部分分别是哪些，请把亲眼所见与转述听闻分开陈述。"
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-a-private_request_pressure-v4",
+          "text": "宋多恩女士，关于深夜联络与私下请托的具体情节，本人亲眼所见与仅听闻的部分分别是哪些，请按记录原貌重新整理。"
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-a-private_request_pressure-v5",
+          "text": "请按时间顺序梳理：关于深夜联络与私下请托的具体情节，本人亲眼所见与仅听闻的部分分别是哪些，请把亲眼所见与转述听闻分开陈述。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "fact_pursuit",
+      "targetParty": "b",
+      "angleId": "private_request_pressure",
+      "variants": [
+        {
+          "id": "judgeq-d-2-fact_pursuit-b-private_request_pressure-v1",
+          "text": "崔秀敏女士，关于深夜送达的私下请托内容，本人当时如何回应、是否当场拒绝或保留作答，那段过程的具体细节，请按时间顺序逐项作答。"
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-b-private_request_pressure-v2",
+          "text": "请按时间顺序梳理：关于深夜送达的私下请托内容，本人当时如何回应、是否当场拒绝或保留作答，那段过程的具体细节，请将本人主动发起与对方先行发起的部分分开作答。"
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-b-private_request_pressure-v3",
+          "text": "请区分作答：本人亲手发出的内容与对方先发来的内容——关于深夜送达的私下请托内容，本人当时如何回应、是否当场拒绝或保留作答，那段过程的具体细节，请就该处先以事实关系作答。"
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-b-private_request_pressure-v4",
+          "text": "崔秀敏女士，关于深夜送达的私下请托内容，本人当时如何回应、是否当场拒绝或保留作答，那段过程的具体细节，请将本人主动发起与对方先行发起的部分分开作答。"
+        },
+        {
+          "id": "judgeq-d-2-fact_pursuit-b-private_request_pressure-v5",
+          "text": "请按时间顺序梳理：关于深夜送达的私下请托内容，本人当时如何回应、是否当场拒绝或保留作答，那段过程的具体细节，请就该处先以事实关系作答。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "motive_search",
+      "targetParty": "a",
+      "angleId": "private_request_pressure",
+      "variants": [
+        {
+          "id": "judgeq-d-2-motive_search-a-private_request_pressure-v1",
+          "text": "宋多恩女士，您并未掌握那段私下请托的完整原文，却据此断定其中存在压迫或胁迫的成分，请说明判断依据是什么。"
+        },
+        {
+          "id": "judgeq-d-2-motive_search-a-private_request_pressure-v2",
+          "text": "请说明：当时作出此种判断时，您并未掌握那段私下请托的完整原文，却据此断定其中存在压迫或胁迫的成分，请回答当时作此选择的理由。"
+        },
+        {
+          "id": "judgeq-d-2-motive_search-a-private_request_pressure-v3",
+          "text": "在把疑虑直接公开发布之前，您并未掌握那段私下请托的完整原文，却据此断定其中存在压迫或胁迫的成分，请就当时的考量先以本人能负责的范围作答。"
+        },
+        {
+          "id": "judgeq-d-2-motive_search-a-private_request_pressure-v4",
+          "text": "宋多恩女士，您并未掌握那段私下请托的完整原文，却据此断定其中存在压迫或胁迫的成分，请回答当时作此选择的理由。"
+        },
+        {
+          "id": "judgeq-d-2-motive_search-a-private_request_pressure-v5",
+          "text": "请说明：当时作出此种判断时，您并未掌握那段私下请托的完整原文，却据此断定其中存在压迫或胁迫的成分，请就当时的考量先以本人能负责的范围作答。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "motive_search",
+      "targetParty": "b",
+      "angleId": "private_request_pressure",
+      "variants": [
+        {
+          "id": "judgeq-d-2-motive_search-b-private_request_pressure-v1",
+          "text": "崔秀敏女士，在面对那种深夜的私下请托时，您本人当时为何未即刻断然拒绝或当场公开，请说明当时作此处置的理由。"
+        },
+        {
+          "id": "judgeq-d-2-motive_search-b-private_request_pressure-v2",
+          "text": "请说明：当时作出此种处置时，在面对那种深夜的私下请托时，您本人当时为何未即刻断然拒绝或当场公开，请就本人能负责的范围作答。"
+        },
+        {
+          "id": "judgeq-d-2-motive_search-b-private_request_pressure-v3",
+          "text": "在选择以那种方式联络的背后，在面对那种深夜的私下请托时，您本人当时为何未即刻断然拒绝或当场公开，请回答当时的考量是什么。"
+        },
+        {
+          "id": "judgeq-d-2-motive_search-b-private_request_pressure-v4",
+          "text": "崔秀敏女士，在面对那种深夜的私下请托时，您本人当时为何未即刻断然拒绝或当场公开，请就本人能负责的范围作答。"
+        },
+        {
+          "id": "judgeq-d-2-motive_search-b-private_request_pressure-v5",
+          "text": "请说明：当时作出此种处置时，在面对那种深夜的私下请托时，您本人当时为何未即刻断然拒绝或当场公开，请回答当时的考量是什么。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "empathy_approach",
+      "targetParty": "a",
+      "angleId": "private_request_pressure",
+      "variants": [
+        {
+          "id": "judgeq-d-2-empathy_approach-a-private_request_pressure-v1",
+          "text": "宋多恩女士，在反复回想那段深夜请托的过程中，最让您难以释怀的一段，请把您当时最在意的一段先讲出来。"
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-a-private_request_pressure-v2",
+          "text": "请在能说的范围内回顾——在反复回想那段深夜请托的过程中，最让您难以释怀的一段，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-a-private_request_pressure-v3",
+          "text": "不必现在就下结论。在反复回想那段深夜请托的过程中，最让您难以释怀的一段，请把您能说出的部分先讲一段。"
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-a-private_request_pressure-v4",
+          "text": "宋多恩女士，在反复回想那段深夜请托的过程中，最让您难以释怀的一段，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-a-private_request_pressure-v5",
+          "text": "请在能说的范围内回顾——在反复回想那段深夜请托的过程中，最让您难以释怀的一段，请把您能说出的部分先讲一段。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-2",
+      "questionType": "empathy_approach",
+      "targetParty": "b",
+      "angleId": "private_request_pressure",
+      "variants": [
+        {
+          "id": "judgeq-d-2-empathy_approach-b-private_request_pressure-v1",
+          "text": "崔秀敏女士，在面对那种深夜请托的当时，您本人最为难的一段，请把您当时最为难的一段先讲出来。"
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-b-private_request_pressure-v2",
+          "text": "请在能说的范围内回顾——在面对那种深夜请托的当时，您本人最为难的一段，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-b-private_request_pressure-v3",
+          "text": "不必现在就下结论。在面对那种深夜请托的当时，您本人最为难的一段，请把您能说出的部分先讲一段。"
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-b-private_request_pressure-v4",
+          "text": "崔秀敏女士，在面对那种深夜请托的当时，您本人最为难的一段，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-2-empathy_approach-b-private_request_pressure-v5",
+          "text": "请在能说的范围内回顾——在面对那种深夜请托的当时，您本人最为难的一段，请把您能说出的部分先讲一段。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "questionType": "fact_pursuit",
+      "targetParty": "a",
+      "angleId": "father_request_signal",
+      "variants": [
+        {
+          "id": "judgeq-d-3-fact_pursuit-a-father_request_signal-v1",
+          "text": "宋多恩女士，关于家中长辈与对方之间往来短信的具体出现时点，本人亲眼读到的记录与仅听闻的部分分别是哪些，请就该处先以事实关系作答。"
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-a-father_request_signal-v2",
+          "text": "请按时间顺序梳理：关于家中长辈与对方之间往来短信的具体出现时点，本人亲眼读到的记录与仅听闻的部分分别是哪些，请按记录原貌重新整理。"
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-a-father_request_signal-v3",
+          "text": "请把您本人亲眼所见的部分与从他人转述听来的部分分开来说——关于家中长辈与对方之间往来短信的具体出现时点，本人亲眼读到的记录与仅听闻的部分分别是哪些，请把亲眼所见与转述听闻分开陈述。"
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-a-father_request_signal-v4",
+          "text": "宋多恩女士，关于家中长辈与对方之间往来短信的具体出现时点，本人亲眼读到的记录与仅听闻的部分分别是哪些，请按记录原貌重新整理。"
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-a-father_request_signal-v5",
+          "text": "请按时间顺序梳理：关于家中长辈与对方之间往来短信的具体出现时点，本人亲眼读到的记录与仅听闻的部分分别是哪些，请把亲眼所见与转述听闻分开陈述。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "questionType": "fact_pursuit",
+      "targetParty": "b",
+      "angleId": "father_request_signal",
+      "variants": [
+        {
+          "id": "judgeq-d-3-fact_pursuit-b-father_request_signal-v1",
+          "text": "崔秀敏女士，关于您本人收到的婚事问候与请托预告类短信，按时间顺序逐条来看具体的措辞与发件人，请按时间顺序逐项作答。"
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-b-father_request_signal-v2",
+          "text": "请按时间顺序梳理：关于您本人收到的婚事问候与请托预告类短信，按时间顺序逐条来看具体的措辞与发件人，请将本人主动发起与对方先行发起的部分分开作答。"
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-b-father_request_signal-v3",
+          "text": "请区分作答：本人亲手发出的内容与对方先发来的内容——关于您本人收到的婚事问候与请托预告类短信，按时间顺序逐条来看具体的措辞与发件人，请就该处先以事实关系作答。"
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-b-father_request_signal-v4",
+          "text": "崔秀敏女士，关于您本人收到的婚事问候与请托预告类短信，按时间顺序逐条来看具体的措辞与发件人，请将本人主动发起与对方先行发起的部分分开作答。"
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-b-father_request_signal-v5",
+          "text": "请按时间顺序梳理：关于您本人收到的婚事问候与请托预告类短信，按时间顺序逐条来看具体的措辞与发件人，请就该处先以事实关系作答。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "questionType": "motive_search",
+      "targetParty": "a",
+      "angleId": "father_request_signal",
+      "variants": [
+        {
+          "id": "judgeq-d-3-motive_search-a-father_request_signal-v1",
+          "text": "宋多恩女士，您并未读到完整的请托原文，便径直把那段问候定性为单纯客套或全无问题，请说明判断依据是什么。"
+        },
+        {
+          "id": "judgeq-d-3-motive_search-a-father_request_signal-v2",
+          "text": "请说明：当时作出此种判断时，您并未读到完整的请托原文，便径直把那段问候定性为单纯客套或全无问题，请回答当时作此选择的理由。"
+        },
+        {
+          "id": "judgeq-d-3-motive_search-a-father_request_signal-v3",
+          "text": "在把疑虑直接公开发布之前，您并未读到完整的请托原文，便径直把那段问候定性为单纯客套或全无问题，请就当时的考量先以本人能负责的范围作答。"
+        },
+        {
+          "id": "judgeq-d-3-motive_search-a-father_request_signal-v4",
+          "text": "宋多恩女士，您并未读到完整的请托原文，便径直把那段问候定性为单纯客套或全无问题，请回答当时作此选择的理由。"
+        },
+        {
+          "id": "judgeq-d-3-motive_search-a-father_request_signal-v5",
+          "text": "请说明：当时作出此种判断时，您并未读到完整的请托原文，便径直把那段问候定性为单纯客套或全无问题，请就当时的考量先以本人能负责的范围作答。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "questionType": "motive_search",
+      "targetParty": "b",
+      "angleId": "father_request_signal",
+      "variants": [
+        {
+          "id": "judgeq-d-3-motive_search-b-father_request_signal-v1",
+          "text": "崔秀敏女士，在收到那种带有请托意味的短信时，您本人当时为何作出那样的回应方式，请说明当时作此处置的理由。"
+        },
+        {
+          "id": "judgeq-d-3-motive_search-b-father_request_signal-v2",
+          "text": "请说明：当时作出此种处置时，在收到那种带有请托意味的短信时，您本人当时为何作出那样的回应方式，请就本人能负责的范围作答。"
+        },
+        {
+          "id": "judgeq-d-3-motive_search-b-father_request_signal-v3",
+          "text": "在选择以那种方式联络的背后，在收到那种带有请托意味的短信时，您本人当时为何作出那样的回应方式，请回答当时的考量是什么。"
+        },
+        {
+          "id": "judgeq-d-3-motive_search-b-father_request_signal-v4",
+          "text": "崔秀敏女士，在收到那种带有请托意味的短信时，您本人当时为何作出那样的回应方式，请就本人能负责的范围作答。"
+        },
+        {
+          "id": "judgeq-d-3-motive_search-b-father_request_signal-v5",
+          "text": "请说明：当时作出此种处置时，在收到那种带有请托意味的短信时，您本人当时为何作出那样的回应方式，请回答当时的考量是什么。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "questionType": "empathy_approach",
+      "targetParty": "a",
+      "angleId": "father_request_signal",
+      "variants": [
+        {
+          "id": "judgeq-d-3-empathy_approach-a-father_request_signal-v1",
+          "text": "宋多恩女士，在反复阅读那些短信的过程中，最让您难以放下的一段，请把您当时最在意的一段先讲出来。"
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-a-father_request_signal-v2",
+          "text": "请在能说的范围内回顾——在反复阅读那些短信的过程中，最让您难以放下的一段，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-a-father_request_signal-v3",
+          "text": "不必现在就下结论。在反复阅读那些短信的过程中，最让您难以放下的一段，请把您能说出的部分先讲一段。"
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-a-father_request_signal-v4",
+          "text": "宋多恩女士，在反复阅读那些短信的过程中，最让您难以放下的一段，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-a-father_request_signal-v5",
+          "text": "请在能说的范围内回顾——在反复阅读那些短信的过程中，最让您难以放下的一段，请把您能说出的部分先讲一段。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "questionType": "empathy_approach",
+      "targetParty": "b",
+      "angleId": "father_request_signal",
+      "variants": [
+        {
+          "id": "judgeq-d-3-empathy_approach-b-father_request_signal-v1",
+          "text": "崔秀敏女士，在收到那些请托类短信的当时，您本人最为难的一段，请把您当时最为难的一段先讲出来。"
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-b-father_request_signal-v2",
+          "text": "请在能说的范围内回顾——在收到那些请托类短信的当时，您本人最为难的一段，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-b-father_request_signal-v3",
+          "text": "不必现在就下结论。在收到那些请托类短信的当时，您本人最为难的一段，请把您能说出的部分先讲一段。"
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-b-father_request_signal-v4",
+          "text": "崔秀敏女士，在收到那些请托类短信的当时，您本人最为难的一段，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-b-father_request_signal-v5",
+          "text": "请在能说的范围内回顾——在收到那些请托类短信的当时，您本人最为难的一段，请把您能说出的部分先讲一段。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "questionType": "fact_pursuit",
+      "targetParty": "a",
+      "angleId": "money_secrecy",
+      "variants": [
+        {
+          "id": "judgeq-d-3-fact_pursuit-a-money_secrecy-v1",
+          "text": "宋多恩女士，关于请托中是否涉及金额、用途、保密要求的具体记述，本人亲眼读到的原文与仅听闻的部分分别是哪些，请就该处先以事实关系作答。"
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-a-money_secrecy-v2",
+          "text": "请按时间顺序梳理：关于请托中是否涉及金额、用途、保密要求的具体记述，本人亲眼读到的原文与仅听闻的部分分别是哪些，请按记录原貌重新整理。"
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-a-money_secrecy-v3",
+          "text": "请把您本人亲眼所见的部分与从他人转述听来的部分分开来说——关于请托中是否涉及金额、用途、保密要求的具体记述，本人亲眼读到的原文与仅听闻的部分分别是哪些，请把亲眼所见与转述听闻分开陈述。"
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-a-money_secrecy-v4",
+          "text": "宋多恩女士，关于请托中是否涉及金额、用途、保密要求的具体记述，本人亲眼读到的原文与仅听闻的部分分别是哪些，请按记录原貌重新整理。"
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-a-money_secrecy-v5",
+          "text": "请按时间顺序梳理：关于请托中是否涉及金额、用途、保密要求的具体记述，本人亲眼读到的原文与仅听闻的部分分别是哪些，请把亲眼所见与转述听闻分开陈述。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "questionType": "fact_pursuit",
+      "targetParty": "b",
+      "angleId": "money_secrecy",
+      "variants": [
+        {
+          "id": "judgeq-d-3-fact_pursuit-b-money_secrecy-v1",
+          "text": "崔秀敏女士，关于您本人收到的金额相关字句以及“不要告诉对方”这类要求，逐条来看具体的措辞，请按时间顺序逐项作答。"
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-b-money_secrecy-v2",
+          "text": "请按时间顺序梳理：关于您本人收到的金额相关字句以及“不要告诉对方”这类要求，逐条来看具体的措辞，请将本人主动发起与对方先行发起的部分分开作答。"
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-b-money_secrecy-v3",
+          "text": "请区分作答：本人亲手发出的内容与对方先发来的内容——关于您本人收到的金额相关字句以及“不要告诉对方”这类要求，逐条来看具体的措辞，请就该处先以事实关系作答。"
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-b-money_secrecy-v4",
+          "text": "崔秀敏女士，关于您本人收到的金额相关字句以及“不要告诉对方”这类要求，逐条来看具体的措辞，请将本人主动发起与对方先行发起的部分分开作答。"
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-b-money_secrecy-v5",
+          "text": "请按时间顺序梳理：关于您本人收到的金额相关字句以及“不要告诉对方”这类要求，逐条来看具体的措辞，请就该处先以事实关系作答。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "questionType": "motive_search",
+      "targetParty": "a",
+      "angleId": "money_secrecy",
+      "variants": [
+        {
+          "id": "judgeq-d-3-motive_search-a-money_secrecy-v1",
+          "text": "宋多恩女士，您并未读到完整的请托原文，却据此断定其中存在金钱目的与保密用意，请说明判断依据是什么。"
+        },
+        {
+          "id": "judgeq-d-3-motive_search-a-money_secrecy-v2",
+          "text": "请说明：当时作出此种判断时，您并未读到完整的请托原文，却据此断定其中存在金钱目的与保密用意，请回答当时作此选择的理由。"
+        },
+        {
+          "id": "judgeq-d-3-motive_search-a-money_secrecy-v3",
+          "text": "在把疑虑直接公开发布之前，您并未读到完整的请托原文，却据此断定其中存在金钱目的与保密用意，请就当时的考量先以本人能负责的范围作答。"
+        },
+        {
+          "id": "judgeq-d-3-motive_search-a-money_secrecy-v4",
+          "text": "宋多恩女士，您并未读到完整的请托原文，却据此断定其中存在金钱目的与保密用意，请回答当时作此选择的理由。"
+        },
+        {
+          "id": "judgeq-d-3-motive_search-a-money_secrecy-v5",
+          "text": "请说明：当时作出此种判断时，您并未读到完整的请托原文，却据此断定其中存在金钱目的与保密用意，请就当时的考量先以本人能负责的范围作答。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "questionType": "motive_search",
+      "targetParty": "b",
+      "angleId": "money_secrecy",
+      "variants": [
+        {
+          "id": "judgeq-d-3-motive_search-b-money_secrecy-v1",
+          "text": "崔秀敏女士，在收到那种带有金额暗示与保密要求的请托时，您本人当时如何处置而非当场公开，请说明当时作此处置的理由。"
+        },
+        {
+          "id": "judgeq-d-3-motive_search-b-money_secrecy-v2",
+          "text": "请说明：当时作出此种处置时，在收到那种带有金额暗示与保密要求的请托时，您本人当时如何处置而非当场公开，请就本人能负责的范围作答。"
+        },
+        {
+          "id": "judgeq-d-3-motive_search-b-money_secrecy-v3",
+          "text": "在选择以那种方式联络的背后，在收到那种带有金额暗示与保密要求的请托时，您本人当时如何处置而非当场公开，请回答当时的考量是什么。"
+        },
+        {
+          "id": "judgeq-d-3-motive_search-b-money_secrecy-v4",
+          "text": "崔秀敏女士，在收到那种带有金额暗示与保密要求的请托时，您本人当时如何处置而非当场公开，请就本人能负责的范围作答。"
+        },
+        {
+          "id": "judgeq-d-3-motive_search-b-money_secrecy-v5",
+          "text": "请说明：当时作出此种处置时，在收到那种带有金额暗示与保密要求的请托时，您本人当时如何处置而非当场公开，请回答当时的考量是什么。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "questionType": "empathy_approach",
+      "targetParty": "a",
+      "angleId": "money_secrecy",
+      "variants": [
+        {
+          "id": "judgeq-d-3-empathy_approach-a-money_secrecy-v1",
+          "text": "宋多恩女士，在反复回想那些金额与保密字句的过程中，最让您难以释怀的一段，请把您当时最在意的一段先讲出来。"
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-a-money_secrecy-v2",
+          "text": "请在能说的范围内回顾——在反复回想那些金额与保密字句的过程中，最让您难以释怀的一段，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-a-money_secrecy-v3",
+          "text": "不必现在就下结论。在反复回想那些金额与保密字句的过程中，最让您难以释怀的一段，请把您能说出的部分先讲一段。"
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-a-money_secrecy-v4",
+          "text": "宋多恩女士，在反复回想那些金额与保密字句的过程中，最让您难以释怀的一段，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-a-money_secrecy-v5",
+          "text": "请在能说的范围内回顾——在反复回想那些金额与保密字句的过程中，最让您难以释怀的一段，请把您能说出的部分先讲一段。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "questionType": "empathy_approach",
+      "targetParty": "b",
+      "angleId": "money_secrecy",
+      "variants": [
+        {
+          "id": "judgeq-d-3-empathy_approach-b-money_secrecy-v1",
+          "text": "崔秀敏女士，在收到那种带有金额与保密要求的请托当时，您本人最艰难的一段，请把您当时最为难的一段先讲出来。"
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-b-money_secrecy-v2",
+          "text": "请在能说的范围内回顾——在收到那种带有金额与保密要求的请托当时，您本人最艰难的一段，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-b-money_secrecy-v3",
+          "text": "不必现在就下结论。在收到那种带有金额与保密要求的请托当时，您本人最艰难的一段，请把您能说出的部分先讲一段。"
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-b-money_secrecy-v4",
+          "text": "崔秀敏女士，在收到那种带有金额与保密要求的请托当时，您本人最艰难的一段，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-b-money_secrecy-v5",
+          "text": "请在能说的范围内回顾——在收到那种带有金额与保密要求的请托当时，您本人最艰难的一段，请把您能说出的部分先讲一段。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "questionType": "fact_pursuit",
+      "targetParty": "a",
+      "angleId": "pattern_warning",
+      "variants": [
+        {
+          "id": "judgeq-d-3-fact_pursuit-a-pattern_warning-v1",
+          "text": "宋多恩女士，关于眼前的短信与过往金钱往来记录之间是否存在相似的情形，本人亲手对照过的部分与仅凭印象的部分分别是哪些，请就该处先以事实关系作答。"
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-a-pattern_warning-v2",
+          "text": "请按时间顺序梳理：关于眼前的短信与过往金钱往来记录之间是否存在相似的情形，本人亲手对照过的部分与仅凭印象的部分分别是哪些，请按记录原貌重新整理。"
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-a-pattern_warning-v3",
+          "text": "请把您本人亲眼所见的部分与从他人转述听来的部分分开来说——关于眼前的短信与过往金钱往来记录之间是否存在相似的情形，本人亲手对照过的部分与仅凭印象的部分分别是哪些，请把亲眼所见与转述听闻分开陈述。"
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-a-pattern_warning-v4",
+          "text": "宋多恩女士，关于眼前的短信与过往金钱往来记录之间是否存在相似的情形，本人亲手对照过的部分与仅凭印象的部分分别是哪些，请按记录原貌重新整理。"
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-a-pattern_warning-v5",
+          "text": "请按时间顺序梳理：关于眼前的短信与过往金钱往来记录之间是否存在相似的情形，本人亲手对照过的部分与仅凭印象的部分分别是哪些，请把亲眼所见与转述听闻分开陈述。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "questionType": "fact_pursuit",
+      "targetParty": "b",
+      "angleId": "pattern_warning",
+      "variants": [
+        {
+          "id": "judgeq-d-3-fact_pursuit-b-pattern_warning-v1",
+          "text": "崔秀敏女士，关于您本人察觉到那种相似情形时的具体感受与判断步骤，逐项来看依据是哪些，请按时间顺序逐项作答。"
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-b-pattern_warning-v2",
+          "text": "请按时间顺序梳理：关于您本人察觉到那种相似情形时的具体感受与判断步骤，逐项来看依据是哪些，请将本人主动发起与对方先行发起的部分分开作答。"
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-b-pattern_warning-v3",
+          "text": "请区分作答：本人亲手发出的内容与对方先发来的内容——关于您本人察觉到那种相似情形时的具体感受与判断步骤，逐项来看依据是哪些，请就该处先以事实关系作答。"
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-b-pattern_warning-v4",
+          "text": "崔秀敏女士，关于您本人察觉到那种相似情形时的具体感受与判断步骤，逐项来看依据是哪些，请将本人主动发起与对方先行发起的部分分开作答。"
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-b-pattern_warning-v5",
+          "text": "请按时间顺序梳理：关于您本人察觉到那种相似情形时的具体感受与判断步骤，逐项来看依据是哪些，请就该处先以事实关系作答。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "questionType": "motive_search",
+      "targetParty": "a",
+      "angleId": "pattern_warning",
+      "variants": [
+        {
+          "id": "judgeq-d-3-motive_search-a-pattern_warning-v1",
+          "text": "宋多恩女士，您并未将两段记录系统比对，便径直把眼前情形定性为某种重复，请说明判断依据是什么。"
+        },
+        {
+          "id": "judgeq-d-3-motive_search-a-pattern_warning-v2",
+          "text": "请说明：当时作出此种判断时，您并未将两段记录系统比对，便径直把眼前情形定性为某种重复，请回答当时作此选择的理由。"
+        },
+        {
+          "id": "judgeq-d-3-motive_search-a-pattern_warning-v3",
+          "text": "在把疑虑直接公开发布之前，您并未将两段记录系统比对，便径直把眼前情形定性为某种重复，请就当时的考量先以本人能负责的范围作答。"
+        },
+        {
+          "id": "judgeq-d-3-motive_search-a-pattern_warning-v4",
+          "text": "宋多恩女士，您并未将两段记录系统比对，便径直把眼前情形定性为某种重复，请回答当时作此选择的理由。"
+        },
+        {
+          "id": "judgeq-d-3-motive_search-a-pattern_warning-v5",
+          "text": "请说明：当时作出此种判断时，您并未将两段记录系统比对，便径直把眼前情形定性为某种重复，请就当时的考量先以本人能负责的范围作答。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "questionType": "motive_search",
+      "targetParty": "b",
+      "angleId": "pattern_warning",
+      "variants": [
+        {
+          "id": "judgeq-d-3-motive_search-b-pattern_warning-v1",
+          "text": "崔秀敏女士，在察觉到这种相似情形之时，您本人为何选择走向当下这种联络方式而非其他途径，请说明当时作此处置的理由。"
+        },
+        {
+          "id": "judgeq-d-3-motive_search-b-pattern_warning-v2",
+          "text": "请说明：当时作出此种处置时，在察觉到这种相似情形之时，您本人为何选择走向当下这种联络方式而非其他途径，请就本人能负责的范围作答。"
+        },
+        {
+          "id": "judgeq-d-3-motive_search-b-pattern_warning-v3",
+          "text": "在选择以那种方式联络的背后，在察觉到这种相似情形之时，您本人为何选择走向当下这种联络方式而非其他途径，请回答当时的考量是什么。"
+        },
+        {
+          "id": "judgeq-d-3-motive_search-b-pattern_warning-v4",
+          "text": "崔秀敏女士，在察觉到这种相似情形之时，您本人为何选择走向当下这种联络方式而非其他途径，请就本人能负责的范围作答。"
+        },
+        {
+          "id": "judgeq-d-3-motive_search-b-pattern_warning-v5",
+          "text": "请说明：当时作出此种处置时，在察觉到这种相似情形之时，您本人为何选择走向当下这种联络方式而非其他途径，请回答当时的考量是什么。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "questionType": "empathy_approach",
+      "targetParty": "a",
+      "angleId": "pattern_warning",
+      "variants": [
+        {
+          "id": "judgeq-d-3-empathy_approach-a-pattern_warning-v1",
+          "text": "宋多恩女士，在反复对照前后两段记录的过程中，最让您难以放下的一段，请把您当时最在意的一段先讲出来。"
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-a-pattern_warning-v2",
+          "text": "请在能说的范围内回顾——在反复对照前后两段记录的过程中，最让您难以放下的一段，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-a-pattern_warning-v3",
+          "text": "不必现在就下结论。在反复对照前后两段记录的过程中，最让您难以放下的一段，请把您能说出的部分先讲一段。"
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-a-pattern_warning-v4",
+          "text": "宋多恩女士，在反复对照前后两段记录的过程中，最让您难以放下的一段，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-a-pattern_warning-v5",
+          "text": "请在能说的范围内回顾——在反复对照前后两段记录的过程中，最让您难以放下的一段，请把您能说出的部分先讲一段。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "questionType": "empathy_approach",
+      "targetParty": "b",
+      "angleId": "pattern_warning",
+      "variants": [
+        {
+          "id": "judgeq-d-3-empathy_approach-b-pattern_warning-v1",
+          "text": "崔秀敏女士，在面对那种似曾相识的情形当时，您本人最艰难的一段，请把您当时最为难的一段先讲出来。"
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-b-pattern_warning-v2",
+          "text": "请在能说的范围内回顾——在面对那种似曾相识的情形当时，您本人最艰难的一段，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-b-pattern_warning-v3",
+          "text": "不必现在就下结论。在面对那种似曾相识的情形当时，您本人最艰难的一段，请把您能说出的部分先讲一段。"
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-b-pattern_warning-v4",
+          "text": "崔秀敏女士，在面对那种似曾相识的情形当时，您本人最艰难的一段，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-b-pattern_warning-v5",
+          "text": "请在能说的范围内回顾——在面对那种似曾相识的情形当时，您本人最艰难的一段，请把您能说出的部分先讲一段。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "questionType": "fact_pursuit",
+      "targetParty": "a",
+      "angleId": "father_blindspot",
+      "variants": [
+        {
+          "id": "judgeq-d-3-fact_pursuit-a-father_blindspot-v1",
+          "text": "宋多恩女士，关于家中长辈那段时期与对方之间往来的具体情形，本人亲眼可知与仅事后获悉的部分分别是哪些，请就该处先以事实关系作答。"
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-a-father_blindspot-v2",
+          "text": "请按时间顺序梳理：关于家中长辈那段时期与对方之间往来的具体情形，本人亲眼可知与仅事后获悉的部分分别是哪些，请按记录原貌重新整理。"
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-a-father_blindspot-v3",
+          "text": "请把您本人亲眼所见的部分与从他人转述听来的部分分开来说——关于家中长辈那段时期与对方之间往来的具体情形，本人亲眼可知与仅事后获悉的部分分别是哪些，请把亲眼所见与转述听闻分开陈述。"
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-a-father_blindspot-v4",
+          "text": "宋多恩女士，关于家中长辈那段时期与对方之间往来的具体情形，本人亲眼可知与仅事后获悉的部分分别是哪些，请按记录原貌重新整理。"
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-a-father_blindspot-v5",
+          "text": "请按时间顺序梳理：关于家中长辈那段时期与对方之间往来的具体情形，本人亲眼可知与仅事后获悉的部分分别是哪些，请把亲眼所见与转述听闻分开陈述。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "questionType": "fact_pursuit",
+      "targetParty": "b",
+      "angleId": "father_blindspot",
+      "variants": [
+        {
+          "id": "judgeq-d-3-fact_pursuit-b-father_blindspot-v1",
+          "text": "崔秀敏女士，关于您本人对家中长辈相关请托所给出的回应，那段时间里具体走过的处理步骤分别是哪些，请按时间顺序逐项作答。"
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-b-father_blindspot-v2",
+          "text": "请按时间顺序梳理：关于您本人对家中长辈相关请托所给出的回应，那段时间里具体走过的处理步骤分别是哪些，请将本人主动发起与对方先行发起的部分分开作答。"
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-b-father_blindspot-v3",
+          "text": "请区分作答：本人亲手发出的内容与对方先发来的内容——关于您本人对家中长辈相关请托所给出的回应，那段时间里具体走过的处理步骤分别是哪些，请就该处先以事实关系作答。"
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-b-father_blindspot-v4",
+          "text": "崔秀敏女士，关于您本人对家中长辈相关请托所给出的回应，那段时间里具体走过的处理步骤分别是哪些，请将本人主动发起与对方先行发起的部分分开作答。"
+        },
+        {
+          "id": "judgeq-d-3-fact_pursuit-b-father_blindspot-v5",
+          "text": "请按时间顺序梳理：关于您本人对家中长辈相关请托所给出的回应，那段时间里具体走过的处理步骤分别是哪些，请就该处先以事实关系作答。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "questionType": "motive_search",
+      "targetParty": "a",
+      "angleId": "father_blindspot",
+      "variants": [
+        {
+          "id": "judgeq-d-3-motive_search-a-father_blindspot-v1",
+          "text": "宋多恩女士，您并未充分核对家中长辈那段往来的完整脉络，却把对方传来的提醒一概视为多余之举，请说明判断依据是什么。"
+        },
+        {
+          "id": "judgeq-d-3-motive_search-a-father_blindspot-v2",
+          "text": "请说明：当时作出此种判断时，您并未充分核对家中长辈那段往来的完整脉络，却把对方传来的提醒一概视为多余之举，请回答当时作此选择的理由。"
+        },
+        {
+          "id": "judgeq-d-3-motive_search-a-father_blindspot-v3",
+          "text": "在把疑虑直接公开发布之前，您并未充分核对家中长辈那段往来的完整脉络，却把对方传来的提醒一概视为多余之举，请就当时的考量先以本人能负责的范围作答。"
+        },
+        {
+          "id": "judgeq-d-3-motive_search-a-father_blindspot-v4",
+          "text": "宋多恩女士，您并未充分核对家中长辈那段往来的完整脉络，却把对方传来的提醒一概视为多余之举，请回答当时作此选择的理由。"
+        },
+        {
+          "id": "judgeq-d-3-motive_search-a-father_blindspot-v5",
+          "text": "请说明：当时作出此种判断时，您并未充分核对家中长辈那段往来的完整脉络，却把对方传来的提醒一概视为多余之举，请就当时的考量先以本人能负责的范围作答。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "questionType": "motive_search",
+      "targetParty": "b",
+      "angleId": "father_blindspot",
+      "variants": [
+        {
+          "id": "judgeq-d-3-motive_search-b-father_blindspot-v1",
+          "text": "崔秀敏女士，在察觉到家中长辈的请托可能引发疑虑时，您本人当时为何选择延后核对而不是即时面对，请说明当时作此处置的理由。"
+        },
+        {
+          "id": "judgeq-d-3-motive_search-b-father_blindspot-v2",
+          "text": "请说明：当时作出此种处置时，在察觉到家中长辈的请托可能引发疑虑时，您本人当时为何选择延后核对而不是即时面对，请就本人能负责的范围作答。"
+        },
+        {
+          "id": "judgeq-d-3-motive_search-b-father_blindspot-v3",
+          "text": "在选择以那种方式联络的背后，在察觉到家中长辈的请托可能引发疑虑时，您本人当时为何选择延后核对而不是即时面对，请回答当时的考量是什么。"
+        },
+        {
+          "id": "judgeq-d-3-motive_search-b-father_blindspot-v4",
+          "text": "崔秀敏女士，在察觉到家中长辈的请托可能引发疑虑时，您本人当时为何选择延后核对而不是即时面对，请就本人能负责的范围作答。"
+        },
+        {
+          "id": "judgeq-d-3-motive_search-b-father_blindspot-v5",
+          "text": "请说明：当时作出此种处置时，在察觉到家中长辈的请托可能引发疑虑时，您本人当时为何选择延后核对而不是即时面对，请回答当时的考量是什么。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "questionType": "empathy_approach",
+      "targetParty": "a",
+      "angleId": "father_blindspot",
+      "variants": [
+        {
+          "id": "judgeq-d-3-empathy_approach-a-father_blindspot-v1",
+          "text": "宋多恩女士，在反复回想家中长辈那段往来的过程中，最让您难以释怀的一段，请把您当时最在意的一段先讲出来。"
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-a-father_blindspot-v2",
+          "text": "请在能说的范围内回顾——在反复回想家中长辈那段往来的过程中，最让您难以释怀的一段，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-a-father_blindspot-v3",
+          "text": "不必现在就下结论。在反复回想家中长辈那段往来的过程中，最让您难以释怀的一段，请把您能说出的部分先讲一段。"
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-a-father_blindspot-v4",
+          "text": "宋多恩女士，在反复回想家中长辈那段往来的过程中，最让您难以释怀的一段，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-a-father_blindspot-v5",
+          "text": "请在能说的范围内回顾——在反复回想家中长辈那段往来的过程中，最让您难以释怀的一段，请把您能说出的部分先讲一段。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-3",
+      "questionType": "empathy_approach",
+      "targetParty": "b",
+      "angleId": "father_blindspot",
+      "variants": [
+        {
+          "id": "judgeq-d-3-empathy_approach-b-father_blindspot-v1",
+          "text": "崔秀敏女士，在面对家中长辈那段往来的当时，您本人最为难的一段，请把您当时最为难的一段先讲出来。"
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-b-father_blindspot-v2",
+          "text": "请在能说的范围内回顾——在面对家中长辈那段往来的当时，您本人最为难的一段，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-b-father_blindspot-v3",
+          "text": "不必现在就下结论。在面对家中长辈那段往来的当时，您本人最为难的一段，请把您能说出的部分先讲一段。"
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-b-father_blindspot-v4",
+          "text": "崔秀敏女士，在面对家中长辈那段往来的当时，您本人最为难的一段，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-3-empathy_approach-b-father_blindspot-v5",
+          "text": "请在能说的范围内回顾——在面对家中长辈那段往来的当时，您本人最为难的一段，请把您能说出的部分先讲一段。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "questionType": "fact_pursuit",
+      "targetParty": "a",
+      "angleId": "severance_chat_gap",
+      "variants": [
+        {
+          "id": "judgeq-d-4-fact_pursuit-a-severance_chat_gap-v1",
+          "text": "宋多恩女士，关于过往聊天记录中“由我来收尾”这类话语与之后断交之间的空白时段，本人亲手翻阅过的记录与仅听闻的部分分别是哪些，请就该处先以事实关系作答。"
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-a-severance_chat_gap-v2",
+          "text": "请按时间顺序梳理：关于过往聊天记录中“由我来收尾”这类话语与之后断交之间的空白时段，本人亲手翻阅过的记录与仅听闻的部分分别是哪些，请按记录原貌重新整理。"
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-a-severance_chat_gap-v3",
+          "text": "请把您本人亲眼所见的部分与从他人转述听来的部分分开来说——关于过往聊天记录中“由我来收尾”这类话语与之后断交之间的空白时段，本人亲手翻阅过的记录与仅听闻的部分分别是哪些，请把亲眼所见与转述听闻分开陈述。"
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-a-severance_chat_gap-v4",
+          "text": "宋多恩女士，关于过往聊天记录中“由我来收尾”这类话语与之后断交之间的空白时段，本人亲手翻阅过的记录与仅听闻的部分分别是哪些，请按记录原貌重新整理。"
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-a-severance_chat_gap-v5",
+          "text": "请按时间顺序梳理：关于过往聊天记录中“由我来收尾”这类话语与之后断交之间的空白时段，本人亲手翻阅过的记录与仅听闻的部分分别是哪些，请把亲眼所见与转述听闻分开陈述。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "questionType": "fact_pursuit",
+      "targetParty": "b",
+      "angleId": "severance_chat_gap",
+      "variants": [
+        {
+          "id": "judgeq-d-4-fact_pursuit-b-severance_chat_gap-v1",
+          "text": "崔秀敏女士，关于您本人写下的那些话语以及之后未再发声的那段时段，按时间顺序逐项是怎样的，请按时间顺序逐项作答。"
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-b-severance_chat_gap-v2",
+          "text": "请按时间顺序梳理：关于您本人写下的那些话语以及之后未再发声的那段时段，按时间顺序逐项是怎样的，请将本人主动发起与对方先行发起的部分分开作答。"
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-b-severance_chat_gap-v3",
+          "text": "请区分作答：本人亲手发出的内容与对方先发来的内容——关于您本人写下的那些话语以及之后未再发声的那段时段，按时间顺序逐项是怎样的，请就该处先以事实关系作答。"
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-b-severance_chat_gap-v4",
+          "text": "崔秀敏女士，关于您本人写下的那些话语以及之后未再发声的那段时段，按时间顺序逐项是怎样的，请将本人主动发起与对方先行发起的部分分开作答。"
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-b-severance_chat_gap-v5",
+          "text": "请按时间顺序梳理：关于您本人写下的那些话语以及之后未再发声的那段时段，按时间顺序逐项是怎样的，请就该处先以事实关系作答。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "questionType": "motive_search",
+      "targetParty": "a",
+      "angleId": "severance_chat_gap",
+      "variants": [
+        {
+          "id": "judgeq-d-4-motive_search-a-severance_chat_gap-v1",
+          "text": "宋多恩女士，您并未读到那段空白时段的完整背景，便径直把对方当时的沉默定性为冷漠或抛弃，请说明判断依据是什么。"
+        },
+        {
+          "id": "judgeq-d-4-motive_search-a-severance_chat_gap-v2",
+          "text": "请说明：当时作出此种判断时，您并未读到那段空白时段的完整背景，便径直把对方当时的沉默定性为冷漠或抛弃，请回答当时作此选择的理由。"
+        },
+        {
+          "id": "judgeq-d-4-motive_search-a-severance_chat_gap-v3",
+          "text": "在把疑虑直接公开发布之前，您并未读到那段空白时段的完整背景，便径直把对方当时的沉默定性为冷漠或抛弃，请就当时的考量先以本人能负责的范围作答。"
+        },
+        {
+          "id": "judgeq-d-4-motive_search-a-severance_chat_gap-v4",
+          "text": "宋多恩女士，您并未读到那段空白时段的完整背景，便径直把对方当时的沉默定性为冷漠或抛弃，请回答当时作此选择的理由。"
+        },
+        {
+          "id": "judgeq-d-4-motive_search-a-severance_chat_gap-v5",
+          "text": "请说明：当时作出此种判断时，您并未读到那段空白时段的完整背景，便径直把对方当时的沉默定性为冷漠或抛弃，请就当时的考量先以本人能负责的范围作答。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "questionType": "motive_search",
+      "targetParty": "b",
+      "angleId": "severance_chat_gap",
+      "variants": [
+        {
+          "id": "judgeq-d-4-motive_search-b-severance_chat_gap-v1",
+          "text": "崔秀敏女士，在写下那些话语之后选择长期未再发声的背后，您本人当时的考量是什么，请说明当时作此处置的理由。"
+        },
+        {
+          "id": "judgeq-d-4-motive_search-b-severance_chat_gap-v2",
+          "text": "请说明：当时作出此种处置时，在写下那些话语之后选择长期未再发声的背后，您本人当时的考量是什么，请就本人能负责的范围作答。"
+        },
+        {
+          "id": "judgeq-d-4-motive_search-b-severance_chat_gap-v3",
+          "text": "在选择以那种方式联络的背后，在写下那些话语之后选择长期未再发声的背后，您本人当时的考量是什么，请回答当时的考量是什么。"
+        },
+        {
+          "id": "judgeq-d-4-motive_search-b-severance_chat_gap-v4",
+          "text": "崔秀敏女士，在写下那些话语之后选择长期未再发声的背后，您本人当时的考量是什么，请就本人能负责的范围作答。"
+        },
+        {
+          "id": "judgeq-d-4-motive_search-b-severance_chat_gap-v5",
+          "text": "请说明：当时作出此种处置时，在写下那些话语之后选择长期未再发声的背后，您本人当时的考量是什么，请回答当时的考量是什么。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "questionType": "empathy_approach",
+      "targetParty": "a",
+      "angleId": "severance_chat_gap",
+      "variants": [
+        {
+          "id": "judgeq-d-4-empathy_approach-a-severance_chat_gap-v1",
+          "text": "宋多恩女士，在反复回想那段空白时段的过程中，最让您难以放下的一段，请把您当时最在意的一段先讲出来。"
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-a-severance_chat_gap-v2",
+          "text": "请在能说的范围内回顾——在反复回想那段空白时段的过程中，最让您难以放下的一段，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-a-severance_chat_gap-v3",
+          "text": "不必现在就下结论。在反复回想那段空白时段的过程中，最让您难以放下的一段，请把您能说出的部分先讲一段。"
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-a-severance_chat_gap-v4",
+          "text": "宋多恩女士，在反复回想那段空白时段的过程中，最让您难以放下的一段，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-a-severance_chat_gap-v5",
+          "text": "请在能说的范围内回顾——在反复回想那段空白时段的过程中，最让您难以放下的一段，请把您能说出的部分先讲一段。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "questionType": "empathy_approach",
+      "targetParty": "b",
+      "angleId": "severance_chat_gap",
+      "variants": [
+        {
+          "id": "judgeq-d-4-empathy_approach-b-severance_chat_gap-v1",
+          "text": "崔秀敏女士，在那段长时间未再发声的日子里，您本人最艰难的一段，请把您当时最为难的一段先讲出来。"
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-b-severance_chat_gap-v2",
+          "text": "请在能说的范围内回顾——在那段长时间未再发声的日子里，您本人最艰难的一段，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-b-severance_chat_gap-v3",
+          "text": "不必现在就下结论。在那段长时间未再发声的日子里，您本人最艰难的一段，请把您能说出的部分先讲一段。"
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-b-severance_chat_gap-v4",
+          "text": "崔秀敏女士，在那段长时间未再发声的日子里，您本人最艰难的一段，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-b-severance_chat_gap-v5",
+          "text": "请在能说的范围内回顾——在那段长时间未再发声的日子里，您本人最艰难的一段，请把您能说出的部分先讲一段。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "questionType": "fact_pursuit",
+      "targetParty": "a",
+      "angleId": "transfer_repayment",
+      "variants": [
+        {
+          "id": "judgeq-d-4-fact_pursuit-a-transfer_repayment-v1",
+          "text": "宋多恩女士，关于三次汇款、借据与部分还款之后联络中断的整段流程，本人亲手核对过对账记录的部分与仅听闻的部分分别是哪些，请就该处先以事实关系作答。"
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-a-transfer_repayment-v2",
+          "text": "请按时间顺序梳理：关于三次汇款、借据与部分还款之后联络中断的整段流程，本人亲手核对过对账记录的部分与仅听闻的部分分别是哪些，请按记录原貌重新整理。"
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-a-transfer_repayment-v3",
+          "text": "请把您本人亲眼所见的部分与从他人转述听来的部分分开来说——关于三次汇款、借据与部分还款之后联络中断的整段流程，本人亲手核对过对账记录的部分与仅听闻的部分分别是哪些，请把亲眼所见与转述听闻分开陈述。"
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-a-transfer_repayment-v4",
+          "text": "宋多恩女士，关于三次汇款、借据与部分还款之后联络中断的整段流程，本人亲手核对过对账记录的部分与仅听闻的部分分别是哪些，请按记录原貌重新整理。"
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-a-transfer_repayment-v5",
+          "text": "请按时间顺序梳理：关于三次汇款、借据与部分还款之后联络中断的整段流程，本人亲手核对过对账记录的部分与仅听闻的部分分别是哪些，请把亲眼所见与转述听闻分开陈述。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "questionType": "fact_pursuit",
+      "targetParty": "b",
+      "angleId": "transfer_repayment",
+      "variants": [
+        {
+          "id": "judgeq-d-4-fact_pursuit-b-transfer_repayment-v1",
+          "text": "崔秀敏女士，关于您本人或家中长辈在那段往来中经手的每一笔金额、收据与凭据，按时间顺序逐项的具体经手过程，请按时间顺序逐项作答。"
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-b-transfer_repayment-v2",
+          "text": "请按时间顺序梳理：关于您本人或家中长辈在那段往来中经手的每一笔金额、收据与凭据，按时间顺序逐项的具体经手过程，请将本人主动发起与对方先行发起的部分分开作答。"
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-b-transfer_repayment-v3",
+          "text": "请区分作答：本人亲手发出的内容与对方先发来的内容——关于您本人或家中长辈在那段往来中经手的每一笔金额、收据与凭据，按时间顺序逐项的具体经手过程，请就该处先以事实关系作答。"
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-b-transfer_repayment-v4",
+          "text": "崔秀敏女士，关于您本人或家中长辈在那段往来中经手的每一笔金额、收据与凭据，按时间顺序逐项的具体经手过程，请将本人主动发起与对方先行发起的部分分开作答。"
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-b-transfer_repayment-v5",
+          "text": "请按时间顺序梳理：关于您本人或家中长辈在那段往来中经手的每一笔金额、收据与凭据，按时间顺序逐项的具体经手过程，请就该处先以事实关系作答。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "questionType": "motive_search",
+      "targetParty": "a",
+      "angleId": "transfer_repayment",
+      "variants": [
+        {
+          "id": "judgeq-d-4-motive_search-a-transfer_repayment-v1",
+          "text": "宋多恩女士，您并未掌握完整的对账与凭据资料，却据此断定那段往来已经完全结清或彻底失约，请说明判断依据是什么。"
+        },
+        {
+          "id": "judgeq-d-4-motive_search-a-transfer_repayment-v2",
+          "text": "请说明：当时作出此种判断时，您并未掌握完整的对账与凭据资料，却据此断定那段往来已经完全结清或彻底失约，请回答当时作此选择的理由。"
+        },
+        {
+          "id": "judgeq-d-4-motive_search-a-transfer_repayment-v3",
+          "text": "在把疑虑直接公开发布之前，您并未掌握完整的对账与凭据资料，却据此断定那段往来已经完全结清或彻底失约，请就当时的考量先以本人能负责的范围作答。"
+        },
+        {
+          "id": "judgeq-d-4-motive_search-a-transfer_repayment-v4",
+          "text": "宋多恩女士，您并未掌握完整的对账与凭据资料，却据此断定那段往来已经完全结清或彻底失约，请回答当时作此选择的理由。"
+        },
+        {
+          "id": "judgeq-d-4-motive_search-a-transfer_repayment-v5",
+          "text": "请说明：当时作出此种判断时，您并未掌握完整的对账与凭据资料，却据此断定那段往来已经完全结清或彻底失约，请就当时的考量先以本人能负责的范围作答。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "questionType": "motive_search",
+      "targetParty": "b",
+      "angleId": "transfer_repayment",
+      "variants": [
+        {
+          "id": "judgeq-d-4-motive_search-b-transfer_repayment-v1",
+          "text": "崔秀敏女士，在察觉到那段往来之后联络中断时，您本人当时为何作出那样的处置方式，请说明当时作此处置的理由。"
+        },
+        {
+          "id": "judgeq-d-4-motive_search-b-transfer_repayment-v2",
+          "text": "请说明：当时作出此种处置时，在察觉到那段往来之后联络中断时，您本人当时为何作出那样的处置方式，请就本人能负责的范围作答。"
+        },
+        {
+          "id": "judgeq-d-4-motive_search-b-transfer_repayment-v3",
+          "text": "在选择以那种方式联络的背后，在察觉到那段往来之后联络中断时，您本人当时为何作出那样的处置方式，请回答当时的考量是什么。"
+        },
+        {
+          "id": "judgeq-d-4-motive_search-b-transfer_repayment-v4",
+          "text": "崔秀敏女士，在察觉到那段往来之后联络中断时，您本人当时为何作出那样的处置方式，请就本人能负责的范围作答。"
+        },
+        {
+          "id": "judgeq-d-4-motive_search-b-transfer_repayment-v5",
+          "text": "请说明：当时作出此种处置时，在察觉到那段往来之后联络中断时，您本人当时为何作出那样的处置方式，请回答当时的考量是什么。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "questionType": "empathy_approach",
+      "targetParty": "a",
+      "angleId": "transfer_repayment",
+      "variants": [
+        {
+          "id": "judgeq-d-4-empathy_approach-a-transfer_repayment-v1",
+          "text": "宋多恩女士，在反复对照那段往来记录的过程中，最让您难以释怀的一段，请把您当时最在意的一段先讲出来。"
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-a-transfer_repayment-v2",
+          "text": "请在能说的范围内回顾——在反复对照那段往来记录的过程中，最让您难以释怀的一段，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-a-transfer_repayment-v3",
+          "text": "不必现在就下结论。在反复对照那段往来记录的过程中，最让您难以释怀的一段，请把您能说出的部分先讲一段。"
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-a-transfer_repayment-v4",
+          "text": "宋多恩女士，在反复对照那段往来记录的过程中，最让您难以释怀的一段，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-a-transfer_repayment-v5",
+          "text": "请在能说的范围内回顾——在反复对照那段往来记录的过程中，最让您难以释怀的一段，请把您能说出的部分先讲一段。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "questionType": "empathy_approach",
+      "targetParty": "b",
+      "angleId": "transfer_repayment",
+      "variants": [
+        {
+          "id": "judgeq-d-4-empathy_approach-b-transfer_repayment-v1",
+          "text": "崔秀敏女士，在那段往来的处理过程当中，您本人最为难的一段，请把您当时最为难的一段先讲出来。"
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-b-transfer_repayment-v2",
+          "text": "请在能说的范围内回顾——在那段往来的处理过程当中，您本人最为难的一段，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-b-transfer_repayment-v3",
+          "text": "不必现在就下结论。在那段往来的处理过程当中，您本人最为难的一段，请把您能说出的部分先讲一段。"
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-b-transfer_repayment-v4",
+          "text": "崔秀敏女士，在那段往来的处理过程当中，您本人最为难的一段，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-b-transfer_repayment-v5",
+          "text": "请在能说的范围内回顾——在那段往来的处理过程当中，您本人最为难的一段，请把您能说出的部分先讲一段。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "questionType": "fact_pursuit",
+      "targetParty": "a",
+      "angleId": "protective_silence",
+      "variants": [
+        {
+          "id": "judgeq-d-4-fact_pursuit-a-protective_silence-v1",
+          "text": "宋多恩女士，关于您本人长期对那段过往未向当事人说明的具体时间段与场合，请就该处先以事实关系作答。"
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-a-protective_silence-v2",
+          "text": "请按时间顺序梳理：关于您本人长期对那段过往未向当事人说明的具体时间段与场合，请按记录原貌重新整理。"
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-a-protective_silence-v3",
+          "text": "请把您本人亲眼所见的部分与从他人转述听来的部分分开来说——关于您本人长期对那段过往未向当事人说明的具体时间段与场合，请把亲眼所见与转述听闻分开陈述。"
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-a-protective_silence-v4",
+          "text": "宋多恩女士，关于您本人长期对那段过往未向当事人说明的具体时间段与场合，请按记录原貌重新整理。"
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-a-protective_silence-v5",
+          "text": "请按时间顺序梳理：关于您本人长期对那段过往未向当事人说明的具体时间段与场合，请把亲眼所见与转述听闻分开陈述。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "questionType": "fact_pursuit",
+      "targetParty": "b",
+      "angleId": "protective_silence",
+      "variants": [
+        {
+          "id": "judgeq-d-4-fact_pursuit-b-protective_silence-v1",
+          "text": "崔秀敏女士，关于您本人选择长期不开口说明那段过往的具体经过，那段时间里所做与未做的事情分别是哪些，请按时间顺序逐项作答。"
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-b-protective_silence-v2",
+          "text": "请按时间顺序梳理：关于您本人选择长期不开口说明那段过往的具体经过，那段时间里所做与未做的事情分别是哪些，请将本人主动发起与对方先行发起的部分分开作答。"
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-b-protective_silence-v3",
+          "text": "请区分作答：本人亲手发出的内容与对方先发来的内容——关于您本人选择长期不开口说明那段过往的具体经过，那段时间里所做与未做的事情分别是哪些，请就该处先以事实关系作答。"
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-b-protective_silence-v4",
+          "text": "崔秀敏女士，关于您本人选择长期不开口说明那段过往的具体经过，那段时间里所做与未做的事情分别是哪些，请将本人主动发起与对方先行发起的部分分开作答。"
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-b-protective_silence-v5",
+          "text": "请按时间顺序梳理：关于您本人选择长期不开口说明那段过往的具体经过，那段时间里所做与未做的事情分别是哪些，请就该处先以事实关系作答。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "questionType": "motive_search",
+      "targetParty": "a",
+      "angleId": "protective_silence",
+      "variants": [
+        {
+          "id": "judgeq-d-4-motive_search-a-protective_silence-v1",
+          "text": "宋多恩女士，您并未掌握对方当时的全部处境，便径直把对方的长期沉默一概定性为冷漠或回避，请说明判断依据是什么。"
+        },
+        {
+          "id": "judgeq-d-4-motive_search-a-protective_silence-v2",
+          "text": "请说明：当时作出此种判断时，您并未掌握对方当时的全部处境，便径直把对方的长期沉默一概定性为冷漠或回避，请回答当时作此选择的理由。"
+        },
+        {
+          "id": "judgeq-d-4-motive_search-a-protective_silence-v3",
+          "text": "在把疑虑直接公开发布之前，您并未掌握对方当时的全部处境，便径直把对方的长期沉默一概定性为冷漠或回避，请就当时的考量先以本人能负责的范围作答。"
+        },
+        {
+          "id": "judgeq-d-4-motive_search-a-protective_silence-v4",
+          "text": "宋多恩女士，您并未掌握对方当时的全部处境，便径直把对方的长期沉默一概定性为冷漠或回避，请回答当时作此选择的理由。"
+        },
+        {
+          "id": "judgeq-d-4-motive_search-a-protective_silence-v5",
+          "text": "请说明：当时作出此种判断时，您并未掌握对方当时的全部处境，便径直把对方的长期沉默一概定性为冷漠或回避，请就当时的考量先以本人能负责的范围作答。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "questionType": "motive_search",
+      "targetParty": "b",
+      "angleId": "protective_silence",
+      "variants": [
+        {
+          "id": "judgeq-d-4-motive_search-b-protective_silence-v1",
+          "text": "崔秀敏女士，在选择长期不开口说明的背后，您本人当时的考量是什么，请说明当时作此处置的理由。"
+        },
+        {
+          "id": "judgeq-d-4-motive_search-b-protective_silence-v2",
+          "text": "请说明：当时作出此种处置时，在选择长期不开口说明的背后，您本人当时的考量是什么，请就本人能负责的范围作答。"
+        },
+        {
+          "id": "judgeq-d-4-motive_search-b-protective_silence-v3",
+          "text": "在选择以那种方式联络的背后，在选择长期不开口说明的背后，您本人当时的考量是什么，请回答当时的考量是什么。"
+        },
+        {
+          "id": "judgeq-d-4-motive_search-b-protective_silence-v4",
+          "text": "崔秀敏女士，在选择长期不开口说明的背后，您本人当时的考量是什么，请就本人能负责的范围作答。"
+        },
+        {
+          "id": "judgeq-d-4-motive_search-b-protective_silence-v5",
+          "text": "请说明：当时作出此种处置时，在选择长期不开口说明的背后，您本人当时的考量是什么，请回答当时的考量是什么。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "questionType": "empathy_approach",
+      "targetParty": "a",
+      "angleId": "protective_silence",
+      "variants": [
+        {
+          "id": "judgeq-d-4-empathy_approach-a-protective_silence-v1",
+          "text": "宋多恩女士，在那段长期未开口的日子里，最让您难以放下的一段心情，请把您当时最在意的一段先讲出来。"
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-a-protective_silence-v2",
+          "text": "请在能说的范围内回顾——在那段长期未开口的日子里，最让您难以放下的一段心情，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-a-protective_silence-v3",
+          "text": "不必现在就下结论。在那段长期未开口的日子里，最让您难以放下的一段心情，请把您能说出的部分先讲一段。"
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-a-protective_silence-v4",
+          "text": "宋多恩女士，在那段长期未开口的日子里，最让您难以放下的一段心情，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-a-protective_silence-v5",
+          "text": "请在能说的范围内回顾——在那段长期未开口的日子里，最让您难以放下的一段心情，请把您能说出的部分先讲一段。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "questionType": "empathy_approach",
+      "targetParty": "b",
+      "angleId": "protective_silence",
+      "variants": [
+        {
+          "id": "judgeq-d-4-empathy_approach-b-protective_silence-v1",
+          "text": "崔秀敏女士，在选择长期沉默的当时，您本人最艰难的一段，请把您当时最为难的一段先讲出来。"
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-b-protective_silence-v2",
+          "text": "请在能说的范围内回顾——在选择长期沉默的当时，您本人最艰难的一段，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-b-protective_silence-v3",
+          "text": "不必现在就下结论。在选择长期沉默的当时，您本人最艰难的一段，请把您能说出的部分先讲一段。"
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-b-protective_silence-v4",
+          "text": "崔秀敏女士，在选择长期沉默的当时，您本人最艰难的一段，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-b-protective_silence-v5",
+          "text": "请在能说的范围内回顾——在选择长期沉默的当时，您本人最艰难的一段，请把您能说出的部分先讲一段。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "questionType": "fact_pursuit",
+      "targetParty": "a",
+      "angleId": "loan_document_weight",
+      "variants": [
+        {
+          "id": "judgeq-d-4-fact_pursuit-a-loan_document_weight-v1",
+          "text": "宋多恩女士，关于借据与部分还款之后联络中断之间的具体衔接过程，本人亲手对照过凭据的部分与仅听闻的部分分别是哪些，请就该处先以事实关系作答。"
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-a-loan_document_weight-v2",
+          "text": "请按时间顺序梳理：关于借据与部分还款之后联络中断之间的具体衔接过程，本人亲手对照过凭据的部分与仅听闻的部分分别是哪些，请按记录原貌重新整理。"
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-a-loan_document_weight-v3",
+          "text": "请把您本人亲眼所见的部分与从他人转述听来的部分分开来说——关于借据与部分还款之后联络中断之间的具体衔接过程，本人亲手对照过凭据的部分与仅听闻的部分分别是哪些，请把亲眼所见与转述听闻分开陈述。"
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-a-loan_document_weight-v4",
+          "text": "宋多恩女士，关于借据与部分还款之后联络中断之间的具体衔接过程，本人亲手对照过凭据的部分与仅听闻的部分分别是哪些，请按记录原貌重新整理。"
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-a-loan_document_weight-v5",
+          "text": "请按时间顺序梳理：关于借据与部分还款之后联络中断之间的具体衔接过程，本人亲手对照过凭据的部分与仅听闻的部分分别是哪些，请把亲眼所见与转述听闻分开陈述。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "questionType": "fact_pursuit",
+      "targetParty": "b",
+      "angleId": "loan_document_weight",
+      "variants": [
+        {
+          "id": "judgeq-d-4-fact_pursuit-b-loan_document_weight-v1",
+          "text": "崔秀敏女士，关于您本人或家中长辈在那段往来中所留下的借据与还款凭据，本人亲手处理与他人代为处理的部分分别是哪些，请按时间顺序逐项作答。"
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-b-loan_document_weight-v2",
+          "text": "请按时间顺序梳理：关于您本人或家中长辈在那段往来中所留下的借据与还款凭据，本人亲手处理与他人代为处理的部分分别是哪些，请将本人主动发起与对方先行发起的部分分开作答。"
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-b-loan_document_weight-v3",
+          "text": "请区分作答：本人亲手发出的内容与对方先发来的内容——关于您本人或家中长辈在那段往来中所留下的借据与还款凭据，本人亲手处理与他人代为处理的部分分别是哪些，请就该处先以事实关系作答。"
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-b-loan_document_weight-v4",
+          "text": "崔秀敏女士，关于您本人或家中长辈在那段往来中所留下的借据与还款凭据，本人亲手处理与他人代为处理的部分分别是哪些，请将本人主动发起与对方先行发起的部分分开作答。"
+        },
+        {
+          "id": "judgeq-d-4-fact_pursuit-b-loan_document_weight-v5",
+          "text": "请按时间顺序梳理：关于您本人或家中长辈在那段往来中所留下的借据与还款凭据，本人亲手处理与他人代为处理的部分分别是哪些，请就该处先以事实关系作答。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "questionType": "motive_search",
+      "targetParty": "a",
+      "angleId": "loan_document_weight",
+      "variants": [
+        {
+          "id": "judgeq-d-4-motive_search-a-loan_document_weight-v1",
+          "text": "宋多恩女士，您并未掌握完整的凭据资料，便径直把那段往来一概定性为善意馈赠或恶意拖欠之一，请说明判断依据是什么。"
+        },
+        {
+          "id": "judgeq-d-4-motive_search-a-loan_document_weight-v2",
+          "text": "请说明：当时作出此种判断时，您并未掌握完整的凭据资料，便径直把那段往来一概定性为善意馈赠或恶意拖欠之一，请回答当时作此选择的理由。"
+        },
+        {
+          "id": "judgeq-d-4-motive_search-a-loan_document_weight-v3",
+          "text": "在把疑虑直接公开发布之前，您并未掌握完整的凭据资料，便径直把那段往来一概定性为善意馈赠或恶意拖欠之一，请就当时的考量先以本人能负责的范围作答。"
+        },
+        {
+          "id": "judgeq-d-4-motive_search-a-loan_document_weight-v4",
+          "text": "宋多恩女士，您并未掌握完整的凭据资料，便径直把那段往来一概定性为善意馈赠或恶意拖欠之一，请回答当时作此选择的理由。"
+        },
+        {
+          "id": "judgeq-d-4-motive_search-a-loan_document_weight-v5",
+          "text": "请说明：当时作出此种判断时，您并未掌握完整的凭据资料，便径直把那段往来一概定性为善意馈赠或恶意拖欠之一，请就当时的考量先以本人能负责的范围作答。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "questionType": "motive_search",
+      "targetParty": "b",
+      "angleId": "loan_document_weight",
+      "variants": [
+        {
+          "id": "judgeq-d-4-motive_search-b-loan_document_weight-v1",
+          "text": "崔秀敏女士，在面对那批借据与还款凭据时，您本人当时为何选择那样的处置方式，请说明当时作此处置的理由。"
+        },
+        {
+          "id": "judgeq-d-4-motive_search-b-loan_document_weight-v2",
+          "text": "请说明：当时作出此种处置时，在面对那批借据与还款凭据时，您本人当时为何选择那样的处置方式，请就本人能负责的范围作答。"
+        },
+        {
+          "id": "judgeq-d-4-motive_search-b-loan_document_weight-v3",
+          "text": "在选择以那种方式联络的背后，在面对那批借据与还款凭据时，您本人当时为何选择那样的处置方式，请回答当时的考量是什么。"
+        },
+        {
+          "id": "judgeq-d-4-motive_search-b-loan_document_weight-v4",
+          "text": "崔秀敏女士，在面对那批借据与还款凭据时，您本人当时为何选择那样的处置方式，请就本人能负责的范围作答。"
+        },
+        {
+          "id": "judgeq-d-4-motive_search-b-loan_document_weight-v5",
+          "text": "请说明：当时作出此种处置时，在面对那批借据与还款凭据时，您本人当时为何选择那样的处置方式，请回答当时的考量是什么。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "questionType": "empathy_approach",
+      "targetParty": "a",
+      "angleId": "loan_document_weight",
+      "variants": [
+        {
+          "id": "judgeq-d-4-empathy_approach-a-loan_document_weight-v1",
+          "text": "宋多恩女士，在反复审视那批凭据的过程中，最让您难以释怀的一段，请把您当时最在意的一段先讲出来。"
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-a-loan_document_weight-v2",
+          "text": "请在能说的范围内回顾——在反复审视那批凭据的过程中，最让您难以释怀的一段，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-a-loan_document_weight-v3",
+          "text": "不必现在就下结论。在反复审视那批凭据的过程中，最让您难以释怀的一段，请把您能说出的部分先讲一段。"
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-a-loan_document_weight-v4",
+          "text": "宋多恩女士，在反复审视那批凭据的过程中，最让您难以释怀的一段，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-a-loan_document_weight-v5",
+          "text": "请在能说的范围内回顾——在反复审视那批凭据的过程中，最让您难以释怀的一段，请把您能说出的部分先讲一段。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-4",
+      "questionType": "empathy_approach",
+      "targetParty": "b",
+      "angleId": "loan_document_weight",
+      "variants": [
+        {
+          "id": "judgeq-d-4-empathy_approach-b-loan_document_weight-v1",
+          "text": "崔秀敏女士，在面对那段往来凭据的当时，您本人最为难的一段，请把您当时最为难的一段先讲出来。"
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-b-loan_document_weight-v2",
+          "text": "请在能说的范围内回顾——在面对那段往来凭据的当时，您本人最为难的一段，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-b-loan_document_weight-v3",
+          "text": "不必现在就下结论。在面对那段往来凭据的当时，您本人最为难的一段，请把您能说出的部分先讲一段。"
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-b-loan_document_weight-v4",
+          "text": "崔秀敏女士，在面对那段往来凭据的当时，您本人最为难的一段，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-4-empathy_approach-b-loan_document_weight-v5",
+          "text": "请在能说的范围内回顾——在面对那段往来凭据的当时，您本人最为难的一段，请把您能说出的部分先讲一段。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "questionType": "fact_pursuit",
+      "targetParty": "a",
+      "angleId": "first_groupchat_post",
+      "variants": [
+        {
+          "id": "judgeq-d-5-fact_pursuit-a-first_groupchat_post-v1",
+          "text": "宋多恩女士，关于您本人在群聊里最初发布的那段话，写下时的措辞、发布时点与具体内容，请就该处先以事实关系作答。"
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-a-first_groupchat_post-v2",
+          "text": "请按时间顺序梳理：关于您本人在群聊里最初发布的那段话，写下时的措辞、发布时点与具体内容，请按记录原貌重新整理。"
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-a-first_groupchat_post-v3",
+          "text": "请把您本人亲眼所见的部分与从他人转述听来的部分分开来说——关于您本人在群聊里最初发布的那段话，写下时的措辞、发布时点与具体内容，请把亲眼所见与转述听闻分开陈述。"
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-a-first_groupchat_post-v4",
+          "text": "宋多恩女士，关于您本人在群聊里最初发布的那段话，写下时的措辞、发布时点与具体内容，请按记录原貌重新整理。"
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-a-first_groupchat_post-v5",
+          "text": "请按时间顺序梳理：关于您本人在群聊里最初发布的那段话，写下时的措辞、发布时点与具体内容，请把亲眼所见与转述听闻分开陈述。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "questionType": "fact_pursuit",
+      "targetParty": "b",
+      "angleId": "first_groupchat_post",
+      "variants": [
+        {
+          "id": "judgeq-d-5-fact_pursuit-b-first_groupchat_post-v1",
+          "text": "崔秀敏女士，关于群聊里出现那段最初发言的现场，本人亲身在场与仅事后听闻的部分分别是哪些，请按时间顺序逐项作答。"
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-b-first_groupchat_post-v2",
+          "text": "请按时间顺序梳理：关于群聊里出现那段最初发言的现场，本人亲身在场与仅事后听闻的部分分别是哪些，请将本人主动发起与对方先行发起的部分分开作答。"
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-b-first_groupchat_post-v3",
+          "text": "请区分作答：本人亲手发出的内容与对方先发来的内容——关于群聊里出现那段最初发言的现场，本人亲身在场与仅事后听闻的部分分别是哪些，请就该处先以事实关系作答。"
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-b-first_groupchat_post-v4",
+          "text": "崔秀敏女士，关于群聊里出现那段最初发言的现场，本人亲身在场与仅事后听闻的部分分别是哪些，请将本人主动发起与对方先行发起的部分分开作答。"
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-b-first_groupchat_post-v5",
+          "text": "请按时间顺序梳理：关于群聊里出现那段最初发言的现场，本人亲身在场与仅事后听闻的部分分别是哪些，请就该处先以事实关系作答。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "questionType": "motive_search",
+      "targetParty": "a",
+      "angleId": "first_groupchat_post",
+      "variants": [
+        {
+          "id": "judgeq-d-5-motive_search-a-first_groupchat_post-v1",
+          "text": "宋多恩女士，您并未先行直接当面核对，便径直把那段断言公开发布到群聊之中，请说明判断依据是什么。"
+        },
+        {
+          "id": "judgeq-d-5-motive_search-a-first_groupchat_post-v2",
+          "text": "请说明：当时作出此种判断时，您并未先行直接当面核对，便径直把那段断言公开发布到群聊之中，请回答当时作此选择的理由。"
+        },
+        {
+          "id": "judgeq-d-5-motive_search-a-first_groupchat_post-v3",
+          "text": "在把疑虑直接公开发布之前，您并未先行直接当面核对，便径直把那段断言公开发布到群聊之中，请就当时的考量先以本人能负责的范围作答。"
+        },
+        {
+          "id": "judgeq-d-5-motive_search-a-first_groupchat_post-v4",
+          "text": "宋多恩女士，您并未先行直接当面核对，便径直把那段断言公开发布到群聊之中，请回答当时作此选择的理由。"
+        },
+        {
+          "id": "judgeq-d-5-motive_search-a-first_groupchat_post-v5",
+          "text": "请说明：当时作出此种判断时，您并未先行直接当面核对，便径直把那段断言公开发布到群聊之中，请就当时的考量先以本人能负责的范围作答。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "questionType": "motive_search",
+      "targetParty": "b",
+      "angleId": "first_groupchat_post",
+      "variants": [
+        {
+          "id": "judgeq-d-5-motive_search-b-first_groupchat_post-v1",
+          "text": "崔秀敏女士，在选择把那段断言先行公开发布而非先行核对的背后，您本人当时的考量是什么，请说明当时作此处置的理由。"
+        },
+        {
+          "id": "judgeq-d-5-motive_search-b-first_groupchat_post-v2",
+          "text": "请说明：当时作出此种处置时，在选择把那段断言先行公开发布而非先行核对的背后，您本人当时的考量是什么，请就本人能负责的范围作答。"
+        },
+        {
+          "id": "judgeq-d-5-motive_search-b-first_groupchat_post-v3",
+          "text": "在选择以那种方式联络的背后，在选择把那段断言先行公开发布而非先行核对的背后，您本人当时的考量是什么，请回答当时的考量是什么。"
+        },
+        {
+          "id": "judgeq-d-5-motive_search-b-first_groupchat_post-v4",
+          "text": "崔秀敏女士，在选择把那段断言先行公开发布而非先行核对的背后，您本人当时的考量是什么，请就本人能负责的范围作答。"
+        },
+        {
+          "id": "judgeq-d-5-motive_search-b-first_groupchat_post-v5",
+          "text": "请说明：当时作出此种处置时，在选择把那段断言先行公开发布而非先行核对的背后，您本人当时的考量是什么，请回答当时的考量是什么。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "questionType": "empathy_approach",
+      "targetParty": "a",
+      "angleId": "first_groupchat_post",
+      "variants": [
+        {
+          "id": "judgeq-d-5-empathy_approach-a-first_groupchat_post-v1",
+          "text": "宋多恩女士，在写下那段最初发言的当时，最让您难以放下的一段心情，请把您当时最在意的一段先讲出来。"
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-a-first_groupchat_post-v2",
+          "text": "请在能说的范围内回顾——在写下那段最初发言的当时，最让您难以放下的一段心情，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-a-first_groupchat_post-v3",
+          "text": "不必现在就下结论。在写下那段最初发言的当时，最让您难以放下的一段心情，请把您能说出的部分先讲一段。"
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-a-first_groupchat_post-v4",
+          "text": "宋多恩女士，在写下那段最初发言的当时，最让您难以放下的一段心情，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-a-first_groupchat_post-v5",
+          "text": "请在能说的范围内回顾——在写下那段最初发言的当时，最让您难以放下的一段心情，请把您能说出的部分先讲一段。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "questionType": "empathy_approach",
+      "targetParty": "b",
+      "angleId": "first_groupchat_post",
+      "variants": [
+        {
+          "id": "judgeq-d-5-empathy_approach-b-first_groupchat_post-v1",
+          "text": "崔秀敏女士，在面对那段最初发言的当时，您本人最艰难的一段，请把您当时最为难的一段先讲出来。"
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-b-first_groupchat_post-v2",
+          "text": "请在能说的范围内回顾——在面对那段最初发言的当时，您本人最艰难的一段，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-b-first_groupchat_post-v3",
+          "text": "不必现在就下结论。在面对那段最初发言的当时，您本人最艰难的一段，请把您能说出的部分先讲一段。"
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-b-first_groupchat_post-v4",
+          "text": "崔秀敏女士，在面对那段最初发言的当时，您本人最艰难的一段，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-b-first_groupchat_post-v5",
+          "text": "请在能说的范围内回顾——在面对那段最初发言的当时，您本人最艰难的一段，请把您能说出的部分先讲一段。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "questionType": "fact_pursuit",
+      "targetParty": "a",
+      "angleId": "pile_on_spread",
+      "variants": [
+        {
+          "id": "judgeq-d-5-fact_pursuit-a-pile_on_spread-v1",
+          "text": "宋多恩女士，关于群聊里其他人附和与扩散的具体经过，本人亲眼看到的字句与仅听闻的部分分别是哪些，请就该处先以事实关系作答。"
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-a-pile_on_spread-v2",
+          "text": "请按时间顺序梳理：关于群聊里其他人附和与扩散的具体经过，本人亲眼看到的字句与仅听闻的部分分别是哪些，请按记录原貌重新整理。"
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-a-pile_on_spread-v3",
+          "text": "请把您本人亲眼所见的部分与从他人转述听来的部分分开来说——关于群聊里其他人附和与扩散的具体经过，本人亲眼看到的字句与仅听闻的部分分别是哪些，请把亲眼所见与转述听闻分开陈述。"
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-a-pile_on_spread-v4",
+          "text": "宋多恩女士，关于群聊里其他人附和与扩散的具体经过，本人亲眼看到的字句与仅听闻的部分分别是哪些，请按记录原貌重新整理。"
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-a-pile_on_spread-v5",
+          "text": "请按时间顺序梳理：关于群聊里其他人附和与扩散的具体经过，本人亲眼看到的字句与仅听闻的部分分别是哪些，请把亲眼所见与转述听闻分开陈述。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "questionType": "fact_pursuit",
+      "targetParty": "b",
+      "angleId": "pile_on_spread",
+      "variants": [
+        {
+          "id": "judgeq-d-5-fact_pursuit-b-pile_on_spread-v1",
+          "text": "崔秀敏女士，关于附和扩散发生的现场，本人在场参与回应与仅在旁观看的部分分别是哪些，请按时间顺序逐项作答。"
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-b-pile_on_spread-v2",
+          "text": "请按时间顺序梳理：关于附和扩散发生的现场，本人在场参与回应与仅在旁观看的部分分别是哪些，请将本人主动发起与对方先行发起的部分分开作答。"
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-b-pile_on_spread-v3",
+          "text": "请区分作答：本人亲手发出的内容与对方先发来的内容——关于附和扩散发生的现场，本人在场参与回应与仅在旁观看的部分分别是哪些，请就该处先以事实关系作答。"
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-b-pile_on_spread-v4",
+          "text": "崔秀敏女士，关于附和扩散发生的现场，本人在场参与回应与仅在旁观看的部分分别是哪些，请将本人主动发起与对方先行发起的部分分开作答。"
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-b-pile_on_spread-v5",
+          "text": "请按时间顺序梳理：关于附和扩散发生的现场，本人在场参与回应与仅在旁观看的部分分别是哪些，请就该处先以事实关系作答。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "questionType": "motive_search",
+      "targetParty": "a",
+      "angleId": "pile_on_spread",
+      "variants": [
+        {
+          "id": "judgeq-d-5-motive_search-a-pile_on_spread-v1",
+          "text": "宋多恩女士，您并未当场出面纠正附和扩散的走向，却据此把整体声势的形成完全归责于他人，请说明判断依据是什么。"
+        },
+        {
+          "id": "judgeq-d-5-motive_search-a-pile_on_spread-v2",
+          "text": "请说明：当时作出此种判断时，您并未当场出面纠正附和扩散的走向，却据此把整体声势的形成完全归责于他人，请回答当时作此选择的理由。"
+        },
+        {
+          "id": "judgeq-d-5-motive_search-a-pile_on_spread-v3",
+          "text": "在把疑虑直接公开发布之前，您并未当场出面纠正附和扩散的走向，却据此把整体声势的形成完全归责于他人，请就当时的考量先以本人能负责的范围作答。"
+        },
+        {
+          "id": "judgeq-d-5-motive_search-a-pile_on_spread-v4",
+          "text": "宋多恩女士，您并未当场出面纠正附和扩散的走向，却据此把整体声势的形成完全归责于他人，请回答当时作此选择的理由。"
+        },
+        {
+          "id": "judgeq-d-5-motive_search-a-pile_on_spread-v5",
+          "text": "请说明：当时作出此种判断时，您并未当场出面纠正附和扩散的走向，却据此把整体声势的形成完全归责于他人，请就当时的考量先以本人能负责的范围作答。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "questionType": "motive_search",
+      "targetParty": "b",
+      "angleId": "pile_on_spread",
+      "variants": [
+        {
+          "id": "judgeq-d-5-motive_search-b-pile_on_spread-v1",
+          "text": "崔秀敏女士，在察觉到附和扩散愈演愈烈时，您本人当时为何未即刻出面纠正或暂停那段对话，请说明当时作此处置的理由。"
+        },
+        {
+          "id": "judgeq-d-5-motive_search-b-pile_on_spread-v2",
+          "text": "请说明：当时作出此种处置时，在察觉到附和扩散愈演愈烈时，您本人当时为何未即刻出面纠正或暂停那段对话，请就本人能负责的范围作答。"
+        },
+        {
+          "id": "judgeq-d-5-motive_search-b-pile_on_spread-v3",
+          "text": "在选择以那种方式联络的背后，在察觉到附和扩散愈演愈烈时，您本人当时为何未即刻出面纠正或暂停那段对话，请回答当时的考量是什么。"
+        },
+        {
+          "id": "judgeq-d-5-motive_search-b-pile_on_spread-v4",
+          "text": "崔秀敏女士，在察觉到附和扩散愈演愈烈时，您本人当时为何未即刻出面纠正或暂停那段对话，请就本人能负责的范围作答。"
+        },
+        {
+          "id": "judgeq-d-5-motive_search-b-pile_on_spread-v5",
+          "text": "请说明：当时作出此种处置时，在察觉到附和扩散愈演愈烈时，您本人当时为何未即刻出面纠正或暂停那段对话，请回答当时的考量是什么。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "questionType": "empathy_approach",
+      "targetParty": "a",
+      "angleId": "pile_on_spread",
+      "variants": [
+        {
+          "id": "judgeq-d-5-empathy_approach-a-pile_on_spread-v1",
+          "text": "宋多恩女士，在那段附和扩散持续蔓延的过程中，最让您难以释怀的一段，请把您当时最在意的一段先讲出来。"
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-a-pile_on_spread-v2",
+          "text": "请在能说的范围内回顾——在那段附和扩散持续蔓延的过程中，最让您难以释怀的一段，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-a-pile_on_spread-v3",
+          "text": "不必现在就下结论。在那段附和扩散持续蔓延的过程中，最让您难以释怀的一段，请把您能说出的部分先讲一段。"
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-a-pile_on_spread-v4",
+          "text": "宋多恩女士，在那段附和扩散持续蔓延的过程中，最让您难以释怀的一段，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-a-pile_on_spread-v5",
+          "text": "请在能说的范围内回顾——在那段附和扩散持续蔓延的过程中，最让您难以释怀的一段，请把您能说出的部分先讲一段。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "questionType": "empathy_approach",
+      "targetParty": "b",
+      "angleId": "pile_on_spread",
+      "variants": [
+        {
+          "id": "judgeq-d-5-empathy_approach-b-pile_on_spread-v1",
+          "text": "崔秀敏女士，在面对那段附和扩散的当时，您本人最为难的一段，请把您当时最为难的一段先讲出来。"
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-b-pile_on_spread-v2",
+          "text": "请在能说的范围内回顾——在面对那段附和扩散的当时，您本人最为难的一段，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-b-pile_on_spread-v3",
+          "text": "不必现在就下结论。在面对那段附和扩散的当时，您本人最为难的一段，请把您能说出的部分先讲一段。"
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-b-pile_on_spread-v4",
+          "text": "崔秀敏女士，在面对那段附和扩散的当时，您本人最为难的一段，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-b-pile_on_spread-v5",
+          "text": "请在能说的范围内回顾——在面对那段附和扩散的当时，您本人最为难的一段，请把您能说出的部分先讲一段。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "questionType": "fact_pursuit",
+      "targetParty": "a",
+      "angleId": "repeat_villain_frame",
+      "variants": [
+        {
+          "id": "judgeq-d-5-fact_pursuit-a-repeat_villain_frame-v1",
+          "text": "宋多恩女士，关于过往与当下两段经历里，本人在群体之中所处的位置，可对照得出的事实分别是哪些，请就该处先以事实关系作答。"
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-a-repeat_villain_frame-v2",
+          "text": "请按时间顺序梳理：关于过往与当下两段经历里，本人在群体之中所处的位置，可对照得出的事实分别是哪些，请按记录原貌重新整理。"
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-a-repeat_villain_frame-v3",
+          "text": "请把您本人亲眼所见的部分与从他人转述听来的部分分开来说——关于过往与当下两段经历里，本人在群体之中所处的位置，可对照得出的事实分别是哪些，请把亲眼所见与转述听闻分开陈述。"
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-a-repeat_villain_frame-v4",
+          "text": "宋多恩女士，关于过往与当下两段经历里，本人在群体之中所处的位置，可对照得出的事实分别是哪些，请按记录原貌重新整理。"
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-a-repeat_villain_frame-v5",
+          "text": "请按时间顺序梳理：关于过往与当下两段经历里，本人在群体之中所处的位置，可对照得出的事实分别是哪些，请把亲眼所见与转述听闻分开陈述。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "questionType": "fact_pursuit",
+      "targetParty": "b",
+      "angleId": "repeat_villain_frame",
+      "variants": [
+        {
+          "id": "judgeq-d-5-fact_pursuit-b-repeat_villain_frame-v1",
+          "text": "崔秀敏女士，关于过往与当下两段经历里，本人各自承担的角色与具体应对方式分别是哪些，请按时间顺序逐项作答。"
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-b-repeat_villain_frame-v2",
+          "text": "请按时间顺序梳理：关于过往与当下两段经历里，本人各自承担的角色与具体应对方式分别是哪些，请将本人主动发起与对方先行发起的部分分开作答。"
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-b-repeat_villain_frame-v3",
+          "text": "请区分作答：本人亲手发出的内容与对方先发来的内容——关于过往与当下两段经历里，本人各自承担的角色与具体应对方式分别是哪些，请就该处先以事实关系作答。"
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-b-repeat_villain_frame-v4",
+          "text": "崔秀敏女士，关于过往与当下两段经历里，本人各自承担的角色与具体应对方式分别是哪些，请将本人主动发起与对方先行发起的部分分开作答。"
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-b-repeat_villain_frame-v5",
+          "text": "请按时间顺序梳理：关于过往与当下两段经历里，本人各自承担的角色与具体应对方式分别是哪些，请就该处先以事实关系作答。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "questionType": "motive_search",
+      "targetParty": "a",
+      "angleId": "repeat_villain_frame",
+      "variants": [
+        {
+          "id": "judgeq-d-5-motive_search-a-repeat_villain_frame-v1",
+          "text": "宋多恩女士，您并未充分核对两段经历的具体差异，便径直把两段经历套入同一种角色定位，请说明判断依据是什么。"
+        },
+        {
+          "id": "judgeq-d-5-motive_search-a-repeat_villain_frame-v2",
+          "text": "请说明：当时作出此种判断时，您并未充分核对两段经历的具体差异，便径直把两段经历套入同一种角色定位，请回答当时作此选择的理由。"
+        },
+        {
+          "id": "judgeq-d-5-motive_search-a-repeat_villain_frame-v3",
+          "text": "在把疑虑直接公开发布之前，您并未充分核对两段经历的具体差异，便径直把两段经历套入同一种角色定位，请就当时的考量先以本人能负责的范围作答。"
+        },
+        {
+          "id": "judgeq-d-5-motive_search-a-repeat_villain_frame-v4",
+          "text": "宋多恩女士，您并未充分核对两段经历的具体差异，便径直把两段经历套入同一种角色定位，请回答当时作此选择的理由。"
+        },
+        {
+          "id": "judgeq-d-5-motive_search-a-repeat_villain_frame-v5",
+          "text": "请说明：当时作出此种判断时，您并未充分核对两段经历的具体差异，便径直把两段经历套入同一种角色定位，请就当时的考量先以本人能负责的范围作答。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "questionType": "motive_search",
+      "targetParty": "b",
+      "angleId": "repeat_villain_frame",
+      "variants": [
+        {
+          "id": "judgeq-d-5-motive_search-b-repeat_villain_frame-v1",
+          "text": "崔秀敏女士，您本人在两段经历里都未即时直接当面核对，便走向公开层面发声，请说明当时作此处置的理由。"
+        },
+        {
+          "id": "judgeq-d-5-motive_search-b-repeat_villain_frame-v2",
+          "text": "请说明：当时作出此种处置时，您本人在两段经历里都未即时直接当面核对，便走向公开层面发声，请就本人能负责的范围作答。"
+        },
+        {
+          "id": "judgeq-d-5-motive_search-b-repeat_villain_frame-v3",
+          "text": "在选择以那种方式联络的背后，您本人在两段经历里都未即时直接当面核对，便走向公开层面发声，请回答当时的考量是什么。"
+        },
+        {
+          "id": "judgeq-d-5-motive_search-b-repeat_villain_frame-v4",
+          "text": "崔秀敏女士，您本人在两段经历里都未即时直接当面核对，便走向公开层面发声，请就本人能负责的范围作答。"
+        },
+        {
+          "id": "judgeq-d-5-motive_search-b-repeat_villain_frame-v5",
+          "text": "请说明：当时作出此种处置时，您本人在两段经历里都未即时直接当面核对，便走向公开层面发声，请回答当时的考量是什么。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "questionType": "empathy_approach",
+      "targetParty": "a",
+      "angleId": "repeat_villain_frame",
+      "variants": [
+        {
+          "id": "judgeq-d-5-empathy_approach-a-repeat_villain_frame-v1",
+          "text": "宋多恩女士，在反复回想两段经历的过程中，最让您难以放下的一段心情，请把您当时最在意的一段先讲出来。"
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-a-repeat_villain_frame-v2",
+          "text": "请在能说的范围内回顾——在反复回想两段经历的过程中，最让您难以放下的一段心情，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-a-repeat_villain_frame-v3",
+          "text": "不必现在就下结论。在反复回想两段经历的过程中，最让您难以放下的一段心情，请把您能说出的部分先讲一段。"
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-a-repeat_villain_frame-v4",
+          "text": "宋多恩女士，在反复回想两段经历的过程中，最让您难以放下的一段心情，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-a-repeat_villain_frame-v5",
+          "text": "请在能说的范围内回顾——在反复回想两段经历的过程中，最让您难以放下的一段心情，请把您能说出的部分先讲一段。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "questionType": "empathy_approach",
+      "targetParty": "b",
+      "angleId": "repeat_villain_frame",
+      "variants": [
+        {
+          "id": "judgeq-d-5-empathy_approach-b-repeat_villain_frame-v1",
+          "text": "崔秀敏女士，在面对两段经历相似处的当时，您本人最艰难的一段，请把您当时最为难的一段先讲出来。"
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-b-repeat_villain_frame-v2",
+          "text": "请在能说的范围内回顾——在面对两段经历相似处的当时，您本人最艰难的一段，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-b-repeat_villain_frame-v3",
+          "text": "不必现在就下结论。在面对两段经历相似处的当时，您本人最艰难的一段，请把您能说出的部分先讲一段。"
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-b-repeat_villain_frame-v4",
+          "text": "崔秀敏女士，在面对两段经历相似处的当时，您本人最艰难的一段，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-b-repeat_villain_frame-v5",
+          "text": "请在能说的范围内回顾——在面对两段经历相似处的当时，您本人最艰难的一段，请把您能说出的部分先讲一段。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "questionType": "fact_pursuit",
+      "targetParty": "a",
+      "angleId": "verification_gap",
+      "variants": [
+        {
+          "id": "judgeq-d-5-fact_pursuit-a-verification_gap-v1",
+          "text": "宋多恩女士，关于直接当面核对与公开发布之间的先后顺序，本人亲身经历的步骤与仅听闻的部分分别是哪些，请就该处先以事实关系作答。"
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-a-verification_gap-v2",
+          "text": "请按时间顺序梳理：关于直接当面核对与公开发布之间的先后顺序，本人亲身经历的步骤与仅听闻的部分分别是哪些，请按记录原貌重新整理。"
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-a-verification_gap-v3",
+          "text": "请把您本人亲眼所见的部分与从他人转述听来的部分分开来说——关于直接当面核对与公开发布之间的先后顺序，本人亲身经历的步骤与仅听闻的部分分别是哪些，请把亲眼所见与转述听闻分开陈述。"
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-a-verification_gap-v4",
+          "text": "宋多恩女士，关于直接当面核对与公开发布之间的先后顺序，本人亲身经历的步骤与仅听闻的部分分别是哪些，请按记录原貌重新整理。"
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-a-verification_gap-v5",
+          "text": "请按时间顺序梳理：关于直接当面核对与公开发布之间的先后顺序，本人亲身经历的步骤与仅听闻的部分分别是哪些，请把亲眼所见与转述听闻分开陈述。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "questionType": "fact_pursuit",
+      "targetParty": "b",
+      "angleId": "verification_gap",
+      "variants": [
+        {
+          "id": "judgeq-d-5-fact_pursuit-b-verification_gap-v1",
+          "text": "崔秀敏女士，关于公开发布之后是否曾设法纠正或更正的具体过程，本人亲手处理与他人代为处理的部分分别是哪些，请按时间顺序逐项作答。"
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-b-verification_gap-v2",
+          "text": "请按时间顺序梳理：关于公开发布之后是否曾设法纠正或更正的具体过程，本人亲手处理与他人代为处理的部分分别是哪些，请将本人主动发起与对方先行发起的部分分开作答。"
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-b-verification_gap-v3",
+          "text": "请区分作答：本人亲手发出的内容与对方先发来的内容——关于公开发布之后是否曾设法纠正或更正的具体过程，本人亲手处理与他人代为处理的部分分别是哪些，请就该处先以事实关系作答。"
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-b-verification_gap-v4",
+          "text": "崔秀敏女士，关于公开发布之后是否曾设法纠正或更正的具体过程，本人亲手处理与他人代为处理的部分分别是哪些，请将本人主动发起与对方先行发起的部分分开作答。"
+        },
+        {
+          "id": "judgeq-d-5-fact_pursuit-b-verification_gap-v5",
+          "text": "请按时间顺序梳理：关于公开发布之后是否曾设法纠正或更正的具体过程，本人亲手处理与他人代为处理的部分分别是哪些，请就该处先以事实关系作答。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "questionType": "motive_search",
+      "targetParty": "a",
+      "angleId": "verification_gap",
+      "variants": [
+        {
+          "id": "judgeq-d-5-motive_search-a-verification_gap-v1",
+          "text": "宋多恩女士，您并未在公开发布之前先行进行当面核对，却据此走向当庭主张这一步，请说明判断依据是什么。"
+        },
+        {
+          "id": "judgeq-d-5-motive_search-a-verification_gap-v2",
+          "text": "请说明：当时作出此种判断时，您并未在公开发布之前先行进行当面核对，却据此走向当庭主张这一步，请回答当时作此选择的理由。"
+        },
+        {
+          "id": "judgeq-d-5-motive_search-a-verification_gap-v3",
+          "text": "在把疑虑直接公开发布之前，您并未在公开发布之前先行进行当面核对，却据此走向当庭主张这一步，请就当时的考量先以本人能负责的范围作答。"
+        },
+        {
+          "id": "judgeq-d-5-motive_search-a-verification_gap-v4",
+          "text": "宋多恩女士，您并未在公开发布之前先行进行当面核对，却据此走向当庭主张这一步，请回答当时作此选择的理由。"
+        },
+        {
+          "id": "judgeq-d-5-motive_search-a-verification_gap-v5",
+          "text": "请说明：当时作出此种判断时，您并未在公开发布之前先行进行当面核对，却据此走向当庭主张这一步，请就当时的考量先以本人能负责的范围作答。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "questionType": "motive_search",
+      "targetParty": "b",
+      "angleId": "verification_gap",
+      "variants": [
+        {
+          "id": "judgeq-d-5-motive_search-b-verification_gap-v1",
+          "text": "崔秀敏女士，在公开发布之后，您本人为何选择不即时撤回或公开更正而走向其他途径，请说明当时作此处置的理由。"
+        },
+        {
+          "id": "judgeq-d-5-motive_search-b-verification_gap-v2",
+          "text": "请说明：当时作出此种处置时，在公开发布之后，您本人为何选择不即时撤回或公开更正而走向其他途径，请就本人能负责的范围作答。"
+        },
+        {
+          "id": "judgeq-d-5-motive_search-b-verification_gap-v3",
+          "text": "在选择以那种方式联络的背后，在公开发布之后，您本人为何选择不即时撤回或公开更正而走向其他途径，请回答当时的考量是什么。"
+        },
+        {
+          "id": "judgeq-d-5-motive_search-b-verification_gap-v4",
+          "text": "崔秀敏女士，在公开发布之后，您本人为何选择不即时撤回或公开更正而走向其他途径，请就本人能负责的范围作答。"
+        },
+        {
+          "id": "judgeq-d-5-motive_search-b-verification_gap-v5",
+          "text": "请说明：当时作出此种处置时，在公开发布之后，您本人为何选择不即时撤回或公开更正而走向其他途径，请回答当时的考量是什么。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "questionType": "empathy_approach",
+      "targetParty": "a",
+      "angleId": "verification_gap",
+      "variants": [
+        {
+          "id": "judgeq-d-5-empathy_approach-a-verification_gap-v1",
+          "text": "宋多恩女士，在跳过当面核对就先行公开的那一刻，最让您难以释怀的一段，请把您当时最在意的一段先讲出来。"
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-a-verification_gap-v2",
+          "text": "请在能说的范围内回顾——在跳过当面核对就先行公开的那一刻，最让您难以释怀的一段，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-a-verification_gap-v3",
+          "text": "不必现在就下结论。在跳过当面核对就先行公开的那一刻，最让您难以释怀的一段，请把您能说出的部分先讲一段。"
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-a-verification_gap-v4",
+          "text": "宋多恩女士，在跳过当面核对就先行公开的那一刻，最让您难以释怀的一段，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-a-verification_gap-v5",
+          "text": "请在能说的范围内回顾——在跳过当面核对就先行公开的那一刻，最让您难以释怀的一段，请把您能说出的部分先讲一段。"
+        }
+      ]
+    },
+    {
+      "disputeId": "d-5",
+      "questionType": "empathy_approach",
+      "targetParty": "b",
+      "angleId": "verification_gap",
+      "variants": [
+        {
+          "id": "judgeq-d-5-empathy_approach-b-verification_gap-v1",
+          "text": "崔秀敏女士，在面对公开发布之后纠正机会的当时，您本人最为难的一段，请把您当时最为难的一段先讲出来。"
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-b-verification_gap-v2",
+          "text": "请在能说的范围内回顾——在面对公开发布之后纠正机会的当时，您本人最为难的一段，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-b-verification_gap-v3",
+          "text": "不必现在就下结论。在面对公开发布之后纠正机会的当时，您本人最为难的一段，请把您能说出的部分先讲一段。"
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-b-verification_gap-v4",
+          "text": "崔秀敏女士，在面对公开发布之后纠正机会的当时，您本人最为难的一段，请把记得最清楚的一段先告诉本席。"
+        },
+        {
+          "id": "judgeq-d-5-empathy_approach-b-verification_gap-v5",
+          "text": "请在能说的范围内回顾——在面对公开发布之后纠正机会的当时，您本人最为难的一段，请把您能说出的部分先讲一段。"
+        }
+      ]
+    }
+  ]
+}

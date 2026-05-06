@@ -1,0 +1,113 @@
+glossary_id,locked,used_in_keys_count,used_terms_observed,conflicts,status
+project_solomon,true,1,Project Solomon,,clean
+steam_app_id,true,0,,,unused
+achievement_api_name,true,0,,,unused
+steam_auth_ticket,false,0,,,unused
+steam_cloud,true,0,,,unused
+steam_deck,true,0,,,unused
+court_simulation,false,1,COURT SIMULATION GAME,Genre eyebrow stays uppercase; not localised in EN per existing en map,clean
+courtroom,false,0,,,unused
+judge,false,18,Judge,,clean
+party,false,0,Party,,clean
+party_a,false,3,Party A,,clean
+party_b,false,3,Party B,,clean
+witness,false,12,Witness,,clean
+case,false,0,Case,Source uses 사건 in dynamic copy; UI uses Case (e.g. caseBrief.list = Case List) — consistent,clean
+case_brief,false,1,Case Brief,phase.briefing renders as Case Brief,clean
+case_id,true,0,,IDs never translated,unused
+phase,false,3,Phase,phase.label / interaction.phase / phase.pillFormat,clean
+briefing_phase,false,1,Case Brief,Source label `사건 브리핑` translated as Case Brief; glossary draft says Briefing Phase. EN UI prefers `Case Brief` for hero pill,needs-normalization
+pretrial_phase,false,1,Opening Statements,glossary draft says Pretrial Phase; EN UI prefers Opening Statements,needs-normalization
+interrogation_phase,false,1,Interrogation,phase.interrogation = Interrogation; glossary draft = Interrogation Phase. EN UI uses bare `Interrogation` for the pill,needs-normalization
+rebuttal_phase,false,0,,Pretrial label encompasses both Phase.Pretrial and GamePhase.Phase2_Rebuttal in PHASE_LABELS,unused
+evidence_phase,false,1,Evidence Phase,tactical.advance.toEvidence = `To Evidence Phase`,clean
+re_examination_phase,false,1,Final Interrogation,glossary draft = Re-examination Phase; EN UI uses `Final Interrogation` (`최종 심문 단계` literal). Confirm with design,needs-normalization
+mediation_phase,false,1,Mediation,phase.mediation = Mediation. Source label `판결 진입` (Verdict Entry) functionally maps to Mediation,clean
+verdict_phase,false,1,Verdict,phase.verdict / verdict.title etc.,clean
+result_phase,false,1,Result,phase.result = Result,clean
+verdict,false,15,Verdict,sort.authority=Authority is the score axis of same Korean character `판결` — flagged in DELTA,needs-normalization
+judgment_basis,false,0,,,unused
+responsibility,false,4,Responsibility,verdict.step.responsibility / verdict.responsibility.*,clean
+solution,false,3,Solution / Solutions,verdict.step.solution / verdict.meta.solutions / verdict.confirm.solutionsTitle,clean
+dispute,false,30,Disputes / Dispute,glossary `Dispute`. Used consistently,clean
+claim,false,0,Claim,Used inside dynamic verdict prose only — out of scope,unused
+fact,false,1,True (badge),verdict.badge.true=True is the verdict badge for `사실`. The standalone Korean noun `사실` is not surfaced as a UI label,clean
+truth,false,2,Truth,target.drawer.lieStagesHelp uses `truth access`,clean
+hidden_truth,false,1,Not yet revealed,verdict.fact.locked enforces gating; verified no truth leak,clean
+surface_text,false,0,,Surface text vs deep text is engine-only; no UI label,unused
+evidence,false,40,Evidence,Used everywhere (notebook / detail / footer),clean
+evidence_card,false,0,Evidence card,Concept exists in CSS class names; no user-facing label uses Evidence Card,unused
+evidence_stage,false,2,Stage / Investigation Stage,evidence.detail.stagesLabel = Investigation Stages; interaction.investigationStage = Stage {stage},clean
+deep_investigation,false,0,Deep Investigation,Engine concept; not a UI label,unused
+testimony,false,0,Testimony,Mentioned in `hotbar.witness.subtitle` indirectly,unused
+statement,false,7,Statement,dialogueLog.entry.detailSubtitleRecord / notes.* / verdict.confirm.factTrue uses the noun,clean
+contradiction,false,8,Contradiction,dialogueLog.contradiction* / records.summary.section.contradictions,clean
+contradiction_pursuit,false,3,Press the Contradiction / Press,dialogueLog.contradictionPursue + .contradictionUsed + .contradictionPursueShort. Glossary says Contradiction Pursuit; EN UI prefers Press the Contradiction for the verb form. Action noun retained inside docs,needs-normalization
+free_interrogation,false,4,Free Question,Slot label uses `Free Question`. Glossary says Free Interrogation. Recommend keeping `Free Question` in compact UI; flagged for delta,needs-normalization
+judge_question,false,0,Judge Question,Engine field — not surfaced,unused
+fact_pursuit,false,5,Fact Pursuit,glossary match,clean
+motive_search,false,5,Motive Search,glossary match,clean
+empathy_approach,false,5,Empathy Approach,glossary match,clean
+dossier,false,2,Decisive Question / Dossier,court.dossierUnlock.eyebrow = `Decisive Question Unlocked`. The Korean source `결정적 질문 해금` does not use the dossier metaphor; glossary draft says Dossier. Flagged for delta,needs-normalization
+notebook,false,3,Notebook,judgeNotebook.* + evidence.notebook.title (Evidence Notebook). The compound `Evidence Notebook` reuses the noun consistently,clean
+observation,false,4,Observation / Observations,judgeObservation.title = `Judge Observations` (plural for UI rhythm). Singular `Observation` used in history filter,clean
+record_summary,false,1,Records,court.recordSummary = `Records`. Glossary says Record Summary. Compact UI prefers `Records`; flagged for delta,needs-normalization
+action_panel,false,0,,Internal CSS class only,unused
+hotbar,false,0,,Internal class only; users never see the noun,unused
+investigation_token,false,8,Investigation Token / Investigation Tokens,plural form used in token.investigation.title; consistent,clean
+skill_point,false,9,Skill Point / Skill Points,plural in title; consistent,clean
+trust,false,5,Trust / Trusting / Cautious / Suspicious,target.drawer.trustTitle = Trust. Trust state labels `Trusting / Cautious / Suspicious` derived from value buckets,clean
+stress,false,0,Stress,Game uses Korean `압박도` (Pressure) but no UI label surfaces it. Engine-only,unused
+perk,false,8,Perk,perk.major / perk.minor / etc.,clean
+trait,false,9,Trait,trait.* keys; trait.title = `Six Traits Enhance`,clean
+clearance,false,1,Clearance,result.donut.clearance = Clearance,clean
+session,false,2,Session / SESSION,home.session.cardSession = SESSION (eyebrow); session.preparing.* lower-case,clean
+save_data,false,1,Save Data,settingsFull.data.exportLabel = Export JSON / .exportDesc references save data,clean
+mock_mode,false,0,,DEV-only; not surfaced,unused
+test_console,false,1,Test Console,testConsole.title,clean
+llm,true,1,LLM,settingsFull.audio.option.voiceDesc = `LLM voice synthesis (planned)`,clean
+api,true,0,,,unused
+jwt,true,0,,,unused
+court_control,false,8,Court Control,"Korean source uses TWO terms (법정 장악 / 법정 지배력) for the same resource. Translated identically in EN. Source-side cleanup recommended",new-coverage
+demand_answer,false,5,Demand Answer,즉답 요구 — recurring action label,new-coverage
+separate_interrogation,false,5,Separate Interrogation,분리 심문 — recurring action label,new-coverage
+confidential_protection,false,5,Confidential Protection,비공개 보호 — recurring action label,new-coverage
+objection,false,3,Objection,이의 제기 / 이의 있습니다 — special action,new-coverage
+emotion_phase,false,5,Guarded / Confident / Shaken / Enraged / Resigned,defensive/confident/shaken/angry/resigned,new-coverage
+lie_state,false,6,Defense / Wavering / Excuse / Cornered / Breaking / Confession,S0–S5 stage labels,new-coverage
+score_axis_insight,false,4,Insight,탐구 score axis — same Korean character as judge axis `inquiry`. Distinct concept,new-coverage
+score_axis_authority,false,4,Authority,판결 score axis — same Korean character as glossary `verdict`. P0 disambiguation needed,new-coverage
+score_axis_wisdom,false,4,Wisdom,해결 score axis — distinct from gameplay `solution`,new-coverage
+clearance_score,false,1,Clearance,result.donut.clearance — already covered by `clearance` glossary entry but distinct meaning (% achieved),new-coverage
+decisive_question,false,3,Decisive Question,결정적 질문 — appears as separate concept from `dossier`,new-coverage
+truth_progress,false,4,Truth Progress,진실파악 단계 — gauge concept,new-coverage
+contradiction_meter,false,0,Contradiction (meter),target.profile.contradictionLabel — same noun as glossary contradiction; UI uses identically,unused
+relationship_spouse,false,1,Spouse,relationship type (부부) — surfaces as label,new-coverage
+relationship_family,false,1,Family,relationship type (가족),new-coverage
+relationship_friend,false,1,Friend,relationship type (친구),new-coverage
+relationship_neighbor,false,1,Neighbor,relationship type (이웃),new-coverage
+relationship_partnership,false,1,Business Partner,relationship type (동업) — `Partnership` in glossary candidate but `Business Partner` reads better,new-coverage
+relationship_workplace,false,1,Workplace,relationship type (직장),new-coverage
+relationship_tenant_landlord,false,1,Tenant–Landlord,relationship type (세입자-집주인),new-coverage
+relationship_headline,false,1,Headline,relationship type (헤드라인),new-coverage
+relationship_online,false,1,Online,relationship type (온라인),new-coverage
+relationship_medical_education,false,1,Medical / Education,relationship type (의료·교육),new-coverage
+relationship_public_system,false,1,Public / Civic,relationship type (공공·제도),new-coverage
+rarity_common,false,1,Common,일반 — title rarity,new-coverage
+rarity_rare,false,1,Rare,희귀 — title rarity,new-coverage
+rarity_epic,false,1,Epic,영웅 — title rarity,new-coverage
+rarity_legendary,false,1,Legendary,전설 — title rarity,new-coverage
+trust_state_high,false,1,Trusting,target.drawer trust state bucket,new-coverage
+trust_state_mid,false,1,Cautious,target.drawer trust state bucket,new-coverage
+trust_state_low,false,1,Suspicious,target.drawer trust state bucket,new-coverage
+fragment_reasoning,false,1,Reasoning Fragment,trait.fragment.reasoning,new-coverage
+fragment_inquiry,false,1,Inquiry Fragment,trait.fragment.inquiry,new-coverage
+fragment_empathy,false,1,Empathy Fragment,trait.fragment.empathy,new-coverage
+fragment_severity,false,1,Severity Fragment,trait.fragment.severity,new-coverage
+fragment_deliberation,false,1,Deliberation Fragment,trait.fragment.deliberation,new-coverage
+fragment_leniency,false,1,Leniency Fragment,trait.fragment.leniency,new-coverage
+fragment_jurisprudence,false,1,Jurisprudence Fragment,trait.fragment.jurisprudence,new-coverage
+fragment_balance,false,1,Balance Fragment,trait.fragment.balance,new-coverage
+fragment_reconciliation,false,1,Reconciliation Fragment,trait.fragment.reconciliation,new-coverage
+combination,false,15,Combination,조합 — gameplay verb/noun used heavily in right-panel and feed,new-coverage
+records,false,9,Records,기록 정리 panel + tooltip uses `Records` (compact),new-coverage

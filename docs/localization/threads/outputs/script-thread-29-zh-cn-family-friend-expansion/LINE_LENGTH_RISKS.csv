@@ -1,0 +1,16 @@
+case_id,sidecar,total_strings,strings_over_200_chars,strings_over_300_chars,risk_level,sample_long_text,recommendation
+family-01,scriptedText,5262,0,0,low,n/a,All variants under 200 char threshold; sentence-pool build naturally constrains length
+family-01,interrogation_answers,9360,0,0,low,n/a,Sentence-pool composition keeps individual variants compact (~80-150 chars typical)
+family-01,judge_questions,780,0,0,low,n/a,Pair grid keeps openers + topic + closer well under threshold
+family-01,angle_catalog,52,0,0,low,n/a,Catalog descriptions concise
+family-01,phase1Dialogue,~40,0,0,low,n/a,Dialogue lines naturally short
+family-01,mediationDialogue,12,0,0,low,n/a,Mediation lines compact
+family-01,generatedCaseSurface,40,0,0,low,n/a,Case-data surfaces compact
+friend-01,scriptedText,5097,6,0,low-monitor,"S5 entries under interrogation channel where the build script concatenates evidence-list opening + truth-licensed body + closer; ~210-220 chars","S5 reveal lines may stretch ~210-220 chars due to enumerated evidence references (e.g. ""三月一日到九日，崔秀敏给我的未婚夫打了六次电话、发了十一条短信...""). Acceptable for narrator-style S5 confessions; UI labels not affected. Native review may shorten if reading-speed becomes a concern."
+friend-01,interrogation_answers,6300,0,0,low,n/a,KO-sentence-map composition inherits KO source's natural length distribution
+friend-01,judge_questions,600,0,0,low,n/a,Pair grid pattern
+friend-01,angle_catalog,40,0,0,low,n/a,Catalog descriptions concise
+friend-01,phase1Dialogue,~40,0,0,low,n/a,Dialogue lines short
+friend-01,mediationDialogue,12,0,0,low,n/a,
+friend-01,generatedCaseSurface,40,0,0,low,n/a,
+total,both cases all surfaces,~28000,6,0,low,n/a,All long lines confined to friend-01 scriptedText S5 reveal beats; consistent with KO source density on those beats

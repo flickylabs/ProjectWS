@@ -20,23 +20,51 @@ import { getScriptedJudgeQuestionOptions, type ScriptedJudgeQuestionOption } fro
 import { emitVerdictCtaCollapsed, PC_VERDICT_CTA_COLLAPSED_EVENT } from '../layout/verdictAdvanceEvents'
 import { requestVerdictAdvance } from '../layout/verdictAdvancePrompt'
 import { normalizeCaseKey } from '../../../utils/caseHelpers'
+import { useI18n, type MessageKey, type MessageValues } from '../../../i18n'
 
-const EMOTION_LABELS: Record<EmotionalPhase, string> = {
-  defensive: '경계',
-  confident: '자신감',
-  shaken: '동요',
-  angry: '격앙',
-  resigned: '체념',
+type TFunction = (key: MessageKey, values?: MessageValues) => string
+
+const EMOTION_LABEL_KEYS: Record<EmotionalPhase, MessageKey> = {
+  defensive: 'pc.hotbar.emotion.defensive',
+  confident: 'pc.hotbar.emotion.confident',
+  shaken: 'pc.hotbar.emotion.shaken',
+  angry: 'pc.hotbar.emotion.angry',
+  resigned: 'pc.hotbar.emotion.resigned',
 }
 
-const TYPE_LABELS: Record<string, string> = {
-  bank: '금융', financial_record: '금융', receipt: '영수증', chat: '메신저', contract: '계약',
-  document: '문서', institutional_note: '기관 문서', testimony: '증언', cctv: '영상',
-  photo: '사진', video: '영상', log: '기록', email: '메일', audio: '오디오',
-  forensic_report: '감정', device: '기기', sns: 'SNS',
+const QUESTION_TITLE_KEYS: Record<QuestionType, MessageKey> = {
+  fact_pursuit: 'pc.hotbar.slot.fact.title',
+  motive_search: 'pc.hotbar.slot.motive.title',
+  empathy_approach: 'pc.hotbar.slot.empathy.title',
+  evidence_present: 'pc.hotbar.slot.evidence.title',
+}
+
+const EVIDENCE_TYPE_LABEL_KEYS: Record<string, MessageKey> = {
+  bank: 'pc.hotbar.evidenceType.bank',
+  financial_record: 'pc.hotbar.evidenceType.financialRecord',
+  receipt: 'pc.hotbar.evidenceType.receipt',
+  chat: 'pc.hotbar.evidenceType.chat',
+  contract: 'pc.hotbar.evidenceType.contract',
+  document: 'pc.hotbar.evidenceType.document',
+  institutional_note: 'pc.hotbar.evidenceType.institutionalNote',
+  testimony: 'pc.hotbar.evidenceType.testimony',
+  cctv: 'pc.hotbar.evidenceType.cctv',
+  photo: 'pc.hotbar.evidenceType.photo',
+  video: 'pc.hotbar.evidenceType.video',
+  log: 'pc.hotbar.evidenceType.log',
+  email: 'pc.hotbar.evidenceType.email',
+  audio: 'pc.hotbar.evidenceType.audio',
+  forensic_report: 'pc.hotbar.evidenceType.forensicReport',
+  device: 'pc.hotbar.evidenceType.device',
+  sns: 'pc.hotbar.evidenceType.sns',
+}
+
+function getEvidenceTypeLabel(type: string, t: TFunction) {
+  return t(EVIDENCE_TYPE_LABEL_KEYS[type] ?? 'pc.hotbar.evidence.file')
 }
 
 export default function PCBottomDock() {
+  const { t } = useI18n()
   const dispatch = useActionDispatch()
   const caseData = useStore((s) => s.caseData)
   const currentPhase = useStore((s) => s.currentPhase)
@@ -205,9 +233,9 @@ export default function PCBottomDock() {
     const hiddenCount = stages.filter((s) => !investigatedKeys.has(s.revealKey)).length
     if (revealedFindings.length > 0 || hiddenCount > 0) {
       bodyParts.push('')
-      bodyParts.push('발견한 내용:')
+      bodyParts.push(t('pc.hotbar.evidence.foundContent'))
       revealedFindings.forEach((f) => bodyParts.push(`• ${f}`))
-      if (hiddenCount > 0) bodyParts.push(`(미확인 항목 ${hiddenCount}개)`)
+      if (hiddenCount > 0) bodyParts.push(t('pc.hotbar.evidence.hiddenCount', { count: hiddenCount }))
     }
     const meta = ev.meta
     const metaTags: string[] = []
@@ -216,16 +244,16 @@ export default function PCBottomDock() {
 
     openPcInteractionPanel({
       title: label,
-      subtitle: TYPE_LABELS[ev.type] ?? '증거 파일',
+      subtitle: getEvidenceTypeLabel(ev.type, t),
       tone: 'gold',
       variant: 'evidence',
       evidenceId: ev.id,
-      evidenceTypeLabel: TYPE_LABELS[ev.type] ?? '증거 파일',
+      evidenceTypeLabel: getEvidenceTypeLabel(ev.type, t),
       evidenceMetaTags: metaTags,
       body: bodyParts.join('\n'),
-      actions: [{ kind: 'open_evidence' as const, label: '증거 열람', evidenceId: ev.id }],
+      actions: [{ kind: 'open_evidence' as const, label: t('pc.hotbar.evidence.open'), evidenceId: ev.id }],
     })
-  }, [evidenceDefinitions, evidenceStates])
+  }, [evidenceDefinitions, evidenceStates, t])
 
   // --- Witness (slot 6) ---
   // socialGraph entries 모두를 증인으로 인식. slot whitelist 제거 — 신규 사건의
@@ -240,24 +268,24 @@ export default function PCBottomDock() {
   const openWitnessPanel = useCallback(() => {
     if (!caseData || !hasWitness) return
     openPcInteractionPanel({
-      title: '증인 소환',
-      subtitle: '적절한 시점에 소환해야 핵심 증언을 들을 수 있습니다',
+      title: t('pc.hotbar.slot.witness.label'),
+      subtitle: t('pc.hotbar.slot.witness.subtitle'),
       tone: 'gold',
       variant: 'witness',
       body: '',
     })
-  }, [caseData, hasWitness])
+  }, [caseData, hasWitness, t])
 
   // --- Special skill actions (B-6) ---
   const openSpecialAction = useCallback((action: string) => {
     if (action === 'separation') {
-      openPcInteractionPanel({ title: '분리 심문', subtitle: '특수 행동', tone: 'gold', body: '당사자를 분리해 개별 심문합니다.', actions: [{ kind: 'run_special', label: '⚡-1 분리 심문 실행', party: pcTargetParty, disputeId: activeDisputeId, specialAction: 'separation' }] })
+      openPcInteractionPanel({ title: t('pc.hotbar.special.separation.label'), subtitle: t('pc.hotbar.special.subtitle'), tone: 'gold', body: t('pc.hotbar.special.separation.body'), actions: [{ kind: 'run_special', label: t('pc.hotbar.special.separation.action'), party: pcTargetParty, disputeId: activeDisputeId, specialAction: 'separation' }] })
     } else if (action === 'confidential') {
-      openPcInteractionPanel({ title: '비공개 보호', subtitle: '특수 행동', tone: 'gold', body: '비공개를 약속해 방어 반응을 낮춥니다.', actions: [{ kind: 'run_special', label: '⚡-1 비공개 보호 실행', party: pcTargetParty, disputeId: activeDisputeId, specialAction: 'confidential_protection' }] })
+      openPcInteractionPanel({ title: t('pc.hotbar.special.confidential.label'), subtitle: t('pc.hotbar.special.subtitle'), tone: 'gold', body: t('pc.hotbar.special.confidential.body'), actions: [{ kind: 'run_special', label: t('pc.hotbar.special.confidential.action'), party: pcTargetParty, disputeId: activeDisputeId, specialAction: 'confidential_protection' }] })
     } else if (action === 'immediate') {
-      openPcInteractionPanel({ title: '즉답 요구', subtitle: '특수 행동', tone: 'gold', body: '선택한 쟁점에 대해 즉답을 요구합니다.', actions: [{ kind: 'run_special', label: '⚖️-1 즉답 요구 실행', party: pcTargetParty, disputeId: activeDisputeId, specialAction: 'immediate_answer' }] })
+      openPcInteractionPanel({ title: t('pc.hotbar.special.immediate.label'), subtitle: t('pc.hotbar.special.subtitle'), tone: 'gold', body: t('pc.hotbar.special.immediate.body'), actions: [{ kind: 'run_special', label: t('pc.hotbar.special.immediate.action'), party: pcTargetParty, disputeId: activeDisputeId, specialAction: 'immediate_answer' }] })
     }
-  }, [activeDisputeId, pcTargetParty])
+  }, [activeDisputeId, pcTargetParty, t])
 
   // --- Advance phase banner (B-7) ---
   const handleAdvance = useCallback(() => {
@@ -279,10 +307,10 @@ export default function PCBottomDock() {
   }, [])
 
   const advanceLabel = currentPhase === Phase.Interrogation
-    ? '판결 단계로 진행'
+    ? t('pc.hotbar.advance.interrogation')
     : currentPhase === GamePhase.Phase4_Evidence
-      ? '최종 심문 단계로'
-      : '다음 단계로 진행'
+      ? t('pc.hotbar.advance.evidence')
+      : t('pc.hotbar.advance.next')
 
   // --- Keyboard shortcuts ---
   useEffect(() => {
@@ -309,7 +337,7 @@ export default function PCBottomDock() {
     }
     window.addEventListener('keydown', onKeyDown)
     return () => window.removeEventListener('keydown', onKeyDown)
-  }, [closeAll, hasWitness, isLLMLoading, openEvidenceChoice, openFreeQuestion, openQuestionChoice, openWitnessPanel])
+  }, [closeAll, hasWitness, isLLMLoading, openEvidenceChoice, openFreeQuestion, openQuestionChoice, openSpecialAction, openWitnessPanel])
 
   // hotbar body 실제 높이 측정 → CSS 변수 --pc-dock-area-h 주입
   // 이 변수는 캐릭터 카드(.char)와 우측 '요약' 섹션이 참조해 세로 크기를 동기화함
@@ -339,9 +367,9 @@ export default function PCBottomDock() {
       {/* --- Advance phase auto-suggestion banner (B-7) --- */}
       {canAdvance && !advanceDismissed ? (
         <div className="pc-advance-banner">
-          <span className="pc-advance-banner__text">{advanceLabel}할 수 있습니다</span>
+          <span className="pc-advance-banner__text">{t('pc.hotbar.advance.can', { label: advanceLabel })}</span>
           <button className="pc-advance-banner__btn" onClick={handleAdvance} type="button">{advanceLabel}</button>
-          <button className="pc-advance-banner__dismiss" onClick={collapseAdvanceBanner} title="닫기" type="button">
+          <button className="pc-advance-banner__dismiss" onClick={collapseAdvanceBanner} title={t('pc.hotbar.close')} type="button">
             <PCSvgIcon id="i-plus" size={12} />
           </button>
         </div>
@@ -355,16 +383,16 @@ export default function PCBottomDock() {
             <div className="pc-question-choice__header">
               <PCSvgIcon id={questionChoice.type === 'fact_pursuit' ? 'i-gavel' : questionChoice.type === 'motive_search' ? 'i-eye' : 'i-heart'} size={18} />
               <span className="pc-question-choice__title">
-                {questionChoice.type === 'fact_pursuit' ? '사실 추궁 - 모순에 집중하기' : questionChoice.type === 'motive_search' ? '동기 탐색 - 숨겨진 쟁점 찾기' : '공감 접근 - 자백 유도하기'}
+                {t(QUESTION_TITLE_KEYS[questionChoice.type])}
               </span>
-              <button className="pc-question-choice__close" onClick={() => setQuestionChoice(null)} type="button" aria-label="닫기">
+              <button className="pc-question-choice__close" onClick={() => setQuestionChoice(null)} type="button" aria-label={t('pc.hotbar.close')}>
                 &times;
               </button>
             </div>
             <div className="pc-question-choice__disputes">
               {!questionChoice.disputeId ? (
                 <>
-                  <p className="pc-question-choice__hint">쟁점을 선택하세요</p>
+                  <p className="pc-question-choice__hint">{t('pc.hotbar.question.chooseDispute')}</p>
                   {visibleDisputes.map((d) => (
                     <button className="pc-question-choice__dispute-btn" key={d.id} onClick={() => selectDisputeForQuestion(d.id)} type="button">
                       <span className="pc-question-choice__dispute-name">{d.name}</span>
@@ -375,12 +403,12 @@ export default function PCBottomDock() {
                 <>
                   <button className="pc-question-choice__back" onClick={() => setQuestionChoice({ type: questionChoice.type })} type="button">
                     <span className="pc-question-choice__back-mark" aria-hidden="true">&lt;</span>
-                    <span>쟁점 다시 선택</span>
+                    <span>{t('pc.hotbar.question.reselectDispute')}</span>
                   </button>
-                  <p className="pc-question-choice__hint">질문을 선택하세요</p>
+                  <p className="pc-question-choice__hint">{t('pc.hotbar.question.chooseQuestion')}</p>
                   {questionOptions.length === 0 ? (
                     <button className="pc-question-choice__msg-btn" onClick={() => selectQuestionOption()} type="button">
-                      <span className="pc-question-choice__msg-text">기본 질문으로 진행</span>
+                      <span className="pc-question-choice__msg-text">{t('pc.hotbar.question.defaultQuestion')}</span>
                     </button>
                   ) : (
                     questionOptions.map((option) => (
@@ -404,13 +432,13 @@ export default function PCBottomDock() {
           <div className="pc-question-choice__panel">
             <div className="pc-question-choice__header">
               <PCSvgIcon id="i-chat" size={18} />
-              <span className="pc-question-choice__title">자유 질문 - 복합적 접근 시도</span>
-              <button className="pc-question-choice__close" onClick={() => setFreeQuestionOpen(false)} type="button" aria-label="닫기">
+              <span className="pc-question-choice__title">{t('pc.hotbar.slot.free.title')}</span>
+              <button className="pc-question-choice__close" onClick={() => setFreeQuestionOpen(false)} type="button" aria-label={t('pc.hotbar.close')}>
                 &times;
               </button>
             </div>
             <div className="pc-question-choice__disputes">
-              <p className="pc-question-choice__hint">질문을 직접 입력하세요</p>
+              <p className="pc-question-choice__hint">{t('pc.hotbar.question.enterFreeQuestion')}</p>
               <FreeInterrogationInput
                 activeDisputeId={activeDisputeId}
                 autoFocusRef={freeQuestionRef}
@@ -430,17 +458,17 @@ export default function PCBottomDock() {
           <div className="pc-question-choice__panel">
             <div className="pc-question-choice__header">
               <PCSvgIcon id="i-doc" size={18} />
-              <span className="pc-question-choice__title">증거 제시</span>
-              <button className="pc-question-choice__close" onClick={() => setEvidenceChoice(false)} type="button" aria-label="닫기">
+              <span className="pc-question-choice__title">{t('pc.hotbar.slot.evidence.title')}</span>
+              <button className="pc-question-choice__close" onClick={() => setEvidenceChoice(false)} type="button" aria-label={t('pc.hotbar.close')}>
                 &times;
               </button>
             </div>
             <div className="pc-question-choice__disputes">
               {unlockedEvidence.length === 0 ? (
-                <p className="pc-question-choice__hint">해금된 증거가 없습니다</p>
+                <p className="pc-question-choice__hint">{t('pc.hotbar.evidence.none')}</p>
               ) : (
                 <>
-                  <p className="pc-question-choice__hint">제시할 증거를 선택하세요</p>
+                  <p className="pc-question-choice__hint">{t('pc.hotbar.evidence.choose')}</p>
                   {unlockedEvidence.map((ev) => (
                     <button className={`pc-question-choice__dispute-btn${combinableIds.has(ev.id) ? ' is-combinable' : ''}`} key={ev.id} onClick={() => selectEvidence(ev.id)} type="button">
                       <span className="pc-question-choice__dispute-icon">
@@ -475,61 +503,61 @@ export default function PCBottomDock() {
           <div className="hotbar hotbar--compact hotbar--v4" ref={hotbarRef}>
             <div className="hotbar-topbar">
               <div className="hotbar-special-row">
-                <button className="hotbar-special-btn" onClick={() => openSpecialAction('separation')} title="분리 심문 (Q)" type="button">
-                  <kbd>Q</kbd><PCSvgIcon id="i-hand" size={13} /><span>분리 심문</span>
+                <button className="hotbar-special-btn" onClick={() => openSpecialAction('separation')} title={t('pc.hotbar.shortcutTitle', { label: t('pc.hotbar.special.separation.label'), key: 'Q' })} type="button">
+                  <kbd>Q</kbd><PCSvgIcon id="i-hand" size={13} /><span>{t('pc.hotbar.special.separation.compact')}</span>
                 </button>
-                <button className="hotbar-special-btn" onClick={() => openSpecialAction('confidential')} title="비공개 보호 (W)" type="button">
-                  <kbd>W</kbd><PCSvgIcon id="i-shield" size={13} /><span>비공개 보호</span>
+                <button className="hotbar-special-btn" onClick={() => openSpecialAction('confidential')} title={t('pc.hotbar.shortcutTitle', { label: t('pc.hotbar.special.confidential.label'), key: 'W' })} type="button">
+                  <kbd>W</kbd><PCSvgIcon id="i-shield" size={13} /><span>{t('pc.hotbar.special.confidential.compact')}</span>
                 </button>
-                <button className="hotbar-special-btn" onClick={() => openSpecialAction('immediate')} title="즉답 요구 (E)" type="button">
-                  <kbd>E</kbd><PCSvgIcon id="i-gavel" size={13} /><span>즉답 요구</span>
+                <button className="hotbar-special-btn" onClick={() => openSpecialAction('immediate')} title={t('pc.hotbar.shortcutTitle', { label: t('pc.hotbar.special.immediate.label'), key: 'E' })} type="button">
+                  <kbd>E</kbd><PCSvgIcon id="i-gavel" size={13} /><span>{t('pc.hotbar.special.immediate.compact')}</span>
                 </button>
               </div>
             </div>
 
             <div className={`hotbar-slots${isLLMLoading ? ' hotbar-slots--locked' : ''}`}>
               {/* 1: 사실 추궁 */}
-              <button className="slot" data-guide-target="question-fact" disabled={isLLMLoading} onClick={() => openQuestionChoice('fact_pursuit')} title={isLLMLoading ? '응답 대기 중' : '사실 추궁 - 모순에 집중하기'} type="button">
+              <button className="slot" data-guide-target="question-fact" disabled={isLLMLoading} onClick={() => openQuestionChoice('fact_pursuit')} title={isLLMLoading ? t('pc.hotbar.loading') : t('pc.hotbar.slot.fact.title')} type="button">
                 <span className="slot-key">1</span>
                 <span className="slot-ico"><PCSvgIcon id="i-gavel" size={24} /></span>
-                <span className="slot-nm">사실 추궁</span>
+                <span className="slot-nm">{t('pc.hotbar.slot.fact.compact')}</span>
                 {contradiction >= 2 ? <span className="slot-eff ef-s" /> : null}
               </button>
 
               {/* 2: 동기 탐색 */}
-              <button className="slot" data-guide-target="question-motive" disabled={isLLMLoading} onClick={() => openQuestionChoice('motive_search')} title={isLLMLoading ? '응답 대기 중' : '동기 탐색 - 숨겨진 쟁점 찾기'} type="button">
+              <button className="slot" data-guide-target="question-motive" disabled={isLLMLoading} onClick={() => openQuestionChoice('motive_search')} title={isLLMLoading ? t('pc.hotbar.loading') : t('pc.hotbar.slot.motive.title')} type="button">
                 <span className="slot-key">2</span>
                 <span className="slot-ico"><PCSvgIcon id="i-eye" size={24} /></span>
-                <span className="slot-nm">동기 탐색</span>
+                <span className="slot-nm">{t('pc.hotbar.slot.motive.compact')}</span>
               </button>
 
               {/* 3: 공감 접근 */}
-              <button className="slot" data-guide-target="question-empathy" disabled={isLLMLoading} onClick={() => openQuestionChoice('empathy_approach')} title={isLLMLoading ? '응답 대기 중' : '공감 접근 - 자백 유도하기'} type="button">
+              <button className="slot" data-guide-target="question-empathy" disabled={isLLMLoading} onClick={() => openQuestionChoice('empathy_approach')} title={isLLMLoading ? t('pc.hotbar.loading') : t('pc.hotbar.slot.empathy.title')} type="button">
                 <span className="slot-key">3</span>
                 <span className="slot-ico"><PCSvgIcon id="i-heart" size={24} /></span>
-                <span className="slot-nm">공감 접근</span>
+                <span className="slot-nm">{t('pc.hotbar.slot.empathy.compact')}</span>
               </button>
 
               {freeInterrogationEnabled ? (
-                <button className="slot" disabled={isLLMLoading} onClick={openFreeQuestion} title={isLLMLoading ? '응답 대기 중' : '자유 질문 - 복합적 접근 시도'} type="button">
+                <button className="slot" disabled={isLLMLoading} onClick={openFreeQuestion} title={isLLMLoading ? t('pc.hotbar.loading') : t('pc.hotbar.slot.free.title')} type="button">
                   <span className="slot-key">4</span>
                   <span className="slot-ico"><PCSvgIcon id="i-chat" size={24} /></span>
-                  <span className="slot-nm">자유 질문</span>
+                  <span className="slot-nm">{t('pc.hotbar.slot.free.compact')}</span>
                 </button>
               ) : null}
 
               {/* 5: 증거 제시 */}
-              <button className="slot" data-guide-target="evidence-present" disabled={isLLMLoading} onClick={openEvidenceChoice} title={isLLMLoading ? '응답 대기 중' : '증거 제시'} type="button">
+              <button className="slot" data-guide-target="evidence-present" disabled={isLLMLoading} onClick={openEvidenceChoice} title={isLLMLoading ? t('pc.hotbar.loading') : t('pc.hotbar.slot.evidence.title')} type="button">
                 <span className="slot-key">5</span>
                 <span className="slot-ico"><PCSvgIcon id="i-doc" size={24} /></span>
-                <span className="slot-nm">증거 제시</span>
+                <span className="slot-nm">{t('pc.hotbar.slot.evidence.compact')}</span>
               </button>
 
               {/* 6: 증인 소환 */}
-              <button className={`slot${!hasWitness ? ' slot-locked' : ''}`} data-guide-target="witness-summon" disabled={!hasWitness || isLLMLoading} onClick={openWitnessPanel} title={isLLMLoading ? '응답 대기 중' : '증인 소환'} type="button">
+              <button className={`slot${!hasWitness ? ' slot-locked' : ''}`} data-guide-target="witness-summon" disabled={!hasWitness || isLLMLoading} onClick={openWitnessPanel} title={isLLMLoading ? t('pc.hotbar.loading') : t('pc.hotbar.slot.witness.title')} type="button">
                 <span className="slot-key">6</span>
                 <span className="slot-ico"><PCSvgIcon id="i-witness" size={24} /></span>
-                <span className="slot-nm">증인 소환</span>
+                <span className="slot-nm">{t('pc.hotbar.slot.witness.compact')}</span>
               </button>
             </div>
           </div>
@@ -557,6 +585,7 @@ function CharacterCard({
   caseId: string; name: string; emotion: EmotionalPhase; emotionValue: number;
   faceId: string; isActive: boolean; onClick: () => void; side: PartyId
 }) {
+  const { t } = useI18n()
   // 감정 도넛 — 격앙/체념 단계는 펄스 애니메이션으로 위급 신호
   const isCritical = emotion === 'angry' || emotion === 'resigned'
   const safeValue = Math.max(0, Math.min(100, Math.round(emotionValue || 0)))
@@ -572,11 +601,11 @@ function CharacterCard({
           party={side}
           size={52}
         />
-        <span className="char-face__value" aria-label={`감정 수치 ${safeValue}`}>{safeValue}</span>
+        <span className="char-face__value" aria-label={t('pc.hotbar.emotionValue', { value: safeValue })}>{safeValue}</span>
       </div>
       <div className="char-info">
         <span className="char-nm">{name}</span>
-        <span className={`char-emo ${emotion === 'angry' ? 'ce-sh' : 'ce-cf'}`}>{EMOTION_LABELS[emotion]}</span>
+        <span className={`char-emo ${emotion === 'angry' ? 'ce-sh' : 'ce-cf'}`}>{t(EMOTION_LABEL_KEYS[emotion])}</span>
       </div>
     </button>
   )

@@ -1,0 +1,70 @@
+glossary_id,locked,used_in_keys_count,used_terms_observed,conflicts,status
+project_solomon,true,1,Project Solomon,,clean
+steam_app_id,true,0,,,unused
+achievement_api_name,true,0,,,unused
+steam_auth_ticket,false,0,,,unused
+steam_cloud,true,0,,,unused
+steam_deck,true,0,,,unused
+court_simulation,false,0,,,unused
+courtroom,false,2,法庭,,clean
+judge,false,18,裁判官,,clean
+party,false,1,{party} 一方,placeholder template only,clean
+party_a,false,0,,,unused
+party_b,false,0,,,unused
+witness,false,2,证人,,clean
+case,false,15,案件,,clean
+case_brief,false,2,案件简报,,clean
+case_id,true,0,,,unused
+phase,false,3,阶段,,clean
+briefing_phase,false,1,案件简报,KR source uses 사건 브리핑 (no 단계 suffix); CN mirrors KR shortened form,clean
+pretrial_phase,false,1,庭前陈述,KR source 사전진술 (no 단계); CN truncated,clean
+interrogation_phase,false,1,讯问,KR source 심문 (no 단계); CN truncated,clean
+rebuttal_phase,false,0,,,unused
+evidence_phase,false,0,,,unused
+re_examination_phase,false,0,,,unused
+mediation_phase,false,0,,,unused
+verdict_phase,false,1,判决,KR source 판결 (no 단계); CN truncated,clean
+result_phase,false,1,结果,KR source 결과 (no 단계); CN truncated,clean
+verdict,false,12,判决,,clean
+judgment_basis,false,0,,,unused
+responsibility,false,1,责任分担 (compound only),,clean
+solution,false,0,,,unused
+dispute,false,28,争议点,,clean
+claim,false,4,主张,,clean
+fact,false,3,事实,,clean
+truth,false,3,真相,,clean
+hidden_truth,false,0,,,unused
+surface_text,false,0,,,unused
+evidence,false,30,证据,,clean
+evidence_card,false,0,,,unused
+evidence_stage,false,0,,,unused
+deep_investigation,false,0,,,unused
+testimony,false,0,,,unused
+statement,false,4,陈述,,clean
+contradiction,false,4,矛盾,,clean
+contradiction_pursuit,false,0,,,unused
+free_interrogation,false,1,自由提问,KR source 자유질문 (not 자유심문); CN 自由提问 fits the "free question" register rather than glossary 自由讯问. Different KR lemma.,clean
+judge_question,false,0,,,unused
+fact_pursuit,false,1,事实追问,,clean
+motive_search,false,1,动机探查,,clean
+empathy_approach,false,1,共情接近,,clean
+dossier,false,0,,,unused
+notebook,false,0,,KR `수첩` not surfaced as a label in this batch (only category labels under it are surfaced),unused
+observation,false,3,观察,,clean
+record_summary,false,0,,,unused
+action_panel,false,0,,,unused
+hotbar,false,0,,,unused
+investigation_token,false,2,调查代币,,clean
+skill_point,false,2,技能点,,clean
+trust,false,2,信任 (顺序/恢复 compounds),glossary CN 信任度 not used as standalone (only base 信任),clean
+stress,false,0,,,unused
+perk,false,1,特性,glossary KR 특전 vs source uses loanword 퍼크; CN 特性 matches glossary,clean
+trait,false,0,,KR source uses 성향 (not 특성) → translated as 倾向; glossary entry's KR lemma not surfaced,unused
+clearance,false,0,,KR source uses 클리어율 (clear-rate) not 클리어런스 (clearance/permission); different lemma. CN rendered 完成度,unused
+session,false,1,会话,used in existing session.preparing.title; lobby concept 시즌 → 赛季 is a different lemma,clean
+save_data,false,1,存档槽 (compound),,clean
+mock_mode,false,0,,,unused
+test_console,false,1,Token Console,KR not translated; English kept for dev tool,clean
+llm,true,0,,,unused
+api,true,0,,,unused
+jwt,true,0,,,unused

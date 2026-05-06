@@ -567,7 +567,7 @@ export default function WhackAMoleGame() {
             <div className="pc-whack-a-mole__result-card" style={{borderColor:'rgba(212,162,78,0.4)'}}>
               <div className="pc-whack-a-mole__result-title" style={{color:'#e8c172'}}>클리어!</div>
               <p className="pc-whack-a-mole__result-copy">
-                법정 지배력을 확보했습니다.
+                법정 장악을 확보했습니다.
               </p>
             </div>
           </div>

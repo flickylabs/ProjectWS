@@ -1,0 +1,55 @@
+namespace,key,current_ja,proposed_ja,status,notes
+common,app.title,ソロモンのジレンマ：真実の裁き,ソロモンのジレンマ：真実の裁き,ok,locked brand title with full-width colon
+common,brand.internalProjectName,Project_Solomon,Project_Solomon,ok,internal-only name; never localize
+common,brand.title,ソロモンのジレンマ,ソロモンのジレンマ,ok,short title for hero
+common,brand.subtitle,真実の裁き,真実の裁き,ok,
+common,brand.fullTitle,ソロモンのジレンマ：真実の裁き,ソロモンのジレンマ：真実の裁き,ok,full-width colon
+common,splash.subtitle,法廷シミュレーションゲーム,法廷シミュレーションゲーム,ok,KO source 법정 시뮬레이션 게임 — direct transliteration
+common,language.selectorLabel,言語,言語,ok,
+common,language.selectorTitle,表示言語を選択,表示言語を選択,ok,
+common,steam.authRequired.title,Steam認証が必要です,Steam認証が必要です,ok,
+common,steam.authRequired.description,"Steamクライアントとサーバー認証の状態を確認してから、もう一度お試しください。","Steamクライアントとサーバー認証の状態を確認のうえ、再度お試しください。",needs_native_review,minor flow refinement (確認してから → 確認のうえ; もう一度 → 再度) — both acceptable
+common,steam.authRequired.retry,再試行,再試行,ok,
+common,steam.authFailedFallback,Steam認証に失敗しました。,Steam認証に失敗しました。,ok,
+common,session.preparing.title,セッション準備中,セッション準備中,ok,
+common,session.preparing.description,事件データと法廷環境を読み込んでいます。,事件データと法廷環境を読み込んでいます。,ok,事件 matches glossary case=事件
+settings,settings.about.credits.title,ソロモンのジレンマ：真実の裁き,ソロモンのジレンマ：真実の裁き,ok,
+settings,settings.about.credits.description,"AI同士の対立を人間の知恵で裁く、リプレイ型の推理ゲーム","AI同士の対立を人間の知恵で裁く、リプレイ型の推理ゲーム",ok,natural courtroom-mystery tagline
+settings,settings.language.title,言語,言語,ok,
+settings,settings.language.description,ゲームUIに使用する表示言語を選択します。,ゲームUIに使用する表示言語を選択します。,ok,
+settings,settings.language.displayLanguage,表示言語,表示言語,ok,
+settings,settings.language.displayLanguageDescription,"ホーム、設定、システムUIにすぐ適用されます。","ホーム、設定、システムUIにすぐ適用されます。",ok,
+settings,settings.language.current,現在の言語,現在の言語,ok,
+settings,settings.language.restartNote,"一部の事件本文と保存済み記録は、次の画面遷移後に更新される場合があります。","一部の事件本文と保存済み記録は、次の画面遷移後に更新される場合があります。",ok,
+home,home.gameTitle,ソロモンのジレンマ：真実の裁き,ソロモンのジレンマ：真実の裁き,ok,
+home,home.tagline,"現代の裁き手として、証言の奥にある真実を見極めましょう。","現代の裁判官となり、証言の奥にある真相を見極めましょう。",changed,"裁き手 → 裁判官 (glossary alignment, KO 재판관). 真実 → 真相 (glossary truth=真相)."
+home,pc.home.moreCases,ほか {count}件,ほか {count}件,ok,
+home,pc.home.countdown.ready,まもなく回復,まもなく回復,ok,
+home,pc.home.countdown.minutesSeconds,{minutes}分{seconds}秒,{minutes}分{seconds}秒,ok,
+home,pc.home.countdown.seconds,{seconds}秒,{seconds}秒,ok,
+home,pc.resolutionConfirm.rollback,{seconds}秒後に前の解像度へ戻ります。,{seconds}秒後に元の解像度へ戻ります。,needs_native_review,前 → 元 reads more natural for revert-to-previous semantic
+court,pc.notes.unseen,（未確認項目 {count}件）,（未確認項目 {count}件）,ok,full-width parentheses appropriate for JA UI
+court,pc.combo.ready,組み合わせ可能 {count}件 - すぐ接続可能,組み合わせ可能 {count}件 ─ 今すぐ連結できます,changed,"接続可能 → 連結できます (連結 = collocation for combining cards/materials in JA game UIs); ASCII hyphen → em-dash"
+court,pc.combo.potential,手がかりが必要 {count}件 - 未発見の手がかりがあります,手がかり要 {count}件 ─ まだ見つかっていない手がかりがあるようです,changed,"preserves KO 듯 nuance via ようです; tighter phrasing for sidebar; em-dash"
+court,pc.combo.readyPairToast,組み合わせ可能なペアが準備できました,組み合わせ可能なペアが準備できました,ok,
+court,pc.combo.readyItemsNotice,組み合わせ可能な項目が{count}件あります,組み合わせ可能な項目が{count}件あります,ok,
+court,pc.combo.readyMaterialsNotice,組み合わせ可能な材料が{count}件準備できました,組み合わせ可能な材料が{count}件揃いました,changed,準備できました → 揃いました — natural collocation for materials/items in JA
+court,pc.combo.readyDetailLabel,組み合わせ可能項目の詳細,組み合わせ可能項目の詳細,ok,
+court,pc.recordSummary.moreConvincing,{party}側の主張のほうが説得力があると判断しました。,{party}側の主張のほうが説得力があると判断しました。,ok,
+court,pc.verdictAdvance.minimumVisible,判決は争点が{required}件以上明らかになってから進行できます。現在明らかな争点は{visible}件です。,判決は争点が{required}件以上明らかになってから進められます。現在明らかになっている争点は{visible}件です。,needs_native_review,進行できます → 進められます (more natural verbal); 明らかな → 明らかになっている (consistency)
+court,pc.verdictAdvance.conditionsMissing,まだ判決条件を満たしていません。争点ごとの真実と証拠をさらに確認してください。,まだ判決条件を満たしていません。争点ごとの真相と証拠をさらに確認してください。,changed,真実 → 真相 to align with glossary truth=真相 and disclosure-policy hidden-truth lexicon
+court,pc.verdictAdvance.hidden.title,まだ明らかになっていない争点があります,まだ明らかになっていない争点があります,ok,
+court,pc.verdictAdvance.hidden.subtitle,判決前の確認,判決前の確認,ok,
+court,pc.verdictAdvance.hidden.body,現在明らかな争点は{visible}件です。\\nまだ明らかになっていない争点が{hidden}件残っています。\\n\\nそれでも判決へ進みますか？,現在明らかになっている争点は{visible}件です。\\nまだ明らかになっていない争点が{hidden}件残っています。\\n\\nそれでも判決へ進みますか？,needs_native_review,明らかな → 明らかになっている for consistency with minimumVisible
+court,pc.verdictAdvance.hidden.visibleTag,公開争点 {count},公開争点 {count},ok,
+court,pc.verdictAdvance.hidden.hiddenTag,隠れた争点 {count},隠れた争点 {count},ok,
+court,pc.verdictAdvance.hidden.confirm,それでも判決へ進む,それでも判決へ進む,ok,
+court,pc.verdictAdvance.hidden.collapse,判決ボタンだけ隠す,判決ボタンだけ隠す,ok,
+court,pc.verdictAdvance.hidden.keepInvestigating,さらに調査する,さらに調査する,ok,
+verdict,pc.verdict.factOption.partyClaimCorrect,{party}側の主張が正しい,{party}側の主張が正しい,ok,
+verdict,pc.verdict.factOption.partyClaimCorrectWithContradiction,この争点は事実と異なります - {party}側の主張が正しい,この争点は事実と異なります ─ {party}側の主張が正しい,changed,ASCII hyphen → em-dash for cleaner JA punctuation
+verdict,pc.verdict.responsibility.major,{party}側に主な責任,{party}側に主たる責任,needs_native_review,主な責任 → 主たる責任 — slightly more formal courtroom register; both valid
+verdict,pc.verdict.responsibility.greater,{party}側により大きな責任,{party}側により大きな責任,ok,
+verdict,pc.verdict.responsibility.similar,双方に近い責任,双方ほぼ同等の責任,changed,近い責任 reads odd — 同等 carries the responsibility-balance semantics clearly
+profile,pc.perk.required,{name}が必要,{name}が必要,ok,
+profile,pc.profile.fragments.needCount,{count}個以上必要,{count}個以上必要,ok,
