@@ -37,6 +37,13 @@ Do not set `PORT` on Railway unless Railway support or a target-port setup speci
 
 For local server testing, copy `server/.env.example` to `server/.env` and replace the secret values. `server/.env` is git-ignored and loaded by `server/index.js`.
 
+Use these local env files:
+
+- Root `.env`: Vite/client defaults only. Values must be public and must normally start with `VITE_`.
+- Root `.env.production.local`: release build client values. Set `VITE_API_URL` here.
+- `server/.env`: local backend secrets only. Keep Steam/OpenAI secret keys here for local server runs.
+- Railway Variables: production backend secrets only. Do not commit or paste real secrets.
+
 Generate `STEAM_SESSION_SECRET` locally with:
 
 ```bash
@@ -137,16 +144,15 @@ The current server uses a local SQLite file inside the container. That is accept
 
 Initial Steam Deck support path is Windows build plus Proton validation. Do not create a Linux native depot until the Windows/Proton path is tested and a real need appears.
 
-Use the guarded release scripts when a real server URL is ready:
+Use the guarded release scripts when a real server URL is ready. The release scripts read `VITE_API_URL` from the shell or from root `.env.production.local`.
 
 ```bash
-VITE_API_URL=https://your-domain.example/api npm run steam:dir:release
-VITE_API_URL=https://your-domain.example/api npm run steam:package:release
+npm run steam:dir:release
+npm run steam:package:release
 ```
 
-On PowerShell:
+Current local release env:
 
-```powershell
-$env:VITE_API_URL="https://your-domain.example/api"
-npm run steam:dir:release
+```env
+VITE_API_URL=https://projectws-production-c6c6.up.railway.app/api
 ```
