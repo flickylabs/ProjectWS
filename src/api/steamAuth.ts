@@ -1,4 +1,4 @@
-const API_BASE = (import.meta.env.VITE_API_URL as string) || '/api'
+const API_BASE = ((import.meta.env.VITE_API_URL as string) || '/api').replace(/\/+$/, '')
 const STORAGE_KEY = 'solomon-steam-session'
 const SESSION_REFRESH_MARGIN_MS = 60_000
 const AUTH_TIMEOUT_MS = 8_000
@@ -164,13 +164,18 @@ function requestUrl(input: RequestInfo | URL): string {
   return input.url
 }
 
-function isAuthApiRequest(url: string): boolean {
-  return url.includes('/api/auth/') || url.includes('/auth/steam')
+function isPublicApiRequest(url: string): boolean {
+  return (
+    url.includes('/api/auth/') ||
+    url.includes('/auth/steam') ||
+    url.endsWith('/api/health') ||
+    url.endsWith('/health')
+  )
 }
 
 function shouldAttachSteamSession(input: RequestInfo | URL): boolean {
   const url = requestUrl(input)
-  if (isAuthApiRequest(url)) return false
+  if (isPublicApiRequest(url)) return false
   return url.startsWith('/api') || url.startsWith(API_BASE) || url.includes('/api/')
 }
 

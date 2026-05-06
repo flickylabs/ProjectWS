@@ -1,5 +1,0 @@
-﻿# Redacted debug artifact
-
-This file previously contained Vite debug output with client-exposed environment data.
-All original debug content was removed during the OpenAI server-side proxy migration.
-No API key material is retained here.

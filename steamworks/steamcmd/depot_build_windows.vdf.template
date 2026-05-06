@@ -1,0 +1,14 @@
+"DepotBuildConfig"
+{
+  "DepotID" "<WINDOWS_DEPOT_ID>"
+  "ContentRoot" "..\..\release\steam-depot\windows"
+
+  "FileMapping"
+  {
+    "LocalPath" "*"
+    "DepotPath" "."
+    "recursive" "1"
+  }
+
+  "FileExclusion" "steam_appid.txt"
+}

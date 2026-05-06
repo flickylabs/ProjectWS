@@ -1,4 +1,0 @@
-[scripted-semantic-quality] case=civic-new-08
-WARN T5 interrogation:b-d-2-S4-motive_search-v2 feels too flat for S4 rattled tone
-summary={"WARN":1}
-PASS

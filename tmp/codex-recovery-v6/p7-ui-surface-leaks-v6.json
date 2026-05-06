@@ -1,6 +1,0 @@
-{
-  "generatedAt": "2026-04-26T18:02:04.005Z",
-  "total": 0,
-  "candidates": [],
-  "note": "P7 UI/code surface leaks remain explicitly out of scope for v6; no code fallback or UI files were edited."
-}

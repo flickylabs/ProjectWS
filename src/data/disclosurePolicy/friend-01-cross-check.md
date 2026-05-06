@@ -141,7 +141,7 @@ Executed after drafting:
 | ScriptedText checksum sample | PASS | `src/data/scriptedText/friend-01.json` remains `4135dfb8d90c9c9b40fcbeb3815e668029ab35723af725d699f22a2f4831db97`. |
 | caseData checksum sample | PASS | `src/data/cases/generated/friend-01.json` remains `4b742b920ee1572bd577ddefc496e4b7be5e2f764cd3f642253b3af29a0be911`. |
 | spouse/family baseline checksum sample | PASS | spouse and family ScriptedText/caseData checksums remain unchanged. |
-| `tmp/detect-truth-leak.cjs` | PASS | 0 leak candidates across spouse/family/friend. |
+| archived `LEGACY/20260506-pre-steam-cleanup/tmp/detect-truth-leak.cjs` | PASS | 0 leak candidates across spouse/family/friend. |
 | v6 lieState/evidence/archetype/meter specialists | PASS | Hard issue count 0. `v6-liestate-flow` still reports 772 candidate issues, matching the known semantic-review backlog. |
 | v3/v4/v5 specialist checks | PASS | No residual issues reported. |
 | `tmp/precheck-matrix.cjs` | Existing warning/fail output | Reports 10 existing HIGH `missing_disputeId_in_channel` entries for family/friend `d-5`. This predates this policy draft and was not introduced by these files. |

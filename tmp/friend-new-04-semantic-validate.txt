@@ -1,3 +1,0 @@
-[scripted-semantic-quality] case=friend-new-04
-summary={}
-PASS

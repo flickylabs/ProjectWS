@@ -38,9 +38,10 @@ function getConfig(): LLMConfig {
   const useLocal = providerOverride === 'local'
 
   if (!useLocal) {
+    const apiBase = (getRuntimeEnv('VITE_API_URL') || '/api').replace(/\/+$/, '')
     return {
       provider: 'openai',
-      baseUrl: '/api/llm',
+      baseUrl: `${apiBase}/llm`,
       modelId: MODEL_DIALOGUE,
     }
   }

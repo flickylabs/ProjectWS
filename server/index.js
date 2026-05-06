@@ -1,6 +1,6 @@
 /**
- * Solomon Game — Backend Server
- * Express.js + SQLite
+ * Project Solomon backend server.
+ * Express.js + SQLite.
  */
 import dotenv from 'dotenv';
 import express from 'express';
@@ -23,6 +23,7 @@ import seasonsRouter from './routes/seasons.js';
 import llmLogRouter from './routes/llmLog.js';
 import authRouter from './routes/auth.js';
 import llmRouter from './routes/llm.js';
+import { requireSteamSession } from './lib/steamAuth.js';
 
 dotenv.config({ quiet: true });
 
@@ -31,12 +32,27 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 const HOST = process.env.HOST || '0.0.0.0';
 
-// ── Middleware ──
+function isApiAuthRequired() {
+  if (process.env.STEAM_REQUIRE_API_AUTH === '0') return false;
+  if (process.env.NODE_ENV === 'production') return true;
+  return process.env.STEAM_REQUIRE_API_AUTH === '1';
+}
+
+function steamApiAuthGate(req, res, next) {
+  if (!isApiAuthRequired()) return next();
+  if (req.path === '/health' || req.path.startsWith('/auth/')) return next();
+  return requireSteamSession(req, res, next);
+}
+
 app.use(cors());
 app.use(express.json({ limit: '2mb' }));
 
-// ── API Routes ──
+app.get('/api/health', (req, res) => {
+  res.json({ status: 'ok', timestamp: new Date().toISOString() });
+});
+
 app.use('/api/auth', authRouter);
+app.use('/api', steamApiAuthGate);
 app.use('/api/llm', llmRouter);
 app.use('/api/notices', noticesRouter);
 app.use('/api/mail', mailRouter);
@@ -51,29 +67,21 @@ app.use('/api/case-meta', caseMetaRouter);
 app.use('/api/seasons', seasonsRouter);
 app.use('/api/llm-log', llmLogRouter);
 
-// ── WebAdmin 정적 파일 ──
 app.use('/admin', express.static(path.join(__dirname, 'public', 'admin')));
 
-// ── Health Check ──
-app.get('/api/health', (req, res) => {
-  res.json({ status: 'ok', timestamp: new Date().toISOString() });
-});
-
-// ── DB 초기화 ──
 getDB();
 
-// ── Server Start ──
 app.listen(PORT, HOST, () => {
   console.log(`Solomon Server running on http://${HOST}:${PORT}`);
   console.log(`WebAdmin:  http://${HOST}:${PORT}/admin`);
   console.log(`API Docs:  http://${HOST}:${PORT}/api/health`);
 });
 
-// ── Graceful Shutdown ──
 process.on('SIGINT', () => {
   closeDB();
   process.exit(0);
 });
+
 process.on('SIGTERM', () => {
   closeDB();
   process.exit(0);

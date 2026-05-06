@@ -1,3 +1,0 @@
-[scripted-semantic-quality] case=family-new-10
-summary={}
-PASS

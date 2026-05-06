@@ -109,6 +109,7 @@ export function extractBearerToken(req) {
 
 export function requireSteamSession(req, res, next) {
   try {
+    if (req.steamSession) return next();
     req.steamSession = verifySessionToken(extractBearerToken(req));
     next();
   } catch (err) {

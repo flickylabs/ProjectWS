@@ -1,3 +1,0 @@
-[runtime-template-coverage] case=professional-new-07
-summary={}
-PASS

@@ -1,3 +1,0 @@
-[runtime-template-coverage] case=neighbor-08
-summary={}
-PASS

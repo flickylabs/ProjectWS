@@ -1,3 +1,0 @@
-[scripted-template-coverage] case=family-new-03
-summary={}
-PASS

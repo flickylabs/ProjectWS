@@ -1,3 +1,0 @@
-[scripted-semantic-quality] case=workplace-11
-summary={}
-PASS

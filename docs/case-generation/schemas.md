@@ -266,7 +266,7 @@ export const SOLUTION_ORIENTATIONS: Record<string, SolutionOrientation> = {
 
 ## 6. V3 GameLoop Data (DossierCards)
 
-경로: `docs/ref/리뉴얼참고/{caseId}-v3-game-loop-data.json` (또는 별도 JSON)
+경로: archived `docs/LEGACY/20260506-pre-steam-cleanup/ref/리뉴얼참고/{caseId}-v3-game-loop-data.json` (또는 새로 정의한 별도 JSON)
 
 ### 최상위
 

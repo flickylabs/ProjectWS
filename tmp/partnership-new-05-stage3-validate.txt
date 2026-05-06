@@ -1,3 +1,0 @@
-[validate-scripted-text] case=partnership-new-05
-[validate-scripted-text] summary={}
-[validate-scripted-text] PASS

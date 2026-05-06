@@ -1,3 +1,0 @@
-[scripted-template-coverage] case=partnership-09
-summary={}
-PASS

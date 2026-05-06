@@ -1,3 +1,0 @@
-[runtime-template-coverage] case=friend-v3-01
-summary={}
-PASS

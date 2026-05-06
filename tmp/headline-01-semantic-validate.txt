@@ -1,3 +1,0 @@
-[scripted-semantic-quality] case=headline-01
-summary={}
-PASS

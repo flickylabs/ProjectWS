@@ -200,7 +200,7 @@ Minimum checks for every change:
 
 ```bash
 node -e "JSON.parse(require('fs').readFileSync('src/data/disclosurePolicy/spouse-01.json','utf8'))"
-node tmp/detect-truth-leak.cjs
+npm run qa:fast
 ```
 
 The policy JSON must not be imported from:

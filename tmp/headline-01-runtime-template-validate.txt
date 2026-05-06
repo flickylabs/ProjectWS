@@ -1,3 +1,0 @@
-[runtime-template-coverage] case=headline-01
-summary={}
-PASS

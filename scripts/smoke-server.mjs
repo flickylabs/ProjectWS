@@ -5,7 +5,7 @@ const port = Number(process.env.SMOKE_PORT || 3201);
 const baseUrl = `http://127.0.0.1:${port}`;
 const server = spawn(process.execPath, ['index.js'], {
   cwd: new URL('../server/', import.meta.url),
-  env: { ...process.env, PORT: String(port) },
+  env: { ...process.env, PORT: String(port), STEAM_REQUIRE_API_AUTH: '1' },
   stdio: ['ignore', 'pipe', 'pipe'],
 });
 
@@ -38,13 +38,21 @@ try {
     }),
   });
   const authBody = await authRes.json().catch(() => ({}));
+  const protectedRes = await fetch(`${baseUrl}/api/notices`);
+  const protectedBody = await protectedRes.json().catch(() => ({}));
 
   console.log(JSON.stringify({
-    ok: health.status === 'ok' && (authRes.status === 200 || authRes.status === 401),
+    ok: (
+      health.status === 'ok' &&
+      (authRes.status === 200 || authRes.status === 401) &&
+      protectedRes.status === 401
+    ),
     health: health.status,
     fakeTicketStatus: authRes.status,
     fakeTicketMode: authRes.status === 200 ? 'mock-accepted' : 'live-rejected',
     fakeTicketError: authBody.error || null,
+    protectedApiStatus: protectedRes.status,
+    protectedApiError: protectedBody.error || null,
   }, null, 2));
 } catch (err) {
   console.error(JSON.stringify({

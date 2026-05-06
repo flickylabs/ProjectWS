@@ -6,7 +6,7 @@
 
 import { authFetch } from './steamAuth';
 
-const BASE_URL = import.meta.env.VITE_API_URL || '/api';
+const BASE_URL = ((import.meta.env.VITE_API_URL as string) || '/api').replace(/\/+$/, '');
 
 async function request<T>(path: string, method = 'GET', body?: unknown): Promise<T> {
   const opts: RequestInit = {

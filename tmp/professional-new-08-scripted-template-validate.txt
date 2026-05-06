@@ -1,3 +1,0 @@
-[scripted-template-coverage] case=professional-new-08
-summary={}
-PASS

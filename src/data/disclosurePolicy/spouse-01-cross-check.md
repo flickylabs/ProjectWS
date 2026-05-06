@@ -138,7 +138,7 @@ Executed after the full `d-2` / `h-d3` / `h-d4` progression redraft:
 | Runtime import search | PASS | No `disclosurePolicy` imports found in `src/engine`, `src/components`, `src/hooks`, `src/app`, or `src/store`. |
 | ScriptedText checksum sample | PASS | `src/data/scriptedText/spouse-01.json` remains `8298ead7a41c5245998808e03cc87ad3c4b3c534860bcb04470081493f0bc4f7`. |
 | caseData checksum sample | PASS | `src/data/cases/generated/spouse-01.json` remains `d3c1377fd8ec0222c4f5761e0ff46c31117be4d097d31b905dff82f40d25e48a`. |
-| `tmp/detect-truth-leak.cjs` | PASS | 0 leak candidates across spouse/family/friend. |
+| archived `LEGACY/20260506-pre-steam-cleanup/tmp/detect-truth-leak.cjs` | PASS | 0 leak candidates across spouse/family/friend. |
 | v6 lieState/evidence/archetype/meter specialists | PASS | Hard issue count 0. `v6-liestate-flow` still reports 772 candidate issues, matching the known semantic-review backlog. |
 | v3/v4/v5 specialist checks | PASS | No residual issues reported. |
 | `tmp/precheck-matrix.cjs` | Existing warning/fail output | Reports 10 existing HIGH `missing_disputeId_in_channel` entries for family/friend `d-5`. This is unrelated to the spouse-01 policy schema draft and was not introduced by this work. |

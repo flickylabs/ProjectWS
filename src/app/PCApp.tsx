@@ -17,6 +17,7 @@ import PCHomeScreen from '../components/pc/home/PCHomeScreen'
 import { playBgm } from '../engine/soundEngine'
 import PCResultScreen from '../components/pc/result/PCResultScreen'
 import PCVerdictScreen from '../components/pc/verdict/PCVerdictScreen'
+import PCTestConsole from '../components/pc/debug/PCTestConsole'
 import { useActionDispatch } from '../hooks/useActionDispatch'
 import { useScreenPreset } from '../hooks/useScreenPreset'
 import { ensureSteamAuthSession } from '../api/steamAuth'
@@ -140,7 +141,12 @@ export default function PCApp() {
   }
 
   if (!caseData) {
-    return <PCHomeScreen />
+    return (
+      <>
+        <PCHomeScreen />
+        <PcTestConsoleMount />
+      </>
+    )
   }
 
   if (!sessionReady) {
@@ -156,15 +162,30 @@ export default function PCApp() {
   }
 
   if (currentPhase === Phase.Briefing) {
-    return <PCCaseBrief />
+    return (
+      <>
+        <PCCaseBrief />
+        <PcTestConsoleMount />
+      </>
+    )
   }
 
   if (currentPhase === Phase.Verdict) {
-    return <PCVerdictScreen />
+    return (
+      <>
+        <PCVerdictScreen />
+        <PcTestConsoleMount />
+      </>
+    )
   }
 
   if (currentPhase === Phase.Result) {
-    return <PCResultScreen />
+    return (
+      <>
+        <PCResultScreen />
+        <PcTestConsoleMount />
+      </>
+    )
   }
 
   return (
@@ -175,8 +196,14 @@ export default function PCApp() {
         isDialoguePhase={currentPhase === Phase.Pretrial || currentPhase === GamePhase.Phase2_Rebuttal}
         onDialogueTap={triggerDialogueTap}
       />
+      <PcTestConsoleMount />
     </>
   )
+}
+
+function PcTestConsoleMount() {
+  const enabled = import.meta.env.DEV || import.meta.env.VITE_PC_TEST_CONSOLE === 'true'
+  return enabled ? <PCTestConsole /> : null
 }
 
 function getActionPanel(phase: GamePhase) {

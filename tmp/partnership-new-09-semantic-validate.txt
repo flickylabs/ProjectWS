@@ -1,3 +1,0 @@
-[scripted-semantic-quality] case=partnership-new-09
-summary={}
-PASS

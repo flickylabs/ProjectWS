@@ -28,6 +28,7 @@ STEAM_APP_ID=4709340
 STEAM_AUTH_IDENTITY=solomon-web-api
 STEAM_WEB_API_KEY=...
 STEAM_SESSION_SECRET=...
+STEAM_REQUIRE_API_AUTH=1
 STEAM_AUTH_MOCK=0
 STEAM_ACHIEVEMENT_IDS=ACH_FIRST_CASE_CLEARED,ACH_PERFECT_VERDICT,ACH_TRUTH_BREAKTHROUGH,ACH_EVIDENCE_MASTER,ACH_MEDIATION_SUCCESS,ACH_NO_HINT_CLEAR,ACH_ALL_BASE_CASES_CLEARED,ACH_JUDGE_LEVEL_10,ACH_STREAK_7_DAYS,ACH_STEAM_DECK_SESSION
 OPENAI_API_KEY=...
@@ -72,6 +73,8 @@ For live auth, run the server with real env values and keep `STEAM_AUTH_MOCK=0`.
 npm run server:smoke
 ```
 
+The smoke test also confirms that a normal API route rejects unauthenticated requests when `STEAM_REQUIRE_API_AUTH=1`.
+
 ## Steamworks native bridge
 
 The Electron main process loads `steamworks.js` first. If Steam is not running or initialization fails, it falls back to the mock bridge.
@@ -84,6 +87,18 @@ npm run steam:run
 ```
 
 For Steam depot uploads, do not upload `steam_appid.txt`.
+
+## SteamPipe staging
+
+Run this before uploading the Windows depot:
+
+```bash
+npm run steam:stage:windows
+```
+
+The command builds the Electron directory release, verifies the required executable/runtime files, and copies the upload payload to `release/steam-depot/windows/` without `steam_appid.txt`.
+
+SteamPipe templates live in `steamworks/steamcmd/`. Copy the `.vdf.template` files to `.vdf`, replace `<WINDOWS_DEPOT_ID>` with the depot ID from Steamworks, and upload with SteamCMD from the Steamworks SDK.
 
 ## Deployment notes
 
@@ -114,6 +129,7 @@ STEAM_APP_ID=4709340
 STEAM_AUTH_IDENTITY=solomon-web-api
 STEAM_WEB_API_KEY=...
 STEAM_SESSION_SECRET=...
+STEAM_REQUIRE_API_AUTH=1
 STEAM_AUTH_MOCK=0
 STEAM_ACHIEVEMENT_IDS=ACH_FIRST_CASE_CLEARED,ACH_PERFECT_VERDICT,ACH_TRUTH_BREAKTHROUGH,ACH_EVIDENCE_MASTER,ACH_MEDIATION_SUCCESS,ACH_NO_HINT_CLEAR,ACH_ALL_BASE_CASES_CLEARED,ACH_JUDGE_LEVEL_10,ACH_STREAK_7_DAYS,ACH_STEAM_DECK_SESSION
 OPENAI_API_KEY=...
@@ -135,8 +151,9 @@ Recommended first deployment path:
 3. Generate a Railway-provided domain or attach a custom domain.
 4. Verify `GET https://<railway-domain>/api/health`.
 5. Point the Electron/Vite build at the server with `VITE_API_URL=https://<railway-domain>/api`.
-6. Build the Steam release package with `npm run steam:dir:release`.
-7. Verify `POST /api/auth/steam` from the Electron build.
+6. Verify Railway with `npm run railway:smoke`.
+7. Build and stage the Steam Windows depot payload with `npm run steam:stage:windows`.
+8. Verify `POST /api/auth/steam` from the Electron build.
 
 The current server uses a local SQLite file inside the container. That is acceptable for the first Steam auth/API bridge test, but Railway service storage is ephemeral across redeploys. If persistent server-side settings or player records are needed, add a `DATABASE_PATH` env option and mount a Railway volume outside the application directory, for example `/data/solomon.db`.
 
@@ -148,6 +165,7 @@ Use the guarded release scripts when a real server URL is ready. The release scr
 
 ```bash
 npm run steam:dir:release
+npm run steam:stage:windows
 npm run steam:package:release
 ```
 

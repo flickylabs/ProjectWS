@@ -8,7 +8,7 @@
 
 ## 1. 게임 핵심 원칙
 
-> **"진실은 플레이어가 직접 밝혀낸다."** (`CLAUDE.md`)
+> **"진실은 플레이어가 직접 밝혀낸다."** (archived `docs/LEGACY/20260506-pre-steam-cleanup/root-docs/CLAUDE.md`)
 
 이 정책은 진실 누설 방지(`docs/disclosure-policy.md`)와 짝을 이루는 **인지 부하 관리** 영역이다. 사건 변화가 7 표면에 동시에 복제되면 채팅창이 시스템 로그처럼 보이고 컷씬이 과다해진다. 각 표면은 서로 다른 역할을 가져야 한다.
 
@@ -410,7 +410,7 @@ VFX 호출 시 selector 매칭 실패 → fallback (중앙 영역 micro pulse) /
 - v2 (예정 — 의뢰서 2개 작성 후 / 코드 정합 후)
 
 **관련 자료**:
-- `CLAUDE.md` — 게임 핵심 원칙
+- archived `docs/LEGACY/20260506-pre-steam-cleanup/root-docs/CLAUDE.md` — 게임 핵심 원칙
 - `docs/disclosure-policy.md` — 진실 누설 정책 (짝)
 - `memory/design_vfx_inventory_pc.md` — 기존 VFX/Cutscene 9 + 6 + queue 인벤토리
 - `memory/reference_resonance_selectors.md` — data-* selector 일람

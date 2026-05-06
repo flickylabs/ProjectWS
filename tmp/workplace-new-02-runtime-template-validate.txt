@@ -1,3 +1,0 @@
-[runtime-template-coverage] case=workplace-new-02
-summary={}
-PASS

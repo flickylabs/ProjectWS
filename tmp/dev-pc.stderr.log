@@ -1,7 +1,0 @@
-[33m[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
-5456 |    }
-5457 |  }
-5458 |  @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-s...
-     |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-5459 |  :root {
-5460 |    --solomon-primary: #d97706;[39m

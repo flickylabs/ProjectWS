@@ -1,3 +1,0 @@
-[runtime-template-coverage] case=family-05
-summary={}
-PASS

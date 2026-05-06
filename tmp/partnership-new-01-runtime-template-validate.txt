@@ -1,3 +1,0 @@
-[runtime-template-coverage] case=partnership-new-01
-summary={}
-PASS

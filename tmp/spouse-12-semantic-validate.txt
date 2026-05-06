@@ -1,3 +1,0 @@
-[scripted-semantic-quality] case=spouse-12
-summary={}
-PASS

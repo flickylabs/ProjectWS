@@ -1,3 +1,0 @@
-[scripted-semantic-quality] case=tenant-09
-summary={}
-PASS

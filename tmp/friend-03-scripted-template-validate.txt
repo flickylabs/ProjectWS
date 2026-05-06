@@ -1,3 +1,0 @@
-[scripted-template-coverage] case=friend-03
-summary={}
-PASS

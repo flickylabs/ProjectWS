@@ -1,3 +1,0 @@
-[scripted-template-coverage] case=civic-new-01
-summary={}
-PASS

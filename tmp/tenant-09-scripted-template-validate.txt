@@ -1,3 +1,0 @@
-[scripted-template-coverage] case=tenant-09
-summary={}
-PASS

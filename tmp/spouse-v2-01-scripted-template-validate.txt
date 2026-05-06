@@ -1,3 +1,0 @@
-[scripted-template-coverage] case=spouse-v2-01
-summary={}
-PASS

@@ -1,64 +1,48 @@
-# ⚖️ 솔로몬
+# Project Solomon
 
-**AI 둘의 싸움을 인간의 지혜로 재판하는 리플레이형 추리 게임**
+Project Solomon is a React + Vite investigation game prepared for a Steam PC release through an Electron wrapper and a server-side Steam authentication bridge.
 
-서로를 비난하는 두 AI 당사자를 심문하고, 증거를 조사하고, 판결을 내리세요.
-같은 인물이라도 매번 다른 사건이 벌어집니다.
+## Current Targets
 
-## 실행
+- Web app: Vite + React
+- PC build: `vite.config.pc.ts`
+- Steam shell: `electron/`
+- Backend API: `server/`
+- Steam App ID: `4709340`
+- Release name: `Project_Solomon`
+- Steam Deck path: Windows build with Proton validation first
 
-```bash
+## Local Setup
+
+```powershell
 npm install
-npm run dev
+cd server
+npm install
+cd ..
 ```
 
-http://localhost:5173 접속
+Server secrets live only in `server/.env`. Release API configuration for Electron/Vite lives in `.env.production.local`.
 
-## 기술 스택
+## Common Commands
 
-- **프론트엔드**: React + TypeScript + Vite + Tailwind CSS v4
-- **상태 관리**: Zustand (슬라이스 패턴)
-- **LLM**: OpenAI GPT-4o-mini (실시간 대화) — 서버 환경변수 `OPENAI_API_KEY` 설정
-- **사건 데이터**: ChatGPT Pro 사전 생성 JSON
-- **사운드**: Web Audio API 합성음
-
-## 프로젝트 구조
-
-```
-src/
-  app/          — App, main, CSS
-  types/        — TypeScript 타입 정의 (GDD v2.0 기반)
-  engine/       — 룰 엔진 (lie, emotion, trust, evidence, verdict, LLM)
-  store/        — Zustand 6슬라이스 (phase, agent, resource, evidence, dialogue, verdict)
-  data/         — 사건 JSON, 대사 트리, 캠페인, 칭호
-  components/   — React 컴포넌트
-  hooks/        — useActionDispatch, useValidActions, useLocalStorage
-  utils/        — 상수
-
-docs/
-  gdd/          — GDD v2.0 HTML 문서
-  prompts/      — 사건 생성 배치 프롬프트
-  resource_checklist/ — 리소스 체크리스트 (Google Sheets 연동)
+```powershell
+start-server.bat
+run-pc.bat
+npm run build:pc
+npm run server:smoke
+npm run steam:dir:release
+npm run steam:stage:windows
+npm run steam:ready
 ```
 
-## 게임 흐름
+`run-pc.bat` starts the local API server when needed and then launches the PC Vite app. `npm run steam:dir:release` builds the Steam/Electron directory release and requires `VITE_API_URL` in `.env.production.local`. `npm run steam:stage:windows` prepares the Windows depot payload in `release/steam-depot/windows/`.
 
-```
-타이틀 → Phase 0 사건소개 → Phase 1 초기진술 → Phase 2 반박
-→ Phase 3 심문 → Phase 4 증거 → Phase 5 재심문
-→ Phase 6 중재안 → Phase 7 판결 → 결과(점수/진실/칭호/후일담/공유)
-```
+## Documentation
 
-## 환경 변수
+Start with `docs/README.md`. Historical one-off prompts, QA dumps, screenshots, old request packets, old generator scripts, reference asset dumps, and obsolete Vercel deployment files were moved under `docs/LEGACY/20260506-pre-steam-cleanup/` or the ignored local archive `LEGACY/20260506-pre-steam-cleanup/`.
 
-```env
-OPENAI_API_KEY=<server-only-openai-key>    # 서버 프록시에서만 사용
-```
+## Repository Policy
 
-## 사건 추가
-
-`src/data/cases/generated/` 폴더에 JSON 파일을 넣으면 자동 인식됩니다.
-
-## 라이선스
-
-Private
+- Do not commit `.env`, `.env.production.local`, server secrets, generated `tmp/` results, local logs, or Electron release output.
+- Keep new persistent QA or generation guides under `docs/`.
+- Put temporary experiment output under `tmp/`; it is intentionally ignored.

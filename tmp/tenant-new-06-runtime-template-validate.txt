@@ -1,3 +1,0 @@
-[runtime-template-coverage] case=tenant-new-06
-summary={}
-PASS

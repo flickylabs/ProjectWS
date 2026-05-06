@@ -1,7 +1,0 @@
-
-> solomon-init@0.0.0 server
-> cd server && node index.js
-
-Solomon Server running on http://localhost:3001
-WebAdmin:  http://localhost:3001/admin
-API Docs:  http://localhost:3001/api/health

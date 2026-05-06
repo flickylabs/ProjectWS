@@ -1,3 +1,0 @@
-[runtime-template-coverage] case=spouse-new-08
-summary={}
-PASS

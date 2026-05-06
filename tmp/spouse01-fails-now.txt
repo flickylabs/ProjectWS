@@ -1,3 +1,0 @@
-﻿[validate-scripted-text] case=spouse-01
-[validate-scripted-text] summary={"FAIL":1}
-- [FAIL] C1 interrogation / b|d-5|S5|fact_pursuit / b|d-5|S5|fact_pursuit#3: 재판관 대상 합니다체 위반 가능성: 배신감에 밀려 150만원을 먼저 보내고 설명은 뒤로 미뤘으니까요.

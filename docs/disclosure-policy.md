@@ -10,7 +10,7 @@
 ## 1. 게임 핵심 원칙
 
 > **"진실은 플레이어가 직접 밝혀낸다."**
-> — 어떤 채널도 플레이어보다 먼저 답을 말하면 안 된다. (`CLAUDE.md`)
+> — 어떤 채널도 플레이어보다 먼저 답을 말하면 안 된다. (archived `docs/LEGACY/20260506-pre-steam-cleanup/root-docs/CLAUDE.md`)
 
 이 정책 문서는 위 원칙을 기계가 검증할 수 있도록 사람 기준(Markdown)과 기계 기준(JSON)으로 이중화한 것이다. Markdown은 이 문서, JSON은 `src/data/disclosurePolicy/{caseId}.json` (Codex 작성, runtime import 금지).
 
@@ -70,7 +70,7 @@ judge / system / dossier 채널(§2.1)은 evidence가 stage 2에 도달한 후�
 
 ## 3. lieState × evidenceStage × channel 매트릭스
 
-### 3.1 Truth Throttle (CLAUDE.md 기준 + 보강)
+### 3.1 Truth Throttle (archived CLAUDE.md 기준 + 보강)
 
 | lieState | 금액 | 인물 | 기관 | 시각 | 추가 제약 |
 |---|---|---|---|---|---|
@@ -421,8 +421,8 @@ P1 Q-A 정합 / D1 LieState Flow 자연성 / 의미 정확성은 정적 검출�
 Tier 2 진입 시 다음 wrapper가 이 정책을 검증한다 (Codex 작업 영역).
 
 ```bash
-npm run check:policy   # policy-vs-data cross-check
-npm run check:all      # 8 layer + policy + Markdown-JSON sync
+npm run check:policy   # free interrogation policy gate
+npm run check:all      # qa:fast + free interrogation policy gate
 ```
 
 검증 대상:
@@ -438,7 +438,7 @@ npm run check:all      # 8 layer + policy + Markdown-JSON sync
 정책 변경이 회귀를 일으키면 즉시 baseline 복원.
 
 - Anchor: `baseline-pre-policy-v1` (a10b801)
-- 절차: `baseline/pre-policy-v1/rollback-procedure.md`
+- 절차: archived `docs/LEGACY/20260506-pre-steam-cleanup/root-docs/baseline/pre-policy-v1/rollback-procedure.md`
 - 부분 / 전체 데이터 / 완전 reset 3옵션
 
 Tier 1 정책이 Tier 0 anchor를 깨뜨리지 않는지 매 변경마다 확인:
@@ -457,7 +457,7 @@ Tier 1 정책이 Tier 0 anchor를 깨뜨리지 않는지 매 변경마다 확인
 - JSON 정책 family / friend 확장
 
 ### Tier 2
-- `npm run check:policy` / `check:all` wrapper 구현 (tmp/ 초기 → scripts/quality/ 안정 후)
+- `npm run check:policy` / `check:all` wrapper 유지 (`qa:*` 계열로 정리)
 - Tier 1 작성 단계는 Markdown-JSON sync 경고만 / Tier 2부터 quality gate
 - 검증 30일 안정 운영 후 Tier 3 진입 검토
 
@@ -540,7 +540,7 @@ Tier 2 wrapper에서 `issueProgression` ↔ ScriptedText interrogation entries �
 - Codex 작성 JSON과 sync 검증
 
 **관련 자료**:
-- `baseline/pre-policy-v1/rollback-procedure.md`
+- archived `docs/LEGACY/20260506-pre-steam-cleanup/root-docs/baseline/pre-policy-v1/rollback-procedure.md`
 - `docs/codex-request-template.md`
 - `docs/spot-check-format.md`
 - `src/data/disclosurePolicy/*.json` (Codex 작업 영역)
@@ -602,7 +602,7 @@ case별 §4 globalTruthLexemes + paraphrase set 영역에서 channel = surface-o
 
 ```bash
 npm run check:policy   # surface-only 채널 진실어 grep + evidenceStage gating 검사
-npm run check:all      # 8 layer + policy + Markdown-JSON sync
+npm run check:all      # qa:fast + free interrogation policy gate
 ```
 
 검출 결과:

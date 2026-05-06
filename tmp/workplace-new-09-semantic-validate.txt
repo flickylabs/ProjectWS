@@ -1,3 +1,0 @@
-[scripted-semantic-quality] case=workplace-new-09
-summary={}
-PASS
