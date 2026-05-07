@@ -4810,12 +4810,12 @@ html[lang^="zh"] body.pc-mode .pc-home-v2__hero h1 {
 body.pc-mode .pc-home-v2__hero p {
   margin: 16px 0 0;
   max-width: 780px;
-  font-size: 19px;
-  font-weight: 500;
-  color: var(--pc-text-dim);
+  font-size: 18px;
+  font-weight: 300;
+  color: rgba(231, 224, 210, 0.76);
   letter-spacing: 0;
-  line-height: 1.5;
-  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.28);
+  line-height: 1.55;
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.22);
 }
 
 @media (max-width: 980px) {
